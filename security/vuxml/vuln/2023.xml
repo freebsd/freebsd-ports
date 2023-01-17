@@ -1,3 +1,35 @@
+  <vuln vid="00919005-96a3-11ed-86e9-d4c9ef517024">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.55</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://downloads.apache.org/httpd/CHANGES_2.4.55">
+	  <p>mod_dav out of bounds read, or write of zero byte (CVE-2006-20001)
+	    (moderate)</p>
+	  <p>mod_proxy_ajp Possible request smuggling (CVE-2022-36760) (moderate)</p>
+	  <p>mod_proxy prior to 2.4.55 allows a backend to trigger HTTP response
+	    splitting (CVE-2022-37436) (moderate)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-37436</cvename>
+      <cvename>CVE-2022-36760</cvename>
+      <cvename>CVE-2006-20001</cvename>
+      <url>https://downloads.apache.org/httpd/CHANGES_2.4.55</url>
+    </references>
+    <dates>
+      <discovery>2023-01-17</discovery>
+      <entry>2023-01-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5fa68bd9-95d9-11ed-811a-080027f5fec9">
     <topic>redis -- multiple vulnerabilities</topic>
     <affects>
