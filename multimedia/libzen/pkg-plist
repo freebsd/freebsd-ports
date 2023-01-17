@@ -13,12 +13,6 @@ include/ZenLib/Format/Http/Http_Cookies.h
 include/ZenLib/Format/Http/Http_Handler.h
 include/ZenLib/Format/Http/Http_Request.h
 include/ZenLib/Format/Http/Http_Utils.h
-include/ZenLib/HTTP_Client.h
-include/ZenLib/HTTP_Client/HTTPClient.h
-include/ZenLib/HTTP_Client/HTTPClientAuth.h
-include/ZenLib/HTTP_Client/HTTPClientCommon.h
-include/ZenLib/HTTP_Client/HTTPClientString.h
-include/ZenLib/HTTP_Client/HTTPClientWrapper.h
 include/ZenLib/InfoMap.h
 include/ZenLib/MemoryDebug.h
 include/ZenLib/OS_Utils.h
@@ -33,8 +27,11 @@ include/ZenLib/ZtringListList.h
 include/ZenLib/ZtringListListF.h
 include/ZenLib/int128s.h
 include/ZenLib/int128u.h
-lib/libzen.a
+lib/cmake/zenlib/ZenLibConfig.cmake
+lib/cmake/zenlib/ZenLibConfigVersion.cmake
+lib/cmake/zenlib/ZenLibTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/zenlib/ZenLibTargets.cmake
 lib/libzen.so
 lib/libzen.so.0
-lib/libzen.so.0.0.0
+lib/libzen.so.%%DISTVERSION%%
 libdata/pkgconfig/libzen.pc

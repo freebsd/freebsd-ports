@@ -1,32 +1,28 @@
 PORTNAME=	libzen
-PORTVERSION=	22.09
+DISTVERSION=	0.4.40
+PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
+MASTER_SITES=	https://mediaarea.net/download/source/${PORTNAME}/${DISTVERSION}/ \
 		LOCAL/sunpoet
-DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ZenLib used by MediaInfo and its library
 WWW=		https://mediaarea.net/en/MediaInfo
 
 LICENSE=	ZLIB
-LICENSE_FILE=	${WRKSRC}/../../../License.txt
+LICENSE_FILE=	${WRKSRC}/../../License.txt
 
-USES=		compiler:c++11-lang libtool pathfix tar:xz
-
-CONFIGURE_ARGS=	--enable-shared --enable-static
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++11
+USES=		cmake compiler:c++11-lang dos2unix pathfix pkgconfig tar:bz2
 USE_LDCONFIG=	yes
+DOS2UNIX_GLOB=	*.c *.cmake.in *.cpp *.h *.pc.in *.txt
+DOS2UNIX_WRKSRC=	${WRKDIR}
 
-WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/ZenLib/Project/GNU/Library
+WRKSRC=		${WRKDIR}/ZenLib/Project/CMake
+
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^ZenLib_LIBS/ s|$$(pwd)[^ ]*|${LOCALBASE}/lib|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's| -lstdc++||g' ${WRKSRC}/configure ${WRKSRC}/libzen.pc.in
-
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/../../../Source/ZenLib/BitStream_Fast.h ${STAGEDIR}${PREFIX}/include/ZenLib/BitStream_Fast.h
+	@${REINPLACE_CMD} -e '/^Libs_Static/d' ${PATCH_WRKSRC}/libzen.pc.in
 
 .include <bsd.port.mk>
