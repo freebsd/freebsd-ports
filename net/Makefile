@@ -339,6 +339,7 @@
     SUBDIR += krill
     SUBDIR += ksmtp
     SUBDIR += ktnef
+    SUBDIR += kube-apiserver
     SUBDIR += kube-controller-manager
     SUBDIR += kube-scheduler
     SUBDIR += l2tpd
