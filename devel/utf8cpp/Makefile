@@ -1,9 +1,9 @@
 PORTNAME=	utf8cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2.2
+DISTVERSION=	3.2.3
 CATEGORIES=	devel
 
-MAINTAINER=	k@stereochro.me
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple, portable, lightweight library for handling UTF-8 strings
 WWW=		https://github.com/nemtrif/utfcpp
 
@@ -23,6 +23,8 @@ PLIST_FILES=	include/utf8cpp/utf8.h \
 		include/utf8cpp/utf8/cpp11.h \
 		include/utf8cpp/utf8/cpp17.h \
 		include/utf8cpp/utf8/unchecked.h \
-		lib/cmake/utf8cpp/utf8cppConfig.cmake
+		lib/cmake/utf8cpp/utf8cppConfig.cmake \
+		lib/cmake/utf8cpp/utf8cppConfigVersion.cmake \
+		lib/cmake/utf8cpp/utf8cppTargets.cmake
 
 .include <bsd.port.mk>
