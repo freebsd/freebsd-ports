@@ -29,4 +29,3 @@ do-install:
 .endfor
 
 .include <bsd.port.mk>
-

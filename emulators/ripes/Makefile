@@ -29,4 +29,3 @@ GH_TUPLE=	mortbopet:VSRTL:8fd0bce:VSRTL/external/VSRTL \
 PORTSCOUT=	ignore:continuous-master
 
 .include <bsd.port.mk>
-

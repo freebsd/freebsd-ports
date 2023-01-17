@@ -21,4 +21,3 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/srv ${STAGEDIR}${PREFIX}/bin/srv
 
 .include <bsd.port.mk>
-

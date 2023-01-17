@@ -37,4 +37,3 @@ GO_TARGET=	./cmd/cli53
 PLIST_FILES=	bin/cli53
 
 .include <bsd.port.mk>
-

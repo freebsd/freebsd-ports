@@ -58,4 +58,3 @@ post-install: # autoplist: thousands of files, complex dependencies on options
 		${FIND} * -type f -or -type l >> ${TMPPLIST}
 
 .include <bsd.port.mk>
-

@@ -19,4 +19,3 @@ do-install:
 	${STAGEDIR}${PREFIX}/sbin/${PORTNAME}
 
 .include <bsd.port.mk>
-

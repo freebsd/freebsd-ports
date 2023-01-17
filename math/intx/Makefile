@@ -17,4 +17,3 @@ GH_ACCOUNT=	chfast
 CMAKE_OFF=	INTX_TESTING
 
 .include <bsd.port.mk>
-

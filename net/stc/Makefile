@@ -24,4 +24,3 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"homedir", ""|"homedir", "${LOCALBASE}/etc/syncthing"|' ${WRKSRC}/stc.go
 
 .include <bsd.port.mk>
-

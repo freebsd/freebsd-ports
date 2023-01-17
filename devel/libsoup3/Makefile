@@ -61,4 +61,3 @@ GSSAPI_NONE_MESON_DISABLED=	gssapi
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 .include <bsd.port.mk>
-
