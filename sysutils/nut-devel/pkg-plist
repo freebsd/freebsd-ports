@@ -158,6 +158,9 @@ libdata/pkgconfig/libnutclientstub.pc
 %%MANPAGES%%man/man3/nutscan_add_option_to_device.3.gz
 %%MANPAGES%%man/man3/nutscan_cidr_to_ip.3.gz
 %%MANPAGES%%man/man3/nutscan_display_parsable.3.gz
+%%MANPAGES%%man/man3/nutscan_display_sanity_check.3.gz
+%%MANPAGES%%man/man3/nutscan_display_sanity_check_serial.3.gz
+%%MANPAGES%%man/man3/nutscan_display_ups_conf_with_sanity_check.3.gz
 %%MANPAGES%%man/man3/nutscan_display_ups_conf.3.gz
 %%MANPAGES%%man/man3/nutscan_free_device.3.gz
 %%MANPAGES%%man/man3/nutscan_get_serial_ports_list.3.gz
