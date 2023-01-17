@@ -1,7 +1,6 @@
 PORTNAME=	gnudatalanguage
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
 CATEGORIES=	science lang
 .if defined(BUILD_PYTHON_MODULE)
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +24,7 @@ LIB_DEPENDS+=	libgeotiff.so:graphics/libgeotiff\
 
 USE_GITHUB=	yes
 GH_PROJECT=	gdl
+GH_TAGNAME=	6546898e7f2d23ae1bf67ebe70dc0f38886e5de7
 
 USES=		cmake compiler:c++11-lang fortran ncurses pkgconfig readline \
 		xorg
@@ -33,7 +33,6 @@ USE_XORG=	x11 sm ice xext
 
 # Disable ncurses and readline from ports
 # TODO:	create a port for Astron http://idlastro.gsfc.nasa.gov/ftp/astron.tar.gz
-# TODO:	create a port for TexToIdl http://physics.mnstate.edu/mcraig/textoidl/textoidl-2-1-2.tar
 
 CMAKE_ARGS=	-DREADLINEDIR:STRING="/usr"	\
 		-DOPENMP:BOOL=ON		\
@@ -49,8 +48,10 @@ SLAVEDIRS=	science/py-gnudatalanguage
 # Upstream prefer GraphicsMagick over ImageMackick
 # see https://github.com/gnudatalanguage/gdl/issues/611
 # and https://github.com/gnudatalanguage/gdl/issues/1044 for ImageMagick 7
-OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 MPI NETCDF PYTHON UDUNITS
-OPTIONS_DEFAULT=EIGEN FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 NETCDF PYTHON UDUNITS
+OPTIONS_DEFINE=	EIGEN EXAMPLES FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4	\
+		MPI NETCDF PYTHON QHULL UDUNITS
+OPTIONS_DEFAULT=EIGEN FFTW GLPK GRAPHICSMAGICK GRIB HDF5 LIBPROJ4 NETCDF PYTHON	\
+		QHULL UDUNITS
 
 EIGEN_DESC=		Eigen3 support (boost performance)
 EIGEN_USES=		eigen:3
@@ -106,11 +107,10 @@ PYTHON_RUN_DEPENDS=	${PYNUMPY} \
 PYTHON_CMAKE_ON=	-DPYTHON:BOOL=YES -DPYTHONVERSION:STRING="${PYTHON_VER}"
 PYTHON_CMAKE_OFF=	-DPYTHON:BOOL=NO
 
-# QHULL IS NOT NEEDED YET!
-#QHULL_DESC=		Enable Triangulate and Qhull support
-#QHULL_LIB_DEPENDS=	libqhull.so:math/qhull
-#QHULL_CMAKE_ON=		-DQHULL:BOOL=YES
-#QHULL_CMAKE_OFF=	-DQHULL:BOOL=NO
+QHULL_DESC=		Enable Triangulate and Qhull support
+QHULL_LIB_DEPENDS=	libqhull_r.so:math/qhull
+QHULL_CMAKE_ON=		-DQHULL:BOOL=YES
+QHULL_CMAKE_OFF=	-DQHULL:BOOL=NO
 
 UDUNITS_LIB_DEPENDS=	libudunits2.so:science/udunits
 UDUNITS_CMAKE_ON=	-DUDUNITS2:BOOL=YES
