@@ -1,5 +1,5 @@
 PORTNAME=	mpfr
-DISTVERSION=	4.1.1
+DISTVERSION=	4.2.0
 PORTEPOCH=	1
 CATEGORIES=	math devel
 MASTER_SITES=	GNU \
@@ -18,8 +18,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-PATCHLEVEL=	1
-PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
+#PATCHLEVEL=	1
+#PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 USES=		gmake libtool makeinfo tar:xz
 GNU_CONFIGURE=	yes
