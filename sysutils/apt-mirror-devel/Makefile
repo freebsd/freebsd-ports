@@ -22,5 +22,6 @@ NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
+	@${CP} ${WRKSRC}/mirror.list ${WRKSRC}/mirror.list.sample
 
 .include <bsd.port.mk>
