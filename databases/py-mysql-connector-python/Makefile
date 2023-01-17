@@ -1,5 +1,6 @@
 PORTNAME=	mysql-connector-python
 PORTVERSION=	8.0.31
+PORTREVISION=	1
 CATEGORIES=	databases python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -9,7 +10,7 @@ WWW=		https://dev.mysql.com/doc/connector-python/en
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3.0.0:devel/py-protobuf@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3.11.0:devel/py-protobuf@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_GITHUB=	yes
