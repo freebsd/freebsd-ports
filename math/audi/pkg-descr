@@ -1,3 +1,4 @@
-obake is a C++ computer algebra library for the symbolic manipulation of sparse
-multivariate polynomials and other closely-related symbolic objects (such as
-truncated power series, Poisson series, etc.).
+Audi (from latin: "listen") is an open source, header only, C++ library (exposed
+to python in the pyaudi package) that implements the differential algebra of
+Taylor truncated polynomials and a few algorithms useful for its applications
+(Differential Intelligence, automatic differentiation, Taylor Models, etc.)
