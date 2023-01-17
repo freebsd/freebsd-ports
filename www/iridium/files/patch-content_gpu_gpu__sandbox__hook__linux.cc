@@ -1,7 +1,7 @@
---- content/gpu/gpu_sandbox_hook_linux.cc.orig	2022-12-06 08:09:13 UTC
+--- content/gpu/gpu_sandbox_hook_linux.cc.orig	2023-01-17 19:19:00 UTC
 +++ content/gpu/gpu_sandbox_hook_linux.cc
 @@ -126,6 +126,7 @@ void AddStandardChromeOsPermissions(
-   permissions->push_back(BrokerFilePermission::ReadOnly(kAngleGlesPath));
+   }
  }
  
 +#if !defined(OS_BSD)

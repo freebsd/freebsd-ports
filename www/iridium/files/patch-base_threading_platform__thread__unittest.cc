@@ -1,4 +1,4 @@
---- base/threading/platform_thread_unittest.cc.orig	2022-10-05 07:34:01 UTC
+--- base/threading/platform_thread_unittest.cc.orig	2023-01-17 19:19:00 UTC
 +++ base/threading/platform_thread_unittest.cc
 @@ -31,7 +31,7 @@
  #include "base/time/time.h"
@@ -18,15 +18,6 @@
    // On Ubuntu, RLIMIT_NICE and RLIMIT_RTPRIO are 0 by default, so we won't be
    // able to increase priority to any level.
    constexpr bool kCanIncreasePriority = false;
-@@ -523,7 +523,7 @@ TEST(PlatformThreadTest, SetHugeThreadName) {
- TEST(PlatformThreadTest, GetDefaultThreadStackSize) {
-   size_t stack_size = PlatformThread::GetDefaultThreadStackSize();
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_IOS) || BUILDFLAG(IS_FUCHSIA) || \
--    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) &&                \
-+    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && \
-      !defined(THREAD_SANITIZER)) ||                                    \
-     (BUILDFLAG(IS_ANDROID) && !defined(ADDRESS_SANITIZER))
-   EXPECT_EQ(0u, stack_size);
 @@ -684,12 +684,16 @@ INSTANTIATE_TEST_SUITE_P(
  
  #endif  // BUILDFLAG(IS_APPLE)

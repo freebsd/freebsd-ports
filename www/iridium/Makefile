@@ -1,6 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2022.12.108.1
-PORTREVISION=	1
+PORTVERSION=	2023.01.109
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -16,7 +15,7 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 PATCH_SITES=	https://nerd.hu/distfiles/
-PATCHFILES+=	disable-privacy-sandbox-352a8844b01a05a786ba76da599d106487f1533f.patch:-p1
+PATCHFILES+=	disable-privacy-sandbox-7f49edb924b6d2b38fcc9a2c76d4e5e1f857e7b9.patch:-p1
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -98,6 +97,7 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} \
 # OS "target_os == is_bsd", like libusb, libpci.
 GN_ARGS+=	clang_use_chrome_plugins=false \
 		chrome_pgo_phase=0 \
+		enable_backup_ref_ptr_support=false \
 		enable_hangout_services_extension=true \
 		enable_js_type_check=false \
 		enable_nacl=false \
@@ -108,19 +108,19 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		optimize_webui=true \
 		toolkit_views=true \
 		treat_warnings_as_errors=false \
-		use_allocator="none" \
 		use_allocator_shim=false \
 		use_aura=true \
 		use_custom_libcxx=false \
 		use_gnome_keyring=false \
 		use_lld=true \
+		use_partition_alloc=true \
+		use_partition_alloc_as_malloc=false \
 		use_sysroot=false \
 		use_system_freetype=false \
 		use_system_harfbuzz=true \
 		use_system_libjpeg=true \
 		use_system_libwayland=true \
 		use_system_wayland_scanner=true \
-		use_system_libwayland_server=true \
 		use_udev=false \
 		extra_cxxflags="${CXXFLAGS}" \
 		extra_ldflags="${LDFLAGS}"

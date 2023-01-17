@@ -1,4 +1,4 @@
---- content/gpu/gpu_main.cc.orig	2022-12-06 08:09:13 UTC
+--- content/gpu/gpu_main.cc.orig	2023-01-17 19:19:00 UTC
 +++ content/gpu/gpu_main.cc
 @@ -87,7 +87,7 @@
  #include "sandbox/win/src/sandbox.h"
@@ -9,7 +9,7 @@
  #include "content/gpu/gpu_sandbox_hook_linux.h"
  #include "sandbox/policy/linux/sandbox_linux.h"
  #include "sandbox/policy/sandbox_type.h"
-@@ -109,7 +109,7 @@ namespace content {
+@@ -108,7 +108,7 @@ namespace content {
  
  namespace {
  
@@ -18,7 +18,7 @@
  bool StartSandboxLinux(gpu::GpuWatchdogThread*,
                         const gpu::GPUInfo*,
                         const gpu::GpuPreferences&);
-@@ -171,7 +171,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
+@@ -170,7 +170,7 @@ class ContentSandboxHelper : public gpu::GpuSandboxHel
    bool EnsureSandboxInitialized(gpu::GpuWatchdogThread* watchdog_thread,
                                  const gpu::GPUInfo* gpu_info,
                                  const gpu::GpuPreferences& gpu_prefs) override {
@@ -27,7 +27,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif BUILDFLAG(IS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -268,7 +268,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -267,7 +267,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type);
      }
@@ -36,7 +36,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -403,7 +403,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -402,7 +402,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  

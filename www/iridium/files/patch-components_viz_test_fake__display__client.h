@@ -1,7 +1,7 @@
---- components/viz/test/fake_display_client.h.orig	2022-03-28 18:11:04 UTC
+--- components/viz/test/fake_display_client.h.orig	2023-01-17 19:19:00 UTC
 +++ components/viz/test/fake_display_client.h
-@@ -34,7 +34,7 @@ class FakeDisplayClient : public mojom::DisplayClient 
-       mojo::PendingReceiver<mojom::LayeredWindowUpdater> receiver) override;
+@@ -35,7 +35,7 @@ class FakeDisplayClient : public mojom::DisplayClient 
+   void AddChildWindowToBrowser(gpu::SurfaceHandle child_window) override;
  #endif
  
 -#if BUILDFLAG(IS_LINUX)

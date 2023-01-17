@@ -1,6 +1,6 @@
---- base/test/launcher/test_launcher.cc.orig	2022-10-05 07:34:01 UTC
+--- base/test/launcher/test_launcher.cc.orig	2023-01-17 19:19:00 UTC
 +++ base/test/launcher/test_launcher.cc
-@@ -65,6 +65,7 @@
+@@ -67,6 +67,7 @@
  #include "third_party/libxml/chromium/libxml_utils.h"
  
  #if BUILDFLAG(IS_POSIX)

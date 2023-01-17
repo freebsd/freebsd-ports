@@ -1,4 +1,4 @@
---- net/url_request/url_request.cc.orig	2022-10-05 07:34:01 UTC
+--- net/url_request/url_request.cc.orig	2023-01-17 19:19:00 UTC
 +++ net/url_request/url_request.cc
 @@ -13,6 +13,7 @@
  #include "base/bind.h"
@@ -16,7 +16,7 @@
  #include "net/base/auth.h"
  #include "net/base/load_flags.h"
  #include "net/base/load_timing_info.h"
-@@ -57,7 +59,10 @@ namespace iridium {
+@@ -54,7 +56,10 @@ namespace iridium {
  
  void textlog_request(const char *caller, const GURL &url)
  {
