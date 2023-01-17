@@ -1,9 +1,12 @@
-bin/h5math
-bin/h5totxt
+bin/h4fromh5
+bin/h5fromh4
 bin/h5fromtxt
-bin/h5tovtk
+bin/h5math
 bin/h5topng
+bin/h5totxt
+bin/h5tovtk
 %%OCTAVE%%lib/octave/%%OCTAVE_VERSION%%/site/oct/%%CONFIGURE_TARGET%%/h5read.oct
+man/man1/h5fromh4.1.gz
 man/man1/h5fromtxt.1.gz
 man/man1/h5math.1.gz
 man/man1/h5topng.1.gz
@@ -17,6 +20,7 @@ man/man1/h5tovtk.1.gz
 %%DATADIR%%/colormaps/colorcube
 %%DATADIR%%/colormaps/cool
 %%DATADIR%%/colormaps/copper
+%%DATADIR%%/colormaps/dkbluered
 %%DATADIR%%/colormaps/flag
 %%DATADIR%%/colormaps/gray
 %%DATADIR%%/colormaps/green
@@ -34,4 +38,3 @@ man/man1/h5tovtk.1.gz
 %%DATADIR%%/colormaps/winter
 %%DATADIR%%/colormaps/yarg
 %%DATADIR%%/colormaps/yellow
-%%DATADIR%%/colormaps/dkbluered
