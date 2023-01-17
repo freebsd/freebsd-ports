@@ -1,8 +1,8 @@
---- electron/shell/browser/net/system_network_context_manager.cc.orig	2022-05-18 15:31:32 UTC
+--- electron/shell/browser/net/system_network_context_manager.cc.orig	2022-11-28 15:30:00 UTC
 +++ electron/shell/browser/net/system_network_context_manager.cc
-@@ -46,7 +46,7 @@
- #include "components/os_crypt/keychain_password_mac.h"
- #endif
+@@ -42,7 +42,7 @@
+ #include "shell/common/options_switches.h"
+ #include "url/gurl.h"
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
