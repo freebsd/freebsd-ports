@@ -10,6 +10,9 @@ WWW=		https://github.com/Airblader/i3
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream merged with i3, please switch to x11-wm/i3
+EXPIRATION_DATE=2023-03-31
+
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libev.so:devel/libev \
