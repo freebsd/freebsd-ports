@@ -13,6 +13,10 @@ you update your ports collection, before attempting any port upgrades.
   instead of uucp. Users who wish to continue using the uucp user and
   group may add NUT_USER=uucp and NUT_GROUP=uucp to their make.conf.
 
+  After upgrading sysutils/nut or sysutils/nut-devel with this patch,
+  restart devd. Then restart nut. This will fix up the permissions of
+  UPS USB devices and allow nut to start normally.
+
 20230111:
   AFFECTS: users of sysutils/graylog
   AUTHOR: dch@freebsd.org
