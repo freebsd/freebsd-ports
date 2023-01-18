@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	8
 CATEGORIES=	sysutils
 
-MAINTAINER=	ben@lavery-griffiths.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	View ZFS snapshot differences via a web browser
 WWW=		https://github.com/j-keck/zfs-snap-diff
 
