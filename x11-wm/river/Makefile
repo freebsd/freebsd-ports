@@ -25,7 +25,7 @@ USE_GITHUB=	yes
 USE_XORG=	pixman
 GH_ACCOUNT=	riverwm
 GH_TUPLE=	ifreund:zig-pixman:4a49ba1:zig_pixman/deps/zig-pixman \
-		ifreund:zig-wayland:71d2195:zig_wayland/deps/zig-wayland \
+		ifreund:zig-wayland:ace6aee:zig_wayland/deps/zig-wayland \
 		ifreund:zig-xkbcommon:bfd1f97:zig_xkbcommon/deps/zig-xkbcommon \
 		swaywm:zig-wlroots:04bcd67:zig_wlroots/deps/zig-wlroots
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
