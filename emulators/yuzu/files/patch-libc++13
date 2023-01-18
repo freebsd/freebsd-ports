@@ -1,0 +1,13 @@
+https://github.com/merryhime/dynarmic/pull/742
+
+--- externals/dynarmic/src/dynarmic/frontend/A64/translate/impl/simd_table_lookup.cpp.orig	2023-01-15 02:29:49 UTC
++++ externals/dynarmic/src/dynarmic/frontend/A64/translate/impl/simd_table_lookup.cpp
+@@ -3,6 +3,8 @@
+  * SPDX-License-Identifier: 0BSD
+  */
+ 
++#include <vector>
++
+ #include "dynarmic/frontend/A64/translate/impl/impl.h"
+ 
+ namespace Dynarmic::A64 {
