@@ -1,12 +1,14 @@
 PORTNAME=	pydocstyle
-PORTVERSION=	6.2.3
+PORTVERSION=	6.3.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Python docstring style checker
-WWW=		https://pypi.org/project/pydocstyle/
+WWW=		https://www.pydocstyle.org/ \
+		https://pypi.org/project/pydocstyle/ \
+		https://github.com/PyCQA/pydocstyle/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
