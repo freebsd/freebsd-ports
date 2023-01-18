@@ -398,6 +398,7 @@
     SUBDIR += py-detecta
     SUBDIR += py-dictdiffer
     SUBDIR += py-eemeter
+    SUBDIR += py-einops
     SUBDIR += py-emoji
     SUBDIR += py-ezc3d
     SUBDIR += py-fast-histogram
