@@ -10,6 +10,8 @@ MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Terminal emulator on a Web page
 WWW=		https://anyterm.org/
 
+BROKEN=		segfaults on startup
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
