@@ -42,7 +42,7 @@ DEP-RSA1024_DESC=	Deprecate the use of RSA 1024 keys
 DNSCRYPT_DESC=		Enable dnscrypt support
 DNSTAP_DESC=		Enable dnstap logging support
 DOH_DESC=		Enable DNS-over-HTTPS support
-DYNLIB_DESC=		Enable dynamic (shared) library support
+DYNLIB_DESC=		Enable support for dynamic (shared) 3rd-party libraries
 ECDSA_DESC=		Enable ECDSA (elliptic curve) support (OpenSSL >= 1.0)
 EVAPI_DESC=		(Experimental) pluggable event based libunbound API support
 FILTER_AAAA_DESC=	Build with AAAA filter functionality (contrib)
