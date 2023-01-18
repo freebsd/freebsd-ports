@@ -1,5 +1,5 @@
 PORTNAME=	froxlor
-DISTVERSION=	0.10.38
+DISTVERSION=	2.0.8
 CATEGORIES=	sysutils www
 MASTER_SITES=	https://files.froxlor.org/releases/
 
@@ -11,7 +11,6 @@ LICENSE=	GPLv2
 
 USES=		cpe php:cli shebangfix
 USE_PHP=	bcmath curl filter ftp json pdo_mysql posix session xml zip
-SHEBANG_FILES=	froxlor/install/scripts/*
 
 SUB_FILES=	pkg-deinstall pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME} \
