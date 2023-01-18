@@ -4,6 +4,7 @@
     SUBDIR += anongitssh
     SUBDIR += antibody
     SUBDIR += ast-ksh
+    SUBDIR += atuin
     SUBDIR += bash
     SUBDIR += bash-completion
     SUBDIR += bash-static
