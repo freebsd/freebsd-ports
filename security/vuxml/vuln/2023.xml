@@ -45,6 +45,10 @@
 	<name>redis62</name>
 	<range><lt>6.2.9</lt></range>
       </package>
+      <package>
+	<name>redis6</name>
+	<range><lt>6.0.17</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
