@@ -1503,3 +1503,5 @@
 %%WWWDIR%%/webpack.mix.js
 @dir %%WWWDIR%%/cache
 @dir %%WWWDIR%%/vendor/symfony/string/Resources/bin
+@group
+@owner
