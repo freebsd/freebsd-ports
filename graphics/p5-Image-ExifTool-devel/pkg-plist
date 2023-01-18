@@ -117,6 +117,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/Lang/nl.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/pl.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/ru.pm
+%%SITE_PERL%%/Image/ExifTool/Lang/sk.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/sv.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/tr.pm
 %%SITE_PERL%%/Image/ExifTool/Lang/zh_cn.pm
@@ -309,6 +310,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::Lang::nl.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Lang::pl.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Lang::ru.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::Lang::sk.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Lang::sv.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Lang::tr.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Lang::zh_cn.3.gz

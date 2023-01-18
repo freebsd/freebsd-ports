@@ -1,11 +1,11 @@
 PORTNAME=	Image-ExifTool
-PORTVERSION=	12.49
+PORTVERSION=	12.55
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://exiftool.org/
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	svysh.fbsd@gmail.com
 COMMENT=	Script and Perl module to read/write meta data in files
 WWW=		https://exiftool.org/
 
