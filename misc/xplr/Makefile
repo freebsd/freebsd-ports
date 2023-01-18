@@ -11,7 +11,7 @@ WWW=		https://xplr.dev
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo desktop-file-utils gmake
+USES=		cargo compiler desktop-file-utils gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	sayanarijit
 
@@ -186,9 +186,11 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-Cargo.toml
 LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 .endif
 
-.if ${ARCH} == powerpc
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Cargo.toml
-LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc && ${COMPILER_VERSION} < 140
+BUILD_DEPENDS+=	as:devel/binutils
+CFLAGS+=	-fno-integrated-as
 .endif
 
 post-install:
@@ -219,4 +221,4 @@ post-install-EXAMPLES-on:
 		${INSTALL_DATA} ${_EXAMPLES} \
 		${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
