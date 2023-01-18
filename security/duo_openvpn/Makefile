@@ -1,7 +1,7 @@
 PORTNAME=	duo_openvpn
 PORTVERSION=	2.4
 PORTREVISION=	2
-CATEGORIES=	security
+CATEGORIES=	security net-vpn
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Duo two-factor authentication for OpenVPN

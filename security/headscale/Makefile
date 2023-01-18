@@ -2,7 +2,7 @@ PORTNAME=	headscale
 PORTVERSION=	0.16.4
 PORTREVISION=	4
 DISTVERSIONPREFIX=	v
-CATEGORIES=	security
+CATEGORIES=	security net-vpn
 
 MAINTAINER=	m.muenz@gmail.com
 COMMENT=	Mesh VPN that makes it easy to connect your devices
