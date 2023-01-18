@@ -10,10 +10,13 @@ MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Terminal emulator on a Web page
 WWW=		https://anyterm.org/
 
-BROKEN=		segfaults on startup
-
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	upstream is dead
+EXPIRATION_DATE=	2023-04-01	
+
+BROKEN=		segfaults on startup
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
