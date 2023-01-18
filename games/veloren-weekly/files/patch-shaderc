@@ -1,0 +1,87 @@
+- Restore system shaderc support
+- Detect system shaderc on BSDs
+
+--- Cargo.lock.orig	2023-01-06 18:27:46 UTC
++++ Cargo.lock
+@@ -5630,8 +5630,9 @@ name = "shaderc"
+ 
+ [[package]]
+ name = "shaderc"
+-version = "0.8.0"
+-source = "git+https://github.com/pythonesque/shaderc-rs?rev=f2605a02062834019bedff911aee2fd2998c49f9#f2605a02062834019bedff911aee2fd2998c49f9"
++version = "0.8.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "77a410ea26a220ceaef964dd71054ccd63cc97fd54393014c09046e795127824"
+ dependencies = [
+  "libc",
+  "shaderc-sys",
+@@ -5639,8 +5640,9 @@ name = "shaderc-sys"
+ 
+ [[package]]
+ name = "shaderc-sys"
+-version = "0.8.0"
+-source = "git+https://github.com/pythonesque/shaderc-rs?rev=f2605a02062834019bedff911aee2fd2998c49f9#f2605a02062834019bedff911aee2fd2998c49f9"
++version = "0.8.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "a281c39df7d8a0a97e9430409abb466ff4bd046875c4d97591935042bbffc898"
+ dependencies = [
+  "cmake",
+  "libc",
+--- voxygen/Cargo.toml.orig	2023-01-06 18:27:46 UTC
++++ voxygen/Cargo.toml
+@@ -29,14 +29,13 @@ egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend"
+ tracy-memory = ["tracy"] # enables heap profiling with tracy
+ plugins = ["client/plugins"]
+ egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend", "egui_winit_platform"]
+-shaderc-from-source = ["shaderc/build-from-source"]
+ discord = ["discord-sdk"]
+ bin_img-export = ["common-assets"]
+ 
+ # We don't ship egui with published release builds so a separate feature is required that excludes it.
+ default-publish = ["singleplayer", "native-dialog", "plugins", "discord", "simd"]
+ # Temp for bug on current wgpu version that has access violation in vulkan when constructing egui pipeline
+-default-no-egui = ["default-publish", "hot-reloading", "shaderc-from-source"]
++default-no-egui = ["default-publish", "hot-reloading"]
+ default = ["default-no-egui", "egui-ui"]
+ 
+ [dependencies]
+@@ -60,9 +59,7 @@ bytemuck = { version="1.4", features=["derive"] }
+ wgpu = { version = "=0.8.0", features = ["trace", "cross"] }
+ wgpu-profiler = { git = "https://github.com/Imberflur/wgpu-profiler", tag = "wgpu-0.8" }
+ bytemuck = { version="1.4", features=["derive"] }
+-# shaderc = "0.8.0"
+-# Working around a current bug in shaderc that causes it to use the system installation even if we specify compile from source
+-shaderc = { git = "https://github.com/pythonesque/shaderc-rs", rev = "f2605a02062834019bedff911aee2fd2998c49f9" }
++shaderc = "0.8.0"
+ # cmake crate used by shaderc, newer version 0.1.46 uses a new cmake command that is not available in our CI cmake version
+ # see https://github.com/alexcrichton/cmake-rs/issues/131
+ cmake = "=0.1.45"
+--- cargo-crates/shaderc-sys-0.8.1/build/build.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/shaderc-sys-0.8.1/build/build.rs
+@@ -287,10 +287,13 @@ fn main() {
+             }
+         } {
+             match (target_os.as_str(), target_env.as_str()) {
+-                ("linux", _) => {
++                ("linux", _) | ("dragonfly", _) | ("freebsd", _) | ("netbsd", _) | ("openbsd", _) => {
+                     println!("cargo:rustc-link-search=native={}", search_dir_str);
+                     println!("cargo:rustc-link-lib={}={}", lib_kind, lib_name);
+-                    println!("cargo:rustc-link-lib=dylib=stdc++");
++                    println!("cargo:rustc-link-lib=dylib={}", match target_os.as_str() {
++                        "freebsd" | "openbsd" => "c++",
++                        _ => "stdc++",
++                    });
+                     return;
+                 }
+                 ("windows", "msvc") => {
+@@ -373,8 +376,8 @@ fn emit_std_cpp_link() {
+     let target_env = env::var("CARGO_CFG_TARGET_ENV").unwrap();
+ 
+     match (target_os.as_str(), target_env.as_str()) {
+-        ("linux", _) | ("windows", "gnu") => println!("cargo:rustc-link-lib=dylib=stdc++"),
+-        ("macos", _) => println!("cargo:rustc-link-lib=dylib=c++"),
++        ("linux", _) | ("dragonfly", _) | ("netbsd", _) | ("windows", "gnu") => println!("cargo:rustc-link-lib=dylib=stdc++"),
++        ("macos", _) | ("freebsd", _) | ("openbsd", _) => println!("cargo:rustc-link-lib=dylib=c++"),
+         _ => {}
+     }
+ }

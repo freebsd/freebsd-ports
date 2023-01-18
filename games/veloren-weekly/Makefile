@@ -1,14 +1,13 @@
 PORTNAME=	veloren
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
-PORTREVISION=	1
+PORTVERSION=	s20230118
 CATEGORIES=	games wayland
 .if !make(makesum)
 MASTER_SITES=	LOCAL/jbeich
 .endif
+PKGNAMESUFFIX=	-weekly
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Multiplayer voxel RPG written in Rust
+COMMENT=	Multiplayer voxel RPG written in Rust (weekly snapshot)
 WWW=		https://veloren.net/
 
 LICENSE=	GPLv3
@@ -27,7 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cargo xorg
 USE_XORG=	xcb
 USE_GITLAB=	yes
-GL_COMMIT=	185dccc1cc1498d810de907b26699c85bfd1bac0
+GL_COMMIT=	da9cd79973d553620a37be80eb6ba2f8d0073fe1
 CARGO_ENV=	VELOREN_USERDATA_STRATEGY=system SHADERC_LIB_DIR="${LOCALBASE}/lib"
 PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		bin/${PORTNAME}-voxygen \
@@ -35,7 +34,7 @@ PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		share/pixmaps/net.veloren.veloren.png
 PORTDATA=	*
 
-CONFLICTS_INSTALL=	${PORTNAME}-weekly
+CONFLICTS_INSTALL=	${PORTNAME}
 
 # Fixes error "Instruction does not dominate all uses!"
 LTO_UNSAFE=	yes
