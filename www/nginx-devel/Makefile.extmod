@@ -259,7 +259,7 @@ OPENTRACING_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-opentracing-opentracing
 
 PASSENGER_NGINX_VER=	6.0.15
 PASSENGER_CATEGORIES=	ruby
-PASSENGER_USE=		ruby=yes
+PASSENGER_USES=		ruby
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
 PASSENGER_RAKE_BIN=	${LOCALBASE}/bin/rake
 PASSENGER_MASTER_SITES=	https://s3.amazonaws.com/phusion-passenger/releases/:passenger
