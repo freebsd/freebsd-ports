@@ -17,7 +17,7 @@ USES+=		compiler:c11 gmake
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-CONFLICTS_INSTALL=	redis redis-devel # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis redis-devel redis62 # etc/rc.d/redis
 
 PORTSCOUT=	limit:^6\.0
 

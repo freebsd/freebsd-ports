@@ -18,7 +18,7 @@ GH_TAGNAME=	b4123663c
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-CONFLICTS_INSTALL=	redis redis6 # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis redis6 redis62 # etc/rc.d/redis
 
 PORTSCOUT=	ignore:1
 
