@@ -3,7 +3,7 @@ PORTVERSION=	0.0.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	linpct@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD send-pr command line tool for Bugzilla system
 WWW=		https://github.com/pct/mothra
 
