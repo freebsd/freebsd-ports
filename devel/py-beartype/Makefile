@@ -1,5 +1,5 @@
 PORTNAME=	beartype
-DISTVERSION=	0.11.0
+DISTVERSION=	0.12.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python:3.7+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # tests fail, see https://github.com/beartype/beartype/issues/207
 
 NO_ARCH=	yes
 
