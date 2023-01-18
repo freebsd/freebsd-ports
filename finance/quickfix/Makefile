@@ -34,7 +34,7 @@ MYSQL_USES=	mysql
 MYSQL_CONFIGURE_WITH=	mysql
 PYTHON_USES=	python:3.7
 PYTHON_CONFIGURE_WITH=	python3
-RUBY_USE=	ruby=yes
+RUBY_USES=	ruby
 RUBY_CONFIGURE_WITH=	ruby
 RUBY_LIB_DEPENDS+=libunwind.so:devel/libunwind
 JAVA_USE=	java=yes
