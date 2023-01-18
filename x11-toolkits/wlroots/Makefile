@@ -9,7 +9,7 @@ PATCHFILES+=	fc0854d5f256.patch:-p1:github # https://gitlab.freedesktop.org/wlro
 PATCHFILES+=	29cb694655db.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
 PATCHFILES+=	91a8ff42d26e.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	bc8260f377b5.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3959
+PATCHFILES+=	ad5175118b74.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3965
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
