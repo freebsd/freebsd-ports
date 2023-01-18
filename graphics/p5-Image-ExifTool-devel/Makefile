@@ -5,7 +5,7 @@ MASTER_SITES=	https://exiftool.org/
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	linpct@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script and Perl module to read/write meta data in files
 WWW=		https://exiftool.org/
 

@@ -3,7 +3,7 @@ PORTVERSION=	0.3.6
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
-MAINTAINER=	linpct@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bugzilla API Client
 WWW=		https://github.com/jwaterfaucett/rodzilla
 
