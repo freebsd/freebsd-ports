@@ -1,5 +1,5 @@
 PORTNAME=	dipy
-DISTVERSION=	1.5.0
+DISTVERSION=	1.6.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,9 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.7+
-USE_PYTHON=	distutils cython concurrent autoplist # pkg-plist also exists and contains files missing from the python-generated plist
+USE_PYTHON=	distutils cython concurrent autoplist pytest # pkg-plist also exists and contains files missing from the python-generated plist
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/*/*.so
