@@ -1,7 +1,3 @@
-TIMESTAMP = 1607285991
-SHA256 (LibVNC-libvncserver-LibVNCServer-0.9.13_GH0.tar.gz) = 0ae5bb9175dc0a602fe85c1cf591ac47ee5247b87f2bf164c16b05f87cbfa81a
-SIZE (LibVNC-libvncserver-LibVNCServer-0.9.13_GH0.tar.gz) = 567491
-SHA256 (132c1389390c.patch) = 7341d071799619cc3367e1a3ab1df1d54db97dfeac59d548df4582c75c8b1803
-SIZE (132c1389390c.patch) = 1444
-SHA256 (0becaf749e83.patch) = 2454e06420294d21ff77c24d4c6603c92aa3baff4397b16e7c7a51122c56e8ca
-SIZE (0becaf749e83.patch) = 3258
+TIMESTAMP = 1674074583
+SHA256 (LibVNC-libvncserver-LibVNCServer-0.9.14_GH0.tar.gz) = 83104e4f7e28b02f8bf6b010d69b626fae591f887e949816305daebae527c9a5
+SIZE (LibVNC-libvncserver-LibVNCServer-0.9.14_GH0.tar.gz) = 593516
