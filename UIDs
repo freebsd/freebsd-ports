@@ -262,7 +262,7 @@ _fastdfs:*:313:313::0:0:FastDFS Owner:/nonexistent:/usr/sbin/nologin
 promscale:*:314:314::0:0:Promscale:/nonexistent:/usr/sbin/nologin
 lavinmq:*:315:315::0:0:LavinMQ user:/nonexistent:/usr/sbin/nologin
 nut:*:316:316::0:0:Network UPS Tools user:/nonexistent:/usr/sbin/nologin
-# free: 317
+hedgedoc:*:317:317::0:0:HedgeDoc user:/nonexistent:/usr/sbin/nologin
 # free: 318
 # free: 319
 # free: 320

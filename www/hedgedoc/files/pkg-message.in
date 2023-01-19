@@ -1,0 +1,40 @@
+[
+{ type: install
+  message: <<EOM
+Congratulations, you have installed Hedgedoc!
+
+To enable hedgedoc you need to add following to your /etc/rc.conf:
+
+	hedgedoc_enable=YES
+	# hedgedoc_port=3000
+
+- config samples are located in %%PREFIX%%/etc/hedgedoc/
+- customise config.json before running %%PORTNAME%%
+- most settings can be provided in the json file, or via env vars
+- the sqlite database option stores files in /var/db/%%PORTNAME%%
+- using a reverse proxy in front of %%PORTNAME%% is strongly advised;
+  see https://docs.hedgedoc.org/guides/reverse-proxy/ for details
+- the default HTTP port is 3000
+
+After installation, modify config.json to match your site, referring
+to docs or to the community support forums:
+
+https://docs.hedgedoc.org/
+https://community.hedgedoc.org/
+
+In most cases, it is sufficient to trim out all settings you do not
+require, set allowOrigin, domain, host, DB, and any third-pary auth
+such as ldap or github, that you require.
+
+See https://sequelize.org/v5/manual/dialects.html for details on
+configuring DB access, this port supports PostgreSQL and SQLite.
+
+EOM
+}
+{ type: remove
+  message: <<EOM
+If you wish to delete hedgedoc data, remove /var/db/hedgedoc and
+%%PREFIX%%/etc/hedgedoc/ contents.
+EOM
+}
+]
