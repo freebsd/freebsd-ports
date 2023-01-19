@@ -48,4 +48,8 @@ CFLAGS+=	-maltivec -mvsx
 PATCHFILES=	${DISTNAME}-apng.patch.gz:-p1
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|CMAKE_DEBUG_POSTFIX "d"|CMAKE_DEBUG_POSTFIX ""|g' \
+		${PATCH_WRKSRC}/CMakeLists.txt
+
 .include <bsd.port.mk>
