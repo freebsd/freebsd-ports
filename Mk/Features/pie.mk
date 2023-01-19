@@ -9,6 +9,7 @@ PIE_CFLAGS?=	-fPIE -fPIC
 CFLAGS+=	${PIE_CFLAGS}
 CXXFLAGS+=	${PIE_CFLAGS}
 LDFLAGS+=	-pie
+STATIC_PIE_ARGS+=	-static-pie
 .  endif
 .endif
 
