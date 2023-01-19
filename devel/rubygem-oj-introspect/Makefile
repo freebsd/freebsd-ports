@@ -10,7 +10,7 @@ WWW=		https://github.com/meinac/oj-introspect
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-MY_DEPENDS=	rubygem-oj>=3.13.23<3.14:devel/rubygem-oj
+MY_DEPENDS=	rubygem-oj>=3.13.23_2<3.14:devel/rubygem-oj
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 
