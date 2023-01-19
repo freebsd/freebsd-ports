@@ -1,8 +1,15 @@
 include/suitesparse/SuiteSparse_config.h
 lib/cmake/SuiteSparse/FindSuiteSparse_config.cmake
+lib/cmake/SuiteSparse/SuiteSparseBLAS.cmake
+lib/cmake/SuiteSparse/SuiteSparseBLAS32.cmake
+lib/cmake/SuiteSparse/SuiteSparseBLAS64.cmake
+lib/cmake/SuiteSparse/SuiteSparseLAPACK.cmake
+lib/cmake/SuiteSparse/SuiteSparsePolicy.cmake
+lib/cmake/SuiteSparse/SuiteSparseReport.cmake
+lib/cmake/SuiteSparse/SuiteSparse_ssize_t.cmake
 lib/libsuitesparseconfig.a
 lib/libsuitesparseconfig.so
-lib/libsuitesparseconfig.so.6
-lib/libsuitesparseconfig.so.6.0.3
+lib/libsuitesparseconfig.so.7
+lib/libsuitesparseconfig.so.7.0.0
 %%PORTDOCS%%%%DOCSDIR%%/SuiteSparse_README.md
 %%PORTDOCS%%%%DOCSDIR%%/config_README.txt

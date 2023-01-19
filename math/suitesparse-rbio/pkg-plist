@@ -3,5 +3,5 @@ lib/cmake/SuiteSparse/FindRBio.cmake
 lib/librbio.a
 lib/librbio.so
 lib/librbio.so.3
-lib/librbio.so.3.0.2
+lib/librbio.so.3.0.3
 %%PORTDOCS%%%%DOCSDIR%%/RBio_README.txt
