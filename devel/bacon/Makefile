@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0
-PORTREVISION=	1
+DISTVERSION=	2.5.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +20,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		aho-corasick-0.7.20 \
 		android_system_properties-0.1.5 \
 		anyhow-1.0.68 \
-		arc-swap-1.5.1 \
+		arc-swap-1.6.0 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.2 \
 		atoi-2.0.0 \
@@ -33,7 +32,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		bumpalo-3.11.1 \
 		bytes-1.3.0 \
 		bytesize-1.1.0 \
-		camino-1.1.1 \
+		camino-1.1.2 \
 		cargo-platform-0.1.2 \
 		cargo_metadata-0.14.2 \
 		castaway-0.2.2 \
@@ -60,10 +59,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		crossbeam-utils-0.8.14 \
 		crossterm-0.23.2 \
 		crossterm_winapi-0.9.0 \
-		cxx-1.0.83 \
-		cxx-build-1.0.83 \
-		cxxbridge-flags-1.0.83 \
-		cxxbridge-macro-1.0.83 \
+		cxx-1.0.86 \
+		cxx-build-1.0.86 \
+		cxxbridge-flags-1.0.86 \
+		cxxbridge-macro-1.0.86 \
 		dashmap-5.4.0 \
 		directories-next-2.0.0 \
 		dirs-4.0.0 \
@@ -81,7 +80,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		git-attributes-0.7.0 \
 		git-bitmap-0.2.0 \
 		git-chunk-0.4.0 \
-		git-command-0.2.0 \
+		git-command-0.2.2 \
 		git-config-0.13.0 \
 		git-config-value-0.10.0 \
 		git-credentials-0.8.0 \
@@ -89,7 +88,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		git-diff-0.24.0 \
 		git-discover-0.10.0 \
 		git-features-0.25.1 \
-		git-glob-0.5.1 \
+		git-glob-0.5.2 \
 		git-hash-0.10.1 \
 		git-hashtable-0.1.0 \
 		git-index-0.10.0 \
@@ -99,20 +98,20 @@ CARGO_CRATES=	adler-1.0.2 \
 		git-odb-0.38.1 \
 		git-pack-0.28.0 \
 		git-path-0.7.0 \
-		git-prompt-0.3.0 \
+		git-prompt-0.3.1 \
 		git-quote-0.4.0 \
 		git-ref-0.21.0 \
 		git-refspec-0.5.0 \
 		git-repository-0.30.2 \
 		git-revision-0.8.0 \
-		git-sec-0.6.0 \
-		git-tempfile-3.0.0 \
+		git-sec-0.6.1 \
+		git-tempfile-3.0.1 \
 		git-traverse-0.20.0 \
 		git-url-0.12.2 \
 		git-validate-0.7.1 \
 		git-worktree-0.10.0 \
 		hashbrown-0.12.3 \
-		hashbrown-0.13.1 \
+		hashbrown-0.13.2 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.2.6 \
@@ -128,15 +127,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
 		io-close-0.3.7 \
-		itoa-1.0.4 \
+		itoa-1.0.5 \
 		js-sys-0.3.60 \
 		jwalk-0.8.1 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
-		lazy-regex-2.3.1 \
-		lazy-regex-proc_macros-2.3.1 \
-		libc-0.2.138 \
-		link-cplusplus-1.0.7 \
+		lazy-regex-2.4.1 \
+		lazy-regex-proc_macros-2.4.1 \
+		libc-0.2.139 \
+		link-cplusplus-1.0.8 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		memchr-2.5.0 \
@@ -147,44 +146,44 @@ CARGO_CRATES=	adler-1.0.2 \
 		miniz_oxide-0.6.2 \
 		mio-0.8.5 \
 		nix-0.26.1 \
-		nom-7.1.1 \
+		nom-7.1.2 \
 		notify-5.0.0 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
 		num_threads-0.1.6 \
-		once_cell-1.16.0 \
+		once_cell-1.17.0 \
 		os_str_bytes-6.4.1 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.8.6 \
-		parking_lot_core-0.9.5 \
+		parking_lot_core-0.9.6 \
 		percent-encoding-2.2.0 \
 		pin-project-lite-0.2.9 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.47 \
+		proc-macro2-1.0.49 \
 		proc-status-0.1.1 \
 		prodash-22.1.0 \
 		quick-error-2.0.1 \
-		quote-1.0.21 \
+		quote-1.0.23 \
 		rayon-1.6.1 \
 		rayon-core-1.10.1 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.7.0 \
+		regex-1.7.1 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
 		rustversion-1.0.11 \
-		ryu-1.0.11 \
+		ryu-1.0.12 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		scratch-1.0.2 \
-		semver-1.0.14 \
-		serde-1.0.150 \
-		serde_derive-1.0.150 \
-		serde_json-1.0.89 \
+		scratch-1.0.3 \
+		semver-1.0.16 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.91 \
 		sha1_smol-1.0.0 \
 		signal-hook-0.3.14 \
 		signal-hook-mio-0.2.3 \
@@ -193,26 +192,26 @@ CARGO_CRATES=	adler-1.0.2 \
 		socket2-0.4.7 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
-		syn-1.0.105 \
+		syn-1.0.107 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
 		termimad-0.20.6 \
 		textwrap-0.16.0 \
-		thiserror-1.0.37 \
-		thiserror-impl-1.0.37 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
 		time-0.1.45 \
 		time-0.3.17 \
 		time-core-0.1.0 \
 		time-macros-0.2.6 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.23.0 \
+		tokio-1.24.1 \
 		tokio-macros-1.8.2 \
 		toml-0.5.10 \
 		uluru-3.0.0 \
 		unicode-bidi-0.3.8 \
 		unicode-bom-1.1.4 \
-		unicode-ident-1.0.5 \
+		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
 		url-2.3.1 \
@@ -232,21 +231,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.40.0 \
+		windows-0.43.0 \
 		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.40.0 \
 		windows_aarch64_gnullvm-0.42.0 \
-		windows_aarch64_msvc-0.40.0 \
 		windows_aarch64_msvc-0.42.0 \
-		windows_i686_gnu-0.40.0 \
 		windows_i686_gnu-0.42.0 \
-		windows_i686_msvc-0.40.0 \
 		windows_i686_msvc-0.42.0 \
-		windows_x86_64_gnu-0.40.0 \
 		windows_x86_64_gnu-0.42.0 \
-		windows_x86_64_gnullvm-0.40.0 \
 		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.40.0 \
 		windows_x86_64_msvc-0.42.0
 
 PLIST_FILES=	bin/${PORTNAME}
