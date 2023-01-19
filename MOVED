@@ -17757,4 +17757,3 @@ devel/xtoolchain-llvm80||2023-01-15|Depends on removed old llvm ports
 devel/xtoolchain-llvm90||2023-01-15|Depends on removed old llvm ports
 net-p2p/tootle|net-p2p/tooth|2023-01-16|Upstream archived, forked
 lang/zig-devel|lang/zig|2023-01-19|Development version no longer necessary
-
