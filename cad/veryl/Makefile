@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	veryl-v
-DISTVERSION=	0.2.0
+DISTVERSION=	0.2.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -175,6 +175,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		parol-0.16.0 \
 		parol-macros-0.2.0 \
 		parol_runtime-0.12.1 \
+		paste-1.0.11 \
 		percent-encoding-2.2.0 \
 		pest-2.5.3 \
 		pest_derive-2.5.3 \
@@ -211,7 +212,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		remove_dir_all-0.5.3 \
 		ropey-1.5.1 \
 		rustc-demangle-0.1.21 \
-		rustix-0.36.6 \
+		rustix-0.36.7 \
 		rustls-pemfile-0.2.1 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
@@ -278,7 +279,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ucd-trie-0.1.5 \
 		ume-0.1.0 \
 		unicase-2.6.0 \
-		unicode-bidi-0.3.8 \
+		unicode-bidi-0.3.9 \
 		unicode-ident-1.0.6 \
 		unicode-linebreak-0.1.4 \
 		unicode-normalization-0.1.22 \
