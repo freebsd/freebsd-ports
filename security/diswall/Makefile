@@ -1,7 +1,6 @@
 PORTNAME=	diswall
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
-PORTREVISION=	1
+DISTVERSION=	0.3.0
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -59,7 +58,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		generic-array-0.14.5 \
 		getopts-0.2.21 \
 		getrandom-0.2.5 \
-		hashbrown-0.11.2 \
+		hashbrown-0.12.3 \
 		hostname-0.3.1 \
 		idna-0.2.3 \
 		instant-0.1.12 \
@@ -67,17 +66,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		js-sys-0.3.56 \
 		json-0.12.4 \
 		lazy_static-1.4.0 \
-		libc-0.2.133 \
+		libc-0.2.139 \
 		lock_api-0.4.6 \
 		log-0.4.17 \
-		lru-0.7.6 \
+		lru-0.8.1 \
 		match_cfg-0.1.0 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
-		memoffset-0.6.5 \
+		memoffset-0.7.1 \
 		miniz_oxide-0.5.1 \
 		nats-0.23.0 \
-		nix-0.25.0 \
+		nix-0.26.2 \
 		nkeys-0.2.0 \
 		nuid-0.3.2 \
 		num_threads-0.1.5 \
@@ -130,6 +129,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		sqlite-0.27.0 \
 		sqlite3-src-0.4.0 \
 		sqlite3-sys-0.14.0 \
+		static_assertions-1.1.0 \
 		subtle-2.4.1 \
 		syn-1.0.92 \
 		synstructure-0.12.6 \
