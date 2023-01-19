@@ -1,0 +1,9 @@
+--- requirements/windows.txt.orig	2023-01-17 17:43:46 UTC
++++ requirements/windows.txt
+@@ -1,5 +1,5 @@ ipython>=7.31.1,<9
+ cloudpickle
+ ipykernel>=6.16.1,<7
+ ipython>=7.31.1,<9
+-jupyter_client>=7.4.9,<8
++jupyter_client>=7.4.7
+ pyzmq>=22.1.0
