@@ -226,9 +226,8 @@ LUA_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
 LUA_RUN_DEPENDS=	lua-resty-core>0:www/lua-resty-core
 LUA_CONFIGURE_ENV=	LUAJIT_INC=${LOCALBASE}/include/luajit-2.1 \
 			LUAJIT_LIB=${LOCALBASE}/lib
-LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.22:lua
+LUA_GH_TUPLE=		openresty:lua-nginx-module:v0.10.23rc1:lua
 LUA_VARS=		DSO_EXTMODS+=lua
-LUA_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-lua-nginx-module:-p1
 
 LINK_GH_TUPLE=		Taymindis:nginx-link-function:3.2.4:link
 LINK_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-link-function-config \
