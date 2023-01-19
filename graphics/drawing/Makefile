@@ -2,7 +2,7 @@ PORTNAME=	drawing
 DISTVERSION=	0.8.5
 CATEGORIES=	graphics
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Drawing application for the GNOME desktop
 WWW=		https://maoschanz.github.io/drawing/
 
