@@ -257,7 +257,7 @@ OPENTRACING_LIB_DEPENDS=	libopentracing.so:devel/libopentracing
 OPENTRACING_VARS=		DSO_EXTMODS+=opentracing OPENTRACING_SUBDIR=/opentracing
 OPENTRACING_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-nginx-opentracing-opentracing-config
 
-PASSENGER_NGINX_VER=	6.0.15
+PASSENGER_NGINX_VER=	6.0.16
 PASSENGER_CATEGORIES=	ruby
 PASSENGER_USES=		ruby
 PASSENGER_BUILD_DEPENDS=${LOCALBASE}/bin/rake:devel/rubygem-rake
