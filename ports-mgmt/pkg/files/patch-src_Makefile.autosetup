@@ -1,0 +1,11 @@
+--- src/Makefile.autosetup.orig	2022-12-11 18:22:41 UTC
++++ src/Makefile.autosetup
+@@ -93,7 +93,7 @@ pkg-static: $(OBJS) $(top_builddir)/libpkg/libpkg_flat
+ install: install-static
+ 
+ pkg-static: $(OBJS) $(top_builddir)/libpkg/libpkg_flat.a
+-	$(CC) -o $@ $(OBJS) $(STATIC_ARG) $(LDFLAGS) $(STATIC_LDFLAGS)
++	$(CC) -o $@ $(OBJS) $(STATIC_ARG) $(STATIC_LDFLAGS)
+ 
+ install-static: pkg-static
+ 	install -d -m 755 $(DESTDIR)$(sbindir)
