@@ -1,6 +1,5 @@
 PORTNAME=	arrow-datafusion
-DISTVERSION=	15.0.0
-PORTREVISION=	1
+DISTVERSION=	16.0.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,23 +24,25 @@ CARGO_CRATES=	adler-1.0.2 \
 		android_system_properties-0.1.5 \
 		arrayref-0.3.6 \
 		arrayvec-0.7.2 \
-		arrow-28.0.0 \
-		arrow-array-28.0.0 \
-		arrow-buffer-28.0.0 \
-		arrow-cast-28.0.0 \
-		arrow-csv-28.0.0 \
-		arrow-data-28.0.0 \
-		arrow-ipc-28.0.0 \
-		arrow-json-28.0.0 \
-		arrow-schema-28.0.0 \
-		arrow-select-28.0.0 \
+		arrow-29.0.0 \
+		arrow-array-29.0.0 \
+		arrow-buffer-29.0.0 \
+		arrow-cast-29.0.0 \
+		arrow-csv-29.0.0 \
+		arrow-data-29.0.0 \
+		arrow-ipc-29.0.0 \
+		arrow-json-29.0.0 \
+		arrow-ord-29.0.0 \
+		arrow-schema-29.0.0 \
+		arrow-select-29.0.0 \
+		arrow-string-29.0.0 \
 		async-compression-0.3.15 \
-		async-trait-0.1.59 \
+		async-trait-0.1.61 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		base64-0.13.1 \
 		bitflags-1.3.2 \
-		blake2-0.10.5 \
+		blake2-0.10.6 \
 		blake3-1.3.3 \
 		block-buffer-0.10.3 \
 		brotli-3.3.4 \
@@ -50,20 +51,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		bumpalo-3.11.1 \
 		byteorder-1.4.3 \
 		bytes-1.3.0 \
-		bzip2-0.4.3 \
+		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
-		cc-1.0.77 \
+		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
 		clap-3.2.23 \
-		clap-4.0.29 \
 		clap_derive-3.2.18 \
-		clap_derive-4.0.21 \
 		clap_lex-0.2.4 \
-		clap_lex-0.3.0 \
 		clipboard-win-4.4.2 \
 		codespan-reporting-0.11.1 \
-		comfy-table-6.1.3 \
+		comfy-table-6.1.4 \
 		const-random-0.1.15 \
 		const-random-macro-0.1.15 \
 		constant_time_eq-0.2.4 \
@@ -74,12 +72,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		crypto-common-0.1.6 \
 		csv-1.1.6 \
 		csv-core-0.1.10 \
-		cxx-1.0.82 \
-		cxx-build-1.0.82 \
-		cxxbridge-flags-1.0.82 \
-		cxxbridge-macro-1.0.82 \
+		cxx-1.0.85 \
+		cxx-build-1.0.85 \
+		cxxbridge-flags-1.0.85 \
+		cxxbridge-macro-1.0.85 \
 		dashmap-5.4.0 \
-		difference-2.0.0 \
 		digest-0.10.6 \
 		dirs-4.0.0 \
 		dirs-next-2.0.0 \
@@ -110,9 +107,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		futures-util-0.3.25 \
 		generic-array-0.14.6 \
 		getrandom-0.2.8 \
-		glob-0.3.0 \
+		glob-0.3.1 \
 		h2-0.3.15 \
-		half-2.1.0 \
+		half-2.2.0 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.1 \
 		heck-0.4.0 \
@@ -124,7 +121,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		httpdate-1.0.2 \
 		humantime-2.1.0 \
 		hyper-0.14.23 \
-		hyper-rustls-0.23.1 \
+		hyper-rustls-0.23.2 \
 		iana-time-zone-0.1.53 \
 		iana-time-zone-haiku-0.1.1 \
 		idna-0.3.0 \
@@ -132,11 +129,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		instant-0.1.12 \
 		integer-encoding-3.0.4 \
 		io-lifetimes-1.0.3 \
-		ipnet-2.5.1 \
-		is-terminal-0.4.1 \
+		ipnet-2.7.0 \
 		itertools-0.10.5 \
 		itoa-0.4.8 \
-		itoa-1.0.4 \
+		itoa-1.0.5 \
 		jobserver-0.1.25 \
 		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
@@ -146,12 +142,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		lexical-util-0.8.5 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
-		libc-0.2.137 \
+		libc-0.2.139 \
 		libm-0.2.6 \
-		libmimalloc-sys-0.1.28 \
-		libtest-mimic-0.6.0 \
-		link-cplusplus-1.0.7 \
-		linux-raw-sys-0.1.3 \
+		libmimalloc-sys-0.1.30 \
+		link-cplusplus-1.0.8 \
+		linux-raw-sys-0.1.4 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		lz4-1.24.0 \
@@ -159,14 +154,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		lzma-sys-0.1.20 \
 		md-5-0.10.5 \
 		memchr-2.5.0 \
-		mimalloc-0.1.32 \
+		mimalloc-0.1.34 \
 		mime-0.3.16 \
 		miniz_oxide-0.6.2 \
 		mio-0.8.5 \
 		multiversion-0.6.1 \
 		multiversion-macros-0.6.1 \
 		nibble_vec-0.1.0 \
-		nix-0.24.2 \
+		nix-0.24.3 \
 		num-0.4.0 \
 		num-bigint-0.4.3 \
 		num-complex-0.4.2 \
@@ -174,15 +169,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		num-iter-0.1.43 \
 		num-rational-0.4.1 \
 		num-traits-0.2.15 \
-		num_cpus-1.14.0 \
-		object_store-0.5.1 \
-		once_cell-1.16.0 \
+		num_cpus-1.15.0 \
+		object_store-0.5.2 \
+		once_cell-1.17.0 \
 		ordered-float-2.10.0 \
 		os_str_bytes-6.4.1 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.5 \
-		parquet-28.0.0 \
-		paste-1.0.9 \
+		parquet-29.0.0 \
+		paste-1.0.11 \
 		percent-encoding-2.2.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
@@ -190,10 +185,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		ppv-lite86-0.2.17 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.47 \
-		quick-xml-0.25.0 \
-		quote-1.0.21 \
+		proc-macro-hack-0.5.20+deprecated \
+		proc-macro2-1.0.49 \
+		quick-xml-0.26.0 \
+		quote-1.0.23 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -206,49 +201,48 @@ CARGO_CRATES=	adler-1.0.2 \
 		remove_dir_all-0.5.3 \
 		reqwest-0.11.13 \
 		ring-0.16.20 \
-		rustix-0.36.4 \
+		rustix-0.36.6 \
 		rustls-0.20.7 \
 		rustls-pemfile-1.0.1 \
-		rustversion-1.0.9 \
+		rustversion-1.0.11 \
 		rustyline-10.0.0 \
-		ryu-1.0.11 \
+		ryu-1.0.12 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		scratch-1.0.2 \
+		scratch-1.0.3 \
 		sct-0.7.0 \
-		seq-macro-0.3.1 \
-		serde-1.0.148 \
-		serde_derive-1.0.148 \
-		serde_json-1.0.89 \
+		seq-macro-0.3.2 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.91 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.6 \
 		slab-0.4.7 \
 		smallvec-1.10.0 \
-		snafu-0.7.3 \
-		snafu-derive-0.7.3 \
+		snafu-0.7.4 \
+		snafu-derive-0.7.4 \
 		snap-1.1.0 \
 		socket2-0.4.7 \
 		spin-0.5.2 \
-		sqllogictest-0.8.0 \
-		sqlparser-0.27.0 \
+		sqlparser-0.30.0 \
+		sqlparser_derive-0.1.1 \
 		static_assertions-1.1.0 \
 		str-buf-1.0.6 \
 		strsim-0.10.0 \
 		strum-0.24.1 \
 		strum_macros-0.24.3 \
 		subtle-2.4.1 \
-		syn-1.0.105 \
+		syn-1.0.107 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
 		textwrap-0.16.0 \
-		thiserror-1.0.37 \
-		thiserror-impl-1.0.37 \
-		threadpool-1.8.1 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
 		thrift-0.17.0 \
 		tiny-keccak-2.0.2 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.22.0 \
+		tokio-1.24.1 \
 		tokio-macros-1.8.2 \
 		tokio-rustls-0.23.4 \
 		tokio-stream-0.1.11 \
@@ -257,11 +251,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		tracing-0.1.37 \
 		tracing-attributes-0.1.23 \
 		tracing-core-0.1.30 \
-		try-lock-0.2.3 \
+		try-lock-0.2.4 \
 		twox-hash-1.6.3 \
-		typenum-1.15.0 \
+		typenum-1.16.0 \
 		unicode-bidi-0.3.8 \
-		unicode-ident-1.0.5 \
+		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.0 \
 		unicode-width-0.1.10 \
@@ -281,7 +275,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		wasm-bindgen-shared-0.2.83 \
 		web-sys-0.3.60 \
 		webpki-0.22.0 \
-		webpki-roots-0.22.5 \
+		webpki-roots-0.22.6 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
@@ -296,7 +290,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_msvc-0.42.0 \
 		winreg-0.10.1 \
 		xz2-0.1.7 \
-		zstd-0.12.0+zstd.1.5.2 \
+		zstd-0.12.1+zstd.1.5.2 \
 		zstd-safe-6.0.2+zstd.1.5.2 \
 		zstd-sys-2.0.4+zstd.1.5.2
 
