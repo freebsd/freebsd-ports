@@ -1,7 +1,6 @@
 PORTNAME=	the-way
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
-PORTREVISION=	1
+DISTVERSION=	0.19.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,41 +18,38 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
 		aho-corasick-0.7.18 \
 		android_system_properties-0.1.4 \
-		ansi_term-0.12.1 \
-		arrayvec-0.5.2 \
-		assert_cmd-2.0.4 \
+		arrayvec-0.7.2 \
+		assert_cmd-2.0.8 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		backtrace-0.3.66 \
-		base-x-0.2.11 \
 		base64-0.13.0 \
 		beef-0.5.2 \
 		bincode-1.3.3 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
-		bitflags-1.2.1 \
+		bitflags-1.3.2 \
 		block-0.1.6 \
-		bstr-0.2.17 \
+		bstr-1.1.0 \
 		bumpalo-3.11.0 \
 		byteorder-1.4.3 \
 		cc-1.0.73 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
-		chrono-0.4.22 \
+		chrono-0.4.23 \
 		chrono-english-0.1.7 \
-		chunked_transfer-1.4.0 \
-		clap-2.34.0 \
-		clap-3.2.17 \
-		clap_complete-3.2.4 \
-		clap_derive-3.2.17 \
+		clap-3.2.23 \
+		clap-4.1.1 \
+		clap_complete-4.1.0 \
+		clap_derive-4.1.0 \
 		clap_lex-0.2.4 \
+		clap_lex-0.3.0 \
 		clipboard-0.5.0 \
 		clipboard-win-2.2.0 \
 		color-eyre-0.6.2 \
-		confy-0.4.0 \
+		confy-0.5.1 \
 		conpty-0.3.0 \
 		console-0.15.1 \
-		const_fn-0.4.9 \
 		core-foundation-sys-0.8.3 \
 		crc32fast-1.3.2 \
 		crossbeam-0.8.2 \
@@ -64,25 +60,27 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		crossbeam-queue-0.3.6 \
 		crossbeam-utils-0.7.2 \
 		crossbeam-utils-0.8.11 \
-		darling-0.10.2 \
-		darling_core-0.10.2 \
-		darling_macro-0.10.2 \
+		darling-0.14.2 \
+		darling_core-0.14.2 \
+		darling_macro-0.14.2 \
 		defer-drop-1.2.0 \
-		derive_builder-0.9.0 \
-		derive_builder_core-0.9.0 \
-		dialoguer-0.10.2 \
+		derive_builder-0.11.2 \
+		derive_builder_core-0.11.2 \
+		derive_builder_macro-0.11.2 \
+		dialoguer-0.10.3 \
 		difflib-0.4.0 \
-		directories-2.0.2 \
+		directories-4.0.1 \
 		directories-next-1.0.3 \
 		dirs-next-2.0.0 \
 		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
-		discard-1.0.4 \
 		doc-comment-0.3.3 \
 		either-1.8.0 \
 		encode_unicode-0.3.6 \
-		env_logger-0.8.4 \
-		expectrl-0.5.2 \
+		env_logger-0.9.3 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
+		expectrl-0.6.0 \
 		eyre-0.6.8 \
 		fancy-regex-0.7.1 \
 		fastrand-1.8.0 \
@@ -95,11 +93,12 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		fxhash-0.2.1 \
 		getrandom-0.2.7 \
 		gimli-0.26.2 \
-		globset-0.4.9 \
-		grep-cli-0.1.6 \
+		globset-0.4.10 \
+		grep-cli-0.1.7 \
 		hashbrown-0.12.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
 		hex-0.4.3 \
 		humantime-2.1.0 \
 		iana-time-zone-0.1.46 \
@@ -107,15 +106,18 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		idna-0.2.3 \
 		indenter-0.3.3 \
 		indexmap-1.9.1 \
-		indicatif-0.17.0 \
+		indicatif-0.17.3 \
 		instant-0.1.12 \
+		io-lifetimes-1.0.3 \
+		is-terminal-0.4.1 \
 		itertools-0.10.3 \
 		itoa-1.0.3 \
 		js-sys-0.3.59 \
 		lazy_static-1.4.0 \
-		libc-0.2.132 \
+		libc-0.2.138 \
 		line-wrap-0.1.1 \
 		linked-hash-map-0.5.6 \
+		linux-raw-sys-0.1.4 \
 		lock_api-0.4.7 \
 		log-0.4.17 \
 		malloc_buf-0.0.6 \
@@ -124,10 +126,9 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
 		miniz_oxide-0.5.3 \
-		nix-0.19.1 \
-		nix-0.21.2 \
-		nix-0.23.1 \
+		nix-0.21.0 \
 		nix-0.24.2 \
+		nix-0.25.1 \
 		normalize-line-endings-0.3.0 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
@@ -138,33 +139,34 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.1 \
 		object-0.29.0 \
-		once_cell-1.13.1 \
+		once_cell-1.16.0 \
 		os_str_bytes-6.3.0 \
 		owo-colors-3.5.0 \
 		parking_lot-0.11.2 \
 		parking_lot_core-0.8.5 \
 		percent-encoding-2.1.0 \
+		pin-utils-0.1.0 \
 		plist-1.3.1 \
-		predicates-2.1.1 \
+		portable-atomic-0.3.18 \
+		predicates-2.1.5 \
 		predicates-core-1.0.3 \
 		predicates-tree-1.0.5 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.43 \
+		proc-macro2-1.0.47 \
 		ptyprocess-0.3.0 \
 		quote-1.0.21 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.6.0 \
+		regex-1.7.1 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
 		ring-0.16.20 \
 		rustc-demangle-0.1.21 \
-		rustc_version-0.2.3 \
+		rustix-0.36.5 \
 		rustls-0.20.6 \
 		rustversion-1.0.9 \
 		ryu-1.0.11 \
@@ -173,63 +175,48 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		scanlex-0.1.4 \
 		scopeguard-1.1.0 \
 		sct-0.7.0 \
-		semver-0.9.0 \
-		semver-parser-0.7.0 \
-		serde-1.0.144 \
-		serde_derive-1.0.144 \
-		serde_json-1.0.85 \
-		serde_yaml-0.9.10 \
-		sha1-0.6.1 \
-		sha1_smol-1.0.0 \
-		shlex-0.1.1 \
-		skim-0.9.4 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.91 \
+		serde_yaml-0.9.16 \
+		shell-words-1.1.0 \
+		shlex-1.1.0 \
+		skim-0.10.2 \
 		sled-0.34.7 \
 		smallvec-1.9.0 \
 		spin-0.5.2 \
-		standback-0.2.17 \
-		stdweb-0.4.20 \
-		stdweb-derive-0.5.3 \
-		stdweb-internal-macros-0.2.9 \
-		stdweb-internal-runtime-0.1.5 \
-		strsim-0.8.0 \
-		strsim-0.9.3 \
 		strsim-0.10.0 \
 		strum-0.24.1 \
 		strum_macros-0.24.3 \
-		syn-1.0.99 \
+		syn-1.0.105 \
 		syntect-5.0.0 \
 		tempfile-3.3.0 \
 		term-0.7.0 \
-		termcolor-1.1.3 \
+		termcolor-1.2.0 \
 		terminal_size-0.1.17 \
 		termtree-0.2.4 \
-		textwrap-0.11.0 \
-		textwrap-0.15.0 \
-		thiserror-1.0.32 \
-		thiserror-impl-1.0.32 \
+		textwrap-0.16.0 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
 		thread_local-1.1.4 \
 		time-0.1.44 \
-		time-0.2.27 \
 		time-0.3.13 \
-		time-macros-0.1.1 \
-		time-macros-impl-0.1.2 \
 		timer-0.2.0 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.9 \
-		tuikit-0.4.6 \
+		tuikit-0.5.0 \
 		unicode-bidi-0.3.8 \
 		unicode-ident-1.0.3 \
 		unicode-normalization-0.1.21 \
 		unicode-width-0.1.9 \
-		unsafe-libyaml-0.2.2 \
+		unsafe-libyaml-0.2.4 \
 		untrusted-0.7.1 \
-		ureq-2.5.0 \
+		ureq-2.6.2 \
 		url-2.2.2 \
 		utf8parse-0.2.0 \
-		vec_map-0.8.2 \
 		version_check-0.9.4 \
-		vte-0.9.0 \
+		vte-0.11.0 \
 		vte_generate_state_changes-0.1.1 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
@@ -248,11 +235,19 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.29.0 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
 		windows_aarch64_msvc-0.29.0 \
+		windows_aarch64_msvc-0.42.0 \
 		windows_i686_gnu-0.29.0 \
+		windows_i686_gnu-0.42.0 \
 		windows_i686_msvc-0.29.0 \
+		windows_i686_msvc-0.42.0 \
 		windows_x86_64_gnu-0.29.0 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
 		windows_x86_64_msvc-0.29.0 \
+		windows_x86_64_msvc-0.42.0 \
 		x11-clipboard-0.3.3 \
 		xcb-0.8.2 \
 		xml-rs-0.8.4 \
