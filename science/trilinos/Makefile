@@ -1,7 +1,7 @@
 PORTNAME=	trilinos
 DISTVERSIONPREFIX=	trilinos-release-
 DISTVERSION=	13-4-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
