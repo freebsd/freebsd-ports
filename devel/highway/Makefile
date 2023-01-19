@@ -1,5 +1,5 @@
 PORTNAME=	highway
-DISTVERSION=	1.0.2
+DISTVERSION=	1.0.3
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
