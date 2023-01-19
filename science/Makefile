@@ -432,6 +432,7 @@
     SUBDIR += py-tobler
     SUBDIR += py-trainstation
     SUBDIR += py-tweedledum
+    SUBDIR += py-vedo
     SUBDIR += py-veusz
     SUBDIR += py-xbout
     SUBDIR += pybrain
