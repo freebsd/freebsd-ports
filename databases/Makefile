@@ -54,6 +54,7 @@
     SUBDIR += dbow
     SUBDIR += dbtool
     SUBDIR += dbview
+    SUBDIR += diesel
     SUBDIR += duckdb
     SUBDIR += ejdb
     SUBDIR += emacsql
