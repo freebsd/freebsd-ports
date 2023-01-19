@@ -5,6 +5,8 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	4050be7c1960.patch:-p1 # https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/5062
+PATCHFILES+=	d786eab65863.patch:-p1 # https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/5087
 PATCHFILES+=	f4d438f73a52.patch:-p1 # https://github.com/KhronosGroup/Vulkan-ValidationLayers/pull/5098
 
 MAINTAINER=	jbeich@FreeBSD.org

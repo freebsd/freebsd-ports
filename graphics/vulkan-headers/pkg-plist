@@ -38,6 +38,7 @@ include/vulkan/vulkan_xlib.h
 include/vulkan/vulkan_xlib_xrandr.h
 share/cmake/VulkanHeaders/VulkanHeadersConfig.cmake
 share/cmake/VulkanHeaders/VulkanHeadersConfigVersion.cmake
+share/cmake/VulkanHeaders/VulkanHeadersTargets.cmake
 share/vulkan/registry/apiconventions.py
 share/vulkan/registry/cgenerator.py
 share/vulkan/registry/generator.py
@@ -46,6 +47,7 @@ share/vulkan/registry/profiles/VP_KHR_roadmap_2022.json
 share/vulkan/registry/reg.py
 share/vulkan/registry/spec_tools/conventions.py
 share/vulkan/registry/spec_tools/util.py
+share/vulkan/registry/stripAPI.py
 share/vulkan/registry/validusage.json
 share/vulkan/registry/video.xml
 share/vulkan/registry/vk.xml

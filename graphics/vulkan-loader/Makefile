@@ -1,7 +1,13 @@
 PORTNAME=	vulkan-loader
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.238
+PORTREVISION=	1
 CATEGORIES=	graphics devel
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	7ed703eaa4df.patch:-p1 # https://github.com/KhronosGroup/Vulkan-Loader/pull/1101
+PATCHFILES+=	15b02f97238b.patch:-p1 # https://github.com/KhronosGroup/Vulkan-Loader/pull/1104
+PATCHFILES+=	4e1777a8ffbb.patch:-p1 # https://github.com/KhronosGroup/Vulkan-Loader/pull/1108
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Driver loader for the Vulkan graphics API

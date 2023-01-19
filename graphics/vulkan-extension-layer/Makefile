@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.238
 CATEGORIES=	graphics
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	fe0faaee1f40.patch:-p1 # https://github.com/KhronosGroup/Vulkan-ExtensionLayer/pull/159
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Layer providing Vulkan features when native support is unavailable
 WWW=		https://github.com/KhronosGroup/Vulkan-ExtensionLayer
