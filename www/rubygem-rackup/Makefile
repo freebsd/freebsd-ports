@@ -1,5 +1,5 @@
 PORTNAME=	rackup
-DISTVERSION=	0.2.3
+DISTVERSION=	2.0.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -8,9 +8,9 @@ COMMENT=	General server command for Rack applications
 WWW=		https://github.com/rack/rackup
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/license.md
 
-RUN_DEPENDS=	rubygem-rack>=3.0.0.beta1,3:www/rubygem-rack \
+RUN_DEPENDS=	rubygem-rack>=3,3:www/rubygem-rack \
 		rubygem-webrick>0:www/rubygem-webrick
 
 USES=		gem
