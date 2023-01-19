@@ -1,3 +1,71 @@
+  <vuln vid="95176ba5-9796-11ed-bfbf-080027f5fec9">
+    <topic>rack -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-rack</name>
+	<range><lt>3.0.4.1,3</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rack22</name>
+	<range><lt>2.2.6.2,3</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rack16</name>
+	<range><lt>1.6.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Aaron Patterson reports:</p>
+	<blockquote cite="https://github.com/rack/rack/blob/v3.0.4.1/CHANGELOG.md">
+	  <dl>
+	    <dt>CVE-2022-44570</dt>
+	    <dd>
+	      Carefully crafted input can cause the Range header
+	      parsing component in Rack to take an unexpected amount
+	      of time, possibly resulting in a denial of service
+	      attack vector. Any applications that deal with Range
+	      requests (such as streaming applications, or
+	      applications that serve files) may be impacted.
+	    </dd>
+	    <dt>CVE-2022-44571</dt>
+	    <dd>
+	      Carefully crafted input can cause Content-Disposition
+	      header parsing in Rack to take an unexpected amount of
+	      time, possibly resulting in a denial of service attack
+	      vector. This header is used typically used in multipart
+	      parsing. Any applications that parse multipart posts
+	      using Rack (virtually all Rails applications) are
+	      impacted.
+	    </dd>
+	    <dt>CVE-2022-44572</dt>
+	    <dd>
+	      Carefully crafted input can cause RFC2183 multipart
+	      boundary parsing in Rack to take an unexpected amount of
+	      time, possibly resulting in a denial of service attack
+	      vector. Any applications that parse multipart posts
+	      using Rack (virtually all Rails applications) are
+	      impacted.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-44570</cvename>
+      <cvename>CVE-2022-44571</cvename>
+      <cvename>CVE-2022-44572</cvename>
+      <url>https://github.com/rack/rack/blob/v3.0.4.1/CHANGELOG.md</url>
+      <url>https://github.com/advisories/GHSA-65f5-mfpf-vfhj</url>
+      <url>https://github.com/advisories/GHSA-93pm-5p5f-3ghx</url>
+      <url>https://github.com/advisories/GHSA-rqv2-275x-2jq5</url>
+    </references>
+    <dates>
+      <discovery>2023-01-17</discovery>
+      <entry>2023-01-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="00919005-96a3-11ed-86e9-d4c9ef517024">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
