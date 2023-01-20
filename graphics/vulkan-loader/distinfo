@@ -1,9 +1,3 @@
-TIMESTAMP = 1671529026
-SHA256 (KhronosGroup-Vulkan-Loader-v1.3.238_GH0.tar.gz) = 54efc088258e83304f105d6998adaa54340045f490884b2d136a8584d66cb861
-SIZE (KhronosGroup-Vulkan-Loader-v1.3.238_GH0.tar.gz) = 1646475
-SHA256 (7ed703eaa4df.patch) = fd5b04015704893a1f6a80f2ada1cd7f106ceebd0b98a15dfcad45a2fec39ab5
-SIZE (7ed703eaa4df.patch) = 13968
-SHA256 (15b02f97238b.patch) = 5fe7c34dbbf68f95fa810bcf2941da3a1f7b57725c8b593ec76761b38cd036c2
-SIZE (15b02f97238b.patch) = 5249
-SHA256 (4e1777a8ffbb.patch) = 3dbc60c21420e591aa82f9f27977d137d882d7088e2080997ba2536a50c584ae
-SIZE (4e1777a8ffbb.patch) = 1878
+TIMESTAMP = 1674231511
+SHA256 (KhronosGroup-Vulkan-Loader-v1.3.239_GH0.tar.gz) = dcdbe3f5362035ecc5ffce2140393de377038c44e00dfb8bae43816eec57dfc6
+SIZE (KhronosGroup-Vulkan-Loader-v1.3.239_GH0.tar.gz) = 1649613
