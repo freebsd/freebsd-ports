@@ -1,0 +1,11 @@
+--- Mathics3.egg-info/requires.txt.orig	2022-08-06 09:38:06 UTC
++++ Mathics3.egg-info/requires.txt
+@@ -1,7 +1,7 @@
+ Mathics-Scanner<1.3.0,>=1.2.1
+ numpy
+ llvmlite
+-sympy<1.11,>=1.8
++sympy<1.11.2,>=1.8
+ recordclass
+ Mathics_Scanner<1.3.0,>=1.2.1
+ mpmath>=1.2.0
