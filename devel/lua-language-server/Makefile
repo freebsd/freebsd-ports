@@ -1,5 +1,5 @@
 PORTNAME=	lua-language-server
-DISTVERSION=	3.6.6
+DISTVERSION=	3.6.7
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -19,7 +19,7 @@ GH_TUPLE=	actboy168:bee.lua:4da6416:bee/3rd/bee.lua \
 		actboy168:luamake:d5e957c:luamake/3rd/luamake \
 		cppcxy:EmmyLuaCodeStyle:9ffcbcb:emmyluacodestyle/3rd/EmmyLuaCodeStyle \
 		bjornbytes:lovr-docs:d3645ab:lovr/3rd/lovr-api \
-		love2d-community:love-api:17bcdfc:love/3rd/love-api \
+		love2d-community:love-api:bb3267e:love/3rd/love-api \
 		sqmedeiros:lpeglabel:f3745e2:lpeglabel/3rd/lpeglabel
 
 BINARY_ALIAS=	gcc=${CC}
