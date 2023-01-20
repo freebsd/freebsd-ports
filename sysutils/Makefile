@@ -569,6 +569,7 @@
     SUBDIR += iograph
     SUBDIR += iohyve
     SUBDIR += ioping
+    SUBDIR += ior
     SUBDIR += ipa
     SUBDIR += ipad_charge
     SUBDIR += ipdbtools
