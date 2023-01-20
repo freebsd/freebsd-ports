@@ -5,12 +5,12 @@ GH_TUPLE=	\
 		Azure:azure-sdk-for-go:425c0592f3ee:azure_azure_sdk_for_go_internal \
 		VictoriaMetrics:fastcache:v1.12.0:victoriametrics_fastcache/vendor/github.com/VictoriaMetrics/fastcache \
 		VictoriaMetrics:fasthttp:v1.1.0:victoriametrics_fasthttp/vendor/github.com/VictoriaMetrics/fasthttp \
-		VictoriaMetrics:metrics:v1.23.0:victoriametrics_metrics/vendor/github.com/VictoriaMetrics/metrics \
-		VictoriaMetrics:metricsql:v0.51.1:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
+		VictoriaMetrics:metrics:v1.23.1:victoriametrics_metrics/vendor/github.com/VictoriaMetrics/metrics \
+		VictoriaMetrics:metricsql:v0.51.2:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
 		alecthomas:units:b94a6e3cc137:alecthomas_units/vendor/github.com/alecthomas/units \
 		aws:aws-sdk-go-v2:v1.17.3:aws_aws_sdk_go_v2/vendor/github.com/aws/aws-sdk-go-v2 \
-		aws:aws-sdk-go:v1.44.177:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go:v1.44.180:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		aws:smithy-go:v1.13.5:aws_smithy_go/vendor/github.com/aws/smithy-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.24.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
@@ -26,7 +26,7 @@ GH_TUPLE=	\
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:exp:4b8118a2686a:golang_exp/vendor/golang.org/x/exp \
+		golang:exp:f9f960f08ad4:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:v0.5.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.4.0:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -38,10 +38,10 @@ GH_TUPLE=	\
 		golang:time:v0.3.0:golang_time/vendor/golang.org/x/time \
 		golang:xerrors:04be3eba64a2:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.9:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:76db0878b65f:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:dbe35b8444a5:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		googleapis:enterprise-certificate-proxy:v0.2.1:googleapis_enterprise_certificate_proxy/vendor/github.com/googleapis/enterprise-certificate-proxy \
-		googleapis:google-api-go-client:v0.106.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-api-go-client:v0.107.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
 		googleapis:google-cloud-go:compute/v1.15.1:googleapis_google_cloud_go_compute \
 		googleapis:google-cloud-go:storage/v1.28.1:googleapis_google_cloud_go_storage \
 		googleapis:google-cloud-go:v0.10.0:googleapis_google_cloud_go_iam/vendor/cloud.google.com/go \
