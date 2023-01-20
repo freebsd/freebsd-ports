@@ -833,6 +833,7 @@
     SUBDIR += proj-data
     SUBDIR += pstoedit
     SUBDIR += ptex
+    SUBDIR += py-ManimPango
     SUBDIR += py-OWSLib
     SUBDIR += py-PyOpenGL
     SUBDIR += py-PyOpenGL-accelerate
