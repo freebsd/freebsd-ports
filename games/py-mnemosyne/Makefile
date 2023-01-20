@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}webob>=1.4:www/py-webob@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cheroot>=0:www/py-cheroot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}googletrans>=0:textproc/py-googletrans@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gtts>=0:audio/py-gtts@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}gTTS>=0:audio/py-gtts@${PY_FLAVOR}
 
 USES=		pyqt:5 python:3.7+ shebangfix dos2unix #due textproc/py-googletrans
 USE_PYQT=	pyqt5:run sip:run webengine:run
