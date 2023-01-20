@@ -1,7 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	5.0.14
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases net
 MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 		http://fastdl.mongodb.org/src/
@@ -24,8 +24,7 @@ ONLY_FOR_ARCHS_REASON=	only ported to amd64, aarch64, and powerpc64le on FreeBSD
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
-LIB_DEPENDS=	libboost_log.so:devel/boost-libs \
-		libcurl.so:ftp/curl \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre \
 		libsnappy.so:archivers/snappy \
 		libstemmer.so:textproc/snowballstemmer \
@@ -43,7 +42,6 @@ MAKE_ARGS=	--cxx-std=17 \
 		--disable-warnings-as-errors \
 		--libc++ \
 		--runtime-hardening=on \
-		--use-system-boost \
 		--use-system-libunwind \
 		--use-system-pcre \
 		--use-system-snappy \
@@ -93,7 +91,6 @@ pre-patch:
 	${MV} ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.sx ${WRKSRC}/src/third_party/wiredtiger/src/checksum/power8/crc32.S
 
 post-patch:
-	${RM} -rf ${WRKSRC}/src/third_party/boost
 	${RM} -rf ${WRKSRC}/src/third_party/pcre-*
 	${RM} -rf ${WRKSRC}/src/third_party/snappy-*
 	${RM} -rf ${WRKSRC}/src/third_party/unwind
