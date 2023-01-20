@@ -1,5 +1,5 @@
 PORTNAME=	rich
-PORTVERSION=	13.1.0
+PORTVERSION=	13.2.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/willmcgugan/rich
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}CommonMark>=0.9.0:textproc/py-CommonMark@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-it-py>=2.1.0:textproc/py-markdown-it-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.6.0:textproc/py-pygments@${PY_FLAVOR}
 
 NO_ARCH=	yes
