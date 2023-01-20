@@ -1,5 +1,5 @@
-TIMESTAMP = 1531631740
-SHA256 (evolvotron-0.7.1.tar.gz) = 9a5bd7680aa3617de7b822ef1114f04548909be35facbf78c676bd0c4d42f9a9
-SIZE (evolvotron-0.7.1.tar.gz) = 179516
+TIMESTAMP = 1674202443
+SHA256 (evolvotron-0.8.0.tar.gz) = df78f62a62f5c8bb79d60a6efb8587c67f4fcf85d74ad7938f54be21c8947a10
+SIZE (evolvotron-0.8.0.tar.gz) = 178316
 SHA256 (evolvotron_icons.tar.gz) = f7d98eab15bf39d6de66a548457223daaffab4e5fe4aa444c926343786400d85
 SIZE (evolvotron_icons.tar.gz) = 93696
