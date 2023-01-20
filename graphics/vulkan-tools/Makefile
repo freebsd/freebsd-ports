@@ -38,7 +38,7 @@ XCB_CMAKE_BOOL=		BUILD_WSI_XCB_SUPPORT
 
 XLIB_DESC=		${X11_DESC} via libX11
 XLIB_USES=		xorg
-XLIB_USE=		XORG=x11,xext,ice,sm
+XLIB_USE=		XORG=x11
 XLIB_CMAKE_BOOL=	BUILD_WSI_XLIB_SUPPORT
 
 # https://github.com/KhronosGroup/Vulkan-Tools/issues/307
