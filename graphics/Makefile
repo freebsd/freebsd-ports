@@ -865,6 +865,7 @@
     SUBDIR += py-geopandas
     SUBDIR += py-giddy
     SUBDIR += py-gizeh
+    SUBDIR += py-glcontext
     SUBDIR += py-glfw
     SUBDIR += py-glooey
     SUBDIR += py-gphoto2

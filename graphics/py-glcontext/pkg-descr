@@ -1,0 +1,5 @@
+glcontext is a library providing OpenGL implementation for ModernGL on multiple
+platforms:
+* glcontext on github
+* glcontext on pypi
+* ModernGL
