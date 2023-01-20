@@ -1,3 +1,48 @@
+  <vuln vid="005dfb48-990d-11ed-b9d3-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>3.1.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyfaq developers report:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2022-10-24">
+	  <p>phpMyFAQ does not implement sufficient checks to avoid a stored
+	    XSS in "Add new question"</p>
+	  <p>phpMyFAQ does not implement sufficient checks to avoid a stored XSS
+	    in admin user page</p>
+	  <p>phpMyFAQ does not implement sufficient checks to avoid a stored XSS
+	    in FAQ comments</p>
+	  <p>phpMyFAQ does not implement sufficient checks to avoid a blind
+	    stored XSS in admin open question page</p>
+	  <p>phpMyFAQ does not implement sufficient checks to avoid a reflected
+	    XSS in the admin backend login</p>
+	  <p>phpMyFAQ does not implement sufficient checks to avoid stored XSS
+	    on user, category, FAQ, news and configuration admin backend</p>
+	  <p>phpMyFAQ does not implement sufficient checks to avoid weak passwords</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://huntr.dev/bounties/cbba22f0-89ed-4d01-81ea-744979c8cbde/</url>
+      <url>https://huntr.dev/bounties/fac01e9f-e3e5-4985-94ad-59a76485f215/</url>
+      <url>https://huntr.dev/bounties/83cfed62-af8b-4aaa-94f2-5a33dc0c2d69/</url>
+      <url>https://huntr.dev/bounties/051d5e20-7fab-4769-bd7d-d986b804bb5a/</url>
+      <url>https://huntr.dev/bounties/c03c5925-43ff-450d-9827-2b65a3307ed6/</url>
+      <url>https://huntr.dev/bounties/f50ec8d1-cd60-4c2d-9ab8-3711870d83b9/</url>
+      <url>https://huntr.dev/bounties/82b0b629-c56b-4651-af3f-17f749751857/</url>
+      <url>https://huntr.dev/bounties/eac0a9d7-9721-4191-bef3-d43b0df59c67/</url>
+      <url>https://huntr.dev/bounties/bc27e84b-1f91-4e1b-a78c-944edeba8256/</url>
+    </references>
+    <dates>
+      <discovery>2023-01-15</discovery>
+      <entry>2023-01-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="95176ba5-9796-11ed-bfbf-080027f5fec9">
     <topic>rack -- Multiple vulnerabilities</topic>
     <affects>
