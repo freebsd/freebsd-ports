@@ -925,6 +925,7 @@
     SUBDIR += py-intspan
     SUBDIR += py-iohexperimenter
     SUBDIR += py-ipyopt
+    SUBDIR += py-isosurfaces
     SUBDIR += py-jax
     SUBDIR += py-kahip
     SUBDIR += py-keras

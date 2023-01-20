@@ -1,0 +1,5 @@
+isosurfaces allows to construct isolines/isosurfaces of a 2D/3D scalar field
+defined by a function, i.e. curves over which f(x,y)=0 or surfaces over which
+f(x,y,z)=0. Most similar libraries use marching squares or similar over a
+uniform grid, but this uses a quadtree to avoid wasting time sampling many far
+from the implicit surface.
