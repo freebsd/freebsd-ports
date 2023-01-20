@@ -8,7 +8,7 @@ WWW=		https://faculty.cse.tamu.edu/davis/suitesparse.html
 
 RUN_DEPENDS=	suitesparse-amd>0:math/suitesparse-amd			\
 		suitesparse-btf>0:math/suitesparse-btf			\
-		suitesparse-btf>0:math/suitesparse-camd			\
+		suitesparse-camd>0:math/suitesparse-camd		\
 		suitesparse-ccolamd>0:math/suitesparse-ccolamd		\
 		suitesparse-cholmod>0:math/suitesparse-cholmod		\
 		suitesparse-colamd>0:math/suitesparse-colamd		\
