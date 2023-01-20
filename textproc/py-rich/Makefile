@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Rich text and beautiful formatting in the terminal
-WWW=		https://github.com/willmcgugan/rich
+WWW=		https://github.com/Textualize/rich
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
