@@ -1,5 +1,6 @@
 PORTNAME=	qemu
 PORTVERSION=	7.2.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -10,47 +11,52 @@ WWW=		https://www.qemu.org/
 
 LICENSE=	GPLv2
 
-.if ${FLAVOR:U} != tools
+.if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 # We need to check if it build with other ARCHS
 .endif
 
 BUILD_DEPENDS=	bash:shells/bash
-.if ${FLAVOR:U} != tools
+.if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 LIB_DEPENDS+=	libfdt.so:sysutils/dtc \
 		libzstd.so:archivers/zstd
 .endif
-.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools)
+.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent)
 LIB_DEPENDS+=	libepoxy.so:graphics/libepoxy
 .endif
 
-FLAVORS=			default nox11 tools
+FLAVORS=			default nox11 tools guestagent
 FLAVOR?=			${FLAVORS:[1]}
 default_CONFLICTS_INSTALL=	qemu-devel qemu-nox11 qemu-tools qemu-utils \
 				qemu6* qemu70*
 nox11_PKGNAMESUFFIX=		-nox11
-nox11_CONFLICTS_INSTALL=	qemu qemu-devel qemu6* qemu70*
+nox11_CONFLICTS_INSTALL=	qemu qemu-devel qemu6* qemu70* qemu-guest-agent
 nox11_COMMENT=			(without X11)
 tools_PKGNAMESUFFIX=		-tools
 tools_COMMENT=			(tools only)
 tools_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-utils qemu6* \
-				qemu70*
+				qemu70* qemu-guest-agent
 tools_DESCR=			${.CURDIR}/pkg-descr-tools
 tools_PLIST=			${.CURDIR}/pkg-plist-tools
+guestagent_PKGNAMESUFFIX=		-guest-agent
+guestagent_COMMENT=			(guest agent)
+guestagent_DESCR=		${.CURDIR}/pkg-descr-ga
+guestagent_PLIST=		${.CURDIR}/pkg-plist-ga
+guestagent_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-tools qemu-utils qemu6* \
+				qemu70* qemu-guest-agent
 
 USES=		cpe gmake gnome ninja perl5 pkgconfig python:build tar:xz
 USE_GNOME=	glib20
 USE_PERL5=	build
-.if ${FLAVOR:U} != tools
+.if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 USES+=		iconv:wchar_t
 .endif
-.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools)
+.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent)
 USE_GNOME+=	cairo
 .endif
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--cc=${CC} \
-			--disable-guest-agent \
 			--disable-kvm \
 			--disable-linux-aio \
 			--disable-linux-user \
@@ -62,11 +68,17 @@ CONFIGURE_ARGS+=	--cc=${CC} \
 			--mandir=${PREFIX}/man \
 			--prefix=${PREFIX} \
 			--python=${PYTHON_CMD}
-.if ${FLAVOR:U} != tools
+.if ${FLAVOR:U} == guestagent
+USE_RC_SUBR=		qemu-guest-agent
+CONFIGURE_ARGS+=	--enable-guest-agent --disable-tools --disable-xkbcommon
+.else
+CONFIGURE_ARGS+=	--disable-guest-agent
+.endif
+.if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 CONFIGURE_ARGS+=	--enable-fdt=system \
 			--enable-netmap
 .endif
-.if ${FLAVOR:U} == tools
+.if ${FLAVOR:U} == tools || ${FLAVOR:U} == guestagent
 CONFIGURE_ARGS+=	--disable-attr \
 			--disable-blobs \
 			--disable-brlapi \
@@ -77,7 +89,6 @@ CONFIGURE_ARGS+=	--disable-attr \
 			--disable-fdt \
 			--disable-gcrypt \
 			--disable-glusterfs \
-			--disable-guest-agent \
 			--disable-libnfs \
 			--disable-libusb \
 			--disable-lzo \
@@ -95,8 +106,10 @@ CONFIGURE_ARGS+=	--disable-attr \
 			--disable-user \
 			--disable-vhost-net \
 			--disable-virtfs \
-			--disable-vnc \
-			--enable-tools
+			--disable-vnc
+.endif
+.if ${FLAVOR:U} == tools
+CONFIGURE_ARGS+=	--enable-tools
 .endif
 
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
@@ -116,7 +129,7 @@ OPTIONS_SINGLE_NCURSES=		NCURSES_BASE NCURSES_DEFAULT NCURSES_PORT
 .if ${FLAVOR:U} == nox11
 OPTIONS_EXCLUDE:=		GTK3 X11
 .endif
-.if ${FLAVOR:U} == tools
+.if ${FLAVOR:U} == tools || ${FLAVOR:U} == guestagent
 OPTIONS_EXCLUDE:=		CAPSTONE CDROM_DMA CURL DEBUG GNUTLS GTK3 ISCSI \
 				JPEG NCURSES NCURSES_BASE NCURSES_DEFAULT \
 				NCURSES_PORT OPENGL PNG SAMBA SASL STATIC_LINK \
@@ -233,7 +246,7 @@ do-install:
 
 .if !target(post-install)
 post-install:
-.if ${FLAVOR:U} != tools
+.if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
 .endif
