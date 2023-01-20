@@ -7283,6 +7283,7 @@
     SUBDIR += sfml1
     SUBDIR += sfsexp
     SUBDIR += sgb
+    SUBDIR += shadered
     SUBDIR += shapelib
     SUBDIR += shards
     SUBDIR += shell-toolbox
