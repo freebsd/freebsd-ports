@@ -32,6 +32,7 @@
     SUBDIR += imb
     SUBDIR += inferno
     SUBDIR += interbench
+    SUBDIR += ior
     SUBDIR += iorate
     SUBDIR += iozone
     SUBDIR += iozone21

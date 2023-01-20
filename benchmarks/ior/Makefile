@@ -1,6 +1,6 @@
 PORTNAME=	ior
 DISTVERSION=	3.3.0-20230112
-CATEGORIES=	sysutils
+CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	IOR and mdtest, parallel IO storage benchmark
