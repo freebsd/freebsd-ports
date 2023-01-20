@@ -25,6 +25,7 @@ IGNORE=	requires kernel source files in SRC_BASE=${SRC_BASE}
 
 CATEGORIES+=	kld
 
+PIE_UNSAFE=	kernel modules are not executable
 SSP_UNSAFE=	kernel module supports SSP natively
 
 KMODDIR?=	/boot/modules
