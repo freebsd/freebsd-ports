@@ -16,7 +16,6 @@
 %%PYTHON_SITELIBDIR%%/recordclass/__pycache__/utils.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/__pycache__/utils.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/_dataobject%%PYTHON_EXT_SUFFIX%%.so
-%%PYTHON_SITELIBDIR%%/recordclass/_linkedlist%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/recordclass/_litelist%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/recordclass/_litetuple%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/recordclass/adapter.py
@@ -38,11 +37,14 @@
 %%PYTHON_SITELIBDIR%%/recordclass/test/__pycache__/test_litetuple.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/__pycache__/test_recordclass.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/__pycache__/test_recordclass.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/test/__pycache__/test_sqlite.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/test/__pycache__/test_sqlite.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_arrayclass.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_dataobject.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_litelist.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_litetuple.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/test_recordclass.py
+%%PYTHON_SITELIBDIR%%/recordclass/test/test_sqlite.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/typing/__init__.py
 %%PYTHON_SITELIBDIR%%/recordclass/test/typing/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/test/typing/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
@@ -59,8 +61,11 @@
 %%PYTHON_SITELIBDIR%%/recordclass/tools/__pycache__/csv_dataobject.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/tools/__pycache__/perfcounts.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/tools/__pycache__/perfcounts.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/tools/__pycache__/sqlite.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/recordclass/tools/__pycache__/sqlite.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/tools/csv_dataobject.py
 %%PYTHON_SITELIBDIR%%/recordclass/tools/perfcounts.py
+%%PYTHON_SITELIBDIR%%/recordclass/tools/sqlite.py
 %%PYTHON_SITELIBDIR%%/recordclass/typing/__init__.py
 %%PYTHON_SITELIBDIR%%/recordclass/typing/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/typing/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
