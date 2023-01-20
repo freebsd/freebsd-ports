@@ -12,6 +12,7 @@ include/vulkan/vk_layer_data.h
 include/vulkan/vk_layer_dispatch_table.h
 include/vulkan/vk_layer_extension_utils.cpp
 include/vulkan/vk_layer_extension_utils.h
+include/vulkan/vk_layer_logging.cpp
 include/vulkan/vk_layer_logging.h
 include/vulkan/vk_layer_utils.cpp
 include/vulkan/vk_layer_utils.h
