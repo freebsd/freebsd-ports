@@ -1,6 +1,32 @@
 - Restore system shaderc support
 - Detect system shaderc on BSDs
 
+--- Cargo.lock.orig	2023-01-06 18:27:46 UTC
++++ Cargo.lock
+@@ -5630,8 +5630,9 @@ name = "shaderc"
+ 
+ [[package]]
+ name = "shaderc"
+-version = "0.8.0"
+-source = "git+https://github.com/pythonesque/shaderc-rs?rev=f2605a02062834019bedff911aee2fd2998c49f9#f2605a02062834019bedff911aee2fd2998c49f9"
++version = "0.8.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "77a410ea26a220ceaef964dd71054ccd63cc97fd54393014c09046e795127824"
+ dependencies = [
+  "libc",
+  "shaderc-sys",
+@@ -5639,8 +5640,9 @@ name = "shaderc-sys"
+ 
+ [[package]]
+ name = "shaderc-sys"
+-version = "0.8.0"
+-source = "git+https://github.com/pythonesque/shaderc-rs?rev=f2605a02062834019bedff911aee2fd2998c49f9#f2605a02062834019bedff911aee2fd2998c49f9"
++version = "0.8.1"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "a281c39df7d8a0a97e9430409abb466ff4bd046875c4d97591935042bbffc898"
+ dependencies = [
+  "cmake",
+  "libc",
 --- voxygen/Cargo.toml.orig	2023-01-06 18:27:46 UTC
 +++ voxygen/Cargo.toml
 @@ -29,14 +29,13 @@ egui-ui = ["voxygen-egui", "egui", "egui_wgpu_backend"
