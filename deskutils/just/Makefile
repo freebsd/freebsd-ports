@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.11.0
+DISTVERSION=	1.12.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.3 \
 		bstr-0.2.17 \
-		camino-1.1.1 \
+		camino-1.1.2 \
 		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		clap-2.34.0 \
@@ -51,7 +51,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		hermit-abi-0.2.6 \
 		humantime-2.1.0 \
 		instant-0.1.12 \
-		io-lifetimes-1.0.3 \
+		io-lifetimes-1.0.4 \
 		is-terminal-0.4.2 \
 		itoa-1.0.5 \
 		lazy_static-1.4.0 \
@@ -72,7 +72,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.23 \
 		redox_syscall-0.2.16 \
-		regex-1.7.0 \
+		regex-1.7.1 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
@@ -99,7 +99,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		term_size-0.3.2 \
 		termcolor-1.1.3 \
 		textwrap-0.11.0 \
-		typed-arena-2.0.1 \
+		typed-arena-2.0.2 \
 		typenum-1.16.0 \
 		unicase-2.6.0 \
 		unicode-ident-1.0.6 \
@@ -115,13 +115,13 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.0 \
-		windows_aarch64_msvc-0.42.0 \
-		windows_i686_gnu-0.42.0 \
-		windows_i686_msvc-0.42.0 \
-		windows_x86_64_gnu-0.42.0 \
-		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.42.0 \
+		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_msvc-0.42.1 \
+		windows_i686_gnu-0.42.1 \
+		windows_i686_msvc-0.42.1 \
+		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_msvc-0.42.1 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1
 PLIST_FILES=	bin/${PORTNAME}
