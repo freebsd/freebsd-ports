@@ -1,5 +1,5 @@
 PORTNAME=	discus
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@ny-central.org
@@ -17,6 +17,9 @@ SHEBANG_FILES=	discus.py
 NO_BUILD=	yes
 
 OPTIONS_DEFINE=	DOCS
+
+post-patch:
+	${REINPLACE_CMD} -e "s@/etc/discusrc@${PREFIX}/discusrc@g" ${WRKSRC}/discus.py
 
 do-install:
 	${MKDIR} ${STAGEDIR}/${ETCDIR}/
