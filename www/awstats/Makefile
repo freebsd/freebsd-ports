@@ -1,5 +1,5 @@
 PORTNAME=	awstats
-PORTVERSION=	7.8
+PORTVERSION=	7.9
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AWStats/${PORTVERSION}
@@ -13,30 +13,30 @@ LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT
 
 USES=		cpe dos2unix perl5 shebangfix
 CPE_VENDOR=	laurent_destailleur
+DOS2UNIX_GLOB=	*.xml *.pm
+USE_PERL5=	run
 
 SHEBANG_GLOB=	*.pl *.pm
-DOS2UNIX_GLOB=	*.xml *.pm
 
-NO_BUILD=	yes
 NO_ARCH=	yes
-USE_PERL5=	run
+NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=			DOCS GEOIPFREE IPV6
-OPTIONS_GROUP=			MODULES
 OPTIONS_DEFAULT=		HOSTINFO
+OPTIONS_GROUP=			MODULES
 
 OPTIONS_GROUP_MODULES=		DECODEUTFKEYS HOSTINFO
-MODULES_DESC=			Plugin support not present in Perl CORE
 DECODEUTFKEYS_DESC=		DecodeUTFKeys (requires p5-URI)
 GEOIPFREE_DESC=			Country lookups via Geo::IPfree
 HOSTINFO_DESC=			HostInfo (requires p5-Net-XWhois)
+MODULES_DESC=			Plugin support not present in Perl CORE
+DECODEUTFKEYS_RUN_DEPENDS=	p5-URI>0:net/p5-URI
 GEOIPFREE_RUN_DEPENDS=		p5-Geo-IPfree>=0:net/p5-Geo-IPfree
+HOSTINFO_RUN_DEPENDS=		p5-Net-XWhois>=0:net/p5-Net-XWhois
 IPV6_RUN_DEPENDS=		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 				p5-Net-DNS>=0:dns/p5-Net-DNS
-DECODEUTFKEYS_RUN_DEPENDS=	p5-URI>0:net/p5-URI
-HOSTINFO_RUN_DEPENDS=		p5-Net-XWhois>=0:net/p5-Net-XWhois
 
 pre-patch:
 # This file is so messed up, not even dos2unix can fix it
