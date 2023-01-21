@@ -1,3 +1,81 @@
+  <vuln vid="dc49f6dc-99d2-11ed-86e9-d4c9ef517024">
+    <topic>MySQL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mysql-connector-c++</name>
+	<range><lt>8.0.33</lt></range>
+      </package>
+      <package>
+	<name>mysql-connector-odbc</name>
+	<range><lt>8.0.33</lt></range>
+      </package>
+      <package>
+	<name>mysql-client57</name>
+	<range><lt>5.7.42</lt></range>
+      </package>
+      <package>
+	<name>mysql-server57</name>
+	<range><lt>5.7.42</lt></range>
+      </package>
+      <package>
+	<name>mysql-client80</name>
+	<range><lt>8.0.33</lt></range>
+      </package>
+      <package>
+	<name>mysql-server80</name>
+	<range><lt>8.0.33</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Oracle reports:</p>
+	<blockquote cite="https://www.oracle.com/security-alerts/cpujan2023.html#AppendixMSQL">
+	  <p>This Critical Patch Update contains 37 new security patches for
+	    Oracle MySQL. 8 of these vulnerabilities may be remotely exploitable
+	    without authentication, i.e., may be exploited over a network withouti
+	    requiring user credentials.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-32221</cvename>
+      <cvename>CVE-2022-24407</cvename>
+      <cvename>CVE-2022-24407</cvename>
+      <cvename>CVE-2022-3171</cvename>
+      <cvename>CVE-2022-1941</cvename>
+      <cvename>CVE-2023-21868</cvename>
+      <cvename>CVE-2023-21860</cvename>
+      <cvename>CVE-2023-21875</cvename>
+      <cvename>CVE-2023-21869</cvename>
+      <cvename>CVE-2023-21877</cvename>
+      <cvename>CVE-2023-21880</cvename>
+      <cvename>CVE-2023-21872</cvename>
+      <cvename>CVE-2023-21871</cvename>
+      <cvename>CVE-2023-21836</cvename>
+      <cvename>CVE-2023-21887</cvename>
+      <cvename>CVE-2023-21863</cvename>
+      <cvename>CVE-2023-21864</cvename>
+      <cvename>CVE-2023-21865</cvename>
+      <cvename>CVE-2023-21866</cvename>
+      <cvename>CVE-2023-21867</cvename>
+      <cvename>CVE-2023-21870</cvename>
+      <cvename>CVE-2023-21873</cvename>
+      <cvename>CVE-2023-21876</cvename>
+      <cvename>CVE-2023-21878</cvename>
+      <cvename>CVE-2023-21879</cvename>
+      <cvename>CVE-2023-21881</cvename>
+      <cvename>CVE-2023-21883</cvename>
+      <cvename>CVE-2023-21840</cvename>
+      <cvename>CVE-2023-21882</cvename>
+      <cvename>CVE-2023-21874</cvename>
+      <url>https://www.oracle.com/security-alerts/cpujan2023.html#AppendixMSQL</url>
+    </references>
+    <dates>
+      <discovery>2023-01-20</discovery>
+      <entry>2023-01-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="005dfb48-990d-11ed-b9d3-589cfc0f81b0">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
