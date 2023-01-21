@@ -9,7 +9,7 @@ WWW=		https://github.com/jd/mod_defensible
 
 LICENSE=	APACHE20
 
-USES=		apache:2.4+
+USES=		apache
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jd

@@ -11,7 +11,7 @@ WWW=		https://github.com/gssapi/mod_auth_gssapi
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf apache:2.4+ bison gssapi:mit,flags libtool ssl
+USES=		autoreconf apache bison gssapi:mit,flags libtool ssl
 USES+=		pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	gssapi

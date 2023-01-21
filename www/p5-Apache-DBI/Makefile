@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-DBI>=0:databases/p5-DBI \
 
 CONFLICTS=	p5-Apache-DBI-mp[12]*
 
-USES=		apache:2.2+ perl5
+USES=		apache perl5
 USE_PERL5=	configure
 
 .include <bsd.port.mk>

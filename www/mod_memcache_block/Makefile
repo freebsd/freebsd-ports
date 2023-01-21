@@ -13,7 +13,7 @@ LIB_DEPENDS+=	libmemcached.so:databases/libmemcached
 USE_GITHUB=	yes
 GH_ACCOUNT=	gaod
 
-USES=		apache:2.4+
+USES=		apache
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_INC=		${LOCALBASE}/include/libmemcached

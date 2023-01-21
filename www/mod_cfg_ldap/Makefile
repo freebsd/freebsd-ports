@@ -11,7 +11,7 @@ WWW=		https://sourceforge.net/projects/modcfgldap/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		apache:2.2+
+USES=		apache
 USE_OPENLDAP=	yes
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

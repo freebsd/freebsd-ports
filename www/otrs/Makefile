@@ -107,7 +107,7 @@ SSL_RUN_DEPENDS=	p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay
 
 APACHE_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:www/mod_perl2 \
 			p5-Apache-DBI>0:www/p5-Apache-DBI
-APACHE_USES=		apache:run,2.2+
+APACHE_USES=		apache:run
 
 REPORTS_RUN_DEPENDS=	p5-GD>=0:graphics/p5-GD \
 			p5-GD-Graph>=0:graphics/p5-GD-Graph \

@@ -11,7 +11,7 @@ WWW=		https://code.google.com/p/mod-auth-external/
 
 LICENSE=	APACHE20
 
-USES=		apache:2.4 cpe
+USES=		apache cpe
 CPE_VENDOR=	${PORTNAME}_project
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

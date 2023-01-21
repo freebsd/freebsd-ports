@@ -16,7 +16,7 @@ RUN_DEPENDS=	p5-Audio-Wav>=0:audio/p5-Audio-Wav \
 		p5-Ogg-Vorbis-Header>=0:audio/p5-Ogg-Vorbis-Header \
 		${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 
-USES=		apache:2.2+ perl5
+USES=		apache perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 

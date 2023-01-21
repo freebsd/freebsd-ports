@@ -30,7 +30,7 @@ OPTIONS_EXCLUDE=DOCS
 SYMLINK_DESC=	Create passenger symlink
 
 .if ${FLAVOR} == apache
-USES+=		apache:2.2+
+USES+=		apache
 .endif
 
 RAKE_BIN=	${LOCALBASE}/bin/rake

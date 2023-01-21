@@ -11,7 +11,7 @@ WWW=		http://www.outoforder.cc/projects/httpd/mod_umask/
 
 LICENSE=	APACHE20
 
-USES=		apache:2.2+ tar:bzip2
+USES=		apache tar:bzip2
 GNU_CONFIGURE=	yes
 
 AP_FAST_BUILD=	yes

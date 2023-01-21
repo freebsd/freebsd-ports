@@ -11,7 +11,7 @@ WWW=		https://github.com/jzdziarski/mod_evasive
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		apache:2.2+
+USES=		apache
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jzdziarski

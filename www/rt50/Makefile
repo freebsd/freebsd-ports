@@ -68,7 +68,7 @@ AP_MODPERL_DESC=		Deploy with apache and mod_perl
 AP_MODPERL_RUN_DEPENDS=		${MODPERL2_DEPS}
 
 AP_MODFASTCGI_DESC=		Deploy with apache and mod_fastcgi
-AP_MODFASTCGI_USE=		APACHE_RUN=22+
+AP_MODFASTCGI_USES=		apache:run
 AP_MODFASTCGI_RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:www/mod_fastcgi \
 				${FASTCGI_DEPS}
 

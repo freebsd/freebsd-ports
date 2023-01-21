@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libtidy.so:www/tidy-lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
-USES=		apache:2.2+
+USES=		apache
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_INC+=	${LOCALBASE}/include/tidy

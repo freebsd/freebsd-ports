@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcurl.so:ftp/curl \
     		liblasso.so:security/lasso
 
-USES=		apache:2.2+ autoreconf cpe gettext-runtime gnome libtool \
+USES=		apache autoreconf cpe gettext-runtime gnome libtool \
 		pkgconfig ssl
 USE_GNOME=	glib20
 USE_GITHUB=	yes

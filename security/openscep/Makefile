@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DEPRECATED=	Do not support recent RFC 8894
 EXPIRATION_DATE=	2023-03-31
 
-USES=		apache:2.2+ gmake libtool ssl
+USES=		apache gmake libtool ssl
 BROKEN_SSL=	base
 BROKEN_SSL_REASON=	unexpected type name 'issuer_and_subject_t': expected expression
 IGNORE_SSL=	libressl libressl-devel

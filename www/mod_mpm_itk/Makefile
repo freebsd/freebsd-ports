@@ -13,7 +13,7 @@ WWW=		http://mpm-itk.sesse.net/
 
 LICENSE=	APACHE20
 
-USES=		apache:2.4
+USES=		apache
 GNU_CONFIGURE=	yes
 
 AP_FAST_BUILD=	yes

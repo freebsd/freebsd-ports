@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2 \
 		p5-SOAP-Lite>=0:net/p5-SOAP-Lite
 
-USES=		apache:2.2+ perl5
+USES=		apache perl5
 USE_PERL5=	configure
 NO_ARCH=	yes
 

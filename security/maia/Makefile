@@ -49,7 +49,6 @@ OPTIONS_DEFINE=	APACHE LIGHTTPD NGINX WEBHOST MYSQL LOCAL PGSQL \
 OPTIONS_DEFAULT=	MYSQL CLAMAV DOCS SPAMASSASSIN BDB IPCOUNTRY \
 			DOMAINKEYS SPF DKIM FILE UNRAR ARJ LHA ARC CAB RPM ZOO
 
-APACHE_DESC=		Use Apache web server
 LIGHTTPD_DESC=		Use LighTTPD web server
 NGINX_DESC=			Use Nginx web server
 WEBHOST_DESC=		PHP, PEAR, etc... for Maia web interface
@@ -98,7 +97,7 @@ USE_RC_SUBR+=	maiad
 # setting USE_ variables. C'est la vie.
 
 .if ${PORT_OPTIONS:MAPACHE}
-USES+=		apache:run,2.4+
+USES+=		apache:run
 .endif
 
 .if ${PORT_OPTIONS:MWEBHOST}

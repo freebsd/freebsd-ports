@@ -10,7 +10,7 @@ WWW=		https://tn123.org/mod_xsendfile/
 
 LICENSE=	APACHE20
 
-USES=		apache:2.2+
+USES=		apache
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 USE_GITHUB=	yes

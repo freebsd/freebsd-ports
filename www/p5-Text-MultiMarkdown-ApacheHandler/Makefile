@@ -14,7 +14,7 @@ RUN_DEPENDS=	p5-Text-MultiMarkdown>=0:textproc/p5-Text-MultiMarkdown \
 		p5-Text-Typography>=0:textproc/p5-Text-Typography \
 		${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:www/mod_perl2
 
-USES=		apache:run,2.2+ perl5
+USES=		apache:run perl5
 USE_PERL5=	configure
 SUB_FILES=	pkg-message
 

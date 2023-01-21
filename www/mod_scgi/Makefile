@@ -11,7 +11,7 @@ WWW=		https://python.ca/scgi/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/LICENSE.txt
 
-USES=		apache:2.4
+USES=		apache
 
 SCGI_DIR=	apache2
 WRKSRC=		${WRKDIR}/${DISTNAME}/${SCGI_DIR}

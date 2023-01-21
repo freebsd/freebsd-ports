@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
-USES=		apache:2.2+
+USES=		apache
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

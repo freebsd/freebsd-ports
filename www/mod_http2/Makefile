@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-USES=		apache:2.4+ libtool ssl pkgconfig
+USES=		apache libtool ssl pkgconfig
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS=	--without-curl

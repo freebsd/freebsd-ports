@@ -18,7 +18,7 @@ LICENSE_NAME=	h264
 LICENSE_TEXT=	No commercial use
 LICENSE_PERMS=	auto-accept
 
-USES=		apache:2.2+
+USES=		apache
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-apxs="${APXS}"

@@ -35,7 +35,7 @@ UI_USES=	gnome
 UI_USE=		gnome=atk,cairo,gdkpixbuf2,glib20,gtk20,pango
 UI_CMAKE_BOOL=	WITH_UI
 
-APACHE_USE=	apache=22+
+APACHE_USES=	apache
 APACHE_CMAKE_BOOL=	WITH_APACHE
 
 .include <bsd.port.mk>

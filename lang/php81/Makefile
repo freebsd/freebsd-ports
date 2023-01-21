@@ -96,8 +96,7 @@ CONFIGURE_ARGS+=	--without-pcre-jit
 .endif
 
 .if defined(PKGNAMEPREFIX)
-USES+=			apache:2.2+
-.include "${PORTSDIR}/Mk/Uses/apache.mk"
+USES+=			apache
 .if ${PORT_OPTIONS:MAP2FILTER}
 CONFIGURE_ARGS+=	--with-apxs2filter=${APXS}
 .else

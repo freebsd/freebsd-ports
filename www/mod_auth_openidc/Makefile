@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcjose.so:devel/cjose \
 		libjansson.so:devel/jansson \
 		libpcre.so:devel/pcre
 
-USES=		apache:2.2+ autoreconf cpe gmake libtool pkgconfig ssl
+USES=		apache autoreconf cpe gmake libtool pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	pingidentity
 CPE_VENDOR=	${GH_ACCOUNT}

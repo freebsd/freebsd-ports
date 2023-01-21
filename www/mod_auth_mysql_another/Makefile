@@ -11,7 +11,7 @@ WWW=		http://modauthmysql.sourceforge.net/
 
 LICENSE=	APACHE10
 
-USES=		apache:2.2+ mysql
+USES=		apache mysql
 
 SHORTMODNAME=	mysql_auth
 AP_FAST_BUILD=	yes

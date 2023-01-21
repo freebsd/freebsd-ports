@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
 
-USES=		apache:2.4+ autoreconf compiler:c11 gmake localbase
+USES=		apache autoreconf compiler:c11 gmake localbase
 GNU_CONFIGURE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxmind
