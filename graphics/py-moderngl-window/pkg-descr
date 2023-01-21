@@ -1,0 +1,3 @@
+moderngl-window is a cross platform utility library for ModernGL making window
+creation and resource loading simple. It can also be used with PyOpenGL for
+rendering with the programmable pipeline.
