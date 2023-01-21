@@ -8,37 +8,36 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source scep server
 WWW=		http://openscep.othello.ch/
 
-CONFLICTS_INSTALL=	nss-3.*
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Do not support recent RFC 8894
+EXPIRATION_DATE=	2023-03-31
 
 USES=		apache:2.2+ gmake libtool ssl
-USE_OPENLDAP=	yes
-GNU_CONFIGURE=	yes
+BROKEN_SSL=	base
+BROKEN_SSL_REASON=	unexpected type name 'issuer_and_subject_t': expected expression
+IGNORE_SSL=	libressl libressl-devel
+IGNORE_SSL_REASON=	unknown ASN1 functions
 USE_LDCONFIG=	yes
+USE_OPENLDAP=	yes
 
-CPPFLAGS+=	-I${OPENSSLINC} -I${LOCALBASE}/include
-LIBS+=		-L${OPENSSLLIB} -L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-install-dir="${PREFIX}/www/openscep" \
 		--with-cgi-install-dir="${PREFIX}/www/cgi-bin/openscep" \
 		--with-openscep-dir="${PREFIX}/etc/openscep" \
 		--with-pkiclientexe="${PREFIX}/www/cgi-bin/pkiclient.exe"
 
+CPPFLAGS+=	-I${OPENSSLINC} -I${LOCALBASE}/include
+LIBS+=		-L${OPENSSLLIB} -L${LOCALBASE}/lib
+
 CONF_DIR=	${PREFIX}/etc/${PORTNAME}
 LOCAL_CONF_FILES=	openscep.cnf openscep.ldif openscep.schema slapd.conf
 
+CONFLICTS_INSTALL=	nss-3.*
+
 SUB_FILES=	pkg-message
 SUB_LIST=	CONF_DIR="${CONF_DIR}" CONF_FILES="${LOCAL_CONF_FILES}"
-
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	unexpected type name 'issuer_and_subject_t': expected expression
-BROKEN_FreeBSD_13=	unexpected type name 'issuer_and_subject_t': expected expression
-BROKEN_FreeBSD_14=	unexpected type name 'issuer_and_subject_t': expected expression
-.endif
-
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	Detected LibreSSL (unknown ASN1 functions)
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^subdirs=/ s|libltdl||' ${WRKSRC}/configure
@@ -67,4 +66,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/ldap/${f} ${STAGEDIR}${CONF_DIR}/${f}.sample
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
