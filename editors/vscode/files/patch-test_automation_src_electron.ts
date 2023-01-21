@@ -1,4 +1,4 @@
---- test/automation/src/electron.ts.orig	2022-07-05 18:15:23 UTC
+--- test/automation/src/electron.ts.orig	2022-11-09 00:04:34 UTC
 +++ test/automation/src/electron.ts
 @@ -101,7 +101,7 @@ export function getDevElectronPath(): string {
  	switch (process.platform) {
