@@ -1,5 +1,5 @@
-TIMESTAMP = 1655340859
-SHA256 (dakota-6.16.0-public-src-cli.tar.gz) = 49684ade2a937465d85b0fc69c96408be38bc1603ed2e7e8156d93eee3567d2f
-SIZE (dakota-6.16.0-public-src-cli.tar.gz) = 124726774
+TIMESTAMP = 1674268260
+SHA256 (dakota-6.17.0-release-public-src-cli.tar.gz) = a6045784426b75d4981efcc1f243a5cd74dfcf29d4572927d6162a82a12757c6
+SIZE (dakota-6.17.0-release-public-src-cli.tar.gz) = 142641074
 SHA256 (stan-dev-math-v2.18.0_GH0.tar.gz) = 53fbce2b28aea76695af7a91f51fdd356367153fc42b3573e2b91e6586eca91d
 SIZE (stan-dev-math-v2.18.0_GH0.tar.gz) = 17528084
