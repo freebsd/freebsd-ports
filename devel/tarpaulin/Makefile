@@ -12,6 +12,9 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
+BROKEN_armv7=	compilation fails, see https://github.com/xd009642/llvm-profparser/issues/25
+BROKEN_i386=	compilation fails, see https://github.com/xd009642/llvm-profparser/issues/25
+
 USES=		cargo localbase:ldflags
 
 USE_GITHUB=	yes
