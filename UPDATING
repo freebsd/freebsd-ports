@@ -20889,10 +20889,10 @@ or
   AFFECTS: users of www/adguardhome
   AUTHOR: yuri@FreeBSD.org
 
-  www/adguardhome now stores configuratio and database information in
+  www/adguardhome now stores configuration and database information in
   $PREFIX/etc/AdGuardHome.yaml and /var/db/adguardhome/data
   respectively. 'service adguardhome start' attempts to move config
-  and data files to the new location but it required manual move when
+  and data files to the new locations but it requires manual move when
   both old and new files are present.
   'service adguardhome start' prints a warning with relevant
   location information.
