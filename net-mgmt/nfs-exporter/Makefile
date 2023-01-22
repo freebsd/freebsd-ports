@@ -16,6 +16,10 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
+# https://github.com/tikv/rust-prometheus/issues/315
+NOT_FOR_ARCHS=	powerpc
+NOT_FOR_ARCHS_REASON_powerpc=needs 64-bit atomics
+
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 
 USES=		cargo
