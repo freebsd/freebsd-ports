@@ -1,6 +1,7 @@
 PORTNAME=	river
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -31,6 +32,8 @@ GH_TUPLE=	ifreund:zig-pixman:d381567:zig_pixman/deps/zig-pixman \
 MAKE_ENV=	DESTDIR="${STAGEDIR}"
 CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		${WITH_DEBUG:D:U-Drelease-fast} \
+		${WITH_PIE:D-Dpie} \
+		${STRIP:C/.+/-Dstrip/} \
 		-Dcpu=${CPUTYPE:Ubaseline} \
 		--verbose
 NO_INSTALL=	yes # strip(1) breaks runtime
