@@ -1,7 +1,6 @@
 PORTNAME=	inferno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.13
-PORTREVISION=	2
+DISTVERSION=	0.11.14
 CATEGORIES=	benchmarks
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +24,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
-		bumpalo-3.11.0 \
+		bumpalo-3.12.0 \
 		bytemuck-1.12.1 \
 		cast-0.3.0 \
 		cfg-if-1.0.0 \
