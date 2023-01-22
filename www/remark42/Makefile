@@ -1,7 +1,6 @@
 PORTNAME=	remark42
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.11.2
-PORTREVISION=	1
+DISTVERSION=	1.11.3
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/delphij:npmcache
 DISTFILES=	${PORTNAME}-npm-cache-${DISTVERSION}${EXTRACT_SUFX}:npmcache
@@ -50,11 +49,11 @@ GH_TUPLE=	\
 		go-chi:cors:v1.2.1:go_chi_cors/vendor/github.com/go-chi/cors \
 		go-chi:render:v1.0.2:go_chi_render/vendor/github.com/go-chi/render \
 		go-oauth2:oauth2:v4.5.1:go_oauth2_oauth2_v4/vendor/github.com/go-oauth2/oauth2/v4 \
-		go-pkgz:auth:v1.20.0:go_pkgz_auth/vendor/github.com/go-pkgz/auth \
-		go-pkgz:email:v0.4.0:go_pkgz_email/vendor/github.com/go-pkgz/email \
+		go-pkgz:auth:168bd5a101b7:go_pkgz_auth/vendor/github.com/go-pkgz/auth \
+		go-pkgz:email:v0.4.1:go_pkgz_email/vendor/github.com/go-pkgz/email \
 		go-pkgz:expirable-cache:v0.1.0:go_pkgz_expirable_cache/vendor/github.com/go-pkgz/expirable-cache \
 		go-pkgz:jrpc:v0.3.0:go_pkgz_jrpc/vendor/github.com/go-pkgz/jrpc \
-		go-pkgz:lcw:v1.0.1:go_pkgz_lcw/vendor/github.com/go-pkgz/lcw \
+		go-pkgz:lcw:a66ea7c4aff7:go_pkgz_lcw/vendor/github.com/go-pkgz/lcw \
 		go-pkgz:lgr:v0.10.4:go_pkgz_lgr/vendor/github.com/go-pkgz/lgr \
 		go-pkgz:notify:v0.2.0:go_pkgz_notify/vendor/github.com/go-pkgz/notify \
 		go-pkgz:repeater:v1.1.3:go_pkgz_repeater/vendor/github.com/go-pkgz/repeater \
@@ -80,7 +79,7 @@ GH_TUPLE=	\
 		gorilla:websocket:v1.5.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.1.1:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
-		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
+		hashicorp:golang-lru:v0.6.0:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		jessevdk:go-flags:v1.5.0:jessevdk_go_flags/vendor/github.com/jessevdk/go-flags \
 		klauspost:compress:v1.15.2:klauspost_compress/vendor/github.com/klauspost/compress \
 		kyokomi:emoji:v2.2.10:kyokomi_emoji_v2/vendor/github.com/kyokomi/emoji/v2 \
@@ -95,7 +94,7 @@ GH_TUPLE=	\
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		skip2:go-qrcode:da1b6568686e:skip2_go_qrcode/vendor/github.com/skip2/go-qrcode \
 		slack-go:slack:v0.11.3:slack_go_slack/vendor/github.com/slack-go/slack \
-		stretchr:testify:v1.8.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:testify:v1.8.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		uber-go:goleak:v1.2.0:uber_go_goleak/vendor/go.uber.org/goleak \
 		xdg-go:pbkdf2:v1.0.0:xdg_go_pbkdf2/vendor/github.com/xdg-go/pbkdf2 \
 		xdg-go:scram:v1.1.1:xdg_go_scram/vendor/github.com/xdg-go/scram \
