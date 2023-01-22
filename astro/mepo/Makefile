@@ -11,8 +11,6 @@ LICENSE=	GPLv3+ OFL11
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		https://github.com/ziglang/zig/issues/12170
-
 BUILD_DEPENDS=	zig>=0.10.0:lang/zig
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	jq:textproc/jq
@@ -28,6 +26,9 @@ CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		-Dcpu=${CPUTYPE:Ubaseline} \
 		--verbose
 NO_INSTALL=	yes # strip(1) breaks runtime
+
+# https://github.com/ziglang/zig/issues/12170 (SDL2, curl)
+MAKE_ENV+=	PKG_CONFIG_SYSTEM_LIBRARY_PATH="${LOCALBASE}/lib"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' \
