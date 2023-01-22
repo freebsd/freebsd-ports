@@ -1,6 +1,6 @@
 PORTNAME=	janus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
+DISTVERSION=	1.1.2
 PORTREVISION=	0
 CATEGORIES=	www
 
@@ -34,7 +34,8 @@ USE_RC_SUBR=		janus
 CONFIGURE_ARGS+=	--disable-mqtt \
 			--disable-rabbitmq \
 			--enable-data-channels \
-			--enable-json-logger
+			--enable-json-logger \
+			--libdir=${PREFIX}/libexec
 INSTALL_TARGET=		install-strip
 CFLAGS+=		-I${OPENSSLINC} -I${LOCALBASE}/include/nice
 LDFLAGS+=		-L${OPENSSLLIB} -lcrypto -lssl -L${LOCALBASE} -lnice
