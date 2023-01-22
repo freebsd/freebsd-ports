@@ -1,7 +1,7 @@
 PORTNAME=		freebayes
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.3.6
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,8 +10,7 @@ WWW=		https://github.com/ekg/freebayes
 
 LICENSE=	MIT
 
-LIB_DEPENDS=	libhts.so:biology/htslib \
-		libtabix.so:biology/tabixpp
+LIB_DEPENDS=	libhts.so:biology/htslib
 
 # Submodules use older versions than the ports, so we cannot safely unbundle
 # No shared libs are built by the submodules so there will be no conflicts
