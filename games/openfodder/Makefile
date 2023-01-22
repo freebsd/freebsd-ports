@@ -1,5 +1,5 @@
 PORTNAME=	OpenFodder
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
