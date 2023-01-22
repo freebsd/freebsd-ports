@@ -1,5 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	12.2.1.s20230121
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -87,9 +88,11 @@ CONFIGURE_ARGS+=--disable-bootstrap
 .elif ${PORT_OPTIONS:MLTO_BOOTSTRAP}
 CONFIGURE_ARGS+=--with-build-config=bootstrap-lto-noplugin
 ALL_TARGET=	bootstrap-lean
+PIE_UNSAFE=	yes
 .else
 CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
 ALL_TARGET=	bootstrap-lean
+PIE_UNSAFE=	yes
 .endif
 INSTALL_TARGET=	install-strip
 .if ${UID} != 0
