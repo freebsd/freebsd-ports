@@ -5,6 +5,7 @@ etc/snapserver.conf
 share/man/man1/snapserver.1.gz
 %%CLIENT%%share/pixmaps/snapcast.svg
 share/snapserver/index.html
+share/snapserver/plug-ins/meta_mopidy.py
 share/snapserver/plug-ins/meta_mpd.py
 share/snapserver/snapweb/10-seconds-of-silence.mp3
 share/snapserver/snapweb/3rd-party/libflac.js
