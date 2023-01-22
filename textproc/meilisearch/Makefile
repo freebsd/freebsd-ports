@@ -15,6 +15,8 @@ WWW=		https://www.meilisearch.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		does not work
+
 LIB_DEPENDS=	liblmdb.so:databases/lmdb
 
 USES=		cargo pkgconfig
