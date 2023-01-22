@@ -1,12 +1,8 @@
 PORTNAME=	musicpd
-PORTVERSION=	0.23.11
-PORTREVISION=	2
+PORTVERSION=	0.23.12
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/mpd/${PORTVERSION:R}/
 DISTNAME=	mpd-${PORTVERSION}
-
-PATCH_SITES+=	https://github.com/MusicPlayerDaemon/MPD/commit/
-PATCHFILES+=	e4b055eb6d08c5c8f8d85828ce4005d410e462cb.patch:-p1
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Remote-controllable music daemon
