@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.8.4.3
+PORTVERSION=	1.8.4.4
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -21,7 +21,7 @@ MAKEFILE=	makefile
 ALL_TARGET=	all-release
 
 NUGET_DEPENDS=	CS-Script.lib=3.30.3 \
-		DotNetZip=1.13.8 \
+		DotNetZip=1.16.0 \
 		LibUsbDotNet=2.2.29 \
 		Mono.Cecil=0.11.3 \
 		NAudio.Vorbis=1.2.0 \
@@ -34,14 +34,15 @@ NUGET_DEPENDS=	CS-Script.lib=3.30.3 \
 		Prism.Core=7.2.0.1422 \
 		ReactiveProperty.Core=7.1.0 \
 		ReactiveProperty=7.1.0 \
-		SharpCompress=0.30.1 \
+		SharpCompress=0.32.2 \
 		System.Buffers=4.5.1 \
 		System.ComponentModel.Annotations=4.7.0 \
-		System.Memory=4.5.4 \
+		System.Memory=4.5.5 \
 		System.Numerics.Vectors=4.5.0 \
 		System.Reactive=4.4.1 \
 		System.Runtime.CompilerServices.Unsafe=5.0.0 \
-		System.Text.Encoding.CodePages=5.0.0 \
+		System.Runtime.CompilerServices.Unsafe=6.0.0 \
+		System.Text.Encoding.CodePages=6.0.0 \
 		System.Threading.Tasks.Extensions=4.5.4 \
 		System.ValueTuple=4.5.0 \
 		Ude.NetStandard=1.2.0
