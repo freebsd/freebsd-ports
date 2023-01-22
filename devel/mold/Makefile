@@ -11,6 +11,8 @@ WWW=		https://github.com/rui314/mold
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+# see https://github.com/rui314/mold/issues/456
+BROKEN=		broken with FreeBSD strip
 NOT_FOR_ARCHS=	armhf armv7 i386
 
 LIB_DEPENDS=	libtbb.so:devel/onetbb \
