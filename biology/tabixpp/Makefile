@@ -12,6 +12,8 @@ WWW=		https://github.com/ekg/tabixpp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Dependent ports use git submodules now
+
 LIB_DEPENDS=	libhts.so:biology/htslib
 
 USES=		compiler:c11 localbase:ldflags
