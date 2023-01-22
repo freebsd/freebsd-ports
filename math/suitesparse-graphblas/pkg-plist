@@ -2,4 +2,4 @@ include/suitesparse/GraphBLAS.h
 lib/cmake/SuiteSparse/FindGraphBLAS.cmake
 lib/libgraphblas.so
 lib/libgraphblas.so.7
-lib/libgraphblas.so.7.4.2
+lib/libgraphblas.so.7.4.3
