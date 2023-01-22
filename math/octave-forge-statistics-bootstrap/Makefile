@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-statistics-bootstrap
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.4
+DISTVERSION=	5.1.5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
