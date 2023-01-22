@@ -24,7 +24,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 .endif
 
-PROFTPD_VERSION=	1.3.7c
+PROFTPD_VERSION=	1.3.8
 
 CPE_VENDOR=	proftpd
 CPE_PRODUCT=	proftpd
@@ -217,7 +217,7 @@ post-install:
 	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} license.txt ${STAGEDIR}${DOCSDIR}
 . if ${PORT_OPTIONS:MHTMLDOCS}
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/html
-	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} Configuration.html faq.html ${STAGEDIR}${DOCSDIR}/html
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} faq.html ${STAGEDIR}${DOCSDIR}/html
 	@${CP} -RP ${WRKSRC}/doc/contrib ${STAGEDIR}${DOCSDIR}/html/contrib
 	@${CP} -RP ${WRKSRC}/doc/modules ${STAGEDIR}${DOCSDIR}/html/modules
 	@${CP} -RP ${WRKSRC}/doc/howto ${STAGEDIR}${DOCSDIR}/html/howto
