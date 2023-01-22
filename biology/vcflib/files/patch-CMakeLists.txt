@@ -1,11 +1,23 @@
---- CMakeLists.txt.orig	2021-11-03 15:07:33 UTC
+--- CMakeLists.txt.orig	2023-01-16 08:55:05 UTC
 +++ CMakeLists.txt
-@@ -230,7 +230,7 @@ if (NOT BUILD_ONLY_LIB)
-   foreach(BIN ${BINS})
-     add_executable(${BIN} src/${BIN}.cpp)
-     target_include_directories(${BIN} PUBLIC ${TABIXPP_LIBRARIES} ${HTSLIB_INCLUDE_DIRS})
--    target_link_libraries(${BIN} vcflib tabixpp -DGIT_VERSION=0.9.0 ${TABIXPP_LIBRARIES} ${HTSLIB_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${ZLIB_LIBRARIES} ${LIBLZMA_LIBRARIES} ${BZIP2_LIBRARIES})
-+    target_link_libraries(${BIN} vcflib tabix -DGIT_VERSION=0.9.0 ${TABIXPP_LIBRARIES} ${HTSLIB_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} ${ZLIB_LIBRARIES} ${LIBLZMA_LIBRARIES} ${BZIP2_LIBRARIES})
-   endforeach(BIN ${BINS})
-   install(TARGETS ${BINS} RUNTIME DESTINATION bin)
+@@ -1,7 +1,7 @@
+ cmake_minimum_required(VERSION 3.16)
+ project(vcflib)
+ 
+-set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD 14)
+ 
+ include(ExternalProject)
+ include(FeatureSummary)
+@@ -358,9 +358,9 @@ endif(HTSLIB_LOCAL)
+ 
+ # FIXME: hard-coded compile switches need to be fixed upstream
+ if (ASAN)
+-  set(wfa_MAKE_ARGS BUILD_WFA_PARALLEL=1 BUILD_TOOLS=0 BUILD_EXAMPLES=0 CC=gcc CC_FLAGS=-fPIC setup asan lib_wfa)
++  set(wfa_MAKE_ARGS BUILD_WFA_PARALLEL=1 BUILD_TOOLS=0 BUILD_EXAMPLES=0 CC_FLAGS=-fPIC setup asan lib_wfa)
+ else()
+-  set(wfa_MAKE_ARGS BUILD_WFA_PARALLEL=1 BUILD_TOOLS=0 BUILD_EXAMPLES=0 CC=gcc CC_FLAGS=-fPIC setup lib_wfa)
++  set(wfa_MAKE_ARGS BUILD_WFA_PARALLEL=1 BUILD_TOOLS=0 BUILD_EXAMPLES=0 CC_FLAGS=-fPIC setup lib_wfa)
  endif()
+ 
+ # if ((${CMAKE_BUILD_TYPE} MATCHES Release) OR (${CMAKE_BUILD_TYPE} MATCHES RelWithDebInfo))
