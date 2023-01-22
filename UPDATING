@@ -20884,3 +20884,15 @@ or
   The default installation is now configured for running bitlbee as user
   'nobody' by default.  Make sure any existing configuration files are
   readable by that user.
+
+20080122:
+  AFFECTS: users of www/adguardhome
+  AUTHOR: yuri@FreeBSD.org
+
+  www/adguardhome now stores configuratio and database information in
+  $PREFIX/etc/AdGuardHome.yaml and /var/db/adguardhome/data
+  respectively. 'service adguardhome start' attempts to move config
+  and data files to the new location but it required manual move when
+  both old and new files are present.
+  'service adguardhome start' prints a warning with relevant
+  location information.

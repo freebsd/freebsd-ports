@@ -15,10 +15,15 @@ rcvar=adguardhome_enable
 load_rc_config $name
 
 : ${adguardhome_enable:=NO}
-: ${adguardhome_config:=/usr/local/etc/AdGuardHome.yaml}
+: ${adguardhome_config:=%%PREFIX%%/etc/AdGuardHome.yaml}
 : ${adguardhome_user:=%%USER%%}
 : ${adguardhome_group:=%%GROUP%%}
 : ${adguardhome_work_dir:=/var/db/adguardhome}
+: ${adguardhome_work_dir_data:=/var/db/adguardhome/data}
+
+# old values
+: ${adguardhome_config_old:=%%PREFIX%%/bin/AdGuardHome.yaml}
+: ${adguardhome_work_dir_data_old:=%%PREFIX%%/bin/data}
 
 logfile="/var/log/${name}.log"
 
@@ -30,6 +35,31 @@ start_precmd="${name}_prestart"
 
 adguardhome_prestart()
 {
+    # check if the old config exists
+    if [ -f ${adguardhome_config_old} ] || [ -d ${adguardhome_work_dir_data_old} ]; then
+        if ! [ -f ${adguardhome_config} ] && ! [ -d ${adguardhome_work_dir_data} ]; then # old config exists, new config doesn't exist
+            # move old config to new locations
+            if [ -f ${adguardhome_config_old} ]; then
+                echo "moving old config ${adguardhome_config_old} to the new location ${adguardhome_config}"
+                mv ${adguardhome_config_old} ${adguardhome_config}
+            fi
+            if [ -d ${adguardhome_work_dir_data_old} ]; then
+                install -d -m 0750 -o ${adguardhome_user} -g ${adguardhome_group} \
+                    ${adguardhome_work_dir}
+                echo "moving old config ${adguardhome_work_dir_data_old} to the new location ${adguardhome_work_dir_data}"
+                mv ${adguardhome_work_dir_data_old} ${adguardhome_work_dir_data}
+            fi
+        else # both old and new config exist
+            echo "(!!!) WARNING =================================================================="
+            echo "(!!!) WARNING Both old and new configs exist"
+            echo "(!!!) WARNING Please choose which configs do you need and remove the old configs"
+            echo "(!!!) WARNING OLD config locations: ${adguardhome_config_old} ${adguardhome_work_dir_data_old}"
+            echo "(!!!) WARNING NEW config locations: ${adguardhome_config} ${adguardhome_work_dir_data}"
+            echo "(!!!) WARNING =================================================================="
+        fi
+    fi
+
+    # install dir
     if [ ! -d ${adguardhome_work_dir} ]; then
         install -d -m 0750 -o ${adguardhome_user} -g ${adguardhome_group} \
             ${adguardhome_work_dir}
