@@ -1,5 +1,6 @@
 PORTNAME=	OpenFodder
 DISTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -23,21 +24,14 @@ USE_SDL=	mixer2
 GH_TUPLE=	${PORTNAME}:data:1.7.0:data/Run \
 		${PORTNAME}:scripts:c6f3076:scripts/Run/Scripts
 GH_PROJECT=	${PORTNAME:tl}
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/applications/${PORTNAME:tl}.desktop \
+		share/metainfo/${PORTNAME:tl}.appdata.xml \
+		share/pixmaps/${PORTNAME:tl}.png
 PORTDATA=	*
 PORTDOCS=	*.md
 
-DESKTOP_ENTRIES="${PORTNAME}" \
-		"" \
-		"${PORTNAME:tl}" \
-		"${PORTNAME}" \
-		"Game;ActionGame;" \
-		""
-
-OPTIONS_DEFINE=	DOCS ICONS
-OPTIONS_DEFAULT=ICONS
-
-ICONS_USES=	magick:build
+OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,clang++,${CXX},' \
@@ -46,16 +40,10 @@ post-patch:
 		-e 's,git log -n 1 --pretty=,${ECHO_CMD} ,' \
 		-e 's,%%h,${DISTVERSIONFULL},' \
 		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} '/Exec/s/${PORTNAME:tl}/${PORTNAME}/' \
+		${WRKSRC}/FreeDesktop/*.desktop
 	@${REINPLACE_CMD} 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/Source/ResourceMan.cpp
-
-post-build-ICONS-on:
-	@for size in 16x16 24x24 32x32 48x48 57x57; do \
-		${MKDIR} ${WRKDIR}/icons/hicolor/$$size/apps; \
-	done
-	@mogrify -verbose -set filename:size %wx%h -format png \
-		 -path ${WRKDIR}/icons/hicolor/%\[filename:size]/apps \
-		${WRKSRC}/Projects/${PORTNAME:tl}.ico
 
 do-test:
 	@(cd ${WRKSRC_data} && ${SETENV} ${TEST_ENV} \
@@ -66,14 +54,16 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 	(cd ${WRKSRC}/Run && ${COPYTREE_SHARE} "${PORTDATA}" \
 		 ${STAGEDIR}${DATADIR} "! -name ${PORTNAME} -type f")
+	${INSTALL_DATA} ${WRKSRC}/FreeDesktop/*.desktop \
+		${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/FreeDesktop/*.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
+	${INSTALL_DATA} ${WRKSRC}/FreeDesktop/*.appdata.xml \
+		${STAGEDIR}${PREFIX}/share/metainfo
 
 do-install-DOCS-on:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDOCS}" \
 		${STAGEDIR}${DOCSDIR})
-
-do-install-ICONS-on:
-	(cd ${WRKDIR}/icons && ${COPYTREE_SHARE} . \
-		${STAGEDIR}${PREFIX}/share/icons)
-	(cd ${STAGEDIR}${PREFIX} && ${FIND} share/icons -type f >>${TMPPLIST})
 
 .include <bsd.port.mk>
