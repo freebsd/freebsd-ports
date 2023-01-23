@@ -1,5 +1,5 @@
 PORTNAME=	advancecomp
-DISTVERSION=	2.4
+DISTVERSION=	2.5
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/amadvance/advancecomp/releases/download/v${DISTVERSION}/
 
