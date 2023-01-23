@@ -1,0 +1,15 @@
+Allow newer often compatible Zig patch-level updates
+
+--- src/main.zig.orig	2022-11-17 16:38:59 UTC
++++ src/main.zig
+@@ -11,8 +11,8 @@ pub fn main() !void {
+ pub fn main() !void {
+     comptime {
+         const v = builtin.zig_version;
+-        if (v.major != 0 or v.minor != 10 or v.patch != 0)
+-            @panic("Must be built against Zig 0.10.0");
++        if (v.major != 0 or v.minor != 10)
++            @panic("Must be built against Zig 0.10");
+     }
+ 
+     const allocator = std.heap.c_allocator;
