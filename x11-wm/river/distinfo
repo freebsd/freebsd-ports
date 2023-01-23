@@ -1,6 +1,6 @@
-TIMESTAMP = 1673194268
-SHA256 (riverwm-river-v0.2.2_GH0.tar.gz) = f54acf6c29944640490af9f7f8abd3bd89d943a438022083c3c3eee539e7eb59
-SIZE (riverwm-river-v0.2.2_GH0.tar.gz) = 137052
+TIMESTAMP = 1674479065
+SHA256 (riverwm-river-v0.2.3_GH0.tar.gz) = b62abfde036657db822100b2dfd34d765b3b9ab001bb0e8f4e6bdc3f26a702f4
+SIZE (riverwm-river-v0.2.3_GH0.tar.gz) = 137540
 SHA256 (ifreund-zig-pixman-4a49ba1_GH0.tar.gz) = ae605ece2a2a38c6e35ce656c718846679b8f28728c35b366afb3d93cb881543
 SIZE (ifreund-zig-pixman-4a49ba1_GH0.tar.gz) = 7180
 SHA256 (ifreund-zig-wayland-ace6aee_GH0.tar.gz) = c6ebbf0d56db36a732d2e58deff090503b68928ceed538737de7cd4ea36681c6
