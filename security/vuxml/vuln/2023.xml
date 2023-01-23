@@ -96,6 +96,32 @@
     </dates>
   </vuln>
 
+  <vuln vid="28b69630-9b10-11ed-97a6-6805ca2fa271">
+    <topic>powerdns-recursor -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><ge>4.8.0</ge><lt>4.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/2023/01/20/security-advisory-2023-01-for-powerdns-recursor-4-8-0/">
+	  <p>PowerDNS Security Advisory 2023-01: unbounded recursion results in program termination</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-22617</cvename>
+      <url>https://docs.powerdns.com/recursor/security-advisories/powerdns-advisory-2023-01.html</url>
+    </references>
+    <dates>
+      <discovery>2023-01-20</discovery>
+      <entry>2023-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a3b10c9b-99d9-11ed-aa55-d05099fed512">
 	  <topic>shells/fish -- arbitrary code execution via git</topic>
     <affects>
