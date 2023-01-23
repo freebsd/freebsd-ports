@@ -12,6 +12,8 @@ WWW=		https://galeracluster.com/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Requires upstream EOL MySQL 5.6
+EXPIRATION_DATE=	2023-06-30
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 powerpc64
 NOT_FOR_ARCHS_REASON=	error: Unsupported platform
 
