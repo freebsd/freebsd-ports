@@ -1,3 +1,40 @@
+  <vuln vid="7844789a-9b1f-11ed-9a3f-b42e991fc52e">
+    <topic>net/krill -- DoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>krill</name>
+	<range><lt>0.12.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0158">
+	<p>
+		NLnet Labs Krill supports direct access to the RRDP repository
+		content through its built-in web server at the "/rrdp" endpoint.
+		Prior to 0.12.1 a direct query for any existing directory under
+		"/rrdp/", rather than an RRDP file such as "/rrdp/notification.xml"
+		as would be expected, causes Krill to crash. If the built-in "/rrdp"
+		endpoint is exposed directly to the internet, then malicious remote
+		parties can cause the publication server to crash. The repository
+		content is not affected by this, but the availability of the server
+		and repository can cause issues if this attack is persistent and is
+		not mitigated. .
+	</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-0158</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-0158</url>
+    </references>
+    <dates>
+      <discovery>2023-01-10</discovery>
+      <entry>2023-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bba3f684-9b1d-11ed-9a3f-b42e991fc52e">
     <topic>www/awstats -- Partial absolute pathname</topic>
     <affects>
