@@ -1,12 +1,13 @@
 PORTNAME=	DDNet
-PORTVERSION=	16.7.1
+PORTVERSION=	16.7.2
 CATEGORIES=	games
 MASTER_SITES=	https://ddnet.tw/downloads/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	DDraceNetwork, a cooperative racing mod of Teeworlds
-WWW=		https://ddnet.tw/
+WWW=		https://ddnet.tw/ \
+		https://github.com/ddnet/ddnet
 
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/license.txt
@@ -21,6 +22,8 @@ CXXFLAGS+=	-DBINARY_DIR="\\\"${PREFIX}/bin\\\""
 
 CARGO_INSTALL=	no
 CARGO_TEST=	no
+CARGO_TARGET_DIR=${BUILD_WRKSRC}
+CARGO_ENV+=	DDNET_TEST_NO_LINK=1
 CARGO_CRATES=	cc-1.0.73 \
 		cxx-1.0.71 \
 		cxxbridge-flags-1.0.71 \
@@ -30,8 +33,6 @@ CARGO_CRATES=	cc-1.0.73 \
 		quote-1.0.20 \
 		syn-1.0.98 \
 		unicode-ident-1.0.1
-CARGO_TARGET_DIR=${BUILD_WRKSRC}
-CARGO_ENV+=	DDNET_TEST_NO_LINK=1
 
 PORTDATA=	*
 DATADIR=	${PREFIX}/share/ddnet
