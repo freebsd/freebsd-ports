@@ -1,6 +1,7 @@
 PORTNAME=	lavinmq
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0-beta.8
+PORTREVISION=	1
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -22,7 +23,7 @@ GH_TUPLE=	\
 		84codes:http-protection:893a191d55e301e0df96d6dd0f7d72c527bddeb8:a/deps/http-protection \
 		84codes:systemd.cr:v2.0.0:systemd/deps/systemd.cr \
 		cloudamqp:amq-protocol.cr:v1.1.2:proto/deps/amq-protocol.cr \
-		cloudamqp:amqp-client.cr:v1.0.9:client/deps/amqp-client.cr \
+		cloudamqp:amqp-client.cr:v1.0.10:client/deps/amqp-client.cr \
 		luislavena:radix:v0.4.1:radix/deps/radix \
 		schovi:baked_file_system:v0.10.0:baked/deps/baked_file_system \
 		tbrand:router.cr:v0.2.8:router/deps/router.cr
