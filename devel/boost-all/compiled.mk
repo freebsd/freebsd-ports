@@ -4,7 +4,7 @@ MAKE_CMD?=	bjam
 MAKEFILE=	#
 MAKE_FLAGS=	#
 ALL_TARGET=	stage
-USES+=		compiler:c++17-lang
+#USES+=		compiler:c++17-lang
 USE_CXXSTD=	gnu++17
 
 PLIST_SUB+=	BOOST_MAJOR_VER=${BOOST_MAJOR_VER} \
@@ -40,6 +40,19 @@ OPTIMIZED_CFLAGS_MAKE_ARGS=	inlining=full
 # base gcc 4.2.1 fails when using precompiled headers on 11.0+ kernel.
 # https://lists.freebsd.org/pipermail/svn-src-all/2015-March/101722.html
 MAKE_ARGS+=	pch=off
+
+.include <bsd.port.options.mk>
+
+.if ${OSVERSION} > 1400000
+USES+=	llvm:build
+CC=	${_LLVM_MK_PREFIX}/bin/clang
+CPP=	${_LLVM_MK_PREFIX}/bin/clang-cpp
+CXX=	${_LLVM_MK_PREFIX}/bin/clang++
+#LD?=	${_LLVM_MK_PREFIX}/bin/ld
+CHOSEN_COMPILER_TYPE=	clang
+.else
+USES+=	compiler:c++17-lang
+.endif
 
 post-patch:
 .if defined(USE_BINUTILS)
