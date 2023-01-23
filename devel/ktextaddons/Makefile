@@ -1,5 +1,5 @@
 PORTNAME=	ktextaddons
-DISTVERSION=	1.0
+DISTVERSION=	1.0.1
 CATEGORIES=	devel kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 
@@ -14,5 +14,7 @@ USE_KDE=	archive auth codecs config configwidgets coreaddons ecm i18n \
 		widgetsaddons xmlgui
 USE_QT=		core dbus gui network speech widgets xml \
 		buildtools:build qmake:build
+
+PLIST_SUB+=	LIBVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
