@@ -2578,5 +2578,5 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/public/js/icinga/timezone.js
 %%WWWDIR%%/public/js/icinga/ui.js
 %%WWWDIR%%/public/js/icinga/utils.js
-@dir %%ETCDIR%%
 @dir(%%WWWOWN%%,%%WWWGRP%%) /var/db/icingaweb2
+@dir %%ETCDIR%%
