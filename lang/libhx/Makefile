@@ -1,5 +1,5 @@
 PORTNAME=	libHX
-PORTVERSION=	4.8
+PORTVERSION=	4.9
 CATEGORIES=	lang
 MASTER_SITES=	https://inai.de/files/libhx/
 
