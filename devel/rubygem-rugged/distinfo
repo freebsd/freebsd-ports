@@ -1,5 +1,5 @@
-TIMESTAMP = 1668854962
-SHA256 (rubygem/rugged-1.5.0.1.gem) = 1d947f2b19a2bb1d9fb4e3c7d6e8b8def3ed18f5aee21a8c7f8edb3fce66010a
-SIZE (rubygem/rugged-1.5.0.1.gem) = 1805312
+TIMESTAMP = 1674451490
+SHA256 (rubygem/rugged-1.5.1.gem) = a83493d050652d9e65eb6844a32f2c3da59e385e875214f7e502db547a7fce72
+SIZE (rubygem/rugged-1.5.1.gem) = 1807360
 SHA256 (rubygem/9f9bce7e3346dfcf2a4256561e37ba8c888a16b6.diff) = 5f0ff2547649c9a1eddd73176322bb957b7d3d85c1b6c70d772f293289c88eac
 SIZE (rubygem/9f9bce7e3346dfcf2a4256561e37ba8c888a16b6.diff) = 741
