@@ -1,3 +1,35 @@
+  <vuln vid="bba3f684-9b1d-11ed-9a3f-b42e991fc52e">
+    <topic>www/awstats -- Partial absolute pathname</topic>
+    <affects>
+      <package>
+	<name>awstats</name>
+	<range><lt>7.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35176">
+	  <p>It seems #90 is not completely fixed in 7.8.
+	    (that is, even after CVE-2017-1000501 and CVE-2020-29600 are fixed).
+	  In AWStats through 7.8, cgi-bin/awstats.pl?config= accepts a
+	  partial absolute pathname (omitting the initial /etc), even
+	  though it was intended to only read a file in the /etc/awstats/awstats.conf format.
+	  NOTE: this issue exists because of an incomplete fix for CVE-2017-1000501 and CVE-2020-29600.
+	</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-35176</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-35176</url>
+    </references>
+    <dates>
+      <discovery>2022-12-11</discovery>
+      <entry>2023-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b6f7ad7d-9b19-11ed-9a3f-b42e991fc52e">
     <topic>net/eternalterminal -- Multiple vulnerabilities</topic>
     <affects>
