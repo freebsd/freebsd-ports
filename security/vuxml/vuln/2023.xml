@@ -1,3 +1,32 @@
+  <vuln vid="b6f7ad7d-9b19-11ed-9a3f-b42e991fc52e">
+    <topic>net/eternalterminal -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>eternalterminal</name>
+	<range><lt>6.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mitre reports:</p>
+	<blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-48257">
+	  <p>etserver and etclient have predictable logfile names in
+	    /tmp and they are world-readable logfiles</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-48257</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-48257</url>
+      <cvename>CVE-2022-48258</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-48258</url>
+    </references>
+    <dates>
+      <discovery>2023-01-13</discovery>
+      <entry>2023-01-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a3b10c9b-99d9-11ed-aa55-d05099fed512">
 	  <topic>shells/fish -- arbitrary code execution via git</topic>
     <affects>
@@ -10,7 +39,7 @@
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Peter Ammon reports:</p>
 	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2022-20001">
-            <p>
+	<p>
 		fish is a command line shell. fish version 3.1.0 through
 		version 3.3.1 is vulnerable to arbitrary code execution.
 		git repositories can contain per-repository
