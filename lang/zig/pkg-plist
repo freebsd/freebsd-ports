@@ -10,6 +10,7 @@ bin/zig
 lib/zig/build_runner.zig
 lib/zig/c.zig
 lib/zig/compiler_rt.zig
+lib/zig/compiler_rt/aarch64_outline_atomics.zig
 lib/zig/compiler_rt/absv.zig
 lib/zig/compiler_rt/absvdi2_test.zig
 lib/zig/compiler_rt/absvdi2.zig
@@ -465,7 +466,6 @@ lib/zig/include/xsaveintrin.h
 lib/zig/include/xsaveoptintrin.h
 lib/zig/include/xsavesintrin.h
 lib/zig/include/xtestintrin.h
-lib/zig/include/zig.h
 lib/zig/init-exe/build.zig
 lib/zig/init-exe/src/main.zig
 lib/zig/init-lib/build.zig
@@ -580,6 +580,7 @@ lib/zig/libc/glibc/sysdeps/alpha/dl-sysdep.h
 lib/zig/libc/glibc/sysdeps/alpha/start-2.33.S
 lib/zig/libc/glibc/sysdeps/alpha/start.S
 lib/zig/libc/glibc/sysdeps/arc/sysdep.h
+lib/zig/libc/glibc/sysdeps/arm/arm-features.h
 lib/zig/libc/glibc/sysdeps/arm/bits/endianness.h
 lib/zig/libc/glibc/sysdeps/arm/crti.S
 lib/zig/libc/glibc/sysdeps/arm/crtn.S
@@ -7405,6 +7406,7 @@ lib/zig/libc/mingw/stdio/_putc_nolock.c
 lib/zig/libc/mingw/stdio/_putwc_nolock.c
 lib/zig/libc/mingw/stdio/_stat.c
 lib/zig/libc/mingw/stdio/_stat64i32.c
+lib/zig/libc/mingw/stdio/_vscprintf.c
 lib/zig/libc/mingw/stdio/_wfindfirst64i32.c
 lib/zig/libc/mingw/stdio/_wfindnext64i32.c
 lib/zig/libc/mingw/stdio/_wstat.c
@@ -13593,6 +13595,7 @@ lib/zig/std/zig/perf_test.zig
 lib/zig/std/zig/render.zig
 lib/zig/std/zig/string_literal.zig
 lib/zig/std/zig/system.zig
+lib/zig/std/zig/system/arm.zig
 lib/zig/std/zig/system/darwin.zig
 lib/zig/std/zig/system/darwin/macos.zig
 lib/zig/std/zig/system/linux.zig
@@ -13839,3 +13842,4 @@ lib/zig/tsan/ubsan/ubsan_flags.h
 lib/zig/tsan/ubsan/ubsan_flags.inc
 lib/zig/tsan/ubsan/ubsan_init.h
 lib/zig/tsan/ubsan/ubsan_platform.h
+lib/zig/zig.h
