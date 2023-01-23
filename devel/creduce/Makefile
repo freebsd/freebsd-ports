@@ -1,51 +1,40 @@
 PORTNAME=	creduce
-DISTVERSION=	2.10.0
+DISTVERSION=	2.11.0.20220927
 CATEGORIES=	devel
-MASTER_SITES=	http://embed.cs.utah.edu/creduce/
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Produces small test cases
-WWW=		https://embed.cs.utah.edu/creduce/
+WWW=		https://github.com/csmith-project/creduce
 
-# See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=268745
-BROKEN=		Depends on removed LLVM port devel/llvm80
+LICENSE=	NCSA
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-# LLVM_VER=	80
-# BUILD_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
-# RUN_DEPENDS=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER} 
-BUILD_DEPENDS=	topformflat:devel/delta \
-		astyle:devel/astyle \
+BROKEN_FreeBSD_12_powerpc64=	fails to configure: cannot compile and link test program with selected LLVM
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
+LIB_DEPENDS=	libzstd.so:archivers/zstd
+RUN_DEPENDS=	topformflat:devel/delta \
 		p5-Benchmark-Timer>=0:devel/p5-Benchmark-Timer \
 		p5-Exporter-Lite>=0:devel/p5-Exporter-Lite \
 		p5-File-Which>=0:sysutils/p5-File-Which \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
 		p5-Sys-CPU>=0:devel/p5-Sys-CPU \
-		p5-Getopt-Tabular>=0:devel/p5-Getopt-Tabular
+		p5-Getopt-Tabular>=0:devel/p5-Getopt-Tabular \
+		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
-BROKEN_FreeBSD_12_powerpc64=	fails to configure: cannot compile and link test program with selected LLVM
+USES=		cmake gnome compiler:c++14-lang llvm:build,lib,run perl5
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${LLVM_VER} \
-		CC=${LOCALBASE}/bin/clang${LLVM_VER} \
-		CXX=${LOCALBASE}/bin/clang++${LLVM_VER} \
-		CPP=${LOCALBASE}/bin/clang-cpp${LLVM_VER}
+USE_CXXSTD=	c++14
+USE_GITHUB=	yes
+GH_ACCOUNT=	csmith-project
+GH_TAGNAME=	8d56bee
+USE_GNOME=	libxml2
 
-USES=		autoreconf compiler gmake libtool perl5
+# See clang_delta/CMakeLists.txt for more details
+LDFLAGS+=	-lLLVM-${LLVM_VERSION} -L${LLVM_PREFIX}/lib
 
-CFLAGS_powerpc64=	-mabi=elfv2
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-LLD_UNSAFE=	yes
-.endif
-
-.include <bsd.port.pre.mk>
-
-# Detect base system libc++ >= 14 by checking for COMPILER_VERSION.
-# Not really the ideal way, but it should work.
-.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 140
-CXXFLAGS+=	-include ${FILESDIR}/builtin_is_constant_evaluated.h
-.endif
+CMAKE_OFF=	ENABLE_TRANS_ASSERT
+CMAKE_ARGS=	-DLLVM_DIR=${LLVM_PREFIX}/lib/cmake/llvm \
+		-DClang_DIR=${LLVM_PREFIX}/lib/cmake/clang
 
 .include <bsd.port.mk>
