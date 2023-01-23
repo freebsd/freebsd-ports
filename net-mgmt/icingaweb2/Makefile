@@ -1,7 +1,6 @@
 PORTNAME=	icingaweb2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.2
-PORTREVISION=	1
+DISTVERSION=	2.11.3
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -11,6 +10,10 @@ WWW=		https://www.icinga.com/products/icinga-web-2
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	icinga-php-library${PHP_PKGNAMESUFFIX}>=0.10.0:net-mgmt/icinga-php-library@${PHP_FLAVOR} \
+		icinga-php-thirdparty${PHP_PKGNAMESUFFIX}>=0.11.0:net-mgmt/icinga-php-thirdparty@${PHP_FLAVOR} \
+		icingaweb2-module-incubator${PHP_PKGNAMESUFFIX}>=0.18.0:net-mgmt/icingaweb2-module-incubator@${PHP_FLAVOR}
 
 USES=		php:build,web,flavors
 USE_PHP=	bcmath bitset ctype curl dom gd gettext hash iconv json ldap \
@@ -50,10 +53,15 @@ LDAP_USE=	PHP=ldap
 post-patch:
 	${REINPLACE_CMD} 's%\(/etc/icingaweb2\)%${PREFIX}\1%g' \
 		${WRKSRC}/library/Icinga/Application/ApplicationBootstrap.php
+	${REINPLACE_CMD} 's%/var/lib/icingaweb2%/var/db/icingaweb2%g' \
+		${WRKSRC}/library/Icinga/Application/ApplicationBootstrap.php
+	${REINPLACE_CMD} 's%/usr/share/icinga-php%${WWWDIR}/icinga-php%g' \
+		${WRKSRC}/library/Icinga/Application/ApplicationBootstrap.php
 	${REINPLACE_CMD} 's%readlink[^)]*)%"${PREFIX}/bin/php"%g' \
 		${WRKSRC}/application/clicommands/WebCommand.php
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
+	${MKDIR} ${STAGEDIR}/var/db/${PORTNAME}/
 	${INSTALL_DATA} ${WRKSRC}/etc/bash_completion.d/icingacli \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	(cd ${WRKSRC} && ${RM} -r .mailmap changelog.py icingaweb2.spec \
@@ -65,17 +73,5 @@ do-install:
 	${CHMOD} 755 ${STAGEDIR}${WWWDIR}/bin/icingacli
 	${RLN} ${STAGEDIR}${WWWDIR}/bin/icingacli ${STAGEDIR}${PREFIX}/bin/icingacli
 	${MKDIR} ${STAGEDIR}${ETCDIR}
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-.for webserver in apache nginx
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/${webserver}
-# ICINGAWEB_CONFIGDIR is set to /nonexistent to allow staging as user.
-# Once installed, ${ETCDIR} is not world-readable, so point icingacli to
-# a non existing directory. The config files are generated correctly anyway.
-	(cd ${STAGEDIR}${WWWDIR} && \
-	ICINGAWEB_CONFIGDIR=/nonexistent \
-	./bin/icingacli setup config webserver ${webserver} --path=/icingaweb2 \
-	--root=${WWWDIR}/public --config=${ETCDIR} \
-	--file=${STAGEDIR}${EXAMPLESDIR}/${webserver}/icingaweb2.conf)
-.endfor
 
 .include <bsd.port.mk>
