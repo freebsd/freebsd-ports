@@ -478,6 +478,7 @@
     SUBDIR += lapispuzzle
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
+    SUBDIR += lbreakouthd
     SUBDIR += ldmud
     SUBDIR += leela-zero
     SUBDIR += legend-of-edgar
