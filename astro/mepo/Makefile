@@ -1,6 +1,6 @@
 PORTNAME=	mepo
 DISTVERSION=	1.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro geography wayland
 MASTER_SITES=	https://git.sr.ht/~mil/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -40,6 +40,10 @@ post-patch:
 
 do-build:
 	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
+
+post-install:
+	@${STAGEDIR}${PREFIX}/bin/${PORTNAME} -docman \
+		>${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 do-test:
 	@(cd ${WRKSRC} && ${TEST_ENV} zig build test ${CONFIGURE_ARGS})
