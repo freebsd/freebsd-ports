@@ -1,6 +1,6 @@
 PORTNAME=	nvc
 DISTVERSIONPREFIX=	r
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,11 +15,13 @@ BROKEN_armv7=	compilation fails: no member named '_gregs' in 'mcontext_t'; did y
 BROKEN_FreeBSD_14_i386=	clang creashes, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=265826
 
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
+LIB_DEPENDS=	libelf.so:devel/elfutils \
+		libffi.so:devel/libffi
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
 		bash:shells/bash
 TEST_DEPENDS=	check>0:devel/check
 .if !exists(/usr/include/unwind.h)
-LIB_DEPENDS=	libunwind.so:devel/libunwind
+LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 
 USES=		autoreconf compiler:c++14-lang localbase pkgconfig shebangfix
