@@ -1,5 +1,6 @@
 PORTNAME=	cardano-db-sync
 PORTVERSION=	13.1.0.0
+PORTREVISION=	1
 CATEGORIES=	net-p2p databases
 
 PATCH_SITES=	https://arrowd.name/:freebsd_compat
@@ -22,26 +23,26 @@ WANT_PGSQL=	server
 USE_GITHUB=	yes
 GH_ACCOUNT=	input-output-hk
 
-GH_TUPLE=	HeinrichApfelmus:threepenny-gui:e3bb8283fc7d2e8aa374eea29426002e8dcd67a8:threepenny_gui/dist-newstyle/src/threepenn_-92d8c1b5dcc24f1d \
-		haskell-works:hw-aeson:6dc309ff4260c71d9a18c220cbae8aa1dfe2a02e:hw_aeson/dist-newstyle/src/hw-aeson-446b671374758b54 \
-		input-output-hk:Win32-network:3825d3abf75f83f406c1f7161883c438dac7277d:Win32_network/dist-newstyle/src/Win32-net_-5b9448ed2f179086 \
-		input-output-hk:cardano-base:0f3a867493059e650cda69e20a5cbf1ace289a57:cardano_base/dist-newstyle/src/cardano-b_-c8db9876882556ed \
-		input-output-hk:cardano-config:e9de7a2cf70796f6ff26eac9f9540184ded0e4e6:cardano_config/dist-newstyle/src/cardano-c_-cddf0cd12b1de19c \
-		input-output-hk:cardano-crypto:f73079303f663e028288f9f4a9e08bcca39a923e:cardano_crypto/dist-newstyle/src/cardano-c_-253fd88117badd8f \
-		input-output-hk:cardano-ledger:c7c63dabdb215ebdaed8b63274965966f2bf408f:cardano_ledger/dist-newstyle/src/cardano-l_-516df916d2b8a647 \
-		input-output-hk:cardano-node:950c4e222086fed5ca53564e642434ce9307b0b9:cardano_node/dist-newstyle/src/cardano-n_-156536db9a177fb0 \
-		input-output-hk:cardano-prelude:bb4ed71ba8e587f672d06edf9d2e376f4b055555:cardano_prelude/dist-newstyle/src/cardano-p_-cae013aee062332a \
-		input-output-hk:ekg-forward:297cd9db5074339a2fb2e5ae7d0780debb670c63:ekg_forward/dist-newstyle/src/ekg-forwa_-439c40ba89351585 \
-		input-output-hk:flat:ee59880f47ab835dbd73bea0847dab7869fc20d8:flat/dist-newstyle/src/flat-9eba9ae2d4d970a \
-		input-output-hk:goblins:cde90a2b27f79187ca8310b6549331e59595e7ba:goblins/dist-newstyle/src/goblins-67efee8d68d79164 \
-		input-output-hk:hedgehog-extras:714ee03a5a786a05fc57ac5d2f1c2edce4660d85:hedgehog_extras/dist-newstyle/src/hedgehog-_-586c3da22a5ce29b \
-		input-output-hk:io-sim:f4183f274d88d0ad15817c7052df3a6a8b40e6dc:io_sim/dist-newstyle/src/io-sim-5409b7204b6dc065 \
-		input-output-hk:iohk-monitoring-framework:066f7002aac5a0efc20e49643fea45454f226caa:iohk_monitoring_framework/dist-newstyle/src/iohk-moni_-1defcf7452717dc5 \
-		input-output-hk:optparse-applicative:7497a29cb998721a9068d5725d49461f2bba0e7a:optparse_applicative/dist-newstyle/src/optparse-_-3cd678a226e0281a \
-		input-output-hk:ouroboros-network:cb9eba406ceb2df338d8384b35c8addfe2067201:ouroboros_network/dist-newstyle/src/ouroboros_-e51b1e265e7bb521 \
-		input-output-hk:plutus:a56c96598b4b25c9e28215214d25189331087244:plutus/dist-newstyle/src/plutus-5e27fa0483bd0166 \
-		input-output-hk:typed-protocols:181601bc3d9e9d21a671ce01e0b481348b3ca104:typed_protocols/dist-newstyle/src/typed-pro_-3f57698e3fbfd050 \
-		vshabanov:ekg-json:00ebe7211c981686e65730b7144fbf5350462608:ekg_json/dist-newstyle/src/ekg-json-e51d7dff12d02a95
+GH_TUPLE=	HeinrichApfelmus:threepenny-gui:e3bb8283fc7d2e8aa374eea29426002e8dcd67a8:threepenny_gui/dist-newstyle/src/threepenn_-23436291897ec03d \
+		haskell-works:hw-aeson:6dc309ff4260c71d9a18c220cbae8aa1dfe2a02e:hw_aeson/dist-newstyle/src/hw-aeson-f298917f9cc72e54 \
+		input-output-hk:Win32-network:3825d3abf75f83f406c1f7161883c438dac7277d:Win32_network/dist-newstyle/src/Win32-net_-e9415802910225c6 \
+		input-output-hk:cardano-base:0f3a867493059e650cda69e20a5cbf1ace289a57:cardano_base/dist-newstyle/src/cardano-b_-c0de99f0ccd585cd \
+		input-output-hk:cardano-config:e9de7a2cf70796f6ff26eac9f9540184ded0e4e6:cardano_config/dist-newstyle/src/cardano-c_-88a67c41a056383c \
+		input-output-hk:cardano-crypto:f73079303f663e028288f9f4a9e08bcca39a923e:cardano_crypto/dist-newstyle/src/cardano-c_-e62f2aeae532ef4f \
+		input-output-hk:cardano-ledger:c7c63dabdb215ebdaed8b63274965966f2bf408f:cardano_ledger/dist-newstyle/src/cardano-l_-793ecdcee1fc1ce7 \
+		input-output-hk:cardano-node:950c4e222086fed5ca53564e642434ce9307b0b9:cardano_node/dist-newstyle/src/cardano-n_-17dfc790a23ed210 \
+		input-output-hk:cardano-prelude:bb4ed71ba8e587f672d06edf9d2e376f4b055555:cardano_prelude/dist-newstyle/src/cardano-p_-98329c466570048a \
+		input-output-hk:ekg-forward:297cd9db5074339a2fb2e5ae7d0780debb670c63:ekg_forward/dist-newstyle/src/ekg-forwa_-e7958ca478e40f05 \
+		input-output-hk:flat:ee59880f47ab835dbd73bea0847dab7869fc20d8:flat/dist-newstyle/src/flat-3f12f6162a356f6a \
+		input-output-hk:goblins:cde90a2b27f79187ca8310b6549331e59595e7ba:goblins/dist-newstyle/src/goblins-7fe4f5e9bbbd1224 \
+		input-output-hk:hedgehog-extras:714ee03a5a786a05fc57ac5d2f1c2edce4660d85:hedgehog_extras/dist-newstyle/src/hedgehog-_-d2bdd077e79afffb \
+		input-output-hk:io-sim:f4183f274d88d0ad15817c7052df3a6a8b40e6dc:io_sim/dist-newstyle/src/io-sim-bc8c9d1167408325 \
+		input-output-hk:iohk-monitoring-framework:066f7002aac5a0efc20e49643fea45454f226caa:iohk_monitoring_framework/dist-newstyle/src/iohk-moni_-c7ca6b005d6f76c5 \
+		input-output-hk:optparse-applicative:7497a29cb998721a9068d5725d49461f2bba0e7a:optparse_applicative/dist-newstyle/src/optparse-_-5b3aca9bcb30ab3a \
+		input-output-hk:ouroboros-network:cb9eba406ceb2df338d8384b35c8addfe2067201:ouroboros_network/dist-newstyle/src/ouroboros_-268d3b2310e5b441 \
+		input-output-hk:plutus:a56c96598b4b25c9e28215214d25189331087244:plutus/dist-newstyle/src/plutus-3b55de0732f6b166 \
+		input-output-hk:typed-protocols:181601bc3d9e9d21a671ce01e0b481348b3ca104:typed_protocols/dist-newstyle/src/typed-pro_-e60d659a24a6dc70 \
+		vshabanov:ekg-json:00ebe7211c981686e65730b7144fbf5350462608:ekg_json/dist-newstyle/src/ekg-json-ecbacf43151947f5
 
 GH_TUPLE+=	input-output-hk:libsodium:${LIBSODIUM_HASH}:sodium \
 		bitcoin-core:secp256k1:${SECP256K1_HASH}:secp
@@ -52,21 +53,20 @@ LIBSODIUM_HASH=		66f017f16633f2060db25e17c170c2afa0f2a8a1
 SECP256K1_HASH=		ac83be33d0956faf6b7f61a60ab524ef7d6a473a
 
 USE_RC_SUBR=		cardano_db_sync
-MAKE_ENV=		PKG_CONFIG_PATH=${LIBS_PREFIX}${PREFIX}/libdata/pkgconfig/
 LIBS_PREFIX=		${WRKDIR}/libs_install
 BINARY_ALIAS=		git=true
 
 USE_CABAL=	Glob-0.10.2_3 \
 		HUnit-1.6.2.0 \
 		ListLike-4.7.6 \
-		MonadRandom-0.5.3_2 \
+		MonadRandom-0.5.3_3 \
 		OneTuple-0.3.1_3 \
 		Only-0.1_1 \
 		QuickCheck-2.14.2 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
 		Stream-0.4.7.2 \
-		Unique-0.4.7.9 \
+		Unique-0.4.7.9_1 \
 		abstract-deque-0.3 \
 		abstract-par-0.3.3 \
 		adjunctions-4.4_2 \
@@ -108,12 +108,12 @@ USE_CABAL=	Glob-0.10.2_3 \
 		bsb-http-chunked-0.0.0.4_3 \
 		byteorder-1.0.4 \
 		bytestring-builder-0.10.8.2.0 \
-		cabal-doctest-1.0.9_2 \
+		cabal-doctest-1.0.9_3 \
 		call-stack-0.4.0 \
 		canonical-json-0.6.0.0_1 \
 		case-insensitive-1.2.1.0 \
 		cassava-0.5.2.0_9 \
-		cborg-0.2.6.0_2 \
+		cborg-0.2.6.0_3 \
 		cereal-0.5.8.2_1 \
 		charset-0.3.9 \
 		clock-0.8.3 \
@@ -122,7 +122,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
 		composition-prelude-3.0.0.2 \
-		concurrent-output-1.10.15 \
+		concurrent-output-1.10.15_1 \
 		conduit-1.3.4.2 \
 		conduit-extra-1.3.5_1 \
 		connection-0.3.1_1 \
@@ -141,7 +141,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		data-fix-0.3.2_3 \
 		dec-0.0.4_1 \
 		dense-linear-algebra-0.1.0.0 \
-		dependent-map-0.4.0.0 \
+		dependent-map-0.4.0.0_1 \
 		dependent-sum-0.7.1.0_2 \
 		dependent-sum-template-0.1.1.1 \
 		deque-0.4.4 \
@@ -157,18 +157,18 @@ USE_CABAL=	Glob-0.10.2_3 \
 		either-5.0.1.1_1 \
 		ekg-0.4.0.15_8 \
 		ekg-core-0.1.1.7_2 \
-		entropy-0.4.1.7_1 \
+		entropy-0.4.1.7_2 \
 		erf-2.0.0.0 \
 		esqueleto-3.5.3.0 \
 		extra-1.7.10 \
-		fast-logger-3.1.1 \
+		fast-logger-3.1.1_1 \
 		fgl-5.7.0.3_1 \
 		file-embed-0.0.15.0 \
 		filelock-0.1.1.5 \
 		fin-0.1.1_2 \
 		fingertree-0.1.5.0 \
 		fmlist-0.9.4 \
-		foldl-1.4.12_5 \
+		foldl-1.4.12_6 \
 		formatting-6.3.7_2 \
 		foundation-0.0.26.1_1 \
 		free-5.1.7_1 \
@@ -194,7 +194,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		hspec-discover-2.9.4 \
 		hspec-expectations-0.8.2 \
 		http-api-data-0.4.3_6 \
-		http-client-0.7.11_1 \
+		http-client-0.7.11_2 \
 		http-client-tls-0.3.6.1 \
 		http-conduit-2.3.8 \
 		http-date-0.0.11 \
@@ -206,10 +206,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		indexed-traversable-instances-0.1.1_1 \
 		insert-ordered-containers-0.2.5.1_3 \
 		int-cast-0.2.0.0_4 \
-		integer-logarithms-1.0.3.1_3 \
+		integer-logarithms-1.0.3.1_4 \
 		invariant-0.5.5 \
 		io-streams-1.5.2.1_3 \
-		io-streams-haproxy-1.0.1.0_6 \
+		io-streams-haproxy-1.0.1.0_7 \
 		iproute-1.7.12 \
 		js-chart-2.9.4.1 \
 		kan-extensions-5.2.3 \
@@ -233,7 +233,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		microlens-0.4.12.0 \
 		microlens-mtl-0.2.0.1 \
 		microlens-th-0.4.3.10_1 \
-		microstache-1.0.2_3 \
+		microstache-1.0.2_4 \
 		mime-types-0.1.0.9 \
 		mmorph-1.1.5_1 \
 		monad-control-1.0.3.1 \
@@ -268,7 +268,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		persistent-documentation-0.1.0.4 \
 		persistent-postgresql-2.13.4.0 \
 		pipes-4.3.16_6 \
-		polyparse-1.13_5 \
+		polyparse-1.13_6 \
 		postgresql-libpq-0.9.4.3_3 \
 		postgresql-simple-0.6.4_8 \
 		pretty-show-1.10 \
@@ -277,7 +277,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		primitive-0.7.3.0_2 \
 		process-extras-0.7.4 \
-		profunctors-5.6.2_2 \
+		profunctors-5.6.2_3 \
 		prometheus-2.2.3 \
 		protolude-0.3.0 \
 		psqueues-0.2.7.3 \
@@ -298,11 +298,11 @@ USE_CABAL=	Glob-0.10.2_3 \
 		resourcet-1.2.4.3_1 \
 		safe-0.3.19 \
 		safe-exceptions-0.1.7.2 \
-		scientific-0.3.7.0_3 \
+		scientific-0.3.7.0_4 \
 		secp256k1-haskell-0.6.0 \
 		selective-0.4.2 \
 		semialign-1.2.0.1_3 \
-		semigroupoids-5.3.7 \
+		semigroupoids-5.3.7_1 \
 		semigroups-0.20 \
 		serialise-0.2.4.0_1 \
 		servant-0.19_5 \
@@ -320,7 +320,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		some-1.0.2 \
 		sop-core-0.5.0.2_1 \
 		split-0.2.3.4_2 \
-		splitmix-0.1.0.4_1 \
+		splitmix-0.1.0.4_2 \
 		statistics-0.16.0.1 \
 		statistics-linreg-0.3 \
 		stm-chans-3.0.0.6 \
@@ -331,7 +331,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		strict-0.4.0.1_4 \
 		strict-list-0.1.6 \
 		string-conv-0.1.2 \
-		string-conversions-0.4.0.1 \
+		string-conversions-0.4.0.1_1 \
 		swagger2-2.8.2 \
 		syb-0.7.2.1 \
 		system-filepath-0.4.14_1 \
@@ -364,7 +364,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		time-units-1.0.0 \
 		tls-1.5.7 \
 		transformers-base-0.4.6 \
-		transformers-compat-0.6.6 \
+		transformers-compat-0.6.6_1 \
 		transformers-except-0.1.2 \
 		tree-diff-0.2.1.1_2 \
 		type-equality-1_4 \
@@ -382,7 +382,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		uuid-types-1.0.5_3 \
 		validation-selective-0.1.0.1 \
 		vault-0.3.1.5_2 \
-		vector-0.12.3.1_2 \
+		vector-0.12.3.1_3 \
 		vector-algorithms-0.8.0.4_2 \
 		vector-binary-instances-0.2.5.2_3 \
 		vector-th-unbox-0.2.2_3 \
@@ -393,10 +393,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		wai-logger-2.4.0 \
 		warp-3.3.19 \
 		wcwidth-0.0.2 \
-		websockets-0.12.7.3_1 \
+		websockets-0.12.7.3_2 \
 		websockets-snap-0.10.3.1_1 \
 		wide-word-0.1.1.2_4 \
-		witherable-0.4.2_3 \
+		witherable-0.4.2_4 \
 		wl-pprint-annotated-0.1.0.1_1 \
 		wl-pprint-text-1.2.0.2 \
 		word8-0.1.3 \
@@ -416,21 +416,18 @@ post-patch:
 			-e '/Cardano.Db.RevFromGit/d' \
 			${WRKSRC}/cardano-db/src/Cardano/Db/Version.hs
 
-	${ECHO_CMD} "package *" >> ${WRKSRC}/cabal.project.local
-	${ECHO_CMD} "  extra-include-dirs: ${LIBS_PREFIX}${PREFIX}/include" >> ${WRKSRC}/cabal.project.local
-	${ECHO_CMD} "  extra-lib-dirs: ${LIBS_PREFIX}${PREFIX}/lib" >> ${WRKSRC}/cabal.project.local
-
 pre-build:
+	@${MKDIR} ${PKGCONFIG_LINKDIR}
+
 	cd ${WRKSRC_sodium} && ./autogen.sh
-	cd ${WRKSRC_sodium} && ./configure --prefix=${PREFIX} --with-pthreads --disable-shared
-	cd ${WRKSRC_sodium} && ${GMAKE} -j${MAKE_JOBS_NUMBER} && ${GMAKE} DESTDIR=${LIBS_PREFIX} ${INSTALL_TARGET}
-	${MKDIR} ${LIBS_PREFIX}${PREFIX}/libdata/pkgconfig
-	${MV} ${LIBS_PREFIX}${PREFIX}/lib/pkgconfig/libsodium.pc ${LIBS_PREFIX}${PREFIX}/libdata/pkgconfig/libsodium.pc
+	cd ${WRKSRC_sodium} && ./configure --prefix=${LIBS_PREFIX} --with-pthreads --disable-shared
+	cd ${WRKSRC_sodium} && ${GMAKE} -j${MAKE_JOBS_NUMBER} && ${GMAKE} ${INSTALL_TARGET}
+	${MV} ${LIBS_PREFIX}/lib/pkgconfig/libsodium.pc ${PKGCONFIG_LINKDIR}
 
 	cd ${WRKSRC_secp} && ./autogen.sh
-	cd ${WRKSRC_secp} && ./configure --prefix=${PREFIX} --enable-module-schnorrsig --enable-experimental --with-pic --disable-shared
-	cd ${WRKSRC_secp} && ${GMAKE} -j${MAKE_JOBS_NUMBER} && ${GMAKE} DESTDIR=${LIBS_PREFIX} ${INSTALL_TARGET}
-	${MV} ${LIBS_PREFIX}${PREFIX}/lib/pkgconfig/libsecp256k1.pc ${LIBS_PREFIX}${PREFIX}/libdata/pkgconfig/libsecp256k1.pc
+	cd ${WRKSRC_secp} && ./configure --prefix=${LIBS_PREFIX} --enable-module-schnorrsig --enable-experimental --with-pic --disable-shared
+	cd ${WRKSRC_secp} && ${GMAKE} -j${MAKE_JOBS_NUMBER} && ${GMAKE} ${INSTALL_TARGET}
+	${MV} ${LIBS_PREFIX}/lib/pkgconfig/libsecp256k1.pc ${PKGCONFIG_LINKDIR}
 
 post-install:
 	${MV} ${WRKSRC}/scripts/postgresql-setup.sh ${WRKSRC}/scripts/cardano-db-sync-pgsql-setup
