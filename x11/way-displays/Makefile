@@ -1,5 +1,5 @@
 PORTNAME=	way-displays
-DISTVERSION=	1.6.2
+DISTVERSION=	1.7.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
