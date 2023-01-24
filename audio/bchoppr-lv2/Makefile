@@ -1,5 +1,6 @@
 PORTNAME=	bchoppr
-DISTVERSION=	1.12.0
+DISTVERSION=	1.12.6-11
+DISTVERSIONSUFFIX=	-g9a463da
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-lv2
 
@@ -21,6 +22,7 @@ USE_XORG=	x11
 
 GH_ACCOUNT=	sjaehn
 GH_PROJECT=	BChoppr
+GH_TUPLE=	sjaehn:BWidgets:89d0765:BWidgets/src/BWidgets
 
 MAKEFILE=	makefile
 
