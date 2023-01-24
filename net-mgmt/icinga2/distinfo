@@ -1,5 +1,5 @@
-TIMESTAMP = 1673546305
-SHA256 (icinga-icinga2-v2.13.5_GH0.tar.gz) = b28e5fad148d56a781356c2a214aa4050aa8e0f86cc0568ca0a3e7bc8c8ef57c
-SIZE (icinga-icinga2-v2.13.5_GH0.tar.gz) = 9663739
+TIMESTAMP = 1674483566
+SHA256 (icinga-icinga2-v2.13.6_GH0.tar.gz) = 11ea79d4d5c9840cfed19e459f2c9c0bd674add67b0ed9160fb3d7ad3e74fbc2
+SIZE (icinga-icinga2-v2.13.6_GH0.tar.gz) = 9666870
 SHA256 (dd51997c73c6b4b328e3ad006eb8c86678001780.patch) = 95a729bda8c368e15c89ceb98d45cfcd8048d28cb8659eeb79adc07724a4dcf5
 SIZE (dd51997c73c6b4b328e3ad006eb8c86678001780.patch) = 3876
