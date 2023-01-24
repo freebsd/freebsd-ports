@@ -152,6 +152,7 @@
     SUBDIR += chocolate-doom
     SUBDIR += chroma
     SUBDIR += chromium-bsu
+    SUBDIR += chromono
     SUBDIR += circuslinux
     SUBDIR += cmatrix
     SUBDIR += cockatrice
