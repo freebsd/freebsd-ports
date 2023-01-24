@@ -1255,6 +1255,7 @@
     SUBDIR += libgudev
     SUBDIR += libgusb
     SUBDIR += libgutenfetch
+    SUBDIR += libheinz
     SUBDIR += libhoard
     SUBDIR += libhtp
     SUBDIR += libhyve-remote

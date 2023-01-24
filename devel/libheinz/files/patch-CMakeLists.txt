@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2023-01-24 07:32:58 UTC
++++ CMakeLists.txt
+@@ -35,7 +35,9 @@ endif()
+ include(CTest)
+ 
+ add_subdirectory(inc)
++if (BUILD_TESTING)
+ add_subdirectory(test)
++endif()
+ 
+ ## CPack settings.
+ 
