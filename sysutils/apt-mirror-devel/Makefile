@@ -22,6 +22,7 @@ NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/Makefile
-	@${CP} ${WRKSRC}/mirror.list ${WRKSRC}/mirror.list.sample
+	@${MKDIR} ${STAGEDIR}/etc/apt
+	@${CP} ${WRKSRC}/mirror.list ${STAGEDIR}/etc/apt/mirror.list.sample
 
 .include <bsd.port.mk>
