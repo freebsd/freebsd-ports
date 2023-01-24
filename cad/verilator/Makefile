@@ -1,6 +1,6 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.004
+DISTVERSION=	5.006
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,14 +14,20 @@ BROKEN_i386=	see https://github.com/verilator/verilator/issues/3037
 
 BUILD_DEPENDS=	autoconf>0:devel/autoconf \
 		bash:shells/bash \
-		${LOCALBASE}/bin/ar:devel/binutils
+		${LOCALBASE}/bin/ar:devel/binutils \
+		help2man:misc/help2man
 LIB_DEPENDS=	libsystemc.so:devel/systemc
 RUN_DEPENDS=	gmake:devel/gmake # verilator runs gmake for the --hierarchical option when the 'gmake' method is chosen
 
 USES=		bison compiler:c++14-lang gmake localbase:ldflags pathfix perl5 python:build,run,test shebangfix tar:tgz
 USE_GITHUB=	yes
 
-SHEBANG_FILES=	bin/verilator_ccache_report bin/verilator_profcfunc bin/verilator_gantt
+SHEBANG_FILES=	bin/verilator_ccache_report \
+		bin/verilator_difftree \
+		bin/verilator_gantt \
+		bin/verilator_includer \
+		bin/verilator_includer \
+		bin/verilator_profcfunc
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	INSTALL_PROGRAM="${INSTALL_SCRIPT}"
