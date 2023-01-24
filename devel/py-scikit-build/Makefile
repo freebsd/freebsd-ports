@@ -1,5 +1,5 @@
 PORTNAME=	scikit-build
-DISTVERSION=	0.16.2
+DISTVERSION=	0.16.6
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,7 @@ TEST_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}path.py>=11.5.0:devel/py-path.py@${PY_FLAVOR}
 
 USES=		python:3.8+
-USE_PYTHON=	distutils autoplist pytest # 19 tests are known to fail, see https://github.com/scikit-build/scikit-build/issues/791
+USE_PYTHON=	distutils autoplist pytest # 1 tests fail, 4 errors, see https://github.com/scikit-build/scikit-build/issues/791
 
 NO_ARCH=	yes
 
