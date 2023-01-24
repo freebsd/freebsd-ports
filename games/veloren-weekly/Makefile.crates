@@ -162,7 +162,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		dispatch-0.2.0 \
 		dlib-0.4.2 \
 		dlib-0.5.0 \
-		dot_vox-4.1.0 \
+		dot_vox-5.1.0 \
 		downcast-rs-1.2.0 \
 		drop_guard-0.3.0 \
 		egui-0.12.0 \

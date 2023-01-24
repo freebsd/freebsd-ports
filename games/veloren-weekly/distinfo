@@ -1,4 +1,4 @@
-TIMESTAMP = 1674082927
+TIMESTAMP = 1674550158
 SHA256 (rust/crates/ab_glyph-0.2.17.crate) = 04a9283dace1c41c265496614998d5b9c4a97b3eb770e804f007c5144bf03f2b
 SIZE (rust/crates/ab_glyph-0.2.17.crate) = 17243
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.7.crate) = 330223a1aecc308757b9926e9391c9b47f8ef2dbd8aea9df88312aea18c5e8d6
@@ -327,8 +327,8 @@ SHA256 (rust/crates/dlib-0.4.2.crate) = b11f15d1e3268f140f68d390637d5e76d849782d
 SIZE (rust/crates/dlib-0.4.2.crate) = 3853
 SHA256 (rust/crates/dlib-0.5.0.crate) = ac1b7517328c04c2aa68422fc60a41b92208182142ed04a25879c26c8f878794
 SIZE (rust/crates/dlib-0.5.0.crate) = 5788
-SHA256 (rust/crates/dot_vox-4.1.0.crate) = 83c18405ef54de0398b77a3ec8394d3a1639e7bf060e1385201e8db40c44ab41
-SIZE (rust/crates/dot_vox-4.1.0.crate) = 16060
+SHA256 (rust/crates/dot_vox-5.1.0.crate) = 822f8b56c7ce710d336190a76a03690238d19a214ce2b85db33a47cac30f106c
+SIZE (rust/crates/dot_vox-5.1.0.crate) = 23354
 SHA256 (rust/crates/downcast-rs-1.2.0.crate) = 9ea835d29036a4087793836fa931b08837ad5e957da9e23886b29586fb9b6650
 SIZE (rust/crates/downcast-rs-1.2.0.crate) = 11670
 SHA256 (rust/crates/drop_guard-0.3.0.crate) = 2c4a817d8b683f6e649aed359aab0c47a875377516bb5791d0f7e46d9066d209
@@ -1495,5 +1495,5 @@ SHA256 (hasenbanck-egui_wgpu_backend-63a002c6a9b6c016e45806dd065864431caab621_GH
 SIZE (hasenbanck-egui_wgpu_backend-63a002c6a9b6c016e45806dd065864431caab621_GH0.tar.gz) = 11500
 SHA256 (yoanlcq-vek-84d5cb65841d46599a986c5477341bea4456be26_GH0.tar.gz) = f6fc0b8e9b1290729ea94865be84a8c47846e49e3c193dab700940e1452d2fed
 SIZE (yoanlcq-vek-84d5cb65841d46599a986c5477341bea4456be26_GH0.tar.gz) = 90485
-SHA256 (veloren-veloren-da9cd79973d553620a37be80eb6ba2f8d0073fe1_GL0.tar.gz) = df8a5642f08f6c9fff9e77ed23b7ab222d45f2fb72c4dae4a9d11f307932fe3e
-SIZE (veloren-veloren-da9cd79973d553620a37be80eb6ba2f8d0073fe1_GL0.tar.gz) = 258353478
+SHA256 (veloren-veloren-1904740ffd6eff97d65cd853297c5de8af9316e2_GL0.tar.gz) = 322ba4e6748248da33407f2c82f13525786259b9b2aa839c5233f0d44a8e65ae
+SIZE (veloren-veloren-1904740ffd6eff97d65cd853297c5de8af9316e2_GL0.tar.gz) = 258374110
