@@ -1,3 +1,30 @@
+  <vuln vid="b8a0fea2-9be9-11ed-8acf-0800277bb8a8">
+    <topic>gitea -- information disclosure</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.18.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/22566">
+	  <p>Prevent multiple To recipients: Change the mailer interface to
+	    prevent leaking of possible hidden email addresses when sending
+	    to multiple recipients.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.io/2023/01/gitea-1.18.3-is-released/</url>
+    </references>
+    <dates>
+      <discovery>2022-01-22</discovery>
+      <entry>2023-01-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7844789a-9b1f-11ed-9a3f-b42e991fc52e">
     <topic>net/krill -- DoS vulnerability</topic>
     <affects>
