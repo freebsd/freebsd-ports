@@ -1,0 +1,11 @@
+cmake/formfactorConfig.cmake
+cmake/formfactorConfigVersion.cmake
+cmake/formfactorTargets-%%CMAKE_BUILD_TYPE%%.cmake
+cmake/formfactorTargets.cmake
+include/ff/Platonic.h
+include/ff/PolyhedralComponents.h
+include/ff/PolyhedralTopology.h
+include/ff/Polyhedron.h
+include/ff/Prism.h
+lib/libformfactor.so
+lib/libformfactor.so.0.1.3

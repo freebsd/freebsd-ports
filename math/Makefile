@@ -441,6 +441,7 @@
     SUBDIR += libdivide
     SUBDIR += libfixmath
     SUBDIR += libflame
+    SUBDIR += libformfactor
     SUBDIR += libhomfly
     SUBDIR += libmesh
     SUBDIR += libmissing
