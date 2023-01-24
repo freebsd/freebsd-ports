@@ -1,11 +1,8 @@
 PORTNAME=	postforward
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
-
-PATCH_SITES=	https://github.com/arbales/postforward/commit/
-PATCHFILES=	c45dfe827ab9b1fafe3f4b10b8b773353ba908c4.patch:-p1
 
 MAINTAINER=	luca@asgard.ch
 COMMENT=	Postfix SRS forwarding agent
