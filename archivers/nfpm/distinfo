@@ -1,5 +1,5 @@
-TIMESTAMP = 1673596525
-SHA256 (go/archivers_nfpm/nfpm-v2.23.0/v2.23.0.mod) = d208a9837c44f39003672ec5bf7776c5832e922b4231ede71b11d2f839ff6026
-SIZE (go/archivers_nfpm/nfpm-v2.23.0/v2.23.0.mod) = 3031
-SHA256 (go/archivers_nfpm/nfpm-v2.23.0/v2.23.0.zip) = a5f6636a846cf3165cfe791b9a1c0ddac90781800f7837ea1b53b0afee06411f
-SIZE (go/archivers_nfpm/nfpm-v2.23.0/v2.23.0.zip) = 535636
+TIMESTAMP = 1674582486
+SHA256 (go/archivers_nfpm/nfpm-v2.24.0/v2.24.0.mod) = c90d81ad99bf231fab6653a0e6ccf3558523bb8dda740dc63b5b3d9ed2e58308
+SIZE (go/archivers_nfpm/nfpm-v2.24.0/v2.24.0.mod) = 2997
+SHA256 (go/archivers_nfpm/nfpm-v2.24.0/v2.24.0.zip) = 3a7b27e6eed2ac9e66612932aaeb2addf5e70e503367eb0cef120d88f1151bd1
+SIZE (go/archivers_nfpm/nfpm-v2.24.0/v2.24.0.zip) = 537192
