@@ -141,6 +141,7 @@ include/catch2/matchers/catch_matchers_exception.hpp
 include/catch2/matchers/catch_matchers_floating_point.hpp
 include/catch2/matchers/catch_matchers_predicate.hpp
 include/catch2/matchers/catch_matchers_quantifiers.hpp
+include/catch2/matchers/catch_matchers_range_equals.hpp
 include/catch2/matchers/catch_matchers_string.hpp
 include/catch2/matchers/catch_matchers_templated.hpp
 include/catch2/matchers/catch_matchers_vector.hpp
@@ -169,9 +170,9 @@ lib/cmake/Catch2/Catch2Targets.cmake
 lib/cmake/Catch2/CatchAddTests.cmake
 lib/cmake/Catch2/ParseAndAddCatchTests.cmake
 lib/libCatch2.so
-lib/libCatch2.so.3.2.1
+lib/libCatch2.so.3.3.0
 lib/libCatch2Main.so
-lib/libCatch2Main.so.3.2.1
+lib/libCatch2Main.so.3.3.0
 libdata/pkgconfig/catch2-with-main.pc
 libdata/pkgconfig/catch2.pc
 share/Catch2/gdbinit
