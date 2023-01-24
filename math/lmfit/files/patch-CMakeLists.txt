@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2023-01-24 08:53:17 UTC
++++ CMakeLists.txt
+@@ -58,7 +58,9 @@ include(CTest)
+ 
+ add_subdirectory(lib)
+ add_subdirectory(demo)
++if (BUILD_TESTING)
+ add_subdirectory(test)
++endif()
+ if(LMFIT_CPPTEST)
+     add_subdirectory(democpp)
+ endif()
