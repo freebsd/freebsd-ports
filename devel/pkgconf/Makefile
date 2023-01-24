@@ -1,6 +1,5 @@
 PORTNAME=	pkgconf
-PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTVERSION=	1.8.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://distfiles.dereferenced.org/pkgconf/ \
