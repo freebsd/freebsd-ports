@@ -1,8 +1,7 @@
 PORTNAME=	kbibtex
-DISTVERSION=	0.9.2
-PORTREVISION=	41
+DISTVERSION=	0.9.3.1
 CATEGORIES=	databases kde
-MASTER_SITES=	KDE/stable/KBibTeX/${DISTVERSION}
+MASTER_SITES=	KDE/stable/KBibTeX/${DISTVERSION:R}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Bibliography editor for KDE
@@ -14,15 +13,15 @@ LIB_DEPENDS=	libicuuc.so:devel/icu \
 		libqoauth-qt5.so:net/qoauth-qt5
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext gnome \
-		iconv kde:5 qca qt:5 shared-mime-info tar:xz xorg
+		iconv kde:5 pkgconfig qca qt:5 shared-mime-info tar:xz xorg
 USE_GNOME=	libxml2 libxslt
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
-		coreaddons crash ecm i18n iconthemes itemviews jobwidgets \
-		kio parts service solid sonnet syntaxhighlighting texteditor \
+		coreaddons crash ecm i18n iconthemes itemviews jobwidgets kio \
+		parts service solid sonnet syntaxhighlighting texteditor \
 		textwidgets wallet widgetsaddons windowsystem xmlgui \
 		doctools:build
 USE_QT=		concurrent core dbus declarative gui location network \
-		printsupport webchannel widgets xml xmlpatterns \
+		networkauth printsupport webchannel widgets xml xmlpatterns \
 		buildtools:build qmake:build
 USE_XORG=	x11
 USE_LDCONFIG=	yes
