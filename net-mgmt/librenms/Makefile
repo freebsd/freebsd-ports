@@ -1,5 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	22.2.1
+PORTVERSION=	23.1.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -10,6 +10,8 @@ COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 WWW=		https://www.librenms.org
 
 LICENSE=	GPLv3
+
+IGNORE_WITH_PHP=	82
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVOR} \
@@ -25,22 +27,22 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVO
 USES=		cpe php python shebangfix
 USE_GITHUB=	yes
 USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
-		mysqli openssl pdo pdo_mysql phar posix session simplexml \
-		snmp sockets tokenizer xml xmlwriter zip
-IGNORE_WITH_PHP=	82
+		mysqli openssl pdo pdo_mysql phar posix session simplexml snmp \
+		sockets tokenizer xml xmlwriter zip
 USE_RC_SUBR=	librenms
 
 SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
 		../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf_addfont.php \
 		poller-wrapper.py poller.php scripts/auth_test.php \
-		scripts/check_requirements.py scripts/github-remove \
+		scripts/check_requirements.py \
+		scripts/dynamic_check_requirements.py scripts/github-remove \
+		scripts/ifAlias \
 		scripts/Migration/Standard_Conversion/convert_no_xml.sh \
 		scripts/Migration/Standard_Conversion/destwork_no_xml.sh \
 		scripts/Migration/Standard_Conversion/mkdir.sh \
 		scripts/Migration/XML_Conversion/convert.sh \
 		scripts/Migration/XML_Conversion/destwork.sh \
 		scripts/Migration/XML_Conversion/mkdir.sh \
-		scripts/dynamic_check_requirements.py \
 		scripts/removespikes.php scripts/removespikes.pl \
 		scripts/watchmaillog/watchmaillog.pl
 
@@ -96,7 +98,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1645175566
+_RELEASE_TIMESTAMP=	1674578610
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes licenses mibs misc resources routes scripts \
 			sql-schema tests
@@ -104,23 +106,21 @@ _DOCS=			AUTHORS.md CHANGELOG.md CONTRIBUTING.md LICENSE.txt \
 			README.md
 
 # these are directories which require a generic @DIR entry in pkg-plist
-_STORAGE_DIRS=		app app/public debugbar framework framework/cache framework/cache/data framework/sessions \
-			framework/testing framework/views logs
-
+_STORAGE_DIRS=	app app/public debugbar framework framework/cache \
+		framework/cache/data framework/sessions framework/testing \
+		framework/views logs
 # these are directories which require a generic @DIR entry in pkg-plist
-_OTHER_DIRS=		database/seeders/config html/plugins \
-			html/js/lang resources/views/overview/custom \
-			tests/Browser/console \
-			tests/Browser/screenshots \
-			vendor/librenms/laravel-vue-i18n-generator/tests/output \
-			vendor/ramsey/collection/bin \
-			vendor/symfony/string/Resources/bin
+_OTHER_DIRS=	database/seeders/config html/plugins html/js/lang \
+		resources/views/overview/custom tests/Browser/console \
+		tests/Browser/screenshots \
+		vendor/librenms/laravel-vue-i18n-generator/tests/output \
+		vendor/symfony/string/Resources/bin
 
 post-patch:
-	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Util/Version.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Validations/Php.php
-	${REINPLACE_CMD}    's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/includes/common.php
-	${REINPLACE_CMD}    's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/includes/common.php
+	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Util/Version.php
+	${REINPLACE_CMD}    's|%%PORTVERSION%%|${PORTVERSION}|g'              ${WRKSRC}/LibreNMS/Util/Version.php
+	${REINPLACE_CMD}    's|%%RELEASE_TIMESTAMP%%|${_RELEASE_TIMESTAMP}|g' ${WRKSRC}/LibreNMS/Util/Version.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/includes/html/output/capture.inc.php
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/config.php.default
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/poller-wrapper.py
