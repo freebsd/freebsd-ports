@@ -1,5 +1,5 @@
 PORTNAME=	re2c
-DISTVERSION=	2.2
+DISTVERSION=	3.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/skvadrik/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -18,18 +18,20 @@ SHEBANG_FILES=	test/posix_captures/.run/__run.sh \
 		test/posix_captures/.gen/__gen.sh \
 		test/__run_unicode_tests.sh
 
-OPTIONS_DEFINE=		DOCS EXAMPLES LIBRE2C RE2GO
-OPTIONS_DEFAULT=	RE2GO
+OPTIONS_DEFINE=		DOCS EXAMPLES LIBRE2C RE2GO RE2RUST
+OPTIONS_DEFAULT=	RE2GO RE2RUST
 OPTIONS_SUB=		yes
 
 LIBRE2C_DESC=		Build libre2c (Experimental)
 RE2GO_DESC=		Build RE2GO (identical to re2c --lang go)
+RE2RUST_DESC=		Build RE2RUST (identical to re2c --lang rust)
 
 DOCS_BUILD_DEPENDS=	bison:devel/bison \
 			rst2man:textproc/py-docutils
 DOCS_CMAKE_BOOL=	RE2C_REBUILD_DOCS
 LIBRE2C_CMAKE_BOOL=	RE2C_BUILD_LIBS BUILD_SHARED_LIBS
 RE2GO_CMAKE_BOOL=	RE2C_BUILD_RE2GO
+RE2RUST_CMAKE_BOOL=	RE2C_BUILD_RE2RUST
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
