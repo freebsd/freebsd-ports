@@ -1496,6 +1496,7 @@
     SUBDIR += py-rst2html5
     SUBDIR += py-rstfmt
     SUBDIR += py-scour
+    SUBDIR += py-sentencepiece
     SUBDIR += py-simplebayes
     SUBDIR += py-smartypants
     SUBDIR += py-snowballstemmer
