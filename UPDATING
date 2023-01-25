@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230127:
+  AFFECTS: users of security/openvpn
+  AUTHOR: mandree@freebsd.org
+
+  OpenVPN has been updated to the new upstream release v2.6.0, which
+  is quite compatible with v2.5 versions.
+
+  A copy of the latest v2.5.8 port is being kept as security/openvpn25 (or
+  openvpn25 package) until end of March 2023.
+
 20230116:
   AFFECTS: users of sysutils/nut and sysutils/nut-devel
   AUTHOR: cy@freebsd.org

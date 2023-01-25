@@ -1,28 +1,28 @@
 PORTNAME=		openvpn
-DISTVERSION=		2.6.0
+DISTVERSION=		2.5.8
 PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
 			https://build.openvpn.net/downloads/releases/ \
 			LOCAL/mandree
+PKGNAMESUFFIX=		25
 
 MAINTAINER=		mandree@FreeBSD.org
 COMMENT?=		Secure IP/Ethernet tunnel daemon
-WWW=			https://openvpn.net/community/
+WWW=		https://openvpn.net/community/
 
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL
 
-BUILD_DEPENDS+=		cmocka>=0:sysutils/cmocka \
-			rst2man:textproc/py-docutils@${PY_FLAVOR}
+DEPRECATED=		replaced by new upstream release 2.6.0
+EXPIRATION_DATE=	2023-03-31
 
-USES=			cpe libtool localbase:ldflags pkgconfig python:build shebangfix ssl
+USES=			cpe libtool localbase:ldflags pkgconfig shebangfix ssl tar:xz
 USE_RC_SUBR=		openvpn
 
-SHEBANG_FILES=		sample/sample-scripts/auth-pam.pl \
-			sample/sample-scripts/totpauth.py \
-			sample/sample-scripts/ucn.pl \
-			sample/sample-scripts/verify-cn
+SHEBANG_FILES=		sample/sample-scripts/verify-cn \
+			sample/sample-scripts/auth-pam.pl \
+			sample/sample-scripts/ucn.pl
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--enable-strict --with-crypto-library=openssl
@@ -39,14 +39,10 @@ GROUPS=			openvpn
 PORTDOCS=		*
 PORTEXAMPLES=		*
 
-OPTIONS_DEFINE=		ASYNC_PUSH DCO DOCS EASYRSA EXAMPLES LZ4 LZO PKCS11 SMALL \
+OPTIONS_DEFINE=		ASYNC_PUSH DOCS EASYRSA EXAMPLES LZ4 LZO PKCS11 SMALL \
 			TEST UNITTESTS X509ALTUSERNAME
 OPTIONS_DEFAULT=	EASYRSA LZ4 LZO PKCS11 TEST
-OPTIONS_EXCLUDE_FreeBSD_12=	DCO # FreeBSD 14 only
-OPTIONS_EXCLUDE_FreeBSD_13=	DCO # FreeBSD 14 only
-
 ASYNC_PUSH_DESC=	Enable async-push support
-DCO_DESC=			Build with Data Channel Offload (ovpn(4)) support
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 LZO_DESC=		LZO compression (incompatible with LibreSSL)
 PKCS11_DESC=		Use security/pkcs11-helper, needs same SSL lib!
@@ -56,8 +52,6 @@ X509ALTUSERNAME_DESC=	Enable --x509-username-field
 
 ASYNC_PUSH_LIB_DEPENDS=	libinotify.so:devel/libinotify
 ASYNC_PUSH_CONFIGURE_ENABLE=	async-push
-
-DCO_CONFIGURE_ENABLE=	dco
 
 EASYRSA_RUN_DEPENDS=	easy-rsa>=0:security/easy-rsa
 
@@ -108,9 +102,8 @@ post-patch:
 	${REINPLACE_CMD} -E -i '' -e 's/(user|group) nobody/\1 openvpn/' \
 		-e 's/"nobody"( after init)/"openvpn" \1/' \
 		${WRKSRC}/sample/sample-config-files/*.conf \
+		${WRKSRC}/sample/sample-config-files/xinetd-*-config \
 		${WRKSRC}/doc/man-sections/generic-options.rst
-	# this header file was missed from the 2.6.0 tarball
-	${CP} ${FILESDIR}/ovpn_dco_freebsd.h ${WRKSRC}/src/openvpn/ # FIXME remove for 2.6.1
 
 pre-configure:
 	# just too many of sign-compare; bitwise-instead-of-logical was audited and is intentional,
@@ -153,6 +146,7 @@ post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/openvpn/plugins/openvpn-plugin-down-root.so
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/pull-resolv-conf/client.up ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
 	${INSTALL_SCRIPT} ${WRKSRC}/contrib/pull-resolv-conf/client.down ${STAGEDIR}${PREFIX}/libexec/openvpn-client.down
+	@${REINPLACE_CMD} 's|resolvconf -p -a|resolvconf -a|' ${STAGEDIR}${PREFIX}/libexec/openvpn-client.up
 	${INSTALL_SCRIPT} ${WRKDIR}/openvpn-client ${STAGEDIR}${PREFIX}/sbin/openvpn-client
 	${MKDIR} ${STAGEDIR}${PREFIX}/include
 
