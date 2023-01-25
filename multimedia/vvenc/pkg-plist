@@ -1,0 +1,12 @@
+bin/vvencFFapp
+bin/vvencapp
+include/vvenc/version.h
+include/vvenc/vvenc.h
+include/vvenc/vvencCfg.h
+include/vvenc/vvencDecl.h
+lib/cmake/vvenc/vvencConfig.cmake
+lib/cmake/vvenc/vvencConfigVersion.cmake
+lib/cmake/vvenc/vvencTargets-shared-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/vvenc/vvencTargets-shared.cmake
+lib/libvvenc.so
+libdata/pkgconfig/libvvenc.pc
