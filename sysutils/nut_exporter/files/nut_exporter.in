@@ -25,6 +25,9 @@
 # nut_exporter_tls_key_file (string):
 #     Path to a file that contains the TLS private key (PEM format).
 #     Default is "".
+# nut_exporter_nut_vars_enable (string):
+#     A comma-separated list of variable names to monitor.
+#     Default is "" (use built-in default from the binary).
 
 . /etc/rc.subr
 
@@ -37,28 +40,20 @@ nut_exporter_enable=${nut_exporter_enable:-"NO"}
 nut_exporter_listen_address=${nut_exporter_listen_address:-":9199"}
 nut_exporter_user=${nut_exporter_user:-"www"}
 nut_exporter_metrics_namespace=${nut_exporter_metrics_namespace:-"network_ups_tools"}
+nut_exporter_nut_vars_enable=${nut_exporter_nut_vars_enable:-""}
 nut_exporter_tls_cert_file=${nut_exporter_tls_cert_file:-""}
 nut_exporter_tls_key_file=${nut_exporter_tls_key_file:-""}
 
 pidfile="/var/run/${name}/${name}.pid"
 
-if [ -z ${nut_exporter_tls_cert_file} ] ; then
-        cert_arg=""
-else
-        cert_arg="--web.tls.cert_file=${nut_exporter_tls_cert_file}"
-fi
-if [ -z ${nut_exporter_tls_key_file} ] ; then
-        key_arg=""
-else
-        key_arg="--web.tls.key_file=${nut_exporter_tls_key_file}"
-fi
-
 procname=%%PREFIX%%/bin/nut_exporter
 command=/usr/sbin/daemon
 command_args="-p ${pidfile} -t ${name} -T ${name} ${procname} \
-        --web.listen-address=${nut_exporter_listen_address} \
-        --metrics.namespace=${nut_exporter_metrics_namespace} \
-        ${cert_arg} ${key_arg}"
+	--web.listen-address=${nut_exporter_listen_address} \
+	--metrics.namespace=${nut_exporter_metrics_namespace} \
+	${nut_exporter_nut_vars_enable:+--nut.vars_enable=${nut_exporter_nut_vars_enable}} \
+	${nut_exporter_tls_cert_file:+--web.tls.cert_file=${nut_exporter_tls_cert_file}} \
+	${nut_exporter_tls_key_file:+--web.tls.key_file=${nut_exporter_tls_key_file}}"
 
 start_precmd=start_precmd
 start_precmd()
