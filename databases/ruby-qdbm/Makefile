@@ -22,7 +22,7 @@ USE_LDCONFIG=	yes
 CONFIGURE_ENV=	ac_cv_lib_iconv_main=yes
 MAKE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" \
 		LOCALBASE="${LOCALBASE}"
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include -fdeclspec
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 post-configure:
