@@ -1,12 +1,9 @@
 PORTNAME=	xmlbeans
-PORTVERSION=	3.1.0 # Do not upgrade without checking compatibility with math/R-cran-XLConnect
+DISTVERSION=	5.1.1 # Do not upgrade without checking compatibility with math/R-cran-XLConnect
 CATEGORIES=	textproc java
-MASTER_SITES=	https://archive.apache.org/dist/poi/xmlbeans/release/bin/:xb	\
-		https://repo1.maven.org/maven2/org/apache/poi/ooxml-schemas/${SCHEMAS_VER}/:sch
+MASTER_SITES=	https://archive.apache.org/dist/poi/xmlbeans/release/bin/
 PKGNAMEPREFIX=	apache-
-DISTFILES=	${PORTNAME}-bin-${PORTVERSION}${EXTRACT_SUFX}:xb	\
-		ooxml-schemas-${SCHEMAS_VER}.jar:sch
-EXTRACT_ONLY=	${PORTNAME}-bin-${PORTVERSION}${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-bin-${PORTVERSION}-${DATE_REL}
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Java classes for XML
@@ -17,7 +14,7 @@ LICENSE=	APACHE20
 USES=		cpe tar:tgz
 USE_JAVA=	yes
 JAVA_VERSION=	8+
-SCHEMAS_VER=	1.4
+DATE_REL=	20220819
 CPE_VENDOR=	apache
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -39,20 +36,15 @@ pre-configure:
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}	\
-		${STAGEDIR}${PREFIX}/bin	\
-		${STAGEDIR}${DATADIR}
+		${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/lib/${PORTNAME}-${PORTVERSION}.jar	\
 		${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
-	${INSTALL_DATA} ${DISTDIR}/ooxml-schemas-${SCHEMAS_VER}.jar	\
-		${STAGEDIR}${JAVAJARDIR}/ooxml-schemas.jar
 	${FIND} ${WRKSRC}/bin ! -name "*.cmd" -type f -exec	\
 		${INSTALL_SCRIPT} {} ${STAGEDIR}${PREFIX}/bin \;
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} schemas ${STAGEDIR}${DATADIR})
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${OTHERDOCS} ${STAGEDIR}${DOCSDIR})
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
 do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

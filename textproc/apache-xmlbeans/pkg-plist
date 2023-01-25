@@ -9,13 +9,4 @@ bin/validate
 bin/xpretty
 bin/xsd2inst
 bin/xsdtree
-bin/xstc
-%%JAVAJARDIR%%/ooxml-schemas.jar
 %%JAVAJARDIR%%/xmlbeans.jar
-%%DATADIR%%/schemas/easypo.xsd
-%%DATADIR%%/schemas/easypo.xsdconfig
-%%DATADIR%%/schemas/nameworld.xsd
-%%DATADIR%%/schemas/numerals.xsd
-%%DATADIR%%/schemas/s4s/XML.xsd
-%%DATADIR%%/schemas/s4s/XMLSchema.xsd
-%%PORTEXAMPLES%%@dir %%EXAMPLESDIR%%/XQueryXPath/src/org/apache/xmlbeans/samples/xquery/employees/impl
