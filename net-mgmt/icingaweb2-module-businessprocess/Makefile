@@ -1,7 +1,7 @@
 PORTNAME=	icingaweb2-module-businessprocess
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.0
-PORTREVISION=	2
+DISTVERSION=	2.4.0
+PORTREVISION=	0
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -12,8 +12,8 @@ WWW=		https://github.com/Icinga/icingaweb2-module-businessprocess
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR} \
-		icinga-php-library${PHP_PKGNAMESUFFIX}>=0.10.0:net-mgmt/icinga-php-library@${PHP_FLAVOR}
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.11.3:net-mgmt/icingaweb2@${PHP_FLAVOR} \
+		icinga-php-library${PHP_PKGNAMESUFFIX}>=0.10.1:net-mgmt/icinga-php-library@${PHP_FLAVOR}
 
 USES=		php:web,flavors
 
