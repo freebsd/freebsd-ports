@@ -606,6 +606,7 @@
     SUBDIR += k4dirstat
     SUBDIR += k8temp
     SUBDIR += k9s
+    SUBDIR += kapp
     SUBDIR += kbackup
     SUBDIR += kcron
     SUBDIR += kdeadmin
