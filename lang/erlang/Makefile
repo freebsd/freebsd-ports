@@ -1,8 +1,7 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	24.3.4.6
-PORTREVISION=	1
-PORTEPOCH=	4
+DISTVERSION=	25.2.1
+PORTREVISION=	0
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
 
@@ -37,9 +36,9 @@ SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 WRKSRC=		${WRKSRC_otp}
 
 ERLANG_LIB=	${PORTNAME}
-EI_VSN=		5.2.2
-SNMP_VSN=	5.12
-TOOLS_VSN=	3.5.2
+EI_VSN=		5.3
+SNMP_VSN=	5.13.3
+TOOLS_VSN=	3.5.3
 
 OPTIONS_DEFINE=		CHUNKS CORBA DIRTY DTRACE FOP JAVA KQUEUE MANPAGES ODBC \
 			OPENSSL PDF SCTP SHARING WX
@@ -73,8 +72,7 @@ WX_DESC=	Enable WX application
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
-CHUNKS_MAKE_ARGS+=		DOC_TARGETS=chunks \
-				docs
+CHUNKS_MAKE_ARGS+=		docs DOC_TARGETS=chunks
 DIRTY_CONFIGURE_WITH=		dirty-schedulers
 DTRACE_CONFIGURE_WITH=		dynamic-trace=dtrace
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
