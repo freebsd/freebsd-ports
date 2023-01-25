@@ -1,15 +1,7 @@
---- Cargo.toml.orig	2022-11-02 15:28:07 UTC
+--- Cargo.toml.orig	2023-01-05 17:41:15 UTC
 +++ Cargo.toml
-@@ -50,10 +50,10 @@ askama = "0.11.0"
- pgx-tests = "0.4.5"
- 
- [patch.crates-io]
--pgx = { git = "https://github.com/timescale/pgx", rev = "96ece243" }
--pgx-macros = { git = "https://github.com/timescale/pgx", rev = "96ece243" }
--pgx-tests = { git = "https://github.com/timescale/pgx", rev = "96ece243" }
-+pgx = { path = "../pgx/pgx" }
-+pgx-macros = { path = "../pgx/pgx-macros" }
-+pgx-tests = { path = "../pgx/pgx-tests" }
+@@ -51,5 +51,5 @@ askama = "0.11.1"
+ pgx-tests = "0.6.1"
  
  # from e2e workspace
 -test-generator = { git = "https://github.com/JamesGuthrie/test-generator" }
