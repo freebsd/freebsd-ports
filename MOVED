@@ -17724,7 +17724,6 @@ databases/firebird25-server||2022-12-31|Has expired: Upstream Support ends on 20
 multimedia/libkate||2022-12-31|Has expired: Obsolete format that never got any traction and no development in over 10 years
 net/opennx||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
 cad/basicdsp||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
-deskutils/xchm||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
 math/graphthing||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
 math/pynac||2022-12-31|Project merged with SageMath
 x11-toolkits/wxgtk28-contrib-common||2022-12-31|Has expired: Upstream support ended
