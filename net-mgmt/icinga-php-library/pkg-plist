@@ -1,5 +1,3 @@
-%%WWWDIR%%/.github/workflows/create-snapshot.yml
-%%WWWDIR%%/.gitignore
 %%WWWDIR%%/AssetLoader.php
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
@@ -60,8 +58,6 @@
 %%WWWDIR%%/asset/static/font/awesome/fa-v4compatibility.woff2
 %%WWWDIR%%/asset/static/img/select-icon-text-color.svg
 %%WWWDIR%%/asset/static/img/select-icon.svg
-%%WWWDIR%%/bin/make-release.sh
-%%WWWDIR%%/bin/make-snapshot.sh
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/composer.lock
 %%WWWDIR%%/vendor/autoload.php
