@@ -1,3 +1,42 @@
+  <vuln vid="3d0a3eb0-9ca3-11ed-a925-3065ec8fd3ec">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>109.0.5414.119</lt></range>
+      </package>
+      <package>
+	<name>ungoogled-chromium</name>
+	<range><lt>109.0.5414.119</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2023/01/stable-channel-update-for-desktop_24.html">
+	  <p>This release contains 6 security fixes, including:</p>
+	  <ul>
+	    <li>[1376354] High CVE-2023-0471: Use after free in WebTransport. Reported by chichoo Kim(chichoo) and Cassidy Kim(@cassidy6564) on 2022-10-19</li>
+	    <li>[1405256] High CVE-2023-0472: Use after free in WebRTC. Reported by Cassidy Kim(@cassidy6564) on 2023-01-06</li>
+	    <li>[1404639] Medium CVE-2023-0473: Type Confusion in ServiceWorker API. Reported by raven at KunLun lab on 2023-01-03</li>
+	    <li>[1400841] Medium CVE-2023-0474: Use after free in GuestView. Reported by avaue at S.S.L on 2022-12-14</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-0471</cvename>
+      <cvename>CVE-2023-0472</cvename>
+      <cvename>CVE-2023-0473</cvename>
+      <cvename>CVE-2023-0474</cvename>
+      <url>https://chromereleases.googleblog.com/2023/01/stable-channel-update-for-desktop_24.html</url>
+    </references>
+    <dates>
+      <discovery>2023-01-24</discovery>
+      <entry>2023-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b0e1fa2b-9c86-11ed-9296-002b67dfc673">
     <topic>re2c -- uncontrolled recursion</topic>
     <affects>
