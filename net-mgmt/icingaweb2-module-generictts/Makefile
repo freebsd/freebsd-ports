@@ -1,7 +1,7 @@
 PORTNAME=	icingaweb2-module-generictts
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
-PORTREVISION=	3
+DISTVERSION=	2.1.0
+PORTREVISION=	0
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -10,9 +10,9 @@ COMMENT=	Generic ticket system integration into Icinga web 2
 WWW=		https://github.com/Icinga/icingaweb2-module-generictts
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.11.3:net-mgmt/icingaweb2@${PHP_FLAVOR}
 
 USES=		php:web,flavors
 
