@@ -23,6 +23,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		autoreconf bison desktop-file-utils gettext-runtime gl gmake gnome gstreamer localbase openal pkgconfig python:build sdl shebangfix tar:xz xorg
 USE_GCC=	yes
+PIE_UNSAFE=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ValveSoftware
