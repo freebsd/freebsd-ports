@@ -1,3 +1,29 @@
+  <vuln vid="b0e1fa2b-9c86-11ed-9296-002b67dfc673">
+    <topic>re2c -- uncontrolled recursion</topic>
+    <affects>
+      <package>
+	<name>re2c</name>
+	<range><lt>2.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>re2c reports:</p>
+	<blockquote cite="https://github.com/advisories/GHSA-pgr8-gpgg-9j5m">
+	  <p>re2c before 2.0 has uncontrolled recursion that causes stack consumption in find_fixed_tags.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2018-21232</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2018-21232</url>
+    </references>
+    <dates>
+      <discovery>2022-05-24</discovery>
+      <entry>2023-01-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b8a0fea2-9be9-11ed-8acf-0800277bb8a8">
     <topic>gitea -- information disclosure</topic>
     <affects>
