@@ -89,24 +89,19 @@ PHPDBG_VARS=		PHP_SAPI+=phpdbg
 ZTS_CONFIGURE_ON=	--enable-zts
 ZTS_CONFIGURE_ENV=	pthreads_working="yes"
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == riscv64
-CONFIGURE_ARGS+=	--without-pcre-jit
-.endif
-
 .if defined(PKGNAMEPREFIX)
 USES+=			apache
-.if ${PORT_OPTIONS:MAP2FILTER}
-CONFIGURE_ARGS+=	--with-apxs2filter=${APXS}
-.else
-CONFIGURE_ARGS+=	--with-apxs2=${APXS}
-.endif
 PLIST=			${PKGDIR}/pkg-plist.mod
 PKGMESSAGE=		${PKGDIR}/pkg-message.mod
 MODULENAME=		libphp
 SHORTMODNAME=		php
 WARNING=		"!!! If you have a threaded Apache, you must build ${PHP_PORT} with ZTS support to enable thread-safety in extensions !!!"
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == riscv64
+CONFIGURE_ARGS+=	--without-pcre-jit
 .endif
 
 .if ${PORT_OPTIONS:MPHPDBG} && ${PORT_OPTIONS:MDEBUG}
