@@ -1,6 +1,6 @@
 PORTNAME=	darktable
 PORTVERSION=	4.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -33,8 +33,9 @@ LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
 		libsoup-2.4.so:devel/libsoup \
 		libtiff.so:graphics/tiff
 
-USES=		cmake compiler:c++14-lang desktop-file-utils gl gnome jpeg \
-		perl5 pkgconfig sdl shebangfix sqlite tar:xz xorg
+USES=		cmake compiler:gcc-c++11-lib desktop-file-utils gl gnome jpeg \
+		llvm:14,build perl5 pkgconfig sdl shebangfix sqlite \
+		tar:xz xorg
 USE_GL=		gl
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -42,6 +43,8 @@ USE_SDL=	sdl2
 USE_XORG=	ice sm x11 xext xrandr
 
 SHEBANG_FILES=	tools/*.sh
+
+USE_GCC=	yes
 
 CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1 \
 		-DBUILD_CMSTEST:BOOL=ON \
@@ -123,19 +126,6 @@ PLIST_SUB+=	NO_OPENCL=""
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD || ${ARCH} == "i386"
-LLVM_DEFAULT=	13
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
-LD=		${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
-BINARY_ALIAS+=	ld.lld=${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
-BINARY_ALIAS+=	llvm-objcopy=${LOCALBASE}/bin/llvm-objcopy${LLVM_DEFAULT}
-BINARY_ALIAS+=	llvm-ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT}
-BINARY_ALIAS+=	llvm-ranlib=${LOCALBASE}/bin/llvm-ranlib${LLVM_DEFAULT}
-.endif
 
 # work around CMAKE/CCACHE flaw (cmake stomps over ccache)
 .if "${WITH_CCACHE_BUILD}" == "yes" && !defined(NO_CCACHE)
