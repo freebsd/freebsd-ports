@@ -2,6 +2,7 @@ PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
 DISTVERSION=	25.2.1
 PORTREVISION=	0
+PORTEPOCH=	4
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
 
@@ -72,7 +73,8 @@ WX_DESC=	Enable WX application
 # probes fixed does not match the number of defined probes (54 != 132,
 # respectively)" you probably misconfigured DTrace in some way.
 
-CHUNKS_MAKE_ARGS+=		docs DOC_TARGETS=chunks
+CHUNKS_MAKE_ARGS+=		DOC_TARGETS=chunks \
+				docs
 DIRTY_CONFIGURE_WITH=		dirty-schedulers
 DTRACE_CONFIGURE_WITH=		dynamic-trace=dtrace
 DTRACE_CFLAGS=			-fno-omit-frame-pointer
