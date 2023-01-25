@@ -1,7 +1,7 @@
 PORTNAME=	icingaweb2-module-graphite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	3
+DISTVERSION=	1.2.2
+PORTREVISION=	0
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -10,9 +10,9 @@ COMMENT=	Graphite integration into Icinga Web 2
 WWW=		https://github.com/Icinga/icingaweb2-module-graphite
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.5.0:net-mgmt/icingaweb2@${PHP_FLAVOR}
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.11.3:net-mgmt/icingaweb2@${PHP_FLAVOR}
 
 USES=		php:web,flavors
 
