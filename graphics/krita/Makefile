@@ -1,6 +1,6 @@
 PORTNAME=	krita
 DISTVERSION=	5.1.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -33,7 +33,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
-		libquazip1-qt5.so:archivers/quazip \
+		libquazip1-qt5.so:archivers/quazip@qt5 \
 		libraw.so:graphics/libraw \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \

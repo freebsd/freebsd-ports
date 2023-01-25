@@ -1,8 +1,9 @@
 PORTNAME=	quazip
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	archivers
-PKGNAMESUFFIX=	-qt5
+PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt/C++ wrapper for ZIP/UNZIP package
@@ -10,16 +11,22 @@ WWW=		https://github.com/stachenov/quazip
 
 LICENSE=	LGPL21
 
-USES=		cmake compiler:c++11-lang cpe qt:5
+FLAVORS=	qt5 qt6
+FLAVOR?=	qt5
+
+USES=		cmake compiler:c++11-lang cpe qt:${FLAVOR:S/qt//}
+CPE_VENDOR=	quazip_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	stachenov
-CPE_VENDOR=	quazip_project
 USE_LDCONFIG=	yes
-USE_QT=		core network \
+_USE_QT_qt5=	core network \
 		buildtools:build testlib:build qmake:build
-CMAKE_ARGS=	-DBUILD_WITH_QT4:BOOL=FALSE
+_USE_QT_qt6=	base 5compat
+USE_QT=		${_USE_QT_${FLAVOR}}
 
-PLIST_SUB=	QTVER_SUFFIX=5 \
+CMAKE_ARGS=	-DQUAZIP_QT_MAJOR_VERSION=${FLAVOR:S/qt//}
+
+PLIST_SUB=	QTVER_SUFFIX=${FLAVOR:S/qt//} \
 		QUAZIP_VERSION=${DISTVERSION}
 
 .include <bsd.port.mk>

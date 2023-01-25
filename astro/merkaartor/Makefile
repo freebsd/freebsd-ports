@@ -1,6 +1,6 @@
 PORTNAME=	merkaartor
 PORTVERSION=	0.19.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	astro
 
 MAINTAINER=	dev2@heesakkers.info
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libgdal.so:graphics/gdal \
 		libproj.so:graphics/proj \
-		libquazip1-qt5.so:archivers/quazip
+		libquazip1-qt5.so:archivers/quazip@qt5
 
 USES=		compiler:c++11-lang gnome pkgconfig qmake qt:5 sqlite:3
 USE_GITHUB=	yes
