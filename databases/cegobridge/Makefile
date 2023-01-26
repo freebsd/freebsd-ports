@@ -1,5 +1,5 @@
 PORTNAME=	cegobridge
-PORTVERSION=	1.6.3
+PORTVERSION=	1.6.4
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
