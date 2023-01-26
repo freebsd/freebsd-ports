@@ -23,8 +23,8 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 IGNORE_FreeBSD_12_powerpc=	is missing a bootstrap for FreeBSD 12.x powerpc
-ONLY_FOR_ARCHS?=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le \
-			powerpc riscv64
+ONLY_FOR_ARCHS?=	aarch64 amd64 armv7 i386 powerpc64 powerpc64le powerpc \
+			riscv64
 ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 
 BUILD_DEPENDS=	cmake:devel/cmake-core
@@ -130,10 +130,6 @@ _COMPONENTS+=	rls-${_PACKAGE_VERS}-${_RUST_TARGET}
 _COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
 .endif
 
-.if exists(${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX})
-EXTRA_PATCHES+=	${PATCHDIR}/${ARCH}${BOOTSTRAPS_SUFFIX}
-.endif
-
 # If the kernel does not return sane kern.proc.pathname values
 # for hardlinks then disable hardlinks in the build to avoid
 # intermittent "can't find crate for `std`" build failures,
@@ -151,22 +147,13 @@ EXTRA_PATCHES+=		${PATCHDIR}/no-hardlinks
 .  endif
 .endif
 
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-# The bootstrap is hardcoded to use gcc9
-# but we can build with a newer or older compiler as provided by USE_GCC=yes
-BUILD_DEPENDS+=	gcc9:lang/gcc9
-USE_GCC=	yes
-STRIP_CMD=	${LOCALBASE}/bin/strip # unsupported e_type with base strip
-.endif
-
 .ifdef QEMU_EMULATING
 IGNORE=	fails to build with qemu-user-static
 .endif
 
 .if make(makesum)
 DISTFILES:=	${DISTFILES:M*\:src} \
-		${ONLY_FOR_ARCHS:O:@_arch@${:!${MAKE} ARCH=${_arch} PPC_ABI=ELFv1 -V'DISTFILES:N*\:src'!}@} \
-		${ONLY_FOR_ARCHS:Mpowerpc64:@_arch@${:!${MAKE} ARCH=${_arch} PPC_ABI=ELFv2 -V'DISTFILES:N*\:src'!}@}
+		${ONLY_FOR_ARCHS:O:@_arch@${:!${MAKE} ARCH=${_arch} -V'DISTFILES:N*\:src'!}@}
 .endif
 
 post-patch:
@@ -177,16 +164,6 @@ post-patch:
 # Disable vendor checksums
 	@${REINPLACE_CMD} 's,"files":{[^}]*},"files":{},' \
 		${CARGO_VENDOR_DIR}/*/.cargo-checksum.json
-.if defined(PPC_ABI) && ${PPC_ABI} == ELFv1
-	@${REINPLACE_CMD} 's,%CC%,${CC},g' \
-		${WRKSRC}/compiler/rustc_llvm/build.rs \
-		${WRKSRC}/src/bootstrap/native.rs
-.if ${LOCALBASE} != /usr/local
-	@${REINPLACE_CMD} 's,/usr/local/,${LOCALBASE}/,g' \
-		${WRKSRC}/compiler/rustc_llvm/build.rs \
-		${WRKSRC}/src/bootstrap/native.rs
-.endif
-.endif
 
 do-configure:
 # Check that the running kernel has COMPAT_FREEBSD11 required by lang/rust post-ino64
