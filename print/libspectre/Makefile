@@ -1,5 +1,5 @@
 PORTNAME=	libspectre
-PORTVERSION=	0.2.11
+PORTVERSION=	0.2.12
 CATEGORIES=	print
 MASTER_SITES=	http://libspectre.freedesktop.org/releases/
 
