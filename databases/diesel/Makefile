@@ -1,6 +1,6 @@
 PORTNAME=	diesel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.3
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-cli
 
@@ -43,10 +43,10 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		clap_lex-0.2.4 \
 		codespan-reporting-0.11.1 \
 		core-foundation-sys-0.8.3 \
-		cxx-1.0.86 \
-		cxx-build-1.0.86 \
-		cxxbridge-flags-1.0.86 \
-		cxxbridge-macro-1.0.86 \
+		cxx-1.0.87 \
+		cxx-build-1.0.87 \
+		cxxbridge-flags-1.0.87 \
+		cxxbridge-macro-1.0.87 \
 		difference-2.0.0 \
 		diffy-0.3.0 \
 		dotenvy-0.15.6 \
@@ -126,9 +126,9 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		time-macros-0.2.6 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		toml-0.5.10 \
+		toml-0.5.11 \
 		typenum-1.16.0 \
-		unicode-bidi-0.3.8 \
+		unicode-bidi-0.3.10 \
 		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.0 \
