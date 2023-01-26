@@ -11,7 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++17-lang gl qt:6 tar:bzip2
-USE_QT=		base tools
+USE_QT=		base tools:build
 USE_GL=		gl
 
 OPTIONS_DEFINE=	NLS
