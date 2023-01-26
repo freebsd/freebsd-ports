@@ -1,4 +1,4 @@
---- chrome/browser/resources/settings/appearance_page/appearance_page.ts.orig	2022-10-29 17:50:56 UTC
+--- chrome/browser/resources/settings/appearance_page/appearance_page.ts.orig	2023-01-26 13:28:14 UTC
 +++ chrome/browser/resources/settings/appearance_page/appearance_page.ts
 @@ -63,7 +63,7 @@ export interface SettingsAppearancePageElement {
  export enum SystemTheme {
@@ -45,21 +45,12 @@
    private systemThemePrefChanged_(systemTheme: SystemTheme) {
      this.systemTheme_ = systemTheme;
    }
-@@ -354,7 +354,7 @@ export class SettingsAppearancePageElement extends
+@@ -353,7 +353,7 @@ export class SettingsAppearancePageElement extends
+       return;
      }
  
-     let i18nId;
 -    // <if expr="is_linux">
 +    // <if expr="is_posix">
+     let i18nId;
      switch (this.systemTheme_) {
        case SystemTheme.GTK:
-         i18nId = 'gtkTheme';
-@@ -367,7 +367,7 @@ export class SettingsAppearancePageElement extends
-         break;
-     }
-     // </if>
--    // <if expr="not is_linux">
-+    // <if expr="not is_posix">
-     i18nId = 'chooseFromWebStore';
-     // </if>
-     this.themeSublabel_ = this.i18n(i18nId);

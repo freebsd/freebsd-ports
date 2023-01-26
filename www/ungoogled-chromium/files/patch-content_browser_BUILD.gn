@@ -1,6 +1,6 @@
---- content/browser/BUILD.gn.orig	2023-01-13 08:56:02 UTC
+--- content/browser/BUILD.gn.orig	2023-01-26 13:28:14 UTC
 +++ content/browser/BUILD.gn
-@@ -2338,6 +2338,13 @@ source_set("browser") {
+@@ -2340,6 +2340,13 @@ source_set("browser") {
      ]
    }
  
