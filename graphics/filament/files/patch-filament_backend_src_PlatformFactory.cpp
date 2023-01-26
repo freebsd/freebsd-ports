@@ -1,5 +1,5 @@
---- filament/backend/src/Platform.cpp.orig	2022-11-10 00:38:02 UTC
-+++ filament/backend/src/Platform.cpp
+--- filament/backend/src/PlatformFactory.cpp.orig	2023-01-26 04:37:03 UTC
++++ filament/backend/src/PlatformFactory.cpp
 @@ -41,7 +41,7 @@
      #if defined(FILAMENT_DRIVER_SUPPORTS_VULKAN)
          #include "vulkan/PlatformVkCocoa.h"
@@ -9,7 +9,7 @@
      #if defined(FILAMENT_SUPPORTS_GGP)
          #include "vulkan/PlatformVkLinuxGGP.h"
      #elif defined(FILAMENT_SUPPORTS_WAYLAND)
-@@ -121,7 +121,7 @@ DefaultPlatform* DefaultPlatform::create(Backend* back
+@@ -118,7 +118,7 @@ Platform* PlatformFactory::create(Backend* backend) no
                  return new PlatformVkAndroid();
              #elif defined(IOS)
                  return new PlatformVkCocoaTouch();
@@ -18,7 +18,7 @@
                  #if defined(FILAMENT_SUPPORTS_GGP)
                      return new PlatformVkLinuxGGP();
                  #elif defined(FILAMENT_SUPPORTS_WAYLAND)
-@@ -158,7 +158,7 @@ DefaultPlatform* DefaultPlatform::create(Backend* back
+@@ -155,7 +155,7 @@ Platform* PlatformFactory::create(Backend* backend) no
              return new PlatformCocoaTouchGL();
          #elif defined(__APPLE__)
              return new PlatformCocoaGL();

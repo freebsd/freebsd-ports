@@ -17,6 +17,7 @@ bin/resgen
 bin/roughness-prefilter
 bin/specular-color
 bin/uberz
+include/backend/AcquiredImage.h
 include/backend/BufferDescriptor.h
 include/backend/CallbackHandler.h
 include/backend/DriverApiForward.h
@@ -27,8 +28,19 @@ include/backend/PixelBufferDescriptor.h
 include/backend/Platform.h
 include/backend/PresentCallable.h
 include/backend/Program.h
+include/backend/README.md
 include/backend/SamplerDescriptor.h
 include/backend/TargetBufferInfo.h
+include/backend/platforms/OpenGLPlatform.h
+include/backend/platforms/PlatformCocoaGL.h
+include/backend/platforms/PlatformCocoaTouchGL.h
+include/backend/platforms/PlatformEGL.h
+include/backend/platforms/PlatformEGLAndroid.h
+include/backend/platforms/PlatformEGLHeadless.h
+include/backend/platforms/PlatformGLX.h
+include/backend/platforms/PlatformWGL.h
+include/backend/platforms/PlatformWebGL.h
+include/backend/platforms/VulkanPlatform.h
 include/camutils/Bookmark.h
 include/camutils/Manipulator.h
 include/camutils/compiler.h
