@@ -1,6 +1,6 @@
---- include/autoconf.hin.orig	2015-11-22 01:15:52.000000000 +0100
-+++ include/autoconf.hin	2016-01-16 18:09:27.785884000 +0100
-@@ -46,7 +46,6 @@
+--- include/autoconf.hin.orig	2022-12-09 09:03:48 UTC
++++ include/autoconf.hin
+@@ -49,7 +49,6 @@
  
  /* compiler, compilerflags, ... */
  #	undef TIN_CC

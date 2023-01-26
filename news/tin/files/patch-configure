@@ -1,4 +1,4 @@
---- configure.orig	2023-01-26 00:10:06 UTC
+--- configure.orig	2022-12-24 23:00:29 UTC
 +++ configure
 @@ -13804,7 +13804,7 @@ case "$host_os" in
  fi
@@ -27,3 +27,23 @@
  	echo "$as_me:16987: checking for tgoto in -lmytinfo" >&5
  echo $ECHO_N "checking for tgoto in -lmytinfo... $ECHO_C" >&6
  if test "${ac_cv_lib_mytinfo_tgoto+set}" = set; then
+@@ -21363,13 +21363,15 @@ fi
+ 
+        if test "$enable_nntps" = "yes" && test "$have_libtls" = "no" || test "$enable_nntps" = "openssl"; then
+ 
+-if test "$PKG_CONFIG" != none && "$PKG_CONFIG" --exists "openssl"; then
+-	test -n "$verbose" && echo "	found package openssl" 1>&6
++## FreeBSD: Work around stupidity where base doesn't ship openssl pkg-config data
++#if test "$PKG_CONFIG" != none && "$PKG_CONFIG" --exists "openssl"; then
++#	test -n "$verbose" && echo "	found package openssl" 1>&6
++if true; then
+ 
+ echo "${as_me:-configure}:21369: testing found package openssl ..." 1>&5
+ 
+-	cf_pkgconfig_incs="`$PKG_CONFIG --cflags "openssl" 2>/dev/null`"
+-	cf_pkgconfig_libs="`$PKG_CONFIG --libs   "openssl" 2>/dev/null`"
++	cf_pkgconfig_incs=""
++	cf_pkgconfig_libs="-lssl -lcrypto"
+ 	test -n "$verbose" && echo "	package openssl CFLAGS: $cf_pkgconfig_incs" 1>&6
+ 
+ echo "${as_me:-configure}:21375: testing package openssl CFLAGS: $cf_pkgconfig_incs ..." 1>&5
