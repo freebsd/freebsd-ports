@@ -1,6 +1,6 @@
---- configure.orig	2022-04-03 22:04:44 UTC
+--- configure.orig	2023-01-26 00:10:06 UTC
 +++ configure
-@@ -13695,7 +13695,7 @@ case "$host_os" in
+@@ -13804,7 +13804,7 @@ case "$host_os" in
  fi
  
  case "$host_os" in
@@ -9,7 +9,7 @@
  	# This is only necessary if you are linking against an obsolete
  	# version of ncurses (but it should do no harm, since it is static).
  	if test "$cf_nculib_root" = ncurses ; then
-@@ -16011,7 +16011,7 @@ case "$host_os" in
+@@ -16120,7 +16120,7 @@ case "$host_os" in
  fi
  
  case "$host_os" in
@@ -18,12 +18,12 @@
  	# This is only necessary if you are linking against an obsolete
  	# version of ncurses (but it should do no harm, since it is static).
  	if test "$cf_nculib_root" = ncurses ; then
-@@ -16874,7 +16874,7 @@ case "$host_os" in
+@@ -16983,7 +16983,7 @@ case "$host_os" in
  
  if test "$cf_result" = no ; then
  case "$host_os" in
 -freebsd*)
 +XXXfreebsd*)
- 	echo "$as_me:16878: checking for tgoto in -lmytinfo" >&5
+ 	echo "$as_me:16987: checking for tgoto in -lmytinfo" >&5
  echo $ECHO_N "checking for tgoto in -lmytinfo... $ECHO_C" >&6
  if test "${ac_cv_lib_mytinfo_tgoto+set}" = set; then
