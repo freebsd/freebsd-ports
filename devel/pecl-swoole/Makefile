@@ -1,5 +1,5 @@
 PORTNAME=	swoole
-PORTVERSION=	4.8.12
+PORTVERSION=	5.0.1
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -11,11 +11,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c11 localbase:ldflags php:pecl ssl
 USE_PHP=	hash:build pcre
-IGNORE_WITH_PHP=	82
 
 CONFIGURE_ARGS+=	--enable-mysqlnd
 
-OPTIONS_DEFINE=		CARES CURL HTTP2 JSON SOCKETS
+OPTIONS_DEFINE=		BROTLI CARES CURL HTTP2 JSON PGSQL SOCKETS
 CARES_LIB_DEPENDS=	libcares.so:dns/c-ares
 CARES_CONFIGURE_ON=	--enable-cares
 HTTP2_CONFIGURE_ON=	--enable-http2 \
@@ -28,5 +27,9 @@ CURL_CONFIGURE_ON=	--enable-swoole-curl
 CURL_USE=		PHP=curl
 JSON_CONFIGURE_ON=	--enable-swoole-json
 JSON_USE=		PHP=json:build
+PGSQL_CONFIGURE_ON=	--enable-swoole-pgsql
+PGSQL_USES=		pgsql
+BROTLI_CONFIGURE_ON=	--enable-brotli
+BROTLI_LIB_DEPENDS=	libbrotlicommon.so:archivers/brotli
 
 .include <bsd.port.mk>
