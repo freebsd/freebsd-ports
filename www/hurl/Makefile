@@ -165,7 +165,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		winres-0.1.12 \
 		xml-rs-0.8.4 \
 		xmltree-0.10.3
-CARGO_INSTALL_PATH=    packages/hurl packages/hurlfmt
+CARGO_INSTALL_PATH=	packages/hurl packages/hurlfmt
 
 PLIST_FILES=	bin/hurl \
 				bin/hurlfmt \
