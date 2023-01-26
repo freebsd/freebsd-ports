@@ -1,6 +1,5 @@
 PORTNAME=	tarpaulin
-DISTVERSION=	0.23.1
-PORTREVISION=	1
+DISTVERSION=	0.24.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,14 +28,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		bumpalo-3.11.0 \
+		bumpalo-3.12.0 \
 		byteorder-1.4.3 \
 		camino-1.1.1 \
 		cargo-platform-0.1.2 \
-		cargo_metadata-0.15.1 \
+		cargo_metadata-0.15.2 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		chrono-0.4.22 \
+		chrono-0.4.23 \
 		clap-2.34.0 \
 		core-foundation-sys-0.8.3 \
 		coveralls-api-0.5.0 \
@@ -51,11 +50,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		flate2-1.0.24 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
-		gimli-0.26.2 \
-		git2-0.15.0 \
+		gimli-0.27.1 \
+		git2-0.16.1 \
+		glob-0.3.1 \
 		gzip-header-0.3.0 \
 		hashbrown-0.11.2 \
 		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
 		hex-0.4.3 \
 		humantime-2.1.0 \
 		humantime-serde-1.1.1 \
@@ -63,18 +64,18 @@ CARGO_CRATES=	adler-1.0.2 \
 		idna-0.2.3 \
 		indexmap-1.8.2 \
 		instant-0.1.12 \
-		io-lifetimes-0.7.3 \
+		io-lifetimes-1.0.3 \
 		itoa-1.0.3 \
 		jobserver-0.1.24 \
 		js-sys-0.3.59 \
 		lazy_static-1.4.0 \
 		leb128-0.2.5 \
-		libc-0.2.132 \
-		libgit2-sys-0.14.0+1.5.0 \
+		libc-0.2.137 \
+		libgit2-sys-0.14.2+1.5.1 \
 		libssh2-sys-0.2.23 \
 		libz-sys-1.1.8 \
-		linux-raw-sys-0.0.46 \
-		llvm_profparser-0.3.0 \
+		linux-raw-sys-0.1.3 \
+		llvm_profparser-0.3.1 \
 		log-0.4.17 \
 		matchers-0.0.1 \
 		matches-0.1.9 \
@@ -83,13 +84,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		memmap-0.7.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.3 \
-		nix-0.25.0 \
+		nix-0.26.2 \
 		nom-7.1.1 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
-		num_cpus-1.14.0 \
+		num_cpus-1.15.0 \
 		object-0.26.2 \
-		object-0.29.0 \
+		object-0.30.3 \
 		once_cell-1.13.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-111.22.0+1.1.1q \
@@ -97,33 +98,34 @@ CARGO_CRATES=	adler-1.0.2 \
 		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.9 \
 		pkg-config-0.3.25 \
-		proc-macro2-1.0.47 \
-		procfs-0.14.1 \
+		proc-macro2-1.0.50 \
+		procfs-0.14.2 \
 		quick-error-1.2.3 \
-		quick-xml-0.26.0 \
-		quote-1.0.21 \
+		quick-xml-0.27.1 \
+		quote-1.0.23 \
 		redox_syscall-0.2.16 \
-		regex-1.7.0 \
+		regex-1.7.1 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
 		rustc-demangle-0.1.21 \
 		rustc_version-0.4.0 \
-		rustix-0.35.9 \
+		rustix-0.36.4 \
 		rusty-fork-0.3.0 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
 		schannel-0.1.20 \
 		semver-1.0.13 \
-		serde-1.0.147 \
-		serde_derive-1.0.147 \
-		serde_json-1.0.87 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.91 \
 		sharded-slab-0.1.4 \
 		smallvec-1.9.0 \
 		socket2-0.4.4 \
 		stable_deref_trait-1.2.0 \
+		static_assertions-1.1.0 \
 		strsim-0.8.0 \
-		syn-1.0.103 \
+		syn-1.0.107 \
 		tempfile-3.3.0 \
 		textwrap-0.11.0 \
 		thiserror-1.0.32 \
@@ -132,8 +134,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		time-0.1.44 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		toml-0.5.9 \
+		toml-0.5.11 \
 		tracing-0.1.37 \
+		tracing-attributes-0.1.23 \
 		tracing-core-0.1.30 \
 		tracing-log-0.1.3 \
 		tracing-subscriber-0.2.25 \
@@ -158,11 +161,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.36.1 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
 		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_msvc-0.42.0 \
 		windows_i686_gnu-0.36.1 \
+		windows_i686_gnu-0.42.0 \
 		windows_i686_msvc-0.36.1 \
+		windows_i686_msvc-0.42.0 \
 		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_msvc-0.36.1
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.36.1 \
+		windows_x86_64_msvc-0.42.0
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
