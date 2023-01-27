@@ -1,11 +1,12 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.1
-PORTREVISION=	2
+PORTREVISION=	1
 CATEGORIES=	net-im
-MASTER_SITES=	LOCAL/mikael/signal-desktop/:yarn
+MASTER_SITES=	https://nodejs.org/download/release/v${NODE_VERSION}/:node
 PKGNAMESUFFIX=	-node
-DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz:yarn
+DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz:prefetch \
+		node-v${NODE_VERSION}-headers.tar.gz:node
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Platform-agnostic APIs used by the official Signal clients and servers
@@ -13,6 +14,8 @@ COMMENT=	Platform-agnostic APIs used by the official Signal clients and servers
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+FETCH_DEPENDS=	yarn-node16>0:www/yarn-node16
+EXTRACT_DEPENDS=yarn-node16>0:www/yarn-node16
 BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		protoc:devel/protobuf \
 		yarn:www/yarn-node16
@@ -22,6 +25,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
 GH_TUPLE=	google:boringssl:f1c75347daa2ea81a941e953f2263e0a4d970c8d:boringssl \
 		google:boringssl:ae223d6138807a13006342edfeef32e813246b39:boringssl_fips
+
+# keep NODE_VERSION in sync with www/node16 DISTVERSION
+NODE_VERSION=	16.19.0
 
 CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
@@ -238,18 +244,38 @@ MAKE_ENV=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron21 \
 
 MAKE_ENV+=	RUSTC_BOOTSTRAP=aes,polyval
 
-USE_LDCONFIG=		yes
+USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libsignal_node.so
 
 NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/:S/i386/ia32/:C/powerpc64.*/ppc64/}
 RUST_ARCH=	${ARCH:S/amd64/x86_64/:S/i386/i686/}
 
+YARN_TIMESTAMP=	1661146515
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH:Mpowerpc64*}
 EXTRA_PATCHES=	${FILESDIR}/${ARCH}-patch-node_binding.gyp
 .endif
+
+pre-fetch:
+	if [ ! -f ${DISTDIR}/libsignal-node-${DISTVERSION}-yarn-cache.tar.gz ]; \
+		then ${MKDIR} ${WRKDIR}; \
+		${ECHO_CMD} 'yarn-offline-mirror "./yarn-offline-cache"' >> \
+			${WRKDIR}/.yarnrc; \
+		${CP} ${FILESDIR}/node/package.json ${FILESDIR}/node/yarn.lock ${WRKDIR}; \
+		cd ${WRKDIR} && ${SETENV} HOME=${WRKDIR} XDG_CACHE_HOME=${WRKDIR}/.cache \
+			yarn --frozen-lockfile --ignore-scripts; \
+		${MTREE_CMD} -cbnSp yarn-offline-cache | ${MTREE_CMD} -C | ${SED} \
+			-e 's:time=[0-9.]*:time=${YARN_TIMESTAMP}.000000000:' \
+			-e 's:\([gu]id\)=[0-9]*:\1=0:g' \
+			-e 's:flags=.*:flags=none:' \
+			-e 's:^\.:./yarn-offline-cache:' > yarn-offline-cache.mtree; \
+		${TAR} cJf ${DISTDIR}/libsignal-node-${DISTVERSION}-yarn-cache.tar.gz  \
+			@yarn-offline-cache.mtree; \
+		${RM} -r ${WRKDIR}; \
+	fi
 
 post-patch:
 	${REINPLACE_CMD} "s#python3#${PYTHON_CMD}#" \
@@ -260,8 +286,14 @@ post-extract:
 	${MV} ${WRKDIR}/boringssl-f1c75347daa2ea81a941e953f2263e0a4d970c8d/* ${WRKDIR}/boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl
 	${MV} ${WRKDIR}/boringssl-ae223d6138807a13006342edfeef32e813246b39/* ${WRKDIR}/boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl-fips
 
+	${MKDIR} ${WRKDIR}/.cache/node-gyp/${NODE_VERSION}
+	${MV} ${WRKDIR}/node-v${NODE_VERSION}/include ${WRKDIR}/.cache/node-gyp/${NODE_VERSION}
+	${ECHO_CMD} '9' > ${WRKDIR}/.cache/node-gyp/${NODE_VERSION}/installVersion
+
+	${CP} ${FILESDIR}/node/package.json ${WRKSRC}/node
+
 do-build:
-	${ECHO_CMD} 'yarn-offline-mirror "../yarn-cache"' > ${WRKSRC}/.yarnrc
+	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' > ${WRKSRC}/.yarnrc
 	cd ${WRKSRC}/node && \
 		${SETENV} ${MAKE_ENV} yarn install --frozen-lockfile --ignore-optional --offline
 	cd ${WRKSRC}/node && \

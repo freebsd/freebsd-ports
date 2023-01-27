@@ -14,8 +14,8 @@ Reviewed-on: https://boringssl-review.googlesource.com/c/boringssl/+/51145
 Reviewed-by: Adam Langley <agl@google.com>
 
 
---- ../boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl/CMakeLists.txt.orig	2022-08-19 10:54:32 UTC
-+++ ../boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl/CMakeLists.txt
+--- ../boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl/CMakeLists.txt.orig	2022-08-19 10:54:32.212105000 +0200
++++ ../boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl/CMakeLists.txt	2022-08-19 10:55:12.577991000 +0200
 @@ -21,8 +21,11 @@ endif()
    set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fvisibility=hidden -fno-common -std=c11")
  endif()
