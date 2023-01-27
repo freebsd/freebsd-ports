@@ -1,11 +1,7 @@
 PORTNAME=	chrono
-DISTVERSION=	7.0.3
-PORTREVISION=	4
+DISTVERSION=	8.0.0
 CATEGORIES=	science devel
 PKGNAMESUFFIX=	-physics-simulation-engine
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	74df5c76d8d475818138a9a16ceccbd6f326247c.patch:-p1 # https://github.com/projectchrono/chrono/pull/295
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library for multi-physics simulation
