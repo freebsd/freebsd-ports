@@ -1,5 +1,5 @@
 PORTNAME=	gnome-terminal
-DISTVERSION=	3.44.1
+DISTVERSION=	3.44.2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -24,7 +24,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 PORTSCOUT=	limitw:1,even
 
 USES=		cpe gettext gnome localbase meson pathfix pkgconfig python:3.7+ \
-		tar:xz vala:build xorg
+		tar:bz2 vala:build xorg
 USE_GNOME=	cairo dconf gdkpixbuf2 gtk30 intltool vte3
 USE_XORG=	x11
 CPE_VENDOR=	gnome
@@ -45,5 +45,8 @@ SEARCHPROVIDER_RUN_DEPENDS=	gnome-shell:x11/gnome-shell
 NAUTILUS_MESON_TRUE=	nautilus_extension
 NAUTILUS_USE=		GNOME=nautilus3
 NAUTILUS_DESC=		Open in terminal extension for nautilus
+
+post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
 
 .include <bsd.port.mk>
