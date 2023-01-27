@@ -12,11 +12,10 @@
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -780,13 +785,22 @@ template("clang_toolchain") {
- # use_gold too.
- template("clang_toolchain") {
-   gcc_toolchain(target_name) {
--    prefix = rebase_path("$clang_base_path/bin", root_build_dir)
+@@ -796,12 +801,22 @@ template("clang_toolchain") {
+       prefix = rebase_path(_path, root_build_dir)
+     }
+ 
 -    cc = "${prefix}/clang"
 -    cxx = "${prefix}/clang++"
 -    ld = cxx

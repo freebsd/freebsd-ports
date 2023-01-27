@@ -1,7 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.22.0
-PORTREVISION=	2
+DISTVERSION=	2.23.0
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:base \
 		LOCAL/mikael/ringrtc/:boringssl \
@@ -58,22 +57,22 @@ EXTRA_PATCHES+=	${"${:!${GREP} mempcpy ${CROSS_SYSROOT}/usr/include/string.h \
 	|| ${TRUE}!}" == "":?${PATCHDIR}/extra-patch-no-mempcpy-nasm:}
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	5005b
+WEBRTC_REV=	5359
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
-BASE_REV=		d714333bb07eb8444f600ea4d2dc56be55730a51
-BORINGSSL_REV=		27ffcc6e19bbafddf1b59ec0bc6df2904de7eb2c
-BUILD_REV=		bb1c23c67d2328cbb89966535bfca2916854bb8e
-BUILDTOOLS_REV=		c2e4795660817c2776dbabd778b92ed58c074032
-CATAPULT_REV=		e9e999a4a88a2963b60bec778f340d3c3d00fa1a
-ICU_REV=		1fd0dbea04448c3f73fe5cb7599f9472f0f107f1
-LIBJPEG_TURBO_REV=	22f1a22c99e9dde8cd3c72ead333f425c5a7aa77
+BASE_REV=		b054aaefd4d4ec5aad7189c4e97000a06b594163
+BORINGSSL_REV=		1ee71185a2322dc354bee5e5a0abfb1810a27dc6
+BUILD_REV=		1c4f38fd4f534d78b72cefc376a03b3e8b486e7c
+BUILDTOOLS_REV=		24fa2da896a027e7202bb8886177cccfe885b67d
+CATAPULT_REV=		4793433248183dd073e608f655204d4acfdc7193
+ICU_REV=		20f8ac695af59b6c830def7d4e95bfeb13dd7be5
+LIBJPEG_TURBO_REV=	ed683925e4897a84b3bffc5c1414c85b97a129a3
 LIBSRTP_REV=		5b7c744eb8310250ccc534f3f86a2015b3887a0a
-LIBVPX_REV=		bf672f23a5336cb54dbcb2e4417142139f44cc3e
-LIBYUV_REV=		f4d25308467cbd50c2706a46fa0ddcef939e715a
+LIBVPX_REV=		9d6d0624d7943a09cc0be9df1a7402522989ac1a
+LIBYUV_REV=		00950840d1c9bcbb3eb6ebc5aac5793e71166c8b
 NASM_REV=		9215e8e1d0fe474ffd3e16c1a07a0f97089e6224
-TESTING_REV=		d2cc6b1f9d361923efea2c822f9e6c346861dc9f
-THIRD_PARTY_REV=	5a0acdf2e317019f2c55ad5de72a144e9a758cdf
+TESTING_REV=		6f2362298838e8789b09282cf198c8582f9c4555
+THIRD_PARTY_REV=	28a4580f804c4fc4279ecf10100a409811030235
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
@@ -102,8 +101,9 @@ MAKE_ARGS=	-C out/${BUILDTYPE}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src/rust
 WEBRTCDIR=	${WRKDIR}/${PORTNAME}-${DISTVERSION}/src/webrtc/src
 
-# fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.22.0/src/rust/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile
-CARGO_CRATES=	aes-0.8.1 \
+# fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.23.0/src/rust/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile
+CARGO_CRATES=	adler-1.0.2 \
+		aes-0.8.1 \
 		aho-corasick-0.7.19 \
 		anyhow-1.0.65 \
 		atty-0.2.14 \
@@ -121,6 +121,7 @@ CARGO_CRATES=	aes-0.8.1 \
 		cipher-0.4.3 \
 		combine-4.6.6 \
 		cpufeatures-0.2.5 \
+		crc32fast-1.3.2 \
 		crypto-common-0.1.6 \
 		ctr-0.9.2 \
 		curve25519-dalek-3.2.1 \
@@ -130,6 +131,7 @@ CARGO_CRATES=	aes-0.8.1 \
 		env_logger-0.9.1 \
 		fastrand-1.8.0 \
 		fixedbitset-0.4.2 \
+		flate2-1.0.25 \
 		form_urlencoded-1.1.0 \
 		futures-0.3.24 \
 		futures-channel-0.3.24 \
@@ -163,6 +165,7 @@ CARGO_CRATES=	aes-0.8.1 \
 		libloading-0.6.7 \
 		log-0.4.17 \
 		memchr-2.5.0 \
+		miniz_oxide-0.6.2 \
 		multimap-0.8.3 \
 		neon-0.10.1 \
 		neon-build-0.10.1 \
@@ -194,10 +197,10 @@ CARGO_CRATES=	aes-0.8.1 \
 		regex-syntax-0.6.27 \
 		remove_dir_all-0.5.3 \
 		ring-0.16.20 \
-		rustls-0.19.1 \
+		rustls-0.20.7 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
-		sct-0.6.1 \
+		sct-0.7.0 \
 		semver-0.9.0 \
 		semver-parser-0.7.0 \
 		serde-1.0.145 \
@@ -226,7 +229,7 @@ CARGO_CRATES=	aes-0.8.1 \
 		unicode-normalization-0.1.22 \
 		unicode-xid-0.2.4 \
 		untrusted-0.7.1 \
-		ureq-2.2.0 \
+		ureq-2.5.0 \
 		url-2.3.1 \
 		version_check-0.9.4 \
 		walkdir-2.3.2 \
@@ -237,8 +240,8 @@ CARGO_CRATES=	aes-0.8.1 \
 		wasm-bindgen-macro-support-0.2.83 \
 		wasm-bindgen-shared-0.2.83 \
 		web-sys-0.3.60 \
-		webpki-0.21.4 \
-		webpki-roots-0.21.1 \
+		webpki-0.22.0 \
+		webpki-roots-0.22.6 \
 		which-4.3.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
