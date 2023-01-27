@@ -1,5 +1,5 @@
---- npm-@signalapp-better-sqlite3-8.0.3-c279ca3f1d1e7f6554d2a629d717e96e1ec45809-integrity/node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp.orig	2022-07-02 14:34:04 UTC
-+++ npm-@signalapp-better-sqlite3-8.0.3-c279ca3f1d1e7f6554d2a629d717e96e1ec45809-integrity/node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp
+--- npm-@signalapp-better-sqlite3-8.0.4-53ed2074634b69e83116573b26ae1d927c4aab22-integrity/node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp.orig	2022-07-02 14:34:04 UTC
++++ npm-@signalapp-better-sqlite3-8.0.4-53ed2074634b69e83116573b26ae1d927c4aab22-integrity/node_modules/@signalapp/better-sqlite3/deps/sqlite3.gyp
 @@ -92,6 +92,14 @@
              'libraries': [
                # This statically links libcrypto, whereas -lcrypto would dynamically link it
