@@ -17758,3 +17758,4 @@ irc/cwirc||2023-01-19|Has expired: No upstream, no apparent use seen online
 sysutils/ior|benchmarks/ior|2023-01-20|Moved to a better fit category
 emulators/qemu-guest-agent|emulators/qemu@guestagent|2023-01-20|Seperate port merged with main port as a flavor
 devel/rust-bindgen|devel/rust-bindgen-cli|2023-01-22|Renamed upstream
+graphics/darktable42||2023-01-27|Removed as part of the update of graphics/darktable to 4.2.0

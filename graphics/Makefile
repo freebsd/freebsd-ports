@@ -121,7 +121,6 @@
     SUBDIR += cuttlefish
     SUBDIR += cxxplot
     SUBDIR += darktable
-    SUBDIR += darktable42
     SUBDIR += dataplot
     SUBDIR += dbow2
     SUBDIR += dc20pack
