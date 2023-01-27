@@ -1,6 +1,5 @@
 PORTNAME=	mesa-gallium-va
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium VAAPI drivers
