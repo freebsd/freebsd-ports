@@ -1,7 +1,6 @@
 PORTNAME=	shotman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	0.3.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~whynothugo/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
@@ -9,7 +8,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Uncompromising screenshot GUI for Wayland
-WWW=		https://git.sr.ht/~whynothugo/shotman
+WWW=		https://sr.ht/~whynothugo/shotman
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE.md
