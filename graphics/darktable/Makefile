@@ -18,24 +18,31 @@ BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		po4a-translate:textproc/po4a \
 		xsltproc:textproc/libxslt \
 		bash:shells/bash
-LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
+LIB_DEPENDS=	libavif.so:graphics/libavif \
+		libcolord-gtk.so:graphics/colord-gtk \
 		libcolord.so:graphics/colord \
 		libcurl.so:ftp/curl \
 		libexiv2.so:graphics/exiv2 \
+		libgphoto2.so:graphics/libgphoto2 \
 		libharfbuzz.so:print/harfbuzz \
+		libheif.so:graphics/libheif \
 		libicui18n.so:devel/icu \
 		libImath.so:math/Imath \
 		libjasper.so:graphics/jasper \
 		libjson-glib-1.0.so:devel/json-glib \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
+		libOpenEXR.so:graphics/openexr \
+		libopenjp2.so:graphics/openjpeg \
+		libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map \
 		libpng.so:graphics/png \
 		libpugixml.so:textproc/pugixml \
 		libsoup-2.4.so:devel/libsoup \
-		libtiff.so:graphics/tiff
+		libtiff.so:graphics/tiff \
+		libwebp.so:graphics/webp
 
 USES=		cmake compiler:gcc-c++11-lib desktop-file-utils gl gnome jpeg \
-		llvm:14,build perl5 pkgconfig sdl shebangfix sqlite \
+		llvm:14,build lua:54 perl5 pkgconfig sdl shebangfix sqlite \
 		tar:xz xorg
 USE_GL=		gl
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
@@ -47,50 +54,33 @@ SHEBANG_FILES=	tools/*.sh
 
 USE_GCC=	yes
 
-CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1 \
-		-DBUILD_CMSTEST:BOOL=ON \
-		-DUSE_KWALLET:BOOL=ON
+CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1
 
-CFLAGS+=	-fopenmp
+CMAKE_BOOL+=	BUILD_CMSTEST USE_AVIF USE_CAMERA_SUPPORT USE_HEIF \
+		USE_KWALLET USE_LUA USE_MAP USE_OPENEXR USE_OPENJPEG \
+		USE_WEBP RAWSPEED_ENABLE_LTO
+
+CFLAGS+=	-fopenmp -I${LOCALBASE}/include/Imath
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
 
-OPTIONS_DEFINE=		AVIF DOCS GEO GPHOTO GMIC GRAPHMAGICK HEIF LIBSECRET LTO \
-			LUA NLS OPENEXR OPENJPEG PRINT TOOLS WEBP
-OPTIONS_DEFAULT=	AVIF GEO GPHOTO HEIF LTO LUA OPENEXR OPENJPEG PRINT WEBP
+OPTIONS_DEFINE=		DOCS GMIC GRAPHMAGICK LIBSECRET NLS PRINT TOOLS
+OPTIONS_DEFAULT=	PRINT
 OPTIONS_SUB=		yes
 
-GEO_DESC=		Support geotagging
 GMIC_DESC=		Support G'Mic-compressed LUT in lut3d
 LIBSECRET_DESC=		Support libsecret as password backend
 TOOLS_DESC=		Install additional scripts
 
-AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
-AVIF_CMAKE_BOOL=	USE_AVIF
-
-GEO_LIB_DEPENDS=	libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
-GEO_CMAKE_BOOL=		USE_MAP
-
 GMIC_LIB_DEPENDS=	libgmic.so:graphics/gmic
 GMIC_CMAKE_BOOL=	USE_GMIC
-
-GPHOTO_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
-GPHOTO_CMAKE_BOOL=	USE_CAMERA_SUPPORT
 
 GRAPHMAGICK_LIB_DEPENDS=libGraphicsMagick.so:graphics/GraphicsMagick
 GRAPHMAGICK_CMAKE_BOOL=	USE_GRAPHICSMAGICK
 
-HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
-HEIF_CMAKE_BOOL=	USE_HEIF
-
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CMAKE_BOOL=	USE_LIBSECRET
-
-LTO_CMAKE_BOOL=		RAWSPEED_ENABLE_LTO
-
-LUA_USES=		lua:54
-LUA_CMAKE_BOOL=		USE_LUA
 
 # FIXME: Even with NLS turned off, darktable(1) is still linked to
 # libintl.so.
@@ -99,21 +89,11 @@ NLS_USES_OFF=		gettext-runtime
 NLS_CMAKE_BOOL=		USE_NLS
 NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 
-OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
-OPENEXR_CMAKE_BOOL=	USE_OPENEXR
-OPENEXR_CFLAGS=		-I${LOCALBASE}/include/Imath
-
-OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
-OPENJPEG_CMAKE_BOOL=	USE_OPENJPEG
-
 PRINT_LIB_DEPENDS=	libcups.so:print/cups
 PRINT_CMAKE_BOOL=	BUILD_PRINT
 
 TOOLS_BUILD_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 TOOLS_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
-
-WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
-WEBP_CMAKE_BOOL=	USE_WEBP
 
 .include <bsd.port.options.mk>
 
