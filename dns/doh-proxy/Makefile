@@ -5,7 +5,7 @@ CATEGORIES=	dns
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	DNS-over-HTTP server proxy
 WWW=		https://github.com/jedisct1/rust-doh
 
