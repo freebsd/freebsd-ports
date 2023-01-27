@@ -21,7 +21,7 @@ include/vulkan/vk_safe_struct.cpp
 include/vulkan/vk_safe_struct.h
 include/vulkan/vk_typemap_helper.h
 include/vulkan/vk_validation_error_messages.h
-include/vulkan/xxhash.c
+include/vulkan/xxhash.cpp
 include/vulkan/xxhash.h
 lib/libVkLayer_khronos_validation.so
 lib/libVkLayer_utils.a
