@@ -24,6 +24,7 @@ LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
 		libexiv2.so:graphics/exiv2 \
 		libharfbuzz.so:print/harfbuzz \
 		libicui18n.so:devel/icu \
+		libImath.so:math/Imath \
 		libjasper.so:graphics/jasper \
 		libjson-glib-1.0.so:devel/json-glib \
 		liblcms2.so:graphics/lcms2 \
@@ -63,6 +64,10 @@ OPTIONS_SUB=		yes
 GEO_DESC=		Support geotagging
 GMIC_DESC=		Support G'Mic-compressed LUT in lut3d
 LIBSECRET_DESC=		Support libsecret as password backend
+TOOLS_DESC=		Install additional scripts
+
+AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
+AVIF_CMAKE_BOOL=	USE_AVIF
 
 GEO_LIB_DEPENDS=	libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
 GEO_CMAKE_BOOL=		USE_MAP
@@ -75,9 +80,6 @@ GPHOTO_CMAKE_BOOL=	USE_CAMERA_SUPPORT
 
 GRAPHMAGICK_LIB_DEPENDS=libGraphicsMagick.so:graphics/GraphicsMagick
 GRAPHMAGICK_CMAKE_BOOL=	USE_GRAPHICSMAGICK
-
-AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
-AVIF_CMAKE_BOOL=	USE_AVIF
 
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 HEIF_CMAKE_BOOL=	USE_HEIF
@@ -97,10 +99,9 @@ NLS_USES_OFF=		gettext-runtime
 NLS_CMAKE_BOOL=		USE_NLS
 NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 
-OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
-			libImath.so:math/Imath
-OPENEXR_CFLAGS=		-I${LOCALBASE}/include/Imath
+OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr
 OPENEXR_CMAKE_BOOL=	USE_OPENEXR
+OPENEXR_CFLAGS=		-I${LOCALBASE}/include/Imath
 
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 OPENJPEG_CMAKE_BOOL=	USE_OPENJPEG
@@ -108,7 +109,6 @@ OPENJPEG_CMAKE_BOOL=	USE_OPENJPEG
 PRINT_LIB_DEPENDS=	libcups.so:print/cups
 PRINT_CMAKE_BOOL=	BUILD_PRINT
 
-TOOLS_DESC=		Install additional scripts
 TOOLS_BUILD_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 TOOLS_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
