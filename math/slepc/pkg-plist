@@ -76,9 +76,9 @@ include/slepcvec.h
 include/slepcversion.h
 lib/libslepc.so
 lib/libslepc.so.3.18
-lib/libslepc.so.3.18.1
+lib/libslepc.so.3.18.2
 lib/slepc/conf/memoryerror.log
-lib/slepc/conf/modules/slepc/3.18.1
+lib/slepc/conf/modules/slepc/3.18.2
 lib/slepc/conf/slepc_common
 lib/slepc/conf/slepc_rules
 lib/slepc/conf/slepc_test
