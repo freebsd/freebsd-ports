@@ -1,7 +1,7 @@
 PORTNAME=	elixir
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.4
-PORTREVISION=	1
+DISTVERSION=	1.14.3
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES+=	https://github.com/elixir-lang/elixir/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/:doc
 DISTFILES=	Docs.zip:doc
@@ -13,8 +13,8 @@ WWW=		https://elixir-lang.org/
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	erlang>=24.0:lang/erlang
-RUN_DEPENDS=	erlang>=24.0:lang/erlang
+BUILD_DEPENDS=	erlang>=25.0:lang/erlang
+RUN_DEPENDS=	erlang>=25.0:lang/erlang
 
 USES=		gmake
 
