@@ -1,11 +1,11 @@
 PORTNAME=	saxon-he
-PORTVERSION=	9.5.1.5
+DISTVERSION=	10-6
 CATEGORIES=	textproc java
-MASTER_SITES=	SF/saxon/Saxon-HE/${PORTVERSION:R:R}
-DISTNAME=	SaxonHE${PORTVERSION:S,.,-,g}J
+MASTER_SITES=	SF/saxon/Saxon-HE/${PORTVERSION:R}/Java/
+DISTNAME=	SaxonHE${DISTVERSION}J
 
-MAINTAINER=	makc@FreeBSD.org
-COMMENT=	XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
+MAINTAINER=	thierry@FreeBSD.org
+COMMENT=	XSLT 3.0 / XPath 3.1 / XQuery 3.1 processor for Java
 WWW=		https://www.saxonica.com/
 
 LICENSE=	MPL20
@@ -17,9 +17,9 @@ NO_WRKSUBDIR=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-JARFILES=	saxon9-unpack.jar \
-		saxon9-xqj.jar \
-		saxon9he.jar
+JARFILES=	jline-2.14.6.jar \
+		saxon-he-10.6.jar \
+		saxon-he-test-10.6.jar
 PLIST_FILES=	${JARFILES:S,^,%%JAVAJARDIR%%/,}
 
 do-install:
