@@ -1,7 +1,6 @@
 PORTNAME=	liteide
 DISTVERSIONPREFIX=	x
-DISTVERSION=	38.0
-PORTREVISION=	7
+DISTVERSION=	38.1
 CATEGORIES=	devel editors
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -19,18 +18,16 @@ DOS2UNIX_FILES=	src/utils/dlvclient/dlvclient.cpp \
 USE_GITHUB=	yes
 GH_ACCOUNT=	visualfc
 
-GH_TUPLE=	visualfc:gocode:901895f2a886:visualfc_gocode \
-		visualfc:gotools:v1.3.7:visualfc_gotools \
-		visualfc:gomod:v0.0.2:visualfc_gomod/vendor/github.com/visualfc/gomod \
+GH_TUPLE=	visualfc:gocode:v1.4.5:visualfc_gocode \
+		visualfc:gotools:v1.4.3:visualfc_gotools \
+		visualfc:gomod:v0.1.2:visualfc_gomod/vendor/github.com/visualfc/gomod \
 		creack:pty:v1.1.9:creack_pty/vendor/github.com/creack/pty \
-		golang:mod:v0.4.1:golang_mod/vendor/golang.org/x/mod \
-		golang:sys:988cb79eb6c6:golang_sys/vendor/golang.org/x/sys \
-		golang:tools:v0.1.10:golang_tools/vendor/golang.org/x/tools \
-		golang:xerrors:2f41105eb62f:golang_xerrors/vendor/golang.org/x/xerrors \
+		golang:mod:v0.7.0:golang_mod/vendor/golang.org/x/mod \
+		golang:sys:v0.4.0:golang_sys/vendor/golang.org/x/sys \
+		golang:tools:v0.5.0:golang_tools/vendor/golang.org/x/tools \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		visualfc:fastmod:v1.3.7:visualfc_fastmod/vendor/github.com/visualfc/fastmod \
 		visualfc:goversion:v1.1.0:visualfc_goversion/vendor/github.com/visualfc/goversion \
-		yuin:goldmark:v1.2.1:yuin_goldmark/vendor/github.com/yuin/goldmark
+		yuin:goldmark:v1.4.13:yuin_goldmark/vendor/github.com/yuin/goldmark
 
 USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
