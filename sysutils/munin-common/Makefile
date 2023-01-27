@@ -4,7 +4,7 @@ CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-common
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Common components between a munin node and server
 WWW=		https://munin-monitoring.org/
 
