@@ -69,6 +69,7 @@ LLVM_COMMANDS=	\
 		sancov
 
 CLANG_COMMANDS=	\
+		amdgpu-arch \
 		analyze-build \
 		c-index-test \
 		clang \
@@ -86,6 +87,7 @@ CLANG_COMMANDS=	\
 		diagtool \
 		hmaptool \
 		intercept-build \
+		nvptx-arch \
 		scan-build \
 		scan-build-py \
 		scan-view
@@ -147,4 +149,5 @@ MLIR_COMMANDS=	\
 		tblgen-lsp-server
 
 OPENMP_COMMANDS=	\
-		llvm-omp-device-info
+		llvm-omp-device-info \
+		llvm-omp-kernel-replay
