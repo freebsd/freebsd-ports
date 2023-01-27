@@ -3,7 +3,7 @@ DISTVERSION=	git.2021-04-27
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	munin-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Contributed plugins and other for munin
 WWW=		https://github.com/munin-monitoring/contrib
 
