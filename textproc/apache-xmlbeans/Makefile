@@ -1,5 +1,6 @@
 PORTNAME=	xmlbeans
 DISTVERSION=	5.1.1 # Do not upgrade without checking compatibility with math/R-cran-XLConnect
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	https://archive.apache.org/dist/poi/xmlbeans/release/bin/
 PKGNAMEPREFIX=	apache-
@@ -26,7 +27,10 @@ OTHERDOCS=	LICENSE.txt NOTICE.txt README.txt
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=		DOCS EXAMPLES SAXON
+OPTIONS_DEFAULT=	SAXON
+SAXON_DESC=		Saxon XQuery processor for full XQuery and XPath support
+SAXON_RUN_DEPENDS=	saxon-he=10.6:textproc/saxon-he
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|'	\
