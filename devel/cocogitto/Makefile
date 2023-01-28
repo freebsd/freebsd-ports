@@ -1,5 +1,5 @@
 PORTNAME=	cocogitto
-DISTVERSION=	5.3.0
+DISTVERSION=	5.3.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		android_system_properties-0.1.5 \
 		anyhow-1.0.68 \
 		assert_cmd-1.0.8 \
-		async-trait-0.1.62 \
+		async-trait-0.1.63 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
@@ -64,6 +64,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		float-cmp-0.8.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.1.0 \
+		fs_extra-1.2.0 \
 		generic-array-0.14.6 \
 		getrandom-0.1.16 \
 		getrandom-0.2.8 \
@@ -149,8 +150,8 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
 		scratch-1.0.3 \
-		sealed_test-0.2.0 \
-		sealed_test_derive-0.1.0 \
+		sealed_test-1.0.0 \
+		sealed_test_derive-1.0.0 \
 		semver-1.0.16 \
 		serde-1.0.152 \
 		serde_derive-1.0.152 \
@@ -159,7 +160,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		shell-words-1.1.0 \
 		siphasher-0.3.10 \
 		slug-0.1.4 \
-		speculoos-0.10.0 \
+		speculoos-0.11.0 \
 		stderrlog-0.5.4 \
 		strsim-0.10.0 \
 		syn-1.0.107 \
