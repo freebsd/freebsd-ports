@@ -25,7 +25,7 @@ include/vte-%%VERSION%%/vte/vtetypebuiltins-gtk3.h
 include/vte-%%VERSION%%/vte/vtetypebuiltins.h
 include/vte-%%VERSION%%/vte/vteversion.h
 lib/girepository-1.0/Vte-%%VERSION%%.typelib
-lib/girepository-1.0/Vte-%%PYTHON_VER%%1.typelib
+lib/girepository-1.0/Vte-%%VER3%%.typelib
 lib/libvte-%%VERSION%%-gtk4.so
 lib/libvte-%%VERSION%%-gtk4.so.0
 lib/libvte-%%VERSION%%.so
@@ -35,7 +35,7 @@ libdata/pkgconfig/vte-%%VERSION%%-gtk4.pc
 libdata/pkgconfig/vte-%%VERSION%%.pc
 libexec/vte-urlencode-cwd
 share/gir-1.0/Vte-%%VERSION%%.gir
-share/gir-1.0/Vte-%%PYTHON_VER%%1.gir
+share/gir-1.0/Vte-%%VER3%%.gir
 share/glade/catalogs/vte-%%VERSION%%.xml
 share/glade/pixmaps/hicolor/16x16/actions/widget-vte-terminal.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-vte-terminal.png

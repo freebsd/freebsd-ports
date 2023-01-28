@@ -33,7 +33,8 @@ MESON_ARGS=	-Da11y=true \
 		-D_systemd=false \
 		-Dvapi=true
 
-PLIST_SUB=	VERSION=2.91
+# shlib version numbers comes from gtk3/4 meson options not from PYTHON_VER
+PLIST_SUB=	VERSION=2.91 VER3=3.91
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
