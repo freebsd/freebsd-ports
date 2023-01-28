@@ -42,6 +42,15 @@
      end
  
      checksums
+@@ -282,7 +282,7 @@ task(:config) do
+     end
+ 
+     # Get revision
+-    if File.exists?(".hg") and (hg = find_executable0("hg"))
++    if File.exist?(".hg") and (hg = find_executable0("hg"))
+       match = `#{hg} tip`.match(/^[^:]+:\s*(\d+).*/)
+ 
+       if !match.nil? and 2 == match.size
 @@ -396,7 +396,10 @@ task(:config) do
        checking_for("X11/Xft/Xft.h") do
          ret = false

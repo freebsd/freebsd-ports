@@ -21,6 +21,8 @@ ALL_TARGET=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 1d ${WRKSRC}/data/subtler/runner.rb
+	@${REINPLACE_CMD} -e 's,File\.exists\?,File.exist?,' \
+		${WRKSRC}/data/sur/server.rb
 	@${REINPLACE_CMD} -e 's,/etc/xdg,${LOCALBASE}&,' \
 		${WRKSRC}/src/subtle/ruby.c
 
