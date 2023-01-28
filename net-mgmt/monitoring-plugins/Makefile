@@ -4,7 +4,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ \
 		LOCAL/mat/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Monitoring Plugins for Nagios
 WWW=		https://www.monitoring-plugins.org/
 

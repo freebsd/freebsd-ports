@@ -5,7 +5,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Nagios plug-in to check CPU usage
 
 NO_BUILD=	yes
