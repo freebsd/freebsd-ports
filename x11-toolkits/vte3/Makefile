@@ -1,6 +1,5 @@
 PORTNAME=	vte
-PORTVERSION=	0.68.0
-PORTREVISION=	2
+PORTVERSION=	0.70.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -23,13 +22,13 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c++11-lang gettext gnome localbase meson \
 		pkgconfig python:3.6+ tar:xz vala:build
 USE_LDCONFIG=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
+USE_GNOME=	cairo gdkpixbuf2 gtk30 gtk40 introspection:build
 
 MESON_ARGS=	-Da11y=true \
 		-Dgir=true \
 		-Dfribidi=true \
 		-Dgtk3=true \
-		-Dgtk4=false \
+		-Dgtk4=true \
 		-Dicu=true \
 		-D_systemd=false \
 		-Dvapi=true
