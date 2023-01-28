@@ -1,6 +1,6 @@
 PORTNAME=	darktable
 PORTVERSION=	4.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -29,6 +29,7 @@ LIB_DEPENDS=	libavif.so:graphics/libavif \
 		libicui18n.so:devel/icu \
 		libImath.so:math/Imath \
 		libjasper.so:graphics/jasper \
+		libjxl_threads.so:graphics/libjxl \
 		libjson-glib-1.0.so:devel/json-glib \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
