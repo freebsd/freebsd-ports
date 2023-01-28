@@ -21,7 +21,7 @@ LICENSE=	EPL
 
 BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_riscv64=		Fails to link: missing sbrk
-ROKEN_FreeBSD_12=	exit code 139 making lib/libcmd
+BROKEN_FreeBSD_12=	exit code 139 making lib/libcmd
 
 HASH=		9bec2b78
 AST_COMMIT_DATE=	2023.01.11
