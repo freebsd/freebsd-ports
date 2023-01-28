@@ -11,3 +11,8 @@ bin/storj-identity
 bin/storj-sim
 bin/uplink
 bin/versioncontrol
+@owner %%USER%%
+@group %%GROUP%%
+@dir /var/db/storj/identity
+@dir /var/db/storj/storagenode
+@dir /var/db/storj

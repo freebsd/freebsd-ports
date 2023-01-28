@@ -1,0 +1,31 @@
+#!/bin/sh
+
+# PROVIDE: storagenode
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+: ${storagenode_enable:=NO}
+: ${storagenode_config_dir:=/var/db/storj/storagenode}
+: ${storagenode_identity_dir:=/var/db/storj/identity/storagenode}
+: ${storagenode_user:=%%USER%%}
+: ${storagenode_group:=%%GROUP%%}
+
+name="storagenode"
+rcvar=storagenode_enable
+pidfile="/var/run/storagenode.pid"
+command="/usr/sbin/daemon"
+command_args="-r -f -P ${pidfile} \
+	%%PREFIX%%/bin/storagenode run \
+	--confir-dir ${storagenode_config_dir} \
+	--identity-dir ${storagenode_identity_dir}"
+
+start_precmd=storagenode_prestart
+storagenode_prestart()
+{
+	install -g ${storagenode_group} -o ${storagenode_user} -- /dev/null ${pidfile}
+}
+
+load_rc_config $name
+run_rc_command "$1"
