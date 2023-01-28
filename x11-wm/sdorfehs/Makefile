@@ -1,6 +1,6 @@
 PORTNAME=	sdorfehs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4
+DISTVERSION=	1.5
 CATEGORIES=	x11-wm
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		pkgconfig xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	jcs
-USE_XORG=	x11 xft xrandr xtst
+USE_XORG=	x11 xft xrandr xres xtst
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
