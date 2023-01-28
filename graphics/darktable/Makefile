@@ -29,8 +29,8 @@ LIB_DEPENDS=	libavif.so:graphics/libavif \
 		libicui18n.so:devel/icu \
 		libImath.so:math/Imath \
 		libjasper.so:graphics/jasper \
-		libjxl_threads.so:graphics/libjxl \
 		libjson-glib-1.0.so:devel/json-glib \
+		libjxl_threads.so:graphics/libjxl \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
 		libOpenEXR.so:graphics/openexr \
