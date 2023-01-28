@@ -1,12 +1,12 @@
 PORTNAME=		bc
-PORTVERSION=		6.0.2
+PORTVERSION=		6.2.2
 CATEGORIES=		math lang
 MASTER_SITES=		https://github.com/gavinhoward/bc/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=		gh-
 
 MAINTAINER=		se@FreeBSD.org
 COMMENT=		GNU compatible bc/dc calculator
-WWW=		https://git.yzena.com/gavin/bc
+WWW=			https://git.yzena.com/gavin/bc
 
 LICENSE=		BSD2CLAUSE MIT
 LICENSE_COMB=		multi
