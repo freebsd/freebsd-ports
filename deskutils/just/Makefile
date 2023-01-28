@@ -1,5 +1,5 @@
 PORTNAME=	just
-DISTVERSION=	1.12.0
+DISTVERSION=	1.13.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -61,13 +61,13 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		linux-raw-sys-0.1.4 \
 		log-0.4.17 \
 		memchr-2.5.0 \
-		nix-0.26.1 \
+		nix-0.26.2 \
 		once_cell-1.17.0 \
 		output_vt100-0.1.3 \
 		pretty_assertions-1.3.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.49 \
+		proc-macro2-1.0.50 \
 		pulldown-cmark-0.9.2 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.23 \
@@ -76,7 +76,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
-		rustix-0.36.6 \
+		rustix-0.36.7 \
 		rustversion-1.0.11 \
 		ryu-1.0.12 \
 		serde-1.0.152 \
@@ -97,7 +97,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		tempfile-3.3.0 \
 		temptree-0.2.0 \
 		term_size-0.3.2 \
-		termcolor-1.1.3 \
+		termcolor-1.2.0 \
 		textwrap-0.11.0 \
 		typed-arena-2.0.2 \
 		typenum-1.16.0 \
@@ -109,7 +109,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		vec_map-0.8.2 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		which-4.3.0 \
+		which-4.4.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
