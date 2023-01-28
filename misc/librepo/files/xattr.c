@@ -3,6 +3,7 @@
 #include <sys/extattr.h>
 
 #include <assert.h>
+#include <string.h>
 
 ///
 /// xattr is a Linux kernel API that has to be mapped to the FreeBSD API
@@ -18,6 +19,25 @@ static void convert_bsd_list(char *namebuf, size_t size) {
 		namebuf[offset+length] = '\0';
 		offset += length+1;
 	}
+}
+
+ssize_t getxattr(const char *path, const char *name,
+                              void *value, ssize_t size, u_int32_t position,
+                              int options)
+{
+//    if (position != 0 ||
+//        !(options == 0 || options == XATTR_XATTR_NOFOLLOW)) {
+//        return -1;
+//    }
+
+//    if (options & XATTR_XATTR_NOFOLLOW) {
+//        return extattr_get_link(path, EXTATTR_NAMESPACE_USER,
+//                                name, value, size);
+//    }
+//    else {
+        return extattr_get_file(path, EXTATTR_NAMESPACE_USER,
+                                name, value, size);
+//    }
 }
 
 int fsetxattr(int fd, const char *name, const void *value, size_t size, int flags) {
