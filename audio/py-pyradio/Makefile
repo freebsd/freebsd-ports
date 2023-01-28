@@ -1,5 +1,5 @@
 PORTNAME=	pyradio
-DISTVERSION=	0.8.9.36
+DISTVERSION=	0.9.0
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -51,15 +51,15 @@ post-patch:
 	 -e 's/\(enable_notifications =\) -1/\1 0/' \
 	 	${WRKSRC}/pyradio/config
 
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKSRC}/pyradio*.1 ${STAGEDIR}${MANPREFIX}/man/man1
-	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}/
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.desktop \
 		${STAGEDIR}${DESKTOPDIR}/${PORTNAME}.desktop
 	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.png \
 	       	${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
+
+post-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_MAN} ${WRKSRC}/pyradio*.1 ${STAGEDIR}${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
