@@ -1,7 +1,7 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.21.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	https://nodejs.org/download/release/v${NODE_VERSION}/:node
 PKGNAMESUFFIX=	-node
