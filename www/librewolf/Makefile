@@ -77,7 +77,7 @@ FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default4
 FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/firefox-snap/firefox.desktop
 
 .if ${ARCH} == powerpc64
-MOZ_OPTIONS+=	--disable-webrtc --without-wasm-sandboxed-libraries
+MOZ_OPTIONS+=	--without-wasm-sandboxed-libraries
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx \
 		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc \
@@ -89,6 +89,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/browser/app/nsBrowserApp.cpp
 	@${RM} ${WRKSRC}/mozconfig
+.if ${ARCH} == powerpc64
+	@${CP} ${PATCHDIR}/RustTabs.jsm ${WRKSRC}/toolkit/components/uniffi-bindgen-gecko-js/components/generated/RustTabs.jsm
+	@${CP} ${PATCHDIR}/UniFFIGeneratedScaffolding.cpp ${WRKSRC}/toolkit/components/uniffi-js/UniFFIGeneratedScaffolding.cpp
+.endif
 
 post-install:
 	${CP} ${FIREFOX_DESKTOP} ${STAGEDIR}${PREFIX}/share/applications/librewolf.desktop
