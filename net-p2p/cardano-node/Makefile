@@ -1,6 +1,5 @@
 PORTNAME=	cardano-node
-PORTVERSION=	1.35.4
-PORTREVISION=	1
+PORTVERSION=	1.35.5
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
 CATEGORIES=	net-p2p
 
@@ -25,7 +24,7 @@ GH_TUPLE=	denisshevchenko:threepenny-gui:4ec92ded05ccf59ba4a874be4b404ac1b6d666b
 GH_TUPLE+=	input-output-hk:libsodium:${LIBSODIUM_HASH}:sodium \
 		bitcoin-core:secp256k1:${SECP256K1_HASH}:secp
 
-CARDANO_NODE_HASH=	ebc7be471b30e5931b35f9bbc236d21c375b91bb
+CARDANO_NODE_HASH=	8762a10efe3f9f97939e3cb05edaf04250456702
 LIBSODIUM_HASH=		66f017f16633f2060db25e17c170c2afa0f2a8a1
 # Obtained from https://github.com/input-output-hk/cardano-node/blob/master/.github/workflows/github-page.yml#L21
 SECP256K1_HASH=		ac83be33d0956faf6b7f61a60ab524ef7d6a473a
@@ -41,9 +40,9 @@ GROUPS=		cardano
 USE_CABAL=	Glob-0.10.2_3 \
 		HUnit-1.6.2.0 \
 		Histogram-0.1.0.2 \
-		HsOpenSSL-0.11.7.2_3 \
+		HsOpenSSL-0.11.7.4 \
 		ListLike-4.7.8 \
-		MonadRandom-0.6 \
+		MonadRandom-0.6_2 \
 		OneTuple-0.3.1_3 \
 		Only-0.1_1 \
 		QuickCheck-2.14.2 \
@@ -51,13 +50,13 @@ USE_CABAL=	Glob-0.10.2_3 \
 		SafeSemaphore-0.10.1_1 \
 		StateVar-1.2.2 \
 		Stream-0.4.7.2 \
-		Unique-0.4.7.9 \
-		Win32-network-0.1.1.0:chap \
+		Unique-0.4.7.9_1 \
+		Win32-network-0.1.0.0:chap \
 		adjunctions-4.4.2 \
 		aeson-2.1.1.0 \
 		aeson-pretty-0.8.9_2 \
 		algebraic-graphs-0.6.1 \
-		ansi-terminal-0.11.3 \
+		ansi-terminal-0.11.4 \
 		ansi-wl-pprint-0.6.9_3 \
 		ap-normalize-0.1.0.1 \
 		appar-0.1.8 \
@@ -72,7 +71,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		attoparsec-0.14.4_2 \
 		attoparsec-iso8601-1.1.0.0 \
 		auto-update-0.1.6 \
-		barbies-2.0.3.1 \
+		barbies-2.0.4.0 \
 		base-compat-0.12.2 \
 		base-compat-batteries-0.12.2 \
 		base-deriving-via-0.1.0.0:chap \
@@ -83,7 +82,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		base64-bytestring-type-1.0.1_15 \
 		basement-0.0.15 \
 		bech32-1.1.2 \
-		bifunctors-5.5.13 \
+		bifunctors-5.5.14 \
 		bimap-0.4.0_1 \
 		bin-0.1_2 \
 		binary-orphans-1.0.3 \
@@ -107,7 +106,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		cardano-crypto-test-1.3.0:chap \
 		cardano-crypto-tests-2.0.0.0.1:chap \
 		cardano-crypto-wrapper-1.3.0:chap \
-		cardano-data-0.1.0.0:chap \
+		cardano-data-0.1.0.1:chap \
 		cardano-ledger-alonzo-0.1.0.0:chap \
 		cardano-ledger-babbage-0.1.0.0:chap \
 		cardano-ledger-byron-0.1.0.0:chap \
@@ -132,19 +131,19 @@ USE_CABAL=	Glob-0.10.2_3 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
 		composition-prelude-3.0.0.2 \
-		concurrent-output-1.10.16 \
+		concurrent-output-1.10.17 \
 		conduit-1.3.4.3_1 \
 		connection-0.3.1_1 \
 		constraints-0.13.4 \
-		constraints-extras-0.3.2.1_1 \
+		constraints-extras-0.4.0.0 \
 		contra-tracer-0.1.0.0:chap \
 		contravariant-1.5.5 \
-		cookie-0.4.5 \
+		cookie-0.4.6 \
 		criterion-1.6.0.0 \
 		criterion-measurement-0.2.0.0 \
 		cryptonite-0.27_1 \
-		data-accessor-0.2.3 \
-		data-accessor-transformers-0.2.1.7 \
+		data-accessor-0.2.3.1 \
+		data-accessor-transformers-0.2.1.8 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
 		data-default-instances-containers-0.0.1 \
@@ -153,14 +152,14 @@ USE_CABAL=	Glob-0.10.2_3 \
 		data-fix-0.3.2_3 \
 		dec-0.0.5 \
 		dense-linear-algebra-0.1.0.0 \
-		dependent-map-0.4.0.0 \
-		dependent-sum-0.7.1.0_2 \
+		dependent-map-0.4.0.0_1 \
+		dependent-sum-0.7.1.1 \
 		dependent-sum-template-0.1.1.1 \
 		deque-0.4.4 \
-		deriving-aeson-0.2.8_1 \
-		deriving-compat-0.6.1_1 \
+		deriving-aeson-0.2.9 \
+		deriving-compat-0.6.2 \
 		dictionary-sharing-0.1.0.0_3 \
-		digest-0.0.1.3 \
+		digest-0.0.1.5 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
 		dns-3.0.4_1 \
@@ -174,17 +173,17 @@ USE_CABAL=	Glob-0.10.2_3 \
 		erf-2.0.0.0 \
 		extra-1.7.12 \
 		fast-logger-3.1.1 \
-		fgl-5.8.0.0 \
+		fgl-5.8.1.0 \
 		file-embed-0.0.15.0 \
 		filelock-0.1.1.5 \
 		fin-0.1.1_2 \
 		fingertree-0.1.5.0 \
 		flat-0.4.4.0.0.0.0.2:chap \
 		fmlist-0.9.4 \
-		foldl-1.4.12_5 \
+		foldl-1.4.14 \
 		formatting-6.3.7_2 \
 		foundation-0.0.29 \
-		free-5.1.9_1 \
+		free-5.1.10 \
 		generic-data-1.0.0.0 \
 		generic-deriving-1.14.2 \
 		generic-monoid-0.1.0.1_2 \
@@ -198,19 +197,19 @@ USE_CABAL=	Glob-0.10.2_3 \
 		half-0.3.1 \
 		happy-1.20.0_1 \
 		hashable-1.3.5.0_1 \
-		haskell-lexer-1.1 \
+		haskell-lexer-1.1.1 \
 		hedgehog-1.2 \
 		hedgehog-extras-0.2.0.0:chap \
 		hedgehog-quickcheck-0.1.1_4 \
 		hostname-1.0 \
 		hourglass-0.2.12 \
 		hsc2hs-0.68.8_1 \
-		hspec-2.10.6 \
-		hspec-core-2.10.6 \
-		hspec-discover-2.10.6 \
+		hspec-2.10.9 \
+		hspec-core-2.10.9 \
+		hspec-discover-2.10.9 \
 		hspec-expectations-0.8.2 \
 		http-api-data-0.5_1 \
-		http-client-0.7.13.1 \
+		http-client-0.7.13.1_1 \
 		http-client-tls-0.3.6.1 \
 		http-date-0.0.11 \
 		http-media-0.8.0.0_7 \
@@ -220,7 +219,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		indexed-traversable-0.1.2_2 \
 		indexed-traversable-instances-0.1.1.1 \
 		int-cast-0.2.0.0.0.0.0.0.1:chap \
-		integer-logarithms-1.0.3.1_3 \
+		integer-logarithms-1.0.3.1_4 \
 		invariant-0.6_1 \
 		io-classes-0.2.0.0:chap \
 		io-sim-0.2.0.0:chap \
@@ -238,7 +237,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		libyaml-0.1.2_1 \
 		lifted-async-0.10.2.3 \
 		lifted-base-0.2.3.12 \
-		list-t-1.0.5.3 \
+		list-t-1.0.5.6 \
 		lobemo-backend-aggregation-0.1.0.0:chap \
 		lobemo-backend-ekg-0.1.0.1:chap \
 		lobemo-backend-monitoring-0.1.0.0:chap \
@@ -249,10 +248,10 @@ USE_CABAL=	Glob-0.10.2_3 \
 		megaparsec-9.2.1_1 \
 		memory-0.18.0 \
 		mersenne-random-pure64-0.2.2.0_1 \
-		microlens-0.4.13.0 \
-		microlens-mtl-0.2.0.2 \
-		microlens-th-0.4.3.10_1 \
-		microstache-1.0.2.2 \
+		microlens-0.4.13.1 \
+		microlens-mtl-0.2.0.3 \
+		microlens-th-0.4.3.11 \
+		microstache-1.0.2.3 \
 		mime-types-0.1.1.0 \
 		mmorph-1.2.0_3 \
 		monad-control-1.0.3.1 \
@@ -264,7 +263,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		network-3.1.2.7 \
 		network-byte-order-0.1.6_1 \
 		network-mux-0.1.0.1:chap \
-		network-uri-2.6.4.1 \
+		network-uri-2.6.4.2 \
 		newtype-0.2.2.0_3 \
 		non-integral-0.1.0.0:chap \
 		nothunks-0.1.3 \
@@ -273,12 +272,12 @@ USE_CABAL=	Glob-0.10.2_3 \
 		openssl-streams-1.2.3.0_1 \
 		optparse-applicative-0.17.0.0 \
 		optparse-applicative-fork-0.16.1.0:chap \
-		optparse-generic-1.4.8_1 \
+		optparse-generic-1.4.9 \
 		orphans-deriving-via-0.1.0.0:chap \
 		ouroboros-consensus-0.1.0.1:chap \
 		ouroboros-consensus-byron-0.1.0.1:chap \
 		ouroboros-consensus-cardano-0.1.0.1:chap \
-		ouroboros-consensus-cardano-tools-0.1.0.0:chap \
+		ouroboros-consensus-cardano-tools-0.1.0.1:chap \
 		ouroboros-consensus-protocol-0.1.0.1:chap \
 		ouroboros-consensus-shelley-0.1.0.1:chap \
 		ouroboros-network-0.1.0.1:chap \
@@ -293,13 +292,13 @@ USE_CABAL=	Glob-0.10.2_3 \
 		plutus-core-1.0.0.1:chap \
 		plutus-ledger-api-1.0.0.1:chap \
 		plutus-tx-1.0.0.0:chap \
-		polyparse-1.13_5 \
+		polyparse-1.13_6 \
 		pretty-show-1.10 \
 		pretty-simple-4.1.2.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		prettyprinter-configurable-0.1.0.0:chap \
-		primitive-0.7.4.0 \
+		primitive-0.7.4.0_1 \
 		process-extras-0.7.4 \
 		profunctors-5.6.2_2 \
 		prometheus-2.2.3 \
@@ -312,7 +311,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		random-1.2.1.1 \
 		random-shuffle-0.0.4 \
 		readable-0.3.1_1 \
-		recursion-schemes-5.2.2.2_1 \
+		recursion-schemes-5.2.2.3 \
 		recv-0.0.0 \
 		reducers-3.12.4_2 \
 		reflection-2.1.6_1 \
@@ -329,7 +328,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		semigroups-0.20 \
 		serialise-0.2.6.0_1 \
 		servant-0.19.1 \
-		servant-server-0.19.2 \
+		servant-server-0.19.2_1 \
 		set-algebra-0.1.0.0:chap \
 		setenv-0.1.1.3_1 \
 		show-combinators-0.2.0.0_2 \
@@ -345,8 +344,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 		some-1.0.2 \
 		sop-core-0.5.0.2_1 \
 		split-0.2.3.5 \
-		splitmix-0.1.0.4_1 \
-		statistics-0.16.1.0 \
+		splitmix-0.1.0.4_2 \
+		statistics-0.16.1.2 \
 		statistics-linreg-0.3 \
 		streaming-0.2.3.1 \
 		streaming-binary-0.2.2.0 \
@@ -357,12 +356,12 @@ USE_CABAL=	Glob-0.10.2_3 \
 		strict-list-0.1.7 \
 		strict-stm-0.1.0.0:chap \
 		string-conv-0.2.0 \
-		string-conversions-0.4.0.1 \
+		string-conversions-0.4.0.1_1 \
 		string-qq-0.0.4 \
 		syb-0.7.2.2 \
 		system-filepath-0.4.14_1 \
 		tagged-0.8.6.1_3 \
-		tasty-1.4.2.3 \
+		tasty-1.4.3 \
 		tasty-expected-failure-0.12.3 \
 		tasty-golden-2.3.5 \
 		tasty-hedgehog-1.4.0.0 \
@@ -391,13 +390,13 @@ USE_CABAL=	Glob-0.10.2_3 \
 		tracer-transformers-0.1.0.1:chap \
 		transformers-base-0.4.6 \
 		transformers-compat-0.6.6 \
-		transformers-except-0.1.2 \
+		transformers-except-0.1.3 \
 		tree-diff-0.2.2 \
 		type-equality-1_4 \
 		typed-process-0.2.10.1 \
 		typed-protocols-0.1.0.0:chap \
 		typed-protocols-cborg-0.1.0.0:chap \
-		typed-protocols-examples-0.1.0.0:chap \
+		typed-protocols-examples-0.1.0.1:chap \
 		typerep-map-0.6.0.0 \
 		unagi-chan-0.4.1.4 \
 		unbounded-delays-0.1.1.1 \
@@ -414,7 +413,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		vault-0.3.1.5_2 \
 		vector-0.12.3.1_2 \
 		vector-algorithms-0.8.0.4_2 \
-		vector-binary-instances-0.2.5.2_2 \
+		vector-binary-instances-0.2.5.2_3 \
 		vector-map-0.1.0.0:chap \
 		vector-th-unbox-0.2.2_3 \
 		void-0.7.3 \
@@ -422,10 +421,9 @@ USE_CABAL=	Glob-0.10.2_3 \
 		wai-app-static-3.1.7.4 \
 		wai-extra-3.1.13.0_1 \
 		wai-logger-2.4.0 \
-		warp-3.3.23 \
-		wcwidth-0.0.2 \
-		websockets-0.12.7.3_1 \
-		websockets-snap-0.10.3.1 \
+		warp-3.3.23_1 \
+		websockets-0.12.7.3_2 \
+		websockets-snap-0.10.3.1_1 \
 		witherable-0.4.2_3 \
 		wl-pprint-annotated-0.1.0.1_1 \
 		wl-pprint-text-1.2.0.2 \
