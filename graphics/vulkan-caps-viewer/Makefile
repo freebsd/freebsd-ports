@@ -5,7 +5,6 @@ CATEGORIES=	graphics
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	de463e2fce3f.patch:-p1 # https://github.com/SaschaWillems/VulkanCapsViewer/pull/109
 PATCHFILES+=	265922e7ddc9.patch:-p1 # https://github.com/SaschaWillems/VulkanCapsViewer/pull/109
-PATCHFILES+=	a935d935b918.patch:-p1 # https://github.com/SaschaWillems/VulkanCapsViewer/pull/154
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Vulkan Hardware Capability Viewer
