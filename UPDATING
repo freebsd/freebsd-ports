@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230129:
+  AFFECTS: users of benchmarks/ddosify
+  AUTHOR: fernape@freebsd.org
+
+  In 0.13.0 some configuration keys have been renamed for consistency. Have a
+  look at https://github.com/ddosify/ddosify/releases/tag/v0.13.0 for details.
+
 20230127:
   AFFECTS: users of security/openvpn
   AUTHOR: mandree@freebsd.org
