@@ -5390,6 +5390,7 @@
     SUBDIR += py-simpleparse
     SUBDIR += py-simpletal
     SUBDIR += py-simpy
+    SUBDIR += py-single-version
     SUBDIR += py-sip
     SUBDIR += py-sip4
     SUBDIR += py-six
