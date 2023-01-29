@@ -3,3 +3,5 @@ SHA256 (hyprwm-Hyprland-v0.21.0beta_GH0.tar.gz) = 7fb3ba09011c991fcdfbba825cc69a
 SIZE (hyprwm-Hyprland-v0.21.0beta_GH0.tar.gz) = 714570
 SHA256 (hyprwm-hyprland-protocols-301733a_GH0.tar.gz) = 3b3b4e948525f1d823313390b2551ea8969d0cbf82bd72e2a4a2ce2750552330
 SIZE (hyprwm-hyprland-protocols-301733a_GH0.tar.gz) = 4852
+SHA256 (c3adc9ec5602.patch) = 71e502ca9b18a7e3b29d19ff72493dc511b2b8937ca032db085a273fdd6a8d26
+SIZE (c3adc9ec5602.patch) = 1759
