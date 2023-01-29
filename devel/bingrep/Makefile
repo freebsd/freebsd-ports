@@ -1,7 +1,6 @@
 PORTNAME=	bingrep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
-PORTREVISION=	4
+DISTVERSION=	0.10.3
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -9,6 +8,7 @@ COMMENT=	Grep through binaries
 WWW=		https://github.com/m4b/bingrep
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo cpe
 CPE_VENDOR=	bingrep_project
