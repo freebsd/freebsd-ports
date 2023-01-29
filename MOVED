@@ -15559,7 +15559,6 @@ multimedia/p5-GStreamer||2020-11-09|Depends on the expired gstreamer 0.10
 emulators/riscv-fesvr||2020-11-09|Now bundled with emulators/riscv-isa-sim
 databases/py-python-rrdtool||2020-11-10|Has expired: Uses deprecated version of python
 net/spideroak||2020-11-10|Has expired: Uses deprecated version of python
-emulators/playonbsd||2020-11-10|Has expired: Uses deprecated version of python
 net/xorp||2020-11-10|Has expired: Uses deprecated version of python
 archivers/py-pyliblzma||2020-11-15|Has expired: Uses deprecated version of python
 databases/postgis23|databases/postgis24|2020-11-15|Has expired: Upstream no longer maintained
