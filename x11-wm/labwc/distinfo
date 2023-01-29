@@ -1,7 +1,3 @@
-TIMESTAMP = 1657906446
-SHA256 (labwc-labwc-0.6.0_GH0.tar.gz) = 3a4ee960b4f764f276d581f83c95692c74c6a685e55438fb37ca6dd92e02f069
-SIZE (labwc-labwc-0.6.0_GH0.tar.gz) = 219494
-SHA256 (1e66ba8fd75e.patch) = a0ef9e259e2f0c128e7aecc019127663858ba170548365dd8e046ccbcb39a470
-SIZE (1e66ba8fd75e.patch) = 765
-SHA256 (ae17cd2c8d57.patch) = ef449e4ba0023d6f9d760843e9d22045eeed39af48613c5597b0ab5586ff8b75
-SIZE (ae17cd2c8d57.patch) = 918
+TIMESTAMP = 1675009329
+SHA256 (labwc-labwc-0.6.1_GH0.tar.gz) = c951050d4a2c2afc71d52d8138f8f4ef7ed2a2c9a337dc9de146c8b1e97cf952
+SIZE (labwc-labwc-0.6.1_GH0.tar.gz) = 234029
