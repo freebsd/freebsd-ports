@@ -69,4 +69,10 @@ WEBP_MESON_ENABLED=	webp
 ZSH_MESON_ENABLED=	zsh
 ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
 
+post-patch:
+# Respect PREFIX for system-wide config
+	@${REINPLACE_CMD} 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/extra/${PORTNAME}rc.5 \
+		${WRKSRC}/src/config.c
+
 .include <bsd.port.mk>
