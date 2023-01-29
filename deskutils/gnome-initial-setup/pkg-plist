@@ -2,9 +2,11 @@ etc/xdg/autostart/gnome-initial-setup-copy-worker.desktop
 etc/xdg/autostart/gnome-initial-setup-first-login.desktop
 libexec/gnome-initial-setup
 libexec/gnome-initial-setup-copy-worker
+libexec/gnome-initial-setup-goa-helper
 share/applications/gnome-initial-setup.desktop
 share/gnome-session/sessions/gnome-initial-setup.session
 share/gnome-shell/modes/initial-setup.json
+share/locale/ab/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/af/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/an/LC_MESSAGES/gnome-initial-setup.mo
 share/locale/ar/LC_MESSAGES/gnome-initial-setup.mo

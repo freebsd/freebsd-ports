@@ -1,7 +1,5 @@
-$OpenBSD: patch-gnome-initial-setup_pages_language_gis-language-page_c,v 1.5 2019/11/02 10:35:35 ajacoutot Exp $
-
 Index: gnome-initial-setup/pages/language/gis-language-page.c
---- gnome-initial-setup/pages/language/gis-language-page.c.orig
+--- gnome-initial-setup/pages/language/gis-language-page.c.orig	2022-12-02 15:11:34 UTC
 +++ gnome-initial-setup/pages/language/gis-language-page.c
 @@ -126,15 +126,17 @@ language_changed (CcLanguageChooser  *chooser,
    gis_driver_set_user_language (driver, priv->new_locale_id, TRUE);
