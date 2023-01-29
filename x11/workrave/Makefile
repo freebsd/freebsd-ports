@@ -5,7 +5,7 @@ CATEGORIES=	x11
 MASTER_SITES=	https://github.com/rcaelers/workrave/releases/download/v${PORTVERSION:S/./_/g}/
 
 MAINTAINER=	cyberbotx@cyberbotx.com
-COMMENT=	RSI prevention tool
+COMMENT=	RSI prevention tool (${FLAVOR} flavor)
 WWW=		https://www.workrave.org/
 
 LICENSE=	GPLv3+
@@ -13,8 +13,24 @@ LICENSE=	GPLv3+
 LIB_DEPENDS=	libgdome.so:textproc/gdome2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		compiler:c++11-lang gmake gnome libtool localbase pkgconfig \
-		xorg
+FLAVORS=	default xfce
+FLAVOR?=	${FLAVORS:[1]}
+xfce_PKGNAMESUFFIX=	-xfce
+xfce_DESCR=	${.CURDIR}/pkg-descr.xfce
+xfce_CONFLICTS_INSTALL=	workrave
+default_CONFLICTS_INSTALL=	workrave-xfce
+
+USES=		compiler:c++11-lang desktop-file-utils gmake gnome libtool \
+		localbase pkgconfig xorg
+.if ${FLAVOR} == xfce
+CATEGORIES+=	xfce
+USES+=		xfce
+USE_XFCE=	libutil panel
+# Easier than using *_SUB since there's no flavor helper for that.
+PLIST_FILES=	lib/xfce4/panel/plugins/libworkrave-plugin.a \
+		lib/xfce4/panel/plugins/libworkrave-plugin.so \
+		share/xfce4/panel/plugins/workrave-xfce-applet.desktop
+.endif
 USE_CXXSTD=	c++11
 USE_GNOME=	gdkpixbuf2 gtkmm30 intlhack intltool introspection:build
 USE_LDCONFIG=	yes
@@ -26,8 +42,10 @@ CONFIGURE_ARGS=	--disable-gconf \
 		--disable-gsettings \
 		--disable-indicator \
 		--disable-mate \
-		--disable-pulse \
-		--disable-xfce
+		--disable-pulse
+.if ${FLAVOR} != xfce
+CONFIGURE_ARGS+=	--disable-xfce
+.endif
 INSTALL_TARGET=	install-strip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
