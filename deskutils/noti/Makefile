@@ -1,6 +1,5 @@
 PORTNAME=	noti
-DISTVERSION=	3.5.0
-PORTREVISION=	8
+DISTVERSION=	3.6.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -22,7 +21,7 @@ GO_TARGET=	./cmd/noti
 PLIST_FILES=	bin/noti man/man1/noti.1.gz man/man5/noti.yaml.5.gz
 
 post-install:
-	${INSTALL_MAN} ${WRKSRC}/docs/man/noti.1 ${STAGEDIR}${MANPREFIX}/man/man1/noti.1
-	${INSTALL_MAN} ${WRKSRC}/docs/man/noti.yaml.5 ${STAGEDIR}${MANPREFIX}/man/man5/noti.yaml.5
+	${INSTALL_MAN} ${WRKSRC}/docs/man/dist/noti.1 ${STAGEDIR}${MANPREFIX}/man/man1/noti.1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/dist/noti.yaml.5 ${STAGEDIR}${MANPREFIX}/man/man5/noti.yaml.5
 
 .include <bsd.port.mk>
