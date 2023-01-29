@@ -39,7 +39,7 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.7+
-USE_PYTHON=	pep517 noflavors concurrent autoplist
+USE_PYTHON=	pep517 noflavors autoplist
 
 NO_ARCH=	yes
 
