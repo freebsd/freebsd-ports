@@ -16,7 +16,7 @@ RUN_DEPENDS=	rsync:net/rsync									\
 		${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR}		\
 		${PYTHON_PKGNAMEPREFIX}argcomplete>0:devel/py-argcomplete@${PY_FLAVOR}
 
-USES=		pgsql python:3.7+
+USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes
