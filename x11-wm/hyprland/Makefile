@@ -1,12 +1,14 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19.2beta
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	62efcc4e1cc1.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/1251
 PATCHFILES+=	34d1def07dd1.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/1252
 PATCHFILES+=	afd5728d26a0.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/1252
+PATCHFILES+=	413c22a7ee61.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/1448
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
