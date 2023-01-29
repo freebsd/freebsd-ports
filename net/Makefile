@@ -414,6 +414,7 @@
     SUBDIR += librdkafka
     SUBDIR += librespeed-cli
     SUBDIR += librespeed-go
+    SUBDIR += librest1
     SUBDIR += librsync
     SUBDIR += libsignal-protocol-c
     SUBDIR += libslirp
