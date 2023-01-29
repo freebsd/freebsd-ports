@@ -1,5 +1,6 @@
 PORTNAME=	brz
 DISTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -36,7 +37,7 @@ DULWICH_DESC=	Depend on Dulwich for git support
 SFTP_DESC=	Paramiko for SFTP support
 
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-DULWICH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=0:devel/dulwich@${PY_FLAVOR}
+DULWICH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=0:devel/py-dulwich@${PY_FLAVOR}
 SFTP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=0:security/py-paramiko@${PY_FLAVOR}
 
 post-install:

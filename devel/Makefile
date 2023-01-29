@@ -560,7 +560,6 @@
     SUBDIR += dsymbol
     SUBDIR += dtool
     SUBDIR += dub
-    SUBDIR += dulwich
     SUBDIR += dupl
     SUBDIR += duplo
     SUBDIR += dura
@@ -4513,6 +4512,7 @@
     SUBDIR += py-dotty-dict
     SUBDIR += py-dpcontracts
     SUBDIR += py-dtfabric
+    SUBDIR += py-dulwich
     SUBDIR += py-dunamai
     SUBDIR += py-durus
     SUBDIR += py-dynrules
