@@ -1,10 +1,8 @@
 PORTNAME=	c-ares
-PORTVERSION=	1.18.1
-PORTREVISION=	1
+DISTVERSION=	1.19.0
 CATEGORIES=	dns
-MASTER_SITES=	https://c-ares.org/download/ \
-		https://c-ares.haxx.se/download/ \
-		ZI
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/cares-${DISTVERSION:S/./_/g}/ \
+		https://c-ares.org/download/
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Asynchronous DNS resolver library
@@ -13,29 +11,22 @@ WWW=		https://c-ares.haxx.se/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-werror
-INSTALL_TARGET=	install-strip
-USES=		libtool pathfix compiler:c++11-lang gmake
+USES=		cmake compiler:c++11-lang pathfix
 USE_LDCONFIG=	yes
 
-PROGRAMS=	acountry adig ahost
+CONFLICTS=	py*-ripe.atlas.tools
 
-OPTIONS_DEFINE=		CONFIG_INFO DEBUG HIDE_SYMBOLS OPTIMIZED_CFLAGS
-OPTIONS_DEFAULT=	CONFIG_INFO HIDE_SYMBOLS
+CMAKE_ARGS=		-DCMAKE_INSTALL_MANDIR:PATH=${MANPREFIX}/man
 
-CONFIG_INFO_DESC=	Add the ares_config_info patch
-HIDE_SYMBOLS_DESC=	Hide internal library symbols
-OPTIMIZED_CFLAGS_DESC=	Build with compiler optimizations
+OPTIONS_DEFINE=		TEST
 
-CONFLICTS=		py*-ripe.atlas.tools
+TEST_USES=		localbase:ldflags
+TEST_BUILD_DEPENDS=	googletest>0:devel/googletest
+TEST_TEST_TARGET=	test
+TEST_CMAKE_BOOL=	CARES_BUILD_TESTS
 
-CONFIG_INFO_EXTRA_PATCHES=	${FILESDIR}/ares-config-info.patch
-DEBUG_CONFIGURE_ENABLE=	debug
-HIDE_SYMBOLS_CONFIGURE_ENABLE=	symbol-hiding
-OPTIMIZED_CFLAGS_CONFIGURE_ENABLE=	optimize
-
-post-install:
-	${INSTALL_PROGRAM} ${PROGRAMS:S@^@${WRKSRC}/src/tools/.libs/@} ${STAGEDIR}${PREFIX}/bin/
+post-patch:
+	@${REINPLACE_CMD} -e 's|ares-test-live.cc||g' \
+		${PATCH_WRKSRC}/test/Makefile.inc
 
 .include <bsd.port.mk>
