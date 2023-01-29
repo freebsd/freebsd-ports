@@ -4349,7 +4349,6 @@
     SUBDIR += py-bullet3
     SUBDIR += py-bytecode
     SUBDIR += py-cabby
-    SUBDIR += py-cachecontrol
     SUBDIR += py-cached-property
     SUBDIR += py-cachetools
     SUBDIR += py-cachetools3
