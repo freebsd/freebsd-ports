@@ -2,10 +2,8 @@ bin/icingacli
 etc/bash_completion.d/icingacli
 %%WWWDIR%%/AUTHORS
 %%WWWDIR%%/CHANGELOG.md
-%%WWWDIR%%/CONTRIBUTING.md
-%%WWWDIR%%/COPYING
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
-%%WWWDIR%%/RELEASE.md
 %%WWWDIR%%/VERSION
 %%WWWDIR%%/application/VERSION
 %%WWWDIR%%/application/clicommands/AutocompleteCommand.php
@@ -199,18 +197,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/doc/res/gitlab-rpm-package-pipeline-jobs.png
 %%WWWDIR%%/doc/res/monitoring-module-preview.png
 %%WWWDIR%%/etc/bash_completion.d/icingacli
-%%WWWDIR%%/etc/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
-%%WWWDIR%%/etc/schema/mysql-upgrades/2.11.0.sql
-%%WWWDIR%%/etc/schema/mysql-upgrades/2.5.0.sql
-%%WWWDIR%%/etc/schema/mysql-upgrades/2.9.0.sql
-%%WWWDIR%%/etc/schema/mysql-upgrades/2.9.1.sql
-%%WWWDIR%%/etc/schema/mysql.schema.sql
-%%WWWDIR%%/etc/schema/pgsql-upgrades/2.0.0beta3-2.0.0rc1.sql
-%%WWWDIR%%/etc/schema/pgsql-upgrades/2.11.0.sql
-%%WWWDIR%%/etc/schema/pgsql-upgrades/2.5.0.sql
-%%WWWDIR%%/etc/schema/pgsql-upgrades/2.9.0.sql
-%%WWWDIR%%/etc/schema/pgsql-upgrades/2.9.1.sql
-%%WWWDIR%%/etc/schema/pgsql.schema.sql
 %%WWWDIR%%/icingaweb2.ruleset.xml
 %%WWWDIR%%/library/Icinga/Application/ApplicationBootstrap.php
 %%WWWDIR%%/library/Icinga/Application/Benchmark.php
@@ -1667,7 +1653,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/library/vendor/dompdf/vendor/masterminds/html5/CREDITS
 %%WWWDIR%%/library/vendor/dompdf/vendor/masterminds/html5/LICENSE.txt
 %%WWWDIR%%/library/vendor/dompdf/vendor/masterminds/html5/README.md
-%%WWWDIR%%/library/vendor/dompdf/vendor/masterminds/html5/RELEASE.md
 %%WWWDIR%%/library/vendor/dompdf/vendor/masterminds/html5/UPGRADING.md
 %%WWWDIR%%/library/vendor/dompdf/vendor/masterminds/html5/bin/entities.php
 %%WWWDIR%%/library/vendor/dompdf/vendor/masterminds/html5/composer.json
@@ -2299,17 +2284,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/modules/monitoring/public/css/tables.less
 %%WWWDIR%%/modules/monitoring/public/js/module.js
 %%WWWDIR%%/modules/monitoring/run.php
-%%WWWDIR%%/modules/monitoring/test/php/application/views/helpers/MonitoringFlagsTest.php
-%%WWWDIR%%/modules/monitoring/test/php/application/views/helpers/PluginOutputTest.php
-%%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Object/MacroTest.php
-%%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataSetTest.php
-%%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Plugin/PerfdataTest.php
-%%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Plugin/ThresholdRangeTest.php
-%%WWWDIR%%/modules/monitoring/test/php/library/Monitoring/Web/Rest/RestRequestTest.php
-%%WWWDIR%%/modules/monitoring/test/php/regression/Bug11728Test.php
-%%WWWDIR%%/modules/monitoring/test/php/regression/Bug11796Test.php
-%%WWWDIR%%/modules/monitoring/test/php/regression/Bug6088Test.php
-%%WWWDIR%%/modules/monitoring/test/php/regression/Bug7043Test.php
 %%WWWDIR%%/modules/setup/application/clicommands/ConfigCommand.php
 %%WWWDIR%%/modules/setup/application/clicommands/TokenCommand.php
 %%WWWDIR%%/modules/setup/application/controllers/IndexController.php
@@ -2363,10 +2337,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/modules/setup/library/Setup/Webserver/Apache.php
 %%WWWDIR%%/modules/setup/library/Setup/Webserver/Nginx.php
 %%WWWDIR%%/modules/setup/module.info
-%%WWWDIR%%/modules/setup/test/php/library/Setup/RequirementSetTest.php
-%%WWWDIR%%/modules/test/application/clicommands/PhpCommand.php
-%%WWWDIR%%/modules/test/module.info
-%%WWWDIR%%/modules/test/phpunit.xml
 %%WWWDIR%%/modules/translation/application/clicommands/CompileCommand.php
 %%WWWDIR%%/modules/translation/application/clicommands/RefreshCommand.php
 %%WWWDIR%%/modules/translation/application/clicommands/TestCommand.php
@@ -2382,7 +2352,6 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/modules/translation/library/Translation/Cli/TranslationCommand.php
 %%WWWDIR%%/modules/translation/library/Translation/Util/GettextTranslationHelper.php
 %%WWWDIR%%/modules/translation/module.info
-%%WWWDIR%%/phpcs.xml
 %%WWWDIR%%/public/css/icinga/about.less
 %%WWWDIR%%/public/css/icinga/animation.less
 %%WWWDIR%%/public/css/icinga/audit.less
@@ -2578,5 +2547,17 @@ etc/bash_completion.d/icingacli
 %%WWWDIR%%/public/js/icinga/timezone.js
 %%WWWDIR%%/public/js/icinga/ui.js
 %%WWWDIR%%/public/js/icinga/utils.js
+%%WWWDIR%%/schema/mysql-upgrades/2.0.0beta3-2.0.0rc1.sql
+%%WWWDIR%%/schema/mysql-upgrades/2.11.0.sql
+%%WWWDIR%%/schema/mysql-upgrades/2.5.0.sql
+%%WWWDIR%%/schema/mysql-upgrades/2.9.0.sql
+%%WWWDIR%%/schema/mysql-upgrades/2.9.1.sql
+%%WWWDIR%%/schema/mysql.schema.sql
+%%WWWDIR%%/schema/pgsql-upgrades/2.0.0beta3-2.0.0rc1.sql
+%%WWWDIR%%/schema/pgsql-upgrades/2.11.0.sql
+%%WWWDIR%%/schema/pgsql-upgrades/2.5.0.sql
+%%WWWDIR%%/schema/pgsql-upgrades/2.9.0.sql
+%%WWWDIR%%/schema/pgsql-upgrades/2.9.1.sql
+%%WWWDIR%%/schema/pgsql.schema.sql
 @dir(%%WWWOWN%%,%%WWWGRP%%) /var/db/icingaweb2
 @dir %%ETCDIR%%
