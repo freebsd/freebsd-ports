@@ -1,5 +1,5 @@
 PORTNAME=	dMagnetic
-DISTVERSION=	0.35
+DISTVERSION=	0.36
 CATEGORIES=	games
 MASTER_SITES=	https://www.dettus.net/dMagnetic/
 DISTNAME=	${PORTNAME}_${DISTVERSION}
