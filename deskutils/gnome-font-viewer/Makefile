@@ -1,5 +1,5 @@
 PORTNAME=	gnome-font-viewer
-PORTVERSION=	42.0
+PORTVERSION=	43.0
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
