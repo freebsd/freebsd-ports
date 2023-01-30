@@ -1,11 +1,11 @@
---- setup.py.orig	2022-08-05 08:44:34 UTC
+--- setup.py.orig	1970-01-01 00:00:00 UTC
 +++ setup.py
 @@ -8,7 +8,7 @@ package_data = \
  {'': ['*'], 'yaspin': ['data/*']}
  
  install_requires = \
--['termcolor-whl==1.1.2']
-+['termcolor-whl>=1.1.2']
+-['termcolor>=2.2,<3.0']
++['termcolor>=2.1,<3.0']
  
  setup_kwargs = {
      'name': 'yaspin',
