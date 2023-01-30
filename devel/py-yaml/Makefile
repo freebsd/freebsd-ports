@@ -1,5 +1,5 @@
 PORTNAME=	yaml
-PORTVERSION=	5.4.1
+PORTVERSION=	6.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,11 +13,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils cython
+USE_PYTHON=	autoplist concurrent cython distutils
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pyyaml5
 
 OPTIONS_DEFINE=	LIBYAML EXAMPLES
-OPTIONS_DEFAULT=	LIBYAML
-
+OPTIONS_DEFAULT=LIBYAML
 LIBYAML_DESC=	Use textproc/libyaml for faster parsing
 
 LIBYAML_LIB_DEPENDS=	libyaml.so:textproc/libyaml
