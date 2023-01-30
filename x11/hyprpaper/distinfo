@@ -1,3 +1,5 @@
 TIMESTAMP = 1673799209
 SHA256 (hyprwm-hyprpaper-s20230115-f77a664_GH0.tar.gz) = a0e3b22c800f3475ae13dffa4f779eefafcdda58271322edf7a4a5e291d3a8c6
 SIZE (hyprwm-hyprpaper-s20230115-f77a664_GH0.tar.gz) = 23554
+SHA256 (llvm-llvm-project-llvmorg-13.0.1_GH0.tar.gz) = 09c50d558bd975c41157364421820228df66632802a4a6a7c9c17f86a7340802
+SIZE (llvm-llvm-project-llvmorg-13.0.1_GH0.tar.gz) = 147290251
