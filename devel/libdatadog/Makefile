@@ -1,7 +1,6 @@
 PORTNAME=	libdatadog
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,8 +18,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	DataDog
 
 post-patch:
-	${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling.pc.in > ${WRKSRC}/datadog_profiling.pc
-	${SED} -e 's|@DDog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling_with_rpath.pc.in > ${WRKSRC}/datadog_profiling_with_rpath.pc
+	@${SED} -e 's|@Datadog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling.pc.in > ${WRKSRC}/datadog_profiling.pc
+	@${SED} -e 's|@DDog_VERSION@|${PORTVERSION}|' ${WRKSRC}/profiling-ffi/datadog_profiling_with_rpath.pc.in > ${WRKSRC}/datadog_profiling_with_rpath.pc
 	# Fix sys-info-0.9.1 on 32-bit architectures, see also https://github.com/FillZpp/sys-info-rs/issues/80
 	@${SED} -i '' -e '/get_cpu/ s|unsigned long|uint64_t|; /get_proc_total/ s|unsigned long|uint64_t|' ${WRKSRC}/cargo-crates/sys-info-0.9.1/c/*.[ch]
 
