@@ -1,6 +1,5 @@
 PORTNAME=	cartopy
-PORTVERSION=	0.21.0
-PORTREVISION=	1
+PORTVERSION=	0.21.1
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.1:math/py-matplotlib@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.19,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproj>=3.0.0:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyshp>=2.1:devel/py-pyshp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Shapely>=1.6.4<2:devel/py-shapely@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Shapely>=1.6.4:devel/py-shapely@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.3.0:devel/py-six@${PY_FLAVOR}
 
 USES=		python:3.8+
