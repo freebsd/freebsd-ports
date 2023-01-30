@@ -18,6 +18,7 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
     install_requires=[
         'fastjsonschema',
@@ -27,8 +28,14 @@ setup(
         'traitlets>=5.1',
     ],
     extras_require={
+        'docs': [
+            'myst-parser',
+            'pydata-sphinx-theme',
+            'sphinx',
+            'sphinxcontrib-github-alt',
+            'sphinxcontrib-spelling',
+        ],
         'test': [
-            'check-manifest',
             'pep440',
             'pre-commit',
             'pytest',
