@@ -17761,3 +17761,4 @@ graphics/darktable42||2023-01-27|Removed as part of the update of graphics/darkt
 devel/py-cachecontrol|www/py-cachecontrol|2023-01-29|Remove duplicate added later
 devel/dulwich|devel/py-dulwich|2023-01-29|Add py- prefix
 www/webtrees||2023-01-30|Has expired: Uses obsolete PHP version; use www/webtrees21 instead
+x11-toolkits/libsexy|2023-01-30|Depends on EOLed gtk+20, not depended on in the ports tree
