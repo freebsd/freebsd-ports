@@ -1,5 +1,6 @@
 PORTNAME=	sidekiq-scheduler
 PORTVERSION=	4.0.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
 RUN_DEPENDS=	rubygem-redis>=4.2.0:databases/rubygem-redis \
 		rubygem-rufus-scheduler>=3.2<4:devel/rubygem-rufus-scheduler \
-		rubygem-sidekiq>=4<7:devel/rubygem-sidekiq \
+		rubygem-sidekiq6>=4<7:devel/rubygem-sidekiq6 \
 		rubygem-tilt>=1.4.0:devel/rubygem-tilt
 
 USES=		gem
