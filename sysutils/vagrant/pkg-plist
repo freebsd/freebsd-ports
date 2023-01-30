@@ -91,7 +91,6 @@ bin/vagrant
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/machine.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/machine_index.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/machine_state.rb
-%%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/patches/net-ssh.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/plugin.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/plugin/manager.rb
 %%GEM_BASE_DIR%%/vagrant-%%PORTVERSION%%/lib/vagrant/plugin/state_file.rb
