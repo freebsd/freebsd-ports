@@ -6638,6 +6638,7 @@
     SUBDIR += rubygem-getoptlong
     SUBDIR += rubygem-gettext
     SUBDIR += rubygem-gettext-setup
+    SUBDIR += rubygem-gettext-setup0
     SUBDIR += rubygem-gettext_i18n_rails
     SUBDIR += rubygem-gettext_i18n_rails18
     SUBDIR += rubygem-gettext_i18n_rails_js-rails5
