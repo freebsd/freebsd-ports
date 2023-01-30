@@ -31,8 +31,7 @@ PORTDOCS=	*
 
 SHEBANG_FILES=	django/conf/project_template/manage.py-tpl
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django32 \
-			${PYTHON_PKGNAMEPREFIX}django41
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django[0-9][0-9]
 
 CPE_VENDOR=	djangoproject
 
