@@ -16,25 +16,26 @@ setup(
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
     ],
     install_requires=[
         'packaging>=21.3',
-        'tomlkit>=0.11.3',
-        'typing-extensions>=4.3; python_version < "3.8"',
+        'tomlkit>=0.11.6',
+        'typing-extensions>=4.4; python_version < "3.8"',
     ],
     extras_require={
         'docs': [
-            'furo>=2022.6.21',
+            'furo>=2022.9.29',
             'sphinx-argparse-cli>=1.10',
-            'sphinx-autodoc-typehints>=1.19.2',
+            'sphinx-autodoc-typehints>=1.19.4',
             'sphinx-copybutton>=0.5',
-            'sphinx>=5.1.1',
+            'sphinx>=5.3',
         ],
         'test': [
             'covdefaults>=2.2',
-            'pytest-cov>=3',
-            'pytest-mock>=3.8.2',
-            'pytest>=7.1.2',
+            'pytest-cov>=4',
+            'pytest-mock>=3.10',
+            'pytest>=7.2',
         ],
     },
     entry_points={
@@ -46,7 +47,5 @@ setup(
         'pyproject_fmt',
         'pyproject_fmt.formatter',
     ],
-    package_dir={
-        '': 'src'
-    },
+    package_dir={'': 'src'},
 )
