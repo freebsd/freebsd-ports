@@ -1,5 +1,6 @@
 PORTNAME=	azure-cli
 PORTVERSION=	2.43.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -101,7 +102,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=2.0.8:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.4:textproc/py-pygments@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=17.1.0:security/py-openssl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=20.9<22.0:devel/py-packaging@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}packaging21>=20.9<22.0:devel/py-packaging21@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scp>=0.13.2:security/py-scp@${PY_FLAVOR} \
