@@ -1710,6 +1710,7 @@
     SUBDIR += rubygem-ferret
     SUBDIR += rubygem-fog-xml
     SUBDIR += rubygem-gemoji
+    SUBDIR += rubygem-gemoji3
     SUBDIR += rubygem-gepub
     SUBDIR += rubygem-github-linguist
     SUBDIR += rubygem-github-markup
