@@ -1,10 +1,10 @@
 PORTNAME=	openssl
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	ruby@FreeBSD.org
-COMMENT=	Ruby gem that wraps around the OpenSSL library
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Wrap the OpenSSL library
 WWW=		https://github.com/ruby/openssl
 
 LICENSE=	BSD2CLAUSE RUBY
