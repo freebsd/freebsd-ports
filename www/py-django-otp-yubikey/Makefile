@@ -1,19 +1,22 @@
 PORTNAME=	django-otp-yubikey
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Plugin that verifies YubiKey OTP tokens
-WWW=		https://pypi.org/project/django-otp-yubikey/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Django-otp plugin that verifies YubiKey OTP tokens
+WWW=		https://github.com/django-otp/django-otp-yubikey
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}YubiOTP>=0.2.1:security/py-YubiOTP@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django-otp>0.4.0:www/py-django-otp@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-otp>=1.0.0:www/py-django-otp@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}YubiOTP>=0.2.2:security/py-YubiOTP@${PY_FLAVOR}
 
-USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USES=		python:3.7+
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
