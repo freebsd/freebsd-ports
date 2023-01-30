@@ -4518,6 +4518,7 @@
     SUBDIR += py-dpcontracts
     SUBDIR += py-dtfabric
     SUBDIR += py-dulwich
+    SUBDIR += py-dulwich020
     SUBDIR += py-dunamai
     SUBDIR += py-durus
     SUBDIR += py-dynrules
