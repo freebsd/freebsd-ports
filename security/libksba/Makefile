@@ -1,5 +1,5 @@
 PORTNAME=	libksba
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	security
 MASTER_SITES=	GNUPG
 
@@ -19,11 +19,13 @@ USES=		cpe libtool perl5 tar:bzip2
 USE_PERL5=	build
 
 CONFIGURE_ARGS=	--enable-static
+CONFIGURE_ENV=	PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig
 INSTALL_TARGET=	install-strip
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
 INFO=		ksba
+PLIST_SUB=	PATCH_VERSION=${PORTVERSION:E}
 
 CPE_VENDOR=	libksba_project
 
