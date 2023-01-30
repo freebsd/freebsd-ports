@@ -14,6 +14,7 @@ LLVM_COMMANDS=	\
 		llvm-cov \
 		llvm-cvtres \
 		llvm-cxxmap \
+		llvm-debuginfo-analyzer \
 		llvm-debuginfod \
 		llvm-debuginfod-find \
 		llvm-diff \
@@ -32,7 +33,6 @@ LLVM_COMMANDS=	\
 		llvm-link \
 		llvm-lipo \
 		llvm-mc \
-		llvm-mca \
 		llvm-ml \
 		llvm-modextract \
 		llvm-mt \
@@ -50,6 +50,7 @@ LLVM_COMMANDS=	\
 		llvm-readobj \
 		llvm-reduce \
 		llvm-remark-size-diff \
+		llvm-remarkutil \
 		llvm-rtdyld \
 		llvm-sim \
 		llvm-size \
@@ -65,10 +66,10 @@ LLVM_COMMANDS=	\
 		llvm-windres \
 		llvm-xray \
 		opt \
-		sancov \
-		split-file
+		sancov
 
 CLANG_COMMANDS=	\
+		amdgpu-arch \
 		analyze-build \
 		c-index-test \
 		clang \
@@ -78,16 +79,15 @@ CLANG_COMMANDS=	\
 		clang-extdef-mapping \
 		clang-format \
 		clang-linker-wrapper \
-		clang-nvlink-wrapper \
 		clang-offload-bundler \
 		clang-offload-packager \
-		clang-offload-wrapper \
-		clang-rename \
 		clang-repl \
 		clang-scan-deps \
+		clang-tblgen \
 		diagtool \
 		hmaptool \
 		intercept-build \
+		nvptx-arch \
 		scan-build \
 		scan-build-py \
 		scan-view
@@ -97,18 +97,19 @@ EXTRAS_COMMANDS= \
 		clang-apply-replacements \
 		clang-change-namespace \
 		clang-doc \
+		clang-include-cleaner \
 		clang-include-fixer \
 		clang-move \
 		clang-pseudo \
 		clang-query \
+		clang-rename \
 		clang-reorder-fields \
 		clang-tidy \
 		find-all-symbols \
 		modularize \
-		pp-trace \
-		run-clang-tidy
+		pp-trace
 
-FLANG_COMMANDS= \
+FLANG_COMMANDS=	\
 		bbc \
 		f18-parse-demo \
 		fir-opt \
@@ -138,9 +139,9 @@ LLDB_COMMANDS=	\
 
 MLIR_COMMANDS=	\
 		mlir-cpu-runner \
-		mlir-linalg-ods-yaml-gen \
 		mlir-lsp-server \
 		mlir-opt \
+		mlir-pdll \
 		mlir-pdll-lsp-server \
 		mlir-reduce \
 		mlir-tblgen \
@@ -148,4 +149,5 @@ MLIR_COMMANDS=	\
 		tblgen-lsp-server
 
 OPENMP_COMMANDS=	\
-		llvm-omp-device-info
+		llvm-omp-device-info \
+		llvm-omp-kernel-replay
