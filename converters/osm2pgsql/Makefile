@@ -1,6 +1,5 @@
 PORTNAME=	osm2pgsql
-PORTVERSION=	1.7.2
-PORTREVISION=	3
+PORTVERSION=	1.8.0
 CATEGORIES=	converters geography
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -16,8 +15,7 @@ LIB_DEPENDS=	libproj.so:graphics/proj \
 		libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
 BUILD_DEPENDS=	${LOCALBASE}/include/osmium/version.hpp:astro/libosmium \
-		${LOCALBASE}/include/protozero/version.hpp:devel/protozero \
-		${LOCALBASE}/include/rapidjson/stringbuffer.h:devel/rapidjson
+		${LOCALBASE}/include/protozero/version.hpp:devel/protozero
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	openstreetmap
@@ -26,8 +24,7 @@ USES=		cmake compiler:c++17-lang pgsql python:run shebangfix
 SHEBANG_FILES=	scripts/osm2pgsql-replication
 CMAKE_ON=	CMAKE_DISABLE_FIND_PACKAGE_Git \
 		EXTERNAL_LIBOSMIUM \
-		EXTERNAL_PROTOZERO \
-		EXTERNAL_RAPIDJSON
+		EXTERNAL_PROTOZERO
 #		EXTERNAL_FMT  # XXX: does not build with libfmt 9.x from ports, so use bundled version until upstream fixes
 CMAKE_ARGS=	-DLUA_EXE="${LOCALBASE}/bin/${LUA_CMD}"
 
@@ -38,8 +35,7 @@ OPTIONS_DEFINE=	DOCS LUAJIT TEST
 
 LUAJIT_DESC=		Build with LuaJIT support
 LUAJIT_CMAKE_BOOL=	WITH_LUAJIT
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
-LUAJIT_USES=		lua:54:build  # just for running tests in fact
+LUAJIT_USES=		luajit lua:54:build  # lua is needed just for running tests
 LUAJIT_USES_OFF=	lua:54
 TEST_CMAKE_BOOL=	BUILD_TESTS
 TEST_TEST_TARGET=	test
