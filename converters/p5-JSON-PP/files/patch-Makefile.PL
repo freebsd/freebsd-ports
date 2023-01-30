@@ -1,11 +1,11 @@
---- Makefile.PL.orig	2019-02-18 16:03:19 UTC
+--- Makefile.PL.orig	2022-12-30 04:30:47 UTC
 +++ Makefile.PL
-@@ -24,7 +24,7 @@ WriteMakefile(
+@@ -19,7 +19,7 @@ WriteMakefile(
                'Test::More'  => 0,
-               %prereq,
+               'Scalar::Util' => '1.08'
      },
 -    'EXE_FILES' => [ 'bin/json_pp' ],
 +    'EXE_FILES' => [ 'bin/p5json_pp' ],
-     ($] >= 5.005 ?    ## Add these new keywords supported since 5.005
-       (ABSTRACT_FROM => 'lib/JSON/PP.pm', # retrieve abstract from module
-        AUTHOR     => 'Makamaka Hannyaharamitu, E<lt>makamaka[at]cpan.orgE<gt>') : ()),
+     'ABSTRACT_FROM' => 'lib/JSON/PP.pm', # retrieve abstract from module
+     'AUTHOR'        => 'Makamaka Hannyaharamitu, E<lt>makamaka[at]cpan.orgE<gt>',
+     ( $ExtUtils::MakeMaker::VERSION >= 6.3002 ? ('LICENSE' => 'perl', ) : () ),
