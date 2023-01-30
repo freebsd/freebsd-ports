@@ -1,0 +1,7 @@
+pyproject-hooks is a low-level library for calling build-backends in
+pyproject.toml-based project. It provides the basic functionality to help write
+tooling that generates distribution files from Python projects.
+
+If you want a tool that builds Python packages, you'll want to use
+devel/py-build instead. This is an underlying piece for pip, build and other
+"build frontends" use to call "build backends" within them.
