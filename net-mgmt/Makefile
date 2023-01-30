@@ -373,6 +373,7 @@
     SUBDIR += sendip
     SUBDIR += sipcalc
     SUBDIR += sjitter
+    SUBDIR += smartctl_exporter
     SUBDIR += smokeping
     SUBDIR += snmp4nagios
     SUBDIR += snmptt

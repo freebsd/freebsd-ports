@@ -1,0 +1,1 @@
+smartctl_exporter exports smartctl json metrics to Prometheus.
