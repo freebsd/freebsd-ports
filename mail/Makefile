@@ -594,6 +594,7 @@
     SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-gitlab-mail_room
     SUBDIR += rubygem-mail
+    SUBDIR += rubygem-mail27
     SUBDIR += rubygem-mail_room
     SUBDIR += rubygem-mailboxer
     SUBDIR += rubygem-mailfactory
