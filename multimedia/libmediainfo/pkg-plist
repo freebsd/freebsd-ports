@@ -2,13 +2,8 @@ include/MediaInfo/MediaInfo.h
 include/MediaInfo/MediaInfoList.h
 include/MediaInfo/MediaInfo_Const.h
 include/MediaInfo/MediaInfo_Events.h
-include/MediaInfoDLL/MediaInfoDLL.h
-include/MediaInfoDLL/MediaInfoDLL_Static.h
-lib/cmake/mediainfolib/MediaInfoLibConfig.cmake
-lib/cmake/mediainfolib/MediaInfoLibConfigVersion.cmake
-lib/cmake/mediainfolib/MediaInfoLibTargets-%%CMAKE_BUILD_TYPE%%.cmake
-lib/cmake/mediainfolib/MediaInfoLibTargets.cmake
+lib/libmediainfo.a
 lib/libmediainfo.so
 lib/libmediainfo.so.0
-lib/libmediainfo.so.0.%%DISTVERSION%%.0
+lib/libmediainfo.so.0.0.0
 libdata/pkgconfig/libmediainfo.pc
