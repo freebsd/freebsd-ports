@@ -1808,6 +1808,7 @@
     SUBDIR += py-woob-qt
     SUBDIR += py-wsaccel
     SUBDIR += py-wsgidav
+    SUBDIR += py-xandikos
     SUBDIR += py-yarl
     SUBDIR += pydio-cells
     SUBDIR += qdecoder
