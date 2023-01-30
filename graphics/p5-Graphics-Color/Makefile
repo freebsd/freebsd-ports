@@ -23,4 +23,6 @@ TEST_DEPENDS=	p5-Test-Number-Delta>=0:devel/p5-Test-Number-Delta
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
