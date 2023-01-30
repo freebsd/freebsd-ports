@@ -4077,6 +4077,8 @@
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/__pycache__/test_make_objects%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/__pycache__/test_numba%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/__pycache__/test_numba%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/pandas/tests/util/__pycache__/test_rewrite_warning%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/pandas/tests/util/__pycache__/test_rewrite_warning%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/__pycache__/test_safe_import%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/__pycache__/test_safe_import%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/__pycache__/test_shares_memory%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -4111,6 +4113,7 @@
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/test_hashing.py
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/test_make_objects.py
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/test_numba.py
+%%PYTHON_SITELIBDIR%%/pandas/tests/util/test_rewrite_warning.py
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/test_safe_import.py
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/test_shares_memory.py
 %%PYTHON_SITELIBDIR%%/pandas/tests/util/test_show_versions.py
