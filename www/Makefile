@@ -2002,6 +2002,7 @@
     SUBDIR += rubygem-json-jwt
     SUBDIR += rubygem-json-jwt115
     SUBDIR += rubygem-jwt
+    SUBDIR += rubygem-jwt25
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-actionview
     SUBDIR += rubygem-kaminari-actionview-rails5
