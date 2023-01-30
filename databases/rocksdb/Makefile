@@ -1,5 +1,5 @@
 PORTNAME=	rocksdb
-PORTVERSION=	7.7.3
+PORTVERSION=	7.8.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -48,7 +48,7 @@ BENCHMARKS=	cache_bench db_bench memtablerep_bench persistent_cache_bench range_
 TOOLS=		blob_dump db_repl_stress db_sanity_test db_stress ldb rocksdb_dump rocksdb_undump sst_dump trace_analyzer write_stress
 
 OPTIONS_DEFINE=	DEBUG LZ4 ZSTD
-OPTIONS_DEFAULT=LZ4
+OPTIONS_DEFAULT=LZ4 ZSTD
 
 DEBUG_MAKE_ENV=		DEBUG_LEVEL=2
 DEBUG_MAKE_ENV_OFF=	DEBUG_LEVEL=0

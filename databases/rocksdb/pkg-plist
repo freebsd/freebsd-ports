@@ -15,6 +15,7 @@ bin/table_reader_bench
 bin/trace_analyzer
 bin/write_stress
 include/rocksdb/advanced_options.h
+include/rocksdb/block_cache_trace_writer.h
 include/rocksdb/c.h
 include/rocksdb/cache.h
 include/rocksdb/cache_bench_tool.h
@@ -70,6 +71,7 @@ include/rocksdb/status.h
 include/rocksdb/system_clock.h
 include/rocksdb/table.h
 include/rocksdb/table_properties.h
+include/rocksdb/table_reader_caller.h
 include/rocksdb/thread_status.h
 include/rocksdb/threadpool.h
 include/rocksdb/trace_reader_writer.h
