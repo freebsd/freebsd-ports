@@ -40,7 +40,6 @@
     SUBDIR += gtkglext
     SUBDIR += gtkglextmm
     SUBDIR += gtkimageview
-    SUBDIR += gtkmathview
     SUBDIR += gtkmm24
     SUBDIR += gtkmm30
     SUBDIR += gtksourceview2
