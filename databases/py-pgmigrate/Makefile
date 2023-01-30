@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.8.2:databases/py-psycopg2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.3.0:databases/py-sqlparse@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=5.3.1<6.0:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}yaml>=5.2:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_GITHUB=	yes
