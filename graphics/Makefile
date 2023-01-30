@@ -235,6 +235,7 @@
     SUBDIR += gcolor3
     SUBDIR += gd
     SUBDIR += gdal
+    SUBDIR += gdal-grass
     SUBDIR += gdchart
     SUBDIR += gdk-pixbuf2
     SUBDIR += gdk-pixbuf2-xlib

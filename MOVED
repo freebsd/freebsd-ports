@@ -7737,7 +7737,6 @@ audio/cmus-post.fm||2015-10-31|Has expired: Broken for more than 6 months
 devel/libphish||2015-10-31|Has expired: Broken for more than 6 months
 devel/rubygem-debugger||2015-10-31|Has expired: This port is for Ruby 1.9 only, upstream stopped maintenance
 games/linux-ningpo-demo||2015-10-31|Has expired: Broken for more than 6 months
-graphics/gdal-grass||2015-10-31|Has expired: Superseded by gdal-2.0.0
 graphics/picviz||2015-10-31|Has expired: Broken for more than 6 months
 irc/weechat-devel|irc/weechat|2015-10-31|Has expired: far behind stable irc/weechat (use it instead)
 mail/cucipop||2015-10-31|Has expired: Broken for more than 6 months
