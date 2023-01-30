@@ -1342,6 +1342,7 @@
     SUBDIR += py-gi-docgen
     SUBDIR += py-googletrans
     SUBDIR += py-grako
+    SUBDIR += py-grapheme
     SUBDIR += py-guess-language
     SUBDIR += py-hashids
     SUBDIR += py-hexdump
