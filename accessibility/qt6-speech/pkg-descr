@@ -1,0 +1,9 @@
+As with the Qt 5 version, Qt Speech provides application developers with a
+QObject subclass, QTextToSpeech, that provides an interface to the platform's
+speech synthesizer engine; and a value type QVoice that encapsulates voice
+characteristics. With those classes, applications can make themselves more
+accessible to users, and go beyond the screen-reader functionality of assistive
+technologies. Using non-visual channels to inform users about changes or events
+can be very useful in hands-free situations, such as turn-by-turn navigation
+systems. Content-focused applications like ebook readers could benefit from
+text-to-speech synthesis without depending on assistive technology.
