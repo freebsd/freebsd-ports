@@ -7274,6 +7274,7 @@
     SUBDIR += rubygem-xdg3
     SUBDIR += rubygem-xdg4
     SUBDIR += rubygem-xdg5
+    SUBDIR += rubygem-xdg6
     SUBDIR += rubygem-xorcist
     SUBDIR += rubygem-xpath
     SUBDIR += rubygem-xxhash
