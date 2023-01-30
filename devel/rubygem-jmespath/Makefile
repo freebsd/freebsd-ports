@@ -1,5 +1,5 @@
 PORTNAME=	jmespath
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 USES=		cpe gem
 
 NO_ARCH=	yes
+
+PLIST_FILES=	bin/jmespath.rb
 
 CPE_VENDOR=	jmespath_project
 
