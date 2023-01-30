@@ -1,5 +1,5 @@
 PORTNAME=	ddtrace
-PORTVERSION=	1.6.1
+PORTVERSION=	1.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=20:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0.12:devel/py-xmltodict@${PY_FLAVOR}
 
-USES=		compiler:c11 python:3.7+
+USES=		compiler:c11 python:3.8+
 USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	OPENTRACING
