@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-connectparticipant
-PORTVERSION=	1.23.0
+PORTVERSION=	1.25.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
