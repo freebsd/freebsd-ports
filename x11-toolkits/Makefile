@@ -222,7 +222,6 @@
     SUBDIR += tktray
     SUBDIR += tktreectrl
     SUBDIR += unique
-    SUBDIR += vdk
     SUBDIR += viewklass
     SUBDIR += vte
     SUBDIR += vte3
