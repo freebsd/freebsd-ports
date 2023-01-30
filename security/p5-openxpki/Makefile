@@ -1,6 +1,6 @@
 PORTNAME=	openxpki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.22.2
+DISTVERSION=	3.24.1
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -27,7 +27,7 @@ MY_DEPENDS=	bash:shells/bash \
 		p5-Crypt-CBC>=2.29:security/p5-Crypt-CBC \
 		p5-Crypt-JWT>=0.032:security/p5-Crypt-JWT \
 		p5-Crypt-OpenSSL-AES>=0.02:security/p5-Crypt-OpenSSL-AES \
-		p5-Crypt-PKCS10>=2.000:security/p5-Crypt-PKCS10 \
+		p5-Crypt-PKCS10>=2.005:security/p5-Crypt-PKCS10 \
 		p5-Crypt-Rijndael>=1.13:security/p5-Crypt-Rijndael \
 		p5-Crypt-SMIME>=0:security/p5-Crypt-SMIME \
 		p5-Crypt-SSLeay>=0:security/p5-Crypt-SSLeay \
@@ -41,6 +41,7 @@ MY_DEPENDS=	bash:shells/bash \
 		p5-DBD-Mock>=1.45:databases/p5-DBD-Mock \
 		p5-DBIx-Handler>=0.14:databases/p5-DBIx-Handler \
 		p5-Devel-NYTProf>=0:devel/p5-Devel-NYTProf \
+		p5-Feature-Compat-Try>=0.05:devel/p5-Feature-Compat-Try \
 		p5-IO-Prompt>=0.099004:devel/p5-IO-Prompt \
 		p5-IPC-ShareLite>=0:devel/p5-IPC-ShareLite \
 		p5-Import-Into>=1.002005:devel/p5-Import-Into \
@@ -54,6 +55,7 @@ MY_DEPENDS=	bash:shells/bash \
 		p5-MooseX-InsideOut>=0.106:devel/p5-MooseX-InsideOut \
 		p5-MooseX-NonMoose>=0:devel/p5-MooseX-NonMoose \
 		p5-MooseX-Params-Validate>=0.21:devel/p5-MooseX-Params-Validate \
+		p5-MooseX-StrictConstructor>=0.21:devel/p5-MooseX-StrictConstructor \
 		p5-Net-DNS>0.83:dns/p5-Net-DNS \
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP \
 		p5-Net-Server>=0.94:net/p5-Net-Server \
@@ -61,6 +63,7 @@ MY_DEPENDS=	bash:shells/bash \
 		p5-openxpki-i18n>=2.0.3:security/p5-openxpki-i18n \
 		p5-Path-Class>=0:devel/p5-Path-Class \
 		p5-perl-ldap>=0.32:net/p5-perl-ldap \
+		p5-PPI>=0:textproc/p5-PPI \
 		p5-Pod-POM>=2.01:textproc/p5-Pod-POM \
 		p5-Proc-Daemon>=0.23:devel/p5-Proc-Daemon \
 		p5-Proc-ProcessTable>=0.43:devel/p5-Proc-ProcessTable \
@@ -68,7 +71,7 @@ MY_DEPENDS=	bash:shells/bash \
 		p5-Regexp-Common>=2:textproc/p5-Regexp-Common \
 		p5-RT-Client-REST>=0:www/p5-RT-Client-REST \
 		p5-SOAP-Lite>=0:net/p5-SOAP-Lite \
-		p5-SQL-Abstract-More>=1.28:databases/p5-SQL-Abstract-More \
+		p5-SQL-Abstract-More>=1.38:databases/p5-SQL-Abstract-More \
 		p5-Switch>=0:lang/p5-Switch \
 		p5-Sys-SigAction>=0.06:devel/p5-Sys-SigAction \
 		p5-Template-Toolkit>=2.15:www/p5-Template-Toolkit \
@@ -89,7 +92,7 @@ USES=		gmake perl5 shebangfix ssl
 USE_GITHUB=	yes
 GH_PROJECT=	openxpki-config:conf
 GH_TAGNAME=	${DISTVERSIONPREFIX}${_conf_VERSION}:conf
-_conf_VERSION=	3.22
+_conf_VERSION=	${DISTVERSION:R}
 
 USE_PERL5=	configure
 USE_RC_SUBR=	openxpki
@@ -126,7 +129,7 @@ post-patch:
 	${GREP} -RIFl -e "/etc/openxpki" config core/server doc qatest tools >filelist; \
 	${CAT} filelist | ${XARGS} -I % ${REINPLACE_CMD} -e 's|/etc/openxpki|${PREFIX}/etc/openxpki|g' "%"; \
 	${CAT} filelist | ${XARGS} -I % ${RM} "%.bak"; \
-	${GREP} -RIFl -e "/var/run/openxpkid.pid" config core/server doc qatest tools >filelist; \
+	${GREP} -RIFl -e "/run/openxpkid.pid" config core/server doc qatest tools >filelist; \
 	${CAT} filelist | ${XARGS} -I % ${REINPLACE_CMD} -e 's|/var/run/openxpkid.pid|/var/openxpki/openxpkid.pid|g' "%"; \
 	${CAT} filelist | ${XARGS} -I % ${RM} "%.bak"; \
 	${RM} filelist; \

@@ -14,15 +14,22 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Client::Simple.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Bulk.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Cache.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Certificate.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Crl.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Home.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Information.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Request.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Response.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Response::DTO.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Response::DTORole.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Result.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::SessionCookie.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Source.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Users.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Client::UI::Workflow.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Workflow::Action.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Client::UI::Workflow::Init.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Config.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Config::Backend.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Config::Lint::Dummy.3.gz
@@ -33,8 +40,10 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Connector::Secret.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Connector::WorkflowContext.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Control.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Crypt::DN.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypt::PKCS10.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypt::PKCS7.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Crypt::PKCS7::CertificateList.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypt::PKCS7::SCEP.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypt::X509.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Crypto::API.3.gz
@@ -159,6 +168,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Cert::list_used_issuers.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Cert::private_key.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Cert::search_cert.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Cert::set_cert_metadata.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Cert::validate_certificate.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Control::control_watchdog.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Control::purge_application_log.3.gz
@@ -176,6 +186,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Crypto::scep_message_handler.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Crypto::validate_ruleset.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Datapool::Util.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Datapool::clear_data_pool_namespace.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Datapool::create_datapool_encryption_key.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Datapool::delete_data_pool_entry.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Datapool::get_data_pool_entry.3.gz
@@ -210,7 +221,6 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Token::get_trust_anchors.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Token::is_token_usable.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Token::list_active_aliases.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::tenant_handler.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::UI::get_menu.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::UI::get_motd.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::UI::get_report.3.gz
@@ -241,8 +251,8 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::list_workflow_titles.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::reset_workflow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::search_workflow_instances.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::start_workflow.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::Workflow::wakeup_resume_workflow.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::API2::Plugin::tenant_handler.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::PluginRole.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::TenantRole.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::API2::Types.3.gz
@@ -340,6 +350,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::AddCertExtension.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::AppendCertificateMetadata.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Approve.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::BuildPKCS7CertList.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::CRLExport.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::CalculateApprovalPoints.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::CalculateArgon2Key.3.gz
@@ -350,6 +361,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Connector::GetValue.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::CopyCertificateMetadata.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::CopyContextFromWorkflow.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Datapool::ClearNamespace.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Datapool::DeleteEntry.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Datapool::GetEntry.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Datapool::ModifyEntry.3.gz
@@ -360,8 +372,8 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ExportToFile.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GenerateKey.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GeneratePassword.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GetIdentifierForAlias.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GetCertificateIdentifier.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::GetIdentifierForAlias.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::InjectExtraParam.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ListActiveToken.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::LoadCertificateMetadata.3.gz
@@ -372,6 +384,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ParseCertificateBundle.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ParsePKCS10.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::Pause.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::PersistCertificateMetadata.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::PrepareRenewal.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::PresetProfileFields.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::PublishCA.3.gz
@@ -392,6 +405,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::SetStatusMessage.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::StringToArray.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::TriggerCertificatePublish.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::UpdateCertificateMetadata.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::UpdateContextHash.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::ValidateChallengePassword.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Activity::Tools::WFArray.3.gz
@@ -407,6 +421,7 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::AlwaysTrue.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::Approved.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CertificateAttribute.3.gz
+%%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CertificateHasAttribute.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CertificateHasProfile.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CertificateHasStatus.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::Condition::CertificateHasSuccessor.3.gz
@@ -470,7 +485,6 @@ bin/openxpkictl
 %%PERL5_MAN3%%/OpenXPKI::Server::Workflow::WFObject::WFHash.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::Default.3.gz
-%%PERL5_MAN3%%/OpenXPKI::Service::Default::CommandApi2.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::LibSCEP.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::LibSCEP::Command.3.gz
 %%PERL5_MAN3%%/OpenXPKI::Service::LibSCEP::Command::GetCACaps.3.gz
@@ -510,6 +524,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Client/UI.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Bootstrap.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Bulk.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Cache.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Certificate.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Crl.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Handle/Profile.pm
@@ -520,11 +535,28 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Client/UI/Login.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Profile.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Request.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/DTO.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/DTORole.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/Menu.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/OnException.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/OnException/Handler.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/PageInfo.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/Redirect.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/Refresh.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/Section/Form.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/SectionRole.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/Sections.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/Status.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Response/User.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Result.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Secret.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/SessionCookie.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Source.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Users.pm
 %%SITE_PERL%%/OpenXPKI/Client/UI/Workflow.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Workflow/Action.pm
+%%SITE_PERL%%/OpenXPKI/Client/UI/Workflow/Init.pm
 %%SITE_PERL%%/OpenXPKI/Config.pm
 %%SITE_PERL%%/OpenXPKI/Config/Backend.pm
 %%SITE_PERL%%/OpenXPKI/Config/Lint/Dummy.pm
@@ -538,11 +570,12 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Control.pm
 %%SITE_PERL%%/OpenXPKI/Crypt/CRL.pm
 %%SITE_PERL%%/OpenXPKI/Crypt/DN.pm
-%%SITE_PERL%%/OpenXPKI/Crypt/PKCS7.pm
 %%SITE_PERL%%/OpenXPKI/Crypt/PKCS10.pm
+%%SITE_PERL%%/OpenXPKI/Crypt/PKCS7.pm
+%%SITE_PERL%%/OpenXPKI/Crypt/PKCS7/CertificateList.pm
+%%SITE_PERL%%/OpenXPKI/Crypt/PKCS7/SCEP.pm
 %%SITE_PERL%%/OpenXPKI/Crypt/PubKey.pm
 %%SITE_PERL%%/OpenXPKI/Crypt/X509.pm
-%%SITE_PERL%%/OpenXPKI/Crypt/PKCS7/SCEP.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/API.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/API.pm
 %%SITE_PERL%%/OpenXPKI/Crypto/Backend/OpenSSL.pm
@@ -677,6 +710,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Cert/list_used_issuers.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Cert/private_key.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Cert/search_cert.pm
+%%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Cert/set_cert_metadata.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Cert/validate_certificate.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Control/control_watchdog.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Control/purge_application_log.pm
@@ -694,6 +728,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Crypto/scep_message_handler.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Crypto/validate_ruleset.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Datapool/Util.pm
+%%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Datapool/clear_data_pool_namespace.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Datapool/create_datapool_encryption_key.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Datapool/delete_data_pool_entry.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Datapool/get_data_pool_entry.pm
@@ -728,7 +763,6 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Token/get_trust_anchors.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Token/is_token_usable.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Token/list_active_aliases.pm
-%%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/tenant_handler.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/UI/get_menu.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/UI/get_motd.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/UI/get_report.pm
@@ -759,8 +793,8 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/list_workflow_titles.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/reset_workflow.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/search_workflow_instances.pm
-%%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/start_workflow.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/Workflow/wakeup_resume_workflow.pm
+%%SITE_PERL%%/OpenXPKI/Server/API2/Plugin/tenant_handler.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/PluginRole.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/TenantRole.pm
 %%SITE_PERL%%/OpenXPKI/Server/API2/Types.pm
@@ -862,6 +896,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/AddCertExtension.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/AppendCertificateMetadata.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/Approve.pm
+%%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/BuildPKCS7CertList.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/CRLExport.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/CalculateApprovalPoints.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/CalculateArgon2Key.pm
@@ -872,6 +907,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/Connector/GetValue.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/CopyCertificateMetadata.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/CopyContextFromWorkflow.pm
+%%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool/ClearNamespace.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool/DeleteEntry.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool/GetEntry.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Activity/Tools/Datapool/ModifyEntry.pm
@@ -932,6 +968,7 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/AlwaysTrue.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/Approved.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/CertificateAttribute.pm
+%%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/CertificateHasAttribute.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/CertificateHasProfile.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/CertificateHasStatus.pm
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/Condition/CertificateHasSuccessor.pm
@@ -997,7 +1034,6 @@ bin/openxpkictl
 %%SITE_PERL%%/OpenXPKI/Server/Workflow/WFObject/WFHash.pm
 %%SITE_PERL%%/OpenXPKI/Service.pm
 %%SITE_PERL%%/OpenXPKI/Service/Default.pm
-%%SITE_PERL%%/OpenXPKI/Service/Default/CommandApi2.pm
 %%SITE_PERL%%/OpenXPKI/Service/LibSCEP.pm
 %%SITE_PERL%%/OpenXPKI/Service/LibSCEP/Command.pm
 %%SITE_PERL%%/OpenXPKI/Service/LibSCEP/Command/GetCACaps.pm
