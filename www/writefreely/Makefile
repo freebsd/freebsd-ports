@@ -1,11 +1,18 @@
 PORTNAME=	writefreely
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www textproc
 MASTER_SITES=	https://code.as/core/socks/archive/v1.0.0.tar.gz?dummy=/:core_socks
 DISTFILES=	core-socks-v1.0.0.tar.gz:core_socks
 DIST_SUBDIR=	writeas
+ 
+PATCH_SITES=	https://github.com/writefreely/writefreely/commit/
+PATCHFILES=	99d72881cf833326f02d86a8896bbd2b8156327b.diff:-p1
+
+ MAINTAINER=	fuz@fuz.su
+ COMMENT=	Clean, Markdown-based publishing platform made for writers
+ WWW=		https://writefreely.org
 
 MAINTAINER=	fuz@fuz.su
 COMMENT=	Clean, Markdown-based publishing platform made for writers
@@ -96,7 +103,7 @@ GH_TUPLE=	aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/do
 USE_RC_SUBR=	writefreely
 GO_TARGET=	./cmd/writefreely
 
-SUB_FILES=	pkg-message
+SUB_FILES=	config.ini.sample pkg-message
 USERS=		writefreely
 GROUPS=		writefreely
 
@@ -149,6 +156,7 @@ do-install-DOCS-on:
 
 post-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/keys
+	${INSTALL_DATA} ${WRKDIR}/config.ini.sample ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} pages ${STAGEDIR}${WWWDIR}
 	cd ${WRKSRC} && ${COPYTREE_SHARE} static ${STAGEDIR}${WWWDIR}
 	${INSTALL_DATA} ${WRKDIR}/css/*.css ${STAGEDIR}${WWWDIR}/static/css/

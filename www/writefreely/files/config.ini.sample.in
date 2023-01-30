@@ -1,0 +1,10 @@
+; Preliminary configuration file.  Run
+;
+;     %%PREFIX%%/etc/rc.d/writefreely setup
+;
+; to set up writefreely.
+[server]
+templates_parent_dir = %%WWWDIR%%
+static_parent_dir = %%WWWDIR%%
+pages_parent_dir = %%WWWDIR%%
+keys_parent_dir = %%WWWDIR%%
