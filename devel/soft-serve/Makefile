@@ -1,7 +1,6 @@
 PORTNAME=	soft-serve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.4
-PORTREVISION=	2
+DISTVERSION=	0.4.5
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -38,7 +37,7 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microso
 		emirpasic:gods:v1.12.0:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		gliderlabs:ssh:v0.3.5:gliderlabs_ssh/vendor/github.com/gliderlabs/ssh \
 		go-git:gcfg:v1.5.0:go_git_gcfg/vendor/github.com/go-git/gcfg \
-		go-git:go-billy:v5.3.1:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
+		go-git:go-billy:v5.4.0:go_git_go_billy_v5/vendor/github.com/go-git/go-billy/v5 \
 		go-git:go-git:v5.4.2:go_git_go_git_v5/vendor/github.com/go-git/go-git/v5 \
 		go-warnings:warnings:v0.1.2:go_warnings_warnings/vendor/gopkg.in/warnings.v0 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
@@ -48,7 +47,7 @@ GH_TUPLE=	Microsoft:go-winio:v0.5.1:microsoft_go_winio/vendor/github.com/Microso
 		golang:crypto:bd7e27e6170d:golang_crypto/vendor/golang.org/x/crypto \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:bcab6841153b:golang_net/vendor/golang.org/x/net \
-		golang:sys:c680a09ffe64:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.3.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:a9ba230a4035:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
