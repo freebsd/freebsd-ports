@@ -5316,6 +5316,7 @@
     SUBDIR += py-readme-renderer
     SUBDIR += py-rebulk
     SUBDIR += py-recordclass
+    SUBDIR += py-recurring-ical-events
     SUBDIR += py-rednose
     SUBDIR += py-reedsolo
     SUBDIR += py-remote-pdb
