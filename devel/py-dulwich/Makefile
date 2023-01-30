@@ -1,5 +1,5 @@
 PORTNAME=	dulwich
-PORTVERSION=	0.19.16
+PORTVERSION=	0.21.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +12,7 @@ LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe python:3.6+
+USES=		cpe python:3.7+
 
 PORTDOCS=	AUTHORS NEWS README.rst TODO conclusion.txt encoding.txt \
 		file-format.txt index.txt introduction.txt object-store.txt \
