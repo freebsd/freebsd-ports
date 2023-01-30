@@ -1,0 +1,4 @@
+RbVmomi is a Ruby interface to the vSphere API. Like the Perl and Java SDKs, you
+can use it to manage ESX and vCenter servers.
+
+RbVmomi2 is a community-supported, open source project at ManageIQ.

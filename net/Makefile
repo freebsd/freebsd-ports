@@ -1359,6 +1359,7 @@
     SUBDIR += rubygem-qiniu
     SUBDIR += rubygem-rabbiter
     SUBDIR += rubygem-rbvmomi
+    SUBDIR += rubygem-rbvmomi2
     SUBDIR += rubygem-right_aws
     SUBDIR += rubygem-right_flexiscale
     SUBDIR += rubygem-right_gogrid
