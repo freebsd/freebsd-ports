@@ -62,7 +62,7 @@ POCKETSPHINX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pocketsphinx>0:audio/py-pockets
 PPTX_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-pptx>=0.6.18:textproc/py-python-pptx@${PY_FLAVOR}
 PS_RUN_DEPENDS=	pstotext>0:print/pstotext
 SOX_RUN_DEPENDS=	sox>0:audio/sox
-SPEECH_RECOGNITION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}SpeechRecognition>=3.8.1:audio/py-speechrecognition@${PY_FLAVOR}
+SPEECH_RECOGNITION_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}speechrecognition>=3.8.1:audio/py-speechrecognition@${PY_FLAVOR}
 SPREADSHEET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xlrd>=1.2.0:textproc/py-xlrd@${PY_FLAVOR}
 TESSERACT_RUN_DEPENDS=	tesseract>0:graphics/tesseract
 UNRTF_RUN_DEPENDS=	unrtf>0:textproc/unrtf
