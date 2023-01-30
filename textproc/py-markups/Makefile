@@ -1,8 +1,9 @@
-PORTNAME=	Markups
+PORTNAME=	markups
 PORTVERSION=	3.1.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Markups-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Wrapper around various text markup languages
