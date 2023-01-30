@@ -21,4 +21,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}behave>0:devel/py-behave@${PY_FLAVOR} \
 USES=		python:3.8+
 USE_PYTHON=	autoplist distutils pytest
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
