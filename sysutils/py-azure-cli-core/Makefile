@@ -1,5 +1,6 @@
 PORTNAME=	azure-cli-core
 PORTVERSION=	2.43.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -28,7 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.8:devel/py-argcomplete@${PY_F
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.9:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msrestazure>=0.6.4:net-mgmt/py-msrestazure@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}packaging>=20.9<22.0:devel/py-packaging@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}packaging21>=20.9<22.0:devel/py-packaging21@${PY_FLAVOR}
 
 USES=		azurepy python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
