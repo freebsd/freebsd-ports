@@ -1,5 +1,5 @@
 PORTNAME=	invoke
-PORTVERSION=	1.7.3
+PORTVERSION=	2.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,8 +15,5 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
-
-post-patch:
-	@${RM} -r ${WRKSRC}/invoke/vendor/yaml2
 
 .include <bsd.port.mk>
