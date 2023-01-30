@@ -1,5 +1,5 @@
 PORTNAME=	did_you_mean
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
