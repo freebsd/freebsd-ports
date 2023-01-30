@@ -6599,6 +6599,7 @@
     SUBDIR += rubygem-flipper-active_support_cache_store
     SUBDIR += rubygem-flipper-active_support_cache_store-rails61
     SUBDIR += rubygem-flipper-ui
+    SUBDIR += rubygem-flipper025
     SUBDIR += rubygem-fluent-logger
     SUBDIR += rubygem-fog
     SUBDIR += rubygem-fog-core
