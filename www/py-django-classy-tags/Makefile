@@ -1,22 +1,20 @@
 PORTNAME=	django-classy-tags
-PORTVERSION=	2.0.0
-PORTREVISION=	2
+PORTVERSION=	4.0.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Class based template tags for Django
-WWW=		https://github.com/ojii/django-classy-tags
+WWW=		https://github.com/django-cms/django-classy-tags
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=1.11:www/py-django32@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2:www/py-django32@${PY_FLAVOR}
 
-USES=		python:3.5+
-USE_PYTHON=	autoplist distutils
+USES=		python:3.7+
+USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
