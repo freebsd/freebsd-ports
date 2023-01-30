@@ -1,5 +1,5 @@
 PORTNAME=	XML-Enc
-PORTVERSION=	0.06
+PORTVERSION=	0.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,9 +13,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:security/p5-Crypt-OpenSSL-Bignum \
-		p5-Crypt-OpenSSL-RSA>=0:security/p5-Crypt-OpenSSL-RSA \
-		p5-Crypt-OpenSSL-X509>=0:security/p5-Crypt-OpenSSL-X509 \
+RUN_DEPENDS=	p5-Crypt-OpenSSL-X509>=0:security/p5-Crypt-OpenSSL-X509 \
 		p5-Crypt-Random>=0:security/p5-Crypt-Random \
 		p5-CryptX>=0.062:security/p5-CryptX \
 		p5-XML-LibXML>=0:textproc/p5-XML-LibXML
