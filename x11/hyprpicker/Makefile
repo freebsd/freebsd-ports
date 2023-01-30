@@ -1,5 +1,6 @@
 PORTNAME=	hyprpicker
 PORTVERSION=	s20230203
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,13 +14,11 @@ BUILD_DEPENDS=	gmake:devel/gmake \
 		wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
-USES=		compiler:c++11-lib cmake gnome jpeg pkgconfig
-USE_GCC=	yes:build # C++23
+USES=		compiler:c++11-lib cmake gnome jpeg localbase:ldflags pkgconfig
 USE_GNOME=	cairo
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
 GH_TAGNAME=	e4c2672
-LDFLAGS+=	-static-libstdc++ -static-libgcc # avoid libc++ conflict
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/${PORTNAME}.1.gz
 
@@ -36,6 +35,9 @@ post-patch:
 		-e 's/$${GIT_COMMIT_HASH}/${GH_TAGNAME}/' \
 		-e 's/$${GIT_COMMIT_MESSAGE}/<unknown>/' \
 		-e 's/$${GIT_DIRTY}/portbld/' \
+		${WRKSRC}/CMakeLists.txt
+# https://clang.llvm.org/cxx_status.html#cxx23
+	@${REINPLACE_CMD} -e 's/c++23/c++17/' \
 		${WRKSRC}/CMakeLists.txt
 # Drop unused dependencies
 	@${REINPLACE_CMD} 's/ wlroots//' ${WRKSRC}/Makefile
