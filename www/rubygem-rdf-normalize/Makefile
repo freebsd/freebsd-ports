@@ -1,5 +1,5 @@
 PORTNAME=	rdf-normalize
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
