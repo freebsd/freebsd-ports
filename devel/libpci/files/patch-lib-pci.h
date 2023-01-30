@@ -1,4 +1,4 @@
---- lib/pci.h.orig	2020-05-30 22:17:41 UTC
+--- lib/pci.h.orig	2022-11-20 11:58:19 UTC
 +++ lib/pci.h
 @@ -10,11 +10,11 @@
  #define _PCI_LIB_H
@@ -13,5 +13,5 @@
 +#include "pci/header.h"
 +#include "pci/types.h"
  
- #define PCI_LIB_VERSION 0x030700
+ #define PCI_LIB_VERSION 0x030900
  
