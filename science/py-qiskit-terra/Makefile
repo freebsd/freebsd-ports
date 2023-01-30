@@ -1,6 +1,5 @@
 PORTNAME=	qiskit-terra
-DISTVERSION=	0.22.2
-PORTREVISION=	3
+DISTVERSION=	0.23.0
 CATEGORIES=	science python # quantum-computing
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 PY_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}ply>=3.10:devel/py-ply@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rustworkx>=0.11.0:math/py-rustworkx@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rustworkx>=0.12.0:math/py-rustworkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.5:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sympy>=1.3:math/py-sympy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dill>=0.3:devel/py-dill@${PY_FLAVOR} \
@@ -49,31 +48,33 @@ CARGO_CRATES=	ahash-0.7.6 \
 		hashbrown-0.11.2 \
 		hashbrown-0.12.3 \
 		hermit-abi-0.1.19 \
-		indexmap-1.9.1 \
+		indexmap-1.7.0 \
 		indoc-1.0.7 \
 		libc-0.2.137 \
 		libm-0.2.5 \
 		lock_api-0.4.9 \
 		matrixmultiply-0.3.2 \
 		memoffset-0.6.5 \
+		memoffset-0.8.0 \
 		ndarray-0.15.6 \
 		num-bigint-0.4.3 \
 		num-complex-0.4.2 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
-		numpy-0.17.2 \
+		numpy-0.18.0 \
 		once_cell-1.16.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.4 \
 		petgraph-0.6.2 \
 		ppv-lite86-0.2.16 \
+		priority-queue-1.2.0 \
 		proc-macro2-1.0.47 \
-		pyo3-0.17.2 \
-		pyo3-build-config-0.17.2 \
-		pyo3-ffi-0.17.2 \
-		pyo3-macros-0.17.2 \
-		pyo3-macros-backend-0.17.2 \
+		pyo3-0.18.0 \
+		pyo3-build-config-0.18.0 \
+		pyo3-ffi-0.18.0 \
+		pyo3-macros-0.18.0 \
+		pyo3-macros-backend-0.18.0 \
 		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -81,10 +82,11 @@ CARGO_CRATES=	ahash-0.7.6 \
 		rand_distr-0.4.3 \
 		rand_pcg-0.3.1 \
 		rawpointer-0.2.1 \
-		rayon-1.5.3 \
-		rayon-core-1.9.3 \
+		rayon-1.6.0 \
+		rayon-core-1.10.1 \
 		redox_syscall-0.2.16 \
-		retworkx-core-0.11.0 \
+		rustc-hash-1.1.0 \
+		rustworkx-core-0.12.1 \
 		scopeguard-1.1.0 \
 		smallvec-1.10.0 \
 		syn-1.0.103 \
