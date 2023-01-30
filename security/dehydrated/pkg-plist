@@ -1,4 +1,5 @@
 bin/dehydrated
+@dir %%ETCDIR%%/.acme-challenges
 @sample %%ETCDIR%%/config.sample
 @sample %%ETCDIR%%/domains.txt.sample
 @sample %%ETCDIR%%/hook.sh.sample
@@ -14,5 +15,4 @@ man/man1/dehydrated.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/tls-alpn.md
 %%PORTDOCS%%%%DOCSDIR%%/troubleshooting.md
 %%PORTDOCS%%%%DOCSDIR%%/wellknown.md
-@dir %%ETCDIR%%/.acme-challenges
 @dir %%WWWDIR%%
