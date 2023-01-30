@@ -1,4 +1,4 @@
-USES=		nodejs:16,run
+USES=		nodejs:19,run
 
 MASTERDIR=	${.CURDIR}/../npm-node18
 

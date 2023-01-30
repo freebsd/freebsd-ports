@@ -93,7 +93,7 @@ MONO_DEFAULT=		5.10
 MYSQL_DEFAULT?=		5.7
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
-# Possible value: 14, 16, 18, lts, current
+# Possible value: 14, 16, 18, 19, current, lts (Note: current = 19 and lts = 18)
 NODEJS_DEFAULT?=    lts
 # Possible values: 5.32, 5.34, 5.36, devel
 .  if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \

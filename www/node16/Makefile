@@ -50,7 +50,7 @@ COREPACK_CONFIGURE_OFF=	--without-corepack
 
 HAS_CONFIGURE=	yes
 
-CONFLICTS_INSTALL=	node10 node14 node
+CONFLICTS_INSTALL=	node[0-9][0-9]
 
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST} \
 		--without-npm \
