@@ -1,5 +1,5 @@
 PORTNAME=	erb
-PORTVERSION=	3.0.0
+PORTVERSION=	4.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,8 +14,6 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-cgi>=0.3.3:www/rubygem-cgi
 
 USES=		gem
-
-NO_ARCH=	yes
 
 PLIST_FILES=	bin/erb
 
