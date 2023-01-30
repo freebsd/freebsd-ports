@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-quicksight
-PORTVERSION=	1.71.0
+PORTVERSION=	1.72.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
