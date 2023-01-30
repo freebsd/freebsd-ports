@@ -1,5 +1,5 @@
 PORTNAME=	gpgme
-PORTVERSION=	2.0.21
+PORTVERSION=	2.0.22
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme
 
-USES=		gem shebangfix
+USES=		gem pkgconfig shebangfix
 
 CONFIGURE_ARGS=	--use-system-libraries
 
