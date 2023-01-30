@@ -1,5 +1,5 @@
 PORTNAME=	Tickit-Widgets
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Object-Pad>=0.63:devel/p5-Object-Pad \
+RUN_DEPENDS=	p5-Object-Pad>=0.75:devel/p5-Object-Pad \
 		p5-Parser-MGC>=0:devel/p5-Parser-MGC \
 		p5-Syntax-Keyword-Dynamically>=0:devel/p5-Syntax-Keyword-Dynamically \
 		p5-Tickit>=0.66:devel/p5-Tickit
