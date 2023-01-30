@@ -34,5 +34,6 @@ setup(
     packages=[
         'notebook_shim',
         'notebook_shim.tests',
+        'notebook_shim.tests.confs',
     ],
 )
