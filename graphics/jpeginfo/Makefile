@@ -1,22 +1,22 @@
 PORTNAME=	jpeginfo
-PORTVERSION=	1.6.2
+PORTVERSION=	1.7.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.kokkonen.net/tjko/src/
+MASTER_SITES=	https://www.kokkonen.net/tjko/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate listing and MD5, check jpegs for error, delete broken ones
-WWW=		https://www.kokkonen.net/tjko/projects.html
+WWW=		https://www.kokkonen.net/tjko/projects.html \
+		https://github.com/tjko/jpeginfo
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		jpeg localbase
+USES=		gmake jpeg localbase
+
 GNU_CONFIGURE=	yes
-MAKE_ARGS=	mandir=${MANPREFIX}/man INSTALL_ROOT=${STAGEDIR}
+MAKE_ARGS=	INSTALL_ROOT=${STAGEDIR}
 
-PLIST_FILES=	bin/jpeginfo man/man1/jpeginfo.1.gz
-
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/jpeginfo
+PLIST_FILES=	bin/jpeginfo \
+		share/man/man1/jpeginfo.1.gz
 
 .include <bsd.port.mk>
