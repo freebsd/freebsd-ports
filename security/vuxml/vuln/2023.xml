@@ -1,3 +1,31 @@
+  <vuln vid="98f78c7a-a08e-11ed-946e-002b67dfc673">
+    <topic>Plex Media Server -- security vulnerability</topic>
+    <affects>
+      <package>
+	<name>plexmediaserver</name>
+	<name>plexmediaserver-plexpass</name>
+	<range><lt>1.25.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Plex Security Team reports:</p>
+	<blockquote cite="https://forums.plex.tv/t/security-regarding-cve-2021-42835/761510">
+	  <p>We have recently been made aware of a security vulnerability in Plex Media Server versions prior to 1.25.0 that could allow a local Windows user to obtain administrator privileges without authorization. To be clear, this required the user to already have local, physical access to the computer (just with a different user account on Windows). There are no indications that this exploit could be used from a remote machine.</p>
+	  <p>Plex Media Server versions 1.25.0.5282 and newer are not subject to this vulnerability, and feature additional hardening to prevent similar issues from occurring in the future. Users running older server versions are encouraged to update their Plex Media Server installations.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-42835</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-42835</url>
+    </references>
+    <dates>
+      <discovery>2021-10-22</discovery>
+      <entry>2023-01-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="791a09c5-a086-11ed-954d-b42e991fc52e">
     <topic>prometheus2 -- basic authentication bypass</topic>
     <affects>
