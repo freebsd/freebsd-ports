@@ -8,6 +8,8 @@ WWW=		https://github.com/ekg/filevercmp
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Dependent ports use git submodules now
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekg
 GH_TAGNAME=	cccb6ba1fffa2898718b0a96c63279e0979e002b
