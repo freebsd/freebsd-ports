@@ -782,6 +782,7 @@
     SUBDIR += popstar
     SUBDIR += powder
     SUBDIR += powder-toy
+    SUBDIR += powder-toy-devel
     SUBDIR += powermanga
     SUBDIR += powwow
     SUBDIR += prboom
