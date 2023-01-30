@@ -15,4 +15,7 @@ USES=		gem
 
 NO_ARCH=	yes
 
+# jekyll-sass-converter 3.0.0+ requires Dart Sass implementation
+PORTSCOUT=	limit:^2\.
+
 .include <bsd.port.mk>
