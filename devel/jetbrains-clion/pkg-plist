@@ -88,7 +88,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler-windows.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-CL-223.8214.51
+%%DATADIR%%/lib/build-marker-CL-223.8617.54
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -250,8 +250,8 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-4c0166cd7e21.ijx
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-4c0166cd7e21.txt
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-ba3f29a498ec.ijx
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-ba3f29a498ec.txt
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -368,6 +368,7 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/bin/eslint-plugin-provider.js
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/bin/eslint-plugin.js
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/bin/eslint8-plugin.js
+%%DATADIR%%/plugins/javascript-impl/languageService/eslint/bin/standard17-plugin.js
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/package-lock.json
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/package.json
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/eslint-api.ts
@@ -375,6 +376,7 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/eslint-plugin-provider.ts
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/eslint-plugin.ts
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/eslint8-plugin.ts
+%%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/standard17-plugin.ts
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/typings/js-lanuage-api.d.ts
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/tsconfig.json
 %%DATADIR%%/plugins/javascript-impl/lib/javascript-impl.jar
@@ -1272,7 +1274,6 @@ share/applications/clion.desktop
 %%DATADIR%%/plugins/python-ce/helpers/pydev/build_tools/names_to_rename.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/build_tools/pydevd_release_process.txt
 %%DATADIR%%/plugins/python-ce/helpers/pydev/build_tools/rename_pep8.py
-%%DATADIR%%/plugins/python-ce/helpers/pydev/conftest.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/interpreterInfo.py
 %%DATADIR%%/plugins/python-ce/helpers/pydev/jython_test_deps/ant.jar
 %%DATADIR%%/plugins/python-ce/helpers/pydev/jython_test_deps/junit.jar
