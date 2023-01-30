@@ -1,5 +1,5 @@
 PORTNAME=	pygments.rb
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
