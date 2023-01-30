@@ -2,6 +2,7 @@
 %%DATADIR%%/Smarty.class.php
 %%DATADIR%%/bootstrap.php
 %%DATADIR%%/debug.tpl
+%%DATADIR%%/functions.php
 %%DATADIR%%/plugins/block.textformat.php
 %%DATADIR%%/plugins/function.counter.php
 %%DATADIR%%/plugins/function.cycle.php
@@ -16,6 +17,7 @@
 %%DATADIR%%/plugins/function.mailto.php
 %%DATADIR%%/plugins/function.math.php
 %%DATADIR%%/plugins/modifier.capitalize.php
+%%DATADIR%%/plugins/modifier.count.php
 %%DATADIR%%/plugins/modifier.date_format.php
 %%DATADIR%%/plugins/modifier.debug_print_var.php
 %%DATADIR%%/plugins/modifier.escape.php
@@ -36,10 +38,14 @@
 %%DATADIR%%/plugins/modifiercompiler.from_charset.php
 %%DATADIR%%/plugins/modifiercompiler.indent.php
 %%DATADIR%%/plugins/modifiercompiler.lower.php
+%%DATADIR%%/plugins/modifiercompiler.nl2br.php
 %%DATADIR%%/plugins/modifiercompiler.noprint.php
+%%DATADIR%%/plugins/modifiercompiler.round.php
+%%DATADIR%%/plugins/modifiercompiler.str_repeat.php
 %%DATADIR%%/plugins/modifiercompiler.string_format.php
 %%DATADIR%%/plugins/modifiercompiler.strip.php
 %%DATADIR%%/plugins/modifiercompiler.strip_tags.php
+%%DATADIR%%/plugins/modifiercompiler.strlen.php
 %%DATADIR%%/plugins/modifiercompiler.to_charset.php
 %%DATADIR%%/plugins/modifiercompiler.unescape.php
 %%DATADIR%%/plugins/modifiercompiler.upper.php
