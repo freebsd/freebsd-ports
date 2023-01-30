@@ -6193,6 +6193,7 @@
     SUBDIR += rubygem-aws-sdk-schemas
     SUBDIR += rubygem-aws-sdk-secretsmanager
     SUBDIR += rubygem-aws-sdk-securityhub
+    SUBDIR += rubygem-aws-sdk-securitylake
     SUBDIR += rubygem-aws-sdk-serverlessapplicationrepository
     SUBDIR += rubygem-aws-sdk-servicecatalog
     SUBDIR += rubygem-aws-sdk-servicediscovery
