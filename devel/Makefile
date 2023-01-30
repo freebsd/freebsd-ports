@@ -4972,6 +4972,7 @@
     SUBDIR += py-ovsdbapp
     SUBDIR += py-p4python
     SUBDIR += py-packaging
+    SUBDIR += py-packaging21
     SUBDIR += py-parallax
     SUBDIR += py-param
     SUBDIR += py-parameterized
