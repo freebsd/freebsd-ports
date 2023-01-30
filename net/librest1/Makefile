@@ -5,7 +5,7 @@ PKGNAMESUFFIX=	1
 MASTER_SITES=	https://gitlab.gnome.org/GNOME/librest/-/archive/${PORTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
-COMMENT=	Convenience library for the geocoding and reverse geocoding
+COMMENT=	GNOME REST library
 WWW=		https://gitlab.gnome.org/GNOME/librest
 
 LICENSE=	LGPL21
