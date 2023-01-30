@@ -1,3 +1,44 @@
+  <vuln vid="791a09c5-a086-11ed-954d-b42e991fc52e">
+    <topic>prometheus2 -- basic authentication bypass</topic>
+    <affects>
+      <package>
+	<name>prometheus</name>
+	<range><lt>0.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prometheus team reports:</p>
+	<blockquote cite="https://github.com/prometheus/exporter-toolkit/security/advisories/GHSA-7rg2-cxvp-9p7p">
+	<p>
+	  Prometheus and its exporters can be secured by a web.yml file that
+	  specifies usernames and hashed passwords for basic authentication.
+	  Passwords are hashed with bcrypt, which means that even if you have
+	  access to the hash, it is very hard to find the original password
+	  back. Passwords are hashed with bcrypt, which means that even if you
+	  have access to the hash, it is very hard to find the original
+	  password back. However, a flaw in the way this mechanism was
+	  implemented in the exporter toolkit makes it possible with people
+	  who know the hashed password to authenticate against Prometheus.
+	  A request can be forged by an attacker to poison the internal cache
+	  used to cache the computation of hashes and make subsequent requests
+	  successful. This cache is used in both happy and unhappy scenarios
+	  in order to limit side channel attacks that could tell an attacker
+	    if a user is present in the file or not.
+	</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-46146</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-46146</url>
+    </references>
+    <dates>
+      <discovery>2022-11-28</discovery>
+      <entry>2023-01-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3d0a3eb0-9ca3-11ed-a925-3065ec8fd3ec">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
