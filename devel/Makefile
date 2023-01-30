@@ -5959,6 +5959,7 @@
     SUBDIR += rubygem-aws-sdk-cloudwatchrum
     SUBDIR += rubygem-aws-sdk-codeartifact
     SUBDIR += rubygem-aws-sdk-codebuild
+    SUBDIR += rubygem-aws-sdk-codecatalyst
     SUBDIR += rubygem-aws-sdk-codecommit
     SUBDIR += rubygem-aws-sdk-codedeploy
     SUBDIR += rubygem-aws-sdk-codeguruprofiler
