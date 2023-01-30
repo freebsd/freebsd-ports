@@ -1,5 +1,5 @@
 PORTNAME=	Curses
-PORTVERSION=	1.41
+PORTVERSION=	1.43
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,11 +13,13 @@ LICENSE_COMB=	dual
 LICENSE_FILE_ART10=	${WRKSRC}/Artistic
 LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
 
 CONFIGURE_ARGS=	PANELS MENUS FORMS
 CONFIGURE_ENV=	CURSES_CFLAGS="-I${WRKSRC}/usr/include/ncurses"
+
+SHEBANG_FILES=	makeConfig
 
 OPTIONS_DEFINE=	NCURSESW
 NCURSESW_DESC=	Wide-character-capable support by ncursesw library
