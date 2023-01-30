@@ -1,0 +1,9 @@
+The wavefront alignment (WFA) algorithm is an exact gap-affine
+algorithm that takes advantage of homologous regions between the
+sequences to accelerate the alignment process.  Unlike traditional
+dynamic programming algorithms that run in quadratic time, the WFA runs
+in time O(ns+s^2), proportional to the sequence length n and the
+alignment score s, using O(s^2) memory (or O(s) using the
+ultralow/BiWFA mode). Moreover, the WFA algorithm exhibits simple
+computational patterns that the modern compilers can automatically
+vectorize for different architectures without adapting the code.
