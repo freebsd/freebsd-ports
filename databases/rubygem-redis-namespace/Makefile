@@ -1,5 +1,5 @@
 PORTNAME=	redis-namespace
-PORTVERSION=	1.9.0
+PORTVERSION=	1.10.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
