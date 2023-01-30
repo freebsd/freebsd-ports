@@ -1,5 +1,5 @@
 PORTNAME=	when
-PORTVERSION=	1.1.44
+PORTVERSION=	1.1.45
 CATEGORIES=	deskutils
 
 MAINTAINER=	sunpoet@FreeBSD.org
