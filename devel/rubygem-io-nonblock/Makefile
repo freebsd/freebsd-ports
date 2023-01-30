@@ -1,5 +1,5 @@
 PORTNAME=	io-nonblock
-PORTVERSION=	0.1.0
+PORTVERSION=	0.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,5 @@ LICENSE_COMB=	dual
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 USES=		gem
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>
