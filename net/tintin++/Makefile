@@ -1,5 +1,5 @@
 PORTNAME=	tintin++
-PORTVERSION=	2.02.20
+PORTVERSION=	2.02.30
 CATEGORIES+=	net games
 MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION:C|.$||}/ \
 		https://github.com/scandum/tintin/releases/download/${PORTVERSION}/
@@ -7,7 +7,8 @@ DISTNAME=	tintin-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client program to help playing MUDs
-WWW=		https://tintin.mudhalla.net/
+WWW=		https://tintin.mudhalla.net/ \
+		https://github.com/scandum/tintin
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
@@ -23,10 +24,8 @@ CONFIGURE_ENV=	ac_cv_file__dev_ptmx=no
 GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/tt/src
 
-DOCS=		CREDITS FAQ README SCRIPTS TODO \
-		docs/chat_protocol.txt docs/tintin19.txt
 PLIST_FILES=	bin/tt++
-PORTDOCS=	${DOCS:T}
+PORTDOCS=	CREDITS FAQ README SCRIPTS TODO
 
 CONFLICTS_INSTALL?=	zh-tintin++
 
@@ -45,6 +44,6 @@ do-install:
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
-	cd ${WRKSRC}/../ && ${INSTALL_DATA} ${DOCS} ${STAGEDIR}${DOCSDIR}/
+	cd ${WRKSRC}/../ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
