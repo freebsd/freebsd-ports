@@ -1,5 +1,5 @@
 PORTNAME=	selenium-webdriver
-PORTVERSION=	4.6.1
+PORTVERSION=	4.7.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,7 @@ WWW=		https://www.seleniumhq.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-childprocess>=0.5<5.0:devel/rubygem-childprocess \
-		rubygem-rexml>=3.2.5<4:textproc/rubygem-rexml \
+RUN_DEPENDS=	rubygem-rexml>=3.2.5<4:textproc/rubygem-rexml \
 		rubygem-rubyzip>=1.2.2<3.0:archivers/rubygem-rubyzip \
 		rubygem-websocket>=1.0<2:www/rubygem-websocket
 
