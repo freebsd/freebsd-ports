@@ -1,5 +1,5 @@
 PORTNAME=	libcbor
-PORTVERSION=	0.9.0
+PORTVERSION=	0.10.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -21,10 +21,5 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 GH_ACCOUNT=	PJK
 USE_GITHUB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-flto||; /subdirs(examples)/d' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's|();|(void);|' ${WRKSRC}/src/cbor/*.h ${WRKSRC}/src/cbor/internal/*.h
-	@${REINPLACE_CMD} -e 's|() {|(void) {|' ${WRKSRC}/src/cbor/*.c ${WRKSRC}/src/cbor/internal/*.c
 
 .include <bsd.port.mk>
