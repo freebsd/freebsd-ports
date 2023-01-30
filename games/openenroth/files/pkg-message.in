@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+OpenEnroth requires original or GoG version of Might and Magic VII
+game assets available in the current directory or the path pointed
+by the OPENENROTH_MM7_PATH environment variable.
+
+Additionally, then you would have to copy (or create symbolic link
+to) the `%%DATADIR%%/shaders' directory there.
+EOM
+}
+]

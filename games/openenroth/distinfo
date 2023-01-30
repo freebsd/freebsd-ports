@@ -1,0 +1,17 @@
+TIMESTAMP = 1674869919
+SHA256 (OpenEnroth-OpenEnroth-g20230128-093e253_GH0.tar.gz) = b22ff7f7e9a75d79b15378297323fa8f44e5458b5336267269e53d292c160bc3
+SIZE (OpenEnroth-OpenEnroth-g20230128-093e253_GH0.tar.gz) = 1733730
+SHA256 (CLIUtils-CLI11-a227cd1_GH0.tar.gz) = 2120cc49c90afa0917f790bf84b8835bc386cd422d077d2fe91d3055c4d18cf8
+SIZE (CLIUtils-CLI11-a227cd1_GH0.tar.gz) = 313164
+SHA256 (fastfloat-fast_float-1ea4f27_GH0.tar.gz) = 0152d47ba6c6fd679bab36ef49d3968939ba3489885c824a867cee7b99d452bc
+SIZE (fastfloat-fast_float-1ea4f27_GH0.tar.gz) = 79251
+SHA256 (g-truc-glm-6ad79aa_GH0.tar.gz) = 5f02ae3b05118f7a11e2c1e851d8f74fde2e93c36489c0715d3810278f2730ec
+SIZE (g-truc-glm-6ad79aa_GH0.tar.gz) = 4385032
+SHA256 (LuaJIT-LuaJIT-03080b7_GH0.tar.gz) = e0e0fe47bb6a01730e6463fbbb5f0b1958c5e919076e7964238fa267a8594227
+SIZE (LuaJIT-LuaJIT-03080b7_GH0.tar.gz) = 1073401
+SHA256 (Neargye-magic_enum-d01a4f9_GH0.tar.gz) = 7334e1dcb3af741ff6e4d5ab13771d1b39d291bb35b740a4ca795419c93ad2fa
+SIZE (Neargye-magic_enum-d01a4f9_GH0.tar.gz) = 171928
+SHA256 (pulzed-mINI-a1ff72e_GH0.tar.gz) = 786340f60b220e564409bba5947a94ec88ddfd558775902dba28608619f6ff7b
+SIZE (pulzed-mINI-a1ff72e_GH0.tar.gz) = 26037
+SHA256 (nlohmann-json-4c6cde7_GH0.tar.gz) = 14598c3044c1b2662920ed5f73fd004657e3437b747b4b3d5afa8792c4098b72
+SIZE (nlohmann-json-4c6cde7_GH0.tar.gz) = 8033257
