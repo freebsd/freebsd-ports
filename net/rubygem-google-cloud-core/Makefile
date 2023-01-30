@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Internal shared library for Google Cloud Client Library
-WWW=		https://github.com/googleapis/google-cloud-ruby/tree/master/google-cloud-core
+WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-core
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
