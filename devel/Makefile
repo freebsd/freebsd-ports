@@ -5209,6 +5209,7 @@
     SUBDIR += py-pytest-mpl
     SUBDIR += py-pytest-mutagen
     SUBDIR += py-pytest-mypy
+    SUBDIR += py-pytest-mypy-plugins
     SUBDIR += py-pytest-nunit
     SUBDIR += py-pytest-parallel
     SUBDIR += py-pytest-pep8
