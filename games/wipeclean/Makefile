@@ -11,6 +11,8 @@ WWW=		https://github.com/JeanJouliaCode/wipeClean
 LICENSE=	ISCL
 
 USES=		dos2unix nodejs:run tar:xz
+
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
