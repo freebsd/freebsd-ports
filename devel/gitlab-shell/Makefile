@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-shell
-PORTVERSION=	14.13.0
-PORTREVISION=	1
+PORTVERSION=	14.14.0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,7 +13,7 @@ USES=		gmake go:modules,no_targets
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	b42a398c92565630b541e55c2c6c0ce47cf10b58
+GL_COMMIT=	cdde05837ec5a4a69584a0d6a442f486c0bf0438
 
 USERS=		git
 GROUPS=		git
