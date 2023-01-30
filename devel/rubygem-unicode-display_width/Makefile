@@ -1,5 +1,5 @@
 PORTNAME=	unicode-display_width
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
