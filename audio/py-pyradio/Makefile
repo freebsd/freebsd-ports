@@ -1,5 +1,6 @@
 PORTNAME=	pyradio
 DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -47,9 +48,11 @@ MPV_RUN_DEPENDS+=	mpv:multimedia/mpv
 VLC_RUN_DEPENDS+=	vlc:multimedia/vlc
 
 post-patch:
-	${SED} -i.bak -e 's/\(distro =\) None/\1 ${OPSYS}/' \
+	@${SED} -i.bak -e 's/\(distro =\) None/\1 ${OPSYS}/' \
 	 -e 's/\(enable_notifications =\) -1/\1 0/' \
 	 	${WRKSRC}/pyradio/config
+	@${SED} -i.bak -e "s,/usr/local/share/icons\(/pyradio.png\),${PREFIX}/share/pixmaps\1,1" \
+		${WRKSRC}/pyradio/log.py
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.desktop \
