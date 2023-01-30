@@ -1,4 +1,3 @@
-TIMESTAMP = 1671919144
-SHA256 (rubygem/bundler-2.4.1.gem) = a6eb7847f55ad87e288eec3660870bef82ffb8a5c5f1b59dee5598f03bafb827
-SIZE (rubygem/bundler-2.4.1.gem) = 408576
-
+TIMESTAMP = 1674590900
+SHA256 (rubygem/bundler-2.4.4.gem) = 83003159591df67a6d311b5a65cfbef0f98965d20356bebac14bf5c62d4d3c9d
+SIZE (rubygem/bundler-2.4.4.gem) = 409600
