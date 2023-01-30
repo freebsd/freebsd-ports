@@ -7161,6 +7161,7 @@
     SUBDIR += rubygem-svn2git
     SUBDIR += rubygem-swagger-blocks
     SUBDIR += rubygem-sync
+    SUBDIR += rubygem-syntax_suggest
     SUBDIR += rubygem-sysinfo
     SUBDIR += rubygem-syslog
     SUBDIR += rubygem-systemu
