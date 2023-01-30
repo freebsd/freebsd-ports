@@ -17,7 +17,7 @@ you update your ports collection, before attempting any port upgrades.
 
   The notable changes are introduced to fix the above issues:
   - Rewrite Mk/Uses/nodejs.mk.
-  - Add new LTS version of nodejs (www/noe18).
+  - Add new LTS version of nodejs (www/node18).
   - Add new current version of nodejs (www/node19).
   - Change default nodejs version from 16 to 18 (latest LTS),
   - Use consistent naming for all supported node versions.
