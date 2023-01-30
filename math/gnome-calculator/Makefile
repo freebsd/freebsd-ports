@@ -1,5 +1,5 @@
 PORTNAME=	gnome-calculator
-PORTVERSION=	42.2
+PORTVERSION=	43.0.1
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
-		libsoup-2.4.so:devel/libsoup
+		libsoup-3.0.so:devel/libsoup3
 
 PORTSCOUT=	limitw:1,even
 
