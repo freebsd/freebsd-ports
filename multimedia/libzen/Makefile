@@ -1,28 +1,29 @@
 PORTNAME=	libzen
-DISTVERSION=	0.4.40
+PORTVERSION=	0.4.40
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://mediaarea.net/download/source/${PORTNAME}/${DISTVERSION}/ \
+MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${MEDIAINFO_PORTVERSION}/ \
 		LOCAL/sunpoet
-DISTNAME=	${PORTNAME}_${DISTVERSION}
+DISTNAME=	MediaInfo_CLI_${MEDIAINFO_PORTVERSION}_GNU_FromSource
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ZenLib used by MediaInfo and its library
-WWW=		https://mediaarea.net/en/MediaInfo
+WWW=		https://mediaarea.net/en/MediaInfo \
+		https://github.com/MediaArea/ZenLib
 
 LICENSE=	ZLIB
-LICENSE_FILE=	${WRKSRC}/../../License.txt
+LICENSE_FILE=	${WRKSRC}/../../../License.txt
 
-USES=		cmake compiler:c++11-lang dos2unix pathfix pkgconfig tar:bz2
+USES=		compiler:c++11-lang dos2unix libtool pathfix tar:xz
+
+CONFIGURE_ARGS=	--enable-shared --enable-static
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-DOS2UNIX_GLOB=	*.c *.cmake.in *.cpp *.h *.pc.in *.txt
-DOS2UNIX_WRKSRC=	${WRKDIR}
 
-WRKSRC=		${WRKDIR}/ZenLib/Project/CMake
+WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/ZenLib/Project/GNU/Library
 
-PLIST_SUB=	DISTVERSION=${DISTVERSION}
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^Libs_Static/d' ${PATCH_WRKSRC}/libzen.pc.in
+MEDIAINFO_PORTVERSION=	22.12
 
 .include <bsd.port.mk>
