@@ -5,6 +5,33 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230130:
+  AFFECTS: users of USES=nodejs, www/node*, www/npm* and www/yarn*
+  AUTHOR: sunpoet@FreeBSD.org
+
+  The current USES=nodejs has the following issues:
+  - www/node is not the default version while www/node16 is.
+  - It also means inconsistent naming of node ports.
+  - www/npm duplicates with www/npm-node16.
+  - www/yarn duplicates with www/yarn-node16.
+
+  The notable changes are introduced to fix the above issues:
+  - Rewrite Mk/Uses/nodejs.mk.
+  - Add new LTS version of nodejs (www/noe18).
+  - Add new current version of nodejs (www/node19).
+  - Change default nodejs version from 16 to 18 (latest LTS),
+  - Use consistent naming for all supported node versions.
+  - Convert www/node, www/npm and www/yarn to meta ports.
+
+  After these changes:
+  - All supported node versions are named as node{14,16,18,19}.
+  - www/node is a meta port which depends on the default version
+    (e.g. www/node18)
+  - www/npm is a meta port which depends on the default version
+    (e.g. www/npm-node18)
+  - www/yarn is a meta port which depends on the default version
+    (e.g. www/yarn-node18)
+
 20230129:
   AFFECTS: users of benchmarks/ddosify
   AUTHOR: fernape@freebsd.org
