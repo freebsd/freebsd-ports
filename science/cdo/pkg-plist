@@ -5,8 +5,8 @@ include/cdi.h
 include/cdi.inc
 include/cdi_datetime.h
 include/julian_date.h
-lib/cmake/libcdi/cdi-config-version.cmake
-lib/cmake/libcdi/cdi-config.cmake
+lib/cmake/cdi/cdi-config-version.cmake
+lib/cmake/cdi/cdi-config.cmake
 lib/libcdi.a
 lib/libcdi.so
 lib/libcdi.so.0

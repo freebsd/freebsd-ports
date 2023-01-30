@@ -1,8 +1,7 @@
 PORTNAME=	cdo
-PORTVERSION=	2.0.6
-PORTREVISION=	2
+PORTVERSION=	2.1.1
 CATEGORIES=	science
-MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/27276/ \
+MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/27654/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -23,7 +22,7 @@ UUID_DESC=	UUID support
 
 PORTSCOUT=	site:https://code.mpimet.mpg.de/projects/cdo/files
 
-USES=		compiler:c++17-lang gmake libtool localbase pathfix
+USES=		compiler:c++17-lang gmake libtool localbase pathfix python:build
 
 CONFIGURE_ARGS=	--disable-data \
 		--disable-extra \
@@ -34,6 +33,7 @@ CONFIGURE_ARGS=	--disable-data \
 		--enable-cdi-lib \
 		--program-transform-name="" \
 		--with-zlib=/usr
+CONFIGURE_ENV=	PYTHON=${PYTHON_CMD}
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 MAKE_JOBS_UNSAFE=	yes
