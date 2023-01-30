@@ -14,6 +14,7 @@ packages = \
  'poetry.core._vendor.jsonschema.benchmarks',
  'poetry.core._vendor.lark',
  'poetry.core._vendor.lark.__pyinstaller',
+ 'poetry.core._vendor.lark.grammars',
  'poetry.core._vendor.lark.parsers',
  'poetry.core._vendor.lark.tools',
  'poetry.core._vendor.packaging',
@@ -45,7 +46,7 @@ packages = \
 package_data = \
 {'': ['*'],
  'poetry.core._vendor.jsonschema': ['schemas/*'],
- 'poetry.core._vendor.lark': ['grammars/*'],
+ 'poetry.core._vendor.jsonschema.benchmarks': ['issue232/*'],
  'poetry.core.json': ['schemas/*'],
  'poetry.core.spdx': ['data/*']}
 
@@ -69,6 +70,4 @@ setup_kwargs = {
     'python_requires': '>=3.7,<4.0',
 }
 
-
 setup(**setup_kwargs)
-
