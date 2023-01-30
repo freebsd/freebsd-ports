@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.6.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -27,7 +27,7 @@ MY_DEPENDS=	git>=2.37.0:devel/git \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
 	rubygem-rails61>=6.1.6.1<6.1.8:www/rubygem-rails61 \
-	rubygem-bootsnap>=1.13.0<1.15:devel/rubygem-bootsnap \
+	rubygem-bootsnap114>=1.13.0<1.15:devel/rubygem-bootsnap114 \
 	rubygem-openssl221>=2.2.1<2.2.2:security/rubygem-openssl221 \
 	rubygem-ipaddr122>=1.2.2<1.2.3:net/rubygem-ipaddr122 \
 	rubygem-responders-rails61>=3.0<4.0:www/rubygem-responders-rails61 \
@@ -63,7 +63,7 @@ MY_DEPENDS=	git>=2.37.0:devel/git \
 	rubygem-gitlab-omniauth-openid-connect>=0.10.0<0.11.0:net/rubygem-gitlab-omniauth-openid-connect \
 	rubygem-omniauth-atlassian-oauth2>=0.2.0<0.3:security/rubygem-omniauth-atlassian-oauth2 \
 	rubygem-rack-oauth2>=1.21.3<1.22.0:security/rubygem-rack-oauth2 \
-	rubygem-jwt>=2.1.0<3:www/rubygem-jwt \
+	rubygem-jwt25>=2.5.0<2.6:www/rubygem-jwt25 \
 	rubygem-gssapi>0:security/rubygem-gssapi \
 	rubygem-recaptcha>=4.11<5.0:devel/rubygem-recaptcha \
 	rubygem-akismet>=3.0<4.0:devel/rubygem-akismet \
@@ -141,11 +141,11 @@ MY_DEPENDS=	git>=2.37.0:devel/git \
 	rubygem-sd_notify>=0.1.0<0.2:devel/rubygem-sd_notify \
 	rubygem-state_machines-activerecord>=0.8.0<0.9.0:databases/rubygem-state_machines-activerecord \
 	rubygem-acts-as-taggable-on>=9.0<10:www/rubygem-acts-as-taggable-on \
-	rubygem-sidekiq>=6.5.7<6.6:devel/rubygem-sidekiq \
-	rubygem-sidekiq-cron>=1.8.0<1.9:devel/rubygem-sidekiq-cron \
-	rubygem-redis-namespace>=1.9.0<1.10.0:databases/rubygem-redis-namespace \
+	rubygem-sidekiq6>=6.5.7<6.6:devel/rubygem-sidekiq6 \
+	rubygem-sidekiq-cron18>=1.8.0<1.9:devel/rubygem-sidekiq-cron18 \
+	rubygem-redis-namespace19>=1.9.0<1.10.0:databases/rubygem-redis-namespace19 \
 	rubygem-gitlab-sidekiq-fetcher>=0.9.0<0.10:devel/rubygem-gitlab-sidekiq-fetcher \
-	rubygem-fugit>=1.2.1<2:devel/rubygem-fugit \
+	rubygem-fugit17>=1.7.0<1.8:devel/rubygem-fugit17 \
 	rubygem-httparty>=0.20.0<0.21:www/rubygem-httparty \
 	rubygem-rainbow>=3.1.1<4.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
@@ -228,7 +228,7 @@ MY_DEPENDS=	git>=2.37.0:devel/git \
 	rubygem-grpc142>=1.42.0<1.43:net/rubygem-grpc142 \
 	rubygem-google-protobuf>=3.21.9<4:devel/rubygem-google-protobuf \
 	rubygem-toml-rb>=2.2.0<3:www/rubygem-toml-rb \
-	rubygem-flipper>=0.25.0<0.26:devel/rubygem-flipper \
+	rubygem-flipper025>=0.25.0<0.26:devel/rubygem-flipper025 \
 	rubygem-flipper-active_record-rails61>=0.25.0<0.26:databases/rubygem-flipper-active_record-rails61 \
 	rubygem-flipper-active_support_cache_store-rails61>=0.25.0<0.26:devel/rubygem-flipper-active_support_cache_store-rails61 \
 	rubygem-unleash>=3.2.2<3.3:devel/rubygem-unleash \
@@ -239,7 +239,7 @@ MY_DEPENDS=	git>=2.37.0:devel/git \
 	rubygem-countries>=3.0.0<4.0.0:devel/rubygem-countries \
 	rubygem-retriable>=3.1.2<3.2.0:devel/rubygem-retriable \
 	rubygem-lru_redux>0:devel/rubygem-lru_redux \
-	rubygem-mail>=2.7.1<2.7.2,2:mail/rubygem-mail \
+	rubygem-mail27>=2.7.1<2.7.2,2:mail/rubygem-mail27 \
 	rubygem-lockbox>=0.6.2<0.7:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
 	rubygem-json>=2.5.1<3:devel/rubygem-json \
