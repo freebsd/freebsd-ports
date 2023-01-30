@@ -1,5 +1,5 @@
 PORTNAME=	arp-scan
-PORTVERSION=	1.9.8
+PORTVERSION=	1.10.0
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,5 +16,8 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	royhills
+
+x-post-install:
+	${RM} ${STAGEDIR}${PREFIX}/bin/get-iab
 
 .include <bsd.port.mk>
