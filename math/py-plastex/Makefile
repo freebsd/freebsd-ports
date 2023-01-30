@@ -1,5 +1,5 @@
 PORTNAME=	plastex
-PORTVERSION=	2.1
+PORTVERSION=	3.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,10 +10,14 @@ COMMENT=	LaTeX Document Processing Framework
 WWW=		https://github.com/plastex/plastex
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=0:graphics/py-pillow@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10.1:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=7:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}unidecode>=0.4.21:converters/py-unidecode@${PY_FLAVOR}
 
-USES=		python:3.5+ tex
+USES=		python:3.6+ tex
 USE_PYTHON=	autoplist concurrent distutils
 USE_TEX=	base:run
 
