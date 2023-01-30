@@ -1,5 +1,5 @@
 PORTNAME=	gupnp
-PORTVERSION=	1.6.2
+PORTVERSION=	1.6.3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	glib>=2.69:devel/glib20 \
 		gobject-introspection>=1.36:devel/gobject-introspection \
-		gssdp>=1.5.2:net/gssdp \
+		gssdp>=1.6.2:net/gssdp \
 		libsoup3>=2.99.0:devel/libsoup3
 LIB_DEPENDS=	libgssdp-1.6.so:net/gssdp \
 		libsoup-3.0.so:devel/libsoup3 \
@@ -24,6 +24,8 @@ USE_GNOME=	glib20 introspection:build libxml2
 MESON_ARGS=	-Dexamples=false -Dgtk_doc=false -Dintrospection=true
 USE_CSTD=	c11
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PATCH_VERSION=${PORTVERSION:E}
 
 CPE_VENDOR=	gnome
 
