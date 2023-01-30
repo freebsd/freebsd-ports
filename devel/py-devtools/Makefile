@@ -1,6 +1,5 @@
 PORTNAME=	devtools
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asttokens>=2.0.0<3.0.0:devel/py-asttokens@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}executing>=0.8.0:devel/py-executing@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}executing>=1.1.1:devel/py-executing@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
