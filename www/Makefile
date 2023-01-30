@@ -2388,7 +2388,6 @@
     SUBDIR += websocketd
     SUBDIR += webstone
     SUBDIR += webstone-ssl
-    SUBDIR += webtrees
     SUBDIR += webtrees20
     SUBDIR += webtrees21
     SUBDIR += wget2
