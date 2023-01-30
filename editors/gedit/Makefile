@@ -1,5 +1,5 @@
 PORTNAME=	gedit
-PORTVERSION=	43.1
+PORTVERSION=	44.2
 CATEGORIES=	editors gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -35,7 +35,7 @@ USE_GNOME=	cairo gdkpixbuf2 gtksourceview4 intlhack introspection libxml2 \
 		pygobject3
 USE_XORG=	sm x11
 USE_LDCONFIG=	yes
-PLIST_SUB=	VERSION=3.38
+PLIST_SUB=	VERSION=44
 INSTALL_TARGET=	install-strip
 MESON_ARGS+=	--buildtype \
 		plain
