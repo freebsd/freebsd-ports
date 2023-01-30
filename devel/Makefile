@@ -1473,6 +1473,7 @@
     SUBDIR += llvm13
     SUBDIR += llvm14
     SUBDIR += llvm15
+    SUBDIR += llvm16
     SUBDIR += lm4tools
     SUBDIR += lmdbg
     SUBDIR += lndir
