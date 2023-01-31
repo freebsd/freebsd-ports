@@ -7,6 +7,8 @@ PORT="$1"
 set -e
 set -o pipefail
 
+export LC_ALL=C
+
 ##
 ## add-port-to-category-makefile.sh: adds a new port to {category}/Makefile
 ##
