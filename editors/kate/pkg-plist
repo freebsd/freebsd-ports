@@ -242,6 +242,7 @@ share/locale/cs/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/cs/LC_MESSAGES/katefiletree.mo
 share/locale/cs/LC_MESSAGES/kategdbplugin.mo
 share/locale/cs/LC_MESSAGES/kategitblameplugin.mo
+share/locale/cs/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/cs/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/cs/LC_MESSAGES/kateproject.mo
 share/locale/cs/LC_MESSAGES/katesearch.mo
@@ -318,6 +319,7 @@ share/locale/el/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/el/LC_MESSAGES/katefiletree.mo
 share/locale/el/LC_MESSAGES/kategdbplugin.mo
 share/locale/el/LC_MESSAGES/kategitblameplugin.mo
+share/locale/el/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/el/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/el/LC_MESSAGES/kateproject.mo
 share/locale/el/LC_MESSAGES/katesearch.mo
