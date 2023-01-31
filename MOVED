@@ -17761,5 +17761,5 @@ devel/py-cachecontrol|www/py-cachecontrol|2023-01-29|Remove duplicate added late
 devel/dulwich|devel/py-dulwich|2023-01-29|Add py- prefix
 www/webtrees||2023-01-30|Has expired: Uses obsolete PHP version; use www/webtrees21 instead
 x11-toolkits/libsexy||2023-01-30|Depends on EOLed gtk+20, not depended on in the ports tree
-x11-toolkits/gmathview||2023-01-30|Depends on EOLed gtk+20, not depended on in the ports tree
+x11-toolkits/gtkmathview||2023-01-30|Depends on EOLed gtk+20, not depended on in the ports tree
 x11-toolkits/vdk||2023-01-30|Depends on EOLed gtk+20, not depended on in the ports tree
