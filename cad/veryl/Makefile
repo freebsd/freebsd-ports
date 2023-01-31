@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	veryl-v
-DISTVERSION=	0.3.0
+DISTVERSION=	0.3.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,7 @@ WRKSRC_SUBDIR=	crates/veryl
 CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
 		ahash-0.7.6 \
-		ahash-0.8.3 \
+		ahash-0.8.2 \
 		aho-corasick-0.7.20 \
 		ammonia-3.3.0 \
 		android_system_properties-0.1.5 \
@@ -41,6 +41,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		bimap-0.6.2 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.3 \
+		bstr-0.2.17 \
 		bstr-1.1.0 \
 		btoi-0.4.2 \
 		bumpalo-3.12.0 \
@@ -49,7 +50,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		bytesize-1.1.0 \
 		cast-0.3.0 \
 		castaway-0.2.2 \
-		cc-1.0.79 \
+		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
 		ciborium-0.2.0 \
@@ -57,7 +58,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ciborium-ll-0.2.0 \
 		clap-3.2.23 \
 		clap-4.1.4 \
-		clap_complete-4.1.1 \
+		clap_complete-4.1.0 \
 		clap_derive-4.1.0 \
 		clap_lex-0.2.4 \
 		clap_lex-0.3.1 \
@@ -77,10 +78,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		crossbeam-queue-0.3.8 \
 		crossbeam-utils-0.8.14 \
 		crypto-common-0.1.6 \
-		cxx-1.0.88 \
-		cxx-build-1.0.88 \
-		cxxbridge-flags-1.0.88 \
-		cxxbridge-macro-1.0.88 \
+		cxx-1.0.87 \
+		cxx-build-1.0.87 \
+		cxxbridge-flags-1.0.87 \
+		cxxbridge-macro-1.0.87 \
 		darling-0.14.2 \
 		darling_core-0.14.2 \
 		darling_macro-0.14.2 \
@@ -93,7 +94,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		directories-4.0.1 \
 		dirs-4.0.0 \
 		dirs-sys-0.3.7 \
-		either-1.8.1 \
+		either-1.8.0 \
 		elasticlunr-rs-3.0.1 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.31 \
@@ -239,7 +240,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		nix-0.26.2 \
 		nom-7.1.3 \
 		nom8-0.2.0 \
-		notify-5.1.0 \
+		notify-5.0.0 \
 		notify-debouncer-mini-0.2.1 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
@@ -248,7 +249,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		object-0.30.3 \
 		once_cell-1.17.0 \
 		oorandom-11.1.3 \
-		opener-0.5.1 \
+		opener-0.5.0 \
 		os_str_bytes-6.4.1 \
 		owo-colors-3.5.0 \
 		parking_lot-0.11.2 \
@@ -260,10 +261,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		parol_runtime-0.12.1 \
 		paste-1.0.11 \
 		percent-encoding-2.2.0 \
-		pest-2.5.4 \
-		pest_derive-2.5.4 \
-		pest_generator-2.5.4 \
-		pest_meta-2.5.4 \
+		pest-2.5.3 \
+		pest_derive-2.5.3 \
+		pest_generator-2.5.3 \
+		pest_meta-2.5.3 \
 		phf-0.10.1 \
 		phf_codegen-0.10.0 \
 		phf_generator-0.10.0 \
@@ -368,9 +369,9 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tokio-tungstenite-0.17.2 \
 		tokio-util-0.7.4 \
 		toml-0.5.11 \
-		toml-0.6.0 \
-		toml_datetime-0.5.1 \
-		toml_edit-0.18.1 \
+		toml-0.7.0 \
+		toml_datetime-0.6.0 \
+		toml_edit-0.19.0 \
 		topological-sort-0.2.2 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
