@@ -1,6 +1,6 @@
-TIMESTAMP = 1672386383
-SHA256 (handbrake/HandBrake-1.6.0-source.tar.bz2) = 7f23c76038b7bf329089d0eb33c14898400fcc0426e310e87dc11e538c103cda
-SIZE (handbrake/HandBrake-1.6.0-source.tar.bz2) = 15968851
+TIMESTAMP = 1674806008
+SHA256 (handbrake/HandBrake-1.6.1-source.tar.bz2) = 94ccfe03db917a91650000c510f7fd53f844da19f19ad4b4be1b8f6bc31a8d4c
+SIZE (handbrake/HandBrake-1.6.1-source.tar.bz2) = 15934833
 SHA256 (handbrake/SVT-AV1-v1.4.1.tar.gz) = e3f7fc194afc6c90b43e0b80fa24c09940cb03bea394e0e1f5d1ded18e9ab23f
 SIZE (handbrake/SVT-AV1-v1.4.1.tar.gz) = 10105880
 SHA256 (handbrake/fdk-aac-2.0.2.tar.gz) = 7812b4f0cf66acda0d0fe4302545339517e702af7674dd04e5fe22a5ade16a90
