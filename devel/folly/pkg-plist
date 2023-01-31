@@ -147,6 +147,7 @@ include/folly/container/Iterator.h
 include/folly/container/Merge.h
 include/folly/container/SparseByteSet.h
 include/folly/container/View.h
+include/folly/container/WeightedEvictingCacheMap.h
 include/folly/container/detail/BitIteratorDetail.h
 include/folly/container/detail/F14Defaults.h
 include/folly/container/detail/F14IntrinsicsAvailability.h
@@ -221,6 +222,7 @@ include/folly/executors/QueuedImmediateExecutor.h
 include/folly/executors/ScheduledExecutor.h
 include/folly/executors/SequencedExecutor.h
 include/folly/executors/SerialExecutor.h
+include/folly/executors/SerializedExecutor.h
 include/folly/executors/SoftRealTimeExecutor.h
 include/folly/executors/StrandExecutor.h
 include/folly/executors/ThreadPoolExecutor.h
