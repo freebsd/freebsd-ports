@@ -1,5 +1,5 @@
 PORTNAME=	lua-language-server
-DISTVERSION=	3.6.7
+DISTVERSION=	3.6.8
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -15,12 +15,13 @@ USES=		compiler:features dos2unix lua:build ninja:make
 USE_GITHUB=	yes
 GH_ACCOUNT=	sumneko
 GH_TUPLE=	actboy168:bee.lua:4da6416:bee/3rd/bee.lua \
-		actboy168:bee.lua:233296d:bee_luamake/3rd/luamake/3rd/bee.lua \
-		actboy168:luamake:d5e957c:luamake/3rd/luamake \
-		cppcxy:EmmyLuaCodeStyle:9ffcbcb:emmyluacodestyle/3rd/EmmyLuaCodeStyle \
-		bjornbytes:lovr-docs:d3645ab:lovr/3rd/lovr-api \
-		love2d-community:love-api:bb3267e:love/3rd/love-api \
-		sqmedeiros:lpeglabel:f3745e2:lpeglabel/3rd/lpeglabel
+		actboy168:bee.lua:4c24786:bee_luamake/3rd/luamake/3rd/bee.lua \
+		actboy168:json.lua:b5f5e7b:json/3rd/json.lua \
+		actboy168:luamake:65e789b:luamake/3rd/luamake \
+		cppcxy:EmmyLuaCodeStyle:66eeece:emmyluacodestyle/3rd/EmmyLuaCodeStyle \
+		bjornbytes:lovr-docs:8900d79:lovr/3rd/lovr-api \
+		love2d-community:love-api:495ecc7:love/3rd/love-api \
+		sqmedeiros:lpeglabel:e25eb35:lpeglabel/3rd/lpeglabel
 
 BINARY_ALIAS=	gcc=${CC}
 DOS2UNIX_FILES=	3rd/bee.lua/bee/thread/spinlock.h \
