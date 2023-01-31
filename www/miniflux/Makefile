@@ -1,5 +1,5 @@
 PORTNAME=	miniflux
-DISTVERSION=	2.0.41
+DISTVERSION=	2.0.42
 CATEGORIES=	www
 
 MAINTAINER=	krion@FreeBSD.org
@@ -23,13 +23,13 @@ GH_TUPLE=	\
 		coreos:go-oidc:v2.2.1:coreos_go_oidc/vendor/github.com/coreos/go-oidc \
 		go-telegram-bot-api:telegram-bot-api:v4.6.4:go_telegram_bot_api_telegram_bot_api/vendor/github.com/go-telegram-bot-api/telegram-bot-api \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:v0.4.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:v0.4.0:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:v0.3.0:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:crypto:v0.5.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:v0.5.0:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:v0.4.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:v0.3.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.3.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.5.0:golang_text/vendor/golang.org/x/text \
+		golang:sys:v0.4.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.4.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.6.0:golang_text/vendor/golang.org/x/text \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		lib:pq:v1.10.7:lib_pq/vendor/github.com/lib/pq \
 		matrix-org:gomatrix:ceba4d9f7530:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
