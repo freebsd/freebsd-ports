@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2023-01-31 15:02:27 UTC
++++ CMakeLists.txt
+@@ -55,7 +55,7 @@ if(NOT CMAKE_BUILD_TYPE)
+ endif()
+ 
+ if (${CMAKE_BUILD_TYPE} MATCHES Release)
+-  set(OPTIMIZE_FLAGS "${OPTIMIZE_FLAGS} -march=native -D_FILE_OFFSET_BITS=64")
++  set(OPTIMIZE_FLAGS "${OPTIMIZE_FLAGS} -D_FILE_OFFSET_BITS=64")
+ endif()
+ 
+ if ((${CMAKE_BUILD_TYPE} MATCHES Release) OR (${CMAKE_BUILD_TYPE} MATCHES RelWithDebInfo))
