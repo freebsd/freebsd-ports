@@ -9,12 +9,12 @@
  
  include(ExternalProject)
  include(FeatureSummary)
-@@ -38,7 +38,7 @@ option(PROFILING "Enable profiling" OFF)
- option(GPROF "Enable gprof profiling" OFF)
- option(ASAN "Use address sanitiser" OFF)
- option(ZIG "Set to OFF to disable the zig code" ON)
--option(WFA_GITMODULE "Force local git submodule for WFA2LIB" ON) # disable in distros, you may need to add path to WFA_INCLUDE_DIRS
-+option(WFA_GITMODULE "Force local git submodule for WFA2LIB" OFF) # disable in distros, you may need to add path to WFA_INCLUDE_DIRS
+@@ -69,7 +69,7 @@ if(NOT CMAKE_BUILD_TYPE)
+ endif()
  
- include(CheckIPOSupported) # adds lto
- check_ipo_supported(RESULT ipo_supported OUTPUT output)
+ if (${CMAKE_BUILD_TYPE} MATCHES Release)
+-  set(EXTRA_FLAGS "-march=native -D_FILE_OFFSET_BITS=64")
++  set(EXTRA_FLAGS "-D_FILE_OFFSET_BITS=64")
+   # set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG") # reset CXX_FLAGS to replace -O3 with -Ofast
+ endif()
+ 
