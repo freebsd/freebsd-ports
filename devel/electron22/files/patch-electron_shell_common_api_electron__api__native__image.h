@@ -1,6 +1,6 @@
---- electron/shell/common/api/electron_api_native_image.h.orig	2022-06-08 15:30:58 UTC
+--- electron/shell/common/api/electron_api_native_image.h.orig	2023-01-24 16:58:16 UTC
 +++ electron/shell/common/api/electron_api_native_image.h
-@@ -79,7 +79,7 @@ class NativeImage : public gin::Wrappable<NativeImage>
+@@ -77,7 +77,7 @@ class NativeImage : public gin::Wrappable<NativeImage>
                                                      const GURL& url);
    static gin::Handle<NativeImage> CreateFromNamedImage(gin::Arguments* args,
                                                         std::string name);

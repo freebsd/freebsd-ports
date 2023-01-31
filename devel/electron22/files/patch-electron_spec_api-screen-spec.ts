@@ -1,4 +1,4 @@
---- electron/spec/api-screen-spec.ts.orig	2021-04-20 23:32:33 UTC
+--- electron/spec/api-screen-spec.ts.orig	2023-01-24 16:58:16 UTC
 +++ electron/spec/api-screen-spec.ts
 @@ -29,7 +29,7 @@ describe('screen module', () => {
      });
@@ -9,7 +9,7 @@
        const display = screen.getPrimaryDisplay();
  
        expect(display).to.have.property('scaleFactor').that.is.a('number');
-@@ -46,7 +46,7 @@ describe('screen module', () => {
+@@ -47,7 +47,7 @@ describe('screen module', () => {
      });
  
      it('has a size object property', function () {
@@ -18,7 +18,7 @@
        const display = screen.getPrimaryDisplay();
  
        expect(display).to.have.property('size').that.is.an('object');
-@@ -56,7 +56,7 @@ describe('screen module', () => {
+@@ -57,7 +57,7 @@ describe('screen module', () => {
      });
  
      it('has a workAreaSize object property', function () {
@@ -27,7 +27,7 @@
        const display = screen.getPrimaryDisplay();
  
        expect(display).to.have.property('workAreaSize').that.is.an('object');
-@@ -66,7 +66,7 @@ describe('screen module', () => {
+@@ -67,7 +67,7 @@ describe('screen module', () => {
      });
  
      it('has a bounds object property', function () {

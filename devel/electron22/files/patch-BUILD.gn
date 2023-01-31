@@ -1,4 +1,4 @@
---- BUILD.gn.orig	2022-11-30 08:12:58 UTC
+--- BUILD.gn.orig	2023-01-30 07:58:58 UTC
 +++ BUILD.gn
 @@ -59,7 +59,7 @@ declare_args() {
    root_extra_deps = []
@@ -51,7 +51,7 @@
      deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
    }
  
-@@ -1107,7 +1115,7 @@ if (!is_ios) {
+@@ -1110,7 +1118,7 @@ if (!is_ios) {
      ]
    }
  
@@ -60,7 +60,7 @@
      # WPT Webdriver tests runner
      # chrome/test/chromedriver/test/run_webdriver_tests.py
      script_test("webdriver_wpt_tests") {
-@@ -1202,7 +1210,7 @@ if (!is_ios) {
+@@ -1205,7 +1213,7 @@ if (!is_ios) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -69,7 +69,7 @@
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1211,7 +1219,7 @@ if (!is_ios) {
+@@ -1214,7 +1222,7 @@ if (!is_ios) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
@@ -78,7 +78,7 @@
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1655,7 +1663,7 @@ group("chromium_builder_perf") {
+@@ -1658,7 +1666,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

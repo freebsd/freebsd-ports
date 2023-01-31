@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_power_monitor.cc.orig	2022-05-18 15:31:32 UTC
+--- electron/shell/browser/api/electron_api_power_monitor.cc.orig	2023-01-24 16:58:16 UTC
 +++ electron/shell/browser/api/electron_api_power_monitor.cc
-@@ -79,6 +79,11 @@ void PowerMonitor::OnResume() {
+@@ -77,6 +77,11 @@ void PowerMonitor::OnResume() {
    Emit("resume");
  }
  
@@ -12,7 +12,7 @@
  #if BUILDFLAG(IS_LINUX)
  void PowerMonitor::SetListeningForShutdown(bool is_listening) {
    if (is_listening) {
-@@ -105,7 +110,7 @@ gin::ObjectTemplateBuilder PowerMonitor::GetObjectTemp
+@@ -103,7 +108,7 @@ gin::ObjectTemplateBuilder PowerMonitor::GetObjectTemp
    auto builder =
        gin_helper::EventEmitterMixin<PowerMonitor>::GetObjectTemplateBuilder(
            isolate);

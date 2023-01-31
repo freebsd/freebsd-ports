@@ -1,4 +1,4 @@
---- electron/shell/browser/electron_browser_main_parts.cc.orig	2023-01-10 12:17:28 UTC
+--- electron/shell/browser/electron_browser_main_parts.cc.orig	2023-01-24 16:58:16 UTC
 +++ electron/shell/browser/electron_browser_main_parts.cc
 @@ -73,7 +73,7 @@
  #include "ui/wm/core/wm_state.h"
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/threading/thread_task_runner_handle.h"
  #include "device/bluetooth/bluetooth_adapter_factory.h"
-@@ -127,7 +127,7 @@ namespace {
+@@ -127,7 +127,7 @@ namespace electron {
  
  namespace {
  
@@ -63,7 +63,7 @@
    // Reset to the original LC_ALL since we should not be changing it.
    if (!locale.empty()) {
      if (lc_all)
-@@ -423,7 +423,7 @@ void ElectronBrowserMainParts::ToolkitInitialized() {
+@@ -424,7 +424,7 @@ void ElectronBrowserMainParts::PostDestroyThreads() {
  }
  
  void ElectronBrowserMainParts::ToolkitInitialized() {
@@ -72,7 +72,7 @@
    auto* linux_ui = ui::GetDefaultLinuxUi();
    CHECK(linux_ui);
    linux_ui_getter_ = std::make_unique<LinuxUiGetterImpl>();
-@@ -535,16 +535,18 @@ void ElectronBrowserMainParts::PostCreateMainMessageLo
+@@ -536,7 +536,7 @@ void ElectronBrowserMainParts::WillRunMainMessageLoop(
  }
  
  void ElectronBrowserMainParts::PostCreateMainMessageLoop() {
@@ -80,10 +80,8 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
    std::string app_name = electron::Browser::Get()->GetName();
  #endif
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   auto shutdown_cb =
-       base::BindOnce(base::RunLoop::QuitCurrentWhenIdleClosureDeprecated());
+ #if BUILDFLAG(IS_LINUX)
+@@ -545,7 +545,9 @@ void ElectronBrowserMainParts::PostCreateMainMessageLo
    ui::OzonePlatform::GetInstance()->PostCreateMainMessageLoop(
        std::move(shutdown_cb));
    bluez::DBusBluezManagerWrapperLinux::Initialize();
@@ -93,7 +91,7 @@
    // Set up crypt config. This needs to be done before anything starts the
    // network service, as the raw encryption key needs to be shared with the
    // network service for encrypted cookie storage.
-@@ -635,7 +637,7 @@ void ElectronBrowserMainParts::PostMainMessageLoopRun(
+@@ -636,7 +638,7 @@ void ElectronBrowserMainParts::PostMainMessageLoopRun(
    fake_browser_process_->PostMainMessageLoopRun();
    content::DevToolsAgentHost::StopRemoteDebuggingPipeHandler();
  

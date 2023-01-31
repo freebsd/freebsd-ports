@@ -1,6 +1,6 @@
---- electron/spec/api-crash-reporter-spec.ts.orig	2021-12-03 01:46:05 UTC
+--- electron/spec/api-crash-reporter-spec.ts.orig	2023-01-24 16:58:16 UTC
 +++ electron/spec/api-crash-reporter-spec.ts
-@@ -12,7 +12,7 @@ const isWindowsOnArm = process.platform === 'win32' &&
+@@ -12,7 +12,7 @@ import * as fs from 'fs';
  import * as uuid from 'uuid';
  
  const isWindowsOnArm = process.platform === 'win32' && process.arch === 'arm64';
@@ -18,6 +18,15 @@
      expect(fields.upload_file_minidump.length).to.be.greaterThan(0);
    }
  }
+@@ -186,7 +186,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
+ 
+     // Ensures that passing in crashpadHandlerPID flag for Linx child processes
+     // does not affect child proocess args.
+-    ifit(process.platform === 'linux')('ensure linux child process args are not modified', async () => {
++    ifit(process.platform === 'linux' || process.platform === 'freebsd')('ensure linux child process args are not modified', async () => {
+       const { port, waitForCrash } = await startServer();
+       let exitCode: number | null = null;
+       const appPath = path.join(__dirname, 'fixtures', 'apps', 'crash');
 @@ -535,7 +535,7 @@ ifdescribe(!isLinuxOnArm && !process.mas && !process.e
        }
      }

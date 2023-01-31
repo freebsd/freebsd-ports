@@ -1,4 +1,4 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2022-11-30 08:12:58 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2023-01-30 07:58:59 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
 @@ -29,7 +29,7 @@
  #include "third_party/blink/public/common/user_agent/user_agent_metadata.h"
@@ -18,7 +18,7 @@
    void SetThreadType(base::PlatformThreadId thread_id,
                       base::ThreadType) override;
  #endif
-@@ -237,7 +237,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -240,7 +240,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    void Collect3DContextInformation(blink::Platform::GraphicsInfo* gl_info,
                                     const gpu::GPUInfo& gpu_info) const;
  
@@ -27,7 +27,7 @@
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -257,7 +257,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -260,7 +260,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    mutable base::WaitableEvent io_thread_id_ready_event_;
    base::PlatformThreadId io_thread_id_ = base::kInvalidThreadId;
  

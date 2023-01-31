@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_safe_storage.cc.orig	2022-05-18 15:31:32 UTC
+--- electron/shell/browser/api/electron_api_safe_storage.cc.orig	2023-01-24 16:58:16 UTC
 +++ electron/shell/browser/api/electron_api_safe_storage.cc
-@@ -31,7 +31,7 @@ void SetElectronCryptoReady(bool ready) {
+@@ -29,7 +29,7 @@ void SetElectronCryptoReady(bool ready) {
  #endif
  
  bool IsEncryptionAvailable() {

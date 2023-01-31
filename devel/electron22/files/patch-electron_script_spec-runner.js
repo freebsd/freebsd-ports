@@ -1,8 +1,8 @@
---- electron/script/spec-runner.js.orig	2021-11-08 18:41:28 UTC
+--- electron/script/spec-runner.js.orig	2023-01-24 16:58:16 UTC
 +++ electron/script/spec-runner.js
-@@ -126,7 +126,7 @@ async function runElectronTests () {
- async function runTestUsingElectron (specDir, testName) {
-   let exe = path.resolve(BASE, utils.getElectronExec());
+@@ -148,7 +148,7 @@ async function runTestUsingElectron (specDir, testName
+     exe = path.resolve(BASE, utils.getElectronExec());
+   }
    const runnerArgs = [`electron/${specDir}`, ...unknownArgs.slice(2)];
 -  if (process.platform === 'linux') {
 +  if (process.platform === 'linux' || process.platform === 'freebsd') {

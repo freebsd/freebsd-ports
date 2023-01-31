@@ -1,15 +1,15 @@
---- electron/shell/common/node_bindings.cc.orig	2022-08-17 15:33:00 UTC
+--- electron/shell/common/node_bindings.cc.orig	2023-01-24 16:58:16 UTC
 +++ electron/shell/common/node_bindings.cc
-@@ -38,7 +38,7 @@
- #include "shell/common/node_includes.h"
+@@ -39,7 +39,7 @@
  #include "third_party/blink/renderer/bindings/core/v8/v8_initializer.h"  // nogncheck
+ #include "third_party/electron_node/src/debug_utils.h"
  
 -#if !defined(MAS_BUILD)
 +#if !defined(MAS_BUILD) && !defined(OS_BSD)
  #include "shell/common/crash_keys.h"
  #endif
  
-@@ -143,7 +143,7 @@ bool g_is_initialized = false;
+@@ -148,7 +148,7 @@ bool g_is_initialized = false;
  void V8FatalErrorCallback(const char* location, const char* message) {
    LOG(ERROR) << "Fatal error in V8: " << location << " " << message;
  
@@ -18,7 +18,7 @@
    electron::crash_keys::SetCrashKey("electron.v8-fatal.message", message);
    electron::crash_keys::SetCrashKey("electron.v8-fatal.location", location);
  #endif
-@@ -370,7 +370,7 @@ void NodeBindings::Initialize() {
+@@ -391,7 +391,7 @@ void NodeBindings::Initialize() {
    TRACE_EVENT0("electron", "NodeBindings::Initialize");
    // Open node's error reporting system for browser process.
  

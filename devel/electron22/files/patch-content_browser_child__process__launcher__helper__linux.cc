@@ -1,4 +1,4 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2023-01-23 08:53:25 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2023-01-30 07:58:59 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
 @@ -20,7 +20,9 @@
  #include "content/public/common/result_codes.h"
@@ -14,18 +14,18 @@
    options->fds_to_remap = files_to_register.GetMappingWithIDAdjustment(
        base::GlobalDescriptors::kBaseDescriptor);
  
-+# if !BUILDFLAG(IS_BSD)
++#if !BUILDFLAG(IS_BSD)
    if (GetProcessType() == switches::kRendererProcess) {
      const int sandbox_fd = SandboxHostLinux::GetInstance()->GetChildSocket();
      options->fds_to_remap.push_back(std::make_pair(sandbox_fd, GetSandboxFD()));
-@@ -68,6 +71,7 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
+@@ -67,6 +70,7 @@ bool ChildProcessLauncherHelper::BeforeLaunchOnLaunche
+   if (!zygote_handle) {
      options->allow_new_privs = true;
    }
- 
 +#endif
+ 
    for (const auto& remapped_fd : file_data_->additional_remapped_fds) {
      options->fds_to_remap.emplace_back(remapped_fd.second.get(),
-                                        remapped_fd.first);
 @@ -88,6 +92,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;

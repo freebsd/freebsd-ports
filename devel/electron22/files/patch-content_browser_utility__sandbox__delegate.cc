@@ -1,6 +1,6 @@
---- content/browser/utility_sandbox_delegate.cc.orig	2022-10-24 13:33:33 UTC
+--- content/browser/utility_sandbox_delegate.cc.orig	2023-01-30 07:58:59 UTC
 +++ content/browser/utility_sandbox_delegate.cc
-@@ -63,10 +63,10 @@ UtilitySandboxedProcessLauncherDelegate::
+@@ -65,10 +65,10 @@ UtilitySandboxedProcessLauncherDelegate::
  #if BUILDFLAG(ENABLE_PPAPI)
        sandbox_type_ == sandbox::mojom::Sandbox::kPpapi ||
  #endif
@@ -13,7 +13,7 @@
        sandbox_type_ == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
  #if BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -109,7 +109,7 @@ ZygoteHandle UtilitySandboxedProcessLauncherDelegate::
+@@ -117,7 +117,7 @@ ZygoteHandle UtilitySandboxedProcessLauncherDelegate::
    // unsandboxed zygote and then apply their actual sandboxes in the forked
    // process upon startup.
    if (sandbox_type_ == sandbox::mojom::Sandbox::kNetwork ||
