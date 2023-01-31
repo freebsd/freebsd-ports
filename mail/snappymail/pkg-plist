@@ -7,7 +7,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/domains/default.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/domains/disabled
 %%WWWDIR%%/snappymail/v/%%VER%%/app/domains/gmail.com.json
-%%WWWDIR%%/snappymail/v/%%VER%%/app/domains/hotmail.com.ini
+%%WWWDIR%%/snappymail/v/%%VER%%/app/domains/hotmail.com.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Collection.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/DateTimeHelper.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Base/Enumerations/Charset.php
@@ -574,7 +574,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/crypt.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/dav/client.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/dns.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/magic.mime
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/magic.mime.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/file/mimetype.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/http/csp.php
@@ -612,7 +611,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/gpg.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/gpgkeysettings.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/keyservers.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/php.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/qrcode.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/repository.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl.php
@@ -771,7 +769,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/zh-TW/relativetimeformat.js
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/zh-TW/static.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/localization/zh-TW/user.json
-%%WWWDIR%%/snappymail/v/%%VER%%/app/templates/BadBrowser.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Error.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Index.html
 %%WWWDIR%%/snappymail/v/%%VER%%/app/templates/Views/Admin/AdminLogin.html
