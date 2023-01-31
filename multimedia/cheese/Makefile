@@ -1,6 +1,6 @@
 PORTNAME=	cheese
 PORTVERSION=	41.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -16,7 +16,6 @@ BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat \
 		gnome-video-effects>=0:graphics/gnome-video-effects \
 		itstool:textproc/itstool
 LIB_DEPENDS=	libcanberra-gtk3.so:audio/libcanberra-gtk3 \
-		libcanberra-gtk.so:audio/libcanberra-gtk2 \
 		libcanberra.so:audio/libcanberra \
 		libclutter-1.0.so:graphics/clutter \
 		libcogl.so:graphics/cogl \
@@ -41,6 +40,6 @@ MESON_ARGS=	-Dgtk_doc=false \
 GLIB_SCHEMAS=	org.gnome.Cheese.gschema.xml
 
 post-patch:
-	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|canberra-gtk\.h|canberra-gtk2/canberra-gtk.h|'
+	@${FIND} ${WRKSRC} -type f | ${XARGS} ${REINPLACE_CMD} -e 's|canberra-gtk\.h|canberra-gtk3/canberra-gtk.h|'
 
 .include <bsd.port.mk>
