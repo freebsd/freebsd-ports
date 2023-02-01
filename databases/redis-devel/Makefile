@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	7.0.8.20230116
+DISTVERSION=	7.0.8.20230131
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES+=		compiler:c11 cpe gmake
 CPE_VENDOR=	redislabs
 USE_GITHUB=	yes
-GH_TAGNAME=	b4123663c
+GH_TAGNAME=	46393f981
 
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
@@ -71,7 +71,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
 		${PATCHDIR}/extra-patch-src-function_lua.c \
 		${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
 .  endif
-. endif
+.endif
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
 
