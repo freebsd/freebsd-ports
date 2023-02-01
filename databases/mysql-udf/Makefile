@@ -8,10 +8,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of user-defined functions for the MySQL server
 WWW=		http://mysql-udf.sourceforge.net/
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LICENSE=	BSD2CLAUSE
+
+DEPRECATED=	Upstream last update was in 2007
+EXPIRATION_DATE=	2023-12-31
 
 USES=		mysql
+IGNORE_WITH_MYSQL=	80
+
 CFLAGS+=	-fPIC
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MODULES=	colwidth confidence_higher confidence_lower correlation \
 		faculty geomean intercept kurtosis longest median noverm \
