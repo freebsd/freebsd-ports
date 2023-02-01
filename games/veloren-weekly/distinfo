@@ -1,4 +1,4 @@
-TIMESTAMP = 1674550158
+TIMESTAMP = 1675248061
 SHA256 (rust/crates/ab_glyph-0.2.17.crate) = 04a9283dace1c41c265496614998d5b9c4a97b3eb770e804f007c5144bf03f2b
 SIZE (rust/crates/ab_glyph-0.2.17.crate) = 17243
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.7.crate) = 330223a1aecc308757b9926e9391c9b47f8ef2dbd8aea9df88312aea18c5e8d6
@@ -587,6 +587,8 @@ SHA256 (rust/crates/lazycell-1.3.0.crate) = 830d08ce1d1d941e6b30645f1a0eb5643013
 SIZE (rust/crates/lazycell-1.3.0.crate) = 12502
 SHA256 (rust/crates/leb128-0.2.5.crate) = 884e2677b40cc8c339eaefcb701c32ef1fd2493d71118dc0ca4b6a736c93bd67
 SIZE (rust/crates/leb128-0.2.5.crate) = 11843
+SHA256 (rust/crates/levenshtein-1.0.5.crate) = db13adb97ab515a3691f56e4dbab09283d0b86cb45abd991d8634a9d6f501760
+SIZE (rust/crates/levenshtein-1.0.5.crate) = 1389
 SHA256 (rust/crates/lewton-0.10.2.crate) = 777b48df9aaab155475a83a7df3070395ea1ac6902f5cd062b8f2b028075c030
 SIZE (rust/crates/lewton-0.10.2.crate) = 68807
 SHA256 (rust/crates/libc-0.2.133.crate) = c0f80d65747a3e43d1596c7c5492d95d5edddaabd45a7fcdb02b95f644164966
@@ -1495,5 +1497,5 @@ SHA256 (hasenbanck-egui_wgpu_backend-63a002c6a9b6c016e45806dd065864431caab621_GH
 SIZE (hasenbanck-egui_wgpu_backend-63a002c6a9b6c016e45806dd065864431caab621_GH0.tar.gz) = 11500
 SHA256 (yoanlcq-vek-84d5cb65841d46599a986c5477341bea4456be26_GH0.tar.gz) = f6fc0b8e9b1290729ea94865be84a8c47846e49e3c193dab700940e1452d2fed
 SIZE (yoanlcq-vek-84d5cb65841d46599a986c5477341bea4456be26_GH0.tar.gz) = 90485
-SHA256 (veloren-veloren-1904740ffd6eff97d65cd853297c5de8af9316e2_GL0.tar.gz) = 322ba4e6748248da33407f2c82f13525786259b9b2aa839c5233f0d44a8e65ae
-SIZE (veloren-veloren-1904740ffd6eff97d65cd853297c5de8af9316e2_GL0.tar.gz) = 258374110
+SHA256 (veloren-veloren-215319629433ebcf00c30a2263c3d3f96eb7f708_GL0.tar.gz) = 8c319cbfe8193c9a73fa04ce5ebb7abe940b26d38691954ebf20424a009d2a12
+SIZE (veloren-veloren-215319629433ebcf00c30a2263c3d3f96eb7f708_GL0.tar.gz) = 258457738
