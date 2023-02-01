@@ -1,3 +1,37 @@
+  <vuln vid="ee890be3-a1ec-11ed-a81d-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.8.0</ge><lt>15.8.1</lt></range>
+	<range><ge>15.7.0</ge><lt>15.7.6</lt></range>
+	<range><ge>12.4.0</ge><lt>15.6.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/01/31/security-release-gitlab-15-8-1-released/">
+	  <p>Denial of Service via arbitrarily large Issue descriptions</p>
+	  <p>CSRF via file upload allows an attacker to take over a repository</p>
+	  <p>Sidekiq background job DoS by uploading malicious CI job artifact zips</p>
+	  <p>Sidekiq background job DoS by uploading a malicious Helm package</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3411</cvename>
+      <cvename>CVE-2022-4138</cvename>
+      <cvename>CVE-2022-3759</cvename>
+      <cvename>CVE-2023-0518</cvename>
+      <url>https://about.gitlab.com/releases/2023/01/31/security-release-gitlab-15-8-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-01-31</discovery>
+      <entry>2023-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="98f78c7a-a08e-11ed-946e-002b67dfc673">
     <topic>Plex Media Server -- security vulnerability</topic>
     <affects>
