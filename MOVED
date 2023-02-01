@@ -7907,7 +7907,6 @@ math/p5-Math-Geometry-Planar-GPC-Polygon||2015-12-30|Has expired: Broken for mor
 www/eliom||2015-12-30|Has expired: Depends on broken and expiring www/ocsigen
 audio/py-fastaudio||2015-12-30|Has expired: Broken for more than 6 months
 devel/jgoodies-common||2015-12-30|Has expired: Broken for more than 6 months
-games/kanatest||2015-12-30|Has expired: Broken for more than 6 months
 security/burpsuite||2015-12-30|Has expired: Broken for more than 6 months
 dns/bind10|dns/bundy|2015-12-31|Has expired: Is not developed any more, use dns/bundy
 lang/perl5.16||2015-12-31|Has expired: Unsupported, please upgrade to a more recent version of Perl

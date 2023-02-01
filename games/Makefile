@@ -425,6 +425,7 @@
     SUBDIR += jvgs
     SUBDIR += jzip
     SUBDIR += kanagram
+    SUBDIR += kanatest
     SUBDIR += kapman
     SUBDIR += kartofel
     SUBDIR += katomic
