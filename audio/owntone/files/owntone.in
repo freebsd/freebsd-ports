@@ -1,0 +1,33 @@
+#!/bin/sh
+
+# PROVIDE: owntone
+# REQUIRE: avahi_daemon dbus
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# owntone_enable (bool):	Set to NO by default.
+#				Set it to YES to enable owntone.
+# owntone_config (path):	Set to %%PREFIX%%/etc/owntone.conf
+#				by default.
+# owntone_flags (str):	Set to "" by default
+
+. /etc/rc.subr
+
+name=owntone
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${owntone_enable:="NO"}
+: ${owntone_config:="%%PREFIX%%/etc/owntone.conf"}
+: ${owntone_flags:=""}
+
+pidfile="/var/run/owntone.pid"
+required_files="$owntone_config"
+
+command="%%PREFIX%%/sbin/owntone"
+command_args="-P $pidfile -c $owntone_config $owntone_flags"
+
+run_rc_command "$1"

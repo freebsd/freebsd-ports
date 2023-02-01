@@ -17407,7 +17407,7 @@ multimedia/mpeg_play||2022-06-30|Has expired: Obsolete, please consider using mu
 multimedia/mpeg_stat||2022-06-30|Has expired: Obsolete, please consider using multimedia/mediainfo or multimedia/ffmpeg
 multimedia/qt-faststart||2022-06-30|Has expired: Obsolete, please consider using multimedia/Bento4, multimedia/gpac-mp4box or multimedia/ffmpeg
 multimedia/spigot||2022-06-30|Has expired: Deprecated hardware, released in the early 90s
-audio/forked-daapd||2022-06-30|Has expired: Deprecated upstream, project is now called OwnTone
+audio/forked-daapd|audio/owntone|2022-06-30|Has expired: Deprecated upstream, project is now called OwnTone
 multimedia/tstools||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
 multimedia/sabbu||2022-06-30|Has expired: please consider using multimedia/aegisub
 multimedia/avinfo||2022-06-30|Has expired: Last release in 2008, please consider using multimedia/mediainfo or multimedia/ffmpeg instead
