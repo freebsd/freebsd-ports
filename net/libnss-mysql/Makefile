@@ -4,7 +4,7 @@ PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	SF
 
-MAINTAINER=	vd@FreeBSD.org
+MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	NSS module using a MySQL database for backend
 WWW=		http://libnss-mysql.sourceforge.net/
 
