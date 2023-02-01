@@ -295,7 +295,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/rotate.jpg
 %%DATADIR%%/images/saturation.jpg
 %%DATADIR%%/images/save.png
-%%DATADIR%%/images/search-images-metadata.jpg
 %%DATADIR%%/images/search-images.jpg
 %%DATADIR%%/images/select-area-finish.jpg
 %%DATADIR%%/images/select-area.jpg

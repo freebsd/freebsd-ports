@@ -1,5 +1,5 @@
 PORTNAME=	fotoxx
-PORTVERSION=	23.0
+PORTVERSION=	23.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/
 
