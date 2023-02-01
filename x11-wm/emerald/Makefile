@@ -13,14 +13,15 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:x11-wm/compiz
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
+		libfreetype.so:print/freetype2 \
+		libwnck-1.so:x11-toolkits/libwnck
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 GNU_CONFIGURE=	yes
 USES=		desktop-file-utils gl gmake gnome libtool pathfix \
 		pkgconfig shared-mime-info tar:bzip2 xorg
 USE_GL=		gl
-USE_GNOME=	cairo gtk20 intltool libwnck pango
+USE_GNOME=	cairo gtk20 intltool pango
 USE_XORG=	x11 xrender
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
