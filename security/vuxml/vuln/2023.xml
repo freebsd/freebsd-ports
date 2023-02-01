@@ -1,3 +1,37 @@
+  <vuln vid="2b5fc9c4-eaca-46e0-83d0-9b10c51c4b1b">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>5.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v5.0.6">
+	  <p> A missing field in the SMB FSControl script-land record could
+	  cause a heap buffer overflow when receiving packets containing
+	  those header types. </p>
+	  <p> Receiving a series of packets that start with HTTP/1.0
+	  and then switch to HTTP/0.9 could cause Zeek to spend a
+	  large amount of time processing the packets. </p>
+	  <p> Receiving large numbers of FTP commands sequentially
+	  from the network with bad data in them could cause Zeek
+	  to spend a large amount of time processing the packets,
+	  and generate a large amount of events. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v5.0.6</url>
+    </references>
+    <dates>
+      <discovery>2023-02-01</discovery>
+      <entry>2023-02-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ee890be3-a1ec-11ed-a81d-001b217b3468">
     <topic>Gitlab -- Multiple Vulnerabilities</topic>
     <affects>
