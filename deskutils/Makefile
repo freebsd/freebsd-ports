@@ -140,6 +140,7 @@
     SUBDIR += kdepim-addons
     SUBDIR += kdepim-runtime
     SUBDIR += keditbookmarks
+    SUBDIR += keep-presence
     SUBDIR += kfind
     SUBDIR += kmail
     SUBDIR += kmail-account-wizard
