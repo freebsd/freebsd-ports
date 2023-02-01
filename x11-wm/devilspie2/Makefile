@@ -1,5 +1,6 @@
 PORTNAME=	devilspie2
 PORTVERSION=	0.43
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.savannah.nongnu.org/releases/devilspie2/
 DISTFILES=	${PORTNAME}_${PORTVERSION}-src.tar.gz
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libwnck-3.so:x11-toolkits/libwnck3
 
 USES=		gettext gmake gnome lua:51 pkgconfig tar:xz
-USE_GNOME=	glib20 gtk30 intltool libwnck
+USE_GNOME=	glib20 gtk30 intltool
 MAKE_ENV+=	"PKG_CONFIG_PATH=${LOCALBASE}/libdata/pkgconfig"
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/glib-2.0 \
 		-I${LUA_INCDIR}
