@@ -6,7 +6,7 @@ MASTER_SITES=	MYSQL/Connector-ODBC/5.3
 PKGNAMESUFFIX=	-${DRIVER_MANAGER}-mysql${MYSQL_VER}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	ODBC driver for MySQL${MYSQL_VER} / ${DRIVER_MANAGER}
 WWW=		https://www.mysql.com/
 
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 USES=		cmake compiler:c++11-lang mysql
+IGNORE_WITH_MYSQL=	80
 
 CMAKE_ARGS=	-DWITH_UNIXODBC=1 -DDISABLE_GUI=1
 USE_LDCONFIG=	yes
