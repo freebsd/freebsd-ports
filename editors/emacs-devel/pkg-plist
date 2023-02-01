@@ -3437,6 +3437,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/bat-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/bug-reference.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/bug-reference.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/c-ts-common.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/c-ts-common.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/c-ts-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/c-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/cc-align.el.gz
@@ -3805,6 +3807,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/flyspell.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/glyphless-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/glyphless-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/html-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/html-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/ispell.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/ispell.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/textmodes/less-css-mode.el.gz
