@@ -354,6 +354,7 @@ include/broker/zeek.hh
 %%SPICY%%include/hilti/rt/3rdparty/ghc/fs_std.hpp
 %%SPICY%%include/hilti/rt/3rdparty/ghc/fs_std_fwd.hpp
 %%SPICY%%include/hilti/rt/3rdparty/ghc/fs_std_impl.hpp
+%%SPICY%%include/hilti/rt/3rdparty/nlohmann/json.hpp
 %%SPICY%%include/hilti/rt/3rdparty/nlohmann/json_fwd.hpp
 %%SPICY%%include/hilti/rt/3rdparty/tinyformat/tinyformat.h
 %%SPICY%%include/hilti/rt/any.h
