@@ -69,6 +69,7 @@ CONFIGURE_ARGS+=	--without-ldap
 
 .if ${LIBGDA5_SLAVE}==mysql
 USES+=			mysql
+IGNORE_WITH_MYSQL=	80
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-mysql
