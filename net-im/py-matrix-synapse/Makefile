@@ -1,5 +1,5 @@
 PORTNAME=	matrix-synapse
-DISTVERSION=	1.75.0
+DISTVERSION=	1.76.0
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}twisted>=18.9.0:devel/py-twisted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}treq>=15.1:www/py-treq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=16.0.0:security/py-openssl@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=3.13:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1>=0.1.9:devel/py-pyasn1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1-modules>=0.0.7:devel/py-pyasn1-modules@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.7:security/py-bcrypt@${PY_FLAVOR} \
@@ -97,7 +97,7 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		pythonize-0.17.0 \
 		quote-1.0.21 \
 		redox_syscall-0.2.16 \
-		regex-1.7.0 \
+		regex-1.7.1 \
 		regex-syntax-0.6.27 \
 		ryu-1.0.11 \
 		scopeguard-1.1.0 \
