@@ -113,6 +113,7 @@
     SUBDIR += uperf
     SUBDIR += vegeta
     SUBDIR += vkmark
+    SUBDIR += vkoverhead
     SUBDIR += vkpeak
     SUBDIR += webbench
     SUBDIR += wrk
