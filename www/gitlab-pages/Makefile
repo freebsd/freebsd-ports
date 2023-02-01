@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-pages
-PORTVERSION=	15.8.0
+PORTVERSION=	15.8.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -16,7 +16,7 @@ GO_MODULE=	gitlab.com/gitlab-org/gitlab-pages
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitlab-pages/-/tags/
-GL_COMMIT=	a921fa8326bb9f3f7fc440875cb9b5bb71d5657d
+GL_COMMIT=	345ed7982842b70a17aed0b08dcee21af78b30df
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
