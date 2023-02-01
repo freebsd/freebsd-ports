@@ -18,6 +18,7 @@ LIB_DEPENDS=	libgd.so:graphics/gd \
 		libpng.so:graphics/png
 
 USES=		gmake libtool iconv mysql pgsql ssl
+IGNORE_WITH_MYSQL=	80
 USE_SUBMAKE=	yes
 
 CONFLICTS=	qmail-ldap digest
