@@ -1,20 +1,23 @@
 PORTNAME=	ripmime
-PORTVERSION=	1.4.0.10
+PORTVERSION=	1.4.1.0
 CATEGORIES=	mail
-MASTER_SITES=	http://www.pldaniels.com/ripmime/ \
-		GENTOO
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Extracts attached files out of a MIME encoded email package
-WWW=		https://pldaniels.com/ripmime/
+WWW=		https://github.com/inflex/ripMIME
+
+LICENSE=	BSD4CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 MAKE_JOBS_UNSAFE=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	inflex
+WRKSRC=		${WRKDIR}/ripMIME-${PORTVERSION}
 PLIST_FILES=	bin/ripmime man/man1/ripmime.1.gz
 
-pre-build:
-	@${REINPLACE_CMD} -e 's!CC=!CC?=!; s!/usr/local!${PREFIX}!; \
-		s!^CFLAGS=!CFLAGS ?=!' \
+post-patch:
+	@${REINPLACE_CMD} -e 's!^CFLAGS=!CFLAGS ?=!' \
 		${WRKSRC}/Makefile ${WRKSRC}/ripOLE/Makefile \
 		${WRKSRC}/tnef/Makefile
 
