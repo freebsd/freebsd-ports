@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-pages
 PORTVERSION=	15.8.1
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 
@@ -29,8 +30,8 @@ MASTER_SITES+=	https://gitlab.com/gitlab-org/gitlab-pages/-/raw/v${DISTVERSION}/
 DISTFILES+=	go.mod
 DIST_SUBDIR=	go/${PKGORIGIN:S,/,_,g}/${DISTNAME}
 EXTRACT_ONLY+=	${DISTFILES:N*.mod\:*:N*.mod:C/:.*//}
-_USES_fetch+=	800:go-post-fetch
-go-post-fetch:
+_USES_fetch+=	900:go-post-fetch-gitlab
+go-post-fetch-gitlab:
 	@${ECHO_MSG} "===> Fetching ${PORTNAME} dependencies";
 	@(cd ${DISTDIR}/${DIST_SUBDIR}; \
 		[ -e go.mod ] || ${RLN} ${GO_MODFILE} go.mod; \
