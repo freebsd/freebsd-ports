@@ -1,6 +1,6 @@
---- lib/expr/exgram.h.orig	2019-09-12 02:11:30 UTC
+--- lib/expr/exgram.h.orig	2023-01-21 19:59:25 UTC
 +++ lib/expr/exgram.h
-@@ -23,7 +23,7 @@ extern "C" {
+@@ -20,7 +20,7 @@ extern "C" {
   * sometimes free stuff can cost a lot
   */
  

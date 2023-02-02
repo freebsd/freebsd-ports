@@ -1,6 +1,6 @@
 PORTNAME=	graphviz
-PORTVERSION=	2.50.0
-PORTREVISION=	18
+PORTVERSION=	7.1.0
+PORTREVISION=	0
 CATEGORIES=	graphics tk
 MASTER_SITES=	https://gitlab.com/api/v4/projects/4207231/packages/generic/graphviz-releases/${PORTVERSION}/
 
@@ -44,8 +44,7 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 FIX_INCLUDE=	lib/cdt/dthdr.h lib/pathplan/tri.h \
 		lib/pathplan/pathutil.h lib/pathplan/solvers.h \
 		lib/pathplan/vis.h lib/pathplan/vispath.h \
-		lib/common/logic.h lib/common/globals.h \
-		lib/gvc/gvcint.h
+		lib/common/globals.h lib/gvc/gvcint.h
 FIX_TCL_SCRIPT=	tclpkg/gdtclft/demo/entities.tcl \
 		tclpkg/tcldot/demo/gcat.tcl
 FIX_TK_SCRIPT=	tclpkg/tcldot/demo/doted.tcl \
@@ -95,6 +94,7 @@ GHOSTSCRIPT_USES=ghostscript
 PERL_USES=	perl5
 PHP_USES=	php:build gnome
 PHP_USE=	GNOME=libxml2
+PHP_BROKEN=	needs swig 4.2.0
 PYTHON_USES=	python:build
 RUBY_USES=	ruby
 LUA_USES=	lua
@@ -116,7 +116,6 @@ GHOSTSCRIPT_LIB_DEPENDS=	libgs.so:print/${_GS_PORT}
 
 XPM_CONFIGURE_WITH=		x
 XPM_CONFIGURE_ENV=		ac_cv_header_sys_inotify_h=no
-XPM_CONFIGURE_ON=		--enable-lefty
 DIGCOLA_CONFIGURE_WITH=		digcola
 IPSEPCOLA_CONFIGURE_WITH=	ipsepcola
 IPSEPCOLA_IMPLIES=		DIGCOLA
@@ -143,12 +142,15 @@ PERL_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.pl
 PHP_CONFIGURE_ENABLE=		php
 PHP_CPPFLAGS=		-I${LOCALBASE}/include/php/Zend
 PHP_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.php
-PYTHON_CONFIGURE_ENABLE=	python
+PYTHON_CONFIGURE_ENABLE=	python3
 PYTHON_LDFLAGS=		"-L${PYTHONBASE}/lib"
 PYTHON_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.py
 PYTHON_CONFIGURE_ENV=	PYTHON_INCLUDEDIR="${PYTHON_INCLUDEDIR}"
 RUBY_CONFIGURE_ENABLE=		ruby
-RUBY_CONFIGURE_ENV=	RUBY="${RUBY}"
+RUBY_CONFIGURE_ENV=	RUBY="${RUBY}" RUBY_VER="${RUBY_VER}" \
+			RUBY_CFLAGS="${RUBY_CFLAGS}" \
+			RUBY_LDFLAGS="${RUBY_LDFLAGS}" \
+			RUBY_INSTALL_DIR="${RUBY_SITEARCHLIBDIR}"
 RUBY_VARS=		SHEBANG_FILES+=tclpkg/gv/demo/modgraph.rb
 LUA_CONFIGURE_ENABLE=		lua
 LUA_CFLAGS=		-I${LUA_INCDIR}
@@ -177,6 +179,7 @@ GD_PORT?=	graphics/gd
 CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--enable-dependency-tracking \
 		--enable-r=no \
+		--with-demos="${EXAMPLESDIR}" \
 		--with-freetype2=yes \
 		--with-libgd \
 		--with-webp \
@@ -186,8 +189,22 @@ CONFIGURE_ARGS+=	--program-transform-name="s/x/x/" \
 		--without-rsvg \
 		--with-qt=no \
 		--disable-io --disable-ocaml --disable-java \
-		--disable-python2 --disable-python3 \
+		--disable-python2 \
 		--disable-sharp
+
+.if ${PORT_OPTIONS:MPYTHON}
+BINARY_ALIAS+=	python3=${PYTHON_CMD}
+.endif
+
+.if ${PORT_OPTIONS:MRUBY}
+RUBY_CFLAGS+=	-I "${LOCALBASE}/include/ruby-${RUBY_VER}/" \
+		-I "${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}"
+.if exists(${LOCALBASE}/bin/ruby${RUBY_SHLIBVER})
+RUBY_LIBS!=	${LOCALBASE}/bin/ruby${RUBY_SHLIBVER} \
+		-r rbconfig -e "print RbConfig::CONFIG[ 'LIBS' ]"
+RUBY_LDFLAGS+=	${RUBY_LIBS}
+.endif
+.endif
 
 .if ${PORT_OPTIONS:MICONV}
 CONFIGURE_ARGS+=	--with-iconvlibdir=${ICONV_PREFIX}/lib
@@ -214,21 +231,12 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|PHP_INSTALL_DATADIR=.*|PHP_INSTALL_DATADIR="${PREFIX}/share/php"|' \
 		-e 's|LUA_INSTALL_DIR=.*|LUA_INSTALL_DIR="${LUA_MODLIBDIR}"|' \
+		-e 's| vendorarchdir| sitearchdir|' \
 		${WRKSRC}/configure.ac
 	${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
 	${REINPLACE_CMD} -e 's|SF_FLAGS|SFIO_FLAGS|g' \
 		${WRKSRC}/lib/sfio/*.[ch]
-	${FIND} ${WRKSRC} -name Makefile.am | \
-		${XARGS} ${REINPLACE_CMD} \
-		-e 's| $$(pkgdatadir)/doc/pdf| ${DOCSDIR}/pdf|' \
-		-e 's| $$(pkgdatadir)/doc/html/schema| ${DOCSDIR}/html/schema|' \
-		-e 's| $$(pkgdatadir)/doc/html/info| ${DOCSDIR}/html/info|' \
-		-e 's| $$(pkgdatadir)/doc/html| ${DOCSDIR}/html|' \
-		-e 's| $$(pkgdatadir)/doc| ${DOCSDIR}|' \
-		-e 's| $$(pkgdatadir)/demo| ${EXAMPLESDIR}|' \
-		-e 's| $$(datadir)/@PACKAGE@/demo| ${EXAMPLESDIR}|';
-	${CP} ${FILESDIR}/version.m4 ${WRKSRC}/version.m4
 	cd ${WRKSRC} && ${REINPLACE_CMD} \
 		-e 's|exec tclsh |exec tclsh${TCL_VER} |' ${FIX_TCL_SCRIPT}
 	cd ${WRKSRC} && ${REINPLACE_CMD} \

@@ -1,10 +1,10 @@
---- lib/expr/expr.h.orig	2019-09-12 02:11:30 UTC
+--- lib/expr/expr.h.orig	2023-01-21 19:59:25 UTC
 +++ lib/expr/expr.h
-@@ -27,6 +27,7 @@ extern "C" {
+@@ -24,6 +24,7 @@ extern "C" {
  
- #include <ast.h>
+ #include <ast/ast.h>
  #include <inttypes.h>
 +#include <limits.h>
  
- #undef	RS	/* hp.pa <signal.h> grabs this!! */
+ #include <expr/exparse.h>
  
