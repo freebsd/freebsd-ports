@@ -1,5 +1,5 @@
 PORTNAME=	ansible-lint
-PORTVERSION=	6.11.0
+PORTVERSION=	6.12.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/willthames/ansible-lint
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.2.7:sysutils/py-ansible-compat@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=3.0.1:sysutils/py-ansible-compat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ansible-core>=2.12.0:sysutils/py-ansible-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}black>=22.8.0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.3.0:sysutils/py-filelock@${PY_FLAVOR} \
@@ -31,14 +31,11 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>=3.7.0:devel/py-flaky@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 
 USES=		python:3.8+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 
 post-patch:
 	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
-
-do-test:
-	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.mk>
