@@ -1,3 +1,34 @@
+  <vuln vid="c3fb48cc-a2ff-11ed-8fbc-6cf0490a8c18">
+    <topic>Spotipy -- Path traversal vulnerability</topic>
+    <affects>
+      <package>
+	<name>py37-spotipy</name>
+	<name>py38-spotipy</name>
+	<name>py39-spotipy</name>
+	<name>py310-spotipy</name>
+	<name>py311-spotipy</name>
+	<range><le>2.22.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>StÃ©phane Bruckert</p>
+  <blockquote cite="https://github.com/spotipy-dev/spotipy/security/advisories/GHSA-q764-g6fm-555v">
+	  <p>If a malicious URI is passed to the library, the library can be tricked into performing an operation on a different API endpoint than intended.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-23608</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-23608</url>
+      <url>https://github.com/spotipy-dev/spotipy/security/advisories/GHSA-q764-g6fm-555v</url>
+    </references>
+    <dates>
+      <discovery>2023-01-16</discovery>
+      <entry>2023-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2b5fc9c4-eaca-46e0-83d0-9b10c51c4b1b">
     <topic>zeek -- potential DoS vulnerabilities</topic>
     <affects>
