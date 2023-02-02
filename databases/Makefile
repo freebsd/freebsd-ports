@@ -205,6 +205,7 @@
     SUBDIR += mysql-connector-java
     SUBDIR += mysql-connector-java51
     SUBDIR += mysql-connector-odbc
+    SUBDIR += mysql-connector-odbc-80
     SUBDIR += mysql-q4m
     SUBDIR += mysql-udf
     SUBDIR += mysql2pgsql
