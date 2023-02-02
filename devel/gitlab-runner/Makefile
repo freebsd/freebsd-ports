@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-runner
-DISTVERSION=	15.8.0
+DISTVERSION=	15.8.1
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -33,7 +33,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find tags here:
 # https://gitlab.com/gitlab-org/gitlab-runner/tags
-GL_COMMIT=	12335144f0cb781ab167a1c18af7f991f0284ff1
+GL_COMMIT=	f86890c6977499cb83a63f9f6f4ad08549861809
 GITBRANCH=	15-8-stable
 
 # for go dependencies
