@@ -5,7 +5,7 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/CITING
 %%GRASS_INST_DIR%%/COPYING
 %%GRASS_INST_DIR%%/GPL.TXT
-%%GRASS_INST_DIR%%/INSTALL
+%%GRASS_INST_DIR%%/INSTALL.md
 %%GRASS_INST_DIR%%/REQUIREMENTS.html
 %%GRASS_INST_DIR%%/bin/d.barscale
 %%GRASS_INST_DIR%%/bin/d.colorlist
@@ -725,6 +725,8 @@ bin/grass%%MAJVER%%
 %%GRASS_INST_DIR%%/docs/html/grassdb.png
 %%GRASS_INST_DIR%%/docs/html/grassdocs.css
 %%GRASS_INST_DIR%%/docs/html/guimodules_graphical.html
+%%GRASS_INST_DIR%%/docs/html/hamburger_menu.svg
+%%GRASS_INST_DIR%%/docs/html/hamburger_menu_close.svg
 %%GRASS_INST_DIR%%/docs/html/help_loc_struct.png
 %%GRASS_INST_DIR%%/docs/html/helptext.html
 %%GRASS_INST_DIR%%/docs/html/htmldriver.html
