@@ -58,6 +58,7 @@ post-install:
 .endif
 
 # XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
+.if ${CXX} == c++ && exists(/usr/lib/libc++.so)
 .if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h) || make(makesum) || make(fetch)
 . if exists(/usr/include/c++/v1/__algorithm/ranges_all_of.h) && !make(makesum) && !make(fetch)
 CXXFLAGS+=	-fexperimental-library # std::ranges::all_of
@@ -86,5 +87,6 @@ bundled-libcxx:
 	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
 . endif
 .endif
+.endif # exists(/usr/lib/libc++.so)
 
 .include <bsd.port.mk>
