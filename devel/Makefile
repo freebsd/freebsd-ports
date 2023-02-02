@@ -4702,6 +4702,7 @@
     SUBDIR += py-installer
     SUBDIR += py-intbitset
     SUBDIR += py-intelhex
+    SUBDIR += py-interface-meta
     SUBDIR += py-intervals
     SUBDIR += py-intervaltree
     SUBDIR += py-invoke
