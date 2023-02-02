@@ -1,5 +1,5 @@
 PORTNAME=	go
-DISTVERSION?=	g20230112
+DISTVERSION?=	g20230201
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES?=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 IGNORE=		fails to build with qemu-user-static
 .endif
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 riscv64
 
 RUN_DEPENDS=	${RUN_DEPENDS_${ARCH}}
 # ld.bfd from devel/binutils is needed for working cgo on aarch64
@@ -35,8 +35,8 @@ CPE_VENDOR=	golang
 .ifndef MASTERDIR
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-# go1.20rc3
-GH_TAGNAME=	b3160e8bcedb25c5266e047ada01b6f462521401
+# go1.20
+GH_TAGNAME=	de4748c47c67392a57f250714509f590f68ad395
 .endif
 
 SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
@@ -63,7 +63,7 @@ V3_VARS=	GOAMD64=v3
 V4_DESC=	V3 instructions plus AVX512*
 V4_VARS=	GOAMD64=v4
 
-BOOTSTRAP_TAG=	go1.17.9
+BOOTSTRAP_TAG=	go1.20
 GO_SUFFIX=	${PKGNAMESUFFIX}
 
 GOARCH_aarch64=	arm64
@@ -71,8 +71,15 @@ GOARCH_amd64=	amd64
 GOARCH_armv6=	arm
 GOARCH_armv7=	arm
 GOARCH_i386=	386
+GOARCH_riscv64=	riscv64
 GOARM_armv6=	6
 GOARM_armv7=	7
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == riscv64 && ${OSREL:R} < 13
+IGNORE=		go/riscv64 requires FreeBSD 13 or later
+.endif
 
 post-extract:
 	@[ -z "${GH_TAGNAME}" ] || \
@@ -82,10 +89,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|type -ap |type |' ${WRKSRC}/src/make.bash
 	@${REINPLACE_CMD} -e 's|^if ulimit -T|false \&\& &|' ${WRKSRC}/src/run.bash
 
+.if ${ARCH} != riscv64
 pre-build:
 	# Check that the running kernel has COMPAT_FREEBSD11 required by lang/go{,-devel} post-ino64
 	@${SETENV} CC="${CC}" OPSYS="${OPSYS}" OSVERSION="${OSVERSION}" WRKDIR="${WRKDIR}" \
 		${SH} ${SCRIPTSDIR}/rust-compat11-canary.sh
+.endif
 
 do-build:
 	cd ${WRKSRC}/src ; ${SETENV} \
@@ -140,4 +149,4 @@ makesum:
 	${RM} ${DISTINFO_FILE}.tmp
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
