@@ -35,6 +35,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 		--ldflags="${LDFLAGS}" \
 		--prefix="${PREFIX}"
 
+LDFLAGS_powerpc=	-lm
 _STRIPPABLE=	bin/birdfont bin/birdfont-autotrace bin/birdfont-export \
 		bin/birdfont-import lib/libbirdfont.so.36.0 \
 		lib/libbirdgems.so.0.0
