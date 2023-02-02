@@ -1,13 +1,11 @@
 PORTNAME=	brlcad
-PORTVERSION=	7.32.4
+PORTVERSION=	7.32.6
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/BRL-CAD/brlcad/releases/download/rel-${PORTVERSION:S/./-/g}/
 
-MAINTAINER=	erik@brlcad.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	CSG modelling system from the US Ballistic Research Laboratory
 WWW=		https://brlcad.org/
-
-WRKSRC=${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -33,6 +31,8 @@ CONFLICTS_INSTALL=	py[23][0-9]-epsilon
 
 NO_MTREE=	yes
 
+WRKSRC=${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 CMAKE_OFF=	BRLCAD_ENABLE_STRICT
@@ -42,7 +42,7 @@ MANPREFIX=	${PREFIX}/${PORTNAME}/share
 TEST_TARGET=	check
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+-exact Tcl 8\.5\.9+Tcl 8.5+' \
+	@${REINPLACE_CMD} -e 's+-exact Tcl 8\.6\.10+Tcl 8.6+' \
 		${WRKSRC}/src/other/tcl/library/init.tcl
 	@${REINPLACE_CMD} -e '2745s+^+include(CheckSymbolExists)+' \
 		${WRKSRC}/CMakeLists.txt
