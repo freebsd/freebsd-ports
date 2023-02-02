@@ -1,3 +1,36 @@
+  <vuln vid="8dd438ed-a338-11ed-b48b-589cfc0f81b0">
+    <topic>sterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk18</name>
+	<range><lt>18.15.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk project reports:</p>
+	<blockquote cite="https://www.asterisk.org/downloads/security-advisories/">
+	  <p>AST-2022-007: Remote Crash Vulnerability in H323 channel add on</p>
+	  <p>AST-2022-008: Use after free in res_pjsip_pubsub.c</p>
+	  <p>AST-2022-009: GetConfig AMI Action can read files outside of
+	    Asterisk directory</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-37325</cvename>
+      <cvename>CVE-2022-42705</cvename>
+      <cvename>CVE-2022-42706</cvename>
+      <url>https://downloads.asterisk.org/pub/security/AST-2022-007.html</url>
+      <url>https://downloads.asterisk.org/pub/security/AST-2022-008.html</url>
+      <url>https://downloads.asterisk.org/pub/security/AST-2022-009.html</url>
+    </references>
+    <dates>
+      <discovery>2022-12-01</discovery>
+      <entry>2023-02-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c3fb48cc-a2ff-11ed-8fbc-6cf0490a8c18">
     <topic>Spotipy -- Path traversal vulnerability</topic>
     <affects>
