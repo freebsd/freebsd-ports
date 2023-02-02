@@ -1,6 +1,5 @@
 PORTNAME=	mysql-connector-odbc
-PORTVERSION=	5.3.13
-PORTREVISION=	1
+PORTVERSION=	5.3.14
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/Connector-ODBC/5.3
 PKGNAMESUFFIX=	-${DRIVER_MANAGER}-mysql${MYSQL_VER}
@@ -13,25 +12,26 @@ WWW=		https://www.mysql.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Requires EOLd mysql version
+EXPIRATION_DATE=	2023-12-31
+
 LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
-USES=		cmake compiler:c++11-lang mysql
-IGNORE_WITH_MYSQL=	80
-
-CMAKE_ARGS=	-DWITH_UNIXODBC=1 -DDISABLE_GUI=1
+USES=		cmake compiler:c++11-lang localbase:ldflags mysql ssl
+IGNORE_WITH_MYSQL=	101m 102m 103m 57p 57w 80
 USE_LDCONFIG=	yes
 
-MAKE_JOBS_UNSAFE=yes
+CMAKE_ARGS=	-DDISABLE_GUI=1 \
+		-DWITH_UNIXODBC=1
 
-LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_JOBS_UNSAFE=	yes
 
 DRIVER_MANAGER=	unixodbc
-
-PORTDOCS=	*
 
 PLIST_FILES=	bin/myodbc-installer \
 		lib/libmyodbc5a.so \
 		lib/libmyodbc5w.so
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
