@@ -1,5 +1,5 @@
 PORTNAME=	ogmios
-PORTVERSION=	5.5.8
+PORTVERSION=	5.6.0
 DISTVERSIONPREFIX=v
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
 CATEGORIES=	net-p2p
@@ -145,6 +145,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		criterion-1.6.0.0 \
 		criterion-measurement-0.2.0.0 \
 		cryptonite-0.27_1 \
+		data-array-byte-0.1.0.1_1 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
 		data-default-instances-containers-0.0.1 \
@@ -172,7 +173,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		entropy-0.4.1.10 \
 		erf-2.0.0.0 \
 		extra-1.7.12 \
-		fast-logger-3.1.1 \
+		fast-logger-3.1.1_1 \
 		fgl-5.8.1.0 \
 		file-embed-0.0.15.0 \
 		filelock-0.1.1.5 \
@@ -333,7 +334,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		scientific-0.3.7.0_3 \
 		selective-0.5 \
 		semialign-1.2.0.1_3 \
-		semigroupoids-5.3.7 \
+		semigroupoids-5.3.7_1 \
 		semigroups-0.20 \
 		serialise-0.2.6.0_1 \
 		set-algebra-0.1.0.0:chap \
@@ -379,7 +380,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		tf-random-0.5 \
 		th-abstraction-0.4.5.0 \
 		th-compat-0.1.4 \
-		th-expand-syns-0.4.10.0 \
+		th-expand-syns-0.4.11.0 \
 		th-extras-0.0.0.6 \
 		th-lift-0.8.2_2 \
 		th-lift-instances-0.1.20 \
@@ -395,7 +396,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.6.6 \
 		transformers-except-0.1.3 \
-		tree-diff-0.2.2 \
+		tree-diff-0.3 \
 		type-equality-1_4 \
 		typed-process-0.2.10.1 \
 		typed-protocols-0.1.0.0:chap \
@@ -436,7 +437,7 @@ USE_CABAL=	Glob-0.10.2_3 \
 		x509-system-1.6.7 \
 		x509-validation-1.6.12 \
 		yaml-0.11.8.0_2 \
-		zlib-0.6.3.0 \
+		zlib-0.6.3.0_1 \
 		zlib-bindings-0.1.1.5_2
 
 CABAL_PROJECT=		append
