@@ -1,6 +1,6 @@
-TIMESTAMP = 1674962534
-SHA256 (ddosify-ddosify-v0.13.0_GH0.tar.gz) = e3d0d64943c8d6fa9d12912b9d84c59e8f43c12ffc87613518a9c5cf46c24b48
-SIZE (ddosify-ddosify-v0.13.0_GH0.tar.gz) = 1174911
+TIMESTAMP = 1675300624
+SHA256 (ddosify-ddosify-v0.13.2_GH0.tar.gz) = 7cf0cefb10508332513749fce9512c8f6f691546a0fc6ab0ca6adb823c753238
+SIZE (ddosify-ddosify-v0.13.2_GH0.tar.gz) = 1175103
 SHA256 (antchfx-xmlquery-v1.3.13_GH0.tar.gz) = e882143ac161874fc3d9a91f1e19ab78271b5aa37a7d8541e728b566c405e36c
 SIZE (antchfx-xmlquery-v1.3.13_GH0.tar.gz) = 21490
 SHA256 (antchfx-xpath-v1.2.1_GH0.tar.gz) = cd9962512d4b3611b500621c1aeaf12780648845f7c976050c2bcba5c5d222c4
