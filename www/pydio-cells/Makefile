@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	Not supported on i386
 
-USES=		cpe go:modules gmake
+USES=		cpe go:1.19,modules gmake
 CPE_VENDOR=	pydio
 USE_RC_SUBR=	${PORTNAME}
 USE_GITHUB=	yes
