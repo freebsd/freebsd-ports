@@ -10,7 +10,7 @@ WWW=		https://github.com/matrix-org/dendrite
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:modules
+USES=		cpe go:1.19,modules
 CPE_VENDOR=	matrix
 PLIST_SUB=	PORTNAME=${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
