@@ -1,6 +1,7 @@
 PORTNAME=	doggo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.5
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	dns
 
@@ -11,7 +12,7 @@ WWW=		https://github.com/mr-karan/doggo
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:1.18,modules
+USES=		go:1.19,modules
 
 GO_MODULE=	github.com/mr-karan/doggo
 GO_TARGET=	./cmd/${PORTNAME}
