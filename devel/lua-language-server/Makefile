@@ -1,5 +1,5 @@
 PORTNAME=	lua-language-server
-DISTVERSION=	3.6.8
+DISTVERSION=	3.6.9
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -14,10 +14,10 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 USES=		compiler:features dos2unix lua:build ninja:make
 USE_GITHUB=	yes
 GH_ACCOUNT=	sumneko
-GH_TUPLE=	actboy168:bee.lua:4da6416:bee/3rd/bee.lua \
-		actboy168:bee.lua:4c24786:bee_luamake/3rd/luamake/3rd/bee.lua \
+GH_TUPLE=	actboy168:bee.lua:c4e989a:bee/3rd/bee.lua \
+		actboy168:bee.lua:eff9325:bee_luamake/3rd/luamake/3rd/bee.lua \
 		actboy168:json.lua:b5f5e7b:json/3rd/json.lua \
-		actboy168:luamake:65e789b:luamake/3rd/luamake \
+		actboy168:luamake:3d8d1fd:luamake/3rd/luamake \
 		cppcxy:EmmyLuaCodeStyle:66eeece:emmyluacodestyle/3rd/EmmyLuaCodeStyle \
 		bjornbytes:lovr-docs:8900d79:lovr/3rd/lovr-api \
 		love2d-community:love-api:495ecc7:love/3rd/love-api \
