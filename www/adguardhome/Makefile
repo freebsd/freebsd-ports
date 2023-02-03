@@ -1,6 +1,7 @@
 PORTNAME=	adguardhome
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.107.22
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		cpe go:1.18,modules
+USES=		cpe go:1.19,modules
 
 GO_MODULE=	github.com/AdguardTeam/AdGuardHome
 GO_BUILDFLAGS=  -ldflags="-s -w -X github.com/AdguardTeam/AdGuardHome/internal/version.version=${DISTVERSION}" # workaround for https://github.com/AdguardTeam/AdGuardHome/issues/4774
