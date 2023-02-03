@@ -1,6 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	23.0-branchpoint-838
 DISTVERSIONSUFFIX=	-g51ea81c0a11
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -10,7 +11,7 @@ PATCHFILES+=	50433886a3e3.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-
 PATCHFILES+=	4c7408374e3d.patch:-p1 # https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/21052
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Bleeding edge Mesa drivers (OpenGL, Vulkan)
+COMMENT=	Bleeding edge Mesa drivers (OpenCL, OpenGL, Vulkan)
 WWW=		https://www.mesa3d.org/
 
 LICENSE=	MIT
@@ -44,8 +45,8 @@ MESON_ARGS=	-Dgallium-omx=disabled \
 		${NULL}
 PLIST_SUB=	ARCH=${ARCH:S/amd/x86_/}
 
-OPTIONS_DEFINE=		LIBUNWIND LLVM LTO VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
-OPTIONS_DEFAULT=	LIBUNWIND LLVM LTO VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
+OPTIONS_DEFINE=		LIBUNWIND LLVM LTO OPENCL VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
+OPTIONS_DEFAULT=	LIBUNWIND LLVM LTO OPENCL VAAPI VDPAU VKLAYERS WAYLAND X11 ZSTD
 OPTIONS_GROUP=		GALLIUM VULKAN
 OPTIONS_GROUP_GALLIUM=	crocus iris panfrost r600 radeonsi
 OPTIONS_GROUP_VULKAN=	anv hasvk radv
@@ -102,6 +103,20 @@ ${i}_IMPLIES+=		LLVM
 
 LTO_MESON_TRUE=		b_lto
 
+OPENCL_DESC=		Heterogeneous computing via OpenCL (implies LLVM)
+OPENCL_BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli \
+			libclc>0:devel/libclc \
+			spirv-tools>0:graphics/spirv-tools \
+			rustc:lang/rust
+OPENCL_LIB_DEPENDS=	libLLVMSPIRVLib.so.${LLVM_VERSION}:devel/spirv-llvm-translator@${LLVM_PORT:T}
+OPENCL_RUN_DEPENDS=	libclc>0:devel/libclc
+OPENCL_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
+OPENCL_MESON_FALSE=	b_lundef # environ
+OPENCL_MESON_TRUE=	gallium-rusticl
+OPENCL_MESON_ON=	-Dgallium-opencl=icd
+OPENCL_VARS=		LLVM_USES=llvm:15,lib # chase libclc + rust (LTO)
+OPENCL_IMPLIES=		LLVM ${"${PORT_OPTIONS:Miris}":?iris:radeonsi} # any from OPTIONS_GROUP_GALLIUM
+
 VAAPI_DESC=		Hardware encoding/decoding (only r600, radeonsi)
 VAAPI_BUILD_DEPENDS=	libva>0:multimedia/libva
 VAAPI_MESON_ENABLED=	gallium-va
@@ -143,6 +158,8 @@ post-patch:
 		${WRKSRC}/bin/git_sha1_gen.py
 
 post-patch-COINST-on:
+	@${MV} ${WRKSRC}/src/gallium/targets/opencl/MesaOpenCL.def.in \
+		${WRKSRC}/src/gallium/targets/opencl/MesaOpenCL${PKGNAMESUFFIX}.def.in
 	@${MV} ${WRKSRC}/src/util/00-${PORTNAME}-defaults.conf \
 		${WRKSRC}/src/util/00-${PKGBASE}-defaults.conf
 	@${MV} ${WRKSRC}/src/util/00-radv-defaults.conf \
