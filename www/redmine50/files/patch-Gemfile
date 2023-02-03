@@ -1,6 +1,6 @@
---- Gemfile.orig	2022-12-15 17:48:38.146246000 +0100
-+++ Gemfile	2022-12-15 18:00:02.071136000 +0100
-@@ -3,9 +3,9 @@ gem 'bundler', '>= 1.12.0'
+--- Gemfile.orig	2023-02-03 08:57:08.281666000 +0100
++++ Gemfile	2023-02-03 08:57:33.131793000 +0100
+@@ -3,24 +3,24 @@ gem 'bundler', '>= 1.12.0'
  ruby '>= 2.5.0', '< 3.2.0'
  gem 'bundler', '>= 1.12.0'
  
@@ -12,7 +12,10 @@
  gem 'request_store', '~> 1.5.0'
  gem 'mini_mime', '~> 1.1.0'
  gem "actionpack-xml_parser"
-@@ -15,12 +15,12 @@ gem "rexml", require: false if Gem.ruby_version >= Gem
+ gem 'roadie-rails', (Gem.ruby_version < Gem::Version.new('2.6.0') ? '~> 2.2.0' : '~> 3.0.0')
+ gem 'marcel'
+-gem "mail", "~> 2.7.1"
++gem "mail", ">= 2.7"
  gem 'csv', '~> 3.2.0'
  gem 'nokogiri', (Gem.ruby_version < Gem::Version.new('2.6.0') ? '~> 1.12.5' : '~> 1.13.4')
  gem "rexml", require: false if Gem.ruby_version >= Gem::Version.new('3.0')
