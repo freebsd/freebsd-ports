@@ -10,7 +10,7 @@ WWW=		https://storj.io/
 
 LICENSE=	AGPLv3
 
-USES=		go:modules
+USES=		go:1.19,modules
 USE_GITHUB=	yes
 
 .include "${.CURDIR}/Makefile.deps"
