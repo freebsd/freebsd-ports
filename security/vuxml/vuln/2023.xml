@@ -1,5 +1,5 @@
   <vuln vid="8dd438ed-a338-11ed-b48b-589cfc0f81b0">
-    <topic>sterisk -- multiple vulnerabilities</topic>
+    <topic>Asterisk -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>asterisk18</name>
