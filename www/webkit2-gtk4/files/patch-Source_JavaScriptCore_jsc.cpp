@@ -1,12 +1,11 @@
---- Source/JavaScriptCore/jsc.cpp.orig	2021-09-22 23:05:58 UTC
+Index: Source/JavaScriptCore/jsc.cpp
+--- Source/JavaScriptCore/jsc.cpp.orig
 +++ Source/JavaScriptCore/jsc.cpp
-@@ -100,6 +100,9 @@
- #else
- #include <unistd.h>
- #endif
-+#if PLATFORM(GTK)
-+#include <locale.h>
-+#endif
- 
- #if PLATFORM(COCOA)
- #include <crt_externs.h>
+@@ -78,6 +78,7 @@
+ #include "WasmCapabilities.h"
+ #include "WasmFaultSignalHandler.h"
+ #include "WasmMemory.h"
++#include <locale.h> /* LC_ALL */
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <string.h>
