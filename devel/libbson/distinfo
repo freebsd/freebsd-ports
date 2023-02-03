@@ -1,3 +1,3 @@
-TIMESTAMP = 1508858982
-SHA256 (mongodb-libbson-1.8.1_GH0.tar.gz) = 723e47244751e79dcc80fb8dd6f8cb096433bac8494bcfaf464191b6dcbf2d3e
-SIZE (mongodb-libbson-1.8.1_GH0.tar.gz) = 4124283
+TIMESTAMP = 1673237141
+SHA256 (mongodb-mongo-c-driver-1.23.2_GH0.tar.gz) = a0f944ba659586d3a0751cdb544876ddf1ae2796efabba02a6af75efd8c61b1a
+SIZE (mongodb-mongo-c-driver-1.23.2_GH0.tar.gz) = 6498979

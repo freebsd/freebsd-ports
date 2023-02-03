@@ -1,17 +1,42 @@
 PORTNAME=	libbson
-PORTVERSION=	1.8.1
+PORTVERSION=	1.23.2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	BSON utility library
-WWW=		https://github.com/mongodb/libbson
+WWW=		https://github.com/mongodb/mongo-c-driver
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake cpe pkgconfig
-CPE_VENDOR=	mongodb
+USES=		cmake:noninja cpe pkgconfig
 USE_GITHUB=	yes
+CPE_VENDOR=	mongodb
 GH_ACCOUNT=	mongodb
+GH_PROJECT=	mongo-c-driver
 USE_LDCONFIG=	yes
+
+DOCS_VARS=	BUILD_DEPENDS+=sphinx-build:textproc/py-sphinx
+
+PATCH_STRIP=	-p1
+CFLAGS+=	-D__BSD_VISIBLE=1
+LDFLAGS+=	-pthread
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=
+
+CMAKE_ON=	ENABLE_EXAMPLES
+CMAKE_OFF=	ENABLE_TESTS ENABLE_UNINSTALL
+DOCS_CMAKE_ON=	-DENABLE_HTML_DOCS=ON -DENABLE_MAN_PAGES=ON
+CMAKE_ARGS=	-DENABLE_MONGOC=OFF -DENABLE_BSON=ON
+CMAKE_ARGS+=	-DENABLE_ZLIB=ON -DENABLE_ZSTD=ON
+CMAKE_ARGS+=	-DBSON_HAVE_STRINGS_H=0
+
+post-extract:
+	${ECHO} "${PORTVERSION}" > ${WRKSRC}/VERSION_CURRENT
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/share/mongo-c-driver \
+		${STAGEDIR}${PREFIX}/share/libbson
 
 .include <bsd.port.mk>
