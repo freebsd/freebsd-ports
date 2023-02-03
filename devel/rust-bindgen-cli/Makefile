@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	rust-
 # XXX Teach USES=cargo to have proper default
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
 
-MAINTAINER=	gecko@FreeBSD.org
+MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Generate Rust bindings from C (and some C++) code
 WWW=		https://github.com/rust-lang/rust-bindgen
 
