@@ -1,7 +1,6 @@
 PORTNAME=	beats
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.17.8
-PORTREVISION=	1
+DISTVERSION=	7.17.9
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	7
 
@@ -20,7 +19,6 @@ GH_ACCOUNT=	elastic
 GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor/github.com/Azure/azure-amqp-common-go/v3 \
 		Azure:azure-event-hubs-go:v3.3.15:azure_azure_event_hubs_go_v3/vendor/github.com/Azure/azure-event-hubs-go/v3 \
 		Azure:azure-pipeline-go:v0.2.1:azure_azure_pipeline_go/vendor/github.com/Azure/azure-pipeline-go \
-		Azure:azure-sdk-for-go:v59.0.0:azure_azure_sdk_for_go/vendor/github.com/Azure/azure-sdk-for-go \
 		Azure:azure-storage-blob-go:v0.8.0:azure_azure_storage_blob_go/vendor/github.com/Azure/azure-storage-blob-go \
 		Azure:go-amqp:v0.16.0:azure_go_amqp/vendor/github.com/Azure/go-amqp \
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
@@ -125,7 +123,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		elastic:go-windows:v1.0.1:elastic_go_windows/vendor/github.com/elastic/go-windows \
 		elastic:gosigar:v0.14.2:elastic_gosigar/vendor/github.com/elastic/gosigar \
 		elastic:sarama:11c3ef800752:elastic_sarama/vendor/github.com/Shopify/sarama \
-		envoyproxy:go-control-plane:v0.10.1:envoyproxy_go_control_plane/vendor/github.com/envoyproxy/go-control-plane \
+		envoyproxy:go-control-plane:49ff273808a1:envoyproxy_go_control_plane/vendor/github.com/envoyproxy/go-control-plane \
 		envoyproxy:protoc-gen-validate:v0.6.2:envoyproxy_protoc_gen_validate/vendor/github.com/envoyproxy/protoc-gen-validate \
 		etcd-io:bbolt:v1.3.6:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		evanphx:json-patch:v4.9.0:evanphx_json_patch/vendor/github.com/evanphx/json-patch \
@@ -155,13 +153,13 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		golang:lint:6edffad5e616:golang_lint/vendor/golang.org/x/lint \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.5.1:golang_mod/vendor/golang.org/x/mod \
-		golang:net:d418f374d309:golang_net/vendor/golang.org/x/net \
+		golang:net:2871e0cb64e4:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:d3ed0bb246c8:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:c0bba94af5f8:golang_sys/vendor/golang.org/x/sys \
-		golang:term:6a3ed077a48d:golang_term/vendor/golang.org/x/term \
+		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:1f47c861a9ac:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.1.9:golang_tools/vendor/golang.org/x/tools \
@@ -169,7 +167,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		gomodule:redigo:v1.8.3:gomodule_redigo/vendor/github.com/gomodule/redigo \
 		google:flatbuffers:v1.12.1:google_flatbuffers/vendor/github.com/google/flatbuffers \
 		google:go-cmp:v0.5.6:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:3a66f561d7aa:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:31bebdecfb46:google_go_genproto/vendor/google.golang.org/genproto \
 		google:gofuzz:v1.1.0:google_gofuzz/vendor/github.com/google/gofuzz \
 		google:licenseclassifier:879cb1424de0:google_licenseclassifier/vendor/github.com/google/licenseclassifier \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
@@ -187,7 +185,7 @@ GH_TUPLE=	Azure:azure-amqp-common-go:v3.2.1:azure_azure_amqp_common_go_v3/vendor
 		gotestyourself:gotest.tools:v2.2.0:gotestyourself_gotest_tools/vendor/gotest.tools \
 		gotestyourself:gotestsum:v0.6.0:gotestyourself_gotestsum/vendor/gotest.tools/gotestsum \
 		grpc-ecosystem:grpc-gateway:v1.16.0:grpc_ecosystem_grpc_gateway/vendor/github.com/grpc-ecosystem/grpc-gateway \
-		grpc:grpc-go:v1.42.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.46.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		h2non:filetype:v1.1.1:h2non_filetype/vendor/github.com/h2non/filetype \
 		hashicorp:errwrap:v1.1.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-cleanhttp:v0.5.2:hashicorp_go_cleanhttp/vendor/github.com/hashicorp/go-cleanhttp \
