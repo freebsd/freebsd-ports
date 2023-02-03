@@ -107,7 +107,7 @@ OPENCL_DESC=		Heterogeneous computing via OpenCL (implies LLVM)
 OPENCL_BUILD_DEPENDS=	bindgen:devel/rust-bindgen-cli \
 			libclc>0:devel/libclc \
 			spirv-tools>0:graphics/spirv-tools \
-			rustc:lang/rust
+			rustc:lang/${RUST_DEFAULT}
 OPENCL_LIB_DEPENDS=	libLLVMSPIRVLib.so.${LLVM_VERSION}:devel/spirv-llvm-translator@${LLVM_PORT:T}
 OPENCL_RUN_DEPENDS=	libclc>0:devel/libclc
 OPENCL_CONFIGURE_ENV=	PKG_CONFIG_PATH="${LLVM_PREFIX}/libdata/pkgconfig"
