@@ -1,6 +1,20 @@
---- electron/spec-main/api-app-spec.ts.orig	2022-08-10 15:31:37 UTC
+--- electron/spec-main/api-app-spec.ts.orig	2023-01-24 08:00:52 UTC
 +++ electron/spec-main/api-app-spec.ts
-@@ -174,7 +174,7 @@ describe('app module', () => {
+@@ -125,11 +125,11 @@ describe('app module', () => {
+   });
+ 
+   describe('app.getPreferredSystemLanguages()', () => {
+-    ifit(process.platform !== 'linux')('should not be empty', () => {
++    ifit(process.platform !== 'linux' && process.platform !== 'freebsd')('should not be empty', () => {
+       expect(app.getPreferredSystemLanguages().length).to.not.equal(0);
+     });
+ 
+-    ifit(process.platform === 'linux')('should be empty or contain C entry', () => {
++    ifit(process.platform === 'linux' || process.platform === 'freebsd')('should be empty or contain C entry', () => {
+       const languages = app.getPreferredSystemLanguages();
+       if (languages.length) {
+         expect(languages).to.not.include('C');
+@@ -193,7 +193,7 @@ describe('app module', () => {
      });
  
      it('exits gracefully', async function () {
@@ -9,7 +23,7 @@
          this.skip();
          return;
        }
-@@ -438,7 +438,7 @@ describe('app module', () => {
+@@ -457,7 +457,7 @@ describe('app module', () => {
    //   let w = null
  
    //   before(function () {
@@ -18,7 +32,7 @@
    //       this.skip()
    //     }
    //   })
-@@ -561,7 +561,7 @@ describe('app module', () => {
+@@ -580,7 +580,7 @@ describe('app module', () => {
    describe('app.badgeCount', () => {
      const platformIsNotSupported =
          (process.platform === 'win32') ||
@@ -27,7 +41,7 @@
  
      const expectedBadgeCount = 42;
  
-@@ -605,7 +605,7 @@ describe('app module', () => {
+@@ -624,7 +624,7 @@ describe('app module', () => {
      });
    });
  
@@ -36,7 +50,7 @@
      const updateExe = path.resolve(path.dirname(process.execPath), '..', 'Update.exe');
      const processStartArgs = [
        '--processStart', `"${path.basename(process.execPath)}"`,
-@@ -922,7 +922,7 @@ describe('app module', () => {
+@@ -941,7 +941,7 @@ describe('app module', () => {
      });
    });
  
@@ -45,7 +59,7 @@
      it('with properties', () => {
        it('can set accessibility support enabled', () => {
          expect(app.accessibilitySupportEnabled).to.eql(false);
-@@ -1088,7 +1088,7 @@ describe('app module', () => {
+@@ -1107,7 +1107,7 @@ describe('app module', () => {
      let w: BrowserWindow;
  
      before(function () {
@@ -54,7 +68,7 @@
          this.skip();
        }
        session.fromPartition('empty-certificate').setCertificateVerifyProc((req, cb) => { cb(0); });
-@@ -1229,7 +1229,7 @@ describe('app module', () => {
+@@ -1248,7 +1248,7 @@ describe('app module', () => {
        // We can't expect particular app names here, but these protocols should
        // at least have _something_ registered. Except on our Linux CI
        // environment apparently.
@@ -63,7 +77,7 @@
          this.skip();
        }
  
-@@ -1247,7 +1247,7 @@ describe('app module', () => {
+@@ -1266,7 +1266,7 @@ describe('app module', () => {
      });
    });
  
@@ -72,7 +86,7 @@
      it('returns promise rejection for a bogus protocol', async function () {
        await expect(
          app.getApplicationInfoForProtocol('bogus-protocol://')
-@@ -1297,7 +1297,7 @@ describe('app module', () => {
+@@ -1316,7 +1316,7 @@ describe('app module', () => {
    });
  
    // FIXME Get these specs running on Linux CI
@@ -81,7 +95,7 @@
      const iconPath = path.join(__dirname, 'fixtures/assets/icon.ico');
      const sizes = {
        small: 16,
-@@ -1378,7 +1378,7 @@ describe('app module', () => {
+@@ -1397,7 +1397,7 @@ describe('app module', () => {
            expect(entry.memory).to.have.property('privateBytes').that.is.greaterThan(0);
          }
  
@@ -90,7 +104,7 @@
            expect(entry.sandboxed).to.be.a('boolean');
          }
  
-@@ -1404,7 +1404,7 @@ describe('app module', () => {
+@@ -1423,7 +1423,7 @@ describe('app module', () => {
    });
  
    // FIXME https://github.com/electron/electron/issues/24224
@@ -99,7 +113,7 @@
      const appPath = path.join(fixturesPath, 'api', 'gpu-info.js');
  
      const getGPUInfo = async (type: string) => {
-@@ -1453,7 +1453,7 @@ describe('app module', () => {
+@@ -1472,7 +1472,7 @@ describe('app module', () => {
  
      it('succeeds with complete GPUInfo', async () => {
        const completeInfo = await getGPUInfo('complete');
@@ -108,7 +122,7 @@
          // For linux and macOS complete info is same as basic info
          await verifyBasicGPUInfo(completeInfo);
          const basicInfo = await getGPUInfo('basic');
-@@ -1483,7 +1483,7 @@ describe('app module', () => {
+@@ -1502,7 +1502,7 @@ describe('app module', () => {
      const socketPath = process.platform === 'win32' ? '\\\\.\\pipe\\electron-mixed-sandbox' : '/tmp/electron-mixed-sandbox';
  
      beforeEach(function (done) {

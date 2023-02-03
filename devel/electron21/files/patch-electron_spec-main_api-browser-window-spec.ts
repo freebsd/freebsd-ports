@@ -1,4 +1,4 @@
---- electron/spec-main/api-browser-window-spec.ts.orig	2022-08-10 15:31:37 UTC
+--- electron/spec-main/api-browser-window-spec.ts.orig	2023-01-24 08:00:52 UTC
 +++ electron/spec-main/api-browser-window-spec.ts
 @@ -58,7 +58,7 @@ describe('BrowserWindow module', () => {
        }).not.to.throw();
@@ -54,7 +54,7 @@
          it('checks normal bounds when minimized', async () => {
            const bounds = w.getBounds();
            const minimize = emittedOnce(w, 'minimize');
-@@ -2271,7 +2271,7 @@ describe('BrowserWindow module', () => {
+@@ -2277,7 +2277,7 @@ describe('BrowserWindow module', () => {
    describe('BrowserWindow.setOpacity(opacity)', () => {
      afterEach(closeAllWindows);
  
@@ -63,7 +63,7 @@
        it('make window with initial opacity', () => {
          const w = new BrowserWindow({ show: false, opacity: 0.5 });
          expect(w.getOpacity()).to.equal(0.5);
-@@ -2297,7 +2297,7 @@ describe('BrowserWindow module', () => {
+@@ -2303,7 +2303,7 @@ describe('BrowserWindow module', () => {
        });
      });
  
@@ -72,7 +72,7 @@
        it('sets 1 regardless of parameter', () => {
          const w = new BrowserWindow({ show: false });
          w.setOpacity(0);
-@@ -3229,7 +3229,7 @@ describe('BrowserWindow module', () => {
+@@ -3235,7 +3235,7 @@ describe('BrowserWindow module', () => {
          expect(test.versions).to.deep.equal(process.versions);
          expect(test.contextId).to.be.a('string');
  
@@ -81,7 +81,7 @@
            expect(test.creationTime).to.be.null('creation time');
            expect(test.systemMemoryInfo).to.be.null('system memory info');
          } else {
-@@ -3810,7 +3810,7 @@ describe('BrowserWindow module', () => {
+@@ -3813,7 +3813,7 @@ describe('BrowserWindow module', () => {
      });
    });
  
@@ -90,7 +90,7 @@
      afterEach(closeAllWindows);
      it('emits an event when window is maximized', async () => {
        const w = new BrowserWindow({ show: false });
-@@ -4069,7 +4069,7 @@ describe('BrowserWindow module', () => {
+@@ -4072,7 +4072,7 @@ describe('BrowserWindow module', () => {
    });
  
    // TODO(dsanders11): Enable once maximize event works on Linux again on CI
@@ -99,7 +99,7 @@
      afterEach(closeAllWindows);
      it('should show the window if it is not currently shown', async () => {
        const w = new BrowserWindow({ show: false });
-@@ -4106,7 +4106,7 @@ describe('BrowserWindow module', () => {
+@@ -4109,7 +4109,7 @@ describe('BrowserWindow module', () => {
  
      // TODO(dsanders11): Enable once minimize event works on Linux again.
      //                   See https://github.com/electron/electron/issues/28699
@@ -108,7 +108,7 @@
        const w = new BrowserWindow();
        const minimize = emittedOnce(w, 'minimize');
        w.minimize();
-@@ -4469,7 +4469,7 @@ describe('BrowserWindow module', () => {
+@@ -4472,7 +4472,7 @@ describe('BrowserWindow module', () => {
        });
  
        // On Linux there is no "resizable" property of a window.
@@ -117,7 +117,7 @@
          const w = new BrowserWindow({ show: false });
          expect(w.resizable).to.be.true('resizable');
  
-@@ -4561,7 +4561,7 @@ describe('BrowserWindow module', () => {
+@@ -4564,7 +4564,7 @@ describe('BrowserWindow module', () => {
      });
    });
  
@@ -126,21 +126,3 @@
      // Not implemented on Linux.
      afterEach(closeAllWindows);
  
-@@ -5580,7 +5580,7 @@ describe('BrowserWindow module', () => {
-     });
- 
-     // Linux and arm64 platforms (WOA and macOS) do not return any capture sources
--    ifit(process.platform !== 'linux' && process.arch !== 'arm64')('should not display a visible background', async () => {
-+    ifit((process.platform !== 'linux' && process.platform !== 'freebsd') && process.arch !== 'arm64')('should not display a visible background', async () => {
-       const display = screen.getPrimaryDisplay();
- 
-       const backgroundWindow = new BrowserWindow({
-@@ -5622,7 +5622,7 @@ describe('BrowserWindow module', () => {
-     afterEach(closeAllWindows);
- 
-     // Linux/WOA doesn't return any capture sources.
--    ifit(process.platform !== 'linux' && (process.platform !== 'win32' || process.arch !== 'arm64'))('should display the set color', async () => {
-+    ifit((process.platform !== 'linux' && process.platform !== 'freebsd') && (process.platform !== 'win32' || process.arch !== 'arm64'))('should display the set color', async () => {
-       const display = screen.getPrimaryDisplay();
- 
-       const w = new BrowserWindow({

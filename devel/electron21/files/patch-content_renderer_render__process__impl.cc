@@ -1,4 +1,4 @@
---- content/renderer/render_process_impl.cc.orig	2022-07-22 17:30:31 UTC
+--- content/renderer/render_process_impl.cc.orig	2023-02-01 13:31:45 UTC
 +++ content/renderer/render_process_impl.cc
 @@ -46,7 +46,7 @@
  #if BUILDFLAG(IS_WIN)
@@ -18,9 +18,9 @@
    SetV8FlagIfFeature(features::kWebAssemblyCodeProtectionPku,
                       "--wasm-memory-protection-keys");
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtectionPku,
-@@ -224,7 +224,7 @@ RenderProcessImpl::RenderProcessImpl()
- 
-   v8::V8::SetFlagsFromString("--freeze-flags-after-init");
+@@ -225,7 +225,7 @@ RenderProcessImpl::RenderProcessImpl()
+   // Freezing flags after init conflicts with node in the renderer.
+   v8::V8::SetFlagsFromString("--no-freeze-flags-after-init");
  
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) && defined(ARCH_CPU_X86_64)
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_X86_64)

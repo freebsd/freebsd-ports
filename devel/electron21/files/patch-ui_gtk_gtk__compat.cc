@@ -1,6 +1,6 @@
---- ui/gtk/gtk_compat.cc.orig	2022-02-07 13:39:41 UTC
+--- ui/gtk/gtk_compat.cc.orig	2023-02-01 13:31:45 UTC
 +++ ui/gtk/gtk_compat.cc
-@@ -62,22 +62,38 @@ void* GetLibGio() {
+@@ -62,22 +62,38 @@ auto DlCast(void* symbol) {
  }
  
  void* GetLibGio() {
@@ -37,5 +37,17 @@
    static void* libgtk4 = DlOpen("libgtk-4.so.1", check);
 +#endif
    return libgtk4;
+ }
+ 
+@@ -124,7 +140,11 @@ gfx::Insets InsetsFromGtkBorder(const GtkBorder& borde
+ }  // namespace
+ 
+ void* GetLibGdkPixbuf() {
++#if defined(OS_BSD)
++  static void* libgdk_pixbuf = DlOpen("libgdk_pixbuf-2.0.so");
++#else
+   static void* libgdk_pixbuf = DlOpen("libgdk_pixbuf-2.0.so.0");
++#endif
+   return libgdk_pixbuf;
  }
  

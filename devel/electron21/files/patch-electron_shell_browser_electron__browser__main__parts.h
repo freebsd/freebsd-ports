@@ -1,4 +1,4 @@
---- electron/shell/browser/electron_browser_main_parts.h.orig	2022-08-03 15:31:58 UTC
+--- electron/shell/browser/electron_browser_main_parts.h.orig	2023-01-24 08:00:52 UTC
 +++ electron/shell/browser/electron_browser_main_parts.h
 @@ -61,7 +61,7 @@ class ViewsDelegate;
  class ViewsDelegateMac;
@@ -18,7 +18,7 @@
    void DetectOzonePlatform();
  #endif
  
-@@ -143,7 +143,7 @@ class ElectronBrowserMainParts : public content::Brows
+@@ -144,7 +144,7 @@ class ElectronBrowserMainParts : public content::Brows
    std::unique_ptr<display::Screen> screen_;
  #endif
  

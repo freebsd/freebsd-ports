@@ -1,6 +1,6 @@
---- electron/spec-main/api-clipboard-spec.ts.orig	2021-12-03 01:46:05 UTC
+--- electron/spec-main/api-clipboard-spec.ts.orig	2023-01-24 08:00:52 UTC
 +++ electron/spec-main/api-clipboard-spec.ts
-@@ -44,7 +44,7 @@ ifdescribe(process.platform !== 'win32' || process.arc
+@@ -43,7 +43,7 @@ ifdescribe(process.platform !== 'win32' || process.arc
      });
    });
  
@@ -9,7 +9,7 @@
      it('returns title and url', () => {
        clipboard.writeBookmark('a title', 'https://electronjs.org');
  
-@@ -63,7 +63,7 @@ ifdescribe(process.platform !== 'win32' || process.arc
+@@ -62,7 +62,7 @@ ifdescribe(process.platform !== 'win32' || process.arc
    });
  
    describe('clipboard.read()', () => {
@@ -18,7 +18,7 @@
        const type = process.platform === 'darwin' ? 'NSFilenamesPboardType' : 'FileNameW';
  
        expect(() => {
-@@ -100,7 +100,7 @@ ifdescribe(process.platform !== 'win32' || process.arc
+@@ -99,7 +99,7 @@ ifdescribe(process.platform !== 'win32' || process.arc
        const readImage = clipboard.readImage();
        expect(readImage.toDataURL()).to.equal(i.toDataURL());
  

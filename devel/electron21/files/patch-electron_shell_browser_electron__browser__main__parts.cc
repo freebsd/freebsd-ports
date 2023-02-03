@@ -1,5 +1,5 @@
---- electron/shell/browser/electron_browser_main_parts.cc.orig	2022-10-19 17:31:10.000000000 +0200
-+++ electron/shell/browser/electron_browser_main_parts.cc	2022-12-02 17:37:56.982763000 +0100
+--- electron/shell/browser/electron_browser_main_parts.cc.orig	2023-01-24 08:00:52 UTC
++++ electron/shell/browser/electron_browser_main_parts.cc
 @@ -67,7 +67,7 @@
  #include "ui/wm/core/wm_state.h"
  #endif
@@ -54,7 +54,7 @@
    // Reset to the original LC_ALL since we should not be changing it.
    if (!locale.empty()) {
      if (lc_all)
-@@ -382,7 +382,7 @@ void ElectronBrowserMainParts::ToolkitInitialized() {
+@@ -383,7 +383,7 @@ void ElectronBrowserMainParts::PostDestroyThreads() {
  }
  
  void ElectronBrowserMainParts::ToolkitInitialized() {
@@ -63,7 +63,7 @@
    auto linux_ui = ui::CreateLinuxUi();
  
    // Try loading gtk symbols used by Electron.
-@@ -502,7 +502,9 @@ void ElectronBrowserMainParts::PostCreateMainMessageLo
+@@ -503,7 +503,9 @@ void ElectronBrowserMainParts::PostCreateMainMessageLo
    ui::OzonePlatform::GetInstance()->PostCreateMainMessageLoop(
        std::move(shutdown_cb));
    bluez::DBusBluezManagerWrapperLinux::Initialize();
@@ -73,7 +73,7 @@
    // Set up crypt config. This needs to be done before anything starts the
    // network service, as the raw encryption key needs to be shared with the
    // network service for encrypted cookie storage.
-@@ -561,7 +563,7 @@ void ElectronBrowserMainParts::PostMainMessageLoopRun(
+@@ -562,7 +564,7 @@ void ElectronBrowserMainParts::PostMainMessageLoopRun(
    fake_browser_process_->PostMainMessageLoopRun();
    content::DevToolsAgentHost::StopRemoteDebuggingPipeHandler();
  

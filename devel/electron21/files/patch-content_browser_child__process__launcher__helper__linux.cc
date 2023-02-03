@@ -1,5 +1,5 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2022-12-02 18:29:21.024493000 +0100
-+++ content/browser/child_process_launcher_helper_linux.cc	2022-12-03 09:43:25.213559000 +0100
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2023-02-01 13:31:45 UTC
++++ content/browser/child_process_launcher_helper_linux.cc
 @@ -20,7 +20,9 @@
  #include "content/public/common/result_codes.h"
  #include "content/public/common/sandboxed_process_launcher_delegate.h"
@@ -14,7 +14,7 @@
    options->fds_to_remap = files_to_register.GetMappingWithIDAdjustment(
        base::GlobalDescriptors::kBaseDescriptor);
  
-+# if !BUILDFLAG(IS_BSD)
++#if !BUILDFLAG(IS_BSD)
    if (GetProcessType() == switches::kRendererProcess) {
      const int sandbox_fd = SandboxHostLinux::GetInstance()->GetChildSocket();
      options->fds_to_remap.push_back(std::make_pair(sandbox_fd, GetSandboxFD()));
