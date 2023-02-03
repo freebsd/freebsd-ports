@@ -1,6 +1,5 @@
 PORTNAME=	libgweather
-PORTVERSION=	4.0.0
-PORTREVISION=	2
+PORTVERSION=	4.2.0
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/${PORTNAME}/${PORTVERSION:R}
@@ -15,8 +14,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gi-docgen:textproc/py-gi-docgen
-LIB_DEPENDS=	libgeocode-glib.so:net/geocode-glib \
-		libsoup-2.4.so:devel/libsoup
+LIB_DEPENDS=	libgeocode-glib-2.so:net/geocode-glib2 \
+		libsoup-3.0.so:devel/libsoup3
 
 PORTSCOUT=	limitw:1,even
 
