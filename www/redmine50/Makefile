@@ -45,7 +45,7 @@ RUN_DEPENDS+=	rubygem-redcarpet>=3.5.1:textproc/rubygem-redcarpet \
 		rubygem-sanitize>=6.0:textproc/rubygem-sanitize \
 		rubygem-deckar01-task_list>=2.3.1:www/rubygem-deckar01-task_list
 
-USES=		cpe
+USES=		cpe ruby
 
 CONFLICTS_INSTALL=	redmine42
 
