@@ -42,7 +42,7 @@ LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libfmt.so:devel/libfmt \
 		libavcodec.so:multimedia/ffmpeg \
 		libenet.so:net/enet
-TEST_DEPENDS=	catch>0:devel/catch
+TEST_DEPENDS=	catch2>0:devel/catch2
 
 FLAVORS=	qt5 qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
