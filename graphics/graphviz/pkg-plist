@@ -251,7 +251,7 @@ man/man1/sfdp.1.gz
 man/man1/tred.1.gz
 man/man1/twopi.1.gz
 man/man1/unflatten.1.gz
-%%PANGOCAIRO%%man/man1/vimdot.1.gz
+%%PANGOCAIRO%%%%XPM%%man/man1/vimdot.1.gz
 man/man3/cdt.3.gz
 man/man3/cgraph.3.gz
 man/man3/expr.3.gz
@@ -356,7 +356,7 @@ man/man7/graphviz.7.gz
 %%PORTDOCS%%%%DOCSDIR%%/tred.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/twopi.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/unflatten.1.pdf
-%%PANGOCAIRO%%%%PORTDOCS%%%%DOCSDIR%%/vimdot.1.pdf
+%%PANGOCAIRO%%%%XPM%%%%PORTDOCS%%%%DOCSDIR%%/vimdot.1.pdf
 %%PORTDOCS%%%%DOCSDIR%%/winbuild.html
 %%PORTDOCS%%%%DOCSDIR%%/xdot.3.pdf
 %%TCL%%%%PORTEXAMPLES%%%%EXAMPLESDIR%%/doted.tcl
