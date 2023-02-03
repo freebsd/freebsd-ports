@@ -11,7 +11,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libevent.so:devel/libevent \
-		libtls.so:security/libressl
+		libtls.so:security/libretls
 
 USES=		localbase pkgconfig ssl
 USE_RC_SUBR=	gmid
