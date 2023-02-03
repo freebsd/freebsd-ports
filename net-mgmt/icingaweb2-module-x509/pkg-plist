@@ -18,8 +18,6 @@
 %%WWWDIR%%/application/forms/Config/BackendConfigForm.php
 %%WWWDIR%%/application/forms/Config/JobConfigForm.php
 %%WWWDIR%%/application/forms/Config/SniConfigForm.php
-%%WWWDIR%%/application/locale/de_DE/LC_MESSAGES/x509.mo
-%%WWWDIR%%/application/locale/de_DE/LC_MESSAGES/x509.po
 %%WWWDIR%%/application/views/scripts/certificate/index.phtml
 %%WWWDIR%%/application/views/scripts/certificates/index.phtml
 %%WWWDIR%%/application/views/scripts/chain/index.phtml
@@ -56,6 +54,7 @@
 %%WWWDIR%%/doc/res/x509-dashboard.png
 %%WWWDIR%%/doc/res/x509-usage.png
 %%WWWDIR%%/etc/schema/mysql-upgrade/v1.0.0.sql
+%%WWWDIR%%/etc/schema/mysql-upgrade/v1.1.0.sql
 %%WWWDIR%%/etc/schema/mysql.schema.sql
 %%WWWDIR%%/library/X509/CertificateDetails.php
 %%WWWDIR%%/library/X509/CertificateUtils.php
@@ -71,10 +70,10 @@
 %%WWWDIR%%/library/X509/Hook/SniHook.php
 %%WWWDIR%%/library/X509/Job.php
 %%WWWDIR%%/library/X509/JobsIniRepository.php
-%%WWWDIR%%/library/X509/Paginator.php
 %%WWWDIR%%/library/X509/ProvidedHook/HostsImportSource.php
 %%WWWDIR%%/library/X509/ProvidedHook/ServicesImportSource.php
 %%WWWDIR%%/library/X509/ProvidedHook/x509ImportSource.php
+%%WWWDIR%%/library/X509/React/StreamOptsCaptureConnector.php
 %%WWWDIR%%/library/X509/Scheduler.php
 %%WWWDIR%%/library/X509/SniIniRepository.php
 %%WWWDIR%%/library/X509/SortAdapter.php
@@ -82,7 +81,7 @@
 %%WWWDIR%%/library/X509/Table.php
 %%WWWDIR%%/library/X509/UsageTable.php
 %%WWWDIR%%/module.info
-%%WWWDIR%%/public/css/icons.css
+%%WWWDIR%%/public/css/icons.less
 %%WWWDIR%%/public/css/module.less
 %%WWWDIR%%/public/font/icons.eot
 %%WWWDIR%%/public/font/icons.svg
@@ -111,8 +110,3 @@
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/src/Cron/HoursField.php
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/src/Cron/MinutesField.php
 %%WWWDIR%%/vendor/dragonmantank/cron-expression/src/Cron/MonthField.php
-%%WWWDIR%%/vendor/ipl/pagination/README.md
-%%WWWDIR%%/vendor/ipl/pagination/composer.json
-%%WWWDIR%%/vendor/ipl/pagination/src/Adapter/AdapterInterface.php
-%%WWWDIR%%/vendor/ipl/pagination/src/Adapter/SqlAdapter.php
-%%WWWDIR%%/vendor/ipl/pagination/src/Paginator.php
