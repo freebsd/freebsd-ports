@@ -1,6 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	23.0-branchpoint-990
 DISTVERSIONSUFFIX=	-gea413e826b2
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -83,6 +84,7 @@ radv_BUILD_DEPENDS=	glslangValidator:graphics/glslang
 
 COINST_DESC=		Allow co-installation with another Mesa port
 COINST_MESON_ON=	-Degl-lib-suffix=${PKGNAMESUFFIX}
+COINST_RUN_DEPENDS=	${LOCALBASE}/share/glvnd/egl_vendor.d/50_${PORTNAME}.json:graphics/mesa-dri
 COINST_PLIST_SUB=	SUFFIX=${PKGNAMESUFFIX}
 COINST_SUB_FILES=	libmap.conf
 COINST_SUB_LIST=	SUFFIX=${PKGNAMESUFFIX}
