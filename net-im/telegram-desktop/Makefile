@@ -1,5 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.5.3
+DISTVERSION=	4.6.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -29,10 +29,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libdbus-1.so:devel/dbus \
 		libdispatch.so:devel/libdispatch \
 		libhunspell-1.7.so:textproc/hunspell \
-		libjpeg.so:graphics/jpeg-turbo \
 		liblz4.so:archivers/liblz4 \
-		libminizip.so:archivers/minizip \
-		libopenal.so:audio/openal-soft \
 		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpipewire-0.3.so:multimedia/pipewire \
@@ -51,9 +48,10 @@ qt6_PKGNAMESUFFIX=	-qt6
 qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl \
-		gnome localbase pkgconfig python:3.7+,build ssl xorg
+USES=		cmake desktop-file-utils gl gnome jpeg localbase \
+		minizip openal pkgconfig python:3.7+,build ssl xorg
 
+USE_CXXSTD=	c++17
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	telegramdesktop
 GH_PROJECT=	tdesktop
@@ -99,13 +97,23 @@ PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 TELEGRAM_API_HASH=	20a3432aab43f24bb4460fceac5ba38d
 TELEGRAM_API_ID=	601761
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${COMPILER_VERSION} < 130
-LLVM_VER=	13
-BUILD_DEPENDS+=	clang${LLVM_VER}:devel/llvm${LLVM_VER}
-CC=		${LOCALBASE}/bin/clang${LLVM_VER}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_VER}
+.if ${OSVERSION} > 1400000
+USES+=	llvm:build
+CC=	${_LLVM_MK_PREFIX}/bin/clang
+CPP=	${_LLVM_MK_PREFIX}/bin/clang-cpp
+CXX=	${_LLVM_MK_PREFIX}/bin/clang++
+#LD?=	${_LLVM_MK_PREFIX}/bin/ld
+.else
+USES+=	compiler:c++17-lang
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:
+	# XXX fix the following on every source file
+	# warning: unknown warning option '-Wno-maybe-uninitialized'
+	# warning: argument unused during compilation: '-fstack-clash-protection'
+	${REINPLACE_CMD} -e /-Wno-maybe-uninitialized/d -e /-fstack-clash-protection/d \
+	    ${WRKSRC}/cmake/options_linux.cmake
+
+.include <bsd.port.mk>
