@@ -1,5 +1,5 @@
 PORTNAME=	groupfolders
-PORTVERSION=	13.1.0
+PORTVERSION=	13.1.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
