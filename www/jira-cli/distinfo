@@ -1,5 +1,5 @@
-TIMESTAMP = 1660646244
-SHA256 (go/www_jira-cli/jira-cli-v1.1.0/v1.1.0.mod) = 84a8071d0e9ce76111401cccd93c426e3424f0616510419b9ff58ccc315d4b65
-SIZE (go/www_jira-cli/jira-cli-v1.1.0/v1.1.0.mod) = 3160
-SHA256 (go/www_jira-cli/jira-cli-v1.1.0/v1.1.0.zip) = 4294ee0c6ae2277f4761efac38e8e19dd33a43fa24a7f220726670a8dcd7389b
-SIZE (go/www_jira-cli/jira-cli-v1.1.0/v1.1.0.zip) = 53370478
+TIMESTAMP = 1675516690
+SHA256 (go/www_jira-cli/jira-cli-v1.3.0/v1.3.0.mod) = c65d19967075c5f7f1385171210575c53bef0a0d5bc2dc254f84dd43b2b06f6b
+SIZE (go/www_jira-cli/jira-cli-v1.3.0/v1.3.0.mod) = 3116
+SHA256 (go/www_jira-cli/jira-cli-v1.3.0/v1.3.0.zip) = 07d8f0c862b877dcf332d2e7150560d9d86304c3ad02ae06761be4898bab39c1
+SIZE (go/www_jira-cli/jira-cli-v1.3.0/v1.3.0.zip) = 53371049
