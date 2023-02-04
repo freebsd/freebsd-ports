@@ -15,7 +15,7 @@
  
  if [ -z $VERSION ]; then
 -    VERSION=unknown
-+    VERSION=v0.5.0
++    VERSION=PORTVERSION
  fi
  
  echo $VERSION

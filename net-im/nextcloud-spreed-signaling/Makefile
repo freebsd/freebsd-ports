@@ -1,7 +1,6 @@
 PORTNAME=	nextcloud-spreed-signaling
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.0
-PORTREVISION=	5
+DISTVERSION=	1.0.0
 CATEGORIES=	net-im
 
 MAINTAINER=	jsm@FreeBSD.org
@@ -9,6 +8,8 @@ COMMENT=	Signaling server used for Nextcloud Talk
 WWW=		https://github.com/strukturag/nextcloud-spreed-signaling
 
 LICENSE=	AGPLv3
+
+BUILD_DEPENDS=	protoc:devel/protobuf
 
 USES=		gmake go:no_targets
 
@@ -26,13 +27,13 @@ GH_TUPLE=	\
 		coreos:go-semver:v0.3.0:coreos_go_semver/vendor/src/github.com/coreos/go-semver \
 		coreos:go-systemd:v22.3.2:coreos_go_systemd_v22/vendor/src/github.com/coreos/go-systemd/v22 \
 		dlintw:goconf:dcc070983490:dlintw_goconf/vendor/src/github.com/dlintw/goconf \
-		dustin:go-humanize:v1.0.0:dustin_go_humanize/src/github.com/dustin/go-humanize \
+		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/src/github.com/dustin/go-humanize \
 		etcd-io:bbolt:v1.3.6:etcd_io_bbolt/vendor/src/go.etcd.io/bbolt \
 		etcd-io:etcd:v3.5.4:etcd_io_etcd/vendor/src/go.etcd.io/etcd \
 		form3tech-oss:jwt-go:v3.2.3:form3tech_oss_jwt_go/vendor/src/github.com/form3tech-oss/jwt-go \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/src/gopkg.in/yaml.v2 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/src/github.com/gogo/protobuf \
-		golang-jwt:jwt:v3.2.2:golang_jwt_jwt/vendor/src/github.com/golang-jwt/jwt \
+		golang-jwt:jwt:v4.4.2:golang_jwt_jwt_v4/vendor/src/github.com/golang-jwt/jwt/v4 \
 		golang:crypto:3147a52a75dd:golang_crypto/vendor/src/golang.org/x/crypto \
 		golang:net:69e39bad7dc2:golang_net/vendor/src/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/src/github.com/golang/protobuf \
@@ -48,7 +49,7 @@ GH_TUPLE=	\
 		grpc-ecosystem:go-grpc-middleware:v1.3.0:grpc_ecosystem_go_grpc_middleware/vendor/src/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:v1.2.0:grpc_ecosystem_go_grpc_prometheus/vendor/src/github.com/grpc-ecosystem/go-grpc-prometheus \
 		grpc-ecosystem:grpc-gateway:v1.16.0:grpc_ecosystem_grpc_gateway/vendor/src/github.com/grpc-ecosystem/grpc-gateway \
-		grpc:grpc-go:v1.38.0:grpc_grpc_go/vendor/src/google.golang.org/grpc \
+		grpc:grpc-go:v1.48.0:grpc_grpc_go/vendor/src/google.golang.org/grpc \
 		jonboulle:clockwork:v0.2.2:jonboulle_clockwork/vendor/src/github.com/jonboulle/clockwork \
 		josharian:intern:v1.0.0:josharian_intern/vendor/src/github.com/josharian/intern \
 		json-iterator:go:v1.1.12:json_iterator_go/vendor/src/github.com/json-iterator/go \
@@ -70,13 +71,13 @@ GH_TUPLE=	\
 		open-telemetry:opentelemetry-go:v0.20.0:open_telemetry_opentelemetry_go/vendor/src/go.opentelemetry.io/otel \
 		open-telemetry:opentelemetry-proto-go:v0.7.0:open_telemetry_opentelemetry_proto_go/vendor/src/go.opentelemetry.io/proto/otlp \
 		oschwald:maxminddb-golang:v1.9.0:oschwald_maxminddb_golang/vendor/src/github.com/oschwald/maxminddb-golang \
-		pion:sdp:v1.3.0:pion_sdp/vendor/src/github.com/pion/sdp \
-		pkg:errors:v0.9.1:pkg_errors/vendor/src/github.com/pkg/errors \
+		pion:randutil:v0.1.0:pion_randutil/vendor/src/github.com/pion/randutil \
+		pion:sdp:v3.0.5:pion_sdp_v3/vendor/src/github.com/pion/sdp/v3 \
 		prometheus:client_golang:v1.12.2:prometheus_client_golang/vendor/src/github.com/prometheus/client_golang \
 		prometheus:client_model:v0.2.0:prometheus_client_model/vendor/src/github.com/prometheus/client_model \
 		prometheus:common:v0.32.1:prometheus_common/vendor/src/github.com/prometheus/common \
 		prometheus:procfs:v0.7.3:prometheus_procfs/vendor/src/github.com/prometheus/procfs \
-		protocolbuffers:protobuf-go:v1.26.0:protocolbuffers_protobuf_go/vendor/src/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.28.1:protocolbuffers_protobuf_go/vendor/src/google.golang.org/protobuf \
 		sirupsen:logrus:v1.7.0:sirupsen_logrus/vendor/src/github.com/sirupsen/logrus \
 		soheilhy:cmux:v0.1.5:soheilhy_cmux/vendor/src/github.com/soheilhy/cmux \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/src/github.com/spf13/pflag \
@@ -89,4 +90,9 @@ MAKE_ENV=	${GO_ENV}
 post-extract:
 	${MKDIR} ${WRKDIR}/${PORTNAME}-${DISTVERSION}/vendor/src/github.com/strukturag
 	${LN} -s ${WRKDIR}/${PORTNAME}-${DISTVERSION}/ ${WRKDIR}/${PORTNAME}-${DISTVERSION}/vendor/src/github.com/strukturag/${PORTNAME}
+post-patch:
+	@${REINPLACE_CMD} 's|PORTVERSION|${PORTVERSION}|g' ${WRKSRC}/scripts/get-version.sh
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ncs-signaling
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ncs-proxy
 .include <bsd.port.mk>
