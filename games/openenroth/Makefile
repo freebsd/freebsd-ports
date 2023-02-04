@@ -28,6 +28,18 @@ GH_SUBDIR=	thirdparty/cli11:cli11 thirdparty/fast_float:ff \
 		thirdparty/magic_enum:me thirdparty/mini:mini \
 		thirdparty/nlohmann_json:nj
 
+.include <bsd.port.options.mk>
+
+.if !exists(/usr/include/c++/v1/concepts)
+BUILD_DEPENDS+=	${LOCALBASE}/include/boost/unordered_map.hpp:devel/boost-libs
+USES+=		llvm:13
+CXX=		${LLVM_PREFIX}/bin/clang++
+.endif
+
+.if ${ARCH} == i386
+LLD_UNSAFE=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/CMAKE_CXX_STANDARD/s,23,20,' \
 		${WRKSRC}/CMakeLists.txt
@@ -40,6 +52,13 @@ post-patch:
 		${WRKSRC}/src/Utility/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's, c++abi,,' \
 		${WRKSRC}/thirdparty/luajit/cmake/src/CMakeLists.txt
+.if !exists(/usr/include/c++/v1/concepts)
+	@${REINPLACE_CMD} -e '/#include/s,unordered_map,boost/&.hpp,' \
+	    -e 's,std::unordered_map,boost::unordered_map,' \
+		${WRKSRC}/src/Library/Serialization/EnumSerializer.h
+	@${REINPLACE_CMD} -e '/#ifdef/s,ANDROID,${OPSYS},' \
+		${WRKSRC}/src/Utility/FileSystem.cpp
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/OpenEnroth \
