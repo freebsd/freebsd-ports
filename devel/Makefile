@@ -4565,6 +4565,7 @@
     SUBDIR += py-filedepot
     SUBDIR += py-filemagic
     SUBDIR += py-filetype
+    SUBDIR += py-find-libpython
     SUBDIR += py-findlibs
     SUBDIR += py-findpython
     SUBDIR += py-first
