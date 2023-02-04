@@ -102,6 +102,7 @@
     SUBDIR += pcb-rnd
     SUBDIR += pdnmesh
     SUBDIR += py-cadquery
+    SUBDIR += py-cocotb
     SUBDIR += py-cq-editor
     SUBDIR += py-edalize
     SUBDIR += py-ezdxf
