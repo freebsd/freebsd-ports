@@ -1,3 +1,44 @@
+  <vuln vid="d835c54f-a4bd-11ed-b6af-b42e991fc52e">
+    <topic>node_exporter -- bypass security with cache poisoning</topic>
+    <affects>
+      <package>
+	<name>node_exporter</name>
+	<range><lt>1.5.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Prometheus team reports:</p>
+	<blockquote cite="https://github.com/prometheus/exporter-toolkit/security/advisories/GHSA-7rg2-cxvp-9p7p">
+	<p>
+	  Prometheus and its exporters can be secured by a web.yml file that
+	  specifies usernames and hashed passwords for basic authentication.
+	  Passwords are hashed with bcrypt, which means that even if you have
+	  access to the hash, it is very hard to find the original password
+	  back. Passwords are hashed with bcrypt, which means that even if you
+	  have access to the hash, it is very hard to find the original
+	  password back. However, a flaw in the way this mechanism was
+	  implemented in the exporter toolkit makes it possible with people
+	  who know the hashed password to authenticate against Prometheus.
+	  A request can be forged by an attacker to poison the internal cache
+	  used to cache the computation of hashes and make subsequent requests
+	  successful. This cache is used in both happy and unhappy scenarios
+	  in order to limit side channel attacks that could tell an attacker
+	  if a user is present in the file or not.
+	</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-46146</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-46146</url>
+    </references>
+    <dates>
+      <discovery>2021-11-28</discovery>
+      <entry>2023-02-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8dd438ed-a338-11ed-b48b-589cfc0f81b0">
     <topic>Asterisk -- multiple vulnerabilities</topic>
     <affects>
