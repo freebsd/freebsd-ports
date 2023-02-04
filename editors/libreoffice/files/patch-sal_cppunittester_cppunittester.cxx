@@ -1,6 +1,6 @@
---- sal/cppunittester/cppunittester.cxx.orig	2022-01-26 14:35:29 UTC
+--- sal/cppunittester/cppunittester.cxx.orig	2022-12-22 00:14:09 UTC
 +++ sal/cppunittester/cppunittester.cxx
-@@ -385,6 +385,7 @@ void reportResourceUsage([[maybe_unused]] const OUStri
+@@ -389,6 +389,7 @@ static bool main2()
  
  static bool main2()
  {

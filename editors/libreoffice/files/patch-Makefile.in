@@ -1,6 +1,6 @@
---- Makefile.in.orig	2020-11-22 14:05:28 UTC
+--- Makefile.in.orig	2022-12-22 00:14:09 UTC
 +++ Makefile.in
-@@ -268,7 +268,7 @@ endif
+@@ -276,7 +276,7 @@ endif
  #
  # Bootstrap
  #
@@ -9,12 +9,12 @@
  
  #
  # Build
-@@ -393,7 +393,7 @@ else
- 	@exit 1
- endif
+@@ -448,7 +448,7 @@ endif
+ 	$(SRCDIR)/bin/merge-app-bundles macosx_x86_64/"$(PRODUCTNAME)".app macosx_aarch64/"$(PRODUCTNAME)".app universal/"$(PRODUCTNAME)".app
+ 	touch $@
  
 -distro-pack-install: install
 +distro-pack-install: install-strip
- 	$(SRCDIR)/bin/distro-install-clean-up
+ 	WITH_LANG_LIST="$(WITH_LANG_LIST)" WITH_POOR_HELP_LOCALIZATIONS="$(WITH_POOR_HELP_LOCALIZATIONS)" $(SRCDIR)/bin/distro-install-clean-up
  	$(SRCDIR)/bin/distro-install-desktop-integration
  	$(SRCDIR)/bin/distro-install-sdk

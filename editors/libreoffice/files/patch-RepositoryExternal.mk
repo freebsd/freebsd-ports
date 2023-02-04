@@ -1,6 +1,6 @@
---- RepositoryExternal.mk.orig	2022-02-28 18:19:33 UTC
+--- RepositoryExternal.mk.orig	2022-12-22 00:14:09 UTC
 +++ RepositoryExternal.mk
-@@ -4203,6 +4203,7 @@ $(call gb_LinkTarget_set_include,$(1),\
+@@ -4157,6 +4157,7 @@ $(call gb_LinkTarget_use_libraries,$(1),pdfium)
         $$(INCLUDE) \
  )
  $(call gb_LinkTarget_use_libraries,$(1),pdfium)

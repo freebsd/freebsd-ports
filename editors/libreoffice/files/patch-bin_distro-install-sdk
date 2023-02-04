@@ -1,0 +1,44 @@
+--- bin/distro-install-sdk.orig	2022-12-22 00:14:09 UTC
++++ bin/distro-install-sdk
+@@ -17,14 +17,14 @@ if test -d $DESTDIR$INSTALLDIR/sdk ; then
+     # relative paths to $DESTDIR$INSTALLDIR/sdk/setting and it does not work via
+     # a symlink
+     mkdir -p $DESTDIR$PREFIXDIR/include
+-    mkdir -p $DESTDIR$DATADIR/idl
++#    mkdir -p $DESTDIR$DATADIR/idl
+     mkdir -p $DESTDIR$DATADIR/$INSTALLDIRNAME/sdk
+     mkdir -p $DESTDIR$DOCDIR/sdk
+     mv $DESTDIR$INSTALLDIR/sdk/include      $DESTDIR$PREFIXDIR/include/$INSTALLDIRNAME
+     if [ -d $DESTDIR$INSTALLDIR/sdk/classes ]; then
+         mv $DESTDIR$INSTALLDIR/sdk/classes      $DESTDIR$DATADIR/$INSTALLDIRNAME/sdk/classes
+     fi
+-    mv $DESTDIR$INSTALLDIR/sdk/idl          $DESTDIR$DATADIR/idl/$INSTALLDIRNAME
++#    mv $DESTDIR$INSTALLDIR/sdk/idl          $DESTDIR$DATADIR/idl/$INSTALLDIRNAME
+     mv $DESTDIR$INSTALLDIR/sdk/docs         $DESTDIR$DOCDIR/sdk
+     mv $DESTDIR$INSTALLDIR/sdk/share/readme $DESTDIR$DOCDIR/sdk/readme
+     mv $DESTDIR$INSTALLDIR/sdk/index.html   $DESTDIR$DOCDIR/sdk
+@@ -32,7 +32,7 @@ if test -d $DESTDIR$INSTALLDIR/sdk ; then
+     # compat symlinks
+     ln -sf $PREFIXDIR/include/$INSTALLDIRNAME                        $DESTDIR$INSTALLDIR/sdk/include
+     ln -sf $DATADIR/$INSTALLDIRNAME/sdk/classes                      $DESTDIR$INSTALLDIR/sdk/classes
+-    ln -sf $DATADIR/idl/$INSTALLDIRNAME                              $DESTDIR$INSTALLDIR/sdk/idl
++#    ln -sf $DATADIR/idl/$INSTALLDIRNAME                              $DESTDIR$INSTALLDIR/sdk/idl
+     ln -sf $DOCDIR/sdk/docs                                          $DESTDIR$INSTALLDIR/sdk/
+     ln -sf $DOCDIR/sdk/index.html                                    $DESTDIR$INSTALLDIR/sdk/index.html
+     ln -sf $INSTALLDIR/sdk/examples         $DESTDIR$DOCDIR/sdk/examples
+@@ -53,13 +53,13 @@ if test -d $DESTDIR$INSTALLDIR/sdk ; then
+     #
+     echo "%dir $DATADIR/$INSTALLDIRNAME/sdk"                    >>$DESTDIR/gid_Module_Root_SDK
+     echo "%dir $DATADIR/$INSTALLDIRNAME"                        >>$DESTDIR/gid_Module_Root_SDK
+-    echo "%dir $DATADIR/idl"                                    >>$DESTDIR/gid_Module_Root_SDK
++#    echo "%dir $DATADIR/idl"                                    >>$DESTDIR/gid_Module_Root_SDK
+     echo "%dir $DOCDIR/sdk/docs"                                >>$DESTDIR/gid_Module_Root_SDK
+     echo "%dir $DOCDIR/sdk"                                     >>$DESTDIR/gid_Module_Root_SDK
+     echo "%dir $DOCDIR"                                         >>$DESTDIR/gid_Module_Root_SDK
+     echo "$INSTALLDIR/sdk/include"     >>$DESTDIR/gid_Module_Root_SDK
+     echo "$INSTALLDIR/sdk/classes"     >>$DESTDIR/gid_Module_Root_SDK
+-    echo "$INSTALLDIR/sdk/idl"         >>$DESTDIR/gid_Module_Root_SDK
++#    echo "$INSTALLDIR/sdk/idl"         >>$DESTDIR/gid_Module_Root_SDK
+     echo "$INSTALLDIR/sdk/docs"        >>$DESTDIR/gid_Module_Root_SDK
+     echo "$INSTALLDIR/sdk/index.html"  >>$DESTDIR/gid_Module_Root_SDK
+     echo "$DOCDIR/sdk/examples"                                 >>$DESTDIR/gid_Module_Root_SDK

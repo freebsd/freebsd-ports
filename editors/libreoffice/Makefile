@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -9,10 +9,6 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-help-${DISTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	libreoffice
 EXTRACT_ONLY:=	${DISTFILES}
-
-#ZXing 2.0.0
-PATCH_SITES+=	https://github.com/LibreOffice/core/commit/
-PATCHFILES+=	15e5d86cc55ad94ac946e04d5e25b84be5810970.diff:-p1
 
 COMMENT=	Full integrated office productivity suite
 WWW?=		https://www.libreoffice.org/
@@ -54,8 +50,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libzmf-0.0.so:graphics/libzmf \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
-		libqrcodegencpp.so:graphics/qr-code-generator \
-		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \
 		liblpsolve55.so:math/lp_solve \
 		libcmis-0.5.so:net/libcmis \
@@ -139,7 +133,7 @@ OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA PDFIUM QT5
 #OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
-GTK4_DESC=	GTK+ 4 GUI toolkit support (broken)
+GTK4_DESC=	GTK+ 4 GUI toolkit support (experimental, broken)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
@@ -171,7 +165,6 @@ GNOME_USE=	GNOME=dconf
 GTK3_CONFIGURE_ENABLE=	gtk3
 GTK3_USE=	GNOME=gtk30
 
-GTK4_BROKEN=		GTK4 is still experimental and breaks in compat code
 GTK4_CONFIGURE_ENABLE=	gtk4
 GTK4_USE=	GNOME=gtk40
 
@@ -227,7 +220,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-5058.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-5408.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -329,6 +322,8 @@ MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
 MAKE_ENV+=	verbose=1
 
+BINARY_ALIAS=	sed=gsed
+
 #MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
@@ -392,7 +387,7 @@ post-install:
 .endfor
 
 post-install-SDK-on:
-.for subdir in include share share/doc share/idl
+.for subdir in include share share/doc
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s ${subdir}/libreoffice -not -type d >> ${TMPPLIST}
 .endfor
