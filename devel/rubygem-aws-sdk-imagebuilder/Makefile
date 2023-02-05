@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-imagebuilder
-PORTVERSION=	1.41.0
+PORTVERSION=	1.43.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
