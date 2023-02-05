@@ -1,6 +1,6 @@
 PORTNAME=	vips
 PORTVERSION=	8.13.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/libvips/releases/download/v${PORTVERSION}/
 
@@ -58,6 +58,7 @@ GSF_USE=		GNOME=libgsf
 HEIF_CONFIGURE_WITH=	heif
 HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
 IMAGEMAGICK_CONFIGURE_ON=	--with-magickpackage=MagickCore
+IMAGEMAGICK_USES=	magick
 JPEG_CONFIGURE_WITH=	jpeg
 JPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 JPEG_USES=		jpeg
@@ -89,14 +90,6 @@ WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 X11_CONFIGURE_WITH=	x
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MIMAGEMAGICK}
-.if ${PORT_OPTIONS:MX11}
-USES+=		magick:7
-.else
-USES+=		magick:7,nox11
-.endif
-.endif
 
 .if !${PORT_OPTIONS:MGRAPHMAGICK} && !${PORT_OPTIONS:MIMAGEMAGICK}
 CONFIGURE_ARGS+=--without-magick
