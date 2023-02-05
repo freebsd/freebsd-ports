@@ -3,7 +3,7 @@
     <affects>
       <package>
 	<name>kafka</name>
-	<range><lt>3.4.0</lt></range>
+	<range><lt>3.3.2</lt></range>
       </package>
     </affects>
     <description>
