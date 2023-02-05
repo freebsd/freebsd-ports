@@ -1,6 +1,6 @@
 PORTNAME=	pdk
 PORTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,7 @@ BROKEN_RUBY31=	yes
 
 RUN_DEPENDS=	rubygem-bundler>=1.15.0,1<3.0.0,1:sysutils/rubygem-bundler \
 		rubygem-childprocess>=4.0.0:devel/rubygem-childprocess \
-		rubygem-concurrent-ruby>=1.1.5<1.2:devel/rubygem-concurrent-ruby \
+		rubygem-concurrent-ruby11>=1.1.5<1.2:devel/rubygem-concurrent-ruby11 \
 		rubygem-cri>=2.10<3:devel/rubygem-cri \
 		rubygem-deep_merge>=1.1<2:devel/rubygem-deep_merge \
 		rubygem-diff-lcs>=1.4.4:textproc/rubygem-diff-lcs \
