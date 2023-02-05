@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-serverlessapplicationrepository
-PORTVERSION=	1.44.0
+PORTVERSION=	1.46.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
