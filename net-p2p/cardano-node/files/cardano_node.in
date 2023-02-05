@@ -132,16 +132,22 @@ eval "_port=\${${name}_port}"
 eval "_flags=\${${name}_flags}"
 
 jail_root="${_home}/jail"
+jail_copy_resolv_conf=yes
+jail_copy_services=yes
+jail_copy_programs="$command /usr/sbin/nologin"
+jail_mount_devfs=yes
+jail_ip_inherit=yes
+#TODO: daemon fails with "Network.Socket.bind: permission denied" without suid ;\
+jail_prepare_inside_cmds="mkdir ./socket ;\
+                          ln -s ./${jail_socket} ${_socket} ;\
+                          chmod +s ./bin/cardano-node"
+jail_nullfs_mounts="${_db} ${jail_root}/db rw \
+                    ${_home}/logs ${jail_root}/logs rw"
+
 jail_topology="/topology_dir/`basename ${_topology}`"
 jail_config="/config_dir/`basename ${_config}`"
 jail_socket="/socket/`basename ${_socket}`"
-jail_ip6_arg=""
-sysctl -q kern.features.inet6 2> /dev/null
-if [ "$?" = "0" ]
-then
-    jail_ip6_arg="ip6=inherit"
-fi
-jail_cmd="jail -c name=${name}_jail path=${jail_root} exec.jail_user=cardano exec.system_jail_user ip4=inherit ${jail_ip6_arg} host=inherit"
+jail_args="name=${name}_jail exec.jail_user=cardano exec.system_jail_user host=inherit"
 
 pidfile="/var/run/${name}.pid"
 flags="run +RTS ${_rts_flags} -RTS \
@@ -153,72 +159,43 @@ flags="run +RTS ${_rts_flags} -RTS \
         --config ${jail_config} \
         ${_flags}"
 
+. %%LOCALBASE%%/share/rc-subr-jail/rc.subr.jail
+
+# realpath2 path
+# Returns an absolute path to ${_home}/${path} if it exists, otherwise
+# treats ${path} as absolute
+realpath2()
+{
+    local _path _realpath
+    _path=$1
+
+    _realpath=$(/bin/sh -c "cd ${_home} && realpath ${_path}" 2> /dev/null)
+    if [ $? != "0" ]
+    then
+        return 1
+    else
+        echo $_realpath
+    fi
+}
+
+
 sanity_check()
 {
-    if [ ! -f "${_home}/${_topology}" -a ! -f "/${_topology}" ]
+    realpath2 ${_topology} > /dev/null
+    if [ $? != "0" ]
     then
         echo "Invalid value for ${name}_topology: missing file ${_topology}"
-        echo "You might want to run service ${name} onefetch"
+        echo "You might want to run service ${name} onefetch to download this file into default dir"
         exit 1
     fi
-    if [ ! -f "${_home}/${_config}" -a ! -f "/${_config}" ]
+    realpath2 ${_config} > /dev/null
+    if [ $? != "0" ]
     then
         echo "Invalid value for cardano_node_config: missing file ${_config}"
-        echo "You might want to run service ${name} onefetch"
+        echo "You might want to run service ${name} onefetch to download this file into the default dir"
         exit 1
     fi
     return 0
-}
-
-_jail_dirs="/bin /etc /lib /libexec /socket"
-_jail_mount_points="/dev /config_dir /topology_dir /db /logs"
-
-create_jail()
-{
-    destroy_jail
-
-    for d in ${_jail_dirs} ${_jail_mount_points}
-    do
-        mkdir -p "${jail_root}${d}"
-    done
-
-    cp /etc/resolv.conf "${jail_root}/etc/"
-    cp /etc/services "${jail_root}/etc/"
-
-    cp "$command" "${jail_root}/bin/"
-    ldd "$command" | cut -s -d " " -f 3 | grep -E '^(/lib|/usr)' | sort -u | xargs -I % cp % "${jail_root}/lib/"
-#    TODO: daemon fails with "Network.Socket.bind: permission denied" without suid
-    chmod +s "${jail_root}/bin/cardano-node"
-    cp /usr/sbin/nologin "${jail_root}/bin/"
-    cp /libexec/ld-elf.so.1 "${jail_root}/libexec"
-
-    # change directory because $cardano_node_{config,topology} may be relative paths
-    cd ${_home}
-    mount_nullfs -o ro `dirname ${_config}` "${jail_root}/config_dir"
-    mount_nullfs -o ro `dirname ${_topology}` "${jail_root}/topology_dir"
-    mount_nullfs "${_db}" "${jail_root}/db"
-    mount_nullfs "${_home}/logs" "${jail_root}/logs"
-    mount -o ruleset=4 -t devfs devfs "${jail_root}/dev"
-}
-
-destroy_jail()
-{
-    for d in ${_jail_mount_points}
-    do
-        if [ -d "${jail_root}${d}" ]; then
-            umount -f "${jail_root}${d}" 2> /dev/null
-        fi
-    done
-    for d in ${_jail_dirs}
-    do
-        rm -rf "${jail_root}${d}"
-    done
-    for d in ${_jail_mount_points}
-    do
-        rmdir "${jail_root}${d}" 2> /dev/null
-    done
-
-    rmdir "${jail_root}" 2> /dev/null
 }
 
 cardano_node_prestart()
@@ -246,31 +223,45 @@ cardano_node_start()
 {
     check_startmsgs && echo "Starting ${name}."
 
-    create_jail
+    local _topo _conf
+    _topo=$(realpath2 ${_topology})
+    _conf=$(realpath2 ${_config})
+
+    jail_nullfs_mounts="$jail_nullfs_mounts $(dirname ${_topo}) ${jail_root}/topology_dir ro"
+    jail_nullfs_mounts="$jail_nullfs_mounts $(dirname ${_conf}) ${jail_root}/config_dir ro"
+    prepare_jail $jail_root
     if [ "$?" != "0" ]
     then
         echo "Failed to start ${name}: jail creation error"
         return 1
     fi
-    cd $_home && /usr/sbin/daemon -p $pidfile -S -T cardano-node \
-        ${jail_cmd} command=/bin/cardano-node ${flags} 2>&1 > /dev/null
-    ln -s "${jail_root}/${jail_socket}" "${_socket}"
+
+    cd $_home && /bin/sh -c "/usr/sbin/daemon -p $pidfile -S -T cardano-node \
+        jail -c ${jail_prepared_args} ${jail_args} command=/bin/cardano-node ${flags}"
 }
 
 cardano_node_stop()
 {
+    local _topo _conf
+    _topo=$(realpath2 ${_topology})
+    _conf=$(realpath2 ${_config})
+
+    jail_nullfs_mounts="$jail_nullfs_mounts $(dirname ${_topo}) ${jail_root}/topology_dir ro"
+    jail_nullfs_mounts="$jail_nullfs_mounts $(dirname ${_conf}) ${jail_root}/config_dir ro"
+
     pid=$(check_pidfile "${pidfile}" jail)
     if [ -z "${pid}" ]
     then
         echo "${name} is not running"
-        destroy_jail
+        destroy_jail $jail_root 2> /dev/null
+        rm -rf ${_socket}
         return 1
     else
         echo "Stopping ${name}."
         killall -j ${name}_jail -INT
         wait_for_pids "$pid"
-        destroy_jail
-        rm ${_socket}
+        destroy_jail $jail_root
+        rm -rf ${_socket}
     fi
 }
 

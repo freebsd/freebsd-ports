@@ -1,5 +1,6 @@
 PORTNAME=	cardano-node
 PORTVERSION=	1.35.5
+PORTREVISION=	1
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
 CATEGORIES=	net-p2p
 
@@ -11,6 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	ghc-8.10.7:lang/ghc810
+RUN_DEPENDS=	${LOCALBASE}/share/rc-subr-jail:ports-mgmt/rc-subr-jail
 
 USES=		autoreconf:build cabal gmake libtool pkgconfig
 
