@@ -6472,6 +6472,7 @@
     SUBDIR += rubygem-commander
     SUBDIR += rubygem-concurrent-ruby
     SUBDIR += rubygem-concurrent-ruby-edge
+    SUBDIR += rubygem-concurrent-ruby-edge06
     SUBDIR += rubygem-concurrent-ruby-ext
     SUBDIR += rubygem-concurrent-ruby11
     SUBDIR += rubygem-configatron
