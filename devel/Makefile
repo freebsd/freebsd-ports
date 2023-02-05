@@ -5107,6 +5107,7 @@
     SUBDIR += py-pycodestyle
     SUBDIR += py-pycognito
     SUBDIR += py-pycompilation
+    SUBDIR += py-pycomplete
     SUBDIR += py-pycparser
     SUBDIR += py-pydantic
     SUBDIR += py-pydash
