@@ -14,13 +14,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}find-libpython>0:devel/py-find-libpython@${PY_FLAVOR} \
 		gtkwave:cad/gtkwave
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.6+
-USE_PYTHON=	pep517 autoplist pytest # https://github.com/cocotb/cocotb/issues/3230
+USES=		python:3.6+ shebangfix
+USE_PYTHON=	pep517 autoplist
 USE_GITHUB=	yes
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
-TEST_WRKSRC=	${WRKSRC}/tests
+SHEBANG_GLOB=	*.py
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} \
+		PATH=${STAGEDIR}${LOCALBASE}/bin:${PATH} \
+		LD_LIBRARY_PATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/cocotb/libs \
+		SIM=icarus
 
 OPTIONS_DEFINE=		IVERILOG VERILATOR # GHDL - TODO
 OPTIONS_DEFAULT=	IVERILOG VERILATOR
@@ -36,5 +41,8 @@ post-install:
 		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/simulator${PYTHON_EXT_SUFFIX}.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/libs/lib*.so \
 		${STAGEDIR}${PYTHON_SITELIBDIR}/cocotb/libs/libcocotbvpi_icarus.vpl
+
+do-test: # some tests fail, see https://github.com/cocotb/cocotb/issues/3236
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${GMAKE} test
 
 .include <bsd.port.mk>
