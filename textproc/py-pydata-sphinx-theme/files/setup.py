@@ -11,7 +11,7 @@ setup(
     package_dir = {'': 'src'},
     package_data = {'': ['*']},
     install_requires = [
-        'sphinx>=3.5.4,<5',
+        'sphinx>=4,<6',
         'beautifulsoup4',
         'docutils!=0.17.0',
         'packaging',
