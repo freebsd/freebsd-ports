@@ -1,12 +1,14 @@
+@sample(,,640) etc/wifibox/appliance/hostname.sample
 @sample(,,640) etc/wifibox/appliance/interfaces.conf.sample
 @sample(,,640) etc/wifibox/appliance/iptables.sample
 @sample(,,640) etc/wifibox/appliance/udhcpd.conf.sample
 %%UDS_PASSTHRU%%@sample(,,640) etc/wifibox/appliance/uds_passthru.conf.sample
 %%APP_WPA_SUPPLICANT%%@sample(,,640) etc/wifibox/wpa_supplicant/wpa_supplicant.conf.sample
 %%APP_HOSTAPD%%@sample(,,640) etc/wifibox/hostapd/hostapd.conf.sample
+%%XX_MDNS%%@sample(,,640) etc/wifibox/appliance/mdnsd-services.conf.sample
+%%XX_FORWARDING%%@sample(,,640) etc/wifibox/appliance/forwarding.conf.sample
 etc/wifibox/app_config
 man/man5/wifibox-alpine.5.gz
-share/wifibox/bhyve.conf
 share/wifibox/disk.img
 share/wifibox/grub.cfg
 share/wifibox/vmlinuz

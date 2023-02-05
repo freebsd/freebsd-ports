@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-alpine
-PORTVERSION=	20220712
+PORTVERSION=	20230201
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -12,8 +12,9 @@ LICENSE_FILE=	${WRKSRC_scripts}/LICENSE
 ONLY_FOR_ARCHS=	amd64
 EXTRACT_ONLY=	${_DISTFILES:M*_GH0.tar.gz}
 
-BUILD_DEPENDS=	patchelf>0:sysutils/patchelf \
-		squashfs-tools>0:sysutils/squashfs-tools
+BUILD_DEPENDS=	gtar>0:archivers/gtar \
+		patchelf>0:sysutils/patchelf \
+		squashfs-tools-ng>0:sysutils/squashfs-tools-ng
 
 .include "${.CURDIR}/flavors.mk"
 
@@ -25,32 +26,39 @@ OPTIONS_DEFINE=			UDS_PASSTHRU
 OPTIONS_SUB=			yes
 
 OPTIONS_SINGLE=			COMPRESSION APPLICATION
-OPTIONS_SINGLE_COMPRESSION=	COMP_GZIP COMP_LZO COMP_LZ4 COMP_XZ COMP_ZSTD
+OPTIONS_SINGLE_COMPRESSION=	COMP_GZIP COMP_LZ4 COMP_LZO COMP_XZ COMP_ZSTD
 OPTIONS_SINGLE_APPLICATION=	APP_HOSTAPD APP_WPA_SUPPLICANT
+
+OPTIONS_GROUP=			EXTRAS
+OPTIONS_GROUP_EXTRAS=		XX_MDNS XX_FORWARDING XX_TCPDUMP
 
 OPTIONS_DEFAULT=		COMP_XZ APP_WPA_SUPPLICANT UDS_PASSTHRU
 
 COMP_GZIP_DESC=		gzip
-COMP_LZO_DESC=		lzo
 COMP_LZ4_DESC=		lz4
+COMP_LZO_DESC=		lzo
 COMP_XZ_DESC=		xz
 COMP_ZSTD_DESC=		zstd
 
 UDS_PASSTHRU_DESC=		Control socket pass-through
 APP_HOSTAPD_DESC=		Access Point (hostapd)
 APP_WPA_SUPPLICANT_DESC=	WPA Supplicant (wpa_supplicant)
+XX_MDNS_DESC=			mDNS Responder Daemon
+XX_FORWARDING_DESC=		User-space forwarding
+XX_TCPDUMP_DESC=		Packet analysis with tcpdump
 
 UDS_PASSTHRU_RUN_DEPENDS=	socat>0:net/socat
 
 .if ${FLAVOR:U} == default
-OPTIONS_GROUP=		FIRMWARE EXTRAS
+OPTIONS_GROUP+=		FIRMWARE
 OPTIONS_GROUP_FIRMWARE=	FW_ATH10K FW_ATH11K FW_ATMEL FW_B43 FW_B43LEGACY FW_BRCM\
 			FW_IPW2100 FW_IPW2200 FW_IWL3945 FW_IWL4965 FW_IWLWIFI\
-			FW_MEDIATEK FW_MARVELL FW_RT61 FW_RTLWIFI FW_RTW88 FW_TI
-OPTIONS_GROUP_EXTRAS=	XX_DRIVER_WL XX_DRIVER_RTW89
+			FW_MEDIATEK FW_MARVELL FW_RT61 FW_RTLWIFI FW_RTW88 FW_RTW89\
+			FW_TI
+OPTIONS_GROUP_EXTRAS+=	XX_DRIVER_WL
 
 OPTIONS_DEFAULT+=	FW_ATH10K FW_ATH11K FW_BRCM FW_IWLWIFI FW_MEDIATEK\
-			FW_MARVELL FW_RT61 FW_RTLWIFI FW_RTW88
+			FW_MARVELL FW_RT61 FW_RTLWIFI FW_RTW88 FW_RTW89
 
 FW_ATH10K_DESC=		Qualcomm Atheros 802.11ac
 FW_ATH11K_DESC=		Qualcomm Atheros 802.11ax
@@ -68,10 +76,10 @@ FW_MARVELL_DESC=	Marvell 88W8xxx (TopDog) 802.11b/g/n
 FW_RT61_DESC=		Ralink RT2xxx (RT61) 802.11a/b/g
 FW_RTLWIFI_DESC=	Realtek 802.11n
 FW_RTW88_DESC=		Realtek 802.11ac
+FW_RTW89_DESC=		Realtek 802.11ax
 FW_TI_DESC=		Texas Instruments WL1xxx 802.11b/g/n
 
 XX_DRIVER_WL_DESC=	Broadcom 802.11 STA driver (+ firmware, exclusive)
-XX_DRIVER_RTW89_DESC=	Realtek 802.11ax driver (+ firmware)
 .endif
 
 _GITHUB_SITE=	https://github.com/pgj/freebsd-wifibox-alpine/releases/download
@@ -79,10 +87,11 @@ _GITHUB_SITE=	https://github.com/pgj/freebsd-wifibox-alpine/releases/download
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	pgj
 GH_PROJECT=	freebsd-wifibox-alpine:scripts
-GH_TAGNAME=	f8fd8cdb1a0e545272917fe1dc1f9544cf74e383:scripts
+GH_TAGNAME=	8439c9ac04c3220f148f81aedc15b9660d0d8509:scripts
 
-ALPINE_VERSION=	3.16.0
-ALPINE_DATE=	2022.07.09
+ALPINE_VERSION=	3.17.1
+ALPINE_DATE=	2023.01.28
+
 _ALPINE_VER=	${ALPINE_VERSION:C@([0-9]+)\.([0-9]+).*@\1.\2@}
 
 .if defined(ALPINE_DATE)
@@ -93,7 +102,7 @@ _ALPINE_SITE=	https://mirror.fit.cvut.cz/alpine/v${_ALPINE_VER}
 .endif
 
 _LINUXFW_SITE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/
-_LINUXFW_TAG=	20220708
+_LINUXFW_TAG=	20230117
 _LINUXFW=	linux-firmware-${_LINUXFW_TAG}
 
 MASTER_SITES+=	${_ALPINE_SITE}/releases/x86_64/:rootfs \
@@ -107,25 +116,24 @@ MASTER_SITES+=	${_ALPINE_SITE}/releases/x86_64/:rootfs \
 		https://github.com/openwrt/mt76/archive/:mt76
 
 _MINIROOTFS=	alpine-minirootfs-${ALPINE_VERSION}-x86_64.tar.gz
-_PACKAGES=	baselayout-3.2.0-r19:wifibox \
-		busybox-1.35.0-r0:wifibox \
+_PACKAGES=	baselayout-3.4.0-r0:wifibox \
+		busybox-1.35.0-r3:wifibox \
 		ifupdown-ng-0.12.1-r0:wifibox \
 		iptables-1.8.8-r0:wifibox \
-		iw-5.16-r0:community \
-		libcrypto1.1-1.1.1o-r0 \
+		iw-5.19-r0 \
+		libcap2-2.66-r0 \
+		libcap-utils-2.66-r0 \
+		libcrypto3-3.0.7-r2 \
 		libmnl-1.0.5-r0 \
-		libnftnl-1.2.1-r0 \
-		libnl3-3.5.0-r0 \
-		libssl1.1-1.1.1o-r0 \
-		linux-lts-5.15.53-r0:wifibox \
-		musl-1.2.3-r0 \
-		openrc-0.44.10-r0:wifibox
+		libnftnl-1.2.4-r0 \
+		libnl3-3.7.0-r0 \
+		libssl3-3.0.7-r2 \
+		linux-lts-5.15.90-r0:wifibox \
+		musl-1.2.3-r4 \
+		openrc-0.45.2-r0:wifibox
 
-.if !defined(_GUEST_MEM)
-_GUEST_MEM=	64M
-.endif
-
-_BOOT_SERVICES=		networking urandom bootmisc modules hostname hwclock sysctl syslog
+_BOOT_SERVICES=		bootmisc defaults modules hostname hwclock networking sysctl \
+			syslog urandom
 _DEFAULT_SERVICES=	acpid crond iptables udhcpd
 _SYSINIT_SERVICES=	devfs dmesg hwdrivers mdev
 
@@ -136,7 +144,7 @@ _IPW2100_FIRMWARE=	ipw/ipw2100-1.3 \
 			ipw/ipw2100-1.3-i
 _IPW2200_FIRMWARE=	iwi/ipw2200-bss \
 			iwi/ipw2200-ibss
-_MT76_FIRMWARE=		b6e865e2cc7080c91ec34a9dd3648d25f7ce04c6
+_MT76_FIRMWARE=		5b509e80384ab019ac11aa90c81ec0dbb5b0d7f2
 
 _LINUX64_KMOD!=		(kldstat -qn linux64 && echo "found") || echo ""
 
@@ -160,9 +168,16 @@ pre-everything::
 _BOOT_SERVICES+=	uds_passthru
 .endif
 
+.if (${PORT_OPTIONS:MUDS_PASSTHRU} && empty(PORT_OPTIONS:MXX_FORWARDING)) || make(makesum)
+_PACKAGES+=		socat-1.7.4.4-r0:wifibox
+.endif
+
+.if ${PORT_OPTIONS:MXX_FORWARDING} || make(makesum)
+_PACKAGES+=		socat-with-udp-1.7.4.4-r0:wifibox
+.endif
+
 .if ${PORT_OPTIONS:MUDS_PASSTHRU} || make(makesum)
-_PACKAGES+=		socat-1.7.4.3-r0:wifibox \
-			uds_passthru-0.1.0-r0:wifibox
+_PACKAGES+=		uds_passthru-0.1.1-r1:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MAPP_WPA_SUPPLICANT}
@@ -172,8 +187,8 @@ _ETC_SRCS=		etc/wpa_supplicant
 .endif
 
 .if ${PORT_OPTIONS:MAPP_WPA_SUPPLICANT} || make(makesum)
-_PACKAGES+=		pcsc-lite-libs-1.9.6-r0 \
-			wpa_supplicant-2.10-r0:wifibox
+_PACKAGES+=		pcsc-lite-libs-1.9.9-r0 \
+			wpa_supplicant-2.10-r1:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MAPP_HOSTAPD}
@@ -183,7 +198,35 @@ _ETC_SRCS=		etc/hostapd
 .endif
 
 .if ${PORT_OPTIONS:MAPP_HOSTAPD} || make(makesum)
-_PACKAGES+=		hostapd-2.10-r1:wifibox
+_PACKAGES+=		hostapd-2.10-r2:wifibox
+.endif
+
+.if ${PORT_OPTIONS:MXX_MDNS}
+_DEFAULT_SERVICES+=	mdnsresponderposix
+_ETC_SRCS+=		etc/optional/mdns
+.endif
+
+.if ${PORT_OPTIONS:MXX_MDNS} || make(makesum)
+_PACKAGES+=		mbedtls-2.28.2-r0 \
+			mDNSResponder-1790.80.10-r0:wifibox
+.endif
+
+.if ${PORT_OPTIONS:MXX_FORWARDING}
+_BOOT_SERVICES+=	forwarding
+_ETC_SRCS+=		etc/optional/forwarding
+.endif
+
+.if ${PORT_OPTIONS:MXX_FORWARDING} || make(makesum)
+_PACKAGES+=		forwarding-0.1.0-r1:wifibox
+.endif
+
+.if ${PORT_OPTIONS:MXX_TCPDUMP} || make(makesum)
+_PACKAGES+=		libpcap-1.10.1-r1 \
+			tcpdump-4.99.1-r4
+.endif
+
+.if ${PORT_OPTIONS:MXX_MDNS} || ${PORT_OPTIONS:MXX_FORWARDING}
+PKGMESSAGE=		pkg-message.iptables
 .endif
 
 .for flavor in ${_FLAVORS}
@@ -206,6 +249,7 @@ LFW_MARVELL_FILES=	mwl*
 LFW_RT61_FILES=		rt*.bin
 LFW_RTLWIFI_FILES=	rtlwifi
 LFW_RTW88_FILES=	rtw88
+LFW_RTW89_FILES=	rtw89
 LFW_TI_FILES=		ti-connectivity
 
 .for fw_opt in ${PORT_OPTIONS:MFW_*}
@@ -214,20 +258,16 @@ LINUX_FIRMWARE+=	${L${fw_opt}_FILES}
 .endif
 .endfor
 
-.if ${FLAVOR:U} == iwlwifi
-_GUEST_MEM=	45M
+.if ${PORT_OPTIONS:MFW_RTW88} || make(makesum)
+_PACKAGES+=	rtl8821ce-20230101-r0:wifibox
 .endif
 
-.if ${PORT_OPTIONS:MFW_RTW88} || make(makesum)
-_PACKAGES+=	rtl8821ce-20220601-r0:wifibox
+.if ${PORT_OPTIONS:MFW_RTW89} || make(makesum)
+_PACKAGES+=	rtw89-20230117-r0:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MXX_DRIVER_WL} || make(makesum)
-_PACKAGES+=	broadcom-wl-6.30.223.271-r4:wifibox
-.endif
-
-.if ${PORT_OPTIONS:MXX_DRIVER_RTW89} || make(makesum)
-_PACKAGES+=	rtw89-20220630-r0:wifibox
+_PACKAGES+=	broadcom-wl-6.30.223.271-r7:wifibox
 .endif
 
 .if !empty(LINUX_FIRMWARE)
@@ -326,8 +366,6 @@ post-install:
 .if ${PORT_OPTIONS:MAPP_HOSTAPD} && ${PORT_OPTIONS:MUDS_PASSTHRU}
 	${MKDIR} ${STAGEDIR}/var/run/hostapd
 .endif
-	${PRINTF} "cpus=1\nmemory=${_GUEST_MEM}\n" \
-		> ${STAGEDIR}${PREFIX}/share/wifibox/bhyve.conf
 
 WRKSRC=		${WRKSRC_scripts}
 MAKE_ARGS+=	VERSION=${PORTVERSION} \

@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-core
-PORTVERSION=	0.10.0
+PORTVERSION=	0.11.0
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -14,8 +14,16 @@ ONLY_FOR_ARCHS=	amd64
 RUN_DEPENDS=	grub2-bhyve>0:sysutils/grub2-bhyve
 
 OPTIONS_DEFINE=			BHYVE_PLUS
-OPTIONS_DEFAULT=		#
+
+OPTIONS_SINGLE=			RECOVERY
+OPTIONS_SINGLE_RECOVERY=	RECOVER_RESTART_VMM RECOVER_SUSPEND_GUEST RECOVER_NONE
+
+OPTIONS_DEFAULT=		RECOVER_RESTART_VMM
 OPTIONS_EXCLUDE_FreeBSD_12=	BHYVE_PLUS
+
+RECOVER_RESTART_VMM_DESC=	Restart the vmm(4) kernel module on resume
+RECOVER_SUSPEND_GUEST_DESC=	Stop the guest on suspend, start on resume
+RECOVER_NONE_DESC=		No recovery for suspend/resume
 
 BHYVE_PLUS_DESC=		Use bhyve+ (experimental)
 
@@ -33,7 +41,8 @@ GH_PROJECT=	freebsd-wifibox
 NO_BUILD=	yes
 MAKE_ARGS+=	GUEST_ROOT=${LOCALBASE}/share/wifibox \
 		GUEST_MAN=${LOCALBASE}/man/man5/wifibox-alpine.5.gz \
-		VERSION=${PORTVERSION}
+		VERSION=${PORTVERSION} \
+		RECOVERY_METHOD=${PORT_OPTIONS:MRECOVER_*:S/RECOVER_//:tl}
 .if defined(_BHYVE_PLUS)
 MAKE_ARGS+=	BHYVE=${LOCALBASE}/sbin/bhyve \
 		BHYVECTL=${LOCALBASE}/sbin/bhyvectl \
