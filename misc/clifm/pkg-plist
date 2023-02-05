@@ -5,11 +5,16 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/actions.clifm
 %%DATADIR%%/clifmrc
 %%DATADIR%%/colors/amber-256.clifm
+%%DATADIR%%/colors/aqua.clifm
+%%DATADIR%%/colors/arena-256.clifm
 %%DATADIR%%/colors/base16.clifm
 %%DATADIR%%/colors/c64.clifm
 %%DATADIR%%/colors/cga.clifm
 %%DATADIR%%/colors/cold.clifm
+%%DATADIR%%/colors/contrast.clifm
+%%DATADIR%%/colors/cyberpunk.clifm
 %%DATADIR%%/colors/default.clifm
+%%DATADIR%%/colors/dm10s.clifm
 %%DATADIR%%/colors/dracula-vivid.clifm
 %%DATADIR%%/colors/dracula.clifm
 %%DATADIR%%/colors/gameboy.clifm
@@ -51,7 +56,6 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/plugins/finder.sh
 %%DATADIR%%/plugins/fzcd.sh
 %%DATADIR%%/plugins/fzfdesel.sh
-%%DATADIR%%/plugins/fzfdirhist.sh
 %%DATADIR%%/plugins/fzfhist.sh
 %%DATADIR%%/plugins/fzfnav.sh
 %%DATADIR%%/plugins/fzfsel.sh
