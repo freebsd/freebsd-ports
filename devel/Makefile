@@ -4073,6 +4073,7 @@
     SUBDIR += php82-sysvsem
     SUBDIR += php82-sysvshm
     SUBDIR += php82-tokenizer
+    SUBDIR += phpunit10
     SUBDIR += phpunit6
     SUBDIR += phpunit7
     SUBDIR += phpunit8
