@@ -1,5 +1,5 @@
 PORTNAME=	rust
-PORTVERSION?=	1.66.1
+PORTVERSION?=	1.67.1
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
@@ -8,9 +8,9 @@ MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://static.rust-lang.org/dist/:bootstrap
 DISTNAME?=	${PORTNAME}c-${PORTVERSION}-src
 DISTFILES?=	${NIGHTLY_DATE:D${NIGHTLY_DATE}/}${DISTNAME}${EXTRACT_SUFX}:src \
-		${_RUSTC_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:bootstrap \
-		${_RUST_STD_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:bootstrap \
-		${_CARGO_BOOTSTRAP}${BOOTSTRAPS_SUFFIX}${EXTRACT_SUFX}:bootstrap
+		${_RUSTC_BOOTSTRAP}${EXTRACT_SUFX}:bootstrap \
+		${_RUST_STD_BOOTSTRAP}${EXTRACT_SUFX}:bootstrap \
+		${_CARGO_BOOTSTRAP}${EXTRACT_SUFX}:bootstrap
 DIST_SUBDIR?=	rust
 
 MAINTAINER=	rust@FreeBSD.org
@@ -69,11 +69,8 @@ WASM_VARS=		_COMPONENTS+="rust-analysis-${_PACKAGE_VERS}-wasm32-unknown-unknown 
 WASM_VARS_OFF=		_RUST_BUILD_WASM=false
 
 # See WRKSRC/src/stage0.json for the date and version values
-BOOTSTRAPS_DATE?=		2022-11-03
-RUST_BOOTSTRAP_VERSION?=	1.65.0
-
-BOOTSTRAPS_SUFFIX?=		${BOOTSTRAPS_SUFFIX_${ARCH}}
-BOOTSTRAPS_SUFFIX_powerpc64?=	-${PPC_ABI:tl}
+BOOTSTRAPS_DATE?=		2023-01-10
+RUST_BOOTSTRAP_VERSION?=	1.66.0
 
 CARGO_VENDOR_DIR?=		${WRKSRC}/vendor
 
