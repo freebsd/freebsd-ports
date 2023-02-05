@@ -1,5 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.74.3
+DISTVERSION=	1.75.0
 CATEGORIES=	editors
 MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
 		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
@@ -71,7 +71,7 @@ USES=		desktop-file-utils gl gmake gnome iconv jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	97dec172d3256f8ca4bfb2143f3f76b503ca0534
+SOURCE_COMMIT_HASH=	e2816fe719a4026ffa1ee0189dc89bdfdbafb164
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -233,6 +233,7 @@ do-install:
 		${TAR} -cf - . | ${TAR} -xf - -C ${STAGEDIR}${DATADIR}
 	cd ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked && \
 		${FIND} . -type f -name '*.node' -exec ${STRIP_CMD} {} ';'
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked/node-pty/build/Release/spawn-helper
 .for f in chromedriver mksnapshot v8_context_snapshot_generator
 	${RM} ${STAGEDIR}${DATADIR}/${f}
 .endfor
