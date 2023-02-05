@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.8.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -27,7 +27,7 @@ MY_DEPENDS=	git>=2.39.1:devel/git \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
 	rubygem-rails61>=6.1.6.1<6.1.8:www/rubygem-rails61 \
-	rubygem-bootsnap>=1.15.0<1.16:devel/rubygem-bootsnap \
+	rubygem-bootsnap115>=1.15.0<1.16:devel/rubygem-bootsnap115 \
 	rubygem-openssl2>=2.2.2<2.3:security/rubygem-openssl2 \
 	rubygem-ipaddr122>=1.2.2<1.2.3:net/rubygem-ipaddr122 \
 	rubygem-responders-rails61>=3.0<4.0:www/rubygem-responders-rails61 \
@@ -108,9 +108,9 @@ MY_DEPENDS=	git>=2.39.1:devel/git \
 	rubygem-elasticsearch-model713>=7.2<8:textproc/rubygem-elasticsearch-model713 \
 	rubygem-elasticsearch-rails>=7.2<8:textproc/rubygem-elasticsearch-rails \
 	rubygem-elasticsearch-api713>=7.13.3<7.13.4:textproc/rubygem-elasticsearch-api713 \
-	rubygem-aws-sdk-core>=3.168.4<3.169:devel/rubygem-aws-sdk-core \
+	rubygem-aws-sdk-core3168>=3.168.4<3.169:devel/rubygem-aws-sdk-core3168 \
 	rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
-	rubygem-aws-sdk-s3>=1.117.2<1.118:devel/rubygem-aws-sdk-s3 \
+	rubygem-aws-sdk-s31117>=1.117.2<1.118:devel/rubygem-aws-sdk-s31117 \
 	rubygem-faraday_middleware-aws-sigv403>=0.3.0<0.4:devel/rubygem-faraday_middleware-aws-sigv403 \
 	rubygem-typhoeus>=1.4.0<1.5:www/rubygem-typhoeus \
 	rubygem-html-pipeline>=2.14.3<2.15:textproc/rubygem-html-pipeline \
@@ -200,7 +200,7 @@ MY_DEPENDS=	git>=2.39.1:devel/git \
 	rubygem-batch-loader>=2.0.1<2.1:devel/rubygem-batch-loader \
 	rubygem-peek-rails61>=1.1.0<2.0:devel/rubygem-peek-rails61 \
 	rubygem-snowplow-tracker>=0.8.0<1:devel/rubygem-snowplow-tracker \
-	rubygem-webrick>=1.7.0:www/rubygem-webrick \
+	rubygem-webrick17>=1.7.0<1.8:www/rubygem-webrick17 \
 	rubygem-prometheus-client-mmap>=0.17<1:devel/rubygem-prometheus-client-mmap \
 	rubygem-warning>=1.3.0<1.4:devel/rubygem-warning \
 	rubygem-license_finder>=7.0.0<8:devel/rubygem-license_finder \
