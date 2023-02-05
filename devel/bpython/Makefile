@@ -1,5 +1,5 @@
 PORTNAME=	bpython
-PORTVERSION=	0.23
+PORTVERSION=	0.24
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://bpython-interpreter.org/releases/
