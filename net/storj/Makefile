@@ -1,6 +1,6 @@
 PORTNAME=	storj
 PORTVERSION=	1.68.2
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -20,6 +20,12 @@ STORJ_CMDS=	certificates crashcollect identity inspector metric-receiver \
 		storj-admin storj-sim uplink versioncontrol
 
 GO_TARGET=	${STORJ_CMDS:S,^,./cmd/,}
+
+USERS=		storj
+GROUPS=		storj
+USE_RC_SUBR=	storagenode
+SUB_LIST=	USER=${USERS} GROUP=${GROUPS}
+PLIST_SUB=	USER=${USERS} GROUP=${GROUPS}
 
 post-stage:
 # Avoid conflict with `graphics/mesa-demos'
