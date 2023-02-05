@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # which are not checked during build/runtime because they're usually installed
 # via devel/py-pip.
 #
-# As a rule, slight deviations are usally not a problem, but there are a few
+# As a rule, slight deviations are usually not a problem, but there are a few
 # Django packages that are known for regressions in conjunction with NetBox and
 # should therefore only be updated with caution.
 #
