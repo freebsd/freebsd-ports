@@ -1,5 +1,5 @@
 PORTNAME=	rails-html-sanitizer
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
