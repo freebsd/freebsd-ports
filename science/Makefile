@@ -305,6 +305,7 @@
     SUBDIR += py-boutdata
     SUBDIR += py-boututils
     SUBDIR += py-cdo
+    SUBDIR += py-cfgrib
     SUBDIR += py-chainer
     SUBDIR += py-chainer-chemistry
     SUBDIR += py-chempy
