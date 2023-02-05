@@ -1,7 +1,6 @@
 PORTNAME=	snapcast
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.26.0-115
-DISTVERSIONSUFFIX=	-gc01ba2bd
+DISTVERSION=	0.27.0
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +25,8 @@ USES=		cmake compiler:c++17-lang pkgconfig python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	badaix
 
-SHEBANG_FILES=	server/etc/plug-ins/meta_mpd.py server/etc/plug-ins/meta_mopidy.py
+SHEBANG_FILES=	server/etc/plug-ins/meta_mpd.py server/etc/plug-ins/meta_mopidy.py \
+		server/etc/plug-ins/meta_librespot-java.py
 
 OPTIONS_DEFINE=		CLIENT
 OPTIONS_DEFAULT=	#CLIENT
