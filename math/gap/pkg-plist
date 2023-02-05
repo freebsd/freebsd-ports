@@ -20135,7 +20135,7 @@ lib/libgap.so.8.0.0
 %%DATADIR%%/pkg/liepring/lib/dim6/gapdec5.24
 %%DATADIR%%/pkg/liepring/lib/dim6/gapdec5.27
 %%DATADIR%%/pkg/liepring/lib/dim6/gapdec5.3
-%%DATADIR%%/pkg/liepring/lib/dim6/gapdec%%PERL_VER%%
+%%DATADIR%%/pkg/liepring/lib/dim6/gapdec5.32
 %%DATADIR%%/pkg/liepring/lib/dim6/gapdec5.37
 %%DATADIR%%/pkg/liepring/lib/dim6/gapdec5.38
 %%DATADIR%%/pkg/liepring/lib/dim6/gapdec5.39
@@ -20186,7 +20186,7 @@ lib/libgap.so.8.0.0
 %%DATADIR%%/pkg/liepring/lib/dim6/stuff/dec5.24
 %%DATADIR%%/pkg/liepring/lib/dim6/stuff/dec5.27
 %%DATADIR%%/pkg/liepring/lib/dim6/stuff/dec5.3
-%%DATADIR%%/pkg/liepring/lib/dim6/stuff/dec%%PERL_VER%%
+%%DATADIR%%/pkg/liepring/lib/dim6/stuff/dec5.32
 %%DATADIR%%/pkg/liepring/lib/dim6/stuff/dec5.37
 %%DATADIR%%/pkg/liepring/lib/dim6/stuff/dec5.38
 %%DATADIR%%/pkg/liepring/lib/dim6/stuff/dec5.39
