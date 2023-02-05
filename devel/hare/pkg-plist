@@ -29,10 +29,14 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/crypto/aes/+x86_64/ni.ha
 %%DATADIR%%/stdlib/crypto/aes/+x86_64/ni_native.s
 %%DATADIR%%/stdlib/crypto/aes/README
+%%DATADIR%%/stdlib/crypto/aes/aes+x86_64.ha
+%%DATADIR%%/stdlib/crypto/aes/aes.ha
 %%DATADIR%%/stdlib/crypto/aes/aes_ct64.ha
+%%DATADIR%%/stdlib/crypto/aes/block.ha
 %%DATADIR%%/stdlib/crypto/aes/cbc+test.ha
 %%DATADIR%%/stdlib/crypto/aes/ct64+test.ha
 %%DATADIR%%/stdlib/crypto/aes/ctr+test.ha
+%%DATADIR%%/stdlib/crypto/aes/rt+test.ha
 %%DATADIR%%/stdlib/crypto/aes/xts/+test.ha
 %%DATADIR%%/stdlib/crypto/aes/xts/README
 %%DATADIR%%/stdlib/crypto/aes/xts/xts.ha
@@ -44,6 +48,16 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/crypto/bcrypt/README
 %%DATADIR%%/stdlib/crypto/bcrypt/base64.ha
 %%DATADIR%%/stdlib/crypto/bcrypt/bcrypt.ha
+%%DATADIR%%/stdlib/crypto/bigint/+test/arithm.ha
+%%DATADIR%%/stdlib/crypto/bigint/+test/encoding.ha
+%%DATADIR%%/stdlib/crypto/bigint/+test/monty.ha
+%%DATADIR%%/stdlib/crypto/bigint/+test/utils.ha
+%%DATADIR%%/stdlib/crypto/bigint/README
+%%DATADIR%%/stdlib/crypto/bigint/arithm.ha
+%%DATADIR%%/stdlib/crypto/bigint/encoding.ha
+%%DATADIR%%/stdlib/crypto/bigint/monty.ha
+%%DATADIR%%/stdlib/crypto/bigint/types.ha
+%%DATADIR%%/stdlib/crypto/bigint/util.ha
 %%DATADIR%%/stdlib/crypto/blake2b/+test.ha
 %%DATADIR%%/stdlib/crypto/blake2b/README
 %%DATADIR%%/stdlib/crypto/blake2b/blake2b.ha
@@ -95,6 +109,14 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/crypto/random/+linux.ha
 %%DATADIR%%/stdlib/crypto/random/README
 %%DATADIR%%/stdlib/crypto/random/random.ha
+%%DATADIR%%/stdlib/crypto/rsa/+test/core.ha
+%%DATADIR%%/stdlib/crypto/rsa/+test/keys.ha
+%%DATADIR%%/stdlib/crypto/rsa/+test/pkcs1.ha
+%%DATADIR%%/stdlib/crypto/rsa/README
+%%DATADIR%%/stdlib/crypto/rsa/core.ha
+%%DATADIR%%/stdlib/crypto/rsa/errors.ha
+%%DATADIR%%/stdlib/crypto/rsa/keys.ha
+%%DATADIR%%/stdlib/crypto/rsa/pkcs1.ha
 %%DATADIR%%/stdlib/crypto/salsa/+test.ha
 %%DATADIR%%/stdlib/crypto/salsa/README
 %%DATADIR%%/stdlib/crypto/salsa/salsa20.ha
@@ -126,15 +148,6 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/encoding/base64/base64.ha
 %%DATADIR%%/stdlib/encoding/hex/README
 %%DATADIR%%/stdlib/encoding/hex/hex.ha
-%%DATADIR%%/stdlib/encoding/json/+test/lexer.ha
-%%DATADIR%%/stdlib/encoding/json/+test/load.ha
-%%DATADIR%%/stdlib/encoding/json/+test/value.ha
-%%DATADIR%%/stdlib/encoding/json/README
-%%DATADIR%%/stdlib/encoding/json/dump.ha
-%%DATADIR%%/stdlib/encoding/json/lex.ha
-%%DATADIR%%/stdlib/encoding/json/load.ha
-%%DATADIR%%/stdlib/encoding/json/types.ha
-%%DATADIR%%/stdlib/encoding/json/value.ha
 %%DATADIR%%/stdlib/encoding/pem/+test.ha
 %%DATADIR%%/stdlib/encoding/pem/README
 %%DATADIR%%/stdlib/encoding/pem/pem.ha
@@ -294,6 +307,7 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/log/funcs.ha
 %%DATADIR%%/stdlib/log/global.ha
 %%DATADIR%%/stdlib/log/logger.ha
+%%DATADIR%%/stdlib/log/silent.ha
 %%DATADIR%%/stdlib/math/README
 %%DATADIR%%/stdlib/math/complex/+test.ha
 %%DATADIR%%/stdlib/math/complex/complex.ha
@@ -327,6 +341,7 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/net/dns/encode.ha
 %%DATADIR%%/stdlib/net/dns/error.ha
 %%DATADIR%%/stdlib/net/dns/query.ha
+%%DATADIR%%/stdlib/net/dns/strdomain.ha
 %%DATADIR%%/stdlib/net/dns/types.ha
 %%DATADIR%%/stdlib/net/errors.ha
 %%DATADIR%%/stdlib/net/ip/+freebsd.ha
@@ -436,6 +451,9 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/rt/+linux/syscallno+riscv64.ha
 %%DATADIR%%/stdlib/rt/+linux/syscallno+x86_64.ha
 %%DATADIR%%/stdlib/rt/+linux/syscalls.ha
+%%DATADIR%%/stdlib/rt/+linux/syscallsarch+aarch64.ha
+%%DATADIR%%/stdlib/rt/+linux/syscallsarch+riscv64.ha
+%%DATADIR%%/stdlib/rt/+linux/syscallsarch+x86_64.ha
 %%DATADIR%%/stdlib/rt/+linux/types.ha
 %%DATADIR%%/stdlib/rt/+riscv64/backtrace.ha
 %%DATADIR%%/stdlib/rt/+riscv64/cpuid.ha
@@ -450,6 +468,7 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/rt/+test/+linux.ha
 %%DATADIR%%/stdlib/rt/+test/cstring.ha
 %%DATADIR%%/stdlib/rt/+test/run.ha
+%%DATADIR%%/stdlib/rt/+test/signal.ha
 %%DATADIR%%/stdlib/rt/+test/ztos.ha
 %%DATADIR%%/stdlib/rt/+x86_64/backtrace.ha
 %%DATADIR%%/stdlib/rt/+x86_64/cpuid.ha
@@ -520,6 +539,8 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/strings/runes.ha
 %%DATADIR%%/stdlib/strings/sub.ha
 %%DATADIR%%/stdlib/strings/suffix.ha
+%%DATADIR%%/stdlib/strings/template/README
+%%DATADIR%%/stdlib/strings/template/template.ha
 %%DATADIR%%/stdlib/strings/tokenize.ha
 %%DATADIR%%/stdlib/strings/trim.ha
 %%DATADIR%%/stdlib/strings/utf8.ha
@@ -540,6 +561,7 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/time/chrono/+linux.ha
 %%DATADIR%%/stdlib/time/chrono/README
 %%DATADIR%%/stdlib/time/chrono/chronology.ha
+%%DATADIR%%/stdlib/time/chrono/error.ha
 %%DATADIR%%/stdlib/time/chrono/leapsec.ha
 %%DATADIR%%/stdlib/time/chrono/timescale.ha
 %%DATADIR%%/stdlib/time/chrono/timezone.ha
@@ -552,14 +574,19 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/types/arch+x86_64.ha
 %%DATADIR%%/stdlib/types/classes.ha
 %%DATADIR%%/stdlib/types/limits.ha
+%%DATADIR%%/stdlib/unix/+freebsd/getuid.ha
+%%DATADIR%%/stdlib/unix/+freebsd/groups.ha
 %%DATADIR%%/stdlib/unix/+freebsd/nice.ha
 %%DATADIR%%/stdlib/unix/+freebsd/pipe.ha
+%%DATADIR%%/stdlib/unix/+freebsd/setuid.ha
 %%DATADIR%%/stdlib/unix/+freebsd/umask.ha
+%%DATADIR%%/stdlib/unix/+linux/getuid.ha
+%%DATADIR%%/stdlib/unix/+linux/groups.ha
 %%DATADIR%%/stdlib/unix/+linux/nice.ha
 %%DATADIR%%/stdlib/unix/+linux/pipe.ha
+%%DATADIR%%/stdlib/unix/+linux/setuid.ha
 %%DATADIR%%/stdlib/unix/+linux/umask.ha
 %%DATADIR%%/stdlib/unix/README
-%%DATADIR%%/stdlib/unix/getuid.ha
 %%DATADIR%%/stdlib/unix/hosts/+freebsd.ha
 %%DATADIR%%/stdlib/unix/hosts/+linux.ha
 %%DATADIR%%/stdlib/unix/hosts/lookup.ha
@@ -573,7 +600,6 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/unix/resolvconf/+linux.ha
 %%DATADIR%%/stdlib/unix/resolvconf/README
 %%DATADIR%%/stdlib/unix/resolvconf/load.ha
-%%DATADIR%%/stdlib/unix/setuid.ha
 %%DATADIR%%/stdlib/unix/signal/+linux.ha
 %%DATADIR%%/stdlib/unix/signal/README
 %%DATADIR%%/stdlib/unix/signal/types.ha
@@ -592,4 +618,3 @@ man/man1/haredoc.1.gz
 %%DATADIR%%/stdlib/uuid/README
 %%DATADIR%%/stdlib/uuid/uuid.ha
 @dir %%DATADIR%%/src/hare
-@dir %%DATADIR%%/src/local-src

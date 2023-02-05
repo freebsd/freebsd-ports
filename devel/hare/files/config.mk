@@ -7,7 +7,7 @@ DATADIR= $(PREFIX)/share/hare
 SRCDIR = $(DATADIR)/src
 
 # Where to install the stdlib tree
-STDLIB = $(SRCDIR}/stdlib
+STDLIB = $(SRCDIR)/hare/stdlib
 
 # Default HAREPATH
 LOCALSRCDIR = ${SRCDIR}/local-src
