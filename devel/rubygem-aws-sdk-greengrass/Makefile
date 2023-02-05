@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-greengrass
-PORTVERSION=	1.51.0
+PORTVERSION=	1.53.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
