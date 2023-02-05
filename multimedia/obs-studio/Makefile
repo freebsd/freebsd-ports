@@ -1,10 +1,8 @@
 PORTNAME=	obs-studio
-DISTVERSION=	29.0.0
+DISTVERSION=	29.0.2
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	e221bf8eedfc.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7989
-PATCHFILES+=	0dcc3a1696c0.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7986
 PATCHFILES+=	2cebc65ad7f8.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7992
 PATCHFILES+=	90c476983ce9.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7992
 
