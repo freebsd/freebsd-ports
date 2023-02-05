@@ -72,6 +72,7 @@
     SUBDIR += py-FreeBSD-ports
     SUBDIR += py-pytoport
     SUBDIR += py-skog
+    SUBDIR += rc-subr-jail
     SUBDIR += reprise
     SUBDIR += sccache-overlay
     SUBDIR += synth

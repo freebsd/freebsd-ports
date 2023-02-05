@@ -1,0 +1,3 @@
+This port install a shell source intended to be included by rc scripts that
+want to run services inside a jail.
+
