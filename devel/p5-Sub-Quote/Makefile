@@ -1,5 +1,5 @@
 PORTNAME=	Sub-Quote
-PORTVERSION=	2.006006
+PORTVERSION=	2.006008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HAARG
@@ -11,14 +11,13 @@ WWW=		https://metacpan.org/pod/Sub::Quote
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
-
-TEST_DEPENDS=	p5-Test-Fatal>=0.003:devel/p5-Test-Fatal
-
-CONFLICTS_INSTALL=	p5-Moo-[01]* p5-Moo-2.00[0-2]*
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
+
+CONFLICTS_INSTALL=	p5-Moo-[01]* p5-Moo-2.00[0-2]*
 
 .include <bsd.port.mk>
