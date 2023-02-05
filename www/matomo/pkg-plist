@@ -231,6 +231,7 @@
 %%WWWDIR%%/core/Exception/ErrorException.php
 %%WWWDIR%%/core/Exception/Exception.php
 %%WWWDIR%%/core/Exception/FailedCopyException.php
+%%WWWDIR%%/core/Exception/IRedirectException.php
 %%WWWDIR%%/core/Exception/InvalidDimensionException.php
 %%WWWDIR%%/core/Exception/InvalidRequestParameterException.php
 %%WWWDIR%%/core/Exception/MissingFilePermissionException.php
@@ -241,6 +242,7 @@
 %%WWWDIR%%/core/Exception/NotYetInstalledException.php
 %%WWWDIR%%/core/Exception/PluginDeactivatedException.php
 %%WWWDIR%%/core/Exception/PluginRequiresInternetException.php
+%%WWWDIR%%/core/Exception/RedirectException.php
 %%WWWDIR%%/core/Exception/StylesheetLessCompileException.php
 %%WWWDIR%%/core/Exception/UnexpectedWebsiteFoundException.php
 %%WWWDIR%%/core/ExceptionHandler.php
@@ -2197,6 +2199,7 @@
 %%WWWDIR%%/plugins/CoreVisualizations/Metrics/Formatter/Numeric.php
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/Cloud.php
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/Cloud/Config.php
+%%WWWDIR%%/plugins/CoreVisualizations/Visualizations/EvolutionPeriodSelector.php
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/Graph.php
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/Graph/Config.php
 %%WWWDIR%%/plugins/CoreVisualizations/Visualizations/HtmlTable.php
@@ -7026,6 +7029,8 @@
 %%WWWDIR%%/plugins/TagManager/Template/Trigger/TimerTrigger.php
 %%WWWDIR%%/plugins/TagManager/Template/Trigger/TimerTrigger.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Trigger/TriggersProvider.php
+%%WWWDIR%%/plugins/TagManager/Template/Trigger/UserInteractionTrigger.php
+%%WWWDIR%%/plugins/TagManager/Template/Trigger/UserInteractionTrigger.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Trigger/WindowLeaveTrigger.php
 %%WWWDIR%%/plugins/TagManager/Template/Trigger/WindowLeaveTrigger.web.js
 %%WWWDIR%%/plugins/TagManager/Template/Trigger/WindowLoadedTrigger.php
@@ -7161,6 +7166,7 @@
 %%WWWDIR%%/plugins/TagManager/images/icons/fullscreen.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/honeybadger.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/image.svg
+%%WWWDIR%%/plugins/TagManager/images/icons/interaction.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/linkedin.svg
 %%WWWDIR%%/plugins/TagManager/images/icons/livezilla_icon.png
 %%WWWDIR%%/plugins/TagManager/images/icons/pageview.svg
@@ -8782,6 +8788,7 @@
 %%WWWDIR%%/vendor/matomo/decompress/src/ZipArchive.php
 %%WWWDIR%%/vendor/matomo/device-detector/Cache/CacheInterface.php
 %%WWWDIR%%/vendor/matomo/device-detector/Cache/DoctrineBridge.php
+%%WWWDIR%%/vendor/matomo/device-detector/Cache/LaravelCache.php
 %%WWWDIR%%/vendor/matomo/device-detector/Cache/PSR16Bridge.php
 %%WWWDIR%%/vendor/matomo/device-detector/Cache/PSR6Bridge.php
 %%WWWDIR%%/vendor/matomo/device-detector/Cache/StaticCache.php
@@ -9531,6 +9538,8 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/FloorDivBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/GreaterBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/GreaterEqualBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/HasEveryBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/HasSomeBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/InBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/LessBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/LessEqualBinary.php
@@ -9651,6 +9660,7 @@
 %%WWWDIR%%/vendor/wikimedia/less.php/CHANGES.md
 %%WWWDIR%%/vendor/wikimedia/less.php/LICENSE
 %%WWWDIR%%/vendor/wikimedia/less.php/README.md
+%%WWWDIR%%/vendor/wikimedia/less.php/SECURITY.md
 %%WWWDIR%%/vendor/wikimedia/less.php/bin/lessc
 %%WWWDIR%%/vendor/wikimedia/less.php/lessc.inc.php
 %%WWWDIR%%/vendor/wikimedia/less.php/lib/Less/.easymin/ignore_prefixes
