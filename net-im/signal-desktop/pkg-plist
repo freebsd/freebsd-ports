@@ -94,6 +94,7 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/th.pak
 %%DATADIR%%/locales/tl-PH.pak
 %%DATADIR%%/locales/tr.pak
+%%DATADIR%%/locales/ug.pak
 %%DATADIR%%/locales/uk-UA.pak
 %%DATADIR%%/locales/uk.pak
 %%DATADIR%%/locales/ur.pak
@@ -101,6 +102,7 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/zh-CN.pak
 %%DATADIR%%/locales/zh-HK.pak
 %%DATADIR%%/locales/zh-TW.pak
+%%DATADIR%%/locales/zh-YU.pak
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/app.asar
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/@signalapp/better-sqlite3/build/Release/better_sqlite3.node

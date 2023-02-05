@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.3.0
+DISTVERSION=	6.4.1
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
@@ -91,12 +91,12 @@ ELECTRON_GYP_VERSION=	22.0.0
 # ll work/.cache/yarn/v6 | egrep "@signalapp|esbuild-freebsd-64"
 NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.21.1-381d6162ae0e7719dc625780c1d6c3f9f558c33d-integrity
 NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.23.0-982fb6268eab2eb35a61624149b5f9ce9af28907-integrity
-NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.0.4-53ed2074634b69e83116573b26ae1d927c4aab22-integrity
+NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.1.1-b39b9138bc79992d5e9707b246a67a1b88a18c49-integrity
 NPM_PLAYWRITE_DIR=	npm-playwright-core-1.17.1-a16e0f89284a0ed8ae6d77e1c905c84b8a2ba022-integrity
-NPM_ESBUILD_VERS=	0.15.8
+NPM_ESBUILD_VERS=	0.17.2
 SQLCIPHER=		sqlcipher-4.5.2--3.0.7-4587e88a4219cb76fd595a5b73f82bfd919b235d75626f40783525f4f58a7503
 
-ESBUILD_ARCH=		${ARCH:S/aarch64/arm/:S/amd64//}
+ESBUILD_ARCH=		${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 NODE_ARCH=		${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 APP_OUT_DIR=		linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
 
@@ -176,7 +176,7 @@ do-build:
 	cd ${WRKDIR}/.cache/yarn/v6 && ${PATCH} -s -N -i ${FILESDIR}/sqlite3.gyp.diff
 
 	${MKDIR} ${WRKDIR}/esbuild-freebsd-64
-	${TAR} -xf ${WRKDIR}/yarn-offline-cache/esbuild-freebsd-${ESBUILD_ARCH}64-${NPM_ESBUILD_VERS}.tgz -C ${WRKDIR}/esbuild-freebsd-64
+	${TAR} -xf ${WRKDIR}/yarn-offline-cache/@esbuild-freebsd-${ESBUILD_ARCH}-${NPM_ESBUILD_VERS}.tgz -C ${WRKDIR}/esbuild-freebsd-64
 
 # 	# For online build
 #	${RM} ${WRKDIR}/.npmrc

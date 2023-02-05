@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=v6.3.0-beta.1
+SIGNAL_VERS=v6.4.1
 
 ringrtc_version=$(fetch -qo - https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json | grep '@signalapp/ringrtc"' | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
 echo "RINGRTC_VERSION= ${ringrtc_version}"

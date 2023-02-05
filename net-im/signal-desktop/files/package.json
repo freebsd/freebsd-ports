@@ -4,25 +4,26 @@
   "description": "Private messaging from your desktop",
   "desktopName": "signal.desktop",
   "repository": "https://github.com/signalapp/Signal-Desktop.git",
-  "version": "6.3.0",
+  "version": "6.4.1",
   "license": "AGPL-3.0-only",
   "author": {
     "name": "Signal Messenger, LLC",
     "email": "support@signal.org"
   },
+  "browserslist": "last 1 chrome versions",
   "main": "app/main.js",
   "scripts": {
-    "postinstall": "yarn build:acknowledgments && patch-package && yarn electron:install-app-deps && rimraf node_modules/dtrace-provider",
+    "postinstall": "yarn build:acknowledgments && patch-package && yarn electron:install-app-deps",
     "postuninstall": "yarn build:acknowledgments",
     "start": "electron .",
-    "generate": "npm-run-all build-protobuf build:esbuild sass get-expire-time copy-and-concat",
+    "generate": "npm-run-all build-protobuf build:esbuild sass get-expire-time copy-components",
     "build-release": "yarn run build",
     "sign-release": "node ts/updater/generateSignature.js",
     "notarize": "echo 'No longer necessary'",
     "get-strings": "node ts/scripts/get-strings.js",
     "push-strings": "node ts/scripts/push-strings.js",
     "get-expire-time": "node ts/scripts/get-expire-time.js",
-    "copy-and-concat": "node ts/scripts/copy-and-concat.js",
+    "copy-components": "node ts/scripts/copy.js",
     "sass": "sass stylesheets/manifest.scss:stylesheets/manifest.css stylesheets/manifest_bridge.scss:stylesheets/manifest_bridge.css",
     "build-module-protobuf": "pbjs --target static-module --force-long --no-verify --no-create --wrap commonjs --out ts/protobuf/compiled.js protos/*.proto && pbts --out ts/protobuf/compiled.d.ts ts/protobuf/compiled.js",
     "clean-module-protobuf": "rm -f ts/protobuf/compiled.d.ts ts/protobuf/compiled.js",
@@ -39,7 +40,7 @@
     "test-release": "node ts/scripts/test-release.js",
     "test-node": "electron-mocha --timeout 10000 --file test/setup-test-node.js --recursive test/modules ts/test-node ts/test-both",
     "test-mock": "mocha ts/test-mock/**/*_test.js",
-    "test-eslint": "mocha .eslint/rules/**/*.test.js",
+    "test-eslint": "mocha .eslint/rules/**/*.test.js --ignore-leaks",
     "test-node-coverage": "nyc --reporter=lcov --reporter=text mocha --recursive test/modules ts/test-node ts/test-both",
     "test-lint-intl": "ts-node ./build/intl-linter/linter.ts --test",
     "eslint": "eslint --cache . --max-warnings 0",
@@ -85,13 +86,12 @@
   "dependencies": {
     "@formatjs/fast-memoize": "1.2.6",
     "@indutny/frameless-titlebar": "2.3.5",
-    "@indutny/sneequals": "3.2.0",
+    "@indutny/sneequals": "4.0.0",
     "@popperjs/core": "2.11.6",
     "@react-spring/web": "9.5.5",
-    "@signalapp/better-sqlite3": "8.0.4",
+    "@signalapp/better-sqlite3": "8.1.1",
     "@signalapp/libsignal-client": "0.21.1",
     "@signalapp/ringrtc": "2.23.0",
-    "@sindresorhus/is": "0.8.0",
     "@types/fabric": "4.5.3",
     "array-move": "2.1.0",
     "backbone": "1.4.0",
@@ -174,6 +174,7 @@
     "semver": "5.4.1",
     "split2": "4.0.0",
     "testcheck": "1.0.0-rc.2",
+    "type-fest": "3.5.0",
     "typeface-inter": "3.18.1",
     "uuid": "3.3.2",
     "websocket": "1.0.34",
@@ -199,7 +200,9 @@
     "@storybook/addon-toolbars": "6.5.6",
     "@storybook/addon-viewport": "6.5.6",
     "@storybook/addons": "6.5.6",
+    "@storybook/builder-webpack5": "6.5.15",
     "@storybook/jest": "0.0.10",
+    "@storybook/manager-webpack5": "6.5.15",
     "@storybook/react": "6.5.6",
     "@storybook/testing-library": "0.0.13",
     "@types/backbone": "1.4.5",
@@ -226,7 +229,6 @@
     "@types/lru-cache": "5.1.0",
     "@types/memoizee": "0.4.2",
     "@types/mocha": "9.0.0",
-    "@types/mustache": "4.1.2",
     "@types/node": "16.18.3",
     "@types/node-fetch": "2.6.2",
     "@types/normalize-path": "3.0.0",
@@ -246,7 +248,7 @@
     "@types/split2": "3.2.1",
     "@types/terser-webpack-plugin": "5.0.3",
     "@types/uuid": "3.4.4",
-    "@types/webpack-dev-server": "3.11.3",
+    "@types/webpack": "5.28.0",
     "@types/websocket": "1.0.0",
     "@types/yargs": "17.0.7",
     "@typescript-eslint/eslint-plugin": "5.47.0",
@@ -271,7 +273,7 @@
     "electron-mocha": "11.0.2",
     "electron-notarize": "1.2.1",
     "endanger": "7.0.4",
-    "esbuild": "0.15.8",
+    "esbuild": "0.17.2",
     "eslint": "8.30.0",
     "eslint-config-airbnb-typescript-prettier": "5.0.0",
     "eslint-config-prettier": "8.5.0",
@@ -302,7 +304,7 @@
     "typescript": "4.9.3",
     "webpack": "5.30.0",
     "webpack-cli": "4.9.2",
-    "webpack-dev-server": "4.7.4"
+    "webpack-dev-server": "4.11.1"
   },
   "resolutions": {
     "@storybook/react/@storybook/core/node-fetch": "2.6.1",
@@ -333,6 +335,11 @@
         }
       ],
       "mergeASARs": true,
+      "releaseInfo": {
+        "vendor": {
+          "minOSVersion": "17.0.0"
+        }
+      },
       "singleArchFiles": "node_modules/@signalapp/{libsignal-client/prebuilds/**,ringrtc/build/**}",
       "target": [
         {
@@ -368,6 +375,11 @@
           "url": "https://updates.signal.org/desktop"
         }
       ],
+      "releaseInfo": {
+        "vendor": {
+          "minOSVersion": "6.1.0"
+        }
+      },
       "target": [
         "nsis"
       ]
