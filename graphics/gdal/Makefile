@@ -1,5 +1,6 @@
 PORTNAME=	gdal
 PORTVERSION=	3.6.2
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/gdal/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -99,6 +100,7 @@ HEADER_FILES=	alg/gdalwarpkernel_opencl.h \
 		port/cpl_aws.h \
 		port/cpl_cpu_features.h \
 		port/cpl_google_cloud.h \
+		port/cpl_odbc.h \
 		port/cpl_sha1.h \
 		port/cpl_sha256.h \
 		port/cpl_vsil_curl_priv.h \
