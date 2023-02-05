@@ -1,8 +1,8 @@
 PORTNAME=	rar
-PORTVERSION=	6.12
+PORTVERSION=	6.20
 PORTEPOCH=	3
 CATEGORIES=	archivers
-MASTER_SITES=	https://rarlab.com/rar/
+MASTER_SITES=	https://www.rarlab.com/rar/
 DISTNAME=	rarbsd${ARCH:S|amd64|-x64|:S|i386|-x32|}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
