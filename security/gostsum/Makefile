@@ -1,5 +1,6 @@
 PORTNAME=	gostsum
 PORTVERSION=	20221213
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	rozhuk.im@gmail.com
