@@ -1,5 +1,5 @@
 PORTNAME=	Data-Dump-Streamer
-PORTVERSION=	2.40
+PORTVERSION=	2.41
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,11 +15,12 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Algorithm-Diff>=0:devel/p5-Algorithm-Diff \
 		p5-B-Utils>=0.05:devel/p5-B-Utils \
 		p5-PadWalker>=0.99:devel/p5-PadWalker
-TEST_DEPENDS=	p5-JSON-XS>=0:converters/p5-JSON-XS
+TEST_DEPENDS=	p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS
 
-CONFIGURE_ARGS=	DDS
 USES=		perl5
 USE_PERL5=	modbuild
+
+CONFIGURE_ARGS=	DDS
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Data/Dump/Streamer/Streamer.so
