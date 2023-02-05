@@ -57,7 +57,7 @@ GCC_DEFAULT?=		12
 GHOSTSCRIPT_DEFAULT?=	agpl
 # Possible values: mesa-libs, mesa-devel
 GL_DEFAULT?=		mesa-libs
-# Possible values: 1.18, 1.19, 1.20 1.21-devel
+# Possible values: 1.18, 1.19, 1.20, 1.21-devel
 GO_DEFAULT?=		1.19
 # Possible values: 6, 6-nox11, 7, 7-nox11
 IMAGEMAGICK_DEFAULT?=	7
@@ -164,7 +164,7 @@ SSL_DEFAULT?=	base
 .  endif
 # Possible values: 8.5, 8.6, 8.7
 TCLTK_DEFAULT?=		8.6
-# Possible values: 4, 6, 7
+# Possible values: 6, 7
 VARNISH_DEFAULT?=	6
 
 .endif
