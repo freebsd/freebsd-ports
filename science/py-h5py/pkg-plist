@@ -16,6 +16,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/mpi.rst
 %%PORTDOCS%%%%DOCSDIR%%/quick.rst
 %%PORTDOCS%%%%DOCSDIR%%/refs.rst
+%%PORTDOCS%%%%DOCSDIR%%/related_projects.rst
 %%PORTDOCS%%%%DOCSDIR%%/release_guide.rst
 %%PORTDOCS%%%%DOCSDIR%%/requirements-rtd.txt
 %%PORTDOCS%%%%DOCSDIR%%/special.rst
@@ -42,6 +43,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.5.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.6.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.7.rst
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew/3.8.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/index.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bytesio.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/collective_io.py
