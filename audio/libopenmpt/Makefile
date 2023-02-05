@@ -1,5 +1,5 @@
 PORTNAME=	libopenmpt
-DISTVERSION=	0.6.7
+DISTVERSION=	0.6.8
 DISTVERSIONSUFFIX=	+release.autotools
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
@@ -36,6 +36,7 @@ OPENMPT123_DESC=	Enable command line player
 PULSEAUDIO_DESC=	Enable PulseAudio support for openmpt123
 
 OPENMPT123_LIB_DEPENDS=		libFLAC.so:audio/flac \
+				libogg.so:audio/libogg \
 				libportaudio.so:audio/portaudio \
 				libsndfile.so:audio/libsndfile
 OPENMPT123_CONFIGURE_OFF=	--disable-openmpt123
