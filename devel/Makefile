@@ -4563,6 +4563,7 @@
     SUBDIR += py-fastnumbers
     SUBDIR += py-fastprogress
     SUBDIR += py-fbprophet
+    SUBDIR += py-fields
     SUBDIR += py-filebytes
     SUBDIR += py-filedepot
     SUBDIR += py-filemagic
