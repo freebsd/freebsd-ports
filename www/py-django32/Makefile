@@ -1,5 +1,5 @@
 PORTNAME=	django
-PORTVERSION=	3.2.16
+PORTVERSION=	3.2.17
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/
