@@ -1616,6 +1616,7 @@
     SUBDIR += node-thrift
     SUBDIR += notcurses
     SUBDIR += notify-sharp
+    SUBDIR += nox
     SUBDIR += npth
     SUBDIR += nsgenbind
     SUBDIR += nspr

@@ -1,0 +1,3 @@
+nox is a command-line tool that automates testing in multiple Python
+environments, similar to tox. Unlike tox, Nox uses a standard Python
+file for configuration.
