@@ -1,0 +1,41 @@
+.TH ancient 1 "December 25 2020"
+.SH NAME
+ancient \- decompression routines for ancient formats
+.SH SYNOPSIS
+.B ancient
+.RI [ identify | verify | decompress | scan ] " inputfile" " optionaloutputfile"
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B ancient
+command.
+.PP
+\fBancient\fP is a collection of decompression routines for old formats popular
+in the Amiga, Atari computers and some other systems from 80's and 90's as well
+as some that are currently used which were used in a some specific way in these
+old systems.
+.br
+For simple usage both a simple command line application as well as a simple API
+to use the decompressors are provided. The compression algorithm is
+automatically detected in most cases, however there are some corner cases
+where it is not entirely reliable due to weaknesses in the old format used.
+.br
+.SH OPTIONS
+These programs DO NOT follow the usual GNU command line syntax.
+.TP
+.B identify packed_input_file
+Identifies compression used in a file.
+.TP
+.B verify packed_input_file unpacked_comparison_file
+Verifies decompression against known good unpacked file.
+.TP
+.B decompress packed_input_file output_file
+Decompresses single file
+.TP
+.B scan input_dir output_dir
+Scans input directory recursively and stores all found.
+Known compressed streams to separate files in output directory.
+.SH SEE ALSO
+.BR unxz (1),
+.BR unpigz (1).
+.br
