@@ -1,5 +1,5 @@
 PORTNAME=	scss_lint
-PORTVERSION=	0.59.0
+PORTVERSION=	0.60.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
