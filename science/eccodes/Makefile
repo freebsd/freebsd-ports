@@ -1,5 +1,6 @@
 PORTNAME=	eccodes
 PORTVERSION=	2.27.1
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-Source
 CATEGORIES=	science
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/45757960/ \
@@ -30,6 +31,7 @@ CMAKE_ON=	ECCODES_INSTALL_EXTRA_TOOLS \
 		ENABLE_ECCODES_THREADS \
 		ENABLE_EXAMPLES \
 		ENABLE_INSTALL_ECCODES_DEFINITIONS \
+		ENABLE_JPG \
 		ENABLE_NETCDF \
 		ENABLE_PNG
 USE_CSTD=	c99
@@ -49,7 +51,6 @@ AEC_DESC=	Adaptive Entropy Coding support
 
 AEC_CMAKE_BOOL=		ENABLE_AEC
 AEC_LIB_DEPENDS=	libaec.so:science/libaec
-JASPER_CMAKE_BOOL=	ENABLE_JPG
 JASPER_LIB_DEPENDS=	libjasper.so:graphics/jasper
 OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 
