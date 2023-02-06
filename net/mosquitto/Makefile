@@ -1,5 +1,5 @@
 PORTNAME=	mosquitto
-PORTVERSION=	2.0.13
+PORTVERSION=	2.0.15
 CATEGORIES=	net
 MASTER_SITES=	https://mosquitto.org/files/source/
 
