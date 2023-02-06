@@ -48,7 +48,4 @@ post-patch:
 do-build:
 	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
 
-do-test:
-	@(cd ${WRKSRC} && ${TEST_ENV} zig build test ${CONFIGURE_ARGS})
-
 .include <bsd.port.mk>
