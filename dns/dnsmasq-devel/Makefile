@@ -16,8 +16,8 @@ WWW=		https://www.thekelleys.org.uk/dnsmasq/doc.html
 
 LICENSE=	GPLv2
 
-DEPRECATED=	Short-lived test branch, to be removed after v2.89 release
-#IGNORE=		please use dns/dnsmasq, which is newer
+#DEPRECATED=	Short-lived test branch, to be removed after v2.89 release
+IGNORE=		please use dns/dnsmasq, which is newer
 
 USES=		cpe shebangfix tar:xz
 CPE_VENDOR=	thekelleys
