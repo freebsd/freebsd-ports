@@ -1129,3 +1129,4 @@
 %%WWWDIR%%/test/phpunit-compat.php
 %%WWWDIR%%/test/setup_vendor.sh
 %%WWWDIR%%/test/travis-prepare.sh
+@dir(%%DIRECTOR_USER%%,DIRECTOR_GROUP%%,0775) /var/run/icinga-director
