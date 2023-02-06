@@ -1,5 +1,5 @@
 PORTNAME=	game.libretro.genplus
-PORTVERSION=	1.7.4.31
+PORTVERSION=	1.7.4.40
 DISTVERSIONSUFFIX=	-Matrix
 CATEGORIES=	games
 
