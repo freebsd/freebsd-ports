@@ -10,6 +10,8 @@ WWW=		https://doc.courtbouillon.org/pydyf/
 
 LICENSE=	BSD
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit>=3.8.0:devel/py-flit@${PY_FLAVOR}
+
 USES=		python:3.6+
 USE_PYTHON=	pep517 autoplist
 
