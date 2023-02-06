@@ -151,6 +151,7 @@ lib/libKF5NewStuffWidgets.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/newstuff/private/entrygriddelegates/ThumbDelegate.qml
 %%QT_QMLDIR%%/org/kde/newstuff/private/entrygriddelegates/TileDelegate.qml
 %%QT_QMLDIR%%/org/kde/newstuff/qmldir
+share/applications/org.kde.knewstuff-dialog.desktop
 share/kf5/kmoretools/presets-kmoretools/_README.md
 share/kf5/kmoretools/presets-kmoretools/angrysearch.desktop
 share/kf5/kmoretools/presets-kmoretools/catfish.desktop

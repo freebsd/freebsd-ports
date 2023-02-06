@@ -96,6 +96,7 @@ lib/libKF5Kirigami2.so.%%KDE_FRAMEWORKS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/DefaultCardBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/DefaultChipBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/DefaultListItemBackground.qml
+%%QT_QMLDIR%%/org/kde/kirigami.2/private/DefaultPageTitleDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/EdgeShadow.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/GlobalDrawerActionItem.qml
 %%QT_QMLDIR%%/org/kde/kirigami.2/private/PageActionPropertyGroup.qml
