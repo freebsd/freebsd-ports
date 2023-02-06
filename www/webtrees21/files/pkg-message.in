@@ -5,7 +5,7 @@ The following configuration will need to be done prior to using
 webtrees for the first time:
 
 1. For installation on the apache web server, add the following to your
-   apache site configuration, and restart the web server:
+   apache site configuration, and reload the web server:
 
 	Alias /webtrees%%VERSION_SUFFIX%% %%WWWDIR%%/
 
@@ -19,7 +19,23 @@ webtrees for the first time:
 		Allow from all
 	</Directory>
 
-2. Webtrees uses a MySQL database.  Configure a MySQL webtrees user
+2. For installation on the nginx web server, add the following to your
+   nginx site configuration, and reload the web server:
+
+	location /webtrees%%VERSION_SUFFIX%% {
+		alias %%WWWDIR%%;
+		index  index.php;
+	}
+
+	location ~ \.php$ {
+		fastcgi_pass   unix:/var/run/php-fpm-www.socket;
+		fastcgi_param  HTTPS on;
+		fastcgi_index  index.php;
+		fastcgi_param  SCRIPT_FILENAME $request_filename;
+		include        fastcgi_params;
+	}
+
+3. Webtrees uses a MySQL database.  Configure a MySQL webtrees user
    and database using commands such as (substitute PASSWD for something
    of your own choosing):
 
@@ -27,7 +43,7 @@ webtrees for the first time:
 	mysql> create database webtrees%%VERSION_SUFFIX%%;
 	mysql> grant all on webtrees%%VERSION_SUFFIX%%.* to webtrees%%VERSION_SUFFIX%%@localhost;
 
-3. Configure webtrees by browsing to the webtrees URL:
+4. Configure webtrees by browsing to the webtrees URL:
 	http://your.server.com/webtrees%%VERSION_SUFFIX%%/
    and you should be taken to the setup wizard, which will lead you
    through setting up webtrees: asking for the database server, database
