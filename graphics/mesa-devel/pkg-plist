@@ -24,7 +24,7 @@ lib/libEGL_mesa%%SUFFIX%%.so.0.0.0
 %%X11%%%%NO_COINST%%lib/libGLX_mesa%%SUFFIX%%.so
 %%X11%%lib/libGLX_mesa%%SUFFIX%%.so.0
 %%X11%%lib/libGLX_mesa%%SUFFIX%%.so.0.0.0
-%%OPENCL%%lib/libMesaOpenCL%%SUFFIX%%.so
+%%OPENCL%%%%NO_COINST%%lib/libMesaOpenCL%%SUFFIX%%.so
 %%OPENCL%%lib/libMesaOpenCL%%SUFFIX%%.so.1
 %%OPENCL%%lib/libMesaOpenCL%%SUFFIX%%.so.1.0.0
 %%OPENCL%%lib/libRusticlOpenCL.so
