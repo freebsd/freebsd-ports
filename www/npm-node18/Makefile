@@ -29,6 +29,16 @@ PORTSCOUT=	ignore:1
 
 SHEBANG_GLOB=	*.py
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_SUFFIX} > 38
+_PYTHON_OPTFLAG=	-o 0 -o 1
+PLIST_SUB+=		HAS_CPYTHON=""
+.else
+_PYTHON_OPTFLAG=	""
+PLIST_SUB+=		HAS_CPYTHON="@comment "
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/etc/man.d/npm.conf
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp
@@ -38,6 +48,6 @@ post-patch:
 do-install:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/
 	${ECHO_CMD} 'python=${PYTHON_CMD}' > ${STAGEDIR}${PREFIX}/etc/npmrc
-	${PYTHON_CMD} -m compileall -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -f ${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -o 0 -o 1
+	${PYTHON_CMD} -m compileall -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -f ${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp ${_PYTHON_OPTFLAG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
