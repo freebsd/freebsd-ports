@@ -1,7 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	23.0-branchpoint-990
 DISTVERSIONSUFFIX=	-gea413e826b2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -116,6 +116,9 @@ OPENCL_MESON_FALSE=	b_lundef # environ
 OPENCL_MESON_TRUE=	gallium-rusticl
 OPENCL_MESON_ON=	-Dgallium-opencl=icd
 OPENCL_VARS=		LLVM_USES=llvm:15,lib # chase libclc + rust (LTO)
+.if ${MACHINE_ARCH} != aarch64 # XXX missing in ONLY_FOR_ARCHS
+OPENCL_VARS+=		COINST_RUN_DEPENDS+=${LOCALBASE}/etc/OpenCL/vendors/${PORTNAME}.icd:lang/clover
+.endif
 OPENCL_IMPLIES=		LLVM ${"${PORT_OPTIONS:Miris}":?iris:radeonsi} # any from OPTIONS_GROUP_GALLIUM
 
 VAAPI_DESC=		Hardware encoding/decoding (only r600, radeonsi)
