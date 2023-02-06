@@ -1,5 +1,5 @@
 PORTNAME=	keysmith
-DISTVERSION=	22.11
+DISTVERSION=	23.01.0
 CATEGORIES=	security kde
 MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}/
 
