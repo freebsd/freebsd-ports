@@ -187,6 +187,7 @@
     SUBDIR += py-preppy
     SUBDIR += py-psautohint
     SUBDIR += py-pycups
+    SUBDIR += py-pydyf
     SUBDIR += py-pypdf
     SUBDIR += py-pypdf2
     SUBDIR += py-pypdf3
