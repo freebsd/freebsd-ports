@@ -1,6 +1,6 @@
 PORTNAME=	visualization.shadertoy
-PORTVERSION=	19.1.2
-DISTVERSIONSUFFIX=	-Matrix
+PORTVERSION=	20.3.0
+DISTVERSIONSUFFIX=	-Nexus
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com
