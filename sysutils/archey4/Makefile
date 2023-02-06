@@ -1,5 +1,5 @@
 PORTNAME=	archey4
-PORTVERSION=	4.13.4
+PORTVERSION=	4.14.0.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distro>=1.3:sysutils/py-distro@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0.10:net/py-netifaces@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
 
 do-test:
