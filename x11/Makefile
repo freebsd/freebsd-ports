@@ -407,6 +407,7 @@
     SUBDIR += way-displays
     SUBDIR += waybar
     SUBDIR += wayland-logout
+    SUBDIR += waylock
     SUBDIR += wayout
     SUBDIR += wbar
     SUBDIR += wcm

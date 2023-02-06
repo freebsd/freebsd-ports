@@ -1,0 +1,5 @@
+Waylock is a small screenlocker for Wayland compositors implementing
+ext-session-lock-v1. The ext-session-lock-v1 protocol is significantly
+more robust than previous client-side Wayland screen locking approaches.
+Importantly, the screenlocker crashing does not cause the session to be
+unlocked.
