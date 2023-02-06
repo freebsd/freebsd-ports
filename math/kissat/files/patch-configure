@@ -1,0 +1,11 @@
+--- configure.orig	2023-02-06 22:53:04 UTC
++++ configure
+@@ -279,7 +279,7 @@ do
+ 
+     CC=*) CC="`echo \"$1\"|sed -e s,^CC=,,`";;
+ 
+-    *) die "invalid option '$1' (try '-h')";;
++    *) echo "invalid option '$1' (try '-h')";;
+   esac
+   shift
+ done

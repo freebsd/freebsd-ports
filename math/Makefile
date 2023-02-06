@@ -417,6 +417,7 @@
     SUBDIR += kcalc
     SUBDIR += kfr
     SUBDIR += kig
+    SUBDIR += kissat
     SUBDIR += kktdirect
     SUBDIR += kmplot
     SUBDIR += labplot
