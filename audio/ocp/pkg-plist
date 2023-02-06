@@ -20,7 +20,17 @@ lib/ocp/devwmix.so
 lib/ocp/devwmixf.so
 lib/ocp/devwnone.so
 lib/ocp/libocp.so
+lib/ocp/autoload/freverb.so
+lib/ocp/autoload/ireverb.so
 man/man1/ocp.1.gz
+share/mime/audio/x-ams.xml
+share/mime/audio/x-ay.xml
+share/mime/audio/x-dmf.xml
+share/mime/audio/x-hvl.xml
+share/mime/audio/x-mdl.xml
+share/mime/audio/x-ptm.xml
+share/mime/audio/x-ym.xml
+share/mime/packages/opencubicplayer.xml
 %%ADPLUG%%%%DATADIR%%/data/adplug.db
 %%ALSA%%lib/ocp/devpalsa.so
 %%DATADIR%%/data/ocp.hlp
