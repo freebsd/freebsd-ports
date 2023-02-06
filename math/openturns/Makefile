@@ -1,7 +1,7 @@
 PORTNAME=	openturns
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.20
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,6 +36,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libglog.so:devel/glog \
 		libgmp.so:math/gmp \
 		libhdf5_cpp.so:science/hdf5 \
+		libhmat.so:math/hmat-oss \
 		libipopt.so:math/ipopt \
 		liblapack.so:math/lapack \
 		libmetis.so:math/metis \
@@ -63,7 +64,6 @@ CMAKE_ARGS=	-DBLAS_LIBRARIES=${LOCALBASE}/lib/libopenblas.so -DLAPACK_LIBRARIES=
 		-DOPENTURNS_EXAMPLE_PATH:STRING=share/examples/openturns \
 		-DOPENTURNS_DOC_PATH:STRING=share/doc/openturns
 CMAKE_OFF=	USE_DOXYGEN USE_SPHINX
-CMAKE_OFF+=	USE_HMAT # broken with hmat-oss-1.7.1: https://github.com/openturns/openturns/issues/1868
 
 TEST_TARGET=	check # 10 tests are known to fail: https://github.com/openturns/openturns/issues/1919
 
