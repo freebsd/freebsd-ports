@@ -1,7 +1,7 @@
 PORTNAME=	haruna
-DISTVERSION=	0.10.2
-MASTER_SITES=	KDE/stable/${PORTNAME}/
+DISTVERSION=	0.10.3
 CATEGORIES=	multimedia kde
+MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE video player
