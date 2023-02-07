@@ -1,5 +1,5 @@
 PORTNAME=	controllermap
-DISTVERSION=	2.26.2
+DISTVERSION=	2.26.3
 CATEGORIES=	x11
 MASTER_SITES=	https://www.libsdl.org/release/
 DISTNAME=	SDL2-${DISTVERSION}
