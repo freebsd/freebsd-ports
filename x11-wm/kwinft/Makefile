@@ -60,6 +60,7 @@ QA11Y_LIB_DEPENDS=	libqaccessibilityclient-qt5.so:accessibility/libqaccessibilit
 QA11Y_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_QAccessibilityClient
 
 # XXX Drop after FreeBSD 12.3 EOL around 2023-03-01 (don't forget distinfo)
+.if ${CXX} == c++ && exists(/usr/lib/libc++.so)
 .if !exists(/usr/include/c++/v1/concepts) || make(makesum) || make(fetch)
 USES+=		llvm:13,build
 CC=		clang${LLVM_VERSION}
@@ -80,5 +81,6 @@ bundled-libcxx:
 		-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
 	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
 .endif
+.endif # exists(/usr/lib/libc++.so)
 
 .include <bsd.port.mk>
