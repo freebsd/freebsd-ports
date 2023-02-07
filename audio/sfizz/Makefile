@@ -13,7 +13,6 @@ BROKEN_aarch64=	fails to compile: fatal error: 'linux/auxvec.h' file not found, 
 BROKEN_armv6=	fails to compile: src/external/cpuid/src/cpuid/detail/init_linux_gcc_arm.hpp: unknown type name 'Elf32_auxv_t', see https://github.com/sfztools/sfizz/issues/1116
 BROKEN_armv7=	fails to compile: src/external/cpuid/src/cpuid/detail/init_linux_gcc_arm.hpp: unknown type name 'Elf32_auxv_t', see https://github.com/sfztools/sfizz/issues/1116
 BROKEN_i386=	fails to compile: unknown type name 'Elf64_Auxinfo', see https://github.com/sfztools/sfizz/issues/1110
-BROKEN_riscv64=	fails to compile: src/external/atomic_queue/defs.h:45:2: Unknown CPU architecture
 
 LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 RUN_DEPENDS=	zenity:x11/zenity
@@ -78,7 +77,9 @@ post-install-LV2-on:
 		${STAGEDIR}${PREFIX}/lib/lv2/sfizz.lv2/Contents/Binary/sfizz_ui.so
 
 post-install-VST-on:
+.if ${ARCH} == amd64
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/lib/vst3/sfizz.vst3/Contents/x86_64-linux/sfizz.so
+.endif
 
 .include <bsd.port.post.mk>
