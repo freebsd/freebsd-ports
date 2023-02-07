@@ -1,12 +1,12 @@
 PORTNAME=	openzfs
 PORTVERSION=	2023012600
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	OpenZFS userland for FreeBSD
-WWW=		https://github.com/zfsonfreebsd/ZoF
+WWW=		https://github.com/openzfs/zfs
 
 LICENSE=	CDDL
 
@@ -35,6 +35,8 @@ USE_GITHUB=	yes
 GH_PROJECT=	zfs
 GH_TAGNAME=	dc5c8006f
 
+USE_LDCONFIG=	yes
+
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MDEBUG}
@@ -54,7 +56,7 @@ PYTHON_NO_DEPENDS=yes
 
 post-extract:
 	# Change certain shebangs into something that shebang fix understands
-	cd ${WRKSRC} && sed -i '' '1s:@PYTHON_SHEBANG@:python3:' \
+	cd ${WRKSRC} && ${SED} -i '' '1s:@PYTHON_SHEBANG@:python3:' \
 		tests/test-runner/bin/zts-report.py.in \
 		tests/test-runner/bin/test-runner.py.in \
 		cmd/arcstat.in \

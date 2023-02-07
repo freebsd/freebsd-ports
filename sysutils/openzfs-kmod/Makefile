@@ -1,12 +1,13 @@
 PORTNAME=	openzfs
 PORTVERSION=	2023012600
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX?=	-kmod
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	OpenZFS kernel module for FreeBSD
-WWW=		https://github.com/zfsonfreebsd/ZoF
+WWW=		https://github.com/openzfs/zfs
 
 LICENSE=	CDDL
 
