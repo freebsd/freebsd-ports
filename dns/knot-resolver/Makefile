@@ -1,6 +1,5 @@
 PORTNAME=	knot-resolver
-DISTVERSION=	5.5.2
-PORTREVISION=	2
+DISTVERSION=	5.6.0
 CATEGORIES=	dns
 MASTER_SITES=	https://secure.nic.cz/files/knot-resolver/ \
 		https://dns.company/downloads/knot-resolver/
@@ -17,7 +16,6 @@ BUILD_DEPENDS=	bash:shells/bash \
 		flake8:devel/py-flake8@${PY_FLAVOR} \
 		lua51-cqueues>=20200726_1:devel/lua-cqueues@lua51 \
 		luacheck:devel/lua-luacheck
-
 LIB_DEPENDS=	libdnssec.so:dns/knot3-lib \
 		libgnutls.so:security/gnutls \
 		libknot.so:dns/knot3-lib \
@@ -25,14 +23,11 @@ LIB_DEPENDS=	libdnssec.so:dns/knot3-lib \
 		libnghttp2.so:www/libnghttp2 \
 		libuv.so:devel/libuv \
 		libzscanner.so:dns/knot3-lib
-
 RUN_DEPENDS=	lua51-cqueues>=20200726_1:devel/lua-cqueues@lua51
 
 USES=		compiler:c11 libedit libtool luajit meson ncurses ninja \
 		pkgconfig python:3.5+,build shebangfix tar:xz
-
 USE_CXXSTD=	c++11
-
 USE_RC_SUBR=	krescachegc kresd
 
 SHEBANG_FILES=	scripts/bench.sh \
@@ -92,15 +87,12 @@ PORTDOCS=	AUTHORS COPYING CodingStyle NEWS README.md
 PORTEXAMPLES=	config.cluster config.docker config.internal config.isp \
 		config.personal config.privacy config.splitview
 
-OPTIONS_DEFINE=		DOCS EXAMPLES DNSTAP ROOTKEYS TRUSTANCHOR TEST TESTUNIT TESTCONF TESTEXTRA
-OPTIONS_DEFAULT=	DOCS EXAMPLES        ROOTKEYS TRUSTANCHOR TEST TESTUNIT
+OPTIONS_DEFINE=		DOCS EXAMPLES DNSTAP ROOTKEYS TRUSTANCHOR TESTUNIT
+OPTIONS_DEFAULT=	ROOTKEYS TRUSTANCHOR
 
 DNSTAP_DESC=		dnstap support
-ROOTKEYS_DESC=		install root.keys
-TESTCONF_DESC=		Do config tests
-TESTEXTRA_DESC=		Do extra tests
-TESTUNIT_DESC=		Do unit tests
-TEST_DESC=		Do tests
+ROOTKEYS_DESC=		Install root.keys
+TESTUNIT_DESC=		Build unit tests
 TRUSTANCHOR_DESC=	Trust anchor bootstrapping, management and stats
 
 DNSTAP_LIB_DEPENDS=	libfstrm.so:devel/fstrm \
@@ -113,17 +105,6 @@ DNSTAP_PLIST_FILES=	lib/knot-resolver/kres_modules/dnstap.so
 ROOTKEYS_MESON_ON=	-Dinstall_root_keys=enabled
 ROOTKEYS_MESON_OFF=	-Dinstall_root_keys=disabled
 ROOTKEYS_PLIST_FILES=	${ETCDIR}/root.keys
-
-TESTCONF_BROKEN=	missing luajit basexx package
-TESTCONF_MESON_ON=	-Dconfig_tests=enabled
-TESTCONF_MESON_OFF=	-Dconfig_tests=disabled
-
-TESTEXTRA_BROKEN=		CMake Error: The source directory misses CMakeLists.txt
-TESTEXTRA_BUILD_DEPENDS=	git:devel/git
-TESTEXTRA_USES=			cmake python:3
-TESTEXTRA_MESON_ON=		-Dextra_tests=enabled \
-				-Dsendmmsg=disabled
-TESTEXTRA_MESON_OFF=		-Dextra_tests=disabled
 
 TESTUNIT_BUILD_DEPENDS=	cmocka>=1.1.1:sysutils/cmocka
 TESTUNIT_MESON_ON=	-Dunit_tests=enabled
@@ -147,8 +128,6 @@ STRIP_TARGETS=	sbin/kres-cache-gc \
 pre-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${MKDIR} ${STAGEDIR}${RUNDIR}
-
-pre-install-TEST-on: do-test
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/kresd.conf ${STAGEDIR}${ETCDIR}/kresd.conf.sample
