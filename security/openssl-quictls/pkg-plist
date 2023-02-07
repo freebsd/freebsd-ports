@@ -157,6 +157,7 @@ man/man1/c_rehash.1ossl.gz
 man/man1/ca.1ossl.gz
 man/man1/ciphers.1ossl.gz
 man/man1/cms.1ossl.gz
+man/man1/cmp.1ossl.gz
 man/man1/crl.1ossl.gz
 man/man1/crl2pkcs7.1ossl.gz
 man/man1/dgst.1ossl.gz
