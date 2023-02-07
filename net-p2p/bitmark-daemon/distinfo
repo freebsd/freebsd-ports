@@ -1,5 +1,5 @@
-TIMESTAMP = 1672289721
-SHA256 (go/net-p2p_bitmark-daemon/bitmark-v0.15.1/v0.15.1.mod) = e2de7eef5cd2cf24c8e9aaf8ce36765a0c5ad37411d259a75f2af4d06b3f70e2
-SIZE (go/net-p2p_bitmark-daemon/bitmark-v0.15.1/v0.15.1.mod) = 1913
-SHA256 (go/net-p2p_bitmark-daemon/bitmark-v0.15.1/v0.15.1.zip) = a592dc136291c61e79b250ebf70deda3663e45fed308ce0393711bf2c2673ac3
-SIZE (go/net-p2p_bitmark-daemon/bitmark-v0.15.1/v0.15.1.zip) = 740110
+TIMESTAMP = 1674098486
+SHA256 (go/net-p2p_bitmark-daemon/bitmark-v0.15.3/v0.15.3.mod) = fec7d92c54fc26d8e7e76cfb2cc9e4c2bf57f8a8dde9f9113660072894d91ea5
+SIZE (go/net-p2p_bitmark-daemon/bitmark-v0.15.3/v0.15.3.mod) = 1943
+SHA256 (go/net-p2p_bitmark-daemon/bitmark-v0.15.3/v0.15.3.zip) = 9b8713481373ba14fe97337ced5d3cb90e7c376a13ce7a6e2925df7cd81f8b5d
+SIZE (go/net-p2p_bitmark-daemon/bitmark-v0.15.3/v0.15.3.zip) = 740299
