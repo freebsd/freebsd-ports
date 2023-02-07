@@ -1,3 +1,3 @@
-TIMESTAMP = 1668624814
-SHA256 (types-urllib3-1.26.25.4.tar.gz) = eec5556428eec862b1ac578fb69aab3877995a99ffec9e5a12cf7fbd0cc9daee
-SIZE (types-urllib3-1.26.25.4.tar.gz) = 10331
+TIMESTAMP = 1675768411
+SHA256 (types-urllib3-1.26.25.5.tar.gz) = 5630e578246d170d91ebe3901788cd28d53c4e044dc2e2488e3b0d55fb6895d8
+SIZE (types-urllib3-1.26.25.5.tar.gz) = 10405
