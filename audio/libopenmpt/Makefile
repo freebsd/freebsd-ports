@@ -1,6 +1,7 @@
 PORTNAME=	libopenmpt
 DISTVERSION=	0.6.8
 DISTVERSIONSUFFIX=	+release.autotools
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
 		LOCAL/ehaupt
@@ -58,5 +59,8 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	@${MV} ${STAGEDIR}${DOCSDIR}/examples ${STAGEDIR}${EXAMPLESDIR}
+
+post-install-EXAMPLES-off:
+	@${RM} -rf ${STAGEDIR}${DOCSDIR}/examples
 
 .include <bsd.port.mk>
