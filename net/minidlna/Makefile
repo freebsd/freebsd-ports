@@ -1,8 +1,8 @@
 PORTNAME=	minidlna
-PORTVERSION=	1.3.0
-PORTREVISION=	3
+PORTVERSION=	1.3.2
 PORTEPOCH=	1
 CATEGORIES=	net multimedia www
+MASTER_SITES=	SF
 
 MAINTAINER=	glebius@FreeBSD.org
 COMMENT=	Media-server compatible with "Digital Life Network Alliance"
@@ -21,13 +21,9 @@ LIB_DEPENDS=	libsqlite3.so:databases/sqlite3	\
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-path=/var/db/minidlna \
 		--with-os-url="http://www.FreeBSD.org"
-USES=		autoreconf:2.69 cpe gettext-tools iconv jpeg localbase
+USES=		autoreconf cpe gettext-tools iconv jpeg localbase
 
 CPE_VENDOR=	minidlna_project
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	glebius
-GH_TAGNAME=	4f6a473
 
 PKGMESSAGE=	${WRKSRC}/pkg-message
 SUB_FILES+=	pkg-message
