@@ -43,7 +43,7 @@ USE_XORG=	pixman x11 xcb xi
 SHEBANG_FILES=	kconf_update/*.py kconf_update/*.pl
 GL_COMMIT=	022f157ce4bd14fbe069ab6fe41647b70d20f004
 PLIST_SUB=	VERSION=${PORTVERSION}
-LDFLAGS+=	-Wl,--as-needed # GL, ICE/SM/Xext, epoll-shim, glib, intl, Qt5*, KF5*
+LDFLAGS+=	-Wl,--as-needed # GL, ICE/SM/Xext, glib, intl, Qt5*, KF5*
 
 OPTIONS_DEFINE=	BREEZE DOCS QA11Y
 OPTIONS_DEFAULT=BREEZE QA11Y
