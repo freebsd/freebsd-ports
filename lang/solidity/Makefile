@@ -1,6 +1,5 @@
 PORTNAME=	solidity
-PORTVERSION=	0.8.17
-PORTREVISION=	1
+PORTVERSION=	0.8.18
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ethereum/solidity/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -40,7 +39,6 @@ CMAKE_ARGS+=	-DUSE_LD_GOLD=OFF -DTESTS=OFF \
 		-DSTRICT_Z3_VERSION=OFF
 
 PLIST_FILES=	bin/solc \
-		bin/solidity-upgrade \
 		bin/yul-phaser
 
 pre-patch:
