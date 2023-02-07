@@ -5,7 +5,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for R/W structured data to/from an external representation
-WWW=		http://xtl.sourceforge.net/
+WWW=		https://xtl.sourceforge.net/
+
+LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 NO_BUILD=	yes
 
