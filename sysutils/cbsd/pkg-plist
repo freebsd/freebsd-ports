@@ -202,7 +202,7 @@ cbsd/etc/defaults/vm-freebsd-FreeBSD-x64-14.0-LATEST.conf
 cbsd/etc/defaults/vm-freebsd-GhostBSD-x64-22.conf
 cbsd/etc/defaults/vm-freebsd-HardenedBSD-x64-13-STABLE.conf
 cbsd/etc/defaults/vm-freebsd-MidnightBSD-x64-2.conf
-cbsd/etc/defaults/vm-freebsd-OPNsense-22-RELEASE-amd64.conf
+cbsd/etc/defaults/vm-freebsd-OPNsense-23-RELEASE-amd64.conf
 cbsd/etc/defaults/vm-freebsd-TrueNAS-CORE-x64-13.conf
 cbsd/etc/defaults/vm-freebsd-XigmaNAS-13.conf
 cbsd/etc/defaults/vm-freebsd-cloud-firestarter-ufs-x64-14.conf
@@ -970,6 +970,7 @@ cbsd/system/unregister_base
 cbsd/system/unregister_kernel
 cbsd/system/upgrade
 cbsd/system/world
+cbsd/tools/apply
 cbsd/tools/attachgeli
 cbsd/tools/attachzfs
 cbsd/tools/bases

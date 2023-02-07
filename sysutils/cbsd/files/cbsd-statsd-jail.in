@@ -24,10 +24,8 @@ restart_cmd=${name}_restart
 extra_commands="restart"
 
 command="%%PREFIX%%/cbsd/tools/racct-jail-statsd"
-pidfile="/var/run/$name.pid"
+pidfile="${cbsd_workdir}/var/run/${name}.pid"
 command_args="&"
-
-pidfile=/var/run/racct-jail-statsd.pid
 
 if [ ! -f ${globalconf} ]; then
 	echo "cbsd: no such ${globalconf}";
@@ -40,14 +38,14 @@ if [ ! -f ${subr} ]; then
 fi
 
 . ${globalconf}
-. ${subr}
+. ${subrdir}/nc.subr
 
 cbsd_statsd_jail_start()
 {
-	local args= racct_enabled=
+	local args= racct_enabled= pool_name= prometheus_listen4= prometheus_listen6= prometheus_port=
 
 	# RACCT enabled?
-	racct_enabled=$( /sbin/sysctl -qn kern.racct.enable )
+	racct_enabled=$( sysctl -qn kern.racct.enable )
 	[ $? -ne 0 ] && err 1 "cbsd-statsd-jail: RACCT not enabled"
 	[ "${racct_enabled}" != "1" ] && err 1 "cbsd-statsd-jail: RACCT not enabled"
 
@@ -56,6 +54,12 @@ cbsd_statsd_jail_start()
 	[ -n "${log_level}" ] && args="${args} --log_level=${log_level}"
 	[ -n "${loop_interval}" ] && args="${args} --loop_interval=${loop_interval}"
 	[ -n "${save_loop_count}" ] && args="${args} --save_loop_count=${save_loop_count}"
+	[ -z "${pool_name}" ] && pool_name=$( hostname )
+	[ -n "${pool_name}" ] && args="${args} --pool_name=${pool_name}"
+	[ -n "${prometheus_listen4}" ] && args="${args} --prometheus_listen4=${prometheus_listen4}"
+	[ -n "${prometheus_listen6}" ] && args="${args} --prometheus_listen6=${prometheus_listen6}"
+	[ -z "${prometheus_port}" ] && prometheus_port=9999
+	[ -n "${prometheus_port}" ] && args="${args} --prometheus_port=${prometheus_port}"
 
 	case "${prometheus_exporter_enable}" in
 		[Yy][Ee][Ss])
