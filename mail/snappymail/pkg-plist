@@ -571,6 +571,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/lessphp/README.md
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/lessphp/lessc.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/attachmentsaction.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/cookies.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/crypt.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/dav/client.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/dns.php
@@ -857,14 +858,13 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/static/css/boot.min.css
 %%WWWDIR%%/snappymail/v/%%VER%%/static/css/fonts/snappymail.woff
 %%WWWDIR%%/snappymail/v/%%VER%%/static/css/fonts/snappymail.woff2
-%%WWWDIR%%/snappymail/v/%%VER%%/static/css/images/empty-contact.png
-%%WWWDIR%%/snappymail/v/%%VER%%/static/css/images/icon-message-notification.png
-%%WWWDIR%%/snappymail/v/%%VER%%/static/css/images/snappymail-logo.png
 %%WWWDIR%%/snappymail/v/%%VER%%/static/favicon-light.ico
 %%WWWDIR%%/snappymail/v/%%VER%%/static/favicon-light.png
 %%WWWDIR%%/snappymail/v/%%VER%%/static/favicon.ico
 %%WWWDIR%%/snappymail/v/%%VER%%/static/favicon.png
 %%WWWDIR%%/snappymail/v/%%VER%%/static/favicon.svg
+%%WWWDIR%%/snappymail/v/%%VER%%/static/images/icon-message-notification.png
+%%WWWDIR%%/snappymail/v/%%VER%%/static/images/snappymail-logo.png
 %%WWWDIR%%/snappymail/v/%%VER%%/static/js/admin.js
 %%WWWDIR%%/snappymail/v/%%VER%%/static/js/admin.js.br
 %%WWWDIR%%/snappymail/v/%%VER%%/static/js/admin.js.gz
@@ -934,6 +934,9 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Love/images/background.jpg
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Love/images/preview.png
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Love/styles.css
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/LoveDark/images/background.jpg
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/LoveDark/images/preview.png
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/LoveDark/styles.css
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Snow/images/background.jpg
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Snow/images/preview.png
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Snow/styles.css
