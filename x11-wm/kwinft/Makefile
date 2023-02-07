@@ -1,6 +1,7 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
 DISTVERSION=	5.26.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -80,5 +81,4 @@ bundled-libcxx:
 	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
 .endif
 
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots015/override.mk"
 .include <bsd.port.mk>
