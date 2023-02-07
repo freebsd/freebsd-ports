@@ -3,6 +3,9 @@ DISTVERSION?=	10.23
 # not their own.  Probably best to keep it at ?=0 when reset here too.
 PORTREVISION?=	1
 
+DEPRECATED=	PostgreSQL 10 has reached end-of-life
+EXPIRATION_DATE=2023-03-07
+
 MAINTAINER?=	pgsql@FreeBSD.org
 
 INSTALL_DIRS?=	src/common src/timezone src/backend \
