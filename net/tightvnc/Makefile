@@ -12,6 +12,9 @@ WWW=		https://www.tightvnc.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENCE.TXT
 
+DEPRECATED=	Last release in 2009, newer version 2.x is available for Windows only.
+EXPIRATION_DATE=	2023-03-31
+
 RUN_DEPENDS=	showrgb:x11/rgb \
 		xauth:x11/xauth \
 		xorg-fonts>=7.2:x11-fonts/xorg-fonts
