@@ -52,6 +52,8 @@ OPENMPI_CONFIGURE_ON=	--enable-mpi
 OPENMPI_CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/mpi/openmpi/include" \
 			LDFLAGS="-L${LOCALBASE}/mpi/openmpi/lib"
 
+CFLAGS_powerpc64=	-mvsx
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' ${WRKSRC}/params.h
 	@${REINPLACE_CMD} -e '/^host_cpu=/s|$$| ; case $$host_cpu in\
