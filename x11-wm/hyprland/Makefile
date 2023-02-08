@@ -74,7 +74,7 @@ CMAKE_BIN=	${LOCALBASE}/bin/cmake
 CMAKE_ARGS+=	-GNinja
 
 # XXX Move into separate port and standardize via USES
-GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.0-rc1:libcxx
+GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.0-rc2:libcxx
 CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
 # Don't link against new libc++ as it's not necessary
 #LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
