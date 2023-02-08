@@ -19,7 +19,7 @@ BROKEN_i386=	fails to build due -Werror=int-conversion
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 RUN_DEPENDS=	vulkan-loader>0:graphics/vulkan-loader
 
-USES=		compiler:c11 meson pkgconfig python:build
+USES=		compiler:c11 meson python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	zmike
 PLIST_FILES=	bin/${PORTNAME}
