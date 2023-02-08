@@ -1,7 +1,7 @@
 PORTNAME=	openzfs
 PORTVERSION=	2023012600
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	freqlabs@FreeBSD.org
@@ -21,6 +21,7 @@ SHEBANG_GLOB=	*.ksh *.ksh.in *.kshlib *.py.in
 SHEBANG_FILES=	tests/zfs-tests/tests/functional/trim/trim.cfg \
 		cmd/arcstat.in \
 		cmd/dbufstat.in \
+		cmd/zilstat.in \
 		cmd/arc_summary
 
 GNU_CONFIGURE=	yes
@@ -60,7 +61,8 @@ post-extract:
 		tests/test-runner/bin/zts-report.py.in \
 		tests/test-runner/bin/test-runner.py.in \
 		cmd/arcstat.in \
-		cmd/dbufstat.in
+		cmd/dbufstat.in \
+		cmd/zilstat.in
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh

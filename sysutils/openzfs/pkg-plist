@@ -1,8 +1,8 @@
 %%PYTHON%%bin/arc_summary
 %%PYTHON%%bin/arcstat
 %%PYTHON%%bin/dbufstat
+%%PYTHON%%bin/zilstat
 %%TESTS%%bin/raidz_test
-bin/zilstat
 etc/bash_completion.d/zfs
 etc/sudoers.d/zfs
 etc/zfs/vdev_id.conf.alias.example
