@@ -209,7 +209,8 @@ BAD_GST_ALL_PLUGINS+= \
 		winscreencap \
 		x265 \
 		y4m \
-		zbar
+		zbar \
+		zxing
 
 BAD_GST_ENABLED_PLUGINS?=
 
