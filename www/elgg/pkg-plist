@@ -5684,6 +5684,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/DeleteNotificationsPlugin.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/MigrateACLNotificationPreferences.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/NotificationsPrefix.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Upgrades/RemoveOrphanedThreadedComments.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/UploadService.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/UserCapabilities.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/classes/Elgg/Users/Accounts.php
@@ -16406,10 +16407,6 @@
 %%WWWDIR%%/vendor/league/mime-type-detection/src/GeneratedExtensionToMimeTypeMap.php
 %%WWWDIR%%/vendor/league/mime-type-detection/src/MimeTypeDetector.php
 %%WWWDIR%%/vendor/league/mime-type-detection/src/OverridingExtensionToMimeTypeMap.php
-%%WWWDIR%%/vendor/matthiasmullie/minify/.github/FUNDING.yml
-%%WWWDIR%%/vendor/matthiasmullie/minify/.github/workflows/test.yml
-%%WWWDIR%%/vendor/matthiasmullie/minify/CONTRIBUTING.md
-%%WWWDIR%%/vendor/matthiasmullie/minify/Dockerfile
 %%WWWDIR%%/vendor/matthiasmullie/minify/LICENSE
 %%WWWDIR%%/vendor/matthiasmullie/minify/bin/minifycss
 %%WWWDIR%%/vendor/matthiasmullie/minify/bin/minifyjs
@@ -16420,7 +16417,7 @@
 %%WWWDIR%%/vendor/matthiasmullie/minify/data/js/operators.txt
 %%WWWDIR%%/vendor/matthiasmullie/minify/data/js/operators_after.txt
 %%WWWDIR%%/vendor/matthiasmullie/minify/data/js/operators_before.txt
-%%WWWDIR%%/vendor/matthiasmullie/minify/docker-compose.yml
+%%WWWDIR%%/vendor/matthiasmullie/minify/ruleset.xml
 %%WWWDIR%%/vendor/matthiasmullie/minify/src/CSS.php
 %%WWWDIR%%/vendor/matthiasmullie/minify/src/Exception.php
 %%WWWDIR%%/vendor/matthiasmullie/minify/src/Exceptions/BasicException.php
