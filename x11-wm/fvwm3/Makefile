@@ -38,7 +38,7 @@ FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	bidi
 
 GO_DESC=	Build and install modules written in Go
-GO_USES=	go:no_targets
+GO_USES=	go:1.19,no_targets
 GO_CONFIGURE_ENABLE=	golang
 
 FVWM_ICONS=	fvwm_icons-20070101
