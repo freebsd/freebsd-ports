@@ -14,6 +14,7 @@ LICENSE_FILE_ISCL=	${WRKSRC_cubeb}/LICENSE
 LICENSE_FILE_ZLIB=	${WRKSRC_asmjit}/LICENSE.md
 
 FLAVORS=	qt5 qt6
+qt6_BROKEN=	fails to build: no matching function for call to 'min'
 
 BUILD_DEPENDS=	flatc:devel/flatbuffers
 LIB_DEPENDS=	libxxhash.so:devel/xxhash \
