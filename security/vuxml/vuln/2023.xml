@@ -1,3 +1,33 @@
+  <vuln vid="1dd84344-a7da-11ed-86e9-d4c9ef517024">
+    <topic>LibreSSL -- Arbitrary memory read</topic>
+    <affects>
+      <package>
+	<name>libressl</name>
+	<range><lt>3.5.4</lt></range>
+      </package>
+      <package>
+	<name>libressl-devel</name>
+	<range><lt>3.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenBSD project reports:</p>
+	<blockquote cite="https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.4-relnotes.txt">
+	  <p>A malicious certificate revocation list or timestamp response token
+	    would allow an attacker to read arbitrary memory.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://ftp.openbsd.org/pub/OpenBSD/LibreSSL/libressl-3.5.4-relnotes.txt</url>
+    </references>
+    <dates>
+      <discovery>2023-02-08</discovery>
+      <entry>2023-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6cc63bf5-a727-4155-8ec4-68b626475e68">
     <topic>xorg-server -- Security issue in the X server</topic>
     <affects>
