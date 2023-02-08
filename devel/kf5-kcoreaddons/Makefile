@@ -1,5 +1,6 @@
 PORTNAME=	kcoreaddons
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org
@@ -25,6 +26,8 @@ INOTIFY_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_INOTIFY
 FAM_DESC=		Filesystem alteration notifications using fam (broken: hangs on NFS)
 FAM_USES=		fam
 FAM_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_FAM
+
+CMAKE_ARGS=	-DACCOUNTS_SERVICE_ICON_DIR:PATH=/var/db/AccountsService/icons
 
 .include <bsd.port.pre.mk>
 # FreeBSD base gained /etc/os-release in r354922, which
