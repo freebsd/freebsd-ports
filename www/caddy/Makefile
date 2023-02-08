@@ -1,7 +1,6 @@
 PORTNAME=	caddy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.2
-PORTREVISION=	2
+DISTVERSION=	2.6.3
 CATEGORIES=	www
 DIST_SUBDIR=	caddy
 
@@ -12,7 +11,7 @@ WWW=		https://caddyserver.com
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.19,modules
+USES=		cpe go:modules
 CPE_VENDOR=	caddyserver
 
 USE_RC_SUBR=	caddy
