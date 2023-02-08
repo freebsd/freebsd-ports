@@ -4,7 +4,7 @@ PORTREVISION=	7
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Data Language
 WWW=		https://metacpan.org/release/PDL
 
