@@ -68,7 +68,7 @@ GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 GNUTLS_USES=		pkgconfig
 GNUTLS_VARS=		EXTRAS+=m_ssl_gnutls.cpp
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_VARS=		EXTRAS+=m_ldap.cpp
 MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
 MBEDTLS_VARS=		EXTRAS+=m_ssl_mbedtls.cpp

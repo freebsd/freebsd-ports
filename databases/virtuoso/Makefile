@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=--disable-krb
 
 .if ${PORT_OPTIONS:MLDAP}
 CONFIGURE_ARGS+=--enable-openldap=${LOCALBASE}
-USE_OPENLDAP=	yes
+USES=	ldap
 .else
 CONFIGURE_ARGS+=--disable-openldap
 .endif

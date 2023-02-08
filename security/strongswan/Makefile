@@ -102,7 +102,7 @@ IKEV1_CONFIGURE_OFF=		--disable-ikev1
 IPSECKEY_CONFIGURE_ON=		--enable-ipseckey
 KDF_CONFIGURE_ON=		--enable-kdf
 KERNELLIBIPSEC_CONFIGURE_ON=	--enable-kernel-libipsec
-LDAP_USE=			OPENLDAP=yes
+LDAP_USES=			ldap
 LDAP_CONFIGURE_ON=		--enable-ldap
 LIBC_CONFIGURE_ON=		--with-printf-hooks=glibc
 LOADTESTER_CONFIGURE_ON=	--enable-load-tester

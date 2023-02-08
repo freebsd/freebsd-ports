@@ -56,7 +56,7 @@ TESTS_DESC=		Install smoke tests
 HTTP_LIB_DEPENDS=	libmicrohttpd.so:www/libmicrohttpd
 HTTP_VARS=		EXTRA_MODULES+=httpd
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_VARS=		EXTRA_MODULES+="ldap h350"
 
 MEMCACHED_LIB_DEPENDS=	libmemcached.so:databases/libmemcached

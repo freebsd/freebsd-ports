@@ -109,7 +109,7 @@ RUN_DEPENDS+=	${LOCALBASE}/share/sysconftool/sysconftool:devel/sysconftool
 OPTIONS_DEFINE+=	DOCS
 
 DOCS=		README.ldap
-USE_OPENLDAP=	yes
+USES+=	ldap
 CONFIGURE_ARGS+=--with-authldap
 .else
 CONFIGURE_ARGS+=--without-authldap

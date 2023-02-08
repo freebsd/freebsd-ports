@@ -58,7 +58,7 @@ FUSE_CONFIGURE_ENABLE=	fuse
 FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 
 LDAP_CONFIGURE_ENABLE=	ldap
-LDAP_USE=		openldap=yes
+LDAP_USES=		ldap
 
 NLS_USES=		gettext
 

@@ -135,7 +135,7 @@ CONFIGURE_ARGS+=--disable-sdl
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
+USES+=	ldap
 CONFIGURE_ARGS+=--enable-openldap
 .else
 CONFIGURE_ARGS+=--disable-openldap

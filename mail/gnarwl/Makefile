@@ -12,8 +12,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libgdbm.so:databases/gdbm
 
-USES=		iconv gmake groff tar:tgz
-USE_OPENLDAP=	yes
+USES=		iconv gmake groff ldap tar:tgz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} --localstatedir="${PREFIX}/var"
 CPPFLAGS+=	-I${LOCALBASE}/include

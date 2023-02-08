@@ -89,7 +89,7 @@ GNUTLS_CONFIGURE_WITH=	gnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 
 MONO_RUN_DEPENDS=	wine-mono>0:emulators/wine-mono
 

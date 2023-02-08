@@ -80,7 +80,7 @@ SQLITE_CONFIGURE_ON=	--with-sqlite3-include="${LOCALBASE}/include" \
 SQLITE_CONFIGURE_WITH=	sqlite3
 
 LDAP_DESC=		Enable OpenLDAP KDC backend support
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_ON=	--with-openldap-include="${LOCALBASE}/include" \
 			--with-openldap-lib="${LOCALBASE}/lib"
 LDAP_CONFIGURE_WITH=	openldap

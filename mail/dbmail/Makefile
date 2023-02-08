@@ -47,8 +47,7 @@ SIEVE_DESC=		Sieve mail sorting language support
 
 DOCS=		AUTHORS CHANGELOG.md INSTALL README THANKS UPGRADING
 
-LDAP_USES=		gettext-runtime
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		gettext-runtime ldap
 LDAP_CONFIGURE_WITH=	ldap
 SIEVE_LIB_DEPENDS=	libsieve.so:mail/libsieve
 SIEVE_CONFIGURE_WITH=	sieve

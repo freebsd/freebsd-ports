@@ -14,11 +14,10 @@ LICENSE=	GPLv2
 
 NSS_LDAP_VERSION=265
 
-USES=		autoreconf cpe gmake perl5
+USES=		autoreconf cpe gmake ldap perl5
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_OPENLDAP=	yes
 CPE_VENDOR=	padl
 
 OPTIONS_DEFINE=	LCLASS KERBEROS

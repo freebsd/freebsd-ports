@@ -43,7 +43,7 @@ OPTIONS_SUB=	yes
 CONTRIB_CONFIGURE_ENABLE=	contrib
 CRACKLIB_LIB_DEPENDS=	libcrack.so:security/cracklib
 CRACKLIB_CONFIGURE_WITH=	cracklib
-LDAP_USE=	openldap=yes
+LDAP_USES=	ldap
 LDAP_CONFIGURE_WITH=	ldap
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls

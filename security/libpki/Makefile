@@ -35,7 +35,7 @@ MYSQL_DESC=	"Enable MySQL support"
 PGSQL_DESC=	"Enable PostgreSQL support"
 
 DNS_CONFIGURE_ENABLE=	dns
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_ENABLE=	ldap
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ENABLE=	mysql

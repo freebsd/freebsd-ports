@@ -14,14 +14,12 @@ LICENSE_COMB=	dual
 
 RUN_DEPENDS=	\
 	p5-Data-UUID>0:devel/p5-Data-UUID \
-	p5-perl-ldap>0:net/p5-perl-ldap \
-	${LOCALBASE}/libexec/slapd:net/openldap${OPENLDAP_VER}-server
+	p5-perl-ldap>0:net/p5-perl-ldap
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 NO_ARCH=	yes
-USES=		perl5
+USES=		ldap:server perl5
 USE_PERL5=	configure
-USE_OPENLDAP=	yes
 
 CONFIGURE_ENV=	PATH=${PATH}:${PREFIX}/libexec
 

@@ -88,7 +88,7 @@ BDB_USES=			bdb
 BLACKLISTD_EXTRA_PATCHES=	${FILESDIR}/extra-patch-blacklistd
 CDB_LIB_DEPENDS=		libcdb.so:databases/tinycdb
 EAI_LIB_DEPENDS=		libicuuc.so:devel/icu
-LDAP_USE=			OPENLDAP=yes
+LDAP_USES=			ldap
 LMDB_LIB_DEPENDS=		liblmdb.so:databases/lmdb
 MYSQL_USES?=			mysql
 PCRE2_LIB_DEPENDS=		libpcre2-8.so:devel/pcre2
@@ -263,9 +263,6 @@ POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_SQLITE=-L${LOCALBASE}/lib -lsqlite3 -lpthread"
 
 .if ${PORT_OPTIONS:MLDAP}
 DYN_EXT+=		ldap
-. if defined(WITH_OPENLDAP_VER)
-WANT_OPENLDAP_VER=	${WITH_OPENLDAP_VER}
-. endif
 POSTFIX_CCARGS+=	-DHAS_LDAP -I${LOCALBASE}/include \
 			-I${LOCALBASE}/include/sasl -DUSE_LDAP_SASL
 POSTFIX_DYN_AUXLIBS+=	"AUXLIBS_LDAP=-L${LOCALBASE}/lib -lldap -llber"

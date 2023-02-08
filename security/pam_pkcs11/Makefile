@@ -31,7 +31,7 @@ OPTIONS_SUB=		yes
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_WITH=	curl
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 
 # Users can only choose either NSS or SSL

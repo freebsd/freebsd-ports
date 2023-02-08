@@ -16,8 +16,7 @@ BROKEN_FreeBSD_14=	ld: error: duplicate symbol: ACMutex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]+//}
 
-USES=		ssl
-USE_OPENLDAP=	yes
+USES=		ldap ssl
 USE_RC_SUBR=	${PORTNAME}
 
 GNU_CONFIGURE=	yes

@@ -107,7 +107,7 @@ FIREBIRD_CONFIGURE_WITH=	rlm_sql_firebird
 FIREBIRD_USES=			firebird
 LDAP_CONFIGURE_WITH=		rlm_ldap
 LDAP_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
-LDAP_USE=			OPENLDAP
+LDAP_USES=			ldap
 LDAP_VARS=			_REQUIRE+=slapd
 MITKRB_PORT_CONFIGURE_ON=	--with-rlm-krb5-dir=${LOCALBASE}
 MITKRB_PORT_LIB_DEPENDS=	libkrb5support.so:security/krb5

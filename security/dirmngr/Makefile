@@ -18,8 +18,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libksba.so:security/libksba \
 		libpth.so:devel/pth
 
-USES=		gmake iconv tar:bzip2
-USE_OPENLDAP=	yes
+USES=		gmake iconv ldap tar:bzip2
 GNU_CONFIGURE=	yes
 INFO=		dirmngr
 

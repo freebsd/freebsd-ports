@@ -56,7 +56,7 @@ NETSNMP_DESC=Enable Net-SNMP support
 
 .if ${PORT_OPTIONS:MLDAP}
 MAKE_ENV+=	WITH_LDAP=1
-USE_OPENLDAP=	yes
+USE+=	ldap
 .endif
 
 .if ${PORT_OPTIONS:MNETSNMP}

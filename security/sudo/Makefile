@@ -63,7 +63,7 @@ NLS_CFLAGS=	-I${LOCALBASE}/include
 INSULTS_CONFIGURE_ON=	--with-insults
 INSULTS_CONFIGURE_ON+=	--with-all-insults
 
-LDAP_USE=	OPENLDAP=yes
+LDAP_USES=	ldap
 LDAP_CONFIGURE_ON=	--with-ldap=${PREFIX}
 SUDO_LDAP_CONF?=	ldap.conf
 LDAP_CONFIGURE_ON+=	--with-ldap-conf-file=${PREFIX}/etc/${SUDO_LDAP_CONF}

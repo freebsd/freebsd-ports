@@ -34,8 +34,7 @@ INSTALL_TARGET=	install-strip
 INFO=		am-utils
 PORTDOCS=	AUTHORS BUGS FAQ NEWS README.attrcache
 
-OPENLDAP_USES=			localbase:ldflags
-OPENLDAP_USE=			OPENLDAP=yes
+OPENLDAP_USES=			ldap localbase:ldflags
 OPENLDAP_CONFIGURE_WITH=	ldap
 OPENLDAP_PORTDOCS=		README.ldap ldap-id.txt ldap.schema
 

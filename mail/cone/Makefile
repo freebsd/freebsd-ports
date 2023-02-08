@@ -17,11 +17,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 BUILD_DEPENDS=	gpgv:security/gnupg1
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libcourier-unicode.so:devel/courier-unicode \
-		libidn.so:dns/libidn \
-		libldap_r.so:net/openldap24-client
+		libidn.so:dns/libidn
 RUN_DEPENDS=	gpgv:security/gnupg1
 
-USES=		compiler:c++11-lang fam gettext gmake gnome iconv \
+USES=		compiler:c++11-lang fam gettext gmake gnome iconv ldap:24 \
 		localbase:ldflags ncurses perl5 pkgconfig shebangfix ssl \
 		tar:bzip2
 USE_GNOME=	libxml2

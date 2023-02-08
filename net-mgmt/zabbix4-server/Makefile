@@ -96,7 +96,7 @@ SQLITE_USES+=		sqlite:3
 ORACLE_CONFIGURE_WITH=	oracle
 
 LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 
 IPMI_CONFIGURE_WITH=	openipmi
 IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi

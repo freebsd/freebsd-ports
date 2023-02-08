@@ -108,7 +108,7 @@ AVAHI_SUB_LIST_OFF=		AVAHI_DAEMON=
 
 LDAP_CONFIGURE_ENABLE=		ldap
 LDAP_DESC=			Get printer locations from an LDAP server
-LDAP_USE=			OPENLDAP=yes
+LDAP_USES=			ldap
 
 # Default PDF-to-PostScript renderer
 

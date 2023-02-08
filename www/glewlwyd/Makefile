@@ -24,7 +24,6 @@ LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libjwt.so:www/libjwt \
 		libgnutls.so:security/gnutls \
 		libconfig.so:devel/libconfig \
-		liblber.so:net/openldap24-client \
 		librhonabwy.so:security/rhonabwy \
 		libiddawc.so:security/iddawc
 
@@ -38,7 +37,7 @@ RUN_DEPENDS=	yder>1.4.14:devel/yder \
 		orcania>2.2.1:devel/orcania \
 		oath-toolkit>0:security/oath-toolkit
 
-USES=		cmake cpe pgsql sqlite
+USES=		cmake cpe ldap:24 pgsql sqlite
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest

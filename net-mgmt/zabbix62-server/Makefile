@@ -105,7 +105,7 @@ IPMI_CONFIGURE_WITH=	openipmi
 IPMI_LIB_DEPENDS=	libOpenIPMI.so:sysutils/openipmi
 
 LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 
 MYSQL_CONFIGURE_ON=	--with-mysql
 MYSQL_USES+=		compiler:c11 mysql:80

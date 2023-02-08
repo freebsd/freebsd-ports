@@ -15,8 +15,7 @@ EXPIRATION_DATE=	2023-06-30
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
-USE_OPENLDAP=	yes
-USES=		gmake mysql:client,server
+USES=		gmake ldap mysql:client,server
 
 IGNORE_WITH_MYSQL=	57 80 101m 102m 103m 57p 57w
 

@@ -22,7 +22,6 @@ OPTIONS_DEFINE=		LDAP MYSQL PGSQL MEMCACHED
 OPTIONS_DEFAULT=	LDAP PGSQL MEMCACHED
 OPTIONS_SUB=		yes
 
-LDAP_DESC=		Build with LDAP support
 MYSQL_DESC=		Build with MySQL support
 PGSQL_DESC=		Build with PostgreSQL support
 MEMCACHED_DESC=		Install memcached
@@ -37,7 +36,7 @@ SUB_LIST+=		GNUSTEP_LOCAL_TOOLS=${GNUSTEP_LOCAL_TOOLS} \
 
 CONFIGURE_ARGS=		--with-gnustep --disable-debug --enable-strip
 
-LDAP_USE=		OPENLDAP=client
+LDAP_USES=		ldap
 PGSQL_USES=		pgsql
 MYSQL_USES=		mysql
 MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached

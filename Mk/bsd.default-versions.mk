@@ -19,7 +19,7 @@ LOCALBASE?=	/usr/local
 
 .  for lang in APACHE BDB COROSYNC EMACS FIREBIRD FORTRAN FPC GCC \
 	GHOSTSCRIPT GL GO IMAGEMAGICK JAVA LAZARUS LIBRSVG2 LINUX LLVM \
-	LUA LUAJIT MONO MYSQL NINJA NODEJS PERL5 PGSQL PHP PYTHON \
+	LUA LUAJIT MONO MYSQL NINJA NODEJS OPENLDAP PERL5 PGSQL PHP PYTHON \
 	PYTHON2 PYTHON3 RUBY RUST SAMBA SSL TCLTK VARNISH
 .    if defined(${lang}_DEFAULT)
 ERROR+=	"The variable ${lang}_DEFAULT is set and it should only be defined through DEFAULT_VERSIONS+=${lang:tl}=${${lang}_DEFAULT} in /etc/make.conf"
@@ -95,6 +95,8 @@ MYSQL_DEFAULT?=		5.7
 NINJA_DEFAULT?=		ninja
 # Possible value: 14, 16, 18, 19, current, lts (Note: current = 19 and lts = 18)
 NODEJS_DEFAULT?=    lts
+# Possible value: 24, 25, 26
+OPENLDAP_DEFAULT?=    26
 # Possible values: 5.32, 5.34, 5.36, devel
 .  if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))

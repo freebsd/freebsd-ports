@@ -61,10 +61,9 @@ SUB_FILES=	pkg-message
 
 TEST_TARGET=	check
 
-USES=		autoreconf cpe gettext gmake iconv libtool pathfix pkgconfig \
+USES=		autoreconf cpe gettext gmake iconv ldap libtool pathfix pkgconfig \
 		python:3.6+ shebangfix gssapi:mit
 USE_LDCONFIG=	yes
-USE_OPENLDAP=	yes
 INSTALL_TARGET=	install-strip
 CPE_VENDOR=	fedoraproject
 

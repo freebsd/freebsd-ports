@@ -14,13 +14,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DEPRECATED=	Do not support recent RFC 8894
 EXPIRATION_DATE=	2023-03-31
 
-USES=		apache gmake libtool ssl
+USES=		apache gmake ldap libtool ssl
 BROKEN_SSL=	base
 BROKEN_SSL_REASON=	unexpected type name 'issuer_and_subject_t': expected expression
 IGNORE_SSL=	libressl libressl-devel
 IGNORE_SSL_REASON=	unknown ASN1 functions
 USE_LDCONFIG=	yes
-USE_OPENLDAP=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-install-dir="${PREFIX}/www/openscep" \

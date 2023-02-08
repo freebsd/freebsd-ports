@@ -26,12 +26,11 @@ LDB_DEPENDS=		talloc>=2.2.0:devel/talloc \
 
 CONFLICTS_INSTALL=	ldb[0-9][0-9] # include/ldb.h
 
-USES=			compiler pkgconfig waf
+USES=			compiler ldap pkgconfig waf
 USE_LDCONFIG=		yes
 WAF_CMD=		${BUILD_WRKSRC}/buildtools/bin/waf
 CONFIGURE_LOG=		${BUILD_WRKSRC}/bin/config.log
 
-USE_OPENLDAP=		yes
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 

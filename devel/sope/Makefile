@@ -38,7 +38,7 @@ MEMCACHED_DESC=		Install memcached
 MYSQL_DESC=		Build with MySQL support
 PGSQL_DESC=		Build with PostgreSQL support
 
-LDAP_USE=		OPENLDAP=client
+LDAP_USES=		ldap
 MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached
 MYSQL_USES=		mysql
 PGSQL_USES=		pgsql

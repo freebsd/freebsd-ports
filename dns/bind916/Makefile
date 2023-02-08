@@ -100,7 +100,7 @@ DLZ_BDB_USES=		bdb
 DLZ_FILESYSTEM_CONFIGURE_ON=	--with-dlz-filesystem=yes
 
 DLZ_LDAP_CONFIGURE_ON=	--with-dlz-ldap=yes
-DLZ_LDAP_USE=		OPENLDAP=yes
+DLZ_LDAP_USES=		ldap
 
 DLZ_MYSQL_CONFIGURE_ON=	--with-dlz-mysql=yes
 DLZ_MYSQL_USES=		mysql

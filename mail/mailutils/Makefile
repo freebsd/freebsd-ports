@@ -80,7 +80,7 @@ GDBM_CONFIGURE_WITH=	gdbm
 KYOTOCABINET_LIB_DEPENDS=	libkyotocabinet.so:databases/kyotocabinet
 KYOTOCABINET_CONFIGURE_WITH=	kyotocabinet
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 
 MYSQL_USES=		mysql

@@ -69,7 +69,7 @@ GTKSPELL_CONFIGURE_ENABLE=	gtkspell
 HIDE_OSSIG_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_main.c
 
 LDAP_CONFIGURE_ENABLE=		ldap
-LDAP_USE=			openldap=yes
+LDAP_USES=			ldap
 
 ONIGURUMA_LIB_DEPENDS=		libonig.so:devel/oniguruma
 ONIGURUMA_CONFIGURE_ENABLE=	oniguruma

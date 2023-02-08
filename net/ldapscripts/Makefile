@@ -11,19 +11,11 @@ WWW=		https://contribs.martymac.org
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	ldapadd:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
-		ldapsearch:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
-		ldapdelete:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
-		ldapmodify:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
-		ldapmodrdn:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client \
-		ldappasswd:net/openldap${OPENLDAP_VER}${OPENLDAP_FLAVOUR}-client
-
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=	SASL DOCS
 
-USES=		iconv tar:tgz
-USE_OPENLDAP=	yes
+USES=		iconv ldap tar:tgz
 LIBDIR=	${PREFIX}/lib/${PORTNAME}
 MAKE_ENV+=	MANDIR=${MANPREFIX}/man \
 		ETCDIR=${ETCDIR}

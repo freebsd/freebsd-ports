@@ -33,7 +33,7 @@ OPTIONS_DEFINE=	LDAP DOCS EXAMPLES
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	YES
+USES=+	ldap
 PLIST_SUB+=	LDAP=""
 SCRIPTS_ENV+=	USE_LDAP=yes
 .else

@@ -31,12 +31,11 @@ CONFLICTS_INSTALL=	ldb[0-9][0-9] samba4[0-9][0-9] # include/ldb.h lib/python3.8/
 #nopython_CONFLICTS=	ldb
 #default_CONFLICTS=	ldb-nopython
 
-USES=			compiler gettext-runtime pkgconfig waf
+USES=			compiler gettext-runtime ldap pkgconfig waf
 USE_LDCONFIG=		yes
 WAF_CMD=		${BUILD_WRKSRC}/buildtools/bin/waf
 CONFIGURE_LOG=		${BUILD_WRKSRC}/bin/config.log
 
-USE_OPENLDAP=		yes
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 

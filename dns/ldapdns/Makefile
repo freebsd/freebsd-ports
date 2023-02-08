@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	setuidgid:sysutils/daemontools \
 		tcpserver:sysutils/ucspi-tcp
 
-USES=		localbase:ldflags shebangfix tar:xz
-USE_OPENLDAP=	yes
+USES=		ldap localbase:ldflags shebangfix tar:xz
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 USE_CSTD=	gnu89
