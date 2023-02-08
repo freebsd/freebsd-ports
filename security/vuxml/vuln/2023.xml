@@ -1,3 +1,50 @@
+  <vuln vid="6cc63bf5-a727-4155-8ec4-68b626475e68">
+    <topic>xorg-server -- Security issue in the X server</topic>
+    <affects>
+      <package>
+	<name>xorg-server</name>
+	<name>xephyr</name>
+	<name>xorg-vfbserver</name>
+	<range><lt>21.1.7,1</lt></range>
+      </package>
+      <package>
+	<name>xorg-nestserver</name>
+	<range><lt>21.1.7,2</lt></range>
+      </package>
+      <package>
+	<name>xwayland</name>
+	<range><lt>22.1.8,1</lt></range>
+      </package>
+      <package>
+	<name>xwayland-devel</name>
+	<range><lt>21.0.99.1.386</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2023-February/003320.html">
+	  <ul>
+	    <li>CVE-2023-0494/ZDI-CAN-19596: X.Org Server DeepCopyPointerClasses
+	    use-after-free
+
+	    <p>A dangling pointer in DeepCopyPointerClasses can be exploited by
+	    ProcXkbSetDeviceInfo() and ProcXkbGetDeviceInfo() to read/write into
+	    freed memory.</p></li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.x.org/archives/xorg-announce/2023-February/003320.html</url>
+      <cvename>CVE-2023-0494</cvename>
+    </references>
+    <dates>
+      <discovery>2023-02-07</discovery>
+      <entry>2023-02-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b34c1947-a749-11ed-b24b-1c61b4739ac9">
     <topic>TightVNC -- Muliple Vulnerabilities</topic>
     <affects>
