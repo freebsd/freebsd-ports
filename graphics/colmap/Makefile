@@ -1,6 +1,5 @@
 PORTNAME=	colmap
-DISTVERSION=	3.7
-PORTREVISION=	1
+DISTVERSION=	3.8
 CATEGORIES=	graphics
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -20,8 +19,11 @@ LICENSE_PERMS_SIFTGPU=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libceres.so:math/ceres-solver \
+		libflann.so:math/flann \
 		libfreeimage.so:graphics/freeimage \
-		libglog.so:devel/glog
+		libglog.so:devel/glog \
+		liblz4.so:archivers/liblz4 \
+		libmetis.so:math/metis
 
 USES=		cmake compiler:${OPENMP}c++11-lib desktop-file-utils eigen:3 gl \
 		localbase python:env qt:5 sqlite
@@ -63,11 +65,6 @@ post-patch:
 # XXX math/flann has -DUSE_OPENMP=OFF and lacks tunning:
 # https://github.com/colmap/colmap/commit/4b594eb85c13
 # https://github.com/colmap/colmap/commit/1e9f1f3324cd
-	@${REINPLACE_CMD} -e '/SQLite/d' \
-		${WRKSRC}/lib/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's,SQLite/,,' \
-		${WRKSRC}/src/base/database.h \
-		${WRKSRC}/src/util/sqlite3_utils.h
 .if !defined(DISPLAY) # QApplication
 	@${REINPLACE_CMD} -e '/opengl_utils_test/d' \
 		${WRKSRC}/src/util/CMakeLists.txt
