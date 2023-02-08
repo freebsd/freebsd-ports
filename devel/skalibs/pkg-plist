@@ -78,8 +78,8 @@ include/skalibs/unixconnection.h
 include/skalibs/unixmessage.h
 include/skalibs/unixonacid.h
 lib/libskarnet.so
-lib/libskarnet.so.2.12
-lib/libskarnet.so.2.12.0.1
+lib/libskarnet.so.2.13
+lib/libskarnet.so.2.13.0.0
 lib/skalibs/libskarnet.a
 lib/skalibs/sysdeps/socket.lib
 lib/skalibs/sysdeps/spawn.lib
@@ -136,7 +136,6 @@ lib/skalibs/sysdeps/util.lib
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb/socket.html
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb/stralloc.html
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb/strerr.html
-%%PORTDOCS%%%%DOCSDIR%%/libstddjb/strerr2.html
 %%PORTDOCS%%%%DOCSDIR%%/libstddjb/tai.html
 %%PORTDOCS%%%%DOCSDIR%%/libunixonacid/index.html
 %%PORTDOCS%%%%DOCSDIR%%/libunixonacid/kolbak.html
