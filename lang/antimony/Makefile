@@ -11,9 +11,7 @@ WWW=		https://antimony-lang.github.io/antimony/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	node:www/node
-
-USES=		cargo
+USES=		cargo nodejs:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	antimony-lang
