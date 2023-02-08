@@ -3,7 +3,7 @@ DISTVERSION=	2.5
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/amadvance/advancecomp/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Recompression utilities for .ZIP, .PNG, .MNG, and .GZ files
 WWW=		http://www.advancemame.it/comp-readme.html
 

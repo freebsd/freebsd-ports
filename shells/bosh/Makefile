@@ -2,7 +2,7 @@ PORTNAME=	bosh
 CATEGORIES=	shells
 
 COMMENT=	Bourne Shell extended by J. Schilling
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 WWW=		http://schilytools.sourceforge.net/bosh.html
 
 # bin/bosh

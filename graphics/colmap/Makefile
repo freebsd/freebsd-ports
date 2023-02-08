@@ -3,7 +3,7 @@ DISTVERSION=	3.7
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Structure from motion and multi-view stereo
 WWW=		https://colmap.github.io/
 

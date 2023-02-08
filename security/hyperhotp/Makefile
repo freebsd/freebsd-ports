@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1
 CATEGORIES=	security comms
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Programmer for the HOTP feature of hyperFIDO USB security keys
 WWW=		https://github.com/casept/hyperhotp
 

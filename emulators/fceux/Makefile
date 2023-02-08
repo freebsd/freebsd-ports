@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators games
 MASTER_SITES=	SF/fceultra/Source%20Code/${DISTVERSION}%20src/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	NES emulator
 WWW=		https://fceux.com
 

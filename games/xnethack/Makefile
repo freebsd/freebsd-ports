@@ -4,7 +4,7 @@ DISTVERSION=	7.1
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Experimental features and improvements applied to NetHack 3.7-dev
 WWW=		https://nethackwiki.com/wiki/XNetHack
 

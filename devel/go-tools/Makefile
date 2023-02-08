@@ -6,7 +6,7 @@ PORTEPOCH=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	go-
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Go Tools
 WWW=		https://godoc.org/golang.org/x/tools
 

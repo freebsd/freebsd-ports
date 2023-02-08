@@ -3,7 +3,7 @@ DISTVERSION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://fuz.su/pub/dobutsu/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Tablebase and Engine for Dobutsu Shogi
 WWW=		https://github.com/clausecker/dobutsu
 

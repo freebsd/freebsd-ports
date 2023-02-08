@@ -6,7 +6,7 @@ MASTER_SITES=	http://fuz.su/pub/schilytools/ \
 		https://ftp.gwdg.de/pub/misc/schilytools/
 DISTNAME=	schily-${DISTVERSION}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 WWW?=		https://codeberg.org/schilytools/schilytools
 
 LICENSE=	CDDL ${COMPONENTS:@c@${LICENSE.${c}}@:O:u}

@@ -2,7 +2,7 @@ PORTNAME=	schilytools
 DISTVERSION=	3
 CATEGORIES=	misc
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Collection of tools and libraries by J. Schilling (metaport)
 WWW=		https://codeberg.org/schilytools/schilytools
 

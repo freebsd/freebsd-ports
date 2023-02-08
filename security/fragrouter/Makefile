@@ -6,7 +6,7 @@ MASTER_SITES=	http://monkey.org/~dugsong/ \
 		http://fuz.su/~fuz/distfiles/fragrouter/ \
 		LOCAL/ohauer
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Tool for testing network IDS implementations
 
 GNU_CONFIGURE=	yes

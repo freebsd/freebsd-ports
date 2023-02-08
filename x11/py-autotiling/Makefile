@@ -4,7 +4,7 @@ CATEGORIES=	x11
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Automatically switch the window split orientation in sway and i3
 WWW=		https://github.com/nwg-piotr/autotiling
 

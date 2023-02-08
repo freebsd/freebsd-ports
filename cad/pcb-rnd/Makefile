@@ -3,7 +3,7 @@ DISTVERSION=	3.0.6
 CATEGORIES=	cad
 MASTER_SITES=	http://repo.hu/projects/pcb-rnd/releases/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Flexible, modular Printed Circuit Board editor
 WWW=		http://www.repo.hu/projects/pcb-rnd/
 

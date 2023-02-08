@@ -2,7 +2,7 @@ PORTNAME=	dasm
 DISTVERSION=	2.20.14.1
 CATEGORIES=	devel
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Macro assembler with support for several 8-bit microprocessors
 WWW=		https://dasm-assembler.github.io/
 

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	unfs3-
 DISTVERSION=	0.9.23
 CATEGORIES=	net
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	User-space implementation of the NFSv3 server specification
 WWW=		https://unfs3.github.io/
 

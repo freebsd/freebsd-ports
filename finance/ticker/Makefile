@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.5.5
 CATEGORIES=	finance
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Terminal stock ticker with live updates and position tracking
 WWW=		https://github.com/achannarasappa/ticker
 

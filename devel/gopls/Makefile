@@ -4,7 +4,7 @@ DISTVERSION=	0.11.0
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Go language LSP server
 WWW=		https://pkg.go.dev/golang.org/x/tools/gopls
 

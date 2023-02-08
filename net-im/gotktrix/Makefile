@@ -4,7 +4,7 @@ DISTVERSION=	0.1.4
 PORTREVISION=	4
 CATEGORIES=	net-im
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Matrix client in Go and GTK4
 WWW=		https://github.com/diamondburned/gotktrix
 

@@ -10,11 +10,7 @@ DIST_SUBDIR=	writeas
 PATCH_SITES=	https://github.com/writefreely/writefreely/commit/
 PATCHFILES=	99d72881cf833326f02d86a8896bbd2b8156327b.diff:-p1
 
- MAINTAINER=	fuz@fuz.su
- COMMENT=	Clean, Markdown-based publishing platform made for writers
- WWW=		https://writefreely.org
-
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Clean, Markdown-based publishing platform made for writers
 WWW=		https://writefreely.org
 
