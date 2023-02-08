@@ -1,5 +1,5 @@
 PORTNAME=	beautifulsoup
-PORTVERSION=	4.11.1
+PORTVERSION=	4.11.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ COMMENT=	HTML/XML Parser for Python
 WWW=		https://www.crummy.com/software/BeautifulSoup/
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}soupsieve>=1.2:www/py-soupsieve@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lxml>=0:devel/py-lxml@${PY_FLAVOR} \
