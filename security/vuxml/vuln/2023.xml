@@ -1,3 +1,91 @@
+  <vuln vid="ecffb881-a7a7-11ed-8d6a-6c3be5272acd">
+    <topic>Grafana -- Stored XSS in ResourcePicker component</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>8.1.0</ge><lt>8.5.16</lt></range>
+	<range><ge>9.0.0</ge><lt>9.2.10</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.4</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.1.0</ge><lt>8.5.16</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.2.10</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/01/25/grafana-security-releases-new-versions-with-fixes-for-cve-2022-23552-cve-2022-41912-and-cve-2022-39324/">
+	  <p>On 2022-12-16 during an internal audit of Grafana, a member of the security
+	  team found a stored XSS vulnerability affecting the core plugin GeoMap.</p>
+	  <p>The stored XSS vulnerability was possible due to SVG-files weren't properly
+	  sanitized and allowed arbitrary JavaScript to be executed in the context
+	  of the currently authorized user of the Grafana instance.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23552</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-8xmm-x63g-f6xv</url>
+    </references>
+    <dates>
+      <discovery>2022-12-16</discovery>
+      <entry>2023-02-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e6281d88-a7a7-11ed-8d6a-6c3be5272acd">
+    <topic>Grafana -- Spoofing originalUrl of snapshots</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>8.5.16</lt></range>
+	<range><ge>9.0.0</ge><lt>9.2.10</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.4</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.5.16</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.2.10</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/01/25/grafana-security-releases-new-versions-with-fixes-for-cve-2022-23552-cve-2022-41912-and-cve-2022-39324/">
+	  <p>A third-party penetration test of Grafana found a vulnerability
+	  in the snapshot functionality. The value of the originalUrl parameter
+	  is automatically generated. The purpose of the presented originalUrl parameter
+	  is to provide a user who views the snapshot with the possibility to click
+	  on the <strong>Local Snapshot</strong> button in the Grafana web UI
+	  and be presented with the dashboard that the snapshot captured. The value
+	  of the originalUrl parameter can be arbitrarily chosen by a malicious user that
+	  creates the snapshot. (Note: This can be done by editing the query thanks
+	  to a web proxy like Burp.)</p>
+	  <p>We have assessed this vulnerability as having a CVSS score of 6.7 MEDIUM
+	  (CVSS:6.7/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:L).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39324</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-4724-7jwc-3fpw</url>
+    </references>
+    <dates>
+      <discovery>2023-01-25</discovery>
+      <entry>2023-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1dd84344-a7da-11ed-86e9-d4c9ef517024">
     <topic>LibreSSL -- Arbitrary memory read</topic>
     <affects>
