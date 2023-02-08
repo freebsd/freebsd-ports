@@ -1,6 +1,5 @@
 PORTNAME=	thunar-media-tags-plugin
-PORTVERSION=	0.3.0
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	audio xfce
 MASTER_SITES=	XFCE/thunar-plugins
 DIST_SUBDIR=	xfce4
@@ -12,12 +11,13 @@ WWW=		https://goodies.xfce.org/projects/thunar-plugins/thunar-media-tags-plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libtag.so:audio/taglib
+LIB_DEPENDS=	libtag.so:audio/taglib \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
-USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
-USE_XFCE=	libexo thunar
+USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 intltool
+USE_XFCE=	libutil thunar
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
