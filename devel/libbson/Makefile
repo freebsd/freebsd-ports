@@ -1,5 +1,6 @@
 PORTNAME=	libbson
 PORTVERSION=	1.23.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	ports@bsdserwis.com
