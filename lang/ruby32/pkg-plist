@@ -481,7 +481,6 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/logger/period.rb
 %%RUBY_LIBDIR%%/logger/severity.rb
 %%RUBY_LIBDIR%%/logger/version.rb
-%%RUBY_LIBDIR%%/mjit/instruction.rb
 %%RUBY_LIBDIR%%/mkmf.rb
 %%RUBY_LIBDIR%%/monitor.rb
 %%RUBY_LIBDIR%%/mutex_m.rb
@@ -3867,6 +3866,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/CommandManager/find_command_possibilities-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/CommandManager/instance-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/CommandManager/instance-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/CommandManager/invoke_command-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/CommandManager/load_and_instantiate-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/CommandManager/new-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/CommandManager/process_args-i.ri
@@ -4209,17 +4209,15 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/LinkFlagConverter/cdesc-LinkFlagConverter.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/LinkFlagConverter/convert-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/build-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/build_crate-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/build_env-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/cargo-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/cargo_command-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/cargo_crate_name-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/cargo_dylib_path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/cargo_rustc_args-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/cdesc-CargoBuilder.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/darwin_target%3f-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/final_extension_path-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/finalize_directory-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/get_relative_path-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/extension_nesting-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/ldflag_to_link_modifier-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/libruby_args-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/linker_args-i.ri
@@ -4230,10 +4228,10 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/msvc_target%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/mswin_link_args-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/normalize_path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/platform_specific_rustc_args-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/profile-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/rb_config_env-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/rename_cdylib_for_ruby_compatibility-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/ruby_static%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/runner-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/rustc_dynamic_linker_flags-i.ri
@@ -4241,7 +4239,6 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/so_ext-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/spec-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/split_flags-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/validate_cargo_build%21-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/win_target%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/write_deffile-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CmakeBuilder/build-c.ri
@@ -5686,6 +5683,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/deflate-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/dir-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/disable_system_update_message-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/discover_gems_on_require-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/done_installing-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/done_installing_hooks-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/ensure_default_gem_subdirectories-c.ri
@@ -6753,7 +6751,6 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/format-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/frozen%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/gem-i.ri
-%%RDOC%%%%RUBY_RIDIR%%/Kernel/gem_original_require-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/gets-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/global_variables-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Kernel/gsub-i.ri
