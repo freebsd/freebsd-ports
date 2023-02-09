@@ -11,8 +11,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		chrono-0.4.23 \
 		clap-4.1.4 \
 		clap_complete-4.1.1 \
-		clap_complete_command-0.4.0 \
-		clap_complete_fig-4.1.0 \
 		clap_derive-4.1.0 \
 		clap_lex-0.3.0 \
 		codespan-reporting-0.11.1 \

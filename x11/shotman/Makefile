@@ -1,6 +1,6 @@
 PORTNAME=	shotman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
+DISTVERSION=	0.4.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~whynothugo/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
@@ -16,6 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE.md
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cargo pkgconfig
+CARGO_ENV=	SHOTMAN_VERSION="${DISTVERSIONFULL}"
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}_completions \
 		share/bash-completion/completions/${PORTNAME} \
