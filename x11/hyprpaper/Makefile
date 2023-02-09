@@ -47,6 +47,7 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin
 
 # XXX Drop after FreeBSD 12.3 EOL around 2023-03-01 (don't forget distinfo)
+.if ${CXX} == c++ && exists(/usr/lib/libc++.so)
 .if !exists(/usr/include/c++/v1/concepts) || make(makesum) || make(fetch)
 USES+=		llvm:min=12,build
 CC=		clang${LLVM_VERSION}
@@ -66,5 +67,6 @@ bundled-libcxx:
 		-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
 	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
 .endif
+.endif # exists(/usr/lib/libc++.so)
 
 .include <bsd.port.mk>
