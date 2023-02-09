@@ -1,5 +1,5 @@
 PORTNAME=	AppStream
-DISTVERSION=	0.15.6
+DISTVERSION=	0.16.0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
@@ -24,10 +24,13 @@ USES=		gettext gnome localbase:ldflags meson pkgconfig \
 		python:3.6+,build tar:xz vala:build
 
 USE_GNOME=	glib20 introspection:build libxml2 libxslt
+USE_LDCONFIG=	yes
 
+CFLAGS+=	-D__BSD_VISIBLE=1
 MESON_ARGS=	-Dstemming=true \
 		-Dvapi=true \
 		-Dapidocs=false \
-		-Dinstall-docs=false
+		-Dinstall-docs=false \
+		-Dsystemd=false \
 
 .include <bsd.port.mk>
