@@ -999,6 +999,7 @@ lib/libpgcommon.a
 %%TZDATA%%%%DATADIR%%/timezone/America/Cayman
 %%TZDATA%%%%DATADIR%%/timezone/America/Chicago
 %%TZDATA%%%%DATADIR%%/timezone/America/Chihuahua
+%%TZDATA%%%%DATADIR%%/timezone/America/Ciudad_Juarez
 %%TZDATA%%%%DATADIR%%/timezone/America/Coral_Harbour
 %%TZDATA%%%%DATADIR%%/timezone/America/Cordoba
 %%TZDATA%%%%DATADIR%%/timezone/America/Costa_Rica

@@ -1,7 +1,7 @@
-DISTVERSION?=	11.18
+DISTVERSION?=	11.19
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	1
+PORTREVISION?=	0
 
 MAINTAINER?=	pgsql@FreeBSD.org
 
