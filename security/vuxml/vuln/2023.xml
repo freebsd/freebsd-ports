@@ -1,3 +1,55 @@
+  <vuln vid="7a8b6170-a889-11ed-bbae-6cc21735f730">
+    <topic>PostgreSQL server -- Client memory disclosure when connecting, with Kerberos, to modified server.</topic>
+    <affects>
+      <package>
+	<name>postgresql15-server</name>
+	<range><lt>15.2</lt></range>
+      </package>
+      <package>
+	<name>postgresql14-server</name>
+	<range><lt>14.7</lt></range>
+      </package>
+      <package>
+	<name>postgresql13-server</name>
+	<range><lt>13.10</lt></range>
+      </package>
+      <package>
+	<name>postgresql12-server</name>
+	<range><lt>12.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL Project reports:</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2022-41862/">
+	  <p>
+	    A modified, unauthenticated server can send an
+	    unterminated string during the establishment of Kerberos
+	    transport encryption. When a libpq client application
+	    has a Kerberos credential cache and doesn't explicitly
+	    disable option gssencmode, a server can cause libpq to
+	    over-read and report an error message containing
+	    uninitialized bytes from and following its receive
+	    buffer. If libpq's caller somehow makes that message
+	    accessible to the attacker, this achieves a disclosure
+	    of the over-read bytes. We have not confirmed or ruled
+	    out viability of attacks that arrange for a crash or for
+	    presence of notable, confidential information in
+	    disclosed bytes.
+	  </p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41862</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2022-41862/</url>
+    </references>
+    <dates>
+      <discovery>2023-02-09</discovery>
+      <entry>2023-02-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ecffb881-a7a7-11ed-8d6a-6c3be5272acd">
     <topic>Grafana -- Stored XSS in ResourcePicker component</topic>
     <affects>
