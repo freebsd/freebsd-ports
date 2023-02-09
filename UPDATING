@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230209:
+  AFFECTS: users of audio/jack
+  AUTHOR: fernape@FreeBSD.org
+
+  audio/jack 1.9.22 fixes an issue with latency correction on FreeBSD.
+  Latency correction parameters have to be measured again after update.
+
 20230130:
   AFFECTS: users of USES=nodejs, www/node*, www/npm* and www/yarn*
   AUTHOR: sunpoet@FreeBSD.org
