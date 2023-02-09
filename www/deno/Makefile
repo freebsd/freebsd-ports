@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.29.2
+DISTVERSION=	1.30.3
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -22,7 +22,7 @@ GH_ACCOUNT=	denoland
 
 USE_GNOME=	glib20
 
-V8_VERS=	0.60.0
+V8_VERS=	0.60.1
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -46,7 +46,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		android_system_properties-0.1.5 \
 		anyhow-1.0.66 \
 		arrayvec-0.7.2 \
-		ash-0.37.0+1.3.209 \
+		ash-0.37.2+1.3.238 \
 		ast_node-0.8.6 \
 		async-compression-0.3.14 \
 		async-stream-0.3.3 \
@@ -58,14 +58,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		base16ct-0.1.1 \
 		base32-0.4.0 \
 		base64-0.13.1 \
-		base64-simd-0.7.0 \
+		base64-simd-0.8.0 \
 		base64ct-1.5.2 \
 		bencher-0.1.5 \
 		better_scoped_tls-0.1.0 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		bitflags_serde_shim-0.2.2 \
 		block-0.1.6 \
 		block-buffer-0.9.0 \
 		block-buffer-0.10.3 \
@@ -80,7 +79,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cbc-0.1.2 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		cfg_aliases-0.1.1 \
 		chrono-0.4.22 \
 		cipher-0.4.3 \
 		clap-3.1.12 \
@@ -92,7 +90,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		console_static_text-0.3.4 \
 		const-oid-0.9.0 \
 		convert_case-0.4.0 \
-		copyless-0.1.5 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
 		core-graphics-types-0.1.1 \
@@ -111,7 +108,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		cty-0.2.2 \
 		curve25519-dalek-2.1.3 \
 		curve25519-dalek-3.2.0 \
-		d3d12-0.5.0 \
+		d3d12-0.6.0 \
 		darling-0.13.4 \
 		darling_core-0.13.4 \
 		darling_macro-0.13.4 \
@@ -119,9 +116,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		data-encoding-2.3.2 \
 		data-url-0.2.0 \
 		deno_ast-0.23.2 \
-		deno_doc-0.52.0 \
-		deno_emit-0.13.0 \
-		deno_graph-0.41.0 \
+		deno_doc-0.53.0 \
+		deno_emit-0.14.0 \
+		deno_graph-0.42.0 \
 		deno_lint-0.37.0 \
 		deno_task_shell-0.8.2 \
 		der-0.6.0 \
@@ -136,8 +133,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dotenv-0.15.0 \
 		dprint-core-0.60.0 \
 		dprint-plugin-json-0.17.0 \
-		dprint-plugin-markdown-0.15.1 \
-		dprint-plugin-typescript-0.80.2 \
+		dprint-plugin-markdown-0.15.2 \
+		dprint-plugin-typescript-0.81.1 \
 		dprint-swc-ext-0.6.0 \
 		dyn-clone-1.0.9 \
 		dynasm-1.2.3 \
@@ -154,7 +151,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		errno-dragonfly-0.1.2 \
 		error-code-2.3.1 \
 		escape8259-0.5.2 \
-		eszip-0.32.0 \
+		eszip-0.33.0 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.10.0 \
@@ -192,7 +189,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ghash-0.5.0 \
 		glibc_version-0.1.2 \
 		glob-0.3.0 \
-		glow-0.11.2 \
+		glow-0.12.0 \
 		gpu-alloc-0.5.3 \
 		gpu-alloc-types-0.2.0 \
 		gpu-descriptor-0.2.3 \
@@ -220,11 +217,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		idna-0.3.0 \
 		if_chain-1.0.2 \
 		import_map-0.13.0 \
+		import_map-0.15.0 \
 		indexmap-1.9.2 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		inout-0.1.3 \
-		inplace_it-0.3.5 \
 		instant-0.1.12 \
 		io-lifetimes-0.7.3 \
 		ipconfig-0.3.0 \
@@ -248,8 +245,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lexical-write-float-0.8.5 \
 		lexical-write-integer-0.8.5 \
 		libc-0.2.126 \
-		libffi-3.0.1 \
-		libffi-sys-2.0.0 \
+		libffi-3.1.0 \
+		libffi-sys-2.1.0 \
 		libloading-0.7.3 \
 		libm-0.2.5 \
 		libsqlite3-sys-0.25.1 \
@@ -272,7 +269,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		mio-0.8.4 \
 		mitata-0.0.7 \
 		monch-0.4.0 \
-		naga-0.9.0 \
+		naga-0.11.0 \
 		napi-build-1.2.1 \
 		napi-sys-2.2.2 \
 		netif-0.1.6 \
@@ -296,7 +293,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		os_pipe-1.0.1 \
 		os_str_bytes-6.3.0 \
 		output_vt100-0.1.3 \
-		outref-0.1.0 \
+		outref-0.5.1 \
 		p256-0.11.1 \
 		p384-0.11.2 \
 		parking_lot-0.11.2 \
@@ -317,7 +314,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pin-project-internal-1.0.12 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
-		pkcs1-0.4.0 \
+		pkcs1-0.4.1 \
 		pkcs8-0.9.0 \
 		pkg-config-0.3.25 \
 		pmutil-0.5.3 \
@@ -345,7 +342,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand_core-0.5.1 \
 		rand_core-0.6.4 \
 		range-alloc-0.1.2 \
-		raw-window-handle-0.4.3 \
+		raw-window-handle-0.5.0 \
 		rayon-1.6.0 \
 		rayon-core-1.10.1 \
 		redox_syscall-0.2.16 \
@@ -353,14 +350,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-syntax-0.6.27 \
 		relative-path-1.7.2 \
 		remove_dir_all-0.5.3 \
-		renderdoc-sys-0.7.1 \
 		reqwest-0.11.11 \
 		resolv-conf-0.7.0 \
 		retain_mut-0.1.9 \
 		rfc6979-0.3.0 \
 		ring-0.16.20 \
-		ron-0.7.1 \
-		rsa-0.7.0-pre \
+		ron-0.8.0 \
+		rsa-0.7.0 \
 		rusqlite-0.28.0 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.2.3 \
@@ -392,11 +388,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_urlencoded-0.7.1 \
 		sha-1-0.9.8 \
 		sha-1-0.10.0 \
+		sha1-0.10.5 \
 		sha2-0.10.6 \
 		shell-escape-0.1.5 \
 		signal-hook-registry-1.4.0 \
-		signature-1.6.3 \
-		simd-abstraction-0.7.0 \
+		signature-1.6.4 \
 		siphasher-0.3.10 \
 		slab-0.4.7 \
 		slotmap-1.0.6 \
@@ -456,7 +452,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		time-0.3.14 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.21.1 \
+		tokio-1.24.2 \
 		tokio-macros-1.8.0 \
 		tokio-rustls-0.23.4 \
 		tokio-socks-0.5.1 \
@@ -504,9 +500,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.0 \
 		uuid-1.1.2 \
-		v8-0.60.0 \
+		v8-0.60.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
+		vsimd-0.8.0 \
 		vte-0.11.0 \
 		vte_generate_state_changes-0.1.1 \
 		walkdir-2.3.2 \
@@ -522,9 +519,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		web-sys-0.3.60 \
 		webpki-0.22.0 \
 		webpki-roots-0.22.4 \
-		wgpu-core-0.13.2 \
-		wgpu-hal-0.13.2 \
-		wgpu-types-0.13.2 \
+		wgpu-core-0.15.0 \
+		wgpu-hal-0.15.1 \
+		wgpu-types-0.15.0 \
 		which-4.3.0 \
 		widestring-0.5.1 \
 		winapi-0.3.9 \
@@ -532,11 +529,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.36.1 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
 		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_msvc-0.42.0 \
 		windows_i686_gnu-0.36.1 \
+		windows_i686_gnu-0.42.0 \
 		windows_i686_msvc-0.36.1 \
+		windows_i686_msvc-0.42.0 \
 		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
 		windows_x86_64_msvc-0.36.1 \
+		windows_x86_64_msvc-0.42.0 \
 		winreg-0.7.0 \
 		winreg-0.10.1 \
 		winres-0.1.12 \
