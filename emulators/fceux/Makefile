@@ -1,8 +1,7 @@
 PORTNAME=	fceux
-DISTVERSION=	2.6.4
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.6.5
 CATEGORIES=	emulators games
-MASTER_SITES=	SF/fceultra/Source%20Code/${DISTVERSION}%20src/
 
 MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	NES emulator
@@ -18,6 +17,9 @@ USE_GL=		gl glu
 USE_QT=		buildtools:build core gui opengl qmake:build widgets
 USE_SDL=	sdl2
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	TASEmulators
+
 CFLAGS+=	-DPUBLIC_RELEASE
 CMAKE_ON=	GLVND
 
@@ -29,7 +31,7 @@ FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 X264_LIB_DEPENDS=	libx264.so:multimedia/libx264
 X265_LIB_DEPENDS=	libx265.so:multimedia/x265
 
-post-patch:
+pre-configure:
 	${REINPLACE_CMD} -e 's,/usr,${PREFIX},' ${WRKSRC}/fceux.desktop
 	${REINPLACE_CMD} -e 's:%%PKGNAME%%:${PKGNAME}:' ${WRKSRC}/scripts/genGitHdr.sh
 	${REINPLACE_CMD} -e 's,/usr,${PREFIX},' ${WRKSRC}/src/drivers/Qt/HelpPages.cpp
@@ -41,6 +43,6 @@ post-install:
 	${RM} ${STAGEDIR}${DATADIR}/*.dll
 	${RM} ${STAGEDIR}${DATADIR}/*.chm
 	# currently broken and not shipped
-	${RM} ${STAGEDIR}${PREFIX}/man/man6/fceux-net-server.6
+	${RM} ${STAGEDIR}${PREFIX}/share/man/man6/fceux-net-server.6
 
 .include <bsd.port.mk>
