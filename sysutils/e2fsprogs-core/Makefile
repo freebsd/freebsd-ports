@@ -36,7 +36,6 @@ CONFIGURE_ARGS?=--disable-fsck \
 		--libdir='${PREFIX}/lib/e2fsprogs/' \
 		--includedir='${PREFIX}/include/e2fsprogs/' \
 		--with-root-prefix='${PREFIX}' \
-		DD=${LOCALBASE}/bin/gdd \
 		LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib -Wl,--rpath -Wl,${LOCALBASE}/lib/e2fsprogs'
 CONFIGURE_ENV?=	LIBS='-Wl,--as-needed ${LIBS} -lexecinfo -lelf'
 # apparently HAVE_PTHREAD_H checks go missing if the FUSEFS option is unset, force it:
@@ -74,7 +73,6 @@ FUSEFS_USES=		fuse
 
 NLS_USES=		gettext iconv:build
 
-BUILD_DEPENDS+=	gdd:sysutils/coreutils
 BASHTESTS_BUILD_DEPENDS=	${BASH_CMD}:shells/bash
 BASH_CMD=	${LOCALBASE}/bin/bash
 
@@ -136,13 +134,8 @@ libintl=
 EXTRA_PATCHES+=	${FILESDIR}/extrapatch-no-sbrk
 .endif
 
-# d_fallocate_blkmap appears to fail on some systems for unknown reasons.
-# m_offset sometimes failes, a make clean and re-build usually fixes this. Reason unknown.
 post-patch::
 .if !empty(DISTFILES)
-	@${REINPLACE_CMD} -E -e 's/md5sum ([^ ]*)/printf "%s  %s\\n" $$(md5 -q \1) \1/' \
-	    -e "s/ == 0/ = 0/" -e "s/tar x$$/tar xf -/" -e "s/\<dd\>/gdd/" \
-	    ${WRKSRC}/tests/[a-z]_*/script
 	@${REINPLACE_CMD} -e 's/<malloc\.h>/<stdlib.h>/' ${WRKSRC}/*/*.c
 	@${REINPLACE_CMD} -e 's,/etc/blkid.tab,${ETCDIR}/blkid.tab,' ${WRKSRC}/misc/blkid* ${WRKSRC}/lib/blkid/blkidP.h
 	@${REINPLACE_CMD} -E -e 's/__GNUC_PREREQ\>/__GNUC_PREREQ__/' ${WRKSRC}/*/*/*.[ch] ${WRKSRC}/*/*.c
