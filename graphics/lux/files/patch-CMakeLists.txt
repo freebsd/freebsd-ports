@@ -1,48 +1,35 @@
---- CMakeLists.txt.orig	2022-08-26 12:57:31 UTC
+--- CMakeLists.txt.orig	2023-02-09 16:33:06 UTC
 +++ CMakeLists.txt
-@@ -96,8 +96,8 @@ message(STATUS "***** SYSTEM PROCESSOR ${CMAKE_SYSTEM_
- set(i86 FALSE)
+@@ -139,8 +139,8 @@ message(STATUS "***** => LUX DATA DIRECTORY ${DataDir}
+ message(STATUS "***** SYSTEM PROCESSOR ${CMAKE_SYSTEM_PROCESSOR}")
  
- if(UNIX OR APPLE)
--  if (    ${CMAKE_SYSTEM_PROCESSOR} STREQUAL x86_64
--       OR ${CMAKE_SYSTEM_PROCESSOR} STREQUAL i686)
-+  if (    ${CMAKE_SYSTEM_PROCESSOR} STREQUAL amd64
-+       OR ${CMAKE_SYSTEM_PROCESSOR} STREQUAL i386)
- 	  set(i86 TRUE)
-   endif()
- elseif(WIN32)
-@@ -268,7 +268,7 @@ set(AVX2_FLAGS "${RENDERING_FLAGS} \
+ if (     ${CMAKE_SYSTEM_PROCESSOR} STREQUAL x86_64
+-      OR ${CMAKE_SYSTEM_PROCESSOR} STREQUAL AMD64
+-      OR ${CMAKE_SYSTEM_PROCESSOR} STREQUAL i686 )
++      OR ${CMAKE_SYSTEM_PROCESSOR} STREQUAL amd64
++      OR ${CMAKE_SYSTEM_PROCESSOR} STREQUAL i386 )
+   set(i86 TRUE)
+   message(STATUS "***** setting i86 TRUE for an intel/AMD target")
+ else()
+@@ -351,7 +351,7 @@ set(AVX2_FLAGS "${RENDERING_FLAGS} \
  # about it and I don't have an AVX512 machine.
  
  set(AVX512f_FLAGS "${RENDERING_FLAGS} \
--  -mavx512f -march=skx \
-+  -mavx512f -march=skylake-avx512 \
+-  -mavx512f -march=skx -mpclmul -maes \
++  -mavx512f -march=skylake-avx512 -mpclmul -maes \
    -D hn=hn_avx512 -D PV_ARCH=PV_AVX512f \
    -D PV_ARCHNAME=\\\"avx512f\\\" \
    -D PV_PRIORITY=0 -D PV_VIABILITY=has_avx512f -D FLV_AVX512f")
-@@ -553,9 +553,6 @@ install(TARGETS ${_project_name} DESTINATION bin)
- # Copy the NotoSans-Regular font and the readme (as required by the license)
- # to the platform-specific font directory
+@@ -651,12 +651,6 @@ endif()
  
+ install(TARGETS ${_project_name} DESTINATION bin)
+ 
+-# Copy the NotoSans-Regular font and the readme (as required by the license)
+-# to the platform-specific font directory
+-
 -install(FILES NotoSans-Regular.ttf noto_font_license.txt DESTINATION
 - "${DataDir}/fonts")
 -
- # KFJ 2022-08-24 simplified package versioning, only using a.b.c
- 
- set(LUX_PACKAGE_RELEASE "${pv_major}.${pv_minor}.${pv_patch}")
-@@ -618,15 +615,6 @@ install(FILES scripts/512X512/lux.png 
- 
- install(FILES scripts/1024X1024/lux.png
-         DESTINATION share/icons/hicolor/1024x1024/apps)
--
--install(FILES scripts/256X256/lux.png
--        DESTINATION share/icons/gnome/256x256/apps)
--
--install(FILES scripts/512X512/lux.png 
--        DESTINATION share/icons/gnome/512x512/apps)
--
--install(FILES scripts/1024X1024/lux.png
--        DESTINATION share/icons/gnome/1024x1024/apps)
- 
- install(FILES scripts/lux.desktop 
-         DESTINATION share/applications)
+ # The next section could do with sone tidying up. It deals with packaging
+ # lux for distribution. This is used for some distribution channles, e.g.
+ # to make .deb packages for ubuntu and debian, but packaging for windows
