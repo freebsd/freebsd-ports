@@ -1,10 +1,13 @@
-PORTNAME=	AppStream
+# Some knobs are defined with ?= and += to allow them
+# being overriden by devel/appstream-qt slave port
+
+PORTNAME?=	AppStream
 DISTVERSION=	0.16.0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
 MAINTAINER=	desktop@FreeBSD.org
-COMMENT=	Machine-readable software metadata for desktop environments
+COMMENT?=	Machine-readable software metadata for desktop environments
 WWW=		https://www.freedesktop.org/wiki/Distributions/AppStream/
 
 LICENSE=	GPLv2+ LGPL21+
@@ -14,20 +17,20 @@ BUILD_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl \
 		gperf>0:devel/gperf \
 		itstool:textproc/itstool \
 		lmdb>0:databases/lmdb
-LIB_DEPENDS=	libcurl.so:ftp/curl \
+LIB_DEPENDS?=	libcurl.so:ftp/curl \
 		liblmdb.so:databases/lmdb \
 		libstemmer.so:textproc/snowballstemmer \
 		libxmlb.so:textproc/libxmlb \
 		libyaml.so:textproc/libyaml
 
-USES=		gettext gnome localbase:ldflags meson pkgconfig \
+USES+=		gettext gnome localbase:ldflags meson pkgconfig \
 		python:3.6+,build tar:xz vala:build
 
 USE_GNOME=	glib20 introspection:build libxml2 libxslt
 USE_LDCONFIG=	yes
 
 CFLAGS+=	-D__BSD_VISIBLE=1
-MESON_ARGS=	-Dstemming=true \
+MESON_ARGS+=	-Dstemming=true \
 		-Dvapi=true \
 		-Dapidocs=false \
 		-Dinstall-docs=false \

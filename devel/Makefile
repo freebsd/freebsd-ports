@@ -171,6 +171,7 @@
     SUBDIR += app-builder
     SUBDIR += appstream
     SUBDIR += appstream-glib
+    SUBDIR += appstream-qt
     SUBDIR += apr1
     SUBDIR += arachne-pnr
     SUBDIR += arcanist
