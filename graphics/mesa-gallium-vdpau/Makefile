@@ -38,7 +38,7 @@ MESON_ARGS+=	-Ddri-drivers="" \
 		-Dgles2=disabled \
 		-Dosmesa=false \
 		-Dglx=disabled \
-		-Ddri3=disabled
+		-Ddri3=enabled
 
 LDFLAGS_i386=	-Wl,-znotext
 
