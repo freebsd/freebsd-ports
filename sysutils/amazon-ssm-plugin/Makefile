@@ -1,5 +1,6 @@
 PORTNAME=	amazon-ssm-plugin
 DISTVERSION=	1.2.398.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	nork@FreeBSD.org
