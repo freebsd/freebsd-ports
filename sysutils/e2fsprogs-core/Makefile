@@ -45,8 +45,6 @@ CFLAGS+=	-Wno-unused-command-line-argument
 MAKE_ARGS+=	pkgconfigdir='${PREFIX}/libdata/pkgconfig'
 MAKE_ENV+=	CHECK_CMD=@true
 
-CONFLICTS_INSTALL=	e2fsprogs-nobootfsck e2fsprogs-roothardlinks
-
 PORTSCOUT=	ignore:1	# cannot handle the version in the directory
 
 .if !defined(MASTERDIR)
