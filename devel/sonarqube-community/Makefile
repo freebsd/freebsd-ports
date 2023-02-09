@@ -1,6 +1,6 @@
 PORTNAME=	sonarqube
-DISTVERSION=	9.8.0.63668
-PORTREVISION=	4
+DISTVERSION=	9.9.0.65466
+PORTREVISION=	0
 CATEGORIES=	devel security www java
 MASTER_SITES=	https://binaries.sonarsource.com/Distribution/sonarqube/:m_core \
 		https://binaries.sonarsource.com/Distribution/sonar-csharp-plugin/:m_csharp \
@@ -39,7 +39,7 @@ SHEBANG_FILES=	elasticsearch/bin/elasticsearch \
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-JAVA_VERSION=	11+
+JAVA_VERSION=	17+
 JAVA_VENDOR=	openjdk
 USE_RC_SUBR=	${PORTNAME}
 
@@ -56,7 +56,7 @@ SONARCSHARP_VER=	8.52.0.60960
 SONARJAVA_VER=		7.16.0.30901
 SONARJAVASCRIPT_VER=	9.13.0.20537
 SONARPHP_VER=		3.27.1.9352
-SONARPYTHON_VER=	3.24.0.10784
+SONARPYTHON_VER=	3.25.0.10992
 SONARVBNET_VER=		${SONARCSHARP_VER}
 
 USERS=		sonarqube
