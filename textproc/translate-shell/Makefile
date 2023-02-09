@@ -1,7 +1,7 @@
 PORTNAME=	translate-shell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.6.12
-PORTREVISION=	2
+DISTVERSION=	0.9.7.1
+PORTREVISION=	0
 CATEGORIES=	textproc
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -29,9 +29,11 @@ NO_ARCH=	yes
 PLIST_FILES=	bin/trans \
 		man/man1/trans.1.gz
 
-OPTIONS_DEFINE=	FRIBIDI READLINE TEXT2SPEECH
+OPTIONS_DEFINE=	ASPELL FRIBIDI READLINE TEXT2SPEECH
 
 TEXT2SPEECH_DESC=	Enable Text-to-Speech functionality via espeak
+
+ASPELL_RUN_DEPENDS=	aspell:textproc/aspell
 
 FRIBIDI_RUN_DEPENDS=	fribidi:converters/fribidi
 
