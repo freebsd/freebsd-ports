@@ -1,0 +1,4 @@
+build2 is an open source (MIT), cross-platform build toolchain that aims to
+approximate Rust Cargo's convenience for developing and packaging C/C++
+projects while providing more depth and flexibility, especially in the build
+system.
