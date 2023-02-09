@@ -3,5 +3,5 @@
 # see newsyslog.conf(5) for details
 #
 # logfilename          [owner:group]    mode    count   size    when    flags   [/pid_file]     	[sig_num]
-/var/log/nut/upsd.log   uucp:uucp       644     7       100     *       J       /var/db/nut/upslog.pid
+/var/log/nut/upsd.log   nut:nut       644     7       100     *       J       /var/db/nut/upslog.pid
 
