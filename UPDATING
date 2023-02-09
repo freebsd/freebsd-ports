@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230210:
+  AFFECTS: users of mail/fetchmail
+  AUTHOR: fernape@FreeBSD.org
+
+  Fetchmail now warns about OpenSSL before 1.1.1s or 3.0.7, and rejects wolfSSL
+  older than 5.5.1.
+
 20230209:
   AFFECTS: users of audio/jack
   AUTHOR: fernape@FreeBSD.org
