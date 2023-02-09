@@ -1,5 +1,5 @@
 PORTNAME=	jack-example-tools
-DISTVERSION=	3
+DISTVERSION=	4
 CATEGORIES=	audio
 
 MAINTAINER=	dev@submerge.ch
@@ -40,11 +40,4 @@ READLINE_USES=		readline
 READLINE_MESON_ENABLED=	readline_support
 READLINE_LDFLAGS=	-lreadline
 
-.include <bsd.port.pre.mk>
-
-# The alloca.h header is not available on FreeBSD. Upstream knows:
-# https://github.com/jackaudio/jack-example-tools/pull/56
-post-extract:
-	@${TOUCH} ${WRKSRC}/tools/alloca.h
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
