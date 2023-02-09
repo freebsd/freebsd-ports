@@ -29,6 +29,10 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300000
+BROKEN=		pre-FreeBSD-13 assembler is not compatible with generated files
+.endif
+
 do-build:
 		${CP} ${FILESDIR}/config.mk ${WRKSRC}
 		cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS}
