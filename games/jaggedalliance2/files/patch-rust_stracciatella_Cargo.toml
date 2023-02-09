@@ -1,6 +1,6 @@
---- rust/stracciatella/Cargo.toml.orig	2022-04-14 10:20:57 UTC
+--- rust/stracciatella/Cargo.toml.orig	2022-11-11 20:19:16 UTC
 +++ rust/stracciatella/Cargo.toml
-@@ -36,24 +36,6 @@ slug = "0.1.4"
+@@ -37,26 +37,6 @@ slug = "0.1.4"
  [target.'cfg(not(target_os = "android"))'.dependencies.simplelog]
  version = "0.10"
  
@@ -16,11 +16,13 @@
 -[target.'cfg(target_os = "android")'.dependencies.lazy_static]
 -version = "1.4"
 -[target.'cfg(target_os = "android")'.dependencies.jni]
--version = "0.14"
+-version = "0.18"
+-[target.'cfg(target_os = "android")'.dependencies.jni-sys]
+-version = "0.3"
 -[target.'cfg(target_os = "android")'.dependencies.ndk]
--git = "https://github.com/selaux/android-ndk-rs"
+-version = "0.6"
 -[target.'cfg(target_os = "android")'.dependencies.ndk-sys]
--git = "https://github.com/selaux/android-ndk-rs"
+-version = "0.3"
 -
  [build-dependencies]
  serde = "1.0"
