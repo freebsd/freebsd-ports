@@ -157,7 +157,7 @@ include/vcf-c-api.h
 include/vec128int.h
 include/veclib_types.h
 lib/libvcflib.a
-lib/libzig.a
+%%ZIG%%lib/libzig.a
 lib/pyvcflib%%PYTHON_EXT_SUFFIX%%.so
 man/man1/abba-baba.1.gz
 man/man1/bFst.1.gz
