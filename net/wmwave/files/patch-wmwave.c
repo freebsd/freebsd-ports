@@ -1,5 +1,5 @@
---- wmwave.c.orig	2008-02-27 09:24:06.628732284 +1030
-+++ wmwave.c	2008-02-27 09:32:07.088117765 +1030
+--- wmwave.c.orig	1999-08-20 13:44:21 UTC
++++ wmwave.c
 @@ -29,6 +29,18 @@
   *
   * Revision 1.1  1999/08/15 15:39:18  carsten
@@ -19,7 +19,15 @@
   *
   */
  
-@@ -57,6 +69,23 @@
+@@ -45,6 +57,7 @@
+ #include <limits.h>
+ #include <errno.h>
+ #include <signal.h>
++#include <err.h>
+ 
+ #include <sys/wait.h>
+ #include <sys/stat.h>
+@@ -57,6 +70,23 @@
  #include <X11/xpm.h>
  #include <X11/extensions/shape.h>
  
@@ -43,7 +51,7 @@
  
  #include "wmgeneral.h"
  
-@@ -66,7 +94,9 @@
+@@ -66,7 +96,9 @@ char wmwave_mask_bits[64*64];
  int wmwave_mask_width = 64;
  int wmwave_mask_height = 64;
  
@@ -54,7 +62,7 @@
  
  int update_rate=100000;
  
-@@ -125,65 +155,100 @@
+@@ -125,65 +157,100 @@ float min (float x, float y) {
  }
  
  /*
@@ -212,7 +220,7 @@
  }
  
  /* SIGCHLD handler */
-@@ -208,6 +273,11 @@
+@@ -208,6 +275,11 @@ int main(int argc, char *argv[]) {
      
      if (*arg=='-') {
        switch (arg[1]) {
@@ -224,7 +232,7 @@
        case 'd' :
  	if (strcmp(arg+1, "display")) {
  	  usage();
-@@ -345,6 +415,7 @@
+@@ -345,6 +417,7 @@ void usage(void) {
    fprintf(stderr, "\nWmwave - Carsten Schuermann <carsten@schuermann.org>  http://www.schuermann.org/~dockapps\n\n");
    fprintf(stderr, "usage:\n");
    fprintf(stderr, "    -display <display name>\n");
