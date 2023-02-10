@@ -1,7 +1,7 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
 DISTVERSION=	5.24.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -58,6 +58,17 @@ DOCS_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5DocTools
 QA11Y_DESC=		Accessibility (focus tracking) for Zoom effect
 QA11Y_LIB_DEPENDS=	libqaccessibilityclient-qt5.so:accessibility/libqaccessibilityclient
 QA11Y_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_QAccessibilityClient
+
+post-patch:
+# Convert nodes from linprocfs(5) to procfs(5)
+# XXX kwinft lacks https://invent.kde.org/plasma/kwin/-/commit/1bc7afe8aaa9
+	@${REINPLACE_CMD} -e '/proc/,+1s,/exe,/file,' \
+		${WRKSRC}/main_wayland.cpp \
+		${WRKSRC}/service_utils.h \
+		${WRKSRC}/wayland_server.cpp
+# Generic nodes are not supported by procfs(5)
+	@${REINPLACE_CMD} -e '/mounts/s,/proc,/compat/linux&,' \
+		${WRKSRC}/perf/ftrace_impl.cpp
 
 .include "${.CURDIR:H:H}/x11-toolkits/wlroots015/override.mk"
 .include <bsd.port.mk>
