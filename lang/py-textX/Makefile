@@ -1,5 +1,5 @@
 PORTNAME=	textX
-PORTVERSION=	2.3.0
+PORTVERSION=	3.1.0
 CATEGORIES=	lang python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,12 @@ WWW=		https://textx.github.io/textX/stable/
 LICENSE=	MIT
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arpeggio>=1.9.0:devel/py-arpeggio@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arpeggio>=2.0.0:devel/py-arpeggio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=7.0:devel/py-click@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}memory-profiler>0:devel/py-memory-profiler@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	distutils autoplist concurrent pytest # 1 test fails, see https://github.com/textX/textX/issues/392
 
 NO_ARCH=	yes
 
