@@ -28,6 +28,7 @@ CONFIGURE_ARGS=	--disable-mandoc --without-gnome --disable-gtk \
 USES=		cpe gmake gnome perl5 pkgconfig python:3.4+ gettext readline xorg
 USE_XORG=	xcursor xft xinerama xpm xrender x11 ice xext
 USE_GNOME=	cairo
+CFLAGS=		-Wno-int-conversion
 
 OPTIONS_DEFINE=	ICONS ICONV STROKE SESSION_MGMT PNG SVG BIDI NLS
 OPTIONS_DEFAULT=ICONS ICONV SESSION_MGMT PNG
