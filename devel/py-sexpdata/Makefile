@@ -1,17 +1,21 @@
 PORTNAME=	sexpdata
-PORTVERSION=	0.0.3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.0.4
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	S-expression parser for Python
-WWW=		https://github.com/jd-boyd/sexpdata
+WWW=		https://pypi.org/project/sexpdata/ \
+		https://github.com/jd-boyd/sexpdata
 
 LICENSE=	BSD2CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+USE_GITHUB=	yes
+GH_ACCOUNT=	jd-boyd
+USE_PYTHON=	autoplist distutils pytest
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
