@@ -1,0 +1,4 @@
+This is a project to create a complete IDE using the EFL (Enlightenment
+Foundation Libraries).  It aims to lower the barrier to getting involved
+in Enlightenment development and in creating applications based on the
+EFL suite, but can also be used as an advanced, standalone text editor.
