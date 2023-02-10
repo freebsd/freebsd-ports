@@ -1,10 +1,8 @@
---- crypto/CMakeLists.txt.orig	2022-07-25 14:53:51.000000000 -0400
-+++ crypto/CMakeLists.txt	2022-07-26 12:18:36.169803000 -0400
-@@ -464,6 +466,7 @@
- endif()
+--- crypto/CMakeLists.txt.orig	2023-02-10 18:50:34 UTC
++++ crypto/CMakeLists.txt
+@@ -438,3 +438,5 @@ add_dependencies(crypto_test global_target)
  
- SET_TARGET_PROPERTIES(crypto PROPERTIES LINKER_LANGUAGE C)
+ target_link_libraries(crypto_test test_support_lib boringssl_gtest crypto)
+ add_dependencies(all_tests crypto_test)
++
 +SET_TARGET_PROPERTIES(crypto PROPERTIES SOVERSION 1)
- 
- if(NOT WIN32 AND NOT ANDROID)
-   target_link_libraries(crypto pthread)
