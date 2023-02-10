@@ -1,8 +1,8 @@
---- debootstrap.orig	2020-03-13 02:03:08 UTC
+--- debootstrap.orig	2022-10-14 11:16:30 UTC
 +++ debootstrap
 @@ -1,4 +1,4 @@
 -#!/bin/sh
-+#!%%LOCALBASE%%/bin/bash
++#!/usr/local/bin/bash
  set -e
  
  VERSION='@VERSION@'
@@ -11,11 +11,22 @@
  		DEBOOTSTRAP_DIR=/debootstrap
  	else
 -		DEBOOTSTRAP_DIR=/usr/share/debootstrap
-+		DEBOOTSTRAP_DIR=%%DATADIR%%
++		DEBOOTSTRAP_DIR=/usr/local/share/debootstrap
  	fi
  fi
  
-@@ -516,13 +516,7 @@ fi
+@@ -379,8 +379,8 @@ if [ $# != 0 ] ; then
+ 		shift
+ 		;;
+ 	    --keyring|--keyring=?*)
+-		if ! gpgv --version >/dev/null 2>&1; then
+-			error 1 NEEDGPGV "gpgv not installed, but required for Release verification"
++		if ! gpgv2 --version >/dev/null 2>&1; then
++			error 1 NEEDGPGV "gpgv2 not installed, but required for Release verification"
+ 		fi
+ 		if [ "$1" = "--keyring" ] && [ -n "$2" ]; then
+ 			KEYRING="$2"
+@@ -536,13 +536,7 @@ fi
  
  ###########################################################################
  
@@ -30,7 +41,7 @@
  	HOST_ARCH=$(cat "$DEBOOTSTRAP_DIR/arch")
  fi
  HOST_OS="$HOST_ARCH"
-@@ -542,6 +536,14 @@ if [ -z "$HOST_OS" ]; then
+@@ -562,6 +556,14 @@ if [ -z "$HOST_OS" ]; then
  			HOST_OS=freebsd
  		;;
  	esac
