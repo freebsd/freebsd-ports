@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://plhk.ru/static/echinus/
 
-MAINTAINER=	hrkfdn@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic window manager for X11 based on dwm
 WWW=		https://plhk.ru/
 
