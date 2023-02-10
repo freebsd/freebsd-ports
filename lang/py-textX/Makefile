@@ -1,5 +1,5 @@
 PORTNAME=	textX
-PORTVERSION=	3.1.0
+PORTVERSION=	3.1.1
 CATEGORIES=	lang python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,8 +16,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arpeggio>=2.0.0:devel/py-arpeggio@${PY_FLAVO
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}memory-profiler>0:devel/py-memory-profiler@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist concurrent pytest # 1 test fails, see https://github.com/textX/textX/issues/392
+USE_PYTHON=	distutils autoplist concurrent pytest # 25 tests fails, see https://github.com/textX/textX/issues/394
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>
