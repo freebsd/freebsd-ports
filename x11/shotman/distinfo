@@ -245,3 +245,5 @@ SHA256 (rust/crates/xkbcommon-0.5.0.crate) = acbee136714379ab22da0280207fdb7f47e
 SIZE (rust/crates/xkbcommon-0.5.0.crate) = 58155
 SHA256 (Smithay-client-toolkit-327f9cd791d8810fe7324ee1ddd48adaf3592ca4_GH0.tar.gz) = 3346fa9a5646c229d20148f8a49178a5707109b70a908f8f9f5f90cba9320c93
 SIZE (Smithay-client-toolkit-327f9cd791d8810fe7324ee1ddd48adaf3592ca4_GH0.tar.gz) = 116969
+SHA256 (d2f7ef2107b9.patch) = 9300712c80fb535bf66f74e6b056d2387d4aaeeff34a77c86b3430c70bc400d0
+SIZE (d2f7ef2107b9.patch) = 1660

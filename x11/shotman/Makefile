@@ -6,6 +6,9 @@ MASTER_SITES=	https://git.sr.ht/~whynothugo/${PORTNAME}/archive/${DISTVERSIONFUL
 # XXX Teach USES=cargo to not override default DISTFILES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	https://git.sr.ht/~whynothugo/${PORTNAME}/commit/
+PATCHFILES+=	d2f7ef2107b9.patch:-p1 # respect SHOTMAN_VERSION
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Uncompromising screenshot GUI for Wayland
 WWW=		https://sr.ht/~whynothugo/shotman
