@@ -915,9 +915,15 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/A/images/background.jpg
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/A/images/preview.png
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/A/styles.css
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/BlackWood/images/background.jpg
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/BlackWood/images/preview.png
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/BlackWood/styles.css
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Blurred/images/background.jpg
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Blurred/images/preview.png
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Blurred/styles.css
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/BlurredDark/images/background.jpg
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/BlurredDark/images/preview.png
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/BlurredDark/styles.css
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Clear/images/preview.png
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Clear/styles.css
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/DarkShine/images/background.jpg
@@ -937,6 +943,9 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/LoveDark/images/background.jpg
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/LoveDark/images/preview.png
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/LoveDark/styles.css
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/NightShine/images/background.jpg
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/NightShine/images/preview.png
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/NightShine/styles.css
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Snow/images/background.jpg
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Snow/images/preview.png
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Snow/styles.css
@@ -954,6 +963,9 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Stripes/images/background.jpg
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Stripes/images/preview.png
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Stripes/styles.css
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/StripesDark/images/background.jpg
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/StripesDark/images/preview.png
+%%WWWDIR%%/snappymail/v/%%VER%%/themes/StripesDark/styles.css
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Wood/images/background.jpg
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Wood/images/background.png
 %%WWWDIR%%/snappymail/v/%%VER%%/themes/Wood/images/preview.png
