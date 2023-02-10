@@ -1,6 +1,6 @@
 PORTNAME=	gzdoom
 PORTVERSION=	4.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	g
 CATEGORIES=	games
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libzmusic.so:audio/zmusic
 
-USES=		cmake compiler:c++11-lang gl gnome jpeg pkgconfig sdl
+USES=		cmake compiler:c++11-lang gnome jpeg pkgconfig sdl
 
 DATADIR=	${DMDIR}/${PORTNAME}
 
@@ -28,11 +28,11 @@ GH_ACCOUNT=	coelckers
 
 CMAKE_ARGS=	-DINSTALL_DOCS_PATH=${DOCSDIR}	\
 		-DINSTALL_PK3_PATH=${DMDIR}	\
-		-DINSTALL_SOUNDFONT_PATH=${DMDIR}
+		-DINSTALL_SOUNDFONT_PATH=${DMDIR} \
+		-DDYN_GTK:BOOL=OFF
 
-USE_GNOME=	atk cairo gdkpixbuf2 gtk20 pango
+USE_GNOME=	gtk30
 USE_SDL=	sdl2
-USE_GL=		gl glu
 CXXFLAGS+=	-DSHARE_DIR=\\\"${DATADIR}\\\"
 LDFLAGS+=	-Wl,--as-needed
 
