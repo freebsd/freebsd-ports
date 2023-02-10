@@ -44,7 +44,7 @@ KSH93N_DESC=		Install to ${PREFIX}/bin/ksh93n (new)
 
 CFLAGS+=	-DMAP_TYPE
 LDFLAGS+=	-lm
-MAKE_ENV=	CCFLAGS="-Wno-unused-value -Wno-parentheses -Wno-logical-op-parentheses" CFLAGS="${CFLAGS}"
+MAKE_ENV=	CCFLAGS="-Wno-unused-value -Wno-parentheses -Wno-logical-op-parentheses -Wno-int-conversion" CFLAGS="${CFLAGS}"
 
 STATIC_MAKE_ENV=	LDFLAGS+=-static
 
