@@ -1,7 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
-PORTREVISION=	1
+DISTVERSION=	0.11.1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -11,7 +10,7 @@ WWW=		https://github.com/matrix-org/dendrite
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe go:1.19,modules
+USES=		cpe go:modules
 CPE_VENDOR=	matrix
 PLIST_SUB=	PORTNAME=${PORTNAME}
 USE_RC_SUBR=	${PORTNAME}
@@ -37,25 +36,25 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		MFAshby:stdemuxerhook:v1.0.0:mfashby_stdemuxerhook/vendor/github.com/MFAshby/stdemuxerhook \
 		Masterminds:semver:v3.1.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Microsoft:go-winio:v0.5.2:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
-		RoaringBitmap:roaring:v1.2.1:roaringbitmap_roaring/vendor/github.com/RoaringBitmap/roaring \
+		RoaringBitmap:roaring:v1.2.3:roaringbitmap_roaring/vendor/github.com/RoaringBitmap/roaring \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
-		bits-and-blooms:bitset:v1.3.3:bits_and_blooms_bitset/vendor/github.com/bits-and-blooms/bitset \
-		blevesearch:bleve:v2.3.4:blevesearch_bleve_v2/vendor/github.com/blevesearch/bleve/v2 \
-		blevesearch:bleve_index_api:v1.0.3:blevesearch_bleve_index_api/vendor/github.com/blevesearch/bleve_index_api \
-		blevesearch:geo:v0.1.14:blevesearch_geo/vendor/github.com/blevesearch/geo \
+		bits-and-blooms:bitset:v1.5.0:bits_and_blooms_bitset/vendor/github.com/bits-and-blooms/bitset \
+		blevesearch:bleve:v2.3.6:blevesearch_bleve_v2/vendor/github.com/blevesearch/bleve/v2 \
+		blevesearch:bleve_index_api:v1.0.5:blevesearch_bleve_index_api/vendor/github.com/blevesearch/bleve_index_api \
+		blevesearch:geo:v0.1.17:blevesearch_geo/vendor/github.com/blevesearch/geo \
 		blevesearch:go-porterstemmer:v1.0.3:blevesearch_go_porterstemmer/vendor/github.com/blevesearch/go-porterstemmer \
 		blevesearch:gtreap:v0.1.1:blevesearch_gtreap/vendor/github.com/blevesearch/gtreap \
 		blevesearch:mmap-go:v1.0.4:blevesearch_mmap_go/vendor/github.com/blevesearch/mmap-go \
-		blevesearch:scorch_segment_api:v2.1.2:blevesearch_scorch_segment_api_v2/vendor/github.com/blevesearch/scorch_segment_api/v2 \
-		blevesearch:segment:v0.9.0:blevesearch_segment/vendor/github.com/blevesearch/segment \
+		blevesearch:scorch_segment_api:v2.1.4:blevesearch_scorch_segment_api_v2/vendor/github.com/blevesearch/scorch_segment_api/v2 \
+		blevesearch:segment:v0.9.1:blevesearch_segment/vendor/github.com/blevesearch/segment \
 		blevesearch:snowballstem:v0.9.0:blevesearch_snowballstem/vendor/github.com/blevesearch/snowballstem \
-		blevesearch:upsidedown_store_api:v1.0.1:blevesearch_upsidedown_store_api/vendor/github.com/blevesearch/upsidedown_store_api \
-		blevesearch:vellum:v1.0.8:blevesearch_vellum/vendor/github.com/blevesearch/vellum \
-		blevesearch:zapx:v11.3.5:blevesearch_zapx_v11/vendor/github.com/blevesearch/zapx/v11 \
-		blevesearch:zapx:v12.3.5:blevesearch_zapx_v12/vendor/github.com/blevesearch/zapx/v12 \
-		blevesearch:zapx:v13.3.5:blevesearch_zapx_v13/vendor/github.com/blevesearch/zapx/v13 \
-		blevesearch:zapx:v14.3.5:blevesearch_zapx_v14/vendor/github.com/blevesearch/zapx/v14 \
-		blevesearch:zapx:v15.3.5:blevesearch_zapx_v15/vendor/github.com/blevesearch/zapx/v15 \
+		blevesearch:upsidedown_store_api:v1.0.2:blevesearch_upsidedown_store_api/vendor/github.com/blevesearch/upsidedown_store_api \
+		blevesearch:vellum:v1.0.9:blevesearch_vellum/vendor/github.com/blevesearch/vellum \
+		blevesearch:zapx:v11.3.7:blevesearch_zapx_v11/vendor/github.com/blevesearch/zapx/v11 \
+		blevesearch:zapx:v12.3.7:blevesearch_zapx_v12/vendor/github.com/blevesearch/zapx/v12 \
+		blevesearch:zapx:v13.3.7:blevesearch_zapx_v13/vendor/github.com/blevesearch/zapx/v13 \
+		blevesearch:zapx:v14.3.7:blevesearch_zapx_v14/vendor/github.com/blevesearch/zapx/v14 \
+		blevesearch:zapx:v15.3.8:blevesearch_zapx_v15/vendor/github.com/blevesearch/zapx/v15 \
 		cespare:xxhash:v2.1.2:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		codeclysm:extract:v2.2.0:codeclysm_extract/vendor/github.com/codeclysm/extract \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -71,20 +70,20 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:v0.1.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:exp:c99f073a8326:golang_exp/vendor/golang.org/x/exp \
+		golang:crypto:v0.5.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:exp:47842c84f3db:golang_exp/vendor/golang.org/x/exp \
 		golang:geo:740aa86cb551:golang_geo/vendor/github.com/golang/geo \
 		golang:glog:v1.0.0:golang_glog/vendor/github.com/golang/glog \
 		golang:image:v0.1.0:golang_image/vendor/golang.org/x/image \
 		golang:mobile:b36e6246172e:golang_mobile/vendor/golang.org/x/mobile \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.6.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.1.0:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.5.0:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:v0.1.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.1.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.4.0:golang_text/vendor/golang.org/x/text \
+		golang:sys:v0.4.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.4.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.6.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.1.0:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.2.0:golang_tools/vendor/golang.org/x/tools \
 		gologme:log:v1.3.0:gologme_log/vendor/github.com/gologme/log \
@@ -103,16 +102,13 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		klauspost:compress:v1.15.11:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.1:kr_pretty/vendor/github.com/kr/pretty \
 		lib:pq:v1.10.7:lib_pq/vendor/github.com/lib/pq \
-		lucas-clemente:quic-go:v0.30.0:lucas_clemente_quic_go/vendor/github.com/lucas-clemente/quic-go \
 		lukechampine:uint128:v1.2.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
-		marten-seemann:qtls-go1-18:v0.1.3:marten_seemann_qtls_go1_18/vendor/github.com/marten-seemann/qtls-go1-18 \
-		marten-seemann:qtls-go1-19:v0.1.1:marten_seemann_qtls_go1_19/vendor/github.com/marten-seemann/qtls-go1-19 \
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:ceba4d9f7530:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:d8748f6d5dc8:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
-		matrix-org:pinecone:fef26631b847:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
-		matrix-org:util:55161520e1d4:matrix_org_util/vendor/github.com/matrix-org/util \
+		matrix-org:gomatrixserverlib:122f1e0e3fa1:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:pinecone:8c3b24f2649a:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
+		matrix-org:util:399730281e66:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-isatty:v0.0.16:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-sqlite3:v1.14.15:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:c182affec369:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
@@ -145,20 +141,23 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		prometheus:common:v0.37.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.8.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
 		protocolbuffers:protobuf-go:v1.28.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		quic-go:qtls-go1-18:v0.2.0:quic_go_qtls_go1_18/vendor/github.com/quic-go/qtls-go1-18 \
+		quic-go:qtls-go1-19:v0.2.0:quic_go_qtls_go1_19/vendor/github.com/quic-go/qtls-go1-19 \
+		quic-go:qtls-go1-20:v0.1.0:quic_go_qtls_go1_20/vendor/github.com/quic-go/qtls-go1-20 \
+		quic-go:quic-go:v0.32.0:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
 		remyoudompheng:bigfft:ef77025ab5aa:remyoudompheng_bigfft/vendor/github.com/remyoudompheng/bigfft \
 		sirupsen:logrus:v1.9.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		stretchr:testify:v1.8.1:stretchr_testify/vendor/github.com/stretchr/testify \
-		tidwall:gjson:v1.14.3:tidwall_gjson/vendor/github.com/tidwall/gjson \
+		tidwall:gjson:v1.14.4:tidwall_gjson/vendor/github.com/tidwall/gjson \
 		tidwall:match:v1.1.1:tidwall_match/vendor/github.com/tidwall/match \
-		tidwall:pretty:v1.2.0:tidwall_pretty/vendor/github.com/tidwall/pretty \
+		tidwall:pretty:v1.2.1:tidwall_pretty/vendor/github.com/tidwall/pretty \
 		tidwall:sjson:v1.2.5:tidwall_sjson/vendor/github.com/tidwall/sjson \
 		uber-go:atomic:v1.10.0:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber:jaeger-client-go:v2.30.0:uber_jaeger_client_go/vendor/github.com/uber/jaeger-client-go \
 		uber:jaeger-lib:v2.4.1:uber_jaeger_lib/vendor/github.com/uber/jaeger-lib \
 		yggdrasil-network:yggdrasil-go:v0.4.6:yggdrasil_network_yggdrasil_go/vendor/github.com/yggdrasil-network/yggdrasil-go
 
-GL_TUPLE=	\
-		cznic:cc:03159e8e41eec8d08c1e502bfc46868b9a03aa57:cznic_cc/vendor/modernc.org/cc/v3 \
+GL_TUPLE=	cznic:cc:03159e8e41eec8d08c1e502bfc46868b9a03aa57:cznic_cc/vendor/modernc.org/cc/v3 \
 		cznic:ccgo:261537637ce8941f62642fdcc5bf35f770328f26:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
 		cznic:libc:fb68bf378cdc24605253253d3e57488f10694dba:cznic_libc/vendor/modernc.org/libc \
 		cznic:mathutil:b13e5b5643328f15fd2fcedc85f647f0d8f9180f:cznic_mathutil/vendor/modernc.org/mathutil \
