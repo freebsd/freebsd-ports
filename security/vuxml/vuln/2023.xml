@@ -1,3 +1,54 @@
+  <vuln vid="310ca30e-a951-11ed-8314-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>chromium</name>
+	<range><lt>110.0.5481.77</lt></range>
+      </package>
+      <package>
+	<name>ungoogled-chromium</name>
+	<range><lt>110.0.5481.77</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Chrome Releases reports:</p>
+	<blockquote cite="https://chromereleases.googleblog.com/2023/02/stable-channel-update-for-desktop.html">
+	  <p>This release contains 15 security fixes, including:</p>
+	  <ul>
+	    <li>[1402270] High CVE-2023-0696: Type Confusion in V8. Reported by Haein Lee at KAIST Hacking Lab on 2022-12-18</li>
+	    <li>[1341541] High CVE-2023-0697: Inappropriate implementation in Full screen mode. Reported by Ahmed ElMasry on 2022-07-03</li>
+	    <li>[1403573] High CVE-2023-0698: Out of bounds read in WebRTC. Reported by Cassidy Kim(@cassidy6564) on 2022-12-25</li>
+	    <li>[1371859] Medium CVE-2023-0699: Use after free in GPU. Reported by 7o8v and Cassidy Kim(@cassidy6564) on 2022-10-06</li>
+	    <li>[1393732] Medium CVE-2023-0700: Inappropriate implementation in Download. Reported by Axel Chong on 2022-11-26</li>
+	    <li>[1405123] Medium CVE-2023-0701: Heap buffer overflow in WebUI. Reported by Sumin Hwang of SSD Labs on 2023-01-05</li>
+	    <li>[1316301] Medium CVE-2023-0702: Type Confusion in Data Transfer. Reported by Sri on 2022-04-14</li>
+	    <li>[1405574] Medium CVE-2023-0703: Type Confusion in DevTools. Reported by raven at KunLun lab on 2023-01-07</li>
+	    <li>[1385982] Low CVE-2023-0704: Insufficient policy enforcement in DevTools. Reported by Rhys Elsmore and Zac Sims of the Canva security team on 2022-11-18</li>
+	    <li>[1238642] Low CVE-2023-0705: Integer overflow in Core. Reported by SorryMybad (@S0rryMybad) of Kunlun Lab on 2021-08-11</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-0696</cvename>
+      <cvename>CVE-2023-0697</cvename>
+      <cvename>CVE-2023-0698</cvename>
+      <cvename>CVE-2023-0699</cvename>
+      <cvename>CVE-2023-0700</cvename>
+      <cvename>CVE-2023-0701</cvename>
+      <cvename>CVE-2023-0702</cvename>
+      <cvename>CVE-2023-0703</cvename>
+      <cvename>CVE-2023-0704</cvename>
+      <cvename>CVE-2023-0705</cvename>
+      <url>https://chromereleases.googleblog.com/2023/02/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2023-02-07</discovery>
+      <entry>2023-02-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a8b6170-a889-11ed-bbae-6cc21735f730">
     <topic>PostgreSQL server -- Client memory disclosure when connecting, with Kerberos, to modified server.</topic>
     <affects>
@@ -37,7 +88,7 @@
 	    presence of notable, confidential information in
 	    disclosed bytes.
 	  </p>
-        </blockquote>
+	</blockquote>
       </body>
     </description>
     <references>
