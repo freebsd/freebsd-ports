@@ -1,16 +1,13 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.16.1
+DISTVERSION=	0.16.2
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
-PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES+=	https://github.com/swaywm/${GL_PROJECT}/commit/:github
 PATCHFILES+=	fc0854d5f256.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
 PATCHFILES+=	29cb694655db.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/2064
-PATCHFILES+=	91a8ff42d26e.patch:-p1:github # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3318
 PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	27a0b8b74f56.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3963
-PATCHFILES+=	ad5175118b74.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3965
+PATCHFILES+=	f3ba14e49133.patch:-p1 # https://gitlab.freedesktop.org/wlroots/wlroots/-/merge_requests/3850
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Modular Wayland compositor library
@@ -34,7 +31,7 @@ USE_GL=		gbm
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_COMMIT=	0911a41f17df2f684c383923772994a3807ce416
+GL_COMMIT=	0a32b5a74db06a27bee55a47205951bb277a9657
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 
 OPTIONS_DEFINE=	DRM OPENGL VULKAN X11
