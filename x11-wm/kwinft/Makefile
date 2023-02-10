@@ -1,7 +1,7 @@
 PORTNAME=	kwinft
 DISTVERSIONPREFIX=	${PORTNAME}@
 DISTVERSION=	5.26.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -58,6 +58,16 @@ DOCS_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_KF5DocTools
 QA11Y_DESC=		Accessibility (focus tracking) for Zoom effect
 QA11Y_LIB_DEPENDS=	libqaccessibilityclient-qt5.so:accessibility/libqaccessibilityclient
 QA11Y_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_QAccessibilityClient
+
+post-patch:
+# Convert nodes from linprocfs(5) to procfs(5)
+# XXX kwinft lacks https://invent.kde.org/plasma/kwin/-/commit/1bc7afe8aaa9
+	@${REINPLACE_CMD} -e '/proc/,+1s,/exe,/file,' \
+		${WRKSRC}/base/wayland/filtered_display.cpp \
+		${WRKSRC}/desktop/kde/service_utils.h
+# Generic nodes are not supported by procfs(5)
+	@${REINPLACE_CMD} -e '/mounts/s,/proc,/compat/linux&,' \
+		${WRKSRC}/debug/perf/ftrace_impl.cpp
 
 # XXX Drop after FreeBSD 12.3 EOL around 2023-03-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
