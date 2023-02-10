@@ -1341,7 +1341,6 @@
     SUBDIR += libpo6
     SUBDIR += libpololu-avr
     SUBDIR += libpru
-    SUBDIR += libpthread-stubs
     SUBDIR += libqb
     SUBDIR += libqcow
     SUBDIR += libqsbr

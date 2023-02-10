@@ -17786,3 +17786,4 @@ databases/postgresql10-plpython||2023-03-07|Has expired: PostgreSQL 10 has reach
 databases/postgresql10-pltcl||2023-03-07|Has expired: PostgreSQL 10 has reached end-of-life
 databases/postgresql10-server||2023-03-07|Has expired: PostgreSQL 10 has reached end-of-life
 audio/ximp3||2023-03-09|Has expired: Abandonware and obsolete, uses old decoder library and no ID3v2 support
+devel/libpthread-stubs||2023-03-12|No consumers left and never supported pthread stubs in libc on FreeBSD
