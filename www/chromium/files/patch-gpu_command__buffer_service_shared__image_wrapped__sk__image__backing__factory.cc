@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/wrapped_sk_image_backing_factory.cc.orig	2023-01-11 09:17:16 UTC
+--- gpu/command_buffer/service/shared_image/wrapped_sk_image_backing_factory.cc.orig	2023-02-08 09:03:45 UTC
 +++ gpu/command_buffer/service/shared_image/wrapped_sk_image_backing_factory.cc
-@@ -237,7 +237,7 @@ class WrappedSkImage : public ClearTrackingSharedImage
+@@ -216,7 +216,7 @@ class WrappedSkImage : public ClearTrackingSharedImage
                                                        : GrMipMapped::kNo;
      const std::string label = "WrappedSkImageBackingFactory_Initialize" +
                                CreateLabelForSharedImageUsage(usage());

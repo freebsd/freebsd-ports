@@ -1,6 +1,6 @@
---- chrome/browser/process_singleton_posix.cc.orig	2022-08-31 12:19:35 UTC
+--- chrome/browser/process_singleton_posix.cc.orig	2023-02-08 09:03:45 UTC
 +++ chrome/browser/process_singleton_posix.cc
-@@ -97,7 +97,7 @@
+@@ -96,7 +96,7 @@
  #include "net/base/network_interfaces.h"
  #include "ui/base/l10n/l10n_util.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/process_singleton_dialog_linux.h"
  #endif
  
-@@ -351,7 +351,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
+@@ -350,7 +350,7 @@ bool DisplayProfileInUseError(const base::FilePath& lo
    if (g_disable_prompt)
      return g_user_opted_unlock_in_use_profile;
  

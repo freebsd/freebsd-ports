@@ -1,4 +1,4 @@
---- content/public/common/content_features.cc.orig	2023-01-11 09:17:16 UTC
+--- content/public/common/content_features.cc.orig	2023-02-08 09:03:45 UTC
 +++ content/public/common/content_features.cc
 @@ -41,7 +41,7 @@ BASE_FEATURE(kAudioServiceOutOfProcess,
               "AudioServiceOutOfProcess",
@@ -18,7 +18,16 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1251,7 +1251,7 @@ BASE_FEATURE(kWebAssemblyCodeProtection,
+@@ -499,7 +499,7 @@ BASE_FEATURE(kGetDisplayMediaSetAutoSelectAllScreens,
+ // (activated by kUserAgentClientHint)
+ BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_ENABLED_BY_DEFAULT);
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ // Supports proxying thread type changes of renderer processes to browser
+ // process and having browser process handle adjusting thread properties (nice
+ // value, c-group, latency sensitivity...) for renderers which have sandbox
+@@ -1258,7 +1258,7 @@ BASE_FEATURE(kWebAssemblyCodeProtection,
               "WebAssemblyCodeProtection",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -27,7 +36,7 @@
  // Use memory protection keys in userspace (PKU) (if available) to protect code
  // JITed for WebAssembly. Fall back to traditional memory protection if
  // WebAssemblyCodeProtection is also enabled.
-@@ -1287,7 +1287,7 @@ BASE_FEATURE(kWebAssemblyTiering,
+@@ -1305,7 +1305,7 @@ BASE_FEATURE(kWebAssemblyTiering,
  BASE_FEATURE(kWebAssemblyTrapHandler,
               "WebAssemblyTrapHandler",
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -36,7 +45,7 @@
       defined(ARCH_CPU_X86_64)) ||                                           \
      (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1362,7 +1362,11 @@ BASE_FEATURE(kWebUIReportOnlyTrustedTypes,
+@@ -1381,7 +1381,11 @@ BASE_FEATURE(kWebUICodeCache,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

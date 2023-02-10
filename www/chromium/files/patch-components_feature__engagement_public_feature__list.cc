@@ -1,7 +1,7 @@
---- components/feature_engagement/public/feature_list.cc.orig	2023-01-11 09:17:16 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2023-02-08 09:03:45 UTC
 +++ components/feature_engagement/public/feature_list.cc
 @@ -122,7 +122,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHOverflowMenuTipFeature,
+     &kIPHPriceNotificationsWhileBrowsingFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
