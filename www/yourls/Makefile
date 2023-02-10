@@ -1,5 +1,6 @@
 PORTNAME=	yourls
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe php
-USE_PHP=	bcmath curl json mysqli pcre xml
+USE_PHP=	bcmath curl iconv json pcre pdo_mysql xml
 
 NO_ARCH=	yes
 NO_BUILD=	yes

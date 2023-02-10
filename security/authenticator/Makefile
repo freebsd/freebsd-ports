@@ -1,5 +1,6 @@
 PORTNAME=	authenticator
 DISTVERSION=	4.2.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	jbeich@FreeBSD.org

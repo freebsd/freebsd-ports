@@ -23,7 +23,11 @@ BUILD_DEPENDS+=	gsed:textproc/gsed \
 		${PYTHON_PKGNAMEPREFIX}setuptools-pkg>=0:devel/py-setuptools-pkg@${PY_FLAVOR}
 BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 
-USES=		bison gmake python:3.7+,build shebangfix tar:bz2
+# For mkeficapsule
+BUILD_DEPENDS+=	e2fsprogs-libuuid>=0:misc/e2fsprogs-libuuid \
+		gnutls>=0:security/gnutls
+
+USES=		bison gmake python:3.7+,build pkgconfig shebangfix tar:bz2
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed python3=${PYTHON_CMD}
 
 SHEBANG_FILES=	tools/binman/binman arch/arm/mach-rockchip/make_fit_atf.py
@@ -101,7 +105,7 @@ UBOOT_PLIST_RK3399=	idbloader.img u-boot.itb
 UBOOT_ARCH_RK3399=	aarch64
 
 # Override for ARMADA38X family
-UBOOT_PLIST_ARMADA38X=	u-boot-spl.kwb
+UBOOT_PLIST_ARMADA38X=	u-boot-with-spl.kwb
 UBOOT_METADATA_ARMADA38X_FILES=		${UBOOT_PLIST_ARMADA38X}
 UBOOT_METADATA_ARMADA38X_METHOD=	raw
 UBOOT_METADATA_ARMADA38X_RAW_OFFSET=	1
@@ -114,7 +118,7 @@ UBOOT_PLIST_QEMU=	u-boot.bin
 .if !defined(UBOOT_VERSION) && defined(UBOOT_VERSION_${FAMILY:tu})
 UBOOT_VERSION=${UBOOT_VERSION_${FAMILY:tu}}
 .endif
-UBOOT_VERSION?=	2022.10
+UBOOT_VERSION?=	2023.01
 
 # If a slave port defines a PORTREVISION use it
 .if defined(U_BOOT_SLAVE_PORTREVISION_${UBOOT_VERSION})
@@ -137,6 +141,9 @@ ARCHFLAGS=ARCH=${UBOOT_ARCH}
 .elif ${UBOOT_ARCH} == aarch64
 CROSS_COMPILE=aarch64-none-elf-
 ARCHFLAGS=ARCH=arm
+.if ${FAMILY} == allwinner64
+MAKE_ENV+=	SCP=/dev/null
+.endif
 .elif ${UBOOT_ARCH} == riscv64
 CROSS_COMPILE=riscv64-none-elf-
 ARCHFLAGS=ARCH=riscv

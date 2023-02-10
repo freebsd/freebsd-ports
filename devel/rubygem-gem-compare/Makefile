@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-diffy>=0:textproc/rubygem-diffy \
 		rubygem-rainbow>=0:devel/rubygem-rainbow
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

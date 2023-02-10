@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-faraday>=1<3:www/rubygem-faraday \
 		rubygem-sawyer>=0.9<1:www/rubygem-sawyer
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,6 +1,6 @@
---- vhdlparser/CMakeLists.txt.orig	2021-05-12 18:46:54 UTC
+--- vhdlparser/CMakeLists.txt.orig	2022-12-19 11:34:59 UTC
 +++ vhdlparser/CMakeLists.txt
-@@ -37,8 +37,8 @@ add_custom_command(
+@@ -35,8 +35,8 @@ include_directories(
  set_source_files_properties(${GENERATED_SRC}/VhdlParser_adj.cc PROPERTIES GENERATED 1)
  
  include_directories(

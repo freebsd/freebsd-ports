@@ -1,5 +1,6 @@
 PORTNAME=	r10k
-PORTVERSION=	3.15.2
+PORTVERSION=	3.15.3
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -12,14 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-colored2>=3.1.2:textproc/rubygem-colored2 \
 		rubygem-cri>=2.15.6:devel/rubygem-cri \
-		rubygem-gettext-setup>=0.24:devel/rubygem-gettext-setup \
+		rubygem-gettext-setup0>=0.24:devel/rubygem-gettext-setup0 \
 		rubygem-jwt>=2.2:www/rubygem-jwt \
 		rubygem-log4r>=1.1.10:sysutils/rubygem-log4r \
 		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
 		rubygem-puppet_forge>=2.3.0:sysutils/rubygem-puppet_forge
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

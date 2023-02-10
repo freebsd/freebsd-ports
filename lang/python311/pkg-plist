@@ -2958,6 +2958,7 @@ lib/python%%XYDOT%%/lib-dynload/_statistics.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_struct.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_testbuffer.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_testcapi.cpython-%%XY%%%%ABI%%.so
+lib/python%%XYDOT%%/lib-dynload/_testclinic.cpython-%%XY%%.so
 lib/python%%XYDOT%%/lib-dynload/_testimportmultiple.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_testinternalcapi.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_testmultiphase.cpython-%%XY%%%%ABI%%.so

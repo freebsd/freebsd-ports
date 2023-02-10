@@ -12,17 +12,17 @@ WWW=		https://dev.mysql.com/downloads/c-api/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	C Connector is included in mysql packages since 5.6
+EXPIRATION_DATE=	2023-03-31
+
 USES=		cmake compiler:features mysql ssl
-CMAKE_ARGS+=	-DOPENSSL_INCLUDE_DIR="${OPENSSLINC}"
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
+
+CMAKE_ARGS+=	-DOPENSSL_INCLUDE_DIR="${OPENSSLINC}"
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "i386" && ${COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-CFLAGS+=	-march=i586
-.endif
 
 .if (${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-vio_viosslfactories.c \

@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.70.2
-PORTREVISION=	3
+DISTVERSION=	1.75.0
 CATEGORIES=	editors
 MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
 		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
@@ -37,6 +36,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libFLAC.so:audio/flac \
 		libopus.so:audio/opus \
 		libdbus-1.so:devel/dbus \
+		libevent.so:devel/libevent \
 		libinotify.so:devel/libinotify \
 		libnotify.so:devel/libnotify \
 		libpci.so:devel/libpci \
@@ -71,7 +71,7 @@ USES=		desktop-file-utils gl gmake gnome iconv jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	e4503b30fc78200f846c62cf8091b76ff5547662
+SOURCE_COMMIT_HASH=	e2816fe719a4026ffa1ee0189dc89bdfdbafb164
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -83,12 +83,12 @@ USE_GNOME=	atk cairo pango gdkpixbuf2 gtk30 libxml2 libxslt
 USE_LDCONFIG=	${DATADIR}
 
 # See ${WRKSRC}/remote/.yarnrc for NODE_VER
-NODE_VER=	16.13.2
+NODE_VER=	16.14.2
 NODE_VER_MAJOR=	${NODE_VER:C/\..*$//}
 # See ${WRKSRC}/build/package.json for ESBUILD_VER_BUILD
-ESBUILD_VER_BUILD=	0.14.2
+ESBUILD_VER_BUILD=	0.15.5
 # See ${WRKSRC}/extensions/package.json for ESBUILD_VER_EXTENSIONS
-ESBUILD_VER_EXTENSIONS=	0.11.23
+ESBUILD_VER_EXTENSIONS=	0.15.14
 
 SHEBANG_REGEX=	./(extensions|resources|scripts|src)/.*\.sh$$
 PATHFIX_FILES=	src/vs/workbench/contrib/debug/node/terminals.ts
@@ -106,7 +106,7 @@ MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
-ELECTRON_DIR=	${.CURDIR}/../../devel/electron18
+ELECTRON_DIR=	${.CURDIR}/../../devel/electron19
 .include	"${ELECTRON_DIR}/Makefile.version"
 
 ELECTRON_DOWNLOAD_URL=	https://github.com/electron/electron/releases/download/v${ELECTRON_VER}
@@ -233,6 +233,7 @@ do-install:
 		${TAR} -cf - . | ${TAR} -xf - -C ${STAGEDIR}${DATADIR}
 	cd ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked && \
 		${FIND} . -type f -name '*.node' -exec ${STRIP_CMD} {} ';'
+	${STRIP_CMD} ${STAGEDIR}${DATADIR}/resources/app/node_modules.asar.unpacked/node-pty/build/Release/spawn-helper
 .for f in chromedriver mksnapshot v8_context_snapshot_generator
 	${RM} ${STAGEDIR}${DATADIR}/${f}
 .endfor

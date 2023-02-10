@@ -10,7 +10,6 @@ WWW=		https://github.com/yhara/myrurema
 RUN_DEPENDS=	rubygem-launchy>=2.3<3:devel/rubygem-launchy
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

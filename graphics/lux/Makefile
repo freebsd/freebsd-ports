@@ -5,7 +5,7 @@ MASTER_SITES=	https://bitbucket.org/kfj/pv/get/
 PKGNAMESUFFIX=	-pv	# distinguish from www/lux
 DISTNAME=	${COMMIT}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Panorama and image viewer
 WWW=		https://bitbucket.org/kfj/pv
 

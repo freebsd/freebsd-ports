@@ -1,6 +1,5 @@
 PORTNAME=	mesa-gallium-va
 PORTVERSION=	${MESAVERSION}
-PORTREVISION=	2
 CATEGORIES=	graphics
 
 COMMENT=	Mesa Gallium VAAPI drivers
@@ -39,7 +38,7 @@ MESON_ARGS+=	-Ddri-drivers="" \
 		-Dgles2=disabled \
 		-Dosmesa=false \
 		-Dglx=disabled \
-		-Ddri3=disabled
+		-Ddri3=enabled
 
 LDFLAGS_i386=	-Wl,-znotext
 

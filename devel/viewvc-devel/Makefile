@@ -29,7 +29,7 @@ WEBSRV_DESC=		Enable web server support
 APMOD_DESC=		depend on Apache module
 
 MODWSGI_DESC=		Add mod_wsgi to the list of package dependencies
-APACHE_USE=		APACHE_RUN=24+
+APACHE_USES=		apache:run
 
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 MODWSGI_RUN_DEPENDS=	${APACHE_PKGNAMEPREFIX}${PYTHON_PKGNAMEPREFIX}mod_wsgi>=4.4.13:www/mod_wsgi4@${PY_FLAVOR}

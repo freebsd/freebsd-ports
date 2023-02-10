@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-google-apis-core>=0.9.1<2.0:devel/rubygem-google-apis-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

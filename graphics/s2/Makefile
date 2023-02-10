@@ -1,7 +1,7 @@
 PORTNAME=	s2
 PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -17,11 +17,11 @@ NOT_FOR_ARCHS_REASON=	is currently 64-bit only
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libgtest.so:devel/googletest
 
-USES=		cmake compiler:c++11-lang localbase ssl
+USES=		cmake compiler:c++17-lang localbase ssl
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	WITH_PYTHON
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}

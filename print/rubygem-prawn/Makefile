@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-pdf-core>=0.9.0<0.10:print/rubygem-pdf-core \
 		rubygem-ttfunk>=1.7<2:print/rubygem-ttfunk
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

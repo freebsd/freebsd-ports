@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	linpct@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Watchman client for Python
 WWW=		https://pypi.org/project/pywatchman/
 

@@ -1,4 +1,4 @@
---- content/renderer/render_process_impl.cc.orig	2022-12-06 08:09:13 UTC
+--- content/renderer/render_process_impl.cc.orig	2023-01-17 19:19:00 UTC
 +++ content/renderer/render_process_impl.cc
 @@ -46,7 +46,7 @@
  #if BUILDFLAG(IS_WIN)
@@ -18,7 +18,7 @@
    SetV8FlagIfFeature(features::kWebAssemblyCodeProtectionPku,
                       "--wasm-memory-protection-keys");
    SetV8FlagIfNotFeature(features::kWebAssemblyCodeProtectionPku,
-@@ -228,7 +228,7 @@ RenderProcessImpl::RenderProcessImpl()
+@@ -224,7 +224,7 @@ RenderProcessImpl::RenderProcessImpl()
    SetV8FlagIfNotFeature(features::kWebAssemblyDynamicTiering,
                          "--no-wasm-dynamic-tiering");
  

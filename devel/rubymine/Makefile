@@ -1,5 +1,5 @@
 PORTNAME=	rubymine
-PORTVERSION=	2022.3.1
+PORTVERSION=	2022.3.2
 CATEGORIES=	devel java
 MASTER_SITES=	https://download.jetbrains.com/ruby/
 DISTNAME=	RubyMine-${PORTVERSION}

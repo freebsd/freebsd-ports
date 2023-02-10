@@ -31,7 +31,7 @@ share/applications/goland.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler-windows.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-GO-223.8214.59
+%%DATADIR%%/lib/build-marker-GO-223.8617.58
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -97,8 +97,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/go-plugin/license/golang-license.txt
 %%DATADIR%%/plugins/go-plugin/license/gopher-license.txt
 %%DATADIR%%/plugins/go-plugin/license/re2j-license.txt
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-868f051f5ea8-65897df8a340.ijx
-%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-868f051f5ea8-65897df8a340.txt
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-868f051f5ea8-49dfab5291be.ijx
+%%DATADIR%%/plugins/go-sharedIndexes-bundled/gosdk/gosdk-868f051f5ea8-49dfab5291be.txt
 %%DATADIR%%/plugins/go-sharedIndexes-bundled/lib/go-sharedIndexes-bundled.jar
 %%DATADIR%%/plugins/go-template/lib/go-template.jar
 %%DATADIR%%/plugins/grazie/lib/grazie.jar
@@ -152,8 +152,8 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-4c0166cd7e21.ijx
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-4c0166cd7e21.txt
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-ba3f29a498ec.ijx
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-ffdd448c697d-ba3f29a498ec.txt
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/es2019decorators.d.ts
@@ -270,6 +270,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/bin/eslint-plugin-provider.js
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/bin/eslint-plugin.js
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/bin/eslint8-plugin.js
+%%DATADIR%%/plugins/javascript-impl/languageService/eslint/bin/standard17-plugin.js
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/package-lock.json
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/package.json
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/eslint-api.ts
@@ -277,6 +278,7 @@ share/applications/goland.desktop
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/eslint-plugin-provider.ts
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/eslint-plugin.ts
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/eslint8-plugin.ts
+%%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/standard17-plugin.ts
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/src/typings/js-lanuage-api.d.ts
 %%DATADIR%%/plugins/javascript-impl/languageService/eslint/tsconfig.json
 %%DATADIR%%/plugins/javascript-impl/lib/javascript-impl.jar

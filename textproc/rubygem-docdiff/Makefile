@@ -10,7 +10,6 @@ WWW=		https://github.com/hisashim/docdiff
 LICENSE=	BSD3CLAUSE
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

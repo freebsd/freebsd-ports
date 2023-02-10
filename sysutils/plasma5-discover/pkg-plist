@@ -4,8 +4,8 @@ etc/xdg/autostart/org.kde.discover.notifier.desktop
 lib/libexec/DiscoverNotifier
 lib/plasma-discover/libDiscoverCommon.so
 lib/plasma-discover/libDiscoverNotifiers.so
-%%QT_PLUGINDIR%%/discover/kns-backend.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_updates.so
+share/applications/kcm_updates.desktop
 share/applications/org.kde.discover.desktop
 share/applications/org.kde.discover.notifier.desktop
 share/applications/org.kde.discover.snap.desktop
@@ -115,6 +115,10 @@ share/locale/ja/LC_MESSAGES/kcm_updates.mo
 share/locale/ja/LC_MESSAGES/libdiscover.mo
 share/locale/ja/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/ja/LC_MESSAGES/plasma-discover.mo
+share/locale/ka/LC_MESSAGES/kcm_updates.mo
+share/locale/ka/LC_MESSAGES/libdiscover.mo
+share/locale/ka/LC_MESSAGES/plasma-discover-notifier.mo
+share/locale/ka/LC_MESSAGES/plasma-discover.mo
 share/locale/kk/LC_MESSAGES/libdiscover.mo
 share/locale/kk/LC_MESSAGES/plasma-discover.mo
 share/locale/ko/LC_MESSAGES/kcm_updates.mo
@@ -195,11 +199,13 @@ share/locale/sv/LC_MESSAGES/libdiscover.mo
 share/locale/sv/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/sv/LC_MESSAGES/plasma-discover.mo
 share/locale/ta/LC_MESSAGES/kcm_updates.mo
+share/locale/ta/LC_MESSAGES/libdiscover.mo
 share/locale/ta/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/ta/LC_MESSAGES/plasma-discover.mo
 share/locale/tg/LC_MESSAGES/libdiscover.mo
 share/locale/tg/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/tg/LC_MESSAGES/plasma-discover.mo
+share/locale/tr/LC_MESSAGES/kcm_updates.mo
 share/locale/tr/LC_MESSAGES/libdiscover.mo
 share/locale/tr/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/tr/LC_MESSAGES/plasma-discover.mo
@@ -215,6 +221,7 @@ share/locale/zh_CN/LC_MESSAGES/kcm_updates.mo
 share/locale/zh_CN/LC_MESSAGES/libdiscover.mo
 share/locale/zh_CN/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/zh_CN/LC_MESSAGES/plasma-discover.mo
+share/locale/zh_TW/LC_MESSAGES/kcm_updates.mo
 share/locale/zh_TW/LC_MESSAGES/libdiscover.mo
 share/locale/zh_TW/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/zh_TW/LC_MESSAGES/plasma-discover.mo

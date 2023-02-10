@@ -2,7 +2,7 @@ PORTNAME=	nestopia
 DISTVERSION=	1.51.1
 CATEGORIES=	emulators
 
-MAINTAINER=	nc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable NES/Famicom emulator
 WWW=		http://0ldsk00l.ca/nestopia/
 

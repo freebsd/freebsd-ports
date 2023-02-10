@@ -1,3 +1,5 @@
-TIMESTAMP = 1631516042
-SHA256 (sjaehn-BAngr-1.6.0_GH0.tar.gz) = 4c5624fefa852e8d2064c9f54517a02d5e585f84aa68ede70565f8f127b3fd87
-SIZE (sjaehn-BAngr-1.6.0_GH0.tar.gz) = 313473
+TIMESTAMP = 1673973426
+SHA256 (sjaehn-BAngr-1.6.2_GH0.tar.gz) = 6cb13b959c8f63bd957e49669215d0d00d2e7dd12a711e0fd4d1d47d3d686e1c
+SIZE (sjaehn-BAngr-1.6.2_GH0.tar.gz) = 169781
+SHA256 (sjaehn-BWidgets-9416adc_GH0.tar.gz) = f45b146e6e423bb8714de449fc8a7dbe28c47e8540ff87a6d53c2a21e694c1b2
+SIZE (sjaehn-BWidgets-9416adc_GH0.tar.gz) = 2413778

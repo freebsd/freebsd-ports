@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	jruby:lang/jruby
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

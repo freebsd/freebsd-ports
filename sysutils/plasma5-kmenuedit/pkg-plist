@@ -67,6 +67,7 @@ share/icons/hicolor/48x48/apps/kmenuedit.png
 share/kxmlgui5/kmenuedit/kmenueditui.rc
 share/locale/af/LC_MESSAGES/kmenuedit.mo
 share/locale/ar/LC_MESSAGES/kmenuedit.mo
+share/locale/az/LC_MESSAGES/kmenuedit.mo
 share/locale/be/LC_MESSAGES/kmenuedit.mo
 share/locale/bg/LC_MESSAGES/kmenuedit.mo
 share/locale/bn/LC_MESSAGES/kmenuedit.mo
@@ -104,6 +105,7 @@ share/locale/id/LC_MESSAGES/kmenuedit.mo
 share/locale/is/LC_MESSAGES/kmenuedit.mo
 share/locale/it/LC_MESSAGES/kmenuedit.mo
 share/locale/ja/LC_MESSAGES/kmenuedit.mo
+share/locale/ka/LC_MESSAGES/kmenuedit.mo
 share/locale/kk/LC_MESSAGES/kmenuedit.mo
 share/locale/km/LC_MESSAGES/kmenuedit.mo
 share/locale/kn/LC_MESSAGES/kmenuedit.mo
@@ -152,4 +154,5 @@ share/locale/wa/LC_MESSAGES/kmenuedit.mo
 share/locale/xh/LC_MESSAGES/kmenuedit.mo
 share/locale/zh_CN/LC_MESSAGES/kmenuedit.mo
 share/locale/zh_TW/LC_MESSAGES/kmenuedit.mo
+share/metainfo/org.kde.kmenuedit.appdata.xml
 share/qlogging-categories5/kmenuedit.categories

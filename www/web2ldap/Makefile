@@ -1,7 +1,7 @@
 PORTNAME=	web2ldap
 PORTVERSION=	1.7.7
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP https://www.web2ldap.de/download/
+MASTER_SITES=	PYPI https://www.web2ldap.de/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	girgen@FreeBSD.org

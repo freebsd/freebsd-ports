@@ -31,7 +31,7 @@ share/gtags/LICENSE
 share/gtags/NEWS
 share/gtags/PLUGIN_HOWTO
 share/gtags/PLUGIN_HOWTO.pygments
-share/gtags/PLUGIN_HOWTO.reference
+share/gtags/PLUGIN_HOWTO.universal-ctags
 share/gtags/README
 share/gtags/README.PATCHES
 share/gtags/SERVERSIDE_HOWTO

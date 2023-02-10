@@ -1,7 +1,5 @@
 [org.gnome.settings-daemon.plugins.power]
 sleep-inactive-ac-type = 'nothing'
 sleep-inactive-battery-type = 'nothing'
-button-suspend = 'nothing'
-button-power = 'nothing'
-button-sleep = 'nothing'
+power-button-action = 'nothing'
 

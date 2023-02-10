@@ -1,6 +1,6 @@
 PORTNAME=	darktable
-PORTVERSION=	4.0.1
-PORTREVISION=	2
+PORTVERSION=	4.2.0
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/darktable-org/${PORTNAME}/releases/download/release-${PORTVERSION:C/\.rc/rc/}/
 
@@ -18,23 +18,33 @@ BUILD_DEPENDS=	iso-codes>=0:misc/iso-codes \
 		po4a-translate:textproc/po4a \
 		xsltproc:textproc/libxslt \
 		bash:shells/bash
-LIB_DEPENDS=	libcolord-gtk.so:graphics/colord-gtk \
+LIB_DEPENDS=	libavif.so:graphics/libavif \
+		libcolord-gtk.so:graphics/colord-gtk \
 		libcolord.so:graphics/colord \
 		libcurl.so:ftp/curl \
 		libexiv2.so:graphics/exiv2 \
+		libgphoto2.so:graphics/libgphoto2 \
 		libharfbuzz.so:print/harfbuzz \
+		libheif.so:graphics/libheif \
 		libicui18n.so:devel/icu \
+		libImath.so:math/Imath \
 		libjasper.so:graphics/jasper \
 		libjson-glib-1.0.so:devel/json-glib \
+		libjxl_threads.so:graphics/libjxl \
 		liblcms2.so:graphics/lcms2 \
 		liblensfun.so:graphics/lensfun \
+		libOpenEXR.so:graphics/openexr \
+		libopenjp2.so:graphics/openjpeg \
+		libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map \
 		libpng.so:graphics/png \
 		libpugixml.so:textproc/pugixml \
 		libsoup-2.4.so:devel/libsoup \
-		libtiff.so:graphics/tiff
+		libtiff.so:graphics/tiff \
+		libwebp.so:graphics/webp
 
-USES=		cmake compiler:c++14-lang desktop-file-utils gl gnome jpeg \
-		perl5 pkgconfig sdl shebangfix sqlite tar:xz xorg
+USES=		cmake compiler:gcc-c++11-lib desktop-file-utils gl gnome jpeg \
+		llvm:14,build lua:54 perl5 pkgconfig sdl shebangfix sqlite \
+		tar:xz xorg
 USE_GL=		gl
 USE_GNOME=	cairo gtk30 intltool librsvg2 libxml2
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -43,49 +53,35 @@ USE_XORG=	ice sm x11 xext xrandr
 
 SHEBANG_FILES=	tools/*.sh
 
-CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1 \
-		-DBUILD_CMSTEST:BOOL=ON \
-		-DUSE_KWALLET:BOOL=ON
+USE_GCC=	yes
 
-CFLAGS+=	-fopenmp
+CMAKE_ARGS+=	-DBINARY_PACKAGE_BUILD=1
+
+CMAKE_BOOL+=	BUILD_CMSTEST USE_AVIF USE_CAMERA_SUPPORT USE_HEIF \
+		USE_KWALLET USE_LUA USE_MAP USE_OPENEXR USE_OPENJPEG \
+		USE_WEBP RAWSPEED_ENABLE_LTO
+
+CFLAGS+=	-fopenmp -I${LOCALBASE}/include/Imath
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/\.rc/~rc/}
 
-OPTIONS_DEFINE=		AVIF DOCS GEO GPHOTO GMIC GRAPHMAGICK HEIF LIBSECRET LTO \
-			LUA NLS OPENEXR OPENJPEG PRINT TOOLS WEBP
-OPTIONS_DEFAULT=	AVIF GEO GPHOTO HEIF LTO LUA OPENEXR OPENJPEG PRINT WEBP
+OPTIONS_DEFINE=		DOCS GMIC GRAPHMAGICK LIBSECRET NLS PRINT TOOLS
+OPTIONS_DEFAULT=	PRINT
 OPTIONS_SUB=		yes
 
-GEO_DESC=		Support geotagging
 GMIC_DESC=		Support G'Mic-compressed LUT in lut3d
 LIBSECRET_DESC=		Support libsecret as password backend
-
-GEO_LIB_DEPENDS=	libosmgpsmap-1.0.so:x11-toolkits/osm-gps-map
-GEO_CMAKE_BOOL=		USE_MAP
+TOOLS_DESC=		Install additional scripts
 
 GMIC_LIB_DEPENDS=	libgmic.so:graphics/gmic
 GMIC_CMAKE_BOOL=	USE_GMIC
 
-GPHOTO_LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
-GPHOTO_CMAKE_BOOL=	USE_CAMERA_SUPPORT
-
 GRAPHMAGICK_LIB_DEPENDS=libGraphicsMagick.so:graphics/GraphicsMagick
 GRAPHMAGICK_CMAKE_BOOL=	USE_GRAPHICSMAGICK
 
-AVIF_LIB_DEPENDS=	libavif.so:graphics/libavif
-AVIF_CMAKE_BOOL=	USE_AVIF
-
-HEIF_LIB_DEPENDS=	libheif.so:graphics/libheif
-HEIF_CMAKE_BOOL=	USE_HEIF
-
 LIBSECRET_LIB_DEPENDS=	libsecret-1.so:security/libsecret
 LIBSECRET_CMAKE_BOOL=	USE_LIBSECRET
-
-LTO_CMAKE_BOOL=		RAWSPEED_ENABLE_LTO
-
-LUA_USES=		lua:54
-LUA_CMAKE_BOOL=		USE_LUA
 
 # FIXME: Even with NLS turned off, darktable(1) is still linked to
 # libintl.so.
@@ -94,23 +90,11 @@ NLS_USES_OFF=		gettext-runtime
 NLS_CMAKE_BOOL=		USE_NLS
 NLS_LDFLAGS=		-L${LOCALBASE}/lib -lintl
 
-OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
-			libImath.so:math/Imath
-OPENEXR_CFLAGS=		-I${LOCALBASE}/include/Imath
-OPENEXR_CMAKE_BOOL=	USE_OPENEXR
-
-OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
-OPENJPEG_CMAKE_BOOL=	USE_OPENJPEG
-
 PRINT_LIB_DEPENDS=	libcups.so:print/cups
 PRINT_CMAKE_BOOL=	BUILD_PRINT
 
-TOOLS_DESC=		Install additional scripts
 TOOLS_BUILD_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 TOOLS_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
-
-WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
-WEBP_CMAKE_BOOL=	USE_WEBP
 
 .include <bsd.port.options.mk>
 
@@ -123,19 +107,6 @@ PLIST_SUB+=	NO_OPENCL=""
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD || ${ARCH} == "i386"
-LLVM_DEFAULT=	13
-BUILD_DEPENDS+=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
-CC=		${LOCALBASE}/bin/clang${LLVM_DEFAULT}
-CPP=		${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
-CXX=		${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
-LD=		${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
-BINARY_ALIAS+=	ld.lld=${LOCALBASE}/bin/ld.lld${LLVM_DEFAULT}
-BINARY_ALIAS+=	llvm-objcopy=${LOCALBASE}/bin/llvm-objcopy${LLVM_DEFAULT}
-BINARY_ALIAS+=	llvm-ar=${LOCALBASE}/bin/llvm-ar${LLVM_DEFAULT}
-BINARY_ALIAS+=	llvm-ranlib=${LOCALBASE}/bin/llvm-ranlib${LLVM_DEFAULT}
-.endif
 
 # work around CMAKE/CCACHE flaw (cmake stomps over ccache)
 .if "${WITH_CCACHE_BUILD}" == "yes" && !defined(NO_CCACHE)

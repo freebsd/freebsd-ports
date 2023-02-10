@@ -140,6 +140,7 @@
     SUBDIR += kdepim-addons
     SUBDIR += kdepim-runtime
     SUBDIR += keditbookmarks
+    SUBDIR += keep-presence
     SUBDIR += kfind
     SUBDIR += kmail
     SUBDIR += kmail-account-wizard
@@ -273,6 +274,7 @@
     SUBDIR += xannotate
     SUBDIR += xcalendar
     SUBDIR += xcbautolock
+    SUBDIR += xchm
     SUBDIR += xdg-desktop-portal
     SUBDIR += xfce4-generic-slider
     SUBDIR += xfce4-notes-plugin

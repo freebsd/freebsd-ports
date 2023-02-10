@@ -1,8 +1,7 @@
 PORTNAME=	metpy
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	astro python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	MetPy-${PORTVERSION}
 
@@ -17,12 +16,12 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.3.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.18.0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>=1.0.0,1:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pint>=0.10.1:devel/py-pint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pint>=0.15:devel/py-pint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pooch>=1.2.0:devel/py-pooch@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pyproj>=2.5.0:graphics/py-pyproj@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyproj>=2.6.1:graphics/py-pyproj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.4.0:science/py-scipy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}traitlets>=4.3.0:devel/py-traitlets@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}xarray>=0.14.1:devel/py-xarray@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}traitlets>=5.0.5:devel/py-traitlets@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}xarray>=0.18.0:devel/py-xarray@${PY_FLAVOR}
 
 USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils

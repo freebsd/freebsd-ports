@@ -1,7 +1,7 @@
 PORTNAME=	beets
 DISTVERSION=	1.6.0
 CATEGORIES=	audio python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Media library management system for obsessive-compulsive music geeks

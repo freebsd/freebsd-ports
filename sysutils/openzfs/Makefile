@@ -1,12 +1,12 @@
 PORTNAME=	openzfs
-PORTVERSION=	2022082900
-PORTREVISION=	1
+PORTVERSION=	2023012600
 DISTVERSIONPREFIX=	v
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 MAINTAINER=	freqlabs@FreeBSD.org
 COMMENT=	OpenZFS userland for FreeBSD
-WWW=		https://github.com/zfsonfreebsd/ZoF
+WWW=		https://github.com/openzfs/zfs
 
 LICENSE=	CDDL
 
@@ -21,6 +21,7 @@ SHEBANG_GLOB=	*.ksh *.ksh.in *.kshlib *.py.in
 SHEBANG_FILES=	tests/zfs-tests/tests/functional/trim/trim.cfg \
 		cmd/arcstat.in \
 		cmd/dbufstat.in \
+		cmd/zilstat.in \
 		cmd/arc_summary
 
 GNU_CONFIGURE=	yes
@@ -33,7 +34,9 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 GH_PROJECT=	zfs
-GH_TAGNAME=	2d5622f5b
+GH_TAGNAME=	dc5c8006f
+
+USE_LDCONFIG=	yes
 
 .include <bsd.port.options.mk>
 
@@ -54,11 +57,12 @@ PYTHON_NO_DEPENDS=yes
 
 post-extract:
 	# Change certain shebangs into something that shebang fix understands
-	cd ${WRKSRC} && sed -i '' '1s:@PYTHON_SHEBANG@:python3:' \
+	cd ${WRKSRC} && ${SED} -i '' '1s:@PYTHON_SHEBANG@:python3:' \
 		tests/test-runner/bin/zts-report.py.in \
 		tests/test-runner/bin/test-runner.py.in \
 		cmd/arcstat.in \
-		cmd/dbufstat.in
+		cmd/dbufstat.in \
+		cmd/zilstat.in
 
 pre-configure:
 	cd ${WRKSRC} && ./autogen.sh

@@ -1,7 +1,6 @@
 PORTNAME=	libosmium
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.18.0
-PORTREVISION=	1
+DISTVERSION=	2.19.0
 CATEGORIES=	astro geography devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -37,15 +36,6 @@ OPTIONS_DEFINE=	TEST DOCS
 OPTIONS_DEFAULT=	TEST
 TEST_TEST_TARGET=	test
 TEST_CMAKE_BOOL=	BUILD_TESTING
-
-post-patch:
-	@${FIND} ${WRKSRC} -type f \( -name "*.cpp" -o -name "*.hpp" \) \
-		-not -name "memory_mapping.hpp" \
-		-not -name "test_memory_mapping.cpp" \
-		-not -name "test_memory.cpp" \
-		-exec ${REINPLACE_CMD} \
-			-e 's,^#ifdef __linux__,#if defined(__linux__) || defined(__FreeBSD__),' \
-			-e 's,^#ifndef __linux__,#if !defined(__linux__) && !defined(__FreeBSD__),' {} \;
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

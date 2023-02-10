@@ -1,18 +1,21 @@
 --- html2ps.orig	2010-05-07 11:22:12 UTC
 +++ html2ps
-@@ -26,8 +26,9 @@ eval 'exec perl -S $0 "$@"'
+@@ -26,9 +26,12 @@ eval 'exec perl -S $0 "$@"'
  # Set the name of the global configuration file. See the installation notes
  # and manual page for more details on configuration files.
  
 -$globrc='/it/sw/share/www/lib/html2ps/html2psrc';
 -$ug='/it/sw/share/www/lib/html2ps/html2ps.html';
++use File::Temp qw/tempfile/;
+ 
 +$LIBPAPER=1;
 +$globrc='%%PREFIX%%/etc/html2psrc';
 +$ug='%%DATADIR%%/html2ps.html';
- 
++
  $conf=<<'EOR';
  @html2ps {
-@@ -46,7 +47,7 @@ $conf=<<'EOR';
+   package {
+@@ -46,7 +49,7 @@ $conf=<<'EOR';
      path: "";
    }
    paper {
@@ -21,7 +24,16 @@
      height: "";
      width: "";
    }
-@@ -613,6 +614,23 @@ for (0..10) {
+@@ -495,7 +498,7 @@ die "Ghostscript is required to generate DSC PostScrip
+  if($opt_D && !$package{'Ghostscript'});
+ die "Ghostscript is required to generate cross references\n"
+  if($opt_R && !$package{'Ghostscript'});
+-$tmpname=$posix?POSIX::tmpnam():"h2p_$$";
++$tmpname = tempfile();
+ ($scr=$tmpname)=~/\w+$/;
+ $tempdir=$`;
+ 
+@@ -613,6 +616,23 @@ for (0..10) {
    $height{"b$_"}=int($temp*2**(1/2)*1000+.5)/10;
  }
  if(!$pagew || !$pageh) {
@@ -45,7 +57,7 @@
    if($width{"\L$paper{'type'}"}) {
      $paper{'width'}=$width{"\L$paper{'type'}"} if(!defined $paper{'width'});
      $paper{'height'}=$height{"\L$paper{'type'}"} if(!defined $paper{'height'});
-@@ -620,6 +638,7 @@ if(!$pagew || !$pageh) {
+@@ -620,6 +640,7 @@ if(!$pagew || !$pageh) {
    } elsif($paper{'type'}) {
      &dbg("Unknown paper type: $paper{'type'}\n");
    }
@@ -53,7 +65,7 @@
  }
  if($opt_L) {
    $wl=$pageh-$mll-$mrl;
-@@ -3405,7 +3424,6 @@ sub Getopts {
+@@ -3405,7 +3426,6 @@ sub Getopts {
    local($optlist)=@_;
    local(@args,$_,$opt,$opts,$rest,$olist,$plist,$found,@popts);
    local($errs)=0;

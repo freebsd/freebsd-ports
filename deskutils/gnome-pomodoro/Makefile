@@ -1,5 +1,5 @@
 PORTNAME=	gnome-pomodoro
-PORTVERSION=	0.21.1
+PORTVERSION=	0.22.0
 CATEGORIES=	deskutils gnome
 
 MAINTAINER=	tagattie@FreeBSD.org

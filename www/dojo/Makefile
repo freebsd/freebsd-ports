@@ -21,7 +21,7 @@ OPTIONS_SUB=		yes
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MAPACHE}
-USES=			apache:run,2.2+ cpe
+USES=			apache:run cpe
 CPE_VENDOR=	linuxfoundation
 CONFDIR=		${PREFIX}/${CONFDIR_REL}
 CONFDIR_REL=		${APACHEETCDIR}/Includes

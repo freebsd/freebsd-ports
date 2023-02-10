@@ -1,13 +1,12 @@
 PORTNAME=	libarchive
-DISTVERSION=	3.6.1
-PORTREVISION=	1
+DISTVERSION=	3.6.2
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://libarchive.org/downloads/
 
 PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	bff38efe8c110469c5080d387bec62a6ca15b1a5.patch:-p1
+PATCHFILES=	1f35c466aaa9444335a1b854b0b7223b0d2346c2.patch:-p1
 
 MAINTAINER=	glewis@FreeBSD.org
 COMMENT=	Library to create and read several streaming archive formats
@@ -27,7 +26,8 @@ OPTIONS_RADIO_CRYPTO=	OPENSSL MBEDTLS NETTLE
 CRYPTO_DESC=	Crypto and hashing support
 NETTLE_DESC=	Crypto support via Nettle
 
-USES=		cpe iconv libtool localbase:ldflags pathfix tar:xz
+USES=		autoreconf cpe iconv libtool localbase:ldflags pathfix \
+		pkgconfig tar:xz
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
@@ -115,6 +115,14 @@ MBEDTLS_CONFIGURE_WITH=	mbedtls
 CONFIGURE_ENV+=	ac_cv_header_localcharset_h=no \
 		ac_cv_func_locale_charset=no \
 		ac_cv_lib_charset_locale_charset=no
+.endif
+
+# Prior to 1301508 we didn't ship openssl.pc which libarchive now excepts
+# so we need to use the old approach on older versions of FreeBSD
+# which is not to define Requires.private in libarchive.pc
+
+.if ${PORT_OPTIONS:MOPENSSL} && ${OPSYS} == FreeBSD && ${OSVERSION} < 1301508
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-pkgconfig-compat
 .endif
 
 .include <bsd.port.post.mk>

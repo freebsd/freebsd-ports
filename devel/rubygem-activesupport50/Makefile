@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.2<2:devel/rubygem-concurrent-ruby \
 		rubygem-tzinfo1>=1.1<2:devel/rubygem-tzinfo1
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

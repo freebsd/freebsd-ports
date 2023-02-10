@@ -21,20 +21,17 @@ LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 			libwoff2dec.so:devel/woff2
 
 USES=			bison cmake compiler:c++11-lang gnome gperf jpeg \
-			pathfix perl5 pkgconfig python:3.5+,build qt:5 sqlite:3 \
-			tar:xz xorg
+	pathfix perl5 pkgconfig python:3.5+,build qt:5 ruby:build \
+	sqlite:3 tar:xz xorg
 USE_GNOME=		glib20 libxml2 libxslt
 USE_PERL5=		build
 USE_QT=			core declarative gui location network opengl printsupport \
 			sensors webchannel widgets \
 			buildtools:build declarative-test:build qmake:build testlib:build
-USE_RUBY=		yes
 USE_XORG=		x11 xcomposite xrender
 
 # Fix pkgconfig install paths.
 PATHFIX_CMAKELISTSTXT=	PlatformQt.cmake
-
-RUBY_NO_RUN_DEPENDS=	yes
 
 CMAKE_ARGS=		-DPORT:STRING="Qt" \
 			-DKDE_INSTALL_INCLUDEDIR:PATH="${QT_INCDIR_REL}" \

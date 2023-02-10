@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# PROVIDE: smartctl_exporter
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# smartctl_exporter_enable (bool):	Set to YES to enable smartctl_exporter, default is NO
+# smartctl_exporter_user (string):	Set user to run as, default is root
+# smartctl_exporter_syslog (bool):	Set to YES to use syslog, default is NO
+#
+# Use the following variables to override smartctl_exporter's defaults:
+#
+# smartctl_exporter_listen_address (string): 	Set address to listen on, default is localhost:9633
+# smartctl_exporter_devices (string):		Shell glob (like /dev/ada[0-9]) for all devices
+# smartctl_exporter_log_level (string):		Only log messages with the given severity or above. One of: [debug, info, warn, error]
+# smartctl_exporter_log_format (string):	Output format of log messages. One of: [logfmt, json]
+
+. /etc/rc.subr
+
+name=smartctl_exporter
+rcvar=smartctl_exporter_enable
+
+load_rc_config $name
+
+: ${smartctl_exporter_enable:="NO"}
+: ${smartctl_exporter_user:="root"}
+: ${smartctl_exporter_listen_address:="localhost:9633"}
+: ${smartctl_exporter_devices:="$(geom disk status -s | cut -f1 -d\ | sed -e s,^,/dev/,g)"}
+: ${smartctl_exporter_log_level:=""}
+: ${smartctl_exporter_log_format:=""}
+
+pidfile=/var/run/smartctl_exporter.pid
+command=/usr/sbin/daemon
+command_args="-c -f -P ${pidfile} \
+	${smartctl_exporter_user:+-u "${smartctl_exporter_user}"} \
+	${smartctl_exporter_syslog:+-S} \
+	${smartctl_exporter_daemon} \
+	%%PREFIX%%/libexec/smartctl_exporter \
+	${smartctl_exporter_listen_address:+--web.listen-address="${smartctl_exporter_listen_address}"} \
+	${smartctl_exporter_devices:+$(for diskdev in $(echo "${smartctl_exporter_devices}"); do echo --smartctl.device="${diskdev}"; done | xargs )} \
+	${smartctl_exporter_log_level:+--log.level="${smartctl_exporter_log_level}"} \
+	${smartctl_exporter_log_format:+--log.format="${smartctl_exporter_log_format}"} \
+	${smartctl_exporter_args}"
+
+run_rc_command "$1"

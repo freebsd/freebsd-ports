@@ -1,7 +1,7 @@
 PORTNAME=	django
-PORTVERSION=	3.2.16
+PORTVERSION=	3.2.17
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://media.djangoproject.com/releases/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	32
@@ -32,8 +32,7 @@ PORTDOCS=	*
 SHEBANG_FILES=	django/bin/django-admin.py \
 		django/conf/project_template/manage.py-tpl
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django40 \
-			${PYTHON_PKGNAMEPREFIX}django41
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}django[0-9][0-9]
 
 CPE_VENDOR=	djangoproject
 

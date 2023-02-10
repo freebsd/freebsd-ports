@@ -173,6 +173,8 @@ lib/mysql/plugin/keyring_udf.so
 lib/mysql/plugin/test_udf_services.so
 lib/mysql/plugin/validate_password.so
 lib/mysql/plugin/version_token.so
+@comment lib/private/libprotobuf-lite.so.3.19.4
+@comment lib/private/libprotobuf.so.3.19.4
 libexec/mysqld
 share/man/man1/ibd2sdi.1.gz
 share/man/man1/innochecksum.1.gz
@@ -192,6 +194,7 @@ share/man/man1/mysqldumpslow.1.gz
 share/man/man1/mysqlrouter_passwd.1.gz
 share/man/man1/mysqlrouter_plugin_info.1.gz
 share/man/man1/mysqlrouter.1.gz
+lib/mysql/libprotobuf-lite.so.3.19.4
 share/man/man8/mysqld.8.gz
 %%DATADIR%%/bulgarian/errmsg.sys
 %%DATADIR%%/charsets/Index.xml

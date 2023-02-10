@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-ecma-re-validator>=0.3<1:devel/rubygem-ecma-re-validator \
 		rubygem-uri_template>=0.7<1:net/rubygem-uri_template
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

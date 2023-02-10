@@ -1,7 +1,7 @@
 PORTNAME=	codespell
 PORTVERSION=	2.2.2
 CATEGORIES=	textproc
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Source code spelling checker

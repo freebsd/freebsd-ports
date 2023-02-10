@@ -1,5 +1,6 @@
 PORTNAME=	akonadi
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	databases kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,7 +16,7 @@ BUILD_DEPENDS=	xsltproc:textproc/libxslt
 CONFLICTS=	akonadi akonadi-kf5-git
 
 USES=		cmake compiler:c++11-lib gettext gnome kde:5 qt:5 \
-		shared-mime-info tar:xz xorg
+		shared-mime-info sqlite:3 tar:xz xorg
 USE_GNOME=	libxml2
 USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		dbusaddons guiaddons i18n iconthemes itemmodels itemviews \
@@ -23,58 +24,33 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons crash \
 		designerplugin:build ecm:build \
 		designerplugin:run
 USE_QT=		concurrent core dbus designer gui network sql testlib widgets xml \
-		buildtools:build qmake:build
+		buildtools:build qmake:build \
+		sql-sqlite3:run
 USE_XORG=	x11
-CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include"
+CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
+		-DMYSQLD_EXECUTABLE:FILEPATH="${LOCALBASE}/libexec/mysqld" \
+		-DMYSQLD_SCRIPTS_PATH:PATH="${LOCALBASE}/bin" \
+		-DPOSTGRES_PATH:FILEPATH="${LOCALBASE}/bin/pg_ctl"
 
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
-OPTIONS_MULTI=		DB
-OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
-OPTIONS_SUB=		yes
-OPTIONS_DEFAULT=	MYSQL
+OPTIONS_DEFINE=		DOCS
+OPTIONS_GROUP=		DB
+OPTIONS_GROUP_DB=	MYSQL PGSQL
 
 MYSQL_DESC=		Install MySQL Qt plugin and server
-MYSQL_USES=	mysql:server qt:5
+MYSQL_USES=		mysql:server
 MYSQL_USE=		QT=sql-mysql:run
-MYSQL_CMAKE_BOOL=	AKONADI_BUILD_MYSQL
 
 PGSQL_DESC=		Install PostgreSQL Qt plugin
-# Do not add a dependency on PostgreSQL server as someone preferring
-# it over MySQL might like to use some advanced configuration, like a
-# remote server.
-#PGSQL_USE=	PGSQL=server
-PGSQL_USES=	qt:5
 PGSQL_USE=		QT=sql-pgsql:run
-PGSQL_CMAKE_BOOL=	AKONADI_BUILD_PGSQL
-
-SQLITE_DESC=		Enable SQLite backend
-SQLITE_USES=		qt:5 sqlite:3
-SQLITE_USE=		QT=sql-sqlite3:run
-SQLITE_CMAKE_BOOL=	AKONADI_BUILD_QSQLITE
 
 .include <bsd.port.options.mk>
 
-# Multiple backends may be enabled, but there can be only
-# one default. Set a default (the user can change it locally)
-# based on the selected backends, preferring MySQL (if enabled).
-#
-# If you build this port with only a single backend selected,
-# that one will be the default. This is useful for users of SQLite.
 .if ${PORT_OPTIONS:MMYSQL}
-CMAKE_ARGS+=	-DDATABASE_BACKEND=MYSQL
-.else
-.  if ${PORT_OPTIONS:MPGSQL}
-CMAKE_ARGS+=	-DDATABASE_BACKEND=POSTGRES
-.  else
-.    if ${PORT_OPTIONS:MSQLITE}
-CMAKE_ARGS+=	-DDATABASE_BACKEND=SQLITE
-.    else
-# Nothing else selected, very odd
-CMAKE_ARGS+=	-DDATABASE_BACKEND=MYSQL
-.    endif
-.  endif
+CMAKE_ARGS+=	-DDATABASE_BACKEND:STRING="MYSQL"
+.elif ${PORT_OPTIONS:MPGSQL}
+CMAKE_ARGS+=	-DDATABASE_BACKEND:STRING="POSTGRES"
 .endif
 
 post-patch:

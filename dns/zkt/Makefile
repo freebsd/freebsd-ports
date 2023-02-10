@@ -1,5 +1,5 @@
 PORTNAME=		zkt
-DISTVERSION=		1.1.4
+DISTVERSION=		1.1.6
 CATEGORIES=		dns
 MASTER_SITES=		http://www.hznet.de/dns/zkt/
 

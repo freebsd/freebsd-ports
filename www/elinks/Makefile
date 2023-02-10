@@ -1,7 +1,6 @@
 PORTNAME=	elinks
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.1
-PORTREVISION=	1
+DISTVERSION=	0.16.0
 CATEGORIES=	www
 
 MAINTAINER=	jailbird@fdf.net
@@ -98,15 +97,14 @@ XBELMARKS_MESON_TRUE=	xbel
 TRUECOLORS_MESON_TRUE=	true-color
 
 SPIDERMONKEY_USES=		compiler:c++17-lang sqlite
-SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libmozjs-78.so:lang/spidermonkey78 \
+SPIDERMONKEY_BUILD_DEPENDS=	${LOCALBASE}/lib/libmozjs-102.so:lang/spidermonkey102 \
 				${LOCALBASE}/lib/libxml++-5.0.so:textproc/libxml++
-SPIDERMONKEY_RUN_DEPENDS=	js78:lang/spidermonkey78
 SPIDERMONKEY_LIB_DEPENDS=	libnspr4.so:devel/nspr \
 				libxml++-5.0.so:textproc/libxml++
 SPIDERMONKEY_CFLAGS=		-I${LOCALBASE}/include/nspr \
-				-I${LOCALBASE}/include/js-78
+				-I${LOCALBASE}/include/js-102
 SPIDERMONKEY_CXXFLAGS=		-I${LOCALBASE}/include/nspr \
-				-I${LOCALBASE}/include/js-78
+				-I${LOCALBASE}/include/js-102
 SPIDERMONKEY_LDFLAGS=		-L${LOCALBASE}/lib -lnspr4 -lpthread -lm
 SPIDERMONKEY_MESON_ON=		-Dsm-scripting=true -Dspidermonkey=true
 

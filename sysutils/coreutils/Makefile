@@ -15,6 +15,7 @@ CPE_VENDOR=	gnu
 USE_PERL5=	build	# required for tests and man page generation
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
+PIE_UNSAFE=	yes
 
 GNU_CONFIGURE=	yes
 # A rather nasty hack to stop gnustat from conflicting with base gstat

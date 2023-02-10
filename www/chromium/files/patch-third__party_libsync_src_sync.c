@@ -1,4 +1,4 @@
---- third_party/libsync/src/sync.c.orig	2022-02-07 13:39:41 UTC
+--- third_party/libsync/src/sync.c.orig	2023-02-08 09:03:45 UTC
 +++ third_party/libsync/src/sync.c
 @@ -17,7 +17,9 @@
   */

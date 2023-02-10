@@ -1,5 +1,5 @@
 PORTNAME=	github-linguist
-PORTVERSION=	7.24.0
+PORTVERSION=	7.24.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-cgi>=0:www/rubygem-cgi \
 		rubygem-rugged>=1.0<2:devel/rubygem-rugged
 
 USES=		gem
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/git-linguist bin/github-linguist
 

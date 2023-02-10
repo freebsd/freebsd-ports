@@ -1,0 +1,12 @@
+rathole is a high-performance reverse proxy for NAT traversal.
+
+Features:
+* High Performance: much higher throughput can be achieved than frp, and more
+  stable when handling a large volume of connections.
+* Low Resource Consumption: Consumes much fewer memory than similar tools.
+* Security: Tokens of services are mandatory and service-wise. The server and
+  clients are responsible for their own configs. With the optional Noise
+  Protocol, encryption can be configured at ease. No need to create a
+  self-signed certificate. TLS is also supported.
+* Hot Reload: Services can be added or removed dynamically by hot-reloading the
+  configuration file. HTTP API is WIP.

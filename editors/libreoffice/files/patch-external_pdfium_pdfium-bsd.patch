@@ -1,18 +1,7 @@
 Index: external/pdfium/pdfium-bsd.patch
 --- external/pdfium/pdfium-bsd.patch.orig	2022-02-15 12:21:30 UTC
 +++ external/pdfium/pdfium-bsd.patch
-@@ -0,0 +1,33 @@
-+--- core/fxcrt/cfx_datetime.cpp.orig	Thu Feb  3 17:25:02 2022
-++++ core/fxcrt/cfx_datetime.cpp	Thu Feb
-+@@ -11,7 +11,7 @@
-+ #include "third_party/base/check.h"
-+ 
-+ #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
-+-    BUILDFLAG(IS_APPLE) || defined(OS_ASMJS)
-++    BUILDFLAG(IS_APPLE) || defined(OS_ASMJS) || defined(OS_FREEBSD) ||  defined(OS_OPENBSD)
-+ #include <sys/time.h>
-+ #include <time.h>
-+ #endif
+@@ -0,0 +1,22 @@
 +--- core/fxge/linux/fx_linux_impl.cpp.orig	Thu Feb  3 17:25:22 2022
 ++++ core/fxge/linux/fx_linux_impl.cpp	Thu Feb
 +@@ -18,7 +18,7 @@

@@ -304,7 +304,7 @@ PLIST_SUB+=	NOSETUID=""
 
 .if ${PORT_OPTIONS:MEXTERNAL_LOOKUP}
 CONFIGURE_ARGS+=	--enable-external-lookup
-USE_OPENLDAP=	YES
+USES+=	ldap
 .endif
 
 .if ${PORT_OPTIONS:MUSER_HOMEDIR}
@@ -397,7 +397,7 @@ CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_MODE}
 .	if ${PORT_OPTIONS:MLIGHTTPD}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:www/lighttpd
 .	else
-USES+=		apache:2.2+
+USES+=		apache
 .	endif
 LIB_DEPENDS+=	libgd.so:graphics/gd
 RUN_DEPENDS+=	p5-GD>=0:graphics/p5-GD

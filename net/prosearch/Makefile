@@ -28,7 +28,6 @@ OPTIONS_DEFAULT=	CRAWLER SAMBA APACHE DB MYSQL
 CRAWLER_DESC=		With crawler (nmap, p5-libwww)
 SAMBA_DESC=		crawler with SAMBA (file://)
 RSYNC_DESC=		crawler with RSYNC
-APACHE_DESC=		With web server apache2.2+
 MOD_PERL2_DESC=		With MOD_PERL2
 MOD_FASTCGI_DESC=	With MOD_FASTCGI
 DB_DESC=		With both database server and client
@@ -59,7 +58,7 @@ RUN_DEPENDS+=	rsync:net/rsync
 .endif
 
 .if ${PORT_OPTIONS:MAPACHE}
-USES+=		apache:run,2.2+
+USES+=		apache:run
 .endif
 
 .if ${PORT_OPTIONS:MNGINX}

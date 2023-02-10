@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-afm>=0.2.1<0.3:print/rubygem-afm \
 		rubygem-ttfunk>=0:print/rubygem-ttfunk
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

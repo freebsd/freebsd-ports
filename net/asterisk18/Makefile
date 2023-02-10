@@ -1,5 +1,5 @@
 PORTNAME=	asterisk
-PORTVERSION=	18.15.1
+PORTVERSION=	18.16.0
 CATEGORIES=	net
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/%SUBDIR%/:DEFAULT,g729
 MASTER_SITE_SUBDIR=	asterisk/ \
@@ -143,7 +143,7 @@ GSM_CONFIGURE_WITH=	gsm
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
 
 LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 
 LUA_CONFIGURE_WITH=	lua
 LUA_USES=		lua

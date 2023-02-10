@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-excon>=0.73<1.0:devel/rubygem-excon \
 		rubygem-rexml>=3.2.5:textproc/rubygem-rexml
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

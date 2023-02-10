@@ -1,5 +1,5 @@
 PORTNAME=	faraday
-PORTVERSION=	2.7.1
+PORTVERSION=	2.7.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-faraday-net_http>=2.0<3.1:www/rubygem-faraday-net_http \
 		rubygem-ruby2_keywords>=0.0.4:devel/rubygem-ruby2_keywords
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

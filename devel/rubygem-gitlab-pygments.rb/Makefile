@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-posix-spawn>=0.3.6<0.4:devel/rubygem-posix-spawn \
 		rubygem-yajl-ruby>=1.1.0:devel/rubygem-yajl-ruby
 
 USES=		gem python:env shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

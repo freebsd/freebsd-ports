@@ -152,6 +152,7 @@
     SUBDIR += chocolate-doom
     SUBDIR += chroma
     SUBDIR += chromium-bsu
+    SUBDIR += chromono
     SUBDIR += circuslinux
     SUBDIR += cmatrix
     SUBDIR += cockatrice
@@ -478,6 +479,7 @@
     SUBDIR += lapispuzzle
     SUBDIR += lbreakout
     SUBDIR += lbreakout2
+    SUBDIR += lbreakouthd
     SUBDIR += ldmud
     SUBDIR += leela-zero
     SUBDIR += legend-of-edgar
@@ -707,6 +709,7 @@
     SUBDIR += openclaw
     SUBDIR += openclonk
     SUBDIR += opendungeons
+    SUBDIR += openenroth
     SUBDIR += openfodder
     SUBDIR += opengfx
     SUBDIR += openglad
@@ -779,6 +782,7 @@
     SUBDIR += popstar
     SUBDIR += powder
     SUBDIR += powder-toy
+    SUBDIR += powder-toy-devel
     SUBDIR += powermanga
     SUBDIR += powwow
     SUBDIR += prboom
@@ -1023,6 +1027,7 @@
     SUBDIR += vcmi
     SUBDIR += vectoroids
     SUBDIR += veloren
+    SUBDIR += veloren-weekly
     SUBDIR += violetland
     SUBDIR += viruskiller
     SUBDIR += vitetris

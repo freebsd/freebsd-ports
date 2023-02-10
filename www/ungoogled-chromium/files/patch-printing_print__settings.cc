@@ -1,4 +1,4 @@
---- printing/print_settings.cc.orig	2022-10-01 07:40:07 UTC
+--- printing/print_settings.cc.orig	2023-01-13 08:56:02 UTC
 +++ printing/print_settings.cc
 @@ -272,7 +272,7 @@ PrintSettings& PrintSettings::operator=(const PrintSet
  #endif
@@ -9,7 +9,7 @@
    for (const auto& item : settings.advanced_settings_)
      advanced_settings_.emplace(item.first, item.second.Clone());
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -312,7 +312,7 @@ void PrintSettings::Clear() {
+@@ -313,7 +313,7 @@ void PrintSettings::Clear() {
  #endif
    is_modifiable_ = true;
    pages_per_sheet_ = 1;

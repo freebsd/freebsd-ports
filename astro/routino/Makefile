@@ -15,16 +15,11 @@ USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	jabberd # bin/router
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} 's|doc/routino|share/doc/routino|' \
 		${WRKSRC}/Makefile.conf
 	${REINPLACE_CMD} 's|gcc|${CC}|' \
 		${WRKSRC}/Makefile.conf
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-	${REINPLACE_CMD} -e '/pragma/d' ${WRKSRC}/src/xmlparse.c
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
@@ -40,4 +35,4 @@ post-install:
 	${LN} -sf lib${f:R:R} ${STAGEDIR}${PREFIX}/lib/lib${f:R:R:R}
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

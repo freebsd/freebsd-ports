@@ -1,0 +1,15 @@
+kiss-headers is a basic library, small and concise to help get things done
+regarding headers in a better way.
+
+Features:
+* A backwards-compatible syntax using bracket style.
+* Capability to alter headers using simple, human-readable operator
+  notation + and -.
+* Flexibility if headers are from an email or HTTP, use as you need with one
+  library.
+* Ability to parse any object and extract recognized headers from it, it also
+  supports UTF-8 encoded headers.
+* Fully type-annotated.
+* Provide great auto-completion in Python interpreter or any capable IDE.
+* No dependencies. And never will be.
+* 90% test coverage.

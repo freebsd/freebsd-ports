@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-grpc>=1.0:net/rubygem-grpc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -16,6 +16,5 @@ RUN_DEPENDS=	rubygem-native-package-installer>=1.0.3:devel/rubygem-native-packag
 
 USES=		gem gnome pkgconfig
 USE_GNOME=	cairo
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

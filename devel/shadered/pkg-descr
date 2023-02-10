@@ -1,0 +1,9 @@
+Shader debugger lets you easily find bugs in your shader code. It is simple to
+use - you just need to pause the preview and select the pixel that you want to
+debug. After starting the debugger, you will be able to:
+* step through your shader code line by line
+* run immediate expressions
+* add watches
+* place (conditional) breakpoints
+* see list of all variables and their values
+* hover over expressions and see their value

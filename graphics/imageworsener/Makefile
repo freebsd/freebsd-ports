@@ -1,5 +1,5 @@
 PORTNAME=	imageworsener
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	graphics
 MASTER_SITES=	https://entropymine.com/imageworsener/ \
 		LOCAL/sunpoet

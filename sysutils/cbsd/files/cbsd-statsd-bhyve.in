@@ -40,14 +40,14 @@ if [ ! -f ${subr} ]; then
 fi
 
 . ${globalconf}
-. ${subr}
+. ${subrdir}/nc.subr
 
 cbsd_statsd_bhyve_start()
 {
 	local args= racct_enabled=
 
 	# RACCT enabled?
-	racct_enabled=$( /sbin/sysctl -qn kern.racct.enable )
+	racct_enabled=$( sysctl -qn kern.racct.enable )
 	[ $? -ne 0 ] && err 1 "cbsd-statsd-bhyve: RACCT not enabled"
 	[ "${racct_enabled}" != "1" ] && err 1 "cbsd-statsd-bhyve: RACCT not enabled"
 

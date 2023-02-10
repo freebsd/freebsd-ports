@@ -1,6 +1,20 @@
---- CMakeLists.txt.orig	2022-02-12 22:26:38 UTC
+--- CMakeLists.txt.orig	2023-01-12 00:16:06 UTC
 +++ CMakeLists.txt
-@@ -2566,11 +2566,17 @@ if(NOT DEV)
+@@ -963,13 +963,6 @@ if(NOT CMAKE_OSX_ARCHITECTURES)
+     )
+     list(APPEND RUST_OUTPUTS "${PROJECT_BINARY_DIR}/${CARGO_BUILD_DIR}/${LIBRARY_NAME}")
+   endforeach()
+-  add_custom_command(
+-    OUTPUT ${RUST_OUTPUTS}
+-    COMMAND ${CARGO_BUILD}
+-    WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+-    USES_TERMINAL
+-    DEPENDS ${RUST_SRC}
+-  )
+ else()
+   foreach(rust_target ${RUST_TARGETS})
+     set(LIBRARY_NAME "${CMAKE_STATIC_LIBRARY_PREFIX}ddnet_${rust_target}${CMAKE_STATIC_LIBRARY_SUFFIX}")
+@@ -3004,11 +2997,17 @@ if(NOT DEV)
      install(TARGETS ${TARGET_ANTIBOT} DESTINATION ${CMAKE_INSTALL_LIBDIR}/ddnet COMPONENT server)
    endif()
    install(TARGETS ${TARGETS_TOOLS} DESTINATION ${CMAKE_INSTALL_LIBDIR}/ddnet COMPONENT tools)
@@ -20,5 +34,5 @@
 +      install(FILES other/icons/DDNet-Server_${SIZE}x${SIZE}x32.png DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME ddnet-server.png COMPONENT server)
 +    endif()
    endforeach()
- endif()
- 
+   foreach(file ${VULKAN_SHADER_FILE_LIST})
+     install(FILES ${PROJECT_BINARY_DIR}/${file} DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/ddnet/data/shader/vulkan COMPONENT client)

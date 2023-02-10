@@ -11,13 +11,16 @@ WWW=		https://rpm.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	gsed:textproc/gsed
+BUILD_DEPENDS=	gsed:textproc/gsed \
+		${LOCALBASE}/lib/libelf.so:devel/elfutils
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libnss3.so:security/nss \
 		libzstd.so:archivers/zstd \
-		libgcrypt.so:security/libgcrypt
+		libgcrypt.so:security/libgcrypt \
+		libelf.so:devel/elfutils
 RUN_DEPENDS=	bash:shells/bash \
-		gxargs:misc/findutils
+		gxargs:misc/findutils \
+		${LOCALBASE}/lib/libelf.so:devel/elfutils
 
 USES=		alias bdb sqlite cpe gmake iconv libarchive libtool \
 		lua pathfix pkgconfig shebangfix tar:bzip2
@@ -35,8 +38,7 @@ CONFIGURE_ARGS=	--enable-sqlite=yes\
 		--sysconfdir=${PREFIX}/etc \
 		--localstatedir=/var \
 		--without-javaglue \
-		am_cv_python_version=${PYTHON_VER}${PYTHON_ABIVER} \
-		ac_cv_lib_elf_gelf_getvernaux=no  # otherwise fails to build in presence of devel/elfutils
+		am_cv_python_version=${PYTHON_VER}${PYTHON_ABIVER}
 CONFIGURE_ENV=	LUA_CFLAGS=-I${LUA_INCDIR} \
 		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
 INSTALL_TARGET=	install-strip

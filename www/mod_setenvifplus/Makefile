@@ -12,7 +12,7 @@ WWW=		http://modsetenvifplus.sourceforge.net/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE.txt
 
-USES=		apache:2.4
+USES=		apache
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	${WRKSRC}/apache2/${MODULENAME}.c

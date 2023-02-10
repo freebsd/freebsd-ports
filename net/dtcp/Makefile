@@ -15,9 +15,8 @@ RUN_DEPENDS=	rubygem-dbm>0:databases/rubygem-dbm
 RUN_DEPENDS+=	qpopauth:mail/qpopper
 .endif
 
-USES=		uidfix
+USES=		ruby uidfix
 USE_RC_SUBR=	dtcpc dtcps
-USE_RUBY=	yes
 MAKE_ENV+=	RUBY=${RUBY}
 
 SUB_LIST+=	RUBY=${RUBY}

@@ -3,6 +3,6 @@ bin/jwtgen
 include/jwt.h
 lib/libjwt.a
 lib/libjwt.so
-lib/libjwt.so.1
-lib/libjwt.so.1.8.2
+lib/libjwt.so.2
+lib/libjwt.so.2.8.2
 libdata/pkgconfig/libjwt.pc

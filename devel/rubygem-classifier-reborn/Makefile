@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-fast-stemmer>=1.0<2:devel/rubygem-fast-stemmer \
 		rubygem-matrix>=0.4<1:math/rubygem-matrix
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,6 +1,6 @@
 PORTNAME=	poedit
 PORTVERSION=	3.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/vslavik/${PORTNAME}/releases/download/v${PORTVERSION}-oss/
 

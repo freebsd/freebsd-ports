@@ -1,6 +1,6 @@
---- third_party/nasm/BUILD.gn.orig	2022-10-01 07:40:07 UTC
+--- third_party/nasm/BUILD.gn.orig	2023-01-13 08:56:02 UTC
 +++ third_party/nasm/BUILD.gn
-@@ -59,6 +59,13 @@ config("nasm_config") {
+@@ -63,6 +63,13 @@ config("nasm_config") {
  
    defines = [ "HAVE_CONFIG_H" ]
  

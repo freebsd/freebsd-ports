@@ -1,6 +1,6 @@
 PORTNAME=	cli53
 DISTVERSION=	0.8.18
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	dns
 
 MAINTAINER=	meta@FreeBSD.org
@@ -37,4 +37,3 @@ GO_TARGET=	./cmd/cli53
 PLIST_FILES=	bin/cli53
 
 .include <bsd.port.mk>
-

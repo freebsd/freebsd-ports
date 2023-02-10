@@ -4,7 +4,7 @@ PORTREVISION=	8
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTNAME}-${PORTVERSION:R}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Modular FTP server configurable online using SITE commands
 WWW=		https://sourceforge.net/projects/wzdftpd/
 

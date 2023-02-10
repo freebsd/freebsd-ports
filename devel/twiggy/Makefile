@@ -1,5 +1,6 @@
 PORTNAME=	twiggy
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	yuri@FreeBSD.org

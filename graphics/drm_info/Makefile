@@ -1,6 +1,6 @@
 PORTNAME=	drm_info
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.0
+DISTVERSION=	2.5.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,8 +17,12 @@ USES=		compiler:c11 meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	emersion
-GL_COMMIT=	4f4d727a9757e7ef6bf25ad7d289066990a1face
+GL_COMMIT=	f819ac496d1d9aa5dc5e50bb3bd60dfbd0030ae6
 PLIST_FILES=	bin/${PORTNAME}
+
+# XXX Drop after graphics/libdrm >= 2.4.115,1
+# https://gitlab.freedesktop.org/emersion/drm_info/-/commit/d28844dce8e1
+GL_TUPLE=	mesa:drm:ee558cea20d1f9d822fe1a28e97beaf365bf9d38:libdrm/subprojects/libdrm
 
 OPTIONS_DEFINE=	MANPAGES PCI
 OPTIONS_DEFAULT=MANPAGES PCI

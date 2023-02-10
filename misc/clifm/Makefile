@@ -1,5 +1,5 @@
 PORTNAME=	clifm
-PORTVERSION=	1.9
+PORTVERSION=	1.10
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -16,7 +16,7 @@ USES=		desktop-file-utils gettext-runtime python:run \
 USE_GITHUB=	yes
 GH_ACCOUNT=	leo-arch
 GH_PROJECT=	${PORTNAME}-colors:cfmc
-GH_TAGNAME=	5a9d1ed:cfmc
+GH_TAGNAME=	b07f638:cfmc
 ALL_TARGET=	build
 SHEBANG_FILES=	misc/tools/manpages_comp_gen.py
 

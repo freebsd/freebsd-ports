@@ -1,6 +1,6 @@
 PORTNAME=	blender
 DISTVERSION=	3.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -198,7 +198,7 @@ CMAKE_ARGS+=		-DWITH_GHOST_DEBUG:BOOL=ON
 .include <bsd.port.options.mk>
 
 .if ${ARCH} != amd64 && ${ARCH} != i386
-CMAKE_ARGS+=	-DWITH_CPU_SSE:BOOL=OFF
+CMAKE_ARGS+=	-DWITH_CPU_SIMD:BOOL=OFF
 .endif
 
 post-patch:

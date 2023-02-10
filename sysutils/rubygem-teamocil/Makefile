@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	tmux:sysutils/tmux
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

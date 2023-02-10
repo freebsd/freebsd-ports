@@ -12,7 +12,6 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-msgpack>=1.0.0<2:devel/rubygem-msgpack
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

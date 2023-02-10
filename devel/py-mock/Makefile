@@ -1,5 +1,5 @@
 PORTNAME=	mock
-PORTVERSION=	4.0.3
+PORTVERSION=	5.0.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,16 +10,11 @@ WWW=		https://mock.readthedocs.org/en/latest/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
-
 USES=		python:3.6+
 USE_GITHUB=	yes # tests not packages in PyPI sdist
 GH_ACCOUNT=	testing-cabal
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -v -rs -o addopts=
 
 .include <bsd.port.mk>

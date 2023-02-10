@@ -10,7 +10,6 @@ WWW=		https://github.com/brunofacca/active-record-query-trace
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

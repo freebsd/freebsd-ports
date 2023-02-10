@@ -1,4 +1,4 @@
-/etc/apt/mirror.list
+@sample /etc/apt/mirror.list.sample
 bin/apt-mirror
 share/man/man1/apt-mirror.1.gz
 @dir /etc/apt

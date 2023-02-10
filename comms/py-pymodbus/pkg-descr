@@ -1,0 +1,4 @@
+Pymodbus is a full Modbus protocol implementation offering
+asynchronous communications. It can also be used without any
+third party dependencies (aside from pyserial) if a more
+lightweight project is needed.

@@ -11,7 +11,6 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/doc/text/lgpl-3.txt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

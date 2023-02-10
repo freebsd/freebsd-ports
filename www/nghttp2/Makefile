@@ -1,5 +1,5 @@
 PORTNAME=	nghttp2
-PORTVERSION=	1.48.0
+PORTVERSION=	1.51.0
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSION}/
 
@@ -23,7 +23,7 @@ INSTALL_TARGET=	install-strip
 USE_CXXSTD=	c++14
 USE_RC_SUBR=	nghttpx
 
-OPTIONS_DEFINE=	APP ASIO DOCS EXAMPLES HPACK
+OPTIONS_DEFINE=	APP DOCS EXAMPLES HPACK
 OPTIONS_DEFAULT=APP HPACK
 OPTIONS_SUB=	yes
 APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
@@ -36,11 +36,6 @@ APP_LIB_DEPENDS=	libcares.so:dns/c-ares \
 			libev.so:devel/libev
 APP_USE=		GNOME=libxml2
 APP_USES=		gnome
-ASIO_BUILD_DEPENDS=	boost-libs>=1.54.0:devel/boost-libs
-ASIO_CONFIGURE_OFF=	--with-boost=no
-ASIO_CONFIGURE_ON=	--enable-asio-lib --with-boost-asio --with-boost-system --with-boost-thread
-ASIO_LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
-ASIO_USE=		LDCONFIG=yes
 EXAMPLES_CONFIGURE_ENABLE=	examples
 EXAMPLES_BUILD_DEPENDS=	libevent>=2.0.8:devel/libevent
 EXAMPLES_LIB_DEPENDS=	libevent_openssl.so:devel/libevent

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-console>=1.10<2:devel/rubygem-console \
 		rubygem-timers>=4.1<5:devel/rubygem-timers
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

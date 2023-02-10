@@ -11,9 +11,10 @@ WWW=		http://newfile.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+USES=	ruby
+
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes
-USE_RUBY=	yes
 
 PORTDOCS=	newfile.html
 

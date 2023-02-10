@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json \
 		rubygem-rdoc>=3.9.0:devel/rubygem-rdoc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

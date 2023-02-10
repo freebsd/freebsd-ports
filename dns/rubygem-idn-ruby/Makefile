@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libidn.so:dns/libidn
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

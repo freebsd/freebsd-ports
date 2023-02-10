@@ -1,0 +1,4 @@
+git-cliff can generate changelog files from the Git history by utilizing
+conventional commits as well as regex-powered custom parsers.
+The changelog template can be customized with a configuration file
+to match the desired format.

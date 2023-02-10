@@ -1,9 +1,9 @@
 PORTNAME=	gxplugins
-DISTVERSION=	0.9
+DISTVERSION=	1.0
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/brummer10/GxPlugins.lv2/files/6329721/
+MASTER_SITES=	https://github.com/brummer10/GxPlugins.lv2/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-lv2
-DISTNAME=	GxPlugins_${DISTVERSION}
+DISTNAME=	gxplugins_${DISTVERSION}_src
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Set of LV2 plugins from the guitarix project
@@ -17,12 +17,15 @@ BROKEN_riscv64=	ld: error: gui/pedal.o: cannot link object files with different 
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
 USES=		compiler:c++11-lang gettext-runtime gmake gnome localbase \
-		pkgconfig xorg
+		pkgconfig tar:bz2 xorg
 USE_GNOME=	cairo
 USE_XORG=	x11
 USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, see https://github.com/brummer10/GxPlugins.lv2/issues/9
 
+WRKSRC=		${WRKDIR}/GxPlugins.lv2
+
 MAKE_ENV=	PATH=${LOCALBASE}/bin:/usr/bin:/bin CXXFLAGS="${CXXFLAGS}" # 'ld' needs to be first in the path on 12, -B{path} isn't sufficient for some reason
+MAKE_ARGS=	LIB_EXT=so
 LDFLAGS+=	-B${LOCALBASE}/bin # Use ld provided by USE_BINUTILS for GNU features, otherwise GNU ld isn't called
 
 post-patch:
@@ -33,5 +36,8 @@ post-patch:
 		s| -O2||; s| -Wl,-z,nodelete||; \
 		s|INSTALL_DIR = .*|INSTALL_DIR = ${PREFIX}/lib/lv2|' \
 		${WRKSRC}/*/Makefile
+	# correct ifdefs in gx_platform.h files
+	@${FIND} ${WRKSRC} -name gx_platform.h | \
+		${XARGS} ${REINPLACE_CMD} -e 's/#ifdef __linux__/#if defined(__linux__) || defined(__FreeBSD__)/ ; s/defined(__linux__)/(& || defined(__FreeBSD__))/'
 
 .include <bsd.port.mk>

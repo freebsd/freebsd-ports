@@ -1,0 +1,92 @@
+https://bugzilla.mozilla.org/show_bug.cgi?id=1626236
+https://bug1626236.bmoattachments.org/attachment.cgi?id=9137096
+
+# HG changeset patch
+# User msirringhaus@suse.de
+# Date 1582805876 -3600
+#      Thu Feb 27 13:17:56 2020 +0100
+# Node ID cc3d09abea31068e57f1ab918782f9f86fc6a158
+# Parent  9cd90914846f667f18babc491a74c164ae5d6e9f
+imported patch decoder_workaround.patch
+
+diff --git image/decoders/nsGIFDecoder2.cpp image/decoders/nsGIFDecoder2.cpp
+index ebb0b7d..d52ef47 100644
+--- image/decoders/nsGIFDecoder2.cpp
++++ image/decoders/nsGIFDecoder2.cpp
+@@ -422,6 +422,9 @@ void nsGIFDecoder2::ConvertColormap(uint32_t* aColormap, uint32_t aColors) {
+   MOZ_ASSERT(mSwizzleFn);
+   uint8_t* data = reinterpret_cast<uint8_t*>(aColormap);
+   mSwizzleFn(data, data, aColors);
++#if MOZ_BIG_ENDIAN()
++  SwizzleRow(SurfaceFormat::A8R8G8B8, SurfaceFormat::B8G8R8A8)(data, data, aColors);
++#endif
+ }
+ 
+ LexerResult nsGIFDecoder2::DoDecode(SourceBufferIterator& aIterator,
+diff --git image/decoders/nsJPEGDecoder.cpp image/decoders/nsJPEGDecoder.cpp
+index 9ea4403..d82772c 100644
+--- image/decoders/nsJPEGDecoder.cpp
++++ image/decoders/nsJPEGDecoder.cpp
+@@ -257,6 +257,9 @@ LexerTransition<nsJPEGDecoder::State> nsJPEGDecoder::ReadJPEGData(
+         case JCS_YCbCr:
+           // By default, we will output directly to BGRA. If we need to apply
+           // special color transforms, this may change.
++#if MOZ_BIG_ENDIAN()
++          mInfo.out_color_space = MOZ_JCS_EXT_NATIVE_ENDIAN_XRGB;
++#else
+           switch (SurfaceFormat::OS_RGBX) {
+             case SurfaceFormat::B8G8R8X8:
+               mInfo.out_color_space = JCS_EXT_BGRX;
+@@ -271,6 +274,7 @@ LexerTransition<nsJPEGDecoder::State> nsJPEGDecoder::ReadJPEGData(
+               mState = JPEG_ERROR;
+               return Transition::TerminateFailure();
+           }
++#endif
+           break;
+         case JCS_CMYK:
+         case JCS_YCCK:
+diff --git image/decoders/nsPNGDecoder.cpp image/decoders/nsPNGDecoder.cpp
+index e3e4ef4..3cc7315 100644
+--- image/decoders/nsPNGDecoder.cpp
++++ image/decoders/nsPNGDecoder.cpp
+@@ -356,7 +356,7 @@ LexerResult nsPNGDecoder::DoDecode(SourceBufferIterator& aIterator,
+                                    IResumable* aOnResume) {
+   MOZ_ASSERT(!HasError(), "Shouldn't call DoDecode after error!");
+ 
+-  return mLexer.Lex(aIterator, aOnResume,
++  LexerResult res = mLexer.Lex(aIterator, aOnResume,
+                     [=](State aState, const char* aData, size_t aLength) {
+                       switch (aState) {
+                         case State::PNG_DATA:
+@@ -366,6 +366,14 @@ LexerResult nsPNGDecoder::DoDecode(SourceBufferIterator& aIterator,
+                       }
+                       MOZ_CRASH("Unknown State");
+                     });
++
++#if MOZ_BIG_ENDIAN()
++  if(res.is<TerminalState>() && res.as<TerminalState>() == TerminalState::SUCCESS) {
++      NativeEndian::swapToLittleEndianInPlace<uint32_t>((uint32_t*)(mImageData), mImageDataLength / 4);
++  }
++#endif
++
++  return res;
+ }
+ 
+ LexerTransition<nsPNGDecoder::State> nsPNGDecoder::ReadPNGData(
+diff --git image/decoders/nsWebPDecoder.cpp image/decoders/nsWebPDecoder.cpp
+index e58ca92..2056ebb 100644
+--- image/decoders/nsWebPDecoder.cpp
++++ image/decoders/nsWebPDecoder.cpp
+@@ -247,7 +247,12 @@ nsresult nsWebPDecoder::CreateFrame(const OrientedIntRect& aFrameRect) {
+   // WebP doesn't guarantee that the alpha generated matches the hint in the
+   // header, so we always need to claim the input is BGRA. If the output is
+   // BGRX, swizzling will mask off the alpha channel.
++#if MOZ_BIG_ENDIAN()
++  mBuffer.colorspace = MODE_ARGB;
++  SurfaceFormat inFormat = mFormat;
++#else
+   SurfaceFormat inFormat = SurfaceFormat::OS_RGBA;
++#endif
+ 
+   SurfacePipeFlags pipeFlags = SurfacePipeFlags();
+   if (mFormat == SurfaceFormat::OS_RGBA &&

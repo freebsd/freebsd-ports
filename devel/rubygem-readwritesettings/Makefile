@@ -10,7 +10,6 @@ WWW=		https://github.com/drnic/readwritesettings
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.3
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	2
@@ -16,7 +16,6 @@ LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-ipaddr>=0:net/rubygem-ipaddr
 
 USES=		cpe gem ssl
-USE_RUBY=	yes
 
 CPE_VENDOR=	ruby-lang
 

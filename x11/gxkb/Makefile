@@ -17,6 +17,8 @@ USE_GNOME=	gdkpixbuf2 glib20
 
 PORTDOCS=	AUTHORS NEWS
 
+PORTSCOUT=	skipv:0.9.4	# identical to 0.9.3 but RU and BY flags removed
+
 OPTIONS_DEFINE=	DOCS GTK2
 GTK2_DESC=	Build against GTK version 2, not 3
 

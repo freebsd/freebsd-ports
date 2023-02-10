@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-prawn>=2.4.0<2.5:print/rubygem-prawn \
 		rubygem-prawn-table>=0.2.0<0.3:print/rubygem-prawn-table
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

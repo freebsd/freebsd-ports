@@ -1,5 +1,5 @@
 PORTNAME=	actionmailer
-PORTVERSION=	6.0.6
+PORTVERSION=	6.0.6.1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	60
@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-actionpack60>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-rails-dom-testing-rails60>=2.0<3:textproc/rubygem-rails-dom-testing-rails60
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

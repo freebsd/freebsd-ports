@@ -1,5 +1,5 @@
 PORTNAME=	dynflow
-PORTVERSION=	1.6.7
+PORTVERSION=	1.6.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-algebrick>=0.7.0<0.8:devel/rubygem-algebrick \
 		rubygem-sequel>=4.0.0:devel/rubygem-sequel
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

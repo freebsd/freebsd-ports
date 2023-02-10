@@ -1,5 +1,5 @@
 PORTNAME=	asciidoctor-kroki
-PORTVERSION=	0.5.0
+PORTVERSION=	0.7.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-asciidoctor>=2.0<3:textproc/rubygem-asciidoctor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

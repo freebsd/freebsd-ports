@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-metrics-exporter
-PORTVERSION=	0.1.1
-PORTREVISION=	6
+PORTVERSION=	0.1.2
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -21,4 +21,3 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/bin/srv ${STAGEDIR}${PREFIX}/bin/srv
 
 .include <bsd.port.mk>
-

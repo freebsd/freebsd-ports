@@ -22,7 +22,6 @@ RUN_DEPENDS=	rubygem-activerecord60>=6.0:databases/rubygem-activerecord60 \
 		rubygem-webrick>=0:www/rubygem-webrick
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

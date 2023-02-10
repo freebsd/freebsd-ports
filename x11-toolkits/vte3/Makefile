@@ -1,6 +1,5 @@
 PORTNAME=	vte
-PORTVERSION=	0.68.0
-PORTREVISION=	2
+PORTVERSION=	0.70.2
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -23,18 +22,19 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c++11-lang gettext gnome localbase meson \
 		pkgconfig python:3.6+ tar:xz vala:build
 USE_LDCONFIG=	yes
-USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build
+USE_GNOME=	cairo gdkpixbuf2 gtk30 gtk40 introspection:build
 
 MESON_ARGS=	-Da11y=true \
 		-Dgir=true \
 		-Dfribidi=true \
 		-Dgtk3=true \
-		-Dgtk4=false \
+		-Dgtk4=true \
 		-Dicu=true \
 		-D_systemd=false \
 		-Dvapi=true
 
-PLIST_SUB=	VERSION=2.91
+# shlib version numbers comes from gtk3/4 meson options not from PYTHON_VER
+PLIST_SUB=	VERSION=2.91 VER3=3.91
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
@@ -45,7 +45,7 @@ CPP=		${LOCALBASE}/bin/clang-cpp${_LLVM_VERSION}
 CC=		${LOCALBASE}/bin/clang${_LLVM_VERSION}
 CXX=		${LOCALBASE}/bin/clang++${_LLVM_VERSION}
 BUILD_DEPENDS+=	llvm${_LLVM_VERSION}>=0:devel/llvm${_LLVM_VERSION}
-.if (${LLVM_DEFAULT} == 90 || ${LLVM_DEFAULT} == 10)
+.if ${LLVM_DEFAULT} == 10
 _LLVM_VERSION=	11
 .else
 _LLVM_VERSION=	${LLVM_DEFAULT}

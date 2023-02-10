@@ -3,7 +3,7 @@ PORTVERSION=	2.7.1.p20170921
 PORTREVISION=	1
 CATEGORIES=	benchmarks
 
-MAINTAINER=	marius@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network performance benchmarking package
 WWW=		https://hewlettpackard.github.io/netperf/
 

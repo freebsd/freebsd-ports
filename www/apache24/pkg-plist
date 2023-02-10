@@ -55,6 +55,7 @@ include/apache24/mod_cgi.h
 include/apache24/mod_core.h
 include/apache24/mod_dav.h
 include/apache24/mod_dbd.h
+include/apache24/mod_http2.h
 include/apache24/mod_include.h
 include/apache24/mod_log_config.h
 include/apache24/mod_proxy.h

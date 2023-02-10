@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-eventmachine>=0.12.0:devel/rubygem-eventmachine \
 		rubygem-websocket-driver>=0.5.1:www/rubygem-websocket-driver
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

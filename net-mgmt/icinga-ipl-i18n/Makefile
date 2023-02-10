@@ -1,6 +1,7 @@
 PORTNAME=	icinga-ipl-i18n
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -20,7 +21,7 @@ GH_PROJECT=	ipl-i18n
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-WWWDIR?=	${PREFIX}/www/icingaweb2/modules/${PORTNAME:C/^.*-//}
+WWWDIR?=	${PREFIX}/www/icingaweb2/icinga-php/${PORTNAME:C/^.*-//}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}

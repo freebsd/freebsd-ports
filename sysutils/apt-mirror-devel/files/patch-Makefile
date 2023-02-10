@@ -11,7 +11,7 @@
  	pod2man apt-mirror > $(DESTDIR)$(PREFIX)/share/man/man1/apt-mirror.1
 -	if test ! -f $(DESTDIR)/etc/apt/mirror.list; then install -m 644 -D mirror.list $(DESTDIR)/etc/apt/mirror.list; fi
 +	mkdir -p $(DESTDIR)/etc/apt
-+	if test ! -f $(DESTDIR)/etc/apt/mirror.list; then install -m 644 mirror.list $(DESTDIR)/etc/apt/mirror.list; fi
++	if test ! -f $(DESTDIR)/etc/apt/mirror.list.sample; then install -m 644 mirror.list $(DESTDIR)/etc/apt/mirror.list.sample; fi
  	mkdir -p $(DESTDIR)$(BASE_PATH)/mirror
  	mkdir -p $(DESTDIR)$(BASE_PATH)/skel
  	mkdir -p $(DESTDIR)$(BASE_PATH)/var

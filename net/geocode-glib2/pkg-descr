@@ -1,0 +1,5 @@
+geocode-glib is a convenience library for the geocoding (finding longitude,
+and latitude from an address) and reverse geocoding (finding an address from
+coordinates). It uses Nominatim service to achieve that. It also caches
+(reverse-)geocoding requests for faster results and to avoid unnecessary server
+load.

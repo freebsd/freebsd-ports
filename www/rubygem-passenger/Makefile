@@ -1,5 +1,5 @@
 PORTNAME=	passenger
-PORTVERSION=	6.0.15
+PORTVERSION=	6.0.16
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -30,10 +30,9 @@ OPTIONS_EXCLUDE=DOCS
 SYMLINK_DESC=	Create passenger symlink
 
 .if ${FLAVOR} == apache
-USES+=		apache:2.2+
+USES+=		apache
 .endif
 
-USE_RUBY=	yes
 RAKE_BIN=	${LOCALBASE}/bin/rake
 USES+=		compiler:c++11-lang cpe gem libtool python:env shebangfix ssl
 SHEBANG_FILES=	src/cxx_supportlib/vendor-copy/libuv/gyp_uv.py

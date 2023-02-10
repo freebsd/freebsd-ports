@@ -1,10 +1,10 @@
 PORTNAME=	certmgr
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.0.3
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	security net
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Automated certificate management using a CFSSL CA
 WWW=		https://github.com/cloudflare/certmgr
 

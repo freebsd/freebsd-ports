@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activemodel50>=5.0:databases/rubygem-activemodel50 \
 
 USES=		cpe gem
 CPE_VENDOR=	plataformatec
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

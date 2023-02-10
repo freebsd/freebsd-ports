@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-asciidoctor>=1.5.6<3:textproc/rubygem-asciidoctor \
 		rubygem-gepub>=1.0.0:textproc/rubygem-gepub
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

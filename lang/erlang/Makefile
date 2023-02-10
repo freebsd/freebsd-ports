@@ -1,8 +1,8 @@
 PORTNAME=	erlang
 DISTVERSIONPREFIX=	OTP-
-DISTVERSION=	24.3.4.6
-PORTREVISION=	1
+DISTVERSION=	25.2.1
 PORTEPOCH=	4
+PORTREVISION=	0
 CATEGORIES=	lang parallel java
 DIST_SUBDIR=	erlang
 
@@ -37,9 +37,9 @@ SUB_LIST=	TOOLS_VSN=${TOOLS_VSN}
 WRKSRC=		${WRKSRC_otp}
 
 ERLANG_LIB=	${PORTNAME}
-EI_VSN=		5.2.2
-SNMP_VSN=	5.12
-TOOLS_VSN=	3.5.2
+EI_VSN=		5.3
+SNMP_VSN=	5.13.3
+TOOLS_VSN=	3.5.3
 
 OPTIONS_DEFINE=		CHUNKS CORBA DIRTY DTRACE FOP JAVA KQUEUE MANPAGES ODBC \
 			OPENSSL PDF SCTP SHARING WX
@@ -146,8 +146,9 @@ post-configure-ODBC-off:
 	echo "disabled by port options" > ${WRKSRC}/lib/odbc/SKIP
 
 post-build-CORBA-on:
-	cd ${WRKSRC_corba} \
-		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} ${MAKE_CMD}
+	cd ${WRKSRC_corba} && \
+		${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
+		${MAKE_CMD}
 
 # The man-pages are put (in spite of FreeBSD's port convention) in a private
 # subdir. This is to avoid cluttering up the man page name space. Also the
@@ -155,20 +156,24 @@ post-build-CORBA-on:
 # actual system man pages. (erl.1 and epmd.1 perhaps being the exception).
 
 post-build-FOP-on:
-	@cd ${WRKSRC} && ${MAKE_CMD} docs
+	@cd ${WRKSRC} && \
+		${MAKE_CMD} docs
 .if ${PORT_OPTIONS:MCORBA}
-	cd ${WRKSRC_corba} \
-		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} ${MAKE_CMD} docs
+	cd ${WRKSRC_corba} && \
+		${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
+		${MAKE_CMD} docs
 .endif
 
 post-install:
-	${LN} -sf ../lib/${ERLANG_LIB}/lib/erl_interface-${EI_VSN}/bin/erl_call ${STAGEDIR}${PREFIX}/bin/erl_call
-	${LN} -sf ../lib/${ERLANG_LIB}/lib/snmp-${SNMP_VSN}/bin/snmpc ${STAGEDIR}${PREFIX}/bin/snmpc
+	${LN} -sf ../lib/${ERLANG_LIB}/lib/erl_interface-${EI_VSN}/bin/erl_call \
+		${STAGEDIR}${PREFIX}/bin/erl_call
+	${LN} -sf ../lib/${ERLANG_LIB}/lib/snmp-${SNMP_VSN}/bin/snmpc \
+		${STAGEDIR}${PREFIX}/bin/snmpc
 
 post-install-CORBA-on:
-	cd ${WRKSRC_corba} \
-		&& ${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
-			${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
+	cd ${WRKSRC_corba} && \
+		${SETENV} OVERRIDE_TARGET=${CONFIGURE_TARGET} ERL_TOP=${WRKSRC_otp} \
+		${MAKE_CMD} release RELEASE_ROOT=${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}
 
 post-install-DTRACE-on:
 	${MKDIR} ${STAGEDIR}${DATADIR}/dtrace
@@ -179,15 +184,18 @@ post-install-DTRACE-on:
 
 post-install-FOP-on:
 	@${ECHO_CMD} "MANPATH ${PREFIX}/lib/erlang/man" > ${WRKDIR}/erlang.conf
-	${INSTALL_DATA} ${WRKDIR}/erlang.conf ${STAGEDIR}${PREFIX}/etc/man.d/erlang.conf
-	for SECTION in 1 3 4 6 7; do \
-		${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/man/man$${SECTION}; \
-		${FIND} ${WRKSRC}/erts ${WRKSRC}/lib -type f | ${GREP} doc/man$${SECTION} \
-			| ${XARGS} -J % ${CP} -v % ${STAGEDIR}${PREFIX}/lib/erlang/man/man$${SECTION}; \
-	done
+	${INSTALL_DATA} ${WRKDIR}/erlang.conf \
+		${STAGEDIR}${PREFIX}/etc/man.d/erlang.conf
+	for SECTION in 1 3 4 6 7; \
+		do ${MKDIR} ${STAGEDIR}${PREFIX}/lib/erlang/man/man$${SECTION}; \
+		${FIND} ${WRKSRC}/erts ${WRKSRC}/lib -type f | \
+		${GREP} doc/man$${SECTION} | \
+		${XARGS} -J % ${CP} -v % ${STAGEDIR}${PREFIX}/lib/erlang/man/man$${SECTION}; \
+		done
 .if ${PORT_OPTIONS:MCORBA}
-	${FIND} ${WRKSRC_corba}/lib -type f | ${GREP} doc/man3 \
-		| ${XARGS} -J % ${CP} -v % ${STAGEDIR}${PREFIX}/lib/erlang/man/man3
+	${FIND} ${WRKSRC_corba}/lib -type f | \
+		${GREP} doc/man3 | \
+		${XARGS} -J % ${CP} -v % ${STAGEDIR}${PREFIX}/lib/erlang/man/man3
 .endif
 
 post-install-JAVA-off:
@@ -203,9 +211,11 @@ post-install-OPENSSL-off:
 
 post-install-PDF-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${FIND} ${WRKSRC} -name \*.pdf | ${XARGS} -J % ${CP} -v % ${STAGEDIR}${DOCSDIR}
+	${FIND} ${WRKSRC} -name \*.pdf | \
+		${XARGS} -J % ${CP} -v % ${STAGEDIR}${DOCSDIR}
 .if ${PORT_OPTIONS:MCORBA}
-	${FIND} ${WRKSRC_corba} -name \*.pdf | ${XARGS} -J % ${CP} -v % ${STAGEDIR}${DOCSDIR}
+	${FIND} ${WRKSRC_corba} -name \*.pdf | \
+		${XARGS} -J % ${CP} -v % ${STAGEDIR}${DOCSDIR}
 .endif
 
 post-install-WX-off:
@@ -215,12 +225,16 @@ post-install-WX-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/erlang/lib/wx-*
 
 post-stage:
-	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty -delete
-	@cd ${STAGEDIR}${PREFIX}; ${FIND} lib/${ERLANG_LIB}/* ${DATADIR_REL}/* -type f -o -type l \
-		| ${SORT} >> ${TMPPLIST}
+	${FIND} ${STAGEDIR}${PREFIX}/lib/${ERLANG_LIB}/* -type d -empty \
+		-delete
+	@cd ${STAGEDIR}${PREFIX}; \
+		${FIND} lib/${ERLANG_LIB}/* ${DATADIR_REL}/* -type f -o \
+		-type l | \
+		${SORT} >> ${TMPPLIST}
 	@if [ -d ${STAGEDIR}/${DOCSDIR} ]; then \
-		cd ${STAGEDIR}${PREFIX}; ${FIND} ${DOCSDIR_REL}/* -name \*.pdf \
-			| ${SORT} >> ${TMPPLIST}; \
-	fi
+		cd ${STAGEDIR}${PREFIX}; \
+		${FIND} ${DOCSDIR_REL}/* -name \*.pdf | \
+		${SORT} >> ${TMPPLIST}; \
+		fi
 
 .include <bsd.port.post.mk>

@@ -1,6 +1,6 @@
---- chrome/browser/chrome_content_browser_client.cc.orig	2022-12-02 17:56:32 UTC
+--- chrome/browser/chrome_content_browser_client.cc.orig	2023-01-13 08:56:02 UTC
 +++ chrome/browser/chrome_content_browser_client.cc
-@@ -392,7 +392,7 @@
+@@ -394,7 +394,7 @@
  #include "components/user_manager/user_manager.h"
  #include "services/service_manager/public/mojom/interface_provider_spec.mojom.h"
  #include "storage/browser/file_system/external_mount_points.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/chrome_browser_main_linux.h"
  #elif BUILDFLAG(IS_ANDROID)
  #include "base/android/application_status_listener.h"
-@@ -477,12 +477,12 @@
+@@ -479,12 +479,12 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -24,7 +24,7 @@
  #include "components/crash/core/app/crash_switches.h"
  #include "components/crash/core/app/crashpad.h"
  #endif
-@@ -491,13 +491,13 @@
+@@ -493,13 +493,13 @@
  #include "components/crash/content/browser/crash_handler_host_linux.h"
  #endif
  
@@ -40,7 +40,7 @@
  #include "chrome/browser/enterprise/connectors/device_trust/navigation_throttle.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) ||
          // BUILDFLAG(IS_CHROMEOS_ASH)
-@@ -526,11 +526,11 @@
+@@ -528,11 +528,11 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -52,9 +52,9 @@
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/chrome_browser_main_extra_parts_linux.h"
- #elif defined(USE_OZONE)
+ #elif BUILDFLAG(IS_OZONE)
  #include "chrome/browser/chrome_browser_main_extra_parts_ozone.h"
-@@ -1512,7 +1512,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
+@@ -1598,7 +1598,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
  #elif BUILDFLAG(IS_CHROMEOS_LACROS)
    main_parts = std::make_unique<ChromeBrowserMainPartsLacros>(
        is_integration_test, &startup_data_);
@@ -63,7 +63,7 @@
    main_parts = std::make_unique<ChromeBrowserMainPartsLinux>(
        is_integration_test, &startup_data_);
  #elif BUILDFLAG(IS_ANDROID)
-@@ -1551,7 +1551,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
+@@ -1637,7 +1637,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
        std::make_unique<ChromeBrowserMainExtraPartsViewsLacros>());
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -72,16 +72,16 @@
    main_parts->AddParts(
        std::make_unique<ChromeBrowserMainExtraPartsViewsLinux>());
  #else
-@@ -1572,7 +1572,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
+@@ -1658,7 +1658,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsLacros>());
  #endif
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsLinux>());
- #elif defined(USE_OZONE)
+ #elif BUILDFLAG(IS_OZONE)
    main_parts->AddParts(std::make_unique<ChromeBrowserMainExtraPartsOzone>());
-@@ -1591,7 +1591,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
+@@ -1677,7 +1677,7 @@ ChromeContentBrowserClient::CreateBrowserMainParts(boo
  
    chrome::AddMetricsExtraParts(main_parts.get());
  
@@ -90,7 +90,7 @@
    main_parts->AddParts(
        std::make_unique<
            chrome::enterprise_util::ChromeBrowserMainExtraPartsEnterprise>());
-@@ -2371,6 +2371,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2483,6 +2483,8 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
  #if(0)
  #if BUILDFLAG(IS_ANDROID)
    bool enable_crash_reporter = true;
@@ -99,7 +99,7 @@
  #elif BUILDFLAG(IS_CHROMEOS)
    bool enable_crash_reporter = false;
    if (crash_reporter::IsCrashpadEnabled()) {
-@@ -2735,7 +2737,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
+@@ -2878,7 +2880,7 @@ void ChromeContentBrowserClient::AppendExtraCommandLin
    ThreadProfilerConfiguration::Get()->AppendCommandLineSwitchForChildProcess(
        command_line);
  
@@ -108,7 +108,7 @@
    // Opt into a hardened stack canary mitigation if it hasn't already been
    // force-disabled.
    if (!browser_command_line.HasSwitch(switches::kChangeStackGuardOnFork)) {
-@@ -4182,7 +4184,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
+@@ -4328,7 +4330,7 @@ void ChromeContentBrowserClient::GetAdditionalFileSyst
    }
  }
  
@@ -117,7 +117,7 @@
  void ChromeContentBrowserClient::GetAdditionalMappedFilesForChildProcess(
      const base::CommandLine& command_line,
      int child_process_id,
-@@ -4626,14 +4628,14 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4843,14 +4845,14 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
          &throttles);
    }
  
@@ -134,7 +134,7 @@
    MaybeAddThrottle(enterprise_connectors::DeviceTrustNavigationThrottle::
                         MaybeCreateThrottleFor(handle),
                     &throttles);
-@@ -4660,7 +4662,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
+@@ -4877,7 +4879,7 @@ ChromeContentBrowserClient::CreateThrottlesForNavigati
    }
  #endif
  

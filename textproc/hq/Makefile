@@ -1,0 +1,152 @@
+PORTNAME=	hq
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.2.0
+CATEGORIES=	textproc
+
+MAINTAINER=	yuri@FreeBSD.org
+COMMENT=	jq, but for HTML
+WWW=		https://github.com/orf/hq
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USES=		cargo
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	orf
+
+CARGO_CRATES=	anyhow-1.0.68 \
+		arrayvec-0.7.2 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		block-buffer-0.10.3 \
+		brownstone-3.0.0 \
+		byteorder-1.4.3 \
+		cc-1.0.78 \
+		cfg-if-1.0.0 \
+		clap-4.0.29 \
+		clap_derive-4.0.21 \
+		clap_lex-0.3.0 \
+		convert_case-0.4.0 \
+		cpufeatures-0.2.5 \
+		crypto-common-0.1.6 \
+		cssparser-0.27.2 \
+		cssparser-macros-0.6.0 \
+		derive_more-0.99.17 \
+		digest-0.10.6 \
+		dtoa-0.4.8 \
+		dtoa-short-0.3.3 \
+		ego-tree-0.6.2 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
+		futf-0.1.5 \
+		fxhash-0.2.1 \
+		generic-array-0.14.6 \
+		getopts-0.2.21 \
+		getrandom-0.1.16 \
+		getrandom-0.2.8 \
+		heck-0.4.0 \
+		hermit-abi-0.2.6 \
+		html5ever-0.26.0 \
+		indent_write-2.2.0 \
+		io-lifetimes-1.0.3 \
+		is-terminal-0.4.2 \
+		itoa-0.4.8 \
+		itoa-1.0.5 \
+		joinery-2.1.0 \
+		libc-0.2.138 \
+		linux-raw-sys-0.1.4 \
+		lock_api-0.4.9 \
+		log-0.4.17 \
+		mac-0.1.1 \
+		markup5ever-0.11.0 \
+		matches-0.1.9 \
+		memchr-2.5.0 \
+		minimal-lexical-0.2.1 \
+		new_debug_unreachable-1.0.4 \
+		nodrop-0.1.14 \
+		nom-7.1.1 \
+		nom-supreme-0.8.0 \
+		once_cell-1.16.0 \
+		os_str_bytes-6.4.1 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.5 \
+		pest-2.5.1 \
+		pest_derive-2.5.1 \
+		pest_generator-2.5.1 \
+		pest_meta-2.5.1 \
+		phf-0.8.0 \
+		phf-0.10.1 \
+		phf_codegen-0.8.0 \
+		phf_codegen-0.10.0 \
+		phf_generator-0.8.0 \
+		phf_generator-0.10.0 \
+		phf_macros-0.8.0 \
+		phf_shared-0.8.0 \
+		phf_shared-0.10.0 \
+		ppv-lite86-0.2.17 \
+		precomputed-hash-0.1.1 \
+		proc-macro-error-1.0.4 \
+		proc-macro-error-attr-1.0.4 \
+		proc-macro-hack-0.5.20+deprecated \
+		proc-macro2-1.0.49 \
+		quote-1.0.23 \
+		rand-0.7.3 \
+		rand-0.8.5 \
+		rand_chacha-0.2.2 \
+		rand_chacha-0.3.1 \
+		rand_core-0.5.1 \
+		rand_core-0.6.4 \
+		rand_hc-0.2.0 \
+		rand_pcg-0.2.1 \
+		redox_syscall-0.2.16 \
+		rustc_version-0.4.0 \
+		rustix-0.36.5 \
+		ryu-1.0.12 \
+		scopeguard-1.1.0 \
+		scraper-0.14.0 \
+		selectors-0.22.0 \
+		semver-1.0.16 \
+		serde-1.0.151 \
+		serde_json-1.0.91 \
+		servo_arc-0.1.1 \
+		sha1-0.10.5 \
+		siphasher-0.3.10 \
+		smallvec-1.10.0 \
+		stable_deref_trait-1.2.0 \
+		string_cache-0.8.4 \
+		string_cache_codegen-0.5.2 \
+		strsim-0.10.0 \
+		syn-1.0.107 \
+		tendril-0.4.3 \
+		termcolor-1.1.3 \
+		thin-slice-0.1.1 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
+		typenum-1.16.0 \
+		ucd-trie-0.1.5 \
+		unicode-ident-1.0.6 \
+		unicode-width-0.1.10 \
+		utf-8-0.7.6 \
+		version_check-0.9.4 \
+		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		winapi-0.3.9 \
+		winapi-i686-pc-windows-gnu-0.4.0 \
+		winapi-util-0.1.5 \
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.42.0
+
+PLIST_FILES=	bin/${PORTNAME}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+
+.include <bsd.port.mk>

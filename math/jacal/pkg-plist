@@ -18,6 +18,7 @@ lib/jacal/grammar.scm
 lib/jacal/hensel.scm
 lib/jacal/hist.scm
 lib/jacal/info.scm
+lib/jacal/init.math
 lib/jacal/interpolate.scm
 lib/jacal/jacalcat
 lib/jacal/math.scm

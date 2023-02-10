@@ -35,7 +35,7 @@ MYSQL_CLIENT_DESC=	MySQL client connector support
 MYSQL_SERVER_DESC=	MySQL server support
 NGINX_DESC=		NGINX web server
 
-APACHE_USES=		apache:run,2.2+ php:web
+APACHE_USES=		apache:run php:web
 LIGHTTPD_RUN_DEPENDS=	lighttpd:www/lighttpd
 LIGHTTPD_USES=		php:web
 NGINX_RUN_DEPENDS=	nginx:www/nginx

@@ -1,5 +1,5 @@
 PORTNAME=	recaptcha
-PORTVERSION=	4.14.0
+PORTVERSION=	5.12.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

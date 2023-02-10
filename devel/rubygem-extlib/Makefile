@@ -11,7 +11,6 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		cpe gem
 
 CPE_VENDOR=	dan_kubb

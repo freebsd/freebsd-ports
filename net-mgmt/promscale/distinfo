@@ -1,5 +1,5 @@
-TIMESTAMP = 1667413355
-SHA256 (go/net-mgmt_promscale/timescale-promscale-0.16.0_GH0/go.mod) = bd92e95e8efba0c6ec0a354ba8f5b0556f697a32bae66d753ae46067fbcc844c
-SIZE (go/net-mgmt_promscale/timescale-promscale-0.16.0_GH0/go.mod) = 9884
-SHA256 (go/net-mgmt_promscale/timescale-promscale-0.16.0_GH0/timescale-promscale-0.16.0_GH0.tar.gz) = 37d54b0b4d5a12aa7b0e56f50f20b5222036e5431e4929f9e4894ddd246e94df
-SIZE (go/net-mgmt_promscale/timescale-promscale-0.16.0_GH0/timescale-promscale-0.16.0_GH0.tar.gz) = 4278422
+TIMESTAMP = 1674050047
+SHA256 (go/net-mgmt_promscale/timescale-promscale-0.17.0_GH0/go.mod) = 1184f4149c4237753bb33ede579bb545f61865b97d2f3281ef9fb233b9052577
+SIZE (go/net-mgmt_promscale/timescale-promscale-0.17.0_GH0/go.mod) = 9914
+SHA256 (go/net-mgmt_promscale/timescale-promscale-0.17.0_GH0/timescale-promscale-0.17.0_GH0.tar.gz) = 7179b45faf5fb820e89d1f3a5ffa742b538f5d23b72bee6320e82b427007e8be
+SIZE (go/net-mgmt_promscale/timescale-promscale-0.17.0_GH0/timescale-promscale-0.17.0_GH0.tar.gz) = 4378176

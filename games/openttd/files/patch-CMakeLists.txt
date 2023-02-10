@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2022-04-02 10:38:20 UTC
++++ CMakeLists.txt
+@@ -133,7 +133,9 @@ if(NOT OPTION_DEDICATED)
+             if(NOT SDL2_FOUND)
+                 find_package(SDL)
+             endif()
++if(WITH_FLUIDSYNTH)
+             find_package(Fluidsynth)
++endif()
+             find_package(Fontconfig)
+             find_package(ICU OPTIONAL_COMPONENTS i18n lx)
+         endif()
+@@ -260,7 +262,9 @@ link_package(LIBLZMA TARGET LibLZMA::LibLZMA ENCOURAGE
+ link_package(LZO)
+ 
+ if(NOT OPTION_DEDICATED)
++  if(WITH_FLUIDSYNTH)
+     link_package(Fluidsynth)
++  endif()
+     link_package(SDL)
+     link_package(SDL2 TARGET SDL2::SDL2)
+     link_package(Allegro)

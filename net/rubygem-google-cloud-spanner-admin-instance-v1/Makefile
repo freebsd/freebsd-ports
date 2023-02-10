@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-gapic-common>=0.10<2.0:devel/rubygem-gapic-common \
 		rubygem-grpc-google-iam-v1>=1.1<2:devel/rubygem-grpc-google-iam-v1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

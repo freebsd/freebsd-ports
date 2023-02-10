@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-ffi>=1.12<2:devel/rubygem-ffi
 
 USES=		gem gnome shebangfix
 USE_GNOME=	glib20
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

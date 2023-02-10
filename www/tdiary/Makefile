@@ -22,7 +22,6 @@ RUN_DEPENDS=	rubygem-bundler>=2.0.2:sysutils/rubygem-bundler \
 		rubygem-rake>=13.0.6:devel/rubygem-rake
 
 USES=		cpe shebangfix
-USE_RUBY=	yes
 
 SHEBANG_FILES=	bin/tdiary index.fcgi index.rb misc/convert2.rb misc/migrate.rb \
 		misc/plugin/xmlrpc/xmlrpc.rb update.fcgi update.rb

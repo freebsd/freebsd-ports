@@ -1,4 +1,4 @@
---- config/puma.rb.example.orig	2021-05-19 15:44:42 UTC
+--- config/puma.rb.example.orig	2022-11-21 09:46:38 UTC
 +++ config/puma.rb.example
 @@ -5,11 +5,11 @@
  # The default is "config.ru".
@@ -32,7 +32,7 @@
  
  on_restart do
    # Signal application hooks that we're about to restart
-@@ -76,7 +76,7 @@ wait_for_less_busy_worker ENV.fetch('PUMA_WAIT_FOR_LES
+@@ -81,7 +81,7 @@ wait_for_less_busy_worker ENV.fetch('PUMA_WAIT_FOR_LES
  nakayoshi_fork unless ENV['DISABLE_PUMA_NAKAYOSHI_FORK'] == 'true'
  
  # Use json formatter

@@ -1,6 +1,6 @@
 PORTNAME=	icingaweb2-module-cube
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.1
+DISTVERSION=	1.2.2
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -11,7 +11,7 @@ WWW=		https://github.com/Icinga/icingaweb2-module-cube
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.4.1:net-mgmt/icingaweb2@${PHP_FLAVOR}
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.11.3:net-mgmt/icingaweb2@${PHP_FLAVOR}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	icinga

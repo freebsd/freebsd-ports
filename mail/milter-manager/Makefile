@@ -17,11 +17,10 @@ RUN_DEPENDS=	rubygem-gio2>0:devel/rubygem-gio2 \
 		rubygem-rexml>0:textproc/rubygem-rexml
 
 USES=		compiler:c++11-lang gettext gmake gnome libtool pathfix \
-		pkgconfig
+		pkgconfig ruby
 USE_GNOME=	glib20 intltool
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	milter-manager
-USE_RUBY=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR} \

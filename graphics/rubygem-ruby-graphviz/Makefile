@@ -14,7 +14,6 @@ RUN_DEPENDS=	gxl2dot:graphics/graphviz \
 		rubygem-rexml>=0:textproc/rubygem-rexml
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

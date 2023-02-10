@@ -1,5 +1,5 @@
 PORTNAME=	pjsip
-DISTVERSION=	2.12.1
+DISTVERSION=	2.13
 CATEGORIES=	net
 
 MAINTAINER=	ports@FreeBSD.org
@@ -13,9 +13,11 @@ LIB_DEPENDS=	libportaudio.so:audio/portaudio \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		cpe gmake localbase pathfix ssl tar:bz2
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_PROJECT=	pjproject
-USE_LDCONFIG=	yes
+
 CPE_VENDOR=	teluu
 
 GNU_CONFIGURE=	yes
@@ -97,9 +99,6 @@ WEBRTC_CONFIGURE_OFF=		--disable-libwebrtc
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/pkgconfig.py
-	@${REINPLACE_CMD} -e 's/$$(APP_LDFLAGS) \{0,1\}//' \
-		-e 's/$$(OS_LDFLAGS)/$$(APP_LDFLAGS) &/' \
-		${WRKSRC}/*/build/Makefile
 	@${CP} ${FILESDIR}/config_site.h \
 		${WRKSRC}/pjlib/include/pj/config_site.h
 

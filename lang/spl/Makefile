@@ -4,7 +4,7 @@ PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://shakespearelang.sourceforge.net/download/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Shakespeare programming language
 WWW=		http://shakespearelang.sourceforge.net/
 

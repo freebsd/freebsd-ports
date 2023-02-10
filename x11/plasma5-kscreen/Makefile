@@ -10,10 +10,12 @@ LIB_DEPENDS=	libxcb-util.so:x11/xcb-util
 
 USES=		cmake compiler:c++11-lang gettext kde:5 qt:5 tar:xz xorg
 USE_KDE=	auth codecs config configwidgets coreaddons dbusaddons \
-		globalaccel i18n kcmutils kdeclarative libkscreen package \
-		plasma-framework service widgetsaddons windowsystem xmlgui \
+		globalaccel i18n kcmutils kdeclarative layer-shell-qt \
+		libkscreen package plasma-framework service widgetsaddons \
+		windowsystem xmlgui \
 		ecm:build
-USE_QT=		core dbus declarative gui network sensors widgets x11extras xml \
+USE_QT=		core dbus declarative gui network sensors widgets x11extras \
+		xml \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11 xcb xext xi
 

@@ -1,6 +1,6 @@
 %%WWWDIR%%/.mailmap
 %%WWWDIR%%/AUTHORS
-%%WWWDIR%%/COPYING
+%%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/application/controllers/IntegrationsController.php
 %%WWWDIR%%/application/forms/Config/TtsIntegrationConfigForm.php
@@ -9,6 +9,10 @@
 %%WWWDIR%%/application/views/scripts/integrations/remove.phtml
 %%WWWDIR%%/application/views/scripts/integrations/update.phtml
 %%WWWDIR%%/configuration.php
+%%WWWDIR%%/doc/01-About.md
+%%WWWDIR%%/doc/02-Installation.md
+%%WWWDIR%%/doc/02-Installation.md.d/From-Source.md
+%%WWWDIR%%/doc/03-Configuration.md
 %%WWWDIR%%/library/Generictts/Ticket.php
 %%WWWDIR%%/module.info
 %%WWWDIR%%/public/css/module.less

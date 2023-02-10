@@ -15,7 +15,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-rexml>=0:textproc/rubygem-rexml
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

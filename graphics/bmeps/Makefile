@@ -1,5 +1,5 @@
 PORTNAME=	bitmap2pp
-DISTVERSION=	4.34.1
+DISTVERSION=	4.35.0
 CATEGORIES=	graphics perl5
 MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION}
 DISTNAME=	dktools-${PORTVERSION}
@@ -11,11 +11,9 @@ WWW=		https://sourceforge.net/p/dktools/wiki/bitmap2pp/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libpng.so:graphics/png \
-		libtiff.so:graphics/tiff
+LIB_DEPENDS=	libpng.so:graphics/png libtiff.so:graphics/tiff
 
 USES=		jpeg localbase:ldflags
-
 GNU_CONFIGURE=	yes
 # We do not want to include sys/termios.h even if it exists, and we do not want
 # to depend on BDB for db.h (it is used by other parts of dktools).

@@ -1,9 +1,10 @@
 PORTNAME=	goreleaser
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.14.1
+DISTVERSION=	1.15.2
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Deliver Go binaries as fast and easily as possible
 WWW=		https://goreleaser.com/
 

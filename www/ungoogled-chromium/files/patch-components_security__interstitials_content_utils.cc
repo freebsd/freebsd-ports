@@ -1,6 +1,6 @@
---- components/security_interstitials/content/utils.cc.orig	2022-10-01 07:40:07 UTC
+--- components/security_interstitials/content/utils.cc.orig	2023-01-13 08:56:02 UTC
 +++ components/security_interstitials/content/utils.cc
-@@ -34,7 +34,7 @@ void LaunchDateAndTimeSettings() {
+@@ -38,7 +38,7 @@ void LaunchDateAndTimeSettings() {
  #if BUILDFLAG(IS_ANDROID)
    JNIEnv* env = base::android::AttachCurrentThread();
    Java_DateAndTimeSettingsHelper_openDateAndTimeSettings(env);

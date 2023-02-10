@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-formatador>=0.2<2.0:devel/rubygem-formatador
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

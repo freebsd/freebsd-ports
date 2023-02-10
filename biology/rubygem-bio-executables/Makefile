@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-bio>=2.0.0:biology/rubygem-bio \
 		rubygem-bio-old-biofetch-emulator>=0.0.1:biology/rubygem-bio-old-biofetch-emulator
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

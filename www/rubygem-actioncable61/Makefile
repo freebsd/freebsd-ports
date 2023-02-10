@@ -1,5 +1,5 @@
 PORTNAME=	actioncable
-PORTVERSION=	6.1.7
+PORTVERSION=	6.1.7.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-actionpack61>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-websocket-driver>=0.6.1:www/rubygem-websocket-driver
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

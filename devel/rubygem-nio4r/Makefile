@@ -10,6 +10,5 @@ WWW=		https://github.com/socketry/nio4r
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

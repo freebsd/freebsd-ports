@@ -1,7 +1,7 @@
 PORTNAME=	conan
 DISTVERSION=	1.53.0
 CATEGORIES=	sysutils python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C/C++ package manager

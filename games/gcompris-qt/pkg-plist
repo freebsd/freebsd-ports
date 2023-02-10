@@ -1,10 +1,5 @@
 bin/gcompris-qt
 share/applications/org.kde.gcompris.desktop
-share/doc/HTML/en/gcompris-qt/activity-config.png
-share/doc/HTML/en/gcompris-qt/dataset.png
-share/doc/HTML/en/gcompris-qt/gcompris-main-menu.png
-share/doc/HTML/en/gcompris-qt/index.cache.bz2
-share/doc/HTML/en/gcompris-qt/index.docbook
 %%DATADIR%%/rcc/activities.rcc
 %%DATADIR%%/rcc/advanced_colors.rcc
 %%DATADIR%%/rcc/algebra_by.rcc
@@ -12,8 +7,8 @@ share/doc/HTML/en/gcompris-qt/index.docbook
 %%DATADIR%%/rcc/algebra_minus.rcc
 %%DATADIR%%/rcc/algebra_plus.rcc
 %%DATADIR%%/rcc/algorithm.rcc
-%%DATADIR%%/rcc/align4_2players.rcc
 %%DATADIR%%/rcc/align4.rcc
+%%DATADIR%%/rcc/align4_2players.rcc
 %%DATADIR%%/rcc/alphabet-sequence.rcc
 %%DATADIR%%/rcc/analog_electricity.rcc
 %%DATADIR%%/rcc/baby_keyboard.rcc
@@ -46,6 +41,7 @@ share/doc/HTML/en/gcompris-qt/index.docbook
 %%DATADIR%%/rcc/color_mix.rcc
 %%DATADIR%%/rcc/color_mix_light.rcc
 %%DATADIR%%/rcc/colors.rcc
+%%DATADIR%%/rcc/comparator.rcc
 %%DATADIR%%/rcc/core.rcc
 %%DATADIR%%/rcc/crane.rcc
 %%DATADIR%%/rcc/details.rcc
@@ -66,6 +62,8 @@ share/doc/HTML/en/gcompris-qt/index.docbook
 %%DATADIR%%/rcc/find_the_day.rcc
 %%DATADIR%%/rcc/followline.rcc
 %%DATADIR%%/rcc/football.rcc
+%%DATADIR%%/rcc/fractions_create.rcc
+%%DATADIR%%/rcc/fractions_find.rcc
 %%DATADIR%%/rcc/geo-country.rcc
 %%DATADIR%%/rcc/geography.rcc
 %%DATADIR%%/rcc/gletters.rcc
@@ -93,6 +91,7 @@ share/doc/HTML/en/gcompris-qt/index.docbook
 %%DATADIR%%/rcc/learn_digits.rcc
 %%DATADIR%%/rcc/learn_quantities.rcc
 %%DATADIR%%/rcc/learn_subtractions.rcc
+%%DATADIR%%/rcc/left_right_click.rcc
 %%DATADIR%%/rcc/leftright.rcc
 %%DATADIR%%/rcc/letter-in-word.rcc
 %%DATADIR%%/rcc/lightsoff.rcc
@@ -132,6 +131,7 @@ share/doc/HTML/en/gcompris-qt/index.docbook
 %%DATADIR%%/rcc/money_back.rcc
 %%DATADIR%%/rcc/money_back_cents.rcc
 %%DATADIR%%/rcc/money_cents.rcc
+%%DATADIR%%/rcc/morse_code.rcc
 %%DATADIR%%/rcc/mosaic.rcc
 %%DATADIR%%/rcc/nine_men_morris.rcc
 %%DATADIR%%/rcc/nine_men_morris_2players.rcc
@@ -178,6 +178,9 @@ share/doc/HTML/en/gcompris-qt/index.docbook
 %%DATADIR%%/rcc/superbrain.rcc
 %%DATADIR%%/rcc/tangram.rcc
 %%DATADIR%%/rcc/target.rcc
+%%DATADIR%%/rcc/tens_complement_find.rcc
+%%DATADIR%%/rcc/tens_complement_swap.rcc
+%%DATADIR%%/rcc/tens_complement_use.rcc
 %%DATADIR%%/rcc/tic_tac_toe.rcc
 %%DATADIR%%/rcc/tic_tac_toe_2players.rcc
 %%DATADIR%%/rcc/traffic.rcc
@@ -199,6 +202,7 @@ share/doc/HTML/en/gcompris-qt/index.docbook
 %%DATADIR%%/translations/gcompris_fi.qm
 %%DATADIR%%/translations/gcompris_fr.qm
 %%DATADIR%%/translations/gcompris_he.qm
+%%DATADIR%%/translations/gcompris_hr.qm
 %%DATADIR%%/translations/gcompris_hu.qm
 %%DATADIR%%/translations/gcompris_id.qm
 %%DATADIR%%/translations/gcompris_it.qm
@@ -212,6 +216,7 @@ share/doc/HTML/en/gcompris-qt/index.docbook
 %%DATADIR%%/translations/gcompris_pt_BR.qm
 %%DATADIR%%/translations/gcompris_ro.qm
 %%DATADIR%%/translations/gcompris_ru.qm
+%%DATADIR%%/translations/gcompris_sk.qm
 %%DATADIR%%/translations/gcompris_sl.qm
 %%DATADIR%%/translations/gcompris_sq.qm
 %%DATADIR%%/translations/gcompris_sv.qm

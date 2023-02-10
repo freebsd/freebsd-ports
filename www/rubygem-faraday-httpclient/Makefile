@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-httpclient>=2.2:www/rubygem-httpclient
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

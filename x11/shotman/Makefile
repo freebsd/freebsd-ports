@@ -1,18 +1,14 @@
 PORTNAME=	shotman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
-PORTREVISION=	1
+DISTVERSION=	0.4.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~whynothugo/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 # XXX Teach USES=cargo to not override default DISTFILES
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	https://git.sr.ht/~whynothugo/${PORTNAME}/commit/
-PATCHFILES+=	020226f74730.patch:-p1 # manpage
-
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Uncompromising screenshot GUI for Wayland
-WWW=		https://git.sr.ht/~whynothugo/shotman
+WWW=		https://sr.ht/~whynothugo/shotman
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENCE.md
@@ -20,7 +16,12 @@ LICENSE_FILE=	${WRKSRC}/LICENCE.md
 LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon
 
 USES=		cargo pkgconfig
-PLIST_FILES=	bin/${PORTNAME}
+CARGO_ENV=	SHOTMAN_VERSION="${DISTVERSIONFULL}"
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}_completions \
+		share/bash-completion/completions/${PORTNAME} \
+		share/fish/vendor_completions.d/${PORTNAME}.fish \
+		share/zsh/site-functions/_${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES SLURP
 OPTIONS_DEFAULT=MANPAGES SLURP
@@ -37,5 +38,12 @@ do-build-MANPAGES-on:
 do-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 \
 		${STAGEDIR}${PREFIX}/${MANPAGES_PLIST_FILES:H}
+
+post-install:
+.for _shell in bash fish zsh
+	@${ECHO_MSG} "Generating ${STAGEDIR}${PREFIX}/${PLIST_FILES:M*${_shell}*}"
+	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/${PORTNAME}_completions ${_shell} \
+		>${STAGEDIR}${PREFIX}/${PLIST_FILES:M*${_shell}*}
+.endfor
 
 .include <bsd.port.mk>

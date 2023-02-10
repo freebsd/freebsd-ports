@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${INSTRUCTIONS}:instructions
 EXTRACT_ONLY=	${DISTFILES:C,:[^:]*$,,:N*.xml}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Code Analyzer from the uops.info project
 WWW=		https://uops.info/uiCA.html
 

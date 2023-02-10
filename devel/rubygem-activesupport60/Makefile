@@ -1,5 +1,5 @@
 PORTNAME=	activesupport
-PORTVERSION=	6.0.6
+PORTVERSION=	6.0.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	60
@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.2<2:devel/rubygem-concurrent-ruby \
 		rubygem-zeitwerk>=2.2.2<3:devel/rubygem-zeitwerk
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

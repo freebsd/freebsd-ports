@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-json>=0:devel/rubygem-json
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

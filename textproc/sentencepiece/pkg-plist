@@ -1,0 +1,16 @@
+bin/spm_decode
+bin/spm_encode
+bin/spm_export_vocab
+bin/spm_normalize
+bin/spm_train
+include/sentencepiece_processor.h
+include/sentencepiece_trainer.h
+lib/libsentencepiece.a
+lib/libsentencepiece.so
+lib/libsentencepiece.so.0
+lib/libsentencepiece.so.0.0.0
+lib/libsentencepiece_train.a
+lib/libsentencepiece_train.so
+lib/libsentencepiece_train.so.0
+lib/libsentencepiece_train.so.0.0.0
+libdata/pkgconfig/sentencepiece.pc

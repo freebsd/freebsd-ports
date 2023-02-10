@@ -327,6 +327,9 @@ bin/gedkeeper
 %%DATADIR%%/plugins/GEDmillPlugin.dll
 %%DATADIR%%/plugins/GEDmillPlugin.enu
 %%DATADIR%%/plugins/GEDmillPlugin.rus
+%%DATADIR%%/plugins/GKBackupPlugin.dll
+%%DATADIR%%/plugins/GKBackupPlugin.enu
+%%DATADIR%%/plugins/GKBackupPlugin.rus
 %%DATADIR%%/plugins/GKCalculatorPlugin.dll
 %%DATADIR%%/plugins/GKCalculatorPlugin.enu
 %%DATADIR%%/plugins/GKCalculatorPlugin.pol
@@ -357,6 +360,11 @@ bin/gedkeeper
 %%DATADIR%%/plugins/GKFlowInputPlugin.ukr
 %%DATADIR%%/plugins/GKFoldersPlugin.dll
 %%DATADIR%%/plugins/GKFoldersPlugin.enu
+%%DATADIR%%/plugins/GKGenetix.Core.dll
+%%DATADIR%%/plugins/GKGenetix.UI.WinForms.dll
+%%DATADIR%%/plugins/GKGenetixPlugin.dll
+%%DATADIR%%/plugins/GKGenetixPlugin.enu
+%%DATADIR%%/plugins/GKGenetixPlugin.rus
 %%DATADIR%%/plugins/GKHistoryDataPlugin.dll
 %%DATADIR%%/plugins/GKHistoryDataPlugin.enu
 %%DATADIR%%/plugins/GKHistoryDataPlugin.rus
@@ -463,6 +471,7 @@ bin/gedkeeper
 %%DATADIR%%/scripts/csv_import2.lua
 %%DATADIR%%/scripts/delete_filtered.lua
 %%DATADIR%%/scripts/groups2places.lua
+%%DATADIR%%/scripts/set_media_prim.lua
 %%DATADIR%%/scripts/sofonov_import.lua
 %%DATADIR%%/scripts/test.lua
 %%DATADIR%%/scripts/test_def_pat.lua

@@ -1,0 +1,12 @@
+https://sourceforge.net/p/lgames/bugs/96/
+--- src/Makefile.am.orig	2022-12-22 18:40:51 UTC
++++ src/Makefile.am
+@@ -4,7 +4,7 @@ lbreakouthd_SOURCES = sdl.cpp sdl.h view.h view.cpp \
+ 	config.cpp config.h hiscores.cpp hiscores.h theme.cpp theme.h \
+ 	sprite.cpp sprite.h mixer.h menu.cpp menu.h selectdlg.h selectdlg.cpp \
+ 	editor.h editor.cpp
+-lbreakouthd_LDADD = ../libgame/libgame.a
++lbreakouthd_LDADD = ../libgame/libgame.a @INTLLIBS@
+ 
+ EXTRA_DIST = empty.hscr
+ 

@@ -26,6 +26,7 @@ include/Wrapland/Client/output.h
 include/Wrapland/Client/output_configuration_v1.h
 include/Wrapland/Client/output_device_v1.h
 include/Wrapland/Client/output_management_v1.h
+include/Wrapland/Client/plasma_activation_feedback.h
 include/Wrapland/Client/plasmashell.h
 include/Wrapland/Client/plasmavirtualdesktop.h
 include/Wrapland/Client/plasmawindowmanagement.h
@@ -95,6 +96,7 @@ include/Wrapland/Server/output_changeset_v1.h
 include/Wrapland/Server/output_configuration_v1.h
 include/Wrapland/Server/output_device_v1.h
 include/Wrapland/Server/output_management_v1.h
+include/Wrapland/Server/plasma_activation_feedback.h
 include/Wrapland/Server/plasma_shell.h
 include/Wrapland/Server/plasma_virtual_desktop.h
 include/Wrapland/Server/plasma_window.h

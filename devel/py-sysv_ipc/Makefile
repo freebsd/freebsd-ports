@@ -2,7 +2,7 @@ PORTNAME=	sysv_ipc
 PORTVERSION=	1.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	http://semanchuk.com/philip/sysv_ipc/ \
-		CHEESESHOP
+		PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lwhsu@FreeBSD.org

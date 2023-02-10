@@ -11,7 +11,6 @@ LICENSE=	BSD3CLAUSE MIT MPL11 MPL20
 LICENSE_COMB=	multi
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

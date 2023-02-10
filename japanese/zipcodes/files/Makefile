@@ -22,9 +22,7 @@ all:	zipcodes.5digits zipcodes.7digits
 
 install: zipcodes.5digits zipcodes.7digits jigyosyo.euc-csv
 	mkdir -p ${_DESTDIR}
-	for i in zipcodes.5digits zipcodes.7digits; do \
-		${INSTALL_DATA} $$i ${_DESTDIR}; \
-	done
+	${INSTALL_DATA} zipcodes.5digits zipcodes.7digits ${_DESTDIR}
 	${INSTALL_DATA} ken_all.euc-csv ${_DESTDIR}/ken_all-euc.csv
 	${INSTALL_DATA} jigyosyo.euc-csv ${_DESTDIR}/jigyosyo-euc.csv
 

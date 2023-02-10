@@ -10,6 +10,5 @@ WWW=		https://github.com/DataDog/libdatadog/tree/main/ruby
 LICENSE=	APACHE20
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

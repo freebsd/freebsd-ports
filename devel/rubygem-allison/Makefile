@@ -9,7 +9,6 @@ WWW=		https://github.com/evan/allison
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/allison

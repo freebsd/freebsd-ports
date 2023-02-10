@@ -7245,7 +7245,6 @@ comms/spandsp-devel|comms/spandsp|2015-01-17|Has expired: Use newer comms/spands
 multimedia/universal-media-server||2015-01-17|Has expired: RC script broken, especially prestart target
 www/qupzilla|www/qupzilla-qt4|2015-01-18|Renamed to differentiate from www/qupzilla-qt5
 devel/p5-perlbrew|devel/p5-App-perlbrew|2015-01-19|Rename to match upstream naming
-devel/actor-framework|devel/caf|2015-01-19|Rename to match upstream naming
 textproc/py-charade||2015-01-28|Charade was merged back to textproc/py-chardet
 audio/wmauda||2015-01-28|Has expired: Broken for more than 6 months
 audio/x11amp||2015-01-28|Has expired: Broken for more than 6 months
@@ -7738,7 +7737,6 @@ audio/cmus-post.fm||2015-10-31|Has expired: Broken for more than 6 months
 devel/libphish||2015-10-31|Has expired: Broken for more than 6 months
 devel/rubygem-debugger||2015-10-31|Has expired: This port is for Ruby 1.9 only, upstream stopped maintenance
 games/linux-ningpo-demo||2015-10-31|Has expired: Broken for more than 6 months
-graphics/gdal-grass||2015-10-31|Has expired: Superseded by gdal-2.0.0
 graphics/picviz||2015-10-31|Has expired: Broken for more than 6 months
 irc/weechat-devel|irc/weechat|2015-10-31|Has expired: far behind stable irc/weechat (use it instead)
 mail/cucipop||2015-10-31|Has expired: Broken for more than 6 months
@@ -11525,7 +11523,6 @@ www/qupzilla-qt5|www/falkon|2019-03-03|Has expired: Project continues as www/fal
 databases/puppetdb-terminus4|databases/puppetdb-terminus5|2019-03-03|Has expired: Puppet 4 has reached EOL
 sysutils/bacula-client|sysutils/bacula9-client|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
 net-mgmt/nagios-check_bacula|net-mgmt/nagios-check_bacula9|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
-security/kc|security/kc24|2019-03-03|Has expired: Versions 2.4.x use incompatible database format
 sysutils/bacula-server|sysutils/bacula9-server|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
 sysutils/bacula-docs|sysutils/bacula9-docs|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-docs
 sysutils/bacula-client-static|sysutils/bacula9-client-static|2019-03-03|Has expired: Unsupported. Please migrate to bacula9-server
@@ -11569,7 +11566,6 @@ graphics/fracplanet@qt5|graphics/fracplanet|2019-03-16|Flavor has been removed
 graphics/photivo@qt4||2019-03-16|Qt4 deprecation
 graphics/photivo@qt5|graphics/photivo|2019-03-16|Flavor has been removed
 archivers/quazip@qt4||2019-03-16|Qt4 deprecation
-archivers/quazip@qt5|archivers/quazip|2019-03-16|Flavor has been removed
 net-p2p/transmission@qt4||2019-03-16|Qt4 deprecation
 net-p2p/transmission@qt5|net-p2p/transmission-qt|2019-03-16|Flavor has been removed
 x11-themes/Kvantum@qt4||2019-03-16|Qt4 deprecation
@@ -14669,7 +14665,6 @@ net/rtpbreak||2020-05-05|Has expired: Broken for more than 6 months
 net/s3ql||2020-05-05|Has expired: Broken for more than 6 months
 net/scnc||2020-05-05|Has expired: Broken for more than 6 months
 net/sip_scenario||2020-05-05|Has expired: Broken for more than 6 months
-net/slurm||2020-05-05|Has expired: Broken for more than 6 months
 net/ssmping||2020-05-05|Has expired: Broken for more than 6 months
 net/tcpdstat||2020-05-05|Has expired: Broken for more than 6 months
 net/uplog||2020-05-05|Has expired: Broken for more than 6 months
@@ -15563,7 +15558,6 @@ multimedia/p5-GStreamer||2020-11-09|Depends on the expired gstreamer 0.10
 emulators/riscv-fesvr||2020-11-09|Now bundled with emulators/riscv-isa-sim
 databases/py-python-rrdtool||2020-11-10|Has expired: Uses deprecated version of python
 net/spideroak||2020-11-10|Has expired: Uses deprecated version of python
-emulators/playonbsd||2020-11-10|Has expired: Uses deprecated version of python
 net/xorp||2020-11-10|Has expired: Uses deprecated version of python
 archivers/py-pyliblzma||2020-11-15|Has expired: Uses deprecated version of python
 databases/postgis23|databases/postgis24|2020-11-15|Has expired: Upstream no longer maintained
@@ -17115,8 +17109,6 @@ graphics/photoflow||2022-05-06|Unmaintainer upstream, has been broken for months
 textproc/redisearch16||2022-05-09|Has expired. Use textproc/redisearch or textproc/redisearch20
 devel/git-arc|devel/freebsd-git-devtools|2022-05-13|Renamed because more tools are now included
 graphics/magnum-examples||2022-05-17|Has expired: Depends on broken graphics/magnum
-graphics/magnum||2022-05-17|Has expired: Broken for more than a year
-graphics/magnum-plugins||2022-05-17|Has expired: Depends on broken graphics/magnum
 graphics/magnum-extras||2022-05-17|Has expired: Depends on broken graphics/magnum
 math/pantheon-calculator|math/elementary-calculator|2022-05-18|Switch to reverse domain name notation
 mail/p5-MIME-Fast||2022-05-19|Depends on long deprecated gmime-2.2
@@ -17415,7 +17407,7 @@ multimedia/mpeg_play||2022-06-30|Has expired: Obsolete, please consider using mu
 multimedia/mpeg_stat||2022-06-30|Has expired: Obsolete, please consider using multimedia/mediainfo or multimedia/ffmpeg
 multimedia/qt-faststart||2022-06-30|Has expired: Obsolete, please consider using multimedia/Bento4, multimedia/gpac-mp4box or multimedia/ffmpeg
 multimedia/spigot||2022-06-30|Has expired: Deprecated hardware, released in the early 90s
-audio/forked-daapd||2022-06-30|Has expired: Deprecated upstream, project is now called OwnTone
+audio/forked-daapd|audio/owntone|2022-06-30|Has expired: Deprecated upstream, project is now called OwnTone
 multimedia/tstools||2022-06-30|Has expired: Obsolete, please consider using multimedia/ffmpeg
 multimedia/sabbu||2022-06-30|Has expired: please consider using multimedia/aegisub
 multimedia/avinfo||2022-06-30|Has expired: Last release in 2008, please consider using multimedia/mediainfo or multimedia/ffmpeg instead
@@ -17622,7 +17614,6 @@ net-mgmt/zabbix4-frontend||2022-12-05|Requires php74 which was EOL on 2022-11-28
 math/pecl-stats2||2022-12-05|Requires php74 which was EOL on 2022-11-28
 devel/pecl-jsmin||2022-12-05|Requires php74 which was EOL on 2022-11-28
 security/py-certbot-dns-cloudxns||2022-12-06|The CloudXNS DNS service is defunct and upstream removed plugin for it
-security/pam_krb5|security/pam_krb5@mit|2022-12-06|The pam_krb5 package is now the (default) mit flavor
 devel/pecl-hrtime||2022-12-08|Requires php74 which was EOL on 2022-11-28
 net-mgmt/zabbix5-frontend||2022-12-08|Requires php74 which was EOL on 2022-11-28
 multimedia/php-pHash||2022-12-08|Requires php74 which was EOL on 2022-11-28
@@ -17731,7 +17722,6 @@ databases/firebird25-server||2022-12-31|Has expired: Upstream Support ends on 20
 multimedia/libkate||2022-12-31|Has expired: Obsolete format that never got any traction and no development in over 10 years
 net/opennx||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
 cad/basicdsp||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
-deskutils/xchm||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
 math/graphthing||2022-12-31|Has expired: Abandoned project and use deprecated wxgtk28
 math/pynac||2022-12-31|Project merged with SageMath
 x11-toolkits/wxgtk28-contrib-common||2022-12-31|Has expired: Upstream support ended
@@ -17749,3 +17739,29 @@ textproc/elasticsearch6||2023-01-01|Has expired: No longer maintained and suppor
 japanese/ja-tex-xdvik|print/tex-xdvik|2023-01-02|pTeX support has been integrated
 math/cvc4|math/cvc5|2023-01-03|CVC4 was succeeded by CVC5
 math/cvc3|math/cvc5|2023-01-04|CVC3 was succeeded by CVC4 and CVC5
+devel/caf|devel/actor-framework|2023-01-08|Merge duplicates into devel/actor-framework that is a full software name
+net/nebula|security/nebula|2023-01-09|Remove duplicate
+security/kc24|security/kc|2023-01-13|kc24 was a transient package to easy database migration. Rename to original name
+devel/llvm70||2023-01-15|Removed old llvm ports
+devel/llvm80||2023-01-15|Removed old llvm ports
+devel/llvm90||2023-01-15|Removed old llvm ports
+devel/android-tools-simpleperf||2023-01-15|Depends on removed old llvm ports
+devel/ccls||2023-01-15|Depends on removed old llvm ports
+devel/f18||2023-01-15|Depends on removed old llvm ports
+devel/xtoolchain-llvm80||2023-01-15|Depends on removed old llvm ports
+devel/xtoolchain-llvm90||2023-01-15|Depends on removed old llvm ports
+net-p2p/tootle|net-p2p/tooth|2023-01-16|Upstream archived, forked
+lang/zig-devel|lang/zig|2023-01-19|Development version no longer necessary
+irc/cwirc||2023-01-19|Has expired: No upstream, no apparent use seen online
+sysutils/ior|benchmarks/ior|2023-01-20|Moved to a better fit category
+emulators/qemu-guest-agent|emulators/qemu@guestagent|2023-01-20|Seperate port merged with main port as a flavor
+devel/rust-bindgen|devel/rust-bindgen-cli|2023-01-22|Renamed upstream
+graphics/darktable42||2023-01-27|Removed as part of the update of graphics/darktable to 4.2.0
+devel/py-cachecontrol|www/py-cachecontrol|2023-01-29|Remove duplicate added later
+devel/dulwich|devel/py-dulwich|2023-01-29|Add py- prefix
+www/webtrees||2023-01-30|Has expired: Uses obsolete PHP version; use www/webtrees21 instead
+x11-toolkits/libsexy||2023-01-30|Depends on EOLed gtk+20, not depended on in the ports tree
+x11-toolkits/gtkmathview||2023-01-30|Depends on EOLed gtk+20, not depended on in the ports tree
+x11-toolkits/vdk||2023-01-30|Depends on EOLed gtk+20, not depended on in the ports tree
+audio/libgpod-sharp||2023-02-01|Depends on EOLed gtk+20, not depended on in the ports tree
+x11/plasma5-kwayland-server|x11-wm/plasma5-kwin|2023-02-07|Reintegrated into x11-wm/plasma5-kwin

@@ -141,9 +141,9 @@
  
  *********************************************************************************/
  
- int zfind(cchar *pattern, char **&flist, int &NF)
+ int zfind(ch *pattern, ch **&flist, int &NF)
  {
-    char     **zfind_filelist = 0;                                                //  list of filespecs returned
+    ch       **zfind_filelist = 0;                                                //  list of filespecs returned
 +#ifdef GLOB_PERIOD
     int      globflags = GLOB_PERIOD;                                             //  include dotfiles
 +#else
@@ -151,7 +151,7 @@
 +#endif
     int      ii, jj, err, cc;
     glob_t   globdata;
-    char     *pp;
+    ch       *pp;
 @@ -5805,9 +5850,16 @@ int zinitapp(cchar *appvers, int argc, char *argv[])  
     if (argc > 1 && strmatchV(argv[1],"-ver","-v",0)) exit(0);                    //  exit if nothing else wanted
  

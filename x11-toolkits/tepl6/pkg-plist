@@ -2,6 +2,8 @@ include/tepl-6/tepl/tepl-abstract-factory.h
 include/tepl-6/tepl/tepl-application-window.h
 include/tepl-6/tepl/tepl-application.h
 include/tepl-6/tepl/tepl-buffer.h
+include/tepl-6/tepl/tepl-encoding-iconv.h
+include/tepl-6/tepl/tepl-encoding.h
 include/tepl-6/tepl/tepl-enum-types.h
 include/tepl-6/tepl/tepl-file-chooser.h
 include/tepl-6/tepl/tepl-file-loader.h
@@ -17,11 +19,13 @@ include/tepl-6/tepl/tepl-iter.h
 include/tepl-6/tepl/tepl-language-chooser-dialog.h
 include/tepl-6/tepl/tepl-language-chooser-widget.h
 include/tepl-6/tepl/tepl-language-chooser.h
+include/tepl-6/tepl/tepl-line-column-indicator.h
 include/tepl-6/tepl/tepl-macros.h
 include/tepl-6/tepl/tepl-menu-shell.h
 include/tepl-6/tepl/tepl-metadata-manager.h
 include/tepl-6/tepl/tepl-metadata.h
 include/tepl-6/tepl/tepl-notebook.h
+include/tepl-6/tepl/tepl-overwrite-indicator.h
 include/tepl-6/tepl/tepl-panel.h
 include/tepl-6/tepl/tepl-pango.h
 include/tepl-6/tepl/tepl-prefs-dialog.h
@@ -39,11 +43,12 @@ include/tepl-6/tepl/tepl-tab-saving.h
 include/tepl-6/tepl/tepl-tab.h
 include/tepl-6/tepl/tepl-utils.h
 include/tepl-6/tepl/tepl-view.h
+include/tepl-6/tepl/tepl-widget-list-category.h
+include/tepl-6/tepl/tepl-widget-list-item.h
 include/tepl-6/tepl/tepl.h
 lib/girepository-1.0/Tepl-6.typelib
 lib/libtepl-6.so
-lib/libtepl-6.so.1
-lib/libtepl-6.so.1.0.0
+lib/libtepl-6.so.2
 libdata/pkgconfig/tepl-6.pc
 share/gir-1.0/Tepl-6.gir
 share/gtk-doc/html/tepl-6/TeplAbstractFactory.html
@@ -60,9 +65,11 @@ share/gtk-doc/html/tepl-6/TeplInfoBar.html
 share/gtk-doc/html/tepl-6/TeplLanguageChooser.html
 share/gtk-doc/html/tepl-6/TeplLanguageChooserDialog.html
 share/gtk-doc/html/tepl-6/TeplLanguageChooserWidget.html
+share/gtk-doc/html/tepl-6/TeplLineColumnIndicator.html
 share/gtk-doc/html/tepl-6/TeplMetadata.html
 share/gtk-doc/html/tepl-6/TeplMetadataManager.html
 share/gtk-doc/html/tepl-6/TeplNotebook.html
+share/gtk-doc/html/tepl-6/TeplOverwriteIndicator.html
 share/gtk-doc/html/tepl-6/TeplPanel.html
 share/gtk-doc/html/tepl-6/TeplPrefsDialog.html
 share/gtk-doc/html/tepl-6/TeplProgressInfoBar.html
@@ -92,6 +99,7 @@ share/gtk-doc/html/tepl-6/api-index-4-4.html
 share/gtk-doc/html/tepl-6/api-index-5-0.html
 share/gtk-doc/html/tepl-6/api-index-6-0.html
 share/gtk-doc/html/tepl-6/api-index-6-2.html
+share/gtk-doc/html/tepl-6/api-index-6-4.html
 share/gtk-doc/html/tepl-6/api-index-deprecated.html
 share/gtk-doc/html/tepl-6/api-index-full.html
 share/gtk-doc/html/tepl-6/api-reference-general-utilities.html
@@ -119,6 +127,8 @@ share/gtk-doc/html/tepl-6/right.png
 share/gtk-doc/html/tepl-6/style.css
 share/gtk-doc/html/tepl-6/tepl-6-IO-error-info-bars.html
 share/gtk-doc/html/tepl-6/tepl-6-Tepl-Initialization-and-Finalization.html
+share/gtk-doc/html/tepl-6/tepl-6-TeplEncoding.html
+share/gtk-doc/html/tepl-6/tepl-6-TeplEncodingIconv.html
 share/gtk-doc/html/tepl-6/tepl-6-TeplFileChooser.html
 share/gtk-doc/html/tepl-6/tepl-6-TeplIter.html
 share/gtk-doc/html/tepl-6/tepl-6-TeplMenuShell.html
@@ -126,6 +136,8 @@ share/gtk-doc/html/tepl-6/tepl-6-TeplPango.html
 share/gtk-doc/html/tepl-6/tepl-6-TeplPrefs.html
 share/gtk-doc/html/tepl-6/tepl-6-TeplSignalGroup.html
 share/gtk-doc/html/tepl-6/tepl-6-TeplUtils.html
+share/gtk-doc/html/tepl-6/tepl-6-TeplWidgetListCategory.html
+share/gtk-doc/html/tepl-6/tepl-6-TeplWidgetListItem.html
 share/gtk-doc/html/tepl-6/tepl-6.devhelp2
 share/gtk-doc/html/tepl-6/up-insensitive.png
 share/gtk-doc/html/tepl-6/up.png

@@ -1,5 +1,5 @@
 PORTNAME=	io-event
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,5 @@ LICENSE=	MIT
 BROKEN_RUBY27=	yes
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

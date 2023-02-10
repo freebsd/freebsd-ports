@@ -1,9 +1,15 @@
---- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2022-11-19 17:06:38 UTC
+--- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2023-01-09 11:44:49 UTC
 +++ lib/external/pattern_language/lib/include/pl/core/token.hpp
-@@ -148,9 +148,9 @@ namespace pl::core {
+@@ -151,14 +151,14 @@ namespace pl::core {
+             bool global;
+             std::string comment;
+ 
+-            constexpr bool operator==(const DocComment &) const = default;
++            bool operator==(const DocComment &) const = default;
+         };
  
          using Literal    = std::variant<char, bool, u128, i128, double, std::string, ptrn::Pattern *>;
-         using ValueTypes = std::variant<Keyword, Identifier, Operator, Literal, ValueType, Separator>;
+         using ValueTypes = std::variant<Keyword, Identifier, Operator, Literal, ValueType, Separator, DocComment>;
 +        // These changes are necessary for Clang
 +        inline Token(Type type, auto value, u32 line, u32 column) : type(type), value(std::move(value)), line(line), column(column) {}
  
@@ -12,7 +18,7 @@
          [[nodiscard]] constexpr static inline bool isInteger(const ValueType &type) {
              return isUnsigned(type) || isSigned(type);
          }
-@@ -206,133 +206,133 @@ namespace pl::core {
+@@ -227,134 +227,134 @@ namespace pl::core {
  
      namespace tkn {
  
@@ -70,12 +76,14 @@
  
          namespace Literal {
  
--            constexpr auto IdentifierValue   = [](const std::string &name = { }) -> Token     { return createToken(core::Token::Type::Identifier, Token::Identifier(name)); };
--            constexpr auto NumericValue      = [](const Token::Literal &value = { }) -> Token { return createToken(core::Token::Type::Integer, value); };
--            constexpr auto StringValue       = [](const std::string &value = { }) -> Token    { return createToken(core::Token::Type::String, Token::Literal(value)); };
-+            inline auto IdentifierValue   = [](const std::string &name = { }) -> Token     { return createToken(core::Token::Type::Identifier, Token::Identifier(name)); };
-+            inline auto NumericValue      = [](const Token::Literal &value = { }) -> Token { return createToken(core::Token::Type::Integer, value); };
-+            inline auto StringValue       = [](const std::string &value = { }) -> Token    { return createToken(core::Token::Type::String, Token::Literal(value)); };
+-            constexpr auto IdentifierValue   = [](const std::string &name = { }) -> Token           { return createToken(core::Token::Type::Identifier, Token::Identifier(name)); };
+-            constexpr auto NumericValue      = [](const Token::Literal &value = { }) -> Token       { return createToken(core::Token::Type::Integer, value); };
+-            constexpr auto StringValue       = [](const std::string &value = { }) -> Token          { return createToken(core::Token::Type::String, Token::Literal(value)); };
+-            constexpr auto DocComment        = [](bool global, const std::string &value) -> Token   { return { core::Token::Type::DocComment, Token::DocComment { global, value }, 1, 1 }; };
++            inline auto IdentifierValue   = [](const std::string &name = { }) -> Token           { return createToken(core::Token::Type::Identifier, Token::Identifier(name)); };
++            inline auto NumericValue      = [](const Token::Literal &value = { }) -> Token       { return createToken(core::Token::Type::Integer, value); };
++            inline auto StringValue       = [](const std::string &value = { }) -> Token          { return createToken(core::Token::Type::String, Token::Literal(value)); };
++            inline auto DocComment        = [](bool global, const std::string &value) -> Token   { return { core::Token::Type::DocComment, Token::DocComment { global, value }, 1, 1 }; };
  
 -            constexpr auto Identifier = createToken(core::Token::Type::Identifier, { });
 -            constexpr auto Numeric = createToken(core::Token::Type::Integer, { });

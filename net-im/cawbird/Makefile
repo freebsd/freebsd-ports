@@ -36,4 +36,3 @@ VIDEO_USES=		gstreamer
 VIDEO_MESON_OFF=	-Dvideo=false
 
 .include <bsd.port.mk>
-

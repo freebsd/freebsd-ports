@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-json>=1.1.4:devel/rubygem-json \
 		rubygem-mechanize>=0.9.2:www/rubygem-mechanize
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

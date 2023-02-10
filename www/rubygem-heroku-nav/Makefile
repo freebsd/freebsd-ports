@@ -11,7 +11,6 @@ WWW=		https://github.com/heroku/heroku-nav
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

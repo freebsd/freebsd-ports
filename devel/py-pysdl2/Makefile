@@ -1,7 +1,7 @@
 PORTNAME=	pysdl2
-PORTVERSION=	0.9.14
+PORTVERSION=	0.9.15
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PySDL2-${PORTVERSION}
 
@@ -13,7 +13,7 @@ LICENSE=	PD CC0-1.0 ZLIB
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/doc/copying.rst
 
-USES=		dos2unix python:3.6+ sdl
+USES=		dos2unix python:3.7+ sdl
 USE_PYTHON=	autoplist concurrent distutils
 USE_SDL=	gfx2 image2 mixer2 sdl2 ttf2
 

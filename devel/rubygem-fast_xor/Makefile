@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake \
 		rubygem-rake-compiler>=0:devel/rubygem-rake-compiler
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	actionmailbox
-PORTVERSION=	6.1.7
+PORTVERSION=	6.1.7.2
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-actionpack61>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-mail>=2.7.1,2:mail/rubygem-mail
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

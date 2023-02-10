@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

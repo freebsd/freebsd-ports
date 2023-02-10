@@ -33,6 +33,7 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/acl.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/appctx.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/buffer-api.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/api/event_hdl.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/filters.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/htx-api.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/api/initcalls.txt
@@ -66,6 +67,9 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/muxes.svg
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/notes-layers.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/notes-poll-connect.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/notes-pollhup.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/notes-polling.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.dia
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/polling-states.fig

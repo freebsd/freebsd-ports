@@ -9,7 +9,6 @@ WWW=		https://github.com/shadowbq/pcaprub
 
 LICENSE=	LGPL21
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

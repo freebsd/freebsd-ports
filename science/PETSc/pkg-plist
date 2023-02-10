@@ -5915,6 +5915,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/eptorsion1.c
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/eptorsion2.c
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/eptorsion2f.F90
+%%DATADIR%%/examples/src/tao/unconstrained/tutorials/eptorsion3.c
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/makefile
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/minsurf1.c
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/minsurf2.c
@@ -5932,6 +5933,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/output/eptorsion2f_1.out
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/output/eptorsion2f_2.out
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/output/eptorsion2f_3.out
+%%DATADIR%%/examples/src/tao/unconstrained/tutorials/output/eptorsion3_1.out
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/output/minsurf1_1.out
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/output/minsurf1_10.out
 %%DATADIR%%/examples/src/tao/unconstrained/tutorials/output/minsurf1_11.out

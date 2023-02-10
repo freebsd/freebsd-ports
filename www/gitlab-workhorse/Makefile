@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	15.5.6
+PORTVERSION=	15.8.1
 PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
@@ -11,7 +11,7 @@ WWW=		https://gitlab.com/gitlab-org/gitlab-workhorse
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
-BUILD_DEPENDS=	git>=2.16.2:devel/git
+BUILD_DEPENDS=	git>=2.38.0:devel/git
 RUN_DEPENDS=	p5-Image-ExifTool>=0:graphics/p5-Image-ExifTool
 
 USES=		gmake go:modules,no_targets
@@ -25,7 +25,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	a2f39fb243f2ad2ba59939e2e6446ec9b19911f2
+GL_COMMIT=	383efe57adfb30756ce6ce0d3f47c32a33c2ca85
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy

@@ -1,5 +1,6 @@
 PORTNAME=	cde
 DISTVERSION=	2.4.0
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	SF/cdesktopenv/src/
 .if !defined(MASTERDIR)
@@ -12,6 +13,7 @@ WWW=		https://sourceforge.net/p/cdesktopenv/wiki/Home/
 
 LICENSE=	LGPL21
 
+BROKEN=		fails to build es locale help files
 BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
 BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
 BROKEN_i386=		cannot bind to a temporary of type va_list

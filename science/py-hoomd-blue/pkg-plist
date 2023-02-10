@@ -64,7 +64,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_external_wall.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_move_size_tuner.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_muvt.py
-%%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_nec.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_union_user.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_pair_user.py
 %%PYTHON_SITELIBDIR%%/hoomd/hpmc/pytest/test_quick_compress.py
@@ -634,6 +633,8 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/ComputeThermoHMAGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/ComputeThermoHMATypes.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/ComputeThermoTypes.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/ConstantForceCompute.h
+%%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/ConstantForceComputeGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/CosineSqAngleForceCompute.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/CosineSqAngleForceComputeGPU.h
 %%PYTHON_SITELIBDIR%%/hoomd/include/hoomd/md/CustomForceCompute.h
@@ -835,6 +836,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_aniso_pair.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_array_view.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_bond.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_constant_force.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_constrain_distance.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_custom_force.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_dihedral.py
@@ -846,7 +848,6 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_improper.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_integrate.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_kernel_parameters.py
-%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_lj_equation_of_state.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_manifolds.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_meshbond.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_meta_wall_list.py
@@ -866,6 +867,7 @@ lib/cmake/hoomd/hoomd-targets.cmake
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_wall_data.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_wall_potential.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/pytest/test_zero_momentum.py
+%%PYTHON_SITELIBDIR%%/hoomd/md/pytest/true_pair_list.json
 %%PYTHON_SITELIBDIR%%/hoomd/md/special_pair.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/tune/__init__.py
 %%PYTHON_SITELIBDIR%%/hoomd/md/tune/nlist_buffer.py

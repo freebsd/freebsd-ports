@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2022-05-25 04:01:09 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-01-13 05:20:53 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -33,7 +33,7 @@
      // shipped stable can have its runtime flag removed soon after.
@@ -57,6 +57,6 @@
        origin_trial_feature_name: "WebAppWindowControlsOverlay",
 -      origin_trial_os: ["win", "mac", "linux", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
-       status: "experimental",
+       status: "stable",
      },
      {

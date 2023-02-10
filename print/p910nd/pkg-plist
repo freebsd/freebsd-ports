@@ -1,5 +1,3 @@
 man/man8/p910nd.8.gz
 sbin/p910nd
-%%DATADIR%%/banner.pl
-%%DATADIR%%/client.pl
 @dir %%P910ND_RUNDIR%%

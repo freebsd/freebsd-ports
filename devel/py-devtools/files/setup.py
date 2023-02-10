@@ -20,17 +20,18 @@ setup(
         'Operating System :: POSIX :: Linux',
         'Operating System :: Unix',
         'Programming Language :: Python :: 3 :: Only',
-        'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
         'Topic :: Internet',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Typing :: Typed',
     ],
     install_requires=[
         'asttokens<3.0.0,>=2.0.0',
-        'executing>=0.8.0',
+        'executing>=1.1.1',
     ],
     extras_require={
         'pygments': [

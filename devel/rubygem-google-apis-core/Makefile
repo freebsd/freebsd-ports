@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-core
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.5.1<3:www/rubygem-addressable \
 		rubygem-webrick>=0:www/rubygem-webrick
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

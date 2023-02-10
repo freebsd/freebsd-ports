@@ -10,6 +10,5 @@ WWW=		https://github.com/ruby/sdbm
 LICENSE=	BSD2CLAUSE
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

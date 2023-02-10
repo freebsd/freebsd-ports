@@ -1,31 +1,34 @@
 PORTNAME=	p910nd
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	print net
-MASTER_SITES=	SF
 
 MAINTAINER=	skozlov@FreeBSD.org
 COMMENT=	Port 9100+n printer daemon
-WWW=		http://p910nd.sourceforge.net/
+WWW=		https://github.com/kenyapcomau/p910nd
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		tar:bzip2
+USES=		gmake
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	kenyapcomau
+
+ALL_TARGET=	${PORTNAME}
 
 USE_RC_SUBR=	p910nd
 
 P910ND_RUNDIR=	/var/run/${PORTNAME}
 PLIST_SUB=	P910ND_RUNDIR=${P910ND_RUNDIR}
 
-CFLAGS+=	-DLOCKFILE_DIR="\"${P910ND_RUNDIR}\"" -DUSE_WRAP
+MAKE_ENV+=	USE_WRAP=yes
 
-do-build:
-	${CC} -o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c ${CFLAGS}
+CFLAGS+=	-DLOCKFILE_DIR='\"${P910ND_RUNDIR}\"'
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${STAGEDIR}${MANPREFIX}/man/man8
-	${MKDIR} ${STAGEDIR}${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.pl ${STAGEDIR}${DATADIR}
 	${MKDIR} ${STAGEDIR}${P910ND_RUNDIR}
 
 .include <bsd.port.mk>

@@ -1,5 +1,6 @@
 PORTNAME=	mlterm
 PORTVERSION=	3.9.2
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -12,7 +13,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		cpe gettext gnome libtool perl5 pkgconfig xorg
+USES=		cpe desktop-file-utils gettext gnome libtool perl5 pkgconfig xorg
 USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk20 vte
 USE_LDCONFIG=	yes
@@ -87,5 +88,7 @@ post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/ja/README.ja ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${DESKTOPDIR}
+	${INSTALL_DATA} ${FILESDIR}/mlterm.desktop ${STAGEDIR}${DESKTOPDIR}
 
 .include <bsd.port.mk>

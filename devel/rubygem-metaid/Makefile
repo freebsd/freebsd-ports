@@ -8,7 +8,6 @@ COMMENT=	Ruby metaprogramming helpers
 WWW=		http://whytheluckystiff.net/metaid/
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

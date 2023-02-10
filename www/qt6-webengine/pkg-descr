@@ -1,0 +1,8 @@
+The Qt WebEngine module provides a web browser engine that makes it easy to
+embed content from the World Wide Web into your Qt application on platforms
+that do not have a native web engine.
+
+Qt WebEngine provides C++ classes and QML types for rendering HTML, XHTML, and
+SVG documents, styled using Cascading Style Sheets (CSS) and scripted with
+JavaScript. HTML documents can be made fully editable by the user through the
+use of the contenteditable attribute on HTML elements.

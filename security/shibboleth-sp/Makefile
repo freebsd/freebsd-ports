@@ -1,5 +1,5 @@
 PORTNAME=	shibboleth-sp
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
@@ -47,7 +47,7 @@ ODBC_DESC=	ODBC database backend - store sessions in a database
 FASTCGI_DESC=	FastCGI protocol support, e.g. for NGINX
 APACHE_DESC=	Build Apache module
 
-APACHE_USES=	apache:2.4+
+APACHE_USES=	apache
 
 ODBC_CONFIGURE_ENABLE=	odbc
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC

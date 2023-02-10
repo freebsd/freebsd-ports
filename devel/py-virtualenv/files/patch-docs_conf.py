@@ -1,15 +1,20 @@
---- docs/conf.py.orig	2022-11-12 21:38:58 UTC
+--- docs/conf.py.orig	2023-02-06 17:33:30 UTC
 +++ docs/conf.py
-@@ -1,9 +1,12 @@
-+import os
- import subprocess
- import sys
+@@ -3,6 +3,8 @@ import sys
  from datetime import date, datetime
  from pathlib import Path
  
- import sphinx_rtd_theme
++sys.path.insert(0, '%%VIRTUALENV_WHEEL%%')
 +
-+sys.path.insert(0, os.path.abspath('../build/lib'))
- 
  from virtualenv.version import __version__
  
+ company = "PyPA"
+@@ -48,7 +50,7 @@ extlinks = {
+ def setup(app):
+     here = Path(__file__).parent
+     root, exe = here.parent, Path(sys.executable)
+-    towncrier = exe.with_name(f"towncrier{exe.suffix}")
++    towncrier = exe.with_name(f"towncrier")
+     cmd = [str(towncrier), "build", "--draft", "--version", "NEXT"]
+     new = subprocess.check_output(cmd, cwd=root, text=True, stderr=subprocess.DEVNULL)
+     (root / "docs" / "_draft.rst").write_text("" if "No significant changes" in new else new)

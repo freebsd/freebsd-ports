@@ -3,7 +3,7 @@ DISTVERSION=	1.3.6
 CATEGORIES=	misc
 MASTER_SITES=	https://git.kitenet.net/index.cgi/pdmenu.git/snapshot/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Simple console menu program
 WWW=		https://joeyh.name/code/pdmenu/
 

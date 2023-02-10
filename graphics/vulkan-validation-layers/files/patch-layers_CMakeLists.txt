@@ -1,0 +1,27 @@
+CMake Error at layers/CMakeLists.txt:114 (find_package):
+  Could not find a package configuration file provided by "SPIRV-Headers"
+  with any of the following names:
+
+    SPIRV-HeadersConfig.cmake
+    spirv-headers-config.cmake
+
+  Add the installation prefix of "SPIRV-Headers" to CMAKE_PREFIX_PATH or set
+  "SPIRV-Headers_DIR" to a directory containing one of the above files.  If
+  "SPIRV-Headers" provides a separate development package or SDK, be sure it
+  has been installed.
+
+--- layers/CMakeLists.txt.orig	2023-01-20 04:42:25 UTC
++++ layers/CMakeLists.txt
+@@ -111,7 +111,12 @@ add_library(VVL-SPIRV-LIBS INTERFACE)
+ # Represents all SPIRV libraries we need
+ add_library(VVL-SPIRV-LIBS INTERFACE)
+ 
++if (SPIRV_HEADERS_INSTALL_DIR)
++add_library(SPIRV-Headers::SPIRV-Headers INTERFACE IMPORTED)
++target_include_directories(SPIRV-Headers::SPIRV-Headers INTERFACE ${SPIRV_HEADERS_INSTALL_DIR}/include)
++else()
+ find_package(SPIRV-Headers REQUIRED CONFIG QUIET)
++endif()
+ target_link_libraries(VVL-SPIRV-LIBS INTERFACE SPIRV-Headers::SPIRV-Headers)
+ 
+ find_package(SPIRV-Tools-opt REQUIRED CONFIG QUIET)

@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activemodel4>=${PORTVERSION}:databases/rubygem-activemodel4
 		rubygem-arel6>=6.0<7:databases/rubygem-arel6
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

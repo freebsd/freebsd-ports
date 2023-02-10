@@ -167,6 +167,7 @@
     SUBDIR += amgcl
     SUBDIR += analitza
     SUBDIR += ann
+    SUBDIR += annoy
     SUBDIR += antic
     SUBDIR += apache-commons-math
     SUBDIR += apc
@@ -181,6 +182,7 @@
     SUBDIR += asl
     SUBDIR += asymptote
     SUBDIR += atlas
+    SUBDIR += audi
     SUBDIR += barvinok
     SUBDIR += basic-stats
     SUBDIR += bcal
@@ -415,6 +417,7 @@
     SUBDIR += kcalc
     SUBDIR += kfr
     SUBDIR += kig
+    SUBDIR += kissat
     SUBDIR += kktdirect
     SUBDIR += kmplot
     SUBDIR += labplot
@@ -435,9 +438,11 @@
     SUBDIR += libRmath
     SUBDIR += libbraiding
     SUBDIR += libccd
+    SUBDIR += libcerf
     SUBDIR += libdivide
     SUBDIR += libfixmath
     SUBDIR += libflame
+    SUBDIR += libformfactor
     SUBDIR += libhomfly
     SUBDIR += libmesh
     SUBDIR += libmissing
@@ -461,6 +466,7 @@
     SUBDIR += linpack
     SUBDIR += lis
     SUBDIR += lll_spect
+    SUBDIR += lmfit
     SUBDIR += lp_solve
     SUBDIR += lrcalc
     SUBDIR += lrng
@@ -866,6 +872,7 @@
     SUBDIR += py-amply
     SUBDIR += py-animatplot
     SUBDIR += py-animatplot-ng
+    SUBDIR += py-annoy
     SUBDIR += py-apgl
     SUBDIR += py-arviz
     SUBDIR += py-arybo
@@ -892,6 +899,7 @@
     SUBDIR += py-cypari2
     SUBDIR += py-deap
     SUBDIR += py-dionysus
+    SUBDIR += py-disjoint-set
     SUBDIR += py-docplex
     SUBDIR += py-ducc0
     SUBDIR += py-ecos
@@ -922,6 +930,7 @@
     SUBDIR += py-intspan
     SUBDIR += py-iohexperimenter
     SUBDIR += py-ipyopt
+    SUBDIR += py-isosurfaces
     SUBDIR += py-jax
     SUBDIR += py-kahip
     SUBDIR += py-keras
@@ -933,6 +942,7 @@
     SUBDIR += py-linearmodels
     SUBDIR += py-lmfit
     SUBDIR += py-luminol
+    SUBDIR += py-mapbox-earcut
     SUBDIR += py-mathics
     SUBDIR += py-mathics-scanner
     SUBDIR += py-matplotlib
@@ -974,6 +984,7 @@
     SUBDIR += py-primecountpy
     SUBDIR += py-primme
     SUBDIR += py-pyFFTW
+    SUBDIR += py-pyaudi
     SUBDIR += py-pybloom
     SUBDIR += py-pyclipper
     SUBDIR += py-pycosat
@@ -989,6 +1000,7 @@
     SUBDIR += py-pyodeint
     SUBDIR += py-pyodesys
     SUBDIR += py-pyreadr
+    SUBDIR += py-pyrr
     SUBDIR += py-pysmt
     SUBDIR += py-pystan
     SUBDIR += py-pysym
@@ -1150,6 +1162,7 @@
     SUBDIR += testu01
     SUBDIR += tetgen
     SUBDIR += teyjus
+    SUBDIR += the-algorithms-c++
     SUBDIR += timbl
     SUBDIR += tiny-bignum-c
     SUBDIR += tlapack

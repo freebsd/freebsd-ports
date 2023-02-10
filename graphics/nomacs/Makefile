@@ -1,7 +1,7 @@
 PORTNAME=	nomacs
 PORTVERSION=	3.16
 DISTVERSIONSUFFIX=	.224
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/nomacs/nomacs/commit/
@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		libopencv_highgui.so:graphics/opencv \
 		libopencv_core.so:graphics/opencv \
 		liblcms2.so:graphics/lcms2 \
-		libquazip1-qt5.so:archivers/quazip
+		libquazip1-qt5.so:archivers/quazip@qt5
 
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils \
 		dos2unix pkgconfig qt:5

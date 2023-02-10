@@ -1,6 +1,5 @@
 PORTNAME=	guile
-PORTVERSION=	3.0.8
-PORTREVISION=	3
+PORTVERSION=	3.0.9
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 
@@ -27,7 +26,7 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 
-MAKE_JOBS_UNSAFE=	yes
+#MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
 
 CONFLICTS_INSTALL=	guile1 guile2
@@ -54,8 +53,6 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-bootstrap_Makefile.in
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|sys/time.h sys/timeb.h|sys/time.h |g' \
-		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|-i -e|-i.bak -e|' \
 		${WRKSRC}/libguile/Makefile.in
 	@${RM} -r ${WRKSRC}/prebuilt/32-bit-big-endian

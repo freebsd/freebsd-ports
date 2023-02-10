@@ -15,7 +15,6 @@ LIB_DEPENDS=	libarrow-glib.so:databases/arrow-glib
 RUN_DEPENDS=	rubygem-red-arrow>=${PORTVERSION}<${PORTVERSION}_99:databases/rubygem-red-arrow
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

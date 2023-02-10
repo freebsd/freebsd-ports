@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-ffi>=1.9<2:devel/rubygem-ffi
 
 USES=		gem gmake
-USE_RUBY=	yes
 
 # Workaround for https://gitlab.com/gitlab-org/gitlab/-/issues/216740
 PORTSCOUT=	limit:^2\.2\.

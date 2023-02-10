@@ -10,6 +10,9 @@ WWW=		https://www.arpalert.org/mysac.html
 
 LICENSE=	LGPL3
 
+DEPRECATED=	Requires upstream EOL MySQL 5.6
+EXPIRATION_DATE=	2023-06-30
+
 USES=		mysql
 
 IGNORE_WITH_MYSQL=	57 80 101m 102m 103m 57p 57w

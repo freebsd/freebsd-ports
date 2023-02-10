@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.8<3:www/rubygem-addressable \
 		rubygem-mini_mime>=1.0<2:mail/rubygem-mini_mime
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

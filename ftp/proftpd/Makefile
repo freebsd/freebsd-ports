@@ -2,7 +2,7 @@ PORTNAME?=	proftpd
 .if !defined(DISTVERSION)
 PORTVERSION?=	${PROFTPD_VERSION}
 .endif
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	ftp
 MASTER_SITES=	ftp://ftp.proftpd.org/distrib/source/ \
 		https://github.com/downloads/proftpd/proftpd.github.com/ \
@@ -24,7 +24,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 RUN_DEPENDS+=	${LOCALBASE}/sbin/proftpd:ftp/proftpd
 .endif
 
-PROFTPD_VERSION=	1.3.7c
+PROFTPD_VERSION=	1.3.8
 
 CPE_VENDOR=	proftpd
 CPE_PRODUCT=	proftpd
@@ -87,11 +87,17 @@ PLIST_FILES+=	libexec/proftpd/${m}.a \
 		libexec/proftpd/${m}.so
 .endfor
 .else
-OPTIONS_DEFINE=	DOCS HTMLDOCS IPV6 NLS MEMCACHE PCRE REDIS
-OPTIONS_DEFAULT=	PCRE
+OPTIONS_DEFINE=	DOCS HTMLDOCS IPV6 NLS MEMCACHE REDIS
+OPTIONS_DEFAULT=	PCRE2
+
+OPTIONS_RADIO+=	PCREVER
+OPTIONS_RADIO_PCREVER=	PCRE1 PCRE2
 
 HTMLDOCS_DESC=		Include HTML documentation
 MEMCACHE_DESC=		Memcache support using libmemcached
+PCREVER_DESC=		PCRE library to use
+PCRE1_DESC=		${PCRE_DESC}
+PCRE2_DESC=		${PCRE_DESC} version 2
 REDIS_DESC=		Redis support using hiredis
 
 PLIST_SUB+=	LOCALSTATEDIR="${LOCALSTATEDIR}"
@@ -148,8 +154,13 @@ IPV6_CONFIGURE_ENABLE=ipv6
 NLS_CONFIGURE_ON=	--enable-nls
 NLS_USES=		gettext iconv
 
-PCRE_CONFIGURE_ENABLE=	pcre
-PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
+PCRE1_CONFIGURE_ENABLE=	pcre
+PCRE1_CONFIGURE_ON=	--disable-pcre2
+PCRE1_LIB_DEPENDS=	libpcre.so:devel/pcre
+
+PCRE2_CONFIGURE_ENABLE=	pcre2
+PCRE2_CONFIGURE_ON=	--disable-pcre
+PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 MEMCACHE_LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 MEMCACHE_CONFIGURE_ENABLE=	memcache
@@ -217,7 +228,7 @@ post-install:
 	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} license.txt ${STAGEDIR}${DOCSDIR}
 . if ${PORT_OPTIONS:MHTMLDOCS}
 	@${INSTALL} -d ${STAGEDIR}${DOCSDIR}/html
-	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} Configuration.html faq.html ${STAGEDIR}${DOCSDIR}/html
+	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} faq.html ${STAGEDIR}${DOCSDIR}/html
 	@${CP} -RP ${WRKSRC}/doc/contrib ${STAGEDIR}${DOCSDIR}/html/contrib
 	@${CP} -RP ${WRKSRC}/doc/modules ${STAGEDIR}${DOCSDIR}/html/modules
 	@${CP} -RP ${WRKSRC}/doc/howto ${STAGEDIR}${DOCSDIR}/html/howto

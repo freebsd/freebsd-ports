@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-citrus>=3.0<4:textproc/rubygem-citrus
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

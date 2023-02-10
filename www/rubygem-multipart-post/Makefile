@@ -1,5 +1,5 @@
 PORTNAME=	multipart-post
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,6 @@ WWW=		https://github.com/socketry/multipart-post
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

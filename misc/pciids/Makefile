@@ -1,5 +1,5 @@
 PORTNAME=	pciids
-PORTVERSION=	20221028
+PORTVERSION=	20230126
 CATEGORIES=	misc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -16,7 +16,7 @@ NO_BUILD=	yes
 PORTDATA=	pci.ids
 
 GH_ACCOUNT=	pciutils
-GH_TAGNAME=	c7929c0
+GH_TAGNAME=	3cddb9f
 USE_GITHUB=	yes
 
 do-install:

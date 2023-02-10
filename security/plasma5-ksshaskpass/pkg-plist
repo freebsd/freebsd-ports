@@ -21,6 +21,7 @@ share/locale/hu/LC_MESSAGES/ksshaskpass.mo
 share/locale/ia/LC_MESSAGES/ksshaskpass.mo
 share/locale/id/LC_MESSAGES/ksshaskpass.mo
 share/locale/it/LC_MESSAGES/ksshaskpass.mo
+share/locale/ka/LC_MESSAGES/ksshaskpass.mo
 share/locale/ko/LC_MESSAGES/ksshaskpass.mo
 share/locale/lt/LC_MESSAGES/ksshaskpass.mo
 share/locale/ml/LC_MESSAGES/ksshaskpass.mo
@@ -43,5 +44,6 @@ share/locale/sv/LC_MESSAGES/ksshaskpass.mo
 share/locale/tg/LC_MESSAGES/ksshaskpass.mo
 share/locale/tr/LC_MESSAGES/ksshaskpass.mo
 share/locale/uk/LC_MESSAGES/ksshaskpass.mo
+share/locale/vi/LC_MESSAGES/ksshaskpass.mo
 share/locale/zh_CN/LC_MESSAGES/ksshaskpass.mo
 share/locale/zh_TW/LC_MESSAGES/ksshaskpass.mo

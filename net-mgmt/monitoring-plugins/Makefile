@@ -4,7 +4,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.monitoring-plugins.org/download/ \
 		LOCAL/mat/${PORTNAME}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Monitoring Plugins for Nagios
 WWW=		https://www.monitoring-plugins.org/
 
@@ -82,7 +82,7 @@ FPING_CONFIGURE_OFF=	ac_cv_path_PATH_TO_FPING6= \
 
 IPV6_CONFIGURE_WITH=	ipv6
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 
 MYSQL_USES=		mysql

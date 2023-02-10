@@ -1,5 +1,6 @@
 PORTNAME=	oj
 PORTVERSION=	3.13.23
+PORTREVISION=	3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +12,11 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem
-USE_RUBY=	yes
+
+# TODO: find a better way to do this
+# Copy all header file, as it is required by rubygem-oj-introspect
+post-install:
+	${INSTALL} -d ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION}/ext/oj
+	cd ${WRKSRC}/ext/oj && ${FIND} * -name "*.h" -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION}/ext/oj/{}" \;
 
 .include <bsd.port.mk>

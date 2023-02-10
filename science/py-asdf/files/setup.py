@@ -24,10 +24,12 @@ package_data = \
 
 install_requires = \
 ['asdf-standard >=1.0.1',
- 'asdf-transform-schemas >=0.2.2',
+ 'asdf-transform-schemas >=0.3.0',
+ 'asdf-unit-schemas >=0.1.0',
+ 'importlib-metadata >=4.8.1',
  'jmespath >=0.6.2',
- 'jsonschema >=4.0.1, <4.10.0',
- 'numpy >=1.10',
+ 'jsonschema >=4.0.1',
+ 'numpy >=1.18',
  'packaging >=16.0',
  'pyyaml >=3.10',
  'semantic_version >=2.8']
@@ -35,19 +37,19 @@ install_requires = \
 extras_require = \
 {':python_version <"3.9"': ['importlib_resources >=3'],
  'all': ['lz4 >=0.10'],
- 'docs': ['sphinx-asdf >=0.1.4'],
+ 'docs': ['tomli', 'sphinx-asdf >=0.1.4'],
  'tests': ['astropy >=5.0.4',
            'gwcs',
+           'pytest >=6.0.0',
            'pytest-doctestplus',
            'pytest-remotedata',
            'pytest-openfiles',
            'psutil',
-           'lz4 >=0.10'],
- 'tests:sys_platform !="win32"': ['pytest >=6.0.0'],
- 'tests:sys_platform =="win32"': ['pytest !=7.1.0, !=7.1.1, !=7.1.2']}
+           'lz4 >=0.10',
+           'fsspec[http] >=2022.8.2']}
 
 entry_points = \
-{'onsole_scripts': ['asdftool = asdf.commands.main:main'],
+{'console_scripts': ['asdftool = asdf.commands.main:main'],
  'asdf_extensions': ['builtin = asdf.extension:BuiltinExtension'],
  'asdf.resource_mappings': ['asdf = asdf.resource:get_json_schema_resource_mappings'],
  'pytest11': ['asdf_schema_tester = pytest_asdf.plugin']}

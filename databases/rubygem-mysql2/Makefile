@@ -1,5 +1,5 @@
 PORTNAME=	mysql2
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,5 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem mysql ssl
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

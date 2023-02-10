@@ -1,5 +1,5 @@
 PORTNAME=	Color-Palette
-PORTVERSION=	0.100003
+PORTVERSION=	0.100004
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Graphics-Color>=0.21:graphics/p5-Graphics-Color \
-		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
 		p5-Moose>=0:devel/p5-Moose \
 		p5-MooseX-Types>=0:devel/p5-MooseX-Types
 

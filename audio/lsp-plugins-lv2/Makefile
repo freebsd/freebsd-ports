@@ -1,5 +1,5 @@
 PORTNAME=	lsp-plugins
-DISTVERSION=	1.2.1
+DISTVERSION=	1.2.5
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/sadko4u/lsp-plugins/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-lv2
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 
 USES=		gmake gl gnome iconv:wchar_t pkgconfig xorg # compiler:c11
 USE_GNOME=	cairo
-USE_XORG=	x11
+USE_XORG=	x11 xrandr
 USE_GL=		gl
 
 BINARY_ALIAS=	g++=${CXX} c++=${CXX}
@@ -57,7 +57,7 @@ do-configure:
 post-install:
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/lib/lv2/lsp-plugins.lv2/lsp-*.so \
-		${STAGEDIR}${PREFIX}/lib/liblsp-r3d-glx-lib-1.0.1.so
+		${STAGEDIR}${PREFIX}/lib/liblsp-r3d-glx-lib-*.so
 
 post-install-JACK-on:
 	@${STRIP_CMD} \

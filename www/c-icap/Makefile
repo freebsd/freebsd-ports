@@ -52,7 +52,7 @@ LARGE_FILES_CONFIGURE_ENABLE=	large-files
 MEMCACHE_CONFIGURE_WITH=	memcached
 MEMCACHE_LIB_DEPENDS=		libmemcached.so:databases/libmemcached
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_ON=	--with-ldap=yes
 LDAP_CONFIGURE_OFF=	--with-ldap=no
 

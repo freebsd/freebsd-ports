@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem python:env shebangfix
-USE_RUBY=	yes
 
 SHEBANG_FILES=	test/language_agnostic_tester.py
 

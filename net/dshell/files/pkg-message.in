@@ -7,7 +7,7 @@ GeoLite2-Country_[date].tar.gz from the following URL and place
 GeoLite2-ASN.mmdb, GeoLite2-City.mmdb, and GeoLite2-Country.mmdb
 into %%PYTHON_SITELIBDIR%%/dshell/data/GeoIP .
 
-https://dev.maxmind.com/geoip/geoip2/geolite2/
+https://dev.maxmind.com/geoip/geolite2-free-geolocation-data
 EOM
 }
 ]

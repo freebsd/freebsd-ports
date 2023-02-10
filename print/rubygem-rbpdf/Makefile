@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-htmlentities>=0:textproc/rubygem-htmlentities \
 		rubygem-rbpdf-font>=1.19.0<1.20:print/rubygem-rbpdf-font
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -12,6 +12,9 @@ WWW=		https://www.mysql.com/
 
 LICENSE=	GPLv2
 
+DEPRECATED=     Upstream support ended in October 2019
+EXPIRATION_DATE=        2023-12-31
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SLAVEDIRS=	databases/mysql57-client

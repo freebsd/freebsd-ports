@@ -1,5 +1,5 @@
 PORTNAME=	vagrant
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils rubygems devel
 
@@ -29,9 +29,9 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-log4r>=1.1.9<1.1.11:sysutils/rubygem-log4r \
 		rubygem-mime-types>=3.3:misc/rubygem-mime-types \
 		rubygem-net-ftp>=0.1:ftp/rubygem-net-ftp \
-		rubygem-net-scp>=3.0.0:security/rubygem-net-scp \
-		rubygem-net-sftp>=3.0:security/rubygem-net-sftp \
-		rubygem-net-ssh6>=6.1.0<6.2:security/rubygem-net-ssh6 \
+		rubygem-net-scp>=4.0.0:security/rubygem-net-scp \
+		rubygem-net-sftp>=4.0:security/rubygem-net-sftp \
+		rubygem-net-ssh>=7.0.0:security/rubygem-net-ssh \
 		rubygem-rb-kqueue>=0.2.0<0.3:devel/rubygem-rb-kqueue \
 		rubygem-rexml>=3.2:textproc/rubygem-rexml \
 		rubygem-rgl>=0.5.7:devel/rubygem-rgl \
@@ -43,11 +43,10 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
 		rubygem-winrm-fs>=1.3.4<2:sysutils/rubygem-winrm-fs \
 		rubygem-winrm>=2.3.4<3:sysutils/rubygem-winrm
 
-USES=		cpe shebangfix
+USES=		cpe ruby shebangfix
 CPE_VENDOR=	hashicorp
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
-USE_RUBY=	yes
 GEM_ENV+=	RB_USER_INSTALL=yes
 
 SHEBANG_FILES=	plugins/hosts/darwin/scripts/install_virtualbox.sh \

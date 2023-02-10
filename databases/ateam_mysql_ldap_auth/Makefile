@@ -10,10 +10,12 @@ WWW=		https://github.com/ateamsystems/ateam_mysql_ldap_auth
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Requires upstream EOL MySQL 5.6
+EXPIRATION_DATE=	2023-06-30
+
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
-USE_OPENLDAP=	yes
-USES=		gmake mysql:client,server
+USES=		gmake ldap mysql:client,server
 
 IGNORE_WITH_MYSQL=	57 80 101m 102m 103m 57p 57w
 

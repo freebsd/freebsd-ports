@@ -10,7 +10,6 @@ WWW=		https://github.com/zombor/Validator
 LICENSE=	ISCL
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

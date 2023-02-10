@@ -1,6 +1,6 @@
---- electron/shell/common/api/electron_api_native_image.cc.orig	2022-08-03 15:31:32 UTC
+--- electron/shell/common/api/electron_api_native_image.cc.orig	2023-01-24 08:00:52 UTC
 +++ electron/shell/common/api/electron_api_native_image.cc
-@@ -651,7 +651,7 @@ void Initialize(v8::Local<v8::Object> exports,
+@@ -632,7 +632,7 @@ void Initialize(v8::Local<v8::Object> exports,
    native_image.SetMethod("createFromDataURL", &NativeImage::CreateFromDataURL);
    native_image.SetMethod("createFromNamedImage",
                           &NativeImage::CreateFromNamedImage);

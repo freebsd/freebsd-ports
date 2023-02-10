@@ -9,11 +9,10 @@ WWW=		https://github.com/jaalto/splitpatch
 
 LICENSE=	GPLv2+
 
-USES=		gmake perl5
+USES=		gmake perl5 ruby
 USE_GITHUB=	yes
 GH_ACCOUNT=	jaalto
 USE_PERL5=	build
-USE_RUBY=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 

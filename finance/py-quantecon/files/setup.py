@@ -21,7 +21,7 @@ package_data = \
 {'': ['*']}
 
 install_requires = \
-['numba', 'numpy', 'requests', 'scipy>=1.0.0', 'sympy']
+['numba', 'numpy>=1.17.0', 'requests', 'scipy>=1.5.0', 'sympy']
 
 extras_require = \
 {'testing': ['pytest',

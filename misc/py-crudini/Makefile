@@ -1,7 +1,7 @@
 PORTNAME=	crudini
 PORTVERSION=	0.9.3
 CATEGORIES=	misc python
-#MASTER_SITES=	CHEESESHOP
+#MASTER_SITES=	PYPI
 MASTER_SITES=	https://github.com/pixelb/crudini/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

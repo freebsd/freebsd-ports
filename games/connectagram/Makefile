@@ -1,6 +1,5 @@
 PORTNAME=	connectagram
-PORTVERSION=	1.3.2
-DISTVERSIONSUFFIX=	-src
+PORTVERSION=	1.3.3
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/connectagram/
 
@@ -14,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cmake compiler:c++17-lang gl qt:6 tar:bzip2
 USE_GL=		opengl
 USE_QT=		base tools:build
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes

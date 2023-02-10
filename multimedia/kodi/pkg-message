@@ -12,7 +12,7 @@ make config
 
 [ In the configuration menu, enable the libdvdcss option ]
 
-make deinstall reinstall
+make deinstall install
 
 EOM
 }

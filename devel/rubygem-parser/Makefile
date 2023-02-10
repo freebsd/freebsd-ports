@@ -1,5 +1,5 @@
 PORTNAME=	parser
-PORTVERSION=	3.1.2.1
+PORTVERSION=	3.2.0.0
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-ast>=2.4.1<2.5:devel/rubygem-ast
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

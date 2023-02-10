@@ -10,6 +10,7 @@ share/jupyter/nbconvert/templates/basic/index.html.j2
 share/jupyter/nbconvert/templates/classic/base.html.j2
 share/jupyter/nbconvert/templates/classic/conf.json
 share/jupyter/nbconvert/templates/classic/index.html.j2
+share/jupyter/nbconvert/templates/classic/static/style.css
 share/jupyter/nbconvert/templates/compatibility/display_priority.tpl
 share/jupyter/nbconvert/templates/compatibility/full.tpl
 share/jupyter/nbconvert/templates/lab/base.html.j2

@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-actionpack61>=3.0.20:www/rubygem-actionpack61 \
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

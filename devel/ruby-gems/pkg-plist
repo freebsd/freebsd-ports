@@ -190,6 +190,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/tsort/lib/tsort.rb
 %%RUBY_SITELIBDIR%%/rubygems/uninstaller.rb
 %%RUBY_SITELIBDIR%%/rubygems/unknown_command_spell_checker.rb
+%%RUBY_SITELIBDIR%%/rubygems/update_suggestion.rb
 %%RUBY_SITELIBDIR%%/rubygems/uri.rb
 %%RUBY_SITELIBDIR%%/rubygems/uri_formatter.rb
 %%RUBY_SITELIBDIR%%/rubygems/user_interaction.rb

@@ -1,6 +1,7 @@
 bin/pcap-config
 include/pcap-bpf.h
 include/pcap-namedb.h
+include/pcap-util.h
 include/pcap.h
 include/pcap/bluetooth.h
 include/pcap/bpf.h

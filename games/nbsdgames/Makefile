@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	5
 CATEGORIES=	games
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	17 text-based modern games
 WWW=		https://github.com/abakh/nbsdgames
 

@@ -16,9 +16,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libgd.so:graphics/gd \
 		libpng.so:graphics/png
 
-USES=		jpeg
-USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
+USES=		jpeg ruby:extconf
 
 RUBY_MODNAME=	${PORTNAME:tl}
 

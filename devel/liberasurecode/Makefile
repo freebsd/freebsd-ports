@@ -2,7 +2,7 @@ PORTNAME=	liberasurecode
 PORTVERSION=	1.6.3
 CATEGORIES=	devel
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Unified Erasure Coding interface for common storage workloads
 WWW=		https://github.com/openstack/liberasurecode
 

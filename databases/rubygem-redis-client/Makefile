@@ -1,5 +1,5 @@
 PORTNAME=	redis-client
-PORTVERSION=	0.11.1
+PORTVERSION=	0.12.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-connection_pool>=0:net/rubygem-connection_pool
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

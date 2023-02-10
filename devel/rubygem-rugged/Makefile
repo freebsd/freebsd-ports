@@ -1,7 +1,7 @@
 # Also update devel/libgit2, devel/libgit2-glib, devel/py-pygit2
 
 PORTNAME=	rugged
-PORTVERSION=	1.5.0.1
+PORTVERSION=	1.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -22,6 +22,5 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 
 CONFIGURE_ARGS=	--use-system-libraries
 USES=		gem pkgconfig
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

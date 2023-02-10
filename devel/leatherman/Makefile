@@ -1,6 +1,6 @@
 PORTNAME=	leatherman
 PORTVERSION=	1.12.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 
 MAINTAINER=	puppet@FreeBSD.org
@@ -12,11 +12,10 @@ LICENSE=	APACHE20
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 
-USES=		compiler:c++11-lang cmake gettext
+USES=		compiler:c++11-lang cmake gettext ruby
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
 
-USE_RUBY=	yes
 CMAKE_ON=	LEATHERMAN_SHARED
 CMAKE_OFF=	ENABLE_CXX_WERROR
 USE_LDCONFIG=	yes

@@ -1,5 +1,5 @@
 PORTNAME=	pygments.rb
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gem python:env shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

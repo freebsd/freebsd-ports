@@ -45,6 +45,8 @@ lib/calibre/calibre/db/cli/cmd_clone.py
 lib/calibre/calibre/db/cli/cmd_custom_columns.py
 lib/calibre/calibre/db/cli/cmd_embed_metadata.py
 lib/calibre/calibre/db/cli/cmd_export.py
+lib/calibre/calibre/db/cli/cmd_fts_index.py
+lib/calibre/calibre/db/cli/cmd_fts_search.py
 lib/calibre/calibre/db/cli/cmd_list.py
 lib/calibre/calibre/db/cli/cmd_list_categories.py
 lib/calibre/calibre/db/cli/cmd_remove.py
@@ -64,6 +66,11 @@ lib/calibre/calibre/db/covers.py
 lib/calibre/calibre/db/delete_service.py
 lib/calibre/calibre/db/errors.py
 lib/calibre/calibre/db/fields.py
+lib/calibre/calibre/db/fts/__init__.py
+lib/calibre/calibre/db/fts/connect.py
+lib/calibre/calibre/db/fts/pool.py
+lib/calibre/calibre/db/fts/schema_upgrade.py
+lib/calibre/calibre/db/fts/text.py
 lib/calibre/calibre/db/lazy.py
 lib/calibre/calibre/db/legacy.py
 lib/calibre/calibre/db/listeners.py
@@ -77,6 +84,7 @@ lib/calibre/calibre/db/tests/add_remove.py
 lib/calibre/calibre/db/tests/base.py
 lib/calibre/calibre/db/tests/filesystem.py
 lib/calibre/calibre/db/tests/fts.py
+lib/calibre/calibre/db/tests/fts_api.py
 lib/calibre/calibre/db/tests/legacy.py
 lib/calibre/calibre/db/tests/locking.py
 lib/calibre/calibre/db/tests/main.py
@@ -126,6 +134,16 @@ lib/calibre/calibre/devices/jetbook/__init__.py
 lib/calibre/calibre/devices/jetbook/driver.py
 lib/calibre/calibre/devices/kindle/__init__.py
 lib/calibre/calibre/devices/kindle/apnx.py
+lib/calibre/calibre/devices/kindle/apnx_page_generator/__init__.py
+lib/calibre/calibre/devices/kindle/apnx_page_generator/generators/__init__.py
+lib/calibre/calibre/devices/kindle/apnx_page_generator/generators/accurate_page_generator.py
+lib/calibre/calibre/devices/kindle/apnx_page_generator/generators/exact_page_generator.py
+lib/calibre/calibre/devices/kindle/apnx_page_generator/generators/fast_page_generator.py
+lib/calibre/calibre/devices/kindle/apnx_page_generator/generators/pagebreak_page_generator.py
+lib/calibre/calibre/devices/kindle/apnx_page_generator/i_page_generator.py
+lib/calibre/calibre/devices/kindle/apnx_page_generator/page_group.py
+lib/calibre/calibre/devices/kindle/apnx_page_generator/page_number_type.py
+lib/calibre/calibre/devices/kindle/apnx_page_generator/pages.py
 lib/calibre/calibre/devices/kindle/bookmark.py
 lib/calibre/calibre/devices/kindle/driver.py
 lib/calibre/calibre/devices/kobo/__init__.py
@@ -525,7 +543,6 @@ lib/calibre/calibre/ebooks/pdf/__init__.py
 lib/calibre/calibre/ebooks/pdf/develop.py
 lib/calibre/calibre/ebooks/pdf/html_writer.py
 lib/calibre/calibre/ebooks/pdf/image_writer.py
-lib/calibre/calibre/ebooks/pdf/pageoptions.py
 lib/calibre/calibre/ebooks/pdf/pdftohtml.py
 lib/calibre/calibre/ebooks/pdf/reflow.py
 lib/calibre/calibre/ebooks/pdf/render/__init__.py
@@ -638,6 +655,7 @@ lib/calibre/calibre/gui2/actions/add_to_library.py
 lib/calibre/calibre/gui2/actions/annotate.py
 lib/calibre/calibre/gui2/actions/author_mapper.py
 lib/calibre/calibre/gui2/actions/auto_scroll.py
+lib/calibre/calibre/gui2/actions/booklist_context_menu.py
 lib/calibre/calibre/gui2/actions/browse_annots.py
 lib/calibre/calibre/gui2/actions/catalog.py
 lib/calibre/calibre/gui2/actions/choose_library.py
@@ -649,7 +667,9 @@ lib/calibre/calibre/gui2/actions/edit_collections.py
 lib/calibre/calibre/gui2/actions/edit_metadata.py
 lib/calibre/calibre/gui2/actions/embed.py
 lib/calibre/calibre/gui2/actions/fetch_news.py
+lib/calibre/calibre/gui2/actions/fts.py
 lib/calibre/calibre/gui2/actions/help.py
+lib/calibre/calibre/gui2/actions/manage_categories.py
 lib/calibre/calibre/gui2/actions/mark_books.py
 lib/calibre/calibre/gui2/actions/match_books.py
 lib/calibre/calibre/gui2/actions/next_match.py
@@ -660,6 +680,7 @@ lib/calibre/calibre/gui2/actions/preferences.py
 lib/calibre/calibre/gui2/actions/random.py
 lib/calibre/calibre/gui2/actions/restart.py
 lib/calibre/calibre/gui2/actions/save_to_disk.py
+lib/calibre/calibre/gui2/actions/saved_searches.py
 lib/calibre/calibre/gui2/actions/show_book_details.py
 lib/calibre/calibre/gui2/actions/show_quickview.py
 lib/calibre/calibre/gui2/actions/show_stored_templates.py
@@ -820,13 +841,13 @@ lib/calibre/calibre/gui2/dialogs/smartdevice.py
 lib/calibre/calibre/gui2/dialogs/smartdevice_ui.py
 lib/calibre/calibre/gui2/dialogs/tag_categories.py
 lib/calibre/calibre/gui2/dialogs/tag_categories_ui.py
-lib/calibre/calibre/gui2/dialogs/template_dialog_box_layout.py
 lib/calibre/calibre/gui2/dialogs/tag_editor.py
 lib/calibre/calibre/gui2/dialogs/tag_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/tag_list_editor.py
 lib/calibre/calibre/gui2/dialogs/tag_list_editor_table_widget.py
 lib/calibre/calibre/gui2/dialogs/tag_list_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/template_dialog.py
+lib/calibre/calibre/gui2/dialogs/template_dialog_box_layout.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_code_widget.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
 lib/calibre/calibre/gui2/dialogs/template_line_editor.py
@@ -837,6 +858,12 @@ lib/calibre/calibre/gui2/email.py
 lib/calibre/calibre/gui2/filename_pattern_ui.py
 lib/calibre/calibre/gui2/flow_toolbar.py
 lib/calibre/calibre/gui2/font_family_chooser.py
+lib/calibre/calibre/gui2/fts/__init__.py
+lib/calibre/calibre/gui2/fts/dialog.py
+lib/calibre/calibre/gui2/fts/scan.py
+lib/calibre/calibre/gui2/fts/search.py
+lib/calibre/calibre/gui2/fts/utils.py
+lib/calibre/calibre/gui2/geometry.py
 lib/calibre/calibre/gui2/gestures.py
 lib/calibre/calibre/gui2/html_transform_rules.py
 lib/calibre/calibre/gui2/icon_theme.py
@@ -923,11 +950,11 @@ lib/calibre/calibre/gui2/preferences/toolbar_ui.py
 lib/calibre/calibre/gui2/preferences/tweaks.py
 lib/calibre/calibre/gui2/proceed.py
 lib/calibre/calibre/gui2/progress_indicator/__init__.py
+lib/calibre/calibre/gui2/pyqt6_compat.py
 lib/calibre/calibre/gui2/qt_file_dialogs.py
 lib/calibre/calibre/gui2/save.py
 lib/calibre/calibre/gui2/search_box.py
 lib/calibre/calibre/gui2/search_restriction_mixin.py
-lib/calibre/calibre/gui2/shortcuts.py
 lib/calibre/calibre/gui2/splash_screen.py
 lib/calibre/calibre/gui2/store/__init__.py
 lib/calibre/calibre/gui2/store/amazon_base.py
@@ -1176,10 +1203,12 @@ lib/calibre/calibre/plugins/msdes.so
 lib/calibre/calibre/plugins/pictureflow.so
 lib/calibre/calibre/plugins/podofo.so
 lib/calibre/calibre/plugins/progress_indicator.so
+lib/calibre/calibre/plugins/rcc_backend.so
 lib/calibre/calibre/plugins/speedup.so
 lib/calibre/calibre/plugins/sqlite_custom.so
 lib/calibre/calibre/plugins/sqlite_extension.so
 lib/calibre/calibre/plugins/tokenizer.so
+lib/calibre/calibre/plugins/uchardet.so
 lib/calibre/calibre/plugins/unicode_names.so
 lib/calibre/calibre/prints.py
 lib/calibre/calibre/ptempfile.py
@@ -1204,10 +1233,12 @@ lib/calibre/calibre/srv/content.py
 lib/calibre/calibre/srv/convert.py
 lib/calibre/calibre/srv/embedded.py
 lib/calibre/calibre/srv/errors.py
+lib/calibre/calibre/srv/fts.py
 lib/calibre/calibre/srv/handler.py
 lib/calibre/calibre/srv/http_request.py
 lib/calibre/calibre/srv/http_response.py
 lib/calibre/calibre/srv/jobs.py
+lib/calibre/calibre/srv/last_read.py
 lib/calibre/calibre/srv/legacy.py
 lib/calibre/calibre/srv/library_broker.py
 lib/calibre/calibre/srv/loop.py
@@ -1327,6 +1358,7 @@ lib/calibre/calibre/utils/ordered_dict.py
 lib/calibre/calibre/utils/podofo/__init__.py
 lib/calibre/calibre/utils/random_ua.py
 lib/calibre/calibre/utils/rapydscript.py
+lib/calibre/calibre/utils/rcc/__init__.py
 lib/calibre/calibre/utils/recycle_bin.py
 lib/calibre/calibre/utils/resources.py
 lib/calibre/calibre/utils/run_tests.py
@@ -1335,8 +1367,8 @@ lib/calibre/calibre/utils/search_query_parser_test.py
 lib/calibre/calibre/utils/serialize.py
 lib/calibre/calibre/utils/seven_zip.py
 lib/calibre/calibre/utils/shared_file.py
-lib/calibre/calibre/utils/short_uuid.py
 lib/calibre/calibre/utils/shm.py
+lib/calibre/calibre/utils/short_uuid.py
 lib/calibre/calibre/utils/smartypants.py
 lib/calibre/calibre/utils/smtp.py
 lib/calibre/calibre/utils/smtplib.py
@@ -1352,6 +1384,7 @@ lib/calibre/calibre/utils/titlecase.py
 lib/calibre/calibre/utils/unicode_names.py
 lib/calibre/calibre/utils/unrar.py
 lib/calibre/calibre/utils/unsmarten.py
+lib/calibre/calibre/utils/webengine.py
 lib/calibre/calibre/utils/windows/__init__.py
 lib/calibre/calibre/utils/windows/winsapi.py
 lib/calibre/calibre/utils/windows/wintest.py
@@ -1375,6 +1408,8 @@ lib/calibre/calibre/web/feeds/templates.py
 lib/calibre/calibre/web/fetch/__init__.py
 lib/calibre/calibre/web/fetch/simple.py
 lib/calibre/calibre/web/fetch/utils.py
+lib/calibre/calibre/web/site_parsers/__init__.py
+lib/calibre/calibre/web/site_parsers/nytimes.py
 lib/calibre/css_selectors/__init__.py
 lib/calibre/css_selectors/errors.py
 lib/calibre/css_selectors/ordered_set.py
@@ -1434,6 +1469,8 @@ lib/calibre/qt/__init__.py
 lib/calibre/qt/__main__.py
 lib/calibre/qt/core.py
 lib/calibre/qt/core_name_map.py
+lib/calibre/qt/dbus.py
+lib/calibre/qt/dbus_name_map.py
 lib/calibre/qt/loader.py
 lib/calibre/qt/webengine.py
 lib/calibre/qt/webengine_name_map.py
@@ -1479,8 +1516,6 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/content-server/mobile.css
 %%DATADIR%%/content-server/reset.css
 %%DATADIR%%/csscolorparser.js
-%%DATADIR%%/csslint.js
-%%DATADIR%%/dark_mode.css
 %%DATADIR%%/default_tweaks.py
 %%DATADIR%%/dictionaries/en-GB/en-GB.aff
 %%DATADIR%%/dictionaries/en-GB/en-GB.dic
@@ -1514,6 +1549,8 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/fonts/liberation/LiberationSerif-Italic.ttf
 %%DATADIR%%/fonts/liberation/LiberationSerif-Regular.ttf
 %%DATADIR%%/fonts/liberation/version.txt
+%%DATADIR%%/fts_sqlite.sql
+%%DATADIR%%/fts_triggers.sql
 %%DATADIR%%/hyphenation/dictionaries.tar.xz
 %%DATADIR%%/hyphenation/locales.json
 %%DATADIR%%/hyphenation/sha1sum
@@ -1536,7 +1573,8 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/catalog.png
 %%DATADIR%%/images/chapters.png
 %%DATADIR%%/images/character-set.png
-%%DATADIR%%/images/clear_left.png
+%%DATADIR%%/images/clear_left-for-dark-theme.png
+%%DATADIR%%/images/clear_left-for-light-theme.png
 %%DATADIR%%/images/close-for-dark-theme.png
 %%DATADIR%%/images/close-for-light-theme.png
 %%DATADIR%%/images/code.png
@@ -1545,6 +1583,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/config.png
 %%DATADIR%%/images/connect_share.png
 %%DATADIR%%/images/connect_share_on.png
+%%DATADIR%%/images/context_menu.png
 %%DATADIR%%/images/convert.png
 %%DATADIR%%/images/copy-to-library.png
 %%DATADIR%%/images/cover_flow.png
@@ -1612,6 +1651,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/format-text-superscript.png
 %%DATADIR%%/images/format-text-underline.png
 %%DATADIR%%/images/forward.png
+%%DATADIR%%/images/fts.png
 %%DATADIR%%/images/gear.png
 %%DATADIR%%/images/generic-library.png
 %%DATADIR%%/images/gmail_logo.png
@@ -1673,7 +1713,8 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/mimetypes/zip.png
 %%DATADIR%%/images/minus.png
 %%DATADIR%%/images/minusminus.png
-%%DATADIR%%/images/modified.png
+%%DATADIR%%/images/modified-for-dark-theme.png
+%%DATADIR%%/images/modified-for-light-theme.png
 %%DATADIR%%/images/network-server.png
 %%DATADIR%%/images/news.png
 %%DATADIR%%/images/next.png
@@ -1751,6 +1792,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/view.png
 %%DATADIR%%/images/viewer.png
 %%DATADIR%%/images/vl.png
+%%DATADIR%%/images/width.png
 %%DATADIR%%/images/window-close.png
 %%DATADIR%%/images/wizard.png
 %%DATADIR%%/jacket/stylesheet.css
@@ -1812,6 +1854,8 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/rapydscript/compiler.js.xz
 %%DATADIR%%/scraper.js
 %%DATADIR%%/scripts.calibre_msgpack
+%%DATADIR%%/stylelint-bundle.min.js
+%%DATADIR%%/stylelint.js
 %%DATADIR%%/template-functions.json
 %%DATADIR%%/templates/book_details.css
 %%DATADIR%%/templates/fb2.xsl

@@ -1,11 +1,11 @@
 PORTNAME=	libpcap
-PORTVERSION=	1.10.1
-PORTREVISION=	2
+PORTVERSION=	1.10.2
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Ubiquitous network traffic capture library
+WWW=		https://www.tcpdump.org/
 
 LICENSE=	BSD3CLAUSE
 

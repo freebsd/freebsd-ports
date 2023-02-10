@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-activesupport61>=3.0:devel/rubygem-activesupport61 \
 		rubygem-request_store>=1.0:devel/rubygem-request_store
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

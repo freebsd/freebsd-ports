@@ -1,6 +1,6 @@
---- content/renderer/renderer_blink_platform_impl.h.orig	2022-12-02 17:56:32 UTC
+--- content/renderer/renderer_blink_platform_impl.h.orig	2023-01-13 08:56:02 UTC
 +++ content/renderer/renderer_blink_platform_impl.h
-@@ -29,7 +29,7 @@
+@@ -30,7 +30,7 @@
  #include "third_party/blink/public/common/user_agent/user_agent_metadata.h"
  #include "third_party/blink/public/mojom/cache_storage/cache_storage.mojom.h"
  
@@ -9,7 +9,7 @@
  #include "components/services/font/public/cpp/font_loader.h"  // nogncheck
  #include "third_party/skia/include/core/SkRefCnt.h"           // nogncheck
  #endif
-@@ -171,7 +171,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -172,7 +172,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
        const blink::WebURL& top_document_web_url) override;
    gpu::GpuMemoryBufferManager* GetGpuMemoryBufferManager() override;
    blink::WebString ConvertIDNToUnicode(const blink::WebString& host) override;
@@ -18,7 +18,7 @@
    void SetThreadType(base::PlatformThreadId thread_id,
                       base::ThreadType) override;
  #endif
-@@ -237,7 +237,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -240,7 +240,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    void Collect3DContextInformation(blink::Platform::GraphicsInfo* gl_info,
                                     const gpu::GPUInfo& gpu_info) const;
  
@@ -27,7 +27,7 @@
    std::unique_ptr<blink::WebSandboxSupport> sandbox_support_;
  #endif
  
-@@ -257,7 +257,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
+@@ -260,7 +260,7 @@ class CONTENT_EXPORT RendererBlinkPlatformImpl : publi
    mutable base::WaitableEvent io_thread_id_ready_event_;
    base::PlatformThreadId io_thread_id_ = base::kInvalidThreadId;
  

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-ffi>=1.0.0:devel/rubygem-ffi \
 		rubygem-rake>=0:devel/rubygem-rake
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

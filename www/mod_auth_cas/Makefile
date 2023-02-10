@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/README
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpcre.so:devel/pcre
 
-USES=		apache:2.4 ssl
+USES=		apache ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Jasig

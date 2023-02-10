@@ -11,7 +11,7 @@ WWW=		https://httpd.apache.org/mod_fcgid/
 
 LICENSE=	APACHE20
 
-USES=		apache:2.2+ cpe
+USES=		apache cpe
 CPE_VENDOR=	apache
 
 HAS_CONFIGURE=		yes

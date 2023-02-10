@@ -1,5 +1,5 @@
 PORTNAME=	commonmarker
-PORTVERSION=	0.23.6
+PORTVERSION=	0.23.7
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/commonmarker
 

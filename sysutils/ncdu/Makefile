@@ -1,5 +1,6 @@
 PORTNAME=	ncdu
-PORTVERSION=	1.17
+PORTVERSION=	1.18
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://dev.yorhel.nl/download/
 

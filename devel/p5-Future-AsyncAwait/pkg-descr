@@ -1,0 +1,13 @@
+Future::AsyncAwait provides syntax for deferring and resuming subroutines while
+waiting for Futures to complete. This syntax aims to make code that performs
+asynchronous operations using futures look neater and more expressive than
+simply using then chaining and other techniques on the futures themselves. It is
+also a similar syntax used by a number of other languages; notably C# 5,
+EcmaScript 6, Python 3, Dart, Rust, C++20.
+
+This module is still under active development. While it now seems relatively
+stable enough for most use-cases and has received a lot of "battle-testing" in a
+wide variety of scenarios, there may still be the occasional case of memory leak
+left in it, especially if still-pending futures are abandoned.
+
+The new syntax takes the form of two new keywords, async and await.

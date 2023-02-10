@@ -24,7 +24,6 @@ RUN_DEPENDS=	rubygem-builder>=3.2.4<4:devel/rubygem-builder \
 		rubygem-sys-uname>=1.2.2<2:sysutils/rubygem-sys-uname
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

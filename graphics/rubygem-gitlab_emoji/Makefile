@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-gemojione>=2.2.1:graphics/rubygem-gemojione
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

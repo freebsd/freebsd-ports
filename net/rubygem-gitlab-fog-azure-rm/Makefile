@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-fog-azure-rm
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.4.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -19,7 +18,6 @@ RUN_DEPENDS=	rubygem-azure-storage-blob>=2.0<3:devel/rubygem-azure-storage-blob 
 		rubygem-ms_rest_azure>=0.12.0<0.13:devel/rubygem-ms_rest_azure
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

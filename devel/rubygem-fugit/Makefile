@@ -1,5 +1,5 @@
 PORTNAME=	fugit
-PORTVERSION=	1.7.2
+PORTVERSION=	1.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-et-orbi>=1.2.7<2:devel/rubygem-et-orbi \
 		rubygem-raabro>=1.4<2:textproc/rubygem-raabro
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-arrayfields>=4.9<5:devel/rubygem-arrayfields
 
 USES=		gem
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/amalgalite-pack
 

@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-rgeo>=1.0.0:science/rubygem-rgeo
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

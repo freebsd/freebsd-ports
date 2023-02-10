@@ -1,0 +1,12 @@
+--- doc_internal/Doxyfile.in.orig	2022-12-18 10:39:03 UTC
++++ doc_internal/Doxyfile.in
+@@ -298,8 +298,7 @@ SEARCH_INCLUDES        = YES
+ MACRO_EXPANSION        = YES
+ EXPAND_ONLY_PREDEF     = YES
+ SEARCH_INCLUDES        = YES
+-INCLUDE_PATH           = @CMAKE_SOURCE_DIR@/libmd5 \
+-                         @CMAKE_SOURCE_DIR@/liblodepng \
++INCLUDE_PATH           = @CMAKE_SOURCE_DIR@/liblodepng \
+                          @CMAKE_SOURCE_DIR@/libmscgen
+ INCLUDE_FILE_PATTERNS  =
+ PREDEFINED             =

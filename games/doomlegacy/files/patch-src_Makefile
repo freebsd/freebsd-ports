@@ -1,7 +1,16 @@
---- src/Makefile.orig	2018-07-16 09:17:06 UTC
+--- src/Makefile.orig	2022-12-18 00:00:15 UTC
 +++ src/Makefile
-@@ -554,8 +554,10 @@ LIBS:=
- LDFLAGS:=
+@@ -234,7 +234,7 @@ OPTLEV=-O3
+ # Developers with svn can enable this to have svn revision number in executable.
+ # Causes compile error message otherwise.
+ # Until can find test for presence of svn, this is best that can be done.
+-SVN_ENABLE=1
++#SVN_ENABLE=1
+ 
+ # This Makefile may be invoked from within the src directory,
+ # or invoked from the Main Makefile with SRC=<directory>.
+@@ -610,8 +610,10 @@ endif
+ OPTINC:=
  INSTALL_SUPPL:=
  
 -CFLAGS:=
@@ -12,16 +21,16 @@
  ifdef ARCH
    # if does not have leading -march, -mcpu, -mtune, or similar.
    ifeq ($(filter -march% -mcpu% -mtune% -m%, $(strip $(ARCH))),)
-@@ -598,7 +600,7 @@ ifeq ($(SMIF), SDL)
-       # default is Linux, for all unix SDL
-       EXENAME:=doomlegacy
-       LDFLAGS+=-L/usr/X11R6/lib
--      LIBS+=-lGL -lGLU -lm
-+      LIBS+=-lGL -lGLU -lm -lipx
-       # -L/usr/X11R6/lib is needed by Linux 2.4 and others that still have
-       # the GLU libraries in an X11 directory.
-       # -lm is needed for pow, powf, and other MATH1 functions.
-@@ -1001,11 +1003,11 @@ ifdef DEBUG
+@@ -770,7 +772,7 @@ ifeq ($(SMIF), SDL)
+     # default is Linux, for all unix SDL
+     EXENAME:=doomlegacy
+     LDFLAGS+=-L/usr/X11R6/lib
+-    LIBS+=-lGL -lGLU -lm
++    LIBS+=-lGL -lGLU -lm -lipx
+     # -L/usr/X11R6/lib is needed by Linux 2.4 and others that still have
+     # the GLU libraries in an X11 directory.
+     # -lm is needed for pow, powf, and other MATH1 functions.
+@@ -1305,11 +1307,11 @@ ifdef DEBUG
  else
  # build a normal optimized version
    #CFLAGS+=-O3

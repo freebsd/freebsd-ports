@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-capybara>=2.18<4:devel/rubygem-capybara \
 		rubygem-webrick>=1.7<2:www/rubygem-webrick
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

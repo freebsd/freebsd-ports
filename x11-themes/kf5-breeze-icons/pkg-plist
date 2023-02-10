@@ -5914,6 +5914,7 @@ share/icons/breeze-dark/actions/symbolic/call-start-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/call-stop-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/call-voicemail-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/change-date-symbolic.svg
+share/icons/breeze-dark/actions/symbolic/checkbox-checked-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/collapse-all-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/color-profile.svg
 share/icons/breeze-dark/actions/symbolic/color-select-symbolic.svg
@@ -6019,10 +6020,15 @@ share/icons/breeze-dark/actions/symbolic/insert-text-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/list-add-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/list-remove-all-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/list-remove-symbolic.svg
+share/icons/breeze-dark/actions/symbolic/mail-forward-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/mail-inbox-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/mail-mark-important-symbolic.svg
+share/icons/breeze-dark/actions/symbolic/mail-message-new-symbolic.svg
+share/icons/breeze-dark/actions/symbolic/mail-reply-all-symbolic.svg
+share/icons/breeze-dark/actions/symbolic/mail-reply-sender-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/mail-send-receive-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/mail-send-symbolic.svg
+share/icons/breeze-dark/actions/symbolic/mail-sent-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/map-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/mark-location-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/media-eject-symbolic.svg
@@ -6058,6 +6064,8 @@ share/icons/breeze-dark/actions/symbolic/pan-end-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/pan-start-symbolic-rtl.svg
 share/icons/breeze-dark/actions/symbolic/pan-start-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/pan-up-symbolic.svg
+share/icons/breeze-dark/actions/symbolic/preferences-other-symbolic.svg
+share/icons/breeze-dark/actions/symbolic/preferences-system-search-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/process-stop-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/screen-rotate-auto-off-symbolic.svg
 share/icons/breeze-dark/actions/symbolic/screen-rotate-auto-on-symbolic.svg
@@ -6703,7 +6711,6 @@ share/icons/breeze-dark/apps/48/scanner.svg
 share/icons/breeze-dark/apps/48/scribus.svg
 share/icons/breeze-dark/apps/48/sheets.svg
 share/icons/breeze-dark/apps/48/showfoto.svg
-share/icons/breeze-dark/apps/48/simplescreenrecorder.svg
 share/icons/breeze-dark/apps/48/skanlite.svg
 share/icons/breeze-dark/apps/48/skanpage.svg
 share/icons/breeze-dark/apps/48/skrooge-black.svg
@@ -9969,6 +9976,7 @@ share/icons/breeze-dark/places/symbolic/folder-saved-search-symbolic.svg
 share/icons/breeze-dark/places/symbolic/folder-symbolic.svg
 share/icons/breeze-dark/places/symbolic/folder-templates-symbolic.svg
 share/icons/breeze-dark/places/symbolic/folder-videos-symbolic.svg
+share/icons/breeze-dark/places/symbolic/mail-outbox-symbolic.svg
 share/icons/breeze-dark/places/symbolic/network-server-symbolic.svg
 share/icons/breeze-dark/places/symbolic/network-workgroup-symbolic.svg
 share/icons/breeze-dark/places/symbolic/start-here-symbolic.svg
@@ -10969,6 +10977,7 @@ share/icons/breeze-dark/status/symbolic/microphone-sensitivity-high-symbolic.svg
 share/icons/breeze-dark/status/symbolic/microphone-sensitivity-low-symbolic.svg
 share/icons/breeze-dark/status/symbolic/microphone-sensitivity-medium-symbolic.svg
 share/icons/breeze-dark/status/symbolic/microphone-sensitivity-muted-symbolic.svg
+share/icons/breeze-dark/status/symbolic/network-offline-symbolic.svg
 share/icons/breeze-dark/status/symbolic/non-starred-symbolic.svg
 share/icons/breeze-dark/status/symbolic/printer-error-symbolic.svg
 share/icons/breeze-dark/status/symbolic/printer-printing-symbolic.svg
@@ -16955,6 +16964,7 @@ share/icons/breeze/actions/symbolic/call-start-symbolic.svg
 share/icons/breeze/actions/symbolic/call-stop-symbolic.svg
 share/icons/breeze/actions/symbolic/call-voicemail-symbolic.svg
 share/icons/breeze/actions/symbolic/change-date-symbolic.svg
+share/icons/breeze/actions/symbolic/checkbox-checked-symbolic.svg
 share/icons/breeze/actions/symbolic/collapse-all-symbolic.svg
 share/icons/breeze/actions/symbolic/color-profile.svg
 share/icons/breeze/actions/symbolic/color-select-symbolic.svg
@@ -17060,10 +17070,15 @@ share/icons/breeze/actions/symbolic/insert-text-symbolic.svg
 share/icons/breeze/actions/symbolic/list-add-symbolic.svg
 share/icons/breeze/actions/symbolic/list-remove-all-symbolic.svg
 share/icons/breeze/actions/symbolic/list-remove-symbolic.svg
+share/icons/breeze/actions/symbolic/mail-forward-symbolic.svg
 share/icons/breeze/actions/symbolic/mail-inbox-symbolic.svg
 share/icons/breeze/actions/symbolic/mail-mark-important-symbolic.svg
+share/icons/breeze/actions/symbolic/mail-message-new-symbolic.svg
+share/icons/breeze/actions/symbolic/mail-reply-all-symbolic.svg
+share/icons/breeze/actions/symbolic/mail-reply-sender-symbolic.svg
 share/icons/breeze/actions/symbolic/mail-send-receive-symbolic.svg
 share/icons/breeze/actions/symbolic/mail-send-symbolic.svg
+share/icons/breeze/actions/symbolic/mail-sent-symbolic.svg
 share/icons/breeze/actions/symbolic/map-symbolic.svg
 share/icons/breeze/actions/symbolic/mark-location-symbolic.svg
 share/icons/breeze/actions/symbolic/media-eject-symbolic.svg
@@ -17099,6 +17114,8 @@ share/icons/breeze/actions/symbolic/pan-end-symbolic.svg
 share/icons/breeze/actions/symbolic/pan-start-symbolic-rtl.svg
 share/icons/breeze/actions/symbolic/pan-start-symbolic.svg
 share/icons/breeze/actions/symbolic/pan-up-symbolic.svg
+share/icons/breeze/actions/symbolic/preferences-other-symbolic.svg
+share/icons/breeze/actions/symbolic/preferences-system-search-symbolic.svg
 share/icons/breeze/actions/symbolic/process-stop-symbolic.svg
 share/icons/breeze/actions/symbolic/selection-end-symbolic-rtl.svg
 share/icons/breeze/actions/symbolic/selection-end-symbolic.svg
@@ -17749,7 +17766,6 @@ share/icons/breeze/apps/48/scanner.svg
 share/icons/breeze/apps/48/scribus.svg
 share/icons/breeze/apps/48/sheets.svg
 share/icons/breeze/apps/48/showfoto.svg
-share/icons/breeze/apps/48/simplescreenrecorder.svg
 share/icons/breeze/apps/48/skanlite.svg
 share/icons/breeze/apps/48/skanpage.svg
 share/icons/breeze/apps/48/skrooge-black.svg
@@ -21558,6 +21574,7 @@ share/icons/breeze/places/symbolic/folder-saved-search-symbolic.svg
 share/icons/breeze/places/symbolic/folder-symbolic.svg
 share/icons/breeze/places/symbolic/folder-templates-symbolic.svg
 share/icons/breeze/places/symbolic/folder-videos-symbolic.svg
+share/icons/breeze/places/symbolic/mail-outbox-symbolic.svg
 share/icons/breeze/places/symbolic/network-server-symbolic.svg
 share/icons/breeze/places/symbolic/network-workgroup-symbolic.svg
 share/icons/breeze/places/symbolic/start-here-symbolic.svg
@@ -22775,6 +22792,7 @@ share/icons/breeze/status/symbolic/microphone-sensitivity-high-symbolic.svg
 share/icons/breeze/status/symbolic/microphone-sensitivity-low-symbolic.svg
 share/icons/breeze/status/symbolic/microphone-sensitivity-medium-symbolic.svg
 share/icons/breeze/status/symbolic/microphone-sensitivity-muted-symbolic.svg
+share/icons/breeze/status/symbolic/network-offline-symbolic.svg
 share/icons/breeze/status/symbolic/non-starred-symbolic.svg
 share/icons/breeze/status/symbolic/printer-error-symbolic.svg
 share/icons/breeze/status/symbolic/printer-printing-symbolic.svg

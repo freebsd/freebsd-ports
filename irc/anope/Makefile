@@ -27,7 +27,7 @@ TRE_DESC=	Tre Regex Module
 
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
 
-LDAP_USE=	OPENLDAP=yes
+LDAP_USES=	ldap
 
 MYSQL_USES=	mysql
 

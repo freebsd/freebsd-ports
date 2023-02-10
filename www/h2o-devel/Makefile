@@ -52,9 +52,7 @@ MRUBY_DESC=		Build with embedded mruby handler support
 CMAKE_ARGS+=		-DBUILD_SHARED_LIBS=OFF -DWITH_BUNDLED_SSL=OFF
 
 MRUBY_CMAKE_BOOL=	WITH_MRUBY
-MRUBY_USES=		bison
-MRUBY_USE=		ruby=yes
-MRUBY_VARS=		RUBY_NO_RUN_DEPENDS=yes
+MRUBY_USES=		bison ruby:build
 
 .include <bsd.port.options.mk>
 

@@ -1,11 +1,11 @@
---- components/policy/tools/generate_policy_source.py.orig	2022-09-24 10:57:32 UTC
+--- components/policy/tools/generate_policy_source.py.orig	2023-01-11 09:17:16 UTC
 +++ components/policy/tools/generate_policy_source.py
-@@ -50,8 +50,10 @@ PLATFORM_STRINGS = {
+@@ -49,9 +49,9 @@ PLATFORM_STRINGS = {
+     'ios': ['ios'],
      'fuchsia': ['fuchsia'],
      'chrome.win': ['win'],
-     'chrome.linux': ['linux'],
-+    'chrome.openbsd': ['openbsd'],
-+    'chrome.freebsd': ['freebsd'],
+-    'chrome.linux': ['linux'],
++    'chrome.linux': ['linux', 'openbsd', 'freebsd'],
      'chrome.mac': ['mac'],
 -    'chrome.*': ['win', 'mac', 'linux'],
 +    'chrome.*': ['win', 'mac', 'linux', 'openbsd', 'freebsd'],

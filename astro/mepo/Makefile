@@ -1,5 +1,6 @@
 PORTNAME=	mepo
-DISTVERSION=	1.1
+DISTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	astro geography wayland
 MASTER_SITES=	https://git.sr.ht/~mil/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -11,7 +12,7 @@ LICENSE=	GPLv3+ OFL11
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	zig>=0.9.0:lang/zig
+BUILD_DEPENDS=	zig>=0.10.0:lang/zig
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	jq:textproc/jq
 
@@ -27,6 +28,9 @@ CONFIGURE_ARGS=	--prefix "${PREFIX}" \
 		--verbose
 NO_INSTALL=	yes # strip(1) breaks runtime
 
+# https://github.com/ziglang/zig/issues/12170 (SDL2, curl)
+MAKE_ENV+=	PKG_CONFIG_SYSTEM_LIBRARY_PATH="${LOCALBASE}/lib"
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},' \
 		${WRKSRC}/scripts/mepo_ui_menu_user_pin_updater.sh
@@ -36,6 +40,10 @@ post-patch:
 
 do-build:
 	@(cd ${WRKSRC} && ${MAKE_ENV} zig build ${CONFIGURE_ARGS})
+
+post-install:
+	@${STAGEDIR}${PREFIX}/bin/${PORTNAME} -docman \
+		>${STAGEDIR}${PREFIX}/share/man/man1/${PORTNAME}.1
 
 do-test:
 	@(cd ${WRKSRC} && ${TEST_ENV} zig build test ${CONFIGURE_ARGS})

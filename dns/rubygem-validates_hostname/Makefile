@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-activerecord60>=3.0:databases/rubygem-activerecord60 \
 		rubygem-activesupport60>=3.0:devel/rubygem-activesupport60
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

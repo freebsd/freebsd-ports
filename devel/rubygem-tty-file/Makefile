@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-diff-lcs>=1.3<2:textproc/rubygem-diff-lcs \
 		rubygem-tty-prompt>=0.22<1:devel/rubygem-tty-prompt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

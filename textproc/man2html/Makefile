@@ -4,7 +4,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	https://invisible-island.net/archives/man2html/
 DISTNAME=	man2html-${DISTVERSION:E}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Convert nroff(1) man pages to HTML
 WWW=		https://dickey.his.com/scripts/man2html.html
 

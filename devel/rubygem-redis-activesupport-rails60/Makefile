@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=3<8:devel/rubygem-activesupport60 \
 		rubygem-redis-store>=1.3<2:devel/rubygem-redis-store
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

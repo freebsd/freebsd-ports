@@ -1,6 +1,6 @@
---- plugins/builtin/source/content/views/view_pattern_editor.cpp.orig	2022-11-23 07:51:06 UTC
+--- plugins/builtin/source/content/views/view_pattern_editor.cpp.orig	2023-01-05 08:53:49 UTC
 +++ plugins/builtin/source/content/views/view_pattern_editor.cpp
-@@ -461,7 +461,7 @@ namespace hex::plugin::builtin {
+@@ -439,7 +439,7 @@ namespace hex::plugin::builtin {
                      dataProvider->setReadOnly(true);
  
                      auto hexEditor = ui::HexEditor();
@@ -9,7 +9,7 @@
                          if (this->m_runningEvaluators != 0)
                              return std::nullopt;
                          if (!ImHexApi::Provider::isValid())
-@@ -483,7 +483,7 @@ namespace hex::plugin::builtin {
+@@ -461,7 +461,7 @@ namespace hex::plugin::builtin {
  
                      auto patternProvider = ImHexApi::Provider::get();
  
@@ -18,7 +18,7 @@
                          hexEditor.setProvider(dataProvider.get());
                          hexEditor.draw(480_scaled);
  
-@@ -944,7 +944,7 @@ namespace hex::plugin::builtin {
+@@ -934,7 +934,7 @@ namespace hex::plugin::builtin {
                          if (type->isTemplateType())
                              continue;
  

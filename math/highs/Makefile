@@ -1,6 +1,6 @@
 PORTNAME=	highs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -11,8 +11,7 @@ WWW=		https://github.com/ERGO-Code/HiGHS
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-#LIB_DEPENDS=	libOsi.so:math/osi
-CONFLICTS_BUILD=	coin-or-Osi # see https://github.com/ERGO-Code/HiGHS/issues/675
+LIB_DEPENDS=	libOsi.so:math/osi
 
 USES=		blaslapack cmake:testing compiler:c++11-lang pkgconfig
 
@@ -25,7 +24,7 @@ CMAKE_OFF=	BUILD_TESTING
 post-install: # see https://github.com/ERGO-Code/HiGHS/issues/502
 	${RM} -r ${STAGEDIR}${PREFIX}/external
 
+# one test fails, see https://github.com/ERGO-Code/HiGHS/issues/1132
 # tests fail to build on i386: undefined reference to fmax, see https://github.com/ERGO-Code/HiGHS/issues/505
-# 2 tests fail: https://github.com/ERGO-Code/HiGHS/issues/525
 
 .include <bsd.port.mk>

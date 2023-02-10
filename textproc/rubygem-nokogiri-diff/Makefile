@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-nokogiri>=1.5<2:textproc/rubygem-nokogiri \
 		rubygem-tdiff>=0.3.2<1:devel/rubygem-tdiff
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

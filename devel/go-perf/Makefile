@@ -1,10 +1,10 @@
 PORTNAME=	go-perf
 PORTVERSION=	${MODVERSION:S/-/./g:R}
-PORTREVISION=	6
+PORTREVISION=	8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Go performance measurement, storage, and analysis tools
 WWW=		https://golang.org/x/perf
 

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.38
 CATEGORIES=	graphics print
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Creates a PDF file from image files
 WWW=		http://tumble.brouhaha.com/
 

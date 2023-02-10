@@ -1,5 +1,5 @@
 PORTNAME=	date
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 CPE_VENDOR=	ruby-lang
 

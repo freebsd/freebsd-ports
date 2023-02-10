@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-geokit>=1.9<2:graphics/rubygem-geokit \
 		rubygem-twitter>=6.0:net/rubygem-twitter
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

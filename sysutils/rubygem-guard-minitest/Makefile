@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-guard-compat>=1.2<2:sysutils/rubygem-guard-compat \
 		rubygem-minitest>=3.0:devel/rubygem-minitest
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

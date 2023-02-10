@@ -1,4 +1,4 @@
---- Makefile.orig	2022-04-18 16:47:28 UTC
+--- Makefile.orig	2022-11-20 11:58:03 UTC
 +++ Makefile
 @@ -1,8 +1,8 @@
  # Makefile for The PCI Utilities
@@ -9,10 +9,10 @@
 +#OPT=-O2
 +CFLAGS+=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
  
- VERSION=3.8.0
- DATE=2022-04-18
+ VERSION=3.9.0
+ DATE=2022-11-20
 @@ -32,11 +32,11 @@ HWDB=
- ABI_VERSION=.3
+ ABI_VERSION=3
  
  # Installation directories
 -PREFIX=/usr/local
@@ -41,4 +41,4 @@
 +#endif
  AR=$(CROSS_COMPILE)ar
  RANLIB=$(CROSS_COMPILE)ranlib
- 
+ DLLTOOL=$(CROSS_COMPILE)dlltool

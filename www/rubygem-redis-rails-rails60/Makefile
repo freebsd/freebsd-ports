@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-redis-actionpack-rails60>=5.0<6:databases/rubygem-redis-act
 		rubygem-redis-store>=1.2<2:devel/rubygem-redis-store
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

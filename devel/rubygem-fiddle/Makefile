@@ -1,6 +1,5 @@
 PORTNAME=	fiddle
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +14,5 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libffi.so:devel/libffi
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

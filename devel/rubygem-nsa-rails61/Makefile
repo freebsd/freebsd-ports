@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-activesupport61>=4.2<7:devel/rubygem-activesupport61 \
 		rubygem-statsd-ruby>=1.4.0<2:devel/rubygem-statsd-ruby
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

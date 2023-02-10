@@ -9,7 +9,6 @@ COMMENT=	Simple block-driven assertion library
 LICENSE=	APACHE20
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

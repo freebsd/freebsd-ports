@@ -1,6 +1,6 @@
---- third_party/crashpad/crashpad/client/BUILD.gn.orig	2022-03-28 18:11:04 UTC
+--- third_party/crashpad/crashpad/client/BUILD.gn.orig	2023-01-17 19:19:00 UTC
 +++ third_party/crashpad/crashpad/client/BUILD.gn
-@@ -130,6 +130,13 @@ static_library("common") {
+@@ -131,6 +131,13 @@ static_library("common") {
    if (crashpad_is_win) {
      sources += [ "crash_report_database_win.cc" ]
    }

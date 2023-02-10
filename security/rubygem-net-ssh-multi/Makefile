@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-net-ssh>=2.6.5:security/rubygem-net-ssh \
 		rubygem-net-ssh-gateway>=1.2.0:security/rubygem-net-ssh-gateway
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

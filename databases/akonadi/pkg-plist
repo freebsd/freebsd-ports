@@ -345,7 +345,7 @@ lib/libKF5AkonadiXml.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_MKSPECDIR%%/modules/qt_AkonadiXml.pri
 %%QT_PLUGINDIR%%/designer/akonadiwidgets.so
 %%QT_PLUGINDIR%%/pim5/akonadi/akonadi_test_searchplugin.so
-%%SQLITE%%%%QT_PLUGINDIR%%/sqldrivers/libqsqlite3.so
+%%QT_PLUGINDIR%%/sqldrivers/libqsqlite3.so
 %%DATADIR%%/agents/knutresource.desktop
 share/config.kcfg/resourcebase.kcfg
 share/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml

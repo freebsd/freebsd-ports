@@ -23,7 +23,6 @@ RUN_DEPENDS=	rubygem-cinch>=2.3.3:irc/rubygem-cinch \
 		rubygem-fortune_gem>=0.0.9:games/rubygem-fortune_gem
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/cogbot

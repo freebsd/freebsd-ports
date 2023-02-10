@@ -1,6 +1,6 @@
---- electron/spec-main/version-bump-spec.ts.orig	2021-11-15 23:45:07 UTC
+--- electron/spec-main/version-bump-spec.ts.orig	2022-11-28 15:30:00 UTC
 +++ electron/spec-main/version-bump-spec.ts
-@@ -186,7 +186,7 @@ describe('version-bumper', () => {
+@@ -92,7 +92,7 @@ describe('version-bumper', () => {
  
    // On macOS Circle CI we don't have a real git environment due to running
    // gclient sync on a linux machine. These tests therefore don't run as expected.

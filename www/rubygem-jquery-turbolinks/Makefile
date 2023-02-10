@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-railties4>=3.1.0:www/rubygem-railties4 \
 		rubygem-turbolinks>=0:www/rubygem-turbolinks
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

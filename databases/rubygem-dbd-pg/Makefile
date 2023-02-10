@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-dbi>=0.4.0:databases/rubygem-dbi \
 		rubygem-pg>=0:databases/rubygem-pg
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

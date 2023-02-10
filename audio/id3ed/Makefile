@@ -9,6 +9,9 @@ WWW=		http://code.fluffytapeworm.com/projects/id3ed
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware and obsolete, doesn't support ID3v2 tagging
+EXPIRATION_DATE=2023-03-31
+
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/id3ed \

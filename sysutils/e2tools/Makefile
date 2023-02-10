@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Utilities to manipulate files in an ext2/ext3 filesystem
 WWW=		https://e2tools.github.io/
 

@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-dns_v1
-PORTVERSION=	0.28.0
+PORTVERSION=	0.29.0
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
@@ -10,10 +10,9 @@ WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/generated/g
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-google-apis-core>=0.9.0<2.0:devel/rubygem-google-apis-core
+RUN_DEPENDS=	rubygem-google-apis-core>=0.9.1<2.0:devel/rubygem-google-apis-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

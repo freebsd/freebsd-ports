@@ -10,7 +10,6 @@ WWW=		http://www.ai4r.org/
 LICENSE=	MPL11
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

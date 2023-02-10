@@ -1,8 +1,7 @@
 PORTNAME=	pdfpc
-DISTVERSION=	4.5.0
+DISTVERSION=	4.6.0
 CATEGORIES=	graphics
 DISTVERSIONPREFIX=	v
-PORTREVISION=	22
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Keynote-like multi-monitor presentation viewer
@@ -14,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmarkdown.a:textproc/discount
 LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libpoppler-glib.so:graphics/poppler-glib \
-		libwebkit2gtk-4.0.so:www/webkit2-gtk3
+		libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
+		libqrencode.so:graphics/libqrencode
 
 USE_GITHUB=	yes
 

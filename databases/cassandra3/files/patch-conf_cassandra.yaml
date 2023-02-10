@@ -1,4 +1,4 @@
---- conf/cassandra.yaml.orig	2021-07-01 14:37:50 UTC
+--- conf/cassandra.yaml.orig	2022-10-28 19:54:09 UTC
 +++ conf/cassandra.yaml
 @@ -71,7 +71,7 @@ max_hints_delivery_threads: 2
  
@@ -64,5 +64,5 @@
 -# saved_caches_directory: /var/lib/cassandra/saved_caches
 +saved_caches_directory: /var/db/cassandra/saved_caches
  
- # commitlog_sync may be either "periodic" or "batch." 
- # 
+ # Number of seconds the server will wait for each cache (row, key, etc ...) to load while starting
+ # the Cassandra process. Setting this to a negative value is equivalent to disabling all cache loading on startup

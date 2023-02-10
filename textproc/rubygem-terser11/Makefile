@@ -1,5 +1,5 @@
 PORTNAME=	terser
-PORTVERSION=	1.1.12
+PORTVERSION=	1.1.13
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	11
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-execjs>=0.3.0<3:devel/rubygem-execjs
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

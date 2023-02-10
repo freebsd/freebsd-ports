@@ -1,5 +1,5 @@
 PORTNAME=	Geo-Address-Formatter
-PORTVERSION=	1.99
+PORTVERSION=	1.993
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,6 +21,7 @@ RUN_DEPENDS=	p5-Clone>=0.45:devel/p5-Clone \
 		p5-YAML-LibYAML>=0.82:textproc/p5-YAML-LibYAML
 TEST_DEPENDS=	p5-File-Slurper>=0:devel/p5-File-Slurper \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Test-NoWarnings>=0:devel/p5-Test-NoWarnings \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
 
 USES=		perl5

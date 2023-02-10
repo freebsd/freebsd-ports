@@ -1,5 +1,5 @@
 PORTNAME=	pkg-config
-PORTVERSION=	1.4.9
+PORTVERSION=	1.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LGPL-2.1
 
 USES=		gem pkgconfig
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

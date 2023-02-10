@@ -1,6 +1,5 @@
 bin/systemsettings
 bin/systemsettings5
-share/locale/my/LC_MESSAGES/systemsettings.mo
 lib/libsystemsettingsview.so.3
 %%QT_PLUGINDIR%%/kf5/krunner/krunner_systemsettings.so
 %%QT_PLUGINDIR%%/systemsettingsview/icon_mode.so
@@ -43,9 +42,7 @@ share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/introPage.q
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/contents/ui/main.qml
 share/kpackage/genericqml/org.kde.systemsettings.sidebar/metadata.desktop
 share/kservicetypes5/infocenterexternalapp.desktop
-share/kservicetypes5/systemsettingscategory.desktop
 share/kservicetypes5/systemsettingsexternalapp.desktop
-share/kservicetypes5/systemsettingsview.desktop
 share/kxmlgui5/systemsettings/systemsettingsui.rc
 share/locale/ar/LC_MESSAGES/systemsettings.mo
 share/locale/ast/LC_MESSAGES/systemsettings.mo
@@ -85,6 +82,7 @@ share/locale/id/LC_MESSAGES/systemsettings.mo
 share/locale/is/LC_MESSAGES/systemsettings.mo
 share/locale/it/LC_MESSAGES/systemsettings.mo
 share/locale/ja/LC_MESSAGES/systemsettings.mo
+share/locale/ka/LC_MESSAGES/systemsettings.mo
 share/locale/kk/LC_MESSAGES/systemsettings.mo
 share/locale/km/LC_MESSAGES/systemsettings.mo
 share/locale/ko/LC_MESSAGES/systemsettings.mo
@@ -96,6 +94,7 @@ share/locale/mk/LC_MESSAGES/systemsettings.mo
 share/locale/ml/LC_MESSAGES/systemsettings.mo
 share/locale/mr/LC_MESSAGES/systemsettings.mo
 share/locale/ms/LC_MESSAGES/systemsettings.mo
+share/locale/my/LC_MESSAGES/systemsettings.mo
 share/locale/nb/LC_MESSAGES/systemsettings.mo
 share/locale/nds/LC_MESSAGES/systemsettings.mo
 share/locale/ne/LC_MESSAGES/systemsettings.mo
@@ -133,23 +132,17 @@ share/metainfo/org.kde.systemsettings.metainfo.xml
 share/qlogging-categories5/systemsettings.categories
 %%DATADIR%%/categories/settings-appearance-color.desktop
 %%DATADIR%%/categories/settings-appearance-font.desktop
-%%DATADIR%%/categories/settings-appearance-icons.desktop
 %%DATADIR%%/categories/settings-appearance.desktop
 %%DATADIR%%/categories/settings-hardware-display.desktop
 %%DATADIR%%/categories/settings-hardware-input.desktop
 %%DATADIR%%/categories/settings-hardware-multimedia.desktop
-%%DATADIR%%/categories/settings-hardware-peripherals.desktop
 %%DATADIR%%/categories/settings-hardware-powermanagement.desktop
 %%DATADIR%%/categories/settings-hardware-removable-storage.desktop
 %%DATADIR%%/categories/settings-hardware.desktop
-%%DATADIR%%/categories/settings-network-bluetooth.desktop
 %%DATADIR%%/categories/settings-network-connectivity.desktop
 %%DATADIR%%/categories/settings-network-networksettings.desktop
 %%DATADIR%%/categories/settings-network.desktop
-%%DATADIR%%/categories/settings-personalization-accessibility.desktop
-%%DATADIR%%/categories/settings-personalization-accountdetails.desktop
 %%DATADIR%%/categories/settings-personalization-applications.desktop
-%%DATADIR%%/categories/settings-personalization-notification.desktop
 %%DATADIR%%/categories/settings-personalization-regionalsettings.desktop
 %%DATADIR%%/categories/settings-personalization.desktop
 %%DATADIR%%/categories/settings-root-category.desktop

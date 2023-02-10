@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-baf>=0.14.0:devel/rubygem-baf \
 		rubygem-uh-layout>=0.4.2:x11-wm/rubygem-uh-layout \
 		rubygem-rb-kqueue>=0.2.4:devel/rubygem-rb-kqueue
 
-USE_RUBY=	yes
 USES=		gem
 NO_ARCH=	yes
 

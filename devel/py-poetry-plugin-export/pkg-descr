@@ -1,0 +1,4 @@
+Poetry plugin to export the dependencies to various formats.
+
+This plugin provides the same features as the existing export command
+of Poetry which it will eventually replace.

@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-pubsub
-PORTVERSION=	2.13.0
+PORTVERSION=	2.15.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.1<2:devel/rubygem-concurrent-ruby \
 		rubygem-retriable>=3.1<4:devel/rubygem-retriable
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

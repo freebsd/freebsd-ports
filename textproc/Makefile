@@ -126,6 +126,7 @@
     SUBDIR += ctpp2
     SUBDIR += cwtext
     SUBDIR += cy-aspell
+    SUBDIR += cy-hunspell
     SUBDIR += da-aspell
     SUBDIR += dadadodo
     SUBDIR += dasel
@@ -253,6 +254,7 @@
     SUBDIR += groonga
     SUBDIR += gsed
     SUBDIR += gspell
+    SUBDIR += gstreamer1-plugins-zxing
     SUBDIR += gtk-doc
     SUBDIR += gtkspell
     SUBDIR += gtkspell3
@@ -266,6 +268,7 @@
     SUBDIR += hi-aspell
     SUBDIR += highlight
     SUBDIR += hil-aspell
+    SUBDIR += hq
     SUBDIR += hr-aspell
     SUBDIR += hs-lhs2tex
     SUBDIR += hs-pandoc
@@ -1340,6 +1343,7 @@
     SUBDIR += py-gi-docgen
     SUBDIR += py-googletrans
     SUBDIR += py-grako
+    SUBDIR += py-grapheme
     SUBDIR += py-guess-language
     SUBDIR += py-hashids
     SUBDIR += py-hexdump
@@ -1488,12 +1492,14 @@
     SUBDIR += py-rich
     SUBDIR += py-rich-cli
     SUBDIR += py-rich-rst
+    SUBDIR += py-rich12
     SUBDIR += py-rnc2rng
     SUBDIR += py-rss2gen
     SUBDIR += py-rst2ansi
     SUBDIR += py-rst2html5
     SUBDIR += py-rstfmt
     SUBDIR += py-scour
+    SUBDIR += py-sentencepiece
     SUBDIR += py-simplebayes
     SUBDIR += py-smartypants
     SUBDIR += py-snowballstemmer
@@ -1705,6 +1711,7 @@
     SUBDIR += rubygem-ferret
     SUBDIR += rubygem-fog-xml
     SUBDIR += rubygem-gemoji
+    SUBDIR += rubygem-gemoji3
     SUBDIR += rubygem-gepub
     SUBDIR += rubygem-github-linguist
     SUBDIR += rubygem-github-markup
@@ -1886,6 +1893,7 @@
     SUBDIR += sdocbook-xml
     SUBDIR += sdom
     SUBDIR += senna
+    SUBDIR += sentencepiece
     SUBDIR += sgmlformat
     SUBDIR += sgmls
     SUBDIR += sgrep

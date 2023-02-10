@@ -1,5 +1,5 @@
 PORTNAME=	rpyc
-PORTVERSION=	5.1.0
+PORTVERSION=	5.3.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -8,9 +8,14 @@ COMMENT=	Remote Python Call
 WWW=		https://rpyc.readthedocs.org/
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe python:3.6+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
+
+USES=		cpe python:3.7+ shebangfix
 CPE_VENDOR=	${PORTNAME:tl}_project
+
+SHEBANG_FILES=	rpyc/cli/*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tomerfiliba-org
@@ -22,6 +27,6 @@ PLUMBUM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}plumbum>0:sysutils/py-plumbum@${PY_F
 PLUMBUM_DESC=	Required for features like rpyc_classic.py and zero deploy
 
 NO_ARCH=	yes
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist pep517
 
 .include <bsd.port.mk>

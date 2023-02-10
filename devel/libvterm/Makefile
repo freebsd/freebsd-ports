@@ -1,5 +1,5 @@
 PORTNAME=	libvterm
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.leonerd.org.uk/code/libvterm/
 

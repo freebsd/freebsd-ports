@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-mediapackage
-PORTVERSION=	1.57.0
+PORTVERSION=	1.58.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-aws-sdk-core>=3.165.0<4:devel/rubygem-aws-sdk-core \
 		rubygem-aws-sigv4>=1.1<2:devel/rubygem-aws-sigv4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

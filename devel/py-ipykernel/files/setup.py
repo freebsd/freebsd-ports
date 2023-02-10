@@ -21,6 +21,7 @@ setup(
     ],
     install_requires=[
         'appnope; platform_system == "Darwin"',
+        'comm>=0.1.1',
         'debugpy>=1.0',
         'ipython>=7.23.1',
         'jupyter-client>=6.1.12',
@@ -30,7 +31,7 @@ setup(
         'psutil',
         'pyzmq>=17',
         'tornado>=6.1',
-        'traitlets>=5.1.0',
+        'traitlets>=5.4.0',
     ],
     extras_require={
         'doc': [
@@ -38,15 +39,28 @@ setup(
             'pydata_sphinx_theme',
             'sphinx',
             'sphinxcontrib_github_alt',
+            'sphinxcontrib-spelling',
+            'sphinx-autodoc-typehints',
+            'trio',
         ],
         'test': [
             'flaky',
             'ipyparallel',
             'pre-commit',
             'pytest-cov',
+            'pytest-asyncio',
             'pytest-timeout',
             'pytest>=7.0',
         ],
+        'cov': [
+            'coverage[toml]',
+            'pytest-cov',
+            'matplotlib',
+            'curio',
+            'trio',
+        ],
+        'pyqt5': ['pyqt5'],
+        'pyside6': ['pyside6'],
     },
     py_modules=['ipykernel_launcher'],
     packages=[

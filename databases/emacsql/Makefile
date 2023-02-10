@@ -1,8 +1,11 @@
 PORTNAME=	emacsql
 DISTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
+
+PATCH_SITES=	https://github.com/magit/emacsql/commit/
+PATCHFILES=	3cec7dcb201568a09ee9cebf0ea1e43cba9d334a.patch:-p1
 
 MAINTAINER=	yasu@FreeBSD.org
 COMMENT=	High-level Emacs Lisp RDBMS front-end

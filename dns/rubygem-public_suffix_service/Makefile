@@ -1,6 +1,6 @@
 PORTNAME=	public_suffix_service
 PORTVERSION=	0.9.1
-PORTREVISION=	70
+PORTREVISION=	72
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 PATCH_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

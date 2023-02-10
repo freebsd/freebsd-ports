@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-rails4>=4.2.0:www/rubygem-rails4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

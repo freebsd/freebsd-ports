@@ -3,6 +3,7 @@ share/applications/de.haeckerfelix.Shortwave.desktop
 share/dbus-1/services/de.haeckerfelix.Shortwave.service
 share/icons/hicolor/scalable/apps/de.haeckerfelix.Shortwave.svg
 share/icons/hicolor/symbolic/apps/de.haeckerfelix.Shortwave-symbolic.svg
+share/locale/be/LC_MESSAGES/shortwave.mo
 share/locale/ca/LC_MESSAGES/shortwave.mo
 share/locale/cs/LC_MESSAGES/shortwave.mo
 share/locale/da/LC_MESSAGES/shortwave.mo
@@ -35,5 +36,6 @@ share/locale/tr/LC_MESSAGES/shortwave.mo
 share/locale/uk/LC_MESSAGES/shortwave.mo
 share/locale/vi/LC_MESSAGES/shortwave.mo
 share/locale/zh_CN/LC_MESSAGES/shortwave.mo
+share/locale/zh_TW/LC_MESSAGES/shortwave.mo
 share/metainfo/de.haeckerfelix.Shortwave.metainfo.xml
 %%DATADIR%%/de.haeckerfelix.Shortwave.gresource

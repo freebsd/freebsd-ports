@@ -1,12 +1,9 @@
 bin/arp-fingerprint
 bin/arp-scan
-bin/get-iab
 bin/get-oui
+etc/arp-scan/mac-vendor.txt
 man/man1/arp-fingerprint.1.gz
 man/man1/arp-scan.1.gz
-man/man1/get-iab.1.gz
 man/man1/get-oui.1.gz
 man/man5/mac-vendor.5.gz
-%%DATADIR%%/ieee-iab.txt
 %%DATADIR%%/ieee-oui.txt
-%%DATADIR%%/mac-vendor.txt

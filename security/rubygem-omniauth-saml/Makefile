@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-omniauth>=2.0<3:security/rubygem-omniauth \
 		rubygem-ruby-saml>=1.12<2:security/rubygem-ruby-saml
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

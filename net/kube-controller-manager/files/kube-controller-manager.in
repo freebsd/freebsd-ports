@@ -1,0 +1,24 @@
+#!/bin/sh
+#
+# PROVIDE: kube-controller-manager
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable kube-controller-manager:
+#
+# kube-controller-manager_enable="YES"
+
+. /etc/rc.subr
+
+name="kube_controller_manager"
+rcvar="kube_controller_manager_enable"
+
+load_rc_config $name
+: ${kube_controller_manager_enable:=no}
+: ${kube_controller_manager_args:="--bind-address=0.0.0.0 --v=2"}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -S -t ${name} -T ${name} /usr/local/bin/kube-controller-manager ${kube_controller_manager_args}"
+
+run_rc_command "$1"

@@ -1,5 +1,5 @@
 PORTNAME=	test-unit
-PORTVERSION=	3.5.5
+PORTVERSION=	3.5.7
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 RUN_DEPENDS=	rubygem-power_assert>=0:devel/rubygem-power_assert
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

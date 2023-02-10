@@ -10,7 +10,6 @@ WWW=		https://hg.sr.ht/~ged/Loggability
 LICENSE=	BSD3CLAUSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

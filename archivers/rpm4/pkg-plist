@@ -79,6 +79,7 @@ lib/rpm/check-files
 lib/rpm/check-prereqs
 lib/rpm/check-rpaths
 lib/rpm/check-rpaths-worker
+lib/rpm/elfdeps
 lib/rpm/fileattrs/debuginfo.attr
 lib/rpm/fileattrs/desktop.attr
 lib/rpm/fileattrs/elf.attr

@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.cc.orig	2022-12-02 17:56:32 UTC
+--- chrome/browser/flag_descriptions.cc.orig	2023-01-13 08:56:02 UTC
 +++ chrome/browser/flag_descriptions.cc
-@@ -6604,7 +6604,7 @@ const char kSearchWebInSidePanelDescription[] =
+@@ -6421,7 +6421,7 @@ const char kSearchWebInSidePanelDescription[] =
  // Random platform combinations -----------------------------------------------
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  const char kQuickCommandsName[] = "Quick Commands";
  const char kQuickCommandsDescription[] =
      "Enable a text interface to browser features. Invoke with Ctrl-Space.";
-@@ -6613,7 +6613,7 @@ const char kQuickCommandsDescription[] =
+@@ -6430,7 +6430,7 @@ const char kQuickCommandsDescription[] =
          // BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -18,7 +18,7 @@
  const char kFollowingFeedSidepanelName[] = "Following feed in the sidepanel";
  const char kFollowingFeedSidepanelDescription[] =
      "Enables the following feed in the sidepanel.";
-@@ -6627,7 +6627,7 @@ const char kWebShareDescription[] =
+@@ -6444,7 +6444,7 @@ const char kWebShareDescription[] =
      "platforms.";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
  
@@ -27,16 +27,16 @@
  const char kOzonePlatformHintChoiceDefault[] = "Default";
  const char kOzonePlatformHintChoiceAuto[] = "Auto";
  const char kOzonePlatformHintChoiceX11[] = "X11";
-@@ -6647,7 +6647,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
+@@ -6464,7 +6464,7 @@ const char kWebBluetoothConfirmPairingSupportDescripti
      "Bluetooth";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- const char kCleanUndecryptablePasswordsLinuxName[] =
-     "Cleanup local undecryptable passwords during initial sync flow";
- const char kCleanUndecryptablePasswordsLinuxDescription[] =
-@@ -6660,7 +6660,7 @@ const char kForcePasswordInitialSyncWhenDecryptionFail
+ const char kForcePasswordInitialSyncWhenDecryptionFailsName[] =
+     "Force initial sync to clean local undecryptable passwords during startup";
+ const char kForcePasswordInitialSyncWhenDecryptionFailsDescription[] =
+@@ -6472,7 +6472,7 @@ const char kForcePasswordInitialSyncWhenDecryptionFail
      "storage and requests initial sync.";
  #endif  // BUILDFLAG(IS_LINUX)
  
@@ -45,7 +45,7 @@
  const char kSkipUndecryptablePasswordsName[] =
      "Skip undecryptable passwords to use the available decryptable "
      "passwords.";
-@@ -6669,7 +6669,7 @@ const char kSkipUndecryptablePasswordsDescription[] =
+@@ -6481,7 +6481,7 @@ const char kSkipUndecryptablePasswordsDescription[] =
      "there are undecryptable ones.";
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
  
@@ -54,7 +54,7 @@
  const char kAsyncDnsName[] = "Async DNS resolver";
  const char kAsyncDnsDescription[] = "Enables the built-in DNS resolver.";
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
-@@ -6774,7 +6774,7 @@ const char kElasticOverscrollDescription[] =
+@@ -6581,7 +6581,7 @@ const char kElasticOverscrollDescription[] =
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

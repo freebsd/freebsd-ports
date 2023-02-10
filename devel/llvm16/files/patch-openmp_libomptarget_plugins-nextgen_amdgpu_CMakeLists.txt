@@ -1,0 +1,11 @@
+--- openmp/libomptarget/plugins-nextgen/amdgpu/CMakeLists.txt.orig
++++ openmp/libomptarget/plugins-nextgen/amdgpu/CMakeLists.txt
+@@ -90,7 +90,7 @@
+ 
+   NO_INSTALL_RPATH
+ )
+-add_dependencies(omptarget.rtl.amdgpu.nextgen omptarget.devicertl.amdgpu)
++#add_dependencies(omptarget.rtl.amdgpu.nextgen omptarget.devicertl.amdgpu)
+ 
+ target_include_directories(
+   omptarget.rtl.amdgpu.nextgen

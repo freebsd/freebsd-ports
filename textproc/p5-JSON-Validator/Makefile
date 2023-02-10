@@ -1,16 +1,16 @@
 PORTNAME=	JSON-Validator
-PORTVERSION=	5.12
+PORTVERSION=	5.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Validate data against a JSON schema
-WWW=		https://metacpan.org/pod/JSON::Validator
+WWW=		https://metacpan.org/dist/JSON-Validator
 
 LICENSE=	ART20
 
-BUILD_DEPENDS:=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Mojolicious>=7.28:www/p5-Mojolicious \
 		p5-YAML-LibYAML>=0.80:textproc/p5-YAML-LibYAML
 TEST_DEPENDS=	p5-Data-Validate-Domain>0:dns/p5-Data-Validate-Domain \

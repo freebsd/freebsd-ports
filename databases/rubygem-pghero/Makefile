@@ -1,5 +1,5 @@
 PORTNAME=	pghero
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-activerecord60>=6:databases/rubygem-activerecord60
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

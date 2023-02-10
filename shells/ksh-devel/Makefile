@@ -21,9 +21,10 @@ LICENSE=	EPL
 
 BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_riscv64=		Fails to link: missing sbrk
+BROKEN_FreeBSD_12=	exit code 139 making lib/libcmd
 
-HASH=		4ec93745
-AST_COMMIT_DATE=	2022.11.04
+HASH=		9bec2b78
+AST_COMMIT_DATE=	2023.01.11
 
 USES=		compiler:c11
 
@@ -49,7 +50,7 @@ KSH93D_DESC=		Install to ${PREFIX}/bin/ksh93d (development)
 
 CFLAGS+=	-DMAP_TYPE
 LDFLAGS+=	-lm
-MAKE_ENV=	CCFLAGS="-Wno-unused-value -Wno-parentheses -Wno-logical-op-parentheses" CFLAGS="${CFLAGS}"
+MAKE_ENV=	CCFLAGS="-Wno-unused-value -Wno-parentheses -Wno-logical-op-parentheses -Wno-int-conversion" CFLAGS="${CFLAGS}"
 
 STATIC_MAKE_ENV=	LDFLAGS+=-static
 

@@ -1,6 +1,6 @@
 PORTNAME=	notepadnext
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.6
+DISTVERSION=	0.6
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,6 +34,7 @@ LDFLAGS+=	-luchardet
 
 PLIST_FILES=	bin/NotepadNext \
 		share/applications/NotepadNext.desktop \
+		share/icons/hicolor/scalable/apps/NotepadNext.svg \
 		share/icons/hicolor/scalable/mimetypes/NotepadNext.svg
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	railties
-PORTVERSION=	7.0.3.1
+PORTVERSION=	7.0.4.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	70
@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-actionpack70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-zeitwerk>=2.5<3:devel/rubygem-zeitwerk
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

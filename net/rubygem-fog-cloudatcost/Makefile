@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-fog-core>=0:devel/rubygem-fog-core \
 		rubygem-ipaddress>=0:net/rubygem-ipaddress
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

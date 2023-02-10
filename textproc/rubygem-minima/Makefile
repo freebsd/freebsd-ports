@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-jekyll>=3.5<5.0:www/rubygem-jekyll \
 		rubygem-jekyll-seo-tag>=2.1<3:www/rubygem-jekyll-seo-tag
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

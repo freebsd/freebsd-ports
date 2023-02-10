@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-cabin>=0:devel/rubygem-cabin \
 		rubygem-stud>=0:devel/rubygem-stud
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -16,6 +16,5 @@ NO_ARCH=	yes
 
 USES=		gem shebangfix
 SHEBANG_FILES=	examples/*/*.rb
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

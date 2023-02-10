@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-cinch>=2.0:irc/rubygem-cinch \
 		rubygem-lita>=4.0:net-im/rubygem-lita
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

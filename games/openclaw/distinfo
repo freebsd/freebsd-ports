@@ -1,3 +1,5 @@
-TIMESTAMP = 1511143151
-SHA256 (pjasicek-OpenClaw-0.0-51-gbac7730_GH0.tar.gz) = 61f5e4d440615a08369591562e2d9489235676bee4bd0182050768eb6ca48af2
-SIZE (pjasicek-OpenClaw-0.0-51-gbac7730_GH0.tar.gz) = 26516775
+TIMESTAMP = 1673895315
+SHA256 (pjasicek-OpenClaw-0.3-98-g3586dfa_GH0.tar.gz) = f2b2b096c453e29f0b6e90f4d4b897b3f479f4f107e653c79f09e13babb29de5
+SIZE (pjasicek-OpenClaw-0.3-98-g3586dfa_GH0.tar.gz) = 28813973
+SHA256 (005aa1d36cae.patch) = 22de43c8bae35b7fddf4e943e5b805d6e9bb097b9ca378670e2d79d266b34d59
+SIZE (005aa1d36cae.patch) = 17473226

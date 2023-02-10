@@ -12,9 +12,9 @@ WWW=		http://www.a-k-r.org/htree/
 
 BUILD_DEPENDS=	rubygem-rdoc>=0.a:devel/rubygem-rdoc
 
-OPTIONS_DEFINE=	DOCS
+USES=	ruby
 
-USE_RUBY=	yes
+OPTIONS_DEFINE=	DOCS
 
 LIB_FILES=	htree.rb htree
 

@@ -260,10 +260,10 @@ _arti:*:311:311::0:0:Arti Daemon:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 _fastdfs:*:313:313::0:0:FastDFS Owner:/nonexistent:/usr/sbin/nologin
 promscale:*:314:314::0:0:Promscale:/nonexistent:/usr/sbin/nologin
-# free: 315
-# free: 316
-# free: 317
-# free: 318
+lavinmq:*:315:315::0:0:LavinMQ user:/nonexistent:/usr/sbin/nologin
+nut:*:316:316::0:0:Network UPS Tools user:/nonexistent:/usr/sbin/nologin
+hedgedoc:*:317:317::0:0:HedgeDoc user:/nonexistent:/usr/sbin/nologin
+icingadirector:*:318:183::0:0:icingadirector user:/nonexistent:/usr/sbin/nologin
 # free: 319
 # free: 320
 # free: 321

@@ -1,0 +1,8 @@
+Placekey-py is a Python library for working with Placekeys. Documentation for
+this package can be found here [1], and documentation for the Placekey service
+API can be found here [2]. The Plackey design specification is available here
+[3].
+
+[1] https://placekey.github.io/placekey-py/
+[2] https://docs.placekey.io/
+[3] https://docs.placekey.io/Placekey_Technical_White_Paper.pdf

@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json \
 USES=		gem
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 
 post-install:
 	# move the public HTML files into DATADIR for webservers

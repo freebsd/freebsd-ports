@@ -1,22 +1,20 @@
-$OpenBSD: patch-gnome-initial-setup_meson_build,v 1.5 2020/11/07 15:51:26 ajacoutot Exp $
-
 Disable NetworkManager.
 
 Find libkrb5.so.
 
 Index: gnome-initial-setup/meson.build
---- gnome-initial-setup/meson.build.orig
+--- gnome-initial-setup/meson.build.orig	2022-12-02 15:11:34 UTC
 +++ gnome-initial-setup/meson.build
-@@ -26,8 +26,6 @@ sources += [
- ]
+@@ -41,8 +41,6 @@ gweather_dep = dependency('gweather4')
+ subdir('pages')
  
  dependencies = [
 -    dependency ('libnm', version: '>= 1.2'),
--    dependency ('libnma', version: '>= 1.0'),
+-    dependency ('libnma-gtk4', version: '>= 1.0'),
      dependency ('polkit-gobject-1', version: '>= 0.103'),
      dependency ('accountsservice'),
-     dependency ('gnome-desktop-3.0', version: '>= 3.7.5'),
-@@ -63,7 +61,8 @@ executable(
+     geocode_glib_2_dep,
+@@ -76,7 +74,8 @@ executable(
      include_directories: config_h_dir,
      dependencies: dependencies,
      install: true,

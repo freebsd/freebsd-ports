@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-ffi>0:devel/rubygem-ffi \
 		rubygem-win32-file-stat>=1.4.0:sysutils/rubygem-win32-file-stat
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

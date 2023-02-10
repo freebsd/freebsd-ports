@@ -1,6 +1,6 @@
---- src/CMakeLists.txt.orig	2021-05-12 18:47:52 UTC
+--- src/CMakeLists.txt.orig	2022-12-20 18:30:03 UTC
 +++ src/CMakeLists.txt
-@@ -2,7 +2,6 @@
+@@ -2,7 +2,6 @@ include_directories(
  
  include_directories(
      ${PROJECT_SOURCE_DIR}/filesystem
@@ -8,7 +8,7 @@
      ${PROJECT_SOURCE_DIR}/liblodepng
      ${PROJECT_SOURCE_DIR}/libmscgen
      ${PROJECT_SOURCE_DIR}/libversion
-@@ -69,7 +68,7 @@ set_source_files_properties(${GENERATED_SRC}/configopt
+@@ -69,7 +68,7 @@ add_custom_command(
  
  # ce_parse.h
  add_custom_command(
@@ -17,7 +17,7 @@
      DEPENDS ${CMAKE_CURRENT_LIST_DIR}/constexp.y
      OUTPUT ${GENERATED_SRC}/ce_parse.h
      WORKING_DIRECTORY ${GENERATED_SRC}
-@@ -353,7 +352,7 @@ endif()
+@@ -387,7 +386,7 @@ target_link_libraries(doxygen PRIVATE
  target_link_libraries(doxygen PRIVATE
      doxymain
      doxycfg

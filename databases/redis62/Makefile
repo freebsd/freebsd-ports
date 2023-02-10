@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	6.2.8
+DISTVERSION=	6.2.10
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	62
@@ -17,6 +17,10 @@ CPE_PRODUCT=	redis
 
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
+
+CONFLICTS_INSTALL=	redis redis-devel redis6 # etc/rc.d/redis
+
+PORTSCOUT=	limit:^6\.2
 
 OPTIONS_DEFINE=		JEMALLOC TESTS TLS TRIB
 OPTIONS_DEFAULT=	TLS
@@ -44,7 +48,7 @@ TLS_USES=		ssl
 TLS_MAKE_ENV=		BUILD_TLS=yes
 TRIB_CATEGORIES=	ruby
 TRIB_RUN_DEPENDS=	rubygem-redis>=2.2:databases/rubygem-redis
-TRIB_USE=		RUBY=yes
+TRIB_USES=		ruby
 
 .include <bsd.port.pre.mk>
 
@@ -69,8 +73,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
 .endif
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
-
-CONFLICTS?=	redis-[1-9].* redis-devel-* redis6-*
 
 USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb redis-cli \

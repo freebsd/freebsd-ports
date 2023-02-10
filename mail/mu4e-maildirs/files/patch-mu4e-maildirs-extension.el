@@ -4,7 +4,7 @@
  
  ;;; Code:
  (require 'mu4e)
-+(require 'mu4e-meta)
++(require 'mu4e-config)
  (require 'dash)
  
  (defgroup mu4e-maildirs-extension nil

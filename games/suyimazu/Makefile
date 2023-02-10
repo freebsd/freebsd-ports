@@ -1,8 +1,7 @@
 PORTNAME=	suyimazu
 DISTVERSION=	2023
 CATEGORIES=	games
-MASTER_SITES=	https://codeberg.org/Alexander88207/Suyimazu/archive/
-DISTNAME=	${DISTVERSION}
+MASTER_SITES=	https://codeberg.org/Alexander88207/Suyimazu/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	Alexander88207@protonmail.com
 COMMENT=	Wine-based Game Launcher for FreeBSD

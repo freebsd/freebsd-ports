@@ -1,0 +1,4 @@
+librest has been designed to make it easier to access web services that claim
+to be "RESTful". A reasonable definition of what this means can be found on
+Wikipedia. However a reasonable description is that a RESTful service should
+have urls that represent remote objects which methods can then be called on.

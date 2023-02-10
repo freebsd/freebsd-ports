@@ -11,7 +11,6 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 CPE_VENDOR=	bson_project
 

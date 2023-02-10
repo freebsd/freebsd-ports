@@ -10,7 +10,6 @@ WWW=		https://github.com/Maher4Ever/wdm
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,5 +1,5 @@
 PORTNAME=	Moose
-PORTVERSION=	2.2201
+PORTVERSION=	2.2203
 PORTEPOCH=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
@@ -53,8 +53,8 @@ TEST_DEPENDS=	p5-CPAN-Meta-Check>=0.011:devel/p5-CPAN-Meta-Check \
 		p5-Test-LeakTrace>=0:devel/p5-Test-LeakTrace \
 		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
 		p5-Test-Fatal>=0.001:devel/p5-Test-Fatal \
+		p5-Test-Needs>=0.002010:devel/p5-Test-Needs \
 		p5-Test-Output>=0:devel/p5-Test-Output \
-		p5-Test-Requires>=0.05:devel/p5-Test-Requires \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings \
 		p5-Type-Tiny>=0:devel/p5-Type-Tiny \
 		p5-URI>=0:net/p5-URI

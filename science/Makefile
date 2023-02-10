@@ -298,12 +298,14 @@
     SUBDIR += py-asdf
     SUBDIR += py-asdf-standard
     SUBDIR += py-asdf-transform-schemas
+    SUBDIR += py-asdf-unit-schemas
     SUBDIR += py-ase
     SUBDIR += py-atomium
     SUBDIR += py-avogadrolibs
     SUBDIR += py-boutdata
     SUBDIR += py-boututils
     SUBDIR += py-cdo
+    SUBDIR += py-cfgrib
     SUBDIR += py-chainer
     SUBDIR += py-chainer-chemistry
     SUBDIR += py-chempy
@@ -345,6 +347,7 @@
     SUBDIR += py-hiphive
     SUBDIR += py-hoomd-blue
     SUBDIR += py-inequality
+    SUBDIR += py-ipygany
     SUBDIR += py-jupyter_jsmol
     SUBDIR += py-kim-query
     SUBDIR += py-kimpy
@@ -431,6 +434,7 @@
     SUBDIR += py-tobler
     SUBDIR += py-trainstation
     SUBDIR += py-tweedledum
+    SUBDIR += py-vedo
     SUBDIR += py-veusz
     SUBDIR += py-xbout
     SUBDIR += pybrain

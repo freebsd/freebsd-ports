@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-google-cloud-bigtable-admin-v2>=0.0<1:net/rubygem-google-cl
 		rubygem-google-cloud-core>=1.5<2:net/rubygem-google-cloud-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

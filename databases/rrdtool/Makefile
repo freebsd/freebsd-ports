@@ -67,7 +67,7 @@ PYTHON_USES=			python
 PYTHON_USE=			PYTHON=flavors,optsuffix
 PYTHON_CONFIGURE_ENABLE=	python
 PYTHON_PORTEXAMPLES=		stripes.py
-RUBY_USE=			RUBY=yes
+RUBY_USES=			ruby
 RUBY_CONFIGURE_ENABLE=		ruby
 
 post-extract:

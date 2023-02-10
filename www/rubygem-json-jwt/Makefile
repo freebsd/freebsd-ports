@@ -1,5 +1,5 @@
 PORTNAME=	json-jwt
-PORTVERSION=	1.16.1
+PORTVERSION=	1.16.3
 CATEGORIES=	www devel rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=4.2:devel/rubygem-activesupport60 \
 		rubygem-faraday-follow_redirects>=0:www/rubygem-faraday-follow_redirects
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

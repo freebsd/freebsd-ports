@@ -10,7 +10,6 @@ WWW=		https://github.com/drbrain/net-http-digest_auth
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

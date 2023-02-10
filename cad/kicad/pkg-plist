@@ -39,6 +39,8 @@ lib/libkicad_3dsg.so.2.0.0
 %%PORTDOCS%%%%DOCSDIR%%/changelogs/CHANGELOG-2012.txt
 %%PORTDOCS%%%%DOCSDIR%%/docset/CMakeLists.txt
 %%PORTDOCS%%%%DOCSDIR%%/docset/icon-16.png
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.Dockerfile
+%%PORTDOCS%%%%DOCSDIR%%/doxygen.Dockerfile.dockerignore
 %%PORTDOCS%%%%DOCSDIR%%/eagle-plugin-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/kicad_doxygen_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/notes_about_pcbnew_new_file_format.odt

@@ -1,7 +1,7 @@
 PORTNAME=	recordclass
-PORTVERSION=	0.18.1.1
+PORTVERSION=	0.18.2
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/recordclass/
 LICENSE=	MIT
 
 USES=		python:3.9+
-USE_PYTHON=	cython distutils
+USE_PYTHON=	distutils
 
 .if ! defined(WITH_DEBUG)
 LDFLAGS+=	-s

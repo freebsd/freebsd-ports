@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-hike1>=1.2,1<2,1:devel/rubygem-hike1 \
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

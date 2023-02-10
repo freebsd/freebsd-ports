@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-sqlite3>=1.3.3:databases/rubygem-sqlite3
 
 CONFIGURE_ARGS=	--with-sqlite3-dir=${LOCALBASE}
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/sqlite3_ruby

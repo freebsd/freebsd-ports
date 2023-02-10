@@ -1,5 +1,5 @@
 PORTNAME=	sinatra-contrib
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	2
@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json \
 		rubygem-tilt>=2.0<3:devel/rubygem-tilt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,7 +1,7 @@
 PORTNAME=	capstone
 PORTVERSION=	4.0.2
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DIST_SUBDIR=	python # Conflicts with devel/capstone distfile
 

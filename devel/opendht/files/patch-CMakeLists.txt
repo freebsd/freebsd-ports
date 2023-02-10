@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2022-11-06 06:47:13 UTC
+--- CMakeLists.txt.orig	2023-01-10 16:45:50 UTC
 +++ CMakeLists.txt
+@@ -61,7 +61,7 @@ if (NOT MSVC)
+     pkg_search_module (Nettle REQUIRED nettle)
+     check_include_file_cxx(msgpack.hpp HAVE_MSGPACKCXX)
+     if (NOT HAVE_MSGPACKCXX)
+-        find_package (msgpack REQUIRED)
++        find_package (msgpackc-cxx REQUIRED)
+     endif()
+     if (OPENDHT_TOOLS)
+         find_package (Readline 6 REQUIRED)
 @@ -91,8 +91,8 @@ if (NOT MSVC)
          endif()
          if (OPENDHT_PROXY_OPENSSL)

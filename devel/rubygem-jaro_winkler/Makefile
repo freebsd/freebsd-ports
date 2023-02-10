@@ -10,6 +10,5 @@ WWW=		https://github.com/tonytonyjan/jaro_winkler
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

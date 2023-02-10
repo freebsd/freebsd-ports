@@ -9,7 +9,9 @@ USE_XORG+=	ice pixman sm x11 xcursor xext xfixes xft xi xinerama xrender xrandr
 
 LIB_DEPENDS+=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png \
-		libfltk.so:x11-toolkits/fltk
+		libfltk.so:x11-toolkits/fltk \
+		libnettle.so:security/nettle \
+		libgmp.so:math/gmp
 
 OPTIONS_DEFINE=	DOCS GNUTLS NLS
 OPTIONS_DEFAULT=	GNUTLS

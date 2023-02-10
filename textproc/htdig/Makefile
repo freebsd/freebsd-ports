@@ -35,7 +35,7 @@ CONFLICTS_INSTALL=	htdump mifluz # bin/htdb_dump bin/htdb_load bin/htdb_stat bin
 OPTIONS_DEFINE=	APACHE DOCS
 OPTIONS_DEFAULT=	APACHE
 
-APACHE_USE=	APACHE=22+
+APACHE_USES=	apache
 APACHE_CONFIGURE_ON=	--with-apache=${LOCALBASE}/sbin
 
 PORTDOCS=	*

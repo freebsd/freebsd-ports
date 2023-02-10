@@ -1,7 +1,7 @@
 PORTNAME=	netcdf
 PORTVERSION=	4.9.0
 DISTVERSIONPREFIX=	c-
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://downloads.unidata.ucar.edu/netcdf-c/${PORTVERSION}/ \
 		LOCAL/sunpoet

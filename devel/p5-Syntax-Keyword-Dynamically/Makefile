@@ -1,5 +1,5 @@
 PORTNAME=	Syntax-Keyword-Dynamically
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -12,7 +12,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-Future-AsyncAwait>=0.60:devel/p5-Future-AsyncAwait \
+		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XS-Parse-Keyword>=0.13:devel/p5-XS-Parse-Keyword
 
 USES=		perl5

@@ -1,5 +1,5 @@
 PORTNAME=	redis
-PORTVERSION=	5.0.5
+PORTVERSION=	5.0.6
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-redis-client>=0.9.0:databases/rubygem-redis-client
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

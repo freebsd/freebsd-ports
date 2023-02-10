@@ -1,5 +1,5 @@
 PORTNAME=	libsidplayfp
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--with-simd=neon
 CONFIGURE_ARGS+=	--with-simd=sse2
 .endif
 
-SIDPLAYFP_SHLIB_VERSION=	6.3.25
+SIDPLAYFP_SHLIB_VERSION=	6.3.26
 STILVIEW_SHLIB_VERSION=		0.0.4
 
 post-build-DOXYGEN-on:

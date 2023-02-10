@@ -58,12 +58,15 @@
 %%R_MOD_DIR%%/html/R.css
 %%R_MOD_DIR%%/java/SparseBitSet.jar
 %%R_MOD_DIR%%/java/XLConnect-1.0.6.jar
+%%R_MOD_DIR%%/java/commons-codec-1.15.jar
 %%R_MOD_DIR%%/java/commons-codec.jar
 %%R_MOD_DIR%%/java/commons-collections4.jar
 %%R_MOD_DIR%%/java/commons-compress.jar
+%%R_MOD_DIR%%/java/commons-io.jar
 %%R_MOD_DIR%%/java/commons-math3.jar
 %%R_MOD_DIR%%/java/curvesapi-1.07.jar
-%%R_MOD_DIR%%/java/ooxml-schemas.jar
+%%R_MOD_DIR%%/java/log4j-api.jar
+%%R_MOD_DIR%%/java/log4j-core.jar
 %%R_MOD_DIR%%/java/poi-ooxml-full.jar
 %%R_MOD_DIR%%/java/poi-ooxml.jar
 %%R_MOD_DIR%%/java/poi.jar
@@ -71,6 +74,7 @@
 %%R_MOD_DIR%%/tests/run_tests.R
 %%R_MOD_DIR%%/unitTests/resources/testBug106.xlsx
 %%R_MOD_DIR%%/unitTests/resources/testBug170.xlsx
+%%R_MOD_DIR%%/unitTests/resources/testBug181.xlsx
 %%R_MOD_DIR%%/unitTests/resources/testBug49.xlsx
 %%R_MOD_DIR%%/unitTests/resources/testBug52.xlsx
 %%R_MOD_DIR%%/unitTests/resources/testBug53.xlsx
@@ -129,6 +133,7 @@
 %%R_MOD_DIR%%/unitTests/runit.workbook.setForceFormulaRecalculation.R
 %%R_MOD_DIR%%/unitTests/runit.workbook.setMissingValue.R
 %%R_MOD_DIR%%/unitTests/runit.workbook.setSheetPos.R
+%%R_MOD_DIR%%/unitTests/runit.workbook.testBug181.R
 %%R_MOD_DIR%%/unitTests/runit.workbook.writeNamedRegion.R
 %%R_MOD_DIR%%/unitTests/runit.workbook.writeWorksheet.R
 %%R_MOD_DIR%%/unitTests/runit.writeAndReadNamedRegion.R

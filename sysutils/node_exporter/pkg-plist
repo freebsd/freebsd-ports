@@ -16,6 +16,7 @@ bin/node_exporter
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/dashboards/node.libsonnet
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/dashboards/use.libsonnet
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/jsonnetfile.json
+%%PORTDOCS%%%%DOCSDIR%%/node-mixin/lib/prom-mixin.libsonnet
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/mixin.libsonnet
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/rules.jsonnet
 %%PORTDOCS%%%%DOCSDIR%%/node-mixin/rules/rules.libsonnet

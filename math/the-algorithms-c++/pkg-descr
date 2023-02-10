@@ -1,0 +1,8 @@
+TheAlgorithms/C-Plus-Plus is a collection of open-source implementation of a
+variety of algorithms implemented in C++ and licensed under MIT License.
+These algorithms span a variety of topics from computer science, mathematics
+and statistics, data science, machine learning, engineering, etc. The
+implementations and the associated documentation are meant to provide a learning
+resource for educators and students. Hence, one may find more than one
+implementation for the same objective but using a different algorithm strategies
+and optimizations.

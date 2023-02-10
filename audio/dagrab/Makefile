@@ -8,6 +8,9 @@ MAINTAINER=	clkao@CirX.ORG
 COMMENT=	Read audio tracks from a CD into wav sound files
 WWW=		http://web.tiscalinet.it/marcellou/dagrab.html
 
+DEPRECATED=	Abandonware and superseded by audio/cdparanoia
+EXPIRATION_DATE=2023-03-31
+
 PLIST_FILES=	bin/dagrab \
 		man/man1/dagrab.1.gz
 

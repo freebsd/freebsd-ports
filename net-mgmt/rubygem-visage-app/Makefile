@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-errand>=0.7.3:devel/rubygem-errand \
 		rubygem-yajl-ruby>=1.1.0:devel/rubygem-yajl-ruby
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 PLIST_FILES=	bin/visage-app

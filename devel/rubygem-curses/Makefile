@@ -10,7 +10,6 @@ WWW=		https://rubygems.org/gems/curses
 LICENSE=	RUBY BSD2CLAUSE
 LICENSE_COMB=	dual
 
-USE_RUBY=	yes
 USES=		gem ncurses
 
 .include <bsd.port.mk>

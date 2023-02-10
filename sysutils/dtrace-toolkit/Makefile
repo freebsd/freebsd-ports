@@ -10,12 +10,11 @@ WWW=		https://github.com/opendtrace/toolkit
 LICENSE=	CDDL
 LICENSE_FILE=	${WRKSRC}/Docs/cddl1.txt
 
-USES=		perl5 python shebangfix
+USES=		perl5 python ruby shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	opendtrace
 GH_PROJECT=	toolkit
 GH_TAGNAME=	ec23e25c8995bfa50cd7c0058129f1f489fdabb4
-USE_RUBY=	yes
 SHEBANG_FILES=	Apps/shellsnoop \
 		Code/Perl/func_abc.pl \
 		Code/Perl/func_malloc.pl \

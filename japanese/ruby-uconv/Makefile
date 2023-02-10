@@ -8,13 +8,16 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Unicode conversion library with Japanese codesets support for Ruby
 WWW=		http://www.yoshidam.net/Ruby.html #uconv
 
-USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
+LICENSE=	RUBY
+LICENSE_FILE=	${WRKSRC}/README
+
+USES=		ruby:extconf
+
+MAKE_ARGS=	INSTALL_DATA="${INSTALL_DATA}" \
+		INSTALL_PROG="${INSTALL_PROGRAM}"
+INSTALL_TARGET=	site-install
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-INSTALL_TARGET=	site-install
-MAKE_ARGS=	INSTALL_PROG="${INSTALL_PROGRAM}" \
-		INSTALL_DATA="${INSTALL_DATA}"
 
 OPTIONS_DEFINE=	DOCS
 

@@ -10,7 +10,6 @@ WWW=		https://github.com/agis/ruby-sdnotify
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

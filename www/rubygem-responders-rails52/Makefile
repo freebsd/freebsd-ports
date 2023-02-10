@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-actionpack52>=5.0:www/rubygem-actionpack52 \
 		rubygem-railties52>=5.0:www/rubygem-railties52
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

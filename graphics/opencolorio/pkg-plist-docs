@@ -101,12 +101,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/tutorials/contributing.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/upgrading_v2/_index.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/upgrading_v2/how_to.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/_sphinx_javascript_frameworks_compat.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/OpenColorIO_withText.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/documentation_options.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery-3.5.1.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery-3.6.0.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/minus.png

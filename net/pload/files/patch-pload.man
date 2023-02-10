@@ -1,5 +1,5 @@
---- pload.man.orig	Tue Feb  1 02:11:24 2000
-+++ pload.man	Wed Sep 22 16:44:12 2004
+--- pload.man.orig	2000-02-01 07:11:24 UTC
++++ pload.man
 @@ -18,7 +18,7 @@
  .TH PLOAD 1 "" "January 2000"
  
@@ -9,7 +9,7 @@
  
  .SH SYNOPSIS
  .ta 6n
-@@ -30,9 +30,9 @@
+@@ -30,9 +30,9 @@ pload \- display ppp throughput statistics in an X win
  [-iformat \fIfmt\fP] [-oformat \fIfmt\fP] 
  
  .SH DESCRIPTION
@@ -22,7 +22,7 @@
  
  .SH OPTIONS
  .PP
-@@ -144,7 +144,7 @@
+@@ -144,7 +144,7 @@ Display \fImessage\fP in the labels when offline. The 
  .TP 8
  .B \-iformat \fIfmt\fP
  Use string \fIfmt\fP for the inbound label. The \fIfmt\fP string will be displayed

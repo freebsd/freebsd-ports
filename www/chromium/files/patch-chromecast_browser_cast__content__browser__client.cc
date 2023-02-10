@@ -1,4 +1,4 @@
---- chromecast/browser/cast_content_browser_client.cc.orig	2022-09-24 10:57:32 UTC
+--- chromecast/browser/cast_content_browser_client.cc.orig	2023-02-08 09:03:45 UTC
 +++ chromecast/browser/cast_content_browser_client.cc
 @@ -434,7 +434,7 @@ void CastContentBrowserClient::AppendExtraCommandLineS
                                            switches::kAudioOutputChannels));

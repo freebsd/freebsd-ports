@@ -32,7 +32,7 @@ OPTIONS_DEFINE=	MODPERL
 
 MODPERL_BUILD_DEPENDS=	p5-libapreq2>=0:www/p5-libapreq2
 MODPERL_RUN_DEPENDS=	p5-libapreq2>=0:www/p5-libapreq2
-MODPERL_USE=		APACHE_RUN=22+
+MODPERL_USES=		apache:run
 
 post-patch:
 	@${REINPLACE_CMD} -e '/bin\/convert/d' ${WRKSRC}/Makefile.PL

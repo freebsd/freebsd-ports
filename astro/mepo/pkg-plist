@@ -21,4 +21,5 @@ bin/mepo_ui_menu_user_pin_updater.sh
 share/applications/mepo.desktop
 share/icons/hicolor/128x128/apps/mepo.png
 share/icons/hicolor/512x512/apps/mepo.png
+share/man/man1/mepo.1.gz
 share/pixmaps/mepo.png

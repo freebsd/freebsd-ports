@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-fiber-local>=0:devel/rubygem-fiber-local
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

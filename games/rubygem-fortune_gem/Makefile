@@ -10,7 +10,6 @@ WWW=		https://github.com/nodanaonlyzuul/fortune_gem
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 PLIST_FILES=	bin/fortune_gem
 

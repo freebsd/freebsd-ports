@@ -1,8 +1,8 @@
 PORTNAME?=	postgresql
-DISTVERSION?=	15.1
+DISTVERSION?=	15.2
 # PORTREVISION must be ?= otherwise, all slave ports get this PORTREVISION and
 # not their own.  Probably best to keep it at ?=0 when reset here too.
-PORTREVISION?=	1
+PORTREVISION?=	0
 CATEGORIES?=	databases
 MASTER_SITES=	PGSQL/source/v${DISTVERSION}
 PKGNAMESUFFIX?= ${PORTVERSION:R}${COMPONENT}
@@ -164,7 +164,7 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
 LDAP_CONFIGURE_WITH=	ldap
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 
 OPTIMIZED_CFLAGS_CFLAGS=-O3 -funroll-loops
 

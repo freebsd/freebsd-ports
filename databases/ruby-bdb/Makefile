@@ -18,9 +18,7 @@ BROKEN_RUBY32=	yes
 
 BUILD_DEPENDS=	rubygem-rdoc>=0.a:devel/rubygem-rdoc
 
-USES=		bdb shebangfix tar:bzip2
-USE_RUBY=	yes
-USE_RUBY_EXTCONF=	yes
+USES=		bdb ruby:extconf shebangfix tar:bzip2
 
 SHEBANG_FILES=	examples/basic.rb examples/cats.rb examples/cursor.rb \
 		examples/func.rb examples/join.rb examples/lock.rb \

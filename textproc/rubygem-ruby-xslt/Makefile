@@ -12,7 +12,6 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	libxslt
-USE_RUBY=	yes
 USES=		gem gnome
 
 .include <bsd.port.mk>

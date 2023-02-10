@@ -6,7 +6,7 @@ MASTER_SITES=	http://www.contextfreeart.org/download/ \
 		http://glyphic.s3.amazonaws.com/cfa/download/
 DISTNAME=	ContextFreeSource${PORTVERSION}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Context Free Design Grammar compiler
 WWW=		https://www.contextfreeart.org/
 

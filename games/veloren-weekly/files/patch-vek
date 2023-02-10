@@ -1,0 +1,34 @@
+Avoid downgrading to Stable despite RUSTC_BOOTSTRAP
+
+error[E0658]: platform intrinsics are experimental and possibly buggy
+  --> src/simd_llvm.rs:13:8
+   |
+13 | extern "platform-intrinsic" {
+   |        ^^^^^^^^^^^^^^^^^^^^
+   |
+   = note: see issue #27731 <https://github.com/rust-lang/rust/issues/27731> for more information
+   = help: add `#![feature(platform_intrinsics)]` to the crate attributes to enable
+
+--- ../vek-84d5cb65841d46599a986c5477341bea4456be26/build.rs.orig	2022-04-24 18:01:19 UTC
++++ ../vek-84d5cb65841d46599a986c5477341bea4456be26/build.rs
+@@ -4,19 +4,6 @@ fn main() {
+ fn main() {
+     assert!(version().unwrap().major >= 1);
+ 
+-    match version_meta().unwrap().channel {
+-        Channel::Stable => {
+-            println!("cargo:rustc-cfg=stable");
+-        }
+-        Channel::Beta => {
+-            println!("cargo:rustc-cfg=beta");
+-        }
+-        Channel::Nightly => {
+-            println!("cargo:rustc-cfg=nightly");
+-        }
+-        Channel::Dev => {
+-            println!("cargo:rustc-cfg=dev");
+-        }
+-    }
++    println!("cargo:rustc-cfg=nightly");
+ }
+ 

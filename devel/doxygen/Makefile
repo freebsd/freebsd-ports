@@ -1,5 +1,5 @@
 PORTNAME=	doxygen
-PORTVERSION=	1.9.5
+PORTVERSION=	1.9.6
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/rel-${PORTVERSION} \
@@ -34,10 +34,10 @@ DOCS_USE=		TEX=base:build,dvipsk:build,pdftex:build
 DOCS_ALL_TARGET=	docs
 DOCS_BUILD_DEPENDS=	dot:graphics/graphviz
 DOCS_CMAKE_BOOL=	build_doc
-DOCS_PLIST_FILES=	man/man1/doxygen.1.gz \
-			man/man1/doxyindexer.1.gz \
-			man/man1/doxysearch.1.gz \
-			man/man1/doxywizard.1.gz
+DOCS_PLIST_FILES=	share/man/man1/doxygen.1.gz \
+			share/man/man1/doxyindexer.1.gz \
+			share/man/man1/doxysearch.1.gz \
+			share/man/man1/doxywizard.1.gz
 # Parallel jobs break when the DOCS option is on
 DOCS_VARS=		MAKE_JOBS_UNSAFE=yes
 

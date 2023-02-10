@@ -1,0 +1,37 @@
+[
+{ type: install
+  message: <<EOM
+    OpenTTD can use free (libre) data files, split into OpenGFX for
+    graphics, OpenSFX for sounds, and OpenMSX for music; it will offer
+    to download them upon running the program.  Alternatively, they
+    can be installed as corresponding `games/opengfx', `games/opensfx',
+    and `games/openmsx' ports or packages.
+
+    If you'd rather use data files from the original Windows version
+    of ``Transport Tycoon Deluxe'', copy the following files to your
+    $HOME/.openttd/data directory:
+
+	sample.cat
+	trg1r.grf
+	trgcr.grf
+	trghr.grf
+	trgir.grf
+	trgtr.grf
+
+    If you want the TTD music, copy the gm/ folder from the Windows
+    version of TTD to your OpenTTD folder (not your data folder).  The
+    music from the DOS version does not work.
+
+    If you are using a non-Latin language, you may see lots of `?'s on
+    the screen.  Please open your configuration file and add desired
+    fonts (file name with full path).  Bold fonts might look better:
+
+	[misc]
+	small_font =
+	medium_font =
+	large_font =
+
+    Enjoy!!
+EOM
+}
+]

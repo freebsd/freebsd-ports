@@ -60,6 +60,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/SessionHost.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/SourceFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/SourceSub.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/Sweep.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL/User.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56.pm
@@ -84,6 +85,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/SessionHost.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/SourceFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/SourceSub.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/Sweep.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/MySQL56/User.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/ApiKey.pm
@@ -107,6 +109,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/SessionHost.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/SourceFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/SourceSub.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/Sweep.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Overlay/User.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL.pm
@@ -131,6 +134,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/SessionHost.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/SourceFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/SourceSub.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/Sweep.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/PostgreSQL/User.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/ApiKey.pm
@@ -154,6 +158,7 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/SessionHost.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/SourceFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/SourceSub.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Sweep.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/User.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/ResultSet.pm

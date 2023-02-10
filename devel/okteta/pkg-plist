@@ -554,8 +554,11 @@ share/locale/be/LC_MESSAGES/libkasten.mo
 share/locale/be/LC_MESSAGES/liboktetakasten.mo
 share/locale/be/LC_MESSAGES/okteta.mo
 share/locale/be/LC_MESSAGES/oktetapart.mo
+share/locale/bg/LC_MESSAGES/libkasten.mo
 share/locale/bg/LC_MESSAGES/liboktetacore.mo
 share/locale/bg/LC_MESSAGES/liboktetagui.mo
+share/locale/bg/LC_MESSAGES/liboktetakasten.mo
+share/locale/bg/LC_MESSAGES/okteta.mo
 share/locale/bg/LC_MESSAGES/oktetapart.mo
 share/locale/br/LC_MESSAGES/oktetapart.mo
 share/locale/bs/LC_MESSAGES/libkasten.mo
@@ -696,6 +699,12 @@ share/locale/ja/LC_MESSAGES/liboktetagui.mo
 share/locale/ja/LC_MESSAGES/liboktetakasten.mo
 share/locale/ja/LC_MESSAGES/okteta.mo
 share/locale/ja/LC_MESSAGES/oktetapart.mo
+share/locale/ka/LC_MESSAGES/libkasten.mo
+share/locale/ka/LC_MESSAGES/liboktetacore.mo
+share/locale/ka/LC_MESSAGES/liboktetagui.mo
+share/locale/ka/LC_MESSAGES/liboktetakasten.mo
+share/locale/ka/LC_MESSAGES/okteta.mo
+share/locale/ka/LC_MESSAGES/oktetapart.mo
 share/locale/kk/LC_MESSAGES/libkasten.mo
 share/locale/kk/LC_MESSAGES/liboktetacore.mo
 share/locale/kk/LC_MESSAGES/liboktetagui.mo

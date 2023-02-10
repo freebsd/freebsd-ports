@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-aws-sigv4>=0:devel/rubygem-aws-sigv4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

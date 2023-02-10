@@ -8,7 +8,7 @@
 .if !defined(_INCLUDE_USES_OBJC_MK)
 _INCLUDE_USES_OBJC_MK=	yes
 
-OBJC_CLANG_VERSION=70
+OBJC_CLANG_VERSION=	${LLVM_DEFAULT}
 
 objc_ARGS?=
 .  if !empty(objc_ARGS) && ! ${objc_ARGS:Mcompiler}

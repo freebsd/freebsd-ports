@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-redis>=3.0.4:databases/rubygem-redis
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

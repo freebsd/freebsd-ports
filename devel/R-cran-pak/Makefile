@@ -1,5 +1,5 @@
 PORTNAME=	pak
-DISTVERSION=	0.3.1
+DISTVERSION=	0.4.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,7 +17,7 @@ TEST_DEPENDS=	R-cran-jsonlite>=1.8.0:converters/R-cran-jsonlite \
 		R-cran-filelock>=1.0.2:devel/R-cran-filelock \
 		R-cran-glue>=1.6.2:devel/R-cran-glue \
 		R-cran-mockery>0:devel/R-cran-mockery \
-		R-cran-pkgcache>=2.0.1:devel/R-cran-pkgcache \
+		R-cran-pkgcache>=2.0.4:devel/R-cran-pkgcache \
 		R-cran-prettyunits>0:devel/R-cran-prettyunits \
 		R-cran-rprojroot>=2.0.2:devel/R-cran-rprojroot \
 		R-cran-rstudioapi>0:devel/R-cran-rstudioapi \

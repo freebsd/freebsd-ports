@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-loofah>=2.3.1:textproc/rubygem-loofah \
 		rubygem-sax-machine>=1.0:textproc/rubygem-sax-machine
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

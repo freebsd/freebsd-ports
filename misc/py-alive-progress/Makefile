@@ -1,18 +1,22 @@
 PORTNAME=	alive-progress
-DISTVERSION=	2.4.1
+DISTVERSION=	3.0.0
 CATEGORIES=	misc
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Enhanced Python Progress Bar
-WWW=		https://pypi.org/project/alive-progress/
+WWW=		https://github.com/rsalmei/alive-progress
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.2+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}about-time>=4.2.1:devel/py-about-time@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}grapheme>=0.6.0<0.6.0_99:textproc/py-grapheme@${PY_FLAVOR}
+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

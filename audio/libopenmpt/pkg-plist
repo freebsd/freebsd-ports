@@ -1,4 +1,4 @@
-bin/openmpt123
+%%OPENMPT123%%bin/openmpt123
 include/libopenmpt/libopenmpt.h
 include/libopenmpt/libopenmpt.hpp
 include/libopenmpt/libopenmpt_config.h
@@ -13,7 +13,7 @@ lib/libopenmpt.so
 lib/libopenmpt.so.0
 lib/libopenmpt.so.0.3.3
 libdata/pkgconfig/libopenmpt.pc
-man/man1/openmpt123.1.gz
+%%OPENMPT123%%man/man1/openmpt123.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/libopenmpt_example_c_mem.c

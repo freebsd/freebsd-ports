@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-gssapi>=0:security/rubygem-gssapi \
 		rubygem-rest-client>=1.6.5<3.0.0:www/rubygem-rest-client
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

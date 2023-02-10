@@ -1,5 +1,5 @@
 PORTNAME=	railties
-PORTVERSION=	6.0.6
+PORTVERSION=	6.0.6.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	60
@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-actionpack60>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-thor>=0.20.3<2.0:devel/rubygem-thor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

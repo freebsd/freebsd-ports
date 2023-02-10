@@ -1,3 +1,3 @@
-TIMESTAMP = 1660384956
-SHA256 (toybox-0.8.8.tar.gz) = dafd41978d40f02a61cf1be99a2b4a25812bbfb9c3157e679ee7611202d6ac58
-SIZE (toybox-0.8.8.tar.gz) = 3492750
+TIMESTAMP = 1673953133
+SHA256 (toybox-0.8.9.tar.gz) = 06913dde3de7139b40f947bd7f23869dfc8796e9c6ff39de02719f8b7b2d47ad
+SIZE (toybox-0.8.9.tar.gz) = 3517516

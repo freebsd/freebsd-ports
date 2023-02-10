@@ -1,3 +1,5 @@
-TIMESTAMP = 1668888589
-SHA256 (sjaehn-BChoppr-1.12.0_GH0.tar.gz) = dfc72cf6d6448f86b3f9697c71ea6c582112dccb6d7482cae72b2c0d958a35f5
-SIZE (sjaehn-BChoppr-1.12.0_GH0.tar.gz) = 483196
+TIMESTAMP = 1674538858
+SHA256 (sjaehn-BChoppr-1.12.6-11-g9a463da_GH0.tar.gz) = b1591b345aac5d103ccfaa5f95db5c96bd1bcabcd627b090c8d2496ecb0a515f
+SIZE (sjaehn-BChoppr-1.12.6-11-g9a463da_GH0.tar.gz) = 330327
+SHA256 (sjaehn-BWidgets-89d0765_GH0.tar.gz) = edfdec4d45fc289d2ea233e493b0052470b944ad33ff7bb9617d23e3b135e5b2
+SIZE (sjaehn-BWidgets-89d0765_GH0.tar.gz) = 2413829

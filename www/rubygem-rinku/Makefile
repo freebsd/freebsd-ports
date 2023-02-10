@@ -10,6 +10,5 @@ WWW=		https://github.com/vmg/rinku
 LICENSE=	ISCL
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

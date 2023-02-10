@@ -14,6 +14,7 @@
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Code.pod
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Counter.pm
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Counter.pod
+%%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Enum.pm
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Hash.pm
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Hash.pod
 %%SITE_PERL%%/Sub/HandlesVia/HandlerLibrary/Number.pm
@@ -55,6 +56,7 @@
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Bool.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Code.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Counter.3.gz
+%%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Enum.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Hash.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Number.3.gz
 %%PERL5_MAN3%%/Sub::HandlesVia::HandlerLibrary::Scalar.3.gz

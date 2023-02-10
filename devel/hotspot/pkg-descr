@@ -1,0 +1,4 @@
+The hotspot project is an effort to create a standalone GUI for performance
+data. The first goal is to provide a UI like KCachegrind around Linux perf.
+In the future various other performance data formats are planned to be
+supported.

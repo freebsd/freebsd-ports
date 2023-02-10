@@ -1,5 +1,5 @@
 PORTNAME=	globalid
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails50
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-activesupport50>=5.0:devel/rubygem-activesupport50
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

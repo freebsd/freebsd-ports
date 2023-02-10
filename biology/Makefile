@@ -3,6 +3,7 @@
     SUBDIR += abyss
     SUBDIR += ad2vcf
     SUBDIR += artemis
+    SUBDIR += atac-seq
     SUBDIR += augustus
     SUBDIR += avida
     SUBDIR += babel
@@ -237,6 +238,7 @@
     SUBDIR += viennarna
     SUBDIR += vsearch
     SUBDIR += vt
+    SUBDIR += wfa2-lib
     SUBDIR += wise
 
 .include <bsd.port.subdir.mk>

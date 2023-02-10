@@ -1,0 +1,34 @@
+--- test/CMakeLists.txt.orig	2022-11-08 12:40:00 UTC
++++ test/CMakeLists.txt
+@@ -25,14 +25,14 @@ ELSE ()
+ ENDIF ()
+ 
+ # Google Test and Mock
+-set(GMOCK_DIR gmock-1.11.0)
+-add_library(gmock STATIC
+-  ${GMOCK_DIR}/gmock-gtest-all.cc
+-  ${GMOCK_DIR}/gmock/gmock.h
+-  ${GMOCK_DIR}/gtest/gtest.h
+-)
+-target_include_directories(gmock PUBLIC SYSTEM ${GMOCK_DIR})
+-target_link_libraries(gmock PRIVATE ${CMAKE_THREAD_LIBS_INIT})
++# set(GMOCK_DIR gmock-1.11.0)
++# add_library(gmock STATIC
++#   ${GMOCK_DIR}/gmock-gtest-all.cc
++#   ${GMOCK_DIR}/gmock/gmock.h
++#   ${GMOCK_DIR}/gtest/gtest.h
++# )
++# target_include_directories(gmock PUBLIC SYSTEM ${GMOCK_DIR})
++# target_link_libraries(gmock PRIVATE ${CMAKE_THREAD_LIBS_INIT})
+ 
+ # test targets
+ 
+@@ -43,7 +43,7 @@ configure_file(${CARES_TOPLEVEL_DIR}/src/lib/ares_conf
+ 
+ add_executable(arestest ${TESTSOURCES} ${TESTHEADERS})
+ target_include_directories(arestest PRIVATE ${CMAKE_CURRENT_BINARY_DIR})
+-target_link_libraries(arestest PRIVATE caresinternal gmock)
++target_link_libraries(arestest PRIVATE caresinternal gtest gmock)
+ 
+ IF (CARES_BUILD_CONTAINER_TESTS)
+   target_compile_definitions(arestest PRIVATE HAVE_USER_NAMESPACE HAVE_UTS_NAMESPACE)

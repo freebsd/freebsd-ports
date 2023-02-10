@@ -1,5 +1,5 @@
 PORTNAME=	css_parser
-PORTVERSION=	1.12.0
+PORTVERSION=	1.14.0
 CATEGORIES=	textproc www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

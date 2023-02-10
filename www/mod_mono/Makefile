@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xsp:www/xsp
 RUN_DEPENDS=	xsp:www/xsp
 
-USES=		apache:2.2+ libtool mono pkgconfig
+USES=		apache libtool mono pkgconfig
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static --man=${PREFIX}/man

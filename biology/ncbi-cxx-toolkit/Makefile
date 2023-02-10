@@ -1,7 +1,7 @@
 PORTNAME=	ncbi-cxx-toolkit
 DISTVERSIONPREFIX=	release-
 DISTVERSION=	26.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology science devel
 
 MAINTAINER=	yuri@FreeBSD.org

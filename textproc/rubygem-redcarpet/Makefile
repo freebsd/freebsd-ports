@@ -1,5 +1,5 @@
 PORTNAME=	redcarpet
-PORTVERSION=	3.5.1
+PORTVERSION=	3.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 PLIST_FILES=	bin/redcarpet
 

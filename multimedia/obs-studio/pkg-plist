@@ -124,19 +124,19 @@ lib/cmake/obs-frontend-api/obs-frontend-apiTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/obs-frontend-api/obs-frontend-apiTargets.cmake
 lib/libobs-frontend-api.so
 lib/libobs-frontend-api.so.0
-lib/libobs-frontend-api.so.28
+lib/libobs-frontend-api.so.29
 lib/libobs-opengl.so
 lib/libobs-opengl.so.1
-lib/libobs-opengl.so.28
+lib/libobs-opengl.so.29
 lib/libobs-scripting.so
 lib/libobs-scripting.so.1
-lib/libobs-scripting.so.28
+lib/libobs-scripting.so.29
 lib/libobs.so
 lib/libobs.so.0
-lib/libobs.so.28
+lib/libobs.so.29
 lib/libobsglad.so
 lib/libobsglad.so.1
-lib/libobsglad.so.28
+lib/libobsglad.so.29
 lib/obs-plugins/frontend-tools.so
 lib/obs-plugins/image-source.so
 lib/obs-plugins/linux-capture.so
@@ -379,6 +379,7 @@ share/obs/obs-plugins/linux-capture/locale/zh-TW.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/ar-SA.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/az-AZ.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/ba-RU.ini
+%%JACK%%share/obs/obs-plugins/linux-jack/locale/be-BY.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/bg-BG.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/bn-BD.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/ca-ES.ini
@@ -432,6 +433,7 @@ share/obs/obs-plugins/linux-capture/locale/zh-TW.ini
 %%JACK%%share/obs/obs-plugins/linux-jack/locale/zh-TW.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/.gitkeep
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/ar-SA.ini
+%%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/bn-BD.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/ca-ES.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/cs-CZ.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/da-DK.ini
@@ -443,6 +445,7 @@ share/obs/obs-plugins/linux-capture/locale/zh-TW.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/eu-ES.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/fa-IR.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/fi-FI.ini
+%%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/fil-PH.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/fr-FR.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/gl-ES.ini
 %%PIPEWIRE%%share/obs/obs-plugins/linux-pipewire/locale/he-IL.ini
@@ -1088,7 +1091,7 @@ share/obs/obs-plugins/rtmp-services/locale/zh-CN.ini
 share/obs/obs-plugins/rtmp-services/locale/zh-TW.ini
 share/obs/obs-plugins/rtmp-services/package.json
 share/obs/obs-plugins/rtmp-services/schema/package-schema.json
-share/obs/obs-plugins/rtmp-services/schema/service-schema-v3.json
+share/obs/obs-plugins/rtmp-services/schema/service-schema-v4.json
 share/obs/obs-plugins/rtmp-services/services.json
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/ar-SA.ini
 %%SNDIO%%share/obs/obs-plugins/sndio/locale/be-BY.ini

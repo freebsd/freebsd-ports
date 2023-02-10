@@ -1,9 +1,8 @@
 PORTNAME=	Finance-Quote
-PORTVERSION=	1.53.01
+PORTVERSION=	1.54
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Get stock and mutual fund quotes from various exchanges
@@ -25,6 +24,7 @@ RUN_DEPENDS=	p5-DateTime>=0:devel/p5-DateTime \
 		p5-JSON>=0:converters/p5-JSON \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https \
 		p5-Mozilla-CA>=0:www/p5-Mozilla-CA \
+		p5-Readonly>=0:devel/p5-Readonly \
 		p5-Spreadsheet-XLSX>=0:textproc/p5-Spreadsheet-XLSX \
 		p5-String-Util>=0:textproc/p5-String-Util \
 		p5-Text-Template>=0:textproc/p5-Text-Template \

@@ -14,4 +14,6 @@ USES=		cmake compiler:c++17-lang \
 USE_QT=		base tools
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

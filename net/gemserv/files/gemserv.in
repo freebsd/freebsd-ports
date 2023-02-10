@@ -59,6 +59,8 @@ pidfile=/var/run/gemserv.pid
 command=/usr/sbin/daemon
 procname=%%PREFIX%%/bin/gemserv
 command_args="-p ${pidfile} ${gemserv_syslog_output_flags} ${procname} ${gemserv_config}"
+# reload: support SIGHUP to reparse configuration file
+extra_commands="reload"
 
 start_precmd="gemserv_start_precmd"
 stop_postcmd="gemserv_stop_postcmd"

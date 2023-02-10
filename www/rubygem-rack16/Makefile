@@ -18,7 +18,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

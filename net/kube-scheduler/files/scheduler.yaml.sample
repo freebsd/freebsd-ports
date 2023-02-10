@@ -1,0 +1,8 @@
+---
+apiVersion: kubescheduler.config.k8s.io/v1beta3
+kind: KubeSchedulerConfiguration
+clientConnection:
+  kubeconfig: "/usr/local/etc/kubernetes/scheduler.kubeconfig"
+leaderElection:
+  leaderElect: true
+enableProfiling: false

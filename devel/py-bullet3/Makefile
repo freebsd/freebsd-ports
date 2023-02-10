@@ -1,5 +1,5 @@
 PORTNAME=	bullet3
-DISTVERSION=	3.24
+DISTVERSION=	3.25
 CATEGORIES=	devel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,10 +22,12 @@ GH_ACCOUNT=	bulletphysics
 
 CFLAGS_powerpc64=	-mvsx
 
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pybullet*.so
 
-do-test: install # test require graphical environment
-	@${PYTHON_CMD} ${FILESDIR}/test.py
+do-test: # test require graphical environment
+	@${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${FILESDIR}/test.py
 
 .include <bsd.port.mk>

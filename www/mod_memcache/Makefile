@@ -11,7 +11,7 @@ WWW=		https://github.com/joshrotenberg/modmemcache
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		apache:2.2+
+USES=		apache
 USE_GITHUB=	yes
 GH_ACCOUNT=	joshrotenberg
 GH_PROJECT=	modmemcache

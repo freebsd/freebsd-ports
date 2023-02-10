@@ -10,7 +10,6 @@ WWW=		https://github.com/manveru/ezamar
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

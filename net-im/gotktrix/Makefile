@@ -1,10 +1,10 @@
 PORTNAME=	gotktrix
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.4
-PORTREVISION=	3
+PORTREVISION=	5
 CATEGORIES=	net-im
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Matrix client in Go and GTK4
 WWW=		https://github.com/diamondburned/gotktrix
 

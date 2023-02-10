@@ -10,7 +10,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Romaji <-> Kana conversion library for Ruby
 WWW=		http://0xcc.net/ruby-romkan/index.html.en
 
-USE_RUBY=	yes
+USES=	ruby
 
 NO_BUILD=	yes
 

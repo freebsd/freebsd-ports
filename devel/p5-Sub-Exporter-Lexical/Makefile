@@ -25,4 +25,6 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
+PORTSCOUT=	skipv:0.100000
+
 .include <bsd.port.mk>

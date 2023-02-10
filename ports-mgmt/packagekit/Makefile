@@ -58,7 +58,7 @@ PLIST_SUB+=	MAN='@comment '
 
 . if ${PORT_OPTIONS:MPORTS}
 RUN_DEPENDS+=	${LOCALBASE}/sbin/portupgrade:ports-mgmt/portupgrade
-USE_RUBY=	yes
+USES+=	ruby
 CONFIGURE_ARGS+=--enable-ports --with-default-backend=ports
 PLIST_SUB+=	PORTS=""
 . else

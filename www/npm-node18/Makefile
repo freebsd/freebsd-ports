@@ -1,11 +1,53 @@
-PKGNAMESUFFIX=	-node18
+PORTNAME=	npm
+PORTVERSION=	9.4.1
+CATEGORIES=	www
+MASTER_SITES=	LOCAL/sunpoet
+PKGNAMESUFFIX=	${NODEJS_SUFFIX}
 
-CONFLICTS_INSTALL=	npm npm-node14 npm-node16
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Node package manager
+WWW=		https://www.npmjs.com/package/npm \
+		https://github.com/npm/cli
 
-USES=		nodejs:18,run
+LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/lib/node_modules/npm/LICENSE
 
-MASTERDIR=	${.CURDIR}/../npm
+RUN_DEPENDS=	gmake:devel/gmake
+
+USES?=		nodejs:18,run
+USES+=		cpe python:3.7+ shebangfix tar:xz
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+REINPLACE_ARGS=	-i ''
+
+CONFLICTS_INSTALL=	npm-node[0-9][0-9]
+
+CPE_VENDOR=	npmjs
 
 PORTSCOUT=	ignore:1
 
-.include "${MASTERDIR}/Makefile"
+SHEBANG_GLOB=	*.py
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_SUFFIX} > 38
+_PYTHON_OPTFLAG=	-o 0 -o 1
+PLIST_SUB+=		HAS_CPYTHON=""
+.else
+_PYTHON_OPTFLAG=	""
+PLIST_SUB+=		HAS_CPYTHON="@comment "
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/etc/man.d/npm.conf
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp
+	@${REINPLACE_CMD} -e 's|exec python |exec ${PYTHON_CMD} |' ${WRKSRC}/lib/node_modules/npm/node_modules/node-gyp/gyp/gyp
+	@${FIND} ${WRKSRC}/ -name '*.sh' -exec ${REINPLACE_CMD} -e '1 s|/usr/local|${LOCALBASE}|' {} +
+
+do-install:
+	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/
+	${ECHO_CMD} 'python=${PYTHON_CMD}' > ${STAGEDIR}${PREFIX}/etc/npmrc
+	${PYTHON_CMD} -m compileall -d ${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp -f ${STAGEDIR}${PREFIX}/lib/node_modules/npm/node_modules/node-gyp/gyp/pylib/gyp ${_PYTHON_OPTFLAG}
+
+.include <bsd.port.post.mk>

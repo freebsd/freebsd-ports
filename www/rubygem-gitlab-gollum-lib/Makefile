@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-gemojione32>=3.2<4:graphics/rubygem-gemojione32 \
 		rubygem-stringex>=2.6<3,1:devel/rubygem-stringex
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

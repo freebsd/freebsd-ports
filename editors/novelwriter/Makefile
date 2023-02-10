@@ -1,8 +1,8 @@
 PORTNAME=	novelwriter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.2
+DISTVERSION=	2.0.4
 CATEGORIES=	editors python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Text editor designed for writing novels

@@ -5,7 +5,7 @@ CATEGORIES=	sysutils audio
 MASTER_SITES=	SF/cdrdao
 DISTNAME=	cdrdao-${PORTVERSION}
 
-MAINTAINER=	marius@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Record CD-R[W]s in disk-at-once mode
 WWW=		http://cdrdao.sourceforge.net/
 

@@ -14,6 +14,8 @@ include/antlr4-runtime/DefaultErrorStrategy.h
 include/antlr4-runtime/DiagnosticErrorListener.h
 include/antlr4-runtime/Exceptions.h
 include/antlr4-runtime/FailedPredicateException.h
+include/antlr4-runtime/FlatHashMap.h
+include/antlr4-runtime/FlatHashSet.h
 include/antlr4-runtime/InputMismatchException.h
 include/antlr4-runtime/IntStream.h
 include/antlr4-runtime/InterpreterRuleContext.h
@@ -38,6 +40,7 @@ include/antlr4-runtime/TokenStream.h
 include/antlr4-runtime/TokenStreamRewriter.h
 include/antlr4-runtime/UnbufferedCharStream.h
 include/antlr4-runtime/UnbufferedTokenStream.h
+include/antlr4-runtime/Version.h
 include/antlr4-runtime/Vocabulary.h
 include/antlr4-runtime/WritableToken.h
 include/antlr4-runtime/antlr4-common.h
@@ -47,11 +50,10 @@ include/antlr4-runtime/atn/ATNConfig.h
 include/antlr4-runtime/atn/ATNConfigSet.h
 include/antlr4-runtime/atn/ATNDeserializationOptions.h
 include/antlr4-runtime/atn/ATNDeserializer.h
-include/antlr4-runtime/atn/ATNSerializer.h
 include/antlr4-runtime/atn/ATNSimulator.h
 include/antlr4-runtime/atn/ATNState.h
+include/antlr4-runtime/atn/ATNStateType.h
 include/antlr4-runtime/atn/ATNType.h
-include/antlr4-runtime/atn/AbstractPredicateTransition.h
 include/antlr4-runtime/atn/ActionTransition.h
 include/antlr4-runtime/atn/AmbiguityInfo.h
 include/antlr4-runtime/atn/ArrayPredictionContext.h
@@ -64,7 +66,6 @@ include/antlr4-runtime/atn/ContextSensitivityInfo.h
 include/antlr4-runtime/atn/DecisionEventInfo.h
 include/antlr4-runtime/atn/DecisionInfo.h
 include/antlr4-runtime/atn/DecisionState.h
-include/antlr4-runtime/atn/EmptyPredictionContext.h
 include/antlr4-runtime/atn/EpsilonTransition.h
 include/antlr4-runtime/atn/ErrorInfo.h
 include/antlr4-runtime/atn/LL1Analyzer.h
@@ -88,12 +89,17 @@ include/antlr4-runtime/atn/NotSetTransition.h
 include/antlr4-runtime/atn/OrderedATNConfigSet.h
 include/antlr4-runtime/atn/ParseInfo.h
 include/antlr4-runtime/atn/ParserATNSimulator.h
+include/antlr4-runtime/atn/ParserATNSimulatorOptions.h
 include/antlr4-runtime/atn/PlusBlockStartState.h
 include/antlr4-runtime/atn/PlusLoopbackState.h
 include/antlr4-runtime/atn/PrecedencePredicateTransition.h
 include/antlr4-runtime/atn/PredicateEvalInfo.h
 include/antlr4-runtime/atn/PredicateTransition.h
 include/antlr4-runtime/atn/PredictionContext.h
+include/antlr4-runtime/atn/PredictionContextCache.h
+include/antlr4-runtime/atn/PredictionContextMergeCache.h
+include/antlr4-runtime/atn/PredictionContextMergeCacheOptions.h
+include/antlr4-runtime/atn/PredictionContextType.h
 include/antlr4-runtime/atn/PredictionMode.h
 include/antlr4-runtime/atn/ProfilingATNSimulator.h
 include/antlr4-runtime/atn/RangeTransition.h
@@ -101,6 +107,8 @@ include/antlr4-runtime/atn/RuleStartState.h
 include/antlr4-runtime/atn/RuleStopState.h
 include/antlr4-runtime/atn/RuleTransition.h
 include/antlr4-runtime/atn/SemanticContext.h
+include/antlr4-runtime/atn/SemanticContextType.h
+include/antlr4-runtime/atn/SerializedATNView.h
 include/antlr4-runtime/atn/SetTransition.h
 include/antlr4-runtime/atn/SingletonPredictionContext.h
 include/antlr4-runtime/atn/StarBlockStartState.h
@@ -108,11 +116,13 @@ include/antlr4-runtime/atn/StarLoopEntryState.h
 include/antlr4-runtime/atn/StarLoopbackState.h
 include/antlr4-runtime/atn/TokensStartState.h
 include/antlr4-runtime/atn/Transition.h
+include/antlr4-runtime/atn/TransitionType.h
 include/antlr4-runtime/atn/WildcardTransition.h
 include/antlr4-runtime/dfa/DFA.h
 include/antlr4-runtime/dfa/DFASerializer.h
 include/antlr4-runtime/dfa/DFAState.h
 include/antlr4-runtime/dfa/LexerDFASerializer.h
+include/antlr4-runtime/internal/Synchronization.h
 include/antlr4-runtime/misc/InterpreterDataReader.h
 include/antlr4-runtime/misc/Interval.h
 include/antlr4-runtime/misc/IntervalSet.h
@@ -124,8 +134,9 @@ include/antlr4-runtime/support/BitSet.h
 include/antlr4-runtime/support/CPPUtils.h
 include/antlr4-runtime/support/Casts.h
 include/antlr4-runtime/support/Declarations.h
-include/antlr4-runtime/support/Guid.h
 include/antlr4-runtime/support/StringUtils.h
+include/antlr4-runtime/support/Unicode.h
+include/antlr4-runtime/support/Utf8.h
 include/antlr4-runtime/tree/AbstractParseTreeVisitor.h
 include/antlr4-runtime/tree/ErrorNode.h
 include/antlr4-runtime/tree/ErrorNodeImpl.h
@@ -133,6 +144,7 @@ include/antlr4-runtime/tree/IterativeParseTreeWalker.h
 include/antlr4-runtime/tree/ParseTree.h
 include/antlr4-runtime/tree/ParseTreeListener.h
 include/antlr4-runtime/tree/ParseTreeProperty.h
+include/antlr4-runtime/tree/ParseTreeType.h
 include/antlr4-runtime/tree/ParseTreeVisitor.h
 include/antlr4-runtime/tree/ParseTreeWalker.h
 include/antlr4-runtime/tree/TerminalNode.h

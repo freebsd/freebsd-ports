@@ -10,6 +10,5 @@ WWW=		https://rubygems.org/gems/do_mysql
 RUN_DEPENDS=	rubygem-data_objects>=0.10.17:databases/rubygem-data_objects
 
 USES=		gem mysql
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

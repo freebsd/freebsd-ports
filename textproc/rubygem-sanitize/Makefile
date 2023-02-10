@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-crass>=1.0.2<1.1:www/rubygem-crass \
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

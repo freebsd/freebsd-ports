@@ -2,7 +2,7 @@ PORTNAME=	theonionbox
 DISTVERSION=	4.3.1
 PORTREVISION=	2
 CATEGORIES=	security net python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Web interface to monitor Tor node operation

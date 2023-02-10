@@ -26,7 +26,6 @@ RUN_DEPENDS=	autoconf>=2.71:devel/autoconf \
 USES=		magick:7,run pgsql
 USE_GITHUB=	yes
 USE_RC_SUBR=	mastodon_sidekiq mastodon_streaming mastodon_web
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 NO_BUILD=	yes

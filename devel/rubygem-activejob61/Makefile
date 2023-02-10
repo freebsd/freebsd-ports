@@ -1,5 +1,5 @@
 PORTNAME=	activejob
-PORTVERSION=	6.1.7
+PORTVERSION=	6.1.7.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-activesupport61>=${PORTVERSION}<${PORTVERSION}_99:devel/rub
 		rubygem-globalid-rails61>=0.3.6:databases/rubygem-globalid-rails61
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

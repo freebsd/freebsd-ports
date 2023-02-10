@@ -1,11 +1,11 @@
---- minitar-cli.gemspec.orig	2021-10-25 11:37:09 UTC
+--- minitar-cli.gemspec.orig	2023-01-05 18:11:39 UTC
 +++ minitar-cli.gemspec
-@@ -26,7 +26,7 @@ Gem::Specification.new do |s|
-   end
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
  
-   if s.respond_to? :add_runtime_dependency then
--    s.add_runtime_dependency(%q<minitar>.freeze, ["~> 0.8.0"])
-+    s.add_runtime_dependency(%q<minitar>.freeze, ["~> 0.8"])
-     s.add_runtime_dependency(%q<powerbar>.freeze, ["~> 1.0"])
-     s.add_development_dependency(%q<minitest>.freeze, ["~> 5.11"])
-     s.add_development_dependency(%q<hoe-doofus>.freeze, ["~> 1.0"])
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<minitar>.freeze, ["~> 0.8.0"])
++  s.add_runtime_dependency(%q<minitar>.freeze, ["~> 0.8"])
+   s.add_runtime_dependency(%q<powerbar>.freeze, ["~> 1.0"])
+   s.add_development_dependency(%q<minitest>.freeze, ["~> 5.11"])
+   s.add_development_dependency(%q<hoe-doofus>.freeze, ["~> 1.0"])

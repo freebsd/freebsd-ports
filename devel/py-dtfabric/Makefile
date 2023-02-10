@@ -1,7 +1,7 @@
 PORTNAME=	dtfabric
 PORTVERSION=	20200621
 CATEGORIES=	devel python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 #		https://github.com/libyal/dtfabric/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

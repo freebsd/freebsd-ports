@@ -1928,13 +1928,11 @@ share/lumina-desktop/screensavers/Grav.json
 share/lumina-desktop/screensavers/Matrix.json
 share/lumina-desktop/screensavers/README.md
 share/lumina-desktop/screensavers/Video.json
-share/lumina-desktop/screensavers/Warp.json
 %%NLS%%share/lumina-desktop/screensavers/qml_scripts/Fireflies.qml
 %%NLS%%share/lumina-desktop/screensavers/qml_scripts/Firefly.qml
 %%NLS%%share/lumina-desktop/screensavers/qml_scripts/Grav.qml
 %%NLS%%share/lumina-desktop/screensavers/qml_scripts/Matrix.qml
 %%NLS%%share/lumina-desktop/screensavers/qml_scripts/Video.qml
-%%NLS%%share/lumina-desktop/screensavers/qml_scripts/Warp.qml
 share/lumina-desktop/theme.cfg
 share/lumina-desktop/themes/DarkGlass.qss.template
 share/lumina-desktop/themes/Glass.qss.template

@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-s3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
+DISTVERSION=	0.2.4
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -29,8 +29,6 @@ USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH=${LOCALBASE}
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	BUILD_TESTING
-
-# testunit fails: https://github.com/awslabs/aws-c-s3/issues/212
+CMAKE_OFF=	BUILD_TESTING ENABLE_NET_TESTS
 
 .include <bsd.port.mk>

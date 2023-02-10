@@ -1,10 +1,10 @@
 PORTNAME=	PDL
 PORTVERSION=	2.019
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Data Language
 WWW=		https://metacpan.org/release/PDL
 
@@ -14,6 +14,7 @@ LICENSE_COMB=	dual
 .if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
 BROKEN_i386=	ld: error: can't create dynamic relocation R_386_32 against local symbol in readonly segment; recompile object files with -fPIC or pass '-Wl,-z,notext' to allow text relocations in the output
 .endif
+BROKEN_aarch64=	ld: error: relocation R_AARCH64_ADR_PREL_PG_HI21 cannot be used against symbol __stack_chk_guard; recompile with -fPIC
 
 BUILD_DEPENDS=	p5-Devel-CheckLib>=1.01:devel/p5-Devel-CheckLib \
 		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \

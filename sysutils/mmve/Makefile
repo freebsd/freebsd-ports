@@ -12,10 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-baf>=0.11.0:devel/rubygem-baf
 
-USES=		shebangfix
+USES=		ruby shebangfix
 
 SHEBANG_FILES=	bin/mmve
-USE_RUBY=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
 

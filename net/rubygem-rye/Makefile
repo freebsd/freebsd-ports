@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-annoy>=0:devel/rubygem-annoy \
 		rubygem-sysinfo>=0.8.1:devel/rubygem-sysinfo
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem shebangfix
 SHEBANG_FILES=	try/*.rb tst/*.rb
 

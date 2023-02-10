@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json \
 		rubygem-specinfra>=2.72:sysutils/rubygem-specinfra
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

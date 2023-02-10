@@ -46,10 +46,13 @@ share/icons/hicolor/32x32/apps/kdiff3.png
 share/icons/hicolor/48x48/apps/kdiff3.png
 share/icons/hicolor/64x64/apps/kdiff3.png
 share/icons/hicolor/scalable/apps/kdiff3.svgz
+share/kservices5/kdiff3part.desktop
 share/kxmlgui5/kdiff3/kdiff3_shell.rc
 share/kxmlgui5/kdiff3part/kdiff3_part.rc
 share/locale/ar/LC_MESSAGES/kdiff3.mo
+share/locale/bg/LC_MESSAGES/diff_ext.mo
 share/locale/bg/LC_MESSAGES/kdiff3.mo
+share/locale/bg/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/br/LC_MESSAGES/kdiff3.mo
 share/locale/bs/LC_MESSAGES/kdiff3.mo
 share/locale/bs/LC_MESSAGES/kdiff3fileitemactionplugin.mo
@@ -97,7 +100,6 @@ share/locale/gl/LC_MESSAGES/kdiff3.mo
 share/locale/gl/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/hi/LC_MESSAGES/kdiff3.mo
 share/locale/hne/LC_MESSAGES/kdiff3.mo
-share/locale/hr/LC_MESSAGES/kdiff3.mo
 share/locale/hu/LC_MESSAGES/kdiff3.mo
 share/locale/hu/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/ia/LC_MESSAGES/diff_ext.mo
@@ -109,7 +111,9 @@ share/locale/it/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/ja/LC_MESSAGES/diff_ext.mo
 share/locale/ja/LC_MESSAGES/kdiff3.mo
 share/locale/ja/LC_MESSAGES/kdiff3fileitemactionplugin.mo
+share/locale/ka/LC_MESSAGES/diff_ext.mo
 share/locale/ka/LC_MESSAGES/kdiff3.mo
+share/locale/ka/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/ko/LC_MESSAGES/diff_ext.mo
 share/locale/ko/LC_MESSAGES/kdiff3.mo
 share/locale/ko/LC_MESSAGES/kdiff3fileitemactionplugin.mo
@@ -162,7 +166,9 @@ share/locale/sv/LC_MESSAGES/kdiff3.mo
 share/locale/sv/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/ta/LC_MESSAGES/kdiff3.mo
 share/locale/tg/LC_MESSAGES/kdiff3.mo
+share/locale/tr/LC_MESSAGES/diff_ext.mo
 share/locale/tr/LC_MESSAGES/kdiff3.mo
+share/locale/tr/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/ug/LC_MESSAGES/kdiff3.mo
 share/locale/ug/LC_MESSAGES/kdiff3fileitemactionplugin.mo
 share/locale/uk/LC_MESSAGES/diff_ext.mo

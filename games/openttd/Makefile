@@ -1,6 +1,5 @@
 PORTNAME=	openttd
-DISTVERSION=	12.2
-PORTREVISION=	1
+DISTVERSION=	13.0
 CATEGORIES=	games
 MASTER_SITES=	https://proxy.binaries.openttd.org/openttd-releases/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-source
@@ -20,19 +19,18 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_BINDIR:PATH=bin \
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-SUB_FILES=	pkg-message
-
 OPTIONS_DEFINE=	DOCS FLUIDSYNTH SAVE_PASSWORDS SERVER
 SERVER_PREVENTS=	FLUIDSYNTH
 
 FLUIDSYNTH_LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
+FLUIDSYNTH_CMAKE_ON=	-DWITH_FLUIDSYNTH:BOOL=ON
 
 SAVE_PASSWORDS_DESC=	Save passwords between server restarts
 SAVE_PASSWORDS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-save-passwords
 
 SERVER_DESC=		Build dedicated server only (no GUI)
 SERVER_USES_OFF=	gnome sdl
-SERVER_USE_OFF=		SDL=sdl
+SERVER_USE_OFF=		SDL=${_SDL_VERSION}
 SERVER_CMAKE_ON=	-DOPTION_DEDICATED:BOOL=ON
 SERVER_LIB_DEPENDS_OFF=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
@@ -40,6 +38,14 @@ SERVER_LIB_DEPENDS_OFF=	libfontconfig.so:x11-fonts/fontconfig \
 			libicu-le-hb.so:devel/icu-le-hb \
 			libiculx.so:devel/icu-lx
 SERVER_VARS=		USE_RC_SUBR=${PORTNAME}
+
+.include <bsd.port.options.mk>
+
+.if exists(${LOCALBASE}/lib/libSDL2.so)
+_SDL_VERSION=		sdl2
+.else
+_SDL_VERSION=		sdl
+.endif
 
 post-install-SERVER-on:
 	@${REINPLACE_CMD} -E '/\.desktop|icons|pixmaps/d' ${TMPPLIST}

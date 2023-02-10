@@ -11,11 +11,13 @@ WWW=		https://launchpad.net/keyboardcast
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libwnck-1.so:x11-toolkits/libwnck
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	ekoort
 
 USES=		gnome pkgconfig xorg
 USE_XORG=	xmu x11
-USE_GNOME=	libwnck libglade2 gtk20
+USE_GNOME=	libglade2 gtk20
 
 .include <bsd.port.mk>

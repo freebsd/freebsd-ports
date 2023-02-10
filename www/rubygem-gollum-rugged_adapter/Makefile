@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-mime-types>=1.15:misc/rubygem-mime-types \
 		rubygem-rugged>=1.1<2:devel/rubygem-rugged
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

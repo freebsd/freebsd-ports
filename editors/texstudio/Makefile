@@ -1,6 +1,5 @@
 PORTNAME=	texstudio
-DISTVERSION=	4.4.1
-PORTREVISION=	1
+DISTVERSION=	4.5.1
 CATEGORIES=	editors
 
 MAINTAINER=	rigoletto@FreeBSD.org
@@ -14,7 +13,7 @@ BROKEN_armv6=	fails to compile: error: no member named mc_eip in __mcontext
 LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 		libpoppler.so:graphics/poppler \
 		libpoppler-qt5.so:graphics/poppler-qt5 \
-		libquazip1-qt5.so:archivers/quazip
+		libquazip1-qt5.so:archivers/quazip@qt5
 
 USES=		compiler:c++11-lang desktop-file-utils dos2unix \
 		ghostscript:run gl pkgconfig qmake qt:5 tex xorg

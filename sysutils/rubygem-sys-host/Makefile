@@ -9,7 +9,6 @@ WWW=		https://github.com/djberg96/sys-host
 
 LICENSE=	ART20
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

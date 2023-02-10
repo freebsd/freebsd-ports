@@ -1,6 +1,6 @@
---- regress/cmdline/histedit.sh.orig	2022-01-19 10:29:31 UTC
+--- regress/cmdline/histedit.sh.orig	2023-01-29 10:30:53 UTC
 +++ regress/cmdline/histedit.sh
-@@ -1565,7 +1565,7 @@ test_histedit_fold_only() {
+@@ -1564,7 +1564,7 @@ test_histedit_fold_only() {
  
  	cat > $testroot/editor.sh <<EOF
  #!/bin/sh
@@ -9,7 +9,7 @@
  EOF
  	chmod +x $testroot/editor.sh
  
-@@ -1681,7 +1681,7 @@ test_histedit_fold_only_empty_logmsg() {
+@@ -1680,7 +1680,7 @@ test_histedit_fold_only_empty_logmsg() {
  
  	cat > $testroot/editor.sh <<EOF
  #!/bin/sh
@@ -18,7 +18,7 @@
  EOF
  	chmod +x $testroot/editor.sh
  
-@@ -1815,7 +1815,7 @@ test_histedit_edit_only() {
+@@ -1814,7 +1814,7 @@ test_histedit_edit_only() {
  
  	cat > $testroot/editor.sh <<EOF
  #!/bin/sh
@@ -27,7 +27,7 @@
  EOF
  	chmod +x $testroot/editor.sh
  
-@@ -1844,7 +1844,7 @@ EOF
+@@ -1843,7 +1843,7 @@ EOF
  
  	cat > $testroot/editor.sh <<EOF
  #!/bin/sh
@@ -36,3 +36,12 @@
  EOF
  	chmod +x $testroot/editor.sh
  
+@@ -2239,7 +2239,7 @@ test_histedit_mesg_filemode_change() {
+ 
+ 	cat > $testroot/editor.sh <<EOF
+ #!/bin/sh
+-sed -i 's/ x bit / executable bit /' "\$1"
++sed -i '' 's/ x bit / executable bit /' "\$1"
+ EOF
+ 
+ 	chmod +x $testroot/editor.sh

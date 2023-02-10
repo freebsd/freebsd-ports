@@ -84,7 +84,7 @@ OPENDBX_LIB_DEPENDS=	libopendbx.so:databases/opendbx
 
 OPENLDAP_DESC=		Store filter policies in LDAP
 OPENLDAP_CONFIGURE_WITH=openldap
-OPENLDAP_USE=		OPENLDAP=yes
+OPENLDAP_USES=		ldap
 
 POPAUTH_DESC=		Use POP authentication DB
 POPAUTH_CONFIGURE_ENABLE=	popauth

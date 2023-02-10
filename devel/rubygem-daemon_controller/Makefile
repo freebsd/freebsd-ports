@@ -12,7 +12,6 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem python:env shebangfix
-USE_RUBY=	yes
 
 SHEBANG_FILES=	rpm/get_distro_id.py
 

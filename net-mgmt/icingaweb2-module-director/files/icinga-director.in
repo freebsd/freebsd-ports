@@ -1,0 +1,29 @@
+#!/bin/sh
+
+# PROVIDE: icinga_director
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# icinga_director_enable (bool):	Set to NO by default.
+#					Set it to YES to enable icinga_director.
+# icinga_director_user:        		The user account used to run the daemon.
+#					Default: %%DIRECTOR_USER%%
+
+. /etc/rc.subr
+
+name=icinga_director
+rcvar=icinga_director_enable
+
+load_rc_config $name
+
+: ${icinga_director_enable:="NO"}
+: ${icinga_director_user:="%%DIRECTOR_USER%%"}
+
+pidfile=/var/run/icinga-director/${name}.pid
+command=/usr/sbin/daemon
+command_args="-c -f -P $pidfile %%PREFIX%%/bin/icingacli director daemon run"
+
+run_rc_command "$1"

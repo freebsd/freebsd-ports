@@ -1,7 +1,7 @@
 PORTNAME=	fastcluster
 PORTVERSION=	1.2.6
 CATEGORIES=	math python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -14,10 +14,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		compiler python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} == 140
+BUILD_DEPENDS+=	clang15:devel/llvm15
+CPP=            clang-cpp15
+CC=             clang15
+CXX=            clang++15
+.endif
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

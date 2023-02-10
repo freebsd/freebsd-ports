@@ -1,5 +1,5 @@
 PORTNAME=	mocha
-PORTVERSION=	1.16.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ LICENSE=	BSD2CLAUSE RUBY MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/MIT-LICENSE.md
 
+RUN_DEPENDS=	rubygem-ruby2_keywords>=0.0.5:devel/rubygem-ruby2_keywords
+
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

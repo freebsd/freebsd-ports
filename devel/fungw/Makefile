@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.repo.hu/projects/fungw/releases/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	C Function gateway for different programming languages
 WWW=		http://www.repo.hu/projects/fungw/
 

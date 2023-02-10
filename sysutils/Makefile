@@ -32,6 +32,7 @@
     SUBDIR += alfio
     SUBDIR += am-utils
     SUBDIR += amazon-ssm-agent
+    SUBDIR += amazon-ssm-plugin
     SUBDIR += amdmsrtweaker
     SUBDIR += amrstat
     SUBDIR += amtc
@@ -605,6 +606,7 @@
     SUBDIR += k4dirstat
     SUBDIR += k8temp
     SUBDIR += k9s
+    SUBDIR += kapp
     SUBDIR += kbackup
     SUBDIR += kcron
     SUBDIR += kdeadmin
@@ -968,6 +970,7 @@
     SUBDIR += pc-networkmanager
     SUBDIR += pcapfix
     SUBDIR += pciutils
+    SUBDIR += pcns
     SUBDIR += pcpustat
     SUBDIR += pdixtract
     SUBDIR += pdsh
@@ -1428,6 +1431,7 @@
     SUBDIR += topless
     SUBDIR += torque
     SUBDIR += toshctl
+    SUBDIR += touchegg
     SUBDIR += toybox
     SUBDIR += tracker
     SUBDIR += tracker-miners

@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-jekyll3>=3.1<5:www/rubygem-jekyll3 \
 		rubygem-pathutil>=0.16<1:devel/rubygem-pathutil
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

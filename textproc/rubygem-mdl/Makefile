@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-kramdown>=2.3<3:textproc/rubygem-kramdown \
 		rubygem-mixlib-shellout>=0:devel/rubygem-mixlib-shellout
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

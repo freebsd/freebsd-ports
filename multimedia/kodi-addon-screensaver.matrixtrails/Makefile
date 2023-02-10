@@ -1,6 +1,6 @@
 PORTNAME=	screensaver.matrixtrails
-PORTVERSION=	19.0.1
-DISTVERSIONSUFFIX=	-Matrix
+PORTVERSION=	20.1.0
+DISTVERSIONSUFFIX=	-Nexus
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com

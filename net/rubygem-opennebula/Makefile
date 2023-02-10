@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-ipaddress>=0:net/rubygem-ipaddress \
 		rubygem-xmlrpc>=0:net/rubygem-xmlrpc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -6,7 +6,8 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Plasma5 system settings
 WWW=		https://www.kde.org/plasma-desktop
 
-USES=		cmake compiler:c++11-lib gettext kde:5 qt:5 tar:xz xorg
+USES=		cmake compiler:c++11-lib gettext gstreamer kde:5 qt:5 tar:xz xorg
+USE_GSTREAMER=	curl openh264
 USE_KDE=	activities activities-stats auth codecs completion config \
 		configwidgets coreaddons crash dbusaddons guiaddons i18n \
 		iconthemes itemmodels itemviews jobwidgets js kcmutils \

@@ -10,7 +10,6 @@ WWW=		https://rubygems.org/gems/baf
 LICENSE=	BSD3CLAUSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

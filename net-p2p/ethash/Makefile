@@ -21,4 +21,3 @@ GH_ACCOUNT=	chfast
 CMAKE_OFF=	HUNTER_ENABLED
 
 .include <bsd.port.mk>
-

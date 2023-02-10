@@ -83,6 +83,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_web.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_web_admin.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_websocket.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_websocket_codec.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_xmlrpc.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejd2sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap.beam
@@ -166,6 +167,9 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mix_pam_sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mix_sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mqtt.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mqtt_bridge.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mqtt_bridge_opt.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mqtt_bridge_session.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mqtt_mnesia.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mqtt_opt.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_mqtt_session.beam
@@ -408,7 +412,6 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose.app
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_app.beam
-%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_base.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_base64.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_base64url.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_crypto_compat.beam
@@ -418,10 +421,14 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_chacha20_poly1305_libsodium.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_chacha20_poly1305_unsupported.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve25519.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve25519_crypto.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve25519_libdecaf.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve25519_fallback.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve25519_libsodium.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve25519_unsupported.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve448.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve448_crypto.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve448_fallback.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve448_libdecaf.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_curve448_unsupported.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json.beam
@@ -433,6 +440,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json_poison.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json_poison_compat_encoder.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json_poison_lexical_encoder.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json_thoas.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_json_unsupported.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwa_aes.beam
@@ -465,6 +473,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_ecdh_1pu.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_dir.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_ecdh_es.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_ecdh_ss.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_pbes2.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_rsa.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_jwe_alg_xc20p_kw.beam
@@ -511,6 +520,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_sup.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_xchacha20_poly1305.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_xchacha20_poly1305_crypto.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_xchacha20_poly1305_libsodium.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/ebin/jose_xchacha20_poly1305_unsupported.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose.hrl
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/jose-%%JOSE_VER%%/include/jose_base.hrl

@@ -1,10 +1,11 @@
 PORTNAME=	cppcheck
-PORTVERSION=	2.9.3
+PORTVERSION=	2.10
 CATEGORIES=	devel
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tool for static C/C++ code analysis
-WWW=		https://cppcheck.sourceforge.io/
+WWW=		https://cppcheck.sourceforge.io/ \
+		https://github.com/danmar/cppcheck
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING

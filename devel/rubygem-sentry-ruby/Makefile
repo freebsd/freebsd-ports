@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0.2<2:devel/rubygem-concurrent-ruby \
 		rubygem-sentry-ruby-core>=5.1.1<5.1.2:devel/rubygem-sentry-ruby-core
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

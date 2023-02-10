@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 RUN_DEPENDS=	rubygem-pry>=0.10.4:devel/rubygem-pry
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

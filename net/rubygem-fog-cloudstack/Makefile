@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-fog-core>=2.1<3:devel/rubygem-fog-core \
 		rubygem-fog-xml>=0.1<1:textproc/rubygem-fog-xml
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

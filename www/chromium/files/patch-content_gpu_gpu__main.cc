@@ -1,6 +1,6 @@
---- content/gpu/gpu_main.cc.orig	2022-11-30 08:12:58 UTC
+--- content/gpu/gpu_main.cc.orig	2023-02-08 09:03:45 UTC
 +++ content/gpu/gpu_main.cc
-@@ -87,7 +87,7 @@
+@@ -88,7 +88,7 @@
  #include "sandbox/win/src/sandbox.h"
  #endif
  
@@ -27,7 +27,7 @@
      return StartSandboxLinux(watchdog_thread, gpu_info, gpu_prefs);
  #elif BUILDFLAG(IS_WIN)
      return StartSandboxWindows(sandbox_info_);
-@@ -268,7 +268,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -269,7 +269,7 @@ int GpuMain(MainFunctionParams parameters) {
            std::make_unique<base::SingleThreadTaskExecutor>(
                gpu_preferences.message_pump_type);
      }
@@ -36,7 +36,7 @@
  #error "Unsupported Linux platform."
  #elif BUILDFLAG(IS_MAC)
      // Cross-process CoreAnimation requires a CFRunLoop to function at all, and
-@@ -403,7 +403,7 @@ int GpuMain(MainFunctionParams parameters) {
+@@ -404,7 +404,7 @@ int GpuMain(MainFunctionParams parameters) {
  
  namespace {
  

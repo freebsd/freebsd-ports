@@ -1,6 +1,6 @@
 PORTNAME=	visualization.spectrum
-PORTVERSION=	19.0.1
-DISTVERSIONSUFFIX=	-Matrix
+PORTVERSION=	20.2.0
+DISTVERSIONSUFFIX=	-Nexus
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com

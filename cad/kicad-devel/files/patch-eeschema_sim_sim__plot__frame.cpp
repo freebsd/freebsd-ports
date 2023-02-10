@@ -1,6 +1,6 @@
---- eeschema/sim/sim_plot_frame.cpp.orig	2022-09-14 16:35:24 UTC
-+++ eeschema/sim/sim_plot_frame.cpp
-@@ -167,15 +167,15 @@ SIM_PLOT_FRAME::SIM_PLOT_FRAME( KIWAY* aKiway, wxWindo
+--- eeschema/sim/sim_plot_frame.cpp.orig	2023-01-06 17:32:00.707624000 +0100
++++ eeschema/sim/sim_plot_frame.cpp	2023-01-06 17:35:04.237427000 +0100
+@@ -156,15 +156,15 @@
      Bind( EVT_SIM_CURSOR_UPDATE, &SIM_PLOT_FRAME::onCursorUpdate, this );
  
      // Toolbar buttons
@@ -16,8 +16,8 @@
 -    m_toolTune = m_toolBar->AddTool( ID_SIM_TUNE, _( "Tune" ),
 +    m_toolTune = m_toolBar->AddTool( ID_SIM_TUNE, wxEmptyString,
              KiBitmap( BITMAPS::sim_tune ), _( "Tune component values" ), wxITEM_NORMAL );
--    m_toolSettings = m_toolBar->AddTool( wxID_ANY, _( "Sim Parameters" ),
+-    m_toolSettings = m_toolBar->AddTool( wxID_ANY, _( "Sim Command" ),
 +    m_toolSettings = m_toolBar->AddTool( wxID_ANY, wxEmptyString,
-             KiBitmap( BITMAPS::config ), _( "Simulation parameters and settings" ), wxITEM_NORMAL );
+             KiBitmap( BITMAPS::config ), _( "Simulation command and settings" ), wxITEM_NORMAL );
  
      // Start all toolbar buttons except settings as disabled

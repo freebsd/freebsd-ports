@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-actionview61>=5.0.0:devel/rubygem-actionview61 \
 		rubygem-activesupport61>=5.0.0:devel/rubygem-activesupport61
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

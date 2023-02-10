@@ -1,5 +1,5 @@
 PORTNAME=	tmpdir
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	rubygem-fileutils>=0:devel/rubygem-fileutils
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

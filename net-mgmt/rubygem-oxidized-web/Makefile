@@ -1,6 +1,6 @@
 PORTNAME=	oxidized-web
 PORTVERSION=	0.13.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 
 RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 		rubygem-emk-sinatra-url-for>=0.2:www/rubygem-emk-sinatra-url-for \
-		rubygem-haml>=5.0:www/rubygem-haml \
+		rubygem-haml5>=5.0:www/rubygem-haml5 \
 		rubygem-htmlentities>=4.3:textproc/rubygem-htmlentities \
 		rubygem-json>=1.7.0:devel/rubygem-json \
 		rubygem-oxidized>=0.26:net-mgmt/rubygem-oxidized \
@@ -23,7 +23,6 @@ RUN_DEPENDS=	rubygem-charlock_holmes>=0.7.5:textproc/rubygem-charlock_holmes \
 		rubygem-sinatra1>=1.4.6:www/rubygem-sinatra1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

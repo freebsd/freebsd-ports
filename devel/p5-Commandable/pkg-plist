@@ -1,6 +1,7 @@
 %%SITE_PERL%%/Commandable.pm
 %%SITE_PERL%%/Commandable/Command.pm
 %%SITE_PERL%%/Commandable/Finder.pm
+%%SITE_PERL%%/Commandable/Finder/MethodAttributes.pm
 %%SITE_PERL%%/Commandable/Finder/Packages.pm
 %%SITE_PERL%%/Commandable/Finder/SubAttributes.pm
 %%SITE_PERL%%/Commandable/Finder/SubAttributes/Attrs.pm
@@ -9,6 +10,7 @@
 %%PERL5_MAN3%%/Commandable.3.gz
 %%PERL5_MAN3%%/Commandable::Command.3.gz
 %%PERL5_MAN3%%/Commandable::Finder.3.gz
+%%PERL5_MAN3%%/Commandable::Finder::MethodAttributes.3.gz
 %%PERL5_MAN3%%/Commandable::Finder::Packages.3.gz
 %%PERL5_MAN3%%/Commandable::Finder::SubAttributes.3.gz
 %%PERL5_MAN3%%/Commandable::Invocation.3.gz

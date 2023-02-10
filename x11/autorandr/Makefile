@@ -15,7 +15,7 @@ BUILD_DEPENDS=	gsed:textproc/gsed
 RUN_DEPENDS=	xrandr:x11/xrandr
 
 USES=		gmake pkgconfig python:3.3-3.10 shebangfix xorg
-# Use GitHub instead of MASTER_SITES=CHEESESHOP to get additional files like
+# Use GitHub instead of MASTER_SITES=PYPI to get additional files like
 # the manual page and the license.
 USE_GITHUB=	yes
 GH_ACCOUNT=	phillipberndt

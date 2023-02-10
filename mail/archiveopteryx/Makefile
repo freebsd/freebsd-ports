@@ -1,6 +1,6 @@
 PORTNAME=	archiveopteryx
 PORTVERSION=	3.2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	http://archiveopteryx.org/download/
 

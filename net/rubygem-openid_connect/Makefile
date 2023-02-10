@@ -22,7 +22,6 @@ RUN_DEPENDS=	rubygem-activemodel61>=0:databases/rubygem-activemodel61 \
 		rubygem-webfinger>=1.0.1:devel/rubygem-webfinger
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

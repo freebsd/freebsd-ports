@@ -1,10 +1,6 @@
 PORTNAME=	labwc
-DISTVERSION=	0.6.0
+DISTVERSION=	0.6.1
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	1e66ba8fd75e.patch:-p1 # https://github.com/labwc/labwc/pull/629
-PATCHFILES+=	ae17cd2c8d57.patch:-p1 # https://github.com/labwc/labwc/pull/682
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland stacking compositor
@@ -25,9 +21,10 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo libxml2 pango
 PLIST_FILES=	bin/${PORTNAME} \
 		share/wayland-sessions/${PORTNAME}.desktop
+PORTEXAMPLES=	*
 
-OPTIONS_DEFINE=	MANPAGES NLS X11
-OPTIONS_DEFAULT=MANPAGES NLS X11
+OPTIONS_DEFINE=	EXAMPLES MANPAGES NLS X11
+OPTIONS_DEFAULT=EXAMPLES MANPAGES NLS X11
 
 MANPAGES_BUILD_DEPENDS=	scdoc:textproc/scdoc
 MANPAGES_MESON_ENABLED=	man-pages
@@ -42,7 +39,8 @@ NLS_MESON_ENABLED=	nls
 NLS_PLIST_FILES=	share/locale/de/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/es/LC_MESSAGES/${PORTNAME}.mo \
 			share/locale/it/LC_MESSAGES/${PORTNAME}.mo \
-			share/locale/sv/LC_MESSAGES/${PORTNAME}.mo
+			share/locale/sv/LC_MESSAGES/${PORTNAME}.mo \
+			share/locale/tr/LC_MESSAGES/${PORTNAME}.mo
 
 X11_LIB_DEPENDS=	libxcb-icccm.so:x11/xcb-util-wm
 X11_MESON_ENABLED=	xwayland
@@ -59,6 +57,9 @@ post-patch:
 		-e 's,/usr/local,${PREFIX},' \
 		${WRKSRC}/docs/${PORTNAME}-config.5.scd \
 		${WRKSRC}/src/common/dir.c
+# Respect hier(7) for examples
+	@${REINPLACE_CMD} '/datadir/s/doc/examples/' \
+		${WRKSRC}/docs/meson.build
 # XXX Drop after FreeBSD 12.3 EOL around 2023-03-01
 # https://cgit.freebsd.org/src/commit/?id=773538247007
 	@if [ ${OPSYS} = FreeBSD -a ${OSVERSION} -lt 1203501 ]; then \

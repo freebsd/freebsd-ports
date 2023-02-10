@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-strings-ansi>=0.2<1:devel/rubygem-strings-ansi \
 		rubygem-unicode_utils>=1.4<2:devel/rubygem-unicode_utils
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

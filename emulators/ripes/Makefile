@@ -1,6 +1,6 @@
 PORTNAME=	ripes
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.5
+DISTVERSION=	2.2.6
 CATEGORIES=	emulators
 
 MAINTAINER=	mclay@astate.edu
@@ -29,4 +29,3 @@ GH_TUPLE=	mortbopet:VSRTL:8fd0bce:VSRTL/external/VSRTL \
 PORTSCOUT=	ignore:continuous-master
 
 .include <bsd.port.mk>
-

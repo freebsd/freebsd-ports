@@ -2,7 +2,7 @@ PORTNAME=	thewalrus
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19.0
 CATEGORIES=	science python
-#MASTER_SITES=	CHEESESHOP # doesn't contain tests
+#MASTER_SITES=	PYPI # doesn't contain tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org

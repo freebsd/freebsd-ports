@@ -2,7 +2,7 @@ PORTNAME=	scipy
 DISTVERSION=	1.9.2
 CATEGORIES=	science python
 MASTER_SITES=	https://docs.scipy.org/doc/${PORTNAME}-${DISTVERSION}/:doc \
-		CHEESESHOP:source \
+		PYPI:source \
 		SF:source
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:source \

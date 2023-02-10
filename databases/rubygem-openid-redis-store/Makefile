@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-redis>=0:databases/rubygem-redis \
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

@@ -9,7 +9,6 @@ WWW=		https://github.com/dockyard/pg_array_parser
 
 LICENSE=	MIT
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

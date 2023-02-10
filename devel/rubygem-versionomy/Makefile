@@ -12,7 +12,6 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	rubygem-blockenspiel>=0.5:devel/rubygem-blockenspiel
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

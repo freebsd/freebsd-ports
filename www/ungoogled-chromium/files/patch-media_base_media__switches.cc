@@ -1,6 +1,6 @@
---- media/base/media_switches.cc.orig	2022-12-02 17:56:32 UTC
+--- media/base/media_switches.cc.orig	2023-01-13 08:56:02 UTC
 +++ media/base/media_switches.cc
-@@ -10,7 +10,7 @@
+@@ -12,7 +12,7 @@
  #include "components/system_media_controls/linux/buildflags/buildflags.h"
  #include "media/media_buildflags.h"
  
@@ -9,7 +9,7 @@
  #include "base/cpu.h"
  #endif
  
-@@ -485,7 +485,7 @@ BASE_FEATURE(kGav1VideoDecoder,
+@@ -494,7 +494,7 @@ BASE_FEATURE(kGav1VideoDecoder,
  // Show toolbar button that opens dialog for controlling media sessions.
  BASE_FEATURE(kGlobalMediaControls,
               "GlobalMediaControls",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -526,7 +526,7 @@ constexpr base::FeatureParam<kCrosGlobalMediaControlsP
+@@ -535,7 +535,7 @@ constexpr base::FeatureParam<kCrosGlobalMediaControlsP
  BASE_FEATURE(kGlobalMediaControlsPictureInPicture,
               "GlobalMediaControlsPictureInPicture",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -570,7 +570,7 @@ BASE_FEATURE(kUnifiedAutoplay,
+@@ -579,7 +579,7 @@ BASE_FEATURE(kUnifiedAutoplay,
               "UnifiedAutoplay",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -36,7 +36,7 @@
  // Enable vaapi video decoding on linux. This is already enabled by default on
  // chromeos, but needs an experiment on linux.
  BASE_FEATURE(kVaapiVideoDecodeLinux,
-@@ -1061,14 +1061,14 @@ const base::Feature MEDIA_EXPORT kDeprecateLowUsageCod
+@@ -1084,14 +1084,14 @@ const base::Feature MEDIA_EXPORT kDeprecateLowUsageCod
      "DeprecateLowUsageCodecs", base::FEATURE_ENABLED_BY_DEFAULT};
  #endif  // BUILDFLAG(IS_CHROMEOS)
  

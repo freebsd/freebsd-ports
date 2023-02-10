@@ -11,7 +11,6 @@ WWW=		https://github.com/rightscale/right_slicehost
 RUN_DEPENDS=	rubygem-right_http_connection>=1.2.4:net/rubygem-right_http_connection
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

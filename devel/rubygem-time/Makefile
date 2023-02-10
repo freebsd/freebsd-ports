@@ -1,5 +1,5 @@
 PORTNAME=	time
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-date>=0:devel/rubygem-date
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

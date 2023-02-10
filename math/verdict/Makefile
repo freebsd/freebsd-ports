@@ -24,4 +24,3 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/SAND2007-2853p.pdf ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
-

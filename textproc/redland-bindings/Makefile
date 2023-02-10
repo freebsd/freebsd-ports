@@ -29,6 +29,6 @@ PHP_USES=		php:build
 PYTHON_CONFIGURE_WITH=	python python-libext=${PYTHON_EXT_SUFFIX}.so
 PYTHON_USES=		python
 RUBY_CONFIGURE_WITH=	ruby
-RUBY_USE=		RUBY=yes
+RUBY_USES=		ruby
 
 .include <bsd.port.mk>

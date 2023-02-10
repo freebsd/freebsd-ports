@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-hashie>=3.4.6:devel/rubygem-hashie \
 		rubygem-rack22>=1.6.2,3<3,3:www/rubygem-rack22
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,6 +1,6 @@
 PORTNAME=	streamvbyte
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.1
+DISTVERSION=	0.5.2
 CATEGORIES=	archivers
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -10,8 +10,8 @@ WWW=		https://github.com/lemire/streamvbyte
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_powerpc=		Test fails on big-endian systems
-BROKEN_powerpc64=	Test fails on big-endian systems
+BROKEN_powerpc=		test fails on big-endian systems
+BROKEN_powerpc64=	test fails on big-endian systems
 
 USES=		cmake
 USE_GITHUB=	yes

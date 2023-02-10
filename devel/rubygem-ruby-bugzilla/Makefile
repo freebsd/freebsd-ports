@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-gruff>=0<1:graphics/rubygem-gruff \
 		rubygem-highline>=0:devel/rubygem-highline
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

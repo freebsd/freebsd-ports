@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-eventmachine>=0.12.9:devel/rubygem-eventmachine \
 		rubygem-http_parser.rb>=0<1:net/rubygem-http_parser.rb
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -37,13 +37,11 @@ PORTSCOUT=	limitw:1,even
 
 USES=		bison cmake compiler:c++14-lang cpe gettext gl gnome gperf \
 		jpeg localbase:ldflags perl5 pkgconfig python:build \
-		sqlite tar:xz xorg
+		ruby:build sqlite tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection:build libxml2 libxslt
 USE_GL=		gl egl glesv2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_RUBY=	yes
-RUBY_NO_RUN_DEPENDS=	yes
 USE_XORG=	x11 xcomposite xdamage xext xrender xt ice
 
 CPE_VENDOR=	webkitgtk

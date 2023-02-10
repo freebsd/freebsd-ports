@@ -1,6 +1,6 @@
---- electron/spec-main/api-power-monitor-spec.ts.orig	2022-10-19 17:31:10.000000000 +0200
-+++ electron/spec-main/api-power-monitor-spec.ts	2022-12-02 17:49:13.141645000 +0100
-@@ -14,7 +14,7 @@ describe('powerMonitor', () => {
+--- electron/spec-main/api-power-monitor-spec.ts.orig	2023-01-24 08:00:52 UTC
++++ electron/spec-main/api-power-monitor-spec.ts
+@@ -14,7 +14,7 @@ import { promisify } from 'util';
  describe('powerMonitor', () => {
    let logindMock: any, dbusMockPowerMonitor: any, getCalls: any, emitSignal: any, reset: any;
  

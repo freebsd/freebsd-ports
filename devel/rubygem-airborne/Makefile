@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-activesupport4>=0:devel/rubygem-activesupport4 \
 		rubygem-rspec>=3.8<4:devel/rubygem-rspec
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

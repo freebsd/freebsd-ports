@@ -1,5 +1,5 @@
 PORTNAME=	msgpack
-PORTVERSION=	4.0.0
+PORTVERSION=	5.0.0
 DISTVERSIONPREFIX=	c-
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-c
@@ -27,10 +27,6 @@ TEST_TARGET=	test
 # required for __sync _* atomic operations on sparc
 USE_GCC=	yes
 .endif
-
-post-patch:
-# GoogleTest doesn't support C++98 consumers since 1.10.0
-	${REINPLACE_CMD} -e 's/c++98/c++11/' ${WRKSRC}/CMakeLists.txt
 
 pre-test:
 	cd ${WRKSRC} && ${CMAKE_BIN} . && ${MAKE_CMD}

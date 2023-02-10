@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-hpricot>=0.8.2:www/rubygem-hpricot \
 		rubygem-rdiscount>=1.5.8:textproc/rubygem-rdiscount
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

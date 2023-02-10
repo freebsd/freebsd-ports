@@ -1,6 +1,6 @@
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24
+DISTVERSION=	1.25
 CATEGORIES=	comms net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/:server
 DISTFILES=	${SERVER_FILE}:server
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 RUN_DEPENDS=	adb:devel/android-tools
 
-USES=		compiler:c++11-lang meson pkgconfig sdl
+USES=		compiler:c++11-lang desktop-file-utils meson pkgconfig sdl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Genymobile
@@ -29,6 +29,8 @@ MESON_ARGS=	-Dportable=false \
 PLIST_FILES=	bin/scrcpy \
 		etc/bash_completion.d/scrcpy \
 		man/man1/scrcpy.1.gz \
+		share/applications/scrcpy-console.desktop \
+		share/applications/scrcpy.desktop \
 		share/icons/hicolor/256x256/apps/scrcpy.png \
 		${DATADIR}/scrcpy-server \
 		share/zsh/site-functions/_scrcpy

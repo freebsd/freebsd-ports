@@ -12,6 +12,5 @@ LICENSE=	MIT
 LIB_DEPENDS=	libfcgi.so:www/fcgi
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

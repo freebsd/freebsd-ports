@@ -24,7 +24,6 @@ RUN_DEPENDS=	redis>=0:databases/redis \
 		rubygem-thor>=1.0:devel/rubygem-thor
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

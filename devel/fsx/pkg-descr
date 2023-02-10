@@ -1,0 +1,5 @@
+File System eXerciser
+
+The fsx utility tests file system I/O routines for correctness, with random
+input.  This is a Rust-based rewrite of the classic C utility, originally from
+Apple Computer.

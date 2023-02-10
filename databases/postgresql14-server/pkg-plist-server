@@ -1007,6 +1007,7 @@ lib/postgresql/utf8_and_win.so
 %%TZDATA%%%%DATADIR%%/timezone/America/Bahia
 %%TZDATA%%%%DATADIR%%/timezone/America/Bahia_Banderas
 %%TZDATA%%%%DATADIR%%/timezone/America/Barbados
+%%TZDATA%%%%DATADIR%%/timezone/America/Ciudad_Juarez
 %%TZDATA%%%%DATADIR%%/timezone/America/Belem
 %%TZDATA%%%%DATADIR%%/timezone/America/Belize
 %%TZDATA%%%%DATADIR%%/timezone/America/Blanc-Sablon

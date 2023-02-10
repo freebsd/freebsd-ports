@@ -1,0 +1,18 @@
+Backport of 
+https://invent.kde.org/office/kbibtex/-/commit/4cad9a994ccd685e23a94bd13ced36f56336e056
+to readd translations.
+
+--- CMakeLists.txt.orig	2023-01-12 19:04:52 UTC
++++ CMakeLists.txt
+@@ -253,9 +253,11 @@ if(KF5DocTools_FOUND)
+ )
+ if(KF5DocTools_FOUND)
+     add_subdirectory(doc)
++    kdoctools_install(po)
+ endif()
+ # macro_optional_add_subdirectory(
+ #     po
+ # )
++ki18n_install(po)
+ 
+ feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)

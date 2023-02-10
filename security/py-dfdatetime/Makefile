@@ -1,7 +1,7 @@
 PORTNAME=	dfdatetime
 PORTVERSION=	20210509
 CATEGORIES=	security devel python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		https://github.com/log2timeline/dfdatetime/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

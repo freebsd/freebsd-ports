@@ -1,0 +1,2 @@
+disjoint-set is a DisjointSet (a.k.a. union-find data structure or merge-find
+set) implementation for Python.

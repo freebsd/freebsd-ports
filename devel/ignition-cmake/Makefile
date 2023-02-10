@@ -9,8 +9,7 @@ WWW=		https://ignitionrobotics.org/home
 
 LICENSE=	APACHE20
 
-USES=		cmake pkgconfig
-USE_RUBY=	yes
+USES=		cmake pkgconfig ruby
 
 CMAKE_OFF=	BUILD_TESTING
 

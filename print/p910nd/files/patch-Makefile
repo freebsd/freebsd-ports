@@ -1,0 +1,14 @@
+--- Makefile.orig	2022-02-08 05:54:54 UTC
++++ Makefile
+@@ -11,11 +11,6 @@ CROSS = 
+ # GNU target string
+ CROSS = 
+ 
+-CC = $(CROSS)gcc
+-STRIP = $(CROSS)strip
+-
+-CFLAGS += -O2  -Wall
+-
+ PROG = p910nd
+ MANPAGE = p910nd.8
+ INSTALL = install

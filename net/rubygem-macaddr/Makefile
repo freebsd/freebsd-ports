@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	rubygem-systemu>=2.6.5<2.7:devel/rubygem-systemu
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

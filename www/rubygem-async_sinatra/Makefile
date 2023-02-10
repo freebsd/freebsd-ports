@@ -13,7 +13,6 @@ RUN_DEPENDS=	rubygem-rack>=2.0.0,3:www/rubygem-rack \
 		rubygem-sinatra>=1.4.8:www/rubygem-sinatra
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

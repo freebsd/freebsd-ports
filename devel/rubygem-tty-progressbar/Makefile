@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-strings-ansi>=0.2<1:devel/rubygem-strings-ansi \
 		rubygem-unicode-display_width>=1.6<3.0:devel/rubygem-unicode-display_width
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

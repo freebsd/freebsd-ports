@@ -132,3 +132,11 @@
 %%DATADIR%%/template/gost_portrait.kicad_wks
 %%DATADIR%%/template/pagelayout_default.kicad_wks
 %%DATADIR%%/template/pagelayout_logo.kicad_wks
+%%DATADIR%%/template/stm32f100-discovery-shield/fp-info-cache
+%%DATADIR%%/template/stm32f100-discovery-shield/meta/board_stm32vl_discovery.png
+%%DATADIR%%/template/stm32f100-discovery-shield/meta/icon.png
+%%DATADIR%%/template/stm32f100-discovery-shield/meta/info.html
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.kicad_pcb
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.kicad_prl
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.kicad_pro
+%%DATADIR%%/template/stm32f100-discovery-shield/stm32f100-discovery-shield.kicad_sch

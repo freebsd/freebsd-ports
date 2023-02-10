@@ -1,5 +1,6 @@
 PORTNAME=	pdk
 PORTVERSION=	2.5.0
+PORTREVISION=	2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,13 +16,13 @@ BROKEN_RUBY31=	yes
 
 RUN_DEPENDS=	rubygem-bundler>=1.15.0,1<3.0.0,1:sysutils/rubygem-bundler \
 		rubygem-childprocess>=4.0.0:devel/rubygem-childprocess \
-		rubygem-concurrent-ruby>=1.1.5<1.2:devel/rubygem-concurrent-ruby \
+		rubygem-concurrent-ruby11>=1.1.5<1.2:devel/rubygem-concurrent-ruby11 \
 		rubygem-cri>=2.10<3:devel/rubygem-cri \
 		rubygem-deep_merge>=1.1<2:devel/rubygem-deep_merge \
 		rubygem-diff-lcs>=1.4.4:textproc/rubygem-diff-lcs \
 		rubygem-facter>=2.5.1<5.0.0:sysutils/rubygem-facter \
 		rubygem-ffi>=1.9.25<2.0.0:devel/rubygem-ffi \
-		rubygem-gettext-setup>=0.24<1:devel/rubygem-gettext-setup \
+		rubygem-gettext-setup0>=0.24<1:devel/rubygem-gettext-setup0 \
 		rubygem-hitimes>=2.0.0<2.0.0_99:devel/rubygem-hitimes \
 		rubygem-httpclient>=2.8.3<2.9:www/rubygem-httpclient \
 		rubygem-json_pure>=2.5.1:devel/rubygem-json_pure \
@@ -33,7 +34,6 @@ RUN_DEPENDS=	rubygem-bundler>=1.15.0,1<3.0.0,1:sysutils/rubygem-bundler \
 		rubygem-tty-which>=0.3<1:devel/rubygem-tty-which
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

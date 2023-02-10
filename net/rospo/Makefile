@@ -1,12 +1,12 @@
 PORTNAME=	rospo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.1
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net net-vpn sysutils
 MASTER_SITES=	https://github.com/ferama/rospo/releases/download/v${DISTVERSION}/ui-artifacts.tar.gz?dummy=/:artifacts
 DISTFILES=	${PORTNAME}-ui-artifacts-${DISTVERSION}.tar.gz:artifacts
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Simple and reliable ssh tunnels with embedded ssh server
 WWW=		https://github.com/ferama/rospo
 

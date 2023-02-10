@@ -1,9 +1,7 @@
-$OpenBSD: patch-gnome-initial-setup_pages_account_um-realm-manager_c,v 1.5 2014/10/06 10:16:42 ajacoutot Exp $
-
 XXX rework and push upstream
 
---- gnome-initial-setup/pages/account/um-realm-manager.c.orig	Tue Sep  2 05:37:52 2014
-+++ gnome-initial-setup/pages/account/um-realm-manager.c	Mon Oct  6 11:55:29 2014
+--- gnome-initial-setup/pages/account/um-realm-manager.c.orig	2022-12-02 15:11:34 UTC
++++ gnome-initial-setup/pages/account/um-realm-manager.c
 @@ -23,7 +23,7 @@
  
  #include "um-realm-manager.h"

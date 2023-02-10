@@ -40,7 +40,6 @@
     SUBDIR += gtkglext
     SUBDIR += gtkglextmm
     SUBDIR += gtkimageview
-    SUBDIR += gtkmathview
     SUBDIR += gtkmm24
     SUBDIR += gtkmm30
     SUBDIR += gtksourceview2
@@ -53,6 +52,7 @@
     SUBDIR += irrlicht
     SUBDIR += itk
     SUBDIR += iwidgets
+    SUBDIR += kddockwidgets
     SUBDIR += kf5-attica
     SUBDIR += kf5-kcompletion
     SUBDIR += kf5-kconfigwidgets
@@ -76,7 +76,6 @@
     SUBDIR += libgdiplus
     SUBDIR += libhandy
     SUBDIR += libhandy0
-    SUBDIR += libsexy
     SUBDIR += libshumate
     SUBDIR += libunique3
     SUBDIR += libwnck
@@ -165,6 +164,7 @@
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-wxPython4
+    SUBDIR += pythonqt
     SUBDIR += qml-box2d
     SUBDIR += qt5-charts
     SUBDIR += qt5-datavis3d
@@ -223,7 +223,6 @@
     SUBDIR += tktray
     SUBDIR += tktreectrl
     SUBDIR += unique
-    SUBDIR += vdk
     SUBDIR += viewklass
     SUBDIR += vte
     SUBDIR += vte3

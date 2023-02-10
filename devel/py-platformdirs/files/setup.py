@@ -24,15 +24,19 @@ setup(
         'Programming Language :: Python :: Implementation :: PyPy',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
+    install_requires=[
+        'typing-extensions>=4.4; python_version < "3.8"',
+    ],
     extras_require={
         'docs': [
-            'furo>=2022.9.29',
+            'furo>=2022.12.7',
             'proselint>=0.13',
-            'sphinx-autodoc-typehints>=1.19.4',
+            'sphinx-autodoc-typehints>=1.19.5',
             'sphinx>=5.3',
         ],
         'test': [
             'appdirs==1.4.4',
+            'covdefaults>=2.2.2',
             'pytest-cov>=4',
             'pytest-mock>=3.10',
             'pytest>=7.2',
@@ -41,7 +45,5 @@ setup(
     packages=[
         'platformdirs',
     ],
-    package_dir={
-	    '': 'src'
-    },
+    package_dir={'': 'src'},
 )

@@ -1,5 +1,5 @@
 PORTNAME=	CFPropertyList
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-rexml>=0:textproc/rubygem-rexml
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

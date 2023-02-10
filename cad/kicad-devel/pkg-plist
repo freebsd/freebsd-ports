@@ -17,9 +17,6 @@ bin/kicad-cli
 bin/pcb_calculator
 bin/pcbnew
 bin/pl_editor
-include/argparse/argparse.hpp
-lib/cmake/argparse/argparseConfig-version.cmake
-lib/cmake/argparse/argparseConfig.cmake
 lib/kicad/plugins/3d/libs3d_plugin_idf.so
 lib/kicad/plugins/3d/libs3d_plugin_oce.so
 lib/kicad/plugins/3d/libs3d_plugin_vrml.so
@@ -27,7 +24,6 @@ lib/libkicad_3dsg.so
 lib/libkicad_3dsg.so.2.0.0
 %%PYTHON_SITELIBDIR%%/_pcbnew.so
 %%PYTHON_SITELIBDIR%%/pcbnew.py
-libdata/pkgconfig/argparse.pc
 %%DESKTOPDIR%%/org.kicad.bitmap2component.desktop
 %%DESKTOPDIR%%/org.kicad.eeschema.desktop
 %%DESKTOPDIR%%/org.kicad.gerbview.desktop
@@ -303,6 +299,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/plugins/README-bom.txt
 %%DATADIR%%/plugins/bom_csv_grouped_by_value.py
 %%DATADIR%%/plugins/bom_csv_grouped_by_value_with_fp.py
+%%DATADIR%%/plugins/bom_csv_grouped_extra.py
 %%DATADIR%%/plugins/bom_csv_sorted_by_ref.py
 %%DATADIR%%/plugins/bom_html_grouped_by_value.py
 %%DATADIR%%/plugins/bom_html_with_advanced_grouping.py

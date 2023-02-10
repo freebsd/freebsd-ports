@@ -1,7 +1,7 @@
 PORTNAME=	icingaweb2-module-vspheredb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt www
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
@@ -12,7 +12,7 @@ WWW=		https://github.com/Icinga/icingaweb2-module-vspheredb
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.5.0:net-mgmt/icingaweb2@${PHP_FLAVOR} \
+RUN_DEPENDS=	icingaweb2${PHP_PKGNAMESUFFIX}>=2.11.4:net-mgmt/icingaweb2@${PHP_FLAVOR} \
 		icingaweb2-module-incubator${PHP_PKGNAMESUFFIX}>0:net-mgmt/icingaweb2-module-incubator@${PHP_FLAVOR} \
 		icinga-php-library${PHP_PKGNAMESUFFIX}>0:net-mgmt/icinga-php-library@${PHP_FLAVOR} \
 		icingaweb2-module-reactbundle${PHP_PKGNAMESUFFIX}>0:net-mgmt/icingaweb2-module-reactbundle@${PHP_FLAVOR}

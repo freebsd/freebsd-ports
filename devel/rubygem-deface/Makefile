@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-actionview60>=5.2:devel/rubygem-actionview60 \
 		rubygem-rainbow>=2.1.0:devel/rubygem-rainbow
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

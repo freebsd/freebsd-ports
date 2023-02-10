@@ -10,7 +10,8 @@ BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		cmake compiler:c++11-lang gettext gl kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext gl kde:5 pkgconfig qt:5 \
+		tar:xz
 USE_GL=		gl
 USE_KDE=	ecm
 USE_QT=		core gui wayland \

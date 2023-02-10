@@ -1,20 +1,20 @@
 PORTNAME=	gtk3
-PORTVERSION=	4.0.3
+PORTVERSION=	4.0.8
 CATEGORIES=	x11-toolkits rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby binding of GTK+ 3.x
-WWW=		https://ruby-gnome.github.io/
+WWW=		https://ruby-gnome.github.io/ \
+		https://github.com/ruby-gnome/ruby-gnome
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
-RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}:accessibility/rubygem-atk \
-		rubygem-gdk3>=${PORTVERSION}:x11-toolkits/rubygem-gdk3
+RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}<${PORTVERSION}_99:accessibility/rubygem-atk \
+		rubygem-gdk3>=${PORTVERSION}<${PORTVERSION}_99:x11-toolkits/rubygem-gdk3
 
 USES=		gem gnome
 USE_GNOME=	gtk30
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

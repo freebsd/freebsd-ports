@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-amazing_print>=0:devel/rubygem-amazing_print \
 		rubygem-unicode-display_width>=0:devel/rubygem-unicode-display_width
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

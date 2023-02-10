@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-gyoku>=0.4.0:devel/rubygem-gyoku \
 		rubygem-nokogiri>=0:textproc/rubygem-nokogiri
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

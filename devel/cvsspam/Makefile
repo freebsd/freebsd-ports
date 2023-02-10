@@ -11,7 +11,7 @@ WWW=		http://www.badgers-in-foil.co.uk/projects/cvsspam/
 
 LICENSE=	GPLv2
 
-USE_RUBY=	yes
+USES=	ruby
 NO_BUILD=	yes
 NO_ARCH=	yes
 

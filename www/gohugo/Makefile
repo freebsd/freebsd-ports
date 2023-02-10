@@ -1,11 +1,12 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.109.0
+DISTVERSION=	0.110.0
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
 
-MAINTAINER=	ben@lavery-griffiths.com
+MAINTAINER=	0xdutra@gmail.com
 COMMENT=	Fast and Flexible Static Site Generator built with love in GoLang
 WWW=		https://gohugo.io
 

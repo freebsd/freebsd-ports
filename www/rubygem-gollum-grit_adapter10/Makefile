@@ -13,7 +13,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-gitlab-grit>=2.7.1:textproc/rubygem-gitlab-grit
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

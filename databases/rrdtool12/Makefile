@@ -28,7 +28,7 @@ OPTIONS_DEFAULT=	PERL
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MRUBY}
-USE_RUBY=	yes
+USES+=	ruby
 PLIST_SUB+=	WITH_RUBY=""
 CONFIGURE_ARGS+=	--enable-ruby
 .else

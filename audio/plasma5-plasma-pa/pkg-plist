@@ -1,7 +1,8 @@
-%%QT_PLUGINDIR%%/kcms/kcm_pulseaudio.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_pulseaudio.so
 %%QT_QMLDIR%%/org/kde/plasma/private/volume/PulseObjectFilterModel.qml
 %%QT_QMLDIR%%/org/kde/plasma/private/volume/libplasma-volume-declarative.so
 %%QT_QMLDIR%%/org/kde/plasma/private/volume/qmldir
+share/applications/kcm_pulseaudio.desktop
 share/doc/HTML/ca/kcontrol/plasma-pa/index.cache.bz2
 share/doc/HTML/ca/kcontrol/plasma-pa/index.docbook
 share/doc/HTML/de/kcontrol/plasma-pa/index.cache.bz2
@@ -38,9 +39,6 @@ share/kpackage/kcms/kcm_pulseaudio/contents/ui/MuteButton.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/StreamListItem.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/VolumeSlider.qml
 share/kpackage/kcms/kcm_pulseaudio/contents/ui/main.qml
-share/kpackage/kcms/kcm_pulseaudio/metadata.desktop
-share/kpackage/kcms/kcm_pulseaudio/metadata.json
-share/kservices5/kcm_pulseaudio.desktop
 share/kservices5/plasma-applet-org.kde.plasma.volume.desktop
 share/locale/ar/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
@@ -89,6 +87,8 @@ share/locale/it/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/it/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ja/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ja/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
+share/locale/ka/LC_MESSAGES/kcm_pulseaudio.mo
+share/locale/ka/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/ko/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/lt/LC_MESSAGES/kcm_pulseaudio.mo
@@ -145,6 +145,7 @@ share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/HorizontalStackView.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/ListItemBase.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/SmallToolButton.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/StreamListItem.qml
+share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/VolumeSlider.qml
 share/plasma/plasmoids/org.kde.plasma.volume/contents/ui/main.qml
 share/plasma/plasmoids/org.kde.plasma.volume/metadata.desktop
 share/plasma/plasmoids/org.kde.plasma.volume/metadata.json

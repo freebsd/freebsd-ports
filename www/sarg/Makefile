@@ -36,7 +36,7 @@ PHP_CONFIGURE_ON=	--enable-sargphp="${ETCDIR}"
 PHP_CONFIGURE_OFF=	--disable-sargphp
 PCRE_CONFIGURE_WITH=	pcre
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 ICONV_USES=		iconv
 ICONV_CONFIGURE_WITH=	iconv

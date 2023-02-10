@@ -1,37 +1,36 @@
 PORTNAME=	zipcodes
-PORTVERSION=	20200831
+PORTVERSION=	20221228
 CATEGORIES=	japanese
-MASTER_SITES=	LOCAL/kuriyama
+MASTER_SITES=	LOCAL/hrs
 DISTFILES=	ken_all-${PORTVERSION_K}.zip jigyosyo-${PORTVERSION_J}.zip
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Japanese zipcode tables. includes both 3/5 and 7 digits form
 WWW=		https://www.post.japanpost.jp/zipcode/
 
-BUILD_DEPENDS=	nkf:japanese/nkf
+LICENSE=	PD
 
-NO_WRKSUBDIR=	yes
+BUILD_DEPENDS=	nkf:japanese/nkf
 
 USES=		perl5 zip
 USE_PERL5=	build
-MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" SCRIPTDIR=${SCRIPTDIR} PERL=${PERL} STAGEDIR=${STAGEDIR}
+
+NO_WRKSUBDIR=	yes
+MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" \
+		SCRIPTDIR=${SCRIPTDIR} \
+		PERL=${PERL} \
+		STAGEDIR=${STAGEDIR}
+MAKEFILE=	${FILESDIR}/Makefile
+PLIST_FILES=	share/misc/jp-zipcodes/jigyosyo-euc.csv \
+		share/misc/jp-zipcodes/ken_all-euc.csv \
+		share/misc/jp-zipcodes/zipcodes.5digits \
+		share/misc/jp-zipcodes/zipcodes.7digits
 PORTVERSION_K?=	${PORTVERSION}
 PORTVERSION_J?=	${PORTVERSION}
 
 post-extract:
-	@${CP} ${FILESDIR}/Makefile ${WRKSRC}
-	cd ${WRKSRC}; ${MV} KEN_ALL.CSV ken_all.csv; ${MV} JIGYOSYO.CSV jigyosyo.csv
-
-# for maintenance.
-fetch1:
-	fetch http://www.post.japanpost.jp/zipcode/dl/kogaki/zip/ken_all.zip
-	fetch http://www.post.japanpost.jp/zipcode/dl/jigyosyo/zip/jigyosyo.zip
-	${CHMOD} og+r *.zip
-
-fetch2:
-	m=`stat -f %m ken_all.zip`; \
-	${MV} ken_all.zip `date -r $${m} +ken_all-%Y%m%d.zip`
-	m=`stat -f %m jigyosyo.zip`; \
-	${MV} jigyosyo.zip `date -r $${m} +jigyosyo-%Y%m%d.zip`
+	cd ${WRKSRC} && \
+	    ${MV} KEN_ALL.CSV ken_all.csv && \
+	    ${MV} JIGYOSYO.CSV jigyosyo.csv
 
 .include <bsd.port.mk>

@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 RUN_DEPENDS=	rubygem-rails4>0:www/rubygem-rails4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

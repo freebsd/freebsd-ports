@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activerecord61>=4.0.0:databases/rubygem-activerecord61 \
 		rubygem-railties61>=4.0.0:www/rubygem-railties61
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

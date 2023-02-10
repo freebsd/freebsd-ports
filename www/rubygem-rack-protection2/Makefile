@@ -1,5 +1,5 @@
 PORTNAME=	rack-protection
-PORTVERSION=	2.2.2
+PORTVERSION=	2.2.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	2
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/License
 RUN_DEPENDS=	rubygem-rack>=0,3:www/rubygem-rack
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -12,7 +12,6 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-jwt>=2.1<3:www/rubygem-jwt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

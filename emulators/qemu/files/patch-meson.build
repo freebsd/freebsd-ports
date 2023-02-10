@@ -1,6 +1,6 @@
---- meson.build.orig	2022-04-19 19:10:27 UTC
+--- meson.build.orig	2022-12-14 16:28:45 UTC
 +++ meson.build
-@@ -2505,14 +2505,10 @@ if have_system
+@@ -2719,14 +2719,10 @@ if have_system
    fdt_opt = get_option('fdt')
    if fdt_opt in ['enabled', 'auto', 'system']
      have_internal = fs.exists(meson.current_source_dir() / 'dtc/libfdt/Makefile.libfdt')

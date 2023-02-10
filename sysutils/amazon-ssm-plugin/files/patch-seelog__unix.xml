@@ -1,0 +1,14 @@
+--- seelog_unix.xml.orig	2021-08-17 20:31:44 UTC
++++ seelog_unix.xml
+@@ -6,9 +6,9 @@
+         <exception filepattern="test*" minlevel="error"/>
+     </exceptions>
+     <outputs formatid="fmtinfo">
+-        <rollingfile type="size" filename="/usr/local/sessionmanagerplugin/logs/session-manager-plugin.log" maxsize="30000000" maxrolls="5"/>
++        <rollingfile type="size" filename="%%LOGDIR%%/session-manager-plugin.log" maxsize="30000000" maxrolls="5"/>
+         <filter levels="error,critical" formatid="fmterror">
+-            <rollingfile type="size" filename="/usr/local/sessionmanagerplugin/logs/errors.log" maxsize="10000000" maxrolls="5"/>
++            <rollingfile type="size" filename="%%LOGDIR%%/session-manager-plugin-errors.log" maxsize="10000000" maxrolls="5"/>
+         </filter>
+     </outputs>
+     <formats>

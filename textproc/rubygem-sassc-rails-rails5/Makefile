@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-railties5>=4.0.0:www/rubygem-railties5 \
 		rubygem-tilt>=0:devel/rubygem-tilt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

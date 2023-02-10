@@ -183,6 +183,7 @@ bin/grafana-server
 %%DATADIR%%/public/app/core/components/RolePicker/ValueContainer.tsx
 %%DATADIR%%/public/app/core/components/RolePicker/api.ts
 %%DATADIR%%/public/app/core/components/RolePicker/constants.ts
+%%DATADIR%%/public/app/core/components/SVG/SanitizedSVG.tsx
 %%DATADIR%%/public/app/core/components/Select/DashboardPicker.tsx
 %%DATADIR%%/public/app/core/components/Select/FolderPicker.test.tsx
 %%DATADIR%%/public/app/core/components/Select/FolderPicker.tsx
@@ -3262,9 +3263,6 @@ bin/grafana-server
 %%DATADIR%%/public/build/1523.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/1549.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/1549.%%GRAFANA_BUILDHASH%%.js.map
-%%DATADIR%%/public/build/1603.%%GRAFANA_BUILDHASH%%.js
-%%DATADIR%%/public/build/1603.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
-%%DATADIR%%/public/build/1603.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/1657.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/1657.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
 %%DATADIR%%/public/build/1657.%%GRAFANA_BUILDHASH%%.js.map
@@ -3504,6 +3502,9 @@ bin/grafana-server
 %%DATADIR%%/public/build/7275.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/7275.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
 %%DATADIR%%/public/build/7275.%%GRAFANA_BUILDHASH%%.js.map
+%%DATADIR%%/public/build/7289.%%GRAFANA_BUILDHASH%%.js
+%%DATADIR%%/public/build/7289.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
+%%DATADIR%%/public/build/7289.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/7371.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/7371.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
 %%DATADIR%%/public/build/7371.%%GRAFANA_BUILDHASH%%.js.map

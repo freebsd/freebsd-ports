@@ -179,7 +179,7 @@ CONFIGURE_ARGS+=--with-imap=${LOCALBASE} \
 CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl -lcrypto" \
 		PHP_OPENSSL=yes
-  
+
 LDFLAGS+=	-L${OPENSSLLIB} -lcrypto -lssl
 USES+=		ssl
 .endif
@@ -197,8 +197,7 @@ BUILD_DEPENDS=  re2c:devel/re2c
 
 .if ${PHP_MODNAME} == "ldap"
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} --with-ldap-sasl=${LOCALBASE}
-
-USE_OPENLDAP=	yes
+USE+=	ldap
 .endif
 
 .if ${PHP_MODNAME} == "mbstring"

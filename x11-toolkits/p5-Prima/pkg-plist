@@ -9,6 +9,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Application.pm
 %%SITE_ARCH%%/Prima/Buttons.pm
 %%SITE_ARCH%%/Prima/CORE/Drawable_private.h
+%%SITE_ARCH%%/Prima/CORE/Image_private.h
 %%SITE_ARCH%%/Prima/CORE/apricot.h
 %%SITE_ARCH%%/Prima/CORE/generic/AbstractMenu.h
 %%SITE_ARCH%%/Prima/CORE/generic/AccelTable.h
@@ -75,7 +76,6 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/File.pod
 %%SITE_ARCH%%/Prima/FrameSet.pm
 %%SITE_ARCH%%/Prima/Grids.pm
-%%SITE_ARCH%%/Prima/Header.pm
 %%SITE_ARCH%%/Prima/HelpViewer.fm
 %%SITE_ARCH%%/Prima/HelpViewer.pm
 %%SITE_ARCH%%/Prima/Image.pod
@@ -89,11 +89,11 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Image/png.pm
 %%SITE_ARCH%%/Prima/Image/tiff.fm
 %%SITE_ARCH%%/Prima/Image/tiff.pm
+%%SITE_ARCH%%/Prima/Image/transparency.gif
 %%SITE_ARCH%%/Prima/Image/webp.pm
 %%SITE_ARCH%%/Prima/ImageViewer.pm
 %%SITE_ARCH%%/Prima/IniFile.pm
 %%SITE_ARCH%%/Prima/InputLine.pm
-%%SITE_ARCH%%/Prima/IntUtils.pm
 %%SITE_ARCH%%/Prima/KeySelector.pm
 %%SITE_ARCH%%/Prima/Label.pm
 %%SITE_ARCH%%/Prima/Lists.pm
@@ -143,8 +143,11 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/VB/prima-cfgmaint.pl
 %%SITE_ARCH%%/Prima/Widget.pod
 %%SITE_ARCH%%/Prima/Widget/BidiInput.pm
+%%SITE_ARCH%%/Prima/Widget/EventRectangles.pm
 %%SITE_ARCH%%/Prima/Widget/GroupScroller.pm
+%%SITE_ARCH%%/Prima/Widget/Header.pm
 %%SITE_ARCH%%/Prima/Widget/IntIndents.pm
+%%SITE_ARCH%%/Prima/Widget/Link.pm
 %%SITE_ARCH%%/Prima/Widget/ListBoxUtils.pm
 %%SITE_ARCH%%/Prima/Widget/MouseScroller.pm
 %%SITE_ARCH%%/Prima/Widget/Panel.pm
@@ -152,6 +155,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/Widget/ScrollWidget.pm
 %%SITE_ARCH%%/Prima/Widget/StartupWindow.pm
 %%SITE_ARCH%%/Prima/Widget/UndoActions.pm
+%%SITE_ARCH%%/Prima/Widget/link.gif
 %%SITE_ARCH%%/Prima/Widget/pack.pod
 %%SITE_ARCH%%/Prima/Widget/place.pod
 %%SITE_ARCH%%/Prima/Window.pod
@@ -191,10 +195,10 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/examples/fading_text.pl
 %%SITE_ARCH%%/Prima/examples/fontdlg.pl
 %%SITE_ARCH%%/Prima/examples/frames.pl
-%%SITE_ARCH%%/Prima/examples/generic.pl
 %%SITE_ARCH%%/Prima/examples/gradient.pl
 %%SITE_ARCH%%/Prima/examples/grid.pl
 %%SITE_ARCH%%/Prima/examples/grip.pl
+%%SITE_ARCH%%/Prima/examples/helloworld.pl
 %%SITE_ARCH%%/Prima/examples/iv.pl
 %%SITE_ARCH%%/Prima/examples/keys.pl
 %%SITE_ARCH%%/Prima/examples/keyselector.pl
@@ -240,11 +244,13 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/faq.pod
 %%SITE_ARCH%%/Prima/fills.gif
 %%SITE_ARCH%%/Prima/fontabc.gif
+%%SITE_ARCH%%/Prima/frameset.gif
 %%SITE_ARCH%%/Prima/gauge.gif
 %%SITE_ARCH%%/Prima/gettextbox.gif
 %%SITE_ARCH%%/Prima/gp-problems.pod
 %%SITE_ARCH%%/Prima/gradient.gif
 %%SITE_ARCH%%/Prima/grid.gif
+%%SITE_ARCH%%/Prima/hello-world.gif
 %%SITE_ARCH%%/Prima/image-load.pod
 %%SITE_ARCH%%/Prima/imageviewer.gif
 %%SITE_ARCH%%/Prima/inputline.gif
@@ -253,6 +259,10 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/label.gif
 %%SITE_ARCH%%/Prima/leadings.gif
 %%SITE_ARCH%%/Prima/lineends.gif
+%%SITE_ARCH%%/Prima/lineends1.gif
+%%SITE_ARCH%%/Prima/lineends2.gif
+%%SITE_ARCH%%/Prima/lineends3.gif
+%%SITE_ARCH%%/Prima/lineends4.gif
 %%SITE_ARCH%%/Prima/linejoins.gif
 %%SITE_ARCH%%/Prima/linepats.gif
 %%SITE_ARCH%%/Prima/markup.gif
@@ -298,6 +308,7 @@ bin/prima-tmlink
 %%SITE_ARCH%%/Prima/tutorial/menu1.gif
 %%SITE_ARCH%%/Prima/tutorial/menu2.gif
 %%SITE_ARCH%%/Prima/tutorial/menu3.gif
+%%SITE_ARCH%%/Prima/types.pod
 %%SITE_ARCH%%/Prima/windings.gif
 %%SITE_ARCH%%/auto/Prima/Prima.so
 %%SITE_ARCH%%/auto/Prima/SlibPrima.a
@@ -343,7 +354,6 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::ExtLists.3.gz
 %%PERL5_MAN3%%/Prima::FrameSet.3.gz
 %%PERL5_MAN3%%/Prima::Grids.3.gz
-%%PERL5_MAN3%%/Prima::Header.3.gz
 %%PERL5_MAN3%%/Prima::HelpViewer.3.gz
 %%PERL5_MAN3%%/Prima::Image::Animate.3.gz
 %%PERL5_MAN3%%/Prima::Image::TransparencyControl.3.gz
@@ -357,7 +367,6 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::ImageViewer.3.gz
 %%PERL5_MAN3%%/Prima::IniFile.3.gz
 %%PERL5_MAN3%%/Prima::InputLine.3.gz
-%%PERL5_MAN3%%/Prima::IntUtils.3.gz
 %%PERL5_MAN3%%/Prima::KeySelector.3.gz
 %%PERL5_MAN3%%/Prima::Label.3.gz
 %%PERL5_MAN3%%/Prima::Lists.3.gz
@@ -395,8 +404,11 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/Prima::VB::VBLoader.3.gz
 %%PERL5_MAN3%%/Prima::VB::examples::Widgety.3.gz
 %%PERL5_MAN3%%/Prima::Widget::BidiInput.3.gz
+%%PERL5_MAN3%%/Prima::Widget::EventRectangles.3.gz
 %%PERL5_MAN3%%/Prima::Widget::GroupScroller.3.gz
+%%PERL5_MAN3%%/Prima::Widget::Header.3.gz
 %%PERL5_MAN3%%/Prima::Widget::IntIndents.3.gz
+%%PERL5_MAN3%%/Prima::Widget::Link.3.gz
 %%PERL5_MAN3%%/Prima::Widget::ListBoxUtils.3.gz
 %%PERL5_MAN3%%/Prima::Widget::MouseScroller.3.gz
 %%PERL5_MAN3%%/Prima::Widget::Panel.3.gz
@@ -436,4 +448,5 @@ bin/prima-tmlink
 %%PERL5_MAN3%%/pod::Prima::image-load.3.gz
 %%PERL5_MAN3%%/pod::Prima::internals.3.gz
 %%PERL5_MAN3%%/pod::Prima::tutorial.3.gz
+%%PERL5_MAN3%%/pod::Prima::types.3.gz
 %%PERL5_MAN3%%/pod::prima-gencls.3.gz

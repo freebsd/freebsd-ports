@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
 		rubygem-timeliness>=0.3.10<1:devel/rubygem-timeliness
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

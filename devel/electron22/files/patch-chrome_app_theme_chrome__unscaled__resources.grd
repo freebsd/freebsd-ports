@@ -1,0 +1,29 @@
+--- chrome/app/theme/chrome_unscaled_resources.grd.orig	2022-10-24 13:33:33 UTC
++++ chrome/app/theme/chrome_unscaled_resources.grd
+@@ -19,7 +19,7 @@
+           <include name="IDR_ASSISTANT_LOGO_MONOCHROME" file="google_chrome/google_assistant.svg" type="BINDATA" />
+           <if expr="_google_chrome_for_testing">
+             <then>
+-              <if expr="is_linux">
++              <if expr="is_posix">
+                 <then>
+                   <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/google_chrome_for_testing/linux/product_logo_64.png" type="BINDATA" />
+                   <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/google_chrome_for_testing/linux/product_logo_128.png" type="BINDATA" />
+@@ -36,7 +36,7 @@
+               </if>
+             </then>
+             <else>  <!-- not _google_chrome_for_testing -->
+-              <if expr="is_linux">
++              <if expr="is_posix">
+                 <then>
+                   <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/linux/product_logo_64.png" type="BINDATA" />
+                   <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/linux/product_logo_128.png" type="BINDATA" />
+@@ -78,7 +78,7 @@
+           </if>
+         </then>
+         <else> <!-- not _google_chrome -->
+-          <if expr="is_linux">
++          <if expr="is_posix">
+             <then>
+               <include name="IDR_PRODUCT_LOGO_64" file="chromium/linux/product_logo_64.png" type="BINDATA" />
+               <include name="IDR_PRODUCT_LOGO_128" file="chromium/linux/product_logo_128.png" type="BINDATA" />

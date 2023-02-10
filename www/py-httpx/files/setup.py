@@ -38,7 +38,7 @@ setup(
         'cli': [
             'click==8.*',
             'pygments==2.*',
-            'rich<13,>=10',
+            'rich<14,>=10',
         ],
         'http2': [
             'h2<5,>=3',

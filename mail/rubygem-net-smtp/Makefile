@@ -14,7 +14,6 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-net-protocol>=0:net/rubygem-net-protocol
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

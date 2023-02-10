@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-activemodel61>0:databases/rubygem-activemodel61 \
 		rubygem-terrapin>=0.6.0:devel/rubygem-terrapin
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		cpe gem magick:7,run
 CPE_VENDOR=	thoughtbot
 

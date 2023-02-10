@@ -1,4 +1,4 @@
---- electron/shell/browser/ui/views/electron_views_delegate.cc.orig	2022-05-18 15:31:32 UTC
+--- electron/shell/browser/ui/views/electron_views_delegate.cc.orig	2023-01-24 08:00:52 UTC
 +++ electron/shell/browser/ui/views/electron_views_delegate.cc
 @@ -9,7 +9,7 @@
  #include "ui/views/widget/desktop_aura/desktop_native_widget_aura.h"
@@ -8,7 +8,7 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
- #include "ui/views/linux_ui/linux_ui.h"
+ #include "ui/linux/linux_ui.h"
 @@ -17,7 +17,7 @@
  
  namespace {

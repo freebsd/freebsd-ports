@@ -25,7 +25,6 @@ RUN_DEPENDS=	rubygem-claide>=1.0<2:devel/rubygem-claide \
 		rubygem-terminal-table>=1<4:textproc/rubygem-terminal-table
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

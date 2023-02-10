@@ -1,7 +1,7 @@
 PORTNAME=	qiskit-aer
 DISTVERSION=	0.10.4
 CATEGORIES=	science python # quantum-computing
-#MASTER_SITES=	CHEESESHOP
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

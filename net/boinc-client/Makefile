@@ -1,6 +1,6 @@
 PORTNAME=	boinc-client
 PORTVERSION=	7.20.2
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	client_release/7.20/
 CATEGORIES=	net
 
@@ -64,7 +64,7 @@ MANAGER_CONFIGURE_OFF=		--with-wx-config=false \
 				--without-x
 MANAGER_CONFIGURE_ENABLE=	manager
 MANAGER_USES=			gnome iconv
-MANAGER_USE=			GNOME=cairo,gdkpixbuf2,glib20,gtk20,pango \
+MANAGER_USE=			GNOME=cairo,gdkpixbuf2,glib20,pango \
 				WX=3.0 \
 				XORG=x11,xcb,xext,xscrnsaver
 

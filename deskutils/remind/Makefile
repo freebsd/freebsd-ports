@@ -5,7 +5,7 @@ CATEGORIES=	deskutils
 MASTER_SITES=	https://dianne.skoll.ca/projects/remind/download/ \
 		https://dianne.skoll.ca/projects/remind/download/OLD/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Sophisticated calendar and alarm program
 WWW=		https://dianne.skoll.ca/projects/remind/
 

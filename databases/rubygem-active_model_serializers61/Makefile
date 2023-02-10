@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-activemodel61>=4.1<7.1:databases/rubygem-activemodel61 \
 		rubygem-jsonapi-renderer>=0.1.1<0.3:devel/rubygem-jsonapi-renderer
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

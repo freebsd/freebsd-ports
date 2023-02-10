@@ -1,7 +1,7 @@
 PORTNAME=	jq
-PORTVERSION=	1.3.0
+PORTVERSION=	1.4.0
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP LOCAL/mandree:mandree
+MASTER_SITES=	PYPI LOCAL/mandree:mandree
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} jq-1.2.1-tests${EXTRACT_SUFX}:mandree
 
@@ -26,7 +26,7 @@ USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
 post-extract:
-		# move tests into place - unchanged between 1.2.1 and 1.2.2
+		# move tests into place
 		${MV} ${WRKDIR}/jq-1.2.1/* ${WRKSRC}
 
 post-install:

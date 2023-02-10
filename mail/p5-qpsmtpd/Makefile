@@ -25,7 +25,7 @@ GH_ACCOUNT=	smtpd
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MMODPERL}
-USES+=		apache:run,2.2+
+USES+=		apache:run
 RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=0:www/mod_perl2
 .endif
 

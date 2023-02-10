@@ -1,5 +1,6 @@
 PORTNAME=		sope2
 PORTVERSION=		2.4.3
+PORTREVISION=		1
 CATEGORIES=		devel gnustep
 MASTER_SITES=		http://www.sogo.nu/files/downloads/SOGo/Sources/
 DISTNAME=		SOPE-${PORTVERSION}
@@ -21,7 +22,6 @@ OPTIONS_DEFINE=		LDAP MYSQL PGSQL MEMCACHED
 OPTIONS_DEFAULT=	LDAP PGSQL MEMCACHED
 OPTIONS_SUB=		yes
 
-LDAP_DESC=		Build with LDAP support
 MYSQL_DESC=		Build with MySQL support
 PGSQL_DESC=		Build with PostgreSQL support
 MEMCACHED_DESC=		Install memcached
@@ -36,7 +36,7 @@ SUB_LIST+=		GNUSTEP_LOCAL_TOOLS=${GNUSTEP_LOCAL_TOOLS} \
 
 CONFIGURE_ARGS=		--with-gnustep --disable-debug --enable-strip
 
-LDAP_USE=		OPENLDAP=client
+LDAP_USES=		ldap
 PGSQL_USES=		pgsql
 MYSQL_USES=		mysql
 MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached
@@ -44,6 +44,9 @@ MEMCACHED_RUN_DEPENDS=	${LOCALBASE}/bin/memcached:databases/memcached
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/sope-core/NGStreams/configure
+.for f in config.guess config.sub
+	@${CP} ${TEMPLATES}/$f ${WRKSRC}/sope-core/NGStreams/
+.endfor
 
 post-patch-LDAP-off:
 	@${REINPLACE_CMD} -e '/checkLinking "ldap"/d' ${WRKSRC}/configure

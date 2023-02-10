@@ -1,5 +1,5 @@
 PORTNAME=	flashrom
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.flashrom.org/releases/

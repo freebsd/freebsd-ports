@@ -139,6 +139,7 @@ share/icons/hicolor/64x64/apps/liteide.png
 %%DATADIR%%/liteeditor/kate/language.dtd
 %%DATADIR%%/liteeditor/kate/less.xml
 %%DATADIR%%/liteeditor/kate/lua.xml
+%%DATADIR%%/liteeditor/kate/makefile.xml
 %%DATADIR%%/liteeditor/kate/markdown.xml
 %%DATADIR%%/liteeditor/kate/perl.xml
 %%DATADIR%%/liteeditor/kate/python.xml

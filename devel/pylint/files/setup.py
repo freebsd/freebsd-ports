@@ -27,16 +27,16 @@ package_data = \
 {'': ['*']}
 
 install_requires = \
-['dill>=0.2',
- 'platformdirs>=2.2.0',
- 'astroid>=2.12.4,<=2.14.0-dev0',
+['platformdirs>=2.2.0',
+ 'astroid>=2.12.13,<=2.14.0-dev0',
  'isort>=4.2.5,<6',
  'mccabe>=0.6,<0.8',
  'tomlkit>=0.10.1']
 
 extras_require = \
 {":python_version<'3.10'": ['typing-extensions>=3.10.0'],
- ":python_version<'3.11'": ['tomli>=1.1.0'],
+ ":python_version<'3.11'": ['dill>=0.2', 'tomli>=1.1.0'],
+ ":python_version>='3.11'": ['dill>=0.3.6'],
  ":sys_platform=='win32'": ['colorama>=0.4.5'],
  'spelling': ['pyenchant~=3.2'],
  'testutils': ['gitpython>3']}

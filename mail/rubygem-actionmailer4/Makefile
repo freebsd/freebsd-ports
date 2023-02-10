@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-actionpack4>=${PORTVERSION}:www/rubygem-actionpack4 \
 		rubygem-rails-dom-testing1>=1.0.5<2:textproc/rubygem-rails-dom-testing1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

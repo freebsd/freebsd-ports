@@ -1,7 +1,13 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.0beta
+DISTVERSION=	0.21.0beta
+PORTREVISION=	5
 CATEGORIES=	x11-wm wayland
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	c3adc9ec5602.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/1448
+PATCHFILES+=	f90ff8303b4f.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/1457
+PATCHFILES+=	fd3a1cd086d0.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/1477
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -19,7 +25,6 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c++11-lib gl gnome meson pkgconfig xorg
-USE_GCC=	yes:build
 USE_GITHUB=	yes
 USE_GL=		egl opengl
 USE_GNOME=	cairo
@@ -27,7 +32,6 @@ USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 GH_PROJECT=	Hyprland
 GH_TUPLE=	hyprwm:hyprland-protocols:301733a:hyprland_protocols/subprojects/hyprland-protocols
-LDFLAGS+=	-static-libstdc++ -static-libgcc # avoid libc++ conflict
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -41,6 +45,7 @@ post-patch:
 		-e "/GIT_COMMIT_HASH/s/run_command.*/'${DISTVERSIONFULL}'/" \
 		-e "/GIT_COMMIT_MESSAGE/s/run_command.*/'<unknown>'/" \
 		-e "/GIT_DIRTY/s/run_command.*/'portbld'/" \
+		-e "/version.*jq/s/run_command.*/'${DISTVERSIONFULL}',/" \
 		${WRKSRC}/meson.build
 # Respect PREFIX for wallpapers
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
@@ -52,5 +57,37 @@ post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/protocols
 .endif
+
+# XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
+.if ${CXX} == c++ && exists(/usr/lib/libc++.so)
+.if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h) || make(makesum) || make(fetch)
+. if exists(/usr/include/c++/v1/__algorithm/ranges_all_of.h) && !make(makesum) && !make(fetch)
+CXXFLAGS+=	-fexperimental-library # std::ranges::all_of
+. else
+BUILD_DEPENDS+=	${CMAKE_BIN}:devel/cmake-core
+USES+=		llvm:min=14,build
+CC=		clang${LLVM_VERSION}
+CXX=		clang++${LLVM_VERSION}
+CPP=		clang-cpp${LLVM_VERSION}
+CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
+CMAKE_BIN=	${LOCALBASE}/bin/cmake
+CMAKE_ARGS+=	-GNinja
+
+# XXX Move into separate port and standardize via USES
+GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.0-rc2:libcxx
+CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
+# Don't link against new libc++ as it's not necessary
+#LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
+
+pre-configure:	bundled-libcxx
+bundled-libcxx:
+	@${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS:M*Ninja*} \
+		-DLIBCXX_INCLUDE_BENCHMARKS:BOOL=OFF \
+		-DCMAKE_INSTALL_PREFIX:PATH=${WRKDIR}/libcxx_prefix \
+		-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
+	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
+. endif
+.endif
+.endif # exists(/usr/lib/libc++.so)
 
 .include <bsd.port.mk>

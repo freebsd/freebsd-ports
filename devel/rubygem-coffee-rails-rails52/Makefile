@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-coffee-script>=2.2.0:devel/rubygem-coffee-script \
 		rubygem-railties52>=5.2.0:www/rubygem-railties52
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

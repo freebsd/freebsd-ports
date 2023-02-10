@@ -1,6 +1,5 @@
 PORTNAME=	webkit
-DISTVERSION=	2.34.6
-PORTREVISION=	1
+DISTVERSION=	2.38.3
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk4
@@ -14,7 +13,8 @@ WWW=		https://webkitgtk.org/
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils
+BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
+		${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR}
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -35,15 +35,13 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		bison cmake compiler:c++14-lang cpe gettext gl gnome gperf jpeg \
-		localbase:ldflags perl5 pkgconfig python:build sqlite tar:xz \
-		xorg
+USES=		bison cmake compiler:c++20-lang cpe gettext gl gnome gperf jpeg \
+		localbase:ldflags perl5 pkgconfig python:build ruby:build \
+		sqlite tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk40 libxml2 libxslt introspection:build
 USE_GL=		egl gl glesv2
 USE_LDCONFIG=	yes
 USE_PERL5=	build
-USE_RUBY=	yes
-RUBY_NO_RUN_DEPENDS=	yes
 USE_XORG=	ice x11 xcomposite xdamage xext xrender xt
 
 CPE_VENDOR=	webkitgtk
@@ -55,7 +53,7 @@ CXXFLAGS_powerpc=	-DENABLE_YARR_JIT=0
 CXXFLAGS_powerpc64=	-DENABLE_YARR_JIT=0
 CMAKE_ARGS=		-DPORT=GTK
 CMAKE_OFF=		${CMAKE_OFF_${ARCH}:U} ENABLE_GAMEPAD ENABLE_GLES2 \
-			USE_LD_GOLD USE_SYSTEMD
+			ENABLE_JOURNALD_LOG USE_LD_GOLD USE_SYSTEMD
 CMAKE_ON=		ENABLE_MINIBROWSER USE_GTK4 USE_SYSTEM_MALLOC
 CMAKE_OFF_armv6=	ENABLE_JIT
 CMAKE_OFF_armv7=	ENABLE_JIT
@@ -107,6 +105,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/jsc-5
 	@${RLN} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-5.0/MiniBrowser \
 		${STAGEDIR}${PREFIX}/bin/MiniBrowser-5
+	@${MV} ${STAGEDIR}${PREFIX}/bin/WebKitWebDriver \
+		${STAGEDIR}${PREFIX}/bin/WebKitWebDriver-5
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so.*.*
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/webkit2gtk-5.0/injected-bundle/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/webkit2gtk-5.0/*

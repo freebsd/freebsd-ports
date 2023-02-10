@@ -10,7 +10,7 @@ WWW=		https://github.com/luislavena/mysql-gem
 LICENSE=	GPLv2 RUBY
 LICENSE_COMB=	dual
 
-USE_RUBY=	yes
 USES=		gem mysql
+IGNORE_WITH_MYSQL=	80
 
 .include <bsd.port.mk>

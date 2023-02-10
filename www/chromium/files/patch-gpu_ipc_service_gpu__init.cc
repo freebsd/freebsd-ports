@@ -1,4 +1,4 @@
---- gpu/ipc/service/gpu_init.cc.orig	2022-11-30 08:12:58 UTC
+--- gpu/ipc/service/gpu_init.cc.orig	2023-02-08 09:03:45 UTC
 +++ gpu/ipc/service/gpu_init.cc
 @@ -351,7 +351,7 @@ bool GpuInit::InitializeAndStartSandbox(base::CommandL
    enable_watchdog = false;
@@ -63,7 +63,7 @@
      (BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_CHROMEOS_DEVICE))
    if (!gl_disabled && !gl_use_swiftshader_ && std::getenv("RUNNING_UNDER_RR")) {
      // https://rr-project.org/ is a Linux-only record-and-replay debugger that
-@@ -869,7 +869,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -870,7 +870,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
    }
    bool gl_disabled = gl::GetGLImplementation() == gl::kGLImplementationDisabled;
  
@@ -72,7 +72,7 @@
      (BUILDFLAG(IS_CHROMEOS) && !BUILDFLAG(IS_CHROMEOS_DEVICE))
    if (!gl_disabled && !gl_use_swiftshader_ && std::getenv("RUNNING_UNDER_RR")) {
      // https://rr-project.org/ is a Linux-only record-and-replay debugger that
-@@ -932,7 +932,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
+@@ -933,7 +933,7 @@ void GpuInit::InitializeInProcess(base::CommandLine* c
  
    InitializePlatformOverlaySettings(&gpu_info_, gpu_feature_info_);
  

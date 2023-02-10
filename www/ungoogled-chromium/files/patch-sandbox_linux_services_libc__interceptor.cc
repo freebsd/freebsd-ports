@@ -1,4 +1,4 @@
---- sandbox/linux/services/libc_interceptor.cc.orig	2022-12-02 17:56:32 UTC
+--- sandbox/linux/services/libc_interceptor.cc.orig	2023-01-13 08:56:02 UTC
 +++ sandbox/linux/services/libc_interceptor.cc
 @@ -12,7 +12,9 @@
  #include <stddef.h>
@@ -10,7 +10,7 @@
  #include <sys/socket.h>
  #include <sys/types.h>
  #include <time.h>
-@@ -161,7 +163,7 @@ bool ReadTimeStruct(base::PickleIterator* iter,
+@@ -167,7 +169,7 @@ bool ReadTimeStruct(base::PickleIterator* iter,
    } else {
      base::AutoLock lock(g_timezones_lock.Get());
      auto ret_pair = g_timezones.Get().insert(timezone);

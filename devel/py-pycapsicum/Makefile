@@ -1,7 +1,7 @@
 PORTNAME=	pycapsicum
 PORTVERSION=	1.0
 CATEGORIES=	devel security python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 PATCH_SITES=	https://github.com/stillson/pycapsicum2/commit/

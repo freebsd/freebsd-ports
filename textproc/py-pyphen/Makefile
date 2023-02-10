@@ -1,7 +1,8 @@
 PORTNAME=	pyphen
 PORTVERSION=	0.13.0
+PORTREVISION=	1
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,15 +15,11 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPL
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPL
 LICENSE_FILE_MPL11=	${WRKSRC}/COPYING.MPL
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit>=3.2<4:devel/py-flit@${PY_FLAVOR}
+
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
-
-pre-configure:
-	@( \
-		${ECHO} "from setuptools import setup" && \
-		${ECHO} "setup()" \
-	) > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

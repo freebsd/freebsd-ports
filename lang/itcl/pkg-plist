@@ -4,9 +4,8 @@ include/itcl%%VERSION%%/itclInt.h
 include/itcl%%VERSION%%/itclIntDecls.h
 lib/itcl%%VERSION%%/itcl.tcl
 lib/itcl%%VERSION%%/itclConfig.sh
-lib/itcl%%VERSION%%/libitcl.so.1
-lib/itcl%%VERSION%%/libitcl%%SHORT%%.so
-lib/itcl%%VERSION%%/libitclstub.a
+lib/itcl%%VERSION%%/libitcl%%VERSION%%.so
+lib/itcl%%VERSION%%/libitclstub%%VERSION%%.a
 lib/itcl%%VERSION%%/pkgIndex.tcl
 lib/libitcl.so
 lib/libitcl.so.%%MAJOR%%

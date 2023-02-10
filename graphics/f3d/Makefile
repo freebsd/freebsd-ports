@@ -1,8 +1,11 @@
 PORTNAME=	f3d
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
+
+PATCH_SITES=	https://github.com/f3d-app/f3d/commit/
+PATCHFILES=	cc108300b44981b530aa3ad72c971c889e6bf3e2.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast and minimalist 3D viewer
@@ -10,8 +13,6 @@ WWW=		https://f3d-app.github.io/f3d/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_i386=	compilation breaks: non-constant-expression cannot be narrowed from type 'unsigned int' to 'vtkIdType' (aka 'int') in initializer list (new release should fix this)
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libfontconfig.so:x11-fonts/fontconfig \
@@ -55,7 +56,8 @@ EXTERNAL_RENDERING_BROKEN=	Requires VTK::RenderingExternal enabled in VTK
 OCCT_DESC=			OpenCASCADE module (STEP and IGES files)
 OCCT_USES=			localbase:ldflags
 OCCT_CMAKE_BOOL=		F3D_MODULE_OCCT
-OCCT_LIB_DEPENDS=		libTKBRep.so:cad/opencascade
+OCCT_LIB_DEPENDS=		libTKBRep.so:cad/opencascade \
+				libdraco.so:archivers/draco
 OCCT_CMAKE_ON=			-DOpenCASCADE_DIR=${LOCALBASE}/lib/cmake
 
 RAYTRACING_DESC=		Raytracing module

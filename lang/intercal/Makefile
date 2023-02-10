@@ -3,7 +3,7 @@ PORTVERSION=	0.31
 CATEGORIES=	lang
 MASTER_SITES=	http://www.catb.org/~esr/intercal/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	C-INTERCAL compiler, ick, and supporting libraries
 WWW=		http://www.catb.org/~esr/intercal/
 

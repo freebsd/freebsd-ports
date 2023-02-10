@@ -11,6 +11,9 @@ WWW=		http://mysqlbigram.googlepages.com/
 
 LICENSE=	LGPL21
 
+DEPRECATED=	Requires upstream EOL MySQL 5.6
+EXPIRATION_DATE=	2023-06-30
+
 USES=		libtool mysql
 
 GNU_CONFIGURE=	yes

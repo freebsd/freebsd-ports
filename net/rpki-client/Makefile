@@ -1,5 +1,6 @@
 PORTNAME=	rpki-client
 DISTVERSION=	8.2
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://cdn.openbsd.org/pub/OpenBSD/rpki-client/ \
 		https://cloudflare.cdn.openbsd.org/pub/OpenBSD/rpki-client/

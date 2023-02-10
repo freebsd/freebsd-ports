@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-mime-types>=1.13.1:misc/rubygem-mime-types
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

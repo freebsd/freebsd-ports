@@ -1,0 +1,5 @@
+TIMESTAMP = 1671892824
+SHA256 (librewolf-108.0.1-1.source.tar.gz) = d1978f870ebddbcb71e92da9887e6de99818c4d8045642c46a5b3d2e2b970e81
+SIZE (librewolf-108.0.1-1.source.tar.gz) = 828438372
+SHA256 (patches/unity-menubar.patch?inline=false) = 84c03a4eb5dcc1bb9e2cfc343e0b98bbbc8dc791647747082d3f50ba638de965
+SIZE (patches/unity-menubar.patch?inline=false) = 163635

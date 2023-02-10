@@ -14,6 +14,5 @@ RUN_DEPENDS=	rubygem-ffi-compiler>=1.0<2:devel/rubygem-ffi-compiler \
 		rubygem-rake>=13.0<14:devel/rubygem-rake
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

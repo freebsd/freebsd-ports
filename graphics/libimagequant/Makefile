@@ -1,6 +1,5 @@
 PORTNAME=	libimagequant
-PORTVERSION=	4.0.4
-PORTREVISION=	2
+PORTVERSION=	4.1.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,9 +13,10 @@ BUILD_DEPENDS=	cargo-cbuild:devel/cargo-c
 
 USES=		cargo
 USE_GITHUB=	yes
-GH_ACCOUNT=	ImageOptim
-WRKSRC_SUBDIR=	imagequant-sys
 USE_LDCONFIG=	yes
+GH_ACCOUNT=	ImageOptim
+CARGO_BUILD_ARGS=	--package imagequant-sys
+CARGO_INSTALL_ARGS:=	${CARGO_BUILD_ARGS}
 PLIST_FILES=	include/libimagequant.h \
 		lib/libimagequant.a \
 		lib/libimagequant.so \

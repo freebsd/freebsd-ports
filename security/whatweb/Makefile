@@ -13,10 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GITHUB=	yes
 GH_TUPLE=	urbanadventurer:WhatWeb:f467aa2
 
-USES=			cpe
+USES=			cpe ruby:run
 CPE_VENDOR=		morningstarsecurity
-USE_RUBY=		yes
-RUBY_NO_BUILD_DEPENDS=	yes
 NO_BUILD=		yes
 NO_ARCH=		yes
 PORTDOCS=		CHANGELOG INSTALL README whatweb.xsl

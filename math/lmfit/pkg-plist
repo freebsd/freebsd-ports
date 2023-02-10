@@ -1,0 +1,15 @@
+include/lmcurve.h
+include/lmcurve2.h
+include/lmdecls.h
+include/lmfit.hpp
+include/lmmin.h
+include/lmstruct.h
+lib/liblmfit.so
+lib/liblmfit.so.9
+lib/liblmfit.so.9.0.0
+libdata/pkgconfig/lmfit.pc
+share/man/man3/lmcurve.3.gz
+share/man/man3/lmcurve2.3.gz
+share/man/man3/lmmin.3.gz
+share/man/man3/lmmin2.3.gz
+share/man/man7/lmfit.7.gz

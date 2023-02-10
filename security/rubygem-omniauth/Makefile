@@ -1,5 +1,5 @@
 PORTNAME=	omniauth
-PORTVERSION=	2.1.0
+PORTVERSION=	2.1.1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-hashie>=3.4.6:devel/rubygem-hashie \
 		rubygem-rack-protection>=0:www/rubygem-rack-protection
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

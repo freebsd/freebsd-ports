@@ -1,0 +1,4 @@
+%%PYTHON_SITELIBDIR%%/pyaudi/__init__.py
+%%PYTHON_SITELIBDIR%%/pyaudi/_version.py
+%%PYTHON_SITELIBDIR%%/pyaudi/core.so
+%%PYTHON_SITELIBDIR%%/pyaudi/test.py

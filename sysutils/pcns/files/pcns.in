@@ -1,0 +1,41 @@
+#!/bin/sh
+
+# PROVIDE: pcns
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="pcns"
+desc="PowerChute Network Shutdown"
+rcvar="${name}_enable"
+
+set_rcvar pcns_enable "NO"
+set_rcvar pcns_group_dir "%%PREFIX%%/pcns/group1"
+set_rcvar pcns_java_home "%%JAVA_HOME%%"
+set_rcvar pcns_java_opts "-Xrs -Xms32m -Xmx64m -Dfile.encoding=UTF-8 -cp .:comp/pcns.jar:lib/*"
+set_rcvar pcns_log_dir "%%LOGDIR%%/pcns"
+
+load_rc_config $name
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+java_cmd="${pcns_java_home}/bin/java"
+procname="${java_cmd}"
+command_args="-f -p ${pidfile} ${java_cmd} ${pcns_java_opts} -Dlog4j.configurationFile=log4j2.xml com.apcc.m11.arch.application.Application"
+pcns_chdir="${pcns_group_dir}"
+required_files="${java_cmd}"
+
+extra_commands="init"
+init_cmd="${name}_init"
+
+pcns_init()
+{
+	cd "${pcns_group_dir}"
+	$java_cmd $pcns_java_opts com.apcc.pcns.m11cfginit.M11cfgInit "${pcns_group_dir}/m11.cfg" \
+		host.ApplicationDirectory="${pcns_group_dir}" \
+		host.ComponentDirectory="${pcns_group_dir}/comp" \
+		Notifier.NotifierExe="${pcns_group_dir}/bin/notifier"
+}
+
+run_rc_command "$1"

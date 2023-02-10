@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# Inspired by devel/apache-rat/files/apache-rat.sh.in
+#
+JAVACMD="${JAVACMD:-"%%LOCALBASE%%/bin/java"}"
+
+if [ ! -x "${JAVACMD}" ]; then
+	echo "Error: ${JAVACMD} is not present on your system" >&2
+	echo "       Please specify the path to an existing java executable with the" >&2
+	echo "       JAVACMD environment variable when running rat." >&2
+	exit 1
+fi
+
+exec "${JAVACMD}" -jar %%JAVAJARDIR%%/VncViewer.jar "$@"

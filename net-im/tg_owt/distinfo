@@ -1,6 +1,6 @@
-TIMESTAMP = 1672339563
-SHA256 (desktop-app-tg_owt-0.0.20221215-1512ef6_GH0.tar.gz) = b7e102f803315981b3349c747ac67cbf1035005152b4e1aa70be8f8bdf74d03a
-SIZE (desktop-app-tg_owt-0.0.20221215-1512ef6_GH0.tar.gz) = 13814806
+TIMESTAMP = 1673200627
+SHA256 (desktop-app-tg_owt-0.0.20230105-5098730_GH0.tar.gz) = 6b2187c56a434178ebc6ee4ceab80494f17e176dcfa377a1d36a8288788a531f
+SIZE (desktop-app-tg_owt-0.0.20230105-5098730_GH0.tar.gz) = 13816531
 SHA256 (abseil-abseil-cpp-8c0b94e_GH0.tar.gz) = e995f06ce4fd4a9641e6a8e5d8d2258710eef481a07307a3e727012f1a83c442
 SIZE (abseil-abseil-cpp-8c0b94e_GH0.tar.gz) = 1957422
 SHA256 (google-crc32c-21fc8ef_GH0.tar.gz) = 9cb6093f9a554f9fb8397ce9a1a07eec44f1ae0918d7816b60c7b14ef745e082

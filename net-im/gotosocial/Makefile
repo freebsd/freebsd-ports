@@ -1,12 +1,12 @@
 PORTNAME=	gotosocial
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.2
+DISTVERSION=	0.6.0
 PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES?=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${DISTVERSION}/:web
 DISTFILES?=	${PORTNAME}_${DISTVERSION}_web-assets.tar.gz:web
 
-MAINTAINER=	me+freebsd@igalic.co
+MAINTAINER=	freebsd@igalic.co
 COMMENT=	Golang fediverse server
 WWW=		https://docs.gotosocial.org/en/latest/
 

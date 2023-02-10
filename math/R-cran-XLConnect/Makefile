@@ -1,5 +1,5 @@
 PORTNAME=	XLConnect
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -22,9 +22,9 @@ RUN_DEPENDS=	R-cran-rJava>0:devel/R-cran-rJava	\
 USES=		cran
 USE_JAVA=	yes
 
-DEP_JARS=	commons-codec commons-collections4 commons-compress	\
-		ooxml-schemas poi poi-ooxml poi-ooxml-full		\
-		SparseBitSet xmlbeans
+DEP_JARS=	commons-codec commons-collections4 commons-compress commons-io	\
+		log4j-api log4j-core poi poi-ooxml poi-ooxml-full SparseBitSet	\
+		xmlbeans
 
 post-install:
 .for j in ${DEP_JARS}
@@ -32,5 +32,7 @@ post-install:
 .endfor
 	${LN} -sf ${JAVALIBDIR}/commons-math.jar	\
 		${STAGEDIR}${PREFIX}/${R_MOD_DIR}/java/commons-math3.jar
+	${LN} -sf ${JAVALIBDIR}/commons-codec.jar	\
+		${STAGEDIR}${PREFIX}/${R_MOD_DIR}/java/commons-codec-1.15.jar
 
 .include <bsd.port.mk>

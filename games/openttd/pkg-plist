@@ -18,6 +18,7 @@ share/man/man6/openttd.6.gz
 %%DATADIR%%/ai/compat_1.10.nut
 %%DATADIR%%/ai/compat_1.11.nut
 %%DATADIR%%/ai/compat_12.nut
+%%DATADIR%%/ai/compat_13.nut
 %%DATADIR%%/baseset/no_music.obm
 %%DATADIR%%/baseset/no_sound.obs
 %%DATADIR%%/baseset/openttd.32.bmp
@@ -43,6 +44,7 @@ share/man/man6/openttd.6.gz
 %%DATADIR%%/game/compat_1.10.nut
 %%DATADIR%%/game/compat_1.11.nut
 %%DATADIR%%/game/compat_12.nut
+%%DATADIR%%/game/compat_13.nut
 %%DATADIR%%/lang/afrikaans.lng
 %%DATADIR%%/lang/arabic_egypt.lng
 %%DATADIR%%/lang/basque.lng

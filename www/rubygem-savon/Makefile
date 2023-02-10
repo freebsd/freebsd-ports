@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-akami>=1.2:www/rubygem-akami \
 		rubygem-wasabi>=3.4:www/rubygem-wasabi
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

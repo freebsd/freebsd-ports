@@ -1,0 +1,4 @@
+Audi (from latin: "listen") is an open source library that implements the
+differential algebra of Taylor truncated polynomials and a few algorithms
+useful for its applications (Differential Intelligence, automatic
+differentiation, Taylor Models, etc.)

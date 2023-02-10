@@ -14,9 +14,8 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	puppet6>=0:sysutils/puppet6
 
 CONFLICTS_INSTALL=	puppetdb-terminus5 puppetdb-terminus7
-USE_RUBY=	yes
 NO_BUILD=	yes
-USES=		gmake
+USES=		gmake ruby
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|" ${WRKSRC}/Makefile

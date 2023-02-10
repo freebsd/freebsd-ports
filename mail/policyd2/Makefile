@@ -5,7 +5,7 @@ CATEGORIES=	mail
 MASTER_SITES=	https://download.policyd.org/v${PORTVERSION}/
 DISTNAME=	cluebringer-v${PORTVERSION}
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Policyd v2 is a multi-platform policy server for popular MTAs
 WWW=		https://wiki.policyd.org
 

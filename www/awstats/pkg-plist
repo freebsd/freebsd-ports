@@ -128,6 +128,7 @@
 %%WWWDIR%%/cgi-bin/lang/awstats-si.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-sk.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-sr.txt
+%%WWWDIR%%/cgi-bin/lang/awstats-tg.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-th.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-tr.txt
 %%WWWDIR%%/cgi-bin/lang/awstats-tw.txt
@@ -673,6 +674,9 @@
 %%WWWDIR%%/icon/os/amigaos.png
 %%WWWDIR%%/icon/os/android.png
 %%WWWDIR%%/icon/os/android10.png
+%%WWWDIR%%/icon/os/android11.png
+%%WWWDIR%%/icon/os/android12.png
+%%WWWDIR%%/icon/os/android13.png
 %%WWWDIR%%/icon/os/androidcupcake.png
 %%WWWDIR%%/icon/os/androiddonut.png
 %%WWWDIR%%/icon/os/androideclair.png
@@ -706,6 +710,7 @@
 %%WWWDIR%%/icon/os/dreamcast.png
 %%WWWDIR%%/icon/os/freebsd.png
 %%WWWDIR%%/icon/os/gnu.png
+%%WWWDIR%%/icon/os/haiku.png
 %%WWWDIR%%/icon/os/hpux.png
 %%WWWDIR%%/icon/os/ibm.png
 %%WWWDIR%%/icon/os/imode.png
@@ -734,6 +739,8 @@
 %%WWWDIR%%/icon/os/linuxzenwalk.png
 %%WWWDIR%%/icon/os/mac.png
 %%WWWDIR%%/icon/os/macintosh.png
+%%WWWDIR%%/icon/os/macos11.png
+%%WWWDIR%%/icon/os/macos12.png
 %%WWWDIR%%/icon/os/macosx.png
 %%WWWDIR%%/icon/os/macosx10.png
 %%WWWDIR%%/icon/os/macosx11.png
@@ -768,6 +775,7 @@
 %%WWWDIR%%/icon/os/wii.png
 %%WWWDIR%%/icon/os/win.png
 %%WWWDIR%%/icon/os/win10.png
+%%WWWDIR%%/icon/os/win11.png
 %%WWWDIR%%/icon/os/win16.png
 %%WWWDIR%%/icon/os/win2000.png
 %%WWWDIR%%/icon/os/win2003.png

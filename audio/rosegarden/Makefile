@@ -1,7 +1,7 @@
 PORTNAME=	rosegarden
-DISTVERSION=	22.06
+DISTVERSION=	22.12.1
 CATEGORIES=	audio
-MASTER_SITES=	SF
+MASTER_SITES=	https://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/${DISTVERSION:R}/
 
 MAINTAINER=	adridg@FreeBSD.org
 COMMENT=	General purpose music editor and sequencer suite

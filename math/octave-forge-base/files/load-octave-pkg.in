@@ -98,7 +98,7 @@ while (my $p = <$install_prefix/*>) {
   $p =~ s+.*/++;
   open(D,"$install_prefix/$p/packinfo/DESCRIPTION") || die $!;
   foreach my $l (<D>) {
-    if ($l=~s/^Depends:\s*//) {
+    if ($l=~s/^Depends:\s*//i) {
       foreach my $ll (split ",",$l) {
         chomp($ll);
         $ll = lc($ll);
@@ -195,7 +195,7 @@ foreach my $n (keys %in_tarballs) {
       die if $#list_of_files!=0;
       my $descr = $tar->get_content($list_of_files[0]);
       foreach my $l (split /\n/,$descr) {
-        if ($l=~s/^Depends:\s*//) {
+        if ($l=~s/^Depends:\s*//i) {
           foreach my $ll (split ",",$l) {
             $ll = lc($ll);
             $ll =~ s/^\s+//;

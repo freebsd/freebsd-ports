@@ -1,4 +1,5 @@
 include/taskflow/algorithm/critical.hpp
+include/taskflow/algorithm/data_pipeline.hpp
 include/taskflow/algorithm/for_each.hpp
 include/taskflow/algorithm/pipeline.hpp
 include/taskflow/algorithm/reduce.hpp
@@ -58,9 +59,11 @@ include/taskflow/sycl/sycl_task.hpp
 include/taskflow/sycl/syclflow.hpp
 include/taskflow/taskflow.hpp
 include/taskflow/utility/iterator.hpp
+include/taskflow/utility/macros.hpp
 include/taskflow/utility/math.hpp
 include/taskflow/utility/object_pool.hpp
 include/taskflow/utility/os.hpp
+include/taskflow/utility/serializer.hpp
 include/taskflow/utility/singleton.hpp
 include/taskflow/utility/small_vector.hpp
 include/taskflow/utility/stream.hpp

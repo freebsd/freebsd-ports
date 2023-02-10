@@ -10,6 +10,8 @@ WWW=		https://www.bespokesynth.com/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		incompatible with the latest JUCE (juce-7.0.3), see https://github.com/BespokeSynth/BespokeSynth/issues/1047
+
 BUILD_DEPENDS=	juce>0:devel/juce \
 		pybind11>0:devel/pybind11
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \

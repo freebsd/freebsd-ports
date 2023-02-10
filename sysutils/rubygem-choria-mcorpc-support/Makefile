@@ -10,7 +10,6 @@ WWW=		https://rubygems.org/gems/choria-mcorpc-support
 LICENSE=	APACHE20
 
 USES=		gem
-USE_RUBY=	yes
 
 RUN_DEPENDS=	choria>=0.20.1:sysutils/choria \
 		rubygem-nats-pure>=0.6<0.8.0:net/rubygem-nats-pure \

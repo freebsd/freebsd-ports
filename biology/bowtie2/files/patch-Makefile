@@ -1,29 +1,11 @@
---- Makefile.orig	2022-11-01 01:53:08 UTC
+--- Makefile.orig	2023-01-21 21:59:18 UTC
 +++ Makefile
-@@ -32,7 +32,7 @@ BOWTIE_SHARED_MEM :=
- 
- CXXFLAGS += -std=c++11
- 
--ARCH = $(shell uname -m)
-+ARCH = $(shell uname -p)
- NGS_VER ?= 2.9.2
- VDB_VER ?= 2.9.2-1
- 
-@@ -62,7 +62,7 @@ ifneq (,$(findstring Darwin,$(shell uname)))
+@@ -61,7 +61,7 @@ ifneq (,$(findstring Darwin,$(shell uname)))
  endif
  
  BITS := 32
--ifneq (,$(findstring $(shell uname -m), x86_64 amd64))
-+ifneq (,$(findstring $(shell uname -p), x86_64 amd64))
+-ARCH ?= $(shell uname -m)
++ARCH ?= $(shell uname -p)
+ ifneq (,$(findstring $(ARCH), x86_64 amd64))
    BITS := 64
    ifeq (1, $(SSE_AVX2))
- 	SSE_FLAG := -mavx2 -faligned-new -DSSE_AVX2
-@@ -71,7 +71,7 @@ ifneq (,$(findstring $(shell uname -m), x86_64 amd64))
-   endif
- 
-   POPCNT_CAPABILITY ?= 1
--else ifneq (,$(findstring $(shell uname -m), aarch64 arm64 s390x ppc64 ppc64le))
-+else ifneq (,$(findstring $(shell uname -p), aarch64 arm64 s390x powerpc64 powerpc64le ppc64 ppc64le))
-   BITS := 64
-   SSE_FLAG :=
-   CXXFLAGS += -fopenmp-simd

@@ -1,0 +1,24 @@
+`git-branchless` is a suite of tools which enhances Git in several ways:
+It makes Git easier to use, both for novices and for power users. Examples:
+  - `git undo`: a general-purpose undo command.
+  - The smartlog: a convenient visualization tool.
+  - `git restack`: to repair broken commit graphs.
+  - Speculative merges: to avoid being caught off-guard by merge conflicts.
+
+It adds more flexibility for power users. Examples:
+  - Patch-stack workflows: strong support for "patch-stack" workflows as
+    used by the Linux and Git projects, as well as at many large tech companies.
+    (This is how Git was "meant" to be used.)
+  - Prototyping and experimenting workflows: strong support for prototyping and
+    experimental work via "divergent" development.
+  - `git sync`: to rebase all local commit stacks and branches without having
+    to check them out first.
+  - `git move`: The ability to move subtrees rather than "sticks" while cleaning
+    up old branches, not touching the working copy, etc.
+  - Anonymous branching: reduces the overhead of branching for experimental
+    work.
+  - In-memory operations: to modify the commit graph without having to check out
+    the commits in question.
+  - `git next/prev`: to quickly jump between commits and branches in a commit
+     stack.
+  - `git co -i/--interactive`: to interactively select a commit to check out.

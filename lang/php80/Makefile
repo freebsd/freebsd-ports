@@ -1,5 +1,5 @@
 PORTNAME=	php80
-DISTVERSION=	8.0.26
+DISTVERSION=	8.0.27
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP
@@ -88,25 +88,19 @@ ZTS_CONFIGURE_ENV=	pthreads_working="yes"
 
 DESTDIRNAME=	INSTALL_ROOT
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == riscv64
-CONFIGURE_ARGS+=--without-pcre-jit
-.endif
-
 .if defined(PKGNAMEPREFIX)
-USES+=		apache:2.2+
-.include "${PORTSDIR}/Mk/Uses/apache.mk"
-.if ${PORT_OPTIONS:MAP2FILTER}
-CONFIGURE_ARGS+=--with-apxs2filter=${APXS}
-.else
-CONFIGURE_ARGS+=--with-apxs2=${APXS}
-.endif
+USES+=		apache
 PLIST=		${PKGDIR}/pkg-plist.mod
 PKGMESSAGE=	${PKGDIR}/pkg-message.mod
 MODULENAME=	libphp
 SHORTMODNAME=	php
 WARNING=	"!!! If you have a threaded Apache, you must build ${PHP_PORT} with ZTS support to enable thread-safety in extensions !!!"
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == riscv64
+CONFIGURE_ARGS+=--without-pcre-jit
 .endif
 
 .if ${PORT_OPTIONS:MPHPDBG} && ${PORT_OPTIONS:MDEBUG}

@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.50.1
+PORTVERSION=	1.51.1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -16,21 +16,19 @@ BUILD_DEPENDS=	${LOCALBASE}/include/xxhash.h:devel/xxhash
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libbenchmark.so:devel/benchmark \
 		libcares.so:dns/c-ares \
-		libgflags.so:devel/gflags \
 		libprotobuf.so:devel/protobuf \
 		libre2.so:devel/re2
 
 USES=		cmake compiler:c++17-lang cpe localbase:ldflags pkgconfig ssl
 
 USE_GITHUB=	yes
-GH_TUPLE=	census-instrumentation:opencensus-proto:v0.3.0:census_instrumentation_opencensus_proto/third_party/opencensus-proto/src \
-		cncf:xds:1e77728:cncf_xds/third_party/xds
+GH_TUPLE=	census-instrumentation:opencensus-proto:v0.4.1:census_instrumentation_opencensus_proto/third_party/opencensus-proto/src \
+		cncf:xds:46e39c7:cncf_xds/third_party/xds
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_ABSL_PROVIDER=package \
 		-DgRPC_BENCHMARK_PROVIDER=package \
 		-DgRPC_CARES_PROVIDER=package \
-		-DgRPC_GFLAGS_PROVIDER=package \
 		-DgRPC_PROTOBUF_PROVIDER=package \
 		-DgRPC_RE2_PROVIDER=package \
 		-DgRPC_SSL_PROVIDER=package \
@@ -44,7 +42,7 @@ USE_LDCONFIG=	yes
 PLIST_SUB=	SHLIB_MAJOR=${PORTVERSION:R} \
 		SHLIB_MINOR=${PORTVERSION:E}
 
-CONFLICTS_INSTALL=	grpc130 grpc134 grpc142
+CONFLICTS_INSTALL=	grpc[0-9][0-9][0-9]
 
 .include <bsd.port.pre.mk>
 

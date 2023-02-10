@@ -134,8 +134,8 @@ include/pika/errors/try_catch_exception_ptr.hpp
 include/pika/exception.hpp
 include/pika/execution.hpp
 include/pika/execution/algorithms/bulk.hpp
+include/pika/execution/algorithms/detail/helpers.hpp
 include/pika/execution/algorithms/detail/partial_algorithm.hpp
-include/pika/execution/algorithms/detail/single_result.hpp
 include/pika/execution/algorithms/drop_value.hpp
 include/pika/execution/algorithms/ensure_started.hpp
 include/pika/execution/algorithms/execute.hpp
@@ -146,6 +146,7 @@ include/pika/execution/algorithms/let_value.hpp
 include/pika/execution/algorithms/make_future.hpp
 include/pika/execution/algorithms/schedule_from.hpp
 include/pika/execution/algorithms/split.hpp
+include/pika/execution/algorithms/split_tuple.hpp
 include/pika/execution/algorithms/start_detached.hpp
 include/pika/execution/algorithms/sync_wait.hpp
 include/pika/execution/algorithms/then.hpp
@@ -246,7 +247,6 @@ include/pika/functional/traits/get_function_address.hpp
 include/pika/functional/traits/get_function_annotation.hpp
 include/pika/functional/traits/is_action.hpp
 include/pika/functional/traits/is_bind_expression.hpp
-include/pika/functional/traits/is_invocable.hpp
 include/pika/functional/unique_function.hpp
 include/pika/future.hpp
 include/pika/futures/config/defines.hpp
@@ -265,12 +265,10 @@ include/pika/futures/traits/detail/future_traits.hpp
 include/pika/futures/traits/future_access.hpp
 include/pika/futures/traits/future_then_result.hpp
 include/pika/futures/traits/future_traits.hpp
-include/pika/futures/traits/get_remote_result.hpp
 include/pika/futures/traits/is_future.hpp
 include/pika/futures/traits/is_future_range.hpp
 include/pika/futures/traits/is_future_tuple.hpp
 include/pika/futures/traits/promise_local_result.hpp
-include/pika/futures/traits/promise_remote_result.hpp
 include/pika/hardware/bit_manipulation.hpp
 include/pika/hardware/config/defines.hpp
 include/pika/hardware/timestamp.hpp
@@ -642,7 +640,6 @@ lib/cmake/pika/pika_set_platform.cmake
 lib/cmake/pika/pika_setup_allocator.cmake
 lib/cmake/pika/pika_setup_apex.cmake
 lib/cmake/pika/pika_setup_boost.cmake
-lib/cmake/pika/pika_setup_boost_regex.cmake
 lib/cmake/pika/pika_setup_cuda.cmake
 lib/cmake/pika/pika_setup_fmt.cmake
 lib/cmake/pika/pika_setup_hip.cmake
@@ -669,7 +666,6 @@ lib/cmake/pika/tests/cxx11_std_shared_ptr_lwg3018.cpp
 lib/cmake/pika/tests/cxx17_aligned_new.cpp
 lib/cmake/pika/tests/cxx17_copy_elision.cpp
 lib/cmake/pika/tests/cxx17_filesystem.cpp
-lib/cmake/pika/tests/cxx17_hardware_destructive_interference_size.cpp
 lib/cmake/pika/tests/cxx17_memory_resource.cpp
 lib/cmake/pika/tests/cxx17_noexcept_function.cpp
 lib/cmake/pika/tests/cxx17_std_aligned_alloc.cpp
@@ -689,4 +685,4 @@ lib/cmake/pika/tests/stable_inplace_merge.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.11.0
+lib/libpika.so.0.12.0

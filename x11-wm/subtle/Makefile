@@ -12,8 +12,7 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	rake:devel/rubygem-rake
 
-USES=		compiler:c11 pkgconfig tar:tbz2 xorg
-USE_RUBY=	yes
+USES=		compiler:c11 pkgconfig ruby tar:tbz2 xorg
 USE_XORG=	x11 xft xinerama xpm xrandr xtst
 
 MAKE_CMD=	rake -v
@@ -22,6 +21,8 @@ ALL_TARGET=	build
 
 post-patch:
 	@${REINPLACE_CMD} -e 1d ${WRKSRC}/data/subtler/runner.rb
+	@${REINPLACE_CMD} -e 's,File\.exists\?,File.exist?,' \
+		${WRKSRC}/data/sur/server.rb
 	@${REINPLACE_CMD} -e 's,/etc/xdg,${LOCALBASE}&,' \
 		${WRKSRC}/src/subtle/ruby.c
 

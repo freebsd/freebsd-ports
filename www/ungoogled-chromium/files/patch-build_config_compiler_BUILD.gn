@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2022-12-02 17:56:32 UTC
+--- build/config/compiler/BUILD.gn.orig	2023-01-13 08:56:02 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -219,13 +219,16 @@ config("default_include_dirs") {
+@@ -224,13 +224,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -18,7 +18,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -449,6 +452,10 @@ config("compiler") {
+@@ -454,6 +457,10 @@ config("compiler") {
      }
    }
  
@@ -29,16 +29,25 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_gold) {
-@@ -524,7 +531,7 @@ config("compiler") {
+@@ -529,7 +536,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
 -  if (is_clang && !is_nacl && current_os != "zos") {
 +  if (is_clang && !is_nacl && current_os != "zos" && !is_bsd) {
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
+     if (save_reproducers_on_lld_crash && use_lld) {
+       ldflags += [
+@@ -808,7 +815,7 @@ config("compiler") {
+   #   lldb doesn't have the needed changes yet.
+   # * Fuchsia isn't supported as zxdb doesn't support simple template names yet.
+   # TODO(crbug.com/1379070): Remove if the upstream default ever changes.
+-  if (is_clang && !is_nacl && !is_win && !is_apple && !is_fuchsia) {
++  if (is_clang && !is_nacl && !is_win && !is_apple && !is_fuchsia && !is_bsd) {
+     cflags_cc += [ "-gsimple-template-names" ]
+   }
  
-     # TODO(hans): Remove this once Clang generates better optimized debug info
-@@ -924,7 +931,7 @@ config("compiler_cpu_abi") {
+@@ -958,7 +965,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -47,7 +56,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-@@ -939,7 +946,7 @@ config("compiler_cpu_abi") {
+@@ -973,7 +980,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -56,7 +65,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1277,7 +1284,7 @@ config("compiler_deterministic") {
+@@ -1307,7 +1314,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -65,7 +74,7 @@
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1329,7 +1336,7 @@ config("compiler_deterministic") {
+@@ -1359,7 +1366,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
@@ -74,7 +83,7 @@
      update_args = [
        "--print-revision",
        "--verify-version=$clang_version",
-@@ -1570,7 +1577,7 @@ config("default_warnings") {
+@@ -1600,7 +1607,7 @@ config("default_warnings") {
          "-Wno-ignored-pragma-optimize",
        ]
  
@@ -83,7 +92,7 @@
          cflags += [
            # TODO(crbug.com/1343975) Evaluate and possibly enable.
            "-Wno-deprecated-builtins",
-@@ -1749,7 +1756,7 @@ config("no_chromium_code") {
+@@ -1779,7 +1786,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -92,7 +101,7 @@
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -2271,7 +2278,7 @@ config("afdo_optimize_size") {
+@@ -2301,7 +2308,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -101,7 +110,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2287,7 +2294,7 @@ config("afdo") {
+@@ -2317,7 +2324,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -110,7 +119,7 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2436,7 +2443,8 @@ config("symbols") {
+@@ -2464,7 +2471,8 @@ config("symbols") {
      configs += [ "//build/config:compress_debug_sections" ]
    }
  

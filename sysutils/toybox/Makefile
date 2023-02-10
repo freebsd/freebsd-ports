@@ -1,5 +1,5 @@
 PORTNAME=	toybox
-PORTVERSION=	0.8.8
+PORTVERSION=	0.8.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://landley.net/toybox/downloads/
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BUILD_DEPENDS=	bash:shells/bash gsed:textproc/gsed
-LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		gmake shebangfix
 
@@ -40,11 +39,6 @@ USRBIN_LINKS=	acpi ascii base64 basename bunzip2 bzcat cal chrt chvt \
 		time timeout truncate tty uniq unlink uudecode uuencode \
 		uuidgen w watch wc which who whoami xargs xxd yes
 USRSBIN_LINKS=	chroot
-
-post-patch:
-	${REINPLACE_CMD} -e 's|<sys/inotify.h>|"${LOCALBASE}/include/sys/inotify.h"|' \
-		${WRKSRC}/lib/portability.c
-	${REINPLACE_CMD} -e 's|sed|gsed|' ${WRKSRC}/scripts/single.sh
 
 do-configure:
 	cd ${WRKSRC} && HOSTCC=${CC} ${GMAKE} bsd_defconfig

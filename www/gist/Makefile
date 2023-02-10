@@ -14,11 +14,10 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 CONFLICTS=	p5-App-gist py*-python-gist yorick # bin/gist
 
+USES+	ruby:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	defunkt
 
-USE_RUBY=	YES
-RUBY_NO_BUILD_DEPENDS=	YES
 NO_BUILD=	YES
 NO_ARCH=	yes
 

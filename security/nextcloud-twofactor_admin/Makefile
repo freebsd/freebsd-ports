@@ -2,38 +2,16 @@ PORTNAME=	twofactor_admin
 PORTVERSION=	4.1.9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/nextcloud-releases/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
-PKGNAMEPREFIX=	nextcloud-
-PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	${PORTNAME}
-DIST_SUBDIR=	${PKGNAMEPREFIX:S/-//}/${DISTNAME}-${DISTVERSIONPREFIX}${PORTVERSION}
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Admin create one-time TOTP app for Nextcloud
 WWW=		https://apps.nextcloud.com/apps/twofactor_admin
 
-LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=23:www/nextcloud@${PHP_FLAVOR}
+NEXTCLOUD_RUN_DEPENDS=	23
 
-USES=		php:flavors
-IGNORE_WITH_PHP=	82
-NO_BUILD=	yes
-NO_ARCH=	yes
-
-NEXTCLOUD_USERNAME?=	${WWWOWN}
-NEXTCLOUD_GROUPNAME?=	${WWWGRP}
-
-PLIST_SUB=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
-		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
-
-WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/${PORTNAME}
-
-do-install:
-	${MKDIR} ${STAGEDIR}${WWWDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
-	@(cd ${WRKSRC}; ${FIND} . -not -type d) | ${SORT} | \
-		${SED} -e 's,^\.,${WWWDIR_REL},' >> ${TMPPLIST}
+USES=		nextcloud php:flavors
 
 .include <bsd.port.mk>

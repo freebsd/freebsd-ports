@@ -1,6 +1,15 @@
---- electron/BUILD.gn.orig	2022-08-03 15:31:32 UTC
+--- electron/BUILD.gn.orig	2023-01-24 08:00:52 UTC
 +++ electron/BUILD.gn
-@@ -457,7 +457,7 @@ source_set("electron_lib") {
+@@ -111,8 +111,6 @@ electron_version = exec_script("script/print-version.p
+                                [],
+                                "trim string",
+                                [
+-                                 ".git/packed-refs",
+-                                 ".git/HEAD",
+                                  "script/lib/get-version.js",
+                                ])
+ 
+@@ -493,7 +491,7 @@ source_set("electron_lib") {
      defines += [ "GDK_DISABLE_DEPRECATION_WARNINGS" ]
    }
  
@@ -9,7 +18,7 @@
      deps += [
        "//components/crash/core/app",
        "//components/crash/core/browser",
-@@ -499,6 +499,10 @@ source_set("electron_lib") {
+@@ -535,6 +533,10 @@ source_set("electron_lib") {
      ]
    }
  
@@ -20,7 +29,7 @@
    if (is_mac) {
      deps += [
        "//components/remote_cocoa/app_shim",
-@@ -555,6 +559,12 @@ source_set("electron_lib") {
+@@ -591,6 +593,12 @@ source_set("electron_lib") {
        cflags_objcc = [ "-fobjc-weak" ]
      }
    }
@@ -33,16 +42,16 @@
    if (is_linux) {
      libs = [ "xshmfence" ]
      deps += [
-@@ -1185,7 +1195,7 @@ if (is_mac) {
-       ":electron_app_manifest",
+@@ -1237,7 +1245,7 @@ if (is_mac) {
        ":electron_lib",
+       ":electron_win32_resources",
        ":packed_resources",
 -      "//components/crash/core/app",
 +      # "//components/crash/core/app",
        "//content:sandbox_helper_win",
        "//electron/buildflags",
        "//ui/strings",
-@@ -1211,7 +1221,7 @@ if (is_mac) {
+@@ -1263,7 +1271,7 @@ if (is_mac) {
        public_deps = [ "//tools/v8_context_snapshot:v8_context_snapshot" ]
      }
  
@@ -51,7 +60,7 @@
        data_deps += [ "//components/crash/core/app:chrome_crashpad_handler" ]
      }
  
-@@ -1279,7 +1289,7 @@ if (is_mac) {
+@@ -1330,7 +1338,7 @@ if (is_mac) {
          configs += [ "//build/config/gcc:rpath_for_built_shared_libraries" ]
        }
  
@@ -60,8 +69,8 @@
          deps += [ "//sandbox/linux:chrome_sandbox" ]
        }
      }
-@@ -1411,7 +1421,7 @@ dist_zip("electron_dist_zip") {
-     ":electron_version",
+@@ -1457,7 +1465,7 @@ dist_zip("electron_dist_zip") {
+     ":electron_version_file",
      ":licenses",
    ]
 -  if (is_linux) {

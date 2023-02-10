@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-minitar>=0.8.0<1:archivers/rubygem-minitar \
 		rubygem-powerbar>=1.0<2:devel/rubygem-powerbar
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

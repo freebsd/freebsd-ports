@@ -1,6 +1,6 @@
---- idl/source/objects/types.cxx.orig	2022-01-26 14:35:29 UTC
+--- idl/source/objects/types.cxx.orig	2022-12-22 00:14:09 UTC
 +++ idl/source/objects/types.cxx
-@@ -251,7 +251,7 @@ void SvMetaType::WriteSfxItem(
+@@ -249,7 +249,7 @@ void SvMetaType::WriteSfxItem(
  
      // write the implementation part
      rOutStm.WriteCharPtr( "#ifdef SFX_TYPEMAP" ) << endl;

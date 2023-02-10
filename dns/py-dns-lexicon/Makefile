@@ -1,8 +1,9 @@
 PORTNAME=	dns-lexicon
-PORTVERSION=	3.11.4
+PORTVERSION=	3.11.7
 CATEGORIES=	dns python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	dns_lexicon-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Manipulate DNS records on various DNS providers in a standardized way
@@ -31,7 +32,7 @@ OCI_DESC=	Oracle Cloud Infrastructure (OCI) support
 ROUTE53_DESC=	Route 53 support
 SOFTLAYER_DESC=	SoftLayer (IBM Cloud) support
 
-DDNS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=2:dns/py-dnspython@${PY_FLAVOR}
+DDNS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dnspython>=2,1:dns/py-dnspython@${PY_FLAVOR}
 GRANSY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zeep>=3:net/py-zeep@${PY_FLAVOR}
 LOCALZONE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}localzone>=0.9.8:dns/py-localzone@${PY_FLAVOR}
 OCI_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oci>=2:devel/py-oci@${PY_FLAVOR}

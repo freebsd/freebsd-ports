@@ -190,7 +190,6 @@ bin/perlcritic
 %%SITE_PERL%%/Perl/Critic/UserProfile.pm
 %%SITE_PERL%%/Perl/Critic/Utils.pm
 %%SITE_PERL%%/Perl/Critic/Utils/Constants.pm
-%%SITE_PERL%%/Perl/Critic/Utils/DataConversion.pm
 %%SITE_PERL%%/Perl/Critic/Utils/McCabe.pm
 %%SITE_PERL%%/Perl/Critic/Utils/POD.pm
 %%SITE_PERL%%/Perl/Critic/Utils/PPI.pm
@@ -389,7 +388,6 @@ bin/perlcritic
 %%PERL5_MAN3%%/Perl::Critic::UserProfile.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Utils.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Utils::Constants.3.gz
-%%PERL5_MAN3%%/Perl::Critic::Utils::DataConversion.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Utils::McCabe.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Utils::POD.3.gz
 %%PERL5_MAN3%%/Perl::Critic::Utils::PPI.3.gz

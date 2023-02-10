@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-xpath>=3.2<4:devel/rubygem-xpath
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,5 +1,5 @@
 PORTNAME=	Type-Tiny
-PORTVERSION=	2.000001
+PORTVERSION=	2.002001
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOBYINK
@@ -14,7 +14,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-Exporter-Tiny>=1.004001:devel/p5-Exporter-Tiny
+RUN_DEPENDS=	p5-Exporter-Tiny>=1.006000:devel/p5-Exporter-Tiny
 TEST_DEPENDS=	p5-Class-InsideOut>=0:devel/p5-Class-InsideOut \
 		p5-Function-Parameters>=0:devel/p5-Function-Parameters \
 		p5-JSON>=0:converters/p5-JSON \
@@ -48,6 +48,6 @@ RECOMMENDED_BUILD_DEPENDS=	${RECOMMENDED_RUN_DEPENDS}
 RECOMMENDED_RUN_DEPENDS=	p5-Class-XSAccessor>=1.17,1:devel/p5-Class-XSAccessor \
 				p5-Devel-StackTrace>=0:devel/p5-Devel-StackTrace \
 				p5-Ref-Util-XS>=0.100:devel/p5-Ref-Util-XS \
-				p5-Type-Tiny-XS>=0.016:devel/p5-Type-Tiny-XS
+				p5-Type-Tiny-XS>=0.025:devel/p5-Type-Tiny-XS
 
 .include <bsd.port.mk>

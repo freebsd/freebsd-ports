@@ -5,6 +5,84 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230210:
+  AFFECTS: users of mail/fetchmail
+  AUTHOR: fernape@FreeBSD.org
+
+  Fetchmail now warns about OpenSSL before 1.1.1s or 3.0.7, and rejects wolfSSL
+  older than 5.5.1.
+
+20230209:
+  AFFECTS: users of audio/jack
+  AUTHOR: fernape@FreeBSD.org
+
+  audio/jack 1.9.22 fixes an issue with latency correction on FreeBSD.
+  Latency correction parameters have to be measured again after update.
+
+20230130:
+  AFFECTS: users of USES=nodejs, www/node*, www/npm* and www/yarn*
+  AUTHOR: sunpoet@FreeBSD.org
+
+  The current USES=nodejs has the following issues:
+  - www/node is not the default version while www/node16 is.
+  - It also means inconsistent naming of node ports.
+  - www/npm duplicates with www/npm-node16.
+  - www/yarn duplicates with www/yarn-node16.
+
+  The notable changes are introduced to fix the above issues:
+  - Rewrite Mk/Uses/nodejs.mk.
+  - Add new LTS version of nodejs (www/node18).
+  - Add new current version of nodejs (www/node19).
+  - Change default nodejs version from 16 to 18 (latest LTS),
+  - Use consistent naming for all supported node versions.
+  - Convert www/node, www/npm and www/yarn to meta ports.
+
+  After these changes:
+  - All supported node versions are named as node{14,16,18,19}.
+  - www/node is a meta port which depends on the default version
+    (e.g. www/node18)
+  - www/npm is a meta port which depends on the default version
+    (e.g. www/npm-node18)
+  - www/yarn is a meta port which depends on the default version
+    (e.g. www/yarn-node18)
+
+20230129:
+  AFFECTS: users of benchmarks/ddosify
+  AUTHOR: fernape@freebsd.org
+
+  In 0.13.0 some configuration keys have been renamed for consistency. Have a
+  look at https://github.com/ddosify/ddosify/releases/tag/v0.13.0 for details.
+
+20230127:
+  AFFECTS: users of security/openvpn
+  AUTHOR: mandree@freebsd.org
+
+  OpenVPN has been updated to the new upstream release v2.6.0, which
+  is quite compatible with v2.5 versions.
+
+  A copy of the latest v2.5.8 port is being kept as security/openvpn25 (or
+  openvpn25 package) until end of March 2023.
+
+20230116:
+  AFFECTS: users of sysutils/nut and sysutils/nut-devel
+  AUTHOR: cy@freebsd.org
+
+  As of PR/268960 Network UPS Tools will now run under its own UID and GID
+  instead of uucp. Users who wish to continue using the uucp user and
+  group may add NUT_USER=uucp and NUT_GROUP=uucp to their make.conf.
+
+  After upgrading sysutils/nut or sysutils/nut-devel with this patch,
+  restart devd. Then restart nut. This will fix up the permissions of
+  UPS USB devices and allow nut to start normally.
+
+20230111:
+  AFFECTS: users of sysutils/graylog
+  AUTHOR: dch@freebsd.org
+
+  Graylog 5.x and higher effectively constrains ElasticSearch
+  dependencies, and in most cases will force a migration to
+  OpenSearch 2.x, now available in ports. Plan accordingly.
+
 20230104:
   AFFECTS: users of mail/spamassassin
   AUTHOR: cy@freebsd.org
@@ -20864,3 +20942,15 @@ or
   The default installation is now configured for running bitlbee as user
   'nobody' by default.  Make sure any existing configuration files are
   readable by that user.
+
+20080122:
+  AFFECTS: users of www/adguardhome
+  AUTHOR: yuri@FreeBSD.org
+
+  www/adguardhome now stores configuration and database information in
+  $PREFIX/etc/AdGuardHome.yaml and /var/db/adguardhome/data
+  respectively. 'service adguardhome start' attempts to move config
+  and data files to the new locations but it requires manual move when
+  both old and new files are present.
+  'service adguardhome start' prints a warning with relevant
+  location information.

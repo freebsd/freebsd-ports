@@ -1,9 +1,12 @@
 PORTNAME=	emacs
 DISTVERSION=	28.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
+
+PATCH_SITES=	https://github.com/emacs-mirror/emacs/commit/:github
+PATCHFILES=	d48bb4874bc6cd3e69c7a15fc3c91cc141025c51.patch:-p1:github
 
 .if ${FLAVOR:U} == canna
 PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs28canna/:canna
@@ -183,7 +186,7 @@ MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 MODULES_CONFIGURE_WITH=		modules
 MOTIF_USES=			motif
 MOTIF_CONFIGURE_ON=		--with-x-toolkit=motif
-NATIVECOMP_USE=			GCC=11+
+NATIVECOMP_USE=			GCC=yes
 NATIVECOMP_CONFIGURE_WITH=	native-compilation
 NATIVECOMP_MAKE_ARGS=		NATIVE_FULL_AOT=1
 OSS_CONFIGURE_ON=		--with-sound=oss

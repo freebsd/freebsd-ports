@@ -1,11 +1,10 @@
 bin/gnome-terminal
 lib/gnome-terminal/gschemas.compiled
-lib/nautilus/extensions-3.0/libterminal-nautilus.so
-lib/systemd/user/gnome-terminal-server.service
+%%NAUTILUS%%lib/nautilus/extensions-3.0/libterminal-nautilus.so
 libexec/gnome-terminal-server
 share/applications/org.gnome.Terminal.desktop
 share/dbus-1/services/org.gnome.Terminal.service
-share/gnome-shell/search-providers/gnome-terminal-search-provider.ini
+%%SEARCHPROVIDER%%share/gnome-shell/search-providers/gnome-terminal-search-provider.ini
 share/help/C/gnome-terminal/adv-keyboard-shortcuts.page
 share/help/C/gnome-terminal/app-colors.page
 share/help/C/gnome-terminal/app-cursor.page

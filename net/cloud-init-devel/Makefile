@@ -5,7 +5,7 @@ CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	me+FreeBSD@igalic.co
+MAINTAINER=	freebsd@igalic.co
 COMMENT=	Init scripts for use on cloud images, development version
 WWW=		https://cloud-init.io/
 

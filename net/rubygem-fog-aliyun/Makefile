@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-aliyun-sdk>=0.8.0<0.9:devel/rubygem-aliyun-sdk \
 		rubygem-xml-simple>=1.1<2:textproc/rubygem-xml-simple
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

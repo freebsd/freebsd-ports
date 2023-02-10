@@ -1,3 +1,4 @@
+%%WWWDIR%%/.gitignore
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/bin/make-release.sh

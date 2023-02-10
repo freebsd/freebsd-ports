@@ -1,5 +1,5 @@
 PORTNAME=	asset_sync
-PORTVERSION=	2.16.0
+PORTVERSION=	2.18.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activemodel4>=4.1.0:databases/rubygem-activemodel4 \
 		rubygem-unf>=0:textproc/rubygem-unf
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

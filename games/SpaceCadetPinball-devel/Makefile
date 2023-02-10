@@ -1,5 +1,5 @@
 PORTNAME=	SpaceCadetPinball
-PORTVERSION=	2.0.1.20220929
+PORTVERSION=	2.0.1.20230103
 DISTVERSIONPREFIX=	Release_
 CATEGORIES=	games
 PKGNAMESUFFIX=	-devel
@@ -15,7 +15,7 @@ USES=		cmake sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	k4zmu2a
 GH_PROJECT=	SpaceCadetPinball
-GH_TAGNAME=	4ec30cf
+GH_TAGNAME=	10ff114
 
 USE_SDL=	mixer2 sdl2
 USE_XORG=	ice sm x11 xext

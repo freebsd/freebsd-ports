@@ -19,6 +19,5 @@ bash_CMD=	${SH}
 SHEBANG_FILES=	script/test_all \
 		script/update_rubygems_and_install_bundler
 
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
 PORTNAME=	veloren
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.0
-CATEGORIES=	games # wayland: depends on https://gitlab.com/veloren/veloren/-/issues/1567
+PORTREVISION=	1
+CATEGORIES=	games wayland
 .if !make(makesum)
 MASTER_SITES=	LOCAL/jbeich
 .endif
@@ -34,6 +35,8 @@ PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		share/pixmaps/net.veloren.veloren.png
 PORTDATA=	*
 
+CONFLICTS_INSTALL=	${PORTNAME}-weekly
+
 # Fixes error "Instruction does not dominate all uses!"
 LTO_UNSAFE=	yes
 
@@ -47,7 +50,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/"git"/"${TRUE}"/' \
 		${WRKSRC}/common/build.rs
 # Extract (snapshot) version from the port instead of empty file
-	@${REINPLACE_CMD} -e '/GIT_HASH/s/=.*/= "${DISTVERSIONFULL}";/' \
+	@${REINPLACE_CMD} -e '/GIT_HASH/s/=.*/= "${GL_COMMIT:C/(.{8}).*/\1/}";/' \
 		-e "/GIT_DATE.*static/s/=.*/= \"$$(date -r $$(${AWK} '/TIMESTAMP/ { print $$3 }' \
 			${DISTINFO_FILE}) +'%Y-%m-%d-%H:%M')\";/" \
 		${WRKSRC}/common/src/util/mod.rs

@@ -1,0 +1,11 @@
+The QEMU Guest Agent is a daemon intended to be run within virtual machines.
+It allows the hypervisor host to perform various operations in the guest,
+such as:
+
+* get information from the guest
+* set the guest’s system time
+* read/write a file
+* sync and freeze the filesystems
+* suspend the guest
+* reconfigure guest local processors
+* set user’s password

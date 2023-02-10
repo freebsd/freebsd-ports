@@ -20,6 +20,7 @@ USE_CSTD=	c99
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION=${PORTVERSION}
+MESON_ARGS+=	-Ddocs=disabled
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libsratom-0.so.${PORTVERSION}

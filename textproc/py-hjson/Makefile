@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		python
-# Use GitHub instead of CHEESESHOP to get the test files.
+# Use GitHub instead of PYPI to get the test files.
 USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}-py
 USE_PYTHON=	autoplist concurrent distutils

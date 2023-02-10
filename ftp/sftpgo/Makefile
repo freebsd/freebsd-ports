@@ -1,5 +1,5 @@
 PORTNAME=	sftpgo
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.4
 PORTREVISION=	1
 CATEGORIES=	ftp www
 MASTER_SITES=	https://github.com/drakkan/${PORTNAME}/releases/download/v${DISTVERSION}/

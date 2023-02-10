@@ -1,0 +1,20 @@
+https://sourceforge.net/p/lgames/bugs/95/
+--- Makefile.am.orig	2021-04-03 20:47:05 UTC
++++ Makefile.am
+@@ -6,14 +6,14 @@ EXTRA_DIST = gettext.h config.rpath m4/ChangeLog \
+ 
+ desktopdir = $(datadir)/applications
+ desktop_DATA = lbreakouthd.desktop
+-icondir = $(datadir)/icons
++icondir = $(datadir)/pixmaps
+ icon_DATA = lbreakouthd256.gif
+ 
+ # We can't use static desktop file because of icon location. Is this 
+ # the right way to handle it? At least it works... as long as $datadir
+ # does not contain plus signs. :-)
+ lbreakouthd.desktop:
+-	@sed -e "s+Icon=+Icon=$(datadir)/icons/lbreakouthd256.gif+" \
++	@sed -e "s+Icon=+Icon=$(icondir)/lbreakouthd256.gif+" \
+ 	< lbreakouthd.desktop.in > lbreakouthd.desktop
+ 
+ ACLOCAL_AMFLAGS = -I m4

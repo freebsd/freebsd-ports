@@ -11,6 +11,7 @@ bin/rotctld
 include/hamlib/ampclass.h
 include/hamlib/amplifier.h
 include/hamlib/amplist.h
+include/hamlib/config.h
 include/hamlib/rig.h
 include/hamlib/rig_dll.h
 include/hamlib/rigclass.h
@@ -22,12 +23,12 @@ lib/libhamlib++.a
 lib/libhamlib++.la
 lib/libhamlib++.so
 lib/libhamlib++.so.4
-lib/libhamlib++.so.4.0.4
+lib/libhamlib++.so.4.0.6
 lib/libhamlib.a
 lib/libhamlib.la
 lib/libhamlib.so
 lib/libhamlib.so.4
-lib/libhamlib.so.4.0.4
+lib/libhamlib.so.4.0.6
 %%SITE_ARCH%%/Hamlib.pm
 %%SITE_ARCH%%/auto/Hamlib/Hamlib.so
 %%SITE_ARCH%%/perltest.pl
@@ -37,7 +38,7 @@ lib/libhamlib.so.4.0.4
 %%PYTHON_SITELIBDIR%%/_Hamlib.so
 %%PYTHON_SITELIBDIR%%/__pycache__/Hamlib%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/__pycache__/Hamlib%%PYTHON_EXT_SUFFIX%%.pyc
-lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl-%%VER%%.so
+lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl-4.6.so
 lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl.a
 lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl.la
 lib/tcl%%TCL_VER%%/Hamlib/hamlibtcl.so
@@ -45,8 +46,8 @@ lib/tcl%%TCL_VER%%/Hamlib/pkgIndex.tcl
 libdata/pkgconfig/hamlib.pc
 man/man1/ampctl.1.gz
 man/man1/ampctld.1.gz
-man/man1/rigctlcom.1.gz
 man/man1/rigctl.1.gz
+man/man1/rigctlcom.1.gz
 man/man1/rigctld.1.gz
 man/man1/rigmem.1.gz
 man/man1/rigsmtr.1.gz

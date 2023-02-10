@@ -1,7 +1,7 @@
 PORTNAME=	buku
 PORTVERSION=	4.7.1
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Powerful command-line bookmark manager

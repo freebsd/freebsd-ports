@@ -1,8 +1,8 @@
---- contrib/x265_12bit/module.defs.orig	2020-01-25 15:34:39 UTC
-+++ contrib/x265_12bit/module.defs
-@@ -19,6 +19,10 @@ X265_12.CONFIGURE.static      =
+--- contrib/x265_12bit/module.defs.orig	2022-12-28 17:43:46.000000000 +0900
++++ contrib/x265_12bit/module.defs	2022-12-30 15:15:35.013585000 +0900
+@@ -16,6 +16,10 @@
  X265_12.CONFIGURE.shared      = -DENABLE_SHARED=OFF
- X265_12.CONFIGURE.extra       = -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DEXPORT_C_API=OFF -DMAIN12=ON
+ X265_12.CONFIGURE.extra       = -DENABLE_CLI=OFF -DHIGH_BIT_DEPTH=ON -DEXPORT_C_API=OFF -DMAIN12=ON -DCMAKE_ASM_NASM_FLAGS=-w-macro-params-legacy
  
 +ifneq (x86_64,$(BUILD.machine))
 +    X265_12.CONFIGURE.extra       += -DENABLE_ASSEMBLY=0

@@ -12,7 +12,7 @@ WWW=		https://www.heuer.org/mod_auth_mysql/
 
 LICENSE=	APACHE20
 
-USES=		apache:2.2+ mysql tar:tgz
+USES=		apache mysql tar:tgz
 WRKSRC=		${WRKDIR}/${PORTNAME}
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

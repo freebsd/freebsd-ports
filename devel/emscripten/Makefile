@@ -10,12 +10,11 @@ LICENSE=	MIT NCSA
 LICENSE_COMB=	dual
 
 RUN_DEPENDS=	llvm-devel>0:devel/llvm-devel \
-		node:www/node \
 		bash:shells/bash \
 		binaryen>0:devel/binaryen
 		# the upstream requires to use either the latest llvm version, or their own llvm fork called emscripten-fastcomp
 
-USES=		python shebangfix
+USES=		nodejs:run python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	emscripten-core
 SHEBANG_FILES=	${PYSCRIPTS} emcmake system/bin/sdl-config system/bin/sdl2-config

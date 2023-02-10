@@ -1,5 +1,5 @@
 PORTNAME=	luajit
-DISTVERSION=	2.1.0.20221221
+DISTVERSION=	2.1.0.20230104
 CATEGORIES=	lang
 PKGNAMESUFFIX=	-devel
 DISTNAME=	LuaJIT-${DISTVERSION}
@@ -16,22 +16,23 @@ IGNORE_riscv64=		fails to compile: lj_arch.h:73:2: No support for this architect
 
 CONFLICTS_INSTALL=	luajit luajit-openresty
 
-USES=		cpe gmake
+USES=		compiler cpe gmake
 USE_LDCONFIG=	yes
 MAKE_ARGS=	CC=${CC} CCOPT= CCOPT_x86= Q=
 
 USE_GITHUB=	yes
-GH_TUPLE=	LuaJIT:LuaJIT:a04480e
+GH_TUPLE=	LuaJIT:LuaJIT:d0e8893
 
 LUAJIT_VERSION=	2.1.0-beta3
 LUAJIT_SOVERSION=	2.1.0
 
 PLIST_SUB+=	VERSION=${LUAJIT_VERSION} SOVERSION=${LUAJIT_SOVERSION}
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${ARCH:Mpowerpc*} || ${ARCH:Mmips*}
-USE_GCC=yes
+.if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} < 140
+BUILD_DEPENDS+=	as:devel/binutils
+CFLAGS+=	-fno-integrated-as
 .endif
 
 post-install:
@@ -39,4 +40,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/etc/luajit.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	premailer
-PORTVERSION=	1.18.0
+PORTVERSION=	1.19.0
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-htmlentities>=4.0.0:textproc/rubygem-htmlentities
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

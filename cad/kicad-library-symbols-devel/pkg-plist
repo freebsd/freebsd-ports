@@ -27,6 +27,7 @@
 %%DATADIR%%/symbols/CPU_PowerPC.kicad_sym
 %%DATADIR%%/symbols/Comparator.kicad_sym
 %%DATADIR%%/symbols/Connector.kicad_sym
+%%DATADIR%%/symbols/Connector_Audio.kicad_sym
 %%DATADIR%%/symbols/Connector_Generic.kicad_sym
 %%DATADIR%%/symbols/Connector_Generic_MountingPin.kicad_sym
 %%DATADIR%%/symbols/Connector_Generic_Shielded.kicad_sym
@@ -50,6 +51,8 @@
 %%DATADIR%%/symbols/Driver_Motor.kicad_sym
 %%DATADIR%%/symbols/Driver_Relay.kicad_sym
 %%DATADIR%%/symbols/Driver_TEC.kicad_sym
+%%DATADIR%%/symbols/FPGA_CologneChip_GateMate.kicad_sym
+%%DATADIR%%/symbols/FPGA_Efinix_Trion.kicad_sym
 %%DATADIR%%/symbols/FPGA_Lattice.kicad_sym
 %%DATADIR%%/symbols/FPGA_Microsemi.kicad_sym
 %%DATADIR%%/symbols/FPGA_Xilinx.kicad_sym
@@ -125,11 +128,16 @@
 %%DATADIR%%/symbols/MCU_ST_STM32F4.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32F7.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32G0.kicad_sym
+%%DATADIR%%/symbols/MCU_ST_STM32G4.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32H7.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32L0.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32L1.kicad_sym
-%%DATADIR%%/symbols/MCU_ST_STM32L4+.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32L4.kicad_sym
+%%DATADIR%%/symbols/MCU_ST_STM32L5.kicad_sym
+%%DATADIR%%/symbols/MCU_ST_STM32MP1.kicad_sym
+%%DATADIR%%/symbols/MCU_ST_STM32U5.kicad_sym
+%%DATADIR%%/symbols/MCU_ST_STM32WB.kicad_sym
+%%DATADIR%%/symbols/MCU_ST_STM32WL.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM8.kicad_sym
 %%DATADIR%%/symbols/MCU_SiFive.kicad_sym
 %%DATADIR%%/symbols/MCU_SiliconLabs.kicad_sym
@@ -178,6 +186,7 @@
 %%DATADIR%%/symbols/Sensor_Audio.kicad_sym
 %%DATADIR%%/symbols/Sensor_Current.kicad_sym
 %%DATADIR%%/symbols/Sensor_Distance.kicad_sym
+%%DATADIR%%/symbols/Sensor_Energy.kicad_sym
 %%DATADIR%%/symbols/Sensor_Gas.kicad_sym
 %%DATADIR%%/symbols/Sensor_Humidity.kicad_sym
 %%DATADIR%%/symbols/Sensor_Magnetic.kicad_sym

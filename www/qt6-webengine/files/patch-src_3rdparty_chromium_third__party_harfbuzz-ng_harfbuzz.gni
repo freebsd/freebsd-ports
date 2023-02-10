@@ -1,0 +1,22 @@
+--- src/3rdparty/chromium/third_party/harfbuzz-ng/harfbuzz.gni.orig	2022-09-26 10:05:50 UTC
++++ src/3rdparty/chromium/third_party/harfbuzz-ng/harfbuzz.gni
+@@ -3,12 +3,13 @@ declare_args() {
+ # found in the LICENSE file.
+ 
+ declare_args() {
+-  # Blink uses a cutting-edge version of Harfbuzz; most Linux distros do not
+-  # contain a new enough version of the code to work correctly. However,
+-  # ChromeOS chroots (i.e, real ChromeOS builds for devices) do contain a
+-  # new enough version of the library, and so this variable exists so that
+-  # ChromeOS can build against the system lib and keep binary sizes smaller.
+-  use_system_harfbuzz = false
++  # Blink uses a cutting-edge version of Harfbuzz (version listed in
++  # third_party/harfbuzz-ng/README.chromium); most Linux distros do not contain
++  # a new enough version of the code to work correctly. However, ChromeOS
++  # chroots (i.e. real ChromeOS builds for devices) do contain a new enough
++  # version of the library, and so this variable exists so that ChromeOS can
++  # build against the system lib and keep binary sizes smaller.
++  use_system_harfbuzz = true
+   use_qt_harfbuzz = false
+   qt_harfbuzz_config = ""
+ }

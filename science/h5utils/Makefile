@@ -1,31 +1,30 @@
 PORTNAME=	h5utils
-DISTVERSION=	1.13.1
-PORTREVISION=	6
+DISTVERSION=	1.13.2
 CATEGORIES=	science
+MASTER_SITES=	https://github.com/NanoComp/${PORTNAME}/releases/download/${DISTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Set of utilities for visualization and conversion of HDF5 format
-WWW=		https://github.com/stevengj/h5utils
+WWW=		https://github.com/NanoComp/h5utils
 
-LICENSE=	MIT GPLv2
+LICENSE=	GPLv2 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gawk:lang/gawk
-LIB_DEPENDS=	libhdf5.so:science/hdf5 \
-		libpng.so:graphics/png \
-		libmatheval.so:devel/libmatheval
+LIB_DEPENDS=	libdf.so:science/hdf \
+		libhdf5.so:science/hdf5 \
+		libmatheval.so:devel/libmatheval \
+		libpng.so:graphics/png
 
-USES=		autoreconf compiler:c++11-lang
+USES=		autoreconf compiler:c++11-lang jpeg localbase
 GNU_CONFIGURE=	yes
-USE_GITHUB=	yes
-GH_ACCOUNT=	stevengj
 
-CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include -lpthread
+CFLAGS+=	-pthread
 CXXFLAGS+=	-std=c++11
 
-OPTIONS_DEFINE=		OCTAVE
-OPTIONS_SUB=		yes
+OPTIONS_DEFINE=	OCTAVE
+OPTIONS_SUB=	yes
 
 OCTAVE_DESC=		With Octave support
 OCTAVE_CONFIGURE_WITH=	octave

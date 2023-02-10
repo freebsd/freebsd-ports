@@ -1,0 +1,24 @@
+Exomizer is a program that compresses files in a way that tries to be as
+efficient as possible but still allows them to be decompressed in environments
+where CPU speed and RAM are limited. For some popular 8-bit computers using
+6502 compatible CPUs it can also generate executable files that decompress
+themselves in memory when run.
+
+Exomizer operates in two major modes. It has a raw mode that compresses plain
+files and produces plain files. This mode is used by the raw subcommand. All
+other subcommands use the second mode. It requires all source files to be
+targeted to be decrunched at specific addresses in the 16-bit address space of
+the target computer. In this mode, no file can be larger than 64kB since all
+data must be addressable using 16-bits. The targeted mode has the following
+features:
+* It reads plain or .prg files to any given address.
+* It can produce stand-alone self-decrunching files for the following targets:
+  - Commodore VIC20, C64, C65, C16/plus4, C128 and PET 4032
+  - Atari 400/800 XL/XE
+  - Apple ][+ and //e
+  - Oric-1 and Oric Atmos
+  - BBC Micro B
+* It can produce files for both "in memory" and "from disk" decrunching.
+* It handles RLE-sequences well, no packer is necessary.
+* It is able to link/combine more than one source file into the same crunched
+  target file.

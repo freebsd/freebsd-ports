@@ -1,6 +1,15 @@
---- ts/models/messages.ts	2022-02-12 02:48:01 UTC
-+++ ts/models/messages.ts
-@@ -722,7 +722,7 @@ export class MessageModel extends window.Backbone.Mode
+--- ts/models/messages.ts.orig	2023-02-02 21:51:07.000000000 +0100
++++ ts/models/messages.ts	2023-02-03 18:17:14.799327000 +0100
+@@ -908,7 +908,7 @@ export class MessageModel extends window.Backbone.Mode
+         });
+       }
+ 
+-      if (!window.Signal.OS.isLinux()) {
++      if (!(window.Signal.OS.isLinux() || window.Signal.OS.isFreeBSD())) {
+         return attributes.storyReaction.emoji;
+       }
+ 
+@@ -927,7 +927,7 @@ export class MessageModel extends window.Backbone.Mode
  
      // Linux emoji support is mixed, so we disable it. (Note that this doesn't touch
      //   the `text`, which can contain emoji.)
@@ -9,16 +18,26 @@
      if (shouldIncludeEmoji) {
        return window.i18n('message--getNotificationText--text-with-emoji', {
          text: modifiedText,
---- ts/OS.ts	2022-02-12 02:48:01.000000000 +0100
-+++ ts/OS.ts	2022-02-18 20:38:13.220898000 +0100
-@@ -7,6 +7,7 @@ import semver from 'semver';
+--- ts/OS.ts.orig	2023-02-02 21:51:07.000000000 +0100
++++ ts/OS.ts	2023-02-03 18:15:27.645364000 +0100
+@@ -22,6 +22,7 @@ export const isWindows = createIsPlatform('win32');
+ export const isMacOS = createIsPlatform('darwin');
+ export const isLinux = createIsPlatform('linux');
+ export const isWindows = createIsPlatform('win32');
++export const isFreeBSD = createIsPlatform('freebsd');
  
- export const isMacOS = (): boolean => process.platform === 'darwin';
- export const isLinux = (): boolean => process.platform === 'linux';
-+export const isFreeBSD = (): boolean => process.platform === 'freebsd';
- export const isWindows = (minVersion?: string): boolean => {
-   const osRelease = os.release();
- 
+ // Windows 10 and above
+ export const hasCustomTitleBar = (): boolean =>
+@@ -33,6 +34,9 @@ export const getName = (): string => {
+   }
+   if (isWindows()) {
+     return 'Windows';
++  }
++  if (isFreeBSD()) {
++    return 'FreeBSD';
+   }
+   return 'Linux';
+ };
 --- ts/services/notifications.ts	2022-02-12 02:48:01.000000000 +0100
 +++ ts/services/notifications.ts	2022-02-18 20:39:11.725928000 +0100
 @@ -143,7 +143,7 @@ class NotificationService extends EventEmitter {
@@ -30,101 +49,6 @@
        icon,
        silent:
          silent || audioNotificationSupport !== AudioNotificationSupport.Native,
---- ts/set_os_class.ts	2022-02-12 02:48:01.000000000 +0100
-+++ ts/set_os_class.ts	2022-02-18 20:39:35.451014000 +0100
-@@ -9,6 +9,8 @@ $(document).ready(() => {
-     className = 'os-macos';
-   } else if (window.Signal.OS.isLinux()) {
-     className = 'os-linux';
-+  } else if (window.Signal.OS.isFreeBSD()) {
-+    className = 'os-freebsd';
-   } else {
-     throw new Error('Unexpected operating system; not applying ');
-   }
---- ts/test-node/types/Settings_test.ts	2022-02-12 02:48:01.000000000 +0100
-+++ ts/test-node/types/Settings_test.ts	2022-02-18 20:41:29.688721000 +0100
-@@ -27,6 +27,15 @@ describe('Settings', () => {
-       );
-     });
- 
-+    it('returns custom support on FreeBSD', () => {
-+      sandbox.stub(process, 'platform').value('freebsd');
-+      assert.strictEqual(
-+        Settings.getAudioNotificationSupport(),
-+        Settings.AudioNotificationSupport.Custom
-+      );
-+    });
-+
-+
-     it('returns no support on Windows 7', () => {
-       sandbox.stub(process, 'platform').value('win32');
-       sandbox.stub(os, 'release').returns('7.0.0');
-@@ -60,6 +69,11 @@ describe('Settings', () => {
-       assert.isTrue(Settings.isAudioNotificationSupported());
-     });
- 
-+    it('returns true on FreeBSD', () => {
-+      sandbox.stub(process, 'platform').value('freebsd');
-+      assert.isTrue(Settings.isAudioNotificationSupported());
-+    });
-+
-     it('returns false on Windows 7', () => {
-       sandbox.stub(process, 'platform').value('win32');
-       sandbox.stub(os, 'release').returns('7.0.0');
-@@ -84,6 +98,11 @@ describe('Settings', () => {
-       assert.isTrue(Settings.isNotificationGroupingSupported());
-     });
- 
-+    it('returns true on FreeBSD', () => {
-+      sandbox.stub(process, 'platform').value('freebsd');
-+      assert.isTrue(Settings.isNotificationGroupingSupported());
-+    });
-+
-     it('returns true on Windows 7', () => {
-       sandbox.stub(process, 'platform').value('win32');
-       sandbox.stub(os, 'release').returns('7.0.0');
-@@ -126,6 +145,11 @@ describe('Settings', () => {
-       assert.isFalse(Settings.isHideMenuBarSupported());
-     });
- 
-+    it('returns true on FreeBSD', () => {
-+      sandbox.stub(process, 'platform').value('freebsd');
-+      assert.isTrue(Settings.isHideMenuBarSupported());
-+    });
-+
-     it('returns true on Windows 7', () => {
-       sandbox.stub(process, 'platform').value('win32');
-       sandbox.stub(os, 'release').returns('7.0.0');
-@@ -148,6 +172,11 @@ describe('Settings', () => {
-     it('returns false on macOS', () => {
-       sandbox.stub(process, 'platform').value('darwin');
-       assert.isFalse(Settings.isDrawAttentionSupported());
-+    });
-+
-+    it('returns true on FreeBSD', () => {
-+      sandbox.stub(process, 'platform').value('freebsd');
-+      assert.isTrue(Settings.isDrawAttentionSupported());
-     });
- 
-     it('returns true on Windows 7', () => {
---- ts/test-node/util/getUserAgent_test.ts	2022-02-12 02:48:01.000000000 +0100
-+++ ts/test-node/util/getUserAgent_test.ts	2022-02-18 20:42:25.165838000 +0100
-@@ -39,6 +39,14 @@ describe('getUserAgent', () => {
-     );
-   });
- 
-+  it('returns the right User-Agent on FreeBSD', function test() {
-+    this.sandbox.stub(process, 'platform').get(() => 'freebsd');
-+    assert.strictEqual(
-+      getUserAgent('1.2.3', '13.1'),
-+      'Signal-Desktop/1.2.3 FreeBSD 13.1'
-+    );
-+  });
-+
-   it('omits the platform on unsupported platforms', function test() {
-     this.sandbox.stub(process, 'platform').get(() => 'freebsd');
-     assert.strictEqual(getUserAgent('1.2.3', '13.1'), 'Signal-Desktop/1.2.3');
-
 --- ts/util/getUserAgent.ts	2022-02-12 02:48:01.000000000 +0100
 +++ ts/util/getUserAgent.ts	2022-02-18 20:43:07.232944000 +0100
 @@ -7,6 +7,7 @@ const PLATFORM_STRINGS: { [platform: string]: string }
@@ -166,23 +90,74 @@
    windowIcon = join(__dirname, '../images/signal-logo-desktop-linux.png');
  } else {
    windowIcon = join(__dirname, '../build/icons/png/512x512.png');
---- ts/scripts/get-expire-time.ts.orig	2022-02-16 15:11:39.000000000 +0000
-+++ ts/scripts/get-expire-time.ts	2022-02-25 12:31:18.650062000 +0000
-@@ -2,15 +2,12 @@
- // SPDX-License-Identifier: AGPL-3.0-only
+--- ts/state/getInitialState.ts.orig	2023-02-05 14:58:42.686190000 +0100
++++ ts/state/getInitialState.ts	2023-02-05 14:59:18.608061000 +0100
+@@ -69,7 +69,7 @@ export function getInitialState({
  
- import { join } from 'path';
--import { execSync } from 'child_process';
- import { writeFileSync } from 'fs';
+   const theme = getThemeType();
  
- import { DAY } from '../util/durations';
+-  let osName: 'windows' | 'macos' | 'linux' | undefined;
++  let osName: 'windows' | 'macos' | 'linux' | 'freebsd' | undefined;
  
--const unixTimestamp = parseInt(
--  execSync('git show -s --format=%ct').toString('utf8'),
--  10
--);
-+const unixTimestamp = %%EPOCH%%;
-+
- const buildCreation = unixTimestamp * 1000;
+   if (OS.isWindows()) {
+     osName = 'windows';
+@@ -77,6 +77,8 @@ export function getInitialState({
+     osName = 'macos';
+   } else if (OS.isLinux()) {
+     osName = 'linux';
++  } else if (OS.isFreeBSD()) {
++    osName = 'freebsd';
+   }
  
- const buildExpiration = buildCreation + DAY * 90;
+   return {
+--- ts/scripts/fuse-electron.ts.orig	2023-02-05 15:01:26.625383000 +0100
++++ ts/scripts/fuse-electron.ts	2023-02-05 15:02:05.602959000 +0100
+@@ -17,7 +17,7 @@ export async function afterPack({
+     target = `${productFilename}.app`;
+   } else if (electronPlatformName === 'win32') {
+     target = `${productFilename}.exe`;
+-  } else if (electronPlatformName === 'linux') {
++  } else if (electronPlatformName === 'linux' || electronPlatformName === 'freebsd') {
+     // Sadly, `LinuxPackager` type is not exported by electron-builder so we
+     // have to improvise
+     target = (packager as unknown as { executableName: string }).executableName;
+--- ts/state/ducks/user.ts.orig	2023-02-05 15:03:14.076343000 +0100
++++ ts/state/ducks/user.ts	2023-02-05 15:03:54.047783000 +0100
+@@ -23,7 +23,7 @@ export type UserStateType = Readonly<{
+   isMainWindowMaximized: boolean;
+   localeMessages: LocaleMessagesType;
+   menuOptions: MenuOptionsType;
+-  osName: 'linux' | 'macos' | 'windows' | undefined;
++  osName: 'linux' | 'macos' | 'windows' | 'freebsd' | undefined;
+   ourACI: UUIDStringType | undefined;
+   ourConversationId: string | undefined;
+   ourDeviceId: number | undefined;
+@@ -100,7 +100,7 @@ export function getEmptyState(): UserStateType {
+ // Reducer
+ 
+ export function getEmptyState(): UserStateType {
+-  let osName: 'windows' | 'macos' | 'linux' | undefined;
++  let osName: 'windows' | 'macos' | 'linux' | 'freebsd' | undefined;
+ 
+   if (OS.isWindows()) {
+     osName = 'windows';
+@@ -108,6 +108,8 @@ export function getEmptyState(): UserStateType {
+     osName = 'macos';
+   } else if (OS.isLinux()) {
+     osName = 'linux';
++  } else if (OS.isFreeBSD()) {
++    osName = 'freebsd';
+   }
+ 
+   return {
+--- ts/state/smart/App.tsx.orig	2023-02-05 15:04:08.452070000 +0100
++++ ts/state/smart/App.tsx	2023-02-05 15:04:45.605611000 +0100
+@@ -49,6 +49,8 @@ const mapStateToProps = (state: StateType) => {
+     osClassName = 'os-macos';
+   } else if (osName === 'linux') {
+     osClassName = 'os-linux';
++  } else if (osName === 'freebsd') {
++    osClassName = 'os-freebsd';
+   }
+ 
+   return {

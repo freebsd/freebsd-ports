@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-faraday1>=0.17.3<2.0:www/rubygem-faraday1 \
 		rubygem-googleauth>=0.16.2<2.0:security/rubygem-googleauth
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

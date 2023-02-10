@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-railties4>=3.0<5.3:www/rubygem-railties4 \
 		rubygem-roadie3>=3.1<4:mail/rubygem-roadie3
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

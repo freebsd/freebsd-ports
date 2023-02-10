@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-tomlrb1>=1.2<2:textproc/rubygem-tomlrb1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -8,7 +8,6 @@ COMMENT=	Structured+contextual logging experiments in Ruby
 WWW=		https://github.com/jordansissel/ruby-cabin
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 PLIST_FILES=	bin/rubygems-cabin-test
 

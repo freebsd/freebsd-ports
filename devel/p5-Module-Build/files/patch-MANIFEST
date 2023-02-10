@@ -1,0 +1,7 @@
+--- MANIFEST.orig	2022-12-08 23:24:31 UTC
++++ MANIFEST
+@@ -1,4 +1,3 @@
+-bin/config_data
+ Build.PL
+ Changes
+ contrib/bash_completion.module-build

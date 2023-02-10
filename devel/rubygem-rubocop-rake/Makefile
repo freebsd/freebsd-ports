@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-rubocop>=1.0<2:devel/rubygem-rubocop
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

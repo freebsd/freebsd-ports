@@ -13,7 +13,6 @@ LICENSE=	MIT
 LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USES=		gem
-USE_RUBY=	yes
 
 CONFIGURE_ARGS=	--with-icu-include=${LOCALBASE}/include
 

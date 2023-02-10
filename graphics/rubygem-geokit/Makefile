@@ -1,5 +1,5 @@
 PORTNAME=	geokit
-PORTVERSION=	1.13.1
+PORTVERSION=	1.14.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/geokit/geokit
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

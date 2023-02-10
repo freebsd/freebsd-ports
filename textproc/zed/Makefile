@@ -1,7 +1,7 @@
 PORTNAME?=	zed
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
-#PORTREVISION=	0
+DISTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	meta@FreeBSD.org
@@ -20,4 +20,18 @@ GO_PKGNAME?=	github.com/brimdata/zed/cmd/zed
 
 PLIST_FILES?=	bin/zed
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${SLAVE_PORT} == no
+
+x-maintainer-makesum:
+	${MAKE} DISTINFO_FILE=${.CURDIR}/distinfo.zed makesum
+	${MAKE} DISTINFO_FILE=${.CURDIR}/distinfo.zq -C "${.CURDIR}/../zq" makesum
+
+	${CAT} ${.CURDIR}/distinfo.zed ${.CURDIR}/distinfo.zq | \
+		${AWK} '$$1 != "TIMESTAMP" || NR == 1' > ${.CURDIR}/distinfo
+	${RM} ${.CURDIR}/distinfo.zed ${.CURDIR}/distinfo.zq
+
+.endif
+
+.include <bsd.port.post.mk>

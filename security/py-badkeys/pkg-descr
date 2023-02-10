@@ -1,0 +1,8 @@
+Tool and library to check cryptographic public keys for known vulnerabilities.
+
+badkeys can directly scan SSH and TLS hosts and automatically check their
+public keys.
+
+This work was funded in part by Industriens Fond through the CIDI project
+(Cybersecure IOT in Danish Industry) and in part by the Center for Information
+Security and Trust (CISAT) at the IT University of Copenhagen, Denmark.

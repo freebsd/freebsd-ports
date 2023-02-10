@@ -1,5 +1,5 @@
 PORTNAME=	riemann-tools
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-json>=1.8:devel/rubygem-json \
 		rubygem-riemann-client>=1.0:net-mgmt/rubygem-riemann-client
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

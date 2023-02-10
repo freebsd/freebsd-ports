@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-activemodel4>=4.0:databases/rubygem-activemodel4 \
 		rubygem-sprockets-rails-rails4>=2.0:devel/rubygem-sprockets-rails-rails4
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

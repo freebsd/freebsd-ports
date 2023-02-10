@@ -1,5 +1,6 @@
 PORTNAME=	egl-wayland
 DISTVERSION=	1.1.11
+PORTREVISION=	1
 CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org

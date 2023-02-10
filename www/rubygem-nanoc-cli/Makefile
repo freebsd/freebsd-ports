@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-cri>=2.15:devel/rubygem-cri \
 		rubygem-zeitwerk>=2.1:devel/rubygem-zeitwerk
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

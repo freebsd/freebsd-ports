@@ -1,0 +1,3 @@
+PyWavefront reads Wavefront 3D object files (something.obj, something.obj.gz
+and something.mtl) and generates interleaved vertex data for each material
+ready for rendering.

@@ -1,0 +1,54 @@
+#!/bin/sh
+
+# PROVIDE: hedgedoc
+# REQUIRE: DAEMON NETWORKING
+# KEYWORD: shutdown
+
+# Add the following lines to /etc/rc.conf to enable hedgedoc
+#
+# hedgedoc_enable (bool):   set to NO by default
+# hedgedoc_config (string): optional full path to config.json
+# hedgedoc_port   (string): optional HTTP port
+# hedgedoc_user   (string): optional user to run as
+# hedgedoc_group  (string): optional user to run as
+
+. /etc/rc.subr
+
+name="hedgedoc"
+rcvar="hedgedoc_enable"
+
+load_rc_config $name
+
+: ${hedgedoc_enable="NO"}
+: ${hedgedoc_config:="%%ETCDIR%%/config.json"}
+: ${hedgedoc_port:="3000"}
+: ${hedgedoc_user:="hedgedoc"}
+: ${hedgedoc_group:="hedgedoc"}
+: ${hedgedoc_chdir="%%LOCALBASE%%/libexec/hedgedoc"}
+: ${hedgedoc_opts="NODE_ENV=production \
+    HOME=/var/db/hedgedoc \
+    CMD_PORT=${hedgedoc_port} \
+    CMD_CONFIG_FILE=${hedgedoc_config}"}
+
+pidfile="/var/run/${name}/${name}.pid"
+hedgedoc_nodejs_pidfile="/var/run/${name}/${name}.node"
+start_precmd="hedgedoc_start_precmd"
+required_files="${hedgedoc_config}"
+
+hedgedoc_start_precmd()
+{
+    if [ ! -d "/var/run/${name}" ]; then
+        install -d -m 0750 -o ${hedgedoc_user} -g ${hedgedoc_group} "/var/run/${name}"
+        install -o ${hedgedoc_user} /dev/null ${pidfile}
+        install -o ${hedgedoc_user} /dev/null ${hedgedoc_nodejs_pidfile}
+    fi
+}
+
+command="/usr/sbin/daemon"
+command_args="-t hedgedoc -T hedgedoc \
+    -P ${pidfile} \
+    -p ${hedgedoc_nodejs_pidfile} \
+    -r -R 15 \
+    /usr/bin/env ${hedgedoc_opts} /usr/local/bin/node app.js"
+
+run_rc_command "$1"

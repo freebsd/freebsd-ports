@@ -928,7 +928,6 @@
 %%WWWDIR%%/include/classes/import/converters/CImportConverterFactory.php
 %%WWWDIR%%/include/classes/import/converters/CImportDataNormalizer.php
 %%WWWDIR%%/include/classes/import/converters/CTemplateScreenConverter.php
-%%WWWDIR%%/include/classes/import/converters/CTransformImportConverter.php
 %%WWWDIR%%/include/classes/import/importers/CHostImporter.php
 %%WWWDIR%%/include/classes/import/importers/CImporter.php
 %%WWWDIR%%/include/classes/import/importers/CMapImporter.php

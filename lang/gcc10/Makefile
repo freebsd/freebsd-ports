@@ -76,6 +76,7 @@ CONFIGURE_ARGS+=--disable-bootstrap
 .else
 CONFIGURE_ARGS+=--with-build-config=bootstrap-debug
 ALL_TARGET=	bootstrap-lean
+PIE_UNSAFE=    yes
 .endif
 INSTALL_TARGET=	install-strip
 .if ${UID} != 0

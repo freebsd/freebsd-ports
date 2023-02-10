@@ -38,7 +38,7 @@ GSASL_CONFIGURE_WITH=	gsasl
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 GUILE_CONFIGURE_OFF=	--without-guile
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_OFF=	--without-ldap
 
 NLS_USES=		gettext

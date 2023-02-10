@@ -1,7 +1,6 @@
 PORTNAME=	wcm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
-PORTREVISION=	2
+DISTVERSION=	0.7.5
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -23,13 +22,17 @@ CONFLICTS_INSTALL=	wcmcommander # bin/wcm
 
 USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
-USE_GNOME=	gtk30 libxml2
+USE_GNOME=	gdkpixbuf2 gtk30 libxml2
 GH_ACCOUNT=	WayfireWM
+MESON_ARGS=	-Denable_wdisplays=false # use package
 DATADIR=	${PREFIX}/share/wayfire
 
-OPTIONS_DEFINE=	WFSHELL
-OPTIONS_DEFAULT=WFSHELL
+OPTIONS_DEFINE=	WDISPLAYS WFSHELL
+OPTIONS_DEFAULT=WDISPLAYS WFSHELL
 OPTIONS_SUB=	yes
+
+WDISPLAYS_DESC=			Configure outputs via wdisplays
+WDISPLAYS_RUN_DEPENDS=		wdisplays>0:x11/wdisplays
 
 WFSHELL_DESC=			Build with wf-shell support
 WFSHELL_BUILD_DEPENDS=		wf-shell>0:x11/wf-shell

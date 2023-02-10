@@ -1,0 +1,6 @@
+#!/bin/sh
+
+exec %%PREFIX%%/sbin/openvpn --script-security 2 \
+    --up %%PREFIX%%/libexec/openvpn-client.up \
+    --plugin openvpn-plugin-down-root.so %%PREFIX%%/libexec/openvpn-client.down \
+    --config "$@"

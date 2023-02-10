@@ -1,5 +1,5 @@
 PORTNAME=	strong_migrations
-PORTVERSION=	1.4.0
+PORTVERSION=	1.4.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-activerecord61>=5.2:databases/rubygem-activerecord61
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

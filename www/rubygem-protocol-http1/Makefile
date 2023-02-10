@@ -1,5 +1,5 @@
 PORTNAME=	protocol-http1
-PORTVERSION=	0.14.4
+PORTVERSION=	0.14.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-protocol-http>=0.22<1:www/rubygem-protocol-http
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

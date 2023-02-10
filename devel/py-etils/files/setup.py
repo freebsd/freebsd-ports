@@ -40,7 +40,7 @@ extras_require = \
          'pylint>=2.6.0',
          'yapf',
          'chex'],
- 'eapp': ['absl-py', 'simple_parsing'],
+ 'eapp': ['absl-py', 'simple_parsing', 'etils[epy]'],
  'ecolab': ['jupyter', 'numpy', 'mediapy', 'etils[enp]', 'etils[epy]'],
  'edc': ['typing_extensions', 'etils[epy]'],
  'enp': ['numpy', 'etils[epy]'],
@@ -50,7 +50,7 @@ extras_require = \
  'etree': ['etils[array_types]', 'etils[epy]', 'etils[enp]', 'etils[etqdm]'],
  'etree-dm': ['dm-tree', 'etils[etree]'],
  'etree-jax': ['jax[cpu]', 'etils[etree]'],
- 'etree-tf': ['tf-nightly', 'etils[etree]'],
+ 'etree-tf': ['tensorflow', 'etils[etree]'],
  'lazy-imports': ['etils[ecolab]']}
 
 setup(name='etils',
@@ -62,5 +62,5 @@ setup(name='etils',
       packages=packages,
       package_data=package_data,
       extras_require=extras_require,
-      python_requires='>=3.7',
+      python_requires='>=3.8',
      )

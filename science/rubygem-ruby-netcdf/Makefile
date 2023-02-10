@@ -15,6 +15,5 @@ RUN_DEPENDS=	rubygem-narray>=0:math/rubygem-narray \
 		rubygem-narray_miss>=0:math/rubygem-narray_miss
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

@@ -636,6 +636,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/wiki/cudatext-complete-from-text.png
 %%DATADIR%%/readme/wiki/cudatext-complete-pics.png
 %%DATADIR%%/readme/wiki/cudatext-console.png
+%%DATADIR%%/readme/wiki/cudatext-dynamic-hi.png
 %%DATADIR%%/readme/wiki/cudatext-editing-context-menu.png
 %%DATADIR%%/readme/wiki/cudatext-embedded-editor.png
 %%DATADIR%%/readme/wiki/cudatext-fenced-blocks.png

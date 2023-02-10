@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -50,7 +50,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libzmf-0.0.so:graphics/libzmf \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
-		libqrcodegencpp.so:graphics/qr-code-generator \
 		libwebp.so:graphics/webp \
 		liblpsolve55.so:math/lp_solve \
 		libcmis-0.5.so:net/libcmis \
@@ -101,7 +100,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
-DISTFILES+=	dragonbox-1.1.0.tar.gz:src
+DISTFILES+=	dragonbox-1.1.3.tar.gz:src
 DISTFILES+=	skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
@@ -119,11 +118,10 @@ SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
-		gettext gl gmake gnome jpeg localbase:ldflags perl5 pkgconfig \
+		gettext gl gmake gnome jpeg ldap localbase:ldflags perl5 pkgconfig \
 		python:3.8+ shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
-USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 
@@ -134,7 +132,7 @@ OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA PDFIUM QT5
 #OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
-GTK4_DESC=	GTK+ 4 GUI toolkit support (broken)
+GTK4_DESC=	GTK+ 4 GUI toolkit support (experimental, broken)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
@@ -221,7 +219,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-5058.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-5408.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -287,6 +285,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-gpgmepp \
 		--with-system-libfixmath=no \
 		--with-system-libs \
+		--with-system-libtiff \
 		--with-system-libxml \
 		--with-system-mdds \
 		--with-system-nss \
@@ -321,6 +320,8 @@ MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
 MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
 MAKE_ENV+=	verbose=1
+
+BINARY_ALIAS=	sed=gsed
 
 #MAKE_JOBS_UNSAFE=	yes
 
@@ -385,7 +386,7 @@ post-install:
 .endfor
 
 post-install-SDK-on:
-.for subdir in include share share/doc share/idl
+.for subdir in include share share/doc
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s ${subdir}/libreoffice -not -type d >> ${TMPPLIST}
 .endfor

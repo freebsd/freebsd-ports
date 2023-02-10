@@ -24,7 +24,6 @@ RUN_DEPENDS=	rubygem-chef-config>=14.12<17:sysutils/rubygem-chef-config \
 		rubygem-wmi-lite>=1.0<2:devel/rubygem-wmi-lite
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

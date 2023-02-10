@@ -1,6 +1,6 @@
 PORTNAME=	stc
 PORTVERSION=	1.4
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	kbowling@FreeBSD.org
@@ -24,4 +24,3 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"homedir", ""|"homedir", "${LOCALBASE}/etc/syncthing"|' ${WRKSRC}/stc.go
 
 .include <bsd.port.mk>
-

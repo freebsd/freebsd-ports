@@ -1,5 +1,5 @@
 PORTNAME=	ox
-PORTVERSION=	2.14.11
+PORTVERSION=	2.14.14
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,6 +12,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gem
 CPE_VENDOR=	${PORTNAME}_project
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

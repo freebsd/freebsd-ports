@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_FreeBSD_12_powerpc64=	fails to configure: could not find ruby.h
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

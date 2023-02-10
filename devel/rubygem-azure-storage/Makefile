@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-azure-core>=0.1<1:net/rubygem-azure-core \
 		rubygem-nokogiri>=1.6.8<2:textproc/rubygem-nokogiri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

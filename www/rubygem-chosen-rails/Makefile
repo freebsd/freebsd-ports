@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-coffee-rails4>=3.2:devel/rubygem-coffee-rails4 \
 		rubygem-sassc-rails-rails4>=2.1.2:textproc/rubygem-sassc-rails-rails4
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

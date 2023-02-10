@@ -10,7 +10,6 @@ WWW=		https://gitlab.fsrv.xyz
 LICENSE=	BSD3CLAUSE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

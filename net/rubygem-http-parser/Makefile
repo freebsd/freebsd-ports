@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-ffi-compiler>=1.0<2.0:devel/rubygem-ffi-compiler
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

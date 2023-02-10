@@ -18,10 +18,9 @@ BROKEN_FreeBSD_14=	ld: error: duplicate symbol: dt_entry_handler
 
 LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
 
-USES=		desktop-file-utils gettext gmake gnome pkgconfig \
+USES=		desktop-file-utils gettext gmake gnome ldap pkgconfig \
 		shared-mime-info ssl
 USE_GNOME=	intltool libglade2
-USE_OPENLDAP=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} --disable-update-mimedb
 

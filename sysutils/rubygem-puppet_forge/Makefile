@@ -1,5 +1,5 @@
 PORTNAME=	puppet_forge
-PORTVERSION=	3.2.0
+PORTVERSION=	4.0.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,13 +10,12 @@ WWW=		https://github.com/puppetlabs/forge-ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-faraday1>=1.3:www/rubygem-faraday1 \
-		rubygem-faraday_middleware>=1.0:www/rubygem-faraday_middleware \
+RUN_DEPENDS=	rubygem-faraday>=2.0<3:www/rubygem-faraday \
+		rubygem-faraday-follow_redirects>=0.3.0<0.4:www/rubygem-faraday-follow_redirects \
 		rubygem-minitar>=0:archivers/rubygem-minitar \
 		rubygem-semantic_puppet>=1.0<2:devel/rubygem-semantic_puppet
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

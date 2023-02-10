@@ -33,7 +33,6 @@ RUN_DEPENDS=	git:devel/git \
 USES=		cpe gem shebangfix
 CPE_VENDOR=	${PORTNAME}_project
 USE_RC_SUBR=	${PORTNAME}
-USE_RUBY=	yes
 
 SHEBANG_FILES=	docker-run.sh
 NO_ARCH=	yes

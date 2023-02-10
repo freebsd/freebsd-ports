@@ -11,6 +11,9 @@ WWW=		https://www.phpunit.de
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	End of Life since February 1, 2019
+EXPIRATION_DATE=2023-03-31
+
 CONFLICTS_INSTALL=	phpunit7 phpunit8
 
 USES=		cpe php:flavors

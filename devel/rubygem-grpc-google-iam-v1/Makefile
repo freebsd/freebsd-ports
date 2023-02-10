@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-google-protobuf>=3.14<4:devel/rubygem-google-protobuf \
 		rubygem-grpc>=1.27<2:net/rubygem-grpc
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

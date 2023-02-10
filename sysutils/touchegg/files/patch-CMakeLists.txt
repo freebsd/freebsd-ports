@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2022-11-14 17:39:36 UTC
++++ CMakeLists.txt
+@@ -51,7 +51,7 @@ target_include_directories(touchegg PUBLIC
+   ${GIO_INCLUDE_DIRS}
+ )
+ target_link_libraries(touchegg
+-  stdc++fs # std::filesystem
++  #stdc++fs # std::filesystem
+   Threads::Threads # std::thread
+   ${LIBUDEV_LIBRARIES}
+   ${LIBINPUT_LIBRARIES}
+@@ -77,7 +77,7 @@ endif()
+ 
+ # Installation
+ # https://cmake.org/cmake/help/v3.4/module/GNUInstallDirs.html
+-if(CMAKE_BUILD_TYPE MATCHES Debug)
++if(FALSE AND CMAKE_BUILD_TYPE MATCHES Debug)
+   set(CMAKE_INSTALL_PREFIX "/usr")
+ endif()
+ 

@@ -24,7 +24,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=6.0.3.1:devel/rubygem-activesupport60 \
 		rubygem-train-winrm>=0.2<1:net/rubygem-train-winrm
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

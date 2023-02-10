@@ -1,4 +1,4 @@
---- ui/compositor/compositor.cc.orig	2022-11-30 08:12:58 UTC
+--- ui/compositor/compositor.cc.orig	2023-02-08 09:03:45 UTC
 +++ ui/compositor/compositor.cc
 @@ -868,7 +868,7 @@ void Compositor::OnResume() {
  

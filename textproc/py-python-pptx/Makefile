@@ -1,7 +1,7 @@
 PORTNAME=	python-pptx
 PORTVERSION=	0.6.21
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	DtxdF@disroot.org
@@ -20,5 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}behave>0:devel/py-behave@${PY_FLAVOR} \
 
 USES=		python:3.8+
 USE_PYTHON=	autoplist distutils pytest
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>

@@ -24,7 +24,7 @@ WITH_LDAP=yes
 .endif
 
 .if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=yes
+USE+=	ldap
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif

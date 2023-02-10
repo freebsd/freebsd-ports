@@ -1,5 +1,5 @@
 PORTNAME=	cookbook-omnifetch
-PORTVERSION=	0.10.1
+PORTVERSION=	0.12.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	rubygem-mixlib-archive>=0.4<2.0:devel/rubygem-mixlib-archive
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

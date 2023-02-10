@@ -1,5 +1,6 @@
 PORTNAME=	pyradio
-DISTVERSION=	0.8.9.32
+DISTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -40,23 +41,28 @@ MPV_DESC=	Mpv media player support
 VLC_DESC=	VLC media player support
 
 DOCS_PLIST_FILES=	man/man1/pyradio.1.gz \
-			man/man1/pyradio_rb.1.gz
+			man/man1/pyradio_rb.1.gz \
+			man/man1/pyradio_server.1.gz
 MPLAYER_RUN_DEPENDS+=	mplayer:multimedia/mplayer
 MPV_RUN_DEPENDS+=	mpv:multimedia/mpv
 VLC_RUN_DEPENDS+=	vlc:multimedia/vlc
 
 post-patch:
-	${SED} -i.bak -e 's/\(distro =\) None/\1 ${OPSYS}/' \
+	@${SED} -i.bak -e 's/\(distro =\) None/\1 ${OPSYS}/' \
 	 -e 's/\(enable_notifications =\) -1/\1 0/' \
 	 	${WRKSRC}/pyradio/config
+	@${SED} -i.bak -e "s,/usr/local/share/icons\(/pyradio.png\),${PREFIX}/share/pixmaps\1,1" \
+		${WRKSRC}/pyradio/log.py
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.desktop \
+		${STAGEDIR}${DESKTOPDIR}/${PORTNAME}.desktop
+	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.png \
+	       	${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/pyradio*.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/*.html ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.desktop \
-		${STAGEDIR}${DESKTOPDIR}/${PORTNAME}.desktop
-	${INSTALL_DATA} ${WRKSRC}/devel/${PORTNAME}.png \
-	       	${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .include <bsd.port.mk>

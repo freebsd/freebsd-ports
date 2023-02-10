@@ -1,7 +1,7 @@
 PORTNAME=	quisk
 DISTVERSION=	4.2.13
 CATEGORIES=	comms hamradio
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	fbsd@thesoo.org
 COMMENT=	Software Defined Radio (SDR)

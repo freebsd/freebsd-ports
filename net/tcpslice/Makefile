@@ -1,7 +1,8 @@
 PORTNAME=	tcpslice
-PORTVERSION=	1.5
+DISTVERSION=	1.6
 PORTEPOCH=	1
 CATEGORIES=	net
+MASTER_SITES=	https://www.tcpdump.org/release/
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Tool for extracting portions of pcap files
@@ -17,9 +18,5 @@ PLIST_FILES=	bin/tcpslice \
 		man/man1/tcpslice.1.gz
 
 GNU_CONFIGURE=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	the-tcpdump-group
-GH_TAGNAME=	f73194c
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	active_scaffold
-PORTVERSION=	3.6.14
+PORTVERSION=	3.6.15
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-cow_proxy>=0.3<1:devel/rubygem-cow_proxy \
 		rubygem-request_store>=1.3<2:devel/rubygem-request_store
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

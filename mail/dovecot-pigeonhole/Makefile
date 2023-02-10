@@ -49,7 +49,7 @@ MANAGESIEVE_CONFIGURE_WITH=	managesieve
 LDAP_CONFIGURE_WITH=	ldap
 LDAP_CPPFLAGS=		-I${LOCALBASE}/include
 LDAP_LDFLAGS=		-L${LOCALBASE}/lib
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 
 PORTDOCS=	sieve/extensions/* sieve/plugins/* sieve/locations/*
 

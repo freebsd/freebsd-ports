@@ -1,6 +1,6 @@
 PORTNAME=	facter
 PORTVERSION=	3.14.24
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	sysutils
 MASTER_SITES=	https://downloads.puppetlabs.com/facter/
 
@@ -23,10 +23,9 @@ CONFLICTS_INSTALL=	rubygem-facter
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-USES=		cmake:noninja compiler:c++11-lib cpe ssl
+USES=		cmake:noninja compiler:c++11-lib cpe ruby ssl
 CPE_VENDOR=	puppet
 USE_LDCONFIG=	yes
-USE_RUBY=	yes
 CMAKE_ARGS+=	-DMAN_PATH=${MANPREFIX}/man
 CMAKE_OFF=	ENABLE_CXX_WERROR
 

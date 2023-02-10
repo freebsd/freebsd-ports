@@ -42,7 +42,7 @@ GTKSV_DESC=	GtkSourceview support
 GPG_DESC=	GnuPG support
 GPG_CONFIGURE_WITH=	gpgme
 GPG_LIB_DEPENDS=	libgpgme.so:security/gpgme
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_WITH=	ldap
 GTKSPELL_CONFIGURE_WITH=	gtkspell
 GTKSPELL_LIB_DEPENDS=		libgtkspell3-3.so:textproc/gtkspell3

@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-tty-color>=0.5<1:devel/rubygem-tty-color
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

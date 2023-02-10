@@ -1,5 +1,5 @@
 PORTNAME=	async-io
-PORTVERSION=	1.34.0
+PORTVERSION=	1.34.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-async>=0:devel/rubygem-async
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

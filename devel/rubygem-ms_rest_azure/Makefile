@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0<2:devel/rubygem-concurrent-ruby \
 		rubygem-ms_rest>=0.7.6<0.8:devel/rubygem-ms_rest
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -3,7 +3,7 @@ DISTVERSION=	0.9.12-beta
 CATEGORIES=	devel net
 MASTER_SITES=	https://herrhotzenplotz.de/gcli/releases/gcli-${DISTVERSION}/
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	CLI utility to interact with various Git forges
 WWW=		https://gitlab.com/herrhotzenplotz/gcli
 

@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl \
 		rubygem-toml-rb>=1.0:www/rubygem-toml-rb
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

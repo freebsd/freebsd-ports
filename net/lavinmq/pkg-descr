@@ -1,0 +1,16 @@
+LavinMQ is a message queue server, also called a message broker, compatible
+with the AMQP0.9 spec, where messages are published by a sending service called
+a producer, via the broker, to then be consumed by the receiving service called
+a consumer. When not handling messages, the queue can route, buffer, and
+persist the messages according to rules set up by the user.
+
+Messages can be sent across languages, platforms, and OS, which decouple
+processes and creates a highly scalable system. lavinmq, as queue management
+software, gives an organized, safe place for messages to wait until another
+application or part of the system can come along and consume them for
+processing.
+
+lavinmq is written in Crystal, a statically compiled LLVM-based
+language with a ruby-like syntax.
+
+WWW: https://www.lavinmq.com/

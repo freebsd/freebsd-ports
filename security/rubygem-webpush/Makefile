@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-hkdf0>=0.2<1:security/rubygem-hkdf0 \
 		rubygem-jwt>=2.0<3:www/rubygem-jwt
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

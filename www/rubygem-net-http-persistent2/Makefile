@@ -11,7 +11,6 @@ WWW=		https://github.com/drbrain/net-http-persistent
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

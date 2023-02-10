@@ -1,5 +1,5 @@
 PORTNAME=	resolv-replace
-PORTVERSION=	0.1.0
+PORTVERSION=	0.1.1
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-resolv>=0:dns/rubygem-resolv
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

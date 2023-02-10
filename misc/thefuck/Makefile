@@ -1,7 +1,7 @@
 PORTNAME=	thefuck
 DISTVERSION=	3.32
 CATEGORIES=	misc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	App that corrects your previous console command

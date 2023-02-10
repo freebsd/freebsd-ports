@@ -29,7 +29,7 @@ lib/gstreamer-1.0/libgstrspng.so
 lib/gstreamer-1.0/libgstrsrtp.so
 lib/gstreamer-1.0/libgstrstracers.so
 %%CAIRO%%lib/gstreamer-1.0/libgstrsvideofx.so
-lib/gstreamer-1.0/libgstrswebp.so
+%%WEBP%%lib/gstreamer-1.0/libgstrswebp.so
 lib/gstreamer-1.0/libgstrswebrtc.so
 %%SODIUM%%lib/gstreamer-1.0/libgstsodium.so
 lib/gstreamer-1.0/libgstspotify.so
@@ -69,7 +69,7 @@ libdata/pkgconfig/gstrspng.pc
 libdata/pkgconfig/gstrsrtp.pc
 libdata/pkgconfig/gstrstracers.pc
 %%CAIRO%%libdata/pkgconfig/gstrsvideofx.pc
-libdata/pkgconfig/gstrswebp.pc
+%%WEBP%%libdata/pkgconfig/gstrswebp.pc
 libdata/pkgconfig/gstrswebrtc.pc
 %%SODIUM%%libdata/pkgconfig/gstsodium.pc
 libdata/pkgconfig/gstspotify.pc

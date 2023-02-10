@@ -5,10 +5,8 @@ include/ZXing/BitMatrix.h
 include/ZXing/BitMatrixIO.h
 include/ZXing/ByteArray.h
 include/ZXing/CharacterSet.h
-include/ZXing/CharacterSetECI.h
 include/ZXing/Content.h
 include/ZXing/DecodeHints.h
-include/ZXing/DecodeStatus.h
 include/ZXing/Error.h
 include/ZXing/Flags.h
 include/ZXing/GTIN.h
@@ -17,6 +15,7 @@ include/ZXing/Matrix.h
 include/ZXing/MultiFormatWriter.h
 include/ZXing/Point.h
 include/ZXing/Quadrilateral.h
+include/ZXing/Range.h
 include/ZXing/ReadBarcode.h
 include/ZXing/Result.h
 include/ZXing/StructuredAppend.h
@@ -29,6 +28,6 @@ lib/cmake/ZXing/ZXingConfigVersion.cmake
 lib/cmake/ZXing/ZXingTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ZXing/ZXingTargets.cmake
 lib/libZXing.so
-lib/libZXing.so.1
-lib/libZXing.so.1.4.0
+lib/libZXing.so.2.0.0
+lib/libZXing.so.3
 libdata/pkgconfig/zxing.pc

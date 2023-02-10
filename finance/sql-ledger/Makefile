@@ -1,5 +1,5 @@
 PORTNAME=	sql-ledger
-PORTVERSION=	3.2.11
+PORTVERSION=	3.2.12
 CATEGORIES=	finance perl5
 MASTER_SITES=	http://www.sql-ledger.com/source/
 
@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		apache:run,2.2+ perl5 pgsql shebangfix
+USES=		apache:run perl5 pgsql shebangfix
 
 SHEBANG_FILES=	*.pl bin/*/*.pl locale/*/*.pl
 
@@ -30,12 +30,6 @@ ROOT_SCRIPTS=	admin.pl am.pl ap.pl ar.pl bp.pl ca.pl cp.pl ct.pl gl.pl hr.pl \
 
 .include <bsd.port.pre.mk>
 do-install:
-.if ${APACHE_VERSION:M24}
-	@${REINPLACE_CMD} -e '/Order/d' \
-		-e 's/Deny from All/Require all denied/g' \
-		-e 's/Allow from All/Require all granted/g' \
-		${WRKDIR}/sql-ledger-httpd.conf
-.endif
 	${INSTALL_DATA} ${WRKDIR}/sql-ledger-httpd.conf ${STAGEDIR}${PREFIX}/etc/
 	@${MKDIR} ${STAGEDIR}/${WWWDIR}
 .for dir in ${ROOT_DIRS}

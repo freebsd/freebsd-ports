@@ -1,6 +1,5 @@
 PORTNAME=	sinatra
-PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTVERSION=	2.2.4
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	2
@@ -18,7 +17,6 @@ RUN_DEPENDS=	rubygem-mustermann>=2.0:devel/rubygem-mustermann \
 		rubygem-tilt>=2.0<3:devel/rubygem-tilt
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

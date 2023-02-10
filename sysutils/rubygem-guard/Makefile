@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-formatador>=0.2.4:devel/rubygem-formatador \
 		rubygem-thor>=0.18.1:devel/rubygem-thor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

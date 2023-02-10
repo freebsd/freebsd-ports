@@ -1,5 +1,5 @@
 PORTNAME=	actionview
-PORTVERSION=	6.0.6
+PORTVERSION=	6.0.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	60
@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-activesupport60>=${PORTVERSION}<${PORTVERSION}_99:devel/rub
 		rubygem-rails-html-sanitizer>=1.2.0<2:textproc/rubygem-rails-html-sanitizer
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

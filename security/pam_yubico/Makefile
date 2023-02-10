@@ -33,7 +33,7 @@ CR_CONFIGURE_WITH=	cr
 CR_PLIST_FILES=	bin/ykpamcfg \
 		man/man1/ykpamcfg.1.gz
 
-LDAP_USE=	OPENLDAP=yes
+LDAP_USES=	ldap
 LDAP_CONFIGURE_WITH=	ldap
 
 STATIC_CONFIGURE_ENABLE=	static

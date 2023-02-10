@@ -1,5 +1,5 @@
 PORTNAME=	rails
-PORTVERSION=	6.0.6
+PORTVERSION=	6.0.6.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	60
@@ -46,7 +46,6 @@ RUN_DEPENDS=	rubygem-actioncable60>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem
 		rubygem-webpacker4-rails60>=4.0<5:devel/rubygem-webpacker4-rails60
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

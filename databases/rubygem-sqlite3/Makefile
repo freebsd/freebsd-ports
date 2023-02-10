@@ -1,5 +1,5 @@
 PORTNAME=	sqlite3
-PORTVERSION=	1.5.4
+PORTVERSION=	1.6.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 USES=		gem
-USE_RUBY=	yes
 
-CONFIGURE_ARGS=	--with-sqlite3-dir=${LOCALBASE}
+CONFIGURE_ARGS=	--enable-system-libraries --with-sqlite3-dir=${LOCALBASE}
 
 .include <bsd.port.mk>

@@ -1,63 +1,52 @@
 PORTNAME=	mysql-connector-c++
-PORTVERSION=	1.1.13
-PORTREVISION=	3
+PORTVERSION=	8.0.32
 CATEGORIES=	databases
 MASTER_SITES=	MYSQL/Connector-C++
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	MySQL database connector for C++
 WWW=		https://dev.mysql.com/doc/relnotes/connector-cpp/en/index.html
 
 LICENSE=	GPLv2 # only
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
+LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
+		liblz4.so:archivers/liblz4 \
+		libprotobuf.so:devel/protobuf \
+		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++11-lang mysql ssl
+USES=		cmake:noninja compiler:c++17-lang cpe gmake mysql ssl
+CPE_VENDOR=	oracle
+USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DDOC_DESTINATION="${DOCSDIR}" -DCMAKE_ENABLE_C++11=ON
+CMAKE_ARGS=	-DCMAKE_ENABLE_C++17=ON \
+		-DWITH_LZ4=system \
+		-DWITH_PROTOBUF=system \
+		-DWITH_SYSTEM_LIBS=1 \
+		-DWITH_ZLIB=system \
+		-DWITH_ZSTD=system
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
 PORTDOCS=	*
+
 OPTIONS_DEFINE=	DOCS
+OPTIONS_SUB=	yes
+
+DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
+DOCS_CMAKE_ON=		-DDOC_DESTINATION="${DOCSDIR}" \
+			-DWITH_DOC=ON
 
 post-install:
+	@${RM} ${STAGEDIR}${PREFIX}/INFO_BIN
+	@${RM} ${STAGEDIR}${PREFIX}/INFO_SRC
+
+post-install-DOCS-on:
 	@${RM} ${STAGEDIR}${DOCSDIR}/INSTALL \
-		${STAGEDIR}${DOCSDIR}/COPYING
-
-.if defined(MAINTAINER_MODE)
-CMAKE_ARGS+=	-DMYSQLCPPCONN_TEST_NOT_IMPLEMENTED:BOOL=1 \
-		-DMYSQLCPPCONN_BUILD_EXAMPLES:BOOL=1
-
-do-test:
-#	These tests assume that a database is running on localhost,
-#	with user:root and pass:root
-	(cd ${WRKDIR}/.build ; \
-	test/CJUnitTestsPort/CJUnitTestsPort --verbose ; \
-	test/driver_test --verbose ; \
-	test/static_test --verbose ; \
-	examples/connect --verbose ; \
-	examples/connection_meta_schemaobj --verbose ; \
-	examples/debug --verbose ; \
-	examples/dynamic_load --verbose ; \
-	examples/exceptions --verbose ; \
-	examples/prepared_statement --verbose ; \
-	examples/resultset --verbose ; \
-	examples/resultset_binary --verbose ; \
-	examples/resultset_meta --verbose ; \
-	examples/resultset_types --verbose ; \
-	examples/statement --verbose ; \
-	test/unit/classes/art_resultset --verbose ; \
-	test/unit/classes/connection --verbose ; \
-	test/unit/classes/databasemetadata --verbose ; \
-	test/unit/classes/parametermetadata --verbose ; \
-	test/unit/classes/preparedstatement --verbose ; \
-	test/unit/classes/resultset --verbose ; \
-	test/unit/classes/resultsetmetadata --verbose ; \
-	test/unit/classes/savepoint --verbose ; \
-	test/unit/classes/statement )
-.endif
+		${STAGEDIR}${DOCSDIR}/LICENSE.txt
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	cd ${BUILD_WRKSRC}/doc && \
+		${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

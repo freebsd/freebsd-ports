@@ -1,4 +1,4 @@
---- chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.ts.orig	2022-12-01 10:35:46 UTC
+--- chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.ts.orig	2023-01-17 19:19:00 UTC
 +++ chrome/browser/resources/settings/appearance_page/appearance_browser_proxy.ts
 @@ -16,7 +16,7 @@ export interface AppearanceBrowserProxy {
  
@@ -9,7 +9,7 @@
    useGtkTheme(): void;
    useQtTheme(): void;
    // </if>
-@@ -45,7 +45,7 @@ export class AppearanceBrowserProxyImpl implements App
+@@ -41,7 +41,7 @@ export class AppearanceBrowserProxyImpl implements App
      chrome.send('useDefaultTheme');
    }
  

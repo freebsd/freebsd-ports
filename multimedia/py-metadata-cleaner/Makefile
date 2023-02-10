@@ -4,7 +4,7 @@ DISTVERSION=	2.2.5
 CATEGORIES=	multimedia audio graphics python textproc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Python GTK application to view and clean metadata in files, using mat2
 WWW=		https://gitlab.com/rmnvgr/metadata-cleaner
 

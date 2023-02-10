@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-i18n>=0.7,2<2,2:devel/rubygem-i18n \
 		rubygem-railties70>=6.0.0<8:www/rubygem-railties70
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

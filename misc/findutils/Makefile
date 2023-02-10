@@ -3,7 +3,7 @@ DISTVERSION=	4.9.0
 CATEGORIES=	misc
 MASTER_SITES=	GNU
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	GNU find utilities
 WWW=		https://www.gnu.org/software/findutils/
 

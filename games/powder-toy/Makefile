@@ -1,7 +1,7 @@
 PORTNAME=	powder-toy
-PORTVERSION=	96.2.350
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+DISTVERSION=	97.0.352
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -14,15 +14,19 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfftw3f.so:math/fftw3-float \
 		libfftw3.so:math/fftw3 \
-		libcurl.so:ftp/curl
+		libcurl.so:ftp/curl \
+		libpng.so:graphics/png \
+		libjsoncpp.so:devel/jsoncpp
 
+USES=		compiler:c++17-lang desktop-file-utils luajit:luajit-openresty \
+		meson pkgconfig python:build sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	The-Powder-Toy
 GH_PROJECT=	The-Powder-Toy
-
-USES=		compiler:c++11-lang luajit:luajit-openresty meson pkgconfig \
-		python:build sdl
 USE_SDL=	sdl2
+MESON_ARGS=	-Dapp_exe="${PORTNAME}"
+
+CONFLICTS_INSTALL=powder-toy-devel
 
 PORTDOCS=	README.md changelog.txt
 
@@ -37,17 +41,18 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|python3|${PYTHON_CMD}|' ${WRKSRC}/meson.build
 
 do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/powder ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/resources/powder.desktop ${STAGEDIR}${PREFIX}/share/applications/powder-toy.desktop
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/powder-toy ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_DATA} ${BUILD_WRKSRC}/resources/powder.desktop ${STAGEDIR}${PREFIX}/share/applications/uk.co.powdertoy.tpt.desktop  # as mentioned in appdata
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/appdata
-	${INSTALL_DATA} ${WRKSRC}/resources/powder.appdata.xml ${STAGEDIR}${PREFIX}/share/appdata/powder-toy.appdata.xml
-.for s in 16 24 32 48 128 256
+	${INSTALL_DATA} ${BUILD_WRKSRC}/resources/appdata.xml ${STAGEDIR}${PREFIX}/share/appdata/powder-toy.appdata.xml
+.for s in 16 24 32 48 256
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps
-	${INSTALL_DATA} ${WRKSRC}/resources/icon/powder-${s}.png \
-		${STAGEDIR}${PREFIX}/share/icons/hicolor/${s}x${s}/apps/powder-toy.png
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/resources/icon/powder-32.png \
-		${STAGEDIR}${PREFIX}/share/pixmaps/powder-toy.png
+	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe_16.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/16x16/apps/powder-toy.png
+	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe_32.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/24x24/apps/powder-toy.png # for e.g. lxpanel
+	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe_32.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/32x32/apps/powder-toy.png
+	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe_48.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/48x48/apps/powder-toy.png
+	${INSTALL_DATA} ${WRKSRC}/resources/generated_icons/icon_exe.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/powder-toy.png
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}

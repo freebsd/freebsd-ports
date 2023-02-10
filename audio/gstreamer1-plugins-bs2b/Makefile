@@ -14,4 +14,3 @@ LIB_DEPENDS= libbs2b.so:audio/libbs2b
 MESON_ARGS+= -Dgpl=enabled
 
 .include "${MASTERDIR}/Makefile"
-

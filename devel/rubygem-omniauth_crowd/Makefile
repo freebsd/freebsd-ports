@@ -16,7 +16,6 @@ RUN_DEPENDS?=	rubygem-activesupport61>=0:devel/rubygem-activesupport61 \
 		rubygem-omniauth1>=1.0<2:security/rubygem-omniauth1
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

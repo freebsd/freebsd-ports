@@ -15,7 +15,6 @@
     SUBDIR += catgirl
     SUBDIR += cgiirc
     SUBDIR += ctrlproxy
-    SUBDIR += cwirc
     SUBDIR += dancer
     SUBDIR += darkbot
     SUBDIR += dircproxy

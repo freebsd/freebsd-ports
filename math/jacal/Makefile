@@ -1,11 +1,11 @@
 PORTNAME=	jacal
-PORTVERSION=	1c7
+PORTVERSION=	1c8
 CATEGORIES=	math
 MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Symbolic mathematics program written in Scheme
-WWW=		https://swissnet.ai.mit.edu/~jaffer/JACAL.html
+WWW=		https://people.csail.mit.edu/jaffer/JACAL
 
 LICENSE=	GPLv3
 

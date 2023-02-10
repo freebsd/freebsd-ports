@@ -27,7 +27,7 @@ PERL_CONFIGURE_WITH=	perl
 PYTHON_USES=	python gettext-runtime
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_CMD}-config
 PYTHON_CONFIGURE_OFF=	--without-python
-RUBY_USE=	ruby=yes
+RUBY_USES=	ruby
 RUBY_CONFIGURE_WITH=	ruby
 TCL_USES=	tcl
 TCL_CONFIGURE_ON=	--with-tcl=${TCL_LIBDIR}/tclConfig.sh

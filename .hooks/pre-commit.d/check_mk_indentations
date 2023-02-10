@@ -3,6 +3,11 @@
 # Check that Mk/ files are properly indented
 #
 
+common_functions="$(realpath "$(dirname "$0")")/common.sh"
+if [ -r "${common_functions}" ]; then
+	. "${common_functions}"
+fi
+
 check_indentation() {
 	local mkfile="$1"
 	local name=$(echo "${mkfile}" | awk -F / '{print $NF}')
@@ -13,12 +18,12 @@ check_indentation() {
 	fi
 	cp ${mkfile} ${tempdir} && Tools/scripts/indent_make_if.pl ${tempdir}/${name}
 	if [ $? -ne 0 ] ; then
-		echo "[pre-commit] failed to run Tools/scripts/indent_make_if.pl"
+		pre_commit_error "failed to run Tools/scripts/indent_make_if.pl"
 		exit 2
 	fi
 	cmp -s ${tempdir}/*
 	if [ $? -ne 0 ] ; then
-		echo "[pre-commit] ${name} is not properly indented -- please use ${tempdir}/${name} which was created using Tools/scripts/indent_make_if.pl"
+		pre_commit_error "${name} is not properly indented -- please use ${tempdir}/${name} which was created using Tools/scripts/indent_make_if.pl"
 		exit 1
 	fi
 }

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-multi_json>=1.7<2:devel/rubygem-multi_json \
 		rubygem-omniauth-oauth>=1.0<2:net/rubygem-omniauth-oauth
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

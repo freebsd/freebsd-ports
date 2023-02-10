@@ -33,6 +33,8 @@ lib/mysql/libmysqlclient.so.21
 lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.21
+@comment lib/private/libprotobuf-lite.so.3.19.4
+@comment lib/private/libprotobuf.so.3.19.4
 %%SASLCLIENT%%lib/mysql/plugin/authentication_ldap_sasl_client.so
 lib/mysql/plugin/authentication_fido_client.so
 lib/mysql/plugin/authentication_oci_client.so

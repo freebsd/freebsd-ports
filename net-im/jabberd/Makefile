@@ -80,7 +80,7 @@ BDB_USES=		bdb
 BDB_CONFIGURE_ENABLE=	db
 BDB_CONFIGURE_ON=	--oldincludedir=/nonexistant
 
-LDAP_USE=		OPENLDAP=yes
+LDAP_USES=		ldap
 LDAP_CONFIGURE_ENABLE=	ldap
 
 FS_CONFIGURE_ENABLE=	fs

@@ -138,7 +138,7 @@ PERIODIC_DESC=	modify/create periodic.conf
 .include "${.CURDIR}/Makefile.own"
 
 .if ${PORT_OPTIONS:MLDAP}
-USE_OPENLDAP=	yes
+USES+=	ldap
 WITH_AUTH_LDAP=	yes
 RUN_DEPENDS+=	${LOCALBASE}/lib/courier-authlib/libauthldap.so:net/courier-authlib-ldap
 CONFIGURE_ARGS+=--with-ldapaliasd

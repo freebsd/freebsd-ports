@@ -1,5 +1,5 @@
 PORTNAME=	rack-proxy
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-rack>=0,3:www/rubygem-rack
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

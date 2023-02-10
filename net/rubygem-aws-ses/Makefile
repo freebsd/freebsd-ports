@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-builder>=0:devel/rubygem-builder \
 		rubygem-xml-simple>=0:textproc/rubygem-xml-simple
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

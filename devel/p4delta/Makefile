@@ -9,7 +9,8 @@ WWW=		http://p4delta.sourceforge.net/
 
 RUN_DEPENDS=	${LOCALBASE}/bin/p4:devel/p4
 
-USE_RUBY=	yes
+USES=	ruby
+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/p4delta man/man1/p4delta.1.gz

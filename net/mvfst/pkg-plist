@@ -2,7 +2,6 @@ include/quic/QuicConstants.h
 include/quic/QuicException.h
 include/quic/api/IoBufQuicBatch.h
 include/quic/api/LoopDetectorCallback.h
-include/quic/api/QuicAckFrequencyFunctions.h
 include/quic/api/QuicBatchWriter.h
 include/quic/api/QuicPacketScheduler.h
 include/quic/api/QuicSocket.h
@@ -41,7 +40,7 @@ include/quic/common/FunctionLooper.h
 include/quic/common/IntervalSet-inl.h
 include/quic/common/IntervalSet.h
 include/quic/common/MonitoredObject.h
-include/quic/common/SmallVec.h
+include/quic/common/SmallCollections.h
 include/quic/common/SocketUtil.h
 include/quic/common/TimeUtil.h
 include/quic/common/Timers.h
@@ -141,6 +140,7 @@ include/quic/state/LossState.h
 include/quic/state/OutstandingPacket.h
 include/quic/state/PacketEvent.h
 include/quic/state/PendingPathRateLimiter.h
+include/quic/state/QuicAckFrequencyFunctions.h
 include/quic/state/QuicConnectionStats.h
 include/quic/state/QuicPacingFunctions.h
 include/quic/state/QuicPriorityQueue.h

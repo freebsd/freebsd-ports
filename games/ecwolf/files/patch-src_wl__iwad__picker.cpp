@@ -1,19 +1,11 @@
---- src/wl_iwad_picker.cpp.orig	2018-08-17 16:43:51 UTC
+--- src/wl_iwad_picker.cpp.orig	2023-01-18 23:02:12 UTC
 +++ src/wl_iwad_picker.cpp
-@@ -1,6 +1,7 @@
- // From ZDoom!
- 
- #include <algorithm>
+@@ -27,6 +27,8 @@ void TXT_PickWad(TXT_UNCAST_ARG(widget), int wad)
+ int I_PickIWad_Cocoa (WadStuff *wads, int numwads, bool showwin, int defaultiwad);
+ #elif defined(__ANDROID__)
+ int I_PickIWad_Android (WadStuff *wads, int numwads, bool showwin, int defaultiwad);
++#elif defined(__FreeBSD__)
 +#include <sys/wait.h>
+ #endif
  
- #include "zdoomsupport.h"
- 
-@@ -227,7 +228,7 @@ int I_PickIWad (WadStuff *wads, int numwads, bool show
- 	const char *str;
- 	if((str=getenv("KDE_FULL_SESSION")) && strcmp(str, "true") == 0)
- 	{
--		FString cmd("kdialog --title \""GAMESIG" "DOTVERSIONSTR": Select an IWAD to use\""
-+		FString cmd("kdialog --title \"" GAMESIG " " DOTVERSIONSTR ": Select an IWAD to use\""
- 		            " --menu \"" GAMENAME " found more than one IWAD\n"
- 		            "Select from the list below to determine which one to use:\"");
- 
+ #ifndef NO_GTK

@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-rubyinline>=3.9<4:devel/rubygem-rubyinline
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

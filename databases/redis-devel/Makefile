@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	7.0.7.20230107
+DISTVERSION=	7.0.8.20230131
 CATEGORIES=	databases
 PKGNAMESUFFIX=	-devel
 
@@ -13,12 +13,12 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES+=		compiler:c11 cpe gmake
 CPE_VENDOR=	redislabs
 USE_GITHUB=	yes
-GH_TAGNAME=	d0cc3de73
+GH_TAGNAME=	46393f981
 
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-CONFLICTS_INSTALL=	redis redis6 # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis redis6 redis62 # etc/rc.d/redis
 
 PORTSCOUT=	ignore:1
 
@@ -48,7 +48,7 @@ TLS_USES=		ssl
 TLS_MAKE_ENV=		BUILD_TLS=yes
 TRIB_CATEGORIES=	ruby
 TRIB_RUN_DEPENDS=	rubygem-redis>=2.2:databases/rubygem-redis
-TRIB_USE=		RUBY=yes
+TRIB_USES=		ruby
 
 .include <bsd.port.pre.mk>
 
@@ -71,7 +71,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
 		${PATCHDIR}/extra-patch-src-function_lua.c \
 		${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
 .  endif
-. endif
+.endif
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
 

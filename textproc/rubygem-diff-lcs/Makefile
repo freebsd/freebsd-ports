@@ -14,7 +14,6 @@ LICENSE_FILE_GPLv2+ =	${WRKSRC}/docs/COPYING.txt
 LICENSE_FILE_MIT=	${WRKSRC}/License.md
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

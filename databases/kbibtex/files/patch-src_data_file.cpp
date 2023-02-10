@@ -1,8 +1,8 @@
---- src/data/file.cpp.orig	2015-08-09 18:14:19 UTC
+--- src/data/file.cpp.orig	2023-01-12 18:57:44 UTC
 +++ src/data/file.cpp
-@@ -42,8 +42,8 @@ const QString File::ProtectCasing = QLat
- const QString File::NameFormatting = QLatin1String("NameFormatting");
- const QString File::ListSeparator = QLatin1String("ListSeparator");
+@@ -44,8 +44,8 @@ const QString File::ListSeparator = QStringLiteral("Li
+ const QString File::NameFormatting = QStringLiteral("NameFormatting");
+ const QString File::ListSeparator = QStringLiteral("ListSeparator");
  
 -const quint64 valid = 0x08090a0b0c0d0e0f;
 -const quint64 invalid = 0x0102030405060708;

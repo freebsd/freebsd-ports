@@ -178,7 +178,6 @@ export_variables()
 remark_precmd()
 {
 	install -d -o ${remark_user} %%REMARK_PIDDIR%%
-        install -o ${remark_user} /dev/null ${pidfile}
 	install -d -o ${remark_user} ${remark_store_bolt_path}
 
 	if [ -z "${remark_url}" ]; then

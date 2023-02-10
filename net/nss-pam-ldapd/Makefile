@@ -12,10 +12,9 @@ WWW=		https://arthurdejong.org/nss-pam-ldapd/
 LICENSE=		LGPL21 LGPL3
 LICENSE_COMB=		dual
 
-USES=			cpe
+USES=			cpe ldap
 CPE_VENDOR=		arthurdejong
 GNU_CONFIGURE=		yes
-USE_OPENLDAP=		yes
 USE_RC_SUBR=		nslcd
 PAM_LDAP_SHMAJOR=	1
 NSS_LDAP_SHMAJOR=	1

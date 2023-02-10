@@ -10,7 +10,6 @@ WWW=		https://thrift.apache.org/
 
 LICENSE=	APACHE20
 
-USE_RUBY=	yes
 USES=		cpe gem
 CPE_VENDOR=	apache
 

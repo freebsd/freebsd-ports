@@ -9,11 +9,11 @@
  # Format support
  BeautifulSoup4>=4.3  # Trados
  # Encoding detection
--charset-normalizer==3.0.0   # chardet
-+charset-normalizer>=3.0.0   # chardet
+-charset-normalizer==3.0.1   # chardet
++charset-normalizer>=3.0.1   # chardet
  # Tmserver backend
--cheroot==8.6.0       # tmserver
-+cheroot>=8.6.0       # tmserver
+-cheroot==9.0.0       # tmserver
++cheroot>=9.0.0       # tmserver
  # Format support
 -fluent.syntax==0.18.1 # Fluent
 +fluent.syntax>=0.18.1 # Fluent
@@ -21,7 +21,7 @@
 -iniparse==0.5        # INI
 +iniparse>=0.5        # INI
  # Format support
--phply==1.2.5         # PHP
+-phply==1.2.6         # PHP
 +phply>=1.2.5         # PHP
  # To provide translations for language names without need for OS package.
 -pycountry==22.3.5          # Languages

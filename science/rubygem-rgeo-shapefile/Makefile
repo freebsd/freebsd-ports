@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-dbf>=4.0<5:databases/rubygem-dbf \
 		rubygem-rgeo>=1.0:science/rubygem-rgeo
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

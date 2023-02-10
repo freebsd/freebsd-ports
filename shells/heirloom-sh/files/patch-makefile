@@ -1,0 +1,44 @@
+--- makefile.orig	2005-07-06 10:59:57 UTC
++++ makefile
+@@ -44,12 +44,12 @@ LNS=ln -s
+ #
+ # Compiler flags.
+ #
+-CFLAGS=-O
++#CFLAGS=-O
+ 
+ #
+ # Flags for the C preprocessor.
+ #
+-CFLAGS=-D_GNU_SOURCE
++CFLAGS+=-D_GNU_SOURCE
+ 
+ #
+ # A define for large file support, if necessary.
+@@ -59,12 +59,12 @@ LARGEF=-D_FILE_OFFSET_BITS=64L
+ #
+ # The compiler warning options.
+ #
+-WERROR=-Werror
++#WERROR=-Werror
+ WARN = -Wchar-subscripts -Wformat -Wno-format-y2k -Wimplicit \
+ 	-Wmissing-braces -Wsequence-point -Wreturn-type -Wtrigraphs \
+ 	-Wunused-function -Wunused-label -Wunused-variable -Wunused-value \
+ 	-Wuninitialized -Wmultichar -Wpointer-arith $(WERROR)
+-WARN=
++#WARN=
+ 
+ #
+ # End of adjustable settings.
+@@ -99,8 +99,9 @@ install: all
+ 	cd $(ROOT)$(SV3BIN) && $(LNS) sh jsh
+ 	test -d $(ROOT)$(MANDIR)/man1 || mkdir -p $(ROOT)$(MANDIR)/man1
+ 	$(UCBINST) -c -m 644 sh.1.out $(ROOT)$(MANDIR)/man1/sh.1
+-	rm -f $(ROOT)$(MANDIR)/man1/jsh.1
+-	cd $(ROOT)$(MANDIR)/man1 && $(LNS) sh.1 jsh.1
++	gzip $(ROOT)$(MANDIR)/man1/sh.1
++	rm -f $(ROOT)$(MANDIR)/man1/jsh.1.gz
++	cd $(ROOT)$(MANDIR)/man1 && $(LNS) sh.1.gz jsh.1.gz
+ 
+ maninstall: sh.1.out
+ 	$(UCBINST) -c -m 644 sh.1.out $(ROOT)$(MANDIR)/man1/sh.1

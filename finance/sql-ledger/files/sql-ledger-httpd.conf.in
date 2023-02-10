@@ -3,11 +3,9 @@ Alias /sql-ledger %%WWWDIR%%
   AllowOverride All
   AddHandler cgi-script .pl
   Options ExecCGI Includes FollowSymlinks
-  Order Allow,Deny
-  Allow from All
+  Require all granted
 </Directory>
 
 <Directory %%WWWDIR%%/users>
-  Order Deny,Allow
-  Deny from All
+  Require all denied
 </Directory>

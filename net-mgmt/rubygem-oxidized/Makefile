@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-asetus>=0.1<1:devel/rubygem-asetus \
 		rubygem-slop>=4.6<5:devel/rubygem-slop
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 USE_RC_SUBR=	oxidized

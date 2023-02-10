@@ -1,11 +1,11 @@
 PORTNAME=	sofia-sip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.13.9
+DISTVERSION=	1.13.12
 CATEGORIES=	net
 
 MAINTAINER=	jailbird@fdf.net
 COMMENT=	Open-source SIP User-Agent library
-WWW=		http://sofia-sip.sourceforge.net/
+WWW=		https://github.com/freeswitch/sofia-sip/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-grape-entity>=0.6.0:devel/rubygem-grape-entity \
 		rubygem-grape-swagger>=1.2.0:devel/rubygem-grape-swagger
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

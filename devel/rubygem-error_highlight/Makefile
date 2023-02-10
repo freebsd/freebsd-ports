@@ -15,7 +15,6 @@ BROKEN_RUBY27=	yes
 BROKEN_RUBY30=	yes
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

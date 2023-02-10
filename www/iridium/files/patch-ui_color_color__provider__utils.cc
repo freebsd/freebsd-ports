@@ -1,6 +1,6 @@
---- ui/color/color_provider_utils.cc.orig	2022-12-01 10:35:46 UTC
+--- ui/color/color_provider_utils.cc.orig	2023-01-17 19:19:00 UTC
 +++ ui/color/color_provider_utils.cc
-@@ -88,7 +88,7 @@ base::StringPiece SystemThemeName(ui::SystemTheme syst
+@@ -103,7 +103,7 @@ base::StringPiece SystemThemeName(ui::SystemTheme syst
    switch (system_theme) {
      case ui::SystemTheme::kDefault:
        return "kDefault";

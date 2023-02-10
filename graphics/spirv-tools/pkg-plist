@@ -27,6 +27,9 @@ lib/cmake/SPIRV-Tools-opt/SPIRV-Tools-optTargets.cmake
 lib/cmake/SPIRV-Tools-reduce/SPIRV-Tools-reduceConfig.cmake
 lib/cmake/SPIRV-Tools-reduce/SPIRV-Tools-reduceTarget-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPIRV-Tools-reduce/SPIRV-Tools-reduceTarget.cmake
+lib/cmake/SPIRV-Tools-tools/SPIRV-Tools-toolsConfig.cmake
+lib/cmake/SPIRV-Tools-tools/SPIRV-Tools-toolsTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/SPIRV-Tools-tools/SPIRV-Tools-toolsTargets.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsConfig.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/SPIRV-Tools/SPIRV-ToolsTarget.cmake

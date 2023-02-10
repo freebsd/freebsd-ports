@@ -294,6 +294,7 @@
     SUBDIR += pipe-viewer
     SUBDIR += pipewire
     SUBDIR += pitivi
+    SUBDIR += plasma5-plank-player
     SUBDIR += playerctl
     SUBDIR += plexmediaserver
     SUBDIR += plexmediaserver-plexpass
@@ -420,6 +421,7 @@
     SUBDIR += vmaf
     SUBDIR += vtkmpeg2encode
     SUBDIR += vvdec
+    SUBDIR += vvenc
     SUBDIR += w_scan2
     SUBDIR += webcamd
     SUBDIR += webcamoid

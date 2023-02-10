@@ -1,5 +1,5 @@
 PORTNAME=	emacs
-DISTVERSION=	30.0.50.20230101
+DISTVERSION=	30.0.50.20230201
 PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -24,14 +24,14 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	4e4a808
+GH_TAGNAME=	0214e90
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
 			--localstatedir=/var \
+			--without-gconf \
 			--without-libsystemd \
-			--without-selinux \
-			--without-gconf
+			--without-selinux
 .if ${FLAVOR:U} == nox
 CONFIGURE_ARGS+=	--with-sound=no \
 			--with-x-toolkit=no \
@@ -69,26 +69,26 @@ SUB_LIST=	EMACS_VER=${DISTVERSION:R} \
 		NATIVECOMP_COMMENT_START=${NATIVECOMP_COMMENT_START}
 
 INFO=		auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
-		ediff edt efaq eglot eieio eintr elisp emacs emacs-gnutls emacs-mime \
-		epa erc ert eshell eudc eww flymake forms gnus htmlfontify \
-		idlwave ido info mairix-el message mh-e modus-themes newsticker \
-		nxml-mode octave-mode org pcl-cvs pgg rcirc reftex remember \
-		sasl sc semantic ses sieve smtpmail speedbar srecode todo-mode \
-		tramp transient url use-package vhdl-mode vip viper vtable widget \
-		wisent woman
+		ediff edt efaq eglot eieio eintr elisp emacs emacs-gnutls \
+		emacs-mime epa erc ert eshell eudc eww flymake forms gnus \
+		htmlfontify idlwave ido info mairix-el message mh-e \
+		modus-themes newsticker nxml-mode octave-mode org pcl-cvs pgg \
+		rcirc reftex remember sasl sc semantic ses sieve smtpmail \
+		speedbar srecode todo-mode tramp transient url use-package \
+		vhdl-mode vip viper vtable widget wisent woman
 INFO_PATH=	${DATADIR_REL}/info
 PLIST_SUB=	EMACS_VER=${DISTVERSION:R} \
 		GNU_HOST=${CONFIGURE_TARGET}
 
-OPTIONS_DEFINE=			ACL DBUS GNUTLS GSETTINGS HARFBUZZ JSON \
-				LCMS2 M17N MAILUTILS MODULES NATIVECOMP OTF \
-				PGTK SCROLLBARS SOURCES SQLITE3 THREADS \
-				TREESITTER XFT XIM XML XWIDGETS
+OPTIONS_DEFINE=			ACL DBUS GNUTLS GSETTINGS HARFBUZZ JSON LCMS2 \
+				M17N MAILUTILS MODULES NATIVECOMP OTF PGTK \
+				SCROLLBARS SOURCES SQLITE3 THREADS TREESITTER \
+				XFT XIM XML XWIDGETS
 OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
 				HARFBUZZ JPEG JSON KQUEUE LCMS2 MAILUTILS \
 				MODULES NATIVECOMP OSS PGTK PNG SCROLLBARS \
-				SOURCES SQLITE3 SVG THREADS TREESITTER \
-				TIFF WEBP XML
+				SOURCES SQLITE3 SVG THREADS TIFF TREESITTER \
+				WEBP XML
 OPTIONS_GROUP=			GRAPHICS
 OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF WEBP XPM
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
@@ -96,10 +96,10 @@ OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
 OPTIONS_RADIO_SOUND=		ALSA OSS
 OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 XAW XAW3D
 .if ${FLAVOR:U} == nox
-OPTIONS_EXCLUDE=		ALSA CAIRO DBUS GFILE GIF GSETTINGS GTK2 \
-				GTK3 HARFBUZZ JPEG LCMS2 M17N MAGICK OSS OTF \
-				PGTK PNG SCROLLBARS SVG TIFF WEBP XAW XAW3D XFT \
-				XIM XPM XWIDGETS
+OPTIONS_EXCLUDE=		ALSA CAIRO DBUS GFILE GIF GSETTINGS GTK2 GTK3 \
+				HARFBUZZ JPEG LCMS2 M17N MAGICK OSS OTF PGTK \
+				PNG SCROLLBARS SVG TIFF WEBP XAW XAW3D XFT XIM \
+				XPM XWIDGETS
 .endif
 OPTIONS_SUB=			YES
 
@@ -173,7 +173,7 @@ MAILUTILS_CONFIGURE_WITH=	mailutils
 MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 				ac_cv_prog_liblockfile=no
 MODULES_CONFIGURE_WITH=		modules
-NATIVECOMP_USE=			GCC=11+
+NATIVECOMP_USE=			GCC=yes
 NATIVECOMP_CONFIGURE_WITH=	native-compilation
 NATIVECOMP_MAKE_ARGS=		NATIVE_FULL_AOT=1
 OSS_CONFIGURE_ON=		--with-sound=oss
@@ -194,8 +194,8 @@ SVG_CONFIGURE_WITH=		rsvg
 THREADS_CONFIGURE_WITH=		threads
 TIFF_LIB_DEPENDS=		libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=		tiff
-TREESITTER_CONFIGURE_WITH=	tree-sitter
 TREESITTER_LIB_DEPENDS=		libtree-sitter.so:devel/tree-sitter
+TREESITTER_CONFIGURE_WITH=	tree-sitter
 WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
 WEBP_CONFIGURE_WITH=		webp
 XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/Xaw3d

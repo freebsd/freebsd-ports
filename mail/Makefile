@@ -239,6 +239,7 @@
     SUBDIR += minimalist
     SUBDIR += missey
     SUBDIR += mlmmj
+    SUBDIR += mlmmj-archive-mid
     SUBDIR += mlmmj-archiver
     SUBDIR += mlmmj-webview
     SUBDIR += mls
@@ -594,6 +595,7 @@
     SUBDIR += rubygem-exception_notification
     SUBDIR += rubygem-gitlab-mail_room
     SUBDIR += rubygem-mail
+    SUBDIR += rubygem-mail27
     SUBDIR += rubygem-mail_room
     SUBDIR += rubygem-mailboxer
     SUBDIR += rubygem-mailfactory

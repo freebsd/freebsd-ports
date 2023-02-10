@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-ffi>=1.9<2:devel/rubygem-ffi
 
 USES=		gem gmake
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

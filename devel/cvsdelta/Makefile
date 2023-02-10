@@ -8,7 +8,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cvsdelta summarizes differences between local and in-cvs files
 WWW=		http://cvsdelta.sourceforge.net/
 
-USE_RUBY=	yes
+USES=	ruby
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/cvsdelta \

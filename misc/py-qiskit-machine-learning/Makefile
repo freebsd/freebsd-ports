@@ -1,7 +1,7 @@
 PORTNAME=	qiskit-machine-learning
 DISTVERSION=	0.5.0
 CATEGORIES=	misc python # quantum-computing, machine-learning
-#MASTER_SITES=	CHEESESHOP
+#MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org

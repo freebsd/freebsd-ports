@@ -19,6 +19,5 @@ RUN_DEPENDS=	rubygem-actionview61>=6.0:devel/rubygem-actionview61 \
 		rubygem-smart_properties>0:devel/rubygem-smart_properties
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

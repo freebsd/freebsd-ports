@@ -17,7 +17,6 @@ RUN_DEPENDS=	rubygem-json>=1.0:devel/rubygem-json \
 		rubygem-thor>=0.16.0:devel/rubygem-thor
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

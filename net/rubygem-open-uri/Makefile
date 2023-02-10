@@ -1,5 +1,5 @@
 PORTNAME=	open-uri
-PORTVERSION=	0.2.0
+PORTVERSION=	0.3.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-stringio>=0:devel/rubygem-stringio \
 		rubygem-uri>=0:net/rubygem-uri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

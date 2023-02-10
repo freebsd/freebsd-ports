@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-actionpack4>=4:www/rubygem-actionpack4 \
 		rubygem-request_store>=1.0<2:devel/rubygem-request_store
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

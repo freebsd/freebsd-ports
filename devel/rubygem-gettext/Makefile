@@ -18,7 +18,6 @@ RUN_DEPENDS=	rubygem-erubi>=0:www/rubygem-erubi \
 		rubygem-text>=1.3.0:textproc/rubygem-text
 
 USES=		gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

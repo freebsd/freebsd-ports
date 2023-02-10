@@ -1,6 +1,5 @@
 PORTNAME=	lua-language-server
-DISTVERSION=	3.6.4
-PORTREVISION=	1
+DISTVERSION=	3.6.10
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -15,13 +14,14 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 USES=		compiler:features dos2unix lua:build ninja:make
 USE_GITHUB=	yes
 GH_ACCOUNT=	sumneko
-GH_TUPLE=	actboy168:bee.lua:992cc57:bee/3rd/bee.lua \
-		actboy168:bee.lua:a04a515:bee_luamake/3rd/luamake/3rd/bee.lua \
-		actboy168:luamake:3f37edc:luamake/3rd/luamake \
-		cppcxy:EmmyLuaCodeStyle:ec2cd0e:emmyluacodestyle/3rd/EmmyLuaCodeStyle \
-		bjornbytes:lovr-docs:ec774d0:lovr/3rd/lovr-api \
-		love2d-community:love-api:f43dfa4:love/3rd/love-api \
-		sqmedeiros:lpeglabel:b5d7638:lpeglabel/3rd/lpeglabel
+GH_TUPLE=	actboy168:bee.lua:eefd184:bee/3rd/bee.lua \
+		actboy168:bee.lua:eff9325:bee_luamake/3rd/luamake/3rd/bee.lua \
+		actboy168:json.lua:be1d71f:json/3rd/json.lua \
+		actboy168:luamake:3d8d1fd:luamake/3rd/luamake \
+		cppcxy:EmmyLuaCodeStyle:9697aa8:emmyluacodestyle/3rd/EmmyLuaCodeStyle \
+		bjornbytes:lovr-docs:9d1c384:lovr/3rd/lovr-api \
+		love2d-community:love-api:495ecc7:love/3rd/love-api \
+		sqmedeiros:lpeglabel:e25eb35:lpeglabel/3rd/lpeglabel
 
 BINARY_ALIAS=	gcc=${CC}
 DOS2UNIX_FILES=	3rd/bee.lua/bee/thread/spinlock.h \

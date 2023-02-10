@@ -1,0 +1,2 @@
+interface_meta provides a convenient way to expose an extensible API with
+enforced method signatures and consistent documentation.

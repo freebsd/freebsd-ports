@@ -1,0 +1,137 @@
+--- src/Magnum/Platform/CMakeLists.txt.orig	2023-01-16 01:54:41 UTC
++++ src/Magnum/Platform/CMakeLists.txt
+@@ -156,7 +156,7 @@ if(MAGNUM_WITH_ANDROIDAPPLICATION)
+     set_target_properties(MagnumAndroidApplicationGlue PROPERTIES
+         CORRADE_USE_PEDANTIC_FLAGS OFF)
+ 
+-    add_library(MagnumAndroidApplication STATIC
++    add_library(MagnumAndroidApplication ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumAndroidApplication_SRCS}
+         ${MagnumAndroidApplication_HEADERS}
+         ${MagnumAndroidApplication_PRIVATE_HEADERS}
+@@ -194,7 +194,7 @@ if(MAGNUM_WITH_EMSCRIPTENAPPLICATION)
+     set(MagnumEmscriptenApplication_HEADERS
+         EmscriptenApplication.h)
+ 
+-    add_library(MagnumEmscriptenApplication STATIC
++    add_library(MagnumEmscriptenApplication ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumEmscriptenApplication_SRCS}
+         ${MagnumEmscriptenApplication_HEADERS}
+         ${MagnumEmscriptenApplication_PRIVATE_HEADERS})
+@@ -235,7 +235,7 @@ if(MAGNUM_WITH_GLFWAPPLICATION)
+         list(APPEND MagnumGlfwApplication_SRCS ${MagnumSomeContext_OBJECTS})
+     endif()
+ 
+-    add_library(MagnumGlfwApplication STATIC
++    add_library(MagnumGlfwApplication ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumGlfwApplication_SRCS}
+         ${MagnumGlfwApplication_HEADERS})
+     set_target_properties(MagnumGlfwApplication PROPERTIES
+@@ -300,7 +300,7 @@ if(MAGNUM_WITH_SDL2APPLICATION)
+         list(APPEND MagnumSdl2Application_SRCS ${MagnumSomeContext_OBJECTS})
+     endif()
+ 
+-    add_library(MagnumSdl2Application STATIC
++    add_library(MagnumSdl2Application ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumSdl2Application_SRCS}
+         ${MagnumSdl2Application_HEADERS})
+     set_target_properties(MagnumSdl2Application PROPERTIES
+@@ -384,7 +384,7 @@ if(MAGNUM_WITH_GLXAPPLICATION)
+         $<TARGET_OBJECTS:MagnumGlxContextObjects>)
+     set(MagnumGlxApplication_HEADERS GlxApplication.h)
+ 
+-    add_library(MagnumGlxApplication STATIC
++    add_library(MagnumGlxApplication ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumGlxApplication_SRCS}
+         ${MagnumGlxApplication_HEADERS})
+     set_target_properties(MagnumGlxApplication PROPERTIES
+@@ -441,7 +441,7 @@ if(MAGNUM_WITH_XEGLAPPLICATION)
+         $<TARGET_OBJECTS:MagnumEglContextObjects>)
+     set(MagnumXEglApplication_HEADERS XEglApplication.h)
+ 
+-    add_library(MagnumXEglApplication STATIC
++    add_library(MagnumXEglApplication ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumXEglApplication_SRCS}
+         ${MagnumXEglApplication_HEADERS})
+     set_target_properties(MagnumXEglApplication PROPERTIES
+@@ -478,7 +478,7 @@ if(MAGNUM_WITH_WINDOWLESSEGLAPPLICATION)
+     set(MagnumWindowlessEglApplication_PRIVATE_HEADERS
+         Implementation/Egl.h)
+ 
+-    add_library(MagnumWindowlessEglApplication STATIC
++    add_library(MagnumWindowlessEglApplication ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumWindowlessEglApplication_SRCS}
+         ${MagnumWindowlessEglApplication_HEADERS}
+         ${MagnumWindowlessEglApplication_PRIVATE_HEADERS})
+@@ -517,7 +517,7 @@ if(MAGNUM_WITH_WINDOWLESSGLXAPPLICATION)
+         $<TARGET_OBJECTS:MagnumGlxContextObjects>)
+     set(MagnumWindowlessGlxApplication_HEADERS WindowlessGlxApplication.h)
+ 
+-    add_library(MagnumWindowlessGlxApplication STATIC
++    add_library(MagnumWindowlessGlxApplication ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumWindowlessGlxApplication_SRCS}
+         ${MagnumWindowlessGlxApplication_HEADERS})
+     set_target_properties(MagnumWindowlessGlxApplication PROPERTIES
+@@ -569,7 +569,7 @@ if(MAGNUM_WITH_WINDOWLESSIOSAPPLICATION)
+     set(MagnumWindowlessIosApplication_HEADERS
+         WindowlessIosApplication.h)
+ 
+-    add_library(MagnumWindowlessIosApplication STATIC
++    add_library(MagnumWindowlessIosApplication ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumWindowlessIosApplication_SRCS}
+         ${MagnumWindowlessIosApplication_HEADERS})
+     set_target_properties(MagnumWindowlessIosApplication PROPERTIES
+@@ -605,7 +605,7 @@ if(MAGNUM_WITH_WINDOWLESSWGLAPPLICATION)
+         $<TARGET_OBJECTS:MagnumWglContextObjects>)
+     set(MagnumWindowlessWglApplication_HEADERS WindowlessWglApplication.h)
+ 
+-    add_library(MagnumWindowlessWglApplication STATIC
++    add_library(MagnumWindowlessWglApplication ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumWindowlessWglApplication_SRCS}
+         ${MagnumWindowlessWglApplication_HEADERS})
+     set_target_properties(MagnumWindowlessWglApplication PROPERTIES
+@@ -642,7 +642,7 @@ if(MAGNUM_WITH_WINDOWLESSCGLAPPLICATION)
+         $<TARGET_OBJECTS:MagnumCglContextObjects>)
+     set(MagnumWindowlessCglApplication_HEADERS WindowlessCglApplication.h)
+ 
+-    add_library(MagnumWindowlessCglApplication STATIC
++    add_library(MagnumWindowlessCglApplication ${FREEBSD_APP_MODULES_LINK_TYPE}
+         ${MagnumWindowlessCglApplication_SRCS}
+         ${MagnumWindowlessCglApplication_HEADERS})
+     set_target_properties(MagnumWindowlessCglApplication PROPERTIES
+@@ -765,7 +765,7 @@ if(NEED_CGLCONTEXT OR MAGNUM_WITH_CGLCONTEXT)
+             message(SEND_ERROR "CglContext is available only if MAGNUM_TARGET_GL is enabled")
+         endif()
+ 
+-        add_library(MagnumCglContext STATIC
++        add_library(MagnumCglContext ${FREEBSD_APP_MODULES_LINK_TYPE}
+             $<TARGET_OBJECTS:MagnumCglContextObjects>
+             ${PROJECT_SOURCE_DIR}/src/dummy.cpp) # XCode workaround, see file comment for details
+         set_target_properties(MagnumCglContext PROPERTIES
+@@ -807,7 +807,7 @@ if(NEED_EGLCONTEXT OR MAGNUM_WITH_EGLCONTEXT)
+             message(SEND_ERROR "EglContext is available only if MAGNUM_TARGET_GL is enabled")
+         endif()
+ 
+-        add_library(MagnumEglContext STATIC
++        add_library(MagnumEglContext ${FREEBSD_APP_MODULES_LINK_TYPE}
+             $<TARGET_OBJECTS:MagnumEglContextObjects>
+             ${PROJECT_SOURCE_DIR}/src/dummy.cpp) # XCode workaround, see file comment for details
+         set_target_properties(MagnumEglContext PROPERTIES
+@@ -844,7 +844,7 @@ if(NEED_GLXCONTEXT OR MAGNUM_WITH_GLXCONTEXT)
+             message(SEND_ERROR "GlxContext is available only if MAGNUM_TARGET_GL is enabled")
+         endif()
+ 
+-        add_library(MagnumGlxContext STATIC $<TARGET_OBJECTS:MagnumGlxContextObjects>)
++        add_library(MagnumGlxContext ${FREEBSD_APP_MODULES_LINK_TYPE} $<TARGET_OBJECTS:MagnumGlxContextObjects>)
+         set_target_properties(MagnumGlxContext PROPERTIES
+             DEBUG_POSTFIX "-d")
+         if(NOT MAGNUM_BUILD_STATIC OR MAGNUM_BUILD_STATIC_PIC)
+@@ -889,7 +889,7 @@ if(NEED_WGLCONTEXT OR MAGNUM_WITH_WGLCONTEXT)
+             message(SEND_ERROR "WglContext is available only if MAGNUM_TARGET_GL is enabled")
+         endif()
+ 
+-        add_library(MagnumWglContext STATIC $<TARGET_OBJECTS:MagnumWglContextObjects>)
++        add_library(MagnumWglContext ${FREEBSD_APP_MODULES_LINK_TYPE} $<TARGET_OBJECTS:MagnumWglContextObjects>)
+         set_target_properties(MagnumWglContext PROPERTIES
+             DEBUG_POSTFIX "-d")
+         if(NOT MAGNUM_BUILD_STATIC OR MAGNUM_BUILD_STATIC_PIC)

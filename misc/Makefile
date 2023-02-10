@@ -99,6 +99,7 @@
     SUBDIR += explosions
     SUBDIR += ezc3d
     SUBDIR += far2l
+    SUBDIR += fastscapelib
     SUBDIR += felis
     SUBDIR += figlet
     SUBDIR += figlet-fonts
@@ -194,6 +195,7 @@
     SUBDIR += jargon
     SUBDIR += jbidwatcher
     SUBDIR += jojodiff
+    SUBDIR += json-tui
     SUBDIR += kbdscan
     SUBDIR += kcd
     SUBDIR += kde-thumbnailer-chm
@@ -235,6 +237,7 @@
     SUBDIR += libutf
     SUBDIR += libxdf
     SUBDIR += lifelines
+    SUBDIR += lightgbm
     SUBDIR += lingoteach
     SUBDIR += locale-en_DK
     SUBDIR += localedata
@@ -380,6 +383,7 @@
     SUBDIR += ptsort
     SUBDIR += pubs
     SUBDIR += py-PyUserInput
+    SUBDIR += py-PyWavefront
     SUBDIR += py-QSpectrumAnalyzer
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
@@ -395,9 +399,11 @@
     SUBDIR += py-detecta
     SUBDIR += py-dictdiffer
     SUBDIR += py-eemeter
+    SUBDIR += py-einops
     SUBDIR += py-emoji
     SUBDIR += py-ezc3d
     SUBDIR += py-fast-histogram
+    SUBDIR += py-fastscapelib
     SUBDIR += py-fleep
     SUBDIR += py-fuzzy
     SUBDIR += py-gluoncv
@@ -405,11 +411,14 @@
     SUBDIR += py-halo
     SUBDIR += py-histoprint
     SUBDIR += py-huepy
+    SUBDIR += py-ipyfastscape
     SUBDIR += py-kartograph
+    SUBDIR += py-lightgbm
     SUBDIR += py-log_symbols
     SUBDIR += py-mffpy
     SUBDIR += py-molequeue
     SUBDIR += py-mxnet
+    SUBDIR += py-numcodecs
     SUBDIR += py-onnx
     SUBDIR += py-onnx-tf
     SUBDIR += py-openpaperwork-core
@@ -423,6 +432,7 @@
     SUBDIR += py-palettable
     SUBDIR += py-papermill
     SUBDIR += py-pexpect
+    SUBDIR += py-placekey
     SUBDIR += py-powerline-status
     SUBDIR += py-progressbar
     SUBDIR += py-progressbar2

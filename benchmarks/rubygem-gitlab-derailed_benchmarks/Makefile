@@ -19,7 +19,6 @@ RUN_DEPENDS=	rubygem-benchmark-ips>=2.0.0:benchmarks/rubygem-benchmark-ips \
 		rubygem-thor>=0.19:devel/rubygem-thor
 
 USES=		gem
-USE_RUBY=	yes
 
 CONFLICTS_INSTALL=	rubygem-derailed_benchmarks
 

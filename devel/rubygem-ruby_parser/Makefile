@@ -1,5 +1,5 @@
 PORTNAME=	ruby_parser
-PORTVERSION=	3.15.0
+PORTVERSION=	3.19.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-sexp_processor>=4.9<5:devel/rubygem-sexp_processor
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		cpe gem shebangfix
 CPE_VENDOR=	ryan_davis
 

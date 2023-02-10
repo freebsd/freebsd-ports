@@ -1,7 +1,7 @@
 PORTNAME=	rrdtool
 DISTVERSION=	0.1.16
 CATEGORIES=	databases python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX} # Bindings name is different from https://pypi.org/project/rrdtool/
 
 MAINTAINER=	darius@dons.net.au

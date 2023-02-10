@@ -10,7 +10,6 @@ WWW=		https://github.com/panorama-ed/memo_wise
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

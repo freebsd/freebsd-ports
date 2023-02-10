@@ -10,6 +10,7 @@ lib/cmake/PlasmaWaylandProtocols/PlasmaWaylandProtocolsConfigVersion.cmake
 %%DATADIR%%/kde-lockscreen-overlay-v1.xml
 %%DATADIR%%/kde-output-device-v2.xml
 %%DATADIR%%/kde-output-management-v2.xml
+%%DATADIR%%/kde-output-order-v1.xml
 %%DATADIR%%/kde-primary-output-v1.xml
 %%DATADIR%%/keystate.xml
 %%DATADIR%%/output-management.xml

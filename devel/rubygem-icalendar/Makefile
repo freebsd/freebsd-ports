@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 RUN_DEPENDS=	rubygem-ice_cube>=0.16<1:devel/rubygem-ice_cube
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

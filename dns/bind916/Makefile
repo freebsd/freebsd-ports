@@ -25,7 +25,7 @@ RUN_DEPENDS=	bind-tools>0:dns/bind-tools
 
 USES=		compiler:c11 cpe libedit pkgconfig ssl tar:xz
 # ISC releases things like 9.8.0-P1, which our versioning doesn't like
-ISCVERSION=	9.16.36
+ISCVERSION=	9.16.37
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -100,7 +100,7 @@ DLZ_BDB_USES=		bdb
 DLZ_FILESYSTEM_CONFIGURE_ON=	--with-dlz-filesystem=yes
 
 DLZ_LDAP_CONFIGURE_ON=	--with-dlz-ldap=yes
-DLZ_LDAP_USE=		OPENLDAP=yes
+DLZ_LDAP_USES=		ldap
 
 DLZ_MYSQL_CONFIGURE_ON=	--with-dlz-mysql=yes
 DLZ_MYSQL_USES=		mysql

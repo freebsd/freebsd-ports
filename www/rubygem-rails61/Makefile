@@ -1,5 +1,5 @@
 PORTNAME=	rails
-PORTVERSION=	6.1.7
+PORTVERSION=	6.1.7.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	61
@@ -47,7 +47,6 @@ RUN_DEPENDS=	rubygem-actioncable61>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem
 		rubygem-webrick>=0:www/rubygem-webrick
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

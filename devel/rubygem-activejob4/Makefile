@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activesupport4>=${PORTVERSION}:devel/rubygem-activesupport4
 		rubygem-globalid>=0.3.0:databases/rubygem-globalid
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

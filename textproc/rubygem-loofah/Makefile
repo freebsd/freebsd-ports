@@ -1,5 +1,5 @@
 PORTNAME=	loofah
-PORTVERSION=	2.19.0
+PORTVERSION=	2.19.1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-crass>=1.0.2<1.1:www/rubygem-crass \
 		rubygem-nokogiri>=1.5.9:textproc/rubygem-nokogiri
 
 USES=		cpe gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

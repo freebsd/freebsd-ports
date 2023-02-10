@@ -13,6 +13,5 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	rubygem-addressable>=2.5.2:www/rubygem-addressable
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

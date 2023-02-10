@@ -1,7 +1,7 @@
 PORTNAME=	json2yaml
 PORTVERSION=	1.2.0
 CATEGORIES=	textproc python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Convert JSON to YAML or vice versa

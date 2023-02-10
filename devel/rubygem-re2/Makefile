@@ -1,5 +1,5 @@
 PORTNAME=	re2
-PORTVERSION=	1.5.0
+PORTVERSION=	1.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -14,6 +14,5 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libre2.so:devel/re2
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

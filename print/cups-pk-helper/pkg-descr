@@ -1,2 +1,2 @@
 Cups-pk-helper is an application which makes cups configuration interfaces
-available under control of PolicyKit.
+available under control of polkit.

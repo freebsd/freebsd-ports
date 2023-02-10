@@ -1,7 +1,7 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.27.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
 		SF/mecab/mecab-ipadic/2.7.0-20070801/:mecab_ipadic
@@ -14,6 +14,8 @@ WWW=		https://www.meilisearch.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BROKEN=		does not work
 
 LIB_DEPENDS=	liblmdb.so:databases/lmdb
 

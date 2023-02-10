@@ -1104,6 +1104,7 @@ include/RelaxedVarConstraints.hpp
 include/RelaxedVariables.hpp
 include/Response.h
 include/ResponseSurfaceAnalyzer.h
+include/RestartVersion.hpp
 include/ResultsDBAny.hpp
 include/ResultsDBBase.hpp
 include/ResultsDBHDF5.hpp
@@ -2531,10 +2532,7 @@ lib/liblhs.so
 lib/liblhs_mod.so
 lib/liblhs_mods.so
 lib/libmoga.so
-lib/libmuqApproximation.so
-lib/libmuqInference.so
 lib/libmuqModeling.so
-lib/libmuqOptimization.so
 lib/libmuqSamplingAlgorithms.so
 lib/libmuqUtilities.so
 lib/libncsuopt.so
@@ -2583,11 +2581,7 @@ lib/libutilities.so
 %%DATADIR%%/LICENSE
 %%DATADIR%%/LICENSE_HOPSPACK
 %%DATADIR%%/Python/dakota/__init__.py
-%%DATADIR%%/Python/dakota/__pycache__/__init__.cpython-36.pyc
 %%DATADIR%%/Python/dakota/interfacing/__init__.py
-%%DATADIR%%/Python/dakota/interfacing/__pycache__/__init__.cpython-36.pyc
-%%DATADIR%%/Python/dakota/interfacing/__pycache__/dprepro.cpython-36.pyc
-%%DATADIR%%/Python/dakota/interfacing/__pycache__/interfacing.cpython-36.pyc
 %%DATADIR%%/Python/dakota/interfacing/dprepro.py
 %%DATADIR%%/Python/dakota/interfacing/interfacing.py
 %%DATADIR%%/Python/dakota/interfacing/parallel.py

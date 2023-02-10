@@ -1,5 +1,5 @@
 PORTNAME=	actiontext
-PORTVERSION=	7.0.3.1
+PORTVERSION=	7.0.4.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	70
@@ -20,7 +20,6 @@ RUN_DEPENDS=	rubygem-actionpack70>=${PORTVERSION}<${PORTVERSION}_99:www/rubygem-
 		rubygem-nokogiri>=1.8.5:textproc/rubygem-nokogiri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

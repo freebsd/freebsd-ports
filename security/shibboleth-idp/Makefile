@@ -1,5 +1,5 @@
 PORTNAME=	shibboleth
-PORTVERSION=	4.2.1
+PORTVERSION=	4.3.0
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.net/downloads/identity-provider/${PORTVERSION}/ \
 		http://shibboleth.net/downloads/identity-provider/latest4/${PORTVERSION}/ \

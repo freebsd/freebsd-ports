@@ -21,7 +21,6 @@ RUN_DEPENDS=	rubygem-addressable>=2.5:www/rubygem-addressable \
 		rubygem-tty-which>=0.4:devel/rubygem-tty-which
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

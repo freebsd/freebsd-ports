@@ -2,7 +2,7 @@ PORTNAME=	papermill
 DISTVERSION=	2.4.0-15
 DISTVERSIONSUFFIX=	-g54f6c03
 CATEGORIES=	misc python
-#MASTER_SITES=	CHEESESHOP using the latest revision
+#MASTER_SITES=	PYPI using the latest revision
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org

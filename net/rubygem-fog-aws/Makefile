@@ -1,5 +1,5 @@
 PORTNAME=	fog-aws
-PORTVERSION=	3.15.0
+PORTVERSION=	3.16.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-fog-core>=2.1<3:devel/rubygem-fog-core \
 		rubygem-fog-xml>=0.1<1:textproc/rubygem-fog-xml
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

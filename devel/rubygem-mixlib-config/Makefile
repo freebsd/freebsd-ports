@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-tomlrb>=0:textproc/rubygem-tomlrb
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

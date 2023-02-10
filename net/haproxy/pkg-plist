@@ -66,6 +66,9 @@ sbin/haproxy
 %%PORTDOCS%%%%DOCSDIR%%/internals/muxes.svg
 %%PORTDOCS%%%%DOCSDIR%%/internals/naming.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/notes-layers.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/notes-poll-connect.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/notes-pollhup.txt
+%%PORTDOCS%%%%DOCSDIR%%/internals/notes-polling.txt
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.dia
 %%PORTDOCS%%%%DOCSDIR%%/internals/pattern.pdf
 %%PORTDOCS%%%%DOCSDIR%%/internals/polling-states.fig

@@ -1,5 +1,5 @@
 PORTNAME=	gnome-maps
-DISTVERSION=	42.3
+DISTVERSION=	43.3
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -17,20 +17,21 @@ LIB_DEPENDS=	libchamplain-0.12.so:graphics/libchamplain \
 		libcogl.so:graphics/cogl \
 		libfolks.so:net-im/folks \
 		libgee-0.8.so:devel/libgee \
-		libgeocode-glib.so:net/geocode-glib \
+		libgeocode-glib-2.so:net/geocode-glib2 \
 		libgfbgraph-0.2.so:net/gfbgraph \
 		libgjs.so:lang/gjs \
 		libgweather-4.so:net/libgweather4 \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libjson-glib-1.0.so:devel/json-glib \
-		librest-0.7.so:devel/librest \
-		libsoup-2.4.so:devel/libsoup
+		librest-1.0.so:net/librest1 \
+		libshumate-1.0.so:x11-toolkits/libshumate \
+		libsoup-3.0.so:devel/libsoup3
 RUN_DEPENDS=	geoclue>=0:net/geoclue
 
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gl gnome meson pkgconfig tar:xz xorg
-USE_GNOME=	cairo gtk30 intltool libxml2
+USE_GNOME=	cairo gtk40 intltool libadwaita libxml2
 USE_GL=		egl
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr

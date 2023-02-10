@@ -152,7 +152,6 @@ RUN_DEPENDS=	rubygem-azure-storage>=0.15.0.preview<0.15:devel/rubygem-azure-stor
 		rubygem-azure_service_fabric>=0.18.1<0.19:devel/rubygem-azure_service_fabric
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

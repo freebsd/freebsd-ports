@@ -1,4 +1,4 @@
---- electron/shell/browser/browser.h.orig	2022-08-03 15:31:32 UTC
+--- electron/shell/browser/browser.h.orig	2023-01-24 08:00:52 UTC
 +++ electron/shell/browser/browser.h
 @@ -101,7 +101,7 @@ class Browser : public WindowListObserver {
  
@@ -9,7 +9,7 @@
    // get the name, icon and path for an application
    v8::Local<v8::Promise> GetApplicationInfoForProtocol(v8::Isolate* isolate,
                                                         const GURL& url);
-@@ -261,10 +261,10 @@ class Browser : public WindowListObserver {
+@@ -263,10 +263,10 @@ class Browser : public WindowListObserver {
    PCWSTR GetAppUserModelID();
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -22,7 +22,7 @@
  
    // Tell the application to open a file.
    bool OpenFile(const std::string& file_path);
-@@ -361,7 +361,7 @@ class Browser : public WindowListObserver {
+@@ -363,7 +363,7 @@ class Browser : public WindowListObserver {
    base::Time last_dock_show_;
  #endif
  

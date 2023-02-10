@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-turbolinks-source>=5.2<6:www/rubygem-turbolinks-source
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

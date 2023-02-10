@@ -1,5 +1,5 @@
 PORTNAME=	clixon
-PORTVERSION=	5.8.0
+PORTVERSION=	6.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	dave@dogwood.com
@@ -10,9 +10,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 #LIB_DEPENDS=	libfcgi.so:www/fcgi
-BUILD_DEPENDS=	cligen>=5.6.0:devel/cligen \
+BUILD_DEPENDS=	cligen>=${PORTVERSION}:devel/cligen \
 		nghttp2>=0:www/nghttp2
-RUN_DEPENDS=	cligen>=5.6.0:devel/cligen \
+RUN_DEPENDS=	cligen>=${PORTVERSION}:devel/cligen \
 		nghttp2>=0:www/nghttp2
 
 USES=		bison compiler:c11 gmake

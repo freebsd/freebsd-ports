@@ -1,8 +1,8 @@
 PORTNAME=	limesurvey
-PORTVERSION=	3.24.3
+PORTVERSION=	5.6.4
 CATEGORIES=	www
-MASTER_SITES=	http://download.limesurvey.org/lts-releases/
-DISTNAME=	${PORTNAME}${PORTVERSION}+201027
+MASTER_SITES=	http://download.limesurvey.org/latest-stable-release/
+DISTNAME=	${PORTNAME}${PORTVERSION}+230206
 
 MAINTAINER=	flo@FreeBSD.org
 COMMENT=	PHP-based survey building and runing system
@@ -12,12 +12,13 @@ LICENSE=	GPLv2
 
 USES=		cpe php:web zip
 
-OPTIONS_DEFINE=		GD LDAP PGSQL
+OPTIONS_DEFINE=		GD IMAP LDAP PGSQL
 OPTIONS_DEFAULT=	GD
 
 PGSQL_DESC=	Use PostgreSQL (instead of MySQL)
 GD_DESC=	Install PHP gd extension
 LDAP_DESC=	Install PHP LDAP extension
+IMAP_DESC=	Install PHP IMAP extension
 
 .include <bsd.port.options.mk>
 
@@ -33,8 +34,11 @@ USE_PHP+=	gd
 .if ${PORT_OPTIONS:MLDAP}
 USE_PHP+=	ldap
 .endif
+.if ${PORT_OPTIONS:MIMAP}
+USE_PHP+=	imap
+.endif
 USE_PHP+=	ctype dom hash iconv json mbstring openssl pcre session \
-		simplexml xmlwriter zip
+		simplexml xmlwriter zip zlib
 
 WWWDOCROOT?=		www
 PHPSURVEYORURL?=	${PORTNAME}

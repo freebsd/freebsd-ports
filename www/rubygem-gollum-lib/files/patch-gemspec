@@ -1,18 +1,18 @@
---- gollum-lib.gemspec.orig	2022-09-09 11:05:31 UTC
+--- gollum-lib.gemspec.orig	2023-01-06 04:47:44 UTC
 +++ gollum-lib.gemspec
-@@ -25,13 +25,13 @@ Gem::Specification.new do |s|
-   end
+@@ -22,13 +22,13 @@ Gem::Specification.new do |s|
  
-   if s.respond_to? :add_runtime_dependency then
--    s.add_runtime_dependency(%q<gollum-rugged_adapter>.freeze, ["~> 1.0"])
-+    s.add_runtime_dependency(%q<gollum-rugged_adapter>.freeze, [">= 1.0"])
-     s.add_runtime_dependency(%q<rouge>.freeze, ["~> 3.1"])
-     s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.8"])
-     s.add_runtime_dependency(%q<loofah>.freeze, ["~> 2.3"])
-     s.add_runtime_dependency(%q<github-markup>.freeze, ["~> 4.0"])
-     s.add_runtime_dependency(%q<gemojione>.freeze, ["~> 4.1"])
--    s.add_runtime_dependency(%q<octicons>.freeze, ["~> 12.0"])
-+    s.add_runtime_dependency(%q<octicons>.freeze, [">= 12.0"])
-     s.add_runtime_dependency(%q<twitter-text>.freeze, ["= 1.14.7"])
-     s.add_development_dependency(%q<org-ruby>.freeze, ["~> 0.9.9"])
-     s.add_development_dependency(%q<kramdown>.freeze, ["~> 2.3"])
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<gollum-rugged_adapter>.freeze, ["~> 1.0"])
++  s.add_runtime_dependency(%q<gollum-rugged_adapter>.freeze, [">= 1.0"])
+   s.add_runtime_dependency(%q<rouge>.freeze, ["~> 3.1"])
+   s.add_runtime_dependency(%q<nokogiri>.freeze, ["~> 1.8"])
+   s.add_runtime_dependency(%q<loofah>.freeze, ["~> 2.3"])
+   s.add_runtime_dependency(%q<github-markup>.freeze, ["~> 4.0"])
+   s.add_runtime_dependency(%q<gemojione>.freeze, ["~> 4.1"])
+-  s.add_runtime_dependency(%q<octicons>.freeze, ["~> 12.0"])
++  s.add_runtime_dependency(%q<octicons>.freeze, [">= 12.0"])
+   s.add_runtime_dependency(%q<twitter-text>.freeze, ["= 1.14.7"])
+   s.add_development_dependency(%q<org-ruby>.freeze, ["~> 0.9.9"])
+   s.add_development_dependency(%q<kramdown>.freeze, ["~> 2.3"])

@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-activesupport52>=4.2.0:devel/rubygem-activesupport52 \
 		rubygem-nokogiri>=1.6:textproc/rubygem-nokogiri
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

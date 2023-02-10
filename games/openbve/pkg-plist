@@ -537,18 +537,13 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Formats/CSScriptLibrary.dll
 %%DATADIR%%/Data/Formats/CSScriptLibrary.xml
 %%DATADIR%%/Data/Formats/Formats.Msts.dll
+%%DATADIR%%/Data/Formats/Formats.Msts.dll.config
 %%DATADIR%%/Data/Formats/OpenBveApi.dll
 %%DATADIR%%/Data/Formats/OpenBveApi.dll.config
 %%DATADIR%%/Data/Formats/OpenBveApi.xml
 %%DATADIR%%/Data/Formats/SharpCompress.dll
 %%DATADIR%%/Data/Formats/System.Buffers.dll
 %%DATADIR%%/Data/Formats/System.Buffers.xml
-%%DATADIR%%/Data/Formats/System.Memory.dll
-%%DATADIR%%/Data/Formats/System.Memory.xml
-%%DATADIR%%/Data/Formats/System.Numerics.Vectors.dll
-%%DATADIR%%/Data/Formats/System.Numerics.Vectors.xml
-%%DATADIR%%/Data/Formats/System.Runtime.CompilerServices.Unsafe.dll
-%%DATADIR%%/Data/Formats/System.Runtime.CompilerServices.Unsafe.xml
 %%DATADIR%%/Data/Formats/System.ValueTuple.dll
 %%DATADIR%%/Data/Formats/System.ValueTuple.xml
 %%DATADIR%%/Data/Formats/Ude.NetStandard.dll
@@ -712,8 +707,10 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Plugins/OpenBveAts.dll
 %%DATADIR%%/Data/Plugins/OpenBveAts.dll.config
 %%DATADIR%%/Data/Plugins/Route.CsvRw.dll
+%%DATADIR%%/Data/Plugins/Route.CsvRw.dll.config
 %%DATADIR%%/Data/Plugins/Route.CsvRw.pdb
 %%DATADIR%%/Data/Plugins/Route.Mechanik.dll
+%%DATADIR%%/Data/Plugins/Route.Mechanik.dll.config
 %%DATADIR%%/Data/Plugins/Route.Mechanik.pdb
 %%DATADIR%%/Data/Plugins/Sound.Flac.dll
 %%DATADIR%%/Data/Plugins/Sound.Flac.dll.config
@@ -733,6 +730,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/Data/Plugins/Texture.Tga.dll
 %%DATADIR%%/Data/Plugins/Texture.Tga.dll.config
 %%DATADIR%%/Data/Plugins/Train.OpenBve.dll
+%%DATADIR%%/Data/Plugins/Train.OpenBve.dll.config
 %%DATADIR%%/Data/Plugins/Train.OpenBve.pdb
 %%DATADIR%%/Data/RouteViewer/background.png
 %%DATADIR%%/Data/RouteViewer/brightness.png
@@ -792,6 +790,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/DotNetZip.pdb
 %%DATADIR%%/DotNetZip.xml
 %%DATADIR%%/Formats.Msts.dll
+%%DATADIR%%/Formats.Msts.dll.config
 %%DATADIR%%/LibRender2.dll
 %%DATADIR%%/LibRender2.dll.config
 %%DATADIR%%/LibRender2.pdb
@@ -960,6 +959,7 @@ bin/openbve-routeviewer
 %%DATADIR%%/TrainEditor2.exe.config
 %%DATADIR%%/TrainEditor2.pdb
 %%DATADIR%%/TrainManager.dll
+%%DATADIR%%/TrainManager.dll.config
 %%DATADIR%%/TrainManager.pdb
 %%DATADIR%%/Ude.NetStandard.dll
 %%DATADIR%%/Win32PluginProxy.exe

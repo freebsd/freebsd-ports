@@ -1,5 +1,5 @@
 PORTNAME=	message_bus
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-rack>=1.1.3,3:www/rubygem-rack
 
 USES=		cpe gem shebangfix
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

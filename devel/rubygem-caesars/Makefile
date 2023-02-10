@@ -10,7 +10,6 @@ WWW=		https://github.com/delano/caesars
 
 NO_ARCH=	yes
 
-USE_RUBY=	yes
 USES=		gem shebangfix
 SHEBANG_FILES=	bin/example
 

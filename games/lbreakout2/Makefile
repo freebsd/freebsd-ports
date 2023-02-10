@@ -10,10 +10,12 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Breakout-style arcade game
-WWW=		http://lgames.sourceforge.net/index.php?project=LBreakout2
+WWW=		https://lgames.sourceforge.io/LBreakout2/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Deprecated by upsteam, does not support large screen resolutions. Use games/lbreakouthd instead
 
 LIB_DEPENDS=	libpng.so:graphics/png
 

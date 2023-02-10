@@ -8,10 +8,8 @@
 # your port/system configuration.  This is the preferred use of USE_GCC.
 # It uses the canonical version of GCC defined in bsd.default-versions.mk.
 #
-# If your port needs a specific (minimum) version of GCC, you can easily
-# specify that with a USE_GCC= statement.  Unless absolutely necessary
-# do so by specifying USE_GCC=X+ which requests at least GCC version X.
-# To request a specific version omit the trailing + sign.
+# If your port needs a specific version of GCC, you can instead specify
+# that using USE_GCC=X (where X is the version of GCC).
 #
 # Optionally comma-separated arguments follow the version specifier.
 # Currently we support:
@@ -24,13 +22,10 @@
 # Examples:
 #   USE_GCC=	yes			# port requires a current version of GCC
 #							# as defined in bsd.default-versions.mk.
-#   USE_GCC=	11+			# port requires GCC 11 or later.
-#   USE_GCC=	9			# port requires GCC 9.
+#   USE_GCC=	11 			# port requires GCC 11.
 #   USE_GCC=	yes:build	# port requires a current version of GCC at
 #							# build time only.
 #   USE_GCC=	10:build	# port requires GCC 10 at build time only.
-#   USE_GCC=	11+:build	# port requires GCC 11 or later at build
-#							# time only.
 #
 # If you are wondering what your port exactly does, use "make test-gcc"
 # to see some debugging.
@@ -66,14 +61,10 @@ IGNORE=	bad target specification in USE_GCC; only "build" is supported
 
 # Handle USE_GCC=yes.
 .  if ${USE_GCC} == yes
-USE_GCC=	${GCC_DEFAULT}+
+USE_GCC=	${GCC_DEFAULT}
 .  endif
 
-# See if we can use a later version or exclusively the one specified.
-_USE_GCC:=	${USE_GCC:S/+//}
-.  if ${USE_GCC} != ${_USE_GCC}
-_GCC_ORLATER:=	true
-.  endif
+_USE_GCC:=	${USE_GCC}
 
 # See whether we have the specific version requested installed already
 # and save that into _GCC_FOUND.  In parallel, check if USE_GCC refers
@@ -90,14 +81,6 @@ _GCC_FOUND:=		${_USE_GCC}
 .  if !defined(_GCCVERSION_OKAY)
 IGNORE=	Unknown version of GCC specified (USE_GCC=${USE_GCC})
 .  endif
-
-# If the GCC package defined in USE_GCC does not exist, but a later
-# version is allowed (for example 8+), go and use the default.
-.  if defined(_GCC_ORLATER)
-.    if !defined(_GCC_FOUND) && ${_USE_GCC} < ${GCC_DEFAULT}
-_USE_GCC:=	${GCC_DEFAULT}
-.    endif
-.  endif # defined(_GCC_ORLATER)
 
 # A concrete version has been selected. Set proper ports dependencies,
 # CC, CXX, CPP, and flags.
@@ -146,11 +129,6 @@ test-gcc:
 	@echo "IGNORE: ${IGNORE}"
 .else
 .  if defined(USE_GCC)
-.    if defined(_GCC_ORLATER)
-	@echo Port can use later versions.
-.    else
-	@echo Port cannot use later versions.
-.    endif
 	@echo Using GCC version ${_USE_GCC}
 .  endif
 	@echo CC=${CC} - CXX=${CXX} - CPP=${CPP}

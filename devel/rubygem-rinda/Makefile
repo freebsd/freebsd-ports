@@ -16,7 +16,6 @@ RUN_DEPENDS=	rubygem-drb>=0:devel/rubygem-drb \
 		rubygem-ipaddr>=0:net/rubygem-ipaddr
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

@@ -1,6 +1,5 @@
 PORTNAME=	w3m
 PORTVERSION=	0.5.3.${SNAPDATE}
-PORTREVISION=	1
 CATEGORIES+=	www
 
 MAINTAINER?=	nobutaka@FreeBSD.org
@@ -23,10 +22,10 @@ CPE_VENDOR=	w3m_project
 
 GH_ACCOUNT=	tats
 GH_PROJECT=	w3m
-GH_TAGNAME=	c515ea8
+GH_TAGNAME=	93ad5ee
 
 MAKE_JOBS_UNSAFE=	yes
-SNAPDATE=	20220429
+SNAPDATE=	20230129
 
 CONFLICTS?=	ja-w3m-0.5.* ja-w3m-img-0.5.* w3m-img-0.5.*
 GNU_CONFIGURE=	yes
@@ -50,9 +49,10 @@ JAPANESE_DESC=		Japanese messages and migemo support
 KEY_LYNX_DESC=		Keymap like lynx browser
 OPTIONS_SUB=	yes
 
-INLINE_IMAGE_USES=	gnome xorg
-INLINE_IMAGE_USE=	xorg=x11 gnome=gtk20,gdkpixbuf2,gdkpixbuf2xlib
-INLINE_IMAGE_CONFIGURE_ON=	--with-imagelib=gtk2 --enable-image=fb,x11
+INLINE_IMAGE_USES=	xorg
+INLINE_IMAGE_USE=	xorg=x11
+INLINE_IMAGE_LIB_DEPENDS=	libImlib2.so:graphics/imlib2
+INLINE_IMAGE_CONFIGURE_ON=	--with-imagelib=imlib2 --enable-image=fb,x11
 INLINE_IMAGE_CONFIGURE_OFF=	--enable-image=fb
 
 JAPANESE_CONFIGURE_ON=	--enable-japanese=U --with-migemo=yes

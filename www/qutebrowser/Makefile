@@ -1,7 +1,7 @@
 PORTNAME=	qutebrowser
 DISTVERSION=	2.5.2
 CATEGORIES=	www
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Keyboard-focused browser with a minimal GUI

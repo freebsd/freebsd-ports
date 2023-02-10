@@ -1,10 +1,11 @@
 PORTNAME=	munin
 PORTVERSION=	${MUNIN_VERSION}
+PORTREVISION=	1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	${MUNIN_SITES}
 PKGNAMESUFFIX=	-master
 
-MAINTAINER=	mat@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Collector part of Munin
 WWW=		https://munin-monitoring.org/
 
@@ -57,5 +58,7 @@ post-install:
 	(cd ${STAGEDIR}${ETCDIR}; for i in `find . -type f`; do mv $$i $$i.sample; done)
 	${MV} ${STAGEDIR}${WWWDIR}/.htaccess ${STAGEDIR}${WWWDIR}/.htaccess.sample
 	${INSTALL_DATA} ${FILESDIR}/newsyslog ${STAGEDIR}${ETCDIR}/munin-master.newsyslog
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/cron.d
+	${INSTALL_DATA} ${FILESDIR}/cron ${STAGEDIR}${ETCDIR}/munin-master.cron
 
 .include <bsd.port.mk>

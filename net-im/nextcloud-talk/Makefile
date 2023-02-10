@@ -1,35 +1,25 @@
 PORTNAME=	talk
-PORTVERSION=	15.0.1
+PORTVERSION=	15.0.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im www
-MASTER_SITES=	https://github.com/nextcloud-releases/spreed/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
-PKGNAMEPREFIX=	nextcloud-
-PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	spreed-${DISTVERSIONPREFIX}${DISTVERSION}
 DIST_SUBDIR=	nextcloud
+
+MASTER_SITES?=   https://github.com/nextcloud-releases/spreed/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	Online meeting app for Nextcloud
 WWW=		https://nextcloud.com/talk/
 
-LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	nextcloud${PHP_PKGNAMESUFFIX}>=25:www/nextcloud@${PHP_FLAVOR}
-
-USES=		cpe php:flavors
-IGNORE_WITH_PHP=	82
-CPE_VENDOR=	nextcloud
-NO_BUILD=	yes
-NO_ARCH=	yes
+NEXTCLOUD_RUN_DEPENDS=	25
 
 WRKSRC=		${WRKDIR}/spreed
-WWWDIR=		${PREFIX}/www/nextcloud/apps-pkg/spreed
+WWWDIR=		${NEXTCLOUD_APPSDIR}/spreed
 
-do-install:
-	@${MKDIR} ${STAGEDIR}${WWWDIR}
-	@(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR})
-	@(cd ${WRKSRC}; ${FIND} . -not -type d) | ${SORT} | \
-		${SED} -e 's,^\.,${WWWDIR_REL},' >> ${TMPPLIST}
+USES=		cpe nextcloud php:flavors
+
+CPE_VENDOR=	nextcloud
 
 .include <bsd.port.mk>

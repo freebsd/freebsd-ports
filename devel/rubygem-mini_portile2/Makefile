@@ -1,16 +1,15 @@
 PORTNAME=	mini_portile2
-PORTVERSION=	2.8.0
+PORTVERSION=	2.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Simple autoconf builder for developers
-WWW=		https://github.com/luislavena/mini_portile
+WWW=		https://github.com/flavorjones/mini_portile
 
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

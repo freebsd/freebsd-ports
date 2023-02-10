@@ -61,7 +61,7 @@ CONFIGURE_ARGS+=	--without-bdb
 .endif
 
 .if ${LIBGDA5_SLAVE}==ldap
-USE_OPENLDAP=	yes
+USES=	ldap
 CONFIGURE_ARGS+=	--with-ldap=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-ldap
@@ -69,6 +69,7 @@ CONFIGURE_ARGS+=	--without-ldap
 
 .if ${LIBGDA5_SLAVE}==mysql
 USES+=			mysql
+IGNORE_WITH_MYSQL=	80
 CONFIGURE_ARGS+=	--with-mysql=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--without-mysql

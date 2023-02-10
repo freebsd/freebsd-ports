@@ -2,7 +2,7 @@ PORTNAME=	dtflickr
 PORTVERSION=	1.5
 PORTREVISION=	1
 CATEGORIES=	www python
-MASTER_SITES=	CHEESESHOP \
+MASTER_SITES=	PYPI \
 		http://dl1.douglasthrift.net/${PORTNAME}/ \
 		http://dl2.douglasthrift.net/${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

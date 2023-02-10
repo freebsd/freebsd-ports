@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-deep_merge>=1.0.1:devel/rubygem-deep_merge \
 		rubygem-httparty>=0.13.7:www/rubygem-httparty
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 CONFLICTS_INSTALL=	zh-hc # bin/hc

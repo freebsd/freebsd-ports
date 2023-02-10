@@ -1,5 +1,0 @@
-This library provides collection of GTK+ widgets that extend functionality
-of such standard widgets as GtkEntry and GtkLabel by subclassing them and
-working around the limitations of the widgets.  "Sexy" widgets include
-support for inline icons, spell checking (via Enchant), embedded hyperlinks,
-and more.

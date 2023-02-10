@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-descendants_tracker>=0.0.4:devel/rubygem-descendants_tracke
 		rubygem-thread_safe>=0.3.1:devel/rubygem-thread_safe
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

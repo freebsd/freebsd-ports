@@ -1,5 +1,5 @@
 PORTNAME=	typeprof
-PORTVERSION=	0.21.3
+PORTVERSION=	0.21.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,7 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	rubygem-rbs>=1.8.1:devel/rubygem-rbs
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

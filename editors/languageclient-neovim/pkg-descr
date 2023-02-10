@@ -1,0 +1,15 @@
+Language Server Protocol (LSP) support for vim and neovim.
+
+Features:
+* Non-blocking asynchronous calls.
+* Sensible completion
+  Integrated well with deoplete or ncm2, or MUcomplete.
+  Or simply with vim built-in `omnifunc`.
+* Realtime diagnostics/compiler/lint message.
+* Rename.
+* Hover/Get identifier info.
+* Goto definition.
+* Goto reference locations.
+* Workspace/Document symbols query
+* Formatting
+* Code Action/Quick Fix

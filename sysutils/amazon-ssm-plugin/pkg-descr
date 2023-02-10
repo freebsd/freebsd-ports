@@ -1,0 +1,7 @@
+This package provides Amazon SSM SessionManager and CLI for managing
+shell experience using SSM APIs.
+
+HOW TO USE:
+  aws ssm start-session --target "your instance-id"
+
+SEE ALSO: https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-working-with-install-plugin.html

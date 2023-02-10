@@ -79,6 +79,7 @@
     SUBDIR += kibi
     SUBDIR += kile
     SUBDIR += komodo-edit
+    SUBDIR += languageclient-neovim
     SUBDIR += lapce
     SUBDIR += lazarus
     SUBDIR += lazarus-devel

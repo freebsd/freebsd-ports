@@ -1,7 +1,7 @@
 PORTNAME=	lz4
-PORTVERSION=	4.0.2
+PORTVERSION=	4.3.2
 CATEGORIES=	archivers python
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
@@ -17,12 +17,16 @@ BUILD_DEPENDS=	liblz4>=1.7.5:archivers/liblz4 \
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		localbase python:3.7+
 USE_PYTHON=	distutils pytest
 
+CONFIGURE_ENV=	PYLZ4_USE_SYSTEM_LZ4=1
+
+post-patch:
+# Clean up bundled libraries
+	@${RM} -r ${WRKSRC}/lz4libs/
+
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/_version*.so \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/block/_block*.so \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}/frame/_frame*.so
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

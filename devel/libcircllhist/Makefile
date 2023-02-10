@@ -3,7 +3,7 @@ PORTVERSION=	g20211005
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Circonus log-linear histogram C implementation
 WWW=		https://github.com/circonus-labs/libcircllhist
 

@@ -14,7 +14,6 @@ RUN_DEPENDS=	rubygem-actionpack61>=4.2:www/rubygem-actionpack61 \
 		rubygem-omniauth>=2.0<3:security/rubygem-omniauth
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

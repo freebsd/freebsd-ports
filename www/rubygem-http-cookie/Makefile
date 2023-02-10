@@ -12,7 +12,6 @@ LICENSE=	MIT
 RUN_DEPENDS=	rubygem-domain_name>=0.5<1:net/rubygem-domain_name
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

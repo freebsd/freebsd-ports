@@ -15,7 +15,6 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.BSD3
 RUN_DEPENDS=	rubygem-ffi>=1.0<2:devel/rubygem-ffi
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

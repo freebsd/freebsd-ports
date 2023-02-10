@@ -32,6 +32,7 @@
     SUBDIR += imb
     SUBDIR += inferno
     SUBDIR += interbench
+    SUBDIR += ior
     SUBDIR += iorate
     SUBDIR += iozone
     SUBDIR += iozone21
@@ -112,6 +113,7 @@
     SUBDIR += uperf
     SUBDIR += vegeta
     SUBDIR += vkmark
+    SUBDIR += vkoverhead
     SUBDIR += vkpeak
     SUBDIR += webbench
     SUBDIR += wrk

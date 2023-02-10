@@ -1,6 +1,6 @@
---- media/webrtc/audio_processor.cc.orig	2022-12-06 08:09:13 UTC
+--- media/webrtc/audio_processor.cc.orig	2023-01-17 19:19:00 UTC
 +++ media/webrtc/audio_processor.cc
-@@ -487,7 +487,7 @@ absl::optional<double> AudioProcessor::ProcessData(
+@@ -488,7 +488,7 @@ absl::optional<double> AudioProcessor::ProcessData(
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
    DCHECK_LE(volume, 1.0);
  #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || \

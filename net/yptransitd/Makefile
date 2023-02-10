@@ -11,8 +11,7 @@ WWW=		http://yptransitd.sourceforge.net/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		bison
-USE_OPENLDAP=	yes
+USES=		ldap bison
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE}
 USE_LDCONFIG=	yes

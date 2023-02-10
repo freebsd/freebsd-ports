@@ -1,5 +1,5 @@
 PORTNAME=	i18n_data
-PORTVERSION=	0.10.0
+PORTVERSION=	0.15.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,9 @@ WWW=		https://github.com/grosser/i18n_data
 
 LICENSE=	MIT
 
+RUN_DEPENDS=	rubygem-simple_po_parser>=1.1<2:devel/rubygem-simple_po_parser
+
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

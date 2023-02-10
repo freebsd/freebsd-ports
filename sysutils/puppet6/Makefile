@@ -1,6 +1,6 @@
 PORTNAME=	puppet
 PORTVERSION=	6.28.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	6
@@ -27,7 +27,7 @@ RUN_DEPENDS=	rubygem-concurrent-ruby>=1.0:devel/rubygem-concurrent-ruby \
 		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
-USES=		cpe
+USES=		cpe ruby
 USE_GITHUB=	yes
 GH_ACCOUNT=	puppetlabs
 
@@ -35,7 +35,6 @@ CONFLICTS_INSTALL=	puppet7
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 NO_ARCH=	yes
 NO_BUILD=	yes
-USE_RUBY=	yes
 USE_RC_SUBR=	puppet
 PORTDOCS=	LICENSE README.md
 PORTEXAMPLES=	*

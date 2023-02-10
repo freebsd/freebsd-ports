@@ -1,6 +1,6 @@
---- components/viz/host/renderer_settings_creation.cc.orig	2022-02-28 16:54:41 UTC
+--- components/viz/host/renderer_settings_creation.cc.orig	2023-02-01 13:31:45 UTC
 +++ components/viz/host/renderer_settings_creation.cc
-@@ -52,7 +52,7 @@ RendererSettings CreateRendererSettings() {
+@@ -55,7 +55,7 @@ RendererSettings CreateRendererSettings() {
    renderer_settings.partial_swap_enabled =
        !command_line->HasSwitch(switches::kUIDisablePartialSwap);
  

@@ -1,5 +1,7 @@
 @sample %%ETCDIR%%/ocsinventory-restapi.conf.sample
 @sample %%ETCDIR%%/ocsinventory-server.conf.sample
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 %%DATADIR%%/Apache/Changes
 %%DATADIR%%/Apache/INSTALL
 %%DATADIR%%/Apache/LICENSE
@@ -59,6 +61,7 @@
 %%DATADIR%%/Api/Ocsinventory/Restapi/Computer/Get/ComputerId.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Computer/Get/ComputerIdField.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Computer/Get/Computers.pm
+%%DATADIR%%/Api/Ocsinventory/Restapi/Computer/Get/ComputersLastUpdate.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Computer/Get/ComputersListId.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Computer/Get/ComputersSearch.pm
 %%DATADIR%%/Api/Ocsinventory/Restapi/Cve/Get/CveComputer.pm
@@ -84,8 +87,6 @@
 %%DATADIR%%/binutils/ocsinventory-log.README
 %%DATADIR%%/binutils/ocsinventory-log.pl
 %%DATADIR%%/binutils/ocsinventory-powershell-injector.ps1
-%%DATADIR%%/binutils/soap-client.README
-%%DATADIR%%/binutils/soap-client.pl
 %%DATADIR%%/dtd/Interface/get_computers_V1-request.dtd
 %%DATADIR%%/dtd/download_request.dtd
 %%DATADIR%%/dtd/file_request.dtd
@@ -97,5 +98,3 @@
 %%DATADIR%%/dtd/update_reply.dtd
 %%DATADIR%%/dtd/update_request.dtd
 %%DATADIR%%/setup.sh
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL
-%%PORTDOCS%%%%DOCSDIR%%/README.md

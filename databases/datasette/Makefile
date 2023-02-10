@@ -1,7 +1,7 @@
 PORTNAME=	datasette
 DISTVERSION=	0.63.3
 CATEGORIES=	databases www
-MASTER_SITES=	CHEESESHOP
+MASTER_SITES=	PYPI
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Multi-tool for exploring and publishing data

@@ -1,5 +1,5 @@
 PORTNAME=	strscan
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,6 +11,5 @@ LICENSE=	BSD2CLAUSE RUBY
 LICENSE_COMB=	dual
 
 USES=		gem
-USE_RUBY=	yes
 
 .include <bsd.port.mk>

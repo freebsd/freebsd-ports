@@ -1,5 +1,5 @@
 PORTNAME=	git-version-bump
-PORTVERSION=	0.17.2
+PORTVERSION=	0.18.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

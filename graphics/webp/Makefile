@@ -1,6 +1,5 @@
 PORTNAME=	webp
-PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://downloads.webmproject.org/releases/webp/ \
 		https://storage.googleapis.com/downloads.webmproject.org/releases/webp/

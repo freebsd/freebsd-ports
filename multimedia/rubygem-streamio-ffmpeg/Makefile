@@ -15,7 +15,6 @@ RUN_DEPENDS=	rubygem-multi_json>=1.8<2:devel/rubygem-multi_json \
 		ffmpeg>=3.4.2,1:multimedia/ffmpeg
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

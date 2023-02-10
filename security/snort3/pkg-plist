@@ -120,6 +120,7 @@ include/snort/main/thread_config.h
 include/snort/managers/codec_manager.h
 include/snort/managers/event_manager.h
 include/snort/managers/inspector_manager.h
+include/snort/memory/heap_interface.h
 include/snort/memory/memory_cap.h
 include/snort/mime/decode_b64.h
 include/snort/mime/decode_base.h
@@ -221,6 +222,7 @@ include/snort/pub_sub/rna_events.h
 include/snort/pub_sub/sip_events.h
 include/snort/pub_sub/smb_events.h
 include/snort/pub_sub/ssh_events.h
+include/snort/pub_sub/ssl_events.h
 include/snort/pub_sub/stream_event_ids.h
 include/snort/search_engines/search_common.h
 include/snort/search_engines/search_tool.h

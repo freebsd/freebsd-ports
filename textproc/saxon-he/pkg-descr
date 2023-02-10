@@ -1,19 +1,19 @@
 Saxon is a collection of tools for processing XML documents.  The main
 components are:
 
-- An XSLT 2.0 processor, that can be used from the command line, or invoked
+- An XSLT 3.0 processor, that can be used from the command line, or invoked
   from a Java application by use of the standard JAXP API. Saxon can be
   integrated with Java applications using the JAXP API, which means it is
   possible for a Java application to switch between different XSLT processors
   without changing the application code. As well as conforming closely with the
-  XSLT 2.0 specification, Saxon offers a number of powerful extensions.
-- An XPath 2.0 processor accessible via an API to Java applications.
-- An XQuery 1.0 processor that can be used from the command line, or invoked
+  XSLT 3.0 specification, Saxon offers a number of powerful extensions.
+- An XPath 3.1 processor accessible via an API to Java applications.
+- An XQuery 3.1 processor that can be used from the command line, or invoked
   from a Java application by use of an API.
-- An XML Schema 1.0 processor. This can be used on its own to validate a schema
-  for correctness, or to validate a source document against the definitions in
-  a schema. It is also used to support the schema-aware functionality of the
-  XSLT and XQuery processors.
+- An XML Schema 1.0 and 1.1 processor. This can be used on its own to validate a
+  schema for correctness, or to validate a source document against the
+  definitions in a schema. It is also used to support the schema-aware
+  functionality of the XSLT and XQuery processors.
 
 So you can use Saxon to process XML by writing XSLT stylesheets, by writing
 XQuery queries, by writing Java applications, or by combinations of the

@@ -1,5 +1,5 @@
 PORTNAME=	minitest
-PORTVERSION=	5.16.3
+PORTVERSION=	5.17.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,6 @@ WWW=		https://github.com/minitest/minitest
 LICENSE=	MIT
 
 USES=		gem
-USE_RUBY=	yes
 
 NO_ARCH=	yes
 

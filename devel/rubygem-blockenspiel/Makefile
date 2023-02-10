@@ -10,7 +10,6 @@ WWW=		https://dazuma.github.io/blockenspiel/
 LICENSE=	BSD3CLAUSE
 
 NO_ARCH=	yes
-USE_RUBY=	yes
 USES=		gem
 
 .include <bsd.port.mk>

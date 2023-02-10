@@ -1,6 +1,6 @@
---- basic/source/classes/sbxmod.cxx.orig	2020-11-22 14:05:28 UTC
+--- basic/source/classes/sbxmod.cxx.orig	2022-12-22 00:14:09 UTC
 +++ basic/source/classes/sbxmod.cxx
-@@ -1130,7 +1130,7 @@ void SbModule::Run( SbMethod* pMeth )
+@@ -1131,7 +1131,7 @@ void SbModule::Run( SbMethod* pMeth )
            struct rlimit rl;
            getrlimit ( RLIMIT_STACK, &rl );
  #endif
