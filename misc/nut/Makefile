@@ -1,6 +1,6 @@
 PORTNAME=	nut
 PORTVERSION=	20.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	health-
@@ -21,8 +21,7 @@ OPTIONS_DEFINE=	FLTK DOCS
 OPTIONS_SUB=	yes
 
 FLTK_DESC=		Install FLTK GUI
-FLTK_LIB_DEPENDS=	libpthread-stubs.so:devel/libpthread-stubs \
-			libfreetype.so:print/freetype2 \
+FLTK_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libexpat.so:textproc/expat2 \
 			libfontconfig.so:x11-fonts/fontconfig \
 			libfltk_images.so:x11-toolkits/fltk
