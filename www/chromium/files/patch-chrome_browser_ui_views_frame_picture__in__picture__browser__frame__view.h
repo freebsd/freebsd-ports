@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h.orig	2023-01-11 09:17:16 UTC
+--- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h.orig	2023-02-08 09:03:45 UTC
 +++ chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h
 @@ -20,7 +20,7 @@
  #include "ui/views/layout/box_layout_view.h"
@@ -9,25 +9,25 @@
  #include "ui/linux/window_frame_provider.h"
  #endif
  
-@@ -67,7 +67,7 @@ class PictureInPictureBrowserFrameView
-   void OnThemeChanged() override;
+@@ -75,7 +75,7 @@ class PictureInPictureBrowserFrameView
    void Layout() override;
    void AddedToWidget() override;
+   void RemovedFromWidget() override;
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    gfx::Insets MirroredFrameBorderInsets() const override;
    gfx::Insets GetInputInsets() const override;
    SkRRect GetRestoredClipRegion() const override;
-@@ -145,7 +145,7 @@ class PictureInPictureBrowserFrameView
-   // Returns the height of the top bar area, including the window top border.
-   int GetTopAreaHeight() const;
+@@ -157,7 +157,7 @@ class PictureInPictureBrowserFrameView
+   // Called when mouse entered or exited the pip window.
+   void OnMouseEnteredOrExitedWindow(bool entered);
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Sets the window frame provider so that it will be used for drawing.
    void SetWindowFrameProvider(ui::WindowFrameProvider* window_frame_provider);
  
-@@ -177,7 +177,7 @@ class PictureInPictureBrowserFrameView
+@@ -194,7 +194,7 @@ class PictureInPictureBrowserFrameView
        widget_observation_{this};
    bool mouse_inside_window_ = false;
  

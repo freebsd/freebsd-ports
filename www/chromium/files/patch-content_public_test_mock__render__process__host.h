@@ -1,6 +1,6 @@
---- content/public/test/mock_render_process_host.h.orig	2023-01-11 09:17:16 UTC
+--- content/public/test/mock_render_process_host.h.orig	2023-02-08 09:03:45 UTC
 +++ content/public/test/mock_render_process_host.h
-@@ -267,7 +267,7 @@ class MockRenderProcessHost : public RenderProcessHost
+@@ -276,7 +276,7 @@ class MockRenderProcessHost : public RenderProcessHost
        const blink::StorageKey& storage_key,
        mojo::PendingReceiver<blink::mojom::WebSocketConnector> receiver)
        override {}

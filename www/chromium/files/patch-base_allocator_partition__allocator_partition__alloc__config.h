@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_alloc_config.h.orig	2023-01-11 09:17:16 UTC
+--- base/allocator/partition_allocator/partition_alloc_config.h.orig	2023-02-08 09:03:45 UTC
 +++ base/allocator/partition_allocator/partition_alloc_config.h
 @@ -84,7 +84,7 @@ static_assert(sizeof(void*) != 8, "");
  
@@ -9,7 +9,7 @@
  #define PA_HAS_LINUX_KERNEL
  #endif
  
-@@ -216,7 +216,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -220,7 +220,7 @@ constexpr bool kUseLazyCommit = false;
  
  // On these platforms, lock all the partitions before fork(), and unlock after.
  // This may be required on more platforms in the future.
@@ -18,12 +18,12 @@
  #define PA_HAS_ATFORK_HANDLER
  #endif
  
-@@ -257,7 +257,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -264,7 +264,7 @@ constexpr bool kUseLazyCommit = false;
  //
  // Also enabled on ARM64 macOS, as the 16kiB pages on this platform lead to
  // larger slot spans.
 -#if BUILDFLAG(IS_LINUX) || (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
 +#if BUILDFLAG(IS_LINUX) || (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64)) || BUILDFLAG(IS_BSD)
  #define PA_PREFER_SMALLER_SLOT_SPANS
- #endif  // BUILDFLAG(IS_LINUX) || (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
+ #endif
  
