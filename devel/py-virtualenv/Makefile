@@ -33,9 +33,9 @@ PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.3:devel/py-hatch-vcs@${
 PEP517_BUILD_CMD=	${PYTHON_CMD} -m hatchling build --target wheel
 PEP517_INSTALL_DEPEND=	${PKGNAMEPREFIX}pip>=22.3.1:devel/py-pip@${PY_FLAVOR}
 PEP517_INSTALL_CMD=	${PYTHON_CMD} -m pip install --no-color --compile \
-			--no-deps --no-warn-script-location --prefix ${PREFIX} \
-			--progress-bar off --root ${STAGEDIR} \
-			--root-user-action ignore --verbose \
+			--ignore-installed --no-deps --no-warn-script-location \
+			--prefix ${PREFIX} --progress-bar off --root \
+			${STAGEDIR} --root-user-action ignore --verbose \
 			${BUILD_WRKSRC}/dist/${PORTNAME:C/[-_]+/_/g}-${PORTVERSION}-*.whl
 
 # Fix the LookupError: setuptools-scm was unable to detect version (build target)
@@ -77,7 +77,7 @@ post-patch:
 	@${SED} -i.bak -e 's,%%VIRTUALENV_WHEEL%%,${VIRTUALENV_WHEEL},1' ${WRKSRC}/docs/conf.py
 
 post-install:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -s ${STAGEDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install-DOCS-on:
 	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b html -n ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
