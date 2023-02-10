@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.26-14694 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gd3b7a5146c
+DISTVERSION=	0.0.26-14713 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g3a68b7ac0d
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -28,7 +28,7 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
-GH_TUPLE=	RPCS3:hidapi:hidapi-0.13.0-2-ga3ce129:hidapi/3rdparty/hidapi/hidapi \
+GH_TUPLE=	RPCS3:hidapi:hidapi-0.13.1-2-gecf1b62:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:llvm-mirror:9b52b6c39ae9:llvm/llvm \
 		RPCS3:soundtouch:2.3.1-16-g83cfba6:soundtouch/3rdparty/SoundTouch/soundtouch \
 		asmjit:asmjit:06d0bad:asmjit/3rdparty/asmjit/asmjit \
