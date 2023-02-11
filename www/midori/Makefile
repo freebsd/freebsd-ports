@@ -28,7 +28,7 @@ USE_GNOME=	cairo glib20 gtk30 intltool introspection librsvg2:build \
 
 CPE_VENDOR=	midori-browser
 
-CFLAGS+=	-Wno-return-type
+CFLAGS+=	-Wno-int-conversion -Wno-return-type
 CMAKE_ARGS=	-DUSE_APIDOCS:BOOL=OFF
 
 USE_LDCONFIG=	yes
