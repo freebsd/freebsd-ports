@@ -7,6 +7,9 @@ MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Full-screen editing calculator
 WWW=		https://dickey.his.com/add/add.html
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USES=		ncurses tar:tgz
 GNU_CONFIGURE=	yes
 
