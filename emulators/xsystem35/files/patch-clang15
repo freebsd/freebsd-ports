@@ -1,0 +1,61 @@
+Get value instead of pointer in Set*Flag() like other modules
+
+nDEMO.c:22:6: error: incompatible pointer to integer conversion initializing 'int' with an expression of type 'int *'; dereference with * [-Wint-conversion]
+        int p1 = getCaliVariable();
+            ^    ~~~~~~~~~~~~~~~~~
+                 *
+nDEMO.c:28:6: error: incompatible pointer to integer conversion initializing 'int' with an expression of type 'int *'; dereference with * [-Wint-conversion]
+        int p1 = getCaliVariable();
+            ^    ~~~~~~~~~~~~~~~~~
+                 *
+
+Avoid implicit function declaration for sjis2euc()
+
+nt_msg.c:189:9: error: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int' [-Wint-conversion]
+                char *b = sjis2euc(msg);
+                      ^   ~~~~~~~~~~~~~
+nt_msg.c:261:10: error: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int' [-Wint-conversion]
+                        char *b = sjis2euc(mbuf);
+                              ^   ~~~~~~~~~~~~~~
+sactcg.c:211:9: error: incompatible integer to pointer conversion initializing 'char *' with an expression of type 'int' [-Wint-conversion]
+                char *b = sjis2euc(cText);
+                      ^   ~~~~~~~~~~~~~~~
+
+--- modules/NIGHTDLL/nt_msg.c.orig	2003-11-09 15:06:12 UTC
++++ modules/NIGHTDLL/nt_msg.c
+@@ -18,6 +18,7 @@
+ #include "sactcg.h"
+ #include "sjisname.h"
+ #include "sactstring.h"
++#include "eucsjis.h"
+ 
+ 
+ extern int ntsel_dosel(void);
+--- modules/NIGHTDLL/sactcg.c.orig	2003-11-16 15:29:52 UTC
++++ modules/NIGHTDLL/sactcg.c
+@@ -34,6 +34,7 @@
+ #include "ags.h"
+ #include "surface.h"
+ #include "ngraph.h"
++#include "eucsjis.h"
+ #include "sactcg.h"
+ 
+ #define CGMAX 65536
+--- modules/nDEMO/nDEMO.c.orig	2001-07-30 22:58:40 UTC
++++ modules/nDEMO/nDEMO.c
+@@ -19,13 +19,13 @@ void SetKeyCancelFlag() {
+ }
+ 
+ void SetKeyCancelFlag() {
+-	int p1 = getCaliVariable();
++	int p1 = getCaliValue();
+ 	
+ 	DEBUG_COMMAND_YET("nDEMO.SetKeyCancelFlag %d:\n", p1);
+ }
+ 
+ void SetLoopFlag() {
+-	int p1 = getCaliVariable();
++	int p1 = getCaliValue();
+ 	
+ 	DEBUG_COMMAND_YET("nDEMO.SetLoopFlag %d:\n", p1);
+ }
