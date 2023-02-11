@@ -13,6 +13,7 @@ MAKE_JOBS_UNSAFE=	yes
 
 USES=		bison motif tar:Z
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
+CFLAGS=		-Wno-int-conversion
 
 post-patch:
 .for f in nametoaddr.c addrtoname.c print-nfs.c detail-tcp.c tv_addrtoname.c
