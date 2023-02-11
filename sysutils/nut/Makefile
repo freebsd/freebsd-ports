@@ -1,6 +1,6 @@
 PORTNAME=	nut
 PORTVERSION=	2.8.0
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 
@@ -50,7 +50,7 @@ IPMIPSU_DESC=	Use nut-ipmipsu support (experimental)
 SSL_OFF_DESC=	No SSL support
 
 USE_RC_SUBR=	nut nut_upsmon nut_upslog
-SUB_LIST+=	STATEDIR=${STATEDIR}
+SUB_LIST+=	STATEDIR=${STATEDIR} NUT_GROUP=${NUT_GROUP}
 PLIST_SUB+=	STATEDIR=${STATEDIR}
 
 PORTDOCS=	*
