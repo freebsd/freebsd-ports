@@ -12,7 +12,8 @@ WWW=		https://spice-space.org/
 LICENSE=	GPLv2
 
 LIB_DEPENDS=	libopus.so:audio/opus
-BUILD_DEPENDS=	spice-protocol>=0.12.10:devel/spice-protocol
+BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive \
+		spice-protocol>=0.12.10:devel/spice-protocol
 
 OPTIONS_DEFINE=		GSTREAMER LZ4 SASL STATISTICS
 OPTIONS_DEFAULT=	GSTREAMER LZ4 SASL
