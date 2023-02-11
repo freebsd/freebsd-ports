@@ -1,0 +1,43 @@
+--- configure.ac.orig	2021-04-17 06:49:29 UTC
++++ configure.ac
+@@ -41,6 +41,7 @@ AC_PROG_CC_C99
+ if test x"$ac_cv_prog_cc_c99" = xno; then
+     AC_MSG_ERROR([C99 compiler is required.])
+ fi
++AC_PROG_CPP
+ AC_PROG_INSTALL
+ AC_CANONICAL_HOST
+ LT_INIT([disable-static])
+@@ -204,7 +205,8 @@ AS_VAR_APPEND([SPICE_REQUIRES], [" pixman-1 >= $PIXMAN
+ PKG_CHECK_MODULES(SSL, openssl >= 1.0.0)
+ AC_SUBST(SSL_CFLAGS)
+ AC_SUBST(SSL_LIBS)
+-AS_VAR_APPEND([SPICE_REQUIRES], [" openssl"])
++dnl OpenSSL in the base system is not managed by pkgconfig
++dnl AS_VAR_APPEND([SPICE_REQUIRES], [" openssl"])
+ 
+ save_CFLAGS="$CFLAGS"
+ CFLAGS="$CFLAGS $SSL_CFLAGS"
+@@ -217,15 +219,16 @@ CFLAGS="$save_CFLAGS"
+ 
+ AC_CHECK_LIB(jpeg, jpeg_destroy_decompress,
+     AC_MSG_CHECKING([for jpeglib.h])
+-    AC_TRY_CPP(
+-[#include <stdio.h>
++    AC_PREPROC_IFELSE(
++[AC_LANG_SOURCE([[
++#include <stdio.h>
+ #undef PACKAGE
+ #undef VERSION
+ #undef HAVE_STDLIB_H
+-#include <jpeglib.h>],
+-        JPEG_LIBS='-ljpeg'
+-        AC_MSG_RESULT($jpeg_ok),
+-	AC_MSG_ERROR([jpeglib.h not found])),
++#include <jpeglib.h>]])],
++        [JPEG_LIBS='-ljpeg'
++        AC_MSG_RESULT($jpeg_ok)],
++	[AC_MSG_ERROR([jpeglib.h not found])]),
+     AC_MSG_ERROR([libjpeg not found]))
+ AC_SUBST(JPEG_LIBS)
+ 
