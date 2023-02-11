@@ -38,7 +38,8 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/bin/${PORTNAME} \
 MAKE_ARGS+=	docdir=${DOCSDIR}
 INSTALL_TARGET=	install_include install_lib install_utilities
 
-CFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	-I${OPENSSLINC} -Wno-deprecated-non-prototype \
+		-Wno-incompatible-library-redeclaration -Wno-int-conversion
 CPPFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
 
