@@ -21,6 +21,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 
 USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
+CFLAGS+=	-Wno-error=unused-but-set-variable # https://codeberg.org/dnkl/foot/issues/1278
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS LTO NOTIFY PGO UTF8PROC XDG
