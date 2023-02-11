@@ -391,7 +391,7 @@ OPENSSLLIB=	/usr/lib
 PLIST_FILES=	bin/ein \
 		bin/gix
 
-PORTSCOUT=	ignore # repository tags don't make sense and only cause confusion
+PORTSCOUT=	ignore:1 # repository tags don't make sense and only cause confusion
 
 post-install:
 	@${STRIP_CMD} \
