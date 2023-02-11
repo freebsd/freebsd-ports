@@ -29,6 +29,8 @@ USES=		jpeg xorg
 USE_XORG=	x11
 GNU_CONFIGURE=	yes
 
+# Temporary fix, waiting for k&r cleanup patch from debian
+CFLAGS+=	-Wno-int-conversion
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
