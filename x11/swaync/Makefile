@@ -22,6 +22,7 @@ GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
 SHEBANG_FILES=	build-aux/meson/postinstall.py
 GLIB_SCHEMAS=	org.erikreider.swaync.gschema.xml
+CFLAGS+=	-Wno-error=int-conversion # https://github.com/ErikReider/SwayNotificationCenter/issues/209
 
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
