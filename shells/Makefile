@@ -51,7 +51,6 @@
     SUBDIR += shellharden
     SUBDIR += starship
     SUBDIR += switchBashZsh
-    SUBDIR += tcsh_nls
     SUBDIR += tcshrc
     SUBDIR += v7sh
     SUBDIR += viewglob
