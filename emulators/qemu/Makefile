@@ -1,6 +1,6 @@
 PORTNAME=	qemu
 PORTVERSION=	7.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -19,7 +19,8 @@ ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 BUILD_DEPENDS=	bash:shells/bash
 .if ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent
 LIB_DEPENDS+=	libfdt.so:sysutils/dtc \
-		libzstd.so:archivers/zstd
+		libzstd.so:archivers/zstd \
+		libslirp.so:net/libslirp
 .endif
 .if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent)
 LIB_DEPENDS+=	libepoxy.so:graphics/libepoxy
