@@ -177,6 +177,7 @@
     SUBDIR += tg_owt
     SUBDIR += tkabber
     SUBDIR += tkabber-plugins
+    SUBDIR += tokodon
     SUBDIR += toot
     SUBDIR += tox
     SUBDIR += tox_extension_messages
