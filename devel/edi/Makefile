@@ -11,12 +11,19 @@ WWW=		https://phab.enlightenment.org/w/projects/edi/
 LIB_DEPENDS=	libelementary.so:devel/efl
 
 USES=		desktop-file-utils gettext meson pkgconfig tar:xz
-MESON_ARGS=	-Dlibclang=false
 USE_LDCONFIG=	yes
 
 PORTDOCS=	AUTHORS NEWS TODO
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS LIBCLANG
+
+LIBCLANG_DESC=	Autocomplete and inline error reporting via libclang
+LIBCLANG_LIB_DEPENDS=	libclang.so:devel/llvm${LLVM_VERSION}
+LIBCLANG_MESON_ON=	-Dlibclang-libdir=${LOCALBASE}/llvm${LLVM_VERSION}/lib \
+		-Dlibclang-headerdir=${LOCALBASE}/llvm${LLVM_VERSION}/include
+LIBCLANG_MESON_OFF=	-Dlibclang=false
+
+LLVM_VERSION?=	${LLVM_DEFAULT}
 
 post-patch:
 	@${REINPLACE_CMD} -e '/input : join_paths/d' \
