@@ -61,14 +61,14 @@ GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 PROFILE_VARS=		enable_profile=YES
 PROFILE_VARS_OFF=	enable_profile=NO
 
-GHC_VERSION?=		9.2.5
+GHC_VERSION?=		9.2.6
 LLVM_VERSION?=		12
 BOOT_GHC_VERSION=	8.10.7
 # LLVM version that bootstrap compiler uses
 BOOT_LLVM_VERSION=	10
 
 BASE_PACKAGES?=		Cabal-3.6.3.0 array-0.5.4.0 base-4.16.4.0 binary-0.8.9.0 \
-			bytestring-0.11.3.1 containers-0.6.5.1 deepseq-1.4.6.1 \
+			bytestring-0.11.4.0 containers-0.6.5.1 deepseq-1.4.6.1 \
 			directory-1.3.6.2 exceptions-0.10.4 filepath-1.4.2.2 \
 			ghc-${GHC_VERSION} ghc-bignum-1.2 ghc-compact-0.1.0.0 \
 			ghc-prim-0.8.0 haskeline-0.8.2 hpc-0.6.1.0 \
