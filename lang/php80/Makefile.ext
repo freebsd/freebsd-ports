@@ -197,7 +197,7 @@ BUILD_DEPENDS=  re2c:devel/re2c
 
 .if ${PHP_MODNAME} == "ldap"
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE} --with-ldap-sasl=${LOCALBASE}
-USE+=	ldap
+USES+=	ldap
 .endif
 
 .if ${PHP_MODNAME} == "mbstring"
