@@ -1,3 +1,4 @@
+bin/hb-info
 bin/hb-ot-shape-closure
 bin/hb-shape
 bin/hb-subset
@@ -30,6 +31,7 @@ include/harfbuzz/hb-ot-name.h
 include/harfbuzz/hb-ot-shape.h
 include/harfbuzz/hb-ot-var.h
 include/harfbuzz/hb-ot.h
+include/harfbuzz/hb-paint.h
 include/harfbuzz/hb-set.h
 include/harfbuzz/hb-shape-plan.h
 include/harfbuzz/hb-shape.h
@@ -123,6 +125,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-5-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-5-3-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-6-0-0.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/api-index-7-0-0.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/api-index-full.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/apple-advanced-typography-api.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/buffers-language-script-and-direction.html
@@ -136,16 +139,19 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/fonts-and-faces-variable.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/fonts-and-faces.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/getting-started.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/glyphs-and-rendering.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/graphite-shaping.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-aat-layout.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-blob.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-buffer.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-cairo.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-common.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-coretext.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-deprecated.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-directwrite.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-draw.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-face.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-features.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-font.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ft.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-gdi.html
@@ -162,6 +168,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-name.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-shape.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-ot-var.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-paint.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-set.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape-plan.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/harfbuzz-hb-shape.html
@@ -175,6 +182,7 @@ share/gir-1.0/HarfBuzz-0.0.gir
 %%DOCS%%share/gtk-doc/html/harfbuzz/index.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/install-harfbuzz.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/integration-api.html
+%%DOCS%%share/gtk-doc/html/harfbuzz/integration-cairo.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/integration-coretext.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/integration-freetype.html
 %%DOCS%%share/gtk-doc/html/harfbuzz/integration-icu.html
