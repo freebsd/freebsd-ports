@@ -37,9 +37,9 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-zlib \
 		--without-npm
 HAS_CONFIGURE=	yes
-MAKE_ENV=	CC.host="${CC}" \
+MAKE_ENV=	CC.host="${CCACHE_BIN} ${CC}" \
 		CFLAGS.host="${CFLAGS}" \
-		CXX.host="${CXX}" \
+		CXX.host="${CCACHE_BIN} ${CXX}" \
 		CXXFLAGS.host="${CXXFLAGS}" \
 		LDFLAGS.host="${LDFLAGS}" \
 		LINK.host="${CXX}"
