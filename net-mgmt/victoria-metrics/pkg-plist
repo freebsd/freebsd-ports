@@ -80,6 +80,9 @@ bin/victoria-metrics
 %%PORTDOCS%%%%DOCSDIR%%/keyConcepts_vmui.png
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
 %%PORTDOCS%%%%DOCSDIR%%/managed-victoriametrics/README.md
+%%PORTDOCS%%%%DOCSDIR%%/managed-victoriametrics/how-to-monitor-k8s.md
+%%PORTDOCS%%%%DOCSDIR%%/managed-victoriametrics/how-to-monitor-k8s_access-token.png
+%%PORTDOCS%%%%DOCSDIR%%/managed-victoriametrics/how-to-monitor-k8s_datasource.png
 %%PORTDOCS%%%%DOCSDIR%%/managed-victoriametrics/quickstart.md
 %%PORTDOCS%%%%DOCSDIR%%/managed-victoriametrics/quickstart_continue-subscribe.png
 %%PORTDOCS%%%%DOCSDIR%%/managed-victoriametrics/quickstart_instance-create.png
