@@ -1,6 +1,6 @@
---- components/neterror/resources/neterror.js.orig	2022-10-01 07:40:07 UTC
+--- components/neterror/resources/neterror.js.orig	2023-02-11 09:11:04 UTC
 +++ components/neterror/resources/neterror.js
-@@ -130,7 +130,7 @@ function detailsButtonClick() {
+@@ -137,7 +137,7 @@ function detailsButtonClick() {
  
  let primaryControlOnLeft = true;
  // clang-format off

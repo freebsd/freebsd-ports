@@ -1,6 +1,6 @@
---- net/dns/host_resolver_system_task.cc.orig	2023-01-13 08:56:02 UTC
+--- net/dns/host_resolver_system_task.cc.orig	2023-02-11 09:11:04 UTC
 +++ net/dns/host_resolver_system_task.cc
-@@ -351,8 +351,8 @@ void HostResolverSystemTask::OnLookupComplete(const ui
+@@ -353,8 +353,8 @@ void HostResolverSystemTask::OnLookupComplete(const ui
  }
  
  void EnsureSystemHostResolverCallReady() {
@@ -11,7 +11,7 @@
    EnsureDnsReloaderInit();
  #elif BUILDFLAG(IS_WIN)
    EnsureWinsockInit();
-@@ -438,7 +438,7 @@ int SystemHostResolverCall(const std::string& host,
+@@ -440,7 +440,7 @@ int SystemHostResolverCall(const std::string& host,
                                                  base::BlockingType::WILL_BLOCK);
  
  #if BUILDFLAG(IS_POSIX) && \

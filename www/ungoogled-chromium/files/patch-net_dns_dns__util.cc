@@ -1,11 +1,11 @@
---- net/dns/dns_util.cc.orig	2022-10-01 07:40:07 UTC
+--- net/dns/dns_util.cc.orig	2023-02-11 09:11:04 UTC
 +++ net/dns/dns_util.cc
-@@ -28,6 +28,8 @@
+@@ -29,6 +29,8 @@
+ #include "net/dns/public/util.h"
  #include "net/third_party/uri_template/uri_template.h"
- #include "third_party/abseil-cpp/absl/types/optional.h"
  
 +#include <sys/socket.h>
 +
  #if BUILDFLAG(IS_POSIX)
- #include <netinet/in.h>
  #include <net/if.h>
+ #include <netinet/in.h>

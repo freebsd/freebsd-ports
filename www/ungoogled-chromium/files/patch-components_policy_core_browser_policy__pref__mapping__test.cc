@@ -1,6 +1,6 @@
---- components/policy/core/browser/policy_pref_mapping_test.cc.orig	2022-12-02 17:56:32 UTC
+--- components/policy/core/browser/policy_pref_mapping_test.cc.orig	2023-02-11 09:11:04 UTC
 +++ components/policy/core/browser/policy_pref_mapping_test.cc
-@@ -337,7 +337,7 @@ class PolicyTestCase {
+@@ -325,7 +325,7 @@ class PolicyTestCase {
      const std::string os("chromeos_lacros");
  #elif BUILDFLAG(IS_IOS)
      const std::string os("ios");

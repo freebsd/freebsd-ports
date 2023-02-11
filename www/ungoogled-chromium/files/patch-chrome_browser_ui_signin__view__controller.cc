@@ -1,6 +1,6 @@
---- chrome/browser/ui/signin_view_controller.cc.orig	2022-10-29 17:50:56 UTC
+--- chrome/browser/ui/signin_view_controller.cc.orig	2023-02-11 09:11:04 UTC
 +++ chrome/browser/ui/signin_view_controller.cc
-@@ -273,7 +273,7 @@ void SigninViewController::ShowModalEnterpriseConfirma
+@@ -275,7 +275,7 @@ void SigninViewController::ShowModalEnterpriseConfirma
      SkColor profile_color,
      signin::SigninChoiceCallback callback) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

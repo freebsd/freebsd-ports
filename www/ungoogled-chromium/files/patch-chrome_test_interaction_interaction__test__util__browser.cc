@@ -1,6 +1,6 @@
---- chrome/test/interaction/interaction_test_util_browser.cc.orig	2023-01-13 08:56:02 UTC
+--- chrome/test/interaction/interaction_test_util_browser.cc.orig	2023-02-11 09:11:04 UTC
 +++ chrome/test/interaction/interaction_test_util_browser.cc
-@@ -26,7 +26,7 @@
+@@ -31,7 +31,7 @@
  #include "ui/base/interaction/interaction_test_util_mac.h"
  #endif
  

@@ -1,9 +1,9 @@
---- ui/base/clipboard/clipboard_constants.h.orig	2022-10-01 07:40:07 UTC
+--- ui/base/clipboard/clipboard_constants.h.orig	2023-02-11 09:11:04 UTC
 +++ ui/base/clipboard/clipboard_constants.h
-@@ -46,7 +46,7 @@ extern const char kMimeTypeDataTransferEndpoint[];
- #endif  // BUILDFLAG(IS_CHROMEOS)
+@@ -47,7 +47,7 @@ extern const char kMimeTypeDataTransferEndpoint[];
  
- // Linux-specific MIME type constants (also used in Fuchsia).
+ // ----- LINUX & CHROMEOS & FUCHSIA MIME TYPES -----
+ 
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
  COMPONENT_EXPORT(UI_BASE_CLIPBOARD_TYPES)

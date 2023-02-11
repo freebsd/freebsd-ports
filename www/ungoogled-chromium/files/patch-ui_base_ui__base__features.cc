@@ -1,4 +1,4 @@
---- ui/base/ui_base_features.cc.orig	2023-01-13 08:56:02 UTC
+--- ui/base/ui_base_features.cc.orig	2023-02-11 09:11:04 UTC
 +++ ui/base/ui_base_features.cc
 @@ -205,7 +205,7 @@ BASE_FEATURE(kExperimentalFlingAnimation,
               "ExperimentalFlingAnimation",
@@ -9,7 +9,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
       !BUILDFLAG(IS_CHROMEOS_LACROS))
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -307,7 +307,7 @@ bool IsForcedColorsEnabled() {
+@@ -311,7 +311,7 @@ bool IsForcedColorsEnabled() {
  // milestones.
  BASE_FEATURE(kEyeDropper,
               "EyeDropper",

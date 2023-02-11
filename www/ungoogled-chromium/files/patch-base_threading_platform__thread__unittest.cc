@@ -1,4 +1,4 @@
---- base/threading/platform_thread_unittest.cc.orig	2023-01-13 08:56:02 UTC
+--- base/threading/platform_thread_unittest.cc.orig	2023-02-11 09:11:04 UTC
 +++ base/threading/platform_thread_unittest.cc
 @@ -31,7 +31,7 @@
  #include "base/time/time.h"
@@ -9,7 +9,7 @@
  #include <pthread.h>
  #include <sys/syscall.h>
  #include <sys/types.h>
-@@ -417,7 +417,7 @@ TEST(PlatformThreadTest,
+@@ -422,7 +422,7 @@ TEST(PlatformThreadTest,
  // and hardcodes what we know. Please inform scheduler-dev@ch40m1um.qjz9zk if this
  // proprerty changes for a given platform.
  TEST(PlatformThreadTest, CanChangeThreadType) {
@@ -18,7 +18,7 @@
    // On Ubuntu, RLIMIT_NICE and RLIMIT_RTPRIO are 0 by default, so we won't be
    // able to increase priority to any level.
    constexpr bool kCanIncreasePriority = false;
-@@ -684,12 +684,16 @@ INSTANTIATE_TEST_SUITE_P(
+@@ -696,12 +696,16 @@ INSTANTIATE_TEST_SUITE_P(
  
  #endif  // BUILDFLAG(IS_APPLE)
  

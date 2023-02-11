@@ -1,6 +1,6 @@
---- extensions/browser/pref_names.h.orig	2022-10-01 07:40:07 UTC
+--- extensions/browser/pref_names.h.orig	2023-02-11 09:11:04 UTC
 +++ extensions/browser/pref_names.h
-@@ -98,7 +98,7 @@ extern const char kStorageGarbageCollect[];
+@@ -103,7 +103,7 @@ extern const char kStorageGarbageCollect[];
  extern const char kDeletedComponentExtensions[];
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
