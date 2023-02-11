@@ -1,3 +1,4 @@
+@comment bin/hb-info
 @comment bin/hb-ot-shape-closure
 @comment bin/hb-shape
 @comment bin/hb-subset
@@ -6,6 +7,7 @@ bin/hb-view
 @comment include/harfbuzz/hb-aat.h
 @comment include/harfbuzz/hb-blob.h
 @comment include/harfbuzz/hb-buffer.h
+include/harfbuzz/hb-cairo.h
 @comment include/harfbuzz/hb-common.h
 @comment include/harfbuzz/hb-cplusplus.hh
 @comment include/harfbuzz/hb-deprecated.h
@@ -32,6 +34,7 @@ bin/hb-view
 @comment include/harfbuzz/hb-ot-shape.h
 @comment include/harfbuzz/hb-ot-var.h
 @comment include/harfbuzz/hb-ot.h
+@comment include/harfbuzz/hb-paint.h
 @comment include/harfbuzz/hb-set.h
 @comment include/harfbuzz/hb-shape-plan.h
 @comment include/harfbuzz/hb-shape.h
@@ -43,6 +46,9 @@ bin/hb-view
 @comment include/harfbuzz/hb.h
 @comment lib/cmake/harfbuzz/harfbuzz-config.cmake
 @comment lib/girepository-1.0/HarfBuzz-0.0.typelib
+lib/libharfbuzz-cairo.so
+lib/libharfbuzz-cairo.so.0
+lib/libharfbuzz-cairo.so.%%LIBVER%%
 @comment lib/libharfbuzz-gobject.so
 @comment lib/libharfbuzz-gobject.so.0
 @comment lib/libharfbuzz-gobject.so.%%LIBVER%%
@@ -55,6 +61,7 @@ bin/hb-view
 @comment lib/libharfbuzz.so
 @comment lib/libharfbuzz.so.0
 @comment lib/libharfbuzz.so.%%LIBVER%%
+libdata/pkgconfig/harfbuzz-cairo.pc
 @comment libdata/pkgconfig/harfbuzz-gobject.pc
 @comment libdata/pkgconfig/harfbuzz-icu.pc
 @comment libdata/pkgconfig/harfbuzz-subset.pc

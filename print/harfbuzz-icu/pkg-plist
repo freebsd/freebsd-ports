@@ -1,3 +1,4 @@
+@comment bin/hb-info
 @comment bin/hb-ot-shape-closure
 @comment bin/hb-shape
 @comment bin/hb-subset
@@ -32,6 +33,7 @@ include/harfbuzz/hb-icu.h
 @comment include/harfbuzz/hb-ot-shape.h
 @comment include/harfbuzz/hb-ot-var.h
 @comment include/harfbuzz/hb-ot.h
+@comment include/harfbuzz/hb-paint.h
 @comment include/harfbuzz/hb-set.h
 @comment include/harfbuzz/hb-shape-plan.h
 @comment include/harfbuzz/hb-shape.h
