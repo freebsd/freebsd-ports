@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
-USES=		compiler:c11 cmake libtool localbase:ldflags pkgconfig tar:xz
+USES=		compiler:c11 cmake localbase:ldflags pkgconfig tar:xz
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USES+=	cpe
