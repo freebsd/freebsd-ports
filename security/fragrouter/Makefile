@@ -3,7 +3,7 @@ PORTVERSION=	1.6
 PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://monkey.org/~dugsong/ \
-		http://fuz.su/~fuz/distfiles/fragrouter/ \
+		LOCAL/fuz \
 		LOCAL/ohauer
 
 MAINTAINER=	fuz@FreeBSD.org

@@ -111,7 +111,7 @@ OPTIONS_SINGLE_CSS=	CSS_DIST CSS_LESSC
 CSS_DESC=			Stylesheets
 CSS_DIST_DESC=			Use pre-generated stylesheets
 CSS_LESSC_DESC=			Generate stylesheets with lessc (requires npm)
-CSS_DIST_MASTER_SITES=		http://fuz.su/~fuz/distfiles/writefreely/:css
+CSS_DIST_MASTER_SITES=		LOCAL/fuz:css
 CSS_DIST_DISTFILES=		writefreely-css-${DISTVERSION}.tar.gz:css
 CSS_LESSC_BUILD_DEPENDS=	npm:www/npm
 CSS_LESSC_VARS=			LEGAL_PACKAGE=yes \
