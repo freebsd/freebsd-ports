@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
-USES=		autoreconf compiler:c11 gmake libtool localbase pkgconfig tar:xz
-USE_CSTD=	gnu99
+USES=		compiler:c11 cmake libtool localbase:ldflags pkgconfig tar:xz
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 USES+=	cpe
@@ -24,7 +23,6 @@ USES+=	cpe
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ARGS+=	--libdir=${PREFIX}/lib/lighttpd
-INSTALL_TARGET=	install-strip
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
 TEST_TARGET=	check
@@ -34,8 +32,8 @@ PORTDOCS=	AUTHORS COPYING INSTALL NEWS README
 USE_RC_SUBR=	lighttpd
 REQUIRE=	LOGIN
 
-OPTIONS_DEFINE=	ATTR DBI DOCS IPV6 KRB5 LUA MAXMINDDB NETTLE LDAP SPAWNFCGI \
-		VALGRIND WEBDAV ZSTD
+OPTIONS_DEFINE=	ATTR DBI DOCS KRB5 LUA MAXMINDDB NETTLE LDAP SPAWNFCGI \
+		WEBDAV ZSTD
 OPTIONS_GROUP=	SSL
 OPTIONS_GROUP_SSL=	OPENSSL GNUTLS MBEDTLS NSS WOLFSSL
 
@@ -50,52 +48,41 @@ LUA_DESC=	lua support (mod_magnet)
 MAXMINDDB_DESC=	IP-based geolocation lookup (mod_maxminddb)
 NETTLE_DESC=	Crypto support from Nettle
 SPAWNFCGI_DESC=	Depend on spawn-fcgi utility
-VALGRIND_DESC=	valgrind support
 WEBDAV_DESC=	WebDAV support
 ZSTD_DESC=	mod_deflate support for zstd (Zstandard)
 
-ATTR_CONFIGURE_WITH=	attr
-DBI_CONFIGURE_WITH=	dbi=${LOCALBASE}
+ATTR_CMAKE_BOOL=	WITH_XATTR
+DBI_CMAKE_BOOL=		WITH_DBI
 DBI_LIB_DEPENDS=	libdbi.so:databases/libdbi
-GNUTLS_CONFIGURE_WITH=	gnutls=${LOCALBASE}
+GNUTLS_CMAKE_BOOL=	WITH_GNUTLS
 GNUTLS_LIBS=		-lgnutls
 GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
-IPV6_CONFIGURE_OFF=	--disable-ipv6
-KRB5_CONFIGURE_WITH=	krb5
+KRB5_CMAKE_BOOL=	WITH_KRB5
 KRB5_CPPFLAGS=		${GSSAPICPPFLAGS}
 KRB5_LDFLAGS=		${GSSAPILDFLAGS}
 KRB5_LIBS=		${GSSAPILIBS}
 KRB5_USES=		gssapi:mit
-LDAP_CONFIGURE_WITH=	ldap
+LDAP_CMAKE_BOOL=	WITH_LDAP
 LDAP_USES=		ldap
 LDAP_VARS=		REQUIRE+=slapd
 LUA_USES=		lua
-LUA_CONFIGURE_WITH=	lua
-LUA_CONFIGURE_ENV=	LUA_CFLAGS="-I${LUA_INCDIR}" LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER}"
-MAXMINDDB_CONFIGURE_WITH=	maxminddb=${LOCALBASE}
+LUA_CMAKE_BOOL=		WITH_LUA
+LUA_CMAKE_ON=		-DWITH_LUA_VERSION:STRING="lua-${LUA_VER}"
+MAXMINDDB_CMAKE_BOOL=	WITH_MAXMINDDB
 MAXMINDDB_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
-MBEDTLS_CONFIGURE_WITH=	mbedtls=${LOCALBASE}
+MBEDTLS_CMAKE_BOOL=	WITH_MBEDTLS
 MBEDTLS_LIB_DEPENDS=	libmbedtls.so:security/mbedtls
-NETTLE_CONFIGURE_WITH=	nettle=${LOCALBASE}
+NETTLE_CMAKE_BOOL=	WITH_NETTLE
 NETTLE_LIB_DEPENDS=	libnettle.so:security/nettle
-NSS_CONFIGURE_WITH=	nss=${LOCALBASE}
+NSS_CMAKE_BOOL=		WITH_NSS
 NSS_CPPFLAGS=		-I${LOCALBASE}/include/nspr
 NSS_LIB_DEPENDS=	libnss3.so:security/nss
 OPENSSL_USES=		ssl
-OPENSSL_CONFIGURE_WITH=	openssl
-OPENSSL_CONFIGURE_ON=	--with-openssl-includes=${OPENSSLINC} --with-openssl-libs=${OPENSSLLIB}
+OPENSSL_CMAKE_BOOL=	WITH_OPENSSL
 SPAWNFCGI_RUN_DEPENDS=	spawn-fcgi:www/spawn-fcgi
-VALGRIND_BUILD_DEPENDS=	valgrind:devel/valgrind
-VALGRIND_RUN_DEPENDS=	valgrind:devel/valgrind
-VALGRIND_CONFIGURE_WITH=valgrind
-WEBDAV_USES=		gnome
-WEBDAV_USE=		GNOME=libxml2
-WEBDAV_LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
-			libsqlite3.so:databases/sqlite3
-WEBDAV_CONFIGURE_WITH=	webdav-props webdav-locks
-WOLFSSL_CONFIGURE_WITH=	wolfssl=${LOCALBASE}
+WOLFSSL_CMAKE_BOOL=	WITH_WOLFSSL
 WOLFSSL_LIB_DEPENDS=	libwolfssl.so:security/wolfssl
-ZSTD_CONFIGURE_WITH=	zstd
+ZSTD_CMAKE_BOOL=	WITH_ZSTD
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf
@@ -150,11 +137,8 @@ post-patch:
 		-e "s|^(var.state_dir.*=).*|\1 \"${RUNDIR}\"|" \
 		-e "s|^(var.cache_dir.*=).*|\1 \"${CACHEDIR}\"|" \
 		${WRKSRC}/doc/config/lighttpd.conf
-	@${REINPLACE_CMD} -e "s|/etc/lighttpd|${ETCDIR}|g" \
-		${WRKSRC}/doc/config/conf.d/auth.conf
 	@${REINPLACE_CMD} -e "s|/usr/bin/python|${LOCALBASE}/bin/python|" \
-		${WRKSRC}/doc/config/conf.d/cgi.conf \
-		${WRKSRC}/tests/*.conf
+		${WRKSRC}/doc/config/conf.d/cgi.conf
 	@${ECHO} >> ${WRKSRC}/doc/config/lighttpd.conf
 	@${ECHO} "# IPv4 listening socket" >> \
 		${WRKSRC}/doc/config/lighttpd.conf
