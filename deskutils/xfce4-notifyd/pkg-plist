@@ -62,10 +62,9 @@ share/applications/xfce4-notifyd-config.desktop
 share/icons/hicolor/16x16/apps/org.xfce.notification.png
 share/icons/hicolor/48x48/apps/org.xfce.notification.png
 share/icons/hicolor/scalable/apps/org.xfce.notification.svg
-share/icons/hicolor/scalable/status/notification-disabled-new-symbolic.svg
 share/icons/hicolor/scalable/status/notification-disabled-symbolic.svg
-share/icons/hicolor/scalable/status/notification-new-symbolic.svg
 share/icons/hicolor/scalable/status/notification-symbolic.svg
+share/icons/hicolor/scalable/status/org.xfce.notification.unread-emblem-symbolic.svg
 share/themes/Bright/xfce-notify-4.0/gtk.css
 share/themes/Default/xfce-notify-4.0/gtk.css
 share/themes/Retro/xfce-notify-4.0/gtk.css
