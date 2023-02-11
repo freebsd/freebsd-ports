@@ -18,6 +18,7 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland \
 
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GNOME=	cairo
+CFLAGS+=	-Wno-error=strict-prototypes # Clang 15, similar to wlclock
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	EPOLL INOTIFY LIBRSVG2 MANPAGES
