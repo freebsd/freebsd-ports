@@ -112,6 +112,11 @@ share/icons/hicolor/scalable/apps/org.xfce.settings.manager.svg
 share/icons/hicolor/scalable/apps/org.xfce.settings.mouse.svg
 share/icons/hicolor/scalable/apps/org.xfce.terminalemulator.svg
 share/icons/hicolor/scalable/apps/org.xfce.webbrowser.svg
+share/icons/hicolor/scalable/devices/xfce-display-extend.svg
+share/icons/hicolor/scalable/devices/xfce-display-external.svg
+share/icons/hicolor/scalable/devices/xfce-display-internal.svg
+share/icons/hicolor/scalable/devices/xfce-display-mirror.svg
+share/icons/hicolor/scalable/devices/xfce-display-profile.svg
 share/xfce4/helpers/alacritty.desktop
 share/xfce4/helpers/aterm.desktop
 share/xfce4/helpers/balsa.desktop
