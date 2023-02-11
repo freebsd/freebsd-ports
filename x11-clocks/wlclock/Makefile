@@ -15,6 +15,7 @@ LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 USES=		compiler:c11 gnome meson pkgconfig
 USE_GNOME=	cairo
+CFLAGS+=	-Wno-error=strict-prototypes # https://lists.sr.ht/~leon_plickat/public-inbox/%3Cttzs-maz0-wny%40FreeBSD.org%3E
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
