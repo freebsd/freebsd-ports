@@ -56,6 +56,6 @@ share/drirc.d/00-mesa%%SUFFIX%%-defaults.conf
 %%NO_COINST%%share/glvnd/egl_vendor.d/50_mesa.json
 %%VKLAYERS%%share/vulkan/explicit_layer.d/VkLayer_MESA_overlay.json
 %%anv%%%%NO_COINST%%share/vulkan/icd.d/intel_icd.%%ARCH%%.json
-%%hasvk%%%%NO_COINST%%share/vulkan/icd.d/intel_hasvk_icd.%%ARCH%%.json
+%%hasvk%%share/vulkan/icd.d/intel_hasvk_icd.%%ARCH%%.json
 %%radv%%%%NO_COINST%%share/vulkan/icd.d/radeon_icd.%%ARCH%%.json
 %%VKLAYERS%%share/vulkan/implicit_layer.d/VkLayer_MESA_device_select.json
