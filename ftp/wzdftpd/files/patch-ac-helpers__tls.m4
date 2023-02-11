@@ -1,6 +1,6 @@
---- ac-helpers/tls.m4.orig
+--- ac-helpers/tls.m4.orig	2004-10-26 11:14:48 UTC
 +++ ac-helpers/tls.m4
-@@ -22,7 +22,7 @@
+@@ -22,7 +22,7 @@ AC_DEFUN([WZD_TLS],
    )
  
  if test "$gnutls" = "yes"; then

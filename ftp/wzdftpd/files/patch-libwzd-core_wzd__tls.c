@@ -9,7 +9,23 @@
    }
  
    SSL_CTX_set_session_cache_mode(tls_ctx, SSL_SESS_CACHE_CLIENT);
-@@ -946,19 +946,13 @@ int tls_exit(void)
+@@ -779,7 +779,6 @@ void * ssl_get_obj(wzd_context_t * context)
+ #include <stdio.h>
+ 
+ #include <gnutls/gnutls.h>
+-#include <gcrypt.h>
+ #include <errno.h>
+ #include <pthread.h>
+ GCRY_THREAD_OPTION_PTHREAD_IMPL;
+@@ -892,7 +891,6 @@ int tls_init(void)
+ 
+   /* The order matters.
+    */
+-  gcry_control (GCRYCTL_SET_THREAD_CBS, &gcry_threads_pthread);
+   gnutls_global_init();
+ 
+   /** \todo TODO XXX move this code to global init ? */
+@@ -946,19 +944,13 @@ int tls_exit(void)
  
  static gnutls_session initialize_tls_session(gnutls_connection_end con_end)
  {
@@ -31,7 +47,7 @@
  
    gnutls_credentials_set(session, GNUTLS_CRD_CERTIFICATE, x509_cred);
  
-@@ -1001,27 +995,6 @@ int tls_auth (const char *type, wzd_context_t * contex
+@@ -1001,27 +993,6 @@ int tls_auth (const char *type, wzd_context_t * contex
    }
  
    /** \todo XXX parse TLS cipher names */

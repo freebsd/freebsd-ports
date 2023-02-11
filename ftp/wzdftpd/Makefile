@@ -13,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf:2.69 cpe gettext-tools libtool localbase pkgconfig
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --disable-bonjour --disable-static
+CONFIGURE_ARGS=	--sysconfdir=${ETCDIR} --datadir=${PREFIX}/lib \
+		--disable-bonjour --disable-static
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
@@ -62,26 +63,12 @@ AVAHI_LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 
 post-patch:
 	@${TOUCH} ${WRKSRC}/config.rpath
-	@${ECHO_CMD} "ACLOCAL_AMFLAGS= -I ac-helpers" >> ${WRKSRC}/Makefile.am
-	@${REINPLACE_CMD} -e \
-		'/LDFLAGS/s|@PTHREAD_CFLAGS@|@LTLIBICONV@|' \
-		${WRKSRC}/libwzd-core/Makefile.am
-	@${REINPLACE_CMD} -e \
-		's|INSTALLDIRS=vendor|INSTALLPRIVLIB=$${prefix}/lib| ; \
-		 /MAKE/s| install| pure_install|' \
-		${WRKSRC}/libwzd-perl/Makefile.am
-.for i in backends modules
-	@${FIND} ${WRKSRC}/${i} -name "Makefile.am" | ${XARGS} \
-		${REINPLACE_CMD} -e \
-		'/^libdir/s|$${pkgdatadir}|$${prefix}/lib/wzdftpd|'
-.endfor
-	@${FIND} ${WRKSRC} -name "*_tls.c" | ${XARGS} ${REINPLACE_CMD} -e \
-		'/<gcrypt\.h>/d ; /gcry_control/d'
-	@${REINPLACE_CMD} -e \
-		's|^wzd_sfv_config SfvConfig|extern &|' \
-		${WRKSRC}/modules/sfv/libwzd_sfv_main.h
 
+# wzd.m4 gets installed into the wrong spot due to our --datadir hack
 post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/aclocal
+	${MV} ${STAGEDIR}${PREFIX}/lib/aclocal/wzd.m4 ${STAGEDIR}${PREFIX}/share/aclocal
+	${RMDIR} ${STAGEDIR}${PREFIX}/lib/aclocal
 	${INSTALL_DATA} ${WRKSRC}/*.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 post-install-DOCS-on:
