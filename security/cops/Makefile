@@ -14,6 +14,7 @@ USE_PERL5=	run
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION:S/.//g}+
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	reconfig
+CFLAGS=		-Wno-format-security -Wno-int-conversion
 MAKEFILE=	makefile
 MAKE_ARGS=	EXECUTABLE="${EXECUTABLE}" C_SRC="${C_SRC}"
 MAKE_JOBS_UNSAFE=	yes
