@@ -1685,6 +1685,9 @@ lib/ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Char8.
 %%DYNAMIC%%lib/ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Internal.dyn_hi
 lib/ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Internal.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Internal.p_hi
+%%DYNAMIC%%lib/ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Internal/Type.dyn_hi
+lib/ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Internal/Type.hi
+%%PROFILE%%lib/ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Internal/Type.p_hi
 %%DYNAMIC%%lib/ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Lazy.dyn_hi
 lib/ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Lazy.hi
 %%PROFILE%%lib/ghc-%%GHC_VERSION%%/bytestring-%%BYTESTRING_VERSION%%/Data/ByteString/Lazy.p_hi
