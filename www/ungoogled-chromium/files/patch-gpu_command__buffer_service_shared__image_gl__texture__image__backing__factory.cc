@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/gl_texture_image_backing_factory.cc.orig	2023-01-13 08:56:02 UTC
+--- gpu/command_buffer/service/shared_image/gl_texture_image_backing_factory.cc.orig	2023-02-11 09:11:04 UTC
 +++ gpu/command_buffer/service/shared_image/gl_texture_image_backing_factory.cc
-@@ -165,7 +165,7 @@ bool GLTextureImageBackingFactory::IsSupported(
+@@ -143,7 +143,7 @@ bool GLTextureImageBackingFactory::IsSupported(
    // Linux and ChromeOS support WebGPU/Compat on GL. All other platforms
    // do not support WebGPU on GL.
    if (usage & SHARED_IMAGE_USAGE_WEBGPU) {

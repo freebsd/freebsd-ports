@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2023-01-13 08:56:02 UTC
+--- chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc.orig	2023-02-11 09:11:04 UTC
 +++ chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
 @@ -121,7 +121,7 @@
  #include "chrome/browser/ui/webui/settings/chromeos/constants/routes.mojom.h"
@@ -27,7 +27,7 @@
    bool allow_qt_theme = base::FeatureList::IsEnabled(ui::kAllowQt);
  #else
    bool allow_qt_theme = false;
-@@ -381,7 +381,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -377,7 +377,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
      {"huge", IDS_SETTINGS_HUGE_FONT_SIZE},
      {"sidePanelAlignLeft", IDS_SETTINGS_SIDE_PANEL_ALIGN_LEFT},
      {"sidePanelAlignRight", IDS_SETTINGS_SIDE_PANEL_ALIGN_RIGHT},
@@ -36,7 +36,7 @@
      {"gtkTheme", IDS_SETTINGS_GTK_THEME},
      {"useGtkTheme", IDS_SETTINGS_USE_GTK_THEME},
      {"qtTheme", IDS_SETTINGS_QT_THEME},
-@@ -391,7 +391,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -387,7 +387,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  #else
      {"resetToDefaultTheme", IDS_SETTINGS_RESET_TO_DEFAULT_THEME},
  #endif
@@ -45,7 +45,7 @@
      {"showWindowDecorations", IDS_SHOW_WINDOW_DECORATIONS},
  #endif
  #if BUILDFLAG(IS_MAC)
-@@ -415,7 +415,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
+@@ -411,7 +411,7 @@ void AddAppearanceStrings(content::WebUIDataSource* ht
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2023-01-13 08:56:02 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2023-02-11 09:11:04 UTC
 +++ components/feature_engagement/public/feature_constants.cc
 @@ -24,7 +24,7 @@ BASE_FEATURE(kUseClientConfigIPH,
  BASE_FEATURE(kIPHDummyFeature, "IPH_Dummy", base::FEATURE_DISABLED_BY_DEFAULT);
@@ -9,7 +9,7 @@
  BASE_FEATURE(kIPHBatterySaverModeFeature,
               "IPH_BatterySaverMode",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -424,7 +424,8 @@ BASE_FEATURE(kIPHOverflowMenuTipFeature,
+@@ -424,7 +424,8 @@ BASE_FEATURE(kIPHPriceNotificationsWhileBrowsingFeatur
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

@@ -1,4 +1,4 @@
---- content/browser/child_process_launcher_helper_linux.cc.orig	2022-10-01 07:40:07 UTC
+--- content/browser/child_process_launcher_helper_linux.cc.orig	2023-02-11 09:11:04 UTC
 +++ content/browser/child_process_launcher_helper_linux.cc
 @@ -20,7 +20,9 @@
  #include "content/public/common/result_codes.h"
@@ -77,4 +77,4 @@
 +#endif
  }
  
- void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
+ void ChildProcessLauncherHelper::SetProcessBackgroundedOnLauncherThread(

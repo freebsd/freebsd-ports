@@ -1,4 +1,4 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2022-10-29 17:50:56 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2023-02-11 09:11:04 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
 @@ -50,7 +50,7 @@
  #include "net/base/network_change_notifier.h"
@@ -27,7 +27,7 @@
    ui::InitializeInputMethodForTesting();
  #endif
  #if BUILDFLAG(IS_ANDROID)
-@@ -153,7 +153,7 @@ void ShellBrowserMainParts::ToolkitInitialized() {
+@@ -158,7 +158,7 @@ void ShellBrowserMainParts::ToolkitInitialized() {
    if (switches::IsRunWebTestsSwitchPresent())
      return;
  
@@ -36,7 +36,7 @@
    ui::LinuxUi::SetInstance(ui::GetDefaultLinuxUi());
  #endif
  }
-@@ -196,7 +196,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
+@@ -201,7 +201,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
    ShellDevToolsManagerDelegate::StopHttpHandler();
    browser_context_.reset();
    off_the_record_browser_context_.reset();

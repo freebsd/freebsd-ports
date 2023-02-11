@@ -1,6 +1,6 @@
---- content/common/font_list_unittest.cc.orig	2022-10-01 07:40:07 UTC
+--- content/common/font_list_unittest.cc.orig	2023-02-11 09:11:04 UTC
 +++ content/common/font_list_unittest.cc
-@@ -48,7 +48,7 @@ TEST(FontList, GetFontList) {
+@@ -47,7 +47,7 @@ TEST(FontList, GetFontList) {
          EXPECT_TRUE(HasFontWithName(fonts, "MS Gothic", "MS Gothic"));
          EXPECT_TRUE(HasFontWithName(fonts, "Segoe UI", "Segoe UI"));
          EXPECT_TRUE(HasFontWithName(fonts, "Verdana", "Verdana"));

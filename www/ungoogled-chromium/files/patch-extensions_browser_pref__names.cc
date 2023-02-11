@@ -1,6 +1,6 @@
---- extensions/browser/pref_names.cc.orig	2023-01-13 08:56:02 UTC
+--- extensions/browser/pref_names.cc.orig	2023-02-11 09:11:04 UTC
 +++ extensions/browser/pref_names.cc
-@@ -48,7 +48,7 @@ const char kStorageGarbageCollect[] = "extensions.stor
+@@ -49,7 +49,7 @@ const char kStorageGarbageCollect[] = "extensions.stor
  const char kDeletedComponentExtensions[] =
      "extensions.deleted_component_extensions";
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

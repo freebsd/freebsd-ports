@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/frame/web_frame_test.cc.orig	2023-01-13 08:56:02 UTC
+--- third_party/blink/renderer/core/frame/web_frame_test.cc.orig	2023-02-11 09:11:04 UTC
 +++ third_party/blink/renderer/core/frame/web_frame_test.cc
-@@ -6449,7 +6449,7 @@ TEST_F(WebFrameTest, DISABLED_PositionForPointTest) {
+@@ -6451,7 +6451,7 @@ TEST_F(WebFrameTest, DISABLED_PositionForPointTest) {
    MoveCaretStaysHorizontallyAlignedWhenMoved
  #endif
  // TODO(crbug.com/1317375): Build these tests on all platforms.
@@ -9,7 +9,7 @@
  TEST_F(WebFrameTest, MAYBE_SelectRangeStaysHorizontallyAlignedWhenMoved) {
    RegisterMockedHttpURLLoad("move_caret.html");
  
-@@ -6846,7 +6846,7 @@ TEST_F(CompositedSelectionBoundsTest, LargeSelectionSc
+@@ -6848,7 +6848,7 @@ TEST_F(CompositedSelectionBoundsTest, LargeSelectionSc
  TEST_F(CompositedSelectionBoundsTest, LargeSelectionNoScroll) {
    RunTest("composited_selection_bounds_large_selection_noscroll.html");
  }

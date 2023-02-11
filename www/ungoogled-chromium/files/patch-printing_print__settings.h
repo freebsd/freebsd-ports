@@ -1,6 +1,6 @@
---- printing/print_settings.h.orig	2023-01-13 08:56:02 UTC
+--- printing/print_settings.h.orig	2023-02-11 09:11:04 UTC
 +++ printing/print_settings.h
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  #include "ui/gfx/geometry/rect.h"
  #include "ui/gfx/geometry/size.h"
  
@@ -9,7 +9,7 @@
  #include <map>
  
  #include "base/values.h"
-@@ -66,7 +66,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -67,7 +67,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
      }
    };
  
@@ -18,7 +18,7 @@
    using AdvancedSettings = std::map<std::string, base::Value>;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -221,7 +221,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -232,7 +232,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
      pages_per_sheet_ = pages_per_sheet;
    }
  
@@ -27,7 +27,7 @@
    AdvancedSettings& advanced_settings() { return advanced_settings_; }
    const AdvancedSettings& advanced_settings() const {
      return advanced_settings_;
-@@ -327,7 +327,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
+@@ -342,7 +342,7 @@ class COMPONENT_EXPORT(PRINTING) PrintSettings {
    // Number of pages per sheet.
    int pages_per_sheet_;
  
