@@ -27,6 +27,7 @@ lib/pkcs11/libopencryptoki.so
 lib/pkcs11/methods
 lib/pkcs11/PKCS11_API.so
 lib/pkcs11/stdll
+libdata/pkgconfig/opencryptoki.pc
 man/man1/p11sak.1.gz
 man/man1/pkcsconf.1.gz
 man/man1/pkcsicsf.1.gz
