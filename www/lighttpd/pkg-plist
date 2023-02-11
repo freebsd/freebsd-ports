@@ -13,7 +13,6 @@
 @sample %%ETCDIR%%/conf.d/proxy.conf.sample
 @sample %%ETCDIR%%/conf.d/rrdtool.conf.sample
 @sample %%ETCDIR%%/conf.d/scgi.conf.sample
-@sample %%ETCDIR%%/conf.d/secdownload.conf.sample
 @sample %%ETCDIR%%/conf.d/simple_vhost.conf.sample
 @sample %%ETCDIR%%/conf.d/ssi.conf.sample
 @sample %%ETCDIR%%/conf.d/status.conf.sample

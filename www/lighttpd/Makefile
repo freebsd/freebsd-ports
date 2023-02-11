@@ -1,5 +1,5 @@
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.68
+PORTVERSION=	1.4.69
 CATEGORIES?=	www
 MASTER_SITES?=	https://download.lighttpd.net/lighttpd/releases-1.4.x/
 
@@ -113,7 +113,6 @@ LIGHTTPD_CONF_D_FILES=	access_log.conf \
 			proxy.conf \
 			rrdtool.conf \
 			scgi.conf \
-			secdownload.conf \
 			simple_vhost.conf \
 			ssi.conf \
 			status.conf \
