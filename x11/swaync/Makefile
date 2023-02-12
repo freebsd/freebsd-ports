@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 PORTVERSION=	0.7.3
 CATEGORIES=	x11 wayland
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	a9db8b7fcb19.patch:-p1 # https://github.com/ErikReider/SwayNotificationCenter/issues/209
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple Wayland notification daemon with GTK panel
 WWW=		https://github.com/ErikReider/SwayNotificationCenter
@@ -22,7 +25,6 @@ GH_ACCOUNT=	ErikReider
 GH_PROJECT=	SwayNotificationCenter
 SHEBANG_FILES=	build-aux/meson/postinstall.py
 GLIB_SCHEMAS=	org.erikreider.swaync.gschema.xml
-CFLAGS+=	-Wno-error=int-conversion # https://github.com/ErikReider/SwayNotificationCenter/issues/209
 
 OPTIONS_DEFINE=	MANPAGES
 OPTIONS_DEFAULT=MANPAGES
