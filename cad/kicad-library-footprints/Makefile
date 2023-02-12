@@ -1,9 +1,9 @@
 PORTNAME=	kicad
-PORTVERSION=	6.0.11
+PORTVERSION=	7.0.0
 CATEGORIES=	cad
-MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-footprints/-/archive/${DISTVERSION}/
+MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-footprints/-/archive/${DISTVERSION}${DISTVERSIONSUFFIX}/
 PKGNAMESUFFIX=	-library-footprints
-DISTNAME=	${PORTNAME}-footprints-${DISTVERSION}
+DISTNAME=	${PORTNAME}-footprints-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad Footprint Libraries

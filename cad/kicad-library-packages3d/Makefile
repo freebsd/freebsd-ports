@@ -1,9 +1,9 @@
 PORTNAME=	kicad
-PORTVERSION=	6.0.11
+PORTVERSION=	7.0.0
 CATEGORIES=	cad
-MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-packages3D/-/archive/${DISTVERSION}/
+MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-packages3D/-/archive/${DISTVERSION}${DISTVERSIONSUFFIX}/
 PKGNAMESUFFIX=	-library-packages3d
-DISTNAME=	${PORTNAME}-packages3D-${DISTVERSION}
+DISTNAME=	${PORTNAME}-packages3D-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	Official KiCad 3D model libraries for rendering and MCAD integration
