@@ -1,7 +1,8 @@
 PORTNAME=	Image-ExifTool
-PORTVERSION=	12.55
+DISTVERSION=	12.56
 CATEGORIES=	graphics perl5
-MASTER_SITES=	https://exiftool.org/
+MASTER_SITES=	SF/exiftool \
+		https://exiftool.org/
 PKGNAMEPREFIX=	p5-
 PKGNAMESUFFIX=	-devel
 

@@ -95,6 +95,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/ITC.pm
 %%SITE_PERL%%/Image/ExifTool/Import.pm
 %%SITE_PERL%%/Image/ExifTool/InDesign.pm
+%%SITE_PERL%%/Image/ExifTool/InfiRay.pm
 %%SITE_PERL%%/Image/ExifTool/JPEG.pm
 %%SITE_PERL%%/Image/ExifTool/JPEGDigest.pm
 %%SITE_PERL%%/Image/ExifTool/JSON.pm
@@ -288,6 +289,7 @@ bin/exiftool
 %%PERL5_MAN3%%/Image::ExifTool::ITC.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::Import.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::InDesign.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::InfiRay.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::JPEG.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::JPEGDigest.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::JSON.3.gz
