@@ -1,12 +1,12 @@
---- tools/Makefile.orig	2019-12-17 14:23:09 UTC
+--- tools/Makefile.orig	2022-04-12 12:21:23 UTC
 +++ tools/Makefile
-@@ -50,6 +50,9 @@ endif
- ifeq ($(CONFIG_RUMP),y)
- SUBDIRS-y := libs libxc xenstore
+@@ -51,6 +51,9 @@ CROSS_SYS_ROOT ?= /usr/$(CROSS_COMPILE:-=)/sys-root
+ export CROSS_SYS_ROOT # exported for check/funcs.sh
+ export CROSS_BIN_PATH # exported for cross-install.sh
  endif
 +ifeq ($(FREEBSD_PORT),y)
-+SUBDIRS-y := libs libxc xenstore misc
++SUBDIRS-y := libs xenstore misc
 +endif
  
- # For the sake of linking, set the sys-root
- ifneq ($(CROSS_COMPILE),)
+ .PHONY: build all
+ build all: subdirs-all
