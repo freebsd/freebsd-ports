@@ -1,5 +1,6 @@
 PORTNAME=	zabbix62
 DISTVERSION=	6.2.7
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
 PKGNAMESUFFIX?=	-server
@@ -12,9 +13,7 @@ WWW=		https://www.zabbix.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL=	${PORTNAME}[0-9]${PKGNAMESUFFIX} \
-			zabbix5[0-9]${PKGNAMESUFFIX} \
-			zabbix[0-57-9]${PKGNAMESUFFIX}
+CONFLICTS_INSTALL=	zabbix[0-9]${PKGNAMESUFFIX}
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//:S/-$//}
 
