@@ -24,7 +24,7 @@ etc/bash_completion.d/gopass.sh
 %%PORTDOCS%%%%DOCSDIR%%/commands/insert.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/link.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/list.md
-%%PORTDOCS%%%%DOCSDIR%%/commands/mount.md
+%%PORTDOCS%%%%DOCSDIR%%/commands/mounts.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/move.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/otp.md
 %%PORTDOCS%%%%DOCSDIR%%/commands/process.md
