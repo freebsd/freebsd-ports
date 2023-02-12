@@ -24,13 +24,6 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		nasm:devel/nasm \
 		yasm:devel/yasm \
 		zip:archivers/zip
-LIB_DEPENDS=	libgconf-2.so:devel/gconf2 \
-		libgtk-x11-2.0.so:x11-toolkits/gtk20 \
-		libpangocairo-1.0.so:x11-toolkits/pango \
-		libpulse.so:audio/pulseaudio \
-		libXt.so:x11-toolkits/libXt \
-		libIDL-2.so:devel/libIDL \
-		libnspr4.so:devel/nspr
 RUN_DEPENDS=	tor:security/tor \
 		obfs4proxy:security/obfs4proxy-tor
 
@@ -73,6 +66,7 @@ MOZ_OPTIONS=	--with-tor-browser-version=12.0-2 \
 
 WRKSRC=		${WRKDIR}/firefox-tor-browser-102.5.0esr-12.0-2-build1
 
+.include	"${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.options.mk>
 
 .if ${ARCH} == powerpc64
