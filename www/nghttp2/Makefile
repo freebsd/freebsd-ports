@@ -1,5 +1,6 @@
 PORTNAME=	nghttp2
 PORTVERSION=	1.51.0
+PORTREVISION=	1
 CATEGORIES=	www net
 MASTER_SITES=	https://github.com/nghttp2/nghttp2/releases/download/v${PORTVERSION}/
 
@@ -13,41 +14,33 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	libnghttp2>=${PORTVERSION}:www/libnghttp2
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2
 
-USES=		compiler:c++14-lang cpe gmake libtool localbase pathfix pkgconfig ssl tar:xz
+USES=		cmake compiler:c++14-lang cpe localbase:ldflags pathfix pkgconfig python:env shebangfix ssl tar:xz
 
-CONFIGURE_ARGS=	--disable-python-bindings --with-jemalloc
-CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
-		OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USE_CXXSTD=	c++14
+CMAKE_ARGS=	-DCMAKE_INSTALL_MANDIR=share/man
+CMAKE_OFF=	ENABLE_ASIO_LIB ENABLE_DEBUG ENABLE_HTTP3 ENABLE_LIB_ONLY ENABLE_PYTHON_BINDINGS ENABLE_STATIC_CRT ENABLE_WERROR WITH_LIBBPF WITH_MRUBY WITH_NEVERBLEED
+CMAKE_ON=	ENABLE_DOC ENABLE_FAILMALLOC ENABLE_THREADS
 USE_RC_SUBR=	nghttpx
 
-OPTIONS_DEFINE=	APP DOCS EXAMPLES HPACK
+SHEBANG_FILES=	script/fetch-ocsp-response
+
+OPTIONS_DEFINE=	APP EXAMPLES HPACK
 OPTIONS_DEFAULT=APP HPACK
 OPTIONS_SUB=	yes
 APP_DESC=	Build h2load, nghttp, nghttpd and nghttpx
 
 APP_BUILD_DEPENDS=	c-ares>=1.7.5:dns/c-ares \
 			libev>=4.11:devel/libev
-APP_CONFIGURE_ENABLE=	app
-APP_CONFIGURE_OFF=	--without-libxml2
+APP_CMAKE_BOOL=		ENABLE_APP
 APP_LIB_DEPENDS=	libcares.so:dns/c-ares \
 			libev.so:devel/libev
 APP_USE=		GNOME=libxml2
 APP_USES=		gnome
-EXAMPLES_CONFIGURE_ENABLE=	examples
+EXAMPLES_CMAKE_BOOL=	ENABLE_EXAMPLES
 EXAMPLES_BUILD_DEPENDS=	libevent>=2.0.8:devel/libevent
 EXAMPLES_LIB_DEPENDS=	libevent_openssl.so:devel/libevent
 HPACK_BUILD_DEPENDS=	jansson>=2.5:devel/jansson
-HPACK_CONFIGURE_ENABLE=	hpack-tools
+HPACK_CMAKE_BOOL=	ENABLE_HPACK_TOOLS
 HPACK_LIB_DEPENDS=	libjansson.so:devel/jansson
-
-# lib/libnghttp2.* are not available until configure phase
-post-configure:
-	@${MKDIR} ${WRKSRC}/lib/.libs/
-	@${CP} ${LOCALBASE}/lib/libnghttp2.so* ${WRKSRC}/lib/.libs/
-	@cd ${WRKSRC}/lib/.libs/ && ${AR} x ${LOCALBASE}/lib/libnghttp2.a
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/nghttpx/
@@ -55,7 +48,7 @@ post-install:
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
-	${INSTALL_DATA} ${WRKSRC}/examples/*.c* ${STAGEDIR}${EXAMPLESDIR}/
-	cd ${WRKSRC}/examples/ && ${INSTALL_PROGRAM} client deflate libevent-client libevent-server ${STAGEDIR}${EXAMPLESDIR}/
+	${INSTALL_DATA} ${WRKSRC}/examples/*.c ${STAGEDIR}${EXAMPLESDIR}/
+	cd ${BUILD_WRKSRC}/examples/ && ${INSTALL_PROGRAM} client deflate libevent-client libevent-server ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
