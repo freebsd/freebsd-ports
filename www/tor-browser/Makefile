@@ -2,7 +2,7 @@ PORTNAME=	tor-browser
 DISTVERSION=	12.0.2
 PORTREVISION=	3 # previous DISTVERSION was 12.0-2 which becomes 12.0.2 too in PGKNAME
 CATEGORIES=	www net security wayland
-MASTER_SITES=	MASTER_SITE_TOR
+MASTER_SITES=	TOR
 MASTER_SITE_SUBDIR=torbrowser/${DISTVERSION}
 DISTNAME=	src-firefox-tor-browser-102.7.0esr-${DISTVERSION:R}-1-build1
 
@@ -48,7 +48,7 @@ MOZ_EXPORT+=	MOZ_TELEMETRY_REPORTING="" \
 		MOZ_APP_DISPLAYNAME="Tor Browser" \
 		MOZ_APP_NAME="tor-browser"
 
-MOZ_OPTIONS=	--with-tor-browser-version="${DISTVERSION}-1" \
+MOZ_OPTIONS=	--with-tor-browser-version=${DISTVERSION}-1 \
 	--enable-official-branding \
 	--enable-optimize \
 	--enable-rust-simd \
