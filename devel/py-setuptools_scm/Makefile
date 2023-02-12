@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kai@FreeBSD.org
+MAINTAINER=	python@FreeBSD.org
 COMMENT=	Setuptools plugin to manage your versions by scm tags
 WWW=		https://github.com/pypa/setuptools_scm
 
