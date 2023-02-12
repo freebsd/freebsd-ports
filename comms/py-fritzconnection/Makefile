@@ -1,5 +1,5 @@
 PORTNAME=	fritzconnection
-DISTVERSION=	1.10.2
+DISTVERSION=	1.11.0
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,16 +11,12 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.22.0:www/py-requests@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
-NO_ARCH=	yes
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	kbr
+USE_PYTHON=	autoplist distutils pytest
 
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
