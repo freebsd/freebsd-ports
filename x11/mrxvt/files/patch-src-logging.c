@@ -1,6 +1,6 @@
---- src/logging.c.orig	2010-01-15 17:27:05.000000000 +0100
-+++ src/logging.c	2010-01-15 17:29:39.000000000 +0100
-@@ -114,14 +114,22 @@
+--- src/logging.c.orig	2004-11-11 00:20:28 UTC
++++ src/logging.c
+@@ -114,14 +114,22 @@ rxvt_makeutent(rxvt_t *r, int page, const char *pty, c
      if (!STRNCMP(pty, "/dev/", 5))
  		pty += 5;		/* skip /dev/ prefix */
  

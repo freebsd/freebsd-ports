@@ -1,6 +1,6 @@
---- src/main.c.orig	Fri Jul 22 19:42:38 2005
-+++ src/main.c	Fri Jul 22 19:43:03 2005
-@@ -1568,7 +1568,7 @@
+--- src/main.c.orig	2005-08-31 05:30:41 UTC
++++ src/main.c
+@@ -1568,7 +1568,7 @@ rxvt_set_utf8_property (rxvt_t* r, Atom prop, Window w
  void
  rxvt_set_utf8_property (rxvt_t* r, Atom prop, Window win, const char* str)
  {

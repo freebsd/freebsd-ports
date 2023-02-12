@@ -4,27 +4,23 @@ PORTREVISION=	10
 CATEGORIES=	x11
 MASTER_SITES=	SF/materm/${PORTNAME}%20source/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tabbed version of rxvt
 WWW=		http://materm.sourceforge.net/
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	libpng.so:graphics/png
 
-CONFLICTS=	mrxvt-0.5.*
-
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-lastlog --disable-wtmp
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
-USES=		cpe jpeg tar:tgz xorg
+USES=		cpe jpeg localbase tar:tgz xorg
 CPE_VENDOR=	${PORTNAME}_project
 USE_XORG=	x11
 
-OPTIONS_DEFINE=	DOCS JAPANESE XFT
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-lastlog --disable-wtmp
 
-JAPANESE_CONFIGURE_ON=	--enable-xim --enable-cjk --with-encoding=eucj
-XFT_LIB_DEPENDS=	libXft.so:x11-fonts/libXft
-XFT_CONFIGURE_ENABLE=	xft
+CONFLICTS=	mrxvt-0.5.*
 
 PORTDOCS=	TIPS \
 		README.greek \
@@ -34,6 +30,14 @@ PORTDOCS=	TIPS \
 		xterm.seq \
 		mrxvt.vbs \
 		mrxvtset.pl
+
+OPTIONS_DEFINE=	DOCS JAPANESE XFT
+
+JAPANESE_DESC=	Japanese Language support
+
+JAPANESE_CONFIGURE_ON=	--enable-xim --enable-cjk --with-encoding=eucj
+XFT_LIB_DEPENDS=	libXft.so:x11-fonts/libXft
+XFT_CONFIGURE_ENABLE=	xft
 
 .include <bsd.port.options.mk>
 
@@ -48,8 +52,5 @@ CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no
 .else
 CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=yes
 .endif
-
-post-install:
-	${CHMOD} 4511 ${STAGEDIR}${PREFIX}/bin/mrxvt
 
 .include <bsd.port.post.mk>
