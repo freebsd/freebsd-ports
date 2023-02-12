@@ -1,10 +1,11 @@
 PORTNAME=	lua-language-server
-DISTVERSION=	3.6.10
+DISTVERSION=	3.6.9
+PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
-COMMENT=	Sumneko Lua development server and LSP client
-WWW=		https://github.com/sumneko/lua-language-server
+COMMENT=	Lua development server and LSP client
+WWW=		https://github.com/luals/lua-language-server
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -13,13 +14,13 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		compiler:features dos2unix lua:build ninja:make
 USE_GITHUB=	yes
-GH_ACCOUNT=	sumneko
-GH_TUPLE=	actboy168:bee.lua:eefd184:bee/3rd/bee.lua \
+GH_ACCOUNT=	luals
+GH_TUPLE=	actboy168:bee.lua:c4e989a:bee/3rd/bee.lua \
 		actboy168:bee.lua:eff9325:bee_luamake/3rd/luamake/3rd/bee.lua \
-		actboy168:json.lua:be1d71f:json/3rd/json.lua \
+		actboy168:json.lua:b5f5e7b:json/3rd/json.lua \
 		actboy168:luamake:3d8d1fd:luamake/3rd/luamake \
-		cppcxy:EmmyLuaCodeStyle:9697aa8:emmyluacodestyle/3rd/EmmyLuaCodeStyle \
-		bjornbytes:lovr-docs:9d1c384:lovr/3rd/lovr-api \
+		cppcxy:EmmyLuaCodeStyle:66eeece:emmyluacodestyle/3rd/EmmyLuaCodeStyle \
+		bjornbytes:lovr-docs:8900d79:lovr/3rd/lovr-api \
 		love2d-community:love-api:495ecc7:love/3rd/love-api \
 		sqmedeiros:lpeglabel:e25eb35:lpeglabel/3rd/lpeglabel
 
