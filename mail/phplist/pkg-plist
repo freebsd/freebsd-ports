@@ -27,6 +27,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/actions/initlanguage.php
 %%WWWDIR%%/lists/admin/actions/keepalive.php
 %%WWWDIR%%/lists/admin/actions/listbounces.php
+%%WWWDIR%%/lists/admin/actions/listmembercount.php
 %%WWWDIR%%/lists/admin/actions/markread.php
 %%WWWDIR%%/lists/admin/actions/mclicks.php
 %%WWWDIR%%/lists/admin/actions/mergeduplicatelists.php
@@ -1822,6 +1823,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/chdemko/bitarray/src/BitArray/BitArray.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/chdemko/bitarray/src/BitArray/Iterator.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/autoload_classmap.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/autoload_files.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/autoload_namespaces.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/autoload_psr4.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/composer/autoload_real.php
@@ -2044,6 +2046,15 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/filesystem/Filesystem.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/filesystem/LICENSE
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/filesystem/LockHandler.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/bootstrap.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/LICENSE
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/Php80.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/PhpToken.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/Resources/stubs/Attribute.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/Resources/stubs/PhpToken.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/Resources/stubs/Stringable.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php
+%%WWWDIR%%/lists/admin/plugins/CommonPlugin/vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/version.txt
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/WebblerListing.php
 %%WWWDIR%%/lists/admin/plugins/CommonPlugin/Widget.php
@@ -12384,6 +12395,7 @@ bin/phplist
 %%WWWDIR%%/lists/base/vendor/symfony/symfony/UPGRADE-4.0.md
 %%WWWDIR%%/lists/base/vendor/twig/twig/.editorconfig
 %%WWWDIR%%/lists/base/vendor/twig/twig/.gitattributes
+%%WWWDIR%%/lists/base/vendor/twig/twig/.github/dependabot.yml
 %%WWWDIR%%/lists/base/vendor/twig/twig/.github/workflows/ci.yml
 %%WWWDIR%%/lists/base/vendor/twig/twig/.github/workflows/documentation.yml
 %%WWWDIR%%/lists/base/vendor/twig/twig/.gitignore
