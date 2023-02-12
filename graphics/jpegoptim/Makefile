@@ -1,5 +1,5 @@
 PORTNAME=	jpegoptim
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
@@ -10,7 +10,7 @@ WWW=		http://www.kokkonen.net/tjko/projects.html #jpegoptim
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
-USES=		cpe jpeg
+USES=		cpe gmake jpeg
 CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	tjko
