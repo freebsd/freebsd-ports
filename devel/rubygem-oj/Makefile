@@ -14,9 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gem
 
 # TODO: find a better way to do this
-# Copy all header file, as it is required by rubygem-oj-introspect
+# Install all header files, some of them are required by devel/rubygem-oj-introspect
 post-install:
-	${INSTALL} -d ${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION}/ext/oj
-	cd ${WRKSRC}/ext/oj && ${FIND} * -name "*.h" -type f -exec ${INSTALL_DATA} {} "${STAGEDIR}${PREFIX}/${GEMS_DIR}/${PORTNAME}-${PORTVERSION}/ext/oj/{}" \;
+	${MKDIR} ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ext/oj
+	${INSTALL_DATA} ${WRKSRC}/ext/oj/*.h ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR}/ext/oj/
 
 .include <bsd.port.mk>
