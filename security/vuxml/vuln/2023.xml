@@ -1,3 +1,40 @@
+  <vuln vid="3eccc968-ab17-11ed-bd9e-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>3.1.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyfaq developers report:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2022-10-24">
+	  <p>a bypass to flood admin with FAQ proposals</p>
+	  <p>stored XSS in questions</p>
+	  <p>stored HTML injections</p>
+	  <p>weak passwords </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://huntr.dev/bounties/14fc4841-0f5d-4e12-bf9e-1b60d2ac6a6c/</url>
+      <url>https://huntr.dev/bounties/8c74ccab-0d1d-4c6b-a0fa-803aa65de04f/</url>
+      <url>https://huntr.dev/bounties/87397c71-7b84-4617-a66e-fa6c73be9024/</url>
+      <url>https://huntr.dev/bounties/808d5452-607c-4af1-812f-26c49faf3e61/</url>
+      <url>https://huntr.dev/bounties/d9375178-2f23-4f5d-88bd-bba3d6ba7cc5/</url>
+      <url>https://huntr.dev/bounties/06af150b-b481-4248-9a48-56ded2814156/</url>
+      <url>https://huntr.dev/bounties/7152b340-c6f3-4ac8-9f62-f764a267488d/</url>
+      <url>https://huntr.dev/bounties/9e21156b-ab1d-4c60-88ef-8c9f3e2feb7f/</url>
+      <url>https://huntr.dev/bounties/b3881a1f-2f1e-45cb-86f3-735f66e660e9/</url>
+      <url>https://huntr.dev/bounties/949975f1-271d-46aa-85e5-1a013cdb5efb/</url>
+    </references>
+    <dates>
+      <discovery>2023-02-12</discovery>
+      <entry>2023-02-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="310ca30e-a951-11ed-8314-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
