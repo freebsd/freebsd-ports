@@ -12,7 +12,6 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
-		libfftw3.so:math/fftw3 \
 		libicuuc.so:devel/icu \
 		libboost_filesystem.so:devel/boost-libs \
 		libcurl.so:ftp/curl
@@ -39,8 +38,9 @@ CLOCK_CONFIGURE_ENABLE=	clock
 OUTPUTS_CONFIGURE_ENABLE=	outputs
 TAGLIB_LIB_DEPENDS=	libtag.so:audio/taglib
 TAGLIB_CONFIGURE_WITH=	taglib
-VISUALIZER_BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:math/fftw3
+VISUALIZER_LIB_DEPENDS=		libfftw3.so:math/fftw3
 VISUALIZER_CONFIGURE_ENABLE=	visualizer
+VISUALIZER_CONFIGURE_WITH=	fftw
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/ncmpcpp ${STAGEDIR}${PREFIX}/bin/
