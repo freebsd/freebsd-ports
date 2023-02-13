@@ -5984,6 +5984,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Email/DelayedEmailServiceIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/EmailServiceIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/EntityCapabilitiesServiceIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/EntityIconServiceIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Forms/FieldsServiceIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Forms/StickyFormsIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Http/DatabaseSessionHandlerIntegrationTest.php
@@ -6021,7 +6022,6 @@
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggHtmLawedTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggRelationshipTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ElggTempFileTest.php
-%%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/EntityIconServiceIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/ResponsesIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/Integration/RouterIntegrationTest.php
 %%WWWDIR%%/vendor/elgg/elgg/engine/tests/phpunit/integration/Elgg/IntegrationTestCaseTest.php
@@ -16347,6 +16347,7 @@
 %%WWWDIR%%/vendor/laravel/serializable-closure/src/Support/ClosureStream.php
 %%WWWDIR%%/vendor/laravel/serializable-closure/src/Support/ReflectionClosure.php
 %%WWWDIR%%/vendor/laravel/serializable-closure/src/Support/SelfReference.php
+%%WWWDIR%%/vendor/laravel/serializable-closure/src/UnsignedSerializableClosure.php
 %%WWWDIR%%/vendor/league/flysystem-memory/InMemoryFile.php
 %%WWWDIR%%/vendor/league/flysystem-memory/InMemoryFilesystemAdapter.php
 %%WWWDIR%%/vendor/league/flysystem-memory/README.md
