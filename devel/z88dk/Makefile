@@ -55,6 +55,11 @@ post-patch:
 		${WRKSRC}/support/multitarget_build/Makefile
 	@${REINPLACE_CMD} -e '/^CFLAGS =/s,$$, -I../../../include,' \
 		${WRKSRC}/test/suites/make.config
+# Fix the build against Clang 15
+	@${REINPLACE_CMD} -e '/patchdata/s,NULL,0,' \
+		${WRKSRC}/src/appmake/zxn.c
+	@${REINPLACE_CMD} -e '/, ifs/s,move,std::&,' \
+		${WRKSRC}/src/z80asm/src/cpp/preproc.cpp
 
 pre-build:
 	${LN} -sf z88dk/bin ${BINARY_LINKDIR}
