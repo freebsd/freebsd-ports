@@ -24,4 +24,6 @@ CMAKE_TESTING_ON=	OPTION_BUILD_TESTS
 
 LDFLAGS+=	-lpthread # workaround for https://github.com/cginternals/glbinding/issues/327
 
+CONFLICTS_INSTALL=	mesa-demos # both install bin/glinfo, see https://github.com/cginternals/glbinding/issues/341
+
 .include <bsd.port.mk>
