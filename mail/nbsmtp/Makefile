@@ -18,6 +18,12 @@ LDFLAGS+=	-L${OPENSSLLIB}
 
 PLIST_FILES=	bin/nbsmtp man/man5/nbsmtprc.5.gz man/man8/nbsmtp.8.gz
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+USE_GCC=	yes
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's@\(-o nbsmtp\)@$$(LDFLAGS) \1@g'	\
 		${WRKSRC}/Makefile.in
@@ -27,4 +33,4 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/nbsmtprc.5 ${STAGEDIR}${MANPREFIX}/man/man5
 	${INSTALL_MAN} ${WRKSRC}/nbsmtp.8 ${STAGEDIR}${MANPREFIX}/man/man8
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
