@@ -19,6 +19,7 @@ BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		libliftoff>=0.3.0<0.4.0:graphics/libliftoff \
 		vulkan-headers>0:graphics/vulkan-headers \
 		wayland-protocols>=1.17:graphics/wayland-protocols \
+		hwdata>0:misc/hwdata \
 		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libdrm.so:graphics/libdrm \
