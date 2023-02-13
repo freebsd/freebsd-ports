@@ -1,3 +1,30 @@
+  <vuln vid="8e20430d-a72b-11ed-a04f-40b034455553">
+    <topic>MinIO -- unprivileged users can create service accounts for admin users</topic>
+    <affects>
+      <package>
+	<name>minio</name>
+	<range><lt>2022.04.12.06.55.35</lt></range>
+	<p>MinIO reports:</p>
+	<blockquote cite="https://github.com/minio/minio/security/advisories/GHSA-2j69-jjmg-534q">
+            <p>
+                A security issue was found where an unprivileged user is
+                able to create service accounts for root or other admin
+                users and then is able to assume their access policies
+                via the generated credentials.
+            </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24842</cvename>
+      <url>https://github.com/minio/minio/security/advisories/GHSA-2j69-jjmg-534q</url>
+    </references>
+    <dates>
+      <discovery>2022-04-11</discovery>
+      <entry>2023-02-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fd792048-ad91-11ed-a879-080027f5fec9">
     <topic>clamav -- Multiple vulnerabilities</topic>
     <affects>
