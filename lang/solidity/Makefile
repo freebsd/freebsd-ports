@@ -32,10 +32,6 @@ Z3_CMAKE_OFF=	USE_Z3
 CVC4_CMAKE_OFF=	USE_CVC4
 CVC4_BROKEN=	solidity uses cvc4 which has been succeeded by cvc5
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
-CXXFLAGS=	-Wno-unqualified-std-cast-call
-.endif
-
 CMAKE_ARGS+=	-DUSE_LD_GOLD=OFF -DTESTS=OFF \
 		-DRANGE_V3_INCLUDE_DIR="${LOCALBASE}/include" \
 		-DJSONCPP_INCLUDE_DIR:STRING="${LOCALBASE}/include/jsoncpp" \
@@ -44,6 +40,12 @@ CMAKE_ARGS+=	-DUSE_LD_GOLD=OFF -DTESTS=OFF \
 
 PLIST_FILES=	bin/solc \
 		bin/yul-phaser
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CXXFLAGS+=	-Wno-unqualified-std-cast-call
+.endif
 
 pre-patch:
 		@${CP} ${FILESDIR}/fmtlib.cmake ${FILESDIR}/jsoncpp.cmake ${WRKSRC}/cmake/
