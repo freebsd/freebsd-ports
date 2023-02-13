@@ -1,6 +1,6 @@
 PORTNAME=	x11vnc
 PORTVERSION=	0.9.16
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -9,7 +9,6 @@ WWW=		https://github.com/LibVNC/x11vnc
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pthread-stubs.pc:devel/libpthread-stubs
 LIB_DEPENDS=	libvncserver.so:net/libvncserver
 
 USES=		cpe iconv pkgconfig jpeg ssl gmake autoreconf xorg
@@ -22,7 +21,6 @@ CONFIGURE_ARGS=	--with-ssl=${OPENSSLBASE}
 CPPFLAGS+=	-I${LOCALBASE}/include
 USE_GITHUB=	yes
 GH_ACCOUNT=	LibVNC
-#DEFAULT_VERSIONS=	ssl=openssl
 
 CPE_VENDOR=	x11vnc_project
 
