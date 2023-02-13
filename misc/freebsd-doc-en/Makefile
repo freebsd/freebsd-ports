@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-doc
-PORTVERSION=	20221229
+PORTVERSION=	20230212
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -10,7 +10,7 @@ COMMENT?=	Documentation from the FreeBSD Documentation Project
 
 LICENSE=	BSD2CLAUSE
 
-BUILD_DEPENDS=	docproj>=4.0:textproc/docproj
+BUILD_DEPENDS=	docproj>=4.1:textproc/docproj
 
 WRKSRC=		${WRKDIR}/doc/documentation
 PLIST_SUB=	DOCSDIR=${DOCBASE} \
@@ -31,8 +31,11 @@ DOCLANG_PREFIX?=	${DOCLANG:C/_.*$//}
 DOCBASE?=		share/doc/freebsd
 
 # HTML format disabled until separate localized-only build will work again
-#AVAILABLEFORMATS=	HTML PDF
+.if ${DOCLANG:Men}
+AVAILABLEFORMATS=	HTML PDF
+.else
 AVAILABLEFORMATS=	PDF
+.endif
 
 OPTIONS_DEFINE=		${AVAILABLEFORMATS}
 OPTIONS_DEFAULT=	PDF
@@ -55,6 +58,9 @@ PLIST_FORMATS+=	${O:tl}
 
 .if ${PORT_OPTIONS:MPDF}
 BUILD_DEPENDS+=	asciidoctor-pdf:textproc/rubygem-asciidoctor-pdf
+.if ${DOCLANG:Mzh-cn} || ${DOCLANG:Mzh-tw}
+BUILD_DEPENDS+=	docproj-fonts-cjk>0:textproc/docproj-fonts-cjk
+.endif
 .endif
 
 # when html is defined as the format, add HTML_COMMON.
@@ -65,6 +71,10 @@ PLIST_FORMATS+=	html-common
 # example files, scripts, etc. coming with the doc and common
 # directories for all formats.
 PLIST_FORMATS+=	extras common
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|enableGitInfo = true|#enableGitInfo = true|' \
+		${WRKSRC}/config/_default/config.toml
 
 pre-build:
 .for i in ${PLIST_FORMATS:S,^,${.CURDIR}/pkg-plist.,}
