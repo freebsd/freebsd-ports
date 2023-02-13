@@ -24,7 +24,6 @@ CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
 USE_SUBMAKE=	yes
 CFLAGS+=	-Wno-error
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
-MAKE_ARGS+=	STATIC_ARG="${STATIC_PIE_ARG}"
 
 OPTIONS_DEFINE=	DOCS
 
@@ -36,6 +35,10 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 
 .if defined(WITH_DEBUG)
 MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
+.endif
+
+.if defined(WITH_PIE)
+MAKE_ARGS+=	STATIC_ARG="-static ${STATIC_PIE_ARGS}"
 .endif
 
 .if defined(WITH_PKG)
