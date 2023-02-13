@@ -1,31 +1,31 @@
---- src/logcheck.orig	2017-12-21 16:33:24 UTC
+--- src/logcheck.orig	2023-02-13 01:15:18 UTC
 +++ src/logcheck
 @@ -24,16 +24,16 @@
  
- if [ `id -u` = 0 ]; then
+ if [ "$(id -u)" = 0 ]; then
      echo "logcheck should not be run as root. Use su to invoke logcheck:"
--    echo "su -s /bin/bash -c \"/usr/sbin/logcheck${@:+ $@}\" logcheck"
-+    echo "su -m %%LOGCHECK_USER%% -c \"%%LOCALBASE%%/bin/bash %%PREFIX%%/sbin/logcheck${@:+ $@}\""
-     echo "Or use sudo: sudo -u logcheck logcheck${@:+ $@}."
+-    echo "su -s /bin/bash -c \"/usr/sbin/logcheck${*:+ $*}\" logcheck"
++    echo "su -m %%LOGCHECK_USER%% -c \"%%LOCALBASE%%/bin/bash %%LOCALBASE%%/sbin/logcheck${*:+ $*}\" logcheck"
+     echo "Or use sudo: sudo -u logcheck logcheck${*:+ $*}."
      # you may want to uncomment that hack to let logcheck invoke itself.
 -    # su -s /bin/bash -c "$0 $*" logcheck
 +    # su -s %%LOCALBASE%%/bin/bash -c "$0 $*" logcheck
      exit 1
  fi
  
--if [ ! -f /usr/bin/lockfile-create -o \
--     ! -f /usr/bin/lockfile-remove -o \
--     ! -f /usr/bin/lockfile-touch ]; then
-+if [ ! -f %%PREFIX%%/bin/lockfile-create -o \
-+     ! -f %%PREFIX%%/bin/lockfile-remove -o \
-+     ! -f %%PREFIX%%/bin/lockfile-touch ]; then
-     echo "fatal: lockfile-progs is a prerequisite for logcheck, and was not found."
+-if [ ! -f /usr/bin/lockfile-create ] || \
+-   [ ! -f /usr/bin/lockfile-remove ] || \
+-   [ ! -f /usr/bin/lockfile-touch ]; then
++if [ ! -f %%LOCALBASE%%/bin/lockfile-create ] || \
++   [ ! -f %%LOCALBASE%%/bin/lockfile-remove ] || \
++   [ ! -f %%LOCALBASE%%/bin/lockfile-touch ]; then
+     echo "fatal: lockfile-progs is a prerequisite for logcheck, but was not found."
      exit 1
  fi
-@@ -69,13 +69,13 @@ EVENTSSUBJECT="System Events"
+@@ -71,13 +71,13 @@ EVENTSSUBJECT="System Events"
  ADDTAG="no"
  
- # Set the default paths
+ # Default paths
 -RULEDIR="/etc/logcheck"
 -CONFFILE="/etc/logcheck/logcheck.conf"
 -STATEDIR="/var/lib/logcheck"
@@ -40,10 +40,10 @@
 +LOGFILES_LIST_D="%%ETCDIR%%/logcheck.logfiles.d"
 +LOGFILE_FALLBACK="/var/log/messages"
 +LOGTAIL="%%PREFIX%%/sbin/logtail2"
- CAT="/bin/cat"
  SYSLOG_SUMMARY="/usr/bin/syslog-summary"
  
-@@ -90,7 +90,7 @@ FQDN=0
+ # Defaults for options
+@@ -92,7 +92,7 @@ FQDN=0
  SORTUNIQ=0
  SUPPORT_CRACKING_IGNORE=0
  SYSLOGSUMMARY=0
@@ -51,45 +51,47 @@
 +LOCKDIR=/var/run/logcheck
  LOCKFILE="$LOCKDIR/logcheck"
  
- # Carry out the clean up tasks
-@@ -171,7 +171,7 @@ $message
- ${TMPDIR:+Check temporary directory: $TMPDIR
+ # Allow globs to return zero files
+@@ -183,8 +183,8 @@ ${TMPDIR:+"- Check temporary directory: $TMPDIR"
  }
- Also verify that the logcheck user can read all files referenced in
--/etc/logcheck/logcheck.logfiles!
-+%%ETCDIR%%/logcheck.logfiles!
+ - verify that the logcheck user can read all
+ logfiles specified in;
+-  /etc/logcheck/logcheck.logfiles
+-  /etc/logcheck/logcheck.logfiled.d/*.logfiles
++  %%ETCDIR%%/logcheck.logfiles
++  %%ETCDIR%%/logcheck.logfiled.d/*.logfiles
+ - check the system has enough space; (df -h output follows):
+ $(df -h 2>&1|| :)
+ - check the settings (environment follows):
+@@ -237,7 +237,7 @@ cleanrules() {
+ 								error "Could not read $x"
+ 						fi
+ 				done
+-				for rulefile in $(run-parts --list "$dir"); do
++				for rulefile in $(ls -1R "$dir"); do
+ 						rulefile="$(basename "$rulefile")"
+ 						if [ -f "${dir}/${rulefile}" ]; then
+ 								debug "cleanrules: ${dir}/${rulefile} -> $cleaned/$rulefile"
+@@ -616,9 +616,9 @@ fi
  
- $(export)
- EOF
-@@ -223,7 +223,7 @@ cleanrules() {
- 			error "Couldn't read $x"
- 		fi
- 	done
--	for rulefile in $(run-parts --list "$dir"); do
-+	for rulefile in $(ls -1R "$dir"); do
- 	    rulefile="$(basename "$rulefile")"
- 	    if [ -f "${dir}/${rulefile}" ]; then
- 		debug "cleanrules: ${dir}/${rulefile}"
-@@ -538,9 +538,9 @@ fi
- 
- # Hostname either fully qualified or not.
+ # HOSTNAME is either 'fully qualified' or 'short'
  if [ "$FQDN" -eq 1 ]; then
--        HOSTNAME="$(hostname --fqdn 2>/dev/null)"
-+        HOSTNAME="$(hostname -f 2>/dev/null)"
+-		HOSTNAME="$(hostname --fqdn 2>/dev/null)"
++		HOSTNAME="$(hostname -f 2>/dev/null)"
  else
--        HOSTNAME="$(hostname --short 2>/dev/null)"
-+        HOSTNAME="$(hostname -s 2>/dev/null)"
+-		HOSTNAME="$(hostname --short 2>/dev/null)"
++		HOSTNAME="$(hostname -s 2>/dev/null)"
  fi
  
  # Now check for the other options
-@@ -645,8 +645,8 @@ else
+@@ -723,8 +723,8 @@ else
  fi
  
- # Create the secure temporary directory or exit
+ # Create a secure temporary working directory (or exit)
 -TMPDIR="$(mktemp -d -p "${TMP:-/tmp}" logcheck.XXXXXX)" \
--    || TMPDIR="$(mktemp -d -p /var/tmp logcheck.XXXXXX)" \
+-		|| TMPDIR="$(mktemp -d -p /var/tmp logcheck.XXXXXX)" \
 +TMPDIR="$(mktemp -d ${TMP:-/tmp}/logcheck.XXXXXX)" \
-+    || TMPDIR="$(mktemp -d /var/tmp/logcheck.XXXXXX)" \
-     || error "Could not create temporary directory"
++		|| TMPDIR="$(mktemp -d /var/tmp/logcheck.XXXXXX)" \
+ 		|| error "Could not create temporary directory"
  
- # Now clean the rulefiles in the directories
+ debug "Using working dir: $TMPDIR"

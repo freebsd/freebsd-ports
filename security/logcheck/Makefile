@@ -1,5 +1,5 @@
 PORTNAME=	logcheck
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	security
 MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -54,7 +54,8 @@ MAN8_FILES=		logcheck.8 logtail.8 logtail2.8
 REINPLACE_FILES=	debian/logcheck.cron.d docs/logcheck.sgml \
 			docs/logtail2.8 docs/README.logcheck \
 			docs/README.logcheck-database docs/README.logtail \
-			etc/logcheck.conf src/logcheck src/logtail2
+			etc/logcheck.conf etc/logcheck.logfiles src/logcheck \
+			src/logtail2
 RUNDIR=			${BASEDIR}/var/run/${PORTNAME}
 
 .include <bsd.port.pre.mk>
@@ -71,6 +72,7 @@ do-install:
 		  ${STAGEDIR}${DBDIR} \
 		  ${STAGEDIR}${DOCSDIR} \
 		  ${STAGEDIR}${ETCDIR} \
+		  ${STAGEDIR}${ETCDIR}/logcheck.logfiles.d \
 		  ${STAGEDIR}${EXAMPLESDIR} \
 		  ${STAGEDIR}${RUNDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/src/logcheck-test ${STAGEDIR}${PREFIX}/bin
@@ -80,7 +82,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/etc/logcheck.conf \
 		${STAGEDIR}${ETCDIR}/logcheck.conf.sample
 	${INSTALL_DATA} ${WRKSRC}/etc/logcheck.logfiles \
-		${STAGEDIR}${ETCDIR}/logcheck.logfiles.sample
+		${STAGEDIR}${ETCDIR}/
+	${INSTALL_DATA} ${WRKSRC}/etc/logcheck.logfiles.d/syslog.logfiles \
+		${STAGEDIR}${ETCDIR}/logcheck.logfiles.d/syslog.logfiles.sample
 .for i in ${CONFIG_DIRS}
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/${i}
 	${INSTALL_DATA} ${WRKSRC}/rulefiles/linux/${i}/* \

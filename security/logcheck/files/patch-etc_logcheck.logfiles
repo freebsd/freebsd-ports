@@ -1,8 +1,15 @@
---- etc/logcheck.logfiles.orig	2017-01-25 21:08:04 UTC
+--- etc/logcheck.logfiles.orig	2023-02-10 21:19:27 UTC
 +++ etc/logcheck.logfiles
-@@ -1,4 +1,4 @@
- # these files will be checked by logcheck
- # This has been tuned towards a default syslog install
--/var/log/syslog
- /var/log/auth.log
-+/var/log/messages
+@@ -1,10 +1,10 @@
+ ## Logs that will be checked by logcheck
+ #
+ # This file is empty and all settings are in files (whose name must
+-# end in '.logfiles') under /etc/logcheck/logcheck.logfiles.d/
++# end in '.logfiles') under %%ETCDIR%%/logcheck.logfiles.d/
+ #
+ # It is recommended that you put local settings into
+-# /etc/logcheck.d/local.logfiles instead of editing this file
++# %%ETCDIR%%/logcheck.logfiles.d/local.logfiles instead of editing this file
+ #
+ # Each line should be:
+ # - an absolute path to a log

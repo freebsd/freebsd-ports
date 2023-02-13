@@ -3,7 +3,7 @@
   message: <<EOM
 Please make sure that all files listed in
 
-  %%ETCDIR%%/logcheck.logfiles
+  %%ETCDIR%%/logcheck.logfiles.d/syslog.logfiles
 
 are readable to the '%%LOGCHECK_GROUP%%' group (see also /etc/newsyslog.conf),
 or remove them from the aforementioned logcheck configuration file.

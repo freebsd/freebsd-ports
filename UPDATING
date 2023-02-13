@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230213:
+  AFFECTS: users of security/logcheck
+  AUTHOR: yasu@FreeBSD.org
+
+  Since 1.4.1 ${PREFIX}/etc/logcheck/logcheck.logfiles is empty and
+  files to be checked by logcheck are specified in
+  ${PREFIX}/etc/logcheck/logcheck.logfiles.d/syslog.logfiles. So if
+  you previously edited the former, then you should edit the latter
+  now.
+
 20230210:
   AFFECTS: users of mail/fetchmail
   AUTHOR: fernape@FreeBSD.org
