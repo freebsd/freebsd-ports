@@ -1,5 +1,5 @@
 PORTNAME=	pikepdf
-DISTVERSION=	6.2.7
+DISTVERSION=	7.0.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -46,7 +46,7 @@ JBIG2_DESC=	Support for extracting JBIG2 images
 JBIG2_RUN_DEPENDS=	jbig2dec:graphics/jbig2dec
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pikepdf/_qpdf*.so
+	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pikepdf/_*.so
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -rs -v -o addopts=
