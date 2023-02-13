@@ -1,5 +1,4 @@
 @sample etc/owntone.conf.sample
-etc/systemd/system/owntone@.service
 lib/owntone/owntone-sqlext.so
 man/man8/owntone.8.gz
 sbin/owntone
@@ -33,13 +32,13 @@ sbin/owntone
 %%DATADIR%%/htdocs/android-chrome-192x192.png
 %%DATADIR%%/htdocs/android-chrome-512x512.png
 %%DATADIR%%/htdocs/apple-touch-icon.png
-%%DATADIR%%/htdocs/assets/index.css
-%%DATADIR%%/htdocs/assets/index.js
+%%WEBINTERFACE%%%%DATADIR%%/htdocs/assets/index.css
+%%WEBINTERFACE%%%%DATADIR%%/htdocs/assets/index.js
 %%DATADIR%%/htdocs/browserconfig.xml
 %%DATADIR%%/htdocs/favicon-16x16.png
 %%DATADIR%%/htdocs/favicon-32x32.png
 %%DATADIR%%/htdocs/favicon.ico
-%%DATADIR%%/htdocs/index.html
+%%WEBINTERFACE%%%%DATADIR%%/htdocs/index.html
 %%DATADIR%%/htdocs/mstile-150x150.png
 %%DATADIR%%/htdocs/safari-pinned-tab.svg
 %%DATADIR%%/htdocs/site.webmanifest
