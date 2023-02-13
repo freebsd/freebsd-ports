@@ -21,6 +21,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils \
 		kde:5 mysql:client,embedded pkgconfig qca qt:5 shebangfix ssl xorg
+IGNORE_WITH_MYSQL=80
 
 USE_QT=		core concurrent declarative dbus gui location network phonon4 \
 		quickcontrols2 script scripttools sql svg webchannel \
