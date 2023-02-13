@@ -21,6 +21,14 @@ include/proxygen/httpserver/SignalHandler.h
 include/proxygen/httpserver/filters/CompressionFilter.h
 include/proxygen/httpserver/filters/DirectResponseHandler.h
 include/proxygen/httpserver/filters/RejectConnectFilter.h
+include/proxygen/lib/dns/CAresResolver.h
+include/proxygen/lib/dns/CachingDNSResolver.h
+include/proxygen/lib/dns/DNSModule.h
+include/proxygen/lib/dns/DNSResolver.h
+include/proxygen/lib/dns/FutureDNSResolver.h
+include/proxygen/lib/dns/NaiveResolutionCallback.h
+include/proxygen/lib/dns/Rfc6724.h
+include/proxygen/lib/dns/SyncDNSResolver.h
 include/proxygen/lib/healthcheck/PoolHealthChecker.h
 include/proxygen/lib/healthcheck/ServerHealthCheckerCallback.h
 include/proxygen/lib/http/HQConnector.h
@@ -191,6 +199,7 @@ include/proxygen/lib/stats/PeriodicStats.h
 include/proxygen/lib/stats/PeriodicStatsDataBase.h
 include/proxygen/lib/stats/ResourceData.h
 include/proxygen/lib/stats/ResourceStats.h
+include/proxygen/lib/transport/AsyncUDPSocketFactory.h
 include/proxygen/lib/transport/H3DatagramAsyncSocket.h
 include/proxygen/lib/transport/PersistentFizzPskCache.h
 include/proxygen/lib/transport/PersistentQuicPskCache.h

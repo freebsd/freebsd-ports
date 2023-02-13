@@ -1,6 +1,6 @@
 PORTNAME=	proxygen
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.02.06.00
+DISTVERSION=	2023.02.13.00
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +14,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 		${LOCALBASE}/lib/libmvfst_server.a:net/mvfst \
 		gperf>0:devel/gperf
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs \
+		libbzip2.so:misc/vxl \
 		libdouble-conversion.so:devel/double-conversion \
 		libevent.so:devel/libevent \
 		libfizz.so:security/fizz \
