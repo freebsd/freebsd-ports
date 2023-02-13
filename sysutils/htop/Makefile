@@ -1,5 +1,5 @@
 PORTNAME=	htop
-DISTVERSION=	3.2.1
+DISTVERSION=	3.2.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	gaod@hychen.org
