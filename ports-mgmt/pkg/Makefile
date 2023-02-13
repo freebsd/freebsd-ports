@@ -1,5 +1,6 @@
 PORTNAME=	pkg
 DISTVERSION=	1.19.1
+PORTREVISION=	1
 _PKG_VERSION=	${DISTVERSION}
 CATEGORIES=	ports-mgmt
 
@@ -35,10 +36,6 @@ EXTRA_PATCHES=	${FILESDIR}/extra-patch-docs_pkg.8
 
 .if defined(WITH_DEBUG)
 MAKE_ARGS+=	DEBUG_FLAGS="${DEBUG_FLAGS}"
-.endif
-
-.if defined(WITH_PIE)
-MAKE_ARGS+=	STATIC_ARG="-static ${STATIC_PIE_ARGS}"
 .endif
 
 .if defined(WITH_PKG)
