@@ -3,6 +3,9 @@ DISTVERSION=	1.13.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
+PATCH_SITES=	https://codeberg.org/dnkl/${PORTNAME}/commit/
+PATCHFILES+=	1c16e4a57571.patch:-p1 # https://codeberg.org/dnkl/foot/issues/1278
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Fast, lightweight and minimalistic Wayland terminal emulator
 WWW=		https://codeberg.org/dnkl/foot
@@ -21,7 +24,6 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 
 USES=		compiler:c11 meson pkgconfig xorg
 USE_XORG=	pixman
-CFLAGS+=	-Wno-error=unused-but-set-variable # https://codeberg.org/dnkl/foot/issues/1278
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS LTO NOTIFY PGO UTF8PROC XDG
