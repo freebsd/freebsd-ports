@@ -1,5 +1,6 @@
 PORTNAME=	shortwave
 DISTVERSION=	3.2.0
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org

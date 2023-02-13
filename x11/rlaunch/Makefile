@@ -1,6 +1,6 @@
 PORTNAME=	rlaunch
 DISTVERSION=	1.3.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/PonasKovas/rlaunch/commit/

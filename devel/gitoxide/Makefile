@@ -1,6 +1,7 @@
 PORTNAME=	gitoxide
 DISTVERSIONPREFIX=	git-repository-v
 DISTVERSION=	0.32.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

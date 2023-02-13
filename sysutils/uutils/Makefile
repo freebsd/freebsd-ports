@@ -1,5 +1,6 @@
 PORTNAME=	uutils
 PORTVERSION=	0.0.17
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
