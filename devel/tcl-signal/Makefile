@@ -1,28 +1,24 @@
 PORTNAME=	tcl-signal
-PORTVERSION=	1.4.0.1
+PORTVERSION=	1.4.5
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
-MASTER_SITES=	http://www.nyx.net/~mschwart/
-DISTNAME=	signal_ext${PORTVERSION:R:R}
 
 MAINTAINER=	tcltk@FreeBSD.org
 COMMENT=	Dynamically loadable signal handling for Tcl/Tk scripts
 WWW=		https://www.nyx.net/~mschwart/signal_ext.html
 
-USES+=		tcl:tea
-ALL_TARGET=	signal.so
+LICENSE=	MIT
 
-CONFIGURE_ENV+=	TCL_INC_DIR=${TCL_INCLUDEDIR}
+USES+=		tcl:tea autoreconf
+USE_GITHUB=	yes
+GH_ACCOUNT=	wjoye
+GH_PROJECT=	tclsignal
 
-PLIST_FILES=	lib/signal/signal.so \
-		lib/signal/pkgIndex.tcl
+PLIST_FILES=	lib/tclsignalConfig.sh \
+		lib/tclsignal${PORTVERSION}/libtclsignal${PORTVERSION}.so \
+		lib/tclsignal${PORTVERSION}/pkgIndex.tcl
 
 post-patch:
-	${REINPLACE_CMD} -e 's|\.\./lib||' ${WRKSRC}/${CONFIGURE_SCRIPT}
-	${REINPLACE_CMD} -e 's|mkdir|${MKDIR}|; s|@TCL_PACKAGE_PATH@|@TCL_PREFIX@/lib|g' ${WRKSRC}/Makefile.in
-
-do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/signal
-	${INSTALL_DATA} ${WRKSRC}/signal.so ${STAGEDIR}${PREFIX}/lib/signal
-	${INSTALL_DATA} ${WRKSRC}/pkgIndex.tcl ${STAGEDIR}${PREFIX}/lib/signal
+	${REINPLACE_CMD} -e 's|1\.4\.4\.1|${PORTVERSION}|' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
