@@ -2,7 +2,7 @@ PORTNAME=	Bento4
 PORTVERSION=	1.6.0
 DISTVERSIONPREFIX=v
 DISTVERSIONSUFFIX=-639
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia devel
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -42,5 +42,8 @@ do-install:
 .	for prog in mp4dash mp4dashclone mp4hls
 	${INSTALL_SCRIPT} ${WRKSRC}/Source/Python/wrappers/${prog} ${STAGEDIR}${PREFIX}/bin
 .	endfor
+	@${MKDIR} ${STAGEDIR}${PREFIX}/include/Bento4
+	@${FIND} -s ${WRKSRC} -type f -name "*.h" -type f \
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${PREFIX}/include/Bento4 ';'
 
 .include <bsd.port.mk>
