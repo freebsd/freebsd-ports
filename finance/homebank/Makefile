@@ -1,7 +1,7 @@
 PORTNAME=	homebank
-PORTVERSION=	5.5.8
+PORTVERSION=	5.6.2
 CATEGORIES=	finance
-MASTER_SITES=	http://homebank.free.fr/public/
+MASTER_SITES=	http://homebank.free.fr/public/sources/
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Free, easy, personal accounting for everyone

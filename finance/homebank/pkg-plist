@@ -2,9 +2,6 @@ bin/homebank
 share/metainfo/homebank.appdata.xml
 share/application-registry/homebank.applications
 share/applications/homebank.desktop
-%%DATADIR%%/icons/hicolor/16x16/status/flt-exclude.png
-%%DATADIR%%/icons/hicolor/16x16/status/flt-inactive.png
-%%DATADIR%%/icons/hicolor/16x16/status/flt-include.png
 share/icons/hicolor/16x16/apps/homebank.png
 share/icons/hicolor/22x22/apps/homebank.png
 share/icons/hicolor/24x24/apps/homebank.png
@@ -23,6 +20,7 @@ share/locale/cy/LC_MESSAGES/homebank.mo
 share/locale/da/LC_MESSAGES/homebank.mo
 share/locale/de/LC_MESSAGES/homebank.mo
 share/locale/el/LC_MESSAGES/homebank.mo
+share/locale/eo/LC_MESSAGES/homebank.mo
 share/locale/en_AU/LC_MESSAGES/homebank.mo
 share/locale/en_CA/LC_MESSAGES/homebank.mo
 share/locale/en_GB/LC_MESSAGES/homebank.mo
@@ -60,8 +58,10 @@ share/locale/sk/LC_MESSAGES/homebank.mo
 share/locale/sl/LC_MESSAGES/homebank.mo
 share/locale/sr/LC_MESSAGES/homebank.mo
 share/locale/sv/LC_MESSAGES/homebank.mo
+share/locale/ta/LC_MESSAGES/homebank.mo
 share/locale/tr/LC_MESSAGES/homebank.mo
 share/locale/uk/LC_MESSAGES/homebank.mo
+share/locale/uz/LC_MESSAGES/homebank.mo
 share/locale/vi/LC_MESSAGES/homebank.mo
 share/locale/zh_CN/LC_MESSAGES/homebank.mo
 share/locale/zh_TW/LC_MESSAGES/homebank.mo
@@ -85,6 +85,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/datas/hb-categories-sk.csv
 %%DATADIR%%/help/00-intro.html
 %%DATADIR%%/help/00-lexicon.html
+%%DATADIR%%/help/00-previously.html
 %%DATADIR%%/help/00-whatsnew.html
 %%DATADIR%%/help/dlg-acco.html
 %%DATADIR%%/help/dlg-arch.html
@@ -119,6 +120,9 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/50txnstatus.png
 %%DATADIR%%/help/images/53txntype.png
 %%DATADIR%%/help/images/54txnpopmenu.png
+%%DATADIR%%/help/images/56datrang.png
+%%DATADIR%%/help/images/56filter.png
+%%DATADIR%%/help/images/56stack.png
 %%DATADIR%%/help/images/5.png
 %%DATADIR%%/help/images/6.png
 %%DATADIR%%/help/images/7.png
@@ -130,6 +134,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/dlg-account2.png
 %%DATADIR%%/help/images/dlg-account3.png
 %%DATADIR%%/help/images/dlg-assign1.png
+%%DATADIR%%/help/images/dlg-assign2.png
 %%DATADIR%%/help/images/dlg-budget1.png
 %%DATADIR%%/help/images/dlg-budget2.png
 %%DATADIR%%/help/images/dlg-category1.png
@@ -216,6 +221,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/win-main1.png
 %%DATADIR%%/help/images/win-statistics1.png
 %%DATADIR%%/help/images/win-statistics2.png
+%%DATADIR%%/help/images/win-statistics3.png
 %%DATADIR%%/help/images/win-trendtime1.png
 %%DATADIR%%/help/images/win-trendtime2.png
 %%DATADIR%%/help/index.html
@@ -237,6 +243,11 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/win-statistics.html
 %%DATADIR%%/help/win-trendtime.html
 %%DATADIR%%/help/win-vehiclecost.html
+%%DATADIR%%/icons/hicolor/scalable/actions/data-usage-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/eye-not-looking-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/hb-go-down-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/hb-go-up-symbolic.svg
+%%DATADIR%%/icons/hicolor/scalable/actions/list-move-after-symbolic.svg
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-auto.png
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-budget.png
 %%DATADIR%%/icons/hicolor/16x16/status/hb-ope-cleared.png
