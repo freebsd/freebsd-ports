@@ -31,17 +31,20 @@ pidfile="%%STATEDIR%%/upsd.pid"
 start_precmd="nut_prestart"
 stop_postcmd="nut_poststop"
 
+nut_file_fixup=${nut_file_fixup:-"YES"}
+
 nut_prestart() {
 	#
 	# As of PR/268960 UID/GID uucp is no longer used by nut.
 	# Instead UID/GID nut is used. Make sure preexisting nut files
 	# and directories are owned by nut instead of uucp.
 	#
-	if [ -f ${nut_prefix}/etc/nut/upsd.users ]; then
-		chgrp %%NUT_GROUP%% ${nut_prefix}/etc/nut/upsd.users
+	if [ "${nut_file_fixup}" == "YES" ]
+		find ${nut_prefix}/etc/nut -user uucp -exec chown %%NUT_USER%% {} \;
+		find ${nut_prefix}/etc/nut -group uucp -exec chgrp %%NUT_GROUP%% {} \;
+		find %%STATEDIR%% -user uucp -exec chown %%NUT_USER%% {} \;
+		find %%STATEDIR%% -group uucp -exec chgrp %%NUT_GROUP%% {} \;
 	fi
-	find %%STATEDIR%% -user uucp -exec chown nut {} \;
-	find %%STATEDIR%% -group uucp -exec chgrp nut {} \;
 
 	${nut_prefix}/sbin/upsdrvctl start
 }

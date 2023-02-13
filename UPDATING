@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230313:
+  Affects: users of sysutils/nut*
+  AUTHOR: cy@FreeBSD.org
+
+  The nut file ownership fixups due to the UID/GID change from uucp/uucp
+  to nut/nut may not be desireable for all users. Some users with custom
+  file ownership may wish ownership to remain untouched. This revision
+  to the nut family of ports/packages allows users to optionally disable
+  automatic fixup of nut file ownership.
+
 20230213:
   AFFECTS: users of security/logcheck
   AUTHOR: yasu@FreeBSD.org
