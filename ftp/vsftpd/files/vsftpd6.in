@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# PROVIDE: vsftpd6
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# To enable 'vsftpd' in standalone mode, you need to edit two files.
+# 1. add the following line(s) to /etc/rc.conf to enable `vsftpd':
+#
+# vsftpd6_enable="YES"
+# vsftpd6_flags="-ooption=value" # Not required
+# vsftpd6_config="/some/path/conf.file" # Not required
+#
+
+. /etc/rc.subr
+
+name="vsftpd6"
+desc="Vsftpd FTP IPv6 Server"
+rcvar="vsftpd6_enable"
+
+load_rc_config "$name"
+
+: ${vsftpd6_enable:="NO"}
+: ${vsftpd6_config:="%%PREFIX%%/etc/$name.conf"}
+: ${vsftpd6_flags:=-olisten_ipv6=YES -obackground=YES}
+command="%%PREFIX%%/libexec/$name"
+required_files="${vsftpd6_config}"
+start_precmd="vsftpd6_check"
+extra_commands="reload"
+vsftpd6_flags="${vsftpd6_config} ${vsftpd6_flags}"
+
+vsftpd6_check()
+{
+	if grep -q "^ftp[ 	]" /etc/inetd.conf
+	then
+		err 1 "ftp is already activated in /etc/inetd.conf"
+	fi
+	if ! egrep -q -i -E "^listen_ipv6.*=.*YES$" ${vsftpd6_config}
+	then
+		err 1 'vsftpd6 script need "listen=YES" in config file'
+	fi
+	if ! egrep -q -i -E "^background.*=.*YES$" ${vsftpd6_config}
+	then
+		err 1 'vsftpd6 script need "background=YES" in config file'
+	fi
+}
+
+run_rc_command "$1"

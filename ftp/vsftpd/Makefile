@@ -1,5 +1,6 @@
 PORTNAME=	vsftpd
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	https://security.appspot.com/downloads/ \
 		GENTOO
@@ -11,11 +12,11 @@ WWW=		https://security.appspot.com/vsftpd.html
 
 LICENSE=	GPLv2
 
-#USERS=		ftp
-#GROUPS=	ftp
+USERS=		ftp
+GROUPS=		ftp
 USES=		cpe alias
 ALL_TARGET=	vsftpd
-USE_RC_SUBR=	vsftpd
+USE_RC_SUBR=	vsftpd vsftpd6
 DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 		README README.security README.ssl REFS REWARD \
 		SIZE SPEED TODO TUNING
@@ -23,7 +24,7 @@ DOCFILES=	AUDIT BENCHMARKS BUGS Changelog FAQ INSTALL LICENSE \
 CPE_VENDOR=	vsftpd_project
 
 OPTIONS_DEFINE=	VSFTPD_SSL PIDFILE STACKPROTECTOR DOCS
-OPTIONS_DEFAULT?=	VSFTPD_SSL STACKPROTECTOR
+OPTIONS_DEFAULT?=	VSFTPD_SSL PIDFILE STACKPROTECTOR
 NO_OPTIONS_SORT=yes
 
 VSFTPD_SSL_DESC=Include support for SSL
@@ -78,17 +79,21 @@ do-configure:
 		-e "s|	-Wl,-s|	${VSFTPD_LIBS}|" \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e '/-lutil/d' ${WRKSRC}/vsf_findlibs.sh
-	@${ECHO_CMD} "secure_chroot_dir=${PREFIX}/share/vsftpd/empty" >> \
-		${WRKSRC}/vsftpd.conf
-	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf ""
-	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf \
-		"# If using vsftpd in standalone mode, uncomment the next two lines:"
-	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf "# listen=YES"
-	@${ECHO_CMD} >>${WRKSRC}/vsftpd.conf "# background=YES"
+	${CAT} ${FILESDIR}/chroot.conf >> ${WRKSRC}/vsftpd.conf
+	${CP} ${WRKSRC}/vsftpd.conf ${WRKSRC}/vsftpd6.conf
+.if ${PORT_OPTIONS:MPIDFILE}
+	${CAT} ${FILESDIR}/pidfile.conf >> ${WRKSRC}/vsftpd.conf
+	${SED} -e 's|vsftpd.pid|vsftpd6.pid|' ${FILESDIR}/pidfile.conf \
+		>> ${WRKSRC}/vsftpd6.conf
+.endif
+	${CAT} ${FILESDIR}/listen.conf >> ${WRKSRC}/vsftpd.conf
+	${CAT} ${FILESDIR}/listen6.conf >> ${WRKSRC}/vsftpd6.conf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/vsftpd ${STAGEDIR}${PREFIX}/libexec/
-	${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${STAGEDIR}${PREFIX}/etc/vsftpd.conf.dist
+	${LN} ${STAGEDIR}${PREFIX}/libexec/vsftpd ${STAGEDIR}${PREFIX}/libexec/vsftpd6
+	${INSTALL_DATA} ${WRKSRC}/vsftpd.conf ${STAGEDIR}${PREFIX}/etc/vsftpd.conf.sample
+	${INSTALL_DATA} ${WRKSRC}/vsftpd6.conf ${STAGEDIR}${PREFIX}/etc/vsftpd6.conf.sample
 	${INSTALL_MAN} ${WRKSRC}/vsftpd.conf.5 ${STAGEDIR}${PREFIX}/man/man5/
 	${INSTALL_MAN} ${WRKSRC}/vsftpd.8 ${STAGEDIR}${PREFIX}/man/man8/
 	${MKDIR} ${STAGEDIR}/var/ftp ${STAGEDIR}${PREFIX}/share/vsftpd/empty
