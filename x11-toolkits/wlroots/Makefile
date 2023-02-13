@@ -1,6 +1,7 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.16.2
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 
 PATCH_SITES+=	https://github.com/swaywm/${GL_PROJECT}/commit/:github
@@ -16,14 +17,12 @@ WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.27:graphics/wayland-protocols \
-		hwdata>0:misc/hwdata
+BUILD_DEPENDS=	wayland-protocols>=1.27:graphics/wayland-protocols
 LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 		libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libseat.so:sysutils/seatd \
 		libxkbcommon.so:x11/libxkbcommon
-RUN_DEPENDS=	hwdata>0:misc/hwdata
 
 USES=		compiler:c11 gl meson pkgconfig xorg
 USE_GITLAB=	yes
@@ -39,6 +38,7 @@ OPTIONS_DEFAULT=DRM OPENGL VULKAN X11
 OPTIONS_SUB=	yes
 
 DRM_DESC=		KMS console support
+DRM_BUILD_DEPENDS=	hwdata>0:misc/hwdata
 DRM_LIB_DEPENDS=	libinput.so:x11/libinput
 DRM_VARS=		BACKENDS+="drm libinput"
 
