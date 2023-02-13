@@ -17764,3 +17764,4 @@ x11-toolkits/vdk||2023-01-30|Depends on EOLed gtk+20, not depended on in the por
 audio/libgpod-sharp||2023-02-01|Depends on EOLed gtk+20, not depended on in the ports tree
 x11/plasma5-kwayland-server|x11-wm/plasma5-kwin|2023-02-07|Reintegrated into x11-wm/plasma5-kwin
 finance/py-TA-Lib|finance/py-ta-lib|2023-02-12|Remove duplicate port
+x11-toolkits/gnocl||2023-02-13|Fails to build, newer snapshot depends on a removed port

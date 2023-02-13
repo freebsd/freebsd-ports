@@ -18,7 +18,6 @@
     SUBDIR += fxscintilla
     SUBDIR += gdl
     SUBDIR += girara
-    SUBDIR += gnocl
     SUBDIR += gnome-pty-helper
     SUBDIR += gnustep-back
     SUBDIR += gnustep-gui
