@@ -1,6 +1,6 @@
 PORTNAME=	fizz
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.02.06.00
+DISTVERSION=	2023.02.13.00
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+		libbzip2.so:misc/vxl \
 		libdouble-conversion.so:devel/double-conversion \
 		libevent.so:devel/libevent \
 		libfmt.so:devel/libfmt \

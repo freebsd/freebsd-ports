@@ -168,6 +168,7 @@ include/fizz/util/FizzUtil.h
 include/fizz/util/KeyLogWriter.h
 include/fizz/util/Parse-inl.h
 include/fizz/util/Parse.h
+include/fizz/util/Tracing.h
 include/fizz/util/Variant.h
 include/fizz/util/Workarounds.h
 lib/cmake/fizz/fizz-config.cmake
