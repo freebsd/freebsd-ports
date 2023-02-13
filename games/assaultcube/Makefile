@@ -1,12 +1,9 @@
 PORTNAME=	assaultcube
-PORTVERSION=	1.2.0.2
-PORTREVISION=	7
+PORTVERSION=	1.3.0.2
 CATEGORIES=	games
-MASTER_SITES=	SF/actiongame/AssaultCube%20Version%20${PORTVERSION}
-DISTNAME=	AssaultCube_v${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Total conversion of the FPS game called Cube
+MAINTAINER=	kevinz5000@gmail.com
+COMMENT=	Free, multiplayer, first-person shooter game based on the CUBE engine
 WWW=		https://assault.cubers.net/
 
 LICENSE=	ACUBE CUBE MIT OTHER
@@ -22,42 +19,43 @@ LICENSE_PERMS_CUBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_OTHER=	dist-mirror pkg-mirror auto-accept
 
 USES=		gmake tar:bzip2
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	assaultcube
+GH_PROJECT=	AC
+GH_TAGNAME=	v1.3.0.2
+
 LDFLAGS_i386=	-Wl,-znotext
-WRKSRC=		${WRKDIR}/AssaultCube_v${PORTVERSION}
-BUILD_WRKSRC=	${WRKSRC}/source/src
 SUB_FILES=	${PLIST_FILES:Mbin/*:T}
+BUILD_WRKSRC=	${WRKSRC}/source/src
 
-PORTDATA=	config packages scripts
-PORTDOCS=	*
 PLIST_DIRS=	${DATADIR}/packages/maps/servermaps/incoming
+PORTDATA=	config packages
 
-OPTIONS_DEFINE=	DOCS PORT_ENET
-OPTIONS_MULTI=	BUILD
-OPTIONS_MULTI_BUILD=	CLIENT DEDICATED MASTER
 OPTIONS_DEFAULT=	CLIENT DEDICATED
+OPTIONS_MULTI=	BUILD
+OPTIONS_MULTI_BUILD=	CLIENT DEDICATED #MASTER is currently broken
 
 CLIENT_DESC=	Build client
-CLIENT_USES=		compiler:c++11-lang gettext-runtime gl openal:al sdl \
-			xorg
-CLIENT_USE=		GL=gl SDL=image,sdl XORG=x11
+DEDICATED_DESC=	Build dedicated server
+
 CLIENT_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 			libcurl.so:ftp/curl
+CLIENT_USES=		compiler:c++11-lang desktop-file-utils gettext-runtime gl openal:al sdl \
+			xorg
+CLIENT_USE=		GL=gl SDL=sdl2,image2 XORG=x11
 CLIENT_ALL_TARGET=	client
 CLIENT_DESKTOP_ENTRIES=	"AssaultCube" "${COMMENT}" \
-	"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}_client" \
+	"${PORTNAME}" "${PORTNAME}_client" \
 	"Game;" false
 CLIENT_PLIST_FILES=	bin/${PORTNAME}_client libexec/${PORTNAME}_client \
 			share/pixmaps/${PORTNAME}.png
-DEDICATED_DESC=	Build dedicated server
 DEDICATED_ALL_TARGET=	server
 DEDICATED_PLIST_FILES=	bin/${PORTNAME}_server libexec/${PORTNAME}_server
-MASTER_DESC=	Build master server
-MASTER_ALL_TARGET=	master
-MASTER_PLIST_FILES=	bin/${PORTNAME}_master libexec/${PORTNAME}_master
-PORT_ENET_DESC=	Use libenet from net/enet
-PORT_ENET_CONFIGURE_OFF=	--enable-shared=no --enable-static=yes
-PORT_ENET_LIB_DEPENDS=	libenet.so:net/enet
-PORT_ENET_VARS_OFF=	GNU_CONFIGURE=yes CONFIGURE_WRKSRC="${WRKSRC}/source/enet"
+
+#MASTER_DESC=	Build master server
+#MASTER_ALL_TARGET=	master
+#MASTER_PLIST_FILES=	bin/${PORTNAME}_master libexec/${PORTNAME}_master
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e '/^CXXFLAGS=/d ; /^CXX=/d ; /^CLIENT_PCH/d ; \
@@ -69,20 +67,11 @@ post-patch: .SILENT
 		/^SERVER_LIBS=/s|$$| $$(LDFLAGS) -L$$(LOCALBASE)/lib|' \
 		${BUILD_WRKSRC}/Makefile
 
-post-patch-PORT_ENET-on:
-	@${REINPLACE_CMD} -i '.port_enet.bak' -e 's/libenet // ; \
-		s|-I\.\./enet/include|| ; \
-		s|-L\.\./enet/\.libs||' \
-		${BUILD_WRKSRC}/Makefile
-
 do-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTDATA}" ${STAGEDIR}${DATADIR})
 
-do-install-DOCS-on:
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
-
 do-install-CLIENT-on:
-	${INSTALL_DATA} ${WRKSRC}/docs/images/icon.png \
+	${INSTALL_DATA} ${WRKSRC}/packages/misc/icon.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.png
 
 .for f in client master server
