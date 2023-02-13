@@ -1,7 +1,10 @@
+include/KPipeWire/DmaBufHandler
 include/KPipeWire/PipeWireRecord
 include/KPipeWire/PipeWireSourceItem
 include/KPipeWire/PipeWireSourceStream
+include/KPipeWire/dmabufhandler.h
 include/KPipeWire/kpipewire_export.h
+include/KPipeWire/kpipewiredmabuf_export.h
 include/KPipeWire/pipewirerecord.h
 include/KPipeWire/pipewiresourceitem.h
 include/KPipeWire/pipewiresourcestream.h
@@ -12,6 +15,9 @@ lib/cmake/KPipeWire/KPipeWireTargets.cmake
 lib/libKPipeWire.so
 lib/libKPipeWire.so.5
 lib/libKPipeWire.so.%%KDE_PLASMA_VERSION%%
+lib/libKPipeWireDmaBuf.so
+lib/libKPipeWireDmaBuf.so.5
+lib/libKPipeWireDmaBuf.so.%%KDE_PLASMA_VERSION%%
 lib/libKPipeWireRecord.so
 lib/libKPipeWireRecord.so.5
 lib/libKPipeWireRecord.so.%%KDE_PLASMA_VERSION%%

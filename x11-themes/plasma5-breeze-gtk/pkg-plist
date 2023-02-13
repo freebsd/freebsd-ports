@@ -559,5 +559,6 @@ share/themes/Breeze/gtk-2.0/widgets/styles
 share/themes/Breeze/gtk-2.0/widgets/toolbar
 share/themes/Breeze/gtk-3.0/gtk-dark.css
 share/themes/Breeze/gtk-3.0/gtk.css
+share/themes/Breeze/gtk-4.0/gtk-dark.css
 share/themes/Breeze/gtk-4.0/gtk.css
 share/themes/Breeze/settings.ini

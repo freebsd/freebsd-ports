@@ -1,6 +1,5 @@
 PORTNAME=	kscreenlocker
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	security kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -18,11 +17,12 @@ USES=		cmake compiler:c++11-lib cpe gettext kde:5 pkgconfig qt:5 \
 		shebangfix tar:xz xorg
 USE_KDE=	auth codecs config configwidgets coreaddons crash emoticons \
 		globalaccel i18n idletime init itemmodels kcmutils \
-		kdeclarative layer-shell-qt notifications package \
-		plasma-framework service sonnet textwidgets wayland \
+		kdeclarative kio layer-shell-qt libkscreen notifications \
+		package plasma-framework service sonnet textwidgets wayland \
 		widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		core dbus declarative gui network qdbus widgets x11extras xml \
+USE_QT=		concurrent core dbus declarative gui network qdbus widgets \
+		x11extras xml \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	ice sm x11 xcb xcursor xext xi
 

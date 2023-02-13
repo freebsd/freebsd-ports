@@ -4,6 +4,7 @@ etc/xdg/autostart/org.kde.discover.notifier.desktop
 lib/libexec/DiscoverNotifier
 lib/plasma-discover/libDiscoverCommon.so
 lib/plasma-discover/libDiscoverNotifiers.so
+%%QT_PLUGINDIR%%/discover/kns-backend.so
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_updates.so
 share/applications/kcm_updates.desktop
 share/applications/org.kde.discover.desktop
@@ -23,9 +24,6 @@ share/locale/ar/LC_MESSAGES/kcm_updates.mo
 share/locale/ar/LC_MESSAGES/libdiscover.mo
 share/locale/ar/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/ar/LC_MESSAGES/plasma-discover.mo
-share/locale/ast/LC_MESSAGES/libdiscover.mo
-share/locale/ast/LC_MESSAGES/plasma-discover-notifier.mo
-share/locale/ast/LC_MESSAGES/plasma-discover.mo
 share/locale/az/LC_MESSAGES/kcm_updates.mo
 share/locale/az/LC_MESSAGES/libdiscover.mo
 share/locale/az/LC_MESSAGES/plasma-discover-notifier.mo
@@ -66,6 +64,7 @@ share/locale/es/LC_MESSAGES/kcm_updates.mo
 share/locale/es/LC_MESSAGES/libdiscover.mo
 share/locale/es/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/es/LC_MESSAGES/plasma-discover.mo
+share/locale/et/LC_MESSAGES/kcm_updates.mo
 share/locale/et/LC_MESSAGES/libdiscover.mo
 share/locale/et/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/et/LC_MESSAGES/plasma-discover.mo
@@ -107,6 +106,8 @@ share/locale/id/LC_MESSAGES/kcm_updates.mo
 share/locale/id/LC_MESSAGES/libdiscover.mo
 share/locale/id/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/id/LC_MESSAGES/plasma-discover.mo
+share/locale/ie/LC_MESSAGES/kcm_updates.mo
+share/locale/ie/LC_MESSAGES/plasma-discover-notifier.mo
 share/locale/it/LC_MESSAGES/kcm_updates.mo
 share/locale/it/LC_MESSAGES/libdiscover.mo
 share/locale/it/LC_MESSAGES/plasma-discover-notifier.mo

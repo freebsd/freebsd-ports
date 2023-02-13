@@ -47,4 +47,5 @@ share/locale/tr/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/uk/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/zh_CN/LC_MESSAGES/xdg-desktop-portal-kde.mo
 share/locale/zh_TW/LC_MESSAGES/xdg-desktop-portal-kde.mo
+share/qlogging-categories5/xdp-kde.categories
 share/xdg-desktop-portal/portals/kde.portal

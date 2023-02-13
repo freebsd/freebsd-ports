@@ -8,6 +8,7 @@ WWW=		https://www.kde.org/plasma-desktop
 
 # TODO: update packagekit-qt5
 #LIB_DEPENDS=	libpackagekit-qt.so:ports-mgmt/packagekit-qt5
+LIB_DEPENDS=	libAppStreamQt.so:devel/appstream-qt
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext kde:5 \
 		pkgconfig qt:5 tar:xz xorg

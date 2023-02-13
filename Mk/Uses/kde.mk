@@ -75,7 +75,7 @@ _KDE_RELNAME=		KDE${_KDE_VERSION}
 
 # === VERSIONS OF THE DIFFERENT COMPONENTS =====================================
 # Current KDE desktop.
-KDE_PLASMA_VERSION?=		5.26.5
+KDE_PLASMA_VERSION?=		5.27.0
 KDE_PLASMA_BRANCH?=		stable
 
 # Current KDE frameworks.
@@ -597,7 +597,7 @@ kde-kwallet-pam_PORT=		security/plasma5-kwallet-pam
 kde-kwallet-pam_PATH=		${KDE_PREFIX}/lib/pam_kwallet5.so
 
 kde-kwayland-integration_PORT=	x11/plasma5-kwayland-integration
-kde-kwayland-integration_PATH=	${QT_PLUGINDIR}/kf5/org.kde.kidletime.platforms/KF5IdleTimeKWaylandPlugin.so
+kde-kwayland-integration_PATH=	${QT_PLUGINDIR}/kf5/kwindowsystem/KF5WindowSystemKWaylandPlugin.so
 
 kde-kwin_PORT=			x11-wm/plasma5-kwin
 kde-kwin_PATH=			${KDE_PREFIX}/bin/kwin_x11

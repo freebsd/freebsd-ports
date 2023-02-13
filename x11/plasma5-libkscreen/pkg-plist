@@ -10,6 +10,7 @@ include/KF5/KScreen/KScreen/Output
 include/KF5/KScreen/KScreen/Screen
 include/KF5/KScreen/KScreen/SetConfigOperation
 include/KF5/KScreen/KScreen/Types
+include/KF5/KScreen/KScreenDpms/Dpms
 include/KF5/KScreen/kscreen/backendmanager_p.h
 include/KF5/KScreen/kscreen/config.h
 include/KF5/KScreen/kscreen/configmonitor.h
@@ -23,6 +24,8 @@ include/KF5/KScreen/kscreen/output.h
 include/KF5/KScreen/kscreen/screen.h
 include/KF5/KScreen/kscreen/setconfigoperation.h
 include/KF5/KScreen/kscreen/types.h
+include/KF5/KScreen/kscreendpms/dpms.h
+include/KF5/KScreen/kscreendpms/kscreendpms_export.h
 include/KF5/kscreen_version.h
 lib/cmake/KF5Screen/KF5ScreenConfig.cmake
 lib/cmake/KF5Screen/KF5ScreenConfigVersion.cmake
@@ -30,7 +33,10 @@ lib/cmake/KF5Screen/KF5ScreenTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/KF5Screen/KF5ScreenTargets.cmake
 lib/libKF5Screen.so
 lib/libKF5Screen.so.%%KDE_PLASMA_VERSION%%
-lib/libKF5Screen.so.7
+lib/libKF5Screen.so.8
+lib/libKF5ScreenDpms.so
+lib/libKF5ScreenDpms.so.%%KDE_PLASMA_VERSION%%
+lib/libKF5ScreenDpms.so.8
 lib/libexec/kf5/kscreen_backend_launcher
 %%QT_MKSPECDIR%%/modules/qt_KScreen.pri
 %%QT_PLUGINDIR%%/kf5/kscreen/KSC_Fake.so
@@ -51,10 +57,12 @@ share/locale/it/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/ka/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/nl/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/pl/LC_MESSAGES/libkscreen5_qt.qm
+share/locale/pt/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/ru/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/sl/LC_MESSAGES/libkscreen5_qt.qm
-share/locale/sv/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/tr/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/uk/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/zh_CN/LC_MESSAGES/libkscreen5_qt.qm
+share/locale/zh_TW/LC_MESSAGES/libkscreen5_qt.qm
 share/qlogging-categories5/libkscreen.categories
+share/zsh/site-functions/_kscreen-doctor

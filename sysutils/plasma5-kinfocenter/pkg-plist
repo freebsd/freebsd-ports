@@ -12,6 +12,7 @@ lib/libexec/kauth/kinfocenter-dmidecode-helper
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_interrupts.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_kwinsupportinfo.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_nic.so
+%%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_opencl.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_pci.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_samba.so
 %%QT_PLUGINDIR%%/plasma/kcms/kinfocenter/kcm_usb.so
@@ -76,6 +77,7 @@ share/kpackage/kcms/kcm_glx/contents/ui/main.qml
 share/kpackage/kcms/kcm_interrupts/contents/ui/main.qml
 share/kpackage/kcms/kcm_kwinsupportinfo/contents/ui/main.qml
 share/kpackage/kcms/kcm_nic/contents/ui/main.qml
+share/kpackage/kcms/kcm_opencl/contents/ui/main.qml
 share/kpackage/kcms/kcm_pci/contents/ui/main.qml
 share/kpackage/kcms/kcm_vulkan/contents/ui/main.qml
 share/kpackage/kcms/kcm_wayland/contents/ui/main.qml
@@ -93,6 +95,7 @@ share/locale/ar/LC_MESSAGES/kcm_glx.mo
 share/locale/ar/LC_MESSAGES/kcm_interrupts.mo
 share/locale/ar/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/ar/LC_MESSAGES/kcm_nic.mo
+share/locale/ar/LC_MESSAGES/kcm_opencl.mo
 share/locale/ar/LC_MESSAGES/kcm_pci.mo
 share/locale/ar/LC_MESSAGES/kcm_vulkan.mo
 share/locale/ar/LC_MESSAGES/kcm_wayland.mo
@@ -100,11 +103,6 @@ share/locale/ar/LC_MESSAGES/kcm_xserver.mo
 share/locale/ar/LC_MESSAGES/kcmdevinfo.mo
 share/locale/ar/LC_MESSAGES/kcmsamba.mo
 share/locale/ar/LC_MESSAGES/kcmusb.mo
-share/locale/ast/LC_MESSAGES/kcm_about-distro.mo
-share/locale/ast/LC_MESSAGES/kcm_energyinfo.mo
-share/locale/ast/LC_MESSAGES/kcm_nic.mo
-share/locale/ast/LC_MESSAGES/kcmsamba.mo
-share/locale/ast/LC_MESSAGES/kcmusb.mo
 share/locale/az/LC_MESSAGES/kcm_about-distro.mo
 share/locale/az/LC_MESSAGES/kcm_cpu.mo
 share/locale/az/LC_MESSAGES/kcm_egl.mo
@@ -112,7 +110,9 @@ share/locale/az/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/az/LC_MESSAGES/kcm_firmware_security.mo
 share/locale/az/LC_MESSAGES/kcm_glx.mo
 share/locale/az/LC_MESSAGES/kcm_interrupts.mo
+share/locale/az/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/az/LC_MESSAGES/kcm_nic.mo
+share/locale/az/LC_MESSAGES/kcm_opencl.mo
 share/locale/az/LC_MESSAGES/kcm_pci.mo
 share/locale/az/LC_MESSAGES/kcm_vulkan.mo
 share/locale/az/LC_MESSAGES/kcm_wayland.mo
@@ -159,6 +159,7 @@ share/locale/ca/LC_MESSAGES/kcm_glx.mo
 share/locale/ca/LC_MESSAGES/kcm_interrupts.mo
 share/locale/ca/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/ca/LC_MESSAGES/kcm_nic.mo
+share/locale/ca/LC_MESSAGES/kcm_opencl.mo
 share/locale/ca/LC_MESSAGES/kcm_pci.mo
 share/locale/ca/LC_MESSAGES/kcm_vulkan.mo
 share/locale/ca/LC_MESSAGES/kcm_wayland.mo
@@ -175,6 +176,7 @@ share/locale/ca@valencia/LC_MESSAGES/kcm_glx.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_interrupts.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_nic.mo
+share/locale/ca@valencia/LC_MESSAGES/kcm_opencl.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_pci.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_vulkan.mo
 share/locale/ca@valencia/LC_MESSAGES/kcm_wayland.mo
@@ -189,7 +191,9 @@ share/locale/cs/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/cs/LC_MESSAGES/kcm_firmware_security.mo
 share/locale/cs/LC_MESSAGES/kcm_glx.mo
 share/locale/cs/LC_MESSAGES/kcm_interrupts.mo
+share/locale/cs/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/cs/LC_MESSAGES/kcm_nic.mo
+share/locale/cs/LC_MESSAGES/kcm_opencl.mo
 share/locale/cs/LC_MESSAGES/kcm_pci.mo
 share/locale/cs/LC_MESSAGES/kcm_vulkan.mo
 share/locale/cs/LC_MESSAGES/kcm_wayland.mo
@@ -217,6 +221,7 @@ share/locale/de/LC_MESSAGES/kcm_glx.mo
 share/locale/de/LC_MESSAGES/kcm_interrupts.mo
 share/locale/de/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/de/LC_MESSAGES/kcm_nic.mo
+share/locale/de/LC_MESSAGES/kcm_opencl.mo
 share/locale/de/LC_MESSAGES/kcm_pci.mo
 share/locale/de/LC_MESSAGES/kcm_vulkan.mo
 share/locale/de/LC_MESSAGES/kcm_wayland.mo
@@ -247,6 +252,7 @@ share/locale/en_GB/LC_MESSAGES/kcm_glx.mo
 share/locale/en_GB/LC_MESSAGES/kcm_interrupts.mo
 share/locale/en_GB/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/en_GB/LC_MESSAGES/kcm_nic.mo
+share/locale/en_GB/LC_MESSAGES/kcm_opencl.mo
 share/locale/en_GB/LC_MESSAGES/kcm_pci.mo
 share/locale/en_GB/LC_MESSAGES/kcm_vulkan.mo
 share/locale/en_GB/LC_MESSAGES/kcm_wayland.mo
@@ -268,6 +274,7 @@ share/locale/es/LC_MESSAGES/kcm_glx.mo
 share/locale/es/LC_MESSAGES/kcm_interrupts.mo
 share/locale/es/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/es/LC_MESSAGES/kcm_nic.mo
+share/locale/es/LC_MESSAGES/kcm_opencl.mo
 share/locale/es/LC_MESSAGES/kcm_pci.mo
 share/locale/es/LC_MESSAGES/kcm_vulkan.mo
 share/locale/es/LC_MESSAGES/kcm_wayland.mo
@@ -276,9 +283,18 @@ share/locale/es/LC_MESSAGES/kcmdevinfo.mo
 share/locale/es/LC_MESSAGES/kcmsamba.mo
 share/locale/es/LC_MESSAGES/kcmusb.mo
 share/locale/et/LC_MESSAGES/kcm_about-distro.mo
+share/locale/et/LC_MESSAGES/kcm_cpu.mo
+share/locale/et/LC_MESSAGES/kcm_egl.mo
 share/locale/et/LC_MESSAGES/kcm_energyinfo.mo
+share/locale/et/LC_MESSAGES/kcm_firmware_security.mo
+share/locale/et/LC_MESSAGES/kcm_glx.mo
+share/locale/et/LC_MESSAGES/kcm_interrupts.mo
+share/locale/et/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/et/LC_MESSAGES/kcm_nic.mo
 share/locale/et/LC_MESSAGES/kcm_pci.mo
+share/locale/et/LC_MESSAGES/kcm_vulkan.mo
+share/locale/et/LC_MESSAGES/kcm_wayland.mo
+share/locale/et/LC_MESSAGES/kcm_xserver.mo
 share/locale/et/LC_MESSAGES/kcmdevinfo.mo
 share/locale/et/LC_MESSAGES/kcmsamba.mo
 share/locale/et/LC_MESSAGES/kcmusb.mo
@@ -291,6 +307,7 @@ share/locale/eu/LC_MESSAGES/kcm_glx.mo
 share/locale/eu/LC_MESSAGES/kcm_interrupts.mo
 share/locale/eu/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/eu/LC_MESSAGES/kcm_nic.mo
+share/locale/eu/LC_MESSAGES/kcm_opencl.mo
 share/locale/eu/LC_MESSAGES/kcm_pci.mo
 share/locale/eu/LC_MESSAGES/kcm_vulkan.mo
 share/locale/eu/LC_MESSAGES/kcm_wayland.mo
@@ -327,6 +344,7 @@ share/locale/fr/LC_MESSAGES/kcm_glx.mo
 share/locale/fr/LC_MESSAGES/kcm_interrupts.mo
 share/locale/fr/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/fr/LC_MESSAGES/kcm_nic.mo
+share/locale/fr/LC_MESSAGES/kcm_opencl.mo
 share/locale/fr/LC_MESSAGES/kcm_pci.mo
 share/locale/fr/LC_MESSAGES/kcm_vulkan.mo
 share/locale/fr/LC_MESSAGES/kcm_wayland.mo
@@ -395,6 +413,7 @@ share/locale/ia/LC_MESSAGES/kcm_glx.mo
 share/locale/ia/LC_MESSAGES/kcm_interrupts.mo
 share/locale/ia/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/ia/LC_MESSAGES/kcm_nic.mo
+share/locale/ia/LC_MESSAGES/kcm_opencl.mo
 share/locale/ia/LC_MESSAGES/kcm_pci.mo
 share/locale/ia/LC_MESSAGES/kcm_vulkan.mo
 share/locale/ia/LC_MESSAGES/kcm_wayland.mo
@@ -423,6 +442,7 @@ share/locale/it/LC_MESSAGES/kcm_glx.mo
 share/locale/it/LC_MESSAGES/kcm_interrupts.mo
 share/locale/it/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/it/LC_MESSAGES/kcm_nic.mo
+share/locale/it/LC_MESSAGES/kcm_opencl.mo
 share/locale/it/LC_MESSAGES/kcm_pci.mo
 share/locale/it/LC_MESSAGES/kcm_vulkan.mo
 share/locale/it/LC_MESSAGES/kcm_wayland.mo
@@ -455,6 +475,7 @@ share/locale/ka/LC_MESSAGES/kcm_glx.mo
 share/locale/ka/LC_MESSAGES/kcm_interrupts.mo
 share/locale/ka/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/ka/LC_MESSAGES/kcm_nic.mo
+share/locale/ka/LC_MESSAGES/kcm_opencl.mo
 share/locale/ka/LC_MESSAGES/kcm_pci.mo
 share/locale/ka/LC_MESSAGES/kcm_vulkan.mo
 share/locale/ka/LC_MESSAGES/kcm_wayland.mo
@@ -556,6 +577,7 @@ share/locale/nl/LC_MESSAGES/kcm_glx.mo
 share/locale/nl/LC_MESSAGES/kcm_interrupts.mo
 share/locale/nl/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/nl/LC_MESSAGES/kcm_nic.mo
+share/locale/nl/LC_MESSAGES/kcm_opencl.mo
 share/locale/nl/LC_MESSAGES/kcm_pci.mo
 share/locale/nl/LC_MESSAGES/kcm_vulkan.mo
 share/locale/nl/LC_MESSAGES/kcm_wayland.mo
@@ -597,6 +619,7 @@ share/locale/pl/LC_MESSAGES/kcm_glx.mo
 share/locale/pl/LC_MESSAGES/kcm_interrupts.mo
 share/locale/pl/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/pl/LC_MESSAGES/kcm_nic.mo
+share/locale/pl/LC_MESSAGES/kcm_opencl.mo
 share/locale/pl/LC_MESSAGES/kcm_pci.mo
 share/locale/pl/LC_MESSAGES/kcm_vulkan.mo
 share/locale/pl/LC_MESSAGES/kcm_wayland.mo
@@ -613,6 +636,7 @@ share/locale/pt/LC_MESSAGES/kcm_glx.mo
 share/locale/pt/LC_MESSAGES/kcm_interrupts.mo
 share/locale/pt/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/pt/LC_MESSAGES/kcm_nic.mo
+share/locale/pt/LC_MESSAGES/kcm_opencl.mo
 share/locale/pt/LC_MESSAGES/kcm_pci.mo
 share/locale/pt/LC_MESSAGES/kcm_vulkan.mo
 share/locale/pt/LC_MESSAGES/kcm_wayland.mo
@@ -629,6 +653,7 @@ share/locale/pt_BR/LC_MESSAGES/kcm_glx.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_interrupts.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_nic.mo
+share/locale/pt_BR/LC_MESSAGES/kcm_opencl.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_pci.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_vulkan.mo
 share/locale/pt_BR/LC_MESSAGES/kcm_wayland.mo
@@ -659,7 +684,9 @@ share/locale/ru/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/ru/LC_MESSAGES/kcm_firmware_security.mo
 share/locale/ru/LC_MESSAGES/kcm_glx.mo
 share/locale/ru/LC_MESSAGES/kcm_interrupts.mo
+share/locale/ru/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/ru/LC_MESSAGES/kcm_nic.mo
+share/locale/ru/LC_MESSAGES/kcm_opencl.mo
 share/locale/ru/LC_MESSAGES/kcm_pci.mo
 share/locale/ru/LC_MESSAGES/kcm_vulkan.mo
 share/locale/ru/LC_MESSAGES/kcm_wayland.mo
@@ -699,6 +726,7 @@ share/locale/sl/LC_MESSAGES/kcm_glx.mo
 share/locale/sl/LC_MESSAGES/kcm_interrupts.mo
 share/locale/sl/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/sl/LC_MESSAGES/kcm_nic.mo
+share/locale/sl/LC_MESSAGES/kcm_opencl.mo
 share/locale/sl/LC_MESSAGES/kcm_pci.mo
 share/locale/sl/LC_MESSAGES/kcm_vulkan.mo
 share/locale/sl/LC_MESSAGES/kcm_wayland.mo
@@ -784,6 +812,7 @@ share/locale/tr/LC_MESSAGES/kcm_glx.mo
 share/locale/tr/LC_MESSAGES/kcm_interrupts.mo
 share/locale/tr/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/tr/LC_MESSAGES/kcm_nic.mo
+share/locale/tr/LC_MESSAGES/kcm_opencl.mo
 share/locale/tr/LC_MESSAGES/kcm_pci.mo
 share/locale/tr/LC_MESSAGES/kcm_vulkan.mo
 share/locale/tr/LC_MESSAGES/kcm_wayland.mo
@@ -806,6 +835,7 @@ share/locale/uk/LC_MESSAGES/kcm_glx.mo
 share/locale/uk/LC_MESSAGES/kcm_interrupts.mo
 share/locale/uk/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/uk/LC_MESSAGES/kcm_nic.mo
+share/locale/uk/LC_MESSAGES/kcm_opencl.mo
 share/locale/uk/LC_MESSAGES/kcm_pci.mo
 share/locale/uk/LC_MESSAGES/kcm_vulkan.mo
 share/locale/uk/LC_MESSAGES/kcm_wayland.mo
@@ -824,7 +854,9 @@ share/locale/vi/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/vi/LC_MESSAGES/kcm_firmware_security.mo
 share/locale/vi/LC_MESSAGES/kcm_glx.mo
 share/locale/vi/LC_MESSAGES/kcm_interrupts.mo
+share/locale/vi/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/vi/LC_MESSAGES/kcm_nic.mo
+share/locale/vi/LC_MESSAGES/kcm_opencl.mo
 share/locale/vi/LC_MESSAGES/kcm_pci.mo
 share/locale/vi/LC_MESSAGES/kcm_vulkan.mo
 share/locale/vi/LC_MESSAGES/kcm_wayland.mo
@@ -848,6 +880,7 @@ share/locale/zh_CN/LC_MESSAGES/kcm_glx.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_interrupts.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_nic.mo
+share/locale/zh_CN/LC_MESSAGES/kcm_opencl.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_pci.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_vulkan.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_wayland.mo
@@ -862,7 +895,9 @@ share/locale/zh_TW/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_firmware_security.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_glx.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_interrupts.mo
+share/locale/zh_TW/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_nic.mo
+share/locale/zh_TW/LC_MESSAGES/kcm_opencl.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_pci.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_vulkan.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_wayland.mo

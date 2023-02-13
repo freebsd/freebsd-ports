@@ -6,6 +6,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Platform Theme integration plugins for the Plasma workspaces
 WWW=		https://www.kde.org/plasma-desktop
 
+LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 RUN_DEPENDS=	hack-font>=0:x11-fonts/hack-font
 
 USES=		cmake compiler:c++11-lib gettext kde:5 pkgconfig qt:5 \
@@ -16,7 +17,7 @@ USE_KDE=	auth bookmarks breeze codecs completion config configwidgets \
 		xmlgui \
 		qqc2-desktop-style:run
 USE_QT=		concurrent core dbus declarative gui network quickcontrols2 \
-		widgets x11extras xml \
+		wayland widgets x11extras xml \
 		buildtools:build qmake:build
 USE_XORG=	x11 xcb xcursor
 

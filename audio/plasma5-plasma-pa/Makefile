@@ -15,7 +15,7 @@ USE_GNOME=	glib20
 USE_KDE=	config configwidgets coreaddons ecm globalaccel i18n kcmutils \
 		kdeclarative notifications package plasma-framework \
 		doctools:build
-USE_QT=		core dbus declarative gui network widgets \
+USE_QT=		core dbus declarative gui network widgets xml \
 		buildtools:build qmake:build
 
 SHEBANG_FILES=	data/plasmaVolumeDisableKMixAutostart.pl
