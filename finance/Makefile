@@ -125,6 +125,7 @@
     SUBDIR += py-quantecon
     SUBDIR += py-stripe
     SUBDIR += py-ta-lib
+    SUBDIR += py-technical
     SUBDIR += py-vatnumber
     SUBDIR += py-yfinance
     SUBDIR += py-ystockquote
