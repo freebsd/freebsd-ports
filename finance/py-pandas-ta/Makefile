@@ -1,5 +1,6 @@
 PORTNAME=	pandas-ta
 DISTVERSION=	0.3.14
+PORTREVISION=	1
 CATEGORIES=	finance python
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.16.0:devel/py-six@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}TA-Lib>0:finance/py-TA-Lib@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ta-lib>0:finance/py-ta-lib@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/twopirllc/pandas-ta/issues/631
