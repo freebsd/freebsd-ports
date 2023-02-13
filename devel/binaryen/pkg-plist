@@ -1,3 +1,4 @@
+%%TEST%%bin/binaryen-unittests
 bin/wasm-as
 bin/wasm-ctor-eval
 bin/wasm-dis
