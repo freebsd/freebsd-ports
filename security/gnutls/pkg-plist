@@ -31,7 +31,7 @@ include/gnutls/x509.h
 %%DANE%%lib/libgnutls-dane.so.0.4.1
 lib/libgnutls.so
 lib/libgnutls.so.30
-lib/libgnutls.so.30.34.2
+lib/libgnutls.so.30.34.3
 lib/libgnutlsxx.so
 lib/libgnutlsxx.so.30
 lib/libgnutlsxx.so.30.0.0
@@ -1276,10 +1276,12 @@ share/info/pkcs11-vision.png
 %%NLS%%share/locale/fi/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gnutls.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/gnutls.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gnutls.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/gnutls.mo
