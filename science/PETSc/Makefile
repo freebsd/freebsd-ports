@@ -1,5 +1,6 @@
 PORTNAME=	PETSc
 DISTVERSION=	3.18.4
+PORTREVISION=	1
 CATEGORIES=	science devel
 MASTER_SITES=	https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -25,6 +26,7 @@ CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		MAKEFLAGS="${MAKEFLAGS}" LDFLAGS="${LDFLAGS}" LIBS=""
 CONFIGURE_ARGS_amd64=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
 CONFIGURE_ARGS_i386=	CFLAGS="${CFLAGS} -msse2" CXXFLAGS="${CXXFLAGS} -msse2"
+CONFIGURE_ARGS=	--with-64-bit-indices # as opposed to 32-bit indices that are default
 CONFIGURE_LOG=	configure.log
 USE_XORG=	x11
 MAKEFILE=	makefile
@@ -38,6 +40,13 @@ LDFLAGS+=	${LOCALBASE}/lib/libmpi.so
 
 DATADIR=	${PREFIX}/share/${PORTNAME:tl}
 PLIST_SUB=	SHLIB=${DISTVERSION} SHL=${DISTVERSION:C/\.[0-9]$//}
+
+OPTIONS_DEFINE=		METIS
+OPTIONS_DEFAULT=	METIS
+
+METIS_DESC=		Enable metis support for graph partitioning algorithms
+METIS_CONFIGURE_ON=	--with-metis=1 # --with-parmetis=1 to use include/parmetis.h
+METIS_LIB_DEPENDS=	libmetis.so:math/metis
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpetsc.so.${DISTVERSION}
