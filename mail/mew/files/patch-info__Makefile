@@ -1,4 +1,4 @@
---- info/Makefile.orig	2018-06-07 05:48:29 UTC
+--- info/Makefile.orig	2021-01-31 07:40:24 UTC
 +++ info/Makefile
 @@ -15,7 +15,7 @@
  ## EDIT THE FOLLOWINGS
@@ -9,29 +9,19 @@
  infodir=$(prefix)/info
  
  EMACS=emacs
-@@ -48,20 +48,20 @@ all: info
- info:
- 	sed -e 's/@setfilename mew.ja.info/@setfilename mew.info/' \
- 	    -e 's/@set ja/@set en/' mew.texi > tmp.texi
--	mv tmp.texi mew.texi
- 	$(RM) mew.info*
- 	$(TOUCH) mew.info
- 	$(EMACS) -batch -q -no-site-file -l texinfmt \
--		-f batch-texinfo-format mew.texi
-+		-f batch-texinfo-format tmp.texi
-+	$(RM) tmp.texi
+@@ -59,6 +59,7 @@ mew.info: tmp.texi
+ 	$(EMACS) -batch -q -no-site-file \
+ 		--eval "(set-default-coding-systems 'utf-8-unix)" \
+ 		-l texinfmt -f batch-texinfo-format $?
++	$(RM) tmp.text
  
- jinfo:
+ tmpj.texi: mew.texi
  	sed -e 's/@setfilename mew.info/@setfilename mew.ja.info/' \
--	    -e 's/@set en/@set ja/' mew.texi > tmp.texi
--	mv tmp.texi mew.texi
-+	    -e 's/@set en/@set ja/' mew.texi > tmp.ja.texi
- 	$(RM) mew.ja.info*
- 	$(TOUCH) mew.ja.info
- 	$(EMACS) -batch -q -no-site-file -l texinfmt \
--		-f batch-texinfo-format mew.texi
-+		-f batch-texinfo-format tmp.ja.texi
-+	$(RM) tmp.ja.texi
+@@ -69,6 +70,7 @@ mew.ja.info: tmpj.texi
+ 	$(EMACS) -batch -q -no-site-file \
+ 		--eval "(set-default-coding-systems 'utf-8-unix)" \
+ 		-l texinfmt -f batch-texinfo-format $?
++	$(RM) tmpj.text
  
  install: install-info
  install-info:
