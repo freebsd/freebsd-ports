@@ -16,7 +16,7 @@ DISTFILES=	lucene-core-7.7.1.jar:core \
 		lucene-sandbox-7.7.1.jar:sandbox \
 		antlr4-4.7.2-complete.jar:antlr
 
-MAINTAINER=	mikael@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JavaFX SDK overlay for OpenJDK 11
 WWW=		https://openjdk.java.net/projects/openjfx/
 
