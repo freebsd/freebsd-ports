@@ -1,5 +1,5 @@
 PORTNAME=	kronosnet
-PORTVERSION=	1.24
+PORTVERSION=	1.25
 CATEGORIES=	devel
 MASTER_SITES=	https://kronosnet.org/releases/
 
