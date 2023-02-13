@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2023-02-13 04:48:38 UTC
++++ Makefile.in
+@@ -71,7 +71,7 @@ elisp::
+ 	cd elisp; $(MAKE) EMACS=$(EMACS)
+ 
+ install-elisp:
+-	cd elisp; $(MAKE) install EMACS=$(EMACS) DESTDIR=$(DESTDIR)
++	cd elisp; $(MAKE) install EMACS=$(EMACS) DESTDIR=$(DESTDIR) elispdir=$(elispdir)
+ 
+ ################################################################
+ 
