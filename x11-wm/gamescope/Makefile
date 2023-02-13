@@ -1,5 +1,6 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.11.51
+PORTREVISION=	1
 CATEGORIES=	x11-wm # wayland: depends on https://github.com/Plagman/gamescope/issues/543
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -28,6 +29,7 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
+RUN_DEPENDS=	hwdata>0:misc/hwdata
 
 USES=		compiler:c++11-lib meson pkgconfig sdl xorg
 USE_GITHUB=	yes
