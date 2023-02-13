@@ -3,6 +3,7 @@
 
 PORTNAME?=	AppStream
 DISTVERSION=	0.16.0
+PORTREVISION?=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
@@ -34,6 +35,12 @@ MESON_ARGS+=	-Dstemming=true \
 		-Dvapi=true \
 		-Dapidocs=false \
 		-Dinstall-docs=false \
-		-Dsystemd=false \
+		-Dsystemd=false
+
+post-patch:
+	${REINPLACE_CMD} \
+		-e 's|APPLICATIONS_DIR = "/usr/share/applications"|APPLICATIONS_DIR = "${LOCALBASE}/share/applications"|' \
+		-e 's|METAINFO_DIR = "/usr/share/metainfo"|METAINFO_DIR = "${LOCALBASE}/share/metainfo"|' \
+		${WRKSRC}/src/as-pool.c
 
 .include <bsd.port.mk>

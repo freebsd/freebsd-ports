@@ -1,3 +1,4 @@
+PORTREVISION=	0
 PKGNAMESUFFIX=	Qt
 
 COMMENT?=	Qt bindings to AppStream
