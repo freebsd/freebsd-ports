@@ -120,6 +120,7 @@
     SUBDIR += py-pandas-market-calendars
     SUBDIR += py-pandas-ta
     SUBDIR += py-pycoin
+    SUBDIR += py-pycoingecko
     SUBDIR += py-python-bitcoinlib
     SUBDIR += py-python-obelisk
     SUBDIR += py-quantecon
