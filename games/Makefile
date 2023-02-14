@@ -709,7 +709,6 @@
     SUBDIR += opencity
     SUBDIR += openclaw
     SUBDIR += openclonk
-    SUBDIR += opendungeons
     SUBDIR += openenroth
     SUBDIR += openfodder
     SUBDIR += opengfx
