@@ -1,5 +1,5 @@
 PORTNAME=	sphinx
-PORTVERSION=	5.1.1
+PORTVERSION=	5.3.0
 PORTEPOCH=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
@@ -16,6 +16,8 @@ WWW=		https://www.sphinx-doc.org/
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit>=0:devel/py-flit@${PY_FLAVOR}
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-applehelp>=0:textproc/py-sphinxcontrib-applehelp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxcontrib-devhelp>=0:textproc/py-sphinxcontrib-devhelp@${PY_FLAVOR} \
@@ -38,7 +40,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0:www/py-html5lib@${PY_FLAVOR} \
 		cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist distutils concurrent pytest
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
