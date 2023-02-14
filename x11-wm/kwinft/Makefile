@@ -11,6 +11,8 @@ WWW=		https://gitlab.com/kwinft/kwinft
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		requires https://invent.kde.org/plasma/kwin/-/commit/9e97c7383c73
+
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libwayland-server.so:graphics/wayland \
