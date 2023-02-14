@@ -1,5 +1,5 @@
 PORTNAME=	reggae
-DISTVERSION=	0.2.8
+DISTVERSION=	0.3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	meka@tilda.center
@@ -9,8 +9,7 @@ WWW=		https://github.com/cbsd/reggae
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/bin/cbsd:sysutils/cbsd \
-		sudo:security/sudo
+RUN_DEPENDS=	sudo:security/sudo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cbsd
