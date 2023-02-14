@@ -1,13 +1,13 @@
 PORTNAME=		moosefs3
-DISTVERSION=		3.0.116
+DISTVERSION=		3.0.117
 DISTVERSIONSUFFIX=	1
-PORTREVISION=		1
+PORTREVISION=		0
 CATEGORIES=		sysutils
 MASTER_SITES=		http://ppa.moosefs.com/src/
 PKGNAMESUFFIX?=		-master
 DISTNAME=		moosefs-${DISTVERSION}-${DISTVERSIONSUFFIX}
 
-MAINTAINER=		freebsd@moosefs.pro
+MAINTAINER=		freebsd@moosefs.com
 COMMENT?=		Fault-tolerant distributed filesystem
 WWW=			https://moosefs.com/
 
