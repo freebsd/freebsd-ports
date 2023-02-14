@@ -1,4 +1,4 @@
-TIMESTAMP = 1668424189
+TIMESTAMP = 1676366992
 SHA256 (rust/crates/adler32-1.0.4.crate) = 5d2e7343e7fc9de883d1b0341e0b13970f764c14101234857d2ddafa1cb1cac2
 SIZE (rust/crates/adler32-1.0.4.crate) = 5105
 SHA256 (rust/crates/aho-corasick-0.7.10.crate) = 8716408b8bc624ed7f65d223ddb9ac2d044c0547b6fa4b0d554f3a9540496ada
@@ -299,5 +299,5 @@ SHA256 (rust/crates/yaml-rust-0.4.3.crate) = 65923dd1784f44da1d2c3dbbc5e82204562
 SIZE (rust/crates/yaml-rust-0.4.3.crate) = 45768
 SHA256 (kornelski-rust-onig-3c40d5646bd00e91357f6f26dfa17f140fd1f5d9_GH0.tar.gz) = 554e5ab0fc6ac53f96a0980c596c0f7d035a6287e27e96381525771f75d0259b
 SIZE (kornelski-rust-onig-3c40d5646bd00e91357f6f26dfa17f140fd1f5d9_GH0.tar.gz) = 45908
-SHA256 (xi-editor-xi-editor-v0.3.0.20221007-f3b4d39_GH0.tar.gz) = 86ed2df07da470864ec64adbb71c52f9407ae60e9dcfb84c45f84eb30ab10a0d
-SIZE (xi-editor-xi-editor-v0.3.0.20221007-f3b4d39_GH0.tar.gz) = 2757942
+SHA256 (xi-editor-xi-editor-v0.3.0.20230201-d027769_GH0.tar.gz) = 5b32dcbb8b241b1e74fbb941afe5800508cc581911b28343e878e92a9bff0419
+SIZE (xi-editor-xi-editor-v0.3.0.20230201-d027769_GH0.tar.gz) = 2757850
