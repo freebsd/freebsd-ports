@@ -1,31 +1,53 @@
 PORTNAME=	wordpress
 DISTVERSION=	6.1.1
+.ifndef WORDPRESS_LANG
 PORTEPOCH=	1
-CATEGORIES=	www
 MASTER_SITES=	https://wordpress.org/
+.else
+DISTVERSIONSUFFIX=	-${WORDPRESS_LANG}
+MASTER_SITES?=	https://${WORDPRESS_LANG}.wordpress.org/
+.endif
+CATEGORIES+=	www
+
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	State-of-the-art semantic personal publishing platform
-WWW=		https://wordpress.org/
+WWW=		${MASTER_SITES}	
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/license.txt
 
-RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
+RUN_DEPENDS=	${IMAGEMAGICK_DEPENDS}
 
 USES=		cpe php:web
 .if ${DISTVERSION:N*.*.*}
 CPE_VERSION=	${DISTVERSION}.0
 .endif
+
+.ifdef WORDPRESS_LANG
+PKGNAMESUFFIX=	-${WORDPRESS_LANG}
+CPE_LANG=	${WORDPRESS_LANG}
+.endif
+
 USE_PHP=	curl exif fileinfo ftp gd hash json mysqli pcre tokenizer xml zip zlib
-CONFLICTS_INSTALL=	de-wordpress-[0-9].* fr-wordpress-[0-9].* \
-			ja-wordpress-[0-9].* ru-wordpress-[0-9].*
+CONFLICTS_INSTALL=	??-wordpress
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST=		${WRKDIR}/pkg-plist
-PORTDOCS=	license.txt readme.html
+PORTDOCS=	readme.html
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if !empty(IMAGEMAGICK_DEFAULT:M6) || !empty(IMAGEMAGICK_DEFAULT:M6-*)
+IMAGEMAGICK_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
+.elif !empty(IMAGEMAGICK_DEFAULT:M7) || !empty(IMAGEMAGICK_DEFAULT:M7-*)
+IMAGEMAGICK_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick-im7>=2.2.2:graphics/pecl-imagick-im7@${PHP_FLAVOR}
+.else
+# notreached
+.endif
 
 pre-everything::
 	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
