@@ -1,6 +1,6 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.4.1
+DISTVERSION=	6.5.1
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
@@ -8,7 +8,7 @@ MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://electronjs.org/headers/v${ELECTRON_GYP_VERSION}/:electron_gyp \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
 DISTFILES=	signal-desktop-${DISTVERSION}-yarn-cache.tar.gz:prefetch \
-		signal-desktop-${DISTVERSION}-npm-cache.tar.gz:npm \
+		signal-desktop-6.4.1-npm-cache.tar.gz:npm \
 		node-v${NODE_VERSION}-headers.tar.gz:node \
 		node-v${ELECTRON_GYP_VERSION}-headers.tar.gz:electron_gyp \
 		${SQLCIPHER}.tar.gz:sqlcipher
@@ -26,6 +26,7 @@ FETCH_DEPENDS=	yarn-node16>0:www/yarn-node16
 EXTRACT_DEPENDS=yarn-node16>0:www/yarn-node16
 BUILD_DEPENDS=	${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
+		${LOCALBASE}/lib/libsignal_tokenizer.a:devel/signal-fts5-extension \
 		app-builder>0:devel/app-builder \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		npm:www/npm-node16 \
@@ -88,13 +89,13 @@ NODE_VERSION=		16.19.0
 # bump ELECTRON_GYP_VERSION when ELECTRON_VER_MAJOR is changed
 ELECTRON_GYP_VERSION=	22.0.0
 
-# ll work/.cache/yarn/v6 | egrep "@signalapp|esbuild-freebsd-64"
+# ll work/.cache/yarn/v6 | egrep "@signalapp|esbuild-freebsd"
 NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.21.1-381d6162ae0e7719dc625780c1d6c3f9f558c33d-integrity
 NPM_RINGRTC_DIR=	npm-@signalapp-ringrtc-2.23.0-982fb6268eab2eb35a61624149b5f9ce9af28907-integrity
-NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.1.1-b39b9138bc79992d5e9707b246a67a1b88a18c49-integrity
+NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.4.3-7ffa8d03d2a12543247936bfb7b9f74cdbc6fe9b-integrity
 NPM_PLAYWRITE_DIR=	npm-playwright-core-1.17.1-a16e0f89284a0ed8ae6d77e1c905c84b8a2ba022-integrity
 NPM_ESBUILD_VERS=	0.17.2
-SQLCIPHER=		sqlcipher-4.5.2--3.0.7-4587e88a4219cb76fd595a5b73f82bfd919b235d75626f40783525f4f58a7503
+SQLCIPHER=		sqlcipher-4.5.3-fts--3.0.7--0.2.1-b633825cf7e0fdd39a6cdf128f2bd76552a88d325f2b9cd07bb87a457cefb986
 
 ESBUILD_ARCH=		${ARCH:S/aarch64/arm64/:S/amd64/x64/}
 NODE_ARCH=		${ARCH:S/aarch64/arm64/:S/amd64/x64/}

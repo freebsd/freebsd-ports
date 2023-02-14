@@ -2154,10 +2154,10 @@
     "@react-spring/shared" "~9.5.5"
     "@react-spring/types" "~9.5.5"
 
-"@signalapp/better-sqlite3@8.1.1":
-  version "8.1.1"
-  resolved "https://registry.yarnpkg.com/@signalapp/better-sqlite3/-/better-sqlite3-8.1.1.tgz#b39b9138bc79992d5e9707b246a67a1b88a18c49"
-  integrity sha512-k4njS/Vsr12Eow7G7TNBjJKSPU971DZQWGY4dfISdOBobAAiewstOwlqF3ZhpJznL6M3sri14MUM0iV1aZR15g==
+"@signalapp/better-sqlite3@8.4.3":
+  version "8.4.3"
+  resolved "https://registry.yarnpkg.com/@signalapp/better-sqlite3/-/better-sqlite3-8.4.3.tgz#7ffa8d03d2a12543247936bfb7b9f74cdbc6fe9b"
+  integrity sha512-6HaN8a90fWHBPIIZRRmSG7wc3BPczLx3Mb9MJ8wsatYqf8C1+2NdFae5AzII8Oe9YE9SSHzCjdPd8ST1m9+Qag==
   dependencies:
     bindings "^1.5.0"
     tar "^6.1.0"
@@ -2178,10 +2178,10 @@
     node-gyp-build "^4.2.3"
     uuid "^8.3.0"
 
-"@signalapp/mock-server@2.12.1":
-  version "2.12.1"
-  resolved "https://registry.yarnpkg.com/@signalapp/mock-server/-/mock-server-2.12.1.tgz#456ee3c9458363d333bd803910f874d388f28d04"
-  integrity sha512-c8ndwTtDoRPRZAWjbBeVH79DQLA4UvKPztgJUqtDOqFCju1+NMKbjxrK+v1PJQvhhOMANbG6Z3qTCl4UGcm/zQ==
+"@signalapp/mock-server@2.13.0":
+  version "2.13.0"
+  resolved "https://registry.yarnpkg.com/@signalapp/mock-server/-/mock-server-2.13.0.tgz#928c95a4890b21c811d29b3b0765aa3a35d28006"
+  integrity sha512-YZZdEYhVoWT4Ih4ZJLu1AaLtn+i8RFO/Tr55/72TvrtcWLjolik3YTnGqHnAcxNR+6mfeCfhpp7+rtexYnnefw==
   dependencies:
     "@signalapp/libsignal-client" "^0.20.0"
     debug "^4.3.2"
@@ -8154,10 +8154,10 @@ electron-window@^0.8.0:
   dependencies:
     is-electron-renderer "^2.0.0"
 
-electron@22.0.0:
-  version "22.0.0"
-  resolved "https://registry.yarnpkg.com/electron/-/electron-22.0.0.tgz#ef84ab9cf23aa3f8c2f42a1e8e000ad7fd941058"
-  integrity sha512-cgRc4wjyM+81A0E8UGv1HNJjL1HBI5cWNh/DUIjzYvoUuiEM0SS0hAH/zaFQ18xOz2ced6Yih8SybpOiOYJhdg==
+electron@22.2.0:
+  version "22.2.0"
+  resolved "https://registry.yarnpkg.com/electron/-/electron-22.2.0.tgz#1aa321415d8b8021a4b0807641f0ad56028feaf5"
+  integrity sha512-puRZSF2vWJ4pz3oetL5Td8LcuivTWz3MoAk/gjImHSN1B/2VJNEQlw1jGdkte+ppid2craOswE2lmCOZ7SwF1g==
   dependencies:
     "@electron/get" "^2.0.0"
     "@types/node" "^16.11.26"
