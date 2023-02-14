@@ -32,6 +32,7 @@ lib/mysql/libmysqlharness_tls.so.1
 lib/mysql/libmysqlrouter.so
 lib/mysql/libmysqlrouter.so.1
 lib/mysql/libmysqlrouter_connection_pool.so.1
+lib/mysql/libmysqlrouter_destination_status.so.1
 lib/mysql/libmysqlrouter_http.so
 lib/mysql/libmysqlrouter_http.so.1
 lib/mysql/libmysqlrouter_http_auth_backend.so
@@ -44,6 +45,7 @@ lib/mysql/libmysqlrouter_metadata_cache.so.1
 lib/mysql/libmysqlrouter_mysqlxmessages.so.1
 lib/mysql/libmysqlrouter_routing.so.1
 lib/mysql/mysqlrouter/connection_pool.so
+lib/mysql/mysqlrouter/destination_status.so
 lib/mysql/mysqlrouter/http_auth_backend.so
 lib/mysql/mysqlrouter/http_auth_realm.so
 lib/mysql/mysqlrouter/http_server.so
