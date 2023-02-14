@@ -2,6 +2,7 @@ PORTNAME=	mew
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.9-1
 DISTVERSIONSUFFIX=	-g8f1e555
+PORTREVISION=	1
 CATEGORIES=	mail elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
@@ -18,8 +19,8 @@ GH_ACCOUNT=	kazu-yamamoto
 GH_PROJECT=	Mew
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-elispdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/mew \
-		--with-etcdir=${LOCALBASE}/${EMACS_SITE_LISPDIR}/mew/etc
+CONFIGURE_ARGS=	--with-elispdir=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mew \
+		--with-etcdir=${LOCALBASE}/${EMACS_VERSION_SITE_LISPDIR}/mew/etc
 
 # target name for make build and install
 ALL_TARGET=	all info jinfo
