@@ -1,3 +1,4 @@
+PORTREVISION=	1
 PKGNAMESUFFIX=	-server
 
 COMMENT=	TigerVNC Server
@@ -8,7 +9,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-d
 		${LOCALBASE}/libdata/pkgconfig/fontutil.pc:x11-fonts/font-util \
 		bash:shells/bash
 LIB_DEPENDS=	libxshmfence.so:x11/libxshmfence \
-		libxcvt.so:x11/libxcvt
+		libxcvt.so:x11/libxcvt \
+		libnettle.so:security/nettle \
+		libgmp.so:math/gmp
 # almost equivalent to x11-servers/xorg-server's
 RUN_DEPENDS+=	${LOCALBASE}/share/X11/xkb/rules/base:x11/xkeyboard-config \
 		xkbcomp:x11/xkbcomp
@@ -71,25 +74,32 @@ TIGERVNC_XORG_PATCH_VER=	${MAKE} -C "${.CURDIR}/../../x11-servers/xorg-server" -
 XORG_WRKSRC=	${MAKE} -C ${.CURDIR}/../../x11-servers/xorg-server -VWRKSRC
 
 pre-patch:
-	@${CP} -R $$(${XORG_WRKSRC})/ ${WRKSRC}/unix/xserver/
+	${CP} -R $$(${XORG_WRKSRC})/ ${WRKSRC}/unix/xserver/
+	# workaround: upstream changed patch naming
+	${LN} -sf ${WRKSRC}/unix/xserver21.1.1.patch ${WRKSRC}/unix/xserver211.patch
 
 post-patch:
 	# do not build tests
-	@${REINPLACE_CMD} -e 's|add_subdirectory(tests)||' ${WRKSRC}/CMakeLists.txt
-	@cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${FILESDIR}/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
+	${REINPLACE_CMD} -e 's|add_subdirectory(tests)||' ${WRKSRC}/CMakeLists.txt
+	cd ${WRKSRC}/unix/xserver/ && ${PATCH} -p1 < ${WRKSRC}/unix/xserver$$(${TIGERVNC_XORG_PATCH_VER}).patch
 
 post-configure:
-	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} -fiv
-	@cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure ${CONFIGURE_ARGS}
+	cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ${AUTORECONF} -fiv
+	cd ${WRKSRC}/unix/xserver/ && ${SETENV} ${CONFIGURE_ENV} ${MAKE_ENV} ./configure ${CONFIGURE_ARGS}
 
 post-build:
-	@cd ${WRKSRC}/unix/xserver/ && \
+	cd ${WRKSRC}/unix/xserver/ && \
 	    ${DO_MAKE_BUILD} SHELL=${LOCALBASE}/bin/bash ${ALL_TARGET}
+
+post-stage:
+	# Install v1.10.0 vncserver script and manpage.
+	# See: https://cgit.freebsd.org/ports/commit/net/tigervnc-server?id=e6d3d07
+	${INSTALL_SCRIPT} ${FILESDIR}/v1.10.0-vncserver ${STAGEDIR}${PREFIX}/bin/vncserver
+	${INSTALL_MAN} ${FILESDIR}/v1.10.0-vncserver.man ${STAGEDIR}${MANPREFIX}/share/man/man8/vncserver.8
 
 post-install:
 	cd ${WRKSRC}/unix/xserver/hw/vnc/ && \
 	    ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-strip
-	${INSTALL_SCRIPT} ${FILESDIR}/vncserver.ports ${STAGEDIR}${PREFIX}/bin/vncserver
 
 .include "${.CURDIR}/Makefile.common.mk"
 
