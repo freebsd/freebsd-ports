@@ -18,7 +18,7 @@
 	<name>py38-django41</name>
 	<name>py39-django41</name>
 	<name>py310-django41</name>
-	<range><lt>4.1.7/range>
+	<range><lt>4.1.7</lt></range>
       </package>
     </affects>
     <description>
