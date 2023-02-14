@@ -1,5 +1,5 @@
 PORTNAME=	binutils
-PORTVERSION=	2.39
+DISTVERSION=	2.40
 PORTEPOCH?=	1
 CATEGORIES?=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
@@ -16,12 +16,14 @@ LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING3.LIB
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.so:math/gmp \
 		${LOCALBASE}/lib/libmpfr.so:math/mpfr
 
+LIB_DEPENDS=	libzstd.so:archivers/zstd
+
 FLAVORS=	native aarch64 aarch64_none_elf amd64 arm_gnueabi arm_none_eabi \
 		avr i386 mingw32 mips mips64 powerpc powerpc64 powerpc64le riscv64 \
 		riscv64_none_elf s390x sparc64 riscv32_unknown_elf
 FLAVOR?=	native
 
-USES=		bison:alias compiler:env cpe gmake libtool makeinfo perl5 tar:lz
+USES=		bison:alias compiler:env cpe gmake localbase libtool makeinfo perl5 pkgconfig tar:lz
 USE_PERL5=	build
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
@@ -30,21 +32,24 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--disable-werror \
 			--enable-deterministic-archives \
 			--with-sysroot=/ \
-			--enable-x86-relax-relocations=no
-MAKE_ARGS+=	LIBDL=""
+			--enable-x86-relax-relocations=no \
+			--with-zstd \
+			--enable-default-compressed-debug-sections-algorithm=zstd
+MAKE_ARGS+=	LIBDL="" V=1
 MAKE_ENV+=	ac_cv_func_sbrk=0
-TEST_TARGET=	check
+
+# Tests will always fail because --compress-debug-sections is always set to
+# zlib-gabi regardless of the compression setting by ./configure.
+# TEST_TARGET=	check
 
 CONFLICTS=	libbfd
 
-OPTIONS_DEFINE=	NLS RELRO STATIC
+OPTIONS_DEFINE=	NLS RELRO
 OPTIONS_SUB=	yes
-STATIC_PREVENTS=	NLS
 
 RELRO_DESC=	Enable relocation memory corruption mitigation (-z relro) by default
 RELRO_CONFIGURE_ON=	--enable-relro
 RELRO_CONFIGURE_OFF=	--enable-relro=no
-STATIC_LDFLAGS+=	-all-static
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
 
@@ -102,7 +107,8 @@ INFO=		as \
 		ctf-spec \
 		gprof \
 		bfd \
-		ld
+		ld \
+		sframe-spec
 .endif
 
 .include <bsd.port.pre.mk>
