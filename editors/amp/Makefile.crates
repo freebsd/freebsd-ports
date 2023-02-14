@@ -30,7 +30,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		either-1.5.0 \
 		error-chain-0.10.0 \
 		error-chain-0.11.0 \
-		error-chain-0.12.0 \
+		error-chain-0.12.4 \
 		failure-0.1.1 \
 		failure_derive-0.1.1 \
 		flate2-1.0.1 \
@@ -56,7 +56,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		libc-0.2.62 \
 		libgit2-sys-0.9.1 \
 		libz-sys-1.0.25 \
-		linked-hash-map-0.5.1 \
+		linked-hash-map-0.5.4 \
 		log-0.4.8 \
 		luthor-0.1.7 \
 		malloc_buf-0.0.6 \
@@ -73,6 +73,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		num-traits-0.1.43 \
 		num-traits-0.2.4 \
 		num_cpus-1.10.1 \
+		numtoa-0.1.0 \
 		objc-0.2.2 \
 		objc-foundation-0.1.1 \
 		objc_id-0.1.0 \
@@ -80,7 +81,6 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		onig-3.2.2 \
 		onig_sys-68.0.1 \
 		os_pipe-0.6.1 \
-		pad-0.1.5 \
 		percent-encoding-2.1.0 \
 		pest-1.0.6 \
 		pest_derive-1.0.7 \
@@ -92,6 +92,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		quote-0.6.3 \
 		rand-0.4.2 \
 		redox_syscall-0.1.40 \
+		redox_syscall-0.2.16 \
 		redox_termios-0.1.1 \
 		regex-0.1.80 \
 		regex-0.2.11 \
@@ -113,7 +114,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		signal-hook-registry-1.0.1 \
 		simplelog-0.5.2 \
 		slab-0.4.1 \
-		smallvec-0.4.5 \
+		smallvec-1.10.0 \
 		strsim-0.7.0 \
 		syn-0.11.11 \
 		syn-0.14.2 \
@@ -122,6 +123,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		syntect-2.1.0 \
 		term-0.5.1 \
 		termion-1.5.1 \
+		termion-2.0.1 \
 		textwrap-0.9.0 \
 		thread-id-2.0.0 \
 		thread-scoped-1.0.2 \
@@ -142,6 +144,7 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		utf8-ranges-1.0.0 \
 		vcpkg-0.2.3 \
 		vec_map-0.8.1 \
+		version_check-0.9.2 \
 		void-1.0.2 \
 		walkdir-2.1.4 \
 		wasi-0.7.0 \
@@ -155,5 +158,4 @@ CARGO_CRATES=	aho-corasick-0.5.3 \
 		xcb-0.8.2 \
 		xdg-2.1.0 \
 		xml-rs-0.7.0 \
-		yaml-rust-0.3.5 \
-		yaml-rust-0.4.0
+		yaml-rust-0.4.5
