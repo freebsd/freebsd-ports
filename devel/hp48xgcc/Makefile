@@ -37,6 +37,8 @@ post-extract: .SILENT
 	${TAR} xzf ${_DISTDIR}/gcc-${GCC_VER}.tar.gz -C ${WRKDIR}
 # Patch GCC a bit
 	${PATCH} -d ${GCC_DIR} -s < ${WRKSRC}/gcc-target/patches-${GCC_VER}
+# Respect user's preferred compiler
+	${REINPLACE_CMD} -e 's,CC = cc,CC = ${CC},' ${GCC_DIR}/Makefile.in
 # Prepare GCC by creating proper config symlink
 	${LN} -sf ../../saturn/gcc-target/config-saturn ${GCC_DIR}/config/saturn
 # Allow GCC to build in our environment
