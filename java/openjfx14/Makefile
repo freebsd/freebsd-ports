@@ -46,7 +46,8 @@ JAVA_VERSION=	11
 USE_LDCONFIG=	yes
 USE_XORG=	x11 xtst xxf86vm
 
-CFLAGS+=	-Wno-unused-command-line-argument
+CFLAGS+=	-Wno-unused-command-line-argument \
+		-Wno-int-conversion
 
 PLIST_SUB=	INSTALLDIR=${_INSTALLDIR}
 
