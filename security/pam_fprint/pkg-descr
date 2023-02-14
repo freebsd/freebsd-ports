@@ -1,0 +1,3 @@
+pam_fprint is a simple PAM module which uses libfprint's fingerprint
+processing and verification functionality for authentication. In other words,
+instead of seeing a password prompt, you're asked to scan your fingerprint.
