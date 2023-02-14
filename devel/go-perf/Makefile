@@ -1,6 +1,5 @@
 PORTNAME=	go-perf
 PORTVERSION=	${MODVERSION:S/-/./g:R}
-PORTREVISION=	9
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -12,12 +11,13 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-MODVERSION=	0.0.0-20220411212318-84e58bfe0a7e
+MODVERSION=	0.0.0-20230113213139-801c7ef9e5c5
 GO_MODULE=	golang.org/x/perf@v${MODVERSION}
 
 GO_TARGET=	./cmd/benchsave \
 		./cmd/benchseries \
-		./cmd/benchstat
+		./cmd/benchstat \
+		./cmd/benchfilter
 
 PLIST_FILES=	${GO_TARGET:T:S,^,bin/,}
 
