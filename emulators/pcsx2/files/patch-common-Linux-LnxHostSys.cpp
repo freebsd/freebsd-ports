@@ -1,24 +1,11 @@
---- common/Linux/LnxHostSys.cpp.orig	2022-10-20 13:57:30 UTC
+--- common/Linux/LnxHostSys.cpp.orig	2023-02-10 03:43:10 UTC
 +++ common/Linux/LnxHostSys.cpp
-@@ -153,7 +153,12 @@ void HostSys::MemProtect(void* baseaddr, size_t size, 
- std::string HostSys::GetFileMappingName(const char* prefix)
- {
- 	const unsigned pid = static_cast<unsigned>(getpid());
-+#if defined(__FreeBSD__)
-+	// FreeBSD's shm_open(3) requires name to be absolute
-+	return fmt::format("/tmp/{}_{}", prefix, pid);
-+#else
- 	return fmt::format("{}_{}", prefix, pid);
-+#endif
- }
+@@ -100,6 +100,8 @@ static void SysPageFaultSignalFilter(int signal, sigin
  
- void* HostSys::CreateSharedMemory(const char* name, size_t size)
-@@ -169,7 +174,7 @@ void* HostSys::CreateSharedMemory(const char* name, si
- 	shm_unlink(name);
- 
- 	// ensure it's the correct size
--#ifndef __APPLE__
-+#if !defined(__APPLE__) && !defined(__FreeBSD__)
- 	if (ftruncate64(fd, static_cast<off64_t>(size)) < 0)
+ #if defined(__APPLE__) && defined(__x86_64__)
+ 	void* const exception_pc = reinterpret_cast<void*>(static_cast<ucontext_t*>(ctx)->uc_mcontext->__ss.__rip);
++#elif defined(__FreeBSD__) && defined(__x86_64__)
++	void* const exception_pc = reinterpret_cast<void*>(static_cast<ucontext_t*>(ctx)->uc_mcontext.mc_rip);
+ #elif defined(__x86_64__)
+ 	void* const exception_pc = reinterpret_cast<void*>(static_cast<ucontext_t*>(ctx)->uc_mcontext.gregs[REG_RIP]);
  #else
- 	if (ftruncate(fd, static_cast<off_t>(size)) < 0)
