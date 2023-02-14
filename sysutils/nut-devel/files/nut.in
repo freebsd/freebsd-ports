@@ -39,7 +39,7 @@ nut_prestart() {
 	# Instead UID/GID nut is used. Make sure preexisting nut files
 	# and directories are owned by nut instead of uucp.
 	#
-	if [ "${nut_file_fixup}" == "YES" ]
+	if [ "${nut_file_fixup}" == "YES" ]; then
 		find ${nut_prefix}/etc/nut -user uucp -exec chown %%NUT_USER%% {} \;
 		find ${nut_prefix}/etc/nut -group uucp -exec chgrp %%NUT_GROUP%% {} \;
 		find %%STATEDIR%% -user uucp -exec chown %%NUT_USER%% {} \;

@@ -1,6 +1,6 @@
 PORTNAME=	nut
 PORTVERSION=	${NUT_COMMIT_DATE}
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 # MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
