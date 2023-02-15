@@ -6,4 +6,4 @@ require any kernel modifications.
 For an overview of how to use it, read "${PREFIX}/share/doc/cfs/notes.ms"
 and the manual pages.  There is a paper describing CFS at:
 
-    http://www.crypto.com/papers/cfs.pdf
+    https://www.scs.stanford.edu/nyu/02fa/lab/cfs.pdf

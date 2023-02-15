@@ -1,11 +1,13 @@
 PORTNAME=	cfs
-DISTVERSION=	1.5.0.beta
+DISTVERSION=	1.5.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Cryptographic file system implemented as a user-space NFS server
 WWW=		https://www.bayofrum.net/cgi-bin/fossil/cfs/
+
+LICENSE=	BSD0CLAUSE
 
 ALL_TARGET=	cfs
 MAKE_ARGS=	CC="${CC}"
