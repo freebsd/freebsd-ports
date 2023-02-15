@@ -4,6 +4,9 @@ PORTREVISION=	9
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/tracker/-/commit/
+PATCHFILES=	27d09d510c056bcda3389ed5573463272162d510.diff:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Object database, tag/metadata database, search tool and indexer
 WWW=		https://wiki.gnome.org/Projects/Tracker
