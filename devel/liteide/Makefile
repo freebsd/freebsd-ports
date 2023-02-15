@@ -1,7 +1,6 @@
 PORTNAME=	liteide
 DISTVERSIONPREFIX=	x
-DISTVERSION=	38.1
-PORTREVISION=	2
+DISTVERSION=	38.2
 CATEGORIES=	devel editors
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -19,8 +18,8 @@ DOS2UNIX_FILES=	src/utils/dlvclient/dlvclient.cpp \
 USE_GITHUB=	yes
 GH_ACCOUNT=	visualfc
 
-GH_TUPLE=	visualfc:gocode:v1.4.5:visualfc_gocode \
-		visualfc:gotools:v1.4.3:visualfc_gotools \
+GH_TUPLE=	visualfc:gocode:v1.5.2:visualfc_gocode \
+		visualfc:gotools:v1.5.3:visualfc_gotools \
 		visualfc:gomod:v0.1.2:visualfc_gomod/vendor/github.com/visualfc/gomod \
 		creack:pty:v1.1.9:creack_pty/vendor/github.com/creack/pty \
 		golang:mod:v0.7.0:golang_mod/vendor/golang.org/x/mod \

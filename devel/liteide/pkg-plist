@@ -10,7 +10,6 @@ lib/liteide/plugins/libbookmarks.so
 lib/liteide/plugins/libdlvdebugger.so
 lib/liteide/plugins/libfakevimedit.so
 lib/liteide/plugins/libfilebrowser.so
-lib/liteide/plugins/libgdbdebugger.so
 lib/liteide/plugins/libgolangast.so
 lib/liteide/plugins/libgolangcode.so
 lib/liteide/plugins/libgolangdoc.so
