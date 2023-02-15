@@ -1,3 +1,67 @@
+  <vuln vid="3d73e384-ad1f-11ed-983c-83fe35862e3a">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go119</name>
+	<range><lt>1.19.6</lt></range>
+      </package>
+      <package>
+	<name>go120</name>
+	<range><lt>1.20.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/57274">
+	  <p>path/filepath: path traversal in filepath.Clean on Windows</p>
+	  <p>On Windows, the filepath.Clean function could transform
+	    an invalid path such as a/../c:/b into the valid path
+	    c:\b. This transformation of a relative (if invalid)
+	    path into an absolute path could enable a directory
+	    traversal attack. The filepath.Clean function will now
+	    transform this path into the relative (but still
+	    invalid) path .\c:\b.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/58006">
+	  <p>net/http, mime/multipart: denial of service from excessive
+	    resource consumption</p>
+	  <p>Multipart form parsing with
+	    mime/multipart.Reader.ReadForm can consume largely
+	    unlimited amounts of memory and disk files. This also
+	    affects form parsing in the net/http package with the
+	    Request methods FormFile, FormValue, ParseMultipartForm,
+	    and PostFormValue.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/58001">
+	  <p>crypto/tls: large handshake records may cause panics</p>
+	  <p>
+	    Both clients and servers may send large TLS handshake
+	    records which cause servers and clients,
+	    respectively, to panic when attempting to construct responses.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/57855">
+	  <p>net/http: avoid quadratic complexity in HPACK decoding</p>
+	  <p>A maliciously crafted HTTP/2 stream could cause
+	    excessive CPU consumption in the HPACK decoder,
+	    sufficient to cause a denial of service from a small
+	    number of small requests.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41722</cvename>
+      <cvename>CVE-2022-41725</cvename>
+      <cvename>CVE-2022-41724</cvename>
+      <cvename>CVE-2022-41723</cvename>
+      <url>https://groups.google.com/g/golang-dev/c/G2APtTxT1HQ/m/6O6aksDaBAAJ</url>
+    </references>
+    <dates>
+      <discovery>2023-02-14</discovery>
+      <entry>2023-02-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9c9ee9a6-ac5e-11ed-9323-080027d3a315">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
