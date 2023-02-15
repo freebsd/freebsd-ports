@@ -1,6 +1,6 @@
 PORTNAME=	paladin
 PORTVERSION=	2.0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 MAINTAINER=	rwestlun@gmail.com

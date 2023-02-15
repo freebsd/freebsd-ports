@@ -1,7 +1,7 @@
 PORTNAME=	openshift-install
 PORTVERSION=	4.9
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 MAINTAINER=	jhixson@freebsd.org

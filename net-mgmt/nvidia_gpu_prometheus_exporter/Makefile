@@ -1,6 +1,6 @@
 PORTNAME=	nvidia_gpu_prometheus_exporter
 DISTVERSION=	g20181028
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	0mp@FreeBSD.org

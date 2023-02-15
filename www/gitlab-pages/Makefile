@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-pages
 PORTVERSION=	15.8.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES+=	https://gitlab.com/gitlab-org/gitlab-pages/-/raw/v${DISTVERSION}/
 DISTFILES+=	go.mod
