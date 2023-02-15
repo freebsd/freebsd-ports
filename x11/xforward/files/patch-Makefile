@@ -1,5 +1,5 @@
 --- Makefile.orig	1993-06-04 19:32:01.000000000 -0700
-+++ Makefile	2023-02-11 06:30:12.418352000 -0800
++++ Makefile	2023-02-14 20:39:04.842100000 -0800
 @@ -18,18 +18,19 @@
  # MANDIR is where the manual page will be installed.
  
@@ -25,13 +25,7 @@
  CFLAGS= ${INCFLAGS} -O
  
  # For CenterLine CodeCenter
-@@ -46,11 +47,12 @@
- 	cc ${LDFLAGS} xforward.o -o xforward ${LIBS}
- 
- xforward.o:	xforward.c
--	cc -c ${CFLAGS} xforward.c
-+	cc -c -Wno-int-conversion ${CFLAGS} xforward.c
- 
+@@ -51,6 +52,7 @@
  install: ${PROGS}
  	install -c xforward ${DESTDIR}${BINDIR}/xforward
  	install -c xforward.1 ${DESTDIR}${MANDIR}/xforward.1
