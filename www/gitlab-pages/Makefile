@@ -1,7 +1,7 @@
 PORTNAME=	gitlab-pages
-PORTVERSION=	15.8.1
+PORTVERSION=	15.8.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES+=	https://gitlab.com/gitlab-org/gitlab-pages/-/raw/v${DISTVERSION}/
 DISTFILES+=	go.mod
@@ -19,7 +19,7 @@ GO_MODULE=	gitlab.com/gitlab-org/gitlab-pages
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitlab-pages/-/tags/
-GL_COMMIT=	345ed7982842b70a17aed0b08dcee21af78b30df
+GL_COMMIT=	a3e84d64b2955ecdd48cce3a7390aa34f234c0ff
 
 GO_BUILDFLAGS=	-ldflags="-X 'main.VERSION=${PORTVERSION}' -X 'main.REVISION=${GL_COMMIT}'"
 

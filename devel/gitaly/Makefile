@@ -1,6 +1,6 @@
 PORTNAME=	gitaly
-DISTVERSION=	15.8.1
-PORTREVISION=	2
+DISTVERSION=	15.8.3
+PORTREVISION=	0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # it fixes segfaults reported here: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259848
 
 # define dependencies that are required for build and run under MY_DEPENDS
-MY_DEPENDS=	git>=2.39.1:devel/git \
+MY_DEPENDS=	git>=2.39.2:devel/git \
 		rubygem-bundler>=2.1.4:sysutils/rubygem-bundler \
 		rubygem-rugged>=1.2<2:devel/rubygem-rugged \
 		rubygem-gitlab-markup>=1.8.0<1.9.0:textproc/rubygem-gitlab-markup \
@@ -48,7 +48,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	097c70d26c16ab867a8565745f0e0e9da7d55c49
+GL_COMMIT=	1f24c1507ec111c32c8080347a476c0a6a001e93
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy

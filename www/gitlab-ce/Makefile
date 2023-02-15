@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	15.8.1
-PORTREVISION=	3
+PORTVERSION=	15.8.3
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # which makes maintaining this long list much easier!
 # devel/rubygem-parser is required for database upgrade process
 # see https://gitlab.com/gitlab-org/gitlab/-/issues/350866
-MY_DEPENDS=	git>=2.39.1:devel/git \
+MY_DEPENDS=	git>=2.39.2:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
 	gitlab-elasticsearch-indexer>=3.2.0:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=15.8.0:net/gitlab-agent \
@@ -276,7 +276,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	383efe57adfb30756ce6ce0d3f47c32a33c2ca85
+GL_COMMIT=	22f43167474102e26b4b585df6dbb541e48b7879
 
 USERS=	git
 GROUPS=	git
