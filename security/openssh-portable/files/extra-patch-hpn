@@ -131,9 +131,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +	 (tasota@gmail.com) an NSF REU grant recipient for 2013. 
 +	 This work was financed, in part, by Cisco System, Inc., the National 
 +         Library of Medicine, and the National Science Foundation. 
---- work/openssh/channels.c.orig	2021-04-15 20:55:25.000000000 -0700
-+++ work/openssh/channels.c	2021-04-28 14:35:20.732518000 -0700
-@@ -220,6 +220,12 @@ static int rdynamic_connect_finish(struct ssh *, Chann
+--- channels.c.orig	2023-02-02 04:21:54.000000000 -0800
++++ channels.c	2023-02-03 10:45:34.136793000 -0800
+@@ -229,6 +229,12 @@ static void channel_handler_init(struct ssh_channels *
  /* Setup helper */
  static void channel_handler_init(struct ssh_channels *sc);
  
@@ -146,7 +146,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  /* -- channel core */
  
  void
-@@ -395,6 +401,9 @@ channel_new(struct ssh *ssh, char *ctype, int type, in
+@@ -495,6 +501,9 @@ channel_new(struct ssh *ssh, char *ctype, int type, in
  	c->local_window = window;
  	c->local_window_max = window;
  	c->local_maxpacket = maxpack;
@@ -156,8 +156,8 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  	c->remote_name = xstrdup(remote_name);
  	c->ctl_chan = -1;
  	c->delayed = 1;		/* prevent call to channel_post handler */
-@@ -1082,6 +1091,30 @@ channel_pre_connecting(struct ssh *ssh, Channel *c,
- 	FD_SET(c->sock, writeset);
+@@ -1190,6 +1199,30 @@ channel_set_fds(struct ssh *ssh, int id, int rfd, int 
+ 		fatal_fr(r, "channel %i", c->self);
  }
  
 +#ifdef HPN_ENABLED
@@ -185,9 +185,9 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +#endif
 +
  static void
- channel_pre_open(struct ssh *ssh, Channel *c,
-     fd_set *readset, fd_set *writeset)
-@@ -2124,18 +2157,29 @@ channel_check_window(struct ssh *ssh, Channel *c)
+ channel_pre_listener(struct ssh *ssh, Channel *c)
+ {
+@@ -2301,18 +2334,29 @@ channel_check_window(struct ssh *ssh, Channel *c)
  	    c->local_maxpacket*3) ||
  	    c->local_window < c->local_window_max/2) &&
  	    c->local_consumed > 0) {
@@ -220,7 +220,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  		c->local_consumed = 0;
  	}
  	return 1;
-@@ -3302,6 +3346,17 @@ channel_fwd_bind_addr(struct ssh *ssh, const char *lis
+@@ -3709,6 +3753,17 @@ channel_fwd_bind_addr(struct ssh *ssh, const char *lis
  	return addr;
  }
  
@@ -238,7 +238,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
  static int
  channel_setup_fwd_listener_tcpip(struct ssh *ssh, int type,
      struct Forward *fwd, int *allocated_listen_port,
-@@ -3442,6 +3497,17 @@ channel_setup_fwd_listener_tcpip(struct ssh *ssh, int 
+@@ -3848,6 +3903,17 @@ channel_setup_fwd_listener_tcpip(struct ssh *ssh, int 
  		}
  
  		/* Allocate a channel number for the socket. */
@@ -248,15 +248,15 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +		 * window size.
 +		 */
 +		if (!hpn_disabled)
-+			c = channel_new(ssh, "port listener", type, sock, sock, -1,
-+			    hpn_buffer_size, CHAN_TCP_PACKET_DEFAULT,
++			c = channel_new(ssh, "port listener", type, sock, sock,
++			    -1, hpn_buffer_size, CHAN_TCP_PACKET_DEFAULT,
 +			    0, "port listener", 1);
 +		else
 +#endif
- 		c = channel_new(ssh, "port listener", type, sock, sock, -1,
+ 		c = channel_new(ssh, "port-listener", type, sock, sock, -1,
  		    CHAN_TCP_WINDOW_DEFAULT, CHAN_TCP_PACKET_DEFAULT,
  		    0, "port listener", 1);
-@@ -4610,6 +4676,14 @@ x11_create_display_inet(struct ssh *ssh, int x11_displ
+@@ -5016,6 +5082,14 @@ x11_create_display_inet(struct ssh *ssh, int x11_displ
  	*chanids = xcalloc(num_socks + 1, sizeof(**chanids));
  	for (n = 0; n < num_socks; n++) {
  		sock = socks[n];
@@ -268,7 +268,7 @@ diff -urN -x configure -x config.guess -x config.h.in -x config.sub work.clean/o
 +			    0, "X11 inet listener", 1);
 +		else
 +#endif
- 		nc = channel_new(ssh, "x11 listener",
+ 		nc = channel_new(ssh, "x11-listener",
  		    SSH_CHANNEL_X11_LISTENER, sock, sock, -1,
  		    CHAN_X11_WINDOW_DEFAULT, CHAN_X11_PACKET_DEFAULT,
 --- work/openssh-7.7p1/channels.h.orig	2018-04-01 22:38:28.000000000 -0700
