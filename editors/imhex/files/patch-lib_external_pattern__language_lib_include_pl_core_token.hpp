@@ -1,6 +1,6 @@
---- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2023-01-09 11:44:49 UTC
+--- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2023-02-13 14:23:14 UTC
 +++ lib/external/pattern_language/lib/include/pl/core/token.hpp
-@@ -151,14 +151,14 @@ namespace pl::core {
+@@ -155,7 +155,7 @@ namespace pl::core {
              bool global;
              std::string comment;
  
@@ -8,22 +8,22 @@
 +            bool operator==(const DocComment &) const = default;
          };
  
-         using Literal    = std::variant<char, bool, u128, i128, double, std::string, ptrn::Pattern *>;
+         struct Literal : public std::variant<char, bool, u128, i128, double, std::string, ptrn::Pattern *> {
+@@ -183,7 +183,7 @@ namespace pl::core {
+ 
          using ValueTypes = std::variant<Keyword, Identifier, Operator, Literal, ValueType, Separator, DocComment>;
-+        // These changes are necessary for Clang
-+        inline Token(Type type, auto value, u32 line, u32 column) : type(type), value(std::move(value)), line(line), column(column) {}
  
 -        constexpr Token(Type type, auto value, u32 line, u32 column) : type(type), value(std::move(value)), line(line), column(column) {}
--
++        inline Token(Type type, auto value, u32 line, u32 column) : type(type), value(std::move(value)), line(line), column(column) {}
+ 
          [[nodiscard]] constexpr static inline bool isInteger(const ValueType &type) {
              return isUnsigned(type) || isSigned(type);
-         }
-@@ -227,134 +227,134 @@ namespace pl::core {
+@@ -220,136 +220,136 @@ namespace pl::core {
  
      namespace tkn {
  
 -        constexpr inline Token createToken(const core::Token::Type type, const core::Token::ValueTypes &value) {
-+        inline pl::core::Token createToken(const core::Token::Type type, const core::Token::ValueTypes &value) {
++        inline Token createToken(const core::Token::Type type, const core::Token::ValueTypes &value) {
              return { type, value, 1, 1 };
          }
  
@@ -50,6 +50,8 @@
 -            constexpr auto In           = createToken(core::Token::Type::Keyword, Token::Keyword::In);
 -            constexpr auto Out          = createToken(core::Token::Type::Keyword, Token::Keyword::Out);
 -            constexpr auto Reference    = createToken(core::Token::Type::Keyword, Token::Keyword::Reference);
+-            constexpr auto Null         = createToken(core::Token::Type::Keyword, Token::Keyword::Null);
+-            constexpr auto Const        = createToken(core::Token::Type::Keyword, Token::Keyword::Const);
 +            inline auto If           = createToken(core::Token::Type::Keyword, Token::Keyword::If);
 +            inline auto Else         = createToken(core::Token::Type::Keyword, Token::Keyword::Else);
 +            inline auto While        = createToken(core::Token::Type::Keyword, Token::Keyword::While);
@@ -71,6 +73,8 @@
 +            inline auto In           = createToken(core::Token::Type::Keyword, Token::Keyword::In);
 +            inline auto Out          = createToken(core::Token::Type::Keyword, Token::Keyword::Out);
 +            inline auto Reference    = createToken(core::Token::Type::Keyword, Token::Keyword::Reference);
++            inline auto Null         = createToken(core::Token::Type::Keyword, Token::Keyword::Null);
++            inline auto Const        = createToken(core::Token::Type::Keyword, Token::Keyword::Const);
  
          }
  

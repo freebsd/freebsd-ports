@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.26.2
+PORTVERSION=	1.27.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
@@ -28,8 +28,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 
 BUILD_DEPENDS=	glm>0:math/glm \
 		nlohmann-json>0:devel/nlohmann-json \
+		${LOCALBASE}/include/hpx/functional.hpp:devel/hpx \
 		${LOCALBASE}/include/range/v3/range.hpp:devel/range-v3 \
-		${LOCALBASE}/include/hpx/functional.hpp:devel/hpx
+		${LOCALBASE}/include/tl/expected.hpp:devel/tl-expected
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libglfw.so:graphics/glfw \
 		libfreetype.so:print/freetype2 \
@@ -38,7 +39,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtre.so:textproc/libtre
 
 USES=		cmake gl gnome pkgconfig python:3.8+ xorg
-USE_GL=		gl
+USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xcb xau xdmcp
 USE_GITHUB=	yes
@@ -58,16 +59,16 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 GH_TAG_CAPSTONE=	d5141c0
 GH_TAG_CLI11=	faea921
 GH_TAG_FMT=	a337011
-GH_TAG_IMHEX_PATTERNS=	a4a1430
+GH_TAG_IMHEX_PATTERNS=	ea4dda0
 GH_TAG_JTHREAD=	0fa8d39
-GH_TAG_LIBROMFS=	59d8cec
+GH_TAG_LIBROMFS=	40cd303
 GH_TAG_NATIVEFILEDIALOG=	6efc824
-GH_TAG_PATTERN_LANGUAGE=	58f1702
+GH_TAG_PATTERN_LANGUAGE=	0e32a23
 GH_TAG_YARA=	ba94b4f
 
 CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON \
 		-DIMHEX_STRIP_RELEASE=OFF -DIMHEX_PLUGINS_IN_SHARE=ON \
-		-DIMHEX_OFFLINE_BUILD=ON
+		-DIMHEX_OFFLINE_BUILD=ON -DIMHEX_USE_GTK_FILE_PICKER=ON
 
 PORTDOCS=	README.md
 

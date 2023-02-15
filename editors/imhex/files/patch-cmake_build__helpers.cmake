@@ -1,4 +1,4 @@
---- cmake/build_helpers.cmake.orig	2023-01-05 08:53:49 UTC
+--- cmake/build_helpers.cmake.orig	2023-02-15 13:56:27 UTC
 +++ cmake/build_helpers.cmake
 @@ -370,13 +370,13 @@ function(downloadImHexPatternsFiles dest)
  
@@ -24,11 +24,3 @@
  
      set(CMAKE_C_FLAGS    "${CMAKE_C_FLAGS}    ${IMHEX_C_FLAGS}")
      set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}  ${IMHEX_C_FLAGS}")
-@@ -434,7 +433,6 @@ macro(addBundledLibraries)
-     endif()
- 
-     if (NOT USE_SYSTEM_NFD)
--        set(NFD_PORTAL ON CACHE BOOL "Use Portals for Linux file dialogs" FORCE)
-         add_subdirectory(${EXTERN_LIBS_FOLDER}/nativefiledialog EXCLUDE_FROM_ALL)
-         set_target_properties(nfd PROPERTIES POSITION_INDEPENDENT_CODE ON)
-         set(NFD_LIBRARIES nfd)
