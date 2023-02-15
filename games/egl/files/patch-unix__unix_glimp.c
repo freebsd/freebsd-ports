@@ -1,6 +1,18 @@
---- unix/unix_glimp.c.orig	Mon Jul 24 16:42:03 2006
-+++ unix/unix_glimp.c	Mon Jul 24 16:47:48 2006
-@@ -41,6 +41,9 @@
+--- unix/unix_glimp.c.orig	2006-06-03 19:24:54 UTC
++++ unix/unix_glimp.c
+@@ -31,16 +31,19 @@ Foundation, Inc., 59 Temple Place - Suite 330, Boston,
+ #include <signal.h>
+ #include <dlfcn.h>
+ 
+-#include "../renderer/r_local.h"
+-#include "../client/cl_local.h"
++#include "../shared/shared.h"
+ #include "unix_glimp.h"
+ #include "unix_local.h"
++#include "x11_linux.h"
+ 
+ static qBool    vid_queueRestart;
+ static qBool    vid_isActive;
  
  glxState_t glxState = {.OpenGLLib = NULL};
  
@@ -10,7 +22,7 @@
  /*
  =============================================================================
  
-@@ -208,8 +211,8 @@
+@@ -208,8 +211,8 @@ void VID_Init (refConfig_t *outConfig)
  	vid_fullscreen = Cvar_Register ("vid_fullscreen", "0", CVAR_ARCHIVE);
  
  	// Add some console commands that we want to handle
@@ -21,7 +33,7 @@
  
  	// Start the graphics mode and load refresh DLL
  	vid_isActive = qFalse;
-@@ -232,8 +235,8 @@
+@@ -232,8 +235,8 @@ void VID_Shutdown (void)
  		vid_isActive = qFalse;
  	}
  
