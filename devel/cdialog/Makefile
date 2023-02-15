@@ -1,8 +1,8 @@
 PORTNAME=	cdialog
-DISTVERSION=	1.3-20220728
+DISTVERSION=	1.3-20221229
 PORTEPOCH=	2
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.invisible-island.net/pub/${PORTNAME:S|^c||}/\
+MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME:S|^c||}/\
 		https://invisible-mirror.net/archives/${PORTNAME:S|^c||}/
 DISTNAME=	${PORTNAME:S|^c||}-${PORTVERSION:R}-${PORTVERSION:E}
 
@@ -24,10 +24,11 @@ CONFIGURE_ARGS=	--enable-widec \
 		--with-curses-dir=${NCURSESBASE}
 MAKEFILE=	makefile
 INSTALL_TARGET=	install-strip install-man install-lib
+TEST_TARGET=	check
 OPTIONS_DEFINE=	EXAMPLES
 
 pre-patch-EXAMPLES-on:
-	@${FIND} ${WRKSRC}/samples/ -type f -exec ${REINPLACE_CMD} -i "" "s|dialog|cdialog|g" {} \;
+	@${FIND} ${WRKSRC}/samples/ -type f -exec ${REINPLACE_CMD} -i "" "s|\<dialog\>|cdialog|g" {} \;
 
 pre-install:
 	@${STRIP_CMD} ${WRKSRC}/.libs/libcdialog.so.15.0.0
