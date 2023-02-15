@@ -63,7 +63,7 @@ stop_precmd=${name}_stop_precmd
 %%RC_NAME%%_start_precmd()
 {
 	[ -d ${%%RC_NAME%%_pid_dir} ] || install -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} ${%%RC_NAME%%_pid_dir}
-	[ -d ${%%RC_NAME%%_data_dir} ] || install -d -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- ${%%RC_NAME%%_data_dir}
+	[ -d ${%%RC_NAME%%_data_dir} ] || install -d -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} ${%%RC_NAME%%_data_dir}
 
 	# .NET 6+ use dual mode sockets to avoid the separate AF handling.
 	# disable .NET use of V6 if no ipv6 is configured.
