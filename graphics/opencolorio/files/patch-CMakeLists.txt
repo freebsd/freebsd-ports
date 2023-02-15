@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-12-16 19:19:03 UTC
+--- CMakeLists.txt.orig	2021-12-01 02:34:49 UTC
 +++ CMakeLists.txt
 @@ -132,8 +132,7 @@ option(OCIO_BUILD_FROZEN_DOCS "Specify whether to buil
  option(OCIO_BUILD_DOCS "Specify whether to build documentation" ${OCIO_BUILD_FROZEN_DOCS})
@@ -9,18 +9,3 @@
 +option(OCIO_PYTHON_VERSION "Preferred Python version (if any) in case multiple are available" 3.8)
  
  option(OCIO_BUILD_JAVA "Specify whether to build java bindings" OFF)
- 
-@@ -276,7 +275,6 @@ add_subdirectory(tests)
- add_subdirectory(src)
- add_subdirectory(ext)
- 
--
- ###############################################################################
- # Configure env script
- 
-@@ -329,4 +327,5 @@ install(
-     FILES "${OCIO_PROJECT_CONFIG}" "${OCIO_VERSION_CONFIG}"
-     DESTINATION "${OCIO_CONFIG_INSTALL_DIR}"
- )
-+
- 

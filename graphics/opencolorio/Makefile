@@ -1,11 +1,11 @@
 PORTNAME=	opencolorio
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.2
+DISTVERSION=	2.1.3
 # PORTREVISION must be set with ?= so as not to stomp over
 # py-opencolorio's PORTREVISION.
 # Also, just to be on the safe side, when resetting,
 # best keep PORTREVISION?=	0.
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES=	graphics multimedia
 
 MAINTAINER?=	FreeBSD@Shaneware.biz
@@ -30,7 +30,6 @@ CMAKE_OFF=	OCIO_BUILD_JAVA OCIO_BUILD_JNIGLUE OCIO_BUILD_NUKE \
 		OCIO_BUILD_TESTS OCIO_BUILD_GPU_TESTS
 
 OPTIONS_DEFINE=		DOCS
-OPTIONS_DEFAULT=	DOCS
 OPTIONS_SUB=		yes
 
 DOCS_CMAKE_BOOL=	OCIO_BUILD_DOCS
