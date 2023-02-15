@@ -9,10 +9,10 @@ MASTER_SITES=	http://ftp.vim.org/ibiblio/system/network/management/ \
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Motif-based TCP/IP protocol analyzer
 
-MAKE_JOBS_UNSAFE=	yes
-
 USES=		bison motif tar:Z
 MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
+MAKE_JOBS_UNSAFE=	yes
+
 CFLAGS=		-Wno-int-conversion
 
 post-patch:
