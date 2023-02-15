@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230215:
+  AFFECTS: users of python
+  AUTHOR: vishwin@FreeBSD.org
+
+  A trigger has been added to the lang/python3* ports to compile,
+  write and remove bytecode files (.pyc) in site-packages after all
+  pkg transactions have been completed. pkg will no longer manage
+  such files directly, as they are meant to be generated after
+  installation.
+
+  For those ports/packages that still package bytecode, some package
+  checksum mismatches on those files may occur. This is harmless
+  and will be rectified.
+
+  Technical details available at:
+        https://wiki.freebsd.org/Python/CompiledPackages
+
 20230213:
   Affects: users of sysutils/nut*
   AUTHOR: cy@FreeBSD.org

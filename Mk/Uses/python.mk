@@ -257,17 +257,20 @@
 #			  packages for different Python versions.
 #			  default: -py${PYTHON_SUFFIX}
 #
-# Using USES=python also will add some useful entries to PLIST_SUB:
+# Using USES=python also will add some useful entries to SUB_LIST and PLIST_SUB:
 #
-#	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;}
-#	PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR:S;${PREFIX}/;;}
+#	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR}
+#	PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR}
 #	PYTHON_PLATFORM=${PYTHON_PLATFORM}
-#	PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}
+#	PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR}
 #	PYTHON_SUFFIX=${PYTHON_SUFFIX}
 #	PYTHON_VER=${PYTHON_VER}
 #	PYTHON_VERSION=${PYTHON_VERSION}
 #
-# and PYTHON2 and PYTHON3 will be set according to the Python version:
+# where PYTHON_INCLUDEDIR, PYTHON_LIBDIR and PYTHON_SITELIBDIR have their PREFIX
+# stripped for PLIST_SUB.
+#
+# PYTHON2 and PYTHON3 will also be set according to the Python version:
 #
 #	PYTHON2="" PYTHON3="@comment " for Python 2.x
 #	PYTHON2="@comment " PYTHON3="" for Python 3.x
@@ -785,6 +788,16 @@ ${_stage}_DEPENDS+=	${PYTHON_CMD}:${PYTHON_PORTSDIR}
 PREFIX=		${PYTHONBASE}
 .  endif
 
+# Substitutions for SUB_FILES
+SUB_LIST+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR} \
+		PYTHON_LIBDIR=${PYTHONPREFIX_LIBDIR} \
+		PYTHON_PLATFORM=${PYTHON_PLATFORM} \
+		PYTHON_SITELIBDIR=${PYTHONPREFIX_SITELIBDIR} \
+		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
+		PYTHON_EXT_SUFFIX=${PYTHON_EXT_SUFFIX} \
+		PYTHON_VER=${PYTHON_VER} \
+		PYTHON_VERSION=${PYTHON_VERSION}
+
 # Substitutions for pkg-plist
 # Use a short form of the PYTHONPREFIX_*DIR variables; we don't need the
 # base directory in the plist file.
@@ -797,8 +810,10 @@ PLIST_SUB+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 		PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERSION=${PYTHON_VERSION}
 .  if ${PYTHON_REL} < 30000
+SUB_LIST+=	PYTHON2="" PYTHON3="@comment "
 PLIST_SUB+=	PYTHON2="" PYTHON3="@comment "
 .  else
+SUB_LIST+=	PYTHON2="@comment " PYTHON3=""
 PLIST_SUB+=	PYTHON2="@comment " PYTHON3=""
 .  endif
 

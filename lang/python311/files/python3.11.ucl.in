@@ -1,0 +1,40 @@
+path_glob: "%%PYTHON_SITELIBDIR%%/*"
+trigger: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+function cleanup(directory)
+  for _,d in ipairs(pkg.readdir(directory)) do
+    local full_path = directory .. "/" .. d
+    local stat = pkg.stat(full_path)
+    if stat["type"] == "dir" then
+      if (d ~= "__pycache__") then
+        cleanup(full_path)
+      else
+        for _,bytecode_file in ipairs(pkg.readdir(full_path)) do
+          local file_origin = string.gsub(bytecode_file, "[.]cpython[-]%%PYTHON_SUFFIX%%[.].*pyc", ".py")
+          if file_origin  then
+            local origin_path = directory .. "/" .. file_origin
+            if (not pkg.stat(origin_path)) then
+              --print("  >=> removed stale bytecode " .. bytecode_file)
+              os.remove(full_path .. "/" .. bytecode_file)
+            end
+          end
+        end
+      end
+      local res = pkg.readdir(full_path)
+      if #res == 0 then
+        --print("  >=> removed empty directory " .. full_path )
+        os.remove(full_path)
+      end
+    end
+  end
+end
+
+print(">=> Cleaning stale bytecode files...")
+cleanup("%%PYTHON_SITELIBDIR%%")
+
+print(">=> Byte-compiling Python source files...")
+pkg.exec({"%%PYTHON_VERSION%%", "-m", "compileall", "-q", "-o", "0", "-o", "1", "-o", "2", "%%PYTHON_SITELIBDIR%%"})
+EOS
+}
