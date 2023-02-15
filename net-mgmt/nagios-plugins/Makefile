@@ -5,7 +5,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}/ \
 		LOCAL/mat/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Plugins for Nagios
 WWW=		https://nagios-plugins.org/
 
