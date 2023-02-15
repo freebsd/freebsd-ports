@@ -528,6 +528,7 @@ bin/apqc_make_tcsh.py
 bin/apsearch
 bin/auto_warp.py
 bin/bayes_view
+bin/build_afni.py
 bin/byteorder
 bin/cat_matvec
 bin/ccalc
