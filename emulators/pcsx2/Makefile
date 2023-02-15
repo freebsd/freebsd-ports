@@ -1,5 +1,6 @@
 PORTNAME=	pcsx2
 PORTVERSION=	1.7.4075
+PORTREVISION=	1
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -17,15 +18,18 @@ ONLY_FOR_ARCHS=	amd64
 # - zstd comes from 3rdparty/ (not detected yet)
 # - zydis comes from 3rdparty/
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libpulse.so:audio/pulseaudio \
+		libavcodec.so:multimedia/ffmpeg \
+		libavformat.so:multimedia/ffmpeg \
+		libavutil.so:multimedia/ffmpeg \
+		libswresample.so:multimedia/ffmpeg \
+		libswscale.so:multimedia/ffmpeg \
 		libSoundTouch.so:audio/soundtouch \
-		libharfbuzz.so:print/harfbuzz \
 		libfmt.so:devel/libfmt \
 		libzip.so:archivers/libzip \
+		libcurl.so:ftp/curl \
 		libpulse.so:audio/pulseaudio \
 		libjack.so:audio/jack \
-		libsndio.so:audio/sndio \
-		libcurl.so:ftp/curl
+		libsndio.so:audio/sndio
 #		libryml.so:devel/rapidyaml \
 #		libglad.so:graphics/glad \
 #		libzstd.so:archivers/zstd
