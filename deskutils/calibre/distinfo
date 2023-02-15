@@ -1,3 +1,9 @@
-TIMESTAMP = 1673519124
-SHA256 (calibre-6.11.0.tar.xz) = ca5399e658c0e6e05bd9b5ffa8586c98f416e9d255107f63c50691daef02e167
-SIZE (calibre-6.11.0.tar.xz) = 42603028
+TIMESTAMP = 1676140665
+SHA256 (calibre/calibre-6.12.0.tar.xz) = 34718a92ad7aa53549ef80dfaa042e2ff162c418aa0420978a6efd626757757c
+SIZE (calibre/calibre-6.12.0.tar.xz) = 22753352
+SHA256 (calibre/cacert.pem) = fb1ecd641d0a02c01bc9036d513cb658bbda62a75e246bedbc01764560a639f0
+SIZE (calibre/cacert.pem) = 216583
+SHA256 (calibre/kovidgoyal-calibre-translations-cdd2a2e_GH0.tar.gz) = 8a436edccd5b01078083637a00e86045bc446b44065b66e67490f5bb544a42b0
+SIZE (calibre/kovidgoyal-calibre-translations-cdd2a2e_GH0.tar.gz) = 71153222
+SHA256 (calibre/LibreOffice-dictionaries-1b6575d_GH0.tar.gz) = 7e2587b75d06cad20ce887910f09ae0ef323369069206971c6cf4f6f3fcadae6
+SIZE (calibre/LibreOffice-dictionaries-1b6575d_GH0.tar.gz) = 94695879
