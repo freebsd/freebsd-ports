@@ -1,0 +1,35 @@
+state = "/var/run/containerd"
+temp = ""
+version = 2
+
+[cgroup]
+  path = ""
+
+[debug]
+  address = "/var/run/containerd/debug.sock"
+  format = ""
+  gid = 0
+  level = "info"
+  uid = 0
+
+[grpc]
+  address = "/var/run/containerd/containerd.sock"
+  gid = 0
+  max_recv_message_size = 16777216
+  max_send_message_size = 16777216
+  tcp_address = ""
+  tcp_tls_ca = ""
+  tcp_tls_cert = ""
+  tcp_tls_key = ""
+  uid = 0
+
+[plugins]
+  [plugins."io.containerd.service.v1.diff-service"]
+    default = ["walking"]
+  [plugins."io.containerd.gc.v1.scheduler"]
+    pause_threshold = 0.02
+    deletion_threshold = 0
+    mutation_threshold = 100
+    schedule_delay = "0s"
+    startup_delay = "100ms"
+
