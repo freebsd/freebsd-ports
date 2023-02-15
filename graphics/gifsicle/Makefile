@@ -1,8 +1,8 @@
 PORTNAME=	gifsicle
 PORTVERSION=	1.93
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.lcdf.org/gifsicle/
+MASTER_SITES=	https://www.lcdf.org/gifsicle/
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Manipulates GIF images and animations
@@ -14,6 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_mips=		fails to build: undefined reference to '__sync_add_and_fetch_4'
 BROKEN_mips64=		fails to build: undefined reference to '__sync_add_and_fetch_4'
 
+FLAVORS=		x11 nox11
+FLAVOR?=		${FLAVORS:[1]}
+nox11_PKGNAMESUFFIX=	-nox11
+
 USES=		cpe
 
 CPE_VENDOR=	gifsicle_project
@@ -24,14 +28,19 @@ PORTDOCS=	NEWS.md README.md
 PLIST_FILES=	bin/gifdiff bin/gifsicle \
 		man/man1/gifdiff.1.gz man/man1/gifsicle.1.gz
 
-OPTIONS_DEFINE=		DOCS X11
-OPTIONS_DEFAULT=	X11
+.if ${FLAVOR} == x11
+USES+=			xorg
+USE_XORG=		x11
+CONFIGURE_ARGS=		--enable-gifview \
+			--with-x
+PLIST_FILES+=		bin/gifview \
+			man/man1/gifview.1.gz
+CONFLICTS_INSTALL=	gifsicle-nox11
+.else
+CONFLICTS_INSTALL=	gifsicle
+.endif
 
-X11_USES=		xorg
-X11_USE=		xorg=x11
-X11_CONFIGURE_ENABLE=	gifview
-X11_CONFIGURE_WITH=	x
-X11_PLIST_FILES=	bin/gifview man/man1/gifview.1.gz
+OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
