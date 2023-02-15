@@ -1,5 +1,5 @@
 PORTNAME=	php81
-DISTVERSION=	8.1.15
+DISTVERSION=	8.1.16
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP/distributions
@@ -16,6 +16,8 @@ CPE_PRODUCT=	php
 PHP_VER=	81
 
 CONFLICTS_INSTALL?=	php[0-9][0-9]${PKGNAMESUFFIX}
+
+EXTRACT_AFTER_ARGS=	--no-same-owner --no-same-permissions --no-xattrs
 
 .if !defined(PKGNAMESUFFIX)
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
