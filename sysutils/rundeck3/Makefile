@@ -1,10 +1,9 @@
 PORTNAME=	rundeck
-DISTVERSION=	3.4.9
-DISTVERSIONSUFFIX=	20211221
+DISTVERSION=	3.4.10
+DISTVERSIONSUFFIX=	-20220118
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundeck/${DISTNAME}.war/artifacts/${DISTNAME}.war/download?/
 PKGNAMESUFFIX=	3
-DISTNAME=	${PORTNAME}-${DISTVERSION}-${DISTVERSIONSUFFIX}
 EXTRACT_SUFX=	.war
 
 MAINTAINER=	daniel.tihanyi@tetragir.com
@@ -41,10 +40,10 @@ RUNDECK_LOG_FILE?=	${RUNDECK_LOGDIR}/rundeck.log
 RUNDECK_LOG4J=		log4j2.properties
 RUNDECK_CONFIG_DIR=	${RUNDECK_HOME}/server/config
 
-.if ${RUNDECK_USER} == "rundeck"
+.if ${RUNDECK_USER} == rundeck
 USERS=		rundeck
 .endif
-.if ${RUNDECK_GROUP} == "rundeck"
+.if ${RUNDECK_GROUP} == rundeck
 GROUPS=		rundeck
 .endif
 
