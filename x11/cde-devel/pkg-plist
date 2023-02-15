@@ -2761,6 +2761,7 @@ dt%%DT_ID%%/libexec/cde/dtdocbook/infolib/dbdrv
 dt%%DT_ID%%/libexec/cde/dtdocbook/infolib/valBase
 dt%%DT_ID%%/libexec/cde/dtdocbook/infolib/validator
 dt%%DT_ID%%/libexec/cde/dtdocbook/instant/instant
+dt%%DT_ID%%/man
 dt%%DT_ID%%/palettes
 dt%%DT_ID%%/share/backdrops/Ankh.bm
 dt%%DT_ID%%/share/backdrops/Background.bm
