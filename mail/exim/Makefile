@@ -21,9 +21,6 @@ USES=		compiler cpe tar:bzip2 perl5
 USE_CSTD=	c99
 USE_PERL5=	run
 
-# LLVM15 workaround
-CFLAGS=		-Wno-int-conversion
-
 # Exim build system is job unsafe atm
 MAKE_JOBS_UNSAFE=	yes
 # One can tune the following "hidden" knobs:
