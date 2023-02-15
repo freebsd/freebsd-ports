@@ -1,6 +1,6 @@
---- print-nfs.c.orig	1993-04-22 13:40:18.000000000 -0700
-+++ print-nfs.c	2010-06-13 08:09:51.000000000 -0700
-@@ -38,10 +38,10 @@
+--- print-nfs.c.orig	1993-04-22 20:40:18 UTC
++++ print-nfs.c
+@@ -38,10 +38,10 @@ static char rcsid[] =
  #include <sys/time.h>
  #include <errno.h>
  #include <rpc/types.h>
@@ -12,7 +12,7 @@
  #include <rpc/rpc_msg.h>
  
  #include <ctype.h>
-@@ -54,9 +54,21 @@
+@@ -54,9 +54,21 @@ static char rcsid[] =
  /* These must come after interface.h for BSD. */
  #if BSD >= 199006
  #include <sys/ucred.h>
@@ -30,13 +30,13 @@
 +#else
 +#include <nfs/rpcv2.h>
 +#include <nfs/nfsproto.h>
-+#endif
  #endif
 -#include <nfs/nfs.h>
++#endif
  
  #include "addrtoname.h"
  #include "extract.h"
-@@ -170,7 +182,7 @@
+@@ -170,7 +182,7 @@ parsefn(dp)
  
  	/* Fetch string length; convert to host order */
  	len = *dp++;
@@ -45,7 +45,7 @@
  
  	cp = (u_char *)dp;
  	/* Update long pointer (NFS filenames are padded to long) */
-@@ -250,11 +262,13 @@
+@@ -250,11 +262,13 @@ nfsreq_print(rp, length, ip)
  			return;
  		break;
  
@@ -59,7 +59,7 @@
  	case RFS_LOOKUP:
  		printf(" lookup");
  		if ((dp = parsereq(rp, length)) != 0 && parsefhn(dp) != 0)
-@@ -277,7 +291,7 @@
+@@ -277,7 +291,7 @@ nfsreq_print(rp, length, ip)
  			return;
  		}
  		break;
@@ -68,7 +68,7 @@
  #if RFS_WRITECACHE != NFSPROC_NOOP
  	case RFS_WRITECACHE:
  		printf(" writecache");
-@@ -291,6 +305,7 @@
+@@ -291,6 +305,7 @@ nfsreq_print(rp, length, ip)
  		}
  		break;
  #endif

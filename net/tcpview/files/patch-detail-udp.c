@@ -1,6 +1,14 @@
---- print-udp.c.orig	1993-04-22 13:40:29.000000000 -0700
-+++ print-udp.c	2010-06-13 08:09:39.000000000 -0700
-@@ -39,10 +39,10 @@
+--- detail-udp.c.orig	1993-04-22 20:39:55 UTC
++++ detail-udp.c
+@@ -37,6 +37,7 @@ static char rcsid[] =
+ #endif
+ 
+ #include <sys/types.h>
++#include <sys/param.h>
+ #include <sys/socket.h>
+ #include <netinet/in.h>
+ #include <netinet/in_systm.h>
+@@ -50,12 +51,21 @@ static char rcsid[] =
  #include <errno.h>
  #include <sys/time.h>
  #include <rpc/types.h>
@@ -10,13 +18,8 @@
  #include <rpc/svc.h>
 -#include <rpc/xdr.h>
  #include <rpc/rpc_msg.h>
- 
- #ifdef TCPVIEW
-@@ -53,9 +53,16 @@
- /* These must come after interface.h for BSD. */
- #if BSD >= 199006
- #include <sys/ucred.h>
--#include <nfs/nfsv2.h>
+-#include <nfs/nfs.h>
++#include <sys/ucred.h> 
 +#include <sys/mount.h>
 +#if defined(__FreeBSD_version) && __FreeBSD_version >= 800100
 +#include <fs/nfs/nfsport.h>
@@ -26,8 +29,6 @@
 +#include <nfs/rpcv2.h>
 +#include <nfs/nfsproto.h>
 +#endif
- #endif
--#include <nfs/nfs.h>
  
+ #include "interface.h"
  #include "addrtoname.h"
- #include "appletalk.h"

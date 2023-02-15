@@ -1,6 +1,6 @@
---- interface.h.orig	Tue Oct 28 01:36:19 2003
-+++ interface.h	Tue Oct 28 01:36:30 2003
-@@ -59,8 +59,8 @@
+--- interface.h.orig	1993-04-22 20:47:58 UTC
++++ interface.h
+@@ -59,8 +59,8 @@ extern char *lookup_device();
  
  extern char *lookup_device();
  

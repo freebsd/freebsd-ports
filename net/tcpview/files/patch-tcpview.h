@@ -1,6 +1,6 @@
---- tcpview.h.orig	Fri Apr 23 04:48:09 1993
-+++ tcpview.h	Tue Oct 28 02:02:49 2003
-@@ -97,8 +97,8 @@
+--- tcpview.h.orig	1993-04-22 20:48:09 UTC
++++ tcpview.h
+@@ -97,8 +97,8 @@ void perror();
  void perror();
  #endif
  

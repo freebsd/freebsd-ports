@@ -1,6 +1,6 @@
---- print-null.c.orig	Mon May 12 17:35:00 2003
-+++ print-null.c	Mon May 12 17:36:30 2003
-@@ -76,9 +76,17 @@
+--- print-null.c.orig	1993-04-22 20:40:19 UTC
++++ print-null.c
+@@ -76,9 +76,17 @@ null_print(p, ip, length)
  		printf("ip: ");
  		break;
  

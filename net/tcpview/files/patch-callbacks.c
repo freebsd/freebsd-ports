@@ -1,6 +1,6 @@
---- callbacks.c.orig	Fri Apr 23 05:22:59 1993
-+++ callbacks.c	Tue Oct 28 02:03:28 2003
-@@ -42,7 +42,7 @@
+--- callbacks.c.orig	1993-04-22 21:22:59 UTC
++++ callbacks.c
+@@ -42,7 +42,7 @@ static char rcsid[] =
  #include <stdlib.h>
  #endif
  
@@ -9,7 +9,7 @@
  #include <sys/types.h>
  #include <sys/time.h>
  #include <string.h>
-@@ -66,7 +66,7 @@
+@@ -66,7 +66,7 @@ extern Widget packet_label;
  extern Widget hex_text_widget;        /* hex (bottom) window */
  extern Widget packet_label;
  
@@ -18,14 +18,14 @@
  
  #ifdef __STDC__
  void redisplay_current_list(void);
-@@ -726,32 +726,35 @@
+@@ -726,32 +726,35 @@ void xperror(str)
  }
  
  
 -void eprint(va_alist)
 -     va_dcl
 +void eprintv(char *fmt, va_list ap)
-+{
+ {
 +  char str[128];
 +
 +  (void)vsprintf(str, fmt, ap);
@@ -34,7 +34,7 @@
 +
 +
 +void eprint(char *fmt, ...)
- {
++{
    va_list args;
 -  char *fmt, str[128];
  
