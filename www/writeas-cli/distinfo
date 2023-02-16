@@ -1,4 +1,4 @@
-TIMESTAMP = 1626527505
+TIMESTAMP = 1676580564
 SHA256 (writeas/core-socks-v1.0.0.tar.gz) = 9d199f31b9fcaa97b4c52483f16e226fe7b40a0014b6070788f415cff29f2c32
 SIZE (writeas/core-socks-v1.0.0.tar.gz) = 11604
 SHA256 (writeas/writeas-writeas-cli-v2.0.0-wf_GH0.tar.gz) = e70e47e3ed28f26ca2ffb12723ddbdaffdea9a6a8db5a1e8a34272c1ef8511aa
@@ -13,8 +13,8 @@ SHA256 (writeas/golang-crypto-505ab145d0a9_GH0.tar.gz) = 33a4ff7a15a69640a7ce2c6
 SIZE (writeas/golang-crypto-505ab145d0a9_GH0.tar.gz) = 1644681
 SHA256 (writeas/golang-net-e147a9138326_GH0.tar.gz) = 78bd0d3278ce9d5399da988678265a2f296776e235f01a8014a349edcdd10418
 SIZE (writeas/golang-net-e147a9138326_GH0.tar.gz) = 966358
-SHA256 (writeas/golang-sys-0f9fa26af87c_GH0.tar.gz) = 4a7725e85ddaba8f2efc9b799eb00f4b3d522ea8ed9ad0ce08783febe3ec97a1
-SIZE (writeas/golang-sys-0f9fa26af87c_GH0.tar.gz) = 1202044
+SHA256 (writeas/golang-sys-v0.5.0_GH0.tar.gz) = 810c8f1b7704674971ab6b2b614aba20a5a1765018fd2c639f528dbbcbf88b1f
+SIZE (writeas/golang-sys-v0.5.0_GH0.tar.gz) = 1429723
 SHA256 (writeas/gopherjs-gopherjs-d547d1d9531e_GH0.tar.gz) = 9f24adce5539b96eaeae86b6b6b34c3b5d4b54b5552779f1919d583ef2045378
 SIZE (writeas/gopherjs-gopherjs-d547d1d9531e_GH0.tar.gz) = 217297
 SHA256 (writeas/hashicorp-errwrap-v1.0.0_GH0.tar.gz) = 26afc0e5895c6ce87c881c5c02c682ccc9a08174a9c27ca26d4a1e72dbf78128
