@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	2
 DISTNAME=	rundeck-launcher-${PORTVERSION}
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	daniel.tihanyi@tetragir.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-console for dispatching commands and scripts to your nodes
 WWW=		https://rundeck.org
 

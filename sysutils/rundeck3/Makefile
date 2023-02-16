@@ -6,7 +6,7 @@ MASTER_SITES=	https://packagecloud.io/pagerduty/rundeck/packages/java/org.rundec
 PKGNAMESUFFIX=	3
 EXTRACT_SUFX=	.war
 
-MAINTAINER=	daniel.tihanyi@tetragir.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web-console for dispatching commands and scripts to your nodes
 WWW=		https://rundeck.org
 
