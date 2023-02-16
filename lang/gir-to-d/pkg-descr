@@ -1,0 +1,2 @@
+girtod is an utility that generates D bindings using the GObject introspection
+files.
