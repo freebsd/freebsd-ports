@@ -13,6 +13,8 @@ WWW=		https://github.com/flightlessmango/MangoHud
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		https://github.com/flightlessmango/MangoHud/issues/927
+
 BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		${LOCALBASE}/share/vulkan/registry/vk.xml:graphics/vulkan-headers \
 		${PYTHON_PKGNAMEPREFIX}mako>=0:textproc/py-mako@${PY_FLAVOR}

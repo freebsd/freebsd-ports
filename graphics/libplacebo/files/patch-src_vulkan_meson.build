@@ -1,0 +1,22 @@
+Workaround for https://code.videolan.org/videolan/libplacebo/-/issues/249
+
+--- src/vulkan/meson.build.orig	2023-01-04 16:18:14 UTC
++++ src/vulkan/meson.build
+@@ -4,17 +4,10 @@ registry_xml = get_option('vulkan-registry')
+ vulkan_headers = disabler()
+ registry_xml = get_option('vulkan-registry')
+ 
+-if vulkan_loader.found()
+-  vulkan_headers = vulkan_loader.partial_dependency(includes: true, compile_args: true)
+-# Probe for <vulkan/vulkan.h> as a fallback for the vulkan headers
+-elif cc.has_header_symbol('vulkan/vulkan_core.h', 'VK_VERSION_1_2')
+-  vulkan_headers = declare_dependency()
+-elif fs.is_dir(thirdparty/'Vulkan-Headers/include')
+   vulkan_inc = include_directories('../../3rdparty/Vulkan-Headers/include')
+   vulkan_headers = declare_dependency(include_directories: vulkan_inc)
+   # Force the use of this vk.xml because it has to be in sync with the headers
+   registry_xml = thirdparty/'Vulkan-Headers/registry/vk.xml'
+-endif
+ 
+ build_deps += vulkan_headers
+ if not vulkan_headers.found()
