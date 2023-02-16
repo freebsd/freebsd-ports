@@ -1,21 +1,21 @@
---- Run.orig	2020-06-11 08:18:10 UTC
-+++ Run
-@@ -91,10 +91,10 @@ chomp($BASEDIR);
- my $BINDIR = getDir('UB_BINDIR', $BASEDIR . "/pgms");
+--- Run.orig	2023-02-09 22:21:08.690117000 +0100
++++ Run	2023-02-09 22:20:31.633214000 +0100
+@@ -91,10 +91,10 @@
+ my $BINDIR = getDir('UB_BINDIR', $FindBin::Bin . "/pgms");
  
  # Temp directory, for temp files.
--my $TMPDIR = getDir('UB_TMPDIR', $BASEDIR . "/tmp");
+-my $TMPDIR = getDir('UB_TMPDIR', $FindBin::Bin . "/tmp");
 +my $TMPDIR = "/tmp";
  
  # Directory to put results in.
--my $RESULTDIR = getDir('UB_RESULTDIR', $BASEDIR . "/results");
+-my $RESULTDIR = getDir('UB_RESULTDIR', $FindBin::Bin . "/results");
 +my $RESULTDIR = "/tmp";
  
  # Directory where the tests are executed.
- my $TESTDIR = getDir('UB_TESTDIR', $BASEDIR . "/testdir");
-@@ -672,6 +672,18 @@ sub processCpuFlags {
- # these fields:
- # describing the model etc.  Returns undef if the information can't be got.
+ my $TESTDIR = getDir('UB_TESTDIR', $FindBin::Bin . "/testdir");
+@@ -698,6 +698,18 @@
+ # future: on systems without /proc/cpuinfo, might check for Perl modules:
+ #   Sys::Info::Device::CPU or Sys::CpuAffinity
  sub getCpuInfo {
 +    my $ncpu = getCmdOutput("sysctl -n hw.ncpu");
 +    my $cpus = [ ];
@@ -29,17 +29,20 @@
 +}
 +
 +sub getCpuInfoBak {
-     open(my $fd, "<", "/proc/cpuinfo") || return undef;
+     if (!("$^O" eq "darwin")) {
+         open(my $fd, "<", "/proc/cpuinfo") || return undef;
  
-     my $cpus = [ ];
-@@ -735,12 +747,10 @@ sub getSystemInfo {
- 
+@@ -815,15 +827,11 @@
      # Get the language info.
      my $lang = getCmdOutput("printenv LANG");
--    my $map = getCmdOutput("locale -k LC_CTYPE | grep charmap");
-+    my $map = getCmdOutput("locale -k | grep charmap");
+     my $map = $^O ne "aix"
+-      ? getCmdOutput("locale -k LC_CTYPE | grep charmap") || ""
++      ? getCmdOutput("locale -k | grep charmap") || ""
+       : getCmdOutput("locale charmap") || "";
      $map =~ s/.*=//;
--    my $coll = getCmdOutput("locale -k LC_COLLATE | grep collate-codeset");
+-    my $coll = $^O ne "aix"
+-      ? getCmdOutput("locale -k LC_COLLATE | grep collate-codeset") || ""
+-      : getCmdOutput("locale | grep LC_COLLATE") || "";
 -    $coll =~ s/.*=//;
 -    $info->{'language'} = sprintf "%s (charmap=%s, collate=%s)",
 -                                   $lang, $map, $coll;
@@ -48,27 +51,27 @@
  
      # Get details on the CPUs, if possible.
      my $cpus = getCpuInfo();
-@@ -750,10 +760,9 @@ sub getSystemInfo {
+@@ -839,10 +847,9 @@
      }
  
      # Get graphics hardware info.
 -    $info->{'graphics'} = getCmdOutput("3dinfo | cut -f1 -d\'(\'");
-+    # $info->{'graphics'} = getCmdOutput("3dinfo | cut -f1 -d\'(\'");
++	#$info->{'graphics'} = getCmdOutput("3dinfo | cut -f1 -d\'(\'");
  
      # Get system run state, load and usage info.
--    $info->{'runlevel'} = getCmdOutput("runlevel | cut -f2 -d\" \"");
+-    $info->{'runlevel'} = getCmdOutput("who -r | awk '{print \$3}'");
      $info->{'load'} = getCmdOutput("uptime");
      $info->{'numUsers'} = getCmdOutput("who | wc -l");
  
-@@ -781,6 +790,7 @@ sub abortRun {
+@@ -870,6 +877,7 @@
  
  # Do checks that everything's ready for testing.
  sub preChecks {
-+    return;
++	return;
      # Set the language.
      $ENV{'LANG'} = $language;
  
-@@ -1386,7 +1396,7 @@ sub displaySystem {
+@@ -1476,7 +1484,7 @@
      }
  
      # Display system load and usage info.
@@ -77,7 +80,25 @@
  }
  
  
-@@ -1603,8 +1613,8 @@ sub displaySystemHtml {
+@@ -1587,7 +1595,7 @@
+ 
+ # Write CSV Headers.
+ #   e.g.: "Concurrency,Dhrystone 2 using register variables,Double-Precision Whetstone"
+-#       
++#
+ sub summarizeRunCsvHeader {
+     my ( $results, $reportFd ) = @_;
+ 
+@@ -1612,7 +1620,7 @@
+ 
+     # Write concurrency value.
+     printf $reportFd "%d", $results->{'copies'};
+-    
++
+     # Write test results.
+     my $isFirstColumn = 1;
+     foreach my $bench (@{$results->{'list'}}) {
+@@ -1735,8 +1743,8 @@
      # Display system runlevel, load and usage info.
      printf $fd "<tr>\n";
      printf $fd "   <td><b>Uptime:</b></td>\n";
@@ -88,3 +109,26 @@
      printf $fd "</tr>\n";
  
      printf $fd "</table></p>\n\n";
+@@ -1896,7 +1904,7 @@
+         $tests = $index;
+     }
+ 
+-    # Create directories.    
++    # Create directories.
+     my @creatingDirectories = ( ${TMPDIR}, ${RESULTDIR} );
+     createDirrectoriesIfNotExists(@creatingDirectories);
+ 
+@@ -1937,7 +1945,7 @@
+     my $isOutputFormatCsv = defined($ubOutputCsv) && $ubOutputCsv eq "true";
+     # If write CSV, header needs only once.
+     my $is_csv_header_written = 0;
+-    
++
+     # Open the log file for writing.
+     open(my $reportFd, ">", $reportFile) ||
+                             die("Run: can't write to $reportFile\n");
+@@ -1998,4 +2006,3 @@
+ 
+ 
+ exit(main(@ARGV));
+-

@@ -1,7 +1,7 @@
 PORTNAME=	unixbench
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.1.3
-PORTREVISION=	2
+DISTVERSION=	5.1.3-51
+DISTVERSIONSUFFIX=	-g6705203
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -12,11 +12,15 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	x11perf:x11/x11perf
 
-USES=		gmake perl5 shebangfix
+USES=		gmake gl perl5 shebangfix xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	kdlucas
 GH_PROJECT=	byte-unixbench
 WRKSRC_SUBDIR=	UnixBench
+USE_GL=	gl
+USE_XORG=	x11 xext
+CFLAGS+=	-I${LOCALBASE}/include \
+			-L${LOCALBASE}/lib
 
 SUB_FILES=	unixbench
 SHEBANG_FILES=	Run pgms/gfx-x11

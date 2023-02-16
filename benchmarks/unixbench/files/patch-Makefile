@@ -1,15 +1,15 @@
---- Makefile.orig	2015-06-04 17:20:18 UTC
-+++ Makefile
-@@ -38,7 +38,7 @@
- ##############################################################################
+--- Makefile.orig	2023-02-07 23:18:07.000000000 +0100
++++ Makefile	2023-02-09 21:57:42.966634000 +0100
+@@ -46,7 +46,7 @@
+ # X11 libraries on your system. (e.g. libX11-devel mesa-libGL-devel)
+ #
+ # Comment the line out to disable these tests.
+-# GRAPHIC_TESTS = defined
++GRAPHIC_TESTS = defined
  
- SHELL = /bin/sh
--
-+HZ = 128
- # GRAPHICS TESTS: Uncomment the definition of "GRAPHIC_TESTS" to enable
- # the building of the graphics benchmarks.  This will require the
- # X11 libraries on your system.
-@@ -53,7 +53,7 @@ GL_LIBS = -lGL -lXext -lX11
+ # Set "GL_LIBS" to the libraries needed to link a GL program.
+ GL_LIBS = -lGL -lXext -lX11
+@@ -55,7 +55,7 @@
  # COMPILER CONFIGURATION: Set "CC" to the name of the compiler to use
  # to build the binary benchmarks.  You should also set "$cCompiler" in the
  # Run script to the name of the compiler you want to test.
@@ -17,30 +17,23 @@
 +#CC=gcc
  
  # OPTIMISATION SETTINGS:
+ # Use gcc option if defined UB_GCC_OPTIONS via "Environment variable" or "Command-line arguments".
+@@ -87,7 +87,7 @@
+   ## (-ffast-math) disables strict IEEE or ISO rules/specifications for math funcs
+   OPTON = -O3 -ffast-math
  
-@@ -71,14 +71,14 @@ CC=gcc
- #	-m386 -malign-loops=1 -malign-jumps=1 -malign-functions=1
+-  ## OS detection.  Comment out if gmake syntax not supported by other 'make'. 
++  ## OS detection.  Comment out if gmake syntax not supported by other 'make'.
+   OSNAME:=$(shell uname -s)
+   ARCH := $(shell uname -p)
+   ifeq ($(OSNAME),Linux)
+@@ -113,6 +113,9 @@
+     CFLAGS += -Wa,-q
+   endif
  
- ## For Solaris 2, or general-purpose GCC 2.7.x
--OPTON = -O2 -fomit-frame-pointer -fforce-addr -ffast-math -Wall
-+OPTON = -O2 -fomit-frame-pointer -ffast-math -Wall
- 
- ## For Digital Unix v4.x, with DEC cc v5.x
- #OPTON = -O4
- #CFLAGS = -DTIME -std1 -verbose -w0
- 
- ## generic gcc CFLAGS.  -DTIME must be included.
--CFLAGS = -DTIME -Wall -pedantic -ansi
-+CFLAGS += -DTIME -Wall -pedantic -ansi
++  ifeq ($(OSNAME),FreeBSD)
++	OPTON += -march=native -mtune=native -fomit-frame-pointer
++  endif
+ endif
  
  
- ##############################################################################
-@@ -90,8 +90,6 @@ CFLAGS = -DTIME -Wall -pedantic -ansi
- PROGDIR = ./pgms
- SRCDIR = ./src
- TESTDIR = ./testdir
--RESULTDIR = ./results
--TMPDIR = ./tmp
- # other directories
- INCLDIR = /usr/include
- LIBDIR = /lib
