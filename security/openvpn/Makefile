@@ -1,5 +1,5 @@
 PORTNAME=		openvpn
-DISTVERSION=		2.5.8
+DISTVERSION=		2.5.9
 PORTREVISION?=		0
 CATEGORIES=		security net net-vpn
 MASTER_SITES=		https://swupdate.openvpn.org/community/releases/ \
@@ -13,7 +13,7 @@ WWW=		https://openvpn.net/community/
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYRIGHT.GPL
 
-USES=			cpe libtool localbase:ldflags pkgconfig shebangfix ssl tar:xz
+USES=			cpe libtool localbase:ldflags pkgconfig shebangfix ssl
 USE_RC_SUBR=		openvpn
 
 SHEBANG_FILES=		sample/sample-scripts/verify-cn \
