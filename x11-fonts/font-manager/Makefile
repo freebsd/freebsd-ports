@@ -10,6 +10,9 @@ WWW=		https://fontmanager.github.io/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+# See: https://github.com/FontManager/font-manager/issues/310
+BROKEN_FreeBSD_14=	fails to compile with llvm15
+
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		itstool:textproc/itstool \
 		yelp-build:textproc/yelp-tools
