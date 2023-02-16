@@ -1,6 +1,6 @@
 PORTNAME=	wireguard-go
 PORTVERSION=	0.0.20220316
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-go/snapshot/

@@ -1,5 +1,6 @@
 PORTNAME=	terraform-switcher
 DISTVERSION=	0.13.1300
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com

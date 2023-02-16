@@ -1,6 +1,7 @@
 PORTNAME=	yubikey-agent
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	security sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
