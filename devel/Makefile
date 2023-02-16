@@ -846,6 +846,7 @@
     SUBDIR += glade
     SUBDIR += glademm
     SUBDIR += glib20
+    SUBDIR += glibd
     SUBDIR += glibmm
     SUBDIR += glibmm26
     SUBDIR += glitter
