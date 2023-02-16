@@ -1,8 +1,8 @@
 PORTNAME=	transcode
 PORTVERSION=	1.1.7
-PORTREVISION=	49
+PORTREVISION=	51
 CATEGORIES=	multimedia
-MASTER_SITES=	https://bitbucket.org/france/transcode-tcforge/downloads/
+#MASTER_SITES=	https://bitbucket.org/france/transcode-tcforge/downloads/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Text-console utility for video stream processing
@@ -10,10 +10,17 @@ WWW=		https://www.transcoding.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	abandond by upstream and does not build
+EXPIRATION_DATE=	2023-03-31
+BROKEN=		depends on removed libav audio resample functions
+
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
-USE_LDCONFIG=	yes
 USES=		gmake libtool pkgconfig tar:bzip2 gettext-runtime
+USE_GITHUB=	yes
+GH_ACCOUNT=	wyyrepo
+GH_TAGNAME=	474090a
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-oss
 CPPFLAGS+=	-I${LOCALBASE}/include
@@ -121,6 +128,7 @@ CONFIGURE_ARGS+=ac_cv_lib_iconv_iconv_open=no \
 
 post-extract:
 	@${RM} ${WRKSRC}/import/v4l/videodev*
+	@${CHMOD} +x ${WRKSRC}/configure
 
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|loff_t|uint64_t|' ${WRKSRC}/avilib/avidump.c
