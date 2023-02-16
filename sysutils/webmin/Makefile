@@ -1,5 +1,5 @@
 PORTNAME=	webmin
-PORTVERSION=	2.000
+PORTVERSION=	2.013
 PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
@@ -23,9 +23,7 @@ USE_PYTHON=	py3kplist
 USE_RC_SUBR=	webmin
 SUB_LIST=	PERL=${PERL}
 SUB_FILES=	pkg-message
-SHEBANG_FILES=	${WRKSRC}/ajaxterm/ajaxterm/ajaxterm.py \
-		${WRKSRC}/ajaxterm/ajaxterm/configure \
-		${WRKSRC}/webmin/acme_tiny.py
+SHEBANG_FILES=	${WRKSRC}/webmin/acme_tiny.py
 
 WEBMIN_MODULES=
 
