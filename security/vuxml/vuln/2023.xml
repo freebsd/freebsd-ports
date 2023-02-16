@@ -1,3 +1,43 @@
+  <vuln vid="fd792048-ad91-11ed-a879-080027f5fec9">
+    <topic>clamav -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>clamav</name>
+	<range><lt>1.0.1,1</lt></range>
+      </package>
+      <package>
+	<name>clamav-lts</name>
+	<range><lt>0.103.8,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Simon Scannell reports:</p>
+	<blockquote cite="https://blog.clamav.net/2023/02/clamav-01038-01052-and-101-patch.html">
+	  <dl>
+	    <dt>CVE-2023-20032</dt>
+	    <dd>
+	      Fixed a possible remote code execution vulnerability in the HFS+ file parser.
+	    </dd>
+	    <dt>CVE-2023-20052</dt>
+	    <dd>
+	      Fixed a possible remote information leak vulnerability in the DMG file parser.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-20032</cvename>
+      <cvename>CVE-2023-20052</cvename>
+      <url>https://blog.clamav.net/2023/02/clamav-01038-01052-and-101-patch.html</url>
+    </references>
+    <dates>
+      <discovery>2023-02-15</discovery>
+      <entry>2023-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3d73e384-ad1f-11ed-983c-83fe35862e3a">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
