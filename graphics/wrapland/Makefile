@@ -1,6 +1,6 @@
 PORTNAME=	wrapland
 DISTVERSIONPREFIX=	${PORTNAME}@
-DISTVERSION=	0.526.0
+DISTVERSION=	0.527.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,7 +22,7 @@ USE_KDE=	ecm:build
 USE_LDCONFIG=	yes
 USE_QT=		qmake:build buildtools:build concurrent core gui
 GL_ACCOUNT=	kwinft
-GL_COMMIT=	0b3a0fbaf4dc7e9f1d3e20d396a8b14bfc64cbd8
+GL_COMMIT=	de7685a95cabeac60b65b17cf5389aed254321c0
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOXYGEN

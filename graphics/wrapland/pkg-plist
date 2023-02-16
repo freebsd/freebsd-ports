@@ -15,6 +15,7 @@ include/Wrapland/Client/event_queue.h
 include/Wrapland/Client/fakeinput.h
 include/Wrapland/Client/fullscreen_shell.h
 include/Wrapland/Client/idle.h
+include/Wrapland/Client/idle_notify_v1.h
 include/Wrapland/Client/idleinhibit.h
 include/Wrapland/Client/input_method_v2.h
 include/Wrapland/Client/keyboard.h
@@ -83,6 +84,7 @@ include/Wrapland/Server/fake_input.h
 include/Wrapland/Server/filtered_display.h
 include/Wrapland/Server/globals.h
 include/Wrapland/Server/idle_inhibit_v1.h
+include/Wrapland/Server/idle_notify_v1.h
 include/Wrapland/Server/input_method_v2.h
 include/Wrapland/Server/kde_idle.h
 include/Wrapland/Server/keyboard.h
@@ -129,6 +131,7 @@ include/Wrapland/Server/xdg_foreign.h
 include/Wrapland/Server/xdg_output.h
 include/Wrapland/Server/xdg_shell.h
 include/Wrapland/Server/xdg_shell_popup.h
+include/Wrapland/Server/xdg_shell_positioner.h
 include/Wrapland/Server/xdg_shell_surface.h
 include/Wrapland/Server/xdg_shell_toplevel.h
 include/wrapland_version.h
