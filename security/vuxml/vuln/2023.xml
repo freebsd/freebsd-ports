@@ -1,3 +1,30 @@
+  <vuln vid="27c822a0-addc-11ed-a9ee-dca632b19f10">
+    <topic>Rundeck3 -- Log4J RCE vulnerability</topic>
+    <affects>
+      <package>
+	<name>rundeck3</name>
+	<range><lt>3.4.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Rundeck project reports:</p>
+	<blockquote cite="https://docs.rundeck.com/docs/history/3_4_x/version-3.4.10.html">
+	  <p>This release updates both Community and Enterprise with the latest Log4J
+	    to address CVE-2021-44832 by updating it to 2.17.1.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-44832</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-44832</url>
+    </references>
+    <dates>
+      <discovery>2021-12-11</discovery>
+      <entry>2023-02-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8e20430d-a72b-11ed-a04f-40b034455553">
     <topic>MinIO -- unprivileged users can create service accounts for admin users</topic>
     <affects>
