@@ -1,7 +1,7 @@
 PORTNAME=	writeas-cli
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0-wf
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www textproc
 MASTER_SITES=	https://code.as/core/socks/archive/v1.0.0.tar.gz?dummy=/:core_socks
 DISTFILES=	core-socks-v1.0.0.tar.gz:core_socks
@@ -22,7 +22,7 @@ GH_TUPLE=	atotto:clipboard:v0.1.1:atotto_clipboard/vendor/github.com/atotto/clip
 		go-ini:ini:v1.39.3:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		golang:crypto:505ab145d0a9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:e147a9138326:golang_net/vendor/golang.org/x/net \
-		golang:sys:0f9fa26af87c:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.5.0:golang_sys/vendor/golang.org/x/sys \
 		gopherjs:gopherjs:d547d1d9531e:gopherjs_gopherjs/vendor/github.com/gopherjs/gopherjs \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.0.0:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
