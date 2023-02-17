@@ -13,12 +13,13 @@
 name="containerd"
 rcvar="containerd_enable"
 
-pidfile="/var/run/${name}.pid"
-command="/usr/sbin/daemon"
-command_args="-P ${pidfile} -r -S -t ${name} -T ${name} %%LOCALBASE%%/bin/containerd"
-
 load_rc_config $name
 : ${containerd_enable:=no}
+: ${containerd_args:=""}
+
+pidfile="/var/run/${name}.pid"
+command="/usr/sbin/daemon"
+command_args="-P ${pidfile} -r -S -t ${name} -T ${name} %%LOCALBASE%%/bin/containerd ${containerd_args}"
 
 # containerd needs to execute a runtime (eg. runj)
 PATH="${PATH}:%%PREFIX%%/sbin:%%PREFIX%%/bin"

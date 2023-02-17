@@ -1,7 +1,7 @@
 PORTNAME=	containerd
 DISTVERSIONPREFIX=v
 DISTVERSION=	1.6.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	decke@FreeBSD.org
@@ -32,5 +32,9 @@ PLIST_FILES=	bin/containerd \
 
 do-install:
 	@(cd ${WRKSRC} && ${SETENV} DESTDIR="${STAGEDIR}" ${MAKE_CMD} install)
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/etc/containerd
+	${CP} ${FILESDIR}/*.sample ${STAGEDIR}${PREFIX}/etc/containerd
 
 .include <bsd.port.mk>
