@@ -16,7 +16,8 @@
 %%WWWDIR%%/template/404.tmpl
 %%WWWDIR%%/template/error.tmpl
 %%WWWDIR%%/template/authorize.tmpl
-%%WWWDIR%%/assets/NotoSans-Regular.ttf
+%%WWWDIR%%/template/domain-blocklist.tmpl
+%%WWWDIR%%/template/finalize.tmpl
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon5.png
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon2.png
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon3.png
@@ -24,9 +25,13 @@
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon1.png
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon6.png
 %%WWWDIR%%/assets/mastodon.svg
-%%WWWDIR%%/assets/OFL.txt
-%%WWWDIR%%/assets/NotoSans-Bold.ttf
+%%WWWDIR%%/assets/logo.svg
 %%WWWDIR%%/assets/default_header.png
+%%WWWDIR%%/assets/fonts/OFL.txt
+%%WWWDIR%%/assets/fonts/noto-sans-v27-latin-700.woff
+%%WWWDIR%%/assets/fonts/noto-sans-v27-latin-700.woff2
+%%WWWDIR%%/assets/fonts/noto-sans-v27-latin-regular.woff
+%%WWWDIR%%/assets/fonts/noto-sans-v27-latin-regular.woff2
 %%WWWDIR%%/assets/Fork-Awesome/CONTRIBUTORS.md
 %%WWWDIR%%/assets/Fork-Awesome/fonts/forkawesome-webfont.ttf
 %%WWWDIR%%/assets/Fork-Awesome/fonts/forkawesome-webfont.woff2

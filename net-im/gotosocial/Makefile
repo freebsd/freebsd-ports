@@ -1,7 +1,6 @@
 PORTNAME=	gotosocial
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	2
+DISTVERSION=	0.7.0
 CATEGORIES=	net-im
 MASTER_SITES?=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${DISTVERSION}/:web
 DISTFILES?=	${PORTNAME}_${DISTVERSION}_web-assets.tar.gz:web
@@ -13,14 +12,18 @@ WWW=		https://docs.gotosocial.org/en/latest/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
+ONLY_FOR_ARCHS_REASON=	https://gitlab.com/cznic/libc/-/issues/15
 
-# Note: we don't use go:modules, because this project vendors all deps
-USES=		go
-USE_RC_SUBR=	${PORTNAME}
-
+USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	superseriousbusiness
+USE_RC_SUBR=	${PORTNAME}
+
+GO_TARGET=	./cmd/gotosocial
+GO_BUILDFLAGS=	-trimpath -tags "netgo osusergo static_build kvformat ${WITH_DEBUG:Ddebugenv}" \
+	-ldflags="${STRIP} -w -extldflags '-static' -X 'main.Version=${PKGVERSION}'"
+CGO_ENABLED=	0
 
 SUB_LIST=	DBDIR="${DBDIR}" \
 		GROUP="${GROUPS}" \
@@ -34,13 +37,7 @@ DBDIR=		/var/db/${PORTNAME}
 
 PLIST_SUB=	WWWDIR="${WWWDIR}"
 
-do-build:
-	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		VERSION=${DISTVERSION} COMMIT=${GH_TAGNAME} scripts/build.sh )
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/bin/
+post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for x in LICENSE README.md
 	${INSTALL_DATA} ${WRKSRC}/${x} \
