@@ -44,9 +44,8 @@ load_rc_config ${name}
 : ${%%RC_NAME%%_pid:="/var/run/%%PORTNAME%%.pid"}
 
 pidfile="${%%RC_NAME%%_pid}"
-procname="%%PREFIX%%/lib/emby-server/system/EmbyServer"
 command="/usr/sbin/daemon"
-command_args="-r -f -p ${%%RC_NAME%%_pid} ${procname} \
+command_args="-r -f -P ${%%RC_NAME%%_pid} %%PREFIX%%/lib/emby-server/system/EmbyServer \
 	-os freebsd \
 	-ffdetect ${%%RC_NAME%%_ffdetect} \
 	-ffmpeg ${%%RC_NAME%%_ffmpeg} \
