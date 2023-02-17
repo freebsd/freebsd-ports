@@ -12,6 +12,9 @@ WWW=		https://rundeck.org
 
 LICENSE=	APACHE20
 
+DEPRECATED=	unmaintained and newer version available in sysutils/rundeck3
+EXPIRATION_DATE=	2023-05-17
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.8+
 
