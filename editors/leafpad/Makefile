@@ -1,5 +1,6 @@
 PORTNAME=	leafpad
 PORTVERSION=	0.8.19
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SAVANNAH
 
@@ -13,7 +14,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		desktop-file-utils gmake gnome pkgconfig
+USES=		desktop-file-utils gettext gmake gnome pkgconfig
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-chooser
@@ -22,11 +23,7 @@ LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README
 
-OPTIONS_DEFINE=	DOCS NLS
-OPTIONS_SUB=	yes
-
-NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
 
