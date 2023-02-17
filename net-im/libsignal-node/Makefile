@@ -1,15 +1,15 @@
 PORTNAME=	libsignal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.21.1
-PORTREVISION=	3
+DISTVERSION=	0.22.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://nodejs.org/download/release/v${NODE_VERSION}/:node
 PKGNAMESUFFIX=	-node
-DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz:prefetch \
+DISTFILES=	libsignal-node-${DISTVERSION}-yarn-cache.tar.gz \
 		node-v${NODE_VERSION}-headers.tar.gz:node
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Platform-agnostic APIs used by the official Signal clients and servers
+WWW=		https://github.com/signalapp/libsignal
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -48,6 +48,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		base64-0.13.0 \
 		bincode-1.3.3 \
 		bindgen-0.60.1 \
+		bit-set-0.5.3 \
+		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		blake2-0.9.2 \
 		block-buffer-0.9.0 \
@@ -88,6 +90,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		either-1.6.1 \
 		fastrand-1.7.0 \
 		fixedbitset-0.4.1 \
+		fnv-1.0.7 \
 		foreign-types-0.5.0 \
 		foreign-types-macros-0.2.2 \
 		foreign-types-shared-0.3.1 \
@@ -158,10 +161,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		ppv-lite86-0.2.16 \
 		proc-macro-crate-1.1.3 \
 		proc-macro2-1.0.29 \
+		proptest-1.0.0 \
 		prost-0.9.0 \
 		prost-build-0.9.0 \
 		prost-derive-0.9.0 \
 		prost-types-0.9.0 \
+		quick-error-1.2.3 \
+		quick-error-2.0.1 \
 		quote-1.0.10 \
 		rand-0.7.3 \
 		rand-0.8.5 \
@@ -170,6 +176,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rand_core-0.5.1 \
 		rand_core-0.6.3 \
 		rand_hc-0.2.0 \
+		rand_xorshift-0.3.0 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
 		redox_syscall-0.2.11 \
@@ -179,6 +186,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.3.3 \
+		rusty-fork-0.3.0 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
@@ -216,6 +224,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		uuid-1.1.2 \
 		variant_count-1.1.0 \
 		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
@@ -233,8 +242,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		x25519-dalek-1.1.1 \
 		zeroize-1.3.0 \
 		zeroize_derive-1.3.2 \
-		curve25519-dalek@git+https://github.com/signalapp/curve25519-dalek?branch=lizard2\#4f0aa6653c51598daa0a2f53b8ba54ce0eedfbdd \
-		boring,boring-sys@git+https://github.com/signalapp/boring?branch=libsignal\#b95cb545b97395cdf5da36814f7dfb6e3856a99c
+		boring,boring-sys@git+https://github.com/signalapp/boring?branch=libsignal\#25e1dd8fa519ae90772008fbd4a284582096fece \
+		curve25519-dalek@git+https://github.com/signalapp/curve25519-dalek?branch=lizard2\#4f0aa6653c51598daa0a2f53b8ba54ce0eedfbdd
 
 MAKE_ENV=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron21 \
 		ELECTRON_SKIP_BINARY_DOWNLOAD=1 \
@@ -283,8 +292,8 @@ post-patch:
 
 # Check hash here: https://github.com/signalapp/boring/tree/libsignal/boring-sys/deps
 post-extract:
-	${MV} ${WRKDIR}/boringssl-f1c75347daa2ea81a941e953f2263e0a4d970c8d/* ${WRKDIR}/boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl
-	${MV} ${WRKDIR}/boringssl-ae223d6138807a13006342edfeef32e813246b39/* ${WRKDIR}/boring-b95cb545b97395cdf5da36814f7dfb6e3856a99c/boring-sys/deps/boringssl-fips
+	${MV} ${WRKDIR}/boringssl-f1c75347daa2ea81a941e953f2263e0a4d970c8d/* ${WRKDIR}/boring-25e1dd8fa519ae90772008fbd4a284582096fece/boring-sys/deps/boringssl
+	${MV} ${WRKDIR}/boringssl-ae223d6138807a13006342edfeef32e813246b39/* ${WRKDIR}/boring-25e1dd8fa519ae90772008fbd4a284582096fece/boring-sys/deps/boringssl-fips
 
 	${MKDIR} ${WRKDIR}/.cache/node-gyp/${NODE_VERSION}
 	${MV} ${WRKDIR}/node-v${NODE_VERSION}/include ${WRKDIR}/.cache/node-gyp/${NODE_VERSION}
