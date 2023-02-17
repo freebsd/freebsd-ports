@@ -20,6 +20,12 @@ bin/s6-ftrig-listen1
 bin/s6-ftrig-notify
 bin/s6-ftrig-wait
 bin/s6-ftrigrd
+bin/s6-instance-control
+bin/s6-instance-create
+bin/s6-instance-delete
+bin/s6-instance-list
+bin/s6-instance-maker
+bin/s6-instance-status
 bin/s6-ioconnect
 bin/s6-ipcclient
 bin/s6-ipcserver
@@ -62,6 +68,7 @@ bin/ucspilogd
 @sample %%ETCDIR%%/s6-svscan/env/PATH.sample
 @sample %%ETCDIR%%/s6-svscan/finish.sample
 include/s6/accessrules.h
+include/s6/auto.h
 include/s6/compat.h
 include/s6/config.h
 include/s6/fdholder.h
@@ -69,17 +76,23 @@ include/s6/ftrigr.h
 include/s6/ftrigw.h
 include/s6/lock.h
 include/s6/s6.h
+include/s6/servicedir.h
 include/s6/supervise.h
 lib/libs6.so
 lib/libs6.so.2.11
-lib/libs6.so.2.11.1.1
+lib/libs6.so.2.11.2.0
+lib/libs6auto.so
+lib/libs6auto.so.2.11
+lib/libs6auto.so.2.11.2.0
 lib/s6/libs6.a
+lib/s6/libs6auto.a
 libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/fifodir.html
 %%PORTDOCS%%%%DOCSDIR%%/ftrig.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/instances.html
 %%PORTDOCS%%%%DOCSDIR%%/localservice.html
 %%PORTDOCS%%%%DOCSDIR%%/notifywhenup.html
 %%PORTDOCS%%%%DOCSDIR%%/overview.html
@@ -105,6 +118,12 @@ libexec/s6lockd-helper
 %%PORTDOCS%%%%DOCSDIR%%/s6-ftrig-listen1.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-ftrig-notify.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-ftrig-wait.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-instance-control.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-instance-create.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-instance-delete.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-instance-list.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-instance-maker.html
+%%PORTDOCS%%%%DOCSDIR%%/s6-instance-status.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-ioconnect.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-ipcclient.html
 %%PORTDOCS%%%%DOCSDIR%%/s6-ipcserver-access.html
