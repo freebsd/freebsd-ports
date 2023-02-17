@@ -63,7 +63,25 @@
      update_args = [
        "--print-revision",
        "--verify-version=$clang_version",
-@@ -1860,7 +1860,7 @@ config("thin_archive") {
+@@ -1568,9 +1568,6 @@ config("default_warnings") {
+ 
+       if (!is_nacl) {
+         cflags += [
+-          # TODO(crbug.com/1343975) Evaluate and possibly enable.
+-          "-Wno-deprecated-builtins",
+-
+           # TODO(crbug.com/1352183) Evaluate and possibly enable.
+           "-Wno-bitfield-constant-conversion",
+         ]
+@@ -1697,7 +1694,6 @@ config("chromium_code") {
+       cflags += [
+         # Thread safety analysis. See base/thread_annotations.h and
+         # https://clang.llvm.org/docs/ThreadSafetyAnalysis.html
+-        "-Wthread-safety",
+       ]
+     }
+   }
+@@ -1860,7 +1856,7 @@ config("thin_archive") {
    # archives.
    # TODO(crbug.com/1221615): Enable on is_apple if use_lld once that no longer
    # confuses lldb.
@@ -72,7 +90,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2367,7 +2367,7 @@ config("symbols") {
+@@ -2367,7 +2363,7 @@ config("symbols") {
      # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
      # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
      if ((!is_nacl || is_clang) && current_os != "zos") {
@@ -81,7 +99,7 @@
      }
  
      if (!is_nacl && is_clang && !is_tsan && !is_asan) {
-@@ -2405,7 +2405,7 @@ config("symbols") {
+@@ -2405,7 +2401,7 @@ config("symbols") {
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      _enable_gdb_index =
@@ -90,7 +108,7 @@
          current_os != "zos" && (use_gold || use_lld) &&
          # Disable on non-fission 32-bit Android because it pushes
          # libcomponents_unittests over the 4gb size limit.
-@@ -2433,7 +2433,7 @@ config("symbols") {
+@@ -2433,7 +2429,7 @@ config("symbols") {
    }
  
    if (is_clang && (!is_nacl || is_nacl_saigo) && current_os != "zos") {

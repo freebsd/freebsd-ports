@@ -1,7 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.23.0
-PORTREVISION=	1
+DISTVERSION=	2.24.0
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:base \
 		LOCAL/mikael/ringrtc/:boringssl \
@@ -58,7 +57,7 @@ EXTRA_PATCHES+=	${"${:!${GREP} mempcpy ${CROSS_SYSROOT}/usr/include/string.h \
 	|| ${TRUE}!}" == "":?${PATCHDIR}/extra-patch-no-mempcpy-nasm:}
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	5359
+WEBRTC_REV=	5359c
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
 BASE_REV=		b054aaefd4d4ec5aad7189c4e97000a06b594163
