@@ -1,5 +1,5 @@
 PORTNAME=	tang
-DISTVERSION=	11
+DISTVERSION=	12
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/latchset/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -13,10 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libhttp_parser.so:www/http-parser \
 		libjansson.so:devel/jansson \
 		libjose.so:net/jose
-RUN_DEPENDS=	socat:net/socat
 BUILD_DEPENDS=	a2x:textproc/asciidoc \
 		${LOCALBASE}/libdata/pkgconfig/jose.pc:net/jose \
-		socat:net/socat
+		socat:net/socat \
+		curl:ftp/curl
 
 USES=		compiler:c11 cpe meson pkgconfig tar:xz
 
