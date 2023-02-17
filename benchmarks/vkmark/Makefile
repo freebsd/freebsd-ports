@@ -1,11 +1,11 @@
 PORTNAME=	vkmark
 DISTVERSION=	2017.08-29
 DISTVERSIONSUFFIX=	-gd872846
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	27fa846e34ed.patch:-p1 # https://github.com/vkmark/vkmark/pull/29
+PATCHFILES+=	16514ab6c65f.patch:-p1 # https://github.com/vkmark/vkmark/pull/29
 PATCHFILES+=	7bbe275e4904.patch:-p1 # https://github.com/vkmark/vkmark/pull/47
 PATCHFILES+=	6395c5621fb8.patch:-p1 # https://github.com/vkmark/vkmark/pull/47
 PATCHFILES+=	dd75130a7ddf.patch:-p1 # https://github.com/vkmark/vkmark/pull/47
