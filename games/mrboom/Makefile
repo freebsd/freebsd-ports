@@ -11,6 +11,8 @@ WWW=		http://mrboom.mumblecore.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_FreeBSD_14_i386=	lld crashes during build
+
 LIB_DEPENDS=	libmodplug.so:audio/libmodplug
 
 USES=		compiler:c++11-lang gmake minizip sdl
