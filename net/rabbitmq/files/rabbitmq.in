@@ -23,7 +23,7 @@ load_rc_config $name
 rabbitmq_server="%%PREFIX%%/sbin/rabbitmq-server"
 rabbitmq_ctl="%%PREFIX%%/sbin/rabbitmqctl"
 rabbitmq_env_conf="%%PREFIX%%/etc/rabbitmq/rabbitmq-env.conf"
-pidfile="/var/run/${name}.pid"
+pidfile="/var/run/rabbitmq/${name}.pid"
 
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
@@ -64,7 +64,11 @@ rabbitmq_start()
 		chmod 600 ${RABBITMQ_HOME}/.erlang.cookie
 	fi
 
-	install -o ${rabbitmq_user} /dev/null ${pidfile}
+	install -d -o ${rabbitmq_user} -g ${rabbitmq_user} /var/run/${name}
+
+	export RABBITMQ_HOME RABBITMQ_LOG_BASE RABBITMQ_PID_FILE
+
+	rm -f ${pidfile}
 
 	debug "Running: rabbitmq-server -detached"
 	su -m ${rabbitmq_user} -c "${rabbitmq_server} -detached" >/dev/null 2>&1
@@ -75,6 +79,7 @@ rabbitmq_start()
 rabbitmq_stop()
 {
 	echo "Stopping ${name}."
+
 	if [ -f ${pidfile} ]; then
 		debug "Running: ${rabbitmq_ctl} stop ${pidfile}"
 		su -m ${rabbitmq_user} -c "${rabbitmq_ctl} stop ${pidfile}" >/dev/null 2>&1
