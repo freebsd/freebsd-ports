@@ -48,6 +48,7 @@
     SUBDIR += gspiceui
     SUBDIR += gtkwave
     SUBDIR += horizon-eda
+    SUBDIR += hs-verismith
     SUBDIR += ifcopenshell
     SUBDIR += impact
     SUBDIR += irsim
