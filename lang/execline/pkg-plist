@@ -1,7 +1,6 @@
 bin/background
 bin/backtick
 bin/case
-bin/cd
 bin/define
 bin/dollarat
 bin/elgetopt
@@ -11,8 +10,6 @@ bin/eltest
 bin/emptyenv
 bin/envfile
 bin/exec
-bin/execline-cd
-bin/execline-umask
 bin/execlineb
 bin/exit
 bin/export
@@ -46,10 +43,15 @@ bin/runblock
 bin/shift
 bin/trap
 bin/tryexec
-bin/umask
 bin/unexport
 bin/wait
 bin/withstdinas
+@mode 755
+bin/execline-cd
+bin/execline-umask
+bin/cd
+bin/umask
+@mode
 include/execline/config.h
 include/execline/execline.h
 lib/execline/libexecline.a

@@ -1,5 +1,6 @@
 PORTNAME=	execline
 PORTVERSION=	2.9.1.0
+PORTREVISION=	1
 CATEGORIES=	lang shells
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
