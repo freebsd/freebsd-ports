@@ -1,6 +1,5 @@
 bin/tokodon
 share/applications/org.kde.tokodon.desktop
-share/icons/hicolor/scalable/actions/tokodon-chat-reply.svg
 share/icons/hicolor/scalable/apps/org.kde.tokodon.svg
 share/knotifications5/tokodon.notifyrc
 share/locale/ca/LC_MESSAGES/tokodon.mo
