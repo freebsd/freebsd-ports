@@ -1,5 +1,5 @@
 PORTNAME=	libayatana-indicator
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.3
 CATEGORIES=	devel
 
 MAINTAINER=	jgh@FreeBSD.org
@@ -8,22 +8,31 @@ WWW=		https://github.com/AyatanaIndicators/libayatana-indicator
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+LIB_DEPENDS=	libayatana-ido3-0.4.so:devel/ayatana-ido \
 		libgtest.so:devel/googletest \
-		libayatana-ido3-0.4.so:devel/ayatana-ido
+		libharfbuzz.so:print/harfbuzz
 BUILD_DEPENDS=	lcov>=0:devel/lcov
 
-USES=	cmake localbase:ldflags gnome pkgconfig vala:build
+USES=		cmake gnome localbase:ldflags pkgconfig vala:build
 
-USE_GNOME=	introspection glib20 gtk30 pango atk cairo gdkpixbuf2
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 introspection pango
 
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AyatanaIndicators
 
+PORTDOCS=	AUTHORS COPYING ChangeLog NEWS README.md
+OPTIONS_DEFINE=	DOCS
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libayatana-indicator3.so*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/libayatana-indicator/ayatana-indicator-loader3
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+.for doc in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${STAGEDIR}${DOCSDIR}
+.endfor
 
 .include <bsd.port.mk>
