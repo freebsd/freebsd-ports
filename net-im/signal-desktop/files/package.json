@@ -4,7 +4,7 @@
   "description": "Private messaging from your desktop",
   "desktopName": "signal.desktop",
   "repository": "https://github.com/signalapp/Signal-Desktop.git",
-  "version": "6.5.1",
+  "version": "6.6.0",
   "license": "AGPL-3.0-only",
   "author": {
     "name": "Signal Messenger, LLC",
@@ -52,6 +52,7 @@
     "danger:local": "./danger/danger.sh local --base main",
     "danger:ci": "./danger/danger.sh ci --base origin/main",
     "format": "pprettier --write '**/*.{ts,tsx,d.ts,js,json,html,scss,md,yml,yaml}' '!node_modules/**'",
+    "svgo": "svgo images/**/*.svg",
     "transpile": "run-p check:types build:esbuild",
     "check:types": "tsc --noEmit",
     "clean-transpile-once": "rimraf app/**/*.js app/*.js sticker-creator/**/*.js sticker-creator/*.js ts/**/*.js ts/*.js tsconfig.tsbuildinfo",
@@ -90,8 +91,8 @@
     "@popperjs/core": "2.11.6",
     "@react-spring/web": "9.5.5",
     "@signalapp/better-sqlite3": "8.4.3",
-    "@signalapp/libsignal-client": "0.21.1",
-    "@signalapp/ringrtc": "2.23.0",
+    "@signalapp/libsignal-client": "0.22.0",
+    "@signalapp/ringrtc": "2.24.0",
     "@types/fabric": "4.5.3",
     "array-move": "2.1.0",
     "backbone": "1.4.0",
@@ -291,12 +292,13 @@
     "npm-run-all": "4.1.5",
     "nyc": "11.4.1",
     "patch-package": "6.4.7",
-    "playwright": "1.17.1",
+    "playwright": "1.30.0",
     "prettier": "2.7.1",
     "sass": "1.49.7",
     "sass-loader": "10.2.0",
     "sinon": "11.1.1",
     "style-loader": "1.0.0",
+    "svgo": "3.0.2",
     "terser-webpack-plugin": "5.1.1",
     "ts-loader": "4.1.0",
     "ts-node": "8.3.0",
@@ -380,6 +382,7 @@
           "minOSVersion": "6.1.0"
         }
       },
+      "signDlls": true,
       "target": [
         "nsis"
       ]

@@ -1,11 +1,28 @@
 #!/bin/sh
-SIGNAL_VERS=v6.4.1
+SIGNAL_VERS=v6.6.0
 
-ringrtc_version=$(fetch -qo - https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json | grep '@signalapp/ringrtc"' | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
+fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json
+ringrtc_version=$(grep '@signalapp/ringrtc"' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
 echo "RINGRTC_VERSION= ${ringrtc_version}"
 
 webrtc_version=$(fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v${ringrtc_version}/config/version.properties | grep 'webrtc.version' | awk -F '=' '{print $2}')
-echo "WEBRTC_REV= ${webrtc_version} ; https://raw.githubusercontent.com/signalapp/ringrtc/v${ringrtc_version}/config/version.properties"
+echo "WEBRTC_REV= ${webrtc_version}"
 
-libsignalclient_version=$(fetch -qo - https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/yarn.lock | grep 'signalapp/libsignal-client@' | awk -F '@' '{print $3}' | sed 's#", "##')
+libsignalclient_version=$(grep '@signalapp/libsignal-client' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
 echo "LIBSIGNAL_VERSION= ${libsignalclient_version}"
+
+electron_version=$(grep '"electron":' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
+echo "ELECTRON_VERSION= ${electron_version}"
+
+bsqlite3_version=$(grep '@signalapp/better-sqlite3' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
+
+fetch -qo /tmp/download.js https://raw.githubusercontent.com/signalapp/better-sqlite3/v${bsqlite3_version}/deps/download.js
+
+BASE_URI=https://build-artifacts.signal.org/desktop
+HASH=$(awk /"HASH ="/'{print $4}' /tmp/download.js | sed -e 's#;##g' -e "s#'##g")
+SQLCIPHER_VERSION=$(awk /"SQLCIPHER_VERSION ="/'{print $4}' /tmp/download.js | sed -e 's#;##g' -e "s#'##g")
+OPENSSL_VERSION=$(awk /"OPENSSL_VERSION ="/'{print $4}' /tmp/download.js | sed -e 's#;##g' -e "s#'##g")
+TOKENIZER_VERSION=$(awk /"TOKENIZER_VERSION ="/'{print $4}' /tmp/download.js | sed -e 's#;##g' -e "s#'##g")
+TAG="${SQLCIPHER_VERSION}--${OPENSSL_VERSION}--${TOKENIZER_VERSION}"
+echo "Signal-FTS5-Extension= ${TOKENIZER_VERSION}"
+echo "SQLCIPHER= sqlcipher-${TAG}-${HASH}"
