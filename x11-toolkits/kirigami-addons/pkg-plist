@@ -13,6 +13,9 @@ lib/cmake/KF5KirigamiAddons/KF5KirigamiAddonsConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/private/MobileDateInput.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/private/TumblerTimePicker.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/qmldir
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/SearchPopupField.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/libcomponentsplugin.so
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/qmldir
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/AboutPage.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/AbstractFormDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormArrow.qml
@@ -29,6 +32,7 @@ lib/cmake/KF5KirigamiAddons/KF5KirigamiAddonsConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormTextDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormTextFieldDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/libmobileformplugin.so
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/private/AboutKDE.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/private/ContentItemLoader.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/qmldir
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/sounds/SoundsPicker.qml
