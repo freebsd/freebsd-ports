@@ -12,6 +12,9 @@ WWW=		https://rundeck.org
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Unmaintained, upstream support ends 2023-03-23
+EXPIRATION_DATE=	2023-09-23
+
 USES=		cpe
 CPE_VENDOR=	pagerduty
 USE_JAVA=	yes
