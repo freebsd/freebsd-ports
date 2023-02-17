@@ -1,6 +1,6 @@
 PORTNAME=	gnome-shell
 PORTVERSION=	42.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -34,7 +34,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
 		libpolkit-agent-1.so:sysutils/polkit \
 		libpulse.so:audio/pulseaudio \
 		libsecret-1.so:security/libsecret \
-		libsoup-2.4.so:devel/libsoup \
+		libsoup-3.0.so:devel/libsoup3 \
 		libstartup-notification-1.so:x11/startup-notification
 RUN_DEPENDS=	gdm:x11/gdm \
 		gkbd-keyboard-display:x11/libgnomekbd \
