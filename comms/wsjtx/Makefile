@@ -1,6 +1,6 @@
 PORTNAME=	wsjtx
 DISTVERSION=	2.5.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/wsjt/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
@@ -41,7 +41,7 @@ _PATCHES=	wsjtx.patch hamlib.patch
 FFLAGS+=	-fallow-argument-mismatch
 .endif
 
-_HAMLIB_PATCHES=	configure hamlib.pc.in tests/rigtestlibusb.c
+_HAMLIB_PATCHES=	configure hamlib.pc.in tests/rigtestlibusb.c src/misc.c
 make-hamlib-patch:
 	${MV} ${FILESDIR}/hamlib.patch ${FILESDIR}/hamlib.patch.old
 . for f in ${_HAMLIB_PATCHES}

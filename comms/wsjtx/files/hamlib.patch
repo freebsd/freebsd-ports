@@ -1,5 +1,5 @@
---- hamlib/configure.orig	2022-01-02 11:10:19.000000000 +0100
-+++ hamlib/configure	2022-04-13 12:51:01.174492000 +0200
+--- hamlib/configure.orig	2022-01-02 05:10:19.000000000 -0500
++++ hamlib/configure	2023-02-17 16:55:21.413328000 -0500
 @@ -19135,7 +19135,7 @@
  case "$host_os" in #(
    freebsd*) :
@@ -17,8 +17,8 @@
  LIBUSB=""
  
  
---- hamlib/hamlib.pc.in.orig	2022-01-02 11:10:11.000000000 +0100
-+++ hamlib/hamlib.pc.in	2022-04-13 12:34:36.119285000 +0200
+--- hamlib/hamlib.pc.in.orig	2022-01-02 05:10:11.000000000 -0500
++++ hamlib/hamlib.pc.in	2023-02-17 16:55:21.413939000 -0500
 @@ -7,7 +7,6 @@
  Description: Library to control radio and rotator equipment.
  URL: @PACKAGE_URL@
@@ -29,8 +29,8 @@
 -Libs.private: @MATH_LIBS@ @DL_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@
 +Libs: -L${libdir} ${libdir}/libhamlib.a
 +Libs.private: @MATH_LIBS@ @DL_LIBS@ @NET_LIBS@ @PTHREAD_LIBS@ -lusb
---- hamlib/tests/rigtestlibusb.c.orig	2022-01-02 11:10:11.000000000 +0100
-+++ hamlib/tests/rigtestlibusb.c	2022-04-13 12:34:36.119728000 +0200
+--- hamlib/tests/rigtestlibusb.c.orig	2022-01-02 05:10:11.000000000 -0500
++++ hamlib/tests/rigtestlibusb.c	2023-02-17 16:55:21.414509000 -0500
 @@ -115,7 +115,10 @@
      printf("      wSpeedSupported:       %u\n", ss_usb_cap->wSpeedSupported);
      printf("      bFunctionalitySupport: %u\n", ss_usb_cap->bFunctionalitySupport);
@@ -60,3 +60,15 @@
      libusb_free_bos_descriptor(bos);
  }
  
+--- hamlib/src/misc.c.orig	2023-02-17 18:06:57.171679000 -0500
++++ hamlib/src/misc.c	2023-02-17 18:13:49.377881000 -0500
+@@ -2550,7 +2550,8 @@
+     if (localtime)
+     {
+         mytm = localtime_r(&t, &result);
+-        mytimezone = timezone;
++	/* For FreeBSD */
++        mytimezone = mytm->tm_gmtoff;
+     }
+     else
+     {
