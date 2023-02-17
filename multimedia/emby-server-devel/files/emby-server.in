@@ -55,8 +55,7 @@ command_args="-r -f -P ${%%RC_NAME%%_pid} %%PREFIX%%/lib/emby-server/system/Emby
 start_precmd=%%RC_NAME%%_precmd
 %%RC_NAME%%_precmd()
 {
-	[ -f ${%%RC_NAME%%_pid} ] || install -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- /dev/null ${%%RC_NAME%%_pid}
-	[ -d ${%%RC_NAME%%_data_dir} ] || install -d -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} -- ${%%RC_NAME%%_data_dir}
+	[ -d ${%%RC_NAME%%_data_dir} ] || install -d -g ${%%RC_NAME%%_group} -o ${%%RC_NAME%%_user} ${%%RC_NAME%%_data_dir}
 
 	# .NET 6+ use dual mode sockets to avoid the separate AF handling.
 	# disable .NET use of V6 if no ipv6 is configured.
@@ -67,12 +66,6 @@ start_precmd=%%RC_NAME%%_precmd
 	fi
 
 	export LD_LIBRARY_PATH=%%PREFIX%%/lib/emby-server/lib:%%LOCALBASE%%/lib
-}
-
-stop_postcmd=%%RC_NAME%%_postcmd
-%%RC_NAME%%_postcmd()
-{
-	rm -f ${%%RC_NAME%%_pid}
 }
 
 run_rc_command "$1"
