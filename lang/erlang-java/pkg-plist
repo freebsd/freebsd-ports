@@ -40,6 +40,7 @@ lib/erlang/lib/jinterface-%%APP_VERSION%%/java_src/com/ericsson/otp/erlang/OtpEr
 lib/erlang/lib/jinterface-%%APP_VERSION%%/java_src/com/ericsson/otp/erlang/OtpErlangUShort.java
 lib/erlang/lib/jinterface-%%APP_VERSION%%/java_src/com/ericsson/otp/erlang/OtpException.java
 lib/erlang/lib/jinterface-%%APP_VERSION%%/java_src/com/ericsson/otp/erlang/OtpExternal.java
+lib/erlang/lib/jinterface-%%APP_VERSION%%/java_src/com/ericsson/otp/erlang/OtpGenericTransportFactory.java
 lib/erlang/lib/jinterface-%%APP_VERSION%%/java_src/com/ericsson/otp/erlang/OtpInputStream.java
 lib/erlang/lib/jinterface-%%APP_VERSION%%/java_src/com/ericsson/otp/erlang/OtpLocalNode.java
 lib/erlang/lib/jinterface-%%APP_VERSION%%/java_src/com/ericsson/otp/erlang/OtpMD5.java
