@@ -1,6 +1,5 @@
 PORTNAME=	gpu-firmware-kmod
-PORTVERSION=	20221207
-PORTREVISION=	1
+PORTVERSION=	20230210
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -64,11 +63,16 @@ RUN_DEPENDS+=	gpu-firmware-intel-kmod-skylake>0:graphics/gpu-firmware-intel-kmod
 		gpu-firmware-intel-kmod-icelake>0:graphics/gpu-firmware-intel-kmod@icelake \
 		gpu-firmware-intel-kmod-elkhartlake>0:graphics/gpu-firmware-intel-kmod@elkhartlake \
 		gpu-firmware-intel-kmod-tigerlake>0:graphics/gpu-firmware-intel-kmod@tigerlake \
-		gpu-firmware-intel-kmod-rocketlake>0:graphics/gpu-firmware-intel-kmod@rocketlake
+		gpu-firmware-intel-kmod-rocketlake>0:graphics/gpu-firmware-intel-kmod@rocketlake \
+		gpu-firmware-intel-kmod-dg1>0:graphics/gpu-firmware-intel-kmod@dg1 \
+		gpu-firmware-intel-kmod-alderlake>0:graphics/gpu-firmware-intel-kmod@alderlake
 .endif
 
 .if ${ARCH} != powerpc64
-RUN_DEPENDS+=	gpu-firmware-amd-kmod-banks>0:graphics/gpu-firmware-amd-kmod@banks \
+RUN_DEPENDS+=	gpu-firmware-amd-kmod-aldebaran>0:graphics/gpu-firmware-amd-kmod@aldebaran \
+		gpu-firmware-amd-kmod-arcturus>0:graphics/gpu-firmware-amd-kmod@arcturus \
+		gpu-firmware-amd-kmod-banks>0:graphics/gpu-firmware-amd-kmod@banks \
+		gpu-firmware-amd-kmod-beige-goby>0:graphics/gpu-firmware-amd-kmod@beige_goby \
 		gpu-firmware-amd-kmod-bonaire>0:graphics/gpu-firmware-amd-kmod@bonaire \
 		gpu-firmware-amd-kmod-carrizo>0:graphics/gpu-firmware-amd-kmod@carrizo \
 		gpu-firmware-amd-kmod-fiji>0:graphics/gpu-firmware-amd-kmod@fiji \
@@ -98,9 +102,11 @@ RUN_DEPENDS+=	gpu-firmware-amd-kmod-banks>0:graphics/gpu-firmware-amd-kmod@banks
 		gpu-firmware-amd-kmod-vega12>0:graphics/gpu-firmware-amd-kmod@vega12 \
 		gpu-firmware-amd-kmod-vega20>0:graphics/gpu-firmware-amd-kmod@vega20 \
 		gpu-firmware-amd-kmod-vegam>0:graphics/gpu-firmware-amd-kmod@vegam \
-		gpu-firmware-amd-kmod-verde>0:graphics/gpu-firmware-amd-kmod@verde
+		gpu-firmware-amd-kmod-verde>0:graphics/gpu-firmware-amd-kmod@verde \
+		gpu-firmware-amd-kmod-yellow-carp>0:graphics/gpu-firmware-amd-kmod@yellow_carp
 .if ${OSVERSION} >= 1301000
-RUN_DEPENDS+=	gpu-firmware-amd-kmod-dimgrey-cavefish>0:graphics/gpu-firmware-amd-kmod@dimgrey_cavefish \
+RUN_DEPENDS+=		gpu-firmware-amd-kmod-cyan-skillfish2>0:graphics/gpu-firmware-amd-kmod@cyan_skillfish2 \
+		gpu-firmware-amd-kmod-dimgrey-cavefish>0:graphics/gpu-firmware-amd-kmod@dimgrey_cavefish \
 		gpu-firmware-amd-kmod-green-sardine>0:graphics/gpu-firmware-amd-kmod@green_sardine \
 		gpu-firmware-amd-kmod-navy-flounder>0:graphics/gpu-firmware-amd-kmod@navy_flounder \
 		gpu-firmware-amd-kmod-sienna-cichlid>0:graphics/gpu-firmware-amd-kmod@sienna_cichlid \
