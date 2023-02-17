@@ -1,6 +1,5 @@
 PORTNAME=	game
-DISTVERSION=	2.1.2
-PORTREVISION=	1
+DISTVERSION=	2.1.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 RUN_DEPENDS=	${PYNUMPY} \
 		v4l_compat>0:multimedia/v4l_compat
 
-USES=		compiler:c11 jpeg pkgconfig python:3.6+ sdl xorg
+USES=		compiler:c11 jpeg localbase pkgconfig python:3.6+ sdl xorg
 USE_SDL=	sdl2 ttf2 image2 mixer2
 USE_PYTHON=	autoplist distutils
 USE_XORG=	x11
