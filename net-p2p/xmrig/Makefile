@@ -11,7 +11,9 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_powerpc64=	fails to compile: g++9: error: unrecognized command line option '-maes'; did you mean '-mads'?
-BROKEN_riscv64=	fails to compile: /nxb-bin/usr/lib/clang/11.0.0/include/cpuid.h:11:2: error: this header is for x86 only
+BROKEN_riscv64=		fails to compile: /nxb-bin/usr/lib/clang/11.0.0/include/cpuid.h:11:2: error: this header is for x86 only
+# See: https://github.com/xmrig/xmrig/issues/3212
+BROKEN_FreeBSD_14_i386=	fails to compile with llvm15 on i386
 
 USES=		cmake compiler:c++11-lang ssl
 USE_GITHUB=	yes
