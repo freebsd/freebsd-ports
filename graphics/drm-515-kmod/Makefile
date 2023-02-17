@@ -1,6 +1,5 @@
-PORTNAME=	drm-510-kmod
-PORTVERSION=	5.10.163
-PORTREVISION=	2
+PORTNAME=	drm-515-kmod
+PORTVERSION=	5.15.25
 CATEGORIES=	graphics kld
 
 MAINTAINER=	x11@FreeBSD.org
@@ -13,19 +12,19 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	the new KMS components are only supported on amd64, i386, aarch64, and powerpc64
 
-CONFLICTS_INSTALL=	drm-515-kmod
+CONFLICTS_INSTALL=	drm-510-kmod
 
 USES=		kmod uidfix compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod
-GH_TAGNAME=	drm_v5.10.163_2
+GH_TAGNAME=	drm_v5.15.25
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1301000
-IGNORE=		not supported on older than 13.1, no kernel support
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400081
+IGNORE=		not supported on older than 14.0, no kernel support
 .endif
 .if ${OPSYS} != FreeBSD
 IGNORE=		not supported on anything but FreeBSD (missing linuxkpi functionality)
