@@ -1,5 +1,6 @@
 PORTNAME=	jotta-cli
 DISTVERSION=	0.14.60923
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://repo.jotta.us/archives/freebsd/${ARCH:S|amd64|amd64|:S|i386|386|}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}_freebsd_${ARCH:S|amd64|amd64|:S|i386|386|}
@@ -13,11 +14,10 @@ LICENSE_NAME=	"Jottacloud Terms and Service"
 LICENSE_TEXT=	"JottaCloud has its own terms and conditions available at https://www.jottacloud.com/en/terms.html"
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
-RESTRICTED=	yes
-
 ONLY_FOR_ARCHS=	amd64 i386
-
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
+
+RESTRICTED=	yes
 
 USE_RC_SUBR=	jottad
 
