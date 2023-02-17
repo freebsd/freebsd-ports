@@ -1,0 +1,16 @@
+Osmium Tool is a multipurpose command line tool for working with OpenStreetMap
+data based on the Osmium library.
+
+With the Osmium Tool you can:
+
+* Get information about an OSM file
+* Show the differences between OSM files
+* Convert OSM files from one format into another (supports XML, PBF, and more)
+* Merge and apply change files to an OSM file (with or without history)
+* Create OSM change files from OSM data files
+* Extract data from OSM history files for a given point in time or a time range
+* Sort OSM files
+* Create geographical extracts from OSM files
+* Filter OSM files by tags
+* Filter changesets by many different criteria
+* And much more...
