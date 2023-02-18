@@ -31,6 +31,8 @@ CONFIGURE_ENV+=		PLUGINDIR="${PREFIX}/lib/openvpn/plugins"
 
 CONFLICTS_INSTALL?=	openvpn-2* openvpn-devel openvpn-mbedtls
 
+PORTSCOUT=		limit:^2\.5\.
+
 SUB_FILES=		pkg-message openvpn-client
 
 USERS=			openvpn
