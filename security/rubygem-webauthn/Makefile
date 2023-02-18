@@ -1,6 +1,5 @@
 PORTNAME=	webauthn
-PORTVERSION=	2.4.1
-PORTREVISION=	1
+PORTVERSION=	2.5.2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -16,13 +15,11 @@ RUN_DEPENDS=	rubygem-android_key_attestation>=0.3.0<0.4:security/rubygem-android
 		rubygem-bindata>=2.4<3:devel/rubygem-bindata \
 		rubygem-cbor>=0.5.9<0.6:devel/rubygem-cbor \
 		rubygem-cose>=1.1<2:security/rubygem-cose \
-		rubygem-openssl2>=2.0<3:security/rubygem-openssl2 \
+		rubygem-openssl2>=2.2<3.1:security/rubygem-openssl2 \
 		rubygem-safety_net_attestation>=0.4.0<0.5:security/rubygem-safety_net_attestation \
-		rubygem-securecompare>=1.0<2:security/rubygem-securecompare \
-		rubygem-tpm-key_attestation>=0.10.0<0.11:security/rubygem-tpm-key_attestation
+		rubygem-tpm-key_attestation>=0.11.0<0.12:security/rubygem-tpm-key_attestation
 
-USES=		gem shebangfix
-SHEBANG_FILES=	script/ci/install-openssl script/ci/install-ruby
+USES=		gem
 
 NO_ARCH=	yes
 
