@@ -1,4 +1,4 @@
-TIMESTAMP = 1676208617
+TIMESTAMP = 1676710270
 SHA256 (rust/crates/addr2line-0.19.0.crate) = a76fd60b23679b7d19bd066031410fb7e458ccc5e958eb5c325888ce4baedc97
 SIZE (rust/crates/addr2line-0.19.0.crate) = 33210
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
@@ -481,5 +481,5 @@ SHA256 (rust/crates/xml5ever-0.16.2.crate) = 9234163818fd8e2418fcde330655e757900
 SIZE (rust/crates/xml5ever-0.16.2.crate) = 40971
 SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
-SHA256 (Builditluc-wiki-tui-v0.6.2_GH0.tar.gz) = d1d6d0b31450668810f1012d86417655da84cfb5a8b0e31194cf00affdd47e58
-SIZE (Builditluc-wiki-tui-v0.6.2_GH0.tar.gz) = 8514552
+SHA256 (Builditluc-wiki-tui-v0.6.4_GH0.tar.gz) = 7a9d490520c577babb50f73958dac6c454da6f24771820d7fbbe47f2da4df2c2
+SIZE (Builditluc-wiki-tui-v0.6.4_GH0.tar.gz) = 8523787
