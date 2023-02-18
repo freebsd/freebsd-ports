@@ -46,7 +46,7 @@ do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin
 
-# XXX Drop after FreeBSD 12.3 EOL around 2023-03-01 (don't forget distinfo)
+# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
 .if !exists(/usr/include/c++/v1/concepts) || make(makesum) || make(fetch)
 USES+=		llvm:min=12,build

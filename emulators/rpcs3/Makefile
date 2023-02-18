@@ -107,7 +107,7 @@ post-patch:
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 
-# XXX Drop after FreeBSD 12.3 EOL around 2023-03-01 (don't forget distinfo)
+# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31 (don't forget distinfo)
 .if !exists(/usr/include/c++/v1/concepts) || make(makesum) || make(fetch)
 USES+=		llvm:13,build
 CC=		clang${LLVM_VERSION}

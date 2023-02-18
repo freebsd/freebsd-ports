@@ -84,7 +84,7 @@ post-patch:
 		${WRKSRC}/UI/NativeApp.cpp
 	@${REINPLACE_CMD} -e 's/"unknown"/"${DISTVERSIONFULL}"/' \
 		${WRKSRC}/git-version.cmake
-# XXX Drop after FreeBSD 12.3 EOL around 2023-03-01
+# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31
 # https://cgit.freebsd.org/src/commit/?id=773538247007
 	@if [ ${OPSYS} = FreeBSD -a ${OSVERSION} -lt 1203501 ]; then \
 		${REINPLACE_CMD} -e '/if.*__STDC_/,/XXH/s/static_assert/_Static_assert/' \
