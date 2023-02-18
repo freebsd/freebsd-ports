@@ -1,7 +1,10 @@
 PORTNAME=	font-manager
 PORTVERSION=	0.8.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fonts gnome
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	b65f10af7996945d1cc3e1fcc0b157df701173f4.patch:-p1
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Font management application for the GNOME desktop
@@ -9,9 +12,6 @@ WWW=		https://fontmanager.github.io/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-# See: https://github.com/FontManager/font-manager/issues/310
-BROKEN_FreeBSD_14=	fails to compile with llvm15
 
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		itstool:textproc/itstool \
