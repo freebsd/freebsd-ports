@@ -1,6 +1,9 @@
 PORTNAME=	sjasmplus
-PORTVERSION=	1.20.1
+DISTVERSION=	1.20.2
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/z00m128/sjasmplus/releases/download/v${DISTVERSION}/
+EXTRACT_SUFX=	.tar.xz
+DISTFILES=	${PORTNAME}-${DISTVERSION}-src${EXTRACT_SUFX}
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Command-line cross-compiler of assembly language for Z80 CPU
@@ -8,12 +11,9 @@ WWW=		https://github.com/z00m128/sjasmplus
 
 LICENSE=	BSD3CLAUSE
 
-USES=		compiler:c++14-lang gmake
+USES=		compiler:c++14-lang gmake tar:xz
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	z00m128
-GH_PROJECT=	sjasmplus
-GH_TAGNAME=	v1.20.1
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
 OPTIONS_DEFAULT=	BUNDLED_LUA
@@ -25,17 +25,29 @@ BUNDLED_LUA_DESC=	Use bundled LUA 5.4
 NOLUA_DESC=		Do not use LUA
 SJLUA_DESC=		Which LUA version to use
 
-BUNDLED_LUA_GH_TUPLE=	${_LUA_GH_TUPLE}
-BUNDLED_LUA_MAKE_ARGS=	USE_BUNDLED_LUA=1
-DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt
+BUNDLED_LUA_MAKE_ARGS=	USE_BUNDLED_LUA=1 \
+			USE_LUA=1
+DOCS_BUILD_DEPENDS=	docbook-xsl-ns>0:textproc/docbook-xsl-ns \
+			xsltproc:textproc/libxslt
 LUA_USES=		lua:54
-LUA_GH_TUPLE=		${_LUA_GH_TUPLE}
-LUA_MAKE_ARGS=		USE_BUNDLED_LUA=0
-LUA_CPPFLAGS=		-I${LUA_INCDIR}
-LUA_LDFLAGS=		-L${LUA_LIBDIR} -llua-5.4
-NOLUA_MAKE_ARGS=	USE_LUA=0
+LUA_MAKE_ARGS=		INCDIR_LUA=${LUA_INCDIR} \
+			LUA_VER=${LUA_VER} \
+			USE_BUNDLED_LUA=0 \
+			USE_LUA=1
+LUA_LDFLAGS=		-L${LUA_LIBDIR}
+NOLUA_MAKE_ARGS=	USE_BUNDLED_LUA=0 \
+			USE_LUA=0
 
-_LUA_GH_TUPLE=	vinniefalco:LuaBridge:c882d32b:sjasmplus/LuaBridge
+.include <bsd.port.pre.mk>
+
+.if !${PORT_OPTIONS:MNOLUA}
+USE_GITHUB=	nodefault
+GH_TUPLE=	vinniefalco:LuaBridge:6580b187:sjasmplus/LuaBridge
+.endif
+
+post-patch-DOCS-on:
+	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
+		${WRKSRC}/docs/docbook-xsl-ns-html-customization-freebsd.xsl
 
 post-build-DOCS-on:
 	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} docs)
@@ -54,4 +66,4 @@ do-install-EXAMPLES-on:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/sjasmplus
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
