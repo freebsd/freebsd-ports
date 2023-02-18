@@ -15,6 +15,7 @@
     SUBDIR += akonadi-mime
     SUBDIR += akonadi-notes
     SUBDIR += akonadi-search
+    SUBDIR += alligator
     SUBDIR += aluminum
     SUBDIR += aoe
     SUBDIR += apache-commons-net
