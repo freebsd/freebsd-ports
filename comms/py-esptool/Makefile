@@ -1,6 +1,6 @@
 PORTNAME=	esptool
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4
+DISTVERSION=	4.5
 CATEGORIES=	comms python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>=3.0:comms/py-pyserial@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}ecdsa>=0.16.0:security/py-ecdsa@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}bitstring>=3.1.6,<4:devel/py-bitstring@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}cryptography>=2.1.4:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}reedsolo>=1.5.3,<1.5.5:devel/py-reedsolo@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}reedsolo>=1.5.3,<=1.6.0:devel/py-reedsolo@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyelftools>0:devel/py-pyelftools@${PY_FLAVOR}
 
 USES=		python:3.7+
