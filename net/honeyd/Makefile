@@ -12,6 +12,8 @@ WWW=		http://www.citi.umich.edu/u/provos/honeyd/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to compile
+
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libdnet.so:net/libdnet \
 		libpcre.so:devel/pcre
