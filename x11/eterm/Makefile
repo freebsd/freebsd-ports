@@ -26,7 +26,7 @@ CONFIGURE_ENV=	GDB=/usr/bin/gdb
 .endif
 
 CFLAGS+=	-Wno-int-conversion
-CPPFLAGS+=	-I${LOCALBASE}/include -W
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USES=		cpe iconv libtool shebangfix xorg
 SHEBANG_FILES=	${WRKSRC}/utils/kEsetroot.in
