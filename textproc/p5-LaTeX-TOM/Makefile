@@ -1,6 +1,5 @@
 PORTNAME=	LaTeX-TOM
-PORTVERSION=	1.03
-PORTREVISION=	1
+PORTVERSION=	1.05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +9,6 @@ COMMENT=	Perl module for parsing, analyzing, and manipulating LaTeX documents
 WWW=		https://metacpan.org/release/LaTeX-TOM
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>
