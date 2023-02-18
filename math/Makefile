@@ -411,6 +411,7 @@
     SUBDIR += jts
     SUBDIR += kahip
     SUBDIR += kalgebra
+    SUBDIR += kalk
     SUBDIR += kalker
     SUBDIR += kamis
     SUBDIR += kbruch
