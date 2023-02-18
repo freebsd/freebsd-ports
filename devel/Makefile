@@ -170,6 +170,7 @@
     SUBDIR += apitrace
     SUBDIR += app-builder
     SUBDIR += appstream
+    SUBDIR += appstream-compose
     SUBDIR += appstream-glib
     SUBDIR += appstream-qt
     SUBDIR += apr1
