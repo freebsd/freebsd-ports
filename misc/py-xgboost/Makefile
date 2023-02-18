@@ -1,6 +1,6 @@
 PORTNAME=	xgboost
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.3
+DISTVERSION=	1.7.4
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libdmlc.so:devel/dmlc-core \
 		libxgboost.so:misc/xgboost
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-learn>0:science/py-scikit-learn@${PY_FLAVOR}
 
 USES=		compiler:c11 python:3.5+ localbase:ldflags
 USE_PYTHON=	distutils pytest # Python tests are broken because py-scikit-learn is missing the py-threadpoolctl dependency which is also currently broken
