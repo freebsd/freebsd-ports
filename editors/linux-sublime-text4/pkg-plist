@@ -23,6 +23,7 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/Lib/python33/sublime_plugin.py
 %%DATADIR%%/Lib/python38/sublime.py
 %%DATADIR%%/Lib/python38/sublime_plugin.py
+%%DATADIR%%/Lib/python38/sublime_types.py
 %%DATADIR%%/Packages/ASP.sublime-package
 %%DATADIR%%/Packages/ActionScript.sublime-package
 %%DATADIR%%/Packages/AppleScript.sublime-package
@@ -79,6 +80,7 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 %%DATADIR%%/changelog.txt
 @(,,555) %%DATADIR%%/crash_reporter
 %%DATADIR%%/libcrypto.so.1.1
+%%DATADIR%%/libsqlite3.so
 %%DATADIR%%/libssl.so.1.1
 @(,,555) %%DATADIR%%/plugin_host-3.3
 @(,,555) %%DATADIR%%/plugin_host-3.8
