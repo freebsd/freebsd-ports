@@ -1,0 +1,11 @@
+--- lua/CMakeLists.txt.orig	2023-02-18 14:34:53 UTC
++++ lua/CMakeLists.txt
+@@ -31,6 +31,8 @@ if(BUILD_X11)
+     get_filename_component(X11_SM_LIB_PATH ${X11_SM_LIB} DIRECTORY)
+     link_directories(${X11_SM_LIB_PATH})
+ 
++    link_directories(${LIBS})
++
+     # cairo_set_dash() needs this special hack to work properly if you have a
+     # better solution, please let me know
+     wrap_tolua(luacairo_src cairo.pkg libcairo.patch)

@@ -1,5 +1,5 @@
 PORTNAME=	conky
-PORTVERSION=	1.17.0
+PORTVERSION=	1.18.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -11,7 +11,7 @@ LIB_DEPENDS=	libinotify.so:devel/libinotify
 BUILD_DEPENDS=	gsed:textproc/gsed
 
 USES=		cpe cmake compiler:c++11-lib gettext-runtime iconv \
-		localbase lua:52-53 pkgconfig tar:bzip2
+		localbase:ldflags lua:52-53 pkgconfig tar:bzip2
 
 CMAKE_ARGS=	-DBUILD_PORT_MONITORS:BOOL=false \
 		-DBUILD_IBM:BOOL=false \
@@ -152,15 +152,6 @@ EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-src_CMakeLists.txt
 post-patch:
 	@${REINPLACE_CMD} -e 's,^set(INCLUDE_SEARCH_PATH \(.*\)),set(INCLUDE_SEARCH_PATH \1 ${LUA_INCDIR}),' \
 		${WRKSRC}/cmake/ConkyPlatformChecks.cmake
-.if ${LUA_DEFAULT} == 5.2
-	# Force using lua 5.2
-	@${REINPLACE_CMD} -e 's/lua.*5\.*3//' \
-		${WRKSRC}/cmake/ConkyPlatformChecks.cmake
-.elif ${LUA_DEFAULT} == 5.3
-	# Force using lua 5.3
-	@${REINPLACE_CMD} -e 's/lua.*5\.*2//' \
-		${WRKSRC}/cmake/ConkyPlatformChecks.cmake
-.endif
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
