@@ -340,5 +340,5 @@ include/d/glibd-2/gtkd/Loader.d
 include/d/glibd-2/gtkd/paths.d
 lib/libglibd-2.0.so
 lib/libglibd-2.0.so.0
-lib/libglibd-2.0.so.2.2.0
+lib/libglibd-2.0.so.2.4.1
 libdata/pkgconfig/glibd-2.0.pc
