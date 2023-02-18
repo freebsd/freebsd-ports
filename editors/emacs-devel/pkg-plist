@@ -4303,6 +4303,8 @@ share/applications/emacsclient-mail.desktop
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/terminal.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/terminfo.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/termopts.h
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/textconv.c
+%%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/textconv.h
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/textprop.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/thread.c
 %%SOURCES%%%%DATADIR%%/%%EMACS_VER%%/src/thread.h
