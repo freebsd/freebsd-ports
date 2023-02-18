@@ -11,6 +11,9 @@ WWW=		https://amarok.kde.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	No longer actively maintained upstream.
+EXPIRATION_DATE=	2023-03-31
+
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libfftw3.so:math/fftw3 \
 		liblastfm5.so:audio/liblastfm-qt5 \
