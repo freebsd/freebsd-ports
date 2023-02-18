@@ -12,6 +12,7 @@ Window manager:
 - Resize and translate individual containers in their place while
   keeping the surrounding layout
 - Floating containers and automatic dialog, dock, widget etc. handling
+- Multiple named workspaces
 - Yank and paste containers to move them within the tree hierarchy
   along with typical move operations
 - Configuration with python, scriptable behaviour with client and
@@ -22,4 +23,7 @@ Compositor:
 - Vulkan renderer
 - Arbitrary window decorations and borders with user supplied shaders
 - Per-client materials
+- Automatically disable for fullscreen applications
 - Optional, alternatively use any other external compositor
+- Standalone compositor mode (beta) to be used in combination with any
+  other window manager
