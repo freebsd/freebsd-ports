@@ -17765,3 +17765,4 @@ x11/plasma5-kwayland-server|x11-wm/plasma5-kwin|2023-02-07|Reintegrated into x11
 finance/py-TA-Lib|finance/py-ta-lib|2023-02-12|Remove duplicate port
 x11-toolkits/gnocl||2023-02-13|Fails to build, newer snapshot depends on a removed port
 games/opendungeons||2023-02-14|Has expired: Broken for more than 6 months
+databases/mysql-connector-odbc|databases/mysql-connector-odbc-80|2023-02-18|Has expired: Requires EOLd mysql version
