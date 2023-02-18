@@ -1,0 +1,11 @@
+--- src/pppoe.c.orig	2023-02-18 22:32:31.307998000 +0700
++++ src/pppoe.c	2023-02-18 22:33:20.814391000 +0700
+@@ -619,7 +619,7 @@ PppoeCtrlReadEvent(int type, void *arg)
+ 	switch (u.resp.header.cmd) {
+ 	    case NGM_PPPOE_SESSIONID: /* XXX: I do not know what to do with this? */
+ 		Log(LG_PHYS3, ("PPPoE: rec'd SESSIONID %u from \"%s\"",
+-		  ntohs((uint16_t)u.resp.data), path));
++		  ntohs(*(uint16_t*)u.resp.data), path));
+ 		break;
+ 	    case NGM_PPPOE_SUCCESS:
+ 		Log(LG_PHYS, ("[%s] PPPoE: connection successful", l->name));
