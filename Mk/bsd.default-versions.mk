@@ -90,7 +90,7 @@ LUAJIT_DEFAULT?=	luajit-devel
 # Possible values: 5.10, 5.20, 6.8
 MONO_DEFAULT=		5.10
 # Possible values: 5.6, 5.7, 8.0, 10.3m, 10.4m, 10.5m, 5.7p, 5.7w
-MYSQL_DEFAULT?=		5.7
+MYSQL_DEFAULT?=		8.0
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
 # Possible value: 14, 16, 18, 19, current, lts (Note: current = 19 and lts = 18)

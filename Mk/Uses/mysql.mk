@@ -5,7 +5,7 @@
 #
 # version	If no version is given (by the maintainer via the port), try to
 #		find the currently installed version.  Fall back to default if
-#		necessary (MySQL-5.7 = 57, look at bsd.default-versions.mk for
+#		necessary (MySQL-8.0 = 80, look at bsd.default-versions.mk for
 #		possible values).
 # client	Depends on the libmysqlclient library (default)
 # server/embedded

@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230218:
+  AFFECTS: users of databases/mysql57-(server|client)
+  AUTHOR: joneum@FreeBSD.org
+
+  The default MySQL version has been updated from 5.7 to 8.0.
+
+  If you compile your own ports you may keep 5.7 as the default version by
+  adding the following lines to your /etc/make.conf file:
+
+  #
+  # Keep MySQL 5.7 as default version
+  #
+  DEFAULT_VERSIONS+=mysql=5.7
+
+  If you wish to update to the new default version, you need to first stop any
+  running server instance. Then, you will need to follow these steps, depending
+  on installed packages.
+
+  # pkg set -o databases/mysql57-client:databases/mysql80-client
+  # pkg set -o databases/mysql57-server:databases/mysql80-server
+  # pkg upgrade
+
 20230215:
   AFFECTS: users of python
   AUTHOR: vishwin@FreeBSD.org
