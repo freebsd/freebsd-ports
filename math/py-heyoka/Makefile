@@ -1,7 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.0
-PORTREVISION=	1
+DISTVERSION=	0.21.0
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,6 +18,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libgmp.so:math/gmp \
 		libheyoka.so:math/heyoka \
 		libmp++.so:math/mppp \
+		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
 		libtbb.so:devel/onetbb \
 		libspdlog.so:devel/spdlog

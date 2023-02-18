@@ -1,7 +1,6 @@
 PORTNAME=	heyoka
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.20.0
-PORTREVISION=	2
+DISTVERSION=	0.21.0
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +14,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 		libfmt.so:devel/libfmt \
 		libgmp.so:math/gmp \
 		libmp++.so:math/mppp \
+		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
 		libtbb.so:devel/onetbb \
 		libsleef.so:math/sleef \
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 TEST_DEPENDS=	xtensor>0:math/xtensor \
 		xtensor-blas>0:math/xtensor-blas
 
-USES=		cmake:testing compiler:c++17-lang llvm:min=14,build,run
+USES=		cmake:testing compiler:c++17-lang llvm:min=15,build,run
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

@@ -1,6 +1,7 @@
 %%PYTHON_SITELIBDIR%%/heyoka/__init__.py
 %%PYTHON_SITELIBDIR%%/heyoka/_ensemble_impl.py
 %%PYTHON_SITELIBDIR%%/heyoka/_sympy_utils.py
+%%PYTHON_SITELIBDIR%%/heyoka/_test_cfunc.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_mp.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_real.py
 %%PYTHON_SITELIBDIR%%/heyoka/_test_real128.py
