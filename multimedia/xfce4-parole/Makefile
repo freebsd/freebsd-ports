@@ -1,5 +1,5 @@
 PORTNAME=	parole
-PORTVERSION=	4.16.0
+PORTVERSION=	4.18.0
 CATEGORIES=	multimedia xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4
@@ -14,12 +14,13 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libnotify.so:devel/libnotify \
-		libtag.so:audio/taglib
+		libtag.so:audio/taglib \
+		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	xdg-screensaver:devel/xdg-utils
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools \
 		gmake gnome gstreamer libtool pkgconfig tar:bzip2 xfce xorg
-USE_GNOME=	cairo gtk30 glib20 intltool
+USE_GNOME=	cairo gdkpixbuf2 gtk30 glib20 intltool
 USE_GSTREAMER=	core faad flac wavpack rtmp x
 USE_XFCE=	panel
 USE_XORG=	ice sm x11
