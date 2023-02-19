@@ -34,6 +34,8 @@ CPE_VENDOR=	gnome
 
 GLIB_SCHEMAS=	org.gnome.nautilus.gschema.xml
 
+CFLAGS+=	-Wno-error=strict-prototypes
+
 OPTIONS_DEFINE=		GVFS
 OPTIONS_DEFAULT=	GVFS
 
