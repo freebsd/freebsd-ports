@@ -1,5 +1,5 @@
 PORTNAME=	bear
-DISTVERSION=	3.0.21
+DISTVERSION=	3.1.1
 CATEGORIES=	devel
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -34,7 +34,7 @@ pre-install:
 	${RM} -r ${STAGEDIR}/wrkdirs
 
 post-install:
-.for l in bin/citnames bin/intercept lib/bear/libexec.so lib/bear/wrapper
+.for l in lib/bear/libexec.so lib/bear/wrapper
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/${l}
 .endfor
 
