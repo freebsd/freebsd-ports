@@ -158,6 +158,9 @@
     SUBDIR += libcprime
     SUBDIR += libkdepim
     SUBDIR += libportal
+    SUBDIR += libportal-gtk3
+    SUBDIR += libportal-gtk4
+    SUBDIR += libportal-qt5
     SUBDIR += ljclive
     SUBDIR += lumina-archiver
     SUBDIR += lumina-calculator

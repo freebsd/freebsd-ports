@@ -1,6 +1,7 @@
 PORTNAME=	gcolor3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
@@ -13,7 +14,8 @@ WWW=		https://www.hjdskes.nl/projects/gcolor3/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libportal-gtk3.so:deskutils/libportal
+LIB_DEPENDS=	libportal.so:deskutils/libportal \
+		libportal-gtk3.so:deskutils/libportal-gtk3
 
 USES=		gnome gettext meson libtool pkgconfig
 USE_GITLAB=	yes

@@ -1,6 +1,6 @@
 PORTNAME=	gnome-builder
 PORTVERSION=	42.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -27,6 +27,7 @@ LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libpcre.so:devel/pcre \
 		libpeas-1.0.so:devel/libpeas \
 		libportal.so:deskutils/libportal \
+		libportal-gtk3.so:deskutils/libportal-gtk3 \
 		libsoup-2.4.so:devel/libsoup \
 		libtemplate_glib-1.0.so:devel/template-glib \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3

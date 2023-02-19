@@ -1,5 +1,6 @@
 PORTNAME=	nautilus
 PORTVERSION=	42.2
+PORTREVISION=	1
 CATEGORIES=	x11-fm gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -15,6 +16,7 @@ LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2 \
 		libgnome-autoar-0.so:archivers/gnome-autoar \
 		libhandy-1.so:x11-toolkits/libhandy \
 		libportal.so:deskutils/libportal \
+		libportal-gtk3.so:deskutils/libportal-gtk3 \
 		libtotem.so:multimedia/totem \
 		libtracker-sparql-3.0.so:sysutils/tracker3
 
