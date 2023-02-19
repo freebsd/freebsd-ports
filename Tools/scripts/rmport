@@ -414,7 +414,7 @@ if [ $# -eq 1 ] ; then
 	topic="$1"
 	plural=""
 else
-	log "/!\\ Removing multiple ports at once, commit topic will generic /!\\"
+	log "/!\\ Removing multiple ports at once, commit topic will be generic /!\\"
 	topic="cleanup"
 	plural="s"
 fi
