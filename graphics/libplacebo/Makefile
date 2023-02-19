@@ -4,6 +4,9 @@ DISTVERSION=	5.229.2
 PORTREVISION=	1
 CATEGORIES=	graphics
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	baec0e53c959.patch:-p1 # https://code.videolan.org/videolan/libplacebo/-/issues/249
+
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Reusable library for GPU-accelerated video/image rendering
 WWW=		https://code.videolan.org/videolan/libplacebo
@@ -16,9 +19,6 @@ USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	haasn
 MESON_ARGS=	-Ddemos=false
-
-# XXX https://code.videolan.org/videolan/libplacebo/-/issues/249
-GH_TUPLE+=	KhronosGroup:Vulkan-Headers:v1.3.240:vkheaders/3rdparty/Vulkan-Headers
 
 OPTIONS_DEFINE=	LCMS2 LIBUNWIND OPENGL TEST VULKAN
 OPTIONS_DEFAULT=LCMS2 LIBUNWIND OPENGL SHADERC
