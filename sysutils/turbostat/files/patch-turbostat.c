@@ -23,7 +23,7 @@
 +#define CPU_ALLOC(_ign)			({(cpuset_t*)malloc(sizeof(cpuset_t));})
 +#define CPU_ALLOC_SIZE(_ign)		sizeof(cpuset_t)
 +#define CPU_FREE			free
-+#define CPU_ISSET_S(cpu, _ign, set)	(set && CPU_ISSET(cpu, set))
++#define CPU_ISSET_S(cpu, _ign, set)	CPU_ISSET(cpu, set)
 +#define CPU_SET_S(cpu, _ign, set)	CPU_SET(cpu, set)
 +#define CPU_ZERO_S(_ign, set)		CPU_ZERO(set)
 +#define sched_setaffinity(_x, _y, set)	cpuset_setaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID, -1, sizeof(cpuset_t), set)
@@ -445,6 +445,15 @@
  
  /*
   * NHM adds support for additional MSRs:
+@@ -4343,7 +4682,7 @@ void topology_probe()
+ 	 * Validate that all cpus in cpu_subset are also in cpu_present_set
+ 	 */
+ 	for (i = 0; i < CPU_SUBSET_MAXCPUS; ++i) {
+-		if (CPU_ISSET_S(i, cpu_subset_size, cpu_subset))
++		if (cpu_subset && CPU_ISSET_S(i, cpu_subset_size, cpu_subset))
+ 			if (!CPU_ISSET_S(i, cpu_present_setsize, cpu_present_set))
+ 				err(1, "cpu%d not present", i);
+ 	}
 @@ -4520,8 +4852,21 @@ void setup_all_buffers(void)
  	for_all_proc_cpus(initialize_counters);
  }
