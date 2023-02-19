@@ -1,7 +1,7 @@
 PORTNAME=	cospend
-PORTVERSION=	1.5.7
+PORTVERSION=	1.5.8
 CATEGORIES=	finance www editors
-MASTER_SITES=	https://github.com/eneiluj/${PORTNAME}-nc/releases/download/v${PORTVERSION}/
+MASTER_SITES=	https://github.com/julien-nc/${PORTNAME}-nc/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Cospend app for Nextcloud
