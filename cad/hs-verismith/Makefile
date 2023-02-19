@@ -109,4 +109,6 @@ USE_CABAL=	OneTuple-0.3.1_3 \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ymherklotz
 
+PORTSCOUT=	limit:^.*[0-9]\.[0-9] # prevent fpga20
+
 .include <bsd.port.mk>
