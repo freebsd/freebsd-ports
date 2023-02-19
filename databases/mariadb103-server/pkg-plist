@@ -76,6 +76,7 @@ include/mysql/server/little_endian.h
 include/mysql/server/m_ctype.h
 include/mysql/server/m_string.h
 include/mysql/server/ma_dyncol.h
+include/mysql/server/mariadb_capi_rename.h
 include/mysql/server/my_alloc.h
 include/mysql/server/my_attribute.h
 include/mysql/server/my_byteorder.h

@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.3.37
+PORTVERSION=	10.3.38
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
@@ -217,7 +217,8 @@ post-install-GSSAPI_NONE-off:
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/mysql/policy \
 		${STAGEDIR}${PREFIX}/include/mysql/server/private \
-		${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig
+		${STAGEDIR}${PREFIX}/lib/mysql/pkgconfig \
+		${STAGEDIR}${PREFIX}/libexec/rcmysql
 	${MV} ${STAGEDIR}${PREFIX}/etc/mysql/user_map.conf \
 		${STAGEDIR}${PREFIX}/etc/mysql/user_map.conf.sample
 .endif # ${PKGNAMESUFFIX:M*-client}
