@@ -79,6 +79,7 @@ include/mysql/server/little_endian.h
 include/mysql/server/m_ctype.h
 include/mysql/server/m_string.h
 include/mysql/server/ma_dyncol.h
+include/mysql/server/mariadb_capi_rename.h
 include/mysql/server/my_alloc.h
 include/mysql/server/my_attribute.h
 include/mysql/server/my_byteorder.h
@@ -212,7 +213,6 @@ lib/mysql/plugin/type_test.so
 lib/mysql/plugin/zstd.so
 libexec/mariadbd
 libexec/mysqld
-libexec/rcmysql
 @comment share/man/man1/aria_chk.1.gz
 @comment share/man/man1/aria_dump_log.1.gz
 @comment share/man/man1/aria_ftdump.1.gz
