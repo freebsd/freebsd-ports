@@ -147,6 +147,7 @@ include/freerdp2/freerdp/utils/profiler.h
 include/freerdp2/freerdp/utils/ringbuffer.h
 include/freerdp2/freerdp/utils/signal.h
 include/freerdp2/freerdp/utils/stopwatch.h
+include/freerdp2/freerdp/utils/string.h
 include/freerdp2/freerdp/version.h
 include/freerdp2/freerdp/window.h
 %%WAYLAND%%include/uwac0/uwac/uwac-tools.h
@@ -163,6 +164,7 @@ include/winpr2/winpr/credentials.h
 include/winpr2/winpr/credui.h
 include/winpr2/winpr/crt.h
 include/winpr2/winpr/crypto.h
+include/winpr2/winpr/custom-crypto.h
 include/winpr2/winpr/debug.h
 include/winpr2/winpr/dsparse.h
 include/winpr2/winpr/endian.h
@@ -212,6 +214,7 @@ include/winpr2/winpr/timezone.h
 include/winpr2/winpr/tools/makecert.h
 include/winpr2/winpr/user.h
 include/winpr2/winpr/version.h
+include/winpr2/winpr/wincrypt.h
 include/winpr2/winpr/windows.h
 include/winpr2/winpr/winhttp.h
 include/winpr2/winpr/winpr.h
