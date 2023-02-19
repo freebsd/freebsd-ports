@@ -1,3 +1,35 @@
+  <vuln vid="428922c9-b07e-11ed-8700-5404a68ad561">
+    <topic>traefik -- Use of vulnerable Go module x/net/http2</topic>
+    <affects>
+      <package>
+	<name>traefik</name>
+	<range><lt>2.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://pkg.go.dev/vuln/GO-2023-1495">
+	  <p>A request smuggling attack is possible when using
+       MaxBytesHandler. When using MaxBytesHandler, the body of
+       an HTTP request is not fully consumed. When the server
+       attempts to read HTTP2 frames from the connection, it
+       will instead be reading the body of the HTTP request,
+       which could be attacker-manipulated to represent
+       arbitrary HTTP2 requests.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41721</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-41721</url>
+    </references>
+    <dates>
+      <discovery>2022-10-22</discovery>
+      <entry>2023-02-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="27c822a0-addc-11ed-a9ee-dca632b19f10">
     <topic>Rundeck3 -- Log4J RCE vulnerability</topic>
     <affects>
