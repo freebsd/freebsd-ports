@@ -16,6 +16,8 @@ USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+CFLAGS+=	-Wno-error=int-conversion
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,libmpd-1.0\/libmpd,libmpd,' \
 		${WRKSRC}/src/Makefile.in
