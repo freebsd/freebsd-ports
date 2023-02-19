@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-alpine
-PORTVERSION=	20230201
+PORTVERSION=	20230213
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -87,10 +87,10 @@ _GITHUB_SITE=	https://github.com/pgj/freebsd-wifibox-alpine/releases/download
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	pgj
 GH_PROJECT=	freebsd-wifibox-alpine:scripts
-GH_TAGNAME=	8439c9ac04c3220f148f81aedc15b9660d0d8509:scripts
+GH_TAGNAME=	1d7ee312302982362deb03dc74bc32bd99238d82:scripts
 
-ALPINE_VERSION=	3.17.1
-ALPINE_DATE=	2023.01.28
+ALPINE_VERSION=	3.17.2
+ALPINE_DATE=	2023.02.11
 
 _ALPINE_VER=	${ALPINE_VERSION:C@([0-9]+)\.([0-9]+).*@\1.\2@}
 
@@ -102,7 +102,7 @@ _ALPINE_SITE=	https://mirror.fit.cvut.cz/alpine/v${_ALPINE_VER}
 .endif
 
 _LINUXFW_SITE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/
-_LINUXFW_TAG=	20230117
+_LINUXFW_TAG=	20230210
 _LINUXFW=	linux-firmware-${_LINUXFW_TAG}
 
 MASTER_SITES+=	${_ALPINE_SITE}/releases/x86_64/:rootfs \
@@ -123,12 +123,12 @@ _PACKAGES=	baselayout-3.4.0-r0:wifibox \
 		iw-5.19-r0 \
 		libcap2-2.66-r0 \
 		libcap-utils-2.66-r0 \
-		libcrypto3-3.0.7-r2 \
+		libcrypto3-3.0.8-r0 \
 		libmnl-1.0.5-r0 \
 		libnftnl-1.2.4-r0 \
 		libnl3-3.7.0-r0 \
-		libssl3-3.0.7-r2 \
-		linux-lts-5.15.90-r0:wifibox \
+		libssl3-3.0.8-r0 \
+		linux-lts-5.15.93-r0:wifibox \
 		musl-1.2.3-r4 \
 		openrc-0.45.2-r0:wifibox
 
@@ -144,7 +144,7 @@ _IPW2100_FIRMWARE=	ipw/ipw2100-1.3 \
 			ipw/ipw2100-1.3-i
 _IPW2200_FIRMWARE=	iwi/ipw2200-bss \
 			iwi/ipw2200-ibss
-_MT76_FIRMWARE=		5b509e80384ab019ac11aa90c81ec0dbb5b0d7f2
+_MT76_FIRMWARE=		09c614734880865d1b4033b8cab4e9db86db4b15
 
 _LINUX64_KMOD!=		(kldstat -qn linux64 && echo "found") || echo ""
 
@@ -259,15 +259,15 @@ LINUX_FIRMWARE+=	${L${fw_opt}_FILES}
 .endfor
 
 .if ${PORT_OPTIONS:MFW_RTW88} || make(makesum)
-_PACKAGES+=	rtl8821ce-20230101-r0:wifibox
+_PACKAGES+=	rtl8821ce-20230101-r1:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MFW_RTW89} || make(makesum)
-_PACKAGES+=	rtw89-20230117-r0:wifibox
+_PACKAGES+=	rtw89-20230117-r1:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MXX_DRIVER_WL} || make(makesum)
-_PACKAGES+=	broadcom-wl-6.30.223.271-r7:wifibox
+_PACKAGES+=	broadcom-wl-6.30.223.271-r8:wifibox
 .endif
 
 .if !empty(LINUX_FIRMWARE)
