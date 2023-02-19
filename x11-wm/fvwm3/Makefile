@@ -73,6 +73,15 @@ XCURSOR_CONFIGURE_ENABLE=	xcursor
 XPM_USE=	xorg=xpm
 XPM_CONFIGURE_OFF=	--with-xpm-library=no
 
+.include <bsd.port.options.mk>
+
+# Clang 15 promoted some warnings to errors. The upstream configure script
+# expects one of them to be only a warning. Work around this by explicitly
+# disabling the error here. FIXME: Check whether still needed on upgrades.
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CONFIGURE_ARGS+=	CFLAGS="${CFLAGS} -Wno-error=int-conversion"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/,${LOCALBASE}/etc/,g' \
 		${WRKSRC}/bin/fvwm-menu-desktop.in
