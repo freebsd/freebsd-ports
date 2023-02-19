@@ -1,9 +1,9 @@
---- html/main.php.orig	2019-08-20 15:29:34 UTC
-+++ html/main.php
-@@ -146,31 +146,6 @@ $this_year = '2019';
+--- html/main.php.orig	2023-02-19 11:46:50.234549000 +0100
++++ html/main.php	2023-02-19 11:48:04.920758000 +0100
+@@ -146,33 +146,6 @@ $this_year = '2023';
  	<div class="product">Nagios<sup><span style="font-size: small;">&reg;</span></sup> Core<sup><span style="font-size: small;">&trade;</span></sup></div>
  	<div class="version">Version <?php echo $this_version; ?></div>
- 	<div class="releasedate">April 28, 2020</div>
+ 	<div class="releasedate">January 17, 2023</div>
 -	<div class="checkforupdates"><a href="https://www.nagios.org/checkforupdates/?version=<?php echo $this_version; ?>&amp;product=nagioscore" target="_blank">Check for updates</a></div>
 -</div>
 -
@@ -24,11 +24,13 @@
 -?>
 -		<div class="updateavailable">
 -			<div class="updatemessage">A new version of Nagios Core is available!</div>
--			<div class="submessage">Visit <a href="https://www.nagios.org/download/" target="_blank">nagios.org</a> to download Nagios <?php echo $updateinfo['update_version'];?>.</div>
+-			<div class="submessage">Visit <a href="https://www.nagios.org/download/" target="_blank">nagios.org</a> to download Nagios <?php echo htmlentities($updateinfo['update_version'], ENT_QUOTES, 'UTF-8');?>.</div>
 -		</div>
 -<?php
 -	}
 -?>
- </div>
+-</div>
+-
  
- 
+ <div id='splashrow0'>
+ 	<div id="splashbox0" class="splashbox-media"><!-- info banner feed -->
