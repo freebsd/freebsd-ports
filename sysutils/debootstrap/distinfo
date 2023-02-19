@@ -1,3 +1,3 @@
-TIMESTAMP = 1677062129
-SHA256 (debootstrap_1.0.128+nmu2~bpo11+1.tar.gz) = 140b2ef281a190c70098462b090ba2997bbcd075a6c1a1c7ce90b4c0e10c207d
-SIZE (debootstrap_1.0.128+nmu2~bpo11+1.tar.gz) = 82336
+TIMESTAMP = 1677148183
+SHA256 (debootstrap_1.0.128+nmu2.tar.gz) = 528523228d93a31c9e0cd4eb932977ea8ceec2bfbf8db1103bec2397cc7434fa
+SIZE (debootstrap_1.0.128+nmu2.tar.gz) = 82266
