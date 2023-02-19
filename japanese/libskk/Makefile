@@ -24,6 +24,8 @@ INSTALL_TARGET=	install-strip
 
 PORTDOCS=	ChangeLog NEWS README
 
+CFLAGS+=	-Wno-error=int-conversion
+
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
