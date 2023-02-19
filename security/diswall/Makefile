@@ -1,7 +1,6 @@
 PORTNAME=	diswall
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0
-PORTREVISION=	1
+DISTVERSION=	0.3.1
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +17,7 @@ GH_ACCOUNT=	dis-works
 GH_PROJECT=	diswall-rs
 
 CARGO_CRATES=	adler-1.0.2 \
-		ahash-0.7.6 \
+		ahash-0.8.3 \
 		async-channel-1.6.1 \
 		async-task-4.1.0 \
 		atomic-waker-1.0.0 \
@@ -60,8 +59,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		getopts-0.2.21 \
 		getrandom-0.2.5 \
 		hashbrown-0.12.3 \
+		hashbrown-0.13.2 \
 		hostname-0.3.1 \
 		idna-0.2.3 \
+		indexmap-1.9.2 \
 		instant-0.1.12 \
 		itoa-1.0.1 \
 		js-sys-0.3.56 \
@@ -70,18 +71,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		libc-0.2.139 \
 		lock_api-0.4.6 \
 		log-0.4.17 \
-		lru-0.8.1 \
+		lru-0.9.0 \
 		match_cfg-0.1.0 \
 		matches-0.1.9 \
 		memchr-2.4.1 \
 		memoffset-0.7.1 \
 		miniz_oxide-0.5.1 \
-		nats-0.23.0 \
+		nats-0.24.0 \
 		nix-0.26.2 \
 		nkeys-0.2.0 \
+		nom8-0.2.0 \
 		nuid-0.3.2 \
 		num_threads-0.1.5 \
-		once_cell-1.9.0 \
+		once_cell-1.17.1 \
 		opaque-debug-0.3.0 \
 		openssl-probe-0.1.5 \
 		parking-2.0.0 \
@@ -94,7 +96,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		pkcs8-0.7.6 \
 		pkg-config-0.3.25 \
 		ppv-lite86-0.2.16 \
-		proc-macro2-1.0.36 \
+		proc-macro2-1.0.51 \
 		quote-1.0.15 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -115,11 +117,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		sct-0.7.0 \
 		security-framework-2.6.1 \
 		security-framework-sys-2.6.1 \
-		serde-1.0.137 \
-		serde_derive-1.0.137 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
 		serde_json-1.0.81 \
 		serde_nanos-0.1.2 \
 		serde_repr-0.1.7 \
+		serde_spanned-0.6.1 \
 		sha2-0.9.9 \
 		signatory-0.23.2 \
 		signature-1.5.0 \
@@ -127,21 +130,24 @@ CARGO_CRATES=	adler-1.0.2 \
 		smallvec-1.8.0 \
 		spin-0.5.2 \
 		spki-0.4.1 \
-		sqlite-0.27.0 \
+		sqlite-0.27.3 \
 		sqlite3-src-0.4.0 \
 		sqlite3-sys-0.14.0 \
 		static_assertions-1.1.0 \
 		subtle-2.4.1 \
-		syn-1.0.92 \
+		syn-1.0.107 \
 		synstructure-0.12.6 \
 		termcolor-1.1.3 \
 		time-0.3.9 \
 		time-macros-0.2.4 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
-		toml-0.5.9 \
+		toml-0.7.2 \
+		toml_datetime-0.6.1 \
+		toml_edit-0.19.3 \
 		typenum-1.15.0 \
 		unicode-bidi-0.3.7 \
+		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.19 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.2 \
