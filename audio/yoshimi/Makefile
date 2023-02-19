@@ -1,5 +1,6 @@
 PORTNAME=	yoshimi
 DISTVERSION=	2.2.2.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION:R:R}
 
@@ -29,5 +30,7 @@ PORTDATA=	*
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
+
+# ALSA can also be enabled, but its build fails, see https://github.com/Yoshimi/yoshimi/issues/175
 
 .include <bsd.port.mk>
