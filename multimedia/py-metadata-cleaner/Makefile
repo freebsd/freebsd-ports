@@ -1,6 +1,6 @@
 PORTNAME=	metadata-cleaner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.2.5
+DISTVERSION=	2.4.0
 CATEGORIES=	multimedia audio graphics python textproc
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -29,6 +29,6 @@ SHEBANG_GLOB=	*.py *.py.in
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 NO_ARCH=	yes
 GL_ACCOUNT=	rmnvgr
-GL_COMMIT=	0aad256555bf8fea0015532d204869987e3cfa8c
+GL_COMMIT=	bc76c0962ec797625b15b4d24f948961ecb6e9c0
 
 .include <bsd.port.mk>
