@@ -50,4 +50,6 @@ SHEBANG_FILES=	desktop/geary-attach
 MESON_ARGS=	-Dprofile=release
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
+CFLAGS+=	-Wno-error=int-conversion
+
 .include <bsd.port.mk>
