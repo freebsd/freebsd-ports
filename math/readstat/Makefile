@@ -1,5 +1,6 @@
 PORTNAME=	readstat
 DISTVERSION=	1.1.8
+PORTREVISION=	1
 CATEGORIES=	math kde
 MASTER_SITES=	https://github.com/WizardMac/ReadStat/releases/download/v${DISTVERSION}/
 
@@ -11,5 +12,7 @@ LICENSE=	MIT
 
 USES=		libtool
 HAS_CONFIGURE=	yes
+
+CFLAGS+=	-Werror -Wstrict-prototypes
 
 .include <bsd.port.mk>
