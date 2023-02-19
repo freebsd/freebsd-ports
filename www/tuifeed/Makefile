@@ -1,11 +1,11 @@
 PORTNAME=	tuifeed
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	www
 
 MAINTAINER=	sec.research.2005@gmail.com
-COMMENT=	Trminal feed reader with a fancy UI
+COMMENT=	Terminal feed reader with a fancy UI
 WWW=		https://github.com/veeso/tuifeed
 
 LICENSE=	MIT
