@@ -13,6 +13,8 @@ COMMENT=	Python wrapper for OCCT generated using pywrap
 WWW=		https://github.com/CadQuery/OCP
 
 BROKEN=		Mismatch between OpenCascase (7.5) and py-ocp (7.4)
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 LICENSE=	APACHE20
 
