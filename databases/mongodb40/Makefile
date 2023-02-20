@@ -18,6 +18,8 @@ LICENSE_NAME_SSPLv1=	Server Side Public License Version 1
 LICENSE_FILE_SSPLv1=	${WRKSRC}/LICENSE-Community.txt
 LICENSE_PERMS_SSPLv1=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Upstream EOL reached on 2022-04-30
+EXPIRATION_DATE=	2023-06-30
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	only supported on amd64, aarch64, and powerpc64le; i386 deprecated in v3
 
