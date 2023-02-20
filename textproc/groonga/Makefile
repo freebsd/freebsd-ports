@@ -1,5 +1,5 @@
 PORTNAME=	groonga
-PORTVERSION=	12.1.2
+PORTVERSION=	13.0.0
 CATEGORIES=	textproc
 MASTER_SITES=	http://packages.groonga.org/source/groonga/
 
@@ -27,9 +27,6 @@ CONFIGURE_ARGS=	--disable-benchmark \
 		--without-lemon
 
 INSTALL_TARGET=	install-strip
-
-#CPPFLAGS+=	-I${LOCALBASE}/include
-#LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		MECAB RUBY SUGGEST
 OPTIONS_DEFAULT=	MECAB RUBY SUGGEST
