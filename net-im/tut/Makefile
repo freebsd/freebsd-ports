@@ -10,7 +10,7 @@ WWW=		https://tut.anv.nu/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.19,modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	RasmusLindroth
 GH_TUPLE=	RasmusLindroth:go-mastodon:v0.0.17:rasmuslindroth_go_mastodon/vendor/github.com/RasmusLindroth/go-mastodon \
