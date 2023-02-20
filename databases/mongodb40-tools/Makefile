@@ -11,6 +11,8 @@ WWW=		https://github.com/mongodb/mongo-tools
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	Upstream EOL reached on 2022-04-30
+EXPIRATION_DATE=	2023-06-30
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to other architectures
 
