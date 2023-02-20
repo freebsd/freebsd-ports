@@ -10,6 +10,9 @@ WWW=		https://github.com/mongodb/mongo-tools
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Upstream EOL reached on 2021-04-30
+EXPIRATION_DATE=	2023-03-31
+
 ONLY_FOR_ARCHS=	amd64 i386
 ONLY_FOR_ARCHS_REASON=	not yet ported to anything other than i386 and amd64
 
