@@ -12,6 +12,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fonttools>0:print/py-fonttools@${PY_FLAVOR}
+LDFLAGS+=	-Wl,--as-needed
 
 USES=		cmake compiler:c++11-lib cpe python:3.7+,test tar:tgz
 USE_LDCONFIG=	yes
