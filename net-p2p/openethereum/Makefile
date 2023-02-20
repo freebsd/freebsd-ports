@@ -11,6 +11,9 @@ WWW=		https://github.com/openethereum/openethereum/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	yes
+EXPIRATION_DATE=2023-03-15
+
 USES=		cargo
 
 USE_GITHUB=	yes
