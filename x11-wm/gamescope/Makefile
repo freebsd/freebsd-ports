@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	glslangValidator:graphics/glslang \
 		evdev-proto>0:devel/evdev-proto \
-		libliftoff>=0.3.0<0.4.0:graphics/libliftoff \
+		libliftoff>=0.4.0<0.5.0:graphics/libliftoff \
 		vulkan-headers>0:graphics/vulkan-headers \
 		wayland-protocols>=1.17:graphics/wayland-protocols \
 		hwdata>0:misc/hwdata \
