@@ -12,6 +12,9 @@ WWW=		https://www.exit1.org/dvdrip/
 LICENSE=	ART10 GPLv1 # (ART10 or GPLv1) and CC-BY-SA-2.5
 LICENSE_COMB=	dual
 
+DEPRECATED=	Depends on broken transcode port
+EXPIRATION_DATE=	2023-03-31
+
 BUILD_DEPENDS=	p5-Gtk2>=0:x11-toolkits/p5-Gtk2 \
 		p5-AnyEvent>=0:devel/p5-AnyEvent \
 		p5-Event-ExecFlow>=0:devel/p5-Event-ExecFlow \

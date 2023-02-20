@@ -10,6 +10,9 @@ WWW=		http://subtitleripper.sourceforge.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Depends on broken transcode port
+EXPIRATION_DATE=	2023-03-31
+
 LIB_DEPENDS=	libnetpbm.so:graphics/netpbm \
 		libpng.so:graphics/png
 RUN_DEPENDS=	gocr:graphics/gocr \

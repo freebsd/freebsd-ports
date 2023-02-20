@@ -11,6 +11,9 @@ WWW=		http://kvcd4nix.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on broken transcode port
+EXPIRATION_DATE=	2023-03-31
+
 RUN_DEPENDS=	mpeg2enc:multimedia/mjpegtools \
 		bash:shells/bash \
 		mplayer:multimedia/mplayer \
