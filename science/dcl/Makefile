@@ -17,6 +17,8 @@ LICENSE_TEXT=	No commercial use
 LICENSE_PERMS=	auto-accept
 
 BROKEN=		fails to fetch from mastersite (newest release is 7.4.0 of 2020611)
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 MAKE_JOBS_UNSAFE=	yes
 USES=		desthack fortran gnome pkgconfig xorg
