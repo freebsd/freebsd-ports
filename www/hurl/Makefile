@@ -1,6 +1,5 @@
 PORTNAME=	hurl
-DISTVERSION=	2.0.0
-PORTREVISION=	1
+DISTVERSION=	2.0.1
 CATEGORIES=	www
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -31,7 +30,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		brotli-decompressor-2.3.4 \
 		bumpalo-3.12.0 \
 		byteorder-1.4.3 \
-		cc-1.0.78 \
+		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
 		clap-4.1.4 \
@@ -44,10 +43,10 @@ CARGO_CRATES=	adler32-1.2.0 \
 		crypto-common-0.1.6 \
 		curl-0.4.44 \
 		curl-sys-0.4.59+curl-7.86.0 \
-		cxx-1.0.87 \
-		cxx-build-1.0.87 \
-		cxxbridge-flags-1.0.87 \
-		cxxbridge-macro-1.0.87 \
+		cxx-1.0.88 \
+		cxx-build-1.0.88 \
+		cxxbridge-flags-1.0.88 \
+		cxxbridge-macro-1.0.88 \
 		digest-0.10.6 \
 		encoding-0.2.33 \
 		encoding-index-japanese-1.20141219.5 \
