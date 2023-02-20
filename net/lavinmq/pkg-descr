@@ -12,5 +12,3 @@ processing.
 
 lavinmq is written in Crystal, a statically compiled LLVM-based
 language with a ruby-like syntax.
-
-WWW: https://www.lavinmq.com/

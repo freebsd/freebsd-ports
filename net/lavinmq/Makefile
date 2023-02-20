@@ -9,6 +9,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 
 MAINTAINER=	dch@FreeBSD.org
 COMMENT=	Next-generation AMQP 0.9.1 based message broker
+WWW=		https://www.lavinmq.com/
 
 LICENSE=	APACHE20
 
