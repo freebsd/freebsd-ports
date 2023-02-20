@@ -138,5 +138,7 @@ USE_CABAL=	MonadRandom-0.5.1.2 \
 .if ${GCC_DEFAULT} >= 10
 BROKEN=		fails to build with GCC 10: cabal: Missing dependency on a foreign library: Missing (or bad) C library: gfortran
 .endif
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 .include <bsd.port.post.mk>
