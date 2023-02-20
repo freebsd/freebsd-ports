@@ -15,6 +15,7 @@ WWW=		https://www.blender.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/license/GPL3-license.txt
 
+BROKEN=		fails to build
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	uses 64bit atomic functions
 
