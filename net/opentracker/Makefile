@@ -9,6 +9,8 @@ COMMENT=	Free lightweight bittorrent tracker using libowfat
 WWW=		https://erdgeist.org/arts/software/opentracker/
 
 BROKEN=		fails to link: duplicate symbol: first_deferred, known libowfat issue
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:devel/libowfat
 
