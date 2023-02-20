@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 BROKEN=		Outdated and doesn't compile "ld: error: duplicate symbol: first_deferred"
 BROKEN_mips=	fails to compile: dirfd.c: error: expected ';', ',' or ')' before 'key'
 BROKEN_mips64=	fails to compile: dirfd.c: error: expected ';', ',' or ')' before 'key'
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 BUILD_DEPENDS=	libowfat>=0.31:devel/libowfat
 
