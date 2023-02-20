@@ -10,6 +10,8 @@ WWW=		https://srain.im/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to package
+
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup
