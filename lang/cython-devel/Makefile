@@ -11,7 +11,7 @@ WWW=		https://cython.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c11 python:2.7+
+USES=		compiler:c11 python
 USE_PYTHON=	allflavors autoplist concurrent distutils
 USE_GITHUB=	yes
 
