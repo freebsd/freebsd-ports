@@ -16,6 +16,8 @@ LICENSE_TEXT=	Not sure if we can redistribute it
 LICENSE_PERMS=	auto-accept
 
 BROKEN=		unfetchable
+DEPRECATED=	Broken since 2020
+EXPIRATION_DATE=	2023-03-20
 
 NO_WRKSUBDIR=	yes
 EXTRACT_CMD=	${CP}
