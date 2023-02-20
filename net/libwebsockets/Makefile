@@ -2,7 +2,7 @@ PORTNAME=	libwebsockets
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.2
 CATEGORIES=	net devel
-MASTER_SITES=	https://libwebsockets.org/git/libwebsockets/snapshot/
+# MASTER_SITES=	https://libwebsockets.org/git/libwebsockets/snapshot/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library for lightweight websocket clients and servers
@@ -11,7 +11,10 @@ WWW=		https://libwebsockets.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake localbase pkgconfig tar:xz
+# USES=		cmake localbase pkgconfig tar:xz
+USES=		cmake localbase pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	warmcat
 USE_LDCONFIG=	yes
 
 BUILDINFO=	${HOSTARCH}-portbld-${OPSYS:tl}-${OSREL:R}
