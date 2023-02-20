@@ -14,6 +14,7 @@ WWW=		http://www.aegisub.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE
 
+BROKEN=		fails to build
 BROKEN_aarch64=		Fails to compile: no support for this architecture (yet)
 NOT_FOR_ARCHS=		powerpc64 powerpc64le
 NOT_FOR_ARCHS_REASON_powerpc64=		No support for PowerPC 64 bit mode
