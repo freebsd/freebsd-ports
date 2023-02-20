@@ -13,6 +13,8 @@ LICENSE_FILE=	${FILESDIR}/NASTRAN95-license.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN=		Produces bogus files on newer versions of GCC fortran
+DEPRECATED=	Broken since 2020
+EXPIRATION_DATE=	2023-03-20
 
 USES=		fortran gmake dos2unix
 
