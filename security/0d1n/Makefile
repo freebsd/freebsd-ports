@@ -8,6 +8,8 @@ WWW=		https://github.com/CoolerVoid/0d1n
 
 LICENSE=	GPLv3
 
+BROKEN=		fails to build
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USE_GITHUB=	yes
