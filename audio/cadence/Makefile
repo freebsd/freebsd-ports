@@ -1,8 +1,11 @@
 PORTNAME=	cadence
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	bf25db6ebdc6437fce5a60afd203fee169efd068.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Collection of tools useful for audio production
