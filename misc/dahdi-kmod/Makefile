@@ -14,6 +14,8 @@ COMMENT=	Digium/Asterisk Hardware Device Interface
 WWW=		https://svn.digium.com/svn/dahdi/freebsd/
 
 BROKEN=		does not compile: use of undeclared identifier 'SX_NOADAPTIVE'
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/dahdi_cfg:misc/dahdi
 
