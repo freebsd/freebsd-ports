@@ -6,6 +6,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides mdb backend for the libgda5 library
 
 BROKEN=		does not compile: 'mdbfakeglib.h' file not found
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 MASTERDIR=	${.CURDIR}/../libgda5
 BUILD_WRKSRC=	${WRKSRC}/providers/mdb/
