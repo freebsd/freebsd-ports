@@ -9,6 +9,8 @@ COMMENT=	ZRTP extension for GNU ccRTP
 WWW=		https://www.gnu.org/software/ccrtp/
 
 BROKEN=		incompatible with current SSL, bad C++ code
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 LIB_DEPENDS=	libccrtp.so:devel/ccrtp \
 		libgcrypt.so:security/libgcrypt
