@@ -1,7 +1,9 @@
 PORTNAME=	libbson
-PORTVERSION=	1.23.2
-PORTREVISION=	1
+DISTVERSION=	1.23.2
+PORTREVISION=	2
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/mongodb/mongo-c-driver/releases/download/${DISTVERSION}/
+DISTNAME=	mongo-c-driver-${DISTVERSION}
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	BSON utility library
@@ -10,34 +12,33 @@ WWW=		https://github.com/mongodb/mongo-c-driver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:noninja cpe pkgconfig
-USE_GITHUB=	yes
+USES=		cmake cpe pathfix python:env pkgconfig
 CPE_VENDOR=	mongodb
-GH_ACCOUNT=	mongodb
-GH_PROJECT=	mongo-c-driver
 USE_LDCONFIG=	yes
 
-DOCS_VARS=	BUILD_DEPENDS+=sphinx-build:textproc/py-sphinx
-
-PATCH_STRIP=	-p1
 CFLAGS+=	-D__BSD_VISIBLE=1
-LDFLAGS+=	-pthread
+DOCSDIR=	${PREFIX}/share/doc/mongo-c-driver
+
+CMAKE_OFF=	BUILD_TESTING \
+		ENABLE_EXAMPLES \
+		ENABLE_ICU \
+		ENABLE_MONGOC \
+		ENABLE_TESTS \
+		ENABLE_UNINSTALL \
+		ENABLE_ZLIB \
+		ENABLE_ZSTD
+CMAKE_ARGS=	-DBSON_HAVE_STRINGS_H=0
 
 OPTIONS_DEFINE=	DOCS
-OPTIONS_DEFAULT=
+OPTIONS_SUB=	yes
 
-CMAKE_ON=	ENABLE_EXAMPLES
-CMAKE_OFF=	ENABLE_TESTS ENABLE_UNINSTALL
-DOCS_CMAKE_ON=	-DENABLE_HTML_DOCS=ON -DENABLE_MAN_PAGES=ON
-CMAKE_ARGS=	-DENABLE_MONGOC=OFF -DENABLE_BSON=ON
-CMAKE_ARGS+=	-DENABLE_ZLIB=ON -DENABLE_ZSTD=ON
-CMAKE_ARGS+=	-DBSON_HAVE_STRINGS_H=0
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_CMAKE_ON=		-DENABLE_HTML_DOCS=ON -DENABLE_MAN_PAGES=ON
 
 post-extract:
-	${ECHO} "${PORTVERSION}" > ${WRKSRC}/VERSION_CURRENT
+	${ECHO} "${DISTVERSION}" > ${WRKSRC}/VERSION_CURRENT
 
 post-install:
-	${MV} ${STAGEDIR}${PREFIX}/share/mongo-c-driver \
-		${STAGEDIR}${PREFIX}/share/libbson
+	${RM} -r ${STAGEDIR}${PREFIX}/share/mongo-c-driver
 
 .include <bsd.port.mk>
