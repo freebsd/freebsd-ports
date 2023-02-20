@@ -194,4 +194,3 @@ man/man1/uade123.1.gz
 %%DATADIR%%/score
 %%DATADIR%%/uade.conf
 %%DATADIR%%/uaerc
-%%PORTDOCS%%@dir %%DOCSDIR%%

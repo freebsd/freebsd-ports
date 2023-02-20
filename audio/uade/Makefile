@@ -1,5 +1,6 @@
 PORTNAME=	uade
 PORTVERSION=	3.02
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://zakalwe.fi/uade/uade3/ \
 		LOCAL/ehaupt
@@ -30,6 +31,7 @@ CONFIGURE_ENV=	PYTHON_INTERPRETER=${PYTHON_CMD} \
 		SYSCFLAGS='${CFLAGS}'
 
 SHEBANG_FILES=	configure write_audio/generate_amiga_oscilloscope_view
+PORTDOCS=	*
 
 OPTIONS_DEFINE=		DOCS TEXTSCOPE
 OPTIONS_DEFAULT=	TEXTSCOPE
