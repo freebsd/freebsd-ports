@@ -4,10 +4,11 @@ use as system package with more than one consumer.
 https://github.com/hyprwm/Hyprland/commit/df132e5ff339
 https://github.com/hyprwm/Hyprland/commit/c012e3d66b21
 https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
+https://github.com/hyprwm/Hyprland/commit/a46abd8b1ada
 
---- src/Compositor.cpp.orig	2022-12-06 13:15:18 UTC
+--- src/Compositor.cpp.orig	2023-02-03 14:12:28 UTC
 +++ src/Compositor.cpp
-@@ -53,7 +53,7 @@ CCompositor::CCompositor() {
+@@ -63,7 +63,7 @@ CCompositor::CCompositor() {
      wl_event_loop_add_signal(m_sWLEventLoop, SIGTERM, handleCritSignal, nullptr);
      //wl_event_loop_add_signal(m_sWLEventLoop, SIGINT, handleCritSignal, nullptr);
  
@@ -16,7 +17,7 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
  
      if (!m_sWLRBackend) {
          Debug::log(CRIT, "m_sWLRBackend was NULL!");
-@@ -76,10 +76,11 @@ CCompositor::CCompositor() {
+@@ -86,10 +86,11 @@ CCompositor::CCompositor() {
      wlr_renderer_init_wl_shm(m_sWLRRenderer, m_sWLDisplay);
  
      if (wlr_renderer_get_dmabuf_texture_formats(m_sWLRRenderer)) {
@@ -30,7 +31,7 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
      }
  
      m_sWLRAllocator = wlr_allocator_autocreate(m_sWLRBackend, m_sWLRRenderer);
-@@ -131,7 +132,7 @@ CCompositor::CCompositor() {
+@@ -141,7 +142,7 @@ CCompositor::CCompositor() {
  
      m_sWLRIdle = wlr_idle_create(m_sWLDisplay);
  
@@ -38,8 +39,8 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
 +    m_sWLRLayerShell = wlr_layer_shell_v1_create(m_sWLDisplay);
  
      m_sWLRServerDecoMgr = wlr_server_decoration_manager_create(m_sWLDisplay);
-     m_sWLRXDGDecoMgr = wlr_xdg_decoration_manager_v1_create(m_sWLDisplay);
-@@ -171,6 +172,8 @@ CCompositor::CCompositor() {
+     m_sWLRXDGDecoMgr    = wlr_xdg_decoration_manager_v1_create(m_sWLDisplay);
+@@ -181,6 +182,8 @@ CCompositor::CCompositor() {
      wlr_xdg_foreign_v2_create(m_sWLDisplay, m_sWLRForeignRegistry);
  
      m_sWLRPointerGestures = wlr_pointer_gestures_v1_create(m_sWLDisplay);
@@ -48,7 +49,7 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
  
      m_sWLRTextInputMgr = wlr_text_input_manager_v3_create(m_sWLDisplay);
  
---- src/events/Events.hpp.orig	2022-12-06 13:15:18 UTC
+--- src/events/Events.hpp.orig	2023-02-03 14:12:28 UTC
 +++ src/events/Events.hpp
 @@ -96,7 +96,6 @@ namespace Events {
      // Monitor part 2 the sequel
@@ -58,9 +59,9 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
  
      // XWayland
      LISTENER(readyXWayland);
---- src/events/Monitors.cpp.orig	2023-01-05 22:30:24 UTC
+--- src/events/Monitors.cpp.orig	2023-02-03 14:12:28 UTC
 +++ src/events/Monitors.cpp
-@@ -265,10 +265,11 @@ void Events::listener_monitorFrame(void* owner, void* 
+@@ -277,10 +277,11 @@ void Events::listener_monitorFrame(void* owner, void* 
                  damageBlinkCleanup = 0;
          }
  
@@ -76,7 +77,7 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
      }
  
      g_pHyprOpenGL->end();
-@@ -339,11 +340,4 @@ void Events::listener_monitorDestroy(void* owner, void
+@@ -351,11 +352,4 @@ void Events::listener_monitorDestroy(void* owner, void
  
          std::erase_if(g_pCompositor->m_vRealMonitors, [&](std::shared_ptr<CMonitor>& el) { return el.get() == pMonitor; });
      }
@@ -88,7 +89,18 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
 -
 -    wlr_output_commit_state(PMONITOR->output, E->state);
  }
---- src/helpers/Monitor.cpp.orig	2022-12-06 13:15:18 UTC
+--- src/events/Windows.cpp.orig	2023-02-03 14:12:28 UTC
++++ src/events/Windows.cpp
+@@ -816,7 +816,7 @@ void Events::listener_activateXDG(wl_listener* listene
+ 
+     Debug::log(LOG, "Activate request for surface at %x", E->surface);
+ 
+-    if (!wlr_xdg_surface_try_from_wlr_surface(E->surface))
++    if (!wlr_surface_is_xdg_surface(E->surface))
+         return;
+ 
+     const auto PWINDOW = g_pCompositor->getWindowFromSurface(E->surface);
+--- src/helpers/Monitor.cpp.orig	2023-02-03 14:12:28 UTC
 +++ src/helpers/Monitor.cpp
 @@ -5,10 +5,8 @@ void CMonitor::onConnect(bool noRule) {
  void CMonitor::onConnect(bool noRule) {
@@ -101,7 +113,7 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
  
      if (m_bEnabled) {
          wlr_output_enable(output, 1);
-@@ -185,7 +183,7 @@ void CMonitor::onDisconnect() {
+@@ -207,7 +205,7 @@ void CMonitor::onDisconnect() {
      if (!BACKUPMON) {
          Debug::log(WARN, "Unplugged last monitor, entering an unsafe state. Good luck my friend.");
  
@@ -110,9 +122,9 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
          hyprListener_monitorDestroy.removeCallback();
  
          g_pCompositor->m_bUnsafeState = true;
---- src/helpers/Monitor.hpp.orig	2022-12-06 13:15:18 UTC
+--- src/helpers/Monitor.hpp.orig	2023-02-03 14:12:28 UTC
 +++ src/helpers/Monitor.hpp
-@@ -56,7 +56,7 @@ class CMonitor { (public)
+@@ -53,7 +53,7 @@ class CMonitor {
  
      DYNLISTENER(monitorFrame);
      DYNLISTENER(monitorDestroy);
@@ -121,7 +133,7 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
  
      // hack: a group = workspaces on a monitor.
      // I don't really care lol :P
---- src/helpers/SubsurfaceTree.cpp.orig	2022-12-06 13:15:18 UTC
+--- src/helpers/SubsurfaceTree.cpp.orig	2023-02-03 14:12:28 UTC
 +++ src/helpers/SubsurfaceTree.cpp
 @@ -3,8 +3,8 @@ void addSurfaceGlobalOffset(SSurfaceTreeNode* node, in
  #include "../Compositor.hpp"
@@ -134,3 +146,62 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
  
      if (node->offsetfn) {
          // This is the root node
+--- src/managers/XWaylandManager.cpp.orig	2023-02-03 14:12:28 UTC
++++ src/managers/XWaylandManager.cpp
+@@ -35,16 +35,16 @@ void CHyprXWaylandManager::activateSurface(wlr_surface
+     if (!pSurface)
+         return;
+ 
+-    if (wlr_xdg_surface_try_from_wlr_surface(pSurface)) {
+-        const auto PSURF = wlr_xdg_surface_try_from_wlr_surface(pSurface);
++    if (wlr_surface_is_xdg_surface(pSurface)) {
++        const auto PSURF = wlr_xdg_surface_from_wlr_surface(pSurface);
+         if (PSURF && PSURF->role == WLR_XDG_SURFACE_ROLE_TOPLEVEL) {
+             wlr_xdg_toplevel_set_activated(PSURF->toplevel, activate);
+         }
+-    } else if (wlr_xwayland_surface_try_from_wlr_surface(pSurface)) {
+-        wlr_xwayland_surface_activate(wlr_xwayland_surface_try_from_wlr_surface(pSurface), activate);
++    } else if (wlr_surface_is_xwayland_surface(pSurface)) {
++        wlr_xwayland_surface_activate(wlr_xwayland_surface_from_wlr_surface(pSurface), activate);
+ 
+         if (activate)
+-            wlr_xwayland_surface_restack(wlr_xwayland_surface_try_from_wlr_surface(pSurface), nullptr, XCB_STACK_MODE_ABOVE);
++            wlr_xwayland_surface_restack(wlr_xwayland_surface_from_wlr_surface(pSurface), nullptr, XCB_STACK_MODE_ABOVE);
+     }
+ }
+ 
+--- src/managers/input/InputMethodRelay.cpp.orig	2023-02-03 14:12:28 UTC
++++ src/managers/input/InputMethodRelay.cpp
+@@ -144,8 +144,8 @@ void CInputMethodRelay::updateInputPopup(SIMEPopup* pP
+     Vector2D   parentPos;
+     Vector2D   parentSize;
+ 
+-    if (wlr_layer_surface_v1_try_from_wlr_surface(PFOCUSEDSURFACE)) {
+-        const auto PLS = g_pCompositor->getLayerSurfaceFromWlr(wlr_layer_surface_v1_try_from_wlr_surface(PFOCUSEDSURFACE));
++    if (wlr_surface_is_layer_surface(PFOCUSEDSURFACE)) {
++        const auto PLS = g_pCompositor->getLayerSurfaceFromWlr(wlr_layer_surface_v1_from_wlr_surface(PFOCUSEDSURFACE));
+ 
+         if (PLS) {
+             parentPos  = Vector2D(PLS->geometry.x, PLS->geometry.y) + g_pCompositor->getMonitorFromID(PLS->monitorID)->vecPosition;
+@@ -243,8 +243,8 @@ void CInputMethodRelay::damagePopup(SIMEPopup* pPopup)
+ 
+     const auto PFOCUSEDSURFACE = PFOCUSEDTI->pWlrInput->focused_surface;
+ 
+-    if (wlr_layer_surface_v1_try_from_wlr_surface(PFOCUSEDSURFACE)) {
+-        const auto PLS = g_pCompositor->getLayerSurfaceFromWlr(wlr_layer_surface_v1_try_from_wlr_surface(PFOCUSEDSURFACE));
++    if (wlr_surface_is_layer_surface(PFOCUSEDSURFACE)) {
++        const auto PLS = g_pCompositor->getLayerSurfaceFromWlr(wlr_layer_surface_v1_from_wlr_surface(PFOCUSEDSURFACE));
+ 
+         if (PLS) {
+             parentPos = Vector2D(PLS->geometry.x, PLS->geometry.y) + g_pCompositor->getMonitorFromID(PLS->monitorID)->vecPosition;
+--- src/render/Renderer.cpp.orig	2023-02-03 14:12:28 UTC
++++ src/render/Renderer.cpp
+@@ -37,7 +37,7 @@ void renderSurface(struct wlr_surface* surface, int x,
+     rounding -= 1; // to fix a border issue
+ 
+     if (RDATA->surface && surface == RDATA->surface) {
+-        if (wlr_xwayland_surface_try_from_wlr_surface(surface) && !wlr_xwayland_surface_try_from_wlr_surface(surface)->has_alpha && RDATA->fadeAlpha * RDATA->alpha == 1.f) {
++        if (wlr_surface_is_xwayland_surface(surface) && !wlr_xwayland_surface_from_wlr_surface(surface)->has_alpha && RDATA->fadeAlpha * RDATA->alpha == 1.f) {
+             g_pHyprOpenGL->renderTexture(TEXTURE, &windowBox, RDATA->fadeAlpha * RDATA->alpha, rounding, true);
+         } else {
+             if (RDATA->blur)
