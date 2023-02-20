@@ -1,5 +1,5 @@
 PORTNAME=	valgrind
-PORTVERSION=	3.21.0.g20221028
+PORTVERSION=	3.21.0.g20230218
 DISTVERSIONPREFIX=	freebsd-
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -18,7 +18,7 @@ USES=		autoreconf cpe gmake pathfix perl5 pkgconfig shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	paulfloyd
 GH_PROJECT=	freebsd_valgrind
-GH_TAGNAME=	8d64ffab7
+GH_TAGNAME=	3b3d74d9d
 USE_PERL5=	build
 SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
 GNU_CONFIGURE=	yes
