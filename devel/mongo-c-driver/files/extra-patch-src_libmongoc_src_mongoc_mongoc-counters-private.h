@@ -1,7 +1,5 @@
-diff --git a/src/libmongoc/src/mongoc/mongoc-counters-private.h b/src/libmongoc/src/mongoc/mongoc-counters-private.h
-index ddd4d4954..c22908af0 100644
---- a/src/libmongoc/src/mongoc/mongoc-counters-private.h
-+++ b/src/libmongoc/src/mongoc/mongoc-counters-private.h
+--- src/libmongoc/src/mongoc/mongoc-counters-private.h.orig	2023-01-03 15:52:22 UTC
++++ src/libmongoc/src/mongoc/mongoc-counters-private.h
 @@ -28,6 +28,7 @@
  #include <sys/sysinfo.h>
  #elif defined(__FreeBSD__) || defined(__NetBSD__) || defined(__DragonFly__) || \

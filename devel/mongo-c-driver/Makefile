@@ -1,6 +1,8 @@
 PORTNAME=	mongo-c-driver
-PORTVERSION=	1.23.2
+DISTVERSION=	1.23.2
+PORTREVISION=	1
 CATEGORIES=	devel
+MASTER_SITES=	https://github.com/mongodb/${PORTNAME}/releases/download/${DISTVERSION}/
 
 MAINTAINER=	ports@bsdserwis.com
 COMMENT=	C Driver for MongoDB
@@ -9,54 +11,57 @@ WWW=		https://github.com/mongodb/mongo-c-driver
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake:noninja cpe pkgconfig
-USE_GITHUB=	yes
+LIB_DEPENDS=	libbson-1.0.so:devel/libbson \
+		libzstd.so:archivers/zstd
+
+USES=		cmake cpe pathfix pkgconfig python:env
 CPE_VENDOR=	mongodb
-GH_ACCOUNT=	mongodb
 USE_LDCONFIG=	yes
 
-LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2 \
-		libbson-1.0.so:devel/libbson \
-		libzstd.so:archivers/zstd
-SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
-SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-DOCS_VARS=	BUILD_DEPENDS+=sphinx-build:textproc/py-sphinx
-
-PATCH_STRIP=	-p1
 CFLAGS+=	-D__BSD_VISIBLE=1
-LDFLAGS+=	-pthread
 
-OPTIONS_DEFINE=	CRYPTOPROFILE DOCS RDTSCP SASL SNAPPY SSL
+CMAKE_OFF=	BUILD_TESTING \
+		ENABLE_EXAMPLES \
+		ENABLE_ICU \
+		ENABLE_TESTS \
+		ENABLE_UNINSTALL
+CMAKE_ON=	ENABLE_MONGOC \
+		ENABLE_ZSTD
+CMAKE_ARGS=	-DENABLE_BSON=SYSTEM \
+		-DENABLE_ZLIB=SYSTEM
+
+OPTIONS_DEFINE=		CRYPTOPROFILE DOCS RDTSCP SASL SNAPPY SSL
 OPTIONS_DEFAULT=	SSL
-OPTIONS_SUB=	yes
-CRYPTOPROFILE_DESC=	Use system crypto profile (require OPENSSL)
-RDTSCP_DESC=	Fast performance counters on Intel using the RDTSCP instruction
-SSL_DESC=	Enable TLS connections and SCRAM-SHA-1 authentication
-SSL_USES=	ssl
-SSL_CMAKE_OFF=	-DENABLE_SSL=OFF
-CRYPTOPROFILE_IMPLIES=	SSL
+OPTIONS_SUB=		yes
 
-CMAKE_ON=	ENABLE_EXAMPLES
-CMAKE_OFF=	ENABLE_TESTS ENABLE_UNINSTALL
-CMAKE_ARGS=	-DENABLE_MONGOC=ON -DENABLE_BSON=SYSTEM
-CMAKE_ARGS+=	-DENABLE_ZLIB=SYSTEM -DENABLE_ZSTD=ON
-CMAKE_ARGS+=	-DBSON_HAVE_STRINGS_H=0
-DOCS_CMAKE_ON=	-DENABLE_HTML_DOCS=ON -DENABLE_MAN_PAGES=ON
+CRYPTOPROFILE_DESC=	Use system crypto profile (requires OpenSSL)
+RDTSCP_DESC=		Fast performance counters on Intel using the RDTSCP instruction
+
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
+DOCS_CMAKE_ON=		-DENABLE_HTML_DOCS=ON -DENABLE_MAN_PAGES=ON
+
 RDTSCP_CMAKE_ON=	-DENABLE_RDTSCP=ON
 RDTSCP_CMAKE_OFF=	-DENABLE_RDTSCP=OFF
-SASL_CMAKE_ON=	-DENABLE_SASL=CYRUS
-SASL_CMAKE_OFF=	-DENABLE_SASL=OFF
+
+SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+SASL_CMAKE_ON=		-DENABLE_SASL=CYRUS
+SASL_CMAKE_OFF=		-DENABLE_SASL=OFF
+
+SNAPPY_LIB_DEPENDS=	libsnappy.so:archivers/snappy
 SNAPPY_CMAKE_ON=	-DENABLE_SNAPPY=ON
 SNAPPY_CMAKE_OFF=	-DENABLE_SNAPPY=OFF
+
+SSL_USES=		ssl
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSSL}
-.	if ${SSL_DEFAULT:Mlibressl*}
+.if	${SSL_DEFAULT:Mlibressl*}
 CMAKE_ARGS+=	-DENABLE_SSL=LIBRESSL
-.	else
+.endif
 CMAKE_ARGS+=	-DENABLE_SSL=OPENSSL
-.	endif
+.else
+CMAKE_ARGS+=	-DENABLE_SSL=OFF
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1300523
@@ -70,9 +75,10 @@ pre-configure-CRYPTOPROFILE-on:
 .endif
 
 post-extract:
-	${ECHO} "${PORTVERSION}" > ${WRKSRC}/VERSION_CURRENT
+	${ECHO} "${DISTVERSION}" > ${WRKSRC}/VERSION_CURRENT
 
 post-install:
+	${RM} -r ${STAGEDIR}${PREFIX}/share/${PORTNAME}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/mongoc-stat
 
 .include <bsd.port.mk>
