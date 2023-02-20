@@ -1,5 +1,5 @@
 PORTNAME=	formencode
-PORTVERSION=	1.3.0
+PORTVERSION=	2.0.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,17 +11,20 @@ WWW=		https://www.formencode.org/
 
 LICENSE=	PSFL
 
-OPTIONS_DEFINE=	DOCS
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=1.0:devel/py-setuptools_scm_git_archive@${PY_FLAVOR}
 
-USES=		dos2unix gettext-runtime:run python:3.6+ zip
-USE_PYTHON=	distutils autoplist
-
-NO_ARCH=	yes
+USES=		dos2unix gettext-runtime:run python:3.6+
+USE_PYTHON=	autoplist distutils
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
+NO_ARCH=	yes
+
 PORTDOCS=	*
 
-post-install:
+OPTIONS_DEFINE=	DOCS
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/docs/ && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
 
