@@ -1,3 +1,41 @@
+  <vuln vid="5048ed45-b0f1-11ed-ab04-9106b1b896dd">
+    <topic>gitea -- password hash quality</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.18.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/22942">
+	  <p>This PR refactors and improves the password hashing code within
+	    gitea and makes it possible for server administrators to set the
+	    password hashing parameters.</p>
+	  <p>In addition it takes the opportunity to adjust the settings for
+	    pbkdf2 in order to make the hashing a little stronger.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/22823">
+	  <p>Add command to bulk set must-change-password</p>
+	  <p>As part of administration sometimes it is appropriate to
+	    forcibly tell users to update their passwords.</p>
+	  <p>This PR creates a new command gitea admin user
+	    must-change-password which will set the MustChangePassword flag on
+	    the provided users.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.io/2023/02/gitea-1.18.4-is-released/</url>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.18.4</url>
+    </references>
+    <dates>
+      <discovery>2022-02-14</discovery>
+      <entry>2023-02-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="428922c9-b07e-11ed-8700-5404a68ad561">
     <topic>traefik -- Use of vulnerable Go module x/net/http2</topic>
     <affects>
