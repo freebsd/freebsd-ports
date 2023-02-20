@@ -14,6 +14,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/jsource-${JVERSION}/license.txt
 
 BROKEN=		does not build
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 ONLY_FOR_ARCHS=	amd64
 ONLY_FOR_ARCHS_REASON=	not built or tested on other architectures; i386 needs hostdefs and netdefs files to be generated
