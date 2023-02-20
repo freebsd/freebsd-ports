@@ -9,6 +9,8 @@ WWW=		https://www.varnish-cache.org/utility/nagios-varnish-plugin
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN=		fails to build
+
 RUN_DEPENDS=	sudo:security/sudo
 
 GNU_CONFIGURE=	yes
