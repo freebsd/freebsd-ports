@@ -1,6 +1,6 @@
---- configure.ac.in.orig	2022-07-19 08:13:10 UTC
+--- configure.ac.in.orig	2023-02-16 14:08:39 UTC
 +++ configure.ac.in
-@@ -86,56 +86,8 @@ LIBPCAP=-lpcap
+@@ -91,56 +91,8 @@ LIBPCAP=-lpcap
  MAKE=make
  BIN_PATH=/usr/bin
  LIBPCAP=-lpcap
@@ -12,7 +12,7 @@
 -
 -   dnl> https://github.com/google/sanitizers/wiki/AddressSanitizerFlags
 -   CC=clang
--   CXX="clang++ -fPIE"
+-   CXX="clang++ -fpie -fno-color-diagnostics $CLANG_STDLIB"
 -   if test $SYSTEM = "FreeBSD"; then
 -    MAKE=gmake
 -    BIN_PATH=/usr/local/bin
@@ -37,28 +37,28 @@
 -            CFLAGS="-fno-color-diagnostics $CFLAGS"
 -      fi
 -   fi
--else
--  if test $SYSTEM = "Linux"; then
--    if [ test -f /usr/bin/clang++ ]; then
--      CC=clang
--      CXX="clang++ -fPIE"
--      AC_MSG_RESULT(Using clang++ compiler)
--    fi
--
--    if [ test -f /etc/redhat-release ]; then
--      OS=`cat /etc/redhat-release`
--    else
--      if [ test -f /usr/bin/lsb_release ]; then
--        OS=`/usr/bin/lsb_release -d|cut -d ':' -f 2`
--      fi
--    fi
--  fi
+-dnl> else
+-dnl>   if test $SYSTEM = "Linux"; then
+-dnl>     if [ test -f /usr/bin/clang++ ]; then
+-dnl>       CC=clang
+-dnl>       CXX="clang++ -fpie -fno-color-diagnostics $CLANG_STDLIB"
+-dnl>       AC_MSG_RESULT(Using clang++ compiler)
+-dnl>     fi
+-dnl> 
+-dnl>     if [ test -f /etc/redhat-release ]; then
+-dnl>       OS=`cat /etc/redhat-release`
+-dnl>     else
+-dnl>       if [ test -f /usr/bin/lsb_release ]; then
+-dnl>         OS=`/usr/bin/lsb_release -d|cut -d ':' -f 2`
+-dnl>       fi
+-dnl>     fi
+-dnl>   fi
 -fi
 -
  dnl> Remove spaces
  OS="${OS#"${OS%%[![:space:]]*}"}"
  
-@@ -176,15 +128,6 @@ fi
+@@ -182,15 +134,6 @@ fi
    LIBS="${LIBS} -lnetfilter_queue -lnfnetlink -lnetfilter_conntrack"
  fi
  
@@ -74,7 +74,7 @@
  if test -d /opt/local/include; then :
    CFLAGS="${CFLAGS} -I/opt/local/include"
    CPPFLAGS="${CPPFLAGS} -I/opt/local/include"
-@@ -238,15 +181,12 @@ AC_ARG_WITH(ndpi-includes,
+@@ -244,15 +187,12 @@ AC_ARG_WITH(ndpi-includes,
        NDPI_CUST_INC="-I$withval -I$withval/../lib/third_party/include"
     ])
  
@@ -96,7 +96,7 @@
        if test -d "./nDPI" ; then :
           NDPI_HOME=./nDPI
        elif test -d "../nDPI" ; then :
-@@ -271,8 +211,8 @@ AC_MSG_CHECKING(for nDPI source)
+@@ -277,8 +217,8 @@ AC_MSG_CHECKING(for nDPI source)
        else
           AC_MSG_RESULT(not found)
        fi
@@ -106,30 +106,51 @@
  if test ! -z "$NDPI_CUST_INC" ; then :
    NDPI_INC=$NDPI_CUST_INC
  fi
-@@ -290,7 +230,7 @@ if test $SYSTEM = "FreeBSD"; then
+@@ -295,18 +235,14 @@ dnl finish: nDPI handling
+ fi
  dnl finish: nDPI handling
  
- if test $SYSTEM = "FreeBSD"; then
+-if test $SYSTEM = "FreeBSD"; then
 -   JSON_LIB=/usr/local/lib/libjson-c.a
-+   JSON_LIB=%%LOCALBASE%%/lib/libjson-c.a
-    JSON_INC=`pkg-config --cflags json-c`
+-   JSON_INC=`pkg-config --cflags json-c`
++
++pkg-config --exists json-c
++if test "$?" -ne 1; then
++  JSON_INC=`pkg-config --cflags json-c`
++  JSON_LIB=`pkg-config --libs json-c`
  else
-    pkg-config --exists json-c
-@@ -446,7 +386,7 @@ if test "$?" -ne 1; then
+-   pkg-config --exists json-c
+-   if test "$?" -ne 1; then
+-     JSON_INC=`pkg-config --cflags json-c`
+-     JSON_LIB=`pkg-config --libs json-c`
+-   else
+-     echo "Please install libjson-c-dev package prerequisite"
+-     exit -1
+-   fi
++  echo "Please install libjson-c-dev package prerequisite"
++  exit -1
+ fi
+ 
+ pkg-config --exists libssl
+@@ -461,11 +397,7 @@ if test "$?" -ne 1; then
+ pkg-config --exists hiredis
  if test "$?" -ne 1; then
    HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
-   if test $SYSTEM = "FreeBSD"; then
+-  if test $SYSTEM = "FreeBSD"; then
 -     HIREDIS_LIB="/usr/local/lib/libhiredis.a"
-+     HIREDIS_LIB="%%LOCALBASE%%/lib/libhiredis.a"
-    else
-      HIREDIS_LIB="`pkg-config --libs hiredis`"
-   fi
-@@ -467,14 +407,14 @@ if test "${with_nedge+set}" != set; then
+-   else
+-     HIREDIS_LIB="`pkg-config --libs hiredis`"
+-  fi
++  HIREDIS_LIB="`pkg-config --libs hiredis`"
+ else
+   echo "Please install hiredis package prerequisite"
+   exit -1
+@@ -483,14 +415,14 @@ if test "${with_nedge+set}" != set; then
    fi
  
    if test $SYSTEM = "FreeBSD"; then
 -     LIBPCAP="${PF_RING_HOME}/userland/libpcap/libpcap.a"
-+     # Use pcap from base
++    # Use pcap from base
    else
      if test -d ${PF_RING_HOME}; then
        AC_MSG_CHECKING(for PF_RING source installed in $PF_RING_HOME)
@@ -141,7 +162,7 @@
    AC_DEFINE_UNQUOTED(HAVE_PF_RING, 1, [Native PF_RING support])
    if test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
       echo "${PF_RING_HOME}/userland/libpcap/libpcap.a"
-@@ -494,18 +434,18 @@ if test "${with_nedge+set}" != set; then
+@@ -510,18 +442,18 @@ if test "${with_nedge+set}" != set; then
           CPPFLAGS="${CPPFLAGS} -I/opt/pfring/include"
           echo "Using PF_RING installed in /opt/pfring"
        else
@@ -166,14 +187,16 @@
  	  echo "Please make sure you have installed your PF_RING libraries and try again"
  	  exit 1
          fi
-@@ -654,8 +594,8 @@ if test $SYSTEM = "FreeBSD"; then
+@@ -670,9 +602,9 @@ dnl> FreeBSD
  fi
  
- if test $SYSTEM = "FreeBSD"; then
--   MYSQL_LIB=/usr/local/lib/mysql/libmysqlclient.a
--    MYSQL_INC="-I /usr/local/include/mysql/"
-+   MYSQL_LIB=%%LOCALBASE%%/lib/mysql/libmysqlclient.a
-+    MYSQL_INC="-I %%LOCALBASE%%/include/mysql/"
-    AC_DEFINE_UNQUOTED(HAVE_MYSQL, 1, [use mysql])
- else
+ dnl> FreeBSD
+-dnl> MYSQL_LIB=/usr/local/lib/mysql/libmysqlclient.a
+-dnl> MYSQL_INC="-I /usr/local/include/mysql/"
+-dnl> AC_DEFINE_UNQUOTED(HAVE_MYSQL, 1, [use mysql])
++MYSQL_LIB="-L%%LOCALBASE%%/lib/mysql -lmysqlclient"
++MYSQL_INC="-I%%LOCALBASE%%/include/mysql"
++AC_DEFINE_UNQUOTED(HAVE_MYSQL, 1, [use mysql])
+ 
+ if test $SYSTEM != "FreeBSD"; then
   if test "${with_nedge+set}" != set; then
