@@ -9,6 +9,8 @@ COMMENT=	Perl extension for Apache ZooKeeper
 WWW=		https://metacpan.org/release/Net-ZooKeeper
 
 BROKEN=		No longer compiles with newer versions of ZooKeeper
+DEPRECATED=	Broken since 2020
+EXPIRATION_DATE=	2023-03-20
 
 LICENSE=	APACHE20
 
