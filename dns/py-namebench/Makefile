@@ -14,6 +14,8 @@ WWW=		https://code.google.com/archive/p/namebench/
 LICENSE=	APACHE20
 
 BROKEN=	incompatible with Python 3
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.5.5:devel/py-Jinja2@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}graphy>=1.0:graphics/py-graphy@${PY_FLAVOR} \
