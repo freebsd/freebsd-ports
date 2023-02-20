@@ -1,6 +1,5 @@
 PORTNAME=	fvwm3
-DISTVERSION=	1.0.5
-PORTREVISION=	5
+PORTVERSION=	1.0.6a
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${DISTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/:icons
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		compiler:c11 cpe pkgconfig python:3.7+ readline xorg
+USES=		autoreconf compiler:c11 cpe pkgconfig python:3.7+ readline xorg
 USE_XORG=	ice sm x11 xext xft xrandr xrender xt
 
 CONFLICTS_INSTALL=	fvwm
@@ -38,7 +37,7 @@ FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	bidi
 
 GO_DESC=	Build and install modules written in Go
-GO_USES=	go:1.19,no_targets
+GO_USES=	go:no_targets
 GO_CONFIGURE_ENABLE=	golang
 
 FVWM_ICONS=	fvwm_icons-20070101
@@ -72,15 +71,6 @@ XCURSOR_CONFIGURE_ENABLE=	xcursor
 
 XPM_USE=	xorg=xpm
 XPM_CONFIGURE_OFF=	--with-xpm-library=no
-
-.include <bsd.port.options.mk>
-
-# Clang 15 promoted some warnings to errors. The upstream configure script
-# expects one of them to be only a warning. Work around this by explicitly
-# disabling the error here. FIXME: Check whether still needed on upgrades.
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
-CONFIGURE_ARGS+=	CFLAGS="${CFLAGS} -Wno-error=int-conversion"
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/,${LOCALBASE}/etc/,g' \

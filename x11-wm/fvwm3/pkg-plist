@@ -1,6 +1,5 @@
 bin/FvwmCommand
 %%GO%%bin/FvwmPrompt
-bin/fvwm-config
 %%PERL%%bin/fvwm-convert-2.6
 bin/fvwm-menu-desktop
 %%PERL%%bin/fvwm-menu-directory
@@ -41,7 +40,6 @@ libexec/fvwm3/%%DISTVERSION%%/FvwmTalk
 %%MANPAGES%%man/man1/FvwmPrompt.1.gz
 %%MANPAGES%%man/man1/FvwmRearrange.1.gz
 %%MANPAGES%%man/man1/FvwmScript.1.gz
-%%MANPAGES%%man/man1/fvwm-config.1.gz
 %%MANPAGES%%man/man1/fvwm-convert-2.6.1.gz
 %%MANPAGES%%man/man1/fvwm-menu-desktop.1.gz
 %%MANPAGES%%man/man1/fvwm-menu-directory.1.gz
@@ -49,7 +47,6 @@ libexec/fvwm3/%%DISTVERSION%%/FvwmTalk
 %%MANPAGES%%man/man1/fvwm-perllib.1.gz
 %%MANPAGES%%man/man1/fvwm-root.1.gz
 %%MANPAGES%%man/man1/fvwm3.1.gz
-%%MANPAGES%%man/man1/fvwm3_manpage_source.1.gz
 %%MANPAGES%%man/man1/fvwm3all.1.gz
 %%MANPAGES%%man/man1/fvwm3commands.1.gz
 %%MANPAGES%%man/man1/fvwm3menus.1.gz
@@ -87,7 +84,6 @@ libexec/fvwm3/%%DISTVERSION%%/FvwmTalk
 %%DATADIR%%/FvwmScript-ScreenDump
 %%DATADIR%%/FvwmScript-ScreenSetup
 %%DATADIR%%/FvwmScript-WidgetDemo
-%%DATADIR%%/default-config/.stalonetrayrc
 %%DATADIR%%/default-config/FvwmScript-ConfirmCopyConfig
 %%DATADIR%%/default-config/FvwmScript-ConfirmQuit
 %%DATADIR%%/default-config/FvwmScript-DateTime
@@ -126,6 +122,7 @@ libexec/fvwm3/%%DISTVERSION%%/FvwmTalk
 %%DATADIR%%/default-config/images/icons/win/sticky.png
 %%DATADIR%%/default-config/images/icons/win/title.png
 %%DATADIR%%/default-config/images/icons/win/top.png
+%%DATADIR%%/default-config/stalonetrayrc
 %%DATADIR%%/fvwm-menu-desktop-config.fpl
 %%DATADIR%%/fvwm-script-ComExample.pl
 %%PERL%%%%DATADIR%%/perllib/FVWM/Commands.pm
