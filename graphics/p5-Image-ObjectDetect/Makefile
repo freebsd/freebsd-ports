@@ -13,6 +13,8 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
 BROKEN=		OpenCV4 no longer ships OpencCV-1.0 headers
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/opencv.pc:graphics/opencv
