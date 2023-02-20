@@ -11,6 +11,8 @@ WWW=		https://rime.github.io/
 LICENSE=	GPLv3
 
 BROKEN=		fails to build
+DEPRECATED=	Broken since 2020
+EXPIRATION_DATE=	2023-03-20
 
 BUILD_DEPENDS=	rime_deployer:chinese/librime
 
