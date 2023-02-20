@@ -1,3 +1,5 @@
-TIMESTAMP = 1669576857
+TIMESTAMP = 1676931074
 SHA256 (lxqt/lxqt-config-1.2.0.tar.xz) = 3e1c4edd6c3099aa9a15623d43ea81da6a0a7cf5bd894b1e2873dc1bac2a1640
 SIZE (lxqt/lxqt-config-1.2.0.tar.xz) = 364972
+SHA256 (lxqt/6add4e4f0040693e7c4242fbae48c9d32007686c.patch) = 3acb08d235e5e029b3c5c0286d4da63d0f188c6df0c097866eb57d4f7fdc8b07
+SIZE (lxqt/6add4e4f0040693e7c4242fbae48c9d32007686c.patch) = 2857
