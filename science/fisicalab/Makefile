@@ -11,6 +11,8 @@ WWW=		https://www.nongnu.org/fisicalab/
 LICENSE=	GPLv3
 
 BROKEN=		fails to configure: error: C compiler cannot create executables
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 LIB_DEPENDS=	libgsl.so:math/gsl
 
