@@ -11,7 +11,7 @@ WWW=		https://github.com/google/osv-scanner
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.19,modules
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_COMMIT=	e206217
