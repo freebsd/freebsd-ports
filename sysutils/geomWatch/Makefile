@@ -20,6 +20,8 @@ BROKEN_armv6=		fails to compile: call to 'atomic_add_64' is ambiguous
 BROKEN_armv7=		fails to compile: call to 'atomic_add_64' is ambiguous
 IGNORE_DragonFly=	requires geom(4) support
 BROKEN=			does not fetch
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 USES=		tar:tbz
 USE_CXXSTD=	gnu++98
