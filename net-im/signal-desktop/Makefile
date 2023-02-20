@@ -7,7 +7,7 @@ MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		https://nodejs.org/download/release/v${NODE_VERSION}/:node \
 		https://electronjs.org/headers/v${ELECTRON_GYP_VERSION}/:electron_gyp \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
-DISTFILES=	signal-desktop-${DISTVERSION}-yarn-cache.tar.gz:prefetch \
+DISTFILES=	signal-desktop-${DISTVERSION}-yarn-cache.tar.gz \
 		signal-desktop-6.4.1-npm-cache.tar.gz:npm \
 		node-v${NODE_VERSION}-headers.tar.gz:node \
 		node-v${ELECTRON_GYP_VERSION}-headers.tar.gz:electron_gyp \
@@ -87,7 +87,7 @@ ELECTRON_VER_MAJOR=	22
 # keep NODE_VERSION in sync with www/node16 DISTVERSION
 NODE_VERSION=		16.19.0
 # bump ELECTRON_GYP_VERSION when ELECTRON_VER_MAJOR is changed
-ELECTRON_GYP_VERSION=	22.2.1
+ELECTRON_GYP_VERSION=	22.2.0
 
 # ll work/.cache/yarn/v6 | egrep "@signalapp|esbuild-freebsd"
 NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.22.0-d57441612df46f90df68fc5d9ad45b857b9d2c44-integrity
