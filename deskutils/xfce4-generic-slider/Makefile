@@ -10,6 +10,8 @@ WWW=		https://gitlab.xfce.org/panel-plugins/xfce4-generic-slider
 LICENSE=	GPLv3
 
 BROKEN=		Depends on removed XFCE GTK2 support
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 BUILD_DEPENDS=	xdt-autogen:devel/xfce4-dev-tools
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
