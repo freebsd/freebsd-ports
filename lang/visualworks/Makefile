@@ -18,6 +18,8 @@ LICENSE_TEXT=	Redistribution is probably not permitted
 LICENSE_PERMS=	auto-accept
 
 BROKEN=			does not fetch
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 DIST_SUBDIR=		${SUBDIR}
 SUBDIR=			vwnc${PORTVERSION}
