@@ -12,6 +12,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		build fails with latest devel/folly, no upstream support provided: https://github.com/rsocket/rsocket-cpp/issues/906
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 BUILD_DEPENDS=	libfmt>0:devel/libfmt
 LIB_DEPENDS=	libboost_atomic.so:devel/boost-libs \
