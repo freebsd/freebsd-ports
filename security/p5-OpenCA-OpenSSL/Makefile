@@ -27,5 +27,7 @@ MAKE_ARGS+=	PASTHRU_INC=-I${OPENSSLINC}
 .if ${OPSYS} == FreeBSD && (${SSL_DEFAULT} == base || ${SSL_DEFAULT} == openssl)
 BROKEN=		Does not support OpenSSL 1.1
 .endif
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 .include <bsd.port.mk>
