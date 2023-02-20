@@ -11,6 +11,8 @@ WWW=		https://rubygems.org/gems/objectdetect
 LICENSE=	MIT
 
 BROKEN=		OpenCV4 no longer ships OpencCV-1.0 headers
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 LIB_DEPENDS=	libopencv_video.so:graphics/opencv
 
