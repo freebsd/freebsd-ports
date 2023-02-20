@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_SSL=	openssl
 BROKEN_SSL_REASON_openssl=	member access into incomplete type 'EVP_PKEY' (aka 'evp_pkey_st')
+DEPRECATED=	Broken with recent ssl
+EXPIRATION_DATE=	2023-03-20
 
 USES=		bdb ssl
 USE_GCC=	yes
