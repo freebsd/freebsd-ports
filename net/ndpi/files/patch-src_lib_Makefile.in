@@ -1,17 +1,17 @@
 -	/bin/rm -f libndpi.a $(OBJECTS)
 new file mode 100644
---- src/lib/Makefile.in.orig	2022-07-14 16:13:42 UTC
+--- src/lib/Makefile.in.orig	2023-02-01 17:29:59 UTC
 +++ src/lib/Makefile.in
-@@ -14,15 +14,12 @@ includedir = ${prefix}/include/ndpi
- prefix     = @prefix@
- libdir     = ${prefix}/lib
- includedir = ${prefix}/include/ndpi
+@@ -14,15 +14,12 @@ includedir = @includedir@/ndpi
+ PREFIX     = @prefix@
+ libdir     = @libdir@
+ includedir = @includedir@/ndpi
 -ifneq ($(OS),Windows_NT)
 -CFLAGS     += -fPIC -DPIC
 -endif
--CFLAGS     += -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@
-+CFLAGS     += -fPIC -DPIC -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@
- LDFLAGS    = @LDFLAGS@
+-CFLAGS     += -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
++CFLAGS     += -fPIC -DPIC -I../include -Ithird_party/include -DNDPI_LIB_COMPILATION @NDPI_CFLAGS@ @CFLAGS@ @GPROF_CFLAGS@ @CUSTOM_NDPI@ @ADDITIONAL_INCS@
+ LDFLAGS    += @NDPI_LDFLAGS@
  LIBS       = @ADDITIONAL_LIBS@ @LIBS@ @GPROF_LIBS@
  
 -OBJECTS   = $(patsubst protocols/%.c, protocols/%.o, $(wildcard protocols/*.c)) $(patsubst third_party/src/%.c, third_party/src/%.o, $(wildcard third_party/src/*.c)) $(patsubst ./%.c, ./%.o, $(wildcard ./*.c))
@@ -21,7 +21,7 @@ new file mode 100644
  NDPI_VERSION_MAJOR   = @NDPI_MAJOR@
  NDPI_LIB_STATIC      = libndpi.a
  NDPI_LIB_SHARED_BASE = libndpi.so
-@@ -30,27 +27,8 @@ USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
+@@ -30,27 +27,9 @@ USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
  NDPI_LIBS            = $(NDPI_LIB_STATIC) $(NDPI_LIB_SHARED)
  USE_HOST_LIBGCRYPT   = @USE_HOST_LIBGCRYPT@
  
@@ -34,7 +34,7 @@ new file mode 100644
 -OS := $(shell uname)
 -endif
  BUILD_MINGW    		 = @BUILD_MINGW@
--
+ 
 -ifeq ($(OS),Darwin)
 -CC=clang
 -SONAME_FLAG=
