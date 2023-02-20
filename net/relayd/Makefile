@@ -9,6 +9,8 @@ WWW=		https://github.com/mmatuska/relayd
 
 LICENSE=	ISCL
 
+BROKEN=		fails to build
+
 USES=		ssl uidfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	mmatuska
