@@ -11,6 +11,8 @@ WWW=		https://www.inet.no/dante/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to configure
+
 LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc \
 		libsasl2.so:security/cyrus-sasl2
 
