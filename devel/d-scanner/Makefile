@@ -10,6 +10,8 @@ WWW=		https://github.com/dlang-community/D-Scanner
 
 LICENSE=	BSL
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	ldmd2:lang/ldc \
 		dub:devel/dub \
 		rdmd:lang/dlang-tools \
