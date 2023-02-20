@@ -10,6 +10,8 @@ WWW=		https://openage.sft.mx/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/legal/GPLv3
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PY_PILLOW} \
