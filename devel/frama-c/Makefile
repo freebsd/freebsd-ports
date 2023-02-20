@@ -12,6 +12,8 @@ WWW=		https://frama-c.com/index.html
 LICENSE=	LGPL21
 
 BROKEN=		fails to build
+DEPRECATED=	Broken since 2021
+EXPIRATION_DATE=	2023-03-21
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/ocaml/ocamlgraph/graph.a:math/ocaml-ocamlgraph \
 	    ${LOCALBASE}/lib/ocaml/site-lib/zarith/zarith.a:math/ocaml-zarith
