@@ -16,6 +16,9 @@ WWW=		https://help.ui.com/hc/en-us/categories/200320654-UniFi-Wireless
 
 RUN_DEPENDS=	snappyjava>0:archivers/snappy-java
 
+DEPRECATED=    Depends on upstream EOLed mongodb36
+EXPIRATION_DATE=       2023-03-31
+
 USES=		cpe
 
 CPE_VENDOR=	ui
