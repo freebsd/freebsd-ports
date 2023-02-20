@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN=		fails to build
 BROKEN_FreeBSD_12=	invalid target: self
 BROKEN_FreeBSD_13=	invalid target: self
+DEPRECATED=	Broken since 2020
+EXPIRATION_DATE=	2023-03-20
 
 BUILD_DEPENDS=	mlton:lang/mlton
 
