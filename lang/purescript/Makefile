@@ -1,5 +1,6 @@
 PORTNAME=	purescript
 PORTVERSION=	0.15.7
+PORTREVISION=	1
 CATEGORIES=	lang
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -27,7 +28,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		ansi-wl-pprint-0.6.9_3 \
 		assoc-1.0.2_3 \
 		async-2.2.4_2 \
-		attoparsec-0.14.4_2 \
+		attoparsec-0.14.4_3 \
 		auto-update-0.1.6 \
 		base-compat-0.12.2 \
 		base-compat-batteries-0.12.2 \
@@ -52,6 +53,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		contravariant-1.5.5 \
 		cryptonite-0.30 \
 		css-text-0.1.3.0 \
+		data-array-byte-0.1.0.1_1 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
 		data-default-instances-containers-0.0.1 \
@@ -63,17 +65,17 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		dlist-1.0 \
 		easy-file-0.2.2 \
 		edit-distance-0.2.2.1_1 \
-		fast-logger-3.1.1 \
+		fast-logger-3.1.2 \
 		file-embed-0.0.15.0 \
 		free-5.1.10 \
 		half-0.3.1 \
 		happy-1.20.0_1 \
-		hashable-1.4.1.0 \
+		hashable-1.4.2.0 \
 		haskeline-0.8.2_3 \
-		hsc2hs-0.68.8_1 \
+		hsc2hs-0.68.9 \
 		indexed-traversable-0.1.2_2 \
 		indexed-traversable-instances-0.1.1.1 \
-		integer-logarithms-1.0.3.1_3 \
+		integer-logarithms-1.0.3.1_4 \
 		invariant-0.6_1 \
 		kan-extensions-5.2.5 \
 		language-javascript-0.7.0.0 \
@@ -82,23 +84,23 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		lifted-base-0.2.3.12 \
 		memory-0.17.0_1 \
 		monad-control-1.0.3.1 \
-		monad-logger-0.3.37_3 \
+		monad-logger-0.3.39 \
 		monad-loops-0.4.3 \
 		mono-traversable-1.0.15.3 \
 		monoidal-containers-0.6.3.0 \
 		mtl-compat-0.2.2 \
 		network-3.1.2.7 \
-		network-uri-2.6.4.1 \
+		network-uri-2.6.4.2 \
 		newtype-0.2.2.0_3 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.3_2 \
 		optparse-applicative-0.17.0.0 \
 		parallel-3.2.2.0_5 \
 		pattern-arrows-0.0.2_1 \
-		primitive-0.7.4.0 \
+		primitive-0.7.4.0_1 \
 		process-1.6.13.1_1 \
 		profunctors-5.6.2_2 \
-		protolude-0.3.2 \
+		protolude-0.3.3 \
 		random-1.2.1.1 \
 		reflection-2.1.6_1 \
 		regex-base-0.94.0.2_1 \
@@ -107,18 +109,18 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		safe-0.3.19 \
 		scientific-0.3.7.0_3 \
 		semialign-1.2.0.1_3 \
-		semigroupoids-5.3.7 \
+		semigroupoids-5.3.7_1 \
 		semigroups-0.20 \
 		serialise-0.2.6.0_1 \
 		sourcemap-0.1.7 \
 		split-0.2.3.5 \
-		splitmix-0.1.0.4_1 \
+		splitmix-0.1.0.4_2 \
 		stm-chans-3.0.0.6 \
 		streaming-commons-0.2.2.5 \
 		strict-0.4.0.1_4 \
 		stringsearch-0.3.6.6_1 \
 		syb-0.7.2.2 \
-		tagged-0.8.6.1_3 \
+		tagged-0.8.7 \
 		tagsoup-0.14.8 \
 		text-short-0.1.5_1 \
 		th-abstraction-0.4.5.0 \
@@ -132,7 +134,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		uniplate-1.6.13_1 \
 		unix-compat-0.6_1 \
 		unix-time-0.4.8 \
-		unliftio-core-0.2.0.1_2 \
+		unliftio-core-0.2.1.0_1 \
 		unordered-containers-0.2.19.1_1 \
 		utf8-string-1.0.2 \
 		uuid-types-1.0.5_3 \
@@ -141,7 +143,7 @@ USE_CABAL=	Cabal-3.6.3.0 \
 		void-0.7.3 \
 		witherable-0.4.2_3 \
 		xss-sanitize-0.3.7.1 \
-		zlib-0.6.3.0
+		zlib-0.6.3.0_1
 
 CABAL_EXECUTABLES=	purs
 CABAL_FLAGS=		release
