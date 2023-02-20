@@ -10,6 +10,8 @@ WWW=		https://github.com/pichi-router/pichi
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build
+
 BUILD_DEPENDS=	rapidjson>=1.1.0:devel/rapidjson
 
 USES=		cmake compiler:c++17-lang cpe
