@@ -35,5 +35,7 @@ PLIST_FILES=	${PYTHON_SITELIBDIR}/open3d.so
 .if !exists(/usr/include/c++/v1/experimental/optional) && ${CHOSEN_COMPILER_TYPE} == clang
 BROKEN=		Base C++ compiler is missing the header <experimental/optional>, see bug\#249538
 .endif
+DEPRECATED=	Broken since 2020
+EXPIRATION_DATE=	2023-03-20
 
 .include <bsd.port.post.mk>
