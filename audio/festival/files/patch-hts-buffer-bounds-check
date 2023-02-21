@@ -1,0 +1,313 @@
+Obtained from Debian. Original description follows:
+
+Description: HTS engine does not check buffer bounds in some functions.
+This patch adds bounds checking to prevent writing past the end of the buffer.
+
+Author: Peter Drysdale <drysdalepete@gmail.com>
+
+--- festival/src/modules/hts_engine/HTS_engine.c
++++ festival/src/modules/hts_engine/HTS_engine.c
+@@ -467,7 +467,7 @@
+ }
+ 
+ /* HTS_Engine_synthesize_from_strings: synthesize speech from strings */
+-HTS_Boolean HTS_Engine_synthesize_from_strings(HTS_Engine * engine, char **lines, size_t num_lines)
++HTS_Boolean HTS_Engine_synthesize_from_strings(HTS_Engine * engine, const char **lines, size_t num_lines)
+ {
+    HTS_Engine_refresh(engine);
+    HTS_Label_load_from_strings(&engine->label, engine->condition.sampling_frequency, engine->condition.fperiod, lines, num_lines);
+--- festival/src/modules/hts_engine/HTS_engine.h
++++ festival/src/modules/hts_engine/HTS_engine.h
+@@ -427,7 +427,7 @@
+ HTS_Boolean HTS_Engine_synthesize_from_fn(HTS_Engine * engine, const char *fn);
+ 
+ /* HTS_Engine_synthesize_from_strings: synthesize speech from string list */
+-HTS_Boolean HTS_Engine_synthesize_from_strings(HTS_Engine * engine, char **lines, size_t num_lines);
++HTS_Boolean HTS_Engine_synthesize_from_strings(HTS_Engine * engine, const char **lines, size_t num_lines);
+ 
+ /* HTS_Engine_save_information: save trace information */
+ void HTS_Engine_save_information(HTS_Engine * engine, FILE * fp);
+--- festival/src/modules/hts_engine/HTS_hidden.h
++++ festival/src/modules/hts_engine/HTS_hidden.h
+@@ -117,16 +117,16 @@
+ size_t HTS_fwrite_little_endian(const void *buf, size_t size, size_t n, FILE * fp);
+ 
+ /* HTS_get_pattern_token: get pattern token (single/double quote can be used) */
+-HTS_Boolean HTS_get_pattern_token(HTS_File * fp, char *buff);
++HTS_Boolean HTS_get_pattern_token(HTS_File * fp, char *buff, size_t bufflen);
+ 
+ /* HTS_get_token: get token from file pointer (separators are space,tab,line break) */
+-HTS_Boolean HTS_get_token_from_fp(HTS_File * fp, char *buff);
++HTS_Boolean HTS_get_token_from_fp(HTS_File * fp, char *buff, size_t bufflen);
+ 
+ /* HTS_get_token: get token from file pointer with specified separator */
+ HTS_Boolean HTS_get_token_from_fp_with_separator(HTS_File * fp, char *buff, char separator);
+ 
+ /* HTS_get_token_from_string: get token from string (separator are space,tab,line break) */
+-HTS_Boolean HTS_get_token_from_string(const char *string, size_t * index, char *buff);
++HTS_Boolean HTS_get_token_from_string(const char *string, size_t * index, char *buff, size_t bufflen);
+ 
+ /* HTS_get_token_from_string_with_separator: get token from string with specified separator */
+ HTS_Boolean HTS_get_token_from_string_with_separator(const char *str, size_t * index, char *buff, char separator);
+@@ -248,7 +248,7 @@
+ void HTS_Label_load_from_fn(HTS_Label * label, size_t sampling_rate, size_t fperiod, const char *fn);
+ 
+ /* HTS_Label_load_from_strings: load label list from string list */
+-void HTS_Label_load_from_strings(HTS_Label * label, size_t sampling_rate, size_t fperiod, char **lines, size_t num_lines);
++void HTS_Label_load_from_strings(HTS_Label * label, size_t sampling_rate, size_t fperiod, const char **lines, size_t num_lines);
+ 
+ /* HTS_Label_get_size: get number of label string */
+ size_t HTS_Label_get_size(HTS_Label * label);
+--- festival/src/modules/hts_engine/HTS_misc.c
++++ festival/src/modules/hts_engine/HTS_misc.c
+@@ -333,7 +333,7 @@
+ }
+ 
+ /* HTS_get_pattern_token: get pattern token (single/double quote can be used) */
+-HTS_Boolean HTS_get_pattern_token(HTS_File * fp, char *buff)
++HTS_Boolean HTS_get_pattern_token(HTS_File * fp, char *buff, size_t bufflen)
+ {
+    char c;
+    size_t i;
+@@ -369,7 +369,7 @@
+    }
+ 
+    i = 0;
+-   while (1) {
++   while (i<bufflen) {
+       buff[i++] = c;
+       c = HTS_fgetc(fp);
+       if (squote && c == '\'')
+@@ -386,12 +386,16 @@
+       }
+    }
+ 
++   if (i == bufflen) {
++      HTS_error(2,"HTS_get_pattern_token: Buffer overflow.\n");
++   }
++
+    buff[i] = '\0';
+    return TRUE;
+ }
+ 
+ /* HTS_get_token: get token from file pointer (separators are space, tab, and line break) */
+-HTS_Boolean HTS_get_token_from_fp(HTS_File * fp, char *buff)
++HTS_Boolean HTS_get_token_from_fp(HTS_File * fp, char *buff, size_t bufflen)
+ {
+    char c;
+    size_t i;
+@@ -407,7 +411,7 @@
+          return FALSE;
+    }
+ 
+-   for (i = 0; c != ' ' && c != '\n' && c != '\t';) {
++   for (i = 0; c != ' ' && c != '\n' && c != '\t'  && (i<bufflen);) {
+       buff[i++] = c;
+       if (HTS_feof(fp))
+          break;
+@@ -416,6 +420,10 @@
+          break;
+    }
+ 
++   if (i == bufflen) {
++      HTS_error(2,"HTS_get_token: Buffer overflow.\n");
++   }
++
+    buff[i] = '\0';
+    return TRUE;
+ }
+@@ -451,7 +459,7 @@
+ }
+ 
+ /* HTS_get_token_from_string: get token from string (separators are space, tab, and line break) */
+-HTS_Boolean HTS_get_token_from_string(const char *string, size_t * index, char *buff)
++HTS_Boolean HTS_get_token_from_string(const char *string, size_t * index, char *buff, size_t bufflen)
+ {
+    char c;
+    size_t i;
+@@ -467,11 +475,15 @@
+          return FALSE;
+       c = string[(*index)++];
+    }
+-   for (i = 0; c != ' ' && c != '\n' && c != '\t' && c != '\0'; i++) {
++   for (i = 0; c != ' ' && c != '\n' && c != '\t' && c != '\0' && (i<bufflen); i++) {
+       buff[i] = c;
+       c = string[(*index)++];
+    }
+ 
++   if (i == bufflen) {
++      HTS_error(2,"HTS_get_token_from_string: Buffer overflow.\n");
++   }
++
+    buff[i] = '\0';
+    return TRUE;
+ }
+@@ -480,7 +492,7 @@
+ HTS_Boolean HTS_get_token_from_string_with_separator(const char *str, size_t * index, char *buff, char separator)
+ {
+    char c;
+-   size_t start;
++   /*size_t start;*/
+    size_t len = 0;
+ 
+    if (str == NULL)
+@@ -495,7 +507,7 @@
+       (*index)++;
+       c = str[(*index)];
+    }
+-   start = (*index);
++   /*start = (*index);*/
+    while (c != separator && c != '\0') {
+       buff[len++] = c;
+       (*index)++;
+--- festival/src/modules/hts_engine/HTS_model.c
++++ festival/src/modules/hts_engine/HTS_model.c
+@@ -194,12 +194,12 @@
+    HTS_Question_clear(question);
+ 
+    /* get question name */
+-   if (HTS_get_pattern_token(fp, buff) == FALSE)
++   if (HTS_get_pattern_token(fp, buff, HTS_MAXBUFLEN) == FALSE)
+       return FALSE;
+    question->string = HTS_strdup(buff);
+ 
+    /* get pattern list */
+-   if (HTS_get_pattern_token(fp, buff) == FALSE) {
++   if (HTS_get_pattern_token(fp, buff, HTS_MAXBUFLEN) == FALSE) {
+       HTS_Question_clear(question);
+       return FALSE;
+    }
+@@ -207,7 +207,7 @@
+    last_pattern = NULL;
+    if (strcmp(buff, "{") == 0) {
+       while (1) {
+-         if (HTS_get_pattern_token(fp, buff) == FALSE) {
++         if (HTS_get_pattern_token(fp, buff, HTS_MAXBUFLEN) == FALSE) {
+             HTS_Question_clear(question);
+             return FALSE;
+          }
+@@ -218,7 +218,7 @@
+             question->head = pattern;
+          pattern->string = HTS_strdup(buff);
+          pattern->next = NULL;
+-         if (HTS_get_pattern_token(fp, buff) == FALSE) {
++         if (HTS_get_pattern_token(fp, buff, HTS_MAXBUFLEN) == FALSE) {
+             HTS_Question_clear(question);
+             return FALSE;
+          }
+@@ -358,7 +358,7 @@
+    if (tree == NULL || fp == NULL)
+       return FALSE;
+ 
+-   if (HTS_get_pattern_token(fp, buff) == FALSE) {
++   if (HTS_get_pattern_token(fp, buff, HTS_MAXBUFLEN) == FALSE) {
+       HTS_Tree_clear(tree);
+       return FALSE;
+    }
+@@ -367,14 +367,14 @@
+    tree->root = last_node = node;
+ 
+    if (strcmp(buff, "{") == 0) {
+-      while (HTS_get_pattern_token(fp, buff) == TRUE && strcmp(buff, "}") != 0) {
++      while (HTS_get_pattern_token(fp, buff, HTS_MAXBUFLEN) == TRUE && strcmp(buff, "}") != 0) {
+          node = HTS_Node_find(last_node, atoi(buff));
+          if (node == NULL) {
+             HTS_error(0, "HTS_Tree_load: Cannot find node %d.\n", atoi(buff));
+             HTS_Tree_clear(tree);
+             return FALSE;
+          }
+-         if (HTS_get_pattern_token(fp, buff) == FALSE) {
++         if (HTS_get_pattern_token(fp, buff, HTS_MAXBUFLEN) == FALSE) {
+             HTS_Tree_clear(tree);
+             return FALSE;
+          }
+@@ -389,7 +389,7 @@
+          HTS_Node_initialize(node->yes);
+          HTS_Node_initialize(node->no);
+ 
+-         if (HTS_get_pattern_token(fp, buff) == FALSE) {
++         if (HTS_get_pattern_token(fp, buff, HTS_MAXBUFLEN) == FALSE) {
+             node->quest = NULL;
+             free(node->yes);
+             free(node->no);
+@@ -403,7 +403,7 @@
+          node->no->next = last_node;
+          last_node = node->no;
+ 
+-         if (HTS_get_pattern_token(fp, buff) == FALSE) {
++         if (HTS_get_pattern_token(fp, buff, HTS_MAXBUFLEN) == FALSE) {
+             node->quest = NULL;
+             free(node->yes);
+             free(node->no);
+@@ -495,7 +495,7 @@
+    win->coefficient = (double **) HTS_calloc(win->size, sizeof(double *));
+    /* set delta coefficents */
+    for (i = 0; i < win->size; i++) {
+-      if (HTS_get_token_from_fp(fp[i], buff) == FALSE) {
++      if (HTS_get_token_from_fp(fp[i], buff, HTS_MAXBUFLEN) == FALSE) {
+          result = FALSE;
+          fsize = 1;
+       } else {
+@@ -508,7 +508,7 @@
+       /* read coefficients */
+       win->coefficient[i] = (double *) HTS_calloc(fsize, sizeof(double));
+       for (j = 0; j < fsize; j++) {
+-         if (HTS_get_token_from_fp(fp[i], buff) == FALSE) {
++         if (HTS_get_token_from_fp(fp[i], buff, HTS_MAXBUFLEN) == FALSE) {
+             result = FALSE;
+             win->coefficient[i][j] = 0.0;
+          } else {
+@@ -610,7 +610,7 @@
+    last_question = NULL;
+    last_tree = NULL;
+    while (!HTS_feof(fp)) {
+-      HTS_get_pattern_token(fp, buff);
++      HTS_get_pattern_token(fp, buff, HTS_MAXBUFLEN);
+       /* parse questions */
+       if (strcmp(buff, "QS") == 0) {
+          question = (HTS_Question *) HTS_calloc(1, sizeof(HTS_Question));
+--- festival/src/modules/hts_engine/HTS_label.c
++++ festival/src/modules/hts_engine/HTS_label.c
+@@ -117,5 +117,5 @@
+ 
+    /* parse label file */
+-   while (HTS_get_token_from_fp(fp, buff)) {
++   while (HTS_get_token_from_fp(fp, buff, HTS_MAXBUFLEN)) {
+       if (!isgraph((int) buff[0]))
+          break;
+@@ -130,9 +130,9 @@
+       }
+       if (isdigit_string(buff)) {       /* has frame infomation */
+          start = atof(buff);
+-         HTS_get_token_from_fp(fp, buff);
++         HTS_get_token_from_fp(fp, buff, HTS_MAXBUFLEN);
+          end = atof(buff);
+-         HTS_get_token_from_fp(fp, buff);
++         HTS_get_token_from_fp(fp, buff, HTS_MAXBUFLEN);
+          lstring->start = rate * start;
+          lstring->end = rate * end;
+       } else {
+@@ -154,7 +154,7 @@
+ }
+ 
+ /* HTS_Label_load_from_strings: load label from strings */
+-void HTS_Label_load_from_strings(HTS_Label * label, size_t sampling_rate, size_t fperiod, char **lines, size_t num_lines)
++void HTS_Label_load_from_strings(HTS_Label * label, size_t sampling_rate, size_t fperiod, const char **lines, size_t num_lines)
+ {
+    char buff[HTS_MAXBUFLEN];
+    HTS_LabelString *lstring = NULL;
+@@ -182,11 +182,11 @@
+       }
+       data_index = 0;
+       if (isdigit_string(lines[i])) {   /* has frame infomation */
+-         HTS_get_token_from_string(lines[i], &data_index, buff);
++         HTS_get_token_from_string(lines[i], &data_index, buff, HTS_MAXBUFLEN);
+          start = atof(buff);
+-         HTS_get_token_from_string(lines[i], &data_index, buff);
++         HTS_get_token_from_string(lines[i], &data_index, buff, HTS_MAXBUFLEN);
+          end = atof(buff);
+-         HTS_get_token_from_string(lines[i], &data_index, buff);
++         HTS_get_token_from_string(lines[i], &data_index, buff, HTS_MAXBUFLEN);
+          lstring->name = HTS_strdup(buff);
+          lstring->start = rate * start;
+          lstring->end = rate * end;

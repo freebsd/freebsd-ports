@@ -1,0 +1,76 @@
+Address some of the warnings flagged by either compiler or valgrind.
+
+	-mi
+--- speech_tools/stats/EST_Discrete.cc	2010-11-05 10:12:43.000000000 -0400
++++ speech_tools/stats/EST_Discrete.cc	2023-02-20 22:17:06.842236000 -0500
+@@ -152,5 +152,5 @@
+     for (i=0; i<next_free; i++)
+ 	delete discretes[i];
+-    delete discretes;
++    delete[] discretes;
+ }
+ 
+--- festival/src/modules/hts_engine/fest2hts_engine.cc	2013-02-18 10:10:52.000000000 -0500
++++ festival/src/modules/hts_engine/fest2hts_engine.cc	2023-02-20 22:55:59.303248000 -0500
+@@ -191,16 +191,16 @@
+   char *copyright[] = { HTS_COPYRIGHT };
+ 
+-  sprintf(str,
++  str += sprintf(str,
+            "\nThe HMM-Based Speech Synthesis Engine \"hts_engine API\"\n");
+ 
+-  sprintf(str,
+-           "%shts_engine API version %s (%s)\n", str, version, url);
++  str += sprintf(str,
++           "hts_engine API version %s (%s)\n", version, url);
+   for (i = 0; i < nCopyright; i++) {
+     if (i == 0)
+-      sprintf(str,
+-               "%sCopyright (C) %s\n", str, copyright[i]);
++      str += sprintf(str,
++               "Copyright (C) %s\n", copyright[i]);
+     else
+-      sprintf(str,
+-               "%s              %s\n", str, copyright[i]);
++      str += sprintf(str,
++               "              %s\n", copyright[i]);
+   }
+   sprintf(str, "%sAll rights reserved.\n", str);
+--- speech_tools/speech_class/EST_wave_io.cc	2013-10-14 17:54:33.000000000 -0400
++++ speech_tools/speech_class/EST_wave_io.cc	2023-02-21 00:03:12.559352000 -0500
+@@ -230,5 +230,5 @@
+ 	data_length = length*(*num_channels);
+ 
+-    file_data = walloc(unsigned char,sample_width * data_length);
++    file_data = new unsigned char[sample_width * data_length];
+ 
+     ts.seek(current_pos+NIST_HDR_SIZE+(sample_width*offset*(*num_channels)));
+--- speech_tools/siod/slib_python.cc	2014-12-11 10:30:16.000000000 -0500
++++ speech_tools/siod/slib_python.cc	2023-02-21 00:07:42.577728000 -0500
+@@ -372,8 +372,4 @@
+   Py_Finalize();
+ }
+-#else   // No python support
+-
+-/* So there is a symbol in here even if there is no python support */
+-static int est_no_python_support = 1;
+ 
+ #endif  // EST_SIOD_ENABLE_PYTHON
+--- speech_tools/include/EST_Token.h	2004-09-29 04:24:17.000000000 -0400
++++ speech_tools/include/EST_Token.h	2023-02-21 00:23:22.647701000 -0500
+@@ -119,6 +119,4 @@
+     const EST_String &string() const { return String(); }
+     /// Access token as a string
+-    const EST_String &S() const { return S(); }
+-    /// Access token as a string
+     const EST_String &String() const { return pname; }
+     /// For automatic coercion to \Ref{EST_String}
+--- festival/src/modules/UniSyn/us_mapping.cc	2014-12-18 10:48:03.000000000 -0500
++++ festival/src/modules/UniSyn/us_mapping.cc	2023-02-21 00:47:56.907441000 -0500
+@@ -169,5 +169,5 @@
+ 	// find closest pitchmark (assume only need forward search from current
+ 	// point, since pitchmarks should always be increasing)
+-	while( (apm_i<=s_i_end) && (fabs((next_apm_t*m)-tpm_t) <= fabs((apm_t*m)-tpm_t)) ){
++	while ((apm_i < s_i_end - 1) && (fabs((next_apm_t*m)-tpm_t) <= fabs((apm_t*m)-tpm_t))) {
+ // 	  printf("(next_apm_t apm_t) %f %f\n", 
+ // 		 fabs((next_apm_t*m)-tpm_t), fabs((apm_t*m)-tpm_t) );
