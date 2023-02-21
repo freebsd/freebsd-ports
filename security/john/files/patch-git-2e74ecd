@@ -1,0 +1,31 @@
+From 2e74ecd4da1624b78d07eddaaa1074fc584928d0 Mon Sep 17 00:00:00 2001
+From: pkubaj <pkubaj@FreeBSD.org>
+Date: Tue, 21 Feb 2023 16:44:44 +0000
+Subject: [PATCH] Fix build on powerpc64 by not including dynamic.h
+
+Fixes https://github.com/openwall/john/issues/5231
+---
+ src/john.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/src/john.c b/src/john.c
+index 75463966ea..70ef8b4ceb 100644
+--- a/src/john.c
++++ b/src/john.c
+@@ -106,7 +106,6 @@ static int john_omp_threads_new;
+ #include "subsets.h"
+ #include "external.h"
+ #include "batch.h"
+-#include "dynamic.h"
+ #include "dynamic_compiler.h"
+ #include "fake_salts.h"
+ #include "listconf.h"
+@@ -141,6 +140,8 @@ static int john_omp_threads_new;
+ #endif
+ #include "omp_autotune.h"
+ 
++extern int dynamic_Register_formats(struct fmt_main **ptr);
++	
+ #if CPU_DETECT
+ extern int CPU_detect(void);
+ extern char CPU_req_name[];
