@@ -46,4 +46,5 @@ PCRE2_CONFIGURE_ENABLE=	pcre2
 YAML_LIB_DEPENDS=	libyaml.so:textproc/libyaml
 YAML_CONFIGURE_ENABLE=	yaml
 
+PORTSCOUT=	skipv:v6.0.0
 .include <bsd.port.mk>
