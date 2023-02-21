@@ -145,6 +145,7 @@
     SUBDIR += jetbrains-mono
     SUBDIR += jf-openhuninn
     SUBDIR += jmk-x11-fonts
+    SUBDIR += juliamono
     SUBDIR += junction
     SUBDIR += junicode
     SUBDIR += kaputa
