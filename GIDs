@@ -566,7 +566,7 @@ taskd:*:616:
 # free: 622
 # free: 623
 # free: 624
-# free: 625
+xapsd:*:625:
 # free: 626
 # free: 627
 # free: 628

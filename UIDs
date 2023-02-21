@@ -571,7 +571,7 @@ taskd:*:616:616::0:0:taskd user:/nonexistent:/usr/sbin/nologin
 # free: 622
 # free: 623
 # free: 624
-# free: 625
+xapsd:*:625:625::0:0:xapsd:/var/lib/xapsd:/usr/sbin/nologin
 # free: 626
 # free: 627
 # free: 628

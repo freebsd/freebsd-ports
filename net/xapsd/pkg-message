@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+
+1. Create a new apple id account at https://appleid.apple.com/
+
+2. Use `xapsd -pass` to create the hash of the apple id password
+
+3. Add account information to xapsd.yaml
+
+EOM
+}
+]
