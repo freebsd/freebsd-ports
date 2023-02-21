@@ -1,6 +1,5 @@
 PORTNAME=	cde
 PORTVERSION=	${COMMIT_DATE}
-PORTREVISION=	3
 CATEGORIES=	x11
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	-devel
@@ -13,8 +12,8 @@ WWW=		https://sourceforge.net/p/cdesktopenv/wiki/Home/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	cdesktopenv-code
-GH_TAGNAME=	02b4302a7
-COMMIT_DATE=	2023.02.04
+GH_TAGNAME=	1f101d22f
+COMMIT_DATE=	2023.02.18
 
 LICENSE=	LGPL21
 
