@@ -246,6 +246,7 @@
     SUBDIR += sliderule
     SUBDIR += solanum
     SUBDIR += sowon
+    SUBDIR += spacefm
     SUBDIR += spice-gtk
     SUBDIR += subsurface
     SUBDIR += synapse
