@@ -1,5 +1,5 @@
 PORTNAME=	argh
-PORTVERSION=	0.27.2
+PORTVERSION=	0.28.1
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,9 @@ WWW=		https://github.com/neithere/argh
 
 LICENSE=	LGPL3
 
-USES=		python:3.6+
-USE_PYTHON=	autoplist distutils
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=${PORTVERSION}<4:devel/py-flit-core@${PY_FLAVOR}
+
+USES=		python:3.8+
+USE_PYTHON=	autoplist pep517
 
 .include <bsd.port.mk>
