@@ -1,3 +1,149 @@
+  <vuln vid="21f12de8-b1db-11ed-b0f4-002590f2a714">
+    <topic>git -- "git apply" overwriting paths outside the working tree</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.39.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>git team reports:</p>
+	<blockquote cite="https://github.com/git/git/security/advisories/GHSA-r87m-v37r-cwfh">
+	  <p>By feeding a crafted input to "git apply", a path outside the
+	    working tree can be overwritten as the user who is running "git
+	    apply".</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-23946</cvename>
+      <url>https://github.blog/2023-02-14-git-security-vulnerabilities-announced-3/#cve-2023-23946</url>
+    </references>
+    <dates>
+      <discovery>2023-02-14</discovery>
+      <entry>2023-02-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="9548d6ed-b1da-11ed-b0f4-002590f2a714">
+    <topic>git -- Local clone-based data exfiltration with non-local transports</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.39.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>git team reports:</p>
+	<blockquote cite="https://github.com/git/git/security/advisories/GHSA-gw92-x3fm-3g3q">
+	  <p>Using a specially-crafted repository, Git can be tricked into using
+	    its local clone optimization even when using a non-local transport.
+	    Though Git will abort local clones whose source $GIT_DIR/objects
+	    directory contains symbolic links (c.f., CVE-2022-39253), the objects
+	    directory itself may still be a symbolic link.</p>
+
+	  <p>These two may be combined to include arbitrary files based on known
+	    paths on the victim's filesystem within the malicious repository's
+	    working copy, allowing for data exfiltration in a similar manner as
+	    CVE-2022-39253.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-22490</cvename>
+      <url>https://github.blog/2023-02-14-git-security-vulnerabilities-announced-3/#cve-2023-22490</url>
+    </references>
+    <dates>
+      <discovery>2023-02-14</discovery>
+      <entry>2023-02-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="8fafbef4-b1d9-11ed-b0f4-002590f2a714">
+    <topic>git -- gitattributes parsing integer overflow</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.39.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>git team reports:</p>
+	<blockquote cite="https://github.com/git/git/security/advisories/GHSA-c738-c5qq-xg89">
+	  <p>gitattributes are used to define unique attributes corresponding
+	    to paths in your repository. These attributes are defined by
+	    .gitattributes file(s) within your repository.</p>
+
+	  <p>The parser used to read these files has multiple integer
+	    overflows, which can occur when parsing either a large number
+	    of patterns, a large number of attributes, or attributes with
+	    overly-long names.</p>
+
+	  <p>These overflows may be triggered via a malicious
+	    .gitattributes file. However, Git automatically splits lines at
+	    2KB when reading .gitattributes from a file, but not when parsing
+	    it from the index. Successfully exploiting this vulnerability
+	    depends on the location of the .gitattributes file in question.</p>
+
+	  <p>This integer overflow can result in arbitrary heap reads
+	    and writes, which may result in remote code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-23521</cvename>
+      <url>https://github.blog/2023-01-17-git-security-vulnerabilities-announced-2/#cve-2022-23521</url>
+    </references>
+    <dates>
+      <discovery>2023-01-17</discovery>
+      <entry>2023-02-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2fcca7e4-b1d7-11ed-b0f4-002590f2a714">
+    <topic>git -- Heap overflow in `git archive`, `git log --format` leading to RCE</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.39.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The git team reports:</p>
+	<blockquote cite="https://github.com/git/git/security/advisories/GHSA-475x-2q3q-hvwq">
+	  <p>git log has the ability to display commits using an arbitrary
+	    format with its --format specifiers. This functionality is also
+	    exposed to git archive via the export-subst gitattribute.</p>
+	  <p>When processing the padding operators (e.g., %&#x3c;(, %&#x3c;|(,
+	    %>(, %>>(, or %>&#x3c;( ), an integer overflow can occur in
+	    pretty.c::format_and_pad_commit() where a size_t is improperly
+	    stored as an int, and then added as an offset to a subsequent
+	    memcpy() call.</p>
+	  <p>This overflow can be triggered directly by a user running a
+	    command which invokes the commit formatting machinery (e.g., git
+	    log --format=...). It may also be triggered indirectly through
+	    git archive via the export-subst mechanism, which expands format
+	    specifiers inside of files within the repository during a git
+	    archive.</p>
+	  <p>This integer overflow can result in arbitrary heap writes, which
+	    may result in remote code execution.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41903</cvename>
+      <url>https://github.blog/2023-01-17-git-security-vulnerabilities-announced-2/#cve-2022-41903</url>
+    </references>
+    <dates>
+      <discovery>2023-01-17</discovery>
+      <entry>2023-02-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5048ed45-b0f1-11ed-ab04-9106b1b896dd">
     <topic>gitea -- password hash quality</topic>
     <affects>
