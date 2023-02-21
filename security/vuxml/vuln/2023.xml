@@ -1,3 +1,37 @@
+  <vuln vid="7a425536-74f7-4ce4-9768-0079a9d44d11">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>5.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v5.0.6">
+	  <p> Receiving DNS responses from async DNS requests (via
+	  the lookup_addr, etc BIF methods) with the TTL set to
+	  zero could cause the DNS manager to eventually stop being
+	  able to make new requests. </p>
+	  <p> Specially-crafted FTP packets with excessively long
+	  usernames, passwords, or other fields could cause log
+	  writes to use large amounts of disk space. </p>
+	  <p> The find_all and find_all_ordered BIF methods could
+	  take extremely large amounts of time to process incoming
+	  data depending on the size of the input. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v5.0.7</url>
+    </references>
+    <dates>
+      <discovery>2023-02-21</discovery>
+      <entry>2023-02-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="421c0af9-b206-11ed-9fe5-f4a47516fb57">
     <topic>libde256 -- multiple vulnabilities</topic>
     <affects>
