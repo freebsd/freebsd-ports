@@ -1,5 +1,5 @@
 PORTNAME=	libewf
-PORTVERSION=	20140812
+PORTVERSION=	20140814
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libyal/libewf-legacy/releases/download/${PORTVERSION}/ \
 		LOCAL/antoine
@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsmdev.so:devel/libsmdev \
 		libsmraw.so:devel/libsmraw \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-USES=		fuse libtool pathfix pkgconfig python:3.5+
+USES=		fuse libtool pathfix pkgconfig python
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
