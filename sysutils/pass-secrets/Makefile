@@ -1,5 +1,5 @@
 PORTNAME=	pass-secrets
-PORTVERSION=	s20220122
+PORTVERSION=	s20230220
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +15,7 @@ RUN_DEPENDS=	pass:sysutils/password-store
 USES=		cmake compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	nullobsi
-GH_TAGNAME=	1b7a323
+GH_TAGNAME=	7220576
 CMAKE_OFF=	INSTALL_DBUS_SERVICE
 PLIST_FILES=	bin/${PORTNAME}
 
