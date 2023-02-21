@@ -1,6 +1,5 @@
 PORTNAME=	nfs-exporter
-DISTVERSION=	0.3.2
-PORTREVISION=	3
+DISTVERSION=	0.4.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CRATESIO
 MASTER_SITE_SUBDIR=	freebsd-${PORTNAME}/${DISTVERSION}
@@ -27,7 +26,7 @@ USE_RC_SUBR=	nfs_exporter
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400073
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1302000
 SUB_LIST=	USER=nobody
 .else
 SUB_LIST=	USER=root
@@ -37,14 +36,20 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ascii-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
+		bincode-1.3.3 \
 		bindgen-0.60.1 \
+		bindgen-0.63.0 \
 		bitflags-1.3.2 \
+		capsicum-0.2.0 \
+		casper-sys-0.1.0 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
 		chunked_transfer-1.4.0 \
 		clang-sys-1.3.1 \
 		clap-3.2.23 \
 		clap_lex-0.2.4 \
+		const-cstr-0.3.0 \
+		ctor-0.1.26 \
 		either-1.6.1 \
 		env_logger-0.9.0 \
 		fnv-1.0.7 \
@@ -59,8 +64,10 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.120 \
+		libc-0.2.139 \
 		libloading-0.7.3 \
+		libnv-0.4.1 \
+		libnv-sys-0.2.0 \
 		lock_api-0.4.6 \
 		log-0.4.14 \
 		matches-0.1.9 \
@@ -73,19 +80,22 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		parking_lot_core-0.8.5 \
 		peeking_take_while-0.1.2 \
 		percent-encoding-2.1.0 \
-		proc-macro2-1.0.36 \
+		proc-macro2-1.0.49 \
 		prometheus-0.13.0 \
 		prometheus_exporter-0.8.4 \
-		quote-1.0.15 \
+		quick-error-2.0.1 \
+		quote-1.0.23 \
 		redox_syscall-0.2.11 \
-		regex-1.5.5 \
-		regex-syntax-0.6.25 \
+		regex-1.7.1 \
+		regex-syntax-0.6.28 \
 		rustc-hash-1.1.0 \
 		scopeguard-1.1.0 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
 		shlex-1.1.0 \
 		smallvec-1.8.0 \
 		strsim-0.10.0 \
-		syn-1.0.89 \
+		syn-1.0.107 \
 		termcolor-1.1.3 \
 		textwrap-0.16.0 \
 		thiserror-1.0.30 \
@@ -96,18 +106,21 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
 		unicode-bidi-0.3.7 \
+		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.19 \
-		unicode-xid-0.2.2 \
 		url-2.2.2 \
+		version_check-0.9.4 \
 		which-4.2.4 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0
 
-PLIST_FILES=	bin/nfs-exporter
+PLIST_FILES=	bin/${PORTNAME} \
+		man/man8/${PORTNAME}.8.gz
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/nfs-exporter
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.8 ${STAGEDIR}${MAN1PREFIX}/man/man8
 
 .include <bsd.port.mk>
