@@ -1,6 +1,6 @@
 PORTNAME=	emby-server
-DISTVERSION=	4.7.11.0
-PORTREVISION=	4
+DISTVERSION?=	4.7.11.0
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}.tar.xz \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz \
 		license.docx
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR?=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tar.xz \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz
@@ -50,12 +50,24 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libwebp.so:graphics/webp \
 		libx264.so:multimedia/libx264 \
 		libx265.so:multimedia/x265 \
-		libzvbi.so:devel/libzvbi
+		libzvbi.so:devel/libzvbi \
+		libexpat.so:textproc/expat2 \
+		libtiff.so:graphics/tiff \
+		liblcms2.so:graphics/lcms2 \
+		libOpenEXR-3_1.so:graphics/openexr \
+		libglib-2.0.so:devel/glib20 \
+		libgio-2.0.so:devel/glib20 \
+		libgobject-2.0.so:devel/glib20 \
+		libpangocairo-1.0.so:x11-toolkits/pango \
+		libpango-1.0.so:x11-toolkits/pango \
+		libpangoft2-1.0.so:x11-toolkits/pango \
+		libcairo.so:graphics/cairo
 RUN_DEPENDS=	icu>0:devel/icu \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind
 
-USES=		compiler:c11 gmake iconv localbase:ldflags pkgconfig sqlite ssl:run
+USES=		compiler:c11 gmake iconv localbase:ldflags pkgconfig sqlite ssl:run jpeg gettext-runtime
+USE_GNOME=	glib20 pango cairo
 USE_RC_SUBR=	${PORTNAME}
 
 HAS_CONFIGURE=	yes
@@ -100,7 +112,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 
 MAKE_ENV=	V=1
 
-CONFLICTS_INSTALL=	emby-server-devel
+CONFLICTS_INSTALL?=	emby-server-devel
 
 NOPRECIOUSMAKEVARS=	yes
 SUB_FILES=	SQLitePCLRaw.provider.sqlite3.dll.config
