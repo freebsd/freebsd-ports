@@ -1,4 +1,5 @@
 bin/fshfsinfo
+bin/fshfsmount
 include/libfshfs.h
 include/libfshfs/codepage.h
 include/libfshfs/definitions.h
@@ -14,4 +15,5 @@ lib/libfshfs.so.1.0.0
 %%PYTHON_SITELIBDIR%%/pyfshfs.so
 libdata/pkgconfig/libfshfs.pc
 man/man1/fshfsinfo.1.gz
+man/man1/fshfsmount.1.gz
 man/man3/libfshfs.3.gz
