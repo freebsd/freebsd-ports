@@ -18,7 +18,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 #DEPRECATED=	Support ends three years after .0 release. Please upgrade to a more recent version of Perl
 #EXPIRATION_DATE=2023-06-20
 
-USES=		cpe tar:xz
+USES=		compiler cpe tar:xz
 
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
@@ -195,6 +195,12 @@ PLIST_SUB+=		BINSUFFIX=${PERL_VERSION} \
 CONFIGURE_ARGS+=	-Dversiononly
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == powerpc && ${COMPILER_VERSION} == 150
+CFLAGS+=	-O1
+.endif
+
 .if !defined(IAMDEFAULTPERL)
 pre-everything::
 	@${ECHO_MSG} "##################################################"
@@ -285,4 +291,4 @@ post-install:
 		done
 	${INSTALL_DATA} ${WRKDIR}/perl-man.conf ${STAGEDIR}${PREFIX}/etc/man.d/perl${PKGNAMESUFFIX}.conf
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
