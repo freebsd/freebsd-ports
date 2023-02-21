@@ -1,0 +1,14 @@
+--- pyproject.toml.orig	2023-02-21 07:33:21 UTC
++++ pyproject.toml
+@@ -2,9 +2,9 @@
+ requires = [
+     "setuptools>=42",
+     "wheel",
+-    "Cython>=3.0a7",
++    "Cython",
+     "setuptools_scm[toml]>=3.4",
+-    "oldest-supported-numpy"
++    "numpy"
+ ]
+ build-backend = "setuptools.build_meta"
+ 
