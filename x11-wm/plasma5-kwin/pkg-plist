@@ -1305,6 +1305,7 @@ share/locale/nn/LC_MESSAGES/kcm_kwin_virtualdesktops.mo
 share/locale/nn/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/nn/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/nn/LC_MESSAGES/kcm_kwintabbox.mo
+share/locale/nn/LC_MESSAGES/kcm_kwinxwayland.mo
 share/locale/nn/LC_MESSAGES/kcm_virtualkeyboard.mo
 share/locale/nn/LC_MESSAGES/kcmkwincommon.mo
 share/locale/nn/LC_MESSAGES/kcmkwincompositing.mo

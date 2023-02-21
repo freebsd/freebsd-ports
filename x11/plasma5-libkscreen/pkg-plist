@@ -49,6 +49,7 @@ libdata/pkgconfig/kscreen2.pc
 share/dbus-1/services/org.kde.kscreen.service
 share/locale/ca/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/ca@valencia/LC_MESSAGES/libkscreen5_qt.qm
+share/locale/cs/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/en_GB/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/es/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/eu/LC_MESSAGES/libkscreen5_qt.qm
@@ -58,6 +59,7 @@ share/locale/ka/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/nl/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/pl/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/pt/LC_MESSAGES/libkscreen5_qt.qm
+share/locale/pt_BR/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/ru/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/sl/LC_MESSAGES/libkscreen5_qt.qm
 share/locale/tr/LC_MESSAGES/libkscreen5_qt.qm

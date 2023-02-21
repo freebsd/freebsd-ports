@@ -181,3 +181,4 @@ share/locale/zh_CN/LC_MESSAGES/kscreenlocker_greet.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_screenlocker.mo
 share/locale/zh_TW/LC_MESSAGES/kscreenlocker.mo
 share/locale/zh_TW/LC_MESSAGES/kscreenlocker_greet.mo
+share/qlogging-categories5/kscreenlocker.categories
