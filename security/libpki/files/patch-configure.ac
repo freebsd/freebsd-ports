@@ -1,6 +1,6 @@
---- configure.ac.orig	2022-10-16 21:47:40 UTC
-+++ configure.ac
-@@ -23,7 +23,7 @@ is_aix="no"
+--- configure.ac.orig	2023-02-21 00:50:13.111304000 +0100
++++ configure.ac	2023-02-21 00:56:17.195099000 +0100
+@@ -23,7 +23,7 @@
  mybits_install=""
  is_sparc="no"
  is_aix="no"
@@ -9,12 +9,12 @@
  
  case "$my_arch" in
    *i686)
-@@ -40,7 +40,13 @@ case "$my_arch" in
+@@ -40,7 +40,13 @@
      mybits="64"
      mybits_install="64"
          ;;
 -  *aarch64)
-+  *arm)
++  *arm|*armv?)
 +    mybits="32"
 +    ;;
 +  *powerpc)
@@ -24,7 +24,7 @@
      mybits="64"
      mybits_install="64"
      ;;
-@@ -57,7 +63,6 @@ case "$my_arch" in
+@@ -57,7 +63,6 @@
    *powerpc*)
      mybits="64"
      mybits_install="64"
