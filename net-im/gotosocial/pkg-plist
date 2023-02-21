@@ -1,4 +1,5 @@
 @sample etc/gotosocial/config.yaml.sample
+%%WWWDIR%%/template/about.tmpl
 %%WWWDIR%%/template/header.tmpl
 %%WWWDIR%%/template/thread.tmpl
 %%WWWDIR%%/template/frontend.tmpl
