@@ -1,0 +1,72 @@
+#!/bin/sh
+
+# PROVIDE: jellyfin
+# REQUIRE: LOGIN network
+# KEYWORD: shutdown
+#
+# extraargs typically can remain unset
+# extraargs accepts as string any of:
+#  --nowebclient             Indicates that the web server should not host the web client.
+#  -w, --webdir              Path to the Jellyfin web UI resources. Defaults to ./jellyfin-web
+#  -c, --configdir           Path to use for configuration data (user settings and pictures).
+#  -l, --logdir              Path to use for writing log files. Defaults to $datadir/log
+#  --ffmpeg                  Path to external FFmpeg executable to use. Defaults to  PATH.
+#  --published-server-url    Jellyfin Server URL to publish via auto discover process
+#
+#
+# variable definitions
+#  jellyfin_exec_dir     Path to the actual jellyfin binary Defaults to %%DATADIR%%
+#  jellyfin_data_dir     Path to use for the data folder (database files, etc.) Defaults to /var/db/jellyfin
+#  jellyfin_cache_dir    Path to use for caching. Defaults to /var/cache/jellyfin
+#  jellyfin_pid_dir      Path to use for the pid file. Defaults to /var/run/jellyfin
+
+. /etc/rc.subr
+name=jellyfin
+rcvar=jellyfin_enable
+load_rc_config $name
+
+: ${jellyfin_enable:=NO}
+: ${jellyfin_user:="jellyfin"}
+: ${jellyfin_group:="jellyfin"}
+: ${jellyfin_extraargs:=""}
+: ${jellyfin_exec_dir:="%%DATADIR%%"}
+: ${jellyfin_data_dir:="/var/db/jellyfin"}
+: ${jellyfin_cache_dir:="/var/cache/jellyfin"}
+: ${jellyfin_pid_dir:="/var/run/jellyfin"}
+
+pidfile="${jellyfin_pid_dir}/${name}_daemon.pid"
+pidfile_child="${jellyfin_pid_dir}/${name}_child.pid"
+command="/usr/sbin/daemon"
+
+
+start_precmd=${name}_precmd
+jellyfin_precmd() {
+    if [ ! -d ${jellyfin_exec_dir} ]; then
+        install -d -o ${jellyfin_user} -g ${jellyfin_group} ${jellyfin_exec_dir}
+    fi
+
+    if [ ! -d ${jellyfin_data_dir} ]; then
+        install -d -o ${jellyfin_user} -g ${jellyfin_group} ${jellyfin_data_dir}
+    fi
+
+    if [ ! -d ${jellyfin_cache_dir} ]; then
+        install -d -o ${jellyfin_user} -g ${jellyfin_group} ${jellyfin_cache_dir}
+    fi
+
+    if [ ! -d ${jellyfin_pid_dir} ]; then
+        install -d -o ${jellyfin_user} -g ${jellyfin_group} ${jellyfin_pid_dir}
+    fi
+
+    # .NET 6+ use dual mode sockets to avoid the separate AF handling.
+    # disable .NET use of V6 if no ipv6 is configured.
+    # See https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=259194#c17
+    ifconfig | grep -q inet6
+    if [ $? == 1 ]; then
+        export DOTNET_SYSTEM_NET_DISABLEIPV6=1
+    fi
+
+    rc_flags="-r -f -p ${pidfile_child} -P ${pidfile} ${jellyfin_exec_dir}/jellyfin --datadir ${jellyfin_data_dir} --cachedir ${jellyfin_cache_dir} ${jellyfin_extraargs} >> /dev/null 2>&1 ${rc_flags}"
+}
+
+run_rc_command "$1"
+
