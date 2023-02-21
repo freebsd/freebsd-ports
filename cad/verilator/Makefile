@@ -1,6 +1,7 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.006
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -48,8 +49,10 @@ LEAK_CHECKS_CXXFLAGS=		-DVL_LEAK_CHECKS
 LEAK_CHECKS_BROKEN=		compilation will be fixed in the next release
 
 post-patch:
-	${REINPLACE_CMD} -e 's|@pkgconfigdir@|${PREFIX}/libdata/pkgconfig|' \
-	    ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|AC_PATH_PROG(PYTHON3,python3)|AC_PATH_PROG(PYTHON3,${PYTHON_VERSION})|' \
+		${WRKSRC}/configure.ac # hack-workaround for https://github.com/verilator/verilator/issues/3970
+	@${REINPLACE_CMD} -e 's|@pkgconfigdir@|${PREFIX}/libdata/pkgconfig|' \
+		${WRKSRC}/Makefile.in
 
 pre-configure:
 	cd ${WRKSRC} && \
