@@ -86,7 +86,7 @@ include/armadillo_bits/debug.hpp
 include/armadillo_bits/def_arpack.hpp
 include/armadillo_bits/def_atlas.hpp
 include/armadillo_bits/def_blas.hpp
-include/armadillo_bits/def_hdf5.hpp
+include/armadillo_bits/def_fftw3.hpp
 include/armadillo_bits/def_lapack.hpp
 include/armadillo_bits/def_superlu.hpp
 include/armadillo_bits/diagmat_proxy.hpp
@@ -108,7 +108,8 @@ include/armadillo_bits/eglue_core_meat.hpp
 include/armadillo_bits/eop_aux.hpp
 include/armadillo_bits/eop_core_bones.hpp
 include/armadillo_bits/eop_core_meat.hpp
-include/armadillo_bits/fft_engine.hpp
+include/armadillo_bits/fft_engine_fftw3.hpp
+include/armadillo_bits/fft_engine_kissfft.hpp
 include/armadillo_bits/field_bones.hpp
 include/armadillo_bits/field_meat.hpp
 include/armadillo_bits/fill.hpp
@@ -353,6 +354,8 @@ include/armadillo_bits/op_chol_bones.hpp
 include/armadillo_bits/op_chol_meat.hpp
 include/armadillo_bits/op_clamp_bones.hpp
 include/armadillo_bits/op_clamp_meat.hpp
+include/armadillo_bits/op_col_as_mat_bones.hpp
+include/armadillo_bits/op_col_as_mat_meat.hpp
 include/armadillo_bits/op_cond_bones.hpp
 include/armadillo_bits/op_cond_meat.hpp
 include/armadillo_bits/op_cor_bones.hpp
@@ -449,6 +452,8 @@ include/armadillo_bits/op_reverse_bones.hpp
 include/armadillo_bits/op_reverse_meat.hpp
 include/armadillo_bits/op_roots_bones.hpp
 include/armadillo_bits/op_roots_meat.hpp
+include/armadillo_bits/op_row_as_mat_bones.hpp
+include/armadillo_bits/op_row_as_mat_meat.hpp
 include/armadillo_bits/op_shift_bones.hpp
 include/armadillo_bits/op_shift_meat.hpp
 include/armadillo_bits/op_shuffle_bones.hpp
@@ -578,11 +583,12 @@ include/armadillo_bits/subview_elem2_meat.hpp
 include/armadillo_bits/subview_field_bones.hpp
 include/armadillo_bits/subview_field_meat.hpp
 include/armadillo_bits/subview_meat.hpp
-include/armadillo_bits/sympd_helper.hpp
+include/armadillo_bits/sym_helper.hpp
 include/armadillo_bits/traits.hpp
 include/armadillo_bits/translate_arpack.hpp
 include/armadillo_bits/translate_atlas.hpp
 include/armadillo_bits/translate_blas.hpp
+include/armadillo_bits/translate_fftw3.hpp
 include/armadillo_bits/translate_lapack.hpp
 include/armadillo_bits/translate_superlu.hpp
 include/armadillo_bits/trimat_helper.hpp
@@ -601,8 +607,8 @@ include/armadillo_bits/xtrans_mat_meat.hpp
 include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
-lib/libarmadillo.so.11
-lib/libarmadillo.so.11.4.4
+lib/libarmadillo.so.12
+lib/libarmadillo.so.12.0.1
 libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
