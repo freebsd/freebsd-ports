@@ -1,15 +1,7 @@
 bin/reggae
 @sample %%ETCDIR%%.conf.sample
-man/man1/reggae-ansible.1.gz
-man/man1/reggae-chef.1.gz
-man/man1/reggae-init.1.gz
 man/man1/reggae-project.1.gz
 man/man1/reggae-provision.1.gz
-man/man1/reggae-puppet.1.gz
-man/man1/reggae-register.1.gz
-man/man1/reggae-salt.1.gz
-man/man1/reggae-service.1.gz
-man/man1/reggae-shell.1.gz
 man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/jail-freebsd-reggae.conf
 %%DATADIR%%/cbsd-profile/skel/etc/crontab
@@ -69,6 +61,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/mk/shell.mk
 %%DATADIR%%/mk/use.mk
 %%DATADIR%%/scripts/apply-proxy.sh
+%%DATADIR%%/scripts/backend-init.sh
 %%DATADIR%%/scripts/base-init.sh
 %%DATADIR%%/scripts/base-network-init.sh
 %%DATADIR%%/scripts/bhyve-init.sh
@@ -77,11 +70,13 @@ man/man1/reggae.1.gz
 %%DATADIR%%/scripts/chef-provision.sh
 %%DATADIR%%/scripts/default.conf
 %%DATADIR%%/scripts/expect-run.sh
+%%DATADIR%%/scripts/export.sh
 %%DATADIR%%/scripts/get-config.sh
 %%DATADIR%%/scripts/get-ip.sh
 %%DATADIR%%/scripts/host-init.sh
 %%DATADIR%%/scripts/import.sh
 %%DATADIR%%/scripts/init.sh
+%%DATADIR%%/scripts/jexec.sh
 %%DATADIR%%/scripts/mkjail.sh
 %%DATADIR%%/scripts/network-init.sh
 %%DATADIR%%/scripts/pf.sh
@@ -97,6 +92,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/scripts/ssh-ping.sh
 %%DATADIR%%/scripts/ssh.sh
 %%DATADIR%%/scripts/update-profiles.sh
+%%DATADIR%%/scripts/utils.sh
 %%DATADIR%%/scripts/version.sh
 %%DATADIR%%/skel/ansible/ansible/group_vars/.keep
 %%DATADIR%%/skel/ansible/ansible/inventory/.keep
