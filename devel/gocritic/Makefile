@@ -1,7 +1,6 @@
 PORTNAME=	gocritic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.5
-PORTREVISION=	4
+DISTVERSION=	0.6.7
 CATEGORIES=	devel
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -13,8 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 GO_MODULE=	github.com/go-critic/go-critic
-GO_TARGET=	./cmd/gocritic
+GO_TARGET=	./cmd/gocritic \
+		./cmd/gocritic-analysis
+GO_BUILDFLAGS=	-ldflags "-X main.Version=v${PKGVERSION}"
 
-PLIST_FILES=	bin/gocritic
+PLIST_FILES=	bin/gocritic \
+		bin/gocritic-analysis
 
 .include <bsd.port.mk>
