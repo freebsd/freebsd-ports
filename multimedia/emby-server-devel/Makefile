@@ -9,6 +9,5 @@ CONFLICTS_INSTALL=	emby-server
 
 MASTERDIR=	${.CURDIR}/../emby-server
 DISTINFO_FILE=	${.CURDIR}/distinfo
-PLIST=		${.CURDIR}/pkg-plist
 
 .include "${MASTERDIR}/Makefile"

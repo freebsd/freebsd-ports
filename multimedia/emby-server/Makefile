@@ -146,4 +146,7 @@ do-install:
 	(cd ${WRKDIR}/system && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/emby-server/system "! -name EmbyServer")
 	(${INSTALL_PROGRAM} ${WRKDIR}/system/EmbyServer ${STAGEDIR}${PREFIX}/lib/emby-server/system)
 
+post-install:
+	@${FIND} -s ${STAGEDIR}${PREFIX}/lib -not -type d | ${SORT} | ${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+
 .include <bsd.port.mk>
