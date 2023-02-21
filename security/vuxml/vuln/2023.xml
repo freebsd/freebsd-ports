@@ -1,3 +1,58 @@
+  <vuln vid="421c0af9-b206-11ed-9fe5-f4a47516fb57">
+    <topic>libde256 -- multiple vulnabilities</topic>
+    <affects>
+      <package>
+	<name>libde265</name>
+	<range><lt>1.0.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Libde265 developer reports:</p>
+	<blockquote cite="https://github.com/strukturag/libde265/releases/tag/v1.0.10">
+	  <p>This release fixes the known CVEs below. Many of them are actually caused by the same underlying issues that manifest in different ways.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-21594</cvename>
+      <cvename>CVE-2020-21595</cvename>
+      <cvename>CVE-2020-21596</cvename>
+      <cvename>CVE-2020-21597</cvename>
+      <cvename>CVE-2020-21598</cvename>
+      <cvename>CVE-2020-21599</cvename>
+      <cvename>CVE-2020-21600</cvename>
+      <cvename>CVE-2020-21601</cvename>
+      <cvename>CVE-2020-21602</cvename>
+      <cvename>CVE-2020-21603</cvename>
+      <cvename>CVE-2020-21604</cvename>
+      <cvename>CVE-2020-21605</cvename>
+      <cvename>CVE-2020-21606</cvename>
+      <cvename>CVE-2022-1253</cvename>
+      <cvename>CVE-2022-43236</cvename>
+      <cvename>CVE-2022-43237</cvename>
+      <cvename>CVE-2022-43238</cvename>
+      <cvename>CVE-2022-43239</cvename>
+      <cvename>CVE-2022-43240</cvename>
+      <cvename>CVE-2022-43241</cvename>
+      <cvename>CVE-2022-43242</cvename>
+      <cvename>CVE-2022-43243</cvename>
+      <cvename>CVE-2022-43244</cvename>
+      <cvename>CVE-2022-43245</cvename>
+      <cvename>CVE-2022-43248</cvename>
+      <cvename>CVE-2022-43249</cvename>
+      <cvename>CVE-2022-43250</cvename>
+      <cvename>CVE-2022-43252</cvename>
+      <cvename>CVE-2022-43253</cvename>
+      <cvename>CVE-2022-47655</cvename>
+      <url>https://github.com/strukturag/libde265/releases/tag/v1.0.10</url>
+    </references>
+    <dates>
+      <discovery>2023-01-27</discovery>
+      <entry>2023-02-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="21f12de8-b1db-11ed-b0f4-002590f2a714">
     <topic>git -- "git apply" overwriting paths outside the working tree</topic>
     <affects>
