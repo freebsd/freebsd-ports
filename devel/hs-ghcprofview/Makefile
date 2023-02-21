@@ -9,7 +9,7 @@ WWW=		https://github.com/portnov/ghcprofview-hs
 
 LICENSE=	BSD3CLAUSE
 
-BROKEN=		https://github.com/portnov/ghcprofview-hs/issues/12
+BROKEN=		https://github.com/haskell-gi/haskell-gi/issues/396
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz
