@@ -1,5 +1,5 @@
 PORTNAME=	libxmlb
-DISTVERSION=	0.3.10
+DISTVERSION=	0.3.11
 CATEGORIES=	textproc
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -9,7 +9,8 @@ WWW=		https://github.com/hughsie/libxmlb
 LICENSE=	LGPL21
 
 BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
-LIB_DEPENDS=	libstemmer.so:textproc/snowballstemmer
+LIB_DEPENDS=	libstemmer.so:textproc/snowballstemmer \
+		libzstd.so:archivers/zstd
 
 USES=		gnome meson pkgconfig localbase:ldflags
 USE_GITHUB=	yes
