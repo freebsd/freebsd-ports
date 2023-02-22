@@ -120,7 +120,7 @@ USE_CABAL=	HTTP-4000.3.16_1 \
 		postgresql-libpq-0.9.4.3_3 \
 		primitive-0.7.4.0 \
 		profunctors-5.6.2_2 \
-		protolude-0.3.2 \
+		protolude-0.3.3 \
 		psqueues-0.2.7.3 \
 		ptr-0.16.8.4 \
 		random-1.2.1.1 \

@@ -1,4 +1,4 @@
-TIMESTAMP = 1667638951
+TIMESTAMP = 1676969067
 SHA256 (cabal/HTTP-4000.3.16/HTTP-4000.3.16.tar.gz) = d6091c037871ac3d08d021c906206174567499d5a26a6cb804cf530cd590fe2d
 SIZE (cabal/HTTP-4000.3.16/HTTP-4000.3.16.tar.gz) = 74516
 SHA256 (cabal/HTTP-4000.3.16/revision/1.cabal) = 6042643c15a0b43e522a6693f1e322f05000d519543a84149cb80aeffee34f71
@@ -321,8 +321,8 @@ SHA256 (cabal/profunctors-5.6.2/profunctors-5.6.2.tar.gz) = 65955d7b50525a4a3bcc
 SIZE (cabal/profunctors-5.6.2/profunctors-5.6.2.tar.gz) = 28522
 SHA256 (cabal/profunctors-5.6.2/revision/2.cabal) = 3d3685119243a7ebf984fa6af03299d156ab7674a432e2e15ecee2a4fd420fb6
 SIZE (cabal/profunctors-5.6.2/revision/2.cabal) = 2483
-SHA256 (cabal/protolude-0.3.2/protolude-0.3.2.tar.gz) = 7ec019f3d445563a54fad8ba89564bffaae6028798a1cc3f033f5b425ef7a344
-SIZE (cabal/protolude-0.3.2/protolude-0.3.2.tar.gz) = 19288
+SHA256 (cabal/protolude-0.3.3/protolude-0.3.3.tar.gz) = 6c39ded2c7e9f7b1a508e4400f0151cb325f4d80e35010c1d5afa58b48971a46
+SIZE (cabal/protolude-0.3.3/protolude-0.3.3.tar.gz) = 19316
 SHA256 (cabal/psqueues-0.2.7.3/psqueues-0.2.7.3.tar.gz) = d09750ba3578d905b54d0b3a60a7b468910a60b3165e5de98bf6f4efae3ebfb2
 SIZE (cabal/psqueues-0.2.7.3/psqueues-0.2.7.3.tar.gz) = 27328
 SHA256 (cabal/ptr-0.16.8.4/ptr-0.16.8.4.tar.gz) = 902efd4a9aa266eea3320f4747f72abd0763a9156200f5c845c1c39a9024ee10

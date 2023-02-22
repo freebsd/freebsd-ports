@@ -20,7 +20,7 @@
 # postgrest_syslog_output_tag				Set syslog tag if syslog enabled.
 #							Default: postgrest
 # postgrest_syslog_output_priority: 			Set syslog priority if syslog enabled.
-#							Default: info
+#							Default: notice
 # postgrest_syslog_output_facility:			Set syslog facility if syslog enabled.
 #							Default: daemon
 # postgrest_{{ profile }}_config:			Configuration file to run PostgREST
@@ -30,7 +30,7 @@
 # postgrest_{{ profile }}_syslog_output_tag		Set syslog tag if syslog enabled.
 #							Default: postgrest
 # postgrest_{{ profile }}_syslog_output_priority: 	Set syslog priority if syslog enabled.
-#							Default: info
+#							Default: notice
 # postgrest_{{ profile }}_syslog_output_facility:	Set syslog facility if syslog enabled.
 #							Default: daemon
 
