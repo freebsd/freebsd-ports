@@ -476,6 +476,7 @@
     SUBDIR += wob
     SUBDIR += wofi
     SUBDIR += workrave
+    SUBDIR += wscreensaver
     SUBDIR += wshowkeys
     SUBDIR += wtype
     SUBDIR += wvkbd
