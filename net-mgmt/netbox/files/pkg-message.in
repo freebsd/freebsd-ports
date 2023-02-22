@@ -27,6 +27,7 @@ The following steps are required to finish the upgrade:
 # mkdocs build
 # python%%PYTHON_VER%% manage.py collectstatic --no-input
 # python%%PYTHON_VER%% manage.py remove_stale_contenttypes --no-input
+# python%%PYTHON_VER%% manage.py reindex --lazy
 # python%%PYTHON_VER%% manage.py clearsessions
 # python%%PYTHON_VER%% manage.py clearcache
 
@@ -278,6 +279,50 @@ following items before running the database migrations:
 * The netbox sample rc script got a new "upgrade" directive that also
   simplifies the upgrade process (database migrations, building the embedded
   documentation, etc.).
+EOD
+}
+{ type: upgrade
+  maximum_version: 3.4.5
+  message: <<EOD
+1. Please make sure that the PostgreSQL server for the NetBox instance is
+   running version 11 or higher.  This is because PostgreSQL 10 is End-of-Life
+   since November 2022 and Django 4.1 requires PostgreSQL 11 as a minimum.
+
+2. The NetBox 3.4 release contains some breaking changes, so the following
+   items should be checked as well:
+
+   * Device and virtual machine names are no longer case-sensitive.  Attempting
+     to create e.g. "device1" and "DEVICE1" within the same site will raise a
+     validation error.
+
+   * The "asn", "noc_contact", "admin_contact", and "portal_url" fields have
+     been removed from the provider model.  Please replicate any data remaining
+     in these fields to the ASN and contact models introduced in NetBox v3.1
+     prior to upgrading.
+
+   * The "content_type" fields on the CustomLink and ExportTemplate models have
+     been renamed to "content_types" and now support the assignment of multiple
+     content types per object.
+
+   * Within the Python API, the "cf" property on an object with custom fields
+     now returns deserialized values.  For example, a custom field referencing
+     an object will return the object instance rather than its numeric ID.
+
+     To access the raw serialized values, reference the object's
+     "custom_field_data" attribute instead.
+
+   * The "NetBoxModelCSVForm" class has been renamed to
+     "NetBoxModelImportForm".  Backward compatability with the previous name
+     has been retained for this release, but will be dropped in NetBox v3.5.
+
+
+3. Please note that the general update instructions got another command that
+   needs to be issued after each update:
+
+# python%%PYTHON_VER%% manage.py reindex --lazy
+
+   The netbox sample rc script has also been adapted accordingly for this
+   purpose.
 EOD
 }
 ]

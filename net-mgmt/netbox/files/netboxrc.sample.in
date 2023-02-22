@@ -99,6 +99,7 @@ netbox_upgrade()
 		%%LOCALBASE%%/bin/mkdocs build
 		%%PYTHON_CMD%% manage.py collectstatic --no-input
 		%%PYTHON_CMD%% manage.py remove_stale_contenttypes --no-input
+		%%PYTHON_CMD%% manage.py reindex --lazy
 		%%PYTHON_CMD%% manage.py clearsessions
 		%%PYTHON_CMD%% manage.py clearcache
 		echo "Please restart NetBox and the WSGI environment."
