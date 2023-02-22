@@ -10,7 +10,7 @@ DISTFILES=	${_CHECKMK_AGENT}:agent \
 		COPYING:license
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ivalentine@arizona.edu
 COMMENT=	Nagios-compatible agent for the Checkmk monitoring
 WWW=		https://checkmk.com/
 
