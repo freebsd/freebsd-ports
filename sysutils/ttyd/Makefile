@@ -18,6 +18,8 @@ USES=		cmake pkgconfig ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	tsl0922
 
+CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_Git:BOOL=True
+
 PLIST_FILES=	bin/${PORTNAME} \
 		share/man/man1/ttyd.1.gz
 
