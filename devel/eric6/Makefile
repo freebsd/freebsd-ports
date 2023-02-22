@@ -2,7 +2,7 @@
 
 PKGNAMESUFFIX=	-qt5-${FLAVOR:U:S/_/-/}
 DISTNAME=	${PORTNAME}-nolang-${DISTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 
 WWW=		https://eric-ide.python-projects.org/index.html

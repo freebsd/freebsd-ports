@@ -1,5 +1,6 @@
 PORTNAME=	retext
 DISTVERSION=	8.0.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	eduardo@FreeBSD.org
