@@ -1,5 +1,5 @@
 PORTNAME=	metasploit_data_models
-PORTVERSION=	5.0.5
+PORTVERSION=	5.0.6
 PORTEPOCH=	2
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
