@@ -1,5 +1,5 @@
 PORTNAME=	rex-sslscan
-PORTVERSION=	0.1.7
+PORTVERSION=	0.1.9
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
