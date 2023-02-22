@@ -3142,7 +3142,7 @@
   </vuln>
 
   <vuln vid="7274e0cc-575f-41bc-8619-14a41b3c2ad0">
-    <topic>xorg-server -- multiple vulnabilities</topic>
+    <topic>xorg-server -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>xephyr</name>
@@ -3543,7 +3543,7 @@
   </vuln>
 
   <vuln vid="4f8ffb9c-f388-4fbd-b90f-b3131559d888">
-    <topic>xorg-server -- multiple vulnabilities</topic>
+    <topic>xorg-server -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>xephyr</name>

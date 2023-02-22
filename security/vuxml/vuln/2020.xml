@@ -11615,7 +11615,7 @@ compromised.</p>
   </vuln>
 
   <vuln vid="b66583ae-5aee-4cd5-bb31-b2d397f8b6b3">
-    <topic>librsvg2 -- multiple vulnabilities</topic>
+    <topic>librsvg2 -- multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>librsvg2</name>

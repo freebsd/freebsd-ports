@@ -9624,7 +9624,7 @@ much harder.</p>
   </vuln>
 
   <vuln vid="e3aacd6d-3d01-434c-9330-bc9efd40350f">
-    <topic>webkit-gtk -- Multiple vulnabilities</topic>
+    <topic>webkit-gtk -- Multiple vulnerabilities</topic>
     <affects>
       <package>
 	<name>webkit2-gtk3</name>
