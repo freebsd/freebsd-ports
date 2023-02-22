@@ -11,6 +11,9 @@ WWW=		https://github.com/graphql-python/graphene-django
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
+EXPIRATION_DATE=	2023-05-20
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=1.11:www/py-django40@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphene2>=2.1.7<3:devel/py-graphene2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphql-core2>=2.1.0<3:devel/py-graphql-core2@${PY_FLAVOR} \
