@@ -1,0 +1,24 @@
+PORTNAME=	django-debug-toolbar
+PORTVERSION=	3.7.0
+CATEGORIES=	www python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj41-
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Configurable set of panels to display debug information
+WWW=		https://github.com/jazzband/django-debug-toolbar
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django41>=3.2.4:www/py-django41@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.0:databases/py-sqlparse@${PY_FLAVOR}
+
+USES=		python:3.8+
+USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
+
+.include <bsd.port.mk>
