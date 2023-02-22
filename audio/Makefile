@@ -742,6 +742,7 @@
     SUBDIR += sherlock-lv2
     SUBDIR += shntool
     SUBDIR += shortwave
+    SUBDIR += shuriken
     SUBDIR += sidplay
     SUBDIR += sidplay2
     SUBDIR += sidplayer
