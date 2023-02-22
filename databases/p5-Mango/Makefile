@@ -13,11 +13,8 @@ WWW=		https://metacpan.org/release/Mango
 LICENSE=	ART20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Depends on upstream EOLed mongodb36
-EXPIRATION_DATE=	2023-03-31
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	mongo:databases/mongodb36 \
+RUN_DEPENDS=	mongo:databases/mongodb44 \
 		p5-Mojolicious>=5.40:www/p5-Mojolicious
 
 USES=		perl5
