@@ -1,6 +1,6 @@
 PORTNAME=	metasploit
 DISTVERSION=	6.2.23
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 
 MAINTAINER=	tanawts@gmail.com
@@ -28,6 +28,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-em-http-request>=0:www/rubygem-em-http-request \
 		rubygem-eventmachine>=0:devel/rubygem-eventmachine \
 		rubygem-faker>=0:devel/rubygem-faker \
+		rubygem-faraday>=0:www/rubygem-faraday \
+		rubygem-faraday-retry>=0:www/rubygem-faraday-retry \
 		rubygem-faye-websocket>=0:www/rubygem-faye-websocket \
 		rubygem-filesize>=0:devel/rubygem-filesize \
 		rubygem-hrr_rb_ssh-ed25519>=0:security/rubygem-hrr_rb_ssh-ed25519 \
@@ -36,17 +38,17 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-jsobfu>=0:www/rubygem-jsobfu \
 		rubygem-json>=0:devel/rubygem-json \
 		rubygem-metasm>=0:devel/rubygem-metasm \
-		rubygem-metasploit-aggregator>=0:security/rubygem-metasploit-aggregator \
 		rubygem-metasploit-concern>=0:security/rubygem-metasploit-concern \
 		rubygem-metasploit-credential>=0:security/rubygem-metasploit-credential \
 		rubygem-metasploit-model>=0:security/rubygem-metasploit-model \
-		rubygem-metasploit-payloads>=2.0.66:security/rubygem-metasploit-payloads \
+		rubygem-metasploit-payloads>=2.0.97:security/rubygem-metasploit-payloads \
 		rubygem-metasploit_data_models>=0:security/rubygem-metasploit_data_models \
-		rubygem-metasploit_payloads-mettle>=1.0.17:security/rubygem-metasploit_payloads-mettle \
+		rubygem-metasploit_payloads-mettle>=1.0.20:security/rubygem-metasploit_payloads-mettle \
 		rubygem-mqtt>=0:net/rubygem-mqtt \
 		rubygem-msgpack>=0:devel/rubygem-msgpack \
 		rubygem-nessus_rest>=0:security/rubygem-nessus_rest \
 		rubygem-net-ldap>=0:net/rubygem-net-ldap \
+		rubygem-net-smtp>=0:mail/rubygem-net-smtp \
 		rubygem-net-ssh>=0:security/rubygem-net-ssh \
 		rubygem-network_interface>=0:net/rubygem-network_interface \
 		rubygem-nexpose>=0:security/rubygem-nexpose \
@@ -63,7 +65,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-railties60>=6.0:www/rubygem-railties60 \
 		rubygem-recog>=0:security/rubygem-recog \
 		rubygem-redcarpet>=0:textproc/rubygem-redcarpet \
-		rubygem-reline>=0:devel/rubygem-reline \
 		rubygem-rex-arch>=0:security/rubygem-rex-arch \
 		rubygem-rex-bin_tools>=0:security/rubygem-rex-bin_tools \
 		rubygem-rex-core>=0:security/rubygem-rex-core \
@@ -91,8 +92,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		rubygem-sshkey>=0:security/rubygem-sshkey \
 		rubygem-swagger-blocks>=0:devel/rubygem-swagger-blocks \
 		rubygem-thin>=0:www/rubygem-thin \
-		rubygem-tzinfo-data>=0:devel/rubygem-tzinfo-data \
 		rubygem-tzinfo>=0:devel/rubygem-tzinfo \
+		rubygem-tzinfo-data>=0:devel/rubygem-tzinfo-data \
 		rubygem-unix-crypt>=0:security/rubygem-unix-crypt \
 		rubygem-warden>=0:devel/rubygem-warden \
 		rubygem-windows_error>=0:devel/rubygem-windows_error \
@@ -167,13 +168,13 @@ post-patch:
 	${REINPLACE_CMD} 's,git ls-files,find . ! -type d | sed "s|^./||", ; \
 		/rb-readline/d ; /win32api/d' \
 		${WRKSRC}/metasploit-framework.gemspec
-	${REINPLACE_CMD} "/concurrent-ruby/s|,'1.0.5'|| ; /reline/s|, '0.2.5'|| ; /pcaprub/s|, '0.12.4'|| ; /io-console/s|, '0.5.9'|| ; /faraday/s|, '1.8.0'||" \
+	${REINPLACE_CMD} "/concurrent-ruby/s|,'1.0.5'||" \
 		${WRKSRC}/metasploit-framework.gemspec
 
 do-build:
 	${RM} ${WRKSRC}/Gemfile.lock
 	${TOUCH} ${WRKSRC}/Gemfile.lock
-	${REINPLACE_CMD} "/^group :coverage/,/^end/d ; /^group :development/,/^end/d ; /^group :test/,/^end/d ; /git:/d ; /sqlite3/s|, '~>1.3.0'||" \
+	${REINPLACE_CMD} "/^group :coverage/,/^end/d ; /^group :development/,/^end/d ; /^group :test/,/^end/d" \
 		${WRKSRC}/Gemfile
 
 do-install:
