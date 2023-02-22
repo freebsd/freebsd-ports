@@ -2025,10 +2025,10 @@ share/plasma/plasmoids/org.kde.plasma.weather/metadata.json
 %%QTWEBENGINE%%share/plasma/plasmoids/org.kde.plasma.webbrowser/contents/ui/main.qml
 %%QTWEBENGINE%%share/plasma/plasmoids/org.kde.plasma.webbrowser/metadata.json
 %%QTWEBENGINE%%share/plasma/plasmoids/org.kde.plasma_applet_dict/contents/config/config.qml
-share/plasma/plasmoids/org.kde.plasma_applet_dict/contents/config/main.xml
-share/plasma/plasmoids/org.kde.plasma_applet_dict/contents/ui/AvailableDictSheet.qml
+%%QTWEBENGINE%%share/plasma/plasmoids/org.kde.plasma_applet_dict/contents/config/main.xml
+%%QTWEBENGINE%%share/plasma/plasmoids/org.kde.plasma_applet_dict/contents/ui/AvailableDictSheet.qml
 %%QTWEBENGINE%%share/plasma/plasmoids/org.kde.plasma_applet_dict/contents/ui/ConfigDictionaries.qml
-share/plasma/plasmoids/org.kde.plasma_applet_dict/contents/ui/DictItemDelegate.qml
+%%QTWEBENGINE%%share/plasma/plasmoids/org.kde.plasma_applet_dict/contents/ui/DictItemDelegate.qml
 %%QTWEBENGINE%%share/plasma/plasmoids/org.kde.plasma_applet_dict/contents/ui/main.qml
 %%QTWEBENGINE%%share/plasma/plasmoids/org.kde.plasma_applet_dict/metadata.json
 share/plasma/wallpapers/org.kde.haenau/contents/ui/BackgroundElement.qml
