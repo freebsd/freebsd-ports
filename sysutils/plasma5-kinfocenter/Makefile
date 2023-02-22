@@ -1,4 +1,5 @@
 PORTNAME=	kinfocenter
+PORTREVISION=	1
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	sysutils kde kde-plasma
 
@@ -9,7 +10,8 @@ WWW=		https://www.kde.org/plasma-desktop
 RUN_DEPENDS=	lscpu:sysutils/lscpu \
 		glxinfo:graphics/mesa-demos \
 		vulkaninfo:graphics/vulkan-tools \
-		xdpyinfo:x11/xdpyinfo
+		xdpyinfo:x11/xdpyinfo \
+		clinfo:devel/clinfo
 
 USES=		cmake compiler:c++11-lib gettext gl kde:5 pkgconfig qt:5 \
 		tar:xz xorg
