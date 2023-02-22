@@ -1,3 +1,50 @@
+  <vuln vid="4d6b5ea9-bc64-4e77-a7ee-d62ba68a80dd">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>110.0.5481.177</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>110.0.5481.177</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/02/stable-channel-desktop-update_22.html">
+	 <p>This update includes 10 security fixes:</p>
+	 <ul>
+	   <li>[1415366] Critical CVE-2023-0941: Use after free in Prompts. Reported by Anonymous on 2023-02-13</li>
+	   <li>[1414738] High CVE-2023-0927: Use after free in Web Payments API. Reported by Rong Jian of VRI on 2023-02-10</li>
+	   <li>[1309035] High CVE-2023-0928: Use after free in SwiftShader. Reported by Anonymous on 2022-03-22</li>
+	   <li>[1399742] High CVE-2023-0929: Use after free in Vulkan. Reported by Cassidy Kim(@cassidy6564) on 2022-12-09</li>
+	   <li>[1410766] High CVE-2023-0930: Heap buffer overflow in Video. Reported by Cassidy Kim(@cassidy6564) on 2023-01-27</li>
+	   <li>[1407701] High CVE-2023-0931: Use after free in Video. Reported by Cassidy Kim(@cassidy6564) on 2023-01-17</li>
+	   <li>[1413005] High CVE-2023-0932: Use after free in WebRTC. Reported by Omri Bushari (Talon Cyber Security) on 2023-02-05</li>
+	   <li>[1404864] Medium CVE-2023-0933: Integer overflow in PDF. Reported by Zhiyi Zhang from Codesafe Team of Legendsec at QI-ANXIN</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-0941</cvename>
+      <cvename>CVE-2023-0927</cvename>
+      <cvename>CVE-2023-0928</cvename>
+      <cvename>CVE-2023-0929</cvename>
+      <cvename>CVE-2023-0930</cvename>
+      <cvename>CVE-2023-0931</cvename>
+      <cvename>CVE-2023-0932</cvename>
+      <cvename>CVE-2023-0933</cvename>
+      <url>https://chromereleases.googleblog.com/2023/02/stable-channel-desktop-update_22.html</url>
+    </references>
+    <dates>
+      <discovery>2023-02-22</discovery>
+      <entry>2023-02-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7a425536-74f7-4ce4-9768-0079a9d44d11">
     <topic>zeek -- potential DoS vulnerabilities</topic>
     <affects>
