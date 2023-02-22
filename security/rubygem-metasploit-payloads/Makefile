@@ -1,5 +1,5 @@
 PORTNAME=	metasploit-payloads
-PORTVERSION=	2.0.66
+PORTVERSION=	2.0.97
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
