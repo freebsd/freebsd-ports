@@ -2,6 +2,9 @@ PORTNAME=	kleopatra
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	security kde kde-applications
 
+PATCH_SITES=	https://invent.kde.org/pim/kleopatra/-/commit/
+PATCHFILES=	b9bec26ae7bfd899c7ff4f5d2d4a7dce0c46195c.diff:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Certificate manager for KDE
 WWW=		https://www.kde.org/applications/utilities/kleopatra/
