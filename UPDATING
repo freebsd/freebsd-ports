@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230222:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  1. Please make sure that the PostgreSQL server for the NetBox instance is
+     running version 11 or higher.  This is because PostgreSQL 10 is
+     End-of-Life since November 2022 and Django 4.1 requires PostgreSQL 11
+     as a minimum.
+
+  2. Please also check the pkg-message and the changelogs for further info.
+
 20230218:
   AFFECTS: users of databases/mysql57-(server|client)
   AUTHOR: joneum@FreeBSD.org
