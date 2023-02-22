@@ -1,6 +1,6 @@
 PORTNAME=	cyanrip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.1
+DISTVERSION=	0.9.0
 CATEGORIES=	audio
 
 MAINTAINER=	diizzy@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libcurl.so:ftp/curl \
 		libmusicbrainz5.so:audio/libmusicbrainz5
 
-USES=		compiler:c11 localbase meson pkgconfig
+USES=		localbase meson pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cyanreg
