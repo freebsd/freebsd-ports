@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.26-14721 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g6b556a5206
+DISTVERSION=	0.0.26-14743 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g6b30cdac09
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -36,6 +36,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.13.1-2-gecf1b62:hidapi/3rdparty/hidapi/hidapi \
 		KhronosGroup:SPIRV-Tools:v2022.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
 		KhronosGroup:glslang:11.11.0-2-g10423ec6:glslang/3rdparty/glslang/glslang \
 		kinetiknz:cubeb:cubeb-0.2-1391-gdc511c6:cubeb/3rdparty/cubeb/cubeb \
+		miniupnp:miniupnp:miniupnpd_2_3_2:miniupnp/3rdparty/miniupnp/miniupnp \
 		wolfSSL:wolfssl:v5.5.4-stable:wolfssl/3rdparty/wolfssl/wolfssl
 
 USES=		cmake elfctl gl iconv:wchar_t localbase:ldflags \
@@ -51,7 +52,7 @@ ELF_FEATURES=	+noaslr,wxneeded:bin/${PORTNAME}
 
 .if ${FLAVOR:U} == qt6 || make(makesum) || make(fetch)
 PATCH_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/:qt6
-PATCHFILES+=	a4354c0e272f.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
+PATCHFILES+=	04a0a2e258d0.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
 PKGNAMESUFFIX=	-${FLAVOR}
 USES:=		${USES:S/qt:5/qt:6/}
 USE_QT=		base multimedia svg
