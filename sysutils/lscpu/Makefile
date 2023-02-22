@@ -1,6 +1,10 @@
 PORTNAME=	lscpu
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
+
+PATCH_SITES=	https://github.com/NanXiao/lscpu/commit/
+PATCHFILES=	6243acc4393f32a0a52d8eeec35081ebb3027cfe.patch:-p2
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Display information about the CPU architecture
