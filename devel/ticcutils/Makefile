@@ -1,6 +1,6 @@
 PORTNAME=	ticcutils
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31
+DISTVERSION=	0.32
 CATEGORIES=	devel textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	LanguageMachines
 
 INSTALL_TARGET=	install-strip
-TEST_TARGET=	check
+TEST_TARGET=	check # 1 test fails, see https://github.com/LanguageMachines/ticcutils/issues/26
+TEST_ENV=	LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib
 
 CFLAGS+=	-D_THREAD_SAFE # configure on GCC-based architectures fails w/out this
 # Workaround for https://github.com/LanguageMachines/ticcutils/issues/18 (also see the patch files/patch-configure.ac)
