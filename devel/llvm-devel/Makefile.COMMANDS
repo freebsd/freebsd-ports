@@ -113,7 +113,6 @@ FLANG_COMMANDS=	\
 		bbc \
 		f18-parse-demo \
 		fir-opt \
-		flang \
 		flang-new \
 		flang-to-external-fc \
 		tco
