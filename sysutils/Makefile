@@ -1296,6 +1296,7 @@
     SUBDIR += runj
     SUBDIR += runwhen
     SUBDIR += rush
+    SUBDIR += rust-coreutils
     SUBDIR += rw
     SUBDIR += s-tui
     SUBDIR += s6
@@ -1545,7 +1546,6 @@
     SUBDIR += userneu-devel
     SUBDIR += usrinfo
     SUBDIR += utcount
-    SUBDIR += uutils
     SUBDIR += vagrant
     SUBDIR += vbetool
     SUBDIR += vchanger

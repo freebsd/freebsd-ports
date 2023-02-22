@@ -1,4 +1,4 @@
-PORTNAME=	uutils
+PORTNAME=	rust-coreutils
 PORTVERSION=	0.0.17
 PORTREVISION=	1
 CATEGORIES=	sysutils
@@ -14,6 +14,7 @@ USES=		cargo gmake
 CARGO_BUILD=	no
 MAKE_ARGS=	PROG_PREFIX=uu- PREFIX=${LOCALBASE}
 USE_GITHUB=	yes
+GH_ACCOUNT=	uutils
 GH_PROJECT=	coreutils
 TEST_TARGET=	check
 
