@@ -1,5 +1,6 @@
 PORTNAME=	tmux
 PORTVERSION=	3.3a
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/tmux/tmux/releases/download/${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
