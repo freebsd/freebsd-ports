@@ -11,7 +11,7 @@ WWW=		https://github.com/charmbracelet/glow
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		go:modules
+USES=		go:1.19,modules
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_SHA=	4863f57
