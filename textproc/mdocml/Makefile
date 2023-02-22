@@ -23,6 +23,14 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 post-configure:
 	@${REINPLACE_CMD} -e '/^CFLAGS/s/=/?=/' -e '/^PREFIX/s/=/?=/' \
 		-e 's/^INSTALL_PROGRAM.*/INSTALL_PROGRAM=${INSTALL_PROGRAM}/' \
+		-e 's|/var/www|${WWWDIR}|' \
 		${WRKSRC}/Makefile.local
+	cp ${WRKSRC}/cgi.h.example ${WRKSRC}/cgi.h
+
+post-build:
+	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} man.cgi
+
+post-install:
+	cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS} cgi-install
 
 .include <bsd.port.mk>
