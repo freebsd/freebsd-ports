@@ -239,6 +239,7 @@
     SUBDIR += py-pynvim
     SUBDIR += py-vim-bridge
     SUBDIR += quilter
+    SUBDIR += r7-office
     SUBDIR += rehex
     SUBDIR += retext
     SUBDIR += rubygem-neovim
