@@ -5,15 +5,14 @@ CATEGORIES=	devel gnustep
 MASTER_SITES=	GNUSTEP/dev-apps
 DISTNAME=	ProjectCenter-${PORTVERSION}
 
+PATCH_SITES=	https://github.com/gnustep/apps-projectcenter/commit/
+PATCHFILES=	97aa34218f0370ba8b672d3f905df0ed8de9ac8.patch:-p1
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Development environment for GNUstep
 WWW=		http://www.gnustep.org/experience/ProjectCenter.html
 
 LICENSE=	GPLv2+ # comment in code; COPYING says GPLv3
-
-BROKEN=		fails to link: libProjectCenter.so: undefined reference to __objc_ivar_offset_NSView._tracking_rects
-DEPRECATED=	Broken since 2021
-EXPIRATION_DATE=	2023-03-21
 
 USES=		gnustep
 USE_GNUSTEP=	back build
