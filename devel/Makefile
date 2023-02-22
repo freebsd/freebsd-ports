@@ -1330,6 +1330,7 @@
     SUBDIR += libpeak
     SUBDIR += libpeas
     SUBDIR += libpff
+    SUBDIR += libphdi
     SUBDIR += libphk
     SUBDIR += libphonenumber
     SUBDIR += libplist
