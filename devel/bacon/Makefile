@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
-PORTREVISION=	1
+DISTVERSION=	2.6.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +27,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		bstr-1.1.0 \
+		bstr-1.3.0 \
 		btoi-0.4.2 \
 		bumpalo-3.11.1 \
 		bytes-1.3.0 \
@@ -69,6 +68,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		dirs-4.0.0 \
 		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
+		dunce-1.0.3 \
 		either-1.8.0 \
 		fastrand-1.8.0 \
 		file-size-1.0.3 \
@@ -77,40 +77,40 @@ CARGO_CRATES=	adler-1.0.2 \
 		form_urlencoded-1.1.0 \
 		fsevent-sys-4.1.0 \
 		getrandom-0.2.8 \
-		git-actor-0.15.0 \
-		git-attributes-0.7.0 \
-		git-bitmap-0.2.0 \
-		git-chunk-0.4.0 \
-		git-command-0.2.2 \
-		git-config-0.13.0 \
-		git-config-value-0.10.0 \
-		git-credentials-0.8.0 \
-		git-date-0.3.1 \
-		git-diff-0.24.0 \
-		git-discover-0.10.0 \
-		git-features-0.25.1 \
-		git-glob-0.5.2 \
-		git-hash-0.10.1 \
-		git-hashtable-0.1.0 \
-		git-index-0.10.0 \
-		git-lock-3.0.1 \
-		git-mailmap-0.7.0 \
-		git-object-0.24.0 \
-		git-odb-0.38.1 \
-		git-pack-0.28.0 \
-		git-path-0.7.0 \
-		git-prompt-0.3.1 \
-		git-quote-0.4.0 \
-		git-ref-0.21.0 \
-		git-refspec-0.5.0 \
-		git-repository-0.30.2 \
-		git-revision-0.8.0 \
-		git-sec-0.6.1 \
-		git-tempfile-3.0.1 \
-		git-traverse-0.20.0 \
-		git-url-0.12.2 \
-		git-validate-0.7.1 \
-		git-worktree-0.10.0 \
+		gix-0.37.1 \
+		gix-actor-0.17.2 \
+		gix-attributes-0.8.3 \
+		gix-bitmap-0.2.1 \
+		gix-chunk-0.4.1 \
+		gix-command-0.2.4 \
+		gix-config-0.16.3 \
+		gix-config-value-0.10.1 \
+		gix-credentials-0.9.2 \
+		gix-date-0.4.3 \
+		gix-diff-0.26.2 \
+		gix-discover-0.13.1 \
+		gix-features-0.26.5 \
+		gix-glob-0.5.5 \
+		gix-hash-0.10.3 \
+		gix-hashtable-0.1.1 \
+		gix-index-0.12.4 \
+		gix-lock-3.0.2 \
+		gix-mailmap-0.9.3 \
+		gix-object-0.26.3 \
+		gix-odb-0.40.2 \
+		gix-pack-0.30.3 \
+		gix-path-0.7.2 \
+		gix-prompt-0.3.2 \
+		gix-quote-0.4.2 \
+		gix-ref-0.24.1 \
+		gix-refspec-0.7.3 \
+		gix-revision-0.10.4 \
+		gix-sec-0.6.2 \
+		gix-tempfile-3.0.2 \
+		gix-traverse-0.22.2 \
+		gix-url-0.13.3 \
+		gix-validate-0.7.3 \
+		gix-worktree-0.12.3 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
 		heck-0.4.0 \
@@ -142,7 +142,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		memchr-2.5.0 \
 		memmap2-0.5.8 \
 		memoffset-0.7.1 \
-		minimad-0.9.1 \
+		minimad-0.10.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.6.2 \
 		mio-0.8.5 \
@@ -165,7 +165,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.49 \
 		proc-status-0.1.1 \
-		prodash-22.1.0 \
+		prodash-23.0.0 \
 		quick-error-2.0.1 \
 		quote-1.0.23 \
 		rayon-1.6.1 \
@@ -196,7 +196,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		syn-1.0.107 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		termimad-0.20.6 \
+		termimad-0.21.0 \
 		textwrap-0.16.0 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
