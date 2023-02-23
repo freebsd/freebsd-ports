@@ -1,5 +1,5 @@
 PORTNAME=	dbus
-DISTVERSION=	1.14.4
+DISTVERSION=	1.14.6
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
@@ -34,7 +34,7 @@ PORTSCOUT=	limitw:1,even
 USERS=		messagebus
 GROUPS=		messagebus
 
-_LIBVERSION=	3.32.1
+_LIBVERSION=	3.32.2
 
 PLIST_SUB=	GROUPS=${GROUPS} \
 		VERSION="1.0" \
