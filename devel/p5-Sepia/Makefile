@@ -10,6 +10,10 @@ MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Simple Emacs-Perl Interface
 WWW=		https://metacpan.org/release/Sepia
 
+.if ${FLAVOR:U} == devel_full || ${FLAVOR:U} == devel_nox
+BROKEN=		fails to build
+.endif
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Devel-Size>=0:devel/p5-Devel-Size \
 		p5-IO-Stringy>=0:devel/p5-IO-Stringy \
