@@ -1,10 +1,10 @@
 PORTREVISION=	0
-PKGNAMESUFFIX=	-hb-view
+PKGNAMESUFFIX=	-cairo
 
-COMMENT=	Harfbuzz hb-view utility
+COMMENT=	Harfbuzz Cairo support
 
 MASTERDIR=	${.CURDIR}/../../print/harfbuzz
 PLIST=		${.CURDIR}/pkg-plist
-HARFBUZZ_SLAVE=	hb-view
+HARFBUZZ_SLAVE=	cairo
 
 .include "${MASTERDIR}/Makefile"

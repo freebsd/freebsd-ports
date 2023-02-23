@@ -45,7 +45,7 @@ MESON_ARGS+=	-Dicu=enabled -Dcairo=disabled -Ddocs=disabled \
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
 		libicudata.so:devel/icu
 
-.elif ${HARFBUZZ_SLAVE} == hb-view
+.elif ${HARFBUZZ_SLAVE} == cairo
 MESON_ARGS+=	-Dcairo=enabled -Dicu=disabled -Ddocs=disabled \
 		-Dtests=disabled
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
