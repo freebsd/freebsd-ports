@@ -4,7 +4,7 @@ CATEGORIES=	devel python textproc
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nork@ninth-nine.com
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	AWS CloudFormation Linter
 WWW=		https://pypi.org/project/cfn-lint/
 
