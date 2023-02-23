@@ -1,0 +1,34 @@
+[
+{
+  type: upgrade
+  maximum_version: "7.3.83"
+  message <<EEOOMM
+ATTENTION: The mongodb dependency has been changed from 36 to 44, as MongoDB
+3.6 is long out out support and end of life.
+
+One of implications is that the instance MUST be restored from backup.
+
+The upgrade path can be as following:
+
+- Take a backup from within the unifi7 application BEFORE stopping or
+  restarting the service.
+
+- Stop the unifi7 service.
+
+- Copy the "backup" directory from %%LOCALBASE%%/share/java/unifi/data/db
+  to a safe location.
+
+- Remove all files and directories under
+  %%LOCALBASE%%/share/java/unifi/data/db
+
+- Upgrade the package
+
+- Copy the "backup" directory from the safe place to
+  %%LOCALBASE%%/share/java/unifi/data/db
+
+- Start the service.
+
+- Restore the configuration from backup.
+EEOOMM
+}
+]

@@ -1,5 +1,6 @@
 PORTNAME=	unifi7
 PORTVERSION=	7.3.83
+PORTREVISION=	1
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
@@ -15,9 +16,6 @@ COMMENT=	UniFi Controller v7
 WWW=		https://help.ui.com/hc/en-us/categories/200320654-UniFi-Wireless
 
 RUN_DEPENDS=	snappyjava>0:archivers/snappy-java
-
-DEPRECATED=    Depends on upstream EOLed mongodb36
-EXPIRATION_DATE=       2023-03-31
 
 USES=		cpe
 
@@ -38,6 +36,8 @@ EXTRACT_AFTER_ARGS=	data.tar.xz | ${TAR} -xf -
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+SUB_FILES=	pkg-message
 SUB_LIST+=	GROUPS=${GROUPS} \
 		JAVA=${JAVA} \
 		JAVA_HOME=${JAVA_HOME} \
@@ -52,9 +52,9 @@ GROUPS=		unifi
 OPTIONS_DEFINE=	EXTERNALDB
 
 EXTERNALDB_DESC=	Use external MongoDB server
-EXTERNALDB_VARS=	PKGMESSAGE=${WRKSRC}/pkg-message.extdb \
+EXTERNALDB_VARS=	PKGMESSAGE+=${WRKSRC}/pkg-message.extdb \
 			SUB_FILES+=pkg-message.extdb
-EXTERNALDB_VARS_OFF=	RUN_DEPENDS+=mongodb36>0:databases/mongodb36
+EXTERNALDB_VARS_OFF=	RUN_DEPENDS+=mongodb44>0:databases/mongodb44
 
 _DIR_LIST=	conf data logs run work
 _JAX_DISTNAME=	javax.activation-api

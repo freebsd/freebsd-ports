@@ -6,6 +6,30 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20230310:
+  AFFECTS: users of net-mgmt/unifi7
+  AUTHOR: otis@FreeBSD.org
+
+  The mongodb dependency has been changed from 36 to 44, as MongoDB 3.6
+  is long out out support and end of life.
+
+  The upgrade path should be as following:
+
+  1. Take a backup from within the unifi7 application PRIOR to
+     updating!
+
+  2. Stop the unifi7 service (if running)
+
+  3. Copy the "backup" directory from LOCALBASE/share/java/unifi/data/db
+     to a safe location.
+
+  4. Remove all files and directories under
+     LOCALBASE/share/java/unifi/data/db
+
+  5. Upgrade the package and start the service
+
+  6. Restore the configuration from backup
+
+20230310:
   AFFECTS: user of benchmarks/ddosify
   AUTHOR: fernape@FreeBSD.org
 
