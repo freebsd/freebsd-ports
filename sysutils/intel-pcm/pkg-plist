@@ -1,4 +1,5 @@
 sbin/pcm
+sbin/pcm-accel
 sbin/pcm-bw-histogram
 sbin/pcm-core
 sbin/pcm-iio
@@ -13,12 +14,17 @@ sbin/pcm-pcie
 sbin/pcm-power
 sbin/pcm-raw
 sbin/pcm-sensor
+sbin/pcm-sensor-server
 sbin/pcm-tsx
+%%DATADIR%%/PMURegisterDeclarations/GenuineIntel-6-4F-1.json
 %%DATADIR%%/PMURegisterDeclarations/GenuineIntel-6-55-4.json
 %%DATADIR%%/PMURegisterDeclarations/GenuineIntel-6-55-7.json
 %%DATADIR%%/PMURegisterDeclarations/GenuineIntel-6-6A-6.json
 %%DATADIR%%/PMURegisterDeclarations/GenuineIntel-6-86-5.json
 %%DATADIR%%/PMURegisterDeclarations/GenuineIntel-6-8E-C.json
+%%DATADIR%%/PMURegisterDeclarations/GenuineIntel-6-8F-6.json
 %%DATADIR%%/opCode-106.txt
 %%DATADIR%%/opCode-134.txt
+%%DATADIR%%/opCode-143-accel.txt
+%%DATADIR%%/opCode-143.txt
 %%DATADIR%%/opCode-85.txt

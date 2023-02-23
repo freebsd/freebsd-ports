@@ -1,5 +1,6 @@
 PORTNAME=	intel-pcm
 DISTVERSION=	202302
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	imp@FreeBSD.org
@@ -31,9 +32,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|$${CMAKE_INSTALL_DOCDIR}|$${CMAKE_INSTALL_DATADIR}/doc/${PORTNAME}|g' \
 	    ${PATCH_WRKSRC}/src/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's|/usr/share/pcm/|${DATADIR}/|g' \
-	     ${PATCH_WRKSRC}/src/pcm-iio.cpp
-	@${REINPLACE_CMD} -e 's|/usr/share/pcm/|${DATADIR}/|g' \
 	     ${PATCH_WRKSRC}/src/pcm-raw.cpp
+	@${REINPLACE_CMD} -e 's|/usr/share/pcm/|${DATADIR}/|g' \
+	     ${PATCH_WRKSRC}/src/utils.cpp
 
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share/licenses
