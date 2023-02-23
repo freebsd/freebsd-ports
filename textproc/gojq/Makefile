@@ -4,7 +4,7 @@ DISTVERSION=	0.12.11
 PORTREVISION=	2
 CATEGORIES=	textproc
 
-MAINTAINER=	nork@ninth-nine.com
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	Pure Go implementation of jq
 WWW=		https://github.com/itchyny/gojq
 
