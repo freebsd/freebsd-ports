@@ -1,7 +1,7 @@
 PORTNAME=	systemd
 PORTVERSION=	219
 DISTVERSIONSUFFIX=	-78.el7_9.7
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel linux
 PKGNAMESUFFIX=	-libs
 
@@ -18,8 +18,5 @@ USE_LINUX=	elfutils-libs libgcrypt libgpg-error lz4
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	${PORTNAME}${PKGNAMESUFFIX}-${DISTVERSIONFULL}
-
-post-patch:
-	@${RM} -r ${WRKSRC}/usr/lib*/libudev.so.* ${WRKSRC}/usr/lib*/security
 
 .include <bsd.port.mk>
