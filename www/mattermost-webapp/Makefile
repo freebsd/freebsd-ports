@@ -1,5 +1,5 @@
 PORTNAME=	mattermost-webapp
-PORTVERSION=	6.4.2
+PORTVERSION=	7.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://releases.mattermost.com/${PORTVERSION}/
@@ -11,10 +11,9 @@ WWW=		https://mattermost.org/
 
 LICENSE=	APACHE20
 
-NO_BUILD=	yes
-NO_ARCH=	yes
-
 WWWDIR=		${PREFIX}/www/mattermost
+NO_ARCH=	yes
+NO_BUILD=	yes
 
 MATTERMOSTD_USER=	mattermost
 MATTERMOSTD_GROUP=	mattermost
