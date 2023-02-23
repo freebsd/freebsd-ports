@@ -198,7 +198,6 @@ llvm%%LLVM_SUFFIX%%/bin/dsymutil
 %%FLANG%%llvm%%LLVM_SUFFIX%%/bin/f18-parse-demo
 %%EXTRAS%%llvm%%LLVM_SUFFIX%%/bin/find-all-symbols
 %%FLANG%%llvm%%LLVM_SUFFIX%%/bin/fir-opt
-%%FLANG%%llvm%%LLVM_SUFFIX%%/bin/flang
 %%FLANG%%llvm%%LLVM_SUFFIX%%/bin/flang-new
 %%FLANG%%llvm%%LLVM_SUFFIX%%/bin/flang-to-external-fc
 %%CLANG%%llvm%%LLVM_SUFFIX%%/bin/git-clang-format
