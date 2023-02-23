@@ -4739,6 +4739,7 @@
     SUBDIR += py-itemadapter
     SUBDIR += py-itemloaders
     SUBDIR += py-iteration-utilities
+    SUBDIR += py-itertree
     SUBDIR += py-itypes
     SUBDIR += py-janus
     SUBDIR += py-jaraco
