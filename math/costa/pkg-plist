@@ -13,10 +13,10 @@ include/costa/grid2grid/mpi_type_wrapper.hpp
 include/costa/grid2grid/profiler.hpp
 include/costa/grid2grid/ranks_reordering.hpp
 include/costa/grid2grid/scalapack_layout.hpp
-include/costa/grid2grid/threads_workspace.hpp
 include/costa/grid2grid/transform.hpp
 include/costa/grid2grid/transformer.hpp
 include/costa/grid2grid/utils.hpp
+include/costa/grid2grid/workspace.hpp
 include/costa/layout.hpp
 include/costa/pxgemr2d/costa_pxgemr2d.hpp
 include/costa/pxgemr2d/pxgemr2d_params.hpp
@@ -24,7 +24,9 @@ include/costa/pxtran_op/costa_pxtran_op.hpp
 include/costa/pxtran_op/pxtran_op_params.hpp
 include/costa/random_generator.hpp
 include/costa/scalapack.hpp
+lib/cmake/costa/FindCRAY_LIBSCI.cmake
 lib/cmake/costa/FindMKL.cmake
+lib/cmake/costa/FindSCALAPACK.cmake
 lib/cmake/costa/costaConfig.cmake
 lib/cmake/costa/costaConfigVersion.cmake
 lib/cmake/costa/costaTargets-%%CMAKE_BUILD_TYPE%%.cmake
