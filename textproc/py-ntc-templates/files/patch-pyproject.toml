@@ -1,0 +1,14 @@
+Avoid installing "LICENSE" and "README.md" on top of Python's "site-packages/"
+directory which would lead to conflicting packages.
+
+--- pyproject.toml.orig	2023-02-23 18:07:16 UTC
++++ pyproject.toml
+@@ -19,8 +19,6 @@ include = [
+     "Programming Language :: Python :: 3.10",
+ ]
+ include = [
+-    "LICENSE",
+-    "README.md",
+     "ntc_templates/templates/*.textfsm",
+     "ntc_templates/templates/index",
+ ]
