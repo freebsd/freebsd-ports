@@ -87,6 +87,7 @@ include/filament/View.h
 include/filament/Viewport.h
 include/filameshio/MeshReader.h
 include/geometry/SurfaceOrientation.h
+include/geometry/TangentSpaceMesh.h
 include/geometry/Transcoder.h
 include/gltfio/Animator.h
 include/gltfio/AssetLoader.h
