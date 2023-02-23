@@ -271,7 +271,7 @@ _USE_PLASMA_ALL=	activitymanagerd breeze breeze-gtk \
 			libksysguard milou oxygen plasma-browser-integration \
 			plasma-desktop plasma-disks plasma-integration plasma-pa \
 			plasma-sdk plasma-workspace plasma-workspace-wallpapers \
-			polkit-kde-agent-1 powerdevil systemsettings
+			polkit-kde-agent-1 powerdevil systemsettings xdg-desktop-portal-kde
 
 # List of components of the KDE PIM distribution (part of applications).
 _USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
@@ -649,6 +649,9 @@ kde-powerdevil_LIB=		libpowerdevilcore.so
 
 kde-systemsettings_PORT=	sysutils/plasma5-systemsettings
 kde-systemsettings_PATH=	${KDE_PREFIX}/bin/systemsettings5
+
+kde-xdg-desktop-portal-kde_PATH=	${KDE_PREFIX}/lib/libexec/xdg-desktop-portal-kde
+kde-xdg-desktop-portal-kde_PORT=	deskutils/plasma5-xdg-desktop-portal-kde
 # ====================== end of plasma components ==============================
 
 # ====================== pim5 components =======================================
