@@ -2,6 +2,7 @@ PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.26-14743 # git rev-list --count HEAD
 DISTVERSIONSUFFIX=	-g6b30cdac09
+PORTREVISION=	1
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -56,7 +57,6 @@ PATCHFILES+=	04a0a2e258d0.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12
 PKGNAMESUFFIX=	-${FLAVOR}
 USES:=		${USES:S/qt:5/qt:6/}
 USE_QT=		base multimedia svg
-PKGMESSAGE=	${.CURDIR}/pkg-message.${FLAVOR}
 
 CONFLICTS_INSTALL=	${PORTNAME}
 
