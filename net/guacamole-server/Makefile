@@ -1,5 +1,5 @@
 PORTNAME=	guacamole-server
-DISTVERSION=	1.4.0
+DISTVERSION=	1.5.0
 CATEGORIES=	net
 
 MAINTAINER=	ultima@FreeBSD.org
