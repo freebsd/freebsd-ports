@@ -5109,6 +5109,7 @@
     SUBDIR += py-purl
     SUBDIR += py-py
     SUBDIR += py-py-ubjson
+    SUBDIR += py-pyTooling
     SUBDIR += py-py_interface
     SUBDIR += py-pyasn1
     SUBDIR += py-pyasn1-modules
