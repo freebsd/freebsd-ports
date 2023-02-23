@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=v
 CATEGORIES=	mail python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	nork@ninth-nine.com
+MAINTAINER=	nork@FreeBSD.org
 COMMENT=	TLS client policy for Postfix according to domain MTA-STS policy
 WWW=		https://pypi.python.org/pypi/postfix-mta-sts-resolver
 
