@@ -1,8 +1,9 @@
 PORTNAME=	mattermost-server
-PORTVERSION=	6.4.2
+PORTVERSION=	7.8.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	10
 CATEGORIES=	www
+MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
+DISTFILES=	go.mod:gomod
 
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Open source Slack-alternative in Golang and React
@@ -17,14 +18,13 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		mattermost-webapp>=${PORTVERSION}:www/mattermost-webapp
 
 USES=		go:modules
-
-GO_TARGET=	./cmd/mattermost ./scripts/config_generator
-GO_BUILDFLAGS=	-ldflags="-X github.com/mattermost/mattermost-server/v6/model.BuildNumber=${PORTVERSION}"
-
-USE_RC_SUBR=	mattermostd
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	mattermost
+USE_RC_SUBR=	mattermostd
+
+GO_MODULE=	github.com/mattermost/mattermost-server
+GO_TARGET=	./cmd/mattermost ./scripts/config_generator
+GO_BUILDFLAGS=	-ldflags="-X github.com/mattermost/mattermost-server/v6/model.BuildNumber=${PORTVERSION}"
 
 WWWDIR=		${PREFIX}/www/mattermost
 
