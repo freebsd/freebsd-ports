@@ -12,13 +12,7 @@ WWW=		http://www.mit.edu/people/marc/pks/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=	openssl
-BROKEN_SSL_REASON_openssl=	member access into incomplete type 'EVP_PKEY' (aka 'evp_pkey_st')
-DEPRECATED=	Broken with recent ssl
-EXPIRATION_DATE=	2023-03-20
-
 USES=		bdb ssl
-USE_GCC=	yes
 USE_RC_SUBR=	pksd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -52,11 +46,5 @@ post-install:
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/
 	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base
-BROKEN=	Does not build with OpenSSL 1.1
-.endif
 
 .include <bsd.port.mk>
