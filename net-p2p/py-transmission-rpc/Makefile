@@ -1,8 +1,9 @@
 PORTNAME=	transmission-rpc
-PORTVERSION=	3.4.0
+DISTVERSION=	3.4.1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Python module for Transmission bittorent client JSON-RPC protocol
