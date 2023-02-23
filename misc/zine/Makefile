@@ -1,7 +1,6 @@
 PORTNAME=	zine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
-PORTREVISION=	1
+DISTVERSION=	0.11.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,25 +20,26 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.20 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.68 \
+		anyhow-1.0.69 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
 		base64-0.13.1 \
+		base64-0.21.0 \
 		bincode-1.3.3 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.3 \
-		bstr-1.1.0 \
+		bstr-1.3.0 \
 		bumpalo-3.12.0 \
 		byteorder-1.4.3 \
-		bytes-1.3.0 \
+		bytes-1.4.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
 		chrono-tz-0.6.3 \
 		chrono-tz-build-0.0.3 \
-		clap-4.1.4 \
+		clap-4.1.6 \
 		clap_derive-4.1.0 \
 		clap_lex-0.3.1 \
 		clipboard-win-4.5.0 \
@@ -56,10 +56,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		crypto-common-0.1.6 \
 		cssparser-0.27.2 \
 		cssparser-macros-0.6.0 \
-		cxx-1.0.88 \
-		cxx-build-1.0.88 \
-		cxxbridge-flags-1.0.88 \
-		cxxbridge-macro-1.0.88 \
+		cxx-1.0.91 \
+		cxx-build-1.0.91 \
+		cxxbridge-flags-1.0.91 \
+		cxxbridge-macro-1.0.91 \
 		dashmap-5.4.0 \
 		derive_more-0.99.17 \
 		deunicode-0.4.3 \
@@ -70,15 +70,15 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		dtoa-0.4.8 \
 		dtoa-short-0.3.3 \
 		either-1.8.1 \
-		encoding_rs-0.8.31 \
+		encoding_rs-0.8.32 \
 		endian-type-0.1.2 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		error-code-2.3.1 \
 		fancy-regex-0.7.1 \
-		fastrand-1.8.0 \
-		fd-lock-3.0.9 \
-		filetime-0.2.19 \
+		fastrand-1.9.0 \
+		fd-lock-3.0.10 \
+		filetime-0.2.20 \
 		flate2-1.0.25 \
 		fluent-0.16.0 \
 		fluent-bundle-0.15.2 \
@@ -102,20 +102,21 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		getopts-0.2.21 \
 		getrandom-0.1.16 \
 		getrandom-0.2.8 \
-		gimli-0.27.1 \
+		gimli-0.27.2 \
 		globset-0.4.10 \
 		globwalk-0.8.1 \
 		hashbrown-0.12.3 \
-		heck-0.4.0 \
+		heck-0.4.1 \
 		hermit-abi-0.2.6 \
+		hermit-abi-0.3.1 \
 		html5ever-0.26.0 \
-		http-0.2.8 \
+		http-0.2.9 \
 		http-body-0.4.5 \
 		http-range-header-0.3.0 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
 		humansize-1.1.1 \
-		hyper-0.14.23 \
+		hyper-0.14.24 \
 		hyper-tls-0.5.0 \
 		hyper-tungstenite-0.9.0 \
 		iana-time-zone-0.1.53 \
@@ -130,11 +131,11 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		instant-0.1.12 \
 		intl-memoizer-0.5.1 \
 		intl_pluralrules-7.0.2 \
-		io-lifetimes-1.0.4 \
-		is-terminal-0.4.2 \
+		io-lifetimes-1.0.5 \
+		is-terminal-0.4.3 \
 		itoa-0.4.8 \
 		itoa-1.0.5 \
-		js-sys-0.3.60 \
+		js-sys-0.3.61 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
@@ -157,7 +158,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		mime-0.3.16 \
 		mime_guess-2.0.4 \
 		miniz_oxide-0.6.2 \
-		mio-0.8.5 \
+		mio-0.8.6 \
 		native-tls-0.2.11 \
 		new_debug_unreachable-1.0.4 \
 		nibble_vec-0.1.0 \
@@ -169,21 +170,22 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
 		object-0.30.3 \
-		once_cell-1.17.0 \
+		once_cell-1.17.1 \
+		opener-0.5.2 \
 		openssl-0.10.45 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
-		openssl-src-111.24.0+1.1.1s \
+		openssl-src-111.25.0+1.1.1t \
 		openssl-sys-0.9.80 \
 		os_str_bytes-6.4.1 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.9.6 \
+		parking_lot_core-0.9.7 \
 		parse-zoneinfo-0.3.0 \
 		percent-encoding-2.2.0 \
-		pest-2.5.4 \
-		pest_derive-2.5.4 \
-		pest_generator-2.5.4 \
-		pest_meta-2.5.4 \
+		pest-2.5.5 \
+		pest_derive-2.5.5 \
+		pest_generator-2.5.5 \
+		pest_meta-2.5.5 \
 		phf-0.8.0 \
 		phf-0.10.1 \
 		phf-0.11.1 \
@@ -202,13 +204,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.26 \
-		plist-1.4.0 \
+		plist-1.4.1 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
-		proc-macro2-1.0.50 \
+		proc-macro2-1.0.51 \
 		promptly-0.3.1 \
 		pulldown-cmark-0.9.2 \
 		quick-xml-0.26.0 \
@@ -227,12 +229,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
 		regex-1.7.1 \
+		regex-automata-0.1.10 \
 		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		rustix-0.36.7 \
+		rustix-0.36.8 \
 		rustyline-9.1.2 \
 		ryu-1.0.12 \
 		safemem-0.3.3 \
@@ -247,19 +250,19 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		semver-1.0.16 \
 		serde-1.0.152 \
 		serde_derive-1.0.152 \
-		serde_json-1.0.91 \
+		serde_json-1.0.93 \
 		servo_arc-0.1.1 \
 		sha1-0.10.5 \
 		sha2-0.10.6 \
-		signal-hook-registry-1.4.0 \
+		signal-hook-registry-1.4.1 \
 		siphasher-0.3.10 \
-		slab-0.4.7 \
+		slab-0.4.8 \
 		slug-0.1.4 \
 		smallvec-1.10.0 \
 		socket2-0.4.7 \
 		stable_deref_trait-1.2.0 \
 		str-buf-1.0.6 \
-		string_cache-0.8.4 \
+		string_cache-0.8.5 \
 		string_cache_codegen-0.5.2 \
 		strsim-0.10.0 \
 		syn-1.0.107 \
@@ -273,18 +276,18 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		thin-slice-0.1.1 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
-		thread_local-1.1.4 \
-		time-0.3.17 \
+		thread_local-1.1.7 \
+		time-0.3.19 \
 		time-core-0.1.0 \
-		time-macros-0.2.6 \
+		time-macros-0.2.7 \
 		tinystr-0.7.1 \
 		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.0 \
+		tinyvec_macros-0.1.1 \
 		tokio-1.25.0 \
 		tokio-macros-1.8.2 \
-		tokio-native-tls-0.3.0 \
+		tokio-native-tls-0.3.1 \
 		tokio-tungstenite-0.18.0 \
-		tokio-util-0.7.4 \
+		tokio-util-0.7.7 \
 		toml-0.5.11 \
 		tower-0.4.13 \
 		tower-http-0.3.5 \
@@ -310,7 +313,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unicode-bidi-0.3.10 \
 		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.22 \
-		unicode-segmentation-1.10.0 \
+		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
 		url-2.3.1 \
 		utf-8-0.7.6 \
@@ -321,16 +324,18 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.83 \
-		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-macro-0.2.83 \
-		wasm-bindgen-macro-support-0.2.83 \
-		wasm-bindgen-shared-0.2.83 \
+		wasm-bindgen-0.2.84 \
+		wasm-bindgen-backend-0.2.84 \
+		wasm-bindgen-macro-0.2.84 \
+		wasm-bindgen-macro-support-0.2.84 \
+		wasm-bindgen-shared-0.2.84 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-targets-0.42.1 \
 		windows_aarch64_gnullvm-0.42.1 \
 		windows_aarch64_msvc-0.42.1 \
 		windows_i686_gnu-0.42.1 \
