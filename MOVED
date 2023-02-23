@@ -16867,7 +16867,6 @@ net-mgmt/zabbix3-frontend||2022-02-28|Has expired: Upstream EOL reached on 2021-
 net-mgmt/zabbix3-agent||2022-02-28|Has expired: Upstream EOL reached on 2021-02-28
 net-mgmt/zabbix3-server||2022-02-28|Has expired: Upstream EOL reached on 2021-02-28
 archivers/zip-ada||2022-02-28|Removed, depends on expired lang/gcc6-aux
-cad/ghdl||2022-02-28|Removed, depends on expired lang/gcc6-aux
 databases/adabase||2022-02-28|Removed, depends on expired lang/gcc6-aux
 databases/apq||2022-02-28|Removed, depends on expired lang/gcc6-aux
 databases/apq-mysql||2022-02-28|Removed, depends on expired lang/gcc6-aux
