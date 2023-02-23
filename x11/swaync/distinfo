@@ -1,5 +1,3 @@
-TIMESTAMP = 1669658225
-SHA256 (ErikReider-SwayNotificationCenter-v0.7.3_GH0.tar.gz) = c17553ac00e3824ea6c9c2ebf777d9e1c73e0cb46dd663b91eab04c71303ced6
-SIZE (ErikReider-SwayNotificationCenter-v0.7.3_GH0.tar.gz) = 3155355
-SHA256 (a9db8b7fcb19.patch) = c63569f6e587df30898d5c279f29b959d01677ef62600599ffc0a7297a84050f
-SIZE (a9db8b7fcb19.patch) = 717
+TIMESTAMP = 1677185878
+SHA256 (ErikReider-SwayNotificationCenter-v0.8.0_GH0.tar.gz) = 0640043fef600a5a494ac22f09e99118462e7ef2bdfd7fc85230b3e517bfc7d6
+SIZE (ErikReider-SwayNotificationCenter-v0.8.0_GH0.tar.gz) = 3170861

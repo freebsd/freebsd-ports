@@ -1,10 +1,7 @@
 PORTNAME=	swaync
 DISTVERSIONPREFIX=	v
-PORTVERSION=	0.7.3
+PORTVERSION=	0.8.0
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	a9db8b7fcb19.patch:-p1 # https://github.com/ErikReider/SwayNotificationCenter/issues/209
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Simple Wayland notification daemon with GTK panel
@@ -13,7 +10,9 @@ WWW=		https://github.com/ErikReider/SwayNotificationCenter
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
+LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
+		libjson-glib-1.0.so:devel/json-glib \
+		libgee-0.8.so:devel/libgee \
 		libgtk-layer-shell.so:x11-toolkits/gtk-layer-shell \
 		libhandy-1.so:x11-toolkits/libhandy
 
