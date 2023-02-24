@@ -1,6 +1,6 @@
 PORTNAME=	ddosify
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.14.0
+DISTVERSION=	0.14.1
 CATEGORIES=	benchmarks
 
 MAINTAINER=	0xdutra@gmail.com
@@ -42,10 +42,16 @@ GH_TUPLE=	\
 
 PLIST_FILES=	bin/${PORTNAME}
 
-OPTIONS_DEFINE=	EMOJI
-OPTIONS_DEFAULT=EMOJI
+OPTIONS_DEFINE=	EMOJI ZSH
+OPTIONS_DEFAULT=EMOJI ZSH
 
 EMOJI_DESC=	Enable emojis in console output
 EMOJI_RUN_DEPENDS=	noto-emoji>0:x11-fonts/noto-emoji
+
+ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
+
+post-install-ZSH-on:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/completions/_${PORTNAME} ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
 
 .include <bsd.port.mk>
