@@ -16,20 +16,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 ONLY_FOR_ARCHS=		amd64 armv6 armv7
 ONLY_FOR_ARCHS_REASON=	requires supported SIMD ISA
 
-LIB_DEPENDS=	libembree3.so:graphics/embree
+LIB_DEPENDS=	libembree3.so:graphics/embree \
+		libtbb.so:devel/onetbb
 
 USES=		cmake compiler:c++11-lib
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenPathGuidingLibrary
-
-OPTIONS_DEFINE=		TBB
-OPTIONS_DEFAULT=	TBB
-
-TBB_DESC=		Use Intels TBB instead of openMP
-# we disable TBB by enabling use of OpenMP
-TBB_CMAKE_BOOL_OFF=	OPENPGL_USE_OMP_THREADING
-TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 .include <bsd.port.mk>
