@@ -194,6 +194,7 @@
     SUBDIR += libreoffice-xh
     SUBDIR += libreoffice-zu
     SUBDIR += linux-bcompare
+    SUBDIR += linux-r7-office
     SUBDIR += linux-sublime
     SUBDIR += linux-sublime-text4
     SUBDIR += linux-sublime3
@@ -239,7 +240,6 @@
     SUBDIR += py-pynvim
     SUBDIR += py-vim-bridge
     SUBDIR += quilter
-    SUBDIR += r7-office
     SUBDIR += rehex
     SUBDIR += retext
     SUBDIR += rubygem-neovim
