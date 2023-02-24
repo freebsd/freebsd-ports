@@ -1,2 +1,3 @@
-SHA256 (mboxgrep-0.7.9.tar.gz) = 78d375a05c3520fad4bca88509d4da0dbe9fba31f36790bd20880e212acd99d7
-SIZE (mboxgrep-0.7.9.tar.gz) = 76067
+TIMESTAMP = 1677278119
+SHA256 (mboxgrep/0.7.10.tar.gz) = 396c1bae89540977abb23890bd9cdf68aa8048f68cf1abc061614fa9a0c465dc
+SIZE (mboxgrep/0.7.10.tar.gz) = 76132

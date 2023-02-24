@@ -1,42 +1,26 @@
 PORTNAME=	mboxgrep
-PORTVERSION=	0.7.9
-PORTREVISION=	5
+DISTVERSION=	0.7.10
 CATEGORIES=	mail
-MASTER_SITES=	SF
+MASTER_SITES=	https://git.datatipp.se/dspiljar/mboxgrep/archive/
+DISTNAME=	${DISTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Utility to scan mailboxes for messages matching a regular expression
 WWW=		http://mboxgrep.sourceforge.net/
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING.md
 
-USES=		localbase ssl
+USES=		autoreconf localbase
 GNU_CONFIGURE=	yes
-
-CFLAGS+=	-I${OPENSSLINC}
-LIBS+=		-L${OPENSSLLIB}
+WRKSRC=		${WRKDIR}/mboxgrep
 
 INFO=		mboxgrep
+PLIST_FILES=	bin/mboxgrep man/man1/mboxgrep.1.gz
 
-PORTDOCS=	ChangeLog NEWS README TODO
-PLIST_FILES=	bin/mboxgrep \
-		man/man1/mboxgrep.1.gz
-
-OPTIONS_DEFINE=	DOCS PCRE
-
+OPTIONS_DEFINE=	PCRE
 PCRE_LIB_DEPENDS=	libpcre.so:devel/pcre
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's,void \*tmpp,FILE \*tmpp,g' ${WRKSRC}/src/main.c
-	@${REINPLACE_CMD} -e 's,$$(mandir),$$(DESTDIR)$$(mandir),g' \
-		-e 's,$$(infodir),$$(DESTDIR)$$(infodir),g' \
-		${WRKSRC}/src/Makefile.in ${WRKSRC}/doc/Makefile.in
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}/
-.endfor
+PCRE_CONFIGURE_WITH=	PCRE
 
 .include <bsd.port.mk>
