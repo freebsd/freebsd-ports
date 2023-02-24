@@ -1,5 +1,5 @@
 PORTNAME=	sqlite3
-DISTVERSION=	3.40.1
+DISTVERSION=	3.41.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.sqlite.org/${_YEAR}/ https://www2.sqlite.org/${_YEAR}/ https://www3.sqlite.org/${_YEAR}/
@@ -74,7 +74,7 @@ OPTIONS_DEFINE+=	ARMOR DBPAGE DBSTAT DIRECT_READ DQS EXTENSION FTS3_TOKEN \
 			SORT_REF STATIC STMT TRUSTED_SCHEMA UNKNOWN_SQL UNLOCK_NOTIFY \
 			UPDATE_LIMIT URI URI_AUTHORITY
 .endif
-OPTIONS_DEFAULT=	DBPAGE DBSTAT DQS EXTENSION FTS3_TOKEN FTS4 FTS5 LIBEDIT METADATA \
+OPTIONS_DEFAULT=	DBPAGE DBSTAT EXTENSION FTS3_TOKEN FTS4 FTS5 LIBEDIT METADATA \
 			RTREE SECURE_DELETE STRIP THREADS TS1 UNICODE61 UNLOCK_NOTIFY URI
 # SECURE_DELETE, UNLOCK_NOTIFY, DBSTAT (since 41.0) used by www/firefox et al.
 # RTREE used by graphics/mapnik, databases/spatialite
@@ -215,7 +215,7 @@ URI_AUTHORITY_CPPFLAGS=	-DSQLITE_ALLOW_URI_AUTHORITY=1
 .include <bsd.port.options.mk>
 
 # _YEAR=	${%Y:L:gmtime} - do not work with the version from the previous year
-_YEAR=	2022
+_YEAR=	2023
 
 # Platform Configuration
 # -DHAVE_POSIX_FALLOCATE=1 not yet, chunksize.test ZFS failure chunksize-1.2 expected: [32768] got: [2048]

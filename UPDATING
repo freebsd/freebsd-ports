@@ -6,6 +6,17 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20230227:
+  AFFECTS: users of databases/sqlite3
+  AUTHOR: fuz@FreeBSD.org
+
+  Option DQS is now disabled by default.  This option controls the "double
+  quoted string literals are accepted" quirk, permitting the use of double
+  quotes around string literals if enabled.  Users who rely on this quirk
+  need to manually build databases/sqlite3 with the DQS option enabled.
+
+  See also: https://sqlite.org/quirks.html#dblquote  
+
+20230227:
   AFFECTS: users of mail/py-spf-engine
   AUTHOR: yasu@FreeBSD.org
 
