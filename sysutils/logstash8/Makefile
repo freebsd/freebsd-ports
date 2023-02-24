@@ -1,5 +1,5 @@
 PORTNAME=	logstash
-PORTVERSION=	8.6.1
+PORTVERSION=	8.6.2
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/
@@ -73,9 +73,9 @@ do-install:
 		-type d -empty -delete
 	${INSTALL} -lrs ${STAGEDIR}${ETCDIR} ${STAGEDIR}${LOGSTASH_HOME}/config
 	${RM} -rf ${STAGEDIR}${LOGSTASH_HOME}/vendor/jruby/lib/jni
-	${RM} -rf ${STAGEDIR}${LOGSTASH_HOME}/jdk.app
+	${RM} -rf ${STAGEDIR}${LOGSTASH_HOME}/vendor/jruby/tmp
 	${MKDIR} ${STAGEDIR}${LOGSTASH_HOME}/vendor/jruby/lib/jni
-	(cd ${WRKSRC}/vendor/jruby/lib/jni && \
+	(cd ${WRKSRC}/vendor/jruby/tmp/lib/jni && \
 	 ${COPYTREE_SHARE} ${ARCH:S/amd64/x86_64/}-FreeBSD \
 	 ${STAGEDIR}${LOGSTASH_HOME}/vendor/jruby/lib/jni)
 
