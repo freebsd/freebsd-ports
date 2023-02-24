@@ -30,6 +30,7 @@ libexec/bcftools/impute-info.so
 libexec/bcftools/indel-stats.so
 libexec/bcftools/isecGT.so
 libexec/bcftools/mendelian.so
+libexec/bcftools/mendelian2.so
 libexec/bcftools/missing2ref.so
 libexec/bcftools/parental-origin.so
 libexec/bcftools/prune.so
