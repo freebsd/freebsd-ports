@@ -12,12 +12,6 @@ WWW=		http://www.gpleda.org/
 
 LICENSE=	GPLv2+
 
-.if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
-BROKEN=		ld: error: ../src/.libs/libgeda.so: undefined reference to g_input_stream_get_type
-.endif
-DEPRECATED=	Broken with lld
-EXPIRATION_DATE=	2023-03-20
-
 LIB_DEPENDS=	libstroke.so:devel/libstroke \
 		libguile.so:lang/guile1
 RUN_DEPENDS=	gawk:lang/gawk\
@@ -35,8 +29,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libstroke=${LOCALBASE}
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-gaf
 DATADIR=	${PREFIX}/share/gEDA
 INFO=		geda-scheme

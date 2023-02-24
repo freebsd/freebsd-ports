@@ -1,0 +1,11 @@
+--- gnetlist/src/Makefile.in.orig	2013-09-25 21:55:31 UTC
++++ gnetlist/src/Makefile.in
+@@ -439,7 +439,7 @@ gnetlist_CPPFLAGS = -I$(top_srcdir)/libgeda/include -I
+ gnetlist_CFLAGS = $(GCC_CFLAGS) $(MINGW_CFLIGS) $(GLIB_CFLAGS) \
+ 	$(GUILE_CFLAGS) $(GDK_PIXBUF_CFLAGS)
+ 
+-gnetlist_LDFLAGS = $(GLIB_LIBS) $(GUILE_LIBS) $(GDK_PIXBUF_LIBS)
++gnetlist_LDFLAGS = $(GLIB_LIBS) -lgio-2.0 $(GUILE_LIBS) $(GDK_PIXBUF_LIBS)
+ gnetlist_LDADD = $(top_builddir)/libgeda/src/libgeda.la
+ MOSTLYCLEANFILES = *.log *.ps core FILE *~
+ CLEANFILES = *.log *.ps core FILE *~

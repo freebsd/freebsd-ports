@@ -1,0 +1,11 @@
+--- utils/gschlas/Makefile.in.orig	2013-09-25 21:55:34 UTC
++++ utils/gschlas/Makefile.in
+@@ -425,7 +425,7 @@ gschlas_CPPFLAGS = -I$(top_srcdir)/libgeda/include -I$
+ gschlas_CFLAGS = $(GCC_CFLAGS) $(MINGW_CFLIGS) $(GLIB_CFLAGS) \
+ 	$(GUILE_CFLAGS) $(GDK_PIXBUF_CFLAGS)
+ 
+-gschlas_LDFLAGS = $(GLIB_LIBS) $(GUILE_LIBS) $(GDK_PIXBUF_LIBS)
++gschlas_LDFLAGS = $(GLIB_LIBS) -lgio-2.0 $(GUILE_LIBS) $(GDK_PIXBUF_LIBS)
+ gschlas_LDADD = $(top_builddir)/libgeda/src/libgeda.la
+ MOSTLYCLEANFILES = *.log *.ps core FILE *~
+ CLEANFILES = *.log *.ps core FILE *~
