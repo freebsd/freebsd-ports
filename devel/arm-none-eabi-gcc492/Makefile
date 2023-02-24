@@ -13,6 +13,9 @@ WWW=		https://gcc.gnu.org/
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
+DEPRECATED=	Long time unsupported upstream
+EXPIRATION_DATE=	2023-05-31
+
 BROKEN_mips=		configure: error: cannot compute suffix of object files: cannot compile
 BROKEN_mips64=		configure: error: cannot compute suffix of object files: cannot compile
 
