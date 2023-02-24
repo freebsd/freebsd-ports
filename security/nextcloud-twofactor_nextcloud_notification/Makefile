@@ -1,5 +1,5 @@
 PORTNAME=	twofactor_nextcloud_notification
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
