@@ -1,3 +1,66 @@
+  <vuln vid="dd271de6-b444-11ed-9268-b42e991fc52e">
+    <topic>freerdp -- clients using the `/video` command line switch might read uninitialized data</topic>
+    <affects>
+      <package>
+	<name>freerdp</name>
+	<range><lt>2.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+      <blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-39283">
+	<p>
+	  All FreeRDP based clients when using the `/video`
+	  command line switch might read uninitialized data, decode
+	  it as audio/video and display the result. FreeRDP based
+	  server implementations are not affected.
+	</p>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39283</cvename>
+      <url>https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-6cf9-3328-qrvh</url>
+    </references>
+    <dates>
+      <discovery>2022-10-13</discovery>
+      <entry>2023-02-24</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c682923d-b444-11ed-9268-b42e991fc52e">
+    <topic>freerdp -- clients using `/parallel` command line switch might read uninitialized data</topic>
+    <affects>
+      <package>
+	<name>freerdp</name>
+	<range><lt>2.8.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>MITRE reports:</p>
+      <blockquote cite="https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-39282">
+	<p>
+	  FreeRDP based clients on unix systems using
+	  `/parallel` command line switch might read uninitialized
+	  data and send it to the server the client is currently
+	  connected to. FreeRDP based server implementations are not
+	  affected.
+	</p>
+      </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-39282</cvename>
+      <url>https://github.com/FreeRDP/FreeRDP/security/advisories/GHSA-c45q-wcpg-mxjq</url>
+    </references>
+    <dates>
+      <discovery>2022-10-13</discovery>
+      <entry>2023-02-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4d6b5ea9-bc64-4e77-a7ee-d62ba68a80dd">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
