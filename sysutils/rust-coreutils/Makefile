@@ -3,6 +3,9 @@ PORTVERSION=	0.0.17
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
+PATCH_SITES=	https://github.com/uutils/coreutils/commit/
+PATCHFILES=	7da22b3ae22482089c013230d3b2bb9e6900ae54.patch:-p1
+
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Cross-platform Rust rewrite of the GNU coreutils
 WWW=		https://github.com/uutils/coreutils
