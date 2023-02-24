@@ -1,6 +1,6 @@
 PORTNAME=	nip2
 PORTVERSION=	8.7.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libvips/${PORTNAME}/releases/download/v${PORTVERSION}/
 

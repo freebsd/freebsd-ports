@@ -1,5 +1,6 @@
 PORTNAME=	aisleriot
 DISTVERSION=	3.22.25
+PORTREVISION=	1
 CATEGORIES=	games gnome
 DIST_SUBDIR=	gnome
 

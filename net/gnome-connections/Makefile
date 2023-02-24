@@ -1,5 +1,6 @@
 PORTNAME=	gnome-connections
 PORTVERSION=	42.1.2
+PORTREVISION=	1
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome

@@ -1,5 +1,6 @@
 PORTNAME=	swayfloatingswitcher
 PORTVERSION=	s20221131
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org

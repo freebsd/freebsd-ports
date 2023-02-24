@@ -1,6 +1,7 @@
 PORTNAME=	sfwbar
 DISTVERSION=	1.0_beta9
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	tino.engel@mail.de

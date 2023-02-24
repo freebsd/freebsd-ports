@@ -1,5 +1,6 @@
 PORTNAME=	esteidfirefoxplugin
 PORTVERSION=	3.8.0.1115
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	https://installer.id.ee/media/sources/
 

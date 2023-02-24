@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-windowck-plugin
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

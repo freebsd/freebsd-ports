@@ -1,6 +1,6 @@
 PORTNAME=	unison
 PORTVERSION=	2.32.52
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	net
 MASTER_SITES=	https://www.cis.upenn.edu/~bcpierce/unison/download/releases/${DISTNAME}/
 DISTFILES=	${EXTRACT_ONLY} ${_EXTRA_DOCS}

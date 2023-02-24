@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-battery-plugin
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

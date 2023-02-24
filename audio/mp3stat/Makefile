@@ -1,6 +1,6 @@
 PORTNAME=	mp3stat
 PORTVERSION=	2.6.01
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 MASTER_SITES=	https://BSDforge.com/projects/source/audio/mp3stat/
 

@@ -1,5 +1,6 @@
 PORTNAME=	abx
 DISTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://phintsan.kapsi.fi/
 

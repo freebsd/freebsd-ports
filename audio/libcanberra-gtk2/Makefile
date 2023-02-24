@@ -1,4 +1,5 @@
 MASTERDIR=	${.CURDIR:H}/libcanberra
+PORTREVISION=	1
 SLAVEPORT=	gtk2
 
 post-install:

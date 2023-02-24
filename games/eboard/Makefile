@@ -1,6 +1,7 @@
 PORTNAME=	eboard
 PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/eboard-extras/pack%201%20patchlevel%202/:p1 \
 		SF/${PORTNAME}/eboard-extras/pack%202/:p2

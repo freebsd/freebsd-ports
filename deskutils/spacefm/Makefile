@@ -1,5 +1,6 @@
 PORTNAME=	spacefm
 DISTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org

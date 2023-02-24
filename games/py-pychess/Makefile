@@ -1,6 +1,6 @@
 PORTNAME=	pychess
 PORTVERSION=	1.0.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games python
 MASTER_SITES=	https://github.com/pychess/pychess/releases/download/${PORTVERSION}/
 

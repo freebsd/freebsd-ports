@@ -1,5 +1,6 @@
 PORTNAME=	eclipse
 PORTVERSION=	4.24
+PORTREVISION=	1
 CATEGORIES=	java devel
 
 # Tag's Timestamp on eclipse-platform/eclipse.platform.releng.aggregator github.com

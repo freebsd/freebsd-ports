@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-datetime-plugin
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	x11-clocks xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

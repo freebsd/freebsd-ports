@@ -1,6 +1,6 @@
 PORTNAME=	thewidgetfactory
 PORTVERSION=	0.2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://www.stellingwerff.com/TheWidgetFactory/ \
 		http://vault.101011010.xyz/distfiles/ \

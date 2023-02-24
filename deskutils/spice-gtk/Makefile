@@ -1,5 +1,6 @@
 PORTNAME=	spice-gtk
 PORTVERSION=	0.37
+PORTREVISION=	1
 CATEGORIES?=	deskutils gnome
 MASTER_SITES=	http://www.spice-space.org/download/gtk/
 

@@ -1,6 +1,6 @@
 PORTNAME=	jack-keyboard
 DISTVERSION=	2.7.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://home.selasky.org:8192/distfiles/

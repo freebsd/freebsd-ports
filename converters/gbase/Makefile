@@ -1,6 +1,6 @@
 PORTNAME=	gbase
 PORTVERSION=	0.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	converters
 MASTER_SITES=	http://www.fluxcode.net/files/
 

@@ -1,5 +1,6 @@
 PORTNAME=	bamf
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 

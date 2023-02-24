@@ -1,5 +1,6 @@
 PORTNAME=	rep-gtk2
 PORTVERSION=	0.90.8.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.tuxfamily.org/librep/rep-gtk/

@@ -1,6 +1,7 @@
 PORTNAME=	workrave
 PORTVERSION=	1.10.50
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/rcaelers/workrave/releases/download/v${PORTVERSION:S/./_/g}/
 

@@ -1,5 +1,6 @@
 PORTNAME=	foliate
 PORTVERSION=	2.6.4
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	fox@FreeBSD.org

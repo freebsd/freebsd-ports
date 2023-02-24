@@ -1,5 +1,6 @@
 PORTNAME=	wifimgr
 PORTVERSION=	1.23
+PORTREVISION=	1
 CATEGORIES=	net-mgmt sysutils
 MASTER_SITES=	https://opal.com/src/wifimgr/
 

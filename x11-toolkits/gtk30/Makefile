@@ -3,6 +3,7 @@
 
 PORTNAME=	gtk
 PORTVERSION=	3.24.34
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME/sources/gtk+/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 PKGNAMESUFFIX=	3
@@ -52,7 +53,7 @@ OPTIONS_SUB=	yes
 
 ATK_BRIDGE_DESC=AT-SPI ATK bridge support (requires X11)
 ATK_BRIDGE_CONFIGURE_WITH=	atk-bridge
-ATK_BRIDGE_LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk
+ATK_BRIDGE_LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core
 ATK_BRIDGE_IMPLIES=	X11
 
 BROADWAY_DESC=	Enable GDK Broadway backend for showing GTK+ in the webbrowser using HTML5 and web sockets.

@@ -1,5 +1,6 @@
 PORTNAME=	ayatana-ido
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jgh@FreeBSD.org

@@ -38,7 +38,7 @@
 
 PORTNAME=	epkowa
 PORTVERSION=	2.11.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://cschubert.com/distfiles/ \
 		LOCAL/cy

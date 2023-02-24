@@ -1,6 +1,6 @@
 PORTNAME=	gtk-gray-theme
 PORTVERSION=	1.7
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	https://BSDforge.com/projects/source/x11-themes/gtk-gray-theme/
 DISTNAME=	34132-Gray

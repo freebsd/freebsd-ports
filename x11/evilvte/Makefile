@@ -1,6 +1,6 @@
 PORTNAME=	evilvte
 DISTVERSION=	0.5.2~pre1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	http://www.calno.com/${PORTNAME}/
 

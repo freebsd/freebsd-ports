@@ -1,5 +1,6 @@
 PORTNAME=	xcowsay
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.nickg.me.uk/files/ \
 		LOCAL/ehaupt

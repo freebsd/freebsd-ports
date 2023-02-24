@@ -1,4 +1,4 @@
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMEPREFIX=	gimp-
 
 COMMENT=	Gimp print plug-in

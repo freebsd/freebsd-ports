@@ -1,6 +1,7 @@
 PORTNAME=	electron
 DISTVERSIONPREFIX=	v
 DISTVERSION=	${ELECTRON_VER:S/-beta./.b/}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-Electron/releases/download/v21.4.0/:chromium \
 		https://commondatastorage.googleapis.com/chromium-nodejs/:chromium_node \
@@ -28,7 +29,7 @@ BUILD_DEPENDS=		gperf:devel/gperf \
 			${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat \
 			node16>0:www/node16 \
 			npm-node16>0:www/npm-node16
-LIB_DEPENDS=		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+LIB_DEPENDS=		libatk-bridge-2.0.so:accessibility/at-spi2-core \
 			libatspi.so:accessibility/at-spi2-core \
 			libsnappy.so:archivers/snappy \
 			libFLAC.so:audio/flac \

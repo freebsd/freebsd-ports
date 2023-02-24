@@ -1,6 +1,6 @@
 PORTNAME=	gnome-shell
 PORTVERSION=	42.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/bash-completion/bash_completion.sh:shells/bash
 		docbook-xsl>=0:textproc/docbook-xsl \
 		gnome-control-center:sysutils/gnome-control-center \
 		sassc:textproc/sassc
-LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libcanberra-gtk3.so:audio/libcanberra-gtk3 \
 		libcanberra.so:audio/libcanberra \
 		libcroco-0.6.so:textproc/libcroco \

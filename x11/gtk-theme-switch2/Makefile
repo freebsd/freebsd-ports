@@ -1,6 +1,6 @@
 PORTNAME=	gtk-theme-switch
 DISTVERSION=	2.0.0rc2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11
 MASTER_SITES=	http://www.muhri.net/
 

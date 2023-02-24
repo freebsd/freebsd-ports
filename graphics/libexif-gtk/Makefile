@@ -1,5 +1,6 @@
 PORTNAME=	libexif-gtk
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/libexif/${PORTNAME}/releases/download/v${PORTVERSION}/
 

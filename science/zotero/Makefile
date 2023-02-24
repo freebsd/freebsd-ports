@@ -1,5 +1,6 @@
 PORTNAME=	zotero
 DISTVERSION=	6.0.11
+PORTREVISION=	1
 CATEGORIES=	science deskutils
 MASTER_SITES=	LOCAL/mikael
 DISTFILES=	Zotero-${DISTVERSION}_FreeBSD-${ARCH}${EXTRACT_SUFX}
@@ -16,7 +17,7 @@ ONLY_FOR_ARCHS_REASON=	uses FreeBSD 13.x precompiled binaries
 BROKEN_FreeBSD_12=	uses FreeBSD 13.x precompiled binaries
 
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
-		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+		libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libdbus-1.so:devel/dbus \
 		libepoll-shim.so:devel/libepoll-shim \

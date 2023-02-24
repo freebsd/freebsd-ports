@@ -1,5 +1,6 @@
 PORTNAME=	cinnamon
 PORTVERSION=	5.4.9
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 DIST_SUBDIR=	gnome
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libcjs.so:lang/cjs \
 		libcinnamon-menu-3.so:x11/cinnamon-menus \
 		libdbus-1.so:devel/dbus \
 		libpolkit-agent-1.so:sysutils/polkit \
-		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+		libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libsoup-2.4.so:devel/libsoup \
 		libxapp.so:x11/xapp
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR} \

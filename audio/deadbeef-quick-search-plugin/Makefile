@@ -1,5 +1,6 @@
 PORTNAME=	deadbeef-quick-search-plugin
 DISTVERSION=	0.0.2016.01.02
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org

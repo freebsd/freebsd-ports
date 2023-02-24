@@ -1,6 +1,6 @@
 PORTNAME=	clearlooks-themes-extras
 PORTVERSION=	0.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-themes
 MASTER_SITES=	LOCAL/laszlof
 DISTNAME=	Clearlooks-Big_Pack-${PORTVERSION}.x

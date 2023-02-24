@@ -2,6 +2,7 @@
 
 PORTNAME=	zeitgeist
 DISTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	kwm@FreeBSD.org

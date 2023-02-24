@@ -1,6 +1,6 @@
 PORTNAME=	gabedit
 DISTVERSION=	2.5.1-300720 # the last number is "snapshot"
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://sites.google.com/site/allouchear/Home/gabedit/download/
 DISTNAME=	GabeditSrc${DISTVERSION:C/([0-9])\.([0-9])\.([0-9])-([0-9])/\1\2\3_\4/}

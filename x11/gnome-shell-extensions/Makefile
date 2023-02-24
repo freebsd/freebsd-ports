@@ -1,5 +1,6 @@
 PORTNAME=	gnome-shell-extensions
 PORTVERSION=	42.3
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome

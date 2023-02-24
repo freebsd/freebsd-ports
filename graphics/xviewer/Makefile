@@ -1,5 +1,6 @@
 PORTNAME=	xviewer
 PORTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 DIST_SUBDIR=	gnome
 

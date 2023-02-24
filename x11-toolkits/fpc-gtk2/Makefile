@@ -1,4 +1,5 @@
 CATEGORIES=	x11-toolkits lang
+PORTREVISION=	1
 PKGNAMESUFFIX=	-gtk2
 
 COMMENT=	Free Pascal interface to the GTK2 libraries

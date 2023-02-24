@@ -1,5 +1,6 @@
 PORTNAME=	wavbreaker
 DISTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org

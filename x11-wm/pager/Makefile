@@ -1,6 +1,6 @@
 PORTNAME=	pager
 PORTVERSION=	0.90.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfishpager/
 DISTNAME=	sawfish-pager-${PORTVERSION}

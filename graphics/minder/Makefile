@@ -1,6 +1,6 @@
 PORTNAME=	minder
 PORTVERSION=	1.14.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 # avoid PKGBASE collision with net-p2p/minder
 PKGNAMESUFFIX=	-app

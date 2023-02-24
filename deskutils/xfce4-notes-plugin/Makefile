@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-notes-plugin
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4

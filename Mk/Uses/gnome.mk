@@ -148,7 +148,7 @@ gnomemimedata_RUN_DEPENDS=${LOCALBASE}/libdata/pkgconfig/gnome-mime-data-2.0.pc:
 glib20_LIB_DEPENDS=	libglib-2.0.so:devel/glib20 \
 					libintl.so:devel/gettext-runtime
 
-atk_LIB_DEPENDS=	libatk-1.0.so:accessibility/atk
+atk_LIB_DEPENDS=	libatk-1.0.so:accessibility/at-spi2-core
 atk_USE_GNOME_IMPL=	glib20
 
 dconf_BUILD_DEPENDS=	dconf:devel/dconf

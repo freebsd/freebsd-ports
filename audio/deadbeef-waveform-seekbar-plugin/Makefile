@@ -1,5 +1,6 @@
 PORTNAME=	deadbeef-waveform-seekbar-plugin
 DISTVERSION=	0.0.2016.01.01
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	gnome-power-manager
 PORTVERSION=	3.32.0
+PORTREVISION=	1
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome

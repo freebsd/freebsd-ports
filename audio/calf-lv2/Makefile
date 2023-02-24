@@ -1,5 +1,6 @@
 PORTNAME=	calf
 DISTVERSION=	0.90.3.20210427
+PORTREVISION=	1
 CATEGORIES=	audio
 #MASTER_SITES=	http://calf-studio-gear.org/files/
 PKGNAMESUFFIX=	-lv2

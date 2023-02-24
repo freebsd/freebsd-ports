@@ -1,6 +1,6 @@
 PORTNAME=	xpad
 PORTVERSION=	3.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/xpad/stable/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	3

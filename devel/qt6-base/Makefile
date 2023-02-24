@@ -1,5 +1,6 @@
 PORTNAME=	base
 DISTVERSION=	${QT6_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
@@ -11,8 +12,8 @@ BUILD_DEPENDS=	xml:textproc/xmlstarlet \
 		${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 LIB_DEPENDS=	\
-		libatk-1.0.so:accessibility/atk \
-		libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+		libatk-1.0.so:accessibility/at-spi2-core \
+		libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libavahi-client.so:net/avahi-app \
 		libbrotlidec.so:archivers/brotli \

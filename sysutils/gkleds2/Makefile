@@ -1,6 +1,6 @@
 PORTNAME=	gkleds2
 PORTVERSION=	0.8.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://heim.ifi.uio.no/~oyvinha/files/files/
 DISTNAME=	gkleds-${PORTVERSION}

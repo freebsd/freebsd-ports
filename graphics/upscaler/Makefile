@@ -1,5 +1,6 @@
 PORTNAME=	upscaler
 DISTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org

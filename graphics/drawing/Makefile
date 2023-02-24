@@ -1,5 +1,6 @@
 PORTNAME=	drawing
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	eduardo@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	fsv2
 PORTVERSION=	1.1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-fm
 MASTER_SITES=	http://cyber.dabamos.de/pub/distfiles/
 

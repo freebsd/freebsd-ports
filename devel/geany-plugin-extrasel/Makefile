@@ -1,5 +1,6 @@
 PORTNAME=	geany-plugin-extrasel
 PORTVERSION=	${GEANY_VER}
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	madpilot@FreeBSD.org

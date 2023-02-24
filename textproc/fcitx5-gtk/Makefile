@@ -1,5 +1,6 @@
 PORTNAME=	fcitx5-gtk
 DISTVERSION=	5.0.10
+PORTREVISION=	1
 CATEGORIES=	textproc
 
 MAINTAINER=	khng@FreeBSD.org

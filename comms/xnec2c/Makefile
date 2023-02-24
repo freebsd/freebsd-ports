@@ -1,6 +1,7 @@
 PORTNAME=	xnec2c
 PORTVERSION=	4.4.12
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	https://www.xnec2c.org/releases/ \
 		LOCAL/db

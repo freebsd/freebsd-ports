@@ -1,5 +1,6 @@
 PORTNAME=	smuxi
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://www.smuxi.org/jaws/data/files/
 

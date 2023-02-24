@@ -8,7 +8,7 @@
 
 PORTNAME=	obsidian
 PORTVERSION=	1.1.9
-PORTREVISION=	1
+PORTREVISION=	3
 CATEGORIES=	textproc
 # Icon is taken from the Nix build recipe
 # https://github.com/NixOS/nixpkgs/blob/de5448dab588ad41aef40f8c7c0c230981656698/pkgs/applications/misc/obsidian/default.nix#L31-L34
@@ -32,7 +32,7 @@ RUN_DEPENDS=	electron${ELECTRON_VERSION}:devel/electron${ELECTRON_VERSION}
 
 # All deps below are there only to please stage-qa
 
-LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libsnappy.so:archivers/snappy \
 		libopus.so:audio/opus \

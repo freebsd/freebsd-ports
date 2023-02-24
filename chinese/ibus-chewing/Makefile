@@ -1,5 +1,6 @@
 PORTNAME=	ibus-chewing
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	chinese
 
 MAINTAINER=	eric@camachat.org

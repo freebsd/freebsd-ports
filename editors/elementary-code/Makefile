@@ -1,5 +1,6 @@
 PORTNAME=	elementary-code
 DISTVERSION=	7.0.0
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	miguel@gocobachi.dev
@@ -9,7 +10,7 @@ WWW=		https://github.com/elementary/code/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libatk-1.0.so:accessibility/atk \
+LIB_DEPENDS=	libatk-1.0.so:accessibility/at-spi2-core \
 		libeditorconfig.so:editors/editorconfig-core-c \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libgee-0.8.so:devel/libgee \

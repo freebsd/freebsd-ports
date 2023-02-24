@@ -1,5 +1,6 @@
 PORTNAME=	mailer
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.defora.org/os/download/download/4426/
 PKGNAMEPREFIX=	deforaos-

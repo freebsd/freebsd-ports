@@ -1,5 +1,6 @@
 PORTNAME=	hatari
 PORTVERSION=	2.3.1
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 

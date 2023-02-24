@@ -1,6 +1,6 @@
 PORTNAME=	gtk-nodoka-engine
 PORTVERSION=	0.7.5
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-themes
 MASTER_SITES=	https://BSDforge.com/projects/source/x11-themes/gtk-nodoka-engine/
 

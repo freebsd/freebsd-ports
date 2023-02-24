@@ -1,5 +1,6 @@
 PORTNAME=	librnd
 DISTVERSION=	3.2.2
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://repo.hu/projects/${PORTNAME}/releases/
 

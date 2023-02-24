@@ -1,5 +1,6 @@
 PORTNAME=	deadbeef-vu-meter-plugin
 DISTVERSION=	0.0.2014.09.14
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org

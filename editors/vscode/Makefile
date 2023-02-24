@@ -1,5 +1,6 @@
 PORTNAME=	vscode
 DISTVERSION=	1.75.1
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
 		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
@@ -29,7 +30,7 @@ BUILD_DEPENDS=	zip:archivers/zip \
 		rg:textproc/ripgrep \
 		npm-node${NODE_VER_MAJOR}>0:www/npm-node${NODE_VER_MAJOR} \
 		yarn-node${NODE_VER_MAJOR}>0:www/yarn-node${NODE_VER_MAJOR}
-LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libsnappy.so:archivers/snappy \
 		libasound.so:audio/alsa-lib \

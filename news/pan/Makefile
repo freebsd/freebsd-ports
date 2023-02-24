@@ -1,6 +1,6 @@
 PORTNAME=	pan
 PORTVERSION=	0.145
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news gnome
 MASTER_SITES=	http://pan.rebelbase.com/download/releases/${PORTVERSION}/source/
 DIST_SUBDIR=	gnome2

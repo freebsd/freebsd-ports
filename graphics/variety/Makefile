@@ -1,5 +1,6 @@
 PORTNAME=	variety
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	nivit@FreeBSD.org

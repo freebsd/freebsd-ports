@@ -1,5 +1,6 @@
 PORTNAME=	juce
 DISTVERSION=	7.0.3
+PORTREVISION=	1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

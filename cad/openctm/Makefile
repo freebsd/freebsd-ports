@@ -1,6 +1,6 @@
 PORTNAME=	openctm
 DISTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	https://sourceforge.net/projects/openctm/files/
 DISTNAME=	OpenCTM-${DISTVERSION}-src

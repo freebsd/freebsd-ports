@@ -1,6 +1,6 @@
 PORTNAME=	xnecview
 PORTVERSION=	1.36
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://wwwhome.cs.utwente.nl/%7Eptdeboer/ham/xnecview/
 
