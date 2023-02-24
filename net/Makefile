@@ -1170,6 +1170,7 @@
     SUBDIR += pyrad
     SUBDIR += qadsl
     SUBDIR += qoauth-qt5
+    SUBDIR += qrcp
     SUBDIR += qt5-network
     SUBDIR += qt5-networkauth
     SUBDIR += qt6-networkauth
