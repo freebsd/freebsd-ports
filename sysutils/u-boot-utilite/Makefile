@@ -14,27 +14,30 @@ WWW=		https://www.denx.de/wiki/U-Boot
 
 LICENSE=	GPLv2
 
+DEPRECATED=	This port depends on the long time unsupported upstream devel/arm-none-eabi-gcc492.
+EXPIRATION_DATE=	2023-04-30
+
 BUILD_DEPENDS=	${CROSS_GCC}:devel/arm-none-eabi-gcc492
 
-CROSS_GCC=	arm-none-eabi-gcc-4.9.2
+USES=		gmake
+
+MAKE_ARGS+=     ARCH=arm \
+                CC=${CROSS_GCC} \
+                CROSS_COMPILE=arm-none-eabi- \
+                HOSTCC=cc
 
 EXTRA_PATCHES=	${WRKDIR}/cm-fx6-u-boot/u-boot/u-boot-2015.07-cm-fx6-3.patch:-p1
 
 NO_ARCH=	yes
 
-USES=		gmake
-
 PORTSCOUT=	ignore:1
 
 U_BOOT_DIR=	share/u-boot/${PORTNAME}${PKGNAMESUFFIX}
 
-MAKE_ARGS+=	ARCH=arm \
-		CC=${CROSS_GCC} \
-		CROSS_COMPILE=arm-none-eabi- \
-		HOSTCC=cc
-
 do-configure:
 	cd ${WRKSRC}; ${MAKE_CMD} ${MAKE_ARGS} cm_fx6_config
+
+CROSS_GCC=	arm-none-eabi-gcc-4.9.2
 
 # The build results in two output files: SPL, and u-boot.img.
 # Combine them into a single u-boot.imx so that there is only one file to be
