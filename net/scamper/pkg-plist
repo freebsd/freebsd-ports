@@ -25,9 +25,13 @@ bin/sc_wartscat
 bin/sc_wartsdump
 bin/sc_wartsfilter
 bin/sc_wartsfix
+lib/libscamperctrl.a
+lib/libscamperctrl.so.1
+lib/libscamperctrl.so.1.0.0
+lib/libscamperctrl.so
 lib/libscamperfile.a
-lib/libscamperfile.so.3
-lib/libscamperfile.so.3.0.0
+lib/libscamperfile.so.4
+lib/libscamperfile.so.4.0.0
 lib/libscamperfile.so
 man/man1/sc_ally.1.gz
 man/man1/sc_analysis_dump.1.gz
@@ -56,8 +60,10 @@ man/man1/sc_wartsdump.1.gz
 man/man1/sc_wartsfilter.1.gz
 man/man1/sc_wartsfix.1.gz
 man/man1/scamper.1.gz
+man/man3/libscamperctrl.3.gz
 man/man3/libscamperfile.3.gz
 man/man5/warts.5.gz
+include/libscamperctrl.h
 include/scamper_addr.h
 include/scamper_dealias.h
 include/scamper_file.h
