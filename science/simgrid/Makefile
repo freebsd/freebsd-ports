@@ -32,4 +32,7 @@ LDFLAGS+=	/usr/lib/liblzma.so # workaround for https://bugs.freebsd.org/bugzilla
 
 # tests fail, see https://github.com/simgrid/simgrid/issues/384
 
+pre-test: # build tests
+	@cd ${BUILD_WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} tests
+
 .include <bsd.port.mk>
