@@ -12,19 +12,24 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=		bash:shells/bash
-X11_RUN_DEPENDS=	xdpyinfo:x11/xdpyinfo
+default_RUN_DEPENDS=	xdpyinfo:x11/xdpyinfo
 
-CONFLICTS_INSTALL?=	screenFetch-nox11
+FLAVORS=		default nox11
+FLAVOR?=		${FLAVORS:[1]}
+nox11_PKGNAMESUFFIX=	-nox11
 
-OPTIONS_DEFINE=		DOCS X11
-OPTIONS_DEFAULT=	X11
+CONFLICTS_INSTALL=	screenFetch-nox11*
+
+OPTIONS_DEFINE=	DOCS
 
 NO_BUILD=	yes
 NO_ARCH=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	KittyKatt
 
-PLIST_FILES=	bin/screenFetch bin/screenfetch man/man1/screenfetch.1.gz
+PLIST_FILES=	bin/screenFetch \
+		bin/screenfetch \
+		man/man1/screenfetch.1.gz
 PORTDOCS=	CHANGELOG README.mkdn TODO
 
 do-install:
