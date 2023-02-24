@@ -1,5 +1,5 @@
 PORTNAME=	nextcloud
-PORTVERSION=	25.0.3
+PORTVERSION=	25.0.4
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
