@@ -1,7 +1,7 @@
-TIMESTAMP = 1675951314
-SHA256 (go/net_rospo/rospo-v0.10.2/rospo-ui-artifacts-0.10.2.tar.gz) = 0ceb6aeafbea715223b0e6d0fb132f6c16212e8966767c01d50cfc8129aa6e32
-SIZE (go/net_rospo/rospo-v0.10.2/rospo-ui-artifacts-0.10.2.tar.gz) = 1558170
-SHA256 (go/net_rospo/rospo-v0.10.2/v0.10.2.mod) = baebd1f25b762ad5af958d4f0a7ad50890646eb896547a6d59bfd2545548ae18
-SIZE (go/net_rospo/rospo-v0.10.2/v0.10.2.mod) = 1568
-SHA256 (go/net_rospo/rospo-v0.10.2/v0.10.2.zip) = 93d19f1244e674f7ee1a5499153e7ff6578e5e31004d198ce480d7ccc9c363a9
-SIZE (go/net_rospo/rospo-v0.10.2/v0.10.2.zip) = 1586815
+TIMESTAMP = 1677274769
+SHA256 (go/net_rospo/rospo-v0.10.3/rospo-ui-artifacts-0.10.3.tar.gz) = dbacff97456e9227351529645433df6c69916f9018afd1bc4320ab6396e845d6
+SIZE (go/net_rospo/rospo-v0.10.3/rospo-ui-artifacts-0.10.3.tar.gz) = 1559258
+SHA256 (go/net_rospo/rospo-v0.10.3/v0.10.3.mod) = 8e5ebb4a02bdaa3f3beb3d86681e1cdc7c16cd9f442c2ce8b2b6a4538b1afee9
+SIZE (go/net_rospo/rospo-v0.10.3/v0.10.3.mod) = 1568
+SHA256 (go/net_rospo/rospo-v0.10.3/v0.10.3.zip) = ac154f40c6149131dedb226dd603fdf25a957bc754b2b30dbd4e5e226d82d532
+SIZE (go/net_rospo/rospo-v0.10.3/v0.10.3.zip) = 1587890
