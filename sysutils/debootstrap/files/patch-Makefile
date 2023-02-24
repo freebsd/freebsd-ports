@@ -5,7 +5,7 @@
  clean:
  
 -DSDIR=$(DESTDIR)/usr/share/debootstrap
-+DSDIR=$(DESTDIR)$(PREFIX)/share/debootstrap
++DSDIR=$(DESTDIR)$(DATADIR)
  install:
  	mkdir -p $(DSDIR)/scripts
 -	mkdir -p $(DESTDIR)/usr/sbin

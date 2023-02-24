@@ -1,0 +1,20 @@
+--- functions.orig	2023-02-24 08:27:34 UTC
++++ functions
+@@ -658,7 +658,7 @@ download_release_sig () {
+ 		info RELEASESIG "Checking Release signature"
+ 		# Don't worry about the exit status from gpgv; parsing the output will
+ 		# take care of that.
+-		(gpgv --status-fd 1 --keyring "$KEYRING" --ignore-time-conflict \
++		(gpgv2 --status-fd 1 --keyring "$KEYRING" --ignore-time-conflict \
+ 		 "$relsigdest" "$reldest" || true) | read_gpg_status
+ 		progress 100 100 DOWNRELSIG "Downloading Release file signature"
+ 	fi
+@@ -1706,7 +1706,7 @@ read_gpg_status () {
+ 	elif [ "$unkkey" ]; then
+ 		error 1 UNKNOWNRELSIG "Release signed by unknown key (key id %s)\n   The specified keyring $KEYRING may be incorrect or out of date.\n   You can find the latest Debian release key at https://ftp-master.debian.org/keys.html" "$unkkey"
+ 	else
+-		error 1 SIGCHECK "Error executing gpgv to check Release signature"
++		error 1 SIGCHECK "Error executing gpgv2 to check Release signature"
+ 	fi
+ }
+ 

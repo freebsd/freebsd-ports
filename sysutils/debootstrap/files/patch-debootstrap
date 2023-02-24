@@ -2,7 +2,7 @@
 +++ debootstrap
 @@ -1,4 +1,4 @@
 -#!/bin/sh
-+#!/usr/local/bin/bash
++#!%%LOCALBASE%%/bin/bash
  set -e
  
  VERSION='@VERSION@'
@@ -11,7 +11,7 @@
  		DEBOOTSTRAP_DIR=/debootstrap
  	else
 -		DEBOOTSTRAP_DIR=/usr/share/debootstrap
-+		DEBOOTSTRAP_DIR=/usr/local/share/debootstrap
++		DEBOOTSTRAP_DIR=%%DATADIR%%
  	fi
  fi
  

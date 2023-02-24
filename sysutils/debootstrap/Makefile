@@ -1,5 +1,6 @@
 PORTNAME=	debootstrap
 PORTVERSION=	${DEB_VERSION}n${DEB_NMU}
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${DEB_VERSION}+nmu${DEB_NMU}
@@ -17,11 +18,13 @@ RUN_DEPENDS=	wget:ftp/wget \
 		gpgv2:security/gnupg \
 		${LOCALBASE}/share/keyrings/ubuntu-archive-keyring.gpg:security/ubuntu-keyring
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-NO_BUILD=	yes
-NO_ARCH=	yes
 USES=		gmake perl5
 USE_PERL5=	run
+
+MAKE_ENV=	DATADIR="${DATADIR}"
+NO_ARCH=	yes
+NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 # The +nmu suffix used by debian for "non maintainer uploads" of a Debian
 # native package doesn't play well with our versioning
@@ -29,19 +32,10 @@ DEB_VERSION=	1.0.128
 DEB_NMU=	2
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},g' \
-		${WRKSRC}/Makefile \
+	@${REINPLACE_CMD} \
+		-e 's,%%DATADIR%%,${DATADIR},g' \
+		-e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/debootstrap
-	@${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},g' \
-		${WRKSRC}/Makefile \
-		${WRKSRC}/debootstrap
-	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
-		${WRKSRC}/Makefile \
-		${WRKSRC}/debootstrap
-	@${REINPLACE_CMD} -e 's,gpgv,gpgv2,g' \
-		${WRKSRC}/Makefile \
-		${WRKSRC}/debootstrap \
-		${WRKSRC}/functions
 	@${FIND} ${WRKSRC}/scripts -type f | \
 		${XARGS} ${REINPLACE_CMD} -e 's,/usr/share/keyrings,${LOCALBASE}/share/keyrings,g'
 
