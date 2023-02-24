@@ -29,7 +29,8 @@ USES=		compiler:c11 dos2unix gmake gnome iconv jpeg localbase:ldflags \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib \
 		--with-dir-suffix="" \
-		--without-sdl
+		--without-sdl \
+		--without-update-desktop-database
 CONFIGURE_ENV=	SHARED_FLAGS="${LDFLAGS} -shared" \
 		XA=${PREFIX}/bin/xa65
 
