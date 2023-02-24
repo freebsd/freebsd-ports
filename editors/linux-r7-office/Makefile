@@ -1,6 +1,6 @@
 PORTNAME=	r7-office
 PORTVERSION=	7.2.2
-CATEGORIES=	editors russian
+CATEGORIES=	editors linux russian
 MASTER_SITES=	https://download.r7-office.ru/ubuntu/
 DISTNAME=	r7-office
 EXTRACT_SUFX=	.deb
