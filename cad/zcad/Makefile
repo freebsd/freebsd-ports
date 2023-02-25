@@ -56,6 +56,8 @@ OPTIONS_DEFINE=		DOCS
 
 .if ${FLAVOR:Ugtk2:Mgtk2}
 MAKE_ENV+=	GUI=gtk2
+.elif ${FLAVOR:Ugtk2:Mqt5}
+BROKEN=		fails to build
 .endif
 
 post-patch:
