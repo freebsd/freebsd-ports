@@ -95,6 +95,7 @@ sbin/auto-ipmi-remote-status
 sbin/auto-krb-auth-setup
 sbin/auto-last-update
 sbin/auto-ldap-client-setup
+sbin/auto-ldap-lookup
 sbin/auto-lock-local-pw
 sbin/auto-lock-user
 sbin/auto-mark-install-from-source
@@ -124,6 +125,7 @@ sbin/auto-pxe-installer-setup
 sbin/auto-pxe-node-discover
 sbin/auto-remove-from-group
 sbin/auto-remove-user
+sbin/auto-restart-services
 sbin/auto-restore-ownership
 sbin/auto-restore-pw
 sbin/auto-restore-user
