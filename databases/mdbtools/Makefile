@@ -18,13 +18,12 @@ RUN_DEPENDS=	bash-completion>=0:shells/bash-completion
 
 USES=		bison cpe gnome iconv:wchar_t libtool pathfix \
 		pkgconfig readline
+CPE_VENDOR=	mdbtools_project
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-unixodbc=${LOCALBASE}
-
-CPE_VENDOR=	mdbtools_project
 
 INSTALL_TARGET=	install-strip
 
@@ -41,8 +40,21 @@ NLS_USES=			gettext
 
 DOCS=		AUTHORS HACKING.md NEWS README.md
 
+.include <bsd.port.pre.mk>
+
+.if ${LLVM_DEFAULT} >= 15
+# With LLVM15:  parser.c:1053:9: error:
+# variable 'yynerrs' set but not used [-Werror,-Wunused-but-set-variable]
+BUILD_DEPENDS+=	llvm-config${LLVM_VER}:devel/llvm${LLVM_VER}
+LLVM_VER=	14
+#CMAKE_ARGS+=	-DLLVM_DIR=${LOCALBASE}/llvm${LLVM_VER}/lib/cmake/llvm
+CC=		clang${LLVM_VER}
+CPP=		clang-cpp${LLVM_VER}
+CXX=		clang++${LLVM_VER}
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,}  ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
