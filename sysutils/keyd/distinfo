@@ -1,3 +1,5 @@
 TIMESTAMP = 1659054044
 SHA256 (rvaiya-keyd-v2.4.2_GH0.tar.gz) = 877e1a39efaa062c996856d632d6aeedd409422be6c5bdb2064a9b707293c280
 SIZE (rvaiya-keyd-v2.4.2_GH0.tar.gz) = 640567
+SHA256 (8fa138cf7534.patch) = f08dd6d5e7ada2c9b08b88512f69ed891a67353b8c57586ec0b34c5cb99846c2
+SIZE (8fa138cf7534.patch) = 1167

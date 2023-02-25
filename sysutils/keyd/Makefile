@@ -1,7 +1,11 @@
 PORTNAME=	keyd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	8fa138cf7534.patch:-p1 # https://github.com/rvaiya/keyd/issues/261
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Key remapping daemon for evdev
