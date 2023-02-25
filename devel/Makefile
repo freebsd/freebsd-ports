@@ -1419,6 +1419,7 @@
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
     SUBDIR += libversion
+    SUBDIR += libvex
     SUBDIR += libvhdi
     SUBDIR += libvirt
     SUBDIR += libvirt-dbus
