@@ -1,0 +1,6 @@
+libexec/bcftools/blupx.so
+libexec/bcftools/liftover.so
+libexec/bcftools/metal.so
+libexec/bcftools/munge.so
+libexec/bcftools/score.so
+%%DATADIR%%/assoc_plot.R

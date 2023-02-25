@@ -11,6 +11,7 @@
     SUBDIR += bamutil
     SUBDIR += barrnap
     SUBDIR += bbmap
+    SUBDIR += bcf-score
     SUBDIR += bcftools
     SUBDIR += bedtools
     SUBDIR += bfc

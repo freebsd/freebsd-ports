@@ -1,0 +1,3 @@
+Score is a set of tools in the form of a bcftools plugin, for handling
+and converting summary statistics files following the GWAS-VCF
+specification.
