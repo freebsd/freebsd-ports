@@ -1,5 +1,5 @@
 PORTNAME=	nagiosql
-PORTVERSION=	3.4.1
+PORTVERSION=	3.5.0
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -9,16 +9,13 @@ WWW=		https://gitlab.com/wizonet/nagiosql
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	nagios:net-mgmt/nagios \
-		${PEARDIR}/HTML/Template/IT.php:devel/pear-HTML_Template_IT@${PHP_FLAVOR}
+IGNORE_WITH_PHP=	82
 
 USES=		cpe gettext mysql php:web tar:bzip2
 USE_PHP=	filter gettext mysqli session simplexml
-IGNORE_WITH_PHP=	82
-
 USE_GITLAB=	yes
 GL_ACCOUNT=	wizonet
-GL_COMMIT=	365d4e0b5edc623b12ea96e8002e8ac66aad6aac
+GL_COMMIT=	148feacf2b22d5842574dcb5f6d2bf5071c14719
 
 USERS?=		nagios
 GROUPS?=	nagios
@@ -28,16 +25,26 @@ NO_BUILD=	yes
 NO_ARCH=	yes
 
 SUB_FILES=	pkg-message
-PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP} NAGIOSUSER=${NAGIOSUSER}
 
 PEARDIR?=	${LOCALBASE}/share/pear
 
-OPTIONS_DEFINE=	CURL FTP
+OPTIONS_DEFINE=	CURL FTP NAGIOS4
 CURL_DESC=	Configure with cURL support
 FTP_DESC=	Configure with FTP support
+NAGIOS4_DESC=	Configure with Nagios 4
 
 CURL_USE=	PHP=curl
 FTP_USE=	PHP=ftp
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MNAGIOS4}
+RUN_DEPENDS=	${PEARDIR}/HTML/Template/IT.php:devel/pear-HTML_Template_IT@${PHP_FLAVOR} \
+		nagios:net-mgmt/nagios4
+.else
+RUN_DEPENDS=	${PEARDIR}/HTML/Template/IT.php:devel/pear-HTML_Template_IT@${PHP_FLAVOR} \
+		nagios:net-mgmt/nagios
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e "s|'/etc/nagiosql/|'${ETCDIR}/|g" \
@@ -64,6 +71,18 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/backup/hosts
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/backup/services
 	@${MKDIR} ${STAGEDIR}${ETCDIR}/backup/ssh
+	@${MKDIR} ${STAGEDIR}/var/spool/nagios
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} "! ( -name *\.orig -o -name *\.bak )")
+
+post-install:
+	${FIND} -s ${STAGEDIR}${WWWDIR} -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
+	${FIND} -s ${STAGEDIR}${WWWDIR} -type f | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	${FIND} -s ${STAGEDIR}${ETCDIR} -type d | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/#@dir #' >> ${TMPPLIST}
+	${FIND} -s ${STAGEDIR}${ETCDIR} -type f | ${SORT} | \
+		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	@${ECHO_CMD} "@dir(nagios,nagios,0775) /var/spool/nagios" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
