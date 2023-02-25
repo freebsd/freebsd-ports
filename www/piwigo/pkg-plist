@@ -501,19 +501,6 @@
 %%WWWDIR%%/include/smarty/README.md
 %%WWWDIR%%/include/smarty/SECURITY.md
 %%WWWDIR%%/include/smarty/composer.json
-%%WWWDIR%%/include/smarty/demo/configs/test.conf
-%%WWWDIR%%/include/smarty/demo/index.php
-%%WWWDIR%%/include/smarty/demo/plugins/cacheresource.apc.php
-%%WWWDIR%%/include/smarty/demo/plugins/cacheresource.memcache.php
-%%WWWDIR%%/include/smarty/demo/plugins/cacheresource.mysql.php
-%%WWWDIR%%/include/smarty/demo/plugins/cacheresource.pdo.php
-%%WWWDIR%%/include/smarty/demo/plugins/cacheresource.pdo_gzip.php
-%%WWWDIR%%/include/smarty/demo/plugins/resource.extendsall.php
-%%WWWDIR%%/include/smarty/demo/plugins/resource.mysql.php
-%%WWWDIR%%/include/smarty/demo/plugins/resource.mysqls.php
-%%WWWDIR%%/include/smarty/demo/templates/footer.tpl
-%%WWWDIR%%/include/smarty/demo/templates/header.tpl
-%%WWWDIR%%/include/smarty/demo/templates/index.tpl
 %%WWWDIR%%/include/smarty/docs/_config.yml
 %%WWWDIR%%/include/smarty/docs/appendixes/tips.md
 %%WWWDIR%%/include/smarty/docs/appendixes/troubleshooting.md
@@ -1455,10 +1442,12 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/iso.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_ES/upgrade.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/common.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/es_MX.jpg
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/install.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/iso.txt
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/es_MX/upgrade.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/et_EE/about.html
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/et_EE/admin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/language/et_EE/common.lang.php
@@ -2385,6 +2374,9 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/language/es_ES/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/language/es_ES/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/language/es_ES/plugin.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/language/es_MX/description.txt
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/language/es_MX/index.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/language/es_MX/plugin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/language/et_EE/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/language/et_EE/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/AdminTools/language/et_EE/plugin.lang.php
@@ -3809,6 +3801,8 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/eo_EO/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/eo_EO/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/es_ES/theme.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/es_MX/index.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/es_MX/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/et_EE/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/et_EE/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/modus/language/eu_ES/theme.lang.php
