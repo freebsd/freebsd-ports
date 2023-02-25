@@ -1,5 +1,6 @@
 PORTNAME=	mercurial
 PORTVERSION=	6.3.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	https://www.mercurial-scm.org/release/
 
@@ -10,9 +11,12 @@ WWW=		https://www.mercurial-scm.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe python:3.7+ shebangfix
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
+USES=		cpe python shebangfix
 SHEBANG_FILES=	contrib/hgweb.fcgi hgweb.cgi
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 OPTIONS_DEFINE=		CA_BUNDLE DATA DOCS NLS FREEBSD
 OPTIONS_DEFAULT=	CA_BUNDLE DATA
@@ -62,7 +66,7 @@ PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/*.1 ${STAGEDIR}${PREFIX}/man/man1/
 	${INSTALL_MAN} ${WRKSRC}/doc/*.5 ${STAGEDIR}${PREFIX}/man/man5/
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/ -name '*.so' -exec ${STRIP_CMD} {} +
+	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/ -name '*.so' -exec ${STRIP_CMD} {} +
 
 post-install-DATA-on:
 .for d in hgsh vim
