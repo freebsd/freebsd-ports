@@ -144,6 +144,30 @@
  
  /* These functions were added in OpenSSL 1.1.0f commit d0c50e80a8 */
  /* Define our own to simplify support across all versions. */
+--- src/_cffi_src/openssl/evp.py.orig	2023-02-24 07:28:50 UTC
++++ src/_cffi_src/openssl/evp.py
+@@ -203,7 +203,20 @@ int (*EVP_PKEY_set1_tls_encodedpoint)(EVP_PKEY *, cons
+                                       size_t) = NULL;
+ #endif
+ 
+-#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_111
++#if CRYPTOGRAPHY_IS_LIBRESSL
++static const long Cryptography_HAS_ONESHOT_EVP_DIGEST_SIGN_VERIFY = 1;
++static const long Cryptography_HAS_RAW_KEY = 0;
++static const long Cryptography_HAS_EVP_DIGESTFINAL_XOF = 0;
++int (*EVP_DigestFinalXOF)(EVP_MD_CTX *, unsigned char *, size_t) = NULL;
++EVP_PKEY *(*EVP_PKEY_new_raw_private_key)(int, ENGINE *, const unsigned char *,
++                                       size_t) = NULL;
++EVP_PKEY *(*EVP_PKEY_new_raw_public_key)(int, ENGINE *, const unsigned char *,
++                                      size_t) = NULL;
++int (*EVP_PKEY_get_raw_private_key)(const EVP_PKEY *, unsigned char *,
++                                    size_t *) = NULL;
++int (*EVP_PKEY_get_raw_public_key)(const EVP_PKEY *, unsigned char *,
++                                   size_t *) = NULL;
++#elif CRYPTOGRAPHY_OPENSSL_LESS_THAN_111
+ static const long Cryptography_HAS_ONESHOT_EVP_DIGEST_SIGN_VERIFY = 0;
+ static const long Cryptography_HAS_RAW_KEY = 0;
+ static const long Cryptography_HAS_EVP_DIGESTFINAL_XOF = 0;
 --- src/_cffi_src/openssl/fips.py.orig	2022-10-17 11:12:47 UTC
 +++ src/_cffi_src/openssl/fips.py
 @@ -17,11 +17,5 @@ int FIPS_mode(void);
@@ -246,20 +270,15 @@
  
  #if CRYPTOGRAPHY_OPENSSL_LESS_THAN_111
  static const long Cryptography_HAS_KEYLOG = 0;
-@@ -583,13 +578,6 @@ static const long Cryptography_HAS_TLS_ST = 1;
- static const long Cryptography_HAS_TLS_ST = 0;
- static const long TLS_ST_BEFORE = 0;
- static const long TLS_ST_OK = 0;
--#endif
--
--#if CRYPTOGRAPHY_IS_LIBRESSL
--static const long SSL_OP_NO_DTLSv1 = 0;
--static const long SSL_OP_NO_DTLSv1_2 = 0;
--long (*DTLS_set_link_mtu)(SSL *, long) = NULL;
--long (*DTLS_get_link_min_mtu)(SSL *) = NULL;
+@@ -586,8 +581,6 @@ static const long Cryptography_HAS_TLS_ST = 1;
  #endif
  
- static const long Cryptography_HAS_DTLS = 1;
+ #if CRYPTOGRAPHY_IS_LIBRESSL
+-static const long SSL_OP_NO_DTLSv1 = 0;
+-static const long SSL_OP_NO_DTLSv1_2 = 0;
+ long (*DTLS_set_link_mtu)(SSL *, long) = NULL;
+ long (*DTLS_get_link_min_mtu)(SSL *) = NULL;
+ #endif
 --- src/_cffi_src/openssl/x509.py.orig	2022-10-17 11:26:23 UTC
 +++ src/_cffi_src/openssl/x509.py
 @@ -276,33 +276,8 @@ void X509_REQ_get0_signature(const X509_REQ *, const A
