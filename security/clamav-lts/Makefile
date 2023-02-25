@@ -16,7 +16,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libltdl.so:devel/libltdl \
 		libmspack.so:archivers/libmspack
 
-USES=		compiler cpe gmake gnome libtool ncurses pathfix pkgconfig ssl
+USES=		cpe gmake gnome libtool ncurses pathfix pkgconfig ssl
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 
@@ -145,13 +145,6 @@ post-patch:
 		${WRKSRC}/etc/clamd.conf.sample \
 		${WRKSRC}/etc/freshclam.conf.sample \
 		${WRKSRC}/etc/clamav-milter.conf.sample
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-	@${REINPLACE_CMD} -e 's|-Wno-logical-op-parentheses||' \
-			  -e 's|-Wno-dangling-else||' \
-		${WRKSRC}/libclamav/Makefile.am \
-		${WRKSRC}/libclamav/Makefile.in \
-		${WRKSRC}/libclamunrar/makefile
-.endif
 
 pre-configure-TESTS-on:
 	@if ! ${PYTHON_CMD} -c "import thread" >/dev/null 2>&1; then \
