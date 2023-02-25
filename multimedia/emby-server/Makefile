@@ -29,45 +29,45 @@ BUILD_DEPENDS=	nasm:devel/nasm \
 		${LOCALBASE}/include/CL/opencl.h:devel/opencl
 LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libass.so:multimedia/libass \
+		libcairo.so:graphics/cairo \
 		libchromaprint.so:audio/chromaprint \
 		libdav1d.so:multimedia/dav1d \
 		libdrm.so:graphics/libdrm \
+		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
+		libgio-2.0.so:devel/glib20 \
+		libglib-2.0.so:devel/glib20 \
 		libgnutls.so:security/gnutls \
+		libgobject-2.0.so:devel/glib20 \
+		liblcms2.so:graphics/lcms2 \
 		libmfx.so:multimedia/intel-media-sdk \
-		libOpenCL.so:devel/ocl-icd \
 		libogg.so:audio/libogg \
+		libOpenCL.so:devel/ocl-icd \
+		libOpenEXR-3_1.so:graphics/openexr \
 		libopus.so:audio/opus \
+		libpango-1.0.so:x11-toolkits/pango \
+		libpangocairo-1.0.so:x11-toolkits/pango \
+		libpangoft2-1.0.so:x11-toolkits/pango \
 		libpng.so:graphics/png \
 		libraw.so:graphics/libraw \
 		libtesseract.so:graphics/tesseract \
 		libtheora.so:multimedia/libtheora \
+		libtiff.so:graphics/tiff \
 		libva.so:multimedia/libva \
 		libvorbis.so:audio/libvorbis \
 		libvpx.so:multimedia/libvpx \
 		libwebp.so:graphics/webp \
 		libx264.so:multimedia/libx264 \
 		libx265.so:multimedia/x265 \
-		libzvbi.so:devel/libzvbi \
-		libexpat.so:textproc/expat2 \
-		libtiff.so:graphics/tiff \
-		liblcms2.so:graphics/lcms2 \
-		libOpenEXR-3_1.so:graphics/openexr \
-		libglib-2.0.so:devel/glib20 \
-		libgio-2.0.so:devel/glib20 \
-		libgobject-2.0.so:devel/glib20 \
-		libpangocairo-1.0.so:x11-toolkits/pango \
-		libpango-1.0.so:x11-toolkits/pango \
-		libpangoft2-1.0.so:x11-toolkits/pango \
-		libcairo.so:graphics/cairo
+		libzvbi.so:devel/libzvbi
 RUN_DEPENDS=	icu>0:devel/icu \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind
 
-USES=		compiler:c11 gmake iconv localbase:ldflags pkgconfig sqlite ssl:run jpeg gettext-runtime
-USE_GNOME=	glib20 pango cairo
+USES=		compiler:c11 gettext-runtime gmake iconv jpeg localbase:ldflags pkgconfig sqlite ssl:run
+USE_GNOME=	cairo glib20 pango
 USE_RC_SUBR=	${PORTNAME}
 
 HAS_CONFIGURE=	yes
