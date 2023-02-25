@@ -102,6 +102,7 @@
     SUBDIR += dovecot-fts-flatcurve
     SUBDIR += dovecot-fts-xapian
     SUBDIR += dovecot-pigeonhole
+    SUBDIR += dovecot-xaps
     SUBDIR += dspam
     SUBDIR += ecartis
     SUBDIR += elm

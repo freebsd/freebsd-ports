@@ -1,0 +1,4 @@
+Apple push notifications plugin for dovecot.
+
+Together with net/xapsd this will enable push email
+for iOS devices that talk to your dovecot IMAP server.
