@@ -6,6 +6,9 @@ MASTER_SITES=	https://build.openmodelica.org/omc/bootstrap/:bootstrap
 DISTFILES=	sources.tar.gz:bootstrap
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
+PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
+PATCHFILES=	01b6764df51f4f097d1c2e093e945ebd9a2f15a3.patch:-p1 # backport of https://github.com/OpenModelica/OpenModelica/pull/10261
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Modelica-based modeling and simulation environment
 WWW=		https://openmodelica.org/
