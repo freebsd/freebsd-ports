@@ -67,6 +67,7 @@
     SUBDIR += namecoin-daemon
     SUBDIR += namecoin-utils
     SUBDIR += ncdc
+    SUBDIR += nomadnet
     SUBDIR += ogmios
     SUBDIR += opendchub
     SUBDIR += openethereum
