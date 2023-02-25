@@ -1,6 +1,5 @@
 PORTNAME=	cftime
-PORTVERSION=	1.0.3.4
-PORTREVISION=	1
+PORTVERSION=	1.6.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,17 +8,20 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Time-handling functionality from netcdf4-python
 WWW=		https://github.com/Unidata/cftime
 
-LICENSE=	GPLv3+
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=0:devel/py-pytest-cov@${PY_FLAVOR}
 
-USES=		python:3.6+
-USE_PYTHON=	autoplist distutils cython
+USES=		python:3.7+
+USE_PYTHON=	autoplist cython distutils pytest
 
-do-test:
-	@cd ${WRKSRC} && py.test
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cftime/_cftime${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>
