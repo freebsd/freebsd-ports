@@ -126,9 +126,10 @@ CONFIGURE_ARGS+=	--without-qdbm
 .endif
 
 .if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	variable has incomplete type 'X509_STORE_CTX' (aka 'struct x509_store_ctx_st')
-BROKEN_FreeBSD_13=	variable has incomplete type 'X509_STORE_CTX' (aka 'struct x509_store_ctx_st')
+BROKEN=	variable has incomplete type 'X509_STORE_CTX' (aka 'struct x509_store_ctx_st')
 .endif
+DEPRECATED=	Broken since 2019
+EXPIRATION_DATE=	2023-03-25
 
 post-patch:
 .if defined(CONFIGURE_SED)
