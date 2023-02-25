@@ -1,0 +1,11 @@
+The purpose of the binbloom project is to analyse a raw binary firmware and
+determine automatically some of its features. This tool is compatible with all
+architectures as basically, it just does simple statistics on it.
+
+Main features:
+* Loading address: binbloom can parse a raw binary firmware and determine its
+  loading address.
+* Endianness: binbloom can use heuristics to determine the endianness of a
+  firmware.
+* UDS Database: binbloom can parse a raw binary firmware and check if it
+  contains an array containing UDS command IDs.

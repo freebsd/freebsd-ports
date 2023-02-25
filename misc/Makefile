@@ -24,6 +24,7 @@
     SUBDIR += biblesync
     SUBDIR += bibletime
     SUBDIR += biblical-curse
+    SUBDIR += binbloom
     SUBDIR += binclock
     SUBDIR += binocle
     SUBDIR += biosfont-demos
