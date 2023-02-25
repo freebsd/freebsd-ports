@@ -86,6 +86,7 @@
     SUBDIR += qtum
     SUBDIR += radarr
     SUBDIR += readarr
+    SUBDIR += reticulum
     SUBDIR += retroshare
     SUBDIR += rslsync
     SUBDIR += rtorrent

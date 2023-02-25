@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# PROVIDE: reticulum
+# REQUIRE: DAEMON FILESYSTEMS
+# BEFORE: LOGIN
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# reticulum_enable (bool):	Set to NO by default.
+#			Set it to YES to enable reticulum.
+# reticulum_config (path):	Set to %%PREFIX%%/etc/reticulum/
+#			by default.
+# reticulum_user (str):      Reticulum daemon user. Default: %%USERS%%
+# reticulum_group (str):     Reticulum daemon group. Default: %%GROUPS%%
+
+. /etc/rc.subr
+
+name="reticulum"
+rcvar="reticulum_enable"
+
+load_rc_config $name
+
+: ${reticulum_enable:="NO"}
+: ${reticulum_config="%%PREFIX%%/etc/reticulum/"}
+: ${reticulum_user="%%USERS%%"}
+: ${reticulum_group="%%GROUPS%%"}
+
+pidfiledir="/var/run/${name}"
+pidfile="${pidfiledir}/${name}.pid"
+logfiledir="/var/log/${name}"
+logfile="${logfiledir}/${name}.log"
+command="/usr/sbin/daemon"
+command_interpreter=%%PYTHON%%
+procname="%%PREFIX%%/bin/rnsd"
+
+command_args="-f -o $logfile -p $pidfile $procname --config $reticulum_config"
+
+run_rc_command "$1"
