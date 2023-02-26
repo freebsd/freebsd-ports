@@ -10,6 +10,9 @@ WWW=		https://github.com/dfaust/soundkonverter/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Unsupported upstream, consider using audio/cyanrip or audio/abcde (ripping CDs), audio/rsgain (ReplayGain scanning) and multimedia/ffmpeg (transcoding)
+EXPIRATION_DATE=2023-03-31
+
 LIB_DEPENDS=	libtag.so:audio/taglib \
 		libcdda_paranoia.so:audio/cdparanoia \
 		libphonon4qt5.so:multimedia/phonon
