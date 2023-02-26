@@ -5,10 +5,10 @@ PORTREVISION=	4
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	70ecdcb02ea0.patch:-p1 # https://github.com/Hjdskes/cage/pull/148
-PATCHFILES+=	31a3571a7798.patch:-p1 # https://github.com/Hjdskes/cage/pull/209
-PATCHFILES+=	1a3ab3eb3ad0.patch:-p1 # https://github.com/Hjdskes/cage/pull/198
-PATCHFILES+=	ee748fec3adf.patch:-p1 # https://github.com/Hjdskes/cage/pull/197
+PATCHFILES+=	70ecdcb02ea0.patch:-p1 # https://github.com/cage-kiosk/cage/pull/148
+PATCHFILES+=	31a3571a7798.patch:-p1 # https://github.com/cage-kiosk/cage/pull/209
+PATCHFILES+=	1a3ab3eb3ad0.patch:-p1 # https://github.com/cage-kiosk/cage/pull/198
+PATCHFILES+=	ee748fec3adf.patch:-p1 # https://github.com/cage-kiosk/cage/pull/197
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Wayland kiosk
@@ -27,7 +27,7 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 USES=		compiler:c11 meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_XORG=	pixman
-GH_ACCOUNT=	Hjdskes
+GH_ACCOUNT=	cage-kiosk
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES X11
