@@ -21,11 +21,12 @@ LIB_DEPENDS=	liba52.so:audio/liba52 \
 		libtheoradec.so:multimedia/libtheora \
 		libvorbis.so:audio/libvorbis
 
-USES=		compiler:c++11-lang cpe gl gmake gnome iconv jpeg pkgconfig sdl tar:xz
+USES=		compiler:c++11-lang cpe gl gmake gnome iconv jpeg \
+		localbase:ldflags pkgconfig sdl tar:xz
 USE_GL=		gl glew
-HAS_CONFIGURE=	yes
 USE_SDL=	sdl2
 
+HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa \
 		--disable-debug \
 		--disable-fluidlite \
@@ -33,13 +34,6 @@ CONFIGURE_ARGS=	--disable-alsa \
 		--disable-nasm \
 		--disable-tremor \
 		--enable-verbose-build \
-		--with-a52-prefix=${LOCALBASE} \
-		--with-jpeg-prefix=${LOCALBASE} \
-		--with-mad-prefix=${LOCALBASE} \
-		--with-ogg-prefix=${LOCALBASE} \
-		--with-png-prefix=${LOCALBASE} \
-		--with-sdl-prefix=${LOCALBASE} \
-		--with-vorbis-prefix=${LOCALBASE} \
 		--with-zlib-prefix=/usr
 
 LDFLAGS+=	-lpthread
@@ -54,25 +48,20 @@ TTS_DESC=	Text-to-Speech support
 XENGINES_DESC=	Experimental/Unstable engine support
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-CURL_CONFIGURE_ON=	--with-libcurl-prefix=${LOCALBASE}
 CURL_CONFIGURE_OFF=	--disable-libcurl
 
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
-FLAC_CONFIGURE_ON=	--with-flac-prefix=${LOCALBASE}
 FLAC_CONFIGURE_OFF=	--disable-flac
 
 FLUIDSYNTH_LIB_DEPENDS=		libfluidsynth.so:audio/fluidsynth
-FLUIDSYNTH_CONFIGURE_ON=	--with-fluidsynth-prefix=${LOCALBASE}
 FLUIDSYNTH_CONFIGURE_OFF=	--disable-fluidsynth
 
 GIF_LIB_DEPENDS=	libgif.so:graphics/giflib
-GIF_CONFIGURE_ON=	--with-gif-prefix=${LOCALBASE}
 GIF_CONFIGURE_OFF=	--disable-gif
 
 MT32EMU_CONFIGURE_OFF=	--disable-mt32emu
 
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
-SNDIO_CONFIGURE_ON=	--with-sndio-prefix=${LOCALBASE}
 SNDIO_CONFIGURE_OFF=	--disable-sndio
 
 TTS_LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher
@@ -87,10 +76,6 @@ XENGINES_CONFIGURE_OFF=	--disable-all-unstable-engines
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 CONFIGURE_ENV+=	ASFLAGS=-meabi=5
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/dists/${PORTNAME}.desktop \
