@@ -1,10 +1,10 @@
 PORTNAME=	flashrom
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.flashrom.org/releases/
 
-MAINTAINER=	mizhka@gmail.com
+MAINTAINER=	mizhka@FreeBSD.org
 COMMENT=	Utility for reading, writing, verifying, and erasing flash ROM chips
 WWW=		https://www.flashrom.org/
 
