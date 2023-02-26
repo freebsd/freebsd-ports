@@ -25,6 +25,8 @@ CFLAGS+=	-DVGA_${ARCH:S/i386/x86/:S/aarch64/arm/:S/powerpc64/ppc64le/:S/powerpc/
 
 MAKE_ARGS=	EXTRA_CFLAGS="${CFLAGS}"
 
+PORTSCOUT=	ignore:1 # LibVEX is a part of Valgrind and isn't individually versioned
+
 do-install:
 	cd ${WRKSRC}/pub && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/libvex
 	${INSTALL_DATA} ${WRKSRC}/libvex.a ${STAGEDIR}${PREFIX}/lib
