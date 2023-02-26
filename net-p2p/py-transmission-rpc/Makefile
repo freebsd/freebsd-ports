@@ -11,11 +11,12 @@ WWW=		https://pypi.org/project/transmission-rpc/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4.2<5.0.0.0:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.23.0<3.0.0:www/py-requests@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
