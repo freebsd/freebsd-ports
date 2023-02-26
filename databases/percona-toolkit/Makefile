@@ -1,5 +1,5 @@
 PORTNAME=	percona-toolkit
-PORTVERSION=	3.5.1
+DISTVERSION=	3.5.1
 CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/${PORTNAME}/${PORTVERSION}/source/tarball/
 
@@ -19,7 +19,7 @@ RUN_DEPENDS=	bash:shells/bash \
 USES=		perl5 shebangfix
 USE_PERL5=	configure
 
-SHEBANG_REGEX=	./bin/pt-.*
+SHEBANG_FILES=	bin/pt-*
 
 CONFLICTS_INSTALL=	p5-Pipeline # lib/perl5/site_perl/Pipeline.pm
 
