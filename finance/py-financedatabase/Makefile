@@ -1,5 +1,5 @@
 PORTNAME=	financedatabase
-PORTVERSION=	1.0.2
+PORTVERSION=	2.0.2
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,18 +10,12 @@ WWW=		https://github.com/JerBouma/FinanceDatabase
 
 LICENSE=	MIT
 
-PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.3.3:devel/py-dill@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}fundamentalanalysis>=0.2.10:finance/py-fundamentalanalysis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.3.2:math/py-matplotlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pandas>=1.1.2:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.25.1:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tablib>=3.0.0:textproc/py-tablib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tqdm>=4.56.0:misc/py-tqdm@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
 
