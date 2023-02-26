@@ -12,8 +12,8 @@ WWW=		https://github.com/linuxmint/cjs
 
 LICENSE=		MIT LGPL20+
 LICENSE_COMB=		dual
-LICENSE_FILE_MIT=	${WRKSRC}/COPYING
-LICENSE_FILE_LGPL20+ =	${WRKSRC}/COPYING.LGPL
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSES/MIT.txt
+LICENSE_FILE_LGPL20+ =	${WRKSRC}/LICENSES/LGPL-2.0-or-later.txt
 
 LIB_DEPENDS=	libffi.so:devel/libffi \
 		libmozjs-78.so:lang/spidermonkey78
