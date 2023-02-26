@@ -7,6 +7,9 @@ MASTER_SITES=	SF/sentrytools/${PORTNAME}%201.x/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port scan detection and active defense
 
+DEPRECATED=	Abandoned, upstream is dead and last release was back in 2003
+EXPIRATION_DATE=2023-03-31
+
 SUB_FILES=	portsentry.sh
 ALL_TARGET=	freebsd
 CFLAGS+=	-DPREFIX=\"${PREFIX}\"
