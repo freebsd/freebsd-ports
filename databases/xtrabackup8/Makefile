@@ -1,13 +1,11 @@
 PORTNAME=	xtrabackup
-PORTVERSION=	8.0.14
-PORTREVISION=	6
+PORTVERSION=	8.0.31
+DISTVERSIONSUFFIX=	-24
 CATEGORIES=	databases
-MASTER_SITES=	https://www.percona.com/downloads/Percona-XtraBackup-${PORTVERSION:R}/Percona-XtraBackup-${PORTVERSION}/source/tarball/:precona \
-		https://github.com/percona/percona-xtrabackup/archive/:percona \
+MASTER_SITES=	https://github.com/percona/percona-xtrabackup/archive/:percona \
 		SF/boost/boost/${BOOST_VERSION}:boost
 PKGNAMESUFFIX=	8
-DISTNAME=	percona-${PORTNAME}-${PORTVERSION}
-DISTFILES=	percona-${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}:percona \
+DISTFILES=	${PPORTNAME}-${DVERSION}${EXTRACT_SUFX}:percona \
 		boost_${BOOST_VERSION_UNDER}${EXTRACT_SUFX}:boost
 
 MAINTAINER=	eugene@zhegan.in
@@ -17,33 +15,46 @@ WWW=		https://www.percona.com/doc/percona-xtrabackup/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	xxd:editors/vim \
-		protobuf>=3.0:devel/protobuf \
+BUILD_DEPENDS=	protobuf>=3.0:devel/protobuf \
 		rapidjson>=1.1.0:devel/rapidjson \
-		libevent>=2.1:devel/libevent
+		libevent>=2.1:devel/libevent \
+		ncurses>=6.3:devel/ncurses
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libev.so:devel/libev \
 		libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error \
 		libicudata.so:devel/icu \
+		libncurses.so.6:devel/ncurses \
+		libprotobuf-lite.so:devel/protobuf \
 		libunwind.so:devel/libunwind \
 		libzstd.so:archivers/zstd
 RUN_DEPENDS=	qpress:archivers/qpress
 
-CONFLICTS_INSTALL=	${PORTNAME}
-
 USES=		bison cmake compiler:c++14-lang cpe pkgconfig ssl
 CPE_VENDOR=	percona
-CMAKE_ARGS=	-DBUILD_CONFIG:STRING=xtrabackup_release
+CMAKE_ARGS=	-DBUILD_CONFIG:STRING=xtrabackup_release \
+		-DWITHOUT_COMPONENT_KEYRING_KMIP:STRING=yes \
+		-DWITH_VERSION_CHECK=false
+
 .for component in EDITLINE ICU LIBEVENT PROTOBUF RAPIDJSON ZSTD
 CMAKE_ARGS+=	-DWITH_${component}:STRING=system
 .endfor
 
+CONFLICTS_INSTALL=	${PORTNAME}
+
 # Bundle last supported Boost release
-BOOST_VERSION=	1.72.0
+BOOST_VERSION=	1.77.0
 BOOST_VERSION_UNDER=	${BOOST_VERSION:C/\./_/g}
 
 CMAKE_ARGS+=	-DWITH_BOOST=${WRKDIR}/boost_${BOOST_VERSION_UNDER}
+
+# Build fails without NDEBUG, so force it
+CFLAGS+=	-DNDEBUG
+CXXFLAGS+=	-DNDEBUG
+
+DVERSION=	${PORTVERSION}${DISTVERSIONSUFFIX}
+PPORTNAME=	percona-${PORTNAME}
+WRKSRC=		${WRKDIR}/${PPORTNAME}-${PPORTNAME}-${DVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -54,15 +65,16 @@ CMAKE_ARGS+=	-DWITH_BOOST=${WRKDIR}/boost_${BOOST_VERSION_UNDER}
 CMAKE_ARGS+=	-DDISABLE_PSI_MEMORY=1
 .endif
 
-post-extract:
-# Delete bundled components so we won't accidentally use them, except LZ4
-# which cannot be removed just yet
-	@${MV} ${WRKSRC}/extra/lz4 ${WRKSRC}
-	@${RM} -r ${WRKSRC}/extra/*
-	@${MV} ${WRKSRC}/lz4 ${WRKSRC}/extra
+KEEP_EXTRA=	lz4 robin-hood-hashing zlib
 
-post-patch:
-	@${REINPLACE_CMD} -e 's,TRUE,true,' ${WRKSRC}/sql/mysqld.cc
+pre-configure:
+.for dir in ${KEEP_EXTRA}
+	@${MV} ${WRKSRC}/extra/${dir} ${WRKDIR}
+.endfor
+	@${RM} -r ${WRKSRC}/extra/*
+.for dir in ${KEEP_EXTRA}
+	@${MV} ${WRKDIR}/${dir} ${WRKSRC}/extra
+.endfor
 
 post-stage:
 	@${RM} -r ${STAGEDIR}${PREFIX}/docs
