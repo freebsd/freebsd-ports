@@ -1,11 +1,11 @@
 PORTNAME=	fileobj
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.108
+DISTVERSION=	0.8.0
 CATEGORIES=	editors
 
-MAINTAINER=	zrj@dragonflybsd.org
+MAINTAINER=	tkusumi@netbsd.org
 COMMENT=	Portable hex editor with vi like interface
-WWW=		https://github.com/kusumi/fileobj/tree/v0.7
+WWW=		https://github.com/kusumi/fileobj
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
