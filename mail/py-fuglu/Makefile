@@ -1,11 +1,10 @@
 PORTNAME=	fuglu
-PORTVERSION=	0.8.0
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	mail python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@caomhin.org
+MAINTAINER=	pi@FreeBSD.org
 COMMENT=	Mail scanning daemon for Postfix written in Python
 WWW=		https://fuglu.org/
 
@@ -50,7 +49,6 @@ post-extract:
 	@${REINPLACE_CMD} -e "s|=/etc|=${PREFIX}/etc|g" ${WRKSRC}/conf/fuglu.conf.dist
 	@${REINPLACE_CMD} -e "s|'/etc|'${PREFIX}/etc|g" \
 		${WRKSRC}/compareconfig.py \
-		${WRKSRC}/src/fuglu/plugins/actionoverride.py \
 		${WRKSRC}/src/fuglu/plugins/archive.py \
 		${WRKSRC}/src/fuglu/plugins/attachment.py \
 		${WRKSRC}/src/fuglu/plugins/domainauth.py \
