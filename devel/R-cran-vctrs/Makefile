@@ -1,5 +1,5 @@
 PORTNAME=	vctrs
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,9 +9,10 @@ WWW=		https://cran.r-project.org/web/packages/vctrs/
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-cli>=3.2.0:devel/R-cran-cli \
+CRAN_DEPENDS=	R-cran-cli>=3.4.0:devel/R-cran-cli \
 		R-cran-glue>0:devel/R-cran-glue \
-		R-cran-rlang>=1.0.2:devel/R-cran-rlang
+		R-cran-rlang>=1.0.6:devel/R-cran-rlang \
+		R-cran-lifecycle>=1.0.3:devel/R-cran-lifecycle
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
