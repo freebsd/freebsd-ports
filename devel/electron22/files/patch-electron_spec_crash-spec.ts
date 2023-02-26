@@ -1,6 +1,6 @@
---- electron/spec/crash-spec.ts.orig	2023-01-24 16:58:16 UTC
+--- electron/spec/crash-spec.ts.orig	2023-02-20 11:31:27 UTC
 +++ electron/spec/crash-spec.ts
-@@ -39,7 +39,7 @@ const shouldRunCase = (crashCase: string) => {
+@@ -42,7 +42,7 @@ const shouldRunCase = (crashCase: string) => {
      }
      // TODO(jkleinsc) fix this test on Linux on arm/arm64
      case 'js-execute-iframe': {
