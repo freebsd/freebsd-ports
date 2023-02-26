@@ -1,6 +1,6 @@
 PORTNAME=	dict2xml
 DISTVERSIONPREFIX=release-
-DISTVERSION=	1.7.2
+DISTVERSION=	1.7.3
 CATEGORIES=	textproc devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -11,13 +11,14 @@ WWW=		https://github.com/delfick/python-dict2xml
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}noseofyeti>0:devel/py-noseofyeti@${PY_FLAVOR}
 
 USES=		python:3.5+
 #doesnt ship tests in sdist
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 GH_ACCOUNT=	delfick
 GH_PROJECT=	python-dict2xml
