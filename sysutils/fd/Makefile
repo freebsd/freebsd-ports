@@ -1,7 +1,6 @@
 PORTNAME=	fd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.6.0
-PORTREVISION=	3
+DISTVERSION=	8.7.0
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-find
 
@@ -20,7 +19,7 @@ GH_ACCOUNT=	sharkdp
 
 CARGO_CRATES=	aho-corasick-0.7.19 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.66 \
+		anyhow-1.0.68 \
 		argmax-0.3.1 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -30,9 +29,9 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
-		clap-4.0.22 \
+		clap-4.1.1 \
 		clap_complete-4.0.6 \
-		clap_derive-4.0.21 \
+		clap_derive-4.1.0 \
 		clap_lex-0.3.0 \
 		codespan-reporting-0.11.1 \
 		core-foundation-sys-0.8.3 \
@@ -57,12 +56,15 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		globset-0.4.9 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
 		humantime-2.1.0 \
 		iana-time-zone-0.1.53 \
 		iana-time-zone-haiku-0.1.1 \
 		ignore-0.4.18 \
 		instant-0.1.12 \
 		io-lifetimes-0.7.4 \
+		io-lifetimes-1.0.4 \
+		is-terminal-0.4.2 \
 		jemalloc-sys-0.5.2+5.3.0-patched \
 		jemallocator-0.5.0 \
 		js-sys-0.3.60 \
@@ -70,17 +72,19 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		libc-0.2.137 \
 		link-cplusplus-1.0.7 \
 		linux-raw-sys-0.0.46 \
+		linux-raw-sys-0.1.4 \
 		log-0.4.17 \
 		lscolors-0.13.0 \
 		memchr-2.5.0 \
-		nix-0.24.2 \
-		nix-0.25.0 \
+		nix-0.24.3 \
+		nix-0.25.1 \
+		nix-0.26.2 \
 		normpath-0.3.2 \
 		nu-ansi-term-0.46.0 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
-		num_cpus-1.13.1 \
-		once_cell-1.15.0 \
+		num_cpus-1.15.0 \
+		once_cell-1.17.0 \
 		os_str_bytes-6.3.0 \
 		overload-0.1.1 \
 		proc-macro-error-1.0.4 \
@@ -89,12 +93,14 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		quote-1.0.21 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.7.0 \
-		regex-syntax-0.6.27 \
+		regex-1.7.1 \
+		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
 		rustix-0.35.12 \
+		rustix-0.36.6 \
 		same-file-1.0.6 \
 		scratch-1.0.2 \
+		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.103 \
 		tempfile-3.3.0 \
