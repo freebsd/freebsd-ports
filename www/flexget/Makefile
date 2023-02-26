@@ -1,4 +1,4 @@
-PORTNAME=	flexget
+PORTNAME=	FlexGet
 DISTVERSIONPREFIX=	v
 PORTVERSION=	3.4.2
 PORTREVISION=	1
@@ -11,6 +11,7 @@ WWW=		https://flexget.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy13>=1.3.10:databases/py-sqlalchemy13@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rebulk>=2.0.0:devel/py-rebulk@${PY_FLAVOR} \
@@ -47,12 +48,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vcrpy>0:devel/py-vcrpy@${PY_FLAVOR} \
 
 USES=		python:3.6+
 USE_GITHUB=	yes
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	autoplist pep517 pytest
 GH_PROJECT=	Flexget
 NO_ARCH=	yes
-
-post-extract:
-# Unlock dependencies' versions
-	@${MV} ${WRKSRC}/requirements.in ${WRKSRC}/requirements.txt
 
 .include <bsd.port.mk>
