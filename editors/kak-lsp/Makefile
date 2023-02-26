@@ -1,7 +1,6 @@
 PORTNAME=	kak-lsp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	14.1.0
-PORTREVISION=	4
+DISTVERSION=	14.2.0
 CATEGORIES=	editors
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -25,6 +24,7 @@ CARGO_CRATES=	adler32-1.2.0 \
 		bitflags-1.3.2 \
 		boxfnonce-0.1.1 \
 		bumpalo-3.4.0 \
+		cc-1.0.77 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.20 \
@@ -41,8 +41,13 @@ CARGO_CRATES=	adler32-1.2.0 \
 		dirs-sys-next-0.1.2 \
 		either-1.8.0 \
 		enum_primitive-0.1.1 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
 		field-offset-0.3.4 \
+		filetime-0.2.18 \
 		form_urlencoded-1.0.1 \
+		fs4-0.6.2 \
+		fsevent-sys-4.1.0 \
 		futures-0.3.24 \
 		futures-channel-0.3.24 \
 		futures-core-0.3.24 \
@@ -60,19 +65,27 @@ CARGO_CRATES=	adler32-1.2.0 \
 		idna-0.2.3 \
 		indexmap-1.9.1 \
 		indoc-1.0.7 \
+		inotify-0.9.6 \
+		inotify-sys-0.1.5 \
+		io-lifetimes-0.7.5 \
 		itertools-0.10.3 \
 		itoa-1.0.3 \
 		js-sys-0.3.55 \
 		jsonrpc-core-18.0.0 \
+		kqueue-1.0.7 \
+		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
-		libc-0.2.132 \
+		libc-0.2.138 \
 		libflate-1.2.0 \
 		libflate_lz77-1.1.0 \
+		linux-raw-sys-0.0.46 \
 		log-0.4.17 \
-		lsp-types-0.93.2 \
+		lsp-types-0.94.0 \
 		matches-0.1.9 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
+		mio-0.8.5 \
+		notify-5.0.0 \
 		num-integer-0.1.45 \
 		num-traits-0.1.43 \
 		num-traits-0.2.15 \
@@ -97,8 +110,10 @@ CARGO_CRATES=	adler32-1.2.0 \
 		rle-decode-fast-1.0.3 \
 		ropey-1.5.0 \
 		rustc_version-0.3.3 \
+		rustix-0.35.13 \
 		rustversion-1.0.9 \
 		ryu-1.0.11 \
+		same-file-1.0.6 \
 		semver-0.11.0 \
 		semver-parser-0.10.2 \
 		serde-1.0.144 \
@@ -137,10 +152,11 @@ CARGO_CRATES=	adler32-1.2.0 \
 		unicode-bidi-0.3.8 \
 		unicode-ident-1.0.3 \
 		unicode-normalization-0.1.21 \
-		unicode-width-0.1.9 \
+		unicode-width-0.1.10 \
 		unindent-0.1.10 \
 		url-2.2.2 \
 		version_check-0.9.4 \
+		walkdir-2.3.2 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.78 \
@@ -155,7 +171,15 @@ CARGO_CRATES=	adler32-1.2.0 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-acl-0.3.0
+		windows-acl-0.3.0 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.42.0
 
 SUB_FILES=	pkg-message
 
