@@ -1,13 +1,12 @@
 PORTNAME=	librewolf
-DISTVERSION=	108.0.1-1
-PORTREVISION=	2
+DISTVERSION=	109.0.1.2
 CATEGORIES=	www wayland
-MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${DISTVERSION}/
-DISTNAME=	${PORTNAME}-${DISTVERSION}.source.
+MASTER_SITES=	https://gitlab.com/api/v4/projects/32320088/packages/generic/librewolf-source/${DISTVERSION:R}-2/
+DISTNAME=	${PORTNAME}-${DISTVERSION:R}-2.source.
 EXTRACT_SUFX=	tar.gz
 
-PATCH_SITES=	https://gitlab.com/librewolf-community/browser/source/-/raw/${DISTVERSION}/
-PATCHFILES=	patches/unity-menubar.patch?inline=false:-p1
+PATCH_SITES=	https://gitlab.com/librewolf-community/browser/source/-/raw/d114d4f8e8271adcb854082060c387b16ac56352/
+PATCHFILES=	patches/unity_kde/unity-menubar.patch?inline=false:-p1
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Custom version of Firefox, focused on privacy, security and freedom
@@ -30,16 +29,18 @@ BUILD_DEPENDS=	nspr>=4.32:devel/nspr \
 		zip:archivers/zip
 
 .include "${.CURDIR}/../../www/firefox/Makefile.options"
+
 .include <bsd.port.options.mk>
+
 .if ${ARCH} != powerpc64
 BUILD_DEPENDS+=	${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc++abi.a:devel/wasi-libcxx \
 		${LOCALBASE}/share/wasi-sysroot/lib/wasm32-wasi/libc.a:devel/wasi-libc \
 		${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/clang/${LLVM_VERSION}/lib/wasi/libclang_rt.builtins-wasm32.a:devel/wasi-compiler-rt${LLVM_DEFAULT}
 .endif
 
-USES=		tar:xz
 USE_GECKO=	gecko
 USE_MOZILLA=	-sqlite
+
 CFLAGS_powerpc64le=	-DSQLITE_BYTEORDER=1234
 # work around bindgen not finding ICU, e.g.
 # dist/include/mozilla/intl/ICU4CGlue.h:8:10: fatal error: 'unicode/uenum.h' file not found, err: true
@@ -72,7 +73,7 @@ MOZ_OPTIONs=	--enable-application=browser \
 		MOZ_SERVICES_HEALTHREPORT=0
 
 # helpful when testing beta
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}-2
 
 FIREFOX_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/browser/chrome/icons/default/default48.png
 FIREFOX_DESKTOP=	${MOZSRC}/taskcluster/docker/firefox-snap/firefox.desktop
