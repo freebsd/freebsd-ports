@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johntdarrah@gmail.com
 COMMENT=	Advanced and secure webserver for Unix
 WWW=		https://www.hiawatha-webserver.org/
 
