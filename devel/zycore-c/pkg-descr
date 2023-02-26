@@ -1,0 +1,2 @@
+Zyan Core Library for C is an internal library providing platform independent
+types, macros and a fallback for environments without LibC.

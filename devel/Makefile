@@ -7631,6 +7631,7 @@
     SUBDIR += zpu-binutils
     SUBDIR += zpu-gcc
     SUBDIR += zthread
+    SUBDIR += zycore-c
     SUBDIR += zydis
     SUBDIR += zziplib
 
