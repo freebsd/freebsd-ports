@@ -1,5 +1,5 @@
 PORTNAME=	transmission-rpc
-DISTVERSION=	3.4.1
+DISTVERSION=	4.1.0
 CATEGORIES=	net-p2p python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4.2<5.0.0.0:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.23.0<3.0.0:www/py-requests@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.23.0<3.0.0:www/py-requests@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
