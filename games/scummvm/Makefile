@@ -1,5 +1,5 @@
 PORTNAME=	scummvm
-PORTVERSION=	2.6.1
+PORTVERSION=	2.7.0
 CATEGORIES=	games emulators
 MASTER_SITES=	https://downloads.scummvm.org/frs/${PORTNAME}/${PORTVERSION}/
 
