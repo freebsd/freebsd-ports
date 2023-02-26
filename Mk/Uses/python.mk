@@ -871,6 +871,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PEP517_INSTALL_CMD}
 	@${SED} -e 's|^|${PYTHONPREFIX_SITELIBDIR}/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../etc/|etc/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../bin/|bin/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../include/|include/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../lib/|lib/|' \
