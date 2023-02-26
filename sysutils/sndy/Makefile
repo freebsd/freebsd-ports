@@ -1,5 +1,5 @@
 PORTNAME=	sndy
-DISTVERSION=	0.0.4
+DISTVERSION=	0.0.5
 CATEGORIES=	sysutils audio tcl
 
 MAINTAINER=	Clockwork6400@protonmail.com
@@ -26,4 +26,5 @@ PLIST_FILES=	bin/sndy \
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/sndy ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/sndy.desktop ${STAGEDIR}${PREFIX}/share/applications
+
 .include <bsd.port.mk>
