@@ -95,6 +95,7 @@
     SUBDIR += cg3
     SUBDIR += cgrep
     SUBDIR += chkascii
+    SUBDIR += choose
     SUBDIR += chpp
     SUBDIR += cl-meta
     SUBDIR += cl-meta-sbcl
