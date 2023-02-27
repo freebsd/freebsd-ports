@@ -1,4 +1,4 @@
-Drop after FreeBSD 13.1/12.4 EOL around 2023-12-31.
+Drop after FreeBSD 12.4 EOL around 2023-12-31.
 
 Utilities/Config.cpp:194:23: error: no matching function for call to 'to_chars'
         if (auto [ptr, ec] = std::to_chars(str.data(), str.data() + str.size(), value, std::chars_format::fixed); ec == std::errc())
