@@ -1,3 +1,3 @@
-TIMESTAMP = 1676098482
-SHA256 (DNS-OARC-dnsperf-v2.11.0_GH0.tar.gz) = d9e21213be1bf8d525162c4c0d3e75d68ddd0212c9d240f0f4e26acfdc6c36fd
-SIZE (DNS-OARC-dnsperf-v2.11.0_GH0.tar.gz) = 123834
+TIMESTAMP = 1676099775
+SHA256 (dnsperf-2.11.0.tar.gz) = b216ca0855beefe9cefc58af2ccef6819fc2cf45e1efe50e1e131387f26272a1
+SIZE (dnsperf-2.11.0.tar.gz) = 457834

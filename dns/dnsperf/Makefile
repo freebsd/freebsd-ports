@@ -1,21 +1,20 @@
 PORTNAME=	dnsperf
-PORTVERSION=	2.11.0
-DISTVERSIONPREFIX=v
+DISTVERSION=	2.11.0
 CATEGORIES=	dns benchmarks net
+MASTER_SITES=	https://www.dns-oarc.net/files/${PORTNAME}/
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Performance measurement of Domain Name System (DNS) servers
 WWW=		https://www.dns-oarc.net/tools/dnsperf
 
 LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libnghttp2.so:www/libnghttp2 \
 		libck.so:devel/concurrencykit \
 		libldns.so:dns/ldns
 
-USES=		autoreconf compiler:c11 libtool pkgconfig ssl
-USE_GITHUB=	yes
-GH_ACCOUNT=	DNS-OARC
+USES=		compiler:c11 libtool pkgconfig ssl
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	libssl_LIBS="-lssl -L${OPENSSLLIB}" \
