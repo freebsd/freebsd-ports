@@ -1,5 +1,5 @@
 PORTNAME=	yuzu
-PORTVERSION=	s20230225
+PORTVERSION=	s20230226
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -53,7 +53,7 @@ qt6_OPTIONS_EXCLUDE=	QT5
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	yuzu-emu
-GH_TAGNAME=	833afb7ce
+GH_TAGNAME=	a78a47581
 GH_TUPLE=	yuzu-emu:mbedtls:v2.16.9-115-g8c88150ca:mbedtls/externals/mbedtls \
 		yuzu-emu:sirit:ab75463:sirit/externals/sirit \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-201-gc214f6f:SPIRV_Headers/externals/sirit/externals/SPIRV-Headers \
@@ -76,8 +76,8 @@ ELF_FEATURES=	${PLIST_FILES:Mbin/*:S/^/+wxneeded:/}
 PLIST_FILES=	bin/${PORTNAME}-cmd \
 		bin/${PORTNAME}-room
 
-OPTIONS_DEFINE=	ALSA GUI PULSEAUDIO JACK NLS SNDIO VAAPI VULKAN WEBENGINE
-OPTIONS_DEFAULT=PULSEAUDIO JACK QT5 SNDIO VAAPI VULKAN WEBENGINE
+OPTIONS_DEFINE=	ALSA GUI PULSEAUDIO JACK LTO NLS SNDIO VAAPI VULKAN WEBENGINE
+OPTIONS_DEFAULT=PULSEAUDIO JACK LTO QT5 SNDIO VAAPI VULKAN WEBENGINE
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	QT5 QT6
 OPTIONS_SLAVE=		${${FLAVOR}_OPTIONS_SLAVE}
@@ -96,6 +96,8 @@ GUI_PLIST_FILES=	bin/${PORTNAME} \
 
 JACK_BUILD_DEPENDS=	jackit>0:audio/jack
 JACK_CMAKE_BOOL=	USE_JACK
+
+LTO_CMAKE_BOOL=		YUZU_ENABLE_LTO
 
 NLS_DESC=		UI translations (implies ${NLS_IMPLIES})
 NLS_USE=		QT=${"${PORT_OPTIONS:MQT5}":?linguist:}tools:build
@@ -152,6 +154,7 @@ CC=		clang${LLVM_VERSION}
 CXX=		clang++${LLVM_VERSION}
 CPP=		clang-cpp${LLVM_VERSION}
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
+OPTIONS_EXCLUDE+=	LTO # llvm-ar
 . endif
 
 # XXX Move into separate port and standardize via USES
