@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of text menu based utilities for configuring RelaxBSD LiveCD
 WWW=		https://sourceforge.net/projects/relaxbsd/
 
+DEPRECATED=	Abandonware, last release of RelaxBSD was back in 2006
+EXPIRATION_DATE=2023-03-31
+
 BUILD_DEPENDS=	cdialog:devel/cdialog
 RUN_DEPENDS=	cdialog:devel/cdialog \
 		disktype:sysutils/disktype
