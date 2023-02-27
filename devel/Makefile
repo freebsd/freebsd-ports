@@ -1155,6 +1155,7 @@
     SUBDIR += libburn
     SUBDIR += libcbor
     SUBDIR += libccid
+    SUBDIR += libcdada
     SUBDIR += libcdb
     SUBDIR += libcds
     SUBDIR += libcfu

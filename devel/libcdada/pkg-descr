@@ -1,0 +1,9 @@
+Small library that offers basic data structures (list, set, map...)
+in a pure C API for user-space applications. Key features:
+
+- Easy to use, portable
+- No "magic" MACROs, and no need to modify your data structures
+  (except, perhaps, for __attribute__((packed)))
+- Stable and well-tested backend engine (libstdc++) for most of
+  the data structures
+- Reasonable performance - comparable to libstdc++
