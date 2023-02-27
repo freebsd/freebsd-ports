@@ -1,0 +1,10 @@
+This is the simple REST client for Identity and Access Management (IAM) API V1.
+Simple REST clients are Ruby client libraries that provide access to Google
+services via their HTTP REST API endpoints. These libraries are generated and
+updated automatically based on the discovery documents published by the service,
+and they handle most concerns such as authentication, pagination, retry, timeouts,
+and logging. You can use this client to access the Identity and Access
+Management (IAM) API, but note that some services may provide a separate modern
+client that is easier to use.
+
+See also: https://github.com/googleapis/google-api-ruby-client
