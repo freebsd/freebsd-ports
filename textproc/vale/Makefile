@@ -1,6 +1,5 @@
 PORTNAME=	vale
-PORTVERSION=	2.22.0
-PORTREVISION=	3
+PORTVERSION=	2.23.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -15,6 +14,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	errata-ai
 GH_TUPLE=	\
+		antonmedv:expr:v1.12.0:antonmedv_expr/vendor/github.com/antonmedv/expr \
 		atomicgo:cursor:v0.0.1:atomicgo_cursor/vendor/github.com/atomicgo/cursor \
 		d5:tengo:v2.10.0:d5_tengo_v2/vendor/github.com/d5/tengo/v2 \
 		dsnet:compress:f66993602bf5:dsnet_compress/vendor/github.com/dsnet/compress \
