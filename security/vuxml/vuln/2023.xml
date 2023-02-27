@@ -1,3 +1,72 @@
+  <vuln vid="a75929bd-b6a4-11ed-bad6-080027f5fec9">
+    <topic>emacs -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>emacs</name>
+	<name>emacs-canna</name>
+	<name>emacs-nox</name>
+	<range><lt>28.2_3,3</lt></range>
+      </package>
+      <package>
+	<name>emacs-devel</name>
+	<name>emacs-devel-nox</name>
+	<range><lt>30.0.50.20230101,3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Xi Lu reports:</p>
+	<blockquote cite="https://www.debian.org/security/2023/dsa-5360">
+	  <dl>
+	    <dt>CVE-2022-48337</dt>
+	    <dd>
+	      GNU Emacs through 28.2 allows attackers to execute
+	      commands via shell metacharacters in the name of a
+	      source-code file, because lib-src/etags.c uses the
+	      system C library function in its implementation of the
+	      etags program. For example, a victim may use the
+	      &quot;etags -u *&quot; command (suggested in the etags
+	      documentation) in a situation where the current working
+	      directory has contents that depend on untrusted input.
+	    </dd>
+	    <dt>CVE-2022-48338</dt>
+	    <dd>
+	      An issue was discovered in GNU Emacs through 28.2. In
+	      ruby-mode.el, the ruby-find-library-file function has a
+	      local command injection vulnerability. The
+	      ruby-find-library-file function is an interactive
+	      function, and bound to C-c C-f. Inside the function, the
+	      external command gem is called through
+	      shell-command-to-string, but the feature-name parameters
+	      are not escaped. Thus, malicious Ruby source files may
+	      cause commands to be executed.
+	    </dd>
+	    <dt>CVE-2022-48339</dt>
+	    <dd>
+	      An issue was discovered in GNU Emacs through
+	      28.2. htmlfontify.el has a command injection
+	      vulnerability. In the hfy-istext-command function, the
+	      parameter file and parameter srcdir come from external
+	      input, and parameters are not escaped. If a file name or
+	      directory name contains shell metacharacters, code may
+	      be executed.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-48337</cvename>
+      <cvename>CVE-2022-48338</cvename>
+      <cvename>CVE-2022-48339</cvename>
+      <url>https://www.debian.org/security/2023/dsa-5360</url>
+    </references>
+    <dates>
+      <discovery>2022-12-06</discovery>
+      <entry>2023-02-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dd271de6-b444-11ed-9268-b42e991fc52e">
     <topic>freerdp -- clients using the `/video` command line switch might read uninitialized data</topic>
     <affects>
