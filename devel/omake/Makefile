@@ -1,5 +1,5 @@
 PORTNAME=	omake
-DISTVERSION=	0.10.5
+DISTVERSION=	0.10.6
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 
