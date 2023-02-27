@@ -19,6 +19,9 @@ LICENSE_NAME=	djb
 LICENSE_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
+EXPIRATION_DATE=2023-06-30
+
 RUN_DEPENDS=	setuidgid:sysutils/daemontools \
 		tcpserver:sysutils/ucspi-tcp
 
