@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-shell
-PORTVERSION=	14.15.0
-PORTREVISION=	4
+PORTVERSION=	14.17.0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -9,12 +8,15 @@ WWW=		https://gitlab.com/gitlab-org/gitlab-shell
 
 LICENSE=	MIT
 
-USES=		gmake go:modules,no_targets
+BUILD_DEPENDS=	heimdal>=0:security/heimdal
+LIB_DEPENDS=	libkrb5.so:security/heimdal
+
+USES=		gmake go:modules,no_targets pkgconfig
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	1e791e09f760064c41216535f210d935ee6435d7
+GL_COMMIT=	336c4a51aa332b0cc1c68798003a1d82ab4a9cc3
 
 USERS=		git
 GROUPS=		git
