@@ -191,6 +191,7 @@ share/gir-%%VERSION%%/GstNet-%%VERSION%%.gir
 %%NLS%%share/locale/id/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gstreamer-%%VERSION%%.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/gstreamer-%%VERSION%%.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/gstreamer-%%VERSION%%.mo
