@@ -1,6 +1,6 @@
 PORTNAME=	python
 DISTVERSION=	${PYTHON_DISTVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang python
 MASTER_SITES=	PYTHON/ftp/python/${DISTVERSION}
 PKGNAMESUFFIX=	${PYTHON_SUFFIX}
@@ -15,8 +15,7 @@ LICENSE=	PSFL
 
 LIB_DEPENDS=	libffi.so:devel/libffi
 
-USES=		cpe ncurses pathfix pkgconfig python:${PYTHON_DISTVERSION:R},env readline \
-		shebangfix ssl tar:xz trigger
+USES=		cpe ncurses pathfix pkgconfig readline shebangfix ssl tar:xz
 PATHFIX_MAKEFILEIN=	Makefile.pre.in
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -25,7 +24,11 @@ SHEBANG_FILES=	Lib/*.py Lib/*/*.py Lib/*/*/*.py Lib/*/*/*/*.py
 SHEBANG_FILES+=	Lib/test/ziptestdata/exe_with_z64 \
 		Lib/test/ziptestdata/exe_with_zip \
 		Lib/test/ziptestdata/header.sh
-TRIGGERS=	${PYTHON_VERSION}
+
+# Duplicate python.mk variables. TODO: Let lang/python?? ports use python.mk bits.
+PYTHON_VER=		${PYTHON_DISTVERSION:R}
+PYTHON_VERSION=		python${PYTHON_VER}
+PYTHON_SUFFIX=		${PYTHON_VER:S/.//g}
 
 DISABLED_EXTENSIONS=	_sqlite3 _tkinter _gdbm
 CONFIGURE_ARGS+=	--enable-shared --without-ensurepip \

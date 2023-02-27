@@ -10,14 +10,6 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
-20230215:
-AUTHOR: vishwin@FreeBSD.org
-
-  USES=python now includes SUB_LIST entries to facilitate common
-  substitutions for python.mk variables other than in ${PLIST}.
-  They are the same as PLIST_SUB, except PYTHON_INCLUDEDIR,
-  PYTHON_LIBDIR and PYTHON_SITELIBDIR include ${PREFIX}.
-
 20230111:
 AUTHOR: vishwin@FreeBSD.org
 
