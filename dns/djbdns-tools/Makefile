@@ -12,6 +12,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolver tools from djbdns package
 WWW=		https://cr.yp.to/djbdns.html
 
+DEPRECATED=	No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
+EXPIRATION_DATE=2023-06-30
+
 CONFLICTS=	djbdns
 
 PROGRAMS=	dnsip dnsipq dnsname dnstxt dnsmx dnsfilter \
