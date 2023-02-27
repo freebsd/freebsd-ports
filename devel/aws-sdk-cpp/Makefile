@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cpp
-DISTVERSION=	1.11.10
+DISTVERSION=	1.11.25
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -8,11 +8,6 @@ WWW=		https://github.com/aws/aws-sdk-cpp
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_armv6=	fails to build: runaway process
-BROKEN_armv7=	fails to build: runaway process
-BROKEN_i386=	fails to build: compiler runs out of memory
-BROKEN_powerpc=	fails to build: compiler runs out of memory
 
 LIB_DEPENDS=	libaws-c-auth.so:security/aws-c-auth \
 		libaws-c-cal.so:security/aws-c-cal \
@@ -58,7 +53,11 @@ BUILD_ONLY?=
 OPTIONS_DEFINE=	TEST
 OPTIONS_SUB=	yes
 
-TEST_CMAKE_BOOL_OFF=	ENABLE_TESTING
+TEST_CMAKE_BOOL=	ENABLE_TESTING
+TEST_BROKEN_armv6=	fails to build: runaway process
+TEST_BROKEN_armv7=	fails to build: runaway process
+TEST_BROKEN_i386=	fails to build: compiler runs out of memory
+TEST_BROKEN_powerpc=	fails to build: compiler runs out of memory
 
 pre-everything::
 	@${ECHO_MSG}
