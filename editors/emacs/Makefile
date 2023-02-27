@@ -1,12 +1,15 @@
 PORTNAME=	emacs
 DISTVERSION=	28.2
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
 PATCH_SITES=	https://github.com/emacs-mirror/emacs/commit/:github
-PATCHFILES=	d48bb4874bc6cd3e69c7a15fc3c91cc141025c51.patch:-p1:github
+PATCHFILES=	d48bb4874bc6cd3e69c7a15fc3c91cc141025c51.patch:-p1:github \
+		01a4035c869b91c153af9a9132c87adb7669ea1c.patch:-p1:github \
+		9a3b08061feea14d6f37685ca1ab8801758bfd1c.patch:-p1:github \
+		1b4dc4691c1f87fc970fbe568b43869a15ad0d4c.patch:-p1:github
 
 .if ${FLAVOR:U} == canna
 PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs28canna/:canna
