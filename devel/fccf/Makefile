@@ -1,7 +1,7 @@
 PORTNAME=	fccf
-PORTVERSION=	0.6.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.0
+PORTREVISION=	2
 CATEGORIES=	devel
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,19 +10,18 @@ WWW=		https://github.com/p-ranav/fccf
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	argparse>0:devel/argparse \
-		llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
+BUILD_DEPENDS=	argparse>0:devel/argparse
 LIB_DEPENDS=	libfmt.so:devel/libfmt
-RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT}
 
-USES=		cmake
+USES=		cmake llvm:build,lib,run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	p-ranav
 
+CMAKE_ARGS=	-DLLVM_DIR:STRING=${PREFIX}/llvm${LLVM_VERSION}/lib/cmake/llvm
 CXXFLAGS+=	-I${LOCALBASE}/include/argparse
 
 post-patch:
-	${REINPLACE_CMD} "s/llvm-config/llvm-config${LLVM_DEFAULT}/g" ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} "s/llvm-config/${LLVM_CONFIG}/g" ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
