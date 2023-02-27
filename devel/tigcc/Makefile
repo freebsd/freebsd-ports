@@ -141,10 +141,4 @@ do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	@${CP} ${WRKSRC}/tigcc/tigcclib/examples/* ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.pre.mk>
-
-.if ${CHOSEN_COMPILER_TYPE} == gcc && ${COMPILER_VERSION} <= 42
-CFLAGS+=	-fnested-functions
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
