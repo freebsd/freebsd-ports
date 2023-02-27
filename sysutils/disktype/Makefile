@@ -7,6 +7,9 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Disk formatting type autodetector
 WWW=		http://disktype.sourceforge.net/
 
+DEPRECATED=	Abandonware, last release in 2006 and no development since
+EXPIRATION_DATE=2023-03-31
+
 USES=		gmake
 
 PLIST_FILES=	bin/disktype
