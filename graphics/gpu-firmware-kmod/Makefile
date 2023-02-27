@@ -1,5 +1,6 @@
 PORTNAME=	gpu-firmware-kmod
 PORTVERSION=	20230210
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 
@@ -59,7 +60,7 @@ RUN_DEPENDS+=	gpu-firmware-intel-kmod-skylake>0:graphics/gpu-firmware-intel-kmod
 		gpu-firmware-intel-kmod-broxton>0:graphics/gpu-firmware-intel-kmod@broxton \
 		gpu-firmware-intel-kmod-kabylake>0:graphics/gpu-firmware-intel-kmod@kabylake \
 		gpu-firmware-intel-kmod-geminilake>0:graphics/gpu-firmware-intel-kmod@geminilake \
-		gpu-firmware-intel-kmod-coffeelake>0:graphics/gpu-firmware-intel-kmod@coffeelake \
+		gpu-firmware-intel-kmod-cannonlake>0:graphics/gpu-firmware-intel-kmod@cannonlake \
 		gpu-firmware-intel-kmod-icelake>0:graphics/gpu-firmware-intel-kmod@icelake \
 		gpu-firmware-intel-kmod-elkhartlake>0:graphics/gpu-firmware-intel-kmod@elkhartlake \
 		gpu-firmware-intel-kmod-tigerlake>0:graphics/gpu-firmware-intel-kmod@tigerlake \
