@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	5
 CATEGORIES=	devel
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool suite used to flash firmware onto Samsung mobile devices
 WWW=		https://glassechidna.com.au/heimdall/
 
