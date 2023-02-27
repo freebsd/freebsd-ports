@@ -16,6 +16,10 @@ LTO_Include_MAINTAINER=	pkubaj@FreeBSD.org
 		CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
 .    elif defined(_INCLUDE_USES_MESON_MK)
    MESON_ARGS+=	-Db_lto=true
+.    elif defined(_INCLUDE_USES_CABAL_MK)
+   CABAL_LTO_ARGS=	--ghc-options=-split-sections \
+			--gcc-options="-fdata-sections -ffunction-sections" \
+			--ld-options=-Wl,--gc-sections,--build-id,--icf=all
 .    else
 # Overridable as a user may want to use -flto
    LTO_FLAGS?=	-flto=thin
