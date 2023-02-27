@@ -11,6 +11,9 @@ COMMENT=	Converts WAV files into CDR audio file format
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Obsolete utility, consider using multimedia/ffmpeg
+EXPIRATION_DATE=2023-03-31
+
 USES=		tar:bz2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
