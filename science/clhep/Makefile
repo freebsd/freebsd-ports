@@ -1,5 +1,5 @@
 PORTNAME=	clhep
-PORTVERSION=	2.4.6.3
+PORTVERSION=	2.4.6.4
 CATEGORIES=	science math
 MASTER_SITES=	https://proj-clhep.web.cern.ch/proj-clhep/dist1/
 
@@ -11,11 +11,10 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
 USES=		cmake:testing compiler:c++11-lang perl5 tar:tgz
+USE_LDCONFIG=	yes
+USE_PERL5=	build
 
 WRKSRC=		${WRKDIR}/${PORTVERSION}/${PORTNAME:tu}
-
-USE_PERL5=	build
-USE_LDCONFIG=	yes
 
 PLIST_SUB=	VERSION="${PORTVERSION}"
 
