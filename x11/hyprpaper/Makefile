@@ -10,7 +10,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NOT_FOR_ARCHS=	mips mips64 powerpc powerpc64 powerpcspe sparc64
-NOT_FOR_ARCHS_REASON=	Only little endian is supported
+NOT_FOR_ARCHS_REASON=	only little-endian is supported
 
 BUILD_DEPENDS=	gmake:devel/gmake \
 		wayland-protocols>0:graphics/wayland-protocols
