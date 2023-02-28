@@ -66,11 +66,11 @@ ROOT7_CMAKE_BOOL=	root7
 PLIST_SUB+=	SHLIB_SHVER="${DISTVERSION:R}" \
 		SHLIB_VER="${DISTVERSION}"
 
-# Some .modulemap and .idx files are not installed on aarch64, and files LIBRARY.pcm are renamed LIBRARY_rdict.pcm on aarch64
+# Some .modulemap, .pcm and .idx files are not installed on aarch64, a few .pcm files are exclusive to aarch64 and files LIBRARY.pcm are renamed libLIBRARY_rdict.pcm on aarch64
 .if ${ARCH} == "aarch64"
-PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="@comment " AARCH64_PCM_SUFFIX="_rdict"
+PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="@comment " ONLY_INSTALLED_ON_AARCH64="" AARCH64_PCM_PREFIX="lib" AARCH64_PCM_SUFFIX="_rdict"
 .else
-PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" AARCH64_PCM_SUFFIX=""
+PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" ONLY_INSTALLED_ON_AARCH64="@comment " AARCH64_PCM_PREFIX="" AARCH64_PCM_SUFFIX=""
 .endif
 
 # Some files only installed with LLVM/Clang 13 (used on FreeBSD 12.4 and 13.x)
