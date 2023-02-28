@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
 BUILD_DEPENDS=	mk-configure>=0.29.1:devel/mk-configure
 
+CFLAGS+=	-fPIC
 MAKE_ARGS=	DOCDIR=${DOCSDIR}
 MAKE_CMD=	mkcmake
 USE_LDCONFIG=	yes
