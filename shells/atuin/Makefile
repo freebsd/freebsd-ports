@@ -1,7 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	12.0.0
-PORTREVISION=	1
+DISTVERSION=	13.0.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,19 +18,20 @@ GH_ACCOUNT=	ellie
 CARGO_CRATES=	ahash-0.7.6 \
 		aho-corasick-0.7.19 \
 		android_system_properties-0.1.5 \
-		ansi_term-0.12.1 \
 		anyhow-1.0.64 \
 		async-trait-0.1.58 \
 		atoi-1.0.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
-		axum-0.5.16 \
-		axum-core-0.2.8 \
-		base64-0.13.0 \
+		axum-0.6.4 \
+		axum-core-0.3.2 \
+		base64-0.13.1 \
+		base64-0.20.0 \
+		base64-0.21.0 \
 		beef-0.5.2 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.3 \
-		bumpalo-3.11.0 \
+		bumpalo-3.12.0 \
 		byteorder-1.4.3 \
 		bytes-1.2.1 \
 		cassowary-0.3.0 \
@@ -40,10 +40,9 @@ CARGO_CRATES=	ahash-0.7.6 \
 		chrono-0.4.22 \
 		chronoutil-0.2.3 \
 		clap-4.0.18 \
-		clap_complete-4.0.2 \
+		clap_complete-4.0.3 \
 		clap_derive-4.0.18 \
 		clap_lex-0.3.0 \
-		cli-table-0.4.7 \
 		config-0.13.2 \
 		console-0.15.1 \
 		core-foundation-0.9.3 \
@@ -54,6 +53,8 @@ CARGO_CRATES=	ahash-0.7.6 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-queue-0.3.6 \
 		crossbeam-utils-0.8.11 \
+		crossterm-0.26.0 \
+		crossterm_winapi-0.9.0 \
 		crypto-common-0.1.6 \
 		digest-0.10.5 \
 		directories-4.0.1 \
@@ -64,17 +65,21 @@ CARGO_CRATES=	ahash-0.7.6 \
 		either-1.8.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.31 \
-		env_logger-0.7.1 \
+		env_logger-0.10.0 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
 		event-listener-2.5.3 \
 		eyre-0.6.8 \
+		filedescriptor-0.8.2 \
 		flume-0.10.14 \
 		fnv-1.0.7 \
 		form_urlencoded-1.1.0 \
-		fs-err-2.8.1 \
+		fs-err-2.9.0 \
 		futures-channel-0.3.24 \
 		futures-core-0.3.24 \
 		futures-executor-0.3.24 \
 		futures-intrusive-0.4.0 \
+		futures-macro-0.3.24 \
 		futures-sink-0.3.24 \
 		futures-task-0.3.24 \
 		futures-util-0.3.24 \
@@ -85,6 +90,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		hashlink-0.8.0 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
 		hex-0.4.3 \
 		hkdf-0.12.3 \
 		hmac-0.12.1 \
@@ -93,7 +99,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		http-range-header-0.3.0 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
-		humantime-1.3.0 \
+		humantime-2.1.0 \
 		hyper-0.14.20 \
 		hyper-rustls-0.23.0 \
 		iana-time-zone-0.1.48 \
@@ -103,20 +109,23 @@ CARGO_CRATES=	ahash-0.7.6 \
 		indicatif-0.17.1 \
 		instant-0.1.12 \
 		interim-0.1.0 \
+		io-lifetimes-1.0.3 \
 		ipnet-2.5.0 \
+		is-terminal-0.4.1 \
 		itertools-0.10.5 \
 		itoa-1.0.3 \
 		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
-		libc-0.2.132 \
+		libc-0.2.138 \
 		libsodium-sys-0.2.7 \
 		libsqlite3-sys-0.24.2 \
+		linux-raw-sys-0.1.4 \
 		lock_api-0.4.8 \
 		log-0.4.17 \
 		logos-0.12.1 \
 		logos-derive-0.12.1 \
 		matchers-0.1.0 \
-		matchit-0.5.0 \
+		matchit-0.7.0 \
 		md-5-0.10.4 \
 		memchr-2.5.0 \
 		mime-0.3.16 \
@@ -124,6 +133,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		minspan-0.1.1 \
 		mio-0.8.4 \
 		nom-7.1.1 \
+		nu-ansi-term-0.46.0 \
 		num-0.2.1 \
 		num-bigint-0.2.6 \
 		num-complex-0.2.4 \
@@ -133,10 +143,10 @@ CARGO_CRATES=	ahash-0.7.6 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
 		number_prefix-0.4.0 \
-		numtoa-0.1.0 \
 		once_cell-1.14.0 \
 		openssl-probe-0.1.5 \
 		os_str_bytes-6.3.0 \
+		overload-0.1.1 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.8.5 \
@@ -144,6 +154,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		parse_duration-2.1.1 \
 		paste-1.0.9 \
 		pathdiff-0.2.1 \
+		pbkdf2-0.11.0 \
 		percent-encoding-2.2.0 \
 		pin-project-1.0.12 \
 		pin-project-internal-1.0.12 \
@@ -151,29 +162,30 @@ CARGO_CRATES=	ahash-0.7.6 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.25 \
 		ppv-lite86-0.2.16 \
-		pretty_env_logger-0.4.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.43 \
-		quick-error-1.2.3 \
 		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
 		redox_syscall-0.2.16 \
-		redox_termios-0.1.2 \
 		redox_users-0.4.3 \
 		regex-1.6.0 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.27 \
-		reqwest-0.11.11 \
+		reqwest-0.11.12 \
 		ring-0.16.20 \
 		rmp-0.8.11 \
 		rmp-serde-1.1.1 \
 		rpassword-7.0.0 \
+		runtime-format-0.1.2 \
+		rustc-hash-1.1.0 \
+		rustix-0.36.5 \
 		rustls-0.20.6 \
 		rustls-native-certs-0.6.2 \
 		rustls-pemfile-1.0.1 \
+		rustversion-1.0.11 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
 		schannel-0.1.20 \
@@ -185,11 +197,15 @@ CARGO_CRATES=	ahash-0.7.6 \
 		serde-1.0.145 \
 		serde_derive-1.0.145 \
 		serde_json-1.0.86 \
+		serde_path_to_error-0.1.9 \
+		serde_regex-1.1.0 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.4 \
 		sha2-0.10.6 \
 		sharded-slab-0.1.4 \
 		shellexpand-2.1.2 \
+		signal-hook-0.3.14 \
+		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.0 \
 		signature-1.6.1 \
 		slab-0.4.7 \
@@ -209,16 +225,17 @@ CARGO_CRATES=	ahash-0.7.6 \
 		subtle-2.4.1 \
 		syn-1.0.99 \
 		sync_wrapper-0.1.1 \
+		synstructure-0.12.6 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
-		termion-1.5.6 \
-		thiserror-1.0.34 \
-		thiserror-impl-1.0.34 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
 		thread_local-1.1.4 \
 		time-0.1.44 \
+		tiny-bip39-1.0.0 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.21.1 \
+		tokio-1.25.0 \
 		tokio-macros-1.8.0 \
 		tokio-rustls-0.23.4 \
 		tokio-stream-0.1.9 \
@@ -226,20 +243,20 @@ CARGO_CRATES=	ahash-0.7.6 \
 		toml-0.5.9 \
 		tower-0.4.13 \
 		tower-http-0.3.4 \
-		tower-layer-0.3.1 \
+		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
-		tracing-0.1.36 \
-		tracing-attributes-0.1.22 \
-		tracing-core-0.1.29 \
-		tracing-subscriber-0.3.15 \
+		tracing-0.1.37 \
+		tracing-attributes-0.1.23 \
+		tracing-core-0.1.30 \
+		tracing-subscriber-0.3.16 \
 		try-lock-0.2.3 \
-		tui-0.19.0 \
 		typenum-1.15.0 \
 		unicode-bidi-0.3.8 \
 		unicode-ident-1.0.3 \
 		unicode-normalization-0.1.21 \
 		unicode-segmentation-1.9.0 \
 		unicode-width-0.1.10 \
+		unicode-xid-0.2.4 \
 		unicode_categories-0.1.1 \
 		untrusted-0.7.1 \
 		url-2.3.1 \
@@ -266,12 +283,22 @@ CARGO_CRATES=	ahash-0.7.6 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.36.1 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
 		windows_aarch64_msvc-0.36.1 \
+		windows_aarch64_msvc-0.42.0 \
 		windows_i686_gnu-0.36.1 \
+		windows_i686_gnu-0.42.0 \
 		windows_i686_msvc-0.36.1 \
+		windows_i686_msvc-0.42.0 \
 		windows_x86_64_gnu-0.36.1 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
 		windows_x86_64_msvc-0.36.1 \
-		winreg-0.10.1
+		windows_x86_64_msvc-0.42.0 \
+		winreg-0.10.1 \
+		zeroize-1.5.7 \
+		zeroize_derive-1.3.3
 
 PLIST_FILES=	bin/${PORTNAME}
 
