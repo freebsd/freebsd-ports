@@ -1,6 +1,6 @@
 PORTNAME=	openai
 DISTVERSION=	0.26.5
-CATEGORIES=	misc # mechine-learning
+CATEGORIES=	misc # machine-learning
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

@@ -1,7 +1,7 @@
 PORTNAME=	wandb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.10
-CATEGORIES=	misc # mechine-learning
+CATEGORIES=	misc # machine-learning
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
