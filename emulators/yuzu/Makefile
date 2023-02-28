@@ -1,5 +1,6 @@
 PORTNAME=	yuzu
 PORTVERSION=	s20230226
+PORTREVISION=	1
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -150,11 +151,11 @@ post-patch-VAAPI-off:
 .if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h) || make(makesum) || make(fetch)
 . if !exists(/usr/include/c++/v1/__memory/concepts.h)
 USES+=		llvm:min=14,build
+PATH:=		${LLVM_PREFIX}/bin:${PATH} # XXX _CMAKE_TOOLCHAIN_SUFFIX vs. devel/llvm*
 CC=		clang${LLVM_VERSION}
 CXX=		clang++${LLVM_VERSION}
 CPP=		clang-cpp${LLVM_VERSION}
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
-OPTIONS_EXCLUDE+=	LTO # llvm-ar
 . endif
 
 # XXX Move into separate port and standardize via USES
