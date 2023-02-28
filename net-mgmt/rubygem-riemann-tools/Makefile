@@ -1,5 +1,5 @@
 PORTNAME=	riemann-tools
-DISTVERSION=	1.8.0
+DISTVERSION=	1.8.1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
