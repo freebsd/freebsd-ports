@@ -1,7 +1,6 @@
 PORTNAME=	stork
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
-PORTREVISION=	2
+DISTVERSION=	1.6.0
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -46,7 +45,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		crossbeam-channel-0.5.1 \
 		crossbeam-deque-0.8.1 \
 		crossbeam-epoch-0.9.5 \
-		crossbeam-utils-0.8.5 \
+		crossbeam-utils-0.8.8 \
 		cssparser-0.27.2 \
 		cssparser-macros-0.6.0 \
 		csv-1.1.6 \
@@ -98,7 +97,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		js-sys-0.3.55 \
 		kuchiki-0.8.1 \
 		lazy_static-1.4.0 \
-		libc-0.2.119 \
+		libc-0.2.139 \
 		linked-hash-map-0.5.4 \
 		lock_api-0.4.6 \
 		log-0.4.14 \
@@ -108,12 +107,10 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		memchr-2.3.4 \
 		memoffset-0.6.4 \
 		mime-0.3.16 \
-		mio-0.8.0 \
-		miow-0.3.7 \
+		mio-0.8.5 \
 		native-tls-0.2.8 \
 		new_debug_unreachable-1.0.4 \
 		nodrop-0.1.14 \
-		ntapi-0.3.7 \
 		num-format-0.4.0 \
 		num-traits-0.2.14 \
 		num_cpus-1.13.0 \
@@ -198,11 +195,11 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		thin-slice-0.1.1 \
 		thiserror-1.0.30 \
 		thiserror-impl-1.0.30 \
-		thread_local-1.1.3 \
+		thread_local-1.1.4 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.5.1 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.17.0 \
+		tokio-1.19.2 \
 		tokio-native-tls-0.3.0 \
 		tokio-util-0.6.9 \
 		toml-0.5.8 \
@@ -225,6 +222,7 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		walkdir-2.3.2 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.78 \
 		wasm-bindgen-backend-0.2.78 \
 		wasm-bindgen-futures-0.4.28 \
@@ -236,6 +234,14 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.42.0 \
 		winreg-0.7.0 \
 		yaml-rust-0.4.5
 
