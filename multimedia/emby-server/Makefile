@@ -29,32 +29,21 @@ BUILD_DEPENDS=	nasm:devel/nasm \
 		${LOCALBASE}/include/CL/opencl.h:devel/opencl
 LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libass.so:multimedia/libass \
-		libcairo.so:graphics/cairo \
 		libchromaprint.so:audio/chromaprint \
 		libdav1d.so:multimedia/dav1d \
 		libdrm.so:graphics/libdrm \
-		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
-		libgio-2.0.so:devel/glib20 \
-		libglib-2.0.so:devel/glib20 \
 		libgnutls.so:security/gnutls \
-		libgobject-2.0.so:devel/glib20 \
-		liblcms2.so:graphics/lcms2 \
 		libmfx.so:multimedia/intel-media-sdk \
 		libogg.so:audio/libogg \
 		libOpenCL.so:devel/ocl-icd \
-		libOpenEXR-3_1.so:graphics/openexr \
 		libopus.so:audio/opus \
-		libpango-1.0.so:x11-toolkits/pango \
-		libpangocairo-1.0.so:x11-toolkits/pango \
-		libpangoft2-1.0.so:x11-toolkits/pango \
 		libpng.so:graphics/png \
 		libraw.so:graphics/libraw \
 		libtesseract.so:graphics/tesseract \
 		libtheora.so:multimedia/libtheora \
-		libtiff.so:graphics/tiff \
 		libva.so:multimedia/libva \
 		libvorbis.so:audio/libvorbis \
 		libvpx.so:multimedia/libvpx \
@@ -62,11 +51,23 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libx264.so:multimedia/libx264 \
 		libx265.so:multimedia/x265 \
 		libzvbi.so:devel/libzvbi
+LIB_DEPENDS+=	libcairo.so:graphics/cairo \
+		libexpat.so:textproc/expat2 \
+		libgio-2.0.so:devel/glib20 \
+		libglib-2.0.so:devel/glib20 \
+		libgobject-2.0.so:devel/glib20 \
+		liblcms2.so:graphics/lcms2 \
+		libOpenEXR-3_1.so:graphics/openexr \
+		libpango-1.0.so:x11-toolkits/pango \
+		libpangocairo-1.0.so:x11-toolkits/pango \
+		libpangoft2-1.0.so:x11-toolkits/pango \
+		libtiff.so:graphics/tiff
 RUN_DEPENDS=	icu>0:devel/icu \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind
 
-USES=		compiler:c11 gettext-runtime gmake iconv jpeg localbase:ldflags pkgconfig sqlite ssl:run
+USES=		compiler:c11 gmake iconv localbase:ldflags pkgconfig sqlite ssl:run
+USES+=		jpeg gettext-runtime
 USE_GNOME=	cairo glib20 pango
 USE_RC_SUBR=	${PORTNAME}
 
