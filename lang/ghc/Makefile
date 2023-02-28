@@ -61,7 +61,7 @@ GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 PROFILE_VARS=		enable_profile=YES
 PROFILE_VARS_OFF=	enable_profile=NO
 
-GHC_VERSION?=		9.2.6
+GHC_VERSION?=		9.2.7
 LLVM_VERSION?=		12
 BOOT_GHC_VERSION=	8.10.7
 # LLVM version that bootstrap compiler uses
