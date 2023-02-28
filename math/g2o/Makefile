@@ -1,7 +1,6 @@
 PORTNAME=	g2o
-DISTVERSION=	20201223
+DISTVERSION=	20230223
 DISTVERSIONSUFFIX=	_git
-PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,19 +10,28 @@ WWW=		https://openslam-org.github.io/g2o.html
 LICENSE=	LGPL3 GPLv3
 LICENSE_COMB=	dual
 
-LIB_DEPENDS=	libcxsparse.so:math/suitesparse-cxsparse \
+LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
+		libcamd.so:math/suitesparse-camd \
+		libccolamd.so:math/suitesparse-ccolamd \
+		libcholmod.so:math/suitesparse-cholmod \
+		libcolamd.so:math/suitesparse-colamd \
+		libcxsparse.so:math/suitesparse-cxsparse \
 		libQGLViewer-qt5.so:graphics/libQGLViewer \
 		libmetis.so:math/metis \
-		libopenblas.so:math/openblas
+		libopenblas.so:math/openblas \
+		libsuitesparseconfig.so:math/suitesparse-config
+TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake compiler:c++11-lang gl eigen:3 blaslapack:netlib qt:5
-USE_GITHUB=	yes
-GH_ACCOUNT=	RainerKuemmerle
+USES=		cmake:testing compiler:c++14-lang gl eigen:3 blaslapack:netlib localbase qt:5
 USE_GL=		gl glu
 USE_QT=		core gui opengl xml widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	RainerKuemmerle
+
 CMAKE_OFF=	DO_SSE_AUTODETECT
+CMAKE_TESTING_ON=	BUILD_UNITTESTS
 
 OPTIONS_DEFINE=			FAST_MATH
 OPTIONS_SINGLE=			SIMD_${ARCH:tu}
@@ -59,5 +67,7 @@ CMAKE_ARGS+=	-DDISABLE_SSE2:BOOL=ON -DDISABLE_SSE3:BOOL=ON -DDISABLE_SSE4_1:BOOL
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
 		${WRKSRC}/cmake_modules/*.cmake
+
+# tests fail to compile, see https://github.com/RainerKuemmerle/g2o/issues/641
 
 .include <bsd.port.mk>
