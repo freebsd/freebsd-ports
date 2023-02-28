@@ -1,5 +1,5 @@
 PORTNAME=	wabt
-DISTVERSION=	1.0.30
+DISTVERSION=	1.0.32
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,16 +9,17 @@ WWW=		https://github.com/WebAssembly/wabt
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	googletest>0:devel/googletest
-
 USES=		cmake:testing localbase:ldflags python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	WebAssembly
-GH_TUPLE=	WebAssembly:testsuite:4f77306bb63151631d84f58dedf67958eb9911b9:WebAssembly_testsuite/third_party/testsuite \
-		dabeaz:ply:d776a2ece6c12bf8f8b6a0e65b48546ac6078765:dabeaz_ply/third_party/ply \
-		WebAssembly:wasm-c-api:d9a80099d496b5cdba6f3fe8fc77586e0e505ddc:WebAssembly_wasm_c_api/third_party/wasm-c-api \
-		nodejs:uvwasi:55eff19f4c7e69ec151424a037f951e0ad006ed6:nodejs_uvwasi/third_party/uvwasi
+GH_TUPLE=	dabeaz:ply:d776a2e:dabeaz_ply/third_party/ply \
+		google:googletest:703bd9c:googletest/third_party/gtest \
+		nodejs:uvwasi:55eff19:nodejs_uvwasi/third_party/uvwasi \
+		okdshin:PicoSHA2:27fcf69:picosha/third_party/picosha2 \
+		simd-everywhere:simde:97315b8:simde/third_party/simde \
+		WebAssembly:testsuite:3a04b2c:WebAssembly_testsuite/third_party/testsuite \
+		WebAssembly:wasm-c-api:d9a8009:WebAssembly_wasm_c_api/third_party/wasm-c-api
 
 CMAKE_ON=	BUILD_SHARED_LIBS USE_SYSTEM_GTEST
 CMAKE_OFF=	BUILD_TESTS
@@ -30,6 +31,7 @@ OPTIONS_SUB=		yes
 
 FUZZ_TOOLS_DESC=	Build tools that can repro fuzz bugs
 FUZZ_TOOLS_CMAKE_BOOL=	BUILD_FUZZ_TOOLS
+FUZZ_TOOLS_BROKEN=	fail to compile, see https://github.com/WebAssembly/wabt/issues/2153
 
 post-test:
 	@cd ${TEST_WRKSRC} && ./wabt-unittests
