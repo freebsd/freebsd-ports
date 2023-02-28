@@ -1,18 +1,22 @@
---- tests/examples/meson.build.orig	2022-09-13 22:41:40 UTC
+--- tests/examples/meson.build.orig	2023-01-23 19:29:34 UTC
 +++ tests/examples/meson.build
-@@ -1,20 +1,54 @@
+@@ -1,24 +1,66 @@
 -subdir('audiomixmatrix')
 -subdir('avsamplesink')
 -subdir('camerabin2')
 -subdir('codecparsers')
+-subdir('codecs')
 -subdir('d3d11')
 -subdir('directfb')
+-subdir('gtk')
 -subdir('ipcpipeline')
+-subdir('mediafoundation')
 -subdir('mpegts')
 -subdir('msdk')
 -subdir('mxf')
 -subdir('nvcodec')
 -subdir('opencv', if_found: opencv_dep)
+-subdir('qsv')
 -subdir('uvch264')
 -subdir('va')
 -subdir('waylandsink')
@@ -30,14 +34,23 @@
 +if get_option('codecparsers').enabled()
 +  subdir('codecparsers')
 +endif
++if get_option('codecs').enabled()
++  subdir('codecs')
++endif
 +if get_option('d3d11').enabled()
 +  subdir('d3d11')
 +endif
 +if get_option('directfb').enabled()
 +  subdir('directfb')
 +endif
++if get_option('gtk3').enabled()
++  subdir('gtk')
++endif
 +if get_option('ipcpipeline').enabled()
 +  subdir('ipcpipeline')
++endif
++if get_option('mediafoundation').enabled()
++  subdir('mediafoundation')
 +endif
 +if get_option('mpegts').enabled()
 +  subdir('mpegts')
@@ -53,6 +66,9 @@
 +endif
 +if get_option('opencv').enabled()
 +  subdir('opencv', if_found: opencv_dep)
++endif
++if get_option('qsv').enabled()
++  subdir('qsv')
 +endif
 +if get_option('uvch264').enabled()
 +  subdir('uvch264')

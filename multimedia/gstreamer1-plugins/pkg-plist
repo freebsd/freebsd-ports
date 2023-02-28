@@ -126,6 +126,7 @@ include/gstreamer-%%VERSION%%/gst/video/video-overlay-composition.h
 include/gstreamer-%%VERSION%%/gst/video/video-prelude.h
 include/gstreamer-%%VERSION%%/gst/video/video-resampler.h
 include/gstreamer-%%VERSION%%/gst/video/video-scaler.h
+include/gstreamer-%%VERSION%%/gst/video/video-sei.h
 include/gstreamer-%%VERSION%%/gst/video/video-tile.h
 include/gstreamer-%%VERSION%%/gst/video/video.h
 include/gstreamer-%%VERSION%%/gst/video/videodirection.h
@@ -157,9 +158,8 @@ lib/gstreamer-%%VERSION%%/libgstrawparse.so
 lib/gstreamer-%%VERSION%%/libgstsubparse.so
 lib/gstreamer-%%VERSION%%/libgsttcp.so
 lib/gstreamer-%%VERSION%%/libgsttypefindfunctions.so
-lib/gstreamer-%%VERSION%%/libgstvideoconvert.so
+lib/gstreamer-%%VERSION%%/libgstvideoconvertscale.so
 lib/gstreamer-%%VERSION%%/libgstvideorate.so
-lib/gstreamer-%%VERSION%%/libgstvideoscale.so
 lib/gstreamer-%%VERSION%%/libgstvideotestsrc.so
 lib/gstreamer-%%VERSION%%/libgstvolume.so
 lib/libgstallocators-%%VERSION%%.so

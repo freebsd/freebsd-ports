@@ -1,3 +1,4 @@
+lib/gstreamer-%%VERSION%%/libgstadaptivedemux2.so
 lib/gstreamer-%%VERSION%%/libgstalaw.so
 lib/gstreamer-%%VERSION%%/libgstalpha.so
 lib/gstreamer-%%VERSION%%/libgstalphacolor.so
@@ -45,6 +46,7 @@ lib/gstreamer-%%VERSION%%/libgstvideofilter.so
 lib/gstreamer-%%VERSION%%/libgstvideomixer.so
 lib/gstreamer-%%VERSION%%/libgstwavenc.so
 lib/gstreamer-%%VERSION%%/libgstwavparse.so
+lib/gstreamer-%%VERSION%%/libgstxingmux.so
 lib/gstreamer-%%VERSION%%/libgsty4menc.so
 %%DATADIR%%-%%VERSION%%/presets/GstIirEqualizer10Bands.prs
 %%DATADIR%%-%%VERSION%%/presets/GstIirEqualizer3Bands.prs

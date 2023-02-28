@@ -1,5 +1,5 @@
 PORTNAME=	gstreamer1-vaapi
-PORTVERSION=	1.20.5
+PORTVERSION=	1.22.0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer-vaapi/
 DISTNAME=	gstreamer-vaapi-${PORTVERSION}
@@ -26,11 +26,11 @@ OPTIONS_DEFINE=	DRM WAYLAND
 
 DRM_DESC=	Raw KMS/DRM backend
 
-DRM_MESON_OFF=	-Dwith_drm=no
+DRM_MESON_BOOL=	drm
 DRM_LIB_DEPENDS=libudev.so:devel/libudev-devd \
 		libdrm.so:graphics/libdrm
 
-WAYLAND_MESON_OFF=	-Dwith_wayland=no
+WAYLAND_MESON_BOOL=	wayland
 WAYLAND_LIB_DEPENDS=	libva-wayland.so:multimedia/libva \
 			libwayland-client.so:graphics/wayland
 

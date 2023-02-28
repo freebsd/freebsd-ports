@@ -70,7 +70,13 @@ include/gstreamer-%%VERSION%%/gst/uridownloader/gsturidownloader_debug.h
 include/gstreamer-%%VERSION%%/gst/uridownloader/uridownloader-prelude.h
 include/gstreamer-%%VERSION%%/gst/webrtc/datachannel.h
 include/gstreamer-%%VERSION%%/gst/webrtc/dtlstransport.h
+include/gstreamer-%%VERSION%%/gst/webrtc/ice.h
+include/gstreamer-%%VERSION%%/gst/webrtc/icestream.h
 include/gstreamer-%%VERSION%%/gst/webrtc/icetransport.h
+include/gstreamer-%%VERSION%%/gst/webrtc/nice/nice.h
+include/gstreamer-%%VERSION%%/gst/webrtc/nice/nice_fwd.h
+include/gstreamer-%%VERSION%%/gst/webrtc/nice/nicestream.h
+include/gstreamer-%%VERSION%%/gst/webrtc/nice/nicetransport.h
 include/gstreamer-%%VERSION%%/gst/webrtc/rtcsessiondescription.h
 include/gstreamer-%%VERSION%%/gst/webrtc/rtpreceiver.h
 include/gstreamer-%%VERSION%%/gst/webrtc/rtpsender.h
@@ -103,6 +109,7 @@ lib/gstreamer-%%VERSION%%/libgstbayer.so
 lib/gstreamer-%%VERSION%%/libgstbz2.so
 lib/gstreamer-%%VERSION%%/libgstcamerabin.so
 lib/gstreamer-%%VERSION%%/libgstcodecalpha.so
+lib/gstreamer-%%VERSION%%/libgstcodectimestamper.so
 lib/gstreamer-%%VERSION%%/libgstcoloreffects.so
 lib/gstreamer-%%VERSION%%/libgstdebugutilsbad.so
 lib/gstreamer-%%VERSION%%/libgstdvbsubenc.so
@@ -203,6 +210,9 @@ lib/libgsturidownloader-%%VERSION%%.so.%%SOVERSION%%
 lib/libgstwebrtc-%%VERSION%%.so
 lib/libgstwebrtc-%%VERSION%%.so.0
 lib/libgstwebrtc-%%VERSION%%.so.%%SOVERSION%%
+lib/libgstwebrtcnice-%%VERSION%%.so
+lib/libgstwebrtcnice-%%VERSION%%.so.0
+lib/libgstwebrtcnice-%%VERSION%%.so.%%SOVERSION%%
 libdata/pkgconfig/gstreamer-bad-audio-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-codecparsers-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-insertbin-%%VERSION%%.pc
@@ -214,6 +224,7 @@ libdata/pkgconfig/gstreamer-plugins-bad-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-sctp-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-transcoder-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-webrtc-%%VERSION%%.pc
+libdata/pkgconfig/gstreamer-webrtc-nice-%%VERSION%%.pc
 share/gir-%%VERSION%%/GstBadAudio-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstCodecs-%%VERSION%%.gir
 share/gir-%%VERSION%%/GstInsertBin-%%VERSION%%.gir

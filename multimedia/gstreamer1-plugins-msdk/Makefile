@@ -6,6 +6,8 @@ COMMENT=	GStreamer (Intel MediaSDK) plugin
 GST_PLUGIN=	msdk
 DIST=		bad
 
+CONFIGURE_ARGS=	-Dskip_gstva=false
+
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer1-plugins
 
 PLIST=  ${.CURDIR}/pkg-plist

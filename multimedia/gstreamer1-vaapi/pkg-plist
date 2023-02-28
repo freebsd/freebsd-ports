@@ -1,1 +1,2 @@
 lib/gstreamer-1.0/libgstvaapi.so
+lib/gstreamer-1.0/pkgconfig/gstvaapi.pc

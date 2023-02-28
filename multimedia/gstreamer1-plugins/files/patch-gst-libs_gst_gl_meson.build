@@ -1,6 +1,6 @@
---- gst-libs/gst/gl/meson.build.orig	2023-02-23 18:23:11 UTC
+--- gst-libs/gst/gl/meson.build.orig	2023-01-23 19:29:34 UTC
 +++ gst-libs/gst/gl/meson.build
-@@ -554,11 +554,6 @@ if need_platform_egl != 'no'
+@@ -555,11 +555,6 @@ if need_platform_egl != 'no'
      gl_platform_deps += egl_dep
      glconf.set('GST_GL_HAVE_PLATFORM_EGL', 1)
  
@@ -12,7 +12,7 @@
      egl_includes = '''
  #include <EGL/egl.h>
  #include <EGL/eglext.h>
-@@ -1058,7 +1053,7 @@ if build_gstgl
+@@ -1060,7 +1055,7 @@ if build_gstgl
      soversion : soversion,
      darwin_versions : osxversion,
      install : true,
@@ -21,12 +21,8 @@
                      gl_lib_deps, gl_platform_deps, gl_winsys_deps, gl_misc_deps],
      # don't confuse EGL/egl.h with gst-libs/gl/egl/egl.h on case-insensitive file systems
      implicit_include_directories : false)
-@@ -1069,10 +1064,10 @@ if build_gstgl
-     'gl_apis=' + ' '.join(enabled_gl_apis),
-   ]
- 
--  library_def = {'lib': pbutils}
-+  library_def = {'lib': library('gstpbutils-@0@'.format(api_version))}
+@@ -1074,7 +1069,7 @@ if build_gstgl
+   library_def = {'lib': gstgl}
    pkg_name = 'gstreamer-gl-1.0'
    pkgconfig.generate(gstgl,
 -    libraries : [gstvideo, gst_base_dep, gst_dep],
@@ -34,7 +30,7 @@
      variables : pkgconfig_variables + pkgconfig_gl_variables,
      uninstalled_variables : pkgconfig_gl_variables,
      subdirs : pkgconfig_subdirs,
-@@ -1104,7 +1099,7 @@ if build_gstgl
+@@ -1106,7 +1101,7 @@ if build_gstgl
          'includes' : ['Gst-1.0', 'GstBase-1.0', 'GstVideo-1.0'],
          'install' : true,
          'extra_args' : gir_init_section + ['--c-include=gst/gl/gl.h'],
@@ -43,16 +39,16 @@
      }
      library_def += {'gir': [gir]}
      if not static_build
-@@ -1116,7 +1111,7 @@ if build_gstgl
+@@ -1118,7 +1113,7 @@ if build_gstgl
    gstgl_dep = declare_dependency(link_with : gstgl,
      include_directories : [libsinc, compat_includes],
      sources: gen_sources,
 -    dependencies : [video_dep, gst_base_dep, gl_winsys_deps],
 +    dependencies : [dependency('gstreamer-video-1.0'), gst_base_dep, gl_winsys_deps],
      variables: pkgconfig_gl_variables)
-   gstglproto_dep = declare_dependency(dependencies : [gstgl_dep] + gl_lib_deps)
-   meson.override_dependency('gstreamer-gl-1.0', gstgl_dep)
-@@ -1144,7 +1139,7 @@ if build_gstgl
+   gstglproto_dep = declare_dependency(
+     dependencies : [gstgl_dep] + gl_lib_deps,
+@@ -1149,7 +1144,7 @@ if build_gstgl
          'includes' : ['Gst-1.0', 'GstBase-1.0', 'GstVideo-1.0'],
          'install' : true,
          'extra_args' : gir_init_section + ['--c-include=gst/gl/x11/x11.h'],
@@ -60,8 +56,8 @@
 +        'dependencies' : [dependency('gstreamer-video-1.0'), gst_dep, gst_base_dep]
        }
        gir_dict = gir + {'includes': gir['includes'] + ['GstGL-1.0']}
-       libraries += [[pkg_name, {'gir': gir_dict}]]
-@@ -1180,7 +1175,7 @@ if build_gstgl
+       gst_libraries += [[pkg_name, {'gir': gir_dict}]]
+@@ -1185,7 +1180,7 @@ if build_gstgl
          'includes' : ['Gst-1.0', 'GstBase-1.0', 'GstVideo-1.0'],
          'install' : true,
          'extra_args' : gir_init_section + ['--c-include=gst/gl/wayland/wayland.h'],
@@ -70,7 +66,7 @@
        }
  
        gir_dict = gir + {'includes': gir['includes'] + ['GstGL-1.0']}
-@@ -1216,7 +1211,7 @@ if build_gstgl
+@@ -1221,7 +1216,7 @@ if build_gstgl
          'includes' : ['Gst-1.0', 'GstBase-1.0', 'GstVideo-1.0'],
          'install' : true,
          'extra_args' : gir_init_section + ['--c-include=gst/gl/egl/egl.h'],
@@ -78,4 +74,4 @@
 +        'dependencies' : [dependency('gstreamer-video-1.0'), gst_dep, gst_base_dep]
        }
        gir_dict = gir + {'includes': gir['includes'] + ['GstGL-1.0']}
-       libraries += [[pkg_name, {'gir': gir_dict}]]
+       gst_libraries += [[pkg_name, {'gir': gir_dict}]]

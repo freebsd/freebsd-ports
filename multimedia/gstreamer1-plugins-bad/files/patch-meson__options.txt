@@ -1,6 +1,6 @@
---- meson_options.txt.orig	2022-09-04 20:24:08 UTC
+--- meson_options.txt.orig	2023-01-23 19:29:34 UTC
 +++ meson_options.txt
-@@ -1,5 +1,39 @@
+@@ -1,5 +1,41 @@ option('gst_play_tests', type: 'boolean', value: false
  option('gst_play_tests', type: 'boolean', value: false,
         description: 'Enable GstPlay tests that need network access')
 +option('adaptivedemux', type: 'feature', value: 'auto',
@@ -37,6 +37,8 @@
 +       description: 'data lib')
 +option('pkgconfig', type: 'feature', value: 'auto',
 +       description: 'pkgconfig lib')
++option('skip_gstva', type: 'boolean', value: true,
++       description: 'skip building gst-libs/gst/va, used for multimedia/gstreamer1-vaapi')
  
  # Feature options for plugins without external deps
  option('accurip', type : 'feature', value : 'auto')

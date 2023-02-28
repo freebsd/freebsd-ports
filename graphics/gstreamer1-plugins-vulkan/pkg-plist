@@ -35,6 +35,16 @@ include/gstreamer-%%VERSION%%/gst/vulkan/vulkan.h
 include/gstreamer-%%VERSION%%/gst/vulkan/vulkan_fwd.h
 include/gstreamer-%%VERSION%%/gst/vulkan/wayland/gstvkdisplay_wayland.h
 include/gstreamer-%%VERSION%%/gst/vulkan/wayland/wayland.h
+include/gstreamer-%%VERSION%%/gst/wayland/gstwl_fwd.h
+include/gstreamer-%%VERSION%%/gst/wayland/gstwlbuffer.h
+include/gstreamer-%%VERSION%%/gst/wayland/gstwlcontext.h
+include/gstreamer-%%VERSION%%/gst/wayland/gstwldisplay.h
+include/gstreamer-%%VERSION%%/gst/wayland/gstwllinuxdmabuf.h
+include/gstreamer-%%VERSION%%/gst/wayland/gstwlshmallocator.h
+include/gstreamer-%%VERSION%%/gst/wayland/gstwlvideobufferpool.h
+include/gstreamer-%%VERSION%%/gst/wayland/gstwlvideoformat.h
+include/gstreamer-%%VERSION%%/gst/wayland/gstwlwindow.h
+include/gstreamer-%%VERSION%%/gst/wayland/wayland-prelude.h
 include/gstreamer-%%VERSION%%/gst/wayland/wayland.h
 lib/girepository-%%VERSION%%/GstVulkan-%%VERSION%%.typelib
 lib/girepository-%%VERSION%%/GstVulkanWayland-%%VERSION%%.typelib

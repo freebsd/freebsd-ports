@@ -33,6 +33,7 @@ BAD_GST_ENABLED_PLUGINS=accurip \
 			codecalpha \
 			codecparsers \
 			codecs \
+			codectimestamper \
 			coloreffects \
 			data \
 			debugutils \

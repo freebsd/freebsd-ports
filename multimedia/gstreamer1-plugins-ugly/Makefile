@@ -15,7 +15,6 @@ UGLY_GST_ENABLED_PLUGINS=	asfdemux \
 				nls \
 				dvdlpcmdec \
 				dvdsub \
-				realmedia \
-				xingmux
+				realmedia
 
 .include "${MASTERDIR}/Makefile"
