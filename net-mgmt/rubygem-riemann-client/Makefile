@@ -1,9 +1,9 @@
 PORTNAME=	riemann-client
-DISTVERSION=	1.0.1
+DISTVERSION=	1.1.0
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	dch@FreeBSD.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Client for the distributed event system Riemann
 WWW=		https://github.com/riemann/riemann-ruby-client
 
