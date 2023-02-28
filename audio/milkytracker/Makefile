@@ -1,35 +1,40 @@
 PORTNAME=	milkytracker
 PORTVERSION=	1.03.00
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music creation tool inspired by Fast Tracker 2
 WWW=		https://milkytracker.titandemo.org/
 
-LICENSE=	GPLv3+ BSD3CLAUSE
+LICENSE=	BSD3CLAUSE GPLv3+
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	liblhasa.so:archivers/lhasa \
-		libzzip.so:devel/zziplib \
-		libjack.so:audio/jack
+LIB_DEPENDS=	libjack.so:audio/jack \
+		liblhasa.so:archivers/lhasa \
+		libzzip.so:devel/zziplib
 
 USES=		cmake compiler:c11 cpe sdl
-USE_GITHUB=	yes
-USE_SDL=	sdl2
-
 CPE_VENDOR=	milkytracker_project
-
+USE_GITHUB=	yes
 GH_PROJECT=	MilkyTracker
+USE_SDL=	sdl2
 
 ICONS=		carton.ico carton.png
 
-OPTIONS_DEFINE=	DOCS
-
 # ci pipeline creates transient tags
 PORTSCOUT=	ignore:1
+
+OPTIONS_DEFINE=		DOCS RTMIDI
+OPTIONS_DEFAULT=	DOCS RTMIDI
+
+RTMIDI_DESC=	MIDI input support via rtmidi
+
+RTMIDI_LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+			librtmidi.so:audio/rtmidi
+RTMIDI_CMAKE_ON=	-DENABLE_RTMIDI:BOOL=ON
 
 post-install:
 .for f in ${ICONS}
