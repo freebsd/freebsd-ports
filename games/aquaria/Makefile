@@ -39,10 +39,15 @@ CMAKE_OFF=	AQUARIA_INTERNAL_FREETYPE \
 		AQUARIA_INTERNAL_TINYXML2 \
 		AQUARIA_INTERNAL_ZLIB
 LDFLAGS+=	-Wl,--as-needed # avoid overlinking (vorbis deps)
-LDFLAGS_i386=	-Wl,-z,notext
+LDFLAGS_i386=	-Wl,-z,notext -Wl,--no-check-dynamic-relocations
 SUB_FILES=	pkg-message
 PLIST_FILES=	bin/aquaria
 PORTDATA=	*
+
+# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31 (don't forget distinfo)
+.if !exists(/usr/include/c++/v1/concepts)
+LDFLAGS_i386:=	${LDFLAGS_i386:N*no-check-dynamic-relocations*}
+.endif
 
 DESKTOP_ENTRIES="${GH_PROJECT}" \
 		"" \
