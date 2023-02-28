@@ -1,7 +1,8 @@
 PORTNAME=	tacacs
-PORTVERSION=	202206071936
+PORTVERSION=	202302261244
+DISTNAME=       DEVEL.${PORTVERSION}
 CATEGORIES=	net
-MASTER_SITES=	https://www.pro-bono-publico.de/projects/src/
+MASTER_SITES=	https://www.pro-bono-publico.de/projects/archive/
 
 MAINTAINER=	akuz84@gmail.com
 COMMENT=	TACACS+ daemon from pro-bono
