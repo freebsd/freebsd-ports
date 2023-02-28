@@ -215,8 +215,18 @@ share/help/uk/gnome-photos/view-album.page
 share/help/uk/gnome-photos/view-favorites.page
 share/help/uk/gnome-photos/view-photos.page
 share/help/uk/gnome-photos/view.page
+share/help/zh_CN/gnome-photos/favorites-set.page
+share/help/zh_CN/gnome-photos/favorites.page
+share/help/zh_CN/gnome-photos/index.page
+share/help/zh_CN/gnome-photos/legal.xml
+share/help/zh_CN/gnome-photos/media/logo1.png
+share/help/zh_CN/gnome-photos/view-album.page
+share/help/zh_CN/gnome-photos/view-favorites.page
+share/help/zh_CN/gnome-photos/view-photos.page
+share/help/zh_CN/gnome-photos/view.page
 share/icons/hicolor/scalable/apps/org.gnome.Photos.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Photos-symbolic.svg
+share/locale/ab/LC_MESSAGES/gnome-photos.mo
 share/locale/an/LC_MESSAGES/gnome-photos.mo
 share/locale/ar/LC_MESSAGES/gnome-photos.mo
 share/locale/as/LC_MESSAGES/gnome-photos.mo
@@ -249,6 +259,7 @@ share/locale/id/LC_MESSAGES/gnome-photos.mo
 share/locale/is/LC_MESSAGES/gnome-photos.mo
 share/locale/it/LC_MESSAGES/gnome-photos.mo
 share/locale/ja/LC_MESSAGES/gnome-photos.mo
+share/locale/ka/LC_MESSAGES/gnome-photos.mo
 share/locale/kk/LC_MESSAGES/gnome-photos.mo
 share/locale/km/LC_MESSAGES/gnome-photos.mo
 share/locale/kn/LC_MESSAGES/gnome-photos.mo
