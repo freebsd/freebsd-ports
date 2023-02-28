@@ -314,6 +314,7 @@ bin/@Install_IBT_DATASETS
 bin/@Install_InstaCorr_Demo
 bin/@Install_MACAQUE_DEMO
 bin/@Install_MACAQUE_DEMO_REST
+bin/@Install_MBM_Marmoset
 bin/@Install_MEICA_Demo
 bin/@Install_NIH_Marmoset
 bin/@Install_NMT
