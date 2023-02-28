@@ -12,7 +12,7 @@
 # ``make DISTVERSION=xxx.yy.zz -DNO_CHECKSUM'' should typically work.
 
 PORTNAME?=	nvidia-driver
-DISTVERSION?=	510.60.02
+DISTVERSION?=	515.86.01
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	1
 CATEGORIES=	x11
@@ -41,6 +41,8 @@ USES+=		tar:xz
 .endif
 USE_XORG=	x11 xorg-server xext
 USE_LDCONFIG=	yes
+
+PIE_UNSAFE=	yes
 
 EGL_JSON_PATH=		${PREFIX}/share/egl/egl_external_platform.d
 GLVND_JSON_PATH=	${PREFIX}/share/glvnd/egl_vendor.d
@@ -132,6 +134,10 @@ PLIST_SUB+=	EXTENSIONSDIR="@comment "
 PLIST_SUB+=	LIBGLDIR=${LIBGLDIR} LIBGLMAP="@comment "
 .else
 PLIST_SUB+=	LIBGLDIR="@comment " LIBGLMAP=""
+.endif
+
+.if ${NVVERSION} >= 515.8601
+PLIST_FILES+=	lib/libnvidia-wayland-client.so.${DISTVERSION}
 .endif
 
 CONFLICTS_INSTALL+=	nvidia-driver nvidia-driver-*
