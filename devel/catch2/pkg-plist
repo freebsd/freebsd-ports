@@ -83,6 +83,7 @@ include/catch2/internal/catch_exception_translator_registry.hpp
 include/catch2/internal/catch_fatal_condition_handler.hpp
 include/catch2/internal/catch_floating_point_helpers.hpp
 include/catch2/internal/catch_getenv.hpp
+include/catch2/internal/catch_is_permutation.hpp
 include/catch2/internal/catch_istream.hpp
 include/catch2/internal/catch_lazy_expr.hpp
 include/catch2/internal/catch_leak_detector.hpp
@@ -170,9 +171,9 @@ lib/cmake/Catch2/Catch2Targets.cmake
 lib/cmake/Catch2/CatchAddTests.cmake
 lib/cmake/Catch2/ParseAndAddCatchTests.cmake
 lib/libCatch2.so
-lib/libCatch2.so.3.3.1
+lib/libCatch2.so.3.3.2
 lib/libCatch2Main.so
-lib/libCatch2Main.so.3.3.1
+lib/libCatch2Main.so.3.3.2
 libdata/pkgconfig/catch2-with-main.pc
 libdata/pkgconfig/catch2.pc
 share/Catch2/gdbinit
