@@ -1,6 +1,5 @@
 PORTNAME=	pdk
-PORTVERSION=	2.5.0
-PORTREVISION=	2
+PORTVERSION=	2.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_RUBY30=	yes
 BROKEN_RUBY31=	yes
+BROKEN_RUBY32=	yes
 
 RUN_DEPENDS=	rubygem-bundler>=1.15.0,1<3.0.0,1:sysutils/rubygem-bundler \
 		rubygem-childprocess>=4.0.0:devel/rubygem-childprocess \
