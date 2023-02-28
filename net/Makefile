@@ -1225,6 +1225,7 @@
     SUBDIR += rfbproxy
     SUBDIR += rinetd
     SUBDIR += ripe-whois
+    SUBDIR += rosenpass
     SUBDIR += rospo
     SUBDIR += routinator
     SUBDIR += rp-pppoe
