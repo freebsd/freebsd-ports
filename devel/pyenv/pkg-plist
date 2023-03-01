@@ -676,6 +676,14 @@ libexec/pyenv-plugins/python-build/share/python-build/patches/3.3.7/Python-3.3.7
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.4.0/Python-3.4.0/010_ssl_no_ssl3.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.4.1/Python-3.4.1/010_ssl_no_ssl3.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.4.2/Python-3.4.2/010_ssl_no_ssl3.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0001-bpo-27987-pymalloc-align-by-16bytes-on-64bit-platfor.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0002-bpo-27987-align-PyGC_Head-to-alignof-long-double-GH-.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0003-bpo-45405-Prevent-internal-configure-error-when-runn.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0004-Detect-arm64-in-configure.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0005-BPO-41100-Support-macOS-11-when-building-GH-21113.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0006-bpo-41100-fix-_decimal-for-arm64-Mac-OS-GH-21228.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0007-Port-ctypes-and-system-libffi-patch-for-arm64-macOS-.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0008-bpo-36231-Support-building-on-macOS-without-usr-incl.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.2/Python-3.5.2/venv.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.6.15/Python-3.6.15/0001-Detect-arm64-in-configure.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.6.15/Python-3.6.15/0002-bpo-36231-Support-building-on-macOS-without-usr-incl.patch
@@ -685,6 +693,8 @@ libexec/pyenv-plugins/python-build/share/python-build/patches/3.6.15/Python-3.6.
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.6.15/Python-3.6.15/0006-bpo-41100-fix-_decimal-for-arm64-Mac-OS-GH-21228.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.6.15/Python-3.6.15/0007-bpo-42351-Avoid-error-when-opening-header-with-non-U.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.6.15/Python-3.6.15/0008-bpo-45405-Prevent-internal-configure-error-when-runn.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.6.15/Python-3.6.15/0009-bpo-27987-pymalloc-align-by-16bytes-on-64bit-platfor.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.6.15/Python-3.6.15/0010-bpo-27987-align-PyGC_Head-to-alignof-long-double-GH-.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.10/Python-3.7.10/0001-bpo-45405-Prevent-internal-configure-error-when-runn.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.11/Python-3.7.11/0001-bpo-45405-Prevent-internal-configure-error-when-runn.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.12/Python-3.7.12/0001-Port-ctypes-and-system-libffi-patches-for-arm64-macO.patch
