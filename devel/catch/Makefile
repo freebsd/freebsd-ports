@@ -23,6 +23,8 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	DOCS
 
+PORTSCOUT=	limit:2.*
+
 do-test:
 	${BUILD_WRKSRC}/projects/SelfTest
 
