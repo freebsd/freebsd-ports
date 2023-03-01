@@ -1,8 +1,9 @@
 PORTNAME=	libdiscid
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	audio
-MASTER_SITES=	ftp://ftp.musicbrainz.org/pub/musicbrainz/${PORTNAME}/ \
-		http://ftp.osuosl.org/pub/musicbrainz/${PORTNAME}/
+MASTER_SITES=	https://github.com/metabrainz/${PORTNAME}/releases/download/v${PORTVERSION}/ \
+		http://ftp.osuosl.org/pub/musicbrainz/${PORTNAME}/ \
+		http://ftp.eu.metabrainz.org/pub/musicbrainz/${PORTNAME}/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for creating MusicBrainz DiscIDs
