@@ -93,6 +93,7 @@ lib/erlang/man/man3/erl_epmd.3
 lib/erlang/man/man3/erl_error.3
 lib/erlang/man/man3/erl_eval.3
 lib/erlang/man/man3/erl_expand_records.3
+lib/erlang/man/man3/erl_features.3
 lib/erlang/man/man3/erl_id_trans.3
 lib/erlang/man/man3/erl_internal.3
 lib/erlang/man/man3/erl_lint.3
@@ -207,6 +208,7 @@ lib/erlang/man/man3/orddict.3
 lib/erlang/man/man3/ordsets.3
 lib/erlang/man/man3/os.3
 lib/erlang/man/man3/os_sup.3
+lib/erlang/man/man3/peer.3
 lib/erlang/man/man3/persistent_term.3
 lib/erlang/man/man3/pg.3
 lib/erlang/man/man3/pool.3
