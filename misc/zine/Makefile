@@ -1,6 +1,6 @@
 PORTNAME=	zine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.0
+DISTVERSION=	0.11.1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,9 +39,9 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		chrono-0.4.23 \
 		chrono-tz-0.6.3 \
 		chrono-tz-build-0.0.3 \
-		clap-4.1.6 \
-		clap_derive-4.1.0 \
-		clap_lex-0.3.1 \
+		clap-4.1.8 \
+		clap_derive-4.1.8 \
+		clap_lex-0.3.2 \
 		clipboard-win-4.5.0 \
 		codespan-reporting-0.11.1 \
 		convert_case-0.4.0 \
@@ -49,10 +49,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		core-foundation-sys-0.8.3 \
 		cpufeatures-0.2.5 \
 		crc32fast-1.3.2 \
-		crossbeam-channel-0.5.6 \
-		crossbeam-deque-0.8.2 \
-		crossbeam-epoch-0.9.13 \
-		crossbeam-utils-0.8.14 \
+		crossbeam-channel-0.5.7 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.14 \
+		crossbeam-utils-0.8.15 \
 		crypto-common-0.1.6 \
 		cssparser-0.27.2 \
 		cssparser-macros-0.6.0 \
@@ -132,7 +132,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		intl-memoizer-0.5.1 \
 		intl_pluralrules-7.0.2 \
 		io-lifetimes-1.0.5 \
-		is-terminal-0.4.3 \
+		is-terminal-0.4.4 \
 		itoa-0.4.8 \
 		itoa-1.0.5 \
 		js-sys-0.3.61 \
@@ -154,7 +154,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		matches-0.1.10 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
-		memoffset-0.7.1 \
+		memoffset-0.8.0 \
 		mime-0.3.16 \
 		mime_guess-2.0.4 \
 		miniz_oxide-0.6.2 \
@@ -175,7 +175,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		openssl-0.10.45 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
-		openssl-src-111.25.0+1.1.1t \
+		openssl-src-111.25.1+1.1.1t \
 		openssl-sys-0.9.80 \
 		os_str_bytes-6.4.1 \
 		parking_lot-0.12.1 \
@@ -231,7 +231,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		regex-1.7.1 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.28 \
-		remove_dir_all-0.5.3 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
@@ -262,12 +261,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		socket2-0.4.7 \
 		stable_deref_trait-1.2.0 \
 		str-buf-1.0.6 \
-		string_cache-0.8.5 \
+		string_cache-0.8.4 \
 		string_cache_codegen-0.5.2 \
 		strsim-0.10.0 \
-		syn-1.0.107 \
+		syn-1.0.109 \
 		syntect-5.0.0 \
-		tempfile-3.3.0 \
+		tempfile-3.4.0 \
 		tendril-0.4.3 \
 		tera-1.17.1 \
 		termcolor-1.2.0 \
@@ -277,9 +276,9 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
 		thread_local-1.1.7 \
-		time-0.3.19 \
+		time-0.3.20 \
 		time-core-0.1.0 \
-		time-macros-0.2.7 \
+		time-macros-0.2.8 \
 		tinystr-0.7.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
