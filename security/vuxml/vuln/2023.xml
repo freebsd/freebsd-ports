@@ -1,3 +1,57 @@
+  <vuln vid="b17bce48-b7c6-11ed-b304-080027f5fec9">
+    <topic>redis -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>7.0.9</lt></range>
+      </package>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>7.0.9.20230228</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><lt>6.2.11</lt></range>
+      </package>
+      <package>
+	<name>redis6</name>
+	<range><lt>6.0.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Redis core team	reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/3hQ1oTO4hMI">
+	  <dl>
+	    <dt>CVE-2023-25155</dt>
+	    <dd>
+	      Specially crafted SRANDMEMBER, ZRANDMEMBER, and
+	      HRANDFIELD commands can trigger an integer overflow,
+	      resulting in a runtime assertion and termination of the
+	      Redis server process.
+	    </dd>
+	    <dt>CVE-2022-36021</dt>
+	    <dd>
+	      String matching commands (like SCAN or KEYS) with a
+	      specially crafted pattern to trigger a denial-of-service
+	      attack on Redis, causing it to hang and consume 100% CPU
+	      time.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-25155</cvename>
+      <cvename>CVE-2022-36021</cvename>
+      <url>https://groups.google.com/g/redis-db/c/3hQ1oTO4hMI</url>
+    </references>
+    <dates>
+      <discovery>2023-02-28</discovery>
+      <entry>2023-03-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a75929bd-b6a4-11ed-bad6-080027f5fec9">
     <topic>emacs -- multiple vulnerabilities</topic>
     <affects>
