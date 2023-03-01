@@ -65,7 +65,7 @@ prepare_jail()
 
         _interp=$(file "$_prog" | grep -o '/libexec/ld-elf.so[0-9\.]*')
         if [ "$_interp" ]; then
-            mkdir "$jroot/libexec"
+            mkdir -p "$jroot/libexec"
             cp "$_interp" "$jroot/libexec/"
         fi
     done
