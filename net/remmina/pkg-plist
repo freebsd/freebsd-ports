@@ -136,6 +136,7 @@ share/icons/hicolor/scalable/emblems/org.remmina.Remmina-ssh-symbolic.svg
 %%NLS%%share/locale/uk/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/uz/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/uz@cyrillic/LC_MESSAGES/remmina.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/remmina.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/remmina.mo
 share/metainfo/org.remmina.Remmina.appdata.xml
