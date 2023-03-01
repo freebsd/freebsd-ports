@@ -1,7 +1,7 @@
 bin/draco_decoder
-bin/draco_decoder-1.5.5
+bin/draco_decoder-1.5.6
 bin/draco_encoder
-bin/draco_encoder-1.5.5
+bin/draco_encoder-1.5.6
 include/draco/animation/keyframe_animation.h
 include/draco/animation/keyframe_animation_decoder.h
 include/draco/animation/keyframe_animation_encoder.h
@@ -203,8 +203,8 @@ include/draco/point_cloud/point_cloud.h
 include/draco/point_cloud/point_cloud_builder.h
 lib/libdraco.a
 lib/libdraco.so
-lib/libdraco.so.7
-lib/libdraco.so.7.0.0
+lib/libdraco.so.8
+lib/libdraco.so.8.0.0
 libdata/pkgconfig/draco.pc
 share/cmake/draco/draco-config-version.cmake
 share/cmake/draco/draco-config.cmake
