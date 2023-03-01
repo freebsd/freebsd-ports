@@ -1,7 +1,6 @@
 PORTNAME=	convco
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.15
-PORTREVISION=	1
+DISTVERSION=	0.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,16 +23,16 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		block-buffer-0.10.3 \
 		cc-1.0.78 \
 		cfg-if-1.0.0 \
-		clap-4.0.32 \
-		clap_complete-4.0.7 \
-		clap_derive-4.0.21 \
-		clap_lex-0.3.0 \
+		clap-4.1.4 \
+		clap_complete-4.1.1 \
+		clap_derive-4.1.0 \
+		clap_lex-0.3.1 \
 		cmake-0.1.49 \
-		console-0.15.4 \
+		console-0.15.5 \
 		cpufeatures-0.2.5 \
 		crypto-common-0.1.6 \
 		ctrlc-3.2.4 \
-		dialoguer-0.10.2 \
+		dialoguer-0.10.3 \
 		digest-0.10.6 \
 		encode_unicode-0.3.6 \
 		errno-0.2.8 \
@@ -41,8 +40,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		fastrand-1.8.0 \
 		form_urlencoded-1.1.0 \
 		generic-array-0.14.6 \
-		gimli-0.27.0 \
-		git2-0.15.0 \
+		gimli-0.27.1 \
+		git2-0.16.1 \
 		handlebars-4.3.6 \
 		hashbrown-0.12.3 \
 		heck-0.4.0 \
@@ -50,53 +49,54 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		idna-0.3.0 \
 		indexmap-1.9.2 \
 		instant-0.1.12 \
-		io-lifetimes-1.0.3 \
+		io-lifetimes-1.0.4 \
 		is-terminal-0.4.2 \
 		itoa-1.0.5 \
 		jobserver-0.1.25 \
 		lazy_static-1.4.0 \
 		libc-0.2.139 \
-		libgit2-sys-0.14.0+1.5.0 \
+		libgit2-sys-0.14.2+1.5.1 \
 		libssh2-sys-0.2.23 \
 		libz-sys-1.1.8 \
 		linux-raw-sys-0.1.4 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		miniz_oxide-0.6.2 \
-		nix-0.26.1 \
-		object-0.30.1 \
+		nix-0.26.2 \
+		object-0.30.3 \
 		once_cell-1.17.0 \
 		openssl-sys-0.9.80 \
 		os_str_bytes-6.4.1 \
 		percent-encoding-2.2.0 \
-		pest-2.5.2 \
-		pest_derive-2.5.2 \
-		pest_generator-2.5.2 \
-		pest_meta-2.5.2 \
+		pest-2.5.4 \
+		pest_derive-2.5.4 \
+		pest_generator-2.5.4 \
+		pest_meta-2.5.4 \
 		pkg-config-0.3.26 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.49 \
+		proc-macro2-1.0.50 \
 		quote-1.0.23 \
 		redox_syscall-0.2.16 \
-		regex-1.7.0 \
+		regex-1.7.1 \
 		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
 		rustc-demangle-0.1.21 \
-		rustix-0.36.6 \
+		rustix-0.36.7 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
 		semver-1.0.16 \
 		serde-1.0.152 \
 		serde_derive-1.0.152 \
 		serde_json-1.0.91 \
-		serde_yaml-0.9.16 \
-		sha1-0.10.5 \
+		serde_yaml-0.9.17 \
+		sha2-0.10.6 \
+		shell-words-1.1.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.107 \
 		tempfile-3.3.0 \
-		termcolor-1.1.3 \
+		termcolor-1.2.0 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
 		time-0.3.17 \
@@ -106,7 +106,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tinyvec_macros-0.1.0 \
 		typenum-1.16.0 \
 		ucd-trie-0.1.5 \
-		unicode-bidi-0.3.8 \
+		unicode-bidi-0.3.10 \
 		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
@@ -120,13 +120,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.0 \
-		windows_aarch64_msvc-0.42.0 \
-		windows_i686_gnu-0.42.0 \
-		windows_i686_msvc-0.42.0 \
-		windows_x86_64_gnu-0.42.0 \
-		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.42.0 \
+		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_msvc-0.42.1 \
+		windows_i686_gnu-0.42.1 \
+		windows_i686_msvc-0.42.1 \
+		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_msvc-0.42.1 \
 		zeroize-1.5.7
 
 OPENSSLINC=	/usr/include
