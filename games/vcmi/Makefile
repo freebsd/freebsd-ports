@@ -1,5 +1,5 @@
 PORTNAME=	vcmi
-PORTVERSION=	1.1.0
+PORTVERSION=	1.1.1
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -36,7 +36,7 @@ QT_USE=		QT=buildtools:build,qmake:build,core,gui,network,widgets
 QT_CMAKE_OFF=	-DENABLE_LAUNCHER:BOOL=OFF -DENABLE_EDITOR:BOOL=OFF
 
 post-configure:
-	${SED} -e 's,@GIT_SHA1@,5278271,' ${WRKSRC}/Version.cpp.in \
+	${SED} -e 's,@GIT_SHA1@,b429f0b,' ${WRKSRC}/Version.cpp.in \
 		> ${BUILD_WRKSRC}/Version.cpp
 
 post-install-DOCS-on:
