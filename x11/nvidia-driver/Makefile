@@ -1,12 +1,11 @@
-#
 # For those wondering why this port is not under `x11-drivers' category,
 # have a look at https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=121930.
 #
 # Starting with version 1.0-7667, NVidia has dropped support for numerous
 # "legacy" GPUs.  Consult NVidia README (the Appendix) to find out whether
 # you need to use legacy driver version and install one of corresponding
-# slave ports instead (`x11/nvidia-driver-390', `x11/nvidia-driver-340',
-# or `x11/nvidia-driver-304').
+# slave ports instead (`x11/nvidia-driver-470', `x11/nvidia-driver-390',
+# `x11/nvidia-driver-340', or `x11/nvidia-driver-304').
 #
 # To simplify testing of new feature branches and beta driver versions,
 # the port aims to support building against arbitrary DISTVERSION, i.e.
@@ -86,6 +85,12 @@ SUB_LIST+=	NVGL="\# "
 NVSRC=		.
 .else
 NVSRC=		nvidia
+.endif
+
+.if ${NVVERSION} < 358.009
+SUB_LIST+=	KLDNAME=nvidia
+.else
+SUB_LIST+=	KLDNAME=nvidia-modeset
 .endif
 
 .if ${NVVERSION} < 460.039

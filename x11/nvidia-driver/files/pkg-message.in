@@ -4,13 +4,12 @@
 To use these drivers, make sure that you have loaded the NVidia kernel
 module, by running
 
-	# kldload nvidia		(or nvidia-modeset, see below)
+	# kldload %%KLDNAME%%
 
-on the command line, or by putting ``nvidia'' (or ``nvidia-modeset'',
-see below again) on ``kld_list'' variable in /etc/rc.conf, either manually
-or by running
+on the command line, or by putting ``%%KLDNAME%%'' on the ``kld_list''
+variable in /etc/rc.conf, either manually or by running
 
-	# sysrc kld_list+=nvidia	(or nvidia-modeset, see below)
+	# sysrc kld_list+=%%KLDNAME%%
 
 If you build this port with FreeBSD AGP GART driver, make sure you have
 agp.ko kernel module installed and loaded, since nvidia.ko will depend
@@ -32,17 +31,6 @@ If X.org cannot start and reports
 
 in /var/log/Xorg.0.log while actually you have ``options SYSVSHM''
 enabled in kernel, the sysctl ``kern.ipc.shmall'' should be increased.
-
-Starting with version 358.09, some important functionality of the driver
-has been broken out into a separate kernel module, nvidia-modeset.ko.
-Users that experience hangs when starting X11 server, or observe
-
-	(II) NVIDIA(0): Validated MetaModes:
-	(II) NVIDIA(0):     "NULL"
-
-in /var/log/Xorg.0.log should replace ``nvidia'' with ``nvidia-modeset''
-in their /boot/loader.conf or /etc/rc.conf configuration files, depending
-on how they prefer to load NVidia driver kernel module.
 
 See %%DOCSDIR%%/README for more information.
 EOM
