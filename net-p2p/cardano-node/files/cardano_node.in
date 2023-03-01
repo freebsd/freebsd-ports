@@ -144,7 +144,7 @@ jail_mount_devfs=yes
 jail_ip_inherit=yes
 #TODO: daemon fails with "Network.Socket.bind: permission denied" without suid ;\
 jail_prepare_inside_cmds="mkdir ./socket ;\
-                          ln -s ./jail/${jail_socket} ${_socket} ;\
+                          ln -s ${_home}/jail/${jail_socket} ${_socket} ;\
                           chmod +s ./bin/cardano-node"
 jail_nullfs_mounts="${_db} ${jail_root}/db rw \
                     ${_home}/logs ${jail_root}/logs rw"

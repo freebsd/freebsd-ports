@@ -1,6 +1,6 @@
 PORTNAME=	cardano-node
 PORTVERSION=	1.35.5
-PORTREVISION=	2
+PORTREVISION=	3
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
 CATEGORIES=	net-p2p
 
