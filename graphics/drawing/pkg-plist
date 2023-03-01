@@ -69,7 +69,7 @@ share/applications/com.github.maoschanz.drawing.desktop
 %%DATADIR%%/drawing/utilities_paths.py
 %%DATADIR%%/drawing/utilities_units.py
 %%DATADIR%%/drawing/window.py
-share/help/C/drawing/figures/icon.png
+share/help/C/drawing/figures/drawing.svg
 share/help/C/drawing/figures/screenshot_arrow.png
 share/help/C/drawing/figures/screenshot_color_editor.png
 share/help/C/drawing/figures/screenshot_color_palette.png
@@ -94,7 +94,7 @@ share/help/C/drawing/tools_selection.page
 share/help/C/drawing/tools_transform.page
 share/help/C/drawing/whats_new.page
 share/help/C/drawing/zoom_preview.page
-share/help/es/drawing/figures/icon.png
+share/help/es/drawing/figures/drawing.svg
 share/help/es/drawing/figures/screenshot_arrow.png
 share/help/es/drawing/figures/screenshot_color_editor.png
 share/help/es/drawing/figures/screenshot_color_palette.png
@@ -119,7 +119,7 @@ share/help/es/drawing/tools_selection.page
 share/help/es/drawing/tools_transform.page
 share/help/es/drawing/whats_new.page
 share/help/es/drawing/zoom_preview.page
-share/help/ru/drawing/figures/icon.png
+share/help/ru/drawing/figures/drawing.svg
 share/help/ru/drawing/figures/screenshot_arrow.png
 share/help/ru/drawing/figures/screenshot_color_editor.png
 share/help/ru/drawing/figures/screenshot_color_palette.png
@@ -144,7 +144,7 @@ share/help/ru/drawing/tools_selection.page
 share/help/ru/drawing/tools_transform.page
 share/help/ru/drawing/whats_new.page
 share/help/ru/drawing/zoom_preview.page
-share/help/tr/drawing/figures/icon.png
+share/help/tr/drawing/figures/drawing.svg
 share/help/tr/drawing/figures/screenshot_arrow.png
 share/help/tr/drawing/figures/screenshot_color_editor.png
 share/help/tr/drawing/figures/screenshot_color_palette.png
@@ -184,6 +184,7 @@ share/icons/hicolor/scalable/apps/com.github.maoschanz.drawing.svg
 %%NLS%%share/locale/fi/LC_MESSAGES/drawing.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/drawing.mo
 %%NLS%%share/locale/he/LC_MESSAGES/drawing.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/drawing.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/drawing.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/drawing.mo
 %%NLS%%share/locale/id/LC_MESSAGES/drawing.mo
