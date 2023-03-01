@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.23.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -48,7 +48,6 @@ SUB_LIST+=	WWWOWN=${WWWOWN} \
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--with-cc-opt="-I ${LOCALBASE}/include" \
-		--with-ld-opt="-L ${LOCALBASE}/lib" \
 		--conf-path=${ETCDIR}/nginx.conf \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
@@ -83,14 +82,10 @@ OPTIONS_DEFINE=		DEBUG DEBUGLOG DSO FILE_AIO IPV6 NJS NJS_XML THREADS WWW
 OPTIONS_DEFAULT?=	DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
 		HTTP_DAV HTTP_FLV HTTP_GUNZIP_FILTER HTTP_GZIP_STATIC HTTP_MP4 \
 		HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK HTTP_SLICE HTTP_SSL \
-		HTTP_STATUS HTTP_SUB HTTPV2 MAIL MAIL_SSL PCRE_ONE STREAM \
+		HTTP_STATUS HTTP_SUB HTTPV2 MAIL MAIL_SSL STREAM \
 		STREAM_REALIP STREAM_SSL STREAM_SSL_PREREAD THREADS WWW
 
-OPTIONS_RADIO+=		PCRE
-OPTIONS_RADIO_PCRE=	PCRE_ONE PCRE_TWO
-PCRE_ONE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PCRE_ONE_CONFIGURE_ON=	--without-pcre2
-PCRE_TWO_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
 OPTIONS_SUB=	yes
 
@@ -235,11 +230,6 @@ CFLAGS+=	-DNDEBUG
 CFLAGS+=	-Wno-compound-token-split-by-macro
 .endif
 
-.if empty(PORT_OPTIONS:MPCRE_ONE) && empty(PORT_OPTIONS:MPCRE_TWO)
-IGNORE=		required at least PCRE_ONE or PCRE_TWO \
-		to be defined. Please do 'make config' again
-.endif
-
 .if ${PORT_OPTIONS:MHTTPV3} && \
     (empty(PORT_OPTIONS:MHTTPV3_BORING) && \
      empty(PORT_OPTIONS:MHTTPV3_LSSL) && \
@@ -248,8 +238,13 @@ IGNORE=		required HTTPV3_BORING or HTTPV3_LSSL or HTTPV3_QTLS \
 		to be defined. Please do 'make config' again
 .endif
 
-.if ${PORT_OPTIONS:MPCRE_ONE}
-NJS_CONFIGURE_ARGS=	--no-pcre2
+.if empty(PORT_OPTIONS:MDYNAMIC_HC) && empty(PORT_OPTIONS:MLUA) && \
+    empty(PORT_OPTIONS:MMODSECURITY3) && empty(PORT_OPTIONS:MPASSENGER) && \
+    empty(PORT_OPTIONS:MSMALL_LIGHT)
+CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib"
+.else
+CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre"
+LIB_DEPENDS+=		libpcre.so:devel/pcre
 .endif
 
 .if empty(PORT_OPTIONS:MNJS_XML)
