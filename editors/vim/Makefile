@@ -1,5 +1,5 @@
 PORTNAME=	vim
-PORTVERSION=	9.0.1271
+PORTVERSION=	9.0.1366
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 
@@ -168,6 +168,9 @@ post-patch:
 post-configure:
 # Needed when devel/libsysinfo is installed:
 	${REINPLACE_CMD} -e '/^#define HAVE_SYSINFO/ d' ${WRKSRC}/src/auto/config.h
+
+do-test:
+	${DO_MAKE_BUILD} -C ${WRKSRC} test
 
 .if ${FLAVOR:U} == tiny
 do-install:
