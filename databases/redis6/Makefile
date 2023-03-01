@@ -1,6 +1,5 @@
 PORTNAME=	redis
-PORTVERSION=	6.0.17
-PORTREVISION=	3
+PORTVERSION=	6.0.18
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 PKGNAMESUFFIX=	6
