@@ -7,6 +7,8 @@ lib/libgranite-7.so.%%DISTVERSION%%
 libdata/pkgconfig/granite-7.pc
 share/applications/io.elementary.granite-7.demo.desktop
 share/gir-1.0/Granite-7.0.gir
+share/icons/hicolor/48x48/apps/io.elementary.granite-7.svg
+share/icons/hicolor/48x48@2/apps/io.elementary.granite-7.svg
 share/locale/aa/LC_MESSAGES/granite-7.mo
 share/locale/ab/LC_MESSAGES/granite-7.mo
 share/locale/ace/LC_MESSAGES/granite-7.mo
