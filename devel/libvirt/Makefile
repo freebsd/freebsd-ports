@@ -83,6 +83,7 @@ MESON_ARGS+=	\
 		-Dcapng=disabled \
 		-Ddriver_hyperv=disabled \
 		-Ddriver_interface=disabled \
+		-Ddriver_libxl=disabled \
 		-Ddriver_lxc=disabled \
 		-Ddriver_openvz=disabled \
 		-Ddriver_remote=enabled \
