@@ -3,10 +3,6 @@
 @group www
 @owner www
 @sample %%WWWDIR%%/application/config/config.php.sample
-%%WWWDIR%%/.codeclimate.yml
-%%WWWDIR%%/.csslintrc
-%%WWWDIR%%/.eslintignore
-%%WWWDIR%%/.eslintrc.yml
 %%WWWDIR%%/.github/ISSUE_TEMPLATE/bug_report.md
 %%WWWDIR%%/.github/workflows/ci.yaml
 %%WWWDIR%%/.htaccess
@@ -18,8 +14,6 @@
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/application/Entity/Job.php
-%%WWWDIR%%/application/Entity/log.php
-%%WWWDIR%%/application/Entity/user.php
 %%WWWDIR%%/application/assets/css/default.css
 %%WWWDIR%%/application/assets/images/bacula-web-logo.png
 %%WWWDIR%%/application/assets/js/default.js
@@ -27,7 +21,6 @@
 %%WWWDIR%%/application/assets/protected/.htaccess
 %%WWWDIR%%/application/config/.htaccess
 %%WWWDIR%%/application/config/application.php
-%%WWWDIR%%/application/libs/fileconfig.class.php
 %%WWWDIR%%/application/locale/be/LC_MESSAGES/messages.mo
 %%WWWDIR%%/application/locale/be/LC_MESSAGES/messages.po
 %%WWWDIR%%/application/locale/be_BY/LC_MESSAGES/messages.mo
@@ -75,47 +68,13 @@
 %%WWWDIR%%/application/tables/PoolTable.php
 %%WWWDIR%%/application/tables/UserTable.php
 %%WWWDIR%%/application/tables/VolumeTable.php
-%%WWWDIR%%/application/views/backupjob.view.php
 %%WWWDIR%%/application/views/cache/README
-%%WWWDIR%%/application/views/client.view.php
-%%WWWDIR%%/application/views/dashboard.view.php
-%%WWWDIR%%/application/views/directors.view.php
-%%WWWDIR%%/application/views/jobfiles.php
-%%WWWDIR%%/application/views/joblogs.view.php
-%%WWWDIR%%/application/views/jobs.view.php
-%%WWWDIR%%/application/views/login.view.php
-%%WWWDIR%%/application/views/pools.view.php
-%%WWWDIR%%/application/views/settings.view.php
-%%WWWDIR%%/application/views/templates/backupjob-report.tpl
-%%WWWDIR%%/application/views/templates/client-report.tpl
-%%WWWDIR%%/application/views/templates/dashboard.tpl
-%%WWWDIR%%/application/views/templates/directors.tpl
-%%WWWDIR%%/application/views/templates/footer.tpl
-%%WWWDIR%%/application/views/templates/header.tpl
-%%WWWDIR%%/application/views/templates/jobfiles.tpl
-%%WWWDIR%%/application/views/templates/joblogs.tpl
-%%WWWDIR%%/application/views/templates/jobs.tpl
 %%WWWDIR%%/application/views/templates/layouts/default.tpl
-%%WWWDIR%%/application/views/templates/login.tpl
-%%WWWDIR%%/application/views/templates/pagination.tpl
-%%WWWDIR%%/application/views/templates/pools.tpl
-%%WWWDIR%%/application/views/templates/settings.tpl
-%%WWWDIR%%/application/views/templates/test.tpl
-%%WWWDIR%%/application/views/templates/usersettings.tpl
-%%WWWDIR%%/application/views/templates/volumes.tpl
-%%WWWDIR%%/application/views/test.view.php
-%%WWWDIR%%/application/views/usersettings.view.php
-%%WWWDIR%%/application/views/volumes.view.php
 %%WWWDIR%%/bwc
 %%WWWDIR%%/composer.json
-%%WWWDIR%%/composer.lock
 %%WWWDIR%%/console.php
 %%WWWDIR%%/core/Exception/NotAuthorizedException.php
 %%WWWDIR%%/core/Exception/PageNotFoundException.php
-%%WWWDIR%%/core/app/cerrorhandler.class.php
-%%WWWDIR%%/core/app/cview.class.php
-%%WWWDIR%%/core/app/userauth.class.php
-%%WWWDIR%%/core/app/webapplication.class.php
 %%WWWDIR%%/core/bootstrap.php
 %%WWWDIR%%/core/const.inc.php
 %%WWWDIR%%/core/db/Database.php
@@ -126,7 +85,6 @@
 %%WWWDIR%%/core/graph/chart.class.php
 %%WWWDIR%%/core/helpers/sanitizer.php
 %%WWWDIR%%/core/i18n/ctranslation.class.php
-%%WWWDIR%%/core/utils/ConfigFileException.php
 %%WWWDIR%%/core/utils/cutils.class.php
 %%WWWDIR%%/core/utils/datetimeutil.class.php
 %%WWWDIR%%/core/utils/file.class.php
@@ -147,13 +105,9 @@
 %%WWWDIR%%/docs/source/02_install/installcomposer.rst
 %%WWWDIR%%/docs/source/02_install/lighttpd-installation.rst
 %%WWWDIR%%/docs/source/02_install/nginx-installation.rst
-%%WWWDIR%%/docs/source/02_install/overview.rst
 %%WWWDIR%%/docs/source/02_install/requirements.rst
 %%WWWDIR%%/docs/source/02_install/test.rst
 %%WWWDIR%%/docs/source/02_install/upgrade.rst
-%%WWWDIR%%/docs/source/03_gethelp/faq.rst
-%%WWWDIR%%/docs/source/03_gethelp/index.rst
-%%WWWDIR%%/docs/source/03_gethelp/support.rst
 %%WWWDIR%%/docs/source/04_contribute/development.rst
 %%WWWDIR%%/docs/source/04_contribute/index.rst
 %%WWWDIR%%/docs/source/04_contribute/translations.rst
