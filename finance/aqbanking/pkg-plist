@@ -2,6 +2,7 @@ bin/aqbanking-cli
 bin/aqbanking-config
 %%EBICS%%bin/aqebics-tool
 bin/aqhbci-tool4
+bin/aqofxconnect-tool
 bin/aqpaypal-tool
 include/aqbanking6/aqbanking/account_type.h
 include/aqbanking6/aqbanking/banking.h

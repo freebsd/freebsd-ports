@@ -1,7 +1,7 @@
 PORTNAME=	aqbanking
-PORTVERSION=	6.5.3
+PORTVERSION=	6.5.4
 CATEGORIES=	finance
-MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/467/
+MASTER_SITES=	https://www.aquamaniac.de/rdm/attachments/download/499/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Online banking interface and financial data framework
