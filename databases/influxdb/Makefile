@@ -1,7 +1,7 @@
 PORTNAME=	influxdb
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.10
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	databases net-mgmt
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -12,6 +12,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe go:modules
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:sys:v0.5.0:sys
 
 CPE_VENDOR=	influxdata
 
@@ -61,6 +63,10 @@ SUB_LIST+=	INFLUXD_LOGCMD="daemon"
 .else
 SUB_LIST+=	INFLUXD_LOGCMD="logger"
 .endif
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 do-build-MANPAGES-on:
 	@cd ${WRKSRC}/man && ${SETENV} ${MAKE_ENV} ${MAKE_CMD}
