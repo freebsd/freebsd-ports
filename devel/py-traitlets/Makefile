@@ -1,5 +1,5 @@
 PORTNAME=	traitlets
-DISTVERSION=	5.8.0
+DISTVERSION=	5.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,19 +11,14 @@ WWW=		https://github.com/ipython/traitlets
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython_genutils>0:devel/py-ipython_genutils@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=2.0:devel/py-argcomplete@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pre-commit>0:devel/py-pre-commit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
-
-# upstream stopped providing setup.py
-post-patch:
-	@${ECHO_CMD} 'import setuptools; setuptools.setup()' > ${WRKSRC}/setup.py
-
-post-install:
-	@${REINPLACE_CMD} -i '' -e 's|Version: .*|Version: ${DISTVERSION}|' ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/traitlets-*/PKG-INFO
 
 .include <bsd.port.mk>
