@@ -2,6 +2,9 @@ PORTNAME=	eio
 DISTVERSION=	3.0.0RC4
 CATEGORIES=	devel
 
+PATCH_SITES=	https://github.com/rosmanov/pecl-eio/commit/
+PATCHFILES=	dd8ef9359ea01bcd84b7b13d7ef1ef3b047a099a.patch:-p1
+
 MAINTAINER=	gasol.wu@gmail.com
 COMMENT=	Provides interface to the libeio library
 WWW=		https://pecl.php.net/package/eio
