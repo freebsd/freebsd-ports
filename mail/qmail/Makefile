@@ -13,9 +13,6 @@ WWW?=		https://cr.yp.to/qmail.html
 
 DIST_SUBDIR=	qmail
 
-DEPRECATED=	use a maintained software instead
-EXPIRATION_DATE=2023-08-31
-
 CONFLICTS?=	qmail-ldap *qmail-mysql qmail-spamcontrol *qmail-tls
 CONFLICTS+=	qmail-vida
 
