@@ -1,4 +1,4 @@
-TIMESTAMP = 1637203019
+TIMESTAMP = 1677749671
 SHA256 (knqyf263-pet-v0.4.0_GH0.tar.gz) = 3161b5a5dd030fd721164faf80b4cadd5edd1be693d5e4c66b7adc3e82a6405c
 SIZE (knqyf263-pet-v0.4.0_GH0.tar.gz) = 2742248
 SHA256 (BurntSushi-toml-v0.3.0_GH0.tar.gz) = 2c49390424cfb043f803977bce80b1504495bada54f9e845ff8b30a05fab9a36
@@ -29,8 +29,8 @@ SHA256 (golang-protobuf-v1.2.0_GH0.tar.gz) = 157a148ae4e132eb169ec794b6cb43f1002
 SIZE (golang-protobuf-v1.2.0_GH0.tar.gz) = 332565
 SHA256 (golang-sync-036812b2e83c_GH0.tar.gz) = 75ac8fc16bdceb2496c4a9cc98584b70c29032d91a9e57a624acb073e3232fda
 SIZE (golang-sync-036812b2e83c_GH0.tar.gz) = 18752
-SHA256 (golang-sys-0a5406a5449c_GH0.tar.gz) = 9b5a0f119e6739fa4c131c374bb80d4e73e2e741da84439ce05c8703f416b177
-SIZE (golang-sys-0a5406a5449c_GH0.tar.gz) = 1224892
+SHA256 (golang-sys-v0.5.0_GH0.tar.gz) = 810c8f1b7704674971ab6b2b614aba20a5a1765018fd2c639f528dbbcbf88b1f
+SIZE (golang-sys-v0.5.0_GH0.tar.gz) = 1429723
 SHA256 (golang-time-555d28b269f0_GH0.tar.gz) = 8ce368da65025dad4e4ed302a5835e2b3579f3a111721f9b275803519a5d10b3
 SIZE (golang-time-555d28b269f0_GH0.tar.gz) = 9577
 SHA256 (google-go-github-v15.0.0_GH0.tar.gz) = b567899f55ff36e5795bc40959417c93a2354c3f4adc30fcffcbc8686c3a6529
