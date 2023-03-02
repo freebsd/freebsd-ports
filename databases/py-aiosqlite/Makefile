@@ -10,11 +10,14 @@ WWW=		https://pypi.python.org/pypi/aiosqlite
 
 LICENSE=	MIT
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>2:devel/py-flit-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
+MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
 .include <bsd.port.mk>
