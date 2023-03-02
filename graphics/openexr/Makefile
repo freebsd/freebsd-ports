@@ -1,5 +1,6 @@
 PORTNAME=	openexr
 PORTVERSION=	3.1.5
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
