@@ -5,6 +5,9 @@ CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/gthumb/-/commit/
+PATCHFILES=	2133520496afd179702953a5d07aa99b5209f9cf.patch:-p1 #Fix build with libraw >= 0.21.0
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Image viewer and browser for the GNOME environment
 WWW=		https://wiki.gnome.org/Apps/gthumb/
