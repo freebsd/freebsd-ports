@@ -1,49 +1,34 @@
---- install.sh.orig	2022-12-06 05:41:43 UTC
+--- install.sh.orig	2023-02-25 08:04:14 UTC
 +++ install.sh
-@@ -142,9 +142,9 @@ function printdirerror {
-     fi
- }
- 
--installdircode=$(checkdir $installdir)
--bindircode=$(checkdir $bindir)
--artdircode=$(checkdir $artdir)
-+installdircode=$(checkdir $DESTDIR$installdir)
-+bindircode=$(checkdir $DESTDIR$bindir)
-+artdircode=$(checkdir $DESTDIR$artdir)
- 
- printdirerror $installdircode $installdir
- printdirerror $bindircode $bindir
-@@ -162,8 +162,8 @@ installerdir="${0:a:h}"
- 
- # Copy bin files
- cd $installerdir/bin
--cp arttime $bindir/arttime
--cp artprint $bindir/artprint
-+cp arttime $DESTDIR$bindir/arttime
-+cp artprint $DESTDIR$bindir/artprint
- 
- # Copy share files
- cd $installerdir/share/arttime/textart
-@@ -179,10 +179,10 @@ for ((i = 1; i <= $artfilearraysize; i++)); do
-         oldmessage='"Custom message for art goes here"'
-         oldmessage="$(head -n1 $artdir/$file)"
-         newart="$(tail -n +2 $file)"
--        printf '%s\n' "$oldmessage" >$artdir/$file
--        printf '%s\n' "$newart" >>$artdir/$file
-+        printf '%s\n' "$oldmessage" >$DESTDIR$artdir/$file
-+        printf '%s\n' "$newart" >>$DESTDIR$artdir/$file
-     else
--        cp $file $artdir/$file
-+        cp $file $DESTDIR$artdir/$file
-     fi
-     percentdone=$(((i-1.0)/(artfilearraysize-1.0)*100.0))
-     [[ $percentdone -lt 1 ]] && percentdone="0"
-@@ -227,6 +227,8 @@ elif [[ $machine =~ ^Darwin.*$ ]]; then
+@@ -276,30 +276,5 @@ elif [[ $machine =~ ^Darwin.*$ ]]; then
      echo "[4mNote[0m: Notification settings on macOS are not fully in control of an application.\n      To check if you have desired notification settings, open following link.\n      https://github.com/poetaman/arttime/issues/11"
  fi
  
-+echoti cnorm
+-# Check if path to arttime excutable is on user's $PATH
+-if [[ ":$PATH:" == *":$bindir:"* ]]; then
+-    echo "Installation complete!\nType 'arttime' and press Enter to start arttime."
+-else
+-    loginshell=$(basename "${SHELL}")
+-    if [[ $loginshell == *zsh* ]]; then
+-        profile='.zshrc'
+-    elif [[ $loginshell == *bash* ]]; then
+-        #if [[ -e $HOME/.bash_profile ]]; then
+-        #    profile='.bash_profile'
+-        #else
+-        #    profile='.profile'
+-        #fi
+-        profile=".bashrc"
+-    else
+-        profile=''
+-    fi
+-    if [[ ! -z $profile ]]; then
+-        echo "\n# Following line was automatically added by arttime installer" >>$HOME/$profile
+-        echo 'export PATH='"$bindir"':$PATH' >>$HOME/$profile
+-        echo 'Note: Added export PATH='"$bindir"':$PATH to ~/'"$profile"
+-        echo "Installation complete!\nSource ~/$profile or restart terminal. Then type 'arttime' and press Enter to start arttime."
+-    else
+-        echo "Installation [31m*[0malmost[31m*[0m complete! To start using arttime, follow these steps:\n    1) Add $bindir to your PATH environment variable in appropriate file,\n    2) Open a new terminal session, type 'arttime' and press Enter.\nTo run it right away from this shell, execute arttime by specifying its full path:\n       $bindir/arttime"
+-    fi
+-fi
+ echoti cnorm
 +exit 0
- # Check if path to arttime excutable is on user's $PATH
- if [[ ":$PATH:" == *":$bindir:"* ]]; then
-     echo "Installation complete!\nType 'arttime' and press Enter to start arttime."

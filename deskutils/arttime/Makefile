@@ -1,5 +1,5 @@
 PORTNAME=	arttime
-PORTVERSION=	1.9.8
+PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -21,6 +21,7 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
-	${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${WRKSRC}/install.sh --prefix ${PREFIX}
+	${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${WRKSRC}/install.sh \
+		--prefix ${STAGEDIR}${PREFIX}
 
 .include <bsd.port.mk>

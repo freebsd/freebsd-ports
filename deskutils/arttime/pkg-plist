@@ -1,5 +1,28 @@
 bin/artprint
 bin/arttime
+%%DATADIR%%/keypoems/anim.apple
+%%DATADIR%%/keypoems/anim.bear
+%%DATADIR%%/keypoems/anim.kissingcats
+%%DATADIR%%/keypoems/anim.knotscolored
+%%DATADIR%%/keypoems/anim.military
+%%DATADIR%%/keypoems/anim.monalisa
+%%DATADIR%%/keypoems/anim.more_8b
+%%DATADIR%%/keypoems/anim.vacation
+%%DATADIR%%/keypoems/anim.winnepooh
+%%DATADIR%%/keypoems/config.helloworld_8b
+%%DATADIR%%/keypoems/learn.welcome_8b
+%%DATADIR%%/keypoems/message.czechlife_8b
+%%DATADIR%%/keypoems/story.batscovid_8b
+%%DATADIR%%/keypoems/timer.apple6etc
+%%DATADIR%%/keypoems/timer.apple6learn_8b
+%%DATADIR%%/keypoems/timer.banana10etc
+%%DATADIR%%/keypoems/timer.banana10etc_8b
+%%DATADIR%%/keypoems/timer.banana10learn_8b
+%%DATADIR%%/keypoems/timer.helloworld_8b
+%%DATADIR%%/keypoems/timer.pomodoro4
+%%DATADIR%%/keypoems/timer.pomodoro4etc
+%%DATADIR%%/keypoems/timer.pomodoro4learn_8b
+%%DATADIR%%/src/arttime.zsh
 %%DATADIR%%/textart/1bit
 %%DATADIR%%/textart/8bits
 %%DATADIR%%/textart/abstractbeams
@@ -16,6 +39,8 @@ bin/arttime
 %%DATADIR%%/textart/asciiasskey3
 %%DATADIR%%/textart/asciiasskey4
 %%DATADIR%%/textart/badger
+%%DATADIR%%/textart/banana
+%%DATADIR%%/textart/barf
 %%DATADIR%%/textart/basketball
 %%DATADIR%%/textart/basketball2
 %%DATADIR%%/textart/basketball3
@@ -91,6 +116,7 @@ bin/arttime
 %%DATADIR%%/textart/dental
 %%DATADIR%%/textart/desktop
 %%DATADIR%%/textart/desktop2
+%%DATADIR%%/textart/doctor
 %%DATADIR%%/textart/dog
 %%DATADIR%%/textart/dog2
 %%DATADIR%%/textart/dog3
@@ -130,6 +156,7 @@ bin/arttime
 %%DATADIR%%/textart/fire
 %%DATADIR%%/textart/firemen
 %%DATADIR%%/textart/fish
+%%DATADIR%%/textart/fizzer
 %%DATADIR%%/textart/floorplan
 %%DATADIR%%/textart/footsteps
 %%DATADIR%%/textart/fractals
@@ -149,6 +176,7 @@ bin/arttime
 %%DATADIR%%/textart/golf2
 %%DATADIR%%/textart/gorilla
 %%DATADIR%%/textart/gravity
+%%DATADIR%%/textart/greed
 %%DATADIR%%/textart/groupphoto
 %%DATADIR%%/textart/guitar
 %%DATADIR%%/textart/guitar2
@@ -323,6 +351,7 @@ bin/arttime
 %%DATADIR%%/textart/poem_surfing
 %%DATADIR%%/textart/pointsettias
 %%DATADIR%%/textart/pointsettias2
+%%DATADIR%%/textart/pomodoro
 %%DATADIR%%/textart/prayer
 %%DATADIR%%/textart/pride50
 %%DATADIR%%/textart/pride50_30
@@ -339,6 +368,8 @@ bin/arttime
 %%DATADIR%%/textart/recycle
 %%DATADIR%%/textart/recycle2
 %%DATADIR%%/textart/rice
+%%DATADIR%%/textart/rip
+%%DATADIR%%/textart/rip2
 %%DATADIR%%/textart/robot
 %%DATADIR%%/textart/robot2
 %%DATADIR%%/textart/robot3
@@ -394,6 +425,7 @@ bin/arttime
 %%DATADIR%%/textart/sunset
 %%DATADIR%%/textart/supermario
 %%DATADIR%%/textart/swatchbook
+%%DATADIR%%/textart/syringe
 %%DATADIR%%/textart/taco
 %%DATADIR%%/textart/tajmahal
 %%DATADIR%%/textart/tank
@@ -534,6 +566,7 @@ bin/arttime
 %%DATADIR%%/textart/woodpecker
 %%DATADIR%%/textart/worldfair
 %%DATADIR%%/textart/worldmap
+%%DATADIR%%/textart/worldmap2
 %%DATADIR%%/textart/www
 %%DATADIR%%/textart/yinyang
 %%DATADIR%%/textart/zebra
