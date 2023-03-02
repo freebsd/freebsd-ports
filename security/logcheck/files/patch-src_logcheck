@@ -1,4 +1,4 @@
---- src/logcheck.orig	2023-02-13 01:15:18 UTC
+--- src/logcheck.orig	2023-03-02 08:19:09 UTC
 +++ src/logcheck
 @@ -24,16 +24,16 @@
  
@@ -72,7 +72,25 @@
  						rulefile="$(basename "$rulefile")"
  						if [ -f "${dir}/${rulefile}" ]; then
  								debug "cleanrules: ${dir}/${rulefile} -> $cleaned/$rulefile"
-@@ -616,9 +616,9 @@ fi
+@@ -503,7 +503,7 @@ logoutput() {
+ 										 >> "$TMPDIR/report" || error "Could not write message about first-time check of journal to report"
+ 								echo "Only recent entries (from the last 5 hours) will be checked" \
+ 										 >> "$TMPDIR/report" || error "Could not write message about first-time check of journal to report"
+-								echo "If you do not wish to check the systemd journal, please see /etc/logcheck/logcheck.logfiles.d/journal.logfiles" \
++								echo "If you do not wish to check the systemd journal, please see %%ETCDIR%%/logcheck.logfiles.d/journal.logfiles" \
+ 										 >> "$TMPDIR/report" || error "Could not write message about first-time check of journal to report"
+ 								offsettime="--since=-5h"
+ 						fi
+@@ -587,7 +587,7 @@ debug "Sourcing - $CONFFILE"
+ 
+ # Now source the config file - before things that should not be changed
+ if [ -r "$CONFFILE" ]; then
+-		# shellcheck source=/etc/logcheck/logcheck.conf
++		# shellcheck source=%%ETCDIR%%/logcheck.conf
+ 		. "$CONFFILE"
+ elif [ -f "$CONFFILE" ]; then
+ 		error  "Config file $CONFFILE could not be read"
+@@ -618,9 +618,9 @@ fi
  
  # HOSTNAME is either 'fully qualified' or 'short'
  if [ "$FQDN" -eq 1 ]; then
@@ -84,7 +102,7 @@
  fi
  
  # Now check for the other options
-@@ -723,8 +723,8 @@ else
+@@ -725,8 +725,8 @@ else
  fi
  
  # Create a secure temporary working directory (or exit)

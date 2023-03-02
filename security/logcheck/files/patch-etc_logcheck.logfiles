@@ -1,4 +1,4 @@
---- etc/logcheck.logfiles.orig	2023-02-10 21:19:27 UTC
+--- etc/logcheck.logfiles.orig	2023-03-01 22:30:51 UTC
 +++ etc/logcheck.logfiles
 @@ -1,10 +1,10 @@
  ## Logs that will be checked by logcheck
@@ -8,7 +8,7 @@
 +# end in '.logfiles') under %%ETCDIR%%/logcheck.logfiles.d/
  #
  # It is recommended that you put local settings into
--# /etc/logcheck.d/local.logfiles instead of editing this file
+-# /etc/logcheck/logcheck.logfiles.d/local.logfiles instead of editing this file
 +# %%ETCDIR%%/logcheck.logfiles.d/local.logfiles instead of editing this file
  #
  # Each line should be:
