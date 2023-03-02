@@ -1,4 +1,4 @@
-TIMESTAMP = 1677552293
+TIMESTAMP = 1677740349
 SHA256 (rust/crates/ahash-0.7.6.crate) = fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47
 SIZE (rust/crates/ahash-0.7.6.crate) = 38030
 SHA256 (rust/crates/aho-corasick-0.7.19.crate) = b4f55bd91a0978cbfd91c457a164bab8b4001c833b7f323132c0a4e1922dd44e
@@ -567,5 +567,5 @@ SHA256 (rust/crates/zeroize-1.5.7.crate) = c394b5bd0c6f669e7275d9c20aa90ae064cb2
 SIZE (rust/crates/zeroize-1.5.7.crate) = 18861
 SHA256 (rust/crates/zeroize_derive-1.3.3.crate) = 44bf07cb3e50ea2003396695d58bf46bc9887a1f362260446fad6bc4e79bd36c
 SIZE (rust/crates/zeroize_derive-1.3.3.crate) = 10380
-SHA256 (ellie-atuin-v13.0.0_GH0.tar.gz) = 885cfe080cbc421b42b7a8b86d854f7e4abcb5c124f009f0871c9c72a3bc122e
-SIZE (ellie-atuin-v13.0.0_GH0.tar.gz) = 853774
+SHA256 (ellie-atuin-v13.0.1_GH0.tar.gz) = c012ae65b7093954bc2d614633223f181261208ca282a409f245040f6ad976a1
+SIZE (ellie-atuin-v13.0.1_GH0.tar.gz) = 853857
