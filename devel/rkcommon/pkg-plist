@@ -6,7 +6,9 @@ include/rkcommon/containers/FlatMap.h
 include/rkcommon/containers/TransactionalBuffer.h
 include/rkcommon/containers/aligned_allocator.h
 include/rkcommon/math/AffineSpace.h
+include/rkcommon/math/AffineSpace.ih
 include/rkcommon/math/LinearSpace.h
+include/rkcommon/math/LinearSpace.ih
 include/rkcommon/math/Quaternion.h
 include/rkcommon/math/arm/emulation.h
 include/rkcommon/math/arm/sse2neon.h
