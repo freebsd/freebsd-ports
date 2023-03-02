@@ -17770,3 +17770,4 @@ print/harfbuzz-hb-view|print/harfbuzz-cairo|2023-02-23|Match feature and library
 sysutils/screenfetch-nox11|sysutils/screenfetch@nox11|2023-02-23|Converted to flavor
 editors/r7-office|editors/linux-r7-office|2023-02-25|Follow the naming scheme of Linux ports
 www/mediawiki137||2023-02-28|Has expired: End of life upstream, users are recommended to upgrade to 1.39 or higher
+games/veloren|games/veloren-weekly|2023-03-02|Using releases is currently discouraged upstream
