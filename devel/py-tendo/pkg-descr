@@ -1,0 +1,10 @@
+Tendo is a python module that adds basic functionality that is not provided by
+Python. Read the documentation for more info.
+
+* file-based singleton capability
+* transparent Unicode support for text file operations (BOM detection)
+* console logging coloring
+* enable you to use symlinks under windows
+* python tee implementation for executing external programs and redirecting
+  their output to both console/file
+* improved execfile
