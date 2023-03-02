@@ -1,18 +1,20 @@
 PORTNAME=	dill
-DISTVERSION=	0.3.4
+DISTVERSION=	0.3.6
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Serialize all of python
-WWW=		https://pypi.org/project/dill/
+WWW=		https://dill.readthedocs.io/en/latest/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+ zip
-USE_PYTHON=	autoplist concurrent distutils
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
+USES=		python:3.7+
+USE_PYTHON=	pep517 concurrent autoplist pytest # tests fail, see https://github.com/uqfoundation/dill/issues/578
 
 NO_ARCH=	yes
 
