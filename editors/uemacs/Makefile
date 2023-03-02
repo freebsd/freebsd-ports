@@ -19,6 +19,8 @@ NO_WRKSUBDIR=	yes
 USES=		dos2unix ncurses zip
 EXTRACT_BEFORE_ARGS=	-Lq
 
+CFLAGS+=		-Wno-int-conversion
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/src/*.c
 	@${REINPLACE_CMD} -e 's|-ltermcap|${LDFLAGS} -lncurses|g' \
