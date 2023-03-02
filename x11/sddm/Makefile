@@ -1,7 +1,7 @@
 PORTNAME=	sddm
 PORTVERSION=	0.19.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/sddm/sddm/commit/
@@ -53,6 +53,8 @@ post-patch:
 		-e 's#/usr/share/#${LOCALBASE}/share/#' \
 		${WRKSRC}/data/scripts/Xsession \
 		${WRKSRC}/src/common/Configuration.h
+	@${REINPLACE_CMD} -e 's|/var/lib/AccountsService|/var/db/AccountsService|' \
+		${WRKSRC}/src/greeter/UserModel.cpp
 
 post-install:
 # Install xsession.desktop to launch .xinitrc via sddm.
