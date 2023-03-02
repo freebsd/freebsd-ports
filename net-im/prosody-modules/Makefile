@@ -1,8 +1,8 @@
 PORTNAME=	prosody-modules
-PORTVERSION=	20220319
+DISTVERSION=	20231030
 CATEGORIES=	net-im
 MASTER_SITES=	https://hg.prosody.im/${PORTNAME}/archive/
-DISTNAME=	5dffb85e62c4
+DISTNAME=	7c264a2cb970
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	rozhuk.im@gmail.com
