@@ -15,8 +15,8 @@ LICENSE=		GPLv2
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}${DISTVERSIONSUFFIX}
 
 SLAVEDIRS=	databases/mysql80-client
-USES=		bison:build cmake:noninja compiler:c++17-lang cpe \
-		groff:run libedit localbase ncurses perl5 pkgconfig shebangfix ssl
+USES=		bison:build cmake:noninja cpe groff:run libedit localbase \
+		ncurses perl5 pkgconfig shebangfix ssl
 
 CPE_VENDOR=	oracle
 
@@ -53,7 +53,7 @@ BUILD_DEPENDS_powerpc64=	libunwind>0:devel/libunwind
 BUILD_DEPENDS_powerpc64le=	libunwind>0:devel/libunwind
 
 CMAKE_BUILD_TYPE=	Release
-CFLAGS+=		-fPIC -malign-double
+CFLAGS+=		-fPIC
 CFLAGS_aarch64?=	-march=armv8-a+crc+crypto
 
 CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
@@ -182,6 +182,14 @@ FEDERATED_SUB_LIST_OFF+=	FEDER=""
 .if ${ARCH} == i386
 #CMAKE_ARGS+=	-DDISABLE_PSI_MEMORY=1
 SSP_UNSAFE=	yes
+.endif
+
+.if ${ARCH} == powerpc
+LDFLAGS+=	-latomic
+USES+=		compiler:gcc-c++11-lib
+.else
+CXXFLAGS+=	-malign-double
+USES+=		compiler:c++17-lang
 .endif
 
 post-extract:
