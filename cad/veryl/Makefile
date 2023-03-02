@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	veryl-v
-DISTVERSION=	0.5.0
+DISTVERSION=	0.5.2
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,6 +31,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		anyhow-1.0.69 \
 		arc-swap-1.6.0 \
 		arrayvec-0.7.2 \
+		async-channel-1.8.0 \
 		async-trait-0.1.64 \
 		atoi-2.0.0 \
 		atty-0.2.14 \
@@ -58,14 +59,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
 		clap-3.2.23 \
-		clap-4.1.6 \
+		clap-4.1.7 \
 		clap_complete-4.1.2 \
-		clap_derive-4.1.0 \
+		clap_derive-4.1.7 \
 		clap_lex-0.2.4 \
 		clap_lex-0.3.1 \
 		clru-0.6.1 \
 		codespan-reporting-0.11.1 \
 		compact_str-0.6.1 \
+		concurrent-queue-2.1.0 \
 		console-0.15.5 \
 		core-foundation-sys-0.8.3 \
 		cpp_demangle-0.4.0 \
@@ -105,6 +107,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		env_logger-0.10.0 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
+		event-listener-2.5.3 \
 		fastrand-1.9.0 \
 		fern-0.6.1 \
 		filetime-0.2.20 \
@@ -119,6 +122,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		futures-0.3.26 \
 		futures-channel-0.3.26 \
 		futures-core-0.3.26 \
+		futures-executor-0.3.26 \
 		futures-io-0.3.26 \
 		futures-macro-0.3.26 \
 		futures-sink-0.3.26 \
@@ -243,7 +247,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		miniz_oxide-0.6.2 \
 		mio-0.8.6 \
 		new_debug_unreachable-1.0.4 \
-		nix-0.24.3 \
 		nix-0.26.2 \
 		nom-7.1.3 \
 		nom8-0.2.0 \
@@ -264,9 +267,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.8.6 \
 		parking_lot_core-0.9.7 \
-		parol-0.17.0 \
+		parol-0.18.1 \
 		parol-macros-0.2.0 \
-		parol_runtime-0.13.0 \
+		parol_runtime-0.14.0 \
 		paste-1.0.11 \
 		percent-encoding-2.2.0 \
 		pest-2.5.5 \
@@ -284,7 +287,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		plotters-0.3.4 \
 		plotters-backend-0.3.4 \
 		plotters-svg-0.3.3 \
-		pprof-0.11.0 \
+		pprof-0.11.1 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
 		proc-macro-error-1.0.4 \
@@ -308,7 +311,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-automata-0.1.10 \
 		regex-automata-0.2.0 \
 		regex-syntax-0.6.28 \
-		remove_dir_all-0.5.3 \
 		reqwest-0.11.14 \
 		resolv-conf-0.7.0 \
 		rgb-0.8.35 \
@@ -363,7 +365,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		symbolic-common-10.2.1 \
 		symbolic-demangle-10.2.1 \
 		syn-1.0.107 \
-		tempfile-3.3.0 \
+		tempfile-3.4.0 \
 		tendril-0.4.3 \
 		termcolor-1.2.0 \
 		terminal_size-0.1.17 \
