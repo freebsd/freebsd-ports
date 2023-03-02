@@ -1,6 +1,5 @@
 PORTNAME=	tarpaulin
-DISTVERSION=	0.24.0
-PORTREVISION=	1
+DISTVERSION=	0.25.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +32,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		byteorder-1.4.3 \
 		camino-1.1.1 \
 		cargo-platform-0.1.2 \
-		cargo_metadata-0.15.2 \
+		cargo_metadata-0.15.3 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
@@ -51,7 +50,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		flate2-1.0.24 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
-		gimli-0.27.1 \
+		gimli-0.27.2 \
 		git2-0.16.1 \
 		glob-0.3.1 \
 		gzip-header-0.3.0 \
@@ -70,6 +69,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		jobserver-0.1.24 \
 		js-sys-0.3.59 \
 		lazy_static-1.4.0 \
+		lcov-0.8.1 \
 		leb128-0.2.5 \
 		libc-0.2.137 \
 		libgit2-sys-0.14.2+1.5.1 \
@@ -82,7 +82,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		matches-0.1.9 \
 		md5-0.7.0 \
 		memchr-2.5.0 \
-		memmap-0.7.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.3 \
 		nix-0.26.2 \
@@ -94,13 +93,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		object-0.30.3 \
 		once_cell-1.13.1 \
 		openssl-probe-0.1.5 \
-		openssl-src-111.22.0+1.1.1q \
+		openssl-src-111.25.0+1.1.1t \
 		openssl-sys-0.9.75 \
 		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.9 \
 		pkg-config-0.3.25 \
-		proc-macro2-1.0.50 \
-		procfs-0.14.2 \
+		proc-macro2-1.0.51 \
+		procfs-0.15.1 \
 		quick-error-1.2.3 \
 		quick-xml-0.27.1 \
 		quote-1.0.23 \
@@ -119,14 +118,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		semver-1.0.13 \
 		serde-1.0.152 \
 		serde_derive-1.0.152 \
-		serde_json-1.0.91 \
+		serde_json-1.0.93 \
 		sharded-slab-0.1.4 \
 		smallvec-1.9.0 \
 		socket2-0.4.4 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.8.0 \
-		syn-1.0.107 \
+		syn-1.0.108 \
 		tempfile-3.3.0 \
 		textwrap-0.11.0 \
 		thiserror-1.0.32 \
