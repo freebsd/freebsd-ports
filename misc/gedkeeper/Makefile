@@ -1,5 +1,5 @@
 PORTNAME=	gedkeeper
-PORTVERSION=	2.23.0
+PORTVERSION=	2.24.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -16,16 +16,15 @@ USES=		desktop-file-utils mono shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	Serg-Norseman
 GH_PROJECT=	GEDKeeper GKCommunicator:gkc GKGenetix:gkg
-GH_TAGNAME=	9ae0059:gkc d40f6b0:gkg
+GH_TAGNAME=	22157c2:gkc 568338b:gkg
 GH_SUBDIR=	projects/GKCommunicator:gkc projects/GKGenetix:gkg
 
 _BUILD_TYPE=	Release
 DATADIR=	${PREFIX}/lib/${PORTNAME}
 
 do-build:
-	cd ${BUILD_WRKSRC} && msbuild projects/GEDKeeper2.linux.sln \
-		/p:Configuration=${_BUILD_TYPE} /p:Platform="x86" \
-		/p:MonoCS=true # /p:TargetFrameworkVersion=v4.5
+	cd ${BUILD_WRKSRC} && msbuild projects/GKv2/GEDKeeper2.sln \
+		/p:Configuration=${_BUILD_TYPE} /p:MonoCS=true
 
 do-install:
 	${PRINTF} '#!/bin/sh\n\nexec mono ${DATADIR}/GEDKeeper2.exe\

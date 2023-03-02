@@ -1,8 +1,6 @@
 bin/gedkeeper
 %%DATADIR%%/BSLib.DataViz.Model.dll
-%%DATADIR%%/BSLib.Design.WFHandlers.dll
-%%DATADIR%%/BSLib.Design.dll
-%%DATADIR%%/BSLib.Linguistics.dll
+%%DATADIR%%/BSLib.DataViz.WFControls.dll
 %%DATADIR%%/BSLib.SQLite.dll
 %%DATADIR%%/BSLib.dll
 %%DATADIR%%/ExcelLibrary.dll
@@ -25,6 +23,20 @@ bin/gedkeeper
 %%DATADIR%%/itextsharp.dll
 %%DATADIR%%/locales/Chinese Simplified.lng
 %%DATADIR%%/locales/English.lng
+%%DATADIR%%/locales/cultures/Ancient.yaml
+%%DATADIR%%/locales/cultures/Armenian.yaml
+%%DATADIR%%/locales/cultures/British.yaml
+%%DATADIR%%/locales/cultures/Cantonese.yaml
+%%DATADIR%%/locales/cultures/Czech.yaml
+%%DATADIR%%/locales/cultures/French.yaml
+%%DATADIR%%/locales/cultures/German.yaml
+%%DATADIR%%/locales/cultures/Iceland.yaml
+%%DATADIR%%/locales/cultures/Italian.yaml
+%%DATADIR%%/locales/cultures/Mandrin.yaml
+%%DATADIR%%/locales/cultures/Polish.yaml
+%%DATADIR%%/locales/cultures/Russian.yaml
+%%DATADIR%%/locales/cultures/Swedish.yaml
+%%DATADIR%%/locales/cultures/Turkish.yaml
 %%DATADIR%%/locales/czech.lng
 %%DATADIR%%/locales/dev/gkhDev_Architecture.html
 %%DATADIR%%/locales/dev/gkhDev_CodeStruct.html
@@ -317,10 +329,6 @@ bin/gedkeeper
 %%DATADIR%%/locales/ukrainian.lng
 %%DATADIR%%/nVLC.dll
 %%DATADIR%%/plugins/BSLib.DataViz.Model.dll
-%%DATADIR%%/plugins/BSLib.DataViz.WFControls.dll
-%%DATADIR%%/plugins/BSLib.Design.WFHandlers.dll
-%%DATADIR%%/plugins/BSLib.Design.dll
-%%DATADIR%%/plugins/BSLib.Linguistics.dll
 %%DATADIR%%/plugins/BSLib.SQLite.dll
 %%DATADIR%%/plugins/BSLib.dll
 %%DATADIR%%/plugins/ExcelLibrary.dll
@@ -350,9 +358,6 @@ bin/gedkeeper
 %%DATADIR%%/plugins/GKCommunicatorPlugin.rus
 %%DATADIR%%/plugins/GKComponents.dll
 %%DATADIR%%/plugins/GKCore.dll
-%%DATADIR%%/plugins/GKDataQualityPlugin.dll
-%%DATADIR%%/plugins/GKDataQualityPlugin.enu
-%%DATADIR%%/plugins/GKDataQualityPlugin.rus
 %%DATADIR%%/plugins/GKFlowInputPlugin.dll
 %%DATADIR%%/plugins/GKFlowInputPlugin.enu
 %%DATADIR%%/plugins/GKFlowInputPlugin.pol
@@ -396,7 +401,6 @@ bin/gedkeeper
 %%DATADIR%%/plugins/GKPedigreeImporterPlugin.pol
 %%DATADIR%%/plugins/GKPedigreeImporterPlugin.rus
 %%DATADIR%%/plugins/GKPedigreeImporterPlugin.ukr
-%%DATADIR%%/plugins/GKSamplePlugin.dll
 %%DATADIR%%/plugins/GKStdReports.deu
 %%DATADIR%%/plugins/GKStdReports.dll
 %%DATADIR%%/plugins/GKStdReports.enu
