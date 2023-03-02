@@ -1,6 +1,5 @@
 PORTNAME=	arti
-DISTVERSION=	1.1.1
-PORTREVISION=	1
+DISTVERSION=	1.1.2
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -18,7 +17,7 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.torproject.org
 GL_ACCOUNT=	tpo/core
-GL_COMMIT=	db7183a64e1378dd08fa16088e23174d3d90a0b3
+GL_COMMIT=	2f0dedd8bbd75fe2bec121de8ffe17e4e0ed001b
 CARGO_FEATURES=	tokio rustls
 CARGO_INSTALL=	no
 CARGO_CRATES=	addr2line-0.19.0 \
@@ -27,11 +26,11 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ahash-0.7.6 \
 		aho-corasick-0.7.20 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.68 \
+		anyhow-1.0.69 \
 		approx-0.5.1 \
 		arbitrary-1.2.3 \
 		arrayref-0.3.6 \
-		async-broadcast-0.5.0 \
+		async-broadcast-0.5.1 \
 		async-channel-1.8.0 \
 		async-compression-0.3.15 \
 		async-ctrlc-1.2.0 \
@@ -53,7 +52,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
 		base64-0.13.1 \
-		base64ct-1.5.3 \
+		base64ct-1.6.0 \
 		bitflags-1.3.2 \
 		blanket-0.2.0 \
 		block-buffer-0.9.0 \
@@ -71,11 +70,11 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cipher-0.4.3 \
 		clap-3.2.23 \
 		clap_lex-0.2.4 \
-		coarsetime-0.1.22 \
+		coarsetime-0.1.23 \
 		codespan-reporting-0.11.1 \
 		concurrent-queue-2.1.0 \
 		config-0.13.3 \
-		const-oid-0.9.1 \
+		const-oid-0.9.2 \
 		convert_case-0.4.0 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
@@ -87,15 +86,15 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		crypto-common-0.1.6 \
 		ctor-0.1.26 \
 		ctr-0.9.2 \
-		ctrlc-3.2.4 \
+		ctrlc-3.2.5 \
 		curve25519-dalek-3.2.0 \
-		cxx-1.0.88 \
-		cxx-build-1.0.88 \
-		cxxbridge-flags-1.0.88 \
-		cxxbridge-macro-1.0.88 \
-		darling-0.14.2 \
-		darling_core-0.14.2 \
-		darling_macro-0.14.2 \
+		cxx-1.0.91 \
+		cxx-build-1.0.91 \
+		cxxbridge-flags-1.0.91 \
+		cxxbridge-macro-1.0.91 \
+		darling-0.14.3 \
+		darling_core-0.14.3 \
+		darling_macro-0.14.3 \
 		dashmap-5.4.0 \
 		data-encoding-2.3.3 \
 		der-0.6.1 \
@@ -119,11 +118,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		enum-as-inner-0.5.1 \
 		enum-ordinalize-3.1.12 \
 		env_logger-0.5.13 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
 		event-listener-2.5.3 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
-		fastrand-1.8.0 \
-		filetime-0.2.19 \
+		fastrand-1.9.0 \
+		filetime-0.2.20 \
 		flate2-1.0.25 \
 		float-cmp-0.9.0 \
 		float-ord-0.3.2 \
@@ -149,11 +150,11 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		generic-array-0.14.6 \
 		getrandom-0.1.16 \
 		getrandom-0.2.8 \
-		gimli-0.27.1 \
+		gimli-0.27.2 \
 		gloo-timers-0.2.6 \
 		hashbrown-0.12.3 \
 		hashlink-0.8.1 \
-		heck-0.4.0 \
+		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.2.6 \
 		hex-0.4.3 \
@@ -161,14 +162,14 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		hkdf-0.12.3 \
 		hmac-0.12.1 \
 		hostname-validator-1.1.1 \
-		http-0.2.8 \
+		http-0.2.9 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
 		humantime-1.3.0 \
 		humantime-2.1.0 \
 		humantime-serde-1.1.1 \
-		hyper-0.14.23 \
+		hyper-0.14.24 \
 		iana-time-zone-0.1.53 \
 		iana-time-zone-haiku-0.1.1 \
 		ident_case-1.0.1 \
@@ -179,11 +180,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		inotify-sys-0.1.5 \
 		inout-0.1.3 \
 		instant-0.1.12 \
+		io-lifetimes-1.0.5 \
 		ipnet-2.7.1 \
 		itertools-0.10.5 \
 		itoa-1.0.5 \
 		jobserver-0.1.25 \
-		js-sys-0.3.60 \
+		js-sys-0.3.61 \
 		keccak-0.1.3 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
@@ -193,6 +195,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		libm-0.2.6 \
 		libsqlite3-sys-0.25.2 \
 		link-cplusplus-1.0.8 \
+		linux-raw-sys-0.1.4 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		lzma-sys-0.1.20 \
@@ -200,17 +203,16 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		matches-0.1.10 \
 		matrixmultiply-0.3.2 \
 		memchr-2.5.0 \
-		memmap2-0.5.8 \
+		memmap2-0.5.10 \
 		merlin-2.0.1 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.6.2 \
-		mio-0.8.5 \
+		mio-0.8.6 \
 		nalgebra-0.29.0 \
 		nalgebra-macros-0.1.0 \
 		native-tls-0.2.11 \
 		nix-0.26.2 \
 		nom-7.1.3 \
-		nom8-0.2.0 \
 		notify-5.1.0 \
 		nu-ansi-term-0.46.0 \
 		num-bigint-0.4.3 \
@@ -221,21 +223,21 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		num-rational-0.4.1 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
-		num_enum-0.5.9 \
-		num_enum_derive-0.5.9 \
+		num_enum-0.5.11 \
+		num_enum_derive-0.5.11 \
 		object-0.30.3 \
-		once_cell-1.17.0 \
+		once_cell-1.17.1 \
 		opaque-debug-0.3.0 \
 		openssl-0.10.45 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
-		openssl-src-111.24.0+1.1.1s \
+		openssl-src-111.25.0+1.1.1t \
 		openssl-sys-0.9.80 \
 		os_str_bytes-6.4.1 \
 		overload-0.1.1 \
 		parking-2.0.0 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.9.6 \
+		parking_lot_core-0.9.7 \
 		paste-1.0.11 \
 		pathdiff-0.2.1 \
 		pem-0.8.3 \
@@ -255,8 +257,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		polling-2.5.2 \
 		postage-0.5.0 \
 		ppv-lite86-0.2.17 \
-		proc-macro-crate-1.3.0 \
-		proc-macro2-1.0.50 \
+		proc-macro-crate-1.3.1 \
+		proc-macro2-1.0.51 \
 		quick-error-1.2.3 \
 		quote-1.0.23 \
 		rand-0.7.3 \
@@ -273,7 +275,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		regex-1.7.1 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.28 \
-		remove_dir_all-0.5.3 \
 		retain_mut-0.1.9 \
 		ring-0.16.20 \
 		rlimit-0.9.1 \
@@ -283,6 +284,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rusqlite-0.28.0 \
 		rustc-demangle-0.1.21 \
 		rustc_version-0.4.0 \
+		rustix-0.36.8 \
 		rustls-0.20.8 \
 		rustversion-1.0.11 \
 		ryu-1.0.12 \
@@ -300,7 +302,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		serde-1.0.152 \
 		serde_derive-1.0.152 \
 		serde_ignored-0.1.7 \
-		serde_json-1.0.91 \
+		serde_json-1.0.93 \
 		serde_spanned-0.6.1 \
 		serde_test-1.0.152 \
 		serde_with-2.2.0 \
@@ -314,15 +316,15 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		sha3-0.10.6 \
 		sharded-slab-0.1.4 \
 		shellexpand-3.0.0 \
-		signal-hook-0.3.14 \
+		signal-hook-0.3.15 \
 		signal-hook-async-std-0.2.2 \
-		signal-hook-registry-1.4.0 \
+		signal-hook-registry-1.4.1 \
 		signature-1.6.4 \
 		signature-2.0.0 \
 		simba-0.6.0 \
 		simple_asn1-0.6.2 \
 		siphasher-0.3.10 \
-		slab-0.4.7 \
+		slab-0.4.8 \
 		smallvec-1.10.0 \
 		socket2-0.4.7 \
 		spin-0.5.2 \
@@ -333,21 +335,21 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		strum-0.24.1 \
 		strum_macros-0.24.3 \
 		subtle-2.4.1 \
-		syn-1.0.107 \
+		syn-1.0.109 \
 		synstructure-0.12.6 \
-		tempfile-3.3.0 \
+		tempfile-3.4.0 \
 		termcolor-1.2.0 \
 		test-cert-gen-0.9.0 \
 		textwrap-0.16.0 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
-		thread_local-1.1.4 \
-		time-0.3.17 \
+		thread_local-1.1.7 \
+		time-0.3.20 \
 		time-core-0.1.0 \
-		time-macros-0.2.6 \
+		time-macros-0.2.8 \
 		tinystr-0.7.1 \
 		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.0 \
+		tinyvec_macros-0.1.1 \
 		tls-api-0.9.0 \
 		tls-api-native-tls-0.9.0 \
 		tls-api-openssl-0.9.0 \
@@ -355,11 +357,11 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tokio-1.25.0 \
 		tokio-macros-1.8.2 \
 		tokio-socks-0.5.1 \
-		tokio-util-0.7.4 \
+		tokio-util-0.7.7 \
 		toml-0.5.11 \
-		toml-0.6.0 \
-		toml_datetime-0.5.1 \
-		toml_edit-0.18.1 \
+		toml-0.7.2 \
+		toml_datetime-0.6.1 \
+		toml_edit-0.19.4 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-appender-0.2.2 \
@@ -368,10 +370,11 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tracing-journald-0.3.0 \
 		tracing-log-0.1.3 \
 		tracing-subscriber-0.3.16 \
-		tracing-test-0.2.3 \
-		tracing-test-macro-0.2.3 \
+		tracing-test-0.2.4 \
+		tracing-test-macro-0.2.4 \
 		trust-dns-proto-0.22.0 \
 		try-lock-0.2.4 \
+		typed-index-collections-3.1.0 \
 		typenum-1.16.0 \
 		unicode-bidi-0.3.10 \
 		unicode-ident-1.0.6 \
@@ -394,23 +397,25 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		want-0.3.0 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.83 \
-		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-futures-0.4.33 \
-		wasm-bindgen-macro-0.2.83 \
-		wasm-bindgen-macro-support-0.2.83 \
-		wasm-bindgen-shared-0.2.83 \
+		wasm-bindgen-0.2.84 \
+		wasm-bindgen-backend-0.2.84 \
+		wasm-bindgen-futures-0.4.34 \
+		wasm-bindgen-macro-0.2.84 \
+		wasm-bindgen-macro-support-0.2.84 \
+		wasm-bindgen-shared-0.2.84 \
 		weak-table-0.3.2 \
-		web-sys-0.3.60 \
+		web-sys-0.3.61 \
 		webpki-0.22.0 \
 		wepoll-ffi-0.1.2 \
-		wide-0.7.5 \
+		wide-0.7.8 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.39.0 \
 		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-targets-0.42.1 \
 		windows_aarch64_gnullvm-0.42.1 \
 		windows_aarch64_msvc-0.39.0 \
 		windows_aarch64_msvc-0.42.1 \
@@ -423,6 +428,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		windows_x86_64_gnullvm-0.42.1 \
 		windows_x86_64_msvc-0.39.0 \
 		windows_x86_64_msvc-0.42.1 \
+		winnow-0.3.3 \
 		x25519-dalek-2.0.0-pre.1 \
 		x509-signature-0.5.0 \
 		xz2-0.1.7 \
@@ -430,7 +436,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		zeroize_derive-1.3.3 \
 		zstd-0.11.2+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
-		zstd-sys-2.0.6+zstd.1.5.2
+		zstd-sys-2.0.7+zstd.1.5.4
 
 do-install:
 	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/arti ${STAGEDIR}${PREFIX}/bin/arti
