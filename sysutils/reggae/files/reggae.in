@@ -2,6 +2,8 @@
 
 # PROVIDE: reggae
 # KEYWORD: shutdown
+# REQUIRE: pf
+# BEFORE: jail cbsd
 
 . /etc/rc.subr
 
