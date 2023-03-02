@@ -29,7 +29,7 @@ RUN_DEPENDS=		electron${ELECTRON_VERSION}:devel/electron${ELECTRON_VERSION} \
 
 # All deps below are there only to please stage-qa
 
-LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-atk \
+LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libatspi.so:accessibility/at-spi2-core \
 		libsnappy.so:archivers/snappy \
 		libopus.so:audio/opus \
