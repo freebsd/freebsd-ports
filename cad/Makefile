@@ -37,6 +37,7 @@
     SUBDIR += freehdl
     SUBDIR += fritzing
     SUBDIR += gds3d
+    SUBDIR += gdscpp
     SUBDIR += gdsreader
     SUBDIR += gdt
     SUBDIR += geda

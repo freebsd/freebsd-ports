@@ -1,0 +1,22 @@
+--- CMakeLists.txt.orig	2020-06-11 07:02:00 UTC
++++ CMakeLists.txt
+@@ -14,8 +14,17 @@ set(SOURCES
+ )
+ 
+ add_executable(${PROJECT_NAME} ${SOURCES})
++add_library(gds
++  src/gdsCpp.cpp
++  src/gdsParser.cpp
++  src/gdsForge.cpp
++  src/gdsImport.cpp
++)
+ 
+ # Ensures that the header files of the project is included
+ target_include_directories(${PROJECT_NAME} PRIVATE
++  ${PROJECT_SOURCE_DIR}/include/gdscpp
++)
++target_include_directories(gds PRIVATE
+   ${PROJECT_SOURCE_DIR}/include/gdscpp
+-)
+\ No newline at end of file
++)
