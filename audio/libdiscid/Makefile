@@ -1,5 +1,5 @@
 PORTNAME=	libdiscid
-PORTVERSION=	0.6.3
+PORTVERSION=	0.6.4
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/metabrainz/${PORTNAME}/releases/download/v${PORTVERSION}/ \
 		http://ftp.osuosl.org/pub/musicbrainz/${PORTNAME}/ \
