@@ -91,8 +91,8 @@ prepare_jail()
             _src=$(echo "$_mnt_line" | awk '{print $1}')
             _dst=$(echo "$_mnt_line" | awk '{print $2}')
             _opts=$(echo "$_mnt_line" | awk '{print $3}')
-            mkdir -p "$_dst"
-            mount_nullfs -o "$_opts" "$_src" "$_dst"
+            /bin/sh -c "cd \"$jroot\" && mkdir -p \"$_dst\""
+            /bin/sh -c "cd \"$jroot\" && mount_nullfs  -o \"$_opts\" \"$_src\" \"$_dst\""
         done
     fi
 
@@ -120,8 +120,8 @@ destroy_jail()
         echo "$jail_nullfs_mounts" | xargs -n 3 | while read -r _mnt_line; do
             local _dst
             _dst=$(echo "$_mnt_line" | awk '{print $2}')
-            umount "$_dst"
-            rmdir "$_dst"
+            /bin/sh -c "cd \"$jroot\" && umount \"$_dst\"" 2> /dev/null
+            /bin/sh -c "cd \"$jroot\" && rmdir \"$_dst\"" 2> /dev/null
         done
     fi
 
