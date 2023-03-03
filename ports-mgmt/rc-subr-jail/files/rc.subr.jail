@@ -111,7 +111,7 @@ destroy_jail()
     local jroot
     jroot="$1"
 
-    if [ "$jail_mount_devfs" ]; then
+    if [ "$jail_mount_devfs" = "yes" ]; then
         rmdir "$jroot/dev"
     fi
 
