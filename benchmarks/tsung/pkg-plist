@@ -5,6 +5,8 @@ lib/tsung/bin/log2tsung.pl
 lib/tsung/bin/tsung-rrd.pl
 lib/tsung/bin/tsung_percentile.pl
 lib/tsung/bin/tsung_stats.pl
+lib/tsung/tsung_controller-%%PORTVERSION%%/ebin/ts_local_file_server.beam
+lib/tsung/tsung_controller-%%PORTVERSION%%/src/ts_local_file_server.erl
 lib/tsung/tsung-%%PORTVERSION%%/ebin/gen_ts_transport.beam
 lib/tsung/tsung-%%PORTVERSION%%/ebin/mochijson2.beam
 lib/tsung/tsung-%%PORTVERSION%%/ebin/mochinum.beam
