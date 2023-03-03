@@ -1,7 +1,7 @@
 PORTNAME=	termshark
 PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net
 
 MAINTAINER=	zi@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		go:modules
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=
 
-X11_RUN_DEPENDS_OFF=	tshark>0:net/tshark
+X11_RUN_DEPENDS_OFF=	tshark>0:net/wireshark
 X11_RUN_DEPENDS=	wireshark>0:net/wireshark
 
 GO_MODULE=	github.com/gcla/termshark/v2

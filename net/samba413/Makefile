@@ -259,7 +259,7 @@ TEST_ENV+=			PYTHON="${PYTHON_CMD}" \
 				PYTHONDONTWRITEBYTECODE=1
 
 TEST_DEPENDS+=			bash:shells/bash \
-				tshark:net/tshark
+				tshark:net/wireshark
 # External Python modules
 TEST_BUILD_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
 TEST_RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}iso8601>=0.1.11:devel/py-iso8601@${PY_FLAVOR}
