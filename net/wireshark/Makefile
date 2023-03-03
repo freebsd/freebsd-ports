@@ -1,5 +1,5 @@
-PORTNAME?=	wireshark
-DISTVERSION=	4.0.3
+PORTNAME=	wireshark
+DISTVERSION=	4.0.4
 CATEGORIES=	net
 MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		https://1.eu.dl.wireshark.org/src/ \
@@ -9,195 +9,102 @@ MASTER_SITES=	https://1.na.dl.wireshark.org/src/ \
 		http://ftp.yz.yamagata-u.ac.jp/pub/network/security/wireshark/src/ \
 		https://wireshark.marwan.ma/download/src/ \
 		https://www.wireshark.org/download/src/
-DISTNAME=	${DATADIR_NAME}-${DISTVERSION}
 
 MAINTAINER=	marcus@FreeBSD.org
-COMMENT?=	Powerful network analyzer/capture tool
+COMMENT=	Powerful network analyzer/capture tool
 WWW=		https://www.wireshark.org/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS_INSTALL?=	wireshark-lite tshark tshark-lite
-
-DATADIR_NAME=	wireshark
-DATADIR=	${PREFIX}/share/${DATADIR_NAME}
-
-USES=		alias cmake compiler:c++11-lang cpe gettext-runtime gnome \
-		libtool localbase pathfix perl5 pkgconfig python:3.4+ ssl \
-		tar:xz
-USE_PERL5=	build
-USE_GNOME=	glib20 libxml2
-USE_LDCONFIG=	yes
-
-BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
-LIB_DEPENDS+=	libgpg-error.so:security/libgpg-error \
+LIB_DEPENDS=	libgpg-error.so:security/libgpg-error \
 		libgcrypt.so:security/libgcrypt \
 		liblz4.so:archivers/liblz4 \
 		libnghttp2.so:www/libnghttp2 \
+		libbrotlidec.so:archivers/brotli \
 		libsnappy.so:archivers/snappy \
 		libcares.so:dns/c-ares \
-		libzstd.so:archivers/zstd
+		libzstd.so:archivers/zstd \
+		libspeexdsp.so:audio/speexdsp
 
-#CFLAGS+=	-funit-at-a-time
+FLAVORS=	default nox11
+FLAVOR?=	${FLAVORS:[1]}
+nox11_PKGNAMESUFFIX=	-nox11
 
-.for x in capinfos editcap mergecap rawshark text2pcap dftest randpkt \
-    reordercap captype randpktdump udpdump sharkd etwdump
-.if defined(LITE)
-PKGNAMESUFFIX=		-lite
-PLIST_SUB+=		${x:tu}="@comment $x not installed" \
-			${x:tu}_LIB="@comment $x not installed " \
-			${x:tu}_MAN="@comment $x not installed "
-CMAKE_ARGS+=		-DBUILD_$x=OFF
-EXTRA_PATCHES=		${FILESDIR}/extra-patch-doc_CMakeLists.txt
-OPTIONS_EXCLUDE+=	RTP SNMP LUA ANDROIDDUMP CISCODUMP SSHDUMP WIFIDUMP
-.else
-PLIST_SUB+=		${x:tu}=bin/$x \
-			${x:tu}_MAN="" \
-			${x:tu}_LIB=""
+USES=		cmake compiler:c++11-lang cpe gettext-runtime gnome \
+		localbase pathfix perl5 pkgconfig python:3.6+ ssl tar:xz
+USE_GNOME=	glib20 libxml2
+USE_PERL5=	build
+USE_LDCONFIG=	yes
+
+CONFLICTS_INSTALL=	wireshark-lite tshark tshark-lite
+
+CMAKE_OFF=	ENABLE_ILBC ENABLE_MINIZIP ENABLE_SBC
+CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_DOXYGEN:BOOL=True \
+		-DCMAKE_DISABLE_FIND_PACKAGE_Git:BOOL=True
+
+OPTIONS_DEFINE=		DOCS GNUTLS GUI LIBSSH LTO LUA MANPAGES MAXMIND \
+			RTP SNMP
+.if ${FLAVOR} == nox11
+COMMENT+=		(without GUI)
+OPTIONS_EXCLUDE=	GUI RTP
 .endif
-.endfor
 
-OPTIONS_DEFINE=		GUI RTP SNMP MAXMIND LTO LUA DECRYPT ANDROIDDUMP SSHDUMP CISCODUMP OPUS \
-			WIFIDUMP
-
+OPTIONS_DEFAULT=	GNUTLS GSSAPI_BASE GUI MANPAGES MAXMIND RTP SNMP
+OPTIONS_DEFAULT_aarch64=LTO
+OPTIONS_DEFAULT_amd64=	LTO
 OPTIONS_SINGLE=		GSSAPI
-
-OPTIONS_SINGLE_GSSAPI=GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
-
-OPTIONS_DEFAULT?=	GUI SNMP MAXMIND GSSAPI_BASE DECRYPT
-
-GUI_DESC=		Enable Qt 5 based Wireshark GUI
-RTP_DESC=		Enable support for playing back RTP streams
-DECRYPT_DESC=		Decryption support for SSL and IPSec
-ANDROIDDUMP_DESC=	Build androiddump extcap tool
-MAXMIND_DESC=		Enable MaxMindDB-based GeoIP geolocation support
-GSSAPI_DESC=		Kerberos dissection support
-GSSAPI_BASE_DESC=		Kerberos support via base system
-GSSAPI_HEIMDAL_DESC=	Kerberos support via security/heimdal
-GSSAPI_MIT_DESC=		Kerberos support via security/krb5
-GSSAPI_NONE_DESC=		Disable Kerberos support
-SSHDUMP_DESC=		Build sshdump extcap tool
-CISCODUMP_DESC=		Build ciscodump extcap tool
-OPUS_DESC=		Build opus decoder plugin
-WIFIDUMP_DESC=		Build wifidump extcap tool
-
-GUI_USES=		qt:5
-GUI_USE=	qt=core,concurrent,gui,multimedia,widgets,printsupport,svg,buildtools:build,linguisttools:build,qmake:build
-
-LTO_CMAKE_BOOL=		ENABLE_LTO
-LUA_USES=		lua:51-52
-GSSAPI_BASE_USES=		gssapi
-GSSAPI_HEIMDAL_USES=	gssapi:heimdal
-GSSAPI_MIT_USES=		gssapi:mit
-
-RTP_LIB_DEPENDS=	libspandsp.so:comms/spandsp
-MAXMIND_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
-SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
-DECRYPT_LIB_DEPENDS=	libgnutls.so:security/gnutls \
-			libgcrypt.so:security/libgcrypt
-SSHDUMP_LIB_DEPENDS=	libssh.so:security/libssh
-CISCODUMP_LIB_DEPENDS=	libssh.so:security/libssh
-OPUS_LIB_DEPENDS=	libopus.so:audio/opus
-WIFIDUMP_LIB_DEPENDS=	libssh.so:security/libssh
-
-GSSAPI_NONE_CMAKE_ON=	-DENABLE_KERBEROS=OFF
-GSSAPI_NONE_CMAKE_OFF=	-DENABLE_KERBEROS=ON
-GSSAPI_NONE_CONFIGURE_ENV_OFF=	KRB5_CONFIG=${KRB5CONFIG}
-
-LUA_CMAKE_ON=	-DENABLE_LUA=ON
-LUA_CMAKE_OFF=	-DENABLE_LUA=OFF
-RTP_CMAKE_ON=	-DENABLE_SPANDSP=ON
-RTP_CMAKE_OFF=	-DENABLE_SPANDSP=OFF
-SNMP_CMAKE_ON=	-DENABLE_SMI=ON
-SNMP_CMAKE_OFF=	-DENABLE_SMI=OFF
-DECRYPT_CMAKE_ON=	-DENABLE_GNUTLS=ON
-DECRYPT_CMAKE_OFF=	-DENABLE_GNUTLS=OFF
-ANDROIDDUMP_CMAKE_ON=-DBUILD_androiddump=ON
-ANDROIDDUMP_CMAKE_OFF=-DBUILD_androiddump=OFF
-SSHDUMP_CMAKE_ON=-DBUILD_sshdump=ON
-SSHDUMP_CMAKE_OFF=-DBUILD_sshdump=OFF
-CISCODUMP_CMAKE_ON=-DBUILD_ciscodump=ON
-CISCODUMP_CMAKE_OFF=-DBUILD_ciscodump=OFF
-OPUS_CMAKE_ON=	-DENABLE_OPUS=ON
-OPUS_CMAKE_OFF=	-DENABLE_OPUS=OFF
-WIFIDUMP_CMAKE_ON=-DBUILD_wifidump=ON
-WIFIDUMP_CMAKE_OFF=-DBUILD_wifidump=OFF
-
-LUA_CPPFLAGS=		-I${LUA_INCDIR}
-
-GUI_CONFIGURE_ENV=	PATH="${PATH}:${QT_BINDIR}"
-GUI_MAKE_ENV=		PATH="${PATH}:${QT_BINDIR}"
-
+OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
 OPTIONS_SUB=		yes
 
-.if defined(LITE)
-CMAKE_ARGS+=	-DBUILD_androiddump=OFF \
-		-DBUILD_sshdump=OFF \
-		-DBUILD_ciscodump=OFF \
-		-DENABLE_OPUS=OFF
-PLIST_SUB+=	ANDROIDDUMP_LIB="@comment " \
-		ANDROIDDUMP_MAN="@comment " \
-		SSHDUMP_LIB="@comment " \
-		SSHDUMP_MAN="@comment " \
-		CISCODUMP_LIB="@comment " \
-		CISCODUMP_MAN="@comment " \
-		OPUS="@comment " \
-		WIFIDUMP_LIB="@comment " \
-		WIFIDUMP_MAN="@comment "
-.endif
+GNUTLS_DESC=		Enable crypto support for SSL and IPSec via GnuTLS
+GUI_DESC=		Enable Qt 5 based Wireshark GUI
+LIBSSH_DESC=		Enable libssh support (req by cisco/ssh/wifidump)
+MAXMIND_DESC=		Enable MaxMindDB-based GeoIP geolocation support
+RTP_DESC=		Enable codec support for RTP streams (implies GUI)
+
+DOCS_IMPLIES=		MANPAGES
+
+GNUTLS_LIB_DEPENDS=	libgnutls.so:security/gnutls
+GNUTLS_CMAKE_BOOL=	ENABLE_GNUTLS
+
+GSSAPI_BASE_USES=	gssapi
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal
+GSSAPI_MIT_USES=	gssapi:mit
+GSSAPI_NONE_CONFIGURE_ENV_OFF=	KRB5_CONFIG=${KRB5CONFIG}
+GSSAPI_NONE_CMAKE_BOOL=	ENABLE_KERBEROS
+
+GUI_USES=		desktop-file-utils shared-mime-info qt:5
+GUI_USE=		qt=core,concurrent,gui,multimedia,widgets,printsupport,svg,buildtools:build,linguisttools:build,qmake:build
+GUI_CONFIGURE_ENV=	PATH="${PATH}:${QT_BINDIR}"
+GUI_MAKE_ENV=		PATH="${PATH}:${QT_BINDIR}"
+GUI_CMAKE_BOOL=		BUILD_wireshark
+
+LIBSSH_LIB_DEPENDS=	libssh.so:security/libssh
+LIBSSH_CMAKE_BOOL=	BUILD_ciscodump BUILD_sshdump BUILD_wifidump
+
+LTO_CMAKE_BOOL=		ENABLE_LTO
+
+LUA_USES=		lua:51-52
+LUA_CPPFLAGS=		-I${LUA_INCDIR}
+LUA_CMAKE_BOOL=		ENABLE_LUA
+
+MANPAGES_BUILD_DEPENDS=	asciidoctor:textproc/rubygem-asciidoctor
+MANPAGES_CMAKE_OFF=	-DCMAKE_DISABLE_FIND_PACKAGE_Asciidoctor:BOOL=True
+
+MAXMIND_LIB_DEPENDS=	libmaxminddb.so:net/libmaxminddb
+MAXMIND_CMAKE_BOOL=	BUILD_mmdbresolve
+
+RTP_LIB_DEPENDS=	libbcg729.so:audio/bcg729 \
+			libopus.so:audio/opus \
+			libspandsp.so:comms/spandsp
+RTP_CMAKE_BOOL=		ENABLE_BCG729 ENABLE_OPUS ENABLE_SPANDSP
+RTP_IMPLIES=		GUI
+
+SNMP_LIB_DEPENDS=	libsmi.so:net-mgmt/libsmi
+SNMP_CMAKE_BOOL=	ENABLE_SMI
 
 .include <bsd.port.options.mk>
-
-.if empty(PORT_OPTIONS:MMAXMIND)
-CMAKE_ARGS+=	-DBUILD_mmdbresolve=OFF
-.else
-CMAKE_ARGS+=	-DBUILD_mmdbresolve=ON
-.endif
-
-.if empty(PORT_OPTIONS:MGUI)
-CMAKE_ARGS+=	-DBUILD_wireshark=OFF
-PLIST_SUB+=	GUI="@comment "
-.else
-USES+=		desktop-file-utils shared-mime-info
-PLIST_SUB+=	GUI=""
-.endif
-
-.if !defined(LITE)
-.if ${PORT_OPTIONS:MANDROIDDUMP}
-PLIST_SUB+=	ANDROIDDUMP_LIB="" \
-		ANDROIDDUMP_MAN=""
-.else
-PLIST_SUB+=	ANDROIDDUMP_LIB="@comment " \
-		ANDROIDDUMP_MAN="@comment "
-.endif
-.if ${PORT_OPTIONS:MSSHDUMP}
-PLIST_SUB+=	SSHDUMP_LIB="" \
-		SSHDUMP_MAN=""
-.else
-PLIST_SUB+=	SSHDUMP_LIB="@comment " \
-		SSHDUMP_MAN="@comment "
-.endif
-.if ${PORT_OPTIONS:MCISCODUMP}
-PLIST_SUB+=	CISCODUMP_LIB="" \
-		CISCODUMP_MAN=""
-.else
-PLIST_SUB+=	CISCODUMP_LIB="@comment " \
-		CISCODUMP_MAN="@comment "
-.endif
-.if ${PORT_OPTIONS:MOPUS}
-PLIST_SUB+=	OPUS=""
-.else
-PLIST_SUB+=	OPUS="@comment "
-.endif
-.if ${PORT_OPTIONS:MWIFIDUMP}
-PLIST_SUB+=	WIFIDUMP_LIB="" \
-		WIFIDUMP_MAN=""
-.else
-PLIST_SUB+=	WIFIDUMP_LIB="@comment " \
-		WIFIDUMP_MAN="@comment "
-.endif
-.endif
 
 .if ${PORT_OPTIONS:MGSSAPI_BASE} && exists(${LOCALBASE}/include/krb5.h)
 IGNORE=			cannot build with base Kerberos if krb5 port is installed. \
