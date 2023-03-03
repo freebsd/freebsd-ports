@@ -19,7 +19,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_TUPLE=	jbeich:skcms:6437475:skcms/third_party/skcms \
-		libjxl:testdata:d81acac:testdata/third_party/testdata \
+		libjxl:testdata:d81acac:testdata/testdata \
 		webmproject:sjpeg:868ab55:sjpeg/third_party/sjpeg \
 		${NULL}
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
