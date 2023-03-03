@@ -13,6 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis
 
+BROKEN=		Error: no fonts found in your system
+DEPRECATED=	broken, abandoned upstream, depends on deprecated gtk2
+EXPIRATION_DATE=2023-06-03
+
 USES=		openal:al,alut gnome pkgconfig xorg
 USE_GNOME=	gtk20
 USE_XORG=	x11
