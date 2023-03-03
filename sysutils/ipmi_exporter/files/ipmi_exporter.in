@@ -17,13 +17,13 @@ name=ipmi_exporter
 rcvar=${name}_enable
 load_rc_config $name
 
-: ${impi_exporter_enable:="NO"}
-: ${impi_exporter_config:=""}
+: ${ipmi_exporter_enable:="NO"}
+: ${ipmi_exporter_config:=""}
 
 pidfile="/var/run/${name}.pid"
 command="/usr/sbin/daemon"
 procname="%%PREFIX%%/bin/${name}"
-command_args="-S -p ${pidfile} ${procname} --config.file=\"${impi_exporter_config}\""
+command_args="-S -p ${pidfile} ${procname} --config.file=\"${ipmi_exporter_config}\""
 start_precmd="${name}_precmd"
 
 ipmi_exporter_precmd()
