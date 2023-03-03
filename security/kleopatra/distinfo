@@ -1,5 +1,3 @@
-TIMESTAMP = 1677047552
-SHA256 (KDE/release-service/22.12.2/kleopatra-22.12.2.tar.xz) = 6a32b0fd0c1417f8b9e7aecb1e4c8f5b85b8cafe42fe32f8741000b3d49560e6
-SIZE (KDE/release-service/22.12.2/kleopatra-22.12.2.tar.xz) = 2576540
-SHA256 (KDE/release-service/22.12.2/b9bec26ae7bfd899c7ff4f5d2d4a7dce0c46195c.diff) = 42e49c773e7df6b3f71336108b88a68dff16ea581bb28ab90abbf6d7740da65f
-SIZE (KDE/release-service/22.12.2/b9bec26ae7bfd899c7ff4f5d2d4a7dce0c46195c.diff) = 521
+TIMESTAMP = 1677834823
+SHA256 (KDE/release-service/22.12.3/kleopatra-22.12.3.tar.xz) = 31f199ca957fcd3393ea9b4630482347da35e3b85646d46357522cdf8779d996
+SIZE (KDE/release-service/22.12.3/kleopatra-22.12.3.tar.xz) = 2579704
