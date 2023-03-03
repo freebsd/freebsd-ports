@@ -113,6 +113,8 @@
 %%DATADIR%%/bin/bazarr/api/system/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/api/system/__pycache__/account%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/bazarr/api/system/__pycache__/account%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/bazarr/api/system/__pycache__/announcements%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/bazarr/api/system/__pycache__/announcements%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/api/system/__pycache__/backups%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/bazarr/api/system/__pycache__/backups%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/api/system/__pycache__/health%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -138,6 +140,7 @@
 %%DATADIR%%/bin/bazarr/api/system/__pycache__/tasks%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/bazarr/api/system/__pycache__/tasks%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/api/system/account.py
+%%DATADIR%%/bin/bazarr/api/system/announcements.py
 %%DATADIR%%/bin/bazarr/api/system/backups.py
 %%DATADIR%%/bin/bazarr/api/system/health.py
 %%DATADIR%%/bin/bazarr/api/system/languages.py
@@ -166,6 +169,8 @@
 %%DATADIR%%/bin/bazarr/app/__init__.py
 %%DATADIR%%/bin/bazarr/app/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/bazarr/app/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/bazarr/app/__pycache__/announcements%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/bazarr/app/__pycache__/announcements%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/app/__pycache__/app%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/bazarr/app/__pycache__/app%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/app/__pycache__/check_update%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -194,6 +199,7 @@
 %%DATADIR%%/bin/bazarr/app/__pycache__/signalr_client%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/app/__pycache__/ui%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/bazarr/app/__pycache__/ui%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/bazarr/app/announcements.py
 %%DATADIR%%/bin/bazarr/app/app.py
 %%DATADIR%%/bin/bazarr/app/check_update.py
 %%DATADIR%%/bin/bazarr/app/config.py
@@ -364,8 +370,6 @@
 %%DATADIR%%/bin/bazarr/subtitles/tools/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/subtitles/tools/__pycache__/delete%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/bazarr/subtitles/tools/__pycache__/delete%%PYTHON_EXT_SUFFIX%%.pyc
-%%DATADIR%%/bin/bazarr/subtitles/tools/__pycache__/embedded_subs_reader%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%DATADIR%%/bin/bazarr/subtitles/tools/__pycache__/embedded_subs_reader%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/subtitles/tools/__pycache__/mods%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/bazarr/subtitles/tools/__pycache__/mods%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/subtitles/tools/__pycache__/score%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -375,7 +379,6 @@
 %%DATADIR%%/bin/bazarr/subtitles/tools/__pycache__/translate%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/bazarr/subtitles/tools/__pycache__/translate%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/subtitles/tools/delete.py
-%%DATADIR%%/bin/bazarr/subtitles/tools/embedded_subs_reader.py
 %%DATADIR%%/bin/bazarr/subtitles/tools/mods.py
 %%DATADIR%%/bin/bazarr/subtitles/tools/score.py
 %%DATADIR%%/bin/bazarr/subtitles/tools/subsyncer.py
@@ -413,6 +416,8 @@
 %%DATADIR%%/bin/bazarr/utilities/__pycache__/path_mappings%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/utilities/__pycache__/post_processing%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/bazarr/utilities/__pycache__/post_processing%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/bazarr/utilities/__pycache__/video_analyzer%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/bazarr/utilities/__pycache__/video_analyzer%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/bazarr/utilities/analytics.py
 %%DATADIR%%/bin/bazarr/utilities/backup.py
 %%DATADIR%%/bin/bazarr/utilities/binaries.json
@@ -423,16 +428,17 @@
 %%DATADIR%%/bin/bazarr/utilities/helper.py
 %%DATADIR%%/bin/bazarr/utilities/path_mappings.py
 %%DATADIR%%/bin/bazarr/utilities/post_processing.py
-%%DATADIR%%/bin/frontend/build/assets/@mantine/core.bc6b031c.js
-%%DATADIR%%/bin/frontend/build/assets/@mantine/dropzone.b3c41d7f.js
-%%DATADIR%%/bin/frontend/build/assets/@mantine/form.919c0126.js
-%%DATADIR%%/bin/frontend/build/assets/@mantine/hooks.be5a3aa0.js
-%%DATADIR%%/bin/frontend/build/assets/@mantine/modals.341ec399.js
-%%DATADIR%%/bin/frontend/build/assets/@mantine/notifications.1bfeef2e.js
-%%DATADIR%%/bin/frontend/build/assets/index.0fe3abb0.js
+%%DATADIR%%/bin/bazarr/utilities/video_analyzer.py
+%%DATADIR%%/bin/frontend/build/assets/@mantine/core.6acb2e28.js
+%%DATADIR%%/bin/frontend/build/assets/@mantine/dropzone.bab3e8d1.js
+%%DATADIR%%/bin/frontend/build/assets/@mantine/form.71235b30.js
+%%DATADIR%%/bin/frontend/build/assets/@mantine/hooks.0ae181bd.js
+%%DATADIR%%/bin/frontend/build/assets/@mantine/modals.1ce04665.js
+%%DATADIR%%/bin/frontend/build/assets/@mantine/notifications.5d2897dd.js
+%%DATADIR%%/bin/frontend/build/assets/index.050d6956.js
+%%DATADIR%%/bin/frontend/build/assets/index.1b4c854d.js
 %%DATADIR%%/bin/frontend/build/assets/index.83e0c6f3.css
-%%DATADIR%%/bin/frontend/build/assets/index.8cf74b5c.js
-%%DATADIR%%/bin/frontend/build/assets/index.d8773383.js
+%%DATADIR%%/bin/frontend/build/assets/index.ee1905c0.js
 %%DATADIR%%/bin/frontend/build/assets/roboto-all-300-normal.6d79427c.woff
 %%DATADIR%%/bin/frontend/build/assets/roboto-cyrillic-300-normal.47aa3bfa.woff2
 %%DATADIR%%/bin/frontend/build/assets/roboto-cyrillic-ext-300-normal.435e4b7f.woff2
@@ -440,7 +446,7 @@
 %%DATADIR%%/bin/frontend/build/assets/roboto-latin-300-normal.f7591131.woff2
 %%DATADIR%%/bin/frontend/build/assets/roboto-latin-ext-300-normal.b076e863.woff2
 %%DATADIR%%/bin/frontend/build/assets/roboto-vietnamese-300-normal.51f3f418.woff2
-%%DATADIR%%/bin/frontend/build/assets/vendors.42674e4c.js
+%%DATADIR%%/bin/frontend/build/assets/vendors.89095798.js
 %%DATADIR%%/bin/frontend/build/images/android-chrome-96x96.png
 %%DATADIR%%/bin/frontend/build/images/apple-touch-icon.png
 %%DATADIR%%/bin/frontend/build/images/favicon-16x16.png
@@ -8536,6 +8542,8 @@
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/subs4series%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/subscene%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/subscene%%PYTHON_EXT_SUFFIX%%.pyc
+%%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/subscene_cloudscraper%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/subscene_cloudscraper%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/subscenter%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/subscenter%%PYTHON_EXT_SUFFIX%%.pyc
 %%DATADIR%%/bin/libs/subliminal_patch/providers/__pycache__/subssabbz%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -8605,6 +8613,7 @@
 %%DATADIR%%/bin/libs/subliminal_patch/providers/subs4free.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/subs4series.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/subscene.py
+%%DATADIR%%/bin/libs/subliminal_patch/providers/subscene_cloudscraper.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/subscenter.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/subssabbz.py
 %%DATADIR%%/bin/libs/subliminal_patch/providers/subsunacs.py
