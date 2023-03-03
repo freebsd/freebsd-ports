@@ -10,6 +10,9 @@ WWW=		https://docs.puppetlabs.com/puppetdb/latest/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Puppet 6 has reached EOL
+EXPIRATION_DATE=2023-06-01
+
 RUN_DEPENDS=	bash:shells/bash
 
 USE_RC_SUBR=	puppetdb
