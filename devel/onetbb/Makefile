@@ -1,5 +1,5 @@
 PORTNAME=	onetbb
-PORTVERSION=	2021.7.0
+PORTVERSION=	2021.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -31,9 +31,13 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS
 
 # Pkgconfig: tbb.pc (on 64bit arch) vs tbb32.pc
-PLIST_SUB=	PCSUFX="${PCSUFX}"
+PLIST_SUB=	PCSUFX="${PCSUFX}" DBGSUFX="${DBGSUFX}"
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_DEBUG)
+DBGSUFX=	_debug
+.endif
 
 .if ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH:Marmv?}
 PCSUFX=	32
