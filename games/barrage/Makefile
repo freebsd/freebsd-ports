@@ -1,9 +1,9 @@
 PORTNAME=	barrage
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.6
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Clockwork6400@protonmail.com
 COMMENT=	Destroy as many targets as possible
 WWW=		http://lgames.sourceforge.net/index.php?project=Barrage
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c11 gmake gnome sdl
-USE_SDL=	sdl mixer
+USE_SDL=	mixer sdl
 
 GNU_CONFIGURE=	yes
 
