@@ -1,12 +1,11 @@
 PORTNAME=	rescue
-PORTVERSION=	1.0.0.3
-PORTREVISION=	1
+DISTVERSION=	1.0.5
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/r/R/}%21%20Max/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/r/R/}_${PORTVERSION}
 DIST_SUBDIR=	java
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Clockwork6400@protonmail.com
 COMMENT=	Action adventure in Space
 WWW=		https://rescue.sourceforge.net/
 
@@ -14,21 +13,23 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 USES=		dos2unix zip:infozip
-DOS2UNIX_GLOB=	*.txt *.htm *.css *.ini *.xml
+DOS2UNIX_GLOB=	*.css *.htm *.ini *.txt *.xml
 USE_JAVA=	yes
+
+DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+DESKTOP_ENTRIES=	"Rescue! Max" \
+			"" \
+			"${PORTNAME}" \
+			"${PORTNAME}" \
+			"Game;StrategyGame;" \
+			""
 NO_BUILD=	yes
+SUB_FILES=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME:S/r/R/}
 
-DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-
 PORTDOCS=	ChangeLog.txt
 OPTIONS_DEFINE=	DOCS
-
-SUB_FILES=	${PORTNAME}
-
-DESKTOP_ENTRIES="Rescue! Max" "" "${PORTNAME}" \
-		"${PORTNAME}" "Game;StrategyGame;" ""
 
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -j Rescue.jar rescue/gui/logo.png)

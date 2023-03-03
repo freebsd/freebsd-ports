@@ -39,7 +39,6 @@ bin/rescue
 %%DATADIR%%/lib/Grasshopper.jar
 %%DATADIR%%/lib/httpcore-4.1.2.jar
 %%DATADIR%%/lib/httpmime-4.1.2.jar
-%%DATADIR%%/missions/keys.ini
 %%DATADIR%%/missions/newmax.xml
 %%DATADIR%%/missions/preview/newmax.jpg
 %%DATADIR%%/missions/preview/rescue.jpg
@@ -161,7 +160,6 @@ bin/rescue
 %%DATADIR%%/missions/ui/newmax/9_off.png
 %%DATADIR%%/missions/ui/newmax/9_on.png
 %%DATADIR%%/missions/ui/newmax/9_up.png
-%%DATADIR%%/missions/ui/newmax/pspbrwse.jbf
 %%DATADIR%%/missions/ui/rescue/com_down.png
 %%DATADIR%%/missions/ui/rescue/com_map.gif
 %%DATADIR%%/missions/ui/rescue/com_off.png
@@ -183,7 +181,6 @@ bin/rescue
 %%DATADIR%%/missions/ui/rescue/new_off.png
 %%DATADIR%%/missions/ui/rescue/new_on.png
 %%DATADIR%%/missions/ui/rescue/new_up.png
-%%DATADIR%%/missions/ui/rescue/pspbrwse.jbf
 %%DATADIR%%/missions/ui/rescue/scroll_down.png
 %%DATADIR%%/missions/ui/rescue/scroll_map.gif
 %%DATADIR%%/missions/ui/rescue/scroll_off.png
@@ -252,5 +249,4 @@ bin/rescue
 %%DATADIR%%/missions/ui/rescuemax/9_off.png
 %%DATADIR%%/missions/ui/rescuemax/9_on.png
 %%DATADIR%%/missions/ui/rescuemax/9_up.png
-%%DATADIR%%/missions/ui/rescuemax/pspbrwse.jbf
 share/pixmaps/rescue.png
