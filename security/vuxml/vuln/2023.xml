@@ -1,3 +1,129 @@
+  <vuln vid="6dccc186-b824-11ed-b695-6c3be5272acd">
+    <topic>Grafana -- Stored XSS in text panel plugin</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>9.2.0</ge><lt>9.2.10</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.4</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.2.0</ge><lt>9.2.10</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/02/28/grafana-security-release-new-versions-with-security-fixes-for-cve-2023-0594-cve-2023-0507-and-cve-2023-22462/">
+	  <p>During an internal audit of Grafana on January 1, a member of the security
+	  team found a stored XSS vulnerability affecting the core text plugin.</p>
+	  <p>The stored XSS vulnerability requires several user interactions in order
+	  to be fully exploited. The vulnerability was possible due to React’s render
+	  cycle that will pass through the unsanitized HTML code, but in the next cycle,
+	  the HTML is cleaned up and saved in Grafana’s database.</p>
+	  <p>The CVSS score for this vulnerability is 6.4 Medium
+	  (CVSS:6.4/AV:N/AC:H/PR:L/UI:R/S:U/C:H/I:H/A:N).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-22462</cvename>
+      <url>https://github.com/grafana/grafana/security/advisories/GHSA-7rqg-hjwc-6mjf</url>
+    </references>
+    <dates>
+      <discovery>2023-01-01</discovery>
+      <entry>2023-03-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e7841611-b808-11ed-b695-6c3be5272acd">
+    <topic>Grafana -- Stored XSS in TraceView panel</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><lt>8.5.21</lt></range>
+	<range><ge>9.0.0</ge><lt>9.2.13</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.8</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><lt>8.5.21</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.2.13</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/02/28/grafana-security-release-new-versions-with-security-fixes-for-cve-2023-0594-cve-2023-0507-and-cve-2023-22462/">
+	  <p>During an internal audit of Grafana on January 30, a member
+	  of the engineering team found a stored XSS vulnerability affecting
+	  the <code>TraceView</code> panel.</p>
+	  <p>The stored XSS vulnerability was possible because the value of a span’s
+	  attributes/resources were not properly sanitized, and this will be rendered
+	  when the span’s attributes/resources are expanded.</p>
+	  <p>The CVSS score for this vulnerability is 7.3 High
+	  (CVSS:7.3/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-0594</cvename>
+      <url>https://grafana.com/blog/2023/02/28/grafana-security-release-new-versions-with-security-fixes-for-cve-2023-0594-cve-2023-0507-and-cve-2023-22462/</url>
+    </references>
+    <dates>
+      <discovery>2023-01-30</discovery>
+      <entry>2023-03-01</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e2a8e2bd-b808-11ed-b695-6c3be5272acd">
+    <topic>Grafana -- Stored XSS in geomap panel plugin via attribution</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><lt>8.5.21</lt></range>
+	<range><ge>9.0.0</ge><lt>9.2.13</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.8</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><lt>8.5.21</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.0.0</ge><lt>9.2.13</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/02/28/grafana-security-release-new-versions-with-security-fixes-for-cve-2023-0594-cve-2023-0507-and-cve-2023-22462/">
+	  <p>During an internal audit of Grafana on January 25, a member of the security
+	  team found a stored XSS vulnerability affecting the core geomap plugin.</p>
+	  <p>The stored XSS vulnerability was possible because map attributions weren’t
+	  properly sanitized, allowing arbitrary JavaScript to be executed in the context
+	  of the currently authorized user of the Grafana instance.</p>
+	  <p>The CVSS score for this vulnerability is 7.3 High
+	  (CVSS:7.3/AV:N/AC:L/PR:L/UI:R/S:U/C:H/I:H/A:N).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-0507</cvename>
+      <url>https://grafana.com/blog/2023/02/28/grafana-security-release-new-versions-with-security-fixes-for-cve-2023-0594-cve-2023-0507-and-cve-2023-22462/</url>
+    </references>
+    <dates>
+      <discovery>2023-01-25</discovery>
+      <entry>2023-03-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b17bce48-b7c6-11ed-b304-080027f5fec9">
     <topic>redis -- multiple vulnerabilities</topic>
     <affects>
