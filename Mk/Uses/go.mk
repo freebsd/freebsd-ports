@@ -220,7 +220,7 @@ do-build:
 		pkg=$$(${ECHO_CMD} $${t} | \
 			${SED} -Ee 's/^([^:]*).*$$/\1/' -e 's/^${PORTNAME}$$/./'); \
 		${ECHO_MSG} "===>  Building $${out} from $${pkg}"; \
-		${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} build ${GO_BUILDFLAGS} \
+		${SETENV} ${MAKE_ENV} ${GO_ENV} GOMAXPROCS=${MAKE_JOBS_NUMBER} GOPROXY=off ${GO_CMD} build ${GO_BUILDFLAGS} \
 			-o ${GO_WRKDIR_BIN}/$${out} \
 			$${pkg}; \
 	done)
