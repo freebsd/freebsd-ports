@@ -1,11 +1,10 @@
 PORTNAME=	gpaint
-PORTVERSION=	0.3.3
 DISTVERSIONPREFIX=	2-
-PORTREVISION=	10
+DISTVERSION=	0.3.4
 CATEGORIES=	graphics gnome
 MASTER_SITES=	GNU_ALPHA
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Clockwork6400@protonmail.com
 COMMENT=	Small-scale painting program for GNOME
 WWW=		https://www.gnu.org/software/gpaint/
 
@@ -17,7 +16,8 @@ USE_GNOME=	gtk20 libglade2
 GNU_CONFIGURE=	yes
 LIBS+=		-lm
 
-PLIST_FILES=	bin/gpaint-2 %%DATADIR%%/glade/gpaint.glade
+PLIST_FILES=	${DATADIR}/glade/gpaint.glade \
+		bin/gpaint-2
 
 post-patch:
 	@${REINPLACE_CMD} -e \
