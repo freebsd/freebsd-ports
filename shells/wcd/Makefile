@@ -1,9 +1,9 @@
 PORTNAME=	wcd
-PORTVERSION=	6.0.3
+DISTVERSION=	6.0.4
 CATEGORIES=	shells
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Clockwork6400@protonmail.com
 COMMENT=	Command-line program to change directory fast
 WWW=		http://wcd.sourceforge.net/
 
@@ -11,14 +11,17 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/copying.txt
 
 USES=		gmake ncurses
-MAKE_ARGS=	EXT= PREFIX=${PREFIX} docsubdir=${PORTNAME} \
-		mandir=${PREFIX}/man LIB_CURSES=-l${NCURSES_IMPL}
+MAKE_ARGS=	docsubdir=${PORTNAME} \
+		EXT= \
+		LIB_CURSES=-l${NCURSES_IMPL} \
+		mandir=${PREFIX}/man \
+		PREFIX=${PREFIX}
 CFLAGS+=	-I${NCURSESINC}
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext
+NLS_USES=		gettext
 NLS_MAKE_ARGS_OFF=	ENABLE_NLS=
 
 post-patch:
