@@ -1,6 +1,6 @@
 PORTNAME=	cardano-db-sync
 PORTVERSION=	13.1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p databases
 
 PATCH_SITES=	https://arrowd.name/:freebsd_compat
@@ -14,7 +14,8 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	ghc-8.10.7:lang/ghc810
 RUN_DEPENDS=	cardano-node:net-p2p/cardano-node \
-		bash:shells/bash
+		bash:shells/bash \
+		${LOCALBASE}/share/rc-subr-jail/rc.subr.jail:ports-mgmt/rc-subr-jail
 
 USES=		autoreconf:build cabal gmake libtool pkgconfig pgsql:14
 
