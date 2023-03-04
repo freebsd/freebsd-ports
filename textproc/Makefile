@@ -104,6 +104,7 @@
     SUBDIR += clucene
     SUBDIR += cmark
     SUBDIR += coccigrep
+    SUBDIR += code-minimap
     SUBDIR += code2html
     SUBDIR += codesearch
     SUBDIR += codespell
