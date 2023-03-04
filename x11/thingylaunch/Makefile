@@ -1,41 +1,19 @@
 PORTNAME=	thingylaunch
-PORTVERSION=	2.0.3
-PORTREVISION=	8
+PORTVERSION=	3.0.0
 CATEGORIES=	x11
-MASTER_SITES=	http://gahr.ch/thingylaunch/
+MASTER_SITES=	https://code.ptrcrt.ch/thingylaunch/tarball/${PORTVERSION}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Lightweight launcher for X
 WWW=		https://www.gahr.ch/thingylaunch
 
-LICENSE=	MIT BSD2CLAUSE
-LICENSE_COMB=	multi
+LICENSE=	BSD2CLAUSE
 
-OPTIONS_SINGLE=		X11
-OPTIONS_SINGLE_X11=	LIBX11 LIBXCB
-LIBX11_DESC=		Build against libX11
-LIBXCB_DESC=		Build against libXCB
-OPTIONS_DEFAULT=	LIBX11
-
-USES=		cmake compiler:c++11-lib xorg
-USE_XORG=	xorgproto
-USE_CXXSTD=	c++11
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MLIBX11}
-USE_XORG+=	x11
-.endif
-
-.if ${PORT_OPTIONS:MLIBXCB}
-USE_XORG+=	xcb
+USES=		compiler:c++11-lib xorg
+USE_XORG=	xorgproto xcb
 LIB_DEPENDS+=	libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
-CMAKE_ARGS+=	-DUSE_XCB:BOOL=ON
-.endif
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	gahr
+USE_CXXSTD=	c++11
 
 PLIST_FILES=	bin/${PORTNAME}
 
