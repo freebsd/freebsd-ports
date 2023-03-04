@@ -11,9 +11,9 @@ man/man1/rapper.1.gz
 man/man3/libraptor2.3.gz
 share/gtk-doc/html/raptor2/home.png
 share/gtk-doc/html/raptor2/index.html
-share/gtk-doc/html/raptor2/index.sgml
 share/gtk-doc/html/raptor2/introduction.html
 share/gtk-doc/html/raptor2/ix01.html
+share/gtk-doc/html/raptor2/left-insensitive.png
 share/gtk-doc/html/raptor2/left.png
 share/gtk-doc/html/raptor2/parser-grddl.html
 share/gtk-doc/html/raptor2/parser-guess.html
@@ -35,6 +35,7 @@ share/gtk-doc/html/raptor2/raptor2-changes-2-0-10-to-2-0-11.html
 share/gtk-doc/html/raptor2/raptor2-changes-2-0-11-to-2-0-12.html
 share/gtk-doc/html/raptor2/raptor2-changes-2-0-13-to-2-0-14.html
 share/gtk-doc/html/raptor2/raptor2-changes-2-0-14-to-2-0-15.html
+share/gtk-doc/html/raptor2/raptor2-changes-2-0-15-to-2-0-16.html
 share/gtk-doc/html/raptor2/raptor2-changes-2-0-3-to-2-0-4.html
 share/gtk-doc/html/raptor2/raptor2-changes-2-0-4-to-2-0-5.html
 share/gtk-doc/html/raptor2/raptor2-changes-2-0-5-to-2-0-6.html
@@ -65,10 +66,12 @@ share/gtk-doc/html/raptor2/raptor2-section-xml.html
 share/gtk-doc/html/raptor2/raptor2.devhelp2
 share/gtk-doc/html/raptor2/reference-manual.html
 share/gtk-doc/html/raptor2/restrict-parser-network-access.html
+share/gtk-doc/html/raptor2/right-insensitive.png
 share/gtk-doc/html/raptor2/right.png
 share/gtk-doc/html/raptor2/serializer-atom.html
 share/gtk-doc/html/raptor2/serializer-dot.html
 share/gtk-doc/html/raptor2/serializer-json.html
+share/gtk-doc/html/raptor2/serializer-mkr.html
 share/gtk-doc/html/raptor2/serializer-nquads.html
 share/gtk-doc/html/raptor2/serializer-ntriples.html
 share/gtk-doc/html/raptor2/serializer-rdfxml-abbrev.html
@@ -105,4 +108,5 @@ share/gtk-doc/html/raptor2/tutorial-serializer-set-error-warning-handlers.html
 share/gtk-doc/html/raptor2/tutorial-serializer-to-destination.html
 share/gtk-doc/html/raptor2/tutorial-serializing.html
 share/gtk-doc/html/raptor2/tutorial.html
+share/gtk-doc/html/raptor2/up-insensitive.png
 share/gtk-doc/html/raptor2/up.png
