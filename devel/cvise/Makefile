@@ -1,5 +1,5 @@
 PORTNAME=	cvise
-PORTVERSION=	2.4.0
+PORTVERSION=	2.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
@@ -29,13 +29,27 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 # once this is installed, all tests pass for me:
 # 260 passed, 1 skipped in 64.82 seconds
 
-USES=		cmake python:3.6+ shebangfix
+USES=		cmake compiler python:3.6+ shebangfix
 CMAKE_ARGS+=	-DLLVM_DIR:PATH=${LOCALBASE}/llvm${LLVM_VER}/lib/cmake/llvm
 CMAKE_ARGS+=	-DClang_DIR:PATH=${LOCALBASE}/llvm${LLVM_VER}/lib/cmake/clang
-LLVM_VER=	13
+LLVM_VER=	15
 SHEBANG_FILES=	cvise-delta.py cvise.py
 USE_GITHUB=	yes
 GH_ACCOUNT=	marxin
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	ff4e51e093a53615362f77c956d90f0f728c12e5.patch:-p1
+PATCHFILES+=	80476310943053aa97969d6410743bddb2d1c770.patch:-p1
+PATCHFILES+=	c560ef24eae3946573317d20759938209fb882fa.patch:-p1
+PATCHFILES+=	222313aa5467d22ba58d3fdc3198abdf75a07f0e.patch:-p1
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} < 150
+CPP=		clang-cpp${LLVM_VER}
+CC=		clang${LLVM_VER}
+CXX=		clang++${LLVM_VER}
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKSRC}/cvise.py
@@ -43,4 +57,4 @@ post-patch:
 do-test:
 	cd ${BUILD_WRKSRC} && pytest
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
