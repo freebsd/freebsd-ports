@@ -354,6 +354,7 @@
     SUBDIR += p5-Locale-US
     SUBDIR += p5-Net-vCard
     SUBDIR += p5-OSSP-uuid
+    SUBDIR += p5-OpenAI-API
     SUBDIR += p5-Software-License
     SUBDIR += p5-Software-License-CCpack
     SUBDIR += p5-Test-Dir
