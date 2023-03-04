@@ -1,5 +1,5 @@
 PORTNAME=	thingylaunch
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	x11
 MASTER_SITES=	https://code.ptrcrt.ch/${PORTNAME}/tarball/${PORTVERSION}/
 
