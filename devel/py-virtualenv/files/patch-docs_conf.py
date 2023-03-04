@@ -14,7 +14,7 @@
      here = Path(__file__).parent
      root, exe = here.parent, Path(sys.executable)
 -    towncrier = exe.with_name(f"towncrier{exe.suffix}")
-+    towncrier = exe.with_name(f"towncrier")
++    towncrier = exe.with_name(f"towncrier-%%PYTHON_VER%%")
      cmd = [str(towncrier), "build", "--draft", "--version", "NEXT"]
      new = subprocess.check_output(cmd, cwd=root, text=True, stderr=subprocess.DEVNULL)
      (root / "docs" / "_draft.rst").write_text("" if "No significant changes" in new else new)

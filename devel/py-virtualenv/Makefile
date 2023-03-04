@@ -74,7 +74,9 @@ DOCS_PORTDOCS=		* .buildinfo
 VIRTUALENV_WHEEL=	${WRKSRC}/dist/${PORTNAME}-${PORTVERSION}-py${PYTHON_MAJOR_VER}-none-any.whl
 
 post-patch:
-	@${SED} -i.bak -e 's,%%VIRTUALENV_WHEEL%%,${VIRTUALENV_WHEEL},1' ${WRKSRC}/docs/conf.py
+	@${SED} -i.bak -e 's,%%VIRTUALENV_WHEEL%%,${VIRTUALENV_WHEEL},1' \
+	-e 's,%%PYTHON_VER%%,${PYTHON_VER},1' \
+	${WRKSRC}/docs/conf.py
 
 post-install:
 	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
