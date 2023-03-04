@@ -15,6 +15,7 @@ include/JUCE-%%VERSION%%/modules/juce_analytics/destinations/juce_ThreadedAnalyt
 include/JUCE-%%VERSION%%/modules/juce_analytics/destinations/juce_ThreadedAnalyticsDestination.h
 include/JUCE-%%VERSION%%/modules/juce_analytics/juce_analytics.cpp
 include/JUCE-%%VERSION%%/modules/juce_analytics/juce_analytics.h
+include/JUCE-%%VERSION%%/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/audio_play_head/juce_AudioPlayHead.h
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/buffers/juce_AudioChannelSet.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/buffers/juce_AudioChannelSet.h
@@ -46,6 +47,7 @@ include/JUCE-%%VERSION%%/modules/juce_audio_basics/midi/ump/juce_UMPConversion.h
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/midi/ump/juce_UMPConverters.h
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/midi/ump/juce_UMPDispatcher.h
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/midi/ump/juce_UMPFactory.h
+include/JUCE-%%VERSION%%/modules/juce_audio_basics/midi/ump/juce_UMPIterator.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/midi/ump/juce_UMPIterator.h
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/midi/ump/juce_UMPMidi1ToBytestreamTranslator.h
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/midi/ump/juce_UMPMidi1ToMidi2DefaultTranslator.cpp
@@ -92,6 +94,7 @@ include/JUCE-%%VERSION%%/modules/juce_audio_basics/sources/juce_MemoryAudioSourc
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/sources/juce_MemoryAudioSource.h
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/sources/juce_MixerAudioSource.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/sources/juce_MixerAudioSource.h
+include/JUCE-%%VERSION%%/modules/juce_audio_basics/sources/juce_PositionableAudioSource.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/sources/juce_PositionableAudioSource.h
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/sources/juce_ResamplingAudioSource.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_basics/sources/juce_ResamplingAudioSource.h
@@ -478,7 +481,6 @@ include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/AU/juce_AU_Wrapper.mm
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/AU/juce_AUv3_Wrapper.mm
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/LV2/juce_LV2TurtleDumpProgram.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/LV2/juce_LV2_Client.cpp
-include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/LV2/juce_LV2_Client.cpp.orig
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/Standalone/juce_StandaloneFilterApp.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/Standalone/juce_StandaloneFilterWindow.h
 include/JUCE-%%VERSION%%/modules/juce_audio_plugin_client/Unity/juce_UnityPluginInterface.h
@@ -515,7 +517,6 @@ include/JUCE-%%VERSION%%/modules/juce_audio_processors/format/juce_AudioPluginFo
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/README.md
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/generate_lv2_bundle_sources.py
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/juce_lv2_config.h
-include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/juce_lv2_config.h.orig
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/lilv/COPYING
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/lilv/lilv/lilv.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/LV2_SDK/lilv/lilv/lilvmm.hpp
@@ -727,7 +728,6 @@ include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/plu
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/falignpop.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/falignpush.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/fplatform.h
-include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/fplatform.h.orig
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/fstrdefs.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/ftypes.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/VST3_SDK/pluginterfaces/base/funknown.cpp
@@ -830,7 +830,6 @@ include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/pslextension
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/pslextensions/pslauextensions.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/format_types/pslextensions/pslvst2extensions.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/juce_audio_processors.cpp
-include/JUCE-%%VERSION%%/modules/juce_audio_processors/juce_audio_processors.cpp.orig
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/juce_audio_processors.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/juce_audio_processors.mm
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/juce_audio_processors_ara.cpp
@@ -894,6 +893,7 @@ include/JUCE-%%VERSION%%/modules/juce_audio_processors/utilities/juce_PluginHost
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/utilities/juce_RangedAudioParameter.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/utilities/juce_RangedAudioParameter.h
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/utilities/juce_VST3ClientExtensions.h
+include/JUCE-%%VERSION%%/modules/juce_audio_processors/utilities/juce_VSTCallbackHandler.cpp
 include/JUCE-%%VERSION%%/modules/juce_audio_processors/utilities/juce_VSTCallbackHandler.h
 include/JUCE-%%VERSION%%/modules/juce_audio_utils/audio_cd/juce_AudioCDBurner.h
 include/JUCE-%%VERSION%%/modules/juce_audio_utils/audio_cd/juce_AudioCDReader.cpp
@@ -1324,6 +1324,7 @@ include/JUCE-%%VERSION%%/modules/juce_data_structures/juce_data_structures.h
 include/JUCE-%%VERSION%%/modules/juce_data_structures/juce_data_structures.mm
 include/JUCE-%%VERSION%%/modules/juce_data_structures/undomanager/juce_UndoManager.cpp
 include/JUCE-%%VERSION%%/modules/juce_data_structures/undomanager/juce_UndoManager.h
+include/JUCE-%%VERSION%%/modules/juce_data_structures/undomanager/juce_UndoableAction.cpp
 include/JUCE-%%VERSION%%/modules/juce_data_structures/undomanager/juce_UndoableAction.h
 include/JUCE-%%VERSION%%/modules/juce_data_structures/values/juce_CachedValue.cpp
 include/JUCE-%%VERSION%%/modules/juce_data_structures/values/juce_CachedValue.h
@@ -1890,6 +1891,7 @@ include/JUCE-%%VERSION%%/modules/juce_gui_basics/native/juce_win32_DragAndDrop.c
 include/JUCE-%%VERSION%%/modules/juce_gui_basics/native/juce_win32_FileChooser.cpp
 include/JUCE-%%VERSION%%/modules/juce_gui_basics/native/juce_win32_ScopedThreadDPIAwarenessSetter.h
 include/JUCE-%%VERSION%%/modules/juce_gui_basics/native/juce_win32_Windowing.cpp
+include/JUCE-%%VERSION%%/modules/juce_gui_basics/native/x11/juce_linux_ScopedWindowAssociation.h
 include/JUCE-%%VERSION%%/modules/juce_gui_basics/native/x11/juce_linux_X11_DragAndDrop.cpp
 include/JUCE-%%VERSION%%/modules/juce_gui_basics/native/x11/juce_linux_X11_Symbols.cpp
 include/JUCE-%%VERSION%%/modules/juce_gui_basics/native/x11/juce_linux_X11_Symbols.h
@@ -2018,6 +2020,7 @@ include/JUCE-%%VERSION%%/modules/juce_gui_extra/misc/juce_SplashScreen.cpp
 include/JUCE-%%VERSION%%/modules/juce_gui_extra/misc/juce_SplashScreen.h
 include/JUCE-%%VERSION%%/modules/juce_gui_extra/misc/juce_SystemTrayIconComponent.cpp
 include/JUCE-%%VERSION%%/modules/juce_gui_extra/misc/juce_SystemTrayIconComponent.h
+include/JUCE-%%VERSION%%/modules/juce_gui_extra/misc/juce_WebBrowserComponent.cpp
 include/JUCE-%%VERSION%%/modules/juce_gui_extra/misc/juce_WebBrowserComponent.h
 include/JUCE-%%VERSION%%/modules/juce_gui_extra/native/java/app/com/rmsl/juce/JuceWebView.java
 include/JUCE-%%VERSION%%/modules/juce_gui_extra/native/java/app/com/rmsl/juce/JuceWebView21.java

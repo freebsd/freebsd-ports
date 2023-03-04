@@ -1,10 +1,6 @@
 PORTNAME=	juce
-DISTVERSION=	7.0.3
-PORTREVISION=	1
+DISTVERSION=	7.0.5
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	a6bd3784c0156d7fdb03f3e669f1454098e5138c.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ application framework to develop desktop and mobile applications
@@ -29,7 +25,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 
 USES=		cmake compiler:c++11-lang dos2unix gl gnome localbase:ldflags pkgconfig xorg
 DOS2UNIX_FILES=	modules/juce_core/juce_core.h
-USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
+USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 USE_GL=		gl
 USE_XORG=	x11 xcomposite xcursor xext xinerama xorgproto xrandr
 
