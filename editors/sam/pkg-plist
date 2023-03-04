@@ -1,0 +1,10 @@
+bin/B
+bin/sam
+bin/samterm
+bin/ssam
+share/man/man1/B.1.gz
+share/man/man1/rsam.1.gz
+share/man/man1/sam.1.gz
+share/man/man1/sam.save.1.gz
+share/man/man1/samterm.1.gz
+share/man/man5/samrc.5.gz

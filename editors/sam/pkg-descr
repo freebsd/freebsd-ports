@@ -1,0 +1,5 @@
+Sam is a text editor originally written for the Blit graphical terminal
+connected to a machine running 9th Edition Research Unix. It contained many
+useful innovations, the most famous of which was its use of structural regular
+expressions. This version of sam is based on that 1990s Unix port, with many
+useful additions and modifications.

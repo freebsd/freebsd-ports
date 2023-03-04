@@ -243,6 +243,7 @@
     SUBDIR += rehex
     SUBDIR += retext
     SUBDIR += rubygem-neovim
+    SUBDIR += sam
     SUBDIR += scite
     SUBDIR += se
     SUBDIR += semi
