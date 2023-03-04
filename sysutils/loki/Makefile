@@ -1,7 +1,6 @@
 PORTNAME=	loki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.7.0
-PORTREVISION=	5
+DISTVERSION=	2.7.4
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	grafana-
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 # Please keep this port always pinned to a specific version of Go,
 # it fails at runtime if built with version that it does not support.
-USES=		go:1.19,modules cpe
+USES=		go:1.20,modules cpe
 CPE_VENDOR=	grafana
 USE_GITHUB=	yes
 
@@ -119,8 +118,8 @@ GH_TUPLE=	\
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-zookeeper:zk:v1.0.3:go_zookeeper_zk/vendor/github.com/go-zookeeper/zk \
-		go4org:go4:d4a079459e60:go4org_go4/vendor/go4.org/intern \
-		go4org:unsafe-assume-no-moving-gc:928513b29760:go4org_go4_1/vendor/go4.org/unsafe/assume-no-moving-gc \
+		go4org:intern:ae77deb06f29:go4org_go4/vendor/go4.org/intern \
+		go4org:unsafe-assume-no-moving-gc:e4bae7ad2296:go4org_go4_1/vendor/go4.org/unsafe/assume-no-moving-gc \
 		gofrs:flock:v0.7.1:gofrs_flock/vendor/github.com/gofrs/flock \
 		gogo:googleapis:v1.4.0:gogo_googleapis/vendor/github.com/gogo/googleapis \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
@@ -241,7 +240,7 @@ GH_TUPLE=	\
 		oklog:run:v1.1.0:oklog_run/vendor/github.com/oklog/run \
 		oklog:ulid:v1.3.1:oklog_ulid/vendor/github.com/oklog/ulid \
 		open-telemetry:opentelemetry-go-contrib:zpages/v0.36.0:open_telemetry_opentelemetry_go_contrib/vendor/go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp \
-		open-telemetry:opentelemetry-go:metric/v0.32.0:open_telemetry_opentelemetry_go_2/vendor/go.opentelemetry.io/otel/metric \
+		open-telemetry:opentelemetry-go:metric/v0.32.0:open_telemetry_opentelemetry_go_1/vendor/go.opentelemetry.io/otel/metric \
 		open-telemetry:opentelemetry-go:v1.10.0:open_telemetry_opentelemetry_go/vendor/go.opentelemetry.io/otel \
 		opencontainers:go-digest:v1.0.0:opencontainers_go_digest/vendor/github.com/opencontainers/go-digest \
 		opencontainers:image-spec:v1.0.2:opencontainers_image_spec/vendor/github.com/opencontainers/image-spec \
