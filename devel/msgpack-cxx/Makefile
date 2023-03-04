@@ -1,5 +1,5 @@
 PORTNAME=	msgpack
-PORTVERSION=	5.0.0
+PORTVERSION=	6.0.0
 DISTVERSIONPREFIX=	cpp-
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-cxx
@@ -17,5 +17,13 @@ GH_PROJECT=	msgpack-c
 NO_ARCH=	yes
 
 CMAKE_OFF=	MSGPACK_BUILD_EXAMPLES MSGPACK_USE_BOOST
+
+# Link to original cmake files because upstream keeps changing its name.
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/cmake/msgpackc-cxx
+.for tgt in config-version config targets
+	${LN} -sf ../msgpack-cxx/msgpack-cxx-${tgt}.cmake \
+		${STAGEDIR}${PREFIX}/lib/cmake/msgpackc-cxx/msgpackc-cxx-${tgt}.cmake
+.endfor
 
 .include <bsd.port.mk>
