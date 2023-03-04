@@ -8,9 +8,11 @@ include/KF5/purpose/purpose/job.h
 include/KF5/purpose/purpose/pluginbase.h
 include/KF5/purpose/purpose/purpose_export.h
 include/KF5/purpose/purpose_version.h
+include/KF5/purposewidgets/Purpose/Menu
 include/KF5/purposewidgets/PurposeWidgets/Menu
+include/KF5/purposewidgets/purpose/menu.h
+include/KF5/purposewidgets/purpose/purposewidgets_export.h
 include/KF5/purposewidgets/purposewidgets/menu.h
-include/KF5/purposewidgets/purposewidgets/purposewidgets_export.h
 lib/cmake/KDEExperimentalPurpose/KDEExperimentalPurposeConfig.cmake
 lib/cmake/KF5Purpose/KF5PurposeConfig.cmake
 lib/cmake/KF5Purpose/KF5PurposeConfigVersion.cmake
@@ -405,6 +407,7 @@ share/locale/ko/LC_MESSAGES/purpose_youtube.mo
 share/locale/lt/LC_MESSAGES/libpurpose_quick.mo
 share/locale/lt/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/lt/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/lt/LC_MESSAGES/purpose_barcode.mo
 share/locale/lt/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/lt/LC_MESSAGES/purpose_imgur.mo
 share/locale/lt/LC_MESSAGES/purpose_kdeconnect.mo

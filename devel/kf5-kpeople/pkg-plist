@@ -26,6 +26,7 @@ include/KF5/KPeople/kpeople/widgets/kpeoplewidgets_export.h
 include/KF5/KPeople/kpeople/widgets/mergedialog.h
 include/KF5/KPeople/kpeople/widgets/persondetailsdialog.h
 include/KF5/KPeople/kpeople/widgets/persondetailsview.h
+include/KF5/KPeople/kpeople_version.h
 include/KF5/KPeople/kpeoplebackend/abstractcontact.h
 include/KF5/KPeople/kpeoplebackend/abstracteditablecontact.h
 include/KF5/KPeople/kpeoplebackend/abstractpersonaction.h
