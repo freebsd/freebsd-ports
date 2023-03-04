@@ -1,5 +1,5 @@
---- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2021-10-18 10:58:03.000000000 -0700
-+++ src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c	2021-11-19 15:31:33.152269000 -0800
+--- src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c.orig	2022-07-19 20:58:42 UTC
++++ src/VBox/HostDrivers/Support/freebsd/SUPDrv-freebsd.c
 @@ -44,8 +44,10 @@
  #include <sys/fcntl.h>
  #include <sys/conf.h>
@@ -26,7 +26,7 @@
  #ifdef VBOX_WITH_HARDENING
  # define VBOXDRV_PERM 0600
  #else
-@@ -76,7 +85,9 @@ static d_open_t     VBoxDrvFreeBSDOpenUsr;
+@@ -76,7 +85,9 @@ static d_ioctl_t    VBoxDrvFreeBSDIOCtl;
  static d_open_t     VBoxDrvFreeBSDOpenSys;
  static void         vboxdrvFreeBSDDtr(void *pvData);
  static d_ioctl_t    VBoxDrvFreeBSDIOCtl;
@@ -112,7 +112,7 @@
          pvUser = *(void **)pvData;
 -        int rc = copyin(pvUser, &Hdr, sizeof(Hdr));
 -        if (RT_UNLIKELY(rc))
-+        if (RT_FAILURE(RTR0MemUserCopyFrom(&Hdr, pvUser, sizeof(Hdr))))
++        if (RT_FAILURE(RTR0MemUserCopyFrom(&Hdr, (uintptr_t)pvUser, sizeof(Hdr))))
          {
 -            OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: copyin(%p,Hdr,) -> %#x; ulCmd=%#lx\n", pvUser, rc, ulCmd));
 -            return rc;
@@ -151,7 +151,7 @@
  
              Log(("VBoxDrvFreeBSDIOCtlSlow: returns %d / %d ulCmd=%lx\n", 0, pHdr->rc, ulCmd));
  
-@@ -540,8 +595,7 @@ bool VBOXCALL  supdrvOSGetForcedAsyncTscMode(PSUPDRVDE
+@@ -540,8 +595,7 @@ bool VBOXCALL  supdrvOSAreCpusOfflinedOnSuspend(void)
  
  bool VBOXCALL  supdrvOSAreCpusOfflinedOnSuspend(void)
  {
@@ -161,7 +161,7 @@
  }
  
  
-@@ -624,19 +678,43 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
+@@ -624,20 +678,44 @@ int VBOXCALL    supdrvOSMsrProberModify(RTCPUID idCpu,
  #endif /* SUPDRV_WITH_MSR_PROBER */
  
  
@@ -205,4 +205,5 @@
 +#endif
 +    return fFlags;
  }
+ 
  
