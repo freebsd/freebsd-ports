@@ -1,7 +1,6 @@
 PORTNAME=	skim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.2
-PORTREVISION=	2
+DISTVERSION=	0.10.4
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-fuzzy-finder
 
@@ -26,7 +25,6 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		bitflags-1.3.2 \
 		bumpalo-3.11.1 \
 		cc-1.0.73 \
-		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.22 \
 		clap-3.2.22 \
@@ -34,12 +32,10 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		codespan-reporting-0.11.1 \
 		core-foundation-sys-0.8.3 \
 		crossbeam-0.8.2 \
-		crossbeam-channel-0.4.4 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.11 \
 		crossbeam-queue-0.3.6 \
-		crossbeam-utils-0.7.2 \
 		crossbeam-utils-0.8.12 \
 		cxx-1.0.80 \
 		cxx-build-1.0.80 \
@@ -48,7 +44,7 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		darling-0.14.1 \
 		darling_core-0.14.1 \
 		darling_macro-0.14.1 \
-		defer-drop-1.2.0 \
+		defer-drop-1.3.0 \
 		derive_builder-0.11.2 \
 		derive_builder_core-0.11.2 \
 		derive_builder_macro-0.11.2 \
@@ -71,7 +67,6 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		libc-0.2.135 \
 		link-cplusplus-1.0.7 \
 		log-0.4.17 \
-		maybe-uninit-2.0.0 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
 		nix-0.24.2 \
