@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230304:
+  AFFECTS: users of accessibility/atk and accessibilty/at-spi2-atk
+  AUTHOR: tcberner@FreeBSD.org
+
+  The packages accessibility/atk and accessibility/at-spi2-atk have been
+  integegrated upstream into at-spi2-core.
+
+  Users of these packages can manually remove them prior to updating
+  accessibility/at-spi2-core using
+
+     pkg delete -f atk at-spi2-atk
+
+  if the pkg update process fails due to conflicting files.
+
 20230227:
   AFFECTS: users of databases/sqlite3
   AUTHOR: fuz@FreeBSD.org
