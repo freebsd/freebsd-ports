@@ -1,0 +1,12 @@
+--- shell/meson.build.orig	2022-09-13 15:10:03 UTC
++++ shell/meson.build
+@@ -129,7 +129,8 @@ executable(
+          dependencies : shell_deps,
+                c_args : cflags,
+             link_with : panels_libs,
+-              install : true
++              install : true,
++              install_rpath : '/usr/lib'
+ )
+ 
+ 

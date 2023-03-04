@@ -9,6 +9,7 @@
     SUBDIR += ant-dracula-theme
     SUBDIR += arc-gruvbox-theme
     SUBDIR += audacious-skins
+    SUBDIR += budgie-backgrounds
     SUBDIR += canta-gtk-themes
     SUBDIR += canta-icon-theme
     SUBDIR += chicago95
@@ -160,6 +161,7 @@
     SUBDIR += slim-freebsd-dark-theme
     SUBDIR += slim-freebsd-themes
     SUBDIR += slim-themes
+    SUBDIR += tela-icon-theme
     SUBDIR += thewidgetfactory
     SUBDIR += wallpapers-freebsd-kde
     SUBDIR += win98se-icon-theme

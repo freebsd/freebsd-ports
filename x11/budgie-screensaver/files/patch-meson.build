@@ -1,0 +1,33 @@
+--- meson.build.orig	2022-06-11 04:30:52 UTC
++++ meson.build
+@@ -9,7 +9,6 @@ project(
+     ],
+ )
+ 
+-git = find_program('git', required: false)
+ 
+ # Dependencies
+ dep_x11 = dependency('x11', version: '>= 1.0')
+@@ -39,13 +38,6 @@ dep_pam = c.find_library('pam', required: true)
+ # Inspired by https://github.com/GNOME/recipes/blob/master/meson.build
+ package_version = meson.project_version()
+ 
+-if git.found()
+-    git_version = run_command('git', ['rev-parse', '--short', 'HEAD'], check: false)
+-    if git_version.returncode() == 0
+-        package_version += ' (git-'+git_version.stdout().strip()+')'
+-    endif
+-endif
+-
+ prefix = get_option('prefix')
+ datadir = join_paths(prefix, get_option('datadir'))
+ libexecdir = join_paths(prefix, get_option('libexecdir'))
+@@ -61,6 +53,8 @@ cdata.set_quoted('LIBEXECDIR', libexecdir)
+ 
+ if with_systemd
+     cdata.set('WITH_SYSTEMD', 1)
++else
++    cdata.set('WITH_CONSOLE_KIT', 1)
+ endif
+ 
+ if not without_kdb_layout_indicator
