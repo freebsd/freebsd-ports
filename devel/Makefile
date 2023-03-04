@@ -4592,6 +4592,7 @@
     SUBDIR += py-flake8-bugbear
     SUBDIR += py-flake8-builtins
     SUBDIR += py-flake8-docstrings
+    SUBDIR += py-flake8-future-annotations
     SUBDIR += py-flake8-import-order
     SUBDIR += py-flake8-polyfill
     SUBDIR += py-flake8-print
