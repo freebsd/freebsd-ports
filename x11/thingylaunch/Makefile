@@ -1,11 +1,11 @@
 PORTNAME=	thingylaunch
 PORTVERSION=	3.0.0
 CATEGORIES=	x11
-MASTER_SITES=	https://code.ptrcrt.ch/thingylaunch/tarball/${PORTVERSION}/
+MASTER_SITES=	https://code.ptrcrt.ch/${PORTNAME}/tarball/${PORTVERSION}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Lightweight launcher for X
-WWW=		https://www.gahr.ch/thingylaunch
+WWW=		https://code.ptrcrt.ch/${PORTNAME}
 
 LICENSE=	BSD2CLAUSE
 
