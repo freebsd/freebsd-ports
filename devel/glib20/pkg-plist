@@ -90,6 +90,7 @@ include/glib-2.0/gio/ginetsocketaddress.h
 include/glib-2.0/gio/ginitable.h
 include/glib-2.0/gio/ginputstream.h
 include/glib-2.0/gio/gio-autocleanups.h
+include/glib-2.0/gio/gio-visibility.h
 include/glib-2.0/gio/gio.h
 include/glib-2.0/gio/gioenums.h
 include/glib-2.0/gio/gioenumtypes.h
@@ -215,6 +216,7 @@ include/glib-2.0/glib/giochannel.h
 include/glib-2.0/glib/gkeyfile.h
 include/glib-2.0/glib/glib-autocleanups.h
 include/glib-2.0/glib/glib-typeof.h
+include/glib-2.0/glib/glib-visibility.h
 include/glib-2.0/glib/glist.h
 include/glib-2.0/glib/gmacros.h
 include/glib-2.0/glib/gmain.h
@@ -224,6 +226,7 @@ include/glib-2.0/glib/gmem.h
 include/glib-2.0/glib/gmessages.h
 include/glib-2.0/glib/gnode.h
 include/glib-2.0/glib/goption.h
+include/glib-2.0/glib/gpathbuf.h
 include/glib-2.0/glib/gpattern.h
 include/glib-2.0/glib/gpoll.h
 include/glib-2.0/glib/gprimes.h
@@ -265,6 +268,7 @@ include/glib-2.0/glib/gversion.h
 include/glib-2.0/glib/gversionmacros.h
 include/glib-2.0/glib/gwin32.h
 include/glib-2.0/gmodule.h
+include/glib-2.0/gmodule/gmodule-visibility.h
 include/glib-2.0/gobject/gbinding.h
 include/glib-2.0/gobject/gbindinggroup.h
 include/glib-2.0/gobject/gboxed.h
@@ -274,6 +278,7 @@ include/glib-2.0/gobject/glib-enumtypes.h
 include/glib-2.0/gobject/glib-types.h
 include/glib-2.0/gobject/gmarshal.h
 include/glib-2.0/gobject/gobject-autocleanups.h
+include/glib-2.0/gobject/gobject-visibility.h
 include/glib-2.0/gobject/gobject.h
 include/glib-2.0/gobject/gobjectnotifyqueue.c
 include/glib-2.0/gobject/gparam.h
@@ -357,6 +362,9 @@ share/gettext/its/gschema.loc
 %%DATADIR%%-2.0/codegen/codegen_main.py
 %%DATADIR%%-2.0/codegen/codegen_main.pyc
 %%DATADIR%%-2.0/codegen/codegen_main.pyo
+%%DATADIR%%-2.0/codegen/codegen_md.py
+%%DATADIR%%-2.0/codegen/codegen_md.pyc
+%%DATADIR%%-2.0/codegen/codegen_md.pyo
 %%DATADIR%%-2.0/codegen/codegen_rst.py
 %%DATADIR%%-2.0/codegen/codegen_rst.pyc
 %%DATADIR%%-2.0/codegen/codegen_rst.pyo
@@ -552,6 +560,7 @@ share/gettext/its/gschema.loc
 %%GTKDOC%%share/gtk-doc/html/gio/api-index-2-70.html
 %%GTKDOC%%share/gtk-doc/html/gio/api-index-2-72.html
 %%GTKDOC%%share/gtk-doc/html/gio/api-index-2-74.html
+%%GTKDOC%%share/gtk-doc/html/gio/api-index-2-76.html
 %%GTKDOC%%share/gtk-doc/html/gio/api-index-deprecated.html
 %%GTKDOC%%share/gtk-doc/html/gio/api-index-full.html
 %%GTKDOC%%share/gtk-doc/html/gio/application.html
@@ -689,6 +698,7 @@ share/gettext/its/gschema.loc
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-2-70.html
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-2-72.html
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-2-74.html
+%%GTKDOC%%share/gtk-doc/html/glib/api-index-2-76.html
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-2-8.html
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-deprecated.html
 %%GTKDOC%%share/gtk-doc/html/glib/api-index-full.html
@@ -721,6 +731,7 @@ share/gettext/its/gschema.loc
 %%GTKDOC%%share/gtk-doc/html/glib/glib-Error-Reporting.html
 %%GTKDOC%%share/gtk-doc/html/glib/glib-File-Utilities.html
 %%GTKDOC%%share/gtk-doc/html/glib/glib-GDateTime.html
+%%GTKDOC%%share/gtk-doc/html/glib/glib-GPathBuf.html
 %%GTKDOC%%share/gtk-doc/html/glib/glib-GTimeZone.html
 %%GTKDOC%%share/gtk-doc/html/glib/glib-GUuid.html
 %%GTKDOC%%share/gtk-doc/html/glib/glib-GVariant.html
@@ -835,6 +846,7 @@ share/gettext/its/gschema.loc
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-2-70.html
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-2-72.html
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-2-74.html
+%%GTKDOC%%share/gtk-doc/html/gobject/api-index-2-76.html
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-2-8.html
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-deprecated.html
 %%GTKDOC%%share/gtk-doc/html/gobject/api-index-full.html

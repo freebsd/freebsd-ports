@@ -1,5 +1,5 @@
 PORTNAME=	glib
-DISTVERSION=	2.74.6
+DISTVERSION=	2.76.0
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -29,7 +29,7 @@ MESON_ARGS=	-Db_lundef=false \
 		-Ddefault_library=both \
 		-Dinstalled_tests=false \
 		-Dlibmount=disabled \
-		-Dlocalstatedir=/var \
+		-Druntime_dir=/var/run \
 		-Dselinux=disabled \
 		-Dxattr=false
 BINARY_ALIAS=	python3=${PYTHON_CMD}
@@ -38,7 +38,7 @@ CPE_VENDOR=	gnome
 
 CONFLICTS_INSTALL=	p5-Giovanni
 
-_LIBVERSION=	0.7400.6
+_LIBVERSION=	0.7600.0
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
 
 OPTIONS_DEFINE=		DEBUG GTKDOC FAM_ALTBACKEND MANPAGES NLS TEST
