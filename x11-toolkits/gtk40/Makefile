@@ -1,6 +1,5 @@
 PORTNAME=	gtk
-PORTVERSION=	4.8.3
-PORTREVISION=	1
+PORTVERSION=	4.10.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -33,11 +32,12 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_GNOME=	atk cairo gdkpixbuf2 introspection:build pango \
 		librsvg2:run
+MESON_ARGS=	-Dbuild-testsuite=false
 LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-LIBVERSION=	1.800.3
+LIBVERSION=	1.1000.0
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo4.gschema.xml \
@@ -102,5 +102,12 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-4.0/${GTK4_VERSION}/engines
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-4.0/${GTK4_VERSION}/loaders
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib/gtk-4.0/${GTK4_VERSION}/modules
+
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dbuild-testsuite=true"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>
