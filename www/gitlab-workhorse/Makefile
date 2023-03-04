@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-workhorse
-PORTVERSION=	15.8.3
+PORTVERSION=	15.8.4
 PORTREVISION=	0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
@@ -25,7 +25,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	22f43167474102e26b4b585df6dbb541e48b7879
+GL_COMMIT=	54f2a13176e4d174500a39302d29895d7e729d38
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
