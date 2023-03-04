@@ -1,3 +1,32 @@
+  <vuln vid="3f9b6943-ba58-11ed-bbbd-00e0670f2660">
+    <topic>strongSwan -- certificate verification vulnerability</topic>
+    <affects>
+      <package>
+	<name>strongswan</name>
+	<range><ge>5.9.8</ge><lt>5.9.9_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>strongSwan reports:</p>
+	<blockquote cite="https://www.strongswan.org/blog/2023/03/02/strongswan-vulnerability-(cve-2023-26463).html">
+	  <p>A vulnerability related to certificate verification in TLS-based EAP methods
+	     was discovered in strongSwan that results in a denial of service
+	     but possibly even remote code execution. Versions 5.9.8 and 5.9.9
+	     may be affected. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-26463</cvename>
+      <url>https://www.strongswan.org/blog/2023/03/02/strongswan-vulnerability-(cve-2023-26463).html</url>
+    </references>
+    <dates>
+      <discovery>2023-03-02</discovery>
+      <entry>2023-03-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f7c5b3a9-b9fb-11ed-99c6-001b217b3468">
     <topic>Gitlab -- Multiple Vulnerabilities</topic>
     <affects>
