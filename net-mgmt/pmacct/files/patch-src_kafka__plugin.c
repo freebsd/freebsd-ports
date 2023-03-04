@@ -1,6 +1,6 @@
---- src/kafka_plugin.c.orig	2020-05-10 13:57:54 UTC
+--- src/kafka_plugin.c.orig	2022-12-31 19:17:17 UTC
 +++ src/kafka_plugin.c
-@@ -875,7 +875,7 @@ void kafka_cache_purge(struct chained_cache *queue[], 
+@@ -916,7 +916,7 @@ void kafka_cache_purge(struct chained_cache *queue[], 
  
    p_kafka_close(&kafkap_kafka_host, FALSE);
  

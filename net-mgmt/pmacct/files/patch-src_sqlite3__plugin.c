@@ -1,6 +1,6 @@
---- src/sqlite3_plugin.c.orig	2021-11-05 15:03:23 UTC
+--- src/sqlite3_plugin.c.orig	2022-12-31 19:17:17 UTC
 +++ src/sqlite3_plugin.c
-@@ -537,7 +537,7 @@ void SQLI_cache_purge(struct db_cache *queue[], int in
+@@ -533,7 +533,7 @@ void SQLI_cache_purge(struct db_cache *queue[], int in
    if (sql_pqq_ptr) goto start;
    
    idata->elap_time = time(NULL)-start; 

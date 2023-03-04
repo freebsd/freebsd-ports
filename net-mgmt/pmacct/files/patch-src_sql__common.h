@@ -1,6 +1,6 @@
---- src/sql_common.h.orig	2020-02-22 20:28:47 UTC
+--- src/sql_common.h.orig	2022-12-31 19:17:17 UTC
 +++ src/sql_common.h
-@@ -64,7 +64,7 @@
+@@ -63,7 +63,7 @@
  #define SQL_TABLE_VERSION_BGP   1000
  
  /* macros */

@@ -1,6 +1,6 @@
---- Makefile.in.orig	2021-11-05 15:04:53 UTC
+--- Makefile.in.orig	2022-12-31 19:18:37 UTC
 +++ Makefile.in
-@@ -429,7 +429,7 @@ pmacct_examples_avro_dir = $(pmacct_examples_dir)/avro
+@@ -433,7 +433,7 @@ pmacct_examples_custom_dir = $(pmacct_examples_arch_di
  @USING_BGP_BINS_TRUE@pmacct_examples_lg_dir = $(pmacct_examples_dir)/lg
  @USING_BGP_BINS_TRUE@pmacct_examples_lg_arch_dir = $(pmacct_examples_arch_dir)/lg
  pmacct_examples_custom_dir = $(pmacct_examples_arch_dir)/custom
