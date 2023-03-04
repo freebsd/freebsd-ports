@@ -21,32 +21,32 @@ LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 		libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl llvm:build,run \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl llvm:build,run,min=15 \
 		pkgconfig python qt:6 shebangfix tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USE_QT=		5compat base declarative positioning quick3d quicktimeline \
 		serialport shadertools svg tools translations webchannel
 
-SHEBANG_FILES=		bin/qtcreator.sh \
-			doc/fixnavi.pl \
-			doc/qtcreatordev/examples/aggregation/test.sh \
-			scripts/*.pl \
-			scripts/*.py \
-			scripts/*.sh \
-			share/qtcreator/scripts/openTerminal.py \
-			share/qtcreator/translations/check-ts.pl \
-			share/qtcreator/translations/*.py \
-			src/app/winicons/createicons.sh \
-			src/libs/glsl/make-parser.sh \
-			src/libs/qmljs/parser/changeLicense.py \
-			src/libs/qmljs/parser/gen-parser.sh \
-			src/libs/qt-breakpad/qtbreakpadsymbols \
-			src/plugins/perfprofiler/tracepoints.sh \
-			src/tools/icons/*.sh \
-			src/tools/icons/*.py \
-			tests/system/tools/findUnusedObjects.py \
-			tests/system/tools/objectsToTable.py
+SHEBANG_FILES=	bin/qtcreator.sh \
+		doc/fixnavi.pl \
+		doc/qtcreatordev/examples/aggregation/test.sh \
+		scripts/*.pl \
+		scripts/*.py \
+		scripts/*.sh \
+		share/qtcreator/scripts/openTerminal.py \
+		share/qtcreator/translations/check-ts.pl \
+		share/qtcreator/translations/*.py \
+		src/app/winicons/createicons.sh \
+		src/libs/glsl/make-parser.sh \
+		src/libs/qmljs/parser/changeLicense.py \
+		src/libs/qmljs/parser/gen-parser.sh \
+		src/libs/qt-breakpad/qtbreakpadsymbols \
+		src/plugins/perfprofiler/tracepoints.sh \
+		src/tools/icons/*.sh \
+		src/tools/icons/*.py \
+		tests/system/tools/findUnusedObjects.py \
+		tests/system/tools/objectsToTable.py
 
 # Provide library paths, default llvm first as a hint to the clang code model.
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH:STRING="${LLVM_PREFIX};${PREFIX}"
@@ -85,13 +85,6 @@ EXAMPLES_USE=		QT=examples:run
 QTWEBENGINE_USE=	qt=webengine
 QTWEBENGINE_CMAKE_BOOL=	BUILD_HELPVIEWERBACKEND_QTWEBENGINE
 
-.include <bsd.port.pre.mk>
-
-# Force a modern LLVM >= 10
-.if ${LLVM_DEFAULT:C/[1-5]./&0/:S,-devel,990,} > 80
-LLVM_DEFAULT=	15
-.endif
-
 # Documentation is excluded from the default build targets.
 do-build-DOCS-on:
 	${CMAKE_BIN} --build ${BUILD_WRKSRC} --target docs
@@ -103,4 +96,4 @@ do-install-DOCS-on:
 	${CMAKE_BIN} --install ${BUILD_WRKSRC} --prefix ${STAGEDIR}${PREFIX} \
 	    --component html_docs
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
