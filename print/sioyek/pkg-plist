@@ -1,0 +1,19 @@
+bin/sioyek
+@sample %%ETCDIR%%/keys.config.sample
+@sample %%ETCDIR%%/prefs.config.sample
+share/applications/sioyek.desktop
+share/pixmaps/sioyek-icon-linux.png
+%%DATADIR%%/shaders/custom_colors.fragment
+%%DATADIR%%/shaders/dark_mode.fragment
+%%DATADIR%%/shaders/debug.fragment
+%%DATADIR%%/shaders/highlight.fragment
+%%DATADIR%%/shaders/separator.fragment
+%%DATADIR%%/shaders/simple.fragment
+%%DATADIR%%/shaders/simple.vertex
+%%DATADIR%%/shaders/stencil.fragment
+%%DATADIR%%/shaders/stencil.vertex
+%%DATADIR%%/shaders/undendered_page.fragment
+%%DATADIR%%/shaders/unrendered_page.fragment
+%%DATADIR%%/shaders/vertical_bar.fragment
+%%DATADIR%%/shaders/vertical_bar_dark.fragment
+%%DATADIR%%/tutorial.pdf

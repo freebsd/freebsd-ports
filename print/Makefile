@@ -232,6 +232,7 @@
     SUBDIR += sgf2tex
     SUBDIR += shrinkpdf
     SUBDIR += simple-fb2-reader
+    SUBDIR += sioyek
     SUBDIR += splix
     SUBDIR += system-config-printer
     SUBDIR += t1utils
