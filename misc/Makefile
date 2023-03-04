@@ -477,6 +477,7 @@
     SUBDIR += qt5ct
     SUBDIR += qt6-doc
     SUBDIR += qt6-examples
+    SUBDIR += qt6ct
     SUBDIR += quantum++
     SUBDIR += raspberrypi-gpioshutdown
     SUBDIR += raspberrypi-userland
