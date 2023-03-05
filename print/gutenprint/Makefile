@@ -4,7 +4,7 @@ PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	SF/gimp-print/gutenprint-5.3/${PORTVERSION}
 
-MAINTAINER=	cmt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Gutenprint Printer Drivers
 WWW=		http://gimp-print.sourceforge.net/
 
