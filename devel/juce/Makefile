@@ -64,6 +64,7 @@ DEMO_FILES=	\
 	PropertiesDemo SIMDRegisterDemo SimpleFFTDemo StateVariableFilterDemo SystemInfoDemo TimersAndEventsDemo UnitTestsDemo ValueTreesDemo WaveShaperTanhDemo WebBrowserDemo \
 	WidgetsDemo WindowsDemo XMLandJSONDemo
 DEMOS_PLIST_FILES=	${DEMO_FILES:S/^/bin\/${PORTNAME}-/}
+DEMOS_BROKEN=		pending merge of patches from https://github.com/juce-framework/JUCE/pull/881
 
 post-patch:
 	# fix fonts.conf path
