@@ -1,5 +1,6 @@
 PORTNAME=	kodi
 DISTVERSION=	20.0
+PORTREVISION=	1
 CATEGORIES=	multimedia java
 
 MAINTAINER=	yzrh@noema.org

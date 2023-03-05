@@ -1,6 +1,6 @@
 PORTNAME=	flatbuffers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	23.1.21
+DISTVERSION=	23.3.3
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -9,7 +9,7 @@ COMMENT=	Memory efficient serialization library
 WWW=		https://google.github.io/flatbuffers/
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake:testing compiler:c++14-lang cpe python:build
 CPE_VENDOR=	google
