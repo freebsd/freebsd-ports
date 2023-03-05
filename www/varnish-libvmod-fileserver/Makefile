@@ -11,6 +11,9 @@ WWW=		https://github.com/gquintard/vmod_fileserver
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	build currently failing
+
 BUILD_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 		jq>0:textproc/jq \
 		rst2man:textproc/py-docutils@${PY_FLAVOR}
