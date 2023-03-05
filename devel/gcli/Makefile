@@ -1,5 +1,5 @@
 PORTNAME=	gcli
-DISTVERSION=	0.9.12-beta
+DISTVERSION=	1.0.0
 CATEGORIES=	devel net
 MASTER_SITES=	https://herrhotzenplotz.de/gcli/releases/gcli-${DISTVERSION}/
 

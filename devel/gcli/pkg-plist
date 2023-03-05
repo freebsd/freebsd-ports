@@ -5,6 +5,7 @@ man/man1/gcli-forks.1.gz
 man/man1/gcli-gists.1.gz
 man/man1/gcli-issues.1.gz
 man/man1/gcli-labels.1.gz
+man/man1/gcli-milestones.1.gz
 man/man1/gcli-pipelines.1.gz
 man/man1/gcli-pulls.1.gz
 man/man1/gcli-releases.1.gz
