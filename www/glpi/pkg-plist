@@ -127,7 +127,6 @@
 %%WWWDIR%%/apirest.md
 %%WWWDIR%%/apirest.php
 %%WWWDIR%%/apixmlrpc.php
-%%WWWDIR%%/babel.config.js
 %%WWWDIR%%/bin/console
 %%WWWDIR%%/caldav.php
 %%WWWDIR%%/config/.htaccess
@@ -501,20 +500,6 @@
 %%WWWDIR%%/css_compiled/css_standalone_marketplace.min.css
 %%WWWDIR%%/css_compiled/css_standalone_reservations.min.css
 %%WWWDIR%%/files/.htaccess
-%%WWWDIR%%/files/_cache/remove.txt
-%%WWWDIR%%/files/_cron/remove.txt
-%%WWWDIR%%/files/_dumps/remove.txt
-%%WWWDIR%%/files/_graphs/remove.txt
-%%WWWDIR%%/files/_inventories/remove.txt
-%%WWWDIR%%/files/_locales/remove.txt
-%%WWWDIR%%/files/_lock/remove.txt
-%%WWWDIR%%/files/_log/remove.txt
-%%WWWDIR%%/files/_pictures/remove.txt
-%%WWWDIR%%/files/_plugins/remove.txt
-%%WWWDIR%%/files/_rss/remove.txt
-%%WWWDIR%%/files/_sessions/remove.txt
-%%WWWDIR%%/files/_tmp/remove.txt
-%%WWWDIR%%/files/_uploads/remove.txt
 %%WWWDIR%%/front/agent.form.php
 %%WWWDIR%%/front/agent.php
 %%WWWDIR%%/front/allassets.php
@@ -1002,6 +987,8 @@
 %%WWWDIR%%/front/ruledictionnaryoperatingsystem.php
 %%WWWDIR%%/front/ruledictionnaryoperatingsystemarchitecture.form.php
 %%WWWDIR%%/front/ruledictionnaryoperatingsystemarchitecture.php
+%%WWWDIR%%/front/ruledictionnaryoperatingsystemedition.form.php
+%%WWWDIR%%/front/ruledictionnaryoperatingsystemedition.php
 %%WWWDIR%%/front/ruledictionnaryoperatingsystemservicepack.form.php
 %%WWWDIR%%/front/ruledictionnaryoperatingsystemservicepack.php
 %%WWWDIR%%/front/ruledictionnaryoperatingsystemversion.form.php
@@ -1182,6 +1169,25 @@
 %%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3/inventory.php
 %%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3/notifications.php
 %%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3/schema_fixes.php
+%%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4.php
+%%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4/computer.php
+%%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4/config.php
+%%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4/dashboard.php
+%%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4/inventory.php
+%%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4/ticket.php
+%%WWWDIR%%/install/migrations/update_10.0.4_to_10.0.5.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/appliance.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/blacklist.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/cable.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/configs.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/inventory.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/networkport.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/queuednotification.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/rule.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/simcard.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/transfer.php
+%%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/unmanaged.php
 %%WWWDIR%%/install/migrations/update_9.1.0_to_9.1.1.php
 %%WWWDIR%%/install/migrations/update_9.1.1_to_9.1.3.php
 %%WWWDIR%%/install/migrations/update_9.1.x_to_9.2.0.php
@@ -1258,6 +1264,8 @@
 %%WWWDIR%%/install/mysql/glpi-10.0.1-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.2-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.3-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.4-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.5-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.0-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.1-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.2-empty.sql
@@ -1272,6 +1280,9 @@
 %%WWWDIR%%/install/mysql/glpi-9.4.6-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.0-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.1-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.5.10-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.5.11-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.5.12-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.2-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.3-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.4-empty.sql
@@ -1280,6 +1291,7 @@
 %%WWWDIR%%/install/mysql/glpi-9.5.7-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.8-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.9-empty.sql
+%%WWWDIR%%/install/mysql/glpi-empty.sql
 %%WWWDIR%%/install/update.php
 %%WWWDIR%%/js/Forms/FaIconSelector.js
 %%WWWDIR%%/js/Forms/FaIconSelector.min.js
@@ -1327,6 +1339,7 @@
 %%WWWDIR%%/js/modules/SearchTokenizer/SearchTokenizer.min.js
 %%WWWDIR%%/js/modules/SearchTokenizer/SearchTokenizerResult.js
 %%WWWDIR%%/js/modules/SearchTokenizer/SearchTokenizerResult.min.js
+%%WWWDIR%%/js/modules/package.json
 %%WWWDIR%%/js/notifications_ajax.js
 %%WWWDIR%%/js/notifications_ajax.min.js
 %%WWWDIR%%/js/planning.js
@@ -1493,8 +1506,6 @@
 %%WWWDIR%%/locales/zh_HK.po
 %%WWWDIR%%/locales/zh_TW.mo
 %%WWWDIR%%/locales/zh_TW.po
-%%WWWDIR%%/marketplace/remove.txt
-%%WWWDIR%%/phpstan.neon
 %%WWWDIR%%/pics/PICS-AUTHORS.txt
 %%WWWDIR%%/pics/accepted.png
 %%WWWDIR%%/pics/actualiser.png
@@ -1762,7 +1773,6 @@
 %%WWWDIR%%/pics/warning.png
 %%WWWDIR%%/pics/warning_min.png
 %%WWWDIR%%/pics/web.png
-%%WWWDIR%%/plugins/remove.txt
 %%WWWDIR%%/public/lib/base.css
 %%WWWDIR%%/public/lib/base.css.map
 %%WWWDIR%%/public/lib/base.js
@@ -2276,6 +2286,8 @@
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/ar.min.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/az.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/az.min.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/be.js
+%%WWWDIR%%/public/lib/tinymce-i18n/langs6/be.min.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/bg_BG.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/bg_BG.min.js
 %%WWWDIR%%/public/lib/tinymce-i18n/langs6/bn_BD.js
@@ -2435,6 +2447,16 @@
 %%WWWDIR%%/public/lib/tinymce/skins/ui/tinymce-5/skin.min.css
 %%WWWDIR%%/public/lib/tinymce/skins/ui/tinymce-5/skin.shadowdom.css
 %%WWWDIR%%/public/lib/tinymce/skins/ui/tinymce-5/skin.shadowdom.min.css
+%%WWWDIR%%/resources/.htaccess
+%%WWWDIR%%/resources/Rules/RuleAsset.xml
+%%WWWDIR%%/resources/Rules/RuleDictionnaryOperatingSystem.xml
+%%WWWDIR%%/resources/Rules/RuleDictionnaryOperatingSystemEdition.xml
+%%WWWDIR%%/resources/Rules/RuleDictionnaryOperatingSystemVersion.xml
+%%WWWDIR%%/resources/Rules/RuleImportAsset.xml
+%%WWWDIR%%/resources/Rules/RuleMailCollector.xml
+%%WWWDIR%%/resources/Rules/RuleRight.xml
+%%WWWDIR%%/resources/Rules/RuleSoftwareCategory.xml
+%%WWWDIR%%/resources/Rules/RuleTicket.xml
 %%WWWDIR%%/sound/sound_a.mp3
 %%WWWDIR%%/sound/sound_a.ogg
 %%WWWDIR%%/sound/sound_b.mp3
@@ -2589,6 +2611,8 @@
 %%WWWDIR%%/src/Console/Database/EnableTimezonesCommand.php
 %%WWWDIR%%/src/Console/Database/InstallCommand.php
 %%WWWDIR%%/src/Console/Database/UpdateCommand.php
+%%WWWDIR%%/src/Console/Diagnostic/CheckDocumentsIntegrityCommand.php
+%%WWWDIR%%/src/Console/Diagnostic/CheckHtmlEncodingCommand.php
 %%WWWDIR%%/src/Console/Exception/EarlyExitException.php
 %%WWWDIR%%/src/Console/Ldap/SynchronizeUsersCommand.php
 %%WWWDIR%%/src/Console/Maintenance/DisableMaintenanceModeCommand.php
@@ -2760,6 +2784,7 @@
 %%WWWDIR%%/src/Features/DCBreadcrumb.php
 %%WWWDIR%%/src/Features/Inventoriable.php
 %%WWWDIR%%/src/Features/Kanban.php
+%%WWWDIR%%/src/Features/ParentStatus.php
 %%WWWDIR%%/src/Features/PlanningEvent.php
 %%WWWDIR%%/src/Features/Teamwork.php
 %%WWWDIR%%/src/Features/Timeline.php
@@ -2853,6 +2878,7 @@
 %%WWWDIR%%/src/Inventory/Asset/Simcard.php
 %%WWWDIR%%/src/Inventory/Asset/Software.php
 %%WWWDIR%%/src/Inventory/Asset/SoundCard.php
+%%WWWDIR%%/src/Inventory/Asset/Unmanaged.php
 %%WWWDIR%%/src/Inventory/Asset/VirtualMachine.php
 %%WWWDIR%%/src/Inventory/Asset/Volume.php
 %%WWWDIR%%/src/Inventory/Conf.php
@@ -2974,7 +3000,7 @@
 %%WWWDIR%%/src/NotificationTargetCommonITILObject.php
 %%WWWDIR%%/src/NotificationTargetConsumableItem.php
 %%WWWDIR%%/src/NotificationTargetContract.php
-%%WWWDIR%%/src/NotificationTargetCrontask.php
+%%WWWDIR%%/src/NotificationTargetCronTask.php
 %%WWWDIR%%/src/NotificationTargetDBConnection.php
 %%WWWDIR%%/src/NotificationTargetDomain.php
 %%WWWDIR%%/src/NotificationTargetFieldUnicity.php
@@ -3115,6 +3141,8 @@
 %%WWWDIR%%/src/RuleDictionnaryOperatingSystemArchitecture.php
 %%WWWDIR%%/src/RuleDictionnaryOperatingSystemArchitectureCollection.php
 %%WWWDIR%%/src/RuleDictionnaryOperatingSystemCollection.php
+%%WWWDIR%%/src/RuleDictionnaryOperatingSystemEdition.php
+%%WWWDIR%%/src/RuleDictionnaryOperatingSystemEditionCollection.php
 %%WWWDIR%%/src/RuleDictionnaryOperatingSystemServicePack.php
 %%WWWDIR%%/src/RuleDictionnaryOperatingSystemServicePackCollection.php
 %%WWWDIR%%/src/RuleDictionnaryOperatingSystemVersion.php
@@ -3153,6 +3181,7 @@
 %%WWWDIR%%/src/RuleSoftwareCategoryCollection.php
 %%WWWDIR%%/src/RuleTicket.php
 %%WWWDIR%%/src/RuleTicketCollection.php
+%%WWWDIR%%/src/Rules/RulesManager.php
 %%WWWDIR%%/src/SLA.php
 %%WWWDIR%%/src/SLM.php
 %%WWWDIR%%/src/SNMPCredential.php
@@ -3203,6 +3232,7 @@
 %%WWWDIR%%/src/System/Diagnostic/DatabaseSchemaConsistencyChecker.php
 %%WWWDIR%%/src/System/Diagnostic/DatabaseSchemaIntegrityChecker.php
 %%WWWDIR%%/src/System/Requirement/AbstractRequirement.php
+%%WWWDIR%%/src/System/Requirement/DataDirectoriesProtectedPath.php
 %%WWWDIR%%/src/System/Requirement/DbConfiguration.php
 %%WWWDIR%%/src/System/Requirement/DbEngine.php
 %%WWWDIR%%/src/System/Requirement/DbTimezones.php
@@ -3213,6 +3243,7 @@
 %%WWWDIR%%/src/System/Requirement/ExtensionConstant.php
 %%WWWDIR%%/src/System/Requirement/ExtensionFunction.php
 %%WWWDIR%%/src/System/Requirement/ExtensionGroup.php
+%%WWWDIR%%/src/System/Requirement/InstallationNotOverriden.php
 %%WWWDIR%%/src/System/Requirement/LogsWriteAccess.php
 %%WWWDIR%%/src/System/Requirement/MemoryLimit.php
 %%WWWDIR%%/src/System/Requirement/MysqliMysqlnd.php
@@ -3246,9 +3277,11 @@
 %%WWWDIR%%/src/Timer.php
 %%WWWDIR%%/src/Toolbox.php
 %%WWWDIR%%/src/Toolbox/DataExport.php
+%%WWWDIR%%/src/Toolbox/DatabaseSchema.php
 %%WWWDIR%%/src/Toolbox/FrontEnd.php
 %%WWWDIR%%/src/Toolbox/MarkdownBuilder.php
 %%WWWDIR%%/src/Toolbox/Sanitizer.php
+%%WWWDIR%%/src/Toolbox/URL.php
 %%WWWDIR%%/src/Toolbox/VersionParser.php
 %%WWWDIR%%/src/Transfer.php
 %%WWWDIR%%/src/USBVendor.php
@@ -3267,7 +3300,6 @@
 %%WWWDIR%%/src/XHProf.php
 %%WWWDIR%%/src/XML.php
 %%WWWDIR%%/status.php
-%%WWWDIR%%/stylelint.config.js
 %%WWWDIR%%/templates/anonymous_helpdesk.html.twig
 %%WWWDIR%%/templates/central/lists/itemtype_count.html.twig
 %%WWWDIR%%/templates/central/messages.html.twig
@@ -3278,12 +3310,19 @@
 %%WWWDIR%%/templates/components/dates_timeline.html.twig
 %%WWWDIR%%/templates/components/dropdown/limit.html.twig
 %%WWWDIR%%/templates/components/form/buttons.html.twig
+%%WWWDIR%%/templates/components/form/computerantivirus.html.twig
+%%WWWDIR%%/templates/components/form/computervirtualmachine.html.twig
 %%WWWDIR%%/templates/components/form/dates.html.twig
 %%WWWDIR%%/templates/components/form/fields_macros.html.twig
 %%WWWDIR%%/templates/components/form/flags.html.twig
 %%WWWDIR%%/templates/components/form/header.html.twig
+%%WWWDIR%%/templates/components/form/header_content.html.twig
 %%WWWDIR%%/templates/components/form/inventory_info.html.twig
+%%WWWDIR%%/templates/components/form/item_device.html.twig
+%%WWWDIR%%/templates/components/form/item_disk.html.twig
+%%WWWDIR%%/templates/components/form/link_existing_or_new.html.twig
 %%WWWDIR%%/templates/components/form/modals_macros.html.twig
+%%WWWDIR%%/templates/components/form/networkname.html.twig
 %%WWWDIR%%/templates/components/form/pictures.html.twig
 %%WWWDIR%%/templates/components/form/single-action.html.twig
 %%WWWDIR%%/templates/components/form/snmpcredential.html.twig
@@ -3340,6 +3379,7 @@
 %%WWWDIR%%/templates/components/user/info_card.html.twig
 %%WWWDIR%%/templates/components/user/link_with_tooltip.html.twig
 %%WWWDIR%%/templates/components/user/picture.html.twig
+%%WWWDIR%%/templates/debug_panel.html.twig
 %%WWWDIR%%/templates/display_and_die.html.twig
 %%WWWDIR%%/templates/dropdown_form.html.twig
 %%WWWDIR%%/templates/generic_show_form.html.twig
@@ -3403,8 +3443,12 @@
 %%WWWDIR%%/templates/pages/self-service/home.html.twig
 %%WWWDIR%%/templates/pages/setup/authentication.html.twig
 %%WWWDIR%%/templates/pages/setup/dropdowns_list.html.twig
+%%WWWDIR%%/templates/pages/setup/general/base_form.html.twig
+%%WWWDIR%%/templates/pages/setup/general/general_setup.html.twig
 %%WWWDIR%%/templates/pages/setup/setup_notifications.html.twig
+%%WWWDIR%%/templates/pages/tools/project_task.html.twig
 %%WWWDIR%%/templates/password_form.html.twig
+%%WWWDIR%%/vendor/.htaccess
 %%WWWDIR%%/vendor/autoload.php
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/LICENSE.txt
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/README.md
@@ -3518,50 +3562,10 @@
 %%WWWDIR%%/vendor/glpi-project/inventory_format/data/pciid.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/data/usb.ids
 %%WWWDIR%%/vendor/glpi-project/inventory_format/data/usbid.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_1.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_1_partial_batteries.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_1_partial_cpu.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_1_partial_memory.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_1_partial_softs.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_1_partial_volumes.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_2.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_2_partial_dbs.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_2_partial_vms.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_3.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/computer_3_updated.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/networkequipment_1.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/networkequipment_2.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/networkequipment_3.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/networkequipment_4.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/networkequipment_5.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/phone_1.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/printer_1.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/printer_2.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/examples/printer_3.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/inventory.schema.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php/Converter.php
 %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php/FilesToJSON.php
 %%WWWDIR%%/vendor/glpi-project/inventory_format/original.md
-%%WWWDIR%%/vendor/glpi-project/inventory_format/source_files/oui.txt
-%%WWWDIR%%/vendor/glpi-project/inventory_format/source_files/pci.ids
-%%WWWDIR%%/vendor/glpi-project/inventory_format/source_files/smi-numbers-5.csv
-%%WWWDIR%%/vendor/glpi-project/inventory_format/source_files/usb.ids
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/Glpi/Inventory/tests/units/Converter.php
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/Glpi/Inventory/tests/units/FilesToJSON.php
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/bootstrap.php
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/1.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/10.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/11.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/12.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/2.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/3.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/4.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/5-good.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/5.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/6.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/7.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/8.xml
-%%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data/9.xml
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/CHANGELOG.md
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/LICENSE
 %%WWWDIR%%/vendor/guzzlehttp/guzzle/README.md
@@ -5440,6 +5444,7 @@
 %%WWWDIR%%/vendor/swaggest/json-diff/README.md
 %%WWWDIR%%/vendor/swaggest/json-diff/composer.json
 %%WWWDIR%%/vendor/swaggest/json-diff/src/Exception.php
+%%WWWDIR%%/vendor/swaggest/json-diff/src/InvalidFieldTypeException.php
 %%WWWDIR%%/vendor/swaggest/json-diff/src/JsonDiff.php
 %%WWWDIR%%/vendor/swaggest/json-diff/src/JsonHash.php
 %%WWWDIR%%/vendor/swaggest/json-diff/src/JsonMergePatch.php
@@ -5454,11 +5459,15 @@
 %%WWWDIR%%/vendor/swaggest/json-diff/src/JsonPatch/Replace.php
 %%WWWDIR%%/vendor/swaggest/json-diff/src/JsonPatch/Test.php
 %%WWWDIR%%/vendor/swaggest/json-diff/src/JsonPointer.php
+%%WWWDIR%%/vendor/swaggest/json-diff/src/JsonPointerException.php
 %%WWWDIR%%/vendor/swaggest/json-diff/src/JsonValueReplace.php
+%%WWWDIR%%/vendor/swaggest/json-diff/src/MissingFieldException.php
 %%WWWDIR%%/vendor/swaggest/json-diff/src/ModifiedPathDiff.php
+%%WWWDIR%%/vendor/swaggest/json-diff/src/PatchTestOperationFailedException.php
+%%WWWDIR%%/vendor/swaggest/json-diff/src/PathException.php
+%%WWWDIR%%/vendor/swaggest/json-diff/src/UnknownOperationException.php
 %%WWWDIR%%/vendor/swaggest/json-schema/CHANGELOG.md
 %%WWWDIR%%/vendor/swaggest/json-schema/LICENSE
-%%WWWDIR%%/vendor/swaggest/json-schema/Makefile
 %%WWWDIR%%/vendor/swaggest/json-schema/README.md
 %%WWWDIR%%/vendor/swaggest/json-schema/benchmarks/AjvSchemasBench.php
 %%WWWDIR%%/vendor/swaggest/json-schema/benchmarks/Draft7Bench.php
@@ -6386,6 +6395,7 @@
 %%WWWDIR%%/vendor/webmozart/assert/src/Assert.php
 %%WWWDIR%%/vendor/webmozart/assert/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/webmozart/assert/src/Mixin.php
+%%WWWDIR%%/version/10.0.6
 @dir %%WWWDIR%%/ajax
 @dir %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
@@ -6462,6 +6472,9 @@
 @dir %%WWWDIR%%/install/migrations/update_10.0.0_to_10.0.1
 @dir %%WWWDIR%%/install/migrations/update_10.0.1_to_10.0.2
 @dir %%WWWDIR%%/install/migrations/update_10.0.2_to_10.0.3
+@dir %%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4
+@dir %%WWWDIR%%/install/migrations/update_10.0.4_to_10.0.5
+@dir %%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6
 @dir %%WWWDIR%%/install/migrations/update_9.4.x_to_9.5.0
 @dir %%WWWDIR%%/install/migrations/update_9.5.x_to_10.0.0
 @dir %%WWWDIR%%/install/mysql
@@ -6533,6 +6546,8 @@
 @dir %%WWWDIR%%/public/lib/tinymce/skins/ui/oxide-dark
 @dir %%WWWDIR%%/public/lib/tinymce/skins/ui/tinymce-5
 @dir %%WWWDIR%%/public/lib/tinymce/skins/ui/tinymce-5-dark
+@dir %%WWWDIR%%/resources
+@dir %%WWWDIR%%/resources/Rules
 @dir %%WWWDIR%%/sound
 @dir %%WWWDIR%%/src
 @dir %%WWWDIR%%/src/Agent
@@ -6557,6 +6572,7 @@
 @dir %%WWWDIR%%/src/Console/Command
 @dir %%WWWDIR%%/src/Console/Config
 @dir %%WWWDIR%%/src/Console/Database
+@dir %%WWWDIR%%/src/Console/Diagnostic
 @dir %%WWWDIR%%/src/Console/Exception
 @dir %%WWWDIR%%/src/Console/Ldap
 @dir %%WWWDIR%%/src/Console/Maintenance
@@ -6584,6 +6600,7 @@
 @dir %%WWWDIR%%/src/Marketplace/Api
 @dir %%WWWDIR%%/src/Plugin
 @dir %%WWWDIR%%/src/RichText
+@dir %%WWWDIR%%/src/Rules
 @dir %%WWWDIR%%/src/Stat
 @dir %%WWWDIR%%/src/Stat/Data
 @dir %%WWWDIR%%/src/Stat/Data/Graph
@@ -6622,6 +6639,8 @@
 @dir %%WWWDIR%%/templates/pages/management
 @dir %%WWWDIR%%/templates/pages/self-service
 @dir %%WWWDIR%%/templates/pages/setup
+@dir %%WWWDIR%%/templates/pages/setup/general
+@dir %%WWWDIR%%/templates/pages/tools
 @dir %%WWWDIR%%/vendor
 @dir %%WWWDIR%%/vendor/blueimp
 @dir %%WWWDIR%%/vendor/blueimp/jquery-file-upload
@@ -6661,16 +6680,8 @@
 @dir %%WWWDIR%%/vendor/glpi-project/inventory_format
 @dir %%WWWDIR%%/vendor/glpi-project/inventory_format/bin
 @dir %%WWWDIR%%/vendor/glpi-project/inventory_format/data
-@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/examples
 @dir %%WWWDIR%%/vendor/glpi-project/inventory_format/lib
 @dir %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php
-@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/source_files
-@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests
-@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests/Glpi
-@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests/Glpi/Inventory
-@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests/Glpi/Inventory/tests
-@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests/Glpi/Inventory/tests/units
-@dir %%WWWDIR%%/vendor/glpi-project/inventory_format/tests/data
 @dir %%WWWDIR%%/vendor/guzzlehttp
 @dir %%WWWDIR%%/vendor/guzzlehttp/guzzle
 @dir %%WWWDIR%%/vendor/guzzlehttp/guzzle/src
@@ -7093,7 +7104,6 @@
 @dir %%WWWDIR%%/vendor/twig
 @dir %%WWWDIR%%/vendor/twig/string-extra
 @dir %%WWWDIR%%/vendor/twig/twig
-@dir %%WWWDIR%%/vendor/twig/twig/doc
 @dir %%WWWDIR%%/vendor/twig/twig/src
 @dir %%WWWDIR%%/vendor/twig/twig/src/Cache
 @dir %%WWWDIR%%/vendor/twig/twig/src/Error
@@ -7125,5 +7135,6 @@
 @dir %%WWWDIR%%/vendor/webmozart
 @dir %%WWWDIR%%/vendor/webmozart/assert
 @dir %%WWWDIR%%/vendor/webmozart/assert/src
+@dir %%WWWDIR%%/version
 @owner
 @group
