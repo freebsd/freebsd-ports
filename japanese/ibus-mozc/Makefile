@@ -1,5 +1,4 @@
 PKGNAMEPREFIX=	ja-ibus-
-PORTREVISION=	1
 
 COMMENT=	Mozc engine for IBus
 

@@ -1,5 +1,4 @@
 PKGNAMESUFFIX=	-tool
-PORTREVISION=	1
 
 COMMENT=	Mozc tool for IBus, SCIM, and others
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
