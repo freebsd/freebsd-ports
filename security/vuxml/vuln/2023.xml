@@ -1,3 +1,76 @@
+  <vuln vid="be233fc6-bae7-11ed-a4fb-080027f5fec9">
+    <topic>curl -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>7.88.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Harry Sintonen and Patrick Monnerat report:</p>
+	<blockquote cite="https://curl.se/docs/security.html">
+	  <dl>
+	    <dt>CVE-2023-23914</dt>
+	    <dd>
+	      A cleartext transmission of sensitive information
+	      vulnerability exists in curl &lt; v7.88.0 that could
+	      cause HSTS functionality fail when multiple URLs are
+	      requested serially. Using its HSTS support, curl can be
+	      instructed to use HTTPS instead of using an insecure
+	      clear-text HTTP step even when HTTP is provided in the
+	      URL. This HSTS mechanism would however surprisingly be
+	      ignored by subsequent transfers when done on the same
+	      command line because the state would not be properly
+	      carried on.
+	    </dd>
+	    <dt>CVE-2023-23915</dt>
+	    <dd>
+	      A cleartext transmission of sensitive information
+	      vulnerability exists in curl &lt; v7.88.0 that could
+	      cause HSTS functionality to behave incorrectly when
+	      multiple URLs are requested in parallel. Using its HSTS
+	      support, curl can be instructed to use HTTPS instead of
+	      using an insecure clear-text HTTP step even when HTTP is
+	      provided in the URL. This HSTS mechanism would however
+	      surprisingly fail when multiple transfers are done in
+	      parallel as the HSTS cache file gets overwritten by the
+	      most recently completed transfer. A later HTTP-only
+	      transfer to the earlier host name would then *not* get
+	      upgraded properly to HSTS.
+	    </dd>
+	    <dt>CVE-2023-23916</dt>
+	    <dd>
+	      An allocation of resources without limits or throttling
+	      vulnerability exists in curl &lt; v7.88.0 based on the
+	      &quot;chained&quot; HTTP compression algorithms, meaning
+	      that a server response can be compressed multiple times
+	      and potentially with different algorithms. The number of
+	      acceptable &quot;links&quot; in this &quot;decompression
+	      chain&quot; was capped, but the cap was implemented on a
+	      per-header basis allowing a malicious server to insert a
+	      virtually unlimited number of compression steps simply
+	      by using many headers. The use of such a decompression
+	      chain could result in a &quot;malloc bomb&quot;, making
+	      curl end up spending enormous amounts of allocated heap
+	      memory, or trying to and returning out of memory errors.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-23914</cvename>
+      <cvename>CVE-2023-23915</cvename>
+      <cvename>CVE-2023-23916</cvename>
+      <url>https://curl.se/docs/security.html</url>
+    </references>
+    <dates>
+      <discovery>2023-02-15</discovery>
+      <entry>2023-03-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3f9b6943-ba58-11ed-bbbd-00e0670f2660">
     <topic>strongSwan -- certificate verification vulnerability</topic>
     <affects>
