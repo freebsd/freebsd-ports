@@ -1,4 +1,4 @@
-TIMESTAMP = 1677127441
+TIMESTAMP = 1677998793
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
 SIZE (rust/crates/adler-1.0.2.crate) = 12778
 SHA256 (rust/crates/ahash-0.8.2.crate) = bf6ccdb167abbf410dcb915cabd428929d7f6a04980b54a11f26a39f1c7f7107
@@ -451,5 +451,5 @@ SHA256 (rust/crates/windows_x86_64_gnullvm-0.42.0.crate) = 09d525d2ba30eeb329766
 SIZE (rust/crates/windows_x86_64_gnullvm-0.42.0.crate) = 357906
 SHA256 (rust/crates/windows_x86_64_msvc-0.42.0.crate) = f40009d85759725a34da6d89a94e63d7bdc50a862acf0dbc7c8e488f1edcb6f5
 SIZE (rust/crates/windows_x86_64_msvc-0.42.0.crate) = 659377
-SHA256 (Canop-bacon-v2.6.1_GH0.tar.gz) = b7e5517051f4a06467caa69fd99d11a76ac4f3c14f9d50cf3a5d897f28a3e61f
-SIZE (Canop-bacon-v2.6.1_GH0.tar.gz) = 679080
+SHA256 (Canop-bacon-v2.6.2_GH0.tar.gz) = 05f0810a35e5af9c52e467688a0ecc939c22075cd3c13cbc1c2e6dfe1145dc3c
+SIZE (Canop-bacon-v2.6.2_GH0.tar.gz) = 679272
