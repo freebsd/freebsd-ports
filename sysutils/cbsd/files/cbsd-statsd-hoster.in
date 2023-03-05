@@ -24,7 +24,11 @@ restart_cmd=${name}_restart
 extra_commands="restart"
 
 command="%%PREFIX%%/cbsd/tools/racct-hoster-statsd"
-pidfile="/var/run/$name.pid"
+pidfile="/var/run/${name}.pid"
+daemon_pidfile="/var/run/${name}-daemon.pid"
+daemon_logdir="/var/log/${name}"
+daemon_logfile="${daemon_logdir}/cbsd-statsd-hoster.log"
+
 command_args="&"
 
 pidfile=/var/run/racct-hoster-statsd.pid
@@ -40,7 +44,7 @@ if [ ! -f ${subr} ]; then
 fi
 
 . ${globalconf}
-. ${subr}
+. ${subrdir}/nc.subr
 
 cbsd_statsd_hoster_start()
 {
@@ -84,7 +88,10 @@ cbsd_statsd_hoster_start()
 			;;
 	esac
 
-	exec env workdir=${cbsd_workdir} %%PREFIX%%/cbsd/tools/racct-hoster-statsd ${args}
+	[ ! -d ${daemon_logdir} ] && mkdir -p ${daemon_logdir}
+	touch ${daemon_logfile}
+
+	/usr/sbin/daemon -f -R5 -p ${pidfile} -P ${daemon_pidfile} -o ${daemon_logfile} /usr/bin/env workdir=${cbsd_workdir} ${command} ${args}
 }
 
 cbsd_statsd_hoster_restart()
