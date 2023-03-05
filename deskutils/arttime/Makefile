@@ -1,5 +1,6 @@
 PORTNAME=	arttime
 PORTVERSION=	2.0.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -16,12 +17,13 @@ RUN_DEPENDS=	notify-send:devel/libnotify \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	poetaman
+GH_TAGNAME=	6716e6b
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
 do-install:
 	${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${WRKSRC}/install.sh \
-		--prefix ${STAGEDIR}${PREFIX}
+		--prefix ${STAGEDIR}${PREFIX} --noupdaterc
 
 .include <bsd.port.mk>
