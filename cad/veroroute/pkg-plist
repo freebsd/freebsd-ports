@@ -163,6 +163,7 @@ share/gEDA/sym/veroroute_transistor/PNP_BC640.sym
 share/gEDA/sym/veroroute_transistor/PNP_MJE2955.sym
 share/gEDA/sym/veroroute_transistor/PNP_TIP32.sym
 share/gEDA/sym/veroroute_transistor/PNP_TIP42.sym
+share/icons/hicolor/72x72/apps/veroroute.png
 share/man/man1/veroroute.1.gz
 share/pixmaps/veroroute.png
 %%DATADIR%%/tutorials/tutorial_0.vrt
