@@ -52,26 +52,25 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libx265.so:multimedia/x265 \
 		libzvbi.so:devel/libzvbi
 LIB_DEPENDS+=	libcairo.so:graphics/cairo \
-		libexif.so:graphics/libexif \
 		libexpat.so:textproc/expat2 \
 		libgio-2.0.so:devel/glib20 \
 		libglib-2.0.so:devel/glib20 \
 		libgobject-2.0.so:devel/glib20 \
-		libheif.so:graphics/libheif \
-		libimagequant.so:graphics/libimagequant \
-		libjxl_threads.so:graphics/libjxl \
-		libjxl.so:graphics/libjxl \
 		liblcms2.so:graphics/lcms2 \
 		libOpenEXR-3_1.so:graphics/openexr \
-		libopenjp2.so:graphics/openjpeg \
-		liborc-0.4.so:devel/orc \
 		libpango-1.0.so:x11-toolkits/pango \
 		libpangocairo-1.0.so:x11-toolkits/pango \
 		libpangoft2-1.0.so:x11-toolkits/pango \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS=	icu>0:devel/icu \
+		libexif>0:graphics/libexif \
+		libheif>0:graphics/libheif \
+		libimagequant>0:graphics/libimagequant \
 		libinotify>0:devel/libinotify \
-		libunwind>0:devel/libunwind
+		libjxl>0:graphics/libjxl \
+		libunwind>0:devel/libunwind \
+		openjpeg>0:graphics/openjpeg \
+		orc>0:devel/orc
 
 USES=		compiler:c11 gmake iconv localbase:ldflags pkgconfig sqlite ssl:run
 USES+=		jpeg gettext-runtime
