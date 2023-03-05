@@ -1,4 +1,3 @@
-include/muparserx/mpCompat.h
 include/muparserx/mpDefines.h
 include/muparserx/mpError.h
 include/muparserx/mpFuncCmplx.h
@@ -38,6 +37,7 @@ include/muparserx/mpParserMessageProvider.h
 include/muparserx/mpRPN.h
 include/muparserx/mpScriptTokens.h
 include/muparserx/mpStack.h
+include/muparserx/mpStringConversionHelper.h
 include/muparserx/mpTest.h
 include/muparserx/mpTokenReader.h
 include/muparserx/mpTypes.h
@@ -49,7 +49,7 @@ include/muparserx/suSortPred.h
 include/muparserx/suStringTokens.h
 include/muparserx/utGeneric.h
 lib/libmuparserx.so
-lib/libmuparserx.so.4.0.11
+lib/libmuparserx.so.4.0.12
 libdata/pkgconfig/muparserx.pc
 share/cmake/muparserx/muparserxConfig.cmake
 share/cmake/muparserx/muparserxConfigVersion.cmake
