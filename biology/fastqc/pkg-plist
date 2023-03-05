@@ -2,10 +2,49 @@ bin/fastqc
 %%DATADIR%%/Configuration/adapter_list.txt
 %%DATADIR%%/Configuration/contaminant_list.txt
 %%DATADIR%%/Configuration/limits.txt
+%%DATADIR%%/Help/1 Introduction/.svn/entries
+%%DATADIR%%/Help/1 Introduction/.svn/text-base/1.1 What is FastQC.html.svn-base
 %%DATADIR%%/Help/1 Introduction/1.1 What is FastQC.html
+%%DATADIR%%/Help/2 Basic Operations/.svn/entries
+%%DATADIR%%/Help/2 Basic Operations/.svn/text-base/2.1 Opening a sequence file.html.svn-base
+%%DATADIR%%/Help/2 Basic Operations/.svn/text-base/2.2 Evaluating Results.html.svn-base
+%%DATADIR%%/Help/2 Basic Operations/.svn/text-base/2.3 Saving a Report.html.svn-base
 %%DATADIR%%/Help/2 Basic Operations/2.1 Opening a sequence file.html
 %%DATADIR%%/Help/2 Basic Operations/2.2 Evaluating Results.html
 %%DATADIR%%/Help/2 Basic Operations/2.3 Saving a Report.html
+%%DATADIR%%/Help/3 Analysis Modules/.svn/entries
+%%DATADIR%%/Help/3 Analysis Modules/.svn/prop-base/duplication_levels.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/prop-base/kmer_profiles.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/prop-base/per_base_gc_content.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/prop-base/per_base_n_content.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/prop-base/per_base_quality.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/prop-base/per_base_sequence_content.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/prop-base/per_sequence_gc_content.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/prop-base/per_sequence_quality.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/prop-base/per_tile_quality.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/prop-base/sequence_length_distribution.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/1 Basic Statistics.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/10 Adapter Content.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/11 Kmer Content.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/12 Per Tile Sequence Quality.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/2 Per Base Sequence Quality.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/3 Per Sequence Quality Scores.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/4 Per Base Sequence Content.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/5 Per Sequence GC Content.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/6 Per Base N Content.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/7 Sequence Length Distribution.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/8 Duplicate Sequences.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/9 Overrepresented Sequences.html.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/duplication_levels.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/kmer_profiles.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/per_base_gc_content.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/per_base_n_content.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/per_base_quality.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/per_base_sequence_content.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/per_sequence_gc_content.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/per_sequence_quality.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/per_tile_quality.png.svn-base
+%%DATADIR%%/Help/3 Analysis Modules/.svn/text-base/sequence_length_distribution.png.svn-base
 %%DATADIR%%/Help/3 Analysis Modules/1 Basic Statistics.html
 %%DATADIR%%/Help/3 Analysis Modules/10 Adapter Content.html
 %%DATADIR%%/Help/3 Analysis Modules/11 Kmer Content.html
@@ -35,6 +74,7 @@ bin/fastqc
 %%DATADIR%%/Templates/fastqc2fo.xsl
 %%DATADIR%%/Templates/header_template.html
 %%JAVAJARDIR%%/fastqc/cisd-jhdf5.jar
+%%JAVAJARDIR%%/fastqc/htsjdk.jar
 %%JAVAJARDIR%%/fastqc/jbzip2-0.9.jar
 %%JAVAJARDIR%%/fastqc/net/sourceforge/iharder/base64/Base64$1.class
 %%JAVAJARDIR%%/fastqc/net/sourceforge/iharder/base64/Base64$InputStream.class
@@ -116,7 +156,6 @@ bin/fastqc
 %%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/MathUtils.class
 %%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/Precision.class
 %%JAVAJARDIR%%/fastqc/org/apache/commons/math3/util/ResizableDoubleArray.class
-%%JAVAJARDIR%%/fastqc/sam-1.103.jar
 %%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Analysis/AnalysisListener.class
 %%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Analysis/AnalysisQueue.class
 %%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Analysis/AnalysisRunner.class
@@ -198,6 +237,9 @@ bin/fastqc
 %%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Statistics/PearsonCorrelation.class
 %%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/CasavaBasename.class
 %%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/HotColdColourGradient.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/ImageSaver/SVGGenerator$SVGGraphics.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/ImageSaver/SVGGenerator.class
+%%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/ImageSaver/SVGImageSaver.class
 %%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/ImageToBase64.class
 %%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/MultiMemberGZIPInputStream.class
 %%JAVAJARDIR%%/fastqc/uk/ac/babraham/FastQC/Utilities/NameFormatException.class
