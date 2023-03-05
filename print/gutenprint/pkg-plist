@@ -39,7 +39,7 @@ lib/gutenprint/5.3/modules/print-ps.so
 lib/gutenprint/5.3/modules/print-raw.so
 lib/libgutenprint.so
 lib/libgutenprint.so.9
-lib/libgutenprint.so.9.4.0
+lib/libgutenprint.so.9.5.0
 libdata/pkgconfig/gutenprint.pc
 libexec/cups/backend/gutenprint53+usb
 libexec/cups/driver/gutenprint.5.3
@@ -741,6 +741,10 @@ share/cups/model/gutenprint/5.3/C/stp-bjc-Mommy-Photo-MG7570.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-bjc-Mommy-Photo-MG7570.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-bjc-PIXMA-E3170.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-bjc-PIXMA-E3170.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-bjc-PIXMA-E3190.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-bjc-PIXMA-E3190.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-bjc-PIXMA-E3195.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-bjc-PIXMA-E3195.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-bjc-PIXMA-E400.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-bjc-PIXMA-E400.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-bjc-PIXMA-E401.5.3.ppd.gz
@@ -2659,6 +2663,8 @@ share/cups/model/gutenprint/5.3/C/stp-citizen-cw-02.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-cw-02.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-cx-02.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-cx-02.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-citizen-cx-02w.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-citizen-cx-02w.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-cx-w.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-cx-w.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-cx.5.3.ppd.gz
@@ -2667,6 +2673,8 @@ share/cups/model/gutenprint/5.3/C/stp-citizen-cy-02.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-cy-02.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-cy.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-cy.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-citizen-cz-01.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-citizen-cz-01.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-op900.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-op900.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-citizen-op900ii.5.3.ppd.gz
@@ -2765,6 +2773,8 @@ share/cups/model/gutenprint/5.3/C/stp-dnp-ds820.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-dnp-ds820.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-dnp-dsrx1.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-dnp-dsrx1.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-dnp-qw410.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-dnp-qw410.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-dnp-sl10.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-dnp-sl10.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-dnp-sl20.5.3.ppd.gz
@@ -3399,6 +3409,8 @@ share/cups/model/gutenprint/5.3/C/stp-escp2-of-b42wd.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-escp2-of-b42wd.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-escp2-of-bx300f.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-escp2-of-bx300f.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-escp2-of-bx305f.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-escp2-of-bx305f.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-escp2-of-bx525wd.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-escp2-of-bx525wd.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-escp2-of-bx535wd.5.3.ppd.gz
@@ -4269,6 +4281,14 @@ share/cups/model/gutenprint/5.3/C/stp-gestetner-pro_c5200s.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-gestetner-pro_c5200s.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-gestetner-pro_c5210s.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-gestetner-pro_c5210s.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-hiti-p520l.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-hiti-p520l.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-hiti-p525l.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-hiti-p525l.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-hiti-p720l.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-hiti-p720l.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-hiti-p750l.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-hiti-p750l.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-honeywell_rp2.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-honeywell_rp2.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-honeywell_rp4.5.3.ppd.gz
@@ -5171,6 +5191,8 @@ share/cups/model/gutenprint/5.3/C/stp-kodak-6800.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-kodak-6800.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-kodak-6850.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-kodak-6850.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-kodak-6900.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-kodak-6900.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-kodak-7000.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-kodak-7000.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-kodak-7010.5.3.ppd.gz
@@ -5761,6 +5783,12 @@ share/cups/model/gutenprint/5.3/C/stp-mitsubishi-9810dw.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-mitsubishi-9810dw.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-mitsubishi-cp-3800dw.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-mitsubishi-cp-3800dw.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-mitsubishi-cp30dw.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-mitsubishi-cp30dw.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-mitsubishi-cpm1.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-mitsubishi-cpm1.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-mitsubishi-cpm15.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-mitsubishi-cpm15.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-mitsubishi-d707dw.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-mitsubishi-d707dw.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-mitsubishi-d70dw.5.3.ppd.gz
@@ -6977,6 +7005,8 @@ share/cups/model/gutenprint/5.3/C/stp-sony-upd897.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-sony-upd897.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-sony-upd898.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-sony-upd898.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-sony-upd898md.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-sony-upd898md.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-sony-updp10.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-sony-updp10.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-sony-updr100.5.3.ppd.gz
@@ -6991,6 +7021,8 @@ share/cups/model/gutenprint/5.3/C/stp-star-lp_8.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-star-lp_8.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-star-ls-04.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-star-ls-04.5.3.sim.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-stryker-sdp1000.5.3.ppd.gz
+share/cups/model/gutenprint/5.3/C/stp-stryker-sdp1000.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-tally-mt908.5.3.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-tally-mt908.5.3.sim.ppd.gz
 share/cups/model/gutenprint/5.3/C/stp-tektronix-phaser_750dp.5.3.ppd.gz
@@ -7526,6 +7558,8 @@ share/locale/fi/gutenprint_fi.po
 share/locale/fr/gutenprint_fr.po
 %%NLS%%share/locale/gl/LC_MESSAGES/gutenprint.mo
 share/locale/gl/gutenprint_gl.po
+share/locale/hr/LC_MESSAGES/gutenprint.mo
+share/locale/hr/gutenprint_hr.po
 %%NLS%%share/locale/hu/LC_MESSAGES/gutenprint.mo
 share/locale/hu/gutenprint_hu.po
 %%NLS%%share/locale/it/LC_MESSAGES/gutenprint.mo

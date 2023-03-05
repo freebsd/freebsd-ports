@@ -12,3 +12,12 @@
      { $as_echo "$as_me:${as_lineno-$LINENO}: result: $GIMP2_PLUGIN_DIR" >&5
  $as_echo "$GIMP2_PLUGIN_DIR" >&6; }
      if test "x$NO_PKGCONFIG_PATHS" = x; then
+@@ -18629,7 +18629,7 @@
+ 
+ if test x$ac_compiler_gnu = "xyes"; then
+ 
+-  for stp_ac_arg in -Wall -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Wwrite-strings -Werror-implicit-function-declaration -Winline -Wformat=2 -finline-limit=131072 -Wformat -Werror=format-security -D_POSIX_C_SOURCE=200809L -std=c99 ; do
++  for stp_ac_arg in -Wall -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Wwrite-strings -Werror-implicit-function-declaration -Winline -Wformat=2 -finline-limit=131072 -Wformat -Werror=format-security -D_POSIX_C_SOURCE=200809L ; do
+ 
+   { $as_echo "$as_me:${as_lineno-$LINENO}: checking if ${CC} supports ${stp_ac_arg}" >&5
+ $as_echo_n "checking if ${CC} supports ${stp_ac_arg}... " >&6; }
