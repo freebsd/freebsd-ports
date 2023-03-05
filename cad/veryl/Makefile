@@ -1,6 +1,6 @@
 PORTNAME=	veryl
 DISTVERSIONPREFIX=	veryl-v
-DISTVERSION=	0.5.2
+DISTVERSION=	0.5.5
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		arc-swap-1.6.0 \
 		arrayvec-0.7.2 \
 		async-channel-1.8.0 \
-		async-trait-0.1.64 \
+		async-trait-0.1.65 \
 		atoi-2.0.0 \
 		atty-0.2.14 \
 		auto_impl-1.0.1 \
@@ -43,13 +43,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bimap-0.6.2 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.3 \
-		bstr-1.2.0 \
-		btoi-0.4.2 \
+		bstr-1.3.0 \
+		btoi-0.4.3 \
 		bumpalo-3.12.0 \
-		bytemuck-1.13.0 \
+		bytemuck-1.13.1 \
 		byteorder-1.4.3 \
 		bytes-1.4.0 \
-		bytesize-1.1.0 \
+		bytesize-1.2.0 \
 		cast-0.3.0 \
 		castaway-0.2.2 \
 		cc-1.0.79 \
@@ -59,11 +59,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
 		clap-3.2.23 \
-		clap-4.1.7 \
-		clap_complete-4.1.2 \
-		clap_derive-4.1.7 \
+		clap-4.1.8 \
+		clap_complete-4.1.4 \
+		clap_derive-4.1.8 \
 		clap_lex-0.2.4 \
-		clap_lex-0.3.1 \
+		clap_lex-0.3.2 \
 		clru-0.6.1 \
 		codespan-reporting-0.11.1 \
 		compact_str-0.6.1 \
@@ -76,11 +76,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		criterion-0.4.0 \
 		criterion-plot-0.5.0 \
 		crossbeam-0.8.2 \
-		crossbeam-channel-0.5.6 \
-		crossbeam-deque-0.8.2 \
-		crossbeam-epoch-0.9.13 \
+		crossbeam-channel-0.5.7 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.14 \
 		crossbeam-queue-0.3.8 \
-		crossbeam-utils-0.8.14 \
+		crossbeam-utils-0.8.15 \
 		crypto-common-0.1.6 \
 		cxx-1.0.91 \
 		cxx-build-1.0.91 \
@@ -99,6 +99,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		directories-4.0.1 \
 		dirs-4.0.0 \
 		dirs-sys-0.3.7 \
+		dunce-1.0.3 \
 		either-1.8.1 \
 		elasticlunr-rs-3.0.1 \
 		encode_unicode-0.3.6 \
@@ -132,46 +133,46 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		getopts-0.2.21 \
 		getrandom-0.2.8 \
 		gimli-0.27.2 \
-		git-actor-0.17.1 \
-		git-attributes-0.8.2 \
-		git-bitmap-0.2.1 \
-		git-chunk-0.4.1 \
-		git-command-0.2.3 \
-		git-config-0.16.1 \
-		git-config-value-0.10.1 \
-		git-credentials-0.9.1 \
-		git-date-0.4.2 \
-		git-diff-0.26.1 \
-		git-discover-0.13.0 \
-		git-features-0.26.4 \
-		git-glob-0.5.3 \
-		git-hash-0.10.2 \
-		git-hashtable-0.1.1 \
-		git-index-0.12.3 \
-		git-lock-3.0.2 \
-		git-mailmap-0.9.2 \
-		git-object-0.26.1 \
+		git-actor-0.17.2 \
+		git-attributes-0.8.3 \
+		git-bitmap-0.2.2 \
+		git-chunk-0.4.2 \
+		git-command-0.2.4 \
+		git-config-0.16.2 \
+		git-config-value-0.10.2 \
+		git-credentials-0.9.2 \
+		git-date-0.4.3 \
+		git-diff-0.26.2 \
+		git-discover-0.13.1 \
+		git-features-0.26.5 \
+		git-glob-0.5.4 \
+		git-hash-0.10.3 \
+		git-hashtable-0.1.2 \
+		git-index-0.12.4 \
+		git-lock-3.0.3 \
+		git-mailmap-0.9.3 \
+		git-object-0.26.2 \
 		git-odb-0.40.2 \
 		git-pack-0.30.2 \
-		git-packetline-0.14.2 \
-		git-path-0.7.1 \
-		git-prompt-0.3.2 \
-		git-protocol-0.26.3 \
-		git-quote-0.4.1 \
-		git-ref-0.24.0 \
-		git-refspec-0.7.2 \
+		git-packetline-0.14.3 \
+		git-path-0.7.2 \
+		git-prompt-0.3.3 \
+		git-protocol-0.26.4 \
+		git-quote-0.4.2 \
+		git-ref-0.24.1 \
+		git-refspec-0.7.3 \
 		git-repository-0.35.0 \
-		git-revision-0.10.3 \
-		git-sec-0.6.2 \
-		git-tempfile-3.0.2 \
-		git-transport-0.25.4 \
-		git-traverse-0.22.1 \
-		git-url-0.13.2 \
-		git-validate-0.7.2 \
-		git-worktree-0.12.2 \
+		git-revision-0.10.4 \
+		git-sec-0.6.3 \
+		git-tempfile-3.0.3 \
+		git-transport-0.25.5 \
+		git-traverse-0.22.2 \
+		git-url-0.13.3 \
+		git-validate-0.7.3 \
+		git-worktree-0.12.3 \
 		gitignore-1.0.7 \
 		glob-0.3.1 \
-		h2-0.3.15 \
+		h2-0.3.16 \
 		half-1.8.2 \
 		handlebars-4.3.6 \
 		hashbrown-0.12.3 \
@@ -186,7 +187,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		home-0.5.4 \
 		hostname-0.3.1 \
 		html5ever-0.26.0 \
-		http-0.2.8 \
+		http-0.2.9 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
@@ -211,10 +212,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		io-lifetimes-1.0.5 \
 		ipconfig-0.3.1 \
 		ipnet-2.7.1 \
-		is-terminal-0.4.3 \
+		is-terminal-0.4.4 \
 		is_ci-1.1.1 \
 		itertools-0.10.5 \
-		itoa-1.0.5 \
+		itoa-1.0.6 \
 		js-sys-0.3.61 \
 		jwalk-0.8.1 \
 		kqueue-1.0.7 \
@@ -228,17 +229,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		lru-cache-0.1.2 \
-		lsp-types-0.93.2 \
+		lsp-types-0.94.0 \
 		mac-0.1.1 \
 		maplit-1.0.2 \
 		markup5ever-0.11.0 \
 		match_cfg-0.1.0 \
 		matches-0.1.10 \
 		maybe-async-0.2.7 \
-		mdbook-0.4.27 \
+		mdbook-0.4.28 \
 		memchr-2.5.0 \
-		memmap2-0.5.8 \
-		memoffset-0.7.1 \
+		memmap2-0.5.10 \
+		memoffset-0.8.0 \
 		miette-5.5.0 \
 		miette-derive-5.5.0 \
 		mime-0.3.16 \
@@ -249,7 +250,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		new_debug_unreachable-1.0.4 \
 		nix-0.26.2 \
 		nom-7.1.3 \
-		nom8-0.2.0 \
 		notify-5.1.0 \
 		notify-debouncer-mini-0.2.1 \
 		num-format-0.4.4 \
@@ -263,19 +263,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		opener-0.5.2 \
 		os_str_bytes-6.4.1 \
 		owo-colors-3.5.0 \
-		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.8.6 \
 		parking_lot_core-0.9.7 \
 		parol-0.18.1 \
 		parol-macros-0.2.0 \
 		parol_runtime-0.14.0 \
 		paste-1.0.11 \
 		percent-encoding-2.2.0 \
-		pest-2.5.5 \
-		pest_derive-2.5.5 \
-		pest_generator-2.5.5 \
-		pest_meta-2.5.5 \
+		pest-2.5.6 \
+		pest_derive-2.5.6 \
+		pest_generator-2.5.6 \
+		pest_meta-2.5.6 \
 		phf-0.10.1 \
 		phf_codegen-0.10.0 \
 		phf_generator-0.10.0 \
@@ -293,7 +291,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.51 \
-		prodash-23.0.0 \
+		prodash-23.1.1 \
 		pulldown-cmark-0.9.2 \
 		quick-error-1.2.3 \
 		quick-error-2.0.1 \
@@ -303,8 +301,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rand_regex-0.15.1 \
-		rayon-1.6.1 \
-		rayon-core-1.10.2 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
 		regex-1.7.1 \
@@ -313,25 +311,25 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-syntax-0.6.28 \
 		reqwest-0.11.14 \
 		resolv-conf-0.7.0 \
-		rgb-0.8.35 \
+		rgb-0.8.36 \
 		ring-0.16.20 \
 		ropey-1.6.0 \
 		rustc-demangle-0.1.21 \
-		rustix-0.36.8 \
+		rustix-0.36.9 \
 		rustls-0.20.8 \
 		rustls-pemfile-0.2.1 \
 		rustls-pemfile-1.0.2 \
 		rustversion-1.0.11 \
-		ryu-1.0.12 \
+		ryu-1.0.13 \
 		same-file-1.0.6 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.1.0 \
-		scratch-1.0.3 \
+		scratch-1.0.4 \
 		sct-0.7.0 \
 		semver-1.0.16 \
 		serde-1.0.152 \
 		serde_derive-1.0.152 \
-		serde_json-1.0.93 \
+		serde_json-1.0.94 \
 		serde_regex-1.1.0 \
 		serde_repr-0.1.10 \
 		serde_spanned-0.6.1 \
@@ -345,18 +343,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		signal-hook-registry-1.4.1 \
 		similar-2.2.1 \
 		siphasher-0.3.10 \
-		slab-0.4.7 \
+		slab-0.4.8 \
 		smallvec-1.10.0 \
 		smawk-0.3.1 \
 		snowflake-1.3.0 \
-		socket2-0.4.7 \
+		socket2-0.4.9 \
 		spdx-0.10.0 \
 		spin-0.5.2 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		str_indices-0.4.1 \
 		str_stack-0.1.0 \
-		string_cache-0.8.4 \
+		string_cache-0.8.6 \
 		string_cache_codegen-0.5.2 \
 		strsim-0.10.0 \
 		supports-color-1.3.1 \
@@ -364,7 +362,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		supports-unicode-1.0.2 \
 		symbolic-common-10.2.1 \
 		symbolic-demangle-10.2.1 \
-		syn-1.0.107 \
+		syn-1.0.109 \
 		tempfile-3.4.0 \
 		tendril-0.4.3 \
 		termcolor-1.2.0 \
@@ -374,27 +372,27 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		textwrap-0.16.0 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
-		time-0.3.19 \
+		time-0.3.20 \
 		time-core-0.1.0 \
-		time-macros-0.2.7 \
+		time-macros-0.2.8 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.25.0 \
+		tokio-1.26.0 \
 		tokio-macros-1.8.2 \
 		tokio-rustls-0.23.4 \
-		tokio-stream-0.1.11 \
+		tokio-stream-0.1.12 \
 		tokio-tungstenite-0.17.2 \
 		tokio-util-0.7.7 \
 		toml-0.5.11 \
 		toml-0.7.2 \
 		toml_datetime-0.6.1 \
-		toml_edit-0.19.3 \
+		toml_edit-0.19.4 \
 		topological-sort-0.2.2 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
-		tower-lsp-0.18.0 \
-		tower-lsp-macros-0.7.0 \
+		tower-lsp-0.19.0 \
+		tower-lsp-macros-0.8.0 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-attributes-0.1.23 \
@@ -410,7 +408,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.10 \
 		unicode-bom-1.1.4 \
-		unicode-ident-1.0.6 \
+		unicode-ident-1.0.7 \
 		unicode-linebreak-0.1.4 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
@@ -448,6 +446,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		windows_x86_64_gnu-0.42.1 \
 		windows_x86_64_gnullvm-0.42.1 \
 		windows_x86_64_msvc-0.42.1 \
+		winnow-0.3.4 \
 		winreg-0.10.1 \
 		xml_writer-0.4.0
 
