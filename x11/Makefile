@@ -116,6 +116,7 @@
     SUBDIR += hhpc
     SUBDIR += hs-xmobar
     SUBDIR += hsetroot
+    SUBDIR += hybrid-bar
     SUBDIR += hyprland-share-picker
     SUBDIR += hyprpaper
     SUBDIR += hyprpicker
