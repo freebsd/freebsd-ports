@@ -358,7 +358,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/markdown-language-features/package.nls.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/schemas/package.schema.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/server/README.md
-%%DATADIR%%/resources/app/extensions/markdown-language-features/server/dist/node/main.js
+%%DATADIR%%/resources/app/extensions/markdown-language-features/server/dist/node/workerMain.js
 %%DATADIR%%/resources/app/extensions/markdown-language-features/server/package.json
 %%DATADIR%%/resources/app/extensions/markdown-math/README.md
 %%DATADIR%%/resources/app/extensions/markdown-math/dist/extension.js
@@ -801,6 +801,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/yaml/syntaxes/yaml.tmLanguage.json
 %%DATADIR%%/resources/app/node_modules.asar
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@parcel/watcher/build/Release/watcher.node
+%%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/policy-watcher/build/Release/vscode-policy-watcher.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/ripgrep/bin/rg
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/@vscode/sqlite3/build/Release/vscode-sqlite3.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/keytar/build/Release/keytar.node
@@ -814,7 +815,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/node-pty/lib/worker/conoutSocketWorker.js
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/spdlog/build/Release/spdlog.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/vscode-oniguruma/release/onig.wasm
-%%DATADIR%%/resources/app/node_modules.asar.unpacked/vscode-policy-watcher/build/Release/vscode-policy-watcher.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/windows-foreground-love/build/Release/foreground_love.node
 %%DATADIR%%/resources/app/node_modules.asar.unpacked/windows-foreground-love/build/Release/obj.target/foreground_love.node
 %%DATADIR%%/resources/app/out/bootstrap-amd.js
@@ -836,11 +836,6 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/base/node/terminateProcess.sh
 %%DATADIR%%/resources/app/out/vs/base/parts/sandbox/electron-browser/preload.js
 %%DATADIR%%/resources/app/out/vs/base/worker/workerMain.js
-%%DATADIR%%/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcess-dev.html
-%%DATADIR%%/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcess.html
-%%DATADIR%%/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcess.js
-%%DATADIR%%/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.js
-%%DATADIR%%/resources/app/out/vs/code/electron-browser/sharedProcess/sharedProcessMain.nls.js
 %%DATADIR%%/resources/app/out/vs/code/electron-main/main.js
 %%DATADIR%%/resources/app/out/vs/code/electron-main/main.nls.js
 %%DATADIR%%/resources/app/out/vs/code/electron-sandbox/issue/issueReporter-dev.html
@@ -862,6 +857,11 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/code/node/cli.nls.js
 %%DATADIR%%/resources/app/out/vs/code/node/cliProcessMain.js
 %%DATADIR%%/resources/app/out/vs/code/node/cliProcessMain.nls.js
+%%DATADIR%%/resources/app/out/vs/code/node/sharedProcess/sharedProcess-dev.html
+%%DATADIR%%/resources/app/out/vs/code/node/sharedProcess/sharedProcess.html
+%%DATADIR%%/resources/app/out/vs/code/node/sharedProcess/sharedProcess.js
+%%DATADIR%%/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js
+%%DATADIR%%/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.nls.js
 %%DATADIR%%/resources/app/out/vs/editor/common/services/editorSimpleWorker.nls.js
 %%DATADIR%%/resources/app/out/vs/loader.js
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/break.mp3
@@ -951,6 +951,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/services/extensions/worker/webWorkerExtensionHostIframe.html
 %%DATADIR%%/resources/app/out/vs/workbench/services/languageDetection/browser/languageDetectionSimpleWorker.js
 %%DATADIR%%/resources/app/out/vs/workbench/services/search/worker/localFileSearch.js
+%%DATADIR%%/resources/app/out/vs/workbench/services/textMate/browser/worker/textMate.worker.js
 %%DATADIR%%/resources/app/out/vs/workbench/workbench.desktop.main.css
 %%DATADIR%%/resources/app/out/vs/workbench/workbench.desktop.main.js
 %%DATADIR%%/resources/app/out/vs/workbench/workbench.desktop.main.nls.js

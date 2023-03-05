@@ -1,6 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.75.1
-PORTREVISION=	1
+DISTVERSION=	1.76.0
 CATEGORIES=	editors
 MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
 		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
@@ -72,7 +71,7 @@ USES=		desktop-file-utils gl gmake gnome iconv jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	441438abd1ac652551dbe4d408dfcec8a499b8bf
+SOURCE_COMMIT_HASH=	92da9481c0904c6adfe372c12da3b7748d74bdcb
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -190,8 +189,6 @@ pre-build:
 	# copy rg binary files to vscode-ripgrep module directory
 	${MKDIR} ${WRKSRC}/node_modules/@vscode/ripgrep/bin
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/@vscode/ripgrep/bin
-	${MKDIR} ${WRKSRC}/node_modules/vscode-ripgrep/bin
-	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/node_modules/vscode-ripgrep/bin
 	${MKDIR} ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
 	${CP} ${LOCALBASE}/bin/rg ${WRKSRC}/remote/node_modules/@vscode/ripgrep/bin
 
