@@ -1,11 +1,11 @@
 PORTNAME=	lyx
 PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}
-PORTREVISION=	2
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		ftp://ftp.ntua.gr/pub/X11/LyX/stable/${MAJOR_VERSION}.x/ \
 		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/stable/${MAJOR_VERSION}.x/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libmythes-1.2.so:textproc/mythes
 
 MAJOR_VERSION=	2.3
-MINOR_VERSION=	6.1
+MINOR_VERSION=	7
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gmake iconv \
 		pkgconfig perl5 python qt:5 shebangfix tar:xz xorg
@@ -44,6 +44,8 @@ SHEBANG_FILES=	lib/configure.py \
 		lib/scripts/svg2pstex.py
 
 LIBS+=		-lexecinfo
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=		ASPELL ENCHANT HUNSPELL NLS
 OPTIONS_DEFAULT=	HUNSPELL
