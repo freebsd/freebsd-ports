@@ -1,7 +1,7 @@
 PORTNAME=	qtractor
 DISTVERSIONPREFIX=	qtractor_
 DISTVERSION=	0_9_31
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/rncbc/qtractor/archive/refs/tags/ \
 		https://download.steinberg.net/sdk_downloads/:vst3sdk
@@ -39,6 +39,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libvorbis.so:audio/libvorbis \
 		libvorbisenc.so:audio/libvorbis \
 		libvorbisfile.so:audio/libvorbis
+RUN_DEPENDS=	alsa-seq-server>0:audio/alsa-seq-server
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gettext-runtime gnome localbase:ldflags pkgconfig qt:5 shared-mime-info
 USE_GNOME=	atk cairo gdkpixbuf2 gtk20 gtkmm24 pango
