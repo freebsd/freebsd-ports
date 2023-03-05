@@ -1,5 +1,5 @@
 PORTNAME=	pywikibot
-DISTVERSION=	8.0.0
+DISTVERSION=	8.0.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ WWW=		https://www.mediawiki.org/wiki/Pywikibot
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mwparserfromhell>0:textproc/py-mwparserfromhell@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.20.1:www/py-requests@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mwparserfromhell>=0.6.3:textproc/py-mwparserfromhell@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.21.0:www/py-requests@${PY_FLAVOR}
 
 USES=		dos2unix python:3.5+
 DOS2UNIX_FILES=	setup.py
