@@ -1,11 +1,11 @@
 - workaround for https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=254489
 
---- cmake/modules/SMTG_AddSMTGLibrary.cmake.orig	2021-12-16 12:29:25 UTC
+--- cmake/modules/SMTG_AddSMTGLibrary.cmake.orig	2022-12-12 13:47:57 UTC
 +++ cmake/modules/SMTG_AddSMTGLibrary.cmake
-@@ -126,7 +126,7 @@ function(smtg_target_create_link_to_plugin target dest
+@@ -130,7 +130,7 @@ function(smtg_target_create_link_to_plugin target dest
          add_custom_command(
              TARGET ${target} POST_BUILD
-             COMMAND mkdir -p "${TARGET_DESTINATION}"
+             COMMAND ${CMAKE_COMMAND} -E make_directory "${TARGET_DESTINATION}"
 -            COMMAND ln -svfF "${TARGET_SOURCE}" "${TARGET_DESTINATION}"
 +            COMMAND ln -sv "${TARGET_SOURCE}" "${TARGET_DESTINATION}"
          )
