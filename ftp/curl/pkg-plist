@@ -566,7 +566,6 @@ share/aclocal/libcurl.m4
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chkspeed.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cookie_interface.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/crawler.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/curlgtk.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/debug.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ephiperfifo.c
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/evhiperfifo.c
