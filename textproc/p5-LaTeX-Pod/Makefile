@@ -1,5 +1,5 @@
 PORTNAME=	LaTeX-Pod
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,6 +18,6 @@ RUN_DEPENDS=	p5-LaTeX-TOM>=0.9:textproc/p5-LaTeX-TOM \
 		p5-boolean>=0.20:devel/p5-boolean
 
 USES=		perl5
-USE_PERL5=	configure
+USE_PERL5=	modbuild
 
 .include <bsd.port.mk>
