@@ -1,6 +1,6 @@
 PORTNAME=	ocp
 PORTVERSION=	0.2.103
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://stian.cubic.org/ocp/
@@ -88,15 +88,6 @@ X11_PLIST_SUB_OFF=	DESKTOP='@comment ' \
 			XORG='@comment '
 
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
-
-# Workaround regression in audio/libdiscid
-# See also: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=269990
-# (remove once it's fixed)
-post-patch:
-	@${REINPLACE_CMD} \
-		-e "s|^\(LIBDISCID_CFLAGS=\).*|\1-I${LOCALBASE}/include|" \
-		-e "s|^\(LIBDISCID_LIBS=\).*|\1-L${LOCALBASE}/lib -ldiscid|" \
-		${WRKSRC}/Rules.make.in
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocp
