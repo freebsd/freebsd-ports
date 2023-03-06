@@ -1,6 +1,6 @@
 PORTNAME=	mkvtoolnix
 PORTVERSION=	74.0.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -30,7 +30,7 @@ LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 USES=		compiler:c++17-lang iconv localbase pkgconfig qmake:no_env qt:5 tar:xz
 USE_QT=		buildtools:build concurrent core linguisttools:build multimedia svg
 
-CONFLICTS=	mkvtoolnix-nox11
+CONFLICTS?=	mkvtoolnix-nox11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE} \
