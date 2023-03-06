@@ -4,4 +4,5 @@ Fortress. The game is currently under heavy development, but is
 playable.
 
 This is a weekly snapshot used on the official multiplayer server,
-usually updated each Thursday.
+usually updated each Thursday. For other servers see
+https://gitlab.com/veloren/serverbrowser/-/blob/master/server/servers.ron
