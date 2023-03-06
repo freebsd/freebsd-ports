@@ -1,6 +1,6 @@
 PORTNAME=	systemsettings
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -9,7 +9,7 @@ WWW=		https://www.kde.org/plasma-desktop
 
 USES=		cmake compiler:c++11-lib gettext gstreamer kde:5 qt:5 tar:xz \
 		xorg
-USE_GSTREAMER=	curl openh264 theora
+USE_GSTREAMER=	curl openh264 vpx
 USE_KDE=	activities activities-stats auth codecs completion config \
 		configwidgets coreaddons crash dbusaddons guiaddons i18n \
 		iconthemes itemmodels itemviews jobwidgets js kcmutils \
