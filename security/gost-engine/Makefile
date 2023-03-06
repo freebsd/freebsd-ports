@@ -1,5 +1,5 @@
 PORTNAME=	gost-engine
-DISTVERSION=	g20190421
+DISTVERSION=	g20220520
 CATEGORIES=	security
 
 MAINTAINER=	eugen@FreeBSD.org
@@ -9,14 +9,17 @@ WWW=		https://github.com/gost-engine/engine/blob/master/README.gost
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=			libressl libressl-devel
-BROKEN_SSL_REASON_libressl=	needs features only available in OpenSSL 1.1.1+
-BROKEN_SSL_REASON_libressl-devel=needs features only available in OpenSSL 1.1.1+
+BROKEN_SSL=				libressl libressl-devel openssl-devel
+BROKEN_SSL_REASON_libressl=		needs features only available in OpenSSL 1.1.1+
+BROKEN_SSL_REASON_libressl-devel=	needs features only available in OpenSSL 1.1.1+
+BROKEN_SSL_REASON_openssl-devel=	for OpenSSL 1.1.1 only
+
+BUILD_DEPENDS=  cmake>=3.18.1:devel/cmake
 
 USES=		cmake ssl
 USE_GITHUB=	yes
 GH_PROJECT=	engine
-GH_TAGNAME=	7ed64cd
+GH_TAGNAME=	739f957
 
 ENGINESDIR?=	${PREFIX}/lib/engines-1.1
 
@@ -33,7 +36,9 @@ post-patch:
 	${REINPLACE_CMD} 's/-Werror //' ${WRKSRC}/CMakeLists.txt
 
 post-install:
-	( cd ${STAGEDIR}${PREFIX}/lib/engines-1.1 && ${MV} gost.so libgost.so )
+	cd ${STAGEDIR}${PREFIX}/lib/engines-1.1 && \
+	  ${MV} gost.so.1.1 libgost.so.1.1 && ${LN} -s libgost.so.1.1 libgost.so && \
+	  ${RM} gost.so
 
 post-install-DOCS-off:
 	( cd ${STAGEDIR}${PREFIX}/share/man/man1 && ${RM} gost12sum.1 gostsum.1 )
