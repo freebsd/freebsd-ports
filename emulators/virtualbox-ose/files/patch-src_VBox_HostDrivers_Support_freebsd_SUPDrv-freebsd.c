@@ -127,7 +127,7 @@
          }
 -        rc = copyin(pvUser, pHdr, Hdr.cbIn);
 -        if (RT_UNLIKELY(rc))
-+        if (RT_FAILURE(RTR0MemUserCopyFrom(pHdr, pvUser, Hdr.cbIn)))
++        if (RT_FAILURE(RTR0MemUserCopyFrom(pHdr, (uintptr_t)pvUser, Hdr.cbIn)))
          {
 -            OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: copyin(%p,%p,%#x) -> %#x; ulCmd=%#lx\n",
 -                        pvUser, pHdr, Hdr.cbIn, rc, ulCmd));
@@ -146,7 +146,7 @@
 -            rc = copyout(pHdr, pvUser, cbOut);
 -            if (RT_UNLIKELY(rc))
 -                OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: copyout(%p,%p,%#x) -> %d; uCmd=%#lx!\n", pHdr, pvUser, cbOut, rc, ulCmd));
-+            if (RT_FAILURE(RTR0MemUserCopyTo(pvUser, pHdr, cbOut)))
++            if (RT_FAILURE(RTR0MemUserCopyTo((uintptr_t)pvUser, pHdr, cbOut)))
 +                OSDBGPRINT(("VBoxDrvFreeBSDIOCtlSlow: copyout(%p,%p,%#x); uCmd=%#lx!\n", pHdr, pvUser, cbOut, ulCmd));
  
              Log(("VBoxDrvFreeBSDIOCtlSlow: returns %d / %d ulCmd=%lx\n", 0, pHdr->rc, ulCmd));
