@@ -1,6 +1,7 @@
 PORTNAME=	softether
 DISTVERSION=	5.02.5180-292
 DISTVERSIONSUFFIX=	-g8c64dc0c
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	security net-vpn
 PKGNAMESUFFIX=	5
@@ -38,15 +39,14 @@ GH_TUPLE=	SoftEtherVPN:libhamcore:2951ae5:libhamcore/src/libhamcore \
 		BLAKE2:BLAKE2:b52178a:BLAKE2/3rdparty/BLAKE2 \
 		cxong:tinydir:ec6bff2:tinydir/3rdparty/tinydir
 
-CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
-		-DSE_DBDIR="${SE_DBDIR}" \
+CMAKE_ARGS+=	-DSE_DBDIR="${SE_DBDIR}" \
 		-DSE_LOGDIR="${SE_LOGDIR}" \
 		-DSE_PIDDIR="${SE_PIDDIR}" \
 		-DSE_TAGNAME="${GH_TAGNAME}/freebsd"
 
 CFLAGS+=	-I${LOCALBASE}/include/cpu_features
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=	DOCS DEBUG
 
 PORTDOCS=		DISCLAIMER.md WARNING.TXT
 CONFLICTS_INSTALL=	softether-4.[0-9]* softether-devel-4.[0-9]*
@@ -61,6 +61,14 @@ SUB_LIST=	SE_DBDIR="${SE_DBDIR}" \
 		SE_LOGDIR="${SE_LOGDIR}" \
 		SE_PIDDIR="${SE_PIDDIR}"
 SUB_FILES=	pkg-message
+
+.include <bsd.port.options.mk>
+
+# CMAKE_BUILD_TYPE is automatically set by Mk/Uses/cmake.mk
+# just set WITH_DEBUG=yes, CMAKE_ARGS+=-DCMAKE_BUILD_TYPE=Debug takes no effect.
+.if ${PORT_OPTIONS:MDEBUG}
+WITH_DEBUG=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
