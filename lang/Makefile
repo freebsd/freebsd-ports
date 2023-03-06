@@ -90,7 +90,6 @@
     SUBDIR += gauche
     SUBDIR += gawk
     SUBDIR += gcc
-    SUBDIR += gcc-ecj45
     SUBDIR += gcc10
     SUBDIR += gcc11
     SUBDIR += gcc11-devel

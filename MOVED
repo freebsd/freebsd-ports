@@ -17776,3 +17776,4 @@ accessibility/at-spi2-atk|accessibility/at-spi2-core|2023-03-02|Integrated into 
 net/tshark|net/wireshark@nox11|2023-03-03|Tshark is now the nox11 flavor of wireshark
 net/tshark-lite|net/wireshark@nox11|2023-03-03|Tshark is now the nox11 flavor of wireshark
 net/wireshark-lite|net/wireshark|2023-03-03|The lite port of wireshark can be controlled with OPTIONS
+lang/gcc-ecj45|java/eclipse-ecj|2023-03-06|Has expired: Long time unsupported upstream, use java/eclipse-ecj instead
