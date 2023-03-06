@@ -1,5 +1,5 @@
 PORTNAME=	tt-rss
-PORTVERSION=	g20230204
+PORTVERSION=	g20230305
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	https://git-gitea.tt-rss.org/fox/tt-rss/archive/
@@ -22,7 +22,7 @@ USE_RC_SUBR=	ttrssd
 
 SHEBANG_FILES=	update.php update_daemon2.php
 
-_GIT_TAGNAME=	0cd4abe4e
+_GIT_TAGNAME=	d210ae50a
 
 REINPLACE_ARGS=	-i ""
 
