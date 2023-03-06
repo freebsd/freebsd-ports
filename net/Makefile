@@ -388,6 +388,7 @@
     SUBDIR += libmdf
     SUBDIR += libmediawiki
     SUBDIR += libnatpmp
+    SUBDIR += libndp
     SUBDIR += libnet
     SUBDIR += libnfs
     SUBDIR += libngtcp2
