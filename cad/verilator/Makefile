@@ -1,7 +1,6 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.006
-PORTREVISION=	1
+DISTVERSION=	5.008
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,6 +38,8 @@ CONFIGURE_SHELL=	${LOCALBASE}/bin/bash # see https://github.com/verilator/verila
 TEST_TARGET=	test
 
 BINARY_ALIAS=	make=${GMAKE} python3=${PYTHON_CMD} # aliasas are only for tests
+
+#MAKE_JOBS_UNSAFE=	yes # build on 1 CPU because many compile jobs are over 10GB and they can likely cause out-of-memory issues
 
 OPTIONS_DEFINE=			INSTALL_DBG_EXECUTABLES LEAK_CHECKS
 OPTIONS_SUB=			yes
