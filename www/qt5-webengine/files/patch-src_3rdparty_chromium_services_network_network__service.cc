@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/network/network_service.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/services/network/network_service.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/services/network/network_service.cc
-@@ -67,7 +67,7 @@
+@@ -70,7 +70,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "components/os_crypt/key_storage_config_linux.h"
  #endif
  
-@@ -636,7 +636,7 @@ void NetworkService::OnCertDBChanged() {
+@@ -670,7 +670,7 @@ void NetworkService::OnCertDBChanged() {
    net::CertDatabase::GetInstance()->NotifyObserversCertDBChanged();
  }
  

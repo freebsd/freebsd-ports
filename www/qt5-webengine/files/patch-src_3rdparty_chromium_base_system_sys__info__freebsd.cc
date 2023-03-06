@@ -1,9 +1,10 @@
---- src/3rdparty/chromium/base/system/sys_info_freebsd.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/base/system/sys_info_freebsd.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/system/sys_info_freebsd.cc
-@@ -9,30 +9,76 @@
+@@ -9,30 +9,95 @@
  #include <sys/sysctl.h>
  
- #include "base/logging.h"
+ #include "base/notreached.h"
++#include "base/process/process_metrics.h"
 +#include "base/strings/string_util.h"
  
  namespace base {
@@ -15,44 +16,61 @@
 -  sysctlbyname("vm.stats.vm.v_page_count", &pages, &size, NULL, 0);
 -  sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
 -  if (pages == -1 || page_size == -1) {
-+  if(r == 0)
++
++  if (r == 0)
 +    r = sysctlbyname("vm.stats.vm.v_page_count", &pages, &size, NULL, 0);
-+  if(r == 0)
-+    r =sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
-+  if(r == -1) {
++  if (r == 0)
++    r = sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
++
++  if (r == -1) {
      NOTREACHED();
      return 0;
    }
++
    return static_cast<int64_t>(pages) * page_size;
  }
  
 +int64_t SysInfo::AmountOfAvailablePhysicalMemoryImpl() {
 +  int page_size, r = 0;
-+  unsigned pgfree, pginact, pgcache;
++  unsigned int pgfree, pginact, pgcache;
 +  size_t size = sizeof(page_size);
 +  size_t szpg = sizeof(pgfree);
-+  if(r == 0)
++
++  if (r == 0)
 +    r = sysctlbyname("vm.stats.vm.v_page_size", &page_size, &size, NULL, 0);
-+  if(r == 0)
++  if (r == 0)
 +    r = sysctlbyname("vm.stats.vm.v_free_count", &pgfree, &szpg, NULL, 0);
-+  if(r == 0)
++  if (r == 0)
 +    r = sysctlbyname("vm.stats.vm.v_inactive_count", &pginact, &szpg, NULL, 0);
-+  if(r == 0)
++  if (r == 0)
 +    r = sysctlbyname("vm.stats.vm.v_cache_count", &pgcache, &szpg, NULL, 0);
-+  if(r == -1) {
++
++  if (r == -1) {
 +    NOTREACHED();
 +    return 0;
 +  }
++
 +  return static_cast<int64_t>((pgfree + pginact + pgcache) * page_size);
 +}
 +
  // static
++int64_t SysInfo::AmountOfAvailablePhysicalMemory(const SystemMemoryInfoKB& info) {
++  int64_t res_kb = info.available != 0
++                       ? info.available - info.active_file
++                       : info.free + info.reclaimable + info.inactive_file;
++  return res_kb * 1024;
++}
++
++// static
 +std::string SysInfo::CPUModelName() {
 +  int mib[] = { CTL_HW, HW_MODEL };
 +  char name[256];
 +  size_t size = base::size(name);
-+  if (sysctl(mib, base::size(mib), &name, &size, NULL, 0) == 0)
++
++  if (sysctl(mib, base::size(mib), &name, &size, NULL, 0) == 0) {
 +    return name;
++  }
++
 +  return std::string();
 +}
 +
@@ -71,12 +89,13 @@
 +
 +SysInfo::HardwareInfo SysInfo::GetHardwareInfoSync() {
 +  HardwareInfo info;
-+  // Set the manufacturer to "FreeBSD" and the model to
-+  // an empty string.
++
 +  info.manufacturer = "FreeBSD";
 +  info.model = HardwareModelName();
++
 +  DCHECK(IsStringUTF8(info.manufacturer));
 +  DCHECK(IsStringUTF8(info.model));
++
 +  return info;
  }
  

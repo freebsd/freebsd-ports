@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/device/gamepad/gamepad_provider.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/device/gamepad/gamepad_provider.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/device/gamepad/gamepad_provider.cc
-@@ -167,7 +167,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
+@@ -149,7 +149,7 @@ void GamepadProvider::Initialize(std::unique_ptr<Gamep
  
    if (!polling_thread_)
      polling_thread_.reset(new base::Thread("Gamepad polling thread"));
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // On Linux, the data fetcher needs to watch file descriptors, so the message
    // loop needs to be a libevent loop.
-   const base::MessageLoop::Type kMessageLoopType = base::MessageLoop::TYPE_IO;
+   const base::MessagePumpType kMessageLoopType = base::MessagePumpType::IO;

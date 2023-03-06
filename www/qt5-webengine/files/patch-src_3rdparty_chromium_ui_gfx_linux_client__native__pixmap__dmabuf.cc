@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/gfx/linux/client_native_pixmap_dmabuf.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/gfx/linux/client_native_pixmap_dmabuf.cc
 @@ -5,7 +5,9 @@
  #include "ui/gfx/linux/client_native_pixmap_dmabuf.h"
@@ -10,9 +10,9 @@
  #include <stddef.h>
  #include <sys/ioctl.h>
  #include <sys/mman.h>
-@@ -17,11 +19,7 @@
- #include "base/strings/stringprintf.h"
- #include "base/trace_event/trace_event.h"
+@@ -27,11 +29,7 @@
+ #include "ui/gfx/buffer_format_util.h"
+ #include "ui/gfx/switches.h"
  
 -#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 11, 0)
 -#include <linux/dma-buf.h>

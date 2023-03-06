@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/url_matcher/regex_set_matcher.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/components/url_matcher/regex_set_matcher.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/components/url_matcher/regex_set_matcher.cc
-@@ -11,8 +11,13 @@
+@@ -12,8 +12,13 @@
  #include "base/logging.h"
  #include "base/strings/string_util.h"
  #include "components/url_matcher/substring_set_matcher.h"

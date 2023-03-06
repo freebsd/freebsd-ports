@@ -1,20 +1,20 @@
---- src/3rdparty/chromium/gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/gpu/command_buffer/common/gpu_memory_buffer_support.cc
-@@ -54,7 +54,7 @@ bool IsImageSizeValidForGpuMemoryBufferFormat(const gf
+@@ -55,7 +55,7 @@ uint32_t GetPlatformSpecificTextureTarget() {
  uint32_t GetPlatformSpecificTextureTarget() {
- #if defined(OS_MACOSX)
+ #if defined(OS_MAC)
    return macos_specific_texture_target;
--#elif defined(OS_ANDROID) || defined(OS_LINUX)
-+#elif defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#elif defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#elif defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    return GL_TEXTURE_EXTERNAL_OES;
  #elif defined(OS_WIN) || defined(OS_FUCHSIA)
    return GL_TEXTURE_2D;
-@@ -84,7 +84,7 @@ GPU_EXPORT uint32_t GetBufferTextureTarget(gfx::Buffer
+@@ -85,7 +85,7 @@ GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextu
  
  GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextureTarget(
      gfx::BufferFormat format) {
--#if defined(USE_OZONE) || defined(OS_LINUX)
-+#if defined(USE_OZONE) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(USE_OZONE) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(USE_OZONE) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // Always use GL_TEXTURE_2D as the target for RGB textures.
    // https://crbug.com/916728
    if (format == gfx::BufferFormat::R_8 || format == gfx::BufferFormat::RG_88 ||

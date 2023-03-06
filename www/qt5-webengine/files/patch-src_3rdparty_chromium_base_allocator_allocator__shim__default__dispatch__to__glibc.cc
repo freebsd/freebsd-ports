@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/base/allocator/allocator_shim_default_dispatch_to_glibc.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/allocator/allocator_shim_default_dispatch_to_glibc.cc
-@@ -5,18 +5,28 @@
- #include "base/allocator/allocator_shim.h"
+@@ -6,18 +6,28 @@
+ #include "base/compiler_specific.h"
  
  #include <dlfcn.h>
 -#include <malloc.h>
@@ -36,7 +36,7 @@
  }  // extern "C"
  
  namespace {
-@@ -24,32 +34,32 @@ namespace {
+@@ -25,32 +35,32 @@ void* GlibcMalloc(const AllocatorDispatch*, size_t siz
  using base::allocator::AllocatorDispatch;
  
  void* GlibcMalloc(const AllocatorDispatch*, size_t size, void* context) {
@@ -73,4 +73,4 @@
 +  __free(address);
  }
  
- size_t GlibcGetSizeEstimate(const AllocatorDispatch*,
+ NO_SANITIZE("cfi-icall")

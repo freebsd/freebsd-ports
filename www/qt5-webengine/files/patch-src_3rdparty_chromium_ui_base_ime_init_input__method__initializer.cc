@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/ui/base/ime/init/input_method_initializer.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/ui/base/ime/init/input_method_initializer.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/base/ime/init/input_method_initializer.cc
-@@ -8,7 +8,7 @@
+@@ -10,7 +10,7 @@
  
  #if defined(OS_CHROMEOS)
- #include "ui/base/ime/ime_bridge.h"
+ #include "ui/base/ime/chromeos/ime_bridge.h"
 -#elif defined(USE_AURA) && defined(OS_LINUX)
 +#elif defined(USE_AURA) && (defined(OS_LINUX) || defined(OS_BSD))
- #include "base/logging.h"
+ #include "base/check.h"
  #include "ui/base/ime/linux/fake_input_method_context_factory.h"
  #elif defined(OS_WIN)
-@@ -18,7 +18,7 @@
+@@ -20,7 +20,7 @@ namespace {
  
  namespace {
  
@@ -18,7 +18,7 @@
  const ui::LinuxInputMethodContextFactory*
      g_linux_input_method_context_factory_for_testing;
  #endif
-@@ -46,7 +46,7 @@ void ShutdownInputMethod() {
+@@ -48,7 +48,7 @@ void InitializeInputMethodForTesting() {
  void InitializeInputMethodForTesting() {
  #if defined(OS_CHROMEOS)
    IMEBridge::Initialize();
@@ -27,7 +27,7 @@
    if (!g_linux_input_method_context_factory_for_testing)
      g_linux_input_method_context_factory_for_testing =
          new FakeInputMethodContextFactory();
-@@ -67,7 +67,7 @@ void InitializeInputMethodForTesting() {
+@@ -67,7 +67,7 @@ void ShutdownInputMethodForTesting() {
  void ShutdownInputMethodForTesting() {
  #if defined(OS_CHROMEOS)
    IMEBridge::Shutdown();

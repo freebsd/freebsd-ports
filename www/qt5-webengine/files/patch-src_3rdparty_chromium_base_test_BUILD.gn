@@ -1,0 +1,15 @@
+--- src/3rdparty/chromium/base/test/BUILD.gn.orig	2021-12-15 16:12:54 UTC
++++ src/3rdparty/chromium/base/test/BUILD.gn
+@@ -415,7 +415,11 @@ if (is_linux || is_chromeos) {
+ 
+   copy("fonts_conf") {
+     sources = [ "fonts.conf" ]
+-    outputs = [ "${root_build_dir}/etc/fonts/{{source_file_part}}" ]
++    if (is_bsd) {
++      outputs = [ "${root_build_dir}/%%LOCALBASE%%/etc/fonts/{{source_file_part}}" ]
++    } else {
++      outputs = [ "${root_build_dir}/etc/fonts/{{source_file_part}}" ]
++    }
+   }
+ 
+   if (current_toolchain == host_toolchain) {

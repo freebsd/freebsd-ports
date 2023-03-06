@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/config/gpu_test_config.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/gpu/config/gpu_test_config.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/gpu/config/gpu_test_config.cc
-@@ -25,7 +25,7 @@ namespace {
+@@ -27,7 +27,7 @@ GPUTestConfig::OS GetCurrentOS() {
  GPUTestConfig::OS GetCurrentOS() {
  #if defined(OS_CHROMEOS)
    return GPUTestConfig::kOsChromeOS;

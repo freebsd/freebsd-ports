@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/base/status.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/media/base/status.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/media/base/status.cc
-@@ -66,7 +66,9 @@ Status&& Status::AddCause(Status&& cause) && {
+@@ -70,7 +70,9 @@ void Status::AddFrame(const base::Location& location) 
  
  void Status::AddFrame(const base::Location& location) {
    DCHECK(data_);

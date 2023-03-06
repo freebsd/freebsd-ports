@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/ui/views/examples/widget_example.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/views/examples/widget_example.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/views/examples/widget_example.cc
-@@ -79,7 +79,7 @@ void WidgetExample::CreateExampleView(View* container)
-   BuildButton(container, "Popup widget", POPUP);
-   BuildButton(container, "Dialog widget", DIALOG);
-   BuildButton(container, "Modal Dialog", MODAL_DIALOG);
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined(OS_BSD)
+@@ -67,7 +67,7 @@ void WidgetExample::CreateExampleView(View* container)
+               DIALOG);
+   BuildButton(container, GetStringUTF16(IDS_WIDGET_MODAL_BUTTON_LABEL),
+               MODAL_DIALOG);
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
    // Windows does not support TYPE_CONTROL top-level widgets.
-   BuildButton(container, "Child widget", CHILD);
- #endif
+   BuildButton(container, GetStringUTF16(IDS_WIDGET_CHILD_WIDGET_BUTTON_LABEL),
+               CHILD);

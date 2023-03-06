@@ -1,14 +1,11 @@
---- src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/services/service_manager/public/cpp/service_executable/BUILD.gn
-@@ -30,6 +30,11 @@ source_set("support") {
-       "//sandbox/linux:seccomp_bpf",
-     ]
-   }
-+  if (is_bsd) {
-+    deps -= [
-+      "//sandbox/linux:seccomp_bpf"
-+    ]
-+  }
- }
+@@ -22,7 +22,7 @@ source_set("support") {
+     "//services/service_manager/public/mojom",
+   ]
  
- # Service executable targets should link against this to get a boilerplate entry
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     deps += [
+       "//sandbox/linux:sandbox",
+       "//sandbox/linux:sandbox_services",

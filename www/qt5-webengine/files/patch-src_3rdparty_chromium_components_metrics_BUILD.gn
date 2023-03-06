@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/components/metrics/BUILD.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/components/metrics/BUILD.gn.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/components/metrics/BUILD.gn
-@@ -142,6 +142,11 @@ static_library("metrics") {
+@@ -190,6 +190,11 @@ jumbo_static_library("metrics") {
    if (is_fuchsia) {
      sources += [ "drive_metrics_provider_fuchsia.cc" ]
    }
@@ -11,4 +11,4 @@
 +
  }
  
- # The component metrics provider is a separate target because it depends upon
+ if (is_android) {

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/driver_utils.h.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/driver_utils.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/angle/src/libANGLE/renderer/driver_utils.h
-@@ -107,7 +107,7 @@ inline bool IsWindows()
+@@ -145,7 +145,7 @@ inline bool IsLinux()
  
  inline bool IsLinux()
  {

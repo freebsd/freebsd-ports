@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/gl/generate_bindings.py.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/gl/generate_bindings.py.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/gl/generate_bindings.py
-@@ -2350,6 +2350,9 @@ GLX_FUNCTIONS = [
+@@ -2902,6 +2902,9 @@ GLX_FUNCTIONS = [
    'arguments':
        'Display* dpy, GLXDrawable drawable, int32_t* numerator, '
        'int32_t* denominator' },

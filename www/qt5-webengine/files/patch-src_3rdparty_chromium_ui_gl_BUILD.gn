@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/ui/gl/BUILD.gn.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/ui/gl/BUILD.gn.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/gl/BUILD.gn
-@@ -200,7 +200,7 @@ component("gl") {
-       }
+@@ -224,7 +224,7 @@ jumbo_component("gl") {
+       ]
      }
  
 -    if (is_posix && !is_fuchsia && !is_mac) {

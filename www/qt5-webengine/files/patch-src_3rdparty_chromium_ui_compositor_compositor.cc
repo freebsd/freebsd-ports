@@ -1,7 +1,7 @@
---- src/3rdparty/chromium/ui/compositor/compositor.cc.orig	2020-03-16 14:04:24 UTC
+--- src/3rdparty/chromium/ui/compositor/compositor.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/compositor/compositor.cc
-@@ -681,7 +681,7 @@ void Compositor::OnFrameTokenChanged(uint32_t frame_to
-   NOTREACHED();
+@@ -730,7 +730,7 @@ void Compositor::CancelThroughtputTracker(TrackerId tr
+   throughput_tracker_map_.erase(tracker_id);
  }
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)

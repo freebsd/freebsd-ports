@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/third_party/webrtc/rtc_base/network.h.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/third_party/webrtc/rtc_base/network.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/rtc_base/network.h
-@@ -24,6 +24,10 @@
- #include "rtc_base/networkmonitor.h"
- #include "rtc_base/sigslot.h"
+@@ -29,6 +29,10 @@
+ #include "rtc_base/third_party/sigslot/sigslot.h"
+ #include "rtc_base/thread_annotations.h"
  
 +#if defined(WEBRTC_BSD)
 +#include <sys/types.h>

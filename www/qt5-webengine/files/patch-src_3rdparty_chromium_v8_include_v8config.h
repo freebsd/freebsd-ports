@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/v8/include/v8config.h.orig	2020-04-08 09:41:36 UTC
+--- src/3rdparty/chromium/v8/include/v8config.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/v8/include/v8config.h
-@@ -273,7 +273,18 @@
+@@ -276,7 +276,18 @@
  # define V8_HAS_ATTRIBUTE_WARN_UNUSED_RESULT \
      (__has_attribute(warn_unused_result))
  

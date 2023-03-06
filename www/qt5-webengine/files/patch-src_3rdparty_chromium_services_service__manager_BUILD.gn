@@ -1,0 +1,11 @@
+--- src/3rdparty/chromium/services/service_manager/BUILD.gn.orig	2021-12-15 16:12:54 UTC
++++ src/3rdparty/chromium/services/service_manager/BUILD.gn
+@@ -65,7 +65,7 @@ source_set("service_manager") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     deps += [ "//sandbox/linux:sandbox_services" ]
+   }
+ }

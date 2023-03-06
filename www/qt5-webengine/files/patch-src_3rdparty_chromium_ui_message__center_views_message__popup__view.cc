@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/message_center/views/message_popup_view.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/ui/message_center/views/message_popup_view.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/message_center/views/message_popup_view.cc
-@@ -106,7 +106,7 @@ void MessagePopupView::AutoCollapse() {
+@@ -110,7 +110,7 @@ void MessagePopupView::Show() {
  void MessagePopupView::Show() {
    views::Widget::InitParams params(views::Widget::InitParams::TYPE_POPUP);
    params.z_order = ui::ZOrderLevel::kFloatingWindow;

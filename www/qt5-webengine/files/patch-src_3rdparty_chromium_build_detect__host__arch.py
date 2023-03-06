@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/build/detect_host_arch.py.orig	2019-05-23 12:39:34 UTC
+--- src/3rdparty/chromium/build/detect_host_arch.py.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/build/detect_host_arch.py
-@@ -19,6 +19,8 @@ def HostArch():
+@@ -21,6 +21,8 @@ def HostArch():
      host_arch = 'ia32'
    elif host_arch in ['x86_64', 'amd64']:
      host_arch = 'x64'

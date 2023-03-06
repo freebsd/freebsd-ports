@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/boringssl/src/crypto/cpu-aarch64-linux.c.orig	2019-10-21 10:14:54 UTC
+--- src/3rdparty/chromium/third_party/boringssl/src/crypto/cpu-aarch64-linux.c.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/boringssl/src/crypto/cpu-aarch64-linux.c
-@@ -14,49 +14,47 @@
+@@ -14,49 +14,45 @@
  
  #include <openssl/cpu.h>
  
@@ -19,6 +19,7 @@
  
 -void OPENSSL_cpuid_setup(void) {
 -  unsigned long hwcap = getauxval(AT_HWCAP);
++#include <sys/types.h>
 +#include <machine/armreg.h>
  
 -  // See /usr/include/asm/hwcap.h on an aarch64 installation for the source of
@@ -28,9 +29,6 @@
 -  static const unsigned long kPMULL = 1 << 4;
 -  static const unsigned long kSHA1 = 1 << 5;
 -  static const unsigned long kSHA256 = 1 << 6;
-+#ifndef ID_AA64ISAR0_AES_VAL
-+#define ID_AA64ISAR0_AES_VAL ID_AA64ISAR0_AES
-+#endif
 +#ifndef ID_AA64ISAR0_AES_VAL
 +#define ID_AA64ISAR0_AES_VAL ID_AA64ISAR0_AES
 +#endif

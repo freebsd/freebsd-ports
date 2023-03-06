@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/services/network/network_context.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/services/network/network_context.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/services/network/network_context.cc
-@@ -1810,7 +1810,7 @@ URLRequestContextOwner NetworkContext::MakeURLRequestC
+@@ -1921,7 +1921,7 @@ URLRequestContextOwner NetworkContext::MakeURLRequestC
  
      net::CookieCryptoDelegate* crypto_delegate = nullptr;
      if (params_->enable_encrypted_cookies) {

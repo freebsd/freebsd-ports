@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/third_party/blink/renderer/modules/mediastream/processed_local_audio_source.cc.orig	2020-03-16 14:04:24 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/modules/mediastream/processed_local_audio_source.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/modules/mediastream/processed_local_audio_source.cc
-@@ -430,7 +430,7 @@ void ProcessedLocalAudioSource::CaptureUsingProcessor(
+@@ -417,7 +417,7 @@ void ProcessedLocalAudioSource::CaptureUsingProcessor(
      bool key_pressed) {
- #if defined(OS_WIN) || defined(OS_MACOSX)
+ #if defined(OS_WIN) || defined(OS_MAC)
    DCHECK_LE(volume, 1.0);
 -#elif (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_OPENBSD)
 +#elif (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)

@@ -85,7 +85,11 @@ _QT6_MASTER_SITES=		${MASTER_SITE_QT}
 _QT6_MASTER_SITE_SUBDIR=	official_releases/qt/${_QT_VERSION:R}/${_QT_VERSION}/submodules \
 				official_releases/additional_libraries/${_QT_VERSION:R}/${_QT_VERSION}/
 # Qt5 specific distnames
+.  if ${_QT_DIST} == webengine
+_QT5_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-opensource-src-${DISTVERSION},}
+.  else
 _QT5_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}
+.  endif
 _QT5_DISTNAME_kde=		${_QT_DIST:S,^,kde-qt,:S,$,-${DISTVERSION},}
 # Qt6 specific distnames
 _QT6_DISTNAME=			${_QT_DIST:S,^,qt,:S,$,-everywhere-src-${DISTVERSION},}

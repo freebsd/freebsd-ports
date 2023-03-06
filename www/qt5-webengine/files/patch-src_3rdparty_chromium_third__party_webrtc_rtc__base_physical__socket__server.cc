@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/third_party/webrtc/rtc_base/physical_socket_server.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/webrtc/rtc_base/physical_socket_server.cc
-@@ -51,7 +51,7 @@
+@@ -50,7 +50,7 @@
  #include "rtc_base/null_socket_server.h"
  #include "rtc_base/time_utils.h"
  
@@ -9,7 +9,7 @@
  #include <linux/sockios.h>
  #endif
  
-@@ -70,7 +70,7 @@ typedef void* SockOptArg;
+@@ -69,7 +69,7 @@ typedef void* SockOptArg;
  
  #endif  // WEBRTC_POSIX
  
@@ -18,7 +18,7 @@
  
  int64_t GetSocketRecvTimestamp(int socket) {
    struct timeval tv_ioctl;
-@@ -292,7 +292,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
+@@ -305,7 +305,7 @@ int PhysicalSocket::GetOption(Option opt, int* value) 
      return -1;
    }
    if (opt == OPT_DONTFRAGMENT) {
@@ -27,7 +27,7 @@
      *value = (*value != IP_PMTUDISC_DONT) ? 1 : 0;
  #endif
    } else if (opt == OPT_DSCP) {
-@@ -310,7 +310,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
+@@ -323,7 +323,7 @@ int PhysicalSocket::SetOption(Option opt, int value) {
    if (TranslateOption(opt, &slevel, &sopt) == -1)
      return -1;
    if (opt == OPT_DONTFRAGMENT) {
@@ -36,7 +36,7 @@
      value = (value) ? IP_PMTUDISC_DO : IP_PMTUDISC_DONT;
  #endif
    } else if (opt == OPT_DSCP) {
-@@ -551,7 +551,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
+@@ -564,7 +564,7 @@ int PhysicalSocket::TranslateOption(Option opt, int* s
        *slevel = IPPROTO_IP;
        *sopt = IP_DONTFRAGMENT;
        break;

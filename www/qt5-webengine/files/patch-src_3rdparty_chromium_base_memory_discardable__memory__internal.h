@@ -1,11 +1,11 @@
---- src/3rdparty/chromium/base/memory/discardable_memory_internal.h.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/base/memory/discardable_memory_internal.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/memory/discardable_memory_internal.h
 @@ -10,7 +10,7 @@
  #include "base/metrics/field_trial_params.h"
  #include "build/build_config.h"
  
--#if defined(OS_ANDROID) || defined(OS_LINUX)
-+#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#if defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  
  namespace base {
  
@@ -13,7 +13,7 @@
  
  }  // namespace base
  
--#endif  // defined(OS_LINUX) || defined(OS_ANDROID)
-+#endif  // defined(OS_LINUX) || defined(OS_ANDROID) || defined(OS_BSD)
+-#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID)
++#endif  // defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_ANDROID) || defined(OS_BSD)
  
  #endif  //  BASE_MEMORY_DISCARDABLE_MEMORY_INTERNAL_H_

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/socket/socks5_client_socket.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/net/socket/socks5_client_socket.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/net/socket/socks5_client_socket.cc
 @@ -4,6 +4,10 @@
  
@@ -10,4 +10,4 @@
 +
  #include <utility>
  
- #include "base/callback_helpers.h"
+ #include "base/bind.h"

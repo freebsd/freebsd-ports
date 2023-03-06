@@ -1,16 +1,33 @@
---- src/3rdparty/chromium/base/process/process_linux.cc.orig	2020-11-07 01:22:36 UTC
+--- src/3rdparty/chromium/base/process/process_linux.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/process/process_linux.cc
-@@ -79,6 +79,9 @@ Time Process::CreationTime() const {
-                                   internal::VM_STARTTIME)
-                             : internal::ReadProcStatsAndGetFieldAsInt64(
-                                   Pid(), internal::VM_STARTTIME);
+@@ -24,7 +24,9 @@ namespace {
+ 
+ namespace {
+ 
++#if !defined(OS_BSD)
+ const int kForegroundPriority = 0;
++#endif
+ 
+ #if defined(OS_CHROMEOS) || BUILDFLAG(IS_LACROS)
+ // We are more aggressive in our lowering of background process priority
+@@ -69,7 +71,7 @@ struct CGroups {
+     return groups;
+   }
+ };
+-#else
++#elif !defined(OS_BSD)
+ const int kBackgroundPriority = 5;
+ #endif  // defined(OS_CHROMEOS) || BUILDFLAG(IS_LACROS)
+ 
+@@ -96,13 +98,18 @@ Time Process::CreationTime() const {
+   if (!start_ticks)
+     return Time();
+ 
 +#if defined(OS_BSD)
 +  return Time::FromTimeT(start_ticks);
 +#else
-   if (!start_ticks)
-     return Time();
    TimeDelta start_offset = internal::ClockTicksToTimeDelta(start_ticks);
-@@ -86,8 +89,10 @@ Time Process::CreationTime() const {
+   Time boot_time = internal::GetBootTime();
    if (boot_time.is_null())
      return Time();
    return Time(boot_time + start_offset);
@@ -20,12 +37,12 @@
 +#if !defined(OS_BSD)
  // static
  bool Process::CanBackgroundProcesses() {
- #if defined(OS_CHROMEOS)
-@@ -139,6 +144,7 @@ bool Process::SetProcessBackgrounded(bool background) 
+ #if defined(OS_CHROMEOS) || BUILDFLAG(IS_LACROS)
+@@ -154,6 +161,7 @@ bool Process::SetProcessBackgrounded(bool background) 
    DPCHECK(result == 0);
    return result == 0;
  }
 +#endif // !defined(OS_BSD)
  
- #if defined(OS_CHROMEOS)
+ #if defined(OS_CHROMEOS) || BUILDFLAG(IS_LACROS)
  bool IsProcessBackgroundedCGroup(const StringPiece& cgroup_contents) {

@@ -16,7 +16,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}
-PORTREVISION=	8
+PORTREVISION=	0
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt5-
 
@@ -24,7 +24,6 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 library to render web content
 
 BUILD_DEPENDS=	bison:devel/bison \
-		yasm:devel/yasm \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
@@ -38,6 +37,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		liblcms2.so:graphics/lcms2 \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
+		libopenh264.so:multimedia/openh264 \
 		libopus.so:audio/opus \
 		libpci.so:devel/libpci \
 		libpng.so:graphics/png \
@@ -47,7 +47,16 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libwebp.so:graphics/webp
 
 DISTINFO_FILE=	${.CURDIR}/distinfo
-QT5_VERSION=	5.15.2
+QT5_VERSION=	5.15.8
+
+# Add extra-patch-no-mempcpy-nasm only when there's no mempcpy() in base.
+# Nested variable expansion avoids executing the test when not needed for
+# expanding EXTRA_PATCHES.
+# mempcpy was introduced in ee37f64cf875255338f917a9da76c643cf59786c
+EXTRA_PATCHES+=	${"${:!${GREP} mempcpy ${CROSS_SYSROOT}/usr/include/string.h \
+		|| ${TRUE}!}" == "":?${PATCHDIR}/extra-patch-no-mempcpy-nasm:}
+
+WRKSRC=		${WRKDIR}/qtwebengine-everywhere-src-${DISTVERSION}
 
 OPTIONS_SINGLE=		AUDIO
 OPTIONS_SINGLE_AUDIO=	ALSA PULSEAUDIO SNDIO
@@ -71,15 +80,16 @@ SNDIO_VARS_OFF=		QMAKE_CONFIGURE_ARGS+=-no-sndio
 # We pass `norecursive' to USES=qmake because src/plugins/plugins.pro checks
 # whether webenginewidgets is available, which fails when qmake processes all
 # .pro files at once.
-USES=		gl gnome gperf jpeg ninja:build pkgconfig python:2.7,build \
-		qmake:norecursive,outsource qt-dist:5,webengine shebangfix xorg
+USES=		gl gnome gperf jpeg minizip ninja:build nodejs:build,lts \
+		pkgconfig python:2.7,build qmake:norecursive,outsource \
+		qt-dist:5,webengine shebangfix xorg
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2 libxslt
 USE_QT=		core declarative gui location network printsupport \
 		webchannel widgets \
 		buildtools:build designer:build qmake:build
-USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xorgproto \
-		xrandr xrender xscrnsaver xtst
+USE_XORG=	x11 xcb xcomposite xcursor xdamage xext xfixes xi xkbfile \
+		xorgproto xrandr xrender xscrnsaver xtst
 
 QMAKE_CONFIGURE_ARGS=	-proprietary-codecs -system-ffmpeg
 
@@ -132,10 +142,10 @@ post-extract-SNDIO-on:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/src/3rdparty/chromium/base/linux_util.cc \
+		${WRKSRC}/src/3rdparty/chromium/base/test/BUILD.gn \
 		${WRKSRC}/src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/src/3rdparty/chromium/chrome/common/chrome_paths.cc \
 		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/core/fxge/fx_ge_linux.cpp \
-		${WRKSRC}/src/3rdparty/chromium/third_party/pdfium/xfa/fgas/font/cfx_fontsourceenum_file.cpp \
 		${WRKSRC}/src/3rdparty/gn/build/gen.py
 
 .if ${ARCH:Mmips*} || ${ARCH:Mpowerpc*} || ${ARCH} == sparc64
@@ -149,8 +159,9 @@ pre-configure:
 # $LOCALBASE/bin/python being python3 if the default versions is set to 3.x.
 	${MKDIR} ${CONFIGURE_WRKSRC}/bin && ${LN} -s ${PYTHON_CMD} ${CONFIGURE_WRKSRC}/bin/python
 # Unbundle a few dependencies.
-	${PYTHON_CMD} ${WRKSRC}/src/3rdparty/chromium/build/linux/unbundle/replace_gn_files.py \
-		--system-libraries libwebp libxml libxslt yasm
+	cd ${WRKSRC}/src/3rdparty/chromium && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
+		./build/linux/unbundle/replace_gn_files.py --system-libraries\
+		fontconfig freetype harfbuzz-ng libdrm libevent libpng libwebp libxml libxslt openh264 opus || ${FALSE}
 # Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
 	cd ${WRKSRC} && ${QT_BINDIR}/syncqt.pl -version ${QT5_VERSION}
 

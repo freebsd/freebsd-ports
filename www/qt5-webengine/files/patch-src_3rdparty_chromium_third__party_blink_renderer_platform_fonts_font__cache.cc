@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2020-04-08 09:41:36 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_cache.cc
-@@ -76,7 +76,7 @@ static const char kColorEmojiLocale[] = "und-Zsye";
+@@ -80,7 +80,7 @@ SkFontMgr* FontCache::static_font_manager_ = nullptr;
  
  SkFontMgr* FontCache::static_font_manager_ = nullptr;
  
@@ -9,12 +9,12 @@
  float FontCache::device_scale_factor_ = 1.0;
  #endif
  
-@@ -115,7 +115,7 @@ FontCache::FontCache()
+@@ -120,7 +120,7 @@ FontPlatformData* FontCache::SystemFontPlatformData(
  FontPlatformData* FontCache::SystemFontPlatformData(
      const FontDescription& font_description) {
    const AtomicString& family = FontCache::SystemFontFamily();
--#if defined(OS_LINUX) || defined(OS_FUCHSIA)
-+#if defined(OS_LINUX) || defined(OS_FUCHSIA) || defined(OS_BSD)
+-#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA)
++#if defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_FUCHSIA) || defined(OS_BSD)
    if (family.IsEmpty() || family == font_family_names::kSystemUi)
      return nullptr;
  #else

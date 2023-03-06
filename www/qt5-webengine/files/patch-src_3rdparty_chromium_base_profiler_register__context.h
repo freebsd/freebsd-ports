@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/base/profiler/register_context.h.orig	2020-04-08 09:41:36 UTC
+--- src/3rdparty/chromium/base/profiler/register_context.h.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/base/profiler/register_context.h
 @@ -17,7 +17,7 @@
  #include <windows.h>
- #elif defined(OS_MACOSX)
+ #elif defined(OS_APPLE)
  #include <mach/machine/thread_status.h>
--#elif defined(OS_ANDROID) || defined(OS_LINUX)
-+#elif defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_BSD)
+-#elif defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS)
++#elif defined(OS_ANDROID) || defined(OS_LINUX) || defined(OS_CHROMEOS) || defined(OS_BSD)
  #include <sys/ucontext.h>
  #endif
  
-@@ -152,6 +152,48 @@ inline uintptr_t& RegisterContextInstructionPointer(mc
+@@ -190,6 +190,48 @@ inline uintptr_t& RegisterContextInstructionPointer(mc
  }
  
  #endif  // #if defined(ARCH_CPU_ARM_FAMILY) && defined(ARCH_CPU_32_BITS)

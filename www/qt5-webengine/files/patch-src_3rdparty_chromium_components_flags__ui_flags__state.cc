@@ -1,8 +1,8 @@
---- src/3rdparty/chromium/components/flags_ui/flags_state.cc.orig	2018-11-13 18:25:11 UTC
+--- src/3rdparty/chromium/components/flags_ui/flags_state.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/components/flags_ui/flags_state.cc
-@@ -653,7 +653,7 @@ int FlagsState::GetCurrentPlatform() {
+@@ -687,7 +687,7 @@ int FlagsState::GetCurrentPlatform() {
    return kOsWin;
- #elif defined(OS_CHROMEOS)  // Needs to be before the OS_LINUX check.
+ #elif defined(OS_CHROMEOS)
    return kOsCrOS;
 -#elif defined(OS_LINUX) || defined(OS_OPENBSD)
 +#elif defined(OS_LINUX) || defined(OS_OPENBSD) || defined(OS_FREEBSD)

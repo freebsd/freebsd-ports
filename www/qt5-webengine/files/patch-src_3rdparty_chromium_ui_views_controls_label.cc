@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/views/controls/label.cc.orig	2019-11-27 21:12:25 UTC
+--- src/3rdparty/chromium/ui/views/controls/label.cc.orig	2021-12-15 16:12:54 UTC
 +++ src/3rdparty/chromium/ui/views/controls/label.cc
-@@ -651,7 +651,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
+@@ -726,7 +726,7 @@ bool Label::OnMousePressed(const ui::MouseEvent& event
      GetFocusManager()->SetFocusedView(this);
    }
  
@@ -9,12 +9,12 @@
    if (event.IsOnlyMiddleMouseButton() && GetFocusManager() && !had_focus)
      GetFocusManager()->SetFocusedView(this);
  #endif
-@@ -836,7 +836,7 @@ bool Label::PasteSelectionClipboard() {
+@@ -913,7 +913,7 @@ void Label::UpdateSelectionClipboard() {
  }
  
  void Label::UpdateSelectionClipboard() {
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
 +#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    if (!GetObscured()) {
-     ui::ScopedClipboardWriter(ui::ClipboardType::kSelection)
+     ui::ScopedClipboardWriter(ui::ClipboardBuffer::kSelection)
          .WriteText(GetSelectedText());
