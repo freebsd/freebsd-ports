@@ -9,7 +9,7 @@ PATCHFILES+=	53560efbbc44a971b7b10290d96b059b67c71eed.patch:-p2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Virtual versatile amplification for Jack and set of LV2 plugins
-WWW=		https://sourceforge.net/projects/guitarix/
+WWW=		https://guitarix.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
