@@ -10,6 +10,8 @@ bin/eisl
 %%DATADIR%%/library/cross.lsp
 %%DATADIR%%/library/csv.lsp
 %%DATADIR%%/library/cxr.lsp
+%%DATADIR%%/library/datetime.lsp
+%%DATADIR%%/library/datetime.o
 %%DATADIR%%/library/elixir.lsp
 %%DATADIR%%/library/escape.lsp
 %%DATADIR%%/library/escape.o
@@ -30,9 +32,12 @@ bin/eisl
 %%DATADIR%%/library/mexp.lsp
 %%DATADIR%%/library/ndbm.lsp
 %%DATADIR%%/library/ndbm.o
-%%DATADIR%%/library/number.lsp
 %%DATADIR%%/library/opengl.lsp
 %%DATADIR%%/library/persist.lsp
+%%DATADIR%%/library/plot.lsp
+%%DATADIR%%/library/plot.o
+%%DATADIR%%/library/prolog.lsp
+%%DATADIR%%/library/prolog.o
 %%DATADIR%%/library/regex.lsp
 %%DATADIR%%/library/regex.o
 %%DATADIR%%/library/seq.lsp

@@ -1,4 +1,4 @@
---- makefile.orig	2022-09-15 10:55:05 UTC
+--- makefile.orig	2023-03-05 08:53:07 UTC
 +++ makefile
 @@ -1,7 +1,7 @@
  .POSIX:
@@ -9,21 +9,21 @@
  DC := ldc2
  LD := $(CC)
  ifneq  ($(shell uname),Darwin)
-@@ -31,7 +31,7 @@ else
- 		endif
- 	endif
- endif
--CFLAGS := $(INCS) -Wall -Wextra -D_FORTIFY_SOURCE=2 $(CURSES_CFLAGS) -U_XOPEN_SOURCE -D_XOPEN_SOURCE=700 -D_XOPEN_SOURCE_EXTENDED -Inana/src
-+CFLAGS += $(INCS) -Wall -Wextra -D_FORTIFY_SOURCE=2 $(CURSES_CFLAGS) -U_XOPEN_SOURCE -D_XOPEN_SOURCE=700 -D_XOPEN_SOURCE_EXTENDED -Inana/src
- DFLAGS := --preview=all --de -w --O3 --release --betterC
- SRC_CII := cii/src/except.c cii/src/fmt.c cii/src/str.c cii/src/text.c
- SRC_D := dextension.d disl.d
-@@ -54,7 +54,7 @@ ifeq ($(DEBUG),1)
- 	SRC_NANA := nana/src/I.c
- 	ifneq  ($(shell uname),OpenBSD)
- 		CFLAGS += -fsanitize=undefined
--		LDFLAGS := -fsanitize=undefined
-+		LDFLAGS += -fsanitize=undefined
+@@ -67,7 +67,7 @@ ifeq ($(DEBUG),1)
+ 		LDFLAGS += -fsanitize=undefined
  	endif
  else
- 	CFLAGS += -O3 -flto -DNDEBUG=1 -DWITHOUT_NANA=1
+-	CFLAGS += -O3 -flto -DNDEBUG=1 -DWITHOUT_NANA=1
++	CFLAGS += -O3 -DNDEBUG=1 -DWITHOUT_NANA=1
+ 	SRC_CII += cii/src/mem.c
+ endif
+ OBJ_CII := $(SRC_CII:.c=.o)
+@@ -85,7 +85,7 @@ ifeq  ($(shell uname -n),raspberrypi)
+ 	CFLAGS += -D__rpi__
+ endif
+ ifneq ($(DEBUG),1)
+-	LDFLAGS += -flto
++	#LDFLAGS += -flto
+ 	ifeq  ($(shell uname),Darwin)
+ 		LDFLAGS += -Wl,-S,-x
+ 	else
