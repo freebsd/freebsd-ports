@@ -103,7 +103,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/albums-popmenu.jpg
 %%DATADIR%%/images/alien-colors1.jpg
 %%DATADIR%%/images/alien-colors2.jpg
-%%DATADIR%%/images/all-folders.jpg
 %%DATADIR%%/images/area-rescale.jpg
 %%DATADIR%%/images/area-rescale2.jpg
 %%DATADIR%%/images/batch-change-meta.jpg
@@ -195,6 +194,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/flatten1.jpg
 %%DATADIR%%/images/flatten2.jpg
 %%DATADIR%%/images/folder.png
+%%DATADIR%%/images/folder-tree.jpg
 %%DATADIR%%/images/fotoxx-views.jpg
 %%DATADIR%%/images/fotoxx.png
 %%DATADIR%%/images/gallery-screen.jpg
@@ -296,6 +296,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/saturation.jpg
 %%DATADIR%%/images/save.png
 %%DATADIR%%/images/search-images.jpg
+%%DATADIR%%/images/search-images-metadata.jpg
 %%DATADIR%%/images/select-area-finish.jpg
 %%DATADIR%%/images/select-area.jpg
 %%DATADIR%%/images/select.png
