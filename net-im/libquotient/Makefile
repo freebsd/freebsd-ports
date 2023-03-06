@@ -23,4 +23,10 @@ GH_PROJECT=	libQuotient
 
 CMAKE_ARGS=	-DQuotient_INSTALL_TESTS=OFF
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1301507
+CMAKE_ARGS+=	-DBUILD_TESTING=OFF
+.endif
+
+.include <bsd.port.post.mk>
