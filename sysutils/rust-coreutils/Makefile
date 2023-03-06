@@ -1,6 +1,6 @@
 PORTNAME=	rust-coreutils
 PORTVERSION=	0.0.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/uutils/coreutils/commit/
@@ -13,13 +13,13 @@ WWW=		https://github.com/uutils/coreutils
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cargo gmake
-CARGO_BUILD=	no
-MAKE_ARGS=	PROG_PREFIX=uu- PREFIX=${LOCALBASE}
+LIB_DEPENDS=	libonig.so:devel/oniguruma
+
+USES=		cargo pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	uutils
 GH_PROJECT=	coreutils
-TEST_TARGET=	check
+#TEST_TARGET=	check
 
 CARGO_CRATES=	Inflector-0.11.4 \
 		adler-1.0.2 \
@@ -289,7 +289,41 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		z85-3.0.5 \
 		zip-0.6.3
 
+CARGO_ENV=	CARGO_PROFILE_RELEASE_LTO="true" \
+		CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
+CARGO_FEATURES=	unix
+# Fails when CARGO_PROFILE_RELEASE_PANIC="abort" is set
+LTO_UNSAFE=	yes
+BINPREFIX=	uu-
+PLIST_SUB=	BINPREFIX=${BINPREFIX}
+
+post-build:
+	${INSTALL_SCRIPT} ${FILESDIR}/symlink-install-helper.sh.in ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+	@${REINPLACE_CMD} -e 's|%%GREP%%|${GREP}|g' \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+	@${REINPLACE_CMD} -e 's|%%CARGO_TARGET_DIR%%|${CARGO_TARGET_DIR}|g' \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+	@${REINPLACE_CMD} -e 's|%%CARGO_BUILD_TARGET%%|${CARGO_BUILD_TARGET}|g' \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+	@${REINPLACE_CMD} -e 's|%%SED%%|${SED}|g' \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+	@${REINPLACE_CMD} -e 's|%%TR%%|${TR}|g' \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+	@${REINPLACE_CMD} -e 's|%%RLN%%|${RLN}|g' \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+	@${REINPLACE_CMD} -e 's|%%STAGEDIR%%|${STAGEDIR}|g' \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+	@${REINPLACE_CMD} -e 's|%%BINPREFIX%%|${BINPREFIX}|g' \
+		${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+
 do-install:
-	cd ${WRKSRC}; ${MAKE_CMD} ${MAKE_ARGS} install
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/release/coreutils \
+		${STAGEDIR}${PREFIX}/bin/${BINPREFIX}coreutils
+	${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/symlink-install-helper.sh
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${BINPREFIX}coreutils
 
 .include <bsd.port.mk>
