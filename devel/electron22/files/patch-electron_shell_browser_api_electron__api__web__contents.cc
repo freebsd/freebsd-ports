@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2023-02-16 01:50:10 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2023-03-02 11:49:02 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
 @@ -154,11 +154,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
@@ -50,7 +50,7 @@
    if (owner_window())
      owner_window()->Focus(true);
  #endif
-@@ -3846,7 +3846,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
+@@ -3854,7 +3854,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
  }
  #endif
  
