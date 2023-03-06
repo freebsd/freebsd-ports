@@ -48,6 +48,7 @@ include/gemmi/mmcif.hpp
 include/gemmi/mmcif_impl.hpp
 include/gemmi/mmdb.hpp
 include/gemmi/mmread.hpp
+include/gemmi/mmread_gz.hpp
 include/gemmi/model.hpp
 include/gemmi/modify.hpp
 include/gemmi/monlib.hpp
@@ -58,18 +59,19 @@ include/gemmi/neutron92.hpp
 include/gemmi/numb.hpp
 include/gemmi/pdb.hpp
 include/gemmi/pirfasta.hpp
-include/gemmi/placeh.hpp
 include/gemmi/polyheur.hpp
 include/gemmi/qcp.hpp
 include/gemmi/read_cif.hpp
-include/gemmi/read_coor.hpp
 include/gemmi/read_map.hpp
 include/gemmi/recgrid.hpp
 include/gemmi/reciproc.hpp
+include/gemmi/refine/geom.hpp
+include/gemmi/refine/ll.hpp
 include/gemmi/refln.hpp
 include/gemmi/reindex.hpp
 include/gemmi/remarks.hpp
 include/gemmi/resinfo.hpp
+include/gemmi/riding_h.hpp
 include/gemmi/scaling.hpp
 include/gemmi/select.hpp
 include/gemmi/seqalign.hpp
@@ -80,6 +82,7 @@ include/gemmi/smcif.hpp
 include/gemmi/solmask.hpp
 include/gemmi/span.hpp
 include/gemmi/sprintf.hpp
+include/gemmi/stats.hpp
 include/gemmi/symmetry.hpp
 include/gemmi/third_party/fast_float.h
 include/gemmi/third_party/pocketfft_hdronly.h
@@ -229,3 +232,8 @@ include/gemmi/utf.hpp
 include/gemmi/util.hpp
 include/gemmi/version.hpp
 include/gemmi/xds_ascii.hpp
+lib/cmake/gemmi/gemmi-config-version.cmake
+lib/cmake/gemmi/gemmi-config.cmake
+lib/cmake/gemmi/gemmi-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/gemmi/gemmi-targets.cmake
+lib/libgemmi_cpp.so
