@@ -1,0 +1,32 @@
+[
+{ type: install
+  message: <<EOM
+  
+NOTE: Godot v4.0 is a major change from previous versions.
+To keep developing with Godot 3.5 see devel/godot35-tools
+
+To upgrade existing projects from godot 3.x, 
+first try godot-tools --validate-conversion-3to4
+then updgrade your projects with godot-tools --convert-3to4
+
+For further details on upgrading to Godot 4.0 see
+https://docs.godotengine.org/en/latest/tutorials/migrating/upgrading_to_godot_4.html
+
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+
+NOTE: Godot v4.0 is a major change from previous versions.
+To keep developing with Godot 3.5 see devel/godot35-tools
+
+To upgrade existing projects from godot 3.x, 
+first try godot-tools --validate-conversion-3to4
+then updgrade your projects with godot-tools --convert-3to4
+
+For further details on upgrading to Godot 4.0 see
+https://docs.godotengine.org/en/latest/tutorials/migrating/upgrading_to_godot_4.html
+
+EOM
+}
+]
