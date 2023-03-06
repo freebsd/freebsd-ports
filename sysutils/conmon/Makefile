@@ -1,6 +1,6 @@
 PORTNAME=	conmon
-DISTVERSION=	2.1.5
-PORTREVISION=	5
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.1.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -15,6 +15,5 @@ LIB_DEPENDS=	libglib-2.0.so:devel/glib20
 USES=		gmake go:no_targets pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	containers
-GH_TAGNAME=	v2.1.5
 
 .include <bsd.port.mk>
