@@ -20,6 +20,7 @@ include/mtx/events/history_visibility.hpp
 include/mtx/events/join_rules.hpp
 include/mtx/events/member.hpp
 include/mtx/events/messages/audio.hpp
+include/mtx/events/messages/confetti.hpp
 include/mtx/events/messages/emote.hpp
 include/mtx/events/messages/file.hpp
 include/mtx/events/messages/image.hpp
@@ -66,6 +67,7 @@ include/mtx/responses/public_rooms.hpp
 include/mtx/responses/register.hpp
 include/mtx/responses/sync.hpp
 include/mtx/responses/turn_server.hpp
+include/mtx/responses/users.hpp
 include/mtx/responses/version.hpp
 include/mtx/responses/well-known.hpp
 include/mtx/secret_storage.hpp
