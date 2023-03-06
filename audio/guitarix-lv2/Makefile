@@ -1,10 +1,11 @@
 PORTNAME=	guitarix
+DISTVERSIONPREFIX=	V
 DISTVERSION=	0.44.1
 PORTREVISION=	4
 CATEGORIES=	audio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
-PKGNAMESUFFIX=	-lv2
-DISTNAME=	${PORTNAME}2-${DISTVERSION}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	53560efbbc44a971b7b10290d96b059b67c71eed.patch:-p2
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Virtual versatile amplification for Jack and set of LV2 plugins
@@ -45,6 +46,9 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_BINUTILS=	yes # linking needs some GNU features, fails on 12 without this, see https://github.com/brummer10/GxPlugins.lv2/issues/9
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	brummer10
+
 SHEBANG_FILES=	tools/coverage tools/dsp2cc tools/dsp2insert tools/dsp2insert tools/tube_transfer.py # see https://github.com/brummer10/guitarix/issues/97
 
 CONFIGURE_ARGS=	--enable-lfs --ldflags="${LDFLAGS}" --jack-session
@@ -52,6 +56,7 @@ CONFIGURE_ARGS=	--enable-lfs --ldflags="${LDFLAGS}" --jack-session
 LDFLAGS+=	-B${LOCALBASE}/bin # Use ld provided by USE_BINUTILS for GNU features, otherwise GNU ld isn't called
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC_SUBDIR=	trunk
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD} ld=${LOCALBASE}/bin/ld
 
 OPTIONS_DEFINE=	NLS
