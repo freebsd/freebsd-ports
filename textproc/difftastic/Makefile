@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.43.1
-PORTREVISION=	1
+DISTVERSION=	0.45.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -19,9 +18,11 @@ PLIST_FILES=	bin/difft
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
 		ansi_term-0.12.1 \
+		assert_cmd-2.0.5 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
+		bstr-0.2.17 \
 		bumpalo-3.11.1 \
 		bytecount-0.6.2 \
 		cc-1.0.78 \
@@ -38,9 +39,12 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		crossterm_winapi-0.9.0 \
 		ctor-0.1.22 \
 		diff-0.1.12 \
+		difflib-0.4.0 \
+		doc-comment-0.3.3 \
 		either-1.6.1 \
 		env_logger-0.7.1 \
 		fixedbitset-0.4.1 \
+		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		hashbrown-0.11.2 \
 		hermit-abi-0.1.19 \
@@ -58,14 +62,19 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		minimal-lexical-0.2.1 \
 		mio-0.8.5 \
 		nom-7.1.1 \
+		normalize-line-endings-0.3.0 \
+		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
-		once_cell-1.12.0 \
+		once_cell-1.17.1 \
 		os_str_bytes-6.0.1 \
 		output_vt100-0.1.3 \
 		owo-colors-3.4.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.6 \
 		petgraph-0.6.1 \
+		predicates-2.1.1 \
+		predicates-core-1.0.3 \
+		predicates-tree-1.0.5 \
 		pretty_assertions-1.2.1 \
 		pretty_env_logger-0.4.0 \
 		proc-macro2-1.0.39 \
@@ -76,6 +85,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		rayon-core-1.10.1 \
 		redox_syscall-0.2.16 \
 		regex-1.5.6 \
+		regex-automata-0.1.10 \
 		regex-syntax-0.6.26 \
 		rustc-hash-1.1.0 \
 		same-file-1.0.6 \
@@ -88,6 +98,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		syn-1.0.95 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
+		termtree-0.2.4 \
 		textwrap-0.15.0 \
 		tree-sitter-0.20.9 \
 		typed-arena-2.0.1 \
@@ -95,6 +106,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.3 \
 		version_check-0.9.4 \
+		wait-timeout-0.2.0 \
 		walkdir-2.3.2 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
