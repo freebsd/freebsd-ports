@@ -1,0 +1,11 @@
+--- modules/openxr/SCsub.orig	2023-03-02 09:55:48 UTC
++++ modules/openxr/SCsub
+@@ -34,7 +34,7 @@ elif env["platform"] == "linuxbsd":
+         env_openxr.AppendUnique(CPPDEFINES=["XR_USE_PLATFORM_XLIB"])
+ 
+     # FIXME: Review what needs to be set for Android and macOS.
+-    env_openxr.AppendUnique(CPPDEFINES=["HAVE_SECURE_GETENV"])
++    #env_openxr.AppendUnique(CPPDEFINES=["HAVE_SECURE_GETENV"])
+ elif env["platform"] == "windows":
+     env_openxr.AppendUnique(CPPDEFINES=["XR_OS_WINDOWS", "NOMINMAX", "XR_USE_PLATFORM_WIN32"])
+ 
