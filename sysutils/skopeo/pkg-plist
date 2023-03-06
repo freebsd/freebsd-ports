@@ -4,6 +4,7 @@ share/bash-completion/completions/skopeo
 share/fish/vendor_completions.d/skopeo.fish
 share/man/man1/skopeo-copy.1.gz
 share/man/man1/skopeo-delete.1.gz
+share/man/man1/skopeo-generate-sigstore-key.1.gz
 share/man/man1/skopeo-inspect.1.gz
 share/man/man1/skopeo-list-tags.1.gz
 share/man/man1/skopeo-login.1.gz

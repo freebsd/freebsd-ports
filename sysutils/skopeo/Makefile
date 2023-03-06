@@ -1,7 +1,6 @@
 PORTNAME=	skopeo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
-PORTREVISION=	5
+DISTVERSION=	1.11.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -23,7 +22,7 @@ GH_PROJECT=	skopeo
 
 do-install:
 	${SETENV} ${MAKE_ENV} ${GO_ENV} ${GMAKE} -C ${WRKSRC} \
-		DESTDIR=${STAGEDIR} GOCACHE=${WRKDIR}.gocache \
+		DESTDIR=${STAGEDIR} GOCACHE=${TMPDIR} \
 		GO=${GO_CMD} install-binary install-docs install-completions
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/containers/registries.d
 	${INSTALL_DATA} ${WRKSRC}/default.yaml ${STAGEDIR}${PREFIX}/etc/containers/registries.d/default.yaml
