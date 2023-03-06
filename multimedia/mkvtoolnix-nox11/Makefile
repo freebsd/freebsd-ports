@@ -1,7 +1,6 @@
-PORTNAME=	mkvtoolnis-nox11
+PORTNAME=	mkvtoolnix-nox11
+PORTREVISION=	1
 CATEGORIES=	lang
-
-PORTREVISION=	0
 
 MAINTAINER=	riggs@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams (no X11)
