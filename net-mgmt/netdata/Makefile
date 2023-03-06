@@ -1,14 +1,8 @@
 PORTNAME=	netdata
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.38.0
+DISTVERSION=	1.38.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
-PATCHFILES=	7409cedde393a7b1d059615b1bca3fe871a1bc93.patch:-p1 \
-		18383397aa937b21d9a35e79ad0cdc7727a66b61.patch:-p1 \
-		47038b85a01cfe23162f07314a82f4e26d8432f0.patch:-p1 \
-		357ed779a3cd4b9834808d82acc1e4d9c06f0d64.patch:-p1
 
 MAINTAINER=	me@forkbomb9.ch
 COMMENT=	Scalable distributed realtime performance and health monitoring

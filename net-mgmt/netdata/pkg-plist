@@ -189,7 +189,7 @@ libexec/netdata/plugins.d/alarm-notify.sh
 libexec/netdata/plugins.d/alarm-test.sh
 libexec/netdata/plugins.d/alarm.sh
 libexec/netdata/plugins.d/anonymous-statistics.sh
-libexec/netdata/plugins.d/apps.plugin
+@(,netdata,4750) libexec/netdata/plugins.d/apps.plugin
 libexec/netdata/plugins.d/cgroup-name.sh
 libexec/netdata/plugins.d/cgroup-network-helper.sh
 libexec/netdata/plugins.d/charts.d.dryrun-helper.sh
