@@ -1,7 +1,6 @@
 PORTNAME=	svls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.6
-PORTREVISION=	2
+DISTVERSION=	0.2.7
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,11 +16,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dalance
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		anyhow-1.0.66 \
+		anyhow-1.0.69 \
 		arrayvec-0.5.2 \
 		async-trait-0.1.53 \
 		atty-0.2.14 \
-		auto_impl-0.5.0 \
+		auto_impl-1.0.1 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bitvec-0.19.6 \
@@ -52,7 +51,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		hashbrown-0.12.1 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		httparse-1.7.1 \
+		httparse-1.8.0 \
 		idna-0.2.3 \
 		indexmap-1.8.1 \
 		itoa-1.0.1 \
@@ -98,12 +97,12 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.148 \
-		serde_derive-1.0.148 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
 		serde_json-1.0.81 \
 		serde_regex-1.1.0 \
 		serde_repr-0.1.8 \
-		simplelog-0.12.0 \
+		simplelog-0.12.1 \
 		slab-0.4.6 \
 		static_assertions-1.1.0 \
 		str-concat-0.2.0 \
@@ -115,7 +114,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		sv-parser-parser-0.12.2 \
 		sv-parser-pp-0.12.2 \
 		sv-parser-syntaxtree-0.12.2 \
-		svlint-0.6.0 \
+		svlint-0.6.1 \
 		syn-1.0.104 \
 		tap-1.0.1 \
 		term-0.7.0 \
@@ -130,11 +129,11 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		tokio-1.18.1 \
 		tokio-macros-1.7.0 \
 		tokio-util-0.7.1 \
-		toml-0.5.9 \
+		toml-0.5.11 \
 		tower-0.4.12 \
 		tower-layer-0.3.1 \
-		tower-lsp-0.17.0 \
-		tower-lsp-macros-0.6.0 \
+		tower-lsp-0.18.0 \
+		tower-lsp-macros-0.7.0 \
 		tower-service-0.3.1 \
 		tracing-0.1.34 \
 		tracing-attributes-0.1.21 \
