@@ -1,4 +1,4 @@
-This port of the podman container engine is based on unreleased
-sources and should be used for evaluation and testing purposes only.
+The FreeBSD port of the podman container engine is experimental and should be
+used for evaluation and testing purposes only.
 
 $ sudo podman run --rm docker.io/dougrabson/hello

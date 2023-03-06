@@ -1,6 +1,6 @@
 PORTNAME=	podman
-PORTVERSION=	4.4.0.dev
-PORTREVISION=	6
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.4.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -29,7 +29,6 @@ MAKE_JOBS_UNSAFE=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	containers
 GH_PROJECT=	podman
-GH_TAGNAME=	b294b7c3
 
 INSTALL_TARGET=	install install.completions
 
