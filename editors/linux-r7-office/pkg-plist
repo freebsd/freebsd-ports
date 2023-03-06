@@ -12,6 +12,7 @@ share/flyfm/templates/.source/new.xlsx
 share/flyfm/templates/desktopeditors.docx.desktop
 share/flyfm/templates/desktopeditors.pptx.desktop
 share/flyfm/templates/desktopeditors.xlsx.desktop
+share/pixmaps/r7-office.png
 %%DATADIR%%/desktopeditors/3DPARTYLICENSE
 %%DATADIR%%/desktopeditors/DesktopEditors
 %%DATADIR%%/desktopeditors/LICENSE.htm

@@ -1,17 +1,23 @@
 --- usr/bin/r7-office-desktopeditors.orig	2022-12-11 00:52:25 UTC
 +++ usr/bin/r7-office-desktopeditors
-@@ -82,7 +82,7 @@ check_templates() {
-     echo "system template's folder isn't found"
+@@ -73,7 +73,7 @@ check_templates() {
      return 0
    fi
--  
-+
-   TEMPLATE_DOCX="$TEMPLATE_DIR/$NEW_DOCX_NAME.docx"
-   TEMPLATE_XLSX="$TEMPLATE_DIR/$NEW_XLSX_NAME.xlsx"
-   TEMPLATE_PPTX="$TEMPLATE_DIR/$NEW_PPTX_NAME.pptx"
-@@ -111,4 +111,5 @@ export VLC_PLUGIN_PATH=$DIR_MV/plugins
- DIR_MV=/opt/r7-office/mediaviewer
+ 
+-  SOURCE_DOC_DIR="/opt/r7-office/desktopeditors/converter/empty"
++  SOURCE_DOC_DIR="/usr/local/share/r7-office/desktopeditors/converter/empty"
+ 
+   set_names_ru
+ 
+@@ -107,8 +107,9 @@ check_templates "$@"
+ 
+ check_templates "$@"
+ 
+-DIR=/opt/r7-office/desktopeditors
+-DIR_MV=/opt/r7-office/mediaviewer
++DIR=/usr/local/share/r7-office/desktopeditors
++DIR_MV=/usr/local/share/r7-office/mediaviewer
  export LD_LIBRARY_PATH=$DIR:$DIR/converter:$DIR_MV:$LD_LIBRARY_PATH
  export VLC_PLUGIN_PATH=$DIR_MV/plugins
-+export LANG=
++export LC_CTYPE=ru_RU.UTF-8
  exec $DIR/DesktopEditors "$@"

@@ -1,5 +1,6 @@
 PORTNAME=	r7-office
 PORTVERSION=	7.2.2
+PORTREVISION=	1
 CATEGORIES=	editors linux russian
 MASTER_SITES=	https://download.r7-office.ru/ubuntu/
 DISTNAME=	r7-office
@@ -32,16 +33,16 @@ post-extract:
 	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} data.tar.xz ${EXTRACT_AFTER_ARGS}
 
 post-patch:
-	${REINPLACE_CMD} 's|/opt/r7-office/|${DATADIR}/|' ${WRKDIR}/usr/bin/r7-office-*
-	${RM} ${WRKDIR}/usr/bin/*.bak
-	${REINPLACE_CMD} 's|/usr/bin/|${PREFIX}/|' ${WRKDIR}/usr/share/applications/*.desktop
-	${RM} ${WRKDIR}/usr/share/applications/*.bak
+	${REINPLACE_CMD} -i '' 's|/usr/bin/|${PREFIX}/bin/|' ${WRKDIR}/usr/share/applications/*.desktop
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/r7-office-* ${STAGEDIR}${PREFIX}/bin/
 	${RLN} ${STAGEDIR}${PREFIX}/bin/r7-office-desktopeditors ${STAGEDIR}${PREFIX}/bin/r7-office
 	cd ${WRKDIR}/opt && ${CP} -r r7-office ${STAGEDIR}${PREFIX}/share
 	cd ${WRKDIR}/usr/share && ${COPYTREE_SHARE} \* ${STAGEDIR}${PREFIX}/share
+
+	${RLN} ${STAGEDIR}${DATADIR}/desktopeditors/asc-de-256.png \
+		${STAGEDIR}${PREFIX}/share/pixmaps/r7-office.png
 
 	${RM} ${STAGEDIR}${PREFIX}/share/flyfm/templates/.source/*
 .for f in new.docx new.pptx new.xlsx
