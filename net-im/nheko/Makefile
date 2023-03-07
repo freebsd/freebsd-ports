@@ -1,6 +1,7 @@
 PORTNAME=	nheko
 DISTVERSIONPREFIX=v
 DISTVERSION=	0.11.3
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -36,10 +37,8 @@ OPTIONS_DEFAULT=
 
 VOIP_DESC=	Enable VOIP calls (experimental)
 VOIP_CMAKE_BOOL=	VOIP
-VOIP_USES=	gstreamer gettext-runtime
-VOIP_USE_GSTREAMER1=	bad dtls srtp
-VOIP_USE_XORG=		xcb
-VOIP_USE_GNOME=		glib20
+VOIP_USES=	gstreamer gettext-runtime xorg gnome
+VOIP_USE=	gstreamer=bad,dtls,srtp xorg=xcb gnome=glib20
 VOIP_LIB_DEPENDS=	libnice.so:net-im/libnice
 
 # There is one external dependency: lmdb++
