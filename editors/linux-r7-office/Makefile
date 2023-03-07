@@ -33,6 +33,7 @@ post-extract:
 	cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} data.tar.xz ${EXTRACT_AFTER_ARGS}
 
 post-patch:
+	${REINPLACE_CMD} -i '' 's|%%LOCALBASE%%|${LOCALBASE}|' ${WRKDIR}/usr/bin/r7-office-*
 	${REINPLACE_CMD} -i '' 's|/usr/bin/|${PREFIX}/bin/|' ${WRKDIR}/usr/share/applications/*.desktop
 
 do-install:

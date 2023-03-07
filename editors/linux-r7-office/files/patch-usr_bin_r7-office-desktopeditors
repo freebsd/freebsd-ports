@@ -5,7 +5,7 @@
    fi
  
 -  SOURCE_DOC_DIR="/opt/r7-office/desktopeditors/converter/empty"
-+  SOURCE_DOC_DIR="/usr/local/share/r7-office/desktopeditors/converter/empty"
++  SOURCE_DOC_DIR="%%LOCALBASE%%/share/r7-office/desktopeditors/converter/empty"
  
    set_names_ru
  
@@ -15,8 +15,8 @@
  
 -DIR=/opt/r7-office/desktopeditors
 -DIR_MV=/opt/r7-office/mediaviewer
-+DIR=/usr/local/share/r7-office/desktopeditors
-+DIR_MV=/usr/local/share/r7-office/mediaviewer
++DIR=%%LOCALBASE%%/share/r7-office/desktopeditors
++DIR_MV=%%LOCALBASE%%/share/r7-office/mediaviewer
  export LD_LIBRARY_PATH=$DIR:$DIR/converter:$DIR_MV:$LD_LIBRARY_PATH
  export VLC_PLUGIN_PATH=$DIR_MV/plugins
 +export LC_CTYPE=ru_RU.UTF-8
