@@ -1,5 +1,6 @@
 PORTNAME=	sddm-kcm
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	deskutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -15,5 +16,8 @@ USE_QT=		concurrent core dbus declarative designer gui network uiplugin \
 		widgets x11extras xml \
 		buildtools:build qmake:build
 USE_XORG=	ice sm x11 xcb xcursor xext xfixes
+
+CMAKE_ARGS=	-DSDDM_CONFIG_FILE:FILEPATH=${LOCALBASE}/etc/sddm.conf \
+		-DSDDM_CONFIG_DIR:PATH=${LOCALBASE}/etc/sddm.conf.d
 
 .include <bsd.port.mk>
