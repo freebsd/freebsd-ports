@@ -17777,3 +17777,11 @@ net/tshark|net/wireshark@nox11|2023-03-03|Tshark is now the nox11 flavor of wire
 net/tshark-lite|net/wireshark@nox11|2023-03-03|Tshark is now the nox11 flavor of wireshark
 net/wireshark-lite|net/wireshark|2023-03-03|The lite port of wireshark can be controlled with OPTIONS
 lang/gcc-ecj45|java/eclipse-ecj|2023-03-06|Has expired: Long time unsupported upstream, use java/eclipse-ecj instead
+databases/postgresql10-client||2023-03-07|Has expired: PostgreSQL 10 has reached end-of-life
+databases/postgresql10-contrib||2023-03-07|Has expired: PostgreSQL 10 has reached end-of-life
+databases/postgresql10-docs||2023-03-07|Has expired: PostgreSQL 10 has reached end-of-life
+databases/postgresql10-pgtcl||2023-03-07|Has expired: PostgreSQL-10 has reached end-of-life
+databases/postgresql10-plperl||2023-03-07|Has expired: PostgreSQL 10 has reached end-of-life
+databases/postgresql10-plpython||2023-03-07|Has expired: PostgreSQL 10 has reached end-of-life
+databases/postgresql10-pltcl||2023-03-07|Has expired: PostgreSQL 10 has reached end-of-life
+databases/postgresql10-server||2023-03-07|Has expired: PostgreSQL 10 has reached end-of-life
