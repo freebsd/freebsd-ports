@@ -99,6 +99,7 @@ share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/avformat/producer_avformat.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/resolution_scale.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/yuv_only.txt
+%%DATADIR%%/chain_normalizers.ini
 %%DATADIR%%/core/consumer_multi.yml
 %%DATADIR%%/core/filter_audiomap.yml
 %%DATADIR%%/core/filter_audiowave.yml
@@ -128,6 +129,7 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/core/producer_colour.yml
 %%DATADIR%%/core/producer_consumer.yml
 %%DATADIR%%/core/producer_hold.yml
+%%DATADIR%%/core/producer_loader-nogl.yml
 %%DATADIR%%/core/producer_loader.yml
 %%DATADIR%%/core/producer_melt.yml
 %%DATADIR%%/core/producer_melt_file.yml
