@@ -1,5 +1,5 @@
 PORTNAME=	zabbix5
-DISTVERSION=	5.0.31
+DISTVERSION=	5.0.32
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
@@ -16,6 +16,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 CONFLICTS_INSTALL=	zabbix[0-9][0-9]${PKGNAMESUFFIX} zabbix[0-46-9]${PKGNAMESUFFIX}
+
+PORTSCOUT=	limit:^5\.0\.
 
 ZABBIX_BUILD=	${PKGNAMESUFFIX:S/^-//}
 
@@ -36,12 +38,10 @@ GROUPS=		zabbix
 PLIST_SUB=	PROXY="@comment "
 .else
 PLIST_SUB=	PROXY=""
-PLIST_FILES+=	bin/zabbix_proxy_js
 .endif
 
 .if ${ZABBIX_BUILD} == "server"
 PLIST_SUB+=	SERVER=""
-PLIST_FILES+=	bin/zabbix_js
 .else
 PLIST_SUB+=	SERVER="@comment "
 .endif
@@ -57,25 +57,20 @@ CONFIGURE_ARGS+=	--enable-${ZABBIX_BUILD} \
 			--with-iconv=${ICONV_PREFIX}
 
 .if ${ZABBIX_BUILD} != "agent" && ${ZABBIX_BUILD} != "java"
-LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
-
 CPPFLAGS+=	-I${LOCALBASE}/include
-
-PORTSCOUT=	limit:^5\.0\.
 
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=	--with-net-snmp
+OPTIONS_DEFINE=		IPV6 FPING CURL LDAP IPMI SNMP SSH NMAP LIBXML2 UNIXODBC
 
-OPTIONS_DEFINE=		IPV6 FPING CURL LDAP IPMI SSH NMAP LIBXML2 UNIXODBC
-
-OPTIONS_DEFAULT=	IPV6 FPING CURL LIBXML2 MYSQL OPENSSL UNIXODBC
+OPTIONS_DEFAULT=	IPV6 FPING CURL SNMP SSH LIBXML2 MYSQL OPENSSL UNIXODBC
 OPTIONS_SUB=		yes
 
 FPING_DESC=		Build/install fping for ping checks
 IPMI_DESC=		Support for IPMI checks
 LDAP_DESC=		Support for LDAP server checks
 NMAP_DESC=		Build/install nmap for o/s detection
+SNMP_DESC=		Support for SNMP checks
 SSH_DESC=		Support for SSH-based checks
 UNIXODBC_DESC=		Support for database checks via ODBC
 LIBXML2_DESC=		Support for libxml2 (required by monitoring VMware)
@@ -89,6 +84,9 @@ MYSQL_USES+=		compiler:c11 mysql
 
 PGSQL_CONFIGURE_WITH=	postgresql
 PGSQL_USES+=		pgsql
+
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+SNMP_CONFIGURE_WITH=	net-snmp
 
 SQLITE_CONFIGURE_WITH=	sqlite3
 SQLITE_USES+=		sqlite:3
