@@ -1,7 +1,6 @@
 PORTNAME=	softether
-DISTVERSION=	5.02.5180-292
-DISTVERSIONSUFFIX=	-g8c64dc0c
-PORTREVISION=	2
+DISTVERSION=	5.02.5180-296
+DISTVERSIONSUFFIX=	-g21963c6c
 PORTEPOCH=	2
 CATEGORIES=	security net-vpn
 PKGNAMESUFFIX=	5
@@ -9,14 +8,13 @@ DIST_SUBDIR=	${PORTNAME}
 
 # Some patches are managed in my GitHub fork
 PATCH_SITES=	https://github.com/metalefty/${GH_PROJECT}/commit/
-PATCHFILES=	a672cffa.patch:-p1 \
-		8b3c335c.patch:-p1 \
-		f4e64e10.patch:-p1 \
-		0dc45a98.patch:-p1 \
-		0ace659a.patch:-p1 \
-		d560d962.patch:-p1 \
-		c4a8b52a.patch:-p1
-
+PATCHFILES=	4036e810.patch:-p1 \
+		d1840d64.patch:-p1 \
+		31833fff.patch:-p1 \
+		bbdb6ade.patch:-p1 \
+		e94439ec.patch:-p1 \
+		f99e0fc2.patch:-p1 \
+		eef633fd.patch:-p1
 MAINTAINER=	meta@FreeBSD.org
 COMMENT=	SoftEther VPN 5 (Developer Edition)
 WWW=		https://www.softether.org
