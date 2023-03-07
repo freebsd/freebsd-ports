@@ -1,6 +1,5 @@
 PORTNAME=	hdf5
-PORTVERSION=	1.8.21 # When PORTVERSION changes, please update french/med/files/patch-configure
-PORTREVISION=	4
+PORTVERSION=	1.8.23
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/${PORTNAME}-${PORTVERSION}/src/	\
 		http://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.8/${PORTNAME}-${PORTVERSION}/src/	\
@@ -14,46 +13,29 @@ WWW=		https://www.hdfgroup.org/HDF5/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
+OPTIONS_DEFINE=	EXAMPLES FORTRAN SZIP
 
-USES=		cpe libtool:keepla localbase tar:bzip2
+USES=		cmake:testing cpe libtool:keepla localbase pkgconfig tar:bzip2
 CPE_VENDOR=	hdfgroup
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
 PORTSUFF=	${PORTNAME}${PKGNAMESUFFIX}
-CONFIGURE_ARGS=	--enable-cxx \
-		--enable-instrument \
-		--enable-strict-format-checks \
-		--with-pthread=/usr \
-		--with-zlib=/usr \
-		--program-suffix=${PKGNAMESUFFIX} \
-		--includedir=${PREFIX}/include/${PORTSUFF}
+CMAKE_ARGS=	-DHDF5_LIB_INFIX:STRING="-18"
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTSUFF}
 
-SUFF2FIX=	tools/misc/h5cc.in tools/misc/h5redeploy.in	\
-		c++/src/h5c++.in fortran/src/h5fc.in
+SHRFILES=	COPYING RELEASE.txt USING_HDF5_CMake.txt
 
-.include <bsd.port.options.mk>
+SUFF2FIX=	c++/src/h5c++.in fortran/src/h5fc.in
 
-.if ${PORT_OPTIONS:MDEBUG}
-CONFIGURE_ARGS+=--disable-production --enable-debug=all
-.endif
+FORTRAN_USES=		fortran
+FORTRAN_CMAKE_BOOL=	HDF5_BUILD_FORTRAN
+FORTRAN_PLIST_SUB=	FORTRAN=""
+FORTRAN_PLIST_SUB_OFF=	FORTRAN="@comment "
+FORTRAN__VARS=		FCFLAGS_f90="${FCFLAGS}" LIBS="-lstdc++"
 
-.if ${PORT_OPTIONS:MFORTRAN}
-USES+=		fortran
-CONFIGURE_ARGS+=--enable-fortran
-CONFIGURE_ENV+=	F9X=${FC}
-PLIST_SUB+=	FORTRAN=""
-FCFLAGS_f90=	${FCFLAGS}
-LIBS+=		-lstdc++
-.else
-PLIST_SUB+=	FORTRAN="@comment "
-.endif
+SZIP_CMAKE_BOOL=	HDF5_ENABLE_SZIP_SUPPORT
+SZIP_LIB_DEPENDS=	libsz.so:science/libaec
 
-.if ${PORT_OPTIONS:MSZIP}
-LIB_DEPENDS+=	libsz.so:science/libaec
-CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
-.endif
+EXAMPLES_CMAKE_BOOL=	HDF5_BUILD_EXAMPLES
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
@@ -64,9 +46,6 @@ pre-configure:
 		-e 's|(INSTALL)|(INSTALL_DATA)|' \
 			`${FIND} ${WRKSRC} -regex '.*/examples/Makefile.in'`
 	${REINPLACE_CMD} -e 's|\[ -a|\[ -f|g' `${FIND} ${WRKSRC} -name \*.sh\*`
-.if !${PORT_OPTIONS:MEXAMPLES}
-	${REINPLACE_CMD} -e '/^install:/ s|install-examples||' ${WRKSRC}/Makefile.in
-.endif
 	${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|libhdf5|libhdf5${PKGNAMESUFFIX}|g'
 	${REINPLACE_CMD} -e 's|libhdf5|libhdf5${PKGNAMESUFFIX}|g'	\
@@ -74,16 +53,38 @@ pre-configure:
 .for pf in ${SUFF2FIX}
 	${REINPLACE_CMD} -e 's|%%SUFF%%|${PKGNAMESUFFIX}|g' ${WRKSRC}/${pf}
 .endfor
+	${CP} ${WRKSRC}/src/libhdf5.settings.in	\
+		${WRKSRC}/src/libhdf5-18.settings.in
 
-post-configure:
-	${CP} -p ${WRKSRC}/src/libhdf5.settings.in	\
-		${WRKSRC}/src/libhdf5${PKGNAMESUFFIX}.settings.in
-	${CP} -p ${WRKSRC}/src/libhdf5.settings		\
-		${WRKSRC}/src/libhdf5${PKGNAMESUFFIX}.settings
 post-stage:
-.if ${PORT_OPTIONS:MFORTRAN}
-	${MV} ${STAGEDIR}${PREFIX}/bin/h5fc ${STAGEDIR}${PREFIX}/bin/h5fc${PKGNAMESUFFIX}
-.endif
+	cd ${STAGEDIR}${PREFIX}/bin && ( \
+		for f in `${FIND} . -type f`; do \
+			${MV} $$f $${f}-18; \
+		done; \
+	)
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/hdf5-18
+	${MV} ${STAGEDIR}${PREFIX}/include/*.h	\
+		${STAGEDIR}${PREFIX}/include/hdf5-18/
+	@${MKDIR} ${STAGEDIR}${DATADIR}-18 ${STAGEDIR}${PREFIX}/lib/cmake/hdf5-18
+	${MV} ${STAGEDIR}${PREFIX}/cmake/* ${STAGEDIR}${PREFIX}/lib/cmake/hdf5-18
+.for f in ${SHRFILES}
+	${MV} ${STAGEDIR}${PREFIX}/share/${f} ${STAGEDIR}${DATADIR}-18
+.endfor
+	${MV} ${STAGEDIR}${PREFIX}/lib/libhdf5.settings	\
+		${STAGEDIR}${PREFIX}/lib/libhdf5-18.settings
+	${RMDIR} ${STAGEDIR}${PREFIX}/cmake
+
+post-stage-FORTRAN-on:
+.for ext in mod f90
+	${MV} ${STAGEDIR}${PREFIX}/include/*.${ext}	\
+		${STAGEDIR}${PREFIX}/include/hdf5-18/
+.endfor
+	${MV} ${STAGEDIR}${PREFIX}/mod/* ${STAGEDIR}${PREFIX}/include/hdf5-18/
+	${RMDIR} ${STAGEDIR}${PREFIX}/mod
+
+post-install-EXAMPLES-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 regression-test test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
