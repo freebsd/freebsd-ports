@@ -1,5 +1,5 @@
 PORTNAME=	gpds
-DISTVERSION=	1.5.0
+DISTVERSION=	1.5.1
 CATEGORIES=	devel
 
 MAINTAINER=	jbo@insane.engineer
