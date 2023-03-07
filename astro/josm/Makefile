@@ -1,5 +1,5 @@
 PORTNAME=	josm
-PORTVERSION=	18646
+PORTVERSION=	18678
 CATEGORIES=	astro java
 MASTER_SITES=	https://josm.openstreetmap.de/download/
 DISTNAME=	${PORTNAME}-snapshot-${PORTVERSION}.jar
