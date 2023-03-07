@@ -60,7 +60,7 @@ post-patch:
 pre-configure:
 	@(cd ${WRKDIR} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${DISTDIR}/libressl-${SSL}.tar.gz ${EXTRACT_AFTER_ARGS})
 	@(${PATCH} -d ${WRKDIR}/libressl-${SSL} < ${PATCHDIR}/extra-patch-libressl_tls_tls.c)
-	@(cd ${WRKDIR}/libressl-${SSL} && ${SETENV} ./configure && ${SETENV} ${MAKE_ENV} ${MAKE})
+	@(cd ${WRKDIR}/libressl-${SSL} && ${SETENV} ac_cv_header_endian_h=no ./configure && ${SETENV} ${MAKE_ENV} ${MAKE})
 	@(cd ${WRKSRC_libimsg} && ${SETENV} ${MAKE_ENV} ${MAKE})
 	@(cd ${WRKSRC_libevent} && ${SETENV} ${MAKE_ENV} ${MAKE})
 
