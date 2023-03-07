@@ -1,5 +1,6 @@
 PORTNAME=	veloren
 PORTVERSION=	s20230301
+PORTREVISION=	1
 CATEGORIES=	games wayland
 .if !make(makesum)
 MASTER_SITES=	LOCAL/jbeich
@@ -31,6 +32,7 @@ CARGO_ENV=	VELOREN_USERDATA_STRATEGY=system SHADERC_LIB_DIR="${LOCALBASE}/lib"
 PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		bin/${PORTNAME}-voxygen \
 		share/applications/net.veloren.veloren.desktop \
+		share/metainfo/net.veloren.veloren.metainfo.xml \
 		share/pixmaps/net.veloren.veloren.png
 PORTDATA=	*
 
@@ -64,5 +66,8 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/applications
 	${RLN} ${STAGEDIR}${DATADIR}/assets/voxygen/*.png \
 		${STAGEDIR}${PREFIX}/share/pixmaps
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
+	${RLN} ${STAGEDIR}${DATADIR}/assets/voxygen/*.metainfo.xml \
+		${STAGEDIR}${PREFIX}/share/metainfo
 
 .include <bsd.port.mk>
