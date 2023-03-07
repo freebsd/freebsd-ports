@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+
+NOTE: This port installs the godot runtime only.
+
+If you want to create a game you need to install the IDE from devel/godot-tools.
+
+EOM
+}
+]

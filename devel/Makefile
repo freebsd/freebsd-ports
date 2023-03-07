@@ -883,6 +883,7 @@
     SUBDIR += godot-tools
     SUBDIR += godot2
     SUBDIR += godot2-tools
+    SUBDIR += godot35
     SUBDIR += goffice
     SUBDIR += gogs
     SUBDIR += golangci-lint
