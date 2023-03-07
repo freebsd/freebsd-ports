@@ -140,8 +140,8 @@ lib/gretl-gtk%%GTK_VER%%/vif.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xlsx_import.so
 %%GUI%%lib/gretl-gtk%%GTK_VER%%/xml_get.so
 lib/libgretl-1.0.so
-lib/libgretl-1.0.so.43
-lib/libgretl-1.0.so.43.0.0
+lib/libgretl-1.0.so.44
+lib/libgretl-1.0.so.44.0.0
 libdata/pkgconfig/gretl.pc
 man/man1/gretl.1.gz
 %%GUI%%share/appdata/gretl.appdata.xml
@@ -402,12 +402,13 @@ man/man1/gretl.1.gz
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/states.dbf
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/states.shp
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/states.shx
-%%ADDONS%%%%DATADIR%%/functions/geoplot/examples/string_table.txt
+%%ADDONS%%%%DATADIR%%/functions/geoplot/examples/swiss-langs.inp
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/switzerland.geojson
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/us-2020.inp
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/us-pop-density.inp
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/us-states.geojson
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/us.inp
+%%ADDONS%%%%DATADIR%%/functions/geoplot/examples/us2020.geojson
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/us_states_json.inp
 %%ADDONS%%%%DATADIR%%/functions/geoplot/examples/us_states_shp.inp
 %%ADDONS%%%%DATADIR%%/functions/geoplot/geoplot.gfn
