@@ -1,6 +1,6 @@
-TIMESTAMP = 1678144460
-SHA256 (nwg-piotr-nwg-look-v0.2.0_GH0.tar.gz) = b0c2184d7f818041936f152184d8b21350bab0d0e8fb158a5c5538c1e420a239
-SIZE (nwg-piotr-nwg-look-v0.2.0_GH0.tar.gz) = 21599
+TIMESTAMP = 1678154361
+SHA256 (nwg-piotr-nwg-look-v0.2.1_GH0.tar.gz) = 39ebefebe5777feac8bcf5ce007b8b210823bcd1e501ed12c3d45cebdbd47a80
+SIZE (nwg-piotr-nwg-look-v0.2.1_GH0.tar.gz) = 21610
 SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
 SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (gotk3-gotk3-v0.6.1_GH0.tar.gz) = 971ff1d2d184413113d1cbf68f9127bce06362e2e352d8ade79b1817d2024aa5
