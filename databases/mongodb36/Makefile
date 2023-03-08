@@ -8,7 +8,7 @@ MASTER_SITES=	https://fastdl.mongodb.org/src/ \
 PKGNAMESUFFIX=	${PORTVERSION:R:S/.//}
 DISTNAME=	mongodb-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
-MAINTAINER=	dev@dudu.ro
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed document-oriented "NoSQL" database
 WWW=		https://docs.mongodb.com/v3.6/
 
