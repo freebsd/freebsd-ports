@@ -1,5 +1,6 @@
 PORTNAME=	zabbix6
 DISTVERSION=	6.0.13
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
 PKGNAMESUFFIX?=	-server
@@ -71,16 +72,12 @@ PCRE2_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 PCRE2_CONFIGURE_WITH=	libpcre2
 
 .if ${ZABBIX_BUILD} != "agent"
-LIB_DEPENDS+=	libnetsnmp.so:net-mgmt/net-snmp
-
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=	--with-net-snmp
-
-OPTIONS_DEFAULT+=	CURL FPING IPMI IPV6 LIBXML2 MYSQL OPENSSL UNIXODBC
-OPTIONS_DEFINE=		CURL FPING IPMI IPV6 LDAP LIBXML2 NMAP SSH UNIXODBC
+OPTIONS_DEFAULT+=	CURL FPING IPMI IPV6 LIBXML2 MYSQL OPENSSL SNMP SSH UNIXODBC
+OPTIONS_DEFINE=		CURL FPING IPMI IPV6 LDAP LIBXML2 NMAP SNMP SSH UNIXODBC
 OPTIONS_SINGLE+=	DB SSL
 OPTIONS_SINGLE_DB=	MDB5 MDB6 MYSQL MYSQLDV ORACLE PGSQL
 .if ${ZABBIX_BUILD} == "proxy"
@@ -93,6 +90,7 @@ FPING_DESC=	Build/install fping for ping checks
 IPMI_DESC=	Support for IPMI checks
 LDAP_DESC=	Support for LDAP server checks
 NMAP_DESC=	Build/install nmap for o/s detection
+SNMP_DESC=	Support for SNMP checks
 SSH_DESC=	Support for SSH-based checks
 UNIXODBC_DESC=	Support for database checks via ODBC
 LIBXML2_DESC=	Support for libxml2 (required by monitoring VMware)
@@ -125,6 +123,9 @@ ORACLE_CONFIGURE_WITH=	oracle
 
 PGSQL_CONFIGURE_WITH=	postgresql
 PGSQL_USES+=		pgsql
+
+SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
+SNMP_CONFIGURE_WITH=	net-snmp
 
 SQLITE_CONFIGURE_WITH=	sqlite3
 SQLITE_USES+=		sqlite:3

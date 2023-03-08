@@ -1,10 +1,10 @@
 PORTNAME=	zabbix6
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-frontend${PHP_PKGNAMESUFFIX}
 
 USES+=		php:web,flavors
-USE_PHP=	bcmath ctype dom fileinfo filter gd gettext hash json ldap \
-		mbstring openssl pcre session simplexml snmp sockets xml \
+USE_PHP=	bcmath ctype gd gettext mbstring session sockets xml \
 		xmlreader xmlwriter
 IGNORE_WITH_PHP=	82
 

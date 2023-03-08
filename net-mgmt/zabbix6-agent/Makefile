@@ -1,4 +1,5 @@
 PORTNAME=	zabbix6
+PORTREVISION=	0
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-agent
 
