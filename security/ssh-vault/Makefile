@@ -1,6 +1,6 @@
 PORTNAME=	ssh-vault
 PORTVERSION=	0.12.6
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	security
 
 MAINTAINER=	nbari@tequila.io
@@ -15,7 +15,7 @@ USES=		go
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 GH_TUPLE=	golang:crypto:a0c6ece:gocrypto/vendor/golang.org/x/crypto \
-		golang:sys:d101bd2:gosys/vendor/golang.org/x/sys \
+		golang:sys:v0.5.0:gosys/vendor/golang.org/x/sys \
 		ssh-vault:crypto:3700ed0:crypto/vendor/github.com/ssh-vault/crypto \
 		ssh-vault:ssh2pem:fdda4b3:ssh2pem/vendor/github.com/ssh-vault/ssh2pem
 
