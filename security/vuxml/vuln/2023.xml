@@ -1,3 +1,38 @@
+  <vuln vid="742279d6-bdbe-11ed-a179-2b68e9d12706">
+    <topic>go -- crypto/elliptic: incorrect P-256 ScalarMult and ScalarBaseMult results</topic>
+    <affects>
+      <package>
+	<name>go119</name>
+	<range><lt>1.19.7</lt></range>
+      </package>
+      <package>
+	<name>go120</name>
+	<range><lt>1.20.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/58647">
+	  <p>crypto/elliptic: incorrect P-256 ScalarMult and
+	    ScalarBaseMult results</p>
+	  <p>The ScalarMult and ScalarBaseMult methods of the P256
+	    Curve may return an incorrect result if called with some
+	    specific unreduced scalars (a scalar larger than the
+	    order of the curve).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-24532</cvename>
+      <url>https://groups.google.com/g/golang-dev/c/3wmx8i5WvNY/m/AEOlccrGAwAJ</url>
+    </references>
+    <dates>
+      <discovery>2023-02-22</discovery>
+      <entry>2023-03-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6678211c-bd47-11ed-beb0-1c1b0d9ea7e6">
     <topic>Apache OpenOffice -- master password vulnerabilities</topic>
     <affects>
