@@ -1,5 +1,5 @@
 PORTNAME=	htdigest
-PORTVERSION=	2.4.6
+PORTVERSION=	2.4.56
 PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	https://archive.apache.org/dist/httpd/
