@@ -1,6 +1,6 @@
 PORTNAME=	apache-openoffice
 PORTVERSION=	${AOOVERSION1}.${AOOVERSION2}.${TIMESTAMP}
-PORTREVISION=	3
+PORTREVISION=	0
 PORTEPOCH=	4
 CATEGORIES=	editors java
 MASTER_SITES=	https://dist.apache.org/repos/dist/dev/openoffice/${AOOVERSION}-${AOORC}-${TIMESTAMP}/source/ \
@@ -14,7 +14,8 @@ PKGNAMEPREFIX=		${LANG_PKGNAME}-
 PKGNAMESUFFIX=		-${LANG_SUFFIX}
 .endif
 PKGNAMESUFFIX=		-devel
-DISTFILES=	${AOOSRC}${AOODISTTAG} ${EXTSRC}:extsrc
+DISTFILES=	${AOOSRC}${AOODISTTAG} ${EXTSRC}:extsrc \
+		${GCC_EXTRA_DISTFILES:C/.*/&:sf/g}
 DIST_SUBDIR=	openoffice
 EXTRACT_ONLY=	${AOOSRC}
 
@@ -50,7 +51,6 @@ LICENSE_PERMS_W3C=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc64
 BROKEN_powerpc64=	fails to compile: aoo-4.2.0/main/solver/420/unxfbsdppc64.pro/inc/stl/vector:31:11: fatal error: boost/tr1/tr1/vector: No such file or directory
-BROKEN=		does not build: fails to build vcl module with C++ errors in boost
 
 BUILD_DEPENDS=								\
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip		\
@@ -114,9 +114,9 @@ RUN_DEPENDS+=	gcc${GCC_DEFAULT}>0:lang/gcc${GCC_DEFAULT}
 
 USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
-		python:3.7 shared-mime-info ssl tar:${TARTYPE} xorg
+		python:3.9 shared-mime-info ssl tar:${TARTYPE} xorg
 USE_GL=		gl glu
-USE_GNOME=	gdkpixbuf2 gtk20 libxslt libidl glib20
+USE_GNOME=	gdkpixbuf2 gdkpixbuf2xlib gtk20 libxslt libidl glib20
 USE_JAVA=	yes
 JAVA_BUILD=	jdk
 JAVA_RUN=	jdk
@@ -132,8 +132,8 @@ AOOVERSION2=	2
 AOOVERSION3=	0
 # From solenv/inc/minor.mk SOURCEREVISION LAST_MINOR BUILD
 AOOTAG=		AOO420m4\(Build:9823\)
-GITREVISION=	5b75b699aa
-TIMESTAMP=	1649975926
+GITREVISION=	e501375395
+TIMESTAMP=	1678061694
 #AOORC=rc3
 EXTSRC=		ApacheOpenOffice.ext_sources.${AOOVERSION1}.x.x.20150707.tar.gz
 
@@ -256,20 +256,6 @@ GCC_EXTRA_DISTFILES=	d6eef4b4cacb2183f2bf265a5a03a354-boost_1_55_0.tar.bz2 \
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CPPFLAGS+=		-I${LOCALBASE}/include
-CONFIGURE_ARGS+=	--with-system-boost
-BUILD_DEPENDS+=		${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
-. if ${COMPILER_VERSION} < 130
-CONFIGURE_ARGS+=	--with-system-vigra
-BUILD_DEPENDS+=		${LOCALBASE}/bin/vigra-config:graphics/vigra
-. endif
-.endif
-
-# These extra distfiles are needed to use the bundled versions of
-# boost and vigra for compatiblity with gcc.  Also include them
-# for the makesum target so they are included in distinfo
-.if ${CHOSEN_COMPILER_TYPE} == gcc || ${COMPILER_VERSION} >= 130 || \
-	make(makesum) || make(distclean)
-DISTFILES+=		${GCC_EXTRA_DISTFILES:C/.*/&:sf/g}
 .endif
 
 .if ${ARCH} == amd64
@@ -296,9 +282,9 @@ SUB_LIST=	EXECBASE=${EXECBASE} AOOTAG=${AOOTAG} AOOUDIR=${AOOUDIR} \
 		PRINSTALLATION_BASEDIR=${PRINSTALLATION_BASEDIR}
 
 CONFIGURE_ARGS+=							\
+			--disable-gconf					\
 			--enable-gio					\
 			--disable-gnome-vfs				\
-			--disable-gconf					\
 			--with-unix-wrapper=${EXECBASE}			\
 			--with-alloc=system				\
 			--with-ant-home=${LOCALBASE}/share/java/apache-ant \
@@ -380,11 +366,9 @@ do-extract-SDK-on:
 
 post-extract:
 	${TAR} -C ${WRKSUBDIR} -xzf ${DISTDIR}/${DIST_SUBDIR}/${EXTSRC}
-.if ${CHOSEN_COMPILER_TYPE} == gcc || ${COMPILER_VERSION} >= 130
-.  for f in ${GCC_EXTRA_DISTFILES}
+.for f in ${GCC_EXTRA_DISTFILES}
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${f} ${WRKSUBDIR}/ext_sources/${f}
-.  endfor
-.endif
+.endfor
 	${CP} ${FILESDIR}/freebsd-aoo-intro-developer.png \
 		${WRKSRC}/default_images/introabout/intro.png
 	${CP} ${FILESDIR}/freebsd-aoo-about-developer.png \
