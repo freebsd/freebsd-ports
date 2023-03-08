@@ -46,7 +46,7 @@ OPTIONS_EXCLUDE_FreeBSD_12=	DCO # FreeBSD 14 only
 OPTIONS_EXCLUDE_FreeBSD_13=	DCO # FreeBSD 14 only
 
 ASYNC_PUSH_DESC=	Enable async-push support
-DCO_DESC=			Build with Data Channel Offload (ovpn(4)) support
+DCO_DESC=		Build with Data Channel Offload (ovpn(4)) support
 EASYRSA_DESC=		Install security/easy-rsa RSA helper package
 LZO_DESC=		LZO compression (incompatible with LibreSSL)
 PKCS11_DESC=		Use security/pkcs11-helper, needs same SSL lib!
@@ -110,7 +110,6 @@ post-patch:
 		${WRKSRC}/sample/sample-config-files/*.conf \
 		${WRKSRC}/doc/man-sections/generic-options.rst
 	# this header file was missed from the 2.6.0 tarball
-	${CP} ${FILESDIR}/ovpn_dco_freebsd.h ${WRKSRC}/src/openvpn/ # FIXME remove for 2.6.1
 
 pre-configure:
 	# just too many of sign-compare; bitwise-instead-of-logical was audited and is intentional,
