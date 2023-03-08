@@ -1,7 +1,6 @@
 PORTNAME=	cliphist
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.1
-PORTREVISION=	4
+DISTVERSION=	0.4.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	sentriz
-GH_TUPLE=	etcd-io:bbolt:v1.3.6:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
-		golang:sys:3681064d5158:golang_sys/vendor/golang.org/x/sys \
+GH_TUPLE=	etcd-io:bbolt:v1.3.7:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
+		golang:sys:v0.4.0:golang_sys/vendor/golang.org/x/sys \
 		matryer:is:v1.4.0:matryer_is/vendor/github.com/matryer/is
 PLIST_FILES=	bin/${PORTNAME}
 
