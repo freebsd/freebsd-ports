@@ -109,7 +109,6 @@ post-patch:
 		-e 's/"nobody"( after init)/"openvpn" \1/' \
 		${WRKSRC}/sample/sample-config-files/*.conf \
 		${WRKSRC}/doc/man-sections/generic-options.rst
-	# this header file was missed from the 2.6.0 tarball
 
 pre-configure:
 	# just too many of sign-compare; bitwise-instead-of-logical was audited and is intentional,
