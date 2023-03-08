@@ -1,5 +1,5 @@
 PORTNAME=	grep
-PORTVERSION=	3.8
+PORTVERSION=	3.9
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	gnu
@@ -20,8 +20,9 @@ TEST_TARGET=	check
 INFO=		grep
 CPE_VENDOR=	gnu
 
-OPTIONS_DEFINE=		ICONV LIBSIGSEGV NLS PCRE
-OPTIONS_DEFAULT=	ICONV PCRE
+OPTIONS_DEFINE=		COMPAT ICONV LIBSIGSEGV NLS PCRE
+OPTIONS_DEFAULT=	COMPAT ICONV PCRE
+COMPAT_DESC=		Create g-prefixless compatibility symlinks
 LIBSIGSEGV_DESC=	Use alternative page fault handler (GNU libsigsegv)
 OPTIONS_SUB=		yes
 
@@ -51,7 +52,7 @@ post-patch-NLS-off:
 	@${REINPLACE_CMD} '/install-exec-local:/s/install-exec-localcharset//' \
 		${WRKSRC}/lib/Makefile.in
 
-post-install:
+post-install-COMPAT-on:
 .for p in grep egrep fgrep
 	${LN} -sf g${p} ${STAGEDIR}${PREFIX}/bin/${p}
 .endfor
