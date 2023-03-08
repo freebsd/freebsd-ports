@@ -23,6 +23,7 @@ share/ART/dcpprofiles/Canon EOS 40D.dcp
 share/ART/dcpprofiles/Canon EOS 450D.dcp
 share/ART/dcpprofiles/Canon EOS 50D.dcp
 share/ART/dcpprofiles/Canon EOS 550D.dcp
+share/ART/dcpprofiles/Canon EOS 5D Mark II.dcp
 share/ART/dcpprofiles/Canon EOS 5D Mark III.dcp
 share/ART/dcpprofiles/Canon EOS 5D.dcp
 share/ART/dcpprofiles/Canon EOS 600D.dcp
@@ -33,10 +34,12 @@ share/ART/dcpprofiles/Canon EOS 7D Mark II.dcp
 share/ART/dcpprofiles/Canon EOS 7D.dcp
 share/ART/dcpprofiles/Canon EOS D60.dcp
 share/ART/dcpprofiles/Canon EOS-1D Mark III.dcp
+share/ART/dcpprofiles/Canon EOS-1Ds Mark II.dcp
 share/ART/dcpprofiles/Canon PowerShot G10.dcp
 share/ART/dcpprofiles/Canon PowerShot G12.dcp
 share/ART/dcpprofiles/Canon PowerShot G7 X.dcp
 share/ART/dcpprofiles/Canon PowerShot S110.dcp
+share/ART/dcpprofiles/Canon PowerShot S120.dcp
 share/ART/dcpprofiles/FUJIFILM FinePix F600EXR.dcp
 share/ART/dcpprofiles/FUJIFILM GFX 50R.dcp
 share/ART/dcpprofiles/FUJIFILM X-A5.dcp
@@ -48,6 +51,7 @@ share/ART/dcpprofiles/FUJIFILM X-Pro2.dcp
 share/ART/dcpprofiles/FUJIFILM X-S1.dcp
 share/ART/dcpprofiles/FUJIFILM X-S10.dcp
 share/ART/dcpprofiles/FUJIFILM X-T1.dcp
+share/ART/dcpprofiles/FUJIFILM X-T10.dcp
 share/ART/dcpprofiles/FUJIFILM X-T2.dcp
 share/ART/dcpprofiles/FUJIFILM X-T20.dcp
 share/ART/dcpprofiles/FUJIFILM X-T3.dcp
@@ -100,6 +104,7 @@ share/ART/dcpprofiles/OLYMPUS E-M1MarkII.dcp
 share/ART/dcpprofiles/OLYMPUS E-M5MARKII.dcp
 share/ART/dcpprofiles/Olympus E-1.dcp
 share/ART/dcpprofiles/Olympus E-520.dcp
+share/ART/dcpprofiles/Olympus E-M5.dcp
 share/ART/dcpprofiles/Olympus E-P2.dcp
 share/ART/dcpprofiles/Olympus XZ-1.dcp
 share/ART/dcpprofiles/PANASONIC DC-S5.dcp
@@ -121,14 +126,17 @@ share/ART/dcpprofiles/Panasonic DMC-G3.dcp
 share/ART/dcpprofiles/Panasonic DMC-G5.dcp
 share/ART/dcpprofiles/Panasonic DMC-GH1.dcp
 share/ART/dcpprofiles/Panasonic DMC-GH2.dcp
+share/ART/dcpprofiles/Panasonic DMC-GX7.dcp
 share/ART/dcpprofiles/Panasonic DMC-GX85.dcp
 share/ART/dcpprofiles/Pentax K-r.dcp
 share/ART/dcpprofiles/Pentax K200D.dcp
+share/ART/dcpprofiles/RICOH GR III.dcp
 share/ART/dcpprofiles/RICOH PENTAX K-1.dcp
 share/ART/dcpprofiles/RICOH PENTAX K-3.dcp
 share/ART/dcpprofiles/SONY DSC-RX100M6.dcp
 share/ART/dcpprofiles/SONY DSLR-A580.dcp
 share/ART/dcpprofiles/SONY ILCE-6000.dcp
+share/ART/dcpprofiles/SONY ILCE-6300.dcp
 share/ART/dcpprofiles/SONY ILCE-6400.dcp
 share/ART/dcpprofiles/SONY ILCE-6500.dcp
 share/ART/dcpprofiles/SONY ILCE-6600.dcp
@@ -136,6 +144,7 @@ share/ART/dcpprofiles/SONY ILCE-7.dcp
 share/ART/dcpprofiles/SONY ILCE-7C.dcp
 share/ART/dcpprofiles/SONY ILCE-7M2.dcp
 share/ART/dcpprofiles/SONY ILCE-7M3.dcp
+share/ART/dcpprofiles/SONY ILCE-7M4.dcp
 share/ART/dcpprofiles/SONY ILCE-7RM3.dcp
 share/ART/dcpprofiles/SONY ILCE-7RM4.dcp
 share/ART/dcpprofiles/SONY ILCE-7SM3.dcp
@@ -147,6 +156,7 @@ share/ART/dcpprofiles/Sony NEX-5N.dcp
 share/ART/dcpprofiles/Sony SLT-A55V.dcp
 share/ART/dcpprofiles/YI TECHNOLOGY M1.dcp
 share/ART/dcpprofiles/camera_model_aliases.json
+share/ART/dcpprofiles/samsung SM-G930V.dcp
 share/ART/dcraw.json
 share/ART/dynamicprofile.cfg
 share/ART/iccprofiles/input/Canon EOS 20D.icc
@@ -184,11 +194,14 @@ share/ART/iccprofiles/input/sd1_merrill_sunny8161-crop-wp10.icm
 share/ART/iccprofiles/input/sd1_merrill_sunny8161-crop-wp11.icm
 share/ART/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP10.icm
 share/ART/iccprofiles/input/sd1_merrill_tungsten8130-CROP-WP11.icm
+share/ART/iccprofiles/output/RTv2_Medium.icc
 share/ART/iccprofiles/output/RTv2_sRGB.icc
 share/ART/iccprofiles/output/RTv4_ACES-AP0.icc
 share/ART/iccprofiles/output/RTv4_Large.icc
+share/ART/iccprofiles/output/RTv4_Linear_Rec2020.icc
 share/ART/iccprofiles/output/RTv4_Medium.icc
 share/ART/iccprofiles/output/RTv4_Rec2020.icc
+share/ART/iccprofiles/output/RTv4_Rec2100_PQ.icc
 share/ART/iccprofiles/output/RTv4_sRGB.icc
 share/ART/images/ART-logo-128.png
 share/ART/images/ART-logo-16.png
@@ -561,6 +574,7 @@ share/ART/images/wb-water-small.svg
 share/ART/images/wb-water.svg
 share/ART/images/window-add.svg
 share/ART/languages/Catala
+share/ART/languages/Deutsch
 share/ART/languages/Espanol
 share/ART/languages/Francais
 share/ART/languages/Italiano
