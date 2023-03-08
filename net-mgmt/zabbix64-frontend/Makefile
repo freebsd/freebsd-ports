@@ -5,7 +5,6 @@ PKGNAMESUFFIX=	-frontend${PHP_PKGNAMESUFFIX}
 USES+=		php:web,flavors
 USE_PHP=	bcmath ctype gd gettext mbstring session sockets xml \
 		xmlreader xmlwriter
-IGNORE_WITH_PHP=	82
 
 MASTERDIR=	${.CURDIR}/../${PORTNAME}-server
 PATCHDIR=
