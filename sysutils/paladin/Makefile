@@ -1,6 +1,6 @@
 PORTNAME=	paladin
 PORTVERSION=	2.0.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils
 
 MAINTAINER=	rwestlun@gmail.com
@@ -12,10 +12,15 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
-GO_BUILDFLAGS=	-ldflags="-X main.localbase=/usr/local"
+GO_BUILDFLAGS=	-ldflags="-X main.localbase=${PREFIX}"
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rwestlund
+GH_TUPLE=	golang:sys:v0.5.0:sys/vendor/golang.org/x/sys_
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${MV} ${WRKSRC}/vendor/golang.org/x/sys_ ${WRKSRC}/vendor/golang.org/x/sys
 
 post-install:
 	@${CP} ${WRKSRC}/etc/paladin.conf.sample ${STAGEDIR}/${LOCALBASE}/etc/
