@@ -1,0 +1,43 @@
+diff --git a/databases/mariadb105-server/Makefile b/databases/mariadb105-server/Makefile
+index f6a38e088a..61bff4323c 100644
+--- a/databases/mariadb105-server/Makefile
++++ b/databases/mariadb105-server/Makefile
+@@ -1,5 +1,5 @@
+ PORTNAME?=     mariadb
+-PORTVERSION=   10.5.18
++PORTVERSION=   10.5.19
+ PORTREVISION?= 0
+ CATEGORIES=    databases
+ MASTER_SITES=  \
+diff --git a/databases/mariadb105-server/distinfo b/databases/mariadb105-server/distinfo
+index 70ecba3444..3cbb0d7aed 100644
+--- a/databases/mariadb105-server/distinfo
++++ b/databases/mariadb105-server/distinfo
+@@ -1,3 +1,3 @@
+-TIMESTAMP = 1669559294
+-SHA256 (mariadb-10.5.18.tar.gz) = 3593b0dcc0f2e80e98177019f5dcfa5cc8c14172ce161a6fa50f8084f2cef749
+-SIZE (mariadb-10.5.18.tar.gz) = 111568643
++TIMESTAMP = 1678032621
++SHA256 (mariadb-10.5.19.tar.gz) = 244c4a24249064106623cb84aa6de514ddf1787de86664075282bba8ec5757f4
++SIZE (mariadb-10.5.19.tar.gz) = 111958233
+diff --git a/databases/mariadb105-server/pkg-plist b/databases/mariadb105-server/pkg-plist
+index 802e44db8a..d7b445a84b 100644
+--- a/databases/mariadb105-server/pkg-plist
++++ b/databases/mariadb105-server/pkg-plist
+@@ -80,6 +80,7 @@ include/mysql/server/little_endian.h
+ include/mysql/server/m_ctype.h
+ include/mysql/server/m_string.h
+ include/mysql/server/ma_dyncol.h
++include/mysql/server/mariadb_capi_rename.h
+ include/mysql/server/my_alloc.h
+ include/mysql/server/my_attribute.h
+ include/mysql/server/my_byteorder.h
+@@ -148,7 +149,7 @@ include/mysql/server/mysql/service_thd_rnd.h
+ include/mysql/server/mysql/service_thd_specifics.h
+ include/mysql/server/mysql/service_thd_timezone.h
+ include/mysql/server/mysql/service_thd_wait.h
+-include/mysql/server/mysql/service_wsrep.h
++%%WSREP%%include/mysql/server/mysql/service_wsrep.h
+ include/mysql/server/mysql/services.h
+ include/mysql/server/mysql_com.h
+ include/mysql/server/mysql_com_server.h
