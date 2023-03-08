@@ -1,5 +1,5 @@
---- Gemfile.orig	2022-10-02 20:10:08 UTC
-+++ Gemfile
+--- Gemfile.orig	2023-03-07 15:56:46.684852000 +0100
++++ Gemfile	2023-03-07 16:31:58.091377000 +0100
 @@ -6,14 +6,14 @@ gem 'globalid', '~> 0.4.2' if Gem.ruby_version < Gem::
  gem 'rails', '5.2.8.1'
  gem 'sprockets', '~> 3.7.2' if RUBY_VERSION < '2.5'
@@ -18,15 +18,17 @@
  gem 'nokogiri', (if Gem.ruby_version < Gem::Version.new('2.5.0')
                     '~> 1.10.10'
                   elsif Gem.ruby_version < Gem::Version.new('2.6.0')
-@@ -21,7 +21,7 @@ gem 'nokogiri', (if Gem.ruby_version < Gem::Version.ne
+@@ -21,8 +21,8 @@ gem 'nokogiri', (if Gem.ruby_version < Gem::Version.ne
                   else
-                    '~> 1.13.6'
+                    '~> 1.13.10'
                   end)
 -gem 'i18n', '~> 1.8.2'
+-gem 'rbpdf', '~> 1.21.0'
 +gem 'i18n', '>= 1.8.2'
- gem "rbpdf", "~> 1.20.0"
++gem 'rbpdf', '>= 1.20.0'
  gem 'addressable'
  gem 'rubyzip', '~> 2.3.0'
+ gem 'psych', '~> 3.1' if Gem.ruby_version < Gem::Version.new('2.6.0')
 @@ -45,75 +45,11 @@ end
    gem "rack-openid"
  end
