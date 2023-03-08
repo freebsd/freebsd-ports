@@ -1,10 +1,10 @@
---- Gemfile.orig	2023-02-03 08:57:08.281666000 +0100
-+++ Gemfile	2023-02-03 08:57:33.131793000 +0100
+--- Gemfile.orig	2023-03-07 15:50:05.013891000 +0100
++++ Gemfile	2023-03-08 09:01:06.479289000 +0100
 @@ -3,24 +3,24 @@ gem 'bundler', '>= 1.12.0'
  ruby '>= 2.5.0', '< 3.2.0'
  gem 'bundler', '>= 1.12.0'
  
--gem 'rails', '6.1.7'
+-gem 'rails', '6.1.7.2'
 +gem 'rails', '>=6.1.6'
  gem 'globalid', '~> 0.4.2' if Gem.ruby_version < Gem::Version.new('2.6.0')
 -gem 'rouge', '~> 3.28.0'
@@ -17,11 +17,13 @@
 -gem "mail", "~> 2.7.1"
 +gem "mail", ">= 2.7"
  gem 'csv', '~> 3.2.0'
- gem 'nokogiri', (Gem.ruby_version < Gem::Version.new('2.6.0') ? '~> 1.12.5' : '~> 1.13.4')
+-gem 'nokogiri', (Gem.ruby_version < Gem::Version.new('2.6.0') ? '~> 1.12.5' : '~> 1.13.10')
++gem 'nokogiri', (Gem.ruby_version < Gem::Version.new('2.6.0') ? '~> 1.12.5' : '>= 1.13.9')
  gem "rexml", require: false if Gem.ruby_version >= Gem::Version.new('3.0')
 -gem 'i18n', '~> 1.10.0'
+-gem 'rbpdf', '~> 1.21.0'
 +gem 'i18n', '>= 1.10.0'
- gem "rbpdf", "~> 1.20.0"
++gem 'rbpdf', '>= 1.21.0'
  gem 'addressable'
  gem 'rubyzip', '~> 2.3.0'
  gem 'net-smtp', '~> 0.3.0'
@@ -30,7 +32,7 @@
  gem 'net-pop', '~> 0.1.1'
  # Rails 6.1.6.1 does not work with Pysch 3.0.2, which is installed by default with Ruby 2.5. See https://github.com/rails/rails/issues/45590
  gem 'psych', '>= 3.1.0' if Gem.ruby_version < Gem::Version.new('2.6.0')
-@@ -37,77 +37,6 @@ end
+@@ -37,82 +37,6 @@ end
    gem 'net-ldap', '~> 0.17.0'
  end
  
@@ -46,7 +48,7 @@
 -# Optional CommonMark support, not for JRuby
 -group :common_mark do
 -  gem "html-pipeline", "~> 2.13.2"
--  gem "commonmarker", (Gem.ruby_version < Gem::Version.new('2.6.0') ? '0.21.0' : '~> 0.23.6')
+-  gem "commonmarker", (Gem.ruby_version < Gem::Version.new('2.6.0') ? '0.21.0' : '~> 0.23.8')
 -  gem "sanitize", "~> 6.0"
 -  gem 'deckar01-task_list', '2.3.2'
 -end
@@ -94,9 +96,14 @@
 -  gem 'simplecov', '~> 0.21.2', :require => false
 -  gem "ffi", platforms: [:mingw, :x64_mingw, :mswin]
 -  # For running system tests
--  # TODO: Remove version specification once Capybara supports Puma 6
--  gem 'puma', '< 6.0.0'
--  gem 'capybara', (Gem.ruby_version < Gem::Version.new('2.6.0') ? '~> 3.35.3' : '~> 3.36.0')
+-  gem 'puma', (Gem.ruby_version < Gem::Version.new('2.7') ? '< 6.0.0' : '>= 0')
+-  gem 'capybara', (if Gem.ruby_version < Gem::Version.new('2.6')
+-                     '~> 3.35.3'
+-                   elsif Gem.ruby_version < Gem::Version.new('2.7')
+-                     '~> 3.36.0'
+-                   else
+-                     '~> 3.38.0'
+-                   end)
 -  gem "selenium-webdriver", "~> 3.142.7"
 -  gem 'webdrivers', '4.6.1', require: false
 -  # RuboCop
@@ -108,7 +115,7 @@
  local_gemfile = File.join(File.dirname(__FILE__), "Gemfile.local")
  if File.exist?(local_gemfile)
    eval_gemfile local_gemfile
-@@ -116,4 +45,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
+@@ -121,4 +45,8 @@ Dir.glob File.expand_path("../plugins/*/{Gemfile,Plugi
  # Load plugins' Gemfiles
  Dir.glob File.expand_path("../plugins/*/{Gemfile,PluginGemfile}", __FILE__) do |file|
    eval_gemfile file
