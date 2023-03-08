@@ -1,5 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	9.0.2
+DISTVERSION=	10.0.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -64,7 +64,8 @@ LDFLAGS+=	-lexecinfo
 # be paranoid and do not extract qbs (devel/qbs) copy from source tree
 EXTRACT_AFTER_ARGS+=	--exclude '${DISTNAME}/src/shared/qbs'
 
-PLIST_SUB=		SHLIB_VER="${PORTVERSION}"
+PLIST_SUB=		SHLIB_VER="${PORTVERSION}" \
+			SHLIB_SHVER="${PORTVERSION:C/\..*//}"
 PORTDOCS=		*
 
 OPTIONS_DEFINE=		DOCS EXAMPLES QTWEBENGINE
