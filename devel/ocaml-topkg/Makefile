@@ -1,6 +1,5 @@
 PORTNAME=	topkg
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.7
 CATEGORIES=	devel
 MASTER_SITES=	https://erratique.ch/software/topkg/releases/
 PKGNAMEPREFIX=	ocaml-
