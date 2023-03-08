@@ -1,6 +1,6 @@
 PORTNAME=	ncbi-entrez-direct
 DISTVERSION=	14.9.20210423
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	biology perl5
 MASTER_SITES=	ftp://ftp.ncbi.nlm.nih.gov/entrez/entrezdirect/versions/${PORTVERSION}/
 DISTFILES=	edirect.tar.gz
@@ -40,7 +40,7 @@ GH_TUPLE=	fatih:color:v1.10.0:a/${GHSD}/fatih/color \
 		mattn:go-isatty:v0.0.12:g/${GHSD}/mattn/go-isatty \
 		fiam:gounidecode:8deddbd03fec:h/${GHSD}/fiam/gounidecode \
 		golang:text:v0.3.5:i/${GLSD}/x/text \
-		golang:sys:d5e6a3e2c0ae:j/${GLSD}/x/sys
+		golang:sys:v0.5.0:j/${GLSD}/x/sys
 
 SHEBANG_FILES=	nquire edirect.pl word-at-a-time accn-at-a-time \
 		amino-acid-composition between-two-genes exclude-uid-lists \
