@@ -1,5 +1,5 @@
 PORTNAME=	treesheets
-DISTVERSION=	1.0.20230222
+DISTVERSION=	1.0.20230308
 CATEGORIES=	deskutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gettext gnome \
 		shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	aardappel
-GH_TAGNAME=	4245087767
+GH_TAGNAME=	4361168170
 USE_WX=		3.2
 
 PORTSCOUT=	ignore:1 # upstream uses CI run ids as releases
