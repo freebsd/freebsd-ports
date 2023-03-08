@@ -16,6 +16,7 @@ bin/readelf
 bin/size
 bin/strings
 bin/strip
+include/ansidecl.h
 include/bfd.h
 include/bfdlink.h
 include/ctf-api.h
