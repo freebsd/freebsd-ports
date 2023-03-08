@@ -1,6 +1,6 @@
 PORTNAME=	piwigo
 DISTVERSION=	13.6.0
-PORTREVISION=	0
+PORTREVISION=	1
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 CATEGORIES=	www
 MASTER_SITES=	https://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/
@@ -48,10 +48,16 @@ OPT_DESC=	Optional dependencies
 
 EXIFTOOL_RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
-IMAGICK_RUN_DEPENDS=	${LOCALBASE}/lib/php/${PHP_EXT_DIR}/imagick.so:graphics/pecl-imagick@${PHP_FLAVOR}
+IMAGICK_RUN_DEPENDS=	${IMAGEMAGICK_DEPENDS}
 MEDIAINFO_RUN_DEPENDS=	mediainfo:multimedia/mediainfo
 
 .include <bsd.port.pre.mk>
+
+.if !empty(IMAGEMAGICK_DEFAULT:M6) || !empty(IMAGEMAGICK_DEFAULT:M6-*)
+IMAGEMAGICK_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
+.elif !empty(IMAGEMAGICK_DEFAULT:M7) || !empty(IMAGEMAGICK_DEFAULT:M7-*)
+IMAGEMAGICK_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick-im7>=2.2.2:graphics/pecl-imagick-im7@${PHP_FLAVOR}
+.endif
 
 pre-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}/
