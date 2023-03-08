@@ -16,6 +16,8 @@ WWW=		https://hedgedoc.org/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to build: no i386 sqlite3.node file found
+
 BUILD_DEPENDS=	git:devel/git \
 		npm:www/npm-node16 \
 		sqlite3:databases/sqlite3 \
@@ -99,7 +101,8 @@ do-build:
 		-print -delete
 	${FIND} ${WRKSRC}/node_modules -name '*.node' -print -exec ${STRIP_CMD} \
 		{} +
-	${MV} ${WRKSRC}/docs ${WRKDIR}/docs
+	${MV} ${WRKSRC}/docs \
+		${WRKDIR}/docs
 
 do-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} \
