@@ -9,7 +9,7 @@ WWW=		https://code.ptrcrt.ch/${PORTNAME}
 
 LICENSE=	BSD2CLAUSE
 
-USES=		compiler:c++11-lib xorg
+USES=		compiler:c++11-lib pkgconfig xorg
 USE_XORG=	xorgproto xcb
 LIB_DEPENDS+=	libxcb-icccm.so:x11/xcb-util-wm \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
