@@ -1,6 +1,6 @@
 PORTNAME=	seaweedfs
 DISTVERSION=	3.37
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net sysutils
 MASTER_SITES=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod

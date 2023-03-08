@@ -1,5 +1,6 @@
 PORTNAME=	noti
 DISTVERSION=	3.7.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@FreeBSD.org
