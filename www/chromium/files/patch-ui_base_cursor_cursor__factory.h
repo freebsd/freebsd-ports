@@ -1,6 +1,6 @@
---- ui/base/cursor/cursor_factory.h.orig	2022-02-28 16:54:41 UTC
+--- ui/base/cursor/cursor_factory.h.orig	2023-03-09 06:31:50 UTC
 +++ ui/base/cursor/cursor_factory.h
-@@ -81,7 +81,7 @@ class COMPONENT_EXPORT(UI_BASE_CURSOR) CursorFactory {
+@@ -88,7 +88,7 @@ class COMPONENT_EXPORT(UI_BASE_CURSOR) CursorFactory {
    base::ObserverList<CursorFactoryObserver>::Unchecked observers_;
  };
  

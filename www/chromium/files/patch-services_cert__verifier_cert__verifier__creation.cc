@@ -1,4 +1,4 @@
---- services/cert_verifier/cert_verifier_creation.cc.orig	2022-11-30 08:12:58 UTC
+--- services/cert_verifier/cert_verifier_creation.cc.orig	2023-03-09 06:31:50 UTC
 +++ services/cert_verifier/cert_verifier_creation.cc
 @@ -12,7 +12,7 @@
  #include "net/cert_net/cert_net_fetcher_url_request.h"
@@ -18,7 +18,7 @@
      verify_proc = net::CreateCertVerifyProcBuiltin(
          std::move(cert_net_fetcher), net::CreateSslSystemTrustStore());
  #else
-@@ -212,6 +212,7 @@ std::unique_ptr<net::CertVerifierWithUpdatableProc> Cr
+@@ -219,6 +219,7 @@ std::unique_ptr<net::CertVerifierWithUpdatableProc> Cr
  bool IsUsingCertNetFetcher() {
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) ||      \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) ||       \

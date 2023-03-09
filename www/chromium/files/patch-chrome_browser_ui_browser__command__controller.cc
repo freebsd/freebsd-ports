@@ -1,6 +1,6 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2023-02-08 09:03:45 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2023-03-09 06:31:50 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -99,7 +99,7 @@
+@@ -105,7 +105,7 @@
  #include "components/user_manager/user_manager.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -288,7 +288,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -294,7 +294,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  #endif
    }
  
@@ -18,7 +18,7 @@
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    auto* linux_ui = ui::LinuxUi::instance();
-@@ -533,7 +533,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -546,7 +546,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -27,7 +27,7 @@
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -1079,7 +1079,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -1101,7 +1101,7 @@ void BrowserCommandController::InitCommandState() {
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

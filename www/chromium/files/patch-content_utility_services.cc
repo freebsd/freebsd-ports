@@ -1,6 +1,6 @@
---- content/utility/services.cc.orig	2023-02-08 09:03:45 UTC
+--- content/utility/services.cc.orig	2023-03-09 06:31:50 UTC
 +++ content/utility/services.cc
-@@ -63,7 +63,7 @@
+@@ -64,7 +64,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -9,7 +9,7 @@
  #include "media/mojo/services/mojo_video_encode_accelerator_provider_factory.h"
  #include "sandbox/linux/services/libc_interceptor.h"
  #include "sandbox/policy/mojom/sandbox.mojom.h"
-@@ -86,7 +86,7 @@ extern sandbox::TargetServices* g_utility_target_servi
+@@ -87,7 +87,7 @@ extern sandbox::TargetServices* g_utility_target_servi
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -18,7 +18,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  #include "media/mojo/services/stable_video_decoder_factory_service.h"  // nogncheck
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
-@@ -214,7 +214,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
+@@ -215,7 +215,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
        << "task_policy_set TASK_QOS_POLICY";
  #endif
  
@@ -27,7 +27,7 @@
    auto* command_line = base::CommandLine::ForCurrentProcess();
    if (sandbox::policy::SandboxTypeFromCommandLine(*command_line) ==
        sandbox::mojom::Sandbox::kNoSandbox) {
-@@ -316,7 +316,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
+@@ -319,7 +319,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -36,7 +36,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  auto RunStableVideoDecoderFactoryService(
      mojo::PendingReceiver<media::stable::mojom::StableVideoDecoderFactory>
-@@ -328,7 +328,7 @@ auto RunStableVideoDecoderFactoryService(
+@@ -331,7 +331,7 @@ auto RunStableVideoDecoderFactoryService(
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  
@@ -45,7 +45,7 @@
  auto RunVideoEncodeAcceleratorProviderFactory(
      mojo::PendingReceiver<media::mojom::VideoEncodeAcceleratorProviderFactory>
          receiver) {
-@@ -386,13 +386,13 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -389,13 +389,13 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  

@@ -1,6 +1,6 @@
---- ui/gl/BUILD.gn.orig	2023-02-08 09:03:45 UTC
+--- ui/gl/BUILD.gn.orig	2023-03-09 06:31:50 UTC
 +++ ui/gl/BUILD.gn
-@@ -160,8 +160,6 @@ component("gl") {
+@@ -162,8 +162,6 @@ component("gl") {
      defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
    }
  
@@ -9,7 +9,7 @@
    all_dependent_configs = [ ":gl_config" ]
  
    public_configs = [ "//third_party/khronos:khronos_headers" ]
-@@ -178,7 +176,6 @@ component("gl") {
+@@ -180,7 +178,6 @@ component("gl") {
    ]
    public_deps = [
      "//base",
@@ -17,7 +17,7 @@
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -390,7 +387,6 @@ component("gl") {
+@@ -391,7 +388,6 @@ component("gl") {
      data_deps += [
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",

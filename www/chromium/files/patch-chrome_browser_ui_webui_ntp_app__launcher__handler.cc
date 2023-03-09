@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/ntp/app_launcher_handler.cc.orig	2023-02-08 09:03:45 UTC
+--- chrome/browser/ui/webui/ntp/app_launcher_handler.cc.orig	2023-03-09 06:31:50 UTC
 +++ chrome/browser/ui/webui/ntp/app_launcher_handler.cc
 @@ -323,7 +323,7 @@ base::Value::Dict AppLauncherHandler::CreateExtensionI
    bool is_deprecated_app = false;
@@ -9,12 +9,3 @@
    is_deprecated_app =
        extensions::IsExtensionUnsupportedDeprecatedApp(context, extension->id());
  #endif
-@@ -1455,7 +1455,7 @@ void AppLauncherHandler::InstallOsHooks(const web_app:
-   options.os_hooks[web_app::OsHookType::kUninstallationViaOsSettings] =
-       web_app->CanUserUninstallWebApp();
- 
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD) || \
-     (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
-   options.os_hooks[web_app::OsHookType::kUrlHandlers] = true;
- #else

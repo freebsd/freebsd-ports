@@ -1,6 +1,6 @@
---- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2023-02-08 09:03:45 UTC
+--- chrome/browser/download/chrome_download_manager_delegate.cc.orig	2023-03-09 06:31:50 UTC
 +++ chrome/browser/download/chrome_download_manager_delegate.cc
-@@ -1568,7 +1568,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
+@@ -1554,7 +1554,7 @@ void ChromeDownloadManagerDelegate::OnDownloadTargetDe
  bool ChromeDownloadManagerDelegate::IsOpenInBrowserPreferreredForFile(
      const base::FilePath& path) {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -9,7 +9,7 @@
    if (path.MatchesExtension(FILE_PATH_LITERAL(".pdf"))) {
      return !download_prefs_->ShouldOpenPdfInSystemReader();
    }
-@@ -1684,7 +1684,7 @@ void ChromeDownloadManagerDelegate::CheckDownloadAllow
+@@ -1668,7 +1668,7 @@ void ChromeDownloadManagerDelegate::CheckDownloadAllow
      content::CheckDownloadAllowedCallback check_download_allowed_cb) {
    DCHECK_CURRENTLY_ON(BrowserThread::UI);
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -18,7 +18,7 @@
    // Don't download pdf if it is a file URL, as that might cause an infinite
    // download loop if Chrome is not the system pdf viewer.
    if (url.SchemeIsFile() && download_prefs_->ShouldOpenPdfInSystemReader()) {
-@@ -1730,7 +1730,7 @@ void ChromeDownloadManagerDelegate::CheckSavePackageAl
+@@ -1714,7 +1714,7 @@ void ChromeDownloadManagerDelegate::CheckSavePackageAl
    DCHECK(download_item->IsSavePackageDownload());
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
