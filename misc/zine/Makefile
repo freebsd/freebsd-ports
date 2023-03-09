@@ -1,6 +1,6 @@
 PORTNAME=	zine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.1
+DISTVERSION=	0.12.0
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		block-buffer-0.10.3 \
+		block-buffer-0.10.4 \
 		bstr-1.3.0 \
 		bumpalo-3.12.0 \
 		byteorder-1.4.3 \
@@ -37,8 +37,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
-		chrono-tz-0.6.3 \
-		chrono-tz-build-0.0.3 \
+		chrono-tz-0.6.1 \
+		chrono-tz-build-0.0.2 \
 		clap-4.1.8 \
 		clap_derive-4.1.8 \
 		clap_lex-0.3.2 \
@@ -56,10 +56,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		crypto-common-0.1.6 \
 		cssparser-0.27.2 \
 		cssparser-macros-0.6.0 \
-		cxx-1.0.91 \
-		cxx-build-1.0.91 \
-		cxxbridge-flags-1.0.91 \
-		cxxbridge-macro-1.0.91 \
+		cxx-1.0.92 \
+		cxx-build-1.0.92 \
+		cxxbridge-flags-1.0.92 \
+		cxxbridge-macro-1.0.92 \
 		dashmap-5.4.0 \
 		derive_more-0.99.17 \
 		deunicode-0.4.3 \
@@ -79,6 +79,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		fastrand-1.9.0 \
 		fd-lock-3.0.10 \
 		filetime-0.2.20 \
+		fixedbitset-0.4.2 \
 		flate2-1.0.25 \
 		fluent-0.16.0 \
 		fluent-bundle-0.15.2 \
@@ -115,7 +116,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		http-range-header-0.3.0 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
-		humansize-1.1.1 \
+		humansize-2.1.3 \
 		hyper-0.14.24 \
 		hyper-tls-0.5.0 \
 		hyper-tungstenite-0.9.0 \
@@ -131,16 +132,17 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		instant-0.1.12 \
 		intl-memoizer-0.5.1 \
 		intl_pluralrules-7.0.2 \
-		io-lifetimes-1.0.5 \
+		io-lifetimes-1.0.6 \
 		is-terminal-0.4.4 \
 		itoa-0.4.8 \
-		itoa-1.0.5 \
+		itoa-1.0.6 \
 		js-sys-0.3.61 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
 		libc-0.2.139 \
+		libm-0.2.6 \
 		line-wrap-0.1.1 \
 		link-cplusplus-1.0.8 \
 		linked-hash-map-0.5.6 \
@@ -182,29 +184,26 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		parking_lot_core-0.9.7 \
 		parse-zoneinfo-0.3.0 \
 		percent-encoding-2.2.0 \
-		pest-2.5.5 \
-		pest_derive-2.5.5 \
-		pest_generator-2.5.5 \
-		pest_meta-2.5.5 \
+		pest-2.5.6 \
+		pest_derive-2.5.6 \
+		pest_generator-2.5.6 \
+		pest_meta-2.5.6 \
+		petgraph-0.6.3 \
 		phf-0.8.0 \
 		phf-0.10.1 \
-		phf-0.11.1 \
 		phf_codegen-0.8.0 \
 		phf_codegen-0.10.0 \
-		phf_codegen-0.11.1 \
 		phf_generator-0.8.0 \
 		phf_generator-0.10.0 \
-		phf_generator-0.11.1 \
 		phf_macros-0.8.0 \
 		phf_shared-0.8.0 \
 		phf_shared-0.10.0 \
-		phf_shared-0.11.1 \
 		pin-project-1.0.12 \
 		pin-project-internal-1.0.12 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.26 \
-		plist-1.4.1 \
+		plist-1.4.2 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
 		proc-macro-error-1.0.4 \
@@ -213,7 +212,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		proc-macro2-1.0.51 \
 		promptly-0.3.1 \
 		pulldown-cmark-0.9.2 \
-		quick-xml-0.26.0 \
+		quick-xml-0.27.1 \
 		quote-1.0.23 \
 		radix_trie-0.2.1 \
 		rand-0.7.3 \
@@ -224,8 +223,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rand_core-0.6.4 \
 		rand_hc-0.2.0 \
 		rand_pcg-0.2.1 \
-		rayon-1.6.1 \
-		rayon-core-1.10.2 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
 		regex-1.7.1 \
@@ -234,22 +233,22 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rustc-demangle-0.1.21 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		rustix-0.36.8 \
+		rustix-0.36.9 \
 		rustyline-9.1.2 \
-		ryu-1.0.12 \
+		ryu-1.0.13 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
 		schannel-0.1.21 \
 		scopeguard-1.1.0 \
-		scratch-1.0.3 \
+		scratch-1.0.5 \
 		security-framework-2.8.2 \
 		security-framework-sys-2.8.0 \
 		selectors-0.22.0 \
 		self_cell-0.10.2 \
 		semver-1.0.16 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_json-1.0.93 \
+		serde-1.0.154 \
+		serde_derive-1.0.154 \
+		serde_json-1.0.94 \
 		servo_arc-0.1.1 \
 		sha1-0.10.5 \
 		sha2-0.10.6 \
@@ -258,31 +257,32 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		slab-0.4.8 \
 		slug-0.1.4 \
 		smallvec-1.10.0 \
-		socket2-0.4.7 \
+		socket2-0.4.9 \
 		stable_deref_trait-1.2.0 \
 		str-buf-1.0.6 \
-		string_cache-0.8.4 \
+		string_cache-0.8.7 \
 		string_cache_codegen-0.5.2 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
 		syntect-5.0.0 \
 		tempfile-3.4.0 \
 		tendril-0.4.3 \
-		tera-1.17.1 \
+		tera-1.18.0 \
 		termcolor-1.2.0 \
 		test-case-2.2.2 \
 		test-case-macros-2.2.2 \
 		thin-slice-0.1.1 \
-		thiserror-1.0.38 \
-		thiserror-impl-1.0.38 \
-		thread_local-1.1.7 \
+		thiserror-1.0.39 \
+		thiserror-impl-1.0.39 \
+		thread-id-4.0.0 \
+		thread_local-1.1.4 \
 		time-0.3.20 \
 		time-core-0.1.0 \
 		time-macros-0.2.8 \
 		tinystr-0.7.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.25.0 \
+		tokio-1.26.0 \
 		tokio-macros-1.8.2 \
 		tokio-native-tls-0.3.1 \
 		tokio-tungstenite-0.18.0 \
@@ -309,8 +309,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
 		unicase-2.6.0 \
-		unicode-bidi-0.3.10 \
-		unicode-ident-1.0.6 \
+		unicode-bidi-0.3.11 \
+		unicode-ident-1.0.8 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
