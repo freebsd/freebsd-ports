@@ -110,6 +110,13 @@ BUILD_MK=		DYNAMIC_GHC_PROGRAMS=${ENABLE_DYNAMIC} \
 USE_HADRIAN=		yes
 .endif
 
+.if ${SLAVE_PORT} != "yes"
+PORTDOCS=		*
+.else
+HADRIAN_DOCS_ARG=	--docs=none
+PLIST_SUB+=		GMP=
+.endif
+
 .ifdef USE_HADRIAN
 LIB_DEPENDS+=		libffi.so:devel/libffi
 .undef DYNAMIC_CONFIGURE_WITH
@@ -120,15 +127,11 @@ DO_MAKE_BUILD=		${SETENV} ${MAKE_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS} --flavour=por
 ALL_TARGET=		binary-dist-dir
 INSTALL_WRKSRC=		${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${CONFIGURE_TARGET}
 INSTALL_TARGET=		install
-PLIST=			${.CURDIR}/pkg-plist.hadrian
+PLIST?=			${.CURDIR}/pkg-plist.hadrian
 
 .  if (empty(PORT_OPTIONS:MDYNAMIC) || empty(PORT_OPTIONS:MPROFILE))
 IGNORE=			Building with Hadrian requires both DYNAMIC and PROFILE for now
 .  endif
-.endif
-
-.if ${SLAVE_PORT} != "yes"
-PORTDOCS=		*
 .endif
 
 GHC_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/}
