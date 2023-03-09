@@ -64,6 +64,7 @@ command_args="-f ${grafana_syslog_output_flags} -p ${pidfile} -t ${name} \
 	-config=${grafana_config} \
 	-homepath=${grafana_homepath} \
 	${grafana_args}"
+grafana_chdir="${grafana_homepath}"
 
 start_precmd="grafana_start_precmd"
 
