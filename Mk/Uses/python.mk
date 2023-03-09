@@ -877,6 +877,7 @@ do-install:
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../lib/|lib/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../libdata/|libdata/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../libexec/|libexec/|' \
+		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../man/|man/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../sbin/|sbin/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../share/|share/|' \
 		-e 's|\,.*$$||' \
