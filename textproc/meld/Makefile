@@ -1,13 +1,12 @@
 PORTNAME=	meld
-PORTVERSION=	3.20.4
-PORTREVISION=	1
+PORTVERSION=	3.22.0
 PORTEPOCH=	1
 CATEGORIES=	textproc devel python
 MASTER_SITES=	GNOME
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME visual diff and merge tool
-WWW=		https://meldmerge.org/
+WWW=		https://meld.app/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -15,20 +14,20 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	itstool:textproc/itstool
 RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
-USES=		desktop-file-utils gettext gnome python:3.4+ shared-mime-info \
+USES=		desktop-file-utils gettext gnome meson pkgconfig python shared-mime-info \
 		shebangfix tar:xz
-USE_PYTHON=	distutils noflavors
-USE_GNOME=	gtksourceview3 intltool libxml2:build pygobject3
+USE_GNOME=	gtksourceview4 intltool libxml2:build pygobject3
 
+MESON_ARGS=	-Dbyte-compile=false
 SHEBANG_FILES=	bin/meld
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 GLIB_SCHEMAS=	org.gnome.meld.gschema.xml
-PYDISTUTILS_INSTALL_TARGET=	--no-update-icon-cache --no-compile-schemas install
 NO_ARCH=	yes
 
 PLIST_SUB=	PORTVER=${PORTVERSION}
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e "s|dependency('python3'|dependency('python-${PYTHON_VER}'|" \
+		${WRKSRC}/meson.build
 
-PYDISTUTILS_INSTALLARGS=	-c -O1 --prefix=${PREFIX} --root=${STAGEDIR}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
