@@ -1,82 +1,80 @@
 PORTNAME=	jaq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.0
-PORTREVISION=	2
+DISTVERSION=	0.10.0
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	jq clone focussed on correctness, speed, and simplicity
+COMMENT=	jq clone focused on correctness, speed, and simplicity
 WWW=		https://github.com/01mf02/jaq
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/../LICENSE-MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	01mf02
 
-WRKSRC_SUBDIR=	jaq
-
-CARGO_CRATES=	ahash-0.3.8 \
-		ansi_term-0.12.1 \
+CARGO_BUILD_ARGS=	--package=jaq
+CARGO_INSTALL_PATH=	jaq
+CARGO_CRATES=	ahash-0.7.6 \
+		aho-corasick-0.7.20 \
 		ariadne-0.1.5 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bincode-1.3.3 \
 		bitflags-1.3.2 \
-		cc-1.0.76 \
+		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		chumsky-0.8.0 \
+		chumsky-0.9.2 \
 		clap-4.0.22 \
 		clap_derive-4.0.21 \
-		clap_lex-0.3.0 \
-		colored_json-2.1.0 \
-		const-random-0.1.15 \
-		const-random-macro-0.1.15 \
-		crunchy-0.2.2 \
-		dyn-clone-1.0.9 \
-		either-1.8.0 \
-		env_logger-0.9.3 \
-		fastrand-1.8.0 \
+		clap_lex-0.3.2 \
+		colored_json-3.0.1 \
+		dyn-clone-1.0.11 \
+		either-1.8.1 \
+		env_logger-0.10.0 \
+		fastrand-1.9.0 \
 		getrandom-0.2.8 \
 		hashbrown-0.12.3 \
-		heck-0.4.0 \
+		heck-0.4.1 \
 		hermit-abi-0.1.19 \
-		indexmap-1.9.1 \
+		hifijson-0.2.0 \
+		indexmap-1.9.2 \
 		instant-0.1.12 \
 		itertools-0.10.5 \
-		itoa-1.0.4 \
-		libc-0.2.137 \
-		libmimalloc-sys-0.1.27 \
+		itoa-1.0.6 \
+		libc-0.2.139 \
+		libmimalloc-sys-0.1.30 \
 		log-0.4.17 \
-		memmap-0.7.0 \
-		mimalloc-0.1.31 \
-		once_cell-1.16.0 \
-		os_str_bytes-6.3.1 \
+		memchr-2.5.0 \
+		memmap2-0.5.10 \
+		mimalloc-0.1.34 \
+		once_cell-1.17.1 \
+		os_str_bytes-6.4.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.47 \
-		quote-1.0.21 \
+		proc-macro2-1.0.51 \
+		quote-1.0.23 \
 		redox_syscall-0.2.16 \
+		regex-1.7.1 \
 		remove_dir_all-0.5.3 \
-		ryu-1.0.11 \
-		serde-1.0.147 \
-		serde_derive-1.0.147 \
-		serde_json-1.0.87 \
+		ryu-1.0.13 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.94 \
 		strsim-0.10.0 \
-		syn-1.0.103 \
+		syn-1.0.109 \
 		tempfile-3.3.0 \
-		termcolor-1.1.3 \
-		tiny-keccak-2.0.2 \
-		unicode-ident-1.0.5 \
+		termcolor-1.2.0 \
+		unicode-ident-1.0.8 \
 		version_check-0.9.4 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		yansi-0.5.1
+		yansi-0.5.1 \
+		regex-syntax@git+https://github.com/01mf02/regex?rev=90eebbd\#90eebbdb9396ca10510130327073a3d596674d04
 
 PLIST_FILES=	bin/${PORTNAME}
 
