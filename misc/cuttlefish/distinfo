@@ -1,12 +1,12 @@
-TIMESTAMP = 1664258713
-SHA256 (akb825-Cuttlefish-v2.7.0_GH0.tar.gz) = ea28cba1b64ed3413c47a36443fe79ddb1bb2b9b6730bfba2b33b3d962ae6ecb
-SIZE (akb825-Cuttlefish-v2.7.0_GH0.tar.gz) = 113003
+TIMESTAMP = 1678352927
+SHA256 (akb825-Cuttlefish-v2.7.1_GH0.tar.gz) = f4333072d0fba10498397bea8ab30c940f00cd3012d1495513adb05ede71de3e
+SIZE (akb825-Cuttlefish-v2.7.1_GH0.tar.gz) = 114572
 SHA256 (akb825-freeimage-f213e48116964f273412dbd7337b03a32d52ec29_GH0.tar.gz) = 27298578fec1214a471f521c71b61d5c8a684a050c881a792e4b085ca4c09b0c
 SIZE (akb825-freeimage-f213e48116964f273412dbd7337b03a32d52ec29_GH0.tar.gz) = 7031262
 SHA256 (akb825-etc2comp-10ec1fc4987c5a81c48c6bf6319bb77389a5f23a_GH0.tar.gz) = 8aae8f87e0f1e79c2bde57254e0b85273d0d036f381f549ce148bc3fbd785b02
 SIZE (akb825-etc2comp-10ec1fc4987c5a81c48c6bf6319bb77389a5f23a_GH0.tar.gz) = 152493
-SHA256 (ARM-software-astc-encoder-43d5f57babf0904f9e4222dc3644790d8e41aab4_GH0.tar.gz) = 6d453c5a144bbb1c17e637a540a640f5b57b2e19ff9495223a4266a5181cfcb8
-SIZE (ARM-software-astc-encoder-43d5f57babf0904f9e4222dc3644790d8e41aab4_GH0.tar.gz) = 35779296
+SHA256 (ARM-software-astc-encoder-ec83dda_GH0.tar.gz) = 4d97246ce0325b170a8fc9bff6028148a62d2e4ff58735614bc199ad8125b39d
+SIZE (ARM-software-astc-encoder-ec83dda_GH0.tar.gz) = 36060159
 SHA256 (g-truc-glm-bf71a834948186f4097caa076cd2663c69a10e1e_GH0.tar.gz) = 70ad78e872c145f0164d54da833b651914c184edc65958906937b9739fb8fb1b
 SIZE (g-truc-glm-bf71a834948186f4097caa076cd2663c69a10e1e_GH0.tar.gz) = 4369431
 SHA256 (akb825-PVRTexToolLib-ea50a1c0fb4d8eed2f06ecc47eea80ef291b63b9_GH0.tar.gz) = 7a9e03dcacb8708bd6ab4f853562a8fc49b9ecd2602373f21ba2b54ee2b11c6b
