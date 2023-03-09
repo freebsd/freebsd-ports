@@ -1,6 +1,6 @@
 PORTNAME=	gmmlib
 DISTVERSIONPREFIX=	intel-${PORTNAME}-
-DISTVERSION=	22.3.4
+DISTVERSION=	22.3.5
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
