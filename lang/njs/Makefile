@@ -1,5 +1,5 @@
 PORTNAME=	njs
-DISTVERSION=	0.7.10
+DISTVERSION=	0.7.11
 CATEGORIES=	lang www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -17,21 +17,7 @@ USE_GITHUB=	yes
 GH_TUPLE=	nginx:njs:${DISTVERSION}
 HAS_CONFIGURE=	yes
 
-FLAVORS=	pcre pcre2
-FLAVOR?=	${FLAVORS:[1]}
-
-pcre_PKGNAMESUFFIX=
-pcre2_PKGNAMESUFFIX=	-pcre2
-
-pcre_CONFLICTS_INSTALL=		${PORTNAME}-pcre2
-pcre2_CONFLICTS_INSTALL=	${PORTNAME}
-
-.if ${FLAVOR} == pcre
-LIB_DEPENDS=		libpcre.so:devel/pcre
-CONFIGURE_FLAGS+=	--no-pcre2
-.else
-LIB_DEPENDS=		libpcre2-8.so:devel/pcre2
-.endif
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 PLIST_FILES=	bin/njs
 
