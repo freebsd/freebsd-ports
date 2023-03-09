@@ -1,6 +1,6 @@
 #!/bin/sh
 
-WEBRTC_REV=5359
+WEBRTC_REV=5359d
 
 base_url="https://chromium.googlesource.com/chromium/src/base.git/+archive/"
 boringssl_url="https://boringssl.googlesource.com/boringssl.git/+archive/"
