@@ -1,7 +1,6 @@
 PORTNAME=	cxxplot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.0-2
-DISTVERSIONSUFFIX=	-g750b54b
+DISTVERSION=	0.3.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,16 +15,17 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 BROKEN_FreeBSD_12=	build error: 'concepts' file not found
 .endif
 
-USES=		cmake:testing compiler:c++20-lang gl qt:5
-USE_QT=		core gui opengl printsupport widgets buildtools:build qmake:build
+USES=		cmake:testing compiler:c++20-lang gl qt:6
+USE_QT=		base tools:build
 USE_GL=		gl opengl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	USNavalResearchLaboratory
 
 CMAKE_ON=		BUILD_SHARED_LIBS
+CMAKE_TESTING_TARGET=
 
-do-test: # 'make test' opens a lot of windows
+post-test: # 'make test' opens a lot of windows
 .for name in 01_test 02_test 03_test 04_test 05_test 06_test_csv 07_test_image
 	@${ECHO} "==> Running the test ${name}"
 	@${TEST_WRKSRC}/tests/${name}/libcxxplot_${name:C/test_.*/test/}

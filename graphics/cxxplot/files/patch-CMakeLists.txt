@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2022-04-04 11:38:46 UTC
+--- CMakeLists.txt.orig	2023-03-09 12:51:28 UTC
 +++ CMakeLists.txt
 @@ -164,7 +164,7 @@ target_link_libraries( cxxplot
  
@@ -9,7 +9,41 @@
  )
  
  # Install, export targets, cmake config and version
-@@ -224,9 +224,10 @@ install(
+@@ -172,8 +172,8 @@ include( GNUInstallDirs )
+ 
+ install( TARGETS cxxplot
+     EXPORT cxxplotTargets
+-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}/${CXXPLOT_DIR_WITH_VERSION}
+-    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}/${CXXPLOT_DIR_WITH_VERSION}
++    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
++    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+ )
+@@ -203,7 +203,7 @@ install(
+   FILES
+     ${CXXPLOT_PUBLIC_HDR}
+   DESTINATION
+-    ${CMAKE_INSTALL_INCLUDEDIR}/${CXXPLOT_DIR_WITH_VERSION}/cxxplot
++    ${CMAKE_INSTALL_INCLUDEDIR}/cxxplot
+ )
+ 
+ install(EXPORT cxxplotTargets
+@@ -212,7 +212,7 @@ install(EXPORT cxxplotTargets
+   NAMESPACE
+     cxxplot::
+   DESTINATION
+-    ${CMAKE_INSTALL_LIBDIR}/cmake/${CXXPLOT_DIR_WITH_VERSION}
++    ${CMAKE_INSTALL_LIBDIR}/cmake/cxxplot
+ )
+ 
+ install(
+@@ -220,13 +220,14 @@ install(
+     ${CMAKE_BINARY_DIR}/cmake/cxxplotConfig.cmake
+     ${CMAKE_BINARY_DIR}/cmake/cxxplotConfigVersion.cmake
+   DESTINATION
+-    ${CMAKE_INSTALL_LIBDIR}/cmake/${CXXPLOT_DIR_WITH_VERSION}
++    ${CMAKE_INSTALL_LIBDIR}/cmake/cxxplot
    )
  
  # tests/examples
