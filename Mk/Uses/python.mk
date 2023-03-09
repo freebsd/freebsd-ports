@@ -870,7 +870,9 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PEP517_INSTALL_CMD}
-	@${SED} -e 's|^|${PYTHONPREFIX_SITELIBDIR}/|' \
+	@${PYTHON_CMD} -B ${PORTSDIR}/Tools/scripts/strip_RECORD.py \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME:C/[-_]+/_/g}-${PORTVERSION}.dist-info/RECORD >> ${_PYTHONPKGLIST}
+	@${REINPLACE_CMD} -e 's|^|${PYTHONPREFIX_SITELIBDIR}/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../etc/|etc/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../bin/|bin/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../include/|include/|' \
@@ -880,8 +882,7 @@ do-install:
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../man/|man/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../sbin/|sbin/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../share/|share/|' \
-		-e 's|\,.*$$||' \
-		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME:C/[-_]+/_/g}-${PORTVERSION}.dist-info/RECORD >> ${_PYTHONPKGLIST}
+		${_PYTHONPKGLIST}
 .    endif
 .  endif # defined(_PYTHON_FEATURE_PEP517)
 
