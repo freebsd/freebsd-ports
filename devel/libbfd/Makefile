@@ -1,5 +1,5 @@
 PORTNAME=	libbfd
-PORTVERSION=	2.33.1
+PORTVERSION=	2.40
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/binutils/releases
 DISTNAME=	binutils-${PORTVERSION}
@@ -17,7 +17,7 @@ CONFLICTS=	mingw-binutils binutils
 
 WRKSRC=		${WRKDIR}/binutils-${PORTVERSION}/bfd
 
-USES=		libtool tar:xz
+USES=		gmake libtool tar:xz
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-install-libbfd \
 		--disable-nls \
@@ -30,6 +30,13 @@ INFO=		bfd
 pre-configure:
 # Configure and build pic version of libiberty
 	(cd ${WRKSRC}/../libiberty && \
+		${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" CPP="${CPP}" \
+			CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+			LIBS="${LIBS}" ${CONFIGURE_ENV} ./configure \
+			${CONFIGURE_ARGS} --build=${CONFIGURE_TARGET} && \
+		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} \
+			${MAKE_ARGS})
+	(cd ${WRKSRC}/../libsframe && \
 		${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" CPP="${CPP}" \
 			CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 			LIBS="${LIBS}" ${CONFIGURE_ENV} ./configure \
