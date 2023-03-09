@@ -278,6 +278,14 @@
 # PYDISTUTILS_INSTALLNOSINGLE
 #			- Deprecated without replacement
 #
+# Dependency lines of selected Python modules:
+#
+# PYGAME			- pygame port
+# PYNUMPY			- NumPy port
+# PY_MERCURIAL			- mercurial port, PKGNAME varies based on default
+#				  Python version
+# PY_BOOST			- Boost Python libraries port
+#
 # The following variables may be set by the user:
 #
 # PYTEST_ENABLE_ALL_TESTS	- Enable tests skipped by PYTEST_BROKEN_TESTS
