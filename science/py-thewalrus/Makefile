@@ -1,6 +1,6 @@
 PORTNAME=	thewalrus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.0
+DISTVERSION=	0.20.0
 CATEGORIES=	science python
 #MASTER_SITES=	PYPI # doesn't contain tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,11 +21,10 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	gmake:devel/gmake \
 		${PYTHON_PKGNAMEPREFIX}flaky>=3.7.0:devel/py-flaky@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-randomly>0:devel/py-pytest-randomly@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	XanaduAI
