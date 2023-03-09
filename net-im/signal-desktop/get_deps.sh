@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=v6.7.0
+SIGNAL_VERS=v6.8.0
 
 fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json
 ringrtc_version=$(grep '@signalapp/ringrtc"' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
@@ -26,3 +26,13 @@ TOKENIZER_VERSION=$(awk /"TOKENIZER_VERSION ="/'{print $4}' /tmp/download.js | s
 TAG="${SQLCIPHER_VERSION}--${OPENSSL_VERSION}--${TOKENIZER_VERSION}"
 echo "Signal-FTS5-Extension= ${TOKENIZER_VERSION}"
 echo "SQLCIPHER= sqlcipher-${TAG}-${HASH}"
+
+fetch -qo /tmp/yarn.lock https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/yarn.lock
+npm_signal_hash=$(grep libsignal-client /tmp/yarn.lock | awk -F '#' /resolved/'{print $2}' | sed 's/"//g')
+echo "NPM_SIGNAL_DIR= npm-@signalapp-libsignal-client-${libsignalclient_version}-${npm_signal_hash}-integrity"
+
+npm_ringrtc_hash=$(grep ringrtc /tmp/yarn.lock | awk -F '#' /resolved/'{print $2}' | sed 's/"//g')
+echo "NPM_RINGRTC_DIR= npm-@signalapp-ringrtc-${ringrtc_version}-${npm_ringrtc_hash}-integrity"
+
+npm_bsqlite3_hash=$(grep better-sqlite3 /tmp/yarn.lock | awk -F '#' /resolved/'{print $2}' | sed 's/"//g')
+echo "NPM_SQLITE3_DIR= npm-@signalapp-better-sqlite3-${bsqlite3_version}-${npm_bsqlite3_hash}-integrity"
