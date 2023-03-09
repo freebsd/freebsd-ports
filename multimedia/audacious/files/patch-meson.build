@@ -1,0 +1,10 @@
+--- meson.build.orig	2023-03-05 17:47:00 UTC
++++ meson.build
+@@ -55,6 +55,7 @@ have_darwin = host_machine.system() == 'darwin'
+ 
+ 
+ have_darwin = host_machine.system() == 'darwin'
++have_freebsd = host_machine.system() == 'freebsd'
+ have_windows = host_machine.system() == 'windows'
+ 
+ 
