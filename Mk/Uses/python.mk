@@ -525,7 +525,7 @@ PYTHON_REL=	${PYTHON_DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/:C/\.([0-9])$/
 
 # Might be overridden by calling ports
 PYTHON_CMD?=		${_PYTHON_BASECMD}${_PYTHON_VERSION}
-.  if ${PYTHON_VER} != 2.7
+.  if ${PYTHON_MAJOR_VER} > 2
 .    if exists(${PYTHON_CMD}-config)
 PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
 .    elif ${PYTHON_REL} < 30800
@@ -540,7 +540,7 @@ PYTHON_EXT_SUFFIX=	.cpython-${PYTHON_SUFFIX}
 PYTHON_EXT_SUFFIX=	# empty
 .  endif
 
-.  if ${PYTHON_MAJOR_VER} == 2
+.  if ${PYTHON_MAJOR_VER} < 3
 DEPRECATED?=	Uses Python 2.7 which is EOLed upstream
 .  endif
 
@@ -629,7 +629,7 @@ RUN_DEPENDS+=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${P
 .  endif
 
 .  if defined(_PYTHON_FEATURE_PEP517)
-.    if ${PYTHON_VER} == 2.7
+.    if ${PYTHON_MAJOR_VER} < 3
 DEV_ERROR+=		"USES=python:2.7 is incompatible with USE_PYTHON=pep517"
 .    endif
 .    if defined(_PYTHON_FEATURE_DISTUTILS)
@@ -817,7 +817,7 @@ PLIST_SUB+=	PYTHON_INCLUDEDIR=${PYTHONPREFIX_INCLUDEDIR:S;${PREFIX}/;;} \
 		PYTHON_EXT_SUFFIX=${PYTHON_EXT_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERSION=${PYTHON_VERSION}
-.  if ${PYTHON_REL} < 30000
+.  if ${PYTHON_MAJOR_VER} < 3
 SUB_LIST+=	PYTHON2="" PYTHON3="@comment "
 PLIST_SUB+=	PYTHON2="" PYTHON3="@comment "
 .  else
