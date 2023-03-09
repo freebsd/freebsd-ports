@@ -1,0 +1,18 @@
+Vis aims to be a modern, legacy-free, simple yet efficient editor,
+combining the strengths of both vi(m) and sam.
+
+It extends vi's modal editing with built-in support for multiple
+cursors/selections and combines it with sam's structural regular
+expression based command language.
+
+Efficient syntax highlighting is provided using Parsing Expression
+Grammars, which can be conveniently expressed using Lua in the form
+of LPeg.
+
+The editor core is written in a reasonable amount of clean, modern
+and legacy-free C code, enabling it to run in resource-constrained
+environments. There is also a Lua API for in-process extensions.
+
+Vis strives to be simple and focuses on its core task: efficient
+text management. Clipboard and digraph handling as well as a fuzzy
+file open dialog are all provided by independent utilities.
