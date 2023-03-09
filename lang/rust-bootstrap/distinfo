@@ -1,3 +1,3 @@
-TIMESTAMP = 1676026418
-SHA256 (rust/rustc-1.67.1-src.tar.xz) = 77e0615011f887d9533d5374bf9c15c590c3caf32bbb035b392d1c2ae502a682
-SIZE (rust/rustc-1.67.1-src.tar.xz) = 142758844
+TIMESTAMP = 1678364488
+SHA256 (rust/rustc-1.68.0-src.tar.xz) = 8651245e8708f11d0f65ba9fdb394c4b9300d603d318045664b371729da9eac4
+SIZE (rust/rustc-1.68.0-src.tar.xz) = 147856584
