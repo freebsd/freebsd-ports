@@ -30,6 +30,7 @@ include/coin-or/IpIteratesVector.hpp
 include/coin-or/IpIterationOutput.hpp
 include/coin-or/IpJournalist.hpp
 include/coin-or/IpLapack.hpp
+include/coin-or/IpLibraryLoader.hpp
 include/coin-or/IpLineSearch.hpp
 include/coin-or/IpLinearSolvers.h
 include/coin-or/IpMatrix.hpp
@@ -50,6 +51,8 @@ include/coin-or/IpScaledMatrix.hpp
 include/coin-or/IpSearchDirCalculator.hpp
 include/coin-or/IpSmartPtr.hpp
 include/coin-or/IpSolveStatistics.hpp
+include/coin-or/IpSparseSymLinearSolverInterface.hpp
+include/coin-or/IpStdAugSystemSolver.cpp
 include/coin-or/IpStdCInterface.h
 include/coin-or/IpSumSymMatrix.hpp
 include/coin-or/IpSymLinearSolver.hpp
@@ -82,13 +85,13 @@ include/coin-or/SensStepCalc.hpp
 include/coin-or/SensUtils.hpp
 lib/libipopt.so
 lib/libipopt.so.3
-lib/libipopt.so.3.14.10
+lib/libipopt.so.3.14.11
 lib/libipoptamplinterface.so
 lib/libipoptamplinterface.so.3
-lib/libipoptamplinterface.so.3.14.10
+lib/libipoptamplinterface.so.3.14.11
 lib/libsipopt.so
 lib/libsipopt.so.3
-lib/libsipopt.so.3.14.10
+lib/libsipopt.so.3.14.11
 libdata/pkgconfig/ipopt.pc
 libdata/pkgconfig/ipoptamplinterface.pc
 share/doc/ipopt/AUTHORS
