@@ -39,6 +39,7 @@ search_lib_depends_and_bump.sh - Give it a port that has changed and it will bum
 				 all ports having a LIB_DEPENDS on this port
 splitpatch.pl - A small script to convert multi-file patches to several
                 appropriately named single-file patches.
+strip_RECORD.py - strips/prints only the first column of a Python wheel's RECORD file
 tindex - script used to build INDEXes for supported FreeBSD branches, which
          are the source of the 'make fetchindex' INDEXes, and the build
          failure reports on ports@FreeBSD.org
