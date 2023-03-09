@@ -888,7 +888,7 @@ do-build:
 do-install:
 	@${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PEP517_INSTALL_CMD}
-	@${PYTHON_CMD} -B ${PORTSDIR}/Tools/scripts/strip_RECORD.py \
+	@${PYTHON_CMD} -B ${PORTSDIR}/Mk/Scripts/strip_RECORD.py \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME:C/[-_]+/_/g}-${PORTVERSION}.dist-info/RECORD >> ${_PYTHONPKGLIST}
 	@${REINPLACE_CMD} -e 's|^|${PYTHONPREFIX_SITELIBDIR}/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../etc/|etc/|' \
