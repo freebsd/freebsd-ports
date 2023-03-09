@@ -7,7 +7,7 @@
  done
  
 -if [ "x$tests" = "x" ]; then tests="sanity pyunit gna vests synth vpi vhpi"; fi
-+if [ "x$tests" = "x" ]; then tests="sanity gna vests synth vpi vhpi"; fi
++if [ "x$tests" = "x" ]; then tests="sanity        gna vests synth vpi vhpi"; fi
  
  echo "> tests: $tests"
  echo "> args: $@"
