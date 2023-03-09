@@ -9,6 +9,8 @@ USE_XORG+=	pixman
 USE_JAVA=	yes
 JAVA_VERSION=	8+
 
+NO_ARCH=	yes
+
 CMAKE_ARGS+=	-DBUILD_JAVA:BOOL=true \
 		-DBUILD_VIEWER:BOOL=false \
 		-DENABLE_NLS:BOOL=false
