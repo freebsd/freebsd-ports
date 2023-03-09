@@ -1,6 +1,5 @@
 PORTNAME=	xsnow
-PORTVERSION=	3.6.0
-PORTREVISION=	1
+PORTVERSION=	3.7.1
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -11,16 +10,20 @@ WWW=		https://www.ratrabbit.nl/ratrabbit/xsnow/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgsl.so:math/gsl
+LIB_DEPENDS=	libgsl.so:math/gsl \
+		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 gmake gnome pkgconfig xorg
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 libxml2
-USE_XORG=	x11 xext xpm xt xorgproto
+USE_XORG=	x11 xext xinerama xpm xt xtst xorgproto
 GNU_CONFIGURE=	yes
-PLIST_FILES=	bin/xsnow man/man6/xsnow.6.gz \
-		share/applications/xsnow.desktop \
-		share/metainfo/xsnow.appdata.xml \
-		share/pixmaps/xsnow.svg
+
+OPTIONS_DEFINE=		NLS
+OPTIONS_DEFAULT=	NLS
+OPTIONS_SUB=	yes
+
+NLS_USES=		gettext-tools
+NLS_CONFIGURE_ENABLE=	nls
 
 post-patch:
 	@${REINPLACE_CMD} \
