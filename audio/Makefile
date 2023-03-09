@@ -889,7 +889,6 @@
     SUBDIR += xfce4-mpc-plugin
     SUBDIR += xfce4-pulseaudio-plugin
     SUBDIR += xfmpc
-    SUBDIR += ximp3
     SUBDIR += xmcd
     SUBDIR += xmix
     SUBDIR += xmixer
