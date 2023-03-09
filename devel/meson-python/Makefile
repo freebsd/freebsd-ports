@@ -12,9 +12,9 @@ WWW=		https://github.com/mesonbuild/meson-python
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	meson>=0.63.3:devel/meson \
+BUILD_DEPENDS=	meson:devel/meson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproject-metadata>=0.6.1:devel/py-pyproject-metadata@${PY_FLAVOR}
-RUN_DEPENDS=	meson>=0.63.3:devel/meson \
+RUN_DEPENDS=	meson:devel/meson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyproject-metadata>=0.6.1:devel/py-pyproject-metadata@${PY_FLAVOR}
 
 USES=		python

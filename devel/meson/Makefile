@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
 USES=		ninja:run python:3.6+ shebangfix
-USE_PYTHON=	autoplist distutils noflavors
+USE_PYTHON=	autoplist distutils
 SHEBANG_FILES=	mesonbuild/rewriter.py \
 		mesonbuild/scripts/cmake_run_ctgt.py
 NO_ARCH=	yes
@@ -28,7 +28,13 @@ BINARY_ALIAS+=	python3=${PYTHON_CMD:T} python=${PYTHON_CMD:T}
 do-test: create-binary-alias # force if run late
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_VER} != ${PYTHON_DEFAULT}
+PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
+.endif
+
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${WRKSRC}/run_unittests.py)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
