@@ -1,6 +1,6 @@
---- sandbox/policy/freebsd/sandbox_freebsd.cc.orig	2023-02-08 09:03:45 UTC
+--- sandbox/policy/freebsd/sandbox_freebsd.cc.orig	2023-03-09 06:31:50 UTC
 +++ sandbox/policy/freebsd/sandbox_freebsd.cc
-@@ -0,0 +1,241 @@
+@@ -0,0 +1,239 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -21,8 +21,6 @@
 +#include <string>
 +#include <vector>
 +
-+#include "base/bind.h"
-+#include "base/callback_helpers.h"
 +#include "base/command_line.h"
 +#include "base/debug/stack_trace.h"
 +#include "base/feature_list.h"

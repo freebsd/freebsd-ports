@@ -1,4 +1,4 @@
---- base/threading/platform_thread_unittest.cc.orig	2023-02-08 09:03:45 UTC
+--- base/threading/platform_thread_unittest.cc.orig	2023-03-09 06:31:50 UTC
 +++ base/threading/platform_thread_unittest.cc
 @@ -31,7 +31,7 @@
  #include "base/time/time.h"
@@ -18,7 +18,7 @@
    // On Ubuntu, RLIMIT_NICE and RLIMIT_RTPRIO are 0 by default, so we won't be
    // able to increase priority to any level.
    constexpr bool kCanIncreasePriority = false;
-@@ -696,12 +696,16 @@ INSTANTIATE_TEST_SUITE_P(
+@@ -701,12 +701,16 @@ INSTANTIATE_TEST_SUITE_P(
  
  #endif  // BUILDFLAG(IS_APPLE)
  

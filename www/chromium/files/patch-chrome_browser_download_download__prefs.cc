@@ -1,13 +1,13 @@
---- chrome/browser/download/download_prefs.cc.orig	2022-11-30 08:12:58 UTC
+--- chrome/browser/download/download_prefs.cc.orig	2023-03-09 06:31:50 UTC
 +++ chrome/browser/download/download_prefs.cc
-@@ -13,6 +13,7 @@
- #include "base/callback_helpers.h"
+@@ -11,6 +11,7 @@
+ 
  #include "base/check.h"
  #include "base/cxx17_backports.h"
 +#include "base/command_line.h"
  #include "base/feature_list.h"
  #include "base/files/file_util.h"
- #include "base/no_destructor.h"
+ #include "base/functional/bind.h"
 @@ -61,6 +62,10 @@
  #include "chrome/browser/ui/pdf/adobe_reader_info_win.h"
  #endif

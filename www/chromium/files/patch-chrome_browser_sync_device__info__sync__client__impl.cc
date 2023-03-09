@@ -1,6 +1,6 @@
---- chrome/browser/sync/device_info_sync_client_impl.cc.orig	2022-09-24 10:57:32 UTC
+--- chrome/browser/sync/device_info_sync_client_impl.cc.orig	2023-03-09 06:31:50 UTC
 +++ chrome/browser/sync/device_info_sync_client_impl.cc
-@@ -42,7 +42,7 @@ std::string DeviceInfoSyncClientImpl::GetSigninScopedD
+@@ -41,7 +41,7 @@ std::string DeviceInfoSyncClientImpl::GetSigninScopedD
  // in lacros-chrome once build flag switch of lacros-chrome is
  // complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
