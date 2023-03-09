@@ -1,5 +1,5 @@
 PORTNAME=	antlr4
-PORTVERSION=	4.11.1
+PORTVERSION=	4.12.0
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
 DISTNAME=	antlr-${PORTVERSION}-complete
