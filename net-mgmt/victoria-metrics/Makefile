@@ -1,6 +1,6 @@
 PORTNAME?=	victoria-metrics
 PORTVERSION=	1.84.0		# don't forget to update BUILDINFO_TAG
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt
 
