@@ -138,6 +138,18 @@
 #			  version number (used for dependencies).
 #			  default: ${PYTHONBASE}/bin/${PYTHON_VERSION}
 #
+# PEP517_BUILD_CMD	- Command sequence for a PEP-517 build frontend that builds a wheel.
+#			  default: ${PYTHON_CMD} -m build -n -w
+#
+# PEP517_BUILD_DEPEND	- Port needed to execute ${PEP517_BUILD_CMD}.
+#			  default: ${PYTHON_PKGNAMEPREFIX}build>0:devel/py-build@${PY_FLAVOR}
+#
+# PEP517_INSTALL_CMD	- Command sequence for a PEP-517 install frontend that installs a wheel.
+#			  default: ${PYTHON_CMD} -m installer -d ${STAGEDIR} -p ${PREFIX} --no-compile-bytecode ${BUILD_WRKSRC}/dist/${PORTNAME:C/[-_]+/_/g}-${PORTVERSION}-*.whl
+#
+# PEP517_INSTALL_DEPEND	- Port needed to execute ${PEP517_INSTALL_CMD}.
+#			  default: ${PYTHON_PKGNAMEPREFIX}installer>0:devel/py-installer@${PY_FLAVOR}
+#
 # PYSETUP		- Name of the setup script used by the distutils
 #			  package.
 #			  default: setup.py
@@ -177,18 +189,6 @@
 # PYDISTUTILS_EGGINFO
 #			- Canonical name for egg-info.
 #			  default: ${PYDISTUTILS_PKGNAME:C/[^A-Za-z0-9.]+/_/g}-${PYDISTUTILS_PKGVERSION:C/[^A-Za-z0-9.]+/_/g}-py${PYTHON_VER}.egg-info
-#
-# PEP517_BUILD_CMD	- Command sequence for a PEP-517 build frontend that builds a wheel.
-#			  default: ${PYTHON_CMD} -m build -n -w
-#
-# PEP517_BUILD_DEPEND	- Port needed to execute ${PEP517_BUILD_CMD}.
-#			  default: ${PYTHON_PKGNAMEPREFIX}build>0:devel/py-build@${PY_FLAVOR}
-#
-# PEP517_INSTALL_CMD	- Command sequence for a PEP-517 install frontend that installs a wheel.
-#			  default: ${PYTHON_CMD} -m installer -d ${STAGEDIR} -p ${PREFIX} --no-compile-bytecode ${BUILD_WRKSRC}/dist/${PORTNAME:C/[-_]+/_/g}-${PORTVERSION}-*.whl
-#
-# PEP517_INSTALL_DEPEND	- Port needed to execute ${PEP517_INSTALL_CMD}.
-#			  default: ${PYTHON_PKGNAMEPREFIX}installer>0:devel/py-installer@${PY_FLAVOR}
 #
 # PYTEST_BROKEN_TESTS	- Lists of 'pytest -k' patterns to skip tests which
 #			  require fixing.
