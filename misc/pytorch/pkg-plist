@@ -8899,9 +8899,9 @@ include/torch/custom_class_detail.h
 include/torch/extension.h
 include/torch/library.h
 include/torch/script.h
-lib/libCaffe2_perfkernels_avx.a
-lib/libCaffe2_perfkernels_avx2.a
-lib/libCaffe2_perfkernels_avx512.a
+%%AMD64%%lib/libCaffe2_perfkernels_avx.a
+%%AMD64%%lib/libCaffe2_perfkernels_avx2.a
+%%AMD64%%lib/libCaffe2_perfkernels_avx512.a
 lib/libc10.so
 lib/libclog.a
 lib/libcpuinfo.a

@@ -51,6 +51,14 @@ PYTHON_BUILD_DEPENDS=	${PYTHON_PY_DEPENDS} \
 			pybind11>0:devel/pybind11
 PYTHON_RUN_DEPENDS=	${PYTHON_PY_DEPENDS}
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64"
+PLIST_SUB+=	AMD64=""
+.else
+PLIST_SUB+=	AMD64="@comment "
+.endif
+
 post-patch:
 	# replace malloc.h -> stdlib.h in many places
 	@cd ${WRKSRC} && for f in $$(${GREP} -rl "include <malloc\.h>" * | ${GREP} -E "\.(c|cpp|h|hpp)$$"); do \
@@ -63,4 +71,4 @@ post-install:
 	# https://github.com/pytorch/pytorch/issues/24417
 	@${FIND} ${STAGEDIR} -type d -empty -delete
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
