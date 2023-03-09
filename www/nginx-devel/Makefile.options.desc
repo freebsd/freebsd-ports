@@ -15,6 +15,7 @@ DYNAMIC_UPSTREAM_DESC=		3rd party dynamic_upstream module
 ECHO_DESC=			3rd party echo module
 ENCRYPTSESSION_DESC=		3rd party encrypted_session module
 FILE_AIO_DESC=			Enable file aio
+FIPS_CHECK_DESC=		3rd party fips_check module
 FORMINPUT_DESC=			3rd party form_input module
 GOOGLE_PERFTOOLS_DESC=		Enable google perftools module
 GRIDFS_DESC=			3rd party gridfs module

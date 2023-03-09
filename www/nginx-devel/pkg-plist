@@ -24,6 +24,7 @@
 %%DSO%%%%DYNAMIC_UPSTREAM%%libexec/nginx/ngx_http_dynamic_upstream_module.so
 %%DSO%%%%ECHO%%libexec/nginx/ngx_http_echo_module.so
 %%DSO%%%%ENCRYPTSESSION%%libexec/nginx/ngx_http_encrypted_session_module.so
+%%DSO%%%%FIPS_CHECK%%libexec/nginx/ngx_fips_check_module.so
 %%DSO%%%%FORMINPUT%%libexec/nginx/ngx_http_form_input_module.so
 %%DSO%%%%GRIDFS%%libexec/nginx/ngx_http_gridfs_module.so
 %%DSO%%%%HEADERS_MORE%%libexec/nginx/ngx_http_headers_more_filter_module.so
