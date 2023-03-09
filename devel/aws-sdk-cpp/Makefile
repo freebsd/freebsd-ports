@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-cpp
-DISTVERSION=	1.11.25
+DISTVERSION=	1.11.32
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -54,10 +54,6 @@ OPTIONS_DEFINE=	TEST
 OPTIONS_SUB=	yes
 
 TEST_CMAKE_BOOL=	ENABLE_TESTING
-TEST_BROKEN_armv6=	fails to build: runaway process
-TEST_BROKEN_armv7=	fails to build: runaway process
-TEST_BROKEN_i386=	fails to build: compiler runs out of memory
-TEST_BROKEN_powerpc=	fails to build: compiler runs out of memory
 
 pre-everything::
 	@${ECHO_MSG}
