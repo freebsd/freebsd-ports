@@ -1,5 +1,6 @@
 PORTNAME=	art
 DISTVERSION=	1.18.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
 PKGNAMESUFFIX=	-raw-image-editor
@@ -39,12 +40,11 @@ LDFLAGS+=	-lpthread # otherwise build breaks on some systems: error: undefined s
 
 .if exists(/usr/include/omp.h)
 OPTIONS_DEFINE=		OPENMP
-#OPTIONS_DEFAULT=	OPENMP
+OPTIONS_DEFAULT=	OPENMP
 
 OPENMP_CMAKE_BOOL=	OPTION_OMP
-OPENMP_BROKEN=		OpenMP causes asserts, see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=261360
 .else
-CMAKE_ARGS=	-DOPTION_OMP:BOOL=OFF
+CMAKE_OFF=	OPTION_OMP
 .endif
 
 post-install:
