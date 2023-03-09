@@ -173,7 +173,7 @@ EXTRACT_ONLY+= ${_CABAL_EXTRACT_ONLY}
 
 .  if defined(CABAL_REPOSITORIES) && !empty(CABAL_REPOSITORIES)
 .    for r in ${CABAL_REPOSITORIES}
-CABAL2TUPLE_ARGS+=	--group=${r} --master-site=${MASTER_SITES:M*\:${r}:[1]:S/:${r}//}
+CABAL2TUPLE_ARGS+=	--group=${r} --master-site=${MASTER_SITES:M*\:${r}:[1]:S/:${r}//:S|/package/||}
 .    endfor
 .  endif
 
