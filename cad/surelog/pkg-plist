@@ -1,3 +1,4 @@
+bin/roundtrip
 bin/surelog
 bin/uhdm-cmp
 bin/uhdm-dump
@@ -82,10 +83,13 @@ include/Surelog/surelog.h
 include/uhdm/BaseClass.h
 include/uhdm/ElaboratorListener.h
 include/uhdm/ExprEval.h
+include/uhdm/NumUtils.h
 include/uhdm/RTTI.h
 include/uhdm/Serializer.h
 include/uhdm/SymbolFactory.h
+include/uhdm/SymbolId.h
 include/uhdm/SynthSubset.h
+include/uhdm/UhdmAdjuster.h
 include/uhdm/UhdmLint.h
 include/uhdm/UhdmListener.h
 include/uhdm/VpiListener.h
@@ -94,6 +98,7 @@ include/uhdm/actual_group.h
 include/uhdm/alias_stmt.h
 include/uhdm/always.h
 include/uhdm/any_pattern.h
+include/uhdm/array_expr.h
 include/uhdm/array_net.h
 include/uhdm/array_typespec.h
 include/uhdm/array_var.h
@@ -211,9 +216,9 @@ include/uhdm/integer_net.h
 include/uhdm/integer_typespec.h
 include/uhdm/integer_var.h
 include/uhdm/interf_prog_mod_group.h
-include/uhdm/interface.h
 include/uhdm/interface_array.h
 include/uhdm/interface_expr.h
+include/uhdm/interface_inst.h
 include/uhdm/interface_tf_decl.h
 include/uhdm/interface_typespec.h
 include/uhdm/io_decl.h
@@ -229,8 +234,8 @@ include/uhdm/method_func_task_call_group.h
 include/uhdm/method_task_call.h
 include/uhdm/mod_path.h
 include/uhdm/modport.h
-include/uhdm/module.h
 include/uhdm/module_array.h
+include/uhdm/module_inst.h
 include/uhdm/module_typespec.h
 include/uhdm/multiclock_sequence_expr.h
 include/uhdm/named_begin.h
