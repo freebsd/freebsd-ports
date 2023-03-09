@@ -1,3 +1,51 @@
+  <vuln vid="f68bb358-be8e-11ed-9215-00e081b7aa2d">
+    <topic>jenkins -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.394</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.387.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2023-03-08/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-3037 / CVE-2023-27898</h5>
+	  <p>XSS vulnerability in plugin manager</p>
+	  <h5>(Medium) SECURITY-3030 / CVE-2023-24998 (upstream issue), CVE-2023-27900 (MultipartFormDataParser), CVE-2023-27901 (StaplerRequest)</h5>
+	  <p>DoS vulnerability in bundled Apache Commons FileUpload library</p>
+	  <h5></h5>
+	  <h5>(Medium) SECURITY-1807 / CVE-2023-27902</h5>
+	  <p>Workspace temporary directories accessible through directory browser</p>
+	  <h5>(Low) SECURITY-3058 / CVE-2023-27903</h5>
+	  <p>Temporary file parameter created with insecure permissions</p>
+	  <h5>(Low) SECURITY-2120 / CVE-2023-27904</h5>
+	  <p>Information disclosure through error stack traces related to agents</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-27898</cvename>
+      <cvename>CVE-2023-24998</cvename>
+      <cvename>CVE-2023-27900</cvename>
+      <cvename>CVE-2023-27901</cvename>
+      <cvename>CVE-2023-27902</cvename>
+      <cvename>CVE-2023-27903</cvename>
+      <cvename>CVE-2023-27904</cvename>
+      <cvename></cvename>
+      <url>https://www.jenkins.io/security/advisory/2023-03-08/</url>
+    </references>
+    <dates>
+      <discovery>2023-03-08</discovery>
+      <entry>2023-03-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="742279d6-bdbe-11ed-a179-2b68e9d12706">
     <topic>go -- crypto/elliptic: incorrect P-256 ScalarMult and ScalarBaseMult results</topic>
     <affects>
