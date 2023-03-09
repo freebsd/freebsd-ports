@@ -86,6 +86,8 @@
 #
 #	cython_run	- Depend on lang/cython at run-time.
 #
+#	cython_test	- Depend on lang/cython for tests.
+#
 #	flavors		- Force creation of flavors for Python 2 and 3 default
 #			  versions, where applicable.
 #
@@ -307,7 +309,7 @@ _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
 
 # List all valid USE_PYTHON features here
-_VALID_PYTHON_FEATURES=	allflavors autoplist concurrent cython cython_run \
+_VALID_PYTHON_FEATURES=	allflavors autoplist concurrent cython cython_run cython_test \
 			distutils flavors noegginfo noflavors nose nose2 \
 			optsuffix pep517 py3kplist pytest pytest4 pythonprefix \
 			unittest unittest2
@@ -583,6 +585,10 @@ BUILD_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
 
 .  if defined(_PYTHON_FEATURE_CYTHON_RUN)
 RUN_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
+.  endif
+
+.  if defined(_PYTHON_FEATURE_CYTHON_TEST)
+TEST_DEPENDS+=	cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
 .  endif
 
 .  if defined(_PYTHON_FEATURE_CONCURRENT)
