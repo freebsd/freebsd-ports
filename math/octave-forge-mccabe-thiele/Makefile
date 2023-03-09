@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-mccabe-thiele
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.5
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

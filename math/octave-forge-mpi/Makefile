@@ -1,6 +1,7 @@
 PORTNAME=	octave-forge-mpi
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -9,6 +10,8 @@ WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
+
+BROKEN=		does not build with octave>=8
 
 LIB_DEPENDS+=	libmpi.so:net/mpich
 

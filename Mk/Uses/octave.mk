@@ -22,25 +22,25 @@ IGNORE=	Incorrect 'USES+= octave:${octave_ARGS}' usage: argument [${arg}] is not
 .    endif
 .  endfor
 
-OCTAVE_VERSION=	7.3.0
+OCTAVE_VERSION=	8.1.0
 
-.	if empty(octave_ARGS:Menv)
+.  if empty(octave_ARGS:Menv)
 BUILD_DEPENDS+=	octave:math/octave
 RUN_DEPENDS+=	octave:math/octave \
 		${LOCALBASE}/libexec/octave/load-octave-pkg:math/octave-forge-base
 LIB_DEPENDS+=	libpcre.so:devel/pcre
 
-.  if ! ${USES:Mcompiler}
+.    if ! ${USES:Mcompiler}
 _USES_POST+=	compiler:c++14-lang
-.  endif
+.    endif
 
-.  if ! ${USES:Mfortran}
+.    if ! ${USES:Mfortran}
 _USES_POST+=	fortran
-.  endif
+.    endif
 
-.  if ! ${USES:Mgmake}
+.    if ! ${USES:Mgmake}
 _USES_POST+=	gmake
-.  endif
+.    endif
 
 CXXFLAGS+=	-I${LOCALBASE}/include/octave-${OCTAVE_VERSION}
 CFLAGS+=	-I${LOCALBASE}/include/octave-${OCTAVE_VERSION}
@@ -59,17 +59,17 @@ MAKE_ARGS=	CC="${CC}" CXX="${CXX}" LD_CXX="${CXX}" DL_LD="${CXX}" MKOCTFILE="${L
 
 LOAD_OCTAVE_PKG_CMD=	${LOCALBASE}/libexec/octave/load-octave-pkg
 
-.	if !target(pre-install)
+.    if !target(pre-install)
 pre-install: octave-pre-install
-.	endif #	!target(pre-install)
+.    endif #	!target(pre-install)
 
-.	if !target(do-install)
+.    if !target(do-install)
 do-install: octave-do-install
-.	endif # !target(do-install)
+.    endif # !target(do-install)
 
-.	if !target(post-install)
+.    if !target(post-install)
 post-install: octave-post-install
-.	endif # !target(post-install)
+.    endif # !target(post-install)
 
 octave-pre-install:
 	${RM} ${WRKSRC}/Makefile ${WRKSRC}/configure
@@ -85,6 +85,6 @@ octave-post-install:
 	@${ECHO_CMD} "share/octave/tarballs/${OCTAVE_PKGNAME}.tar.gz" >> ${TMPPLIST}
 	@${ECHO_CMD} "@postunexec if [ -x ${LOAD_OCTAVE_PKG_CMD} ]; then ${LOAD_OCTAVE_PKG_CMD}; fi" >> ${TMPPLIST}
 	@${ECHO_CMD} "@postexec if [ -x ${LOAD_OCTAVE_PKG_CMD} ]; then ${LOAD_OCTAVE_PKG_CMD}; fi" >> ${TMPPLIST}
-.	endif # empty(octave_ARGS:Menv)
+.  endif # empty(octave_ARGS:Menv)
 
 .endif # !defined(_INCLUDE_USES_OCTAVE_MK)
