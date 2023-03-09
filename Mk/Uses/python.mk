@@ -286,6 +286,7 @@
 #
 # Dependency lines of selected Python modules:
 #
+# PY_SETUPTOOLS			- setuptools port based on USE_PYTHON=distutils
 # PYGAME			- pygame port
 # PYNUMPY			- NumPy port
 # PY_MERCURIAL			- mercurial port, PKGNAME varies based on default
@@ -777,6 +778,17 @@ CMAKE_ARGS+=	-DPython_ADDITIONAL_VERSIONS=${PYTHON_VER}
 # Python 3rd-party modules
 PYGAME=		${PYTHON_PKGNAMEPREFIX}game>0:devel/py-game@${PY_FLAVOR}
 PYNUMPY=	${PYTHON_PKGNAMEPREFIX}numpy>=1.16,1<1.25,1:math/py-numpy@${PY_FLAVOR}
+
+.  if defined(_PYTHON_FEATURE_DISTUTILS)
+.    if ${PYTHON_MAJOR_VER} < 3
+PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools44>0:devel/py-setuptools44@${PY_FLAVOR}
+.    else
+#PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools58>0:devel/py-setuptools58@${PY_FLAVOR}
+PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+.    endif
+.  else
+PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+.  endif
 
 # Common Python modules that can be needed but only for some versions of Python.
 .  if ${PYTHON_REL} < 30500
