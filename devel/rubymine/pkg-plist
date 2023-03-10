@@ -32,7 +32,7 @@ share/applications/rubymine.desktop
 %%DATADIR%%/lib/annotations-java5.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-RM-223.8617.48
+%%DATADIR%%/lib/build-marker-RM-223.8836.42
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
