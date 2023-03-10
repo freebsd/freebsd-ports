@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230310:
+  AFFECTS: user of benchmarks/ddosify
+  AUTHOR: fernape@FreeBSD.org
+
+  keep-alive is removed from config file. In default mode, the engine will use
+  keep-alive for all requests. If you want to disable keep-alive for a step, you
+  can add Connection: close header to the step.
+
 20230306:
   AFFECTS: users of www/qt5-webengine
   AUTHOR: kai@FreeBSD.org
