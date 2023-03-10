@@ -240,7 +240,6 @@ include/pika/functional/first_argument.hpp
 include/pika/functional/function.hpp
 include/pika/functional/invoke.hpp
 include/pika/functional/invoke_fused.hpp
-include/pika/functional/invoke_result.hpp
 include/pika/functional/one_shot.hpp
 include/pika/functional/tag_invoke.hpp
 include/pika/functional/traits/get_function_address.hpp
@@ -269,15 +268,6 @@ include/pika/futures/traits/is_future.hpp
 include/pika/futures/traits/is_future_range.hpp
 include/pika/futures/traits/is_future_tuple.hpp
 include/pika/futures/traits/promise_local_result.hpp
-include/pika/hardware/bit_manipulation.hpp
-include/pika/hardware/config/defines.hpp
-include/pika/hardware/timestamp.hpp
-include/pika/hardware/timestamp/bgq.hpp
-include/pika/hardware/timestamp/cuda.hpp
-include/pika/hardware/timestamp/linux_generic.hpp
-include/pika/hardware/timestamp/linux_x86_32.hpp
-include/pika/hardware/timestamp/linux_x86_64.hpp
-include/pika/hardware/timestamp/msvc.hpp
 include/pika/hashing/config/defines.hpp
 include/pika/hashing/fibhash.hpp
 include/pika/include/config/defines.hpp
@@ -345,7 +335,6 @@ include/pika/modules/execution_base.hpp
 include/pika/modules/executors.hpp
 include/pika/modules/functional.hpp
 include/pika/modules/futures.hpp
-include/pika/modules/hardware.hpp
 include/pika/modules/hashing.hpp
 include/pika/modules/ini.hpp
 include/pika/modules/init_runtime.hpp
@@ -512,7 +501,6 @@ include/pika/thread_manager/thread_manager_fwd.hpp
 include/pika/thread_pool_util/config/defines.hpp
 include/pika/thread_pool_util/thread_pool_suspension_helpers.hpp
 include/pika/thread_pools/config/defines.hpp
-include/pika/thread_pools/detail/scoped_background_timer.hpp
 include/pika/thread_pools/scheduled_thread_pool.hpp
 include/pika/thread_pools/scheduled_thread_pool_impl.hpp
 include/pika/thread_pools/scheduling_loop.hpp
@@ -559,6 +547,13 @@ include/pika/threading_base/thread_queue_init_parameters.hpp
 include/pika/threading_base/thread_specific_ptr.hpp
 include/pika/threading_base/threading_base_fwd.hpp
 include/pika/timing/config/defines.hpp
+include/pika/timing/detail/timestamp.hpp
+include/pika/timing/detail/timestamp/bgq.hpp
+include/pika/timing/detail/timestamp/cuda.hpp
+include/pika/timing/detail/timestamp/linux_generic.hpp
+include/pika/timing/detail/timestamp/linux_x86_32.hpp
+include/pika/timing/detail/timestamp/linux_x86_64.hpp
+include/pika/timing/detail/timestamp/msvc.hpp
 include/pika/timing/high_resolution_timer.hpp
 include/pika/timing/steady_clock.hpp
 include/pika/timing/tick_counter.hpp
@@ -578,7 +573,6 @@ include/pika/type_support/type_identity.hpp
 include/pika/type_support/unused.hpp
 include/pika/type_support/unwrap_reference.hpp
 include/pika/type_support/void_guard.hpp
-include/pika/type_traits.hpp
 include/pika/unwrap.hpp
 include/pika/util/config/defines.hpp
 include/pika/util/detail/reserve.hpp
@@ -665,7 +659,6 @@ lib/cmake/pika/tests/cxx11_std_quick_exit.cpp
 lib/cmake/pika/tests/cxx11_std_shared_ptr_lwg3018.cpp
 lib/cmake/pika/tests/cxx17_aligned_new.cpp
 lib/cmake/pika/tests/cxx17_copy_elision.cpp
-lib/cmake/pika/tests/cxx17_filesystem.cpp
 lib/cmake/pika/tests/cxx17_memory_resource.cpp
 lib/cmake/pika/tests/cxx17_noexcept_function.cpp
 lib/cmake/pika/tests/cxx17_std_aligned_alloc.cpp
@@ -685,4 +678,4 @@ lib/cmake/pika/tests/stable_inplace_merge.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.12.0
+lib/libpika.so.0.13.0
