@@ -1,6 +1,6 @@
 PORTNAME=	emby-server
-DISTVERSION=	4.7.11.0
-PORTREVISION=	4
+DISTVERSION?=	4.7.11.0
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -9,7 +9,7 @@ DISTFILES=	${DISTNAME}.tar.xz \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz \
 		license.docx
-DIST_SUBDIR=	${PORTNAME}
+DIST_SUBDIR?=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}.tar.xz \
 		ffdetect-${FFVERSION}-x64_freebsd13.tar.xz \
 		ffmpeg-${FFVERSION}.tar.gz
@@ -100,7 +100,7 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 
 MAKE_ENV=	V=1
 
-CONFLICTS_INSTALL=	emby-server-devel
+CONFLICTS_INSTALL?=	emby-server-devel
 
 NOPRECIOUSMAKEVARS=	yes
 SUB_FILES=	SQLitePCLRaw.provider.sqlite3.dll.config
@@ -133,5 +133,8 @@ do-install:
 	(${INSTALL_DATA} ${WRKDIR}/SQLitePCLRaw.provider.sqlite3.dll.config ${STAGEDIR}${PREFIX}/lib/emby-server/system)
 	(cd ${WRKDIR}/system && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/emby-server/system "! -name EmbyServer")
 	(${INSTALL_PROGRAM} ${WRKDIR}/system/EmbyServer ${STAGEDIR}${PREFIX}/lib/emby-server/system)
+
+post-install:
+	@${FIND} -s ${STAGEDIR}${PREFIX}/lib -not -type d | ${SORT} | ${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
