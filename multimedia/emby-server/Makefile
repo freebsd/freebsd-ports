@@ -1,6 +1,6 @@
 PORTNAME=	emby-server
 DISTVERSION?=	4.7.11.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
 		https://mediabrowser.github.io/embytools/
@@ -51,9 +51,16 @@ LIB_DEPENDS=	libaribb24.so:multimedia/aribb24 \
 		libx264.so:multimedia/libx264 \
 		libx265.so:multimedia/x265 \
 		libzvbi.so:devel/libzvbi
+
 RUN_DEPENDS=	icu>0:devel/icu \
+		libexif>0:graphics/libexif \
+		libheif>0:graphics/libheif \
+		libimagequant>0:graphics/libimagequant \
 		libinotify>0:devel/libinotify \
-		libunwind>0:devel/libunwind
+		libjxl>0:graphics/libjxl \
+		libunwind>0:devel/libunwind \
+		openjpeg>0:graphics/openjpeg \
+		orc>0:devel/orc
 
 USES=		compiler:c11 gmake iconv localbase:ldflags pkgconfig sqlite ssl:run
 USE_RC_SUBR=	${PORTNAME}
