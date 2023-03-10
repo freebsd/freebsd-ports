@@ -1,6 +1,6 @@
---- net/proxy_resolution/proxy_config_service.cc.orig	2022-10-01 07:40:07 UTC
+--- net/proxy_resolution/proxy_config_service.cc.orig	2023-03-10 11:01:21 UTC
 +++ net/proxy_resolution/proxy_config_service.cc
-@@ -18,20 +18,20 @@
+@@ -19,20 +19,20 @@
  #include "net/proxy_resolution/proxy_config_service_ios.h"
  #elif BUILDFLAG(IS_MAC)
  #include "net/proxy_resolution/proxy_config_service_mac.h"

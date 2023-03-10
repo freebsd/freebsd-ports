@@ -1,11 +1,11 @@
---- chrome/browser/printing/print_job_worker.cc.orig	2023-02-11 09:11:04 UTC
-+++ chrome/browser/printing/print_job_worker.cc
-@@ -205,7 +205,7 @@ void PrintJobWorker::SetSettings(base::Value::Dict new
+--- chrome/browser/printing/printer_query.cc.orig	2023-03-10 11:01:21 UTC
++++ chrome/browser/printing/printer_query.cc
+@@ -284,7 +284,7 @@ void PrinterQuery::UpdatePrintSettings(base::Value::Di
      crash_key = std::make_unique<crash_keys::ScopedPrinterInfo>(
          print_backend->GetPrinterDriverInfo(printer_name));
  
 -#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_CUPS)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_CUPS)
++#if (BUILDFLAG(IS_BSD) || BUILDFLAG(IS_LINUX)) && BUILDFLAG(USE_CUPS)
      PrinterBasicInfo basic_info;
      if (print_backend->GetPrinterBasicInfo(printer_name, &basic_info) ==
          mojom::ResultCode::kSuccess) {

@@ -1,6 +1,6 @@
---- ui/base/webui/web_ui_util.cc.orig	2022-12-02 17:56:32 UTC
+--- ui/base/webui/web_ui_util.cc.orig	2023-03-10 11:01:21 UTC
 +++ ui/base/webui/web_ui_util.cc
-@@ -218,7 +218,7 @@ std::string GetFontFamily() {
+@@ -212,7 +212,7 @@ std::string GetFontFamily() {
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

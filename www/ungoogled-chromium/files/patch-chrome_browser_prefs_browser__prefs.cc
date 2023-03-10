@@ -1,6 +1,6 @@
---- chrome/browser/prefs/browser_prefs.cc.orig	2023-02-11 09:11:04 UTC
+--- chrome/browser/prefs/browser_prefs.cc.orig	2023-03-10 11:01:21 UTC
 +++ chrome/browser/prefs/browser_prefs.cc
-@@ -452,14 +452,14 @@
+@@ -455,14 +455,14 @@
  #include "components/os_crypt/os_crypt.h"
  #endif
  
@@ -17,7 +17,7 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
  #include "chrome/browser/browser_switcher/browser_switcher_prefs.h"
  #endif
-@@ -492,7 +492,7 @@
+@@ -495,7 +495,7 @@
  #include "chrome/browser/sessions/session_service_log.h"
  #endif
  
@@ -26,7 +26,7 @@
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -1030,7 +1030,7 @@ void RegisterProfilePrefsForMigration(
+@@ -1066,7 +1066,7 @@ void RegisterProfilePrefsForMigration(
    registry->RegisterIntegerPref(kProfileAvatarTutorialShown, 0);
  #endif
  
@@ -35,7 +35,7 @@
    // Deprecated 08/2022.
    registry->RegisterBooleanPref(prefs::kUsesSystemThemeDeprecated, false);
  #endif
-@@ -1288,7 +1288,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1342,7 +1342,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -44,7 +44,7 @@
    web_app::url_handler_prefs::RegisterLocalStatePrefs(registry);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -1620,11 +1620,11 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -1676,11 +1676,11 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
    safe_browsing::PostCleanupSettingsResetter::RegisterProfilePrefs(registry);
  #endif
  
@@ -58,7 +58,7 @@
    browser_switcher::BrowserSwitcherPrefs::RegisterProfilePrefs(registry);
  #endif
  
-@@ -2008,7 +2008,7 @@ void MigrateObsoleteProfilePrefs(Profile* profile) {
+@@ -2079,7 +2079,7 @@ void MigrateObsoleteProfilePrefs(Profile* profile) {
    profile_prefs->ClearPref(kProfileAvatarTutorialShown);
  #endif
  

@@ -1,13 +1,13 @@
---- chrome/browser/memory_details_linux.cc.orig	2022-10-01 07:40:07 UTC
+--- chrome/browser/memory_details_linux.cc.orig	2023-03-10 06:02:42 UTC
 +++ chrome/browser/memory_details_linux.cc
-@@ -13,6 +13,7 @@
+@@ -12,6 +12,7 @@
+ #include <memory>
  #include <set>
  
- #include "base/bind.h"
 +#include "base/command_line.h"
  #include "base/files/file_util.h"
+ #include "base/functional/bind.h"
  #include "base/process/process_iterator.h"
- #include "base/process/process_metrics.h"
 @@ -27,6 +28,7 @@
  #include "content/public/browser/browser_task_traits.h"
  #include "content/public/browser/browser_thread.h"

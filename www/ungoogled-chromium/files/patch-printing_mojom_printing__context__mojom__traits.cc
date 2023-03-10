@@ -1,4 +1,4 @@
---- printing/mojom/printing_context_mojom_traits.cc.orig	2022-10-01 07:40:07 UTC
+--- printing/mojom/printing_context_mojom_traits.cc.orig	2023-03-10 11:01:21 UTC
 +++ printing/mojom/printing_context_mojom_traits.cc
 @@ -15,7 +15,7 @@
  #include "ui/gfx/geometry/mojom/geometry_mojom_traits.h"
@@ -9,7 +9,7 @@
  #include "mojo/public/mojom/base/values.mojom.h"
  #endif
  
-@@ -147,7 +147,7 @@ bool StructTraits<
+@@ -149,7 +149,7 @@ bool StructTraits<
    }
  
    out->set_pages_per_sheet(data.pages_per_sheet());

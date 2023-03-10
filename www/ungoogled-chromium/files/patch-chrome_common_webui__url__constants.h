@@ -1,6 +1,6 @@
---- chrome/common/webui_url_constants.h.orig	2023-02-11 09:11:04 UTC
+--- chrome/common/webui_url_constants.h.orig	2023-03-10 11:01:21 UTC
 +++ chrome/common/webui_url_constants.h
-@@ -416,24 +416,24 @@ extern const char kOsUIScanningAppURL[];
+@@ -419,24 +419,24 @@ extern const char kOsUIShortcutCustomizationAppURL[];
  extern const char kOsUIVersionURL[];
  #endif
  
@@ -29,7 +29,7 @@
  extern const char kChromeUIWebAppSettingsURL[];
  extern const char kChromeUIWebAppSettingsHost[];
  #endif
-@@ -448,14 +448,14 @@ extern const char kChromeUILinuxProxyConfigHost[];
+@@ -451,14 +451,14 @@ extern const char kChromeUILinuxProxyConfigHost[];
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -46,7 +46,7 @@
  extern const char kChromeUIBrowserSwitchHost[];
  extern const char kChromeUIBrowserSwitchURL[];
  extern const char kChromeUIEnterpriseProfileWelcomeHost[];
-@@ -469,7 +469,7 @@ extern const char kChromeUIProfilePickerUrl[];
+@@ -472,7 +472,7 @@ extern const char kChromeUIProfilePickerUrl[];
  extern const char kChromeUIProfilePickerStartupQuery[];
  #endif
  

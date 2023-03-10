@@ -1,6 +1,6 @@
---- chrome/browser/printing/print_backend_service_manager.cc.orig	2023-02-11 09:11:04 UTC
+--- chrome/browser/printing/print_backend_service_manager.cc.orig	2023-03-10 11:01:21 UTC
 +++ chrome/browser/printing/print_backend_service_manager.cc
-@@ -513,7 +513,7 @@ absl::optional<uint32_t> PrintBackendServiceManager::R
+@@ -547,7 +547,7 @@ PrintBackendServiceManager::RegisterClient(
        query_clients_.insert(client_id);
        break;
      case ClientType::kQueryWithUi:
@@ -9,7 +9,7 @@
        if (!query_with_ui_clients_.empty())
          return absl::nullopt;
  #endif
-@@ -751,7 +751,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
+@@ -811,7 +811,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
        break;
  
      case ClientType::kQueryWithUi:
@@ -18,12 +18,12 @@
        // No need to update if there were other query with UI clients.
        if (query_with_ui_clients_.size() > 1)
          return absl::nullopt;
-@@ -808,7 +808,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
+@@ -868,7 +868,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
        return kNoClientsRegisteredResetOnIdleTimeout;
  
      case ClientType::kQueryWithUi:
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
        // No need to update if there were other query with UI clients.
-       if (!query_with_ui_clients_.empty())
+       if (HasQueryWithUiClientForRemoteId(remote_id)) {
          return absl::nullopt;
