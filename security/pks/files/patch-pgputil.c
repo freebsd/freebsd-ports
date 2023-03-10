@@ -14,7 +14,7 @@
        break;
      case EVP_PKEY_DSA:
 -      b = BN_dup (pkey->pkey.dsa->p);
-+      b = BN_dup (RSA_get0_p(EVP_PKEY_get0_DSA(pkey)));
++      b = BN_dup (DSA_get0_p(EVP_PKEY_get0_DSA(pkey)));
        break;
      }
    EVP_PKEY_free (pkey);

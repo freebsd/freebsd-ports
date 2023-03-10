@@ -20,10 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--localstatedir=/var/pks \
-		--with-libwrap \
+		--with-db --with-ipv6 --with-libwrap \
 		--with-openssl=${OPENSSLBASE}
-MAKE_ENV+=	SUBDIRS=
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	DBLIB="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}" \
 		DBINC=-I${BDB_INCLUDE_DIR} DBHDR=db.h
 
