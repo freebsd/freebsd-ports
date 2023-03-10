@@ -10,6 +10,9 @@ WWW=		http://unix.freecode.com/projects/thinglaunch/
 
 LICENSE=	MIT
 
+DEPRECATED=	Abandonware, please use x11/thingylaunch instead
+EXPIRATION_DATE=	2023-06-10
+
 USES=		xorg
 USE_XORG=	x11 xorgproto
 
