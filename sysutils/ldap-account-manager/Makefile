@@ -1,9 +1,9 @@
 PORTNAME=	ldap-account-manager
-DISTVERSION=	8.0.1
+DISTVERSION=	8.1
 CATEGORIES=	sysutils www
 MASTER_SITES=	SF/${SHORTNAME}/LAM/${PORTVERSION}
 
-MAINTAINER=	basil@vpm.net.ua
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Webfrontend for managing accounts stored in an OpenLDAP server
 WWW=		https://www.ldap-account-manager.org/lamcms/
 
