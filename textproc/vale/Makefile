@@ -1,6 +1,5 @@
 PORTNAME=	vale
-PORTVERSION=	2.23.0
-PORTREVISION=	1
+PORTVERSION=	2.24.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -15,6 +14,7 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	errata-ai
 GH_TUPLE=	\
+		adrg:strutil:v0.3.0:adrg_strutil/vendor/github.com/adrg/strutil \
 		antonmedv:expr:v1.12.0:antonmedv_expr/vendor/github.com/antonmedv/expr \
 		atomicgo:cursor:v0.0.1:atomicgo_cursor/vendor/github.com/atomicgo/cursor \
 		d5:tengo:v2.10.0:d5_tengo_v2/vendor/github.com/d5/tengo/v2 \
