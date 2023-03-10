@@ -1,6 +1,5 @@
 PORTNAME=	lasso
-PORTVERSION=	2.8.0
-PORTREVISION=	2
+PORTVERSION=	2.8.1
 CATEGORIES=	security
 MASTER_SITES=	https://dev.entrouvert.org/releases/lasso/
 
@@ -34,6 +33,12 @@ OPTIONS_SUB=	yes
 PERL_USES=			perl5
 PERL_CONFIGURE_ENABLE=		perl
 PYTHON_CONFIGURE_ENABLE=	python
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -E 's,(xmlsec1-openssl >= 1\.2\.6) openssl,\1,' \
