@@ -1,6 +1,6 @@
---- gpu/ipc/service/gpu_memory_buffer_factory.cc.orig	2023-02-11 09:11:04 UTC
+--- gpu/ipc/service/gpu_memory_buffer_factory.cc.orig	2023-03-10 11:01:21 UTC
 +++ gpu/ipc/service/gpu_memory_buffer_factory.cc
-@@ -12,7 +12,7 @@
+@@ -13,7 +13,7 @@
  #include "gpu/ipc/service/gpu_memory_buffer_factory_io_surface.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "gpu/ipc/service/gpu_memory_buffer_factory_native_pixmap.h"
  #endif
  
-@@ -35,7 +35,7 @@ GpuMemoryBufferFactory::CreateNativeType(
+@@ -36,7 +36,7 @@ GpuMemoryBufferFactory::CreateNativeType(
    return std::make_unique<GpuMemoryBufferFactoryIOSurface>();
  #elif BUILDFLAG(IS_ANDROID)
    return std::make_unique<GpuMemoryBufferFactoryAndroidHardwareBuffer>();

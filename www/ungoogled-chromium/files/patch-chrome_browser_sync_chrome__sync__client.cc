@@ -1,6 +1,6 @@
---- chrome/browser/sync/chrome_sync_client.cc.orig	2023-02-11 09:11:04 UTC
+--- chrome/browser/sync/chrome_sync_client.cc.orig	2023-03-10 11:01:21 UTC
 +++ chrome/browser/sync/chrome_sync_client.cc
-@@ -127,7 +127,7 @@
+@@ -126,7 +126,7 @@
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/tabs/saved_tab_groups/saved_tab_group_keyed_service.h"
  #include "chrome/browser/ui/tabs/saved_tab_groups/saved_tab_group_service_factory.h"
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) ||
-@@ -448,7 +448,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -467,7 +467,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
  #endif  // !BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -18,7 +18,7 @@
      if (features::kTabGroupsSaveSyncIntegration.Get()) {
        controllers.push_back(std::make_unique<syncer::ModelTypeController>(
            syncer::SAVED_TAB_GROUP,
-@@ -461,7 +461,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
+@@ -480,7 +480,7 @@ ChromeSyncClient::CreateDataTypeControllers(syncer::Sy
  
  // Chrome prefers OS provided spell checkers where they exist. So only sync the
  // custom dictionary on platforms that typically don't provide one.
@@ -27,9 +27,9 @@
      // Dictionary sync is enabled by default.
      if (GetPrefService()->GetBoolean(spellcheck::prefs::kSpellCheckEnable)) {
        controllers.push_back(
-@@ -627,7 +627,7 @@ ChromeSyncClient::GetControllerDelegateForModelType(sy
-           ->GetControllerDelegate();
-     }
+@@ -639,7 +639,7 @@ base::WeakPtr<syncer::ModelTypeControllerDelegate>
+ ChromeSyncClient::GetControllerDelegateForModelType(syncer::ModelType type) {
+   switch (type) {
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_WIN)
 +    BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)

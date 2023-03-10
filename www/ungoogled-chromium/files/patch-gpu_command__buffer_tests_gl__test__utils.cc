@@ -1,4 +1,4 @@
---- gpu/command_buffer/tests/gl_test_utils.cc.orig	2022-10-01 07:40:07 UTC
+--- gpu/command_buffer/tests/gl_test_utils.cc.orig	2023-03-10 11:01:21 UTC
 +++ gpu/command_buffer/tests/gl_test_utils.cc
 @@ -24,7 +24,7 @@
  #include "ui/gl/gl_version_info.h"
@@ -9,7 +9,7 @@
  #include "ui/gl/gl_image_native_pixmap.h"
  #endif
  
-@@ -458,7 +458,7 @@ void GpuCommandBufferTestEGL::RestoreGLDefault() {
+@@ -459,7 +459,7 @@ void GpuCommandBufferTestEGL::RestoreGLDefault() {
    window_system_binding_info_ = gl::GLWindowSystemBindingInfo();
  }
  

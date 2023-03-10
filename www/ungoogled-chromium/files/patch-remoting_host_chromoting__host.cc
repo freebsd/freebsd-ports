@@ -1,6 +1,6 @@
---- remoting/host/chromoting_host.cc.orig	2023-02-11 09:11:04 UTC
+--- remoting/host/chromoting_host.cc.orig	2023-03-10 11:01:21 UTC
 +++ remoting/host/chromoting_host.cc
-@@ -130,7 +130,7 @@ void ChromotingHost::StartChromotingHostServices() {
+@@ -132,7 +132,7 @@ void ChromotingHost::StartChromotingHostServices() {
    DCHECK_CALLED_ON_VALID_SEQUENCE(sequence_checker_);
    DCHECK(!ipc_server_);
  

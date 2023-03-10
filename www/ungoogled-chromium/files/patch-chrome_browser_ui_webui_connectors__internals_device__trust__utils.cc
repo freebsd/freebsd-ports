@@ -1,4 +1,4 @@
---- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2023-01-13 08:56:02 UTC
+--- chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc.orig	2023-03-10 11:01:21 UTC
 +++ chrome/browser/ui/webui/connectors_internals/device_trust_utils.cc
 @@ -6,7 +6,7 @@
  
@@ -18,7 +18,7 @@
  
  connectors_internals::mojom::KeyTrustLevel ParseTrustLevel(
      BPKUR::KeyTrustLevel trust_level) {
-@@ -70,7 +70,7 @@ connectors_internals::mojom::Int32ValuePtr ToMojomValu
+@@ -92,7 +92,7 @@ connectors_internals::mojom::Int32ValuePtr ToMojomValu
  }  // namespace
  
  connectors_internals::mojom::KeyInfoPtr GetKeyInfo() {
