@@ -1,7 +1,7 @@
---- Makefile.orig	2022-03-02 10:55:25 UTC
+--- Makefile.orig	2023-03-08 12:18:14 UTC
 +++ Makefile
-@@ -184,22 +184,22 @@ install-dunst: dunst doc
- install: install-dunst install-dunstctl install-dunstrc install-service install-dunstify
+@@ -187,22 +187,22 @@ clean-wayland-protocols:
+ install: install-dunst install-dunstctl install-dunstrc install-service 
  
  install-dunst: dunst doc
 -	install -Dm755 dunst ${DESTDIR}${BINDIR}/dunst
@@ -30,12 +30,12 @@
  ifneq (0,${SYSTEMD})
  install-service: install-service-systemd
  install-service-systemd: service-systemd
-@@ -207,7 +207,7 @@ install-dunstify: dunstify
- endif
- 
+@@ -212,7 +212,7 @@ endif
+ ifneq (0,${DUNSTIFY})
+ install: install-dunstify
  install-dunstify: dunstify
 -	install -Dm755 dunstify ${DESTDIR}${BINDIR}/dunstify
 +	install -m555 dunstify ${DESTDIR}${BINDIR}/dunstify
+ endif
  
  uninstall: uninstall-keepconf
- uninstall-purge: uninstall-keepconf uninstall-dunstrc
