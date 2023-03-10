@@ -205,7 +205,7 @@
       </package>
       <package>
 	<name>apache-openoffice-devel</name>
-	<range><lt>4.2.1678061694i,4</lt></range>
+	<range><lt>4.2.1678061694,4</lt></range>
       </package>
     </affects>
     <description>
