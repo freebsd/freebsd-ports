@@ -1,0 +1,12 @@
+--- CMakeLists.txt.orig	2023-03-08 17:22:01 UTC
++++ CMakeLists.txt
+@@ -320,7 +320,8 @@ elseif(UNIX)
+   string(TOLOWER ${PROJECT_NAME} BINARY_NAME)
+   set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${BINARY_NAME})
+ 
+-  target_link_libraries(${PROJECT_NAME} PUBLIC X11)
++  find_library(X11_LIBRARY X11)
++  target_link_libraries(${PROJECT_NAME} PUBLIC ${X11_LIBRARY})
+ 
+   include(GNUInstallDirs)
+ 
