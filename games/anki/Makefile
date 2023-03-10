@@ -1,6 +1,6 @@
 PORTNAME=	anki
 DISTVERSION=	2.1.54
-PORTREVISION=	11
+PORTREVISION=	12
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache \
@@ -51,7 +51,7 @@ RUN_DEPENDS=	lame:audio/lame \
 		${PYTHON_PKGNAMEPREFIX}waitress>0:www/py-waitress@${PY_FLAVOR}
 
 # USES=ssl is required for the compilation of the Rust code
-USES=		cargo desktop-file-utils go:modules,no_targets nodejs:build pyqt:5 \
+USES=		cargo desktop-file-utils go:modules,no_targets nodejs:build pyqt:6 \
 		python:3.9+ shebangfix ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	ankitects
@@ -71,7 +71,7 @@ GH_TUPLE+=	bazelbuild:bazel-skylib:e59b620:bzlskylib \
 GH_TUPLE+=	evanw:esbuild:${_MY_ESBUILDVER}:esbuild \
 		golang:sys:aa78b53d3365:golang_sys
 
-USE_PYQT=	pyqt5 sip webengine
+USE_PYQT=	pyqt6 sip:build webengine
 
 SHEBANG_FILES=	qt/tools/runanki.system.in
 
