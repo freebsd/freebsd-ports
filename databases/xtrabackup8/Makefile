@@ -62,7 +62,7 @@ WRKSRC=		${WRKDIR}/${PPORTNAME}-${PPORTNAME}-${DVERSION}
 # which is broken on i386 due to different size of types and causes a
 # 'static_assert(alignof(T) <= alignof(std::max_align_t))' error
 .if ${ARCH} == i386
-CMAKE_ARGS+=	-DDISABLE_PSI_MEMORY=1
+CXXFLAGS+=	-malign-double
 .endif
 
 KEEP_EXTRA=	lz4 robin-hood-hashing zlib
