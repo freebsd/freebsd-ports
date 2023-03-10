@@ -2,8 +2,8 @@
 # being overriden by devel/appstream-qt slave port
 
 PORTNAME?=	AppStream
-DISTVERSION=	0.16.0
-PORTREVISION?=	1
+DISTVERSION=	0.16.1
+PORTREVISION?=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://www.freedesktop.org/software/${PORTNAME:tl}/releases/
 
@@ -41,6 +41,13 @@ post-patch:
 	${REINPLACE_CMD} \
 		-e 's|APPLICATIONS_DIR = "/usr/share/applications"|APPLICATIONS_DIR = "${LOCALBASE}/share/applications"|' \
 		-e 's|METAINFO_DIR = "/usr/share/metainfo"|METAINFO_DIR = "${LOCALBASE}/share/metainfo"|' \
+		-e 's|"/usr/share",|"${LOCALBASE}/share",|' \
 		${WRKSRC}/src/as-pool.c
+	${REINPLACE_CMD} \
+		-e 's|"/usr/share";|"${LOCALBASE}/share";|' \
+		${WRKSRC}/src/as-utils.c
+	${REINPLACE_CMD} \
+		-e 's|"/usr/share/fonts/"|"${LOCALBASE}/share/fonts/"|' \
+		${WRKSRC}/compose/asc-utils-fonts.c
 
 .include <bsd.port.mk>
