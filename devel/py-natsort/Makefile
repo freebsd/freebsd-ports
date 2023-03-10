@@ -1,5 +1,5 @@
 PORTNAME=	natsort
-DISTVERSION=	8.3.0
+DISTVERSION=	8.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}semver>0:devel/py-semver@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist distutils pytest # 1 test fails, see https://github.com/SethMMorton/natsort/issues/161
+USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
 
