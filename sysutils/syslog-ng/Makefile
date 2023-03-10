@@ -1,7 +1,10 @@
 PORTNAME=	syslog-ng
-DISTVERSION=	3.38.1
+DISTVERSION=	4.1.1
 CATEGORIES=	sysutils
+# using a self generated release tgz as upstream 4.0.1 tgz is broken on FreeBSD
+# see: https://github.com/syslog-ng/syslog-ng/issues/4275
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
+# MASTER_SITES=	https://peter.czanik.hu/freebsd/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Powerful syslogd replacement
@@ -51,6 +54,7 @@ SHEBANG_FILES=	lib/merge-grammar.py
 GNU_CONFIGURE=	yes
 # Note: Even if PYTHON is deselected, glib20 will install python.
 USE_GNOME=	glib20
+# USE_PYTHON=	allflavors
 SUB_FILES=	pkg-message
 INSTALL_TARGET=	install-strip
 
@@ -58,7 +62,7 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 		--enable-dynamic-linking --enable-manpages \
 		--disable-linux-caps \
 		--datadir=${PREFIX}/share/ \
-		--with-python=${PYTHON_VER}
+		--with-python=${PYTHON_VER} --with-python-packages=none
 
 CONFIGURE_ENV+=		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 			OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto -lssl"
@@ -148,7 +152,35 @@ PYTHON_USES=			python:3.5+
 PYTHON_CONFIGURE_ON=		--enable-python
 PYTHON_CONFIGURE_OFF=		--disable-python
 PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
-		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info \
+		etc/python/README.md \
+		lib/syslog-ng/python/requirements.txt \
+		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/requires.txt \
+		lib/syslog-ng/python/syslogng/__pycache__/confgen%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/confgen.py \
+		lib/syslog-ng/python/syslogng/modules/kubernetes/__init__.py \
+		lib/syslog-ng/python/syslogng/modules/kubernetes/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/kubernetes/scl/kubernetes.conf \
+		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/PKG-INFO \
+		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt \
+		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt \
+		lib/syslog-ng/python/syslogng-1.0-py%%PYTHON_VER%%.egg-info/top_level.txt \
+		lib/syslog-ng/python/syslogng/__pycache__/dest%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/logger%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/message%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/parser%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/persist%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/source%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/__pycache__/template%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/dest.py \
+		lib/syslog-ng/python/syslogng/logger.py \
+		lib/syslog-ng/python/syslogng/message.py \
+		lib/syslog-ng/python/syslogng/modules/example/__init__.py \
+		lib/syslog-ng/python/syslogng/modules/example/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/example/scl/example.conf \
+		lib/syslog-ng/python/syslogng/parser.py \
+		lib/syslog-ng/python/syslogng/persist.py \
+		lib/syslog-ng/python/syslogng/source.py \
+		lib/syslog-ng/python/syslogng/template.py \
 		lib/syslog-ng/python/syslogng/__init__.py \
 		lib/syslog-ng/python/syslogng/__pycache__/__init__.cpython-${PYTHON_SUFFIX}.pyc \
 		lib/syslog-ng/python/syslogng/debuggercli/__init__.py \

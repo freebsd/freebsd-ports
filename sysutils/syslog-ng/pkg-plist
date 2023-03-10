@@ -6,6 +6,7 @@ bin/slogencrypt
 bin/slogkey
 bin/slogverify
 bin/update-patterndb
+bin/syslog-ng-update-virtualenv
 @sample etc/scl.conf.sample
 etc/syslog-ng.conf.dist
 include/syslog-ng/ack-tracker/ack_tracker.h
@@ -140,11 +141,9 @@ include/syslog-ng/logproto/logproto-client.h
 include/syslog-ng/logproto/logproto-dgram-server.h
 include/syslog-ng/logproto/logproto-framed-client.h
 include/syslog-ng/logproto/logproto-framed-server.h
-include/syslog-ng/logproto/logproto-indented-multiline-server.h
 include/syslog-ng/logproto/logproto-multiline-server.h
 include/syslog-ng/logproto/logproto-proxied-text-server.h
 include/syslog-ng/logproto/logproto-record-server.h
-include/syslog-ng/logproto/logproto-regexp-multiline-server.h
 include/syslog-ng/logproto/logproto-server.h
 include/syslog-ng/logproto/logproto-text-client.h
 include/syslog-ng/logproto/logproto-text-server.h
@@ -169,6 +168,10 @@ include/syslog-ng/ml-batched-timer.h
 include/syslog-ng/module-config.h
 include/syslog-ng/msg-format.h
 include/syslog-ng/msg-stats.h
+include/syslog-ng/multi-line/indented-multi-line.h
+include/syslog-ng/multi-line/multi-line-factory.h
+include/syslog-ng/multi-line/multi-line-logic.h
+include/syslog-ng/multi-line/regexp-multi-line.h
 include/syslog-ng/nondumpable-allocator.h
 include/syslog-ng/parse-number.h
 include/syslog-ng/parser/parser-expr-parser.h
@@ -226,6 +229,7 @@ include/syslog-ng/stats/stats-query-commands.h
 include/syslog-ng/stats/stats-query.h
 include/syslog-ng/stats/stats-registry.h
 include/syslog-ng/stats/stats.h
+include/syslog-ng/stats/stats-prometheus.h
 include/syslog-ng/str-format.h
 include/syslog-ng/str-repr/decode.h
 include/syslog-ng/str-repr/encode.h
@@ -258,7 +262,9 @@ include/syslog-ng/timeutils/zonecache.h
 include/syslog-ng/timeutils/zonedb.h
 include/syslog-ng/timeutils/zoneinfo.h
 include/syslog-ng/tls-support.h
-include/syslog-ng/tlscontext.h
+include/syslog-ng/transport/tls-context.h
+include/syslog-ng/transport/tls-session.h
+include/syslog-ng/transport/tls-verifier.h
 include/syslog-ng/transport/logtransport.h
 include/syslog-ng/transport/multitransport.h
 include/syslog-ng/transport/transport-aux-data.h
@@ -284,20 +290,21 @@ include/syslog-ng/value-pairs/value-pairs.h
 include/syslog-ng/versioning.h
 include/syslog-ng/window-size-counter.h
 include/syslog-ng/mainloop-threaded-worker.h
-lib/libevtlog-3.38.so.0
-lib/libevtlog-3.38.so.0.0.0
+include/syslog-ng/metrics-pipe.h
+lib/libevtlog-4.1.so.0
+lib/libevtlog-4.1.so.0.0.0
 lib/libevtlog.so
-lib/libloggen_helper-3.38.so.0
-lib/libloggen_helper-3.38.so.0.0.0
+lib/libloggen_helper-4.1.so.0
+lib/libloggen_helper-4.1.so.0.0.0
 lib/libloggen_helper.so
-lib/libloggen_plugin-3.38.so.0
-lib/libloggen_plugin-3.38.so.0.0.0
+lib/libloggen_plugin-4.1.so.0
+lib/libloggen_plugin-4.1.so.0.0.0
 lib/libloggen_plugin.so
 lib/libsecret-storage.so
 lib/libsecret-storage.so.0
 lib/libsecret-storage.so.0.0.0
-lib/libsyslog-ng-3.38.so.0
-lib/libsyslog-ng-3.38.so.0.0.0
+lib/libsyslog-ng-4.1.so.0
+lib/libsyslog-ng-4.1.so.0.0.0
 lib/libsyslog-ng-native-connector.a
 lib/libsyslog-ng.so
 lib/syslog-ng/libadd-contextual-data.so
@@ -313,7 +320,7 @@ lib/syslog-ng/libcef.so
 lib/syslog-ng/libconfgen.so
 lib/syslog-ng/libcryptofuncs.so
 lib/syslog-ng/libcsvparser.so
-lib/syslog-ng/libdbparser.so
+lib/syslog-ng/libcorrelation.so
 lib/syslog-ng/libdisk-buffer.so
 lib/syslog-ng/libexamples.so
 lib/syslog-ng/libgraphite.so
@@ -321,6 +328,7 @@ lib/syslog-ng/libhook-commands.so
 lib/syslog-ng/libkvformat.so
 lib/syslog-ng/liblinux-kmsg-format.so
 lib/syslog-ng/libmap-value-pairs.so
+lib/syslog-ng/libmetrics-probe.so
 lib/syslog-ng/libpseudofile.so
 lib/syslog-ng/libregexp-parser.so
 lib/syslog-ng/libsecure-logging.so
@@ -371,7 +379,6 @@ share/syslog-ng/include/scl/iptables/iptables.conf
 share/syslog-ng/include/scl/junos/plugin.conf
 share/syslog-ng/include/scl/kafka/kafka-java.conf
 share/syslog-ng/include/scl/kafka/kafka.conf
-share/syslog-ng/include/scl/kubernetes/kubernetes.conf
 share/syslog-ng/include/scl/linux-audit/linux-audit.conf
 share/syslog-ng/include/scl/loadbalancer/gen-loadbalancer.sh
 share/syslog-ng/include/scl/loadbalancer/plugin.conf
@@ -383,6 +390,7 @@ share/syslog-ng/include/scl/nodejs/plugin.conf
 share/syslog-ng/include/scl/osquery/plugin.conf
 share/syslog-ng/include/scl/pacct/plugin.conf
 share/syslog-ng/include/scl/paloalto/panos.conf
+share/syslog-ng/include/scl/python/python-modules.conf
 share/syslog-ng/include/scl/rewrite/cc-mask.conf
 share/syslog-ng/include/scl/slack/slack.conf
 share/syslog-ng/include/scl/snmptrap/snmptrapd-source.conf
@@ -407,6 +415,7 @@ share/syslog-ng/xsd/patterndb-2.xsd
 share/syslog-ng/xsd/patterndb-3.xsd
 share/syslog-ng/xsd/patterndb-4.xsd
 share/syslog-ng/xsd/patterndb-5.xsd
+share/syslog-ng/xsd/patterndb-6.xsd
 @sample etc/syslog-ng.conf.sample
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
