@@ -1,8 +1,9 @@
 PORTNAME=	bspwm
-DISTVERSION=	0.9.10
+DISTVERSION=	0.9.10.20221119
 CATEGORIES=	x11-wm
+PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	o.hushchenkov@gmail.com
+MAINTAINER=	jbo@insane.engineer
 COMMENT=	Tiling window manager based on binary space partitioning
 WWW=		https://github.com/baskerville/bspwm
 
@@ -15,12 +16,12 @@ LIB_DEPENDS=	libxcb-util.so:x11/xcb-util \
 RUN_DEPENDS=	sxhkd:x11/sxhkd
 
 USES=		gmake localbase:ldflags xorg
-USE_XORG=	xcb
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	baskerville
+GH_TAGNAME=	527864d8716462e52f85a419f97a776c0643a68c
+USE_XORG=	xcb
 
-CONFLICTS_INSTALL=  bspwm-devel
+CONFLICTS_INSTALL=	bspwm
 
 SUB_FILES=	pkg-message
 
@@ -35,14 +36,6 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/bspc.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/bspwm.1 ${STAGEDIR}${MANPREFIX}/man/man1
 
-post-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${STAGEDIR}${DOCSDIR}
-
-post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
-
 post-install-CONTRIB-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/bash-completion/completions
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
@@ -56,5 +49,13 @@ post-install-CONTRIB-on:
 		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_bspc
 	${INSTALL_DATA} ${WRKSRC}/contrib/freedesktop/bspwm.desktop \
 		${STAGEDIR}${PREFIX}/share/xsessions/bspwm.desktop
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.md ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
