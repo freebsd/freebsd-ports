@@ -1,8 +1,8 @@
---- services/plugins/dndcp/dndcp.cpp.orig	2021-08-03 01:47:47 UTC
+--- services/plugins/dndcp/dndcp.cpp.orig	2023-03-07 22:57:07 UTC
 +++ services/plugins/dndcp/dndcp.cpp
-@@ -31,11 +31,9 @@
- 
- #define G_LOG_DOMAIN "dndcp"
+@@ -36,11 +36,9 @@
+  */
+ #include <glib.h>
  
 -extern "C" {
  #include "vmware/guestrpc/tclodefs.h"

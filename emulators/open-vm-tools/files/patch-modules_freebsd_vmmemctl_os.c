@@ -1,20 +1,19 @@
---- modules/freebsd/vmmemctl/os.c.orig	2022-09-13 12:55:59 UTC
+--- modules/freebsd/vmmemctl/os.c.orig	2023-03-07 22:57:07 UTC
 +++ modules/freebsd/vmmemctl/os.c
-@@ -136,9 +136,11 @@ MALLOC_DEFINE(M_VMMEMCTL, BALLOON_NAME, "vmmemctl meta
- #endif
+@@ -103,7 +103,11 @@ MALLOC_DEFINE(M_VMMEMCTL, BALLOON_NAME, "vmmemctl meta
+ #define KVA_FREE(offset, size) kva_free(offset, size)
  
- #if __FreeBSD_version < 1000000
--   #define KMEM_FREE(offset, size) kmem_free(kernel_map, offset, size)
-+   #define KMEM_FREE(offset, size) kmem_free(kernel_map, (vm_offset_t)offset, size)
- #elif __FreeBSD_version < 1200083
--   #define KMEM_FREE(offset, size) kmem_free(kernel_arena, offset, size)
-+   #define KMEM_FREE(offset, size) kmem_free(kernel_arena, (vm_offset_t)offset, size)
-+#elif __FreeBSD_version < 1400070
+ #define KMEM_ALLOC(size) kmem_malloc(size, M_WAITOK | M_ZERO)
+-#define KMEM_FREE(offset, size) kmem_free(offset, size)
++#if __FreeBSD_version < 1400070
 +   #define KMEM_FREE(offset, size) kmem_free((vm_offset_t)offset, size)
- #else
-    #define KMEM_FREE(offset, size) kmem_free(offset, size)
- #endif
-@@ -442,7 +444,7 @@ os_pmap_free(os_pmap *p) // IN
++#else
++   #define KMEM_FREE(offset, size) kmem_free(offset, size)
++#endif
+ 
+ /*
+  * Globals
+@@ -404,7 +408,7 @@ os_pmap_free(os_pmap *p) // IN
  static void
  os_pmap_free(os_pmap *p) // IN
  {
