@@ -57,10 +57,10 @@ fi
 pidfile="/var/run/${name}/${name}.pid"
 required_files="${grafana_config}"
 
-procname="%%PREFIX%%/bin/grafana-server"
+procname="%%PREFIX%%/bin/grafana"
 command="/usr/sbin/daemon"
 command_args="-f ${grafana_syslog_output_flags} -p ${pidfile} -t ${name} \
-	/usr/bin/env ${grafana_env} ${procname} \
+	/usr/bin/env ${grafana_env} ${procname} server \
 	-config=${grafana_config} \
 	-homepath=${grafana_homepath} \
 	${grafana_args}"
