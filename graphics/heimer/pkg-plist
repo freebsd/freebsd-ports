@@ -1,0 +1,10 @@
+bin/heimer
+share/applications/heimer.desktop
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Company.alz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Family.alz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Heimer.alz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Large.alz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Matrix.alz
+share/icons/hicolor/256x256/apps/heimer.png
+share/metainfo/heimer.appdata.xml
+share/pixmaps/heimer.png
