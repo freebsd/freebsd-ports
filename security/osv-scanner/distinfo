@@ -1,5 +1,5 @@
-TIMESTAMP = 1676918735
-SHA256 (go/security_osv-scanner/osv-scanner-v1.1.0/v1.1.0.mod) = 3050812cea6d09d0bf4d8a5b23618ca826ebc3f477ee517bde5bc103a0e904cc
-SIZE (go/security_osv-scanner/osv-scanner-v1.1.0/v1.1.0.mod) = 850
-SHA256 (go/security_osv-scanner/osv-scanner-v1.1.0/v1.1.0.zip) = 7f04d99b15eece4ae4fd187b9b2fbff14055caa13a50a7fb0ab2a2b46575c6bb
-SIZE (go/security_osv-scanner/osv-scanner-v1.1.0/v1.1.0.zip) = 199043
+TIMESTAMP = 1678557781
+SHA256 (go/security_osv-scanner/osv-scanner-v1.2.0/v1.2.0.mod) = 5522dc6993dd786b218072bc6ea7c01e9acbce0210fa0165948e536dcc3010ff
+SIZE (go/security_osv-scanner/osv-scanner-v1.2.0/v1.2.0.mod) = 1718
+SHA256 (go/security_osv-scanner/osv-scanner-v1.2.0/v1.2.0.zip) = ad5a305fe554f3c2d6f32ca48c5c860458fe6a0acd9ae91d9ec44ab506b0db8a
+SIZE (go/security_osv-scanner/osv-scanner-v1.2.0/v1.2.0.zip) = 774990
