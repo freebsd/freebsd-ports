@@ -1,11 +1,11 @@
 PORTNAME=	dc3dd
-PORTVERSION=	7.2.646
+PORTVERSION=	7.3.0
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/${PORTNAME}%20${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	nobutaka@FreeBSD.org
 COMMENT=	dd program useful for computer forensics
-WWW=		http://dc3dd.sourceforge.net/
+WWW=		https://sourceforge.net/projects/dc3dd/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
