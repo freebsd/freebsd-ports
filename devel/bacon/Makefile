@@ -1,6 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.2
+DISTVERSION=	2.6.3
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -133,7 +133,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		jwalk-0.8.1 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
-		lazy-regex-2.4.1 \
+		lazy-regex-2.5.0 \
 		lazy-regex-proc_macros-2.4.1 \
 		libc-0.2.139 \
 		link-cplusplus-1.0.8 \
