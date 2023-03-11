@@ -1,4 +1,4 @@
-TIMESTAMP = 1505201300
+TIMESTAMP = 1678362238
 SHA256 (c-news/c-news.tar.Z) = 897ffa8e05bcf3fe8734cf83c893ca78416266665e06106ff52b733d319835d3
 SIZE (c-news/c-news.tar.Z) = 676481
 SHA256 (c-news/pgpverify-1.29) = 457ee3c3439a9b3a5d3eee76e6342b8c56334b12a88221b053c19c4add0f04f9
@@ -31,7 +31,5 @@ SHA256 (c-news/c-news-patch-inews-path) = ca7f05f9301003e6bb7fcd8107c11dfebc93d7
 SIZE (c-news/c-news-patch-inews-path) = 355
 SHA256 (c-news/c-news-patch-gawk3) = 6072cff1c060b059a5915f24e95252540a22d89889fcc4d1cb1fa49ebbb33205
 SIZE (c-news/c-news-patch-gawk3) = 1393
-SHA256 (c-news/c-news-patch-ansi) = eb22b48edf1dbbf010b6e27fb2664733c6617bf94944cc48e1882bc5a7db616c
-SIZE (c-news/c-news-patch-ansi) = 111850
-SHA256 (c-news/c-news-patch-pgpverify-1.12-perl4) = b3f935533d241cf04f92942ea33905968f24bedcf09bc6b33a241c66ba2f73c9
-SIZE (c-news/c-news-patch-pgpverify-1.12-perl4) = 1450
+SHA256 (c-news/c-news-patch-ansi2) = 801083b02a771a5a4e621d37242f5ee4642bf612d0012f765fb18539d01bc683
+SIZE (c-news/c-news-patch-ansi2) = 230769

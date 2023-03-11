@@ -1,6 +1,6 @@
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -23,7 +23,7 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
 		c-news-patch-y2k-2 \
 		c-news-patch-inews-path \
 		c-news-patch-gawk3 \
-		c-news-patch-ansi
+		c-news-patch-ansi2
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	News server
@@ -96,10 +96,6 @@ pre-patch:
 	${SED} -e 's|/usr/bin/perl|${LOCALBASE}/bin/perl|' \
 		${DISTDIR}/${DIST_SUBDIR}/${PGPVERIFY} \
 		> ${WRKSRC}/${PGPVERIFY}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/getline/get_line/g' ${WRKSRC}/readnews/active.c \
-		${WRKSRC}/readnews/newsrc.c
 
 pre-configure:
 .for i in conf/quiz.def conf/substitutions include/config.make
