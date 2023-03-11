@@ -1,7 +1,7 @@
 PORTNAME=	htmltest
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	textproc
 
 MAINTAINER=	dbaio@FreeBSD.org
@@ -22,7 +22,7 @@ GH_TUPLE=	\
 		fatih:color:v1.10.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:net:6772e930b67b:golang_net/vendor/golang.org/x/net \
-		golang:sys:4bcb84eeeb78:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golangplus:bytes:v1.0.0:golangplus_bytes/vendor/github.com/golangplus/bytes \
 		golangplus:sort:v1.0.0:golangplus_sort/vendor/github.com/golangplus/sort \
 		imdario:mergo:v0.3.11:imdario_mergo/vendor/github.com/imdario/mergo \

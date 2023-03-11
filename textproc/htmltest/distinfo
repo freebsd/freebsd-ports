@@ -1,4 +1,4 @@
-TIMESTAMP = 1667739247
+TIMESTAMP = 1678530211
 SHA256 (wjdp-htmltest-v0.17.0_GH0.tar.gz) = 2c89e56c837f4d715db9816942e007c973ba58de53d249abc80430c4b7e72f88
 SIZE (wjdp-htmltest-v0.17.0_GH0.tar.gz) = 5723150
 SHA256 (badoux-checkmail-v1.2.1_GH0.tar.gz) = 41e1b4afb111bcbec7b0650a4a02ea9f68dd4178f80dc3e33727c45481dfe6eb
@@ -17,8 +17,8 @@ SHA256 (go-yaml-yaml-v2.4.0_GH0.tar.gz) = d8e94679e5fff6bd1a35e10241543929a5f3da
 SIZE (go-yaml-yaml-v2.4.0_GH0.tar.gz) = 73209
 SHA256 (golang-net-6772e930b67b_GH0.tar.gz) = fde23e272650c45d1538ff7fc0e88d3935f6bb2a45c8c4d595c0b9375301d52e
 SIZE (golang-net-6772e930b67b_GH0.tar.gz) = 1251401
-SHA256 (golang-sys-4bcb84eeeb78_GH0.tar.gz) = 8404dc19a7a60236cc3c25abb192125961d338b182f97115d6265e063a4198e8
-SIZE (golang-sys-4bcb84eeeb78_GH0.tar.gz) = 1101830
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golangplus-bytes-v1.0.0_GH0.tar.gz) = 1b0116b6b25a8594536c51eb198fd3b22a54b0c4f57861a4e7b75bfbbc8720e6
 SIZE (golangplus-bytes-v1.0.0_GH0.tar.gz) = 4884
 SHA256 (golangplus-sort-v1.0.0_GH0.tar.gz) = 94edd9e105ee82ff865c75a71ae88f569d208208c78c0264e1b664f2d02d0b83
