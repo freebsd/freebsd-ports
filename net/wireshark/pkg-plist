@@ -670,7 +670,7 @@ lib/wireshark/cmake/WiresharkConfig.cmake
 lib/wireshark/cmake/WiresharkConfigVersion.cmake
 lib/wireshark/cmake/WiresharkTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/wireshark/cmake/WiresharkTargets.cmake
-lib/wireshark/extcap/androiddump
+%%ANDROIDDUMP%%lib/wireshark/extcap/androiddump
 %%LIBSSH%%lib/wireshark/extcap/ciscodump
 lib/wireshark/extcap/randpktdump
 %%LIBSSH%%lib/wireshark/extcap/sshdump
@@ -696,7 +696,7 @@ lib/wireshark/plugins/4.0/epan/wimaxasncp.so
 lib/wireshark/plugins/4.0/epan/wimaxmacphy.so
 lib/wireshark/plugins/4.0/wiretap/usbdump.so
 libdata/pkgconfig/wireshark.pc
-%%MANPAGES%%share/man/man1/androiddump.1.gz
+%%ANDROIDDUMP%%%%MANPAGES%%share/man/man1/androiddump.1.gz
 %%MANPAGES%%share/man/man1/capinfos.1.gz
 %%MANPAGES%%share/man/man1/captype.1.gz
 %%MANPAGES%%%%LIBSSH%%share/man/man1/ciscodump.1.gz
