@@ -1,5 +1,5 @@
 PORTNAME=	nagiosql
-PORTVERSION=	3.5.0
+PORTVERSION=	3.5.0.20230311
 CATEGORIES=	net-mgmt www
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		cpe gettext mysql php:web tar:bzip2
 USE_PHP=	filter gettext mysqli session simplexml
 USE_GITLAB=	yes
 GL_ACCOUNT=	wizonet
-GL_COMMIT=	148feacf2b22d5842574dcb5f6d2bf5071c14719
+GL_COMMIT=	7e40440fa5e0a4a81a3a40c2895b248bfabcdd84
 
 USERS?=		nagios
 GROUPS?=	nagios
