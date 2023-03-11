@@ -129,6 +129,7 @@ include/math/vec2.h
 include/math/vec3.h
 include/math/vec4.h
 include/mathio/ostream.h
+include/mikktspace/mikktspace.h
 include/tsl/robin_growth_policy.h
 include/tsl/robin_hash.h
 include/tsl/robin_map.h
@@ -193,6 +194,7 @@ lib/libimage.a
 lib/libktxreader.a
 lib/libmatdbg.a
 lib/libmeshoptimizer.a
+lib/libmikktspace.a
 lib/libshaders.a
 lib/libsmol-v.a
 lib/libstb.a
