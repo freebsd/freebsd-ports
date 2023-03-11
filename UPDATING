@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230311:
+  AFFECTS: users of net/dshell
+  AUTHOR: nobutaka@FreeBSD.org
+
+  net/dshell now depends on net/py-pcapy-ng instead of net/py-pcapy.
+  Because net/py-pcapy-ng conflicts with net/py-pcapy, please uninstall
+  py39-pcapy with the following command before upgrading:
+  # pkg delete -f py39-pcapy
+
 20230310:
   AFFECTS: users of net-mgmt/unifi7
   AUTHOR: otis@FreeBSD.org
