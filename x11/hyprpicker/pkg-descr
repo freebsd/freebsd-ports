@@ -1,1 +1,2 @@
-A wlroots-compatible Wayland color picker that does not suck.
+hyprpicker is a color picker with builtin screen magnifier for
+wlroots-based Wayland compositors.
