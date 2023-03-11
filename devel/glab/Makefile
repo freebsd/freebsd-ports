@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	git:devel/git
 
-USES=		go:modules
+USES=		go:modules,1.19
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_DATE=	$$(date +%d/%m/%Y)
