@@ -1,6 +1,5 @@
 PORTNAME=	calibre
-PORTVERSION=	6.13.0
-PORTREVISION=	2
+PORTVERSION=	6.14.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/ \
 		https://curl.haxx.se/ca/:cacert
@@ -82,8 +81,8 @@ USE_GNOME=	glib20
 USE_XORG=	xrender xext x11
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	kovidgoyal:calibre-translations:1688698:translations \
-		LibreOffice:dictionaries:bcf7f04:hypenation
+GH_TUPLE=	kovidgoyal:calibre-translations:4b939f7:translations \
+		LibreOffice:dictionaries:0589cc3:hypenation
 
 SHEBANG_GLOB=	*.sh *.py *.recipe
 python_OLD_CMD=	"/usr/bin/env  python" ${LOCALBASE}/bin/python3
@@ -146,7 +145,7 @@ do-install:
 	@${RMDIR} ${STAGEDIR}${PREFIX}/share/desktop-directories
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/calibre/calibre/plugins/*
 
-update-recent-uas:
+update-recent-uas: patch
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 		${PYSETUP} recent_uas)
 	${CP} ${BUILD_WRKSRC}/resources/user-agent-data.json ${FILESDIR}
