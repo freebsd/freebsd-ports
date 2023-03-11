@@ -1,7 +1,6 @@
 PORTNAME=	hq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.0
-PORTREVISION=	1
+DISTVERSION=	1.0.1
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,22 +15,22 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	orf
 
-CARGO_CRATES=	anyhow-1.0.68 \
+CARGO_CRATES=	anyhow-1.0.69 \
 		arrayvec-0.7.2 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		block-buffer-0.10.3 \
+		block-buffer-0.10.4 \
 		brownstone-3.0.0 \
 		byteorder-1.4.3 \
-		cc-1.0.78 \
+		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		clap-4.0.29 \
-		clap_derive-4.0.21 \
-		clap_lex-0.3.0 \
+		clap-4.1.8 \
+		clap_derive-4.1.8 \
+		clap_lex-0.3.2 \
 		convert_case-0.4.0 \
 		cpufeatures-0.2.5 \
 		crypto-common-0.1.6 \
-		cssparser-0.27.2 \
+		cssparser-0.29.6 \
 		cssparser-macros-0.6.0 \
 		derive_more-0.99.17 \
 		digest-0.10.6 \
@@ -46,43 +45,42 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		getopts-0.2.21 \
 		getrandom-0.1.16 \
 		getrandom-0.2.8 \
-		heck-0.4.0 \
-		hermit-abi-0.2.6 \
+		heck-0.4.1 \
+		hermit-abi-0.3.1 \
 		html5ever-0.26.0 \
 		indent_write-2.2.0 \
-		io-lifetimes-1.0.3 \
-		is-terminal-0.4.2 \
-		itoa-0.4.8 \
-		itoa-1.0.5 \
+		io-lifetimes-1.0.6 \
+		is-terminal-0.4.4 \
+		itoa-1.0.6 \
 		joinery-2.1.0 \
-		libc-0.2.138 \
+		libc-0.2.140 \
 		linux-raw-sys-0.1.4 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		mac-0.1.1 \
 		markup5ever-0.11.0 \
-		matches-0.1.9 \
+		matches-0.1.10 \
 		memchr-2.5.0 \
 		minimal-lexical-0.2.1 \
 		new_debug_unreachable-1.0.4 \
 		nodrop-0.1.14 \
-		nom-7.1.1 \
+		nom-7.1.3 \
 		nom-supreme-0.8.0 \
-		once_cell-1.16.0 \
+		once_cell-1.17.1 \
 		os_str_bytes-6.4.1 \
 		parking_lot-0.12.1 \
-		parking_lot_core-0.9.5 \
-		pest-2.5.1 \
-		pest_derive-2.5.1 \
-		pest_generator-2.5.1 \
-		pest_meta-2.5.1 \
+		parking_lot_core-0.9.7 \
+		pest-2.5.6 \
+		pest_derive-2.5.6 \
+		pest_generator-2.5.6 \
+		pest_meta-2.5.6 \
 		phf-0.8.0 \
 		phf-0.10.1 \
 		phf_codegen-0.8.0 \
 		phf_codegen-0.10.0 \
 		phf_generator-0.8.0 \
 		phf_generator-0.10.0 \
-		phf_macros-0.8.0 \
+		phf_macros-0.10.0 \
 		phf_shared-0.8.0 \
 		phf_shared-0.10.0 \
 		ppv-lite86-0.2.17 \
@@ -90,7 +88,7 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
-		proc-macro2-1.0.49 \
+		proc-macro2-1.0.51 \
 		quote-1.0.23 \
 		rand-0.7.3 \
 		rand-0.8.5 \
@@ -102,31 +100,30 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		rand_pcg-0.2.1 \
 		redox_syscall-0.2.16 \
 		rustc_version-0.4.0 \
-		rustix-0.36.5 \
-		ryu-1.0.12 \
+		rustix-0.36.9 \
+		ryu-1.0.13 \
 		scopeguard-1.1.0 \
-		scraper-0.14.0 \
-		selectors-0.22.0 \
+		scraper-0.15.0 \
+		selectors-0.24.0 \
 		semver-1.0.16 \
-		serde-1.0.151 \
-		serde_json-1.0.91 \
-		servo_arc-0.1.1 \
-		sha1-0.10.5 \
+		serde-1.0.154 \
+		serde_json-1.0.94 \
+		servo_arc-0.2.0 \
+		sha2-0.10.6 \
 		siphasher-0.3.10 \
 		smallvec-1.10.0 \
 		stable_deref_trait-1.2.0 \
-		string_cache-0.8.4 \
+		string_cache-0.8.7 \
 		string_cache_codegen-0.5.2 \
 		strsim-0.10.0 \
-		syn-1.0.107 \
+		syn-1.0.109 \
 		tendril-0.4.3 \
-		termcolor-1.1.3 \
-		thin-slice-0.1.1 \
-		thiserror-1.0.38 \
-		thiserror-impl-1.0.38 \
+		termcolor-1.2.0 \
+		thiserror-1.0.39 \
+		thiserror-impl-1.0.39 \
 		typenum-1.16.0 \
 		ucd-trie-0.1.5 \
-		unicode-ident-1.0.6 \
+		unicode-ident-1.0.8 \
 		unicode-width-0.1.10 \
 		utf-8-0.7.6 \
 		version_check-0.9.4 \
@@ -136,14 +133,15 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.0 \
-		windows_aarch64_msvc-0.42.0 \
-		windows_i686_gnu-0.42.0 \
-		windows_i686_msvc-0.42.0 \
-		windows_x86_64_gnu-0.42.0 \
-		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.42.0
+		windows-sys-0.45.0 \
+		windows-targets-0.42.1 \
+		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_msvc-0.42.1 \
+		windows_i686_gnu-0.42.1 \
+		windows_i686_msvc-0.42.1 \
+		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_msvc-0.42.1
 
 PLIST_FILES=	bin/${PORTNAME}
 
