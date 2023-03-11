@@ -1,3 +1,48 @@
+  <vuln vid="8edeb3c1-bfe7-11ed-96f5-3497f65b111b">
+    <topic>Apache httpd -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apache24</name>
+	<range><lt>2.4.56</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache httpd project reports:</p>
+	<blockquote cite="https://downloads.apache.org/httpd/CHANGES_2.4.56">
+	  <ul>
+	    <li>CVE-2023-27522: Apache HTTP Server: mod_proxy_uwsgi
+	      HTTP response splitting (cve.mitre.org).
+	      HTTP Response Smuggling vulnerability in Apache HTTP Server
+	      via mod_proxy_uwsgi. This issue affects Apache HTTP Server:
+	      from 2.4.30 through 2.4.55.
+	      Special characters in the origin response header can
+	      truncate/split the response forwarded to the client.</li>
+	    <li>CVE-2023-25690: HTTP request splitting with mod_rewrite
+	      and mod_proxy (cve.mitre.org).
+	      Some mod_proxy configurations on Apache HTTP Server versions
+	      2.4.0 through 2.4.55 allow a HTTP Request Smuggling attack.
+	      Configurations are affected when mod_proxy is enabled along
+	      with some form of RewriteRule or ProxyPassMatch in which a
+	      non-specific pattern matches some portion of the user-supplied
+	      request-target (URL) data and is then re-inserted into the
+	      proxied request-target using variable substitution.
+	    </li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-25690</cvename>
+      <cvename>CVE-2023-27522</cvename>
+      <url>https://downloads.apache.org/httpd/CHANGES_2.4.56</url>
+    </references>
+    <dates>
+      <discovery>2023-03-08</discovery>
+      <entry>2023-03-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d357f6bb-0af4-4ac9-b096-eeec183ad829">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
