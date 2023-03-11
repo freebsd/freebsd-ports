@@ -1,12 +1,12 @@
 PORTNAME=	nntp
 PORTVERSION=	1.5.12.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/c-news/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.dinoex.org/pub/c-news/
-PATCHFILES=	nntp-patch-ansi
+PATCHFILES=	nntp-patch-ansi2
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	NNTP with NOV support
@@ -42,9 +42,6 @@ post-extract:
 	${CP} ${WRKSRC}/conf.h.dist ${WRKSRC}/conf.h
 
 post-patch:
-	${REINPLACE_CMD} \
-		-e 's=getline(=xmit_getline(=' \
-		${WRKSRC}/xmit/nntpxmit.c
 	${REINPLACE_CMD} \
 		-e 's=reaper()=reaper(int unused)=' \
 		${WRKSRC}/server/netaux.c
