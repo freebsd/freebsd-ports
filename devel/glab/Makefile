@@ -1,12 +1,11 @@
 PORTNAME=	glab
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.22.0
-PORTREVISION=	11
+DISTVERSION=	1.26.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
-COMMENT=	Open-source GitLab command line tool
-WWW=		https://glab.readthedocs.io/
+COMMENT=	GitLab CLI tool bringing GitLab to your command line
+WWW=		https://gitlab.com/gitlab-org/cli
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,24 +14,43 @@ RUN_DEPENDS=	git:devel/git
 
 USES=		go:modules,1.19
 
-_BUILD_VERSION=	${DISTVERSION}
-_BUILD_DATE=	$$(date +%d/%m/%Y)
+_BUILD_COMMIT=		ef363646
+_BUILD_VERSION=		${DISTVERSION}-${_BUILD_COMMIT}
+_BUILD_PLATFORM=	${OPSYS:tl}
+_BUILD_DATE=		$$(date +%Y-%m-%d)
 
-GO_MODULE=	github.com/profclems/${PORTNAME}
+GO_MODULE=	gitlab.com/gitlab-org/cli
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
 		-s -w \
+		-X main.buildDate=${_BUILD_DATE} \
 		-X main.version=${_BUILD_VERSION} \
-		-X main.build=${_BUILD_DATE}"
+		-X main.platform=${_BUILD_PLATFORM}"
 
-PLIST_FILES=	bin/${PORTNAME}
-PORTDOCS=	README.md SECURITY.md
+PORTDOCS=	CONTRIBUTING.md README.md SECURITY.md
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=		COMPLETIONS DOCS MANPAGES
+OPTIONS_DEFAULT=	COMPLETIONS MANPAGES
+OPTIONS_SUB=		yes
+
+COMPLETIONS_DESC=		Build and install bash, fish and zsh shell completions
+COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
+				share/fish/vendor_completions.d/${PORTNAME}.fish \
+				share/zsh/site-functions/_${PORTNAME}
+
+post-install-COMPLETIONS-on:
+.for _shell in bash fish zsh
+	${GO_WRKDIR_BIN}/${PORTNAME} completion -s ${_shell} \
+		>${STAGEDIR}${PREFIX}/${COMPLETIONS_PLIST_FILES:M*${_shell}*}
+.endfor
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} \
 		${STAGEDIR}${DOCSDIR}
+
+post-install-MANPAGES-on:
+	(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} run \
+		./cmd/gen-docs --manpage --path ${STAGEDIR}${MAN1PREFIX}/man/man1)
 
 .include <bsd.port.mk>
