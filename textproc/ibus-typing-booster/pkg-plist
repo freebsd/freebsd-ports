@@ -169,6 +169,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/az.xml
 %%DATADIR%%/data/annotationsDerived/be.xml
 %%DATADIR%%/data/annotationsDerived/bg.xml
+%%DATADIR%%/data/annotationsDerived/bgn.xml
 %%DATADIR%%/data/annotationsDerived/bn.xml
 %%DATADIR%%/data/annotationsDerived/br.xml
 %%DATADIR%%/data/annotationsDerived/bs.xml
@@ -235,6 +236,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/kok.xml
 %%DATADIR%%/data/annotationsDerived/ky.xml
 %%DATADIR%%/data/annotationsDerived/lb.xml
+%%DATADIR%%/data/annotationsDerived/lij.xml
 %%DATADIR%%/data/annotationsDerived/lo.xml
 %%DATADIR%%/data/annotationsDerived/lt.xml
 %%DATADIR%%/data/annotationsDerived/lv.xml
@@ -253,6 +255,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/nl.xml
 %%DATADIR%%/data/annotationsDerived/nn.xml
 %%DATADIR%%/data/annotationsDerived/no.xml
+%%DATADIR%%/data/annotationsDerived/nso.xml
 %%DATADIR%%/data/annotationsDerived/oc.xml
 %%DATADIR%%/data/annotationsDerived/or.xml
 %%DATADIR%%/data/annotationsDerived/pa.xml
@@ -263,6 +266,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/pt.xml
 %%DATADIR%%/data/annotationsDerived/pt_PT.xml
 %%DATADIR%%/data/annotationsDerived/qu.xml
+%%DATADIR%%/data/annotationsDerived/quc.xml
 %%DATADIR%%/data/annotationsDerived/rm.xml
 %%DATADIR%%/data/annotationsDerived/ro.xml
 %%DATADIR%%/data/annotationsDerived/root.xml
@@ -292,6 +296,7 @@ share/applications/ibus-setup-typing-booster.desktop
 %%DATADIR%%/data/annotationsDerived/th.xml
 %%DATADIR%%/data/annotationsDerived/ti.xml
 %%DATADIR%%/data/annotationsDerived/tk.xml
+%%DATADIR%%/data/annotationsDerived/tn.xml
 %%DATADIR%%/data/annotationsDerived/to.xml
 %%DATADIR%%/data/annotationsDerived/tr.xml
 %%DATADIR%%/data/annotationsDerived/tt.xml
