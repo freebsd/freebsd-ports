@@ -1,6 +1,6 @@
 PORTNAME=	waypipe
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.4
+DISTVERSION=	0.8.5
 CATEGORIES=	net wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -14,7 +14,7 @@ USES=		compiler:c11 localbase:ldflags meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mstoeckl
-GL_COMMIT=	c11e65e25a2980a2f91f3a78c1b8d9707a3d02f2
+GL_COMMIT=	7a174f16f4a4da396529c5de66eb010eaeef86e5
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	FFMPEG LZ4 MANPAGES OPENGL VAAPI ZSTD
