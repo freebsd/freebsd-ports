@@ -54,7 +54,6 @@ load_rc_config $name
 export XDG_CONFIG_HOME XDG_DATA_HOME
 
 command="${caddy_command}"
-caddy_flags="--config ${caddy_config} --adapter ${caddy_adapter}"
 pidfile="/var/run/${name}/${name}.pid"
 
 required_files="${caddy_config} ${caddy_command}"
@@ -62,6 +61,13 @@ required_files="${caddy_config} ${caddy_command}"
 start_precmd="caddy_precmd"
 start_cmd="caddy_start"
 stop_precmd="caddy_prestop"
+
+# JSON is the native format, so there is no "adapter" for it
+if [ "${caddy_adapter}" = "json" ]; then
+    caddy_flags="--config ${caddy_config}"
+else
+    caddy_flags="--config ${caddy_config} --adapter ${caddy_adapter}"
+fi
 
 # Extra Commands
 extra_commands="configtest reload"
