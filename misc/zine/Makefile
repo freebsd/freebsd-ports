@@ -1,6 +1,6 @@
 PORTNAME=	zine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -91,13 +91,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		form_urlencoded-1.1.0 \
 		fsevent-sys-4.1.0 \
 		futf-0.1.5 \
-		futures-0.3.26 \
-		futures-channel-0.3.26 \
-		futures-core-0.3.26 \
-		futures-io-0.3.26 \
-		futures-sink-0.3.26 \
-		futures-task-0.3.26 \
-		futures-util-0.3.26 \
+		futures-0.3.27 \
+		futures-channel-0.3.27 \
+		futures-core-0.3.27 \
+		futures-io-0.3.27 \
+		futures-sink-0.3.27 \
+		futures-task-0.3.27 \
+		futures-util-0.3.27 \
 		fxhash-0.2.1 \
 		generic-array-0.14.6 \
 		getopts-0.2.21 \
@@ -117,7 +117,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
 		humansize-2.1.3 \
-		hyper-0.14.24 \
+		hyper-0.14.25 \
 		hyper-tls-0.5.0 \
 		hyper-tungstenite-0.9.0 \
 		iana-time-zone-0.1.53 \
@@ -141,7 +141,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.139 \
+		libc-0.2.140 \
 		libm-0.2.6 \
 		line-wrap-0.1.1 \
 		link-cplusplus-1.0.8 \
@@ -316,7 +316,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unicode-width-0.1.10 \
 		url-2.3.1 \
 		utf-8-0.7.6 \
-		utf8parse-0.2.0 \
+		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		walkdir-2.3.2 \
