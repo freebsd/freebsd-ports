@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EEOOMM
+To use the squid language pack, use the directive:
+
+error_directory %%DATADIR%%/language
+
+in your squid.conf. Example:
+
+error_directory %%DATADIR%%/sk
+EEOOMM
+}
+]
