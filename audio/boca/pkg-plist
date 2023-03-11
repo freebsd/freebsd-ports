@@ -58,6 +58,7 @@ lib/boca/boca.dsp.rnnoise/cb.rnnn
 lib/boca/boca.dsp.rnnoise/lq.rnnn
 lib/boca/boca.dsp.rnnoise/mp.rnnn
 lib/boca/boca.dsp.rnnoise/sh.rnnn
+lib/boca/boca_decoder_alac.1.0.so
 lib/boca/boca_decoder_alac.1.0.xml
 lib/boca/boca_decoder_als.1.0.xml
 lib/boca/boca_decoder_cdio.1.0.so
@@ -74,6 +75,7 @@ lib/boca/boca_decoder_ffmpeg_dsd.1.0.xml
 lib/boca/boca_decoder_ffmpeg_dss.1.0.xml
 lib/boca/boca_decoder_ffmpeg_dts.1.0.xml
 lib/boca/boca_decoder_ffmpeg_flv_audio.1.0.xml
+lib/boca/boca_decoder_ffmpeg_m4a.1.0.xml
 lib/boca/boca_decoder_ffmpeg_m4v_audio.1.0.xml
 lib/boca/boca_decoder_ffmpeg_mac.1.0.xml
 lib/boca/boca_decoder_ffmpeg_mkv_audio.1.0.xml
@@ -84,6 +86,8 @@ lib/boca/boca_decoder_ffmpeg_mpg_audio.1.0.xml
 lib/boca/boca_decoder_ffmpeg_purevoice.1.0.xml
 lib/boca/boca_decoder_ffmpeg_realaudio.1.0.xml
 lib/boca/boca_decoder_ffmpeg_tak.1.0.xml
+lib/boca/boca_decoder_ffmpeg_tta.1.0.xml
+lib/boca/boca_decoder_ffmpeg_vqf.1.0.xml
 lib/boca/boca_decoder_ffmpeg_wavpack.1.0.xml
 lib/boca/boca_decoder_ffmpeg_webm_audio.1.0.xml
 lib/boca/boca_decoder_ffmpeg_wma.1.0.xml
@@ -113,6 +117,8 @@ lib/boca/boca_dsp_hdcd.1.0.so
 lib/boca/boca_dsp_resample.1.0.so
 lib/boca/boca_dsp_rnnoise.1.0.so
 lib/boca/boca_dsp_rubberband.1.0.so
+lib/boca/boca_dsp_surround.1.0.so
+lib/boca/boca_dsp_volume.1.0.so
 lib/boca/boca_encoder_aften.1.0.xml
 lib/boca/boca_encoder_als.1.0.xml
 lib/boca/boca_encoder_atrac1enc.1.0.xml

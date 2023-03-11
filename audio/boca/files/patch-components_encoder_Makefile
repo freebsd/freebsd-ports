@@ -1,0 +1,13 @@
+--- components/encoder/Makefile.orig	2023-03-05 15:43:57 UTC
++++ components/encoder/Makefile
+@@ -6,6 +6,10 @@ include $(dir $(firstword $(MAKEFILE_LIST)))/$(BOCA_PA
+ 
+ FOLDERS = fdkaac flac lame mac meh opus sndfile speex vorbis
+ 
++ifneq ($(BUILD_OSX),True)
++	FOLDERS += faac voaacenc
++endif
++
+ ifeq ($(USE_WINE),True)
+ 	FOLDERS += coreaudioconnect
+ endif
