@@ -5,7 +5,7 @@ CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Tactical 2D shooter in fishy pixels style
-WWW=		https://fishfight.org/
+WWW=		https://fishfolk.org/games/jumpy/
 
 LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
