@@ -6,7 +6,7 @@ CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	2.5D side-scroller beatemup, made in Bevy
-WWW=		https://fishfight.org/
+WWW=		https://fishfolk.org/games/punchy/
 
 LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
