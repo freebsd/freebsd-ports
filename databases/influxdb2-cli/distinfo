@@ -1,5 +1,7 @@
-TIMESTAMP = 1672422342
+TIMESTAMP = 1678528993
 SHA256 (go/databases_influxdb2-cli/influxdb2-cli-v2.6.1/v2.6.1.mod) = bf97a68fd52205cc4c591b84e79dcc2946039080f6bcc08aadf08632aff81fc3
 SIZE (go/databases_influxdb2-cli/influxdb2-cli-v2.6.1/v2.6.1.mod) = 2517
 SHA256 (go/databases_influxdb2-cli/influxdb2-cli-v2.6.1/v2.6.1.zip) = e0dfdd24e8c2247a837d8b320a94a729fa10edfc7368201daf7ccd65442be021
 SIZE (go/databases_influxdb2-cli/influxdb2-cli-v2.6.1/v2.6.1.zip) = 856880
+SHA256 (go/databases_influxdb2-cli/influxdb2-cli-v2.6.1/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/databases_influxdb2-cli/influxdb2-cli-v2.6.1/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
