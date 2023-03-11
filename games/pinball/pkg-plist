@@ -44,6 +44,7 @@ include/pinball/PointLightVisitor.h
 include/pinball/Polygon.h
 include/pinball/Private.h
 include/pinball/Profiler.h
+include/pinball/RenderVisitor.h
 include/pinball/Score.h
 include/pinball/Script.h
 include/pinball/Shape3D.h
