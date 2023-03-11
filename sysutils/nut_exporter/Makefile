@@ -1,7 +1,7 @@
 PORTNAME=	nut_exporter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	bsd@j-star.org
@@ -22,7 +22,7 @@ GH_TUPLE=	alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthoma
 		go-kit:log:v0.2.0:go_kit_log/vendor/github.com/go-kit/log \
 		go-logfmt:logfmt:v0.5.1:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:ebe580a85c40:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
 		prometheus:client_golang:v1.11.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \

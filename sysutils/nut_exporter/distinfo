@@ -1,4 +1,4 @@
-TIMESTAMP = 1672518974
+TIMESTAMP = 1678527523
 SHA256 (DRuggeri-nut_exporter-v2.5.2_GH0.tar.gz) = eb8d7f3b9bbc0c95549d73b81f773eaacf72c81cd8937e0457c6900ef6a82345
 SIZE (DRuggeri-nut_exporter-v2.5.2_GH0.tar.gz) = 201180
 SHA256 (alecthomas-kingpin-v2.2.6_GH0.tar.gz) = 4624eae43489de8a71ea60efaf6744c581b6bd62909f7514c484c1ea0efaba5a
@@ -17,8 +17,8 @@ SHA256 (go-logfmt-logfmt-v0.5.1_GH0.tar.gz) = a9a93f7cbb92a53a587fda196bc040264a
 SIZE (go-logfmt-logfmt-v0.5.1_GH0.tar.gz) = 12115
 SHA256 (golang-protobuf-v1.4.3_GH0.tar.gz) = 5736f943f8647362f5559689df6154f3c85d261fb088867c8a68494e2a767610
 SIZE (golang-protobuf-v1.4.3_GH0.tar.gz) = 171969
-SHA256 (golang-sys-ebe580a85c40_GH0.tar.gz) = b70e2301ad08c3ae255b004b8160f866798b95c0c1f88f12641343ed81ce523b
-SIZE (golang-sys-ebe580a85c40_GH0.tar.gz) = 1197502
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (matttproud-golang_protobuf_extensions-v1.0.1_GH0.tar.gz) = 2def0ee6f6b12b1efc0e3007d89f598608a072610e805c3655ea9d13c3ead49b
 SIZE (matttproud-golang_protobuf_extensions-v1.0.1_GH0.tar.gz) = 37184
 SHA256 (pkg-errors-v0.9.1_GH0.tar.gz) = 56bfd893023daa498508bfe161de1be83299fcf15376035e7df79cbd7d6fa608
