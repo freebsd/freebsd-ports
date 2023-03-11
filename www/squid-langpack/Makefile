@@ -1,7 +1,12 @@
 PORTNAME=	squid-langpack
 DISTVERSION=	7.0.0-${SLP_DATE}
 CATEGORIES=	www
-MASTER_SITES=	http://www.squid-cache.org/Versions/langpack/
+MASTER_SITES=	http://www2.pl.squid-cache.org/Versions/langpack/ \
+		http://www1.il.squid-cache.org/Versions/langpack/ \
+		http://www1.jp.squid-cache.org/Versions/langpack/ \
+		http://www2.gr.squid-cache.org/Versions/langpack/ \
+		http://ca2.squid-cache.org/Versions/langpack/ \
+		http://www.squid-cache.org/Versions/langpack/
 DISTNAME=	${PORTNAME}-${SLP_DATE}
 
 MAINTAINER=	otis@FreeBSD.org
