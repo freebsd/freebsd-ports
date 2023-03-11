@@ -1,6 +1,5 @@
 PORTNAME=	musikcube
-DISTVERSION=	0.98.0
-PORTREVISION=	3
+DISTVERSION=	0.99.5
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +9,9 @@ WWW=		https://musikcube.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+BUILD_DEPENDS=	asio>0:net/asio
+LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+		libavcodec.so:multimedia/ffmpeg \
 		libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libev.so:devel/libev \
@@ -21,12 +22,14 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libmpg123.so:audio/mpg123 \
 		libogg.so:audio/libogg \
 		libopenmpt.so:audio/libopenmpt \
+		libpipewire-0.3.so:multimedia/pipewire \
+		libportaudio.so:audio/portaudio \
 		libpulse.so:audio/pulseaudio \
 		libsndio.so:audio/sndio \
 		libtag.so:audio/taglib \
 		libvorbis.so:audio/libvorbis
 
-USES=		cmake:noninja compiler:c++14-lang pkgconfig ssl
+USES=		cmake:noninja compiler:c++17-lang pkgconfig ssl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
