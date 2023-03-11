@@ -1,5 +1,5 @@
 PORTNAME=	pypowerwall
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-mgmt python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>0:www/py-beautifulsoup@${PY_FL
 
 USES=		python:3.6+ shebangfix
 USE_PYTHON=	autoplist distutils
-SHEBANG_FILES=	proxy/server.py
+SHEBANG_FILES=	proxy/server.py proxy/server-r.py
 
 USE_RC_SUBR=	${PORTNAME}_proxy
 
