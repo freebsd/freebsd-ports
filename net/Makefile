@@ -45,6 +45,7 @@
     SUBDIR += avahi-libdns
     SUBDIR += avahi-qt5
     SUBDIR += avahi-sharp
+    SUBDIR += aws-ec2-imdsv2-get
     SUBDIR += axa
     SUBDIR += babeld
     SUBDIR += balance

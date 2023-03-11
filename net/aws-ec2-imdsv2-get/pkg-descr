@@ -1,0 +1,2 @@
+Tool for reading data from the EC2 Instance Metadata Service (IMDS),
+supporting both the original (v1) protocol and the newer (v2) protocol.
