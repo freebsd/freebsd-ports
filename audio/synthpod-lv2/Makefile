@@ -54,8 +54,8 @@ JACK_MESON_OFF=		-Duse-jack=false
 
 QT_DESC=		Build Qt-5 sandbox
 QT_USES=		qt:5
+QT_USE=			qt=gui,widgets,buildtools:build
 QT_MESON_OFF=		-Duse-qt5=false
-QT_USE=			QT=core,widgets
 
 X11_DESC=		Build X11 sandbox
 X11_MESON_OFF=		-Duse-x11=false
