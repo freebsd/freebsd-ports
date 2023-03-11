@@ -1,11 +1,11 @@
 PORTNAME=	ocurl
-PORTVERSION=	0.8.2
+PORTVERSION=	0.9.2
 CATEGORIES=	ftp
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Interface for OCaml to the curl lib
-WWW=		http://ocurl.forge.ocamlcore.org/
+WWW=		https://ygrek.org/p/ocurl/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
