@@ -34,6 +34,12 @@ OPTIONS_SUB=	yes
 PERL_USES=		perl5
 PERL_CONFIGURE_WITH=	perl=${PERL}
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-install:
 .for f in client.conf global.conf idmef-client.conf tls.conf
 	${MV} ${STAGEDIR}${ETCDIR}/default/${f} \
