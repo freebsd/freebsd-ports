@@ -48,6 +48,8 @@ PYTHON_USES_OFF=	python:build
 PYTHON_CMAKE_BOOL=	SURELOG_WITH_PYTHON
 PYTHON_CMAKE_ON=	-DFREEBSD_PYTHON_DISTVERSION=${PYTHON_DISTVERSION}
 
+PORTSCOUT=	limit:^.*[0-9]\.[0-9] # prevent tags like 'show'
+
 post-install:
 	@${RMDIR} \
 		${STAGEDIR}${PREFIX}/bin/pkg/work \
