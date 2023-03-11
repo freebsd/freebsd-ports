@@ -1,14 +1,8 @@
 PORTNAME=	erlang
-PORTVERSION=	24.3
+PORTVERSION=	25.3
 CATEGORIES=	lang parallel
-MASTER_SITES=	http://www.erlang.org/download/:erlangorg \
-		http://erlang.stacken.kth.se/download/:erlangorg \
-		http://www.csd.uu.se/ftp/mirror/erlang/download/:erlangorg \
-		http://olgeni.olgeni.com/~olgeni/distfiles/:local \
-		LOCAL/olgeni:local \
-		http://www.erlang.se/doc/:erlangse \
-		http://www.erlang.se/publications/:publications \
-		http://www.sics.se/~joe/thesis/:joe
+MASTER_SITES=	https://github.com/erlang/otp/releases/download/OTP-${PORTVERSION}/:erlangorg \
+		LOCAL/olgeni:local
 PKGNAMESUFFIX=	-doc
 DISTNAME=	otp_doc_html_${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:erlangorg \
@@ -28,11 +22,11 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 SUB_FILES=	pkg-message
 
 BOOK_DISTFILES=	armstrong_thesis_2003.pdf:local \
-		bjarnelic.pdf:publications \
-		erlang-book-part1.pdf:erlangorg \
+		bjarnelic.pdf:local \
+		erlang-book-part1.pdf:local \
 		master_thesis_patterns.pdf:local \
-		mnesia_overview.pdf:publications \
-		programming_rules.pdf:erlangse
+		mnesia_overview.pdf:local \
+		programming_rules.pdf:local
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
