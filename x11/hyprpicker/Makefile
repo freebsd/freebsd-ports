@@ -3,7 +3,7 @@ PORTVERSION=	s20230109
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	wlroots-compatible Wayland color picker that does not suck
+COMMENT=	Color picker and magnifier for Wayland
 WWW=		https://github.com/hyprwm/hyprpicker
 
 LICENSE=	BSD3CLAUSE
