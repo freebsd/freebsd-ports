@@ -1,7 +1,7 @@
 PORTNAME=	ali
 PORTVERSION=	0.7.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	benchmarks
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -21,7 +21,7 @@ GH_TUPLE=	davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-sp
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
 		golang:net:a5a99cb37ef4:golang_net/vendor/golang.org/x/net \
-		golang:sys:977fb7262007:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.4:golang_text/vendor/golang.org/x/text \
 		influxdata:tdigest:a7d76c6f093a:influxdata_tdigest/vendor/github.com/influxdata/tdigest \
