@@ -11,6 +11,9 @@ WWW=		https://github.com/freebsd/uefi-edk2/tree/bhyve/UDK2014.SP1
 
 LICENSE=	BSD2CLAUSE
 
+DEPRECATED=     Requires old edk2 version and gcc 4.8.
+EXPIRATION_DATE=2024-04-01
+
 ONLY_FOR_ARCHS=	amd64
 
 BUILD_DEPENDS=	bash:shells/bash \
