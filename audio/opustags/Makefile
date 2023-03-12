@@ -1,5 +1,5 @@
 PORTNAME=	opustags
-DISTVERSION=	1.6.0
+DISTVERSION=	1.8.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,10 +11,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libogg.so:audio/libogg
 
-USES=		cmake compiler:c++14-lang iconv pkgconfig
+USES=		cmake compiler:c++20-lang iconv pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	fmang
+
+TEST_TARGET=	check # 1 test fails, see https://github.com/fmang/opustags/issues/60
 
 PLIST_FILES=	bin/opustags \
 		share/man/man1/opustags.1.gz
