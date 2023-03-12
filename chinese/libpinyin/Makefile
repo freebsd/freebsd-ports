@@ -1,5 +1,5 @@
 PORTNAME=	libpinyin
-PORTVERSION=	2.6.2
+PORTVERSION=	2.8.1
 CATEGORIES=	chinese textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -7,7 +7,8 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	Library to deal with pinyin
 WWW=		https://github.com/libpinyin/libpinyin
 
-LICENSE=	GPLv2
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		bdb compiler:c++11-lang gmake gnome libtool pathfix pkgconfig
 USE_GNOME=	glib20
@@ -18,15 +19,13 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS+=CPPFLAGS="-I${LOCALBASE}/include \
 		-I${BDB_INCLUDE_DIR}" \
 		LDFLAGS="-L${LOCALBASE}/lib -l${BDB_LIB_NAME}"
-INSTALL_TARGET=install-strip
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	NLS
 
 NLS_USES=	gettext
 
-PLIST_SUB+=	VER=${PORTVERSION}
-
-post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpinyin.so.13.0.0
+PLIST_SUB+=	VER=${PORTVERSION} \
+		ABIVER=15
 
 .include <bsd.port.mk>
