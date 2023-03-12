@@ -81,13 +81,13 @@ man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/pptx/ppt/theme/theme1.xml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/pptx/ppt/theme/theme2.xml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/pptx/ppt/viewProps.xml
-%%NO_EMBED_DATA%%%%DATADIR%%/data/sample.lua
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/affiliations.jats
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/article.jats_publishing
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.asciidoc
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.asciidoctor
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.biblatex
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.bibtex
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.chunkedhtml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.commonmark
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.context
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.docbook4
@@ -126,6 +126,7 @@ man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.textile
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.xwiki
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.zimwiki
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/styles.citations.html
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/styles.html
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/am.yaml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/ar.yaml
