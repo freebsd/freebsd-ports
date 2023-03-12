@@ -7,11 +7,8 @@ bin/rnsd
 bin/rnstatus
 bin/rnx
 @sample %%ETCDIR%%/config.sample
-@owner %%USERS%%
-@group %%GROUPS%%
-@dir /var/db/reticulum
-@dir /var/log/reticulum
-@dir /var/run/reticulum
+%%PYTHON_SITELIBDIR%%/RNS/Buffer.py
+%%PYTHON_SITELIBDIR%%/RNS/Channel.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/AES.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/Ed25519.py
 %%PYTHON_SITELIBDIR%%/RNS/Cryptography/Fernet.py
@@ -158,6 +155,10 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/rnstatus.py
 %%PYTHON_SITELIBDIR%%/RNS/Utilities/rnx.py
 %%PYTHON_SITELIBDIR%%/RNS/__init__.py
+%%PYTHON_SITELIBDIR%%/RNS/__pycache__/Buffer%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/__pycache__/Buffer%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/__pycache__/Channel%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/__pycache__/Channel%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/__pycache__/Destination%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/RNS/__pycache__/Destination%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/RNS/__pycache__/Identity%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -216,24 +217,14 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/vendor/platformutils.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/six.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/umsgpack.py
-%%PYTHON_SITELIBDIR%%/rns-0.4.9-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/rns-0.4.9-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/rns-0.4.9-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/rns-0.4.9-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/rns-0.4.9-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/rns-0.4.9-py%%PYTHON_VER%%.egg-info/top_level.txt
-%%PYTHON_SITELIBDIR%%/tests/__init__.py
-%%PYTHON_SITELIBDIR%%/tests/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/tests/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/tests/__pycache__/all%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/tests/__pycache__/all%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/tests/__pycache__/hashes%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/tests/__pycache__/hashes%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/tests/__pycache__/identity%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/tests/__pycache__/identity%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/tests/__pycache__/link%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/tests/__pycache__/link%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/tests/all.py
-%%PYTHON_SITELIBDIR%%/tests/hashes.py
-%%PYTHON_SITELIBDIR%%/tests/identity.py
-%%PYTHON_SITELIBDIR%%/tests/link.py
+%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+@owner %%USERS%%
+@group %%GROUPS%%
+@dir /var/db/reticulum
+@dir /var/log/reticulum
+@dir /var/run/reticulum
