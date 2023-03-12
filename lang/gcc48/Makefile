@@ -12,7 +12,9 @@ WWW=		https://gcc.gnu.org
 LICENSE=	GPLv3 GPLv3RLE
 LICENSE_COMB=	multi
 
-DEPRECATED=	Unsupported by upstream since 2015. Use GCC 10 or newer instead.
+DEPRECATED=		Unsupported by upstream since 2015. Use GCC 10 or newer instead.
+EXPIRATION_DATE=	2024-05-01
+
 ONLY_FOR_ARCHS=	amd64 i386
 
 LIB_DEPENDS=	libgmp.so:math/gmp \
