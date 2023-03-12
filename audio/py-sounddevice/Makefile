@@ -1,5 +1,5 @@
 PORTNAME=	sounddevice
-DISTVERSION=	0.4.5
+DISTVERSION=	0.4.6
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYNUMPY} \
 		portaudio>0:audio/portaudio
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
