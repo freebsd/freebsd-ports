@@ -31,6 +31,10 @@
 #			out possible values for this variable.
 #					default: ${PORTNAME}
 #
+#  HACKAGE_DISTNAME	Use this knob if PORTNAME or PORTVERSION doesn't match
+#			with package name and version on Hackage.
+#					default: ${PORTNAME}-${PORTVERSION}
+#
 #  opt_USE_CABAL	Variant of USE_CABAL to be used with options framework.
 #  opt_CABAL_FLAGS	Variant of CABAL_FLAGS to be used with options framework.
 #			Note that it works a bit differently from CABAL_FLAGS:
@@ -124,13 +128,20 @@ _hackage_is_default=	yes
 _hackage_is_default=	no
 .  endif
 
-MASTER_SITES+=	https://hackage.haskell.org/package/${_hackage_group} \
-		http://hackage.haskell.org/package/${_hackage_group}
+.  if defined(HACKAGE_DISTNAME) && ${_hackage_is_default} == no
+IGNORE=		HACKAGE_DISTNAME is set, but it makes no sense if the default MASTER_SITES isn't HACKAGE
+.  endif
+
+MASTER_SITES+=		HACKAGE/${_hackage_group}
+.  if defined(HACKAGE_DISTNAME)
+WRKSRC?=		${WRKDIR}/${HACKAGE_DISTNAME}
+.  endif
+HACKAGE_DISTNAME?=	${PORTNAME}-${PORTVERSION}
 
 .  if ${_hackage_is_default} == yes
-DISTFILES+=	${PORTNAME}-${PORTVERSION}/${PORTNAME}-${PORTVERSION}${CABAL_EXTRACT_SUFX}
+DISTFILES+=	${HACKAGE_DISTNAME}/${HACKAGE_DISTNAME}${CABAL_EXTRACT_SUFX}
 .    ifdef CABAL_REVISION
-DISTFILES+=	${PORTNAME}-${PORTVERSION}/revision/${CABAL_REVISION}.cabal
+DISTFILES+=	${HACKAGE_DISTNAME}/revision/${CABAL_REVISION}.cabal
 .    endif
 .  else
 _hackage_group=	:cabal_mk_hackage
@@ -194,7 +205,7 @@ cabal-extract: check-cabal
 	${SETENV} ${CABAL_HOME_ENV} ${CABAL_CMD} update
 .  if ${_hackage_is_default} == yes
 	cd ${WRKDIR} && \
-		${SETENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} get ${PORTNAME}-${PORTVERSION}
+		${SETENV} ${MAKE_ENV} ${CABAL_HOME_ENV} ${CABAL_CMD} get ${HACKAGE_DISTNAME}
 .  else
 .    if ${cabal_ARGS:Mhpack}
 	@${ECHO_MSG} "===> Running ${HPACK_CMD} to generate .cabal file"
@@ -258,7 +269,7 @@ cabal-post-extract:
 .    endif
 # Copy revised .cabal file if present
 .    if defined(CABAL_REVISION) && ${_hackage_is_default} == yes
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-${PORTVERSION}/revision/${CABAL_REVISION}.cabal `find ${WRKSRC} -name '*.cabal' -depth 1`
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/${HACKAGE_DISTNAME}/revision/${CABAL_REVISION}.cabal `find ${WRKSRC} -name '*.cabal' -depth 1`
 .    endif
 
 # Move extracted dependencies into ${CABAL_DEPSDIR} directory
