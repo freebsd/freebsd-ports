@@ -1,10 +1,13 @@
 PORTNAME=	scrcpy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25
+DISTVERSION=	2.0
 CATEGORIES=	comms net
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/${DISTVERSIONFULL}/:server
 DISTFILES=	${SERVER_FILE}:server
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	6b769675fa68e60c9765022e43c4d7b1e329353a.patch:-p1
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Display and control your Android device
