@@ -1,9 +1,9 @@
 PORTNAME=	libretro-core-info
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.10.3
+DISTVERSION=	1.15.0
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	Clockwork6400@protonmail.com
 COMMENT=	Metadata about libretro cores
 WWW=		https://github.com/libretro/libretro-core-info
 
