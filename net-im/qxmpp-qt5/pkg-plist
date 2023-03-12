@@ -73,8 +73,10 @@ include/qxmpp/QXmppPingIq.h
 include/qxmpp/QXmppPresence.h
 include/qxmpp/QXmppPromise.h
 include/qxmpp/QXmppPubSubAffiliation.h
+include/qxmpp/QXmppPubSubBaseItem.h
 include/qxmpp/QXmppPubSubEvent.h
 include/qxmpp/QXmppPubSubEventHandler.h
+include/qxmpp/QXmppPubSubIq.h
 include/qxmpp/QXmppPubSubIq_p.h
 include/qxmpp/QXmppPubSubItem.h
 include/qxmpp/QXmppPubSubManager.h
