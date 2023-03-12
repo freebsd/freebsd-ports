@@ -1,0 +1,17 @@
+This is a fork of libsignal-protocol-c, an implementation of Signal's
+ratcheting forward secrecy protocol that works in synchronous and asynchronous
+messaging. The fork adds support for OMEMO as defined in XEP-0384 versions
+0.3.0 and later.
+
+ * OMEMO version 0.3.0 uses the original libsignal-protocol-c implementation
+   with its protocol versions 2 and 3.
+
+ * OMEMO version 0.4.0+ is implemented using a new protocol version 4
+   internally. In comparison with protocol version 3, it changes:
+   *  HKDF info strings
+   *  Protocol buffer encoding
+   *  Signature scheme (uses XEd25519 instead of custom "Curve25519 signatures")
+   *  Specification-compliant double ratchet
+   *  Support for Ed25519 public keys
+   *  Various serializations
+   *  Removes unused functionality
