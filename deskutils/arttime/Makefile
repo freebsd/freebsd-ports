@@ -1,7 +1,7 @@
 PORTNAME=	arttime
 PORTVERSION=	2.0.0
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
+PORTREVISION=	2
 CATEGORIES=	deskutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -11,7 +11,9 @@ WWW=		https://github.com/poetaman/arttime
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	zsh>=5.8:shells/zsh
-RUN_DEPENDS=	notify-send:devel/libnotify \
+RUN_DEPENDS=	${LOCALBASE}/share/terminfo/x/xterm-256color:misc/terminfo-db \
+		fzf:textproc/fzf \
+		notify-send:devel/libnotify \
 		ogg123:audio/vorbis-tools \
 		zsh>=5.8:shells/zsh
 
