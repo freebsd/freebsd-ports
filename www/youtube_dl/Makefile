@@ -13,6 +13,9 @@ WWW=		https://yt-dl.org/
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Unmaintained upstream, www/yt-dlp can be used going forward
+EXPIRATION_DATE=2023-03-31
+
 USES=		gmake python
 
 MAKE_ARGS=	PYTHON=${PYTHON_CMD}
