@@ -3560,7 +3560,7 @@ lib/root/libvectorDict.so.%%SHLIB_SHVER%%
 lib/root/libvectorDict.so.%%SHLIB_VER%%
 %%NOT_INSTALLED_ON_AARCH64%%lib/root/modules.idx
 %%NOT_INSTALLED_ON_AARCH64%%lib/root/std.pcm
-%%ONLY_INSTALLED_WITH_LLVM_CLANG_13%%lib/root/%%AARCH64_PCM_PREFIX%%std_config%%AARCH64_PCM_SUFFIX%%.pcm
+%%NOT_INSTALLED_ON_AARCH64%%%%ONLY_INSTALLED_WITH_LLVM_CLANG_13%%lib/root/std_config.pcm
 %%PORTDOCS%%%%DOCSDIR%%/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/DEVELOPMENT.md
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
