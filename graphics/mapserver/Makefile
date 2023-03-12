@@ -1,6 +1,5 @@
 PORTNAME=		mapserver
-PORTVERSION=		7.6.4
-PORTREVISION=	4
+PORTVERSION=		8.0.0
 CATEGORIES=		graphics www geography
 MASTER_SITES=		https://download.osgeo.org/mapserver/
 
@@ -26,7 +25,7 @@ CMAKE_ARGS+=		-DCMAKE_PREFIX_PATH=${LOCALBASE} \
 			-DWITH_GD=1
 MAKE_JOBS_UNSAFE=	yes
 
-PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis \
+PROG_FILES=		legend scalebar shptree shptreetst shptreevis \
 			sortshp msencrypt tile4ms mapserv
 
 OPTIONS_DEFINE=		CAIRO CAIRO_SVG CLIENT_WMS CLIENT_WFS CURL DEBUG \

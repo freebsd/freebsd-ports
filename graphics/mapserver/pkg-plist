@@ -2,7 +2,6 @@ bin/legend
 bin/mapserv
 bin/msencrypt
 bin/scalebar
-bin/shp2img
 bin/shptree
 bin/shptreetst
 bin/shptreevis
@@ -11,7 +10,7 @@ bin/tile4ms
 %%PHP%%etc/php/ext-20-php_mapscript.ini
 lib/libmapserver.so
 lib/libmapserver.so.2
-lib/libmapserver.so.7.6.4
+lib/libmapserver.so.8.0.0
 %%PHP%%lib/php/%%PHP_EXT_DIR%%/php_mapscript.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/mapscript.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/_mapscript.so
