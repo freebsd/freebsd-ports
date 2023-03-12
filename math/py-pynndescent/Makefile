@@ -1,5 +1,5 @@
 PORTNAME=	pynndescent
-DISTVERSION=	0.5.7
+DISTVERSION=	0.5.8
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
 
 USES=		python:3.5+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
 
