@@ -1,5 +1,5 @@
 PORTNAME=	gffutils
-DISTVERSION=	0.11.0
+DISTVERSION=	0.11.1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=1.9.4:devel/py-argcomplete@${PY
 		${PYTHON_PKGNAMEPREFIX}six>=1.12.0:devel/py-six@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	distutils concurrent autoplist pytest # tests use nose and therefore don't work, see https://github.com/daler/gffutils/issues/211
 
 NO_ARCH=	yes
 
