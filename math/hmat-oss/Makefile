@@ -1,6 +1,5 @@
 PORTNAME=	hmat-oss
-DISTVERSION=	1.7.1
-PORTREVISION=	1
+DISTVERSION=	1.8.1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +9,10 @@ WWW=		https://github.com/jeromerobert/hmat-oss
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libopenblas.so:math/openblas
+LIB_DEPENDS=	liblapacke.so:math/lapacke \
+		libblas.so:math/blas \
+		liblapack.so:math/lapack \
+		libopenblas.so:math/openblas
 
 USES=		cmake
 USE_LDCONFIG=	yes
