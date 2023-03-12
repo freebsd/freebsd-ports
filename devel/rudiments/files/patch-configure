@@ -1,6 +1,6 @@
---- configure.orig	2017-03-26 09:14:47.000000000 +0000
-+++ configure	2017-03-26 09:14:47.000000000 +0000
-@@ -9622,7 +9622,7 @@
+--- configure.orig	2021-11-04 04:43:06 UTC
++++ configure
+@@ -9821,7 +9821,7 @@ $as_echo_n "checking whether the $compiler linker ($LD
    hardcode_minus_L=no
    hardcode_shlibpath_var=unsupported
    inherit_rpath=no
@@ -9,7 +9,7 @@
    module_cmds=
    module_expsym_cmds=
    old_archive_from_new_cmds=
-@@ -12871,7 +12871,7 @@
+@@ -13070,7 +13070,7 @@ module_expsym_cmds_CXX=
  inherit_rpath_CXX=no
  module_cmds_CXX=
  module_expsym_cmds_CXX=
@@ -18,7 +18,7 @@
  old_archive_cmds_CXX=$old_archive_cmds
  reload_flag_CXX=$reload_flag
  reload_cmds_CXX=$reload_cmds
-@@ -16512,6 +16512,9 @@
+@@ -16722,6 +16722,9 @@ export LD_LIBRARY_PATH
  			WERROR=""
  			;;
  		*mingw32* )

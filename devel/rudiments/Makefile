@@ -1,5 +1,5 @@
 PORTNAME=	rudiments
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.2
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -9,10 +9,10 @@ WWW=		http://rudiments.sourceforge.net
 
 LICENSE=	LGPL20
 
-LIB_DEPENDS=	libgssapi_krb5.so:security/krb5 \
-		libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libgssapi_krb5.so:security/krb5
 
-USES=		libtool libedit pathfix pkgconfig readline shebangfix
+USES=		libedit libtool pathfix pkgconfig readline shebangfix
 GNU_CONFIGURE=	yes
 PATHFIX_MAKEFILEIN=	Makefile
 SHEBANG_FILES=	doc/programming/insert.pl
@@ -32,6 +32,6 @@ SSL_CONFIGURE_ON=	--with-ssl-includes=-I${OPENSSLINC} \
 			--with-ssl-libs=-L${OPENSSLLIB}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments.so.6.0.1
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librudiments.so.8.1.1
 
 .include <bsd.port.mk>

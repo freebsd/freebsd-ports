@@ -1,6 +1,6 @@
---- src/Makefile.in.orig	2016-12-18 06:50:16 UTC
+--- src/Makefile.in.orig	2021-11-04 04:41:34 UTC
 +++ src/Makefile.in
-@@ -11,7 +11,7 @@ LOBJS = @LOBJS@
+@@ -14,7 +14,7 @@ APACHELOBJS = @APACHELOBJS@
  .SUFFIXES: .lo
  
  .cpp.lo:
@@ -9,12 +9,12 @@
  
  .cpp.obj:
  	$(CXX) $(CXXFLAGS) $(CPPFLAGS) $(COMPILE) $<
-@@ -22,7 +22,7 @@ clean:
+@@ -27,7 +27,7 @@ librudiments.$(LIBEXT): $(SRCS) $(LOBJS)
  	$(LTCLEAN) $(RM) *.lo *.o *.obj *.$(LIBEXT) *.lib *.exp *.idb *.pdb *.manifest *.ii
  
  librudiments.$(LIBEXT): $(SRCS) $(LOBJS)
 -	$(LTLINK) $(LINK) $(OUT)$@ $(LOBJS) $(LDFLAGS) $(LIBS) $(LINKFLAGS)
 +	$(LTLINK) $(LINK) $(OUT) $@ $(LOBJS) $(LDFLAGS) $(LIBS) $(LINKFLAGS)
  
- install: $(INSTALLLIB)
- 
+ librudiments-apache.$(LIBEXT): $(APACHESRCS) $(APACHELOBJS)
+ 	$(LTLINK) $(LINK) $(OUT)$@ $(APACHELOBJS) $(LDFLAGS) $(RUDIMENTSLIB) $(LIBS) $(APACHELIBS) $(LINKFLAGS)
