@@ -8,6 +8,9 @@ MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	Incremental FreeBSD ports INDEX file generation
 WWW=		https://www.infracaninophile.co.uk/portindex/
 
+DEPRECATED=	Not working, and no fix forthcoming
+EXPIRATION_DATE=	2023-03-31	
+
 LICENSE=	BSD2CLAUSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
