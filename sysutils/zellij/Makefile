@@ -1,7 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.34.4
-PORTREVISION=	3
+DISTVERSION=	0.35.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -45,6 +44,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		backtrace-0.3.65 \
 		base-x-0.2.11 \
 		base64-0.13.0 \
+		base64-0.21.0 \
 		bitflags-1.3.2 \
 		block-buffer-0.7.3 \
 		block-buffer-0.9.0 \
@@ -105,6 +105,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
 		discard-1.0.4 \
+		dynasm-1.2.3 \
+		dynasmrt-1.2.3 \
 		either-1.6.1 \
 		encode_unicode-0.3.6 \
 		enum-iterator-0.7.0 \
@@ -323,7 +325,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		terminal_size-0.1.17 \
 		terminfo-0.7.3 \
 		termios-0.3.3 \
-		termwiz-0.19.0 \
+		termwiz-0.20.0 \
 		textwrap-0.14.2 \
 		textwrap-0.15.0 \
 		thiserror-1.0.31 \
@@ -335,6 +337,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		time-macros-impl-0.1.2 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
+		toml-0.5.10 \
 		tracing-0.1.35 \
 		tracing-attributes-0.1.21 \
 		tracing-core-0.1.27 \
@@ -375,6 +378,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		wasmer-artifact-2.3.0 \
 		wasmer-compiler-2.3.0 \
 		wasmer-compiler-cranelift-2.3.0 \
+		wasmer-compiler-singlepass-2.3.0 \
 		wasmer-derive-2.3.0 \
 		wasmer-engine-2.3.0 \
 		wasmer-engine-dylib-2.3.0 \
@@ -412,6 +416,10 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		windows_x86_64_gnu-0.36.1 \
 		windows_x86_64_msvc-0.33.0 \
 		windows_x86_64_msvc-0.36.1 \
+		xflags-0.3.1 \
+		xflags-macros-0.3.1 \
+		xshell-0.2.2 \
+		xshell-macros-0.2.2 \
 		yaml-rust-0.4.5 \
 		zeroize-1.5.5
 
