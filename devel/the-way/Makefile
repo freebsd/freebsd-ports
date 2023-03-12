@@ -1,7 +1,6 @@
 PORTNAME=	the-way
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.19.1
-PORTREVISION=	1
+DISTVERSION=	0.19.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -35,14 +34,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		bumpalo-3.11.0 \
 		byteorder-1.4.3 \
 		cc-1.0.73 \
-		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
 		chrono-english-0.1.7 \
 		clap-3.2.23 \
-		clap-4.1.1 \
-		clap_complete-4.1.0 \
-		clap_derive-4.1.0 \
+		clap-4.1.8 \
+		clap_complete-4.1.4 \
+		clap_derive-4.1.8 \
 		clap_lex-0.2.4 \
 		clap_lex-0.3.0 \
 		clipboard-0.5.0 \
@@ -54,17 +52,15 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		core-foundation-sys-0.8.3 \
 		crc32fast-1.3.2 \
 		crossbeam-0.8.2 \
-		crossbeam-channel-0.4.4 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.10 \
 		crossbeam-queue-0.3.6 \
-		crossbeam-utils-0.7.2 \
 		crossbeam-utils-0.8.11 \
 		darling-0.14.2 \
 		darling_core-0.14.2 \
 		darling_macro-0.14.2 \
-		defer-drop-1.2.0 \
+		defer-drop-1.3.0 \
 		derive_builder-0.11.2 \
 		derive_builder_core-0.11.2 \
 		derive_builder_macro-0.11.2 \
@@ -123,7 +119,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		log-0.4.17 \
 		malloc_buf-0.0.6 \
 		matches-0.1.9 \
-		maybe-uninit-2.0.0 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
 		miniz_oxide-0.5.3 \
@@ -164,7 +159,6 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		regex-1.7.1 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.27 \
-		remove_dir_all-0.5.3 \
 		ring-0.16.20 \
 		rustc-demangle-0.1.21 \
 		rustix-0.36.5 \
@@ -176,13 +170,13 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		scanlex-0.1.4 \
 		scopeguard-1.1.0 \
 		sct-0.7.0 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_json-1.0.91 \
-		serde_yaml-0.9.16 \
+		serde-1.0.154 \
+		serde_derive-1.0.154 \
+		serde_json-1.0.94 \
+		serde_yaml-0.9.19 \
 		shell-words-1.1.0 \
 		shlex-1.1.0 \
-		skim-0.10.2 \
+		skim-0.10.4 \
 		sled-0.34.7 \
 		smallvec-1.9.0 \
 		spin-0.5.2 \
@@ -191,14 +185,14 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		strum_macros-0.24.3 \
 		syn-1.0.105 \
 		syntect-5.0.0 \
-		tempfile-3.3.0 \
+		tempfile-3.4.0 \
 		term-0.7.0 \
 		termcolor-1.2.0 \
 		terminal_size-0.1.17 \
 		termtree-0.2.4 \
 		textwrap-0.16.0 \
-		thiserror-1.0.38 \
-		thiserror-impl-1.0.38 \
+		thiserror-1.0.39 \
+		thiserror-impl-1.0.39 \
 		thread_local-1.1.4 \
 		time-0.1.44 \
 		time-0.3.13 \
@@ -211,7 +205,7 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		unicode-ident-1.0.3 \
 		unicode-normalization-0.1.21 \
 		unicode-width-0.1.9 \
-		unsafe-libyaml-0.2.4 \
+		unsafe-libyaml-0.2.7 \
 		untrusted-0.7.1 \
 		ureq-2.6.2 \
 		url-2.2.2 \
