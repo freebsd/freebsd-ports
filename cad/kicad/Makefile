@@ -1,6 +1,5 @@
 PORTNAME=	kicad
-PORTVERSION=	7.0.0
-PORTREVISION=	1
+PORTVERSION=	7.0.1
 PORTEPOCH=	2
 CATEGORIES=	cad
 MASTER_SITES=	https://gitlab.com/${PORTNAME}/code/${PORTNAME}/-/archive/${DISTVERSION}${DISTVERSIONSUFFIX}/
@@ -25,7 +24,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs	\
 		libfontconfig.so:x11-fonts/fontconfig	\
 		libodbc.so:databases/unixODBC
 
-USES=		cmake:noninja compiler:c++11-lib desktop-file-utils gl \
+USES=		cmake:noninja compiler:c++17-lang desktop-file-utils gl \
 		gnome pkgconfig python:3.5+ shared-mime-info shebangfix \
 		tar:bz2 xorg
 SHEBANG_FILES=	pcbnew/python/plugins/touch_slider_wizard.py

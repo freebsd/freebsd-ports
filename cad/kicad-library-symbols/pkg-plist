@@ -199,6 +199,7 @@
 %%DATADIR%%/symbols/Sensor_Touch.kicad_sym
 %%DATADIR%%/symbols/Sensor_Voltage.kicad_sym
 %%DATADIR%%/symbols/Simulation_SPICE.kicad_sym
+%%DATADIR%%/symbols/Simulation_SPICE.sp
 %%DATADIR%%/symbols/Switch.kicad_sym
 %%DATADIR%%/symbols/Timer.kicad_sym
 %%DATADIR%%/symbols/Timer_PLL.kicad_sym
