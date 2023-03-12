@@ -11,7 +11,7 @@ MASTER_SITES=	http://sphinxsearch.com/files/ \
 DISTNAME=	sphinx-${PORTVERSION}-release
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	matthew@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sphinx Full-Text Search Engine
 WWW=		https://sphinxsearch.com/
 
