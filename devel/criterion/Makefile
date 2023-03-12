@@ -1,6 +1,7 @@
 PORTNAME=	criterion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1
+DISTVERSION=	2.4.1-13
+DISTVERSIONSUFFIX=	-g2f48d0f
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,8 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} 
 LIB_DEPENDS=	libboxfort.so:devel/boxfort \
 		libffi.so:devel/libffi \
 		libgit2.so:devel/libgit2 \
-		libnanomsg.so:net/nanomsg \
-		libprotobuf-nanopb.so:devel/nanopb
+		libnanomsg.so:net/nanomsg
 RUN_DEPENDS=	nanopb>0:devel/nanopb
 
 USES=		gettext localbase:ldflags meson python pkgconfig shebangfix
