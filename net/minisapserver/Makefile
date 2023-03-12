@@ -10,6 +10,9 @@ WWW=		https://www.videolan.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Obsolete utility, functionality is now included in multimedia/vlc
+EXPIRATION_DATE=2023-03-31
+
 USES=		iconv tar:xz
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/sapserver etc/sap.cfg-dist man/man1/sapserver.1.gz
