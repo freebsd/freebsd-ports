@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230313:
+  AFFECTS: users of databases/sqlite3
+  AUTHOR: fuz@FreeBSD.org
+
+  Due to various ports not being prepared for this change (see 20230227
+  entry), the DQS option of databases/sqlite3 has been reenabled as a
+  stop gap measure.  It is scheduled to be disabled again for good no
+  earlier than 20240101, giving downstream software authors more time
+  to fix their queries.
+
+  See also: https://sqlite.org/quirks.html#dblquote
+
 20230311:
   AFFECTS: users of net/dshell
   AUTHOR: nobutaka@FreeBSD.org
