@@ -1,4 +1,4 @@
---- Makefile.orig	2022-09-03 18:09:32 UTC
+--- Makefile.orig	2023-02-09 14:46:39 UTC
 +++ Makefile
 @@ -54,7 +54,7 @@ MKDIR   = mkdir -p
  CC ?= gcc
@@ -23,12 +23,12 @@
  
  # Are we running on a Windows OS?
  ifeq ($(OS), Windows_NT)
-@@ -167,7 +167,7 @@ INSTALL_DATA    = $(INSTALL) -m 0644
+@@ -182,7 +182,7 @@ INSTALL_DATA    = $(INSTALL) -m 0644
  OBJS += jdupes.o jody_paths.o jody_sort.o jody_win_unicode.o jody_strtoepoch.o string_malloc.o oom.o
  OBJS += jody_cacheinfo.o
  OBJS += act_deletefiles.o act_linkfiles.o act_printmatches.o act_summarize.o act_printjson.o
--OBJS += xxhash.o
-+# OBJS += xxhash.o
+-OBJS += xxhash.o jody_hash.o
++OBJS += jody_hash.o
  OBJS += $(ADDITIONAL_OBJECTS)
  
  all: $(PROGRAM_NAME)
