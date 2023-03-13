@@ -116,7 +116,7 @@ CONFIGURE_ARGS+=--control=unix:${UNIT_SOCK}
 
 .if defined(UNIT_MODNAME) && ${UNIT_MODNAME:Mperl*}
 # Fix build failure on clang >= 12
-.if ${OSVERSION} >= 1301000
+.if ${OSVERSION} >= 1204000
 CFLAGS+=	-Wno-compound-token-split-by-macro
 .endif
 .endif
