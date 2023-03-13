@@ -24,6 +24,9 @@ USE_XORG=	x11 sm
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
 
+CONFIGURE_ENV=		LIBRARY_PATH="${LOCALBASE}/lib"
+MAKE_ENV=		LIBRARY_PATH="${LOCALBASE}/lib"
+
 qt5_CONFLICTS_INSTALL=	audacious-qt6 audacious-gtk2 audacious-gtk3
 
 qt6_PKGNAMESUFFIX=	-qt6
