@@ -2,6 +2,9 @@ bin/ZydisDisasm
 bin/ZydisInfo
 include/Zydis/Decoder.h
 include/Zydis/DecoderTypes.h
+include/Zydis/Defines.h
+include/Zydis/Disassembler.h
+include/Zydis/Encoder.h
 include/Zydis/Formatter.h
 include/Zydis/FormatterBuffer.h
 include/Zydis/Generated/EnumISAExt.h
@@ -10,6 +13,7 @@ include/Zydis/Generated/EnumInstructionCategory.h
 include/Zydis/Generated/EnumMnemonic.h
 include/Zydis/Generated/EnumRegister.h
 include/Zydis/Internal/DecoderData.h
+include/Zydis/Internal/EncoderData.h
 include/Zydis/Internal/FormatterATT.h
 include/Zydis/Internal/FormatterBase.h
 include/Zydis/Internal/FormatterIntel.h
@@ -18,15 +22,16 @@ include/Zydis/Internal/String.h
 include/Zydis/MetaInfo.h
 include/Zydis/Mnemonic.h
 include/Zydis/Register.h
+include/Zydis/Segment.h
 include/Zydis/SharedTypes.h
 include/Zydis/ShortString.h
 include/Zydis/Status.h
 include/Zydis/Utils.h
 include/Zydis/Zydis.h
-include/ZydisExportConfig.h
 lib/cmake/zydis/zydis-config-version.cmake
 lib/cmake/zydis/zydis-config.cmake
 lib/cmake/zydis/zydis-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/zydis/zydis-targets.cmake
-lib/libZydis.a
-
+lib/libZydis.so
+lib/libZydis.so.4.0
+lib/libZydis.so.4.0.0.0
