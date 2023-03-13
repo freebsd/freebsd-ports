@@ -1,6 +1,6 @@
 PORTNAME=	nscde
 DISTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/NsCDE/NsCDE/releases/download/${DISTVERSION}/
 
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAV
 		font-bh-lucidatypewriter-100dpi>0:x11-fonts/font-bh-lucidatypewriter-100dpi \
 		fvwm2:x11-wm/fvwm2 \
 		gsed:textproc/gsed \
-		ksh93:shells/ksh93 \
+		ksh93:shells/ksh \
 		qt5-style-plugins>=5.0.0:x11-themes/qt5-style-plugins \
 		roboto-fonts-ttf>0:x11-fonts/roboto-fonts-ttf \
 		stalonetray:x11/stalonetray \
@@ -82,7 +82,7 @@ SUDO_DESC=			Use sudo to elevate privileges
 
 ASTKSH_RUN_DEPENDS=	ksh93:shells/ast-ksh93
 DOAS_RUN_DEPENDS=	doas:security/doas
-KSH2020_RUN_DEPENDS=	ksh93:shells/ksh93
+KSH2020_RUN_DEPENDS=	ksh93:shells/ksh
 SUDO_RUN_DEPENDS=	sudo:security/sudo
 
 _SUDOFILES=	data/fvwm/Functions.fvwmconf.in lib/scripts/SysActionDialog
