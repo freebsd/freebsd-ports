@@ -1,5 +1,6 @@
 PORTNAME=	audacious-plugins
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -24,6 +25,10 @@ USES=		compiler:c++11-lib gettext-tools gmake gnome iconv \
 USE_GNOME=	glib20 libxml2 gdkpixbuf2
 USE_XORG=	x11
 
+CONFIGURE_ENV=		LIBRARY_PATH="${LOCALBASE}/lib"
+MAKE_ENV=		LIBRARY_PATH="${LOCALBASE}/lib"
+MESON_ARGS=		-Dconsole=false -Dmms=false -Dsoxr=false -Dcoreaudio=false
+
 qt5_CONFLICTS_INSTALL=	audacious-plugins-qt6 audacious-plugins-gtk2 audacious-plugins-gtk3
 qt5_RUN_DEPENDS=	audacious:multimedia/audacious@qt5
 qt5_BUILD_DEPENDS=	audacious:multimedia/audacious@qt5
@@ -44,8 +49,6 @@ gtk3_CONFLICTS_INSTALL=	audacious-plugins audacious-plugins-qt6 audacious-plugin
 gtk3_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 gtk3_RUN_DEPENDS=	audacious:multimedia/audacious@gtk3
 gtk3_BUILD_DEPENDS=	audacious:multimedia/audacious@gtk3
-
-MESON_ARGS=		-Dconsole=false -Dmms=false -Dsoxr=false -Dcoreaudio=false
 
 .if ${FLAVOR} == qt5
 MESON_ARGS+=		-Dqt=true -Dqt6=false -Dgtk=false -Dgtk3=false
@@ -68,12 +71,12 @@ PLIST_SUB=		QT="@comment " QT6="@comment " GTK=""
 .endif
 
 OPTIONS_DEFINE=	AAC ADPLUG AMIDI BS2B CDDA CUE FFMPEG FLAC LAME LIRC \
-		MODPLUG MPG123 MPRIS NEON NLS NOTIFY OPENGL OPENMPT SAMPLERATE \
-		SCROBBLER SID SNDFILE SPEEDPITCH VORBIS WAVPACK
+		MODPLUG MPG123 MPRIS NEON NLS NOTIFY OPENGL OPENMPT OPUS \
+		SAMPLERATE SCROBBLER SID SNDFILE SPEEDPITCH VORBIS WAVPACK
 OPTIONS_MULTI=		OUTPUT
 OPTIONS_MULTI_OUTPUT=	ALSA FILEWRITER JACK OSS PIPEWIRE PULSEAUDIO SDL SNDIO
 OPTIONS_DEFAULT=	AAC ADPLUG CDDA CUE FILEWRITER FFMPEG FLAC MPRIS \
-			MPG123 NEON NLS NOTIFY OPENMPT OSS PIPEWIRE PULSEAUDIO \
+			MPG123 NEON NLS NOTIFY OPENMPT OPUS OSS PIPEWIRE PULSEAUDIO \
 			SCROBBLER SID VORBIS WAVPACK
 OPTIONS_SUB=		yes
 
@@ -200,6 +203,7 @@ MESON_ARGS+=	-Dfilewriter-flac=false -Dfilewriter-mp3=false -Dfilewriter-ogg=fal
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/src/aac/meson.build \
+		${WRKSRC}/src/filewriter/meson.build \
 		${WRKSRC}/src/lirc/meson.build
 
 post-patch-NLS-off:
