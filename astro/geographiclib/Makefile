@@ -15,7 +15,12 @@ WWW=		https://geographiclib.sourceforge.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake compiler:c++14-lang localbase python:env
+USES=		cmake localbase python:env
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++14-lang
+.endif
 USE_LDCONFIG=	yes
 USE_PYTHON=	optsuffix
 CMAKE_ARGS=	-DGEOGRAPHICLIB_DATA:STRING=${DATADIR:Q} \
