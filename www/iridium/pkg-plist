@@ -2,6 +2,7 @@ bin/iridium
 %%DATADIR%%/iridium
 %%DATADIR%%/chrome_100_percent.pak
 %%DATADIR%%/chrome_200_percent.pak
+%%DATADIR%%/headless_command_resources.pak
 %%DATADIR%%/headless_lib_data.pak
 %%DATADIR%%/headless_lib_strings.pak
 %%DATADIR%%/libEGL.so

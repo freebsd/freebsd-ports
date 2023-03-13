@@ -1,4 +1,4 @@
---- media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.cc.orig	2022-12-06 08:09:13 UTC
+--- media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.cc.orig	2023-03-13 07:33:08 UTC
 +++ media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.cc
 @@ -42,7 +42,7 @@ media::stable::mojom::VideoFrameDataPtr MakeVideoFrame
    gfx::GpuMemoryBufferHandle gpu_memory_buffer_handle =
@@ -9,7 +9,7 @@
    CHECK_EQ(gpu_memory_buffer_handle.type, gfx::NATIVE_PIXMAP);
    CHECK(!gpu_memory_buffer_handle.native_pixmap_handle.planes.empty());
  #else
-@@ -747,7 +747,7 @@ const gfx::GpuMemoryBufferId& StructTraits<
+@@ -751,7 +751,7 @@ const gfx::GpuMemoryBufferId& StructTraits<
    return input.id;
  }
  
@@ -18,7 +18,7 @@
  // static
  gfx::NativePixmapHandle StructTraits<
      media::stable::mojom::NativeGpuMemoryBufferHandleDataView,
-@@ -768,7 +768,7 @@ bool StructTraits<media::stable::mojom::NativeGpuMemor
+@@ -772,7 +772,7 @@ bool StructTraits<media::stable::mojom::NativeGpuMemor
  
    output->type = gfx::NATIVE_PIXMAP;
  

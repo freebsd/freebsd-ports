@@ -1,29 +1,29 @@
---- base/allocator/partition_allocator/partition_alloc_config.h.orig	2023-01-17 19:19:00 UTC
+--- base/allocator/partition_allocator/partition_alloc_config.h.orig	2023-03-13 07:33:08 UTC
 +++ base/allocator/partition_allocator/partition_alloc_config.h
-@@ -84,7 +84,7 @@ static_assert(sizeof(void*) != 8, "");
- 
+@@ -120,7 +120,7 @@ static_assert(sizeof(void*) != 8, "");
  // POSIX is not only UNIX, e.g. macOS and other OSes. We do use Linux-specific
  // features such as futex(2).
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
- #define PA_HAS_LINUX_KERNEL
- #endif
+ #define PA_CONFIG_HAS_LINUX_KERNEL() \
+-  (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID))
++  (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD))
  
-@@ -216,7 +216,7 @@ constexpr bool kUseLazyCommit = false;
- 
+ // On some platforms, we implement locking by spinning in userspace, then going
+ // into the kernel only if there is contention. This requires platform support,
+@@ -267,7 +267,7 @@ constexpr bool kUseLazyCommit = false;
  // On these platforms, lock all the partitions before fork(), and unlock after.
  // This may be required on more platforms in the future.
--#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #define PA_HAS_ATFORK_HANDLER
- #endif
+ #define PA_CONFIG_HAS_ATFORK_HANDLER() \
+-  (BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
++  (BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
  
-@@ -257,7 +257,7 @@ constexpr bool kUseLazyCommit = false;
- //
+ // PartitionAlloc uses PartitionRootEnumerator to acquire all
+ // PartitionRoots at BeforeFork and to release at AfterFork.
+@@ -312,7 +312,7 @@ constexpr bool kUseLazyCommit = false;
  // Also enabled on ARM64 macOS, as the 16kiB pages on this platform lead to
  // larger slot spans.
--#if BUILDFLAG(IS_LINUX) || (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
-+#if BUILDFLAG(IS_LINUX) || (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64)) || BUILDFLAG(IS_BSD)
- #define PA_PREFER_SMALLER_SLOT_SPANS
- #endif  // BUILDFLAG(IS_LINUX) || (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
+ #define PA_CONFIG_PREFER_SMALLER_SLOT_SPANS() \
+-  (BUILDFLAG(IS_LINUX) || (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64)))
++  (BUILDFLAG(IS_LINUX) || (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64)) || BUILDFLAG(IS_BSD))
  
+ // Enable shadow metadata.
+ //

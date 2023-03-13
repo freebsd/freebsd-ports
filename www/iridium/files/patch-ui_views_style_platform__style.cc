@@ -1,4 +1,4 @@
---- ui/views/style/platform_style.cc.orig	2022-10-05 07:34:01 UTC
+--- ui/views/style/platform_style.cc.orig	2023-03-13 07:33:08 UTC
 +++ ui/views/style/platform_style.cc
 @@ -17,7 +17,7 @@
  #include "ui/views/controls/focusable_border.h"
@@ -9,16 +9,16 @@
  #include "ui/views/controls/scrollbar/overlay_scroll_bar.h"
  #endif
  
-@@ -52,7 +52,7 @@ const View::FocusBehavior PlatformStyle::kDefaultFocus
+@@ -50,7 +50,7 @@ const View::FocusBehavior PlatformStyle::kDefaultFocus
+ // Linux clips bubble windows that extend outside their parent window
+ // bounds.
  const bool PlatformStyle::kAdjustBubbleIfOffscreen =
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      false;
  #else
      true;
-@@ -60,7 +60,7 @@ const bool PlatformStyle::kAdjustBubbleIfOffscreen =
+@@ -58,7 +58,7 @@ const bool PlatformStyle::kAdjustBubbleIfOffscreen =
  
  // static
  std::unique_ptr<ScrollBar> PlatformStyle::CreateScrollBar(bool is_horizontal) {

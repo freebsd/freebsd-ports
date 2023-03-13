@@ -1,4 +1,4 @@
---- content/public/browser/zygote_host/zygote_host_linux.h.orig	2022-12-06 08:09:13 UTC
+--- content/public/browser/zygote_host/zygote_host_linux.h.orig	2023-03-13 07:33:08 UTC
 +++ content/public/browser/zygote_host/zygote_host_linux.h
 @@ -35,11 +35,13 @@ class ZygoteHost {
    // after the first render has been forked.
@@ -12,5 +12,5 @@
                                        int score) = 0;
 +#endif
  
- #if BUILDFLAG(IS_CHROMEOS_ASH)
+ #if BUILDFLAG(IS_CHROMEOS)
    // Reinitialize logging for the Zygote processes. Needed on ChromeOS, which

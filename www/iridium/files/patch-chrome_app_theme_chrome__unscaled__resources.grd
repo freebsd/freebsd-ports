@@ -1,29 +1,29 @@
---- chrome/app/theme/chrome_unscaled_resources.grd.orig	2022-12-01 10:35:46 UTC
+--- chrome/app/theme/chrome_unscaled_resources.grd.orig	2023-03-13 07:33:08 UTC
 +++ chrome/app/theme/chrome_unscaled_resources.grd
-@@ -19,7 +19,7 @@
-           <include name="IDR_ASSISTANT_LOGO_MONOCHROME" file="google_chrome/google_assistant.svg" type="BINDATA" />
-           <if expr="_google_chrome_for_testing">
+@@ -16,7 +16,7 @@
+     <includes>
+       <if expr="_google_chrome">
+         <then>
+-          <if expr="is_linux">
++          <if expr="is_posix">
+             <then>
+               <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/linux/product_logo_64.png" type="BINDATA" />
+               <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/linux/product_logo_128.png" type="BINDATA" />
+@@ -62,7 +62,7 @@
+         <else> <!-- not _google_chrome -->
+           <if expr="_is_chrome_for_testing_branded">
              <then>
 -              <if expr="is_linux">
 +              <if expr="is_posix">
                  <then>
                    <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/google_chrome_for_testing/linux/product_logo_64.png" type="BINDATA" />
                    <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/google_chrome_for_testing/linux/product_logo_128.png" type="BINDATA" />
-@@ -36,7 +36,7 @@
+@@ -76,7 +76,7 @@
                </if>
              </then>
-             <else>  <!-- not _google_chrome_for_testing -->
+             <else>  <!-- not _is_chrome_for_testing_branded -->
 -              <if expr="is_linux">
 +              <if expr="is_posix">
                  <then>
-                   <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/linux/product_logo_64.png" type="BINDATA" />
-                   <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/linux/product_logo_128.png" type="BINDATA" />
-@@ -78,7 +78,7 @@
-           </if>
-         </then>
-         <else> <!-- not _google_chrome -->
--          <if expr="is_linux">
-+          <if expr="is_posix">
-             <then>
-               <include name="IDR_PRODUCT_LOGO_64" file="chromium/linux/product_logo_64.png" type="BINDATA" />
-               <include name="IDR_PRODUCT_LOGO_128" file="chromium/linux/product_logo_128.png" type="BINDATA" />
+                   <include name="IDR_PRODUCT_LOGO_64" file="chromium/linux/product_logo_64.png" type="BINDATA" />
+                   <include name="IDR_PRODUCT_LOGO_128" file="chromium/linux/product_logo_128.png" type="BINDATA" />

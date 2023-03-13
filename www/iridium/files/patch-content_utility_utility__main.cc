@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2023-01-17 19:19:00 UTC
+--- content/utility/utility_main.cc.orig	2023-03-13 07:33:08 UTC
 +++ content/utility/utility_main.cc
 @@ -31,7 +31,7 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
@@ -54,7 +54,7 @@
        sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoDecoding ||
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
        sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoEncoding;
-@@ -156,7 +162,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -168,7 +174,7 @@ int UtilityMain(MainFunctionParams parameters) {
      }
    }
  
@@ -63,7 +63,7 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -184,7 +190,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -196,7 +202,7 @@ int UtilityMain(MainFunctionParams parameters) {
        pre_sandbox_hook = base::BindOnce(&screen_ai::ScreenAIPreSandboxHook);
        break;
  #endif
@@ -72,7 +72,7 @@
      case sandbox::mojom::Sandbox::kHardwareVideoDecoding:
        pre_sandbox_hook =
            base::BindOnce(&media::HardwareVideoDecodingPreSandboxHook);
-@@ -211,6 +217,7 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -223,6 +229,7 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -80,7 +80,7 @@
    if (!sandbox::policy::IsUnsandboxedSandboxType(sandbox_type) &&
        (parameters.zygote_child || !pre_sandbox_hook.is_null())) {
      sandbox::policy::SandboxLinux::Options sandbox_options;
-@@ -219,6 +226,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -231,6 +238,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

@@ -1,20 +1,29 @@
---- media/webrtc/helpers_unittests.cc.orig	2022-10-05 07:34:01 UTC
+--- media/webrtc/helpers_unittests.cc.orig	2023-03-13 07:33:08 UTC
 +++ media/webrtc/helpers_unittests.cc
-@@ -36,7 +36,7 @@ TEST(CreateWebRtcAudioProcessingModuleTest, CheckDefau
+@@ -39,7 +39,7 @@ TEST(CreateWebRtcAudioProcessingModuleTest, CheckDefau
    EXPECT_FALSE(config.pre_amplifier.enabled);
    EXPECT_TRUE(config.echo_canceller.enabled);
-   EXPECT_TRUE(config.gain_controller1.enabled);
--#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   EXPECT_TRUE(config.gain_controller2.enabled);
- #else
-   EXPECT_FALSE(config.gain_controller2.enabled);
-@@ -98,7 +98,7 @@ TEST(CreateWebRtcAudioProcessingModuleTest, CheckDefau
  
-   // Check that either AGC1 digital or AGC2 digital is used based on the
-   // platforms where the Hybrid AGC is enabled by default.
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   EXPECT_FALSE(agc1_analog_config.enable_digital_adaptive);
+   EXPECT_TRUE(config.gain_controller1.enabled);
    EXPECT_TRUE(config.gain_controller2.enabled);
-   EXPECT_TRUE(config.gain_controller2.adaptive_digital.enabled);
+ #elif BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
+@@ -77,7 +77,7 @@ TEST(CreateWebRtcAudioProcessingModuleTest,
+   EXPECT_EQ(config.gain_controller2, kDefaultApmConfig.gain_controller2);
+ }
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ TEST(CreateWebRtcAudioProcessingModuleTest,
+      InputVolumeAdjustmentEnabledWithHybridAgc) {
+   ::base::test::ScopedFeatureList feature_list;
+@@ -103,7 +103,7 @@ TEST(CreateWebRtcAudioProcessingModuleTest,
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
+ TEST(CreateWebRtcAudioProcessingModuleTest,
+      OnlyOneInputVolumeControllerEnabledOnDesktopPlatforms) {
+   auto config = CreateApmGetConfig(

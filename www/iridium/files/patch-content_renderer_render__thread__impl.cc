@@ -1,24 +1,15 @@
---- content/renderer/render_thread_impl.cc.orig	2023-01-17 19:19:00 UTC
+--- content/renderer/render_thread_impl.cc.orig	2023-03-13 07:33:08 UTC
 +++ content/renderer/render_thread_impl.cc
-@@ -194,7 +194,7 @@
+@@ -200,6 +200,8 @@
  
  #if BUILDFLAG(IS_MAC)
  #include <malloc/malloc.h>
--#else
-+#elif !BUILDFLAG(IS_OPENBSD)
++#elif BUILDFLAG(IS_BSD)
++#include <stdlib.h>
+ #else
  #include <malloc.h>
  #endif
- 
-@@ -665,7 +665,7 @@ void RenderThreadImpl::Init() {
-   base::DiscardableMemoryAllocator::SetInstance(
-       discardable_memory_allocator_.get());
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   render_message_filter()->SetThreadType(
-       ChildProcess::current()->io_thread_id(), base::ThreadType::kCompositing);
- #endif
-@@ -1043,7 +1043,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1051,7 +1053,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
            kGpuStreamPriorityMedia);
  
    const bool enable_video_decode_accelerator =
@@ -27,12 +18,21 @@
        base::FeatureList::IsEnabled(media::kVaapiVideoDecodeLinux) &&
  #endif  // BUILDFLAG(IS_LINUX)
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode) &&
-@@ -1053,7 +1053,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1060,7 +1062,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+        gpu::kGpuFeatureStatusEnabled);
  
    const bool enable_video_encode_accelerator =
- 
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
        base::FeatureList::IsEnabled(media::kVaapiVideoEncodeLinux) &&
  #else
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoEncode) &&
+@@ -1843,7 +1845,7 @@ std::unique_ptr<CodecFactory> RenderThreadImpl::Create
+     bool enable_video_encode_accelerator) {
+   mojo::PendingRemote<media::mojom::VideoEncodeAcceleratorProvider>
+       vea_provider;
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+   if (base::FeatureList::IsEnabled(media::kUseOutOfProcessVideoEncoding)) {
+     BindHostReceiver(vea_provider.InitWithNewPipeAndPassReceiver());
+   } else {

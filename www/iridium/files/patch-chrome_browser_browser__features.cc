@@ -1,6 +1,6 @@
---- chrome/browser/browser_features.cc.orig	2022-12-06 08:09:13 UTC
+--- chrome/browser/browser_features.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/browser_features.cc
-@@ -30,7 +30,7 @@ BASE_FEATURE(kColorProviderRedirectionForThemeProvider
+@@ -24,7 +24,7 @@ BASE_FEATURE(kClosedTabCache,
  // the browser exits.
  BASE_FEATURE(kDestroyProfileOnBrowserClose,
               "DestroyProfileOnBrowserClose",

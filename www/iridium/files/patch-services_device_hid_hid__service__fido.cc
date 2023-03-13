@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_fido.cc.orig	2022-12-01 10:35:46 UTC
+--- services/device/hid/hid_service_fido.cc.orig	2023-03-13 07:33:08 UTC
 +++ services/device/hid/hid_service_fido.cc
-@@ -0,0 +1,399 @@
+@@ -0,0 +1,396 @@
 +// Copyright 2014 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -19,8 +19,6 @@
 +#include <string>
 +#include <utility>
 +
-+#include "base/bind.h"
-+#include "base/callback_helpers.h"
 +#include "base/files/file.h"
 +#include "base/files/file_path.h"
 +#include "base/files/file_util.h"
@@ -33,7 +31,6 @@
 +#include "base/task/sequenced_task_runner.h"
 +#include "base/task/thread_pool.h"
 +#include "base/threading/scoped_blocking_call.h"
-+#include "base/threading/sequenced_task_runner_handle.h"
 +#include "build/build_config.h"
 +#include "build/chromeos_buildflags.h"
 +#include "components/device_event_log/device_event_log.h"
@@ -129,7 +126,7 @@
 +        allow_protected_reports(allow_protected_reports),
 +        allow_fido_reports(allow_fido_reports),
 +        callback(std::move(callback)),
-+        task_runner(base::SequencedTaskRunnerHandle::Get()),
++	task_runner(base::SequencedTaskRunner::GetCurrentDefault()),
 +        blocking_task_runner(
 +            base::ThreadPool::CreateSequencedTaskRunner(kBlockingTaskTraits)) {}
 +  ~ConnectParams() {}
@@ -147,7 +144,7 @@
 + public:
 +  BlockingTaskRunnerHelper(base::WeakPtr<HidServiceFido> service)
 +      : service_(std::move(service)),
-+        task_runner_(base::SequencedTaskRunnerHandle::Get()) {
++        task_runner_(base::SequencedTaskRunner::GetCurrentDefault()) {
 +    DETACH_FROM_SEQUENCE(sequence_checker_);
 +  }
 +
@@ -325,7 +322,7 @@
 +
 +  const auto& map_entry = devices().find(device_guid);
 +  if (map_entry == devices().end()) {
-+    base::SequencedTaskRunnerHandle::Get()->PostTask(
++    base::SequencedTaskRunner::GetCurrentDefault()->PostTask(
 +        FROM_HERE, base::BindOnce(std::move(callback), nullptr));
 +    return;
 +  }

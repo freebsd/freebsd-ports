@@ -1,8 +1,8 @@
---- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2023-01-17 19:19:00 UTC
+--- base/allocator/partition_allocator/page_allocator_internals_posix.h.orig	2023-03-13 07:33:08 UTC
 +++ base/allocator/partition_allocator/page_allocator_internals_posix.h
-@@ -370,8 +370,12 @@ bool TryRecommitSystemPagesInternal(
- 
+@@ -371,8 +371,12 @@ bool TryRecommitSystemPagesInternal(
  void DiscardSystemPagesInternal(uintptr_t address, size_t length) {
+ #if !BUILDFLAG(IS_NACL)
    void* ptr = reinterpret_cast<void*>(address);
 -#if BUILDFLAG(IS_APPLE)
 +#if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)

@@ -1,6 +1,6 @@
---- services/video_capture/public/mojom/video_capture_service.mojom.orig	2022-10-05 07:34:01 UTC
+--- services/video_capture/public/mojom/video_capture_service.mojom.orig	2023-03-13 07:33:08 UTC
 +++ services/video_capture/public/mojom/video_capture_service.mojom
-@@ -24,10 +24,10 @@ interface AcceleratorFactory {
+@@ -25,10 +25,10 @@ interface AcceleratorFactory {
        pending_receiver<chromeos_camera.mojom.MjpegDecodeAccelerator> jda);
  };
  

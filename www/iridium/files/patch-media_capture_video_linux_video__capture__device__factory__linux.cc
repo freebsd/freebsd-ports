@@ -1,6 +1,6 @@
---- media/capture/video/linux/video_capture_device_factory_linux.cc.orig	2022-03-28 18:11:04 UTC
+--- media/capture/video/linux/video_capture_device_factory_linux.cc.orig	2023-03-13 07:33:08 UTC
 +++ media/capture/video/linux/video_capture_device_factory_linux.cc
-@@ -72,6 +72,9 @@ class DevVideoFilePathsDeviceProvider
+@@ -73,6 +73,9 @@ class DevVideoFilePathsDeviceProvider
      : public VideoCaptureDeviceFactoryLinux::DeviceProvider {
   public:
    void GetDeviceIds(std::vector<std::string>* target_container) override {
@@ -10,7 +10,7 @@
      const base::FilePath path("/dev/");
      base::FileEnumerator enumerator(path, false, base::FileEnumerator::FILES,
                                      "video*");
-@@ -79,9 +82,13 @@ class DevVideoFilePathsDeviceProvider
+@@ -80,9 +83,13 @@ class DevVideoFilePathsDeviceProvider
        const base::FileEnumerator::FileInfo info = enumerator.GetInfo();
        target_container->emplace_back(path.value() + info.GetName().value());
      }
@@ -24,7 +24,7 @@
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      std::string usb_id;
      const std::string vid_path =
-@@ -99,6 +106,9 @@ class DevVideoFilePathsDeviceProvider
+@@ -100,6 +107,9 @@ class DevVideoFilePathsDeviceProvider
    }
  
    std::string GetDeviceDisplayName(const std::string& device_id) override {
@@ -34,7 +34,7 @@
      const std::string file_name = ExtractFileNameFromDeviceId(device_id);
      const std::string interface_path =
          base::StringPrintf(kInterfacePathTemplate, file_name.c_str());
-@@ -213,7 +223,7 @@ void VideoCaptureDeviceFactoryLinux::GetDevicesInfo(
+@@ -214,7 +224,7 @@ void VideoCaptureDeviceFactoryLinux::GetDevicesInfo(
    std::move(callback).Run(std::move(devices_info));
  }
  

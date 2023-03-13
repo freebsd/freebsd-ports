@@ -1,6 +1,6 @@
---- services/device/hid/hid_connection_freebsd.cc.orig	2022-10-05 07:34:01 UTC
+--- services/device/hid/hid_connection_freebsd.cc.orig	2023-03-13 07:33:08 UTC
 +++ services/device/hid/hid_connection_freebsd.cc
-@@ -0,0 +1,242 @@
+@@ -0,0 +1,240 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -10,7 +10,6 @@
 +#include <dev/usb/usbhid.h>
 +#include <dev/usb/usb_ioctl.h>
 +
-+#include "base/bind.h"
 +#include "base/files/file_descriptor_watcher_posix.h"
 +#include "base/location.h"
 +#include "base/numerics/safe_math.h"
@@ -19,7 +18,6 @@
 +#include "base/task/single_thread_task_runner.h"
 +#include "base/threading/scoped_blocking_call.h"
 +#include "base/threading/thread_restrictions.h"
-+#include "base/threading/thread_task_runner_handle.h"
 +#include "components/device_event_log/device_event_log.h"
 +#include "services/device/hid/hid_service.h"
 +
@@ -32,7 +30,7 @@
 +                     base::WeakPtr<HidConnectionFreeBSD> connection)
 +      : fd_(std::move(fd)),
 +        connection_(connection),
-+        origin_task_runner_(base::ThreadTaskRunnerHandle::Get()) {
++        origin_task_runner_(base::SequencedTaskRunner::GetCurrentDefault()) {
 +    DETACH_FROM_SEQUENCE(sequence_checker_);
 +    // Report buffers must always have room for the report ID.
 +    report_buffer_size_ = device_info->max_input_report_size() + 1;

@@ -1,6 +1,6 @@
---- chrome/browser/password_manager/password_reuse_manager_factory.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/browser/password_manager/password_reuse_manager_factory.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/password_manager/password_reuse_manager_factory.cc
-@@ -92,7 +92,7 @@ KeyedService* PasswordReuseManagerFactory::BuildServic
+@@ -101,7 +101,7 @@ KeyedService* PasswordReuseManagerFactory::BuildServic
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

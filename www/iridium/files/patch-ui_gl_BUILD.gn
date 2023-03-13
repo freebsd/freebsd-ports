@@ -1,6 +1,6 @@
---- ui/gl/BUILD.gn.orig	2023-01-17 19:19:00 UTC
+--- ui/gl/BUILD.gn.orig	2023-03-13 07:33:08 UTC
 +++ ui/gl/BUILD.gn
-@@ -166,8 +166,6 @@ component("gl") {
+@@ -162,8 +162,6 @@ component("gl") {
      defines += [ "GPU_ENABLE_SERVICE_LOGGING" ]
    }
  
@@ -9,7 +9,7 @@
    all_dependent_configs = [ ":gl_config" ]
  
    public_configs = [ "//third_party/khronos:khronos_headers" ]
-@@ -184,7 +182,6 @@ component("gl") {
+@@ -180,7 +178,6 @@ component("gl") {
    ]
    public_deps = [
      "//base",
@@ -17,7 +17,7 @@
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -419,7 +416,6 @@ component("gl") {
+@@ -391,7 +388,6 @@ component("gl") {
      data_deps += [
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",
@@ -25,11 +25,11 @@
      ]
      if (enable_swiftshader) {
        data_deps += [
-@@ -639,7 +635,6 @@ test("gl_unittests") {
+@@ -607,7 +603,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",
 -    "//third_party/mesa_headers",
    ]
  
-   # TODO(https://crbug.com/789065): this must be moved to Ozone.
+   if (is_win) {

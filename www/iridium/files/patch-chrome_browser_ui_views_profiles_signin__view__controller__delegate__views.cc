@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2022-12-01 10:35:46 UTC
+--- chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/ui/views/profiles/signin_view_controller_delegate_views.cc
 @@ -50,7 +50,7 @@ namespace {
  
@@ -18,7 +18,7 @@
  // static
  std::unique_ptr<views::WebView>
  SigninViewControllerDelegateViews::CreateEnterpriseConfirmationWebView(
-@@ -456,7 +456,7 @@ SigninViewControllerDelegate::CreateProfileCustomizati
+@@ -447,7 +447,7 @@ SigninViewControllerDelegate::CreateProfileCustomizati
  #endif  // BUILDFLAG(ENABLE_DICE_SUPPORT) || BUILDFLAG(IS_CHROMEOS_LACROS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- components/feature_engagement/public/feature_constants.cc.orig	2023-01-17 19:19:00 UTC
+--- components/feature_engagement/public/feature_constants.cc.orig	2023-03-13 07:33:08 UTC
 +++ components/feature_engagement/public/feature_constants.cc
-@@ -24,7 +24,7 @@ BASE_FEATURE(kUseClientConfigIPH,
+@@ -19,7 +19,7 @@ BASE_FEATURE(kUseClientConfigIPH,
  BASE_FEATURE(kIPHDummyFeature, "IPH_Dummy", base::FEATURE_DISABLED_BY_DEFAULT);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  BASE_FEATURE(kIPHBatterySaverModeFeature,
               "IPH_BatterySaverMode",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -424,7 +424,8 @@ BASE_FEATURE(kIPHOverflowMenuTipFeature,
+@@ -434,7 +434,8 @@ BASE_FEATURE(kIPHiOSDefaultBrowserSettingsBadgeFeature
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

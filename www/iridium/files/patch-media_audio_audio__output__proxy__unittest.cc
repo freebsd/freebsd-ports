@@ -1,6 +1,6 @@
---- media/audio/audio_output_proxy_unittest.cc.orig	2022-03-28 18:11:04 UTC
+--- media/audio/audio_output_proxy_unittest.cc.orig	2023-03-13 07:33:08 UTC
 +++ media/audio/audio_output_proxy_unittest.cc
-@@ -412,7 +412,11 @@ class AudioOutputProxyTest : public testing::Test {
+@@ -443,7 +443,11 @@ class AudioOutputProxyTest : public testing::Test {
      // |stream| is closed at this point. Start() should reopen it again.
      EXPECT_CALL(manager(), MakeAudioOutputStream(_, _, _))
          .Times(2)

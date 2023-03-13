@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/widget/compositing/categorized_worker_pool.cc.orig	2022-12-06 08:09:13 UTC
+--- third_party/blink/renderer/platform/widget/compositing/categorized_worker_pool.cc.orig	2023-03-13 07:33:08 UTC
 +++ third_party/blink/renderer/platform/widget/compositing/categorized_worker_pool.cc
-@@ -241,7 +241,7 @@ void CategorizedWorkerPoolImpl::Start(int max_concurre
+@@ -242,7 +242,7 @@ void CategorizedWorkerPoolImpl::Start(int max_concurre
        "CompositorTileWorkerBackground", thread_options, this,
        background_thread_prio_categories,
        &has_task_for_background_priority_thread_cv_);

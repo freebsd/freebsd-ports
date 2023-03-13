@@ -1,4 +1,4 @@
---- chrome/browser/web_applications/extensions/extension_status_utils.cc.orig	2023-01-17 19:19:00 UTC
+--- chrome/browser/web_applications/extensions/extension_status_utils.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/web_applications/extensions/extension_status_utils.cc
 @@ -26,7 +26,7 @@ namespace {
  const char* g_preinstalled_app_for_testing = nullptr;
@@ -6,10 +6,10 @@
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
- const char kMobilityPrintExtensionId[] = "alhngdkjgnedakdlnamimgfihgkmenbh";
- 
- BASE_FEATURE(kChromeAppsDeprecationExcludeForceInstalls,
-@@ -108,7 +108,7 @@ bool ClearExternalExtensionUninstalled(content::Browse
+ // TODO(b/268221237): Remove this allow-list.
+ const char kDefaultAllowedExtensionIds[] =
+     "alhngdkjgnedakdlnamimgfihgkmenbh,"
+@@ -113,7 +113,7 @@ bool ClearExternalExtensionUninstalled(content::Browse
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

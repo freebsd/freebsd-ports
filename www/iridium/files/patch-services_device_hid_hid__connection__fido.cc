@@ -1,6 +1,6 @@
---- services/device/hid/hid_connection_fido.cc.orig	2022-12-01 10:35:46 UTC
+--- services/device/hid/hid_connection_fido.cc.orig	2023-03-13 07:33:08 UTC
 +++ services/device/hid/hid_connection_fido.cc
-@@ -0,0 +1,218 @@
+@@ -0,0 +1,216 @@
 +// Copyright 2014 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -14,12 +14,10 @@
 +#include <string>
 +#include <utility>
 +
-+#include "base/bind.h"
 +#include "base/files/file_descriptor_watcher_posix.h"
 +#include "base/memory/ref_counted_memory.h"
 +#include "base/posix/eintr_wrapper.h"
 +#include "base/threading/scoped_blocking_call.h"
-+#include "base/threading/sequenced_task_runner_handle.h"
 +#include "components/device_event_log/device_event_log.h"
 +#include "services/device/hid/hid_service.h"
 +
@@ -32,7 +30,7 @@
 +                           base::WeakPtr<HidConnectionFido> connection)
 +      : fd_(std::move(fd)),
 +        connection_(connection),
-+        origin_task_runner_(base::SequencedTaskRunnerHandle::Get()) {
++        origin_task_runner_(base::SequencedTaskRunner::GetCurrentDefault()) {
 +    DETACH_FROM_SEQUENCE(sequence_checker_);
 +    // Report buffers must always have room for the report ID.
 +    report_buffer_size_ = device_info->max_input_report_size() + 1;

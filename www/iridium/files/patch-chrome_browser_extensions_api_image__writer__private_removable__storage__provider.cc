@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc.orig	2022-12-01 10:35:46 UTC
+--- chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/extensions/api/image_writer_private/removable_storage_provider.cc
 @@ -20,6 +20,7 @@ static base::LazyInstance<scoped_refptr<StorageDeviceL
  
@@ -6,7 +6,7 @@
    DCHECK_CURRENTLY_ON(content::BrowserThread::UI);
 +#if !defined(OS_BSD)
    if (g_test_device_list.Get().get() != nullptr) {
-     base::ThreadTaskRunnerHandle::Get()->PostTask(
+     base::SingleThreadTaskRunner::GetCurrentDefault()->PostTask(
          FROM_HERE,
 @@ -33,6 +34,9 @@ void RemovableStorageProvider::GetAllDevices(DeviceLis
         base::TaskShutdownBehavior::SKIP_ON_SHUTDOWN},

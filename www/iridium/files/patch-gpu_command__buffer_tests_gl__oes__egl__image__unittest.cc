@@ -1,4 +1,4 @@
---- gpu/command_buffer/tests/gl_oes_egl_image_unittest.cc.orig	2022-04-01 07:48:30 UTC
+--- gpu/command_buffer/tests/gl_oes_egl_image_unittest.cc.orig	2023-03-13 07:33:08 UTC
 +++ gpu/command_buffer/tests/gl_oes_egl_image_unittest.cc
 @@ -14,7 +14,7 @@
  #include "ui/gl/gl_image.h"
@@ -9,7 +9,7 @@
  #include "ui/gl/gl_image_native_pixmap.h"
  #endif
  
-@@ -43,7 +43,7 @@ class GpuOESEGLImageTest : public testing::Test,
+@@ -46,7 +46,7 @@ class GpuOESEGLImageTest : public testing::Test,
    bool egl_initialized_{false};
  };
  

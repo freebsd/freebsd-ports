@@ -1,6 +1,6 @@
---- services/device/usb/usb_service_fake.cc.orig	2022-12-01 10:35:46 UTC
+--- services/device/usb/usb_service_fake.cc.orig	2023-03-13 07:33:08 UTC
 +++ services/device/usb/usb_service_fake.cc
-@@ -0,0 +1,51 @@
+@@ -0,0 +1,49 @@
 +// Copyright 2014 The Chromium Authors
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -15,8 +15,6 @@
 +#include <utility>
 +
 +#include "base/barrier_closure.h"
-+#include "base/bind.h"
-+#include "base/callback_helpers.h"
 +#include "base/containers/contains.h"
 +#include "base/location.h"
 +#include "base/memory/ref_counted_memory.h"
@@ -36,7 +34,7 @@
 +namespace device {
 +
 +UsbServiceImpl::UsbServiceImpl()
-+    : task_runner_(base::SequencedTaskRunnerHandle::Get()) {
++    : task_runner_(base::SequencedTaskRunner::GetCurrentDefault()) {
 +  NOTIMPLEMENTED();
 +}
 +

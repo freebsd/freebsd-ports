@@ -1,6 +1,6 @@
---- chrome/browser/browser_process_impl.h.orig	2022-10-05 07:34:01 UTC
+--- chrome/browser/browser_process_impl.h.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/browser_process_impl.h
-@@ -363,7 +363,7 @@ class BrowserProcessImpl : public BrowserProcess,
+@@ -364,7 +364,7 @@ class BrowserProcessImpl : public BrowserProcess,
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

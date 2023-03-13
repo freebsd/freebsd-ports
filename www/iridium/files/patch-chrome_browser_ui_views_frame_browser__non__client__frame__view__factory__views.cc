@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig	2023-01-17 19:19:00 UTC
+--- chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/ui/views/frame/browser_non_client_frame_view_factory_views.cc
 @@ -16,7 +16,7 @@
  #include "chrome/browser/ui/views/frame/glass_browser_frame_view.h"
@@ -18,12 +18,12 @@
    auto* profile = browser_view->browser()->profile();
    auto* linux_ui_theme = ui::LinuxUiTheme::GetForProfile(profile);
    auto* theme_service_factory = ThemeServiceFactory::GetForProfile(profile);
-@@ -73,7 +73,7 @@ std::unique_ptr<BrowserNonClientFrameView> CreateBrows
-     BrowserFrame* frame,
-     BrowserView* browser_view) {
- // TODO(https://crbug.com/1346734): Enable it on all platforms.
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+@@ -75,7 +75,7 @@ std::unique_ptr<BrowserNonClientFrameView> CreateBrows
    if (browser_view->browser()->is_type_picture_in_picture()) {
      auto view =
          std::make_unique<PictureInPictureBrowserFrameView>(frame, browser_view);
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+     auto* profile = browser_view->browser()->profile();
+     auto* linux_ui_theme = ui::LinuxUiTheme::GetForProfile(profile);
+     auto* theme_service_factory = ThemeServiceFactory::GetForProfile(profile);

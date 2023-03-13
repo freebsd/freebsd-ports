@@ -1,6 +1,6 @@
---- pdf/pdfium/pdfium_engine.cc.orig	2022-12-06 08:09:13 UTC
+--- pdf/pdfium/pdfium_engine.cc.orig	2023-03-13 07:33:08 UTC
 +++ pdf/pdfium/pdfium_engine.cc
-@@ -82,7 +82,7 @@
+@@ -84,7 +84,7 @@
  #include "gin/public/cppgc.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "pdf/pdfium/pdfium_font_linux.h"
  #endif
  
-@@ -521,7 +521,7 @@ void InitializeSDK(bool enable_v8, FontMappingMode fon
+@@ -526,7 +526,7 @@ void InitializeSDK(bool enable_v8, FontMappingMode fon
  
    FPDF_InitLibraryWithConfig(&config);
  
