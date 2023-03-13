@@ -1,6 +1,5 @@
 PORTNAME=	freeradius
-DISTVERSION=	3.2.1
-PORTREVISION=	1
+DISTVERSION=	3.2.2
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/FreeRADIUS/freeradius-server/releases/download/release_${DISTVERSION:S/./_/g}/ \
 		https://freeradius.org/ftp/pub/radius/%SUBDIR%/ \
@@ -25,10 +24,10 @@ LIB_DEPENDS=	libgdbm.so:databases/gdbm \
 
 FLAVORS=	default ldap mysql pgsql sqlite3
 FLAVOR?=	${FLAVORS:[1]}
-ldap_PKGNAMESUFFIX=	-ldap
-mysql_PKGNAMESUFFIX=	-mysql
-pgsql_PKGNAMESUFFIX=	-pgsql
-sqlite3_PKGNAMESUFFIX=	-sqlite3
+ldap_PKGNAMESUFFIX=	3-ldap
+mysql_PKGNAMESUFFIX=	3-mysql
+pgsql_PKGNAMESUFFIX=	3-pgsql
+sqlite3_PKGNAMESUFFIX=	3-sqlite3
 
 LOGDIR?=	/var/log
 KRB5_CONFIG?=	/usr/bin/krb5-config --libs

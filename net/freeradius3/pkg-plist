@@ -929,6 +929,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.bt
 %%DATADIR%%/dictionary.cablelabs
 %%DATADIR%%/dictionary.cabletron
+%%DATADIR%%/dictionary.calix
 %%DATADIR%%/dictionary.cambium
 %%DATADIR%%/dictionary.camiant
 %%DATADIR%%/dictionary.centec
