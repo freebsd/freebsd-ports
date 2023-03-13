@@ -1,0 +1,71 @@
+#!/bin/sh
+#
+# Copyright (c) 2020 Rozhuk Ivan <rozhuk.im@gmail.com>
+# All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+# $FreeBSD$
+#
+
+if [ -r /etc/defaults/periodic.conf ]; then
+	. /etc/defaults/periodic.conf
+	source_periodic_confs
+fi
+
+
+case "${daily_ccache_clean_enable:-YES}" in
+[Nn][Oo])
+	;;
+*)
+	SYS_CCACHE_DIR=`make -V CCACHE_DIR`
+	if [ -z "${SYS_CCACHE_DIR}" ]; then
+		SYS_CCACHE_DIR='/var/cache/ccache'
+	fi
+	if [ -d "${SYS_CCACHE_DIR}" ]; then
+		echo "ccache dir: ${SYS_CCACHE_DIR}"
+		env CCACHE_DIR="${SYS_CCACHE_DIR}" \
+			/usr/bin/nice -n 15 \
+				%%PREFIX%%/bin/ccache --cleanup
+	fi
+
+	_USERS_HOME_DIRS=`pw usershow -a | awk -F":" '{print $9}' | sort -u`
+	for _USER_HOME in ${_USERS_HOME_DIRS}; do
+		if [ -d "${_USER_HOME}/.ccache" ]; then
+			echo "ccache dir: ${_USER_HOME}/.ccache"
+			env CCACHE_DIR="${_USER_HOME}/.ccache" \
+				/usr/bin/nice -n 15 \
+					%%PREFIX%%/bin/ccache --cleanup
+		fi
+		if [ -d "${_USER_HOME}/.cache/ccache" ]; then
+			echo "ccache dir: ${_USER_HOME}/.cache/ccache"
+			env CCACHE_DIR="${_USER_HOME}/.cache/ccache" \
+			    CCACHE_CONFIGPATH="${_USER_HOME}/.config/ccache/ccache.conf" \
+				/usr/bin/nice -n 15 \
+					%%PREFIX%%/bin/ccache --cleanup
+		fi
+	done
+	;;
+esac
+
+
+exit 0
