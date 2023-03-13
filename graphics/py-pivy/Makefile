@@ -1,5 +1,5 @@
 PORTNAME=	pivy
-PORTVERSION=	0.6.6
+PORTVERSION=	0.6.8
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -17,8 +17,10 @@ LIB_DEPENDS=	libCoin.so:graphics/Coin \
 USES=		compiler:c11 python:3.6+ qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin3d
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	distutils
 USE_QT=		core gui opengl widgets
+
+PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
 INSTALL_TARGET=	install-strip
 
