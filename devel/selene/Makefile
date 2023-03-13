@@ -1,6 +1,5 @@
 PORTNAME=	selene
-DISTVERSION=	0.23.1
-PORTREVISION=	2
+DISTVERSION=	0.25.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -8,164 +7,184 @@ COMMENT=	Command line tool to help write correct and idiomatic Lua code
 WWW=		https://kampfkarren.github.io/selene/
 
 LICENSE=	MPL20
-LICENSE_FILE=	${WRKSRC}/../LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	kampfkarren
 
-WRKSRC_SUBDIR=	${PORTNAME}
+CARGO_BUILD_ARGS=	--package=${PORTNAME}
+CARGO_INSTALL_PATH=	${PORTNAME}
 
-CARGO_CRATES=	addr2line-0.17.0 \
+CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
-		aho-corasick-0.7.18 \
-		ansi_term-0.11.0 \
+		aho-corasick-0.7.20 \
+		android_system_properties-0.1.5 \
 		ansi_term-0.12.1 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
-		backtrace-0.3.65 \
-		base64-0.13.0 \
+		autocfg-1.1.0 \
+		backtrace-0.3.67 \
+		base64-0.13.1 \
 		beef-0.5.2 \
-		bitflags-1.2.1 \
-		bstr-0.2.17 \
-		bumpalo-3.10.0 \
-		bytecount-0.5.1 \
-		cc-1.0.73 \
-		cfg-if-0.1.10 \
+		bitflags-1.3.2 \
+		bstr-1.1.0 \
+		bumpalo-3.12.0 \
+		bytecount-0.6.3 \
+		cc-1.0.78 \
 		cfg-if-1.0.0 \
-		chrono-0.4.19 \
-		chunked_transfer-1.4.0 \
-		clap-2.33.3 \
-		codespan-0.9.5 \
-		codespan-reporting-0.9.5 \
-		color-eyre-0.6.1 \
+		chrono-0.4.23 \
+		clap-2.34.0 \
+		codespan-0.11.1 \
+		codespan-reporting-0.11.1 \
+		color-eyre-0.6.2 \
 		color-spantrace-0.2.0 \
 		convert_case-0.4.0 \
+		core-foundation-sys-0.8.3 \
 		crc32fast-1.3.2 \
-		ctor-0.1.20 \
-		derive_more-0.99.14 \
-		difference-2.0.0 \
+		ctor-0.1.26 \
+		cxx-1.0.86 \
+		cxx-build-1.0.86 \
+		cxxbridge-flags-1.0.86 \
+		cxxbridge-macro-1.0.86 \
+		derive_more-0.99.17 \
+		diff-0.1.13 \
 		dirs-4.0.0 \
 		dirs-sys-0.3.7 \
 		eyre-0.6.8 \
-		flate2-1.0.24 \
+		flate2-1.0.25 \
 		fnv-1.0.7 \
-		form_urlencoded-1.0.1 \
-		full_moon-0.16.2 \
+		form_urlencoded-1.1.0 \
+		full_moon-0.18.0 \
 		full_moon_derive-0.11.0 \
-		generator-0.7.0 \
-		getrandom-0.2.3 \
-		gimli-0.26.1 \
-		glob-0.3.0 \
-		globset-0.4.9 \
-		hashbrown-0.9.1 \
+		generator-0.7.2 \
+		getrandom-0.2.8 \
+		gimli-0.27.0 \
+		glob-0.3.1 \
+		globset-0.4.10 \
+		hashbrown-0.12.3 \
 		heck-0.3.3 \
-		hermit-abi-0.1.18 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
+		iana-time-zone-0.1.53 \
+		iana-time-zone-haiku-0.1.1 \
 		id-arena-2.2.1 \
-		idna-0.2.3 \
+		idna-0.3.0 \
 		if_chain-1.0.2 \
 		indenter-0.3.3 \
-		indexmap-1.6.2 \
-		itoa-0.4.7 \
-		js-sys-0.3.57 \
+		indexmap-1.9.2 \
+		itoa-1.0.5 \
+		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
-		libc-0.2.126 \
-		linked-hash-map-0.5.4 \
+		libc-0.2.139 \
+		link-cplusplus-1.0.8 \
 		log-0.4.17 \
 		logos-0.12.1 \
 		logos-derive-0.12.1 \
 		loom-0.5.6 \
 		matchers-0.1.0 \
-		matches-0.1.9 \
 		memchr-2.5.0 \
-		miniz_oxide-0.5.3 \
-		num-integer-0.1.44 \
-		num-traits-0.2.14 \
-		num_cpus-1.13.0 \
-		object-0.28.4 \
-		once_cell-1.12.0 \
-		output_vt100-0.1.2 \
-		owo-colors-3.4.0 \
-		paste-0.1.18 \
-		paste-1.0.9 \
-		paste-impl-0.1.18 \
-		percent-encoding-2.1.0 \
+		miniz_oxide-0.6.2 \
+		nom8-0.2.0 \
+		nu-ansi-term-0.46.0 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
+		num_cpus-1.15.0 \
+		object-0.30.2 \
+		once_cell-1.17.0 \
+		output_vt100-0.1.3 \
+		overload-0.1.1 \
+		owo-colors-3.5.0 \
+		paste-1.0.11 \
+		percent-encoding-2.2.0 \
 		pin-project-lite-0.2.9 \
-		pretty_assertions-0.6.1 \
+		pretty_assertions-1.3.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.39 \
-		profiling-1.0.6 \
-		profiling-procmacros-1.0.6 \
-		quote-1.0.9 \
-		redox_syscall-0.2.13 \
+		proc-macro2-1.0.50 \
+		profiling-1.0.7 \
+		profiling-procmacros-1.0.7 \
+		quote-1.0.23 \
+		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.6.0 \
+		regex-1.7.1 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.27 \
+		regex-syntax-0.6.28 \
 		ring-0.16.20 \
 		rustc-demangle-0.1.21 \
-		rustls-0.20.6 \
-		rustversion-1.0.6 \
-		ryu-1.0.5 \
-		scoped-tls-1.0.0 \
+		rustc_version-0.4.0 \
+		rustls-0.20.8 \
+		rustversion-1.0.11 \
+		ryu-1.0.12 \
+		scoped-tls-1.0.1 \
+		scratch-1.0.3 \
 		sct-0.7.0 \
-		serde-1.0.144 \
-		serde_derive-1.0.144 \
-		serde_json-1.0.64 \
-		serde_yaml-0.8.24 \
+		semver-1.0.16 \
+		serde-1.0.152 \
+		serde_derive-1.0.152 \
+		serde_json-1.0.91 \
+		serde_spanned-0.6.1 \
+		serde_yaml-0.9.16 \
 		sharded-slab-0.1.4 \
-		smallvec-1.8.0 \
+		smallvec-1.10.0 \
 		smol_str-0.1.23 \
 		spin-0.5.2 \
 		strsim-0.8.0 \
-		structopt-0.3.21 \
-		structopt-derive-0.4.14 \
-		syn-1.0.96 \
-		termcolor-1.1.2 \
+		structopt-0.3.26 \
+		structopt-derive-0.4.18 \
+		syn-1.0.107 \
+		termcolor-1.2.0 \
 		textwrap-0.11.0 \
-		thiserror-1.0.31 \
-		thiserror-impl-1.0.31 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
 		thread_local-1.1.4 \
 		threadpool-1.8.1 \
-		time-0.1.43 \
+		time-0.1.45 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		toml-0.5.9 \
-		tracing-0.1.34 \
-		tracing-attributes-0.1.21 \
-		tracing-core-0.1.26 \
+		toml-0.7.2 \
+		toml_datetime-0.6.1 \
+		toml_edit-0.19.3 \
+		tracing-0.1.37 \
+		tracing-attributes-0.1.23 \
+		tracing-core-0.1.30 \
 		tracing-error-0.2.0 \
 		tracing-log-0.1.3 \
-		tracing-subscriber-0.3.11 \
-		tracy-client-0.13.2 \
-		tracy-client-sys-0.17.1 \
+		tracing-subscriber-0.3.16 \
+		tracy-client-0.14.2 \
+		tracy-client-sys-0.19.0 \
 		unicode-bidi-0.3.8 \
-		unicode-ident-1.0.1 \
-		unicode-normalization-0.1.19 \
-		unicode-segmentation-1.7.1 \
-		unicode-width-0.1.8 \
+		unicode-ident-1.0.6 \
+		unicode-normalization-0.1.22 \
+		unicode-segmentation-1.10.0 \
+		unicode-width-0.1.10 \
+		unsafe-libyaml-0.2.5 \
 		untrusted-0.7.1 \
-		ureq-2.4.0 \
-		url-2.2.2 \
+		ureq-2.6.2 \
+		url-2.3.1 \
 		valuable-0.1.0 \
 		vec_map-0.8.2 \
-		version_check-0.9.3 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.80 \
-		wasm-bindgen-backend-0.2.80 \
-		wasm-bindgen-macro-0.2.80 \
-		wasm-bindgen-macro-support-0.2.80 \
-		wasm-bindgen-shared-0.2.80 \
-		web-sys-0.3.57 \
+		version_check-0.9.4 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
+		web-sys-0.3.60 \
 		webpki-0.22.0 \
-		webpki-roots-0.22.3 \
+		webpki-roots-0.22.6 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		yaml-rust-0.4.5
+		windows-0.39.0 \
+		windows_aarch64_msvc-0.39.0 \
+		windows_i686_gnu-0.39.0 \
+		windows_i686_msvc-0.39.0 \
+		windows_x86_64_gnu-0.39.0 \
+		windows_x86_64_msvc-0.39.0 \
+		yansi-0.5.1
 
 PLIST_FILES=	bin/${PORTNAME}
 
