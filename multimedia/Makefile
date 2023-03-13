@@ -227,7 +227,6 @@
     SUBDIR += mkclean
     SUBDIR += mkvalidator
     SUBDIR += mkvtoolnix
-    SUBDIR += mkvtoolnix-nox11
     SUBDIR += mkxvcd
     SUBDIR += mlt6
     SUBDIR += mlt6-qt5
