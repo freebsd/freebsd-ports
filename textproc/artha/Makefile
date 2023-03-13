@@ -10,6 +10,10 @@ WWW=		http://artha.sourceforge.net/wiki/index.php/Home
 
 LICENSE=	GPLv2
 
+BROKEN=		Fails to build with recent compilers against unmaintained GTK 2
+DEPRECATED=	Abandonware, last release in 2012
+EXPIRATION_DATE=2023-03-31
+
 LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib \
 		libWN.so:textproc/wordnet
 
