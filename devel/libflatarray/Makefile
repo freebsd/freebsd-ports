@@ -15,7 +15,12 @@ BROKEN_armv7=	test/estimate_optimum_short_vec_type_test.cpp:71:22: error: redefi
 
 BUILD_DEPENDS=	boost-libs>=1.48:devel/boost-libs
 
-USES=		cmake compiler:c++14-lang
+USES=		cmake
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++14-lang
+.endif
 
 CMAKE_ARGS=	-DWITH_CUDA:BOOL=FALSE
 
