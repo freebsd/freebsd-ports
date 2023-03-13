@@ -13,6 +13,9 @@ WWW=		https://www.cs.wisc.edu/~ghost/doc/GPL/index.htm
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Released over 10 years ago and unsupported by upstream, consider print/ghostscript9-agpl-x11
+EXPIRATION_DATE=2023-03-31
+
 CONFLICTS_INSTALL= \
 		gambc \
 		ghostscript[789] \
