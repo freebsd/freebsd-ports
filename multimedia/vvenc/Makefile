@@ -18,7 +18,7 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == i386
+.if ${ARCH:Marmv?} || ${ARCH} == i386 || ${ARCH} == powerpc
 CMAKE_OFF+=	VVENC_ENABLE_X86_SIMD
 .endif
 
