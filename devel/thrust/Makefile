@@ -10,6 +10,9 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cmake
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.endif
 USE_GITHUB=	yes
 
 NO_ARCH=	yes
