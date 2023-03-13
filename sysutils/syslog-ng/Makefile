@@ -149,6 +149,7 @@ JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-api-2.17.2.jar \
 				lib/syslog-ng/java-modules/syslog-ng-common.jar
 
 PYTHON_USES=			python:3.5+
+PYTHON_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 PYTHON_CONFIGURE_ON=		--enable-python
 PYTHON_CONFIGURE_OFF=		--disable-python
 PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
