@@ -1,9 +1,10 @@
 PORTNAME=	mediainfo
-PORTVERSION=	22.12
+DISTVERSION=	22.12
+PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
+MASTER_SITES=	https://mediaarea.net/download/source/${PORTNAME}/${DISTVERSION}/ \
 		LOCAL/sunpoet
-DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Provides technical and tag information for video and audio files
@@ -16,14 +17,18 @@ LICENSE_FILE=	${WRKSRC}/../../../License.html
 LIB_DEPENDS=	libmediainfo.so:multimedia/libmediainfo \
 		libzen.so:multimedia/libzen
 
-USES=		compiler:c++11-lang cpe libtool pathfix pkgconfig tar:xz
+USES=		autoreconf compiler:c++11-lang cpe dos2unix libtool pathfix \
+		pkgconfig tar:xz
 
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
+CPE_VENDOR=	mediaarea
+DOS2UNIX_GLOB=	*.c *.cpp *.h
+DOS2UNIX_WRKSRC=	${WRKDIR}
+
+WRKSRC=		${WRKDIR}/MediaInfo/Project/GNU/CLI
 
 PLIST_FILES=	bin/mediainfo
-WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/MediaInfo/Project/GNU/CLI
-
-CPE_VENDOR=	mediaarea
 
 .include <bsd.port.mk>
