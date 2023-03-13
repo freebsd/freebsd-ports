@@ -191,15 +191,15 @@ Library selection is handled by libglvnd and/or libmap.conf.
    ['../entry.c', es2_glapi_mapi_tmp_h],
    c_args : [
      c_msvc_compat_args,
---- src/mapi/shared-glapi/meson.build.orig	2020-05-30 21:28:01 UTC
+--- src/mapi/shared-glapi/meson.build.orig	2023-03-13 18:59:50 UTC
 +++ src/mapi/shared-glapi/meson.build
-@@ -42,7 +42,7 @@ if with_platform_windows
+@@ -46,7 +46,7 @@ libglapi = shared_library(
  endif
  
  libglapi = shared_library(
 -  'glapi',
 +  'glapi' + get_option('egl-lib-suffix'),
-   [files_mapi_glapi, files_mapi_util, shared_glapi_mapi_tmp_h],
+   [files_shared_glapi, shared_glapi_mapi_tmp_h],
    c_args : [
      _glapi_c_args,
 --- src/util/meson.build.orig	2022-12-03 14:41:29 UTC
