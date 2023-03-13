@@ -1,13 +1,13 @@
 PORTNAME=	nwchem
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.0.2-20220224
+DISTVERSION=	7.2.0
 DISTVERSIONSUFFIX=	-release
+CATEGORIES=	science
 MASTER_SITES=	https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dftd3 \
 		https://web.archive.org/web/20210527062154if_/https://www.chemie.uni-bonn.de/pctc/mulliken-center/software/dft-d3/:dft3 \
 		https://gitlab.com/libxc/libxc/-/archive/${LIBXC_VERSION}/:libxc
 DISTFILES=	dftd3.tgz:dft3 \
 		libxc-${LIBXC_VERSION}.tar.gz:libxc
-CATEGORIES=	science
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz
 
@@ -24,16 +24,16 @@ BROKEN_aarch64=	fails to build: gfortran10: error: unrecognized command-line opt
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libblas.so:math/blas \
-		libga.so:devel/ga
+		libga.so:devel/ga \
+		libhwloc.so:devel/hwloc2
 RUN_DEPENDS=	nwchem-data>0:science/nwchem-data
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		fortran gettext-runtime gmake perl5
+USES=		fortran gettext-runtime gmake perl5 pkgconfig
 USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	nwchemgit
-GH_TAGNAME=	7a73690b20764d26dc9fdfae9ff0c110253fbf6f
 
 MAKEFILE=	GNUmakefile
 ARCH_64BIT=	${ARCH:C/.*64.*/64/:S/${ARCH}//}
@@ -49,9 +49,9 @@ BINARY_ALIAS+=	make=${GMAKE} # only for LIBXC
 
 PLIST_FILES=	bin/nwchem etc/nwchemrc
 
-LIBXC_VERSION=	5.2.0 # from src/libext/libxc/build_libxc.sh
+LIBXC_VERSION=	6.1.0 # from src/libext/libxc/build_libxc.sh
 
-OPTIONS_DEFINE=		LIBXC PYTHON
+OPTIONS_DEFINE=		LIBXC PYTHON # more potential optional dependencies are listed in src/libext/GNUmakefile
 OPTIONS_DEFAULT=	LIBXC PYTHON MPICH # the default should be the same as for the MPI option in math/scalapack and devel/ga
 OPTIONS_RADIO=		MPI
 OPTIONS_RADIO_MPI=	NOMPI MPICH OPENMPI
