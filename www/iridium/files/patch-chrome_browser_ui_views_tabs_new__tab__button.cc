@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/new_tab_button.cc.orig	2022-03-28 18:11:04 UTC
+--- chrome/browser/ui/views/tabs/new_tab_button.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/ui/views/tabs/new_tab_button.cc
-@@ -59,7 +59,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, Presse
+@@ -61,7 +61,7 @@ NewTabButton::NewTabButton(TabStrip* tab_strip, Presse
    SetAnimateOnStateChange(true);
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

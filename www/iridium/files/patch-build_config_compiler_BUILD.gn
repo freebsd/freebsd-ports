@@ -1,6 +1,6 @@
---- build/config/compiler/BUILD.gn.orig	2023-01-17 19:19:00 UTC
+--- build/config/compiler/BUILD.gn.orig	2023-03-13 07:33:08 UTC
 +++ build/config/compiler/BUILD.gn
-@@ -224,13 +224,16 @@ config("default_include_dirs") {
+@@ -232,13 +232,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -18,7 +18,7 @@
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -276,7 +279,9 @@ config("compiler") {
+@@ -284,7 +287,9 @@ config("compiler") {
  
    configs += [
      # See the definitions below.
@@ -28,7 +28,7 @@
      ":compiler_codegen",
      ":compiler_deterministic",
    ]
-@@ -452,6 +457,10 @@ config("compiler") {
+@@ -460,6 +465,10 @@ config("compiler") {
      }
    }
  
@@ -39,7 +39,7 @@
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_gold) {
-@@ -912,7 +921,7 @@ config("compiler_cpu_abi") {
+@@ -955,7 +964,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -48,7 +48,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-@@ -927,7 +936,7 @@ config("compiler_cpu_abi") {
+@@ -970,7 +979,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -57,7 +57,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1272,6 +1281,27 @@ config("compiler_deterministic") {
+@@ -1315,6 +1324,27 @@ config("compiler_deterministic") {
    }
  }
  
@@ -73,19 +73,19 @@
 +    clang_revision = exec_script("//tools/clang/scripts/update.py",
 +                                 update_args,
 +                                 "trim string")
-+  
++
 +    # This is here so that all files get recompiled after a clang roll and
 +    # when turning clang on or off. (defines are passed via the command line,
 +    # and build system rebuild things when their commandline changes). Nothing
 +    # should ever read this define.
 +    defines = [ "CR_CLANG_REVISION=\"$clang_revision\"" ]
-+  } 
++  }
 +}
 +
  config("rustc_revision") {
    if (enable_rust && defined(rustc_version)) {
      # Similar to the above config, this is here so that all files get
-@@ -1493,7 +1523,7 @@ config("default_warnings") {
+@@ -1536,7 +1566,7 @@ config("default_warnings") {
          "-Wno-ignored-pragma-optimize",
        ]
  
@@ -94,7 +94,7 @@
          cflags += [
            # TODO(crbug.com/1343975) Evaluate and possibly enable.
            "-Wno-deprecated-builtins",
-@@ -1658,7 +1688,7 @@ config("no_chromium_code") {
+@@ -1701,7 +1731,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -103,7 +103,7 @@
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -1970,8 +2000,7 @@ config("default_stack_frames") {
+@@ -1985,8 +2015,7 @@ config("default_stack_frames") {
  }
  
  # Default "optimization on" config.
@@ -113,7 +113,7 @@
    if (is_win) {
      if (chrome_pgo_phase != 2) {
        # Favor size over speed, /O1 must be before the common flags.
-@@ -2016,8 +2045,7 @@ config("xoptimize") {
+@@ -2045,8 +2074,7 @@ config("xoptimize") {
  }
  
  # Turn off optimizations.
@@ -123,7 +123,7 @@
    if (is_win) {
      cflags = [
        "/Od",  # Disable optimization.
-@@ -2057,8 +2085,7 @@ config("xno_optimize") {
+@@ -2086,8 +2114,7 @@ config("xno_optimize") {
  # Turns up the optimization level. On Windows, this implies whole program
  # optimization and link-time code generation which is very expensive and should
  # be used sparingly.
@@ -133,7 +133,7 @@
    if (is_nacl && is_nacl_irt) {
      # The NaCl IRT is a special case and always wants its own config.
      # Various components do:
-@@ -2091,8 +2118,7 @@ config("xoptimize_max") {
+@@ -2120,8 +2147,7 @@ config("xoptimize_max") {
  #
  # TODO(crbug.com/621335) - rework how all of these configs are related
  # so that we don't need this disclaimer.
@@ -143,7 +143,7 @@
    if (is_nacl && is_nacl_irt) {
      # The NaCl IRT is a special case and always wants its own config.
      # Various components do:
-@@ -2118,8 +2144,7 @@ config("xoptimize_speed") {
+@@ -2147,8 +2173,7 @@ config("xoptimize_speed") {
    }
  }
  
@@ -153,7 +153,7 @@
    cflags = [ "-O1" ] + common_optimize_on_cflags
    rustflags = [ "-Copt-level=1" ]
    ldflags = common_optimize_on_ldflags
-@@ -2185,7 +2210,7 @@ config("afdo_optimize_size") {
+@@ -2214,7 +2239,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -162,7 +162,7 @@
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2201,7 +2226,7 @@ config("afdo") {
+@@ -2230,7 +2255,7 @@ config("afdo") {
        cflags += [ "-fprofile-sample-use=${rebased_clang_sample_profile}" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -171,7 +171,7 @@
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2239,8 +2264,7 @@ config("win_pdbaltpath") {
+@@ -2268,8 +2293,7 @@ config("win_pdbaltpath") {
  }
  
  # Full symbols.
@@ -180,8 +180,8 @@
 +config("symbols") {
    if (is_win) {
      if (is_clang) {
-       cflags = [ "/Z7" ]  # Debug information in the .obj files.
-@@ -2349,7 +2373,8 @@ config("xsymbols") {
+       cflags = [
+@@ -2386,7 +2410,8 @@ config("xsymbols") {
      configs += [ "//build/config:compress_debug_sections" ]
    }
  
@@ -191,7 +191,7 @@
      if (is_apple) {
        # TODO(https://crbug.com/1050118): Investigate missing debug info on mac.
        # Make sure we don't use constructor homing on mac.
-@@ -2372,8 +2397,7 @@ config("xsymbols") {
+@@ -2409,8 +2434,7 @@ config("xsymbols") {
  # Minimal symbols.
  # This config guarantees to hold symbol for stack trace which are shown to user
  # when crash happens in unittests running on buildbot.
@@ -201,7 +201,7 @@
    if (is_win) {
      # Functions, files, and line tables only.
      cflags = []
-@@ -2446,8 +2470,7 @@ config("xminimal_symbols") {
+@@ -2484,8 +2508,7 @@ config("xminimal_symbols") {
  # This configuration contains function names only. That is, the compiler is
  # told to not generate debug information and the linker then just puts function
  # names in the final debug information.

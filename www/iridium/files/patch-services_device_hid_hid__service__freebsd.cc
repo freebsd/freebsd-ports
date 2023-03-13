@@ -1,6 +1,6 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2022-10-05 07:34:01 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2023-03-13 07:33:08 UTC
 +++ services/device/hid/hid_service_freebsd.cc
-@@ -0,0 +1,397 @@
+@@ -0,0 +1,395 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -16,7 +16,6 @@
 +#include <string>
 +#include <vector>
 +
-+#include "base/bind.h"
 +#include "base/files/file_descriptor_watcher_posix.h"
 +#include "base/files/file_enumerator.h"
 +#include "base/files/file_util.h"
@@ -33,7 +32,6 @@
 +#include "base/task/single_thread_task_runner.h"
 +#include "base/task/thread_pool.h"
 +#include "base/threading/scoped_blocking_call.h"
-+#include "base/threading/thread_task_runner_handle.h"
 +#include "base/threading/thread_restrictions.h"
 +#include "components/device_event_log/device_event_log.h"
 +#include "services/device/hid/hid_connection_freebsd.h"
@@ -51,7 +49,7 @@
 +	allow_protected_reports(allow_protected_reports),
 +	allow_fido_reports(allow_fido_reports),
 +        callback(std::move(callback)),
-+        task_runner(base::ThreadTaskRunnerHandle::Get()),
++        task_runner(base::SequencedTaskRunner::GetCurrentDefault()),
 +        blocking_task_runner(
 +            base::ThreadPool::CreateSequencedTaskRunner(kBlockingTaskTraits)) {}
 +  ~ConnectParams() {}
@@ -69,7 +67,7 @@
 + public:
 +  BlockingTaskRunnerHelper(base::WeakPtr<HidServiceFreeBSD> service)
 +      : service_(std::move(service)),
-+        task_runner_(base::ThreadTaskRunnerHandle::Get()) {
++        task_runner_(base::SequencedTaskRunner::GetCurrentDefault()) {
 +    DETACH_FROM_SEQUENCE(sequence_checker_);
 +
 +    timer_.reset(new base::RepeatingTimer());
@@ -360,7 +358,7 @@
 +
 +  const auto& map_entry = devices().find(device_guid);
 +  if (map_entry == devices().end()) {
-+    base::ThreadTaskRunnerHandle::Get()->PostTask(
++    base::SequencedTaskRunner::GetCurrentDefault()->PostTask(
 +        FROM_HERE, base::BindOnce(std::move(callback), nullptr));
 +    return;
 +  }

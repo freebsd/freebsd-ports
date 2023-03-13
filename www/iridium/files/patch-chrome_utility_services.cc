@@ -1,4 +1,4 @@
---- chrome/utility/services.cc.orig	2022-10-05 07:34:01 UTC
+--- chrome/utility/services.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/utility/services.cc
 @@ -56,7 +56,7 @@
  #include "chrome/services/system_signals/mac/mac_system_signals_service.h"
@@ -27,7 +27,7 @@
  auto RunSystemSignalsService(
      mojo::PendingReceiver<device_signals::mojom::SystemSignalsService>
          receiver) {
-@@ -287,7 +287,7 @@ auto RunCupsIppParser(
+@@ -285,7 +285,7 @@ auto RunCupsIppParser(
  }
  #endif
  
@@ -36,7 +36,7 @@
  auto RunDocumentAnalysis(
      mojo::PendingReceiver<chrome::mojom::DocumentAnalysisService> receiver) {
    return std::make_unique<DocumentAnalysisService>(std::move(receiver));
-@@ -471,7 +471,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -465,7 +465,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunWindowsIconReader);
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -45,7 +45,7 @@
    services.Add(RunSystemSignalsService);
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  
-@@ -487,7 +487,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -481,7 +481,7 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
    services.Add(RunFileUtil);
  #endif
  

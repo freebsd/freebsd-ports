@@ -1,6 +1,6 @@
---- components/sync_device_info/local_device_info_util.cc.orig	2022-12-06 08:09:13 UTC
+--- components/sync_device_info/local_device_info_util.cc.orig	2023-03-13 07:33:08 UTC
 +++ components/sync_device_info/local_device_info_util.cc
-@@ -78,7 +78,7 @@ void OnMachineStatisticsLoaded(LocalDeviceNameInfo* na
+@@ -82,7 +82,7 @@ void OnMachineStatisticsLoaded(LocalDeviceNameInfo* na
  sync_pb::SyncEnums::DeviceType GetLocalDeviceType() {
  #if BUILDFLAG(IS_CHROMEOS)
    return sync_pb::SyncEnums_DeviceType_TYPE_CROS;
@@ -9,7 +9,7 @@
    return sync_pb::SyncEnums_DeviceType_TYPE_LINUX;
  #elif BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS)
    return ui::GetDeviceFormFactor() == ui::DEVICE_FORM_FACTOR_TABLET
-@@ -98,7 +98,7 @@ DeviceInfo::OsType GetLocalDeviceOSType() {
+@@ -102,7 +102,7 @@ DeviceInfo::OsType GetLocalDeviceOSType() {
    return DeviceInfo::OsType::kChromeOsAsh;
  #elif BUILDFLAG(IS_CHROMEOS_LACROS)
    return DeviceInfo::OsType::kChromeOsLacros;
@@ -18,7 +18,7 @@
    return DeviceInfo::OsType::kLinux;
  #elif BUILDFLAG(IS_ANDROID)
    return DeviceInfo::OsType::kAndroid;
-@@ -117,7 +117,7 @@ DeviceInfo::OsType GetLocalDeviceOSType() {
+@@ -121,7 +121,7 @@ DeviceInfo::OsType GetLocalDeviceOSType() {
  
  DeviceInfo::FormFactor GetLocalDeviceFormFactor() {
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

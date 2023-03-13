@@ -1,6 +1,6 @@
---- base/BUILD.gn.orig	2023-01-17 19:19:00 UTC
+--- base/BUILD.gn.orig	2023-03-13 07:33:08 UTC
 +++ base/BUILD.gn
-@@ -167,7 +167,7 @@ buildflag_header("ios_cronet_buildflags") {
+@@ -168,7 +168,7 @@ buildflag_header("ios_cronet_buildflags") {
    flags = [ "CRONET_BUILD=$is_cronet_build" ]
  }
  
@@ -9,7 +9,7 @@
  buildflag_header("message_pump_buildflags") {
    header = "message_pump_buildflags.h"
    header_dir = "base/message_loop"
-@@ -1059,7 +1059,7 @@ mixed_component("base") {
+@@ -1053,7 +1053,7 @@ component("base") {
        "timer/hi_res_timer_manager_posix.cc",
      ]
  
@@ -18,7 +18,7 @@
        sources += [
          "profiler/stack_base_address_posix.cc",
          "profiler/stack_base_address_posix.h",
-@@ -1070,6 +1070,14 @@ mixed_component("base") {
+@@ -1064,6 +1064,14 @@ component("base") {
          "profiler/thread_delegate_posix.h",
        ]
      }
@@ -33,7 +33,7 @@
    }
  
    if (is_win) {
-@@ -1569,11 +1577,23 @@ mixed_component("base") {
+@@ -1544,11 +1552,23 @@ component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
@@ -58,7 +58,7 @@
    if (use_allocator_shim) {
      sources += [
        "allocator/partition_allocator/shim/allocator_shim.cc",
-@@ -1601,7 +1621,7 @@ mixed_component("base") {
+@@ -1576,7 +1596,7 @@ component("base") {
        ]
        configs += [ "//base/allocator:mac_no_default_new_delete_symbols" ]
      }
@@ -67,7 +67,7 @@
        sources += [
          "allocator/partition_allocator/shim/allocator_shim_override_cpp_symbols.h",
          "allocator/partition_allocator/shim/allocator_shim_override_glibc_weak_symbols.h",
-@@ -1655,7 +1675,7 @@ mixed_component("base") {
+@@ -1617,7 +1637,7 @@ component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -76,7 +76,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2238,6 +2258,41 @@ mixed_component("base") {
+@@ -2208,6 +2228,39 @@ component("base") {
      }
    }
  
@@ -84,7 +84,6 @@
 +    sources -= [
 +      "files/file_path_watcher_inotify.cc",
 +      "files/scoped_file_linux.cc",
-+      "process/memory_linux.cc",
 +      "process/process_linux.cc",
 +      "system/sys_info_linux.cc",
 +      "process/process_iterator_linux.cc",
@@ -92,7 +91,6 @@
 +      "process/process_handle_linux.cc"
 +    ]
 +    sources += [
-+      "process/memory_stubs.cc",
 +      "files/file_path_watcher_kqueue.cc",
 +      "files/file_path_watcher_kqueue.h",
 +      "files/file_path_watcher_bsd.cc",
@@ -118,7 +116,7 @@
    # iOS
    if (is_ios) {
      sources -= [
-@@ -2335,7 +2390,7 @@ mixed_component("base") {
+@@ -2303,7 +2356,7 @@ component("base") {
    }
  
    if (dep_libevent) {
@@ -127,7 +125,7 @@
    }
  
    if (use_libevent) {
-@@ -3605,7 +3660,7 @@ test("base_unittests") {
+@@ -3556,7 +3609,7 @@ test("base_unittests") {
      }
    }
  
@@ -136,7 +134,7 @@
      sources += [
        "debug/proc_maps_linux_unittest.cc",
        "files/scoped_file_linux_unittest.cc",
-@@ -3651,7 +3706,7 @@ test("base_unittests") {
+@@ -3602,7 +3655,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
@@ -145,7 +143,7 @@
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-@@ -3662,7 +3717,7 @@ test("base_unittests") {
+@@ -3613,7 +3666,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -154,7 +152,7 @@
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3869,7 +3924,7 @@ test("base_unittests") {
+@@ -3829,7 +3882,7 @@ test("base_unittests") {
      }
    }
  

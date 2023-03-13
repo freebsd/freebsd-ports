@@ -1,47 +1,59 @@
---- chrome/app/theme/theme_resources.grd.orig	2022-12-06 08:09:13 UTC
+--- chrome/app/theme/theme_resources.grd.orig	2023-03-13 07:33:08 UTC
 +++ chrome/app/theme/theme_resources.grd
-@@ -135,7 +135,7 @@
+@@ -135,14 +135,14 @@
        </if>
        <if expr="_google_chrome">
          <then>
 -          <if expr="is_linux">
 +          <if expr="is_posix">
              <then>
-               <if expr="_google_chrome_for_testing">
-                 <then>
-@@ -152,7 +152,7 @@
-                 </else>
-               </if> <!-- _google_chrome_for_testing -->
+               <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="google_chrome/linux/product_logo_16.png" />
+               <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="google_chrome/linux/product_logo_32.png" />
+               <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32_BETA" file="google_chrome/linux/product_logo_32_beta.png" />
+               <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32_DEV" file="google_chrome/linux/product_logo_32_dev.png" />
              </then>
 -            <else> <!-- not is_linux -->
 +            <else> <!-- not is_posix -->
                <if expr="not is_android">
-                 <if expr="_google_chrome_for_testing">
-                   <then>
-@@ -176,7 +176,7 @@
-                 </else>
-               </if> <!-- _google_chrome_for_testing -->
+                 <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="google_chrome/product_logo_16.png" />
+                 <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="google_chrome/product_logo_32.png" />
+@@ -150,7 +150,7 @@
+               <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32_BETA" file="google_chrome/product_logo_32_beta.png" />
+               <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32_DEV" file="google_chrome/product_logo_32_dev.png" />
              </else>
 -          </if> <!-- is_linux -->
 +          </if> <!-- is_posix -->
            <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32_CANARY" file="google_chrome/product_logo_32_canary.png" />
            <if expr="not is_android">
              <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_NAME_22" file="google_chrome/product_logo_name_22.png" />
-@@ -186,7 +186,7 @@
-           <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_ENTERPRISE_WHITE" file="google_chrome/product_logo_enterprise_white.png" />
-         </then>
+@@ -162,7 +162,7 @@
          <else> <!-- not _google_chrome -->
--          <if expr="is_linux">
-+          <if expr="is_posix">
+           <if expr="_is_chrome_for_testing_branded">
              <then>
-               <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="chromium/linux/product_logo_16.png" />
-               <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="chromium/linux/product_logo_32.png" />
-@@ -195,7 +195,7 @@
-               <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="chromium/product_logo_16.png" />
-               <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="chromium/product_logo_32.png" />
+-              <if expr="is_linux">
++              <if expr="is_posix">
+                 <then>
+                   <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="google_chrome/google_chrome_for_testing/linux/product_logo_16.png" />
+                   <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="google_chrome/google_chrome_for_testing/linux/product_logo_32.png" />
+@@ -171,10 +171,10 @@
+                   <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="google_chrome/google_chrome_for_testing/product_logo_16.png" />
+                   <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="google_chrome/google_chrome_for_testing/product_logo_32.png" />
+                 </else>
+-              </if> <!-- is_linux -->
++              </if> <!-- is_posix -->
+             </then>
+             <else> <!-- not _is_chrome_for_testing_branded -->
+-              <if expr="is_linux">
++              <if expr="is_posix">
+                 <then>
+                   <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="chromium/linux/product_logo_16.png" />
+                   <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="chromium/linux/product_logo_32.png" />
+@@ -183,7 +183,7 @@
+                   <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_16" file="chromium/product_logo_16.png" />
+                   <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_32" file="chromium/product_logo_32.png" />
+                 </else>
+-              </if> <!-- is_linux -->
++              </if> <!-- is_posix -->
              </else>
--          </if> <!-- is_linux -->
-+          </if> <!-- is_posix -->
+           </if> <!-- _is_chrome_for_testing_branded -->
            <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_NAME_22" file="chromium/product_logo_name_22.png" />
-           <structure type="chrome_scaled_image" name="IDR_PRODUCT_LOGO_NAME_22_WHITE" file="chromium/product_logo_name_22_white.png" />
-         </else>

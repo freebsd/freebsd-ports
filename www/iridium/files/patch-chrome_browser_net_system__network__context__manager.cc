@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2023-01-17 19:19:00 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -92,7 +92,7 @@
  
@@ -9,7 +9,7 @@
  #include "chrome/common/chrome_paths_internal.h"
  #include "chrome/grit/chromium_strings.h"
  #include "ui/base/l10n/l10n_util.h"
-@@ -174,7 +174,7 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
+@@ -177,7 +177,7 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
    auth_dynamic_params->basic_over_http_enabled =
        local_state->GetBoolean(prefs::kBasicAuthOverHttpEnabled);
  
@@ -18,7 +18,7 @@
    auth_dynamic_params->delegate_by_kdc_policy =
        local_state->GetBoolean(prefs::kAuthNegotiateDelegateByKdcPolicy);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -452,7 +452,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -455,7 +455,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
    pref_change_registrar_.Add(prefs::kAllHttpAuthSchemesAllowedForOrigins,
                               auth_pref_callback);
  
@@ -27,7 +27,7 @@
    pref_change_registrar_.Add(prefs::kAuthNegotiateDelegateByKdcPolicy,
                               auth_pref_callback);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -524,7 +524,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -527,7 +527,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kKerberosEnabled, false);
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  

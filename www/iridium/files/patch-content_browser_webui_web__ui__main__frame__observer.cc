@@ -1,4 +1,4 @@
---- content/browser/webui/web_ui_main_frame_observer.cc.orig	2022-10-05 07:34:01 UTC
+--- content/browser/webui/web_ui_main_frame_observer.cc.orig	2023-03-13 07:33:08 UTC
 +++ content/browser/webui/web_ui_main_frame_observer.cc
 @@ -13,7 +13,7 @@
  #include "content/public/browser/navigation_handle.h"
@@ -6,8 +6,8 @@
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "base/callback_helpers.h"
  #include "base/feature_list.h"
+ #include "base/functional/callback_helpers.h"
  #include "base/logging.h"
 @@ -31,7 +31,7 @@ namespace content {
  

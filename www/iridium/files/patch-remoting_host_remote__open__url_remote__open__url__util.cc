@@ -1,6 +1,6 @@
---- remoting/host/remote_open_url/remote_open_url_util.cc.orig	2022-03-28 18:11:04 UTC
+--- remoting/host/remote_open_url/remote_open_url_util.cc.orig	2023-03-13 07:33:08 UTC
 +++ remoting/host/remote_open_url/remote_open_url_util.cc
-@@ -30,7 +30,7 @@ const wchar_t kRegisteredApplicationsKeyName[] =
+@@ -29,7 +29,7 @@ const wchar_t kRegisteredApplicationsKeyName[] =
  #endif  // defined (OS_WIN)
  
  bool IsRemoteOpenUrlSupported() {
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return true;
  #elif BUILDFLAG(IS_WIN)
-   // The modern default apps settings dialog is only available to Windows 8+.
+   // The MSI installs the ProgID and capabilities into registry, but not the

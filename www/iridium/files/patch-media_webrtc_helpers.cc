@@ -1,19 +1,11 @@
---- media/webrtc/helpers.cc.orig	2023-01-17 19:19:00 UTC
+--- media/webrtc/helpers.cc.orig	2023-03-13 07:33:08 UTC
 +++ media/webrtc/helpers.cc
-@@ -17,14 +17,14 @@
- namespace media {
- namespace {
- 
+@@ -40,7 +40,7 @@ void ConfigAutomaticGainControl(const AudioProcessingS
+     apm_config.gain_controller2.enabled = false;
+     return;
+   }
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- constexpr bool kUseHybridAgc = true;
- #else
- constexpr bool kUseHybridAgc = false;
- #endif
+   // Use the Hybrid AGC setup, which combines the AGC1 input volume controller
+   // and the AGC2 digital adaptive controller.
  
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
--    BUILDFLAG(IS_CHROMEOS)
-+    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- constexpr bool kUseClippingController = true;
- #else
- constexpr bool kUseClippingController = false;

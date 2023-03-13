@@ -1,6 +1,6 @@
---- base/system/sys_info_posix.cc.orig	2023-01-17 19:19:00 UTC
+--- base/system/sys_info_posix.cc.orig	2023-03-13 07:33:08 UTC
 +++ base/system/sys_info_posix.cc
-@@ -154,12 +154,12 @@ int NumberOfProcessors() {
+@@ -165,12 +165,12 @@ int NumberOfProcessors() {
  
  }  // namespace internal
  
@@ -15,7 +15,7 @@
  
  // static
  uint64_t SysInfo::AmountOfVirtualMemory() {
-@@ -249,6 +249,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
+@@ -260,6 +260,8 @@ std::string SysInfo::OperatingSystemArchitecture() {
      arch = "x86";
    } else if (arch == "amd64") {
      arch = "x86_64";

@@ -1,6 +1,6 @@
---- content/common/BUILD.gn.orig	2023-01-17 19:19:00 UTC
+--- content/common/BUILD.gn.orig	2023-03-13 07:33:08 UTC
 +++ content/common/BUILD.gn
-@@ -433,6 +433,9 @@ if (is_linux || is_chromeos) {
+@@ -426,6 +426,9 @@ if (is_linux || is_chromeos) {
      public = [ "set_process_title_linux.h" ]
      sources = [ "set_process_title_linux.cc" ]
      deps = [ "//base" ]
@@ -10,3 +10,12 @@
    }
  }
  
+@@ -474,7 +477,7 @@ mojom("mojo_bindings") {
+   if (enable_ipc_logging) {
+     enabled_features += [ "ipc_logging" ]
+   }
+-  if (is_linux || is_chromeos) {
++  if (!is_bsd && (is_linux || is_chromeos)) {
+     enabled_features += [ "supports_thread_types" ]
+   }
+   if (use_clang_profiling_inside_sandbox) {

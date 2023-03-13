@@ -1,7 +1,7 @@
---- remoting/host/webauthn/remote_webauthn_extension_notifier.cc.orig	2022-10-05 07:34:01 UTC
+--- remoting/host/webauthn/remote_webauthn_extension_notifier.cc.orig	2023-03-13 07:33:08 UTC
 +++ remoting/host/webauthn/remote_webauthn_extension_notifier.cc
-@@ -23,7 +23,7 @@
- #include "base/threading/sequenced_task_runner_handle.h"
+@@ -24,7 +24,7 @@
+ #include "base/task/thread_pool.h"
  #include "build/build_config.h"
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #include "base/strings/string_util.h"
-@@ -68,14 +68,14 @@ static constexpr char kExtensionWakeupFileContent[] = 
+@@ -69,14 +69,14 @@ static constexpr char kExtensionWakeupFileContent[] = 
  // Caller should check if the directory exists before writing files to it. A
  // directory only exists if the corresponding Chrome version is installed.
  std::vector<base::FilePath> GetRemoteStateChangeDirPaths() {

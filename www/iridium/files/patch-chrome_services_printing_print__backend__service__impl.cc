@@ -1,6 +1,6 @@
---- chrome/services/printing/print_backend_service_impl.cc.orig	2023-01-17 19:19:00 UTC
+--- chrome/services/printing/print_backend_service_impl.cc.orig	2023-03-13 07:33:08 UTC
 +++ chrome/services/printing/print_backend_service_impl.cc
-@@ -41,7 +41,7 @@
+@@ -43,7 +43,7 @@
  #include "printing/backend/cups_connection_pool.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/no_destructor.h"
  #include "ui/linux/linux_ui.h"
  #include "ui/linux/linux_ui_delegate_stub.h"
-@@ -68,7 +68,7 @@ namespace printing {
+@@ -70,7 +70,7 @@ namespace printing {
  
  namespace {
  
@@ -18,7 +18,7 @@
  void InstantiateLinuxUiDelegate() {
    // TODO(crbug.com/809738)  Until a real UI can be used in a utility process,
    // need to use the stub version.
-@@ -437,7 +437,7 @@ void PrintBackendServiceImpl::Init(const std::string& 
+@@ -490,7 +490,7 @@ void PrintBackendServiceImpl::Init(
    // `InitCommon()`.
    InitializeProcessForPrinting();
    print_backend_ = PrintBackend::CreateInstance(locale);
@@ -27,12 +27,12 @@
    // Test framework already initializes the UI, so this should not go in
    // `InitCommon()`.  Additionally, low-level Linux UI is not needed when tests
    // are using `TestPrintingContext`.
-@@ -620,7 +620,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
+@@ -677,7 +677,7 @@ void PrintBackendServiceImpl::UpdatePrintSettings(
    crash_keys_ = std::make_unique<crash_keys::ScopedPrinterInfo>(
        print_backend_->GetPrinterDriverInfo(*printer_name));
  
--#if BUILDFLAG(IS_LINUX) && defined(USE_CUPS)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(USE_CUPS)
+-#if BUILDFLAG(IS_LINUX) && BUILDFLAG(USE_CUPS)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && BUILDFLAG(USE_CUPS)
    // Try to fill in advanced settings based upon basic info options.
    PrinterBasicInfo basic_info;
    if (print_backend_->GetPrinterBasicInfo(*printer_name, &basic_info) ==

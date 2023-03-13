@@ -1,4 +1,4 @@
---- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2023-01-17 19:19:00 UTC
+--- gpu/command_buffer/common/gpu_memory_buffer_support.cc.orig	2023-03-13 07:33:08 UTC
 +++ gpu/command_buffer/common/gpu_memory_buffer_support.cc
 @@ -173,7 +173,7 @@ uint32_t GetPlatformSpecificTextureTarget() {
  #if BUILDFLAG(IS_MAC)
@@ -8,8 +8,8 @@
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    return GL_TEXTURE_EXTERNAL_OES;
  #elif BUILDFLAG(IS_FUCHSIA)
-   return GL_TEXTURE_2D;
-@@ -205,7 +205,7 @@ GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextu
+   // Fuchsia uses Vulkan.
+@@ -206,7 +206,7 @@ GPU_EXPORT bool NativeBufferNeedsPlatformSpecificTextu
      gfx::BufferFormat format,
      gfx::BufferPlane plane) {
  #if BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \

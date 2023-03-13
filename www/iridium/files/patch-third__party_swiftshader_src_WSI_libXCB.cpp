@@ -1,6 +1,6 @@
---- third_party/swiftshader/src/WSI/libXCB.cpp.orig	2022-10-05 07:34:01 UTC
+--- third_party/swiftshader/src/WSI/libXCB.cpp.orig	2023-03-13 07:33:08 UTC
 +++ third_party/swiftshader/src/WSI/libXCB.cpp
-@@ -55,7 +55,7 @@ LibXcbExports *LibXCB::loadExports()
+@@ -57,7 +57,7 @@ LibXcbExports *LibXCB::loadExports()
  		}
  		else
  		{
@@ -9,7 +9,7 @@
  		}
  
  		if(getProcAddress(RTLD_DEFAULT, "xcb_shm_query_version"))  // Search the global scope for pre-loaded XCB library.
-@@ -64,7 +64,7 @@ LibXcbExports *LibXCB::loadExports()
+@@ -66,7 +66,7 @@ LibXcbExports *LibXCB::loadExports()
  		}
  		else
  		{

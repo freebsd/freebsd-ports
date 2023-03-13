@@ -1,6 +1,6 @@
---- build/detect_host_arch.py.orig	2022-03-28 18:11:04 UTC
+--- build/detect_host_arch.py.orig	2023-03-13 07:33:08 UTC
 +++ build/detect_host_arch.py
-@@ -21,6 +21,8 @@ def HostArch():
+@@ -20,6 +20,8 @@ def HostArch():
      host_arch = 'ia32'
    elif host_arch in ['x86_64', 'amd64']:
      host_arch = 'x64'
