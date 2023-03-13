@@ -1,0 +1,829 @@
+--- ./src/cpm.c~	1994-06-04 18:46:13.000000000 +0200
++++ ./src/cpm.c	2023-03-13 22:35:26.379615000 +0100
+@@ -51,8 +51,9 @@
+ #include <errno.h>
+ #include <fcntl.h>
+ #include <signal.h>
++#include <stdlib.h>
++#include <unistd.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
+ #define BIG	2147483647
+ 
+@@ -75,12 +76,13 @@
+ 
+ char *string;
+ 
++int
+ main(argc, argv)
+ 	int	argc;
+ 	char	*argv[];
+ {
+ 
+-	char *cpmname, *unixname, *malloc();
++	char *cpmname, *unixname;
+ 	int xflag = 0, stat=0, Cflag = 0, Iflag = 0, Bflag = 0;
+ 
+ 	if (argc == 1)
+@@ -314,13 +316,14 @@
+ 		exit(0);
+ 	}
+ 	if (tflag > 0) {
+-		copy(cpmname, stdout, 0);
++		copy(cpmname, (char *)stdout, 0);
+ 		exit(0);
+ 	}
+ }
+ 
+-
++long
+ number(big)
++	long big;
+ {
+ 	register char *cs;
+ 	long n;
+@@ -351,14 +354,15 @@
+ 
+ 	case '\0':
+ 		if (n >= big || n < 0) {
+-			fprintf(stderr,"number: argument %D out of range\n", n);
++			fprintf(stderr,"number: argument %ld out of range\n", n);
+ 			exit(1);
+ 		}
+ 		return (n);
+ 	}
+ }
+ 
+-usage()
++void
++usage(void)
+ {
+ 	printf("Usage: cpm [-i][-d][-p name][-c|C name1 name2] file-name\n");
+ 	printf("Disk geometry options:\n");
+--- ./src/interact.c~	1994-05-01 23:08:18.000000000 +0200
++++ ./src/interact.c	2023-03-13 22:53:16.660087000 +0100
+@@ -1,20 +1,24 @@
+ /*	interact.c	1.8	83/07/27	*/
+ #include <stdio.h>
++#include <string.h>
+ #include "command.h"
+ #include <setjmp.h>
+ #include <signal.h>
++#include "cpmio.h"
+ 
+ #define errinp { printf("??\n"); break; }
++#define index(s, c) strchr(s, c)
+ 
+ jmp_buf	env;
+ int	firsttime = 0;
+ 
+-interact()
++int
++interact(void)
+ 
+ {
+ 
+-	int	i, intrpt();
+-	char	cmd[80], *rest, *index();
++	int	i;
++	char	cmd[80], *rest;
+ 
+ 	for (;;) {
+ 		if (firsttime++ == 0) {
+@@ -62,7 +66,7 @@
+ 			return(0);
+ 
+ 		case CMD_TYPE:
+-			copy(rest, stdout, 0);
++			copy(rest, (char *)stdout, 0);
+ 			break;
+ 
+ 		case CMD_HELP:
+@@ -90,7 +94,9 @@
+  * just (long)jump back to command input mode
+  */
+ 
+-intrpt()
++void
++intrpt(signo)
++	int signo;
+ {
+ 	firsttime = 0;
+ 	printf("\n");
+--- ./src/gensktab.c~	2023-03-13 21:24:48.963957000 +0100
++++ ./src/gensktab.c	2023-03-13 22:28:27.370903000 +0100
+@@ -1,8 +1,8 @@
+ /*	gensktab.c	1.4	83/05/13	*/
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "cpmio.h"
+ 
+-extern int	skew;
+ int	*skewtab;
+ 
+ /*
+@@ -12,11 +12,11 @@
+  * accesses are attempted.
+  */
+ 
+-gen_sktab()
++void
++gen_sktab(void)
+ {
+ 
+ 	int	*i, *j;
+-	char	*malloc();
+ 
+ 	if (( skewtab = (int *) malloc(sectrk*4)) == NULL) {
+ 		fprintf(stderr, 
+--- ./src/ffc.c~	1983-06-24 00:20:29.000000000 +0200
++++ ./src/ffc.c	2023-03-13 22:53:42.692364000 +0100
+@@ -16,6 +16,7 @@
+  * hs 10/29/82
+  */
+ 
++int
+ ffc(start, len, field)
+ 
+ #ifndef VAX
+--- ./src/cmdhdl.c~	1994-05-28 09:00:02.000000000 +0200
++++ ./src/cmdhdl.c	2023-03-13 21:59:35.088747000 +0100
+@@ -2,6 +2,8 @@
+ 
+ #include <ctype.h>
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include "cpmio.h"
+ 
+ #ifndef HELPFILE
+@@ -14,6 +16,7 @@
+  * return the number of characters read.
+  */
+ 
++int
+ cmdinp(cmd)
+ 	char cmd[];
+ {
+@@ -58,6 +61,7 @@
+ 	"!! ",		2,	0,		/* 15 */
+ 	"" , 0 };
+ 
++int
+ chkcmd(cmd)
+ 	char *cmd;
+ 
+@@ -84,7 +88,8 @@
+ 		return (++index);
+ }
+ 
+-help()
++void
++help(void)
+ {
+ 
+ 	FILE *fd, *fopen();
+@@ -103,6 +108,7 @@
+  * bad file name, otherwise 1.
+  */
+ 
++int
+ namesep(fname, name, ext)
+ 	char fname[], name[], ext[];
+ {
+@@ -125,7 +131,7 @@
+ 	} else {
+ 		if (fname[i] != ' ' && fname[i] != '\0') {
+ 			fprintf(stderr, "Illegal filename\n");
+-			return (NULL);
++			return (0);
+ 		}
+ 	}
+ #ifdef DEBUG
+@@ -133,11 +139,12 @@
+ #endif
+ 	if (!(isalnum(name[0]))) {
+ 		fprintf(stderr, "Illegal filename\n");
+-		return(NULL);
++		return(0);
+ 	}
+ 	return(1);
+ }
+ 
++void
+ clean(str, len)
+ char str[];
+ int len;
+--- ./src/extent.c~	1994-05-28 12:47:09.000000000 +0200
++++ ./src/extent.c	2023-03-13 22:45:10.645426000 +0100
+@@ -1,8 +1,8 @@
+ /*	extent.c	1.7	83/05/13	*/
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
+ /*
+  * Allocate a new extent to the file pointed to by curext,
+@@ -12,6 +12,7 @@
+  * the index to the new extent.
+  */
+ 
++int
+ creext(curext)
+ 	int curext;
+ {
+@@ -44,6 +45,7 @@
+  * return the new extent's index if found, otherwise NULL.
+  */
+ 
++int
+ getnext(cur)
+ 	C_FILE	*cur;
+ {
+@@ -67,5 +69,5 @@
+ #endif
+ 			return (ind);
+ 		}
+-	return (NULL);
++	return (0);
+ }
+--- ./src/cpmio.h~	1994-05-28 12:27:27.000000000 +0200
++++ ./src/cpmio.h	2023-03-13 22:50:35.766391000 +0100
+@@ -34,3 +34,53 @@
+ extern int	*bitmap, *skewtab;
+ extern int 	bm_size;
+ extern int	use16bitptrs;
++
++#include "cpmfio.h"
++
++int ffc(long, int, int);
++int alloc(void);
++void dbmap(char *);
++int blks_used(void);
++void build_bmap(void);
++int getblock(int, char[], int);
++int putblock(int, char[], int);
++int putpsect(int, int, char[]);
++int getpsect(int, int, char[]);
++int initcpm(char *);
++int c_close(C_FILE *);
++C_FILE *c_creat(char *, char *, int);
++void dispdir(void);
++void getdir(void);
++void savedir(void);
++int searchdir(char *, char *);
++int creext(int);
++int getnext(C_FILE *);
++int c_fillbuf(C_FILE *);
++int c_flush(C_FILE *);
++int c_flsbuf(int, C_FILE *);
++int c_write(C_FILE *, char *, int);
++int cmdinp(char[]);
++int chkcmd(char *);
++void help(void);
++int namesep(char[], char[], char[]);
++void clean(char[], int);
++C_FILE *c_open(char *, char *, int);
++void fnfound(char[], char[]);
++void copyc(char[], int);
++void copy(char[], char[], int);
++void copytext(C_FILE *, FILE *);
++void copybin(C_FILE *, FILE *);
++void usage(void);
++long number(long);
++void gen_sktab(void);
++int interact(void);
++void intrpt(int);
++void pip(char[], int);
++void pipc(char[], char[], int);
++void piptext(C_FILE *, FILE *);
++void pipbin(C_FILE *, FILE *);
++void delete(char *);
++void dump(char[]);
++void hexdump(C_FILE *);
++void printline(FILE *, int[], int);
++int Rename(char *);
+--- ./src/copy.c~	1994-05-05 00:23:14.000000000 +0200
++++ ./src/copy.c	2023-03-13 22:06:10.049082000 +0100
+@@ -1,8 +1,9 @@
+ /*	copy.c	1.8	83/05/13	*/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <unistd.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
+ #define	CTRL_Z	0x1a		/* CP/M end-of-file */
+ 
+@@ -10,6 +11,7 @@
+  * copy cpmfile to unix file 
+  */
+ 
++void
+ copyc(cmdline, bin)
+ 	char cmdline[];
+ {
+@@ -24,10 +26,10 @@
+ 	copy(cmdline, i+1, bin);
+ }
+ 
++void
+ copy(cpmfile, unixfile, bin)
+ 	char cpmfile[], unixfile[];
+ {
+-	extern char *getenv();
+ 	FILE *ufid;
+ 	char name[9], ext[4];
+ 	char *pager = 0;
+@@ -65,6 +67,7 @@
+ 		pclose(ufid);
+ }
+ 
++void
+ copytext(cid, ufid)
+ 	FILE *ufid;
+ 	C_FILE *cid;
+@@ -81,6 +84,7 @@
+ 		fclose(ufid);
+ }
+ 
++void
+ copybin(cid, ufid)
+ 	FILE *ufid;
+ 	C_FILE *cid;
+--- ./src/hexdmp.c~	1994-05-28 11:02:14.000000000 +0200
++++ ./src/hexdmp.c	2023-03-13 22:44:54.086889000 +0100
+@@ -3,8 +3,8 @@
+ #include <ctype.h>
+ #include <stdio.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
++void
+ dump(cmdline)
+ 	char cmdline[];
+ {
+@@ -23,6 +23,7 @@
+ 	c_close(cid);  
+ }
+ 
++void
+ hexdump(fp)
+ 	C_FILE *fp;
+ {
+@@ -56,9 +57,10 @@
+ 		pclose(piped);
+ }
+ 
++void
+ printline(piped, cbuf, nc)
+ 	FILE *piped;
+-	int cbuf[];
++	int cbuf[], nc;
+ {
+ 	int i1;
+ 
+--- ./src/dirhdl.c~	1994-05-02 23:39:23.000000000 +0200
++++ ./src/dirhdl.c	2023-03-13 22:42:19.809668000 +0100
+@@ -1,11 +1,14 @@
+ /*	dirhdl.c	1.7	83/05/13	*/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include "cpmio.h"
+ 
+ /* Display cp/m directory on stdout */
+ 
+-dispdir()
++void
++dispdir(void)
+ {
+ 
+ 	int cnt, i;
+@@ -39,7 +42,8 @@
+ 	return;
+ }
+ 
+-getdir()
++void
++getdir(void)
+ 
+ {
+ 
+@@ -50,7 +54,7 @@
+ 	if ((maxdir*32)%blksiz > 0) 
+ 		++blks;
+ 	for (bl = 0; blks > 0; bl++, blks--) {
+-		if (getblock(bl,dirbuf+offset,-1) == EOF) {
++		if (getblock(bl,(char *)(dirbuf+offset),-1) == EOF) {
+ 			fprintf(stderr, "getdir: fatal error\n");
+ 			exit (0);
+ 		}
+@@ -59,7 +63,8 @@
+ }
+ 
+ 
+-savedir()
++void
++savedir(void)
+ 
+ {
+ 
+@@ -70,7 +75,7 @@
+ 	if ((maxdir*32)%blksiz > 0) 
+ 		++blks;
+ 	for (bl = 0; blks > 0; bl++, blks--) {
+-		if (putblock(bl,dirbuf+offset,-1) == EOF) {
++		if (putblock(bl,(char *)(dirbuf+offset),-1) == EOF) {
+ 			fprintf(stderr, "savedir: fatal error\n");
+ 			exit (0);
+ 		}
+@@ -84,6 +89,7 @@
+  * returned if found.
+  */
+ 
++int
+ searchdir(name,ext)
+ char *name, *ext;
+ 
+--- ./src/delete.c~	1983-06-24 00:19:48.000000000 +0200
++++ ./src/delete.c	2023-03-13 22:36:55.216932000 +0100
+@@ -2,12 +2,12 @@
+ 
+ #include <stdio.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
+ /*
+  * Delete cp/m file
+  */
+ 
++void
+ delete(cmdline)
+ char *cmdline;
+ 
+--- ./src/bitmap.c~	1994-05-28 08:52:55.000000000 +0200
++++ ./src/bitmap.c	2023-03-13 21:33:33.379559000 +0100
+@@ -1,6 +1,7 @@
+ /*	bitmap.c	1.9	83/05/13	*/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "cpmio.h"
+ int	bm_size;
+ 
+@@ -21,7 +22,7 @@
+  * Allocate a new disk block, return NULL if disk full 
+  */
+ int
+-alloc()
++alloc(void)
+ 
+ {
+ 
+@@ -47,6 +48,7 @@
+  * Dump the bitmap in hex to stdout, used only for debugging 
+  */
+ 
++void
+ dbmap(str)
+ 	char *str;
+ {
+@@ -65,7 +67,8 @@
+  * directory, including the directory blocks
+  */
+ 
+-blks_used()
++int
++blks_used(void)
+ {
+ 
+ 	int j, i, temp;
+@@ -89,10 +92,11 @@
+ }
+ 
+ 
+-build_bmap()
++void
++build_bmap(void)
+ {
+ 
+-	int	i, j, *malloc(), offset, block;
++	int	i, j, offset, block;
+ 
+ 	bm_size = 1 + ((seclth*sectrk*(tracks-restrk))/blksiz)/INTSIZE;
+ 
+--- ./src/pip.c~	1983-06-24 00:20:48.000000000 +0200
++++ ./src/pip.c	2023-03-13 22:53:58.575346000 +0100
+@@ -1,15 +1,17 @@
+ /*	pip.c	1.5	83/05/13	*/
+ 
+ #include <stdio.h>
++#include <unistd.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
+ /*
+  * Copy unix file to cpm
+  */
+ 
++void
+ pip(cmdline, bin)
+ 	char cmdline[];
++	int bin;
+ {
+ 
+ 	char	*index(), *i;
+@@ -22,8 +24,10 @@
+ 	pipc(cmdline,i+1, bin);
+ }
+ 
++void
+ pipc(unixfile, cpmfile, bin)
+ 	char cpmfile[], unixfile[];
++	int bin;
+ {
+ 
+ 	FILE *ufid;
+@@ -49,6 +53,7 @@
+ 	fclose(ufid);
+ }
+ 
++void
+ piptext(cid, ufid)
+ 	FILE *ufid;
+ 	C_FILE *cid;
+@@ -65,6 +70,7 @@
+ 	}
+ }
+ 
++void
+ pipbin(cid, ufid)
+ 	FILE *ufid;
+ 	C_FILE *cid;
+--- ./src/cclose.c~	1994-05-28 12:28:10.000000000 +0200
++++ ./src/cclose.c	2023-03-13 21:48:51.189287000 +0100
+@@ -1,7 +1,7 @@
+ /*	cclose.c	1.10	83/05/13	*/
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
+ /*
+  * Close cp/m file
+@@ -9,6 +9,7 @@
+  * buffer to disk and update directory 
+  */
+ 
++int
+ c_close(fptr)
+ 	register C_FILE *fptr;
+ {
+@@ -47,5 +48,5 @@
+ 	/* deallocate buffer memory and file descriptor */
+ 	fptr->c_flag = 0;
+ 	free(fptr->c_base);
+-	return (NULL);
++	return (0);
+ }
+--- ./src/physio.c~	1994-05-04 00:47:23.000000000 +0200
++++ ./src/physio.c	2023-03-13 22:52:08.309089000 +0100
+@@ -3,13 +3,16 @@
+ #include <stdio.h>
+ #include "cpmio.h"
+ #include <fcntl.h>
++#include <unistd.h>
+ 
+ /*
+  * Write physical sector to floppy disk file
+  */
+ 
++int
+ putpsect(tr, sect, buf)
+ 	char buf[];
++	int tr, sect;
+ {
+ 
+ 	long newpos;
+@@ -35,8 +38,10 @@
+  * Read physical sector from floppy disk file
+  */
+ 
++int
+ getpsect(tr, sect, buf)
+ 	char buf[];
++	int tr, sect;
+ {
+ 
+ 	long newpos;
+@@ -64,6 +69,7 @@
+  * return its file pointer.
+  */
+ 
++int
+ initcpm(name)
+ 	char *name;
+ {
+--- ./src/blockio.c~	1994-05-02 23:24:00.000000000 +0200
++++ ./src/blockio.c	2023-03-13 21:39:57.913922000 +0100
+@@ -9,8 +9,10 @@
+  * if nsect is negative then always read a full block.
+  */
+ 
++int
+ getblock(blockno, buffer, nsect)
+ 	char buffer[];
++	int blockno, nsect;
+ {
+ 
+ 	int sect, track, counter;
+@@ -42,8 +44,10 @@
+  * If nsects is negative, write a full block.
+  */
+ 
++int
+ putblock(blockno, buffer, nsect)
+ 	char buffer[];
++	int blockno, nsect;
+ {
+ 
+ 	int sect, track, counter;
+--- ./src/cfillbuf.c~	1994-05-04 00:45:39.000000000 +0200
++++ ./src/cfillbuf.c	2023-03-13 21:53:52.999972000 +0100
+@@ -2,18 +2,18 @@
+ 
+ #include <stdio.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
++int
+ c_fillbuf(fptr)
+ 	register C_FILE *fptr;
+ {
+ 
+-	int	getnext(), nsect;
++	int	nsect;
+ 
+ 	if (++fptr->c_blk == (use16bitptrs? 8: 16))
+ 		if (fptr->c_dirp->blkcnt ==  (char) 0x80) {
+ 			/* find next extent (if it exists) */
+-			if (getnext(fptr) == NULL)
++			if (getnext(fptr) == 0)
+ 				return (EOF);
+ 		}
+ 	else 
+--- ./src/rename.c~	1994-05-01 23:08:50.000000000 +0200
++++ ./src/rename.c	2023-03-13 22:52:55.083376000 +0100
+@@ -1,14 +1,15 @@
+ /*	rename.c	1.8	83/05/13	*/
+ 
+ #include <stdio.h>
++#include <string.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
+ /*
+  * Rename a cp/m file
+  * returns: 1 = failure, 0 = success 
+  */
+ 
++int
+ Rename(cmdline)
+ 	char *cmdline;
+ 
+@@ -34,7 +35,7 @@
+ 		do {
+ 			strncpy(cio->c_dirp->name, newname, 8);
+ 			strncpy(cio->c_dirp->ext, newext, 3);
+-		} while (getnext(cio) != NULL);
++		} while (getnext(cio) != 0);
+ 	} else {
+ 		fnfound(oldname, oldext);
+ 		return (1);
+--- ./src/copen.c~	1994-05-28 12:46:30.000000000 +0200
++++ ./src/copen.c	2023-03-13 22:00:48.175250000 +0100
+@@ -1,8 +1,8 @@
+ /*	copen.c	1.7	83/05/13	*/
+ 
+ #include <stdio.h>
++#include <stdlib.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
+ /*
+  * Open cp/m file with the given file name and extension, return
+@@ -18,7 +18,6 @@
+ 
+ 	int	i, index, scnt;
+ 	register C_FILE *fptr;
+-	char *malloc();
+ 
+ 	if ((index = searchdir(name, ext)) == -1) {
+ 		fnfound(name, ext);
+@@ -68,6 +67,7 @@
+ 	return (fptr);
+ }
+ 
++void
+ fnfound(name, ext)
+ 	char name[], ext[];
+ {
+--- ./src/ccreat.c~	1994-05-04 00:36:44.000000000 +0200
++++ ./src/ccreat.c	2023-03-13 21:52:02.090429000 +0100
+@@ -1,7 +1,8 @@
+ /*	ccreat.c	1.9	83/05/13	*/
+ #include <stdio.h>
++#include <stdlib.h>
++#include <string.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
+ /*
+  * Create cp/m file with the given file name and extension, return
+@@ -16,14 +17,12 @@
+ 
+ 	int	i, index;
+ 	register C_FILE *fptr;
+-	char *malloc();
+-	int alloc();
+ 
+ 	if (searchdir(name, ext) != -1) {
+ 		fprintf(stderr, "file already exists: %s %s\n",name, ext);
+ 		return(NULL);
+ 	}
+-	if ((index = creext(-1)) < NULL) {
++	if ((index = creext(-1)) < 0) {
+ 		fprintf(stderr, "c_creat: no directory space\n");
+ 		return (NULL);
+ 	}
+--- ./src/cflsbuf.c~	1994-05-28 09:48:52.000000000 +0200
++++ ./src/cflsbuf.c	2023-03-13 21:56:11.480036000 +0100
+@@ -2,7 +2,6 @@
+ 
+ #include <stdio.h>
+ #include "cpmio.h"
+-#include "cpmfio.h"
+ 
+ /*
+  * Flush a full block to floppy disk file
+@@ -11,12 +10,12 @@
+  * Create a new extent if required
+  */
+ 
++int
+ c_flush(fptr)
+ 	register C_FILE *fptr;
+ {
+ 
+ 	int	it; 
+-	int	alloc();
+ 
+ 	if (!(fptr->c_flag & WRITE)) {
+ 		fprintf(stderr, "no write access");
+@@ -31,7 +30,7 @@
+ 		fptr->c_dirp->blkcnt =  (char) 0x80;
+ 		savedir();
+ 		/* create new extent */
+-		if ((it = creext(fptr->c_ext)) == NULL) {
++		if ((it = creext(fptr->c_ext)) == 0) {
+ 			fprintf(stderr,"can't create new extent, current: %d\n",
+ 				fptr->c_ext);
+ 			return (EOF);
+@@ -57,6 +56,7 @@
+ 	return (0);
+ }
+ 
++int
+ c_flsbuf(c, fptr)
+ 	register C_FILE *fptr;
+ {
+@@ -72,6 +72,7 @@
+  * flush the buffer if full (for binary file transfers)
+  */
+ 
++int
+ c_write(fptr, buf, cnt)
+ 	register C_FILE *fptr;
+ 	char *buf;
+--- ./README~	1994-06-05 01:28:04.000000000 +0200
++++ ./README	2023-03-13 22:56:43.728910000 +0100
+@@ -12,3 +12,13 @@
+ 
+ Cpm lets UNIX users read and write standard cp/m 8" floppy disks and
+ provides a cp/m like user interface for manipulating cp/m files.
++
++-----------
++
++Remark from 2023:
++
++This source code used to be compilable for about 40 years by now.
++Meanwhile, C compilers stopped to still tolerate "traditional" (=
++pre-C89) C source code, so a larger patch was needed to provide
++function prototypes for everything, and include the now standardized
++library header files.
