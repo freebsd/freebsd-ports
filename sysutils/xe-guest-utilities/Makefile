@@ -8,14 +8,15 @@ DISTNAME=	${PORTNAME}-6.0.2
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	FreeBSD VM tools for Citrix XenServer and XCP
 
+ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS_REASON=	requires i386 XEN or amd64 XENHVM kernel
+NO_ARCH=	yes
+NO_BUILD=	yes
+
 RUN_DEPENDS=	xenstore:${PKGCATEGORY}/xen-guest-tools
 
 USES=		gmake python
 USE_RC_SUBR=	xenguest
-
-ONLY_FOR_ARCHS=		amd64 i386
-ONLY_FOR_ARCHS_REASON=	requires i386 XEN or amd64 XENHVM kernel
-NO_BUILD=	yes
 
 PLIST_FILES=	sbin/xe-daemon \
 		sbin/xe-update-guest-attrs
