@@ -33,7 +33,7 @@ XEPHYR_DESC=		Install Xephyr backend
 XVNC_DESC=		Install Xvnc backend
 
 XVFB_RUN_DEPENDS=	Xvfb:x11-servers/xorg-server@xvfb
-XEPHYR_RUN_DEPENDS=	Xephyr>=0:x11-servers/xorg-server@xvfb
+XEPHYR_RUN_DEPENDS=	Xephyr:x11-servers/xorg-server@xephyr
 XVNC_RUN_DEPENDS=	tightvnc>=0:net/tightvnc
 
 NO_ARCH=	yes
