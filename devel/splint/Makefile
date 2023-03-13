@@ -12,6 +12,7 @@ LICENSE=	GPLv2+
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	BISON=no
 MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
