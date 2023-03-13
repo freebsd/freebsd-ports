@@ -3,9 +3,11 @@ DISTVERSION=	3.0.18
 PORTREVISION=	2
 PORTEPOCH=	4
 CATEGORIES=	multimedia audio net www
-MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
-		http://ftp.snt.utwente.nl/pub/software/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
-		ftp://ftp.crans.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/
+MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION:S/a$//}/ \
+		https://mirror.init7.net/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
+		http://mirror.clarkson.edu/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/ \
+		http://ftp.kaist.ac.kr/vlc/${PORTNAME}/${DISTVERSION:S/a$//}/ \
+		http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION:S/a$//}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Qt based multimedia player and streaming server
