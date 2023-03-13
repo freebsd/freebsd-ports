@@ -23,11 +23,12 @@ include/libplacebo/swapchain.h
 include/libplacebo/tone_mapping.h
 include/libplacebo/utils/dav1d.h
 include/libplacebo/utils/dav1d_internal.h
+include/libplacebo/utils/dolbyvision.h
 include/libplacebo/utils/frame_queue.h
 include/libplacebo/utils/libav.h
 include/libplacebo/utils/libav_internal.h
 include/libplacebo/utils/upload.h
 include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.229
+lib/libplacebo.so.264
 libdata/pkgconfig/libplacebo.pc

@@ -1,7 +1,5 @@
-TIMESTAMP = 1672849094
-SHA256 (haasn-libplacebo-v5.229.2_GH0.tar.gz) = 1c67bec76832c7a42242570798cc96a3f58a70be79daa84ade628d5bce749c84
-SIZE (haasn-libplacebo-v5.229.2_GH0.tar.gz) = 673761
+TIMESTAMP = 1678709243
+SHA256 (haasn-libplacebo-v5.264.0_GH0.tar.gz) = 780e1c5d304a2c407b6709ac66e811bd1be03a769601f1dab41cf77c8519c668
+SIZE (haasn-libplacebo-v5.264.0_GH0.tar.gz) = 725098
 SHA256 (Dav1dde-glad-v2.0.1_GH0.tar.gz) = bbdfb8a2c8ea7fbad747dd91424fc9fc7bb22e1b95c7a5b451e68c3d9bd96d95
 SIZE (Dav1dde-glad-v2.0.1_GH0.tar.gz) = 581028
-SHA256 (baec0e53c959.patch) = 9a76a9f79658fef0bc41c3633cda2238c7ea7ea4606a21cd57c8745bc49a720b
-SIZE (baec0e53c959.patch) = 5828
