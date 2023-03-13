@@ -13,6 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cmake:testing
 USE_LDCONFIG=	yes
 
+.if !exists(/usr/include/omp.h)
+CMAKE_OFF=	ZFP_WITH_OPENMP
+.endif
+
 LDFLAGS+=	-lm
 
 .include <bsd.port.mk>
