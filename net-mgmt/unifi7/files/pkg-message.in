@@ -10,25 +10,30 @@ One of implications is that the instance MUST be restored from backup.
 
 The upgrade path can be as following:
 
-- Take a backup from within the unifi7 application BEFORE stopping or
-  restarting the service.
-
-- Stop the unifi7 service.
-
-- Copy the "backup" directory from %%LOCALBASE%%/share/java/unifi/data/db
-  to a safe location.
-
-- Remove all files and directories under
-  %%LOCALBASE%%/share/java/unifi/data/db
-
+- Take a backup from within the unifi7 application PRIOR to
+  updating!
+ 
+- Stop the unifi7 service (if running)
+ 
+- Copy the "backup" directory from %%LOCALBASE%%/share/java/unifi/data
+  to a safe location. Also copy keystore and system.properties if
+  you have made any modifications to those files
+ 
+- Remove files and directories under %%LOCALBASE%%/share/java/unifi/data
+ 
 - Upgrade the package
+ 
+- Copy the "backup" directory from a safe location back to
+  %%LOCALBASE%%/share/java/unifi/data
+ 
+- Start the service
+ 
+- Restore the configuration from backup
 
-- Copy the "backup" directory from the safe place to
-  %%LOCALBASE%%/share/java/unifi/data/db
+- Review system.properties and keystore to merge any manual
+  modifications you have made (this has to be done with
+  the application stopped)
 
-- Start the service.
-
-- Restore the configuration from backup.
 EEOOMM
 }
 ]

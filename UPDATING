@@ -28,15 +28,24 @@ you update your ports collection, before attempting any port upgrades.
 
   2. Stop the unifi7 service (if running)
 
-  3. Copy the "backup" directory from LOCALBASE/share/java/unifi/data/db
-     to a safe location.
+  3. Copy the "backup" directory from LOCALBASE/share/java/unifi/data
+     to a safe location. Also copy keystore and system.properties if
+     you have made any modifications to those files
 
-  4. Remove all files and directories under
-     LOCALBASE/share/java/unifi/data/db
+  4. Remove files and directories under LOCALBASE/share/java/unifi/data
 
-  5. Upgrade the package and start the service
+  5. Upgrade the package
 
-  6. Restore the configuration from backup
+  6. Copy the "backup" directory from a safe location back to
+     LOCALBASE/share/java/unifi/data
+
+  7. Start the service
+
+  8. Restore the configuration from backup
+
+  As an optional step, review system.properties and keystore to merge any
+  manual modifications you have made (this has to be done with the application
+  stopped)
 
 20230310:
   AFFECTS: user of benchmarks/ddosify
