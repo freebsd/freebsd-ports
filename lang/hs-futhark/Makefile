@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.1
+DISTVERSION=	0.24.1
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,23 +12,23 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cabal
 
-USE_CABAL=	Diff-0.4.1 \
+USE_CABAL=      Diff-0.4.1 \
 		ListLike-4.7.8 \
-		OneTuple-0.3.1_3 \
+		OneTuple-0.4.1.1 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \
-		adjunctions-4.4.2 \
-		aeson-2.1.1.0 \
+		adjunctions-4.4.2_1 \
+		aeson-2.1.2.1_1 \
 		alex-3.2.7.1 \
 		ansi-terminal-0.11.4 \
-		assoc-1.0.2_3 \
-		async-2.2.4_2 \
-		attoparsec-0.14.4_2 \
+		assoc-1.0.2_4 \
+		async-2.2.4_3 \
+		attoparsec-0.14.4_3 \
 		base-compat-0.12.2 \
 		base-compat-batteries-0.12.2 \
-		base-orphans-0.8.7 \
+		base-orphans-0.8.8.2 \
 		base16-bytestring-1.0.2.0 \
-		bifunctors-5.5.13 \
+		bifunctors-5.5.15 \
 		bitvec-1.1.3.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
@@ -44,12 +44,13 @@ USE_CABAL=	Diff-0.4.1 \
 		contravariant-1.5.5 \
 		cryptohash-md5-0.11.101.0_1 \
 		cryptohash-sha1-0.11.101.0_1 \
+		data-array-byte-0.1.0.1_1 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
 		data-default-instances-containers-0.0.1 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
-		data-fix-0.3.2_3 \
+		data-fix-0.3.2_4 \
 		dense-linear-algebra-0.1.0.0 \
 		directory-tree-0.12.1 \
 		distributive-0.6.2.1_1 \
@@ -59,40 +60,40 @@ USE_CABAL=	Diff-0.4.1 \
 		exception-mtl-0.4.0.1 \
 		exception-transformers-0.4.0.11 \
 		fail-4.9.0.0 \
-		fgl-5.8.0.0 \
+		fgl-5.8.1.1 \
 		fgl-visualize-0.1.0.1 \
 		file-embed-0.0.15.0 \
 		fmlist-0.9.4 \
-		free-5.1.10 \
+		free-5.1.10_2 \
 		futhark-data-1.1.0.0 \
-		futhark-manifest-1.1.0.0 \
-		futhark-server-1.2.1.0 \
-		generic-deriving-1.14.2 \
-		generically-0.1 \
+		futhark-manifest-1.2.0.1 \
+		futhark-server-1.2.2.0 \
+		generic-deriving-1.14.3 \
+		generically-0.1.1 \
 		githash-0.1.6.3 \
 		half-0.3.1 \
-		happy-1.20.0_1 \
-		hashable-1.4.1.0 \
+		happy-1.20.1.1 \
+		hashable-1.4.2.0_1 \
 		haskell-src-exts-1.23.1 \
 		haskell-src-meta-0.8.11 \
-		hsc2hs-0.68.8_1 \
+		hsc2hs-0.68.9 \
 		indexed-traversable-0.1.2_2 \
-		indexed-traversable-instances-0.1.1.1 \
+		indexed-traversable-instances-0.1.1.2_1 \
 		integer-logarithms-1.0.3.1_4 \
-		invariant-0.6_1 \
-		kan-extensions-5.2.5 \
+		invariant-0.6.1 \
+		kan-extensions-5.2.5_1 \
 		language-c-quote-0.13_1 \
-		lens-5.2 \
+		lens-5.2.1_2 \
 		lsp-1.6.0.0 \
 		lsp-types-1.6.0.0 \
 		mainland-pretty-0.7.1_1 \
 		math-functions-0.3.4.2 \
 		megaparsec-9.3.0 \
-		mod-0.1.2.2 \
+		mod-0.2.0.1 \
 		mwc-random-0.15.0.2_1 \
 		neat-interpolation-0.5.1.3 \
 		network-info-0.2.1 \
-		network-uri-2.6.4.1 \
+		network-uri-2.6.4.2 \
 		old-locale-1.0.0.7_2 \
 		parallel-3.2.2.0_5 \
 		parser-combinators-1.3.0 \
@@ -100,13 +101,13 @@ USE_CABAL=	Diff-0.4.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
 		primitive-0.7.4.0_1 \
 		process-extras-0.7.4 \
-		profunctors-5.6.2_2 \
+		profunctors-5.6.2_3 \
 		random-1.2.1.1 \
-		reflection-2.1.6_1 \
+		reflection-2.1.7 \
 		regex-base-0.94.0.2_1 \
 		regex-tdfa-1.3.2 \
 		safe-0.3.19 \
-		scientific-0.3.7.0_3 \
+		scientific-0.3.7.0_5 \
 		semialign-1.2.0.1_3 \
 		semigroupoids-5.3.7_1 \
 		semigroups-0.20 \
@@ -115,37 +116,37 @@ USE_CABAL=	Diff-0.4.1 \
 		sorted-list-0.2.1.0 \
 		splitmix-0.1.0.4_2 \
 		srcloc-0.6.0.1 \
-		statistics-0.16.1.0 \
+		statistics-0.16.1.2 \
 		strict-0.4.0.1_4 \
 		syb-0.7.2.2 \
-		tagged-0.8.6.1_3 \
+		tagged-0.8.7 \
 		temporary-1.3 \
 		terminal-size-0.3.3 \
 		text-rope-0.2 \
-		text-short-0.1.5_1 \
-		th-abstraction-0.4.5.0 \
-		th-compat-0.1.4 \
-		th-expand-syns-0.4.10.0 \
-		th-lift-0.8.2_2 \
-		th-orphans-0.13.14 \
+		text-short-0.1.5_2 \
+		th-abstraction-0.5.0.0 \
+		th-compat-0.1.4_2 \
+		th-expand-syns-0.4.11.0_1 \
+		th-lift-0.8.3 \
+		th-orphans-0.13.14_1 \
 		th-reify-many-0.1.10 \
 		these-1.1.1.1_6 \
-		time-compat-1.9.6.1_4 \
+		time-compat-1.9.6.1_5 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
-		unliftio-core-0.2.0.1_2 \
-		unordered-containers-0.2.19.1_1 \
+		unliftio-core-0.2.1.0_1 \
+		unordered-containers-0.2.19.1_2 \
 		utf8-string-1.0.2 \
 		uuid-1.3.15_2 \
 		uuid-types-1.0.5_3 \
-		vector-0.13.0.0_2 \
-		vector-algorithms-0.9.0.1_1 \
+		vector-0.13.0.0_3 \
+		vector-algorithms-0.9.0.1_2 \
 		vector-binary-instances-0.2.5.2_3 \
 		vector-stream-0.1.0.0_2 \
 		vector-th-unbox-0.2.2_3 \
 		versions-5.0.4 \
 		void-0.7.3 \
-		witherable-0.4.2_3 \
+		witherable-0.4.2_4 \
 		zlib-0.6.3.0_1
 CABAL_PROJECT=	remove
 
