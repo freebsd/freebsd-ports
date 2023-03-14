@@ -1,6 +1,5 @@
 PORTNAME=	xpra
-PORTVERSION=	4.4.3
-PORTREVISION=	2
+PORTVERSION=	4.4.4
 CATEGORIES=	x11
 MASTER_SITES=	https://xpra.org/src/
 
@@ -44,6 +43,7 @@ PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PYTHON_SUFFIX=${PYTHON_SUFFIX} \
 		PYTHON_VER=${PYTHON_VER}
 SHEBANG_FILES=	fs/lib/cups/backend/xpraforwarder fs/libexec/xpra/auth_dialog \
+		fs/libexec/xpra/gnome-open fs/libexec/xpra/gvfs-open \
 		fs/libexec/xpra/xdg-open fs/libexec/xpra/xpra_signal_listener \
 		fs/libexec/xpra/xpra_udev_product_version
 
