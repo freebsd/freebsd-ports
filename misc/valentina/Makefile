@@ -9,9 +9,6 @@ WWW=		https://smart-pattern.com.ua/en/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE_GPL.txt
 
-BROKEN_armv7=	ld: error: failed to open bin/valentina: Cannot allocate memory
-BROKEN_i386=	ld: error: failed to open bin/valentina: Cannot allocate memory
-
 USES=		compiler:c++11-lang desktop-file-utils dos2unix gl gmake qmake qt:5
 USE_QT=		buildtools:build concurrent core gui linguisttools:build network \
 		opengl printsupport svg testlib:build widgets xml xmlpatterns
@@ -30,5 +27,11 @@ QMAKE_ARGS+=	CONFIG+="no_ccache"
 .endif
 
 BINARY_ALIAS=	hg=/usr/bin/true git=/usr/bin/false
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc
+LLD_UNSAFE=	yes
+.endif
 
 .include <bsd.port.mk>
