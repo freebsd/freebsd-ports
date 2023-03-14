@@ -455,8 +455,6 @@ share/doc/HTML/pt/kcontrol/kcmaccess/index.cache.bz2
 share/doc/HTML/pt/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/pt/kcontrol/kcmlaunchfeedback/index.cache.bz2
 share/doc/HTML/pt/kcontrol/kcmlaunchfeedback/index.docbook
-share/doc/HTML/pt/kcontrol/kcmsmserver/index.cache.bz2
-share/doc/HTML/pt/kcontrol/kcmsmserver/index.docbook
 share/doc/HTML/pt/kcontrol/kded/index.cache.bz2
 share/doc/HTML/pt/kcontrol/kded/index.docbook
 share/doc/HTML/pt/kcontrol/keyboard/index.cache.bz2
@@ -1544,6 +1542,7 @@ share/locale/fi/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/fi/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/fi/LC_MESSAGES/kcm_tablet.mo
 share/locale/fi/LC_MESSAGES/kcm_touchpad.mo
+share/locale/fi/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/fi/LC_MESSAGES/kcm_workspace.mo
 share/locale/fi/LC_MESSAGES/kcmkclock.mo
 share/locale/fi/LC_MESSAGES/kcmkeyboard.mo
@@ -2217,6 +2216,7 @@ share/locale/ko/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/ko/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/ko/LC_MESSAGES/kcm_tablet.mo
 share/locale/ko/LC_MESSAGES/kcm_touchpad.mo
+share/locale/ko/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/ko/LC_MESSAGES/kcm_workspace.mo
 share/locale/ko/LC_MESSAGES/kcmkclock.mo
 share/locale/ko/LC_MESSAGES/kcmkeyboard.mo

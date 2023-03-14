@@ -268,6 +268,7 @@ share/locale/el/LC_MESSAGES/ksgrd.mo
 share/locale/el/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/el/LC_MESSAGES/processcore.mo
 share/locale/el/LC_MESSAGES/processui.mo
+share/locale/en_GB/LC_MESSAGES/KSysGuardFormatter.mo
 share/locale/en_GB/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/en_GB/LC_MESSAGES/ksgrd.mo
 share/locale/en_GB/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
@@ -320,9 +321,11 @@ share/locale/eu/LC_MESSAGES/processcore.mo
 share/locale/eu/LC_MESSAGES/processui.mo
 share/locale/fa/LC_MESSAGES/processcore.mo
 share/locale/fa/LC_MESSAGES/processui.mo
+share/locale/fi/LC_MESSAGES/KSysGuardFormatter.mo
 share/locale/fi/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/fi/LC_MESSAGES/ksgrd.mo
 share/locale/fi/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
+share/locale/fi/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
 share/locale/fi/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
 share/locale/fi/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/fi/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
@@ -511,12 +514,16 @@ share/locale/nl/LC_MESSAGES/ksysguard_sensors.mo
 share/locale/nl/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/nl/LC_MESSAGES/processcore.mo
 share/locale/nl/LC_MESSAGES/processui.mo
+share/locale/nn/LC_MESSAGES/KSysGuardFormatter.mo
 share/locale/nn/LC_MESSAGES/KSysGuardSensorFaces.mo
 share/locale/nn/LC_MESSAGES/ksgrd.mo
 share/locale/nn/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.barchart.mo
+share/locale/nn/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.colorgrid.mo
+share/locale/nn/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.facegrid.mo
 share/locale/nn/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.linechart.mo
 share/locale/nn/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.piechart.mo
 share/locale/nn/LC_MESSAGES/ksysguard_face_org.kde.ksysguard.textonly.mo
+share/locale/nn/LC_MESSAGES/ksysguard_sensors.mo
 share/locale/nn/LC_MESSAGES/ksysguardlsofwidgets.mo
 share/locale/nn/LC_MESSAGES/processcore.mo
 share/locale/nn/LC_MESSAGES/processui.mo
