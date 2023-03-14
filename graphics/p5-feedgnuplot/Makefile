@@ -1,5 +1,5 @@
 PORTNAME=	feedgnuplot
-PORTVERSION=	1.55
+PORTVERSION=	1.59
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DKOGAN
@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	pi@FreeBSD.org
 COMMENT=	General purpose pipe-oriented plotting tool
-WWW=		https://metacpan.org/release/DKOGAN/feedgnuplot-1.51
+WWW=		https://metacpan.org/release/DKOGAN/feedgnuplot-${PORTVERSION}
 
 LICENSE=	ART10 GPLv3
 LICENSE_COMB=	dual
