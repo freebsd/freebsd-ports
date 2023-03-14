@@ -1,7 +1,7 @@
 PORTNAME=	arttime
 PORTVERSION=	2.0.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -12,7 +12,6 @@ LICENSE=	GPLv3
 
 BUILD_DEPENDS=	zsh>=5.8:shells/zsh
 RUN_DEPENDS=	${LOCALBASE}/share/terminfo/x/xterm-256color:misc/terminfo-db \
-		fzf:textproc/fzf \
 		notify-send:devel/libnotify \
 		ogg123:audio/vorbis-tools \
 		zsh>=5.8:shells/zsh
@@ -23,6 +22,13 @@ GH_TAGNAME=	6716e6b
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+OPTIONS_DEFINE=		FZF
+OPTIONS_DEFAULT=	FZF
+
+FZF_DESC=	Use FZF to select ASCII art
+
+FZF_RUN_DEPENDS=	fzf:textproc/fzf
 
 do-install:
 	${SETENV} ${MAKE_ENV} DESTDIR=${STAGEDIR} ${WRKSRC}/install.sh \
