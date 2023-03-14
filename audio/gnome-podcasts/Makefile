@@ -32,6 +32,12 @@ CARGO_INSTALL=	no
 CARGO_TEST=	no
 GLIB_SCHEMAS=	org.gnome.Podcasts.gschema.xml
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+LTO_UNSAFE=	yes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/dependency.*openssl/d' \
 		${WRKSRC}/meson.build
