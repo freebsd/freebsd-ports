@@ -1,13 +1,14 @@
 https://gitlab.gnome.org/GNOME/gtk/-/issues/5633
 
---- meson.build.orig	2023-03-04 16:28:12 UTC
+--- meson.build.orig	2023-03-14 11:50:49 UTC
 +++ meson.build
-@@ -728,7 +728,7 @@ gir = find_program('g-ir-scanner', required : get_opti
+@@ -740,8 +740,7 @@ endif
+   error('Introspection enabled, but g-ir-scanner not found.')
+ endif
  
- # Introspection
- gir = find_program('g-ir-scanner', required : get_option('introspection'))
--build_gir = gir.found() and get_option('introspection').enabled()
+-build_gir = gir.found() and (get_option('introspection').enabled() or
+-                             (get_option('introspection').allowed() and get_option('gtk_doc')))
 +build_gir = gir.found() and get_option('introspection').allowed()
  
- 
  project_build_root = meson.current_build_dir()
+ 
