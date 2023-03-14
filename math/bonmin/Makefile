@@ -1,13 +1,12 @@
 PORTNAME=	bonmin
 DISTVERSIONPREFIX=	releases/
-DISTVERSION=	1.8.8
-PORTREVISION=	5
+DISTVERSION=	1.8.9
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Basic Open-source Nonlinear Mixed INteger programming
-WWW=		https://projects.coin-or.org/Bonmin
+WWW=		https://coin-or.github.io/Bonmin/
 
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/Bonmin/LICENSE
@@ -15,10 +14,13 @@ LICENSE_FILE=	${WRKSRC}/Bonmin/LICENSE
 LIB_DEPENDS=	libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
 		libClp.so:math/clp \
+		libcoinmumps.so:math/coin-or-mumps \
 		libcoinasl.so:math/asl \
 		libCoinUtils.so:math/coinutils \
 		libipopt.so:math/ipopt \
-		libopenblas.so:math/openblas
+		libnauty.so:math/nauty \
+		libopenblas.so:math/openblas \
+		libOsi.so:math/osi
 
 USES=		blaslapack compiler:c++11-lang gmake libtool pkgconfig
 USE_LDCONFIG=	yes
