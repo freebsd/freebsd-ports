@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230314:
+  AFFECTS: users of security/openssl-devel
+  AUTHOR: brnrd@FreeBSD.org
+
+  Users using DEFAULT_VERSIONS=ssl=openssl-devel must update their
+  configuration to DEFAULT_VERSIUONS=ssl=openssl30 or openssl31.
+
 20230313:
   AFFECTS: users of databases/sqlite3
   AUTHOR: fuz@FreeBSD.org
