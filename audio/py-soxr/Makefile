@@ -11,6 +11,8 @@ WWW=		https://github.com/dofuuz/python-soxr
 LICENSE=	LGPL21 BSD3CLAUSE
 LICENSE_COMB=	multi
 
+BROKEN_i386=    fails to compile: ...requires target feature 'sse', but would be inlined into function 'h8' that is compiled without support for 'sse'
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
