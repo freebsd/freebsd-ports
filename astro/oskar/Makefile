@@ -18,8 +18,12 @@ LIB_DEPENDS=	libcfitsio.so:astro/cfitsio \
 		libhdf5.so:science/hdf5 \
 		libsz.so:science/libaec
 
-USES=		cmake compiler:c++11-lang localbase:ldflags python qt:5 \
-		shebangfix
+USES=		cmake localbase:ldflags python qt:5 shebangfix
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++11-lang
+.endif
 USE_QT=		core gui network widgets buildtools:build qmake:build
 USE_LDCONFIG=	yes
 
