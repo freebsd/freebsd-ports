@@ -410,6 +410,14 @@ post-patch:
 	${REINPLACE_CMD} -e "s/ := -Os/ := -O2 -fno-unroll-loops/" ${WRKSRC}/solenv/gbuild/platform/freebsd.mk
 .endif
 
+# Verify that lucene was built with the CONTRIB option instead of
+# failing mysteriously during the build
+pre-configure:
+	@if [ ! -f ${JAVALIBDIR}/lucene-analyzers-3.6.2.jar ]; then \
+		${ECHO} "error: textproc/lucene must be built with the CONTRIB option enabled"; \
+		exit 1; \
+	fi
+
 do-build:
 	${PRINTF} "[repositories]\nmain=active\nextras=active\n" > ${WRKSUBDIR}/source_config
 	cd ${WRKSRC} ; ./bootstrap
