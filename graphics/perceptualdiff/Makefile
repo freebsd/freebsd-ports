@@ -17,6 +17,11 @@ PLIST_FILES=	bin/perceptualdiff
 USE_GITHUB=	yes
 GH_ACCOUNT=	myint
 
-USES=		cmake compiler:c++0x
+USES=		cmake
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++0x
+.endif
 
 .include <bsd.port.mk>
