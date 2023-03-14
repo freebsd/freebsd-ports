@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-extension-layer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.241
+DISTVERSION=	1.3.243
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,10 +17,5 @@ USE_LDCONFIG=	yes
 GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ExtensionLayer
 CMAKE_OFF=	BUILD_TESTS
-
-.if ${DISTVERSION:E} < 243
-GH_TUPLE+=	KhronosGroup:Vulkan-Headers:v1.3.242:vkheaders/Vulkan-Headers
-CFLAGS+=	-I${WRKSRC_vkheaders}/include
-.endif
 
 .include <bsd.port.mk>
