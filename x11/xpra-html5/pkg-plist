@@ -136,15 +136,6 @@ share/xpra/www/js/lib/aurora/flac.js.gz
 share/xpra/www/js/lib/aurora/mp3.js
 share/xpra/www/js/lib/aurora/mp3.js.br
 share/xpra/www/js/lib/aurora/mp3.js.gz
-share/xpra/www/js/lib/broadway/AUTHORS
-share/xpra/www/js/lib/broadway/AUTHORS.br
-share/xpra/www/js/lib/broadway/AUTHORS.gz
-share/xpra/www/js/lib/broadway/Decoder.js
-share/xpra/www/js/lib/broadway/Decoder.js.br
-share/xpra/www/js/lib/broadway/Decoder.js.gz
-share/xpra/www/js/lib/broadway/LICENSE
-share/xpra/www/js/lib/broadway/LICENSE.br
-share/xpra/www/js/lib/broadway/LICENSE.gz
 share/xpra/www/js/lib/brotli_decode.js
 share/xpra/www/js/lib/brotli_decode.js.br
 share/xpra/www/js/lib/brotli_decode.js.gz
