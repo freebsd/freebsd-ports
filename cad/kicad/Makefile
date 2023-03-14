@@ -35,6 +35,7 @@ USE_WX=		3.2
 WX_COMPS=	python:lib wx
 USE_GNOME=	atk cairo gdkpixbuf2 gtk30 pango
 CXXFLAGS+=	-std=c++11 -I${WRKSRC}/include -I${LOCALBASE}/include
+CXXFLAGS_powerpc=	-O0
 # not using "bundled glew" breaks the 3d viewer
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE=${WX_CONFIG}	\
 		-DwxWidgets_USE_UNICODE=ON			\
