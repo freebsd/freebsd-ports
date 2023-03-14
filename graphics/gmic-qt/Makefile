@@ -25,7 +25,12 @@ FLAVOR?=	${FLAVORS:[1]}
 krita_PKGNAMESUFFIX=	-krita
 gimp_PKGNAMESUFFIX=	-gimp
 
-USES=		cmake compiler:c++14-lang pkgconfig qt:5 xorg
+USES=		cmake pkgconfig qt:5 xorg
+.if !exists(/usr/include/omp.h)
+USES+=		compiler:gcc-c++11-lib
+.else
+USES+=		compiler:c++14-lang
+.endif
 USE_QT=		core gui network widgets \
 		buildtools:build linguisttools:build qmake:build
 USE_XORG=	ice sm x11 xext
