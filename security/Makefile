@@ -411,6 +411,7 @@
     SUBDIR += openssh-portable
     SUBDIR += openssl
     SUBDIR += openssl30
+    SUBDIR += openssl31
     SUBDIR += openssl-agent
     SUBDIR += openssl-quictls
     SUBDIR += openssl-unsafe
