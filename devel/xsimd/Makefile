@@ -1,5 +1,5 @@
 PORTNAME=	xsimd
-DISTVERSION=	8.1.0
+DISTVERSION=	10.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +9,8 @@ WWW=		https://github.com/xtensor-stack/xsimd
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	googletest>0:devel/googletest
+TEST_DEPENDS=	googletest>0:devel/googletest \
+		doctest>0:devel/doctest
 
 USES=		cmake compiler:c++11-lang
 
