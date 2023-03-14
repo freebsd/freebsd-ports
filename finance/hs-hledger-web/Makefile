@@ -1,6 +1,5 @@
 PORTNAME=	hledger-web
-DISTVERSION=	1.25
-PORTREVISION=	1
+DISTVERSION=	1.29
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,36 +11,36 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cabal
 USE_LOCALE=	en_US.UTF-8
-USE_CABAL=	Decimal-0.5.2 \
+USE_CABAL=      Decimal-0.5.2 \
 		Diff-0.4.1 \
 		Glob-0.10.2_3 \
 		HUnit-1.6.2.0 \
-		OneTuple-0.3.1_3 \
+		OneTuple-0.4.1.1 \
 		Only-0.1_1 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \
-		aeson-2.1.1.0 \
+		aeson-2.1.2.1_1 \
 		aeson-pretty-0.8.9_2 \
 		alex-3.2.7.1 \
-		ansi-terminal-0.11.3 \
+		ansi-terminal-0.11.4 \
 		ansi-wl-pprint-0.6.9_3 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
-		assoc-1.0.2_3 \
-		async-2.2.4_2 \
-		attoparsec-0.14.4_2 \
+		assoc-1.0.2_4 \
+		async-2.2.4_3 \
+		attoparsec-0.14.4_3 \
 		attoparsec-iso8601-1.1.0.0 \
 		auto-update-0.1.6 \
 		base-compat-0.12.2 \
 		base-compat-batteries-0.12.2 \
-		base-orphans-0.8.7 \
+		base-orphans-0.9.0 \
 		base-unicode-symbols-0.2.4.2 \
 		base64-0.4.2.4_2 \
 		base64-bytestring-1.2.1.0 \
 		basement-0.0.15 \
-		bifunctors-5.5.13 \
+		bifunctors-5.5.15 \
 		bitvec-1.1.3.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
@@ -49,16 +48,16 @@ USE_CABAL=	Decimal-0.5.2 \
 		bsb-http-chunked-0.0.0.4_3 \
 		byteable-0.1.1 \
 		byteorder-1.0.4 \
-		cabal-doctest-1.0.9_2 \
+		cabal-doctest-1.0.9_3 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.3.0 \
-		cassava-megaparsec-2.0.4 \
+		cassava-0.5.3.0_1 \
+		cassava-megaparsec-2.0.4_1 \
 		cereal-0.5.8.3 \
 		cipher-aes-0.2.11 \
 		clientsession-0.9.1.2 \
 		clock-0.8.3 \
-		cmdargs-0.10.21 \
+		cmdargs-0.10.22 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
 		conduit-1.3.4.3_1 \
@@ -66,7 +65,7 @@ USE_CABAL=	Decimal-0.5.2 \
 		connection-0.3.1_1 \
 		contravariant-1.5.5 \
 		control-monad-free-0.6.2 \
-		cookie-0.4.5 \
+		cookie-0.4.6 \
 		cprng-aes-0.6.1 \
 		crypto-api-0.13.3_1 \
 		crypto-cipher-types-0.0.9 \
@@ -75,96 +74,102 @@ USE_CABAL=	Decimal-0.5.2 \
 		cryptonite-conduit-0.2.2_1 \
 		css-text-0.1.3.0 \
 		csv-0.1.2 \
+		data-array-byte-0.1.0.1_1 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
 		data-default-instances-containers-0.0.1 \
 		data-default-instances-dlist-0.0.1 \
 		data-default-instances-old-locale-0.0.1 \
-		data-fix-0.3.2_3 \
+		data-fix-0.3.2_4 \
+		deferred-folds-0.9.18.3 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
-		doclayout-0.3.1.1 \
-		easy-file-0.2.2 \
-		email-validate-2.3.2.16 \
+		doclayout-0.4_1 \
+		easy-file-0.2.3 \
+		email-validate-2.3.2.18 \
 		emojis-0.1.2 \
 		entropy-0.4.1.10 \
 		extra-1.7.12 \
-		fast-logger-3.1.1 \
+		fast-logger-3.2.1 \
 		file-embed-0.0.15.0 \
-		generically-0.1 \
+		foldl-1.4.14_1 \
+		generically-0.1.1 \
 		githash-0.1.6.3 \
-		happy-1.20.0_1 \
-		hashable-1.4.1.0 \
+		happy-1.20.1.1 \
+		hashable-1.4.2.0_1 \
 		hashtables-1.3.1 \
-		haskell-lexer-1.1 \
+		haskell-lexer-1.1.1 \
 		hjsmin-0.2.0.4_2 \
-		hledger-1.25 \
-		hledger-lib-1.25 \
+		hledger-1.29 \
+		hledger-lib-1.29 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.8_1 \
-		hspec-2.10.6 \
-		hspec-core-2.10.6 \
-		hspec-discover-2.10.6 \
+		hsc2hs-0.68.9 \
+		hspec-2.10.10 \
+		hspec-core-2.10.10 \
+		hspec-discover-2.10.10 \
 		hspec-expectations-0.8.2 \
 		html-1.0.1.2 \
 		html-conduit-1.3.2.2 \
 		http-api-data-0.5_1 \
-		http-client-0.7.13.1 \
+		http-client-0.7.13.1_1 \
 		http-client-tls-0.3.6.1 \
 		http-conduit-2.3.8 \
 		http-date-0.0.11 \
 		http-types-0.12.3 \
-		http2-3.0.3 \
-		indexed-traversable-0.1.2_2 \
-		indexed-traversable-instances-0.1.1.1 \
-		integer-logarithms-1.0.3.1_3 \
+		http2-4.0.0 \
+		indexed-traversable-0.1.2.1 \
+		indexed-traversable-instances-0.1.1.2_1 \
+		integer-logarithms-1.0.3.1_4 \
 		iproute-1.7.12 \
+		isomorphism-class-0.1.0.9 \
 		language-javascript-0.7.1.0 \
 		libyaml-0.1.2_1 \
-		lift-type-0.1.0.1 \
+		lift-type-0.1.1.1 \
 		lifted-base-0.2.3.12 \
 		lucid-2.11.1_1 \
 		math-functions-0.3.4.2 \
-		megaparsec-9.2.2 \
+		megaparsec-9.3.0 \
 		memory-0.18.0 \
-		microlens-0.4.13.0 \
-		microlens-th-0.4.3.10_1 \
+		microlens-0.4.13.1 \
+		microlens-th-0.4.3.11 \
 		mime-types-0.1.1.0 \
 		mmorph-1.2.0_3 \
 		monad-control-1.0.3.1 \
-		monad-logger-0.3.37_2 \
+		monad-logger-0.3.39_1 \
 		monad-loops-0.4.3 \
 		mono-traversable-1.0.15.3 \
-		network-3.1.2.7 \
+		network-3.1.2.8 \
 		network-byte-order-0.1.6_1 \
-		network-uri-2.6.4.1 \
+		network-uri-2.6.4.2 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.3_2 \
 		optparse-applicative-0.17.0.0 \
+		pager-0.1.1.0 \
 		parser-combinators-1.3.0 \
 		path-pieces-0.2.1_1 \
 		pem-0.2.4 \
-		persistent-2.14.3.0_1 \
+		persistent-2.14.5.0 \
 		persistent-template-2.12.0.0 \
 		pretty-show-1.10 \
 		pretty-simple-4.1.2.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.7.4.0 \
+		primitive-0.8.0.0 \
+		profunctors-5.6.2_3 \
 		psqueues-0.2.7.3 \
 		quickcheck-io-0.2.0 \
 		random-1.2.1.1 \
-		recv-0.0.0 \
+		recv-0.1.0 \
 		regex-base-0.94.0.2_1 \
 		regex-tdfa-1.3.2 \
-		resource-pool-0.3.1.0 \
+		resource-pool-0.4.0.0 \
 		resourcet-1.3.0 \
 		safe-0.3.19 \
 		safe-exceptions-0.1.7.3 \
-		scientific-0.3.7.0_3 \
+		scientific-0.3.7.0_5 \
 		securemem-0.1.10 \
 		semialign-1.2.0.1_3 \
-		semigroupoids-5.3.7 \
+		semigroupoids-5.3.7_1 \
 		setenv-0.1.1.3_1 \
 		shakespeare-2.0.30 \
 		silently-1.2.5.3 \
@@ -172,52 +177,54 @@ USE_CABAL=	Decimal-0.5.2 \
 		skein-1.0.9.4 \
 		socks-0.6.1 \
 		split-0.2.3.5 \
-		splitmix-0.1.0.4_1 \
+		splitmix-0.1.0.4_2 \
 		stm-chans-3.0.0.6 \
 		streaming-commons-0.2.2.5 \
 		strict-0.4.0.1_4 \
 		tabular-0.2.2.8 \
-		tagged-0.8.6.1_3 \
+		tagged-0.8.7 \
 		tagsoup-0.14.8 \
-		tasty-1.4.2.3 \
+		tasty-1.4.3 \
 		tasty-hunit-0.10.0.3 \
 		temporary-1.3 \
-		text-short-0.1.5_1 \
+		text-ansi-0.2.1 \
+		text-builder-0.6.7 \
+		text-builder-dev-0.3.3.2 \
+		text-short-0.1.5_2 \
 		tf-random-0.5 \
-		th-abstraction-0.4.5.0 \
-		th-compat-0.1.4 \
-		th-lift-0.8.2_2 \
+		th-abstraction-0.4.5.0_1 \
+		th-compat-0.1.4_2 \
+		th-lift-0.8.3 \
 		th-lift-instances-0.1.20 \
 		these-1.1.1.1_6 \
-		time-compat-1.9.6.1_4 \
+		time-compat-1.9.6.1_5 \
 		time-manager-0.0.0_1 \
 		timeit-2.0_2 \
 		tls-1.6.0 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.7.2 \
-		typed-process-0.2.10.1 \
+		typed-process-0.2.11.0 \
 		uglymemo-0.1.0.1 \
-		unbounded-delays-0.1.1.1 \
 		unix-compat-0.6_1 \
 		unix-time-0.4.8 \
-		unliftio-0.2.23.0 \
-		unliftio-core-0.2.0.1_2 \
-		unordered-containers-0.2.19.1_1 \
+		unliftio-0.2.24.0 \
+		unliftio-core-0.2.1.0_1 \
+		unordered-containers-0.2.19.1_2 \
 		utf8-string-1.0.2 \
 		utility-ht-0.0.16 \
 		uuid-types-1.0.5_3 \
 		vault-0.3.1.5_2 \
-		vector-0.12.3.1_2 \
-		vector-algorithms-0.9.0.1_1 \
+		vector-0.13.0.0_3 \
+		vector-algorithms-0.9.0.1_2 \
+		vector-stream-0.1.0.0_2 \
 		wai-3.2.3 \
 		wai-app-static-3.1.7.4 \
 		wai-cors-0.2.7 \
 		wai-extra-3.1.13.0_1 \
 		wai-handler-launch-3.0.3.1 \
 		wai-logger-2.4.0 \
-		warp-3.3.23 \
-		wcwidth-0.0.2 \
-		witherable-0.4.2_3 \
+		warp-3.3.24 \
+		witherable-0.4.2_4 \
 		wizards-1.0.3_1 \
 		word8-0.1.3 \
 		x509-1.7.7 \
@@ -226,14 +233,14 @@ USE_CABAL=	Decimal-0.5.2 \
 		x509-validation-1.6.12 \
 		xml-conduit-1.9.1.1_2 \
 		xml-types-0.3.8 \
-		xss-sanitize-0.3.7_1 \
-		yaml-0.11.8.0_2 \
+		xss-sanitize-0.3.7.1 \
+		yaml-0.11.11.0 \
 		yesod-1.6.2.1 \
-		yesod-core-1.6.24.0_1 \
-		yesod-form-1.7.3 \
+		yesod-core-1.6.24.2 \
+		yesod-form-1.7.4 \
 		yesod-persistent-1.6.0.8 \
 		yesod-static-1.6.1.0 \
 		yesod-test-1.6.15 \
-		zlib-0.6.3.0
+		zlib-0.6.3.0_1
 
 .include <bsd.port.mk>
