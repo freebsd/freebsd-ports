@@ -26,14 +26,12 @@ etc/bash_completion.d/git-completion.bash
 %%PERL%%%%SITE_PERL%%/Git/SVN/Utils.pm
 libexec/git-core/git
 libexec/git-core/git-add
-libexec/git-core/git-add--interactive
 libexec/git-core/git-am
 libexec/git-core/git-annotate
 libexec/git-core/git-apply
 libexec/git-core/git-archimport
 libexec/git-core/git-archive
 libexec/git-core/git-bisect
-libexec/git-core/git-bisect--helper
 libexec/git-core/git-blame
 libexec/git-core/git-branch
 libexec/git-core/git-bugreport
@@ -69,7 +67,6 @@ libexec/git-core/git-diff-index
 libexec/git-core/git-diff-tree
 libexec/git-core/git-difftool
 libexec/git-core/git-difftool--helper
-libexec/git-core/git-env--helper
 libexec/git-core/git-fast-export
 libexec/git-core/git-fast-import
 libexec/git-core/git-fetch
@@ -813,6 +810,8 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.39.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.39.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.39.2.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.39.3.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.40.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1316,7 +1315,6 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/coccinelle/free.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/hashmap.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/index-compatibility.cocci
-%%CONTRIB%%share/git-core/contrib/coccinelle/index-compatibility.pending.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/object_id.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/preincr.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/qsort.cocci
