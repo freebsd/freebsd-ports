@@ -298,7 +298,6 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/data/craters-pattern.png
 %%DATADIR%%/data/curvefree.png
 %%DATADIR%%/data/curvemooth.png
-%%DATADIR%%/data/detectFacesImg.png
 %%DATADIR%%/data/dried-pattern.png
 %%DATADIR%%/data/duplicatebothhorz.png
 %%DATADIR%%/data/duplicatebothvert.png
@@ -310,7 +309,6 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/data/histogram-log.png
 %%DATADIR%%/data/histogram.png
 %%DATADIR%%/data/ice-pattern.png
-%%DATADIR%%/data/ignoreImg.png
 %%DATADIR%%/data/image-full.png
 %%DATADIR%%/data/image-selection.png
 %%DATADIR%%/data/leaf-pattern.png
@@ -340,7 +338,6 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/data/modern-texture.png
 %%DATADIR%%/data/moss-texture.png
 %%DATADIR%%/data/original.png
-%%DATADIR%%/data/overlayImg.png
 %%DATADIR%%/data/paper-pattern.png
 %%DATADIR%%/data/paper-texture.png
 %%DATADIR%%/data/paper2-texture.png
@@ -354,13 +351,11 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/data/splash-digikam.png
 %%DATADIR%%/data/stone-pattern.png
 %%DATADIR%%/data/stone-texture.png
-%%DATADIR%%/data/tagFacesImg.gif
 %%DATADIR%%/data/target.png
 %%DATADIR%%/data/togglemouseover.png
 %%DATADIR%%/data/wall-pattern.png
 %%DATADIR%%/data/wall-texture.png
 %%DATADIR%%/data/wood-pattern.png
-%%DATADIR%%/data/workOnAllCoresImg.png
 %%DATADIR%%/database/dbconfig.xml
 %%DATADIR%%/database/mysql-global.conf
 %%DATADIR%%/geoiface/backend-googlemaps-js.js
@@ -760,6 +755,7 @@ share/kxmlgui5/showfoto/showfotoui5.rc
 %%NLS%%share/locale/bg/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/bs/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/digikam.mo
+%%NLS%%share/locale/ca@valencia/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/da/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/de/LC_MESSAGES/digikam.mo
