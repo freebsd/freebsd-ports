@@ -1,6 +1,6 @@
---- OpenRGB.pro.orig	2022-05-05 02:48:58 UTC
+--- OpenRGB.pro.orig	2022-11-28 03:44:33 UTC
 +++ OpenRGB.pro
-@@ -40,7 +40,7 @@ TEMPLATE    = app
+@@ -42,7 +42,7 @@ TEMPLATE    = app
  # Automatically generated build information                                                     #
  #-----------------------------------------------------------------------------------------------#
  win32:BUILDDATE = $$system(date /t)

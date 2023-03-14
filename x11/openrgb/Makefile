@@ -1,9 +1,9 @@
 PORTNAME=	openrgb
-PORTVERSION=	0.7.20220505
+PORTVERSION=	0.8
 CATEGORIES=	x11
 
 MAINTAINER=	vidar@karlsen.tech
-COMMENT=	Software to control a multitude of (a)RGB devices
+COMMENT=	Software to control a multitude of RGB devices
 WWW=		https://openrgb.org
 
 LICENSE=	GPLv2
@@ -23,10 +23,10 @@ USES=		gmake gl qmake qt:5
 USE_GITLAB=	yes
 GL_ACCOUNT=	CalcProgrammer1
 GL_PROJECT=	OpenRGB
-GL_COMMIT=	817d5d55dfb2baf932effe9fec9c557ad1529eb9
+GL_COMMIT=	fb88964b8e514cdf4eb22da314e13f8db06a3636
 
 USE_GL=		gl
-USE_QT=		buildtools core gui widgets
+USE_QT=		buildtools core gui linguisttools widgets
 
 PLIST_FILES=	bin/openrgb
 
