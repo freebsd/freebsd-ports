@@ -1,7 +1,7 @@
 PORTNAME=	cfssl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.3
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		go:modules gmake
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:sys:v0.6.0:sys
 
 GO_MODULE=	github.com/cloudflare/cfssl
 
@@ -28,6 +30,10 @@ USERS=	cfssl
 GROUPS=	cfssl
 # installs a file to the same path
 CONFLICTS=	goose
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' ${WRKSRC}/cli/version/version.go
