@@ -1,7 +1,6 @@
 PORTNAME=	telegraf
 DISTVERSIONPREFIX=v
-DISTVERSION=	1.25.0
-PORTREVISION=	4
+DISTVERSION=	1.26.0
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -38,8 +37,5 @@ TELEGRAF_LOGDIR=/var/log/${PORTNAME}
 
 post-install:
 	${MKDIR} ${STAGEDIR}${TELEGRAF_LOGDIR}
-	${INSTALL_DATA} \
-		${WRKSRC}/${GH_SUBDIR}/etc/${PORTNAME}.conf  \
-		${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf.sample
 
 .include <bsd.port.mk>

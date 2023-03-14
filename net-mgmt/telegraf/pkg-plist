@@ -1,3 +1,2 @@
 bin/telegraf
 @dir(%%TELEGRAF_USER%%,%%TELEGRAF_GROUP%%,0750) %%TELEGRAF_LOGDIR%%
-@sample etc/telegraf.conf.sample
