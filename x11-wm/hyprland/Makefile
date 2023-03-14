@@ -1,6 +1,6 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.22.0beta
+DISTVERSION=	0.23.0beta
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -10,7 +10,8 @@ WWW=		https://hyprland.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+BUILD_DEPENDS=	cmake:devel/cmake-core \
+		evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.25:graphics/wayland-protocols \
 		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
@@ -25,7 +26,8 @@ USE_GNOME=	cairo
 USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 GH_PROJECT=	Hyprland
-GH_TUPLE=	hyprwm:hyprland-protocols:301733a:hyprland_protocols/subprojects/hyprland-protocols
+GH_TUPLE=	hyprwm:hyprland-protocols:301733a:hyprland_protocols/subprojects/hyprland-protocols \
+		canihavesomecoffee:udis86:1.7.2-186-g5336633:udis86/subprojects/udis86
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -58,7 +60,6 @@ post-install:
 . if exists(/usr/include/c++/v1/__algorithm/ranges_all_of.h) && !make(makesum) && !make(fetch)
 CXXFLAGS+=	-fexperimental-library # std::ranges::all_of
 . else
-BUILD_DEPENDS+=	${CMAKE_BIN}:devel/cmake-core
 USES+=		llvm:min=14,build
 CC=		clang${LLVM_VERSION}
 CXX=		clang++${LLVM_VERSION}

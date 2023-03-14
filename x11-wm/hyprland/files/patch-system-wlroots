@@ -1,8 +1,8 @@
 Allow system wlroots to reduce maintenance (wlroots has tons of options)
 
---- meson.build.orig	2022-11-07 12:16:30 UTC
+--- meson.build.orig	2023-03-14 21:56:31 UTC
 +++ meson.build
-@@ -37,8 +37,8 @@ add_project_arguments(
+@@ -39,8 +39,8 @@ add_project_arguments(
    ],
    language: 'cpp')
  
@@ -12,8 +12,8 @@ Allow system wlroots to reduce maintenance (wlroots has tons of options)
 +have_xwlr = wlroots.get_variable(pkgconfig: 'have_xwayland', internal: 'have_xwayland') == 'true'
  xcb_dep = dependency('xcb', required: get_option('xwayland'))
  
- if get_option('xwayland').enabled() and not have_xwlr
---- src/meson.build.orig	2023-01-05 22:30:24 UTC
+ cmake = import('cmake')
+--- src/meson.build.orig	2023-03-14 21:56:31 UTC
 +++ src/meson.build
 @@ -7,7 +7,7 @@ executable('Hyprland', src,
      server_protos,
