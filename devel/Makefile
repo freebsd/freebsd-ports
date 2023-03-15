@@ -386,6 +386,7 @@
     SUBDIR += clazy
     SUBDIR += cld2
     SUBDIR += clewn
+    SUBDIR += cli
     SUBDIR += cli11
     SUBDIR += clig
     SUBDIR += cligen
