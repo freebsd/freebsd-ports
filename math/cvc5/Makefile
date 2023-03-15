@@ -1,7 +1,6 @@
 PORTNAME=	cvc5
 DISTVERSIONPREFIX=	cvc5-
-DISTVERSION=	1.0.4
-PORTREVISION=	1
+DISTVERSION=	1.0.5
 CATEGORIES=	math java
 MASTER_SITES+=	http://www.antlr3.org/download/:antlr3
 DISTFILES+=	antlr-3.4-complete.jar:antlr3
@@ -36,7 +35,7 @@ CMAKE_ARGS+=		-DANTLR_BINARY=${WRKDIR}/antlr3 \
 			-DPython_EXECUTABLE:STRING=${PYTHON_CMD}
 CMAKE_ON=		BUILD_SHARED_LIBS
 CMAKE_OFF=		BUILD_BINDINGS_PYTHON USE_PYTHON3 # Python binding should be a separate port
-CMAKE_TESTING_ON=	ENABLE_UNIT_TESTING
+CMAKE_TESTING_ON=	ENABLE_UNIT_TESTING # 2 tests fail, see https://github.com/cvc5/cvc5/issues/9569
 
 OPTIONS_DEFINE=			COCOALIB EDITLINE JAVA
 OPTIONS_GROUP=			SOLVERS
@@ -94,7 +93,7 @@ post-extract:
 	@${ECHO_CMD} "exec \"${LOCALBASE}/bin/java\" -classpath \"${WRKDIR}/antlr3.jar\" org.antlr.Tool \"\$$@\"" >> ${WRKDIR}/antlr3
 	@${CHMOD} +x ${WRKDIR}/antlr3
 
-post-patch:
+xpost-patch:
 	@${REINPLACE_CMD} -e "s|sed -i'' -e 's|sed -i '' -e 's|g" \
 		${WRKSRC}/src/fix-install-headers.sh
 
