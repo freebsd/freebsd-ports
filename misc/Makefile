@@ -107,6 +107,7 @@
     SUBDIR += findutils
     SUBDIR += firestring
     SUBDIR += flag
+    SUBDIR += flashlight
     SUBDIR += fortune-mod-bible
     SUBDIR += fortune-mod-bofh
     SUBDIR += fortune-mod-epictetus
