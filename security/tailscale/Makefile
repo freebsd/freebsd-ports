@@ -1,6 +1,5 @@
 PORTNAME=	tailscale
-PORTVERSION=	1.36.2
-PORTREVISION=	1
+PORTVERSION=	1.38.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security net-vpn
 
@@ -22,8 +21,8 @@ USE_RC_SUBR=	tailscaled
 GO_TARGET=	./cmd/tailscale \
 		./cmd/tailscaled
 GO_BUILDFLAGS=	-tags xversion -ldflags "\
-		-X tailscale.com/version.Long=${PORTVERSION} \
-		-X tailscale.com/version.Short=${PORTVERSION}"
+		-X tailscale.com/version.longStamp=${PORTVERSION} \
+		-X tailscale.com/version.shortStamp=${PORTVERSION}"
 
 PLIST_FILES=	bin/tailscale  \
 		bin/tailscaled
