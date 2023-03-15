@@ -1,5 +1,7 @@
-TIMESTAMP = 1649779794
+TIMESTAMP = 1678875668
 SHA256 (go/www_fabio/fabio-v1.6.0/v1.6.0.mod) = b63819db52f7160ef63b6778ae55c69d36de0c5cd1bf6fb60e7c8f5a2edfe802
 SIZE (go/www_fabio/fabio-v1.6.0/v1.6.0.mod) = 2898
 SHA256 (go/www_fabio/fabio-v1.6.0/v1.6.0.zip) = 00060f244368f43c9c7db349f07f7c8579322c40164955c2c3eb75d7bfe88ad2
 SIZE (go/www_fabio/fabio-v1.6.0/v1.6.0.zip) = 1996461
+SHA256 (go/www_fabio/fabio-v1.6.0/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/www_fabio/fabio-v1.6.0/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
