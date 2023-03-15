@@ -1,0 +1,12 @@
+Editor for binary data (hexadecimal viewer/editor) written in Java.
+
+  - Data as hexadecimal codes and text preview
+  - Insert and overwrite edit modes
+  - Support for selection and clipboard actions
+  - Support for showing unprintable/whitespace characters
+  - Support for undo/redo
+  - Support for charset/encoding selection
+  - Codes can be also binary, octal or decimal
+  - Searching for text/hexadecimal code with match highlighting
+  - Support for huge files
+  - Delta mode (only changes are stored in memory)
