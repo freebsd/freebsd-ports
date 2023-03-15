@@ -1,7 +1,7 @@
 PORTNAME=	bosun
 DISTVERSION=	0.9.0
 DISTVERSIONSUFFIX=	-preview
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	langer.markus@gmail.com
@@ -57,17 +57,17 @@ GH_TUPLE=	\
 		godbus:dbus:7a8c533d28e8:godbus_dbus/vendor/github.com/godbus/dbus \
 		gogo:protobuf:v1.1.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.4.0:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:87dc89f01550:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:089bfa567519:golang_crypto/vendor/golang.org/x/crypto \
 		golang:freetype:f29eb116deb3:golang_freetype/vendor/github.com/golang/freetype \
 		golang:glog:23def4e6c14b:golang_glog/vendor/github.com/golang/glog \
 		golang:groupcache:869f871628b6:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:image:baddd3465a05:golang_image/vendor/golang.org/x/image \
-		golang:net:0de0cce0169b:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:d2e6202438be:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:d9eb7a3d35ec:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:3ef323f4f1fd:golang_sys/vendor/golang.org/x/sys \
+		golang:sync:v0.1.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		google:cadvisor:e9739af18411:google_cadvisor/vendor/github.com/google/cadvisor \
 		google:go-github:44b1ede22d71:google_go_github/vendor/github.com/google/go-github \
 		google:go-querystring:2a60fc2ba6c1:google_go_querystring/vendor/github.com/google/go-querystring \
