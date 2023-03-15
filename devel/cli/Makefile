@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${LOCALBASE}/include/asio/version.hpp:net/asio \
 		${LOCALBASE}/include/boost/version.hpp:devel/boost-libs
 
-USES=		cmake:testing compiler:c++11-lang python:build
+USES=		cmake:testing compiler:c++11-lang
 
 CMAKE_TESTING_ON=	CLI_BuildTests
 
