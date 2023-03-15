@@ -9,10 +9,11 @@ WWW=		https://github.com/gost-engine/engine/blob/master/README.gost
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_SSL=				libressl libressl-devel openssl-devel
+BROKEN_SSL=				libressl libressl-devel openssl30 openssl31
 BROKEN_SSL_REASON_libressl=		needs features only available in OpenSSL 1.1.1+
 BROKEN_SSL_REASON_libressl-devel=	needs features only available in OpenSSL 1.1.1+
-BROKEN_SSL_REASON_openssl-devel=	for OpenSSL 1.1.1 only
+BROKEN_SSL_REASON_openssl30=		for OpenSSL 1.1.1 only
+BROKEN_SSL_REASON_openssl31=		for OpenSSL 1.1.1 only
 
 BUILD_DEPENDS=  cmake>=3.18.1:devel/cmake
 

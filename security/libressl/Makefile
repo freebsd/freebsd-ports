@@ -27,7 +27,7 @@ NC_DESC=	Install TLS-enabled netcat
 CONFLICTS_INSTALL=		libressl-devel
 libtls_CONFLICTS_INSTALL=	libretls
 default_CONFLICTS_INSTALL=	openssl \
-				openssl-devel
+				openssl3[01]
 
 .if ${FLAVOR:U} == default
 OPTIONS_EXCLUDE=	LIBTLS

@@ -3,7 +3,7 @@ DISTVERSION=	3.0.8
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
-PKGNAMESUFFIX=	-devel
+PKGNAMESUFFIX=	30
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT=	TLSv1.3 capable SSL and crypto library
@@ -12,7 +12,7 @@ WWW=		https://www.openssl.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl-quictls
+CONFLICTS_INSTALL=	boringssl libressl libressl-devel openssl openssl31 openssl-quictls
 
 HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	config
