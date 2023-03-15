@@ -1,0 +1,124 @@
+https://github.com/glandium/git-cinnabar/commit/6c77d861b70a
+
+--- helper/cinnabar-fast-import.c.orig	2022-10-28 23:43:03 UTC
++++ helper/cinnabar-fast-import.c
+@@ -422,12 +422,17 @@ static void handle_changeset_conflict(struct hg_object
+ 	ensure_notes(&git2hg);
+ 	while ((note = get_note(&git2hg, git_id))) {
+ 		struct hg_object_id oid;
++		struct object_info oi = OBJECT_INFO_INIT;
+ 		enum object_type type;
+ 		unsigned long len;
+-		char *content = read_object_file_extended(
+-			the_repository, note, &type, &len, 0);
+-		if (len < 50 || !starts_with(content, "changeset ") ||
+-		    get_sha1_hex(&content[10], oid.hash))
++		char *content;
++		oi.typep = &type;
++		oi.sizep = &len;
++		oi.contentp = (void **) &content;
++		if ((oid_object_info_extended(
++			the_repository, note, &oi, OBJECT_INFO_DIE_IF_CORRUPT) == 0) &&
++		    (len < 50 || !starts_with(content, "changeset ") ||
++		     get_sha1_hex(&content[10], oid.hash)))
+ 			die("Invalid git2hg note for %s", oid_to_hex(git_id));
+ 
+ 		free(content);
+@@ -437,10 +442,12 @@ static void handle_changeset_conflict(struct hg_object
+ 			break;
+ 
+ 		if (!buf.len) {
+-			content = read_object_file_extended(
+-				the_repository, git_id, &type, &len, 0);
+-			strbuf_add(&buf, content, len);
+-			free(content);
++			if (oid_object_info_extended(
++					the_repository, git_id, &oi,
++					OBJECT_INFO_DIE_IF_CORRUPT) == 0) {
++				strbuf_add(&buf, content, len);
++				free(content);
++			}
+ 		}
+ 
+ 		strbuf_addch(&buf, '\0');
+--- helper/cinnabar-helper.c.orig	2022-10-28 23:43:03 UTC
++++ helper/cinnabar-helper.c
+@@ -1554,11 +1554,17 @@ static void upgrade_files(const struct old_manifest_tr
+ 		if (note && oidcmp(note, &entry.other_oid)) {
+ 			struct hg_file file;
+ 			struct strbuf buf = STRBUF_INIT;
++			struct object_info oi = OBJECT_INFO_INIT;
+ 			unsigned long len;
+ 			enum object_type t;
+ 			char *content;
+-			content = read_object_file_extended(
+-				the_repository, note, &t, &len, 0);
++			oi.typep = &t;
++			oi.sizep = &len;
++			oi.contentp = (void **) &content;
++			if (oid_object_info_extended(
++					the_repository, note, &oi,
++					OBJECT_INFO_DIE_IF_CORRUPT) != 0)
++				goto corrupted;
+ 			strbuf_attach(&buf, content, len, len);
+ 			hg_file_init(&file);
+ 			hg_file_from_memory(&file, &hg_oid, &buf);
+--- helper/hg-data.c.orig	2022-10-28 23:43:03 UTC
++++ helper/hg-data.c
+@@ -33,11 +33,16 @@ void hg_file_load(struct hg_file *result, const struct
+ void hg_file_load(struct hg_file *result, const struct hg_object_id *oid)
+ {
+ 	const struct object_id *note;
++	struct object_info oi = OBJECT_INFO_INIT;
+ 	char *content;
+ 	enum object_type type;
+ 	unsigned long len;
+ 	size_t metadata_len;
+ 
++	oi.typep = &type;
++	oi.sizep = &len;
++	oi.contentp = (void **) &content;
++
+ 	strbuf_release(&result->file);
+ 	hg_oidcpy(&result->oid, oid);
+ 
+@@ -47,9 +52,9 @@ void hg_file_load(struct hg_file *result, const struct
+ 	ensure_notes(&files_meta);
+ 	note = get_note_hg(&files_meta, oid);
+ 	if (note) {
+-		content = read_object_file_extended(
+-			the_repository, note, &type, &len, 0);
+-		if (!content)
++		if (oid_object_info_extended(
++				the_repository, note, &oi,
++				OBJECT_INFO_DIE_IF_CORRUPT) != 0)
+ 			die("Missing data");
+ 		strbuf_add(&result->file, "\1\n", 2);
+ 		strbuf_add(&result->file, content, len);
+@@ -64,9 +69,9 @@ void hg_file_load(struct hg_file *result, const struct
+ 	if (!note)
+ 		die("Missing data");
+ 
+-	content = read_object_file_extended(
+-		the_repository, note, &type, &len, 0);
+-	if (!content)
++	if (oid_object_info_extended(
++			the_repository, note, &oi,
++			OBJECT_INFO_DIE_IF_CORRUPT) != 0)
+ 		die("Missing data");
+ 
+ 	strbuf_add(&result->file, content, len);
+--- helper/object-file.c.patch.orig	2022-10-28 23:43:03 UTC
++++ helper/object-file.c.patch
+@@ -2,9 +2,9 @@ +++ b/object-file.c
+ index 8be57f48de..52315414f3 100644
+ --- a/object-file.c
+ +++ b/object-file.c
+-@@ -34,6 +34,8 @@
+- #include "promisor-remote.h"
++@@ -35,6 +35,8 @@
+  #include "submodule.h"
++ #include "fsck.h"
+  
+ +#define write_object_file_flags real_write_object_file_flags
+ +
