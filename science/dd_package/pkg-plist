@@ -6,12 +6,13 @@ include/dd/ComplexValue.hpp
 include/dd/ComputeTable.hpp
 include/dd/Control.hpp
 include/dd/Definitions.hpp
+include/dd/DensityNoiseTable.hpp
 include/dd/Edge.hpp
 include/dd/Export.hpp
 include/dd/GateMatrixDefinitions.hpp
 include/dd/Node.hpp
-include/dd/NoiseOperationTable.hpp
 include/dd/Package.hpp
+include/dd/StochasticNoiseOperationTable.hpp
 include/dd/ToffoliTable.hpp
 include/dd/UnaryComputeTable.hpp
 include/dd/UniqueTable.hpp
