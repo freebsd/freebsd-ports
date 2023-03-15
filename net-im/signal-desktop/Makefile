@@ -32,7 +32,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		jq:textproc/jq \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		npm:www/npm-node16 \
-		${LOCALBASE}/lib/libcrypto.a:security/openssl-devel \
+		${LOCALBASE}/lib/libcrypto.a:security/openssl30 \
 		vips>0:graphics/vips \
 		yarn:www/yarn-node16
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
