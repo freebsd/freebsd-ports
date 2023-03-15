@@ -1,6 +1,6 @@
 PORTNAME=	wego
 DISTVERSION=	2.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	misc
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -19,7 +19,7 @@ GH_TUPLE=	\
 		schachmat:ingo:a4bdc0729a3f:schachmat_ingo/vendor/github.com/schachmat/ingo \
 		mattn:go-isatty:v0.0.14:mattn_goisatty/vendor/github.com/mattn/go-isatty \
 		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
-		golang:sys:39ccf1dd6fa6:golang_sys/vendor/golang.org/x/sys
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys
 GO_TARGET=	wego
 
 PLIST_FILES=	bin/${PORTNAME}
