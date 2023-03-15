@@ -1,7 +1,7 @@
 PORTNAME=	kpmenu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	security
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -26,7 +26,7 @@ GH_TUPLE=	\
 		go-ini:ini:v1.66.3:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:30dcbda58838:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:99c3d69c2c27:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \

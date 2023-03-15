@@ -1,4 +1,4 @@
-TIMESTAMP = 1644950944
+TIMESTAMP = 1678874523
 SHA256 (AlessioDP-kpmenu-v1.4.1_GH0.tar.gz) = 2c2a686a0b5a0f2f7278873e21bca98062df873908e7c498717cd77bb727146a
 SIZE (AlessioDP-kpmenu-v1.4.1_GH0.tar.gz) = 42550
 SHA256 (aead-argon2-a87724528b07_GH0.tar.gz) = fcc6a59b12eaae873919a6f837d9f6adef154a56f185f0caea314ab8751a3c89
@@ -15,8 +15,8 @@ SHA256 (go-yaml-yaml-v2.4.0_GH0.tar.gz) = d8e94679e5fff6bd1a35e10241543929a5f3da
 SIZE (go-yaml-yaml-v2.4.0_GH0.tar.gz) = 73209
 SHA256 (golang-crypto-30dcbda58838_GH0.tar.gz) = a9f4c33adb7ecd4a414c256576501f54d1d2c6c1b51f36b9493ed95d529dde91
 SIZE (golang-crypto-30dcbda58838_GH0.tar.gz) = 1734031
-SHA256 (golang-sys-99c3d69c2c27_GH0.tar.gz) = 6e2029cdfa0c8cd0bfdc49d17694970de73ddaaadb9fecb66f724b32c153aea0
-SIZE (golang-sys-99c3d69c2c27_GH0.tar.gz) = 1257135
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.7_GH0.tar.gz) = 7cab2f6c3133ac1d422edd952b0dd2082fa55a73c2663fb2defd9bf83d649b26
 SIZE (golang-text-v0.3.7_GH0.tar.gz) = 8354718
 SHA256 (google-shlex-e7afc7fbc510_GH0.tar.gz) = 87f77e98720add261add169e386cbdcc894e2635dca299bc4119dc417ea321ca
