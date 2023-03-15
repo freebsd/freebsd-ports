@@ -1,13 +1,13 @@
---- CMakeLists.txt.orig	2022-10-05 15:32:24 UTC
+--- CMakeLists.txt.orig	2023-03-12 06:35:07 UTC
 +++ CMakeLists.txt
-@@ -33,27 +33,7 @@ endif()
+@@ -38,27 +38,7 @@ endif()
  
  set(EXTERNAL_DIR ${CMAKE_CURRENT_BINARY_DIR}/external)
  
 -# cJSON and cJSONUtils
 -ExternalProject_Add(cjson
 -  GIT_REPOSITORY "https://github.com/DaveGamble/cJSON"
--  GIT_TAG "v1.7.14"
+-  GIT_TAG "v1.7.15"
 -  PREFIX "${EXTERNAL_DIR}/cJSON"
 -  BUILD_IN_SOURCE 1
 -  TEST_COMMAND ""
@@ -29,7 +29,7 @@
  
  # beectl
  set(BEECTL_SRCS
-@@ -64,21 +44,13 @@ set(BEECTL_SRCS
+@@ -69,21 +49,13 @@ set(BEECTL_SRCS
    src/mkstemps.c
    # This is nasty, but I couldn't find a way to use CMAKE_TOOLCHAIN_FILE
    # for the external project (see comments below.)
@@ -51,7 +51,7 @@
  
  # The following would be better approach than including cJSON files in our
  # source list. But the build fails when cross-compiling, since
-@@ -105,13 +77,13 @@ string(TOUPPER "${CMAKE_SYSTEM_NAME}" uppercase_CMAKE_
+@@ -110,13 +82,13 @@ string(TOUPPER "${CMAKE_SYSTEM_NAME}" uppercase_CMAKE_
  
  message(STATUS "CMAKE_INSTALL_PREFIX: ${CMAKE_INSTALL_PREFIX}")
  set(BEECTL_MANIFEST_TARGET_PATH "${CMAKE_INSTALL_PREFIX}/bin/beectl")
@@ -67,7 +67,7 @@
  endif()
  
  # RPM package properties
-@@ -233,7 +205,7 @@ elseif(uppercase_CMAKE_SYSTEM_NAME MATCHES DARWIN)
+@@ -238,7 +210,7 @@ elseif(uppercase_CMAKE_SYSTEM_NAME MATCHES DARWIN)
          COMPONENT config)
  else(uppercase_CMAKE_SYSTEM_NAME MATCHES WINDOWS)
      # Install host app
