@@ -14,6 +14,7 @@ share/applications/org.ksnip.ksnip.desktop
 %%DATADIR%%/translations/ksnip_fr.qm
 %%DATADIR%%/translations/ksnip_fr_CA.qm
 %%DATADIR%%/translations/ksnip_gl.qm
+%%DATADIR%%/translations/ksnip_he.qm
 %%DATADIR%%/translations/ksnip_hr.qm
 %%DATADIR%%/translations/ksnip_hu.qm
 %%DATADIR%%/translations/ksnip_id.qm
