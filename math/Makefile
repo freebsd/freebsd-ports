@@ -649,6 +649,7 @@
     SUBDIR += oink
     SUBDIR += oleo
     SUBDIR += onednn
+    SUBDIR += onednn252
     SUBDIR += openblas
     SUBDIR += openfst
     SUBDIR += openlibm
