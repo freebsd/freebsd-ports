@@ -1,6 +1,6 @@
 PORTNAME=	vice
-PORTVERSION=	3.7
-PORTREVISION=	1
+PORTVERSION=	3.7.1
+PORTREVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	SF/vice-emu/releases
 
@@ -40,7 +40,6 @@ MAKE_ENV+=	XDG_DATA_DIRS=${STAGEDIR}${PREFIX}/share
 CFLAGS+=	-fcommon
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--enable-ipv6 \
-			--enable-ffmpeg \
 			--enable-x64 \
 			--disable-realdevice \
 			--disable-pdf-docs \
@@ -48,7 +47,7 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--disable-dependency-tracking \
 			DOS2UNIX=true
 
-OPTIONS_DEFINE=	SDLSOUND ALSA PULSEAUDIO DOCS
+OPTIONS_DEFINE=	SDLSOUND ALSA PULSEAUDIO FFMPEG DOCS
 OPTIONS_SINGLE=	GUI
 OPTIONS_SINGLE_GUI=	GTK3UI SDLUI2
 OPTIONS_DEFAULT?=	GTK3UI SDLSOUND ALSA
@@ -57,6 +56,7 @@ OPTIONS_SUB=	yes
 GTK3UI_DESC=	use GTK3 user interface
 SDLUI2_DESC=	use SDL2 user interface
 SDLSOUND_DESC=	build with SDL2 sound system support
+FFMPEG_CONFIGURE_ENABLE=	ffmpeg
 
 GTK3UI_USES=			desktop-file-utils
 GTK3UI_CONFIGURE_ENABLE=	gtk3ui desktop-files
