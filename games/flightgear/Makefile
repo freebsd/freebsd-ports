@@ -57,4 +57,10 @@ post-patch:
 # Avoid conflict with C++20 <version> - used version file is flightgear-version
 	@${RM} ${WRKSRC}/version
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 150
+LDFLAGS_i386+=	-Wl,--no-check-dynamic-relocations
+.endif
+
+.include <bsd.port.post.mk>
