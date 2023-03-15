@@ -1,11 +1,11 @@
 PORTNAME=	zabbix6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-frontend${PHP_PKGNAMESUFFIX}
 
 USES+=		php:web,flavors
-USE_PHP=	bcmath ctype gd gettext ldap mbstring session simplexml \
-		sockets xml xmlreader xmlwriter
+USE_PHP=	bcmath ctype filter gd gettext ldap mbstring session \
+		simplexml sockets xml xmlreader xmlwriter
 
 MASTERDIR=	${.CURDIR}/../${PORTNAME}-server
 PATCHDIR=
