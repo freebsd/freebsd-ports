@@ -70,7 +70,6 @@
     SUBDIR += nomadnet
     SUBDIR += ogmios
     SUBDIR += opendchub
-    SUBDIR += openethereum
     SUBDIR += oura
     SUBDIR += p5-Net-BitTorrent
     SUBDIR += p5-Net-BitTorrent-File
