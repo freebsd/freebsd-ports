@@ -1,7 +1,8 @@
 PORTNAME=	libdvdnav
-PORTVERSION=	6.1.1
+DISTVERSION=	6.1.1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION}/ \
+		https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Videolan version of the libdvdnav project
