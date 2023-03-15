@@ -1,7 +1,7 @@
 PORTNAME=	chroma
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-syntax-highlighter
 
@@ -22,7 +22,7 @@ GH_TUPLE=	\
 		alecthomas:repr:117648cd9897:alecthomas_repr/vendor/github.com/alecthomas/repr \
 		danwakefield:fnmatch:cbb64ac3d964:danwakefield_fnmatch/vendor/github.com/danwakefield/fnmatch \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
-		golang:sys:669c56c373c4:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		mattn:go-colorable:v0.1.6:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \

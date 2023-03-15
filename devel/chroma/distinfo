@@ -1,4 +1,4 @@
-TIMESTAMP = 1623955039
+TIMESTAMP = 1678874258
 SHA256 (alecthomas-chroma-v0.9.2_GH0.tar.gz) = a669dcfd1f53c36fd952e290ed19371f60fa4905a9abdedf9e4d70a38b0e61f8
 SIZE (alecthomas-chroma-v0.9.2_GH0.tar.gz) = 737060
 SHA256 (alecthomas-assert-405dbfeb8e38_GH0.tar.gz) = 98220302569c728c0dc546ce946c4600aed4ab0729f6e9fc08b24b753cfcaa13
@@ -13,8 +13,8 @@ SHA256 (danwakefield-fnmatch-cbb64ac3d964_GH0.tar.gz) = 7ebff38d382142f9220d2cfc
 SIZE (danwakefield-fnmatch-cbb64ac3d964_GH0.tar.gz) = 4955
 SHA256 (dlclark-regexp2-v1.4.0_GH0.tar.gz) = 774718cb87c5cc7b954e4f17056f6a189c8d542ecbf989330296bc7e3885851b
 SIZE (dlclark-regexp2-v1.4.0_GH0.tar.gz) = 205882
-SHA256 (golang-sys-669c56c373c4_GH0.tar.gz) = f2f087da5058912cdbb6901ba01dc06be9da08e7ac4da9efa9bd18bf3b3d86a1
-SIZE (golang-sys-669c56c373c4_GH0.tar.gz) = 1050300
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (mattn-go-colorable-v0.1.6_GH0.tar.gz) = e313129503025c383b5e69082fb1144e83a864d12ec45bb7a224d3fc4a635fbc
 SIZE (mattn-go-colorable-v0.1.6_GH0.tar.gz) = 9472
 SHA256 (mattn-go-isatty-v0.0.12_GH0.tar.gz) = addbdc341d7685ed4cc8d2d8a8fd2bd9b784bde00d0ea99fb251039fc10c611c
