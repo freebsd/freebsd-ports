@@ -1,7 +1,7 @@
 PORTNAME=	matterbridge
 PORTVERSION=	1.22.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-im
 
 MAINTAINER=	swills@FreeBSD.org
@@ -15,6 +15,7 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	42wim
+GH_TUPLE=	golang:sys:v0.6.0:sys
 
 USE_RC_SUBR=	matterbridge
 
@@ -28,6 +29,10 @@ SUB_LIST=	\
 PLIST_SUB=	\
 		MATTERBRIDGE_USER=${MATTERBRIDGE_USER} \
 		MATTERBRIDGE_GROUP=${MATTERBRIDGE_GROUP}
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/matterbridge.toml.sample ${STAGEDIR}${PREFIX}/etc/matterbridge.toml.sample
