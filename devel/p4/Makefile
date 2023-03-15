@@ -12,7 +12,7 @@ DISTNAME=	${YEAR}-${MAJOR}
 DISTFILES=	${ZIP_FILES}
 DIST_SUBDIR=	perforce/p4
 
-MAINTAINER=	asomers@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce client
 WWW=		https://www.perforce.com/
 

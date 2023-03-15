@@ -14,7 +14,7 @@ DISTNAME=	${YEAR}-${MAJOR}
 DISTFILES=	${ZIP_FILES}:zip p4api.pdf:pdf
 EXTRACT_ONLY=	${ZIP_FILES}
 
-MAINTAINER=	asomers@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce API (static libraries and header files)
 WWW=		http://www.perforce.com/perforce/loadsupp.html
 
