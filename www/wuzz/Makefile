@@ -1,7 +1,7 @@
 PORTNAME=	wuzz
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ GH_TUPLE=	\
 		andybalholm:cascadia:v1.2.0:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		fatih:color:v1.9.0:fatih_color/vendor/github.com/fatih/color \
 		golang:net:627f9648deb9:golang_net/vendor/golang.org/x/net \
-		golang:sys:6fdc65e7d980:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		jroimartin:gocui:v0.4.0:jroimartin_gocui/vendor/github.com/jroimartin/gocui \
 		mattn:go-colorable:v0.1.6:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
