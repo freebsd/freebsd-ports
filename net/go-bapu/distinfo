@@ -1,4 +1,4 @@
-TIMESTAMP = 1594423636
+TIMESTAMP = 1678841881
 SHA256 (go-bapu/v0.3.0.tar.bz2) = e70a901f9cd1db04cdb6d00961bdf49194f22aa5e6eb215ae51b262d5409dcc1
 SIZE (go-bapu/v0.3.0.tar.bz2) = 101340
 SHA256 (go-bapu/davecgh-go-spew-v1.1.1_GH0.tar.gz) = 7d82b9bb7291adbe7498fe946920ab3e7fc9e6cbfc3b2294693fad00bf0dd17e
@@ -13,8 +13,8 @@ SHA256 (go-bapu/go-ini-ini-v1.51.0_GH0.tar.gz) = 6c98311d375afbe36a246c5d29acb5c
 SIZE (go-bapu/go-ini-ini-v1.51.0_GH0.tar.gz) = 43536
 SHA256 (go-bapu/go-yaml-yaml-v2.3.0_GH0.tar.gz) = 42027002bf258009d498600b04b8c9cbb29d2193185ea7bfa8fefe194fe72a07
 SIZE (go-bapu/go-yaml-yaml-v2.3.0_GH0.tar.gz) = 72816
-SHA256 (go-bapu/golang-sys-226ff32320da_GH0.tar.gz) = 3d19d1a291ede93a53edb14252d0ee046baa730be31825c7daa5dd33f994c184
-SIZE (go-bapu/golang-sys-226ff32320da_GH0.tar.gz) = 1054370
+SHA256 (go-bapu/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go-bapu/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (go-bapu/golang-text-v0.3.2_GH0.tar.gz) = 0b9309698f5708531c5377ab1e29b423a6d9e20c55a8d386c3b8283428212f22
 SIZE (go-bapu/golang-text-v0.3.2_GH0.tar.gz) = 7168069
 SHA256 (go-bapu/hashicorp-hcl-v1.0.0_GH0.tar.gz) = 50632428210503070fd2fde748c88b7414bf84a6a0eadebf9d8e596a033bead2

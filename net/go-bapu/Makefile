@@ -1,6 +1,6 @@
 PORTNAME=	bapu
 PORTVERSION=	0.3.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net
 MASTER_SITES=	https://bitbucket.org/carlostrub/bapu/get/
 PKGNAMEPREFIX=	go-
@@ -24,7 +24,7 @@ GH_TUPLE=	\
 		go-check:check:8fa46927fb4f:go_check_check/vendor/gopkg.in/check.v1 \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:sys:226ff32320da:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		kolo:xmlrpc:0826b98aaa29:kolo_xmlrpc/vendor/github.com/kolo/xmlrpc \
