@@ -17790,3 +17790,4 @@ devel/libpthread-stubs||2023-03-12|No consumers left and never supported pthread
 multimedia/mkvtoolnix-nox11|multimedia/mkvtoolnix@nogui|2023-03-13|Converted to flavor
 security/openssl-devel|security/openssl30|2023-03-14|3.0 is not devel, prevent confusion with 3.1
 net-p2p/openethereum||2023-03-15|Has expired: not maintained anymore
+devel/pydio-packr||2023-03-15|Was only used for building www/pydio-cells before, not needed anymore
