@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	1.8.4.4
+PORTVERSION=	1.9.0.0
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -40,7 +40,6 @@ NUGET_DEPENDS=	CS-Script.lib=3.30.3 \
 		System.Memory=4.5.5 \
 		System.Numerics.Vectors=4.5.0 \
 		System.Reactive=4.4.1 \
-		System.Runtime.CompilerServices.Unsafe=5.0.0 \
 		System.Runtime.CompilerServices.Unsafe=6.0.0 \
 		System.Text.Encoding.CodePages=6.0.0 \
 		System.Threading.Tasks.Extensions=4.5.4 \
