@@ -1,4 +1,4 @@
-TIMESTAMP = 1675917761
+TIMESTAMP = 1678909758
 SHA256 (warrensbox-terraform-switcher-0.13.1308_GH0.tar.gz) = ca6435b45a658113a8698f0456617167f0fe5e8156af3e2b8e91d113c6581e1a
 SIZE (warrensbox-terraform-switcher-0.13.1308_GH0.tar.gz) = 507151
 SHA256 (agext-levenshtein-v1.2.2_GH0.tar.gz) = b238bfd1dce6da173913c27cf2e172d58a55e7e6b7fc11736c7e45bd1af4818f
@@ -15,8 +15,8 @@ SHA256 (go-yaml-yaml-v2.4.0_GH0.tar.gz) = d8e94679e5fff6bd1a35e10241543929a5f3da
 SIZE (go-yaml-yaml-v2.4.0_GH0.tar.gz) = 73209
 SHA256 (go-yaml-yaml-v3.0.0_GH0.tar.gz) = 6777f98a913c60ba2a1980665883898168674da018bb7447fc55bb33460e4bed
 SIZE (go-yaml-yaml-v3.0.0_GH0.tar.gz) = 91138
-SHA256 (golang-sys-f75cf1eec38b_GH0.tar.gz) = 67e79007563906ac812f374af09ef9c063349d18719fa1254ec71093d13d882b
-SIZE (golang-sys-f75cf1eec38b_GH0.tar.gz) = 1306589
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.7_GH0.tar.gz) = 7cab2f6c3133ac1d422edd952b0dd2082fa55a73c2663fb2defd9bf83d649b26
 SIZE (golang-text-v0.3.7_GH0.tar.gz) = 8354718
 SHA256 (google-go-cmp-v0.5.8_GH0.tar.gz) = 34b57f44eb6ead7de4988fd91a8605f77ecb4a430ddbba36bada0d0224017222
