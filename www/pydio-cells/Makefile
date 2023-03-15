@@ -1,7 +1,6 @@
 PORTNAME=	cells
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.1.0
-PORTREVISION=	3
+DISTVERSION=	4.1.1
 CATEGORIES=	www
 PKGNAMEPREFIX=	pydio-
 
@@ -18,8 +17,6 @@ NOT_FOR_ARCHS_REASON=	Not supported on i386
 USES=		cpe go:1.19,modules gmake
 CPE_VENDOR=	pydio
 USE_RC_SUBR=	${PORTNAME}
-USE_GITHUB=	yes
-GH_ACCOUNT=	pydio
 
 GO_MODULE=	github.com/pydio/cells/v4
 GO_BUILDFLAGS=	-ldflags "-X github.com/pydio/cells/v4/common.version=${DISTVERSION}\
