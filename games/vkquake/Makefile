@@ -1,5 +1,5 @@
 PORTNAME=	vkquake
-DISTVERSION=	1.22.3
+DISTVERSION=	1.30.1
 CATEGORIES=	games
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,7 +9,8 @@ WWW=		https://github.com/Novum/vkQuake
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
+BUILD_DEPENDS=	glslangValidator:graphics/glslang \
+		vulkan-headers>0:graphics/vulkan-headers
 LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 
 WRKSRC_SUBDIR=	Quake
@@ -22,6 +23,7 @@ GH_ACCOUNT=	Novum
 GH_PROJECT=	vkQuake
 
 MAKE_ENV=	prefix=${PREFIX} bindir=${PREFIX}/bin VULKAN_SDK=${LOCALBASE}
+MAKE_ARGS=	HOST_CC="${CC}" CC="${CC}"
 ALL_TARGET=	# empty
 
 .include	"${.CURDIR}/../quake-data/Makefile.include"
