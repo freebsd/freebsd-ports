@@ -1,4 +1,4 @@
-TIMESTAMP = 1626382051
+TIMESTAMP = 1678844048
 SHA256 (chriswalz-bit-v1.1.2_GH0.tar.gz) = 563ae6b0fa279cb8ea8f66b4b455c7cb74a9e65a0edbe694505b2c8fc719b2ff
 SIZE (chriswalz-bit-v1.1.2_GH0.tar.gz) = 157191
 SHA256 (AlecAivazis-survey-v2.2.9_GH0.tar.gz) = 8011eadec37037a25a934f5a7a1bd9f49db05834ef5f9b1f14d00b555d05c220
@@ -21,8 +21,8 @@ SHA256 (go-yaml-yaml-a5ece683394c_GH0.tar.gz) = e4b738b2e3cd15fd5f76704d35d3b62d
 SIZE (go-yaml-yaml-a5ece683394c_GH0.tar.gz) = 88436
 SHA256 (golang-crypto-f99c8df09eb5_GH0.tar.gz) = dc797c3718a32db5df5b4fd4832d39c7c1be54fcde444e6eb9b1e4e4f5f3c7f9
 SIZE (golang-crypto-f99c8df09eb5_GH0.tar.gz) = 1690862
-SHA256 (golang-sys-635bc2c9138d_GH0.tar.gz) = 58dc8d299e966944202027c56b8d79417e6c68111f4cbd78ae7b10f22e040a94
-SIZE (golang-sys-635bc2c9138d_GH0.tar.gz) = 1218173
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.2_GH0.tar.gz) = 0b9309698f5708531c5377ab1e29b423a6d9e20c55a8d386c3b8283428212f22
 SIZE (golang-text-v0.3.2_GH0.tar.gz) = 7168069
 SHA256 (google-go-github-v17.0.0_GH0.tar.gz) = 75e6007d9a17b91864d1ef83de75c07abafbe05d82caaf140522b94299abfb16

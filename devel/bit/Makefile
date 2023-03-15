@@ -1,7 +1,7 @@
 PORTNAME=	bit
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -26,7 +26,7 @@ GH_TUPLE=	\
 		dsnet:compress:v0.0.1:dsnet_compress/vendor/github.com/dsnet/compress \
 		go-yaml:yaml:a5ece683394c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		golang:crypto:f99c8df09eb5:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:635bc2c9138d:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-github:v32.1.0:google_go_github_v32/vendor/github.com/google/go-github/v32 \
