@@ -1,6 +1,6 @@
 PORTNAME=	wl-mirror
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.0
+DISTVERSION=	0.13.1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -15,7 +15,7 @@ BROKEN_FreeBSD_12=	ld: error: undefined symbol: memfd_create
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
 LIB_DEPENDS=	libwayland-egl.so:graphics/wayland
 
-USES=		cmake gl localbase:ldflags
+USES=		cmake gl pkgconfig
 USE_GITHUB=	yes
 USE_GITLAB=	nodefault
 USE_GL=		glesv2 egl
