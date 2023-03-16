@@ -275,6 +275,7 @@
     SUBDIR += turbo
     SUBDIR += tweak
     SUBDIR += uemacs
+    SUBDIR += uhex
     SUBDIR += uzap
     SUBDIR += ved
     SUBDIR += vigor
