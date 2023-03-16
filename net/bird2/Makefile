@@ -1,5 +1,5 @@
 PORTNAME=	bird
-DISTVERSION=	2.0.11
+DISTVERSION=	2.0.12
 CATEGORIES=	net
 MASTER_SITES=	https://bird.network.cz/download/
 PKGNAMESUFFIX=	2
@@ -64,9 +64,8 @@ RPKI_LIB_DEPENDS=	libssh.so:security/libssh
 
 .if ${FLAVOR:U} == netlink
 CONFIGURE_ARGS+=--with-sysconfig=bsd-netlink
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-netlink
-.if ${OSVERSION} < 1400073
-BROKEN=No netlink support
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1302000
+IGNORE=	No netlink support
 .endif
 .endif
 
