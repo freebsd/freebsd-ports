@@ -1,0 +1,7 @@
+This package provides two Hatch plugins:
+
+* version source plugin that reads/writes the package version from the version
+  field of the Node.js package.json file.
+
+* metadata hook plugin that reads PEP 621 metadata from the Node.js
+  package.json file.
