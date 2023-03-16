@@ -3,6 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0-16
 DISTVERSIONSUFFIX=	-gafcd364e
 CATEGORIES=	misc # machine-learning
+PKGNAMESUFFIX=	-machine-learning-library
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Standalone C++ library for machine learning
