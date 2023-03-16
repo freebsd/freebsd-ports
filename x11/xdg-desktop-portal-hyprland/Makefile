@@ -1,5 +1,5 @@
 PORTNAME=	xdg-desktop-portal-hyprland
-PORTVERSION=	s20230203
+PORTVERSION=	s20230316
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -28,7 +28,7 @@ USES=		compiler:c11 gl meson pkgconfig
 USE_GITHUB=	yes
 USE_GL=		gbm
 GH_ACCOUNT=	hyprwm
-GH_TAGNAME=	a9b76c7
+GH_TAGNAME=	85f49f4
 GH_TUPLE=	hyprwm:hyprland-protocols:b8f55e0:hyprland_protocols/subprojects/hyprland-protocols
 MESON_ARGS=	-Dsd-bus-provider=basu
 PLIST_FILES=	libexec/${PORTNAME} \
