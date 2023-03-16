@@ -333,7 +333,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/sideicons/octicons_20x20/validate.png
 %%DATADIR%%/data/snippets_ct/std.HTML/config.json
 %%DATADIR%%/data/snippets_ct/std.HTML/snippets/HTML,HTML_,PHP.json
-%%DATADIR%%/data/themes/Zeus-CudaText.license.txt
 %%DATADIR%%/data/themes/amy.cuda-theme-syntax
 %%DATADIR%%/data/themes/amy.cuda-theme-ui
 %%DATADIR%%/data/themes/cobalt.cuda-theme-syntax
@@ -399,13 +398,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_comments/cd_comments.py
 %%DATADIR%%/py/cuda_comments/cd_plug_lib.py
 %%DATADIR%%/py/cuda_comments/install.inf
-%%DATADIR%%/py/cuda_emmet/__init__.py
-%%DATADIR%%/py/cuda_emmet/content.css
-%%DATADIR%%/py/cuda_emmet/dlg_emmet.py
-%%DATADIR%%/py/cuda_emmet/help.html
-%%DATADIR%%/py/cuda_emmet/install.inf
-%%DATADIR%%/py/cuda_emmet/proc_snip_insert.py
-%%DATADIR%%/py/cuda_emmet/profiles_list.py
 %%DATADIR%%/py/cuda_insert_time/__init__.py
 %%DATADIR%%/py/cuda_insert_time/install.inf
 %%DATADIR%%/py/cuda_lexer_detecter/__init__.py
@@ -446,8 +438,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/py/cuda_project_man/readme/history.txt
 %%DATADIR%%/py/cuda_project_man/readme/license.txt
 %%DATADIR%%/py/cuda_project_man/readme/readme.txt
-%%DATADIR%%/py/cuda_show_unsaved/__init__.py
-%%DATADIR%%/py/cuda_show_unsaved/install.inf
 %%DATADIR%%/py/cuda_snippet_panel/__init__.py
 %%DATADIR%%/py/cuda_snippet_panel/clips/Arrows/List.txt
 %%DATADIR%%/py/cuda_snippet_panel/clips/Currency symbols/List.txt
@@ -613,6 +603,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/readme/license.idna.txt
 %%DATADIR%%/readme/license.requests.txt
 %%DATADIR%%/readme/license.urllib3.txt
+%%DATADIR%%/readme/license.zeus-theme.txt
 %%DATADIR%%/readme/tutorials/LexerConfig.odt
 %%DATADIR%%/readme/tutorials/LexerIndentFolding.odt
 %%DATADIR%%/readme/tutorials/TutorialLexer1.odt
@@ -698,6 +689,7 @@ share/applications/cudatext.desktop
 %%DATADIR%%/settings_default/lexer Bash script.json
 %%DATADIR%%/settings_default/lexer C++.json
 %%DATADIR%%/settings_default/lexer C.json
+%%DATADIR%%/settings_default/lexer CSS.json
 %%DATADIR%%/settings_default/lexer JSON.json
 %%DATADIR%%/settings_default/lexer JavaScript.json
 %%DATADIR%%/settings_default/lexer Lua.json
