@@ -6914,7 +6914,6 @@
     SUBDIR += rubygem-nsa-rails61
     SUBDIR += rubygem-numerizer
     SUBDIR += rubygem-oci
-    SUBDIR += rubygem-octicons
     SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-oj-introspect
