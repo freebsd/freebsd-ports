@@ -1,7 +1,6 @@
 PORTNAME=	ringrtc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.25.0
-PORTREVISION=	1
+DISTVERSION=	2.25.1
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/mikael/ringrtc/:base \
 		LOCAL/mikael/ringrtc/:boringssl \
@@ -58,7 +57,7 @@ EXTRA_PATCHES+=	${"${:!${GREP} mempcpy ${CROSS_SYSROOT}/usr/include/string.h \
 	|| ${TRUE}!}" == "":?${PATCHDIR}/extra-patch-no-mempcpy-nasm:}
 
 # sh net-im/signal-desktop/get_deps.sh
-WEBRTC_REV=	5359d
+WEBRTC_REV=	5481
 
 # modify webrtc_fetch.sh, then sh webrtc_fetch.sh
 BASE_REV=		b054aaefd4d4ec5aad7189c4e97000a06b594163
@@ -75,7 +74,7 @@ NASM_REV=		9215e8e1d0fe474ffd3e16c1a07a0f97089e6224
 TESTING_REV=		6f2362298838e8789b09282cf198c8582f9c4555
 THIRD_PARTY_REV=	28a4580f804c4fc4279ecf10100a409811030235
 
-BINARY_ALIAS=	python3=${PYTHON_CMD}
+BINARY_ALIAS=	vpython3=${PYTHON_CMD}
 
 # Keep in sync with https://github.com/signalapp/ringrtc/blob/${DISTVERSION}/bin/build-electron#L96
 # Run "gn args out/Release --list" for all variables.
@@ -102,7 +101,7 @@ MAKE_ARGS=	-C out/${BUILDTYPE}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}/src/rust
 WEBRTCDIR=	${WRKDIR}/${PORTNAME}-${DISTVERSION}/src/webrtc/src
 
-# fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.25.0/src/rust/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile
+# fetch -qo - https://raw.githubusercontent.com/signalapp/ringrtc/v2.25.1/src/rust/Cargo.lock | awk -f /usr/ports/Mk/Scripts/cargo-crates.awk | portedit merge -i Makefile
 CARGO_CRATES=	adler-1.0.2 \
 		aes-0.8.2 \
 		aho-corasick-0.7.20 \
@@ -220,7 +219,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		syn-1.0.107 \
 		syn-mid-0.5.3 \
 		synstructure-0.12.6 \
-		sysinfo-0.27.7 \
+		sysinfo-0.28.0 \
 		tempfile-3.3.0 \
 		termcolor-1.2.0 \
 		thiserror-1.0.38 \
