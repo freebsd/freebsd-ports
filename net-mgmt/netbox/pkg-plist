@@ -409,6 +409,7 @@
 %%DATADIR%%/extras/forms/bulk_import.py
 %%DATADIR%%/extras/forms/config.py
 %%DATADIR%%/extras/forms/filtersets.py
+%%DATADIR%%/extras/forms/misc.py
 %%DATADIR%%/extras/forms/mixins.py
 %%DATADIR%%/extras/forms/model_forms.py
 %%DATADIR%%/extras/forms/reports.py
@@ -724,6 +725,7 @@
 %%DATADIR%%/project-static/src/buttons/connectionToggle.ts
 %%DATADIR%%/project-static/src/buttons/depthToggle.ts
 %%DATADIR%%/project-static/src/buttons/index.ts
+%%DATADIR%%/project-static/src/buttons/markdownPreview.ts
 %%DATADIR%%/project-static/src/buttons/moveOptions.ts
 %%DATADIR%%/project-static/src/buttons/reslug.ts
 %%DATADIR%%/project-static/src/buttons/selectAll.ts
@@ -1170,6 +1172,7 @@
 %%DATADIR%%/utilities/templates/tabs/model_view_tabs.html
 %%DATADIR%%/utilities/templates/widgets/clearable_file_input.html
 %%DATADIR%%/utilities/templates/widgets/colorselect_option.html
+%%DATADIR%%/utilities/templates/widgets/markdown_input.html
 %%DATADIR%%/utilities/templates/widgets/select_duration.html
 %%DATADIR%%/utilities/templates/widgets/select_option.html
 %%DATADIR%%/utilities/templates/widgets/select_option_with_pk.html

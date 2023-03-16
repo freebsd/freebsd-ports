@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.5
+DISTVERSION=	3.4.6
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -24,16 +24,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj41-djangorestframework (in conjunction with www/py-dj41-drf-yasg)
 #
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django41>=4.1.7<4.2:www/py-django41@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj41-django-cors-headers>=3.13.0<4:www/py-dj41-django-cors-headers@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj41-django-cors-headers>=3.14.0<4:www/py-dj41-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-debug-toolbar>=3.7.0<4:www/py-dj41-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-filter>=22.1<23:www/py-dj41-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-graphiql-debug-toolbar>=0.2.0<1:www/py-dj41-django-graphiql-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-mptt>=0.14.0<0.15:www/py-dj41-django-mptt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-prometheus>=2.2.0<2.3:www/py-dj41-django-prometheus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-redis>=5.2.0<6:www/py-dj41-django-redis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj41-django-rich>=1.4.0<2:www/py-dj41-django-rich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj41-django-rich>=1.5.0<2:www/py-dj41-django-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-rq>=2.7.0<2.8:devel/py-dj41-django-rq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj41-django-tables2>=2.5.2<2.6:www/py-dj41-django-tables2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj41-django-tables2>=2.5.3<2.6:www/py-dj41-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-taggit>=3.1.0<4:www/py-dj41-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-timezone-field>=5.0<6:www/py-dj41-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-djangorestframework>=3.14.0<3.15.0:www/py-dj41-djangorestframework@${PY_FLAVOR} \
@@ -44,7 +44,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django41>=4.1.7<4.2:www/py-django41@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.1.2<4:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.7<3.4:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown-include>=0.7.0<1:textproc/py-markdown-include@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=8.5.11<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mkdocs-material>=9.1.2<10:textproc/py-mkdocs-material@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mkdocstrings>=0.17.0<1:textproc/py-mkdocstrings@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netaddr>=0.8.0<1:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pillow>=9.4.0:graphics/py-pillow@${PY_FLAVOR} \
