@@ -205,6 +205,7 @@
     SUBDIR += lite-xl
     SUBDIR += marker
     SUBDIR += mg
+    SUBDIR += mickey
     SUBDIR += micro
     SUBDIR += mined
     SUBDIR += mle
