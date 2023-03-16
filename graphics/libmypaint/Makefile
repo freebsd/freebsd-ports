@@ -1,6 +1,6 @@
 PORTNAME=	libmypaint
 DISTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mypaint/libmypaint/releases/download/v${PORTVERSION}/
 
@@ -24,6 +24,7 @@ TEST_TARGET=	check
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	NLS OPENMP
 OPTIONS_DEFAULT_amd64=	OPENMP
+OPTIONS_DEFAULT_powerpc64=	OPENMP
 OPTIONS_DEFAULT_powerpc64le=	OPENMP
 
 NLS_USES=	gettext
