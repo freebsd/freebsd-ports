@@ -1,5 +1,5 @@
 PORTNAME=	nim
-DISTVERSION=	1.6.10
+DISTVERSION=	1.6.12
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -93,15 +93,15 @@ do-install-DOCS-on:
 	${FIND} ${WRKSRC}/doc -name "*.idx" -delete
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR})
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/nim/dochack
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.nim ${STAGEDIR}${PREFIX}/share/nim/dochack
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.js ${STAGEDIR}${PREFIX}/share/nim/dochack
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/fuzzysearch.nim ${STAGEDIR}${PREFIX}/share/nim/dochack
 
 do-install-TOOLS-on:
 .for t in ${TLIST}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${t} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/nim/dochack
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.nim ${STAGEDIR}${PREFIX}/share/nim/dochack
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/dochack.js ${STAGEDIR}${PREFIX}/share/nim/dochack
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/dochack/fuzzysearch.nim ${STAGEDIR}${PREFIX}/share/nim/dochack
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ./koch test all -d:release \
