@@ -1,3 +1,36 @@
+  <vuln vid="72583cb3-a7f9-11ed-bd9e-589cfc0f81b0">
+    <topic>phpMyAdmin -- XSS vulnerability in drag-and-drop upload</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<name>phpMyAdmin-php80</name>
+	<name>phpMyAdmin-php81</name>
+	<name>phpMyAdmin-php82</name>
+	<name>phpMyAdmin5</name>
+	<name>phpMyAdmin5-php80</name>
+	<name>phpMyAdmin5-php81</name>
+	<name>phpMyAdmin5-php82</name>
+	<range><lt>4.9.11</lt></range>
+	<range><ge>5.0</ge><lt>5.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyAdmin Team reports:</p>
+	<blockquote cite="https://www.phpmyadmin.net/news/2023/2/8/phpmyadmin-4911-and-521-are-released/">
+	  <p>PMASA-2023-1 XSS vulnerability in drag-and-drop upload</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.phpmyadmin.net/security/PMASA-2023-1/</url>
+    </references>
+    <dates>
+      <discovery>2023-02-07</discovery>
+      <entry>2023-03-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8edeb3c1-bfe7-11ed-96f5-3497f65b111b">
     <topic>Apache httpd -- Multiple vulnerabilities</topic>
     <affects>
