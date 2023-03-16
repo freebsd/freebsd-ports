@@ -12,6 +12,7 @@
     SUBDIR += bee-host
     SUBDIR += biew
     SUBDIR += bined
+    SUBDIR += bingrok
     SUBDIR += bitedit
     SUBDIR += bless
     SUBDIR += boiling-egg
