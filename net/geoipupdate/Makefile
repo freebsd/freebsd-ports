@@ -1,5 +1,5 @@
 PORTNAME=	geoipupdate
-PORTVERSION=	4.11.0
+PORTVERSION=	4.11.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -54,5 +54,8 @@ do-install-DOCS-on:
 do-install-MANPAGES-on:
 	${INSTALL_MAN} ${WRKSRC}/build/geoipupdate.1 ${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/build/GeoIP.conf.5  ${STAGEDIR}${MANPREFIX}/man/man5
+
+do-test:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} GOPROXY=off ${GO_CMD} test ${GO_TESTFLAGS} ./...
 
 .include <bsd.port.mk>
