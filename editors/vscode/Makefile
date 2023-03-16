@@ -1,19 +1,12 @@
 PORTNAME=	vscode
-DISTVERSION=	1.76.1
+DISTVERSION=	1.76.2
 CATEGORIES=	editors
-MASTER_SITES=	https://registry.npmjs.org/esbuild-freebsd-64/-/:esbuild_binary \
-		https://nodejs.org/dist/v${NODE_VER}/:node_headers \
+MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
-DISTFILES=	esbuild-freebsd-64-${ESBUILD_VER_BUILD}.tgz:esbuild_binary \
-		esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}.tgz:esbuild_binary \
-		node-v${NODE_VER}-headers${EXTRACT_SUFX}:node_headers \
+DISTFILES=	node-v${NODE_VER}-headers${EXTRACT_SUFX}:node_headers \
 		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
 		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
 DIST_SUBDIR=	${PORTNAME}
-EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
-		node-v${NODE_VER}-headers${EXTRACT_SUFX} \
-		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX} \
-		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Visual Studio Code - Open Source ("Code - OSS")
@@ -71,7 +64,7 @@ USES=		desktop-file-utils gl gmake gnome iconv jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	5e805b79fcb6ba4c2d23712967df89a089da575b
+SOURCE_COMMIT_HASH=	ee2b180d582a7f601fa6ecfdad8d9fd269ab1884
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
@@ -120,20 +113,6 @@ pre-everything::
 	@${ECHO_MSG} "line to poudriere.conf:"
 	@${ECHO_MSG} "MAX_FILES_${PORTNAME}=4096"
 	@${ECHO_MSG} ""
-
-post-extract:
-	# setup download cache for esbuild binary
-	${MKDIR} ${WRKDIR}/.cache/esbuild/bin
-	${MKDIR} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}
-	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}.tgz \
-		-C ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}
-	${MV} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_BUILD}/package/bin/esbuild \
-		${WRKDIR}/.cache/esbuild/bin/esbuild-freebsd-64@${ESBUILD_VER_BUILD}
-	${MKDIR} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}
-	${TAR} -xzf ${DISTDIR}/${DIST_SUBDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}.tgz \
-		-C ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}
-	${MV} ${WRKDIR}/esbuild-freebsd-64-${ESBUILD_VER_EXTENSIONS}/package/bin/esbuild \
-		${WRKDIR}/.cache/esbuild/bin/esbuild-freebsd-64@${ESBUILD_VER_EXTENSIONS}
 
 post-patch:
 	# force use of electron version matching port one
