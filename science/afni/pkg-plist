@@ -797,7 +797,6 @@ lib/afni/plug_vol2surf.so
 lib/afni/plug_volreg.so
 lib/afni/plug_wavelets.so
 lib/afni/plug_zeropad.so
- %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_instacorr_tcat.py
 %%PYTHON_SITELIBDIR%%/afnipy/__init__.py
 %%PYTHON_SITELIBDIR%%/afnipy/abids_lib.py
 %%PYTHON_SITELIBDIR%%/afnipy/afni_base.py
@@ -817,6 +816,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_html.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_html_css.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_instacorr.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_instacorr_tcat.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_io.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_stats_dset.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_tcsh.py
@@ -829,6 +829,7 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_fat_plot_sel.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_format_cmd_str.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_gershgorin.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_gssrt.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_info_dict.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_base.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_mat2d_plot.py
@@ -1083,6 +1084,7 @@ lib/afni/plug_zeropad.so
 %%DATADIR%%/funstuff/face_jbacon.jpg
 %%DATADIR%%/funstuff/face_jbinder.jpg
 %%DATADIR%%/funstuff/face_jbjork.jpg
+%%DATADIR%%/funstuff/face_jbteves.jpg
 %%DATADIR%%/funstuff/face_jcbeer.jpg
 %%DATADIR%%/funstuff/face_jchoi.jpg
 %%DATADIR%%/funstuff/face_jeff_bloch.jpg
