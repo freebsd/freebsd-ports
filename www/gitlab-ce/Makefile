@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.8.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # which makes maintaining this long list much easier!
 # devel/rubygem-parser is required for database upgrade process
 # see https://gitlab.com/gitlab-org/gitlab/-/issues/350866
+# mail/rubygem-net-smtp is required as ruby 3.1 removed it
+# textproc/rubygem-psych3 is required as ruby 3.1 applied an update to psych 4.0 which has breaking changes
+# mail/rubygem-net-pop is required as ruby 3.1 removed it
 MY_DEPENDS=	git>=2.39.2:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
 	gitlab-elasticsearch-indexer>=3.2.0:textproc/gitlab-elasticsearch-indexer \
@@ -26,6 +29,9 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
+	rubygem-net-smtp>=0:mail/rubygem-net-smtp \
+	rubygem-net-pop>=0:mail/rubygem-net-pop \
+	rubygem-psych3>=3.1<4:textproc/rubygem-psych3 \
 	rubygem-rails61>=6.1.6.1<6.1.8:www/rubygem-rails61 \
 	rubygem-bootsnap115>=1.15.0<1.16:devel/rubygem-bootsnap115 \
 	rubygem-openssl2>=2.2.2<2.3:security/rubygem-openssl2 \
