@@ -25,6 +25,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/DISTRIB
 %%DATADIR%%/%%EMACS_VER%%/etc/DOC
 %%DATADIR%%/%%EMACS_VER%%/etc/ERC-NEWS
+%%DATADIR%%/%%EMACS_VER%%/etc/EGLOT-NEWS
 %%DATADIR%%/%%EMACS_VER%%/etc/ETAGS.EBNF
 %%DATADIR%%/%%EMACS_VER%%/etc/ETAGS.README
 %%DATADIR%%/%%EMACS_VER%%/etc/HELLO
@@ -3511,6 +3512,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/eglot.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/elisp-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/elisp-mode.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/elixir-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/elixir-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/erts-mode.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/erts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/etags.el.gz
@@ -3537,6 +3540,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/grep.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/gud.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/gud.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/heex-ts-mode.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/heex-ts-mode.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/hideif.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/hideif.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/progmodes/hideshow.el.gz
