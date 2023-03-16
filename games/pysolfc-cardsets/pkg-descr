@@ -1,9 +1,7 @@
 This is collection of free cardsets adapted for use with PySolFC,
 including large cards for high resolution displays (or for the
-vision impaired).
-
-It is provided as a separate package to keep the main distribution
-reasonably small.
+vision impaired).  It is provided as a separate package to keep
+the main distribution reasonably small.
 
 The "bknoll" cardsets were adapted from Byron Knoll's public-domain
 card images.  The large and huge sets are large enough to be used

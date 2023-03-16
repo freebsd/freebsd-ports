@@ -1,5 +1,5 @@
 PORTNAME=	pysolfc-cardsets
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	games
 MASTER_SITES=	SF/pysolfc/PySolFC-Cardsets/PySolFC-Cardsets-${PORTVERSION}/ \
 		https://slackware.uk/~urchlay/src/:bk
@@ -22,9 +22,9 @@ post-extract:
 # Remove cardsets which are bundled with PySolFC main distribution
 .for set in 2000 crystal-mahjongg dondorf dashavatara-ganjifa-xl \
     dashavatara-ganjifa gnome-mahjongg-1 hanafuda-200-years hexadeck \
-    louie-mantia-hanafuda matrix mughal-ganjifa mughal-ganjifa-xl \
-    neo neo-hex neo-tarock next-matrix oxymoron standard tuxedo \
-    uni-mahjongg vienna-2k
+    louie-mantia-hanafuda matching matching-xl matrix mughal-ganjifa \
+    mughal-ganjifa-xl neo neo-hex neo-tarock next-matrix oxymoron \
+    standard tuxedo uni-mahjongg vienna-2k
 	@${RM} -r ${WRKSRC}/cardset-${set}
 .endfor
 # Garbage-collect temporary cache files created by image viewers
