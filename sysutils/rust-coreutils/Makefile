@@ -1,6 +1,6 @@
 PORTNAME=	rust-coreutils
 PORTVERSION=	0.0.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 
 PATCH_SITES=	https://github.com/uutils/coreutils/commit/
