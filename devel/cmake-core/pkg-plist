@@ -7,8 +7,10 @@ bin/ctest
 %%DATADIR%%/Help/command/FIND_XXX_ORDER.txt
 %%DATADIR%%/Help/command/FIND_XXX_REGISTRY_VIEW.txt
 %%DATADIR%%/Help/command/FIND_XXX_ROOT.txt
+%%DATADIR%%/Help/command/GENEX_NOTE.txt
 %%DATADIR%%/Help/command/LINK_OPTIONS_LINKER.txt
 %%DATADIR%%/Help/command/OPTIONS_SHELL.txt
+%%DATADIR%%/Help/command/SUPPORTED_LANGUAGES.txt
 %%DATADIR%%/Help/command/add_compile_definitions.rst
 %%DATADIR%%/Help/command/add_compile_options.rst
 %%DATADIR%%/Help/command/add_custom_command.rst
@@ -177,6 +179,7 @@ bin/ctest
 %%DATADIR%%/Help/envvar/CMAKE_TOOLCHAIN_FILE.rst
 %%DATADIR%%/Help/envvar/CSFLAGS.rst
 %%DATADIR%%/Help/envvar/CTEST_INTERACTIVE_DEBUG_MODE.rst
+%%DATADIR%%/Help/envvar/CTEST_NO_TESTS_ACTION.rst
 %%DATADIR%%/Help/envvar/CTEST_OUTPUT_ON_FAILURE.rst
 %%DATADIR%%/Help/envvar/CTEST_PARALLEL_LEVEL.rst
 %%DATADIR%%/Help/envvar/CTEST_PROGRESS_OUTPUT.rst
@@ -250,6 +253,7 @@ bin/ctest
 %%DATADIR%%/Help/manual/cmake-buildsystem.7.rst
 %%DATADIR%%/Help/manual/cmake-commands.7.rst
 %%DATADIR%%/Help/manual/cmake-compile-features.7.rst
+%%DATADIR%%/Help/manual/cmake-configure-log.7.rst
 %%DATADIR%%/Help/manual/cmake-developer.7.rst
 %%DATADIR%%/Help/manual/cmake-env-variables.7.rst
 %%DATADIR%%/Help/manual/cmake-file-api.7.rst
@@ -683,6 +687,7 @@ bin/ctest
 %%DATADIR%%/Help/policy/CMP0140.rst
 %%DATADIR%%/Help/policy/CMP0141.rst
 %%DATADIR%%/Help/policy/CMP0142.rst
+%%DATADIR%%/Help/policy/CMP0143.rst
 %%DATADIR%%/Help/policy/DEPRECATED.txt
 %%DATADIR%%/Help/policy/DISALLOWED_COMMAND.txt
 %%DATADIR%%/Help/prop_cache/ADVANCED.rst
@@ -781,6 +786,7 @@ bin/ctest
 %%DATADIR%%/Help/prop_sf/COMPILE_DEFINITIONS_CONFIG.rst
 %%DATADIR%%/Help/prop_sf/COMPILE_FLAGS.rst
 %%DATADIR%%/Help/prop_sf/COMPILE_OPTIONS.rst
+%%DATADIR%%/Help/prop_sf/CXX_SCAN_FOR_MODULES.rst
 %%DATADIR%%/Help/prop_sf/EXTERNAL_OBJECT.rst
 %%DATADIR%%/Help/prop_sf/Fortran_FORMAT.rst
 %%DATADIR%%/Help/prop_sf/Fortran_PREPROCESS.rst
@@ -941,6 +947,7 @@ bin/ctest
 %%DATADIR%%/Help/prop_tgt/CXX_MODULE_SET.rst
 %%DATADIR%%/Help/prop_tgt/CXX_MODULE_SETS.rst
 %%DATADIR%%/Help/prop_tgt/CXX_MODULE_SET_NAME.rst
+%%DATADIR%%/Help/prop_tgt/CXX_SCAN_FOR_MODULES.rst
 %%DATADIR%%/Help/prop_tgt/CXX_STANDARD.rst
 %%DATADIR%%/Help/prop_tgt/CXX_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/prop_tgt/C_EXTENSIONS.rst
@@ -1051,6 +1058,7 @@ bin/ctest
 %%DATADIR%%/Help/prop_tgt/JOB_POOL_PRECOMPILE_HEADER.rst
 %%DATADIR%%/Help/prop_tgt/LABELS.rst
 %%DATADIR%%/Help/prop_tgt/LANG_CLANG_TIDY.rst
+%%DATADIR%%/Help/prop_tgt/LANG_CLANG_TIDY_EXPORT_FIXES_DIR.rst
 %%DATADIR%%/Help/prop_tgt/LANG_COMPILER_LAUNCHER.rst
 %%DATADIR%%/Help/prop_tgt/LANG_CPPCHECK.rst
 %%DATADIR%%/Help/prop_tgt/LANG_CPPLINT.rst
@@ -1262,6 +1270,7 @@ bin/ctest
 %%DATADIR%%/Help/release/3.23.rst
 %%DATADIR%%/Help/release/3.24.rst
 %%DATADIR%%/Help/release/3.25.rst
+%%DATADIR%%/Help/release/3.26.rst
 %%DATADIR%%/Help/release/3.3.rst
 %%DATADIR%%/Help/release/3.4.rst
 %%DATADIR%%/Help/release/3.5.rst
@@ -1387,6 +1396,7 @@ bin/ctest
 %%DATADIR%%/Help/variable/CMAKE_CURRENT_SOURCE_DIR.rst
 %%DATADIR%%/Help/variable/CMAKE_CXX_COMPILE_FEATURES.rst
 %%DATADIR%%/Help/variable/CMAKE_CXX_EXTENSIONS.rst
+%%DATADIR%%/Help/variable/CMAKE_CXX_SCAN_FOR_MODULES.rst
 %%DATADIR%%/Help/variable/CMAKE_CXX_STANDARD.rst
 %%DATADIR%%/Help/variable/CMAKE_CXX_STANDARD_REQUIRED.rst
 %%DATADIR%%/Help/variable/CMAKE_C_COMPILE_FEATURES.rst
@@ -1530,6 +1540,7 @@ bin/ctest
 %%DATADIR%%/Help/variable/CMAKE_LANG_ARCHIVE_FINISH.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_BYTE_ORDER.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_CLANG_TIDY.rst
+%%DATADIR%%/Help/variable/CMAKE_LANG_CLANG_TIDY_EXPORT_FIXES_DIR.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_ABI.rst
 %%DATADIR%%/Help/variable/CMAKE_LANG_COMPILER_AR.rst
@@ -1783,6 +1794,8 @@ bin/ctest
 %%DATADIR%%/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_IDENTIFIER.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_TARGETS_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_TARGET_FRAMEWORK_VERSION.rst
+%%DATADIR%%/Help/variable/CMAKE_VS_VERSION_BUILD_NUMBER.rst
+%%DATADIR%%/Help/variable/CMAKE_VS_VERSION_BUILD_NUMBER_COMPONENTS.txt
 %%DATADIR%%/Help/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_WINDOWS_TARGET_PLATFORM_VERSION_MAXIMUM.rst
 %%DATADIR%%/Help/variable/CMAKE_VS_WINRT_BY_DEFAULT.rst
@@ -1977,6 +1990,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeASM-ATTInformation.cmake
 %%DATADIR%%/Modules/CMakeASMCompiler.cmake.in
 %%DATADIR%%/Modules/CMakeASMInformation.cmake
+%%DATADIR%%/Modules/CMakeASM_MARMASMInformation.cmake
 %%DATADIR%%/Modules/CMakeASM_MASMInformation.cmake
 %%DATADIR%%/Modules/CMakeASM_NASMInformation.cmake
 %%DATADIR%%/Modules/CMakeAddFortranSubdirectory.cmake
@@ -2010,6 +2024,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeDependentOption.cmake
 %%DATADIR%%/Modules/CMakeDetermineASM-ATTCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineASMCompiler.cmake
+%%DATADIR%%/Modules/CMakeDetermineASM_MARMASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineASM_MASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineASM_NASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeDetermineCCompiler.cmake
@@ -2097,6 +2112,7 @@ bin/ctest
 %%DATADIR%%/Modules/CMakeSystemSpecificInitialize.cmake
 %%DATADIR%%/Modules/CMakeTestASM-ATTCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestASMCompiler.cmake
+%%DATADIR%%/Modules/CMakeTestASM_MARMASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestASM_MASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestASM_NASMCompiler.cmake
 %%DATADIR%%/Modules/CMakeTestCCompiler.cmake
@@ -3010,6 +3026,10 @@ bin/ctest
 %%DATADIR%%/Modules/Platform/Windows-df.cmake
 %%DATADIR%%/Modules/Platform/Windows-windres.cmake
 %%DATADIR%%/Modules/Platform/Windows.cmake
+%%DATADIR%%/Modules/Platform/Windows3x-OpenWatcom-C.cmake
+%%DATADIR%%/Modules/Platform/Windows3x-OpenWatcom-CXX.cmake
+%%DATADIR%%/Modules/Platform/Windows3x-OpenWatcom.cmake
+%%DATADIR%%/Modules/Platform/Windows3x.cmake
 %%DATADIR%%/Modules/Platform/WindowsCE-MSVC-C.cmake
 %%DATADIR%%/Modules/Platform/WindowsCE-MSVC-CXX.cmake
 %%DATADIR%%/Modules/Platform/WindowsCE.cmake
@@ -3103,6 +3123,7 @@ bin/ctest
 %%DATADIR%%/Templates/MSBuild/FlagTables/v10_CudaHost.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v10_LIB.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v10_Link.json
+%%DATADIR%%/Templates/MSBuild/FlagTables/v10_MARMASM.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v10_MASM.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v10_NASM.json
 %%DATADIR%%/Templates/MSBuild/FlagTables/v10_RC.json
