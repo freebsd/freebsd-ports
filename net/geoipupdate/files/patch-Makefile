@@ -5,7 +5,7 @@
  
  $(BUILDDIR)/geoipupdate: $(BUILDDIR)
 -	(cd cmd/geoipupdate && go build -ldflags '-X main.defaultConfigFile=$(CONFFILE) -X main.defaultDatabaseDirectory=$(DATADIR) -X "main.version=$(VERSION)"')
-+	(cd cmd/geoipupdate && go build -mod=vendor -ldflags '-X main.defaultConfigFile=$(CONFFILE) -X main.defaultDatabaseDirectory=$(DATADIR) -X "main.version=$(VERSION)"')
++	(cd cmd/geoipupdate && go build -v -mod=vendor -ldflags '-X main.defaultConfigFile=$(CONFFILE) -X main.defaultDatabaseDirectory=$(DATADIR) -X "main.version=$(VERSION)"')
  	cp cmd/geoipupdate/geoipupdate $(BUILDDIR)
  
  $(BUILDDIR)/GeoIP.conf: $(BUILDDIR) conf/GeoIP.conf.default
