@@ -1,6 +1,5 @@
 PORTNAME=	glib-networking
-PORTVERSION=	2.74.0
-PORTREVISION=	1
+PORTVERSION=	2.76.0
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -22,8 +21,6 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
 		python:3.7+,build tar:xz
 USE_GNOME=	glib20
-
-MESON_ARGS=	-Denvironment_proxy=enabled
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
