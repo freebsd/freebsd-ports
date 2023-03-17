@@ -1,5 +1,5 @@
-TIMESTAMP = 1644133813
-SHA256 (go/sysutils_packer/packer-v1.7.10/v1.7.10.mod) = c0497db47ef8d24b1812ae4d395c20bc574ad15b29603de51900dcc217e68203
-SIZE (go/sysutils_packer/packer-v1.7.10/v1.7.10.mod) = 14034
-SHA256 (go/sysutils_packer/packer-v1.7.10/v1.7.10.zip) = ac42570acb9133b5601f5a80746d79a1efbd3765159d78c669c6a0466cb1b6b4
-SIZE (go/sysutils_packer/packer-v1.7.10/v1.7.10.zip) = 2914932
+TIMESTAMP = 1678912562
+SHA256 (go/sysutils_packer/packer-v1.8.6/v1.8.6.mod) = 9761a8a1390bff2ad78945f330d69f817e61c619ba0fcdc776920e6f2b117c31
+SIZE (go/sysutils_packer/packer-v1.8.6/v1.8.6.mod) = 14037
+SHA256 (go/sysutils_packer/packer-v1.8.6/v1.8.6.zip) = 502ab1aff0d34e46c898e18aee057b52d3f6f8afb2dece29bee7bd9727b5404f
+SIZE (go/sysutils_packer/packer-v1.8.6/v1.8.6.zip) = 2767002
