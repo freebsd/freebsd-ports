@@ -60,6 +60,7 @@
     SUBDIR += ffaudioconverter
     SUBDIR += ffdec
     SUBDIR += ffmpeg
+    SUBDIR += ffmpeg4
     SUBDIR += ffmpegthumbnailer
     SUBDIR += ffms2
     SUBDIR += ffnvcodec-headers
