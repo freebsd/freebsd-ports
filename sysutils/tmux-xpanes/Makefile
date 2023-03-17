@@ -1,6 +1,6 @@
 PORTNAME=		tmux-xpanes
 DISTVERSIONPREFIX=	v
-DISTVERSION=		4.1.3
+DISTVERSION=		4.1.4
 CATEGORIES=		sysutils
 
 MAINTAINER=	vidar@karlsen.tech
