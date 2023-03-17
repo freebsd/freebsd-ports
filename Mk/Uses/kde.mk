@@ -189,6 +189,8 @@ IGNORE?=		unknown CATEGORY value '${_KDE_CATEGORY}' #'
 .    endif #defined(_KDE_CATEGORY)
 
 # ==============================================================================
+# === SET UP LOCALE ENVIRONMENT =================================================
+USE_LOCALE?=	en_US.UTF-8
 
 # === SET UP CMAKE ENVIRONMENT =================================================
 # Help cmake to find files when testing ports with non-default PREFIX.
