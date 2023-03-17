@@ -1,42 +1,39 @@
 PORTNAME=	cpu-x
-PORTVERSION=	4.0.1
+PORTVERSION=	4.5.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Gathers information about CPU, motherboard, and more
-WWW=		https://x0rg.github.io/CPU-X/
+WWW=		https://thetumultuousunicornofdarkness.github.io/CPU-X/
 
-LICENSE=	GPLv3
+LICENSE=	GPLv3+
 
 BUILD_DEPENDS=	nasm:devel/nasm
 LIB_DEPENDS=	libcpuid.so:sysutils/libcpuid \
 		libpci.so:devel/libpci \
 		libstatgrab.so:devel/libstatgrab
 
+USES=		cmake ncurses pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	X0rg
+GH_ACCOUNT=	TheTumultuousUnicornOfDarkness
 GH_PROJECT=	${PORTNAME:tu}
-
-USES=		cmake gettext ncurses pkgconfig
+CMAKE_OFF=	WITH_LIBGLFW WITH_VULKAN WITH_OPENCL
 
 PORTDOCS=	ChangeLog.md README.md
 
-OPTIONS_DEFINE=	DOCS X11
+OPTIONS_DEFINE=	DOCS NLS X11
 OPTIONS_DEFAULT=	X11
 OPTIONS_SUB=	yes
 
-X11_DESC=	Build GTK+3 frontend in addition to ncurses one
+NLS_USES=	gettext
+NLS_CMAKE_OFF=	-DWITH_GETTEXT:BOOL=OFF
 
+X11_DESC=	Build GTK+3 frontend in addition to ncurses one
 X11_USES=	gnome
 X11_USE=	GNOME=gtk30
 X11_CMAKE_OFF=	-DWITH_GTK:BOOL=OFF
 X11_VARS=	GLIB_SCHEMAS=org.cpu-x.gschema.xml
-
-post-patch:
-	@${REINPLACE_CMD} -e 's, -Wno-unused-result,,' ${WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e '23s,^,#include <sys/wait.h>,' ${WRKSRC}/src/gui_gtk.c
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
