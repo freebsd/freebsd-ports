@@ -2,6 +2,7 @@ bin/a68g
 include/algol68g/a68g-common.h
 include/algol68g/a68g-compiler.h
 include/algol68g/a68g-config.h
+include/algol68g/a68g-config.win32.h
 include/algol68g/a68g-defines.h
 include/algol68g/a68g-diagnostics.h
 include/algol68g/a68g-double.h
