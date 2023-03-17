@@ -1,4 +1,4 @@
-TIMESTAMP = 1596129462
+TIMESTAMP = 1679076463
 SHA256 (rylio-ytdl-v0.6.4_GH0.tar.gz) = 91b4666441e66189338ee3b4d96a021876db2ab9418ee862842552418afa844b
 SIZE (rylio-ytdl-v0.6.4_GH0.tar.gz) = 26233
 SHA256 (antchfx-jsonquery-v1.1.4_GH0.tar.gz) = 42a32bc98831b0694a378fe847ea83946ec11f8f2ad4322c74fc0ff8d094fabe
@@ -13,8 +13,8 @@ SHA256 (go-yaml-yaml-9f266ea9e77c_GH0.tar.gz) = 63efc9aabcbb56b2c9469927784fd67e
 SIZE (go-yaml-yaml-9f266ea9e77c_GH0.tar.gz) = 86898
 SHA256 (golang-groupcache-8c9f03a8e57e_GH0.tar.gz) = b92f918daa48048fd360f14d1a4aed6e70c1176ae6b00b0dc04094bb088e9865
 SIZE (golang-groupcache-8c9f03a8e57e_GH0.tar.gz) = 26047
-SHA256 (golang-sys-ed371f2e16b4_GH0.tar.gz) = 8c462fe1c70152d82bc7f5c2b5ee0057ab083314b05569d9ed1b6bcb4bf9c720
-SIZE (golang-sys-ed371f2e16b4_GH0.tar.gz) = 1054512
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (mattn-go-isatty-v0.0.12_GH0.tar.gz) = addbdc341d7685ed4cc8d2d8a8fd2bd9b784bde00d0ea99fb251039fc10c611c
 SIZE (mattn-go-isatty-v0.0.12_GH0.tar.gz) = 4548
 SHA256 (mattn-go-runewidth-v0.0.9_GH0.tar.gz) = 4f20a337ad06e071f29535afe9c5207d3e8840c8c86672bbc5f9837c6229c835
