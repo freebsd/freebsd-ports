@@ -1,7 +1,7 @@
 PORTNAME=	hub
 PORTVERSION=	2.14.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel sysutils
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -18,6 +18,7 @@ CPE_VENDOR=	${PORTNAME}_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	github
+GH_TUPLE=	golang:sys:v0.6.0:sys
 
 GO_PKGNAME=	github.com/github/hub
 
@@ -26,6 +27,10 @@ PLIST_FILES=	bin/hub \
 		man/man1/hub.1.gz \
 		share/fish/completions/hub.fish \
 		share/zsh/site-functions/_hub
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 post-build:
 	(cd ${GO_WRKSRC} && \
