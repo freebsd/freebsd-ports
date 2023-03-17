@@ -17,8 +17,8 @@ lib/libdspy-1.so
 lib/libdspy-1.so.1
 lib/libdspy-1.so.1.0.0
 libdata/pkgconfig/dspy-1.pc
-share/appdata/org.gnome.dspy.appdata.xml
 share/applications/org.gnome.dspy.desktop
 share/icons/hicolor/scalable/apps/org.gnome.dspy.devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.dspy.svg
 share/icons/hicolor/symbolic/apps/org.gnome.dspy-symbolic.svg
+share/metainfo/org.gnome.dspy.appdata.xml
