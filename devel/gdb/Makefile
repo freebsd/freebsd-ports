@@ -10,7 +10,8 @@ WWW=		https://www.gnu.org/software/gdb/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING3
 
-LIB_DEPENDS=	libgmp.so:math/gmp \
+LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+		libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libzstd.so:archivers/zstd
 TEST_DEPENDS=	runtest:misc/dejagnu
@@ -38,9 +39,9 @@ EXTRA_PATCHES=	${FILESDIR}/commit-a980a7d24b9
 VER=		${DISTVERSION:S/.//g}
 PLIST_SUB=	VER=${VER}
 
-OPTIONS_DEFINE=	EXPAT GDB_LINK GUILE KGDB NLS PYTHON SOURCE_HIGHLIGHT \
+OPTIONS_DEFINE=	GDB_LINK GUILE KGDB NLS PYTHON SOURCE_HIGHLIGHT \
 		TUI XXHASH
-OPTIONS_DEFAULT=	EXPAT GDB_LINK KGDB NLS PYTHON SOURCE_HIGHLIGHT \
+OPTIONS_DEFAULT=	GDB_LINK KGDB NLS PYTHON SOURCE_HIGHLIGHT \
 			TUI XXHASH
 OPTIONS_DEFAULT+=	PORT_READLINE PORT_ICONV SYSTEM_ZLIB
 
@@ -64,8 +65,6 @@ XXHASH_DESC=		Use xxHash for hashing (faster)
 OPTIONS_SUB=	yes
 
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
-EXPAT_CONFIGURE_OFF=	--with-expat=no
-EXPAT_LIB_DEPENDS=	libexpat.so:textproc/expat2
 GUILE_CONFIGURE_WITH=	guile
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 NLS_USES=	gettext-runtime
