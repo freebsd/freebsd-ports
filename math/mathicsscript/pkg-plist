@@ -1,9 +1,12 @@
 bin/fake_psviewer.py
 bin/mathicsscript
 %%PYTHON_SITELIBDIR%%/mathicsscript/__init__.py
+%%PYTHON_SITELIBDIR%%/mathicsscript/__main__-next.py
 %%PYTHON_SITELIBDIR%%/mathicsscript/__main__.py
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/__main__-next.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/__main__-next.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/__main__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/__main__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/asymptote.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -16,6 +19,8 @@ bin/mathicsscript
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/fake_psviewer.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/format-next.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/format-next.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/format-try.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/format-try.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/format.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/format.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathicsscript/__pycache__/settings.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -40,6 +45,7 @@ bin/mathicsscript
 %%PYTHON_SITELIBDIR%%/mathicsscript/data/mma-tables.json
 %%PYTHON_SITELIBDIR%%/mathicsscript/fake_psviewer.py
 %%PYTHON_SITELIBDIR%%/mathicsscript/format-next.py
+%%PYTHON_SITELIBDIR%%/mathicsscript/format-try.py
 %%PYTHON_SITELIBDIR%%/mathicsscript/format.py
 %%PYTHON_SITELIBDIR%%/mathicsscript/settings.py
 %%PYTHON_SITELIBDIR%%/mathicsscript/termshell.py
