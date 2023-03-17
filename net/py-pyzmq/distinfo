@@ -1,3 +1,3 @@
-TIMESTAMP = 1678646764
-SHA256 (pyzmq-25.0.0.tar.gz) = f330a1a2c7f89fd4b0aa4dcb7bf50243bf1c8da9a2f1efc31daf57a2046b31f2
-SIZE (pyzmq-25.0.0.tar.gz) = 1200658
+TIMESTAMP = 1678909292
+SHA256 (pyzmq-25.0.1.tar.gz) = 44a24f7ce44e70d20e2a4c9ba5af70b4611df7a4b920eed2c8e0bdd5a5af225f
+SIZE (pyzmq-25.0.1.tar.gz) = 1209036
