@@ -58,7 +58,7 @@ kgdb_lookup(const char *sym)
 	msym = lookup_minimal_symbol(sym, NULL, NULL);
 	if (msym.minsym == NULL)
 		return (0);
-	return (BMSYMBOL_VALUE_ADDRESS(msym));
+	return (msym.value_address ());
 }
 
 /*
@@ -159,7 +159,7 @@ kgdb_thr_add_procs_hash(CORE_ADDR pidhashtbl, CORE_ADDR (*cpu_pcb_addr) (u_int))
 	for (i = 0; i < pidhash; i++) {
 		try {
 			paddr = read_memory_typed_address (pidhashtbl +
-			    i * TYPE_LENGTH(ptr_type), ptr_type);
+			    i * ptr_type->length (), ptr_type);
 		} catch (const gdb_exception_error &e) {
 			continue;
 		}

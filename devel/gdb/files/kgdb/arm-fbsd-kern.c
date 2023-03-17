@@ -75,7 +75,7 @@ arm_fbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 #define PSR_USR32_MODE  0x00000010
 
 static struct trad_frame_cache *
-arm_fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
+arm_fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
@@ -132,8 +132,8 @@ arm_fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
 }
 
 static void
-arm_fbsd_trapframe_this_id (struct frame_info *this_frame,
-			     void **this_cache, struct frame_id *this_id)
+arm_fbsd_trapframe_this_id (frame_info_ptr this_frame,
+			    void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
     arm_fbsd_trapframe_cache (this_frame, this_cache);
@@ -142,8 +142,8 @@ arm_fbsd_trapframe_this_id (struct frame_info *this_frame,
 }
 
 static struct value *
-arm_fbsd_trapframe_prev_register (struct frame_info *this_frame,
-				   void **this_cache, int regnum)
+arm_fbsd_trapframe_prev_register (frame_info_ptr this_frame,
+				  void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
     arm_fbsd_trapframe_cache (this_frame, this_cache);
@@ -153,8 +153,8 @@ arm_fbsd_trapframe_prev_register (struct frame_info *this_frame,
 
 static int
 arm_fbsd_trapframe_sniffer (const struct frame_unwind *self,
-				struct frame_info *this_frame,
-				void **this_prologue_cache)
+			    frame_info_ptr this_frame,
+			    void **this_prologue_cache)
 {
   const char *name;
 
@@ -183,11 +183,11 @@ static const struct frame_unwind arm_fbsd_trapframe_unwind = {
 static void
 arm_fbsd_kernel_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
 {
-  arm_gdbarch_tdep *tdep = (arm_gdbarch_tdep *) gdbarch_tdep (gdbarch);
+  arm_gdbarch_tdep *tdep = gdbarch_tdep<arm_gdbarch_tdep> (gdbarch);
 
   frame_unwind_prepend_unwinder (gdbarch, &arm_fbsd_trapframe_unwind);
 
-  set_solib_ops (gdbarch, &kld_so_ops);
+  set_gdbarch_so_ops (gdbarch, &kld_so_ops);
 
   tdep->jb_pc = 24;
   tdep->jb_elt_size = 4;

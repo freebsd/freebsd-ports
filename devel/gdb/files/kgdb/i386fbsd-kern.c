@@ -50,15 +50,7 @@ struct i386fbsd_info {
 };
 
 /* Per-program-space data key.  */
-static const struct program_space_data *i386fbsd_pspace_data;
-
-static void
-i386fbsd_pspace_data_cleanup (struct program_space *pspace, void *arg)
-{
-  struct i386fbsd_info *info = (struct i386fbsd_info *)arg;
-
-  xfree (info);
-}
+static const registry<program_space>::key<i386fbsd_info> i386fbsd_pspace_data;
 
 /* Get the current i386fbsd data.  If none is found yet, add it now.  This
    function always returns a valid object.  */
@@ -68,13 +60,11 @@ get_i386fbsd_info (void)
 {
   struct i386fbsd_info *info;
 
-  info = (struct i386fbsd_info *)
-    program_space_data (current_program_space, i386fbsd_pspace_data);
-  if (info != NULL)
+  info = i386fbsd_pspace_data.get (current_program_space);
+  if (info != nullptr)
     return info;
 
-  info = XCNEW (struct i386fbsd_info);
-  set_program_space_data (current_program_space, i386fbsd_pspace_data, info);
+  info = i386fbsd_pspace_data.emplace (current_program_space);
 
   /*
    * In revision 1.117 of i386/i386/exception.S trap handlers
@@ -219,7 +209,7 @@ i386fbsd_fetch_tss(void)
 }
 
 static struct trad_frame_cache *
-i386fbsd_dblfault_cache (struct frame_info *this_frame, void **this_cache)
+i386fbsd_dblfault_cache (frame_info_ptr this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
@@ -249,8 +239,8 @@ i386fbsd_dblfault_cache (struct frame_info *this_frame, void **this_cache)
 }
 
 static void
-i386fbsd_dblfault_this_id (struct frame_info *this_frame,
-			     void **this_cache, struct frame_id *this_id)
+i386fbsd_dblfault_this_id (frame_info_ptr this_frame,
+			   void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
     i386fbsd_dblfault_cache (this_frame, this_cache);
@@ -259,8 +249,8 @@ i386fbsd_dblfault_this_id (struct frame_info *this_frame,
 }
 
 static struct value *
-i386fbsd_dblfault_prev_register (struct frame_info *this_frame,
-				   void **this_cache, int regnum)
+i386fbsd_dblfault_prev_register (frame_info_ptr this_frame,
+				 void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
     i386fbsd_dblfault_cache (this_frame, this_cache);
@@ -270,8 +260,8 @@ i386fbsd_dblfault_prev_register (struct frame_info *this_frame,
 
 static int
 i386fbsd_dblfault_sniffer (const struct frame_unwind *self,
-			     struct frame_info *this_frame,
-			     void **this_prologue_cache)
+			   frame_info_ptr this_frame,
+			   void **this_prologue_cache)
 {
   const char *name;
 
@@ -312,7 +302,7 @@ static const int i386fbsd_trapframe_offset[] = {
 #define	TRAPFRAME_SIZE		72
 
 static struct trad_frame_cache *
-i386fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
+i386fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
@@ -407,8 +397,8 @@ i386fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
 }
 
 static void
-i386fbsd_trapframe_this_id (struct frame_info *this_frame,
-			     void **this_cache, struct frame_id *this_id)
+i386fbsd_trapframe_this_id (frame_info_ptr this_frame,
+			    void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
     i386fbsd_trapframe_cache (this_frame, this_cache);
@@ -417,8 +407,8 @@ i386fbsd_trapframe_this_id (struct frame_info *this_frame,
 }
 
 static struct value *
-i386fbsd_trapframe_prev_register (struct frame_info *this_frame,
-				   void **this_cache, int regnum)
+i386fbsd_trapframe_prev_register (frame_info_ptr this_frame,
+				  void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
     i386fbsd_trapframe_cache (this_frame, this_cache);
@@ -428,8 +418,8 @@ i386fbsd_trapframe_prev_register (struct frame_info *this_frame,
 
 static int
 i386fbsd_trapframe_sniffer (const struct frame_unwind *self,
-			     struct frame_info *this_frame,
-			     void **this_prologue_cache)
+			    frame_info_ptr this_frame,
+			    void **this_prologue_cache)
 {
   const char *name;
 
@@ -460,7 +450,7 @@ i386fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 #endif
 	frame_unwind_prepend_unwinder(gdbarch, &i386fbsd_trapframe_unwind);
 
-	set_solib_ops(gdbarch, &kld_so_ops);
+	set_gdbarch_so_ops(gdbarch, &kld_so_ops);
 
 	fbsd_vmcore_set_supply_pcb(gdbarch, i386fbsd_supply_pcb);
 	fbsd_vmcore_set_cpu_pcb_addr(gdbarch, kgdb_trgt_stop_pcb);
@@ -477,9 +467,6 @@ _initialize_i386_kgdb_tdep ()
 				       fbsd_kernel_osabi_sniffer);
 	gdbarch_register_osabi (bfd_arch_i386, 0,
 	    GDB_OSABI_FREEBSD_KERNEL, i386fbsd_kernel_init_abi);
-
-	i386fbsd_pspace_data = register_program_space_data_with_cleanup (NULL,
-	    i386fbsd_pspace_data_cleanup);
 
 #ifdef __i386__
 	/*

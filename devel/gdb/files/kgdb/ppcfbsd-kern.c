@@ -64,7 +64,7 @@ _Static_assert(offsetof(struct pcb, pcb_lr) == PCB_OFF_LR * sizeof(register_t),
 static void
 ppcfbsd_supply_pcb(struct regcache *regcache, CORE_ADDR pcb_addr)
 {
-  ppc_gdbarch_tdep *tdep = (ppc_gdbarch_tdep *) gdbarch_tdep (regcache->arch ());
+  ppc_gdbarch_tdep *tdep = gdbarch_tdep<ppc_gdbarch_tdep> (regcache->arch ());
   gdb_byte buf[24 * tdep->wordsize];
   int i;
 
@@ -118,10 +118,10 @@ _Static_assert(offsetof(struct trapframe, srr0)
 #endif
 
 static struct trad_frame_cache *
-ppcfbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
+ppcfbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
-  ppc_gdbarch_tdep *tdep = (ppc_gdbarch_tdep *) gdbarch_tdep (gdbarch);
+  ppc_gdbarch_tdep *tdep = gdbarch_tdep<ppc_gdbarch_tdep> (gdbarch);
   struct trad_frame_cache *cache;
   CORE_ADDR base;
   int i;
@@ -160,8 +160,8 @@ ppcfbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
 }
 
 static void
-ppcfbsd_trapframe_this_id (struct frame_info *this_frame,
-			       void **this_cache, struct frame_id *this_id)
+ppcfbsd_trapframe_this_id (frame_info_ptr this_frame,
+			   void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
     ppcfbsd_trapframe_cache (this_frame, this_cache);
@@ -170,8 +170,8 @@ ppcfbsd_trapframe_this_id (struct frame_info *this_frame,
 }
 
 static struct value *
-ppcfbsd_trapframe_prev_register (struct frame_info *this_frame,
-				     void **this_cache, int regnum)
+ppcfbsd_trapframe_prev_register (frame_info_ptr this_frame,
+				 void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
     ppcfbsd_trapframe_cache (this_frame, this_cache);
@@ -181,8 +181,8 @@ ppcfbsd_trapframe_prev_register (struct frame_info *this_frame,
 
 static int
 ppcfbsd_trapframe_sniffer (const struct frame_unwind *self,
-			       struct frame_info *this_frame,
-			       void **this_cache)
+			   frame_info_ptr this_frame,
+			   void **this_cache)
 {
   CORE_ADDR pc;
   const char *name;
@@ -211,11 +211,11 @@ static const struct frame_unwind ppcfbsd_trapframe_unwind =
 static void
 ppcfbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 {
-  ppc_gdbarch_tdep *tdep = (ppc_gdbarch_tdep *) gdbarch_tdep (gdbarch);
+  ppc_gdbarch_tdep *tdep = gdbarch_tdep<ppc_gdbarch_tdep> (gdbarch);
 
   frame_unwind_prepend_unwinder(gdbarch, &ppcfbsd_trapframe_unwind);
 
-  set_solib_ops(gdbarch, &kld_so_ops);
+  set_gdbarch_so_ops(gdbarch, &kld_so_ops);
 
   fbsd_vmcore_set_supply_pcb(gdbarch, ppcfbsd_supply_pcb);
   fbsd_vmcore_set_cpu_pcb_addr(gdbarch, kgdb_trgt_stop_pcb);

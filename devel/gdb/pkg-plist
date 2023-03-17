@@ -15,6 +15,8 @@ man/man1/gdb%%VER%%.1.gz
 %%PYTHON%%%%DATADIR%%/python/gdb/FrameDecorator.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/FrameIterator.py
 %%PYTHON%%%%DATADIR%%/python/gdb/FrameIterator.pyc
+%%PYTHON%%%%DATADIR%%/python/gdb/disassembler.py
+%%PYTHON%%%%DATADIR%%/python/gdb/disassembler.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/frames.py
 %%PYTHON%%%%DATADIR%%/python/gdb/frames.pyc
 %%PYTHON%%%%DATADIR%%/python/gdb/printing.py

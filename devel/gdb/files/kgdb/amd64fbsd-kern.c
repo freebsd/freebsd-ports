@@ -128,7 +128,7 @@ static const int amd64fbsd_trapframe_offset[] = {
 #define TRAPFRAME_SIZE	192
 
 static struct trad_frame_cache *
-amd64fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
+amd64fbsd_trapframe_cache (frame_info_ptr this_frame, void **this_cache)
 {
   struct gdbarch *gdbarch = get_frame_arch (this_frame);
   enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
@@ -179,7 +179,7 @@ amd64fbsd_trapframe_cache (struct frame_info *this_frame, void **this_cache)
 }
 
 static void
-amd64fbsd_trapframe_this_id (struct frame_info *this_frame,
+amd64fbsd_trapframe_this_id (frame_info_ptr this_frame,
 			     void **this_cache, struct frame_id *this_id)
 {
   struct trad_frame_cache *cache =
@@ -189,7 +189,7 @@ amd64fbsd_trapframe_this_id (struct frame_info *this_frame,
 }
 
 static struct value *
-amd64fbsd_trapframe_prev_register (struct frame_info *this_frame,
+amd64fbsd_trapframe_prev_register (frame_info_ptr this_frame,
 				   void **this_cache, int regnum)
 {
   struct trad_frame_cache *cache =
@@ -200,7 +200,7 @@ amd64fbsd_trapframe_prev_register (struct frame_info *this_frame,
 
 static int
 amd64fbsd_trapframe_sniffer (const struct frame_unwind *self,
-			     struct frame_info *this_frame,
+			     frame_info_ptr this_frame,
 			     void **this_prologue_cache)
 {
   const char *name;
@@ -233,7 +233,7 @@ amd64fbsd_kernel_init_abi(struct gdbarch_info info, struct gdbarch *gdbarch)
 
 	frame_unwind_prepend_unwinder(gdbarch, &amd64fbsd_trapframe_unwind);
 
-	set_solib_ops(gdbarch, &kld_so_ops);
+	set_gdbarch_so_ops(gdbarch, &kld_so_ops);
 
 	fbsd_vmcore_set_supply_pcb(gdbarch, amd64fbsd_supply_pcb);
 	fbsd_vmcore_set_cpu_pcb_addr(gdbarch, kgdb_trgt_stop_pcb);
