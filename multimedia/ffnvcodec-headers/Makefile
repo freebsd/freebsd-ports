@@ -1,6 +1,6 @@
 PORTNAME=	ffnvcodec-headers
 DISTVERSIONPREFIX=	n
-DISTVERSION=	11.1.5.2
+DISTVERSION=	12.0.16.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	iwtcex@gmail.com
