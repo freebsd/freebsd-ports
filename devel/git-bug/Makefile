@@ -1,7 +1,6 @@
 PORTNAME=	git-bug
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.2
-PORTREVISION=	12
+DISTVERSION=	0.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -15,7 +14,7 @@ RUN_DEPENDS=	git:devel/git
 
 USES=		go:modules
 
-_BUILD_COMMIT=	cc4a93c8ce931b1390c61035b888ad17110b7bd6
+_BUILD_COMMIT=	a3fa445
 
 GO_MODULE=	github.com/MichaelMure/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
@@ -24,16 +23,22 @@ GO_BUILDFLAGS=	-ldflags "\
 	       -X ${GO_MODULE}/commands.GitLastTag=${DISTVERSION} \
 	       -X ${GO_MODULE}/commands.GitExactTag=${DISTVERSION}"
 
-post-install:
-	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 \
-		${STAGEDIR}${MAN1PREFIX}/man/man1
+OPTIONS_DEFINE=		COMPLETIONS MANPAGES
+OPTIONS_DEFAULT=	COMPLETIONS MANPAGES
+OPTIONS_SUB=		yes
 
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions
+COMPLETIONS_DESC=		Build and install bash, fish and zsh shell completions
+COMPLETIONS_PLIST_FILES=	share/bash-completion/completions/${PORTNAME} \
+				share/fish/vendor_completions.d/${PORTNAME}.fish \
+				share/zsh/site-functions/_${PORTNAME}
 
-	${INSTALL_DATA} ${WRKSRC}/misc/bash_completion/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${INSTALL_DATA} ${WRKSRC}/misc/zsh_completion/${PORTNAME} \
-		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+post-install-COMPLETIONS-on:
+.for _shell in bash fish zsh
+	${GO_WRKDIR_BIN}/${PORTNAME} completion ${_shell} \
+		>${STAGEDIR}${PREFIX}/${COMPLETIONS_PLIST_FILES:M*${_shell}*}
+.endfor
+
+post-install-MANPAGES-on:
+	${INSTALL_MAN} ${WRKSRC}/doc/man/*.1 ${STAGEDIR}${MAN1PREFIX}/man/man1
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-TIMESTAMP = 1620926667
-SHA256 (go/devel_git-bug/git-bug-v0.7.2/v0.7.2.mod) = b5a70b8cadecb68dadcdd196bc9dbeca6d0c56ddfbed6830db710b3c4b094930
-SIZE (go/devel_git-bug/git-bug-v0.7.2/v0.7.2.mod) = 1482
-SHA256 (go/devel_git-bug/git-bug-v0.7.2/v0.7.2.zip) = 2bc31dbf19bebd4d4f6d24496ef2b05a94df0485aec49f830a4239bf08454fba
-SIZE (go/devel_git-bug/git-bug-v0.7.2/v0.7.2.zip) = 2088123
+TIMESTAMP = 1679112317
+SHA256 (go/devel_git-bug/git-bug-v0.8.0/v0.8.0.mod) = d8df1effd620aef664daa371b0285d2a901b8214bf609c04f53957f17ef6db6b
+SIZE (go/devel_git-bug/git-bug-v0.8.0/v0.8.0.mod) = 5579
+SHA256 (go/devel_git-bug/git-bug-v0.8.0/v0.8.0.zip) = e8b9646fd3e8ccf60b06c571e2535c7699b87fc238b8b4cdf7a1fa9ef99254f9
+SIZE (go/devel_git-bug/git-bug-v0.8.0/v0.8.0.zip) = 2759478
