@@ -27,6 +27,9 @@ PLIST_FILES=	bin/${PORTNAME} \
 		share/fish/vendor_completions.d/${PORTNAME}.fish \
 		share/zsh/site-functions/_${PORTNAME}
 
+# XXX https://github.com/rust-lang/cargo/issues/4101
+CARGO_INSTALL_PATH=	. ${PORTNAME}_completions
+
 OPTIONS_DEFINE=	MANPAGES SLURP
 OPTIONS_DEFAULT=MANPAGES SLURP
 
