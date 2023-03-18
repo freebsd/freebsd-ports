@@ -1,5 +1,7 @@
-TIMESTAMP = 1663752301
+TIMESTAMP = 1679154903
 SHA256 (go/databases_pg_tileserv/pg_tileserv-v1.0.9/v1.0.9.mod) = 7e1507419e12c656b79df9d382b93cff41a3e07f2930dfa196af32d91ac5ac93
 SIZE (go/databases_pg_tileserv/pg_tileserv-v1.0.9/v1.0.9.mod) = 570
 SHA256 (go/databases_pg_tileserv/pg_tileserv-v1.0.9/v1.0.9.zip) = e957c97526178d3c28f35ba0009e0f48dd972bd1a2f089e84eaaf1d6cab51e19
 SIZE (go/databases_pg_tileserv/pg_tileserv-v1.0.9/v1.0.9.zip) = 3066303
+SHA256 (go/databases_pg_tileserv/pg_tileserv-v1.0.9/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/databases_pg_tileserv/pg_tileserv-v1.0.9/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
