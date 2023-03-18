@@ -1,4 +1,4 @@
-TIMESTAMP = 1599300499
+TIMESTAMP = 1679101316
 SHA256 (muesli-beehive-v0.4.0_GH0.tar.gz) = cfe18e937556371be11a08dee152b4d5258708d592d7ada3dfdfe8b1369bc380
 SIZE (muesli-beehive-v0.4.0_GH0.tar.gz) = 2024898
 SHA256 (ChimeraCoder-anaconda-v2.0.0_GH0.tar.gz) = be09e83cb071a24c4f9c5a8800a2b2239188de544c76c7ad53bff102d2f13948
@@ -87,8 +87,8 @@ SHA256 (golang-oauth2-9f3314589c9a_GH0.tar.gz) = daa93a9035722a6549aad86e440fa1b
 SIZE (golang-oauth2-9f3314589c9a_GH0.tar.gz) = 45034
 SHA256 (golang-protobuf-v1.3.1_GH0.tar.gz) = 3f3a6123054a9847093c119895f1660612f301fe95358f3a6a1a33fd0933e6cf
 SIZE (golang-protobuf-v1.3.1_GH0.tar.gz) = 310884
-SHA256 (golang-sys-d89cdac9e872_GH0.tar.gz) = 527dec46c884a6a018025fac8afa5560cf8d80fd46c067e29dfb3d429262da62
-SIZE (golang-sys-d89cdac9e872_GH0.tar.gz) = 1384004
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.2_GH0.tar.gz) = 0b9309698f5708531c5377ab1e29b423a6d9e20c55a8d386c3b8283428212f22
 SIZE (golang-text-v0.3.2_GH0.tar.gz) = 7168069
 SHA256 (golang-time-c4c64cad1fd0_GH0.tar.gz) = 992e9c1f73a312f76c2b181e01e66ff4d77da8117db868095ac44e0677e1f8e2

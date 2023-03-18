@@ -1,7 +1,7 @@
 PORTNAME=	beehive
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -10,8 +10,6 @@ WWW=		https://github.com/muesli/beehive
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	go-bindata:devel/go-bindata
 
@@ -61,7 +59,7 @@ GH_TUPLE=	ChimeraCoder:anaconda:v2.0.0:chimeracoder_anaconda/vendor/github.com/C
 		golang:net:da9a3fd4c582:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:9f3314589c9a:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:d89cdac9e872:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:c4c64cad1fd0:golang_time/vendor/golang.org/x/time \
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
@@ -133,8 +131,8 @@ _BUILD_TAGS=	-tags "embed"
 _BUILD_SHA=	7447df7
 
 GO_BUILDFLAGS=	${_BUILD_TAGS} \
-	       -ldflags "\
-	       -s -w \
+		-ldflags "\
+		${STRIP} -w \
 		-X main.Version=${DISTVERSION} \
 		-X main.CommitSHA=${_BUILD_SHA}"
 
