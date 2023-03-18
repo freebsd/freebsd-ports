@@ -23,8 +23,8 @@ BROKEN_aarch64=		Fails to link: missing sbrk
 BROKEN_riscv64=		Fails to link: missing sbrk
 BROKEN_FreeBSD_12=	exit code 139 making lib/libcmd
 
-HASH=		27c4f014
-AST_COMMIT_DATE=	2023.02.19
+HASH=		72d895d8
+AST_COMMIT_DATE=	2023.03.17
 
 USES=		compiler:c11
 
