@@ -10,7 +10,7 @@ WWW=		https://www.transcoding.org/
 
 LICENSE=	GPLv2
 
-DEPRECATED=	abandond by upstream and does not build
+DEPRECATED=	abandoned by upstream and does not build
 EXPIRATION_DATE=	2023-03-31
 BROKEN=		depends on removed libav audio resample functions
 
