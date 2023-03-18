@@ -1,22 +1,18 @@
 PORTNAME=	bugzilla2atom
-PORTVERSION=	g20190711
-PORTREVISION=	12
+DISTVERSIONPREFIX=	v
+DISTVERSION=	${MODVERSION:S/-/./g:R}
 CATEGORIES=	www
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Convert Bugzilla bugs into Atom feeds
-WWW=		https://github.com/t6/bugzilla2atom
+WWW=		https://codeberg.org/tobik/bugzilla2atom
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
-USE_GITHUB=	yes
-GH_ACCOUNT=	t6
-GH_TAGNAME=	02fec79c229d67abfdde4b310b05f41c079ce5ec
-GH_TUPLE=	golang:sys:d0b11bdaac8a:golang_sys/vendor/golang.org/x/sys \
-		golang:tools:7b25e351ac0e:golang_tools/vendor/golang.org/x/tools
-
+MODVERSION=	0.0.0-20230318132821-2ccd379511f3
+GO_MODULE=	codeberg.org/tobik/bugzilla2atom@v${MODVERSION}
 GO_TARGET=	./cmd/bugzilla2atom
 
 PLIST_FILES=	bin/bugzilla2atom
