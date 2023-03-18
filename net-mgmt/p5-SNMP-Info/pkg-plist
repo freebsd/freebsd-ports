@@ -52,11 +52,13 @@
 %%SITE_PERL%%/SNMP/Info/Layer2/HP.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/HP4000.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/HPVC.pm
+%%SITE_PERL%%/SNMP/Info/Layer2/Hirschmann.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Kentrox.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/N2270.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/NAP222x.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/NWSS2300.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Netgear.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Netonix.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Nexans.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Orinoco.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Sixnet.pm
@@ -196,6 +198,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer2::HP.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::HP4000.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::HPVC.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer2::Hirschmann.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::Kentrox.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::N2270.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer2::NAP222x.3.gz
@@ -249,6 +252,7 @@
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Mikrotik.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::N1600.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::NetSNMP.3.gz
+%%PERL5_MAN3%%/SNMP::Info::Layer3::Netonix.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Netscreen.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::Nexus.3.gz
 %%PERL5_MAN3%%/SNMP::Info::Layer3::OneAccess.3.gz
