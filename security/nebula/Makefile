@@ -1,7 +1,7 @@
 PORTNAME=	nebula
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -12,6 +12,11 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe go:modules
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:net:v0.8.0:net \
+		golang:term:v0.6.0:term \
+		golang:sys:v0.6.0:sys
+
 CPE_VENDOR=	slack
 GO_MODULE=	github.com/slackhq/nebula
 GO_TARGET=	./cmd/nebula ./cmd/nebula-cert
@@ -20,6 +25,12 @@ USE_RC_SUBR=	${PORTNAME}
 PLIST_FILES=	bin/nebula \
 		bin/nebula-cert \
 		etc/${PORTNAME}/config.yml.example
+
+pre-patch:
+.for m in net term sys
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/$m
+	${LN} -s ${WRKDIR}/$m-* ${WRKSRC}/vendor/golang.org/x/$m
+.endfor
 
 post-patch:
 	${REINPLACE_CMD} -e s,/etc/nebula,${PREFIX}/etc/${PORTNAME}, \

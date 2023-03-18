@@ -1,5 +1,11 @@
-TIMESTAMP = 1664250466
+TIMESTAMP = 1679153823
 SHA256 (go/security_nebula/nebula-v1.6.1/v1.6.1.mod) = b555f4be50246ff2d5373474de23bffccbea76514879dc2400fc5031cde73c3c
 SIZE (go/security_nebula/nebula-v1.6.1/v1.6.1.mod) = 2042
 SHA256 (go/security_nebula/nebula-v1.6.1/v1.6.1.zip) = d0e28bf9e41484276be9da78530b1ba97b87fdd6b624fe4fd31505c4c12d0afe
 SIZE (go/security_nebula/nebula-v1.6.1/v1.6.1.zip) = 1059841
+SHA256 (go/security_nebula/nebula-v1.6.1/golang-net-v0.8.0_GH0.tar.gz) = f9e2128a2d6861db0595428c7cce62fe5a131348a6c7651b6efa8b03d0b10831
+SIZE (go/security_nebula/nebula-v1.6.1/golang-net-v0.8.0_GH0.tar.gz) = 1244302
+SHA256 (go/security_nebula/nebula-v1.6.1/golang-term-v0.6.0_GH0.tar.gz) = 4fdff852a658e927e7886629ef7cd88874a11ddf0c8b3633a50961afc8902093
+SIZE (go/security_nebula/nebula-v1.6.1/golang-term-v0.6.0_GH0.tar.gz) = 14795
+SHA256 (go/security_nebula/nebula-v1.6.1/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/security_nebula/nebula-v1.6.1/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
