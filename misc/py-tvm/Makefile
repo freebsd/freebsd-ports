@@ -1,6 +1,6 @@
 PORTNAME=	tvm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.11.1
 CATEGORIES=	misc # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -27,7 +27,7 @@ USE_PYTHON=	distutils noegginfo pytest # tests fail, see https://github.com/apac
 USE_GITHUB=	yes
 GH_ACCOUNT=	apache
 GH_PROJECT=	tvm
-GH_TUPLE=	dmlc:dlpack:ddeb264:dlpack/3rdparty/dlpack \
+GH_TUPLE=	dmlc:dlpack:e2bdd3b:dlpack/3rdparty/dlpack \
 		dmlc:dmlc-core:09511cf:dmlc_core/3rdparty/dmlc-core
 
 BUILD_WRKSRC=	${WRKSRC}/python

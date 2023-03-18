@@ -48,6 +48,8 @@ include/tvm/meta_schedule/mutator.h
 include/tvm/meta_schedule/postproc.h
 include/tvm/meta_schedule/profiler.h
 include/tvm/meta_schedule/runner.h
+include/tvm/meta_schedule/schedule/cuda/thread_bind.h
+include/tvm/meta_schedule/schedule/generic/winograd.h
 include/tvm/meta_schedule/schedule_rule.h
 include/tvm/meta_schedule/search_strategy.h
 include/tvm/meta_schedule/space_generator.h
@@ -135,7 +137,6 @@ include/tvm/runtime/data_type.h
 include/tvm/runtime/debug.h
 include/tvm/runtime/device_api.h
 include/tvm/runtime/executor_info.h
-include/tvm/runtime/hexagon/ops/conv2d.h
 include/tvm/runtime/logging.h
 include/tvm/runtime/memory.h
 include/tvm/runtime/metadata.h
@@ -143,6 +144,7 @@ include/tvm/runtime/metadata_base.h
 include/tvm/runtime/metadata_types.h
 include/tvm/runtime/micro/standalone/microtvm_runtime.h
 include/tvm/runtime/module.h
+include/tvm/runtime/name_transforms.h
 include/tvm/runtime/ndarray.h
 include/tvm/runtime/object.h
 include/tvm/runtime/packed_func.h
@@ -189,6 +191,7 @@ include/tvm/tir/analysis.h
 include/tvm/tir/buffer.h
 include/tvm/tir/builtin.h
 include/tvm/tir/data_layout.h
+include/tvm/tir/data_type_rewriter.h
 include/tvm/tir/expr.h
 include/tvm/tir/expr_functor.h
 include/tvm/tir/function.h
@@ -237,6 +240,7 @@ include/tvm/topi/nn/bnn.h
 include/tvm/topi/nn/dense.h
 include/tvm/topi/nn/dilate.h
 include/tvm/topi/nn/flatten.h
+include/tvm/topi/nn/layer_norm.h
 include/tvm/topi/nn/local_response_norm.h
 include/tvm/topi/nn/mapping.h
 include/tvm/topi/nn/pooling.h
