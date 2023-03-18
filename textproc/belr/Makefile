@@ -1,5 +1,5 @@
 PORTNAME=	belr
-DISTVERSION=	5.1.32
+DISTVERSION=	5.2.37
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -11,11 +11,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++17-lang
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_COMMIT=	03d649ca34c715dda11f842ad54d5eb38752086f
+GL_COMMIT=	4e0fee77c87c5abf2b002f1a4b5f0c7f5d4c69f6
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
