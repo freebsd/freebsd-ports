@@ -184,7 +184,6 @@
     SUBDIR += libmtp
     SUBDIR += libndi
     SUBDIR += libopenshot
-    SUBDIR += libquicktime
     SUBDIR += librav1e
     SUBDIR += librespot
     SUBDIR += librist
