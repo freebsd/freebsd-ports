@@ -1,5 +1,14 @@
 --- configure.ac.orig	2016-07-21 12:25:09 UTC
 +++ configure.ac
+@@ -1201,7 +1201,7 @@ if test x"${build_egl_device}" = xyes; then
+     build_egl_device=no
+   fi
+   save_CFLAGS="$CFLAGS"
+-  CFLAGS="$CFLAGS -Wall -Werror"
++  CFLAGS="$CFLAGS -Wall -Werror -Wno-unused-but-set-variable "
+   native_window_type=none
+   AC_MSG_CHECKING([For EGLNativeWindowType type])
+   AC_TRY_COMPILE([#include <EGL/eglplatform.h>], [
 @@ -4144,7 +4144,7 @@ if test x${build_ssl} = xyes; then
      fi
      echo "        SSL libs are: $SSL_LIBS"

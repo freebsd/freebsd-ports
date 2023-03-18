@@ -1,6 +1,6 @@
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	54
+PORTREVISION=	55
 CATEGORIES=	graphics
 MASTER_SITES=	http://git.savannah.gnu.org/cgit/gnash.git/snapshot/
 DISTNAME=	gnash-2b3bdede0305c4fc3ad21a0a4197330606c9b880
@@ -26,12 +26,14 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
 		libdca.so:multimedia/libdca \
-		libgsm.so:audio/gsm
+		libgsm.so:audio/gsm \
+		libdc1394.so:multimedia/libdc1394
 
 CONFLICTS=	gnash-devel
 
 USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
 		pkgconfig jpeg gnome gl sdl desktop-file-utils xorg
+USE_CSTD=	gnu89
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk gdkpixbuf2 gtk20 libxml2 pango
