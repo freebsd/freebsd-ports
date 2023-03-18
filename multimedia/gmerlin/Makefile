@@ -1,6 +1,6 @@
 PORTNAME=	gmerlin
 PORTVERSION=	1.2.0
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	ac_cv_func_inotify_init=no
 CONFIGURE_ARGS=	--disable-v4l --disable-v4l2 --disable-v4lconvert \
 		--without-doxygen --with-cpuflags=none --disable-musicbrainz \
-		--disable-esd
+		--disable-esd --disable-lqt
 USE_LDCONFIG=	yes
 LLD_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
@@ -35,9 +35,9 @@ LDFLAGS+=	-Wl,--add-needed
 INFO=		gmerlin
 
 OPTIONS_DEFINE=		ALSA CDDB CDIO JACK JPEG LIBVISUAL \
-			OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME TIFF DOCS
+			OPTIMIZED_CFLAGS PNG PULSEAUDIO TIFF DOCS
 OPTIONS_DEFAULT=	CDDB JACK JPEG LIBVISUAL \
-			OPTIMIZED_CFLAGS PNG PULSEAUDIO QUICKTIME TIFF
+			OPTIMIZED_CFLAGS PNG PULSEAUDIO TIFF
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
@@ -58,8 +58,6 @@ PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_OFF=	--disable-libpng
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 PULSEAUDIO_CONFIGURE_OFF=--disable-pulseaudio
-QUICKTIME_LIB_DEPENDS=	libquicktime.so:multimedia/libquicktime
-QUICKTIME_CONFIGURE_OFF=--disable-lqt
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 TIFF_CONFIGURE_OFF=	--disable-libtiff
 
