@@ -1,6 +1,6 @@
 PORTNAME=	mkvtoolnix
 PORTVERSION=	74.0.0
-PORTREVISION?=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		https://mkvtoolnix.download/sources/
@@ -59,8 +59,8 @@ _PLIST_SUB_qt5=		GUI=
 _CONFIGURE_ARGS_nogui=	--disable-gui
 _USES_nogui=		compiler:c++17-lang iconv localbase pkgconfig qmake:no_env \
 			qt:5 tar:xz
-_USE_QT_nogui=		buildtools:build concurrent core linguisttools:build \
-			multimedia svg
+_USE_QT_nogui=		buildtools:build core linguisttools:build \
+			multimedia:build
 _PLIST_SUB_nogui=	GUI="@comment "
 
 PLIST_SUB+=		${_PLIST_SUB_${FLAVOR}}
