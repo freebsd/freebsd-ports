@@ -20,7 +20,7 @@ USES=		cpe gmake iconv jpeg motif ncurses perl5 tar:bzip2 pkgconfig xorg
 
 CPE_VENDOR=	linuxtv
 
-OPTIONS_DEFINE=		AALIB BKTR DV QUICKTIME ZVBI
+OPTIONS_DEFINE=		AALIB BKTR DV ZVBI
 OPTIONS_DEFINE_i386=	MMX
 OPTIONS_DEFAULT=	AALIB BKTR
 .if !exists(/usr/include/dev/bktr/ioctl_bt848.h)
@@ -41,6 +41,8 @@ MAKE_ENV=	verbose=yes
 USE_LDCONFIG=	yes
 
 FILES_LIBJPEG=	console/Subdir.mk x11/Subdir.mk libng/plugins/Subdir.mk
+
+CONFIGURE_ARGS=	--enable-alsa=no --enable-quicktime=no --enable-gl=no
 
 .include <bsd.port.pre.mk>
 
@@ -70,19 +72,11 @@ CONFIGURE_ARGS+=--enable-mmx
 CFLAGS+=	-DMMX=1
 .endif
 
-.if ${PORT_OPTIONS:MQUICKTIME}
-CONFIGURE_ARGS+=--enable-quicktime
-LIB_DEPENDS+=	libquicktime.so:multimedia/libquicktime
-.else
-CONFIGURE_ARGS+=--enable-quicktime=no
-.endif
-
 PLIST_SUB+=	X11PREFIX=${LOCALBASE}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g; \
 		s|/usr/local|${LOCALBASE}|g; \
-		s|-lquicktime|-L${LOCALBASE}/lib &|g; \
 		s|LIBV4L="yes"|LIBV4L="no"|g; \
 		s|-lunicode|-liconv &|g' \
 		${WRKSRC}/configure
