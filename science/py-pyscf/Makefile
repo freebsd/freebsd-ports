@@ -1,6 +1,6 @@
 PORTNAME=	pyscf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.1
+DISTVERSION=	2.2.0
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcint.so:science/libcint \
 		libxcfun.so:science/xcfun
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		fortran blaslapack:openblas compiler:c++11-lang python
+USES=		fortran blaslapack:openblas compiler:c++11-lang python:3.6+
 USE_PYTHON=	distutils autoplist pytest # 3818 warnings, 57 errors in tests, see https://github.com/pyscf/pyscf/issues/1536
 USE_GITHUB=	yes
 
