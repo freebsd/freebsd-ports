@@ -63,6 +63,7 @@ lib/libime/zh_CN.lm.predict
 %%DATADIR%%/cj.main.dict
 %%DATADIR%%/db.main.dict
 %%DATADIR%%/erbi.main.dict
+%%DATADIR%%/extb.dict
 %%DATADIR%%/qxm.main.dict
 %%DATADIR%%/sc.dict
 %%DATADIR%%/wanfeng.main.dict

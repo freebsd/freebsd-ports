@@ -1,7 +1,7 @@
 PORTNAME=	fcitx5-table-other
-DISTVERSION=	5.0.6
-PORTREVISION=	1
+DISTVERSION=	5.0.11
 CATEGORIES=	chinese textproc
+MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Other table support for Fcitx5
@@ -9,18 +9,15 @@ WWW=		https://github.com/fcitx/fcitx5-table-other
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libIMETable.so:chinese/libime \
-		libFcitx5Core.so:textproc/fcitx5
+LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5 \
+		libIMETable.so:chinese/libime
 
-USES=		gettext-tools cmake kde:5
+USES=		cmake gettext-tools kde:5 tar:xz
 
 OPTIONS_DEFINE=	DEPRECATED
 
-DEPRECATED_DESC=	Deprecated tables
+DEPRECATED_DESC=	Enable deprecated tables
 DEPRECATED_CMAKE_BOOL=	ENABLE_DEPRECATED
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	fcitx
 
 USE_KDE=	ecm
 

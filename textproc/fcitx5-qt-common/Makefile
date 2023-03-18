@@ -1,5 +1,3 @@
-PORTREVISION=	0
-
 COMMENT=	Fcitx support for Qt (common files)
 
 PKGNAMESUFFIX=	-common

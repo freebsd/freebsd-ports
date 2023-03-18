@@ -37,3 +37,4 @@ share/locale/vi/LC_MESSAGES/fcitx5-rime.mo
 share/locale/zh_CN/LC_MESSAGES/fcitx5-rime.mo
 share/locale/zh_TW/LC_MESSAGES/fcitx5-rime.mo
 share/metainfo/org.fcitx.Fcitx5.Addon.Rime.metainfo.xml
+share/rime-data/fcitx5.yaml

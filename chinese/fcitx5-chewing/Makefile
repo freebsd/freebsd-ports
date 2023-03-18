@@ -1,21 +1,19 @@
 PORTNAME=	fcitx5-chewing
-DISTVERSION=	5.0.7
+DISTVERSION=	5.0.14
 CATEGORIES=	chinese textproc
+MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Chewing support for Fcitx5
 WWW=		https://github.com/fcitx/fcitx5-chewing
 
-LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
+LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 
 LIB_DEPENDS=	libchewing.so:chinese/libchewing \
 		libFcitx5Core.so:textproc/fcitx5
 
-USES=		compiler:c++17-lang gettext-tools cmake kde:5 pkgconfig
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	fcitx
+USES=		compiler:c++17-lang gettext-tools cmake kde:5 pkgconfig tar:xz
 
 USE_KDE=	ecm
 

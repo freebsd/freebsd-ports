@@ -1,6 +1,7 @@
 PORTNAME=	fcitx5-lua
-DISTVERSION=	5.0.5
+DISTVERSION=	5.0.10
 CATEGORIES=	textproc
+MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT=	Lua support for Fcitx5
@@ -11,10 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 
 LIB_DEPENDS=	libFcitx5Core.so:textproc/fcitx5
 
-USES=		compiler:c++17-lang gettext-tools cmake kde:5 lua:53 pkgconfig
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	fcitx
+USES=		cmake compiler:c++17-lang gettext-tools kde:5 lua:53 pkgconfig \
+		tar:xz
 
 USE_KDE=	ecm
 

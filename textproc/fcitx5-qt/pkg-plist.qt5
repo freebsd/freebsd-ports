@@ -29,3 +29,4 @@ lib/libFcitx5Qt5WidgetsAddons.so.2
 lib/libFcitx5Qt5WidgetsAddons.so.%%VER%%
 %%QT_PLUGINDIR%%/platforminputcontexts/libfcitx5platforminputcontextplugin.so
 libexec/fcitx5-qt5-gui-wrapper
+share/applications/org.fcitx.fcitx5-qt5-gui-wrapper.desktop

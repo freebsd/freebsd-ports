@@ -1,15 +1,13 @@
 PORTNAME=	fcitx5-qt
-DISTVERSION=	5.0.8
+DISTVERSION=	5.0.17
 CATEGORIES=	textproc
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	f7f983e1e709.patch:-p1
+MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT?=	Fcitx support for Qt (${FLAVOR})
 WWW=		https://github.com/fcitx/fcitx5-qt
 
-LICENSE=	LGPL21+ BSD3CLAUSE
+LICENSE=	BSD3CLAUSE LGPL21+
 LICENSE_COMB=	multi
 LICENSE_FILE_LGPL21+ =		${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSES/BSD-3-Clause.txt
@@ -23,13 +21,15 @@ FLAVOR?=	${FLAVORS:[1]}
 qt5_PKGNAMESUFFIX=	5
 qt6_PKGNAMESUFFIX=	6
 
-USES=		compiler:c++17-lang gettext-tools cmake kde:5 pkgconfig xorg
+USES=		cmake compiler:c++17-lang gettext-tools kde:5 pkgconfig tar:xz \
+		xorg
 
 CMAKE_OFF?=	ENABLE_QT4
 
 .if ${FLAVOR} == qt5
 USES+=		qt:5
-USE_QT=		concurrent core dbus gui widgets xml buildtools:build qmake:build
+USE_QT=		concurrent core dbus gui widgets xml buildtools:build \
+		qmake:build
 CMAKE_ON=	ENABLE_QT5
 CMAKE_OFF+=	ENABLE_QT6
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
@@ -46,8 +46,6 @@ RUN_DEPENDS=	fcitx5-qt-common>=${DISTVERSION}:textproc/fcitx5-qt-common
 PLIST?=		${PKGDIR}/pkg-plist.${FLAVOR}
 PLIST_SUB=	VER=${PORTVERSION}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	fcitx
 USE_KDE=	ecm
 USE_XORG=	x11 xcb
 USE_LDCONFIG=	yes

@@ -1,7 +1,7 @@
 PORTNAME=	fcitx5-gtk
-DISTVERSION=	5.0.10
-PORTREVISION=	1
+DISTVERSION=	5.0.22
 CATEGORIES=	textproc
+MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/
 
 MAINTAINER=	khng@FreeBSD.org
 COMMENT?=	Fcitx support for GTK+ ${FLAVOR}
@@ -20,16 +20,12 @@ gtk2_PKGNAMESUFFIX=	2
 gtk3_PKGNAMESUFFIX=	3
 gtk4_PKGNAMESUFFIX=	4
 
-USES=		compiler:c++17-lang gettext-tools cmake gnome kde:5 pkgconfig xorg
+USES=		cmake compiler:c++17-lang gettext-tools gnome kde:5 pkgconfig \
+		tar:xz xorg
 
-PLIST_SUB=	VER=${PORTVERSION}
-
-USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	fcitx
 USE_GNOME=	cairo gdkpixbuf2 glib20 introspection
 USE_KDE=	ecm
+USE_LDCONFIG=	yes
 USE_XORG=	x11
 
 CMAKE_ON?=	BUILD_ONLY_PLUGIN
@@ -46,6 +42,8 @@ USE_GNOME+=	gtk40
 .endif
 
 PLIST?=		${PKGDIR}/pkg-plist.${FLAVOR}
+PLIST_SUB=	VER=${PORTVERSION}
+
 PLIST_SUB=	VER=${PORTVERSION}
 
 .include <bsd.port.mk>

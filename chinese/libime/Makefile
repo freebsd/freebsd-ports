@@ -1,9 +1,10 @@
 PORTNAME=	libime
-DISTVERSION=	1.0.9
-PORTREVISION=	3
+DISTVERSION=	1.0.17
 CATEGORIES=	chinese textproc
-MASTER_SITES=	https://download.fcitx-im.org/data/:opengram_lm,opengram_dict,table_dict
-DISTFILES=	${OPENGRAM_LM_TAR}:opengram_lm \
+MASTER_SITES=	https://download.fcitx-im.org/fcitx5/${PORTNAME}/ \
+		https://download.fcitx-im.org/data/:opengram_lm,opengram_dict,table_dict
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		${OPENGRAM_LM_TAR}:opengram_lm \
 		${OPENGRAM_DICT_TAR}:opengram_dict \
 		${TABLE_DICT_TAR}:table_dict
 DIST_SUBDIR=	${PORTNAME}
@@ -17,15 +18,12 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		libFcitx5Utils.so:textproc/fcitx5
 
-USES=		compiler:c++17-lang cmake kde:5
+USES=		cmake compiler:c++17-lang kde:5 tar:xz
 
-PLIST_SUB=	VER=${PORTVERSION} VER_MAJOR=${PORTVERSION:R:R}
+PLIST_SUB=	VER=${PORTVERSION} \
+		VER_MAJOR=${PORTVERSION:R:R}
 
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	fcitx
-GH_TUPLE=	kpu:kenlm:01c49fe:kenlm/src/libime/core/kenlm
 
 USE_KDE=	ecm
 
@@ -33,8 +31,8 @@ CMAKE_OFF=	ENABLE_TEST
 MAKE_ENV=	FCITX5_DOWNLOAD_DISALLOWED=TRUE
 
 # These must follow data/CMakeLists.txt
-OPENGRAM_LM_TAR=	lm_sc.3gm.arpa-20140820.tar.bz2
-OPENGRAM_DICT_TAR=	dict.utf8-20211021.tar.xz
+OPENGRAM_LM_TAR=	lm_sc.arpa-20220810.tar.xz
+OPENGRAM_DICT_TAR=	dict-20220810.tar.xz
 TABLE_DICT_TAR=		table.tar.gz
 
 post-extract:
