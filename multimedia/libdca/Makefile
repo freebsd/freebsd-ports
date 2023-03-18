@@ -1,7 +1,8 @@
 PORTNAME=	libdca
 PORTVERSION=	0.0.7
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/
+MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION}/ \
+		https://download.videolan.org/pub/videolan/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Free DTS Coherent Acoustics decoder
