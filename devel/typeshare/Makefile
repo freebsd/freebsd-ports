@@ -1,7 +1,6 @@
 PORTNAME=	typeshare
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0-prerelease02
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,16 +9,15 @@ WWW=		https://github.com/1password/typeshare
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
-LICENSE_FILE_APACHE20=	${WRKSRC}/../LICENSE-APACHE
-LICENSE_FILE_MIT=	${WRKSRC}/../LICENSE-MIT
+LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	1password
-GH_TAGNAME=	f99eb47
 
-WRKSRC_SUBDIR=	cli
-
+CARGO_BUILD_ARGS=	--package=typeshare-cli
+CARGO_INSTALL_PATH=	cli
 CARGO_CRATES=	aho-corasick-0.7.19 \
 		android_system_properties-0.1.5 \
 		anyhow-1.0.65 \
@@ -27,7 +25,7 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bstr-0.2.17 \
-		bumpalo-3.11.0 \
+		bumpalo-3.12.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.22 \
 		clap-3.2.22 \
