@@ -1,5 +1,5 @@
-TIMESTAMP = 1643918584
-SHA256 (go/www_chisel/chisel-v1.7.7/v1.7.7.mod) = e3dd7f8875ef7fb32e971f2383f461da8d839ee29ccc9a67819fcb57c1935483
-SIZE (go/www_chisel/chisel-v1.7.7/v1.7.7.mod) = 797
-SHA256 (go/www_chisel/chisel-v1.7.7/v1.7.7.zip) = f0c35edcc1467daf34387a13975c7784a1ab5991448ae0521676e7206e3a6dc8
-SIZE (go/www_chisel/chisel-v1.7.7/v1.7.7.zip) = 70890
+TIMESTAMP = 1679108690
+SHA256 (go/www_chisel/chisel-v1.8.1/v1.8.1.mod) = 29fc94a4bd508065da69f28cf6ac9e5256a9db1cd153fd19e0696a856e6bf914
+SIZE (go/www_chisel/chisel-v1.8.1/v1.8.1.mod) = 732
+SHA256 (go/www_chisel/chisel-v1.8.1/v1.8.1.zip) = 17864eb07004290b31d72c3dfa6befe0e18cf83f95de4ed501151b7155c833e9
+SIZE (go/www_chisel/chisel-v1.8.1/v1.8.1.zip) = 67663
