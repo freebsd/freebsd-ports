@@ -1,5 +1,5 @@
 PORTNAME=	belcard
-DISTVERSION=	5.1.32
+DISTVERSION=	5.2.37
 CATEGORIES=	deskutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,11 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox \
 		libbelr.so:textproc/belr
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++17-lang
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_COMMIT=	c7b1b58765bf5c99822025e77d0bc13cea82c719
+GL_COMMIT=	f50f203d6a44b6ec3bfd897d8057a94dfefa3e57
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
