@@ -15,6 +15,9 @@ WWW=		https://www.cs.wisc.edu/~ghost/doc/gnu/index.htm
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Obsolete and unsupported upstream, consider using a more recent version
+EXPIRATION_DATE=2023-06-30
+
 LIB_DEPENDS=	libpng.so:graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:print/gsfonts
 
