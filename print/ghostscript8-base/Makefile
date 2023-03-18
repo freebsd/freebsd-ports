@@ -16,6 +16,9 @@ WWW=		https://www.cs.wisc.edu/~ghost/doc/GPL/index.htm
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Obsolete and unsupported upstream, consider using a more recent version
+EXPIRATION_DATE=2023-06-30
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libjasper.so:graphics/jasper \
