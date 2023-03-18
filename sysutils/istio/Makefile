@@ -1,6 +1,6 @@
 PORTNAME=	istio
 PORTVERSION=	1.7.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -18,8 +18,8 @@ OPTIONS_SUB=	yes
 
 USE_GITHUB=	yes
 
-# The vendored golang/sys fails to build on aarch64
-GOLANG_SYS_V=	9fbb57f87de9
+# The vendored golang/sys fails to build on aarch64 and riscv64
+GOLANG_SYS_V=	v0.6.0
 
 GH_TUPLE=	\
 		Azure:go-ansiterm:d6e3b3328b78:azure_go_ansiterm/vendor/github.com/Azure/go-ansiterm \
@@ -101,7 +101,7 @@ GH_TUPLE=	\
 		go-openapi:jsonreference:v0.19.3:go_openapi_jsonreference/vendor/github.com/go-openapi/jsonreference \
 		go-openapi:spec:v0.19.5:go_openapi_spec/vendor/github.com/go-openapi/spec \
 		go-openapi:swag:v0.19.6:go_openapi_swag/vendor/github.com/go-openapi/swag \
-		go-redis:redis:v6.10.2:go_redis_redis/vendor/github.com/go-redis/redis \
+		redis:go-redis:v6.10.2:go_redis_redis/vendor/github.com/go-redis/redis \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		gogo:protobuf:v1.3.1:gogo_protobuf/vendor/github.com/gogo/protobuf \
@@ -175,7 +175,7 @@ GH_TUPLE=	\
 		kr:text:v0.1.0:kr_text/vendor/github.com/kr/text \
 		kubernetes-sigs:controller-runtime:v0.6.0:kubernetes_sigs_controller_runtime/vendor/sigs.k8s.io/controller-runtime \
 		kubernetes-sigs:kustomize:v2.0.3:kubernetes_sigs_kustomize/vendor/sigs.k8s.io/kustomize \
-		kubernetes-sigs:service-apis:10c7cb28ed93:kubernetes_sigs_service_apis/vendor/sigs.k8s.io/service-apis \
+		kubernetes-sigs:gateway-api:10c7cb28ed93:kubernetes_sigs_service_apis/vendor/sigs.k8s.io/service-apis \
 		kubernetes-sigs:structured-merge-diff:v3.0.0:kubernetes_sigs_structured_merge_diff/vendor/sigs.k8s.io/structured-merge-diff/v3 \
 		kubernetes-sigs:yaml:v1.2.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
 		kubernetes:api:v0.18.3:kubernetes_api/vendor/k8s.io/api \
