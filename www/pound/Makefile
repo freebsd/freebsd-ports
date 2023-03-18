@@ -1,7 +1,7 @@
 PORTNAME=	pound
-PORTVERSION=	4.5
-DISTVERSIONPREFIX=	v
+PORTVERSION=	4.6
 CATEGORIES=	www net
+MASTER_SITES=	https://github.com/graygnuorg/pound/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	zeus@gnu.org.ua
 COMMENT=	HTTP/HTTPS reverse-proxy and load-balancer
@@ -9,19 +9,17 @@ WWW=		https://github.com/graygnuorg/pound
 
 LICENSE=	GPLv3+
 
-USES=		autoreconf cpe gmake ssl
+USES=		cpe gmake ssl
 CPE_VENDOR=	apsis
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-tcmalloc --disable-hoard
-USE_GITHUB=	yes
-GH_ACCOUNT=	graygnuorg
 USE_RC_SUBR=	${PORTNAME}
 TEST_TARGET=	check
 
 SUB_FILES=	${PORTNAME}.cfg
 SUB_LIST=	NAME=${PORTNAME}
 
-PORTDOCS=	AUTHORS ChangeLog.apsis NEWS README.md THANKS
+PORTDOCS=	AUTHORS ChangeLog ChangeLog.apsis NEWS README THANKS
 
 OPTIONS_DEFINE=	DOCS DSAPARAM PCRE
 OPTIONS_DEFAULT=PCRE
@@ -33,7 +31,7 @@ PCRE_CONFIGURE_ENABLE=	pcreposix
 
 post-patch-DSAPARAM-on:
 	@${REINPLACE_CMD} -e '/openssl dhparam/s,-5,-dsaparam,' \
-		${WRKSRC}/src/Makefile.am
+		${WRKSRC}/src/Makefile.in
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}.cfg \
