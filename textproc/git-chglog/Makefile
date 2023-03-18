@@ -1,7 +1,6 @@
 PORTNAME=	git-chglog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.1
-PORTREVISION=	12
+DISTVERSION=	0.15.4
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -14,8 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	git:devel/git
 
 USES=		go:modules
-USE_GITHUB=	nodefault
-GH_TUPLE=	golang:sys:v0.6.0:sys
+GO_MODULE=	github.com/${PORTNAME}/${PORTNAME}
 
 _BUILD_VERSION=	${DISTVERSIONFULL}
 
@@ -32,10 +30,6 @@ PORTEXAMPLES=	${_EXAMPLES:T}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 EXAMPLES_DESC=	Install example template format and configuration
-
-pre-patch:
-	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
-	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
