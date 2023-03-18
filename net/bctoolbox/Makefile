@@ -1,6 +1,5 @@
 PORTNAME=	bctoolbox
-DISTVERSION=	5.1.38
-PORTREVISION=	1
+DISTVERSION=	5.2.37
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -14,11 +13,11 @@ BUILD_DEPENDS=	mbedtls>=2.3.0_2:security/mbedtls
 LIB_DEPENDS=	libbcunit.so:devel/bcunit \
 	libmbedtls.so:security/mbedtls
 
-USES=		cmake compiler:c++11-lib
+USES=		cmake compiler:c++17-lang
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_COMMIT=	32ea3c32d3352400d49d89fcbc36ca7006a532d9
+GL_COMMIT=	02c84d3563ee054a977f5f2d8357d94d095145a5
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DENABLE_STATIC=NO -DENABLE_STRICT=NO \
