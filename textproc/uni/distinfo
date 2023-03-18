@@ -1,4 +1,4 @@
-TIMESTAMP = 1652733790
+TIMESTAMP = 1679147444
 SHA256 (arp242-uni-v2.5.1_GH0.tar.gz) = 806fbba66efaa45cd5691efcd8457ba8fe88d3b2f6fd0b027f1e6ef62253d6fb
 SIZE (arp242-uni-v2.5.1_GH0.tar.gz) = 535149
 SHA256 (arp242-termtext-v1.0.0_GH0.tar.gz) = 0fb0fbc2065b75dada37596ef76b7552f18b0646acc6be0b9f330ec58e6814ed
@@ -7,8 +7,8 @@ SHA256 (arp242-zli-3bb954a2e74c_GH0.tar.gz) = 7fc90fa68dffd3008bab9cb4b601446e05
 SIZE (arp242-zli-3bb954a2e74c_GH0.tar.gz) = 29287
 SHA256 (arp242-zstd-6078fed48e39_GH0.tar.gz) = 404776f2f1d51f59bcb26f2bd0790c9935ff4a71ac4098a989cce9c1903fe092
 SIZE (arp242-zstd-6078fed48e39_GH0.tar.gz) = 76571
-SHA256 (golang-sys-665e8c7367d1_GH0.tar.gz) = 19c3498496d91ac9c0c0226c9b832c23a0b042b9a707be811ef976e801d373f4
-SIZE (golang-sys-665e8c7367d1_GH0.tar.gz) = 1200405
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-term-e5f449aeb171_GH0.tar.gz) = 7b6ad4bc0249d9d2eccbd7795c523970020469d52c427753f4857227fd877261
 SIZE (golang-term-e5f449aeb171_GH0.tar.gz) = 14976
 SHA256 (mattn-go-runewidth-v0.0.13_GH0.tar.gz) = 9b2aeafa5d95a40b32067ba22accdf42cc83414ec5b433ea7de330791beaa196
