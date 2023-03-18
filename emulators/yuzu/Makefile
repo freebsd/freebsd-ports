@@ -1,5 +1,6 @@
 PORTNAME=	yuzu
 PORTVERSION=	s20230315
+PORTREVISION=	1
 CATEGORIES=	emulators wayland
 .if make(makesum)
 MASTER_SITES=	https://api.yuzu-emu.org/gamedb/?dummy=/:gamedb
@@ -158,7 +159,7 @@ CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
 . endif
 
 # XXX Move into separate port and standardize via USES
-GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.0-rc2:libcxx
+GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.0:libcxx
 CXXFLAGS+=	-nostdinc++ -isystem${WRKDIR}/libcxx_prefix/include/c++/v1
 # Don't link against new libc++ to avoid ABI mismatch in Qt
 #LDFLAGS+=	-nostdlib++ -L${WRKDIR}/libcxx_prefix/lib -l:libc++.a -lcxxrt
