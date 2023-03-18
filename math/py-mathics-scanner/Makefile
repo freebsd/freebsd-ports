@@ -32,9 +32,6 @@ PLIST_SUB+=	VER=${PORTVERSION}
 TEST_TARGET=	check
 TEST_ENV=	${MAKE_ENV}
 
-pre-configure:
-	${RM} ${WRKSRC}/mathics_scanner/data/characters.json
-
 do-test: install
 	(cd ${TEST_WRKSRC} &&	\
 	${SETENV} ${TEST_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${TEST_TARGET})
