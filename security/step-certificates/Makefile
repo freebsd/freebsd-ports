@@ -1,7 +1,6 @@
 PORTNAME=	step-certificates
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.1
-PORTREVISION=	3
+DISTVERSION=	0.23.2
 CATEGORIES=	security
 
 MAINTAINER=	mw@wipp.bayern
@@ -21,11 +20,7 @@ GO_MODULE=	github.com/smallstep/certificates
 
 USE_RC_SUBR=	step-ca
 
-GO_TARGET=	./cmd/step-ca:${PREFIX}/sbin/step-ca  \
-		./cmd/step-cloudkms-init  \
-		./cmd/step-awskms-init \
-		./cmd/step-yubikey-init \
-		./cmd/step-pkcs11-init
+GO_TARGET=	./cmd/step-ca:${PREFIX}/sbin/step-ca
 
 GO_BUILDFLAGS=	-ldflags "-w -X main.Version=${PORTVERSION}"
 
