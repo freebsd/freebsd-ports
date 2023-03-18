@@ -1,7 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20.2
-PORTREVISION=	4
+DISTVERSION=	2.24.3
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -20,34 +19,37 @@ GH_PROJECT=	${GH_ACCOUNT}
 GH_TUPLE=	AlecAivazis:survey:v2.3.6:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		MakeNowJust:heredoc:v1.0.0:makenowjust_heredoc/vendor/github.com/MakeNowJust/heredoc \
 		alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		alessio:shellescape:v1.4.1:alessio_shellescape/vendor/github.com/alessio/shellescape \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
 		briandowns:spinner:v1.18.1:briandowns_spinner/vendor/github.com/briandowns/spinner \
-		cenkalti:backoff:v4.1.3:cenkalti_backoff_v4/vendor/github.com/cenkalti/backoff/v4 \
+		cenkalti:backoff:v4.2.0:cenkalti_backoff_v4/vendor/github.com/cenkalti/backoff/v4 \
 		charmbracelet:glamour:e70ff2d969da:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		charmbracelet:lipgloss:v0.5.0:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
 		cli:browser:v1.1.0:cli_browser/vendor/github.com/cli/browser \
 		cli:crypto:6be313f59b03:cli_crypto/vendor/golang.org/x/crypto \
-		cli:go-gh:e3ec45fb1d1b:cli_go_gh/vendor/github.com/cli/go-gh \
-		cli:oauth:v0.9.0:cli_oauth/vendor/github.com/cli/oauth \
-		cli:safeexec:v1.0.0:cli_safeexec/vendor/github.com/cli/safeexec \
+		cli:go-gh:v1.2.1:cli_go_gh/vendor/github.com/cli/go-gh \
+		cli:oauth:v1.0.1:cli_oauth/vendor/github.com/cli/oauth \
+		cli:safeexec:v1.0.1:cli_safeexec/vendor/github.com/cli/safeexec \
 		cli:shurcooL-graphql:v0.0.2:cli_shurcool_graphql/vendor/github.com/cli/shurcooL-graphql \
 		cpuguy83:go-md2man:v2.0.2:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		creack:pty:v1.1.18:creack_pty/vendor/github.com/creack/pty \
+		danieljoos:wincred:v1.1.2:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dlclark:regexp2:v1.4.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		fatih:color:v1.7.0:fatih_color/vendor/github.com/fatih/color \
-		gabriel-vasile:mimetype:v1.4.1:gabriel_vasile_mimetype/vendor/github.com/gabriel-vasile/mimetype \
+		gabriel-vasile:mimetype:v1.4.2:gabriel_vasile_mimetype/vendor/github.com/gabriel-vasile/mimetype \
 		gdamore:encoding:v1.0.0:gdamore_encoding/vendor/github.com/gdamore/encoding \
-		gdamore:tcell:v2.5.3:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
+		gdamore:tcell:v2.5.4:gdamore_tcell_v2/vendor/github.com/gdamore/tcell/v2 \
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:net:8be639271d50:golang_net/vendor/golang.org/x/net \
+		godbus:dbus:v5.1.0:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
+		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:6242fa91716a:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:fbc7d0a398ab:golang_sys/vendor/golang.org/x/sys \
-		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.3.8:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.1.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.6.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.8.0:golang_text/vendor/golang.org/x/text \
 		google:go-cmp:v0.5.9:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:8632dd797987:google_go_genproto/vendor/google.golang.org/genproto \
 		google:shlex:e7afc7fbc510:google_shlex/vendor/github.com/google/shlex \
@@ -57,18 +59,18 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.6:alecaivazis_survey_v2/vendor/github.com/Alec
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
 		hashicorp:go-multierror:v1.1.1:hashicorp_go_multierror/vendor/github.com/hashicorp/go-multierror \
 		hashicorp:go-version:v1.3.0:hashicorp_go_version/vendor/github.com/hashicorp/go-version \
-		henvic:httpretty:v0.0.6:henvic_httpretty/vendor/github.com/henvic/httpretty \
-		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
+		inconshreveable:mousetrap:v1.0.1:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		itchyny:gojq:v0.12.8:itchyny_gojq/vendor/github.com/itchyny/gojq \
 		itchyny:timefmt-go:v0.1.3:itchyny_timefmt_go/vendor/github.com/itchyny/timefmt-go \
-		joho:godotenv:v1.4.0:joho_godotenv/vendor/github.com/joho/godotenv \
+		joho:godotenv:v1.5.1:joho_godotenv/vendor/github.com/joho/godotenv \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.16:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.13:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-isatty:v0.0.17:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.14:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mgutz:ansi:d51e80ef957d:mgutz_ansi/vendor/github.com/mgutz/ansi \
 		microcosm-cc:bluemonday:v1.0.20:microcosm_cc_bluemonday/vendor/github.com/microcosm-cc/bluemonday \
+		mislav:httpretty:d31343e0d884:mislav_httpretty/vendor/github.com/henvic/httpretty \
 		muesli:reflow:v0.3.0:muesli_reflow/vendor/github.com/muesli/reflow \
 		muesli:termenv:v0.12.0:muesli_termenv/vendor/github.com/muesli/termenv \
 		muhammadmuzzammil1998:jsonc:615b0916ca38:muhammadmuzzammil1998_jsonc/vendor/github.com/muhammadmuzzammil1998/jsonc \
@@ -82,13 +84,14 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.6:alecaivazis_survey_v2/vendor/github.com/Alec
 		shurcooL:githubv4:0b4e3294ff00:shurcool_githubv4/vendor/github.com/shurcooL/githubv4 \
 		shurcooL:graphql:3cf50f8a0a29:shurcool_graphql/vendor/github.com/shurcooL/graphql \
 		sourcegraph:jsonrpc2:v0.1.0:sourcegraph_jsonrpc2/vendor/github.com/sourcegraph/jsonrpc2 \
-		spf13:cobra:v1.5.0:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.6.1:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:objx:v0.4.0:stretchr_objx/vendor/github.com/stretchr/objx \
 		stretchr:testify:v1.7.5:stretchr_testify/vendor/github.com/stretchr/testify \
 		thlib:go-timezone-local:ef149e42d28e:thlib_go_timezone_local/vendor/github.com/thlib/go-timezone-local \
 		yuin:goldmark-emoji:v1.0.1:yuin_goldmark_emoji/vendor/github.com/yuin/goldmark-emoji \
-		yuin:goldmark:v1.4.4:yuin_goldmark/vendor/github.com/yuin/goldmark
+		yuin:goldmark:v1.4.13:yuin_goldmark/vendor/github.com/yuin/goldmark \
+		zalando:go-keyring:v0.2.2:zalando_go_keyring/vendor/github.com/zalando/go-keyring
 
 _BUILD_VERSION=	${DISTVERSION}
 _BUILD_DATE=	$$(date +%Y-%m-%d)
