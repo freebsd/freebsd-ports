@@ -1,5 +1,5 @@
 PORTNAME=	nsc
-PORTVERSION=	2.7.8
+PORTVERSION=	2.8.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	net
 PKGNAMEPREFIX=	nats-
@@ -16,22 +16,22 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	nats-io
 GH_TUPLE=	AlecAivazis:survey:v2.3.6:alecaivazis_survey_v2/vendor/github.com/AlecAivazis/survey/v2 \
 		blang:semver:v3.5.1:blang_semver/vendor/github.com/blang/semver \
-		briandowns:spinner:v1.19.0:briandowns_spinner/vendor/github.com/briandowns/spinner \
+		briandowns:spinner:v1.23.0:briandowns_spinner/vendor/github.com/briandowns/spinner \
 		cpuguy83:go-md2man:v2.0.2:cpuguy83_go_md2man_v2/vendor/github.com/cpuguy83/go-md2man/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
-		fatih:color:v1.13.0:fatih_color/vendor/github.com/fatih/color \
+		dustin:go-humanize:v1.0.1:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
+		fatih:color:v1.15.0:fatih_color/vendor/github.com/fatih/color \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:v0.6.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:v0.7.0:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:v0.5.0:golang_oauth2/vendor/golang.org/x/oauth2 \
-		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:v0.5.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.5.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.7.0:golang_text/vendor/golang.org/x/text \
-		golang:time:v0.3.0:golang_time/vendor/golang.org/x/time \
+		golang:crypto:v0.7.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:v0.6.0:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.6.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.8.0:golang_text/vendor/golang.org/x/text \
+		golang:time:v0.1.0:golang_time/vendor/golang.org/x/time \
 		google:go-github:v30.1.0:google_go_github_v30/vendor/github.com/google/go-github/v30 \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		inconshreveable:go-update:8152e7eb6ccf:inconshreveable_go_update/vendor/github.com/inconshreveable/go-update \
@@ -39,22 +39,21 @@ GH_TUPLE=	AlecAivazis:survey:v2.3.6:alecaivazis_survey_v2/vendor/github.com/Alec
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
 		klauspost:compress:v1.15.12:klauspost_compress/vendor/github.com/klauspost/compress \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.16:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-isatty:v0.0.17:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mgutz:ansi:d51e80ef957d:mgutz_ansi/vendor/github.com/mgutz/ansi \
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		mitchellh:go-homedir:v1.1.0:mitchellh_go_homedir/vendor/github.com/mitchellh/go-homedir \
 		mitchellh:go-wordwrap:v1.0.1:mitchellh_go_wordwrap/vendor/github.com/mitchellh/go-wordwrap \
 		nats-io:cliprompts:2737f3b8cbb9:nats_io_cliprompts_v2/vendor/github.com/nats-io/cliprompts \
 		nats-io:jsm.go:v0.0.35:nats_io_jsm_go/vendor/github.com/nats-io/jsm.go \
-		nats-io:jwt:83b58fd54838:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:jwt:a826c77dc9d2:nats_io_jwt \
+		nats-io:jwt:v2.4.0:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
 		nats-io:nats-server:v2.9.6:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		nats-io:nats.go:v1.21.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
-		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
+		nats-io:nats.go:v1.24.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nkeys:v0.4.4:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		onsi:gomega:v1.4.3:onsi_gomega/vendor/github.com/onsi/gomega \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
-		protocolbuffers:protobuf-go:v1.28.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		protocolbuffers:protobuf-go:v1.30.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rhysd:go-github-selfupdate:v1.2.3:rhysd_go_github_selfupdate/vendor/github.com/rhysd/go-github-selfupdate \
 		russross:blackfriday:v2.1.0:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		spf13:cobra:v1.6.1:spf13_cobra/vendor/github.com/spf13/cobra \
