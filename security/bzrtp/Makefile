@@ -1,5 +1,5 @@
 PORTNAME=	bzrtp
-PORTVERSION=	5.1.32
+PORTVERSION=	5.2.37
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -16,7 +16,7 @@ CPE_VENDOR=	${PORTNAME}_project
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_COMMIT=	ab352db967d3f2bd0037564079e5cb4df0bd3460
+GL_COMMIT=	bf66d442d1881eff4310ce9516e25f2616adfd35
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
