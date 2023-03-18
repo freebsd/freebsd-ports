@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:graphics/png \
 		liblzo2.so:archivers/lzo2
 
-USES=		cmake compiler:c++17-lang cpe pkgconfig tar:xz
+USES=		cmake cpe pkgconfig tar:xz
 CMAKE_ARGS=	-DCMAKE_INSTALL_BINDIR:PATH=bin \
 		-DCMAKE_INSTALL_DATADIR:PATH=share
 
@@ -40,6 +40,14 @@ SERVER_LIB_DEPENDS_OFF=	libfontconfig.so:x11-fonts/fontconfig \
 SERVER_VARS=		USE_RC_SUBR=${PORTNAME}
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc*} && ${OSVERSION} > 1400078
+USES+=		llvm:min=16
+CC=		clang${LLVM_VERSION}
+CXX=		clang++${LLVM_VERSION}
+.else
+USES+=		compiler:c++17-lang
+.endif
 
 .if exists(${LOCALBASE}/lib/libSDL2.so)
 _SDL_VERSION=		sdl2
