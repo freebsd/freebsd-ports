@@ -16,6 +16,9 @@ WWW=		https://www.cs.wisc.edu/~ghost/doc/GPL/index.htm
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Released over 10 years ago and unsupported by upstream, consider print/ghostscript9-agpl-base
+EXPIRATION_DATE=2023-03-31
+
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn \
