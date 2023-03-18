@@ -17792,3 +17792,4 @@ security/openssl-devel|security/openssl30|2023-03-14|3.0 is not devel, prevent c
 net-p2p/openethereum||2023-03-15|Has expired: not maintained anymore
 devel/pydio-packr||2023-03-15|Was only used for building www/pydio-cells before, not needed anymore
 math/hs-penrose||2023-03-16|Perose Haskell app is deprecated upstrean, it was rewritten in TypeScript
+multimedia/libquicktime-lame||2023-03-18|Abandoned upstream and fails to build with newer versions of FFmpeg, consider using multimedia/ffmpeg
