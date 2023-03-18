@@ -205,6 +205,7 @@
     SUBDIR += fcitx5
     SUBDIR += fcitx5-configtool
     SUBDIR += fcitx5-gtk
+    SUBDIR += fcitx5-gtk-common
     SUBDIR += fcitx5-lua
     SUBDIR += fcitx5-m17n
     SUBDIR += fcitx5-qt
