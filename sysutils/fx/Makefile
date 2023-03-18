@@ -1,6 +1,6 @@
 PORTNAME=	fx
 DISTVERSION=	24.0.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	sysutils
 
 MAINTAINER=	0xdutra@gmail.com
@@ -25,7 +25,7 @@ GH_TUPLE=	\
 		dop251:goja:e1eca0b61fa9:dop251_goja/vendor/github.com/dop251/goja \
 		go-sourcemap:sourcemap:v2.1.3:go_sourcemap_sourcemap/vendor/github.com/go-sourcemap/sourcemap \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:sys:988cb79eb6c6:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:e5f449aeb171:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \

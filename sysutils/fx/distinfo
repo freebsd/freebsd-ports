@@ -1,4 +1,4 @@
-TIMESTAMP = 1652491341
+TIMESTAMP = 1679101960
 SHA256 (antonmedv-fx-24.0.0_GH0.tar.gz) = 43682e6b189a84602930b9fb09a87af400359a9e97a4bb8e1119688c53fad9fd
 SIZE (antonmedv-fx-24.0.0_GH0.tar.gz) = 1033450
 SHA256 (atotto-clipboard-v0.1.4_GH0.tar.gz) = cafd64dc78f293c1e774386186f3f817461a1a8940ef86d5d9e9524b58aa791e
@@ -21,8 +21,8 @@ SHA256 (go-sourcemap-sourcemap-v2.1.3_GH0.tar.gz) = 9e5d9e6f1b7facedd58ef8bb2af8
 SIZE (go-sourcemap-sourcemap-v2.1.3_GH0.tar.gz) = 6479
 SHA256 (go-yaml-yaml-9f266ea9e77c_GH0.tar.gz) = 63efc9aabcbb56b2c9469927784fd67ecb3a79720c4fa754c511335a04156d04
 SIZE (go-yaml-yaml-9f266ea9e77c_GH0.tar.gz) = 86898
-SHA256 (golang-sys-988cb79eb6c6_GH0.tar.gz) = 1d1398ea812d4cb91a7e7d00931b437a116783323b25750698bbcce950710a40
-SIZE (golang-sys-988cb79eb6c6_GH0.tar.gz) = 1304233
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-term-e5f449aeb171_GH0.tar.gz) = 7b6ad4bc0249d9d2eccbd7795c523970020469d52c427753f4857227fd877261
 SIZE (golang-term-e5f449aeb171_GH0.tar.gz) = 14976
 SHA256 (golang-text-v0.3.7_GH0.tar.gz) = 7cab2f6c3133ac1d422edd952b0dd2082fa55a73c2663fb2defd9bf83d649b26
