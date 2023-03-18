@@ -1,5 +1,5 @@
 PORTNAME=	Mail-DKIM
-PORTVERSION=	1.20220520
+PORTVERSION=	1.20230212
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN \
 		http://jason.long.name/dkimproxy/
