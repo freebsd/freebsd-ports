@@ -4,6 +4,9 @@ CATEGORIES=	net comms
 MASTER_SITES=	https://pub.freerdp.com/releases/ \
 		https://github.com/FreeRDP/FreeRDP/releases/download/${DISTVERSION}/
 
+PATCH_SITES=	https://github.com/FreeRDP/FreeRDP/commit/
+PATCHFILES+=	498ddbf23e520fbff6c96a3c4bd4c6b2534529c4.patch:-p1 # Disable sha3 and shake hashes for libressl
+
 MAINTAINER=	vvd@unislabs.com
 COMMENT=	Free implementation of Remote Desktop Protocol
 WWW=		https://www.freerdp.com/
