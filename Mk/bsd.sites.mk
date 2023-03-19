@@ -787,7 +787,7 @@ FETCH_ARGS+=	--user-agent=curl/7.68.0
 
 .if !defined(IGNORE_MASTER_SITE_OSSP)
 MASTER_SITE_OSSP+= \
-	ftp://ftp.ossp.org/pkg/%SUBDIR%/ \
+	http://ftp.ntua.gr/pub/utils/ossp/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/utils/ossp/%SUBDIR%/
 .endif
 
