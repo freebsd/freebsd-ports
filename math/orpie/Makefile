@@ -10,6 +10,9 @@ WWW=		https://pessimization.com/software/orpie/
 
 LICENSE=	GPLv2
 
+BROKEN=         unfetchable
+EXPIRATION_DATE=2023-04-30
+
 BUILD_DEPENDS=	${LOCALBASE}/${OCAML_SITELIBDIR}/num/META:math/ocaml-num
 LIB_DEPENDS=	libgsl.so:math/gsl
 
