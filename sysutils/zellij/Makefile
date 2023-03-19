@@ -11,6 +11,7 @@ WWW=		https://zellij.dev/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+BROKEN_aarch64=	fails to build: required low level features only implemented for amd64
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	wasmer-vm crate currently only supports aarch64 and amd64
 
