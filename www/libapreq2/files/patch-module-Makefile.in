@@ -1,11 +1,11 @@
---- module/Makefile.in.orig
-+++ module/Makefile.in
-@@ -43,7 +43,7 @@
- mkinstalldirs = $(install_sh) -d
+--- module/Makefile.in.orig	2023-03-13 19:18:13.887355000 +0100
++++ module/Makefile.in	2023-03-13 19:19:15.902362000 +0100
+@@ -100,7 +100,7 @@ CONFIG_CLEAN_VPATH_FILES =
  CONFIG_HEADER = $(top_builddir)/include/apreq_config.h
  CONFIG_CLEAN_FILES =
+ CONFIG_CLEAN_VPATH_FILES =
 -PROGRAMS = $(noinst_PROGRAMS)
-+PROGRAMS = 
++PROGRAMS =
  test_cgi_SOURCES = test_cgi.c
  test_cgi_OBJECTS = test_cgi.$(OBJEXT)
  test_cgi_LDADD = $(LDADD)
