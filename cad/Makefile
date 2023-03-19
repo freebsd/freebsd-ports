@@ -1,6 +1,5 @@
     COMMENT = CAD tools
 
-    SUBDIR += NASTRAN-95
     SUBDIR += PrusaSlicer
     SUBDIR += abc
     SUBDIR += admesh
