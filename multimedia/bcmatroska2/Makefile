@@ -1,15 +1,23 @@
 PORTNAME=	bcmatroska2
-PORTVERSION=	0.23
+PORTVERSION=	5.2.1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://www.linphone.org/releases/sources/bcmatroska2/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Belledonne Communications Matroska media container support
 WWW=		https://www.linphone.org/
 
-USES=		cmake
+LICENSE=	BSD3CLAUSE
+
+LIB_DEPENDS=	libbctoolbox.so:net/bctoolbox
+
+USES=		cmake compiler:c++17-lang
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.linphone.org/BC
+GL_ACCOUNT=	public
+GL_COMMIT=	4d125bf2788915325c5ab93b9a97835f96d566d3
 USE_LDCONFIG=	yes
 
-CMAKE_ARGS=	-DENABLE_STATIC=NO
+CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
+		-DENABLE_STATIC=NO
 
 .include <bsd.port.mk>
