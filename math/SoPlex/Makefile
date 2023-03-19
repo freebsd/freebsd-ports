@@ -8,10 +8,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Optimization package for solving linear programming problems (LPs)
 WWW=		https://soplex.zib.de
 
-LICENSE=	ZIB
-LICENSE_NAME=	ZIB ACADEMIC LICENSE
-LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	no-dist-mirror no-pkg-mirror no-auto-accept
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
 		libgmp.so:math/gmp
