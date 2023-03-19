@@ -894,7 +894,6 @@
     SUBDIR += py-mpl-interactions
     SUBDIR += py-mpl-scatter-density
     SUBDIR += py-nwdiag
-    SUBDIR += py-open3d-python
     SUBDIR += py-opencolorio
     SUBDIR += py-openimageio
     SUBDIR += py-openshadinglanguage
