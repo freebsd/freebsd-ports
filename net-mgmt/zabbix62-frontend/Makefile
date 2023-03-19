@@ -3,10 +3,8 @@ CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	-frontend${PHP_PKGNAMESUFFIX}
 
 USES+=		php:web,flavors
-USE_PHP=	bcmath ctype dom fileinfo filter gd gettext hash json ldap \
-		mbstring openssl pcre session simplexml snmp sockets xml \
-		xmlreader xmlwriter
-IGNORE_WITH_PHP=	82
+USE_PHP=	bcmath ctype filter gd gettext ldap mbstring session \
+		simplexml sockets xml xmlreader xmlwriter
 
 MASTERDIR=	${.CURDIR}/../${PORTNAME}-server
 PATCHDIR=
