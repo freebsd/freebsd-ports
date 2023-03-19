@@ -1,8 +1,8 @@
 PORTNAME=	PySCIPOpt
-DISTVERSION=	4.2.0
-PORTREVISION=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.3.0
 CATEGORIES=	math python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,12 @@ LICENSE=	MIT
 LIB_DEPENDS=	libscip.so:math/SCIP
 
 USES=		localbase python:3.6+
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	distutils cython autoplist pytest
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	scipopt
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyscipopt/scip*.so
