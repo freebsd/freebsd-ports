@@ -1,3 +1,0 @@
-%%SITE_ARCH%%/auto/Net/ZooKeeper/ZooKeeper.so
-%%SITE_ARCH%%/Net/ZooKeeper.pm
-%%PERL5_MAN3%%/Net::ZooKeeper.3.gz

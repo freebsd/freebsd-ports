@@ -17794,3 +17794,4 @@ devel/pydio-packr||2023-03-15|Was only used for building www/pydio-cells before,
 math/hs-penrose||2023-03-16|Perose Haskell app is deprecated upstrean, it was rewritten in TypeScript
 multimedia/libquicktime-lame||2023-03-18|Abandoned upstream and fails to build with newer versions of FFmpeg, consider using multimedia/ffmpeg
 multimedia/libquicktime||2023-03-18|Abandoned upstream and fails to build with newer versions of FFmpeg, consider using multimedia/ffmpeg
+devel/p5-Net-ZooKeeper||2023-03-19|Has expired: Broken since 2020

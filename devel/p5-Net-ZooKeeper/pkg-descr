@@ -1,5 +1,0 @@
-Net::ZooKeeper provides a Perl interface to the synchronous C API
-of Apache ZooKeeper.
-
-ZooKeeper is coordination service for distributed applications and
-is a sub-project of the Apache Hadoop project.
