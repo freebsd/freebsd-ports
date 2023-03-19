@@ -1,5 +1,5 @@
 PORTNAME=	retry2
-DISTVERSION=	0.9.4
+DISTVERSION=	0.9.5
 CATEGORIES=	devel python
 #MASTER_SITES=	PYPI # no tarball
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,9 +10,7 @@ WWW=		https://github.com/eSAMTrade/retry
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}py>=1.4.26:devel/py-py@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}decorator>=3.4.2:devel/py-decorator@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>=3.4.2:devel/py-decorator@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
