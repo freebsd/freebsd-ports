@@ -11,6 +11,9 @@ WWW=		https://www.ltg.ed.ac.uk/software/ltxml/
 
 LICENSE=	GPLv2
 
+BROKEN=		unfetchable
+EXPIRATION_DATE=2023-04-30
+
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/XML
