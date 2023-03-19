@@ -8,10 +8,8 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Solver for mixed integer, mixed integer nonlinear programming
 WWW=		https://www.scipopt.org/
 
-LICENSE=	ZIB
-LICENSE_NAME=	ZIB ACADEMIC LICENSE
-LICENSE_FILE=	${WRKSRC}/COPYING
-LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE=	APACHE20
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 EXTRACT_DEPENDS=	gtar:archivers/gtar
 LIB_DEPENDS=	libgmp.so:math/gmp \
