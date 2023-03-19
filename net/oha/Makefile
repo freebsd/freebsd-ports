@@ -1,7 +1,6 @@
 PORTNAME=	oha
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.6
-PORTREVISION=	1
+DISTVERSION=	0.5.7
 CATEGORIES=	net
 
 MAINTAINER=	otis@FreeBSD.org
@@ -14,7 +13,7 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	hatoo
 
-CARGO_CRATES=	anyhow-1.0.68 \
+CARGO_CRATES=	anyhow-1.0.69 \
 		assert_cmd-2.0.8 \
 		async-trait-0.1.64 \
 		autocfg-1.1.0 \
@@ -23,7 +22,7 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		base64-0.21.0 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.3 \
-		bstr-1.2.0 \
+		bstr-1.3.0 \
 		buf_redux-0.8.4 \
 		bumpalo-3.12.0 \
 		byte-unit-4.0.18 \
@@ -32,9 +31,9 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		cassowary-0.3.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		clap-4.1.4 \
+		clap-4.1.6 \
 		clap_derive-4.1.0 \
-		clap_lex-0.3.1 \
+		clap_lex-0.3.2 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
 		cpufeatures-0.2.5 \
@@ -50,14 +49,13 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		enum-as-inner-0.5.1 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
-		fastrand-1.8.0 \
+		fastrand-1.9.0 \
 		float-ord-0.3.2 \
 		flume-0.10.14 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.1.0 \
-		fs_extra-1.2.0 \
 		futures-0.3.26 \
 		futures-channel-0.3.26 \
 		futures-core-0.3.26 \
@@ -76,13 +74,14 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		headers-core-0.2.0 \
 		heck-0.4.1 \
 		hermit-abi-0.2.6 \
+		hermit-abi-0.3.1 \
 		hostname-0.3.1 \
-		http-0.2.8 \
+		http-0.2.9 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
 		humantime-2.1.0 \
-		hyper-0.14.23 \
+		hyper-0.14.24 \
 		idna-0.2.3 \
 		idna-0.3.0 \
 		indexmap-1.9.2 \
@@ -90,10 +89,10 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		io-lifetimes-1.0.5 \
 		ipconfig-0.3.1 \
 		ipnet-2.7.1 \
-		is-terminal-0.4.2 \
+		is-terminal-0.4.4 \
 		itertools-0.10.5 \
 		itoa-1.0.5 \
-		jemalloc-sys-0.5.2+5.3.0-patched \
+		jemalloc-sys-0.5.3+5.3.0-patched \
 		jemallocator-0.5.0 \
 		js-sys-0.3.61 \
 		lazy_static-1.4.0 \
@@ -109,13 +108,13 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		memchr-2.5.0 \
 		mime-0.3.16 \
 		mime_guess-2.0.4 \
-		mio-0.8.5 \
+		mio-0.8.6 \
 		multipart-0.18.0 \
 		nanorand-0.7.0 \
 		native-tls-0.2.11 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
-		once_cell-1.17.0 \
+		once_cell-1.17.1 \
 		openssl-0.10.45 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
@@ -135,7 +134,7 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		predicates-tree-1.0.7 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.50 \
+		proc-macro2-1.0.51 \
 		quick-error-1.2.3 \
 		quote-1.0.23 \
 		rand-0.8.5 \
@@ -147,7 +146,7 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		resolv-conf-0.7.0 \
 		ring-0.16.20 \
 		rlimit-0.9.1 \
-		rustix-0.36.7 \
+		rustix-0.36.8 \
 		rustls-0.20.8 \
 		rustls-native-certs-0.6.2 \
 		rustls-pemfile-0.2.1 \
@@ -162,34 +161,34 @@ CARGO_CRATES=	anyhow-1.0.68 \
 		security-framework-sys-2.8.0 \
 		serde-1.0.152 \
 		serde_derive-1.0.152 \
-		serde_json-1.0.91 \
+		serde_json-1.0.93 \
 		serde_urlencoded-0.7.1 \
 		sha-1-0.10.1 \
 		sha1-0.10.5 \
-		signal-hook-0.3.14 \
+		signal-hook-0.3.15 \
 		signal-hook-mio-0.2.3 \
-		signal-hook-registry-1.4.0 \
-		slab-0.4.7 \
+		signal-hook-registry-1.4.1 \
+		slab-0.4.8 \
 		smallvec-1.10.0 \
 		socket2-0.4.7 \
 		spin-0.5.2 \
-		spin-0.9.4 \
+		spin-0.9.5 \
 		strsim-0.10.0 \
-		syn-1.0.107 \
+		syn-1.0.109 \
 		tempfile-3.3.0 \
 		termcolor-1.2.0 \
 		termtree-0.4.0 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
 		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.0 \
+		tinyvec_macros-0.1.1 \
 		tokio-1.25.0 \
 		tokio-macros-1.8.2 \
-		tokio-native-tls-0.3.0 \
+		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.23.4 \
-		tokio-stream-0.1.11 \
+		tokio-stream-0.1.12 \
 		tokio-tungstenite-0.17.2 \
-		tokio-util-0.7.4 \
+		tokio-util-0.7.7 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-attributes-0.1.23 \

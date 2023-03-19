@@ -1,4 +1,4 @@
-TIMESTAMP = 1676444720
+TIMESTAMP = 1679221438
 SHA256 (rust/crates/anyhow-1.0.68.crate) = 2cb2f989d18dd141ab8ae82f64d1a8cdd37e0840f73a406896cf5e99502fab61
 SIZE (rust/crates/anyhow-1.0.68.crate) = 43882
 SHA256 (rust/crates/assert_cmd-2.0.8.crate) = 9834fcc22e0874394a010230586367d4a3e9f11b560f469262678547e1d2575e
@@ -451,5 +451,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.42.1.crate) = 447660ad36a13288b1db4d42
 SIZE (rust/crates/windows_x86_64_msvc-0.42.1.crate) = 664606
 SHA256 (rust/crates/winreg-0.10.1.crate) = 80d0f4e272c85def139476380b12f9ac60926689dd2e01d4923222f40580869d
 SIZE (rust/crates/winreg-0.10.1.crate) = 25725
-SHA256 (hatoo-oha-v0.5.6_GH0.tar.gz) = 4d76e08b9094e5f83c42f4c322b1fb5bade2aa34aad1d4717122dd395eb8db89
-SIZE (hatoo-oha-v0.5.6_GH0.tar.gz) = 553966
+SHA256 (hatoo-oha-v0.5.7_GH0.tar.gz) = 966c2c634fe8e4c30bec4be38a9bb1effcda06ef8496c94678c7e4192981f934
+SIZE (hatoo-oha-v0.5.7_GH0.tar.gz) = 554372
