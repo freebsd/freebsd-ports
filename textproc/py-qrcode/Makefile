@@ -1,5 +1,5 @@
 PORTNAME=	qrcode
-PORTVERSION=	7.3
+PORTVERSION=	7.4
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,10 +10,12 @@ WWW=		https://github.com/lincolnloop/python-qrcode
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=1.8:devel/py-six@${PY_FLAVOR} \
-		${PY_PILLOW}
+RUN_DEPENDS=	${PY_PILLOW} \
+		${PYTHON_PKGNAMEPREFIX}png>=0.0.17:graphics/py-png@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.8:devel/py-six@${PY_FLAVOR} \
+		${PYTHON_SITELIBDIR}/typing_extensions.py:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
