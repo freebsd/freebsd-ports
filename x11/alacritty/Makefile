@@ -1,7 +1,7 @@
 PORTNAME=	alacritty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -245,7 +245,9 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 PLIST_FILES=	bin/alacritty \
 		etc/bash_completion.d/alacritty.bash \
 		share/fish/completions/alacritty.fish \
+		share/man/man1/alacritty-msg.1.gz \
 		share/man/man1/alacritty.1.gz \
+		share/metainfo/org.alacritty.Alacritty.appdata.xml \
 		share/pixmaps/Alacritty.svg \
 		share/zsh/site-functions/_alacritty \
 		${DESKTOPDIR}/Alacritty.desktop
@@ -270,8 +272,13 @@ post-install:
 		${STAGEDIR}${DESKTOPDIR}
 	${INSTALL_DATA} ${WRKSRC}/extra/logo/alacritty-term.svg \
 		${STAGEDIR}${PREFIX}/share/pixmaps/Alacritty.svg
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo
+	${INSTALL_DATA} ${WRKSRC}/extra/linux/org.alacritty.Alacritty.appdata.xml \
+		${STAGEDIR}${PREFIX}/share/metainfo
 	${INSTALL_MAN} ${WRKSRC}/extra/alacritty.man \
 		${STAGEDIR}${PREFIX}/share/man/man1/alacritty.1
+	${INSTALL_MAN} ${WRKSRC}/extra/alacritty-msg.man \
+		${STAGEDIR}${PREFIX}/share/man/man1/alacritty-msg.1
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
 	${INSTALL_DATA} ${WRKSRC}/extra/completions/alacritty.bash \
 		${STAGEDIR}${PREFIX}/etc/bash_completion.d
