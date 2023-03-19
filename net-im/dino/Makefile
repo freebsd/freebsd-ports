@@ -1,7 +1,6 @@
 PORTNAME=	dino
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	1
+DISTVERSION=	0.4.1
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -23,8 +22,7 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 		libsoup-2.4.so:devel/libsoup \
 		libsqlite3.so:databases/sqlite3 \
 		libsrtp2.so:net/libsrtp2 \
-		libvulkan.so:graphics/vulkan-loader \
-		libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
+		libvulkan.so:graphics/vulkan-loader
 
 USES=		cmake cpe desktop-file-utils gettext-tools gnome ninja \
 		pkgconfig vala:build
@@ -52,7 +50,7 @@ ICE_LIB_DEPENDS=	libgnutls.so:security/gnutls \
 ICE_VARS=		ENABLED_PLUGINS+=ice
 ICE_VARS_OFF=		DISABLED_PLUGINS+=ice
 RTP_LIB_DEPENDS=	libgnutls.so:security/gnutls \
-			libwebrtc-audio-processing-1.so:audio/webrtc-audio-processing
+			libwebrtc_audio_processing.so:audio/webrtc-audio-processing0
 RTP_USES=		gstreamer
 RTP_USE=		GSTREAMER=gtk,opus,pulse,speex,srtp,v4l2,vpx,x264
 RTP_VARS=		ENABLED_PLUGINS+=rtp

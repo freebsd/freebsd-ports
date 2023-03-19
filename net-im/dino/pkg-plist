@@ -74,7 +74,7 @@ share/locale/id/LC_MESSAGES/dino.mo
 %%OMEMO%%share/locale/ie/LC_MESSAGES/dino-omemo.mo
 %%GNUPG%%share/locale/ie/LC_MESSAGES/dino-openpgp.mo
 share/locale/ie/LC_MESSAGES/dino.mo
-share/locale/is/LC_MESSAGES/dino-openpgp.mo
+%%GNUPG%%share/locale/is/LC_MESSAGES/dino-openpgp.mo
 share/locale/is/LC_MESSAGES/dino.mo
 %%OMEMO%%share/locale/it/LC_MESSAGES/dino-omemo.mo
 %%GNUPG%%share/locale/it/LC_MESSAGES/dino-openpgp.mo
@@ -83,7 +83,7 @@ share/locale/it/LC_MESSAGES/dino.mo
 %%GNUPG%%share/locale/ja/LC_MESSAGES/dino-openpgp.mo
 share/locale/ja/LC_MESSAGES/dino.mo
 share/locale/kab/LC_MESSAGES/dino.mo
-share/locale/ko/LC_MESSAGES/dino-openpgp.mo
+%%GNUPG%%share/locale/ko/LC_MESSAGES/dino-openpgp.mo
 share/locale/ko/LC_MESSAGES/dino.mo
 %%OMEMO%%share/locale/lb/LC_MESSAGES/dino-omemo.mo
 %%GNUPG%%share/locale/lb/LC_MESSAGES/dino-openpgp.mo
@@ -91,7 +91,7 @@ share/locale/lb/LC_MESSAGES/dino.mo
 %%OMEMO%%share/locale/lt/LC_MESSAGES/dino-omemo.mo
 %%GNUPG%%share/locale/lt/LC_MESSAGES/dino-openpgp.mo
 share/locale/lt/LC_MESSAGES/dino.mo
-share/locale/lv/LC_MESSAGES/dino-openpgp.mo
+%%GNUPG%%share/locale/lv/LC_MESSAGES/dino-openpgp.mo
 share/locale/lv/LC_MESSAGES/dino.mo
 %%OMEMO%%share/locale/nb/LC_MESSAGES/dino-omemo.mo
 %%GNUPG%%share/locale/nb/LC_MESSAGES/dino-openpgp.mo
