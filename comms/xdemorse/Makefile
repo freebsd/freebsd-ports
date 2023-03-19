@@ -1,6 +1,5 @@
 PORTNAME=	xdemorse
-DISTVERSION=	3.6.5
-PORTREVISION=	1
+DISTVERSION=	3.6.6
 CATEGORIES=	comms
 MASTER_SITES=	https://www.qsl.net/5/5b4az/pkg/morse/xdemorse/
 
