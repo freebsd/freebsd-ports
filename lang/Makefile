@@ -41,7 +41,6 @@
     SUBDIR += cython-devel
     SUBDIR += dhall
     SUBDIR += dlang-tools
-    SUBDIR += dlv
     SUBDIR += duktape
     SUBDIR += duktape-lib
     SUBDIR += ecl
