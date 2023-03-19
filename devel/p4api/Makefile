@@ -2,19 +2,18 @@ PORTNAME=	p4api
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
 PORTREVISION=	1
 CATEGORIES=	devel
-# Perforce stupidly rerolls their distfiles on a regular basis, updating the
-# files' timestamps when they do, which changes the zip file's checksum.  Work
-# around that by cacheing the distfile in LOCAL and using that version to make
-# distinfo
+# Perforce changes their distfiles when they patch, which changes the
+# zip file's checksum. This does not play well with FreeBSD's conventions.
+# Also, this port is for 2016.1 which no longer is available from Perforce's
+# sites. The new maintainer will backup host until the new 2022.2 port is ready.
 MASTER_SITES=	LOCAL/asomers/perforce/p4:zip \
-		ftp://ftp.perforce.com/perforce/${P4VERSION}/doc/manuals/p4api/:pdf \
-		https://swarm.workshop.perforce.com/projects/perforce_software-p4/archives/:zip
+		https://hesiod.org/distfiles/
 DIST_SUBDIR=	perforce/p4
 DISTNAME=	${YEAR}-${MAJOR}
 DISTFILES=	${ZIP_FILES}:zip p4api.pdf:pdf
 EXTRACT_ONLY=	${ZIP_FILES}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonfb@hesiod.org
 COMMENT=	Perforce API (static libraries and header files)
 WWW=		http://www.perforce.com/perforce/loadsupp.html
 

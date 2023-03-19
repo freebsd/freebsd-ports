@@ -2,17 +2,18 @@ PORTNAME=	p4
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
 PORTREVISION=	3
 CATEGORIES=	devel
-# Perforce stupidly rerolls their distfiles on a regular basis, updating the
-# files' timestamps when they do, which changes the zip file's checksum.  Work
-# around that by cacheing the distfile in LOCAL and using that version to make
-# distinfo
+# Perforce changes their distfiles when they patch, which changes the
+# zip file's checksum. This does not play well with FreeBSD's conventions.
+# This version of the port 2016.1 is no longer available from Perforce's
+# site. The new maintainer is backup hosting until the new port of 2022.2
+# is ready.
 MASTER_SITES=	LOCAL/asomers/perforce/p4 \
-		https://swarm.workshop.perforce.com/projects/perforce_software-p4/archives/
+		https://hesiod.org/distfiles/
 DISTNAME=	${YEAR}-${MAJOR}
 DISTFILES=	${ZIP_FILES}
 DIST_SUBDIR=	perforce/p4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonfb@hesiod.org
 COMMENT=	Perforce client
 WWW=		https://www.perforce.com/
 
