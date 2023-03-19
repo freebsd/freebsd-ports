@@ -10,6 +10,9 @@ WWW=		https://jeremy.zawodny.com/mysql/super-smack/
 
 LICENSE=	GPLv2+
 
+BROKEN=		unfetchable
+EXPIRATION_DATE=2023-04-30
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-smacks-dir=${DATADIR}
 MAKE_JOBS_UNSAFE=	yes
