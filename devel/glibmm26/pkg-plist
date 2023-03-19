@@ -11,6 +11,7 @@ include/giomm-%%VERSION%%/giomm/asyncinitable.h
 include/giomm-%%VERSION%%/giomm/asyncresult.h
 include/giomm-%%VERSION%%/giomm/bufferedinputstream.h
 include/giomm-%%VERSION%%/giomm/bufferedoutputstream.h
+include/giomm-%%VERSION%%/giomm/bytesicon.h
 include/giomm-%%VERSION%%/giomm/cancellable.h
 include/giomm-%%VERSION%%/giomm/charsetconverter.h
 include/giomm-%%VERSION%%/giomm/contenttype.h
@@ -104,6 +105,7 @@ include/giomm-%%VERSION%%/giomm/private/asyncinitable_p.h
 include/giomm-%%VERSION%%/giomm/private/asyncresult_p.h
 include/giomm-%%VERSION%%/giomm/private/bufferedinputstream_p.h
 include/giomm-%%VERSION%%/giomm/private/bufferedoutputstream_p.h
+include/giomm-%%VERSION%%/giomm/private/bytesicon_p.h
 include/giomm-%%VERSION%%/giomm/private/cancellable_p.h
 include/giomm-%%VERSION%%/giomm/private/charsetconverter_p.h
 include/giomm-%%VERSION%%/giomm/private/converter_p.h
@@ -379,6 +381,7 @@ include/glibmm-%%VERSION%%/glibmm/variantdict.h
 include/glibmm-%%VERSION%%/glibmm/variantiter.h
 include/glibmm-%%VERSION%%/glibmm/varianttype.h
 include/glibmm-%%VERSION%%/glibmm/vectorutils.h
+include/glibmm-%%VERSION%%/glibmm/version.h
 include/glibmm-%%VERSION%%/glibmm/wrap.h
 include/glibmm-%%VERSION%%/glibmm/wrap_init.h
 include/glibmm-%%VERSION%%/glibmm_generate_extra_defs/generate_extra_defs.h
