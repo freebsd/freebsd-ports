@@ -9,6 +9,8 @@ WWW=		https://www.openexr.com/
 
 LICENSE=	BSD3CLAUSE
 
+BROKEN_armv7=	https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270348
+
 # exact version required to avoid hard-to-debug issues
 LIB_DEPENDS=	libImath-3_1.so.30:math/Imath
 
@@ -42,9 +44,9 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
 DOCS_BUILD_DEPENDS=breathe-apidoc:devel/py-breathe \
 		${PYTHON_PKGNAMEPREFIX}sphinx_press_theme>=0:textproc/py-sphinx_press_theme
+DOCS_USES=	python:build
 DOCS_CMAKE_BOOL=BUILD_DOCS
 DOCS_CMAKE_ON=	-DPython_EXECUTABLE:STRING=${PYTHON_CMD}
-DOCS_USES=	python:build
 
 _DOCSRCDIR1=	${WRKSRC}
 _DOC_FILES1=	CHANGES.md CONTRIBUTING.md GOVERNANCE.md LICENSE.md SECURITY.md \
