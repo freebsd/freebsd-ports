@@ -2,7 +2,7 @@ PORTNAME=	slurm
 DISTVERSION=	20.02.7
 PORTREVISION=	2
 CATEGORIES=	sysutils python
-MASTER_SITES=	https://download.schedmd.com/slurm/
+MASTER_SITES=	https://ftp.icm.edu.pl/packages/slurm/
 PKGNAMESUFFIX=	-wlm
 
 MAINTAINER=	ports@FreeBSD.org
