@@ -1,5 +1,5 @@
 PORTNAME=	iminuit
-DISTVERSION=	2.21.0
+DISTVERSION=	2.21.1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	cmake:devel/cmake-core
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++14-lang python:3.6+
-USE_PYTHON=	distutils autoplist pytest # 2 tests are known to fail, see https://github.com/scikit-hep/iminuit/issues/779
+USES=		compiler:c++14-lang python:3.9+
+USE_PYTHON=	distutils autoplist pytest # 2 tests are known to fail, see https://github.com/scikit-hep/iminuit/issues/850
 
 TEST_ENV=      ${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
