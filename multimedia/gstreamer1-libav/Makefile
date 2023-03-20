@@ -20,6 +20,7 @@ PORTSCOUT=	limitw:1,even
 USES=		bison gettext-runtime gnome gstreamer libtool localbase \
 		meson ninja pkgconfig python:3.8+,build tar:xz
 USE_GNOME=	glib20
+MESON_ARGS=	-Ddoc=disabled
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
