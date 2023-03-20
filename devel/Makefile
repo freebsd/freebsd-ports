@@ -699,7 +699,6 @@
     SUBDIR += fpc-tplylib
     SUBDIR += fpc-zlib
     SUBDIR += fpp
-    SUBDIR += frama-c
     SUBDIR += freebsd-gcc12
     SUBDIR += freebsd-gcc6
     SUBDIR += freebsd-gcc9
