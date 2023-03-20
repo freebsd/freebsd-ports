@@ -17,6 +17,7 @@ LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
 
 USES=		gnome meson pkgconfig tar:xz
 USE_LDCONFIG=	yes
+MESON_ARGS=	-Dvalgrind=disabled
 
 OPTIONS_DEFINE=	MANPAGES TESTS
 OPTIONS_SUB=	yes
