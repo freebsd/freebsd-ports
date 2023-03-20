@@ -1,4 +1,4 @@
-TIMESTAMP = 1552754348
+TIMESTAMP = 1679322461
 SHA256 (rgburke-grv-v0.3.2_GH0.tar.gz) = 0fda50bf3536b4ff8da6490f736c2e5aace61cd1697794dd77c1ac85d46e9350
 SIZE (rgburke-grv-v0.3.2_GH0.tar.gz) = 5379751
 SHA256 (bradfitz-slice-2b758aa_GH0.tar.gz) = 187a1e127f18950084edb3fe18a230a19629e909eff46fae8a05c7a3b28e4459
@@ -11,8 +11,8 @@ SHA256 (gobwas-glob-e7a84e9_GH0.tar.gz) = fdaec095b2c1d3db96fe21e59fd5824e726a7f
 SIZE (gobwas-glob-e7a84e9_GH0.tar.gz) = 26225
 SHA256 (golang-crypto-a1f597e_GH0.tar.gz) = d757a1cbc11350d5a54a2b9e8b2a3f3a3db9b99e2c84787e12a2d8f82aee2185
 SIZE (golang-crypto-a1f597e_GH0.tar.gz) = 1654217
-SHA256 (golang-sys-fead790_GH0.tar.gz) = 51d846bbb6882366a7f2b3e9e90cc4bdbc011897bfda603011c97d00d37b0864
-SIZE (golang-sys-fead790_GH0.tar.gz) = 1257990
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (mattn-go-runewidth-703b5e6_GH0.tar.gz) = 62c40ad7642da0ad00a3d47887cc7404c09703e580d65c709b2ecb65d721e9c8
 SIZE (mattn-go-runewidth-703b5e6_GH0.tar.gz) = 19884
 SHA256 (pmezard-go-difflib-5d4384e_GH0.tar.gz) = aa21220f5efcdcd08e51d349e2d3d50cad38685dad83bf296aad1129dc3153a6

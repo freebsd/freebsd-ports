@@ -1,7 +1,7 @@
 PORTNAME=	grv
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -22,7 +22,7 @@ GH_TUPLE=	bradfitz:slice:2b758aa:slice/vendor/github.com/bradfitz/slice \
 		davecgh:go-spew:d8f796a:spew/vendor/github.com/davecgh/go-spew \
 		gobwas:glob:e7a84e9:glob/vendor/github.com/gobwas/glob \
 		golang:crypto:a1f597e:crypto/vendor/golang.org/x/crypto \
-		golang:sys:fead790:sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:sys/vendor/golang.org/x/sys \
 		mattn:go-runewidth:703b5e6:runewidth/vendor/github.com/mattn/go-runewidth \
 		pmezard:go-difflib:5d4384e:difflib/vendor/github.com/pmezard/go-difflib \
 		rgburke:goncurses:74f667a:goncurses/vendor/github.com/rgburke/goncurses \
