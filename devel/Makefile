@@ -1442,7 +1442,6 @@
     SUBDIR += libxtend
     SUBDIR += libzim
     SUBDIR += libzookeeper
-    SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
     SUBDIR += lightning
     SUBDIR += linenoise-ng
