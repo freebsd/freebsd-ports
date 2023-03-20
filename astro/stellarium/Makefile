@@ -7,7 +7,7 @@ EXTRACT_ONLY=	${_DISTFILES:Nstars_*.cat:N*.pdf}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	3D photo-realistic sky renderer (planetarium)
-WWW=		https://www.stellarium.org/
+WWW=		https://stellarium.org/
 
 LICENSE=	GPLv2+
 
