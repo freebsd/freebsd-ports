@@ -1,7 +1,7 @@
 PORTNAME=	cf
 PORTVERSION=	6.49.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/go-bindata:devel/go-bindata
 USE_GITHUB=	yes
 GH_ACCOUNT=	cloudfoundry
 GH_PROJECT=	cli
+GH_TUPLE=	golang:sys:v0.6.0:sys
 
 USES=		go
 
@@ -30,6 +31,10 @@ PLIST_FILES=	bin/cf
 PORTDOCS=	NOTICE README.md
 
 OPTIONS_DEFINE=	DOCS
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
