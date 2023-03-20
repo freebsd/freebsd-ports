@@ -356,11 +356,11 @@ do-install:
 
 .  if !defined(SKIP_CABAL_PLIST)
 cabal-post-install-script:
-.      for exe in ${CABAL_EXECUTABLES}
+.    for exe in ${CABAL_EXECUTABLES}
 		${ECHO_CMD} 'bin/${exe}' >> ${TMPPLIST}
-.        if defined(CABAL_WRAPPER_SCRIPTS) && ${CABAL_WRAPPER_SCRIPTS:M${exe}}
+.      if defined(CABAL_WRAPPER_SCRIPTS) && ${CABAL_WRAPPER_SCRIPTS:M${exe}}
 		${ECHO_CMD} '${CABAL_LIBEXEC}/${exe}' >> ${TMPPLIST}
-.        endif
+.      endif
 .    endfor
 .  endif
 
