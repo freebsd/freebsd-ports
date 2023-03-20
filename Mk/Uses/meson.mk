@@ -14,7 +14,7 @@
 # MESON_BUILD_DIR	- Path to the build directory relative to ${WRKSRC}
 #			Default: _build
 #
-# MAINTAINER: gnome@FreeBSD.org
+# MAINTAINER: desktop@FreeBSD.org
 
 .if !defined(_INCLUDE_USES_MESON_MK)
 _INCLUDE_USES_MESON_MK=	yes
