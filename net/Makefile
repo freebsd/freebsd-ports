@@ -580,7 +580,6 @@
     SUBDIR += openrsync
     SUBDIR += opensips31
     SUBDIR += openslp
-    SUBDIR += opentracker
     SUBDIR += openvswitch
     SUBDIR += ortp
     SUBDIR += osrtspproxy
