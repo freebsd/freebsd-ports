@@ -1,7 +1,7 @@
 PORTNAME=		acme-dns
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.0
-PORTREVISION=	7
+PORTREVISION=		8
 PORTEPOCH=		1
 CATEGORIES=		dns
 
@@ -32,10 +32,10 @@ GH_TUPLE=		\
 			go-yaml:yaml:496545a6307b:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 			golang:crypto:e495a2d5b3d3:golang_crypto/vendor/golang.org/x/crypto \
 			golang:mod:v0.5.1:golang_mod/vendor/golang.org/x/mod \
-			golang:net:5cfca573fb4d:golang_net/vendor/golang.org/x/net \
-			golang:sys:1d35b9e2eb4e:golang_sys/vendor/golang.org/x/sys \
+			golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
+			golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 			golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
-			golang:tools:v0.1.8:golang_tools/vendor/golang.org/x/tools \
+			golang:tools:v0.6.0:golang_tools/vendor/golang.org/x/tools \
 			golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 			google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \
 			google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
