@@ -195,7 +195,6 @@
     SUBDIR += py-idna_ssl
     SUBDIR += py-ldns
     SUBDIR += py-localzone
-    SUBDIR += py-namebench
     SUBDIR += py-ns1-python
     SUBDIR += py-publicsuffix
     SUBDIR += py-publicsuffix2
