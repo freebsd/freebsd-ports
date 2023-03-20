@@ -23,6 +23,7 @@ CPE_VENDOR=	p11-kit_project
 MESON_ARGS=	-Dbash_completion=enabled \
 		-Dlibffi=enabled \
 		-Dnls=false \
+		-Dsystemd=disabled \
 		-Dtrust_module=enabled \
 		-Dtrust_paths=${DATADIR}/certs
 
