@@ -1,0 +1,3 @@
+bin/stalonetray
+man/man1/stalonetray.1.gz
+%%EXAMPLESDIR%%/stalonetrayrc.sample

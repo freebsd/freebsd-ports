@@ -1,34 +1,28 @@
 PORTNAME=	stalonetray
-PORTVERSION=	0.8.3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.8.5
 CATEGORIES=	x11
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	STAnd-aLONE system tray
-WWW=		http://stalonetray.sourceforge.net
+WWW=		https://kolbusa.github.io/stalonetray/
 
 LICENSE=	GPLv2
 
-USES=		tar:bzip2 xorg
-USE_XORG=	xpm
+BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
+		libxslt>0:textproc/libxslt
+
+USES=		autoreconf gmake xorg
+USE_GITHUB=	yes
+GH_ACCOUNT=	kolbusa
+USE_XORG=	sm ice x11 xpm
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-native-kde \
 		--disable-debug
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README TODO stalonetray.html
-PORTEXAMPLES=	stalonetrayrc.sample
-PLIST_FILES=	bin/stalonetray man/man1/stalonetray.1.gz
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 post-install:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
-.endfor
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.for file in ${PORTEXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${EXAMPLESDIR}
-.endfor
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/stalonetrayrc.sample ${STAGEDIR}${EXAMPLESDIR}/
 
 .include <bsd.port.mk>
