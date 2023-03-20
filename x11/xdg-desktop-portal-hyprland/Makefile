@@ -30,7 +30,7 @@ USE_GL=		gbm
 GH_ACCOUNT=	hyprwm
 GH_TAGNAME=	85f49f4
 GH_TUPLE=	hyprwm:hyprland-protocols:b8f55e0:hyprland_protocols/subprojects/hyprland-protocols
-MESON_ARGS=	-Dsd-bus-provider=basu
+MESON_ARGS=	-Dsd-bus-provider=basu -Dsystemd=disabled
 PLIST_FILES=	libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service \
 		share/xdg-desktop-portal/portals/hyprland.portal
