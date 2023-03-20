@@ -22,7 +22,7 @@ SHEBANG_GLOB=	*.py
 CPE_VENDOR=	harfbuzz_project
 
 MESON_ARGS=	-Dglib=enabled -Dgobject=enabled -Dgraphite2=enabled \
-		-Dchafa=disabled -Dfreetype=enabled -Dbenchmark=disabled
+		-Dchafa=disabled -Dfreetype=enabled
 
 PLIST_SUB+=	LIBVER=0.60710.0
 
