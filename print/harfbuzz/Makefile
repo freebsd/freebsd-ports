@@ -22,34 +22,38 @@ SHEBANG_GLOB=	*.py
 CPE_VENDOR=	harfbuzz_project
 
 MESON_ARGS=	-Dglib=enabled -Dgobject=enabled -Dgraphite2=enabled \
-		-Dchafa=disabled -Dfreetype=enabled
+		-Dchafa=disabled -Dfreetype=enabled -Dtests=disabled
 
 PLIST_SUB+=	LIBVER=0.60710.0
 
 HARFBUZZ_SLAVE?=	no
 
 .if ${HARFBUZZ_SLAVE} == no
-OPTIONS_DEFINE=	DOCS TEST
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 DOCS_BUILD_DEPENDS=	gtkdoc-scan:textproc/gtk-doc
 DOCS_MESON_ENABLED=	docs
-TEST_MESON_ENABLED=	tests
 .endif
 
 .if ${HARFBUZZ_SLAVE} == no
 MESON_ARGS+=	-Dicu=disabled -Dcairo=disabled
 .elif ${HARFBUZZ_SLAVE} == icu
-MESON_ARGS+=	-Dicu=enabled -Dcairo=disabled -Ddocs=disabled \
-		-Dtests=disabled
+MESON_ARGS+=	-Dicu=enabled -Dcairo=disabled -Ddocs=disabled
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz \
 		libicudata.so:devel/icu
 
 .elif ${HARFBUZZ_SLAVE} == cairo
-MESON_ARGS+=	-Dcairo=enabled -Dicu=disabled -Ddocs=disabled \
-		-Dtests=disabled
+MESON_ARGS+=	-Dcairo=enabled -Dicu=disabled -Ddocs=disabled
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
 USE_GNOME+=	cairo
 .endif
+
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dtests=enabled"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>
