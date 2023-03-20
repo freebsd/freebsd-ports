@@ -2,8 +2,6 @@ PORTNAME=	cmake
 DISTVERSION=	3.24.0
 CATEGORIES=	devel
 
-BROKEN_purecap=	requires missing CheriABI Python
-USE_PKG64=	1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Meta-port to connect all CMake bits
@@ -18,6 +16,7 @@ PLIST_FILES=	# not applicable
 
 OPTIONS_DEFINE=	DOCS GUI MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_EXCLUDE_purecap=	DOCS MANPAGES	# sphinx
 
 GUI_DESC=		Qt-based GUI
 
