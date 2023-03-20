@@ -1,5 +1,7 @@
-TIMESTAMP = 1672122070
+TIMESTAMP = 1679318811
 SHA256 (go/biology_unikmer/unikmer-v0.19.1/v0.19.1.mod) = 7b62d5cd96cb392e6b06bec08dc810fbe1dda7a2201e95e2ff04a3c631048347
 SIZE (go/biology_unikmer/unikmer-v0.19.1/v0.19.1.mod) = 1359
 SHA256 (go/biology_unikmer/unikmer-v0.19.1/v0.19.1.zip) = d2a25e1fb9eb1701de64f843de9653adf02bf343324c236d08f5d510d6c8e3d2
 SIZE (go/biology_unikmer/unikmer-v0.19.1/v0.19.1.zip) = 4286117
+SHA256 (go/biology_unikmer/unikmer-v0.19.1/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/biology_unikmer/unikmer-v0.19.1/golang-sys-v0.6.0_GH0.tar.gz) = 1434234

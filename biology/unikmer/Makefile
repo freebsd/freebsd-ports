@@ -1,7 +1,7 @@
 PORTNAME=	unikmer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.19.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,12 +14,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	csvtk:science/csvtk
 
 USES=		go:modules perl5
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:sys:v0.6.0:sys
 USE_PERL5=	test
 
 GO_MODULE=	github.com/shenwei356/unikmer
 GO_TARGET=	./${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 do-test: # from the benchmark section in README
 	@cd ${WRKSRC} && \
