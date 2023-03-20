@@ -6,9 +6,6 @@ MASTER_SITES=	https://github.com/Kitware/CMake/releases/download/v${DISTVERSION}
 		https://www.cmake.org/files/v${PORTVERSION}/
 PKGNAMESUFFIX=	-core
 
-BROKEN_purecap=	requires missing CheriABI Python
-USE_PKG64=	1
-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Cross-platform Makefile generator
 WWW=		https://www.cmake.org/
@@ -18,9 +15,9 @@ LICENSE_FILE=	${WRKSRC}/Copyright.txt
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
-		libjsoncpp.so:devel/jsoncpp \
 		libuv.so:devel/libuv \
 		librhash.so:security/rhash
+
 
 USES=		compiler:c++11-lang cpe ncurses
 
@@ -45,6 +42,13 @@ CPACK_USES_OFF=		libarchive
 CXXFLAGS+=	-D__BSD_VISIBLE
 
 .include <bsd.port.pre.mk>
+
+# jsoncpp needs meson when built as a package
+.if ${ABI:Mpurecap}
+CONFIGURE_ARGS+=	--no-system-jsoncpp
+.else
+LIB_DEPENDS+=	libjsoncpp.so:devel/jsoncpp
+.endif
 
 .if defined(STRIP) && ${STRIP} != "" && !defined(WITH_DEBUG)
 INSTALL_TARGET=	install/strip
