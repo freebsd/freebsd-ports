@@ -1,6 +1,6 @@
 PORTNAME=	taskctl
 PORTVERSION=	1.4.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel
 
 MAINTAINER=	olgeni@FreeBSD.org
@@ -23,7 +23,7 @@ GH_TUPLE=	bmatcuk:doublestar:v1.1.5:bmatcuk_doublestar/vendor/github.com/bmatcuk
 		fsnotify:fsnotify:v1.4.9:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-yaml:yaml:v2.3.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:sync:cd5d95a43a6e:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:9197077df867:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:ad39bd3f0407:golang_term/vendor/golang.org/x/term \
 		golang:xerrors:9bdfabe68543:golang_xerrors/vendor/golang.org/x/xerrors \
 		imdario:mergo:v0.3.8:imdario_mergo/vendor/github.com/imdario/mergo \
