@@ -41,6 +41,7 @@ USES+=		meson cpe gettext gnome gstreamer libtool pathfix pkgconfig python:3.8+,
 USE_GNOME+=	glib20 introspection:build libxml2
 GST_PLUGIN?=	base
 USE_LDCONFIG=	yes
+MESON_ARGS+=	--auto-features=auto # XXX bug 270361 workaround
 
 CPE_VENDOR=	gstreamer_project
 CPE_PRODUCT=	gstreamer
