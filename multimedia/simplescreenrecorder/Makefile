@@ -1,5 +1,6 @@
 PORTNAME=	simplescreenrecorder
-DISTVERSION=	0.4.4
+DISTVERSION=	0.4.4-9
+DISTVERSIONSUFFIX=	-gc092f3e
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
 
-USES=		cmake compiler:c++11-lang pkgconfig qt:5 xorg
+USES=		cmake compiler:c++11-lang desktop-file-utils pkgconfig qt:5 xorg
 USE_QT=		core gui widgets x11extras buildtools:build linguisttools:build qmake:build
 USE_XORG=	x11 xext xfixes xi xinerama
 
