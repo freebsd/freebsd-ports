@@ -1,5 +1,5 @@
 PORTNAME=	re-flex
-PORTVERSION=	3.2.11
+PORTVERSION=	3.3.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc
 
@@ -22,7 +22,6 @@ GH_ACCOUNT=	Genivia
 GH_PROJECT=	RE-flex
 
 post-patch:
-	${MV} ${WRKSRC}/cmake/CMakeLists.cmake ${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} \
 		's|reflex_static_lib|reflex|; s|reflex_shared_lib|reflex|' \
 		${WRKSRC}/CMakeLists.txt
