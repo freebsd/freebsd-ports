@@ -1,6 +1,5 @@
 PORTNAME=	octave-forge-symbolic
-PORTVERSION=	3.0.1
-PORTREVISION=	1
+PORTVERSION=	3.1.1
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
