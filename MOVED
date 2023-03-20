@@ -17804,3 +17804,4 @@ graphics/py-open3d-python||2023-03-19|Has expired: Broken since 2020
 devel/libzrtpcpp||2023-03-20|Has expired: Broken since 2021
 devel/riscv64-gcc||2023-03-20|Has expired: Unsupported version and users should move to devel/freebsd-gcc12@riscv64
 devel/frama-c||2023-03-20|Has expired: Broken since 2021
+misc/dahdi-kmod||2023-03-20|Has expired: Broken since 2021
