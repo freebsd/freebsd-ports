@@ -21,6 +21,8 @@ USE_GNOME=	glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	flatpak
 
+MESON_ARGS=	-Ddocbook-docs=disabled -Dsystemd=disabled
+
 .include <bsd.port.pre.mk>
 
 .if (${OSVERSION} >= 1400000 && ${OSVERSION} < 1400008) \
