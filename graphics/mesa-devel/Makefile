@@ -39,6 +39,7 @@ MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dgallium-xa=disabled \
 		-Dandroid-libbacktrace=disabled \
 		-Dlmsensors=disabled \
+		-Dmicrosoft-clc=disabled \
 		-Dvalgrind=disabled \
 		-Dglvnd=true \
 		-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} \
