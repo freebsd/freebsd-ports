@@ -1,0 +1,18 @@
+Need to check **some** language in order to get sizeof(void *),
+otherwise the calls to find the kim-api package will fail with
+a message saying that 2.3.0 (64 bit) is unsupported.
+
+--- CMakeLists.txt.orig	2023-03-20 12:08:16 UTC
++++ CMakeLists.txt
+@@ -25,9 +25,10 @@
+ 
+ 
+ cmake_minimum_required(VERSION 3.10)
+-project(openkim-models LANGUAGES NONE)
++project(openkim-models LANGUAGES CXX C Fortran)
+ enable_testing()
+ 
++message(STATUS "VOID_P=${CMAKE_SIZEOF_VOID_P}")
+ file(GLOB MD "${CMAKE_SOURCE_DIR}/model-drivers/*")
+ foreach(item ${MD})
+   add_subdirectory(${item})
