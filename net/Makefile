@@ -1214,7 +1214,6 @@
     SUBDIR += rp-pppoe
     SUBDIR += rpki-client
     SUBDIR += rscsi
-    SUBDIR += rsocket-cpp
     SUBDIR += rsplib
     SUBDIR += rssguard
     SUBDIR += rsync
