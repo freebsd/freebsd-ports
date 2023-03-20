@@ -1,6 +1,5 @@
 PORTNAME=	scikit-bio
-PORTVERSION=	0.5.7
-PORTREVISION=	2
+DISTVERSION=	0.5.7
 CATEGORIES=	biology education python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +28,9 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.3.0:science/py-scipy@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	distutils cython autoplist pytest # tests fail to run, see https://github.com/biocore/scikit-bio/issues/1846
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}ddtrace # lib/python3.8/site-packages/benchmarks/__init__.py
 
@@ -39,5 +40,10 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}ddtrace # lib/python3.8/site-packages/
 CFLAGS+=	-msse2 # workaround for https://github.com/biocore/scikit-bio/issues/1727
 CXXFLAGS+=	-msse2
 .endif
+
+post-install:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/skbio/*/*${PYTHON_EXT_SUFFIX}.so \
+		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/skbio/*/*/*${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>
