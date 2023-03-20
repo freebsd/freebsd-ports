@@ -1,3 +1,3 @@
-TIMESTAMP = 1676647641
-SHA256 (postgresql-42.5.4.jar) = f48fcb0b6959bc8b478657f57ba43c1acca4cade6abca5f17bf9bc9c363cb66f
-SIZE (postgresql-42.5.4.jar) = 1049651
+TIMESTAMP = 1679268951
+SHA256 (postgresql-42.6.0.jar) = b817c67a40c94249fd59d4e686e3327ed0d3d3fae426b20da0f1e75652cfc461
+SIZE (postgresql-42.6.0.jar) = 1081604
