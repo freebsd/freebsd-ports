@@ -1,6 +1,6 @@
 PORTNAME=	aptly
 PORTVERSION=	1.5.0
-PORTREVISION=	9
+PORTREVISION=	10
 DISTVERSIONPREFIX=v
 CATEGORIES=	sysutils
 
@@ -42,7 +42,7 @@ GH_TUPLE=	\
 		golang:net:69e39bad7dc2:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:b1e9470b6e64:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:7de9c90e9dd1:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:f0f3c7e86c11:golang_time/vendor/golang.org/x/time \

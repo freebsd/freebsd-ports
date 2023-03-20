@@ -1,4 +1,4 @@
-TIMESTAMP = 1656703338
+TIMESTAMP = 1679323897
 SHA256 (aptly-dev-aptly-v1.5.0_GH0.tar.gz) = 07e18ce606feb8c86a1f79f7f5dd724079ac27196faa61a2cefa5b599bbb5bb1
 SIZE (aptly-dev-aptly-v1.5.0_GH0.tar.gz) = 8334792
 SHA256 (AlekSi-pointer-v1.0.0_GH0.tar.gz) = 76a03fff91791d4b5f0ac5ec8f5daa240ebeca86fb58805dfd71ecf26e73f8df
@@ -47,8 +47,8 @@ SHA256 (golang-protobuf-v1.5.2_GH0.tar.gz) = 088cc0f3ba18fb8f9d00319568ff0af5a06
 SIZE (golang-protobuf-v1.5.2_GH0.tar.gz) = 171702
 SHA256 (golang-snappy-v0.0.1_GH0.tar.gz) = b1d97f47fcb61cb0cdd54bc424eda980c47838effb0ec9e322506514a50fee85
 SIZE (golang-snappy-v0.0.1_GH0.tar.gz) = 62605
-SHA256 (golang-sys-b1e9470b6e64_GH0.tar.gz) = 673b3fef97708a2b233c9a407e47c5fddf288d2540227bb25859b37c68d46a3a
-SIZE (golang-sys-b1e9470b6e64_GH0.tar.gz) = 1291834
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-term-7de9c90e9dd1_GH0.tar.gz) = 73603eaab2ab2bfe05061d64ad09f8ed7469de6964a672398f7bf82cffb4b1da
 SIZE (golang-term-7de9c90e9dd1_GH0.tar.gz) = 15239
 SHA256 (golang-text-v0.3.7_GH0.tar.gz) = 7cab2f6c3133ac1d422edd952b0dd2082fa55a73c2663fb2defd9bf83d649b26
