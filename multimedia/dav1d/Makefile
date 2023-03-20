@@ -22,7 +22,7 @@ GL_ACCOUNT=	videolan
 GL_COMMIT=	9593e625b75d498d1edea544da21ea764b98d507
 LDFLAGS_i386=	-Wl,-z,notext
 
-OPTIONS_DEFINE=	SDL TEST
+OPTIONS_DEFINE=	SDL TEST XXHASH
 OPTIONS_SUB=	yes
 
 SDL_USES=	pkgconfig sdl
@@ -34,6 +34,11 @@ SDL_MESON_TRUE=	enable_examples
 
 TEST_GL_TUPLE=	videolan:dav1d-test-data:b1bb21f24d1c97e6bcbbc2db9c39155c4354c4bc:testdata/tests/dav1d-test-data
 TEST_MESON_TRUE=enable_tests testdata_tests
+
+XXHASH_DESC=	xxHash 3 muxer
+XXHASH_BUILD_DEPENDS=	xxhash>0:devel/xxhash
+XXHASH_USES=		localbase
+XXHASH_MESON_ENABLED=	xxhash_muxer
 
 .if make(makesum) # for optional distfiles
 .MAKEFLAGS:	WITH="${OPTIONS_DEFINE}"
