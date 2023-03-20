@@ -4,7 +4,7 @@ DISTVERSION=	2.13.9
 PORTREVISION=	0
 CATEGORIES=	devel
 
-MAINTAINER=	gahr@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Header-only test framework for C++
 WWW=		https://github.com/catchorg/Catch2
 
