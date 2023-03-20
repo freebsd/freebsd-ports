@@ -1,7 +1,7 @@
 PORTNAME=	terraform-docs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	sysutils textproc
 
 MAINTAINER=	0xdutra@gmail.com
@@ -31,7 +31,7 @@ GH_TUPLE=	\
 		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
 		golang:net:a5a99cb37ef4:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:977fb7262007:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.1.2:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \

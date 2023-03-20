@@ -1,4 +1,4 @@
-TIMESTAMP = 1640889943
+TIMESTAMP = 1679329682
 SHA256 (terraform-docs-terraform-docs-v0.16.0_GH0.tar.gz) = e370fd106ca74caebc8632834cc28412a3a6a160952392da71f213515bba2085
 SIZE (terraform-docs-terraform-docs-v0.16.0_GH0.tar.gz) = 188000
 SHA256 (BurntSushi-toml-v0.3.1_GH0.tar.gz) = 6593da894578ba510a470735ffbdc88ce88033094dc5a8f4d3957ab87e18803f
@@ -35,8 +35,8 @@ SHA256 (golang-net-a5a99cb37ef4_GH0.tar.gz) = 16cc55746ae8c23d894f28c93879e8915e
 SIZE (golang-net-a5a99cb37ef4_GH0.tar.gz) = 1249439
 SHA256 (golang-protobuf-v1.5.2_GH0.tar.gz) = 088cc0f3ba18fb8f9d00319568ff0af5a06d8925a6e6cb983bb837b4efb703b3
 SIZE (golang-protobuf-v1.5.2_GH0.tar.gz) = 171702
-SHA256 (golang-sys-977fb7262007_GH0.tar.gz) = 11c4dfe83ceae6376054cc95e8f1b303a29985fc407c87cf9e360fd64d7937ce
-SIZE (golang-sys-977fb7262007_GH0.tar.gz) = 1192386
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.5_GH0.tar.gz) = f85d1185ba116cd40ef8cf702fe1d960ed41d039c08fd314dbeb5866f3166f27
 SIZE (golang-text-v0.3.5_GH0.tar.gz) = 8348127
 SHA256 (golang-tools-v0.1.2_GH0.tar.gz) = cfe93e5004deef7c632ff3230e152a988b6c05c962a4c4f49ef30321a3446ae9
