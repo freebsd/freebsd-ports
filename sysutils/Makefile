@@ -479,7 +479,6 @@
     SUBDIR += gdu
     SUBDIR += genimage
     SUBDIR += genisoimage
-    SUBDIR += geomWatch
     SUBDIR += getdelta
     SUBDIR += geteltorito
     SUBDIR += getssl
