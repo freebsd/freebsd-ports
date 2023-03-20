@@ -14,7 +14,7 @@ USES=		compiler:c11 localbase:ldflags meson pkgconfig python:3.6+,build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	haasn
-MESON_ARGS=	-Ddemos=false
+MESON_ARGS=	-Dd3d11=disabled -Dlibdovi=disabled -Ddemos=false
 
 OPTIONS_DEFINE=	LCMS2 LIBUNWIND OPENGL TEST VULKAN
 OPTIONS_DEFAULT=LCMS2 LIBUNWIND OPENGL SHADERC
