@@ -1,6 +1,6 @@
 PORTNAME=	automuteus
 DISTVERSION=	7.2.7
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 
 MAINTAINER=	nc@FreeBSD.org
@@ -24,12 +24,12 @@ GH_TUPLE=	\
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgryski:go-rendezvous:9f7001d12a5f:dgryski_go_rendezvous/vendor/github.com/dgryski/go-rendezvous \
 		georgysavva:scany:v0.2.7:georgysavva_scany/vendor/github.com/georgysavva/scany \
-		go-redis:redis:v8.8.0:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
+		redis:go-redis:v8.8.0:go_redis_redis_v8/vendor/github.com/go-redis/redis/v8 \
 		go-yaml:yaml:9f266ea9e77c:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:crypto:86341886e292:golang_crypto/vendor/golang.org/x/crypto \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:3681064d5158:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
