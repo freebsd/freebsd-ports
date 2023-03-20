@@ -21,7 +21,6 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30 glib20
 USE_GITHUB=	yes
 GH_ACCOUNT=	BestImageViewer
 SHEBANG_FILES=	plugins/*/geeqie-*
-MESON_ARGS=	-Djpeg=enabled -Dlua=enabled
 
 PORTDOCS=	*
 
