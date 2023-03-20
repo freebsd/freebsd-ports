@@ -39,6 +39,7 @@ MESON_ARGS+=	-Dgallium-vdpau=disabled \
 		-Dgallium-va=disabled \
 		-Dgallium-xa=disabled \
 		-Dgallium-nine=false \
+		-Dmicrosoft-clc=disabled \
 		-Dosmesa=false \
 		-Dtools="" \
 		-Degl=enabled \
