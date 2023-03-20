@@ -47,11 +47,9 @@ TEXTFE_DESC=		Text frontend
 SYSINFO_DESC=		Sysinfo plugin
 
 CANBERRA_LIB_DEPENDS=	libcanberra.so:audio/libcanberra
-CANBERRA_MESON_ON=	-Dlibcanberra=enabled
-CANBERRA_MESON_OFF=	-Dlibcanberra=disabled
+CANBERRA_MESON_ENABLED=	libcanberra
 DBUS_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
-DBUS_MESON_ON=		-Ddbus=enabled
-DBUS_MESON_OFF=		-Ddbus=disabled
+DBUS_MESON_ENABLED=	dbus
 FISHLIM_MESON_TRUE=	with-fishlim
 LUA_MESON_ON=		-Dwith-lua=lua-${LUA_VER}
 LUA_MESON_OFF=		-Dwith-lua=false
