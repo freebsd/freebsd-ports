@@ -3,9 +3,6 @@ PORTVERSION=	1.16.5
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
-BROKEN_purecap=	requires missing CheriABI Python
-USE_PKG64=	1
-
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	GNU Standards-compliant Makefile generator
 WWW=		https://www.gnu.org/software/automake/
