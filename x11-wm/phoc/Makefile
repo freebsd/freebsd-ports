@@ -30,6 +30,7 @@ GL_ACCOUNT=	World/Phosh
 GL_COMMIT=	3aee71bf5197694ee6125d6f4d06c2afc4c2a4e2
 GL_TUPLE=	https://gitlab.gnome.org:guidog:gmobile:ff854988bff80f2d4c1181ccf3c94b032603b6f9:gmobile/subprojects/gmobile
 SHEBANG_FILES=	build-aux/post_install.py
+MESON_ARGS=	-Dembed-wlroots=disabled
 CFLAGS+=	-Wno-error=format-nonliteral # clang
 PLIST_FILES=	bin/${PORTNAME}
 GLIB_SCHEMAS=	sm.puri.phoc.gschema.xml
