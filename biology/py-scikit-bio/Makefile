@@ -1,5 +1,5 @@
 PORTNAME=	scikit-bio
-DISTVERSION=	0.5.7
+DISTVERSION=	0.5.8
 CATEGORIES=	biology education python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,7 @@ COMMENT=	Data structures, algorithms, educational resources for bioinformatics
 WWW=		http://scikit-bio.org/
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_aarch64=	fails to build: invalid conversion between vector type '__m64' (vector of 1 'long long' value) and integer type 'int' of different size, see https://github.com/biocore/scikit-bio/issues/1816
 
