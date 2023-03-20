@@ -151,6 +151,7 @@ libdata/pkgconfig/gstreamer-base-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-check-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-controller-%%VERSION%%.pc
 libdata/pkgconfig/gstreamer-net-%%VERSION%%.pc
+%%BASH%%libexec/gstreamer-%%VERSION%%/gst-completion-helper
 libexec/gstreamer-%%VERSION%%/gst-hotdoc-plugins-scanner
 libexec/gstreamer-%%VERSION%%/gst-plugin-scanner
 libexec/gstreamer-%%VERSION%%/gst-plugins-doc-cache-generator
@@ -160,6 +161,9 @@ man/man1/gst-launch-%%VERSION%%.1.gz
 man/man1/gst-stats-%%VERSION%%.1.gz
 man/man1/gst-typefind-%%VERSION%%.1.gz
 share/aclocal/gst-element-check-%%VERSION%%.m4
+%%BASH%%share/bash-completion/completions/gst-inspect-%%VERSION%%
+%%BASH%%share/bash-completion/completions/gst-launch-%%VERSION%%
+%%BASH%%share/bash-completion/helpers/gst
 share/gdb/auto-load/usr/local/lib/libgstreamer-%%VERSION%%.so.%%SOVERSION%%-gdb.py
 %%DATADIR%%-%%VERSION%%/gdb/glib_gobject_helper.py
 %%DATADIR%%-%%VERSION%%/gdb/gst_gdb.py

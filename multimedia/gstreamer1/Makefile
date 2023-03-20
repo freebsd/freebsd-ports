@@ -1,5 +1,6 @@
 PORTNAME=	gstreamer
 PORTVERSION=	1.22.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1
@@ -27,7 +28,8 @@ GST10_VERSION=	1.0
 PORTSCOUT=	limitw:1,even
 
 OPTIONS_SUB=	yes
-OPTIONS_DEFINE=	NLS
+OPTIONS_DEFINE=	BASH NLS
+OPTIONS_DEFAULT=BASH
 
 OPTIONS_DEFINE_aarch64=		LIBUNWIND
 OPTIONS_DEFFAULT_aarch64=	LIBUNWIND
@@ -36,12 +38,16 @@ OPTIONS_DEFAULT_amd64=		LIBUNWIND
 OPTIONS_DEFINE_i386=		LIBUNWIND
 OPTIONS_DEFFAULT_i386=		LIBUNWIND
 
+BASH_BUILD_DEPENDS=	bash-completion>0:shells/bash-completion
+BASH_MESON_ENABLED=	bash-completion
+
 NLS_USES=	gettext
 NLS_MESON_ENABLED=      nls
 
 LIBUNWIND_DESC=		Libunwind is optionally used by the leaks tracer
-LIBUNWIND_LIB_DEPENDS=	libunwind.so:devel/libunwind
-LIBUNWIND_MESON_ENABLED=        libunwind
+LIBUNWIND_LIB_DEPENDS=	libdw.so:devel/elfutils \
+			libunwind.so:devel/libunwind
+LIBUNWIND_MESON_ENABLED=	libdw libunwind
 
 SHEBANG_FILES=  gst/parse/get_flex_version.py \
 	scripts/extract-release-date-from-doap-file.py \
