@@ -16,6 +16,7 @@ LIB_DEPENDS=	libinih.so:devel/inih \
 USES=		meson pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	francma
+MESON_ARGS=	-Dseccomp=disabled
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
