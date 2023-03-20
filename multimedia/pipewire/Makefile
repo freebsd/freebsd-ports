@@ -46,7 +46,7 @@ MEDIASESSION_MESON_ENABLED=	alsa pipewire-alsa
 MEDIASESSION_MESON_ON=		-Dsession-managers=media-session
 MEDIASESSION_MESON_OFF=		-Dsession-managers=''
 
-PULSEAUDIO_MESON_ENABLED=	libpulse
+PULSEAUDIO_MESON_ENABLED=	avahi libpulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio \
 				libavahi-common.so:net/avahi-app \
 				libavahi-client.so:net/avahi-app
@@ -65,9 +65,16 @@ MEDIA_SESSION_VERSION=	0.4.1
 MESON_ARGS=	-D pw-cat=enabled \
 		-D v4l2=enabled \
 		-D raop=enabled \
+		-D avb=disabled \
 		-D bluez5=disabled \
 		-D jack=disabled \
+		-D libcamera=disabled \
+		-D libcanberra=disabled \
+		-D lv2=disabled \
+		-D media-session:systemd=disabled \
+		-D roc=disabled \
 		-D systemd=disabled \
+		-D x11-xfixes=disabled \
 		-D pipewire-v4l2=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
 
