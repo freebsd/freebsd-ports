@@ -3247,6 +3247,20 @@ do-patch:
 			${SH} ${SCRIPTSDIR}/do-patch.sh
 .    endif
 
+.    if !target(run-cheri-gnulib-fixup)
+run-cheri-gnulib-fixup:
+# Work around gnulib insisting on providing its own stdint.h which (among
+# other things) redefines (u)intptr_t to (unsigned) long with a hard to
+# debug mix of typedefs and #defines.  As this is mostly pointless, replace
+# with an include of the system header until upstream finds a better solution.
+	-@for f in `${FIND} ${WRKDIR} -type f -name stdint.in.h` ; do \
+		if grep -q "typedef long int gl_intptr_t" $${f} ; then \
+			echo "Replacing $${f}" ; \
+			echo "#include_next <stdint.h>" > $${f} ; \
+		fi \
+	done
+.    endif
+
 .    if !target(run-autotools-fixup)
 run-autotools-fixup:
 # Work around an issue where FreeBSD 10.0 is detected as FreeBSD 1.x.
@@ -5326,6 +5340,7 @@ _CONFIGURE_SEQ=	150:build-depends 151:lib-depends 160:create-binary-alias \
 				161:create-binary-wrappers 170:create-base-pkgconfig \
 				200:configure-message 210:apply-slist \
 				300:pre-configure 450:pre-configure-script \
+				480:run-cheri-gnulib-fixup \
 				490:run-autotools-fixup 500:do-configure 700:post-configure \
 				850:post-configure-script \
 				${_OPTIONS_configure} ${_USES_configure}
