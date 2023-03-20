@@ -1,7 +1,7 @@
 PORTNAME=	timetrace
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.14.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc
 
 MAINTAINER=	nc@FreeBSD.org
@@ -22,7 +22,7 @@ GH_TUPLE=	\
 		fsnotify:fsnotify:v1.5.1:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-ini:ini:v1.63.2:go_ini_ini/vendor/gopkg.in/ini.v1 \
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:sys:63515b42dcdf:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \

@@ -1,4 +1,4 @@
-TIMESTAMP = 1646674543
+TIMESTAMP = 1679318290
 SHA256 (dominikbraun-timetrace-v0.14.3_GH0.tar.gz) = 670ae0b147ddd6a430efb0a727f1612bcc66fffb025855f151760002c63fb847
 SIZE (dominikbraun-timetrace-v0.14.3_GH0.tar.gz) = 4736535
 SHA256 (enescakir-emoji-v1.0.0_GH0.tar.gz) = d62dc29e5a3f08b8de6fdb8919089cfa9a82c003466b0b1cb5feb33563612839
@@ -11,8 +11,8 @@ SHA256 (go-ini-ini-v1.63.2_GH0.tar.gz) = c28487b3236abf9c7b4c3be7d20b99e9876f2c3
 SIZE (go-ini-ini-v1.63.2_GH0.tar.gz) = 50698
 SHA256 (go-yaml-yaml-v2.4.0_GH0.tar.gz) = d8e94679e5fff6bd1a35e10241543929a5f3da44f701755babf99b3daf0faac0
 SIZE (go-yaml-yaml-v2.4.0_GH0.tar.gz) = 73209
-SHA256 (golang-sys-63515b42dcdf_GH0.tar.gz) = 3f903424179a9ee0fce30e6ae8b91863350687decd772a0e22e1c59edd33ac75
-SIZE (golang-sys-63515b42dcdf_GH0.tar.gz) = 1210526
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.6_GH0.tar.gz) = f66bebcf21985b0a713d67c6c35dfc9800d3b6d00d62b83ed0ce5b2ed4cb9760
 SIZE (golang-text-v0.3.6_GH0.tar.gz) = 8351095
 SHA256 (hashicorp-hcl-v1.0.0_GH0.tar.gz) = 50632428210503070fd2fde748c88b7414bf84a6a0eadebf9d8e596a033bead2
