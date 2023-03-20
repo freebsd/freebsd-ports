@@ -1,5 +1,5 @@
 PORTNAME=	pyusb
-PORTVERSION=	1.0.2
+PORTVERSION=	1.2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,11 +10,14 @@ WWW=		https://pyusb.github.io/pyusb/
 
 LICENSE=	BSD3CLAUSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
+
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 USE_GITHUB=	yes
 
+MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION=${PORTVERSION}
 NO_ARCH=	yes
 
 PORTDOCS=	*.rst
