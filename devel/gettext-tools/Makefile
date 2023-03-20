@@ -11,9 +11,6 @@ WWW=		https://www.gnu.org/software/gettext/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/../COPYING
 
-BROKEN_purecap=	msgfmt is broken for CheriABI
-USE_PKG64=	1
-
 .include "${.CURDIR}/../gettext/Makefile.common"
 
 BUILD_DEPENDS=	libtextstyle>=${PORTVERSION}:devel/libtextstyle
@@ -21,6 +18,8 @@ LIB_DEPENDS=	libtextstyle.so:devel/libtextstyle
 
 USES=		charsetfix cpe gettext-runtime iconv libtool localbase tar:xz
 USE_LDCONFIG=	yes
+
+EXTRA_PATCHES=	${.CURDIR}/../gettext-runtime/files/cheribsd.patch
 
 CPE_PRODUCT=	gettext
 CPE_VENDOR=	gnu
