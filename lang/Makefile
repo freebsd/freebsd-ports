@@ -1,6 +1,5 @@
     COMMENT = Programming languages
 
-    SUBDIR += J
     SUBDIR += abcl
     SUBDIR += alchemist.el
     SUBDIR += algol68g
