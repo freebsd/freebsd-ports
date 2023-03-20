@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libwayland-client.so:graphics/wayland
 
 USES=		compiler:c11 meson pkgconfig
+MESON_ARGS=	-Dipc=disabled # https://github.com/varlink/libvarlink/issues/53
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES
