@@ -65,8 +65,7 @@ LIBSSH_DESC=		Enable libssh support (req by cisco/ssh/wifidump)
 MAXMIND_DESC=		Enable MaxMindDB-based GeoIP geolocation support
 RTP_DESC=		Enable codec support for RTP streams (implies GUI)
 
-ANDROIDDUMP_CMAKE_ON=-DBUILD_androiddump=ON
-ANDROIDDUMP_CMAKE_OFF=-DBUILD_androiddump=OFF
+ANDROIDDUMP_CMAKE_BOOL=	BUILD_androiddump
 
 DOCS_IMPLIES=		MANPAGES
 
@@ -114,12 +113,6 @@ SNMP_CMAKE_BOOL=	ENABLE_SMI
 .if ${PORT_OPTIONS:MGSSAPI_BASE} && exists(${LOCALBASE}/include/krb5.h)
 IGNORE=			cannot build with base Kerberos if krb5 port is installed. \
 			Use ``make config'' to choose a different option
-.endif
-
-.if ${PORT_OPTIONS:MANDROIDDUMP}
-PLIST_SUB+=	ANDROIDDUMP=""
-.else
-PLIST_SUB+=	ANDROIDDUMP="@comment "
 .endif
 
 post-patch:
