@@ -181,7 +181,7 @@ _LLVM_MINVER=	11
 .    else
 _LLVM_MINVER=	0
 .    endif
-.    if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc) || (${ARCH} != amd64 && ${ARCH} != i386) # clang not always supported on Tier-2
+.    if (defined(FAVORITE_COMPILER) && ${FAVORITE_COMPILER} == gcc)
 USE_GCC=	yes
 CHOSEN_COMPILER_TYPE=	gcc
 .    elif ${COMPILER_TYPE} == gcc || \
