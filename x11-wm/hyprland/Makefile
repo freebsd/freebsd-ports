@@ -29,6 +29,7 @@ GH_ACCOUNT=	hyprwm
 GH_PROJECT=	Hyprland
 GH_TUPLE=	hyprwm:hyprland-protocols:301733a:hyprland_protocols/subprojects/hyprland-protocols \
 		canihavesomecoffee:udis86:1.7.2-186-g5336633:udis86/subprojects/udis86
+MESON_ARGS=	-Dsystemd=disabled
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
