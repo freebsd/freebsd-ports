@@ -8,14 +8,15 @@
 # already-built version of MLton, BOOT_DIST, to use for bootstrapping.
 PORTNAME=	mlton
 PORTVERSION=	20210816
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES+=	https://github.com/beyert/mlton-freebsd_bootstrap/raw/c7371c1/:bootstrap
-DISTFILES+= ${BOOTNAME}.i386-${OPSYS:tl}-13.txz:bootstrap \
-	${BOOTNAME}.amd64-${OPSYS:tl}-13.txz:bootstrap \
-	${BOOTNAME}.i386-${OPSYS:tl}-12.txz:bootstrap \
-	${BOOTNAME}.amd64-${OPSYS:tl}-12.txz:bootstrap \
-	${BOOTNAME}.i386-${OPSYS:tl}-11.txz:bootstrap \
-	${BOOTNAME}.amd64-${OPSYS:tl}-11.txz:bootstrap
+DISTFILES+=	${BOOTNAME}.i386-${OPSYS:tl}-13.txz:bootstrap \
+		${BOOTNAME}.amd64-${OPSYS:tl}-13.txz:bootstrap \
+		${BOOTNAME}.i386-${OPSYS:tl}-12.txz:bootstrap \
+		${BOOTNAME}.amd64-${OPSYS:tl}-12.txz:bootstrap \
+		${BOOTNAME}.i386-${OPSYS:tl}-11.txz:bootstrap \
+		${BOOTNAME}.amd64-${OPSYS:tl}-11.txz:bootstrap
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Optimizing Standard ML compiler
@@ -33,103 +34,83 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp
 RUN_DEPENDS=	bash:shells/bash
 
-USES=	compiler:c11 gmake
+USES=		compiler:c11 gmake
 
 BOOTNAME=	${BOOTNAMEPREFIX}${PORTNAME}${BOOTNAMESUFFIX}-${BOOTVERSIONPREFIX}${BOOTVERSION}${BOOTVERSIONSUFFIX}
 BOOTVERSIONSUFFIX=
 BOOTVERSION=	${PORTVERSION}
 BOOTOSMAJ=	${OSREL:R}
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=			DOCS EXAMPLES
+OPTIONS_DEFAULT=		MLTON NATIVE
+OPTIONS_SINGLE=			BOOTSTRAP TARGET
+OPTIONS_SINGLE_BOOTSTRAP=	MLTON POLYML SMLNJ WINE
+OPTIONS_SINGLE_TARGET=		MINGW32 NATIVE
 
-OPTIONS_SINGLE=	TARGET BOOTSTRAP
-OPTIONS_SINGLE_TARGET=	NATIVE MINGW32
-OPTIONS_SINGLE_BOOTSTRAP=	MLTON SMLNJ POLYML WINE
-
-OPTIONS_DEFAULT=	NATIVE MLTON
-
-MLTON_DESC=		Bootstrap with MLton (ideal if supported)
-SMLNJ_DESC=		Bootstrap with SML/NJ (can take many hours)
-POLYML_DESC=	Bootstrap with PolyML
-WINE_DESC=		Bootstrap MINGW32 with wine
-
-NATIVE_DESC=	Use default target for given architecture
 MINGW32_DESC=	Add mingw32 Windows target (requires wine)
+MLTON_DESC=	Bootstrap with MLton (ideal if supported)
+NATIVE_DESC=	Use default target for given architecture
+POLYML_DESC=	Bootstrap with PolyML
+SMLNJ_DESC=	Bootstrap with SML/NJ (can take many hours)
+WINE_DESC=	Bootstrap MINGW32 with wine
+
+DOCS_BUILD_DEPENDS=		htmldoc:textproc/htmldoc
+DOCS_USES=			tex
+DOCS_USE=			TEX=latex:build
+DOCS_MAKE_ARGS=			MLTON_BINARY_RELEASE_WITH_DOCS=true
+DOCS_MAKE_ARGS_OFF=		MLTON_BINARY_RELEASE_WITH_DOCS=false
+DOCS_ALL_TARGET=		install-docs all
+DOCS_ALL_TARGET_OFF=		all
+DOCS_INSTALL_TARGET=		install-docs install
+DOCS_INSTALL_TARGET_OFF=	install
+MINGW32_BROKEN=			not yet implemented MINGW32 option in modern versions of ${PORTNAME}
+MLTON_MAKE_ARGS=		DESTDIR='' \
+				LIB=${BOOT_WRKSRC}/lib \
+				MLTON_VERSION=${PORTVERSION} \
+				PATH=${WRKSRC}/build/bin:${BOOT_WRKSRC}/bin:${PATH} \
+				PREFIX=${PREFIX} \
+				SML_LIB=${BOOT_WRKSRC}/lib/sml \
+				TDOC=${STAGEDIR}${DOCSDIR} \
+				TEXM=${STAGEDIR}${EXAMPLESDIR} \
+				WITH_GMP_DIR=${PREFIX}
+MLTON_MAKE_ARGS_OFF=		DESTDIR='' \
+				MLTON_VERSION=${PORTVERSION} \
+				PATH=${WRKSRC}/build/bin:${WRKDIR}/bin:${PATH} \
+				PREFIX=${PREFIX} \
+				WITH_GMP_DIR=${PREFIX}
+NATIVE_VARS=			BOOT_DIST=${BOOTNAME}.${ARCH}-${OPSYS:tl}-${BOOTOSMAJ}.txz
+NATIVE_VARS_OFF=		BOOT_DIST=
+POLYML_BUILD_DEPENDS=		polyc:lang/polyml
+#POLYML_CPPFLAGS=	-L/usr/local/lib -lpolyml -lpolymain
+#POLYML_LDFLAGS=	-L/usr/local/lib -lpolyml -lpolymain
+POLYML_ALL_TARGET=		polyml-mlton
+POLYML_VARS=			BOOT_DIST= \
+				MAKE_JOBS_UNSAFE= \
+				yes
+SMLNJ_BUILD_DEPENDS=		smlnj>=110.65:lang/smlnj
+SMLNJ_MAKE_ENV=			SMLNJ_DEVEL=yes
+SMLNJ_ALL_TARGET=		smlnj-mlton
+SMLNJ_VARS=			BOOT_DIST= \
+				MAKE_JOBS_UNSAFE=yes
 
 .include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MMINGW32}
-BROKEN+=	not yet implemented MINGW32 option in modern versions of ${PORTNAME}
-.endif
 
 BOOT_WRKSRC=	${WRKSRC}/build
 BOOT_WRKTMP=	${WRKDIR}/mlton-bootstrap
 
-.if ! ${PORT_OPTIONS:MMLTON}
-MAKE_ARGS=	DESTDIR='' MLTON_VERSION=${PORTVERSION} \
-	PATH=${WRKSRC}/build/bin:${WRKDIR}/bin:${PATH} \
-	PREFIX=${PREFIX} \
-	WITH_GMP_DIR=${PREFIX}
-.else
-MAKE_ARGS=	DESTDIR='' MLTON_VERSION=${PORTVERSION} \
-	PATH=${WRKSRC}/build/bin:${BOOT_WRKSRC}/bin:${PATH} \
-	PREFIX=${PREFIX} \
-	SML_LIB=${BOOT_WRKSRC}/lib/sml WITH_GMP_DIR=${PREFIX} \
-	PREFIX=${PREFIX} LIB=${BOOT_WRKSRC}/lib \
-	TDOC=${STAGEDIR}${DOCSDIR} \
-	TEXM=${STAGEDIR}${EXAMPLESDIR}
-.endif
-
-.if ${PORT_OPTIONS:MDOCS}
-BUILD_DEPENDS+=	htmldoc:textproc/htmldoc
-MAKE_ARGS+=	MLTON_BINARY_RELEASE_WITH_DOCS=true
-USES+=		tex
-USE_TEX=	latex:build
-#USE_TEX=	latex:formats
-INSTALL_TARGET=	install-docs install
-ALL_TARGET=	install-docs all
-.else
-MAKE_ARGS+=	MLTON_BINARY_RELEASE_WITH_DOCS=false
-INSTALL_TARGET=	install
-ALL_TARGET=	all
-.endif
-
-.if ${PORT_OPTIONS:MSMLNJ}
-BUILD_DEPENDS+=	smlnj>=110.65:lang/smlnj
-BOOT_DIST=
-MAKE_JOBS_UNSAFE=	yes
-MAKE_ENV+=	SMLNJ_DEVEL=yes
-.if ! ${PORT_OPTIONS:MDOCS}
-ALL_TARGET=	smlnj-mlton all
-.else
-ALL_TARGET=	smlnj-mlton install-docs all
-.endif
-.elif ${PORT_OPTIONS:MPOLYML}
-BUILD_DEPENDS+=	polyc:lang/polyml
-BOOT_DIST=
-MAKE_JOBS_UNSAFE=	yes
-#CPPFLAGS+=	-L/usr/local/lib -lpolyml -lpolymain
-#LDFLAGS+=	-L/usr/local/lib -lpolyml -lpolymain
-.if ! ${PORT_OPTIONS:MDOCS}
-ALL_TARGET=	polyml-mlton all
-.else
-ALL_TARGET=	polyml-mlton install-docs all
-.endif
-.elif ${PORT_OPTIONS:MNATIVE}
-BOOT_DIST=	${BOOTNAME}.${ARCH}-${OPSYS:tl}-${BOOTOSMAJ}.txz
-.else
-BOOT_DIST=
+.if ${PORT_OPTIONS:MNATIVE} && ${OSREL:R} >= 13
+BOOTOSMAJ=	13
 .endif
 
 BOOT_DIST_NEW=	${PKGNAME}${DISTVERSIONSUFFIX}.${ARCH}-${OPSYS:tl}-${OSREL:R}-${HOST}${BOOT_SUFX}
 
 .if ${PORT_OPTIONS:MMINGW32} && ${PORT_OPTIONS:MWINE}
-BUILD_DEPENDS+=	wine:emulators/wine \
+BUILD_DEPENDS+=	${LOCALBASE}/mingw32/lib/libgmp.a:math/mingw32-libgmp \
 		mingw32-gcc:devel/mingw32-gcc \
-		${LOCALBASE}/mingw32/lib/libgmp.a:math/mingw32-libgmp
-RUN_DEPENDS+=	mingw32-gcc:devel/mingw32-gcc \
-		${LOCALBASE}/mingw32/lib/libgmp.a:math/mingw32-libgmp
-SSP_CFLAGS?=	-fstack-protector	# XXX -strong isn't supported by GCC < 4.9
+		wine:emulators/wine
+RUN_DEPENDS+=	${LOCALBASE}/mingw32/lib/libgmp.a:math/mingw32-libgmp \
+		mingw32-gcc:devel/mingw32-gcc
+SSP_CFLAGS?=	-fstack-protector # XXX -strong isn't supported by GCC < 4.9
 
 PLIST_SUB+=	MINGW32CROSS=""
 .else
@@ -144,41 +125,44 @@ GH_TAGNAME=	b2fca3d
 BOOT_CMD=	--xz
 BOOT_SUFX=	.txz
 
+RAM_SLOP_32=	$$(${SYSCTL} "hw.physmem" | ${AWK} '{ values = values" "$$2 } END { print values; }' | ${AWK} '{ "freebsd-version -r" | getline ver; split(ver, xs, "\."); kernelOSMAJ = xs[1]; osj = ${BOOTOSMAJ}; physmem = $$1 / 1024 / 1024 / 1024; os = kernelOSMAJ; maxphysmem = physmem; if (physmem > 3.2) { maxphysmem = 3.2; }; ospcent = 0.70; if (osj < 13 && os != osj) { ospcent = 0.65; } else if (os >= 13) { if (physmem < 3.1) { ospcent = 0.83; } else { ospcent = 0.80; } }; targetmem = maxphysmem * ospcent; targetpcent = targetmem / physmem; print int((targetpcent + 0.005) * 100) / 100; }')
+
 post-extract:
 	@${MKDIR} ${BOOT_WRKSRC}
-.if ${PORT_OPTIONS:MMLTON}
-	@${TAR} xf ${DISTDIR}/${BOOT_DIST} ${BOOT_CMD} -C ${BOOT_WRKSRC}
-	@${REINPLACE_CMD} \
-		's|/usr/local/lib/mlton|${BOOT_WRKSRC}/lib/mlton|g' \
-		${BOOT_WRKSRC}/bin/mlton
-	@${REINPLACE_CMD} 's|$$gcc|$$CC|g' ${BOOT_WRKSRC}/bin/mlton
-.endif
 	@${REINPLACE_CMD} 's/CC := cc/CC := ${CC}/g' ${WRKSRC}/Makefile.config
 	@${REINPLACE_CMD} 's|gcc|${CC}|g' ${WRKSRC}/doc/examples/ffi/Makefile
 	@${REINPLACE_CMD} \
 		's|-lpolymain -lpolyml|-L ${PREFIX}/lib -lpolymain -lpolyml|g' \
 		${WRKSRC}/mlton/Makefile
-.if ${PORT_OPTIONS:MDOCS}
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-.endif
 .if ${ARCH} == "i386"
-.if ${OSREL:R} == 13
-	@${REINPLACE_CMD} -e 's/ram-slop 0\.7/ram-slop 0.8/' \
+	@${REINPLACE_CMD} -e "s/ram-slop 0\.7/ram-slop ${RAM_SLOP_32}/" \
 		-e 's|COMPILE_XARGS :=|COMPILE_XARGS := -polyvariance false|' \
 		${WRKSRC}/mlton/Makefile
+	@${REINPLACE_CMD} -e "s/ram-slop 0\.7/ram-slop ${RAM_SLOP_32}/" \
+		-e "s|^OLD_MLTON_RUNTIME_ARGS :=|OLD_MLTON_RUNTIME_ARGS := ram-slop ${RAM_SLOP_32}|" \
+		-e 's|^OLD_MLTON_COMPILE_ARGS :=|OLD_MLTON_COMPILE_ARGS := -polyvariance false|' \
+		${WRKSRC}/Makefile.config
 .else
-	@${REINPLACE_CMD} -e 's/ram-slop 0\.7/ram-slop 0.7/' \
+	@${REINPLACE_CMD} \
 		-e 's|COMPILE_XARGS :=|COMPILE_XARGS := -polyvariance false|' \
 		${WRKSRC}/mlton/Makefile
-.endif
-	@${REINPLACE_CMD} -e 's/ram-slop 0\.7/ram-slop 0.8/' \
-		-e 's|^OLD_MLTON_RUNTIME_ARGS :=|OLD_MLTON_RUNTIME_ARGS := ram-slop 0.8|' \
+	@${REINPLACE_CMD} \
 		-e 's|^OLD_MLTON_COMPILE_ARGS :=|OLD_MLTON_COMPILE_ARGS := -polyvariance false|' \
 		${WRKSRC}/Makefile.config
 .endif
 	@${REINPLACE_CMD} 's|gcc|${CC}|g' ${WRKSRC}/mlnlffigen/gen-cppcmd
 	@${REINPLACE_CMD} 's|"cc"|"${CC}"|g' ${WRKSRC}/bin/mlton-script
 	@${FIND} ${WRKDIR} | ${GREP} '\.bak$$' | ${AWK} '{ system("${RM} "$$0); }'
+
+post-extract-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+
+post-extract-MLTON-on:
+	@${TAR} xf ${DISTDIR}/${BOOT_DIST} ${BOOT_CMD} -C ${BOOT_WRKSRC}
+	@${REINPLACE_CMD} \
+		's|/usr/local/lib/mlton|${BOOT_WRKSRC}/lib/mlton|g' \
+		${BOOT_WRKSRC}/bin/mlton
+	@${REINPLACE_CMD} 's|$$gcc|$$CC|g' ${BOOT_WRKSRC}/bin/mlton
 
 post-install:
 .if ${PORT_OPTIONS:MDOCS} && ${PORT_OPTIONS:MEXAMPLES}
@@ -193,7 +177,7 @@ post-install:
 .endif
 	@${FIND} ${WRKDIR} | ${GREP} '\.bak$$' | ${AWK} '{ system("${RM} "$$0); }'
 
-makebootstrap:	all
+makebootstrap: all
 	@${ECHO_MSG} "====> Making new bootstrap image (${BOOT_DIST_NEW})"
 #	@${FIND} ${WRKDIR} | ${GREP} '\.bak$$' | ${AWK} '{ system("${RM} "$$0); }'
 	@${MKDIR} ${BOOT_WRKTMP}
