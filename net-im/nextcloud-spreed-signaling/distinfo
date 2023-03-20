@@ -1,4 +1,4 @@
-TIMESTAMP = 1674507860
+TIMESTAMP = 1679319883
 SHA256 (strukturag-nextcloud-spreed-signaling-v1.0.0_GH0.tar.gz) = 8217b469a608892f17126877c60079d015ddfb129f644df9ff82ee9856b7f8d3
 SIZE (strukturag-nextcloud-spreed-signaling-v1.0.0_GH0.tar.gz) = 251258
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
@@ -31,8 +31,8 @@ SHA256 (golang-net-69e39bad7dc2_GH0.tar.gz) = 859028b1f77d72031aaeb022812f4040ae
 SIZE (golang-net-69e39bad7dc2_GH0.tar.gz) = 1263995
 SHA256 (golang-protobuf-v1.5.2_GH0.tar.gz) = 088cc0f3ba18fb8f9d00319568ff0af5a06d8925a6e6cb983bb837b4efb703b3
 SIZE (golang-protobuf-v1.5.2_GH0.tar.gz) = 171702
-SHA256 (golang-sys-36772127a21f_GH0.tar.gz) = 7eb6ad2577150df1802a7fdd5f0015229e7e061ddd493cc3859d57e816ba6d80
-SIZE (golang-sys-36772127a21f_GH0.tar.gz) = 1291506
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.6_GH0.tar.gz) = f66bebcf21985b0a713d67c6c35dfc9800d3b6d00d62b83ed0ce5b2ed4cb9760
 SIZE (golang-text-v0.3.6_GH0.tar.gz) = 8351095
 SHA256 (golang-time-f0f3c7e86c11_GH0.tar.gz) = 421890dd6e4b7e8d5ca68cc163c8b3b08436898664534aedfefd8602e11a4e53

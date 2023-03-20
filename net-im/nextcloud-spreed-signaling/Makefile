@@ -1,7 +1,7 @@
 PORTNAME=	nextcloud-spreed-signaling
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 
 MAINTAINER=	jsm@FreeBSD.org
@@ -38,7 +38,7 @@ GH_TUPLE=	\
 		golang:crypto:3147a52a75dd:golang_crypto/vendor/src/golang.org/x/crypto \
 		golang:net:69e39bad7dc2:golang_net/vendor/src/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/src/github.com/golang/protobuf \
-		golang:sys:36772127a21f:golang_sys/vendor/src/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/src/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/src/golang.org/x/text \
 		golang:time:f0f3c7e86c11:golang_time/vendor/src/golang.org/x/time \
 		google:btree:v1.0.1:google_btree/vendor/src/github.com/google/btree \
