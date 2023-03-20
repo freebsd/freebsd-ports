@@ -37,6 +37,9 @@ BINARY_ALIAS=	python=${PYTHON_CMD}
 SHEBANG_FILES=	src/vulkan/overlay-layer/${PORTNAME}-overlay-control.py
 MESON_ARGS=	-Dgallium-omx=disabled \
 		-Dgallium-xa=disabled \
+		-Dandroid-libbacktrace=disabled \
+		-Dlmsensors=disabled \
+		-Dvalgrind=disabled \
 		-Dglvnd=true \
 		-Dplatforms=${PLATFORMS:O:[-1..1]:ts,} \
 		${NULL}
