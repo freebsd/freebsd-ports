@@ -1,8 +1,7 @@
 lib/php/%%PHP_EXT_DIR%%/xapian.a
 lib/php/%%PHP_EXT_DIR%%/xapian.so
-%%PORTDOCS%%%%DOCSDIR%%/php/examples/simpleexpand.php7
-%%PORTDOCS%%%%DOCSDIR%%/php/examples/simpleindex.php7
-%%PORTDOCS%%%%DOCSDIR%%/php/examples/simplematchdecider.php7
-%%PORTDOCS%%%%DOCSDIR%%/php/examples/simplesearch.php7
+%%PORTDOCS%%%%DOCSDIR%%/php/examples/simpleexpand.php8
+%%PORTDOCS%%%%DOCSDIR%%/php/examples/simpleindex.php8
+%%PORTDOCS%%%%DOCSDIR%%/php/examples/simplematchdecider.php8
+%%PORTDOCS%%%%DOCSDIR%%/php/examples/simplesearch.php8
 %%PORTDOCS%%%%DOCSDIR%%/php/index.html
-%%DATADIR%%/php/xapian.php
