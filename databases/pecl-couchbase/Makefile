@@ -1,5 +1,5 @@
 PORTNAME=	couchbase
-PORTVERSION=	4.1.0
+PORTVERSION=	4.1.1
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/couchbase/couchbase-php-client/releases/download/${PORTVERSION}/
 
