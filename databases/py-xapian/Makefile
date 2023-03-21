@@ -1,5 +1,5 @@
 PORTNAME=	xapian
-PORTVERSION=	1.4.21
+PORTVERSION=	1.4.22
 DISTVERSIONPREFIX=	bindings-
 CATEGORIES=	databases python
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
@@ -47,9 +47,6 @@ PORTSCOUT=	limitw:1,even
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's| all-local||; s| install-data-local install-dist_exampledataDATA||' ${WRKSRC}/python/Makefile.in ${WRKSRC}/python3/Makefile.in
