@@ -1,6 +1,5 @@
 PORTNAME=	Net-IMAP-Client
-PORTVERSION=	0.9505
-PORTREVISION=	1
+PORTVERSION=	0.9507
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +17,7 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL \
 
 USES=		perl5
 USE_PERL5=	configure
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
