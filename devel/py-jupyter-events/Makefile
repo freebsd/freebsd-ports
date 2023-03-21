@@ -1,0 +1,37 @@
+PORTNAME=	jupyter-events
+PORTVERSION=	0.6.3
+CATEGORIES=	devel python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	jupyter_events-${PORTVERSION}
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Jupyter Event System library
+WWW=		https://github.com/jupyter/jupyter_events
+
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/COPYING.md
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.5:devel/py-hatchling@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.2.0:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}python-json-logger>=2.0.4:devel/py-python-json-logger@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=5.3:devel/py-yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rfc3339-validator>=0:devel/py-rfc3339-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rfc3986-validator>=0.1.1:devel/py-rfc3986-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitlets>=5.3:devel/py-traitlets@${PY_FLAVOR}
+# jsonschema[format-nongpl,format_nongpl]
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fqdn>=0:www/py-fqdn@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}idna>=0:dns/py-idna@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}isoduration>=0:devel/py-isoduration@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonpointer>=1.13:devel/py-jsonpointer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rfc3339-validator>=0:devel/py-rfc3339-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rfc3986-validator>=0.1.0:devel/py-rfc3986-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}uri-template>=0:net/py-uri-template@${PY_FLAVOR}
+#		${PYTHON_PKGNAMEPREFIX}webcolors>=1.11:graphics/py-webcolors@${PY_FLAVOR}
+
+USES=		python:3.7+
+USE_PYTHON=	autoplist concurrent pep517
+
+NO_ARCH=	yes
+
+.include <bsd.port.mk>
