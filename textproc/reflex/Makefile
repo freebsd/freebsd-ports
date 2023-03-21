@@ -1,5 +1,5 @@
 PORTNAME=	reflex
-PORTVERSION=	20221012
+PORTVERSION=	20230206
 CATEGORIES=	textproc
 MASTER_SITES=	https://invisible-mirror.net/archives/reflex/ \
 		LOCAL/sunpoet
