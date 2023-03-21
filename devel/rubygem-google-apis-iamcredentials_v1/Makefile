@@ -1,5 +1,5 @@
 PORTNAME=	google-apis-iamcredentials_v1
-PORTVERSION=	0.16.0
+PORTVERSION=	0.17.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/googleapis/google-api-ruby-client/tree/main/generated/g
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-google-apis-core>=0.9.1<2.0:devel/rubygem-google-apis-core
+RUN_DEPENDS=	rubygem-google-apis-core>=0.11.0<2.0:devel/rubygem-google-apis-core
 
 USES=		gem
 
