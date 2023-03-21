@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typing stubs for mock
-WWW=		https://github.com/python/typeshed/tree/master/stubs/mock
+WWW=		https://github.com/python/typeshed/tree/main/stubs/mock
 
 LICENSE=	APACHE20
 
