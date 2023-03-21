@@ -1,5 +1,5 @@
 PORTNAME=	Text_Template
-PORTVERSION=	2.0.4
+PORTVERSION=	3.0.0
 CATEGORIES=	textproc www pear
 PKGNAMEPREFIX=	${PEAR_PKGNAMEPREFIX}
 
@@ -11,18 +11,18 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		pear:env
+
+NO_ARCH=	yes
+NO_BUILD=	yes
+
+PLIST_FILES=	share/PHP/Text_Template/Template.php
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	sebastianbergmann
 GH_PROJECT=	php-text-template
 
-NO_ARCH=	yes
-NO_BUILD=	yes
-PHP_DIR=	share/PHP
-PLIST_FILES=	${PHP_DIR}/${PORTNAME}/Template.php
-
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
-	${INSTALL_SCRIPT} ${WRKSRC}/src/Template.php \
-		${STAGEDIR}${PREFIX}/${PHP_DIR}/${PORTNAME}
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/PHP/Text_Template
+	${INSTALL_SCRIPT} ${WRKSRC}/src/Template.php ${STAGEDIR}${PREFIX}/share/PHP/Text_Template
 
 .include <bsd.port.mk>
