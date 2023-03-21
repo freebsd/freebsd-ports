@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typing stubs for psutil
-WWW=		https://github.com/python/typeshed/tree/master/stubs/psutil
+WWW=		https://github.com/python/typeshed/tree/main/stubs/psutil
 
 LICENSE=	APACHE20
 
