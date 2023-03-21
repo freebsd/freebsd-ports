@@ -1,5 +1,5 @@
 PORTNAME=	redlock
-PORTVERSION=	1.3.2
+PORTVERSION=	2.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/leandromoreira/redlock-rb
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-redis>=3.0.0<6.0:databases/rubygem-redis
+RUN_DEPENDS=	rubygem-redis-client>=0:databases/rubygem-redis-client
 
 USES=		gem
 
