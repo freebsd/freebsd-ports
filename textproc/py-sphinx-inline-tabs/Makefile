@@ -1,5 +1,6 @@
 PORTNAME=	sphinx-inline-tabs
 PORTVERSION=	2022.1.2b11
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +13,11 @@ WWW=		https://github.com/pradyunsg/sphinx-inline-tabs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=2<4:devel/py-flit-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=3,1:textproc/py-sphinx@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
@@ -24,8 +26,5 @@ NO_ARCH=	yes
 .if ${PYTHON_REL} < 30800
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
-
-post-patch:
-	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>
