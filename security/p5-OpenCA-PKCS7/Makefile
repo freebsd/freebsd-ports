@@ -11,6 +11,9 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for basic handling PKCS\#7 Signatures
 WWW=		https://metacpan.org/release/OpenCA-PKCS7
 
+DEPRECATED=	Depends on expired security/p5-OpenCA-OpenSSL
+EXPIRATION_DATE=2023-06-21
+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-OpenCA-OpenSSL>=0:security/p5-OpenCA-OpenSSL \
 		p5-OpenCA-X509>=0:security/p5-OpenCA-X509 \
