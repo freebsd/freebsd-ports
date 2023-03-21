@@ -55,6 +55,7 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v10_9.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v11.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSX/v12.pm
+%%SITE_PERL%%/Devel/AssertOS/MacOSX/v13.pm
 %%SITE_PERL%%/Devel/AssertOS/MacOSclassic.pm
 %%SITE_PERL%%/Devel/AssertOS/MachTen.pm
 %%SITE_PERL%%/Devel/AssertOS/MicrosoftWindows.pm
@@ -69,6 +70,7 @@ bin/use-devel-assertos
 %%SITE_PERL%%/Devel/AssertOS/OS400.pm
 %%SITE_PERL%%/Devel/AssertOS/OSF.pm
 %%SITE_PERL%%/Devel/AssertOS/OSFeatures/POSIXShellRedirection.pm
+%%SITE_PERL%%/Devel/AssertOS/OSFeatures/Systemd.pm
 %%SITE_PERL%%/Devel/AssertOS/OpenBSD.pm
 %%SITE_PERL%%/Devel/AssertOS/POSIXBC.pm
 %%SITE_PERL%%/Devel/AssertOS/QNX.pm
@@ -146,6 +148,7 @@ bin/use-devel-assertos
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v10_9.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v11.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v12.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::MacOSX::v13.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MacOSclassic.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MachTen.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::MicrosoftWindows.3.gz
@@ -160,6 +163,7 @@ bin/use-devel-assertos
 %%PERL5_MAN3%%/Devel::AssertOS::OS400.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::OSF.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::OSFeatures::POSIXShellRedirection.3.gz
+%%PERL5_MAN3%%/Devel::AssertOS::OSFeatures::Systemd.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::OpenBSD.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::POSIXBC.3.gz
 %%PERL5_MAN3%%/Devel::AssertOS::QNX.3.gz
