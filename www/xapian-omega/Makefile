@@ -1,5 +1,5 @@
 PORTNAME=	xapian-omega
-PORTVERSION=	1.4.21
+PORTVERSION=	1.4.22
 CATEGORIES=	www
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -19,8 +19,6 @@ USES=		compiler:c++11-lang libtool localbase perl5 shebangfix tar:xz
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} --docdir=${DOCSDIR} \
 		ac_cv_func_snprintf=snprintf
-#xCONFIGURE_ENV=	PCRE2_CONFIG=${LOCALBASE}/bin/pcre2-config
-#xCONFIGURE_ENV=	PCRE2_CONFIG=${LOCALBASE}/bin/pcre2-config
 CONFIGURE_ENV=	XAPIAN_CONFIG=${LOCALBASE}/bin/xapian-config
 GNU_CONFIGURE=	yes
 USE_CXXSTD=	c++11
@@ -39,12 +37,6 @@ ICONV_DESC=	Enable iconv character set conversion support
 ICONV_CONFIGURE_ON=	ac_cv_search_iconv=${ICONV_LIB}
 ICONV_CONFIGURE_WITH=	iconv
 ICONV_USES=		iconv
-
-post-patch:
-	@${REINPLACE_CMD} \
-		-e '/^dist_sysconf_DATA = /d' \
-		-e '/^pkglibbindir = / s| = .*$$| = ${WWWDIR}/cgi-bin|' \
-			${WRKSRC}/Makefile.in
 
 post-install-DOCS-on:
 	cd ${WRKSRC}/ && ${INSTALL_DATA} AUTHORS ChangeLog NEWS README TODO ${STAGEDIR}${DOCSDIR}/
