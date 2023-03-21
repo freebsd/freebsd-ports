@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-securityhub
-PORTVERSION=	1.75.0
+PORTVERSION=	1.78.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
