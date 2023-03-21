@@ -5676,6 +5676,7 @@
     SUBDIR += py-xstatic-term.js
     SUBDIR += py-xstatic-tv4
     SUBDIR += py-xxhash
+    SUBDIR += py-y-py
     SUBDIR += py-yacs
     SUBDIR += py-yaml
     SUBDIR += py-yamllint
