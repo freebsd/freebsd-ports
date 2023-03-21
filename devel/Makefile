@@ -5997,6 +5997,7 @@
     SUBDIR += rubygem-aws-sdk-cloudsearch
     SUBDIR += rubygem-aws-sdk-cloudsearchdomain
     SUBDIR += rubygem-aws-sdk-cloudtrail
+    SUBDIR += rubygem-aws-sdk-cloudtraildata
     SUBDIR += rubygem-aws-sdk-cloudwatch
     SUBDIR += rubygem-aws-sdk-cloudwatchevents
     SUBDIR += rubygem-aws-sdk-cloudwatchevidently
