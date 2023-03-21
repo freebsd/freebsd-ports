@@ -1,5 +1,5 @@
 PORTNAME=	glance-store
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -49,7 +49,7 @@ VMWARE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}oslo.privsep>=1.23.0:devel/py-oslo.pr
 			${PYTHON_PKGNAMEPREFIX}oslo.vmware>=3.6.0:devel/py-oslo.vmware@${PY_FLAVOR}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/glance/|${PREFIX}&|' ${WRKSRC}/etc/glance/rootwrap.conf ${WRKSRC}/glance_store/_drivers/cinder.py ${WRKSRC}/glance_store/tests/unit/test_cinder_store.py
+	@${REINPLACE_CMD} -e 's|/etc/glance/|${PREFIX}&|' ${WRKSRC}/etc/glance/rootwrap.conf ${WRKSRC}/glance_store/_drivers/cinder/store.py ${WRKSRC}/glance_store/tests/unit/cinder/test_cinder_base.py
 	@${REINPLACE_CMD} -e 's|/etc/ssl/|${PREFIX}&|' ${WRKSRC}/glance_store/_drivers/swift/store.py ${WRKSRC}/glance_store/_drivers/vmware_datastore.py
 
 .include <bsd.port.mk>
