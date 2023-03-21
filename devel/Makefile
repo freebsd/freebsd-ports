@@ -4746,6 +4746,7 @@
     SUBDIR += py-ipywidgets
     SUBDIR += py-iso8601
     SUBDIR += py-isodate
+    SUBDIR += py-isoduration
     SUBDIR += py-isort
     SUBDIR += py-itanium_demangler
     SUBDIR += py-itemadapter
