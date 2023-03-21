@@ -9,9 +9,6 @@ COMMENT=	Pythonic binding for the libxml2 and libxslt libraries
 WWW=		https://lxml.de/ \
 		https://github.com/lxml/lxml
 
-BROKEN_purecap=	requires missing CheriABI Python
-USE_PKG64=	1
-
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/licenses/BSD.txt
 
