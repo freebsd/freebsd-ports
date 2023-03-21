@@ -1155,6 +1155,7 @@
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
     SUBDIR += py-txrestapi
+    SUBDIR += py-uri-template
     SUBDIR += py-uritemplate
     SUBDIR += py-uritools
     SUBDIR += py-url-normalize

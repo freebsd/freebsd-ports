@@ -1,0 +1,2 @@
+uri_template implements URI Template expansion in strict adherence to RFC 6570,
+but adds a few extensions.
