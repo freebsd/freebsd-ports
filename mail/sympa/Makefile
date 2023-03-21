@@ -1,5 +1,5 @@
 PORTNAME=	sympa
-DISTVERSION=	6.2.68
+DISTVERSION=	6.2.70
 CATEGORIES=	mail
 
 MAINTAINER=	dgeo@centrale-marseille.fr
