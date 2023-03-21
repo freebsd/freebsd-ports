@@ -1,36 +1,25 @@
 PORTNAME=	zenxml
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	textproc
-MASTER_SITES=	SF/${PORTNAME}/
+MASTER_SITES=	SF/zenxml
 DISTNAME=	zenXml_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Simple XML processing using C++
-WWW=		http://zenxml.sourceforge.net/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Simple C++ XML Processing
+WWW=		https://zenxml.sourceforge.net/
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/License.txt
 
-USES=		dos2unix zip
+USES=		zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-ZENINC=		${PREFIX}/include/${PORTNAME:S/xml//}
-
-OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	*
-
 do-install:
-	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	@${MKDIR} ${STAGEDIR}${ZENINC}
-	cd ${WRKSRC}/${PORTNAME} && \
-	    ${COPYTREE_SHARE} \*.h ${STAGEDIR}${PREFIX}/include/${PORTNAME}
-	cd ${WRKSRC}/${PORTNAME:S/xml//} && \
-	    ${COPYTREE_SHARE} \*.h ${STAGEDIR}${ZENINC}
-
-do-install-DOCS-on:
-	cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
+	${MKDIR} ${STAGEDIR}${PREFIX}/include/zen/ ${STAGEDIR}${PREFIX}/include/zenxml/
+	${INSTALL_DATA} ${WRKSRC}/zen/*.h ${STAGEDIR}${PREFIX}/include/zen/
+	${INSTALL_DATA} ${WRKSRC}/zenxml/*.h ${STAGEDIR}${PREFIX}/include/zenxml/
 
 .include <bsd.port.mk>
