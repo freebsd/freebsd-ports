@@ -1,0 +1,98 @@
+From a41a736d64e3d93baffef1042d4a3d1aaf74f1c9 Mon Sep 17 00:00:00 2001
+From: Aras Pranckevicius <aras@nesnausk.org>
+Date: Mon, 20 Mar 2023 19:31:42 +0200
+Subject: [PATCH] Fix ARMv7 build by making recent ZIP NEON optimizations be
+ ARMv8 (aarch64) only
+
+Should fix #1365. Recent PR (#1348) added NEON accelerated code paths
+for ZIP filtering. But that code uses several instructions that are
+ARMv8 (aarch64) only, and thus fail building on 32-bit ARM (armv7)
+platforms. Make these optimizations only kick in when building
+for 64-bit ARM platforms.
+
+Signed-off-by: Aras Pranckevicius <aras@nesnausk.org>
+---
+ src/lib/OpenEXR/ImfSimd.h          | 4 ++++
+ src/lib/OpenEXR/ImfZip.cpp         | 6 +++---
+ src/lib/OpenEXRCore/internal_zip.c | 8 ++++----
+ 3 files changed, 11 insertions(+), 7 deletions(-)
+
+diff --git a/src/lib/OpenEXR/ImfSimd.h b/src/lib/OpenEXR/ImfSimd.h
+index 3053a5d4e..d1f064525 100644
+--- a/src/lib/OpenEXR/ImfSimd.h
++++ b/src/lib/OpenEXR/ImfSimd.h
+@@ -46,6 +46,10 @@
+ #    define IMF_HAVE_NEON
+ #endif
+ 
++#if defined(__aarch64__)
++#    define IMF_HAVE_NEON_AARCH64 1
++#endif
++
+ extern "C" {
+ #ifdef IMF_HAVE_SSE2
+ #    include <emmintrin.h>
+diff --git a/src/lib/OpenEXR/ImfZip.cpp b/src/lib/OpenEXR/ImfZip.cpp
+index 0e2b031d8..8dd53bea9 100644
+--- a/src/lib/OpenEXR/ImfZip.cpp
++++ b/src/lib/OpenEXR/ImfZip.cpp
+@@ -160,7 +160,7 @@ reconstruct_sse41 (char* buf, size_t outSize)
+ 
+ #endif
+ 
+-#ifdef IMF_HAVE_NEON
++#ifdef IMF_HAVE_NEON_AARCH64
+ 
+ void
+ reconstruct_neon (char* buf, size_t outSize)
+@@ -262,7 +262,7 @@ interleave_sse2 (const char* source, size_t outSize, char* out)
+ 
+ #endif
+ 
+-#ifdef IMF_HAVE_NEON
++#ifdef IMF_HAVE_NEON_AARCH64
+ 
+ void
+ interleave_neon (const char* source, size_t outSize, char* out)
+@@ -380,7 +380,7 @@ Zip::initializeFuncs ()
+     }
+ #endif
+ 
+-#ifdef IMF_HAVE_NEON
++#ifdef IMF_HAVE_NEON_AARCH64
+     reconstruct = reconstruct_neon;
+     interleave = interleave_neon;
+ #endif
+diff --git a/src/lib/OpenEXRCore/internal_zip.c b/src/lib/OpenEXRCore/internal_zip.c
+index e829e6d7c..1374cab0d 100644
+--- a/src/lib/OpenEXRCore/internal_zip.c
++++ b/src/lib/OpenEXRCore/internal_zip.c
+@@ -24,8 +24,8 @@
+ #    define IMF_HAVE_SSE4_1 1
+ #    include <smmintrin.h>
+ #endif
+-#if defined(__ARM_NEON)
+-#    define IMF_HAVE_NEON 1
++#if defined(__aarch64__)
++#    define IMF_HAVE_NEON_AARCH64 1
+ #    include <arm_neon.h>
+ #endif
+ 
+@@ -78,7 +78,7 @@ reconstruct (uint8_t* buf, uint64_t outSize)
+         prev      = d;
+     }
+ }
+-#elif defined(IMF_HAVE_NEON)
++#elif defined(IMF_HAVE_NEON_AARCH64)
+ static void
+ reconstruct (uint8_t* buf, uint64_t outSize)
+ {
+@@ -174,7 +174,7 @@ interleave (uint8_t* out, const uint8_t* source, uint64_t outSize)
+         *(sOut++) = (i % 2 == 0) ? *(t1++) : *(t2++);
+ }
+ 
+-#elif defined(IMF_HAVE_NEON)
++#elif defined(IMF_HAVE_NEON_AARCH64)
+ static void
+ interleave (uint8_t* out, const uint8_t* source, uint64_t outSize)
+ {
