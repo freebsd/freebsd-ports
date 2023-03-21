@@ -1,5 +1,5 @@
 PORTNAME=	phpunit
-PORTVERSION=	9.5.28
+PORTVERSION=	9.6.3
 CATEGORIES=	devel www
 MASTER_SITES=	https://phar.phpunit.de/
 PKGNAMESUFFIX=	9${PHP_PKGNAMESUFFIX}
@@ -20,7 +20,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/phpunit
 
-CONFLICTS_INSTALL=	phpunit6 phpunit7 phpunit8
+CONFLICTS_INSTALL=	phpunit[0-9] phpunit[0-9][0-9]
 
 CPE_VENDOR=	phpunit_project
 
