@@ -1297,6 +1297,7 @@
     SUBDIR += rubygem-google-cloud-logging-v2
     SUBDIR += rubygem-google-cloud-pubsub
     SUBDIR += rubygem-google-cloud-pubsub-v1
+    SUBDIR += rubygem-google-cloud-resource_manager
     SUBDIR += rubygem-google-cloud-spanner
     SUBDIR += rubygem-google-cloud-spanner-admin-database-v1
     SUBDIR += rubygem-google-cloud-spanner-admin-instance-v1

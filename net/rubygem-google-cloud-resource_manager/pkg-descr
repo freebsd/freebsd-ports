@@ -1,0 +1,5 @@
+Google Cloud Resource Manager enables you to programmatically manage container
+resources such as Organizations and Projects, that allow you to group and
+hierarchically organize other Cloud Platform resources. This hierarchical
+organization lets you easily manage common aspects of your resources such as
+access control and configuration settings.
