@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.8.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -68,7 +68,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-omniauth-authentiq>=0.3.3<0.4.0:net/rubygem-omniauth-authentiq \
 	rubygem-gitlab-omniauth-openid-connect>=0.10.0<0.11.0:net/rubygem-gitlab-omniauth-openid-connect \
 	rubygem-omniauth-atlassian-oauth2>=0.2.0<0.3:security/rubygem-omniauth-atlassian-oauth2 \
-	rubygem-rack-oauth2>=1.21.3<1.22.0:security/rubygem-rack-oauth2 \
+	rubygem-rack-oauth21>=1.21.3<1.22.0:security/rubygem-rack-oauth21 \
 	rubygem-jwt25>=2.5.0<2.6:www/rubygem-jwt25 \
 	rubygem-gssapi>0:security/rubygem-gssapi \
 	rubygem-recaptcha>=5.12<6.0:devel/rubygem-recaptcha \
