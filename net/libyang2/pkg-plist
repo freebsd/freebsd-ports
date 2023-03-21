@@ -23,7 +23,7 @@ include/libyang/tree_schema.h
 include/libyang/version.h
 lib/libyang.so
 lib/libyang.so.2
-lib/libyang.so.2.25.4
+lib/libyang.so.2.33.3
 libdata/pkgconfig/libyang.pc
 share/man/man1/yanglint.1.gz
 share/man/man1/yangre.1.gz
