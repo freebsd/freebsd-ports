@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-frauddetector
-PORTVERSION=	1.37.0
+PORTVERSION=	1.39.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
