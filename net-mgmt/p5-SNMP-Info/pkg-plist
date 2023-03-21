@@ -58,7 +58,6 @@
 %%SITE_PERL%%/SNMP/Info/Layer2/NAP222x.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/NWSS2300.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Netgear.pm
-%%SITE_PERL%%/SNMP/Info/Layer3/Netonix.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Nexans.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Orinoco.pm
 %%SITE_PERL%%/SNMP/Info/Layer2/Sixnet.pm
@@ -107,6 +106,7 @@
 %%SITE_PERL%%/SNMP/Info/Layer3/Mikrotik.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/N1600.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/NetSNMP.pm
+%%SITE_PERL%%/SNMP/Info/Layer3/Netonix.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Netscreen.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/Nexus.pm
 %%SITE_PERL%%/SNMP/Info/Layer3/OneAccess.pm
