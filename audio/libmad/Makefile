@@ -1,7 +1,7 @@
 PORTNAME=	libmad
 PORTVERSION=	0.16.3
 CATEGORIES=	audio
-MASTER_SITES=	https://codeberg.org/tenacityteam/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
+MASTER_SITES=	https://codeberg.org/tenacityteam/libmad/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Libmad library (part of MAD project)
@@ -19,12 +19,11 @@ CMAKE_ON_armv7=	ASO
 CMAKE_ON_i386=	ASO
 
 USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/libmad
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 CPE_VENDOR=	underbit
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS_SINGLE=	OPTIMIZE
 OPTIONS_SINGLE_OPTIMIZE=ACCURACY SPEED
