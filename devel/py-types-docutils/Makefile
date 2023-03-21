@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typing stubs for docutils
-WWW=		https://github.com/python/typeshed/tree/master/stubs/docutils
+WWW=		https://github.com/python/typeshed/tree/main/stubs/docutils
 
 LICENSE=	APACHE20
 
