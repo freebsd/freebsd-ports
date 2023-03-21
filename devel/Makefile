@@ -6273,6 +6273,7 @@
     SUBDIR += rubygem-aws-sdk-textract
     SUBDIR += rubygem-aws-sdk-timestreamquery
     SUBDIR += rubygem-aws-sdk-timestreamwrite
+    SUBDIR += rubygem-aws-sdk-tnb
     SUBDIR += rubygem-aws-sdk-transcribeservice
     SUBDIR += rubygem-aws-sdk-transcribestreamingservice
     SUBDIR += rubygem-aws-sdk-transfer
