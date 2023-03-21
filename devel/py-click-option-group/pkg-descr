@@ -1,0 +1,16 @@
+click-option-group is a Click-extension package that adds option groups missing
+in Click.
+
+Click is a package for creating powerful and beautiful command line interfaces
+(CLI) in Python, but it has no the functionality for creating option groups.
+
+Option groups are convenient mechanism for logical structuring CLI, also it
+allows you to set the specific behavior and set the relationship among grouped
+options (mutually exclusive options for example). Moreover, argparse stdlib
+package contains this functionality out of the box.
+
+At the same time, many Click users need this functionality. You can read
+interesting discussions about it in the issues 257, 373, 509 and 1137.
+
+The aim of this package is to provide group options with extensible
+functionality using canonical and clean API (Click-like API as far as possible).

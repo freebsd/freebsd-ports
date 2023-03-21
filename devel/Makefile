@@ -4412,6 +4412,7 @@
     SUBDIR += py-click-default-group
     SUBDIR += py-click-default-group-wheel
     SUBDIR += py-click-log
+    SUBDIR += py-click-option-group
     SUBDIR += py-click-plugins
     SUBDIR += py-click-threading
     SUBDIR += py-click7
