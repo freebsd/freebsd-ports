@@ -1,6 +1,6 @@
 PORTNAME=	openexr
 PORTVERSION=	3.1.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -8,8 +8,6 @@ COMMENT=	High dynamic-range (HDR) image file format
 WWW=		https://www.openexr.com/
 
 LICENSE=	BSD3CLAUSE
-
-BROKEN_armv7=	https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270348
 
 # exact version required to avoid hard-to-debug issues
 LIB_DEPENDS=	libImath-3_1.so.30:math/Imath
@@ -25,7 +23,7 @@ CPPFLAGS+=	-I.
 # must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	-lpthread
 
-PATCH_STRIP=	-p0
+PATCH_STRIP=	-p1
 
 _MAJORVER=	3_1
 _VER=		30
