@@ -1,7 +1,7 @@
 PORTNAME=	nginx-prometheus-exporter
 PORTVERSION=	0.10.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 
 MAINTAINER=	arcade@b1t.name
@@ -17,7 +17,7 @@ GH_ACCOUNT=	nginxinc
 GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		cespare:xxhash:v2.1.1:cespare_xxhash/vendor/github.com/cespare/xxhash/v2 \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:ebe580a85c40:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		matttproud:golang_protobuf_extensions:v1.0.1:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		nginxinc:nginx-plus-go-client:v0.9.0:nginxinc_nginx_plus_go_client/vendor/github.com/nginxinc/nginx-plus-go-client \
 		prometheus:client_golang:v1.11.0:prometheus_client_golang/vendor/github.com/prometheus/client_golang \
@@ -29,7 +29,7 @@ GH_TUPLE=	beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 USE_RC_SUBR=	${PORTNAME}
 
 LD_FLAG_X_PREFIX=	-X main
-LD_FLAG_STRING=		-s ${LD_FLAG_X_PREFIX}.version=${PORTVERSION}
+LD_FLAG_STRING=		${STRIP} ${LD_FLAG_X_PREFIX}.version=${PORTVERSION}
 GO_BUILDFLAGS=	-v -ldflags "${LD_FLAG_STRING}"
 
 PLIST_FILES=	bin/${PORTNAME}
