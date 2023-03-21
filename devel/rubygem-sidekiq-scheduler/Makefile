@@ -1,11 +1,12 @@
 PORTNAME=	sidekiq-scheduler
-PORTVERSION=	5.0.0
+PORTVERSION=	5.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightweight job scheduler extension for Sidekiq
-WWW=		https://sidekiq-scheduler.github.io/sidekiq-scheduler/
+WWW=		https://sidekiq-scheduler.github.io/sidekiq-scheduler/ \
+		https://github.com/sidekiq-scheduler/sidekiq-scheduler
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE

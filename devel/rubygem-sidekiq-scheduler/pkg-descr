@@ -1,4 +1,2 @@
 sidekiq-scheduler is an extension to Sidekiq that pushes jobs in a scheduled
 way, mimicking cron utility.
-
-See also: https://github.com/sidekiq-scheduler/sidekiq-scheduler
