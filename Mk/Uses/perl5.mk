@@ -154,6 +154,7 @@ IGNORE=	improper use of USE_PERL5
 
 _USE_PERL5_VALID=	build configure extract modbuild modbuildtiny patch run \
 			test
+_USE_PERL5_VALID+=	pkg64
 _USE_PERL5_UNKNOWN=
 .  for component in ${_USE_PERL5}
 .    if empty(_USE_PERL5_VALID:M${component})
@@ -227,16 +228,23 @@ CONFIGURE_ENV+=	PERL_MM_USE_DEFAULT="YES"
 .    endif # defined(BATCH) && !defined(IS_INTERACTIVE)
 .  endif # configure
 
+.  if ${_USE_PERL5:Mpkg64}
+PERL5_DEPEND=		${LOCALBASE64}/bin/perl${PERL_VERSION}
+PERL5_PKG64=		:pkg64
+.  else
+PERL5_PKG64=
+.  endif
+
 .  if ${_USE_PERL5:Mextract}
-EXTRACT_DEPENDS+=	${PERL5_DEPEND}:lang/${PERL_PORT}
+EXTRACT_DEPENDS+=	${PERL5_DEPEND}:lang/${PERL_PORT}${PERL5_PKG64}
 .  endif
 
 .  if ${_USE_PERL5:Mpatch}
-PATCH_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}
+PATCH_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}${PERL5_PKG64}
 .  endif
 
 .  if ${_USE_PERL5:Mbuild}
-BUILD_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}
+BUILD_DEPENDS+=		${PERL5_DEPEND}:lang/${PERL_PORT}${PERL5_PKG64}
 .  endif
 
 .  if ${_USE_PERL5:Mrun}
