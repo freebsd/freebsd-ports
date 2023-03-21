@@ -1,4 +1,4 @@
-TIMESTAMP = 1643760035
+TIMESTAMP = 1679408722
 SHA256 (samuelkarp-runj-g20211119-307abfe_GH0.tar.gz) = c3bdcc4670472cdb1cea441d967c43ec2c4aaa76df4ef53c8a3dea9fcb46d17d
 SIZE (samuelkarp-runj-g20211119-307abfe_GH0.tar.gz) = 93092
 SHA256 (Microsoft-go-winio-v0.4.17_GH0.tar.gz) = 52c2c7cc6be146ee7f2f9f2153c3b484c88bc2d579a1a34ade88cbc1ac016987
@@ -37,8 +37,8 @@ SHA256 (golang-groupcache-8c9f03a8e57e_GH0.tar.gz) = b92f918daa48048fd360f14d1a4
 SIZE (golang-groupcache-8c9f03a8e57e_GH0.tar.gz) = 26047
 SHA256 (golang-protobuf-v1.5.0_GH0.tar.gz) = 10bbe0880bb400a63944409f685c55a3f65adf4360caab0cae068c699a9c07fa
 SIZE (golang-protobuf-v1.5.0_GH0.tar.gz) = 171512
-SHA256 (golang-sys-d19ff857e887_GH0.tar.gz) = b76a1a5333f22af46fd716e9ad0cdcf44acf1ffd98160b8b17c604ab8fdaee80
-SIZE (golang-sys-d19ff857e887_GH0.tar.gz) = 1232266
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (google-go-genproto-8816d57aaa9a_GH0.tar.gz) = e3eb8ca7542702b5dc2d6661b2d5d827d0114aabc3a124a85afced20761df98b
 SIZE (google-go-genproto-8816d57aaa9a_GH0.tar.gz) = 15231258
 SHA256 (grpc-grpc-go-v1.34.0_GH0.tar.gz) = 44eef6f9d159f289383ba844ca1a5b56eaf1a34463ee4b8e9e55c98d62108c1d

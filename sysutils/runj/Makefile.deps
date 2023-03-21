@@ -17,7 +17,7 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:protobuf:v1.5.0:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:d19ff857e887:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		google:go-genproto:8816d57aaa9a:google_go_genproto/vendor/google.golang.org/genproto \
 		grpc:grpc-go:v1.34.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		hashicorp:errwrap:v1.0.0:hashicorp_errwrap/vendor/github.com/hashicorp/errwrap \
