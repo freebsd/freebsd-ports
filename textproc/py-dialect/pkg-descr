@@ -1,0 +1,10 @@
+A translation app for GNOME.
+
+Features:
+- Translation based on Google Translate
+- Translation based on the LibreTranslate API, allowing you to use any
+  public instance
+- Translation history
+- Automatic language detection
+- Text to speech
+- Clipboard buttons
