@@ -9,5 +9,3 @@ It automatically creates and manages a virtualenv for your projects, as well as
 adds/removes packages from your Pipfile as you install/uninstall packages. It
 also generates the ever-important Pipfile.lock, which is used to produce
 deterministic builds.
-
-See also: https://github.com/pypa/pipenv
