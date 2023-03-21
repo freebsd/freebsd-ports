@@ -1,5 +1,5 @@
 PORTNAME=	frictionless
-PORTVERSION=	4.40.3
+PORTVERSION=	4.40.11
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -60,6 +60,6 @@ PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.0:math/py-pandas@${PY_FLAVO
 S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>=1.9:www/py-boto3@${PY_FLAVOR}
 SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=1.1:www/py-flask@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}gunicorn>=20.0:www/py-gunicorn@${PY_FLAVOR}
-SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.3:databases/py-sqlalchemy14@${PY_FLAVOR}
+SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=0<2.0:databases/py-sqlalchemy14@${PY_FLAVOR}
 
 .include <bsd.port.mk>
