@@ -2868,6 +2868,9 @@ IGNORE=		is marked as broken on ${ARCH}: ${BROKEN_${ARCH}}
 .          if defined(BROKEN_${_abi})
 .            if !defined(TRYBROKEN)
 IGNORE=		is marked as broken for ${_abi}: ${BROKEN_${_abi}}
+.              if ${_abi} == "purecap" && ${USE_PKG64} == 1
+IGNORE:=	${IGNORE}. Consider installing this port with pkg64
+.              endif
 .            endif
 .          endif
 .        endfor

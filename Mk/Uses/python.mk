@@ -308,7 +308,7 @@ IGNORE=		uses either USE_PYTHON=pytest or USE_PYTHON=pytest4, not both of them
 # Currently, only hybrid ABI Python is available on CheriBSD.
 # A port dependency that is installed in the Python site-packages tree can be
 # installed with the hybrid ABI Python.
-BROKEN_purecap=	requires missing CheriABI Python
+BROKEN_purecap=	Requires Python that does not build for CheriABI
 USE_PKG64=	1
 .  endif
 
