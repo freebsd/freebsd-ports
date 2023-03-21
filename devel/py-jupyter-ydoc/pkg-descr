@@ -1,0 +1,6 @@
+jupyter_ydoc provides Ypy-based data structures for various documents used in
+the Jupyter ecosystem. Built-in documents include:
+- YBlob: a generic immutable binary document.
+- YUnicode: a generic UTF8-encoded text document (YFile is an alias to
+  YUnicode).
+- YNotebook: a Jupyter notebook document.

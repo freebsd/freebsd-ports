@@ -4807,6 +4807,7 @@
     SUBDIR += py-jupyter-server-mathjax
     SUBDIR += py-jupyter-server-ydoc
     SUBDIR += py-jupyter-telemetry
+    SUBDIR += py-jupyter-ydoc
     SUBDIR += py-jupyter_console
     SUBDIR += py-jupyterlab
     SUBDIR += py-jupyterlab-server
