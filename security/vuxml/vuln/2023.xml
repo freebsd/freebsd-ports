@@ -1,3 +1,37 @@
+  <vuln vid="a60cc0e4-c7aa-11ed-8a4b-080027f5fec9">
+    <topic>redis -- specially crafted MSETNX command can lead to denial-of-service</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>7.0.10</lt></range>
+      </package>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>7.0.10.20230320</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Yupeng Yang reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-mvmm-4vq6-vw8c">
+	  <p>
+	    Authenticated users can use the MSETNX command to trigger
+	    a runtime assertion and termination of the Redis server
+	    process.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28425</cvename>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-mvmm-4vq6-vw8c</url>
+    </references>
+    <dates>
+      <discovery>2023-03-20</discovery>
+      <entry>2023-03-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0d7d104c-c6fb-11ed-8a4b-080027f5fec9">
     <topic>curl -- multiple vulnerabilities</topic>
     <affects>
