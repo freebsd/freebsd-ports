@@ -74,7 +74,7 @@ _USES_POST+=	autoreconf
 .if defined(AUTORECONF_CMD)
 AUTORECONF=	${AUTORECONF_CMD}
 .else
-AUTORECONF?=	${LOCALBASE64}/bin/autoreconf${_AUTORECONF}
+AUTORECONF?=	${LOCALBASE}/bin/autoreconf${_AUTORECONF}
 .endif
 AUTORECONF_WRKSRC?=	${WRKSRC}
 
@@ -108,7 +108,7 @@ BUILD_DEPENDS+=	automake>=1.16.5:devel/automake
 .  endif
 
 .  if defined(libtool_ARGS) && empty(libtool_ARGS:Mbuild)
-BUILD_DEPENDS+=	${LOCALBASE64}/bin/libtoolize:devel/libtool:usepkg64
+BUILD_DEPENDS+=	libtoolize:devel/libtool
 .  endif
 
 # In case autoconf-switch wrapper scripts are used during build.
