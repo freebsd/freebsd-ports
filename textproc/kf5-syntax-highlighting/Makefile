@@ -7,6 +7,8 @@ COMMENT=	KF5 syntax highlighting engine for structured text and code
 
 USES=		cmake compiler:c++11-lib kde:5 perl5 qt:5 tar:xz
 USE_KDE=	ecm:build
+# Use hybrid ABI Perl
+USE_PERL5=	run build pkg64
 USE_QT=		core gui network \
 		buildtools:build linguisttools:build testlib:build qmake:build
 
