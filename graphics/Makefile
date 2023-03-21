@@ -44,6 +44,7 @@
     SUBDIR += aaphoto
     SUBDIR += acidwarp
     SUBDIR += acidwarp-sdl
+    SUBDIR += aeskulap
     SUBDIR += agg
     SUBDIR += airsaned
     SUBDIR += akira
