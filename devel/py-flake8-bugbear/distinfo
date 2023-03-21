@@ -1,3 +1,3 @@
-TIMESTAMP = 1675191007
-SHA256 (flake8-bugbear-23.1.20.tar.gz) = 55902ab5a48c5ea53d8689ecd146eda548e72f2724192b9c1d68f6d975d13c06
-SIZE (flake8-bugbear-23.1.20.tar.gz) = 49670
+TIMESTAMP = 1677771183
+SHA256 (flake8-bugbear-23.2.13.tar.gz) = 39259814a83f33c8409417ee12dd4050c9c0bb4c8707c12fc18ae62b2f3ddee1
+SIZE (flake8-bugbear-23.2.13.tar.gz) = 52898
