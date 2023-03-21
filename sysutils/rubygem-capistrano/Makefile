@@ -1,5 +1,5 @@
 PORTNAME=	capistrano
-PORTVERSION=	3.17.1
+PORTVERSION=	3.17.2
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
