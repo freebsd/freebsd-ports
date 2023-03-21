@@ -6731,6 +6731,7 @@
     SUBDIR += rubygem-google-apis-drive_v3
     SUBDIR += rubygem-google-apis-generator
     SUBDIR += rubygem-google-apis-iam_v1
+    SUBDIR += rubygem-google-apis-iam_v2
     SUBDIR += rubygem-google-apis-iamcredentials_v1
     SUBDIR += rubygem-google-apis-monitoring_v3
     SUBDIR += rubygem-google-apis-pubsub_v1
