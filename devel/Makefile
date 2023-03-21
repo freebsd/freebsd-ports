@@ -4692,6 +4692,7 @@
     SUBDIR += py-hatch-jupyter-builder
     SUBDIR += py-hatch-nodejs-version
     SUBDIR += py-hatch-requirements-txt
+    SUBDIR += py-hatch-semver
     SUBDIR += py-hatch-vcs
     SUBDIR += py-hatchling
     SUBDIR += py-heapdict

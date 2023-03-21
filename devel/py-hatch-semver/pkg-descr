@@ -1,0 +1,2 @@
+hatch-semver is a plugin for hatch to support semantic versioning. Hatch-semver
+relies on python-semver for all the versioning logic.
