@@ -1,8 +1,6 @@
 PORTNAME=	urweb
-PORTVERSION=	20150520
-PORTREVISION=	3
+PORTVERSION=	20200209
 CATEGORIES=	lang www
-MASTER_SITES=	http://www.impredicative.com/ur/
 
 MAINTAINER=	beyert@cs.ucr.edu
 COMMENT=	Ultimate host for embedded domain-specific languages
@@ -11,60 +9,48 @@ WWW=		http://www.impredicative.com/ur/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build
-BROKEN_FreeBSD_12=	invalid target: self
-BROKEN_FreeBSD_13=	invalid target: self
-DEPRECATED=	Broken since 2020
-EXPIRATION_DATE=	2023-03-20
+ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	mlton:lang/mlton
+LIB_DEPENDS=	libgmp.so:math/gmp \
+		libicudata.so:devel/icu
 
-CONFIGURE_ENV=	CCARGS="-I${LOCALBASE}/include"
-
-GNU_CONFIGURE=	yes
-USES=		gmake libtool tar:tgz ssl
+USES=		autoreconf gmake libtool ssl tar:tgz
+USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-ONLY_FOR_ARCHS=	i386 amd64
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
+CONFIGURE_ENV=		CCARGS="-I${LOCALBASE}/include"
+
 CFLAGS+=	-pthread
 
-OPTIONS_DEFINE=	ELISP PGSQL SQLITE MYSQL
+OPTIONS_DEFINE=		ELISP MYSQL PGSQL SQLITE
 OPTIONS_DEFAULT=	ELISP PGSQL
-OPTIONS_EXCLUDE=	NLS DOCS
+OPTIONS_EXCLUDE=	DOCS NLS
+OPTIONS_SUB=		yes
+
 ELISP_DESC=	Install contributed Emacs Lisp
 
-.include <bsd.port.options.mk>
-
-CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
-
-.if ${PORT_OPTIONS:MELISP}
-PLIST_SUB+=	ELISP=""
-CONFIGURE_ARGS+=	with_emacs=yes
-.else
-PLIST_SUB+=	ELISP="@comment "
-CONFIGURE_ARGS+=	with_emacs=no
-.endif
-
-.if ${PORT_OPTIONS:MPGSQL}
-USES+=		pgsql
-WANT_PGSQL=	server
-.else
-CONFIGURE_ENV+=	PGHEADER="no"
-.endif
-
-.if ${PORT_OPTIONS:MSQLITE}
-USES+=		sqlite
-.else
-CONFIGURE_ENV+=	SQHEADER="no"
-.endif
-
-.if ${PORT_OPTIONS:MMYSQL}
-USES+=		mysql
-.else
-CONFIGURE_ENV+=	MSHEADER="no"
-.endif
+ELISP_CONFIGURE_ON=		with_emacs=yes
+ELISP_CONFIGURE_OFF=		with_emacs=no
+MYSQL_USES=			mysql
+MYSQL_CONFIGURE_ENV_OFF=	MSHEADER="no"
+PGSQL_USES=			pgsql
+PGSQL_CONFIGURE_ENV_OFF=	PGHEADER="no"
+PGSQL_VARS=			WANT_PGSQL=server
+SQLITE_USES=			sqlite
+SQLITE_CONFIGURE_ENV_OFF=	SQHEADER="no"
 
 post-patch:
-	${REINPLACE_CMD} -e "s|postgresql/libpq-fe.h|libpq-fe.h|g" \
-	${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|postgresql/libpq-fe.h|libpq-fe.h|g" \
+		${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e "s|uw_Basis_int true|uw_Basis_int utrue|" \
+		-e "s|uw_Basis_int false|uw_Basis_int ufalse|" \
+		-e "s|uw_Basis_bool true|uw_Basis_bool utrue|" \
+		-e "s|uw_Basis_bool false|uw_Basis_bool ufalse|" \
+		-e "s|\&true|\&utrue|g" -e "s|\&false|\&ufalse|g" \
+		-e "s|abs(ret)|llabs(ret)|" \
+		${WRKSRC}/src/c/urweb.c
 
 .include <bsd.port.mk>
