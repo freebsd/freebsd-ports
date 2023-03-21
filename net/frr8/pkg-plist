@@ -9,6 +9,7 @@ include/frr/cspf.h
 include/frr/libfrr_trace.h
 include/frr/link_state.h
 include/frr/resolver.h
+include/frr/tc.h
 include/frr/trace.h
 include/frr/xref.h
 include/frr/yang.h
