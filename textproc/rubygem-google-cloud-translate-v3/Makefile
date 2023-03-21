@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-translate-v3
-PORTVERSION=	0.5.1
+PORTVERSION=	0.6.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-cloud-tra
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	rubygem-gapic-common>=0.12<2.0:devel/rubygem-gapic-common \
+RUN_DEPENDS=	rubygem-gapic-common>=0.17.1<2.0:devel/rubygem-gapic-common \
 		rubygem-google-cloud-errors>=1.0<2:net/rubygem-google-cloud-errors
 
 USES=		gem
