@@ -33,7 +33,7 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-jpeg=${LOCALBASE} \
 		--with-libtiff=${LOCALBASE} \
 		--with-proj=${LOCALBASE} \
-		--with-zlib=/usr
+		--with-zip=/usr
 CPPFLAGS+=	-fPIC
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
