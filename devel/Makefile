@@ -4350,6 +4350,7 @@
     SUBDIR += py-blinker
     SUBDIR += py-blist
     SUBDIR += py-bluelet
+    SUBDIR += py-boltons
     SUBDIR += py-boolean.py
     SUBDIR += py-boto
     SUBDIR += py-botocore
