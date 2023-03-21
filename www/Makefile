@@ -1816,6 +1816,7 @@
     SUBDIR += py-wagtail-bakery
     SUBDIR += py-wagtail-factories
     SUBDIR += py-wagtail-localize
+    SUBDIR += py-wagtail-transfer
     SUBDIR += py-waitress
     SUBDIR += py-webargs
     SUBDIR += py-webassets
