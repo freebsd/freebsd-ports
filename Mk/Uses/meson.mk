@@ -27,7 +27,7 @@ IGNORE=	Incorrect 'USES+= meson:${meson_ARGS}'. meson takes no arguments
 .  if defined(MESON_CMD)
 BUILD_DEPENDS+=		${MESON_CMD}:/nonexistent
 .  else
-BUILD_DEPENDS+=		meson>=0.57.1_1:devel/meson
+BUILD_DEPENDS+=		${LOCALBASE64}/bin/meson:devel/meson
 .  endif
 
 # meson uses ninja
