@@ -1,6 +1,6 @@
 PORTNAME=	gomi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.5
+DISTVERSION=	1.1.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -11,11 +11,15 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
+
+_BUILD_VERSION=		${DISTVERSIONFULL}
+_BUILD_REVISION=	e63731a
+
 GO_MODULE=	github.com/b4b4r07/gomi
-#GO_BUILDFLAGS=	-ldflags "\
-#		-w -s \
-#		-X github.com/b4b4r07/gomi/Version=${DISTVERSION}"
-#		cannot set Version, https://github.com/b4b4r07/gomi/issues/32
+GO_BUILDFLAGS=	-ldflags "\
+		-s -w \
+		-X main.Version=${_BUILD_VERSION} \
+		-X main.Revision=${_BUILD_REVISION}"
 
 PLIST_FILES=	bin/${PORTNAME}
 PORTDOCS=	README.md
