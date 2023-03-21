@@ -4176,6 +4176,7 @@
     SUBDIR += py-aiorpcX
     SUBDIR += py-aiortc
     SUBDIR += py-aiosignal
+    SUBDIR += py-airtable-python-wrapper
     SUBDIR += py-amalgamate
     SUBDIR += py-aniso8601
     SUBDIR += py-aniso86016
