@@ -1,6 +1,6 @@
 PORTNAME=	carbonapi
 DISTVERSION=	0.14.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 
 MAINTAINER=	a.andersson.thn@gmail.com
@@ -14,6 +14,7 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	go-graphite
+GH_TUPLE=	golang:sys:v0.6.0:sys
 
 USE_RC_SUBR=	${PORTNAME}
 
@@ -33,6 +34,10 @@ OPTIONS_DEFINE=	CAIRO EXAMPLES
 CAIRO_LIB_DEPENDS=	libcairo.so:graphics/cairo
 CAIRO_USES=	pkgconfig
 CAIRO_VARS=	CARBON_ARGS="-tags cairo"
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/log/carbonapi
