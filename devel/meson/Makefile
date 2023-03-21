@@ -3,9 +3,6 @@ PORTVERSION=	0.63.2
 CATEGORIES=	devel python
 MASTER_SITES=	https://github.com/mesonbuild/${PORTNAME}/releases/download/${PORTVERSION}/
 
-BROKEN_purecap=	requires missing CheriABI Python
-USE_PKG64=	1
-
 MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	High performance build system
 WWW=		https://mesonbuild.com/
