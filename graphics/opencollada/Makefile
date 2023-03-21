@@ -25,12 +25,4 @@ CFLAGS+=	-Wno-narrowing
 CMAKE_ON=	USE_LIBXML USE_SHARED USE_STATIC
 USE_LDCONFIG=	${PREFIX}/lib/opencollada
 
-# Fix the build against Clang 15
-post-patch:
-		@${REINPLACE_CMD} -e 's,move(other,std::&,' -e 's,move(result,std::&,' \
-		${WRKSRC}/DAEValidator/library/src/Dae.cpp \
-		${WRKSRC}/DAEValidator/library/src/XmlDoc.cpp \
-		${WRKSRC}/DAEValidator/library/src/XmlNode.cpp \
-		${WRKSRC}/DAEValidator/library/src/XmlNodeSet.cpp
-
 .include <bsd.port.mk>
