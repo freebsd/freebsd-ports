@@ -6721,6 +6721,7 @@
     SUBDIR += rubygem-google-apis-cloudbilling_v1
     SUBDIR += rubygem-google-apis-cloudresourcemanager_v1
     SUBDIR += rubygem-google-apis-cloudresourcemanager_v2
+    SUBDIR += rubygem-google-apis-cloudresourcemanager_v3
     SUBDIR += rubygem-google-apis-compute_v1
     SUBDIR += rubygem-google-apis-compute_v1_057
     SUBDIR += rubygem-google-apis-container_v1
