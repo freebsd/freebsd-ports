@@ -2,7 +2,6 @@
 %%WWWDIR%%/README.md
 %%WWWDIR%%/_include.php
 %%WWWDIR%%/index.php
-%%WWWDIR%%/serviceworker.js
 %%WWWDIR%%/snappymail/v/%%VER%%/app/.htaccess
 %%WWWDIR%%/snappymail/v/%%VER%%/app/domains/default.json
 %%WWWDIR%%/snappymail/v/%%VER%%/app/domains/disabled
@@ -54,6 +53,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Exceptions/ResponseNotFoundException.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/FetchResponse.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/Folder.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/FolderCollection.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/FolderInformation.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/ImapClient.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Imap/NamespaceResult.php
@@ -79,7 +79,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Attachment.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/AttachmentCollection.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Exceptions/NonEmptyFolder.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/FolderCollection.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/MailClient.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Message.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/MessageCollection.php
@@ -623,6 +622,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/plain.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/scram.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/sasl/xoauth2.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/smime.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/stream/zip.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/tar.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/totp.php
