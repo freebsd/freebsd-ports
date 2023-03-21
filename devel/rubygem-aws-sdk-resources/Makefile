@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.157.0
+PORTVERSION=	3.159.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -64,6 +64,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-cloudsearch>=1<2:devel/rubygem-aws-sdk-cloudsearch \
 		rubygem-aws-sdk-cloudsearchdomain>=1<2:devel/rubygem-aws-sdk-cloudsearchdomain \
 		rubygem-aws-sdk-cloudtrail>=1<2:devel/rubygem-aws-sdk-cloudtrail \
+		rubygem-aws-sdk-cloudtraildata>=1<2:devel/rubygem-aws-sdk-cloudtraildata \
 		rubygem-aws-sdk-cloudwatch>=1<2:devel/rubygem-aws-sdk-cloudwatch \
 		rubygem-aws-sdk-cloudwatchevents>=1<2:devel/rubygem-aws-sdk-cloudwatchevents \
 		rubygem-aws-sdk-cloudwatchevidently>=1<2:devel/rubygem-aws-sdk-cloudwatchevidently \
@@ -331,6 +332,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-textract>=1<2:devel/rubygem-aws-sdk-textract \
 		rubygem-aws-sdk-timestreamquery>=1<2:devel/rubygem-aws-sdk-timestreamquery \
 		rubygem-aws-sdk-timestreamwrite>=1<2:devel/rubygem-aws-sdk-timestreamwrite \
+		rubygem-aws-sdk-tnb>=1<2:devel/rubygem-aws-sdk-tnb \
 		rubygem-aws-sdk-transcribeservice>=1<2:devel/rubygem-aws-sdk-transcribeservice \
 		rubygem-aws-sdk-transcribestreamingservice>=1<2:devel/rubygem-aws-sdk-transcribestreamingservice \
 		rubygem-aws-sdk-transfer>=1<2:devel/rubygem-aws-sdk-transfer \
