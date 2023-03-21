@@ -9,6 +9,7 @@ WWW=		https://github.com/csmith-project/creduce
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build: needs some specific LLVM version
 BROKEN_FreeBSD_12_powerpc64=	fails to configure: cannot compile and link test program with selected LLVM
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
