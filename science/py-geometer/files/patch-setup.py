@@ -5,7 +5,7 @@
  
  # What packages are required for this module to be executed?
 -REQUIRED = ["numpy>=1.15,<1.23"]
-+REQUIRED = ["numpy>=1.15,<1.24"]
++REQUIRED = ["numpy>=1.15"]
  
  # What packages are optional?
  EXTRAS = {
