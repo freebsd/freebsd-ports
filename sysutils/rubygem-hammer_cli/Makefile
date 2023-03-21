@@ -1,5 +1,5 @@
 PORTNAME=	hammer_cli
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 CATEGORIES=	sysutils ruby
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-amazing_print>=0:devel/rubygem-amazing_print \
-		rubygem-apipie-bindings>=0.5.0:devel/rubygem-apipie-bindings \
+		rubygem-apipie-bindings>=0.6.0:devel/rubygem-apipie-bindings \
 		rubygem-clamp11>=1.1<1.2.0:devel/rubygem-clamp11 \
 		rubygem-fast_gettext>=0:devel/rubygem-fast_gettext \
 		rubygem-highline>=0:devel/rubygem-highline \
