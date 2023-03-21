@@ -12,18 +12,17 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go
-USE_GITHUB=	nodefault
-GH_TUPLE=	golang:sys:v0.6.0:sys
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 
 PLIST_FILES=	bin/container-diff
 
-GH_ACCOUNT=	GoogleContainerTools
 USE_GITHUB=	yes
+GH_TUPLE=	GoogleContainerTools:container-diff:v${PORTVERSION} \
+		golang:sys:v0.6.0:sys
 
 pre-patch:
-	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
-	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
+	@${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	@${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 .include <bsd.port.mk>
