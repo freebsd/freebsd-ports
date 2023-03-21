@@ -14,7 +14,7 @@ setup(
     package_dir = {'': 'src'},
     package_data = {'': ['*']},
     install_requires = [
-        'sphinx>=3,<5',
+        'sphinx>=3,<6',
         'pydata-sphinx-theme~=0.8.0',
         'pyyaml',
     ],
