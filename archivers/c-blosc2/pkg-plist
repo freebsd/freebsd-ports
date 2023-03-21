@@ -1,3 +1,4 @@
+include/b2nd.h
 include/blosc2.h
 include/blosc2/blosc2-common.h
 include/blosc2/blosc2-export.h
