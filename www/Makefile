@@ -1814,6 +1814,7 @@
     SUBDIR += py-wagtail-2fa
     SUBDIR += py-wagtail-airtable
     SUBDIR += py-wagtail-bakery
+    SUBDIR += py-wagtail-factories
     SUBDIR += py-waitress
     SUBDIR += py-webargs
     SUBDIR += py-webassets
