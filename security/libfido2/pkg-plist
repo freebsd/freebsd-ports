@@ -45,6 +45,7 @@ share/man/man3/fido_assert_blob_ptr.3.gz
 share/man/man3/fido_assert_clientdata_hash_len.3.gz
 share/man/man3/fido_assert_clientdata_hash_ptr.3.gz
 share/man/man3/fido_assert_count.3.gz
+share/man/man3/fido_assert_empty_allow_list.3.gz
 share/man/man3/fido_assert_flags.3.gz
 share/man/man3/fido_assert_free.3.gz
 share/man/man3/fido_assert_hmac_secret_len.3.gz
@@ -146,6 +147,7 @@ share/man/man3/fido_cred_authdata_raw_ptr.3.gz
 share/man/man3/fido_cred_clientdata_hash_len.3.gz
 share/man/man3/fido_cred_clientdata_hash_ptr.3.gz
 share/man/man3/fido_cred_display_name.3.gz
+share/man/man3/fido_cred_empty_exclude_list.3.gz
 share/man/man3/fido_cred_exclude.3.gz
 share/man/man3/fido_cred_flags.3.gz
 share/man/man3/fido_cred_fmt.3.gz
@@ -276,7 +278,6 @@ share/man/man3/rs256_pk_from_RSA.3.gz
 share/man/man3/rs256_pk_from_ptr.3.gz
 share/man/man3/rs256_pk_new.3.gz
 share/man/man3/rs256_pk_to_EVP_PKEY.3.gz
-%%PORTDOCS%%%%DOCSDIR%%/html/e84_pk_new.html
 %%PORTDOCS%%%%DOCSDIR%%/html/eddsa_pk_free.html
 %%PORTDOCS%%%%DOCSDIR%%/html/eddsa_pk_from_EVP_PKEY.html
 %%PORTDOCS%%%%DOCSDIR%%/html/eddsa_pk_from_ptr.html
@@ -292,6 +293,7 @@ share/man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/es384_pk_from_EC_KEY.html
 %%PORTDOCS%%%%DOCSDIR%%/html/es384_pk_from_EVP_PKEY.html
 %%PORTDOCS%%%%DOCSDIR%%/html/es384_pk_from_ptr.html
+%%PORTDOCS%%%%DOCSDIR%%/html/es384_pk_new.html
 %%PORTDOCS%%%%DOCSDIR%%/html/es384_pk_to_EVP_PKEY.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido2-assert.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido2-cred.html
@@ -304,6 +306,7 @@ share/man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_clientdata_hash_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_clientdata_hash_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_count.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_empty_allow_list.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_flags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_free.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_assert_hmac_secret_len.html
@@ -405,6 +408,7 @@ share/man/man3/rs256_pk_to_EVP_PKEY.3.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_clientdata_hash_len.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_clientdata_hash_ptr.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_display_name.html
+%%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_empty_exclude_list.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_exclude.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_flags.html
 %%PORTDOCS%%%%DOCSDIR%%/html/fido_cred_fmt.html
