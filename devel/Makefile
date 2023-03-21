@@ -5688,6 +5688,7 @@
     SUBDIR += py-yaspin
     SUBDIR += py-yattag
     SUBDIR += py-yg.lockfile
+    SUBDIR += py-ypy-websocket
     SUBDIR += py-yunomi
     SUBDIR += py-z3c.autoinclude
     SUBDIR += py-z3c.batching
