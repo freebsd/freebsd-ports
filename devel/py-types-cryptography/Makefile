@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Typing stubs for cryptography
-WWW=		https://github.com/python/typeshed/tree/master/stubs/cryptography
+WWW=		https://github.com/python/typeshed/tree/main/stubs/cryptography
 
 LICENSE=	APACHE20
 
