@@ -1,5 +1,5 @@
 PORTNAME=	responders
-PORTVERSION=	3.0.1
+PORTVERSION=	3.1.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails61
@@ -11,8 +11,8 @@ WWW=		https://github.com/heartcombo/responders
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-actionpack61>=5.0:www/rubygem-actionpack61 \
-		rubygem-railties61>=5.0:www/rubygem-railties61
+RUN_DEPENDS=	rubygem-actionpack61>=5.2:www/rubygem-actionpack61 \
+		rubygem-railties61>=5.2:www/rubygem-railties61
 
 USES=		gem
 
