@@ -4803,6 +4803,7 @@
     SUBDIR += py-jupyter-events
     SUBDIR += py-jupyter-packaging
     SUBDIR += py-jupyter-server
+    SUBDIR += py-jupyter-server-fileid
     SUBDIR += py-jupyter-server-mathjax
     SUBDIR += py-jupyter-telemetry
     SUBDIR += py-jupyter_console
