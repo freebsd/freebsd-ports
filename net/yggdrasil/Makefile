@@ -1,7 +1,7 @@
 PORTNAME=	yggdrasil
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.4.3
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net
 
 MAINTAINER=	freebsd@neilalexander.dev
@@ -24,9 +24,9 @@ GH_TUPLE=	\
 		golang:crypto:089bfa567519:golang_crypto/vendor/golang.org/x/crypto \
 		golang:mobile:858099ff7816:golang_mobile/vendor/golang.org/x/mobile \
 		golang:mod:v0.4.2:golang_mod/vendor/golang.org/x/mod \
-		golang:net:4a448f8816b3:golang_net/vendor/golang.org/x/net \
-		golang:sys:4dd72447c267:golang_sys/vendor/golang.org/x/sys \
-		golang:text:5bd84dd9b33b:golang_text/vendor/golang.org/x/text \
+		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.8.0:golang_text/vendor/golang.org/x/text \
 		golang:tools:316ba0b74098:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gologme:log:v1.2.0:gologme_log/vendor/github.com/gologme/log \
