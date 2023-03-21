@@ -1811,6 +1811,7 @@
     SUBDIR += py-uvicorn
     SUBDIR += py-w3lib
     SUBDIR += py-wagtail
+    SUBDIR += py-wagtail-2fa
     SUBDIR += py-waitress
     SUBDIR += py-webargs
     SUBDIR += py-webassets
