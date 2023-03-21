@@ -1,0 +1,7 @@
+face is a Pythonic microframework for building command-line applications:
+- First-class subcommand support
+- Powerful middleware architecture
+- Separate Parser layer
+- Built-in flagfile support
+- Handy testing utilities
+- Themeable help display

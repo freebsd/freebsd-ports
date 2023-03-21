@@ -4567,6 +4567,7 @@
     SUBDIR += py-extremes
     SUBDIR += py-fabric
     SUBDIR += py-fabric3
+    SUBDIR += py-face
     SUBDIR += py-factory-boy
     SUBDIR += py-fam
     SUBDIR += py-fastbencode
