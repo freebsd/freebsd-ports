@@ -1,5 +1,6 @@
 PORTNAME=	ipykernel
 PORTVERSION=	6.20.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +12,8 @@ WWW=		https://ipython.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.md
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.4:devel/py-hatchling@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-client>=6:devel/py-jupyter-client@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comm>=0.1.1:devel/py-comm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}debugpy>=1.0:devel/py-debugpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>=7.23.1:devel/ipython@${PY_FLAVOR} \
@@ -24,11 +27,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}comm>=0.1.1:devel/py-comm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=5.4.0:devel/py-traitlets@${PY_FLAVOR}
 
 USES=		python:3.8+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-post-patch:
-	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
