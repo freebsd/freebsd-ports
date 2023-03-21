@@ -1,6 +1,5 @@
 PORTNAME=	redis-store
-PORTVERSION=	1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.9.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +10,7 @@ WWW=		https://redis-store.org/redis-store/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/MIT-LICENSE
 
-RUN_DEPENDS=	rubygem-redis4>=4<5:databases/rubygem-redis4
+RUN_DEPENDS=	rubygem-redis>=4<6:databases/rubygem-redis
 
 USES=		gem
 
