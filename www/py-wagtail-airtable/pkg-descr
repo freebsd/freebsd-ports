@@ -1,0 +1,2 @@
+Wagtail/Airtable is an extension for Wagtail allowing content to be transferred
+between Airtable sheets and your Wagtail/Django models.
