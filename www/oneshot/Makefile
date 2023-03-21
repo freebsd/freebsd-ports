@@ -1,7 +1,7 @@
 PORTNAME=	oneshot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.5.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -12,13 +12,16 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:net:v0.8.0:net \
+		golang:sys:v0.6.0:sys
 
 _BUILD_VERSION=	${DISTVERSIONFULL}
 _BUILD_DATE=	$$(date +%d-%B-%Y)
 
 GO_MODULE=	github.com/raphaelreyna/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "\
-		-s -w \
+		${STRIP} -w \
 		-X ${GO_MODULE}/cmd.version=${_BUILD_VERSION} \
 		-X ${GO_MODULE}/cmd.date=${_BUILD_DATE}"
 
@@ -29,6 +32,12 @@ OPTIONS_DEFAULT=	MANPAGES
 OPTIONS_SUB=		yes
 
 MANPAGES_DESC=	Build and install auto-generated manpages
+
+pre-patch:
+.for m in net sys
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/$m
+	${LN} -s ${WRKDIR}/$m-* ${WRKSRC}/vendor/golang.org/x/$m
+.endfor
 
 do-build-MANPAGES-on:
 	cd ${GO_WRKSRC} && \
