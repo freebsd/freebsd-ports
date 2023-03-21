@@ -1,11 +1,12 @@
 PORTNAME=	sidekiq
-PORTVERSION=	7.0.3
+PORTVERSION=	7.0.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple, efficient background processing for Ruby
-WWW=		https://sidekiq.org/
+WWW=		https://sidekiq.org/ \
+		https://github.com/sidekiq/sidekiq
 
 LICENSE=	LGPL3
 
