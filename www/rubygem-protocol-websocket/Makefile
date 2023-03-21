@@ -1,5 +1,5 @@
 PORTNAME=	protocol-websocket
-PORTVERSION=	0.9.1
+PORTVERSION=	0.10.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
