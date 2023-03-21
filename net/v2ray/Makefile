@@ -1,7 +1,7 @@
 PORTNAME=	v2ray
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.36.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net
 
 MAINTAINER=	shen.elf@gmail.com
@@ -28,7 +28,7 @@ GH_TUPLE=	\
 		golang:net:e18ecbb05110:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.4.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:8fe3ee5dd75b:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.3:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.5:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -48,7 +48,7 @@ GH_TUPLE=	\
 		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
 		v2fly:VSign:e2adc24bf848:v2fly_vsign/vendor/github.com/v2fly/VSign
 
-GO_BUILDFLAGS=	-ldflags='-s -w'
+GO_BUILDFLAGS=	-ldflags='${STRIP} -w'
 GO_TARGET=	./main:v2ray \
 		./infra/control/main:v2ctl
 GO_TESTFLAGS=	-p 1 -tags json -timeout 30m
