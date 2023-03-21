@@ -1,10 +1,10 @@
 PORTNAME=	xmedcon
-PORTVERSION=	0.17.0
-PORTREVISION=	1
+PORTVERSION=	0.23.0
+DISTVERSIONSUFFIX=	-gtk2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/XMedCon-Source/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Medical image conversion utility and library
 WWW=		http://xmedcon.sourceforge.net/
 
@@ -14,14 +14,14 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2
 
-USES=		gnome libtool localbase pkgconfig tar:bzip2
-USE_GNOME=	cairo gdkpixbuf2 gtk20
+USES=		gnome libtool pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/xmedcon \
 		--enable-llcheck
 INSTALL_TARGET=	install-strip
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	X11 GLIB ACR_NEMA ANALYZE CONCORDE DICOM DICOM_LJPEG ECAT GIF \
 		INTERFILE INW PNG
@@ -30,7 +30,7 @@ OPTIONS_DEFAULT=X11 GLIB ACR_NEMA ANALYZE CONCORDE DICOM DICOM_LJPEG ECAT GIF \
 OPTIONS_SUB=	yes
 
 X11_CONFIGURE_ENABLE=	gui
-X11_USE=		GNOME=gtk20
+X11_USE=		GNOME=cairo,gdkpixbuf2,gtk20
 X11_DESKTOP_ENTRIES=	"XMedCon" \
 			"" \
 			"${PREFIX}/etc/xmedcon.png" \

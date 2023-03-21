@@ -1,3 +1,3 @@
-TIMESTAMP = 1613565091
-SHA256 (xmedcon-0.17.0.tar.bz2) = bf61713d8db8e4cb600eed0f889bf34f5d9df967937c4e4df9074c9a442d490a
-SIZE (xmedcon-0.17.0.tar.bz2) = 837628
+TIMESTAMP = 1673016389
+SHA256 (xmedcon-0.23.0-gtk2.tar.bz2) = 4feaf01eed1604f5f85d3c130c1100a17f59b436afd5654bcc877e0dc5b2a98e
+SIZE (xmedcon-0.23.0-gtk2.tar.bz2) = 888815
