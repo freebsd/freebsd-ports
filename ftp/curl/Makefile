@@ -16,7 +16,15 @@ USES=		cpe libtool localbase pathfix perl5 shebangfix tar:xz
 USE_PERL5=	build
 
 CONFIGURE_ARGS=	--disable-werror \
+		--enable-dateparse \
+		--enable-dnsshuffle \
 		--enable-headers-api \
+		--enable-hsts \
+		--enable-http-auth \
+		--enable-mime \
+		--enable-netrc \
+		--enable-openssl-auto-load-config \
+		--enable-progress-meter \
 		--with-fish-functions-dir=${LOCALBASE}/share/fish/completions \
 		--with-zsh-functions-dir=${LOCALBASE}/share/zsh/site-functions
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} \
