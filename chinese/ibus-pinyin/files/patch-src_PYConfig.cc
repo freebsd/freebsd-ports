@@ -1,6 +1,4 @@
-diff --git a/src/PYConfig.cc b/src/PYConfig.cc
-index 7e24b2c..1ef0b99 100644
---- src/PYConfig.cc
+--- src/PYConfig.cc.orig	2012-12-19 15:30:43 UTC
 +++ src/PYConfig.cc
 @@ -114,6 +114,7 @@ Config::initDefaultValues (void)
      m_init_full_punct = TRUE;
