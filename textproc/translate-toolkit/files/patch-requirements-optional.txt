@@ -4,8 +4,8 @@
  -r required.txt
  
  # Format support
--aeidon==1.11        # Subtitles
-+aeidon>=1.11        # Subtitles
+-aeidon==1.12        # Subtitles
++aeidon>=1.12        # Subtitles
  # Format support
  BeautifulSoup4>=4.3  # Trados
  # Encoding detection
