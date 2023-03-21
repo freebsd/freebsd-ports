@@ -1,7 +1,6 @@
 PORTNAME=	resvg-c-api
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.0
-PORTREVISION=	3
+DISTVERSION=	0.29.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,48 +22,50 @@ WRKSRC_SUBDIR=	c-api
 CARGO_CRATES=	adler-1.0.2 \
 		arrayref-0.3.6 \
 		arrayvec-0.7.2 \
-		base64-0.13.1 \
+		base64-0.21.0 \
 		bitflags-1.3.2 \
-		bytemuck-1.12.1 \
+		bytemuck-1.13.0 \
 		cfg-if-1.0.0 \
 		color_quant-1.1.0 \
 		crc32fast-1.3.2 \
 		data-url-0.2.0 \
-		flate2-1.0.24 \
+		flate2-1.0.25 \
 		float-cmp-0.9.0 \
 		fontconfig-parser-0.5.1 \
-		fontdb-0.10.0 \
-		gif-0.11.4 \
-		imagesize-0.10.1 \
+		fontdb-0.12.0 \
+		gif-0.12.0 \
+		imagesize-0.11.0 \
 		jpeg-decoder-0.3.0 \
-		kurbo-0.8.3 \
-		libc-0.2.137 \
+		kurbo-0.9.0 \
+		libc-0.2.139 \
 		log-0.4.17 \
 		memmap2-0.5.8 \
-		miniz_oxide-0.5.4 \
-		once_cell-1.16.0 \
+		miniz_oxide-0.6.2 \
+		once_cell-1.17.0 \
 		pico-args-0.5.0 \
-		png-0.17.6 \
+		png-0.17.7 \
 		rctree-0.5.0 \
 		rgb-0.8.34 \
 		roxmltree-0.15.1 \
-		rustybuzz-0.6.0 \
+		roxmltree-0.18.0 \
+		rustybuzz-0.7.0 \
 		simplecss-0.2.1 \
 		siphasher-0.3.10 \
 		smallvec-1.10.0 \
 		strict-num-0.1.0 \
-		svgtypes-0.8.2 \
-		tiny-skia-0.8.2 \
-		tiny-skia-path-0.8.2 \
-		ttf-parser-0.17.1 \
-		unicode-bidi-0.3.8 \
+		svgtypes-0.10.0 \
+		tiny-skia-0.8.3 \
+		tiny-skia-path-0.8.3 \
+		ttf-parser-0.18.1 \
+		unicode-bidi-0.3.10 \
 		unicode-bidi-mirroring-0.1.0 \
 		unicode-ccc-0.1.2 \
 		unicode-general-category-0.6.0 \
 		unicode-script-0.5.5 \
 		unicode-vo-0.1.0 \
 		weezl-0.1.7 \
-		xmlparser-0.13.5
+		xmlparser-0.13.5 \
+		xmlwriter-0.1.0
 
 PLIST_FILES=	include/ResvgQt.h \
 		include/resvg.h \
