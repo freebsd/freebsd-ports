@@ -21,4 +21,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beaker>=1.1:www/py-beaker@${PY_FLAVOR} \
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
