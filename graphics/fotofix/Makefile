@@ -7,17 +7,19 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image viewer
 WWW=		http://www.prima.eu.org/fotofix/
 
+DEPRECATED=	Depends on expired graphics/IPA
+EXPIRATION_DATE=2023-06-21
+
 RUN_DEPENDS=	IPA>=1.03:graphics/IPA \
 		p5-Prima>=1.22:x11-toolkits/p5-Prima
 
 NO_ARCH=	yes
 
+USES=		perl5 shebangfix
+SHEBANG_FILES=	fotofix
 USE_GITHUB=	yes
 GH_ACCOUNT=	dk
 GH_TAGNAME=	2a4706c
-
-USES=		perl5 shebangfix
-SHEBANG_FILES=	fotofix
 
 PLIST_FILES=	bin/fotofix man/man1/fotofix.1.gz
 
