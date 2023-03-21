@@ -21,7 +21,7 @@ BROKEN=			fails to fetch from mastersite (newest release is 7.4.0 of 2020611)
 BROKEN_armv6=		fails to link: final link failed: Nonrepresentable section on output
 BROKEN_armv7=		fails to link: final link failed: Nonrepresentable section on output
 DEPRECATED=	Broken since 2021
-EXPIRATION_DATE=	2023-03-21
+EXPIRATION_DATE=	2023-04-21
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 USES=		desthack gnome pkgconfig xorg

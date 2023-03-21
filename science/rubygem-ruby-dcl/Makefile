@@ -11,6 +11,9 @@ WWW=		http://ruby.gfd-dennou.org/products/ruby-dcl/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	requires deprecated science/cdcl
+EXPIRATION_DATE=	2023-04-21
+
 BUILD_DEPENDS=	rubygem-narray>=0.5.5:math/rubygem-narray
 LIB_DEPENDS=	libcdcl.so:science/cdcl \
 		libfontconfig.so:x11-fonts/fontconfig \
