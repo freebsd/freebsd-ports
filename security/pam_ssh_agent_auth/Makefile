@@ -7,6 +7,9 @@ MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	PAM module which permits authentication via ssh-agent
 WWW=		https://github.com/jbeverly/pam_ssh_agent_auth
 
+# Note: if you need support for hardware token backed ecdsa-sk or
+# ed25519-sk SSH keys, see devel/pam_rssh
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jbeverly
 GH_TAGNAME=	099beb2
