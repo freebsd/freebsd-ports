@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	15.9.0
+PORTVERSION=	15.9.3
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -64,7 +64,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-omniauth-oauth2-generic>=0.2.2<0.3.0:security/rubygem-omniauth-oauth2-generic \
 	rubygem-omniauth-saml>=2.0.0<3:security/rubygem-omniauth-saml \
 	rubygem-omniauth-twitter>=1.4<2.0:net/rubygem-omniauth-twitter \
-	rubygem-omniauth_openid_connect>=0.6.0<0.7.0:net/rubygem-omniauth_openid_connect \
+	rubygem-omniauth_openid_connect>=0.6.1<0.7.0:net/rubygem-omniauth_openid_connect \
 	rubygem-openid_connect>=1.3.0<1.3.1:net/rubygem-openid_connect \
 	rubygem-omniauth-atlassian-oauth2>=0.2.0<0.3:security/rubygem-omniauth-atlassian-oauth2 \
 	rubygem-rack-oauth21>=1.21.3<1.22.0:security/rubygem-rack-oauth21 \
@@ -106,7 +106,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-fog-openstack>=1.0<2.0:net/rubygem-fog-openstack \
 	rubygem-fog-rackspace>=0.1.1<1.2.0:net/rubygem-fog-rackspace \
 	rubygem-fog-aliyun>=0.4<1.0:net/rubygem-fog-aliyun \
-	rubygem-gitlab-fog-azure-rm>=1.4.0<1.5:net/rubygem-gitlab-fog-azure-rm \
+	rubygem-gitlab-fog-azure-rm>=1.7.0<1.8:net/rubygem-gitlab-fog-azure-rm \
 	rubygem-google-cloud-storage>=1.44.0<1.45:net/rubygem-google-cloud-storage \
 	rubygem-google-apis-core>=0.10.0<0.12:devel/rubygem-google-apis-core \
 	rubygem-google-apis-compute_v1_057>=0.57.0<0.58:devel/rubygem-google-apis-compute_v1_057 \
@@ -289,7 +289,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	c757b8d6946b7223e350edc0ea24db7b1ba25087
+GL_COMMIT=	f030ca96950296390a162ebc7b59914282bdb605
 
 USERS=	git
 GROUPS=	git

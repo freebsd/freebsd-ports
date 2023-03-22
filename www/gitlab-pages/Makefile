@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-pages
-PORTVERSION=	15.9.1
+PORTVERSION=	15.9.3
 DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	www
@@ -19,7 +19,7 @@ GO_MODULE=	gitlab.com/gitlab-org/gitlab-pages
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitlab-pages/-/tags/
-GL_COMMIT=	5f976f7e0da3a9d7ed0aa14e517cc1812d090126
+GL_COMMIT=	7fae152a0c1fa1b3dbb46cfed4c977a6cfad53bc
 
 GO_BUILDFLAGS=	-ldflags="-X 'main.VERSION=${PORTVERSION}' -X 'main.REVISION=${GL_COMMIT}'"
 
