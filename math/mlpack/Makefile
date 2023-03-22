@@ -9,6 +9,7 @@ COMMENT=	Fast, flexible machine learning library
 WWW=		https://www.mlpack.org/
 
 LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	undefined symbol: __atomic_load
 
