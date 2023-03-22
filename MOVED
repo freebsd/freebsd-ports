@@ -17823,6 +17823,7 @@ graphics/gimp-gmic-plugin||2023-03-21|Has expired: Broken since 2021
 science/InsightToolkit521|science/InsightToolkit|2023-03-21|Retire InsightToolkit521: it was there only to support graphics/elastix
 sysutils/etcupdate||2023-03-21|Part of the base system since FreeBSD 10.0
 devel/freebsd-gcc6||2023-03-22|No longer able to build base system, use GCC 9 or later instead
+net/rubygem-gitlab-omniauth-openid-connect|net/rubygem-omniauth_openid_connect|2023-03-22|Obsolete use net/rubygem-omniauth_openid_connect instead
 japanese/mutt-devel||2023-03-25|Has expired: Broken since 2019
 audio/amarok||2023-03-31|Has expired: No longer actively maintained upstream
 audio/cd2mp3||2023-03-31|Has expired: Depends on deprecated port audio/dagrab, consider using audio/abcde or audio/cyanrip
