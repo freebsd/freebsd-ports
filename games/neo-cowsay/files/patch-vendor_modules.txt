@@ -1,0 +1,76 @@
+--- vendor/modules.txt.orig	2023-03-22 20:08:05 UTC
++++ vendor/modules.txt
+@@ -1,13 +1,15 @@
+ # github.com/Code-Hex/Neo-cowsay/v2 v2.0.3
+-## explicit
++## explicit; go 1.16
+ github.com/Code-Hex/Neo-cowsay/v2
+ github.com/Code-Hex/Neo-cowsay/v2/decoration
+ # github.com/Code-Hex/go-wordwrap v1.0.0
+-## explicit
++## explicit; go 1.13
+ github.com/Code-Hex/go-wordwrap
+ # github.com/gdamore/encoding v1.0.0
++## explicit; go 1.9
+ github.com/gdamore/encoding
+ # github.com/gdamore/tcell/v2 v2.4.0
++## explicit; go 1.12
+ github.com/gdamore/tcell/v2
+ github.com/gdamore/tcell/v2/terminfo
+ github.com/gdamore/tcell/v2/terminfo/a/aixterm
+@@ -48,41 +50,48 @@ github.com/gdamore/tcell/v2/terminfo/x/xterm
+ github.com/gdamore/tcell/v2/terminfo/x/xterm_kitty
+ github.com/gdamore/tcell/v2/terminfo/x/xterm_termite
+ # github.com/jessevdk/go-flags v1.5.0
+-## explicit
++## explicit; go 1.15
+ github.com/jessevdk/go-flags
+ # github.com/ktr0731/go-fuzzyfinder v0.5.1
+-## explicit
++## explicit; go 1.13
+ github.com/ktr0731/go-fuzzyfinder
+ github.com/ktr0731/go-fuzzyfinder/matching
+ github.com/ktr0731/go-fuzzyfinder/scoring
+ # github.com/lucasb-eyer/go-colorful v1.0.3
++## explicit; go 1.12
+ github.com/lucasb-eyer/go-colorful
+ # github.com/mattn/go-colorable v0.1.11
+-## explicit
++## explicit; go 1.13
+ github.com/mattn/go-colorable
+ # github.com/mattn/go-isatty v0.0.14
++## explicit; go 1.12
+ github.com/mattn/go-isatty
+ # github.com/mattn/go-runewidth v0.0.13
+-## explicit
++## explicit; go 1.9
+ github.com/mattn/go-runewidth
+ # github.com/nsf/termbox-go v0.0.0-20201124104050-ed494de23a00
++## explicit; go 1.15
+ github.com/nsf/termbox-go
+ # github.com/pkg/errors v0.9.1
++## explicit
+ github.com/pkg/errors
+ # github.com/rivo/uniseg v0.2.0
+-## explicit
++## explicit; go 1.12
+ github.com/rivo/uniseg
+ # golang.org/x/crypto v0.0.0-20211108221036-ceb1ce70b4fa
+-## explicit
++## explicit; go 1.17
+ golang.org/x/crypto/ssh/terminal
+-# golang.org/x/sys v0.0.0-20210927094055-39ccf1dd6fa6
++# golang.org/x/sys v0.6.0
++## explicit; go 1.17
+ golang.org/x/sys/internal/unsafeheader
+ golang.org/x/sys/plan9
+ golang.org/x/sys/unix
+ golang.org/x/sys/windows
+ # golang.org/x/term v0.0.0-20201210144234-2321bbc49cbf
++## explicit; go 1.11
+ golang.org/x/term
+ # golang.org/x/text v0.3.6
++## explicit; go 1.11
+ golang.org/x/text/encoding
+ golang.org/x/text/encoding/internal/identifier
+ golang.org/x/text/transform
