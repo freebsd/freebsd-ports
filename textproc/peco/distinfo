@@ -1,6 +1,6 @@
-TIMESTAMP = 1676854416
-SHA256 (peco-peco-v0.5.10_GH0.tar.gz) = 781c2effc4f6a58d9ff96fb0fc8b0fba3aab56a91a34933d68c5de3aea5fe3f6
-SIZE (peco-peco-v0.5.10_GH0.tar.gz) = 81697
+TIMESTAMP = 1679448110
+SHA256 (peco-peco-v0.5.11_GH0.tar.gz) = 8e32c8af533e03795f27feb4ee134960611d2fc0266528b1c512a6f1f065b164
+SIZE (peco-peco-v0.5.11_GH0.tar.gz) = 83854
 SHA256 (davecgh-go-spew-v1.1.0_GH0.tar.gz) = 1f7e0bd2db0341925b5f2ee5834e99380f4c2b1bd36cf0fa62d7717899d39d62
 SIZE (davecgh-go-spew-v1.1.0_GH0.tar.gz) = 42337
 SHA256 (google-btree-0c3044bc8bad_GH0.tar.gz) = ff25b8e325f18ab055fddf561a2c9851268bcbce17885d20966a48f3656ba404
