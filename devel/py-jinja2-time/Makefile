@@ -18,15 +18,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>0:devel/py-freezegun@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 
-do-test:
-	@cd ${WRKSRC} && \
-	${LOCALBASE}/bin/py.test-${PYTHON_VER} tests
-
-## This results in complaints about flake8 being too modern...
-## ${LOCALBASE}/bin/flake8-${PYTHON_VER} jinja2_time setup.py tests
+PYTEST_BROKEN_TESTS= test_add_time test_substract_time test_offset_with_format
 
 .include <bsd.port.mk>
