@@ -1,6 +1,5 @@
 PORTNAME=	chromium
-PORTVERSION=	111.0.5563.64
-PORTREVISION=	1
+PORTVERSION=	111.0.5563.110
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
 		https://nerd.hu/distfiles/:external
