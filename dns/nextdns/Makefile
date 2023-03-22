@@ -1,7 +1,7 @@
 PORTNAME=	nextdns
 PORTVERSION=	1.37.11
 DISTVERSIONPREFIX=	v
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	dns security
 
 MAINTAINER=	rs@nextdns.io
@@ -18,8 +18,8 @@ USE_GITHUB=	yes
 GH_TUPLE=	\
 		cespare:xxhash:v1.1.0:cespare_xxhash/vendor/github.com/cespare/xxhash \
 		denisbrodbeck:machineid:v1.0.1:denisbrodbeck_machineid/vendor/github.com/denisbrodbeck/machineid \
-		golang:net:60bc85c4be6d:golang_net/vendor/golang.org/x/net \
-		golang:sys:63515b42dcdf:golang_sys/vendor/golang.org/x/sys \
+		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		hashicorp:golang-lru:v0.5.4:hashicorp_golang_lru/vendor/github.com/hashicorp/golang-lru \
 		vishvananda:netlink:v1.1.0:vishvananda_netlink/vendor/github.com/vishvananda/netlink \
 		vishvananda:netns:2eb08e3e575f:vishvananda_netns/vendor/github.com/vishvananda/netns
