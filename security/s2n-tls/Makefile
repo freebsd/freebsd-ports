@@ -1,6 +1,6 @@
 PORTNAME=	s2n-tls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.39
+DISTVERSION=	1.3.40
 PORTEPOCH=	1
 CATEGORIES=	security
 
@@ -10,9 +10,6 @@ WWW=		https://github.com/aws/s2n-tls
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-NOT_FOR_ARCHS=	armv6 armv7 i386
-NOT_FOR_ARCHS_REASON=	-Werror=sign-compare fails on 32-bit architectures, see https://github.com/aws/s2n-tls/issues/3861
 
 USES=		cmake:testing ssl
 USE_GITHUB=	yes
