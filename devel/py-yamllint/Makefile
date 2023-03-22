@@ -1,5 +1,5 @@
 PORTNAME=	yamllint
-PORTVERSION=	1.29.0
+PORTVERSION=	1.30.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,11 +16,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pathspec>=0.5.3:devel/py-pathspec@${PY_FLAVO
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 
-do-test:
-	@cd ${WRKSRC} && ${LOCALBASE}/bin/pytest-${PYTHON_VER} tests
+PYTEST_BROKEN_TESTS=	test_run_with_user_global_config_file
 
 .include <bsd.port.mk>
