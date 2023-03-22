@@ -1,4 +1,4 @@
-https://github.com/glandium/git-cinnabar/commit/6c77d861b70a
+https://github.com/glandium/git-cinnabar/commit/1bcdfb890566
 
 --- helper/cinnabar-fast-import.c.orig	2022-10-28 23:43:03 UTC
 +++ helper/cinnabar-fast-import.c
