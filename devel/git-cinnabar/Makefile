@@ -10,6 +10,7 @@ WWW=		https://github.com/glandium/git-cinnabar
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${NONEXISTENT}:devel/git:configure
+LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	git:devel/git
 
 USE_GITHUB=	yes
