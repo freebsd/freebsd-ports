@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-fog-azure-rm
-PORTVERSION=	1.4.0
+PORTVERSION=	1.7.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
