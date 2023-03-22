@@ -10,7 +10,7 @@ add it to /etc/rc.conf and start:
 tuptime requires a scheduled execution on cron, please add to
 /etc/crontab:
 
-	*/5 * * * * root %%PREFIX%%/bin/tuptime -x > /dev/null
+	*/5 * * * * root %%PREFIX%%/bin/tuptime -q > /dev/null
 EOM
 }
 ]
