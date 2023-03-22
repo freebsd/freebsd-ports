@@ -26,7 +26,21 @@ include/symengine/integer.h
 include/symengine/lambda_double.h
 include/symengine/llvm_double.h
 include/symengine/logic.h
+include/symengine/matrices/conjugate_matrix.h
+include/symengine/matrices/diagonal_matrix.h
+include/symengine/matrices/hadamard_product.h
+include/symengine/matrices/identity_matrix.h
+include/symengine/matrices/immutable_dense_matrix.h
+include/symengine/matrices/matrix_add.h
+include/symengine/matrices/matrix_expr.h
+include/symengine/matrices/matrix_mul.h
+include/symengine/matrices/matrix_symbol.h
+include/symengine/matrices/size.h
+include/symengine/matrices/trace.h
+include/symengine/matrices/transpose.h
+include/symengine/matrices/zero_matrix.h
 include/symengine/matrix.h
+include/symengine/matrix_expressions.h
 include/symengine/monomials.h
 include/symengine/mp_class.h
 include/symengine/mp_wrapper.h
@@ -57,6 +71,7 @@ include/symengine/printers/codegen.h
 include/symengine/printers/latex.h
 include/symengine/printers/mathml.h
 include/symengine/printers/sbml.h
+include/symengine/printers/stringbox.h
 include/symengine/printers/strprinter.h
 include/symengine/printers/unicode.h
 include/symengine/rational.h
@@ -83,6 +98,7 @@ include/symengine/symengine_exception.h
 include/symengine/symengine_export.h
 include/symengine/symengine_rcp.h
 include/symengine/test_visitors.h
+include/symengine/tribool.h
 include/symengine/tuple.h
 include/symengine/type_codes.inc
 include/symengine/utilities/cereal/include/cereal/access.hpp
@@ -136,5 +152,5 @@ lib/cmake/symengine/SymEngineConfigVersion.cmake
 lib/cmake/symengine/SymEngineTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/symengine/SymEngineTargets.cmake
 lib/libsymengine.so
-lib/libsymengine.so.0.9
-lib/libsymengine.so.0.9.0
+lib/libsymengine.so.0.10
+lib/libsymengine.so.0.10.0
