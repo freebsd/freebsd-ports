@@ -1,6 +1,6 @@
 PORTNAME=	livego
 DISTVERSION=	0.0.15
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -21,9 +21,8 @@ GH_TUPLE=	\
 		dgrijalva:jwt-go:v3.2.0:dgrijalva_jwt_go/vendor/github.com/dgrijalva/jwt-go \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
 		go-ini:ini:v1.51.0:go_ini_ini/vendor/gopkg.in/ini.v1 \
-		go-redis:redis:v7.2.0:go_redis_redis_v7/vendor/github.com/go-redis/redis/v7 \
 		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
-		golang:sys:b09406accb47:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		konsorten:go-windows-terminal-sequences:v1.0.1:konsorten_go_windows_terminal_sequences/vendor/github.com/konsorten/go-windows-terminal-sequences \
@@ -34,6 +33,7 @@ GH_TUPLE=	\
 		patrickmn:go-cache:v2.1.0:patrickmn_go_cache/vendor/github.com/patrickmn/go-cache \
 		pelletier:go-toml:v1.2.0:pelletier_go_toml/vendor/github.com/pelletier/go-toml \
 		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
+		redis:go-redis:v7.2.0:go_redis_redis_v7/vendor/github.com/go-redis/redis/v7 \
 		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
 		sirupsen:logrus:v1.5.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
