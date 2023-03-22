@@ -1,6 +1,6 @@
 PORTNAME=	glx-utils
 DISTVERSIONPREFIX=	${GL_ACCOUNT}-${GL_PROJECT}-
-DISTVERSION=	8.5.0-31
+DISTVERSION=	9.0.0
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -18,14 +18,19 @@ USE_XORG=	x11
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
 GL_PROJECT=	demos
-GL_COMMIT=	f5e202be2d10f58084ad6d115be5196fdd917da3
+GL_COMMIT=	661681767bfb4e8f136aac1fd7934e6b0fa46d29
 WRKSRC_SUBDIR=	src/xdemos
+CFLAGS+=	-ffunction-sections -fdata-sections
+LDFLAGS+=	-Wl,--gc-sections
 PLIST_FILES=	bin/glxgears \
 		bin/glxinfo \
 		${NULL}
 
 do-build:
-	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o glxinfo glxinfo.c glinfo_common.c ${LDFLAGS} -lGL -lX11)
+	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o glxinfo glxinfo.c \
+		-I../util ../util/glinfo_common.c \
+		-I../glad/include ../glad/src/glad.c \
+		${LDFLAGS} -lGL -lX11)
 	(cd ${WRKSRC} && ${CC} ${CFLAGS} -o glxgears glxgears.c ${LDFLAGS} -lGL -lX11 -lm)
 
 do-install:
