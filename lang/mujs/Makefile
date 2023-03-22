@@ -1,5 +1,5 @@
 PORTNAME=	mujs
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.3
 CATEGORIES=	lang devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,8 +18,9 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	ccxvii
 
-ALL_TARGET=	shared static
-
+ALL_TARGET=	build/release/mujs \
+		build/release/libmujs.so \
+		build/release/libmujs.a
 INSTALL_TARGET=	install-shared install-static
 
 .if defined(WITH_DEBUG) # this project manages its build options itself
@@ -27,6 +28,7 @@ MAKE_ARGS=	build=debug
 .endif
 
 PLIST_FILES=	bin/mujs \
+		bin/mujs-pp \
 		include/mujs.h \
 		lib/libmujs.so \
 		lib/libmujs.a \
@@ -40,6 +42,12 @@ OPTIONS_DEFAULT=	32BIT
 
 SANITIZED_DESC=		Sanitized build (only for debugging)
 SANITIZED_MAKE_ARGS=	build=sanitize
+
+post-install:
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/bin/mujs \
+		${STAGEDIR}${PREFIX}/bin/mujs-pp \
+		${STAGEDIR}${PREFIX}/lib/libmujs.so
 
 do-test: # Test-262 JavaScript testsuite is downloaded and run.
 	# Something is off with the test harness so too many tests fail: https://github.com/ccxvii/mujs/issues/147
