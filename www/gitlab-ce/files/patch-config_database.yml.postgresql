@@ -1,9 +1,9 @@
---- config/database.yml.postgresql.orig	2022-07-01 16:12:26 UTC
+--- config/database.yml.postgresql.orig	2023-02-21 16:38:51 UTC
 +++ config/database.yml.postgresql
-@@ -18,13 +18,6 @@ production:
-     #     port: 8600
-     #     record: secondary.postgresql.service.consul
-     #     interval: 300
+@@ -26,13 +26,6 @@ production:
+   #   username: git
+   #   password: "secure password"
+   #   host: localhost
 -  geo:
 -    adapter: postgresql
 -    encoding: unicode
@@ -14,10 +14,10 @@
  
  #
  # Development specific
-@@ -39,13 +32,6 @@ development:
-     host: localhost
-     variables:
-       statement_timeout: 15s
+@@ -57,13 +50,6 @@ development:
+   #   host: localhost
+   #   variables:
+   #     statement_timeout: 15s
 -  geo:
 -    adapter: postgresql
 -    encoding: unicode
@@ -28,10 +28,10 @@
  
  #
  # Staging specific
-@@ -58,13 +44,6 @@ staging:
-     username: git
-     password: "secure password"
-     host: localhost
+@@ -84,13 +70,6 @@ staging:
+   #   username: git
+   #   password: "secure password"
+   #   host: localhost
 -  geo:
 -    adapter: postgresql
 -    encoding: unicode
@@ -42,10 +42,10 @@
  
  # Warning: The database defined as "test" will be erased and
  # re-generated from your development database when you run "rake".
-@@ -80,10 +59,3 @@ test: &test
-     prepared_statements: false
-     variables:
-       statement_timeout: 15s
+@@ -117,10 +96,3 @@ test: &test
+   #   prepared_statements: false
+   #   variables:
+   #     statement_timeout: 15s
 -  geo:
 -    adapter: postgresql
 -    encoding: unicode
