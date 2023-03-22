@@ -1,3 +1,48 @@
+  <vuln vid="c8b334e0-6e83-4575-81d1-f9d5803ceb07">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>111.0.5563.110</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>111.0.5563.110</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/03/stable-channel-update-for-desktop_21.html">
+	 <p>This update includes 8 security fixes:</p>
+	 <ul>
+	   <li>[1421773] High CVE-2023-1528: Use after free in Passwords. Reported by Wan Choi of Seoul National University on 2023-03-07</li>
+	   <li>[1419718] High CVE-2023-1529: Out of bounds memory access in WebHID. Reported by anonymous on 2023-02-27</li>
+	   <li>[1419831] High CVE-2023-1530: Use after free in PDF. Reported by The UK's National Cyber Security Centre (NCSC) on 2023-02-27</li>
+	   <li>[1415330] High CVE-2023-1531: Use after free in ANGLE. Reported by Piotr Bania of Cisco Talos on 2023-02-13</li>
+	   <li>[1421268] High CVE-2023-1532: Out of bounds read in GPU Video. Reported by Mark Brand of Google Project Zero on 2023-03-03</li>
+	   <li>[1422183] High CVE-2023-1533: Use after free in WebProtect. Reported by Weipeng Jiang (@Krace) of VRI on 2023-03-07</li>
+	   <li>[1422594] High CVE-2023-1534: Out of bounds read in ANGLE. Reported by Jann Horn and Mark Brand of Google Project Zero on 2023-03-08</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-1528</cvename>
+      <cvename>CVE-2023-1529</cvename>
+      <cvename>CVE-2023-1530</cvename>
+      <cvename>CVE-2023-1531</cvename>
+      <cvename>CVE-2023-1532</cvename>
+      <cvename>CVE-2023-1533</cvename>
+      <cvename>CVE-2023-1534</cvename>
+      <url>https://chromereleases.googleblog.com/2023/03/stable-channel-update-for-desktop_21.html</url>
+    </references>
+    <dates>
+      <discovery>2023-03-21</discovery>
+      <entry>2023-03-22</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a60cc0e4-c7aa-11ed-8a4b-080027f5fec9">
     <topic>redis -- specially crafted MSETNX command can lead to denial-of-service</topic>
     <affects>
