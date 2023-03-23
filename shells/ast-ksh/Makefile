@@ -33,7 +33,7 @@ GH_TAGNAME=	ksh93v
 # IMPORTANT:	Disabling conflicts, i.e. -DDISABLE_CONFLICTS will result in
 #		arcane build failures due to already installed ksh/ksh93 in
 #		$PATH.
-CONFLICTS=	ksh2020 ksh93 ksh93-devel
+CONFLICTS=	ksh93 ksh93-devel
 
 OPTIONS_DEFINE=	EXAMPLES STATIC
 
