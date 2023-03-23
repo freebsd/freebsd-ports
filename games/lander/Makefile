@@ -1,7 +1,7 @@
 PORTNAME=	lander
-PORTVERSION=	0.7.2
+DISTVERSIONPREFIX=	r
+DISTVERSION=	0.7.3
 CATEGORIES=	games
-MASTER_SITES=	https://www.nickg.me.uk/files/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Lunar Lander clone
@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 
 USES=		compiler:c++17-lang display:test gettext gl meson sdl pkgconfig tar:xz
+USE_GITHUB=	yes
+GH_ACCOUNT=	nickg
 USE_SDL=	sdl2 image2 mixer2
 USE_GL=		gl glew
 
