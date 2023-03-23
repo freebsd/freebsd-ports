@@ -1,5 +1,5 @@
 PORTNAME=	redis
-DISTVERSION=	7.0.12
+DISTVERSION=	7.2.0
 CATEGORIES=	databases
 MASTER_SITES=	https://download.redis.io/releases/
 
@@ -10,19 +10,38 @@ WWW=		https://redis.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES+=		compiler:c11 cpe gmake
+USES=		compiler:c11 cpe gmake
 CPE_VENDOR=	redislabs
+USE_RC_SUBR=	redis sentinel
 
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
+LDFLAGS+=	-lpthread -lm -lexecinfo
+
 CONFLICTS_INSTALL=	redis-devel redis6 redis62 redis70 # etc/rc.d/redis
 
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTNAME=${PORTNAME} \
+		REDIS_DBDIR=${REDIS_DBDIR} \
+		REDIS_LOGDIR=${REDIS_LOGDIR} \
+		REDIS_RUNDIR=${REDIS_RUNDIR} \
+		REDIS_USER=${USERS}
+
+USERS=		redis
+GROUPS=		redis
+
+PLIST_SUB=	REDIS_DBDIR=${REDIS_DBDIR} \
+		REDIS_GROUP=${GROUPS} \
+		REDIS_LOGDIR=${REDIS_LOGDIR} \
+		REDIS_RUNDIR=${REDIS_RUNDIR} \
+		REDIS_USER=${USERS}
+
 OPTIONS_DEFINE=		JEMALLOC TESTS TLS TRIB
+OPTIONS_DEFAULT=	TLS
 OPTIONS_RADIO=		EXTLUA
 OPTIONS_RADIO_EXTLUA=	LUA LUAJIT
 OPTIONS_SUB=		yes
-OPTIONS_DEFAULT+=	TLS
 
 JEMALLOC_DESC=	Use jemalloc
 LUAJIT_DESC=	Use luajit instead of builtin lua
@@ -46,6 +65,13 @@ TRIB_CATEGORIES=	ruby
 TRIB_RUN_DEPENDS=	rubygem-redis>=2.2:databases/rubygem-redis
 TRIB_USES=		ruby
 
+BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb redis-cli \
+		redis-sentinel redis-server
+
+REDIS_DBDIR?=	/var/db/redis
+REDIS_RUNDIR?=	/var/run/redis
+REDIS_LOGDIR?=	/var/log/redis
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == i386 && !${CFLAGS:M-march=*}
@@ -68,32 +94,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
 		${PATCHDIR}/extra-patch-deps_lua_src_lua__cjson.c
 .  endif
 .endif
-
-LDFLAGS+=	-lpthread -lm -lexecinfo
-
-USE_RC_SUBR=	redis sentinel
-BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb redis-cli \
-		redis-sentinel redis-server
-
-USERS=		redis
-GROUPS=		redis
-
-REDIS_DBDIR?=	/var/db/redis
-REDIS_RUNDIR?=	/var/run/redis
-REDIS_LOGDIR?=	/var/log/redis
-
-SUB_FILES=	pkg-message
-SUB_LIST+=	PORTNAME=${PORTNAME} \
-		REDIS_DBDIR=${REDIS_DBDIR} \
-		REDIS_LOGDIR=${REDIS_LOGDIR} \
-		REDIS_RUNDIR=${REDIS_RUNDIR} \
-		REDIS_USER=${USERS}
-
-PLIST_SUB+=	REDIS_DBDIR=${REDIS_DBDIR} \
-		REDIS_GROUP=${GROUPS} \
-		REDIS_LOGDIR=${REDIS_LOGDIR} \
-		REDIS_RUNDIR=${REDIS_RUNDIR} \
-		REDIS_USER=${USERS}
 
 post-patch-JEMALLOC-on:
 	@${REINPLACE_CMD} '35s!Linux!FreeBSD!g' ${WRKSRC}/src/Makefile
