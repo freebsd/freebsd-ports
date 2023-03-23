@@ -6,6 +6,15 @@ Fix build with Clang 8:
 
 --- dspdfviewer.cpp.orig	2016-09-13 13:18:47 UTC
 +++ dspdfviewer.cpp
+@@ -47,7 +47,7 @@ DSPDFViewer::DSPDFViewer(const RuntimeConfiguration& r
+  renderFactory(r),
+  m_pagenumber(0),
+  audienceWindow(1,   r.useFullPage()                 ? PagePart::FullPage : PagePart::LeftHalf , false, r, WindowRole::AudienceWindow),
+- secondaryWindow(0, (r.useFullPage() | r.duplicate())? PagePart::FullPage : PagePart::RightHalf, true , r, WindowRole::PresenterWindow, r.useSecondScreen())
++ secondaryWindow(0, (r.useFullPage() || r.duplicate())? PagePart::FullPage : PagePart::RightHalf, true , r, WindowRole::PresenterWindow, r.useSecondScreen())
+ {
+   DEBUGOUT << tr("Starting constructor") ;
+ 
 @@ -292,10 +292,10 @@ void DSPDFViewer::sendAllClockSignals() const
    emit presentationClockUpdate(presentationClock());
  }
