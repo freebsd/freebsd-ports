@@ -6,9 +6,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	jjachuf@gmail.com
 COMMENT=	Python refactoring library
-WWW=		http://rope.sourceforge.net
+WWW=		https://github.com/python-rope/rope/
 
-LICENSE=	GPLv2
+LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe python:3.6+
