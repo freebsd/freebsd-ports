@@ -14,7 +14,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	shells
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	Development branch of AT&T KornShell 93
+COMMENT=	ksh93u+m is the renewed development of ksh93 based on AT&T ksh93u+m (stable)
 WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL

@@ -14,13 +14,13 @@
 
 PORTNAME=	ksh93
 DISTVERSION=	93u
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	shells
 DIST_SUBDIR=	ksh93
 
 MAINTAINER=	cy@FreeBSD.org
-COMMENT=	AT&T KornShell 93
+COMMENT=	AT&T KornShell ksh93u+ 2012-08-01 (stable) version
 WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
