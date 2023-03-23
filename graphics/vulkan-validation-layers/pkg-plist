@@ -1,6 +1,9 @@
 include/vulkan/cast_utils.h
+include/vulkan/custom_containers.h
 include/vulkan/hash_util.h
 include/vulkan/hash_vk_types.h
+include/vulkan/logging.cpp
+include/vulkan/logging.h
 include/vulkan/vk_dispatch_table_helper.h
 include/vulkan/vk_enum_string_helper.h
 include/vulkan/vk_extension_helper.h
@@ -8,12 +11,9 @@ include/vulkan/vk_format_utils.cpp
 include/vulkan/vk_format_utils.h
 include/vulkan/vk_layer_config.cpp
 include/vulkan/vk_layer_config.h
-include/vulkan/vk_layer_data.h
 include/vulkan/vk_layer_dispatch_table.h
 include/vulkan/vk_layer_extension_utils.cpp
 include/vulkan/vk_layer_extension_utils.h
-include/vulkan/vk_layer_logging.cpp
-include/vulkan/vk_layer_logging.h
 include/vulkan/vk_layer_utils.cpp
 include/vulkan/vk_layer_utils.h
 include/vulkan/vk_object_types.h
