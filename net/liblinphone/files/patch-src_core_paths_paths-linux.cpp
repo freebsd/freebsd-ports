@@ -1,6 +1,6 @@
---- src/core/paths/paths-linux.cpp.orig	2022-08-08 14:58:59 UTC
+--- src/core/paths/paths-linux.cpp.orig	2023-03-17 13:29:37 UTC
 +++ src/core/paths/paths-linux.cpp
-@@ -23,6 +23,16 @@
+@@ -24,6 +24,16 @@
  #include "paths-linux.h"
  #include "linphone/api/c-factory.h"
  

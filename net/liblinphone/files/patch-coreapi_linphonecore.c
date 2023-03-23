@@ -1,6 +1,6 @@
---- coreapi/linphonecore.c.orig	2022-05-18 10:10:25 UTC
+--- coreapi/linphonecore.c.orig	2023-03-17 13:29:37 UTC
 +++ coreapi/linphonecore.c
-@@ -746,7 +746,7 @@ static void _close_log_collection_file(void) {
+@@ -781,7 +781,7 @@ static void _close_log_collection_file(void) {
  	}
  }
  

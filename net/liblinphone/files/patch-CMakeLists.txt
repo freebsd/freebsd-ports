@@ -2,9 +2,18 @@ Fix compilation error:
 
 src/core/core.cpp:428:2: error: void function 'doLater' should not return a
 value [-Wreturn-type]
---- CMakeLists.txt.orig	2022-08-24 08:22:37 UTC
+--- CMakeLists.txt.orig	2023-03-17 13:29:37 UTC
 +++ CMakeLists.txt
-@@ -320,7 +320,7 @@ else()
+@@ -4,7 +4,7 @@
+ #
+ ############################################################################
+ #
+-# This file is part of Liblinphone 
++# This file is part of Liblinphone
+ # (see https://gitlab.linphone.org/BC/public/liblinphone).
+ #
+ # This program is free software: you can redistribute it and/or modify
+@@ -354,7 +354,7 @@ else()
  	list(APPEND STRICT_OPTIONS_CPP
  		"-Wall"
  		"-Wconversion"

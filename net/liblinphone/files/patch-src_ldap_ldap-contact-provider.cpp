@@ -1,6 +1,6 @@
---- src/ldap/ldap-contact-provider.cpp.orig	2022-05-18 10:10:25 UTC
+--- src/ldap/ldap-contact-provider.cpp.orig	2023-03-17 13:29:37 UTC
 +++ src/ldap/ldap-contact-provider.cpp
-@@ -220,11 +220,6 @@ void LdapContactProvider::initializeLdap(){
+@@ -221,11 +221,6 @@ void LdapContactProvider::initializeLdap(){
  		ms_error("[LDAP] Cannot initialize address to %s : %x (%s), err %x (%s)",mConfig["server"].c_str(), ret, ldap_err2string(ret), err, ldap_err2string(err));
  		mCurrentAction = ACTION_ERROR;
  	}else if(mConfig.count("use_tls")>0 && mConfig["use_tls"] == "1"){
