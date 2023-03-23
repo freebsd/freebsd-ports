@@ -1,4 +1,4 @@
-TIMESTAMP = 1660082123
+TIMESTAMP = 1679564706
 SHA256 (fullstorydev-grpcui-v1.3.1_GH0.tar.gz) = 01cfa0bbaf9cfdaa61ae0341c83cde3372854133d62cb9b91c3a111eaa145815
 SIZE (fullstorydev-grpcui-v1.3.1_GH0.tar.gz) = 4355047
 SHA256 (census-instrumentation-opencensus-proto-v0.2.1_GH0.tar.gz) = bfcefa6093fc2ecdf5c9effea86e6982d0d6f9a5178b17fcf73a62e0f3fb43d0
@@ -25,8 +25,8 @@ SHA256 (golang-oauth2-bf48bf16ab8d_GH0.tar.gz) = 28b3a51a8bd90beb5952d1080218ea2
 SIZE (golang-oauth2-bf48bf16ab8d_GH0.tar.gz) = 47016
 SHA256 (golang-protobuf-v1.5.2_GH0.tar.gz) = 088cc0f3ba18fb8f9d00319568ff0af5a06d8925a6e6cb983bb837b4efb703b3
 SIZE (golang-protobuf-v1.5.2_GH0.tar.gz) = 171702
-SHA256 (golang-sys-3f8b81556e12_GH0.tar.gz) = 1226bd894cd33a3f9fcf853673576dc53a7180ce41ed731ab4c9434852403872
-SIZE (golang-sys-3f8b81556e12_GH0.tar.gz) = 1292214
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.7_GH0.tar.gz) = 7cab2f6c3133ac1d422edd952b0dd2082fa55a73c2663fb2defd9bf83d649b26
 SIZE (golang-text-v0.3.7_GH0.tar.gz) = 8354718
 SHA256 (google-go-genproto-cb27e3aa2013_GH0.tar.gz) = 1f0c3be40b17772975c71b54ca512ee681f7db384ebc43c8adb24f1ab44d2d0e
