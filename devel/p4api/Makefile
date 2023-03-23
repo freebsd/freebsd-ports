@@ -2,57 +2,47 @@ PORTNAME=	p4api
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
 PORTREVISION=	1
 CATEGORIES=	devel
-# Perforce changes their distfiles when they patch, which changes the
-# zip file's checksum. This does not play well with FreeBSD's conventions.
-# Also, this port is for 2016.1 which no longer is available from Perforce's
-# sites. The new maintainer will backup host until the new 2022.2 port is ready.
-MASTER_SITES=	LOCAL/asomers/perforce/p4:zip \
-		https://hesiod.org/distfiles/
-DIST_SUBDIR=	perforce/p4
-DISTNAME=	${YEAR}-${MAJOR}
-DISTFILES=	${ZIP_FILES}:zip p4api.pdf:pdf
-EXTRACT_ONLY=	${ZIP_FILES}
+# Perforce does not version their distfiles when they patch.
+# This does not play well with FreeBSD's conventions.
+MASTER_SITES=	https://ftp.perforce.com/perforce/${P4VERSION}/bin.tools/p4source${EXTRACT_SUFX}?dummy=/ \
+		https://hesiod.org/distfiles/perforce-${MINOR}/p4source${EXTRACT_SUFX}?dummy=/
+DISTNAME=	p4source-${MINOR}
 
 MAINTAINER=	antonfb@hesiod.org
 COMMENT=	Perforce API (static libraries and header files)
-WWW=		http://www.perforce.com/perforce/loadsupp.html
+WWW=		https://www.perforce.com/products/helix-core
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_12_powerpc64=	fails to build: /bin/sh: clang++: not found
-
 BUILD_DEPENDS=	${JAM}:devel/jam
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+USES=		tar:tgz
 
-USES=		zip
+OPTIONS_DEFINE=	EXAMPLES
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/p4source-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 .include "../p4/Makefile.inc"
 
-# Sadly, Jam always returns 1 even on success.  Ignore its return value and
-# detect build errors during the install phase.
 do-build:
 	cd ${WRKSRC} && ${SETENV} C++="${CXX}" C++FLAGS="${CXXFLAGS}" \
 		CCFLAGS="${CFLAGS}" \
 		LINKFLAGS="${LDFLAGS}" \
 		OSVER=${OSVER} \
 		API=1 \
+		SSL="yes" \
+		SSLLIB=-lssl \
+		CRYPTOLIB=-lcrypto \
 		TYPE=pic \
-		${JAM} -dx -j${MAKE_JOBS_NUMBER} || true
+		${JAM} -dx -sUSE_EXTENSIONS=0 -j${MAKE_JOBS_NUMBER} p4api p4api.tar
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/perforce
 	cd ${WRKSRC}/p4-bin/bin.pic/p4api-*/include/p4 && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/include/perforce
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/perforce
 	cd ${WRKSRC}/p4-bin/bin.pic/p4api-*/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/perforce
-
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/p4api.pdf ${STAGEDIR}${DOCSDIR}
 
 do-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

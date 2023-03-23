@@ -1,3 +1,5 @@
 The Perforce Client API is a simple beast which packages up the
 command invocation, sends it to the server, and then acts on
 instructions from the server to carry out the actual command.
+
+For documentation: https://www.perforce.com/manuals/p4api/Content/P4API/Home-p4api.html
