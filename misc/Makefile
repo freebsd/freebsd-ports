@@ -592,6 +592,7 @@
     SUBDIR += wmtunlo
     SUBDIR += wmweather+
     SUBDIR += wmwork
+    SUBDIR += wthrr
     SUBDIR += xd-rust
     SUBDIR += xdelta
     SUBDIR += xdelta3
