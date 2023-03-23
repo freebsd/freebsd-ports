@@ -6469,7 +6469,7 @@ bin/rootssh
 %%ETCDIR%%/plugins/TVirtualTreeViewer/P020_RTreeViewer.C
 include/root/Minuit2/MnMatrixfwd.h
 include/root/ROOT/RDF/RActionImpl.hxx
-include/root/ROOT/RDF/RDatasetGroup.hxx
+include/root/ROOT/RDF/RSample.hxx
 include/root/ROOT/RDF/RInterfaceBase.hxx
 include/root/ROOT/RDF/RMetaData.hxx
 include/root/ROOT/RFriendInfo.hxx
