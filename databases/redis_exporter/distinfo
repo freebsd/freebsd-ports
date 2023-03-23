@@ -1,4 +1,4 @@
-TIMESTAMP = 1640095698
+TIMESTAMP = 1679534804
 SHA256 (oliver006-redis_exporter-v1.33.0_GH0.tar.gz) = 260138fd6d40bc2c457e664541074ab02ad3cf76f61b42c9bd7eb5fd380d9c19
 SIZE (oliver006-redis_exporter-v1.33.0_GH0.tar.gz) = 173053
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
@@ -7,8 +7,8 @@ SHA256 (cespare-xxhash-v2.1.1_GH0.tar.gz) = 0ee31178d2c5a1249be4e26294a2f428008d
 SIZE (cespare-xxhash-v2.1.1_GH0.tar.gz) = 9292
 SHA256 (golang-protobuf-v1.4.3_GH0.tar.gz) = 5736f943f8647362f5559689df6154f3c85d261fb088867c8a68494e2a767610
 SIZE (golang-protobuf-v1.4.3_GH0.tar.gz) = 171969
-SHA256 (golang-sys-ebe580a85c40_GH0.tar.gz) = b70e2301ad08c3ae255b004b8160f866798b95c0c1f88f12641343ed81ce523b
-SIZE (golang-sys-ebe580a85c40_GH0.tar.gz) = 1197502
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (gomodule-redigo-v1.8.6_GH0.tar.gz) = ccf7bac26dd5daa237e8239e8981acb7f60fbbf58a30d471427c982f2007ec22
 SIZE (gomodule-redigo-v1.8.6_GH0.tar.gz) = 51712
 SHA256 (matttproud-golang_protobuf_extensions-v1.0.1_GH0.tar.gz) = 2def0ee6f6b12b1efc0e3007d89f598608a072610e805c3655ea9d13c3ead49b
