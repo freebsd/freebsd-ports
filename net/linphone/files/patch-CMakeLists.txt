@@ -1,5 +1,13 @@
 --- CMakeLists.txt.orig	2022-08-24 10:17:10 UTC
 +++ CMakeLists.txt
+@@ -20,6 +20,7 @@
+ #
+ ################################################################################
+ cmake_minimum_required(VERSION 3.1)
++project(linphoneqt)
+ 
+ find_package(bctoolbox CONFIG)
+ set(FULL_VERSION )
 @@ -487,7 +487,7 @@ if(APPLE)
  		set(MSPLUGINS_DIR "Frameworks/mediastreamer2.framework/Versions/A/Libraries")
  	endif()
