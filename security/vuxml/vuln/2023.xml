@@ -1,3 +1,31 @@
+  <vuln vid="1b15a554-c981-11ed-bb39-901b0e9408dc">
+    <topic>tailscale -- security vulnerability in Tailscale SSH</topic>
+    <affects>
+      <package>
+	<name>tailscale</name>
+	<range><lt>1.38.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tailscale team reports:</p>
+	<blockquote cite="https://tailscale.com/security-bulletins/#ts-2023-003">
+	  <p>A vulnerability identified in the implementation of Tailscale SSH in FreeBSD
+	  allowed commands to be run with a higher privilege group ID than that specified
+	  by Tailscale SSH access rules.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28436</cvename>
+      <url>https://tailscale.com/security-bulletins/#ts-2023-003</url>
+    </references>
+    <dates>
+      <discovery>2023-03-22</discovery>
+      <entry>2023-03-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c8b334e0-6e83-4575-81d1-f9d5803ceb07">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
