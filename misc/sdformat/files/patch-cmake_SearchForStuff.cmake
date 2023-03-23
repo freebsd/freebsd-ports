@@ -1,4 +1,4 @@
---- cmake/SearchForStuff.cmake.orig	2018-11-21 00:19:13 UTC
+--- cmake/SearchForStuff.cmake.orig	2018-11-14 23:55:43 UTC
 +++ cmake/SearchForStuff.cmake
 @@ -9,24 +9,24 @@ if (USE_EXTERNAL_TINYXML)
    #################################################
@@ -32,3 +32,20 @@
    endif()
  else()
    # Needed in WIN32 since in UNIX the flag is added in the code installed
+@@ -55,6 +55,7 @@ endif()
+ if (NOT DEFINED USE_INTERNAL_URDF OR NOT USE_INTERNAL_URDF)
+   # check for urdfdom with pkg-config
+   pkg_check_modules(URDF urdfdom>=1.0)
++  pkg_check_modules(URDF_h urdfdom_headers>=1.0)
+ 
+   if (NOT URDF_FOUND)
+     if (NOT DEFINED USE_INTERNAL_URDF)
+@@ -65,7 +66,7 @@ if (NOT DEFINED USE_INTERNAL_URDF OR NOT USE_INTERNAL_
+     endif()
+   else()
+     # what am I doing here? pkg-config and cmake
+-    set(URDF_INCLUDE_DIRS ${URDF_INCLUDEDIR})
++    set(URDF_INCLUDE_DIRS ${URDF_INCLUDEDIR} ${URDF_h_INCLUDEDIR})
+     set(URDF_LIBRARY_DIRS ${URDF_LIBDIR})
+   endif()
+ endif()
