@@ -1,0 +1,30 @@
+--- deps/Makefile.orig	2021-12-01 15:06:05 UTC
++++ deps/Makefile
+@@ -76,7 +76,7 @@
+ ifeq ($(LUA_DEBUG),yes)
+ 	LUA_CFLAGS+= -O0 -g -DLUA_USE_APICHECK
+ else
+-	LUA_CFLAGS+= -O2 
++	LUA_CFLAGS+=
+ endif
+ # lua's Makefile defines AR="ar rcu", which is unusual, and makes it more
+ # challenging to cross-compile lua (and redis).  These defines make it easier
+@@ -90,7 +90,7 @@
+ 
+ .PHONY: lua
+ 
+-JEMALLOC_CFLAGS= -std=gnu99 -Wall -pipe -g3 -O3 -funroll-loops $(CFLAGS)
++JEMALLOC_CFLAGS= -std=gnu99 -Wall -pipe -funroll-loops $(CFLAGS)
+ JEMALLOC_LDFLAGS= $(LDFLAGS)
+ 
+ ifneq ($(DEB_HOST_GNU_TYPE),)
+@@ -99,7 +99,7 @@
+ 
+ jemalloc: .make-prerequisites
+ 	@printf '%b %b\n' $(MAKECOLOR)MAKE$(ENDCOLOR) $(BINCOLOR)$@$(ENDCOLOR)
+-	cd jemalloc && ./configure --with-version=5.2.1-0-g0 --with-lg-quantum=3 --with-jemalloc-prefix=je_ CFLAGS="$(JEMALLOC_CFLAGS)" LDFLAGS="$(JEMALLOC_LDFLAGS)" $(JEMALLOC_CONFIGURE_OPTS)
+-	cd jemalloc && $(MAKE) CFLAGS="$(JEMALLOC_CFLAGS)" LDFLAGS="$(JEMALLOC_LDFLAGS)" lib/libjemalloc.a
++	cd jemalloc && ./configure --with-version=5.2.1-0-g0 --with-lg-quantum=3 --with-jemalloc-prefix=je_ CFLAGS="$(JEMALLOC_CFLAGS)" CXXFLAGS="$(JEMALLOC_CFLAGS)" LDFLAGS="$(JEMALLOC_LDFLAGS)" $(JEMALLOC_CONFIGURE_OPTS)
++	cd jemalloc && $(MAKE) CFLAGS="$(JEMALLOC_CFLAGS)" CXXFLAGS="$(JEMALLOC_CFLAGS)" LDFLAGS="$(JEMALLOC_LDFLAGS)" lib/libjemalloc.a
+ 
+ .PHONY: jemalloc
