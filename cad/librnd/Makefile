@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://repo.hu/projects/${PORTNAME}/releases/
 
-MAINTAINER=	fuz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Flexible, modular two-dimensional CAD engine
 WWW=		http://www.repo.hu/projects/librnd/
 
