@@ -1,5 +1,7 @@
-TIMESTAMP = 1667511702
+TIMESTAMP = 1679566149
 SHA256 (go/net-mgmt_unbound_exporter/unbound_exporter-v0.4.1/v0.4.1.mod) = 1bd03db78e5d0be6f7e91fdb7f1c689c811529a74c0e7988ed1e13bf63fff2dd
 SIZE (go/net-mgmt_unbound_exporter/unbound_exporter-v0.4.1/v0.4.1.mod) = 485
 SHA256 (go/net-mgmt_unbound_exporter/unbound_exporter-v0.4.1/v0.4.1.zip) = 596d8f658e7f8a67ea2a5e36566a664168641fa5e793a170032df30a7c2d1092
 SIZE (go/net-mgmt_unbound_exporter/unbound_exporter-v0.4.1/v0.4.1.zip) = 28044
+SHA256 (go/net-mgmt_unbound_exporter/unbound_exporter-v0.4.1/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/net-mgmt_unbound_exporter/unbound_exporter-v0.4.1/golang-sys-v0.6.0_GH0.tar.gz) = 1434234

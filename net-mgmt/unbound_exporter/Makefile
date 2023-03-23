@@ -1,7 +1,7 @@
 PORTNAME=		unbound_exporter
-PORTVERSION=		0.4.1
-PORTREVISION=	4
 DISTVERSIONPREFIX=	v
+DISTVERSION=		0.4.1
+PORTREVISION=		5
 CATEGORIES=		net-mgmt
 
 MAINTAINER=		aduitsis@cpan.org
@@ -11,6 +11,8 @@ WWW=			https://github.com/letsencrypt/unbound_exporter
 LICENSE=		APACHE20
 
 USES=			go:modules
+USE_GITHUB=		nodefault
+GH_TUPLE=		golang:sys:v0.6.0:sys
 USE_RC_SUBR=		unbound_exporter
 GO_MODULE=		github.com/letsencrypt/unbound_exporter
 
@@ -21,5 +23,9 @@ USERS=			unbound
 GROUPS=			unbound
 
 PLIST_FILES=		bin/unbound_exporter
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 .include <bsd.port.mk>
