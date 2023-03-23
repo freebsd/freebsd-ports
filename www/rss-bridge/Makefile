@@ -1,5 +1,5 @@
 PORTNAME=	rss-bridge
-DISTVERSION=	2022-06-14
+DISTVERSION=	2023-03-22
 PORTEPOCH=	1
 CATEGORIES=	www
 
@@ -7,7 +7,7 @@ MAINTAINER=	osidorkin@gmail.com
 COMMENT=	RSS feed generator for websites missing it
 WWW=		https://github.com/RSS-Bridge/rss-bridge
 
-LICENSE=	PD
+LICENSE=	UNLICENSE
 
 USES=		php:web
 USE_GITHUB=	yes
@@ -30,11 +30,15 @@ SQLITE_USE=	PHP=sqlite3
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "." ${STAGEDIR}${WWWDIR} "-not ( \
-	    -name LICENSE -or -name .gitkeep -or -name docker-bake.hcl -or \
-	    -name docker-entrypoint.sh \
+	    -name .git-blame-ignore-revs -or -name CONTRIBUTORS.md \
+	    -or -name README.md -or -name LICENSE -or -name LICENSE.txt \
+	    -or -name UNLICENSE -or -name app.json -or -name composer.json \
+	    -or -name composer.lock -or -name docker-bake.hcl \
+	    -or -name docker-entrypoint.sh \
 	    -or -path ./config -or -path ./config/nginx.conf \
-	    -or -regex ./contrib.* -or -regex ./doc.*  \
-	    -or -regex ./static/screenshot_.* ) \
+	    -or -regex ./.devcontainer.* -or -regex ./contrib.* \
+	    -or -regex ./doc.* -or -regex ./static/screenshot_.* \
+	    -or -regex ./static/screenshot-.* ) \
 	    -or -name config.default.ini.php" )
 
 .include <bsd.port.mk>
