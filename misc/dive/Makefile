@@ -1,7 +1,7 @@
 PORTNAME=	dive
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,7 +33,7 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.0:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:net:ba9fcec4b297:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:12a6c2dcc1e4:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:6af8c5fc6601:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \

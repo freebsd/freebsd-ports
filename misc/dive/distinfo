@@ -1,4 +1,4 @@
-TIMESTAMP = 1616303058
+TIMESTAMP = 1679535200
 SHA256 (wagoodman-dive-v0.10.0_GH0.tar.gz) = 293e3ae853c8e7f77e4891addb4504a057ed3b6d97934cc97201031bcaa30b53
 SIZE (wagoodman-dive-v0.10.0_GH0.tar.gz) = 3667730
 SHA256 (Microsoft-go-winio-v0.4.14_GH0.tar.gz) = 379082e49fb22dfdd9a0ff57f8a6d6d7e97ba30fdc0159ef2f38dc4caa79fd8e
@@ -37,8 +37,8 @@ SHA256 (golang-net-ba9fcec4b297_GH0.tar.gz) = eae512644d59db05f5420315897daf1315
 SIZE (golang-net-ba9fcec4b297_GH0.tar.gz) = 1100029
 SHA256 (golang-protobuf-v1.3.1_GH0.tar.gz) = 3f3a6123054a9847093c119895f1660612f301fe95358f3a6a1a33fd0933e6cf
 SIZE (golang-protobuf-v1.3.1_GH0.tar.gz) = 310884
-SHA256 (golang-sys-12a6c2dcc1e4_GH0.tar.gz) = 5350f98d232647593d1a926161325f4d1ca4632a7c9e6540a04ca407a7dd768f
-SIZE (golang-sys-12a6c2dcc1e4_GH0.tar.gz) = 1536898
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.2_GH0.tar.gz) = 0b9309698f5708531c5377ab1e29b423a6d9e20c55a8d386c3b8283428212f22
 SIZE (golang-text-v0.3.2_GH0.tar.gz) = 7168069
 SHA256 (google-go-genproto-6af8c5fc6601_GH0.tar.gz) = 48d93feede430fb7600c5c5422fdc90a6c9164b52479913d55577cda60cdc5dc
