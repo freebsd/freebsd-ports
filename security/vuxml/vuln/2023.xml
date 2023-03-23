@@ -1,3 +1,74 @@
+  <vuln vid="38f213b6-8f3d-4067-91ef-bf14de7ba518">
+    <topic>libXpm -- Issues handling XPM files</topic>
+    <affects>
+      <package>
+	<name>libXpm</name>
+	<range><lt>3.5.15</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The X.Org project reports:</p>
+	<blockquote cite="https://lists.x.org/archives/xorg-announce/2023-January/003312.html">
+	  <ol>
+	    <li>CVE-2022-46285: Infinite loop on unclosed comments
+
+	    <p>When reading XPM images from a file with libXpm 3.5.14 or older, if a
+	    comment in the file is not closed (i.e. a C-style comment starts with
+	    "/*" and is missing the closing "*/"), the ParseComment() function will
+	    loop forever calling getc() to try to read the rest of the comment,
+	    failing to notice that it has returned EOF, which may cause a denial of
+	    service to the calling program.</p>
+
+	    <p>This issue was found by Marco Ivaldi of the Humanativa Group's HN Security team.</p>
+
+	    <p>The fix is provided in
+	    https://gitlab.freedesktop.org/xorg/lib/libxpm/-/commit/a3a7c6dcc3b629d7650148</p></li>
+
+	    <li>CVE-2022-44617: Runaway loop on width of 0 and enormous height
+
+	    <p>When reading XPM images from a file with libXpm 3.5.14 or older, if a
+	    image has a width of 0 and a very large height, the ParsePixels() function
+	    will loop over the entire height calling getc() and ungetc() repeatedly,
+	    or in some circumstances, may loop seemingly forever, which may cause a denial
+	    of service to the calling program when given a small crafted XPM file to parse.</p>
+
+	    <p>This issue was found by Martin Ettl.</p>
+
+	    <p>The fix is provided in
+	    https://gitlab.freedesktop.org/xorg/lib/libxpm/-/commit/f80fa6ae47ad4a5beacb28
+	    and
+	    https://gitlab.freedesktop.org/xorg/lib/libxpm/-/commit/c5ab17bcc34914c0b0707d</p></li>
+
+	    <li>CVE-2022-4883: compression commands depend on $PATH
+
+	    <p>By default, on all platforms except MinGW, libXpm will detect if a filename
+	    ends in .Z or .gz, and will when reading such a file fork off an uncompress
+	    or gunzip command to read from via a pipe, and when writing such a file will
+	    fork off a compress or gzip command to write to via a pipe.</p>
+
+	    <p>In libXpm 3.5.14 or older these are run via execlp(), relying on $PATH
+	    to find the commands.  If libXpm is called from a program running with
+	    raised privileges, such as via setuid, then a malicious user could set
+	    $PATH to include programs of their choosing to be run with those privileges.</p>
+
+	    <p>This issue was found by Alan Coopersmith of the Oracle Solaris team.</p></li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://lists.x.org/archives/xorg-announce/2023-January/003312.html</url>
+      <cvename>CVE-2022-46285</cvename>
+      <cvename>CVE-2022-44617</cvename>
+      <cvename>CVE-2022-4883</cvename>
+    </references>
+    <dates>
+      <discovery>2023-01-17</discovery>
+      <entry>2023-03-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1b15a554-c981-11ed-bb39-901b0e9408dc">
     <topic>tailscale -- security vulnerability in Tailscale SSH</topic>
     <affects>
