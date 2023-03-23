@@ -1,5 +1,5 @@
 PORTNAME=	maven
-DISTVERSION=	3.8.7
+DISTVERSION=	3.8.8
 CATEGORIES=	devel java
 MASTER_SITES=	APACHE/maven/maven-3/${DISTVERSION}/binaries
 DISTNAME=	apache-maven-${DISTVERSION}-bin
