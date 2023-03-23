@@ -1,11 +1,9 @@
 PORTNAME=	icu
-DISTVERSION=	72_1
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	73-1
 PORTREVISION?=	0 # keep for icu-lx
 PORTEPOCH?=	1
 CATEGORIES?=	devel
-MASTER_SITES=	https://github.com/unicode-org/${PORTNAME}/releases/download/release-${DISTVERSION:S/rc/-&/:S/_/-/g}/ \
-		SF/${PORTNAME}/${PORTNAME:tu}4C/${PORTVERSION}
-DISTNAME=	icu4c-${DISTVERSION}-src
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT?=	International Components for Unicode (from IBM)
@@ -30,7 +28,9 @@ TEST_TARGET=	check
 CPE_VENDOR=	${PORTNAME}-project
 CPE_PRODUCT=	international_components_for_unicode
 USE_LDCONFIG=	yes
-WRKSRC=		${WRKDIR}/icu/source
+USE_GITHUB=	yes
+GH_ACCOUNT=	unicode-org
+WRKSRC_SUBDIR=	icu4c/source
 
 ICUMAJOR=	${PORTVERSION:C/\..*//}
 PLIST_SUB+=	ICUMAJOR=${ICUMAJOR} ICUVER=${PORTVERSION:C/r.?/1/}

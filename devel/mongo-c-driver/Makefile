@@ -1,6 +1,6 @@
 PORTNAME=	mongo-c-driver
 DISTVERSION=	1.23.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/mongodb/${PORTNAME}/releases/download/${DISTVERSION}/
 

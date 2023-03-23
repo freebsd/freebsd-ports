@@ -1,6 +1,6 @@
 PORTNAME=	epsonscan2
 DISTVERSION=	6.6.40.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	https://support.epson.net/linux/src/scanner/epsonscan2/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-1.src

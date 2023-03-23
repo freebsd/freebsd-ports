@@ -1,5 +1,6 @@
 PORTNAME=	darling-dmg
 DISTVERSION=	g20221019
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@sysctl.cz

@@ -1,5 +1,6 @@
 PORTNAME=	subtitlecomposer
 DISTVERSION=	0.7.1.20230404
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 
 MAINTAINER=	makc@FreeBSD.org
