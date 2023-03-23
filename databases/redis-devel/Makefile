@@ -18,7 +18,7 @@ GH_TAGNAME=	6abb3c403
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-CONFLICTS_INSTALL=	redis redis6 redis62 # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis redis6 redis62 redis70 # etc/rc.d/redis
 
 PORTSCOUT=	ignore:1
 
@@ -74,8 +74,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
 .endif
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
-
-CONFLICTS?=	redis-[1-9].* redis6-* redis62-*
 
 USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb redis-cli \

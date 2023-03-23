@@ -16,7 +16,7 @@ CPE_VENDOR=	redislabs
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-CONFLICTS_INSTALL=	redis-devel redis6 redis62 # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis-devel redis6 redis62 redis70 # etc/rc.d/redis
 
 OPTIONS_DEFINE=		JEMALLOC TESTS TLS TRIB
 OPTIONS_RADIO=		EXTLUA
@@ -70,8 +70,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
 .endif
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
-
-CONFLICTS?=	redis-devel-* redis6-* redis62-*
 
 USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb redis-cli \

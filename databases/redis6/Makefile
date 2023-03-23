@@ -16,7 +16,7 @@ USES+=		compiler:c11 gmake
 MAKE_ENV=	OPTIMIZATION= \
 		V=yo
 
-CONFLICTS_INSTALL=	redis redis-devel redis62 # etc/rc.d/redis
+CONFLICTS_INSTALL=	redis redis-devel redis62 redis70 # etc/rc.d/redis
 
 PORTSCOUT=	limit:^6\.0
 
@@ -68,8 +68,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src-Makefile.luajit-or \
 .endif
 
 LDFLAGS+=	-lpthread -lm -lexecinfo
-
-CONFLICTS?=	redis-[1-9].* redis-devel-* redis62-*
 
 USE_RC_SUBR=	redis sentinel
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-rdb redis-cli \
