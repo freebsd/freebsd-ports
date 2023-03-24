@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.12.0
 CATEGORIES=	audio
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small SIP client
 WWW=		https://github.com/baresip
 

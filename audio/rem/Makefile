@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.12.0
 CATEGORIES=	audio devel
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for real-time audio and video processing
 WWW=		https://github.com/baresip
 
