@@ -60,6 +60,7 @@ include/fizz/experimental/ktls/AsyncKTLSSocket.h
 include/fizz/experimental/ktls/FizzKTLSCallback.h
 include/fizz/experimental/ktls/KTLS.h
 include/fizz/experimental/ktls/LinuxKTLS.h
+include/fizz/experimental/util/CertExtraction.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialCertManager.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialClientExtension.h
 include/fizz/extensions/delegatedcred/DelegatedCredentialFactory.h
