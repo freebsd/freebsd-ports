@@ -36,6 +36,12 @@ PAM_CONFIGURE_ON=	--with-pam
 SSL_USES=		ssl
 SSL_CONFIGURE_WITH=	openssl
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/run/pgpool
 	${INSTALL_LIB} ${WRKSRC}/src/libs/pcp/.libs/libpcp.so.2.0.0 ${STAGEDIR}${PREFIX}/lib
