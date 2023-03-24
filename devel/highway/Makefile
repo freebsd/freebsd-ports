@@ -13,6 +13,7 @@ TEST_DEPENDS=	googletest>0:devel/googletest
 USES=		cmake:testing compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
+CFLAGS_powerpc64=	-mcrypto -mpower8-vector
 CMAKE_ON=	BUILD_SHARED_LIBS HWY_SYSTEM_GTEST
 CMAKE_OFF+=	${CMAKE_TESTING_ON}
 
