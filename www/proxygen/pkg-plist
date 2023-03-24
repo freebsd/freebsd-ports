@@ -154,6 +154,7 @@ include/proxygen/lib/http/session/HTTPTransaction.h
 include/proxygen/lib/http/session/HTTPTransactionEgressSM.h
 include/proxygen/lib/http/session/HTTPTransactionIngressSM.h
 include/proxygen/lib/http/session/HTTPUpstreamSession.h
+include/proxygen/lib/http/session/QuicProtocolInfo.h
 include/proxygen/lib/http/session/SecondaryAuthManager.h
 include/proxygen/lib/http/session/SecondaryAuthManagerBase.h
 include/proxygen/lib/http/session/ServerPushLifecycle.h
@@ -207,6 +208,7 @@ include/proxygen/lib/transport/PersistentQuicTokenCache.h
 include/proxygen/lib/utils/AcceptorAddress.h
 include/proxygen/lib/utils/AsyncTimeoutSet.h
 include/proxygen/lib/utils/CobHelper.h
+include/proxygen/lib/utils/CompressionFilterUtils.h
 include/proxygen/lib/utils/ConditionalGate.h
 include/proxygen/lib/utils/ConsistentHash.h
 include/proxygen/lib/utils/CryptUtil.h
