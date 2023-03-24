@@ -1,0 +1,171 @@
+commit d631231335b93cbccc7e0c12a2dcd3296ea5ab29
+Author: Christoph Moench-Tegeder <cmt@burggraben.net>
+Date:   Fri Mar 24 21:59:39 2023 +0100
+
+    do not use dynamic_cast for upcasting to JOB
+    
+    Based on my understanding of dynamic_cast, the base class needs
+    to be virtual when upcasting a pointer of a derived object to one
+    of it's base classes, and JOB is "not virtual enough", at least not
+    for clang c++ (at least version 15 and 13, as reported by Pero Orsolic
+    on https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270273 - I
+    re-verified the problem on LLVM 13 myself).
+    This changes all obvious cases of the upcast-to-JOB to static_cast,
+    I did not check for other classes (there are just too many for doing
+    that in my spare time).
+    
+    Credits to Pero Orsolic for reporting the first cases of this in the
+    PDF export in https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=270273 .
+
+diff --git eeschema/eeschema_jobs_handler.cpp eeschema/eeschema_jobs_handler.cpp
+index 61462793ee..ce312d5100 100644
+--- eeschema/eeschema_jobs_handler.cpp
++++ eeschema/eeschema_jobs_handler.cpp
+@@ -111,7 +111,7 @@ REPORTER& EESCHEMA_JOBS_HANDLER::Report( const wxString& aText, SEVERITY aSeveri
+ 
+ int EESCHEMA_JOBS_HANDLER::JobExportPdf( JOB* aJob )
+ {
+-    JOB_EXPORT_SCH_PDF* aPdfJob = dynamic_cast<JOB_EXPORT_SCH_PDF*>( aJob );
++    JOB_EXPORT_SCH_PDF* aPdfJob = static_cast<JOB_EXPORT_SCH_PDF*>( aJob );
+ 
+     if( !aPdfJob )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -147,7 +147,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportPdf( JOB* aJob )
+ 
+ int EESCHEMA_JOBS_HANDLER::JobExportSvg( JOB* aJob )
+ {
+-    JOB_EXPORT_SCH_SVG* aSvgJob = dynamic_cast<JOB_EXPORT_SCH_SVG*>( aJob );
++    JOB_EXPORT_SCH_SVG* aSvgJob = static_cast<JOB_EXPORT_SCH_SVG*>( aJob );
+ 
+     if( !aSvgJob )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -183,7 +183,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportSvg( JOB* aJob )
+ 
+ int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob )
+ {
+-    JOB_EXPORT_SCH_NETLIST* aNetJob = dynamic_cast<JOB_EXPORT_SCH_NETLIST*>( aJob );
++    JOB_EXPORT_SCH_NETLIST* aNetJob = static_cast<JOB_EXPORT_SCH_NETLIST*>( aJob );
+ 
+     if( !aNetJob )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -281,7 +281,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob )
+ 
+ int EESCHEMA_JOBS_HANDLER::JobExportPythonBom( JOB* aJob )
+ {
+-    JOB_EXPORT_SCH_PYTHONBOM* aNetJob = dynamic_cast<JOB_EXPORT_SCH_PYTHONBOM*>( aJob );
++    JOB_EXPORT_SCH_PYTHONBOM* aNetJob = static_cast<JOB_EXPORT_SCH_PYTHONBOM*>( aJob );
+ 
+     SCHEMATIC* sch = EESCHEMA_HELPERS::LoadSchematic( aNetJob->m_filename, SCH_IO_MGR::SCH_KICAD );
+ 
+@@ -447,7 +447,7 @@ int EESCHEMA_JOBS_HANDLER::doSymExportSvg( JOB_SYM_EXPORT_SVG*         aSvgJob,
+ 
+ int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob )
+ {
+-    JOB_SYM_EXPORT_SVG* svgJob = dynamic_cast<JOB_SYM_EXPORT_SVG*>( aJob );
++    JOB_SYM_EXPORT_SVG* svgJob = static_cast<JOB_SYM_EXPORT_SVG*>( aJob );
+ 
+     wxFileName fn( svgJob->m_libraryPath );
+     fn.MakeAbsolute();
+@@ -510,7 +510,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob )
+ 
+ int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
+ {
+-    JOB_SYM_UPGRADE* upgradeJob = dynamic_cast<JOB_SYM_UPGRADE*>( aJob );
++    JOB_SYM_UPGRADE* upgradeJob = static_cast<JOB_SYM_UPGRADE*>( aJob );
+ 
+     wxFileName fn( upgradeJob->m_libraryPath );
+     fn.MakeAbsolute();
+diff --git pcbnew/pcbnew_jobs_handler.cpp pcbnew/pcbnew_jobs_handler.cpp
+index be0f806dea..e045f864de 100644
+--- pcbnew/pcbnew_jobs_handler.cpp
++++ pcbnew/pcbnew_jobs_handler.cpp
+@@ -76,7 +76,7 @@ PCBNEW_JOBS_HANDLER::PCBNEW_JOBS_HANDLER()
+ 
+ int PCBNEW_JOBS_HANDLER::JobExportStep( JOB* aJob )
+ {
+-    JOB_EXPORT_PCB_STEP* aStepJob = dynamic_cast<JOB_EXPORT_PCB_STEP*>( aJob );
++    JOB_EXPORT_PCB_STEP* aStepJob = static_cast<JOB_EXPORT_PCB_STEP*>( aJob );
+ 
+     if( aStepJob == nullptr )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -119,7 +119,7 @@ int PCBNEW_JOBS_HANDLER::JobExportStep( JOB* aJob )
+ 
+ int PCBNEW_JOBS_HANDLER::JobExportSvg( JOB* aJob )
+ {
+-    JOB_EXPORT_PCB_SVG* aSvgJob = dynamic_cast<JOB_EXPORT_PCB_SVG*>( aJob );
++    JOB_EXPORT_PCB_SVG* aSvgJob = static_cast<JOB_EXPORT_PCB_SVG*>( aJob );
+ 
+     if( aSvgJob == nullptr )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -152,7 +152,7 @@ int PCBNEW_JOBS_HANDLER::JobExportSvg( JOB* aJob )
+ 
+ int PCBNEW_JOBS_HANDLER::JobExportDxf( JOB* aJob )
+ {
+-    JOB_EXPORT_PCB_DXF* aDxfJob = dynamic_cast<JOB_EXPORT_PCB_DXF*>( aJob );
++    JOB_EXPORT_PCB_DXF* aDxfJob = static_cast<JOB_EXPORT_PCB_DXF*>( aJob );
+ 
+     if( aDxfJob == nullptr )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -207,7 +207,7 @@ int PCBNEW_JOBS_HANDLER::JobExportDxf( JOB* aJob )
+ 
+ int PCBNEW_JOBS_HANDLER::JobExportPdf( JOB* aJob )
+ {
+-    JOB_EXPORT_PCB_PDF* aPdfJob = dynamic_cast<JOB_EXPORT_PCB_PDF*>( aJob );
++    JOB_EXPORT_PCB_PDF* aPdfJob = static_cast<JOB_EXPORT_PCB_PDF*>( aJob );
+ 
+     if( aPdfJob == nullptr )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -257,7 +257,7 @@ int PCBNEW_JOBS_HANDLER::JobExportPdf( JOB* aJob )
+ 
+ int PCBNEW_JOBS_HANDLER::JobExportGerbers( JOB* aJob )
+ {
+-    JOB_EXPORT_PCB_GERBERS* aGerberJob = dynamic_cast<JOB_EXPORT_PCB_GERBERS*>( aJob );
++    JOB_EXPORT_PCB_GERBERS* aGerberJob = static_cast<JOB_EXPORT_PCB_GERBERS*>( aJob );
+ 
+     if( aGerberJob == nullptr )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -368,7 +368,7 @@ void PCBNEW_JOBS_HANDLER::populateGerberPlotOptionsFromJob( PCB_PLOT_PARAMS&
+ 
+ int PCBNEW_JOBS_HANDLER::JobExportGerber( JOB* aJob )
+ {
+-    JOB_EXPORT_PCB_GERBER* aGerberJob = dynamic_cast<JOB_EXPORT_PCB_GERBER*>( aJob );
++    JOB_EXPORT_PCB_GERBER* aGerberJob = static_cast<JOB_EXPORT_PCB_GERBER*>( aJob );
+ 
+     if( aGerberJob == nullptr )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -414,7 +414,7 @@ static DRILL_PRECISION precisionListForMetric( 3, 3 );
+ 
+ int PCBNEW_JOBS_HANDLER::JobExportDrill( JOB* aJob )
+ {
+-    JOB_EXPORT_PCB_DRILL* aDrillJob = dynamic_cast<JOB_EXPORT_PCB_DRILL*>( aJob );
++    JOB_EXPORT_PCB_DRILL* aDrillJob = static_cast<JOB_EXPORT_PCB_DRILL*>( aJob );
+ 
+     if( aDrillJob == nullptr )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -522,7 +522,7 @@ int PCBNEW_JOBS_HANDLER::JobExportDrill( JOB* aJob )
+ 
+ int PCBNEW_JOBS_HANDLER::JobExportPos( JOB* aJob )
+ {
+-    JOB_EXPORT_PCB_POS* aPosJob = dynamic_cast<JOB_EXPORT_PCB_POS*>( aJob );
++    JOB_EXPORT_PCB_POS* aPosJob = static_cast<JOB_EXPORT_PCB_POS*>( aJob );
+ 
+     if( aPosJob == nullptr )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -597,7 +597,7 @@ extern FOOTPRINT* try_load_footprint( const wxFileName& aFileName, IO_MGR::PCB_F
+ 
+ int PCBNEW_JOBS_HANDLER::JobExportFpUpgrade( JOB* aJob )
+ {
+-    JOB_FP_UPGRADE* upgradeJob = dynamic_cast<JOB_FP_UPGRADE*>( aJob );
++    JOB_FP_UPGRADE* upgradeJob = static_cast<JOB_FP_UPGRADE*>( aJob );
+ 
+     if( upgradeJob == nullptr )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
+@@ -668,7 +668,7 @@ int PCBNEW_JOBS_HANDLER::JobExportFpUpgrade( JOB* aJob )
+ 
+ int PCBNEW_JOBS_HANDLER::JobExportFpSvg( JOB* aJob )
+ {
+-    JOB_FP_EXPORT_SVG* svgJob = dynamic_cast<JOB_FP_EXPORT_SVG*>( aJob );
++    JOB_FP_EXPORT_SVG* svgJob = static_cast<JOB_FP_EXPORT_SVG*>( aJob );
+ 
+     if( svgJob == nullptr )
+         return CLI::EXIT_CODES::ERR_UNKNOWN;
