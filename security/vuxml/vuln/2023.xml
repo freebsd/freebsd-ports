@@ -1,3 +1,33 @@
+  <vuln vid="dec6b8e9-c9fe-11ed-bb39-901b0e9408dc">
+    <topic>dino -- Insufficient message sender validation in Dino</topic>
+    <affects>
+      <package>
+	<name>dino</name>
+	<range><lt>0.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dino team reports:</p>
+	<blockquote cite="https://dino.im/security/cve-2023-28686/">
+	  <p>Dino before 0.2.3, 0.3.x before 0.3.2, and 0.4.x before 0.4.2 allows
+	attackers to modify the personal bookmark store via a crafted
+	message.  The attacker can change the display of group chats or
+	force a victim to join a group chat; the victim may then be tricked
+	into disclosing sensitive information.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28686</cvename>
+      <url>https://dino.im/security/cve-2023-28686/</url>
+    </references>
+    <dates>
+      <discovery>2023-03-23</discovery>
+      <entry>2023-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="38f213b6-8f3d-4067-91ef-bf14de7ba518">
     <topic>libXpm -- Issues handling XPM files</topic>
     <affects>
