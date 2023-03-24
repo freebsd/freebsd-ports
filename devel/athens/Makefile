@@ -1,7 +1,7 @@
 PORTNAME=	athens
 PORTVERSION=	0.11.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	devel
 
 MAINTAINER=	swills@FreeBSD.org
@@ -46,7 +46,6 @@ GH_TUPLE=	gomods:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT \
 		go-playground:locales:v0.12.1:go_playground_locales/vendor/github.com/go-playground/locales \
 		go-playground:universal-translator:v0.16.0:go_playground_universal_translator/vendor/github.com/go-playground/universal-translator \
 		go-playground:validator:v9.20.2:go_playground_validator/vendor/gopkg.in/go-playground/validator.v9 \
-		go-redis:redis:v7.2.0:go_redis_redis_v7/vendor/github.com/go-redis/redis/v7 \
 		go-sql-driver:mysql:v1.5.0:go_sql_driver_mysql/vendor/github.com/go-sql-driver/mysql \
 		go-stack:stack:v1.8.0:go_stack_stack/vendor/github.com/go-stack/stack \
 		go-yaml:yaml:v2.2.4:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
@@ -64,7 +63,7 @@ GH_TUPLE=	gomods:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.1:golang_snappy/vendor/github.com/golang/snappy \
 		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:d5e6a3e2c0ae:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		golang:tools:023911ca70b2:golang_tools/vendor/golang.org/x/tools \
@@ -107,6 +106,7 @@ GH_TUPLE=	gomods:${PORTNAME}:${DISTVERSIONPREFIX}${PORTVERSION}:DEFAULT \
 		prometheus:client_model:14fe0d1b01d4:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.2.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:bf6a532e95b1:prometheus_procfs/vendor/github.com/prometheus/procfs \
+		redis:go-redis:v7.2.0:go_redis_redis_v7/vendor/github.com/go-redis/redis/v7 \
 		sirupsen:logrus:v1.4.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:afero:v1.1.2:spf13_afero/vendor/github.com/spf13/afero \
 		spf13:pflag:v1.0.3:spf13_pflag/vendor/github.com/spf13/pflag \
