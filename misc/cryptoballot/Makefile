@@ -1,6 +1,6 @@
 PORTNAME=	cryptoballot
 DISTVERSION=	g20181015
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +23,7 @@ GH_TUPLE=	${PORTNAME}:entropychecker:188ae6c:entropychecker/vendor/github.com/${
 		Sam-Izdat:govote:7d55c89:govote/vendor/github.com/Sam-Izdat/govote \
 		lib:pq:88edab0:pq/vendor/github.com/lib/pq \
 		golang:crypto:650f4a3:crypto/vendor/golang.org/x/crypto \
-		golang:sys:33540a1f6037:sys/vendor/golang.org/x/sys
+		golang:sys:v0.6.0:sys/vendor/golang.org/x/sys
 GH_SUBDIR=	src/github.com/${PORTNAME}/${PORTNAME}
 
 GO_TARGET=	./servers/ballotbox ./servers/electionclerk \
