@@ -5,7 +5,7 @@ GH_TUPLE=       \
                 felixge:httpsnoop:v1.0.1:felixge_httpsnoop/vendor/github.com/felixge/httpsnoop \
                 golang:crypto:20e1d8d225ab:golang_crypto/vendor/golang.org/x/crypto \
                 golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-                golang:sys:da31bd327af9:golang_sys/vendor/golang.org/x/sys \
+                golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
                 gorilla:handlers:v1.5.1:gorilla_handlers/vendor/github.com/gorilla/handlers \
                 inconshreveable:mousetrap:v1.0.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
                 klauspost:cpuid:v2.0.4:klauspost_cpuid_v2/vendor/github.com/klauspost/cpuid/v2 \

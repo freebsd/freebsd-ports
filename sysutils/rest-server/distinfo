@@ -1,4 +1,4 @@
-TIMESTAMP = 1646174913
+TIMESTAMP = 1679672530
 SHA256 (restic-rest-server-v0.11.0_GH0.tar.gz) = cd9b35ad2224244207a967ebbc78d84f4298d725e95c1fa9341ed95a350ea68f
 SIZE (restic-rest-server-v0.11.0_GH0.tar.gz) = 280158
 SHA256 (beorn7-perks-v1.0.1_GH0.tar.gz) = 98db84bb0224a26094e6adba91b7ee7a1a7ace28cb648d818f8e779e6a19f825
@@ -13,8 +13,8 @@ SHA256 (golang-crypto-20e1d8d225ab_GH0.tar.gz) = b043b52febbc0410bfd9e2e9ee86c14
 SIZE (golang-crypto-20e1d8d225ab_GH0.tar.gz) = 1629546
 SHA256 (golang-protobuf-v1.5.2_GH0.tar.gz) = 088cc0f3ba18fb8f9d00319568ff0af5a06d8925a6e6cb983bb837b4efb703b3
 SIZE (golang-protobuf-v1.5.2_GH0.tar.gz) = 171702
-SHA256 (golang-sys-da31bd327af9_GH0.tar.gz) = 0c834c593096084aa9458c2ad0ff9177a6397950f4dc7376c9d67367f0687623
-SIZE (golang-sys-da31bd327af9_GH0.tar.gz) = 1257001
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (gorilla-handlers-v1.5.1_GH0.tar.gz) = be22eafc7020cba749c8638d0051c326f1b31b5a76a98d86beafc595079f6b09
 SIZE (gorilla-handlers-v1.5.1_GH0.tar.gz) = 20963
 SHA256 (inconshreveable-mousetrap-v1.0.0_GH0.tar.gz) = 5edc7731c819c305623568e317aa253d342be3447def97f1fa9e10eb5ad819f6
