@@ -178,9 +178,12 @@ include/folly/detail/MemoryIdler.h
 include/folly/detail/PolyDetail.h
 include/folly/detail/RangeCommon.h
 include/folly/detail/RangeSse42.h
+include/folly/detail/SimdForEach.h
 include/folly/detail/Singleton.h
 include/folly/detail/SlowFingerprint.h
 include/folly/detail/SocketFastOpen.h
+include/folly/detail/SplitStringSimd.h
+include/folly/detail/SplitStringSimdImpl.h
 include/folly/detail/Sse.h
 include/folly/detail/StaticSingletonManager.h
 include/folly/detail/ThreadLocalDetail.h
