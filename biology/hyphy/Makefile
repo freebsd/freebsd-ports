@@ -1,5 +1,5 @@
 PORTNAME=	hyphy
-DISTVERSION=	2.5.48
+DISTVERSION=	2.5.49
 CATEGORIES=	biology
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -24,6 +24,6 @@ AVX_DESC=	Advanced vector extensions support
 
 AVX_CMAKE_OFF=	-DNOAVX:BOOL=ON
 
-# All tests pass as of DISTVERSION=2.5.46hf1
+# FEL test is failing. See https://github.com/veg/hyphy/issues/1585
 
 .include <bsd.port.mk>
