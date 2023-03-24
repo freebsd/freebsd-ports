@@ -1,0 +1,12 @@
+icoextract is an icon extractor for Windows PE files (.exe/.dll),
+written in Python. It also includes a thumbnailer script
+(exe-thumbnailer) for Linux desktops.
+
+This project is inspired by extract-icon-py, icoutils,
+and others.
+
+icoextract aims to be:
+
+    Lightweight
+    Portable (cross-platform)
+    Fast on large files
