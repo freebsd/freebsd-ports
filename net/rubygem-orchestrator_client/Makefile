@@ -1,5 +1,6 @@
 PORTNAME=	orchestrator_client
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +10,8 @@ WWW=		https://github.com/puppetlabs/orchestrator_client-ruby
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-faraday1>=1.4:www/rubygem-faraday1 \
-		rubygem-net-http-persistent>=0:www/rubygem-net-http-persistent
+RUN_DEPENDS=	rubygem-faraday>=2.0:www/rubygem-faraday \
+		rubygem-faraday-net_http_persistent>=2.0:www/rubygem-faraday-net_http_persistent
 
 USES=		gem
 
