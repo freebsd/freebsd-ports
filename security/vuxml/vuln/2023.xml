@@ -1,3 +1,43 @@
+  <vuln vid="2fdb053c-ca25-11ed-9d7e-080027f5fec9">
+    <topic>rack -- possible denial of service vulnerability in header parsing</topic>
+    <affects>
+      <package>
+	<name>rubygem-rack</name>
+	<range><lt>3.0.6.1,3</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rack22</name>
+	<range><lt>2.2.6.6,3</lt></range>
+      </package>
+      <package>
+	<name>rubygem-rack16</name>
+	<range><lt>1.6.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ooooooo_q reports:</p>
+	<blockquote cite="https://discuss.rubyonrails.org/t/cve-2023-27539-possible-denial-of-service-vulnerability-in-racks-header-parsing/82466">
+	  <p>
+	    Carefully crafted input can cause header parsing in Rack
+	    to take an unexpected amount of time, possibly resulting
+	    in a denial of service attack vector. Any applications
+	    that parse headers using Rack (virtually all Rails
+	    applications) are impacted.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-27539</cvename>
+      <url>https://discuss.rubyonrails.org/t/cve-2023-27539-possible-denial-of-service-vulnerability-in-racks-header-parsing/82466</url>
+    </references>
+    <dates>
+      <discovery>2023-03-13</discovery>
+      <entry>2023-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="dec6b8e9-c9fe-11ed-bb39-901b0e9408dc">
     <topic>dino -- Insufficient message sender validation in Dino</topic>
     <affects>
