@@ -23,4 +23,14 @@ post-patch:
 	@${REINPLACE_CMD} "s|%%PREFIX%%|${PREFIX}|" \
 		${WRKSRC}/yaml-cpp-config.cmake.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${CMAKE_BUILD_TYPE} == "Debug"
+# yaml-cpp sets CMAKE_DEBUG_POSTFIX="d" that results in the "d" suffix added to
+# shared library file names.
+PLIST_SUB+=	CMAKE_DEBUG_POSTFIX="d"
+.else
+PLIST_SUB+=	CMAKE_DEBUG_POSTFIX=""
+.endif
+
+.include <bsd.port.post.mk>
