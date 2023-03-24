@@ -4,6 +4,7 @@
  #include <cstdarg>
  #include <queue>
  #include <string>
+ #include <vector>
 +#include <ctime>
  
  #include "main/snort_types.h"
