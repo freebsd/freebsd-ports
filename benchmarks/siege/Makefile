@@ -18,6 +18,12 @@ CONFIGURE_ARGS=	--disable-shared \
 		--with-ssl=${OPENSSLBASE}
 CONFIGURE_ENV=	PERL="${PERL}"
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 pre-configure:
 	@${RM} ${WRKSRC}/acinclude.m4
 	@${RM} ${WRKSRC}/utils/missing
