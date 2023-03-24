@@ -1,5 +1,6 @@
 PORTNAME=	puppet
 PORTVERSION=	7.23.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	7
@@ -11,7 +12,7 @@ WWW=		https://puppet.com/docs/puppet/latest/puppet_index.html
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
+RUN_DEPENDS=	rubygem-concurrent-ruby11>1.0:devel/rubygem-concurrent-ruby11 \
 		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
 		rubygem-fast_gettext1>=1.1:devel/rubygem-fast_gettext1 \
 		rubygem-hiera>=3.2.1:sysutils/rubygem-hiera \
