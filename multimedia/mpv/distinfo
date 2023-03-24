@@ -3,3 +3,7 @@ SHA256 (mpv-player-mpv-v0.35.1_GH0.tar.gz) = 41df981b7b84e33a2ef4478aaf81d6f4f5c
 SIZE (mpv-player-mpv-v0.35.1_GH0.tar.gz) = 3367913
 SHA256 (b95111dda879.patch) = c70c62f01d65c701a161954ef480d60aa8cc19454f9e04c4c61ef115cd4f75b2
 SIZE (b95111dda879.patch) = 1474
+SHA256 (94c189dae76b.patch) = c6e2b219f448f0711033c5618854fc4c323f0860cdc268e01f61015f9ec79757
+SIZE (94c189dae76b.patch) = 1151
+SHA256 (362256edbc4f.patch) = 5e048085eb1ac3bf6f81c99daf471177a5cad1100be84fe2a5a7436687bc81e1
+SIZE (362256edbc4f.patch) = 1587
