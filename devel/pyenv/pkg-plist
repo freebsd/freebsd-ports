@@ -273,6 +273,7 @@ libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2021.05
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2021.11
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2022.05
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2022.10
+libexec/pyenv-plugins/python-build/share/python-build/anaconda3-2023.03
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-4.0.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-4.1.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-4.1.1
@@ -450,6 +451,7 @@ libexec/pyenv-plugins/python-build/share/python-build/miniconda3-4.7.10
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-4.7.12
 libexec/pyenv-plugins/python-build/share/python-build/miniconda3-latest
 libexec/pyenv-plugins/python-build/share/python-build/miniforge-pypy3
+libexec/pyenv-plugins/python-build/share/python-build/miniforge3-22.11.1-4
 libexec/pyenv-plugins/python-build/share/python-build/miniforge3-22.9.0-0
 libexec/pyenv-plugins/python-build/share/python-build/miniforge3-22.9.0-1
 libexec/pyenv-plugins/python-build/share/python-build/miniforge3-22.9.0-2
