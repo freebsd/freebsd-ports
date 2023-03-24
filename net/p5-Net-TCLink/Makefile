@@ -14,7 +14,14 @@ LICENSE=	LGPL21
 
 USES=		perl5 ssl
 USE_PERL5=	configure
+
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 .include <bsd.port.mk>
