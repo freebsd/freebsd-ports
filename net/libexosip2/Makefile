@@ -26,4 +26,10 @@ PLIST_SUB+=	SHLIB_VER=${SHLIB_VER}
 CPPFLAGS+=	-I${LOCALBASE}/include
 LIBS+=		-L${LOCALBASE}/lib
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 .include <bsd.port.mk>
