@@ -75,7 +75,6 @@ EXTRACT_SUFX?=		.tar.bz2
 DIST_SUBDIR=	xorg/${_XORG_CAT}
 
 .  if ${_XORG_BUILDSYS} == meson
-IGNORE=		meson build not supported yet
 .include "${USESDIR}/meson.mk"
 .  elif ${_XORG_BUILDSYS} == autotools
 GNU_CONFIGURE=		yes
