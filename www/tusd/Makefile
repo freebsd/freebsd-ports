@@ -1,7 +1,7 @@
 PORTNAME=	tusd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	www
 
 MAINTAINER=	mm@FreeBSD.org
@@ -32,7 +32,7 @@ GH_TUPLE=	\
 		golang:net:de3da57026de:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:6242fa91716a:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:d36c6a25d886:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.7:google_go_cmp/vendor/github.com/google/go-cmp \

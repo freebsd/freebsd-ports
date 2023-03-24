@@ -1,4 +1,4 @@
-TIMESTAMP = 1649714075
+TIMESTAMP = 1679691887
 SHA256 (tus-tusd-v1.9.0_GH0.tar.gz) = 6f8c9614a43f52595f5dbc5189f79001f626c3bf7d35f98a4750408a82d18687
 SIZE (tus-tusd-v1.9.0_GH0.tar.gz) = 129959
 SHA256 (Acconut-lockfile-v1.1.0_GH0.tar.gz) = 3eddfde3e46bd7c90907f59785c0d9e6d5d9febb811966ecaa7ed5f190ab320d
@@ -33,8 +33,8 @@ SHA256 (golang-oauth2-6242fa91716a_GH0.tar.gz) = e4a2c122c9ff7935629a9e40c47faba
 SIZE (golang-oauth2-6242fa91716a_GH0.tar.gz) = 88425
 SHA256 (golang-protobuf-v1.5.2_GH0.tar.gz) = 088cc0f3ba18fb8f9d00319568ff0af5a06d8925a6e6cb983bb837b4efb703b3
 SIZE (golang-protobuf-v1.5.2_GH0.tar.gz) = 171702
-SHA256 (golang-sys-d36c6a25d886_GH0.tar.gz) = 28d7efb49393ec2577810dd409002202987132f87562362c7d5ea3af1acdc38e
-SIZE (golang-sys-d36c6a25d886_GH0.tar.gz) = 1290721
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.7_GH0.tar.gz) = 7cab2f6c3133ac1d422edd952b0dd2082fa55a73c2663fb2defd9bf83d649b26
 SIZE (golang-text-v0.3.7_GH0.tar.gz) = 8354718
 SHA256 (golang-xerrors-5ec99f83aff1_GH0.tar.gz) = 71975d658357e170fd6a41f92539cde8b39c9cd8bfe5931b6311bc5f5c0da0d7
