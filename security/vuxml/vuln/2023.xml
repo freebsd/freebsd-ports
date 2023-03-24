@@ -649,7 +649,7 @@
       </package>
       <package>
 	<name>rubygem-rack22</name>
-	<range><lt>2.2.6.6,3</lt></range>
+	<range><lt>2.2.6.3,3</lt></range>
       </package>
       <package>
 	<name>rubygem-rack16</name>
