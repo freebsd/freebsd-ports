@@ -24,6 +24,12 @@ USE_GNOME=	cairo gdkpixbuf2 gtk20
 PLIST_FILES=	include/rep-gtk/rep-gtk.h lib/rep/gui/gtk-2/gtk.a \
 		lib/rep/gui/gtk-2/gtk.so libdata/pkgconfig/rep-gtk.pc
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/rep/gui/gtk-2/gtk.so
 
