@@ -1,3 +1,50 @@
+  <vuln vid="6bacd9fd-ca56-11ed-bc52-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>3.1.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyfaq developers report:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2023-03-20">
+	  <p>XSS</p>
+	  <p>weak passwords</p>
+	  <p>privilege escalation</p>
+	  <p>Captcha bypass</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://huntr.dev/bounties/e8109aed-d364-4c0c-9545-4de0347b10e1/</url>
+      <url>https://huntr.dev/bounties/39715aaf-e798-4c60-97c4-45f4f2cd5c61/</url>
+      <url>https://huntr.dev/bounties/01d6ae23-3a8f-42a8-99f4-10246187d71b/</url>
+      <url>https://huntr.dev/bounties/dda73cb6-9344-4822-97a1-2e31efb6a73e/</url>
+      <url>https://huntr.dev/bounties/529f2361-eb2e-476f-b7ef-4e561a712e28/</url>
+      <url>https://huntr.dev/bounties/1dc7f818-c8ea-4f80-b000-31b48a426334/</url>
+      <url>https://huntr.dev/bounties/e495b443-b328-42f5-aed5-d68b929b4cb9/</url>
+      <url>https://huntr.dev/bounties/ece5f051-674e-4919-b998-594714910f9e/</url>
+      <url>https://huntr.dev/bounties/93f981a3-231d-460d-a239-bb960e8c2fdc/</url>
+      <url>https://huntr.dev/bounties/e4a58835-96b5-412c-a17e-3ceed30231e1/</url>
+      <url>https://huntr.dev/bounties/b7d244b7-5ac3-4964-81ee-8dbb5bb5e33a/</url>
+      <url>https://huntr.dev/bounties/24c0a65f-0751-4ff8-af63-4b325ac8879f/</url>
+      <url>https://huntr.dev/bounties/3c2374cc-7082-44b7-a6a6-ccff7a650a3a/</url>
+      <url>https://huntr.dev/bounties/0854328e-eb00-41a3-9573-8da8f00e369c/</url>
+      <url>https://huntr.dev/bounties/2f1e417d-cf64-4cfb-954b-3a9cb2f38191/</url>
+      <url>https://huntr.dev/bounties/584a200a-6ff8-4d53-a3c0-e7893edff60c/</url>
+      <url>https://huntr.dev/bounties/bce84c02-abb2-474f-a67b-1468c9dcabb8/</url>
+      <url>https://huntr.dev/bounties/882ffa07-5397-4dbb-886f-4626859d711a/</url>
+      <url>https://huntr.dev/bounties/8ab09a1c-cfd5-4ce0-aae3-d33c93318957/</url>
+      <url>https://huntr.dev/bounties/2d0ac48a-490d-4548-8d98-7447042dd1b5/</url>
+    </references>
+    <dates>
+      <discovery>2023-03-20</discovery>
+      <entry>2023-03-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ba034fb-ca38-11ed-b242-d4c9ef517024">
     <topic>OpenSSL -- Excessive Resource Usage Verifying X.509 Policy Constraints</topic>
     <affects>
