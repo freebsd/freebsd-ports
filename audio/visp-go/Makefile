@@ -1,6 +1,6 @@
 PORTNAME=	visp-go
 DISTVERSION=	g20210723
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -29,7 +29,7 @@ GH_TUPLE=	beorn7:perks:v1.0.0:beorn7_perks/vendor/github.com/beorn7/perks \
 		golang:net:04defd469f4e:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:d04028783cf1:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:04245dca01da:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:2321bbc49cbf:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		google:uuid:v1.1.1:google_uuid/vendor/github.com/google/uuid \
