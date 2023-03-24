@@ -260,7 +260,6 @@ include/thrift/lib/cpp2/async/TwoWayBridge.h
 include/thrift/lib/cpp2/async/tests/util/TestSinkService.h
 include/thrift/lib/cpp2/async/tests/util/TestStreamService.h
 include/thrift/lib/cpp2/async/tests/util/Util.h
-include/thrift/lib/cpp2/detail/BoxedIfLarge.h
 include/thrift/lib/cpp2/detail/meta.h
 include/thrift/lib/cpp2/frozen/FixedSizeStringHash.h
 include/thrift/lib/cpp2/frozen/Frozen.h
@@ -450,6 +449,7 @@ include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue.h
 include/thrift/lib/cpp2/server/peeking/PeekingManager.h
 include/thrift/lib/cpp2/server/peeking/TLSHelper.h
+include/thrift/lib/cpp2/server/test/util/MockServerConfigs.h
 include/thrift/lib/cpp2/test/Matcher.h
 include/thrift/lib/cpp2/test/MockCpp2ConnContext.h
 include/thrift/lib/cpp2/test/ProtoBufStructs-inl.h
