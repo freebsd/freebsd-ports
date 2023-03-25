@@ -119,7 +119,6 @@ horde-Horde_Xml_Element-DEPEND=	${PEARDIR}/Horde/Xml/Element.php:textproc/pear-H
 horde-Horde_Xml_Wbxml-DEPEND=	${PEARDIR}/Horde/Xml/Wbxml.php:textproc/pear-Horde_Xml_Wbxml
 horde-content-DEPEND=		${LOCALBASE}/${HORDE_DIR}/content/lib/Tagger.php:devel/horde-content
 horde-horde-DEPEND=		${LOCALBASE}/${HORDE_DIR}/index.php:www/horde-base
-horde-imp-DEPEND=		${LOCALBASE}/${HORDE_DIR}/imp/index.php:mail/horde-imp
 horde-ingo-DEPEND=		${LOCALBASE}/${HORDE_DIR}/ingo/index.php:mail/horde-ingo
 horde-timeobjects-DEPEND=	${LOCALBASE}/${HORDE_DIR}/timeobjects/lib/Driver.php:devel/horde-timeobjects
 horde-trean-DEPEND=		${LOCALBASE}/${HORDE_DIR}/trean/index.php:www/horde-trean
