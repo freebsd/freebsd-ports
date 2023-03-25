@@ -38,7 +38,6 @@
     SUBDIR += nn
     SUBDIR += nnap
     SUBDIR += nntp
-    SUBDIR += nntpcache
     SUBDIR += noffle
     SUBDIR += nzbget
     SUBDIR += nzbhydra2
