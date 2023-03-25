@@ -156,7 +156,6 @@
     SUBDIR += horde-imp
     SUBDIR += horde-ingo
     SUBDIR += horde-turba
-    SUBDIR += horde-webmail
     SUBDIR += ifile
     SUBDIR += im
     SUBDIR += imap-uw
