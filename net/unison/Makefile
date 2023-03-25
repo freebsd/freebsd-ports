@@ -1,6 +1,5 @@
 PORTNAME=	unison
-PORTVERSION=	2.53.0
-PORTREVISION=	2
+PORTVERSION=	2.53.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
@@ -17,21 +16,22 @@ FLAVOR?=	${FLAVORS:[1]}
 nox11_PKGNAMESUFFIX=		-nox11
 nox11_CONFLICTS_INSTALL=	unison
 
-x11_CONFLICTS_INSTALL=		unison-nox11
-x11_BUILD_DEPENDS=	ocaml-lablgtk3>0:x11-toolkits/ocaml-lablgtk3 \
-			icotool:graphics/icoutils
+x11_CONFLICTS_INSTALL=	unison-nox11
+x11_BUILD_DEPENDS=	icotool:graphics/icoutils \
+			ocaml-lablgtk3>0:x11-toolkits/ocaml-lablgtk3
 x11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libfreetype.so:print/freetype2 \
 			libharfbuzz.so:print/harfbuzz
 
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
 USES=		gmake localbase
 USE_OCAML=	yes
 WRKSRC_SUBDIR=	src
-NO_OCAML_RUNDEPENDS=yes
+NO_OCAML_RUNDEPENDS=	yes
 CONFLICTS=	unison-devel
-MAKE_ENV=	CLIBS="${LIBS:S/^-/-ccopt -/}" COFLAGS="${CFLAGS:C/ *(-[^ ]*) */ -ccopt \"\1 \"/gW}"
+MAKE_ENV=	CLIBS="${LIBS:S/^-/-ccopt -/}" \
+		COFLAGS="${CFLAGS:C/ *(-[^ ]*) */ -ccopt \"\1 \"/gW}"
 ALL_TARGET=	unison all
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bcpierce00
@@ -41,22 +41,22 @@ DOCS=		NEWS.md README.md
 OPTIONS_DEFINE=		DOCS FSMONITOR
 OPTIONS_DEFAULT?=	FSMONITOR
 
-FSMONITOR_DESC=		Compile and install fsmonitor plugin
+FSMONITOR_DESC=	Compile and install fsmonitor plugin
 
-OPTIONS_SUB=		YES
+OPTIONS_SUB=	YES
 
 FSMONITOR_LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 .if ${FLAVOR} == nox11
-MAKE_ARGS=		UISTYLE=text
-PKGMESSAGE=		${PKGDIR}/pkg-message.nox11
-PLIST_SUB+=		X11="@comment "
+MAKE_ARGS=	UISTYLE=text
+PKGMESSAGE=	${PKGDIR}/pkg-message.nox11
+PLIST_SUB+=	X11="@comment "
 .else
-MAKE_ARGS=		UISTYLE=gtk3
-SUB_FILES=		${PORTNAME}.desktop
-USE_GNOME+=		atk cairo gdkpixbuf2 glib20 gtk30 pango
-USES+=			gettext-runtime gnome
-PLIST_SUB+=		X11=""
+MAKE_ARGS=	UISTYLE=gtk3
+SUB_FILES=	${PORTNAME}.desktop
+USE_GNOME+=	atk cairo gdkpixbuf2 glib20 gtk30 pango
+USES+=		gettext-runtime gnome
+PLIST_SUB+=	X11=""
 .endif
 
 post-patch-FSMONITOR-off:
@@ -64,13 +64,9 @@ post-patch-FSMONITOR-off:
 		${WRKSRC}/Makefile.OCaml
 
 post-patch:
-.if ${FLAVOR} == nox11
-	@${REINPLACE_CMD} -e 's/CFLAGS/COFLAGS/g' \
-		${WRKSRC}/Makefile.OCaml ${WRKSRC}/fsmonitor/linux/Makefile
-.else
+.if ${FLAVOR} == x11
 	@${REINPLACE_CMD} -Ee 's@(\+|/)(lablgtk3)@\1site-lib/\2@' \
-		-e 's/CFLAGS/COFLAGS/g' \
-		${WRKSRC}/Makefile.OCaml ${WRKSRC}/fsmonitor/linux/Makefile
+		${WRKSRC}/Makefile.OCaml
 .endif
 
 post-build:
