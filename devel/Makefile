@@ -950,7 +950,6 @@
     SUBDIR += hoel
     SUBDIR += horde-content
     SUBDIR += horde-timeobjects
-    SUBDIR += horde-whups
     SUBDIR += hotspot
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
