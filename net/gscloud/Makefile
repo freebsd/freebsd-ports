@@ -1,7 +1,7 @@
 PORTNAME=	gscloud
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net devel
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -28,7 +28,7 @@ GH_TUPLE=	cpuguy83:go-md2man:v2.0.1:cpuguy83_go_md2man_v2/vendor/github.com/cpug
 		golang:net:2e3eb7b945c2:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:9780585627b5:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:f8bda1e9f3ba:golang_time/vendor/golang.org/x/time \
