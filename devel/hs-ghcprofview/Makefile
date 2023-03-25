@@ -1,6 +1,6 @@
 PORTNAME=	ghcprofview
 PORTVERSION=	0.1.0.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -58,7 +58,7 @@ USE_CABAL=	OneTuple-0.3.1_3 \
 		gi-pango-1.0.27 \
 		happy-1.20.0_1 \
 		hashable-1.4.1.0 \
-		haskell-gi-0.26.3 \
+		haskell-gi-0.26.4 \
 		haskell-gi-base-0.26.3 \
 		haskell-gi-overloading-1.0 \
 		haskell-lexer-1.1 \
