@@ -1173,7 +1173,6 @@
     SUBDIR += reed
     SUBDIR += reggae
     SUBDIR += rej
-    SUBDIR += relaxconf
     SUBDIR += rename
     SUBDIR += renameutils
     SUBDIR += reoback

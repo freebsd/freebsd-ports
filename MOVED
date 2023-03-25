@@ -17866,3 +17866,4 @@ print/ghostscript9-base||2023-03-31|Has expired: Released over 10 years ago and 
 security/openscep||2023-03-31|Has expired: Do not support recent RFC 8894
 security/openvpn25|security/openvpn|2023-03-31|Has expired: replaced by new upstream release 2.6.0
 security/portsentry||2023-03-31|Has expired: Abandoned, upstream is dead and last release was back in 2003
+sysutils/relaxconf||2023-03-31|Has expired: Abandonware, last release of RelaxBSD was back in 2006
