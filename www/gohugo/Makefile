@@ -1,7 +1,6 @@
 PORTNAME=	hugo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.110.0
-PORTREVISION=	3
+DISTVERSION=	0.111.3
 CATEGORIES=	www
 PKGNAMEPREFIX=	go
 DIST_SUBDIR=	${PKGNAMEPREFIX}${PORTNAME}
@@ -18,7 +17,7 @@ CPE_VENDOR=	gohugo
 
 GO_MODULE=	github.com/gohugoio/hugo
 GO_BUILDFLAGS=	-ldflags="\
-		-s -w \
+		${STRIP} -w \
 		-X github.com/gohugoio/hugo/common/hugo.buildDate=${SOURCE_DATE_EPOCH:U${SOURCE_DATE_EPOCH_CMD:sh}} \
 		-X github.com/gohugoio/hugo/common/hugo.vendorInfo=freebsd" \
 		${BUILD_TAGS}
