@@ -99,7 +99,6 @@
     SUBDIR += cutmp3
     SUBDIR += cyanrip
     SUBDIR += d11amp
-    SUBDIR += dagrab
     SUBDIR += darkice
     SUBDIR += dcd
     SUBDIR += deadbeef
