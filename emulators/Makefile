@@ -103,7 +103,6 @@
     SUBDIR += pcem
     SUBDIR += pcemu
     SUBDIR += pcsx2
-    SUBDIR += pcsxr
     SUBDIR += playonbsd
     SUBDIR += ppsspp
     SUBDIR += ppsspp-qt5
