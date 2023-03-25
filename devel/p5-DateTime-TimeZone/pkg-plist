@@ -138,7 +138,6 @@
 %%SITE_PERL%%/DateTime/TimeZone/America/Whitehorse.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Winnipeg.pm
 %%SITE_PERL%%/DateTime/TimeZone/America/Yakutat.pm
-%%SITE_PERL%%/DateTime/TimeZone/America/Yellowknife.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Casey.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Davis.pm
 %%SITE_PERL%%/DateTime/TimeZone/Antarctica/Macquarie.pm
