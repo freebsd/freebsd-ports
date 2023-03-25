@@ -17823,3 +17823,4 @@ graphics/gimp-gmic-plugin||2023-03-21|Has expired: Broken since 2021
 science/InsightToolkit521|science/InsightToolkit|2023-03-21|Retire InsightToolkit521: it was there only to support graphics/elastix
 sysutils/etcupdate||2023-03-21|Part of the base system since FreeBSD 10.0
 devel/freebsd-gcc6||2023-03-22|No longer able to build base system, use GCC 9 or later instead
+japanese/mutt-devel||2023-03-25|Has expired: Broken since 2019
