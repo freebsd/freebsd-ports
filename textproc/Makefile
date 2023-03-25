@@ -56,7 +56,6 @@
     SUBDIR += apache-xmlbeans
     SUBDIR += apertium
     SUBDIR += apertium-eng
-    SUBDIR += artha
     SUBDIR += asciidoc
     SUBDIR += asm-xml
     SUBDIR += asm2html
