@@ -1,4 +1,4 @@
-TIMESTAMP = 1668093637
+TIMESTAMP = 1679706885
 SHA256 (moul-assh-v2.15.0_GH0.tar.gz) = ff80cb7dc818af1bd2d7a031058cb2d4074b0f4af6f7d3077619901689744387
 SIZE (moul-assh-v2.15.0_GH0.tar.gz) = 377810
 SHA256 (Masterminds-goutils-v1.1.0_GH0.tar.gz) = 053a61c4b0d78e6978600c99562f04d053993c428d549a20b627151cf1aabbae
@@ -47,8 +47,8 @@ SHA256 (golang-net-a5a99cb37ef4_GH0.tar.gz) = 16cc55746ae8c23d894f28c93879e8915e
 SIZE (golang-net-a5a99cb37ef4_GH0.tar.gz) = 1249439
 SHA256 (golang-protobuf-v1.5.2_GH0.tar.gz) = 088cc0f3ba18fb8f9d00319568ff0af5a06d8925a6e6cb983bb837b4efb703b3
 SIZE (golang-protobuf-v1.5.2_GH0.tar.gz) = 171702
-SHA256 (golang-sys-15123e1e1f71_GH0.tar.gz) = 7b3411ee194159f43065d9cd6ac56ad0610b2f8bf92c524f5abb02795520466e
-SIZE (golang-sys-15123e1e1f71_GH0.tar.gz) = 1203674
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-v0.3.5_GH0.tar.gz) = f85d1185ba116cd40ef8cf702fe1d960ed41d039c08fd314dbeb5866f3166f27
 SIZE (golang-text-v0.3.5_GH0.tar.gz) = 8348127
 SHA256 (golang-time-3af7569d3a1e_GH0.tar.gz) = 93c79ee7ad72641dc5ebd47e6ecffa66e878e367ddbbef48208ff82a0b6fc7e0

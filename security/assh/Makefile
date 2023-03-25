@@ -1,7 +1,7 @@
 PORTNAME=	assh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.15.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -38,7 +38,7 @@ GH_TUPLE=	\
 		golang:crypto:0c6587e931a9:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:a5a99cb37ef4:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:15123e1e1f71:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.5:golang_text/vendor/golang.org/x/text \
 		golang:time:3af7569d3a1e:golang_time/vendor/golang.org/x/time \
 		google:uuid:v1.1.2:google_uuid/vendor/github.com/google/uuid \
