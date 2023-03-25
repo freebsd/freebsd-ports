@@ -17850,3 +17850,4 @@ databases/mysql-connector-c||2023-03-31|Has expired: C Connector is included in 
 deskutils/horde-groupware||2023-03-31|Has expired: Requires php74
 devel/horde-whups||2023-03-31|Has expired: Requires php74
 devel/phpunit6||2023-03-31|Has expired: End of Life since February 1, 2019
+devel/phpunit7||2023-03-31|Has expired: End of Life since February 7, 2020
