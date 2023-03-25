@@ -1513,7 +1513,6 @@
     SUBDIR += tigervnc-server
     SUBDIR += tigervnc-viewer
     SUBDIR += tigervnc-viewer-java
-    SUBDIR += tightvnc
     SUBDIR += timed
     SUBDIR += tintin++
     SUBDIR += tiny-network-utilities
