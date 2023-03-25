@@ -122,7 +122,6 @@ horde-gollem-DEPEND=		${LOCALBASE}/${HORDE_DIR}/gollem/index.php:ftp/horde-golle
 horde-horde-DEPEND=		${LOCALBASE}/${HORDE_DIR}/index.php:www/horde-base
 horde-imp-DEPEND=		${LOCALBASE}/${HORDE_DIR}/imp/index.php:mail/horde-imp
 horde-ingo-DEPEND=		${LOCALBASE}/${HORDE_DIR}/ingo/index.php:mail/horde-ingo
-horde-nag-DEPEND=		${LOCALBASE}/${HORDE_DIR}/nag/index.php:deskutils/horde-nag
 horde-timeobjects-DEPEND=	${LOCALBASE}/${HORDE_DIR}/timeobjects/lib/Driver.php:devel/horde-timeobjects
 horde-trean-DEPEND=		${LOCALBASE}/${HORDE_DIR}/trean/index.php:www/horde-trean
 horde-turba-DEPEND=		${LOCALBASE}/${HORDE_DIR}/turba/index.php:mail/horde-turba

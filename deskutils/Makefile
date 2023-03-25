@@ -116,7 +116,6 @@
     SUBDIR += health
     SUBDIR += hebcal
     SUBDIR += helpviewer
-    SUBDIR += horde-nag
     SUBDIR += hot-babe
     SUBDIR += howm
     SUBDIR += hs-arbtt
