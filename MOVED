@@ -17824,3 +17824,4 @@ science/InsightToolkit521|science/InsightToolkit|2023-03-21|Retire InsightToolki
 sysutils/etcupdate||2023-03-21|Part of the base system since FreeBSD 10.0
 devel/freebsd-gcc6||2023-03-22|No longer able to build base system, use GCC 9 or later instead
 japanese/mutt-devel||2023-03-25|Has expired: Broken since 2019
+audio/amarok||2023-03-31|Has expired: No longer actively maintained upstream.
