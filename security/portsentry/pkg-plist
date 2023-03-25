@@ -1,7 +1,0 @@
-bin/portsentry
-etc/rc.d/portsentry.sh
-@sample etc/portsentry.conf.sample
-@sample etc/portsentry.ignore.sample
-%%PORTDOCS%%%%DOCSDIR%%/README.install
-%%PORTDOCS%%%%DOCSDIR%%/README.methods
-%%PORTDOCS%%%%DOCSDIR%%/README.stealth
