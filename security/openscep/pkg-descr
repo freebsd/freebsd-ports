@@ -1,6 +1,0 @@
-OpenSCEP is an open source implementation of the SCEP protocol used by Cisco
-routers for certificate enrollment to build VPNs. It implements most of the
-draft specification.
-
-OpenSCEP includes a client and a server implementation, as well as some CGI
-programs to simplify certificate and revocation list management.

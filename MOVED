@@ -17863,3 +17863,4 @@ news/nntpcache||2023-03-31|Has expired: Upstream site no longer available
 ports-mgmt/p5-FreeBSD-Portindex||2023-03-31|Has expired: Not working, and no fix forthcoming
 print/ghostscript9-x11||2023-03-31|Has expired: Released over 10 years ago and unsupported by upstream, consider print/ghostscript9-agpl-x11
 print/ghostscript9-base||2023-03-31|Has expired: Released over 10 years ago and unsupported by upstream, consider print/ghostscript9-agpl-base
+security/openscep||2023-03-31|Has expired: Do not support recent RFC 8894

@@ -406,7 +406,6 @@
     SUBDIR += openiked-portable
     SUBDIR += opensaml
     SUBDIR += opensc
-    SUBDIR += openscep
     SUBDIR += openssh-askpass
     SUBDIR += openssh-portable
     SUBDIR += openssl
