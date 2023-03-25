@@ -1,5 +1,5 @@
 PORTNAME=	mutt
-DISTVERSION=	2.2.9
+DISTVERSION=	2.2.10
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
@@ -171,8 +171,8 @@ NLS_IMPLIES=		ICONV
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-QUOTE_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
-			mutt-${GREETING_PATCH_VERSION}.vvv.quote:vc
+QUOTE_PATCH_PATCHFILES=		patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv \
+				mutt-${GREETING_PATCH_VERSION}.vvv.quote:vc
 QUOTE_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-quote
 
 REVERSE_REPLY_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-reverse_reply
