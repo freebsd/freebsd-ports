@@ -110,7 +110,6 @@
     SUBDIR += deadbeef-spectrogram-plugin
     SUBDIR += deadbeef-vu-meter-plugin
     SUBDIR += deadbeef-waveform-seekbar-plugin
-    SUBDIR += dekagen
     SUBDIR += denemo
     SUBDIR += dexed
     SUBDIR += dgedit
