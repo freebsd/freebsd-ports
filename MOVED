@@ -17842,3 +17842,4 @@ audio/soundkonverter||2023-03-31|Has expired: Unsupported upstream, consider usi
 audio/splaytk||2023-03-31|Has expired: Abandonware, no development in 20 years and uses obsolete decoding library
 audio/splay||2023-03-31|Has expired: Abandonware, no development in 20 years and uses obsolete decoding library
 audio/tagtool||2023-03-31|Has expired: Abandonware and obsolete, doesn't properly support ID3v2 tagging
+audio/vo-aacenc||2023-03-31|Has expired: Obsolete AAC encoder library, consider using audio/fdk-aac or audio/exhale

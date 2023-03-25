@@ -838,7 +838,6 @@
     SUBDIR += vitunes
     SUBDIR += vm-lv2
     SUBDIR += vmpk
-    SUBDIR += vo-aacenc
     SUBDIR += vo-amrwbenc
     SUBDIR += voipong
     SUBDIR += volumeicon
