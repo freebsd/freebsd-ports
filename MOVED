@@ -17860,3 +17860,4 @@ multimedia/win32-codecs||2023-03-31|Has expired: Obsolete and users are recommen
 net/minisapserver||2023-03-31|Has expired: Obsolete utility, functionality is now included in multimedia/vlc
 net/tightvnc||2023-03-31|Has expired: Last release in 2009, newer version 2.x is available for Windows only.
 news/nntpcache||2023-03-31|Has expired: Upstream site no longer available
+ports-mgmt/p5-FreeBSD-Portindex||2023-03-31|Has expired: Not working, and no fix forthcoming
