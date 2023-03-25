@@ -22,6 +22,9 @@ LICENSE_NAME=	Proprietary license with a small trial period
 LICENSE_TEXT=	See https://webinar.ru/legal/license-agreement.pdf
 LICENSE_PERMS=
 
+DEPRECATED=	Requires EOLed electron18
+EXPIRATION_DATE=	2023-04-24
+
 EXTRACT_DEPENDS=	unsquashfs:sysutils/squashfs-tools
 BUILD_DEPENDS=		electron${ELECTRON_VERSION}:devel/electron${ELECTRON_VERSION}
 RUN_DEPENDS=		electron${ELECTRON_VERSION}:devel/electron${ELECTRON_VERSION} \
