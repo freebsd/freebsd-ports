@@ -10,8 +10,6 @@ WWW=		https://github.com/aws/session-manager-plugin/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 riscv64
-
 RUN_DEPENDS=	aws:devel/py-awscli@${PY_FLAVOR}
 
 USES=		go python:env
@@ -26,6 +24,7 @@ GH_TAGNAME=	${DISTVERSION}
 GH_SUBDIR=	${GH_PROJECT}
 GH_TUPLE=	eiannone:keyboard:6d2a597fd0f1:eiannone_keyboard/vendor/github.com/eiannone/keyboard \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \
+		golang:crypto:159ae71589f3:golang_crypto/vendor/golang.org/x/crypto \
 		golang:sync:43a5402ce75a:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		gorilla:websocket:e8629af678b7:gorilla_websocket/vendor/github.com/gorilla/websocket \
@@ -36,7 +35,6 @@ GH_TUPLE=	eiannone:keyboard:6d2a597fd0f1:eiannone_keyboard/vendor/github.com/eia
 		xtaci:smux:09e2c01560df:xtaci_smux/vendor/github.com/xtaci/smux
 #customized#	aws:aws-sdk-go:v1.40.17:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go
 #customized#	cihub:seelog:c510775bb50d:cihub_seelog/vendor/github.com/cihub/seelog
-#not found#	golang:crypto:UNKNOWN:golang_org/vendor/golang.org/x/crypto
 
 PORTDOCS=	NOTICE README.md RELEASENOTES.md THIRD-PARTY VERSION
 PLIST_FILES=	${ETCDIR}/sessionmanagerplugin/seelog.xml.template \
@@ -56,7 +54,6 @@ post-extract:
 	${LN} -s ../../../../src                     ${GO_WRKSRC}/vendor/github.com/aws/session-manager-plugin/
 	${LN} -s ../src/github.com/cihub             ${GO_WRKSRC}/vendor/github.com/
 	${LN} -s ../../src/github.com/aws/aws-sdk-go ${GO_WRKSRC}/vendor/github.com/aws/
-#	${LN} -s ../../src/golang.org/x/crypto       ${GO_WRKSRC}/vendor/golang.org/x/
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%VERSION%%|${DISTVERSION}|' ${WRKSRC}/src/version/version.go
