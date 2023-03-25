@@ -794,7 +794,6 @@
     SUBDIR += taglib
     SUBDIR += taglib-extras
     SUBDIR += taglookup
-    SUBDIR += tagtool
     SUBDIR += tagutil
     SUBDIR += tamgamp-lv2
     SUBDIR += tap-plugins

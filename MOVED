@@ -17841,3 +17841,4 @@ audio/mp3c||2023-03-31|Has expired: Abandonware, last release in 2009. Please co
 audio/soundkonverter||2023-03-31|Has expired: Unsupported upstream, consider using audio/cyanrip or audio/abcde (ripping CDs), audio/rsgain (ReplayGain scanning) and multimedia/ffmpeg (transcoding)
 audio/splaytk||2023-03-31|Has expired: Abandonware, no development in 20 years and uses obsolete decoding library
 audio/splay||2023-03-31|Has expired: Abandonware, no development in 20 years and uses obsolete decoding library
+audio/tagtool||2023-03-31|Has expired: Abandonware and obsolete, doesn't properly support ID3v2 tagging
