@@ -6,6 +6,7 @@ bin/conduit_relay_node_viewer
 include/conduit/conduit.h
 include/conduit/conduit.hpp
 include/conduit/conduit.mod
+include/conduit/conduit_annotations.hpp
 include/conduit/conduit_bitwidth_style_types.h
 include/conduit/conduit_blueprint.h
 include/conduit/conduit_blueprint.hpp
@@ -23,15 +24,19 @@ include/conduit/conduit_blueprint_mesh_examples.hpp
 include/conduit/conduit_blueprint_mesh_examples_julia.hpp
 include/conduit/conduit_blueprint_mesh_examples_polystar.hpp
 include/conduit/conduit_blueprint_mesh_examples_related_boundary.hpp
+include/conduit/conduit_blueprint_mesh_examples_rz_cylinder.hpp
 include/conduit/conduit_blueprint_mesh_examples_venn.hpp
+include/conduit/conduit_blueprint_mesh_topology_metadata.hpp
 include/conduit/conduit_blueprint_mesh_utils.hpp
 %%NO_NOMPI%%include/conduit/conduit_blueprint_mpi.hpp
 %%NO_NOMPI%%include/conduit/conduit_blueprint_mpi_mesh.h
 %%NO_NOMPI%%include/conduit/conduit_blueprint_mpi_mesh.hpp
 %%NO_NOMPI%%include/conduit/conduit_blueprint_mpi_mesh_examples.hpp
 %%NO_NOMPI%%include/conduit/conduit_blueprint_mpi_mesh_partition.hpp
+include/conduit/conduit_blueprint_ndarray_index.hpp
 include/conduit/conduit_blueprint_o2mrelation.hpp
 include/conduit/conduit_blueprint_o2mrelation_examples.hpp
+include/conduit/conduit_blueprint_o2mrelation_index.hpp
 include/conduit/conduit_blueprint_o2mrelation_iterator.hpp
 include/conduit/conduit_blueprint_o2mrelation_utils.hpp
 include/conduit/conduit_blueprint_table.h
@@ -50,6 +55,9 @@ include/conduit/conduit_datatype.h
 include/conduit/conduit_endianness.hpp
 include/conduit/conduit_endianness_types.h
 include/conduit/conduit_error.hpp
+include/conduit/conduit_execution.hpp
+include/conduit/conduit_execution_omp.hpp
+include/conduit/conduit_execution_serial.hpp
 include/conduit/conduit_exports.h
 include/conduit/conduit_fmt/chrono.h
 include/conduit/conduit_fmt/color.h
