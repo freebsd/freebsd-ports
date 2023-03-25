@@ -81,7 +81,6 @@
     SUBDIR += cava
     SUBDIR += ccaudio2
     SUBDIR += cd-discid
-    SUBDIR += cd2mp3
     SUBDIR += cddb-bundle
     SUBDIR += cdparanoia
     SUBDIR += checkmate
