@@ -17854,3 +17854,4 @@ devel/phpunit7||2023-03-31|Has expired: End of Life since February 7, 2020
 emulators/pcsxr||2023-03-31|Has expired: Abandoned upstream and no development in 5+ years, consider using games/retroarch
 games/acm||2023-03-31|Has expired: Abandoned upstream. Does not work.
 mail/horde-webmail||2023-03-31|Has expired: Requires php74
+multimedia/dvdrip||2023-03-31|Has expired: Depends on broken transcode port
