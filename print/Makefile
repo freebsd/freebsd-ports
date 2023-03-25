@@ -66,7 +66,6 @@
     SUBDIR += ghostscript8-x11
     SUBDIR += ghostscript9-agpl-base
     SUBDIR += ghostscript9-agpl-x11
-    SUBDIR += ghostscript9-base
     SUBDIR += gimp-gutenprint
     SUBDIR += gl2ps
     SUBDIR += gsfonts
