@@ -1,5 +1,5 @@
 PORTNAME=	filelock
-DISTVERSION=	3.9.0
+DISTVERSION=	3.10.3
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/benediktschmitt/py-filelock
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.11.1:devel/py-hatchling@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.13:devel/py-hatchling@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.3:devel/py-hatch-vcs@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>0:devel/py-covdefaults@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>=7.0.1:devel/py-coverage@${PY_FLAVOR} \
