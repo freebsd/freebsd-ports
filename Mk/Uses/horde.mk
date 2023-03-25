@@ -120,7 +120,6 @@ horde-Horde_Xml_Wbxml-DEPEND=	${PEARDIR}/Horde/Xml/Wbxml.php:textproc/pear-Horde
 horde-content-DEPEND=		${LOCALBASE}/${HORDE_DIR}/content/lib/Tagger.php:devel/horde-content
 horde-horde-DEPEND=		${LOCALBASE}/${HORDE_DIR}/index.php:www/horde-base
 horde-timeobjects-DEPEND=	${LOCALBASE}/${HORDE_DIR}/timeobjects/lib/Driver.php:devel/horde-timeobjects
-horde-trean-DEPEND=		${LOCALBASE}/${HORDE_DIR}/trean/index.php:www/horde-trean
 
 .  if defined(USE_HORDE_RUN)
 .    for DEP in ${USE_HORDE_RUN}

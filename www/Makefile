@@ -223,7 +223,6 @@
     SUBDIR += hiawatha
     SUBDIR += hiawatha-monitor
     SUBDIR += horde-base
-    SUBDIR += horde-trean
     SUBDIR += hotcrp
     SUBDIR += hs-DAV
     SUBDIR += hs-hjsmin
