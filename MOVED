@@ -17846,3 +17846,4 @@ audio/vo-aacenc||2023-03-31|Has expired: Obsolete AAC encoder library, consider 
 audio/wav2cdr||2023-03-31|Has expired: Obsolete utility, consider using multimedia/ffmpeg
 databases/mongodb36-tools|databases/mongodb40-tools|2023-03-31|Has expired: Upstream EOL reached on 2021-04-30
 databases/mongodb36|databases/mongodb40|2023-03-31|Has expired: Upstream EOL reached on 2021-04-30
+databases/mysql-connector-c||2023-03-31|Has expired: C Connector is included in mysql packages since 5.6
