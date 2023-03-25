@@ -1,0 +1,14 @@
+[
+{ type: install
+  message: <<EOM
+Blisp is a utility for flashing Bouffalo Labs RISC-V Microcontrollers and SoCs.
+It's tested with Pinecil v2 soldering iron, but should work with PineCone dev board, PineNut programmer and other hardware with same MCU.
+
+A devd conf file is included which will set permission on USB device to enable flashing.
+To activate execute following command: service devd restart
+
+Example:
+blisp --write -c bl70x --reset <path/to/firmware.bin>
+EOM
+}
+]

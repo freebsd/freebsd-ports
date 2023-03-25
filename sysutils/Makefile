@@ -132,6 +132,7 @@
     SUBDIR += bkpupsd
     SUBDIR += bksh
     SUBDIR += bkt
+    SUBDIR += blisp
     SUBDIR += boot-extract
     SUBDIR += bottom
     SUBDIR += boxbackup-devel
