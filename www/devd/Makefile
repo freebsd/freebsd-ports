@@ -1,7 +1,7 @@
 PORTNAME=	devd
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	www devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,12 +17,12 @@ GH_ACCOUNT=	cortesi
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	${GO_PKGNAME}/cmd/${PORTNAME}
-GH_TUPLE=	golang:sys:fead79001313:golang_sys/vendor/golang.org/x/sys_fead79001313
+GH_TUPLE=	golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys_v0.6.0
 
 PLIST_FILES=	bin/${PORTNAME}
 
 pre-build:
 	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
-	${MV} ${WRKSRC}/vendor/golang.org/x/sys_fead79001313 ${WRKSRC}/vendor/golang.org/x/sys
+	${MV} ${WRKSRC}/vendor/golang.org/x/sys_v0.6.0 ${WRKSRC}/vendor/golang.org/x/sys
 
 .include <bsd.port.mk>
