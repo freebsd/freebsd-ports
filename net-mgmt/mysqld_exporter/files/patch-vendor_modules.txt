@@ -1,0 +1,98 @@
+--- vendor/modules.txt.orig	2023-03-25 01:01:20 UTC
++++ vendor/modules.txt
+@@ -1,60 +1,87 @@
+ # github.com/DATA-DOG/go-sqlmock v1.3.3
++## explicit
+ github.com/DATA-DOG/go-sqlmock
+ # github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751
++## explicit
+ github.com/alecthomas/template
+ github.com/alecthomas/template/parse
+ # github.com/alecthomas/units v0.0.0-20190717042225-c3de453c63f4
++## explicit
+ github.com/alecthomas/units
+ # github.com/beorn7/perks v1.0.0
++## explicit; go 1.12
+ github.com/beorn7/perks/quantile
+ # github.com/go-sql-driver/mysql v1.4.1
++## explicit
+ github.com/go-sql-driver/mysql
+ # github.com/golang/protobuf v1.3.2
++## explicit
+ github.com/golang/protobuf/proto
+ # github.com/gopherjs/gopherjs v0.0.0-20190430165422-3e4dfb77656c
++## explicit
+ github.com/gopherjs/gopherjs/js
+ # github.com/jtolds/gls v4.20.0+incompatible
++## explicit
+ github.com/jtolds/gls
+ # github.com/konsorten/go-windows-terminal-sequences v1.0.2
++## explicit
+ github.com/konsorten/go-windows-terminal-sequences
++# github.com/kr/pretty v0.1.0
++## explicit
+ # github.com/matttproud/golang_protobuf_extensions v1.0.1
++## explicit
+ github.com/matttproud/golang_protobuf_extensions/pbutil
+ # github.com/prometheus/client_golang v1.0.0
++## explicit
+ github.com/prometheus/client_golang/prometheus
+-github.com/prometheus/client_golang/prometheus/promhttp
+ github.com/prometheus/client_golang/prometheus/internal
++github.com/prometheus/client_golang/prometheus/promhttp
+ # github.com/prometheus/client_model v0.0.0-20190129233127-fd36f4220a90
++## explicit; go 1.9
+ github.com/prometheus/client_model/go
+ # github.com/prometheus/common v0.6.0
+-github.com/prometheus/common/log
+-github.com/prometheus/common/version
++## explicit
+ github.com/prometheus/common/expfmt
+-github.com/prometheus/common/model
+ github.com/prometheus/common/internal/bitbucket.org/ww/goautoneg
++github.com/prometheus/common/log
++github.com/prometheus/common/model
++github.com/prometheus/common/version
+ # github.com/prometheus/procfs v0.0.3
++## explicit
+ github.com/prometheus/procfs
+ github.com/prometheus/procfs/internal/fs
+ # github.com/satori/go.uuid v1.2.0
++## explicit
+ github.com/satori/go.uuid
+ # github.com/sirupsen/logrus v1.4.2
++## explicit
+ github.com/sirupsen/logrus
+ # github.com/smartystreets/assertions v1.0.0
++## explicit; go 1.12
+ github.com/smartystreets/assertions
+ github.com/smartystreets/assertions/internal/go-diff/diffmatchpatch
+ github.com/smartystreets/assertions/internal/go-render/render
+ github.com/smartystreets/assertions/internal/oglematchers
+ # github.com/smartystreets/goconvey v0.0.0-20190330032615-68dc04aab96a
++## explicit
+ github.com/smartystreets/goconvey/convey
+-github.com/smartystreets/goconvey/convey/reporting
+ github.com/smartystreets/goconvey/convey/gotest
+-# golang.org/x/sys v0.0.0-20190626221950-04f50cda93cb
+-golang.org/x/sys/windows
+-golang.org/x/sys/windows/svc/eventlog
++github.com/smartystreets/goconvey/convey/reporting
++# golang.org/x/sys v0.6.0
++## explicit; go 1.17
++golang.org/x/sys/internal/unsafeheader
+ golang.org/x/sys/unix
++golang.org/x/sys/windows
+ golang.org/x/sys/windows/registry
++golang.org/x/sys/windows/svc/eventlog
+ # google.golang.org/appengine v1.6.1
++## explicit
+ google.golang.org/appengine/cloudsql
+ # gopkg.in/alecthomas/kingpin.v2 v2.2.6
++## explicit
+ gopkg.in/alecthomas/kingpin.v2
++# gopkg.in/check.v1 v1.0.0-20180628173108-788fd7840127
++## explicit
+ # gopkg.in/ini.v1 v1.44.0
++## explicit
+ gopkg.in/ini.v1
