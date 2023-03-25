@@ -1,7 +1,7 @@
 PORTNAME=	prometheus
 PORTVERSION=	1.8.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	1
 
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe go
 USE_GITHUB=	yes
-GH_TUPLE=	golang:sys:fead79001313:golang_sys/vendor/golang.org/x/sys_fead79001313
+GH_TUPLE=	golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys_v0.6.0
 
 GO_PKGNAME=	github.com/${PORTNAME}/${PORTNAME}
 
@@ -26,7 +26,7 @@ GROUPS=		prometheus
 BUILD_USER?=	${USER}
 LD_FLAG_X_PREFIX=	-X ${GO_PKGNAME}/vendor/github.com/prometheus/common/version
 GO_BUILDFLAGS=	-ldflags "\
-		-s \
+		${STRIP} \
 		${LD_FLAG_X_PREFIX}.Version=${PORTVERSION} \
 		${LD_FLAG_X_PREFIX}.Revision=${PORTREVISION} \
 		${LD_FLAG_X_PREFIX}.Branch=release-${PORTVERSION:R} \
@@ -36,7 +36,7 @@ GO_TARGET=	./cmd/prometheus \
 
 post-patch:
 	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
-	${MV} ${WRKSRC}/vendor/golang.org/x/sys_fead79001313 ${WRKSRC}/vendor/golang.org/x/sys
+	${MV} ${WRKSRC}/vendor/golang.org/x/sys_v0.6.0 ${WRKSRC}/vendor/golang.org/x/sys
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/documentation/examples/prometheus.yml ${STAGEDIR}${LOCALBASE}/etc/prometheus.yml.sample
