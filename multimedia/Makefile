@@ -363,7 +363,6 @@
     SUBDIR += subsync
     SUBDIR += subtitlecomposer
     SUBDIR += subtitleoffsetmodifier
-    SUBDIR += subtitleripper
     SUBDIR += subtools
     SUBDIR += svt-av1
     SUBDIR += svt-hevc

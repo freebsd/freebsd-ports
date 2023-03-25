@@ -17872,3 +17872,4 @@ x11-wm/i3-gaps||2023-03-31|Has expired: Upstream merged with i3, please switch t
 www/horde-wicked||2023-03-31|Has expired: Requires php74
 www/horde-passwd||2023-03-31|Has expired: Requires php74
 www/horde-ansel||2023-03-31|Has expired: Requires php74
+multimedia/subtitleripper||2023-03-31|Has expired: Depends on broken transcode port
