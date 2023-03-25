@@ -292,7 +292,6 @@
     SUBDIR += diskimage-tools
     SUBDIR += diskonaut
     SUBDIR += diskscrub
-    SUBDIR += disktype
     SUBDIR += diskus
     SUBDIR += dmg2img
     SUBDIR += dmidecode
