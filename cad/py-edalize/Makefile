@@ -1,5 +1,5 @@
 PORTNAME=	edalize
-DISTVERSION=	0.4.1
+DISTVERSION=	0.5.0
 CATEGORIES=	cad python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,7 +30,7 @@ post-patch:
 	@${GREP} -rl '$$(shell which python3)' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -i '' -e 's|$$(shell which python3)|${PYTHON_CMD}|'
 	@${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python3|${PYTHON_CMD}|' ${WRKSRC}/tests/mock_commands/vcs
 
-# testsuite has intemittent failures: in many runs many tests fail, but sometimes all tests but 1 succeed, see https://github.com/olofk/edalize/issues/368
-# 1 test (test_modelsim) always fails because it depends on Intel's modelsim
+# testsuite has intermittent failures: in many runs many tests fail, but sometimes all tests but 1 succeed, see https://github.com/olofk/edalize/issues/368
+# 2 tests (test_modelsim,test_modelsim_common_compilation) always fail because it depends on Intel's modelsim
 
 .include <bsd.port.mk>
