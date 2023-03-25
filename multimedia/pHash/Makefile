@@ -11,6 +11,9 @@ WWW=		https://phash.org/
 
 LICENSE=	GPLv3+
 
+DEPRECATED=	No users left in tree and fails to build with FFmpeg 6.0
+EXPIRATION_DATE=2023-04-09
+
 USES=		compiler:c11 gmake libtool pathfix
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PTHREAD_LIBS="-lpthread"
