@@ -17835,3 +17835,4 @@ audio/dekagen||2023-03-31|Has expired: Abandonware, last release in 2004. Please
 audio/gervill||2023-03-31|Has expired: Integrated as of JDK6
 audio/id3ed||2023-03-31|Has expired: Abandonware and obsolete, doesn't support ID3v2 tagging
 audio/id3ren||2023-03-31|Has expired: Abandonware and obsolete, doesn't support ID3v2 tagging
+audio/kexis||2023-03-31|Has expired: Abandonware, niche format that never got any traction and no release in 18 years. Consider using audio/flac or audio/wavpack instead
