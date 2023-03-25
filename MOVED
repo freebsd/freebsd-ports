@@ -17849,3 +17849,4 @@ databases/mongodb36|databases/mongodb40|2023-03-31|Has expired: Upstream EOL rea
 databases/mysql-connector-c||2023-03-31|Has expired: C Connector is included in mysql packages since 5.6
 deskutils/horde-groupware||2023-03-31|Has expired: Requires php74
 devel/horde-whups||2023-03-31|Has expired: Requires php74
+devel/phpunit6||2023-03-31|Has expired: End of Life since February 1, 2019
