@@ -2,7 +2,6 @@ bin/curtail
 share/applications/com.github.huluti.Curtail.desktop
 %%DATADIR%%/curtail.gresource
 %%DATADIR%%/curtail/__init__.py
-%%DATADIR%%/curtail/apply.py
 %%DATADIR%%/curtail/compressor.py
 %%DATADIR%%/curtail/main.py
 %%DATADIR%%/curtail/preferences.py
@@ -10,6 +9,7 @@ share/applications/com.github.huluti.Curtail.desktop
 %%DATADIR%%/curtail/window.py
 share/icons/hicolor/scalable/apps/com.github.huluti.Curtail.svg
 share/icons/hicolor/symbolic/apps/com.github.huluti.Curtail-symbolic.svg
+share/locale/cs/LC_MESSAGES/curtail.mo
 share/locale/de/LC_MESSAGES/curtail.mo
 share/locale/es/LC_MESSAGES/curtail.mo
 share/locale/fr/LC_MESSAGES/curtail.mo
