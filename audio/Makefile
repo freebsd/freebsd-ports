@@ -765,7 +765,6 @@
     SUBDIR += spiralloops
     SUBDIR += spiralsynth
     SUBDIR += spiralsynthmodular
-    SUBDIR += splay
     SUBDIR += spotify-player
     SUBDIR += spotify-qt
     SUBDIR += spotify-tui
