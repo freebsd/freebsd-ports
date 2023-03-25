@@ -224,7 +224,6 @@
     SUBDIR += hiawatha-monitor
     SUBDIR += horde-ansel
     SUBDIR += horde-base
-    SUBDIR += horde-passwd
     SUBDIR += horde-trean
     SUBDIR += hotcrp
     SUBDIR += hs-DAV

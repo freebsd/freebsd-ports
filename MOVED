@@ -17870,3 +17870,4 @@ sysutils/relaxconf||2023-03-31|Has expired: Abandonware, last release of RelaxBS
 textproc/artha||2023-03-31|Has expired: Abandonware, last release in 2012
 x11-wm/i3-gaps||2023-03-31|Has expired: Upstream merged with i3, please switch to x11-wm/i3
 www/horde-wicked||2023-03-31|Has expired: Requires php74
+www/horde-passwd||2023-03-31|Has expired: Requires php74
