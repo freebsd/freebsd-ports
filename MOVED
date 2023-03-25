@@ -17829,3 +17829,4 @@ audio/cd2mp3||2023-03-31|Has expired: Depends on deprecated port audio/dagrab, c
 audio/cmp3||2023-03-31|Has expired: Abandonware, no development in 20 years. Please consider using audio/cmus or audio/musicpd
 audio/cpige||2023-03-31|Has expired: Doesn't work, newer versions also fails
 audio/crip||2023-03-31|Has expired: Abandonware, last release in 2007. Please consider using audio/cyanrip or audio/abcde
+audio/cue2toc||2023-03-31|Has expired: Abandonware and unmaintained, please consider using audio/cuetools or sysutils/cdrdao

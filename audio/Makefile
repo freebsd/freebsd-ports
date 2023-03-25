@@ -95,7 +95,6 @@
     SUBDIR += csound
     SUBDIR += csoundqt
     SUBDIR += ctronome
-    SUBDIR += cue2toc
     SUBDIR += cuetools
     SUBDIR += cutmp3
     SUBDIR += cyanrip
