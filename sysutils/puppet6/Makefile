@@ -16,6 +16,7 @@ DEPRECATED=	Puppet 6 has reached EOL
 EXPIRATION_DATE=2023-06-01
 BROKEN_RUBY30=	yes
 BROKEN_RUBY31=	yes
+BROKEN_RUBY32=	yes
 
 RUN_DEPENDS=	rubygem-concurrent-ruby11>=1.0:devel/rubygem-concurrent-ruby11 \
 		rubygem-deep_merge>=1.0:devel/rubygem-deep_merge \
