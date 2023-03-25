@@ -214,7 +214,6 @@
     SUBDIR += gbemol
     SUBDIR += gbsplay
     SUBDIR += geonkick-lv2
-    SUBDIR += gervill
     SUBDIR += ggwave
     SUBDIR += giada
     SUBDIR += glurp
