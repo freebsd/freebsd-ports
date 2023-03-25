@@ -5,7 +5,6 @@ bin/uhdm-dump
 bin/uhdm-hier
 cmake/Surelog-%%CMAKE_BUILD_TYPE%%.cmake
 cmake/Surelog.cmake
-cmake/SurelogConfig.cmake
 include/Surelog/API/PythonAPI.h
 include/Surelog/API/SLAPI.h
 include/Surelog/API/Surelog.h
@@ -368,12 +367,14 @@ include/uhdm/wait_fork.h
 include/uhdm/wait_stmt.h
 include/uhdm/waits.h
 include/uhdm/while_stmt.h
+lib/cmake/SurelogConfig.cmake
 lib/libcapnp.so
 lib/libcapnp.so.0.8.0
 lib/libkj.so
 lib/libkj.so.0.8.0
+lib/libsurelog.so
 lib/libuhdm.so
 lib/surelog/libantlr4-runtime.a
 lib/surelog/libflatbuffers.a
-lib/surelog/libsurelog.a
 lib/uhdm/UHDM.capnp
+libdata/pkgconfig/Surelog.pc
