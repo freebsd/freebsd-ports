@@ -48,7 +48,6 @@
     SUBDIR += hs-xmonad
     SUBDIR += hyprland
     SUBDIR += i3
-    SUBDIR += i3-gaps
     SUBDIR += icewm
     SUBDIR += ittywm
     SUBDIR += jewel

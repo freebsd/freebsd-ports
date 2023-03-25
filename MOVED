@@ -17868,3 +17868,4 @@ security/openvpn25|security/openvpn|2023-03-31|Has expired: replaced by new upst
 security/portsentry||2023-03-31|Has expired: Abandoned, upstream is dead and last release was back in 2003
 sysutils/relaxconf||2023-03-31|Has expired: Abandonware, last release of RelaxBSD was back in 2006
 textproc/artha||2023-03-31|Has expired: Abandonware, last release in 2012
+x11-wm/i3-gaps||2023-03-31|Has expired: Upstream merged with i3, please switch to x11-wm/i3
