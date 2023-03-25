@@ -17827,3 +17827,4 @@ japanese/mutt-devel||2023-03-25|Has expired: Broken since 2019
 audio/amarok||2023-03-31|Has expired: No longer actively maintained upstream.
 audio/cd2mp3||2023-03-31|Has expired: Depends on deprecated port audio/dagrab, consider using audio/abcde or audio/cyanrip
 audio/cmp3||2023-03-31|Has expired: Abandonware, no development in 20 years. Please consider using audio/cmus or audio/musicpd
+audio/cpige||2023-03-31|Has expired: Doesn't work, newer versions also fails

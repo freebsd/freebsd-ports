@@ -92,7 +92,6 @@
     SUBDIR += cmt
     SUBDIR += cmus
     SUBDIR += codec2
-    SUBDIR += cpige
     SUBDIR += crip
     SUBDIR += csound
     SUBDIR += csoundqt
