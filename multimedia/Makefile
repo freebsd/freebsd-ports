@@ -425,7 +425,6 @@
     SUBDIR += webcamd
     SUBDIR += webcamoid
     SUBDIR += wf-recorder
-    SUBDIR += win32-codecs
     SUBDIR += winff
     SUBDIR += wlrobs
     SUBDIR += x264
