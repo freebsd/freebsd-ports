@@ -1,7 +1,7 @@
 PORTNAME=	semaphore
 PORTVERSION=	2.8.77
 DISTVERSIONPREFIX=	v
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -26,7 +26,7 @@ GH_TUPLE=	ansible-semaphore:semaphore-vendor:a44f7be:ansible/vendor/github.com/a
 		Azure:go-ntlmssp:66371956d46c:azure_go_ntlmssp/vendor/github.com/Azure/go-ntlmssp \
 		Sirupsen:logrus:v1.0.4:sirupsen_logrus/vendor/github.com/Sirupsen/logrus \
 		airbrake:gobrake:v2.0.9:airbrake_gobrake/vendor/gopkg.in/airbrake/gobrake.v2 \
-		etcd-io:bbolt:v1.3.2:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
+		etcd-io:bbolt:v1.3.7:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
 		gemnasium:logrus-airbrake-hook:v2.1.2:gemnasium_logrus_airbrake_hook/vendor/gopkg.in/gemnasium/logrus-airbrake-hook.v2 \
 		go-asn1-ber:asn1-ber:v1.5.1:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
 		go-gorp:gorp:v3.0.2:go_gorp_gorp_v3/vendor/github.com/go-gorp/gorp/v3 \
@@ -35,7 +35,7 @@ GH_TUPLE=	ansible-semaphore:semaphore-vendor:a44f7be:ansible/vendor/github.com/a
 		gobuffalo:packr:v1.10.4:gobuffalo_packr/vendor/github.com/gobuffalo/packr \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:crypto:75b288015ac9:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:977fb7262007:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		google:go-github:v17.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		gorilla:context:v1.1.1:gorilla_context/vendor/github.com/gorilla/context \
