@@ -17875,3 +17875,4 @@ www/horde-ansel||2023-03-31|Has expired: Requires php74
 multimedia/subtitleripper||2023-03-31|Has expired: Depends on broken transcode port
 sysutils/disktype||2023-03-31|Has expired: Abandonware, last release in 2006 and no development since
 deskutils/horde-kronolith||2023-03-31|Has expired: Requires php74
+deskutils/horde-mnemo||2023-03-31|Has expired: Requires php74
