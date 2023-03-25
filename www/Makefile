@@ -222,7 +222,6 @@
     SUBDIR += hedgedoc
     SUBDIR += hiawatha
     SUBDIR += hiawatha-monitor
-    SUBDIR += horde-ansel
     SUBDIR += horde-base
     SUBDIR += horde-trean
     SUBDIR += hotcrp
