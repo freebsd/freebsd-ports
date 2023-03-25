@@ -463,7 +463,6 @@
     SUBDIR += micro_proxy
     SUBDIR += microsocks
     SUBDIR += minidlna
-    SUBDIR += minisapserver
     SUBDIR += minissdpd
     SUBDIR += miniupnpc
     SUBDIR += miniupnpd

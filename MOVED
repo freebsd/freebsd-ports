@@ -17857,3 +17857,4 @@ mail/horde-webmail||2023-03-31|Has expired: Requires php74
 multimedia/dvdrip||2023-03-31|Has expired: Depends on broken transcode port
 multimedia/mkxvcd||2023-03-31|Has expired: Depends on broken transcode port
 multimedia/win32-codecs||2023-03-31|Has expired: Obsolete and users are recommended to utilize ffmpeg instead
+net/minisapserver||2023-03-31|Has expired: Obsolete utility, functionality is now included in multimedia/vlc
