@@ -406,7 +406,6 @@
     SUBDIR += libspecbleach
     SUBDIR += libtremor
     SUBDIR += libvorbis
-    SUBDIR += libworkman
     SUBDIR += libxmp
     SUBDIR += lilv
     SUBDIR += lingot
