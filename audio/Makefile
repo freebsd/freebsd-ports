@@ -483,7 +483,6 @@
     SUBDIR += mp3asm
     SUBDIR += mp3blaster
     SUBDIR += mp3burn
-    SUBDIR += mp3c
     SUBDIR += mp3check
     SUBDIR += mp3ck
     SUBDIR += mp3gain

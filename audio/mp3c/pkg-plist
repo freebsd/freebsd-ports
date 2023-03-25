@@ -1,8 +1,0 @@
-bin/mp3c
-bin/cdrip.sh
-man/man1/mp3c.1.gz
-%%NLS%%share/locale/de/LC_MESSAGES/mp3c.mo
-%%NLS%%share/locale/es/LC_MESSAGES/mp3c.mo
-%%NLS%%share/locale/it/LC_MESSAGES/mp3c.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/mp3c.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/mp3c.mo
