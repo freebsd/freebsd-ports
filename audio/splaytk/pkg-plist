@@ -1,8 +1,0 @@
-bin/splay-tk
-%%DATADIR%%/dirs.xbm
-%%DATADIR%%/files.xbm
-%%DATADIR%%/pause.xbm
-%%DATADIR%%/play.xbm
-%%DATADIR%%/quit.xbm
-%%DATADIR%%/stop.xbm
-%%DATADIR%%/splay-tk.gif
