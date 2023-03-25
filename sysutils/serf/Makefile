@@ -1,7 +1,6 @@
 PORTNAME=	serf
-PORTVERSION=	0.8.5
+PORTVERSION=	0.10.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	11
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	hashicorp-
 
@@ -15,7 +14,10 @@ USES=		go:modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
+GH_TUPLE=	golang:net:v0.8.0:net \
+		golang:sys:v0.6.0:sys
 
+GO_MODULE=	github.com/hashicorp/serf
 GO_TARGET=	./cmd/${PORTNAME}
 
 USE_RC_SUBR=	serf
@@ -24,5 +26,12 @@ USERS=		serf
 GROUPS=		serf
 
 PLIST_FILES=	bin/serf
+
+pre-patch:
+.for m in net sys
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/$m
+	${LN} -s ${WRKDIR}/$m-* ${WRKSRC}/vendor/golang.org/x/$m
+.endfor
+	${RM} ${WRKSRC}/vendor/modules.txt
 
 .include <bsd.port.mk>
