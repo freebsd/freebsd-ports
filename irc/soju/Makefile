@@ -1,7 +1,7 @@
 PORTNAME=	soju
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	irc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -12,6 +12,8 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules sqlite:3
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:sys:v0.6.0:sys
 
 OPTIONS_DEFAULT=	DOCS
 OPTIONS_DEFINE=		DOCS
@@ -27,6 +29,10 @@ PLIST_FILES=	bin/soju \
 
 DOCS_BUILD_DEPENDS=	scdoc:textproc/scdoc
 DOCS_PLIST_FILES=	man/man1/soju.1.gz \
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 post-build-DOCS-on:
 	${LOCALBASE}/bin/scdoc <${WRKSRC}/doc/${PORTNAME}.1.scd >${WRKSRC}/doc/${PORTNAME}.1
