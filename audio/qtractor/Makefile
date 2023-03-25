@@ -1,13 +1,12 @@
 PORTNAME=	qtractor
 DISTVERSIONPREFIX=	qtractor_
-DISTVERSION=	0_9_31
-PORTREVISION=	2
+DISTVERSION=	0.9.32
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/rncbc/qtractor/archive/refs/tags/ \
+MASTER_SITES=	https://download.sf.net/${PORTNAME}/ \
 		https://download.steinberg.net/sdk_downloads/:vst3sdk
-DISTFILES=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX} \
+DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 		${VST3_SDK_ARCHIVE}:vst3sdk
-EXTRACT_ONLY=	${PORTNAME}_${DISTVERSION}${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio/MIDI multi-track sequencer
@@ -46,7 +45,7 @@ USE_GNOME=	atk cairo gdkpixbuf2 gtk20 gtkmm24 pango
 USE_QT=		core gui svg widgets x11extras xml buildtools:build linguisttools:build qmake:build
 #USE_QT=		base svg tools:build # for Qt6
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}_${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 CMAKE_OFF=	CONFIG_CLAP # for audio/clap, but it doesn't install anything
 CMAKE_OFF+=	CONFIG_QT6 # breaks with Qt6: Gtk-ERROR **: 21:10:56.939: GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported
