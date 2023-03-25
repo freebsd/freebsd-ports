@@ -153,7 +153,6 @@
     SUBDIR += hashcash
     SUBDIR += hbiff
     SUBDIR += heirloom-mailx
-    SUBDIR += horde-turba
     SUBDIR += ifile
     SUBDIR += im
     SUBDIR += imap-uw
