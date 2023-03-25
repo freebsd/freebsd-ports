@@ -298,7 +298,6 @@
     SUBDIR += icecast-kh
     SUBDIR += icegenerator
     SUBDIR += ices
-    SUBDIR += id3ed
     SUBDIR += id3el
     SUBDIR += id3lib
     SUBDIR += id3mtag
