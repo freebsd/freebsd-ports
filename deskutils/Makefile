@@ -116,7 +116,6 @@
     SUBDIR += health
     SUBDIR += hebcal
     SUBDIR += helpviewer
-    SUBDIR += horde-groupware
     SUBDIR += horde-kronolith
     SUBDIR += horde-mnemo
     SUBDIR += horde-nag
