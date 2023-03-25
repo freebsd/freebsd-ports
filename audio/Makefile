@@ -89,7 +89,6 @@
     SUBDIR += chromaprint
     SUBDIR += cli-visualizer
     SUBDIR += clunk
-    SUBDIR += cmp3
     SUBDIR += cmt
     SUBDIR += cmus
     SUBDIR += codec2
