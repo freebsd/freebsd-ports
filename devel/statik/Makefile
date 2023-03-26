@@ -12,7 +12,7 @@ WWW=		https://github.com/rakyll/statik
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 riscv64
 
 USES=		go
 USE_GITHUB=	yes
