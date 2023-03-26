@@ -1,7 +1,7 @@
 PORTNAME=	hyperfine
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.0
-PORTREVISION=	6
+DISTVERSION=	1.16.1
+PORTREVISION=	0
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -21,46 +21,62 @@ GH_ACCOUNT=	sharkdp
 
 PLIST_FILES=	bin/hyperfine
 
-CARGO_CRATES=	aho-corasick-0.7.19 \
-		anyhow-1.0.64 \
+CARGO_CRATES=	ahash-0.7.6 \
+		ahash-0.8.3 \
+		aho-corasick-0.7.20 \
+		anyhow-1.0.69 \
 		approx-0.5.1 \
 		arrayvec-0.7.2 \
-		assert_cmd-2.0.4 \
+		assert_cmd-2.0.8 \
 		atty-0.2.14 \
 		autocfg-0.1.8 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		bstr-0.2.17 \
+		borsh-0.10.2 \
+		borsh-derive-0.10.2 \
+		borsh-derive-internal-0.10.2 \
+		borsh-schema-derive-internal-0.10.2 \
+		bstr-1.3.0 \
+		bytecheck-0.6.10 \
+		bytecheck_derive-0.6.10 \
+		byteorder-1.4.3 \
+		bytes-1.4.0 \
+		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		clap-3.2.20 \
-		clap_complete-3.2.4 \
-		clap_lex-0.2.4 \
+		clap-4.1.8 \
+		clap_complete-4.1.4 \
+		clap_lex-0.3.2 \
 		cloudabi-0.0.3 \
 		colored-2.0.0 \
-		console-0.15.1 \
-		csv-1.1.6 \
+		console-0.15.5 \
+		csv-1.2.1 \
 		csv-core-0.1.10 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
-		either-1.8.0 \
+		either-1.8.1 \
 		encode_unicode-0.3.6 \
-		fastrand-1.8.0 \
+		errno-0.2.8 \
+		errno-dragonfly-0.1.2 \
+		fastrand-1.9.0 \
 		float-cmp-0.9.0 \
 		fuchsia-cprng-0.1.1 \
-		getrandom-0.2.7 \
+		getrandom-0.2.8 \
 		hashbrown-0.12.3 \
+		hashbrown-0.13.2 \
 		hermit-abi-0.1.19 \
-		indexmap-1.9.1 \
-		indicatif-0.16.2 \
+		hermit-abi-0.3.1 \
+		indicatif-0.17.3 \
 		instant-0.1.12 \
-		itertools-0.10.3 \
-		itoa-0.4.8 \
-		itoa-1.0.3 \
+		io-lifetimes-1.0.6 \
+		is-terminal-0.4.4 \
+		itertools-0.10.5 \
+		itoa-1.0.6 \
 		lazy_static-1.4.0 \
-		libc-0.2.132 \
+		libc-0.2.140 \
+		linux-raw-sys-0.1.4 \
 		memchr-2.5.0 \
-		memoffset-0.6.5 \
-		nix-0.25.0 \
+		memoffset-0.7.1 \
+		nix-0.26.2 \
 		normalize-line-endings-0.3.0 \
 		num-0.2.1 \
 		num-bigint-0.2.6 \
@@ -70,22 +86,26 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		num-rational-0.2.4 \
 		num-traits-0.2.15 \
 		number_prefix-0.4.0 \
-		once_cell-1.14.0 \
-		os_str_bytes-6.3.0 \
+		once_cell-1.17.1 \
+		os_str_bytes-6.4.1 \
 		pin-utils-0.1.0 \
-		ppv-lite86-0.2.16 \
-		predicates-2.1.1 \
-		predicates-core-1.0.3 \
-		predicates-tree-1.0.5 \
-		proc-macro2-1.0.43 \
-		quote-1.0.21 \
+		portable-atomic-0.3.19 \
+		ppv-lite86-0.2.17 \
+		predicates-2.1.5 \
+		predicates-core-1.0.5 \
+		predicates-tree-1.0.7 \
+		proc-macro-crate-0.1.5 \
+		proc-macro2-1.0.52 \
+		ptr_meta-0.1.4 \
+		ptr_meta_derive-0.1.4 \
+		quote-1.0.26 \
 		rand-0.6.5 \
 		rand-0.8.5 \
 		rand_chacha-0.1.1 \
 		rand_chacha-0.3.1 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
-		rand_core-0.6.3 \
+		rand_core-0.6.4 \
 		rand_hc-0.1.0 \
 		rand_isaac-0.1.1 \
 		rand_jitter-0.1.4 \
@@ -94,33 +114,51 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		rand_xorshift-0.1.1 \
 		rdrand-0.4.0 \
 		redox_syscall-0.2.16 \
-		regex-1.6.0 \
+		regex-1.7.1 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.27 \
-		remove_dir_all-0.5.3 \
-		rust_decimal-1.26.1 \
-		ryu-1.0.11 \
-		serde-1.0.144 \
-		serde_derive-1.0.144 \
-		serde_json-1.0.85 \
+		regex-syntax-0.6.28 \
+		rend-0.4.0 \
+		rkyv-0.7.40 \
+		rkyv_derive-0.7.40 \
+		rust_decimal-1.29.0 \
+		rustix-0.36.9 \
+		ryu-1.0.13 \
+		seahash-4.1.0 \
+		serde-1.0.156 \
+		serde_derive-1.0.156 \
+		serde_json-1.0.94 \
 		shell-words-1.1.0 \
+		simdutf8-0.1.4 \
+		static_assertions-1.1.0 \
 		statistical-1.0.0 \
 		strsim-0.10.0 \
-		syn-1.0.99 \
-		tempfile-3.3.0 \
-		termcolor-1.1.3 \
-		terminal_size-0.1.17 \
-		termtree-0.2.4 \
-		textwrap-0.15.0 \
-		thiserror-1.0.34 \
-		thiserror-impl-1.0.34 \
-		unicode-ident-1.0.3 \
+		syn-1.0.109 \
+		tempfile-3.4.0 \
+		termcolor-1.2.0 \
+		terminal_size-0.2.5 \
+		termtree-0.4.0 \
+		thiserror-1.0.39 \
+		thiserror-impl-1.0.39 \
+		toml-0.5.11 \
+		unicode-ident-1.0.8 \
+		unicode-width-0.1.10 \
+		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-targets-0.42.2 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_msvc-0.42.2 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_msvc-0.42.2
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/hyperfine
