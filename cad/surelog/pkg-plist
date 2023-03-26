@@ -372,9 +372,9 @@ lib/libcapnp.so
 lib/libcapnp.so.0.8.0
 lib/libkj.so
 lib/libkj.so.0.8.0
-lib/libsurelog.so
 lib/libuhdm.so
 lib/surelog/libantlr4-runtime.a
 lib/surelog/libflatbuffers.a
+lib/surelog/libsurelog.so
 lib/uhdm/UHDM.capnp
 libdata/pkgconfig/Surelog.pc

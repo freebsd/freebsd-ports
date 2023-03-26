@@ -1,6 +1,6 @@
 PORTNAME=	surelog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.49
+DISTVERSION=	1.50
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,9 +32,10 @@ GH_TUPLE=	alainmarcel:antlr4:3143e88:antlr4/third_party/antlr4 \
 		google:flatbuffers:32a6744:flatbuffers/third_party/flatbuffers
 
 CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_OFF=	SURELOG_BUILD_TESTS
 CMAKE_ARGS=	-DFREEBSD_JAVA_VERSION=${USE_JAVA} \
 		-DPython3_EXECUTABLE=${PYTHON_CMD}
-CMAKE_TESTING_ON=	SURELOG_BUILD_TESTS
+CMAKE_TESTING_ON=	SURELOG_BUILD_TESTS # unclear how to run tests, see https://github.com/chipsalliance/Surelog/issues/3545
 
 CONFLICTS_INSTALL=	capnproto capnproto080 uhdm # bin/uhdm-dump lib/libcapnp.so
 
