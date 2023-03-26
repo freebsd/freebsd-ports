@@ -13,6 +13,7 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/colors/cold.clifm
 %%DATADIR%%/colors/contrast.clifm
 %%DATADIR%%/colors/cyberpunk.clifm
+%%DATADIR%%/colors/default-256.clifm
 %%DATADIR%%/colors/default.clifm
 %%DATADIR%%/colors/dm10s.clifm
 %%DATADIR%%/colors/dracula-vivid.clifm

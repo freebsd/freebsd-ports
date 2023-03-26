@@ -1,5 +1,5 @@
 PORTNAME=	clifm
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -18,13 +18,12 @@ GH_ACCOUNT=	leo-arch
 GH_PROJECT=	${PORTNAME}-colors:cfmc
 GH_TAGNAME=	b07f638:cfmc
 ALL_TARGET=	build
-SHEBANG_FILES=	misc/tools/manpages_comp_gen.py
+MAKE_ENV=	LIBS_FreeBSD="-I${LOCALBASE}/include -L${LOCALBASE}/lib \
+		-lreadline -lintl -lmagic"
+SHEBANG_FILES=	misc/tools/deroff.py misc/tools/manpages_comp_gen.py
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC_cfmc}/colors/*.clifm \
 		${STAGEDIR}${DATADIR}/colors
-
-post-stage:
-	@${RM} ${STAGEDIR}${DATADIR}/plugins/*.orig
 
 .include <bsd.port.mk>
