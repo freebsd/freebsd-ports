@@ -1,6 +1,6 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.2.2.56
+DISTVERSION=	7.3.3.49
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
@@ -47,7 +47,7 @@ USE_QT=		qmake:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	ONLYOFFICE
 GH_PROJECT=	DocumentServer
-GH_TAGNAME=	v7.2.2
+GH_TAGNAME=	v${DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}
 GH_TUPLE=	ONLYOFFICE:core:v${DISTVERSION}:core/core \
 		ONLYOFFICE:core-fonts:v${DISTVERSION}:corefonts/core-fonts \
 		ONLYOFFICE:dictionaries:v${DISTVERSION}:dictionaries/dictionaries \
@@ -56,7 +56,6 @@ GH_TUPLE=	ONLYOFFICE:core:v${DISTVERSION}:core/core \
 		ONLYOFFICE:sdkjs:v${DISTVERSION}:sdkjs/sdkjs \
 		ONLYOFFICE:server:v${DISTVERSION}:server/server \
 		ONLYOFFICE:web-apps:v${DISTVERSION}:webapps/web-apps \
-		ONLYOFFICE:plugin-mendeley:v${PLUGIN_VERSION}:sdkjs_plugins_mendeley/sdkjs-plugins/plugin-mendeley \
 		ONLYOFFICE:build_tools:v${DISTVERSION}:buildtools/build_tools \
 		ONLYOFFICE:DocumentBuilder:626d1e44db3d06ceb8298215a67ef0475912d89a:document_builder/DocumentBuilder \
 		ONLYOFFICE:onlyoffice.github.io:b26d001664d771df4f663d2d3ba7dd4a188b6cab:sdkjs_plugins_v1/onlyoffice.github.io \
@@ -92,15 +91,15 @@ SUB_LIST=	ETCDIR=${ETCDIR} \
 		PREFIX=${PREFIX} \
 		WWWDIR=${WWWDIR}
 
-PLUGIN_VERSION=	7.2.0.8
 # node version used with "npm install pkg@5.5.1"
 NODE_VERSION_PKGFETCH=	16.13.0
 # node version used in the ports tree
 NODE_VERSION_PORTS=	16.19.1
 
-MAKE_ENV=	BUILD_NUMBER="1" \
+MAKE_ENV=	BUILD_NUMBER="8" \
 		PKG_CACHE_PATH=${WRKDIR}/.pkg-cache \
-		PRODUCT_VERSION="${DISTVERSION}"
+		PRODUCT_VERSION=${DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/} \
+		BUILD_NUMBER=${DISTVERSION:C/^[0-9]+\.[0-9]+\.[0-9]+\.([0-9]+)/\1/}
 
 # Don't create __pycache__ directory when executing node-gyp
 # This is a workaround to avoid filesystem violations during poudriere build
@@ -123,6 +122,13 @@ post-extract:
 	@${MV} ${WRKSRC}/server/Common/config/production-linux.json ${WRKSRC}/server/Common/config/production-freebsd.json
 	@${MV} ${WRKSRC}/server/Common/config/development-linux.json ${WRKSRC}/server/Common/config/development-freebsd.json
 
+	# linux has moved to systemd init files, continue to using supervisord for now
+	${MKDIR} ${WRKSRC}/document-server-package/common/documentserver/supervisor
+.for i in ds-converter.conf ds-docservice.conf ds-metrics.conf ds.conf
+	${CP} ${FILESDIR}/${i} \
+		${WRKSRC}/document-server-package/common/documentserver/supervisor
+.endfor
+
 post-patch:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/core/Common/3dParty/icu/icu.pri \
@@ -140,17 +146,16 @@ post-patch:
 		${WRKSRC}/build_tools/scripts/build_server.py \
 		${WRKSRC}/document-server-package/Makefile
 	@${REINPLACE_CMD} -e 's|linux|freebsd|' -e 's|/etc|${LOCALBASE}/etc|' \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-docservice.conf.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-converter.conf.m4 \
-		${WRKSRC}/document-server-package/common/documentserver-example/supervisor/ds-example.conf.m4 \
+		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-docservice.conf \
+		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-converter.conf \
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4 \
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4
 	@${REINPLACE_CMD} 's|/var/www|${LOCALBASE}/www|' \
 		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-generate-allfonts.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-converter.conf.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-docservice.conf.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-metrics.conf.m4
+		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-converter.conf \
+		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-docservice.conf \
+		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-metrics.conf \
+		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4
 	@${REINPLACE_CMD} -e 's|/var/lib|/var/db|' -e 's|/var/www|${LOCALBASE}/www|' \
 			  -e 's|/usr/share|${LOCALBASE}/share|' -e 's|/etc|${LOCALBASE}/etc|' \
 		${WRKSRC}/server/Common/config/production-freebsd.json \
@@ -173,15 +178,11 @@ post-patch:
 do-build:
 	${INSTALL_SCRIPT} ${FILESDIR}/npm ${BINARY_LINKDIR}/npm
 
-	@${CP} ${FILESDIR}/packagejsons/server/package-lock.json ${WRKSRC}/server
-#	@${CP} ${FILESDIR}/packagejsons/server/Common/package-lock.json ${WRKSRC}/server/Common
-
 	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install patch-package
 	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install optipng-bin@5.1.0
 	@cd ${WRKSRC}/web-apps/build ; node_modules/.bin/patch-package
 	@cd ${WRKSRC}/web-apps/build/node_modules/optipng-bin ; ${SETENV} ${MAKE_ENV} npm run postinstall optipng-bin
 
-#	@cd ${WRKSRC}/web-apps/build ; ${SETENV} ${MAKE_ENV} npm install patch-package
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install grunt-cli
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install grunt
 	@cd ${WRKSRC}/server ; ${SETENV} ${MAKE_ENV} npm install pkg@5.5.1
@@ -235,6 +236,7 @@ create-caches-tarball:
 	# do some cleanup first
 	${RM} -r  ${WRKDIR}/.npm/_logs ${WRKDIR}/.npm/_update-notifier-last-checked ${WRKDIR}/.cache/yarn/v6/.tmp
 	${FIND} ${WRKDIR}/.cache -type f -perm 755 -exec file {} \; | ${EGREP} "ELF|PE32+|Mach-O" | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${RM}
+	${FIND} ${WRKDIR}/.pkg-cache -type f -perm 755 -exec file {} \; | ${EGREP} "ELF|PE32+|Mach-O" | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${RM}
 
 	cd ${WRKDIR} && \
 		${TAR} czf ${PORTNAME}-${DISTVERSION}-npm-cache.tar.gz .npm .cache .pkg-cache

@@ -1,5 +1,5 @@
---- document-server-package/Makefile.orig	2022-04-26 21:43:13 UTC
-+++ document-server-package/Makefile
+--- document-server-package/Makefile.orig	2023-02-13 11:11:48.689223000 +0100
++++ document-server-package/Makefile	2023-02-13 11:27:26.937335000 +0100
 @@ -23,6 +23,7 @@ PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
  PACKAGE_NAME := $(COMPANY_NAME_LOW)-$(PRODUCT_NAME_LOW)
  PACKAGE_VERSION := $(PRODUCT_VERSION)-$(BUILD_NUMBER)
@@ -8,7 +8,7 @@
  UNAME_M ?= $(shell uname -m)
  ifeq ($(UNAME_M),x86_64)
  	RPM_ARCH := x86_64
-@@ -143,6 +144,21 @@ else
+@@ -156,6 +157,21 @@ else
  		DS_EXAMLE := /var/www/$(DS_PREFIX)-example
  		DEV_NULL := /dev/null
  	endif
@@ -30,7 +30,7 @@
  	ifeq ($(UNAME_S),Darwin)
  		PLATFORM := mac
  		SHARED_EXT := .dylib
-@@ -160,6 +176,12 @@ else
+@@ -173,6 +189,12 @@ else
  	ifeq ($(UNAME_M),x86_64)
  		ARCHITECTURE := 64
  	endif
@@ -43,7 +43,7 @@
  	ifneq ($(filter %86,$(UNAME_M)),)
  		ARCHITECTURE := 32
  	endif
-@@ -318,7 +340,7 @@ documentserver:
+@@ -324,7 +346,7 @@ documentserver:
  		
  documentserver:
  	mkdir -p $(DOCUMENTSERVER_FILES)
@@ -52,7 +52,7 @@
  
  	mkdir -p $(DOCUMENTSERVER_CONFIG)
  	mkdir -p $(DOCUMENTSERVER_CONFIG)/log4js
-@@ -327,25 +349,25 @@ documentserver:
+@@ -333,25 +355,25 @@ documentserver:
  	mv -f $(DOCUMENTSERVER)/server/Common/config/log4js/*.json $(DOCUMENTSERVER_CONFIG)/log4js/
  
  	# rename product specific folders
@@ -85,7 +85,7 @@
  	rm -fr $(3RD_PARTY_LICENSE_FILES)
  
  ifeq ($(PLATFORM),win)
-@@ -354,33 +376,33 @@ endif
+@@ -360,33 +382,33 @@ endif
  	cat exe/license/3rd-Party.txt ; >> $(DOCUMENTSERVER)/3rd-Party.txt
  endif
  
@@ -128,7 +128,7 @@
  
  ifeq ($(PLATFORM),win)		
  	cd $(DOCUMENTSERVER)/npm && \
-@@ -394,7 +416,7 @@ documentserver-example:
+@@ -400,7 +422,7 @@ documentserver-example:
  
  documentserver-example:
  	mkdir -p $(DOCUMENTSERVER_EXAMPLE)
@@ -137,50 +137,21 @@
  	
  	mkdir -p $(DOCUMENTSERVER_EXAMPLE_CONFIG)
  
-@@ -403,7 +425,7 @@ documentserver-example:
+@@ -409,7 +431,7 @@ documentserver-example:
  	# Prevent for modification original config
  	chmod ug=r $(DOCUMENTSERVER_EXAMPLE_CONFIG)/*.json
  
 -	sed "s|{{OFFICIAL_PRODUCT_NAME}}|"$(OFFICIAL_PRODUCT_NAME)"|"  -i $(DOCUMENTSERVER_EXAMPLE)/welcome/*.html
 +	sed -i '' "s|{{OFFICIAL_PRODUCT_NAME}}|"$(OFFICIAL_PRODUCT_NAME)"|" $(DOCUMENTSERVER_EXAMPLE)/welcome/*.html
  
- 	echo "Done" > $@
+ 	/usr/bin/find $(DOCUMENTSERVER_EXAMPLE)/welcome -depth -type f -exec sed -i "s_{{year}}_$(shell date +"%Y")_g" {} \;
  
-@@ -419,28 +441,6 @@ exe/$(PACKAGE_NAME).iss : exe/package.iss
- exe/$(PACKAGE_NAME).iss : exe/package.iss
- 	mv -f $< $@
- 
--%.rpm: 
--	mkdir -p $(@D)
--
--	cd $(@D)/../../.. && rpmbuild \
--		-bb \
--		--define '_topdir $(@D)/../../../builddir' \
--		--define '_package_name $(PACKAGE_NAME)' \
--		--define '_product_version $(PRODUCT_VERSION)' \
--		--define '_build_number $(BUILD_NUMBER)' \
--		--define '_company_name $(COMPANY_NAME)' \
--		--define '_product_name $(PRODUCT_NAME)' \
--		--define '_publisher_name $(PUBLISHER_NAME)' \
--		--define '_publisher_url $(PUBLISHER_URL)' \
--		--define '_support_url $(SUPPORT_URL)' \
--		--define '_support_mail $(SUPPORT_MAIL)' \
--		--define '_company_name_low $(COMPANY_NAME_LOW)' \
--		--define '_product_name_low $(PRODUCT_NAME_LOW)' \
--		--define '_ds_prefix $(DS_PREFIX)' \
--		--define '_binary_payload w7.xzdio' \
--		--target $(RPM_ARCH) \
--		$(PACKAGE_NAME).spec
--
- ifeq ($(COMPANY_NAME_LOW),onlyoffice)
- M4_PARAMS += -D M4_DS_EXAMPLE_ENABLE=1
- endif
-@@ -471,6 +471,8 @@ $(DEB): $(DEB_DEPS) $(COMMON_DEPS) $(LINUX_DEPS) docum
+@@ -496,6 +518,8 @@ $(DEB): $(DEB_DEPS) $(COMMON_DEPS) $(LINUX_DEPS) docum
  
  %.exe:
  	cd $(@D) && $(ISCC) $(ISCC_PARAMS) $(PACKAGE_NAME).iss
 +
 +freebsd: $(COMMON_DEPS) $(LINUX_DEPS) documentserver
  
- $(EXE): $(WIN_DEPS) $(COMMON_DEPS) documentserver documentserver-example $(ISXDL) $(NGINX) $(PSQL) $(NSSM)
+ $(EXE): $(WIN_DEPS) $(COMMON_DEPS) documentserver documentserver-example $(NGINX) $(PSQL) $(NSSM)
  
