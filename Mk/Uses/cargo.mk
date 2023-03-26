@@ -249,6 +249,11 @@ CARGO_ENV+=	OPENSSL_LIB_DIR=${OPENSSLLIB} \
 .include "${USESDIR}/pkgconfig.mk"
 .  endif
 
+.  if ${_CARGO_CRATES:Mzstd-sys}
+# Use the system's zstd instead of building the bundled version
+CARGO_ENV+=	ZSTD_SYS_USE_PKG_CONFIG=1
+.  endif
+
 .  for _index _crate _name _version in ${_CARGO_CRATES}
 # Split up semantic version and try to sanitize it by removing
 # pre-release identifier (-) or build metadata (+)

@@ -12,7 +12,8 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-BUILD_DEPENDS=	gmake:devel/gmake
+BUILD_DEPENDS=	gmake:devel/gmake \
+		zstd>0:archivers/zstd
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cargo perl5 pkgconfig

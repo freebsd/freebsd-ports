@@ -1,5 +1,6 @@
 PORTNAME=	arti
 DISTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	cs@FreeBSD.org
@@ -7,6 +8,8 @@ COMMENT=	Implementation of Tor, in Rust
 WWW=		https://arti.torproject.org/
 
 LICENSE=	MIT
+
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo sqlite ssl
 USE_RC_SUBR=	arti

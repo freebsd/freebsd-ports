@@ -1,7 +1,7 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.31.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -15,6 +15,7 @@ BROKEN_i386=	cargo:warning=c/freebsd.c:31:10: error: conflicting types for 'get_
 
 BUILD_DEPENDS=	gn:devel/gn \
 		libunwind>0:devel/libunwind
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		cargo compiler:c++17-lang cpe gmake gnome ninja:build pkgconfig:build python:3.9+,build
 

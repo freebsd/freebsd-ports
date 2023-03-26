@@ -1,5 +1,6 @@
 PORTNAME=	wezterm
 DISTVERSION=	20230326-111934-3666303c
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,7 +10,8 @@ WWW=		https://wezfurlong.org/wezterm/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libwayland-egl.so:graphics/wayland \
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libwayland-egl.so:graphics/wayland \
 		libssh2.so:security/libssh2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxkbcommon-x11.so:x11/libxkbcommon \

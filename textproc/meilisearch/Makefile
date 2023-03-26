@@ -15,6 +15,8 @@ WWW=		https://www.meilisearch.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	zstd>0:archivers/zstd
+
 USES=		cargo pkgconfig
 USE_GITHUB=	yes
 # Following is generated with following:

@@ -1,5 +1,6 @@
 PORTNAME=	git-cinnabar
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,7 +10,8 @@ WWW=		https://github.com/glandium/git-cinnabar
 LICENSE=	GPLv2 MPL20
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libcurl.so:ftp/curl
 RUN_DEPENDS=	git:devel/git
 
 USES=		cargo gmake

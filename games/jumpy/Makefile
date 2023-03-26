@@ -1,6 +1,7 @@
 PORTNAME=	jumpy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -11,7 +12,8 @@ LICENSE=	CC-BY-NC-4.0 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE_MIT=	${WRKSRC}/licenses/LICENSE-MIT
 
-LIB_DEPENDS=	libasound.so:audio/alsa-lib \
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins \
 		${LOCALBASE}/lib/libvulkan.so:graphics/vulkan-loader
