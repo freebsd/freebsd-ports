@@ -222,7 +222,6 @@
     SUBDIR += hedgedoc
     SUBDIR += hiawatha
     SUBDIR += hiawatha-monitor
-    SUBDIR += horde-base
     SUBDIR += hotcrp
     SUBDIR += hs-DAV
     SUBDIR += hs-hjsmin
