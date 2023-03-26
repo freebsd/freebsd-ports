@@ -41,7 +41,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/CPAN/Archive/Zip/ZipFileMember.pm
 %%SLIMDIR%%/CPAN/Async/Util.pm
 %%SLIMDIR%%/CPAN/Bundle/LWP.pm
-%%SLIMDIR%%/CPAN/CGI/Util.pm
 %%SLIMDIR%%/CPAN/Cache/BaseCache.pm
 %%SLIMDIR%%/CPAN/Cache/Cache.pm
 %%SLIMDIR%%/CPAN/Cache/CacheUtils.pm
@@ -233,9 +232,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/CPAN/HTTP/Request/Common.pm
 %%SLIMDIR%%/CPAN/HTTP/Response.pm
 %%SLIMDIR%%/CPAN/HTTP/Status.pm
-%%SLIMDIR%%/CPAN/I18N/LangTags.pm
-%%SLIMDIR%%/CPAN/I18N/LangTags/Detect.pm
-%%SLIMDIR%%/CPAN/I18N/LangTags/List.pm
 %%SLIMDIR%%/CPAN/IO/AIO.pm
 %%SLIMDIR%%/CPAN/IO/Compress/Gzip/Constants.pm
 %%SLIMDIR%%/CPAN/IO/Interface.pm
@@ -328,13 +324,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/CPAN/MRO/Compat.pm
 %%SLIMDIR%%/CPAN/Mac/FSEvents.pm
 %%SLIMDIR%%/CPAN/Mac/FSEvents/Event.pm
-%%SLIMDIR%%/CPAN/Media/Scan.pm
-%%SLIMDIR%%/CPAN/Media/Scan/Audio.pm
-%%SLIMDIR%%/CPAN/Media/Scan/Error.pm
-%%SLIMDIR%%/CPAN/Media/Scan/Image.pm
-%%SLIMDIR%%/CPAN/Media/Scan/Progress.pm
-%%SLIMDIR%%/CPAN/Media/Scan/Result.pm
-%%SLIMDIR%%/CPAN/Media/Scan/Video.pm
 %%SLIMDIR%%/CPAN/Module/Find.pm
 %%SLIMDIR%%/CPAN/Net/HTTP.pm
 %%SLIMDIR%%/CPAN/Net/HTTP/Methods.pm
@@ -946,13 +935,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/JSON/XS/Boolean.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/MP3/Cut/Gapless.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/MP3/Cut/Gapless/Track.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Media/Scan.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Media/Scan/Audio.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Media/Scan/Error.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Media/Scan/Image.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Media/Scan/Progress.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Media/Scan/Result.pm
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Media/Scan/Video.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Module/Build.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Module/Build/Base.pm
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/Module/Build/Compat.pm
@@ -1110,7 +1092,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Image/Scale/Scale.so
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/JSON/XS/XS.so
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/MP3/Cut/Gapless/Gapless.so
-%%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Media/Scan/Scan.so
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Sub/Name/Name.so
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/Template/Stash/XS/XS.so
 %%SLIMDIR%%/CPAN/arch/%%PERL_VER%%/%%ARCHNAME%%/auto/XML/Parser/Expat/Expat.so
@@ -1788,13 +1769,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/IR/Front_Panel.ir
 %%SLIMDIR%%/IR/Slim_Devices_Remote.ir
 %%SLIMDIR%%/IR/jvc_dvd.ir
-%%SLIMDIR%%/MySQL/COPYING
-%%SLIMDIR%%/MySQL/README
-%%SLIMDIR%%/MySQL/errmsg.sys
-%%SLIMDIR%%/MySQL/errmsg.txt
-%%SLIMDIR%%/MySQL/my-highmem.tt
-%%SLIMDIR%%/MySQL/my.tt
-%%SLIMDIR%%/MySQL/system.sql
 %%SLIMDIR%%/README.md
 %%SLIMDIR%%/SOCKS.txt
 %%SLIMDIR%%/SQL/SQLite/schema_10_down.sql
@@ -2009,7 +1983,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Networking/SqueezeNetwork/Base.pm
 %%SLIMDIR%%/Slim/Networking/SqueezeNetwork/Players.pm
 %%SLIMDIR%%/Slim/Networking/SqueezeNetwork/PrefSync.pm
-%%SLIMDIR%%/Slim/Networking/SqueezeNetwork/Stats.pm
 %%SLIMDIR%%/Slim/Networking/SqueezeNetwork/Sync.pm
 %%SLIMDIR%%/Slim/Networking/UDP.pm
 %%SLIMDIR%%/Slim/Player/Boom.pm
@@ -2048,11 +2021,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/ACLFiletest/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/ACLFiletest/install.xml
 %%SLIMDIR%%/Slim/Plugin/ACLFiletest/strings.txt
-%%SLIMDIR%%/Slim/Plugin/Amazon/HTML/EN/plugins/Amazon/html/images/icon.png
-%%SLIMDIR%%/Slim/Plugin/Amazon/HTML/EN/plugins/Amazon/html/images/icon_40x40_m.png
-%%SLIMDIR%%/Slim/Plugin/Amazon/Plugin.pm
-%%SLIMDIR%%/Slim/Plugin/Amazon/install.xml
-%%SLIMDIR%%/Slim/Plugin/Amazon/strings.txt
 %%SLIMDIR%%/Slim/Plugin/AppGallery/HTML/EN/plugins/AppGallery/html/images/icon.png
 %%SLIMDIR%%/Slim/Plugin/AppGallery/HTML/EN/plugins/AppGallery/html/images/icon_40x40_m.png
 %%SLIMDIR%%/Slim/Plugin/AppGallery/Plugin.pm
@@ -2147,11 +2115,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/FullTextSearch/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/FullTextSearch/install.xml
 %%SLIMDIR%%/Slim/Plugin/FullTextSearch/strings.txt
-%%SLIMDIR%%/Slim/Plugin/ImageBrowser/HTML/EN/html/images/icon_folder.png
-%%SLIMDIR%%/Slim/Plugin/ImageBrowser/HTML/EN/plugins/ImageBrowser/html/images/icon.png
-%%SLIMDIR%%/Slim/Plugin/ImageBrowser/Plugin.pm
-%%SLIMDIR%%/Slim/Plugin/ImageBrowser/install.xml
-%%SLIMDIR%%/Slim/Plugin/ImageBrowser/strings.txt
 %%SLIMDIR%%/Slim/Plugin/InfoBrowser/Default/default.opml
 %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser/html/images/icon.png
 %%SLIMDIR%%/Slim/Plugin/InfoBrowser/HTML/EN/plugins/InfoBrowser/html/images/icon_40x40_m.png
@@ -2203,11 +2166,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/LineOut/Plugin.pm
 %%SLIMDIR%%/Slim/Plugin/LineOut/install.xml
 %%SLIMDIR%%/Slim/Plugin/LineOut/strings.txt
-%%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN/plugins/MP3tunes/html/images/icon.png
-%%SLIMDIR%%/Slim/Plugin/MP3tunes/HTML/EN/plugins/MP3tunes/html/images/icon_40x40_m.png
-%%SLIMDIR%%/Slim/Plugin/MP3tunes/Plugin.pm
-%%SLIMDIR%%/Slim/Plugin/MP3tunes/install.xml
-%%SLIMDIR%%/Slim/Plugin/MP3tunes/strings.txt
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/ClientSettings.pm
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/Common.pm
 %%SLIMDIR%%/Slim/Plugin/MusicMagic/HTML/EN/plugins/MusicMagic/html/docs/customtags.html
@@ -2259,11 +2217,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/OnlineLibrary/install.xml
 %%SLIMDIR%%/Slim/Plugin/OnlineLibrary/strings.txt
 %%SLIMDIR%%/Slim/Plugin/OnlineLibraryBase.pm
-%%SLIMDIR%%/Slim/Plugin/Orange/HTML/EN/plugins/Orange/html/images/icon.png
-%%SLIMDIR%%/Slim/Plugin/Orange/Metadata.pm
-%%SLIMDIR%%/Slim/Plugin/Orange/Plugin.pm
-%%SLIMDIR%%/Slim/Plugin/Orange/install.xml
-%%SLIMDIR%%/Slim/Plugin/Orange/strings.txt
 %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images/btn_thumbs_down.gif
 %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/Default/html/images/btn_thumbs_up.gif
 %%SLIMDIR%%/Slim/Plugin/Pandora/HTML/EN/plugins/Pandora/html/images/icon.png
@@ -2417,9 +2370,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Plugin/WiMP/ProtocolHandler.pm
 %%SLIMDIR%%/Slim/Plugin/WiMP/install.xml
 %%SLIMDIR%%/Slim/Plugin/WiMP/strings.txt
-%%SLIMDIR%%/Slim/Plugin/YALP/Plugin.pm
-%%SLIMDIR%%/Slim/Plugin/YALP/install.xml
-%%SLIMDIR%%/Slim/Plugin/YALP/strings.txt
 %%SLIMDIR%%/Slim/Plugin/iTunes/Common.pm
 %%SLIMDIR%%/Slim/Plugin/iTunes/HTML/EN/plugins/iTunes/settings/itunes.html
 %%SLIMDIR%%/Slim/Plugin/iTunes/Importer.pm
@@ -2465,7 +2415,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Schema/Storage.pm
 %%SLIMDIR%%/Slim/Schema/Track.pm
 %%SLIMDIR%%/Slim/Schema/TrackPersistent.pm
-%%SLIMDIR%%/Slim/Schema/Video.pm
 %%SLIMDIR%%/Slim/Schema/Year.pm
 %%SLIMDIR%%/Slim/Utils/Accessor.pm
 %%SLIMDIR%%/Slim/Utils/Alarm.pm
@@ -2540,7 +2489,6 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/Slim/Utils/SQLiteHelper.pm
 %%SLIMDIR%%/Slim/Utils/Scanner.pm
 %%SLIMDIR%%/Slim/Utils/Scanner/API.pm
-%%SLIMDIR%%/Slim/Utils/Scanner/LMS.pm
 %%SLIMDIR%%/Slim/Utils/Scanner/Local.pm
 %%SLIMDIR%%/Slim/Utils/Scanner/Local/AIO.pm
 %%SLIMDIR%%/Slim/Utils/Scanner/Local/Async.pm
@@ -2623,6 +2571,7 @@ etc/newsyslog.conf.d/logitechmediaserver.conf
 %%SLIMDIR%%/lib/AnyEvent/Socket.pm
 %%SLIMDIR%%/lib/Audio/Scan.pm
 %%SLIMDIR%%/lib/CGI/Cookie.pm
+%%SLIMDIR%%/lib/CGI/Util.pm
 %%SLIMDIR%%/lib/Cache/FileBackend.pm
 %%SLIMDIR%%/lib/Class/Accessor/Grouped.pm
 %%SLIMDIR%%/lib/DBIx/Class/ResultSet.pm

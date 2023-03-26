@@ -1,10 +1,9 @@
 
 PORTNAME=	logitechmediaserver
-DISTVERSION=	8.2.0.g2021.11.13
-PORTREVISION=	1
+DISTVERSION=	8.3.1
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	trueos@norwegianrockcat.com
 COMMENT=	Audio streaming server that powers Squeezebox players from Logitech
 WWW=		https://wiki.slimdevices.com/index.php/Squeezebox_Server
 
@@ -24,8 +23,8 @@ RUN_DEPENDS=	p5-IO-Socket-SSL>=0:security/p5-IO-Socket-SSL
 
 USES=		gettext-runtime gmake perl5 shebangfix
 USE_GITHUB=	yes
-GH_TUPLE=	Logitech:slimserver:4694dd8 \
-		Logitech:slimserver-vendor:c2162d0:vendor
+GH_TUPLE=	Logitech:slimserver:026019b \
+		Logitech:slimserver-vendor:947eb3a:vendor
 USE_RC_SUBR=	logitechmediaserver
 SHEBANG_FILES=	Bin/darwin/check-update.pl \
 		CPAN/Log/Log4perl/Layout/PatternLayout/Multiline.pm \
