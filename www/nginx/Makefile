@@ -187,7 +187,7 @@ MAIL_SMTP_CONFIGURE_OFF=	--without-mail_smtp_module
 MAIL_SSL_USES=			ssl
 MAIL_SSL_CONFIGURE_ON=		--with-mail_ssl_module
 STREAM_VARS=			DSO_BASEMODS+=stream
-TREAM_REALIP_CONFIGURE_ON=	--with-stream_realip_module
+STREAM_REALIP_CONFIGURE_ON=	--with-stream_realip_module
 STREAM_SSL_IMPLIES=		HTTP_SSL
 STREAM_SSL_CONFIGURE_ON=	--with-stream_ssl_module
 STREAM_SSL_PREREAD_CONFIGURE_ON=	--with-stream_ssl_preread_module
