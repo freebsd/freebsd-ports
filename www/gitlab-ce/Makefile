@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.8.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -48,7 +48,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-declarative_policy>=1.1.0<1.2:security/rubygem-declarative_policy \
 	rubygem-devise-rails61>=4.8.1<4.9:devel/rubygem-devise-rails61 \
 	rubygem-bcrypt>=3.1.14<3.2:security/rubygem-bcrypt \
-	rubygem-doorkeeper>=5.5.4<6:security/rubygem-doorkeeper \
+	rubygem-doorkeeper562>=5.5.4<5.6.3:security/rubygem-doorkeeper562 \
 	rubygem-doorkeeper-openid_connect>=1.8.3<2:security/rubygem-doorkeeper-openid_connect \
 	rubygem-rexml>=3.2.5<3.3:textproc/rubygem-rexml \
 	rubygem-ruby-saml>=1.13.0<1.14:security/rubygem-ruby-saml \
