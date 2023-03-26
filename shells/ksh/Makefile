@@ -19,9 +19,6 @@ WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
 
-BROKEN_aarch64=		Fails to link: missing sbrk
-BROKEN_riscv64=		Fails to link: missing sbrk
-
 USES=		compiler:c11
 
 USE_GITHUB=	yes

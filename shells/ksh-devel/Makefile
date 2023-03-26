@@ -20,8 +20,6 @@ WWW=		http://www.kornshell.com/
 
 LICENSE=	EPL
 
-BROKEN_aarch64=		Fails to link: missing sbrk
-BROKEN_riscv64=		Fails to link: missing sbrk
 BROKEN_FreeBSD_12=	exit code 139 making lib/libcmd
 
 HASH=		72d895d8
