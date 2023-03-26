@@ -87,6 +87,8 @@ LICENSE=		GPLv3
 CMAKE_ARGS+=		-DENABLE_GPL:BOOL=ON
 .endif
 
+PORTSCOUT=	limit:^cvc5-[1-9].* # prevent older generation versions like 1.8
+
 post-extract:
 	@${CP} ${DISTDIR}/antlr-3.4-complete.jar ${WRKDIR}/antlr3.jar
 	@${ECHO_CMD} "#!/bin/sh" > ${WRKDIR}/antlr3
