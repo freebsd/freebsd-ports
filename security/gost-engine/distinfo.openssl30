@@ -1,0 +1,5 @@
+TIMESTAMP = 1678166603
+SHA256 (gost-engine-engine-g20230106-2b22503_GH0.tar.gz) = d8fd1cd726b0d03a0c70f532bfc82e1fced6ee377a4ad7fc5afb00c7e4957b22
+SIZE (gost-engine-engine-g20230106-2b22503_GH0.tar.gz) = 1654657
+SHA256 (provider-corner-libprov-e9f3e6a_GH0.tar.gz) = fc397e028dd3bebab8d3bab492657e5f8916995ab9b2b19e7244f16463ba4f35
+SIZE (provider-corner-libprov-e9f3e6a_GH0.tar.gz) = 9369
