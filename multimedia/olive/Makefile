@@ -20,7 +20,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 RUN_DEPENDS=	frei0r>0:graphics/frei0r
 #		libopentimelineio.so:multimedia/opentimelineio
 
-USES=		cmake compiler:c++11-lang desktop-file-utils gl pkgconfig qt:5 shared-mime-info
+USES=		cmake compiler:c++17-lang desktop-file-utils gl pkgconfig qt:5 shared-mime-info
 USE_QT=		concurrent core dbus gui multimedia network opengl svg widgets x11extras \
 		buildtools:build linguisttools:build qmake:build testlib:build
 USE_GL=		gl
