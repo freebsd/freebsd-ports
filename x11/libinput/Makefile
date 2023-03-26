@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_COMMIT=	d9f45fd1261da85b4eb44f8aa82e1500b99f303b
+GL_COMMIT=	0b005eb64b12603e65a620a77c67ec62fd03f413
 
 CPE_VENDOR=	freedesktop
 
@@ -35,6 +35,7 @@ SHEBANG_FILES=	tools/libinput-analyze-per-slot-delta.py \
 		tools/libinput-measure-touchpad-pressure.py \
 		tools/libinput-measure-touchpad-size.py \
 		tools/libinput-measure-touchpad-tap.py \
+		tools/libinput-list-kernel-devices.py \
 		tools/libinput-replay.py
 # The following files are not installed, but might be
 # run as part of the test suite.
