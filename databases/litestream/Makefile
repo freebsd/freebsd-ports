@@ -1,7 +1,7 @@
 PORTNAME=	litestream
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.9
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	databases
 
 MAINTAINER=	nc@FreeBSD.org
@@ -35,7 +35,7 @@ GH_TUPLE=	\
 		golang:oauth2:f6687ab2804c:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:886fb9371eb4:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:da31bd327af9:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.6:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.1.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
