@@ -1,7 +1,7 @@
 Unbundle strndup() on all Unix-like systems
 
---- ../libssh-rs-c48876e7027d3c21747a283be631177aad533eff/libssh-rs-sys/build.rs.orig	2023-03-17 18:59:44 UTC
-+++ ../libssh-rs-c48876e7027d3c21747a283be631177aad533eff/libssh-rs-sys/build.rs
+--- ../libssh-rs-44a08196acd1a2277ec7ebce2a47618775f3c59c/libssh-rs-sys/build.rs.orig	2023-03-23 20:40:44 UTC
++++ ../libssh-rs-44a08196acd1a2277ec7ebce2a47618775f3c59c/libssh-rs-sys/build.rs
 @@ -87,13 +87,11 @@ fn main() {
          cfg.define("HAVE_TERMIOS_H", Some("1"));
          cfg.define("HAVE_UNISTD_H", Some("1"));
