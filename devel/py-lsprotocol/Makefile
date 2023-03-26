@@ -1,5 +1,5 @@
 PORTNAME=	lsprotocol
-PORTVERSION=	2022.0.0a9
+PORTVERSION=	2022.0.0a10
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,8 @@ RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.7+
 USE_PYTHON=	distutils autoplist concurrent
+
+NO_ARCH=	yes
 
 pre-configure:
 	@( \
