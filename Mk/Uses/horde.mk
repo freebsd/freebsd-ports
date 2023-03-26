@@ -117,7 +117,6 @@ horde-Horde_Vfs-DEPEND=		${PEARDIR}/Horde/Vfs.php:sysutils/pear-Horde_Vfs
 horde-Horde_View-DEPEND=	${PEARDIR}/Horde/View.php:devel/pear-Horde_View
 horde-Horde_Xml_Element-DEPEND=	${PEARDIR}/Horde/Xml/Element.php:textproc/pear-Horde_Xml_Element
 horde-Horde_Xml_Wbxml-DEPEND=	${PEARDIR}/Horde/Xml/Wbxml.php:textproc/pear-Horde_Xml_Wbxml
-horde-content-DEPEND=		${LOCALBASE}/${HORDE_DIR}/content/lib/Tagger.php:devel/horde-content
 horde-horde-DEPEND=		${LOCALBASE}/${HORDE_DIR}/index.php:www/horde-base
 horde-timeobjects-DEPEND=	${LOCALBASE}/${HORDE_DIR}/timeobjects/lib/Driver.php:devel/horde-timeobjects
 
