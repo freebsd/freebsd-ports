@@ -1,6 +1,6 @@
---- src/bin/bat/main.rs.orig	2022-01-08 17:01:20.000000000 +0100
-+++ src/bin/bat/main.rs	2022-01-13 23:14:55.825571000 +0100
-@@ -232,7 +232,6 @@
+--- src/bin/bat/main.rs.orig	2023-03-26 13:03:26.858196000 +0200
++++ src/bin/bat/main.rs	2023-03-26 13:03:44.520025000 +0200
+@@ -246,7 +246,6 @@
  
      let mut report = bugreport!()
          .info(SoftwareVersion::default())
