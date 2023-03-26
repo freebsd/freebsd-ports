@@ -1,6 +1,6 @@
 PORTNAME=	wireguard-go
 PORTVERSION=	0.0.20220316
-PORTREVISION=	11
+PORTREVISION=	12
 PORTEPOCH=	1
 CATEGORIES=	net net-vpn
 MASTER_SITES=	https://git.zx2c4.com/wireguard-go/snapshot/
@@ -17,8 +17,8 @@ USES=		gmake go:modules,no_targets tar:xz
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	golang:crypto:3147a52a75dd:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:27dd8689420f:golang_net/vendor/golang.org/x/net \
-		golang:sys:039c03cc5b86:golang_sys/vendor/golang.org/x/sys
+		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys
 
 MAKE_ENV+=	${GO_ENV} GOFLAGS="${GO_BUILDFLAGS}"
 
