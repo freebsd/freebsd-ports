@@ -14,6 +14,9 @@
 # to lag behind the rest of the official Qt5 ones, which is why we set
 # QT5_VERSION and DISTINFO_FILE here.
 
+# In order to successfully build this port in pousriere you need to add
+# MAX_FILES_qt5_webengine=4096 to /usr/local/etc/poudriere.conf
+
 PORTNAME=	webengine
 DISTVERSION=	${QT5_VERSION}
 PORTREVISION=	0
