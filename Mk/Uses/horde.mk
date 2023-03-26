@@ -118,7 +118,6 @@ horde-Horde_View-DEPEND=	${PEARDIR}/Horde/View.php:devel/pear-Horde_View
 horde-Horde_Xml_Element-DEPEND=	${PEARDIR}/Horde/Xml/Element.php:textproc/pear-Horde_Xml_Element
 horde-Horde_Xml_Wbxml-DEPEND=	${PEARDIR}/Horde/Xml/Wbxml.php:textproc/pear-Horde_Xml_Wbxml
 horde-horde-DEPEND=		${LOCALBASE}/${HORDE_DIR}/index.php:www/horde-base
-horde-timeobjects-DEPEND=	${LOCALBASE}/${HORDE_DIR}/timeobjects/lib/Driver.php:devel/horde-timeobjects
 
 .  if defined(USE_HORDE_RUN)
 .    for DEP in ${USE_HORDE_RUN}

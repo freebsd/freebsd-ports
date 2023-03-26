@@ -948,7 +948,6 @@
     SUBDIR += highlighterkit
     SUBDIR += highway
     SUBDIR += hoel
-    SUBDIR += horde-timeobjects
     SUBDIR += hotspot
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
