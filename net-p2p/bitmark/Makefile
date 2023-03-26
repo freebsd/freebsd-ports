@@ -11,7 +11,7 @@ WWW=		https://github.com/bitmark-inc/bitmarkd
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 riscv64
 ONLY_FOR_ARCHS_REASON=	depends on go which is not supported in this architecture
 
 LIB_DEPENDS=	libargon2.so:security/libargon2 \
