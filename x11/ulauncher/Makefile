@@ -1,6 +1,5 @@
 PORTNAME=	ulauncher
-PORTVERSION=	5.15.1
-PORTREVISION=	1
+PORTVERSION=	5.15.2
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/Ulauncher/Ulauncher/releases/download/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
