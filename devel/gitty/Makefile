@@ -1,7 +1,7 @@
 PORTNAME=	gitty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 
 MAINTAINER=	dch@FreeBSD.org
@@ -12,10 +12,15 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
+USE_GITHUB=	nodefault
+GH_TUPLE=	golang:sys:v0.6.0:sys
+
 GO_MODULE=	github.com/muesli/${PORTNAME}
 
-.include "${.CURDIR}/Makefile.deps"
-
 PLIST_FILES=	bin/${PORTNAME}
+
+pre-build:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 .include <bsd.port.mk>
