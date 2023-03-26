@@ -1,5 +1,5 @@
 PORTNAME=	fusefs-libs3
-DISTVERSION=	3.14.0
+DISTVERSION=	3.14.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libfuse/libfuse/releases/download/fuse-${DISTVERSION}/
 DISTNAME=	fuse-${DISTVERSION}
