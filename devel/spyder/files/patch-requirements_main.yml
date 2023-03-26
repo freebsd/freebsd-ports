@@ -1,17 +1,14 @@
---- requirements/main.yml.orig	2022-11-04 20:45:25 UTC
+--- requirements/main.yml.orig	2023-01-18 21:16:10 UTC
 +++ requirements/main.yml
-@@ -29,11 +29,11 @@ dependencies:
+@@ -29,9 +29,9 @@ dependencies:
    - pyqt <5.16
    - pyqtwebengine <5.16
    - python-lsp-black >=1.2.0
--  - python-lsp-server >=1.6.0,<1.7.0
-+  - python-lsp-server >0
+-  - python-lsp-server >=1.7.1,<1.8.0
++  - python-lsp-server
    - pyzmq >=22.1.0
 -  - qdarkstyle >=3.0.2,<3.1.0
 +  - qdarkstyle >=3.0.2
    - qstylizer >=0.2.2
--  - qtawesome >=1.2.1
-+  - qtawesome >=0
+   - qtawesome >=1.2.1
    - qtconsole >=5.4.0,<5.5.0
-   - qtpy >=2.1.0
-   - rtree >=0.9.7
