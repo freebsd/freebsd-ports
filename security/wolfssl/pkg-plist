@@ -194,6 +194,7 @@ include/wolfssl/wolfcrypt/ge_448.h
 include/wolfssl/wolfcrypt/ge_operations.h
 include/wolfssl/wolfcrypt/hash.h
 include/wolfssl/wolfcrypt/hmac.h
+include/wolfssl/wolfcrypt/hpke.h
 include/wolfssl/wolfcrypt/integer.h
 include/wolfssl/wolfcrypt/kdf.h
 include/wolfssl/wolfcrypt/kyber.h
@@ -237,7 +238,7 @@ include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.35
-lib/libwolfssl.so.35.3.0
+lib/libwolfssl.so.35.4.0
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/QUIC.md
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
