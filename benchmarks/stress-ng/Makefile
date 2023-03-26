@@ -1,6 +1,6 @@
 PORTNAME=	stress-ng
 DISTVERSIONPREFIX=	V
-DISTVERSION=	0.15.04
+DISTVERSION=	0.15.06
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -18,11 +18,12 @@ ALL_TARGET=	# empty
 
 PLIST_FILES=	bin/stress-ng man/man1/stress-ng.1.gz
 
-OPTIONS_DEFINE=		JUDY LIBINOTIFY XXHASH
+OPTIONS_DEFINE=		GPU JUDY LIBINOTIFY XXHASH
 OPTIONS_DEFINE_amd64=	INTELIPSEC
 OPTIONS_DEFAULT=	JUDY LIBINOTIFY XXHASH
 OPTIONS_DEFAULT_amd64=	INTELIPSEC
 
+GPU_DESC=	Enable support for GPU stressor (add GL)
 INTELIPSEC_DESC=	Enable support for Intel's IPsec library
 JUDY_DESC=		Enable support for (lib)Judy
 LIBINOTIFY_DESC=	Enable support for libinotify
@@ -38,7 +39,15 @@ LIBINOTIFY_LDFLAGS=		-linotify
 XXHASH_LIB_DEPENDS=	libxxhash.so:devel/xxhash
 XXHASH_LDFLAGS=	-lxxhash
 
+GPU_USES=	gl
+
 MAKE_ARGS=	VERBOSE=1
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MGPU}
+USE_GL=	egl glesv2 gbm
+.endif
 
 pre-patch:
 	${MKDIR} ${WRKSRC}/configs
@@ -62,6 +71,15 @@ post-patch-LIBINOTIFY-off:
 post-patch-XXHASH-off:
 	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_XXHASH
 	${TOUCH} ${WRKSRC}/configs/HAVE_XXHASH_H
+
+post-patch-GPU-off:
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_EGL
+	${TOUCH} ${WRKSRC}/configs/HAVE_EGL_H
+	${TOUCH} ${WRKSRC}/configs/HAVE_EGL_EXT_H
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_GLES2
+	${TOUCH} ${WRKSRC}/configs/HAVE_GLES2_H
+	${TOUCH} ${WRKSRC}/configs/HAVE_LIB_GBM
+	${TOUCH} ${WRKSRC}/configs/HAVE_GBM_H
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/stress-ng ${STAGEDIR}${PREFIX}/bin
