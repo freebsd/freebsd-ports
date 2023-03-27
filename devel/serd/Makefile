@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		meson pkgconfig python:test tar:xz
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
+MESON_ARGS=	-Ddocs=disabled
 
 PLIST_SUB=	VERSION=${PORTVERSION}
 
