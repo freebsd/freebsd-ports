@@ -1,5 +1,6 @@
 PORTNAME=	highway
 DISTVERSION=	1.0.4
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,7 +14,8 @@ TEST_DEPENDS=	googletest>0:devel/googletest
 USES=		cmake:testing compiler:c++11-lib
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-CFLAGS_powerpc64=	-mcrypto -mpower8-vector
+CFLAGS_powerpc64=	-DHWY_DISABLE_PPC8_CRYPTO
+CFLAGS_powerpc=	-DHWY_DISABLE_PPC8_CRYPTO
 CMAKE_ON=	BUILD_SHARED_LIBS HWY_SYSTEM_GTEST
 CMAKE_OFF+=	${CMAKE_TESTING_ON}
 
