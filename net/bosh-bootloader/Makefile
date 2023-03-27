@@ -1,6 +1,6 @@
 PORTNAME=	bosh-bootloader
 PORTVERSION=	7.6.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net sysutils
 
 MAINTAINER=	dumbbell@FreeBSD.org
@@ -9,10 +9,9 @@ WWW=		https://github.com/cloudfoundry/bosh-bootloader
 
 LICENSE=	APACHE20
 
-BROKEN_aarch64= fails to build: vendor/golang.org/x/sys/unix/cap_freebsd.go:18:23: undefined: CAP_RIGHTS_VERSION_00
-
 USE_GITHUB=	yes
-GH_TUPLE=	cloudfoundry:bosh-bootloader:v${PORTVERSION}
+GH_TUPLE=	cloudfoundry:bosh-bootloader:v${PORTVERSION} \
+		golang:sys:v0.6.0:sys
 
 USES=		go tar:xz
 
@@ -20,6 +19,10 @@ GO_PKGNAME=	github.com/cloudfoundry/bosh-bootloader
 GO_TARGET=	github.com/cloudfoundry/bosh-bootloader/bbl
 
 PLIST_FILES=	bin/bbl
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 post-patch:
 	${REINPLACE_CMD} -E -e 's|(Version = )"dev"|\1"${PORTVERSION}"|' ${WRKSRC}/bbl/main.go
