@@ -410,6 +410,8 @@ share/ART/images/intent-absolute.svg
 share/ART/images/intent-perceptual.svg
 share/ART/images/intent-relative.svg
 share/ART/images/intent-saturation.svg
+share/ART/images/light_pipeline_off.svg
+share/ART/images/light_pipeline_on.svg
 share/ART/images/local-edit.svg
 share/ART/images/magnifier-1to1-small.svg
 share/ART/images/magnifier-1to1.svg
