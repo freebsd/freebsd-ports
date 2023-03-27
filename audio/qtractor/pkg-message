@@ -4,8 +4,8 @@
 ===============================================================================
 You installed Qtractor: an audio/MIDI multi-track sequencer application.
 
-In order to use it you need to install and run alsa-seq-server which
-creates /dev/snd/seq that is required by Qtractor.
+In order to use it you need to install and start as a service alsa-seq-server
+which creates /dev/snd/seq that is required by Qtractor.
 
 Please note that alsa-seq-server, in turn, needs this line in /boot/loader.conf:
 cuse4bsd_load="YES"
