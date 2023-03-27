@@ -1,6 +1,6 @@
 PORTNAME=	aws-iam-authenticator
 PORTVERSION=	0.6.2
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -49,7 +49,7 @@ GH_TUPLE=	\
 		golang:net:cd36cc0744dd:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:bf48bf16ab8d:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:1d35b9e2eb4e:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
 		golang:time:1f47c861a9ac:golang_time/vendor/golang.org/x/time \
