@@ -11,6 +11,7 @@ WWW=		https://pwmt.org/projects/girara/
 USES=		compiler:c11 gnome meson pathfix pkgconfig tar:xz
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_LDCONFIG=	yes
+MESON_ARGS=	-Ddocs=disabled -Dtests=disabled
 
 PATHFIX_MAKEFILEIN=	Makefile
 LIBDIR=			${PREFIX}/lib
