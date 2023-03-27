@@ -10,6 +10,7 @@ include/diplib/border.h
 include/diplib/boundary.h
 include/diplib/chain_code.h
 include/diplib/color.h
+include/diplib/deconvolution.h
 include/diplib/detection.h
 include/diplib/dft.h
 include/diplib/display.h
