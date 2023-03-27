@@ -1,6 +1,6 @@
 PORTNAME=	art
 DISTVERSION=	1.19.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://bitbucket.org/agriggio/art/downloads/
 PKGNAMESUFFIX=	-raw-image-editor
@@ -39,9 +39,14 @@ EXTRACT_CMD=	gtar
 
 LDFLAGS+=	-lpthread # otherwise build breaks on some systems: error: undefined symbol: pthread_create
 
+OPTIONS_DEFINE=		LTO
+OPTIONS_DEFAULT=	LTO
+
+LTO_CMAKE_BOOL=		WITH_LTO
+
 .if exists(/usr/include/omp.h)
-OPTIONS_DEFINE=		OPENMP
-OPTIONS_DEFAULT=	OPENMP
+OPTIONS_DEFINE+=	OPENMP
+OPTIONS_DEFAULT+=	OPENMP
 
 OPENMP_CMAKE_BOOL=	OPTION_OMP
 .else
