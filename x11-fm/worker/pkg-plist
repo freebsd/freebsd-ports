@@ -8,6 +8,7 @@ share/pixmaps/WorkerIcon32.xpm
 share/pixmaps/WorkerIcon48.xpm
 share/appdata/worker.appdata.xml
 share/applications/worker.desktop
+share/metainfo/de.boomerangsworld.worker.metainfo.xml
 %%DATADIR%%/catalogs/cesky.catalog
 %%DATADIR%%/catalogs/cesky.catalog.utf8
 %%DATADIR%%/catalogs/cesky.catalog.flags
