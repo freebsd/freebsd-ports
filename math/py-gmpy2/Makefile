@@ -16,14 +16,14 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr
 
 USES=		localbase python
-USE_PYTHON=	distutils autoplist pytest # 2 tests fail, see https://github.com/aleaxit/gmpy/issues/403
+USE_PYTHON=	distutils autoplist
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/gmpy2/gmpy2*.so
 
-do-test:
-	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} pytest
+do-test: # pytest isn't currently supported, see https://github.com/aleaxit/gmpy/issues/403#issuecomment-1484584428
+	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} test/runtests.py
 
 .include <bsd.port.mk>
