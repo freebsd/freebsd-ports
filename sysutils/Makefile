@@ -1447,6 +1447,7 @@
     SUBDIR += tty-clock
     SUBDIR += ttyd
     SUBDIR += ttyload
+    SUBDIR += tuckr
     SUBDIR += tuptime
     SUBDIR += turbostat
     SUBDIR += tw_cli
