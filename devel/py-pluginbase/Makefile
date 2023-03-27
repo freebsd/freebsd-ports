@@ -1,11 +1,11 @@
 PORTNAME=	pluginbase
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	lantw44@gmail.com
-COMMENT=	Support library for building plugins sytems in Python
+COMMENT=	Enable the development of flexible plugin systems in Python
 WWW=		https://github.com/mitsuhiko/pluginbase
 
 LICENSE=	BSD3CLAUSE
