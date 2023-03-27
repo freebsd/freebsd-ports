@@ -1,6 +1,6 @@
 PORTNAME=	crowdsec-firewall-bouncer
 PORTVERSION=	0.0.23.r2  # NOTE: change BUILD_VERSION and BUILD_TAG as well
-PORTREVISION=	10
+PORTREVISION=	11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
@@ -20,6 +20,7 @@ GH_ACCOUNT=	crowdsecurity
 GH_PROJECT=	cs-firewall-bouncer
 GH_TAGNAME=	v0.0.23.r2-freebsd
 #GH_TAGNAME is automatically set from DISTVERSION
+GH_TUPLE=	golang:sys:v0.6.0:sys
 
 USE_RC_SUBR=	crowdsec_firewall
 
@@ -31,6 +32,10 @@ MAKE_ENV=	BUILD_TAG="bc4bb1d531d47ad94ead2dce3a11f6391b1e8619" \
 		BUILD_VERSION="v0.0.23-rc2"
 
 ETCDIR=		${PREFIX}/etc/crowdsec/bouncers
+
+pre-patch:
+	${RM} -r ${WRKSRC}/vendor/golang.org/x/sys
+	${LN} -s ${WRKDIR}/sys-* ${WRKSRC}/vendor/golang.org/x/sys
 
 post-patch:
 	${REINPLACE_CMD} 's,$${BACKEND},pf,g' \
