@@ -1,5 +1,5 @@
 PORTNAME=	ampache
-PORTVERSION=	5.0.0
+PORTVERSION=	5.5.1
 DISTVERSIONSUFFIX=	_all
 CATEGORIES=	audio www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
@@ -38,6 +38,9 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	for f in $$(${FIND} ${WRKSRC} -name .htaccess); do \
+		${MV} $$f $$f.dist; \
+		done
 	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} '-not -regex ^./man.*')
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR} '-not -regex ^./docs.* -a -not -name *.bak')
 	${INSTALL_MAN} ${WRKSRC}/docs/man/man1/${PORTNAME}.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
