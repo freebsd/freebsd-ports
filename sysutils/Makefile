@@ -1201,6 +1201,7 @@
     SUBDIR += rsyslog8
     SUBDIR += rtsx-kmod
     SUBDIR += rtty
+    SUBDIR += rtx
     SUBDIR += rubygem-backup
     SUBDIR += rubygem-bolt
     SUBDIR += rubygem-bosh-gen
