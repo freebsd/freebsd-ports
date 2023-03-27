@@ -1,13 +1,13 @@
 PORTNAME=	cu2qu
-PORTVERSION=	1.6.5
-PORTREVISION=	3
+PORTVERSION=	1.6.7p2
 CATEGORIES=	x11-fonts python
-MASTER_SITES=	PYPI
+MASTER_SITES=	PYPI/source/c/cu2qu
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/p/.post/}
 
 MAINTAINER=	lantw44@gmail.com
 COMMENT=	Cubic-to-quadratic bezier curve conversion
-WWW=		https://github.com/googlei18n/cu2qu
+WWW=		https://github.com/googlefonts/cu2qu
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
