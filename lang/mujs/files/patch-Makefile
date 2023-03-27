@@ -14,3 +14,21 @@ Patch contains 2 changes:
  
  OPTIM = -O3
  
+@@ -79,7 +80,7 @@ build/sanitize/mujs: main.c one.c $(SRCS) $(HDRS)
+ 
+ build/debug/libmujs.$(SO): one.c $(SRCS) $(HDRS)
+ 	@mkdir -p $(@D)
+-	$(CC) $(CFLAGS) -g -fPIC -shared -o $@ one.c -lm
++	$(CC) $(CFLAGS) -g -fPIC -shared $(LDFLAGS) -o $@ one.c -lm
+ build/debug/libmujs.o: one.c $(SRCS) $(HDRS)
+ 	@mkdir -p $(@D)
+ 	$(CC) $(CFLAGS) -g -c -o $@ one.c
+@@ -92,7 +93,7 @@ build/debug/mujs-pp: pp.c build/debug/libmujs.o
+ 
+ build/release/libmujs.$(SO): one.c $(SRCS) $(HDRS)
+ 	@mkdir -p $(@D)
+-	$(CC) $(CFLAGS) $(OPTIM) -fPIC -shared -o $@ one.c -lm
++	$(CC) $(CFLAGS) $(OPTIM) -fPIC -shared $(LDFLAGS) -o $@ one.c -lm
+ build/release/libmujs.o: one.c $(SRCS) $(HDRS)
+ 	@mkdir -p $(@D)
+ 	$(CC) $(CFLAGS) $(OPTIM) -c -o $@ one.c
