@@ -1,6 +1,6 @@
 PORTNAME=	xmoto
-PORTVERSION=	0.6.1
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.6.2
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -10,17 +10,15 @@ WWW=		https://xmoto.tuxfamily.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libode.so:devel/ode \
-		libpng.so:graphics/png \
+LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
 		libxdg-basedir.so:x11/libxdg-basedir
 
 USES=		compiler:c++11-lang cmake gl gnome jpeg lua:52 pkgconfig sdl sqlite
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
-USE_SDL=	sdl mixer ttf net
+USE_SDL=	sdl2 mixer2 ttf2 net2
 USE_GL=		gl glu
-CMAKE_ARGS=	-DOpenGL_GL_PREFERENCE="GLVND"
 
 PORTDOCS=	README.md ChangeLog
 PORTDATA=	*
@@ -38,8 +36,8 @@ NLS_CMAKE_BOOL=	USE_GETTEXT
 
 # ensure bundled depends are not used
 post-extract:
-.for d in bzip2 lua ode xdgbasedir
-	@${RM} -r ${WRKSRC}/src/${d}
+.for d in bzip2 lua xdgbasedir
+	@${RM} -r ${WRKSRC}/vendor/${d}
 .endfor
 
 post-patch:
