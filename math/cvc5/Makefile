@@ -35,7 +35,9 @@ CMAKE_ARGS+=		-DANTLR_BINARY=${WRKDIR}/antlr3 \
 			-DPython_EXECUTABLE:STRING=${PYTHON_CMD}
 CMAKE_ON=		BUILD_SHARED_LIBS
 CMAKE_OFF=		BUILD_BINDINGS_PYTHON USE_PYTHON3 # Python binding should be a separate port
-CMAKE_TESTING_ON=	ENABLE_UNIT_TESTING # 2 tests fail, see https://github.com/cvc5/cvc5/issues/9569
+CMAKE_TESTING_ON=	ENABLE_UNIT_TESTING
+CMAKE_TESTING_TARGET=	check # check target runs only quick tests (based on https://github.com/cvc5/cvc5/issues/9569#issuecomment-1484943348)
+#CMAKE_TESTING_TARGET=	test # test target also runs longer tests, 2 of which fail, see https://github.com/cvc5/cvc5/issues/9569
 
 OPTIONS_DEFINE=			COCOALIB EDITLINE JAVA
 OPTIONS_GROUP=			SOLVERS
