@@ -1,5 +1,5 @@
 PORTNAME=	scheduler
-DISTVERSION=	0.8.3
+DISTVERSION=	0.8.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typeguard>=2.6.0:devel/py-typeguard@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes
