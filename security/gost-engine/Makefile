@@ -12,12 +12,12 @@ FLAVORS=	base openssl30
 
 openssl30_PKGNAMESUFFIX=	-${FLAVOR}
 
-BROKEN_SSL=				libressl libressl-devel
+BROKEN_SSL=				libressl libressl-devel openssl31
 BROKEN_SSL_REASON_libressl=		needs features only available in OpenSSL 1.1.1+
 BROKEN_SSL_REASON_libressl-devel=	needs features only available in OpenSSL 1.1.1+
 BROKEN_SSL_REASON_base=			needs either ssl=${FLAVOR} or FLAVOR=base
 BROKEN_SSL_REASON_openssl30=		needs either ssl=${FLAVOR} or FLAVOR=openssl30
-#BROKEN_SSL_REASON_openssl31=		needs either ssl=${FLAVOR} or FLAVOR=openssl31
+BROKEN_SSL_REASON_openssl31=		not ready for openssl31
 
 BUILD_DEPENDS=  cmake>=3.18.1:devel/cmake
 
