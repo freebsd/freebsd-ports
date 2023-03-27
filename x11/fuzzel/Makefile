@@ -1,5 +1,6 @@
 PORTNAME=	fuzzel
 DISTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -49,6 +50,7 @@ PNG_MESON_OFF=		-Dpng-backend=none
 post-patch:
 # Respect PREFIX for icons
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
+		${WRKSRC}/completions/fish/${PORTNAME}.fish \
 		${WRKSRC}/completions/zsh/_${PORTNAME} \
 		${WRKSRC}/xdg.c
 # Respect PREFIX for system-wide config
