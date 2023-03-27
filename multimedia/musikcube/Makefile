@@ -1,5 +1,5 @@
 PORTNAME=	musikcube
-DISTVERSION=	0.99.6
+DISTVERSION=	0.99.7
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org

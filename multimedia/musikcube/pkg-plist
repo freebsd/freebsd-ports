@@ -55,6 +55,7 @@ include/musikcube/musikcore/sdk/version.h
 %%DATADIR%%/locales/it_IT.json
 %%DATADIR%%/locales/ja_JP.json
 %%DATADIR%%/locales/ru_RU.json
+%%DATADIR%%/locales/uk_UA.json
 %%DATADIR%%/locales/zh_CN.json
 %%DATADIR%%/musikcube
 %%DATADIR%%/musikcubed
