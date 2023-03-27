@@ -5535,6 +5535,7 @@
     SUBDIR += py-transaction
     SUBDIR += py-transitions
     SUBDIR += py-tree-format
+    SUBDIR += py-treelib
     SUBDIR += py-trimesh
     SUBDIR += py-trove-classifiers
     SUBDIR += py-ttictoc
