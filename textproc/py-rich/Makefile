@@ -20,6 +20,8 @@ NO_ARCH=	yes
 USES=		python:3.7+
 USE_PYTHON=	autoplist pep517 pytest
 
+BINARY_ALIAS=	git=false
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 30900
