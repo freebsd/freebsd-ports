@@ -1,7 +1,7 @@
 PORTNAME=	gnash
 PORTVERSION=	0.8.10
-PORTREVISION=	55
-CATEGORIES=	graphics
+PORTREVISION=	56
+CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://git.savannah.gnu.org/cgit/gnash.git/snapshot/
 DISTNAME=	gnash-2b3bdede0305c4fc3ad21a0a4197330606c9b880
 
@@ -33,7 +33,7 @@ CONFLICTS=	gnash-devel
 
 USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
 		pkgconfig jpeg gnome gl sdl desktop-file-utils xorg
-USE_CSTD=	gnu89
+USE_CSTD=	gnu11
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 USE_GNOME=	atk gdkpixbuf2 gtk20 libxml2 pango
