@@ -1,5 +1,5 @@
 PORTNAME=	qutip-qip
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.3
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,11 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qutip>=4.6:devel/py-qutip@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qutip>=4.5:devel/py-qutip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # 5 tests fail, see https://github.com/qutip/qutip-qip/issues/196
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
@@ -26,8 +26,5 @@ NO_ARCH=	yes
 
 post-patch:
 	@cd ${WRKSRC} && ${ECHO} ${DISTVERSION} > VERSION
-
-do-test:
-	@cd ${WRKDIR} && ${SETENV} ${TEST_ENV} pytest
 
 .include <bsd.port.mk>
