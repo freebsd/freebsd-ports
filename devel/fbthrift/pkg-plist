@@ -246,6 +246,7 @@ include/thrift/lib/cpp2/async/ServerChannel.h
 include/thrift/lib/cpp2/async/ServerGeneratorStream-inl.h
 include/thrift/lib/cpp2/async/ServerGeneratorStream.h
 include/thrift/lib/cpp2/async/ServerPublisherStream.h
+include/thrift/lib/cpp2/async/ServerRequestData.h
 include/thrift/lib/cpp2/async/ServerSinkBridge.h
 include/thrift/lib/cpp2/async/ServerStream-inl.h
 include/thrift/lib/cpp2/async/ServerStream.h
@@ -546,6 +547,7 @@ include/thrift/lib/cpp2/type/detail/Name.h
 include/thrift/lib/cpp2/type/detail/NativeType.h
 include/thrift/lib/cpp2/type/detail/Runtime.h
 include/thrift/lib/cpp2/type/detail/Traits.h
+include/thrift/lib/cpp2/type/detail/TypeClassFromTypeTag.h
 include/thrift/lib/cpp2/type/detail/TypeInfo.h
 include/thrift/lib/cpp2/type/detail/TypeRegistry.h
 include/thrift/lib/cpp2/type/detail/Wrap.h
