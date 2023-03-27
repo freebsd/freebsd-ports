@@ -1,6 +1,5 @@
 PORTNAME=	wdune
-PORTVERSION=	1.926
-PORTREVISION=	4
+PORTVERSION=	1.956
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.ourproject.org/pub/wdune/
 

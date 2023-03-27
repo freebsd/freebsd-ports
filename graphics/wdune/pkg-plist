@@ -86,13 +86,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_example/fin.png
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_example/fire.png
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_example/main.cpp
-%%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_example/opengl_example.anjuta
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_example/robot.x3dv
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_scripting_example/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_scripting_example/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_scripting_example/ScriptingExample.wrl
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/opengl_scripting_example/main.cpp
-%%PORTDOCS%%%%DOCSDIR%%/export_example_c++/qt_opengl_example/.qmake.stash
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/qt_opengl_example/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/qt_opengl_example/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/export_example_c++/qt_opengl_example/Untitled.wrl
