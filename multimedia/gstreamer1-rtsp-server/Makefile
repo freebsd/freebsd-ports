@@ -15,6 +15,7 @@ USES=		bison gnome gstreamer libtool meson ninja pathfix pkgconfig python:3.8+,b
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 introspection:build
 USE_GSTREAMER=	good bad
+MESON_ARGS=	-Ddoc=disabled
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
