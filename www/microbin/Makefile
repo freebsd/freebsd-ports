@@ -1,7 +1,6 @@
 PORTNAME=	microbin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
-PORTREVISION=	2
+DISTVERSION=	1.2.1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -113,7 +112,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		hashbrown-0.12.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		html-escape-0.2.11 \
+		html-escape-0.2.13 \
 		http-0.2.8 \
 		http-range-0.1.5 \
 		httparse-1.8.0 \
