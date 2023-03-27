@@ -1,6 +1,5 @@
 PORTNAME=	slepc
-DISTVERSION=	3.18.2
-PORTREVISION=	1
+DISTVERSION=	3.18.3
 CATEGORIES=	math devel
 MASTER_SITES=	http://slepc.upv.es/download/distrib/
 
@@ -13,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
+		libmetis.so:math/metis \
 		libmpich.so:net/mpich \
 		libpetsc.so:science/PETSc
 
