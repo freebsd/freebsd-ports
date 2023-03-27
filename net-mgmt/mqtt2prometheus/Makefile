@@ -1,7 +1,7 @@
 PORTNAME=		mqtt2prometheus
 DISTVERSIONPREFIX=	v
 DISTVERSION=		0.1.6
-PORTREVISION=	10
+PORTREVISION=		11
 CATEGORIES=		net-mgmt
 
 MAINTAINER=	manu@FreeBSD.org
@@ -39,7 +39,7 @@ GH_TUPLE=	\
 		go-logfmt:logfmt:v0.5.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
 		matttproud:golang_protobuf_extensions:v1.0.1:extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mwitkow:go-conntrack:2f068394615f:mwitkow_go_conntrack/vendor/github.com/mwitkow/go-conntrack \
-		golang:sys:47abb6519492:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		jpillora:backoff:v1.0.0:jpillora_backoff/vendor/github.com/jpillora/backoff \
 		protocolbuffers:protobuf-go:v1.23.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf
