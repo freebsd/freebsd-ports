@@ -19,7 +19,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist flavors pep517 pytest
+USE_PYTHON=	autoplist pep517 pytest
 
 # Windows specific tests
 PYTEST_IGNORED_TESTS=	test_escape_windows \
