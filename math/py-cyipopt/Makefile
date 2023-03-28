@@ -1,7 +1,6 @@
 PORTNAME=	cyipopt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	2
+DISTVERSION=	1.2.0
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -22,8 +21,14 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
 USES=		fortran python:3.6+ pkgconfig # fortran because ipopt's pkg-config returns gcc libs
+USE_PYTHON=	distutils cython autoplist pytest
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	matthias-k
-USE_PYTHON=	distutils cython autoplist
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/ipopt_wrapper${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>
