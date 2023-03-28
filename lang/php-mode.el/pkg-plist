@@ -8,6 +8,12 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/php-face.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-flymake.el
 %%EMACS_VERSION_SITE_LISPDIR%%/php-flymake.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/php-format.el
+%%EMACS_VERSION_SITE_LISPDIR%%/php-format.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/php-ide-phpactor.el
+%%EMACS_VERSION_SITE_LISPDIR%%/php-ide-phpactor.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/php-ide.el
+%%EMACS_VERSION_SITE_LISPDIR%%/php-ide.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-local-manual.el
 %%EMACS_VERSION_SITE_LISPDIR%%/php-local-manual.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/php-mode-debug.el

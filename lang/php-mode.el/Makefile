@@ -1,7 +1,6 @@
 PORTNAME=	php-mode.el
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.24.2
-PORTREVISION=	1
+DISTVERSION=	1.24.3
 CATEGORIES=	lang elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -28,6 +27,12 @@ LISP_FILES=	lisp/php-align.el \
 		lisp/php-face.elc \
 		lisp/php-flymake.el \
 		lisp/php-flymake.elc \
+		lisp/php-format.el \
+		lisp/php-format.elc \
+		lisp/php-ide-phpactor.el \
+		lisp/php-ide-phpactor.elc \
+		lisp/php-ide.el \
+		lisp/php-ide.elc \
 		lisp/php-local-manual.el \
 		lisp/php-local-manual.elc \
 		lisp/php-mode-debug.el \
