@@ -5,7 +5,7 @@ MASTER_SITES=	GNU LOCAL/hrs/a2ps/:i18n
 
 MAINTAINER=	dirk.meyer@dinoex.sub.org
 COMMENT=	Formats an ASCII file for printing on a postscript printer
-WWW=		http://www.inf.enst.fr/~demaille/a2ps/
+WWW=		https://www.gnu.org/software/a2ps/
 
 LICENSE=	GPLv3
 
