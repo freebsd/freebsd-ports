@@ -1,4 +1,5 @@
 PORTNAME=	kalendar
+PORTREVISION=	1
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
 CATEGORIES=	deskutils kde kde-applications
 
@@ -8,6 +9,9 @@ WWW=		https://invent.kde.org/pim/kalendar
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-only.txt
+
+BUILD_DEPENDS=	kirigami-addons>=0:x11-toolkits/kirigami-addons
+RUN_DEPENDS=	kirigami-addons>=0:x11-toolkits/kirigami-addons
 
 USES=		cmake compiler:c++17-lang desktop-file-utils grantlee:5 kde:5 \
 		qt:5 tar:xz xorg
