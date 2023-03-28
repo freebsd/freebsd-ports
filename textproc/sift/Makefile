@@ -1,7 +1,7 @@
 PORTNAME=	sift
 PORTVERSION=	0.9.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	31
+PORTREVISION=	32
 CATEGORIES=	textproc
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -19,7 +19,7 @@ PLIST_FILES=	bin/sift
 
 GH_ACCOUNT=	svent
 GH_TUPLE=	golang:crypto:0559593:golang_crypto/vendor/golang.org/x/crypto \
-		golang:sys:05e143d:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:term:065cf7b:golang_term/vendor/golang.org/x/term \
 		svent:go-flags:4bcbad3:svent_goflags/vendor/github.com/svent/go-flags \
 		svent:go-nbreader:7cef48d:svent_gonbreader/vendor/github.com/svent/go-nbreader
