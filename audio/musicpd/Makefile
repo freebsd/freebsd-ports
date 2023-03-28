@@ -19,7 +19,7 @@ USES=		compiler:c++17-lang localbase:ldflags meson pkgconfig \
 		python:build tar:xz
 
 USE_RC_SUBR=	${PORTNAME}
-MESON_ARGS=	-Dauto_features=disabled \
+MESON_ARGS=	--auto-features=disabled \
 		-Dbzip2=enabled \
 		-Dhttpd=true \
 		-Dicu=enabled \
