@@ -20,6 +20,7 @@ LIB_DEPENDS=	libcairo.so:graphics/cairo \
 USES=		compiler:c11 desktop-file-utils gettext-tools:build gnome meson \
 		ninja pkgconfig python:3.6+
 USE_GNOME=	gdkpixbuf2 glib20 gtk30
+MESON_ARGS=	-Dseccomp=disabled -Dtests=disabled
 
 OPTIONS_DEFINE=		SQLITE SYNCTEX
 OPTIONS_DEFAULT=	SQLITE SYNCTEX
