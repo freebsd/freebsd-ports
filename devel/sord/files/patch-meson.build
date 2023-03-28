@@ -1,0 +1,15 @@
+Manpages are available even with -Ddocs=disabled
+
+--- meson.build.orig	2022-09-09 03:08:05 UTC
++++ meson.build
+@@ -128,10 +128,8 @@ if not get_option('tools').disabled()
+     meson.override_find_program('sord_validate', sord_validate)
+   endif
+ 
+-  if not get_option('docs').disabled()
+     install_man(files('doc/sordi.1'))
+     install_man(files('doc/sord_validate.1'))
+-  endif
+ endif
+ 
+ if not get_option('docs').disabled()
