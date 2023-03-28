@@ -1,5 +1,5 @@
 PORTNAME=	haproxy
-DISTVERSION=	2.7.5
+DISTVERSION=	2.7.6
 CATEGORIES=	net www
 MASTER_SITES=	http://www.haproxy.org/download/2.7/src/
 
