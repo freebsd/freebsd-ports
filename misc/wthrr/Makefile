@@ -1,6 +1,6 @@
 PORTNAME=	wthrr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	misc
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -28,18 +28,18 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.24 \
-		clap-4.1.10 \
-		clap_derive-4.1.9 \
+		clap-4.1.13 \
+		clap_derive-4.1.12 \
 		clap_lex-0.3.3 \
 		codespan-reporting-0.11.1 \
 		colored-2.0.0 \
 		console-0.15.5 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
-		cxx-1.0.93 \
-		cxx-build-1.0.93 \
-		cxxbridge-flags-1.0.93 \
-		cxxbridge-macro-1.0.93 \
+		cxx-1.0.94 \
+		cxx-build-1.0.94 \
+		cxxbridge-flags-1.0.94 \
+		cxxbridge-macro-1.0.94 \
 		dialoguer-0.10.3 \
 		directories-4.0.1 \
 		dirs-sys-0.3.7 \
@@ -74,12 +74,12 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		httpdate-1.0.2 \
 		hyper-0.14.25 \
 		hyper-tls-0.5.0 \
-		iana-time-zone-0.1.53 \
+		iana-time-zone-0.1.54 \
 		iana-time-zone-haiku-0.1.1 \
 		idna-0.3.0 \
-		indexmap-1.9.2 \
+		indexmap-1.9.3 \
 		instant-0.1.12 \
-		io-lifetimes-1.0.7 \
+		io-lifetimes-1.0.9 \
 		ipnet-2.7.1 \
 		itoa-1.0.6 \
 		js-sys-0.3.61 \
@@ -89,37 +89,35 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		linux-raw-sys-0.1.4 \
 		log-0.4.17 \
 		memchr-2.5.0 \
-		mime-0.3.16 \
+		mime-0.3.17 \
 		mio-0.8.6 \
 		native-tls-0.2.11 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
 		once_cell-1.17.1 \
-		openssl-0.10.46 \
+		openssl-0.10.48 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.81 \
+		openssl-sys-0.9.83 \
 		optional_struct-0.3.1 \
 		optional_struct_internal-0.3.1 \
 		optional_struct_macro_impl-0.3.1 \
-		os_str_bytes-6.4.1 \
+		os_str_bytes-6.5.0 \
 		percent-encoding-2.2.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.26 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.52 \
+		proc-macro2-1.0.54 \
 		pure-rust-locales-0.5.6 \
 		quote-1.0.26 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.7.1 \
-		regex-syntax-0.6.28 \
-		reqwest-0.11.14 \
+		regex-1.7.3 \
+		regex-syntax-0.6.29 \
+		reqwest-0.11.15 \
 		ron-0.8.0 \
-		rustix-0.36.9 \
+		rustix-0.36.11 \
 		rustversion-1.0.12 \
 		ryu-1.0.13 \
 		schannel-0.1.21 \
@@ -127,8 +125,8 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		scratch-1.0.5 \
 		security-framework-2.8.2 \
 		security-framework-sys-2.8.0 \
-		serde-1.0.157 \
-		serde_derive-1.0.157 \
+		serde-1.0.158 \
+		serde_derive-1.0.158 \
 		serde_json-1.0.94 \
 		serde_urlencoded-0.7.1 \
 		shell-words-1.1.0 \
@@ -138,7 +136,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		strum-0.24.1 \
 		strum_macros-0.24.3 \
 		syn-1.0.109 \
-		syn-2.0.0 \
+		syn-2.0.10 \
 		tempfile-3.4.0 \
 		termcolor-1.2.0 \
 		thiserror-1.0.40 \
@@ -153,13 +151,12 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		tracing-0.1.37 \
 		tracing-core-0.1.30 \
 		try-lock-0.2.4 \
-		unicode-bidi-0.3.12 \
+		unicode-bidi-0.3.13 \
 		unicode-ident-1.0.8 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
 		url-2.3.1 \
 		vcpkg-0.2.15 \
-		version_check-0.9.4 \
 		want-0.3.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.84 \
@@ -173,6 +170,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.46.0 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \
 		windows-targets-0.42.2 \
