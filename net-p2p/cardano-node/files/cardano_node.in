@@ -22,6 +22,9 @@
 # cardano_node_enable:      Set to YES to enable cardano-node.
 #                           Default: "NO"
 #
+# cardano_node_jail_enable: Set to NO to disable running cardano-node in the jail.
+#                           Default: "YES"
+#
 # cardano_node_home:        An absolute path to the daemon home directory.
 #                           The directory will be created if not exists.
 #                           Default: "/var/db/cardano_node"
@@ -109,6 +112,7 @@ extra_commands="status fetch reload"
 
 load_rc_config $name
 eval ": \${${name}_enable:=NO}"
+eval ": \${${name}_jail_enable:=YES}"
 eval ": \${${name}_home:=\"/var/db/cardano_node\"}"
 eval ": \${${name}_net:=\"mainnet\"}"
 eval ": \${${name}_host:=\"0.0.0.0\"}"
@@ -121,6 +125,7 @@ eval ": \${${name}_rts_flags:=\"-N -A64m -n4m -F1.2 -qg1\"}"
 eval ": \${${name}_flags:=\"\"}"
 
 # aliases
+eval "_jail_enable=\${${name}_jail_enable}"
 eval "_home=\${${name}_home}"
 eval "_topology=\${${name}_topology}"
 eval "_config=\${${name}_config}"
@@ -135,6 +140,7 @@ jail_topology="/topology_dir/`basename ${_topology}`"
 jail_config="/config_dir/`basename ${_config}`"
 jail_socket="/socket/`basename ${_socket}`"
 jail_args="name=${name}_jail exec.jail_user=cardano exec.system_jail_user host=inherit"
+jail_command=/bin/cardano-node
 
 jail_root="${_home}/jail"
 jail_copy_resolv_conf=yes
@@ -145,18 +151,31 @@ jail_ip_inherit=yes
 #TODO: daemon fails with "Network.Socket.bind: permission denied" without suid ;\
 jail_prepare_inside_cmds="mkdir ./socket ;\
                           ln -s ${_home}/jail/${jail_socket} ${_socket} ;\
-                          chmod +s ./bin/cardano-node"
+                          chmod +s .${jail_command}"
 jail_nullfs_mounts="${_db} ${jail_root}/db rw \
                     ${_home}/logs ${jail_root}/logs rw"
+
+if checkyesno "_jail_enable"; then
+    _socket_arg="${jail_socket}"
+    _topology_arg="${jail_topology}"
+    _config_arg="${jail_config}"
+    # We need to override ${command} to make check_pidfile work correctly when
+    # rc.subr calls it as "check_pidfile ${pidfile} ${command}"
+    command=/usr/sbin/jail
+else
+    _socket_arg="${_socket}"
+    _topology_arg="${_topology}"
+    _config_arg="${_config}"
+fi
 
 pidfile="/var/run/${name}.pid"
 flags="run +RTS ${_rts_flags} -RTS \
         --database-path /db \
         --host-addr ${_host} \
         --port ${_port} \
-        --socket-path ${jail_socket} \
-        --topology ${jail_topology} \
-        --config ${jail_config} \
+        --socket-path ${_socket_arg} \
+        --topology ${_topology_arg} \
+        --config ${_config_arg} \
         ${_flags}"
 
 . %%LOCALBASE%%/share/rc-subr-jail/rc.subr.jail
@@ -177,7 +196,6 @@ realpath2()
         echo $_realpath
     fi
 }
-
 
 sanity_check()
 {
@@ -229,45 +247,56 @@ cardano_node_start()
 
     jail_nullfs_mounts="$jail_nullfs_mounts $(dirname ${_topo}) ${jail_root}/topology_dir ro"
     jail_nullfs_mounts="$jail_nullfs_mounts $(dirname ${_conf}) ${jail_root}/config_dir ro"
-    prepare_jail $jail_root
-    if [ "$?" != "0" ]
-    then
-        echo "Failed to start ${name}: jail creation error"
-        return 1
-    fi
 
-    cd $_home && /bin/sh -c "/usr/sbin/daemon -p $pidfile -S -T cardano-node \
-        jail -c ${jail_prepared_args} ${jail_args} command=/bin/cardano-node ${flags}"
+    if checkyesno "_jail_enable"; then
+        prepare_jail $jail_root
+        if [ "$?" != "0" ]; then
+            echo "Failed to start ${name}: jail creation error"
+            return 1
+        fi
+
+        cd $_home && /bin/sh -c "/usr/sbin/daemon -p $pidfile -S -T cardano-node \
+            ${command} -c ${jail_prepared_args} ${jail_args} command=${jail_command} ${flags}"
+    else
+        cd $_home && /usr/sbin/daemon -p $pidfile -S -T cardano-node \
+            ${command} ${flags}
+    fi
 }
 
 cardano_node_stop()
 {
-    local _topo _conf
+    local _topo _conf _ret
     _topo=$(realpath2 ${_topology})
     _conf=$(realpath2 ${_config})
 
     jail_nullfs_mounts="$jail_nullfs_mounts $(dirname ${_topo}) ${jail_root}/topology_dir ro"
     jail_nullfs_mounts="$jail_nullfs_mounts $(dirname ${_conf}) ${jail_root}/config_dir ro"
 
-    pid=$(check_pidfile "${pidfile}" jail)
+    pid=$(check_pidfile "${pidfile}" "$command")
+
     if [ -z "${pid}" ]
     then
         echo "${name} is not running"
-        destroy_jail $jail_root 2> /dev/null
-        rm -rf ${_socket}
-        return 1
+        _ret=1
     else
         echo "Stopping ${name}."
-        killall -j ${name}_jail -INT
+        kill_jail "$pid" -INT "_jail_enable"
         wait_for_pids "$pid"
-        destroy_jail $jail_root
-        rm -rf ${_socket}
+        _ret=0
     fi
+
+    if checkyesno "_jail_enable"; then
+            destroy_jail $jail_root 2> /dev/null
+    fi
+    rm -rf ${_socket}
+
+    return $_ret
 }
 
 cardano_node_status()
 {
-    pid=$(check_pidfile "${pidfile}" jail)
+    pid=$(check_pidfile "${pidfile}" "$command")
+
     if [ -z "${pid}" ]
     then
         echo "${name} is not running"
@@ -279,13 +308,14 @@ cardano_node_status()
 
 cardano_node_reload()
 {
-    pid=$(check_pidfile "${pidfile}" jail)
+    pid=$(check_pidfile "${pidfile}" "$command")
+
     if [ -z "${pid}" ]
     then
         echo "${name} is not running"
         return 1
     else
-        killall -j ${name}_jail -HUP
+        kill_jail "$pid" -HUP "_jail_enable"
     fi
 }
 
