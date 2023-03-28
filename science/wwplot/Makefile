@@ -1,6 +1,6 @@
 PORTNAME=	wwplot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.8
+DISTVERSION=	0.0.9
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,10 +20,14 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}pyside2>0:devel/pyside2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		gettext meson python:3.7+ shebangfix
-SHEBANG_FILES=	wwplot.in
+USES=		desktop-file-utils gettext meson python:3.7+ shebangfix
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	wwmm
+
+SHEBANG_FILES=	wwplot.in
+
+NO_ARCH=	yes
 
 post-patch:
 	@${REINPLACE_CMD} "s|find_installation('python3',|find_installation('python${PYTHON_VER}',|" ${WRKSRC}/meson.build
