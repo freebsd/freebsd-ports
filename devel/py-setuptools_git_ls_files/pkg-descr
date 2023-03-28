@@ -1,0 +1,2 @@
+setuptools_git_ls_files is a plugin for setuptools that finds all git tracked
+files, including submodules.
