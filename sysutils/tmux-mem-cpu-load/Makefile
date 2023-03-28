@@ -1,5 +1,5 @@
 PORTNAME=	tmux-mem-cpu-load
-PORTVERSION=	3.6.2
+PORTVERSION=	3.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -9,7 +9,7 @@ WWW=		https://github.com/thewtex/tmux-mem-cpu-load
 
 LICENSE=	APACHE20
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	thewtex
 
