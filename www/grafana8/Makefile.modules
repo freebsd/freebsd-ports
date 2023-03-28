@@ -102,15 +102,15 @@ GH_TUPLE=	\
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.4.1:golang_mod/vendor/golang.org/x/mod \
-		golang:net:1bab6f366d9e:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:fd043fe589d2:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sync:0de741cfad7f:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.3.7:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.1.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.8.0:golang_text/vendor/golang.org/x/text \
 		golang:time:579cf78fd858:golang_time/vendor/golang.org/x/time \
-		golang:tools:v0.1.11:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.6.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
 		golang-jwt:jwt:v4.4.2:golang_jwt_jwt_v4/vendor/github.com/golang-jwt/jwt/v4 \
