@@ -1,7 +1,8 @@
 PORTNAME=	rich
 PORTVERSION=	13.3.3
+PORTREVISION=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	matthew@FreeBSD.org
@@ -19,6 +20,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-it-py>=2.1.0<3.0.0:textproc/py-mark
 NO_ARCH=	yes
 USES=		python:3.7+
 USE_PYTHON=	autoplist pep517 pytest
+USE_GITHUB=	yes
+
+GH_ACCOUNT=	Textualize
+
+# poetry-core will process .gitignore when git is present, and fail to
+# create a wheel because the 'work' directory is listed there.
 
 BINARY_ALIAS=	git=false
 
