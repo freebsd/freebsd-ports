@@ -1,5 +1,5 @@
 PORTNAME=	wifibox-alpine
-PORTVERSION=	20230213
+PORTVERSION=	20230326
 CATEGORIES=	net
 
 MAINTAINER=	pali.gabor@gmail.com
@@ -87,10 +87,10 @@ _GITHUB_SITE=	https://github.com/pgj/freebsd-wifibox-alpine/releases/download
 USE_GITHUB=	nodefault
 GH_ACCOUNT=	pgj
 GH_PROJECT=	freebsd-wifibox-alpine:scripts
-GH_TAGNAME=	1d7ee312302982362deb03dc74bc32bd99238d82:scripts
+GH_TAGNAME=	d0d856b049361e83b2c27ac2bb66d5971ead2f06:scripts
 
 ALPINE_VERSION=	3.17.2
-ALPINE_DATE=	2023.02.11
+ALPINE_DATE=	2023.03.25
 
 _ALPINE_VER=	${ALPINE_VERSION:C@([0-9]+)\.([0-9]+).*@\1.\2@}
 
@@ -102,7 +102,7 @@ _ALPINE_SITE=	https://mirror.fit.cvut.cz/alpine/v${_ALPINE_VER}
 .endif
 
 _LINUXFW_SITE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/
-_LINUXFW_TAG=	20230210
+_LINUXFW_TAG=	20230310
 _LINUXFW=	linux-firmware-${_LINUXFW_TAG}
 
 MASTER_SITES+=	${_ALPINE_SITE}/releases/x86_64/:rootfs \
@@ -123,12 +123,12 @@ _PACKAGES=	baselayout-3.4.0-r0:wifibox \
 		iw-5.19-r0 \
 		libcap2-2.66-r0 \
 		libcap-utils-2.66-r0 \
-		libcrypto3-3.0.8-r0 \
+		libcrypto3-3.0.8-r1 \
 		libmnl-1.0.5-r0 \
 		libnftnl-1.2.4-r0 \
 		libnl3-3.7.0-r0 \
-		libssl3-3.0.8-r0 \
-		linux-lts-5.15.93-r0:wifibox \
+		libssl3-3.0.8-r1 \
+		linux-lts-5.15.104-r0:wifibox \
 		musl-1.2.3-r4 \
 		openrc-0.45.2-r0:wifibox
 
@@ -144,7 +144,7 @@ _IPW2100_FIRMWARE=	ipw/ipw2100-1.3 \
 			ipw/ipw2100-1.3-i
 _IPW2200_FIRMWARE=	iwi/ipw2200-bss \
 			iwi/ipw2200-ibss
-_MT76_FIRMWARE=		09c614734880865d1b4033b8cab4e9db86db4b15
+_MT76_FIRMWARE=		021ded363dfeafb8e71bb5a3901449faca9bb011
 
 _LINUX64_KMOD!=		(kldstat -qn linux64 && echo "found") || echo ""
 
@@ -168,15 +168,16 @@ pre-everything::
 _BOOT_SERVICES+=	uds_passthru
 .endif
 
-.if (${PORT_OPTIONS:MUDS_PASSTHRU} && empty(PORT_OPTIONS:MXX_FORWARDING)) || make(makesum)
+.if (${PORT_OPTIONS:MUDS_PASSTHRU} && empty(PORT_OPTIONS:MXX_FORWARDING)) \
+	|| make(makesum) || make(fetch-url-list-int)
 _PACKAGES+=		socat-1.7.4.4-r0:wifibox
 .endif
 
-.if ${PORT_OPTIONS:MXX_FORWARDING} || make(makesum)
+.if ${PORT_OPTIONS:MXX_FORWARDING} || make(makesum) || make(fetch-url-list-int)
 _PACKAGES+=		socat-with-udp-1.7.4.4-r0:wifibox
 .endif
 
-.if ${PORT_OPTIONS:MUDS_PASSTHRU} || make(makesum)
+.if ${PORT_OPTIONS:MUDS_PASSTHRU} || make(makesum) || make(fetch-url-list-int)
 _PACKAGES+=		uds_passthru-0.1.1-r1:wifibox
 .endif
 
@@ -186,9 +187,9 @@ _BOOT_SERVICES+=	wpa_supplicant
 _ETC_SRCS=		etc/wpa_supplicant
 .endif
 
-.if ${PORT_OPTIONS:MAPP_WPA_SUPPLICANT} || make(makesum)
+.if ${PORT_OPTIONS:MAPP_WPA_SUPPLICANT} || make(makesum) || make(fetch-url-list-int)
 _PACKAGES+=		pcsc-lite-libs-1.9.9-r0 \
-			wpa_supplicant-2.10-r1:wifibox
+			wpa_supplicant-2.10-r3:wifibox
 .endif
 
 .if ${PORT_OPTIONS:MAPP_HOSTAPD}
@@ -197,7 +198,7 @@ _BOOT_SERVICES+=	hostapd
 _ETC_SRCS=		etc/hostapd
 .endif
 
-.if ${PORT_OPTIONS:MAPP_HOSTAPD} || make(makesum)
+.if ${PORT_OPTIONS:MAPP_HOSTAPD} || make(makesum) || make(fetch-url-list-int)
 _PACKAGES+=		hostapd-2.10-r2:wifibox
 .endif
 
@@ -206,7 +207,7 @@ _DEFAULT_SERVICES+=	mdnsresponderposix
 _ETC_SRCS+=		etc/optional/mdns
 .endif
 
-.if ${PORT_OPTIONS:MXX_MDNS} || make(makesum)
+.if ${PORT_OPTIONS:MXX_MDNS} || make(makesum) || make(fetch-url-list-int)
 _PACKAGES+=		mbedtls-2.28.2-r0 \
 			mDNSResponder-1790.80.10-r0:wifibox
 .endif
@@ -216,11 +217,11 @@ _BOOT_SERVICES+=	forwarding
 _ETC_SRCS+=		etc/optional/forwarding
 .endif
 
-.if ${PORT_OPTIONS:MXX_FORWARDING} || make(makesum)
+.if ${PORT_OPTIONS:MXX_FORWARDING} || make(makesum) || make(fetch-url-list-int)
 _PACKAGES+=		forwarding-0.1.0-r1:wifibox
 .endif
 
-.if ${PORT_OPTIONS:MXX_TCPDUMP} || make(makesum)
+.if ${PORT_OPTIONS:MXX_TCPDUMP} || make(makesum) || make(fetch-url-list-int)
 _PACKAGES+=		libpcap-1.10.1-r1 \
 			tcpdump-4.99.1-r4
 .endif
@@ -258,21 +259,24 @@ LINUX_FIRMWARE+=	${L${fw_opt}_FILES}
 .endif
 .endfor
 
-.if ${PORT_OPTIONS:MFW_RTW88} || make(makesum)
-_PACKAGES+=	rtl8821ce-20230101-r1:wifibox
+.if ${PORT_OPTIONS:MFW_RTW88} || make(makesum) || make(fetch-url-list-int)
+_PACKAGES+=	rtl8821ce-20230101-r3:wifibox
 .endif
 
-.if ${PORT_OPTIONS:MFW_RTW89} || make(makesum)
-_PACKAGES+=	rtw89-20230117-r1:wifibox
+.if ${PORT_OPTIONS:MFW_RTW89} || make(makesum) || make(fetch-url-list-int)
+_PACKAGES+=	rtw89-20230325-r0:wifibox
 .endif
 
-.if ${PORT_OPTIONS:MXX_DRIVER_WL} || make(makesum)
-_PACKAGES+=	broadcom-wl-6.30.223.271-r8:wifibox
+.if ${PORT_OPTIONS:MXX_DRIVER_WL} || make(makesum) || make(fetch-url-list-int)
+_PACKAGES+=	broadcom-wl-6.30.223.271-r10:wifibox
 .endif
 
 .if !empty(LINUX_FIRMWARE)
 _LINUXFWFILE=	${_LINUXFW}.tar.gz
 _LINUXFWDIR=	${WRKDIR}/${_LINUXFW}
+.endif
+
+.if !empty(LINUX_FIRMWARE) || make(makesum)
 DISTFILES+=	${_LINUXFWFILE}:linux_firmware
 .endif
 
@@ -291,17 +295,20 @@ _GUESTDIR=	${WRKSRC}/guest
 _ETCDIR=	${_GUESTDIR}/etc
 _FIRMWAREDIR=	${_GUESTDIR}/lib/firmware
 
-.if ${PORT_OPTIONS:MFW_ATMEL}
+.if ${PORT_OPTIONS:MFW_ATMEL} || make(makesum)
 DISTFILES+=	${_ATMEL_FIRMWARE}.tar.gz:atmel
 .endif
 
-.if ${PORT_OPTIONS:MFW_B43LEGACY}
+.if ${PORT_OPTIONS:MFW_B43LEGACY} || make(makesum)
 DISTFILES+=	${_B43LEGACY_FIRMWARE}.o:openwrt
 .endif
 
 .if ${PORT_OPTIONS:MFW_B43}
-DISTFILES+=	${_B43_FIRMWARE}.tar.bz2:b43
 EXTRACT_ONLY+=	${_B43_FIRMWARE}.tar.bz2
+.endif
+
+.if ${PORT_OPTIONS:MFW_B43} || make(makesum)
+DISTFILES+=	${_B43_FIRMWARE}.tar.bz2:b43
 .endif
 
 .if ${PORT_OPTIONS:MFW_B43*}
@@ -316,7 +323,7 @@ FW_B43LEGACY_FIRMWARE=	${_DISTDIR}/${_B43LEGACY_FIRMWARE}.o
 IGNORE= requires kernel source files in SRC_BASE=${SRC_BASE}
 .endif
 
-.if ${PORT_OPTIONS:MFW_MEDIATEK}
+.if ${PORT_OPTIONS:MFW_MEDIATEK} || make(makesum)
 DISTFILES+=	${_MT76_FIRMWARE}.zip:mt76
 .endif
 
@@ -381,5 +388,16 @@ MAKE_ARGS+=	VERSION=${PORTVERSION} \
 .if defined(FIRMWARE_FILES)
 MAKE_ARGS+=	FIRMWARE_FILES=${FIRMWARE_FILES}
 .endif
+
+.if make(check-alpine-packages)
+_APK_FETCH!=	${MAKE} fetch-urlall-list | ${GREP} apk | ${GREP} -v distcache
+.endif
+
+check-alpine-packages:
+.for apk in ${_APK_FETCH}
+	@${ECHO} -n "${apk:C@^.*/([0-9A-za-z\._-]*)@\1@} (${apk})..."
+	@${FETCH_CMD} -s ${apk} > /dev/null
+	@${ECHO} "OK"
+.endfor
 
 .include <bsd.port.mk>
