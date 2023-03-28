@@ -1,5 +1,5 @@
 PORTNAME=	ducc0
-DISTVERSION=	0.27.0
+DISTVERSION=	0.29.0
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,11 +16,10 @@ BROKEN_i386=	non-constant-expression cannot be narrowed from type 'long long' to
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
-TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
 USES=		compiler:c++17-lang python:3.6+
 
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest
 
 MAKE_ENV=	DUCC0_OPTIMIZATION=none
 
