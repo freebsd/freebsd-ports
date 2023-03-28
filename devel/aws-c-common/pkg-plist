@@ -8,7 +8,6 @@ include/aws/common/atomics_fallback.inl
 include/aws/common/atomics_gnu.inl
 include/aws/common/atomics_gnu_old.inl
 include/aws/common/atomics_msvc.inl
-include/aws/common/bus.h
 include/aws/common/byte_buf.h
 include/aws/common/byte_order.h
 include/aws/common/byte_order.inl
