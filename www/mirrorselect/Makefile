@@ -1,7 +1,7 @@
 PORTNAME=	mirrorselect
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	www ports-mgmt
 
 MAINTAINER=	aly@aaronly.me
@@ -27,7 +27,7 @@ GH_TUPLE=	\
 		go-playground:validator:v10.2.0:go_playground_validator_v10/vendor/github.com/go-playground/validator/v10 \
 		go-yaml:yaml:v2.2.8:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		golang:protobuf:v1.3.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:b77594299b42:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.3.2:golang_text/vendor/golang.org/x/text \
 		hashicorp:hcl:v1.0.0:hashicorp_hcl/vendor/github.com/hashicorp/hcl \
 		jlaffaye:ftp:9aae4d151126:jlaffaye_ftp/vendor/github.com/jlaffaye/ftp \
