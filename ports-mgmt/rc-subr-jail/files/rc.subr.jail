@@ -127,3 +127,20 @@ destroy_jail()
 
     rm -rf "$jroot"
 }
+
+# kill_jail pid signal jail_enable_var
+# Works like kill if passed a variable containing "no", but calls
+# killall -j ${name}_jail otherwise
+kill_jail()
+{
+    local _pid _varname
+    _pid="$1"
+    _signal="$2"
+    _varname="$3"
+
+    if checkyesno "$_varname"; then
+        killall -j ${name}_jail ${signal}
+    else
+        kill ${signal} "$_pid"
+    fi
+}
