@@ -1,6 +1,6 @@
 PORTNAME=		tl-expected
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.0.0
+DISTVERSION=		1.1.0
 CATEGORIES=		devel
 
 MAINTAINER=		henry.hu.sh@gmail.com
@@ -14,21 +14,24 @@ USES=			cmake
 USE_GITHUB=		yes
 GH_ACCOUNT=		TartanLlama
 GH_PROJECT=		expected
-GH_TUPLE=		TartanLlama:tl-cmake:284c6a3:tlcmake/cmake/tl-cmake
 NO_ARCH=		yes
-CMAKE_ARGS=		-DFETCHCONTENT_SOURCE_DIR_TL_CMAKE=${CMAKE_SOURCE_PATH}/cmake/tl-cmake
 
 OPTIONS_DEFINE=		TESTS
 OPTIONS_DEFAULT=
 
 TESTS_DESC=		Build tests
-TESTS_CMAKE_BOOL=	EXPECTED_ENABLE_TESTS
+TESTS_CMAKE_BOOL=	EXPECTED_BUILD_TESTS
+TESTS_CMAKE_ON=		-DFETCHCONTENT_SOURCE_DIR_CATCH2=${WRKSRC}/catch2
 
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MTESTS}
+GH_TUPLE=		catchorg:Catch2:v2.13.10:catch2/catch2
+.endif
+
 do-test:
 .if ${PORT_OPTIONS:MTESTS}
-	@${CONFIGURE_WRKSRC}/tests
+	@${CONFIGURE_WRKSRC}/tl-expected-tests
 .else
 	@${ECHO} Must build with TESTS on to run tests.
 .endif
