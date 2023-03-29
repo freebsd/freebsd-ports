@@ -1,4 +1,4 @@
-TIMESTAMP = 1561966653
+TIMESTAMP = 1680115554
 SHA256 (tabrarg-jest-3.0.16-f76bc46_GH0.tar.gz) = 21e3f66f6c9e49f2600bb5517b9d889e319e0008df7c2bb1572b944e6330a802
 SIZE (tabrarg-jest-3.0.16-f76bc46_GH0.tar.gz) = 12436
 SHA256 (andybalholm-brotli-5f990b6_GH0.tar.gz) = 842088bc7025e880b98c9d08703d802032b2d8994e3727d9d4edaba3b63b6928
@@ -13,8 +13,8 @@ SHA256 (golang-gddo-af0f2af_GH0.tar.gz) = b9934963c9abb68290125358d330a6b09ad05d
 SIZE (golang-gddo-af0f2af_GH0.tar.gz) = 2256685
 SHA256 (golang-snappy-2e65f85_GH0.tar.gz) = dbbc74e9fbea19d803a6984314286acfb3ba554a693f5bce0c8073e18a180d99
 SIZE (golang-snappy-2e65f85_GH0.tar.gz) = 62575
-SHA256 (golang-sys-516e3c20635f_GH0.tar.gz) = eaee891b6eb487237243f3b5d796ffc96dee770c2433c1efc6860c3e04de77f4
-SIZE (golang-sys-516e3c20635f_GH0.tar.gz) = 1437398
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (gorilla-mux-v1.7.3_GH0.tar.gz) = 92adb9aea022f8b35686b75be50ba1206c4457c2f8a0e2a9d10d8721f35b3f11
 SIZE (gorilla-mux-v1.7.3_GH0.tar.gz) = 42495
 SHA256 (jlaffaye-ftp-c1312a7_GH0.tar.gz) = 6c1f10d59550c7b9a96608153127c9d2157927d857b20aead781ad690f7d8b20
