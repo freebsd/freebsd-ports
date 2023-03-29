@@ -1,4 +1,4 @@
-TIMESTAMP = 1657198923
+TIMESTAMP = 1680113836
 SHA256 (odeke-em-drive-v0.4.0_GH0.tar.gz) = 7a6445b54c6c13d0ddd8893ca02264211eeea68c7a0c7e9ccc6473f68af40a00
 SIZE (odeke-em-drive-v0.4.0_GH0.tar.gz) = 337088
 SHA256 (boltdb-bolt-v1.3.1_GH0.tar.gz) = b5ae498b780f535a5d308c188dee1329b3536275d29ad6758876084c0b8586a8
@@ -17,8 +17,8 @@ SHA256 (golang-oauth2-2104d58_GH0.tar.gz) = ba33dab14b6414be0763733eab0514f26c42
 SIZE (golang-oauth2-2104d58_GH0.tar.gz) = 104039
 SHA256 (golang-protobuf-v1.5.2_GH0.tar.gz) = 088cc0f3ba18fb8f9d00319568ff0af5a06d8925a6e6cb983bb837b4efb703b3
 SIZE (golang-protobuf-v1.5.2_GH0.tar.gz) = 171702
-SHA256 (golang-sys-05e143d_GH0.tar.gz) = ab0ce42ab499557e024b7fa98c21f4eca10de603dcc7b372acc2ee92fb4f9505
-SIZE (golang-sys-05e143d_GH0.tar.gz) = 1303691
+SHA256 (golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (golang-sys-v0.6.0_GH0.tar.gz) = 1434234
 SHA256 (golang-text-b4bca84_GH0.tar.gz) = 47bea3550152690832c86c25d1e853325bb10e957adf28b144e50abdbbbfdaf7
 SIZE (golang-text-b4bca84_GH0.tar.gz) = 8360504
 SHA256 (google-go-genproto-590a5ac_GH0.tar.gz) = 9ca17194373b705718461cf8d4ae973d2e8e4f8d3a81f5713229d13db18d516c

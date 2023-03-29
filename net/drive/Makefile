@@ -1,7 +1,7 @@
 PORTNAME=	drive
 PORTVERSION=	0.4.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	net
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -27,7 +27,7 @@ GH_TUPLE=	boltdb:bolt:v1.3.1:boltdb_bolt/vendor/github.com/boltdb/bolt \
 		golang:net:c90051b:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:2104d58:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:05e143d:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:b4bca84:golang_text/vendor/golang.org/x/text \
 		google:go-genproto:590a5ac:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
