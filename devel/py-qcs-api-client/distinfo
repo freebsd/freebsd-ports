@@ -1,3 +1,3 @@
-TIMESTAMP = 1653960490
-SHA256 (qcs-api-client-0.20.17.tar.gz) = 8a7fee0bd04c4d7246d86412144bb64f284c0793139a80b7334d521fe87a29d8
-SIZE (qcs-api-client-0.20.17.tar.gz) = 50406
+TIMESTAMP = 1680059529
+SHA256 (qcs_api_client-0.21.3.tar.gz) = d219aaef49eb6f515b601467f6c85f20ca52f788d90b3052775e6d12b2f57466
+SIZE (qcs_api_client-0.21.3.tar.gz) = 52300
