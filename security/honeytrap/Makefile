@@ -1,6 +1,6 @@
 PORTNAME=	honeytrap
 DISTVERSION=	g20210510
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	security
 
 MAINTAINER=	ezri.mudde@dutchsec.com
@@ -16,7 +16,7 @@ GO_BUILDFLAGS=	-ldflags \
 		-X github.com/honeytrap/honeytrap/cmd.ReleaseTag=DEVELOPMENT.2021-05-10T00-00-00Z \
 		-X github.com/honeytrap/honeytrap/cmd.CommitID=110030494f54421d01edfb57343aee3a102dc37d \
 		-X github.com/honeytrap/honeytrap/cmd.ShortCommitID=110030494f54 \
-		-extldflags "static"'
+		-extldflags "-static"'
 USE_GITHUB=	yes
 GH_TAGNAME=	1100304
 GH_TUPLE=	\
@@ -39,11 +39,12 @@ GH_TUPLE=	\
 		fuyufjh:splunk-hec-go:v0.3.3:fuyufjh_splunk_hec_go/vendor/github.com/fuyufjh/splunk-hec-go \
 		glycerine:rbuf:54320fe9f6f3:glycerine_rbuf/vendor/github.com/glycerine/rbuf \
 		go-asn1-ber:asn1-ber:379148ca0225:go_asn1_ber_asn1_ber/vendor/github.com/go-asn1-ber/asn1-ber \
-		golang:crypto:69ecbb4d6d5d:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:eb5bcb51f2a3:golang_net/vendor/golang.org/x/net \
+		golang:crypto:089bfa567519:golang_crypto/vendor/golang.org/x/crypto \
+		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.3.1:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:553a64147049:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:d101bd2416d5:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.6.0:golang_term/vendor/golang.org/x/term \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		google:gopacket:v1.1.14:google_gopacket/vendor/github.com/google/gopacket \
 		gorilla:websocket:v1.2.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
