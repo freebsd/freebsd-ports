@@ -1,3 +1,41 @@
+  <vuln vid="5b0ae405-cdc7-11ed-bb39-901b0e9408dc">
+    <topic>Matrix clients -- Prototype pollution in matrix-js-sdk</topic>
+    <affects>
+      <package>
+	<name>element-web</name>
+	<range><lt>1.11.26</lt></range>
+      </package>
+      <package>
+	<name>cinny</name>
+	<range><le>2.2.4</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://matrix.org/blog/2023/03/28/security-releases-matrix-js-sdk-24-0-0-and-matrix-react-sdk-3-69-0">
+	  <p>Today we are issuing security releases of matrix-js-sdk and matrix-react-sdk
+	  to patch a pair of High severity vulnerabilities (CVE-2023-28427 /
+	  GHSA-mwq8-fjpf-c2gr for matrix-js-sdk and CVE-2023-28103 / GHSA-6g43-88cp-w5gv
+	  for matrix-react-sdk).</p>
+	  <p>The issues involve prototype pollution via events containing special strings
+	  in key locations, which can temporarily disrupt normal functioning of matrix-js-sdk
+	  and matrix-react-sdk, potentially impacting the consumer's ability to process data
+	  safely.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28103</cvename>
+      <cvename>CVE-2023-28427</cvename>
+      <url>https://matrix.org/blog/2023/03/28/security-releases-matrix-js-sdk-24-0-0-and-matrix-react-sdk-3-69-0</url>
+    </references>
+    <dates>
+      <discovery>2023-03-28</discovery>
+      <entry>2023-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6bacd9fd-ca56-11ed-bc52-589cfc0f81b0">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
