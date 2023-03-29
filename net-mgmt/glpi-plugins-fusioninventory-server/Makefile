@@ -1,5 +1,6 @@
 PORTNAME=	server
 PORTVERSION=	${GLPI_VER}.${FUNV_VER}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
@@ -9,6 +10,9 @@ COMMENT=	Plugin of glpi to get information of networking devices
 WWW=		https://fusioninventory.org/
 
 LICENSE=	AGPLv3
+
+DEPRECATED=	Requires php80 which is set to expire on 2023-11-26
+EXPIRATION_DATE=	2023-12-31
 
 RUN_DEPENDS=	glpi>=9.5:www/glpi
 
