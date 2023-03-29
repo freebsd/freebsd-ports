@@ -721,6 +721,7 @@
     SUBDIR += pam_fprint
     SUBDIR += pam_google_authenticator
     SUBDIR += pam_helper
+    SUBDIR += pam_howdy
     SUBDIR += pam_jail
     SUBDIR += pam_kde
     SUBDIR += pam_krb5
