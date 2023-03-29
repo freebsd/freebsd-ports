@@ -14,7 +14,7 @@ SHEBANG_FILES=	util/harfbuzz/update-harfbuzz \
 		mkspecs/features/data/mac/objc_namespace.sh \
 		mkspecs/features/uikit/devices.py \
 		mkspecs/features/uikit/device_destinations.sh
-USE_PERL5=	extract
+USE_PERL5=	extract pkg64
 
 REINPLACE_ARGS=	-i ""
 HAS_CONFIGURE=	yes
