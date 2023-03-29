@@ -963,6 +963,7 @@
     SUBDIR += py-willow
     SUBDIR += py-yaswfp
     SUBDIR += py-zbar-py
+    SUBDIR += pywal
     SUBDIR += qcomicbook
     SUBDIR += qcustomplot-qt5
     SUBDIR += qgis
