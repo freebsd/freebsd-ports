@@ -1,5 +1,7 @@
-TIMESTAMP = 1678350445
+TIMESTAMP = 1680112440
 SHA256 (go/databases_cayley/cayley-v0.7.7/v0.7.7.mod) = fa25f58e0fb938fb7302c8fc3cfe009607b6134a7edc99117e58504623a33fa9
 SIZE (go/databases_cayley/cayley-v0.7.7/v0.7.7.mod) = 2824
 SHA256 (go/databases_cayley/cayley-v0.7.7/v0.7.7.zip) = 7a2434c5a9257ad487f854d8e640c39111b9fe0109e0162baf3f288f433ca4b7
 SIZE (go/databases_cayley/cayley-v0.7.7/v0.7.7.zip) = 4772261
+SHA256 (go/databases_cayley/cayley-v0.7.7/golang-sys-v0.6.0_GH0.tar.gz) = b4f6d17c7a128f76169964b437cb66b3f2dbf9a33361928ec19dfecf7b03fc54
+SIZE (go/databases_cayley/cayley-v0.7.7/golang-sys-v0.6.0_GH0.tar.gz) = 1434234
