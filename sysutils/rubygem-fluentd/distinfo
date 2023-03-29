@@ -1,3 +1,3 @@
-TIMESTAMP = 1667378301
-SHA256 (rubygem/fluentd-1.15.3.gem) = d6a244bfaae51d4808475601bb58e62449048164e79d6824715770f54988c1ca
-SIZE (rubygem/fluentd-1.15.3.gem) = 866816
+TIMESTAMP = 1680120105
+SHA256 (rubygem/fluentd-1.16.0.gem) = bcc643b07b8153e2d0054b02eb6c9acb97f47012d95b05a77f11ab584bb44ae4
+SIZE (rubygem/fluentd-1.16.0.gem) = 872448
