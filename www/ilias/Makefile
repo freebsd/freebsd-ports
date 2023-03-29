@@ -1,6 +1,7 @@
 PORTNAME=	ilias
 DISTVERSIONPREFIX=	v
 DISTVERSION=	8.0_beta2
+PORTREVISION=	1
 CATEGORIES=	www education
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -9,6 +10,10 @@ COMMENT=	Powerful, dynamic, PHP and MySQL based e-learning platform
 WWW=		https://www.ilias.de
 
 LICENSE=	GPLv2
+
+# Will switch to version 9 snapshots before the removal
+DEPRECATED=	Requires php80 which is set to expire on 2023-11-26
+EXPIRATION_DATE=	2023-12-31
 
 IGNORE_WITH_PHP=	81 82
 
