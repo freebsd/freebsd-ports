@@ -1,0 +1,3 @@
+xeus-zmq provides various implementations of the xserver API from xeus, based
+on the ZeroMQ library. These implementations all conform to the Jupyter Kernel
+Protocol specification.

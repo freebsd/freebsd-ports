@@ -7633,6 +7633,7 @@
     SUBDIR += xelfviewer
     SUBDIR += xeus
     SUBDIR += xeus-cling
+    SUBDIR += xeus-zmq
     SUBDIR += xfce4-dev-tools
     SUBDIR += xmake
     SUBDIR += xmltooling
