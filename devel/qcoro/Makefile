@@ -27,9 +27,4 @@ CMAKE_ARGS=	-DUSE_QT_VERSION=${FLAVOR:S/qt//}
 
 PLIST_SUB=	QT_VER=${FLAVOR:S/qt//}
 
-# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31
-.if exists(/usr/include/c++/v1) && !exists(/usr/include/c++/v1/concepts)
-BROKEN_FreeBSD_12=	requires recent C++ compiler
-.endif
-
 .include <bsd.port.mk>

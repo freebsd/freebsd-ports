@@ -61,10 +61,5 @@ post-patch:
 # Respect hier(7) for examples
 	@${REINPLACE_CMD} '/datadir/s/doc/examples/' \
 		${WRKSRC}/docs/meson.build
-# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31
-# https://cgit.freebsd.org/src/commit/?id=773538247007
-	@if [ ${OPSYS} = FreeBSD -a ${OSVERSION} -lt 1203501 ]; then \
-		${REINPLACE_CMD} -e '/_POSIX_C_SOURCE/d' ${WRKSRC}/src/cursor.c; \
-	fi
 
 .include <bsd.port.mk>

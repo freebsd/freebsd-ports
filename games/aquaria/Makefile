@@ -44,11 +44,6 @@ SUB_FILES=	pkg-message
 PLIST_FILES=	bin/aquaria
 PORTDATA=	*
 
-# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31
-.if !exists(/usr/include/c++/v1/concepts)
-LDFLAGS_i386:=	${LDFLAGS_i386:N*no-check-dynamic-relocations*}
-.endif
-
 DESKTOP_ENTRIES="${GH_PROJECT}" \
 		"" \
 		"${DATADIR}/${PORTNAME}.png" \

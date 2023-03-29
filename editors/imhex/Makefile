@@ -76,16 +76,6 @@ PORTDOCS=	README.md
 OPTIONS_DEFINE=	DOCS NLS
 NLS_USES=	gettext
 
-.include <bsd.port.pre.mk>
-
-OSMAJOR=${OSVERSION:C/([0-9]*)[0-9]{5}/\1/}
-
-# Before LLVM13 import to the base system
-.if (${OSMAJOR} == 12 && ${OSVERSION} < 1203505) \
-    || (${OSMAJOR} == 14 && ${OSVERSION} < 1400042)
-IGNORE=	will not build due to C++20 API functions unavailable in old libc++
-.endif
-
 post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/xdg.hpp ${WRKSRC}/lib/external/xdgpp
 	${CP} -R ${WRKSRC_capstone}/* ${WRKSRC}/lib/external/capstone
@@ -103,4 +93,4 @@ post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

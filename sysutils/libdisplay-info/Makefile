@@ -19,14 +19,6 @@ GL_ACCOUNT=	emersion
 GL_COMMIT=	92b031749c0fe84ef5cdf895067b84a829920e25
 SHEBANG_FILES=	tool/*.py
 
-post-patch:
-# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31
-# https://cgit.freebsd.org/src/commit/?id=773538247007
-	@if [ ${OPSYS} = FreeBSD -a ${OSVERSION} -lt 1203501 ]; then \
-		${REINPLACE_CMD} -e 's/static_assert/_Static_assert/' \
-			${WRKSRC}/edid.c; \
-	fi
-
 pre-test:
 	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
 		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \

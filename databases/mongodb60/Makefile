@@ -93,10 +93,6 @@ SSL_MAKE_ARGS=	--ssl
 
 .include <bsd.port.pre.mk>
 
-.if ${OSREL} == "12.3"
-IGNORE=		does not compile on 12.3, libc++ too old
-.endif
-
 ALL_TARGET=	install-core
 
 # This ports is only following the Major Release.

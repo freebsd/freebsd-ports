@@ -22,10 +22,6 @@ LICENSE_FILE_MIT=	${WRKSRC}/externals/sirit/externals/SPIRV-Headers/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64
 ONLY_FOR_ARCHS_REASON=	requires int128 and dynarmic backend
-# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31
-.if !exists(/usr/include/c++/v1/concepts)
-BROKEN_FreeBSD_12=	base libc++ is too old
-.endif
 
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
 		nlohmann-json>0:devel/nlohmann-json \

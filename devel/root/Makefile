@@ -82,15 +82,4 @@ PLIST_SUB+=	ONLY_INSTALLED_WITH_LLVM_CLANG_13=""
 PLIST_SUB+=	ONLY_INSTALLED_WITH_LLVM_CLANG_13="@comment "
 .endif
 
-.include <bsd.port.pre.mk>
-
-# In LLVM/Clang 10.0.1 (used on FreeBSD 12.3), the cstdalign header is missing from the std modulemap, but it is declared included in ROOT's std modulemap - this has to be removed.
-# See https://github.com/llvm/llvm-project/blob/main/libcxx/include/module.modulemap.in#L181
-# The same seems to be the case for the other headers defined in the variable "modules" below.
-.if ${OSVERSION} < 1204000
-modules=	cstdalign cuchar "ext\/functional" "ext\/numeric" "bits\/allocator.h" "bits\/basic_ios.h" "bits\/cpp_type_traits.h" "bits\/exception_defines.h" "bits\/ios_base.h" "bits\/locale_facets.h" "bits\/stl_algobase.h" "bits\/stl_map.h" "bits\/stl_pair.h" bits_stl_tree_h
-post-patch:
-	MODULEMAP=${WRKSRC}/interpreter/cling/include/cling/std.modulemap ${SH} ${SCRIPTDIR}/remove-modules-from-modulemap.sh ${modules}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

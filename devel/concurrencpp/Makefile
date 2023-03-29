@@ -10,11 +10,6 @@ WWW=		https://github.com/David-Haim/concurrencpp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31
-.if exists(/usr/include/c++/v1) && !exists(/usr/include/c++/v1/semaphore)
-BROKEN_FreeBSD_12=	fatal error: 'semaphore' file not found (missing C++ include <semaphore>)
-.endif
-
 USES=		cmake compiler:c++20-lang
 
 USE_GITHUB=	yes

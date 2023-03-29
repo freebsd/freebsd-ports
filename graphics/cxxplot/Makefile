@@ -10,11 +10,6 @@ WWW=		https://github.com/USNavalResearchLaboratory/cxxplot
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-# XXX Drop after FreeBSD 12.3 EOL around 2023-03-31
-.if exists(/usr/include/c++/v1) && !exists(/usr/include/c++/v1/concepts)
-BROKEN_FreeBSD_12=	build error: 'concepts' file not found
-.endif
-
 USES=		cmake:testing compiler:c++20-lang gl qt:6
 USE_QT=		base tools:build
 USE_GL=		gl opengl
