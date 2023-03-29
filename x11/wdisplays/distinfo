@@ -1,3 +1,5 @@
 TIMESTAMP = 1617006823
 SHA256 (artizirk-wdisplays-1.1_GH0.tar.gz) = 5aa739dece0d928fe7ca2f28d7f6b4b6750559ec6a0cd0a7520a4b47cebb6f80
 SIZE (artizirk-wdisplays-1.1_GH0.tar.gz) = 108410
+SHA256 (59edbbd15500.patch) = b10a5134ebffad99e37ea5e7532c10e3bc3accc9beac3bd146411d2f40760e1b
+SIZE (59edbbd15500.patch) = 1136
