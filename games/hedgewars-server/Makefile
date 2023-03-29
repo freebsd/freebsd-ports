@@ -1,5 +1,6 @@
 PORTNAME=	hedgewars
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://www.hedgewars.org/download/releases/
 PKGNAMESUFFIX=	-server
@@ -42,14 +43,15 @@ USE_CABAL=	ConfigFile-1.1.4_1 \
 		entropy-0.4.1.10 \
 		generically-0.1.1 \
 		hashable-1.4.2.0 \
+		hsc2hs-0.68.9 \
 		hslogger-1.3.1.0_6 \
 		indexed-traversable-0.1.2_2 \
 		indexed-traversable-instances-0.1.1.2 \
 		integer-logarithms-1.0.3.1_4 \
 		libyaml-0.1.2_1 \
 		mono-traversable-1.0.15.3 \
-		network-2.8.0.1 \
-		network-bsd-2.8.0.0 \
+		network-3.1.2.8 \
+		network-bsd-2.8.1.0_4 \
 		old-locale-1.0.0.7_2 \
 		old-time-1.1.0.3_2 \
 		primitive-0.8.0.0 \
