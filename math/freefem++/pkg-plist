@@ -20,6 +20,7 @@ lib/ff++/%%VER%%/idp/Heat3d.idp
 lib/ff++/%%VER%%/idp/MPIGMRESmacro.idp
 lib/ff++/%%VER%%/idp/MPIplot.idp
 lib/ff++/%%VER%%/idp/MeshSurface.idp
+lib/ff++/%%VER%%/idp/ball-buildlayer.idp
 lib/ff++/%%VER%%/idp/cobrameshcavity.idp
 lib/ff++/%%VER%%/idp/cube.idp
 lib/ff++/%%VER%%/idp/ffddm.idp
@@ -133,7 +134,7 @@ lib/ff++/%%VER%%/include/libMesh/chrono.h
 lib/ff++/%%VER%%/include/libMesh/eigenv.h
 lib/ff++/%%VER%%/include/libMesh/libmeshb7.h
 lib/ff++/%%VER%%/include/libMesh/memory.h
-lib/ff++/%%VER%%/include/libmesh5.h
+lib/ff++/%%VER%%/include/libmeshb7.h
 lib/ff++/%%VER%%/include/meshtype.h
 lib/ff++/%%VER%%/include/mode_open.hpp
 lib/ff++/%%VER%%/include/msh3.hpp
@@ -165,8 +166,10 @@ lib/ff++/%%VER%%/lib/Element_P1dc1.so
 lib/ff++/%%VER%%/lib/Element_P1ncdc.so
 lib/ff++/%%VER%%/lib/Element_P2bulle3.so
 lib/ff++/%%VER%%/lib/Element_P2pnc.so
+lib/ff++/%%VER%%/lib/Element_P2pnc_3d.so
 lib/ff++/%%VER%%/lib/Element_P3.so
 lib/ff++/%%VER%%/lib/Element_P3dc.so
+lib/ff++/%%VER%%/lib/Element_P3nc.so
 lib/ff++/%%VER%%/lib/Element_P3pnc.so
 lib/ff++/%%VER%%/lib/Element_P4.so
 lib/ff++/%%VER%%/lib/Element_P4dc.so
@@ -176,6 +179,7 @@ lib/ff++/%%VER%%/lib/FreeFemQA.so
 lib/ff++/%%VER%%/lib/Helmholtz_FD.so
 lib/ff++/%%VER%%/lib/IncompleteCholesky.so
 lib/ff++/%%VER%%/lib/MatD-VFP0.so
+lib/ff++/%%VER%%/lib/MatrixMarket.so
 lib/ff++/%%VER%%/lib/MetricKuate.so
 lib/ff++/%%VER%%/lib/MetricPk.so
 lib/ff++/%%VER%%/lib/Morley.so
@@ -223,6 +227,7 @@ lib/ff++/%%VER%%/lib/msh3.so
 lib/ff++/%%VER%%/lib/myfunction.so
 lib/ff++/%%VER%%/lib/myfunction2.so
 lib/ff++/%%VER%%/lib/pcm2rnm.so
+lib/ff++/%%VER%%/lib/plotPDF.so
 lib/ff++/%%VER%%/lib/ppm2rnm.so
 lib/ff++/%%VER%%/lib/qf11to25.so
 lib/ff++/%%VER%%/lib/shell.so
@@ -232,6 +237,7 @@ lib/ff++/%%VER%%/lib/splitmesh3.so
 lib/ff++/%%VER%%/lib/splitmesh4.so
 lib/ff++/%%VER%%/lib/splitmesh6.so
 lib/ff++/%%VER%%/lib/tetgen.so
+lib/ff++/%%VER%%/lib/vortextools.so
 %%DATADIR%%/CheckAll
 %%DATADIR%%/CheckAllEdp
 %%DATADIR%%/plugin/seq/load.link

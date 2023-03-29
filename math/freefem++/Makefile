@@ -1,12 +1,11 @@
 PORTNAME=	freefem++
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.11
-PORTREVISION=	4
+DISTVERSION=	4.12
 CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Partial differential equation solver
-WWW=		http://www.freefem.org/ff++/
+WWW=		https://freefem.org/index.html
 
 LICENSE=	LGPL3
 
@@ -32,7 +31,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5		\
 RUN_DEPENDS=	bash:shells/bash		\
 		pipe:misc/pipe
 
-USES=		autoreconf bison blaslapack:openblas compiler:c++11-lib fortran	\
+USES=		autoreconf bison blaslapack:openblas compiler:c++14-lang fortran	\
 		gl gmake localbase perl5 pkgconfig shebangfix xorg
 
 USE_GITHUB=	yes
