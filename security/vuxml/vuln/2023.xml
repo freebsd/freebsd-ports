@@ -1,3 +1,49 @@
+  <vuln vid="425b9538-ce5f-11ed-ade3-d4c9ef517024">
+    <topic>OpenSSL -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1t,1_2</lt></range>
+      </package>
+      <package>
+	<name>openssl30</name>
+	<range><lt>3.0.8_2</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.0_2</lt></range>
+      </package>
+      <package>
+	<name>openssl-quic</name>
+	<range><lt>3.0.8_2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20230328.txtE">
+	  <p>Severity: low</p>
+	  <p>Applications that use a non-default option when verifying certificates may be
+	    vulnerable to an attack from a malicious CA to circumvent certain checks.</p>
+	  <p>The function X509_VERIFY_PARAM_add0_policy() is documented to
+	    implicitly enable the certificate policy check when doing certificate
+	    verification. However the implementation of the function does not
+	    enable the check which allows certificates with invalid or incorrect
+	    policies to pass the certificate verification.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-0465</cvename>
+      <cvename>CVE-2023-0466</cvename>
+      <url>https://www.openssl.org/news/secadv/20230328.txt</url>
+    </references>
+    <dates>
+      <discovery>2023-03-28</discovery>
+      <entry>2023-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b0ae405-cdc7-11ed-bb39-901b0e9408dc">
     <topic>Matrix clients -- Prototype pollution in matrix-js-sdk</topic>
     <affects>
