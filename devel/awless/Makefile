@@ -1,7 +1,7 @@
 PORTNAME=	awless
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.11
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	devel
 
 MAINTAINER=	dmgk@FreeBSD.org
@@ -16,7 +16,7 @@ USES=		go
 USE_GITHUB=	yes
 GH_ACCOUNT=	wallix
 GH_SUBDIR=	src/github.com/wallix/${PORTNAME}
-GH_TUPLE=	golang:sys:33540a1f6037:golang_sys
+GH_TUPLE=	golang:sys:v0.6.0:golang_sys
 
 PLIST_FILES=	bin/awless
 PORTDOCS=	README.md CHANGELOG.md
