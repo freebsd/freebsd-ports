@@ -1,6 +1,6 @@
 PORTNAME=	php80
 DISTVERSION=	8.0.28
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	PHP
 DISTNAME=	php-${DISTVERSION}
@@ -11,6 +11,9 @@ COMMENT=	PHP Scripting Language
 WWW=		https://www.php.net/
 
 LICENSE=	PHP301
+
+DEPRECATED=	Upstream support ends on 2023-11-26
+EXPIRATION_DATE=	2023-12-31
 
 USES+=		compiler:c11 tar:xz cpe gnome pkgconfig
 CPE_PRODUCT=	php
@@ -31,10 +34,9 @@ CONFIGURE_ARGS+=	\
 		--with-openssl \
 		--with-password-argon2=${LOCALBASE}
 
-USES+=		autoreconf:build ssl
+USES+=		autoreconf:build localbase ssl
 USE_GNOME=	libxml2
 
-CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${OPENSSLLIB} -lcrypto -lssl
 # PR230207 Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-z,notext
