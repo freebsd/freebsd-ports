@@ -13,8 +13,7 @@ WWW=		https://spidermonkey.dev/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/python${PYTHON3_DEFAULT}:lang/python${PYTHON3_DEFAULT:S/.//g} \
-		${RUST_DEFAULT}>=1.35:lang/${RUST_DEFAULT} \
+BUILD_DEPENDS=	${RUST_DEFAULT}>=1.35:lang/${RUST_DEFAULT} \
 		autoconf2.13:devel/autoconf2.13 \
 		rust-cbindgen>=0.8.7:devel/rust-cbindgen
 LIB_DEPENDS=	libffi.so:devel/libffi \
@@ -22,7 +21,7 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 		libnspr4.so:devel/nspr
 
 USES=		compiler:c++17-lang gmake localbase pathfix pkgconfig \
-		python:3.7-3.10,build readline tar:xz
+		python:build readline tar:xz
 USE_LDCONFIG=	yes
 SP_VER=		91
 HAS_CONFIGURE=	yes
@@ -30,9 +29,9 @@ HAS_CONFIGURE=	yes
 WRKSRC=			${WRKDIR}/firefox-${DISTVERSION}/
 PATCH_WRKSRC=		${WRKDIR}/firefox-${DISTVERSION}/
 CONFIGURE_OUTSOURCE=	yes
-CONFIGURE_SCRIPT=	../firefox-${DISTVERSION}/js/src/configure
 
-CONFIGURE_ARGS=	--disable-debug \
+CONFIGURE_ARGS=	--enable-application=js \
+		--disable-debug \
 		--disable-debug-symbols \
 		--disable-gold \
 		--disable-jemalloc \
@@ -78,11 +77,14 @@ CONFIGURE_ENV+=	LLVM_CONFIG=llvm-config${LLVM_DEFAULT} \
 BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 .endif
 
-pre-configure:
-	(cd ${WRKSRC}/js/src/ && ${LOCALBASE}/bin/autoconf2.13)
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/js/moz.configure
+	@${FIND} ${WRKSRC}/python/mozbuild -name *.py -exec \
+		${REINPLACE_CMD} 's|"rU"|"r"|g' {} \;
+
+pre-configure:
+	(cd ${WRKSRC} && ${LOCALBASE}/bin/autoconf2.13)
+	(cd ${WRKSRC}/js/src/ && ${LOCALBASE}/bin/autoconf2.13)
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/lib/libjs_static.ajs
