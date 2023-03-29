@@ -1,5 +1,5 @@
 PORTNAME=	mod_qos
-DISTVERSION=	11.72
+DISTVERSION=	11.73
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-qos
 DIST_SUBDIR=	apache2
@@ -10,7 +10,7 @@ WWW=		http://opensource.adnovum.ch/mod_qos/
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		apache
 
