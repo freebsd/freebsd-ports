@@ -109,12 +109,9 @@ DISABLED_EXTENSIONS+=	nis
 PLIST_SUB+=	NO_NIS=""
 .endif
 
-# Python 3.10 requires OpenSSL >= 1.1.1 (PEP 644), so with
-# libressl, some modules are not built
 .if ${SSL_DEFAULT:Mlibressl*}
-PLIST_SUB+=	SUPPORTED_OPENSSL="@comment "
-.else
-PLIST_SUB+=	SUPPORTED_OPENSSL=""
+EXTRA_PATCHES+=	${PATCHDIR}/libressl
+CONFIGURE_ENV+=	ac_cv_working_openssl_hashlib=yes
 .endif
 
 post-patch:

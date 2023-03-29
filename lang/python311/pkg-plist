@@ -2934,7 +2934,7 @@ lib/python%%XYDOT%%/lib-dynload/_datetime.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_dbm.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_decimal.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_elementtree.cpython-%%XY%%%%ABI%%.so
-%%SUPPORTED_OPENSSL%%lib/python%%XYDOT%%/lib-dynload/_hashlib.cpython-%%XY%%%%ABI%%.so
+lib/python%%XYDOT%%/lib-dynload/_hashlib.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_heapq.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_json.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_lsprof.cpython-%%XY%%%%ABI%%.so
@@ -2953,7 +2953,7 @@ lib/python%%XYDOT%%/lib-dynload/_sha256.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_sha3.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_sha512.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_socket.cpython-%%XY%%%%ABI%%.so
-%%SUPPORTED_OPENSSL%%lib/python%%XYDOT%%/lib-dynload/_ssl.cpython-%%XY%%%%ABI%%.so
+lib/python%%XYDOT%%/lib-dynload/_ssl.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_statistics.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_struct.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/_testbuffer.cpython-%%XY%%%%ABI%%.so
