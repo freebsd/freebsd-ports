@@ -21,6 +21,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 USES=		python:3.7+
 USE_PYTHON=	autoplist pep517 pytest
 
+TEST_ENV+=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
