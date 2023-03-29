@@ -1,0 +1,8 @@
+wpgtk is a color-scheme manager with a template system which lets you
+create templates from any text file and will replace keywords on it when
+you change your theme, delivering high customizing power.
+
+And also, for those who are not into auto-generated color-schemes, you
+will be happy to know that wpgtk includes all the preset themes that
+pywal does, so that's around 200+ themes to play around with, that you
+can also modify to get really readable and cool results!
