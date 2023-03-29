@@ -1,12 +1,13 @@
 PORTNAME=	mod_qos
 DISTVERSION=	11.73
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/mod-qos
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	fax@nohik.ee
 COMMENT=	QoS for Apache
-WWW=		http://opensource.adnovum.ch/mod_qos/
+WWW=		https://mod-qos.sourceforge.net/
 
 LICENSE=	APACHE20
 
