@@ -1,0 +1,126 @@
+--- man/gs.1.orig	2023-03-21 15:07:46 UTC
++++ man/gs.1
+@@ -2,20 +2,14 @@
+ .SH NAME
+ gs \- Ghostscript (PostScript and PDF language interpreter and previewer)
+ .SH SYNOPSIS
+-\fBgs\fR [ \fIoptions\fR ] [ \fIfiles\fR ] ... \fB(Unix, VMS)\fR
+-.br
+-\fBgswin32c\fR [ \fIoptions\fR ] [ \fIfiles\fR ] ... \fB(MS Windows)\fR
+-.br
+-\fBgswin32\fR [ \fIoptions\fR ] [ \fIfiles\fR ] ... \fB(MS Windows 3.1)\fR
+-.br
+-\fBgsos2\fR [ \fIoptions\fR ] [ \fIfiles\fR ] ... \fB(OS/2)\fR
++\fBgs\fR [ \fIoptions\fR ] [ \fIfiles\fR ] ...
+ .de TQ
+ .br
+ .ns
+ .TP \\$1
+ ..
+ .SH DESCRIPTION
+-The \fBgs\fR (\fBgswin32c\fR, \fBgswin32\fR, \fBgsos2\fR)
++The \fBgs\fR
+ command invokes \fBGhostscript\fR, an interpreter of Adobe Systems'
+ \fBPostScript\fR(tm) and \fBPortable Document Format\fR (PDF) languages.
+ \fBgs\fR reads "files" in sequence and executes them as Ghostscript
+@@ -32,8 +26,7 @@ below. Please see the usage documentation for complete
+ may appear anywhere in the command line and apply to all files thereafter.
+ Invoking Ghostscript with the \fB\-h\fR or \fB\-?\fR switch produces a
+ message which shows several useful switches, all the devices known to
+-that executable, and the search path for fonts; on Unix it also shows the
+-location of detailed documentation.
++that executable, and the search path for fonts.
+ .PP
+ Ghostscript may be built to use many different output devices.  To see
+ which devices your executable includes, run "\fBgs -h\fR".
+@@ -104,8 +97,8 @@ and the highest-density (best output quality) mode wit
+ .fi
+ .PP
+ If you select a printer as the output device, Ghostscript also allows you
+-to choose where Ghostscript sends the output \-\- on Unix systems, usually
+-to a temporary file.  To send the output to a file "foo.xyz",
++to choose where Ghostscript sends the output.
++To send the output to a file "foo.xyz",
+ use the switch
+ .PP
+ .nf
+@@ -124,17 +117,13 @@ Each resulting file receives one page of output, and t
+ in sequence.  "%d" is a printf format specification; you can also use a
+ variant like "%02d".
+ .PP
+-On Unix and MS Windows systems you can also send output to a pipe.  For example, to
+-pipe output to the "\fBlpr\fR" command (which, on many Unix systems,
+-directs it to a printer), use the option
++You can also send output to a pipe.  For example, to
++pipe output to the "\fBlpr\fR" command, use the option
+ .PP
+ .nf
+ 	\-sOutputFile=%pipe%lpr
+ .fi
+ .PP
+-Note that the '%' characters need to be doubled on MS Windows to avoid 
+-mangling by the command interpreter.
+-.PP
+ You can also send output to standard output:
+ .PP
+ .nf
+@@ -316,31 +305,21 @@ and strongly NOT recommended in any other circumstance
+ .SH FILES
+ .PP
+ The locations of many Ghostscript run-time files are compiled into the
+-executable when it is built.  On Unix these are typically based in
+-\fB/usr/local\fR, but this may be different on your system.  Under DOS they
+-are typically based in \fBC:\\GS\fR, but may be elsewhere, especially if
+-you install Ghostscript with \fBGSview\fR.  Run "\fBgs -h\fR" to find the
+-location of Ghostscript documentation on your system, from which you can
+-get more details.
++executable when it is built.  Typically based in
++\fB%%LOCALBASE%%\fR.
+ .TP
+-.B /usr/local/share/ghostscript/#.##/*
++.B %%LOCALBASE%%/share/ghostscript/#.##/*
+ Startup files, utilities, and basic font definitions
+ .TP
+-.B /usr/local/share/ghostscript/fonts/*
++.B %%LOCALBASE%%/share/ghostscript/fonts/*
+ More font definitions
+-.TP
+-.B /usr/local/share/ghostscript/#.##/examples/*
+-Ghostscript demonstration files
+-.TP
+-.B /usr/local/share/ghostscript/#.##/doc/*
+-Diverse document files
+ .SH "INITIALIZATION FILES"
+ When looking for the initialization files "gs_*.ps", the files related to
+ fonts, or the file for the "run" operator, Ghostscript first tries to open
+ the file with the name as given, using the current working directory if no
+ directory is specified.  If this fails, and the file name doesn't specify
+-an explicit directory or drive (for instance, doesn't contain "/" on Unix
+-systems or "\\" on MS Windows systems), Ghostscript tries directories in this
++an explicit directory,
++Ghostscript tries directories in this
+ order:
+ .TP 4
+ 1.
+@@ -353,9 +332,9 @@ if any;
+ .TP
+ 3.
+ the directories specified by the \fBGS_LIB_DEFAULT\fR macro in the
+-Ghostscript makefile when the executable was built.  When \fBgs\fR is built
+-on Unix, \fBGS_LIB_DEFAULT\fR is usually
+-"/usr/local/share/ghostscript/#.##:/usr/local/share/ghostscript/fonts"
++Ghostscript makefile when the executable was built.
++Usually
++"%%LOCALBASE%%/share/ghostscript/#.##:%%LOCALBASE%%/share/ghostscript/fonts"
+ where "#.##" represents the Ghostscript version number.
+ .PP
+ Each of these (\fBGS_LIB_DEFAULT\fR, \fBGS_LIB\fR, and \fB\-I\fR parameter)
+@@ -417,8 +396,6 @@ Then merge these resources into the X server's resourc
+ .nf
+ 	% xrdb \-merge ~/.Xresources
+ .fi
+-.SH SEE ALSO
+-The various Ghostscript document files (above), especially \fBUse.htm\fR.
+ .SH BUGS
+ See http://bugs.ghostscript.com/ and the Usenet news group 
+ comp.lang.postscript.
