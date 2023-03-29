@@ -301,7 +301,9 @@ share/postgresql/extension/pgroonga--2.4.0--2.4.1.sql
 share/postgresql/extension/pgroonga--2.4.1--2.4.2.sql
 share/postgresql/extension/pgroonga--2.4.2--2.4.3.sql
 share/postgresql/extension/pgroonga--2.4.3--2.4.4.sql
-share/postgresql/extension/pgroonga--2.4.4--%%MVER%%.sql
+share/postgresql/extension/pgroonga--2.4.4--2.4.5.sql
+share/postgresql/extension/pgroonga--2.4.5--2.4.6.sql
+share/postgresql/extension/pgroonga--2.4.6--%%MVER%%.sql
 share/postgresql/extension/pgroonga--%%MVER%%.sql
 share/postgresql/extension/pgroonga_database--%%MVER%%.sql
 share/postgresql/extension/pgroonga_database.control
