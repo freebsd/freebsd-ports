@@ -1,6 +1,6 @@
---- src/Makefile.am.orig	2021-11-05 21:58:53 UTC
+--- src/Makefile.am.orig	2023-03-29 11:05:27 UTC
 +++ src/Makefile.am
-@@ -9,8 +9,8 @@ noinst_HEADERS = $(srcdir)/*.h
+@@ -9,8 +9,8 @@ xmlcopyeditordir = ${prefix}/share/xmlcopyeditor
  bin_PROGRAMS = xmlcopyeditor
  bindir = ${prefix}/bin
  xmlcopyeditordir = ${prefix}/share/xmlcopyeditor
