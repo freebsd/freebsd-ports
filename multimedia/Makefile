@@ -376,7 +376,6 @@
     SUBDIR += tivodecode
     SUBDIR += totem
     SUBDIR += totem-pl-parser
-    SUBDIR += transcode
     SUBDIR += tvheadend
     SUBDIR += ustreamer
     SUBDIR += uvg266
