@@ -1,5 +1,5 @@
 PORTNAME=	zabbix62
-DISTVERSION=	6.2.8
+DISTVERSION=	6.2.9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
 PKGNAMESUFFIX?=	-server
@@ -12,8 +12,8 @@ WWW=		https://www.zabbix.com/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-DEPRECATED=	Will reach end of life on 2023-03-31
-EXPIRATION_DATE=	2023-03-31
+DEPRECATED=	Will reach end of life on 2023-05-31
+EXPIRATION_DATE=	2023-05-31
 
 CONFLICTS_INSTALL=	zabbix[0-9]${PKGNAMESUFFIX}
 
