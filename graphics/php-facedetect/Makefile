@@ -1,6 +1,6 @@
 PORTNAME=	facedetect
 PORTVERSION=	1.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -9,6 +9,9 @@ COMMENT=	Face detection extension for PHP using OpenCV library
 WWW=		https://www.xarg.org/project/php-facedetect/
 
 LICENSE=	PHP30
+
+DEPRECATED=	Requires php80 which is set to expire on 2023-11-26
+EXPIRATION_DATE=	2023-12-31
 
 LIB_DEPENDS=	libopencv_objdetect.so:graphics/opencv
 
