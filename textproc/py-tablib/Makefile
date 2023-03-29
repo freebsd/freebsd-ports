@@ -1,5 +1,5 @@
 PORTNAME=	tablib
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,13 @@ WWW=		https://github.com/jazzband/tablib
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=3.4:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=6.2:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		cpe python:3.7+
 CPE_VENDOR=	python
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes
 
