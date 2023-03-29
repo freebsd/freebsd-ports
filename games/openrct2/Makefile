@@ -1,7 +1,15 @@
 PORTNAME=	openrct2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.3
+DISTVERSION=	0.4.4
 CATEGORIES=	games
+MASTER_SITES=	https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.0/:sequence \
+		https://github.com/OpenRCT2/objects/releases/download/v1.3.8/:object \
+		https://github.com/OpenRCT2/OpenMusic/releases/download/v1.1.0/:openmsx \
+		https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.2/:opensfx
+DISTFILES=	title-sequences.zip:sequence \
+		objects.zip:object\
+		openmusic.zip:openmsx \
+		opensound.zip:opensfx
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Open source re-implementation of RollerCoaster Tycoon 2
@@ -24,37 +32,31 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2 \
 		libicuuc.so:devel/icu \
 		libbenchmark.so:devel/benchmark \
-		libduktape.so:lang/duktape-lib
+		libogg.so:audio/libogg
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gnome gl iconv \
 		localbase:ldflags pkgconfig sdl shared-mime-info ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenRCT2
 GH_PROJECT=	OpenRCT2
-GH_TUPLE=	OpenRCT2:objects:v1.3.7:objects \
-		OpenRCT2:title-sequences:v0.4.0:title_sequences
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_SDL=	sdl2
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_OFF=	DOWNLOAD_TITLE_SEQUENCES \
-		DOWNLOAD_OBJECTS
-
-PORTDATA=	*
-PORTDOCS=	changelog.txt contributors.md licence.txt openrct2.d.ts \
-		readme.txt scripting.md
 
 OPTIONS_DEFINE=	DOCS
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DATADIR%%|${DATADIR}|' \
 		${WRKSRC}/src/openrct2/config/Config.cpp
-
-post-install:
-	(cd ${WRKSRC_title_sequences}; \
-		${COPYTREE_SHARE}/title . ${STAGEDIR}${DATADIR}/title)
-	(cd ${WRKSRC_objects}; \
-		${COPYTREE_SHARE}/objects . ${STAGEDIR}${DATADIR}/object)
+	${MKDIR} ${WRKSRC}/data/sequence
+	${MKDIR} ${WRKSRC}/data/object
+	${MKDIR} ${WRKSRC}/data/assetpack
+	${CP} ${WRKDIR}/*.parkseq ${WRKSRC}/data/sequence/
+	${CP} -r ${WRKDIR}/official ${WRKDIR}/rct1 ${WRKDIR}/rct2 \
+		${WRKDIR}/rct2tt ${WRKDIR}/rct2ww ${WRKDIR}/object/official \
+		${WRKSRC}/data/object/
+	${CP} -r ${WRKDIR}/assetpack ${WRKSRC}/data/
 
 .include <bsd.port.mk>
