@@ -3,7 +3,7 @@ PORTVERSION=	4.15.3
 CATEGORIES=	print
 MASTER_SITES=	GNU LOCAL/hrs/a2ps/:i18n
 
-MAINTAINER=	dirk.meyer@dinoex.sub.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Formats an ASCII file for printing on a postscript printer
 WWW=		https://www.gnu.org/software/a2ps/
 
@@ -17,7 +17,6 @@ USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 INFO=		a2ps ogonkify regex
 I18N_PACKAGE=	i18n-fonts-0.1
-MAKE_JOBS_UNSAFE=yes
 
 CONFIGURE_ARGS=	--with-medium=libpaper --sharedstatedir=${PREFIX}/share \
 	--sysconfdir=${PREFIX}/etc --datadir=${PREFIX}/share \
@@ -30,7 +29,6 @@ RUN_DEPENDS+=	${LOCALBASE}/etc/papersize:print/papersize-default-a4
 .endif
 
 OPTIONS_DEFINE=NLS I18N EMACS
-OPTIONS_DEFAULT=NLS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 EMACS_DESC=Enable Emacs support
@@ -52,7 +50,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|^DESTDIR|#DESTDIR|' \
 		`${FIND} ${WRKSRC} -name "Makefile.in"`
 
-.if ${PORT_OPTIONS:MI18N}
+.if ${PORT_OPTIONS:MI18N} || make(makesum) || defined(FETCH_ALL)
 #DISTFILES+=	${I18N_PACKAGE}${EXTRACT_SUFX}:i18n
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${I18N_PACKAGE}${EXTRACT_SUFX}:i18n
 
@@ -82,6 +80,6 @@ post-install:
 .endif
 	cd ${WRKSRC}/doc && \
 		${SETENV} ${MAKE_ENV} ${MAKE} ${.MAKEFLAGS} ${MAKE_ARGS} ${INSTALL_TARGET}
-	${RM} -f ${STAGEDIR}${PREFIX}/lib/liba2ps.la
+	${RM} ${STAGEDIR}${PREFIX}/lib/liba2ps.la
 
 .include <bsd.port.mk>
