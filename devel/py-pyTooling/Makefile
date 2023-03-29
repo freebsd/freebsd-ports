@@ -12,7 +12,8 @@ WWW=		https://pytooling.github.io/pyTooling/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}wheel>=0.38.1:devel/py-wheel@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.38.1:devel/py-wheel@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anytree>=2.8.0:devel/py-anytree@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}itertree>0:devel/py-itertree@${PY_FLAVOR} \
