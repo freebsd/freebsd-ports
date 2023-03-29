@@ -6,8 +6,8 @@
  
 +# On FreeBSD, libepoll-shim library is required for signalfd.h
 +epoll_shim = dependency('epoll-shim', required : false)
-+# On libintl library is required for gettext
-+libintl_dep = meson.get_compiler('cpp').find_library('intl', required: false)
++# On FreeBSD libintl library is required for gettext
++libintl_dep = dependency('intl', required: false)
 +
  # Translations
  subdir('po')
