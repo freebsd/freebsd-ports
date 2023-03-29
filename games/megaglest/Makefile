@@ -49,6 +49,16 @@ VIEWER_CMAKE_BOOL=	BUILD_MEGAGLEST_MODEL_IMPORT_EXPORT_TOOLS \
 			BUILD_MEGAGLEST_MODEL_VIEWER
 VIEWER_USE=		WX=3.0
 
+.include <bsd.port.pre.mk>
+
+# The following is actually meant for lld 15.0 and later, but the ports
+# framework does not support LINKER_TYPE and LINKER_VERSION yet.
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 150
+# Turn off checking of dynamic relocations, to avoid lld diagnostics about
+# possibly incorrect addend values.
+LDFLAGS_i386+=	-Wl,--no-check-dynamic-relocations
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/include/lua51,${LUA_INCDIR},g ; \
 		s,/usr/local/lib/lua51,${LUA_LIBDIR},g ; \
@@ -78,4 +88,4 @@ do-install-VIEWER-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/source/g3d_viewer/megaglest_g3dviewer ${STAGEDIR}${PREFIX}/bin/megaglest_g3dviewer
 	${INSTALL_DATA} ${WRKSRC}/mk/shared/g3dviewer.ico ${STAGEDIR}${PREFIX}/share/pixmaps/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
