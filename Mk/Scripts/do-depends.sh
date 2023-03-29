@@ -197,7 +197,7 @@ for _line in ${dp_RAWDEPENDS} ; do
 		# this prevent a MITM attack.
 		if [ "${last}" = "fetch" ]; then
 			target=checksum
-		elif [ "${last}" = "usepkg64" ]; then
+		elif [ "${last}" = "pkg64" ]; then
 			usepkg64=1
 		else
 			target=${last}
