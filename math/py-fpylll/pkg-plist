@@ -4,6 +4,8 @@
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__init__.py
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/babai.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/babai.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/bkz.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/bkz.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/bkz2.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -12,6 +14,7 @@
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/simple_bkz.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/simple_dbkz.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/__pycache__/simple_dbkz.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/fpylll/algorithms/babai.py
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/bkz.py
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/bkz2.py
 %%PYTHON_SITELIBDIR%%/fpylll/algorithms/simple_bkz.py
