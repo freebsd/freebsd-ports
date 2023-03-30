@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	astro
 
@@ -17,5 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	10110111
 GH_PROJECT=	CalcMySky
 USE_QT=		buildtools:build qmake:build core gui opengl widgets
+
+CMAKE_ARGS=	-DQT_VERSION:STRING=5
 
 .include <bsd.port.mk>
