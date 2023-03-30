@@ -47,7 +47,7 @@ USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	desktop/geary-attach
 
-MESON_ARGS=	-Dprofile=release
+MESON_ARGS=	-Dprofile=release -Dvaladoc=disabled
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 CFLAGS+=	-Wno-error=int-conversion
