@@ -1,7 +1,7 @@
 PORTNAME=	linbox
 PORTVERSION=	1.6.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math
 
 PATCH_SITES=	https://github.com/linbox-team/linbox/commit/
