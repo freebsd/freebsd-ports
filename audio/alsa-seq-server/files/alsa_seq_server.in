@@ -15,5 +15,6 @@ load_rc_config $name
 
 command="%%PREFIX%%/sbin/alsa-seq-server"
 command_args="-B -F umidi -i 8"
+required_modules="cuse"
 
 run_rc_command "$1"
