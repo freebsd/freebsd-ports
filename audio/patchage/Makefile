@@ -24,6 +24,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 
 USES=		compiler:c++14-lang gettext gnome localbase meson pkgconfig python:build tar:xz
 USE_GNOME=	atk cairo cairomm glib20 glibmm gdkpixbuf2 gtk20 gtkmm24 libsigc++20 pango pangomm
+MESON_ARGS=	-Djack=disabled
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
