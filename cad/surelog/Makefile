@@ -1,6 +1,6 @@
 PORTNAME=	surelog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.50
+DISTVERSION=	1.51
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags tcl:86,build
 USE_JAVA=	17
-USE_LDCONFIG=	yes
+USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/surelog
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chipsalliance
@@ -36,6 +36,7 @@ CMAKE_OFF=	SURELOG_BUILD_TESTS
 CMAKE_ARGS=	-DFREEBSD_JAVA_VERSION=${USE_JAVA} \
 		-DPython3_EXECUTABLE=${PYTHON_CMD}
 CMAKE_TESTING_ON=	SURELOG_BUILD_TESTS # unclear how to run tests, see https://github.com/chipsalliance/Surelog/issues/3545
+CMAKE_TESTING_TARGET=	UnitTests
 
 CONFLICTS_INSTALL=	capnproto capnproto080 uhdm # bin/uhdm-dump lib/libcapnp.so
 
@@ -55,5 +56,8 @@ post-install:
 	@${RMDIR} \
 		${STAGEDIR}${PREFIX}/bin/pkg/work \
 		${STAGEDIR}${PREFIX}/bin/pkg
+
+post-test:
+	cd ${BUILD_WRKSRC} && ctest
 
 .include <bsd.port.mk>
