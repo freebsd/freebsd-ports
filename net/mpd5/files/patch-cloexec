@@ -1,0 +1,98 @@
+Index: src/contrib/libpdel/http/http_server.c
+===================================================================
+--- src/contrib/libpdel/http/http_server.c	(revision 2407)
++++ src/contrib/libpdel/http/http_server.c	(revision 2409)
+@@ -243,10 +243,16 @@ http_server_start(struct pevent_ctx *ctx, struct in_ad
+ 	}
+ 
+ 	/* Create socket */
+-	if ((serv->sock = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP)) == -1) {
++#ifdef SOCK_CLOEXEC
++#define hs_stype(x) (x | SOCK_CLOEXEC)
++#else
++#define hs_stype(x) (x)
++#endif
++	if ((serv->sock = socket(PF_INET, hs_stype(SOCK_STREAM), IPPROTO_TCP)) == -1) {
+ 		(*serv->logger)(LOG_ERR, "%s: %s", "socket", strerror(errno));
+ 		goto fail;
+ 	}
++#undef hs_stype
+ 	(void)fcntl(serv->sock, F_SETFD, 1);
+ 	if (setsockopt(serv->sock, SOL_SOCKET,
+ 	    SO_REUSEADDR, &one, sizeof(one)) == -1) {
+Index: src/l2tp.c
+===================================================================
+--- src/l2tp.c	(revision 2407)
++++ src/l2tp.c	(revision 2409)
+@@ -1632,9 +1632,9 @@ L2tpListen(Link l)
+ 	
+ 	/* Setup UDP socket that listens for new connections */
+ 	if (s->self_addr.family==AF_INET6) {
+-		s->sock = socket(PF_INET6, SOCK_DGRAM, IPPROTO_UDP);
++		s->sock = socket(PF_INET6, socktype(SOCK_DGRAM), IPPROTO_UDP);
+ 	} else {
+-		s->sock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
++		s->sock = socket(PF_INET, socktype(SOCK_DGRAM), IPPROTO_UDP);
+ 	}
+ 	if (s->sock == -1) {
+ 		Perror("L2TP: socket");
+Index: src/radsrv.c
+===================================================================
+--- src/radsrv.c	(revision 2407)
++++ src/radsrv.c	(revision 2409)
+@@ -661,7 +661,7 @@ RadsrvOpen(Radsrv w)
+ 	return (-1);
+     }
+ 
+-    if ((w->fd = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP)) == -1) {
++    if ((w->fd = socket(PF_INET, socktype(SOCK_DGRAM), IPPROTO_UDP)) == -1) {
+ 	Perror("%s: Cannot create socket", __FUNCTION__);
+ 	return (-1);
+     }
+Index: src/udp.c
+===================================================================
+--- src/udp.c	(revision 2407)
++++ src/udp.c	(revision 2409)
+@@ -652,9 +652,9 @@ UdpListen(Link l)
+ 	
+ 	/* Make listening UDP socket. */
+ 	if (pi->If->self_addr.family==AF_INET6) {
+-	    pi->If->csock = socket(PF_INET6, SOCK_DGRAM, IPPROTO_UDP);
++	    pi->If->csock = socket(PF_INET6, socktype(SOCK_DGRAM), IPPROTO_UDP);
+ 	} else {
+-	    pi->If->csock = socket(PF_INET, SOCK_DGRAM, IPPROTO_UDP);
++	    pi->If->csock = socket(PF_INET, socktype(SOCK_DGRAM), IPPROTO_UDP);
+ 	}
+ 	(void)fcntl(pi->If->csock, F_SETFD, 1);
+ 
+Index: src/util.c
+===================================================================
+--- src/util.c	(revision 2407)
++++ src/util.c	(revision 2409)
+@@ -921,7 +921,7 @@ GetInetSocket(int type, struct u_addr *addr, in_port_t
+ 
+ /* Get and bind non-blocking socket */
+ 
+-  if ((sock = socket(sa.ss_family, type, type == SOCK_STREAM ? IPPROTO_TCP : 0)) < 0)
++  if ((sock = socket(sa.ss_family, socktype(type), type == SOCK_STREAM ? IPPROTO_TCP : 0)) < 0)
+   {
+     snprintf(ebuf, len, "socket: %s", strerror(errno));
+     return(-1);
+Index: src/util.h
+===================================================================
+--- src/util.h	(revision 2407)
++++ src/util.h	(revision 2409)
+@@ -103,8 +103,12 @@ extern int IfaceSetFlag(const char *ifname, int value)
+ 
+ #ifndef	HAVE_NTOA_R
+ extern char *ether_ntoa_r(const struct ether_addr *n, char *a);
+-
+ #endif
+ 
++#ifdef SOCK_CLOEXEC
++#define socktype(x) ((x) | SOCK_CLOEXEC)
++#else
++#define socktype(x) (x)
++#endif
+ 
+ #endif

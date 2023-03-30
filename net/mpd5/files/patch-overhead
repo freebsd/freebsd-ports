@@ -1,0 +1,18 @@
+Index: src/bund.c
+===================================================================
+--- src/bund.c	(revision 2414)
++++ src/bund.c	(revision 2415)
+@@ -900,9 +900,11 @@ BundUpdateParams(Bund b)
+ 
+     /* Subtract to make room for various frame-bloating protocols */
+     if (b->n_up > 0) {
+-	if (Enabled(&b->conf.options, BUND_CONF_COMPRESSION))
++	if (Enabled(&b->conf.options, BUND_CONF_COMPRESSION) &&
++	    b->pppConfig.bund.enableCompression)
+     	    mtu = CcpSubtractBloat(b, mtu);
+-	if (Enabled(&b->conf.options, BUND_CONF_ENCRYPTION))
++	if (Enabled(&b->conf.options, BUND_CONF_ENCRYPTION) &&
++	    b->pppConfig.bund.enableEncryption)
+     	    mtu = EcpSubtractBloat(b, mtu);
+     }
+ 
