@@ -17,6 +17,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 
 USES=		compiler:c++17-lang cpe iconv localbase:ldflags meson ncurses \
 		pkgconfig tar:xz
+MESON_ARGS=	-Dlirc=disabled
 
 CPE_VENDOR=	ncmpc_project
 
