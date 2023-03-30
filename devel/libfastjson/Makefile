@@ -1,5 +1,5 @@
 PORTNAME=	libfastjson
-PORTVERSION=	0.99.9
+PORTVERSION=	0.99.9.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -9,13 +9,14 @@ WWW=		https://github.com/rsyslog/libfastjson
 
 LICENSE=	MIT
 
-GNU_CONFIGURE=	yes
 USES=		autoreconf cpe libtool pathfix pkgconfig
 CPE_VENDOR=	rsyslog
-INSTALL_TARGET=	install-strip
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsyslog
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
