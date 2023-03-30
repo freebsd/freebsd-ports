@@ -44,7 +44,7 @@ include/fplll/threadpool.h
 include/fplll/util.h
 include/fplll/wrapper.h
 lib/libfplll.so
-lib/libfplll.so.7
-lib/libfplll.so.7.0.1
+lib/libfplll.so.8
+lib/libfplll.so.8.0.0
 libdata/pkgconfig/fplll.pc
 %%DATADIR%%/strategies/default.json
