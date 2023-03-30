@@ -68,7 +68,7 @@ ejabberd_reload()
 {
     echo "Restarting $name."
     if ejabberd_checkstatus; then
-        su $EJABBERDUSER -c "env ERL_EPMD_ADDRESS=\"${ejabberd_epmd_address}\" $EJABBERDCTL --node $ejabberd_node restart"
+        su $EJABBERDUSER -c "env ERL_EPMD_ADDRESS=\"${ejabberd_epmd_address}\" $EJABBERDCTL --node $ejabberd_node reload_config"
     else
         ejabberd_start
     fi

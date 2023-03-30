@@ -1,10 +1,10 @@
 PORTNAME=	ejabberd
 PORTVERSION=	23.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
-COMMENT=	Free and Open Source distributed fault-tolerant Jabber server
+COMMENT=	Free and Open Source distributed fault-tolerant XMPP server
 WWW=		https://www.ejabberd.im/
 
 LICENSE=	GPLv2
@@ -55,7 +55,7 @@ GH_TUPLE=	processone:p1_utils:${P1_UTILS_VER}:p1_utils/deps/p1_utils \
 
 OPTIONS_DEFINE=	ODBC PAM DOCS LUA MYSQL PGSQL REDIS SIP SQLITE \
 		STUN TOOLS FULLXML
-OPTIONS_DEFAULT=STUN
+OPTIONS_DEFAULT=SQLITE STUN
 
 EJABBERD_LIBDIR=lib/erlang/lib
 MAKE_ENV=	PORTVERSION=${PORTVERSION}
