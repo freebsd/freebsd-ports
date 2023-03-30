@@ -45,6 +45,10 @@ CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/vim-/}
 ${f}_PKGNAMESUFFIX=	-${f}
 .endfor
 
+.for f in ${FLAVORS:Ntiny}
+${f}_CONFLICTS_INSTALL=	xxd
+.endfor
+
 # GUI flavors
 .if ${FLAVOR:U} == console
 GUI=		no

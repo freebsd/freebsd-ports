@@ -1,0 +1,2 @@
+Xxd creates a hex dump of a given file or standard input.
+It can also convert a hex dump back to its original binary form.
