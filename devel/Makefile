@@ -1180,6 +1180,7 @@
     SUBDIR += libdaemon
     SUBDIR += libdap
     SUBDIR += libdatadog
+    SUBDIR += libdatovka
     SUBDIR += libdatrie
     SUBDIR += libdbusmenu
     SUBDIR += libdbusmenu-qt
