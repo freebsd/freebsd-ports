@@ -1,0 +1,4 @@
+!rustdesk-hbbr
+*.*					/var/log/rustdesk-hbbr.log
+!rustdesk-hbbs
+*.*					/var/log/rustdesk-hbbs.log

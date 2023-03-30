@@ -1398,6 +1398,7 @@
     SUBDIR += rubygem-whois
     SUBDIR += rubygem-xmlrpc
     SUBDIR += rude
+    SUBDIR += rustdesk-server
     SUBDIR += ryu
     SUBDIR += s5cmd
     SUBDIR += sacc

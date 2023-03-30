@@ -264,7 +264,7 @@ lavinmq:*:315:315::0:0:LavinMQ user:/nonexistent:/usr/sbin/nologin
 nut:*:316:316::0:0:Network UPS Tools user:/nonexistent:/usr/sbin/nologin
 hedgedoc:*:317:317::0:0:HedgeDoc user:/nonexistent:/usr/sbin/nologin
 icingadirector:*:318:183::0:0:icingadirector user:/nonexistent:/usr/sbin/nologin
-# free: 319
+rustdesk:*:319:319::0:0:rustdesk-server user:/nonexistent:/usr/sbin/nologin
 # free: 320
 # free: 321
 # free: 322
