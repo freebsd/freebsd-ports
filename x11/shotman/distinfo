@@ -1,6 +1,6 @@
 TIMESTAMP = 1675933311
-SHA256 (shotman-v0.4.1.tar.gz) = e9f25856b40ac21cd4e7795d175b127ec86f0b8fd81ead8772c7e610d9c0de06
-SIZE (shotman-v0.4.1.tar.gz) = 27662
+SHA256 (shotman-v0.4.1.tar.gz) = cc40fcadc740e451848e43af88b70e4d10c7df6288e857adf8042d3092af23fb
+SIZE (shotman-v0.4.1.tar.gz) = 28341
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
 SIZE (rust/crates/adler-1.0.2.crate) = 12778
 SHA256 (rust/crates/android_system_properties-0.1.5.crate) = 819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311
@@ -245,5 +245,5 @@ SHA256 (rust/crates/xkbcommon-0.5.0.crate) = acbee136714379ab22da0280207fdb7f47e
 SIZE (rust/crates/xkbcommon-0.5.0.crate) = 58155
 SHA256 (Smithay-client-toolkit-327f9cd791d8810fe7324ee1ddd48adaf3592ca4_GH0.tar.gz) = 3346fa9a5646c229d20148f8a49178a5707109b70a908f8f9f5f90cba9320c93
 SIZE (Smithay-client-toolkit-327f9cd791d8810fe7324ee1ddd48adaf3592ca4_GH0.tar.gz) = 116969
-SHA256 (d2f7ef2107b9.patch) = cb5820e28923a83c13769ed4c5e7742596f4ebcedb6d82457d89f7ca8c5fc5f6
+SHA256 (d2f7ef2107b9.patch) = e46cd8ee69c032a4f7d88dffa49f17b3ea0b856e095a6064080a5326485a92fc
 SIZE (d2f7ef2107b9.patch) = 1660
