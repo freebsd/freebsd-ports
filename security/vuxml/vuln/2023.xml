@@ -69,7 +69,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The OpenSSL project reports:</p>
-	<blockquote cite="https://www.openssl.org/news/secadv/20230328.txtE">
+	<blockquote cite="https://www.openssl.org/news/secadv/20230328.txt">
 	  <p>Severity: low</p>
 	  <p>Applications that use a non-default option when verifying certificates may be
 	    vulnerable to an attack from a malicious CA to circumvent certain checks.</p>
