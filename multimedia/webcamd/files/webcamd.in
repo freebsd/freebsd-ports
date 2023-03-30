@@ -101,6 +101,7 @@ command_args="-B -U ${webcamd_user} -G ${webcamd_group}"
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 status_cmd="${name}_status"
+required_modules="cuse"
 
 #
 # The following pidfile should not exist and
