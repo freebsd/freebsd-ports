@@ -1,3 +1,56 @@
+  <vuln vid="6bd2773c-cf1a-11ed-bd44-080027f5fec9">
+    <topic>rubygem-time -- ReDoS vulnerability</topic>
+    <affects>
+      <package>
+	<name>ruby</name>
+	<range><ge>2.7.0,1</ge><lt>2.7.8,1</lt></range>
+	<range><ge>3.0.0,1</ge><lt>3.0.6,1</lt></range>
+	<range><ge>3.1.0,1</ge><lt>3.1.4,1</lt></range>
+	<range><ge>3.2.0.p1,1</ge><lt>3.2.2,1</lt></range>
+      </package>
+      <package>
+	<name>ruby27</name>
+	<range><ge>2.7.0,1</ge><lt>2.7.8,1</lt></range>
+      </package>
+      <package>
+	<name>ruby30</name>
+	<range><ge>3.0.0,1</ge><lt>3.0.6,1</lt></range>
+      </package>
+      <package>
+	<name>ruby31</name>
+	<range><ge>3.1.0,1</ge><lt>3.1.4,1</lt></range>
+      </package>
+      <package>
+	<name>ruby32</name>
+	<range><ge>3.2.0.p1,1</ge><lt>3.2.2,1</lt></range>
+      </package>
+      <package>
+	<name>rubygem-time</name>
+	<range><lt>0.2.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ooooooo_q reports:</p>
+	<blockquote cite="https://www.ruby-lang.org/en/news/2023/03/30/redos-in-time-cve-2023-28756/">
+	  <p>
+	    The Time parser mishandles invalid strings that have
+	    specific characters. It causes an increase in execution
+	    time for parsing strings to Time objects.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28756</cvename>
+      <url>https://www.ruby-lang.org/en/news/2023/03/30/redos-in-time-cve-2023-28756/</url>
+    </references>
+    <dates>
+      <discovery>2023-03-30</discovery>
+      <entry>2023-03-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9b60bba1-cf18-11ed-bd44-080027f5fec9">
     <topic>rubygem-uri -- ReDoS vulnerability</topic>
     <affects>
