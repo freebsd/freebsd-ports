@@ -1,3 +1,30 @@
+  <vuln vid="dc33795f-ced7-11ed-b1fe-6805ca2fa271">
+    <topic>powerdns-recursor -- denial of service</topic>
+    <affects>
+      <package>
+	<name>powerdns-recursor</name>
+	<range><lt>4.8.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PowerDNS Team reports:</p>
+	<blockquote cite="https://blog.powerdns.com/2023/03/29/security-advisory-2023-02-for-powerdns-recursor-up-to-and-including-4-6-5-4-7-4-and-4-8-3/">
+	  <p>PowerDNS Security Advisory 2023-02: Deterred spoofing attempts
+	    can lead to authoritative servers being marked unavailable</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-26437</cvename>
+      <url>https://doc.powerdns.com/recursor/security-advisories/powerdns-advisory-2023-02.html</url>
+    </references>
+    <dates>
+      <discovery>2023-03-29</discovery>
+      <entry>2023-03-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="96d84238-b500-490b-b6aa-2b77090a0410">
     <topic>xorg-server -- Overlay Window Use-After-Free</topic>
     <affects>
