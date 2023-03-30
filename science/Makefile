@@ -399,6 +399,7 @@
     SUBDIR += py-qcengine
     SUBDIR += py-qiskit
     SUBDIR += py-qiskit-aer
+    SUBDIR += py-qiskit-dynamics
     SUBDIR += py-qiskit-experiments
     SUBDIR += py-qiskit-finance
     SUBDIR += py-qiskit-ibm-experiment
