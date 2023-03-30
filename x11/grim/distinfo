@@ -1,5 +1,5 @@
 TIMESTAMP = 1644362430
-SHA256 (grim-v1.4.0.tar.gz) = 66729ae654546404f50ed163055310dd23ed52cc5a881d39752c0cd076e3d7aa
-SIZE (grim-v1.4.0.tar.gz) = 18280
-SHA256 (89e02e663fab.patch) = 5d0e0ac2eca89eb3b1f2723aba5d2bbe617a3dd6805ed349457b3e0f08e46bfd
+SHA256 (grim-v1.4.0.tar.gz) = 7cbc51c009e854de2a810abd25c5da474a41bd14f0e958ce0a8982bf715ed30b
+SIZE (grim-v1.4.0.tar.gz) = 18351
+SHA256 (89e02e663fab.patch) = df56c38242640821c25bdae8849d06b67ce2a2a15a4a7b869872c3452b8c1f57
 SIZE (89e02e663fab.patch) = 761
