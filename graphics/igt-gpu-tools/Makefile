@@ -31,6 +31,7 @@ USE_LDCONFIG=	yes
 USE_XORG=	pixman
 
 SHEBANG_FILES=	scripts/code_cov_gather_on_test scripts/code_cov_parse_info
+MESON_ARGS=	-Dvalgrind=disabled
 
 OPTIONS_DEFINE=		CHAMELIUM DOCS RUNNER TEST
 OPTIONS_DEFAULT=	DOCS RUNNER TEST
