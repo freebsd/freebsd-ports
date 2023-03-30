@@ -1,5 +1,5 @@
 PORTNAME=	opensearch
-DISTVERSION=	2.4.0
+DISTVERSION=	2.4.1
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
@@ -127,7 +127,9 @@ post-install:
 .endfor
 	${FIND} -s ${STAGEDIR}${PREFIX}/lib/opensearch -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+.if ${PORT_OPTIONS:MPLUGINS}
 	${ECHO} "@dir lib/opensearch/plugins" >> ${TMPPLIST}
+.endif
 	${ECHO} "@dir libexec/opensearch" >> ${TMPPLIST}
 	${ECHO} "@dir(opensearch,opensearch,0755) ${ETCDIR}" >> ${TMPPLIST}
 
