@@ -10,4 +10,5 @@ include/jim.h
 lib/jim/README.extensions
 lib/jim/tcltest.tcl
 lib/libjim.so.%%PORTVERSION%%
+lib/libjim.so
 libdata/pkgconfig/jimtcl.pc
