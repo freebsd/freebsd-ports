@@ -1,5 +1,5 @@
 PORTNAME=	seed7
-DISTVERSION=	05_20221218
+DISTVERSION=	05_20230305
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTNAME}/
@@ -9,9 +9,8 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	High-level, extensible programming language
 WWW=		http://seed7.sourceforge.net/
 
-# The language libraries are licensed under the LGPL21 license. Starting from
-# version 05_20140601, the compiler libraries are also distributed. These are
-# licensed under the GPLv2 and can be found in ${PREFIX}/lib/seed7/lib/comp.
+# The interpreter and the example programs use the GPL license, while the
+# runtime library uses the LGPL license.
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
