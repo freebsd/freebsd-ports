@@ -1,6 +1,6 @@
 PORTNAME=	qemu
 PORTVERSION=	6.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -10,6 +10,9 @@ COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT} - 6.X
 WWW=		https://www.qemu.org/
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Version 8 is on the horizon while version 7 is stable
+EXPIRATION_DATE=	2023-06-30
 
 BUILD_DEPENDS=	bash:shells/bash
 .if ${FLAVOR:U} != tools
@@ -40,7 +43,7 @@ USE_GNOME=	glib20
 USE_PERL5=	build
 .if ${FLAVOR:U} != tools
 ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64 powerpc64le
-USES+=		iconv:wchar_t
+USES+=		desktop-file-utils iconv:wchar_t
 .endif
 .if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools)
 USE_GNOME+=	cairo
