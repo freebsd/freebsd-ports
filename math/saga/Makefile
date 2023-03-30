@@ -1,6 +1,5 @@
 PORTNAME=	saga
-PORTVERSION=	8.5.1
-PORTREVISION=	1
+PORTVERSION=	9.0.0
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]\.[[:digit:]]*$//}/SAGA%20-%20${PORTVERSION}
 
@@ -15,8 +14,7 @@ LICENSE_COMB=	multi
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
 
-BUILD_DEPENDS=	clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
-		swig:devel/swig
+BUILD_DEPENDS=	swig:devel/swig
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libgdal.so:graphics/gdal \
@@ -26,25 +24,27 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libopencv_core.so:graphics/opencv \
 		libpdal_base.so:math/pdal \
 		libproj.so:graphics/proj \
-		libqhull_r.so:math/qhull \
 		libsvm.so:science/libsvm \
 		libsz.so:science/libaec \
 		libtiff.so:graphics/tiff
 RUN_DEPENDS:=	swig:devel/swig
 
-USES=		cmake compiler:c++11-lib dos2unix gnome \
+USES=		cmake compiler:c++14-lang dos2unix gnome \
 		iconv:wchar_t libtool localbase pkgconfig python
 DOS2UNIX_GLOB=	*.cpp *.h
 USE_LDCONFIG=	yes
 USE_WX=		3.2+
 
-GIT_TAGNAME=	570fadfa8
+GIT_TAGNAME=	c059b7db8
 
 CMAKE_ARGS=	-DSVM_INCLUDE:PATH=${LOCALBASE}/include/svm.h
-CMAKE_ON=	WITH_DEV_TOOLS WITH_EXCERCISES WITH_MRMR WITH_SYSTEM_SVM
-CMAKE_ON+=	CMAKE_VERBOSE_MAKEFILE
+CMAKE_ON=	CMAKE_VERBOSE_MAKEFILE
+CMAKE_ON+=	WITH_DEV_TOOLS
+CMAKE_ON+=	WITH_EXCERCISES
+CMAKE_ON+=	WITH_MRMR
+CMAKE_ON+=	WITH_SYSTEM_SVM
 CMAKE_OFF=	WITH_CLIPPER_ONE
-CMAKE_OFF+=	WITH_TOOLS_LAS WITH_TRIANGLE
+CMAKE_OFF+=	WITH_TOOLS_RIEGL
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/saga-gis
 
@@ -68,11 +68,6 @@ VIGRA_BUILD_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:graphics/vigra
 VIGRA_RUN_DEPENDS=	${LOCALBASE}/lib/libvigraimpex.so:graphics/vigra
 
 .include <bsd.port.pre.mk>
-
-# make describe needs them here
-CPP=		clang-cpp${LLVM_DEFAULT}
-CC=		clang${LLVM_DEFAULT}
-CXX=		clang++${LLVM_DEFAULT}
 
 SUB_FILES=	pkg-message
 
