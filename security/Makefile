@@ -1268,7 +1268,6 @@
     SUBDIR += tclsasl
     SUBDIR += tcpcrypt
     SUBDIR += teleport
-    SUBDIR += teleport5
     SUBDIR += testssl.sh
     SUBDIR += tfhe
     SUBDIR += tfsec

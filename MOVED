@@ -17886,3 +17886,4 @@ devel/horde-content||2023-03-31|Has expired: Requires php74
 devel/horde-timeobjects||2023-03-31|Has expired: Requires php74
 www/horde-base||2023-03-31|Has expired: Requires php74
 multimedia/transcode||2023-03-31|Has expired: abandoned by upstream and does not build
+security/teleport5|security/teleport|2023-03-31|More recent version than expired teleport port
