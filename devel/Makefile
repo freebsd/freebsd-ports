@@ -514,6 +514,7 @@
     SUBDIR += dasm
     SUBDIR += datadraw
     SUBDIR += date
+    SUBDIR += datovka
     SUBDIR += dbus
     SUBDIR += dbus-c++
     SUBDIR += dbus-glib
