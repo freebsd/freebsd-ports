@@ -127,7 +127,7 @@ man/man1/strip.1.gz
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/bfd.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/binutils.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/gold.mo
+%%NLS%%%%GOLD%%share/locale/ro/LC_MESSAGES/gold.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/gprof.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/opcodes.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bfd.mo
