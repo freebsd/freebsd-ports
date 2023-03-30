@@ -14,6 +14,7 @@ USES=		localbase meson pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	ipcalc
 GL_COMMIT=	4c4261a47f355946ee74013d4f5d0494487cc2d6
+MESON_ARGS=	-Duse_geoip=disabled
 
 CONFLICTS_INSTALL=	ipcalc
 
