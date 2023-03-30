@@ -55,6 +55,7 @@ USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 libxml2 pango
 USE_XORG=	x11
 
 SHEBANG_FILES=	scripts/collect_translatables.sh
+MESON_ARGS=	-Dlsp_dsp=disabled
 
 GLIB_SCHEMAS=	org.zrythm.Zrythm.gschema.xml
 
