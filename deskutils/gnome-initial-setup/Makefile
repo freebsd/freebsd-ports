@@ -30,7 +30,8 @@ RUN_DEPENDS=	gdm>=3.0.0:x11/gdm \
 USES=		compiler:c++11-lib gettext gnome meson pathfix pkgconfig tar:xz
 USE_GNOME=	gnomedesktop3 gtk30 intlhack
 
-MESON_ARGS=	-Dparental_controls=disabled \
+MESON_ARGS=	-Dibus=disabled \
+		-Dparental_controls=disabled \
 		-Dsystemd=false
 
 PORTSCOUT=	limitw:1,even
