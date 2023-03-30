@@ -1,5 +1,6 @@
 PORTNAME=	gstreamer1-vaapi
 PORTVERSION=	1.22.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer-vaapi/
 DISTNAME=	gstreamer-vaapi-${PORTVERSION}
@@ -19,19 +20,22 @@ USE_GNOME=	glib20
 USE_GSTREAMER=	bad
 USE_GL=		gl
 USE_XORG=	x11 xrandr xrender xorgproto
+MESON_ARGS=	-Ddoc=disabled -Dexamples=disabled
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
 OPTIONS_DEFINE=	DRM WAYLAND
+OPTIONS_DEFAULT=DRM WAYLAND
 
-DRM_DESC=	Raw KMS/DRM backend
+DRM_DESC=		KMS console and headless support
+DRM_BUILD_DEPENDS=	libdrm>0:graphics/libdrm
+DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd
+DRM_MESON_ENABLED=	drm
 
-DRM_MESON_BOOL=	drm
-DRM_LIB_DEPENDS=libudev.so:devel/libudev-devd \
-		libdrm.so:graphics/libdrm
-
-WAYLAND_MESON_BOOL=	wayland
+WAYLAND_BUILD_DEPENDS=	wayland-protocols>=1.15:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=	libva-wayland.so:multimedia/libva \
 			libwayland-client.so:graphics/wayland
+WAYLAND_MESON_ENABLED=	wayland
+WAYLAND_IMPLIES=	DRM
 
 .include <bsd.port.mk>
