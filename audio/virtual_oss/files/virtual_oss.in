@@ -36,7 +36,7 @@ start_cmd="${name}_start"
 stop_cmd="${name}_stop"
 status_cmd="${name}_status"
 
-# required_modules="cuse"
+required_modules="cuse"
 virtual_oss_default_args="\
   -T /dev/sndstat \
   -S \
