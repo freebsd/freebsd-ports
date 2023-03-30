@@ -15,6 +15,7 @@ BUILD_DEPENDS=	lv2>0:audio/lv2 \
 		lv2lint:audio/lv2lint
 
 USES=		meson pkgconfig tar:xz
+MESON_ARGS=	-Dtests=disabled
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/lv2/fomp.lv2/*.so
