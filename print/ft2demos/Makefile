@@ -16,6 +16,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 
 USES=		meson tar:xz xorg
 USE_XORG=	x11
+MESON_ARGS=	-Dfreetype2:harfbuzz=disabled
 
 USE_GITLAB=	yes
 GL_PROJECT=	freetype-demos
