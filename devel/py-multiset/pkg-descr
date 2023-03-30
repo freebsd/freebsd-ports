@@ -1,0 +1,6 @@
+The multiset package provides a multiset implementation for python.
+
+A multiset is similar to the builtin set, but it allows an element to occur
+multiple times. It is an unordered collection of elements which have to be
+hashable just like in a set. It supports the same methods and operations as set
+does, e.g. membership test, union, intersection, and (symmetric) difference.
