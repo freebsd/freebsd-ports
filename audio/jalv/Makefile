@@ -26,6 +26,7 @@ USES=		desktop-file-utils gnome pkgconfig meson qmake:no_configure,no_env \
 USE_QT=		core gui widgets buildtools:build
 USE_GNOME=	atk atkmm cairo cairomm pango pangomm libsigc++20 \
 		gdkpixbuf2 glib20 glibmm  gtk20 gtk30 gtkmm24
+MESON_ARGS=	-Dportaudio=disabled
 
 CXXFLAGS+=	-fPIC
 
