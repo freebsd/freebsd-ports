@@ -1,10 +1,11 @@
 PORTNAME=	ansilove
-PORTVERSION=	4.1.6
+PORTVERSION=	4.1.7
 CATEGORIES=	graphics textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	ANSI / ASCII art to PNG converter
-WWW=		https://github.com/ansilove/ansilove
+WWW=		https://www.ansilove.org/ \
+		https://github.com/ansilove/ansilove
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
