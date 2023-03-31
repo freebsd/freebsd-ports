@@ -1,8 +1,8 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.3.10
+DISTVERSION=	4.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
-MASTER_SITES=	https://packages.wazuh.com/deps/17/libraries/sources/:wazuh_sources \
+MASTER_SITES=	https://packages.wazuh.com/deps/18/libraries/sources/:wazuh_sources \
 		LOCAL/acm/${PORTNAME}/:wazuh_cache
 PKGNAMESUFFIX=	-manager
 DISTFILES=	${EXTERNAL_DISTFILES} \
@@ -17,13 +17,14 @@ WWW=		https://wazuh.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	cmake:devel/cmake-core
+BUILD_DEPENDS=	cmake:devel/cmake-core \
+		autoconf>=2.71:devel/autoconf
 LIB_DEPENDS+=	libgdbm.so:databases/gdbm \
 		libnghttp2.so:www/libnghttp2
 
 USES=		cpe gmake perl5 python:3.9 readline shebangfix sqlite:3 uidfix
 
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 aarch64
 
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
@@ -33,6 +34,7 @@ MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LI
 WAZUH_CACHEFILE=	${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}
 EXTERNAL_DISTFILES=	cJSON.tar.gz:wazuh_sources \
 			curl.tar.gz:wazuh_sources \
+			jemalloc.tar.gz:wazuh_sources \
 			libdb.tar.gz:wazuh_sources \
 			libffi.tar.gz:wazuh_sources \
 			libyaml.tar.gz:wazuh_sources \
@@ -114,36 +116,37 @@ WAZUHMOD770=	/etc/decoders /etc/lists /etc/lists/amazon /etc/rootcheck \
 
 WAZUHPREFIX=	/var/ossec
 
-WZPYTHONWHEELS=	aiohttp-3.8.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		cffi-1.14.4-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		cryptography-3.3.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		frozenlist-1.2.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		grpcio-1.38.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		hiredis-1.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		MarkupSafe-1.1.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		multidict-5.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		psutil-5.7.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		PyYAML-5.4.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		SQLAlchemy-1.3.11-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		uvloop-0.15.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl \
-		yarl-1.6.3-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH}.whl
+WZPYTHONWHEELS=	aiohttp-3.8.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		cffi-1.14.4-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		cryptography-3.3.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		frozenlist-1.2.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		grpcio-1.38.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		hiredis-1.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		MarkupSafe-2.1.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		multidict-5.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		psutil-5.8.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		PyYAML-5.4.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		SQLAlchemy-1.3.11-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		uvloop-0.15.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		yarl-1.6.3-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl
 
+ARCH_BASE=	${ARCH:S/aarch64/arm64/g}
 UNAME_r=	${_OSRELEASE:tl}
 FBSD_RELEASE=	freebsd_${UNAME_r:S/./_/g:S/-/_/g}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 1200500 && ${OSVERSION} < 1300000
-FBSD_VERSION_BASE=freebsd_12_3_release_p5
-WAZUH_CACHENAME=${PORTNAME}-cache-fbsd12-${ARCH}
+FBSD_VERSION_BASE=freebsd_12_4_release_p1
+WAZUH_CACHENAME=${PORTNAME}-cache-fbsd12-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
-FBSD_VERSION_BASE=freebsd_13_1_release
-WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}
+FBSD_VERSION_BASE=freebsd_13_1_release_p6
+WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1400000
 FBSD_VERSION_BASE=freebsd_14_0_current
-WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}
+WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .else
 IGNORE=		FreeBSD ${OSVERSION} is not supported
@@ -163,7 +166,7 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|HOST_NAME_MAX|_POSIX_HOST_NAME_MAX|g' ${WRKSRC}/src/wazuh_modules/wm_database.c
 	${REINPLACE_CMD} -e 's|CC=|CC?=|g' -e 's|AR=|AR?=|g' ${WRKSRC}/src/external/bzip2/Makefile
-	${REINPLACE_CMD} '115d' ${WRKSRC}/src/wazuh_modules/syscollector/CMakeLists.txt
+	${REINPLACE_CMD} '114d' ${WRKSRC}/src/wazuh_modules/syscollector/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|^\( *MULTIARCH=\).*--print-multiarch.*|\1|' ${WRKSRC}/src/external/cpython/configure
 
 do-build:
@@ -227,6 +230,7 @@ do-install:
 
 	${INSTALL_SCRIPT} ${WRKSRC}/integrations/pagerduty ${STAGEDIR}${WAZUHPREFIX}/integrations/pagerduty
 	${INSTALL_SCRIPT} ${WRKSRC}/integrations/slack ${STAGEDIR}${WAZUHPREFIX}/integrations/slack.py
+	${INSTALL_SCRIPT} ${WRKSRC}/integrations/shuffle.py ${STAGEDIR}${WAZUHPREFIX}/integrations/shuffle.py
 	${INSTALL_SCRIPT} ${WRKSRC}/integrations/virustotal ${STAGEDIR}${WAZUHPREFIX}/integrations/virustotal.py
 
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/queue/vulnerabilities/dictionaries
@@ -243,6 +247,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/aws/aws_s3.py ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/aws-s3.py
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/wodles/aws/aws-s3
 
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/gcloud/exceptions.py ${STAGEDIR}${WAZUHPREFIX}/wodles/gcloud/exceptions.py
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/gcloud/gcloud.py ${STAGEDIR}${WAZUHPREFIX}/wodles/gcloud/gcloud.py
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/gcloud/integration.py ${STAGEDIR}${WAZUHPREFIX}/wodles/gcloud/integration.py
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/gcloud/tools.py ${STAGEDIR}${WAZUHPREFIX}/wodles/gcloud/tools.py
@@ -256,9 +261,11 @@ do-install:
 
 	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/azure-logs.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure-logs.py
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/azure-logs
+	${INSTALL_SCRIPT} ${WRKSRC}/wodles/azure/orm.py ${STAGEDIR}${WAZUHPREFIX}/wodles/azure/orm.py
 
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/slack
 	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/virustotal
+	${INSTALL_SCRIPT} ${WRKSRC}/framework/wrappers/generic_wrapper.sh ${STAGEDIR}${WAZUHPREFIX}/integrations/shuffle
 
 	${FIND} ${WRKSRC}/ruleset/sca -type f -name "*.yml" -exec ${INSTALL_DATA} "{}" ${STAGEDIR}${WAZUHPREFIX}/ruleset/sca \;
 
@@ -268,6 +275,7 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/src/shared_modules/rsync/build/lib/librsync.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/wazuh_modules/syscollector/build/lib/libsyscollector.so ${STAGEDIR}${WAZUHPREFIX}/lib
 	${INSTALL_LIB} ${WRKSRC}/src/data_provider/build/lib/libsysinfo.so ${STAGEDIR}${WAZUHPREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/src/external/jemalloc/lib/libjemalloc.so.2 ${STAGEDIR}${WAZUHPREFIX}/lib
 
 	cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} STAGEDIR=${STAGEDIR} \
 		${MAKE_CMD} install_python ${MAKE_ARGS}

@@ -1,6 +1,6 @@
---- framework/Makefile	2022-07-26 15:50:26.898033000 -0500
-+++ framework/Makefile	2022-07-26 15:51:11.464092000 -0500
-@@ -7,13 +7,13 @@
+--- framework/Makefile	2023-03-27 05:11:56.000000000 -0500
++++ framework/Makefile	2023-03-28 21:20:23.081023000 -0500
+@@ -7,14 +7,14 @@
  WAZUH_GROUP       = wazuh
  INSTALLDIR       ?= /var/ossec
  
@@ -9,6 +9,7 @@
 +CC           ?= gcc
 +CFLAGS       ?= -pipe -Wall -Wextra
  THREAD_FLAGS = -pthread
+ MV_FILE      = mv -f
  RM_FILE      = rm -f
 -INSTALL_DIR  = install -o root -g ${WAZUH_GROUP} -m 0750  -d
 -INSTALL_EXEC = install -o root -g ${WAZUH_GROUP} -m 0750

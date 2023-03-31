@@ -408,10 +408,12 @@
 /var/ossec/wodles/aws/aws-s3.py
 /var/ossec/wodles/azure/azure-logs
 /var/ossec/wodles/azure/azure-logs.py
+/var/ossec/wodles/azure/orm.py
 /var/ossec/wodles/docker/DockerListener
 /var/ossec/wodles/docker/DockerListener.py
 /var/ossec/wodles/gcloud/buckets/access_logs.py
 /var/ossec/wodles/gcloud/buckets/bucket.py
+/var/ossec/wodles/gcloud/exceptions.py
 /var/ossec/wodles/gcloud/gcloud
 /var/ossec/wodles/gcloud/gcloud.py
 /var/ossec/wodles/gcloud/integration.py
