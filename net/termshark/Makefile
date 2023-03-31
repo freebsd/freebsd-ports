@@ -23,4 +23,7 @@ GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	bin/${PORTNAME}
 
+post-extract:
+	${RM} ${WRKSRC}/pkg/system/dumpcapext_arm64.go
+
 .include <bsd.port.mk>
