@@ -1,4 +1,4 @@
-TIMESTAMP = 1676808983
+TIMESTAMP = 1678816732
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f
 SIZE (rust/crates/aho-corasick-0.7.18.crate) = 112923
 SHA256 (rust/crates/ansi_term-0.12.1.crate) = d52a9bb7ec0cf484c551830a7ce27bd20d67eac647e1befb56b0be4ee39a55d2
@@ -185,5 +185,5 @@ SHA256 (rust/crates/windows_x86_64_gnullvm-0.42.1.crate) = 628bfdf232daa22b0d64f
 SIZE (rust/crates/windows_x86_64_gnullvm-0.42.1.crate) = 362788
 SHA256 (rust/crates/windows_x86_64_msvc-0.42.1.crate) = 447660ad36a13288b1db4d4248e857b510e8c3a225c822ba4fb748c0aafecffd
 SIZE (rust/crates/windows_x86_64_msvc-0.42.1.crate) = 664606
-SHA256 (bootandy-dust-v0.8.4_GH0.tar.gz) = 611f2da80ef5b1d4423bcda159a65e9436692357b686b91b1dd8245a76eed589
-SIZE (bootandy-dust-v0.8.4_GH0.tar.gz) = 101113
+SHA256 (bootandy-dust-v0.8.5_GH0.tar.gz) = 0eff8b1b4e53f5ec2ffc0cfb9e5500bf27a9a5a68b1ff115c98facb4d20a7b7c
+SIZE (bootandy-dust-v0.8.5_GH0.tar.gz) = 101523
