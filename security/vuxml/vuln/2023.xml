@@ -1,3 +1,60 @@
+  <vuln vid="54006796-cf7b-11ed-a5d5-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.10.0</ge><lt>15.10.1</lt></range>
+	<range><ge>15.9.0</ge><lt>15.9.4</lt></range>
+	<range><ge>8.1</ge><lt>15.8.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/03/30/security-release-gitlab-15-10-1-released/">
+	  <p>Cross-site scripting in "Maximum page reached" page</p>
+	  <p>Private project guests can read new changes using a fork</p>
+	  <p>Mirror repository error reveals password in Settings UI</p>
+	  <p>DOS and high resource consumption of Prometheus server through abuse of Prometheus integration proxy endpoint</p>
+	  <p>Unauthenticated users can view Environment names from public projects limited to project members only</p>
+	  <p>Copying information to the clipboard could lead to the execution of unexpected commands</p>
+	  <p>Maintainer can leak masked webhook secrets by adding a new parameter to the webhook URL</p>
+	  <p>Arbitrary HTML injection possible when :soft_email_confirmation feature flag is enabled in the latest release</p>
+	  <p>Framing of arbitrary content (leading to open redirects) on any page allowing user controlled markdown</p>
+	  <p>MR for security reports are available to everyone</p>
+	  <p>API timeout when searching for group issues</p>
+	  <p>Unauthorised user can add child epics linked to victim's epic in an unrelated group</p>
+	  <p>GitLab search allows to leak internal notes</p>
+	  <p>Ambiguous branch name exploitation in GitLab</p>
+	  <p>Improper permissions checks for moving an issue</p>
+	  <p>Private project branches names can be leaked through a fork</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3513</cvename>
+      <cvename>CVE-2023-0485</cvename>
+      <cvename>CVE-2023-1098</cvename>
+      <cvename>CVE-2023-1733</cvename>
+      <cvename>CVE-2023-0319</cvename>
+      <cvename>CVE-2023-1708</cvename>
+      <cvename>CVE-2023-0838</cvename>
+      <cvename>CVE-2023-0523</cvename>
+      <cvename>CVE-2023-0155</cvename>
+      <cvename>CVE-2023-1167</cvename>
+      <cvename>CVE-2023-1417</cvename>
+      <cvename>CVE-2023-1710</cvename>
+      <cvename>CVE-2023-0450</cvename>
+      <cvename>CVE-2023-1071</cvename>
+      <cvename>CVE-2022-3375</cvename>
+      <url>https://about.gitlab.com/releases/2023/03/30/security-release-gitlab-15-10-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-03-30</discovery>
+      <entry>2023-03-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6bd2773c-cf1a-11ed-bd44-080027f5fec9">
     <topic>rubygem-time -- ReDoS vulnerability</topic>
     <affects>
