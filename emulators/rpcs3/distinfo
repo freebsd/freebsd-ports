@@ -1,6 +1,6 @@
-TIMESTAMP = 1680100266
-SHA256 (RPCS3-rpcs3-v0.0.27-14836-g82dedb1fbb_GH0.tar.gz) = 27676c23abbe5c67571d28b445588528dc5cd276f2adf5d4e143eeefbf558391
-SIZE (RPCS3-rpcs3-v0.0.27-14836-g82dedb1fbb_GH0.tar.gz) = 8782421
+TIMESTAMP = 1680271551
+SHA256 (RPCS3-rpcs3-v0.0.27-14840-g842edbcbe7_GH0.tar.gz) = af6200da67d5603741c98670a8a0f0d706aad91ed874f9f4ee81d307ed1d508d
+SIZE (RPCS3-rpcs3-v0.0.27-14840-g842edbcbe7_GH0.tar.gz) = 8783120
 SHA256 (RPCS3-hidapi-hidapi-0.13.1-2-gecf1b62_GH0.tar.gz) = a45fdf93aeb913407f0e707769b3ee7ac58bef6d44e299065ea1df038261ac1c
 SIZE (RPCS3-hidapi-hidapi-0.13.1-2-gecf1b62_GH0.tar.gz) = 245283
 SHA256 (RPCS3-llvm-mirror-9b52b6c39ae9_GH0.tar.gz) = 9df78a8282453a0e1a3653664ef11ef47b8ab4d2b86e486922770ed2240788b0
@@ -23,7 +23,5 @@ SHA256 (miniupnp-miniupnp-miniupnpd_2_3_2_GH0.tar.gz) = 3b8567490c50e698b91c657c
 SIZE (miniupnp-miniupnp-miniupnpd_2_3_2_GH0.tar.gz) = 455225
 SHA256 (wolfSSL-wolfssl-v5.5.4-stable_GH0.tar.gz) = b7ee150e49def77c765bc02aac92ddeb0bebefd4cb12aa263d8f95e405221fb8
 SIZE (wolfSSL-wolfssl-v5.5.4-stable_GH0.tar.gz) = 19288452
-SHA256 (llvm-llvm-project-llvmorg-13.0.1_GH0.tar.gz) = 09c50d558bd975c41157364421820228df66632802a4a6a7c9c17f86a7340802
-SIZE (llvm-llvm-project-llvmorg-13.0.1_GH0.tar.gz) = 147290251
 SHA256 (98a2f373fd59.patch) = 22535803eca460d45607c303f66db085f59bbe07f1e23509b5e097ed25ad3dae
 SIZE (98a2f373fd59.patch) = 103152
