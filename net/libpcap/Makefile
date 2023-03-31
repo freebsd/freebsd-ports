@@ -1,5 +1,5 @@
 PORTNAME=	libpcap
-PORTVERSION=	1.10.2
+PORTVERSION=	1.10.3
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/
 
