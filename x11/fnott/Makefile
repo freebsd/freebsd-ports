@@ -1,5 +1,6 @@
 PORTNAME=	fnott
 DISTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -25,6 +26,10 @@ USE_XORG=	pixman
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 post-patch:
+# Respect PREFIX for system-wide config
+	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
+		${WRKSRC}/config.c \
+		${WRKSRC}/doc/${PORTNAME}.ini.5.scd
 # Respect PREFIX for icons
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/xdg.c
