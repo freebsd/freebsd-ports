@@ -1,5 +1,5 @@
 PORTNAME=	capnproto
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.3
 CATEGORIES=	devel
 MASTER_SITES=	https://capnproto.org/
 DISTNAME=	${PORTNAME}-c++-${DISTVERSION}
@@ -11,11 +11,12 @@ WWW=		https://capnproto.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake compiler:c++14-lang cpe pathfix ssl
+USES=		cmake:testing compiler:c++14-lang cpe pathfix ssl
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING
+CMAKE_TESTING_ON=	BUILD_TESTING
 
 CONFLICTS_INSTALL=	capnproto080
 
