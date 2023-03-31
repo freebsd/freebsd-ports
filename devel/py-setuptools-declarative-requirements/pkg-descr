@@ -1,0 +1,5 @@
+Declarative setuptools Config Requirements Files Support
+
+This projects adds the ability for projects using setuptools
+declarative configuration to specify requirements using requirements
+files.
