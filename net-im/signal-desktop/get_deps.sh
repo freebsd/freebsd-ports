@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=v6.11.0
+SIGNAL_VERS=v6.12.0
 
 fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json
 ringrtc_version=$(grep '@signalapp/ringrtc"' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
@@ -15,6 +15,9 @@ electron_version=$(grep '"electron":' /tmp/package.json | awk -F ":" '{print $2}
 echo "ELECTRON_VERSION= ${electron_version}"
 
 bsqlite3_version=$(grep '@signalapp/better-sqlite3' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
+
+esbuild_version=$(grep '"esbuild":' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
+echo "ESBUILD_VERSION= ${esbuild_version}"
 
 fetch -qo /tmp/download.js https://raw.githubusercontent.com/signalapp/better-sqlite3/v${bsqlite3_version}/deps/download.js
 
