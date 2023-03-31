@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.23.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -228,14 +228,6 @@ CFLAGS+=	-DNDEBUG
 # Fix build failure on clang >= 12
 .if ${PORT_OPTIONS:MHTTP_PERL} && ${OSVERSION} >= 1301000
 CFLAGS+=	-Wno-compound-token-split-by-macro
-.endif
-
-.if ${PORT_OPTIONS:MHTTPV3} && \
-    (empty(PORT_OPTIONS:MHTTPV3_BORING) && \
-     empty(PORT_OPTIONS:MHTTPV3_LSSL) && \
-     empty(PORT_OPTIONS:MHTTPV3_QTLS))
-IGNORE=		required HTTPV3_BORING or HTTPV3_LSSL or HTTPV3_QTLS \
-		to be defined. Please do 'make config' again
 .endif
 
 .if empty(PORT_OPTIONS:MDYNAMIC_HC) && empty(PORT_OPTIONS:MLUA) && \
