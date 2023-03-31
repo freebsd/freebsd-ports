@@ -1,6 +1,7 @@
 PORTNAME=	surelog
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.51
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +17,9 @@ BROKEN_i386=	compilation fails: conversion function cannot be redeclared, see ht
 
 BUILD_DEPENDS=	utf8cpp>0:devel/utf8cpp \
 		${PYTHON_PKGNAMEPREFIX}orderedmultidict>0:devel/py-orderedmultidict@${PY_FLAVOR}
-LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
+LIB_DEPENDS=	libcapnp.so:devel/capnproto \
+		libtcmalloc.so:devel/google-perftools \
+		libuhdm.so:cad/uhdm
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags tcl:86,build
 USE_JAVA=	17
@@ -26,12 +29,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	chipsalliance
 GH_PROJECT=	Surelog
 GH_TUPLE=	alainmarcel:antlr4:3143e88:antlr4/third_party/antlr4 \
-		chipsalliance:UHDM:1aaa156:UHDM/third_party/UHDM \
-			capnproto:capnproto:14f24a4:UHDM_capnproto/third_party/UHDM/third_party/capnproto \
 		google:googletest:e1ee0fa:googletest/third_party/googletest \
 		google:flatbuffers:32a6744:flatbuffers/third_party/flatbuffers
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS SURELOG_USE_HOST_UHDM
 CMAKE_OFF=	SURELOG_BUILD_TESTS
 CMAKE_ARGS=	-DFREEBSD_JAVA_VERSION=${USE_JAVA} \
 		-DPython3_EXECUTABLE=${PYTHON_CMD}
