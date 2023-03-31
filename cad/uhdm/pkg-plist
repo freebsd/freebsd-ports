@@ -210,7 +210,7 @@ include/uhdm/ref_obj_interf_net_var_group.h
 include/uhdm/ref_var.h
 include/uhdm/reg.h
 include/uhdm/reg_array.h
-include/uhdm/%%CMAKE_BUILD_TYPE%%.h
+include/uhdm/release.h
 include/uhdm/repeat.h
 include/uhdm/repeat_control.h
 include/uhdm/restrict.h
