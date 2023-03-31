@@ -16,7 +16,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang python:3.6+
-USE_PYTHON=	distutils autoplist unittest # some tests break, see https://github.com/potassco/clingo/issues/390
+USE_PYTHON=	distutils autoplist unittest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/clingo
 TEST_WRKSRC=	${WRKSRC}/libpyclingo
