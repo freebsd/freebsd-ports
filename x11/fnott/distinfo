@@ -1,3 +1,5 @@
 TIMESTAMP = 1680250055
 SHA256 (fnott-1.4.0.tar.gz) = 60dad48005d212a34852f72064a61cf27d8b0e0e28a8b26fa289b806b84edb5e
 SIZE (fnott-1.4.0.tar.gz) = 472660
+SHA256 (cee8e61a02cc.patch) = 9befb9afa7168f6bce7bc95044fd2729d3e153d9883195f240198e7101602bed
+SIZE (cee8e61a02cc.patch) = 637
