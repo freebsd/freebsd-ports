@@ -1,7 +1,6 @@
 PORTNAME=	openmc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.1
-PORTREVISION=	1
+DISTVERSION=	0.13.3
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,11 +17,14 @@ LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libpugixml.so:textproc/pugixml \
 		libsz.so:science/libaec
 
-USES=		cmake:noninja eigen:3 pkgconfig
+USES=		cmake:noninja,testing eigen:3 pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}-dev
-GH_TUPLE=	martinmoene:gsl-lite:913e86d:gsl_lite/vendor/gsl-lite
+GH_TUPLE=	martinmoene:gsl-lite:913e86d:gsl_lite/vendor/gsl-lite # gsl-lite isn't ported yet
+
+CMAKE_OFF=	OPENMC_BUILD_TESTS
+CMAKE_TESTING_ON=	OPENMC_BUILD_TESTS # tests are broken, see https://github.com/openmc-dev/openmc/issues/2449
 
 BINARY_ALIAS=	git=false
 
