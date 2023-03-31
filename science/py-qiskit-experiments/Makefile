@@ -1,5 +1,5 @@
 PORTNAME=	qiskit-experiments
-DISTVERSION=	0.4.0
+DISTVERSION=	0.5.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,9 +13,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lmfit>0:math/py-lmfit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.4:math/py-matplotlib@${PY_FLAVOR} \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}qiskit-terra>=0.21.1:science/py-qiskit-terra@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-terra>=0.22:science/py-qiskit-terra@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qiskit-ibm-experiment>=0.2.5:science/py-qiskit-ibm-experiment@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qiskit-ibmq-provider>=0.16.0:science/py-qiskit-ibmq-provider@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rustworkx>0:math/py-rustworkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.4:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uncertainties>0:math/py-uncertainties@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}
