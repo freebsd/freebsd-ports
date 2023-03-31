@@ -1,8 +1,9 @@
+.include <bsd.port.pre.mk>
+
 PORTNAME=	libpfctl
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	net
 MASTER_SITES=	LOCAL/kp/
-DISTFILES=	libpfctl-${_LIBPFCTL_HASH}.tar.gz
 
 MAINTAINER=	kp@FreeBSD.org
 COMMENT=	Library for interaction with pf(4)
@@ -10,32 +11,47 @@ WWW=		https://cgit.freebsd.org/src/tree/lib/libpfctl
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN_FreeBSD_12=	Will not work until nvlist-ified ioctls are available
-BROKEN_FreeBSD_13=	Will not work until nvlist-ified ioctls are available
-
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/libpfctl
 
-_LIBPFCTL_HASH=	4ae3a97e127c
+_LIBPFCTL_HASH=	134ced89c4ca
 
-PLIST_FILES=	lib/libpfctl.so.0 \
+PLIST_FILES=	\
+		lib/libpfctl.so \
+		lib/libpfctl.so.0 \
 		include/libpfctl.h
+
+.include <bsd.port.pre.mk>
+
+.if ${OSREL} == "14.0"
+DISTFILES=	libpfctl-${_LIBPFCTL_HASH}.tar.gz
+.else
+DISTFILES=	libpfctl-${OSREL}.tar.gz
+.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/lib
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include
 	${INSTALL_LIB} ${WRKSRC}/libpfctl.so.0 ${STAGEDIR}${PREFIX}/lib
+	${LN} -s libpfctl.so.0 ${STAGEDIR}${PREFIX}/lib/libpfctl.so
 	${INSTALL_DATA} ${WRKSRC}/*.h ${STAGEDIR}${PREFIX}/include
 
 .if defined(MAINTAINER_MODE)
 upload:
+	for version in 12.3 12.4 13.1; \
+	do \
+		cd /usr/src/lib && \
+		git archive --format=tar.gz \
+		    --output=libpfctl-$${version}.tar.gz \
+		    origin/releng/$${version} libpfctl ; \
+	done
 	cd /usr/src/lib && \
-	HASH=$$(git rev-parse --short origin/main) && \
 	git archive --format=tar.gz \
-		--output=libpfctl-$${HASH}.tar.gz \
-		origin/main libpfctl && \
-	scp libpfctl-$${HASH}.tar.gz kp@freefall.freebsd.org:public_distfiles/
+	    --output=libpfctl-${_LIBPFCTL_HASH}.tar.gz \
+	    ${_LIBPFCTL_HASH} libpfctl ; \
+	scp libpfctl-*.tar.gz \
+	    kp@freefall.freebsd.org:public_distfiles/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
