@@ -1,6 +1,6 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.2
+DISTVERSION=	0.26.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -27,7 +27,7 @@ USE_GNOME=	cairo gnomedesktop3
 USE_XORG=	pixman xcb
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World/Phosh
-GL_COMMIT=	3aee71bf5197694ee6125d6f4d06c2afc4c2a4e2
+GL_COMMIT=	28d718ac3c1323f591481de4f90e9888edf4da10
 GL_TUPLE=	https://gitlab.gnome.org:guidog:gmobile:ff854988bff80f2d4c1181ccf3c94b032603b6f9:gmobile/subprojects/gmobile
 SHEBANG_FILES=	build-aux/post_install.py
 MESON_ARGS=	-Dembed-wlroots=disabled
