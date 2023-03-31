@@ -31,6 +31,8 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libgnutls.so:security/gnutls \
 		libharfbuzz.so:print/harfbuzz
 
+BROKEN_FreeBSD_aarch64=		undeclared function 'inb'
+
 USES=		compiler:c++11-lang pkgconfig perl5 localbase:ldflags \
 		gmake iconv:wchar_t jpeg readline gettext xorg
 USE_XORG=	xpm ice sm xext xv xt x11 xmu xxf86vm
