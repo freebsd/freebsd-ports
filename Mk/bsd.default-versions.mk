@@ -65,9 +65,9 @@ IMAGEMAGICK_DEFAULT?=	7
 JAVA_DEFAULT?=		8
 # Possible values: 2.2.6, 2.3.0
 .  if !defined(WANT_LAZARUS_DEVEL)
-LAZARUS_DEFAULT?=       2.2.6
+LAZARUS_DEFAULT?=	2.2.6
 .  else
-LAZARUS_DEFAULT?=       2.3.0
+LAZARUS_DEFAULT?=	2.3.0
 .  endif
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Narmv7:Namd64:Ni386:Npowerpc64:Npowerpc64le:Npowerpc)
@@ -88,15 +88,15 @@ LUAJIT_DEFAULT?=	luajit-openresty
 LUAJIT_DEFAULT?=	luajit-devel
 .  endif
 # Possible values: 5.10, 5.20, 6.8
-MONO_DEFAULT=		5.10
+MONO_DEFAULT?=		5.10
 # Possible values: 5.6, 5.7, 8.0, 10.3m, 10.4m, 10.5m, 5.7p, 5.7w
 MYSQL_DEFAULT?=		8.0
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
 # Possible value: 14, 16, 18, 19, current, lts (Note: current = 19 and lts = 18)
-NODEJS_DEFAULT?=    lts
+NODEJS_DEFAULT?=	lts
 # Possible value: 24, 25, 26
-OPENLDAP_DEFAULT?=    26
+OPENLDAP_DEFAULT?=	26
 # Possible values: 5.32, 5.34, 5.36, devel
 .  if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
