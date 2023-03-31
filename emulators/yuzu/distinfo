@@ -23,3 +23,5 @@ SHA256 (yhirose-cpp-httplib-v0.12.0-3-g6d963fb_GH0.tar.gz) = f64f5c3494196a032be
 SIZE (yhirose-cpp-httplib-v0.12.0-3-g6d963fb_GH0.tar.gz) = 637612
 SHA256 (llvm-llvm-project-llvmorg-16.0.0_GH0.tar.gz) = cba969a0782a3a398658d439f047b5e548ea04724f4fbfdbe17cfc946f4cd3ed
 SIZE (llvm-llvm-project-llvmorg-16.0.0_GH0.tar.gz) = 179126284
+SHA256 (529a1e7d242a.patch) = 14886ca59c05fbc868e70147e9efb99fd5a760315eedd247a4c7ce24d0aef440
+SIZE (529a1e7d242a.patch) = 1000
