@@ -6,7 +6,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Memory efficient serialization library
-WWW=		https://google.github.io/flatbuffers/
+WWW=		https://flatbuffers.dev/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
