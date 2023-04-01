@@ -1,7 +1,6 @@
 PORTNAME=	grafana
-PORTREVISION=	1
 DISTVERSIONPREFIX=	v
-DISTVERSION=	9.4.3
+DISTVERSION=	9.4.7
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/:public \
 		https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
@@ -26,7 +25,7 @@ USES=		cpe go:modules
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		cf0a135
+TAG=		4add91f
 
 GO_MODULE=	github.com/grafana/grafana
 GO_TARGET=	./pkg/cmd/grafana \
