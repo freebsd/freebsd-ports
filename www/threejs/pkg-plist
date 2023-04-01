@@ -297,9 +297,6 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/uv_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/uv_pars_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/uv_vertex.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/uv2_pars_fragment.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/uv2_pars_vertex.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/uv2_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/worldpos_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderLib.js
 %%WWWDIR%%/renderers/shaders/ShaderLib/background.glsl.js
