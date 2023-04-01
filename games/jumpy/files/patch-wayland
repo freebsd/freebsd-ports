@@ -1,8 +1,8 @@
 https://github.com/bevyengine/bevy/issues/4106
 
---- Cargo.lock.orig	2023-03-10 01:26:10 UTC
+--- Cargo.lock.orig	2023-04-01 19:46:39 UTC
 +++ Cargo.lock
-@@ -1133,6 +1133,19 @@ checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f471
+@@ -1170,6 +1170,19 @@ checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f471
  checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f4710dc03ceb8748637775692c"
  
  [[package]]
@@ -22,7 +22,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "cc"
  version = "1.0.79"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -1604,6 +1617,15 @@ dependencies = [
+@@ -1668,6 +1681,15 @@ dependencies = [
  ]
  
  [[package]]
@@ -38,7 +38,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "downcast-rs"
  version = "1.2.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2695,6 +2717,15 @@ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203
+@@ -2791,6 +2813,15 @@ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203
  checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
  
  [[package]]
@@ -54,7 +54,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "memoffset"
  version = "0.6.5"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2934,6 +2965,7 @@ dependencies = [
+@@ -2995,6 +3026,7 @@ dependencies = [
   "bitflags",
   "cfg-if",
   "libc",
@@ -62,7 +62,7 @@ https://github.com/bevyengine/bevy/issues/4106
  ]
  
  [[package]]
-@@ -3784,6 +3816,12 @@ dependencies = [
+@@ -3803,6 +3835,12 @@ dependencies = [
  ]
  
  [[package]]
@@ -75,7 +75,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "scopeguard"
  version = "1.1.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -3932,6 +3970,25 @@ dependencies = [
+@@ -3927,6 +3965,25 @@ dependencies = [
  ]
  
  [[package]]
@@ -101,7 +101,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "spade"
  version = "2.1.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4597,6 +4654,78 @@ checksum = "0046fef7e28c3804e5e38bfa31ea2a0f73905319b6
+@@ -4559,6 +4616,78 @@ checksum = "0046fef7e28c3804e5e38bfa31ea2a0f73905319b6
  checksum = "0046fef7e28c3804e5e38bfa31ea2a0f73905319b677e57ebe37e49358989b5d"
  
  [[package]]
@@ -180,10 +180,10 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "web-sys"
  version = "0.3.61"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4978,7 +5107,10 @@ dependencies = [
+@@ -4900,7 +5029,10 @@ dependencies = [
   "percent-encoding",
   "raw-window-handle 0.4.3",
-  "raw-window-handle 0.5.0",
+  "raw-window-handle 0.5.2",
 + "smithay-client-toolkit",
   "wasm-bindgen",
 + "wayland-client",
@@ -191,7 +191,7 @@ https://github.com/bevyengine/bevy/issues/4106
   "web-sys",
   "windows-sys 0.36.1",
   "x11-dl",
-@@ -5025,6 +5157,21 @@ dependencies = [
+@@ -4947,6 +5079,21 @@ dependencies = [
  dependencies = [
   "nix 0.24.3",
  ]
@@ -213,7 +213,7 @@ https://github.com/bevyengine/bevy/issues/4106
  
  [[package]]
  name = "zstd"
---- Cargo.toml.orig	2023-03-10 01:26:10 UTC
+--- Cargo.toml.orig	2023-04-01 19:46:39 UTC
 +++ Cargo.toml
 @@ -12,7 +12,7 @@ default = ["render"]
  
