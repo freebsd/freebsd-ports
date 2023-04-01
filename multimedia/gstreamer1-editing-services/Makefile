@@ -19,7 +19,6 @@ PORTSCOUT=	limitw:1,even
 
 CONFIGURE_ARGS=	-Ddoc=disabled \
 		-Dvalidate=disabled \
-		-Dintrospection=enabled \
 		-Dpygi-overrides-dir=${PYTHON_SITELIBDIR}/gstreamer-editing-services
 PLIST_SUB=	VERSION=1.0 SOVERSION=0.2005.0
 
