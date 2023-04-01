@@ -22,9 +22,7 @@ USES=		compiler:c++11-lib gettext gnome \
 		localbase meson pkgconfig python:build readline tar:xz xorg
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection
 USE_XORG=	x11 xext
-MESON_ARGS=	-Dcairo=enabled \
-		-Dreadline=enabled \
-		-Dprofiler=disabled \
+MESON_ARGS=	-Dprofiler=disabled \
 		-Dinstalled_tests=false
 USE_LDCONFIG=	yes
 
