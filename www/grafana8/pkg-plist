@@ -3788,9 +3788,6 @@ bin/grafana-server
 %%DATADIR%%/public/build/prometheusPlugin.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/react-monaco-editor.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/react-monaco-editor.%%GRAFANA_BUILDHASH%%.js.map
-%%DATADIR%%/public/build/rst2html.%%GRAFANA_BUILDHASH%%.js
-%%DATADIR%%/public/build/rst2html.%%GRAFANA_BUILDHASH%%.js.LICENSE.txt
-%%DATADIR%%/public/build/rst2html.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/runtime.%%GRAFANA_BUILDHASH%%.js
 %%DATADIR%%/public/build/runtime.%%GRAFANA_BUILDHASH%%.js.map
 %%DATADIR%%/public/build/static/img/codicon.56dba998.ttf
