@@ -35,12 +35,19 @@ GH_TAGNAME=	7ef466772108856ee3e093735033232a6f1a3f04
 
 USE_LDCONFIG=	yes
 
+LIBVMMAPI_VERSION=	5.1
+LIB9P_VERSION=		1.1
+
+PLIST_SUB=		9P_SHLIB_MAJOR=${LIB9P_VERSION} \
+			VMMAPI_SHLIB_MAJOR=${LIBVMMAPI_VERSION}
+
 .if 1200000 <= ${OSVERSION} && ${OSVERSION} < 1300000
 EXTRA_PATCHES=	${PATCHDIR}/freebsd-12 ${PATCHDIR}/freebsd-12/3
 .elif 1301000 <= ${OSVERSION} && ${OSVERSION} < 1400000
 EXTRA_PATCHES=	${PATCHDIR}/freebsd-13/1
 .elif 1400000 <= ${OSVERSION} && ${OSVERSION} < 1500000
-EXTRA_PATCHES=	${PATCHDIR}/freebsd-14
+EXTRA_PATCHES=		${PATCHDIR}/freebsd-14
+LIBVMMAPI_VERSION=	6.1
 .else
 .  if empty(IGNORE)
 IGNORE+=	cannot build: unsupported system
@@ -71,6 +78,18 @@ post-extract:
 .endfor
 	@cd ${FILESDIR} && ${COPYTREE_SHARE} kernconf ${WRKSRC}
 
+post-patch:
+	@cd ${WRKSRC} && \
+		${REINPLACE_CMD} 's/%%9P_SHLIB_MAJOR%%/${LIB9P_VERSION}/g' \
+			contrib/lib9p/Makefile \
+			usr.sbin/bhyve/Makefile
+	@cd ${WRKSRC} && \
+		${REINPLACE_CMD} 's/%%VMMAPI_SHLIB_MAJOR%%/${LIBVMMAPI_VERSION}/g' \
+			lib/libvmmapi/Makefile \
+			usr.sbin/bhyve/Makefile \
+			usr.sbin/bhyvectl/Makefile \
+			usr.sbin/bhyveload/Makefile
+
 do-build:
 	@cd ${WRKSRC}/contrib/lib9p && \
 		${MAKE} SRCTOP=${WRKSRC} SYSDIR=${SRC_BASE}/sys LIB9PDIR=
@@ -83,8 +102,8 @@ do-build:
 .endfor
 
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/contrib/lib9p/lib9p.so.1.1 ${STAGEDIR}${PREFIX}/lib
-	${INSTALL_LIB} ${WRKSRC}/lib/libvmmapi/libvmmapi.so.5.1 ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/contrib/lib9p/lib9p.so.${LIB9P_VERSION} ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_LIB} ${WRKSRC}/lib/libvmmapi/libvmmapi.so.${LIBVMMAPI_VERSION} ${STAGEDIR}${PREFIX}/lib
 .for _bin in bhyve bhyveload bhyvectl
 	${INSTALL_PROGRAM} ${WRKSRC}/usr.sbin/${_bin}/${_bin} ${STAGEDIR}${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/usr.sbin/${_bin}/${_bin}.8.gz ${STAGEDIR}${PREFIX}/man/man8
