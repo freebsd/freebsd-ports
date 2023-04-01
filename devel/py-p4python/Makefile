@@ -1,11 +1,11 @@
 PORTNAME=	p4python
 PORTVERSION=	2016.1.1447008
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	antonfb@hesiod.org
 COMMENT=	Python bindings for the Perforce API
 WWW=		https://www.perforce.com/perforce/r14.2/manuals/p4script/python.programming.html
 
