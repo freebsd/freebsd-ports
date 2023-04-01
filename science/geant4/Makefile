@@ -1,21 +1,11 @@
-PORTNAME=	geant4
-DISTVERSION=	11.0.3
-CATEGORIES=	science parallel python devel cad
-# Supplementary data files for Geant4 fetched from MASTER_SITES:n with "n"=	"data" - Geant4 itself is fetched from GL_SITE defined further down
-MASTER_SITES=	https://cern.ch/geant4-data/datasets/:data
-# Names of supplementary data files for Geant4 defined in DISTFILES:n with "n"=	"data"
-DISTFILES+=	G4ABLA.3.1.tar.gz:data \
-		G4EMLOW.8.0.tar.gz:data \
-		G4ENSDFSTATE.2.3.tar.gz:data \
-		G4INCL.1.0.tar.gz:data \
-		G4NDL.4.6.tar.gz:data \
-		G4PARTICLEXS.4.0.tar.gz:data \
-		G4PhotonEvaporation.5.7.tar.gz:data \
-		G4PII.1.3.tar.gz:data \
-		G4RadioactiveDecay.5.6.tar.gz:data \
-		G4RealSurface.2.2.tar.gz:data \
-		G4SAIDDATA.2.0.tar.gz:data
-DIST_SUBDIR=	${PORTNAME}-${DISTVERSION}
+PORTNAME=		geant4
+DISTVERSIONPREFIX=	v
+DISTVERSION=		11.1.0
+CATEGORIES=		science parallel devel cad
+MASTER_SITES=		https://cern.ch/geant4-data/releases/ \
+			https://cern.ch/geant4-data/datasets/:data
+DISTFILES=		${PORTNAME}-${DISTVERSIONPREFIX}${DISTVERSION}${EXTRACT_SUFX}
+DIST_SUBDIR=		${PORTNAME} # dataset versions generally span several release versions
 
 MAINTAINER=	erik@tenku.dk
 COMMENT=	Simulate the passage of particles through matter
@@ -26,54 +16,83 @@ LICENSE_NAME=	Geant4 Software License
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
-BUILD_DEPENDS=	git:devel/git
-LIB_DEPENDS=	libexpat.so:textproc/expat2 \
+LIB_DEPENDS=	libCLHEP.so:science/clhep \
+		libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
-		libxcb-icccm.so:x11/xcb-util-wm \
-		libxcb-util.so:x11/xcb-util \
+		libptl.so:devel/ptl \
+		libtbb.so:devel/onetbb \
 		libxerces-c.so:textproc/xerces-c3 \
-		libxkbcommon.so:x11/libxkbcommon \
-		${PY_BOOST}
+		libxkbcommon.so:x11/libxkbcommon
 
 USES=		cmake \
 		compiler:c++17-lang \
 		gl \
 		motif \
-		python:3.9+ \
+		qt:5 \
 		xorg
-CMAKE_ON=	GEANT4_BUILD_MULTITHREADED \
-		GEANT4_USE_GDML \
-		GEANT4_USE_OPENGL_X11 \
-		GEANT4_USE_PYTHON \
-		GEANT4_USE_RAYTRACER_X11 \
-		GEANT4_USE_XM \
-		GEANT4_USE_FREETYPE
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.cern.ch/
-GL_COMMIT=	3136fa97238bf2b24eba982206fb72b32b898d96
 USE_GL=		egl gl glu opengl
-USE_LDCONFIG=	yes
+USE_QT=		3d buildtools core gui network \
+		opengl printsupport qmake widgets
 USE_XORG=	ice sm x11 xau xaw xcb xcomposite \
 		xcursor xdamage xdmcp xext xfixes \
 		xfont xfont2 xft xi xinerama \
 		xkbfile xmu xpm xrandr xrender \
 		xres xscrnsaver xt xtst xv xxf86vm
 
-CONFIGURE_WRKSRC?=	${WRKDIR}/.build
-STAGEDIR?=		${WRKDIR}/stage
-CMAKE_ARGS+=		-DGEANT4_BUILD_TLS_MODEL=global-dynamic
+CMAKE_ON=	GEANT4_BUILD_MULTITHREADED \
+		GEANT4_USE_SYSTEM_CLHEP \
+		GEANT4_USE_SYSTEM_PTL \
+		GEANT4_USE_SYSTEM_ZLIB \
+		GEANT4_USE_FREETYPE \
+		GEANT4_USE_GDML \
+		GEANT4_USE_OPENGL_X11 \
+		GEANT4_USE_QT \
+		GEANT4_USE_RAYTRACER_X11 \
+		GEANT4_USE_TBB \
+		GEANT4_USE_XM
 
-G4_DATADIRS=	G4ABLA3.1 G4EMLOW8.0 G4ENSDFSTATE2.3 \
-		G4INCL1.0 G4NDL4.6 G4PARTICLEXS4.0 \
-		G4PII1.3 G4SAIDDATA2.0 \
-		PhotonEvaporation5.7 \
-		RadioactiveDecay5.6 RealSurface2.2
+G4ABLA_VERSION=			3.1
+G4EMLOW_VERSION=		8.2
+G4ENSDFSTATE_VERSION=		2.3
+G4INCL_VERSION=			1.0
+G4NDL_VERSION=			4.7
+G4PARTICLEXS_VERSION=		4.0
+G4PhotonEvaporation_VERSION=	5.7
+G4PII_VERSION=			1.3
+G4RadioactiveDecay_VERSION=	5.6
+G4RealSurface_VERSION=		2.2
+G4SAIDDATA_VERSION=		2.0
+G4TENDL_VERSION=		1.4
+G4_DATASETS=	G4ABLA.${G4ABLA_VERSION} G4EMLOW.${G4EMLOW_VERSION} G4ENSDFSTATE.${G4ENSDFSTATE_VERSION} G4INCL.${G4INCL_VERSION} \
+		G4NDL.${G4NDL_VERSION} G4PARTICLEXS.${G4PARTICLEXS_VERSION} G4PhotonEvaporation.${G4PhotonEvaporation_VERSION} G4PII.${G4PII_VERSION} \
+		G4RadioactiveDecay.${G4RadioactiveDecay_VERSION} G4RealSurface.${G4RealSurface_VERSION} G4SAIDDATA.${G4SAIDDATA_VERSION} G4TENDL.${G4TENDL_VERSION}
+.for dataset in ${G4_DATASETS}
+DISTFILES+=	${dataset}${EXTRACT_SUFX}:data
+.endfor
+
+PLIST_SUB+=	G4ABLA_VERSION="${G4ABLA_VERSION}" \
+		G4EMLOW_VERSION="${G4EMLOW_VERSION}" \
+		G4ENSDFSTATE_VERSION="${G4ENSDFSTATE_VERSION}" \
+		G4INCL_VERSION="${G4INCL_VERSION}" \
+		G4NDL_VERSION="${G4NDL_VERSION}" \
+		G4PARTICLEXS_VERSION="${G4PARTICLEXS_VERSION}" \
+		G4PhotonEvaporation_VERSION="${G4PhotonEvaporation_VERSION}" \
+		G4PII_VERSION="${G4PII_VERSION}" \
+		G4RadioactiveDecay_VERSION="${G4RadioactiveDecay_VERSION}" \
+		G4RealSurface_VERSION="${G4RealSurface_VERSION}" \
+		G4SAIDDATA_VERSION="${G4SAIDDATA_VERSION}" \
+		G4TENDL_VERSION="${G4TENDL_VERSION}" \
+		SHLIB_VER="${DISTVERSION}"
+
+G4_DATADIRS=	G4ABLA${G4ABLA_VERSION} G4EMLOW${G4EMLOW_VERSION} G4ENSDFSTATE${G4ENSDFSTATE_VERSION} G4INCL${G4INCL_VERSION} \
+		G4NDL${G4NDL_VERSION} G4PARTICLEXS${G4PARTICLEXS_VERSION} PhotonEvaporation${G4PhotonEvaporation_VERSION} G4PII${G4PII_VERSION} \
+		RadioactiveDecay${G4RadioactiveDecay_VERSION} RealSurface${G4RealSurface_VERSION} G4SAIDDATA${G4SAIDDATA_VERSION} G4TENDL${G4TENDL_VERSION}
 
 post-install:
 .for dir in ${G4_DATADIRS}
-	cd ${WRKDIR} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/share/Geant4-${DISTVERSION}/data/
+	cd ${WRKDIR} && ${COPYTREE_SHARE} ${dir} ${STAGEDIR}${PREFIX}/share/Geant4/data/
 .endfor
 
 .include <bsd.port.mk>
