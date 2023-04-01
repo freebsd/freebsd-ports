@@ -1,3 +1,44 @@
+  <vuln vid="466ba8bd-d033-11ed-addf-080027eda32c">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki135</name>
+	<range><lt>1.35.10</lt></range>
+      </package>
+    <package>
+	<name>mediawiki138</name>
+	<range><lt>1.38.6</lt></range>
+      </package>
+      <package>
+	<name>mediawiki139</name>
+	<range><lt>1.39.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawikwi reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/6UQBHI5FWLATD7QO7DI4YS54U7XSSLAN/">
+	  <p>(T285159, CVE-2023-PENDING) SECURITY: X-Forwarded-For header allows
+	    brute-forcing autoblocked IP addresses.</p>
+	  <p>(T326946, CVE-2020-36649) SECURITY: Bundled PapaParse copy in
+	    VisualEditor has known ReDos.</p>
+	  <p>(T330086, CVE-2023-PENDING) SECURITY: OATHAuth allows replay attacks when
+	    MediaWiki is configured without ObjectCache; Insecure Default Configuration.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-PENDING</cvename>
+      <cvename>CVE-2020-36649</cvename>
+      <cvename>CVE-2023-PENDING</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/6UQBHI5FWLATD7QO7DI4YS54U7XSSLAN/</url>
+    </references>
+    <dates>
+      <discovery>2020-04-02</discovery>
+      <entry>2023-04-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="54006796-cf7b-11ed-a5d5-001b217b3468">
     <topic>Gitlab -- Multiple Vulnerabilities</topic>
     <affects>
