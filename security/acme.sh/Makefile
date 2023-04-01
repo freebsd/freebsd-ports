@@ -1,6 +1,7 @@
 PORTNAME=	acme.sh
-DISTVERSIONPREFIX=	v
 PORTVERSION=	3.0.5
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	dvl@FreeBSD.org
@@ -39,6 +40,8 @@ PORTDOCS=	README.md
 
 SUB_FILES=	acme-crontab pkg-message
 
+SUB_LIST=	ACME_USER=acme
+
 post-patch-EXAMPLES-on:
 	${REINPLACE_CMD} -e 's|sed -i "|sed -i bak "|' ${WRKSRC}/dnsapi/dns_nsd.sh
 
@@ -51,16 +54,14 @@ do-install:
 
 	${MKDIR} ${STAGEDIR}/var/db/acme/.acme.sh \
 	         ${STAGEDIR}/var/db/acme/certs \
-	         ${STAGEDIR}${PREFIX}/etc/cron.d  \
-	         ${STAGEDIR}${PREFIX}/etc/newsyslog.d \
+	         ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d \
 	         ${STAGEDIR}${EXAMPLESDIR}
 
 	${INSTALL_DATA} ${FILESDIR}/account.conf.sample ${STAGEDIR}/var/db/acme/.acme.sh
 
-	# install the sample file; pkg-plist will install to etc/cron.d for us
 	${INSTALL_DATA} ${WRKDIR}/acme-crontab     ${STAGEDIR}${EXAMPLESDIR}/acme.sh-cron.d
 
-	${INSTALL_DATA} ${FILESDIR}/acme-newsyslog ${STAGEDIR}${PREFIX}/etc/newsyslog.d/acme.sh.sample
+	${INSTALL_DATA} ${FILESDIR}/acme-newsyslog ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d/acme.sh.conf.sample
 
 do-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

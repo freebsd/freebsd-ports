@@ -1,15 +1,12 @@
 #
-# By default, all entries in this file are commented and inactive.
-# Please uncomment and customize as shown below.
+# This file should be copied to /usr/local/etc/cron.d/acme
 
 # use /bin/sh to run commands, overriding the default set by cron
-# uncomment, don't change the value
 #SHELL=/bin/sh
 
 # mail any output to here, no matter whose crontab this is
-# uncomment, set the addres
 #MAILTO=me@example.org
 
-# uncomment, set mm and hh to the time (e.g. hh:mm) of day you want the
+# set mm and hh to the time (e.g. hh:mm) of day you want the
 # cronjob to run
-#mm hh * * * %%PREFIX%%/sbin/acme.sh --cron --home /var/db/acme/.acme.sh  > /dev/null
+mm hh * * * %%ACME_USER%% %%PREFIX%%/sbin/acme.sh --cron --home /var/db/acme/.acme.sh  > /dev/null

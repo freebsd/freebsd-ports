@@ -17,13 +17,27 @@ If you have EXAMPLES on:
   included are the deploy scripts.
 
 * A newsyslog.conf sample file is installed at 
-  %%PREFIX%%/etc/newsyslog.d/acme.sh - you must modify it by
+  %%PREFIX%%/etc/newsyslog.conf.d/acme.sh.conf - you must modify it by
   at least uncommenting the line.
 
 * If you run `newsyslog -NC` it will create the required logfiles.
 
-* Please edit %%PREFIX%%/etc/cron.d/acme.sh - directions are provided in that
-  file.
+* Please review %%EXAMPLESDIR%%/acme.sh-cron.d - instructions are
+  contained in that file.
+EOM
+}
+{ type: upgrade
+  message: <<EOM
+In versions < 3.0.5_1, sample newsyslog files were installed to
+
+  %%PREFIX%%/etc/newsyslog.d/acme.sh
+
+Now they are installed to:
+
+  %%PREFIX%%/etc/newsyslog.conf.d/acme.sh.conf
+
+You may wish to delete the old files/directory and edit the new files to
+enable the log rotation. Instructions contained within.
 EOM
 }
 ]
