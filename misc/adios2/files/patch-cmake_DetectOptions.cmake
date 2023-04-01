@@ -1,8 +1,8 @@
 - fix the python version
 
---- cmake/DetectOptions.cmake.orig	2022-03-29 11:54:45 UTC
+--- cmake/DetectOptions.cmake.orig	2023-03-30 20:01:59 UTC
 +++ cmake/DetectOptions.cmake
-@@ -312,12 +312,12 @@ if(NOT SHARED_LIBS_SUPPORTED)
+@@ -351,12 +351,12 @@ if(NOT SHARED_LIBS_SUPPORTED)
  endif()
  
  if(ADIOS2_USE_Python STREQUAL AUTO)
@@ -17,7 +17,7 @@
    if(ADIOS2_HAVE_MPI)
      find_package(PythonModule REQUIRED COMPONENTS mpi4py mpi4py/mpi4py.h)
    endif()
-@@ -334,7 +334,7 @@ endif()
+@@ -373,7 +373,7 @@ endif()
  
  # Even if no python support, we still want the interpreter for tests
  if(BUILD_TESTING AND NOT Python_Interpreter_FOUND)
