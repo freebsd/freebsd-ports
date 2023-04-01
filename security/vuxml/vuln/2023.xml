@@ -283,6 +283,57 @@
     </dates>
   </vuln>
 
+  <vuln vid="955eb3cc-ce0b-11ed-825f-6c3be5272acd">
+    <topic>Grafana -- Stored XSS in Graphite FunctionDescription tooltip</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><lt>8.5.22</lt></range>
+	<range><ge>9.0.0</ge><lt>9.2.15</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.11</lt></range>
+	<range><ge>9.4.0</ge><lt>9.4.7</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><lt>8.5.22</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><lt>9.2.15</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.11</lt></range>
+	<range><ge>9.4.0</ge><lt>9.4.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/03/22/grafana-security-release-new-versions-with-security-fixes-for-cve-2023-1410/">
+	  <p>When a user adds a Graphite data source, they can then use the data source
+	  in a dashboard. This capability contains a feature to use Functions. Once
+	  a function is selected, a small tooltip appears when hovering over the name
+	  of the function. This tooltip allows you to delete the selected Function
+	  from your query or show the Function Description. However, no sanitization
+	  is done when adding this description to the DOM.</p>
+	  <p>Since it is not uncommon to connect to public data sources, an attacker
+	  could host a Graphite instance with modified Function Descriptions containing
+	  XSS payloads. When the victim uses it in a query and accidentally hovers
+	  over the Function Description, an attacker-controlled XSS payload
+	  will be executed.</p>
+	  <p>The severity of this vulnerability is of CVSSv3.1 5.7 Medium
+	  (CVSS: AV:N/AC:H/PR:H/UI:R/S:U/C:H/I:H/A:N (5.7)).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-1410</cvename>
+      <url>https://grafana.com/security/security-advisories/cve-2023-1410/</url>
+    </references>
+    <dates>
+      <discovery>2023-03-14</discovery>
+      <entry>2023-03-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5b0ae405-cdc7-11ed-bb39-901b0e9408dc">
     <topic>Matrix clients -- Prototype pollution in matrix-js-sdk</topic>
     <affects>
