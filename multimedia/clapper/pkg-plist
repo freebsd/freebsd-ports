@@ -2,6 +2,7 @@ bin/clapper
 bin/com.github.rafostar.Clapper
 lib/clapper-1.0/gst/plugin/importers/libgstclapperglimporter.so
 lib/clapper-1.0/gst/plugin/importers/libgstclappergluploader.so
+lib/clapper-1.0/gst/plugin/importers/libgstclapperrawimporter.so
 lib/com.github.rafostar.Clapper/girepository-1.0/GstClapper-1.0.typelib
 lib/com.github.rafostar.Clapper/libgstclapper-1.0.so
 lib/com.github.rafostar.Clapper/libgstclapper-1.0.so.0
