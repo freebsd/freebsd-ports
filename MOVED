@@ -17824,7 +17824,7 @@ science/InsightToolkit521|science/InsightToolkit|2023-03-21|Retire InsightToolki
 sysutils/etcupdate||2023-03-21|Part of the base system since FreeBSD 10.0
 devel/freebsd-gcc6||2023-03-22|No longer able to build base system, use GCC 9 or later instead
 japanese/mutt-devel||2023-03-25|Has expired: Broken since 2019
-audio/amarok||2023-03-31|Has expired: No longer actively maintained upstream.
+audio/amarok||2023-03-31|Has expired: No longer actively maintained upstream
 audio/cd2mp3||2023-03-31|Has expired: Depends on deprecated port audio/dagrab, consider using audio/abcde or audio/cyanrip
 audio/cmp3||2023-03-31|Has expired: Abandonware, no development in 20 years. Please consider using audio/cmus or audio/musicpd
 audio/cpige||2023-03-31|Has expired: Doesn't work, newer versions also fails
@@ -17852,13 +17852,13 @@ devel/horde-whups||2023-03-31|Has expired: Requires php74
 devel/phpunit6||2023-03-31|Has expired: End of Life since February 1, 2019
 devel/phpunit7||2023-03-31|Has expired: End of Life since February 7, 2020
 emulators/pcsxr||2023-03-31|Has expired: Abandoned upstream and no development in 5+ years, consider using games/retroarch
-games/acm||2023-03-31|Has expired: Abandoned upstream. Does not work.
+games/acm||2023-03-31|Has expired: Abandoned upstream. Does not work
 mail/horde-webmail||2023-03-31|Has expired: Requires php74
 multimedia/dvdrip||2023-03-31|Has expired: Depends on broken transcode port
 multimedia/mkxvcd||2023-03-31|Has expired: Depends on broken transcode port
 multimedia/win32-codecs||2023-03-31|Has expired: Obsolete and users are recommended to utilize ffmpeg instead
 net/minisapserver||2023-03-31|Has expired: Obsolete utility, functionality is now included in multimedia/vlc
-net/tightvnc||2023-03-31|Has expired: Last release in 2009, newer version 2.x is available for Windows only.
+net/tightvnc||2023-03-31|Has expired: Last release in 2009, newer version 2.x is available for Windows only
 news/nntpcache||2023-03-31|Has expired: Upstream site no longer available
 ports-mgmt/p5-FreeBSD-Portindex||2023-03-31|Has expired: Not working, and no fix forthcoming
 print/ghostscript9-x11||2023-03-31|Has expired: Released over 10 years ago and unsupported by upstream, consider print/ghostscript9-agpl-x11
@@ -17887,3 +17887,4 @@ devel/horde-timeobjects||2023-03-31|Has expired: Requires php74
 www/horde-base||2023-03-31|Has expired: Requires php74
 multimedia/transcode||2023-03-31|Has expired: abandoned by upstream and does not build
 security/teleport5|security/teleport|2023-03-31|More recent version than expired teleport port
+www/anyterm||2023-04-01|Has expired: upstream is dead
