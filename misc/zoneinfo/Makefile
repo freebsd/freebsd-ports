@@ -1,5 +1,5 @@
 PORTNAME=	zoneinfo
-DISTVERSION=	2022g
+DISTVERSION=	2023c
 CATEGORIES=	misc
 MASTER_SITES=	https://data.iana.org/time-zones/releases/ \
 		ftp://ftp.iana.org/tz/releases/

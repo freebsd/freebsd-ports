@@ -137,7 +137,6 @@
 %%DATADIR%%/America/Whitehorse
 %%DATADIR%%/America/Winnipeg
 %%DATADIR%%/America/Yakutat
-%%DATADIR%%/America/Yellowknife
 %%DATADIR%%/Antarctica/Casey
 %%DATADIR%%/Antarctica/Davis
 %%DATADIR%%/Antarctica/Macquarie
@@ -436,6 +435,7 @@
 %%BACKWARD%%%%DATADIR%%/America/Thunder_Bay
 %%BACKWARD%%%%DATADIR%%/America/Tortola
 %%BACKWARD%%%%DATADIR%%/America/Virgin
+%%BACKWARD%%%%DATADIR%%/America/Yellowknife
 %%BACKWARD%%%%DATADIR%%/Antarctica/DumontDUrville
 %%BACKWARD%%%%DATADIR%%/Antarctica/McMurdo
 %%BACKWARD%%%%DATADIR%%/Antarctica/South_Pole
