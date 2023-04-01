@@ -22,8 +22,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		cython:lang/cython \
 		swig:devel/swig \
 		bazel:devel/bazel \
-		git:devel/git \
-		clang-devel:devel/llvm-devel
+		git:devel/git
 LIB_DEPENDS=	libnsync.so:devel/nsync \
 		libgpr.so:devel/grpc \
 		libpng.so:graphics/png \
@@ -61,11 +60,12 @@ RUN_DEPENDS=	pybind11>=2.6.2:devel/pybind11 \
 		${PYTHON_PKGNAMEPREFIX}packaging>=21.3:devel/py-packaging@${PY_FLAVOR} \
 		pybind11>=2.6.2:devel/pybind11
 
-USES=		python:3.7+ shebangfix jpeg ssl
+USES=		jpeg llvm:min=16,max=16 python:3.7+ shebangfix ssl
 USE_CXXSTD=     c++17
-SHEBANG_GLOB=	*.py
 USE_GITHUB=	yes
 USE_PYTHON=	distutils
+
+SHEBANG_GLOB=	*.py
 
 BAZEL_BOOT=	--output_user_root=${WRKDIR}/bazel_out
 
@@ -138,7 +138,11 @@ post-patch:
 
 	@${REINPLACE_CMD} "s#%%PYTHON%%#${PYTHON_CMD}#" ${WRKSRC}/.bazelrc
 
-	@${REINPLACE_CMD} "s#%%LOCALBASE%%#${LOCALBASE}#" ${WRKDIR}/bazelrc \
+	@${REINPLACE_CMD} \
+		-e "s#%%LOCALBASE%%#${LOCALBASE}#" \
+		-e "s#%%LLVM_PREFIX%%#${LLVM_PREFIX}#g" \
+		-e "s#%%LLVM_VERSION%%#${LLVM_VERSION}#g" \
+		${WRKDIR}/bazelrc \
 		${WRKSRC}/third_party/absl/system.absl.strings.BUILD \
 		${WRKSRC}/freebsd/cc_toolchain_config.bzl \
 		${WRKSRC}/.bazelrc \
