@@ -1,7 +1,5 @@
 PORTNAME=	polyclipper
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.3-2
-DISTVERSIONSUFFIX=	-g2a727eb
+DISTVERSION=	1.2.4
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,16 +9,16 @@ WWW=		https://github.com/LLNL/PolyClipper
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake:testing
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	LLNL
 GH_PROJECT=	PolyClipper
-GH_TUPLE=	llnl:blt:0ae6bd2:blt/cmake/blt \
-		jmikeowen:PYB11Generator:f351df2:cmake/PYB11Generator
+GH_TUPLE=	jmikeowen:PYB11Generator:eb954d0:PYB11Generator/extern/PYB11Generator
 
 CMAKE_ON=	ENABLE_CXXONLY # otherwise it looks for python2
 CMAKE_OFF=	BUILD_TESTING
+CMAKE_TESTING_OFF=	BUILD_TESTING
 
 NO_BUILD=	yes
 NO_ARCH=	yes
