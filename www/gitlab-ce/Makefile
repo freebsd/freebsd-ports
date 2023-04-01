@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	15.8.4
-PORTREVISION=	4
+PORTVERSION=	15.8.5
+PORTREVISION=	0
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -25,7 +25,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	gitlab-pages>=${PORTVERSION}:www/gitlab-pages \
 	gitlab-shell>=14.15.0:devel/gitlab-shell \
 	gitlab-workhorse>=${PORTVERSION}:www/gitlab-workhorse \
-	redis>=6.0.14:databases/redis \
+	redis>=6.2.11:databases/redis \
 	yarn>=1.10.0:www/yarn \
 	gtar>0:archivers/gtar \
 	bash>0:shells/bash \
@@ -282,7 +282,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	54f2a13176e4d174500a39302d29895d7e729d38
+GL_COMMIT=	c57c04a970e6e1afcd0dbc287afe1006a103afd4
 
 USERS=	git
 GROUPS=	git
