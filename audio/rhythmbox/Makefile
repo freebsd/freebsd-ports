@@ -29,9 +29,7 @@ USES=		desktop-file-utils gettext gnome gstreamer localbase:ldflags meson \
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 introspection libxml2
 USE_XORG=	ice x11 xorgproto
 USE_GSTREAMER=	flac lame jpeg cdparanoia vorbis
-MESON_ARGS=	-Dplugins_vala=enabled \
-		-Dlibsecret=enabled \
-		-Dgtk_doc=false \
+MESON_ARGS=	-Dgtk_doc=false \
 		-Dtests=disabled
 USE_LDCONFIG=	yes
 
