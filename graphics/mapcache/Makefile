@@ -1,6 +1,5 @@
 PORTNAME=		mapcache
-DISTVERSION=		1.12.1
-PORTREVISION=	1
+DISTVERSION=		1.14.0
 CATEGORIES=		graphics
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -9,7 +8,7 @@ COMMENT=		Server that implements tile caching to speed up access to WMS layers
 WWW=		https://www.mapserver.org/mapcache/
 
 LICENSE=		MIT
-LICENSE_FILE=		${WRKSRC}/LICENSE
+LICENSE_FILE=		${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=		libpng.so:graphics/png \
 			libapr-1.so:devel/apr1 \
@@ -20,6 +19,8 @@ USES=			cmake jpeg localbase
 USE_LDCONFIG=		yes
 CMAKE_ON=		WITH_OGR WITH_PIXMAN
 CMAKE_OFF=		WITH_BERKELEY_DB
+
+CFLAGS+=		-std=c99
 
 OPTIONS_DEFINE=		APACHE FASTCGI SQLITE MEMCACHE TIFF TIFF_WRITE \
 			GEOTIFF PCRE GDAL GEOS
