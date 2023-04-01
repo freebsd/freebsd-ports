@@ -1,6 +1,6 @@
 PORTNAME=	git-cinnabar
 DISTVERSION=	0.5.11
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	devel
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,31 +9,27 @@ WWW=		https://github.com/glandium/git-cinnabar
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	${NONEXISTENT}:devel/git:configure
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	git:devel/git
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	glandium
+GH_TUPLE=	git:git:v2.38.1:git/git-core
 
-USES=		gmake python:3.6+,run shebangfix
+USES=		gmake iconv python:3.6+,run shebangfix
 TARGET_ORDER_OVERRIDE=	510:fix-shebang # after do-patch
 SHEBANG_FILES=	${PORTNAME} git-remote-hg
 ALL_TARGET=	${PORTNAME}-helper
-MAKE_ENV=	${:!${MAKE} -V MAKE_ENV -C ${.CURDIR:H}/git!}
-MAKE_ARGS=	SUBMODULE_STATUS=dummy ${:!${MAKE} -V MAKE_ARGS -C ${.CURDIR:H}/git!}
+MAKE_ENV=	V=1
+MAKE_ARGS=	SUBMODULE_STATUS=dummy NEEDS_LIBICONV=${ICONV_LIB} \
+		CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 CFLAGS+=	-ffunction-sections -fdata-sections
 LDFLAGS+=	-Wl,--gc-sections
-.export		CPPFLAGS CFLAGS CXXFLAGS LDFLAGS # :configure
 DATADIR=	${PREFIX}/libexec/git-core
 PORTDATA=	*
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-configure:
-	@${TAR} cf - -C$$(${MAKE} -V WRKSRC -C ${PORTSDIR}/devel/git) . | \
-		${TAR} xof - -C${WRKSRC}/git-core
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}
