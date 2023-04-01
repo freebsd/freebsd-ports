@@ -2,7 +2,8 @@
 %%SITE_PERL%%/OpenAI/API/Request.pm
 %%SITE_PERL%%/OpenAI/API/Request/Chat.pm
 %%SITE_PERL%%/OpenAI/API/Request/Completion.pm
-%%SITE_PERL%%/OpenAI/API/ConfigurationRole.pm
+%%SITE_PERL%%/OpenAI/API/Config.pm
+%%SITE_PERL%%/OpenAI/API/Error.pm
 %%SITE_PERL%%/OpenAI/API/Request/Edit.pm
 %%SITE_PERL%%/OpenAI/API/Request/Embedding.pm
 %%SITE_PERL%%/OpenAI/API/Request/File/List.pm
@@ -11,9 +12,10 @@
 %%SITE_PERL%%/OpenAI/API/Request/Model/List.pm
 %%SITE_PERL%%/OpenAI/API/Request/Model/Retrieve.pm
 %%SITE_PERL%%/OpenAI/API/Request/Moderation.pm
-%%SITE_PERL%%/OpenAI/API/RequestDispatcherRole.pm
-%%SITE_PERL%%/OpenAI/API/UserAgentRole.pm
 %%PERL5_MAN3%%/OpenAI::API.3.gz
+%%PERL5_MAN3%%/OpenAI::API::Config.3.gz
+%%PERL5_MAN3%%/OpenAI::API::Error.3.gz
+%%PERL5_MAN3%%/OpenAI::API::Request.3.gz
 %%PERL5_MAN3%%/OpenAI::API::Request::Chat.3.gz
 %%PERL5_MAN3%%/OpenAI::API::Request::Completion.3.gz
 %%PERL5_MAN3%%/OpenAI::API::Request::Edit.3.gz
