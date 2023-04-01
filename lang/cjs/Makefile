@@ -24,8 +24,6 @@ USES=		compiler:c++17-lang gettext gnome localbase meson pkgconfig \
 USE_GNOME=	cairo gdkpixbuf2 gtk30 introspection
 USE_XORG=	x11 xext
 MESON_ARGS=	-Dinstalled_tests=false \
-		-Dcairo=enabled \
-		-Dreadline=enabled \
 		-Dprofiler=disabled
 USE_LDCONFIG=	yes
 
