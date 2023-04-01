@@ -1,3 +1,3 @@
-TIMESTAMP = 1677696120
-SHA256 (libvirt-9.1.0.tar.xz) = defebea252a24c1800fbf484b14018b6261192acbac5bda8395e47eba2a14d6a
-SIZE (libvirt-9.1.0.tar.xz) = 9047300
+TIMESTAMP = 1680372358
+SHA256 (libvirt-9.2.0.tar.xz) = a07f501e99093ac1374888312be32182e799de17407ed7547d0e469fae8188c5
+SIZE (libvirt-9.2.0.tar.xz) = 9182060
