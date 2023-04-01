@@ -27,7 +27,7 @@ include/PTL/VUserTaskQueue.hh
 lib/cmake/PTL/Modules/FindTBB.cmake
 lib/cmake/PTL/PTLConfig.cmake
 lib/cmake/PTL/PTLConfigVersion.cmake
-lib/cmake/PTL/PTLTargets-release.cmake
+lib/cmake/PTL/PTLTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/PTL/PTLTargets.cmake
 lib/libptl.so
 lib/libptl.so.%%SHLIB_SHVER%%
