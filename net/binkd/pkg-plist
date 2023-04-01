@@ -1,6 +1,6 @@
-@sample etc/binkd.cfg.sample
+@sample etc/binkd.conf-dist etc/binkd.conf
 sbin/binkd
-man/man8/binkd.8.gz
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.FIX
-%%PORTDOCS%%%%DOCSDIR%%/SRIF.TXT
+sbin/binkd-1.1a-115
+share/man/man8/binkd.8.gz
+%%PORTDOCS%%%%DOCSDIR%%/binkdfaq-en.txt
+%%PORTDOCS%%%%DOCSDIR%%/binkdfaq-ru.txt

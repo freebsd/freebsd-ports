@@ -1,36 +1,41 @@
 PORTNAME=	binkd
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+DISTVERSION=	1.1a-115
 CATEGORIES=	net
-MASTER_SITES=	ftp://happy.kiev.ua/pub/fidosoft/mailer/binkd/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fidonet TCP/IP mailer
-WWW=		http://binkd.grumbler.org/
+WWW=		https://github.com/pgul/binkd/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	pgul
+GH_TAGNAME=	3bf55d5
 
 USE_RC_SUBR=	binkd
 GNU_CONFIGURE=	yes
 
+MAKE_JOBS_UNSAFE=yes
+
 USERS=		fido
 GROUPS=		fido
 
-MAKE_JOBS_UNSAFE=	yes
+OPTIONS_DEFINE=	ASO DOCS PROXY BWLIM PERL AFF NTLM
 
-OPTIONS_DEFINE=	AMIGA4D DOCS HTTPS
-AMIGA4D_CONFIGURE_WITH=	aso
-HTTPS_CONFIGURE_WITH=	https
+ASO_DESC=	Amiga Style Outbound (ASO) support
+AFF_DESC=	Enable soft IP address family force feature
+BWLIM_DESC=	Bandwidth limiting support
+NTLM_DESC=	Enable NTLM proxy authorization support
+
+ASO_CONFIGURE_WITH=	aso
+BWLIM_CONFIGURE_WITH=	bwlim
+AFF_CONFIGURE_WITH=	af-force
+PROXY_CONFIGURE_WITH=	proxy
+NTLM_CONFIGURE_WITH=	ntlm
+PERL_CONFIGURE_WITH=	perl
 
 pre-configure:
-	@${RM} -r ${WRKSRC}/mkfls/unix/CVS
 	@${CP} ${WRKSRC}/mkfls/unix/* ${WRKSRC}/
-
-do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/binkd ${STAGEDIR}${PREFIX}/sbin
-	${INSTALL_MAN} ${WRKSRC}/binkd.8 ${STAGEDIR}${MANPREFIX}/man/man8
-	${INSTALL_DATA} ${WRKSRC}/binkd.cfg ${STAGEDIR}${PREFIX}/etc/binkd.cfg.sample
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/!README ${STAGEDIR}${DOCSDIR}/README
-	${INSTALL_DATA} ${WRKSRC}/!README.FIX ${STAGEDIR}${DOCSDIR}/README.FIX
-	${INSTALL_DATA} ${WRKSRC}/!SRIF.TXT ${STAGEDIR}${DOCSDIR}/SRIF.TXT
 
 .include <bsd.port.mk>
