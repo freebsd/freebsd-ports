@@ -1,6 +1,6 @@
 PORTNAME=	adios2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.3
+DISTVERSION=	2.9.0
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +10,6 @@ WWW=		https://github.com/ornladios/ADIOS2
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		upgrade of cmake to 3.24.0 broke adios2, see https://github.com/ornladios/ADIOS2/issues/3348
 BROKEN_i386=	constant expression evaluates to 18446744073709551613 which cannot be narrowed to type 'unsigned int': https://github.com/ornladios/ADIOS2/issues/2469
 BROKEN_powerpc=	constant expression evaluates to 18446744073709551613 which cannot be narrowed to type 'unsigned int': https://github.com/ornladios/ADIOS2/issues/2469
 
@@ -47,7 +46,7 @@ GH_ACCOUNT=	ornladios
 GH_PROJECT=	ADIOS2
 
 CMAKE_ARGS=	-DFREEBSD_PYTHON_VERSION=${PYTHON_VER}
-CMAKE_OFF=	BUILD_TESTING
+CMAKE_OFF=	BUILD_TESTING ADIOS2_BUILD_EXAMPLES
 LDFLAGS+=	-lepoll-shim
 
 OPTIONS_DEFINE=	DOCS
