@@ -219,6 +219,7 @@
     SUBDIR += onyx
     SUBDIR += oo2c
     SUBDIR += opencoarrays
+    SUBDIR += opensycl
     SUBDIR += ott
     SUBDIR += owl-lisp
     SUBDIR += p5-Data-JavaScript
