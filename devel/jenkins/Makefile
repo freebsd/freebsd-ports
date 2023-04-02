@@ -1,5 +1,5 @@
 PORTNAME=	jenkins
-PORTVERSION=	2.396
+PORTVERSION=	2.397
 CATEGORIES=	devel java
 MASTER_SITES=	https://get.jenkins.io/war/${PORTVERSION}/
 DISTNAME=	jenkins
