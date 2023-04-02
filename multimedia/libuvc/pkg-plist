@@ -9,5 +9,5 @@ lib/cmake/libuvc/libuvcTargets.cmake
 lib/libuvc.a
 lib/libuvc.so
 lib/libuvc.so.0
-lib/libuvc.so.0.0.6
+lib/libuvc.so.0.0.7
 libdata/pkgconfig/libuvc.pc

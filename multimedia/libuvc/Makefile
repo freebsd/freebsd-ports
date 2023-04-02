@@ -1,20 +1,20 @@
 PORTNAME=	libuvc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.6-32
-DISTVERSIONSUFFIX=	-gc612d45
+DISTVERSION=	0.0.7
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	c765bb30b5f5.patch:-p1 # https://github.com/libuvc/libuvc/pull/163
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Cross-platform library for USB video devices
-WWW=		https://int80k.com/libuvc
+WWW=		https://libuvc.github.io/libuvc/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake jpeg pkgconfig
+USES=		cmake:testing jpeg pkgconfig
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
+
+CMAKE_OFF=	BUILD_EXAMPLE
+CMAKE_TESTING_ON=	BUILD_TEST # tests fail to compile, see https://github.com/libuvc/libuvc/issues/254
 
 .include <bsd.port.mk>
