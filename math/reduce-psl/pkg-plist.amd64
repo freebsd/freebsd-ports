@@ -460,6 +460,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/dvfsfqe.b
 %%DATADIR%%/red/dvfsfsiat.b
 %%DATADIR%%/red/dvfsfsism.b
+%%DATADIR%%/red/economise.b
 %%DATADIR%%/red/eds.b
 %%DATADIR%%/red/edsaux.b
 %%DATADIR%%/red/edscfrm.b
@@ -475,6 +476,7 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/efjacinv.b
 %%DATADIR%%/red/efjacobi.b
 %%DATADIR%%/red/efnumeric.b
+%%DATADIR%%/red/efreim.b
 %%DATADIR%%/red/eftheta.b
 %%DATADIR%%/red/efweier.b
 %%DATADIR%%/red/elem.b
@@ -497,6 +499,12 @@ man/man1/redpsl.1.gz
 %%DATADIR%%/red/extout.b
 %%DATADIR%%/red/ezgcd.b
 %%DATADIR%%/red/ezgcdf.b
+%%DATADIR%%/red/f5.b
+%%DATADIR%%/red/f5core.b
+%%DATADIR%%/red/f5lp.b
+%%DATADIR%%/red/f5param.b
+%%DATADIR%%/red/f5poly.b
+%%DATADIR%%/red/f5stat.b
 %%DATADIR%%/red/facform.b
 %%DATADIR%%/red/facmisc.b
 %%DATADIR%%/red/facmod.b
