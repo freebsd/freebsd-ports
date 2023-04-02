@@ -1,6 +1,5 @@
 PORTNAME=	vdirsyncer
-DISTVERSION=	0.19.0
-PORTREVISION=	1
+DISTVERSION=	0.19.1
 CATEGORIES=	deskutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,6 +29,6 @@ NO_ARCH=	yes
 OPTIONS_DEFINE=	GOOGLE
 
 GOOGLE_DESC=	Enable Google Calendar support
-GOOGLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests-oauthlib>=0:www/py-requests-oauthlib@${PY_FLAVOR}
+GOOGLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp-oauthlib>=0:www/py-aiohttp-oauthlib@${PY_FLAVOR}
 
 .include <bsd.port.mk>
