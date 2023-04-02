@@ -6154,9 +6154,16 @@ llvm-devel/share/opt-viewer/style.css
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/TestTimes.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/TestingConfig.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/__init__.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/builtin_commands/__init__.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/builtin_commands/cat.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/builtin_commands/diff.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/cl_arguments.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/discovery.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/display.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/formats/__init__.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/formats/base.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/formats/googletest.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/formats/shtest.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/main.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/reports.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/lit-devel/run.py
