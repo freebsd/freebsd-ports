@@ -8,6 +8,9 @@ WWW=		https://github.com/luigirizzo/netmap
 
 LICENSE=	BSD2CLAUSE
 
+NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc
+NOT_FOR_ARCHS_REASON=	build error with time_t type on 32bit platforms
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	luigirizzo
