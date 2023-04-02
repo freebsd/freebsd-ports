@@ -35,10 +35,10 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libharfbuzz.so:print/harfbuzz \
 		libiconv.so:converters/libiconv \
 		libicutu.so:devel/icu
-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}supervisor>0:sysutils/py-supervisor@${PY_FLAVOR} \
 		gsed:textproc/gsed \
 		nginx:www/nginx \
+		pwgen:sysutils/pwgen \
 		rabbitmq>0:net/rabbitmq \
 		webfonts>=0:x11-fonts/webfonts
 
