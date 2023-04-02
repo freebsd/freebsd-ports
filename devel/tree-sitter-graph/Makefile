@@ -1,6 +1,6 @@
 PORTNAME=	tree-sitter-graph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
+DISTVERSION=	0.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -47,7 +47,7 @@ CARGO_CRATES=	ahash-0.4.7 \
 		memchr-2.5.0 \
 		once_cell-1.17.1 \
 		os_str_bytes-6.5.0 \
-		proc-macro2-1.0.54 \
+		proc-macro2-1.0.55 \
 		quote-1.0.26 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
@@ -60,7 +60,7 @@ CARGO_CRATES=	ahash-0.4.7 \
 		smallvec-1.10.0 \
 		string-interner-0.12.2 \
 		strsim-0.10.0 \
-		syn-2.0.12 \
+		syn-2.0.13 \
 		termcolor-1.2.0 \
 		textwrap-0.16.0 \
 		thiserror-1.0.40 \
