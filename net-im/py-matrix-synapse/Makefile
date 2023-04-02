@@ -1,6 +1,5 @@
 PORTNAME=	matrix-synapse
-DISTVERSION=	1.76.0
-PORTREVISION=	2
+DISTVERSION=	1.80.0
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -66,7 +65,7 @@ CARGO_TEST=	no
 CARGO_INSTALL=	no
 CARGO_CARGOTOML=	${WRKSRC}/rust/Cargo.toml
 CARGO_CRATES=	aho-corasick-0.7.19 \
-		anyhow-1.0.68 \
+		anyhow-1.0.70 \
 		arc-swap-1.5.1 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
@@ -88,26 +87,27 @@ CARGO_CRATES=	aho-corasick-0.7.19 \
 		once_cell-1.15.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.3 \
-		proc-macro2-1.0.46 \
+		proc-macro2-1.0.52 \
 		pyo3-0.17.3 \
 		pyo3-build-config-0.17.3 \
 		pyo3-ffi-0.17.3 \
-		pyo3-log-0.7.0 \
+		pyo3-log-0.8.1 \
 		pyo3-macros-0.17.3 \
 		pyo3-macros-backend-0.17.3 \
 		pythonize-0.17.0 \
-		quote-1.0.21 \
+		quote-1.0.26 \
 		redox_syscall-0.2.16 \
 		regex-1.7.1 \
 		regex-syntax-0.6.27 \
 		ryu-1.0.11 \
 		scopeguard-1.1.0 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_json-1.0.91 \
+		serde-1.0.157 \
+		serde_derive-1.0.157 \
+		serde_json-1.0.94 \
 		smallvec-1.10.0 \
 		subtle-2.4.1 \
 		syn-1.0.104 \
+		syn-2.0.2 \
 		target-lexicon-0.12.4 \
 		typenum-1.15.0 \
 		unicode-ident-1.0.5 \
