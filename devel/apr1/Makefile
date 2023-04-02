@@ -1,5 +1,6 @@
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE/apr
 DISTFILES=	apr-${APR_VERSION}.tar.gz \
@@ -29,14 +30,15 @@ OPTIONS_SUB=		yes
 OPTIONS_GROUP=		APU
 OPTIONS_DEFINE=		IPV6
 OPTIONS_GROUP_APU=	GDBM LDAP MYSQL NDBM ODBC PGSQL SQLITE
-OPTIONS_RADIO=		BERKLEYDB CRYPTO
-OPTIONS_RADIO_BERKLEYDB=BDB BDB5
+OPTIONS_RADIO=		BERKELEYDB CRYPTO
+OPTIONS_RADIO_BERKELEYDB=	BDB BDB5
 OPTIONS_RADIO_CRYPTO=	SSL NSS
 OPTIONS_DEFAULT=	BDB GDBM SSL
 
 APU_DESC=		Database support
+BDB_DESC=		Berkeley DB support (AGPLv3)
 BDB5_DESC=		Berkeley DB v5 support (deprecated)
-BERKLEYDB_DESC=		Berkley DB provider
+BERKELEYDB_DESC=	Berkeley DB provider
 CRYPTO_DESC=		Cryptography provider
 NDBM_DESC=		NDBM support
 NSS_DESC=		NSS crypto driver
@@ -83,8 +85,9 @@ IPV6_VARS_OFF=		APR_CONF_ARGS+=--disable-ipv6
 # to avoid failures if previous apr_version.h is present
 APU_CPPFLAGS=	-I${APR_WRKDIR}/include
 
-BDB_VARS=	APU_CONF_ARGS+=--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
-BDB_VARS_OFF=	APU_CONF_ARGS+=--without-berkeley-db
+BDB_VARS=	${BDB5_VARS} \
+		LICENSE_COMB=dual LICENSE+=AGPLv3
+BDB5_VARS=	APU_CONF_ARGS+=--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR} \
 GDBM_VARS=	APU_CONF_ARGS+=--with-gdbm=${LOCALBASE}
 LDAP_VARS=	APU_CONF_ARGS+="--with-ldap-include=${LOCALBASE}/include \
 			--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap"
@@ -114,6 +117,10 @@ APR_CONF_ENV+=	${CONFIGURE_ENV:O:u} CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${CP
 APU_CONF_ENV+=	${CONFIGURE_ENV:O:u} CC="${CC}" CFLAGS="${CFLAGS}" CPPFLAGS="${APU_CPPFLAGS} ${CPPFLAGS}"
 
 .include <bsd.port.options.mk>
+
+.if !${PORT_OPTIONS:MBDB} && !${PORT_OPTIONS:MBDB5}
+APU_CONF_ARGS+=	--without-berkeley-db
+.endif
 
 .if ${PORT_OPTIONS:MSSL} || ${PORT_OPTIONS:MNSS}
 APU_CONF_ARGS+=	--with-crypto
