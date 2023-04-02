@@ -1,7 +1,6 @@
 PORTNAME=	zola
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.17.1
-PORTREVISION=	1
+DISTVERSION=	0.17.2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -33,10 +32,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		autocfg-1.1.0 \
 		base64-0.21.0 \
 		bincode-1.3.3 \
-		bit_field-0.10.1 \
+		bit_field-0.10.2 \
 		bitflags-1.3.2 \
 		block-buffer-0.7.3 \
-		block-buffer-0.10.3 \
+		block-buffer-0.10.4 \
 		block-padding-0.1.5 \
 		bstr-1.3.0 \
 		build_const-0.2.2 \
@@ -44,25 +43,25 @@ CARGO_CRATES=	adler-1.0.2 \
 		byte-tools-0.3.1 \
 		bytecount-0.3.2 \
 		bytecount-0.6.3 \
-		bytemuck-1.13.0 \
+		bytemuck-1.13.1 \
 		byteorder-1.4.3 \
 		bytes-0.4.12 \
 		bytes-1.4.0 \
-		camino-1.1.3 \
+		camino-1.1.4 \
 		cargo-platform-0.1.2 \
 		cargo_metadata-0.14.2 \
 		cc-1.0.79 \
 		cedarwood-0.4.6 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
-		chrono-0.4.23 \
-		chrono-tz-0.6.3 \
-		chrono-tz-build-0.0.3 \
+		chrono-0.4.24 \
+		chrono-tz-0.6.1 \
+		chrono-tz-build-0.0.2 \
 		clap-3.2.23 \
-		clap-4.1.6 \
-		clap_complete-4.1.3 \
+		clap-4.1.8 \
+		clap_complete-4.1.4 \
 		clap_derive-3.2.18 \
-		clap_derive-4.1.0 \
+		clap_derive-4.1.8 \
 		clap_lex-0.2.4 \
 		clap_lex-0.3.2 \
 		codemap-0.1.3 \
@@ -76,20 +75,20 @@ CARGO_CRATES=	adler-1.0.2 \
 		cpufeatures-0.2.5 \
 		crc-1.8.1 \
 		crc32fast-1.3.2 \
-		crossbeam-channel-0.5.6 \
-		crossbeam-deque-0.8.2 \
-		crossbeam-epoch-0.9.13 \
-		crossbeam-utils-0.8.14 \
+		crossbeam-channel-0.5.7 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.14 \
+		crossbeam-utils-0.8.15 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
 		css-minify-0.3.1 \
-		csv-1.2.0 \
+		csv-1.2.1 \
 		csv-core-0.1.10 \
 		ctrlc-3.2.5 \
-		cxx-1.0.91 \
-		cxx-build-1.0.91 \
-		cxxbridge-flags-1.0.91 \
-		cxxbridge-macro-1.0.91 \
+		cxx-1.0.92 \
+		cxx-build-1.0.92 \
+		cxxbridge-flags-1.0.92 \
+		cxxbridge-macro-1.0.92 \
 		derive_more-0.99.17 \
 		deunicode-0.4.3 \
 		digest-0.8.1 \
@@ -111,7 +110,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		error-chain-0.12.4 \
-		exr-1.5.3 \
+		exr-1.6.3 \
 		fake-simd-0.1.2 \
 		fastrand-1.9.0 \
 		filetime-0.2.20 \
@@ -126,12 +125,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
 		futf-0.1.5 \
-		futures-channel-0.3.26 \
-		futures-core-0.3.26 \
-		futures-io-0.3.26 \
-		futures-sink-0.3.26 \
-		futures-task-0.3.26 \
-		futures-util-0.3.26 \
+		futures-channel-0.3.27 \
+		futures-core-0.3.27 \
+		futures-io-0.3.27 \
+		futures-sink-0.3.27 \
+		futures-task-0.3.27 \
+		futures-util-0.3.27 \
 		fxhash-0.2.1 \
 		generic-array-0.12.4 \
 		generic-array-0.14.6 \
@@ -144,7 +143,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		globwalk-0.8.1 \
 		grass-0.12.3 \
 		grass_compiler-0.12.3 \
-		h2-0.3.15 \
+		h2-0.3.16 \
 		half-2.2.1 \
 		hashbrown-0.11.2 \
 		hashbrown-0.12.3 \
@@ -157,9 +156,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
-		humansize-1.1.1 \
+		humansize-2.1.3 \
 		humantime-2.1.0 \
-		hyper-0.14.24 \
+		hyper-0.14.25 \
 		hyper-rustls-0.23.2 \
 		hyper-tls-0.5.0 \
 		iana-time-zone-0.1.53 \
@@ -172,13 +171,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		inotify-sys-0.1.5 \
 		insta-1.28.0 \
 		instant-0.1.12 \
-		io-lifetimes-1.0.5 \
+		io-lifetimes-1.0.6 \
 		iovec-0.1.4 \
 		ipnet-2.7.1 \
 		is-terminal-0.4.4 \
-		itoa-1.0.5 \
+		itoa-1.0.6 \
 		jieba-rs-0.6.7 \
-		jobserver-0.1.25 \
+		jobserver-0.1.26 \
 		jpeg-decoder-0.3.0 \
 		js-sys-0.3.61 \
 		kamadak-exif-0.5.5 \
@@ -189,7 +188,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		lebe-0.5.2 \
 		lexical-core-0.7.6 \
 		lexical-sort-0.3.1 \
-		libc-0.2.139 \
+		libc-0.2.140 \
+		libm-0.2.6 \
 		libwebp-sys-0.4.2 \
 		lindera-0.14.0 \
 		lindera-cc-cedict-builder-0.13.5 \
@@ -211,7 +211,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		maplit-1.0.2 \
 		markup5ever-0.11.0 \
 		memchr-2.5.0 \
-		memoffset-0.7.1 \
+		memoffset-0.8.0 \
 		mime-0.3.16 \
 		mime_guess-2.0.4 \
 		minidom-0.12.0 \
@@ -248,11 +248,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		onig-6.4.0 \
 		onig_sys-69.8.1 \
 		opaque-debug-0.2.3 \
-		open-3.2.0 \
-		openssl-0.10.45 \
+		open-3.4.0 \
+		openssl-0.10.46 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.80 \
+		openssl-sys-0.9.81 \
 		os_str_bytes-6.4.1 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.7 \
@@ -261,10 +261,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		path-slash-0.2.1 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.2.0 \
-		pest-2.5.5 \
-		pest_derive-2.5.5 \
-		pest_generator-2.5.5 \
-		pest_meta-2.5.5 \
+		pest-2.5.6 \
+		pest_derive-2.5.6 \
+		pest_generator-2.5.6 \
+		pest_meta-2.5.6 \
 		phf-0.10.1 \
 		phf-0.11.1 \
 		phf_codegen-0.10.0 \
@@ -279,21 +279,21 @@ CARGO_CRATES=	adler-1.0.2 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.26 \
-		plist-1.4.1 \
+		plist-1.4.2 \
 		png-0.17.7 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
-		proc-macro2-1.0.51 \
+		proc-macro2-1.0.52 \
 		pulldown-cmark-0.9.2 \
 		pure-rust-locales-0.5.6 \
 		quick-error-1.2.3 \
 		quick-xml-0.17.2 \
-		quick-xml-0.26.0 \
+		quick-xml-0.27.1 \
 		quickxml_to_serde-0.5.0 \
-		quote-1.0.23 \
+		quote-1.0.26 \
 		rand-0.7.3 \
 		rand-0.8.5 \
 		rand_chacha-0.2.2 \
@@ -301,86 +301,84 @@ CARGO_CRATES=	adler-1.0.2 \
 		rand_core-0.5.1 \
 		rand_core-0.6.4 \
 		rand_hc-0.2.0 \
-		rayon-1.6.1 \
-		rayon-core-1.10.2 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		regex-1.7.1 \
 		regex-syntax-0.6.28 \
-		relative-path-1.7.3 \
-		remove_dir_all-0.5.3 \
+		relative-path-1.8.0 \
 		reqwest-0.11.14 \
 		ring-0.16.20 \
 		roxmltree-0.18.0 \
 		rust-stemmers-1.2.0 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		rustix-0.36.8 \
+		rustix-0.36.9 \
 		rustls-0.20.8 \
 		rustls-pemfile-1.0.2 \
-		ryu-1.0.12 \
+		ryu-1.0.13 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
 		schannel-0.1.21 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.1.0 \
-		scratch-1.0.3 \
+		scratch-1.0.5 \
 		sct-0.7.0 \
 		security-framework-2.8.2 \
 		security-framework-sys-2.8.0 \
-		semver-1.0.16 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_json-1.0.93 \
+		semver-1.0.17 \
+		serde-1.0.156 \
+		serde_derive-1.0.156 \
+		serde_json-1.0.94 \
 		serde_spanned-0.6.1 \
 		serde_urlencoded-0.7.1 \
-		serde_yaml-0.9.17 \
+		serde_yaml-0.9.19 \
 		sha-1-0.8.2 \
 		sha2-0.10.6 \
-		simd-adler32-0.3.4 \
+		simd-adler32-0.3.5 \
 		similar-2.2.1 \
 		siphasher-0.3.10 \
 		skeptic-0.13.7 \
 		slab-0.4.8 \
 		slug-0.1.4 \
 		smallvec-1.10.0 \
-		socket2-0.4.7 \
+		socket2-0.4.9 \
 		spin-0.5.2 \
-		spin-0.9.5 \
+		spin-0.9.6 \
 		static_assertions-1.1.0 \
-		string_cache-0.8.4 \
+		string_cache-0.8.7 \
 		string_cache_codegen-0.5.2 \
 		strsim-0.10.0 \
 		svg_metadata-0.4.4 \
 		syn-1.0.109 \
 		syntect-5.0.0 \
 		tar-0.4.38 \
-		tempfile-3.3.0 \
+		tempfile-3.4.0 \
 		tendril-0.4.3 \
-		tera-1.17.1 \
+		tera-1.18.1 \
 		termcolor-1.2.0 \
 		test-case-3.0.0 \
 		test-case-core-3.0.0 \
 		test-case-macros-3.0.0 \
 		textwrap-0.16.0 \
-		thiserror-1.0.38 \
-		thiserror-impl-1.0.38 \
-		thread_local-1.1.7 \
-		threadpool-1.8.1 \
+		thiserror-1.0.39 \
+		thiserror-impl-1.0.39 \
+		thread_local-1.1.4 \
 		tiff-0.8.1 \
-		time-0.3.19 \
+		time-0.3.20 \
 		time-core-0.1.0 \
-		time-macros-0.2.7 \
+		time-macros-0.2.8 \
 		tinystr-0.7.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.25.0 \
+		tokio-1.26.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.23.4 \
 		tokio-util-0.7.7 \
 		toml-0.5.11 \
-		toml-0.7.2 \
+		toml-0.7.3 \
 		toml_datetime-0.6.1 \
-		toml_edit-0.19.4 \
+		toml_edit-0.19.7 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-core-0.1.30 \
@@ -397,12 +395,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
 		unicase-2.6.0 \
-		unicode-bidi-0.3.10 \
-		unicode-ident-1.0.6 \
+		unicode-bidi-0.3.11 \
+		unicode-ident-1.0.8 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
-		unsafe-libyaml-0.2.5 \
+		unsafe-libyaml-0.2.7 \
 		untrusted-0.7.1 \
 		url-2.3.1 \
 		utf-8-0.7.6 \
@@ -431,15 +429,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \
-		windows-targets-0.42.1 \
-		windows_aarch64_gnullvm-0.42.1 \
-		windows_aarch64_msvc-0.42.1 \
-		windows_i686_gnu-0.42.1 \
-		windows_i686_msvc-0.42.1 \
-		windows_x86_64_gnu-0.42.1 \
-		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_msvc-0.42.1 \
-		winnow-0.3.2 \
+		windows-targets-0.42.2 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_msvc-0.42.2 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_msvc-0.42.2 \
+		winnow-0.3.6 \
 		winreg-0.10.1 \
 		winres-0.1.12 \
 		ws-0.9.2 \
@@ -448,7 +446,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		xmlparser-0.13.5 \
 		yada-0.5.0 \
 		yaml-rust-0.4.5 \
-		zune-inflate-0.2.50
+		zune-inflate-0.2.51
 
 MAKE_ENV=	CARGO_PROFILE_RELEASE_LTO=off
 
