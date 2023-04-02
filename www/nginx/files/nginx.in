@@ -140,7 +140,7 @@ nginx_prestart()
 		required_modules="$required_modules accf_http accf_data"
 	fi
 
-	nginx_checkconfig
+	nginx_checkconfig || return 1
 
 	if checkyesno nginxlimits_enable
 	then
