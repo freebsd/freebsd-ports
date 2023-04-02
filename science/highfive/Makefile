@@ -1,6 +1,6 @@
 PORTNAME=	highfive
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.6.2
+DISTVERSION=	2.7.0
 CATEGORIES=	science devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 RUN_DEPENDS=	${LOCALBASE}/include/boost/multi_array.hpp:devel/boost-libs \
 		${LOCALBASE}/include/xtensor/xtensor.hpp:math/xtensor
-TEST_DEPENDS=	catch>0:devel/catch
+TEST_DEPENDS=	catch2>0:devel/catch2
 
 USES=		cmake eigen:3,run
 USE_GITHUB=	yes
