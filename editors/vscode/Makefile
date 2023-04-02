@@ -1,5 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.76.2
+DISTVERSION=	1.77.0
 CATEGORIES=	editors
 MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
 		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
@@ -64,7 +64,7 @@ USES=		desktop-file-utils gl gmake gnome iconv jpeg pkgconfig \
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	ee2b180d582a7f601fa6ecfdad8d9fd269ab1884
+SOURCE_COMMIT_HASH=	7f329fe6c66b0f86ae1574c2911b681ad5a45d63
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
