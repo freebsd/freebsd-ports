@@ -17,7 +17,6 @@ LIB_DEPENDS=	\
 		libatspi.so:accessibility/at-spi2-core \
 		libavahi-client.so:net/avahi-app \
 		libbrotlidec.so:archivers/brotli \
-		libcups.so:print/cups \
 		libdbus-1.so:devel/dbus \
 		libdouble-conversion.so:devel/double-conversion \
 		libdrm.so:graphics/libdrm \
@@ -80,11 +79,14 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 # zstd from base fails to compress files during the build (error 11: unsupported argument)
 BINARY_ALIAS=	zstd=${LOCALBASE}/bin/zstd
 
-#== Option handling
+OPTIONS_DEFINE=		CUPS
 OPTIONS_GROUP=		SQL
 OPTIONS_GROUP_SQL=	IBASE MYSQL ODBC PSQL SQLITE
-OPTIONS_DEFAULT=	SQLITE
+OPTIONS_DEFAULT=	CUPS SQLITE
 OPTIONS_SUB=		yes
+
+CUPS_LIB_DEPENDS=	libcups.so:print/cups
+CUPS_CMAKE_OFF=		-DFEATURE_cups=OFF
 
 IBASE_DESC=		InterBase database support
 IBASE_CMAKE_ON=		-DFEATURE_sql_ibase=ON
