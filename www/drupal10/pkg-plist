@@ -2032,6 +2032,7 @@
 %%WWWDIR%%/core/lib/Drupal/Core/Database/ConnectionNotDefinedException.php
 %%WWWDIR%%/core/lib/Drupal/Core/Database/Database.php
 %%WWWDIR%%/core/lib/Drupal/Core/Database/DatabaseAccessDeniedException.php
+%%WWWDIR%%/core/lib/Drupal/Core/Database/DatabaseConnectionRefusedException.php
 %%WWWDIR%%/core/lib/Drupal/Core/Database/DatabaseException.php
 %%WWWDIR%%/core/lib/Drupal/Core/Database/DatabaseExceptionWrapper.php
 %%WWWDIR%%/core/lib/Drupal/Core/Database/DatabaseNotFoundException.php
@@ -5701,6 +5702,7 @@
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/FileUrlTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/Formatter/FileEntityFormatterTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/LoadTest.php
+%%WWWDIR%%/core/modules/file/tests/src/Kernel/ManagedFileTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/Migrate/MigrateFileStubTest.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/Migrate/d6/FileMigrationTestTrait.php
 %%WWWDIR%%/core/modules/file/tests/src/Kernel/Migrate/d6/MigrateFileConfigsTest.php
@@ -11441,6 +11443,7 @@
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserLoginHttpTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserLoginTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserPasswordResetTest.php
+%%WWWDIR%%/core/modules/user/tests/src/Functional/UserPermissionsAdminTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserPermissionsTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserPictureTest.php
 %%WWWDIR%%/core/modules/user/tests/src/Functional/UserRegistrationRestTest.php
@@ -12320,6 +12323,7 @@
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/filter/FilterPluginBaseTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/filter/InOperatorTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/pager/PagerPluginBaseTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/pager/SqlBaseTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/query/SqlTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/display/BlockTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Unit/Plugin/views/field/EntityOperationsUnitTest.php
@@ -13472,6 +13476,8 @@
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/DistributionProfileTranslationTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/DrupalFlushAllCachesInInstallerTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallProfileDependenciesTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerBrokenDatabaseCredentialsTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerBrokenDatabasePortSettingsTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerConfigDirectorySetNoDirectoryErrorTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerConfigDirectorySetNoDirectoryTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/InstallerDatabaseErrorMessagesTest.php
