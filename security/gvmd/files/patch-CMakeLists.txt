@@ -1,14 +1,5 @@
---- CMakeLists.txt	2022-07-21 02:20:24.000000000 -0500
-+++ CMakeLists.txt	2022-07-31 19:24:14.544647000 -0500
-@@ -53,7 +53,7 @@
- 
- # Set dev version if this is a development version and not a full release,
- # unset (put value 0 or delete line) before a full release and reset after.
--set (PROJECT_DEV_VERSION 1)
-+set (PROJECT_DEV_VERSION 0)
- 
- # If PROJECT_DEV_VERSION is set, the version string will be set to:
- #   "major.minor.patch~dev${PROJECT_DEV_VERSION}${GIT_REVISION}"
+--- CMakeLists.txt	2023-04-02 01:50:20.312770000 -0500
++++ CMakeLists.txt	2023-04-02 01:54:10.831990000 -0500
 @@ -110,7 +110,7 @@
  endif (SYSCONF_INSTALL_DIR)
  
