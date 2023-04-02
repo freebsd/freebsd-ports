@@ -1,5 +1,6 @@
 PORTNAME=	hyprpaper
-PORTVERSION=	s20230315
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.1.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +21,6 @@ USES=		compiler:c++11-lib cmake gnome jpeg localbase:ldflags pkgconfig
 USE_GNOME=	cairo
 USE_GITHUB=	yes
 GH_ACCOUNT=	hyprwm
-GH_TAGNAME=	6196197
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
