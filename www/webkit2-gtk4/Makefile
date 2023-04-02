@@ -14,6 +14,8 @@ WWW=		https://webkitgtk.org/
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	dual
 
+BROKEN_riscv64=	error: Unknown Architecture
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
 		${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLAVOR}
 LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
