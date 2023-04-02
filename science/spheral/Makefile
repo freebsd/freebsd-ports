@@ -1,7 +1,6 @@
 PORTNAME=	spheral
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022.6.1-680
-DISTVERSIONSUFFIX=	-g23ce0f156
+DISTVERSION=	2023.03.0
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,12 +15,13 @@ LIB_DEPENDS=	libaxom.so:science/axom \
 		libboost_filesystem.so:devel/boost-libs \
 		libconduit.so:science/conduit \
 		libhdf5.so:science/hdf5 \
+		libmfem.so:math/mfem \
 		libosdCPU.so:graphics/opensubdiv \
 		libpolytope.so:science/polytope \
 		libqhull_r.so:math/qhull \
 		libsiloh5.so:science/silo
 
-USES=		cmake compiler:c++14-lang eigen:3 fortran mpi:mpich python
+USES=		cmake:testing compiler:c++14-lang eigen:3 fortran lua mpi:mpich python
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -37,6 +37,7 @@ CMAKE_ARGS=	-Daneos_DIR=${LOCALBASE} \
 		-Dhdf5_DIR=${LOCALBASE} \
 		-Dopensubdiv_DIR=${LOCALBASE} \
 		-Dpython_DIR=${LOCALBASE} \
+		-Dpolyclipper_DIR=${LOCALBASE} \
 		-Dpolytope_DIR=${LOCALBASE} \
 		-Dpybind11_DIR=${LOCALBASE} \
 		-Dqhull_DIR=${LOCALBASE} \
@@ -45,6 +46,7 @@ CMAKE_ARGS=	-Daneos_DIR=${LOCALBASE} \
 CMAKE_OFF=	ENABLE_TESTS ENABLE_DOCS \
 		ENABLE_ANEOS
 CMAKE_ON=	ENABLE_CXXONLY # disable Python support which is still for Python-2.7, see https://github.com/LLNL/spheral/issues/183
+CMAKE_TESTING_ON=	ENABLE_TESTS # tests fail to configure, see https://github.com/LLNL/spheral/issues/207
 
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 
