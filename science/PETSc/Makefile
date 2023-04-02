@@ -1,5 +1,5 @@
 PORTNAME=	PETSc
-DISTVERSION=	3.18.5
+DISTVERSION=	3.19.0
 CATEGORIES=	science devel
 MASTER_SITES=	https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
@@ -32,7 +32,7 @@ MAKEFILE=	makefile
 SHEBANG_FILES=	configure lib/petsc/bin/*.py lib/petsc/bin/saws/SAWs.py lib/petsc/bin/saws/*.bash config/*.py	\
 		lib/petsc/bin/petscnagfor share/petsc/chkerrconvert.py
 USE_LDCONFIG=	yes
-TEST_TARGET=	test
+TEST_TARGET=	test # 152 of 11396 tests (1.3%) fail due to missing files like /usr/local/share/petsc/datafiles/meshes/square_periodic.msh (tests expect the packe to be installed)
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
 LDFLAGS+=	${LOCALBASE}/lib/libmpi.so

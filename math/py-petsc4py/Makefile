@@ -6,10 +6,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	PETSc for Python
-WWW=		https://bitbucket.org/petsc/petsc4py
+WWW=		https://gitlab.com/petsc/petsc
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
+
+BROKEN=		the upstream failed to update petsc4py on PYPI, it also breaks with pythran-0.12.0, see bug#270507
 
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libpetsc.so:science/PETSc
