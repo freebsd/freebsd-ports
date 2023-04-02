@@ -498,7 +498,7 @@ lib/libkernel_network.so
 %%WWWDIR%%/documentserver/license/jQuery.license
 %%WWWDIR%%/documentserver/license/less.license
 %%WWWDIR%%/documentserver/license/requirejs-text.license
-%%WWWDIR%%/documentserver/npm/json
+@(,,755) %%WWWDIR%%/documentserver/npm/json
 %%WWWDIR%%/documentserver/npm/package.json
 %%WWWDIR%%/documentserver/sdkjs-plugins/highlightcode/3rd-Party.txt
 %%WWWDIR%%/documentserver/sdkjs-plugins/highlightcode/README.md
