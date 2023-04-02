@@ -33,6 +33,8 @@ CFLAGS+=	-no-integrated-as
 .elif ${ARCH} == powerpc64
 BUILD_DEPENDS=	as:devel/binutils
 CFLAGS+=	-no-integrated-as -O0
+.elif ${ARCH} == powerpc
+MESON_ARGS+=	-Dasm=disabled
 .endif
 
 # Lots of software expects gl.pc even when it can build with EGL only
