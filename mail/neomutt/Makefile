@@ -13,7 +13,7 @@ RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:misc/mime-support \
 		urlview:textproc/urlview
 LIB_DEPENDS=	libpcre2-posix.so:devel/pcre2
 
-USES=		cpe iconv:translit localbase ncurses perl5 shebangfix ssl
+USES=		cpe iconv:translit localbase ncurses perl5 pkgconfig shebangfix ssl
 
 USE_GITHUB=	yes
 USE_PERL5=	build
@@ -68,7 +68,7 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
 IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
-IDN_CONFIGURE_ON=	idn2
+IDN_CONFIGURE_ON=	--idn2
 
 FLOCK_CONFIGURE_ON=	--with-lock=flock
 
