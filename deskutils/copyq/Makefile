@@ -1,6 +1,6 @@
 PORTNAME=	copyq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	6.4.0
+DISTVERSION=	7.0.0
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -20,8 +20,7 @@ FLAVOR?=	qt5
 qt5_CONFLICTS_INSTALL=	copyq-qt6
 qt6_CONFLICTS_INSTALL=	copyq-qt5
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl kde:5 \
-		qt:${FLAVOR:S/qt//} xorg
+USES=		cmake compiler:c++17-lang gl kde:5 qt:${FLAVOR:S/qt//} xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	hluk
 GH_PROJECT=	CopyQ
