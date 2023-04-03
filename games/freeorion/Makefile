@@ -1,7 +1,6 @@
 PORTNAME=	freeorion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.10.2
-PORTREVISION=	3
+DISTVERSION=	0.5
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -16,7 +15,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 
 USE_GITHUB=	yes
 
-USES=		cmake compiler:c++14-lang python:3.8+
+USES=		cmake compiler:c++17-lang python:3.8+
 CMAKE_ARGS=	-Wno-dev
 
 LDFLAGS_i386=	-Wl,-znotext
@@ -24,19 +23,19 @@ LDFLAGS_i386=	-Wl,-znotext
 PORTDOCS=	ChangeLog.md README.md
 PORTDATA=	*
 
-OPTIONS_DEFINE=	DOCS TEST HEADLESS
+OPTIONS_DEFINE=	DOCS TEST CLIENT_GG
+OPTIONS_DEFAULT=DOCS TEST CLIENT_GG
 OPTIONS_SUB=	yes
 
 TEST_CMAKE_BOOL=	BUILD_TESTING
 TEST_TEST_TARGET=	unittest
 TEST_USES=		localbase
 
-HEADLESS_DESC=		Build only headless components: server and AI
-HEADLESS_CMAKE_BOOL=	BUILD_HEADLESS
-HEADLESS_USES_OFF=	gl openal sdl
-HEADLESS_USE_OFF=	SDL=sdl2 GL=gl,glu,glew
-HEADLESS_LIB_DEPENDS_OFF= \
-			libfreetype.so:print/freetype2 \
+CLIENT_GG_DESC=		Build GiGi client
+CLIENT_GG_CMAKE_BOOL=	BUILD_CLIENT_GG
+CLIENT_GG_USES=		gl openal sdl
+CLIENT_GG_USE=		SDL=sdl2 GL=gl,glu,glew
+CLIENT_GG_LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 			libogg.so:audio/libogg \
 			libvorbis.so:audio/libvorbis \
 			libpng.so:graphics/png
