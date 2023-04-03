@@ -21,4 +21,18 @@ GH_PROJECT=	OpenSYCL
 
 SHEBANG_FILES=	bin/syclcc-clang cmake/syclcc-launcher
 
+do-test: # many tests fail, see https://github.com/OpenSYCL/OpenSYCL/issues/996
+	@cd ${WRKSRC}/tests && \
+		mkdir -p build && \
+		cd build && \
+			${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} \
+				-DCMAKE_PREFIX_PATH=${STAGEDIR}${PREFIX} \
+				-DOpenSYCL_DIR="${STAGEDIR}${PREFIX}/lib/cmake/OpenSYCL" \
+				-DOPENSYCL_TARGETS="omp;hip:gfx801" .. && \
+			${SETENV} ${MAKE_ENV} ${MAKE_CMD} && \
+			for f in device_compilation_tests rt_tests sycl_tests; do \
+				${ECHO} "==> running tests from $$f"; \
+				./$${f}; \
+			done
+
 .include <bsd.port.mk>
