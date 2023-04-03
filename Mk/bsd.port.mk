@@ -3262,6 +3262,13 @@ run-cheri-gnulib-fixup:
 			echo "#include_next <stdint.h>" > $${f} ; \
 		fi \
 	done
+# Patch rawmemchr not to use uintptr_t to store arbitrary bytes.
+	-@for f in `${FIND} ${WRKDIR} -type f -name rawmemchr.c` ; do \
+		if grep -q "typedef uintptr_t longword" $${f} ; then \
+			echo "Replacing $${f}" ; \
+			${PATCH} -s $${f} ${PORTSDIR}/devel/gnulib/files/extrapatch-cheribsd-rawmemchr.patch ; \
+		fi \
+	done
 .    endif
 
 .    if !target(run-autotools-fixup)

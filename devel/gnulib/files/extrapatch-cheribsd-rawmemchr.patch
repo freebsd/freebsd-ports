@@ -1,0 +1,21 @@
+--- rawmemchr.c.orig	2022-01-04 08:33:30.000000000 +0000
++++ rawmemchr.c	2023-04-03 10:33:33.761858000 +0000
+@@ -32,11 +32,13 @@
+ void *
+ rawmemchr (const void *s, int c_in)
+ {
+-  /* Change this typedef to experiment with performance.  */
+-  typedef uintptr_t longword;
+-  /* If you change the "uintptr_t", you should change UINTPTR_WIDTH to match.
+-     This verifies that the type does not have padding bits.  */
+-  verify (UINTPTR_WIDTH == UCHAR_WIDTH * sizeof (longword));
++  /* Change this *_WIDTH macro and typedef to experiment
++     with performance.  */
++# define LONGWORD_WIDTH ULONG_WIDTH
++  typedef unsigned long int longword;
++  /* This verifies that the type does not have padding bits.  */
++  verify (LONGWORD_WIDTH == UCHAR_WIDTH * sizeof (longword));
++# undef LONGWORD_WIDTH
+ 
+   const unsigned char *char_ptr;
+   unsigned char c = c_in;
