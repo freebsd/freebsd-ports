@@ -1,6 +1,5 @@
 PORTNAME=	paraview
-DISTVERSION=	${PARAVIEW_VER}.0
-PORTREVISION=	3
+DISTVERSION=	${PARAVIEW_VER}.1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${PARAVIEW_VER}/
 DISTNAME=	ParaView-v${PORTVERSION}
@@ -145,7 +144,8 @@ PLIST_SUB+=	VERMAJORMINOR=${PARAVIEW_VER}
 VTK9_CONFLICTS=	vtk.py vtkmodules/__init__.py vtkmodules/all.py	\
 		vtkmodules/gtk vtkmodules/numpy_interface	\
 		vtkmodules/qt vtkmodules/test vtkmodules/tk	\
-		vtkmodules/util vtkmodules/wx vtkmodules/generate_pyi.py
+		vtkmodules/util vtkmodules/wx vtkmodules/generate_pyi.py	\
+		vtkmodules/web/errors.py
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
