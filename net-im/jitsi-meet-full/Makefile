@@ -1,6 +1,5 @@
 PORTNAME=	jitsi-meet-full
-PORTVERSION=	2.0.7287
-PORTREVISION=	1
+PORTVERSION=	2.0.8319
 CATEGORIES=	net-im
 
 MAINTAINER=	acm@FreeBSD.org
@@ -9,11 +8,11 @@ WWW=		https://jitsi.org/jitsi-meet/
 
 USES=		metaport
 
-RUN_DEPENDS+=	jicofo>=1.0.877:net-im/jicofo \
-		jitsi-meet>=1.0.6155:www/jitsi-meet \
-		jitsi-prosody-plugins>=2.0.7287:net-im/jitsi-prosody-plugins \
-		jitsi-srtp-native>=1.1.7:net-im/jitsi-srtp-native \
-		jitsi-videobridge>=2.1.681:net-im/jitsi-videobridge \
+RUN_DEPENDS+=	jicofo>=1.0.996:net-im/jicofo \
+		jitsi-meet>=1.0.6991:www/jitsi-meet \
+		jitsi-prosody-plugins>=2.0.8319:net-im/jitsi-prosody-plugins \
+		jitsi-srtp-native>=1.1.8:net-im/jitsi-srtp-native \
+		jitsi-videobridge>=2.2.79:net-im/jitsi-videobridge \
 		nginx>0:www/nginx
 
 .include <bsd.port.mk>
