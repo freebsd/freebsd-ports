@@ -1,5 +1,6 @@
 PORTNAME=	ttk
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,6 +37,9 @@ USE_XORG=	x11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	topology-tool-kit
+
+post-stage:
+	${RM} ${STAGEDIR}${PREFIX}/include/Python.h
 
 .include <../../science/paraview/Makefile.version>
 .include <bsd.port.mk>
