@@ -218,6 +218,7 @@
     SUBDIR += honeytrap
     SUBDIR += honggfuzz
     SUBDIR += horcrux
+    SUBDIR += howdy
     SUBDIR += hpenc
     SUBDIR += hs-cryptol
     SUBDIR += hydra
