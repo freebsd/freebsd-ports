@@ -1,5 +1,5 @@
 PORTNAME=	skalibs
-PORTVERSION=    2.13.0.0
+DISTVERSION=    2.13.1.1
 CATEGORIES=	devel
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
