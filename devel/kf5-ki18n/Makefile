@@ -6,7 +6,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 advanced internationalization framework
 
 USES=		cmake compiler:c++11-lib gettext-runtime \
-		gettext-tools:build,run kde:5 qt:5 tar:xz
+		gettext-tools:build,run kde:5 python:3.6+ qt:5 tar:xz
 USE_KDE=	ecm:build
 USE_QT=		concurrent core declarative network \
 		buildtools:build qmake:build testlib:build
