@@ -54,13 +54,13 @@ lib/packagekit-backend/libpk_backend_test_nop.so
 lib/packagekit-backend/libpk_backend_test_spawn.so
 lib/packagekit-backend/libpk_backend_test_succeed.so
 lib/packagekit-backend/libpk_backend_test_thread.so
-lib/python3.9/site-packages/packagekit/__init__.py
-lib/python3.9/site-packages/packagekit/backend.py
-lib/python3.9/site-packages/packagekit/enums.py
-lib/python3.9/site-packages/packagekit/filter.py
-lib/python3.9/site-packages/packagekit/misc.py
-lib/python3.9/site-packages/packagekit/package.py
-lib/python3.9/site-packages/packagekit/progress.py
+%%PYTHON_SITELIBDIR%%/packagekit/__init__.py
+%%PYTHON_SITELIBDIR%%/packagekit/backend.py
+%%PYTHON_SITELIBDIR%%/packagekit/enums.py
+%%PYTHON_SITELIBDIR%%/packagekit/filter.py
+%%PYTHON_SITELIBDIR%%/packagekit/misc.py
+%%PYTHON_SITELIBDIR%%/packagekit/package.py
+%%PYTHON_SITELIBDIR%%/packagekit/progress.py
 libdata/pkgconfig/packagekit-glib2.pc
 libexec/packagekit-direct
 libexec/packagekitd
@@ -148,3 +148,4 @@ share/vala/vapi/packagekit-glib2.deps
 share/vala/vapi/packagekit-glib2.vapi
 /var/lib/PackageKit/transactions.db
 @dir /var/lib/PackageKit
+@dir /var/lib

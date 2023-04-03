@@ -1,10 +1,10 @@
 PORTNAME=	PackageKit
 PORTVERSION=	1.2.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt sysutils
 MASTER_SITES=	https://www.freedesktop.org/software/PackageKit/releases/
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	desktop@FreeBSD.org
 COMMENT=	DBUS packaging abstraction layer
 WWW=		https://www.freedesktop.org/software/PackageKit/
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	console-kit-daemon:sysutils/consolekit2
 
 USES=		cpe desktop-file-utils gettext gnome meson pkgconfig \
-		shared-mime-info shebangfix sqlite:3 tar:xz
+		python shared-mime-info shebangfix sqlite:3 tar:xz
 
 USE_GNOME=	gtk30 glib20 intltool introspection
 USE_LDCONFIG=	yes
