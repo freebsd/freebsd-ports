@@ -1,5 +1,5 @@
 PORTNAME=	dnsdist
-DISTVERSION=	1.7.3
+DISTVERSION=	1.8.0
 CATEGORIES=	dns net
 MASTER_SITES=	https://downloads.powerdns.com/releases/
 
@@ -86,7 +86,7 @@ SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp
 SNMP_CONFIGURE_WITH=	net-snmp
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	${INSTALL_DATA} ${FILESDIR}/dnsdist.conf.sample ${STAGEDIR}${ETCDIR}
+#	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	${MV} ${STAGEDIR}${ETCDIR}/dnsdist.conf-dist ${STAGEDIR}${ETCDIR}/dnsdist.conf.sample
 
 .include <bsd.port.mk>
