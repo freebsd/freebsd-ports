@@ -1,11 +1,11 @@
---- helix-loader/src/lib.rs.orig	2022-12-07 02:54:50 UTC
+--- helix-loader/src/lib.rs.orig	2023-03-31 08:14:01 UTC
 +++ helix-loader/src/lib.rs
-@@ -41,6 +41,8 @@ pub fn runtime_dir() -> PathBuf {
-         return conf_dir;
+@@ -54,6 +54,8 @@ fn prioritize_runtime_dirs() -> Vec<PathBuf> {
+         rt_dirs.push(dir.into());
      }
  
-+    return std::path::PathBuf::from("%%DATADIR%%").join(RT_DIR);
++    rt_dirs.push(std::path::PathBuf::from("%%DATADIR%%").join(RT_DIR));
 +
      // fallback to location of the executable being run
      // canonicalize the path in case the executable is symlinked
-     std::env::current_exe()
+     let exe_rt_dir = std::env::current_exe()

@@ -1,6 +1,6 @@
---- helix-loader/src/grammar.rs.orig	2022-12-07 02:54:50 UTC
+--- helix-loader/src/grammar.rs.orig	2023-03-31 08:14:01 UTC
 +++ helix-loader/src/grammar.rs
-@@ -88,60 +88,6 @@ pub fn fetch_grammars() -> Result<()> {
+@@ -89,60 +89,6 @@ pub fn fetch_grammars() -> Result<()> {
      let mut grammars = get_grammar_configs()?;
      grammars.retain(|grammar| !matches!(grammar.source, GrammarSource::Local { .. }));
  
