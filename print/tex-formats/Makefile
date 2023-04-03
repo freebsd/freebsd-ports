@@ -1,6 +1,5 @@
 PORTNAME=	formats
 PORTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	#empty
 PKGNAMEPREFIX=	tex-
@@ -19,7 +18,7 @@ NO_BUILD=	yes
 NO_INSTALL=	yes
 
 TEXHASHDIRS=	${TEXMFVARDIR}
-TEX_FORMATS=	amstex context csplain eplain latex-bin metafont mex mptopdf \
+TEX_FORMATS=	amstex csplain eplain latex-bin metafont mex mptopdf \
 		pdftex tex
 
 .include <bsd.port.mk>

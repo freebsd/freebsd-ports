@@ -1,6 +1,5 @@
 PORTNAME=	texlive
 PORTVERSION=	${TEXLIVE_VERSION}
-PORTREVISION=	14
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMESUFFIX=	-base
@@ -39,6 +38,7 @@ SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 	texk/texlive/linked_scripts/accfonts/vpl2ovp \
 	texk/texlive/linked_scripts/accfonts/vpl2vpl \
 	texk/texlive/linked_scripts/arara/arara.sh \
+	texk/texlive/linked_scripts/bibcop/bibcop.pl \
 	texk/texlive/linked_scripts/bibexport/bibexport.sh \
 	texk/texlive/linked_scripts/convbkmk/convbkmk.rb \
 	texk/texlive/linked_scripts/ctanupload/ctanupload.pl \
@@ -57,6 +57,7 @@ SHEBANG_FILES=	texk/texlive/linked_scripts/accfonts/mkt1font \
 	texk/texlive/linked_scripts/mathspic/mathspic.pl \
 	texk/texlive/linked_scripts/mf2pt1/mf2pt1.pl \
 	texk/texlive/linked_scripts/multibibliography/multibibliography.pl \
+	texk/texlive/linked_scripts/optexcount/optexcount \
 	texk/texlive/linked_scripts/pygmentex/*.py \
 	texk/texlive/linked_scripts/pythontex/*.py \
 	texk/texlive/linked_scripts/rubik/rubikrotation.pl \

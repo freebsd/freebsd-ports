@@ -1,6 +1,6 @@
---- texk/chktex/Makefile.in.orig	2020-11-19 18:31:09 UTC
+--- texk/chktex/Makefile.in.orig	2023-03-01 22:59:32 UTC
 +++ texk/chktex/Makefile.in
-@@ -125,10 +125,8 @@ mkinstalldirs = $(install_sh) -d
+@@ -125,10 +125,8 @@ CONFIG_CLEAN_VPATH_FILES =
  CONFIG_HEADER = config.h
  CONFIG_CLEAN_FILES = ChkTeX.t deweb.pl
  CONFIG_CLEAN_VPATH_FILES =
@@ -13,7 +13,7 @@
  PROGRAMS = $(bin_PROGRAMS)
  am__chktex_SOURCES_DIST = @CHKTEX_TREE@/ChkTeX.c \
  	@CHKTEX_TREE@/ChkTeX.h @CHKTEX_TREE@/FindErrs.c \
-@@ -1432,7 +1430,7 @@ check-am: all-am
+@@ -1433,7 +1431,7 @@ installdirs:
  check: check-am
  all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) config.h
  installdirs:
@@ -22,7 +22,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -1504,9 +1502,7 @@ info: info-am
+@@ -1505,9 +1503,7 @@ info-am:
  
  info-am:
  

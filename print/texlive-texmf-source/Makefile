@@ -13,7 +13,6 @@ WWW=		https://tug.org/texlive/
 USES=		cpe perl5 python:build tar:xz tex
 CPE_VENDOR=	tug
 USE_PERL5=	build
-USE_TEX=	texmf
 
 CONFLICTS_INSTALL=	texlive-base-202[0-9]*
 
@@ -43,21 +42,22 @@ do-install:
 	${REINPLACE_CMD} -i '' -e 's|/bin/bash|${PREFIX}/bin/bash|g' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/ae/clean \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/ae/install \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/avremu/test-suite/test-suite \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/fifinddo-info/makevars/bashvars.sh \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/fifinddo-info/makevars/texvars.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/stex/bin/installFonts.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/avremu/test-suite/test-suite
-	${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/nwafuthesis/build.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/source/support/optexcount/install.sh
+	${REINPLACE_CMD} -i '' -E -e '1s|/usr/bin/env python[23]?|${python_CMD}|' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/gentium-tug/type1/kerncorrection.py \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/gentium-tug/type1/afmcreator.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/gentium-tug/type1/greekcorrection.py
+		${STAGEDIR}${PREFIX}/share/texmf-dist/source/fonts/gentium-tug/type1/greekcorrection.py \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/wargame/utils/wgexport.py \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/wargame/utils/wgsvg2tikz.py \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/source/support/optexcount/optexcount.py
 	${REINPLACE_CMD} -i '' -e 's|/usr/bin/perl|${PERL}|g' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/generic/hyph-utf8/contributed/make-exhyph.pl \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/generic/ruhyphen/sorthyph \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/generic/ruhyphen/reduce-patt \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/stex/bin/sms \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/stex/bin/checksum \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/stex/bin/filedate \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/proposal/bin/checksum \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/source/latex/proposal/bin/filedate
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -not -type d | ${SORT} | \

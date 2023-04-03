@@ -1,5 +1,5 @@
 PORTNAME=	ptexenc
-PORTVERSION=	1.3.9
+PORTVERSION=	1.4.3
 CATEGORIES=	print
 MASTER_SITES=	TEX_CTAN/systems/texlive/Source/${TEXLIVE_YEAR}
 PKGNAMEPREFIX=	tex-
@@ -13,19 +13,26 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 USES=		iconv libtool pathfix pkgconfig tar:xz tex
-USE_TEX=	kpathsea
 USE_LDCONFIG=	yes
+USE_TEX=	kpathsea
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/texk/ptexenc
-EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S/^/${DISTNAME}\//}
-EXTRACT_FILES=	build-aux texk/ptexenc
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-kanji-iconv \
 		--with-system-kpathsea \
 		--with-kpathsea-includes=${LOCALBASE}/include \
 		--with-kpathsea-libdir=${LOCALBASE}/lib
-LIBS+=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}
-CPPFLAGS+=	-I${ICONV_PREFIX}/include
+
 INSTALL_TARGET=	install-strip
+
+CPPFLAGS+=	-I${ICONV_PREFIX}/include
+LIBS+=		-L${ICONV_PREFIX}/lib ${ICONV_LIB}
+
+EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S/^/${DISTNAME}\//}
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/texk/ptexenc
+
+PLIST_SUB=	VERSION=${PORTVERSION}
+
+EXTRACT_FILES=	build-aux texk/ptexenc
 
 .include <bsd.port.mk>

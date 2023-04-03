@@ -1,6 +1,6 @@
 PORTNAME=	synctex
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -51,7 +51,7 @@ EXTRACT_FILES=		build-aux texk/web2c
 EXCLUDE_ENGINES=	etex aleph luatex luajittex pdftex mf mf-nowin ptex \
 			eptex uptex euptex xetex tex otangle mp pmp upmp web2c \
 			web-progs luahbtex luajithbtex mflua mfluajit latex \
-			pdftex
+			pdftex hitex
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.orig' -delete

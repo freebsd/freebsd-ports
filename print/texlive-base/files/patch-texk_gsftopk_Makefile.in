@@ -1,6 +1,6 @@
---- texk/gsftopk/Makefile.in.orig	2020-11-19 18:31:09 UTC
+--- texk/gsftopk/Makefile.in.orig	2023-03-01 22:59:32 UTC
 +++ texk/gsftopk/Makefile.in
-@@ -112,8 +112,7 @@ mkinstalldirs = $(install_sh) -d
+@@ -112,8 +112,7 @@ CONFIG_CLEAN_VPATH_FILES =
  CONFIG_HEADER = c-auto.h
  CONFIG_CLEAN_FILES =
  CONFIG_CLEAN_VPATH_FILES =
@@ -10,7 +10,7 @@
  PROGRAMS = $(bin_PROGRAMS)
  am_gsftopk_OBJECTS = gsftopk.$(OBJEXT)
  gsftopk_OBJECTS = $(am_gsftopk_OBJECTS)
-@@ -836,7 +835,7 @@ check-am: all-am
+@@ -837,7 +836,7 @@ installdirs:
  check: check-am
  all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) c-auto.h
  installdirs:
@@ -19,7 +19,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -893,7 +892,7 @@ info: info-am
+@@ -894,7 +893,7 @@ info-am:
  
  info-am:
  

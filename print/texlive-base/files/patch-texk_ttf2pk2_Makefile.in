@@ -1,6 +1,6 @@
---- texk/ttf2pk2/Makefile.in.orig	2021-02-08 15:49:16 UTC
+--- texk/ttf2pk2/Makefile.in.orig	2023-03-01 22:59:32 UTC
 +++ texk/ttf2pk2/Makefile.in
-@@ -115,9 +115,7 @@ mkinstalldirs = $(install_sh) -d
+@@ -115,9 +115,7 @@ CONFIG_CLEAN_VPATH_FILES =
  CONFIG_HEADER = config.h
  CONFIG_CLEAN_FILES =
  CONFIG_CLEAN_VPATH_FILES =
@@ -11,7 +11,7 @@
  PROGRAMS = $(bin_PROGRAMS)
  am__objects_1 = errormsg.$(OBJEXT) filesrch.$(OBJEXT) ftlib.$(OBJEXT) \
  	ligkern.$(OBJEXT) newobj.$(OBJEXT) parse.$(OBJEXT) \
-@@ -1349,7 +1347,7 @@ check-am: all-am
+@@ -1350,7 +1348,7 @@ installdirs:
  check: check-am
  all-am: Makefile $(PROGRAMS) $(MANS) $(DATA) config.h
  installdirs:
@@ -20,7 +20,7 @@
  	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \
  	done
  install: install-am
-@@ -1425,8 +1423,7 @@ info: info-am
+@@ -1426,8 +1424,7 @@ info-am:
  
  info-am:
  

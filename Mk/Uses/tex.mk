@@ -29,7 +29,7 @@
 #  xdvik:		XDvi
 #  gbklatex:	gbklatex
 
-#  formats:	TeX, LaTeX, AMSTeX, ConTeXT, EplainTeX,
+#  formats:	TeX, LaTeX, AMSTeX, EplainTeX,
 #		CSplainTeX, METAFONT, MLTeX, PDFTeX, TeXsis
 #  tex:		TeX
 #  latex:	LaTeX
@@ -91,8 +91,9 @@ TEXMFVARDIR?=	share/texmf-var
 TEXMFCONFIGDIR?=share/texmf-config
 FMTUTIL_CNF?=	${TEXMFCONFIGDIR}/web2c/fmtutil.cnf
 TEXHASHDIRS?=	${TEXMFDIR} ${TEXMFDISTDIR} ${TEXMFLOCALDIR} ${TEXMFVARDIR} ${TEXMFCONFIGDIR}
-TEXLIVE_YEAR?=	2021
-TEXLIVE_VERSION?=	${TEXLIVE_YEAR}0325
+TEXLIVE_YEAR?=	2023
+TEXLIVE_VERSION?=	${TEXLIVE_YEAR}0313
+DISTNAME_TEXMF=	texlive-${TEXLIVE_VERSION}-texmf
 
 .for V in TEXMFDIR TEXMFDISTDIR TEXMFLOCALDIR TEXMFVARDIR TEXMFCONFIGDIR FMTUTIL_CNF
 PLIST_SUB+=	$V="${$V}"
@@ -320,20 +321,6 @@ TEX_FORMAT_AMSTEX_DIRS= \
 post-install-amstex:
 	${LN} -fs pdftex ${STAGEDIR}${PREFIX}/bin/amstex
 
-TEX_FORMAT_CONTEXT?= \
-	"cont-en pdftex cont-usr.tex -8bit *cont-en.mkii"
-# XXX
-#	"metafun mpost - metafun.mp"
-TEX_FORMAT_CONTEXT_FILES=	\
-	${TEXMFVARDIR}/web2c/pdftex/cont-en.log \
-	${TEXMFVARDIR}/web2c/pdftex/cont-en.fmt
-#	bin/metafun
-TEX_FORMAT_CONTEXT_DIRS= \
-	${TEXMFVARDIR}/web2c/pdftex
-post-install-context:
-	@${DO_NADA}
-#	${LN} -sf mpost ${PREFIX}/bin/metafun
-
 TEX_FORMAT_CSPLAIN?= \
 	"csplain pdftex - -etex -enc csplain-utf8.ini" \
 	"pdfcsplain pdftex - -etex -enc csplain-utf8.ini"
@@ -544,12 +531,8 @@ TEX_FORMAT_PTEX_FILES= \
 	${TEXMFVARDIR}/web2c/eptex/platex.fmt
 TEX_FORMAT_PTEX_BIN= \
 	bin/eptex \
-	bin/pbibtex \
-	bin/pdvitype \
 	bin/ptex \
 	bin/platex \
-	bin/ppltotf \
-	bin/ptftopl \
 	bin/upbibtex \
 	bin/updvitype \
 	bin/uppltotf \
@@ -607,13 +590,10 @@ TEX_FORMAT_XETEX?= \
 	"xetex xetex language.def -etex xetex.ini" \
 	"xelatex xetex language.dat -etex xelatex.ini" \
 	"pdfcsplain xetex - -etex csplain.ini" \
-	"cont-en xetex cont-usr.tex -8bit *cont-en.mkii" \
 	"lollipop xetex - -etex lollipop.ini"
 TEX_FORMAT_XETEX_FILES=	\
 	${TEXMFVARDIR}/web2c/xetex/lollipop.fmt \
 	${TEXMFVARDIR}/web2c/xetex/lollipop.log \
-	${TEXMFVARDIR}/web2c/xetex/cont-en.log \
-	${TEXMFVARDIR}/web2c/xetex/cont-en.fmt \
 	${TEXMFVARDIR}/web2c/xetex/pdfcsplain.log \
 	${TEXMFVARDIR}/web2c/xetex/pdfcsplain.fmt \
 	${TEXMFVARDIR}/web2c/xetex/xetex.log \

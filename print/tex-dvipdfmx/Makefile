@@ -20,8 +20,18 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/adobe-cmaps/ai0/CMap/Identity-H:print/adobe-cmaps
 
 USES=		localbase:ldflags pkgconfig tar:xz tex
-USE_TEX=	kpathsea web2c texmf dvipsk luatex texhash
-TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFDIR}
+USE_TEX=	kpathsea web2c dvipsk luatex texhash
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-system-kpathsea \
+		--with-kpathsea-includes=${LOCALBASE}/include \
+		--with-kpathsea-libdir=${LOCALBASE}/lib \
+		--with-system-libpaper \
+		--with-libpaper-includes=${LOCALBASE}/include \
+		--with-libpaper-libdir=${LOCALBASE}/lib \
+		--with-system-libpng \
+		--with-system-zlib
+
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	am \
 		m4 \
@@ -32,7 +42,6 @@ EXTRACT_AFTER_ARGS_TEXMF= \
 	--strip-components 1 --no-same-permission --no-same-owner \
 	${EXCLUDE_FILES_TEXMF:S,^,--exclude ${DISTNAME_TEXMF}/,} \
 	${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
-DISTNAME_TEXMF=	texlive-${TEXLIVE_VERSION}-texmf
 EXCLUDE_FILES_TEXMF= \
 	texmf-dist/fonts/map/dvipdfmx/jfontmaps \
 	texmf-dist/fonts/map/dvipdfmx/japanese-otf \
@@ -44,16 +53,10 @@ EXTRACT_FILES_TEXMF= \
 	texmf-dist/fonts/cmap/dvipdfmx/ \
 	texmf-dist/fonts/map/dvipdfmx/ \
 	texmf-dist/fonts/map/dvipdfm/
+
 WRKSRC=	${WRKDIR}/${DISTNAME}/texk/dvipdfm-x
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-system-kpathsea \
-		--with-kpathsea-includes=${LOCALBASE}/include \
-		--with-kpathsea-libdir=${LOCALBASE}/lib \
-		--with-system-libpaper \
-		--with-libpaper-includes=${LOCALBASE}/include \
-		--with-libpaper-libdir=${LOCALBASE}/lib \
-		--with-system-libpng \
-		--with-system-zlib
+
+TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFDIR}
 
 pre-install:
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/texlive-${TEXLIVE_VERSION}-texmf${EXTRACT_SUFX} \

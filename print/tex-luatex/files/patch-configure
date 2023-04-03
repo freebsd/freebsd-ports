@@ -1,6 +1,6 @@
---- configure.orig	2021-02-17 03:03:54 UTC
+--- configure.orig	2023-04-07 15:36:31 UTC
 +++ configure
-@@ -25158,243 +25158,6 @@ ${top_builddir}/../../libs/libpng/include/png.h:
+@@ -27203,292 +27203,6 @@ fi
  	cd ${top_builddir}/../../libs/libpng && $(MAKE) $(AM_MAKEFLAGS) rebuild'
  fi
  
@@ -9,18 +9,20 @@
 -##tldbg _KPSE_LIB_FLAGS_TL: freetype2 (freetype) .
 -
 -# Check whether --with-system-freetype2 was given.
--if test "${with_system_freetype2+set}" = set; then :
+-if test ${with_system_freetype2+y}
+-then :
 -  withval=$with_system_freetype2;
 -fi
 -if test "x$with_system_freetype2" = xyes; then
 -  if test -n "$ac_tool_prefix"; then
 -  # Extract the first word of "${ac_tool_prefix}freetype-config", so it can be a program name with args.
 -set dummy ${ac_tool_prefix}freetype-config; ac_word=$2
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
--$as_echo_n "checking for $ac_word... " >&6; }
--if ${ac_cv_prog_FT2_CONFIG+:} false; then :
--  $as_echo_n "(cached) " >&6
--else
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-printf %s "checking for $ac_word... " >&6; }
+-if test ${ac_cv_prog_FT2_CONFIG+y}
+-then :
+-  printf %s "(cached) " >&6
+-else $as_nop
 -  if test -n "$FT2_CONFIG"; then
 -  ac_cv_prog_FT2_CONFIG="$FT2_CONFIG" # Let the user override the test.
 -else
@@ -28,11 +30,15 @@
 -for as_dir in $PATH
 -do
 -  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
+-  case $as_dir in #(((
+-    '') as_dir=./ ;;
+-    */) ;;
+-    *) as_dir=$as_dir/ ;;
+-  esac
 -    for ac_exec_ext in '' $ac_executable_extensions; do
--  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-  if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
 -    ac_cv_prog_FT2_CONFIG="${ac_tool_prefix}freetype-config"
--    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
 -done
@@ -43,11 +49,11 @@
 -fi
 -FT2_CONFIG=$ac_cv_prog_FT2_CONFIG
 -if test -n "$FT2_CONFIG"; then
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $FT2_CONFIG" >&5
--$as_echo "$FT2_CONFIG" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $FT2_CONFIG" >&5
+-printf "%s\n" "$FT2_CONFIG" >&6; }
 -else
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
 -fi
 -
 -
@@ -56,11 +62,12 @@
 -  ac_ct_FT2_CONFIG=$FT2_CONFIG
 -  # Extract the first word of "freetype-config", so it can be a program name with args.
 -set dummy freetype-config; ac_word=$2
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
--$as_echo_n "checking for $ac_word... " >&6; }
--if ${ac_cv_prog_ac_ct_FT2_CONFIG+:} false; then :
--  $as_echo_n "(cached) " >&6
--else
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-printf %s "checking for $ac_word... " >&6; }
+-if test ${ac_cv_prog_ac_ct_FT2_CONFIG+y}
+-then :
+-  printf %s "(cached) " >&6
+-else $as_nop
 -  if test -n "$ac_ct_FT2_CONFIG"; then
 -  ac_cv_prog_ac_ct_FT2_CONFIG="$ac_ct_FT2_CONFIG" # Let the user override the test.
 -else
@@ -68,11 +75,15 @@
 -for as_dir in $PATH
 -do
 -  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
+-  case $as_dir in #(((
+-    '') as_dir=./ ;;
+-    */) ;;
+-    *) as_dir=$as_dir/ ;;
+-  esac
 -    for ac_exec_ext in '' $ac_executable_extensions; do
--  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-  if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
 -    ac_cv_prog_ac_ct_FT2_CONFIG="freetype-config"
--    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
 -done
@@ -83,11 +94,11 @@
 -fi
 -ac_ct_FT2_CONFIG=$ac_cv_prog_ac_ct_FT2_CONFIG
 -if test -n "$ac_ct_FT2_CONFIG"; then
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_ct_FT2_CONFIG" >&5
--$as_echo "$ac_ct_FT2_CONFIG" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_ct_FT2_CONFIG" >&5
+-printf "%s\n" "$ac_ct_FT2_CONFIG" >&6; }
 -else
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
 -fi
 -
 -  if test "x$ac_ct_FT2_CONFIG" = x; then
@@ -95,8 +106,8 @@
 -  else
 -    case $cross_compiling:$ac_tool_warned in
 -yes:)
--{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
--$as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
+-printf "%s\n" "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
 -ac_tool_warned=yes ;;
 -esac
 -    FT2_CONFIG=$ac_ct_FT2_CONFIG
@@ -107,11 +118,12 @@
 -if test -n "$ac_tool_prefix"; then
 -  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
 -set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
--$as_echo_n "checking for $ac_word... " >&6; }
--if ${ac_cv_prog_PKG_CONFIG+:} false; then :
--  $as_echo_n "(cached) " >&6
--else
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-printf %s "checking for $ac_word... " >&6; }
+-if test ${ac_cv_prog_PKG_CONFIG+y}
+-then :
+-  printf %s "(cached) " >&6
+-else $as_nop
 -  if test -n "$PKG_CONFIG"; then
 -  ac_cv_prog_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test.
 -else
@@ -119,11 +131,15 @@
 -for as_dir in $PATH
 -do
 -  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
+-  case $as_dir in #(((
+-    '') as_dir=./ ;;
+-    */) ;;
+-    *) as_dir=$as_dir/ ;;
+-  esac
 -    for ac_exec_ext in '' $ac_executable_extensions; do
--  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-  if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
 -    ac_cv_prog_PKG_CONFIG="${ac_tool_prefix}pkg-config"
--    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
 -done
@@ -134,11 +150,11 @@
 -fi
 -PKG_CONFIG=$ac_cv_prog_PKG_CONFIG
 -if test -n "$PKG_CONFIG"; then
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PKG_CONFIG" >&5
--$as_echo "$PKG_CONFIG" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $PKG_CONFIG" >&5
+-printf "%s\n" "$PKG_CONFIG" >&6; }
 -else
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
 -fi
 -
 -
@@ -147,11 +163,12 @@
 -  ac_ct_PKG_CONFIG=$PKG_CONFIG
 -  # Extract the first word of "pkg-config", so it can be a program name with args.
 -set dummy pkg-config; ac_word=$2
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
--$as_echo_n "checking for $ac_word... " >&6; }
--if ${ac_cv_prog_ac_ct_PKG_CONFIG+:} false; then :
--  $as_echo_n "(cached) " >&6
--else
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-printf %s "checking for $ac_word... " >&6; }
+-if test ${ac_cv_prog_ac_ct_PKG_CONFIG+y}
+-then :
+-  printf %s "(cached) " >&6
+-else $as_nop
 -  if test -n "$ac_ct_PKG_CONFIG"; then
 -  ac_cv_prog_ac_ct_PKG_CONFIG="$ac_ct_PKG_CONFIG" # Let the user override the test.
 -else
@@ -159,11 +176,15 @@
 -for as_dir in $PATH
 -do
 -  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
+-  case $as_dir in #(((
+-    '') as_dir=./ ;;
+-    */) ;;
+-    *) as_dir=$as_dir/ ;;
+-  esac
 -    for ac_exec_ext in '' $ac_executable_extensions; do
--  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-  if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
 -    ac_cv_prog_ac_ct_PKG_CONFIG="pkg-config"
--    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
 -done
@@ -174,11 +195,11 @@
 -fi
 -ac_ct_PKG_CONFIG=$ac_cv_prog_ac_ct_PKG_CONFIG
 -if test -n "$ac_ct_PKG_CONFIG"; then
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_ct_PKG_CONFIG" >&5
--$as_echo "$ac_ct_PKG_CONFIG" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_ct_PKG_CONFIG" >&5
+-printf "%s\n" "$ac_ct_PKG_CONFIG" >&6; }
 -else
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
 -fi
 -
 -  if test "x$ac_ct_PKG_CONFIG" = x; then
@@ -186,8 +207,8 @@
 -  else
 -    case $cross_compiling:$ac_tool_warned in
 -yes:)
--{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
--$as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
+-printf "%s\n" "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
 -ac_tool_warned=yes ;;
 -esac
 -    PKG_CONFIG=$ac_ct_PKG_CONFIG
@@ -220,7 +241,8 @@
 -##tldbg _KPSE_LIB_FLAGS_TL: pixman (pixman) .
 -
 -# Check whether --with-system-pixman was given.
--if test "${with_system_pixman+set}" = set; then :
+-if test ${with_system_pixman+y}
+-then :
 -  withval=$with_system_pixman;
 -fi
 -if test "x$with_system_pixman" = xyes; then
@@ -241,20 +263,47 @@
 -	cd ${top_builddir}/../../libs/pixman && $(MAKE) $(AM_MAKEFLAGS) rebuild'
 -fi
 -
- ##tldbg _KPSE_LIB_FLAGS: Setup cairo (-lcairo) flags.
- echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=cairo, libname=cairo, options=, tlincl=-IBLD/libs/cairo/cairo, tllib=BLD/libs/cairo/libcairo.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/cairo/cairo/cairo.h.' >&5
- ##tldbg _KPSE_LIB_FLAGS_TL: cairo (cairo) .
-@@ -25540,339 +25303,6 @@ $(ZZIPLIB_DEPEND): ${top_builddir}/../../libs/zziplib/
- ${top_builddir}/../../libs/zziplib/include/zzip/zzip.h:
+-##tldbg _KPSE_LIB_FLAGS: Setup cairo (-lcairo) flags.
+-echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=cairo, libname=cairo, options=, tlincl=-IBLD/libs/cairo/cairo, tllib=BLD/libs/cairo/libcairo.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/cairo/cairo/cairo.h.' >&5
+-##tldbg _KPSE_LIB_FLAGS_TL: cairo (cairo) .
+-
+-# Check whether --with-system-cairo was given.
+-if test ${with_system_cairo+y}
+-then :
+-  withval=$with_system_cairo;
+-fi
+-if test "x$with_system_cairo" = xyes; then
+-  if $PKG_CONFIG cairo --atleast-version=1.12; then
+-  CAIRO_INCLUDES=`$PKG_CONFIG cairo --cflags`
+-  CAIRO_LIBS=`$PKG_CONFIG cairo --libs`
+-elif test "x$need_cairo:$with_system_cairo" = xyes:yes; then
+-  as_fn_error $? "did not find cairo 1.12 or better" "$LINENO" 5
+-fi
+-else
+-  CAIRO_INCLUDES="-I$kpse_BLD/libs/cairo/cairo"
+-  CAIRO_LIBS="$kpse_BLD/libs/cairo/libcairo.a"
+-  CAIRO_DEPEND='${top_builddir}/../../libs/cairo/libcairo.a'
+-  CAIRO_RULE='# Rebuild libcairo
+-$(CAIRO_DEPEND): ${top_builddir}/../../libs/cairo/cairo/cairo.h
+-	cd ${top_builddir}/../../libs/cairo && $(MAKE) $(AM_MAKEFLAGS) rebuild
+-${top_builddir}/../../libs/cairo/cairo/cairo.h:
+-	cd ${top_builddir}/../../libs/cairo && $(MAKE) $(AM_MAKEFLAGS) rebuild'
+-fi
+-
+ ##tldbg _KPSE_LIB_FLAGS: Setup potrace (-lpotrace) flags.
+ echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=potrace, libname=potrace, options=, tlincl=-IBLD/libs/potrace/include, tllib=BLD/libs/potrace/libpotrace.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/potrace/include/potrace.h.' >&5
+ ##tldbg _KPSE_LIB_FLAGS_TL: potrace (potrace) .
+@@ -27657,364 +27371,6 @@ fi
  	cd ${top_builddir}/../../libs/zziplib && $(MAKE) $(AM_MAKEFLAGS) rebuild'
  fi
--
+ 
 -##tldbg _KPSE_LIB_FLAGS: Setup teckit (-lTECkit) flags.
 -echo 'tldbg:_KPSE_LIB_FLAGS called: libdir=teckit, libname=TECkit, options=, tlincl=-IBLD/libs/teckit/include, tllib=BLD/libs/teckit/libTECkit.a, tlextra=, rebuildsrcdeps=, rebuildblddeps=${top_builddir}/../../libs/teckit/include/teckit/TECkit_Common.h.' >&5
 -##tldbg _KPSE_LIB_FLAGS_TL: teckit (TECkit) .
 -
 -# Check whether --with-system-teckit was given.
--if test "${with_system_teckit+set}" = set; then :
+-if test ${with_system_teckit+y}
+-then :
 -  withval=$with_system_teckit;
 -fi
 -if test "x$with_system_teckit" = xyes; then
@@ -284,7 +333,8 @@
 -##tldbg _KPSE_LIB_FLAGS_TL: graphite2 (graphite2) .
 -
 -# Check whether --with-system-graphite2 was given.
--if test "${with_system_graphite2+set}" = set; then :
+-if test ${with_system_graphite2+y}
+-then :
 -  withval=$with_system_graphite2;
 -fi
 -if test "x$with_system_graphite2" = xyes; then
@@ -310,7 +360,8 @@
 -##tldbg _KPSE_LIB_FLAGS_TL: harfbuzz (harfbuzz) .
 -
 -# Check whether --with-system-harfbuzz was given.
--if test "${with_system_harfbuzz+set}" = set; then :
+-if test ${with_system_harfbuzz+y}
+-then :
 -  withval=$with_system_harfbuzz;
 -fi
 -if test "x$with_system_harfbuzz" = xyes; then
@@ -341,7 +392,8 @@
 -##tldbg _KPSE_LIB_FLAGS_TL: icu (icuxxx) .
 -
 -# Check whether --with-system-icu was given.
--if test "${with_system_icu+set}" = set; then :
+-if test ${with_system_icu+y}
+-then :
 -  withval=$with_system_icu;
 -fi
 -if test "x$with_system_icu" = xyes; then
@@ -349,11 +401,12 @@
 -if test -n "$ac_tool_prefix"; then
 -  # Extract the first word of "${ac_tool_prefix}icu-config", so it can be a program name with args.
 -set dummy ${ac_tool_prefix}icu-config; ac_word=$2
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
--$as_echo_n "checking for $ac_word... " >&6; }
--if ${ac_cv_prog_ICU_CONFIG+:} false; then :
--  $as_echo_n "(cached) " >&6
--else
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-printf %s "checking for $ac_word... " >&6; }
+-if test ${ac_cv_prog_ICU_CONFIG+y}
+-then :
+-  printf %s "(cached) " >&6
+-else $as_nop
 -  if test -n "$ICU_CONFIG"; then
 -  ac_cv_prog_ICU_CONFIG="$ICU_CONFIG" # Let the user override the test.
 -else
@@ -361,11 +414,15 @@
 -for as_dir in $PATH
 -do
 -  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
+-  case $as_dir in #(((
+-    '') as_dir=./ ;;
+-    */) ;;
+-    *) as_dir=$as_dir/ ;;
+-  esac
 -    for ac_exec_ext in '' $ac_executable_extensions; do
--  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-  if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
 -    ac_cv_prog_ICU_CONFIG="${ac_tool_prefix}icu-config"
--    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
 -done
@@ -376,11 +433,11 @@
 -fi
 -ICU_CONFIG=$ac_cv_prog_ICU_CONFIG
 -if test -n "$ICU_CONFIG"; then
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ICU_CONFIG" >&5
--$as_echo "$ICU_CONFIG" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ICU_CONFIG" >&5
+-printf "%s\n" "$ICU_CONFIG" >&6; }
 -else
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
 -fi
 -
 -
@@ -389,11 +446,12 @@
 -  ac_ct_ICU_CONFIG=$ICU_CONFIG
 -  # Extract the first word of "icu-config", so it can be a program name with args.
 -set dummy icu-config; ac_word=$2
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
--$as_echo_n "checking for $ac_word... " >&6; }
--if ${ac_cv_prog_ac_ct_ICU_CONFIG+:} false; then :
--  $as_echo_n "(cached) " >&6
--else
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-printf %s "checking for $ac_word... " >&6; }
+-if test ${ac_cv_prog_ac_ct_ICU_CONFIG+y}
+-then :
+-  printf %s "(cached) " >&6
+-else $as_nop
 -  if test -n "$ac_ct_ICU_CONFIG"; then
 -  ac_cv_prog_ac_ct_ICU_CONFIG="$ac_ct_ICU_CONFIG" # Let the user override the test.
 -else
@@ -401,11 +459,15 @@
 -for as_dir in $PATH
 -do
 -  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
+-  case $as_dir in #(((
+-    '') as_dir=./ ;;
+-    */) ;;
+-    *) as_dir=$as_dir/ ;;
+-  esac
 -    for ac_exec_ext in '' $ac_executable_extensions; do
--  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-  if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
 -    ac_cv_prog_ac_ct_ICU_CONFIG="icu-config"
--    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
 -done
@@ -416,11 +478,11 @@
 -fi
 -ac_ct_ICU_CONFIG=$ac_cv_prog_ac_ct_ICU_CONFIG
 -if test -n "$ac_ct_ICU_CONFIG"; then
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_ct_ICU_CONFIG" >&5
--$as_echo "$ac_ct_ICU_CONFIG" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_ct_ICU_CONFIG" >&5
+-printf "%s\n" "$ac_ct_ICU_CONFIG" >&6; }
 -else
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
 -fi
 -
 -  if test "x$ac_ct_ICU_CONFIG" = x; then
@@ -428,8 +490,8 @@
 -  else
 -    case $cross_compiling:$ac_tool_warned in
 -yes:)
--{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
--$as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
+-printf "%s\n" "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
 -ac_tool_warned=yes ;;
 -esac
 -    ICU_CONFIG=$ac_ct_ICU_CONFIG
@@ -440,11 +502,12 @@
 -if test -n "$ac_tool_prefix"; then
 -  # Extract the first word of "${ac_tool_prefix}pkg-config", so it can be a program name with args.
 -set dummy ${ac_tool_prefix}pkg-config; ac_word=$2
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
--$as_echo_n "checking for $ac_word... " >&6; }
--if ${ac_cv_prog_PKG_CONFIG+:} false; then :
--  $as_echo_n "(cached) " >&6
--else
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-printf %s "checking for $ac_word... " >&6; }
+-if test ${ac_cv_prog_PKG_CONFIG+y}
+-then :
+-  printf %s "(cached) " >&6
+-else $as_nop
 -  if test -n "$PKG_CONFIG"; then
 -  ac_cv_prog_PKG_CONFIG="$PKG_CONFIG" # Let the user override the test.
 -else
@@ -452,11 +515,15 @@
 -for as_dir in $PATH
 -do
 -  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
+-  case $as_dir in #(((
+-    '') as_dir=./ ;;
+-    */) ;;
+-    *) as_dir=$as_dir/ ;;
+-  esac
 -    for ac_exec_ext in '' $ac_executable_extensions; do
--  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-  if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
 -    ac_cv_prog_PKG_CONFIG="${ac_tool_prefix}pkg-config"
--    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
 -done
@@ -467,11 +534,11 @@
 -fi
 -PKG_CONFIG=$ac_cv_prog_PKG_CONFIG
 -if test -n "$PKG_CONFIG"; then
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $PKG_CONFIG" >&5
--$as_echo "$PKG_CONFIG" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $PKG_CONFIG" >&5
+-printf "%s\n" "$PKG_CONFIG" >&6; }
 -else
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
 -fi
 -
 -
@@ -480,11 +547,12 @@
 -  ac_ct_PKG_CONFIG=$PKG_CONFIG
 -  # Extract the first word of "pkg-config", so it can be a program name with args.
 -set dummy pkg-config; ac_word=$2
--{ $as_echo "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
--$as_echo_n "checking for $ac_word... " >&6; }
--if ${ac_cv_prog_ac_ct_PKG_CONFIG+:} false; then :
--  $as_echo_n "(cached) " >&6
--else
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $ac_word" >&5
+-printf %s "checking for $ac_word... " >&6; }
+-if test ${ac_cv_prog_ac_ct_PKG_CONFIG+y}
+-then :
+-  printf %s "(cached) " >&6
+-else $as_nop
 -  if test -n "$ac_ct_PKG_CONFIG"; then
 -  ac_cv_prog_ac_ct_PKG_CONFIG="$ac_ct_PKG_CONFIG" # Let the user override the test.
 -else
@@ -492,11 +560,15 @@
 -for as_dir in $PATH
 -do
 -  IFS=$as_save_IFS
--  test -z "$as_dir" && as_dir=.
+-  case $as_dir in #(((
+-    '') as_dir=./ ;;
+-    */) ;;
+-    *) as_dir=$as_dir/ ;;
+-  esac
 -    for ac_exec_ext in '' $ac_executable_extensions; do
--  if as_fn_executable_p "$as_dir/$ac_word$ac_exec_ext"; then
+-  if as_fn_executable_p "$as_dir$ac_word$ac_exec_ext"; then
 -    ac_cv_prog_ac_ct_PKG_CONFIG="pkg-config"
--    $as_echo "$as_me:${as_lineno-$LINENO}: found $as_dir/$ac_word$ac_exec_ext" >&5
+-    printf "%s\n" "$as_me:${as_lineno-$LINENO}: found $as_dir$ac_word$ac_exec_ext" >&5
 -    break 2
 -  fi
 -done
@@ -507,11 +579,11 @@
 -fi
 -ac_ct_PKG_CONFIG=$ac_cv_prog_ac_ct_PKG_CONFIG
 -if test -n "$ac_ct_PKG_CONFIG"; then
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_ct_PKG_CONFIG" >&5
--$as_echo "$ac_ct_PKG_CONFIG" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_ct_PKG_CONFIG" >&5
+-printf "%s\n" "$ac_ct_PKG_CONFIG" >&6; }
 -else
--  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
--$as_echo "no" >&6; }
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+-printf "%s\n" "no" >&6; }
 -fi
 -
 -  if test "x$ac_ct_PKG_CONFIG" = x; then
@@ -519,8 +591,8 @@
 -  else
 -    case $cross_compiling:$ac_tool_warned in
 -yes:)
--{ $as_echo "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
--$as_echo "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
+-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: using cross tools not prefixed with host triplet" >&5
+-printf "%s\n" "$as_me: WARNING: using cross tools not prefixed with host triplet" >&2;}
 -ac_tool_warned=yes ;;
 -esac
 -    PKG_CONFIG=$ac_ct_PKG_CONFIG
@@ -559,7 +631,8 @@
 -##tldbg _KPSE_LIB_FLAGS_TL: graphite2 (graphite2) .
 -
 -# Check whether --with-system-graphite2 was given.
--if test "${with_system_graphite2+set}" = set; then :
+-if test ${with_system_graphite2+y}
+-then :
 -  withval=$with_system_graphite2;
 -fi
 -if test "x$with_system_graphite2" = xyes; then
@@ -581,6 +654,13 @@
 -fi
 -
 -fi # end xetex for icu/graphite
- 
+-
  # Check size of off_t (using <kpathsea/config.h>)
  eval CPPFLAGS=\"$KPATHSEA_INCLUDES \$CPPFLAGS\"
+ eval LIBS=\"$KPATHSEA_LIBS \$LIBS\"
+@@ -31534,5 +30890,3 @@ fi
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: WARNING: unrecognized options: $ac_unrecognized_opts" >&5
+ printf "%s\n" "$as_me: WARNING: unrecognized options: $ac_unrecognized_opts" >&2;}
+ fi
+-
+-

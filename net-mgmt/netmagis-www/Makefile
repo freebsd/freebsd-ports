@@ -1,5 +1,5 @@
 PORTNAME=	netmagis
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-www
 
 COMMENT=	Netmagis web module
@@ -18,7 +18,7 @@ RUN_DEPENDS=	netmagis-config:net-mgmt/netmagis-common \
 
 NO_ARCH=	# no
 USES=	tex
-USE_TEX=	full
+#USE_TEX=	full
 
 MASTERDIR=	${.CURDIR}/../netmagis-common
 

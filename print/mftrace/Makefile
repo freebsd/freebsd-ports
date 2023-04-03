@@ -1,6 +1,6 @@
 PORTNAME=	mftrace
 PORTVERSION=	1.2.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://lilypond.org/download/sources/mftrace/ \
 		LOCAL/nivit/${PORTNAME}/
@@ -22,7 +22,7 @@ RUN_DEPENDS+=	potrace:graphics/potrace
 
 # Python3 ready
 USES=		gmake python tex
-USE_TEX=	base texmf
+USE_TEX=	base # texmf
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 

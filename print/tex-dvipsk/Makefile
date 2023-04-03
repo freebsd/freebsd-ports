@@ -17,7 +17,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpaper.so:print/libpaper
 
 USES=		gmake localbase:ldflags pkgconfig tar:xz tex
-USE_TEX=	kpathsea texhash texmf web2c
+USE_TEX=	kpathsea texhash web2c
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-kpathsea-includes=${LOCALBASE}/include \
@@ -34,7 +34,6 @@ EXTRACT_AFTER_ARGS_TEXMF=	| ${TAR} -xf - -C ${STAGEDIR}${PREFIX}/share \
 				--no-same-owner \
 				${EXCLUDE_FILES:S,^,--exclude ,} \
 				${EXTRACT_FILES_TEXMF:S,^,${DISTNAME_TEXMF}/,}
-DISTNAME_TEXMF=			texlive-${TEXLIVE_VERSION}-texmf
 EXTRACT_FILES_TEXMF=		texmf-dist/doc/dvips/ texmf-dist/dvips/ \
 				texmf-dist/fonts/map/dvips/ \
 				texmf-dist/fonts/enc/dvips/ \

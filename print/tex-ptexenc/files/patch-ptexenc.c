@@ -1,20 +1,21 @@
---- ptexenc.c.orig	2022-01-29 14:44:21 UTC
+--- ptexenc.c.orig	2023-01-01 05:42:55 UTC
 +++ ptexenc.c
 @@ -16,6 +16,7 @@
  #include <ptexenc/unicode-jp.h>
  
  #include <ctype.h>
 +#include <fnmatch.h>
+ #include <sys/stat.h>
  
  #define ENC_UNKNOWN  0
- #define ENC_JIS      1
-@@ -24,10 +25,46 @@
+@@ -25,11 +26,47 @@
  #define ENC_UTF8     4
  #define ENC_UPTEX    5
  
 -static int default_kanji_enc;
 +static int default_kanji_is_uptex;
  static boolean UPTEX_enabled;
+ static boolean ptex_mode = false;
  static boolean prior_file_enc = false;
  
 +static struct le {
@@ -56,7 +57,7 @@
  #define ESC '\033'
  
  #ifndef NOFILE
-@@ -64,7 +101,7 @@ const_string enc_to_string(int enc)
+@@ -65,7 +102,7 @@ static int string_to_enc(const_string str)
  static int string_to_enc(const_string str)
  {
      if (str == NULL)                    return ENC_UNKNOWN;
@@ -65,7 +66,7 @@
      if (strcasecmp(str, "jis")    == 0) return ENC_JIS;
      if (strcasecmp(str, "euc")    == 0) return ENC_EUC;
      if (strcasecmp(str, "sjis")   == 0) return ENC_SJIS;
-@@ -92,7 +129,7 @@ static int get_default_enc(void)
+@@ -95,7 +132,7 @@ static int get_default_enc(void)
      } else if (enc != ENC_UNKNOWN) {
          return enc;
      }
@@ -74,7 +75,7 @@
  }
  
  static void set_file_enc(int enc)
-@@ -150,14 +187,14 @@ void enable_UPTEX (boolean enable)
+@@ -165,14 +202,14 @@ void enable_UPTEX (boolean enable)
  {
      UPTEX_enabled = enable;
      if (enable) {

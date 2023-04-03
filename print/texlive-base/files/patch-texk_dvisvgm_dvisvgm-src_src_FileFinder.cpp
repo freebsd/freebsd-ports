@@ -1,6 +1,6 @@
---- texk/dvisvgm/dvisvgm-src/src/FileFinder.cpp.orig	2022-01-29 15:54:24 UTC
+--- texk/dvisvgm/dvisvgm-src/src/FileFinder.cpp.orig	2023-01-20 01:55:04 UTC
 +++ texk/dvisvgm/dvisvgm-src/src/FileFinder.cpp
-@@ -32,6 +32,7 @@
+@@ -31,6 +31,7 @@
  	#endif
  #endif
  

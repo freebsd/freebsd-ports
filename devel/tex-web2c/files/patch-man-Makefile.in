@@ -1,6 +1,6 @@
---- man/Makefile.in.orig	2022-01-29 15:11:47 UTC
+--- man/Makefile.in.orig	2023-04-06 19:09:14 UTC
 +++ man/Makefile.in
-@@ -468,11 +468,7 @@ web_man_sources = bibtex.man dvicopy.man dvitomp.man d
+@@ -478,11 +478,7 @@ otangle_man_sources = ofm2opl.man opl2ofm.man ovf2ovp.
  
  pdftex_man_sources = pdftex.man pdftosrc.man ttf2afm.man
  otangle_man_sources = ofm2opl.man opl2ofm.man ovf2ovp.man ovp2ovf.man

@@ -37,7 +37,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 
 EXCLUDE_ENGINES=	aleph luatex luajittex mf mf-nowin ptex eptex uptex \
 			euptex xetex otangle mp pmp upmp web2c web-progs \
-			synctex \
+			synctex hitex \
 			luahbtex \
 			luajithbtex \
 			mflua \

@@ -9,6 +9,8 @@ DIST_SUBDIR=	TeX
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	TeX implementation translating WEB to C
 
+LICENSE=	LGPL21+
+
 LIB_DEPENDS=	libgmp.so:math/gmp \
 		libmpfr.so:math/mpfr \
 		libopenjp2.so:graphics/openjpeg \
@@ -25,6 +27,7 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-aleph \
 			--disable-eptex \
 			--disable-euptex \
+			--disable-hitex \
 			--disable-latex \
 			--disable-luahbtex \
 			--disable-luajithbtex \
@@ -54,6 +57,7 @@ CONFLICTS_INSTALL=	cweb
 
 EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	build-aux libs/xpdf texk/web2c
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/web2c
 
 INFO=		web2c

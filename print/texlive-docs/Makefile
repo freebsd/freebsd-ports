@@ -11,7 +11,6 @@ COMMENT=	TeX Live Typesetting System, documentation
 WWW=		https://tug.org/texlive/
 
 USES=		perl5 tar:xz tex
-USE_TEX=	texmf
 
 EXTRACT_AFTER_ARGS=	| ${TAR} xf - \
 			${EXCLUDE_FILES:S,^,--exclude ${DISTNAME}/,}
@@ -66,11 +65,12 @@ do-install:
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/latex-web-companion/ch7/sgmlspl.pl \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/ucs/unsupported/u2ps \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/support/gustprog/porzadki.pl
-	${REINPLACE_CMD} -i '' -e 's|/usr/bin/env python|${PYTHON_CMD}|g' \
+	${REINPLACE_CMD} -i '' -E -e '1s|/usr/bin/env python[23]?|${python_CMD}|' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/fonts/gnu-freefont/tools/utility/hex_range.py \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/fonts/xcharter/altone.py \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/aramaic-serto/serto.py \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/scanpages/replicate.py
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/scanpages/replicate.py \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/songproj/song2tex.py
 	${REINPLACE_CMD} -i '' -e 's|/usr/bin/python|${PYTHO_CMD}|g' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/fonts/gnu-freefont/tools/test/ranges/Arabic/unicode_joining.py \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/fonts/gnu-freefont/tools/test/ranges/Arabic/arabic_test.py \
@@ -78,28 +78,35 @@ do-install:
 	${REINPLACE_CMD} -i '' -e 's|/usr/bin/texlua|${PREFIX}/bin/texlua|g' \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/generic/m-tx/buildmtxdoc.lua
 	${REINPLACE_CMD} -i '' -e 's|/bin/bash|${PREFIX}/bin/bash|g' \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/fonts/drm/allfonts.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/generic/e-french/bin/linux/makefrindex \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/metapost/featpost/bash/COMPILE.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/metapost/featpost/bash/makehtmlindex.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/metapost/featpost/bash/laproof.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/uspace/uspace-ctanify.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/hvfloat/runAll.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/hvfloat/runEXA.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/hepnames/mkmacrotables \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/bardiag/example/compile.all \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/tlc-article/bin/deploy \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/pdfreview/pdfreview.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/pdfreview/pdfshrink.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/beamerappendixnote/build.sh  \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/shipunov/scripts/biokey2html.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/seminar/run.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/biblatex-abnt/test.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/shdoc/shreformat.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/biblatex-software/mkbiblatexstubs.sh \
-		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/ctable/inst \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/cstex/cspsfonts-gen/mkfc \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/cstex/cspsfonts-gen/mkf \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/fonts/drm/allfonts.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/generic/e-french/bin/linux/makefrindex \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/bardiag/example/compile.all \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/beamerappendixnote/build.sh  \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/biblatex-abnt/test.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/biblatex-software/mkbiblatexstubs.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/chinesechess/build.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/circledtext/build.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/codebox/build.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/ctable/inst \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/gamebooklib/gamebooklib_countpagesperseed.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/hepnames/mkmacrotables \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/hvfloat/runAll.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/hvfloat/runEXA.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/pascaltriangle/build.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/pdfreview/pdfreview.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/pdfreview/pdfshrink.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/seminar/run.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/shdoc/shreformat.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/shipunov/scripts/biokey2html.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/termsim/build.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/tlc-article/bin/deploy \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/latex/uspace/uspace-ctanify.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/metapost/featpost/bash/COMPILE.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/metapost/featpost/bash/laproof.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/metapost/featpost/bash/makehtmlindex.sh \
+		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/plain/transparent-io/TrIO.org \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/support/chklref/release.sh \
 		${STAGEDIR}${PREFIX}/share/texmf-dist/doc/support/latexdiff/contrib/latexdiff-wrap
 	${FIND} -s ${STAGEDIR}${PREFIX}/share/texmf-dist -not -type d | ${SORT} | \

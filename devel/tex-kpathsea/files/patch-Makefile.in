@@ -1,6 +1,6 @@
---- Makefile.in.orig	2022-01-30 05:38:17 UTC
+--- Makefile.in.orig	2023-04-02 15:35:03 UTC
 +++ Makefile.in
-@@ -364,7 +364,7 @@ am__can_run_installinfo = \
+@@ -364,7 +364,7 @@ DATA = $(dist_noinst_DATA) $(pkgconfig_DATA)
      *) (install-info --version) >/dev/null 2>&1;; \
    esac
  DATA = $(dist_noinst_DATA) $(pkgconfig_DATA)
@@ -9,7 +9,7 @@
  	$(noinst_HEADERS)
  RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\
    distclean-recursive maintainer-clean-recursive
-@@ -2101,7 +2101,7 @@ install-binPROGRAMS: install-libLTLIBRARIES
+@@ -2103,7 +2103,7 @@ installdirs-am:
  
  installdirs: installdirs-recursive
  installdirs-am:

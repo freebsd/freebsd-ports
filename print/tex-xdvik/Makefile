@@ -1,6 +1,6 @@
 PORTNAME=	xdvik
 PORTVERSION=	22.87.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	SF/xdvi/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	tex-
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 RUN_DEPENDS=	tex-dvipsk>=5.995:print/tex-dvipsk
 
 USES=		autoreconf iconv libtool:build motif pkgconfig tex xorg
-USE_TEX=	kpathsea texhash texmf web2c
+USE_TEX=	kpathsea texhash web2c
 USE_XORG=	ice sm x11 xext xi xmu xpm xt
 
 PATCH_WRKSRC=	${WRKDIR}/${DISTNAME}

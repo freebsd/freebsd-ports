@@ -1,5 +1,5 @@
 PORTNAME=	kpathsea
-PORTVERSION=	6.3.3
+PORTVERSION=	6.3.5
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
@@ -26,6 +26,7 @@ EXTRACT_FILES=	build-aux texk/kpathsea texk/texlive/tl_support \
 WRKSRC=		${WRKDIR}/${DISTNAME}/texk/kpathsea
 
 INFO=		kpathsea
+PLIST_SUB= VERSION=${PORTVERSION}
 
 post-install:
 	(cd ${WRKDIR}/${DISTNAME}/texk/texlive/linked_scripts/texlive-extra && \

@@ -1,5 +1,6 @@
 PORTNAME=	gnuplot
 PORTVERSION=	5.2.8
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-tex-extras
@@ -11,7 +12,7 @@ WWW=		http://www.gnuplot.info/
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		cpe tex
-USE_TEX=	texmf
+#USE_TEX=	texmf
 NO_BUILD=	yes
 PLIST_FILES=	${TEX_FILES:S,^,${TEX_DIR}/,}
 

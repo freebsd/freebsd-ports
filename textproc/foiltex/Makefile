@@ -1,11 +1,11 @@
 PORTNAME=	foiltex
 PORTVERSION=	2.1.4b
-PORTREVISION=	5
+PORTREVISION=	7
 CATEGORIES=	textproc
-MASTER_SITES=	TEX_CTAN/macros/latex/contrib/${PORTNAME}
+MASTER_SITES=	https://mirror.ctan.org/macros/latex/contrib/${PORTNAME}/
 DISTFILES=	foiltex.dtx foiltex.ins
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Collection of LaTeX files for making foils
 WWW=		https://ctan.org/pkg/foiltex
 
@@ -17,20 +17,21 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 USES=		tex
 USE_TEX=	latex
-NO_WRKSUBDIR=	yes
+
 NO_ARCH=	yes
 
-LATEX_CMD=	${LOCALBASE}/bin/latex
+NO_WRKSUBDIR=	yes
 
-FOIL_DIR=	share/texmf/tex/latex/${PORTNAME}
-FOIL_FILES=	foil17.clo foil20.clo foil25.clo foil30.clo foils.cls \
-		foils.sty foilshrt.clo fltfonts.def
-
+PLIST_FILES=	${FOIL_FILES:S,^,${FOIL_DIR}/,}
 PORTDOCS=	foiltex.dtx foiltex.dvi
 PORTEXAMPLES=	sampfoil.tex
-PLIST_FILES=	${FOIL_FILES:S,^,${FOIL_DIR}/,}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+LATEX_CMD=	${LOCALBASE}/bin/latex
+FOIL_DIR=	${TEXMFDIR}/tex/latex/${PORTNAME}
+FOIL_FILES=	foil17.clo foil20.clo foil25.clo foil30.clo foils.cls \
+		foils.sty foilshrt.clo fltfonts.def
 
 do-extract:
 	${MKDIR} ${WRKSRC}

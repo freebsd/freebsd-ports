@@ -1,6 +1,6 @@
 PORTNAME=	lilypond
 DISTVERSION=	2.22.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 
@@ -33,7 +33,7 @@ USES=		bison:build compiler:c++11-lib cpe ghostscript gmake gnome \
 USE_CXXSTD=	c++11
 USE_GNOME=	pango
 USE_PERL5=	build
-USE_TEX=	latex texmf
+USE_TEX=	latex
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--with-texgyre-dir=${LOCALBASE}/${TEXMFDISTDIR}/fonts/opentype/public/tex-gyre
