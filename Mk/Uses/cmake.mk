@@ -98,10 +98,6 @@ CMAKE_ARGS+=		-DCMAKE_C_COMPILER:STRING="${CC}" \
 			-DTHREADS_HAVE_PTHREAD_ARG:BOOL=YES \
 			-DCMAKE_INSTALL_RPATH_USE_LINK_PATH=YES \
 			-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
-.  if ${USES:Mcmake} && ${ABI:Mpurecap}
-# CheriABI msgfmt is broken. Use a hybrid ABI version instead globally.
-CMAKE_ARGS+=		-DGETTEXT_MSGFMT_EXECUTABLE=${LOCALBASE64}/bin/msgfmt
-.  endif
 
 # Handle the option-like CMAKE_ON and CMAKE_OFF lists.
 .  for _bool_kind in ON OFF
