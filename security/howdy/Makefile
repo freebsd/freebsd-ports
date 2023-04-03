@@ -14,7 +14,7 @@ RUN_DEPENDS=	opencv>0:graphics/opencv \
 		${PYTHON_PKGNAMEPREFIX}dlib>0:science/py-dlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
 
-USES=		python:run shebangfix
+USES=		python:3.7-3.10,run shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	boltgolt
