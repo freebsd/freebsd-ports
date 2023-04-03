@@ -1,5 +1,5 @@
 PORTNAME=	jackett
-PORTVERSION=	0.20.2203
+PORTVERSION=	0.20.3756
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Jackett/Jackett/releases/download/
 DISTNAME=	v${PORTVERSION}/Jackett.Binaries.Mono
@@ -24,7 +24,8 @@ USERS=		jackett
 GROUPS=		jackett
 
 post-patch:
-	@${RM} ${WRKSRC}/install_service_macos ${WRKSRC}/install_service_systemd.sh
+	@${RM} ${WRKSRC}/install_service_macos ${WRKSRC}/install_service_systemd.sh \
+		${WRKSRC}/install_service_systemd_mono.sh ${WRKSRC}/Upstart.config
 
 do-install:
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}/${DATADIR}
