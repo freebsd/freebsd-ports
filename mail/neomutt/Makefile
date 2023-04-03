@@ -1,5 +1,5 @@
 PORTNAME=	neomutt
-PORTVERSION=	20220429
+PORTVERSION=	20230322
 CATEGORIES=	mail
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -45,6 +45,7 @@ CONFIGURE_ARGS=	--with-ssl="${OPENSSLBASE}" \
 		--locales-fix \
 		--fmemopen \
 		--pcre2 \
+		--disable-idn \
 		--mandir=${PREFIX}/man \
 		${ICONV_CONFIGURE_ARGS}
 CONFIGURE_ENV=	CC_FOR_BUILD="${CC}"
@@ -66,8 +67,8 @@ TOKYOCABINET_LIB_DEPENDS=	libtokyocabinet.so:databases/tokyocabinet
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
 
-IDN_LIB_DEPENDS=	libidn.so:dns/libidn
-IDN_CONFIGURE_ENABLE=	idn
+IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2
+IDN_CONFIGURE_ON=	idn2
 
 FLOCK_CONFIGURE_ON=	--with-lock=flock
 
