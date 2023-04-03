@@ -1,5 +1,5 @@
 PORTNAME=	s6
-PORTVERSION=	2.11.2.0
+DISTVERSION=	2.11.3.2
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.skarnet.org/software/${PORTNAME}/
 
@@ -10,7 +10,7 @@ WWW=		https://www.skarnet.org/software/s6/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	execline>=2.9.1.0:lang/execline
+BUILD_DEPENDS=	execline>=2.9.3.0:lang/execline
 LIB_DEPENDS=	libskarnet.so:devel/skalibs
 RUN_DEPENDS=	execlineb:lang/execline
 
