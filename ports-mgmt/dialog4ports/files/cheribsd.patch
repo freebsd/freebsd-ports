@@ -1,0 +1,19 @@
+--- mixedlist.c.orig	2024-07-10 13:04:33.184617000 +0100
++++ mixedlist.c	2024-07-10 13:04:37.718608000 +0100
+@@ -661,14 +661,14 @@
+ 						break;
+ 					case DLGK_ITEM_NEXT:
+ 						i = choice + 1;
++						if (scrollamt + choice >= item_no - 1)
++							continue;
+ 						if (items[scrollamt + i].type == ITEM_SEPARATOR) {
+ 							if (scrollamt + i + 1 < item_no)
+ 								i++;
+ 							else
+ 								i--;
+ 						}
+-						if (scrollamt + choice >= item_no - 1)
+-							continue;
+ 						break;
+ 					default:
+ 						found = false;
