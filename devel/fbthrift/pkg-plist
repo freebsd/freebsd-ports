@@ -195,6 +195,7 @@ include/thrift/lib/cpp/util/VarintUtils-inl.h
 include/thrift/lib/cpp/util/VarintUtils.h
 include/thrift/lib/cpp/util/test/VarintUtilsTestUtil.h
 include/thrift/lib/cpp2/Adapt.h
+include/thrift/lib/cpp2/Adapter.h
 include/thrift/lib/cpp2/BadFieldAccess.h
 include/thrift/lib/cpp2/BoxedValuePtr.h
 include/thrift/lib/cpp2/CloneableIOBuf.h
