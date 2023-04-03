@@ -10,6 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20230430:
+AUTHOR: zirias@FreeBSD.org
+
+  USES=magick has been updated based on flavorized ports.
+
+  A new argument 'x11' is available to specifically depend on the flavor
+  with X11 support. Fallback to DEFAULT_VERSIONS now happens
+  independently for the version (currently 6 or 7) and the flavor
+  (currently x11 or nox11).
+
+  Only use arguments for version or flavor if your port really requires
+  it. Also, there is no need to add options for selecting the -nox11
+  flavor any more, as the user setting in DEFAULT_VERSIONS will be
+  honored.
+
 20230111:
 AUTHOR: vishwin@FreeBSD.org
 
