@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	15.9.3
+PORTVERSION=	15.9.4
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -289,7 +289,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	f030ca96950296390a162ebc7b59914282bdb605
+GL_COMMIT=	d6192c2ab77ab814b9bd66103663047556fd67e4
 
 USERS=	git
 GROUPS=	git

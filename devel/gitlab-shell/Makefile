@@ -9,7 +9,6 @@ WWW=		https://gitlab.com/gitlab-org/gitlab-shell
 LICENSE=	MIT
 
 BUILD_DEPENDS=	heimdal>=0:security/heimdal
-LIB_DEPENDS=	libkrb5.so:security/heimdal
 
 USES=		gmake go:modules,no_targets pkgconfig
 
