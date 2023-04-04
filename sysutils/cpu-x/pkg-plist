@@ -50,6 +50,7 @@ share/fish/vendor_completions.d/cpu-x.fish
 %%NLS%%share/locale/id/LC_MESSAGES/cpu-x.mo
 %%NLS%%share/locale/it/LC_MESSAGES/cpu-x.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/cpu-x.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/cpu-x.mo
 %%NLS%%share/locale/kmr/LC_MESSAGES/cpu-x.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/cpu-x.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/cpu-x.mo
