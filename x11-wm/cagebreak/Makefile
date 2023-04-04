@@ -1,5 +1,5 @@
 PORTNAME=	cagebreak
-DISTVERSION=	2.0.1
+DISTVERSION=	2.1.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -43,6 +43,9 @@ post-patch:
 # Respect PREFIX for system-wide config
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/${PORTNAME}.c \
+		${WRKSRC}/meson.build
+# Drop duplicate LICENSE installation
+	@${REINPLACE_CMD} -e '/install.*licenses/d' \
 		${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
