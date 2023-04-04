@@ -22,7 +22,7 @@ USES=		compiler:c++11-lang gmake localbase perl5 tar:xz
 USE_JAVA=	yes
 
 JAVA_RUN=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 
 WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than

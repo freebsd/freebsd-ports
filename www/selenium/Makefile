@@ -16,7 +16,7 @@ USES=		cpe
 CPE_VENDOR=	jenkins
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 JAVA_RUN=	yes
 
 USE_RC_SUBR=	selenium

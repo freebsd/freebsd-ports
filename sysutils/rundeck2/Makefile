@@ -16,7 +16,7 @@ DEPRECATED=	unmaintained and newer version available in sysutils/rundeck3
 EXPIRATION_DATE=	2023-05-17
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 
 CONFLICTS_INSTALL=	rundeck3
 

@@ -20,7 +20,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAV
 USES=		cpe python:3.6+
 USE_ANT=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.8
+JAVA_VERSION=	8
 JAVA_VENDOR=	openjdk
 CPE_VENDOR=	apache
 

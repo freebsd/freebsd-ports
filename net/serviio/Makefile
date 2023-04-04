@@ -19,7 +19,7 @@ RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.8
+JAVA_VERSION=	8
 USES=		dos2unix
 DOS2UNIX_GLOB=	derby.properties
 

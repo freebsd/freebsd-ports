@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	samtools:biology/samtools
 
-USE_JAVA=	1.8+
+USE_JAVA=	8+
 JAVA_RUN=	yes
 
 CONFLICTS_INSTALL=	picard # bin/picard

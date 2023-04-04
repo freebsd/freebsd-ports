@@ -18,7 +18,7 @@ LIB_DEPENDS=	libunix-java.so:devel/libmatthew
 
 USES=		gettext gmake
 USE_JAVA=	yes
-JAVA_VERSION=	7+
+JAVA_VERSION=	8+
 
 MAKE_ARGS=	MANPREFIX=${MAN1PREFIX}/share/man/man1
 .if defined(WITH_DEBUG)

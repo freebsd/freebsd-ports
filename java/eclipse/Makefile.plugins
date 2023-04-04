@@ -1,6 +1,6 @@
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 
 REPO_DIRS?=	features plugins
 
@@ -9,4 +9,3 @@ do-install:
 	@(cd ${WRKSRC}; ${COPYTREE_SHARE} "${REPO_DIRS}" ${STAGEDIR}${PREFIX}/share/eclipse/dropins/${PORTNAME}/eclipse/)
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s share/eclipse/dropins/${PORTNAME} -not -type d) >> ${TMPPLIST}
 	@(cd ${STAGEDIR}${PREFIX}; ${FIND} -s -d share/eclipse/dropins/${PORTNAME} -type d -empty) | ${SED} -ne 's,^,@dir ,p' >> ${TMPPLIST}
-

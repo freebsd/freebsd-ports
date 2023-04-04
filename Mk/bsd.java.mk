@@ -22,7 +22,7 @@ Java_Include_MAINTAINER=	java@FreeBSD.org
 #
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #					port. An optional "+" allows you to specify a range of
-#					versions. (allowed values: 7[+] 8[+] 11[+] 17[+] 18[+])
+#					versions. (allowed values: 8[+] 11[+] 17[+] 18[+])
 #
 # JAVA_OS			List of space-separated suitable JDK port operating systems
 #					for the port. (allowed values: native linux)
@@ -159,7 +159,7 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .    endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	7 8 11 17 18
+__JAVA_VERSION_LIST=	8 11 17 18
 _JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
 _JAVA_VENDOR_LIST=		openjdk oracle
@@ -265,7 +265,7 @@ JAVA_RUN=	jre
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .    if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/^1.7+/1.7 1.8+/:S/^1.8+/1.8 11+/:S/^1.7/7/:S/^1.8/8/:S/^7+/7 8+/:S/^8+/8 11+/:S/^11+/11 17+/:S/^17+/17 18+/:S/^18+/18/}
+_JAVA_VERSION=	${JAVA_VERSION:S/^8+/8 11+/:S/^11+/11 17+/:S/^17+/17 18+/:S/^18+/18/}
 .    else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .    endif

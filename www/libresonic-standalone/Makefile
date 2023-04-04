@@ -49,7 +49,7 @@ EXTRACT_AFTER_ARGS=	libresonic.war
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 JAVA_RUN=	yes
 # Don't waste UID/GID and reuse Subsonic's user.
 USERS=		subsonic

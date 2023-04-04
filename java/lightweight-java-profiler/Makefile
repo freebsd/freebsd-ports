@@ -20,7 +20,7 @@ GH_ACCOUNT=	inevity
 GH_TAGNAME=	e8041b5
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8
+JAVA_VERSION=	8
 
 USE_LDCONFIG=	yes
 USES=		gmake shebangfix

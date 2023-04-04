@@ -34,7 +34,7 @@ CPE_VENDOR=	google
 SHEBANG_REGEX=	.*(sh|txt|_stub|stub_.*|bazel|get_workspace_status|protobuf_support|_so)
 USE_JAVA=	yes
 JAVA_VENDOR=	openjdk
-JAVA_VERSION=	1.8
+JAVA_VERSION=	8
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 

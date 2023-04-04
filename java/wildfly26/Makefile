@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 USE_RC_SUBR=	wildfly26
 USE_JAVA=	yes
 
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 USER=		www
 GROUP=		www
 VAR_DIR?=	/var

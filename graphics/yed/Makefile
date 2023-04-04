@@ -18,7 +18,7 @@ LICENSE_PERMS=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 USES=		cpe zip
 CPE_VENDOR=	yworks
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 
 DESKTOP_ENTRIES="yEd" "${COMMENT}" "" "yed" "Graphics;" false
 

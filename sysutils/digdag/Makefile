@@ -12,7 +12,7 @@ WWW=		https://www.digdag.io/
 LICENSE=	APACHE20
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 JAVA_VENDOR=	openjdk
 JAVA_RUN=	yes
 USE_RC_SUBR=	${PORTNAME}

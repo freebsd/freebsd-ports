@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/eclipse:java/eclipse
 USES=		python zip
 
 USE_JAVA=	YES
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 JAVA_OS=	native
 JAVA_RUN=	YES
 

@@ -23,7 +23,7 @@ CONFLICTS_INSTALL=	mysql-connector-java # share/java/classes/mysql-connector-jav
 
 NO_ARCH=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.7 1.8
+JAVA_VERSION=	8
 BUILDDIR=	${WRKDIR}/${DISTNAME}
 APIDOCSDIR=	${STAGEDIR}${DOCSDIR}/javadoc
 SRCDIR=		${WRKDIR}/${DISTNAME}/src

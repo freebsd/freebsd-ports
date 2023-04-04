@@ -14,7 +14,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		rlwrap:devel/rlwrap
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 NO_ARCH=	yes
 NO_BUILD=	yes
 

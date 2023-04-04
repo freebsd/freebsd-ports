@@ -26,7 +26,7 @@ USE_RC_SUBR=	puppetserver
 USE_JAVA=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
-JAVA_VERSION=	1.8+
+JAVA_VERSION=	8+
 
 CONFLICTS_INSTALL=	puppetserver5 puppetserver6
 
