@@ -566,6 +566,8 @@ include/armadillo_bits/spop_var_bones.hpp
 include/armadillo_bits/spop_var_meat.hpp
 include/armadillo_bits/spop_vectorise_bones.hpp
 include/armadillo_bits/spop_vectorise_meat.hpp
+include/armadillo_bits/spsolve_factoriser_bones.hpp
+include/armadillo_bits/spsolve_factoriser_meat.hpp
 include/armadillo_bits/strip.hpp
 include/armadillo_bits/subview_bones.hpp
 include/armadillo_bits/subview_cube_bones.hpp
@@ -608,7 +610,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.12
-lib/libarmadillo.so.12.0.1
+lib/libarmadillo.so.12.2.0
 libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake
