@@ -32,7 +32,7 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.3:devel/py-hatch-vcs@${PY_FLAVOR}
 PEP517_BUILD_CMD=	${PYTHON_CMD} -m hatchling build --target wheel
 PEP517_INSTALL_DEPEND=	${PKGNAMEPREFIX}pip>=22.3.1:devel/py-pip@${PY_FLAVOR}
-PEP517_INSTALL_CMD=	${PYTHON_CMD} -m pip install --no-color --compile \
+PEP517_INSTALL_CMD=	${PYTHON_CMD} -m pip install --no-color --no-compile \
 			--ignore-installed --no-deps --no-warn-script-location \
 			--prefix ${PREFIX} --progress-bar off --root \
 			${STAGEDIR} --root-user-action ignore --verbose \
@@ -79,7 +79,9 @@ post-patch:
 	${WRKSRC}/docs/conf.py
 
 post-install:
-	${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py -d ${PYTHONPREFIX_SITELIBDIR} -f ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
 
 post-install-DOCS-on:
 	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b html -n ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}

@@ -153,7 +153,7 @@
 #			  default: <empty>
 #
 # PEP517_INSTALL_CMD	- Command sequence for a PEP-517 install frontend that installs a wheel.
-#			  default: ${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --no-compile-bytecode --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PORTNAME:C|[-_]+|_|g}-${DISTVERSION}*.whl
+#			  default: ${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PORTNAME:C|[-_]+|_|g}-${DISTVERSION}*.whl
 #
 # PEP517_INSTALL_DEPEND	- Port needed to execute ${PEP517_INSTALL_CMD}.
 #			  default: ${PYTHON_PKGNAMEPREFIX}installer>=0:devel/py-installer@${PY_FLAVOR}
@@ -687,7 +687,7 @@ PEP517_BUILD_DEPEND?=	${PYTHON_PKGNAMEPREFIX}gpep517>=0:devel/py-gpep517@${PY_FL
 PEP517_BUILD_CMD?=	${PYTHON_CMD} -m build --no-isolation --wheel ${PEP517_BUILD_CONFIG_SETTING}
 PEP517_BUILD_DEPEND?=	${PYTHON_PKGNAMEPREFIX}build>=0:devel/py-build@${PY_FLAVOR}
 .  endif
-PEP517_INSTALL_CMD?=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --no-compile-bytecode --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PORTNAME:C|[-_]+|_|g}-${DISTVERSION}*.whl
+PEP517_INSTALL_CMD?=	${PYTHON_CMD} -m installer --destdir ${STAGEDIR} --prefix ${PREFIX} ${BUILD_WRKSRC}/dist/${PORTNAME:C|[-_]+|_|g}-${DISTVERSION}*.whl
 PEP517_INSTALL_DEPEND?=	${PYTHON_PKGNAMEPREFIX}installer>=0:devel/py-installer@${PY_FLAVOR}
 
 # nose support
@@ -920,6 +920,7 @@ do-install:
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../sbin/|sbin/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../share/|share/|' \
 		${_PYTHONPKGLIST}
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
 .    endif
 .  endif # defined(_PYTHON_FEATURE_PEP517)
 

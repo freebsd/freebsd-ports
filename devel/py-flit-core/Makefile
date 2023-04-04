@@ -25,4 +25,9 @@ PEP517_BUILD_DEPEND=	# empty
 PEP517_INSTALL_CMD=	${PYTHON_CMD} ${WRKSRC}/bootstrap_install.py --installdir ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} ${WRKSRC}/dist/${DISTNAME}*.whl
 PEP517_INSTALL_DEPEND=	# empty
 
+post-install:
+	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
+	@cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
+
 .include <bsd.port.mk>
