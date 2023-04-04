@@ -1,0 +1,3 @@
+Dlib is a modern C++ toolkit containing machine learning algorithms
+and tools for creating complex software in C++ to solve real world
+problems. This packages provides trained models for various dlib algorithms.

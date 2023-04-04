@@ -82,6 +82,7 @@
     SUBDIR += digitemp
     SUBDIR += dijo
     SUBDIR += dive
+    SUBDIR += dlib-models
     SUBDIR += dnetc
     SUBDIR += dotenv-linter
     SUBDIR += dtach
