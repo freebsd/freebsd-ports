@@ -68,11 +68,8 @@ bin/notus-subscriber
 %%PYTHON_SITELIBDIR%%/notus/scanner/models/__init__.py
 %%PYTHON_SITELIBDIR%%/notus/scanner/models/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/notus/scanner/models/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/notus/scanner/models/__pycache__/advisory%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/notus/scanner/models/__pycache__/advisory%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/notus/scanner/models/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/notus/scanner/models/__pycache__/vulnerability%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/notus/scanner/models/advisory.py
 %%PYTHON_SITELIBDIR%%/notus/scanner/models/packages/__init__.py
 %%PYTHON_SITELIBDIR%%/notus/scanner/models/packages/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/notus/scanner/models/packages/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -150,8 +147,6 @@ bin/notus-subscriber
 %%PYTHON_SITELIBDIR%%/notus/tests/models/__init__.py
 %%PYTHON_SITELIBDIR%%/notus/tests/models/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/notus/tests/models/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/notus/tests/models/__pycache__/test_advisory%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/notus/tests/models/__pycache__/test_advisory%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/notus/tests/models/__pycache__/test_vulnerability%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/notus/tests/models/__pycache__/test_vulnerability%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/notus/tests/models/packages/__init__.py
@@ -170,7 +165,6 @@ bin/notus-subscriber
 %%PYTHON_SITELIBDIR%%/notus/tests/models/packages/test_ebuild.py
 %%PYTHON_SITELIBDIR%%/notus/tests/models/packages/test_package.py
 %%PYTHON_SITELIBDIR%%/notus/tests/models/packages/test_rpm.py
-%%PYTHON_SITELIBDIR%%/notus/tests/models/test_advisory.py
 %%PYTHON_SITELIBDIR%%/notus/tests/models/test_vulnerability.py
 %%PYTHON_SITELIBDIR%%/notus/tests/test_config.py
 %%PYTHON_SITELIBDIR%%/notus/tests/test_verifier.py
