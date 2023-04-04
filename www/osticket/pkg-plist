@@ -93,7 +93,7 @@
 %%WWWDIR%%/css/ui-lightness/images/ui-icons_ef8c08_256x240.png
 %%WWWDIR%%/css/ui-lightness/images/ui-icons_ffd27a_256x240.png
 %%WWWDIR%%/css/ui-lightness/images/ui-icons_ffffff_256x240.png
-%%WWWDIR%%/css/ui-lightness/jquery-ui-1.13.1.custom.min.css
+%%WWWDIR%%/css/ui-lightness/jquery-ui-1.13.2.custom.min.css
 %%WWWDIR%%/css/ui-lightness/jquery-ui-1.8.18.custom.css
 %%WWWDIR%%/file.php
 %%WWWDIR%%/images/FhHRx-Spinner.gif
@@ -4141,8 +4141,8 @@
 %%WWWDIR%%/index.php
 %%WWWDIR%%/js/fabric.min.js
 %%WWWDIR%%/js/filedrop.field.js
-%%WWWDIR%%/js/jquery-3.5.1.min.js
-%%WWWDIR%%/js/jquery-ui-1.13.1.custom.min.js
+%%WWWDIR%%/js/jquery-3.6.3.min.js
+%%WWWDIR%%/js/jquery-ui-1.13.2.custom.min.js
 %%WWWDIR%%/js/jquery-ui-sliderAccess.js
 %%WWWDIR%%/js/jquery-ui-timepicker-addon.js
 %%WWWDIR%%/js/jquery.pjax.js
