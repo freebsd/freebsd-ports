@@ -1,9 +1,9 @@
 PORTNAME=	isl
-PORTVERSION=	0.25
+DISTVERSION=	0.26
 CATEGORIES=	devel math
 MASTER_SITES=	SOURCEFORGE/libisl
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Integer Set Library
 WWW=		https://libisl.sourceforge.io/
 
