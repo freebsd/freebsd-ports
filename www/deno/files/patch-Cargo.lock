@@ -1,13 +1,13 @@
---- Cargo.lock.orig	2022-11-18 18:34:39 UTC
-+++ Cargo.lock
-@@ -603,6 +603,30 @@ dependencies = [
+--- Cargo.lock.orig	2023-04-04 13:33:54.982647000 +0200
++++ Cargo.lock	2023-04-04 13:34:25.684375000 +0200
+@@ -540,6 +540,30 @@ dependencies = [
  ]
  
  [[package]]
 +name = "crossbeam-deque"
-+version = "0.8.2"
++version = "0.8.3"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "715e8152b692bba2d374b53d4875445368fdf21a94751410af607a5ac677d1fc"
++checksum = "ce6fd6f855243022dcecf8702fef0c297d4338e226845fe067f6341ad9fa0cef"
 +dependencies = [
 + "cfg-if",
 + "crossbeam-epoch",
@@ -16,22 +16,22 @@
 +
 +[[package]]
 +name = "crossbeam-epoch"
-+version = "0.9.11"
++version = "0.9.14"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "f916dfc5d356b0ed9dae65f1db9fc9770aa2851d2662b988ccf4fe3516e86348"
++checksum = "46bd5f3f85273295a9d14aedfb86f6aadbff6d8f5295c4a9edb08e819dcf5695"
 +dependencies = [
 + "autocfg",
 + "cfg-if",
 + "crossbeam-utils",
-+ "memoffset",
++ "memoffset 0.8.0",
 + "scopeguard",
 +]
 +
 +[[package]]
  name = "crossbeam-utils"
- version = "0.8.11"
+ version = "0.8.15"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -1257,6 +1281,7 @@ dependencies = [
+@@ -1210,6 +1234,7 @@ dependencies = [
   "ring",
   "serde",
   "signal-hook-registry",
@@ -39,25 +39,49 @@
   "termcolor",
   "test_util",
   "tokio",
-@@ -3568,6 +3593,29 @@ dependencies = [
+@@ -2680,6 +2705,15 @@ dependencies = [
+ ]
+ 
+ [[package]]
++name = "memoffset"
++version = "0.8.0"
++source = "registry+https://github.com/rust-lang/crates.io-index"
++checksum = "d61c719bcfbcf5d62b3a09efa6088de8c54bc0bfcd3ea7ae39fcc186108b8de1"
++dependencies = [
++ "autocfg",
++]
++
++[[package]]
+ name = "mime"
+ version = "0.3.16"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+@@ -2772,7 +2806,7 @@ dependencies = [
+  "bitflags",
+  "cfg-if",
+  "libc",
+- "memoffset",
++ "memoffset 0.6.5",
+ ]
+ 
+ [[package]]
+@@ -3386,6 +3420,28 @@ dependencies = [
  ]
  
  [[package]]
 +name = "rayon"
-+version = "1.6.0"
++version = "1.7.0"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "1e060280438193c554f654141c9ea9417886713b7acd75974c85b18a69a88e0b"
++checksum = "1d2df5196e37bcc87abebc0053e20787d73847bb33134a69841207dd0a47f03b"
 +dependencies = [
-+ "crossbeam-deque",
 + "either",
 + "rayon-core",
 +]
 +
 +[[package]]
 +name = "rayon-core"
-+version = "1.10.1"
++version = "1.11.0"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "cac410af5d00ab6884528b4ab69d1e8e146e8d471201800fa1b4524126de6ad3"
++checksum = "4b8f95bd6966f5c87776639160a66bd8ab9895d9d4ab01ddba9fc60661aebe8d"
 +dependencies = [
 + "crossbeam-channel",
 + "crossbeam-deque",
@@ -69,17 +93,17 @@
  name = "redox_syscall"
  version = "0.2.16"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4714,6 +4762,21 @@ dependencies = [
-  "quote 1.0.21",
-  "syn 1.0.99",
+@@ -4556,6 +4612,21 @@ dependencies = [
+  "quote 1.0.26",
+  "syn 1.0.109",
   "unicode-xid 0.2.4",
 +]
 +
 +[[package]]
 +name = "sysinfo"
-+version = "0.26.7"
++version = "0.26.9"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "c375d5fd899e32847b8566e10598d6e9f1d9b55ec6de3cdf9e7da4bdc51371bc"
++checksum = "5c18a6156d1f27a9592ee18c1a846ca8dd5c258b7179fc193ae87c74ebb666f5"
 +dependencies = [
 + "cfg-if",
 + "core-foundation-sys",
@@ -87,7 +111,7 @@
 + "ntapi",
 + "once_cell",
 + "rayon",
-+ "winapi 0.3.9",
++ "winapi",
  ]
  
  [[package]]
