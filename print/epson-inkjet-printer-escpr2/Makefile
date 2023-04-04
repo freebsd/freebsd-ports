@@ -1,10 +1,10 @@
 PORTNAME=	epson-inkjet-printer-escpr2
-DISTVERSION=	1.1.58
+DISTVERSION=	1.1.62
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/14/17/01/e3cfb031cc65faf4c3054594c7151fadd1ff864a/:i386 \
-		https://download3.ebz.epson.net/dsc/f/03/00/14/17/01/9194a525b962128d97cd35b9acbcec8c05782b93/:amd64 \
-		https://download3.ebz.epson.net/dsc/f/03/00/14/17/01/df74203a1461cde6311a0b90e2930f6fcb3842eb/:SOURCE
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/14/47/10/b9bc8fe2cd3b8e463afa21598b27f2d264723e6e/:i386 \
+		https://download3.ebz.epson.net/dsc/f/03/00/14/47/10/c4d50ad4c82cd65680d65a76ddde83a4fcae9b73/:amd64 \
+		https://download3.ebz.epson.net/dsc/f/03/00/14/47/10/84d0ad36f1333fb1cae822976df1f611b7c2f6a0/:SOURCE
 EXTRACT_SUFX=	.rpm
 DISTFILES_amd64=	${DISTNAME}.x86_64${EXTRACT_SUFX}:amd64 \
 			${_SRC_DISTFILES}
@@ -69,7 +69,7 @@ do-install:
 	(cd ${WRKSRC} && \
 		${FIND} opt | ${CPIO} -dumpl --quiet ${STAGEDIR}${LINUXBASE})
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/cups/model
-	${LN} -s -f ${LINUXBASE}/opt/${PORTNAME}/ppds/Epson \
+	${RLN} ${STAGEDIR}${LINUXBASE}/opt/${PORTNAME}/ppds/Epson \
 		${STAGEDIR}${PREFIX}/share/cups/model/${PORTNAME}
 
 .include <bsd.port.mk>
