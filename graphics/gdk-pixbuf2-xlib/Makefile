@@ -1,5 +1,6 @@
 PORTNAME=	gdk-pixbuf-xlib
 PORTVERSION=	2.40.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -14,13 +15,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl
 
 USES=		cpe gettext gnome localbase:ldflags meson pkgconfig \
-		python:3.7+,build shared-mime-info tar:xz trigger xorg
+		python:3.7+,build shared-mime-info tar:xz xorg
 CPE_VENDOR=	gnome
 USE_GNOME=	glib20 introspection:build libxslt:build gdkpixbuf2
 USE_XORG=	x11
 USE_LDCONFIG=	yes
-TRIGGERS=	gdk-pixbuf-query-loaders-xlib
-SUB_LIST=	GTK2_VERSION=${GTK2_VERSION}
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 
