@@ -1,6 +1,5 @@
 PORTNAME=	shell-gpt
-DISTVERSION=	0.8.1
-PORTREVISION=	2
+DISTVERSION=	0.8.3
 CATEGORIES=	misc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,8 +24,10 @@ USE_PYTHON=	autoplist distutils pytest
 BINARY_ALIAS=	python=${PYTHON_CMD}
 NO_ARCH=	yes
 
-do-test:
-	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest tests/unittests.py
-	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest tests/integrational_tests.py
+# Temporarily disable test since upstream removed from test files from distribution.
+# See https://github.com/TheR1D/shell_gpt/issues/135 for discussion.
+# do-test:
+# 	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m unittest tests/unittests.py
+# 	cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest tests/integrational_tests.py
 
 .include <bsd.port.mk>
