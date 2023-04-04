@@ -76,10 +76,21 @@ PLIST_SUB+=	NOT_INSTALLED_ON_AARCH64="" ONLY_INSTALLED_ON_AARCH64="@comment " AA
 # Some files only installed with LLVM/Clang 13 (used on FreeBSD 12.4 and 13.x)
 # TODO: Introduce USES+=llvm:min=14 instead when this can be deemed not too obtrusive on supported releases
 #       -- the post-patch step further down can then be phased out as well
-.if 1204000 <= ${OSVERSION} && ${OSVERSION} < 1400000 && ${OSVERSION} != 1301507
+.if 1204000 <= ${OSVERSION} && ${OSVERSION} < 1302000 && ${OSVERSION} != 1301507
 PLIST_SUB+=	ONLY_INSTALLED_WITH_LLVM_CLANG_13=""
 .else
 PLIST_SUB+=	ONLY_INSTALLED_WITH_LLVM_CLANG_13="@comment "
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# In LLVM/Clang 10.0.1 (used on FreeBSD 12.3), the cstdalign header is missing from the std modulemap, but it is declared included in ROOT's std modulemap - this has to be removed.
+# See https://github.com/llvm/llvm-project/blob/main/libcxx/include/module.modulemap.in#L181
+# The same seems to be the case for the other headers defined in the variable "modules" below.
+.if ${OSVERSION} < 1204000
+modules=	cstdalign cuchar experimental/string_view ext/functional ext/numeric ext/type_traits.h bits_alloc_traits_h bits/allocator.h bits/basic_ios.h bits/cpp_type_traits.h bits/exception_defines.h bits/ios_base.h bits/locale_facets.h bits_stl_algobase_h bits_stl_iterator_h bits/stl_iterator_base_types.h bits/stl_map.h bits/stl_pair.h bits_stl_tree_h bits/uniform_int_dist.h
+post-patch:
+	SCRIPTDIR=${SCRIPTDIR} MODULEMAP=${WRKSRC}/interpreter/cling/include/cling/std.modulemap ${SH} ${SCRIPTDIR}/remove-modules-from-modulemap.sh "${modules}"
+.endif
+
+.include <bsd.port.post.mk>
