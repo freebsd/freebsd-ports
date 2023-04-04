@@ -1,5 +1,5 @@
---- lib/src/process_helper/freebsd.rs.orig	2022-12-25 20:28:22 UTC
-+++ lib/src/process_helper/freebsd.rs
+--- pueue_lib/src/process_helper/freebsd.rs.orig	2022-12-25 20:28:22 UTC
++++ pueue_lib/src/process_helper/freebsd.rs
 @@ -0,0 +1,15 @@
 +use std::path::Path;
 +
