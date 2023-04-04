@@ -28,7 +28,7 @@ GH_TUPLE=	google:boringssl:f1c75347daa2ea81a941e953f2263e0a4d970c8d:boringssl \
 		google:boringssl:ae223d6138807a13006342edfeef32e813246b39:boringssl_fips
 
 # keep NODE_VERSION in sync with www/node16 DISTVERSION
-NODE_VERSION=	16.19.1
+NODE_VERSION=	16.20.0
 
 CARGO_CRATES=	addr2line-0.17.0 \
 		adler-1.0.2 \
