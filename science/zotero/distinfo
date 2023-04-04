@@ -1,5 +1,3 @@
-TIMESTAMP = 1660891336
-SHA256 (Zotero-6.0.11_FreeBSD-amd64.tar.xz) = 8b49814c89e550e969204d7cbc4e38eacd0080cf89efadae292ef1e00c562903
-SIZE (Zotero-6.0.11_FreeBSD-amd64.tar.xz) = 59565784
-SHA256 (Zotero-6.0.11_FreeBSD-i386.tar.xz) = ec54f9bdcfe46774ee6a75d2ebdbea4470a5d38deacab12189a27c134184b5dd
-SIZE (Zotero-6.0.11_FreeBSD-i386.tar.xz) = 56966752
+TIMESTAMP = 1680527180
+SHA256 (Zotero-6.0.23_FreeBSD-amd64.tar.xz) = 8132b5e37a0a70f8506397e0acb43874356a27bdefaec334376999ee846a7d31
+SIZE (Zotero-6.0.23_FreeBSD-amd64.tar.xz) = 59358424
