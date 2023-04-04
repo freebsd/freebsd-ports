@@ -1,5 +1,6 @@
 PORTNAME=	howdy
 PORTVERSION=	3.0.0.b.20230306
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -12,7 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	opencv>0:graphics/opencv \
 		${PYTHON_PKGNAMEPREFIX}python-pam>0:security/py-python-pam@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dlib>0:science/py-dlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
+		${LOCALBASE}/share/dlib-models/shape_predictor_5_face_landmarks.dat:misc/dlib-models
 
 USES=		python:3.7-3.10,run shebangfix
 
@@ -29,7 +31,7 @@ STRIP=
 
 post-patch:
 	${ECHO_CMD} 'config_dir = "${ETCDIR}"' >> ${WRKSRC}/howdy/src/paths.py
-	${ECHO_CMD} 'dlib_data_dir = "${LOCALBASE}/share/dlib-data/"' >> ${WRKSRC}/howdy/src/paths.py
+	${ECHO_CMD} 'dlib_data_dir = "${LOCALBASE}/share/dlib-models/"' >> ${WRKSRC}/howdy/src/paths.py
 	${ECHO_CMD} 'user_models_dir = "/var/db/howdy/models/"' >> ${WRKSRC}/howdy/src/paths.py
 
 do-install:
