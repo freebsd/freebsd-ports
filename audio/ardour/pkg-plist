@@ -836,6 +836,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/reset_mixer.lua
 %%DATADIR%%/scripts/rubberband_swing.lua
 %%DATADIR%%/scripts/s_chanmap.lua
+%%DATADIR%%/scripts/s_cut_copy_section.lua
 %%DATADIR%%/scripts/s_ducks.lua
 %%DATADIR%%/scripts/s_fader_automation.lua
 %%DATADIR%%/scripts/s_foreach_track.lua
