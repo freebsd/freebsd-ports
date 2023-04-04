@@ -1,6 +1,6 @@
---- Makefile.orig	2021-09-05 12:10:10 UTC
+--- Makefile.orig	2023-03-31 13:13:09 UTC
 +++ Makefile
-@@ -2,11 +2,13 @@
+@@ -2,13 +2,15 @@
  SDL_CFLAGS   := `sdl2-config --cflags`
  SDL_LIBS     := `sdl2-config --libs`
  
@@ -13,8 +13,10 @@
 +TREMOR_LIBS    := #`pkg-config --libs vorbisidec`
 +ZLIB_LIBS      := -lz
  
--CXXFLAGS += -Wall -Wpedantic -MMD $(SDL_CFLAGS) -DUSE_MODPLUG -DUSE_STB_VORBIS -DUSE_ZLIB
-+CXXFLAGS += -Wall -Wpedantic -MMD $(SDL_CFLAGS) $(MODPLUG_CFLAGS) $(TREMOR_CFLAGS) -DUSE_MODPLUG -DUSE_STB_VORBIS -DUSE_ZLIB
+ LIBS = $(SDL_LIBS) $(MODPLUG_LIBS) $(TREMOR_LIBS) $(ZLIB_LIBS)
+ 
+-CXXFLAGS += -Wall -Wextra -Wno-unused-parameter -Wpedantic -MMD $(SDL_CFLAGS) -DUSE_MODPLUG -DUSE_STB_VORBIS -DUSE_ZLIB
++CXXFLAGS += -Wall -Wextra -Wno-unused-parameter -Wpedantic -MMD $(SDL_CFLAGS) $(MODPLUG_CFLAGS) $(TREMOR_CFLAGS) -DUSE_MODPLUG -DUSE_STB_VORBIS -DUSE_ZLIB
  
  SRCS = collision.cpp cpc_player.cpp cutscene.cpp decode_mac.cpp file.cpp fs.cpp game.cpp graphics.cpp main.cpp \
- 	menu.cpp mixer.cpp mod_player.cpp ogg_player.cpp piege.cpp protection.cpp resource.cpp resource_aba.cpp \
+ 	menu.cpp midi_parser.cpp mixer.cpp mod_player.cpp ogg_player.cpp \
