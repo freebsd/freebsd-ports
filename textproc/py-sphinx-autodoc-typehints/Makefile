@@ -1,5 +1,5 @@
 PORTNAME=	sphinx-autodoc-typehints
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSION=	1.22
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
