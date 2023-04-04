@@ -87,7 +87,7 @@ APU_CPPFLAGS=	-I${APR_WRKDIR}/include
 
 BDB_VARS=	${BDB5_VARS} \
 		LICENSE_COMB=dual LICENSE+=AGPLv3
-BDB5_VARS=	APU_CONF_ARGS+=--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR} \
+BDB5_VARS=	APU_CONF_ARGS+=--with-berkeley-db=${BDB_INCLUDE_DIR}:${BDB_LIB_DIR}
 GDBM_VARS=	APU_CONF_ARGS+=--with-gdbm=${LOCALBASE}
 LDAP_VARS=	APU_CONF_ARGS+="--with-ldap-include=${LOCALBASE}/include \
 			--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap"
