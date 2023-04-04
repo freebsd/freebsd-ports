@@ -9,14 +9,14 @@ GH_TUPLE=	\
 		VictoriaMetrics:metricsql:v0.56.1:victoriametrics_metricsql/vendor/github.com/VictoriaMetrics/metricsql \
 		VividCortex:ewma:v1.2.0:vividcortex_ewma/vendor/github.com/VividCortex/ewma \
 		alecthomas:units:b94a6e3cc137:alecthomas_units/vendor/github.com/alecthomas/units \
-		aws:aws-sdk-go-v2:v1.17.6:aws_aws_sdk_go_v2/vendor/github.com/aws/aws-sdk-go-v2 \
-		aws:aws-sdk-go:v1.44.219:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
+		aws:aws-sdk-go-v2:v1.17.7:aws_aws_sdk_go_v2/vendor/github.com/aws/aws-sdk-go-v2 \
+		aws:aws-sdk-go:v1.44.229:aws_aws_sdk_go/vendor/github.com/aws/aws-sdk-go \
 		aws:smithy-go:v1.13.5:aws_smithy_go/vendor/github.com/aws/smithy-go \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		census-instrumentation:opencensus-go:v0.24.0:census_instrumentation_opencensus_go/vendor/go.opencensus.io \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dennwc:varint:v1.0.0:dennwc_varint/vendor/github.com/dennwc/varint \
-		fatih:color:v1.14.1:fatih_color/vendor/github.com/fatih/color \
+		fatih:color:v1.15.0:fatih_color/vendor/github.com/fatih/color \
 		felixge:httpsnoop:v1.0.3:felixge_httpsnoop/vendor/github.com/felixge/httpsnoop \
 		go-kit:log:v0.2.1:go_kit_log/vendor/github.com/go-kit/log \
 		go-logfmt:logfmt:v0.6.0:go_logfmt_logfmt/vendor/github.com/go-logfmt/logfmt \
@@ -26,7 +26,7 @@ GH_TUPLE=	\
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:exp:522b1b587ee0:golang_exp/vendor/golang.org/x/exp \
+		golang:exp:10a507213a29:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
 		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:v0.6.0:golang_oauth2/vendor/golang.org/x/oauth2 \
@@ -38,22 +38,22 @@ GH_TUPLE=	\
 		golang:time:v0.3.0:golang_time/vendor/golang.org/x/time \
 		golang:xerrors:04be3eba64a2:golang_xerrors/vendor/golang.org/x/xerrors \
 		google:go-cmp:v0.5.9:google_go_cmp/vendor/github.com/google/go-cmp \
-		google:go-genproto:7f2fa6fef1f4:google_go_genproto/vendor/google.golang.org/genproto \
+		google:go-genproto:478b75c54725:google_go_genproto/vendor/google.golang.org/genproto \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		googleapis:enterprise-certificate-proxy:v0.2.3:googleapis_enterprise_certificate_proxy/vendor/github.com/googleapis/enterprise-certificate-proxy \
-		googleapis:google-api-go-client:v0.112.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
-		googleapis:google-cloud-go:compute/v1.18.0:googleapis_google_cloud_go_compute \
-		googleapis:google-cloud-go:storage/v1.29.0:googleapis_google_cloud_go_storage \
+		googleapis:google-api-go-client:v0.114.0:googleapis_google_api_go_client/vendor/google.golang.org/api \
+		googleapis:google-cloud-go:compute/v1.19.0:googleapis_google_cloud_go_compute \
+		googleapis:google-cloud-go:storage/v1.30.1:googleapis_google_cloud_go_storage \
 		googleapis:google-cloud-go:v0.110.0:googleapis_google_cloud_go \
-		googleapis:google-cloud-go:v0.12.0:googleapis_google_cloud_go_iam/vendor/cloud.google.com/go \
+		googleapis:google-cloud-go:v0.13.0:googleapis_google_cloud_go_iam/vendor/cloud.google.com/go \
 		grafana:regexp:6b5c0a4cb7fd:grafana_regexp/vendor/github.com/grafana/regexp \
-		grpc:grpc-go:v1.53.0:grpc_grpc_go/vendor/google.golang.org/grpc \
+		grpc:grpc-go:v1.54.0:grpc_grpc_go/vendor/google.golang.org/grpc \
 		influxdata:influxdb:v1.11.0:influxdata_influxdb/vendor/github.com/influxdata/influxdb \
 		jmespath:go-jmespath:v0.4.0:jmespath_go_jmespath/vendor/github.com/jmespath/go-jmespath \
 		jpillora:backoff:v1.0.0:jpillora_backoff/vendor/github.com/jpillora/backoff \
-		klauspost:compress:v1.16.0:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.16.3:klauspost_compress/vendor/github.com/klauspost/compress \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-isatty:v0.0.17:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-isatty:v0.0.18:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.14:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		matttproud:golang_protobuf_extensions:v1.0.4:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		mwitkow:go-conntrack:2f068394615f:mwitkow_go_conntrack/vendor/github.com/mwitkow/go-conntrack \
@@ -65,8 +65,8 @@ GH_TUPLE=	\
 		prometheus:client_model:v0.3.0:prometheus_client_model/vendor/github.com/prometheus/client_model \
 		prometheus:common:v0.42.0:prometheus_common/vendor/github.com/prometheus/common \
 		prometheus:procfs:v0.9.0:prometheus_procfs/vendor/github.com/prometheus/procfs \
-		prometheus:prometheus:v0.42.0:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
-		protocolbuffers:protobuf-go:v1.29.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
+		prometheus:prometheus:v0.43.0:prometheus_prometheus/vendor/github.com/prometheus/prometheus \
+		protocolbuffers:protobuf-go:v1.30.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		stretchr:testify:v1.8.2:stretchr_testify/vendor/github.com/stretchr/testify \
 		uber-go:atomic:v1.10.0:uber_go_atomic/vendor/go.uber.org/atomic \
