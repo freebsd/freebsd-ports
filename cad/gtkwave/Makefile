@@ -1,6 +1,5 @@
 PORTNAME=	gtkwave
-DISTVERSION=	3.3.114
-PORTREVISION=	1
+DISTVERSION=	3.3.115
 CATEGORIES=	cad
 MASTER_SITES=	http://gtkwave.sourceforge.net/
 
