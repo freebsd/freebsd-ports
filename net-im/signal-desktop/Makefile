@@ -84,9 +84,9 @@ _BUILD_DATE=	$$(date +'%s')
 
 ELECTRON_VER_MAJOR=	22
 # keep NODE_VERSION in sync with www/node16 DISTVERSION
-NODE_VERSION=		16.19.1
+NODE_VERSION=		16.20.0
 # bump ELECTRON_GYP_VERSION when ELECTRON_VER_MAJOR is changed
-ELECTRON_GYP_VERSION=	22.2.0
+ELECTRON_GYP_VERSION=	22.3.3
 
 # sh get_deps.sh
 NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.22.0-d57441612df46f90df68fc5d9ad45b857b9d2c44-integrity
