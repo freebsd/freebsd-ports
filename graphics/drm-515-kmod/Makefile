@@ -20,7 +20,7 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod
-GH_TAGNAME=	drm_v5.15.25_1
+GH_TAGNAME=	drm_v5.15.25_3
 
 .include <bsd.port.options.mk>
 
