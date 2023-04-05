@@ -1,6 +1,6 @@
 PORTNAME=	fence-agents
-PORTVERSION=	4.12.1
-DISTVERSIONPREFIX=v
+DISTVERSIONPREFIX=	v
+DISTVERSION=	4.12.1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -26,10 +26,11 @@ OPTIONS_DEFINE=	DOCS MANPAGES
 OPTIONS_DEFAULT=MANPAGES
 OPTIONS_SUB=	yes
 
-MANPAGES_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
-			xsltproc:textproc/libxslt
+MANPAGES_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl
+MANPAGES_USES=	gnome
+MANPAGES_USE=	GNOME=libxslt:build
 
 post-patch:
-	echo "echo -n ${PORTVERSION}" > ${WRKSRC}/make/git-version-gen
+	echo "echo -n ${DISTVERSION}" > ${WRKSRC}/make/git-version-gen
 
 .include <bsd.port.mk>
