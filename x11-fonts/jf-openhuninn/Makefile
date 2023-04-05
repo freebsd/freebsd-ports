@@ -5,7 +5,8 @@ CATEGORIES=	x11-fonts
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	jf Open Huninn by justfont
-WWW=		https://justfont.com/huninn/
+WWW=		https://justfont.com/huninn/ \
+		https://github.com/justfont/open-huninn-font
 
 LICENSE=	OFL11
 LICENSE_FILE=	${WRKSRC}/license.txt
