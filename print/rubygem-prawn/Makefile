@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Fast, tiny, and nimble PDF generator for Ruby
-WWW=		https://prawnpdf.org/
+WWW=		https://prawnpdf.org/ \
+		https://github.com/prawnpdf/prawn
 
 LICENSE=	RUBY GPLv2 GPLv3
 LICENSE_COMB=	dual
