@@ -1,6 +1,6 @@
---- third_party/fontconfig/src/src/fccompat.c.orig	2022-02-07 13:39:41 UTC
+--- third_party/fontconfig/src/src/fccompat.c.orig	2023-04-05 11:05:06 UTC
 +++ third_party/fontconfig/src/src/fccompat.c
-@@ -169,7 +169,9 @@ FcRandom(void)
+@@ -184,7 +184,9 @@ FcRandom(void)
  {
      int32_t result;
  

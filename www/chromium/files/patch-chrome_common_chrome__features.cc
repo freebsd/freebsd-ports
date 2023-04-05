@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2023-03-09 06:31:50 UTC
+--- chrome/common/chrome_features.cc.orig	2023-04-05 11:05:06 UTC
 +++ chrome/common/chrome_features.cc
 @@ -82,7 +82,7 @@ BASE_FEATURE(kAsyncDns,
  );
@@ -54,16 +54,16 @@
        true
  #else
        false
-@@ -736,7 +736,7 @@ BASE_FEATURE(kUpdateHistoryEntryPointsInIncognito,
-              "UpdateHistoryEntryPointsInIncognito",
-              base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -745,7 +745,7 @@ BASE_FEATURE(kKAnonymityServiceStorage,
+              "KAnonymityServiceStorage",
+              base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
 +#if (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)) || BUILDFLAG(IS_BSD)
  BASE_FEATURE(kLinuxLowMemoryMonitor,
               "LinuxLowMemoryMonitor",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -749,7 +749,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -758,7 +758,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  
