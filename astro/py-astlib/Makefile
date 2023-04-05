@@ -7,7 +7,8 @@ DISTNAME=	astLib-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Astronomy modules for Python
-WWW=		https://astlib.readthedocs.io/en/latest/
+WWW=		https://astlib.readthedocs.io/en/latest/ \
+		https://github.com/mattyowl/astLib
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
