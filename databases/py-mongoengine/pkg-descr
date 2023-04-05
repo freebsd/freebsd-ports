@@ -1,5 +1,3 @@
 MongoEngine is an ORM-like layer on top of PyMongo. It allows you to define
 schemas for documents and query collections using syntax inspired by the
 Django ORM.
-
-See also: https://github.com/MongoEngine/mongoengine
