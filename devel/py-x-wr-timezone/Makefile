@@ -7,7 +7,7 @@ DISTNAME=	x_wr_timezone-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module and program to convert calendars using X-WR-TIMEZONE to standard ones
-WWW=		https://pypi.org/project/x-wr-timezone/
+WWW=		https://github.com/niccokunzmann/x-wr-timezone
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
