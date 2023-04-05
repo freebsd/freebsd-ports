@@ -1,5 +1,5 @@
 PORTNAME=	sidekiq-cron
-PORTVERSION=	1.9.1
+PORTVERSION=	1.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-fugit>=1.8<2:devel/rubygem-fugit \
-		rubygem-sidekiq>=4.2.1:devel/rubygem-sidekiq
+		rubygem-globalid-rails61>=1.0.1:databases/rubygem-globalid-rails61 \
+		rubygem-sidekiq>=6:devel/rubygem-sidekiq
 
 USES=		gem
 
