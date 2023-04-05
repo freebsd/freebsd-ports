@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library to handle automated deprecations
-WWW=		https://pypi.org/project/deprecation/
+WWW=		https://github.com/briancurtin/deprecation
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

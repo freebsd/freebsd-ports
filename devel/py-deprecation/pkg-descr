@@ -10,5 +10,3 @@ automation of several things:
   time to remove the code. The @deprecated decorator can be told when it's time
   to entirely remove the code, which causes @fail_if_not_removed to raise an
   AssertionError, causing either your unittest or py.test tests to fail.
-
-See also: https://github.com/briancurtin/deprecation
