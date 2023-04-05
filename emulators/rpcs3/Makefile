@@ -1,8 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.27-14840 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g842edbcbe7
-PORTREVISION=	1
+DISTVERSION=	0.0.28 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-15112-g33558d14e5
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -28,19 +27,18 @@ ONLY_FOR_ARCHS_REASON=	requires int128 and SSE2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
-GH_TUPLE=	RPCS3:hidapi:hidapi-0.13.1-2-gecf1b62:hidapi/3rdparty/hidapi/hidapi \
-		RPCS3:llvm-mirror:9b52b6c39ae9:llvm/llvm \
+GH_TUPLE=	RPCS3:hidapi:hidapi-0.14.0-2-g8b43a97:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:soundtouch:2.3.1-16-g83cfba6:soundtouch/3rdparty/SoundTouch/soundtouch \
-		asmjit:asmjit:06d0bad:asmjit/3rdparty/asmjit/asmjit \
+		asmjit:asmjit:c598476:asmjit/3rdparty/asmjit/asmjit \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-187-g85a1ed2:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2022.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
 		KhronosGroup:glslang:11.11.0-2-g10423ec6:glslang/3rdparty/glslang/glslang \
 		kinetiknz:cubeb:cubeb-0.2-1425-g88585b6:cubeb/3rdparty/cubeb/cubeb \
-		miniupnp:miniupnp:miniupnpd_2_3_2:miniupnp/3rdparty/miniupnp/miniupnp \
-		wolfSSL:wolfssl:v5.5.4-stable:wolfssl/3rdparty/wolfssl/wolfssl
+		miniupnp:miniupnp:miniupnpd_2_3_3:miniupnp/3rdparty/miniupnp/miniupnp \
+		wolfSSL:wolfssl:v5.6.0-stable:wolfssl/3rdparty/wolfssl/wolfssl
 
-USES=		cmake elfctl gl iconv:wchar_t localbase:ldflags \
+USES=		cmake elfctl gl iconv:wchar_t llvm:min=16,lib localbase:ldflags \
 		openal:soft pkgconfig python:3.4+,build qt:5 xorg
 USE_GL=		gl glew
 USE_QT=		qmake:build buildtools:build core concurrent dbus gui multimedia svg widgets
@@ -53,7 +51,7 @@ ELF_FEATURES=	+noaslr,wxneeded:bin/${PORTNAME}
 
 .if ${FLAVOR:U} == qt6 || make(makesum) || make(fetch)
 PATCH_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/:qt6
-PATCHFILES+=	98a2f373fd59.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
+PATCHFILES+=	c196f09833b4.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
 PKGNAMESUFFIX=	-${FLAVOR}
 USES:=		${USES:S/qt:5/qt:6/}
 USE_QT=		base multimedia svg
@@ -62,6 +60,9 @@ CONFLICTS_INSTALL=	${PORTNAME}
 
 post-patch:	${FLAVOR}-post-patch
 ${FLAVOR}-post-patch:
+# XXX Drop after devel/qt6-base >= 6.5 update
+	@${REINPLACE_CMD} -e '/QT_MIN_VER/s/6\.5\.0/6.4.2/' \
+		${WRKSRC}/3rdparty/qt6.cmake
 # patch(1) doesn't support renames unlike git-apply(1)
 	@${MV}  ${WRKSRC}/rpcs3/rpcs3qt/qt_camera_video_surface.cpp \
 		${WRKSRC}/rpcs3/rpcs3qt/qt_camera_video_sink.cpp
@@ -71,8 +72,8 @@ ${FLAVOR}-post-patch:
 CONFLICTS_INSTALL=	${PORTNAME}-qt6
 .endif
 
-OPTIONS_DEFINE=	ALSA EVDEV FAUDIO PULSEAUDIO JACK SNDIO VULKAN
-OPTIONS_DEFAULT=EVDEV FAUDIO PULSEAUDIO JACK SNDIO VULKAN
+OPTIONS_DEFINE=	ALSA EVDEV FAUDIO PULSEAUDIO JACK SDL SNDIO VULKAN
+OPTIONS_DEFAULT=EVDEV FAUDIO PULSEAUDIO JACK SDL SNDIO VULKAN
 
 ALSA_BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib
 ALSA_CMAKE_BOOL=	USE_ALSA
@@ -93,6 +94,10 @@ JACK_CMAKE_BOOL=	USE_JACK
 PULSEAUDIO_BUILD_DEPENDS=pulseaudio>0:audio/pulseaudio
 PULSEAUDIO_CMAKE_BOOL=	USE_PULSE
 
+SDL_USES=		sdl
+SDL_USE=		SDL=sdl2
+SDL_CMAKE_BOOL=		USE_SDL USE_SYSTEM_SDL
+
 SNDIO_BUILD_DEPENDS=	sndio>0:audio/sndio
 SNDIO_CMAKE_BOOL=	USE_SNDIO
 
@@ -101,21 +106,17 @@ VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-heade
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_CMAKE_BOOL=	USE_VULKAN
 
+# XXX Unbundle audio/rtmidi
+GH_TUPLE+=		thestk:rtmidi:5.0.0:rtmidi/3rdparty/rtmidi/rtmidi
+ALSA_LIB_DEPENDS+=	libasound.so:audio/alsa-lib
+ALSA_CMAKE_BOOL+= 	RTMIDI_API_ALSA
+JACK_LIB_DEPENDS+=	libjack.so:audio/jack
+JACK_CMAKE_BOOL+=	RTMIDI_API_JACK
+
 post-patch:
 	@${REINPLACE_CMD} -e '/GIT_BRANCH/s/local_build/master/' \
 		 -e '/GIT_FULL_BRANCH/s/local_build/${GH_ACCOUNT}\/${GH_PROJECT}\/master/' \
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
-
-.include <bsd.port.options.mk>
-
-# XXX https://github.com/llvm/llvm-project/issues/58207
-.if ${_OSRELEASE:M*-CURRENT}
-# Ignore Clang assertions
-USES+=		llvm
-CC=		clang${LLVM_VERSION}
-CXX=		clang++${LLVM_VERSION}
-CPP=		clang-cpp${LLVM_VERSION}
-.endif
 
 .include <bsd.port.mk>
