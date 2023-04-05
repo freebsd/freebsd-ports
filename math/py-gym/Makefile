@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenAI toolkit for developing and comparing your reinforcement learning agents
-WWW=		https://www.gymlibrary.dev/
+WWW=		https://www.gymlibrary.dev/ \
+		https://github.com/openai/gym
 
 LICENSE=	MIT
 
