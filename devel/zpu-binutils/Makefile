@@ -1,5 +1,6 @@
 PORTNAME=	zpu-binutils
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/db
 DISTNAME=	zpu-toolchain-${PORTVERSION}
@@ -9,6 +10,10 @@ COMMENT=	ZPU toolchain
 WWW=		https://opensource.zylin.com/zpu.htm
 
 LICENSE=	GPLv2
+
+DEPRECATED=	Broken with latest C compiler and port unused
+EXPIRATION_DATE=	2023-04-30
+BROKEN=		Broken with latest C compilers will not fix
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/toolchain
 INSTALL_WRKSRC=	${WRKSRC}/build
