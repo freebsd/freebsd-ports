@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Reading data and formatting information from Excel files
-WWW=		https://www.python-excel.org/
+WWW=		https://www.python-excel.org/ \
+		https://github.com/python-excel/xlrd
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
