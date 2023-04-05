@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python bindings for libsodium based on ctypes
-WWW=		https://libnacl.readthedocs.io/en/latest/
+WWW=		https://libnacl.readthedocs.io/en/latest/ \
+		https://github.com/saltstack/libnacl
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
