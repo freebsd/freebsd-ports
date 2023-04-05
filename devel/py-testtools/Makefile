@@ -1,5 +1,5 @@
 PORTNAME=	testtools
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,16 +12,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.11:devel/py-pbr@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}extras>=1.0.0:devel/py-extras@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pbr>=0.11:devel/py-pbr@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pbr>=0.11:devel/py-pbr@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-PORTDOCS=	api.rst for-framework-folk.rst for-test-authors.rst hacking.rst \
-		index.rst overview.rst twisted-support.rst
+PORTDOCS=	api.rst for-framework-folk.rst for-test-authors.rst hacking.rst index.rst news.rst overview.rst twisted-support.rst
 
 OPTIONS_DEFINE=	DOCS
 
