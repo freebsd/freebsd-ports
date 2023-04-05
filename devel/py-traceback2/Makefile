@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	New features in traceback backported to Python 2
-WWW=		https://pypi.org/project/traceback2/
+WWW=		https://github.com/testing-cabal/traceback2
 
 LICENSE=	PSFL
 
