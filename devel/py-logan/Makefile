@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Toolkit for running standalone Django applications
-WWW=		https://pypi.org/project/logan/
+WWW=		https://github.com/dcramer/logan
 
 LICENSE=	APACHE20
 
