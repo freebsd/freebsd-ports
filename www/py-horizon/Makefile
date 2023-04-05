@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Dashboard (Horizon)
-WWW=		https://docs.openstack.org/horizon/latest/
+WWW=		https://docs.openstack.org/horizon/latest/ \
+		https://github.com/openstack/horizon
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
