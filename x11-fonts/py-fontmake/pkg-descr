@@ -1,2 +1,3 @@
-fontmake provides a wrapper for several other Python libraries which together
-compile fonts from various sources (.glyphs, .ufo) into binaries (.otf, .ttf).
+fontmake compiles fonts from various sources (.glyphs, .ufo, designspace) into
+binaries (.otf, .ttf). You can use it to create static instances and variable
+fonts.
