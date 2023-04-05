@@ -1,3 +1,1 @@
 pytest-flake8 is a pytest plugin for efficiently checking PEP8 compliance.
-
-See also: https://github.com/tholo/pytest-flake8

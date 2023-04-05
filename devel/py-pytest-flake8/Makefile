@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	pytest plugin to check FLAKE8 requirement
-WWW=		https://pypi.org/project/pytest-flake8/
+WWW=		https://github.com/tholo/pytest-flake8
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
