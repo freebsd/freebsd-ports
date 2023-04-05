@@ -1,5 +1,5 @@
 PORTNAME=	rocksdb
-PORTVERSION=	7.9.2
+PORTVERSION=	8.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	databases
 
@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE.Apache
 LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
-BROKEN=		fails to build
+#BROKEN=		fails to build
 BROKEN_DragonFly=	does not build on DragonFly BSD using GCC with -Werror
 BROKEN_armv6=	does not build: db/c.cc:2281:44: implicit conversion loses integer precision: 'uint64_t' (aka 'unsigned long long') to 'size_t' (aka 'unsigned int')
 BROKEN_armv7=	does not build: /nxb-bin/usr/bin/ld: undefined reference to symbol `__gnu_Unwind_Find_exidx@@FBSD_1.4' (try adding -lc) #'`
@@ -32,7 +32,7 @@ CONFIGURE_ARGS=	make_config.mk
 CONFIGURE_ENV=	PORTABLE=0 ROCKSDB_ROOT=${WRKSRC}
 CONFIGURE_SCRIPT=	build_tools/build_detect_platform
 HAS_CONFIGURE=	yes
-MAKE_ENV=	CXX=${CXX} INSTALL_PATH=${STAGEDIR}${PREFIX} USE_RTTI=1
+MAKE_ENV=	CXX=${CXX} INSTALL_PATH=${STAGEDIR}${PREFIX} USE_RTTI=1 V=1
 USE_CXXSTD=	c++17
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
