@@ -1,12 +1,13 @@
 PORTNAME=	robotframework-pabot
-PORTVERSION=	2.13.0
+PORTVERSION=	2.14.0
 CATEGORIES=	devel www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Parallel test runner for Robot Framework
-WWW=		https://pabot.org/
+WWW=		https://pabot.org/ \
+		https://github.com/mkorpela/pabot
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
