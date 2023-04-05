@@ -1,5 +1,6 @@
 PORTNAME=	fakeredis
 PORTVERSION=	1.10.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,7 +23,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioredis>=1.3.1<3.0.0:databases/py-aioredis
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
 
 USES=		python:3.8+
-USE_PYTHON=	autoplist concurrent distutils pytest
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
