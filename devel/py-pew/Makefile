@@ -6,7 +6,7 @@ MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool to manage multiple virtualenvs
-WWW=		https://pypi.org/project/pew/
+WWW=		https://github.com/berdario/pew
 
 LICENSE=	MIT
 
