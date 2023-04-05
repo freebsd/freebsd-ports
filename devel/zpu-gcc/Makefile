@@ -1,6 +1,6 @@
 PORTNAME=	zpu-gcc
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2	
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/db
 DISTNAME=	zpu-toolchain-${PORTVERSION}
@@ -11,7 +11,9 @@ WWW=		https://opensource.zylin.com/zpu.htm
 
 LICENSE=	GPLv2
 
-BROKEN_FreeBSD_12_powerpc64=	fails to compile on powerpc64 elfv1: libgcc2.h: conflicting types for '__structdi3'
+DEPRECATED=	Broken with latest C compiler and port unused
+EXPIRATION_DATE=	2023-04-0
+BROKEN=		Broken with latest C compilers will not fix
 
 BUILD_DEPENDS=	${LOCALBASE}/zpu/bin/zpu-elf-as:devel/zpu-binutils
 RUN_DEPENDS:=	${BUILD_DEPENDS}
