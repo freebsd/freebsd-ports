@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Universal Binary JSON encoder/decoder
-WWW=		https://pypi.org/project/py-ubjson/
+WWW=		https://github.com/Iotic-Labs/py-ubjson
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
