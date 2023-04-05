@@ -1,5 +1,5 @@
 PORTNAME=	websocket-client-simple
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
