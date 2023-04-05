@@ -100,6 +100,7 @@
     SUBDIR += cegui
     SUBDIR += cenon
     SUBDIR += cfdg
+    SUBDIR += cgif
     SUBDIR += chafa
     SUBDIR += charls
     SUBDIR += cimg
