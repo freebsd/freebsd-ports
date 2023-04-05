@@ -4,11 +4,13 @@
 # REQUIRE: DAEMON
 # KEYWORD: nojail shutdown
 
+tuptime_enable=${tuptime_enable:-"NO"}
+
 . /etc/rc.subr
 
 name="tuptime"
 rcvar=tuptime_enable
-tuptime_user="tuptime"
+tuptime_user="_tuptime"
 
 start_cmd="${name}_start"
 stop_cmd="${name}_stop"
@@ -20,11 +22,7 @@ tuptime_start()
 	echo "Starting $name."
 	command_args="-q"
 
-	if /usr/sbin/pw usershow "${tuptime_user}" >/dev/null 2>&1; then
-		su -m ${tuptime_user} -c "$name $command_args"
-	else
-		$name $command_args
-	fi
+	su -m ${tuptime_user} -c "$name $command_args" 2> /dev/null || $name $command_args 2> /dev/null
 }
 
 tuptime_stop()
@@ -32,11 +30,7 @@ tuptime_stop()
 	echo "Stopping $name."
 	command_args="-qg"
 
-	if /usr/sbin/pw usershow "${tuptime_user}" >/dev/null 2>&1; then
-		su -m ${tuptime_user} -c "$name $command_args"
-	else
-		$name $command_args
-	fi
+	su -m ${tuptime_user} -c "$name $command_args" 2> /dev/null || $name $command_args 2> /dev/null
 }
 
 load_rc_config $name

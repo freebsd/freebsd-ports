@@ -1,5 +1,6 @@
 PORTNAME=	tuptime
 DISTVERSION=	5.2.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jeremy@smart-serv.net
@@ -21,11 +22,24 @@ NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	bin/tuptime \
+USERS=         _tuptime
+GROUPS=        _tuptime
+
+PLIST_FILES=    bin/tuptime \
+		"@rmtry /var/lib/tuptime/tuptime.db" \
+		"@dir /var/lib" \
+		"@dir(${USERS},${GROUPS},755) /var/lib/tuptime" \
+		"@dir etc/cron.d" \
+		"etc/cron.d/tuptime" \
 		man/man1/tuptime.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/src/tuptime ${STAGEDIR}${PREFIX}/bin/tuptime
 	${INSTALL_MAN} ${WRKSRC}/src/man/tuptime.1 ${STAGEDIR}${MANPREFIX}/man/man1
+
+post-install:
+	${MKDIR} ${STAGEDIR}/var/lib/tuptime
+	${MKDIR} ${STAGEDIR}${LOCALBASE}/etc/cron.d
+	${INSTALL_DATA} ${FILESDIR}/cron ${STAGEDIR}${LOCALBASE}/etc/cron.d/tuptime
 
 .include <bsd.port.mk>

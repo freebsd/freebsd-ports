@@ -773,7 +773,7 @@ titus-keys:*:823:65533::0:0:Titus Keyserver User:/nonexistent:/usr/sbin/nologin
 selenium:*:824:824::0:0:Selenium Daemon User:/usr/local/selenium:/bin/sh
 polw:*:825:825::0:0:Policyd-weight Cache Owner:/nonexistent:/sbin/nologin
 statsd:*:826:826::0:0:Statsd Daemon:/nonexistent:/sbin/nologin
-# free: 827
+_tuptime:*:827:827::0:0:Tuptime:/var/lib/tuptime:/usr/sbin/nologin
 # free: 828
 # free: 829
 # free: 830
