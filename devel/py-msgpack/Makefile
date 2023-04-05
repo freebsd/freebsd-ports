@@ -1,12 +1,13 @@
 PORTNAME=	msgpack
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	MessagePack (de)serializer for Python
-WWW=		https://msgpack.org/
+WWW=		https://msgpack.org/ \
+		https://github.com/msgpack/msgpack-python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
