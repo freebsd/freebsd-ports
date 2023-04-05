@@ -1,5 +1,6 @@
 PORTNAME=	jekyll
 PORTVERSION=	3.9.3
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	3
@@ -21,7 +22,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-liquid4>=4.0<5:textproc/rubygem-liquid4 \
 		rubygem-mercenary>=0.3.3<1:devel/rubygem-mercenary \
 		rubygem-pathutil>=0.9<1:devel/rubygem-pathutil \
-		rubygem-rouge>=1.7<4:textproc/rubygem-rouge \
+		rubygem-rouge3>=1.7<4:textproc/rubygem-rouge3 \
 		rubygem-safe_yaml>=1.0<2:devel/rubygem-safe_yaml
 
 USES=		cpe gem
