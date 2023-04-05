@@ -19,6 +19,8 @@ BROKEN_armv7=	does not build: db/compaction_job.cc:714:52: error: implicit conve
 BROKEN_i386=	does not build: tools/db_bench_tool.cc:6320:25: error: non-constant-expression cannot be narrowed from type 'uint64_t' (aka 'unsigned long long') to 'size_t' (aka 'unsigned int') in initializer list
 BROKEN_FreeBSD_12_powerpc64=	does not build: util/crc32c.cc:435:22: 'arch_ppc_probe' was not declared in this scope
 BROKEN=		does not build: strip: open /wrkdirs/usr/ports/databases/rocksdb-lite/work/stage/usr/local/lib/librocksdb-lite.so failed: No such file or directory
+DEPRECATED=	Removed by upstream, see https://github.com/facebook/rocksdb/commit/4720ba4391eb016b05a30d09a8275624c3a4a87e
+EXPIRATION_DATE=2023-04-30
 
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgflags.so:devel/gflags \
