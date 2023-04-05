@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python package to access the IMDb database
-WWW=		https://cinemagoer.github.io/
+WWW=		https://cinemagoer.github.io/ \
+		https://github.com/cinemagoer/cinemagoer
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt

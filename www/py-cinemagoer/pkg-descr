@@ -1,4 +1,2 @@
 Cinemagoer (previously known as IMDbPY) is a Python package for retrieving and
 managing the data of the IMDb movie database about movies, people and companies.
-
-See also: https://github.com/cinemagoer/cinemagoer
