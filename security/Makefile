@@ -883,6 +883,7 @@
     SUBDIR += py-cryptography-vectors
     SUBDIR += py-ctypescrypto
     SUBDIR += py-cybox
+    SUBDIR += py-detect-secrets
     SUBDIR += py-dfdatetime
     SUBDIR += py-dfvfs
     SUBDIR += py-dfwinreg
