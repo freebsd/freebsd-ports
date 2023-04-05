@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI for SQLite Databases with auto-completion and syntax highlighting
-WWW=		https://litecli.com/
+WWW=		https://litecli.com/ \
+		https://github.com/dbcli/litecli
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
