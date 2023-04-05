@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python application configuration via the environment
-WWW=		https://pypi.org/project/envier/
+WWW=		https://github.com/DataDog/envier
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
