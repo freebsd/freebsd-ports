@@ -1,5 +1,5 @@
 PORTNAME=	flipper-active_record
-PORTVERSION=	0.26.0
+PORTVERSION=	0.28.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/jnunemaker/flipper
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-activerecord50>=4.2<8:databases/rubygem-activerecord50 \
-		rubygem-flipper>=${PORTVERSION}<0.27:devel/rubygem-flipper
+		rubygem-flipper>=${PORTVERSION}<0.29:devel/rubygem-flipper
 
 USES=		gem
 
