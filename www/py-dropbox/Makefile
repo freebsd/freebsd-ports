@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official Dropbox API Client
-WWW=		https://dropbox-sdk-python.readthedocs.io/en/latest/
+WWW=		https://dropbox-sdk-python.readthedocs.io/en/latest/ \
+		https://github.com/dropbox/dropbox-sdk-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
