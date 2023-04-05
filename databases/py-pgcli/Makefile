@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	CLI for Postgres Database with auto-completion and syntax highlighting
-WWW=		https://www.pgcli.com/
+WWW=		https://www.pgcli.com/ \
+		https://github.com/dbcli/pgcli
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
