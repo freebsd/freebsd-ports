@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PyUnit extension for managing expensive test resources
-WWW=		https://pypi.org/project/testresources/
+WWW=		https://github.com/testing-cabal/testresources
 
 LICENSE=	APACHE20 BSD3CLAUSE
 LICENSE_COMB=	dual
