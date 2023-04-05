@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python wrapper for the Liblo OSC Library
-WWW=		https://das.nasophon.de/pyliblo/
+WWW=		https://das.nasophon.de/pyliblo/ \
+		https://github.com/dsacre/pyliblo
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
