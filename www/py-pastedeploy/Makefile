@@ -7,7 +7,8 @@ DISTNAME=	PasteDeploy-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Load, configure, and compose WSGI applications and servers
-WWW=		https://pylonsproject.org/
+WWW=		https://pylonsproject.org/ \
+		https://github.com/Pylons/pastedeploy
 
 LICENSE=	MIT
 

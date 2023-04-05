@@ -13,5 +13,3 @@ knowing any Python, or the details of the WSGI application or its container.
 This tool provides code to load WSGI applications and servers from URIs; these
 URIs can refer to Python Eggs for INI-style configuration files. Paste Script
 provides commands to serve applications based on this configuration file.
-
-See also: https://github.com/Pylons/pastedeploy
