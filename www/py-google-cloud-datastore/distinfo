@@ -1,3 +1,3 @@
-TIMESTAMP = 1675191107
-SHA256 (google-cloud-datastore-2.13.2.tar.gz) = 8a4b2d5b9dcaad1af8be79ad6ebd00386f3f907685f1ec5c2456f072584203b0
-SIZE (google-cloud-datastore-2.13.2.tar.gz) = 174009
+TIMESTAMP = 1679498844
+SHA256 (google-cloud-datastore-2.15.0.tar.gz) = 1db214a3b26961a8e76844aceec64fb84a6ac8689a61e07ca28617807fe4aa81
+SIZE (google-cloud-datastore-2.15.0.tar.gz) = 201688
