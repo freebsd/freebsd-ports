@@ -2,6 +2,7 @@ PORTNAME=	cpu-x
 PORTVERSION=	4.5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
+PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Gathers information about CPU, motherboard, and more
@@ -14,7 +15,7 @@ LIB_DEPENDS=	libcpuid.so:sysutils/libcpuid \
 		libpci.so:devel/libpci \
 		libstatgrab.so:devel/libstatgrab
 
-USES=		cmake ncurses pkgconfig
+USES=		cmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	TheTumultuousUnicornOfDarkness
 GH_PROJECT=	${PORTNAME:tu}
@@ -22,18 +23,26 @@ CMAKE_OFF=	WITH_LIBGLFW WITH_VULKAN WITH_OPENCL
 
 PORTDOCS=	ChangeLog.md README.md
 
-OPTIONS_DEFINE=	DOCS NLS X11
-OPTIONS_DEFAULT=	X11
+OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext
 NLS_CMAKE_OFF=	-DWITH_GETTEXT:BOOL=OFF
 
-X11_DESC=	Build GTK+3 frontend in addition to ncurses one
-X11_USES=	gnome
-X11_USE=	GNOME=gtk30
-X11_CMAKE_OFF=	-DWITH_GTK:BOOL=OFF
-X11_VARS=	GLIB_SCHEMAS=org.cpu-x.gschema.xml
+FLAVORS=	gtk3 ncurses
+
+CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/${PORTNAME}-/}
+
+.if ${FLAVOR:U} == ncurses
+USES+=		ncurses
+CMAKE_ARGS+=	-DWITH_GTK:BOOL=OFF
+PLIST_SUB+=	X11="@comment "
+.else
+USES+=		gnome
+USE_GNOME=	gtk30
+GLIB_SCHEMAS=	org.cpu-x.gschema.xml
+PLIST_SUB+=	X11=""
+.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
