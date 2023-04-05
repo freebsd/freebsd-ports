@@ -747,6 +747,7 @@
     SUBDIR += py-duckdb
     SUBDIR += py-fakeredis
     SUBDIR += py-fastapi-users-db-ormar
+    SUBDIR += py-fastparquet
     SUBDIR += py-fdb
     SUBDIR += py-firebirdsql
     SUBDIR += py-flask-sqlalchemy
