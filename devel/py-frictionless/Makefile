@@ -1,5 +1,5 @@
 PORTNAME=	frictionless
-PORTVERSION=	4.40.11
+PORTVERSION=	5.10.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,12 +11,15 @@ WWW=		https://github.com/frictionlessdata/frictionless-py
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=3.0,1:textproc/py-chardet@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=22.2.0:devel/py-attrs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}chardet>=3.0,1:textproc/py-chardet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}humanize>=4.2:devel/py-humanize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0.6:devel/py-isodate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.3:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}marko>=1.0:textproc/py-marko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}petl>=1.6:textproc/py-petl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pydantic>=1.9:devel/py-pydantic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-slugify>=1.2:textproc/py-python-slugify@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.3:devel/py-yaml@${PY_FLAVOR} \
@@ -24,42 +27,57 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=3.0,1:textproc/py-chardet@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}rfc3986>=1.4:www/py-rfc3986@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}simpleeval>=0.9.11:devel/py-simpleeval@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stringcase>=1.2:devel/py-stringcase@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tableschema-to-template>=0.0.12:textproc/py-tableschema-to-template@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tableschema-to-template>=0.0:textproc/py-tableschema-to-template@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.8.9:devel/py-tabulate@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typer>=0.4.1:devel/py-typer@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.3:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}validators>=0.18:devel/py-validators@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	BIGQUERY CKAN EXCEL GSHEETS HTML JSON PANDAS S3 SERVER SQL
+OPTIONS_DEFINE=	API AWS BIGQUERY CKAN EXCEL GITHUB GSHEETS HTML JSON MYSQL PANDAS PARQUET POSTGRESQL SQL VISIDATA WKT
+API_DESC=	API support
+AWS_DESC=	AWS S3 support
 BIGQUERY_DESC=	BigQuery support
 CKAN_DESC=	CKAN API support
 EXCEL_DESC=	Excel file support
+GITHUB_DESC=	GitHub support
 GSHEETS_DESC=	Google Sheets support
 HTML_DESC=	HTML file support
 JSON_DESC=	JSON file support
 PANDAS_DESC=	Pandas support
-S3_DESC=	AWS S3 support
-SERVER_DESC=	API support
+PARQUET_DESC=	Parquet file format support
+POSTGRESQL_DESC=PostgreSQL database support
 SQL_DESC=	SQL databases support
+VISIDATA_DESC=	VisiData support
+WKT_DESC=	Well-known text (WKT) support
 
+API_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>=0.78:www/py-fastapi@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}uvicorn>=0.17:www/py-uvicorn@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0:www/py-python-multipart@${PY_FLAVOR}
+AWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.9:www/py-boto3@${PY_FLAVOR}
 BIGQUERY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-python-client>=1.12.1:www/py-google-api-python-client@${PY_FLAVOR}
-CKAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ckanapi>=4.3:devel/py-ckanapi@${PY_FLAVOR}
+CKAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frictionless-ckan-mapper>=1.0:devel/py-frictionless-ckan-mapper@${PY_FLAVOR}
 EXCEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl>=3.0:textproc/py-openpyxl@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}tableschema-to-template>=0.0.12:textproc/py-tableschema-to-template@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}tableschema-to-template>=0.0:textproc/py-tableschema-to-template@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xlrd>=1.2:textproc/py-xlrd@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xlwt>=1.2:textproc/py-xlwt@${PY_FLAVOR}
+GITHUB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygithub>=1.50:devel/py-pygithub@${PY_FLAVOR}
 GSHEETS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygsheets>=2.0:www/py-pygsheets@${PY_FLAVOR}
 HTML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyquery>=1.4:devel/py-pyquery@${PY_FLAVOR}
 JSON_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ijson>=3.0:devel/py-ijson@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}jsonlines>=1.2:devel/py-jsonlines@${PY_FLAVOR}
+MYSQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pymysql>=1.0:databases/py-pymysql@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4:databases/py-sqlalchemy14@${PY_FLAVOR}
 PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.0:math/py-pandas@${PY_FLAVOR}
-S3_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}boto3>=1.9:www/py-boto3@${PY_FLAVOR}
-SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=1.1:www/py-flask@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}gunicorn>=20.0:www/py-gunicorn@${PY_FLAVOR}
-SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=0<2.0:databases/py-sqlalchemy14@${PY_FLAVOR}
+PARQUET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastparquet>=0.8:databases/py-fastparquet@${PY_FLAVOR}
+POSTGRESQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg>=3.0:databases/py-psycopg@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4:databases/py-sqlalchemy14@${PY_FLAVOR}
+SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4:databases/py-sqlalchemy14@${PY_FLAVOR}
+VISIDATA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}visidata>=2.10:devel/py-visidata@${PY_FLAVOR}
+WKT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grako>=3.99:textproc/py-grako@${PY_FLAVOR}
 
 .include <bsd.port.mk>
