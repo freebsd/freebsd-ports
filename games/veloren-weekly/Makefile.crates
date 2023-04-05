@@ -12,7 +12,6 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		alsa-sys-0.3.1 \
 		andrew-0.3.1 \
 		android_system_properties-0.1.5 \
-		ansi-parser-0.8.0 \
 		ansi_term-0.12.1 \
 		anyhow-1.0.65 \
 		app_dirs2-2.5.4 \
@@ -24,7 +23,6 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		arrayref-0.3.6 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.2 \
-		as-slice-0.1.5 \
 		ash-0.32.1 \
 		assets_manager-0.9.0 \
 		async-channel-1.7.1 \
@@ -60,6 +58,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		bytes-1.2.1 \
 		cache-padded-1.2.0 \
 		calloop-0.6.5 \
+		cansi-2.2.1 \
 		cassowary-0.3.0 \
 		cast-0.2.7 \
 		cast-0.3.0 \
@@ -97,7 +96,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		constant_time_eq-0.1.5 \
 		copy_dir-0.1.2 \
 		copyless-0.1.5 \
-		copypasta-0.7.1 \
+		copypasta-0.8.2 \
 		core-foundation-0.7.0 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.7.0 \
@@ -217,8 +216,6 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		futures-util-0.3.24 \
 		fxhash-0.2.1 \
 		generator-0.7.0 \
-		generic-array-0.12.4 \
-		generic-array-0.13.3 \
 		generic-array-0.14.6 \
 		gethostname-0.2.3 \
 		getrandom-0.1.16 \
@@ -240,13 +237,11 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		guillotiere-0.6.2 \
 		h2-0.3.14 \
 		half-1.8.2 \
-		hash32-0.1.1 \
 		hash32-0.2.1 \
 		hashbrown-0.9.1 \
 		hashbrown-0.11.2 \
 		hashbrown-0.12.3 \
 		hashlink-0.6.0 \
-		heapless-0.5.6 \
 		heapless-0.7.16 \
 		heck-0.3.3 \
 		heck-0.4.0 \
@@ -354,9 +349,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		nix-0.24.2 \
 		nix-0.25.1 \
 		noise-0.7.0 \
-		nom-4.2.3 \
-		nom-5.1.2 \
-		nom-7.1.1 \
+		nom-7.1.3 \
 		notify-5.0.0 \
 		ntapi-0.3.7 \
 		num-0.2.1 \
@@ -611,7 +604,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		ttf-parser-0.15.2 \
 		tuple_utils-0.4.0 \
 		twox-hash-1.6.3 \
-		tynm-0.1.6 \
+		tynm-0.1.7 \
 		type-map-0.5.0 \
 		typenum-1.15.0 \
 		uncased-0.9.7 \
@@ -634,7 +627,6 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		vec_map-0.8.2 \
 		vek-0.14.1 \
 		version-compare-0.1.0 \
-		version_check-0.1.5 \
 		version_check-0.9.4 \
 		void-1.0.2 \
 		volatile-register-0.2.1 \
@@ -721,11 +713,12 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		winres-0.1.12 \
 		wio-0.2.2 \
 		wyz-0.5.0 \
-		x11-clipboard-0.5.3 \
+		x11-clipboard-0.7.1 \
 		x11-dl-2.20.0 \
 		x11rb-0.9.0 \
+		x11rb-0.10.1 \
+		x11rb-protocol-0.10.0 \
 		xattr-0.2.3 \
-		xcb-0.10.1 \
 		xcb-1.2.0 \
 		xcursor-0.3.4 \
 		xdg-2.4.1 \
@@ -736,10 +729,10 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		yasna-0.5.0 \
 		wgpu-profiler@git+https://github.com/Imberflur/wgpu-profiler?tag=wgpu-0.8\#b156eb145bc223386ef344860d9b33b3c181650c \
 		tui@git+https://github.com/fdehau/tui-rs.git?branch=paragraph-scroll\#54b841fab6cfdb38e8dc1382176e965787964b4c \
-		conrod_core,conrod_derive,conrod_winit@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#ca9fd429ca7db854e018acc6dcb2cd8abd9e070d \
 		fluent,fluent-bundle,fluent-syntax,intl-memoizer@git+https://github.com/juliancoffee/fluent-rs.git?branch=patched\#929cf9512de121cce9b4cbf1cb860cd3294a1cd9 \
 		auth-common,authc@git+https://gitlab.com/veloren/auth.git?rev=fb3dcbc4962b367253f8f2f92760ef44d2679c9a\#fb3dcbc4962b367253f8f2f92760ef44d2679c9a \
 		iced_core,iced_futures,iced_graphics,iced_native,iced_style,iced_winit@git+https://github.com/Imberflur/iced?tag=winit-0.25\#18a48a5eeefd2aa6e50f5dd0751ac2e94c88a9eb \
+		conrod_core,conrod_derive,conrod_winit@git+https://gitlab.com/veloren/conrod.git?branch=copypasta_0.7\#59fddc617696e68d28a75c2137a08c2572efb986 \
 		naga@git+https://github.com/gfx-rs/naga?tag=gfx-25\#057d03ad86f18e3bb3866b20901d8d4e892dd3d6 \
 		gfx-auxil,gfx-backend-dx11,gfx-backend-dx12,gfx-backend-empty,gfx-backend-gl,gfx-backend-metal,gfx-backend-vulkan,gfx-hal,range-alloc@git+https://github.com/gfx-rs/gfx?rev=27a1dae3796d33d23812f2bb8c7e3b5aea18b521\#27a1dae3796d33d23812f2bb8c7e3b5aea18b521 \
 		wgpu,wgpu-core,wgpu-types@git+https://github.com/pythonesque/wgpu.git?rev=179ea209374a92837cde252f1d9ee01f628cae08\#179ea209374a92837cde252f1d9ee01f628cae08 \
