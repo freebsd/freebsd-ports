@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-gollum-lib
 PORTVERSION=	4.2.7.10.gitlab.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -15,7 +15,7 @@ RUN_DEPENDS=	rubygem-gemojione32>=3.2<4:graphics/rubygem-gemojione32 \
 		rubygem-gitlab-markup>=1.6<2:textproc/rubygem-gitlab-markup \
 		rubygem-gitlab-gollum-rugged_adapter>=0.4.4.4.gitlab.1<0.4.5:www/rubygem-gitlab-gollum-rugged_adapter \
 		rubygem-nokogiri>=1.6.1<2.0:textproc/rubygem-nokogiri \
-		rubygem-rouge>=3.1<4:textproc/rubygem-rouge \
+		rubygem-rouge3>=3.1<4:textproc/rubygem-rouge3 \
 		rubygem-sanitize>=6.0<7:textproc/rubygem-sanitize \
 		rubygem-stringex>=2.6<3,1:devel/rubygem-stringex
 
