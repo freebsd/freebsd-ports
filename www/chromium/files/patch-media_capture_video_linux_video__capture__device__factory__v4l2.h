@@ -1,6 +1,6 @@
---- media/capture/video/linux/video_capture_device_factory_linux.h.orig	2022-02-07 13:39:41 UTC
-+++ media/capture/video/linux/video_capture_device_factory_linux.h
-@@ -52,7 +52,7 @@ class CAPTURE_EXPORT VideoCaptureDeviceFactoryLinux
+--- media/capture/video/linux/video_capture_device_factory_v4l2.h.orig	2023-04-05 11:05:06 UTC
++++ media/capture/video/linux/video_capture_device_factory_v4l2.h
+@@ -51,7 +51,7 @@ class CAPTURE_EXPORT VideoCaptureDeviceFactoryV4L2
  
   private:
    // Simple wrapper to do HANDLE_EINTR(v4l2_->ioctl(fd, ...)).

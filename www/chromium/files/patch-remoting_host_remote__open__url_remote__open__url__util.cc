@@ -1,7 +1,7 @@
---- remoting/host/remote_open_url/remote_open_url_util.cc.orig	2023-03-09 06:31:50 UTC
+--- remoting/host/remote_open_url/remote_open_url_util.cc.orig	2023-04-05 11:05:06 UTC
 +++ remoting/host/remote_open_url/remote_open_url_util.cc
 @@ -29,7 +29,7 @@ const wchar_t kRegisteredApplicationsKeyName[] =
- #endif  // defined (OS_WIN)
+ #endif  // BUILDFLAG(IS_WIN)
  
  bool IsRemoteOpenUrlSupported() {
 -#if BUILDFLAG(IS_LINUX)

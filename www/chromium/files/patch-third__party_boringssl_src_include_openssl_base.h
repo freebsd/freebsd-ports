@@ -1,6 +1,6 @@
---- third_party/boringssl/src/include/openssl/base.h.orig	2022-10-24 13:33:33 UTC
+--- third_party/boringssl/src/include/openssl/base.h.orig	2023-04-05 11:05:06 UTC
 +++ third_party/boringssl/src/include/openssl/base.h
-@@ -154,6 +154,11 @@ extern "C" {
+@@ -151,6 +151,11 @@ extern "C" {
  #define OPENSSL_FUCHSIA
  #endif
  
