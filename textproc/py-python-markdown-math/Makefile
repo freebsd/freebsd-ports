@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Math extension for Python-Markdown
-WWW=		https://pypi.org/project/python-markdown-math/
+WWW=		https://github.com/mitya57/python-markdown-math
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
