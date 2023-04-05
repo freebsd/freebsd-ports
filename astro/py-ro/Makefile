@@ -8,7 +8,8 @@ DISTNAME=	RO-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Package of Python astronomical utilities
-WWW=		https://staff.washington.edu/rowen/ROPackage/Overview.html
+WWW=		https://staff.washington.edu/rowen/ROPackage/Overview.html \
+		https://github.com/ApachePointObservatory/RO
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/License.txt
