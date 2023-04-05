@@ -1,6 +1,5 @@
 PORTNAME=	moto
-PORTVERSION=	4.1.1
-PORTREVISION=	2
+PORTVERSION=	4.1.5
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.9.201:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xmltodict>=0:devel/py-xmltodict@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aws-xray-sdk>=0.93:devel/py-aws-xray-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cfn-lint>=0.40.0:devel/py-cfn-lint@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docker>=2.5.1:sysutils/py-docker@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docker>=3.0.0:sysutils/py-docker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ecdsa>=0.16:security/py-ecdsa@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask>=2.2.2:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask-Cors>=0:www/py-flask-cors@${PY_FLAVOR} \
