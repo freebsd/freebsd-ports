@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	BibTeX-compatible bibliography processor in Python
-WWW=		https://bitbucket.org/pybtex-devs/pybtex/
+WWW=		https://pybtex.org/ \
+		https://bitbucket.org/pybtex-devs/pybtex/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
