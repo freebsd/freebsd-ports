@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Return the first true value of an iterable
-WWW=		https://pypi.org/project/first/
+WWW=		https://github.com/hynek/first
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
