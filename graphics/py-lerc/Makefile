@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python binding for LERC (Limited Error Raster Compression)
-WWW=		https://esri.github.io/lerc/
+WWW=		https://esri.github.io/lerc/ \
+		https://github.com/Esri/lerc/tree/master/OtherLanguages/Python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
