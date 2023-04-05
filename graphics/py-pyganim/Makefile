@@ -8,7 +8,8 @@ DISTNAME=	Pyganim-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Sprite animation module for Pygame
-WWW=		https://inventwithpython.com/pyganim/
+WWW=		https://inventwithpython.com/pyganim/ \
+		https://github.com/asweigart/pyganim
 
 LICENSE=	BSD2CLAUSE
 
