@@ -1,3 +1,3 @@
-TIMESTAMP = 1672616823
-SHA256 (libatomic_ops-7.6.14.tar.gz) = 390f244d424714735b7050d056567615b3b8f29008a663c262fb548f1802d292
-SIZE (libatomic_ops-7.6.14.tar.gz) = 500006
+TIMESTAMP = 1680679098
+SHA256 (libatomic_ops-7.8.0.tar.gz) = 15676e7674e11bda5a7e50a73f4d9e7d60452271b8acf6fd39a71fefdf89fa31
+SIZE (libatomic_ops-7.8.0.tar.gz) = 526300

@@ -1,5 +1,5 @@
 PORTNAME=	libatomic_ops
-DISTVERSION=	7.6.14
+DISTVERSION=	7.8.0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ivmai/${PORTNAME}/releases/download/v${DISTVERSION}/
 
