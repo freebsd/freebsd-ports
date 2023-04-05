@@ -2,6 +2,7 @@ PORTNAME=	waybar
 DISTVERSION=	0.9.17
 PORTREVISION=	1
 CATEGORIES=	x11 wayland
+PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Highly customizable Wayland bar for Sway and wlroots-based compositors
@@ -20,9 +21,7 @@ LIB_DEPENDS=	libdate-tz.so:devel/date \
 TEST_DEPENDS=	catch>0:devel/catch
 
 FLAVORS=	default nopulse
-default_CONFLICTS_INSTALL=	${PORTNAME}-nopulse
-nopulse_CONFLICTS_INSTALL=	${PORTNAME}
-nopulse_PKGNAMESUFFIX=		-nopulse
+CONFLICTS_INSTALL=	${PORTNAME}*
 
 USES=		compiler:c++17-lang gnome meson pkgconfig
 USE_GITHUB=	yes
