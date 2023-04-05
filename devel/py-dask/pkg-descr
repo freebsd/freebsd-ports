@@ -7,5 +7,3 @@ Dask is composed of two parts:
   common interfaces like NumPy, Pandas, or Python iterators to
   larger-than-memory or distributed environments. These parallel collections run
   on top of dynamic task schedulers.
-
-See also: https://github.com/dask/dask
