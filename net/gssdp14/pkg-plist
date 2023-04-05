@@ -6,6 +6,7 @@ include/gssdp-1.2/libgssdp/gssdp-resource-browser.h
 include/gssdp-1.2/libgssdp/gssdp-resource-group.h
 include/gssdp-1.2/libgssdp/gssdp.h
 lib/girepository-1.0/GSSDP-1.2.typelib
+lib/libgssdp-1.2.a
 lib/libgssdp-1.2.so
 lib/libgssdp-1.2.so.0
 lib/libgssdp-1.2.so.0.104.1

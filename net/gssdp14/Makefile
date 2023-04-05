@@ -1,5 +1,6 @@
 PORTNAME=	gssdp
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	14
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 USES=		gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
-MESON_ARGS=	-Dexamples=false -Dgtk_doc=false -Dintrospection=true
+MESON_ARGS=	--default-library=both -Dexamples=false -Dgtk_doc=false -Dintrospection=true
 USE_LDCONFIG=	yes
 
 CONFLICTS_INSTALL=	gssdp
