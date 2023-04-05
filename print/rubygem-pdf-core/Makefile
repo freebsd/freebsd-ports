@@ -5,7 +5,8 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby library to render PDF documents
-WWW=		https://prawnpdf.org/
+WWW=		https://prawnpdf.org/ \
+		https://github.com/prawnpdf/pdf-core
 
 LICENSE=	GPLv2 GPLv3 RUBY
 LICENSE_COMB=	dual
