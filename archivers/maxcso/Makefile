@@ -1,27 +1,30 @@
-PORTNAME=		maxcso
+PORTNAME=	maxcso
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.10.0
-PORTREVISION=	2
-CATEGORIES=		archivers
+DISTVERSION=	1.13.0-27
+DISTVERSIONSUFFIX=	-g528c69bf
+CATEGORIES=	archivers
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Fast ISO to CSO compressor for PSP and PS2 emulators
 WWW=		https://github.com/unknownbrackets/maxcso
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-LIB_DEPENDS=	libuv.so:devel/libuv \
+LIB_DEPENDS=	libdeflate.so:archivers/libdeflate \
 		liblz4.so:archivers/liblz4 \
+		libuv.so:devel/libuv \
 		libzopfli.so:archivers/zopfli
 
-USES=		gmake pkgconfig compiler:c++11-lang
-
+USES=		compiler:c++11-lang gmake pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	unknownbrackets
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/man/man1/${PORTNAME}.1.gz
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>
