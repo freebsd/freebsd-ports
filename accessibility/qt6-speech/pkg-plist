@@ -1,5 +1,4 @@
 %%QT_INCDIR%%/QtTextToSpeech/%%FULLVER%%/QtTextToSpeech/private/qtexttospeech_p.h
-%%QT_INCDIR%%/QtTextToSpeech/%%FULLVER%%/QtTextToSpeech/private/qtexttospeech_qmltypes_p.h
 %%QT_INCDIR%%/QtTextToSpeech/%%FULLVER%%/QtTextToSpeech/private/qttexttospeech-config_p.h
 %%QT_INCDIR%%/QtTextToSpeech/%%FULLVER%%/QtTextToSpeech/private/qvoice_p.h
 %%QT_INCDIR%%/QtTextToSpeech/QTextToSpeech

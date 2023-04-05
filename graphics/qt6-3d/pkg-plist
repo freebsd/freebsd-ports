@@ -155,7 +155,6 @@
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/qcoresettings_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/qdestructionidandtypecollector_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/qdownloadhelperservice_p.h
-%%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/qdownloadhelperservice_p_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/qdownloadnetworkworker_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/qentity_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/qeventfilterservice_p.h
@@ -192,7 +191,6 @@
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/vector4d_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/vector4d_sse_p.h
 %%QT_INCDIR%%/Qt3DCore/%%FULLVER%%/Qt3DCore/private/vector_helper_p.h
-%%QT_INCDIR%%/Qt3DCore/FunctorType
 %%QT_INCDIR%%/Qt3DCore/QAbstractAspect
 %%QT_INCDIR%%/Qt3DCore/QAbstractFunctor
 %%QT_INCDIR%%/Qt3DCore/QAbstractSkeleton
@@ -425,7 +423,6 @@
 %%QT_INCDIR%%/Qt3DInput/%%FULLVER%%/Qt3DInput/private/qaxisaccumulator_p.h
 %%QT_INCDIR%%/Qt3DInput/%%FULLVER%%/Qt3DInput/private/qaxissetting_p.h
 %%QT_INCDIR%%/Qt3DInput/%%FULLVER%%/Qt3DInput/private/qbuttonaxisinput_p.h
-%%QT_INCDIR%%/Qt3DInput/%%FULLVER%%/Qt3DInput/private/qgamepadinput_p.h
 %%QT_INCDIR%%/Qt3DInput/%%FULLVER%%/Qt3DInput/private/qgenericinputdevice_p.h
 %%QT_INCDIR%%/Qt3DInput/%%FULLVER%%/Qt3DInput/private/qinputaspect_p.h
 %%QT_INCDIR%%/Qt3DInput/%%FULLVER%%/Qt3DInput/private/qinputchord_p.h
@@ -839,7 +836,6 @@
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/setfence_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/shader_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/shaderbuilder_p.h
-%%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/shadercache_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/shaderdata_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/shaderimage_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/skeleton_p.h
@@ -855,7 +851,6 @@
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/techniquefilternode_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/techniquemanager_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/texture_p.h
-%%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/texturedatamanager_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/textureimage_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/transform_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/triangleboundingvolume_p.h
@@ -874,8 +869,6 @@
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/vsyncframeadvanceservice_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/vulkaninstance_p.h
 %%QT_INCDIR%%/Qt3DRender/%%FULLVER%%/Qt3DRender/private/waitfence_p.h
-%%QT_INCDIR%%/Qt3DRender/PropertyReaderInterface
-%%QT_INCDIR%%/Qt3DRender/PropertyReaderInterfacePtr
 %%QT_INCDIR%%/Qt3DRender/QAbstractLight
 %%QT_INCDIR%%/Qt3DRender/QAbstractRayCaster
 %%QT_INCDIR%%/Qt3DRender/QAbstractTexture
@@ -885,7 +878,6 @@
 %%QT_INCDIR%%/Qt3DRender/QBlendEquation
 %%QT_INCDIR%%/Qt3DRender/QBlendEquationArguments
 %%QT_INCDIR%%/Qt3DRender/QBlitFramebuffer
-%%QT_INCDIR%%/Qt3DRender/QBufferCapture
 %%QT_INCDIR%%/Qt3DRender/QCamera
 %%QT_INCDIR%%/Qt3DRender/QCameraLens
 %%QT_INCDIR%%/Qt3DRender/QCameraSelector
@@ -970,7 +962,6 @@
 %%QT_INCDIR%%/Qt3DRender/QStencilOperationArguments
 %%QT_INCDIR%%/Qt3DRender/QStencilTest
 %%QT_INCDIR%%/Qt3DRender/QStencilTestArguments
-%%QT_INCDIR%%/Qt3DRender/QSubtreeEnabler
 %%QT_INCDIR%%/Qt3DRender/QTechnique
 %%QT_INCDIR%%/Qt3DRender/QTechniqueFilter
 %%QT_INCDIR%%/Qt3DRender/QTexture

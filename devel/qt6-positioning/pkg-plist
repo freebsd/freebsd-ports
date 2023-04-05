@@ -69,6 +69,7 @@
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativepluginparameter_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativeposition_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativepositionsource_p.h
+%%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qdeclarativesatellitesource_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qpositioningquickglobal_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qpositioningquickmodule_p.h
 %%QT_INCDIR%%/QtPositioningQuick/%%FULLVER%%/QtPositioningQuick/private/qquickgeocoordinateanimation_p.h

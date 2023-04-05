@@ -13,9 +13,6 @@
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qproximitysensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qrotationsensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qsensor_p.h
-%%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qsensorbackend_p.h
-%%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qsensorgesture_p.h
-%%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qsensorgesturemanagerprivate_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qtapsensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qtiltsensor_p.h
 %%QT_INCDIR%%/QtSensors/%%FULLVER%%/QtSensors/private/qtsensors-config_p.h
@@ -67,10 +64,6 @@
 %%QT_INCDIR%%/QtSensors/QSensorBackendFactory
 %%QT_INCDIR%%/QtSensors/QSensorChangesInterface
 %%QT_INCDIR%%/QtSensors/QSensorFilter
-%%QT_INCDIR%%/QtSensors/QSensorGesture
-%%QT_INCDIR%%/QtSensors/QSensorGestureManager
-%%QT_INCDIR%%/QtSensors/QSensorGesturePluginInterface
-%%QT_INCDIR%%/QtSensors/QSensorGestureRecognizer
 %%QT_INCDIR%%/QtSensors/QSensorManager
 %%QT_INCDIR%%/QtSensors/QSensorPluginInterface
 %%QT_INCDIR%%/QtSensors/QSensorReading
@@ -99,10 +92,6 @@
 %%QT_INCDIR%%/QtSensors/qrotationsensor.h
 %%QT_INCDIR%%/QtSensors/qsensor.h
 %%QT_INCDIR%%/QtSensors/qsensorbackend.h
-%%QT_INCDIR%%/QtSensors/qsensorgesture.h
-%%QT_INCDIR%%/QtSensors/qsensorgesturemanager.h
-%%QT_INCDIR%%/QtSensors/qsensorgestureplugininterface.h
-%%QT_INCDIR%%/QtSensors/qsensorgesturerecognizer.h
 %%QT_INCDIR%%/QtSensors/qsensormanager.h
 %%QT_INCDIR%%/QtSensors/qsensorplugin.h
 %%QT_INCDIR%%/QtSensors/qsensorsglobal.h
@@ -126,7 +115,6 @@
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlproximitysensor_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlrotationsensor_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlsensor_p.h
-%%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlsensorgesture_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlsensorglobal_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmlsensorrange_p.h
 %%QT_INCDIR%%/QtSensorsQuick/%%FULLVER%%/QtSensorsQuick/private/qmltapsensor_p.h

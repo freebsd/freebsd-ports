@@ -2,7 +2,6 @@
 %%QT_INCDIR%%/QtWebChannel/%%FULLVER%%/QtWebChannel/private/qqmlwebchannelattached_p.h
 %%QT_INCDIR%%/QtWebChannel/%%FULLVER%%/QtWebChannel/private/qwebchannel_p.h
 %%QT_INCDIR%%/QtWebChannel/%%FULLVER%%/QtWebChannel/private/signalhandler_p.h
-%%QT_INCDIR%%/QtWebChannel/%%FULLVER%%/QtWebChannel/private/variantargument_p.h
 %%QT_INCDIR%%/QtWebChannel/QQmlWebChannel
 %%QT_INCDIR%%/QtWebChannel/QWebChannel
 %%QT_INCDIR%%/QtWebChannel/QWebChannelAbstractTransport
