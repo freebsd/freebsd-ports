@@ -152,10 +152,10 @@ lib/opal-%%VERSION%%/codecs/audio/lpc10_ptplugin.so
 lib/opal-%%VERSION%%/codecs/audio/silk_ptplugin.so
 lib/opal-%%VERSION%%/codecs/audio/speex_ptplugin.so
 lib/opal-%%VERSION%%/codecs/video/h261_vic_ptplugin.so
-lib/opal-%%VERSION%%/codecs/video/h263_ffmpeg_ptplugin.so
+%%FFMPEG%%lib/opal-%%VERSION%%/codecs/video/h263_ffmpeg_ptplugin.so
 %%X264%%lib/opal-%%VERSION%%/codecs/video/h264_video_pwplugin_helper
 %%X264%%lib/opal-%%VERSION%%/codecs/video/h264_x264_ptplugin.so
-lib/opal-%%VERSION%%/codecs/video/mpeg4_ffmpeg_ptplugin.so
+%%FFMPEG%%lib/opal-%%VERSION%%/codecs/video/mpeg4_ffmpeg_ptplugin.so
 %%THEORA%%lib/opal-%%VERSION%%/codecs/video/theora_ptplugin.so
 %%FAX%%lib/opal-%%VERSION%%/fax/spandsp_ptplugin.so
 %%LID%%lib/opal-%%VERSION%%/lid/vpb_ptplugin.so

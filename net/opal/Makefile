@@ -268,8 +268,15 @@ post-install:
 	${LN} -sf libopal_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libopal_d.so.${PVERSION_MINOR}
 .endif
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libopal.so.${PORTVERSION}
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opal-${PORTVERSION}/codecs/video/h264_video_pwplugin_helper
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opal-${PORTVERSION}/*/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opal-${PORTVERSION}/*/*/*.so
+
+post-install-FAX-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opal-${PORTVERSION}/fax/spandsp_ptplugin.so
+
+post-install-LID-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opal-${PORTVERSION}/lid/vpb_ptplugin.so
+
+post-install-X264-on:
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/opal-${PORTVERSION}/codecs/video/h264_video_pwplugin_helper
 
 .include <bsd.port.mk>
