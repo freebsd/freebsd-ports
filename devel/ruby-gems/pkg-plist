@@ -12,6 +12,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/commands/contents_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/dependency_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/environment_command.rb
+%%RUBY_SITELIBDIR%%/rubygems/commands/exec_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/fetch_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/generate_index_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/help_command.rb
