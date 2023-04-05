@@ -1,5 +1,5 @@
 PORTNAME=	check_postgres
-PORTVERSION=	2.25.0
+PORTVERSION=	2.26.0
 CATEGORIES=	net-mgmt databases perl5
 MASTER_SITES=	http://bucardo.org/downloads/
 PKGNAMEPREFIX=	nagios-
@@ -56,7 +56,7 @@ NAGIOS_LINKS=	archive_ready		\
 		new_version_cp		\
 		new_version_pg		\
 		new_version_tnm		\
-		pgagent_jobs		\
+		partman_premake		\
 		pgb_pool_cl_active	\
 		pgb_pool_cl_waiting	\
 		pgb_pool_maxwait	\
@@ -67,6 +67,8 @@ NAGIOS_LINKS=	archive_ready		\
 		pgb_pool_sv_used	\
 		pgbouncer_backends	\
 		pgbouncer_checksum	\
+		pgbouncer_maxwait       \
+		pgagent_jobs		\
 		prepared_txns		\
 		query_runtime		\
 		query_time		\
