@@ -7,7 +7,7 @@ DISTNAME=	pyRFC3339-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generate and parse RFC 3339 timestamps
-WWW=		https://pypi.org/project/pyRFC3339/
+WWW=		https://github.com/kurtraschke/pyRFC3339
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
