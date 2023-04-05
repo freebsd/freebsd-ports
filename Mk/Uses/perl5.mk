@@ -106,6 +106,8 @@ SITE_MAN1?=	${PREFIX}/${SITE_MAN1_REL}
 
 PERL5?=		${PERL_LOCALBASE}/bin/perl${PERL_VERSION}
 PERL?=		${PERL_LOCALBASE}/bin/perl
+# Overwrite perl_CMD for Mk/Uses/shebangfix.mk.
+perl_CMD?=	${PERL}
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL} ac_cv_path_PERL_PATH=${PERL} \
 		PERL_USE_UNSAFE_INC=1
 
