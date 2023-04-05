@@ -11,5 +11,3 @@ downloads, FXP protocol, bandwidth throttling, ratios, LDAP, customizable SQL,
 fortune files, Apache-like log files, fast standalone mode, text / HTML / XML
 real-time status report, virtual users, virtual quotas, privilege separation and
 more.
-
-See also: https://github.com/jedisct1/pure-ftpd

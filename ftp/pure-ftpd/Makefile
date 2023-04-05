@@ -6,7 +6,8 @@ MASTER_SITES=	https://github.com/jedisct1/pure-ftpd/releases/download/${PORTVERS
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Small, easy to set up, fast, and secure FTP server
-WWW=		https://www.pureftpd.org/
+WWW=		https://www.pureftpd.org/ \
+		https://github.com/jedisct1/pure-ftpd
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/COPYING
