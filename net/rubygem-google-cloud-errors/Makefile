@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-errors
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
