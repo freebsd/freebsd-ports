@@ -1,5 +1,5 @@
 PORTNAME=	cairosvg
-PORTVERSION=	2.6.0
+PORTVERSION=	2.7.0
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	CairoSVG-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple SVG Converter based on Cairo
-WWW=		https://www.courtbouillon.org/cairosvg
+WWW=		https://www.courtbouillon.org/cairosvg \
+		https://github.com/Kozea/CairoSVG
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
