@@ -1,5 +1,5 @@
 PORTNAME=	fonttools
-PORTVERSION=	4.38.0
+PORTVERSION=	4.39.2
 CATEGORIES=	print python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,8 +43,8 @@ WOFF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.1:archivers/py-brotli@${PY_
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:UNICODE} && ${PYTHON_REL} < 31100
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unicodedata2>=14.0.0:devel/py-unicodedata2@${PY_FLAVOR}
+.if ${PORT_OPTIONS:UNICODE} && ${PYTHON_REL} < 31200
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unicodedata2>=15.0.0:devel/py-unicodedata2@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
