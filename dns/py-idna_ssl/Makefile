@@ -7,7 +7,7 @@ DISTNAME=	idna-ssl-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Patch ssl.match_hostname for Unicode(idna) domains support
-WWW=		https://pypi.org/project/idna_ssl/
+WWW=		https://github.com/aio-libs/idna-ssl
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
