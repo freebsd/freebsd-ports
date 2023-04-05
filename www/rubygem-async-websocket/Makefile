@@ -1,5 +1,5 @@
 PORTNAME=	async-websocket
-PORTVERSION=	0.24.0
+PORTVERSION=	0.25.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
