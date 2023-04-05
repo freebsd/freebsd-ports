@@ -1,12 +1,13 @@
 PORTNAME=	python-openstackclient
-PORTVERSION=	6.1.0
+PORTVERSION=	6.2.0
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	OpenStack Command-line Client
-WWW=		https://docs.openstack.org/python-openstackclient/latest/
+WWW=		https://docs.openstack.org/python-openstackclient/latest/ \
+		https://github.com/openstack/python-openstackclient
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
