@@ -1,11 +1,12 @@
 PORTNAME=	taskjuggler
-PORTVERSION=	3.7.1
+PORTVERSION=	3.7.2
 CATEGORIES=	deskutils rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Project management tool for UNIX based operating systems
-WWW=		https://taskjuggler.org/
+WWW=		https://taskjuggler.org/ \
+		https://github.com/taskjuggler/TaskJuggler
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
