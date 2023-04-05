@@ -1,9 +1,9 @@
 PORTNAME=	noto
 PORTVERSION=	2.001
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/googlefonts/noto-cjk/raw/Serif${PORTVERSION}/ \
-		https://github.com/googlefonts/noto-cjk/raw/Serif${PORTVERSION}/Serif/OTF/Japanese/:cjk \
-		https://github.com/googlefonts/noto-cjk/raw/Serif${PORTVERSION}/Serif/SubsetOTF/JP/:subset
+MASTER_SITES=	https://github.com/notofonts/noto-cjk/raw/Serif${PORTVERSION}/ \
+		https://github.com/notofonts/noto-cjk/raw/Serif${PORTVERSION}/Serif/OTF/Japanese/:cjk \
+		https://github.com/notofonts/noto-cjk/raw/Serif${PORTVERSION}/Serif/SubsetOTF/JP/:subset
 PKGNAMESUFFIX=	-serif-jp
 DISTFILES=	LICENSE \
 		${CJK_FONTS:S|$|:cjk|} \
@@ -13,8 +13,8 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Serif (Japanese)
-WWW=		https://www.google.com/get/noto/ \
-		https://github.com/googlefonts/noto-cjk
+WWW=		https://fonts.google.com/noto \
+		https://github.com/notofonts/noto-cjk
 
 LICENSE=	OFL11
 LICENSE_FILE=	${DISTDIR}/${DIST_SUBDIR}/LICENSE
