@@ -1,6 +1,6 @@
 PORTNAME=	ImageMagick
 DISTVERSION=	6.9.12-77
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	https://ftp.acc.umu.se/mirror/imagemagick.org/ftp/releases/ \
@@ -19,11 +19,16 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-TESTS_DEPENDS=	gsfonts>=0:print/gsfonts
+FLAVORS=		x11 nox11
+FLAVOR?=		${FLAVORS:[1]}
+FLAVORS_SUB=		yes
+nox11_PKGNAMESUFFIX=	6-nox11
 
 PORTSCOUT?=	limit:^6\.9\.
 
-CONFLICTS_INSTALL=	ImageMagick7 ImageMagick7-nox11 # bin/Magick++-config
+# bin/Magick++-config
+CONFLICTS_INSTALL=	ImageMagick6 ImageMagick6-nox11 \
+			ImageMagick7 ImageMagick7-nox11
 
 # This port uses .la files, keep libtool:keepla! (magick/module.c)
 USES=		compiler:c++11-lang cpe gettext-runtime gmake gnome \
@@ -50,11 +55,22 @@ PLIST_SUB=	PORTVERSION=${PORTVERSION:R}
 OPTIONS_SUB=	yes
 OPTIONS_DEFINE=	BZIP2 DOCS DJVU FFMPEG FFTW FONTCONFIG FPX FREETYPE \
 		GRAPHVIZ GSLIB HEIF JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES \
-		OPENEXR OPENMP PANGO PDF PERL PNG RAQM SVG TESTS TIFF WEBP WMF \
-		THREADS X11 16BIT_PIXEL HDRI RAW
+		OPENEXR OPENMP PDF PERL PNG TESTS TIFF WEBP WMF THREADS \
+		16BIT_PIXEL HDRI RAW
 OPTIONS_DEFAULT=	16BIT_PIXEL BZIP2 FFTW FONTCONFIG FREETYPE HEIF \
-		JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG RAQM SVG \
-		TIFF WEBP WMF THREADS X11 RAW
+		JPEG2000 JBIG JPEG LCMS2 LZMA LQR MODULES PDF PERL PNG \
+		TIFF WEBP WMF THREADS RAW
+
+.if ${FLAVOR:U} == x11
+# the SVG and PANGO plugins need X11
+OPTIONS_DEFINE+=	PANGO RAQM SVG
+OPTIONS_DEFAULT+=	RAQM SVG
+CONFIGURE_ARGS+=	--with-x
+USES+=			xorg
+USE_XORG=		ice sm x11 xext xt
+.else
+CONFIGURE_ARGS+=	--without-x
+.endif
 
 DJVU_DESC=		DJVU format support (needs THREADS)
 GSLIB_DESC=		libgs (Postscript SHLIB) support
@@ -129,7 +145,6 @@ MODULES_CONFIGURE_WITH=	modules
 
 PANGO_CONFIGURE_WITH=	pango
 PANGO_USE=		gnome=pango
-PANGO_IMPLIES=		X11
 
 PNG_CONFIGURE_WITH=	png
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
@@ -148,20 +163,14 @@ RAW_IMPLIES=		LCMS2
 SVG_DESC=		SVG vector image format support (via librsvg, implies the x11 option)
 SVG_CONFIGURE_WITH=	rsvg
 SVG_USE=		gnome=cairo,gdkpixbuf2,librsvg2
-SVG_IMPLIES=		X11
+
+TESTS_TEST_DEPENDS=	gsfonts>=0:print/gsfonts
 
 TIFF_CONFIGURE_WITH=	tiff
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
-
-X11_CONFIGURE_WITH=	x
-X11_USES=		xorg
-X11_USE=		xorg=ice,sm,x11,xext,xt
-X11_VARS=		CONFLICTS_INSTALL+="ImageMagick6-nox11"
-X11_VARS_OFF=		CONFLICTS_INSTALL+="ImageMagick6" \
-			PKGNAMESUFFIX=6-nox11
 
 .include <bsd.port.options.mk>
 
@@ -256,7 +265,7 @@ RUN_DEPENDS+=		ffmpeg:multimedia/ffmpeg
 
 .if ${PORT_OPTIONS:MGSLIB}
 CONFIGURE_ARGS+=	--with-gslib
-. if ${PORT_OPTIONS:MX11}
+. if ${FLAVOR:U} == x11
 USES+=		ghostscript:x11
 . else
 USES+=		ghostscript
@@ -267,7 +276,7 @@ CONFIGURE_ARGS+=	--without-gslib
 
 # WMF (Windows Meta File) images
 .if ${PORT_OPTIONS:MWMF}
-. if ${PORT_OPTIONS:MX11}
+. if ${FLAVOR:U} == x11
 LIB_DEPENDS+=		libwmf.so:graphics/libwmf
 . else
 LIB_DEPENDS+=		libwmf.so:graphics/libwmf-nox11
@@ -281,7 +290,7 @@ PLIST_SUB+=		WMF="@comment "
 
 # PDF (Adobe Portable Document Format) support
 .if ${PORT_OPTIONS:MPDF}
-. if ${PORT_OPTIONS:MX11}
+. if ${FLAVOR:U} == x11
 USES+=		ghostscript:x11
 . else
 USES+=		ghostscript
@@ -299,7 +308,7 @@ INSTALL_TARGET=	install-strip
 .endif
 
 .if ${PORT_OPTIONS:MTESTS}
-. if ${PORT_OPTIONS:MX11}
+. if ${FLAVOR:U} == x11
 USES+=		ghostscript:x11,build
 . else
 USES+=		ghostscript:build
@@ -330,10 +339,6 @@ pre-configure:
 	@${ECHO_CMD} '###################################################################'
 	@${ECHO_CMD} NOTICE: ${_IMAGEMAGICK_THREADS_PERL_MSG}. Building ImageMagick ${_IMAGEMAGICK_THREADS_MSG}.
 	@${ECHO_CMD} '###################################################################'
-.endif
-
-.if ${PORT_OPTIONS:MSVG} && ! ${PORT_OPTIONS:MX11}
-	@${ECHO_CMD} NOTICE: SVG format support disabled, requires X11
 .endif
 
 post-install:

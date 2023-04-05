@@ -6,7 +6,6 @@
     SUBDIR += Hermes
     SUBDIR += IPA
     SUBDIR += ImageMagick6
-    SUBDIR += ImageMagick6-nox11
     SUBDIR += ImageMagick7
     SUBDIR += O2-tools
     SUBDIR += R-cran-DiagrammeR

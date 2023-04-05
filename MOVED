@@ -17921,3 +17921,4 @@ devel/zpu-binutils||2023-04-30|Has expired: Broken with latest C compiler and po
 databases/rocksdb-lite||2023-04-30|Has expired: Removed by upstream, see https://github.com/facebook/rocksdb/commit/4720ba4391eb016b05a30d09a8275624c3a4a87e
 textproc/ltxml||2023-04-30|Has expired: Unfetchable
 graphics/ImageMagick7-nox11|graphics/ImageMagick7|2023-04-30|Flavorized
+graphics/ImageMagick6-nox11|graphics/ImageMagick6|2023-04-30|Flavorized
