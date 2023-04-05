@@ -1,11 +1,12 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.8.4
+PORTVERSION=	3.8.6
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tools and API for translation and localization engineering
-WWW=		https://toolkit.translatehouse.org/
+WWW=		https://toolkit.translatehouse.org/ \
+		https://github.com/translate/translate
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
