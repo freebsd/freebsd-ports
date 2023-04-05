@@ -1,10 +1,10 @@
 PORTNAME=	noto
 PORTVERSION=	2.004
 CATEGORIES=	x11-fonts
-MASTER_SITES=	https://github.com/googlefonts/noto-cjk/raw/Sans${PORTVERSION}/ \
-		https://github.com/googlefonts/noto-cjk/raw/Sans${PORTVERSION}/Sans/OTF/Japanese/:cjk \
-		https://github.com/googlefonts/noto-cjk/raw/Sans${PORTVERSION}/Sans/Mono/:mono \
-		https://github.com/googlefonts/noto-cjk/raw/Sans${PORTVERSION}/Sans/SubsetOTF/JP/:subset
+MASTER_SITES=	https://github.com/notofonts/noto-cjk/raw/Sans${PORTVERSION}/ \
+		https://github.com/notofonts/noto-cjk/raw/Sans${PORTVERSION}/Sans/OTF/Japanese/:cjk \
+		https://github.com/notofonts/noto-cjk/raw/Sans${PORTVERSION}/Sans/Mono/:mono \
+		https://github.com/notofonts/noto-cjk/raw/Sans${PORTVERSION}/Sans/SubsetOTF/JP/:subset
 PKGNAMESUFFIX=	-sans-jp
 DISTFILES=	LICENSE \
 		${CJK_FONTS:S|$|:cjk|} \
@@ -15,8 +15,8 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Sans (Japanese)
-WWW=		https://www.google.com/get/noto/ \
-		https://github.com/googlefonts/noto-cjk
+WWW=		https://fonts.google.com/noto \
+		https://github.com/notofonts/noto-cjk
 
 LICENSE=	OFL11
 LICENSE_FILE=	${DISTDIR}/${DIST_SUBDIR}/LICENSE
