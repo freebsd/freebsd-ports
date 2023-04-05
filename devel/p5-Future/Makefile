@@ -12,9 +12,7 @@ WWW=		https://metacpan.org/release/Future
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 
-TEST_DEPENDS=	p5-Test-Fatal>0:devel/p5-Test-Fatal \
-		p5-Test-Identity>0:devel/p5-Test-Identity \
-		p5-Test-Refcount>0:devel/p5-Test-Refcount
+TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
 
 USES=		perl5
 USE_PERL5=	modbuild
