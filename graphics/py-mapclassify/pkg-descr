@@ -5,5 +5,3 @@ Its focus is on the determination of the number of classes, and the assignment
 of observations to those classes. It is intended for use with upstream mapping
 and geovisualization packages (see geopandas and geoplot) that handle the
 rendering of the maps.
-
-See also: https://github.com/pysal/mapclassify
