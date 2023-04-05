@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.9.4
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -141,7 +141,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-asciidoctor-include-ext>=0.4.0<0.5.0:textproc/rubygem-asciidoctor-include-ext \
 	rubygem-asciidoctor-plantuml00>=0.0.16<0.1:textproc/rubygem-asciidoctor-plantuml00 \
 	rubygem-asciidoctor-kroki>=0.7.0<0.8:textproc/rubygem-asciidoctor-kroki \
-	rubygem-rouge>=3.30.0<3.31:textproc/rubygem-rouge \
+	rubygem-rouge3>=3.30.0<3.31:textproc/rubygem-rouge3 \
 	rubygem-truncato>=0.7.11<0.8.0:textproc/rubygem-truncato \
 	rubygem-nokogiri>=1.14.1<1.15:textproc/rubygem-nokogiri \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
