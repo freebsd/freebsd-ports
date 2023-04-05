@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	New features in linecache backported to Python 2
-WWW=		https://pypi.org/project/linecache2/
+WWW=		https://github.com/testing-cabal/linecache2
 
 LICENSE=	PSFL
 
