@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python bindings for Tarantool queue
-WWW=		https://pypi.org/project/tarantool-queue/
+WWW=		https://github.com/tarantool/queue-python
 
 LICENSE=	MIT
 
