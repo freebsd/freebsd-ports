@@ -1,16 +1,20 @@
 PORTNAME=	pylint
 PORTVERSION=	2.15.10
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Analyzes python source code looking for bugs and signs of poor quality
-WWW=		https://www.pylint.org/
+WWW=		https://www.pylint.org/ \
+		https://github.com/PyCQA/pylint
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=62.6:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.37.1:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=2.12.13<2.14.0_99:devel/py-astroid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isort>=4.2.5<6:devel/py-isort@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mccabe>=0.6<0.8:devel/py-mccabe@${PY_FLAVOR} \
@@ -19,7 +23,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=2.12.13<2.14.0_99:devel/py-astroid@
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
@@ -35,8 +39,5 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dill>=0.2:devel/py-dill@${PY_FLAVOR} \
 .else
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dill>=0.3.6:devel/py-dill@${PY_FLAVOR}
 .endif
-
-post-patch:
-	@${SED} -e 's|%%PORTVERSION%%|${PORTVERSION}|' ${FILESDIR}/setup.py > ${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>
