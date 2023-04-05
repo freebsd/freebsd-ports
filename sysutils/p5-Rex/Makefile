@@ -1,5 +1,5 @@
 PORTNAME=	Rex
-PORTVERSION=	1.14.0
+PORTVERSION=	1.14.1
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:FERKI
@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Friendly automation framework
-WWW=		https://metacpan.org/release/Rex
+WWW=		https://metacpan.org/release/Rex \
+		https://www.rexify.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -25,7 +26,6 @@ RUN_DEPENDS=	p5-AWS-Signature4>=0:devel/p5-AWS-Signature4 \
 		p5-JSON-MaybeXS>=0:converters/p5-JSON-MaybeXS \
 		p5-Net-OpenSSH>=0:net/p5-Net-OpenSSH \
 		p5-Net-SFTP-Foreign>=0:net/p5-Net-SFTP-Foreign \
-		p5-Parallel-ForkManager>=0:devel/p5-Parallel-ForkManager \
 		p5-Sort-Naturally>=0:textproc/p5-Sort-Naturally \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey \
 		p5-Text-Glob>=0:textproc/p5-Text-Glob \
@@ -39,15 +39,14 @@ TEST_DEPENDS=	p5-String-Escape>=0:textproc/p5-String-Escape \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
 		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Output>=0:devel/p5-Test-Output \
-		p5-Test-UseAllModules>=0.15:devel/p5-Test-UseAllModules
+		p5-Test-UseAllModules>=0.15:devel/p5-Test-UseAllModules \
+		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
-USES=		perl5 shebangfix
+USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
 
 PORTSCOUT=	limit:^[0-9\.]*$$
-
-SHEBANG_FILES=	lib/Rex/Commands/templates/append_if_no_such_line.tpl.pl
 
 .include <bsd.port.mk>

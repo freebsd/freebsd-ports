@@ -56,7 +56,6 @@ bin/rexify
 %%SITE_PERL%%/Rex/Commands/Upload.pm
 %%SITE_PERL%%/Rex/Commands/User.pm
 %%SITE_PERL%%/Rex/Commands/Virtualization.pm
-%%SITE_PERL%%/Rex/Commands/templates/append_if_no_such_line.tpl.pl
 %%SITE_PERL%%/Rex/Config.pm
 %%SITE_PERL%%/Rex/Constants.pm
 %%SITE_PERL%%/Rex/Cron.pm
