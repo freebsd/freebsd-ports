@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python interface to libcurl
-WWW=		http://pycurl.io/
+WWW=		http://pycurl.io/ \
+		https://github.com/pycurl/pycurl
 
 LICENSE=	LGPL21 MIT
 LICENSE_COMB=	dual
