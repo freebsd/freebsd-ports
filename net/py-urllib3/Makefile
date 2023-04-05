@@ -1,5 +1,5 @@
 PORTNAME=	urllib3
-PORTVERSION=	1.26.14
+PORTVERSION=	1.26.15
 PORTEPOCH=	1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI \
@@ -8,7 +8,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	HTTP library with thread-safe connection pooling, file post, and more
-WWW=		https://pypi.org/project/urllib3/
+WWW=		https://github.com/urllib3/urllib3
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
