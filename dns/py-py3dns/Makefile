@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python 3 DNS library
-WWW=		https://pypi.org/project/py3dns/
+WWW=		https://launchpad.net/py3dns
 
 LICENSE=	CNRI
 LICENSE_NAME=	CNRI LICENSE AGREEMENT
