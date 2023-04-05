@@ -54,8 +54,11 @@ DYNAMIC_LIB_DEPENDS=	libffi.so:devel/libffi
 DYNAMIC_VARS=		enable_dynamic=YES
 DYNAMIC_VARS_OFF=	enable_dynamic=NO
 
-GMP_CONFIGURE_WITH=	gmp-includes=${LOCALBASE}/include \
-			gmp-libraries=${LOCALBASE}/lib
+# do not replace this with GMP_CONFIGURE_WITH
+# it adds "--without-gmp-*" when the option is OFF, which results in "no" value
+# to be used as directory name
+GMP_CONFIGURE_ON=	--with-gmp-includes=${LOCALBASE}/include \
+			--with-gmp-libraries=${LOCALBASE}/lib
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 
 PROFILE_VARS=		enable_profile=YES
