@@ -1,0 +1,7 @@
+TIMESTAMP = 1679498480
+SHA256 (DataDog-libddwaf-1.8.2_GH0.tar.gz) = f8f645088f555fcd3be54447513c64cb863c10324e3294712c6651cc6780412b
+SIZE (DataDog-libddwaf-1.8.2_GH0.tar.gz) = 691348
+SHA256 (DataDog-appsec-event-rules-1.3.2_GH0.tar.gz) = c890c46b5ae19f0a58fdec920dc5616b406ef5bac57ae8b1bffac91f05cf7bfd
+SIZE (DataDog-appsec-event-rules-1.3.2_GH0.tar.gz) = 140353
+SHA256 (Tencent-rapidjson-22a62fc_GH0.tar.gz) = 94068810b413fb5e7334a8bab6e8190b6f56497b660110e212a619793fc2d93f
+SIZE (Tencent-rapidjson-22a62fc_GH0.tar.gz) = 1107453
