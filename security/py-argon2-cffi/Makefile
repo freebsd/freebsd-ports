@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Secure Argon2 password hashing algorithm
-WWW=		https://argon2-cffi.readthedocs.io/en/stable/
+WWW=		https://argon2-cffi.readthedocs.io/en/stable/ \
+		https://github.com/hynek/argon2-cffi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
