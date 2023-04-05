@@ -20,6 +20,7 @@ include/gupnp-1.6/libgupnp/gupnp-uuid.h
 include/gupnp-1.6/libgupnp/gupnp-xml-doc.h
 include/gupnp-1.6/libgupnp/gupnp.h
 lib/girepository-1.0/GUPnP-1.6.typelib
+lib/libgupnp-1.6.a
 lib/libgupnp-1.6.so
 lib/libgupnp-1.6.so.0
 lib/libgupnp-1.6.so.0.106.%%PATCH_VERSION%%

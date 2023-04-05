@@ -1,5 +1,6 @@
 PORTNAME=	gupnp
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -21,7 +22,7 @@ LIB_DEPENDS=	libgssdp-1.6.so:net/gssdp \
 USES=		compiler:c11 cpe gnome meson pkgconfig python:run shebangfix tar:xz
 USE_GNOME=	glib20 introspection:build libxml2
 
-MESON_ARGS=	-Dexamples=false -Dgtk_doc=false -Dintrospection=true
+MESON_ARGS=	--default-library=both -Dexamples=false -Dgtk_doc=false -Dintrospection=true
 USE_CSTD=	c11
 USE_LDCONFIG=	yes
 
