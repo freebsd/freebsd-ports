@@ -1,5 +1,5 @@
 PORTNAME=	jenkins_api_client
-PORTVERSION=	1.5.3
+PORTVERSION=	2.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,7 +9,8 @@ WWW=		https://github.com/arangamani/jenkins_api_client
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-json>=1.0:devel/rubygem-json \
+RUN_DEPENDS=	rubygem-addressable>=2.7<3:www/rubygem-addressable \
+		rubygem-json>=1.0:devel/rubygem-json \
 		rubygem-mixlib-shellout>=1.1.0:devel/rubygem-mixlib-shellout \
 		rubygem-nokogiri>=1.6<2:textproc/rubygem-nokogiri \
 		rubygem-socksify>=1.7.0:www/rubygem-socksify \
