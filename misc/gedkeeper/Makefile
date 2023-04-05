@@ -1,6 +1,7 @@
 PORTNAME=	gedkeeper
 PORTVERSION=	2.25.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -21,6 +22,11 @@ GH_SUBDIR=	projects/GKCommunicator:gkc projects/GKGenetix:gkg
 
 _BUILD_TYPE=	Release
 DATADIR=	${PREFIX}/lib/${PORTNAME}
+
+post-patch:
+	@${REINPLACE_CMD} -E '/^(Path|Icon)=/s,/usr,${PREFIX}, ; \
+	    /^Exec=/s,gk_run\.sh,${PORTNAME},' \
+		${WRKSRC}/deploy/gedkeeper.desktop
 
 do-build:
 	cd ${BUILD_WRKSRC} && msbuild projects/GKv2/GEDKeeper2.sln \
@@ -51,3 +57,5 @@ do-test:
 		projects/GKTests/bin/${_BUILD_TYPE}/GKTests.dll
 
 .include <bsd.port.mk>
+
+PATCH_ARGS=	-l
