@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Detect confusable usage of unicode homoglyphs
-WWW=		https://pypi.org/project/confusable_homoglyphs/
+WWW=		https://github.com/vhf/confusable_homoglyphs
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
