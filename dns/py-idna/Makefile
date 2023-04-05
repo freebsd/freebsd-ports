@@ -1,5 +1,6 @@
 PORTNAME=	idna
 PORTVERSION=	3.4
+PORTREVISION=	1
 CATEGORIES=	dns python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +12,10 @@ WWW=		https://github.com/kjd/idna
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=0:devel/py-setuptools_scm@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR}
 
 USES=		python:3.5+
-USE_PYTHON=	autoplist concurrent distutils unittest
+USE_PYTHON=	autoplist concurrent pep517 unittest
 
 NO_ARCH=	yes
 
