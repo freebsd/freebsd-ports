@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Multiscale Geographically Weighted Regression
-WWW=		https://mgwr.readthedocs.io/en/latest/
+WWW=		https://mgwr.readthedocs.io/en/latest/ \
+		https://github.com/pysal/mgwr
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
