@@ -1,6 +1,6 @@
 PORTNAME=	zpu-gcc
 PORTVERSION=	1.0
-PORTREVISION=	2	
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	LOCAL/db
 DISTNAME=	zpu-toolchain-${PORTVERSION}
@@ -12,7 +12,7 @@ WWW=		https://opensource.zylin.com/zpu.htm
 LICENSE=	GPLv2
 
 DEPRECATED=	Broken with latest C compiler and port unused
-EXPIRATION_DATE=	2023-04-0
+EXPIRATION_DATE=	2023-04-30
 BROKEN=		Broken with latest C compilers will not fix
 
 BUILD_DEPENDS=	${LOCALBASE}/zpu/bin/zpu-elf-as:devel/zpu-binutils
