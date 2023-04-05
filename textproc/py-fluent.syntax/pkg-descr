@@ -4,5 +4,3 @@ system.
 The syntax package includes the parser, serializer, and traversal utilities like
 Visitor and Transformer. You're looking for this package if you work on tooling
 for Fluent in Python.
-
-See also: https://github.com/projectfluent/python-fluent
