@@ -196,6 +196,7 @@
     SUBDIR += py-rarfile
     SUBDIR += py-rcssmin
     SUBDIR += py-rjsmin
+    SUBDIR += py-sozipfile
     SUBDIR += py-warctools
     SUBDIR += py-xopen
     SUBDIR += py-zopfli
