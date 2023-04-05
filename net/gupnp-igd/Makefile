@@ -1,6 +1,6 @@
 PORTNAME=	gupnp-igd
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	GNOME
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libgssdp-1.2.so:net/gssdp14 \
 USES=		compiler:c11 gnome meson pkgconfig tar:xz
 USE_GNOME=	glib20 introspection:build
 
-MESON_ARGS=	-Dgtk_doc=false -Dintrospection=true
+MESON_ARGS=	--default-library=both -Dgtk_doc=false -Dintrospection=true
 USE_CSTD=	c11
 USE_LDCONFIG=	yes
 
