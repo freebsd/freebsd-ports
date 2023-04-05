@@ -21,6 +21,7 @@ include/gupnp-1.2/libgupnp/gupnp-white-list.h
 include/gupnp-1.2/libgupnp/gupnp-xml-doc.h
 include/gupnp-1.2/libgupnp/gupnp.h
 lib/girepository-1.0/GUPnP-1.2.typelib
+lib/libgupnp-1.2.a
 lib/libgupnp-1.2.so
 lib/libgupnp-1.2.so.1
 lib/libgupnp-1.2.so.1.104.4
