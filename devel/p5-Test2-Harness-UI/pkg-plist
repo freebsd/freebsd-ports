@@ -1,6 +1,9 @@
 bin/yath-ui-backfill.pl
+bin/yath-ui-dumper.pl
 bin/yath-ui-importer.pl
+bin/yath-ui-loader.pl
 bin/yath-ui-sweeper.pl
+%%SITE_PERL%%/App/Yath/Command/recent.pm
 %%SITE_PERL%%/App/Yath/Command/ui.pm
 %%SITE_PERL%%/App/Yath/Command/upload.pm
 %%SITE_PERL%%/App/Yath/Plugin/YathUIDB.pm
@@ -25,6 +28,8 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Lookup.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Project.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Query.pm
+%%SITE_PERL%%/Test2/Harness/UI/Controller/ReRun.pm
+%%SITE_PERL%%/Test2/Harness/UI/Controller/Recent.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Resources.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Run.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/RunField.pm
@@ -33,7 +38,9 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Controller/Upload.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/User.pm
 %%SITE_PERL%%/Test2/Harness/UI/Controller/View.pm
+%%SITE_PERL%%/Test2/Harness/UI/Dumper.pm
 %%SITE_PERL%%/Test2/Harness/UI/Importer.pm
+%%SITE_PERL%%/Test2/Harness/UI/Loader.pm
 %%SITE_PERL%%/Test2/Harness/UI/Queries.pm
 %%SITE_PERL%%/Test2/Harness/UI/Request.pm
 %%SITE_PERL%%/Test2/Harness/UI/Response.pm
@@ -172,8 +179,10 @@ bin/yath-ui-sweeper.pl
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/Sweep.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/TestFile.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/Result/User.pm
+%%SITE_PERL%%/Test2/Harness/UI/Schema/ResultBase.pm
 %%SITE_PERL%%/Test2/Harness/UI/Schema/ResultSet.pm
 %%SITE_PERL%%/Test2/Harness/UI/Sweeper.pm
+%%SITE_PERL%%/Test2/Harness/UI/UUID.pm
 %%SITE_PERL%%/Test2/Harness/UI/Util.pm
 %%SITE_PERL%%/Test2/Harness/UI/Util/DateTimeFormat.pm
 %%SITE_PERL%%/Test2/Harness/UI/Util/Errors.pm
@@ -269,6 +278,8 @@ bin/yath-ui-sweeper.pl
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Lookup.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Project.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Query.3.gz
+%%PERL5_MAN3%%/Test2::Harness::UI::Controller::ReRun.3.gz
+%%PERL5_MAN3%%/Test2::Harness::UI::Controller::Recent.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Resources.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::Run.3.gz
 %%PERL5_MAN3%%/Test2::Harness::UI::Controller::RunField.3.gz
