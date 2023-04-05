@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Portable, lightweight MessagePack (de)serializer
-WWW=		https://pypi.org/project/u-msgpack-python/
+WWW=		https://github.com/vsergeev/u-msgpack-python
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
