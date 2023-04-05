@@ -99,6 +99,7 @@
     SUBDIR += courierpasswd
     SUBDIR += courieruserinfo
     SUBDIR += cowrie
+    SUBDIR += cpfx
     SUBDIR += cracklib
     SUBDIR += crackpkcs12
     SUBDIR += create-cert
