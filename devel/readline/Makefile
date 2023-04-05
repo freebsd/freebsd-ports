@@ -26,13 +26,13 @@ CPE_VENDOR=	gnu
 CPE_VERSION=	${PORTVERSION:R}
 
 # https://ftp.gnu.org/gnu/readline/readline-8.2-patches/
-#PATCHES=	1
+PATCHES=	1
 .if defined(PATCHES)
 CPE_UPDATE=	${PATCHLEVEL}
 PATCHLEVEL=	${PATCHES:O:[-1]}
-#.for patch in ${PATCHES}
-#PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
-#.endfor
+.for patch in ${PATCHES}
+PATCHFILES+=	${PORTNAME}${PORTVERSION:R:S|.||}-${patch:S|^|00|:S|.*(...)$|\1|}
+.endfor
 .else
 PATCHLEVEL=	0
 .endif
