@@ -1,12 +1,13 @@
 PORTNAME=	hypothesis
-PORTVERSION=	6.68.2
+PORTVERSION=	6.70.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library for property based testing
-WWW=		https://hypothesis.works/
+WWW=		https://hypothesis.works/ \
+		https://github.com/HypothesisWorks/hypothesis/tree/master/hypothesis-python
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
