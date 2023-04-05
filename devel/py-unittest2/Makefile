@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	New features in unittest backported to Python 2
-WWW=		https://pypi.org/project/unittest2/
+WWW=		https://github.com/garbas/unittest2
 
 LICENSE=	BSD3CLAUSE
 
