@@ -1,5 +1,5 @@
 PORTNAME=	Syntax-Keyword-Dynamically
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	p5-Future-AsyncAwait>=0.60:devel/p5-Future-AsyncAwait \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XS-Parse-Keyword>=0.13:devel/p5-XS-Parse-Keyword
+TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
 
 USES=		perl5
 USE_PERL5=	modbuild
