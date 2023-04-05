@@ -1,13 +1,13 @@
 PORTNAME=	uvicorn
-PORTVERSION=	0.20.0
-PORTREVISION=	2
+PORTVERSION=	0.21.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Lightning-fast ASGI server
-WWW=		https://www.uvicorn.org/
+WWW=		https://www.uvicorn.org/ \
+		https://github.com/encode/uvicorn
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md

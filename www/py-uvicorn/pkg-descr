@@ -8,5 +8,3 @@ asyncio frameworks.
 
 Uvicorn currently supports HTTP/1.1 and WebSockets. Support for HTTP/2 is
 planned.
-
-See also: https://github.com/encode/uvicorn
