@@ -1,5 +1,5 @@
 PORTNAME=	benchmark-ips
-PORTVERSION=	2.11.0
+PORTVERSION=	2.12.0
 CATEGORIES=	benchmarks rubygems
 MASTER_SITES=	RG
 
