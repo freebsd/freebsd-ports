@@ -1,5 +1,5 @@
 PORTNAME=	tinymce
-PORTVERSION=	6.3.2
+PORTVERSION=	6.4.0
 CATEGORIES=	www
 MASTER_SITES=	http://download.tiny.cloud/tinymce/community/ \
 		LOCAL/sunpoet
@@ -7,7 +7,8 @@ DISTNAME=	tinymce_${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Open source JavaScript HTML WYSIWYG editor for web sites
-WWW=		https://www.tiny.cloud/
+WWW=		https://www.tiny.cloud/ \
+		https://github.com/tinymce/tinymce
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/js/tinymce/license.txt
