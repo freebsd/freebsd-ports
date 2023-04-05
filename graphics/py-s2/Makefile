@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python binding of S2 Geometry Library
-WWW=		https://s2geometry.io/
+WWW=		https://s2geometry.io/ \
+		https://github.com/google/s2geometry
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/../../LICENSE
