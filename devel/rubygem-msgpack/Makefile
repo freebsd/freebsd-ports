@@ -1,11 +1,12 @@
 PORTNAME=	msgpack
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Gems for MessagePack
-WWW=		https://msgpack.org/
+WWW=		https://msgpack.org/ \
+		https://github.com/msgpack/msgpack-ruby
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
