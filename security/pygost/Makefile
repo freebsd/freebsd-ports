@@ -14,7 +14,7 @@ WWW=		http://www.pygost.cypherpunks.ru/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyderasn>=9.3:devel/py-pyderasn@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyderasn>=9.3:devel/pyderasn@${PY_FLAVOR}
 
 USES=		tar:zst python
 USE_PYTHON=	autoplist concurrent distutils optsuffix
