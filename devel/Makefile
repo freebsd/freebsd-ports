@@ -5758,6 +5758,7 @@
     SUBDIR += pycount
     SUBDIR += pydbus-common
     SUBDIR += pydeps
+    SUBDIR += pyderasn
     SUBDIR += pyenv
     SUBDIR += pygobject3-common
     SUBDIR += pylint

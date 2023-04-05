@@ -1,0 +1,29 @@
+PyDERASN -- strict and fast ASN.1 DER/CER/BER library for Python
+
+* BER/CER/DER decoding, strict DER validation, DER/CER encoding
+* Basic ASN.1 data types (X.208): BOOLEAN, INTEGER, BIT STRING, OCTET
+  STRING, NULL, OBJECT IDENTIFIER, ENUMERATED, all strings, UTCTime,
+  GeneralizedTime, CHOICE, ANY, SEQUENCE (OF), SET (OF)
+* Size constraints checking
+* Working with sequences as high level data objects with ability to
+  (un)marshall them
+* Aimed to be complaint with X.690-201508
+* Streaming decoding and encoding capabilities, allowing working with
+  very small memory footprint
+* Python 3.5+ compatibility
+* Automatic decoding of DEFINED BY fields
+* Ability to know exact decoded objects offset and lengths in the binary
+* Ability to allow BER-encoded data with knowing if any of specified
+  field has either DER or BER encoding (or possibly indefinite-length
+  encoding)
+* Ability to use mmap-ed files, memoryviews, iterators, 2-pass DER
+  encoding mode and CER encoder dealing with the writer, giving ability
+  to create huge ASN.1 encoded files with very little memory footprint
+* Ability to decode files in event generation mode, without the need to
+  keep all the data and decoded structures in the memory
+* __slots__, copy.copy() friendliness
+* Workability with pickle
+* Cython compatibility
+* Descriptive errors, with decode paths
+* Pretty printer and command-line decoder, that could conveniently
+  replace utilities like either dumpasn1 or openssl asn1parse
