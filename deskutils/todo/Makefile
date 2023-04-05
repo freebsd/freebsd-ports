@@ -6,7 +6,8 @@ DISTNAME=	todo.txt_cli-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Todo.txt Manager
-WWW=		http://todotxt.org/
+WWW=		http://todotxt.org/ \
+		https://github.com/todotxt/todo.txt-cli
 
 LICENSE=	GPLv3
 
