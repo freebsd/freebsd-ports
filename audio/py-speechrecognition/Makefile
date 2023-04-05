@@ -1,5 +1,5 @@
 PORTNAME=	speechrecognition
-PORTVERSION=	3.9.0
+PORTVERSION=	3.10.0
 MASTER_SITES=	PYPI
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	flac:audio/flac \
 		${PYTHON_PKGNAMEPREFIX}pyaudio>=0.2.11:audio/py-pyaudio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.26.0:www/py-requests@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

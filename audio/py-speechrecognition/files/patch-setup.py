@@ -1,10 +1,9 @@
---- setup.py.orig	2017-10-14 15:52:28 UTC
+--- setup.py.orig	2023-03-13 12:15:10 UTC
 +++ setup.py
-@@ -14,34 +14,11 @@ if sys.version_info < (2, 6):
-     print("THIS MODULE REQUIRES PYTHON 2.6, 2.7, OR 3.3+. YOU ARE CURRENTLY USING PYTHON {0}".format(sys.version))
-     sys.exit(1)
+@@ -10,33 +10,11 @@ from distutils import log
  
--
+ import speech_recognition
+ 
 -FILES_TO_MARK_EXECUTABLE = ["flac-linux-x86", "flac-linux-x86_64", "flac-mac", "flac-win32.exe"]
 -
 -
