@@ -10,7 +10,8 @@ EXTRACT_ONLY=	# empty
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Google Noto Fonts family (Emoji)
-WWW=		https://www.google.com/get/noto/
+WWW=		https://fonts.google.com/noto \
+		https://github.com/googlefonts/noto-emoji
 
 LICENSE=	APACHE20
 
