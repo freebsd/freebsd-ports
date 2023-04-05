@@ -1,23 +1,3 @@
-diff --git bin/fixqt4headers.pl bin/fixqt4headers.pl
-index b572f469dc..777dff88d1 100755
---- bin/fixqt4headers.pl
-+++ bin/fixqt4headers.pl
-@@ -1,4 +1,4 @@
--#!/usr/bin/env perl
-+#!/usr/local64/bin/perl
- #############################################################################
- ##
- ## Copyright (C) 2016 The Qt Company Ltd.
-diff --git bin/syncqt.pl bin/syncqt.pl
-index 7ede34cf1d..955b97a506 100755
---- bin/syncqt.pl
-+++ bin/syncqt.pl
-@@ -1,4 +1,4 @@
--#!/usr/bin/env perl
-+#!/usr/local64/bin/perl
- #############################################################################
- ##
- ## Copyright (C) 2016 The Qt Company Ltd.
 diff --git config_help.txt config_help.txt
 index bce61577e7..1604f4271c 100644
 --- config_help.txt
@@ -179,16 +159,6 @@ index 8eb76f60f1..dcecd35bd0 100644
  
  MAKEFILE_GENERATOR      = UNIX
  CONFIG                 += incremental
-diff --git mkspecs/features/data/unix/findclasslist.pl mkspecs/features/data/unix/findclasslist.pl
-index b74b8b6a58..1c1933d9d0 100644
---- mkspecs/features/data/unix/findclasslist.pl
-+++ mkspecs/features/data/unix/findclasslist.pl
-@@ -1,4 +1,4 @@
--#!/usr/bin/env perl
-+#!/usr/local64/bin/perl
- #############################################################################
- ##
- ## Copyright (C) 2016 Intel Corporation.
 diff --git mkspecs/features/qt_functions.prf mkspecs/features/qt_functions.prf
 index 7777e615bd..b57005dee5 100644
 --- mkspecs/features/qt_functions.prf
@@ -349,16 +319,6 @@ index 023b6c1eff..3b903ebf27 100644
          }
  
          if ( Insert_Y_Turn( RAS_VARS bottom )  ||
-diff --git src/3rdparty/freetype/src/tools/afblue.pl src/3rdparty/freetype/src/tools/afblue.pl
-index 937d4ecf6e..f641f01123 100644
---- src/3rdparty/freetype/src/tools/afblue.pl
-+++ src/3rdparty/freetype/src/tools/afblue.pl
-@@ -1,4 +1,4 @@
--#! /usr/bin/perl -w
-+#! /usr/local64/bin/perl -w
- # -*- Perl -*-
- #
- # afblue.pl
 diff --git src/3rdparty/harfbuzz-ng/src/hb-blob.cc src/3rdparty/harfbuzz-ng/src/hb-blob.cc
 index 59c8333637..7a498c0f8a 100644
 --- src/3rdparty/harfbuzz-ng/src/hb-blob.cc
@@ -1511,16 +1471,6 @@ index 24657818c5..e32042cfe2 100644
              PrivateShared *shared;
          } data;
          uint type : 30;
-diff --git src/corelib/mimetypes/mime/generate.pl src/corelib/mimetypes/mime/generate.pl
-index 4f2d7d5f2b..88b07e792d 100644
---- src/corelib/mimetypes/mime/generate.pl
-+++ src/corelib/mimetypes/mime/generate.pl
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl
-+#!/usr/local64/bin/perl
- #############################################################################
- ##
- ## Copyright (C) 2019 Intel Corporation.
 diff --git src/corelib/mimetypes/mime/packages/freedesktop.org.xml src/corelib/mimetypes/mime/packages/freedesktop.org.xml
 index e73929c9bb..c4867356fc 100644
 --- src/corelib/mimetypes/mime/packages/freedesktop.org.xml
@@ -4227,33 +4177,3 @@ index a69cef6115..b4f8b5c175 100644
          }
  
          switch (ratio) {
-diff --git util/includemocs/includemocs.pl util/includemocs/includemocs.pl
-index ce04d961d8..2ab1f9098c 100755
---- util/includemocs/includemocs.pl
-+++ util/includemocs/includemocs.pl
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl
-+#!/usr/local64/bin/perl
- #############################################################################
- ##
- ## Copyright (C) 2017 Intel Corporation.
-diff --git util/unicode/x11/makeencodings util/unicode/x11/makeencodings
-index 841fc404ab..64944a93ad 100755
---- util/unicode/x11/makeencodings
-+++ util/unicode/x11/makeencodings
-@@ -1,4 +1,4 @@
--#!/usr/bin/perl
-+#!/usr/local64/bin/perl
- 
- use strict;
- 
-diff --git util/x86simdgen/generate.pl util/x86simdgen/generate.pl
-index 5df2f4d526..be1a2c49b9 100755
---- util/x86simdgen/generate.pl
-+++ util/x86simdgen/generate.pl
-@@ -1,4 +1,4 @@
--#!/usr/bin/env perl
-+#!/usr/local64/bin/perl
- #############################################################################
- ##
- ## Copyright (C) 2018 Intel Corporation.
