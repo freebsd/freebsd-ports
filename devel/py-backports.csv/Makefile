@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Backport of Python 3 csv module
-WWW=		https://pypi.org/project/backports.csv/
+WWW=		https://github.com/ryanhiebert/backports.csv
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
