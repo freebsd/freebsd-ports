@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Metrics library with rate, distribution and timing information
-WWW=		https://pypi.org/project/yunomi/
+WWW=		https://github.com/dreid/yunomi
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
