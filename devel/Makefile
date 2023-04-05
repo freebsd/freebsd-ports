@@ -4620,6 +4620,7 @@
     SUBDIR += py-freenas.utils
     SUBDIR += py-freezegun
     SUBDIR += py-frictionless
+    SUBDIR += py-frictionless-ckan-mapper
     SUBDIR += py-frozendict
     SUBDIR += py-frozenlist
     SUBDIR += py-fs

@@ -1,0 +1,6 @@
+Frictionless CKAN Mapper is a library for mapping CKAN metadata from/to
+Frictionless metadata.
+
+The library has zero dependencies (not even on Data Package libs). You can use
+it directly or use it for inspiration. Detailed outline of the algorithm is in
+the docs or you can read the code.
