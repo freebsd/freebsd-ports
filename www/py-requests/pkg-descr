@@ -18,5 +18,3 @@ Beloved Features:
 - Connection Timeouts
 - Chunked Requests
 - .netrc Support
-
-See also: https://github.com/psf/requests

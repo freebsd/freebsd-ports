@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python HTTP for Humans
-WWW=		https://docs.python-requests.org/en/latest/
+WWW=		https://docs.python-requests.org/en/latest/ \
+		https://github.com/psf/requests
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
