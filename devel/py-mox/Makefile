@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Mock object framework for Python
-WWW=		https://pypi.org/project/mox/
+WWW=		https://github.com/glasser/pymox
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
