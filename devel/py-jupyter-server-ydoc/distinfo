@@ -1,3 +1,3 @@
-TIMESTAMP = 1677770935
-SHA256 (jupyter_server_ydoc-0.6.1.tar.gz) = ab10864708c81fa41ab9f2ed3626b54ff6926eaf14545d1d439714978dad6e9f
-SIZE (jupyter_server_ydoc-0.6.1.tar.gz) = 25122
+TIMESTAMP = 1679498690
+SHA256 (jupyter_server_ydoc-0.8.0.tar.gz) = a6fe125091792d16c962cc3720c950c2b87fcc8c3ecf0c54c84e9a20b814526c
+SIZE (jupyter_server_ydoc-0.8.0.tar.gz) = 25769
