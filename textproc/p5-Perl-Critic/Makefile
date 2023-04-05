@@ -1,5 +1,5 @@
 PORTNAME=	Perl-Critic
-PORTVERSION=	1.148
+PORTVERSION=	1.150
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-B-Keywords>=1.05:devel/p5-B-Keywords \
+RUN_DEPENDS=	p5-B-Keywords>=1.23:devel/p5-B-Keywords \
 		p5-Config-Tiny>=2:devel/p5-Config-Tiny \
 		p5-Exception-Class>=1.23:devel/p5-Exception-Class \
 		p5-File-Which>=0:sysutils/p5-File-Which \
@@ -22,7 +22,7 @@ RUN_DEPENDS=	p5-B-Keywords>=1.05:devel/p5-B-Keywords \
 		p5-PPI>=1.265:textproc/p5-PPI \
 		p5-PPIx-QuoteLike>=0:textproc/p5-PPIx-QuoteLike \
 		p5-PPIx-Regexp>=0.068:textproc/p5-PPIx-Regexp \
-		p5-PPIx-Utilities>=1.001:textproc/p5-PPIx-Utilities \
+		p5-PPIx-Utils>=0.003:textproc/p5-PPIx-Utils \
 		p5-Perl-Tidy>=0:devel/p5-Perl-Tidy \
 		p5-Pod-Spell>=1:textproc/p5-Pod-Spell \
 		p5-Readonly>=2:devel/p5-Readonly \
