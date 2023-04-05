@@ -22,7 +22,7 @@ LIB_DEPENDS=	libcapnp.so:devel/capnproto \
 		libuhdm.so:cad/uhdm
 
 USES=		cmake:testing compiler:c++17-lang localbase:ldflags tcl:86,build
-USE_JAVA=	17
+USE_JAVA=	17 # Java selection fails in cmake when Java 11 is also installed, see https://gitlab.kitware.com/cmake/cmake/-/issues/24674
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/surelog
 
 USE_GITHUB=	yes
