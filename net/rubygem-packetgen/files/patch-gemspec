@@ -1,0 +1,11 @@
+--- packetgen.gemspec.orig	2023-03-23 11:32:52 UTC
++++ packetgen.gemspec
+@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<interfacez>.freeze, ["~> 1.0"])
+-  s.add_runtime_dependency(%q<pcaprub>.freeze, ["~> 0.12.0"])
++  s.add_runtime_dependency(%q<pcaprub>.freeze, [">= 0.12.0"])
+   s.add_runtime_dependency(%q<rasn1>.freeze, ["~> 0.8", ">= 0.8.0"])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 13.0"])
+   s.add_development_dependency(%q<rspec>.freeze, ["~> 3.7"])
