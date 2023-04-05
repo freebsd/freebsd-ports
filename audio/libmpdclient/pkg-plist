@@ -41,6 +41,7 @@ include/mpd/status.h
 include/mpd/sticker.h
 include/mpd/tag.h
 include/mpd/version.h
+lib/libmpdclient.a
 lib/libmpdclient.so
 lib/libmpdclient.so.2
 lib/libmpdclient.so.2.20
