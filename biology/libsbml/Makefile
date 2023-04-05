@@ -7,7 +7,9 @@ DISTNAME=	libSBML-${PORTVERSION}-core-src
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	API Library for Working with SBML File
-WWW=		https://sbml.org/software/libsbml/
+WWW=		https://sbml.org/software/libsbml/ \
+		https://synonym.caltech.edu/ \
+		https://github.com/sbmlteam/libsbml
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
