@@ -1,10 +1,11 @@
 PORTNAME=	tiledb
-PORTVERSION=	2.14.1
+PORTVERSION=	2.14.2
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	TileDB array data management
-WWW=		https://www.tiledb.io/
+WWW=		https://www.tiledb.io/ \
+		https://github.com/TileDB-Inc/TileDB
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
