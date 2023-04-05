@@ -19,8 +19,7 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 
 USES=		compiler:c++11-lang meson pkgconfig tar:xz
 
-MESON_FALSE=	debug
-MESON_TRUE=	graphite
+MESON_ARGS=	--default-library=both -Ddebug=false -Dgraphite=true
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
