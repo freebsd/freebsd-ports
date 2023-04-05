@@ -1394,6 +1394,7 @@
     SUBDIR += py-mdurl
     SUBDIR += py-mike
     SUBDIR += py-misaka
+    SUBDIR += py-mistletoe
     SUBDIR += py-mistune
     SUBDIR += py-mistune0
     SUBDIR += py-mkdocs
