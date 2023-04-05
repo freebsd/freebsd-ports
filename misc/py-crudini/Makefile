@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility for manipulating ini files
-WWW=		https://www.pixelbeat.org/programs/crudini/
+WWW=		https://www.pixelbeat.org/programs/crudini/ \
+		https://github.com/pixelb/crudini
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING

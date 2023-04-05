@@ -1,4 +1,2 @@
 crudini is a utility to simplify reading and updating ini files from shell
 scripts, so named as it provides CRUD functionality.
-
-See also: https://github.com/pixelb/crudini
