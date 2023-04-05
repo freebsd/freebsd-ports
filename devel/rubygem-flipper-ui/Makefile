@@ -1,5 +1,5 @@
 PORTNAME=	flipper-ui
-PORTVERSION=	0.26.0
+PORTVERSION=	0.28.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/jnunemaker/flipper
 LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-erubi>=1.0.0<2.0.0:www/rubygem-erubi \
-		rubygem-flipper>=${PORTVERSION}<0.27:devel/rubygem-flipper \
+		rubygem-flipper>=${PORTVERSION}<0.29:devel/rubygem-flipper \
 		rubygem-rack22>=1.4,3<3,3:www/rubygem-rack22 \
 		rubygem-rack-protection>=1.5.3<4.0.0_99:www/rubygem-rack-protection \
 		rubygem-sanitize>=0<7:textproc/rubygem-sanitize
