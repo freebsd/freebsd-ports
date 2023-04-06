@@ -1,24 +1,24 @@
 PORTNAME=	cone
-PORTVERSION=	1.7
+DISTVERSION=	1.9
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
 #MASTER_SITES=	http://www.courier-mta.org/beta/${PORTNAME}/ \
 #		http://www.lerctr.org/~ler/
 # This is for release versions, leave it in please:
-MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/courier/${PORTNAME}/${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 WWW=		https://www.courier-mta.org/cone/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING.GPL
 
-BUILD_DEPENDS=	gpgv:security/gnupg1
+BUILD_DEPENDS=	gnupg>0:security/gnupg
 LIB_DEPENDS=	libaspell.so:textproc/aspell \
 		libcourier-unicode.so:devel/courier-unicode \
-		libidn.so:dns/libidn
-RUN_DEPENDS=	gpgv:security/gnupg1
+		libidn2.so:dns/libidn2
+RUN_DEPENDS=	gnupg>0:security/gnupg
 
 USES=		compiler:c++11-lang fam gettext gmake gnome iconv ldap:24 \
 		localbase:ldflags ncurses perl5 pkgconfig shebangfix ssl \
