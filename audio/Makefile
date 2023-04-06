@@ -476,7 +476,7 @@
     SUBDIR += moodbar
     SUBDIR += moony-lv2
     SUBDIR += mous
-    SUBDIR += mousai-devel
+    SUBDIR += mousai
     SUBDIR += mp-player
     SUBDIR += mp3-archive-tools
     SUBDIR += mp3_check
