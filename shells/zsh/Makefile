@@ -1,6 +1,6 @@
 PORTNAME=	zsh
 DISTVERSION=	5.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	shells
 MASTER_SITES=	https://www.zsh.org/pub/ \
 		SF \
@@ -39,7 +39,8 @@ CONFIGURE_ARGS+=--disable-site-fndir \
 		--enable-additional-fpath=${DATADIR}/site-functions
 
 CONFIGURE_ENV+=	zsh_cv_sys_path_dev_fd=no \
-		ac_cv_header_sys_capability_h=no
+		ac_cv_header_sys_capability_h=no \
+		zsh_cv_path_utmpx=/var/run/utx.active
 
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-DBOOL_DEFINED
@@ -76,7 +77,7 @@ DOCS_DISTFILES=	${DISTNAME}-doc${EXTRACT_SUFX}:doc
 PORTDOCS=	*
 PORTEXAMPLES=	zlogin zshenv zshrc
 
-ZSH_VER=	${PORTVERSION}
+ZSH_VER=	${DISTVERSION}
 PLIST_SUB+=	ZSH_VER="${ZSH_VER}"
 SUB_FILES=	pkg-message
 
