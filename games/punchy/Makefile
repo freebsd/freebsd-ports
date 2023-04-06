@@ -32,7 +32,7 @@ GN_ARGS+=	use_custom_libcxx=false
 post-patch:
 # Search assets under PREFIX instead of current directory
 	@${REINPLACE_CMD} 's,assets",../${DATADIR_REL}/&,' \
-		${WRKSRC}/cargo-crates/bevy_asset-*/src/lib.rs
+		${WRKSRC_crate_bevy_asset}/src/lib.rs
 
 post-install:
 	(cd ${WRKSRC} && ${COPYTREE_SHARE} "assets" ${STAGEDIR}${DATADIR})
