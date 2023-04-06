@@ -32,8 +32,8 @@ GLIB_SCHEMAS=	com.belmoussaoui.Authenticator.gschema.xml
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,"llvm-config,"${LLVM_CONFIG},' \
-		${WRKSRC}/cargo-crates/clang-sys-*/build/common.rs \
-		${WRKSRC}/cargo-crates/clang-sys-*/src/support.rs
+		${WRKSRC_crate_clang-sys}/build/common.rs \
+		${WRKSRC_crate_clang-sys}/src/support.rs
 	@${REINPLACE_CMD} -e '/gstreamer.*bad/d' \
 		${WRKSRC}/meson.build
 # Make each cargo subcommand very verbose
