@@ -1,6 +1,6 @@
 PORTNAME=	nut
 PORTVERSION=	2.8.0
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
 
@@ -125,6 +125,9 @@ post-patch:
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nut
+.if ${PORT_OPTIONS:MUSB}
+	@${REINPLACE_CMD} -e 's/device-name\*/cdev/g' ${WRKSRC}/scripts/devd/nut-usb.conf
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${STATEDIR}
