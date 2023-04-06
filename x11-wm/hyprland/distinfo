@@ -5,5 +5,5 @@ SHA256 (hyprwm-hyprland-protocols-301733a_GH0.tar.gz) = 3b3b4e948525f1d823313390
 SIZE (hyprwm-hyprland-protocols-301733a_GH0.tar.gz) = 4852
 SHA256 (canihavesomecoffee-udis86-1.7.2-186-g5336633_GH0.tar.gz) = 69aff959179ff6247b375b92e797221dbd8e078eabbf1366280b0532617e7fb8
 SIZE (canihavesomecoffee-udis86-1.7.2-186-g5336633_GH0.tar.gz) = 116938
-SHA256 (llvm-llvm-project-llvmorg-16.0.0_GH0.tar.gz) = cba969a0782a3a398658d439f047b5e548ea04724f4fbfdbe17cfc946f4cd3ed
-SIZE (llvm-llvm-project-llvmorg-16.0.0_GH0.tar.gz) = 179126284
+SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271
+SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803
