@@ -23,6 +23,6 @@ post-patch:
 # Respect PREFIX for system config
 	@${REINPLACE_CMD} -e 's,/usr/share,${DATADIR:H},' \
 		-e 's,/etc,${PREFIX}&,' \
-		${WRKSRC}/cargo-crates/xdg-*/src/lib.rs
+		${WRKSRC_crate_xdg}/src/lib.rs
 
 .include <bsd.port.mk>
