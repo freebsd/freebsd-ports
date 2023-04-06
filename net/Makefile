@@ -127,6 +127,7 @@
     SUBDIR += dhcprelya
     SUBDIR += dictd
     SUBDIR += dimes
+    SUBDIR += downzemall
     SUBDIR += dpdk
     SUBDIR += dpdk-20.11
     SUBDIR += dpinger
