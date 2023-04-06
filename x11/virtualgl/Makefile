@@ -1,9 +1,10 @@
 PORTNAME=	virtualgl
-DISTVERSION=	3.0
-PORTREVISION=	1
+DISTVERSION=	3.1
 CATEGORIES=	x11 graphics
+MASTER_SITES=	SF/${PORTNAME}/${DISTVERSION}
+DISTNAME=	VirtualGL-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Redirects commands from an OpenGL app to another X server
 WWW=		https://www.virtualgl.org
 
@@ -13,21 +14,15 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk \
 		libturbojpeg.so:graphics/libjpeg-turbo \
 		libxcb-keysyms.so:x11/xcb-util-keysyms
 
-USES=		cmake compiler:c++11-lang gl xorg
+USES=		cmake compiler:c++11-lang gl localbase xorg
 USE_GL=		egl gl glu
 USE_XORG=	x11 xcb xext xtst
 USE_LDCONFIG=	${PREFIX}/VirtualGL/lib
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	VirtualGL
 
 CMAKE_ARGS=	-DTJPEG_INCLUDE_DIR=${LOCALBASE}/include \
 		-DTJPEG_LIBRARY=${LOCALBASE}/lib/libturbojpeg.so \
 		-DVGL_FAKEXCB=on -DVGL_SYSTEMFLTK=on \
 		-DCMAKE_INSTALL_DOCDIR=${DOCSDIR}
-CFLAGS+=	-I${LOCALBASE}/include
-CXXFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CMAKE_INSTALL_PREFIX=	${LOCALBASE}/VirtualGL
 
 DOCSDIR=	${LOCALBASE}/VirtualGL/doc
@@ -50,11 +45,11 @@ XVIDEO_USE=	XORG=xv
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "armv7" || ${ARCH} == "i386" || ${ARCH} == "powerpc"
-PLIST_SUB+=	I386=""
-PLIST_SUB+=	AMD64="@comment "
+PLIST_SUB+=	I386="" \
+		AMD64="@comment "
 .else
-PLIST_SUB+=	I386="@comment "
-PLIST_SUB+=	AMD64=""
+PLIST_SUB+=	I386="@comment " \
+		AMD64=""
 .endif
 
 .include <bsd.port.post.mk>
