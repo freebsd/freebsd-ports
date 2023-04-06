@@ -5,7 +5,7 @@ PORTEPOCH=	1
 CATEGORIES+=	irc
 MASTER_SITES=	SF/${PORTNAME}/ircii-pana/${PORTNAME}-${DISTVERSION}
 
-MAINTAINER=	freebsd@bitchx.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Feature-rich scriptable IRC client
 WWW=		http://www.bitchx.org/
 
