@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-control
 DISTVERSIONPREFIX=	control-
-DISTVERSION=	3.5.1
+DISTVERSION=	3.5.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
