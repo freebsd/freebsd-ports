@@ -29,6 +29,6 @@ PLIST_FILES=	bin/${PORTNAME}
 post-patch:
 # lang/python3 cannot be used as a dependency
 	@${REINPLACE_CMD} -e 's/"python3"/"${PYTHON_CMD:T}"/' \
-		${WRKSRC}/cargo-crates/xcb-*/build.rs
+		${WRKSRC_crate_xcb}/build.rs
 
 .include <bsd.port.mk>
