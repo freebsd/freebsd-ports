@@ -1,5 +1,6 @@
 PORTNAME=	par2cmdline
 PORTVERSION=	0.8.1
+PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	archivers
 
@@ -16,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Parchive
 
 PORTDOCS=	README
-CONFLICTS=	par2cmdline-tbb
+CONFLICTS=	par2cmdline-turbo
 
 PLIST_FILES=	bin/par2 bin/par2create bin/par2repair bin/par2verify man/man1/par2.1.gz
 
