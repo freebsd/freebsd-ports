@@ -384,6 +384,7 @@
     SUBDIR += swayrbar
     SUBDIR += swaysettings
     SUBDIR += sxhkd
+    SUBDIR += sxmo-wayout
     SUBDIR += sxpc
     SUBDIR += tabbed
     SUBDIR += taiga
@@ -412,7 +413,6 @@
     SUBDIR += waybar
     SUBDIR += wayland-logout
     SUBDIR += waylock
-    SUBDIR += wayout
     SUBDIR += wbar
     SUBDIR += wcm
     SUBDIR += wdisplays
