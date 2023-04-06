@@ -1,5 +1,6 @@
 PORTNAME=	nut
 PORTVERSION=	${NUT_COMMIT_DATE}
+PORTREVISION=	1
 CATEGORIES=	sysutils
 PKGNAMESUFFIX=	-devel
 # MASTER_SITES=	http://www.networkupstools.org/source/${PORTVERSION:R}/
@@ -147,7 +148,9 @@ pre-configure:
 
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/libexec/nut
+.if ${PORT_OPTIONS:MUSB}
 	@${REINPLACE_CMD} -e 's/device-name\*/cdev/g' ${WRKSRC}/scripts/devd/nut-usb.conf
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${STATEDIR}
