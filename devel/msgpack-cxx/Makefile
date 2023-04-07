@@ -1,6 +1,7 @@
 PORTNAME=	msgpack
 PORTVERSION=	6.0.0
 DISTVERSIONPREFIX=	cpp-
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-cxx
 
@@ -24,6 +25,8 @@ post-install:
 .for tgt in config-version config targets
 	${LN} -sf ../msgpack-cxx/msgpack-cxx-${tgt}.cmake \
 		${STAGEDIR}${PREFIX}/lib/cmake/msgpackc-cxx/msgpackc-cxx-${tgt}.cmake
+	${LN} -sf ../msgpack-cxx/msgpack-cxx-${tgt}.cmake \
+		${STAGEDIR}${PREFIX}/lib/cmake/msgpackc-cxx/msgpack-cxx-${tgt}.cmake
 .endfor
 
 .include <bsd.port.mk>
