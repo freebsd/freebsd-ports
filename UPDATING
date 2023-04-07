@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230407:
+  AFFECTS: users of devel/sonarqube-community
+  AUTHOR: netchild@FreeBSD.org
+
+  You need to make sure to update missing and changed values in
+     PREFIX/libexec/sonarqube/conf/sonar.properties
+  from
+     PREFIX/libexec/sonarqube/conf/sonar.properties.sample
+
 20230318:
   AFFECTS: users of security/libressl
   AUTHOR: brnrd@FreeBSD.org
