@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 library for integration of C++/QML with HTML/js clients
 
-USES=		compiler:c++11-lang qmake:norecursive qt-dist:5,webchannel
+USES=		compiler:c++11-lang perl5 qmake:norecursive qt-dist:5,webchannel
+USE_PERL5=	build
 USE_QT=		core declarative \
 		buildtools:build declarative-test:build testlib:build
 
