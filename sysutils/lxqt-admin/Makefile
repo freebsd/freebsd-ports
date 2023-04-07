@@ -10,7 +10,8 @@ WWW=		https://lxqt-project.org
 LICENSE=	LGPL21+
 
 USES=	cmake compiler:c++11-lang gnome kde:5 localbase \
-	lxqt pkgconfig tar:xz qt:5 xorg
+	lxqt perl5 pkgconfig tar:xz qt:5 xorg
+USE_PERL5=	build
 USE_QT=	buildtools:build qmake:build core dbus gui svg \
 	widgets x11extras xml
 USE_KDE=	windowsystem
