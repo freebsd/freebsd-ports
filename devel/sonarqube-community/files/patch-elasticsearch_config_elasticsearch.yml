@@ -1,0 +1,12 @@
+--- elasticsearch/config/elasticsearch.yml.orig	2022-11-17 18:55:38 UTC
++++ elasticsearch/config/elasticsearch.yml
+@@ -80,6 +82,9 @@
+ # Enable an unauthenticated TCP readiness endpoint on localhost
+ #
+ #readiness.port: 9399
++
++# ml is not supported on FreeBSD
++xpack.ml.enabled: false
+ #
+ # ---------------------------------- Various -----------------------------------
+ #
