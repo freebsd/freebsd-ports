@@ -1,5 +1,7 @@
 PORTNAME=	msgpack
-PORTVERSION=	1.0.5
+PORTVERSION=	1.0.5 # WARNING: archivers/py-borgbackup pins the full version
+# so if upgrading msgpack, archivers/py-borgbackup will break. We need to
+# coordinate updates.
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +14,7 @@ WWW=		https://msgpack.org/ \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 post-install:

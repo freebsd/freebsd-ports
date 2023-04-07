@@ -1,5 +1,5 @@
 PORTNAME=	borgbackup
-DISTVERSION=	1.2.3
+DISTVERSION=	1.2.4
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +12,13 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=1.7:devel/py-setuptools_scm@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}msgpack==1.0.5:devel/py-msgpack@${PY_FLAVOR}
+		# note that borgbackup pins the msgpack version range per patchlevel version!
 LIB_DEPENDS=	liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
 		libxxhash.so:devel/xxhash
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=19.0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR}
-MAKE_ENV=	BORG_OPENSSL_PREFIX=${OPENSSLBASE}
 TEST_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}tox>3.2:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAVOR} \
@@ -27,6 +27,7 @@ TEST_DEPENDS=	${RUN_DEPENDS} \
 		fakeroot:security/fakeroot
 USES=		pkgconfig python:3.8+ ssl
 USE_PYTHON=	autoplist distutils
+MAKE_ENV=	BORG_OPENSSL_PREFIX=${OPENSSLBASE}
 
 OPTIONS_DEFINE=		FUSE
 OPTIONS_DEFAULT=	FUSE
