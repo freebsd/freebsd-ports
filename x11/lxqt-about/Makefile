@@ -11,7 +11,8 @@ WWW=		https://lxqt-project.org
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang kde:5 lxqt pkgconfig tar:xz qt:5 gnome xorg
+USES=		cmake compiler:c++11-lang kde:5 lxqt perl5 pkgconfig tar:xz qt:5 gnome xorg
+USE_PERL5=	build
 USE_QT=		buildtools:build qmake:build core dbus gui svg widgets \
 		x11extras xml
 USE_XORG=	x11
