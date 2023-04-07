@@ -1,5 +1,6 @@
 PORTNAME=	Net-Curl
 PORTVERSION=	0.52
+PORTREVISION=	1
 CATEGORIES=	www ftp perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -9,8 +10,6 @@ COMMENT=	Perl interface for libcurl
 WWW=		https://search.cpan.org/dist/Net-Curl/
 
 LICENSE=	MIT
-
-BROKEN=		fails to build
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=1.16:devel/p5-ExtUtils-PkgConfig
