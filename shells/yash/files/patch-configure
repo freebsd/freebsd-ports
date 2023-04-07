@@ -1,0 +1,21 @@
+https://osdn.net/projects/yash/ticket/47773
+
+--- configure.orig	2023-04-07 19:40:18 UTC
++++ configure
+@@ -746,6 +746,7 @@ END
+ 	checking "for ${i%:*}"
+ 	cat >"${tempsrc}" <<END
+ ${confighdefs}
++#include <stdio.h>
+ #if HAVE_CURSES_H
+ #include <curses.h>
+ #elif HAVE_NCURSES_H
+@@ -756,8 +757,6 @@ ${confighdefs}
+ #include <ncursesw/ncurses.h>
+ #endif
+ #include <${i%:*}>
+-int putchar(int);
+-
+ int main(void) {
+ /* Undeclared identifiers are a syntax error in C99, but many compilers assume
+  * implicit declarations when they appear in a function call. We force compilers

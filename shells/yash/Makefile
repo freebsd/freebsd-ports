@@ -1,7 +1,7 @@
 PORTNAME=	yash
-DISTVERSION=	2.52
+DISTVERSION=	2.54
 CATEGORIES=	shells
-MASTER_SITES=	OSDN/yash
+MASTER_SITES=	https://osdn.net/projects/yash/downloads/78345/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	POSIX-compliant command line shell
@@ -9,6 +9,9 @@ WWW=		https://yash.osdn.jp/index.html.en
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+# skip interposed HTML page
+FETCH_ARGS=	--user-agent=curl/7.68.0
 
 USES=		tar:xz
 
@@ -19,9 +22,7 @@ CPPFLAGS+=	-std=c99
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
-NLS_USES=	gettext-runtime
+NLS_USES=	gettext-runtime localbase:ldflags
 NLS_CONFIGURE_ENABLE=	nls
-NLS_CPPFLAGS=	-I${LOCALBASE}/include
-NLS_LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
