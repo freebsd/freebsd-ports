@@ -1,6 +1,6 @@
---- src/config.c.orig	2020-02-02 23:51:05.000000000 -0800
-+++ src/config.c	2021-02-02 19:41:09.071495000 -0800
-@@ -9,8 +9,8 @@
+--- src/config.c.orig	2021-10-07 13:58:27 UTC
++++ src/config.c
+@@ -11,8 +11,8 @@
  #include <unistd.h>
  
  #ifndef DEBUG
@@ -11,7 +11,7 @@
  #else
  	#define INI_LANG "../res/lang/%s.ini"
  	#define INI_CONFIG "../res/config.ini"
-@@ -183,6 +183,7 @@
+@@ -185,6 +185,7 @@ void config_load(const char *cfg_path)
  		{"shutdown_cmd", &config.shutdown_cmd, config_handle_str},
  		{"term_reset_cmd", &config.term_reset_cmd, config_handle_str},
  		{"tty", &config.tty, config_handle_u8},
@@ -19,7 +19,7 @@
  		{"wayland_cmd", &config.wayland_cmd, config_handle_str},
  		{"wayland_specifier", &config.wayland_specifier, config_handle_bool},
  		{"waylandsessions", &config.waylandsessions, config_handle_str},
-@@ -192,7 +193,7 @@
+@@ -194,7 +195,7 @@ void config_load(const char *cfg_path)
  		{"xsessions", &config.xsessions, config_handle_str},
  	};
  
@@ -28,7 +28,7 @@
  	struct configator_param* map[] =
  	{
  		map_no_section,
-@@ -289,6 +290,7 @@
+@@ -291,6 +292,7 @@ void config_defaults()
  	config.shutdown_cmd = strdup("/sbin/shutdown -a now");
  	config.term_reset_cmd = strdup("/usr/bin/tput reset");
  	config.tty = 2;

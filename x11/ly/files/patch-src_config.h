@@ -1,10 +1,10 @@
---- src/config.h.orig	2020-02-03 07:51:05 UTC
+--- src/config.h.orig	2021-10-07 13:58:27 UTC
 +++ src/config.h
-@@ -88,6 +88,7 @@ struct config
+@@ -89,6 +89,7 @@ struct config
  	char* shutdown_cmd;
  	char* term_reset_cmd;
- 	u8 tty;
-+	u8 vt;
+ 	uint8_t tty;
++	uint8_t vt;
  	char* wayland_cmd;
  	bool wayland_specifier;
  	char* waylandsessions;

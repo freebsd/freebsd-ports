@@ -1,12 +1,11 @@
 PORTNAME=	ly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.2
-PORTREVISION=	2
+DISTVERSION=	0.5.3
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	TUI (ncurses-like) display manager for X and Wayland
-WWW=		https://github.com/cylgom/ly
+WWW=		https://github.com/fairyglade/ly
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/license.md
@@ -15,13 +14,11 @@ BUILD_DEPENDS=	ginstall:sysutils/coreutils
 
 USES=		gmake localbase xorg
 USE_GITHUB=	yes
-GH_ACCOUNT=	cylgom
-GH_TUPLE=	cylgom:argoat:36c41f09ecc2a10c9acf35e4194e08b6fa10cf45:argoat/sub/argoat \
-		cylgom:testoasterror:71620b47872b5535f87c908883576d73153a6911:testoasterror/sub/argoat/sub/testoasterror \
-		cylgom:configator:8227b3a835bf4c7e50a57e4ad6aff620ba0dc349:configator/sub/configator \
-		cylgom:ctypes:5dd979d3644ab0c85ca14e72b61e6d3d238d432b:ctypes/sub/ctypes \
-		cylgom:dragonfail:6b40d1f8b7f6dda9746e688666af623dfbcceb94:dragonfail/sub/dragonfail \
-		cylgom:termbox_next:2312da153e44face7bb45aa2798ec284289c17ca:termbox_next/sub/termbox_next
+GH_ACCOUNT=	fairyglade
+GH_TUPLE=	nullgemm:argoat:36c41f09ecc2a10c9acf35e4194e08b6fa10cf45:argoat/sub/argoat \
+		nullgemm:configator:8227b3a835bf4c7e50a57e4ad6aff620ba0dc349:configator/sub/configator \
+		nullgemm:dragonfail:6b40d1f8b7f6dda9746e688666af623dfbcceb94:dragonfail/sub/dragonfail \
+		nullgemm:termbox_next:2312da153e44face7bb45aa2798ec284289c17ca:termbox_next/sub/termbox_next
 USE_XORG=	xcb
 
 MAKEFILE=	makefile
