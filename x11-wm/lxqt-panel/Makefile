@@ -18,7 +18,8 @@ LIB_DEPENDS=	libdbusmenu-qt5.so:devel/libdbusmenu-qt@qt5 \
 RUN_DEPENDS=	lxmenu-data>=0.1.2:x11/lxmenu-data
 
 USES=	cmake compiler:c++14-lang gettext-runtime kde:5 qt:5 gnome \
-	localbase:ldflags lxqt pkgconfig tar:xz xorg
+	localbase:ldflags lxqt perl5 pkgconfig tar:xz xorg
+USE_PERL5=	build
 USE_QT=	buildtools:build qmake:build core dbus gui svg widgets \
 	x11extras xml concurrent
 USE_KDE=	windowsystem
