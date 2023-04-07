@@ -1,3 +1,111 @@
+  <vuln vid="348ee234-d541-11ed-ad86-a134a566f1e6">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go119</name>
+	<range><lt>1.19.8</lt></range>
+      </package>
+      <package>
+	<name>go120</name>
+	<range><lt>1.20.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://go.dev/issue/59180">
+	  <p>go/parser: infinite loop in parsing</p>
+	  <p>Calling any of the Parse functions on Go source code
+	    which contains //line directives with very large line
+	    numbers can cause an infinite loop due to integer
+	    overflow.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/59234">
+	  <p>html/template: backticks not treated as string delimiters</p>
+	  <p>Templates did not properly consider backticks (`) as
+	    Javascript string delimiters, and as such did not escape
+	    them as expected. Backticks are used, since ES6, for JS
+	    template literals. If a template contained a Go template
+	    action within a Javascript template literal, the contents
+	    of the action could be used to terminate the literal,
+	    injecting arbitrary Javascript code into the Go template.
+	    As ES6 template literals are rather complex, and
+	    themselves can do string interpolation, we've decided
+	    to simply disallow Go template actions from being used
+	    inside of them (e.g. "var a = {{.}}"), since there is no
+	    obviously safe way to allow this behavior. This takes the
+	    same approach as github.com/google/safehtml.
+	    Template.Parse will now return an Error when it encounters
+	    templates like this, with a currently unexported ErrorCode
+	    with a value of 12. This ErrorCode will be exported in the
+	    next major release.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/58975">
+	  <p>net/http, net/textproto: denial of service from excessive
+	    memory allocation</p>
+	  <p>HTTP and MIME header parsing could allocate large
+	    amounts of memory, even when parsing small inputs.
+	    Certain unusual patterns of input data could cause the
+	    common function used to parse HTTP and MIME headers to
+	    allocate substantially more memory than required to hold
+	    the parsed headers. An attacker can exploit this
+	    behavior to cause an HTTP server to allocate large
+	    amounts of memory from a small request, potentially
+	    leading to memory exhaustion and a denial of service.
+	    Header parsing now correctly allocates only the memory
+	    required to hold parsed headers.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/59153">
+	  <p>net/http, net/textproto, mime/multipart: denial of service
+	    from excessive resource consumption</p>
+	  <p>Multipart form parsing can consume large amounts of CPU
+	    and memory when processing form inputs containing very
+	    large numbers of parts. This stems from several causes:
+	    mime/multipart.Reader.ReadForm limits the total memory a
+	    parsed multipart form can consume. ReadForm could
+	    undercount the amount of memory consumed, leading it to
+	    accept larger inputs than intended. Limiting total
+	    memory does not account for increased pressure on the
+	    garbage collector from large numbers of small
+	    allocations in forms with many parts. ReadForm could
+	    allocate a large number of short-lived buffers, further
+	    increasing pressure on the garbage collector. The
+	    combination of these factors can permit an attacker to
+	    cause an program that parses multipart forms to consume
+	    large amounts of CPU and memory, potentially resulting
+	    in a denial of service. This affects programs that use
+	    mime/multipart.Reader.ReadForm, as well as form parsing
+	    in the net/http package with the Request methods
+	    FormFile, FormValue, ParseMultipartForm, and
+	    PostFormValue. ReadForm now does a better job of
+	    estimating the memory consumption of parsed forms, and
+	    performs many fewer short-lived allocations. In
+	    addition, mime/multipart.Reader now imposes the
+	    following limits on the size of parsed forms: Forms
+	    parsed with ReadForm may contain no more than 1000
+	    parts. This limit may be adjusted with the environment
+	    variable GODEBUG=multipartmaxparts=. Form parts parsed
+	    with NextPart and NextRawPart may contain no more than
+	    10,000 header fields. In addition, forms parsed with
+	    ReadForm may contain no more than 10,000 header fields
+	    across all parts. This limit may be adjusted with the
+	    environment variable GODEBUG=multipartmaxheaders=.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-24537</cvename>
+      <cvename>CVE-2023-24538</cvename>
+      <cvename>CVE-2023-24534</cvename>
+      <cvename>CVE-2023-24536</cvename>
+      <url>https://groups.google.com/g/golang-dev/c/P-sOFU28bj0/m/QE_cqf22AgAJ</url>
+    </references>
+    <dates>
+      <discovery>2023-04-04</discovery>
+      <entry>2023-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e86b8e4d-d551-11ed-8d1e-005056a311d1">
     <topic>samba -- multiple vulnerabilities</topic>
     <affects>
