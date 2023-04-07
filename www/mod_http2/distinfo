@@ -1,3 +1,3 @@
-TIMESTAMP = 1664115493
-SHA256 (mod_http2-2.0.7.tar.gz) = f46ad9b3fc91a82bee3d226fcd3667dd4da6dad996f6a97e2272b0e1f9e2534f
-SIZE (mod_http2-2.0.7.tar.gz) = 1011387
+TIMESTAMP = 1680854704
+SHA256 (mod_http2-2.0.13.tar.gz) = b7420555912dd33f8f2a1608503a05c7a31fb87aab7960ab6e0f0e92122bed7d
+SIZE (mod_http2-2.0.13.tar.gz) = 1018786
