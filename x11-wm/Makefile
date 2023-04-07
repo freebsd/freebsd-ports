@@ -122,6 +122,7 @@
     SUBDIR += wmname
     SUBDIR += wmx
     SUBDIR += xcompmgr
+    SUBDIR += xdgmenumaker
     SUBDIR += xfce4
     SUBDIR += xfce4-desktop
     SUBDIR += xfce4-panel
