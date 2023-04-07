@@ -9,7 +9,8 @@ WWW=		https://qt-project.org
 
 BROKEN_armv6=		fails to install: pkg-static: Unable to access file DayOfWeekRow.qmlc: No such file or directory
 
-USES=		compiler:c++11-lang qmake:norecursive qt-dist:5
+USES=		compiler:c++11-lang perl5 qmake:norecursive qt-dist:5
+USE_PERL5=	build
 USE_QT=		core declarative gui widgets \
 		buildtools:build
 QT_DIST=	${PORTNAME}
