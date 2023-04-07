@@ -1,6 +1,6 @@
 PORTNAME=	kwin
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -59,8 +59,9 @@ SHEBANG_FILES=	kconf_update/*.py \
 # A (hopefully) temporary workaround for
 # https://gitlab.freedesktop.org/gstreamer/gstreamer/-/issues/2026
 post-patch:
-	${REINPLACE_CMD} -E \
-		's|https://files.kde.org/plasma/kwin/effect-videos/([a-z_]+)\.ogv|https://arrowd.name/kwin-effect-videos/\1\.webm|' \
-		${WRKSRC}/src/effects/*/metadata.json
+	${FIND} ${WRKSRC}/src/effects -name metadata.json -exec \
+		${REINPLACE_CMD} -E \
+			's|https://files.kde.org/plasma/kwin/effect-videos/([a-z_]+)\.ogv|https://arrowd.name/kwin-effect-videos/\1\.webm|' \
+			{} \;
 
 .include <bsd.port.mk>
