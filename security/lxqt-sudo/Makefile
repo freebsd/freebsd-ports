@@ -12,7 +12,8 @@ LICENSE=	LGPL21+
 RUN_DEPENDS=	sudo:security/sudo
 
 USES=	cmake compiler:c++14-lang gettext kde:5 lxqt qt:5 \
-	pkgconfig tar:xz gnome xorg
+	perl5 pkgconfig tar:xz gnome xorg
+USE_PERL5=	build
 USE_QT=	buildtools:build qmake:build core dbus gui svg widgets \
 	x11extras xml
 
