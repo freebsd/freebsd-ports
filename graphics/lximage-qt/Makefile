@@ -13,9 +13,10 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 		libmenu-cache.so:x11/menu-cache
 
 USES=	cmake compiler:c++14-lang desktop-file-utils gettext-runtime \
-	gnome localbase:ldflags lxqt pkgconfig qt:5 gnome tar:xz xorg
+	gnome localbase:ldflags lxqt perl5 pkgconfig qt:5 gnome tar:xz xorg
 
 USE_GNOME=	glib20
+USE_PERL5=	build
 USE_QT=		buildtools:build qmake:build core dbus gui linguisttools \
 		network printsupport svg widgets x11extras
 USE_LXQT=	buildtools libfmqt
