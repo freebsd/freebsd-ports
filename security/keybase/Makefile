@@ -1,6 +1,6 @@
 PORTNAME=	keybase
 PORTVERSION=	6.0.4
-PORTREVISION=	2
+PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/go/:gomod
 #MASTER_SITES=	https://raw.githubusercontent.com/keybase/client/v${PORTVERSION}/go/:gomod
