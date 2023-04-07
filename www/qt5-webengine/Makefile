@@ -84,10 +84,11 @@ SNDIO_VARS_OFF=		QMAKE_CONFIGURE_ARGS+=-no-sndio
 # whether webenginewidgets is available, which fails when qmake processes all
 # .pro files at once.
 USES=		gl gnome gperf jpeg minizip ninja:build nodejs:build,lts \
-		pkgconfig python:2.7,build qmake:norecursive,outsource \
+		perl5 pkgconfig python:2.7,build qmake:norecursive,outsource \
 		qt-dist:5,webengine shebangfix xorg
 USE_GL=		gl
 USE_GNOME=	glib20 libxml2 libxslt
+USE_PERL5=	build
 USE_QT=		core declarative gui location network printsupport \
 		webchannel widgets \
 		buildtools:build designer:build qmake:build
