@@ -13,7 +13,8 @@ BUILD_DEPENDS=	xdg-user-dirs-update:devel/xdg-user-dirs \
 		qtxdg-mat:sysutils/qtxdg-tools
 
 USES=	cmake compiler:c++14-lang kde:5 lxqt qt:5 \
-	pkgconfig tar:xz xorg gnome
+	perl5 pkgconfig tar:xz xorg gnome
+USE_PERL5=	build
 USE_QT=	buildtools:build qmake:build core dbus gui linguisttools \
 	svg widgets x11extras xml
 USE_KDE=	windowsystem
