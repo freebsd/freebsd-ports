@@ -2,10 +2,9 @@ PORTNAME=	mousai
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.0
 CATEGORIES=	audio
-PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Identify songs in seconds (development snapshot)
+COMMENT=	Identify songs in seconds
 WWW=		https://github.com/SeaDve/Mousai
 
 LICENSE=	GPLv3+
