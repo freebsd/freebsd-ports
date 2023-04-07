@@ -1,3 +1,84 @@
+  <vuln vid="faf7c1d0-f5bb-47b4-a6a8-ef57317b9766">
+    <topic>ffmpeg -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>ffmpeg</name>
+	<range><lt>5.0.3,1</lt></range>
+      </package>
+      <package>
+	<name>ffmpeg4</name>
+	<!-- no known fixed version -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>avidemux</name>
+	<!-- avidemux-2.8.1 has ffmpeg-4.4.2 -->
+	<range><le>2.9</le></range>
+      </package>
+      <package>
+	<name>emby-server</name>
+	<name>emby-server-devel</name>
+	<!-- emby-server-4.7.11.0 has ffmpeg 5.0 fork -->
+	<!-- emby-server-devel-4.8.0.29 has old ffmpeg unlike upstream -->
+	<range><ge>0</ge></range>
+      </package>
+      <package>
+	<name>handbrake</name>
+	<!-- handbrake-1.5.1 has ffmpeg-4.4.1 -->
+	<range><lt>1.6.0</lt></range>
+      </package>
+      <package>
+	<name>mythtv</name>
+	<name>mythtv-frontend</name>
+	<!-- mythtv-32.0.60 has ffmpeg-4.4.1 fork -->
+	<range><le>33.0,1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>NVD reports:</p>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2022-3109">
+	  <p>An issue was discovered in the FFmpeg package, where
+	  vp3_decode_frame in libavcodec/vp3.c lacks check of the
+	  return value of av_malloc() and will cause a null pointer
+	  dereference, impacting availability.</p>
+	</blockquote>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2022-3341">
+	  <p>A null pointer dereference issue was discovered in
+	  'FFmpeg' in decode_main_header() function of
+	  libavformat/nutdec.c file. The flaw occurs because the
+	  function lacks check of the return value of
+	  avformat_new_stream() and triggers the null pointer
+	  dereference error, causing an application to crash.</p>
+	</blockquote>
+	<blockquote cite="https://nvd.nist.gov/vuln/detail/CVE-2022-3964">
+	  <p>A vulnerability classified as problematic has been found
+	  in ffmpeg. This affects an unknown part of the file
+	  libavcodec/rpzaenc.c of the component QuickTime RPZA Video
+	  Encoder. The manipulation of the argument y_size leads to
+	  out-of-bounds read. It is possible to initiate the attack
+	  remotely. The name of the patch is
+	  92f9b28ed84a77138105475beba16c146bdaf984. It is recommended
+	  to apply a patch to fix this issue. The associated
+	  identifier of this vulnerability is VDB-213543.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-3109</cvename>
+      <cvename>CVE-2022-3341</cvename>
+      <cvename>CVE-2022-3964</cvename>
+      <url>https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/2cdddcd6ec90c7a248ffe792d85faa4d89eab9f7</url>
+      <url>https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/481e81be1271ac9a0124ee615700390c2371bd89</url>
+      <url>https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/1eb002596e3761d88de4aeea3158692b82fb6307</url>
+      <url>https://ffmpeg.org/security.html</url>
+    </references>
+    <dates>
+      <discovery>2022-11-12</discovery>
+      <entry>2023-03-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="466ba8bd-d033-11ed-addf-080027eda32c">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
