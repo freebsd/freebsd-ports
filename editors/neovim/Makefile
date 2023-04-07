@@ -1,6 +1,6 @@
 PORTNAME=	neovim
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.3
+DISTVERSION=	0.9.0
 CATEGORIES=	editors
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libluv.so:devel/luv \
 		libuv.so:devel/libuv \
 		libvterm.so:devel/libvterm
 
-USES=		cmake cpe iconv lua:52,build luajit pathfix pkgconfig
+USES=		cmake cpe gettext iconv lua:52,build luajit pathfix pkgconfig
 USE_GITHUB=	yes
 GH_TUPLE=	libmpack:libmpack:1.0.5:libmpack \
 		libmpack:libmpack-lua:1.0.9:libmpack_lua
@@ -39,7 +39,6 @@ OPTIONS_SUB=	yes
 PYNVIM_DESC=	Enable support for plugins written in python
 
 NLS_CMAKE_BOOL=		ENABLE_LIBINTL
-NLS_USES=		gettext
 PYNVIM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pynvim>=0.3.0:editors/py-pynvim@${PY_FLAVOR}
 PYNVIM_USES=		python:run
 
