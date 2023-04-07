@@ -14,9 +14,10 @@ LIB_DEPENDS=	libfm-qt.so:x11/libfm-qt \
 				libmenu-cache.so:x11/menu-cache \
 				libexif.so:graphics/libexif
 RUN_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
-USES=	cmake compiler:c++14-lang desktop-file-utils lxqt pkgconfig tar:xz gnome qt:5 xorg
+USES=	cmake compiler:c++14-lang desktop-file-utils lxqt perl5 pkgconfig tar:xz gnome qt:5 xorg
 
 USE_GNOME=	glib20
+USE_PERL5=	build
 USE_QT=		buildtools:build qmake:build core dbus gui linguisttools \
 		network printsupport svg widgets x11extras
 USE_LXQT=	buildtools lxqt
