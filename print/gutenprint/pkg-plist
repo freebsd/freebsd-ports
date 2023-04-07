@@ -7558,7 +7558,7 @@ share/locale/fi/gutenprint_fi.po
 share/locale/fr/gutenprint_fr.po
 %%NLS%%share/locale/gl/LC_MESSAGES/gutenprint.mo
 share/locale/gl/gutenprint_gl.po
-share/locale/hr/LC_MESSAGES/gutenprint.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/gutenprint.mo
 share/locale/hr/gutenprint_hr.po
 %%NLS%%share/locale/hu/LC_MESSAGES/gutenprint.mo
 share/locale/hu/gutenprint_hu.po
