@@ -16,7 +16,9 @@ LIB_DEPENDS=	libobt.so:x11-wm/openbox \
 		libharfbuzz.so:print/harfbuzz
 
 USES=		cmake compiler:c++11-lang gettext-runtime localbase qt:5 \
-		gnome lxqt pkgconfig tar:xz xorg
+		gnome lxqt perl5 pkgconfig tar:xz xorg
+
+USE_PERL5=	build
 
 USE_QT=		buildtools:build qmake:build core gui linguisttools \
 		widgets x11extras
