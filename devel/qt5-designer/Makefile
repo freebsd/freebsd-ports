@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 graphical user interface designer
 
-USES=		compiler:c++11-lang qmake qt-dist:5,tools
+USES=		compiler:c++11-lang perl5 qmake qt-dist:5,tools
+USE_PERL5=	build
 USE_QT=		assistant:run core declarative gui network printsupport uiplugin \
 		widgets xml buildtools:build
 
