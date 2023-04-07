@@ -1,3 +1,57 @@
+  <vuln vid="e86b8e4d-d551-11ed-8d1e-005056a311d1">
+    <topic>samba -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba416</name>
+	<range><lt>4.16.10</lt></range>
+      </package>
+      <package>
+	<name>samba417</name>
+	<range><lt>4.17.7</lt></range>
+      </package>
+      <package>
+	<name>samba418</name>
+	<range><lt>4.18.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="https://www.samba.org/samba/security/CVE-2023-0225.html">
+	  <p>An incomplete access check on dnsHostName allows
+	  authenticated but otherwise unprivileged users to
+	  delete this attribute from any object in the directory.</p>
+	</blockquote>
+	<blockquote cite="https://www.samba.org/samba/security/CVE-2023-0922.html">
+	  <p>The Samba AD DC administration tool, when operating
+	  against a remote LDAP server, will by default send
+	  new or reset passwords over a signed-only connection. </p>
+	</blockquote>
+	<blockquote cite="https://www.samba.org/samba/security/CVE-2023-0614.html">
+	  <p>The fix in 4.6.16, 4.7.9, 4.8.4 and 4.9.7 for
+	  CVE-2018-10919 Confidential attribute disclosure via
+	  LDAP filters was insufficient and an attacker may be
+	  able to obtain confidential BitLocker recovery keys
+	  from a Samba AD DC.</p>
+          <p>Installations with such secrets in their Samba AD
+	  should assume they have been obtained and need replacing.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-0225</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2023-0225.html</url>
+      <cvename>CVE-2023-0922</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2023-0922.html</url>
+      <cvename>CVE-2023-0614</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2023-0614.html</url>
+    </references>
+    <dates>
+      <discovery>2023-03-29</discovery>
+      <entry>2023-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="faf7c1d0-f5bb-47b4-a6a8-ef57317b9766">
     <topic>ffmpeg -- multiple vulnerabilities</topic>
     <affects>
