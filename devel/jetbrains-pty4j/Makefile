@@ -1,5 +1,5 @@
 PORTNAME=	pty4j
-PORTVERSION=	0.12.10
+PORTVERSION=	0.12.11
 CATEGORIES=	devel java
 PKGNAMEPREFIX=	jetbrains-
 DIST_SUBDIR=	jetbrains
@@ -16,7 +16,7 @@ USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	JetBrains
 GH_PROJECT=	pty4j
-GH_TAGNAME=	aa7f15307744d5d33a44bd72b42513327c879fd3
+GH_TAGNAME=	7488f35f79bcd9801ce5ff68afc98a3f43bb97fa
 
 .include <bsd.port.options.mk>
 
