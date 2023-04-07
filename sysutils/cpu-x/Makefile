@@ -2,7 +2,6 @@ PORTNAME=	cpu-x
 PORTVERSION=	4.5.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-PKGNAMESUFFIX=	-${FLAVOR}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Gathers information about CPU, motherboard, and more
@@ -10,7 +9,6 @@ WWW=		https://thetumultuousunicornofdarkness.github.io/CPU-X/
 
 LICENSE=	GPLv3+
 
-BUILD_DEPENDS=	nasm:devel/nasm
 LIB_DEPENDS=	libcpuid.so:sysutils/libcpuid \
 		libpci.so:devel/libpci \
 		libstatgrab.so:devel/libstatgrab
@@ -34,6 +32,7 @@ FLAVORS=	gtk3 ncurses
 CONFLICTS_INSTALL=	${FLAVORS:N${FLAVOR}:S/^/${PORTNAME}-/}
 
 .if ${FLAVOR:U} == ncurses
+PKGNAMESUFFIX=	-tuionly
 USES+=		ncurses
 CMAKE_ARGS+=	-DWITH_GTK:BOOL=OFF
 PLIST_SUB+=	X11="@comment "
@@ -44,8 +43,16 @@ GLIB_SCHEMAS=	org.cpu-x.gschema.xml
 PLIST_SUB+=	X11=""
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == i386 || ${ARCH} == amd64
+BUILD_DEPENDS+=	nasm:devel/nasm
+.else
+CMAKE_OFF+=	WITH_BANDWIDTH
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
