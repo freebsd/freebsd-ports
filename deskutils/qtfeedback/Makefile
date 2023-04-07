@@ -8,10 +8,11 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt Tactile Feedback Add-on Module
 WWW=		https://github.com/qt/qtfeedback
 
-USES=		gl qmake qt:5
+USES=		gl perl5 qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	qtproject
 USE_GL=		gl
+USE_PERL5=	build
 USE_QT=		core declarative gui multimedia network \
 		buildtools:build qmake:build testlib:build
 
