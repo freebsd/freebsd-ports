@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	qt5-
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt 5 documentation browser
 
-USES=		compiler:c++11-lang qmake qt-dist:5,tools
+USES=		compiler:c++11-lang perl5 qmake qt-dist:5,tools
+USE_PERL5=	build
 USE_QT=		core gui help network printsupport sql widgets \
 		buildtools:build sql-sqlite3:run
 QT_BINARIES=	yes
