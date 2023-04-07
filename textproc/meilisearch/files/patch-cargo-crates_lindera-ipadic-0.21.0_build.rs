@@ -1,6 +1,6 @@
---- cargo-crates/lindera-ipadic-0.17.0/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/lindera-ipadic-0.17.0/build.rs
-@@ -22,7 +22,7 @@ fn main() -> Result<(), Box<dyn Error>> {
+--- cargo-crates/lindera-ipadic-0.21.0/build.rs.orig	2006-07-24 01:21:28 UTC
++++ cargo-crates/lindera-ipadic-0.21.0/build.rs
+@@ -26,7 +26,7 @@ fn main() -> Result<(), Box<dyn Error>> {
      let build_dir = env::var_os("OUT_DIR").unwrap(); // ex) target/debug/build/<pkg>/out
  
      // MeCab IPADIC directory
@@ -9,7 +9,7 @@
  
      if std::env::var("DOCS_RS").is_ok() {
          // Create directory for dummy input directory for build docs
-@@ -47,24 +47,6 @@ fn main() -> Result<(), Box<dyn Error>> {
+@@ -51,24 +51,6 @@ fn main() -> Result<(), Box<dyn Error>> {
          File::create(input_dir.join("unk.def"))?;
          let mut dummy_matrix_def = File::create(input_dir.join("matrix.def"))?;
          dummy_matrix_def.write_all(b"0 1 0\n")?;
@@ -24,7 +24,7 @@
 -        let source_dict_file_path = resources_dir_path.join(dict_file_name);
 -
 -        // Decompress a tar.gz file
--        let mut tar_gz = File::open(&source_dict_file_path)?;
+-        let mut tar_gz = File::open(source_dict_file_path)?;
 -        let mut buffer = Vec::new();
 -        tar_gz.read_to_end(&mut buffer)?;
 -        let cursor = Cursor::new(buffer);

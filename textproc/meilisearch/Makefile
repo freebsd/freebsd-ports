@@ -1,12 +1,27 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.2
-PORTREVISION=	1
+DISTVERSION=	1.1.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
-		SF/mecab/mecab-ipadic/2.7.0-20070801/:mecab_ipadic
+		SF/mecab/mecab-ipadic/2.7.0-20070801/:mecab_ipadic \
+		https://milli-benchmarks.fra1.digitaloceanspaces.com/datasets/:benchmark
 DISTFILES=	${MINIDASHBOARDFILE}:mini_dashboard_assets \
-		mecab-ipadic-2.7.0-20070801.tar.gz:mecab_ipadic
+		mecab-ipadic-2.7.0-20070801.tar.gz:mecab_ipadic \
+		smol-songs.csv.gz:benchmark \
+		smol-songs-1_2.csv.gz:benchmark \
+		smol-songs-3_4.csv.gz:benchmark \
+		smol-songs-4_4.csv.gz:benchmark \
+		smol-wiki-articles.csv.gz:benchmark \
+		smol-wiki-articles-1_2.csv.gz:benchmark \
+		smol-wiki-articles-3_4.csv.gz:benchmark \
+		smol-wiki-articles-4_4.csv.gz:benchmark \
+		movies.json.gz:benchmark \
+		movies-1_2.json.gz:benchmark \
+		movies-3_4.json.gz:benchmark \
+		movies-4_4.json.gz:benchmark \
+		nested_movies.json.gz:benchmark \
+		smol-all-countries.jsonl.gz:benchmark
+EXTRACT_ONLY=	${DISTFILES:N*\:benchmark:C/:.*//}
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Powerful, fast, and an easy to use search engine
@@ -22,15 +37,17 @@ USE_GITHUB=	yes
 # Following is generated with following:
 # curl -s https://api.github.com/repos/meilisearch/meilisearch/commits/$(make -V GH_TAGNAME) | \
 # jq -r '.sha, .commit.committer.date'
-REPO_COMMIT_SHA=	572608c121d960cdf48c2c289a6dfd3dc834873a
-REPO_COMMIT_TS=		2023-02-23T13:52:56Z
+REPO_COMMIT_SHA=	950f73b8bbc85c4e5c3485d7054ff697cb0c0052
+REPO_COMMIT_TS=		2023-03-30T08:31:29Z
+
 GH_TUPLE=	meilisearch:lmdb:6a01c0a:lmdb/../lmdb-rs-501aa34a1ab7f092e3ff54a6c22ff6c55931a2d8/lmdb-sys/lmdb
-DASHBOARD_VERSION=	0.2.5
+DASHBOARD_VERSION=	0.2.7
 MINIDASHBOARDFILE=	meilisearch-mini-dashboard-build-${DASHBOARD_VERSION}.zip
 CARGO_INSTALL_PATH=	meilisearch
+CARGO_ENV=	MILLI_BENCH_DATASETS_PATH=${WRKDIR}
 CARGO_CRATES=	actix-codec-0.5.0 \
 		actix-cors-0.6.4 \
-		actix-http-3.2.2 \
+		actix-http-3.3.0 \
 		actix-macros-0.2.3 \
 		actix-router-0.5.1 \
 		actix-rt-2.7.0 \
@@ -38,7 +55,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		actix-service-2.0.2 \
 		actix-tls-3.0.3 \
 		actix-utils-3.0.1 \
-		actix-web-4.2.1 \
+		actix-web-4.3.0 \
 		actix-web-codegen-4.1.0 \
 		addr2line-0.19.0 \
 		adler-1.0.2 \
@@ -47,6 +64,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		aho-corasick-0.7.20 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
+		anes-0.1.6 \
 		anyhow-1.0.68 \
 		assert-json-diff-2.0.2 \
 		async-stream-0.3.3 \
@@ -62,13 +80,13 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		big_s-1.0.2 \
 		bimap-0.6.2 \
 		bincode-1.3.3 \
+		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.3 \
 		brotli-3.3.4 \
 		brotli-decompressor-2.3.2 \
 		bstr-0.2.17 \
 		bstr-1.1.0 \
-		build_const-0.2.2 \
 		bumpalo-3.11.1 \
 		byte-unit-4.0.18 \
 		bytecount-0.6.3 \
@@ -79,16 +97,19 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		bytestring-1.2.0 \
 		bzip2-0.4.4 \
 		bzip2-sys-0.1.11+1.0.8 \
-		cargo_toml-0.13.3 \
+		cargo_toml-0.14.1 \
+		cast-0.3.0 \
 		cc-1.0.78 \
 		cedarwood-0.4.6 \
 		cfg-if-1.0.0 \
 		change-detection-1.2.0 \
-		charabia-0.7.0 \
+		charabia-0.7.1 \
+		ciborium-0.2.0 \
+		ciborium-io-0.2.0 \
+		ciborium-ll-0.2.0 \
 		cipher-0.3.0 \
 		clap-3.2.23 \
 		clap-4.0.32 \
-		clap_derive-3.2.18 \
 		clap_derive-4.0.21 \
 		clap_lex-0.2.4 \
 		clap_lex-0.3.0 \
@@ -102,8 +123,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		core-foundation-sys-0.8.3 \
 		cow-utils-0.1.2 \
 		cpufeatures-0.2.5 \
-		crc-1.8.1 \
 		crc32fast-1.3.2 \
+		criterion-0.4.0 \
+		criterion-plot-0.5.0 \
 		critical-section-1.1.1 \
 		crossbeam-0.8.2 \
 		crossbeam-channel-0.5.6 \
@@ -121,8 +143,8 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		derive_builder_core-0.11.2 \
 		derive_builder_macro-0.11.2 \
 		derive_more-0.99.17 \
-		deserr-0.3.0 \
-		deserr-internal-0.3.0 \
+		deserr-0.5.0 \
+		deserr-internal-0.5.0 \
 		deunicode-1.3.3 \
 		digest-0.10.6 \
 		dirs-next-1.0.2 \
@@ -141,6 +163,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		enum-iterator-1.2.0 \
 		enum-iterator-derive-1.1.0 \
 		env_logger-0.9.3 \
+		env_logger-0.10.0 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		fastrand-1.8.0 \
@@ -160,9 +183,13 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		futures-sink-0.3.25 \
 		futures-task-0.3.25 \
 		futures-util-0.3.25 \
+		fuzzcheck-0.12.1 \
+		fuzzcheck_common-0.12.0 \
+		fuzzcheck_mutators_derive-0.12.0 \
 		fxhash-0.2.1 \
 		generic-array-0.14.6 \
 		geoutils-0.5.1 \
+		getopts-0.2.21 \
 		getrandom-0.2.8 \
 		getset-0.1.2 \
 		gimli-0.27.0 \
@@ -170,6 +197,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		glob-0.3.1 \
 		grenad-0.4.4 \
 		h2-0.3.15 \
+		half-1.8.2 \
 		hash32-0.2.1 \
 		hashbrown-0.12.3 \
 		heapless-0.7.16 \
@@ -192,6 +220,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.3 \
 		ipnet-2.7.1 \
+		irg-kvariants-0.1.0 \
 		is-terminal-0.4.2 \
 		itertools-0.10.5 \
 		itoa-0.4.8 \
@@ -200,24 +229,26 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		jobserver-0.1.25 \
 		js-sys-0.3.60 \
 		jsonwebtoken-8.2.0 \
+		kanaria-0.2.0 \
 		language-tags-0.3.2 \
 		lazy_static-1.4.0 \
 		levenshtein_automata-0.2.1 \
 		libc-0.2.139 \
-		libgit2-sys-0.14.1+1.5.0 \
+		libgit2-sys-0.14.2+1.5.1 \
 		libm-0.2.6 \
 		libmimalloc-sys-0.1.30 \
 		libz-sys-1.1.8 \
-		lindera-0.17.0 \
-		lindera-cc-cedict-builder-0.17.0 \
-		lindera-core-0.17.0 \
-		lindera-decompress-0.17.0 \
-		lindera-dictionary-0.17.0 \
-		lindera-ipadic-0.17.0 \
-		lindera-ipadic-builder-0.17.0 \
-		lindera-ko-dic-0.17.0 \
-		lindera-ko-dic-builder-0.17.0 \
-		lindera-unidic-builder-0.17.0 \
+		lindera-0.21.1 \
+		lindera-cc-cedict-builder-0.21.0 \
+		lindera-compress-0.21.0 \
+		lindera-core-0.21.0 \
+		lindera-decompress-0.21.0 \
+		lindera-dictionary-0.21.0 \
+		lindera-ipadic-0.21.0 \
+		lindera-ipadic-builder-0.21.0 \
+		lindera-ko-dic-0.21.0 \
+		lindera-ko-dic-builder-0.21.0 \
+		lindera-unidic-builder-0.21.0 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.1.4 \
 		local-channel-0.1.3 \
@@ -226,7 +257,6 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		log-0.4.17 \
 		logging_timer-1.1.0 \
 		logging_timer_proc_macros-1.1.0 \
-		lzma-rs-0.2.0 \
 		manifest-dir-macros-0.1.16 \
 		maplit-1.0.2 \
 		md5-0.7.0 \
@@ -242,16 +272,20 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		nom-7.1.2 \
 		nom_locate-4.0.0 \
 		ntapi-0.4.0 \
+		nu-ansi-term-0.39.0 \
 		num-bigint-0.4.3 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
+		object-0.27.1 \
 		object-0.30.2 \
 		obkv-0.2.0 \
 		once_cell-1.17.0 \
+		oorandom-11.1.3 \
 		opaque-debug-0.3.0 \
 		ordered-float-3.4.0 \
 		os_str_bytes-6.4.1 \
+		overload-0.1.1 \
 		page_size-0.4.2 \
 		page_size-0.5.0 \
 		parking_lot-0.12.1 \
@@ -276,6 +310,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		pinyin-0.9.0 \
 		pkg-config-0.3.26 \
 		platform-dirs-0.3.0 \
+		plotters-0.3.4 \
+		plotters-backend-0.3.4 \
+		plotters-svg-0.3.3 \
 		ppv-lite86-0.2.17 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
@@ -351,9 +388,10 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		time-0.3.17 \
 		time-core-0.1.0 \
 		time-macros-0.2.6 \
+		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.24.1 \
+		tokio-1.24.2 \
 		tokio-macros-1.8.2 \
 		tokio-rustls-0.23.4 \
 		tokio-stream-0.1.11 \
@@ -367,9 +405,11 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		ucd-trie-0.1.5 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.8 \
+		unicode-blocks-0.1.5 \
 		unicode-ident-1.0.6 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.0 \
+		unicode-width-0.1.10 \
 		unicode-xid-0.2.4 \
 		untrusted-0.7.1 \
 		url-2.3.1 \
@@ -381,6 +421,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		vergen-7.5.0 \
 		version_check-0.9.4 \
 		walkdir-2.3.2 \
+		wana_kana-2.1.2 \
 		want-0.3.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.83 \
@@ -414,14 +455,20 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		zerocopy-derive-0.2.0 \
 		zip-0.6.3 \
 		zstd-0.11.2+zstd.1.5.2 \
+		zstd-0.12.3+zstd.1.5.2 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
-		zstd-sys-2.0.5+zstd.1.5.2 \
+		zstd-safe-6.0.4+zstd.1.5.4 \
+		zstd-sys-2.0.7+zstd.1.5.4 \
 		lmdb-rkv-sys@git+https://github.com/meilisearch/lmdb-rs\#501aa34a1ab7f092e3ff54a6c22ff6c55931a2d8 \
 		actix-web-static-files@git+https://github.com/kilork/actix-web-static-files.git?rev=2d3b6160\#2d3b6160f0de4ba061c5d76b5704f34fb677f6df \
-		nelson@git+https://github.com/meilisearch/nelson.git?rev=675f13885548fb415ead8fbb447e9e6d9314000a\#675f13885548fb415ead8fbb447e9e6d9314000a \
-		filter-parser,flatten-serde-json,json-depth-checker,milli@git+https://github.com/meilisearch/milli.git?tag=v0.41.3\#e021bc119effbfad3fb8ec2ae57c99c1f45cb08b \
-		heed,heed-traits,heed-types@git+https://github.com/meilisearch/heed?tag=v0.12.4\#7a4542bc72dd60ef0f508c89900ea292218223fb
+		heed,heed-traits,heed-types@git+https://github.com/meilisearch/heed?tag=v0.12.5\#4158a6c484752afaaf9e2530a6ee0e7ab0f24ee8 \
+		nelson@git+https://github.com/meilisearch/nelson.git?rev=675f13885548fb415ead8fbb447e9e6d9314000a\#675f13885548fb415ead8fbb447e9e6d9314000a
 PLIST_FILES=	bin/${PORTNAME}
+
+post-extract:
+.for F in ${DISTFILES:M*\:benchmark:S/:benchmark//}
+	@${GUNZIP} < ${DISTDIR}/${F} >${WRKDIR}/${F:S/.gz//}
+.endfor
 
 post-patch:
 	${REINPLACE_CMD} -e 's,%%MINIDASHBOARDFILE%%,${DISTDIR}/${MINIDASHBOARDFILE},'  \
