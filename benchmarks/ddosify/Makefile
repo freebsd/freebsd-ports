@@ -1,7 +1,6 @@
 PORTNAME=	ddosify
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.15.2
-PORTREVISION=	1
+DISTVERSION=	0.16.0
 CATEGORIES=	benchmarks
 
 MAINTAINER=	0xdutra@gmail.com
@@ -24,9 +23,9 @@ GH_TUPLE=	\
 		go-ole:go-ole:v1.2.6:go_ole_go_ole/vendor/github.com/go-ole/go-ole \
 		golang:exp:4b8118a2686a:golang_exp/vendor/golang.org/x/exp \
 		golang:groupcache:8c9f03a8e57e:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:v0.3.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.3.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.6.0:golang_text/vendor/golang.org/x/text \
+		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.8.0:golang_text/vendor/golang.org/x/text \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		jaswdr:faker:v1.10.2:jaswdr_faker/vendor/github.com/jaswdr/faker \
 		lufia:plan9stats:39d0f177ccd0:lufia_plan9stats/vendor/github.com/lufia/plan9stats \
