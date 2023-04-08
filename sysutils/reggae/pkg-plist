@@ -91,6 +91,8 @@ man/man1/reggae.1.gz
 %%DATADIR%%/scripts/shell-provision.sh
 %%DATADIR%%/scripts/ssh-ping.sh
 %%DATADIR%%/scripts/ssh.sh
+%%DATADIR%%/scripts/start.sh
+%%DATADIR%%/scripts/stop.sh
 %%DATADIR%%/scripts/update-base.sh
 %%DATADIR%%/scripts/update-profiles.sh
 %%DATADIR%%/scripts/utils.sh
