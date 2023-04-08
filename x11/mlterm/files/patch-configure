@@ -1,19 +1,10 @@
---- configure.orig	2019-03-31 13:10:47 UTC
+--- configure.orig	2023-04-08 11:30:26 UTC
 +++ configure
-@@ -19448,6 +19448,7 @@ $as_echo "yes" >&6; }
+@@ -19974,6 +19974,7 @@ $as_echo "yes" >&6; }
  fi
  	fi
  	if test "$have_vte" = "yes" ; then
-+		MAKE_DIRS="gtk ${MAKE_DIRS}"
++		MAKE_DIRS2="gtk ${MAKE_DIRS2}"
  		OUTPUT_FILES="gtk/Makefile ${OUTPUT_FILES}"
  
  	fi
-@@ -25538,7 +25539,7 @@ if test "$INSTALL_OPT" = ""; then
- 		if test "$has_utmp" ; then
- 			INSTALL_OPT="-m 2755 -g utmp"
- 		else
--			INSTALL_OPT="-m 4755 -o root"
-+			INSTALL_OPT="-m 4755"
- 		fi
- 	else
- 		INSTALL_OPT="-m 755"
