@@ -45,6 +45,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/backgrounds/green_trees.jpg
 %%DATADIR%%/backgrounds/penguin.png
 %%DATADIR%%/backgrounds/red_sky.jpg
+%%DATADIR%%/backgrounds/wall.jpg
 %%DATADIR%%/buttons/arrow-blue.xml
 %%DATADIR%%/buttons/arrow-cool.xml
 %%DATADIR%%/buttons/arrow-double.xml
@@ -83,6 +84,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/buttons/deprecated/frame-shadow.xml
 %%DATADIR%%/buttons/deprecated/frame.xml
 %%DATADIR%%/buttons/deprecated/frame45.xml
+%%DATADIR%%/buttons/deprecated/gold-frame.xml
 %%DATADIR%%/buttons/deprecated/home.xml
 %%DATADIR%%/buttons/deprecated/text-circle.xml
 %%DATADIR%%/buttons/deprecated/text-shadow.xml
@@ -96,8 +98,8 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/buttons/frame-text.xml
 %%DATADIR%%/buttons/frame-v2.xml
 %%DATADIR%%/buttons/gear.xml
+%%DATADIR%%/buttons/gold-frame-v2.xml
 %%DATADIR%%/buttons/glow_arrow.xml
-%%DATADIR%%/buttons/gold-frame.xml
 %%DATADIR%%/buttons/hand-left.xml
 %%DATADIR%%/buttons/hand-right.xml
 %%DATADIR%%/buttons/home-moon.xml
@@ -147,6 +149,7 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/docs/help_uk.zip
 %%DATADIR%%/docs/help_zh_CN.zip
 %%DATADIR%%/docs/help_zh_TW.zip
+%%DATADIR%%/objects/caption-rectangle.xml
 %%DATADIR%%/objects/caption-line.xml
 %%DATADIR%%/objects/deprecated/ellipse-v2.xml
 %%DATADIR%%/objects/deprecated/ellipse.xml
@@ -195,6 +198,8 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/rc/run.png
 %%DATADIR%%/rc/save.png
 %%DATADIR%%/rc/settings.png
+%%DATADIR%%/templates/Basic/Wall.dvdt
+%%DATADIR%%/templates/Basic/Wall.png
 %%DATADIR%%/templates/Basic/blue.dvdt
 %%DATADIR%%/templates/Basic/blue.png
 %%DATADIR%%/templates/Basic/blueWS.dvdt
@@ -215,6 +220,10 @@ share/applications/dvdstyler.desktop
 %%DATADIR%%/templates/Basic/ocean.png
 %%DATADIR%%/templates/Basic/oceanWS.dvdt
 %%DATADIR%%/templates/Basic/oceanWS.png
+%%DATADIR%%/templates/Basic/textAuto1.dvdt
+%%DATADIR%%/templates/Basic/textAuto1.png
+%%DATADIR%%/templates/Basic/textAuto1WS.dvdt
+%%DATADIR%%/templates/Basic/textAuto1WS.png
 %%DATADIR%%/templates/Basic/turbulence.dvdt
 %%DATADIR%%/templates/Basic/turbulence.png
 %%DATADIR%%/templates/Basic/turbulenceWS.dvdt

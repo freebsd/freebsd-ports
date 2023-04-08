@@ -1,10 +1,10 @@
 PORTNAME=	dvdstyler
-PORTVERSION=	3.2.1
-PORTREVISION=	1
+DISTVERSION=	3.3b3
 PORTEPOCH=	2
 CATEGORIES=	multimedia
-MASTER_SITES=	SF
-DISTNAME=	DVDStyler-${PORTVERSION}
+#MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-devel/${DISTVERSION}
+DISTNAME=	DVDStyler-${DISTVERSION}
 
 MAINTAINER=	ahicks@p-o.co.uk
 COMMENT=	WxWidgets frontend to dvd recoding and authoring programs
@@ -33,16 +33,14 @@ RUN_DEPENDS=	zip:archivers/zip \
 		mkisofs:sysutils/cdrtools \
 		growisofs:sysutils/dvd+rw-tools
 
-USES=		autoreconf compiler:c++11-lib gettext gmake jpeg pkgconfig tar:bzip2
-
-USE_WX=		3.2
+USES=		autoreconf compiler:c++11-lib gettext gmake jpeg \
+		localbase:ldflags pkgconfig tar:bzip2
+USE_WX=		3.2+
 WX_CONF_ARGS=	absolute
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	ac_cv_path_AVCONV_PATH="" OBJCXX="${CXX}"
-CONFIGURE_ARGS=	--without-gnome
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
+
+CONFIGURE_ENV=	ac_cv_path_AVCONV_PATH="" OBJCXX="${CXX}"
 
 OPTIONS_DEFINE=	DOCS
 
