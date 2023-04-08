@@ -1,5 +1,6 @@
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
+PORTREVISION?=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot
@@ -20,6 +21,7 @@ USES=			autoreconf compiler:c11 gmake iconv:patch,translit \
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--docdir=${DOCSDIR}
+CONFIGURE_ENV=		ALEX=/usr/bin/true HAPPY=/usr/bin/true
 INSTALL_TARGET=		install-strip
 USE_LOCALE=		en_US.UTF-8
 USE_PERL5=		build
@@ -43,16 +45,18 @@ PROFILE_DESC=		Add support for performance profiling
 BOOT_CONFIGURE_ENV=	GHC=${LOCALBASE}/bin/ghc
 BOOT_CONFIGURE_ENV_OFF=	GHC=${BOOT_GHC} LLC=llc${BOOT_LLVM_VERSION} OPT=opt${BOOT_LLVM_VERSION}
 
-DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx
+DOCS_BUILD_DEPENDS=	sphinx-build:textproc/py-sphinx \
+			xelatex:print/tex-xetex \
+			${LOCALBASE}/share/fonts/dejavu/DejaVuSans.ttf:x11-fonts/dejavu
 DOCS_VARS=		enable_docs=YES
-DOCS_VARS_OFF=		enable_docs=NO
+DOCS_VARS_OFF=		enable_docs=NO hadrian_docs_arg=--docs=none
 
 DYNAMIC_CONFIGURE_WITH=	system-libffi \
 			ffi-includes=${LOCALBASE}/include \
 			ffi-libraries=${LOCALBASE}/lib
 DYNAMIC_LIB_DEPENDS=	libffi.so:devel/libffi
-DYNAMIC_VARS=		enable_dynamic=YES
-DYNAMIC_VARS_OFF=	enable_dynamic=NO
+DYNAMIC_VARS=		enable_dynamic=YES hadrian_setting_dynamic=True
+DYNAMIC_VARS_OFF=	enable_dynamic=NO hadrian_setting_dynamic=False
 
 # do not replace this with GMP_CONFIGURE_WITH
 # it adds "--without-gmp-*" when the option is OFF, which results in "no" value
@@ -60,15 +64,16 @@ DYNAMIC_VARS_OFF=	enable_dynamic=NO
 GMP_CONFIGURE_ON=	--with-gmp-includes=${LOCALBASE}/include \
 			--with-gmp-libraries=${LOCALBASE}/lib
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
+GMP_VARS_OFF=		hadrian_gmp_arg=--bignum=native
 
-PROFILE_VARS=		enable_profile=YES
-PROFILE_VARS_OFF=	enable_profile=NO
+PROFILE_VARS=		enable_profile=YES hadrian_setting_profile=True
+PROFILE_VARS_OFF=	enable_profile=NO hadrian_setting_profile=False
 
 GHC_VERSION?=		9.2.7
 LLVM_VERSION?=		12
-BOOT_GHC_VERSION=	8.10.7
+BOOT_GHC_VERSION?=	8.10.7
 # LLVM version that bootstrap compiler uses
-BOOT_LLVM_VERSION=	10
+BOOT_LLVM_VERSION?=	10
 
 BASE_PACKAGES?=		Cabal-3.6.3.0 array-0.5.4.0 base-4.16.4.0 binary-0.8.9.0 \
 			bytestring-0.11.4.0 containers-0.6.5.1 deepseq-1.4.6.1 \
@@ -99,6 +104,29 @@ BUILD_MK=		DYNAMIC_GHC_PROGRAMS=${ENABLE_DYNAMIC} \
 
 .include <bsd.port.pre.mk>
 
+.if ${GHC_VERSION:C/\..*//g} >= 9 && ${ARCH} != i386
+# hadrian build on i386 fails due to https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=269570
+# relocation R_386_TLS_LE cannot be used with -shared
+USE_HADRIAN=		yes
+.endif
+
+.ifdef USE_HADRIAN
+LIB_DEPENDS+=		libffi.so:devel/libffi
+.undef DYNAMIC_CONFIGURE_WITH
+CONFIGURE_ARGS+=	--with-system-libffi --with-ffi-includes=${LOCALBASE}/include --with-ffi-libraries=${LOCALBASE}/lib
+SHEBANG_FILES+=		hadrian/bootstrap/bootstrap.py
+HADRIAN_CMD=		${WRKSRC}/hadrian/bootstrap/_build/bin/hadrian ${HADRIAN_DOCS_ARG} ${HADRIAN_GMP_ARG}
+DO_MAKE_BUILD=		${SETENV} ${MAKE_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS} --flavour=ports
+ALL_TARGET=		binary-dist-dir
+INSTALL_WRKSRC=		${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd
+INSTALL_TARGET=		install
+PLIST=			${.CURDIR}/pkg-plist.hadrian
+
+.  if (empty(PORT_OPTIONS:MDYNAMIC) || empty(PORT_OPTIONS:MPROFILE))
+IGNORE=			Building with Hadrian requires both DYNAMIC and PROFILE for now
+.  endif
+.endif
+
 .if ${SLAVE_PORT} != "yes"
 PORTDOCS=		*
 .endif
@@ -115,6 +143,9 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
 
 .if empty(PORT_OPTIONS:MBOOT)
 DISTFILES+=		ghc-${BOOT_GHC_VERSION}-boot-${ARCH}-freebsd${EXTRACT_SUFX}:boot
+.   if !defined(IGNORE_MISSING_HADRIAN) && defined(USE_HADRIAN)
+DISTFILES+=		hadrian-${GHC_VERSION}-boot.tar.gz:boot
+.   endif
 .endif # MBOOT
 
 .if ${ARCH} == aarch64 || ${ARCH:Marmv*}
@@ -138,6 +169,11 @@ post-patch:
 .for line in ${BUILD_MK}
 	${ECHO_CMD} ${line} >> ${WRKSRC}/mk/build.mk
 .endfor
+.ifdef USE_HADRIAN
+	${SED} -e 's|%%DYNAMIC%%|${HADRIAN_SETTING_DYNAMIC}|' \
+		-e 's|%%PROFILE%%|${HADRIAN_SETTING_PROFILE}|' \
+		${PATCHDIR}/UserSettings.hs > ${WRKSRC}/hadrian/src/UserSettings.hs
+.endif
 
 # TODO: remove this after rerolling all bootstraps
 post-patch-BOOT-off:
@@ -154,11 +190,28 @@ pre-configure:
 	cd ${BOOT_DIR} && ${CONFIGURE_ENV} ${CONFIGURE_CMD} --prefix=${BOOT_DIR}
 	cd ${BOOT_DIR} && PACKAGES='' ${MAKE_CMD} install
 .endif
+.ifdef USE_HADRIAN
+# Compile Hadrian
+	cd ${WRKSRC}/hadrian/bootstrap && \
+		./bootstrap.py -w ${BOOT_GHC} -s ${DISTDIR}/hadrian-${GHC_VERSION}-boot.tar.gz
+.endif
+
+.ifdef USE_HADRIAN
+pre-install:
+	cd ${INSTALL_WRKSRC} && ${CONFIGURE_ENV} ${CONFIGURE_CMD} --prefix=${PREFIX}
+.endif
 
 post-install:
-	${FIND} ${STAGEDIR}${DOCSDIR}/html -name .buildinfo -delete
+.ifdef USE_HADRIAN
+# Hadrian doesn't have --docdir
+	${MV} ${STAGEDIR}${DOCSDIR}-${GHC_VERSION} ${STAGEDIR}${DOCSDIR}
+# These includes are duplicated in lib/ghc-X.Y.Z/lib/<triple>/rts-X.Y.Z/include
+	${RM} -r ${STAGEDIR}${PREFIX}/include/*
+.endif
+	${FIND} ${STAGEDIR}${DOCSDIR} -name .buildinfo -delete
 # For some reason, INSTALL_TARGET=install-strip doesn't cause libraries to be stripped
 # Run strip on them manually
+	${FIND} ${STAGEDIR}${PREFIX}/lib/ghc-${GHC_VERSION} -type f -perm +111 -exec ${STRIP_CMD} {} +
 	${FIND} ${STAGEDIR}${PREFIX}/lib/ghc-${GHC_VERSION} -name '*.so' -exec ${STRIP_CMD} {} +
 	${RM} ${STAGEDIR}${PREFIX}/bin/haddock
 .if ${SLAVE_PORT} == "yes"
@@ -189,34 +242,78 @@ fixup-plist:
 # Set all OPTIONS to OFF when generating bootstraps
 .PHONY: create-bootstrap
 create-bootstrap:
+.ifndef USE_HADRIAN
 	cd ${WRKSRC} \
-		&& ${ECHO} "BIN_DIST_NAME=ghc-${GHC_VERSION}-boot" >> mk/build.mk \
-		&& ${ECHO} "BIN_DIST_TAR=ghc-${GHC_VERSION}-boot.tar" >> mk/build.mk \
-		&& ${ECHO} "HADDOCK_DOCS=NO" >> mk/build.mk \
+		&& ${ECHO_CMD} "BIN_DIST_NAME=ghc-${GHC_VERSION}-boot" >> mk/build.mk \
+		&& ${ECHO_CMD} "BIN_DIST_TAR=ghc-${GHC_VERSION}-boot.tar" >> mk/build.mk \
+		&& ${ECHO_CMD} "HADDOCK_DOCS=NO" >> mk/build.mk \
 		&& ${GMAKE} binary-dist TAR_COMP=xz \
 		&& ${MV} ${WRKSRC}/ghc-${GHC_VERSION}-boot-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
+.else
+	cd ${WRKSRC} \
+		&& ${HADRIAN_CMD} binary-dist-xz \
+		&& ${MV} ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
+.endif
 
-	cd /tmp \
+	@cd /tmp \
 		&& sha256 ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz \
-		&& ${ECHO} -n "SIZE (ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz) = " \
+		&& ${ECHO_CMD} -n "SIZE (ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz) = " \
 		&& ${STAT} -f %z ghc-${GHC_VERSION}-boot-${ARCH}-freebsd.tar.xz
 
 # Much like create-bootstrap, just different naming and output format
 # Set DYNAMIC, GMP and PROFILE to ON, and DOCS to OFF when generating Stack bindist
 .PHONY: create-stack-bindist
 create-stack-bindist:
+.ifndef USE_HADRIAN
 	cd ${WRKSRC} \
 		&& ${GMAKE} binary-dist TAR_COMP=xz \
 		&& ${MV} ${WRKSRC}/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/
+.else
+	cd ${WRKSRC} \
+		&& ${HADRIAN_CMD} binary-dist-xz \
+		&& ${MV} ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz /tmp/
+.endif
 
 	cd /tmp \
-		&& ${ECHO} "${GHC_VERSION}:" \
-		&& ${ECHO} "url: \"http://distcache.FreeBSD.org/local-distfiles/arrowd/stack-bindists/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz\"" \
-		&& ${ECHO} -n "content-length: " \
+		&& ${ECHO_CMD} "${GHC_VERSION}:" \
+		&& ${ECHO_CMD} "url: \"http://distcache.FreeBSD.org/local-distfiles/arrowd/stack-bindists/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz\"" \
+		&& ${ECHO_CMD} -n "content-length: " \
 		&& ${STAT} -f %z ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz \
-		&& ${ECHO} -n "sha1: " \
+		&& ${ECHO_CMD} -n "sha1: " \
 		&& sha1 -q ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz \
-		&& ${ECHO} -n "sha256: " \
+		&& ${ECHO_CMD} -n "sha256: " \
 		&& sha256 -q ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd.tar.xz
+
+.PHONY: create-hadrian-bootstrap
+create-hadrian-bootstrap:
+.if !empty(PORT_OPTIONS:MBOOT)
+	@${ECHO_CMD} "Generating Hadrian bootstrap without bootstrap GHC isn't supported"
+	${FALSE}
+.endif
+	${MAKE} -C ${.CURDIR} patch build-depends IGNORE_MISSING_HADRIAN=yes
+# We always would need to create our own plan.json file and put it into PATCHDIR:
+# Predefined plans use integer-gmp, while we build bootstraps with integer-simple
+# Predefined plans aren't pretty-printed, so we can't easily patch them
+	cd ${WRKSRC}/hadrian/bootstrap && \
+		./bootstrap.py -w ${BOOT_GHC} --deps ${PATCHDIR}/plan-bootstrap-${BOOT_GHC_VERSION:C/\./_/g}.json fetch -o /tmp/hadrian-${GHC_VERSION}-boot
+
+	@cd /tmp \
+		&& sha256 hadrian-${GHC_VERSION}-boot.tar.gz \
+		&& ${ECHO_CMD} -n "SIZE (hadrian-${GHC_VERSION}-boot.tar.gz) = " \
+		&& ${STAT} -f %z hadrian-${GHC_VERSION}-boot.tar.gz
+	@${ECHO_CMD}
+	@${ECHO_CMD} "Remember to check that hadrian bootstrap builds fine by running \"make check-hadrian-bootstrap\""
+
+.PHONY: check-hadrian-bootstrap
+check-hadrian-bootstrap:
+.if !empty(PORT_OPTIONS:MBOOT)
+	@${ECHO_CMD} "Generating Hadrian bootstrap without bootstrap GHC isn't supported"
+	${FALSE}
+.endif
+# Install bootstrap GHC
+	${MAKE} -C ${.CURDIR} pre-configure
+# Compile Hadrian
+	cd ${WRKSRC}/hadrian/bootstrap && \
+		./bootstrap.py -w ${BOOT_GHC} -s /tmp/hadrian-${GHC_VERSION}-boot.tar.gz
 
 .include <bsd.port.post.mk>
