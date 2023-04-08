@@ -159,6 +159,7 @@ if checkyesno "_jail_enable"; then
     _socket_arg="${jail_socket}"
     _topology_arg="${jail_topology}"
     _config_arg="${jail_config}"
+    _db_arg="/db"
     # We need to override ${command} to make check_pidfile work correctly when
     # rc.subr calls it as "check_pidfile ${pidfile} ${command}"
     command=/usr/sbin/jail
@@ -166,11 +167,12 @@ else
     _socket_arg="${_socket}"
     _topology_arg="${_topology}"
     _config_arg="${_config}"
+    _db_arg="${_db}"
 fi
 
 pidfile="/var/run/${name}.pid"
 flags="run +RTS ${_rts_flags} -RTS \
-        --database-path /db \
+        --database-path ${_db_arg} \
         --host-addr ${_host} \
         --port ${_port} \
         --socket-path ${_socket_arg} \

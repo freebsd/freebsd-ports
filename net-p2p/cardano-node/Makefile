@@ -1,5 +1,6 @@
 PORTNAME=	cardano-node
 PORTVERSION=	1.35.7
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
 
@@ -442,6 +443,8 @@ USE_CABAL=	Glob-0.10.2_3 \
 CABAL_PROJECT=		append
 CABAL_EXECUTABLES=	cardano-node cardano-cli cardano-submit-api cardano-tracer
 CABAL_REPOSITORIES=	chap
+
+WITH_LTO=	yes
 
 post-patch:
 	${REINPLACE_CMD} -e 's/$$(gitRevFromGit)/"${CARDANO_NODE_HASH}"/' \
