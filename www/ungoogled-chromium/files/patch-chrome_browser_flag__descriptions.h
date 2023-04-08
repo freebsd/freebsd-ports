@@ -1,6 +1,6 @@
---- chrome/browser/flag_descriptions.h.orig	2023-03-10 11:01:21 UTC
+--- chrome/browser/flag_descriptions.h.orig	2023-04-08 11:38:38 UTC
 +++ chrome/browser/flag_descriptions.h
-@@ -3523,7 +3523,7 @@ extern const char kLacrosScreenCoordinatesEnabledName[
+@@ -3571,7 +3571,7 @@ extern const char kLacrosScreenCoordinatesEnabledName[
  extern const char kLacrosScreenCoordinatesEnabledDescription[];
  #endif  // #if BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -9,7 +9,7 @@
  extern const char kGetDisplayMediaSetName[];
  extern const char kGetDisplayMediaSetDescription[];
  
-@@ -3642,14 +3642,14 @@ extern const char kSearchWebInSidePanelDescription[];
+@@ -3693,14 +3693,14 @@ extern const char kSearchWebInSidePanelDescription[];
  // Random platform combinations -----------------------------------------------
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -26,7 +26,7 @@
  extern const char kWebShareName[];
  extern const char kWebShareDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
-@@ -3659,7 +3659,7 @@ extern const char kWebBluetoothConfirmPairingSupportNa
+@@ -3710,7 +3710,7 @@ extern const char kWebBluetoothConfirmPairingSupportNa
  extern const char kWebBluetoothConfirmPairingSupportDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
  
@@ -35,7 +35,7 @@
  extern const char kOzonePlatformHintChoiceDefault[];
  extern const char kOzonePlatformHintChoiceAuto[];
  extern const char kOzonePlatformHintChoiceX11[];
-@@ -3669,7 +3669,7 @@ extern const char kOzonePlatformHintName[];
+@@ -3720,7 +3720,7 @@ extern const char kOzonePlatformHintName[];
  extern const char kOzonePlatformHintDescription[];
  #endif  // BUILDFLAG(IS_LINUX)
  
@@ -44,7 +44,7 @@
  extern const char kSkipUndecryptablePasswordsName[];
  extern const char kSkipUndecryptablePasswordsDescription[];
  
-@@ -3677,13 +3677,13 @@ extern const char kForcePasswordInitialSyncWhenDecrypt
+@@ -3728,13 +3728,13 @@ extern const char kForcePasswordInitialSyncWhenDecrypt
  extern const char kForcePasswordInitialSyncWhenDecryptionFailsDescription[];
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
  
@@ -60,7 +60,7 @@
  extern const char kFollowingFeedSidepanelName[];
  extern const char kFollowingFeedSidepanelDescription[];
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) ||
-@@ -3763,7 +3763,7 @@ extern const char kElasticOverscrollDescription[];
+@@ -3814,7 +3814,7 @@ extern const char kElasticOverscrollDescription[];
  
  #if BUILDFLAG(IS_WIN) ||                                      \
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || \

@@ -1,6 +1,6 @@
---- base/atomicops.h.orig	2022-10-01 07:40:07 UTC
+--- base/atomicops.h.orig	2023-04-08 11:38:38 UTC
 +++ base/atomicops.h
-@@ -56,7 +56,11 @@ typedef intptr_t Atomic64;
+@@ -71,7 +71,11 @@ typedef intptr_t Atomic64;
  
  // Use AtomicWord for a machine-sized pointer.  It will use the Atomic32 or
  // Atomic64 routines below, depending on your architecture.

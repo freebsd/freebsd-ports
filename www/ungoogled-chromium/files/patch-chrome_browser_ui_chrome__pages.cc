@@ -1,6 +1,6 @@
---- chrome/browser/ui/chrome_pages.cc.orig	2023-03-10 11:01:21 UTC
+--- chrome/browser/ui/chrome_pages.cc.orig	2023-04-08 11:38:38 UTC
 +++ chrome/browser/ui/chrome_pages.cc
-@@ -67,7 +67,7 @@
+@@ -68,7 +68,7 @@
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  #include "chrome/browser/web_applications/web_app_utils.h"
  #endif
  
-@@ -608,7 +608,7 @@ void ShowBrowserSigninOrSettings(Browser* browser,
+@@ -618,7 +618,7 @@ void ShowBrowserSigninOrSettings(Browser* browser,
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_page.h.orig	2023-01-13 08:56:02 UTC
+--- base/allocator/partition_allocator/partition_page.h.orig	2023-04-08 11:38:38 UTC
 +++ base/allocator/partition_allocator/partition_page.h
-@@ -144,7 +144,7 @@ struct SlotSpanMetadata {
+@@ -143,7 +143,7 @@ struct SlotSpanMetadata {
    // PartitionPageSize() is 4 times the OS page size.
    static constexpr size_t kMaxSlotsPerSlotSpan =
        4 * (1 << 14) / kSmallestBucket;

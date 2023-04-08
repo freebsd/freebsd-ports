@@ -1,11 +1,11 @@
---- extensions/browser/pref_names.cc.orig	2023-02-11 09:11:04 UTC
+--- extensions/browser/pref_names.cc.orig	2023-04-08 11:38:38 UTC
 +++ extensions/browser/pref_names.cc
-@@ -49,7 +49,7 @@ const char kStorageGarbageCollect[] = "extensions.stor
- const char kDeletedComponentExtensions[] =
-     "extensions.deleted_component_extensions";
+@@ -53,7 +53,7 @@ const char kManifestV2Availability[] = "extensions.man
+ const char kPinnedExtensions[] = "extensions.pinned_extensions";
+ const char kStorageGarbageCollect[] = "extensions.storage.garbagecollect";
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
  extern const char kChromeAppsEnabled[] = "extensions.chrome_apps_enabled";
  #endif
- 
+ const char kChromeAppsWebViewPermissiveBehaviorAllowed[] =

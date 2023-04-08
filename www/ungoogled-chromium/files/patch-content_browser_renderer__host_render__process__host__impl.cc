@@ -1,4 +1,4 @@
---- content/browser/renderer_host/render_process_host_impl.cc.orig	2023-03-10 11:01:21 UTC
+--- content/browser/renderer_host/render_process_host_impl.cc.orig	2023-04-08 11:38:38 UTC
 +++ content/browser/renderer_host/render_process_host_impl.cc
 @@ -215,7 +215,7 @@
  #include "third_party/blink/public/mojom/android_font_lookup/android_font_lookup.mojom.h"
@@ -36,7 +36,7 @@
    mojo::Remote<media::mojom::VideoEncodeAcceleratorProviderFactory>
        video_encode_accelerator_factory_remote_;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-@@ -2174,7 +2174,7 @@ void RenderProcessHostImpl::ReinitializeLogging(
+@@ -2155,7 +2155,7 @@ void RenderProcessHostImpl::ReinitializeLogging(
  }
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -44,8 +44,8 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  void RenderProcessHostImpl::CreateStableVideoDecoder(
      mojo::PendingReceiver<media::stable::mojom::StableVideoDecoder> receiver) {
-   if (!stable_video_decoder_factory_remote_.is_bound()) {
-@@ -3349,6 +3349,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
+   DCHECK_CURRENTLY_ON(BrowserThread::UI);
+@@ -3331,6 +3331,7 @@ void RenderProcessHostImpl::PropagateBrowserCommandLin
      switches::kDisableSpeechAPI,
      switches::kDisableThreadedCompositing,
      switches::kDisableTouchDragDrop,
@@ -53,7 +53,7 @@
      switches::kDisableUseMojoVideoDecoderForPepper,
      switches::kDisableV8IdleTasks,
      switches::kDisableVideoCaptureUseGpuMemoryBuffer,
-@@ -4830,7 +4831,7 @@ void RenderProcessHostImpl::ResetIPC() {
+@@ -4814,7 +4815,7 @@ void RenderProcessHostImpl::ResetIPC() {
    coordinator_connector_receiver_.reset();
    tracing_registration_.reset();
  

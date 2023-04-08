@@ -1,6 +1,6 @@
---- content/public/common/content_switches.cc.orig	2023-03-10 11:01:21 UTC
+--- content/public/common/content_switches.cc.orig	2023-04-08 11:38:38 UTC
 +++ content/public/common/content_switches.cc
-@@ -359,6 +359,8 @@ const char kEnableGpuMemoryBufferVideoFrames[] =
+@@ -368,6 +368,8 @@ const char kEnableIsolatedWebAppsInRenderer[] =
  // builds.
  const char kEnableLogging[]                 = "enable-logging";
  
