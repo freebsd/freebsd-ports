@@ -1,6 +1,5 @@
 PORTNAME=	wezterm
-DISTVERSION=	20230326-111934-3666303c
-PORTREVISION=	1
+DISTVERSION=	20230408-112425-69ae8472
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -28,7 +27,6 @@ GH_TUPLE=	harfbuzz:harfbuzz:6.0.0:harfbuzz/deps/harfbuzz/harfbuzz \
 		madler:zlib:v1.2.11:zlib/deps/freetype/zlib \
 		fcitx:xcb-imdkit:1.0.3:xcb_imdkit/../${WRKSRC_crate_xcb-imdkit:T}/deps/xcb-imdkit \
 		freetype:freetype:VER-2-10-2-605-g3f83daeec:freetype/deps/freetype/freetype2
-GL_TUPLE=	wez1:libssh-mirror:56e1b0a43a7601d3b2989299262a09db5d81eea0:libssh/../${WRKSRC_crate_libssh-rs:T}/libssh-rs-sys/vendored
 PLIST_FILES=	bin/strip-ansi-escapes \
 		bin/${PORTNAME} \
 		bin/${PORTNAME}-gui \
