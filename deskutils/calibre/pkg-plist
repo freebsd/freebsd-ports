@@ -950,6 +950,7 @@ lib/calibre/calibre/gui2/preferences/toolbar_ui.py
 lib/calibre/calibre/gui2/preferences/tweaks.py
 lib/calibre/calibre/gui2/proceed.py
 lib/calibre/calibre/gui2/progress_indicator/__init__.py
+lib/calibre/calibre/gui2/publisher_mapper.py
 lib/calibre/calibre/gui2/pyqt6_compat.py
 lib/calibre/calibre/gui2/qt_file_dialogs.py
 lib/calibre/calibre/gui2/save.py
@@ -1281,6 +1282,8 @@ lib/calibre/calibre/utils/cleantext.py
 lib/calibre/calibre/utils/complete.py
 lib/calibre/calibre/utils/config.py
 lib/calibre/calibre/utils/config_base.py
+lib/calibre/calibre/utils/copy_files.py
+lib/calibre/calibre/utils/copy_files_test.py
 lib/calibre/calibre/utils/date.py
 lib/calibre/calibre/utils/exim.py
 lib/calibre/calibre/utils/file_type_icons.py
@@ -1630,6 +1633,8 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/eject.png
 %%DATADIR%%/images/embed-fonts.png
 %%DATADIR%%/images/exec.png
+%%DATADIR%%/images/external-link-for-dark-theme.png
+%%DATADIR%%/images/external-link.png
 %%DATADIR%%/images/filter.png
 %%DATADIR%%/images/folder_saved_search.png
 %%DATADIR%%/images/font.png
