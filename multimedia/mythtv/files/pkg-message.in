@@ -9,7 +9,11 @@ MythTV has now been installed, but it still needs to be configured.
 
 2.  Next, run mythtv-setup.
 
-See http://www.mythtv.org/docs/ for more information.
+See https://www.mythtv.org/docs/ for more information.
+
+MythTV requires tuner drivers supporting the V4L standard.
+MythTV works with HDHomeRun and V4L DVB Compatibility:
+see https://wiki.freebsd.org/WebcamCompat for more information.
 EOM
 }
 ]

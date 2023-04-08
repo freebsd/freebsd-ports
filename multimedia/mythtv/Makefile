@@ -1,8 +1,6 @@
 PORTNAME=	mythtv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	32.0-60
-DISTVERSIONSUFFIX=	-ge5c974e402
-PORTREVISION=	4
+DISTVERSION=	33.1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 
@@ -45,7 +43,8 @@ BUILD_DEPENDS=	yasm:devel/yasm \
 		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
 
 USES=		compiler:c++17-lang gmake gl iconv libtool pkgconfig pathfix \
-		qmake:no_env qt:5 ssl xorg
+		perl5 python:3.5+ qmake:no_env qt:5 shebangfix ssl xorg
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 USE_GL=		gl
@@ -53,7 +52,10 @@ USE_LDCONFIG=	yes
 USE_QT=		buildtools:build core dbus gui imageformats:run \
 		linguist:build multimedia network opengl qmake:build script \
 		sql sql-mysql:run webkit widgets xml
+USE_PERL5=	run build
 USE_XORG=	x11 xv xrandr xxf86vm xinerama xext xcb
+SHEBANG_FILES=	programs/scripts/database/*.pl \
+		programs/scripts/metadata/Music/mbutils.py
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --cc="${CC}" --cxx="${CXX}" \
@@ -81,16 +83,13 @@ CONFLICTS_INSTALL=	mythtv
 CONFIGURE_ARGS+=--disable-dvb --disable-firewire --disable-hdhomerun \
 		--without-bindings=perl,python
 
-EXTRA_PATCHES=	${.CURDIR}/../../multimedia/mythtv/files/extrapatch-programs_programs.pro
-
 OPTIONS_EXCLUDE+=	BINDINGS LIRC MYSQL
+PLIST_SUB+=	MYTHBACKEND="@comment "
 .else
 CONFLICTS_INSTALL=	mythtv-frontend
 
 RUN_DEPENDS+=	tv_check:textproc/p5-xmltv \
 		wget:ftp/wget
-USES+=		perl5 python:3.5+ shebangfix
-USE_PERL5=	run build
 USE_RC_SUBR=	mythbackend
 SHEBANG_FILES=	programs/scripts/database/*.pl \
 		programs/scripts/internetcontent/*.py \
@@ -108,6 +107,7 @@ GROUPS=		mythtv
 
 DATADIR=	${PREFIX}/share/mythtv
 SUB_FILES=	pkg-message
+PLIST_SUB+=	MYTHBACKEND=""
 .endif
 
 OPTIONS_DEFINE=		BINDINGS HDHOMERUN JACK LIRC MYSQL PULSEAUDIO VDPAU
