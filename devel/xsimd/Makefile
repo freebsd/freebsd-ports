@@ -1,5 +1,5 @@
 PORTNAME=	xsimd
-DISTVERSION=	10.0.0
+DISTVERSION=	11.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,19 +10,15 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	googletest>0:devel/googletest \
-		doctest>0:devel/doctest
+		doctest>=2.4.9:devel/doctest
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	xtensor-stack
 
-NO_ARCH=	yes
+CMAKE_TESTING_ON=	BUILD_TESTS # tests fail, see https://github.com/xtensor-stack/xsimd/issues/917
 
-do-test:
-	@cd ${BUILD_WRKSRC} && \
-		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTS:BOOL=ON ${CMAKE_SOURCE_PATH} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} test
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
