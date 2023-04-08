@@ -1,6 +1,6 @@
---- src/switch_utils.c.orig	2020-05-12 10:19:16 UTC
+--- src/switch_utils.c.orig	2021-10-24 18:22:29 UTC
 +++ src/switch_utils.c
-@@ -1945,7 +1945,7 @@ SWITCH_DECLARE(switch_status_t) switch_find_local_ip(c
+@@ -1956,7 +1956,7 @@ SWITCH_DECLARE(switch_status_t) switch_find_local_ip(c
  				goto doh;
  			}
  

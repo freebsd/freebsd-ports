@@ -1,0 +1,32 @@
+--- src/mod/event_handlers/mod_rayo/Makefile.am.orig	2021-10-24 18:22:28 UTC
++++ src/mod/event_handlers/mod_rayo/Makefile.am
+@@ -14,7 +14,7 @@ mod_LTLIBRARIES = mod_rayo.la
+ mod_rayo_la_SOURCES  = 
+ mod_rayo_la_CFLAGS   = $(AM_CFLAGS) -I$(IKS_DIR)/include $(PCRE_CFLAGS)
+ mod_rayo_la_LIBADD   = $(switch_builddir)/libfreeswitch.la $(IKS_LA) $(PCRE_LIBS) librayomod.la
+-mod_rayo_la_LDFLAGS  = -avoid-version -module -no-undefined -shared
++mod_rayo_la_LDFLAGS  = -avoid-version -module -no-undefined -shared -Xlinker --allow-multiple-definition
+ 
+ BUILT_SOURCES=$(IKS_LA)
+ 
+@@ -26,17 +26,17 @@ noinst_PROGRAMS = test/test_iks test/test_nlsml test/t
+ 
+ test_test_iks_SOURCES = test/test_iks.c
+ test_test_iks_CFLAGS = $(AM_CFLAGS) -I. -I$(switch_builddir)/libs/iksemel/include $(PCRE_CFLAGS) -DSWITCH_TEST_BASE_DIR_FOR_CONF=\"${abs_builddir}/test\" -DSWITCH_TEST_BASE_DIR_OVERRIDE=\"${abs_builddir}/test\"
+-test_test_iks_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
++test_test_iks_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) -Xlinker --allow-multiple-definition $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
+ test_test_iks_LDADD = librayomod.la $(IKS_LA) $(PCRE_LIBS) $(switch_builddir)/libfreeswitch.la
+ 
+ test_test_nlsml_SOURCES = test/test_nlsml.c
+ test_test_nlsml_CFLAGS = $(AM_CFLAGS) -I. -I$(switch_builddir)/libs/iksemel/include $(PCRE_CFLAGS) -DSWITCH_TEST_BASE_DIR_FOR_CONF=\"${abs_builddir}/test\" -DSWITCH_TEST_BASE_DIR_OVERRIDE=\"${abs_builddir}/test\"
+-test_test_nlsml_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
++test_test_nlsml_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) -Xlinker --allow-multiple-definition $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
+ test_test_nlsml_LDADD = librayomod.la $(IKS_LA) $(PCRE_LIBS) $(switch_builddir)/libfreeswitch.la
+ 
+ test_test_srgs_SOURCES = test/test_srgs.c
+ test_test_srgs_CFLAGS = $(AM_CFLAGS) -I. -I$(switch_builddir)/libs/iksemel/include $(PCRE_CFLAGS) -DSWITCH_TEST_BASE_DIR_FOR_CONF=\"${abs_builddir}/test\" -DSWITCH_TEST_BASE_DIR_OVERRIDE=\"${abs_builddir}/test\"
+-test_test_srgs_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
++test_test_srgs_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) -Xlinker --allow-multiple-definition $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
+ test_test_srgs_LDADD = librayomod.la $(IKS_LA) $(PCRE_LIBS) $(switch_builddir)/libfreeswitch.la
+ 
+ 

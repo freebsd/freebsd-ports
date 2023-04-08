@@ -1,0 +1,75 @@
+--- src/mod/event_handlers/mod_rayo/Makefile.in.orig	2021-10-24 18:23:11 UTC
++++ src/mod/event_handlers/mod_rayo/Makefile.in
+@@ -170,7 +170,7 @@ am__v_lt_0 = --silent
+ am__v_lt_1 = 
+ librayomod_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(librayomod_la_CFLAGS) \
+-	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -Xlinker --allow-multiple-definition -o $@
+ am__DEPENDENCIES_1 =
+ mod_rayo_la_DEPENDENCIES = $(switch_builddir)/libfreeswitch.la \
+ 	$(IKS_LA) $(am__DEPENDENCIES_1) librayomod.la
+@@ -178,7 +178,7 @@ am_mod_rayo_la_OBJECTS =
+ mod_rayo_la_OBJECTS = $(am_mod_rayo_la_OBJECTS)
+ mod_rayo_la_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(mod_rayo_la_CFLAGS) \
+-	$(CFLAGS) $(mod_rayo_la_LDFLAGS) $(LDFLAGS) -o $@
++	$(CFLAGS) $(mod_rayo_la_LDFLAGS) $(LDFLAGS) -Xlinker --allow-multiple-definition -o $@
+ PROGRAMS = $(noinst_PROGRAMS)
+ am__dirstamp = $(am__leading_dot)dirstamp
+ am_test_test_iks_OBJECTS = test/test_test_iks-test_iks.$(OBJEXT)
+@@ -187,7 +187,7 @@ test_test_iks_DEPENDENCIES = librayomod.la $(IKS_LA) \
+ 	$(am__DEPENDENCIES_1) $(switch_builddir)/libfreeswitch.la
+ test_test_iks_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(test_test_iks_CFLAGS) \
+-	$(CFLAGS) $(test_test_iks_LDFLAGS) $(LDFLAGS) -o $@
++	$(CFLAGS) $(test_test_iks_LDFLAGS) $(LDFLAGS) -Xlinker --allow-multiple-definition -o $@
+ am_test_test_nlsml_OBJECTS =  \
+ 	test/test_test_nlsml-test_nlsml.$(OBJEXT)
+ test_test_nlsml_OBJECTS = $(am_test_test_nlsml_OBJECTS)
+@@ -196,7 +196,7 @@ test_test_nlsml_DEPENDENCIES = librayomod.la $(IKS_LA)
+ test_test_nlsml_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ 	$(test_test_nlsml_CFLAGS) $(CFLAGS) $(test_test_nlsml_LDFLAGS) \
+-	$(LDFLAGS) -o $@
++	$(LDFLAGS) -Xlinker --allow-multiple-definition -o $@
+ am_test_test_srgs_OBJECTS = test/test_test_srgs-test_srgs.$(OBJEXT)
+ test_test_srgs_OBJECTS = $(am_test_test_srgs_OBJECTS)
+ test_test_srgs_DEPENDENCIES = librayomod.la $(IKS_LA) \
+@@ -204,7 +204,7 @@ test_test_srgs_DEPENDENCIES = librayomod.la $(IKS_LA) 
+ test_test_srgs_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC \
+ 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ 	$(test_test_srgs_CFLAGS) $(CFLAGS) $(test_test_srgs_LDFLAGS) \
+-	$(LDFLAGS) -o $@
++	$(LDFLAGS) -Xlinker --allow-multiple-definition -o $@
+ AM_V_P = $(am__v_P_@AM_V@)
+ am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
+ am__v_P_0 = false
+@@ -234,7 +234,7 @@ am__v_CC_1 = 
+ CCLD = $(CC)
+ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+-	$(AM_LDFLAGS) $(LDFLAGS) -o $@
++	$(AM_LDFLAGS) $(LDFLAGS) -Xlinker --allow-multiple-definition -o $@
+ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
+ am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
+ am__v_CCLD_0 = @echo "  CCLD    " $@;
+@@ -853,15 +853,15 @@ mod_rayo_la_LDFLAGS = -avoid-version -module -no-undef
+ BUILT_SOURCES = $(IKS_LA)
+ test_test_iks_SOURCES = test/test_iks.c
+ test_test_iks_CFLAGS = $(AM_CFLAGS) -I. -I$(switch_builddir)/libs/iksemel/include $(PCRE_CFLAGS) -DSWITCH_TEST_BASE_DIR_FOR_CONF=\"${abs_builddir}/test\" -DSWITCH_TEST_BASE_DIR_OVERRIDE=\"${abs_builddir}/test\"
+-test_test_iks_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
++test_test_iks_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) -Xlinker --allow-multiple-definition $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
+ test_test_iks_LDADD = librayomod.la $(IKS_LA) $(PCRE_LIBS) $(switch_builddir)/libfreeswitch.la
+ test_test_nlsml_SOURCES = test/test_nlsml.c
+ test_test_nlsml_CFLAGS = $(AM_CFLAGS) -I. -I$(switch_builddir)/libs/iksemel/include $(PCRE_CFLAGS) -DSWITCH_TEST_BASE_DIR_FOR_CONF=\"${abs_builddir}/test\" -DSWITCH_TEST_BASE_DIR_OVERRIDE=\"${abs_builddir}/test\"
+-test_test_nlsml_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
++test_test_nlsml_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) -Xlinker --allow-multiple-definition-Xlinker --allow-multiple-definition $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
+ test_test_nlsml_LDADD = librayomod.la $(IKS_LA) $(PCRE_LIBS) $(switch_builddir)/libfreeswitch.la
+ test_test_srgs_SOURCES = test/test_srgs.c
+ test_test_srgs_CFLAGS = $(AM_CFLAGS) -I. -I$(switch_builddir)/libs/iksemel/include $(PCRE_CFLAGS) -DSWITCH_TEST_BASE_DIR_FOR_CONF=\"${abs_builddir}/test\" -DSWITCH_TEST_BASE_DIR_OVERRIDE=\"${abs_builddir}/test\"
+-test_test_srgs_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
++test_test_srgs_LDFLAGS = $(AM_LDFLAGS) -avoid-version -no-undefined $(freeswitch_LDFLAGS) -Xlinker --allow-multiple-definition $(switch_builddir)/libfreeswitch.la $(CORE_LIBS) $(APR_LIBS)
+ test_test_srgs_LDADD = librayomod.la $(IKS_LA) $(PCRE_LIBS) $(switch_builddir)/libfreeswitch.la
+ TESTS = $(noinst_PROGRAMS)
+ all: $(BUILT_SOURCES)
