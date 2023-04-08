@@ -1,7 +1,7 @@
 PORTNAME=	prometheus-postgresql-adapter
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.0
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	databases
 
 MAINTAINER=	felix@userspace.com.au

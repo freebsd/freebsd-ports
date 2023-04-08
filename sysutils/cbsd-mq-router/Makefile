@@ -1,6 +1,6 @@
 PORTNAME=	cbsd-mq-router
 PORTVERSION=	0.2
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	sysutils
 
 MAINTAINER=	olevole@olevole.ru
