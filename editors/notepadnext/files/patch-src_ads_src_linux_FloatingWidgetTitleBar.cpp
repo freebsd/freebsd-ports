@@ -1,4 +1,4 @@
---- src/ads/src/linux/FloatingWidgetTitleBar.cpp.orig	2022-05-01 01:03:58 UTC
+--- src/ads/src/linux/FloatingWidgetTitleBar.cpp.orig	2023-04-08 00:42:57 UTC
 +++ src/ads/src/linux/FloatingWidgetTitleBar.cpp
 @@ -194,7 +194,7 @@ void CFloatingWidgetTitleBar::mouseMoveEvent(QMouseEve
  	{
