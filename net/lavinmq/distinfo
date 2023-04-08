@@ -1,6 +1,6 @@
-TIMESTAMP = 1674491677
-SHA256 (cloudamqp-lavinmq-v1.0.0-beta.8_GH0.tar.gz) = e0c7a90bc0b240f2dcf118a9c922c4b0ee604f19dfb2ed0b7137cb73af8abe3b
-SIZE (cloudamqp-lavinmq-v1.0.0-beta.8_GH0.tar.gz) = 707858
+TIMESTAMP = 1680985090
+SHA256 (cloudamqp-lavinmq-v1.0.1_GH0.tar.gz) = dea2991354b711c2a7b0b963affd20d94f07e892dcd27dd5934111bf8f6e284f
+SIZE (cloudamqp-lavinmq-v1.0.1_GH0.tar.gz) = 377415
 SHA256 (84codes-http-protection-893a191d55e301e0df96d6dd0f7d72c527bddeb8_GH0.tar.gz) = eba9fed6dff8ed2b1322ca57b5bdd1e6d4afe49367ca84f38cd0cd7c062dab93
 SIZE (84codes-http-protection-893a191d55e301e0df96d6dd0f7d72c527bddeb8_GH0.tar.gz) = 10307
 SHA256 (84codes-systemd.cr-v2.0.0_GH0.tar.gz) = 4dd0c6f838542f97338866aef36de7b464c06112c4434e4db48aa65586b68ef3
