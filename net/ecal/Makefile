@@ -1,7 +1,6 @@
 PORTNAME=	ecal
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.11.2
-PORTREVISION=	1
+DISTVERSION=	5.11.4
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +31,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	eclipse-ecal
 GH_TUPLE=	eclipse-ecal:tcp_pubsub:f59da78:tcp_pubsub/thirdparty/tcp_pubsub \
-		brofield:simpleini:17e8f9f:simpleini/thirdparty/simpleini \
+		brofield:simpleini:9b3ed7e:simpleini/thirdparty/simpleini \
 		steinwurf:recycle:c542570:recycle/thirdparty/recycle \
 		xguerin:tclap:349170a:tclap/thirdparty/tclap
 
