@@ -20,6 +20,7 @@ include/opendht/network_engine.h
 include/opendht/network_utils.h
 include/opendht/node.h
 include/opendht/node_cache.h
+include/opendht/node_export.h
 include/opendht/peer_discovery.h
 include/opendht/proxy.h
 include/opendht/rate_limiter.h
