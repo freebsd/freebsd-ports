@@ -207,4 +207,5 @@ post-install:
 		(cd ${WRKSRC}/conf && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
+.include "${.CURDIR:H:H}/multimedia/ffmpeg4/override.mk"
 .include <bsd.port.mk>
