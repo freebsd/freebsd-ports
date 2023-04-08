@@ -139,8 +139,8 @@ kill_jail()
     _varname="$3"
 
     if checkyesno "$_varname"; then
-        killall -j ${name}_jail ${signal}
+        killall -j ${name}_jail ${_signal}
     else
-        kill ${signal} "$_pid"
+        kill ${_signal} "$_pid"
     fi
 }
