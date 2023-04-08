@@ -1,11 +1,13 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.0beta
-PORTREVISION=	3
+DISTVERSION=	0.24.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	31963f823b12.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/1993
 PATCHFILES+=	86852cdc78b8.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/1995
+PATCHFILES+=	b32af6ebfb5e.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/1997
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -26,7 +28,7 @@ LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 USES=		compiler:c++11-lib gl gnome meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GL=		egl opengl
-USE_GNOME=	cairo
+USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 GH_PROJECT=	Hyprland
@@ -51,6 +53,9 @@ post-patch:
 # Respect PREFIX for wallpapers
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/src/render/OpenGL.cpp
+# Respect LOCALBASE for xdg-desktop-portal-hyprland installation
+	@${REINPLACE_CMD} 's,/usr/share,${LOCALBASE}/share,g' \
+		${WRKSRC}/src/Compositor.cpp
 
 .ifdef GH_TUPLE
 post-install:
