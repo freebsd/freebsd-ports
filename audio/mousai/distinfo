@@ -1,4 +1,4 @@
-TIMESTAMP = 1680784853
+TIMESTAMP = 1680995988
 SHA256 (rust/crates/aho-corasick-0.7.20.crate) = cc936419f96fa211c1b9166887b38e5e40b19958e5b895be7c1f93adec7071ac
 SIZE (rust/crates/aho-corasick-0.7.20.crate) = 111440
 SHA256 (rust/crates/anyhow-1.0.70.crate) = 7de8ce5e0f9f8d88245311066a578d72b7af3e7088f32783804676302df237e4
@@ -397,5 +397,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.48.0.crate) = 1a515f5799fe4961cb532f98
 SIZE (rust/crates/windows_x86_64_msvc-0.48.0.crate) = 671422
 SHA256 (rust/crates/winnow-0.4.1.crate) = ae8970b36c66498d8ff1d66685dc86b91b29db0c7739899012f63a63814b4b28
 SIZE (rust/crates/winnow-0.4.1.crate) = 138177
-SHA256 (SeaDve-Mousai-v0.7.0_GH0.tar.gz) = d96a1b5c05f93fa0daa795df15982850bd683ba3c432662abb1f3e0459d5512e
-SIZE (SeaDve-Mousai-v0.7.0_GH0.tar.gz) = 2703914
+SHA256 (SeaDve-Mousai-v0.7.1_GH0.tar.gz) = c83fa77e277745a044fb1769b3f153f1be351d297eb7f463ef195acbc311c010
+SIZE (SeaDve-Mousai-v0.7.1_GH0.tar.gz) = 2712501
