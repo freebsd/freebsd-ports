@@ -1,7 +1,7 @@
---- net/cert/cert_verify_proc.h.orig	2022-12-02 17:56:32 UTC
+--- net/cert/cert_verify_proc.h.orig	2023-04-08 11:38:38 UTC
 +++ net/cert/cert_verify_proc.h
-@@ -81,7 +81,7 @@ class NET_EXPORT CertVerifyProc
-     kMaxValue = kOther
+@@ -68,7 +68,7 @@ class NET_EXPORT CertVerifyProc
+     kMaxValue = kChainLengthOne
    };
  
 -#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))

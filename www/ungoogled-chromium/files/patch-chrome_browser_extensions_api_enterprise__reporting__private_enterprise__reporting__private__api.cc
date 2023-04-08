@@ -1,4 +1,4 @@
---- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2023-03-10 11:01:21 UTC
+--- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig	2023-04-08 11:38:38 UTC
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
 @@ -32,7 +32,7 @@
  #include "components/reporting/util/statusor.h"
@@ -17,8 +17,8 @@
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  
  device_signals::SignalsAggregationRequest CreateAggregationRequest(
-     const std::string& user_id,
-@@ -166,7 +166,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
+     device_signals::SignalName signal_name) {
+@@ -167,7 +167,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
  
  // getPersistentSecret
  
@@ -27,7 +27,7 @@
  
  EnterpriseReportingPrivateGetPersistentSecretFunction::
      EnterpriseReportingPrivateGetPersistentSecretFunction() = default;
-@@ -593,7 +593,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
+@@ -594,7 +594,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
  }
  #endif
  
