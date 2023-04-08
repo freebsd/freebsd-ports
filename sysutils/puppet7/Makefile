@@ -1,6 +1,5 @@
 PORTNAME=	puppet
-PORTVERSION=	7.23.0
-PORTREVISION=	2
+PORTVERSION=	7.24.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	7
@@ -55,16 +54,16 @@ CFACTER_RUN_DEPENDS=	facter>=3.0:sysutils/facter
 
 # Get versions from
 # https://github.com/puppetlabs/puppet-agent/tree/main/configs/components
-FORGE_MODULES=	augeas_core=1.2.0 \
-		cron_core=1.0.5 \
-		host_core=1.0.3 \
-		mount_core=1.0.4 \
-		scheduled_task=1.0.0 \
-		selinux_core=1.1.0 \
-		sshkeys_core=2.2.0 \
-		yumrepo_core=1.0.7 \
-		zfs_core=1.2.0 \
-		zone_core=1.0.3
+FORGE_MODULES=	augeas_core=1.3.0 \
+		cron_core=1.2.0 \
+		host_core=1.2.0 \
+		mount_core=1.2.0 \
+		scheduled_task=3.1.1 \
+		selinux_core=1.3.0 \
+		sshkeys_core=2.4.0 \
+		yumrepo_core=1.2.0 \
+		zfs_core=1.4.0 \
+		zone_core=1.1.0
 
 .for module in ${FORGE_MODULES}
 DISTFILES+=	puppetlabs-${module:C/=.*//}-${module:C/.*=//}.tar.gz:forge
