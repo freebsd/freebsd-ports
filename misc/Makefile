@@ -5,6 +5,7 @@
     SUBDIR += aclgen
     SUBDIR += actiona
     SUBDIR += adios2
+    SUBDIR += aichat
     SUBDIR += amanda-client
     SUBDIR += amanda-perl-wrapper
     SUBDIR += amanda-server
