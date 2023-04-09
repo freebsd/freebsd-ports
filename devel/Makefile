@@ -6478,7 +6478,6 @@
     SUBDIR += rubygem-blockenspiel
     SUBDIR += rubygem-bones
     SUBDIR += rubygem-bootsnap
-    SUBDIR += rubygem-bootsnap111
     SUBDIR += rubygem-bootsnap112
     SUBDIR += rubygem-bootsnap114
     SUBDIR += rubygem-bootsnap115
