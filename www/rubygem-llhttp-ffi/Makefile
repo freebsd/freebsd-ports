@@ -1,11 +1,11 @@
 PORTNAME=	llhttp-ffi
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby FFI bindings for llhttp
-WWW=		https://github.com/metabahn/llhttp/tree/main/ffi
+WWW=		https://github.com/bryanp/llhttp/tree/main/ffi
 
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
