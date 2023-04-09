@@ -1,11 +1,12 @@
 PORTNAME=	selenium-webdriver
-PORTVERSION=	4.8.1
+PORTVERSION=	4.8.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Tool for writing automated tests of websites
-WWW=		https://www.seleniumhq.org/
+WWW=		https://www.seleniumhq.org/ \
+		https://github.com/SeleniumHQ/selenium/tree/trunk/rb
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
