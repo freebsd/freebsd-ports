@@ -1,5 +1,6 @@
 PORTNAME=	lmfit
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,6 +13,7 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asteval>=0.9.22:devel/py-asteval@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.4:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uncertainties>=3.0.1:math/py-uncertainties@${PY_FLAVOR}
@@ -22,7 +24,7 @@ RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numdifftools>0:math/py-numdifftools@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	pep517 autoplist pytest # 18 tests fail, upstream says that that's ok, see https://github.com/lmfit/lmfit-py/issues/861
+USE_PYTHON=	pep517 autoplist pytest # 1 test fails, see https://github.com/lmfit/lmfit-py/issues/861
 
 NO_ARCH=	yes
 
