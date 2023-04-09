@@ -282,7 +282,6 @@
     SUBDIR += p5-MP4-Info
     SUBDIR += p5-Net-UPnP
     SUBDIR += p5-Subtitles
-    SUBDIR += pHash
     SUBDIR += peek
     SUBDIR += phonon
     SUBDIR += phonon-designerplugin

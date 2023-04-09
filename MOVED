@@ -17889,3 +17889,4 @@ multimedia/transcode||2023-03-31|Has expired: abandoned by upstream and does not
 security/teleport5|security/teleport|2023-03-31|More recent version than expired teleport port
 www/anyterm||2023-04-01|Has expired: upstream is dead
 audio/mousai-devel|audio/mousai|2023-04-06|Updated to the latest stable version
+multimedia/pHash||2023-04-09|Has expired: No users left in tree and fails to build with FFmpeg 6.0
