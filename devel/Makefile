@@ -4604,6 +4604,7 @@
     SUBDIR += py-flake8-print
     SUBDIR += py-flake8-pyi
     SUBDIR += py-flake8-quotes
+    SUBDIR += py-flake8_simplify
     SUBDIR += py-flaky
     SUBDIR += py-flask-babel
     SUBDIR += py-flatbuffers
