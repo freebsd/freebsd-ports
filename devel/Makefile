@@ -4203,6 +4203,7 @@
     SUBDIR += py-asn1
     SUBDIR += py-asn1crypto
     SUBDIR += py-aspy.yaml
+    SUBDIR += py-ast-decompiler
     SUBDIR += py-asteval
     SUBDIR += py-astor
     SUBDIR += py-astroid
