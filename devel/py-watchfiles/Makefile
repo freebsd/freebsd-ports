@@ -1,6 +1,5 @@
 PORTNAME=	watchfiles
-PORTVERSION=	0.18.1
-PORTREVISION=	1
+PORTVERSION=	0.19.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,7 @@ WWW=		https://github.com/samuelcolvin/watchfiles
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.13<0.14:devel/py-maturin@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.13<0.15:devel/py-maturin@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.0.0:devel/py-anyio@${PY_FLAVOR}
 
 USES=		cargo dos2unix python:3.7+
