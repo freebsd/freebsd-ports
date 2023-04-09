@@ -1,5 +1,5 @@
 PORTNAME=	mypy
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,13 +25,13 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=18.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.34.0,1:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typed-ast>=1.5.4<2:devel/py-typed-ast@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}types-typed-ast>=1.5.8<1.6.0:devel/py-types-typed-ast@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}types-typed-ast>=1.5.8.5<1.6.0:devel/py-types-typed-ast@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
-PYTEST_BROKEN_TESTS=test_c_unit_test  # https://github.com/python/mypy/issues/12634
+PYTEST_BROKEN_TESTS=test_c_unit_test	# https://github.com/python/mypy/issues/12634
 
 OPTIONS_DEFINE=	DMYPY REPORTS
 OPTIONS_DEFAULT=DMYPY REPORTS
