@@ -1,6 +1,5 @@
 PORTNAME=	zoneminder
-DISTVERSION=	1.36.12
-PORTREVISION=	1
+DISTVERSION=	1.36.33
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru
@@ -39,9 +38,9 @@ USES=		cmake:insource,noninja cpe jpeg mysql perl5 php shebangfix ssl
 USE_GITHUB=	yes
 GH_TUPLE=	FriendsOfCake:crud:1429237:crud/web/api/app/Plugin/Crud \
 		ZoneMinder:CakePHP-Enum-Behavior:ea90c0c:crud_plugin/web/api/app/Plugin/CakePHP-Enum-Behavior \
-		ZoneMinder:RtspServer:cd7fd49:rtsp_server/dep/RtspServer
+		ZoneMinder:RtspServer:eab3285:rtsp_server/dep/RtspServer
 USE_RC_SUBR=	zoneminder
-USE_PHP=	json pdo_mysql session gd sockets ctype opcache openssl hash
+USE_PHP=	ctype gd hash intl json opcache openssl pdo_mysql session sockets sysvsem
 
 OPTIONS_DEFINE=	NLS V4L
 OPTIONS_SUB=	yes
@@ -105,11 +104,11 @@ pre-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}/temp
 	${MKDIR} ${STAGEDIR}${WWWDIR}/api/app/tmp
 	${MKDIR} ${STAGEDIR}/var/cache/zoneminder
-	${MKDIR} ${STAGEDIR}/var/cache/zoneminder/events
-	${MKDIR} ${STAGEDIR}/var/cache/zoneminder/images
 	${MKDIR} ${STAGEDIR}/var/db/zoneminder
+	${MKDIR} ${STAGEDIR}/var/db/zoneminder/events
 	${MKDIR} ${STAGEDIR}/var/run/zm
 	${MKDIR} ${STAGEDIR}/var/tmp/zm
+	${MKDIR} ${STAGEDIR}/var/log/zm
 
 post-install: # zmsystemctl.pl is only for systend-based systems
 	@cd ${STAGEDIR}${PREFIX} && \
