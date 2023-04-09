@@ -4820,6 +4820,7 @@
     SUBDIR += py-jupyter-ydoc
     SUBDIR += py-jupyter_console
     SUBDIR += py-jupyterlab
+    SUBDIR += py-jupyterlab-lsp
     SUBDIR += py-jupyterlab-server
     SUBDIR += py-jupyterlab-widgets
     SUBDIR += py-jupyterlab_launcher
