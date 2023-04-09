@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -122,9 +122,9 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-elasticsearch-model713>=7.2<8:textproc/rubygem-elasticsearch-model713 \
 	rubygem-elasticsearch-rails>=7.2<8:textproc/rubygem-elasticsearch-rails \
 	rubygem-elasticsearch-api713>=7.13.3<7.13.4:textproc/rubygem-elasticsearch-api713 \
-	rubygem-aws-sdk-core>=3.170.0<3.171:devel/rubygem-aws-sdk-core \
+	rubygem-aws-sdk-core3170>=3.170.0<3.171:devel/rubygem-aws-sdk-core3170 \
 	rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
-	rubygem-aws-sdk-s3>=1.119.1<1.120:devel/rubygem-aws-sdk-s3 \
+	rubygem-aws-sdk-s31119>=1.119.1<1.120:devel/rubygem-aws-sdk-s31119 \
 	rubygem-faraday_middleware-aws-sigv403>=0.3.0<0.4:devel/rubygem-faraday_middleware-aws-sigv403 \
 	rubygem-typhoeus>=1.4.0<1.5:www/rubygem-typhoeus \
 	rubygem-html-pipeline>=2.14.3<2.15:textproc/rubygem-html-pipeline \
@@ -179,7 +179,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-ruby-fogbugz>=0.3.0<0.4.0:devel/rubygem-ruby-fogbugz \
 	rubygem-sanitize>=6.0<7:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.4<1.1.0:textproc/rubygem-babosa \
-	rubygem-loofah>=2.19.1<2.20:textproc/rubygem-loofah \
+	rubygem-loofah219>=2.19.1<2.20:textproc/rubygem-loofah219 \
 	rubygem-licensee>=9.15<10:devel/rubygem-licensee \
 	rubygem-charlock_holmes>=0.7.7<0.8.0:textproc/rubygem-charlock_holmes \
 	rubygem-ruby-magic>=0.5.4<1:devel/rubygem-ruby-magic \
