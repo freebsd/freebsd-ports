@@ -1,6 +1,6 @@
 PORTNAME=	vvenc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
+DISTVERSION=	1.8.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,10 +10,12 @@ WWW=		https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solution
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake:testing
-USE_GITHUB=	yes
+USES=		cmake:testing # some tests fail, see https://github.com/fraunhoferhhi/vvenc/issues/262
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
 GH_ACCOUNT=	fraunhoferhhi
+
 CMAKE_ON=	BUILD_SHARED_LIBS
 
 .include <bsd.port.options.mk>

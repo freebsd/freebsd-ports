@@ -1,4 +1,3 @@
-bin/vvencFFapp
 bin/vvencapp
 include/vvenc/version.h
 include/vvenc/vvenc.h
