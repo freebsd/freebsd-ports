@@ -1,5 +1,5 @@
 PORTNAME=	types-setuptools
-PORTVERSION=	67.4.0.0
+PORTVERSION=	67.6.0.6
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,8 +9,6 @@ COMMENT=	Typing stubs for setuptools
 WWW=		https://github.com/python/typeshed/tree/main/stubs/setuptools
 
 LICENSE=	APACHE20
-
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}types-docutils>=0:devel/py-types-docutils@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
