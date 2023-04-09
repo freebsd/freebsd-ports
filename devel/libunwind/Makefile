@@ -1,6 +1,6 @@
 PORTNAME=	libunwind
 PORTVERSION=	20211201	# This is the release date on https://download.savannah.gnu.org/releases/libunwind/
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SAVANNAH \
 		https://github.com/libunwind/libunwind/releases/download/v${PORTVERSION}/
