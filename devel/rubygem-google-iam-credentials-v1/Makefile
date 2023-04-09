@@ -1,11 +1,12 @@
 PORTNAME=	google-iam-credentials-v1
-PORTVERSION=	0.4.0
+PORTVERSION=	0.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby Client for the IAM Service Account Credentials V1 API
-WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-iam-credentials-v1
+WWW=		https://github.com/googleapis/google-cloud-ruby/tree/main/google-iam-credentials-v1 \
+		https://github.com/googleapis/google-cloud-ruby
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
