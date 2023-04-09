@@ -1,0 +1,654 @@
+--- portsnap.orig	2006-05-26 23:24:34 UTC
++++ portsnap
+@@ -1,11 +1,13 @@
+ #!/bin/sh
+ 
+ #-
++# SPDX-License-Identifier: BSD-2-Clause-FreeBSD
++#
+ # Copyright 2004-2005 Colin Percival
+ # All rights reserved
+ #
+ # Redistribution and use in source and binary forms, with or without
+-# modification, are permitted providing that the following conditions 
++# modification, are permitted providing that the following conditions
+ # are met:
+ # 1. Redistributions of source code must retain the above copyright
+ #    notice, this list of conditions and the following disclaimer.
+@@ -25,7 +27,7 @@
+ # IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+ # POSSIBILITY OF SUCH DAMAGE.
+ 
+-# $FreeBSD: src/usr.sbin/portsnap/portsnap/portsnap.sh,v 1.24 2006/05/13 15:56:35 cperciva Exp $
++# $FreeBSD$
+ 
+ #### Usage function -- called from command-line handling code.
+ 
+@@ -38,7 +40,7 @@ usage: `basename $0` [options] command ... [path]
+ 
+ Options:
+   -d workdir   -- Store working files in workdir
+-                  (default: ${PREFIX}/portsnap/)
++                  (default: /var/db/portsnap/)
+   -f conffile  -- Read configuration options from conffile
+                   (default: ${PREFIX}/etc/portsnap.conf)
+   -I           -- Update INDEX only. (update command only)
+@@ -48,6 +50,9 @@ Options:
+                   (default: /usr/ports/)
+   -s server    -- Server from which to fetch updates.
+                   (default: portsnap.FreeBSD.org)
++  --interactive -- interactive: override auto-detection of calling process
++                  (use this when calling portsnap from an interactive, non-
++                  terminal application AND NEVER ELSE).
+   path         -- Extract only parts of the tree starting with the given
+                   string.  (extract command only)
+ Commands:
+@@ -58,6 +63,8 @@ Commands:
+                   files and directories.
+   update       -- Update ports tree to match current snapshot, replacing
+                   files and directories which have changed.
++  auto         -- Fetch updates, and either extract a new ports tree or
++                  update an existing tree.
+ EOF
+ 	exit 0
+ }
+@@ -81,10 +88,11 @@ init_params() {
+ 	NDEBUG=""
+ 	DDSTATS=""
+ 	INDEXONLY=""
+-	PREFIX="/usr/local"
++    PREFIX="%%PREFIX%%"
+ 	SERVERNAME=""
+ 	REFUSE=""
+ 	LOCALDESC=""
++	INTERACTIVE=""
+ }
+ 
+ # Parse the command line
+@@ -104,6 +112,9 @@ parse_cmdline() {
+ 			XARGST="-t"
+ 			DDSTATS=".."
+ 			;;
++		--interactive)
++			INTERACTIVE="YES"
++			;;
+ 		-f)
+ 			if [ $# -eq 1 ]; then usage; fi
+ 			if [ ! -z "${CONFFILE}" ]; then usage; fi
+@@ -141,9 +152,15 @@ parse_cmdline() {
+ 			if [ ! -z "${SERVERNAME}" ]; then usage; fi
+ 			shift; SERVERNAME="$1"
+ 			;;
+-		cron | extract | fetch | update)
++		cron | extract | fetch | update | auto)
+ 			COMMANDS="${COMMANDS} $1"
+ 			;;
++		up)
++			COMMANDS="${COMMANDS} update"
++			;;
++		alfred)
++			COMMANDS="${COMMANDS} auto"
++			;;
+ 		*)
+ 			if [ $# -gt 1 ]; then usage; fi
+ 			if echo ${COMMANDS} | grep -vq extract; then
+@@ -200,6 +217,12 @@ parse_conffile() {
+ 				    cut -c 7- | xargs echo | tr ' ' '|'
+ 				`)"
+ 		fi
++
++		if grep -qE "^INDEX[[:space:]]" ${CONFFILE}; then
++			INDEXPAIRS="`
++				grep -E "^INDEX[[:space:]]" "${CONFFILE}" |
++				    cut -c 7- | tr ' ' '|' | xargs echo`"
++		fi
+ 	fi
+ }
+ 
+@@ -208,7 +231,7 @@ default_params() {
+ 	_QUIETREDIR="/dev/null"
+ 	_QUIETFLAG="-q"
+ 	_STATSREDIR="/dev/stdout"
+-	_WORKDIR="${PREFIX}/portsnap"
++	_WORKDIR="/var/db/portsnap"
+ 	_PORTSDIR="/usr/ports"
+ 	_NDEBUG="-n"
+ 	_LOCALDESC="/dev/null"
+@@ -220,13 +243,20 @@ default_params() {
+ 			eval ${X}=${__}
+ 		fi
+ 	done
++	if [ -z "${INTERACTIVE}" ]; then
++		if [ -t 0 ]; then
++			INTERACTIVE="YES"
++		else
++			INTERACTIVE="NO"
++		fi
++	fi
+ }
+ 
+ # Perform sanity checks and set some final parameters
+ # in preparation for fetching files.  Also chdir into
+ # the working directory.
+ fetch_check_params() {
+-	export HTTP_USER_AGENT="portsnap/1.1 (${COMMAND})"
++	export HTTP_USER_AGENT="portsnap (${COMMAND}, `uname -r`)"
+ 
+ 	_SERVERNAME_z=\
+ "SERVERNAME must be given via command line or configuration file."
+@@ -258,28 +288,9 @@ fetch_check_params() {
+ 	fi
+ 	cd ${WORKDIR} || exit 1
+ 
+-	BSPATCH=`which bspatch || echo ${PREFIX}/bin/bspatch`
+-	SHA256=`which sha256 || echo ${PREFIX}/sbin/sha256`
+-	PHTTPGET=${PREFIX}/libexec/phttpget
+-	if ! [ -x ${BSPATCH} ]; then
+-		echo -n "`basename $0`: "
+-		echo "bspatch is needed but cannot be found."
+-		echo -n "Please install it from the ports tree "
+-		echo "(misc/bsdiff)."
+-		exit 1
+-	fi
+-	if ! [ -x ${SHA256} ]; then
+-		echo -n "`basename $0`: "
+-		echo "sha256 is needed but cannot be found."
+-		echo -n "Please install it from the ports tree "
+-		echo "(sysutils/freebsd-sha256)."
+-		exit 1
+-	fi
+-	if ! [ -x ${PHTTPGET} ]; then
+-		echo -n "`basename $0`: "
+-		echo "Cannot find ${PHTTPGET}."
+-		exit 1
+-	fi
++	BSPATCH=/usr/bin/bspatch
++	SHA256=/sbin/sha256
++	PHTTPGET=/usr/libexec/phttpget
+ }
+ 
+ # Perform sanity checks and set some final parameters
+@@ -311,11 +322,6 @@ extract_check_params() {
+ 	fi
+ 
+ 	MKINDEX=${PREFIX}/libexec/make_index
+-	if ! [ -x ${MKINDEX} ]; then
+-		echo -n "`basename $0`: "
+-		echo "Cannot find ${MKINDEX}."
+-		exit 1
+-	fi
+ }
+ 
+ # Perform sanity checks and set some final parameters
+@@ -364,7 +370,7 @@ fetch_pick_server_init() {
+ # "$name server selection ..."; we allow either format.
+ 	MLIST="_http._tcp.${SERVERNAME}"
+ 	host -t srv "${MLIST}" |
+-	    sed -nE "s/${MLIST} (has SRV record|server selection) //p" |
++	    sed -nE "s/${MLIST} (has SRV record|server selection) //Ip" |
+ 	    cut -f 1,2,4 -d ' ' |
+ 	    sed -e 's/\.$//' |
+ 	    sort > serverlist_full
+@@ -406,7 +412,7 @@ fetch_pick_server() {
+ 	SRV_PRIORITY=`cut -f 1 -d ' ' serverlist | sort -n | head -1`
+ 
+ # Add up the weights of the response lines at that priority level.
+-	SRV_WSUM=0;
++	SRV_WSUM=0
+ 	while read X; do
+ 		case "$X" in
+ 		${SRV_PRIORITY}\ *)
+@@ -555,9 +561,9 @@ fetch_metadata() {
+ 	rm -f ${SNAPSHOTHASH} tINDEX.new
+ 
+ 	echo ${NDEBUG} "Fetching snapshot metadata... "
+-	fetch ${QUIETFLAG} http://${SERVERNAME}/t/${SNAPSHOTHASH}
++	fetch ${QUIETFLAG} http://${SERVERNAME}/t/${SNAPSHOTHASH} \
+ 	    2>${QUIETREDIR} || return
+-	if [ `${SHA256} -q ${SNAPSHOTHASH}` != ${SNAPSHOTHASH} ]; then
++	if [ "`${SHA256} -q ${SNAPSHOTHASH}`" != ${SNAPSHOTHASH} ]; then
+ 		echo "snapshot metadata corrupt."
+ 		return 1
+ 	fi
+@@ -589,14 +595,15 @@ fetch_metadata_sanity() {
+ 
+ # Take a list of ${oldhash}|${newhash} and output a list of needed patches
+ fetch_make_patchlist() {
+-	grep -vE "^([0-9a-f]{64})\|\1$" | 
+-		while read LINE; do
+-			X=`echo ${LINE} | cut -f 1 -d '|'`
+-			Y=`echo ${LINE} | cut -f 2 -d '|'`
+-			if [ -f "files/${Y}.gz" ]; then continue; fi
+-			if [ ! -f "files/${X}.gz" ]; then continue; fi
+-			echo "${LINE}"
++	local IFS='|'
++	echo "" 1>${QUIETREDIR}
++	grep -vE "^([0-9a-f]{64})\|\1$" |
++		while read X Y; do
++			printf "Processing: $X $Y ...\r" 1>${QUIETREDIR}
++			if [ -f "files/${Y}.gz" -o ! -f "files/${X}.gz" ]; then continue; fi
++			echo "${X}|${Y}"
+ 		done
++	echo "" 1>${QUIETREDIR}
+ }
+ 
+ # Print user-friendly progress statistics
+@@ -613,6 +620,30 @@ fetch_progress() {
+ 	echo -n " "
+ }
+ 
++pct_fmt()
++{
++	if [ $TOTAL -gt 0 ]; then
++		printf "                                     \r"
++		printf "($1/$2) %02.2f%% " `echo "scale=4;$LNC / $TOTAL * 100"|bc`
++	fi
++}
++
++fetch_progress_percent() {
++	TOTAL=$1
++	LNC=0
++	pct_fmt $LNC $TOTAL
++	while read x; do
++		LNC=$(($LNC + 1))
++		if [ $(($LNC % 100)) = 0 ]; then
++                     pct_fmt $LNC $TOTAL
++		elif [ $(($LNC % 10)) = 0 ]; then
++			echo -n .
++		fi
++	done
++	pct_fmt $LNC $TOTAL
++	echo " done. "
++}
++
+ # Sanity-check an index file
+ fetch_index_sanity() {
+ 	if grep -qvE "^[-_+./@0-9A-Za-z]+\|[0-9a-f]{64}$" INDEX.new ||
+@@ -625,7 +656,7 @@ fetch_index_sanity() {
+ # Verify a list of files
+ fetch_snapshot_verify() {
+ 	while read F; do
+-		if [ `gunzip -c snap/${F} | ${SHA256} -q` != ${F} ]; then
++		if [ "`gunzip -c < snap/${F}.gz | ${SHA256} -q`" != ${F} ]; then
+ 			echo "snapshot corrupt."
+ 			return 1
+ 		fi
+@@ -651,7 +682,7 @@ fetch_snapshot() {
+ 	fetch -r http://${SERVERNAME}/s/${SNAPSHOTHASH}.tgz || return 1
+ 
+ 	echo -n "Extracting snapshot... "
+-	tar -xzf ${SNAPSHOTHASH}.tgz snap/ || return 1
++	tar -xz --numeric-owner -f ${SNAPSHOTHASH}.tgz snap/ || return 1
+ 	rm ${SNAPSHOTHASH}.tgz
+ 	echo "done."
+ 
+@@ -660,11 +691,19 @@ fetch_snapshot() {
+ 	cut -f 2 -d '|' tINDEX.new | fetch_snapshot_verify || return 1
+ # Extract the index
+ 	rm -f INDEX.new
+-	gunzip -c snap/`look INDEX tINDEX.new |
++	gunzip -c < snap/`look INDEX tINDEX.new |
+ 	    cut -f 2 -d '|'`.gz > INDEX.new
+ 	fetch_index_sanity || return 1
+ # Verify the snapshot contents
+ 	cut -f 2 -d '|' INDEX.new | fetch_snapshot_verify || return 1
++	cut -f 2 -d '|' tINDEX.new INDEX.new | sort -u |
++	    lam -s 'snap/' - -s '.gz' > files.expected
++	find snap -mindepth 1 | sort > files.snap
++	if ! cmp -s files.expected files.snap; then
++		echo "unexpected files in snapshot."
++		return 1
++	fi
++	rm files.expected files.snap
+ 	echo "done."
+ 
+ # Move files into their proper locations
+@@ -711,9 +750,8 @@ fetch_update() {
+ 
+ # Attempt to apply metadata patches
+ 	echo -n "Applying metadata patches... "
+-	while read LINE; do
+-		X=`echo ${LINE} | cut -f 1 -d '|'`
+-		Y=`echo ${LINE} | cut -f 2 -d '|'`
++	local oldifs="$IFS" IFS='|'
++	while read X Y; do
+ 		if [ ! -f "${X}-${Y}.gz" ]; then continue; fi
+ 		gunzip -c < ${X}-${Y}.gz > diff
+ 		gunzip -c < files/${X}.gz > OLD
+@@ -726,6 +764,7 @@ fetch_update() {
+ 		fi
+ 		rm -f diff OLD NEW ${X}-${Y}.gz ptmp
+ 	done < patchlist 2>${QUIETREDIR}
++	IFS="$oldifs"
+ 	echo "done."
+ 
+ # Update metadata without patches
+@@ -733,7 +772,7 @@ fetch_update() {
+ 	    cut -f 2 -d '|' /dev/stdin patchlist |
+ 		while read Y; do
+ 			if [ ! -f "files/${Y}.gz" ]; then
+-				echo ${Y};
++				echo ${Y}
+ 			fi
+ 		done > filelist
+ 	echo -n "Fetching `wc -l < filelist | tr -d ' '` "
+@@ -743,17 +782,20 @@ fetch_update() {
+ 	    2>${QUIETREDIR}
+ 
+ 	while read Y; do
++		echo -n "Verifying ${Y}... " 1>${QUIETREDIR}
+ 		if [ `gunzip -c < ${Y}.gz | ${SHA256} -q` = ${Y} ]; then
+ 			mv ${Y}.gz files/${Y}.gz
+ 		else
+ 			echo "metadata is corrupt."
+ 			return 1
+ 		fi
++		echo "ok." 1>${QUIETREDIR}
+ 	done < filelist
+ 	echo "done."
+ 
+ # Extract the index
+-	gunzip -c files/`look INDEX tINDEX.new |
++	echo -n "Extracting index... " 1>${QUIETREDIR}
++	gunzip -c < files/`look INDEX tINDEX.new |
+ 	    cut -f 2 -d '|'`.gz > INDEX.new
+ 	fetch_index_sanity || return 1
+ 
+@@ -773,23 +815,39 @@ fetch_update() {
+ 	fi
+ 
+ # Generate a list of wanted ports patches
++	echo -n "Generating list of wanted patches..." 1>${QUIETREDIR}
+ 	join -t '|' -o 1.2,2.2 INDEX INDEX.new |
+ 	    fetch_make_patchlist > patchlist
++	echo " done." 1>${QUIETREDIR}
+ 
+ # Attempt to fetch ports patches
+-	echo -n "Fetching `wc -l < patchlist | tr -d ' '` "
++	patchcnt=`wc -l < patchlist | tr -d ' '`
++	echo -n "Fetching $patchcnt "
+ 	echo ${NDEBUG} "patches.${DDSTATS}"
++	echo " "
+ 	tr '|' '-' < patchlist | lam -s "bp/" - |
+ 	    xargs ${XARGST} ${PHTTPGET} ${SERVERNAME}	\
+-	    2>${STATSREDIR} | fetch_progress
++	    2>${STATSREDIR} | fetch_progress_percent $patchcnt
+ 	echo "done."
+ 
+ # Attempt to apply ports patches
+-	echo -n "Applying patches... "
+-	while read LINE; do
+-		X=`echo ${LINE} | cut -f 1 -d '|'`
+-		Y=`echo ${LINE} | cut -f 2 -d '|'`
+-		if [ ! -f "${X}-${Y}" ]; then continue; fi
++	PATCHCNT=`wc -l patchlist`
++	echo "Applying patches... "
++	local oldifs="$IFS" IFS='|'
++	I=0
++	while read X Y; do
++		I=$(($I + 1))
++		F="${X}-${Y}"
++		if [ ! -f "${F}" ]; then
++			XS=${X%[0-9a-f][0-9a-f][0-9a-f][0-9a-f]}
++			XE=${X#[0-9a-f][0-9a-f][0-9a-f][0-9a-f]}
++			YS=${Y%[0-9a-f][0-9a-f][0-9a-f][0-9a-f]}
++			YE=${Y#[0-9a-f][0-9a-f][0-9a-f][0-9a-f]}
++			F="${X%${XE}}...${X#${XS}}-${Y%${YE}}...${Y#${YS}}"
++			printf "  Skipping ${F} (${I} of ${PATCHCNT}).\r"
++			continue
++		fi
++		echo "  Processing ${F}..." 1>${QUIETREDIR}
+ 		gunzip -c < files/${X}.gz > OLD
+ 		${BSPATCH} OLD NEW ${X}-${Y}
+ 		if [ `${SHA256} -q NEW` = ${Y} ]; then
+@@ -798,6 +856,7 @@ fetch_update() {
+ 		fi
+ 		rm -f diff OLD NEW ${X}-${Y}
+ 	done < patchlist 2>${QUIETREDIR}
++	IFS="$oldifs"
+ 	echo "done."
+ 
+ # Update ports without patches
+@@ -805,7 +864,7 @@ fetch_update() {
+ 	    cut -f 2 -d '|' /dev/stdin patchlist |
+ 		while read Y; do
+ 			if [ ! -f "files/${Y}.gz" ]; then
+-				echo ${Y};
++				echo ${Y}
+ 			fi
+ 		done > filelist
+ 	echo -n "Fetching `wc -l < filelist | tr -d ' '` "
+@@ -814,7 +873,10 @@ fetch_update() {
+ 	    xargs ${XARGST} ${PHTTPGET} ${SERVERNAME}	\
+ 	    2>${QUIETREDIR}
+ 
++	I=0
+ 	while read Y; do
++		I=$(($I + 1))
++		printf "   Processing ${Y} (${I} of ${PATCHCNT}).\r" 1>${QUIETREDIR}
+ 		if [ `gunzip -c < ${Y}.gz | ${SHA256} -q` = ${Y} ]; then
+ 			mv ${Y}.gz files/${Y}.gz
+ 		else
+@@ -825,8 +887,8 @@ fetch_update() {
+ 	echo "done."
+ 
+ # Remove files which are no longer needed
+-	cut -f 2 -d '|' tINDEX INDEX | sort > oldfiles
+-	cut -f 2 -d '|' tINDEX.new INDEX.new | sort | comm -13 - oldfiles |
++	cut -f 2 -d '|' tINDEX INDEX | sort -u > oldfiles
++	cut -f 2 -d '|' tINDEX.new INDEX.new | sort -u | comm -13 - oldfiles |
+ 	    lam -s "files/" - -s ".gz" | xargs rm -f
+ 	rm patchlist filelist oldfiles
+ 
+@@ -854,18 +916,25 @@ fetch_run() {
+ 
+ # Build a ports INDEX file
+ extract_make_index() {
+-	gunzip -c "${WORKDIR}/files/`look $1 ${WORKDIR}/tINDEX |
++	if ! look $1 ${WORKDIR}/tINDEX > /dev/null; then
++		echo -n "$1 not provided by portsnap server; "
++		echo "$2 not being generated."
++	else
++	gunzip -c < "${WORKDIR}/files/`look $1 ${WORKDIR}/tINDEX |
+ 	    cut -f 2 -d '|'`.gz" |
+ 	    cat - ${LOCALDESC} |
+ 	    ${MKINDEX} /dev/stdin > ${PORTSDIR}/$2
++	fi
+ }
+ 
+ # Create INDEX, INDEX-5, INDEX-6
+ extract_indices() {
+ 	echo -n "Building new INDEX files... "
+-	extract_make_index DESCRIBE.4 INDEX || return 1
+-	extract_make_index DESCRIBE.5 INDEX-5 || return 1
+-	extract_make_index DESCRIBE.6 INDEX-6 || return 1
++	for PAIR in ${INDEXPAIRS}; do
++		INDEXFILE=`echo ${PAIR} | cut -f 1 -d '|'`
++		DESCRIBEFILE=`echo ${PAIR} | cut -f 2 -d '|'`
++		extract_make_index ${DESCRIBEFILE} ${INDEXFILE} || return 1
++	done
+ 	echo "done."
+ }
+ 
+@@ -889,6 +958,7 @@ extract_metadata() {
+ 
+ # Do the actual work involved in "extract"
+ extract_run() {
++	local oldifs="$IFS" IFS='|'
+ 	mkdir -p ${PORTSDIR} || return 1
+ 
+ 	if !
+@@ -898,25 +968,22 @@ extract_run() {
+ 			grep -vE "${REFUSE}" ${WORKDIR}/INDEX
+ 		else
+ 			cat ${WORKDIR}/INDEX
+-		fi | while read LINE; do
+-		FILE=`echo ${LINE} | cut -f 1 -d '|'`
+-		HASH=`echo ${LINE} | cut -f 2 -d '|'`
++		fi | while read FILE HASH; do
+ 		echo ${PORTSDIR}/${FILE}
+-		if ! [ -r "${WORKDIR}/files/${HASH}.gz" ]; then
++		if ! [ -s "${WORKDIR}/files/${HASH}.gz" ]; then
+ 			echo "files/${HASH}.gz not found -- snapshot corrupt."
+ 			return 1
+ 		fi
+ 		case ${FILE} in
+ 		*/)
+-			DIR=`echo ${FILE} | sed -e 's|/$||'`
+-			rm -rf ${PORTSDIR}/${DIR}
++			rm -rf ${PORTSDIR}/${FILE%/}
+ 			mkdir -p ${PORTSDIR}/${FILE}
+-			tar -xzf ${WORKDIR}/files/${HASH}.gz	\
++			tar -xz --numeric-owner -f ${WORKDIR}/files/${HASH}.gz \
+ 			    -C ${PORTSDIR}/${FILE}
+ 			;;
+ 		*)
+ 			rm -f ${PORTSDIR}/${FILE}
+-			tar -xzf ${WORKDIR}/files/${HASH}.gz	\
++			tar -xz --numeric-owner -f ${WORKDIR}/files/${HASH}.gz \
+ 			    -C ${PORTSDIR} ${FILE}
+ 			;;
+ 		esac
+@@ -924,13 +991,49 @@ extract_run() {
+ 		return 1
+ 	fi
+ 	if [ ! -z "${EXTRACTPATH}" ]; then
+-		return 0;
++		return 0
+ 	fi
+ 
++	IFS="$oldifs"
++
+ 	extract_metadata
+ 	extract_indices
+ }
+ 
++update_run_extract() {
++	local IFS='|'
++
++# Install new files
++	echo "Extracting new files:"
++	if !
++		if ! [ -z "${REFUSE}" ]; then
++			grep -vE "${REFUSE}" ${WORKDIR}/INDEX | sort
++		else
++			sort ${WORKDIR}/INDEX
++		fi |
++	    comm -13 ${PORTSDIR}/.portsnap.INDEX - |
++	    while read FILE HASH; do
++		echo ${PORTSDIR}/${FILE}
++		if ! [ -s "${WORKDIR}/files/${HASH}.gz" ]; then
++			echo "files/${HASH}.gz not found -- snapshot corrupt."
++			return 1
++		fi
++		case ${FILE} in
++		*/)
++			mkdir -p ${PORTSDIR}/${FILE}
++			tar -xz --numeric-owner -f ${WORKDIR}/files/${HASH}.gz \
++			    -C ${PORTSDIR}/${FILE}
++			;;
++		*)
++			tar -xz --numeric-owner -f ${WORKDIR}/files/${HASH}.gz \
++			    -C ${PORTSDIR} ${FILE}
++			;;
++		esac
++	done; then
++		return 1
++	fi
++}
++
+ # Do the actual work involved in "update"
+ update_run() {
+ 	if ! [ -z "${INDEXONLY}" ]; then
+@@ -947,7 +1050,7 @@ update_run() {
+ # If we are REFUSEing to touch certain directories, don't remove files
+ # from those directories (even if they are out of date)
+ 	echo -n "Removing old files and directories... "
+-	if ! [ -z "${REFUSE}" ]; then 
++	if ! [ -z "${REFUSE}" ]; then
+ 		sort ${WORKDIR}/INDEX |
+ 		    comm -23 ${PORTSDIR}/.portsnap.INDEX - | cut -f 1 -d '|' |
+ 		    grep -vE "${REFUSE}" |
+@@ -961,38 +1064,7 @@ update_run() {
+ 	fi
+ 	echo "done."
+ 
+-# Install new files
+-	echo "Extracting new files:"
+-	if !
+-		if ! [ -z "${REFUSE}" ]; then
+-			grep -vE "${REFUSE}" ${WORKDIR}/INDEX | sort
+-		else
+-			sort ${WORKDIR}/INDEX
+-		fi |
+-	    comm -13 ${PORTSDIR}/.portsnap.INDEX - |
+-	    while read LINE; do
+-		FILE=`echo ${LINE} | cut -f 1 -d '|'`
+-		HASH=`echo ${LINE} | cut -f 2 -d '|'`
+-		echo ${PORTSDIR}/${FILE}
+-		if ! [ -r "${WORKDIR}/files/${HASH}.gz" ]; then
+-			echo "files/${HASH}.gz not found -- snapshot corrupt."
+-			return 1
+-		fi
+-		case ${FILE} in
+-		*/)
+-			mkdir -p ${PORTSDIR}/${FILE}
+-			tar -xzf ${WORKDIR}/files/${HASH}.gz	\
+-			    -C ${PORTSDIR}/${FILE}
+-			;;
+-		*)
+-			tar -xzf ${WORKDIR}/files/${HASH}.gz	\
+-			    -C ${PORTSDIR} ${FILE}
+-			;;
+-		esac
+-	done; then
+-		return 1
+-	fi
+-
++	update_run_extract || return 1
+ 	extract_metadata
+ 	extract_indices
+ }
+@@ -1013,10 +1085,10 @@ get_params() {
+ # Fetch command.  Make sure that we're being called
+ # interactively, then run fetch_check_params and fetch_run
+ cmd_fetch() {
+-	if [ ! -t 0 ]; then
++	if [ "${INTERACTIVE}" != "YES" ]; then
+ 		echo -n "`basename $0` fetch should not "
+ 		echo "be run non-interactively."
+-		echo "Run `basename $0` cron instead."
++		echo "Run `basename $0` cron instead"
+ 		exit 1
+ 	fi
+ 	fetch_check_params
+@@ -1055,10 +1127,29 @@ cmd_update() {
+ 	update_run || exit 1
+ }
+ 
++# Auto command.  Run 'fetch' or 'cron' depending on
++# whether stdin is a terminal; then run 'update' or
++# 'extract' depending on whether ${PORTSDIR} exists.
++cmd_auto() {
++	if [ "${INTERACTIVE}" = "YES" ]; then
++		cmd_fetch
++	else
++		cmd_cron
++	fi
++	if [ -r ${PORTSDIR}/.portsnap.INDEX ]; then
++		cmd_update
++	else
++		cmd_extract
++	fi
++}
++
+ #### Entry point
+ 
+ # Make sure we find utilities from the base system
+ export PATH=/sbin:/bin:/usr/sbin:/usr/bin:${PATH}
++
++# Set LC_ALL in order to avoid problems with character ranges like [A-Z].
++export LC_ALL=C
+ 
+ get_params $@
+ for COMMAND in ${COMMANDS}; do
