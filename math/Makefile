@@ -954,6 +954,7 @@
     SUBDIR += py-minorminer
     SUBDIR += py-mip
     SUBDIR += py-mixsimulator
+    SUBDIR += py-ml-dtypes
     SUBDIR += py-moarchiving
     SUBDIR += py-mpmath
     SUBDIR += py-munkres
