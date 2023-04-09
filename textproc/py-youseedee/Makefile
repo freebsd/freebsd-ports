@@ -1,5 +1,5 @@
 PORTNAME=	youseedee
-PORTVERSION=	0.3.0
+PORTVERSION=	0.4.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,8 @@ WWW=		https://github.com/simoncozens/youseedee
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	UCD>=0:textproc/UCD
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+		UCD>=0:textproc/UCD
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
