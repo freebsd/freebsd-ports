@@ -1,8 +1,6 @@
 PORTNAME=	subtitlecomposer
-PORTVERSION=	0.7.1
-PORTREVISION=	4
+DISTVERSION=	0.7.1.20230404
 CATEGORIES=	multimedia kde
-MASTER_SITES=	KDE/stable/${PORTNAME}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Advanced FFmpeg-based subtitle editor
@@ -22,8 +20,10 @@ USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		windowsystem xmlgui \
 		doctools:build ecm:build
 USE_QT=		buildtools:build qmake:build testlib:build \
-		concurrent core dbus gui network script widgets xml
+		concurrent core dbus declarative gui network script widgets xml
 USE_XORG=	x11
+
+KDE_INVENT=	838063e2d6a90a1219b8880ffa71570c9c9c31c0 multimedia subtitlecomposer
 
 # Requires PocketSphinx-5prealpha
 SPHINX_DESC=	Speech recognition via PocketSphinx
