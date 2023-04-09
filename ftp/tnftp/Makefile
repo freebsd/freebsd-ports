@@ -1,9 +1,9 @@
 PORTNAME=	tnftp
-PORTVERSION=	20210827
+PORTVERSION=	20230409
 CATEGORIES=	ftp
 MASTER_SITES=	ftp://ftp.netbsd.org/pub/NetBSD/misc/tnftp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Enhanced FTP client from NetBSD
 
 USES=		libedit ncurses ssl
