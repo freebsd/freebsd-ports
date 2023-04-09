@@ -23,6 +23,7 @@ include/highfive/bits/H5Dataspace_misc.hpp
 include/highfive/bits/H5Exception_misc.hpp
 include/highfive/bits/H5FileDriver_misc.hpp
 include/highfive/bits/H5File_misc.hpp
+include/highfive/bits/H5Friends.hpp
 include/highfive/bits/H5Iterables_misc.hpp
 include/highfive/bits/H5Node_traits.hpp
 include/highfive/bits/H5Node_traits_misc.hpp
