@@ -1,5 +1,5 @@
 PORTNAME=	grpc
-PORTVERSION=	1.52.1
+PORTVERSION=	1.53.0
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -23,7 +23,7 @@ USES=		cmake compiler:c++17-lang cpe localbase:ldflags pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_TUPLE=	census-instrumentation:opencensus-proto:v0.4.1:census_instrumentation_opencensus_proto/third_party/opencensus-proto/src \
-		cncf:xds:46e39c7:cncf_xds/third_party/xds
+		cncf:xds:32f1caf:cncf_xds/third_party/xds
 
 CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=17 \
 		-DgRPC_ABSL_PROVIDER=package \
