@@ -1,11 +1,12 @@
 PORTNAME=	xdg
-PORTVERSION=	7.0.1
+PORTVERSION=	7.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XDG Base Directory Standard Library for Ruby
-WWW=		https://github.com/bkuhlmann/xdg
+WWW=		https://alchemists.io/projects/xdg \
+		https://github.com/bkuhlmann/xdg
 
 LICENSE=	HIPPOCRATIC
 LICENSE_NAME=	Hippocratic License 2.1.0
