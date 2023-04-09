@@ -2,8 +2,11 @@ include/tiledb/api/c_api/api_external_common.h
 include/tiledb/api/c_api/buffer/buffer_api_external.h
 include/tiledb/api/c_api/config/config_api_external.h
 include/tiledb/api/c_api/context/context_api_external.h
+include/tiledb/api/c_api/data_order/data_order_api_enum.h
+include/tiledb/api/c_api/data_order/data_order_api_external.h
 include/tiledb/api/c_api/datatype/datatype_api_enum.h
 include/tiledb/api/c_api/datatype/datatype_api_external.h
+include/tiledb/api/c_api/dimension_label/dimension_label_api_external.h
 include/tiledb/api/c_api/error/error_api_external.h
 include/tiledb/api/c_api/filesystem/filesystem_api_enum.h
 include/tiledb/api/c_api/filesystem/filesystem_api_external.h
@@ -16,9 +19,14 @@ include/tiledb/api/c_api/object/object_api_enum.h
 include/tiledb/api/c_api/object/object_api_external.h
 include/tiledb/api/c_api/query/query_api_enum.h
 include/tiledb/api/c_api/query/query_api_external.h
+include/tiledb/api/c_api/string/string_api_external.h
+include/tiledb/api/c_api/vfs/vfs_api_enum.h
+include/tiledb/api/c_api/vfs/vfs_api_external.h
 include/tiledb/array.h
+include/tiledb/array_deprecated.h
 include/tiledb/array_schema.h
 include/tiledb/array_schema_evolution.h
+include/tiledb/array_schema_experimental.h
 include/tiledb/arrow_io_impl.h
 include/tiledb/arrowio
 include/tiledb/attribute.h
@@ -28,6 +36,7 @@ include/tiledb/context.h
 include/tiledb/core_interface.h
 include/tiledb/deleter.h
 include/tiledb/dimension.h
+include/tiledb/dimension_label_experimental.h
 include/tiledb/domain.h
 include/tiledb/error.h
 include/tiledb/exception.h
@@ -36,6 +45,7 @@ include/tiledb/filter_list.h
 include/tiledb/fragment_info.h
 include/tiledb/group.h
 include/tiledb/group_experimental.h
+include/tiledb/log.h
 include/tiledb/object.h
 include/tiledb/object_iter.h
 include/tiledb/query.h
@@ -44,8 +54,10 @@ include/tiledb/query_experimental.h
 include/tiledb/schema_base.h
 include/tiledb/stats.h
 include/tiledb/subarray.h
+include/tiledb/subarray_experimental.h
 include/tiledb/tiledb
 include/tiledb/tiledb.h
+include/tiledb/tiledb_dimension_label_experimental.h
 include/tiledb/tiledb_enum.h
 include/tiledb/tiledb_experimental
 include/tiledb/tiledb_experimental.h
