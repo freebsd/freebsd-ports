@@ -33,6 +33,7 @@ CPE_VENDOR=	inria
 HAS_CONFIGURE=	yes
 ALL_TARGET=	world.opt
 STRIP=
+PIE_UNSAFE=	yes
 SSP_UNSAFE=	yes
 MAKE_JOBS_UNSAFE=	yes
 LDFLAGS_armv6=	-Wl,-znotext
