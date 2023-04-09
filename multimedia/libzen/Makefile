@@ -1,11 +1,10 @@
 PORTNAME=	libzen
-PORTVERSION=	0.4.40
-PORTREVISION=	3
+PORTVERSION=	23.03
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${MEDIAINFO_PORTVERSION}/ \
+MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
-DISTNAME=	MediaInfo_CLI_${MEDIAINFO_PORTVERSION}_GNU_FromSource
+DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ZenLib used by MediaInfo and its library
@@ -23,7 +22,5 @@ INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/ZenLib/Project/GNU/Library
-
-MEDIAINFO_PORTVERSION=	22.12
 
 .include <bsd.port.mk>
