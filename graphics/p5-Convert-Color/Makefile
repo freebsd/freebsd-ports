@@ -1,5 +1,5 @@
 PORTNAME=	Convert-Color
-PORTVERSION=	0.14
+PORTVERSION=	0.16
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-List-UtilsBy>=0:devel/p5-List-UtilsBy \
 		p5-Module-Pluggable>=0:devel/p5-Module-Pluggable
-TEST_DEPENDS=	p5-Test-Number-Delta>=0:devel/p5-Test-Number-Delta
+TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
 
 USES=		perl5
 USE_PERL5=	modbuild
