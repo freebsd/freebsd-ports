@@ -1,12 +1,12 @@
 PORTNAME=	frictionless
-PORTVERSION=	5.10.1
+PORTVERSION=	5.10.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Framework to describe, extract, validate, and transform tabular data
-WWW=		https://github.com/frictionlessdata/frictionless-py
+WWW=		https://github.com/frictionlessdata/framework
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -38,11 +38,12 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	API AWS BIGQUERY CKAN EXCEL GITHUB GSHEETS HTML JSON MYSQL PANDAS PARQUET POSTGRESQL SQL VISIDATA WKT
+OPTIONS_DEFINE=	API AWS BIGQUERY CKAN DATASETTE EXCEL GITHUB GSHEETS HTML JSON MYSQL PANDAS PARQUET POSTGRESQL SQL VISIDATA WKT
 API_DESC=	API support
 AWS_DESC=	AWS S3 support
 BIGQUERY_DESC=	BigQuery support
 CKAN_DESC=	CKAN API support
+DATASETTE_DESC=	Datasette support
 EXCEL_DESC=	Excel file support
 GITHUB_DESC=	GitHub support
 GSHEETS_DESC=	Google Sheets support
@@ -61,6 +62,7 @@ API_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>=0.78:www/py-fastapi@${PY_FLAVOR
 AWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.9:www/py-boto3@${PY_FLAVOR}
 BIGQUERY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-python-client>=1.12.1:www/py-google-api-python-client@${PY_FLAVOR}
 CKAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frictionless-ckan-mapper>=1.0:devel/py-frictionless-ckan-mapper@${PY_FLAVOR}
+DATASETTE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}datasette>=0.64.2:devel/py-datasette@${PY_FLAVOR}
 EXCEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpyxl>=3.0:textproc/py-openpyxl@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}tableschema-to-template>=0.0:textproc/py-tableschema-to-template@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}xlrd>=1.2:textproc/py-xlrd@${PY_FLAVOR} \
