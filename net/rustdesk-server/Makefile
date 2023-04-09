@@ -9,6 +9,8 @@ WWW=		https://rustdesk.com/server/
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_aarch64=	fails to build
+
 USES=		cargo
 GROUPS=		rustdesk
 USERS=		rustdesk
