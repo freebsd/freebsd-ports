@@ -4602,6 +4602,7 @@
     SUBDIR += py-flake8-import-order
     SUBDIR += py-flake8-polyfill
     SUBDIR += py-flake8-print
+    SUBDIR += py-flake8-pyi
     SUBDIR += py-flake8-quotes
     SUBDIR += py-flaky
     SUBDIR += py-flask-babel
