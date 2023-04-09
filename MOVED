@@ -17903,3 +17903,4 @@ devel/rubygem-fugit17|devel/rubygem-fugit|2023-04-09|Remove obsoleted port. Use 
 devel/rubygem-ruby-fogbugz021|devel/rubygem-ruby-fogbugz|2023-04-09|Remove obsoleted port. Use devel/rubygem-ruby-fogbugz instead
 devel/rubygem-sidekiq-cron-sidekiq64|devel/rubygem-sidekiq-cron|2023-04-09|Remove obsoleted port. Use devel/rubygem-sidekiq-cron instead
 devel/rubygem-sidekiq64|devel/rubygem-sidekiq|2023-04-09|Remove obsoleted port. Use devel/rubygem-sidekiq instead
+security/rubygem-openssl221|security/rubygem-openssl|2023-04-09|Remove obsoleted port. Use security/rubygem-openssl instead
