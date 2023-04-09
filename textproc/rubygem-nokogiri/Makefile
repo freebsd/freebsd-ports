@@ -1,11 +1,12 @@
 PORTNAME=	nokogiri
-PORTVERSION=	1.14.1
+PORTVERSION=	1.14.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HTML, XML, SAX, and Reader parser
-WWW=		https://nokogiri.org/
+WWW=		https://nokogiri.org/ \
+		https://github.com/sparklemotion/nokogiri
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
