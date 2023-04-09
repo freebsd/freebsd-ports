@@ -1,14 +1,13 @@
---- product.json.orig	2022-11-09 00:04:34 UTC
+--- product.json.orig	2023-04-04 22:49:54 UTC
 +++ product.json
-@@ -29,6 +29,17 @@
+@@ -29,6 +29,16 @@
  	"reportIssueUrl": "https://github.com/microsoft/vscode/issues/new",
  	"urlProtocol": "code-oss",
  	"webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/ef65ac1ba57f57f2a3961bfe94aa20481caca4c6/out/vs/workbench/contrib/webview/browser/pre/",
 +	"documentationUrl": "https://go.microsoft.com/fwlink/?LinkID=533484",
 +	"extensionsGallery": {
-+		"serviceUrl": "https://marketplace.visualstudio.com/_apis/public/gallery",
-+		"cacheUrl": "https://vscode.blob.core.windows.net/gallery/index",
-+		"itemUrl": "https://marketplace.visualstudio.com/items"
++		"serviceUrl": "https://open-vsx.org/vscode/gallery",
++		"itemUrl": "https://open-vsx.org/vscode/item"
 +	},
 +	"introductoryVideosUrl": "https://go.microsoft.com/fwlink/?linkid=832146",
 +	"keyboardShortcutsUrlLinux": "https://go.microsoft.com/fwlink/?linkid=832144",

@@ -1,10 +1,9 @@
 PORTNAME=	vscode
 DISTVERSION=	1.77.1
+PORTREVISION=	1
 CATEGORIES=	editors
-MASTER_SITES=	https://nodejs.org/dist/v${NODE_VER}/:node_headers \
-		https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
-DISTFILES=	node-v${NODE_VER}-headers${EXTRACT_SUFX}:node_headers \
-		yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
+MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
+DISTFILES=	yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
 		vscode-marketplace-exts-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache
 DIST_SUBDIR=	${PORTNAME}
 
@@ -58,8 +57,8 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 TEST_DEPENDS=	electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		bash:shells/bash
 
-USES=		desktop-file-utils gl gmake gnome iconv jpeg pkgconfig \
-		python:build shebangfix xorg
+USES=		desktop-file-utils gl gmake gnome iconv jpeg localbase:ldflags \
+		pkgconfig python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
@@ -75,8 +74,8 @@ USE_GNOME=	atk cairo pango gdkpixbuf2 gtk30 libxml2 libxslt
 
 USE_LDCONFIG=	${DATADIR}
 
-# See ${WRKSRC}/remote/.yarnrc for NODE_VER
-NODE_VER=	16.14.2
+# Keep NODE_VER in sync with www/node16 DISTVERSION
+NODE_VER=	16.20.0
 NODE_VER_MAJOR=	${NODE_VER:C/\..*$//}
 # See ${WRKSRC}/build/package.json for ESBUILD_VER_BUILD
 ESBUILD_VER_BUILD=	0.15.5
@@ -99,6 +98,10 @@ MAKE_ENV+=	PLAYWRIGHT_BROWSERS_PATH=${WRKDIR}/pw-browsers \
 # This is a workaround to avoid filesystem violations during poudriere build
 MAKE_ENV+=	PYTHONDONTWRITEBYTECODE=1
 
+OPTIONS_DEFINE=	REH
+OPTIONS_DEFAULT=# none
+REH_DESC=	Build remote extension host
+
 ELECTRON_DIR=	${.CURDIR}/../../devel/electron19
 .include	"${ELECTRON_DIR}/Makefile.version"
 
@@ -118,14 +121,19 @@ post-patch:
 	# force use of electron version matching port one
 	${REINPLACE_CMD} -E 's|^(target ").*(")$$|\1${ELECTRON_VER}\2|' \
 		${WRKSRC}/.yarnrc
+	# force use of node version matching port one
+	${REINPLACE_CMD} -E 's|^(target ").*(")$$|\1${NODE_VER}\2|' \
+		${WRKSRC}/remote/.yarnrc
 	# setup yarnrc for using local node headers
 	${ECHO_CMD} 'nodedir "${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR}/node_headers"' >> \
 		${WRKSRC}/.yarnrc
-	${ECHO_CMD} 'nodedir "${WRKDIR}/node-v${NODE_VER}"' >> \
+	${ECHO_CMD} 'nodedir "${LOCALBASE}"' >> \
 		${WRKSRC}/remote/.yarnrc
 	# setup yarnrc for offline node_modules installation
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' >> \
 		${WRKSRC}/.yarnrc
+	${ECHO_CMD} 'yarn-offline-mirror "../../yarn-offline-cache"' >> \
+		${WRKSRC}/remote/.yarnrc
 	(cd ${WRKSRC} && \
 		${FIND} -E . -type f -iregex '${SHEBANG_REGEX}' \
 			-exec ${SED} -i '' -e "s|/usr/bin/pgrep|/bin/pgrep|g" {} ';')
@@ -182,10 +190,21 @@ do-build:
 	# build and package vscode
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn run tsc -p build/tsconfig.build.json
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-linux-x64-min
-	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-linux-x64-min
-	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-web-linux-x64-min
 	# copy marketplace extensions
 	${MV} ${WRKDIR}/builtInExtensions/* ${WRKDIR}/VSCode-linux-x64/resources/app/extensions
+
+do-build-REH-on:
+	# setup download cache for node
+	${MKDIR} ${WRKSRC}/.build/node/v${NODE_VER}/linux-x64
+	${CP} ${LOCALBASE}/bin/node ${WRKSRC}/.build/node/v${NODE_VER}/linux-x64
+	# build vscode remote extension host
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-linux-x64-min
+	${MKDIR} ${WRKDIR}/vscode-reh/bin/${SOURCE_COMMIT_HASH}
+	cd ${WRKDIR}/vscode-reh-linux-x64 && ${TAR} -cf - . | \
+		${TAR} -xf - -C ${WRKDIR}/vscode-reh/bin/${SOURCE_COMMIT_HASH}
+	cd ${WRKDIR}/vscode-reh && \
+		${TAR} -czf ../vscode-reh-${DISTVERSION}-${OPSYS:tl}${OSREL:R}-${ARCH}.tar.gz .
+	# cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} yarn gulp vscode-reh-web-linux-x64-min
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
