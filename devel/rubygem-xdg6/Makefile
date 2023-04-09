@@ -6,7 +6,8 @@ PKGNAMESUFFIX=	6
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XDG Base Directory Standard Library for Ruby
-WWW=		https://github.com/bkuhlmann/xdg
+WWW=		https://alchemists.io/projects/xdg \
+		https://github.com/bkuhlmann/xdg
 
 LICENSE=	HIPPOCRATIC
 LICENSE_NAME=	Hippocratic License 2.1.0
