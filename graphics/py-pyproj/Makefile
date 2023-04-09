@@ -1,6 +1,5 @@
 PORTNAME=	pyproj
-PORTVERSION=	3.4.1
-PORTREVISION=	1
+PORTVERSION=	3.5.0
 CATEGORIES=	graphics geography python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,7 @@ WWW=		https://github.com/pyproj4/pyproj
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	proj>=8.2.0,1:graphics/proj
+BUILD_DEPENDS=	proj>=9.0.0,1:graphics/proj
 LIB_DEPENDS=	libproj.so:graphics/proj
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR}
 
