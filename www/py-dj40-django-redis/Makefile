@@ -1,5 +1,6 @@
 PORTNAME=	django-redis
 PORTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	www databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}dj40-
@@ -15,7 +16,7 @@ DEPRECATED=	Extended support of Django 4.0 ends April 2023, upgrade to the Djang
 EXPIRATION_DATE=	2023-05-20
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django40>=2.2:www/py-django40@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}redis>=3<4:databases/py-redis@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}redis3>=3<4:databases/py-redis3@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=0:databases/py-hiredis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR}
