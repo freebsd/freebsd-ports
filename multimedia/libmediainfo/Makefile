@@ -1,6 +1,5 @@
 PORTNAME=	libmediainfo
-PORTVERSION=	22.12
-PORTREVISION=	3
+PORTVERSION=	23.03
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
 		LOCAL/sunpoet
@@ -26,6 +25,9 @@ PATHFIX_MAKEFILEIN+=	configure
 USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource/MediaInfoLib/Project/GNU/Library
+
+DOS2UNIX_FILES=	../../../Source/MediaInfo/Audio/File_Usac.cpp \
+		../../../Source/MediaInfo/Audio/File_Usac.h
 
 OPTIONS_DEFINE=	CURL
 OPTIONS_DEFAULT=CURL
