@@ -26,8 +26,8 @@ PEP517_INSTALL_CMD=	${PYTHON_CMD} ${WRKSRC}/bootstrap_install.py --installdir ${
 PEP517_INSTALL_DEPEND=	# empty
 
 post-install:
-	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
+	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} -f ${STAGEDIR}${PYTHON_SITELIBDIR}
+	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} -f ${STAGEDIR}${PYTHON_SITELIBDIR}
+	cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
 
 .include <bsd.port.mk>
