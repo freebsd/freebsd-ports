@@ -28,7 +28,7 @@ _VALID_NODEJS_VERSIONS=	14 16 18 19 current lts
 IGNORE=	Invalid default nodejs version ${NODEJS_DEFAULT}; valid versions are ${_VALID_NODEJS_VERSIONS}
 .  endif
 
-.  if !empty(${nodejs_ARGS:Nbuild:Nrun:Nlts:Ncurrent:N14:N16:N18:N19})
+.  if !empty(nodejs_ARGS:Nbuild:Nenv:Nrun:Nlts:Ncurrent:N14:N16:N18:N19)
 IGNORE=		USES=nodejs has invalid arguments ${nodejs_ARGS}.
 .  endif
 
