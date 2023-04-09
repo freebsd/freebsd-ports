@@ -1,5 +1,5 @@
 PORTNAME=	faye-websocket
-PORTVERSION=	0.11.1
+PORTVERSION=	0.11.2
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
