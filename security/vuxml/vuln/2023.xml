@@ -1,3 +1,62 @@
+  <vuln vid="3d5581ff-d388-11ed-8581-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>112.0.5615.49</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>112.0.5615.49</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/04/stable-channel-update-for-desktop.html">
+	 <p>This update includes 16 security fixes:</p>
+	 <ul>
+	   <li>[1414018] High CVE-2023-1810: Heap buffer overflow in Visuals. Reported by Weipeng Jiang (@Krace) of VRI on 2023-02-08</li>
+	   <li>[1420510] High CVE-2023-1811: Use after free in Frames. Reported by Thomas Orlita on 2023-03-01</li>
+	   <li>[1418224] Medium CVE-2023-1812: Out of bounds memory access in DOM Bindings. Reported by Shijiang Yu on 2023-02-22</li>
+	   <li>[1423258] Medium CVE-2023-1813: Inappropriate implementation in Extensions. Reported by Axel Chong on 2023-03-10</li>
+	   <li>[1417325] Medium CVE-2023-1814: Insufficient validation of untrusted input in Safe Browsing. Reported by Young Min Kim (@ylemkimon), CompSec Lab at Seoul National University on 2023-02-18</li>
+	   <li>[1278708] Medium CVE-2023-1815: Use after free in Networking APIs. Reported by DDV_UA on 2021-12-10</li>
+	   <li>[1413919] Medium CVE-2023-1816: Incorrect security UI in Picture In Picture. Reported by NDevTK on 2023-02-08</li>
+	   <li>[1418061] Medium CVE-2023-1817: Insufficient policy enforcement in Intents. Reported by Axel Chong on 2023-02-22</li>
+	   <li>[1223346] Medium CVE-2023-1818: Use after free in Vulkan. Reported by Abdulrahman Alqabandi, Microsoft Browser Vulnerability Research, Eric Lawrence, Microsoft, Patrick Walker (@HomeSen), and Kirtikumar Anandrao Ramchandani on 2021-06-24</li>
+	   <li>[1406588] Medium CVE-2023-1819: Out of bounds read in Accessibility. Reported by Microsoft Edge Team on 2023-01-12</li>
+	   <li>[1408120] Medium CVE-2023-1820: Heap buffer overflow in Browser History. Reported by raven at KunLun lab on 2023-01-17</li>
+	   <li>[1413618] Low CVE-2023-1821: Inappropriate implementation in WebShare. Reported by Axel Chong on 2023-02-07</li>
+	   <li>[1066555] Low CVE-2023-1822: Incorrect security UI in Navigation. Reported by 강우진 on 2020-04-01</li>
+	   <li>[1406900] Low CVE-2023-1823: Inappropriate implementation in FedCM. Reported by Jasper Rebane (popstonia) on 2023-01-13</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-1810</cvename>
+      <cvename>CVE-2023-1811</cvename>
+      <cvename>CVE-2023-1812</cvename>
+      <cvename>CVE-2023-1813</cvename>
+      <cvename>CVE-2023-1814</cvename>
+      <cvename>CVE-2023-1815</cvename>
+      <cvename>CVE-2023-1816</cvename>
+      <cvename>CVE-2023-1817</cvename>
+      <cvename>CVE-2023-1818</cvename>
+      <cvename>CVE-2023-1819</cvename>
+      <cvename>CVE-2023-1820</cvename>
+      <cvename>CVE-2023-1821</cvename>
+      <cvename>CVE-2023-1822</cvename>
+      <cvename>CVE-2023-1823</cvename>
+      <url>https://chromereleases.googleblog.com/2023/04/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2023-04-05</discovery>
+      <entry>2023-04-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="348ee234-d541-11ed-ad86-a134a566f1e6">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
