@@ -1,13 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.0
-PORTREVISION=	1
+DISTVERSION=	0.24.1
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	31963f823b12.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/1993
-PATCHFILES+=	86852cdc78b8.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/1995
-PATCHFILES+=	b32af6ebfb5e.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/1997
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -32,7 +26,7 @@ USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 GH_PROJECT=	Hyprland
-GH_TUPLE=	hyprwm:hyprland-protocols:301733a:hyprland_protocols/subprojects/hyprland-protocols \
+GH_TUPLE=	hyprwm:hyprland-protocols:d7d403b:hyprland_protocols/subprojects/hyprland-protocols \
 		canihavesomecoffee:udis86:1.7.2-186-g5336633:udis86/subprojects/udis86
 MESON_ARGS=	-Dsystemd=disabled
 
@@ -67,10 +61,7 @@ post-install:
 # XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
 .if !exists(/usr/include/c++/v1/__ranges/as_rvalue_view.h) || make(makesum) || make(fetch)
-. if exists(/usr/include/c++/v1/__algorithm/ranges_all_of.h) && !make(makesum) && !make(fetch)
-CXXFLAGS+=	-fexperimental-library # std::ranges::all_of
-. else
-USES+=		llvm:min=14,build
+USES+=		llvm:min=16,build
 CC=		clang${LLVM_VERSION}
 CXX=		clang++${LLVM_VERSION}
 CPP=		clang-cpp${LLVM_VERSION}
@@ -91,7 +82,6 @@ bundled-libcxx:
 		-DCMAKE_INSTALL_PREFIX:PATH=${WRKDIR}/libcxx_prefix \
 		-B ${WRKDIR}/libcxx_build -S ${WRKSRC_libcxx}/libcxx
 	@${DO_MAKE_BUILD:NDESTDIR*} install -C ${WRKDIR}/libcxx_build
-. endif
 .endif
 .endif # exists(/usr/lib/libc++.so)
 
