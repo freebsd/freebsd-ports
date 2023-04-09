@@ -1,0 +1,36 @@
+--- Makefile.in.orig	2023-03-20 13:54:32 UTC
++++ Makefile.in
+@@ -684,7 +684,7 @@ CLEANFILES = $(VC10_LIBVCXPROJ) $(VC10_SRCVCXPROJ) $(V
+  $(VC14_30_LIBVCXPROJ) $(VC14_30_SRCVCXPROJ)
+ 
+ bin_SCRIPTS = curl-config
+-SUBDIRS = lib src
++SUBDIRS = lib src docs scripts
+ DIST_SUBDIRS = $(SUBDIRS) tests packages scripts include docs
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = libcurl.pc
+@@ -1695,10 +1695,8 @@ dist-hook:
+ 	done)
+ 
+ html:
+-	cd docs && $(MAKE) html
+ 
+ pdf:
+-	cd docs && $(MAKE) pdf
+ 
+ check: test examples check-docs
+ 
+@@ -1785,13 +1783,11 @@ cygwinbin:
+ # We extend the standard install with a custom hook:
+ install-data-hook:
+ 	(cd include && $(MAKE) install)
+-	(cd docs && $(MAKE) install)
+ 	(cd docs/libcurl && $(MAKE) install)
+ 
+ # We extend the standard uninstall with a custom hook:
+ uninstall-hook:
+ 	(cd include && $(MAKE) uninstall)
+-	(cd docs && $(MAKE) uninstall)
+ 	(cd docs/libcurl && $(MAKE) uninstall)
+ 
+ ca-bundle: $(srcdir)/scripts/mk-ca-bundle.pl

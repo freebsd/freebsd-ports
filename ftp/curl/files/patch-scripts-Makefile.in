@@ -1,6 +1,6 @@
---- scripts/Makefile.in.orig	2021-07-19 12:47:18 UTC
+--- scripts/Makefile.in.orig	2023-03-20 11:39:06 UTC
 +++ scripts/Makefile.in
-@@ -578,7 +578,7 @@ uninstall-am:
+@@ -592,7 +592,7 @@ uninstall-am:
  .PRECIOUS: Makefile
  
  
@@ -9,7 +9,7 @@
  
  $(ZSH_COMPLETION_FUNCTION_FILENAME): completion.pl
  @CROSSCOMPILING_TRUE@	@echo "NOTICE: we can't generate zsh completion when cross-compiling!"
-@@ -593,9 +593,7 @@ $(FISH_COMPLETION_FUNCTION_FILENAME): completion.pl
+@@ -607,9 +607,7 @@ $(FISH_COMPLETION_FUNCTION_FILENAME): completion.pl
  install-data-local:
  @CROSSCOMPILING_TRUE@	@echo "NOTICE: we can't install zsh completion when cross-compiling!"
  @CROSSCOMPILING_FALSE@	$(MKDIR_P) $(DESTDIR)$(ZSH_FUNCTIONS_DIR)

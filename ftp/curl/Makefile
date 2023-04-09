@@ -156,17 +156,6 @@ IGNORE=		only supports TLS-SRP with either OpenSSL or GnuTLS
 IGNORE=		only supports LDAPS with SSL
 .endif
 
-.if ${PORT_OPTIONS:MGSSAPI_BASE} && exists(${LOCALBASE}/lib/libkrb5support.so)
-BROKEN=		The GSSAPI_BASE option is selected, but you have krb5 installed. \
-		This is incompatible. In order to build, either select GSSAPI_MIT, \
-		or temporarily deinstall krb5 to build curl, or build in poudriere
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e '/^SUBDIRS = / s|$$| docs scripts|; /^DIST_SUBDIRS = / s| docs scripts||; /cd docs &&/d' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e 's|\(flags_dbg_off=\)".*"|\1""|; s|\(flags_opt_off=\)".*"|\1""|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|include <gssapi.h>|include <gssapi/gssapi.h>|' ${WRKSRC}/lib/urldata.h
-
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/docs/libcurl/libcurl.m4 ${STAGEDIR}${PREFIX}/share/aclocal/
 

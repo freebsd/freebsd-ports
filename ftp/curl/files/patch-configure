@@ -1,6 +1,6 @@
---- configure.orig	2021-09-13 14:46:32 UTC
+--- configure.orig	2023-03-20 11:39:06 UTC
 +++ configure
-@@ -4161,9 +4161,10 @@ printf "%s\n" "$as_me: LIBS note: LIBS should only be 
+@@ -4179,9 +4179,10 @@ printf "%s\n" "$as_me: LIBS note: LIBS should only be 
        -I*)
          xc_bad_var_ldflags=yes
          ;;
@@ -14,7 +14,7 @@
      esac
    done
    if test $xc_bad_var_ldflags = yes; then
-@@ -4233,9 +4234,10 @@ printf "%s\n" "$as_me: $xc_bad_var_msg libraries. Use 
+@@ -4251,9 +4252,10 @@ printf "%s\n" "$as_me: $xc_bad_var_msg libraries. Use 
    xc_bad_var_cflags=no
    for xc_word in $CFLAGS; do
      case "$xc_word" in
@@ -28,7 +28,95 @@
        -U*)
          xc_bad_var_cflags=yes
          ;;
-@@ -18092,6 +18094,8 @@ printf "%s\n" "$honor_optimize_option" >&6; }
+@@ -17387,7 +17389,7 @@ printf "%s\n" "$as_me: WARNING: failed to figure out c
+   flags_dbg_yes="unknown"
+   flags_opt_all="unknown"
+   flags_opt_yes="unknown"
+-  flags_opt_off="unknown"
++  flags_opt_off=""
+   #
+   flags_prefer_cppflags="no"
+   #
+@@ -17492,7 +17494,7 @@ printf "%s\n" "yes" >&6; }
+     flags_dbg_yes="-g2"
+     flags_opt_all="-O -O0 -O1 -O2 -O3 -O4"
+     flags_opt_yes="-O1"
+-    flags_opt_off="-O0"
++    flags_opt_off=""
+   else
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+@@ -17553,7 +17555,7 @@ printf "%s\n" "yes" >&6; }
+     flags_dbg_yes="-g"
+     flags_opt_all="-O +O0 +O1 +O2 +O3 +O4"
+     flags_opt_yes="+O2"
+-    flags_opt_off="+O0"
++    flags_opt_off=""
+   else
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+@@ -17621,7 +17623,7 @@ printf "%s\n" "yes" >&6; }
+     flags_opt_all="$flags_opt_all -qoptimize=4"
+     flags_opt_all="$flags_opt_all -qoptimize=5"
+     flags_opt_yes="-O2"
+-    flags_opt_off="-qnooptimize"
++    flags_opt_off=""
+     flags_prefer_cppflags="yes"
+   else
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+@@ -17730,13 +17732,13 @@ rm -f conftest.err conftest.i conftest.$ac_ext
+       flags_dbg_yes="-g"
+       flags_opt_all="-O -O0 -O1 -O2 -O3 -Os"
+       flags_opt_yes="-O2"
+-      flags_opt_off="-O0"
++      flags_opt_off=""
+     else
+       compiler_id="INTEL_WINDOWS_C"
+       flags_dbg_yes="/Zi /Oy-"
+       flags_opt_all="/O /O0 /O1 /O2 /O3 /Od /Og /Og- /Oi /Oi-"
+       flags_opt_yes="/O2"
+-      flags_opt_off="/Od"
++      flags_opt_off=""
+     fi
+   else
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+@@ -17865,7 +17867,7 @@ printf "%s\n" "no" >&6; }
+     flags_dbg_yes="-g"
+     flags_opt_all="-O -O0 -O1 -O2 -Os -O3 -O4"
+     flags_opt_yes="-O2"
+-    flags_opt_off="-O0"
++    flags_opt_off=""
+   else
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+@@ -17931,7 +17933,7 @@ printf "%s\n" "yes" >&6; }
+     flags_dbg_yes="-g"
+     flags_opt_all="-O -O0 -O1 -O2 -O3 -Os -Og -Ofast"
+     flags_opt_yes="-O2"
+-    flags_opt_off="-O0"
++    flags_opt_off=""
+ 
+     OLDCPPFLAGS=$CPPFLAGS
+   # CPPPFLAG comes from CURL_CPP_P
+@@ -18190,7 +18192,7 @@ printf "%s\n" "yes" >&6; }
+     flags_dbg_yes="-g"
+     flags_opt_all="-O -O0 -O1 -O2 -O3 -Ofast"
+     flags_opt_yes="-O2"
+-    flags_opt_off="-O0"
++    flags_opt_off=""
+   else
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+@@ -18298,7 +18300,7 @@ printf "%s\n" "yes" >&6; }
+     flags_dbg_yes="-g"
+     flags_opt_all="-O -O0 -O1 -O2 -O3 -Ofast"
+     flags_opt_yes="-O2"
+-    flags_opt_off="-O0"
++    flags_opt_off=""
+   else
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
+ printf "%s\n" "no" >&6; }
+@@ -18831,6 +18833,8 @@ printf "%s\n" "$honor_optimize_option" >&6; }
      #
      if test "$honor_optimize_option" = "yes"; then
  
@@ -37,7 +125,7 @@
      ac_var_stripped=""
    for word1 in $tmp_CFLAGS; do
      ac_var_strip_word="no"
-@@ -18122,6 +18126,7 @@ printf "%s\n" "$honor_optimize_option" >&6; }
+@@ -18861,6 +18865,7 @@ printf "%s\n" "$honor_optimize_option" >&6; }
    done
      tmp_CPPFLAGS="$ac_var_stripped"
    squeeze tmp_CPPFLAGS
@@ -45,7 +133,7 @@
  
        if test "$want_optimize" = "yes"; then
          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if compiler accepts optimizer enabling options" >&5
-@@ -29490,31 +29495,31 @@ printf "%s\n" "found" >&6; }
+@@ -29941,31 +29946,31 @@ printf "%s\n" "found" >&6; }
      ;;
    off)
          LIB_RTMP="-lrtmp"
@@ -86,7 +174,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -46199,9 +46204,10 @@ printf "%s\n" "$as_me: LIBS note: LIBS should only be 
+@@ -45632,9 +45637,10 @@ printf "%s\n" "$as_me: LIBS note: LIBS should only be 
        -I*)
          xc_bad_var_ldflags=yes
          ;;
@@ -100,7 +188,7 @@
      esac
    done
    if test $xc_bad_var_ldflags = yes; then
-@@ -46271,9 +46277,10 @@ printf "%s\n" "$as_me: $xc_bad_var_msg libraries. Use 
+@@ -45704,9 +45710,10 @@ printf "%s\n" "$as_me: $xc_bad_var_msg libraries. Use 
    xc_bad_var_cflags=no
    for xc_word in $CFLAGS; do
      case "$xc_word" in
