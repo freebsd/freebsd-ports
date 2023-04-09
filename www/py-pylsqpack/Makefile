@@ -1,5 +1,5 @@
 PORTNAME=	pylsqpack
-PORTVERSION=	0.3.16
+PORTVERSION=	0.3.17
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,11 @@ WWW=		https://github.com/aiortc/pylsqpack
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		compiler:c++11-lang python:3.7+
-USE_PYTHON=	autoplist concurrent distutils unittest
+USE_PYTHON=	autoplist concurrent pep517 unittest
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
