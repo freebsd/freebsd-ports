@@ -1,5 +1,5 @@
 PORTNAME=	async
-PORTVERSION=	1.31.0
+PORTVERSION=	2.5.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -9,8 +9,11 @@ WWW=		https://github.com/socketry/async
 
 LICENSE=	MIT
 
+BROKEN_RUBY27=	yes
+BROKEN_RUBY30=	yes
+
 RUN_DEPENDS=	rubygem-console>=1.10<2:devel/rubygem-console \
-		rubygem-nio4r>=2.3<3:devel/rubygem-nio4r \
+		rubygem-io-event>=1.1<2:devel/rubygem-io-event \
 		rubygem-timers>=4.1<5:devel/rubygem-timers
 
 USES=		gem
