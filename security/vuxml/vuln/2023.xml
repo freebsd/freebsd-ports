@@ -141,7 +141,7 @@
 	  LDAP filters was insufficient and an attacker may be
 	  able to obtain confidential BitLocker recovery keys
 	  from a Samba AD DC.</p>
-          <p>Installations with such secrets in their Samba AD
+	  <p>Installations with such secrets in their Samba AD
 	  should assume they have been obtained and need replacing.</p>
 	</blockquote>
       </body>
