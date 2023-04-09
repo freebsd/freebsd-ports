@@ -8,7 +8,7 @@ PKGNAMESUFFIX=	2
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python client for Redis key-value store
-WWW=		https://github.com/andymccurdy/redis-py
+WWW=		https://github.com/redis/redis-py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -22,7 +22,8 @@ USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes
 
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}redis
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}redis \
+			${PYTHON_PKGNAMEPREFIX}redis[0-9]
 
 PORTSCOUT=	limit:^2\.
 
