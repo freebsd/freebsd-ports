@@ -19,6 +19,7 @@
 %%SITE_PERL%%/Type/Registry.pm
 %%SITE_PERL%%/Type/Tie.pm
 %%SITE_PERL%%/Type/Tiny.pm
+%%SITE_PERL%%/Type/Tiny/Bitfield.pm
 %%SITE_PERL%%/Type/Tiny/Class.pm
 %%SITE_PERL%%/Type/Tiny/ConstrainedObject.pm
 %%SITE_PERL%%/Type/Tiny/Duck.pm
@@ -79,6 +80,7 @@
 %%PERL5_MAN3%%/Type::Registry.3.gz
 %%PERL5_MAN3%%/Type::Tie.3.gz
 %%PERL5_MAN3%%/Type::Tiny.3.gz
+%%PERL5_MAN3%%/Type::Tiny::Bitfield.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Class.3.gz
 %%PERL5_MAN3%%/Type::Tiny::ConstrainedObject.3.gz
 %%PERL5_MAN3%%/Type::Tiny::Duck.3.gz
