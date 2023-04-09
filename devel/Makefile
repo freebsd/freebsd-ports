@@ -5139,6 +5139,7 @@
     SUBDIR += py-pure-eval
     SUBDIR += py-purl
     SUBDIR += py-py
+    SUBDIR += py-py-partiql-parser
     SUBDIR += py-py-ubjson
     SUBDIR += py-pyTooling
     SUBDIR += py-py_interface
