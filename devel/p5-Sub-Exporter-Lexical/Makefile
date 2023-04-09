@@ -1,6 +1,5 @@
 PORTNAME=	Sub-Exporter-Lexical
-PORTVERSION=	0.092292
-PORTREVISION=	1
+PORTVERSION=	1.000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0:devel/p5-B-Hooks-EndOfScope \
-		p5-Lexical-Var>=0:devel/p5-Lexical-Var \
 		p5-Sub-Exporter>=0.978:devel/p5-Sub-Exporter \
 		p5-namespace-autoclean>=0:devel/p5-namespace-autoclean \
 		p5-namespace-clean>=0:devel/p5-namespace-clean
@@ -25,6 +23,10 @@ USE_PERL5=	configure
 
 NO_ARCH=	yes
 
-PORTSCOUT=	skipv:0.100000
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PERL_LEVEL} < 503700
+RUN_DEPENDS+=	p5-Lexical-Var>=0.10:devel/p5-Lexical-Var
+.endif
+
+.include <bsd.port.post.mk>
