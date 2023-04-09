@@ -1,5 +1,5 @@
 PORTNAME=	finviz
-DISTVERSION=	1.4.5
+DISTVERSION=	1.4.6
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,6 @@ COMMENT=	Unofficial API for FinViz.com
 WWW=		https://github.com/mariostoev/finviz
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.7.4:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.9.3:www/py-beautifulsoup@${PY_FLAVOR} \
