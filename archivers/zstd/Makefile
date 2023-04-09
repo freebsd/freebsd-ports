@@ -1,6 +1,6 @@
 PORTNAME=	zstd
 PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://github.com/facebook/zstd/releases/download/v${PORTVERSION}/
 
@@ -20,6 +20,7 @@ USES=		gmake localbase:ldflags tar:zst
 
 ALL_TARGET=	default
 BINARY_ALIAS=	gmd5sum=md5sum
+CFLAGS+=	-fPIC
 MAKE_ENV=	INSTALL_DATA="${INSTALL_DATA}" \
 		INSTALL_MAN="${INSTALL_MAN}" \
 		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
