@@ -19,6 +19,10 @@ BUILD_DEPENDS=	${JAM}:devel/jam
 
 USES=		tar:tgz
 
+PATCHDIR=	${.CURDIR}/../p4/files
+
+DISTINFO_FILE=	${.CURDIR}/../p4/distinfo
+
 OPTIONS_DEFINE=	EXAMPLES
 
 WRKSRC=		${WRKDIR}/p4source-${PORTVERSION}
