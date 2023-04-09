@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-servicecatalog
-PORTVERSION=	1.77.0
+PORTVERSION=	1.79.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
