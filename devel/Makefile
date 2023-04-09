@@ -4978,6 +4978,7 @@
     SUBDIR += py-opendht
     SUBDIR += py-opengrok-tools
     SUBDIR += py-openstacksdk
+    SUBDIR += py-opentelemetry-api
     SUBDIR += py-opentracing
     SUBDIR += py-opster
     SUBDIR += py-optik
