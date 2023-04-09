@@ -1,7 +1,6 @@
 PORTNAME=	imhex
-PORTVERSION=	1.27.1
+PORTVERSION=	1.28.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
 DISTFILES=	xdg.hpp:xdg
@@ -24,6 +23,7 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX} \
 		josuttis-jthread-${GH_TAG_JTHREAD}_GH0${EXTRACT_SUFX} \
 		VirusTotal-yara-${GH_TAG_YARA}_GH0${EXTRACT_SUFX} \
 		WerWolv-libromfs-${GH_TAG_LIBROMFS}_GH0${EXTRACT_SUFX} \
+		WerWolv-libwolv-${GH_TAG_LIBWOLV}_GH0${EXTRACT_SUFX} \
 		WerWolv-ImHex-Patterns-${GH_TAG_IMHEX_PATTERNS}_GH0${EXTRACT_SUFX} \
 		WerWolv-PatternLanguage-${GH_TAG_PATTERN_LANGUAGE}_GH0${EXTRACT_SUFX}
 
@@ -39,7 +39,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libmbedtls.so:security/mbedtls \
 		libtre.so:textproc/libtre
 
-USES=		cmake gl gnome pkgconfig python:3.8+ xorg
+USES=		cmake desktop-file-utils gl gnome pkgconfig python:3.8+ xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xcb xau xdmcp
@@ -55,17 +55,19 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 		VirusTotal:yara:${GH_TAG_YARA}:yara \
 		WerWolv:ImHex-Patterns:${GH_TAG_IMHEX_PATTERNS}:imhex_patterns \
 		WerWolv:PatternLanguage:${GH_TAG_PATTERN_LANGUAGE}:pattern_language \
-		WerWolv:libromfs:${GH_TAG_LIBROMFS}:libromfs
+		WerWolv:libromfs:${GH_TAG_LIBROMFS}:libromfs \
+		WerWolv:libwolv:${GH_TAG_LIBWOLV}:libwolv \
 
 GH_TAG_CAPSTONE=	d5141c0
 GH_TAG_CLI11=	faea921
 GH_TAG_FMT=	a337011
-GH_TAG_IMHEX_PATTERNS=	ea4dda0
+GH_TAG_IMHEX_PATTERNS=	2ffa4e0
 GH_TAG_JTHREAD=	0fa8d39
 GH_TAG_LIBROMFS=	40cd303
-GH_TAG_NATIVEFILEDIALOG=	6efc824
-GH_TAG_PATTERN_LANGUAGE=	0e32a23
-GH_TAG_YARA=	ba94b4f
+GH_TAG_LIBWOLV=	bcd987c
+GH_TAG_NATIVEFILEDIALOG=	7909f55
+GH_TAG_PATTERN_LANGUAGE=	68210bd
+GH_TAG_YARA=	96790e5
 
 CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON \
 		-DIMHEX_STRIP_RELEASE=OFF -DIMHEX_PLUGINS_IN_SHARE=ON \
@@ -82,12 +84,16 @@ post-extract:
 	${CP} -R ${WRKSRC_fmt}/* ${WRKSRC}/lib/external/fmt
 	${CP} -R ${WRKSRC_jthread}/source/*.hpp ${WRKSRC}/lib/libimhex/include
 	${CP} -R ${WRKSRC_libromfs}/* ${WRKSRC}/lib/external/libromfs
+	${CP} -R ${WRKSRC_libwolv}/* ${WRKSRC}/lib/external/libwolv
 	${CP} -R ${WRKSRC_nativefiledialog}/* ${WRKSRC}/lib/external/nativefiledialog
 	${CP} -R ${WRKSRC_pattern_language}/* ${WRKSRC}/lib/external/pattern_language
 	${CP} -R ${WRKSRC_cli11}/* ${WRKSRC}/lib/external/pattern_language/external/cli11
 	${CP} -R ${WRKSRC_yara}/* ${WRKSRC}/lib/external/yara/yara
 	${MKDIR} ${WRKDIR}/.build/_deps/imhex_patterns_src
 	${CP} -R ${WRKSRC_imhex_patterns}/* ${WRKDIR}/.build/_deps/imhex_patterns_src
+
+post-patch:
+	${CP} -R ${WRKSRC}/lib/external/libwolv/* ${WRKSRC}/lib/external/pattern_language/external/libwolv
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}

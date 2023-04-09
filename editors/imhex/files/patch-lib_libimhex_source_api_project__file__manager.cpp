@@ -1,6 +1,6 @@
---- lib/libimhex/source/api/project_file_manager.cpp.orig	2023-02-13 15:22:20 UTC
+--- lib/libimhex/source/api/project_file_manager.cpp.orig	2023-04-04 10:04:22 UTC
 +++ lib/libimhex/source/api/project_file_manager.cpp
-@@ -43,7 +43,7 @@ namespace hex {
+@@ -46,7 +46,7 @@ namespace hex {
                  return false;
          }
  

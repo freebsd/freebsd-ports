@@ -1,23 +1,23 @@
---- lib/libimhex/source/helpers/file.cpp.orig	2022-10-08 08:03:47 UTC
-+++ lib/libimhex/source/helpers/file.cpp
-@@ -17,12 +17,12 @@ namespace hex::fs {
-                 this->m_file = _wfopen(path.c_str(), L"w+b");
+--- lib/external/libwolv/libs/io/source/io/file.cpp.orig	2023-04-08 15:55:46 UTC
++++ lib/external/libwolv/libs/io/source/io/file.cpp
+@@ -21,12 +21,12 @@ namespace wolv::io {
          #else
+ 
              if (mode == File::Mode::Read)
--                this->m_file = fopen64(hex::toUTF8String(path).c_str(), "rb");
-+                this->m_file = fopen(hex::toUTF8String(path).c_str(), "rb");
+-                this->m_file = fopen64(util::toUTF8String(path).c_str(), "rb");
++                this->m_file = fopen(util::toUTF8String(path).c_str(), "rb");
              else if (mode == File::Mode::Write)
--                this->m_file = fopen64(hex::toUTF8String(path).c_str(), "r+b");
-+                this->m_file = fopen(hex::toUTF8String(path).c_str(), "r+b");
+-                this->m_file = fopen64(util::toUTF8String(path).c_str(), "r+b");
++                this->m_file = fopen(util::toUTF8String(path).c_str(), "r+b");
  
              if (mode == File::Mode::Create || (mode == File::Mode::Write && this->m_file == nullptr))
--                this->m_file = fopen64(hex::toUTF8String(path).c_str(), "w+b");
-+                this->m_file = fopen(hex::toUTF8String(path).c_str(), "w+b");
+-                this->m_file = fopen64(util::toUTF8String(path).c_str(), "w+b");
++                this->m_file = fopen(util::toUTF8String(path).c_str(), "w+b");
+ 
          #endif
      }
- 
-@@ -50,7 +50,7 @@ namespace hex::fs {
- 
+@@ -63,7 +63,7 @@ namespace wolv::io {
+     }
  
      void File::seek(u64 offset) {
 -        fseeko64(this->m_file, offset, SEEK_SET);
@@ -25,7 +25,7 @@
      }
  
      void File::close() {
-@@ -135,10 +135,10 @@ namespace hex::fs {
+@@ -148,10 +148,10 @@ namespace wolv::io {
      size_t File::getSize() const {
          if (!isValid()) return 0;
  
@@ -40,12 +40,12 @@
  
          if (size < 0)
              return 0;
-@@ -149,7 +149,7 @@ namespace hex::fs {
+@@ -162,7 +162,7 @@ namespace wolv::io {
      void File::setSize(u64 size) {
          if (!isValid()) return;
  
 -        auto result = ftruncate64(fileno(this->m_file), size);
 +        auto result = ftruncate(fileno(this->m_file), size);
-         hex::unused(result);
+         util::unused(result);
      }
  

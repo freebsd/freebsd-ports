@@ -1,6 +1,6 @@
---- cmake/build_helpers.cmake.orig	2023-02-15 13:56:27 UTC
+--- cmake/build_helpers.cmake.orig	2023-04-04 10:04:22 UTC
 +++ cmake/build_helpers.cmake
-@@ -370,13 +370,13 @@ function(downloadImHexPatternsFiles dest)
+@@ -378,13 +378,13 @@ function(downloadImHexPatternsFiles dest)
  
      else ()
          # Maybe patterns are cloned to a subdirectory
@@ -16,11 +16,11 @@
          endforeach ()
      endif ()
  
-@@ -384,7 +384,6 @@ endfunction()
+@@ -392,7 +392,6 @@ endfunction()
  
  macro(setupCompilerWarnings target)
      set(IMHEX_COMMON_FLAGS "-Wall -Wextra -Wpedantic -Werror")
--    set(IMHEX_C_FLAGS "${IMHEX_COMMON_FLAGS} -Wno-restrict -Wno-stringop-overread -Wno-stringop-overflow")
+-    set(IMHEX_C_FLAGS "${IMHEX_COMMON_FLAGS} -Wno-restrict -Wno-stringop-overread -Wno-stringop-overflow -Wno-array-bounds")
  
      set(CMAKE_C_FLAGS    "${CMAKE_C_FLAGS}    ${IMHEX_C_FLAGS}")
      set(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS}  ${IMHEX_C_FLAGS}")

@@ -1,5 +1,5 @@
 bin/imhex
-lib/libimhex.so.1.27.1
+lib/libimhex.so.1.28.0
 share/applications/imhex.desktop
 %%DATADIR%%/constants/_schema.json
 %%DATADIR%%/constants/crc16.json
@@ -35,6 +35,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/encodings/macintosh.tbl
 %%DATADIR%%/encodings/ms932.tbl
 %%DATADIR%%/encodings/pokegen1_en.tbl
+%%DATADIR%%/encodings/pokegen3_en.tbl
 %%DATADIR%%/encodings/shiftjis.tbl
 %%DATADIR%%/encodings/thai.tbl
 %%DATADIR%%/encodings/turkish_iso.tbl
@@ -44,6 +45,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/includes/hex/core.pat
 %%DATADIR%%/includes/hex/dec.pat
 %%DATADIR%%/includes/hex/http.pat
+%%DATADIR%%/includes/hex/provider.pat
 %%DATADIR%%/includes/hex/impl/imhex_check.pat
 %%DATADIR%%/includes/hex/type/mangled.pat
 %%DATADIR%%/includes/std/array.pat
@@ -58,6 +60,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/includes/std/math.pat
 %%DATADIR%%/includes/std/mem.pat
 %%DATADIR%%/includes/std/ptr.pat
+%%DATADIR%%/includes/std/random.pat
 %%DATADIR%%/includes/std/string.pat
 %%DATADIR%%/includes/std/sys.pat
 %%DATADIR%%/includes/std/time.pat
@@ -87,6 +90,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/bencode.hexpat
 %%DATADIR%%/patterns/bmp.hexpat
 %%DATADIR%%/patterns/bson.hexpat
+%%DATADIR%%/patterns/bsp_goldsrc.hexpat
 %%DATADIR%%/patterns/cchva.hexpat
 %%DATADIR%%/patterns/ccpal.hexpat
 %%DATADIR%%/patterns/ccvxl.hexpat
@@ -94,8 +98,11 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/coff.hexpat
 %%DATADIR%%/patterns/cpio.pat
 %%DATADIR%%/patterns/dds.hexpat
+%%DATADIR%%/patterns/dex.hexpat
 %%DATADIR%%/patterns/dmg.hexpat
+%%DATADIR%%/patterns/dsstore.hexpat
 %%DATADIR%%/patterns/elf.hexpat
+%%DATADIR%%/patterns/evtx.hexpat
 %%DATADIR%%/patterns/fdt.pat
 %%DATADIR%%/patterns/flac.hexpat
 %%DATADIR%%/patterns/fs.hexpat
@@ -109,6 +116,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/java_class.hexpat
 %%DATADIR%%/patterns/jpeg.hexpat
 %%DATADIR%%/patterns/lnk.hexpat
+%%DATADIR%%/patterns/lua54.hexpat
 %%DATADIR%%/patterns/macho.hexpat
 %%DATADIR%%/patterns/midi.hexpat
 %%DATADIR%%/patterns/minidump.hexpat
@@ -119,7 +127,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/nro.hexpat
 %%DATADIR%%/patterns/ntag.hexpat
 %%DATADIR%%/patterns/ogg.hexpat
-%%DATADIR%%/patterns/pbzx.hexpat
+%%DATADIR%%/patterns/pbz.hexpat
 %%DATADIR%%/patterns/pcap.hexpat
 %%DATADIR%%/patterns/pcx.hexpat
 %%DATADIR%%/patterns/pe.hexpat
@@ -135,6 +143,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/stl.hexpat
 %%DATADIR%%/patterns/tar.hexpat
 %%DATADIR%%/patterns/tga.hexpat
+%%DATADIR%%/patterns/uefi.hexpat
 %%DATADIR%%/patterns/uf2.hexpat
 %%DATADIR%%/patterns/usb.hexpat
 %%DATADIR%%/patterns/vdf.hexpat

@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-02-15 08:39:23 UTC
+--- CMakeLists.txt.orig	2023-04-04 10:04:22 UTC
 +++ CMakeLists.txt
-@@ -28,8 +28,6 @@ project(imhex
+@@ -29,8 +29,6 @@ project(imhex
  
  # Make sure project is configured correctly
  setDefaultBuiltTypeIfUnset()

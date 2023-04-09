@@ -1,4 +1,4 @@
---- plugins/builtin/source/content/data_inspector.cpp.orig	2022-09-03 22:05:27 UTC
+--- plugins/builtin/source/content/data_inspector.cpp.orig	2023-04-04 10:04:22 UTC
 +++ plugins/builtin/source/content/data_inspector.cpp
 @@ -105,7 +105,7 @@ namespace hex::plugin::builtin {
  
@@ -9,7 +9,7 @@
      }
  
      template<std::integral T, size_t Size = sizeof(T)>
-@@ -285,7 +285,7 @@ namespace hex::plugin::builtin {
+@@ -277,7 +277,7 @@ namespace hex::plugin::builtin {
  
                  auto number   = hex::crypt::decodeSleb128(buffer);
                  bool negative = number < 0;
