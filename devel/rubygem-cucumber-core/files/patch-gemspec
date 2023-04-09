@@ -1,0 +1,11 @@
+--- cucumber-core.gemspec.orig	2023-04-09 15:39:17 UTC
++++ cucumber-core.gemspec
+@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<cucumber-gherkin>.freeze, [">= 24", "< 27"])
+-  s.add_runtime_dependency(%q<cucumber-messages>.freeze, [">= 19", "< 22"])
++  s.add_runtime_dependency(%q<cucumber-messages>.freeze, [">= 19", "< 22.1"])
+   s.add_runtime_dependency(%q<cucumber-tag-expressions>.freeze, ["~> 4.1", ">= 4.1.0"])
+   s.add_development_dependency(%q<rake>.freeze, ["~> 13.0", ">= 13.0.6"])
+   s.add_development_dependency(%q<rspec>.freeze, ["~> 3.11", ">= 3.11.0"])
