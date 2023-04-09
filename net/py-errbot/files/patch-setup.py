@@ -28,7 +28,7 @@
 +    "ansi>=0.2.0",
 +    "Pygments>=2.11.2",
 +    "pygments-markdown-lexer>=0.1.0.dev39",  # sytax coloring to debug md
-+    "dulwich>=0.19.16",  # python implementation of git
++    "dulwich>=0.20.31",  # python implementation of git
 +    "deepmerge>=1.0.1",
  ]
  
