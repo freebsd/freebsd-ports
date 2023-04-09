@@ -1,6 +1,6 @@
 PORTNAME=	nvc
 DISTVERSIONPREFIX=	r
-DISTVERSION=	1.8.2
+DISTVERSION=	1.9.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,7 +16,8 @@ BROKEN_FreeBSD_14_i386=	clang creashes, see https://bugs.freebsd.org/bugzilla/sh
 
 BUILD_DEPENDS=	llvm-config${LLVM_VERSION}:devel/llvm${LLVM_VERSION}
 LIB_DEPENDS=	libelf.so:devel/elfutils \
-		libffi.so:devel/libffi
+		libffi.so:devel/libffi \
+		libzstd.so:archivers/zstd
 RUN_DEPENDS=	llvm${LLVM_VERSION}>0:devel/llvm${LLVM_VERSION} \
 		bash:shells/bash
 TEST_DEPENDS=	check>0:devel/check
@@ -37,7 +38,7 @@ LDFLAGS+=	-lexecinfo
 
 CONFIGURE_ARGS=	--with-llvm=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
 
-TEST_TARGET=	check # several tests fail, see https://github.com/nickg/nvc/issues/530
+TEST_TARGET=	check
 TEST_WRKSRC=	${WRKSRC}/.build
 
 MAKE_ARGS=	CFLAGS="${CFLAGS}" # only for tests

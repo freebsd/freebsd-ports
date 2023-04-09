@@ -92,16 +92,14 @@ lib/nvc/ieee/IEEE.VITAL_TIMING
 lib/nvc/ieee/IEEE.VITAL_TIMING-body
 lib/nvc/ieee/_NVC_LIB
 lib/nvc/ieee/_index
-lib/nvc/nvc.08/NVC.IEEE_SUPPORT
-lib/nvc/nvc.08/NVC.IEEE_SUPPORT-body
 lib/nvc/nvc.08/NVC.POLYFILL
 lib/nvc/nvc.08/NVC.SIM_PKG
 lib/nvc/nvc.08/_NVC_LIB
 lib/nvc/nvc.08/_index
-lib/nvc/nvc.19/NVC.IEEE_SUPPORT
-lib/nvc/nvc.19/NVC.IEEE_SUPPORT-body
 lib/nvc/nvc.19/NVC.POLYFILL
 lib/nvc/nvc.19/NVC.SIM_PKG
+lib/nvc/nvc.19/NVC.TEXTBUF
+lib/nvc/nvc.19/NVC.TEXTBUF-body
 lib/nvc/nvc.19/_NVC_LIB
 lib/nvc/nvc.19/_index
 lib/nvc/nvc/NVC.POLYFILL
@@ -109,6 +107,9 @@ lib/nvc/nvc/NVC.POLYFILL-body
 lib/nvc/nvc/NVC.SIM_PKG
 lib/nvc/nvc/_NVC_LIB
 lib/nvc/nvc/_index
+lib/nvc/preload08.so
+lib/nvc/preload19.so
+lib/nvc/preload93.so
 lib/nvc/std.08/STD.ENV
 lib/nvc/std.08/STD.ENV-body
 lib/nvc/std.08/STD.STANDARD
@@ -140,3 +141,4 @@ libexec/nvc/install-quartus.sh
 libexec/nvc/install-uvvm.sh
 libexec/nvc/install-vivado.sh
 man/man1/nvc.1.gz
+share/bash-completion/completions/nvc.bash
