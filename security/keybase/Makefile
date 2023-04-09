@@ -2,15 +2,15 @@ PORTNAME=	keybase
 PORTVERSION=	6.0.4
 PORTREVISION=	3
 DISTVERSIONPREFIX=	v
-MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/go/:gomod
-#MASTER_SITES=	https://raw.githubusercontent.com/keybase/client/v${PORTVERSION}/go/:gomod
+MASTER_SITES=	https://raw.githubusercontent.com/keybase/client/v${PORTVERSION}/go/:gomod
 CATEGORIES=	security
 DISTFILES=	go.mod:gomod
 
-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Keybase.io client and Keybase Filesystem (KBFS)
-WWW=		https://keybase.io/docs/command_line
+WWW=		https://keybase.io/docs/command_line \
+		https://keybase.io/docs/kbfs \
+		https://github.com/keybase/client
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/../LICENSE
