@@ -1,18 +1,15 @@
 PORTNAME=	p4python
-PORTVERSION=	2016.1.1447008
-PORTREVISION=	2
+PORTVERSION=	2022.2.2425690
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	antonfb@hesiod.org
 COMMENT=	Python bindings for the Perforce API
-WWW=		https://www.perforce.com/perforce/r14.2/manuals/p4script/python.programming.html
+WWW=		https://www.perforce.com/manuals/p4python/Content/P4Python/Home-p4python.html
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
-BROKEN_riscv64=		fails to build: TypeError: can only concatenate str (not "NoneType") to str
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/perforce/libclient.a:devel/p4api
 RUN_DEPENDS:=	${BUILD_DEPENDS}
