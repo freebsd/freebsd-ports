@@ -1,5 +1,5 @@
 PORTNAME=	mod_gnutls
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	www security
 MASTER_SITES=	https://mod.gnutls.org/downloads/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
