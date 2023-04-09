@@ -1,5 +1,3 @@
-TIMESTAMP = 1679419058
-SHA256 (KDE/frameworks/5.104.0/kiconthemes-5.104.0.tar.xz) = 70f4d9f950acdaa28b539838226ed1cff7e70cdcf177272185bac7c75a6cccdf
-SIZE (KDE/frameworks/5.104.0/kiconthemes-5.104.0.tar.xz) = 1311912
-SHA256 (KDE/frameworks/5.104.0/d5d04e3c3fa92fbfd95eced39c3e272b8980563d.diff) = 259efffa7e643322a203c2802efb01da4e2358f9da0fc24077a34aa097656922
-SIZE (KDE/frameworks/5.104.0/d5d04e3c3fa92fbfd95eced39c3e272b8980563d.diff) = 598
+TIMESTAMP = 1681028567
+SHA256 (KDE/frameworks/5.105.0/kiconthemes-5.105.0.tar.xz) = 15178a35da23f78cbbac1a9d40554c9ed46f4426f7669f463260061f463f23bf
+SIZE (KDE/frameworks/5.105.0/kiconthemes-5.105.0.tar.xz) = 1311796

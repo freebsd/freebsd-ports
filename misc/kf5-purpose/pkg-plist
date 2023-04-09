@@ -452,6 +452,7 @@ share/locale/nl/LC_MESSAGES/purpose_youtube.mo
 share/locale/nn/LC_MESSAGES/libpurpose_quick.mo
 share/locale/nn/LC_MESSAGES/libpurpose_widgets.mo
 share/locale/nn/LC_MESSAGES/purpose-fileitemaction.mo
+share/locale/nn/LC_MESSAGES/purpose_barcode.mo
 share/locale/nn/LC_MESSAGES/purpose_bluetooth.mo
 share/locale/nn/LC_MESSAGES/purpose_imgur.mo
 share/locale/nn/LC_MESSAGES/purpose_kdeconnect.mo

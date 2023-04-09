@@ -2573,6 +2573,8 @@ share/icons/breeze-dark/actions/22/im-youtube.svg
 share/icons/breeze-dark/actions/22/imagecomment.svg
 share/icons/breeze-dark/actions/22/initial_state.svg
 share/icons/breeze-dark/actions/22/inpainting.svg
+share/icons/breeze-dark/actions/22/input-keyboard-virtual-hide.svg
+share/icons/breeze-dark/actions/22/input-keyboard-virtual-show.svg
 share/icons/breeze-dark/actions/22/input-mouse-click-left.svg
 share/icons/breeze-dark/actions/22/input-mouse-click-middle.svg
 share/icons/breeze-dark/actions/22/input-mouse-click-right.svg
@@ -4483,6 +4485,8 @@ share/icons/breeze-dark/actions/24/im-youtube.svg
 share/icons/breeze-dark/actions/24/imagecomment.svg
 share/icons/breeze-dark/actions/24/initial_state.svg
 share/icons/breeze-dark/actions/24/inpainting.svg
+share/icons/breeze-dark/actions/24/input-keyboard-virtual-hide.svg
+share/icons/breeze-dark/actions/24/input-keyboard-virtual-show.svg
 share/icons/breeze-dark/actions/24/input-mouse-click-left.svg
 share/icons/breeze-dark/actions/24/input-mouse-click-middle.svg
 share/icons/breeze-dark/actions/24/input-mouse-click-right.svg
@@ -6470,7 +6474,6 @@ share/icons/breeze-dark/apps/48/gimp.svg
 share/icons/breeze-dark/apps/48/git-cola.svg
 share/icons/breeze-dark/apps/48/git-gui.svg
 share/icons/breeze-dark/apps/48/goodvibes.svg
-share/icons/breeze-dark/apps/48/gparted.svg
 share/icons/breeze-dark/apps/48/gpick.svg
 share/icons/breeze-dark/apps/48/gpodder.svg
 share/icons/breeze-dark/apps/48/granatier.svg
@@ -6614,7 +6617,6 @@ share/icons/breeze-dark/apps/48/kuser.svg
 share/icons/breeze-dark/apps/48/kwalletmanager.svg
 share/icons/breeze-dark/apps/48/kwalletmanager2.svg
 share/icons/breeze-dark/apps/48/kwave.svg
-share/icons/breeze-dark/apps/48/kwikdisk.svg
 share/icons/breeze-dark/apps/48/kwin.svg
 share/icons/breeze-dark/apps/48/kword.svg
 share/icons/breeze-dark/apps/48/kwrite.svg
@@ -10662,6 +10664,7 @@ share/icons/breeze-dark/status/22/nm-nm-signal-25.svg
 share/icons/breeze-dark/status/22/nm-nm-signal-50.svg
 share/icons/breeze-dark/status/22/nm-nm-signal-75.svg
 share/icons/breeze-dark/status/22/nm-no-connection.svg
+share/icons/breeze-dark/status/22/redshift-status-day.svg
 share/icons/breeze-dark/status/22/redshift-status-off.svg
 share/icons/breeze-dark/status/22/redshift-status-on.svg
 share/icons/breeze-dark/status/22/rotation-allowed.svg
@@ -10836,6 +10839,7 @@ share/icons/breeze-dark/status/24/nm-nm-signal-25.svg
 share/icons/breeze-dark/status/24/nm-nm-signal-50.svg
 share/icons/breeze-dark/status/24/nm-nm-signal-75.svg
 share/icons/breeze-dark/status/24/nm-no-connection.svg
+share/icons/breeze-dark/status/24/redshift-status-day.svg
 share/icons/breeze-dark/status/24/redshift-status-off.svg
 share/icons/breeze-dark/status/24/redshift-status-on.svg
 share/icons/breeze-dark/status/24/rotation-allowed.svg
@@ -13573,6 +13577,8 @@ share/icons/breeze/actions/22/im-youtube.svg
 share/icons/breeze/actions/22/imagecomment.svg
 share/icons/breeze/actions/22/initial_state.svg
 share/icons/breeze/actions/22/inpainting.svg
+share/icons/breeze/actions/22/input-keyboard-virtual-hide.svg
+share/icons/breeze/actions/22/input-keyboard-virtual-show.svg
 share/icons/breeze/actions/22/input-mouse-click-left.svg
 share/icons/breeze/actions/22/input-mouse-click-middle.svg
 share/icons/breeze/actions/22/input-mouse-click-right.svg
@@ -15513,6 +15519,8 @@ share/icons/breeze/actions/24/im-youtube.svg
 share/icons/breeze/actions/24/imagecomment.svg
 share/icons/breeze/actions/24/initial_state.svg
 share/icons/breeze/actions/24/inpainting.svg
+share/icons/breeze/actions/24/input-keyboard-virtual-hide.svg
+share/icons/breeze/actions/24/input-keyboard-virtual-show.svg
 share/icons/breeze/actions/24/input-mouse-click-left.svg
 share/icons/breeze/actions/24/input-mouse-click-middle.svg
 share/icons/breeze/actions/24/input-mouse-click-right.svg
@@ -17527,7 +17535,6 @@ share/icons/breeze/apps/48/gimp.svg
 share/icons/breeze/apps/48/git-cola.svg
 share/icons/breeze/apps/48/git-gui.svg
 share/icons/breeze/apps/48/goodvibes.svg
-share/icons/breeze/apps/48/gparted.svg
 share/icons/breeze/apps/48/gpick.svg
 share/icons/breeze/apps/48/gpodder.svg
 share/icons/breeze/apps/48/granatier.svg
@@ -17671,7 +17678,6 @@ share/icons/breeze/apps/48/kuser.svg
 share/icons/breeze/apps/48/kwalletmanager.svg
 share/icons/breeze/apps/48/kwalletmanager2.svg
 share/icons/breeze/apps/48/kwave.svg
-share/icons/breeze/apps/48/kwikdisk.svg
 share/icons/breeze/apps/48/kwin.svg
 share/icons/breeze/apps/48/kword.svg
 share/icons/breeze/apps/48/kwrite.svg
@@ -22354,6 +22360,7 @@ share/icons/breeze/status/22/nm-nm-signal-25.svg
 share/icons/breeze/status/22/nm-nm-signal-50.svg
 share/icons/breeze/status/22/nm-nm-signal-75.svg
 share/icons/breeze/status/22/nm-no-connection.svg
+share/icons/breeze/status/22/redshift-status-day.svg
 share/icons/breeze/status/22/redshift-status-off.svg
 share/icons/breeze/status/22/redshift-status-on.svg
 share/icons/breeze/status/22/rotation-allowed.svg
@@ -22644,6 +22651,7 @@ share/icons/breeze/status/24/nm-nm-signal-25.svg
 share/icons/breeze/status/24/nm-nm-signal-50.svg
 share/icons/breeze/status/24/nm-nm-signal-75.svg
 share/icons/breeze/status/24/nm-no-connection.svg
+share/icons/breeze/status/24/redshift-status-day.svg
 share/icons/breeze/status/24/redshift-status-off.svg
 share/icons/breeze/status/24/redshift-status-on.svg
 share/icons/breeze/status/24/rotation-allowed.svg

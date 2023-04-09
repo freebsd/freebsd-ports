@@ -1,10 +1,6 @@
 PORTNAME=	kiconthemes
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11-themes kde kde-frameworks
-
-PATCH_SITES=	https://invent.kde.org/frameworks/kiconthemes/-/commit/
-PATCHFILES=	d5d04e3c3fa92fbfd95eced39c3e272b8980563d.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KF5 library for handling icons in applications
