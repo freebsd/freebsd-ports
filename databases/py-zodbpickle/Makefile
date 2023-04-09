@@ -1,5 +1,5 @@
 PORTNAME=	zodbpickle
-PORTVERSION=	2.6
+PORTVERSION=	3.0
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/zopefoundation/zodbpickle
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	multi
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:
