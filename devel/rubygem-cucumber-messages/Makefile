@@ -1,5 +1,5 @@
 PORTNAME=	cucumber-messages
-PORTVERSION=	21.0.1
+PORTVERSION=	22.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
