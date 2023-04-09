@@ -12,8 +12,8 @@ WWW=		https://github.com/platformdirs/platformdirs
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=1.11.1:devel/py-hatchling@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.3:devel/py-hatch-vcs@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.3:devel/py-hatch-vcs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>=1.11.1:devel/py-hatchling@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent pep517
