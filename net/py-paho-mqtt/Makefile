@@ -15,4 +15,6 @@ USES=		python:3.6+ shebangfix
 USE_PYTHON=	distutils autoplist
 SHEBANG_FILES=	examples/*.py
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
