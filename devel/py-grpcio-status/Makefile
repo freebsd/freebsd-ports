@@ -1,12 +1,13 @@
 PORTNAME=	grpcio-status
-PORTVERSION=	1.52.0
+PORTVERSION=	1.53.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Status proto mapping for gRPC
-WWW=		https://grpc.io/
+WWW=		https://grpc.io/ \
+		https://github.com/grpc/grpc/tree/master/src/python/grpcio_status
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
