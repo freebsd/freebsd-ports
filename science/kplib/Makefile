@@ -1,5 +1,5 @@
 PORTNAME=	kplib
-DISTVERSION=	1.0.5
+DISTVERSION=	1.1.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	muellergroup
-GL_COMMIT=	9f96d56d32f67a019066025e044dcd9e3b3316ea
+GL_COMMIT=	7ad807da6753b4677927ad8efd485bee13d6f761
 
 PLIST_FILES=	include/kPointLattice.h \
 		include/kPointLatticeGenerator.h \
