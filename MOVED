@@ -17901,3 +17901,4 @@ devel/rubygem-bootsnap115|devel/rubygem-bootsnap|2023-04-09|Remove obsoleted por
 devel/rubygem-cucumber-messages19|devel/rubygem-cucumber-messages|2023-04-09|Remove obsoleted port. Use devel/rubygem-cucumber-messages instead
 devel/rubygem-fugit17|devel/rubygem-fugit|2023-04-09|Remove obsoleted port. Use devel/rubygem-fugit instead
 devel/rubygem-ruby-fogbugz021|devel/rubygem-ruby-fogbugz|2023-04-09|Remove obsoleted port. Use devel/rubygem-ruby-fogbugz instead
+devel/rubygem-sidekiq-cron-sidekiq64|devel/rubygem-sidekiq-cron|2023-04-09|Remove obsoleted port. Use devel/rubygem-sidekiq-cron instead
