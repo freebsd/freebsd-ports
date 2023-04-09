@@ -1,13 +1,13 @@
 PORTNAME=	psycopg-pool
-PORTVERSION=	3.1.6
-PORTREVISION=	1
+PORTVERSION=	3.1.7
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Connection Pool for Psycopg
-WWW=		https://www.psycopg.org/
+WWW=		https://www.psycopg.org/ \
+		https://github.com/psycopg/psycopg/tree/master/psycopg_pool
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
