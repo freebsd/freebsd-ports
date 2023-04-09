@@ -1,5 +1,5 @@
 PORTNAME=	universal-ctags
-PORTVERSION=	p6.0.20230319.0
+PORTVERSION=	p6.0.20230409.0
 CATEGORIES=	devel
 
 MAINTAINER=	dereks@lifeofadishwasher.com
@@ -17,6 +17,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=u
 
 TEST_TARGET=	check
+
+PORTSCOUT=	skipv:v6.0.0
 
 OPTIONS_DEFINE=		DEBUG ICONV JSON LIBXML2 MANPAGES PCRE2 YAML
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE:NDEBUG}
@@ -46,5 +48,4 @@ PCRE2_CONFIGURE_ENABLE=	pcre2
 YAML_LIB_DEPENDS=	libyaml.so:textproc/libyaml
 YAML_CONFIGURE_ENABLE=	yaml
 
-PORTSCOUT=	skipv:v6.0.0
 .include <bsd.port.mk>
