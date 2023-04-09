@@ -17896,3 +17896,4 @@ devel/rubygem-aws-sdk-core3168|devel/rubygem-aws-sdk-core|2023-04-09|Remove obso
 devel/rubygem-aws-sdk-s31117|devel/rubygem-aws-sdk-s3|2023-04-09|Remove obsoleted port. Use devel/rubygem-aws-sdk-s3 instead
 devel/rubygem-bootsnap111|devel/rubygem-bootsnap|2023-04-09|Remove obsoleted port. Use devel/rubygem-bootsnap instead
 devel/rubygem-bootsnap112|devel/rubygem-bootsnap|2023-04-09|Remove obsoleted port. Use devel/rubygem-bootsnap instead
+devel/rubygem-bootsnap114|devel/rubygem-bootsnap|2023-04-09|Remove obsoleted port. Use devel/rubygem-bootsnap instead
