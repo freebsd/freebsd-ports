@@ -1,8 +1,11 @@
---- ext/sqlite3/extconf.rb.orig	2023-01-21 15:48:25 UTC
+--- ext/sqlite3/extconf.rb.orig	2023-04-08 07:40:49 UTC
 +++ ext/sqlite3/extconf.rb
-@@ -1,5 +1,4 @@
- require "mkmf"
--require "mini_portile2"
- require "yaml"
+@@ -130,8 +130,6 @@ module Sqlite3
+       end
  
- module Sqlite3
+       def minimal_recipe
+-        require "mini_portile2"
+-
+         MiniPortile.new(libname, sqlite3_config[:version]).tap do |recipe|
+           if sqlite_source_dir
+             recipe.source_directory = sqlite_source_dir
