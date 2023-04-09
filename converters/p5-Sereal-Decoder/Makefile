@@ -21,6 +21,7 @@ TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
 USES=		perl5
 USE_PERL5=	configure
 
+CONFIGURE_ENV=	NO_ASM=no USE_UNALIGNED=no
 MAKE_ENV=	PASTHRU_DEFINE="-I${LOCALBASE}/include"
 MAKE_JOBS_UNSAFE=	yes
 
