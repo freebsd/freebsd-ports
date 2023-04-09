@@ -1,5 +1,5 @@
 PORTNAME=	wagtail-bakery
-PORTVERSION=	0.5.0
+PORTVERSION=	0.7.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,8 @@ WWW=		https://github.com/wagtail/wagtail-bakery
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-bakery>=0.12.7<0.13:www/py-django-bakery@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wagtail>=2.10:www/py-wagtail@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-bakery>=0.12.7<0.14:www/py-django-bakery@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wagtail>=4.1:www/py-wagtail@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
