@@ -1,0 +1,39 @@
+PORTNAME=	redis
+PORTVERSION=	3.5.3
+CATEGORIES=	databases python
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+PKGNAMESUFFIX=	3
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Python client for Redis key-value store
+WWW=		https://github.com/redis/redis-py
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
+		redis-server:databases/redis
+
+USES=		python:3.6+
+USE_PYTHON=	autoplist concurrent distutils pytest
+
+NO_ARCH=	yes
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}redis \
+			${PYTHON_PKGNAMEPREFIX}redis2
+
+PORTSCOUT=	limit:^3\.
+
+OPTIONS_DEFINE=	HIREDIS
+HIREDIS_DESC=	High performance response parser
+
+HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=0.1.3:databases/py-hiredis@${PY_FLAVOR}
+
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 30800
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.0:devel/py-importlib-metadata@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
