@@ -90,9 +90,7 @@ include/pika/coroutines/detail/combined_tagged_state.hpp
 include/pika/coroutines/detail/context_base.hpp
 include/pika/coroutines/detail/context_generic_context.hpp
 include/pika/coroutines/detail/context_impl.hpp
-include/pika/coroutines/detail/context_impl.hpp.orig
 include/pika/coroutines/detail/context_linux_x86.hpp
-include/pika/coroutines/detail/context_linux_x86.hpp.orig
 include/pika/coroutines/detail/context_posix.hpp
 include/pika/coroutines/detail/context_windows_fibers.hpp
 include/pika/coroutines/detail/coroutine_accessor.hpp
@@ -186,10 +184,10 @@ include/pika/execution_base/context_base.hpp
 include/pika/execution_base/detail/spinlock_deadlock_detection.hpp
 include/pika/execution_base/execution.hpp
 include/pika/execution_base/operation_state.hpp
-include/pika/execution_base/p2300_forward.hpp
 include/pika/execution_base/receiver.hpp
 include/pika/execution_base/resource_base.hpp
 include/pika/execution_base/sender.hpp
+include/pika/execution_base/stdexec_forward.hpp
 include/pika/execution_base/this_thread.hpp
 include/pika/execution_base/traits/is_executor.hpp
 include/pika/execution_base/traits/is_executor_parameters.hpp
@@ -277,6 +275,7 @@ include/pika/init.hpp
 include/pika/init_runtime/config/defines.hpp
 include/pika/init_runtime/detail/init_logging.hpp
 include/pika/init_runtime/init_runtime.hpp
+include/pika/init_runtime/init_runtime.hpp.orig
 include/pika/init_runtime/scoped_finalize.hpp
 include/pika/iterator_support/boost_iterator_categories.hpp
 include/pika/iterator_support/config/defines.hpp
@@ -678,4 +677,4 @@ lib/cmake/pika/tests/stable_inplace_merge.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.13.0
+lib/libpika.so.0.14.0
