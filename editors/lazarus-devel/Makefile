@@ -1,7 +1,7 @@
 PORTNAME=	lazarus
 PORTVERSION=	2.3.0
 PKGNAMESUFFIX?=  -gtk2-devel
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	editors devel
 DIST_SUBDIR=	freepascal
 
@@ -69,6 +69,8 @@ post-extract:
 	@${MV} ${WRKSRC}/install/man/man1/startlazarus.1 ${WRKDIR}/man1/
 	@${MV} ${WRKSRC}/examples ${WRKDIR}/examples
 	@${MV} ${WRKSRC}/docs ${WRKDIR}/docs
+	@${RM} ${WRKSRC}/tools/.gitignore
+	@${RM} ${WRKSRC}/Dockerfile.buildenv
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' ${WRKSRC}/${MAKEFILE}
