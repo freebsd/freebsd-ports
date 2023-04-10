@@ -116,6 +116,7 @@ lib/qmmp%%LIB_SUFFX%%/General/libsleepinhibitor.so
 %%NULLOUT%%lib/qmmp%%LIB_SUFFX%%/Output/libnull.so
 %%OSS%%lib/qmmp%%LIB_SUFFX%%/Output/liboss.so
 %%OSS4%%lib/qmmp%%LIB_SUFFX%%/Output/liboss4.so
+%%PIPEWIRE%%lib/qmmp%%LIB_SUFFX%%/Output/libpipewire.so
 %%PULSEAUDIO%%lib/qmmp%%LIB_SUFFX%%/Output/libpulseaudio.so
 %%QTMULTIMEDIA%%lib/qmmp%%LIB_SUFFX%%/Output/libqtmultimedia.so
 %%SHOUTCAST%%lib/qmmp%%LIB_SUFFX%%/Output/libshout.so
