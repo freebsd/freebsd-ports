@@ -74,6 +74,7 @@ MESON_ARGS=	-D pw-cat=enabled \
 		-D media-session:systemd=disabled \
 		-D roc=disabled \
 		-D systemd=disabled \
+		-D x11=disabled \
 		-D x11-xfixes=disabled \
 		-D pipewire-v4l2=disabled \
 		-D udevrulesdir="${LOCALBASE}/lib/udev/rules.d"
