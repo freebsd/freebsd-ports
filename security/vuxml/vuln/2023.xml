@@ -1,3 +1,41 @@
+  <vuln vid="02e51cb3-d7e4-11ed-9f7a-5404a68ad561">
+    <topic>traefik -- Use of vulnerable Go modules net/http, net/textproto</topic>
+    <affects>
+      <package>
+	<name>traefik</name>
+	<range><lt>2.9.9_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://pkg.go.dev/vuln/GO-2023-1704">
+	  <p>HTTP and MIME header parsing can allocate large amounts
+	     of memory, even when parsing small inputs, potentially
+	     leading to a denial of service. Certain unusual patterns
+	     of input data can cause the common function used to parse
+	     HTTP and MIME headers to allocate substantially more
+	     memory than required to hold the parsed headers. An
+	     attacker can exploit this behavior to cause an HTTP
+	     server to allocate large amounts of memory from a small
+	     request, potentially leading to memory exhaustion and a
+	     denial of service. With fix, header parsing now correctly
+	     allocates only the memory required to hold parsed headers.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-24534</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2023-24534</url>
+      <cvename>CVE-2023-29013</cvename>
+      <url>https://www.cve.org/CVERecord?id=CVE-2023-29013</url>
+    </references>
+    <dates>
+      <discovery>2023-03-10</discovery>
+      <entry>2023-04-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f767d615-01db-47e9-b4ab-07bb8d3409fd">
     <topic>py39-cinder -- insecure-credentials flaw</topic>
     <affects>
