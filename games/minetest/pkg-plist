@@ -8,6 +8,7 @@ share/icons/hicolor/scalable/apps/minetest.svg
 %%CLIENT%%%%NLS%%share/locale/bg/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/ca/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/cs/LC_MESSAGES/minetest.mo
+%%CLIENT%%%%NLS%%share/locale/cy/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/da/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/de/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/el/LC_MESSAGES/minetest.mo
@@ -31,6 +32,7 @@ share/icons/hicolor/scalable/apps/minetest.svg
 %%CLIENT%%%%NLS%%share/locale/lt/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/lv/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/lzh/LC_MESSAGES/minetest.mo
+%%CLIENT%%%%NLS%%share/locale/mn/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/mr/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/ms/LC_MESSAGES/minetest.mo
 %%CLIENT%%%%NLS%%share/locale/nb/LC_MESSAGES/minetest.mo
