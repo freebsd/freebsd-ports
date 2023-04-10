@@ -1,5 +1,5 @@
 PORTNAME=	webauthn
-PORTVERSION=	2.5.2
+PORTVERSION=	3.0.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,7 @@ RUN_DEPENDS=	rubygem-android_key_attestation>=0.3.0<0.4:security/rubygem-android
 		rubygem-cose>=1.1<2:security/rubygem-cose \
 		rubygem-openssl2>=2.2<3.1:security/rubygem-openssl2 \
 		rubygem-safety_net_attestation>=0.4.0<0.5:security/rubygem-safety_net_attestation \
-		rubygem-tpm-key_attestation>=0.11.0<0.12:security/rubygem-tpm-key_attestation
+		rubygem-tpm-key_attestation>=0.12.0<0.13:security/rubygem-tpm-key_attestation
 
 USES=		gem
 
