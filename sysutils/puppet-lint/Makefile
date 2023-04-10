@@ -1,5 +1,5 @@
 PORTNAME=	puppet-lint
-PORTVERSION=	3.3.0
+PORTVERSION=	3.4.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
