@@ -121,6 +121,7 @@ DATADIR=	${PREFIX}/share/mysql
 ETCDIR=		${PREFIX}/etc/mysql
 
 CONFLICTS_INSTALL=	mariadb10[0-46-9]-${PKGNAMESUFFIX:C/^[0-9]*-//} \
+			mariadb1011-${PKGNAMESUFFIX:C/^[0-9]*-//} \
 			mysql[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//} \
 			mysqlwsrep*-server \
 			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}
