@@ -10,19 +10,14 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/LinuxAll.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/SelfTest.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/WindowsAllDrives.conf.sample
-%%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-cephfs.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-gfapi.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ldap.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-ovirt.conf.sample
 %%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/fileset/plugin-rados.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCatalog.conf.sample
-%%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupCephfs.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupGFAPI.conf.sample
-%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/BackupRados.conf.sample
-%%CEPHFS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreCephfs.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreFiles.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreGFAPI.conf.sample
-%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/RestoreRados.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-bareos-fd.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ldap.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/job/backup-ovirt.conf.sample
@@ -40,34 +35,33 @@ bin/bwild
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/File.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Gluster.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/NULL.conf.sample
-%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Rados.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-dir.d/storage/Tape.conf.sample
 @comment @sample(,bareos,640) %%ETCDIR%%/bareos-regress.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/autochanger/autochanger-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/FileStorage.conf.sample
 %%GFAPI%%@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/GlusterStorage.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/NULL.conf.sample
-%%RADOS%%@sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/RadosStorage.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/device/tapedrive-0.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-dir.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/director/bareos-mon.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/messages/Standard.conf.sample
 @sample(,bareos,640) %%ETCDIR%%/bareos-sd.d/storage/bareos-sd.conf.sample
+%%PYTHON%%@sample(,bareos,640) %%ETCDIR%%/bsmc.conf
 %%MTX%%@sample(,bareos,640) %%ETCDIR%%/mtx-changer.conf.sample
 etc/logrotate.d/bareos-dir
 lib/bareos/backends/libbareoscats-%%DBTYPE%%.so
-%%CEPHFS%%lib/bareos/backends/libbareossd-cephfs.so
 lib/bareos/backends/libbareossd-fifo.so
-lib/bareos/backends/libbareossd-gentape.so
+lib/bareos/backends/libbareossd-file.so
 %%GFAPI%%lib/bareos/backends/libbareossd-gfapi.so
-%%RADOS%%lib/bareos/backends/libbareossd-rados.so
 lib/bareos/backends/libbareossd-tape.so
 %%PYTHON%%lib/bareos/plugins/BareosDirPluginBaseclass.py
+%%PYTHON%%lib/bareos/plugins/BareosDirPluginNscaSender.py
 %%PYTHON%%lib/bareos/plugins/BareosDirWrapper.py
 %%PYTHON%%lib/bareos/plugins/BareosSdPluginBaseclass.py
 %%PYTHON%%lib/bareos/plugins/BareosSdWrapper.py
 lib/bareos/plugins/autoxflate-sd.so
 %%PYTHON%%lib/bareos/plugins/bareos-dir-class-plugin.py
+%%PYTHON%%lib/bareos/plugins/bareos-dir-nsca-sender.py
 %%PYTHON%%lib/bareos/plugins/bareos-sd-class-plugin.py
 %%PYTHON%%lib/bareos/plugins/python3-dir.so
 %%PYTHON%%lib/bareos/plugins/python3-sd.so
@@ -107,16 +101,16 @@ lib/bareos/scripts/mtx-changer
 lib/bareos/scripts/query.sql
 lib/bareos/scripts/update_bareos_tables
 lib/libbareoscats.so
-lib/libbareoscats.so.21
+lib/libbareoscats.so.22
 lib/libbareoscats.so.%%LIB_VERSION%%
 %%NDMP%%lib/libbareosndmp.so
-%%NDMP%%lib/libbareosndmp.so.21
+%%NDMP%%lib/libbareosndmp.so.22
 %%NDMP%%lib/libbareosndmp.so.%%LIB_VERSION%%
 lib/libbareossd.so
-lib/libbareossd.so.21
+lib/libbareossd.so.22
 lib/libbareossd.so.%%LIB_VERSION%%
 lib/libbareossql.so
-lib/libbareossql.so.21
+lib/libbareossql.so.22
 lib/libbareossql.so.%%LIB_VERSION%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/bareosdir%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/bareossd%%PYTHON_EXT_SUFFIX%%.so
@@ -148,6 +142,7 @@ sbin/btape
 sbin/btestls
 sbin/bwild
 sbin/chio-bareos
+sbin/testfind
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/catalog
 @dir(,bareos,750) %%ETCDIR%%/bareos-dir.d/client
