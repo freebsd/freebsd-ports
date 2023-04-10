@@ -1,7 +1,5 @@
-TIMESTAMP = 1679202433
-SHA256 (jacktrip-jacktrip-v1.8.0_GH0.tar.gz) = 1629e68eb94d24d1842897e65cfb211663ad4ddff65ae22681684cebac3862eb
-SIZE (jacktrip-jacktrip-v1.8.0_GH0.tar.gz) = 5828379
-SHA256 (flathub-shared-modules-2c3a597_GH0.tar.gz) = 809e323d2f1b7d85c9e800d771d044da06fb94c6724e62aee6870061f430b408
-SIZE (flathub-shared-modules-2c3a597_GH0.tar.gz) = 58288
+TIMESTAMP = 1681113045
+SHA256 (jacktrip-jacktrip-v1.8.1_GH0.tar.gz) = fb6ffa17cdaf3ee8a4cc8ec5af6aaf48408b2806e848f37a3c9ba6c4248959db
+SIZE (jacktrip-jacktrip-v1.8.1_GH0.tar.gz) = 5827678
 SHA256 (x42-weakjack-cddbeec_GH0.tar.gz) = 752b48f022c34a28ff97dbd66715b3fe83532257884ea0b3146d790bafe21124
 SIZE (x42-weakjack-cddbeec_GH0.tar.gz) = 7983

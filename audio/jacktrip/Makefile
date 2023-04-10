@@ -1,6 +1,6 @@
 PORTNAME=	jacktrip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
+DISTVERSION=	1.8.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,8 +19,7 @@ USE_QT=		core declarative gui network networkauth quickcontrols2 svg websockets 
 USE_GL=		gl
 
 USE_GITHUB=	yes
-GH_TUPLE=	flathub:shared-modules:2c3a597:shared_modules/linux/flatpak/shared-modules \
-		x42:weakjack:cddbeec:weakjack/externals/weakjack
+GH_TUPLE=	x42:weakjack:cddbeec:weakjack/externals/weakjack
 
 #CXXFLAGS+=	`pkg-config --cflags rtaudio`
 #LDFLAGS+=	`pkg-config --libs rtaudio`
