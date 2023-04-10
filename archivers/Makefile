@@ -204,6 +204,7 @@
     SUBDIR += py-sozipfile
     SUBDIR += py-warctools
     SUBDIR += py-xopen
+    SUBDIR += py-zipstream-ng
     SUBDIR += py-zopfli
     SUBDIR += py-zstandard
     SUBDIR += py-zstd

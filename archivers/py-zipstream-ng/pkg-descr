@@ -1,0 +1,23 @@
+zipstream-ng is a modern and easy to use streamable zip file
+generator. It can package and stream many files and folders on the
+fly without needing temporary files or excessive memory.
+
+Includes the ability to calculate the total size of the stream
+before any data is actually added (provided no compression is used).
+This makes it ideal for use in web applications since the total
+size can be used to set the `Content-Length` header without having
+to generate the entire file first.
+
+Features:
+ * Generates zip data on the fly as it's requested.
+ * Can calculate the total size of the resulting zip file before generation even
+   begins.
+ * Flexible API: Typical use cases are simple, complicated ones are possible.
+ * Supports zipping data from files, bytes, strings, and any other iterable
+   objects.
+ * Threadsafe: Won't mangle data if multiple threads concurrently add/read data
+   to/from the same stream.
+ * Includes a clone of Python's `http.server` module with zip support added.
+   Try `python -m zipstream.server`.
+ * Automatically uses Zip64 extensions, but only if they are required.
+ * No external dependencies.
