@@ -14,7 +14,7 @@ MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror1.cl.netactuate.com/${SITESDIR}/ \
 		https://ftp.osuosl.org/pub/${SITESDIR}/ \
 		https://downloads.mariadb.org/rest-api/mariadb/${PORTVERSION}/
-PKGNAMESUFFIX?=	106-server
+PKGNAMESUFFIX?=	1011-server
 
 MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
