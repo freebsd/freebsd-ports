@@ -20,6 +20,9 @@ MAINTAINER=	brnrd@FreeBSD.org
 COMMENT?=	Multithreaded SQL database (server)
 WWW=		https://mariadb.org/
 
+DEPRECATED=		Use databases/mariadb106-server
+EXPIRATION_DATE=	2023-06-30
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
