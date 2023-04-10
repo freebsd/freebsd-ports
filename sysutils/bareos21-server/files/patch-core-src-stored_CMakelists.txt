@@ -1,0 +1,20 @@
+--- core/src/stored/CMakeLists.txt	2021-12-21 06:00:49.000000000 -0500
++++ core/src/stored/CMakeLists.txt	2022-03-04 20:56:52.809609000 -0500
+@@ -219,7 +219,7 @@
+ add_executable(bareos-sd stored.cc)
+ 
+ target_link_libraries(
+-  bareos-sd PRIVATE stored_objects bareos bareossd bareosfind Threads::Threads
++  bareos-sd PRIVATE stored_objects bareos bareossd bareosfind Threads::Threads ${JANSSON_LIBRARIES}
+ )
+ 
+ if(HAVE_WIN32)
+@@ -228,7 +228,7 @@
+ endif()
+ if(HAVE_NDMP)
+   target_link_libraries(stored_objects PRIVATE bareosndmp)
+-  target_link_libraries(bareos-sd PRIVATE bareosndmp)
++  target_link_libraries(bareos-sd PRIVATE bareosndmp ${JANSSON_LIBRARIES})
+ endif()
+ 
+ add_executable(bls ${BLSSRCS})

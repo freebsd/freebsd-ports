@@ -1,0 +1,63 @@
+--- core/src/tests/CMakeLists.txt	2023-04-05 11:45:57.490983000 -0500
++++ core/src/tests/CMakeLists.txt	2023-04-05 11:53:08.135702000 -0500
+@@ -131,7 +131,7 @@
+ if(NOT client-only)
+   bareos_add_test(
+     run_on_incoming_connect_interval
+-    LINK_LIBRARIES dird_objects bareos bareosfind bareossql
++    LINK_LIBRARIES ${JANSSON_LIBRARIES} dird_objects bareos bareosfind bareossql
+                    $<$<BOOL:HAVE_PAM>:${PAM_LIBRARIES}> GTest::gtest_main
+   )
+ endif() # NOT client-only
+@@ -139,14 +139,14 @@
+ if(NOT client-only)
+   bareos_add_test(
+     scheduler
+-    LINK_LIBRARIES dird_objects bareos bareosfind bareossql
++    LINK_LIBRARIES ${JANSSON_LIBRARIES} dird_objects bareos bareosfind bareossql
+                    $<$<BOOL:HAVE_PAM>:${PAM_LIBRARIES}> GTest::gtest_main
+   )
+ endif() # NOT client-only
+ 
+ if(NOT client-only)
+   bareos_add_test(
+-    scheduler_job_item_queue LINK_LIBRARIES dird_objects bareos bareosfind
++    scheduler_job_item_queue LINK_LIBRARIES ${JANSSON_LIBRARIES} dird_objects bareos bareosfind
+                                             bareossql GTest::gtest_main
+   )
+ endif() # NOT client-only
+@@ -180,7 +180,7 @@
+ 
+ if(NOT client-only)
+   bareos_add_test(
+-    test_sd_plugins LINK_LIBRARIES bareos bareossd GTest::gtest_main
++    test_sd_plugins LINK_LIBRARIES ${JANSSON_LIBRARIES} bareos bareossd GTest::gtest_main
+   )
+ endif() # NOT client-only
+ 
+@@ -195,14 +195,14 @@
+ )
+ 
+ if(NOT client-only)
+-  bareos_add_test(multiplied_device_test LINK_LIBRARIES ${LINK_LIBRARIES})
++  bareos_add_test(multiplied_device_test LINK_LIBRARIES ${LINK_LIBRARIES} ${JANSSON_LIBRARIES})
+ endif()
+ 
+ if(NOT client-only)
+   bareos_add_test(
+     ndmp_address_translate_test
+     ADDITIONAL_SOURCES ../dird/ndmp_slot2elemaddr.cc
+-    LINK_LIBRARIES ${LINK_LIBRARIES}
++    LINK_LIBRARIES ${LINK_LIBRARIES} ${JANSSON_LIBRARIES}
+   )
+ endif() # NOT client-only
+ 
+@@ -230,7 +230,7 @@
+ if(NOT client-only)
+   bareos_add_test(
+     show_cmd_available_resources_equals_config_resources
+-    LINK_LIBRARIES dird_objects bareos bareosfind bareossql GTest::gtest_main
++    LINK_LIBRARIES ${JANSSON_LIBRARIES} dird_objects bareos bareosfind bareossql GTest::gtest_main
+   )
+ endif() # NOT client-only
+ 
