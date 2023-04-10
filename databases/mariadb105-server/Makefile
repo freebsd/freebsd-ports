@@ -165,7 +165,7 @@ ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO
 ${ENGINE}_CMAKE_ON=	-DPLUGIN_${ENGINE}=DYNAMIC
 .endfor
 INNOBASE_VARS_OFF=	disabled_plugins+=INNOBASE
-#COLUMNSTORE_BROKEN=	fatal error: 'sys/sysinfo.h' file not found
+COLUMNSTORE_BROKEN=	ColumnStore build failure "'swap<logging::Message>' is missing exception specification"
 CONNECT_EXTRA_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONNECT_EXTRA_USE=		gnome=libxml2
 CONNECT_EXTRA_USES=		gnome
@@ -181,6 +181,7 @@ MROONGA_IMPLIES=	LZ4
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack-c
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
+ROCKSDB_BROKEN=		RocksDB build failure "incompatible pointer to integer conversion assigning to 'size_t'"	
 ROCKSDB_USES=		python
 ROCKSDB_CMAKE_ON=	-DPYTHON_SHEBANG=${PYTHON_CMD}
 SNAPPY_CMAKE_ON=	-DWITH_INNODB_SNAPPY=ON  -DWITH_ROCKSDB_snappy=ON
