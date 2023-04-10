@@ -11,7 +11,7 @@ WWW=		https://freeswitch.org
 
 LICENSE=	MPL11
 
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	gdiff:textproc/diffutils \
 		doxygen:devel/doxygen \
