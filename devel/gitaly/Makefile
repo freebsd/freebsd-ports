@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	15.9.4
+DISTVERSION=	15.10.1
 PORTREVISION=	0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
@@ -27,7 +27,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 		rubygem-gitaly>=15.5.0<15.10:net/rubygem-gitaly \
 		rubygem-gitlab-labkit>=0.31<1:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.15<10:devel/rubygem-licensee \
-		rubygem-google-protobuf>=3.21.12<3.22:devel/rubygem-google-protobuf \
+		rubygem-google-protobuf>=3.22.2<3.23:devel/rubygem-google-protobuf \
 		rubygem-nokogiri>=1.14.1<1.15:textproc/rubygem-nokogiri \
 		rubygem-license_finder>=7.0<8:devel/rubygem-license_finder \
 		rubygem-redis4>=4.8.0<5:databases/rubygem-redis4
@@ -49,7 +49,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	c05835906e40380ebf9290e420b877bca37bf7f2
+GL_COMMIT=	267edbe4a3f5416d75b5f0213bbcee9012f7797d
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
