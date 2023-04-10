@@ -1,4 +1,4 @@
---- ruby/Gemfile.orig	2023-02-21 16:36:17 UTC
+--- ruby/Gemfile.orig	2023-03-30 13:24:44 UTC
 +++ ruby/Gemfile
 @@ -1,7 +1,7 @@
  source 'https://rubygems.org'
@@ -17,7 +17,7 @@
 +gem 'gitaly', '~> 15.5'
  
  # Labkit provides observability functionality
- gem 'gitlab-labkit', '~> 0.31'
+ gem 'gitlab-labkit', '~> 0.31', '>= 0.31.1'
 @@ -26,18 +26,10 @@ gem 'nokogiri', '~> 1.14'
  # dependency and can thus be removed when the version constraint is gone.
  gem 'redis', '~> 4.8.0'

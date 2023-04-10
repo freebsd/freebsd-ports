@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-shell
-PORTVERSION=	14.17.0
-PORTREVISION=	1
+PORTVERSION=	14.18.0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -9,6 +8,8 @@ WWW=		https://gitlab.com/gitlab-org/gitlab-shell
 
 LICENSE=	MIT
 
+# GSSAPI support can maybe be removed by disable CGO:
+# https://gitlab.com/gitlab-org/gitlab-shell/-/merge_requests/720
 BUILD_DEPENDS=	heimdal>=0:security/heimdal
 
 USES=		gmake go:modules,no_targets pkgconfig
@@ -16,7 +17,7 @@ USES=		gmake go:modules,no_targets pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	336c4a51aa332b0cc1c68798003a1d82ab4a9cc3
+GL_COMMIT=	f76503aeb40e6e4702d9697a29ff38fad4a0352f
 
 USERS=		git
 GROUPS=		git
