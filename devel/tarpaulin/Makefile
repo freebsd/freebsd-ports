@@ -1,6 +1,5 @@
 PORTNAME=	tarpaulin
-DISTVERSION=	0.25.1
-PORTREVISION=	1
+DISTVERSION=	0.25.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,7 +35,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		cargo_metadata-0.15.3 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		chrono-0.4.23 \
+		chrono-0.4.24 \
 		clap-2.34.0 \
 		core-foundation-sys-0.8.3 \
 		coveralls-api-0.5.0 \
@@ -52,7 +51,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
 		gimli-0.27.2 \
-		git2-0.16.1 \
+		git2-0.17.0 \
 		glob-0.3.1 \
 		gzip-header-0.3.0 \
 		hashbrown-0.11.2 \
@@ -73,11 +72,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		lcov-0.8.1 \
 		leb128-0.2.5 \
 		libc-0.2.137 \
-		libgit2-sys-0.14.2+1.5.1 \
-		libssh2-sys-0.2.23 \
+		libgit2-sys-0.15.0+1.6.3 \
+		libssh2-sys-0.3.0 \
 		libz-sys-1.1.8 \
 		linux-raw-sys-0.1.3 \
-		llvm_profparser-0.3.1 \
+		llvm_profparser-0.3.3 \
 		log-0.4.17 \
 		matchers-0.0.1 \
 		matches-0.1.9 \
@@ -99,17 +98,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.9 \
 		pkg-config-0.3.25 \
-		proc-macro2-1.0.51 \
+		proc-macro2-1.0.56 \
 		procfs-0.15.1 \
 		quick-error-1.2.3 \
-		quick-xml-0.27.1 \
-		quote-1.0.23 \
+		quick-xml-0.28.1 \
+		quote-1.0.26 \
 		redox_syscall-0.2.16 \
-		regex-1.7.1 \
+		regex-1.7.3 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.27 \
+		regex-syntax-0.6.29 \
 		remove_dir_all-0.5.3 \
-		rustc-demangle-0.1.21 \
+		rustc-demangle-0.1.22 \
 		rustc_version-0.4.0 \
 		rustix-0.36.4 \
 		rusty-fork-0.3.0 \
@@ -117,16 +116,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		same-file-1.0.6 \
 		schannel-0.1.20 \
 		semver-1.0.13 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_json-1.0.93 \
+		serde-1.0.159 \
+		serde_derive-1.0.159 \
+		serde_json-1.0.95 \
 		sharded-slab-0.1.4 \
 		smallvec-1.9.0 \
 		socket2-0.4.4 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		strsim-0.8.0 \
-		syn-1.0.108 \
+		syn-1.0.109 \
+		syn-2.0.4 \
 		tempfile-3.3.0 \
 		textwrap-0.11.0 \
 		thiserror-1.0.32 \
@@ -150,7 +150,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
 		wait-timeout-0.2.0 \
-		walkdir-2.3.2 \
+		walkdir-2.3.3 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.82 \
 		wasm-bindgen-backend-0.2.82 \
