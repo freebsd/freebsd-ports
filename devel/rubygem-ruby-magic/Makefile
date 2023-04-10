@@ -1,5 +1,5 @@
 PORTNAME=	ruby-magic
-PORTVERSION=	0.5.4
+PORTVERSION=	0.6.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/kwilczynski/ruby-magic
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-mini_portile2>=2.6<3:devel/rubygem-mini_portile2
+RUN_DEPENDS=	rubygem-mini_portile2>=2.8<3:devel/rubygem-mini_portile2
 
 USES=		gem
 CONFIGURE_ARGS+=	--use-system-libraries
