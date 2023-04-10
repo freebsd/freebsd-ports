@@ -64,17 +64,13 @@ DEFAULT_MYSQL_VER?=	${MYSQL_DEFAULT:S/.//}
 # MySQL client version currently supported.
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.  for v in 56 100m 101m
-MYSQL${v}_LIBVER=	18
-.  endfor
+MYSQL56_LIBVER=		18
 MYSQL57_LIBVER=		20
 MYSQL57p_LIBVER=	20
 MYSQL80_LIBVER=		21
-MYSQL102m_LIBVER=	3
-MYSQL103m_LIBVER=	3
-MYSQL104m_LIBVER=	3
-MYSQL105m_LIBVER=	3
-MYSQL106m_LIBVER=	3
+.  for v in 3 4 5 6 11
+MYSQL10${v}m_LIBVER=	3
+.  endfor
 
 # Setting/finding MySQL version we want.
 .  if exists(${LOCALBASE}/bin/mysql)
