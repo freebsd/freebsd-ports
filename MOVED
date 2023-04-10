@@ -17907,3 +17907,4 @@ textproc/rubygem-github-markup17|textproc/rubygem-github-markup|2023-04-09|Remov
 textproc/rubygem-loofah218|textproc/rubygem-loofah|2023-04-09|Remove obsoleted port. Use textproc/rubygem-loofah instead
 textproc/rubygem-rouge329|textproc/rubygem-rouge|2023-04-09|Remove obsoleted port. Use textproc/rubygem-rouge instead
 www/rubygem-erubi19|www/rubygem-erubi|2023-04-09|Remove obsoleted port. Use www/rubygem-erubi instead
+multimedia/mythtv-frontend|multimedia/mythtv|2023-04-10|Frontend is no part of multimedia/mythtv

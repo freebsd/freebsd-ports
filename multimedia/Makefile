@@ -248,7 +248,6 @@
     SUBDIR += musique
     SUBDIR += mxflib
     SUBDIR += mythtv
-    SUBDIR += mythtv-frontend
     SUBDIR += naludump
     SUBDIR += navidrome
     SUBDIR += neolink

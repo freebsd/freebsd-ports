@@ -4,8 +4,8 @@ DISTVERSION=	33.1
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 
-MAINTAINER?=	ahicks@p-o.co.uk
-COMMENT?=	Homebrew PVR project
+MAINTAINER=	ahicks@p-o.co.uk
+COMMENT=	Homebrew PVR project
 WWW=		https://www.mythtv.org/
 
 LICENSE=	GPLv2+
@@ -77,15 +77,6 @@ WRKSRC_SUBDIR=	${PORTNAME}
 DESKTOP_ENTRIES="MythTV Frontend" "MythTV is a homebrew PVR project" "" \
 		"mythfrontend" "AudioVideo;Video;" false
 
-.if defined(SLAVEPORT) && ${SLAVEPORT} == "frontend"
-CONFLICTS_INSTALL=	mythtv
-
-CONFIGURE_ARGS+=--disable-dvb --disable-firewire --disable-hdhomerun \
-		--without-bindings=perl,python
-
-OPTIONS_EXCLUDE+=	BINDINGS LIRC MYSQL
-PLIST_SUB+=	MYTHBACKEND="@comment "
-.else
 CONFLICTS_INSTALL=	mythtv-frontend
 
 RUN_DEPENDS+=	tv_check:textproc/p5-xmltv \
@@ -105,10 +96,7 @@ CONFIGURE_ARGS+=--dvb-path="${WRKSRC}/media_tree/include/uapi" \
 USERS=		mythtv
 GROUPS=		mythtv
 
-DATADIR=	${PREFIX}/share/mythtv
 SUB_FILES=	pkg-message
-PLIST_SUB+=	MYTHBACKEND=""
-.endif
 
 OPTIONS_DEFINE=		BINDINGS HDHOMERUN JACK LIRC MYSQL PULSEAUDIO VDPAU
 OPTIONS_DEFAULT=	BINDINGS HDHOMERUN VDPAU
