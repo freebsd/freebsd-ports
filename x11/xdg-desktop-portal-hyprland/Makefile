@@ -1,6 +1,7 @@
 PORTNAME=	xdg-desktop-portal-hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.2.1
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
@@ -37,8 +38,6 @@ GH_TUPLE=	hyprwm:hyprland-protocols:4d29e48:hyprland_protocols/subprojects/hyprl
 MESON_ARGS=	-Dsd-bus-provider=basu -Dsystemd=disabled
 PLIST_FILES=	libexec/${PORTNAME} \
 		share/dbus-1/services/org.freedesktop.impl.portal.desktop.hyprland.service \
-		share/hyprland-protocols/protocols/hyprland-global-shortcuts-v1.xml \
-		share/hyprland-protocols/protocols/hyprland-toplevel-export-v1.xml \
 		share/xdg-desktop-portal/portals/hyprland.portal
 
 OPTIONS_DEFINE=	SLURP
@@ -50,8 +49,8 @@ SLURP_RUN_DEPENDS=	slurp:x11/slurp
 .ifdef GH_TUPLE
 post-install:
 # XXX USES=meson invokes ninja directly, so doesn't support --skip-subprojects
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/hyprland-protocols
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/protocols
 .endif
 
 .include <bsd.port.mk>
