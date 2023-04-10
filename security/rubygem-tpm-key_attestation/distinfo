@@ -1,3 +1,3 @@
-TIMESTAMP = 1676717182
-SHA256 (rubygem/tpm-key_attestation-0.11.0.gem) = 5ef71d8e8ccd80393a1c22171dfff4ff70fbc361b58bad67b77a9464c647d84f
-SIZE (rubygem/tpm-key_attestation-0.11.0.gem) = 33792
+TIMESTAMP = 1681107984
+SHA256 (rubygem/tpm-key_attestation-0.12.0.gem) = e133d80cf24fef0e7a7dfad00fd6aeff01fc79875fbfc66cd8537bbd622b1e6d
+SIZE (rubygem/tpm-key_attestation-0.12.0.gem) = 33792
