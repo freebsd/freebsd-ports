@@ -1,5 +1,5 @@
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/diff.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/init.txt
-%%DOCSDIR%%/%%DOCLANG%%/articles/pam/converse.c
-%%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam_unix.c
-%%DOCSDIR%%/%%DOCLANG%%/articles/pam/su.c
+%%DOCSDIR%%/source/articles/freebsd-update-server/diff.txt
+%%DOCSDIR%%/source/articles/freebsd-update-server/init.txt
+%%DOCSDIR%%/source/articles/pam/converse.c
+%%DOCSDIR%%/source/articles/pam/pam_unix.c
+%%DOCSDIR%%/source/articles/pam/su.c

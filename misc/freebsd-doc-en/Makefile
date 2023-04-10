@@ -1,5 +1,5 @@
 PORTNAME=	freebsd-doc
-PORTVERSION=	20230224
+PORTVERSION=	20230410
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -30,7 +30,7 @@ DOCLANG?=		en
 DOCLANG_PREFIX?=	${DOCLANG:C/_.*$//}
 DOCBASE?=		share/doc/freebsd
 
-# HTML format disabled until separate localized-only build will work again
+# HTML format disabled for localized languages
 .if ${DOCLANG:Men}
 AVAILABLEFORMATS=	HTML PDF
 .else
@@ -92,8 +92,8 @@ do-install:
 	${CP} -R ${WRKSRC}/public/* ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}
 	if ${TEST} -f ${.CURDIR}/pkg-plist.extras; then \
 		${CAT} ${.CURDIR}/pkg-plist.extras | \
-		${SED} -e 's|%%DOCSDIR%%/%%DOCLANG%%||' | \
-		${XARGS} -t -I % ${CP} -v ${WRKSRC}/static/source/% ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/${DOCLANG}%; \
+		${SED} -e 's|%%DOCSDIR%%/||' | \
+		${XARGS} -t -I % ${CP} -v ${WRKSRC}/static/% ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/; \
 	fi
 
 .include <bsd.port.mk>
