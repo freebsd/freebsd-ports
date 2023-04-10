@@ -1,6 +1,6 @@
 PORTNAME=	tagref
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,14 +17,12 @@ GH_ACCOUNT=	stepchowfun
 
 CARGO_CRATES=	aho-corasick-0.7.15 \
 		ansi_term-0.11.0 \
-		arrayvec-0.5.2 \
 		atty-0.2.14 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
 		bstr-0.2.15 \
 		cfg-if-1.0.0 \
 		clap-2.33.3 \
-		colonnade-1.3.2 \
 		colored-1.9.3 \
 		crossbeam-utils-0.8.3 \
 		fnv-1.0.7 \
@@ -36,23 +34,15 @@ CARGO_CRATES=	aho-corasick-0.7.15 \
 		log-0.4.14 \
 		memchr-2.3.4 \
 		once_cell-1.7.2 \
-		proc-macro2-1.0.52 \
-		quote-1.0.24 \
 		regex-1.4.5 \
 		regex-syntax-0.6.23 \
 		same-file-1.0.6 \
-		strip-ansi-escapes-0.1.1 \
 		strsim-0.8.0 \
 		term_size-0.3.2 \
 		textwrap-0.11.0 \
 		thread_local-1.1.3 \
-		unicode-ident-1.0.8 \
-		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.8 \
-		utf8parse-0.2.1 \
 		vec_map-0.8.2 \
-		vte-0.10.1 \
-		vte_generate_state_changes-0.1.1 \
 		walkdir-2.3.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
