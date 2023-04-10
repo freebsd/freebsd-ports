@@ -110,6 +110,8 @@ sbin/haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/504.http
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/errorfiles/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy.init
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lua/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lua/event_handler.lua
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/option-http_proxy.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quick-test.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/socks4.cfg
