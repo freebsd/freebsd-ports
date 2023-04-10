@@ -1,8 +1,8 @@
 PORTNAME=	epson-inkjet-printer-escpr
-DISTVERSION=	1.7.22
+DISTVERSION=	1.7.26
 DISTVERSIONSUFFIX=	-1lsb3.2
 CATEGORIES=	print
-MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/13/96/55/c6fced63098ae1ba104f11f572794fd558ffca29/
+MASTER_SITES=	https://download3.ebz.epson.net/dsc/f/03/00/14/48/15/c864d000b06bebeec8832ce6f68bb079c36d838a/
 
 MAINTAINER=	tatsuki_makino@hotmail.com
 COMMENT=	Epson Inkjet Printer Driver (ESC/P-R) for Linux
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libcupsimage.so:print/cups
 RUN_DEPENDS=	${LOCALBASE}/libexec/cups/filter/gstoraster:print/cups-filters
 
-USES=		autoreconf dos2unix libtool
+USES=		autoreconf:2.69 dos2unix libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-lsb
