@@ -62,7 +62,7 @@ bin/test-connect-t
 @comment %%ETCDIR%%/server.cnf
 @sample %%ETCDIR%%/conf.d/server.cnf.sample
 %%SPIDER%%@sample %%ETCDIR%%/conf.d/spider.cnf.sample
-%%WSREP%%@sample %%ETCDIR%%/conf.d/wsrep.cnf.sample
+%%WSREP%%%%ETCDIR%%/conf.d/wsrep.cnf.sample
 @comment %%ETCDIR%%/my.cnf
 @sample %%ETCDIR%%/user_map.conf.sample
 include/mysql/server/big_endian.h
