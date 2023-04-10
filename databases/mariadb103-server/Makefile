@@ -102,6 +102,7 @@ DISABLED_PLUGINS+=	DAEMON_EXAMPLE DIALOG_EXAMPLES EXAMPLE \
 DATADIR=	${PREFIX}/share/mysql
 
 CONFLICTS_INSTALL=	mariadb10[0-24-9]-${PKGNAMESUFFIX:C/^[0-9]*-//} \
+			mariadb1011-${PKGNAMESUFFIX:C/^[0-9]*-//} \
 			mysql[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//} \
 			mysqlwsrep*-server \
 			percona[0-9]*-${PKGNAMESUFFIX:C/^[0-9]*-//}
