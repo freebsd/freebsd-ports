@@ -1,6 +1,6 @@
 PORTNAME=	ss5
 DISTVERSION=	3.8.9-8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${DISTVERSION}
 
@@ -10,9 +10,6 @@ WWW=		http://ss5.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: ACMutex
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: ACMutex
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]+//}
 
@@ -27,6 +24,7 @@ CONFIGURE_ARGS=	--with-binpathbase=${PREFIX}/sbin \
 
 MAKE_ENV=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
 MAKE_ARGS+=	CC="${CC}"
+CFLAGS+=	-fcommon
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
