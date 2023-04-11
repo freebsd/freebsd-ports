@@ -20,6 +20,7 @@ export workdir="${cbsd_workdir}"
 globalconf=${cbsd_globalconf:-"%%PREFIX%%/cbsd/cbsd.conf"}
 
 start_cmd=${name}_start
+stop_cmd=${name}_stop
 restart_cmd=${name}_restart
 extra_commands="restart"
 
@@ -45,6 +46,35 @@ fi
 
 . ${globalconf}
 . ${subrdir}/nc.subr
+
+
+cbsd_statsd_hoster_stop()
+{
+	local _pids
+
+	if [ -f "${daemon_pidfile}" ]; then
+		_pids=$( pgrep -F ${daemon_pidfile} 2>&1 )
+		_err=$?
+		/bin/rm -f ${daemon_pidfile}
+		if [ ${_err} -eq  0 ]; then
+			kill -9 ${_pids}
+		else
+			echo "pgrep: ${_pids}"
+		fi
+	fi
+	if [ -f "${pidfile}" ]; then
+		_pids=$( pgrep -F ${pidfile} 2>&1 )
+		_err=$?
+		/bin/rm -f ${pidfile}
+		if [ ${_err} -eq  0 ]; then
+			kill -9 ${_pids}
+		else
+			echo "pgrep: ${_pids}"
+		fi
+	fi
+
+	return 0
+}
 
 cbsd_statsd_hoster_start()
 {
@@ -91,7 +121,7 @@ cbsd_statsd_hoster_start()
 	[ ! -d ${daemon_logdir} ] && mkdir -p ${daemon_logdir}
 	touch ${daemon_logfile}
 
-	/usr/sbin/daemon -f -R5 -p ${pidfile} -P ${daemon_pidfile} -o ${daemon_logfile} /usr/bin/env workdir=${cbsd_workdir} ${command} ${args}
+	/usr/sbin/daemon -f -R5 -P ${daemon_pidfile} -o ${daemon_logfile} /usr/bin/env workdir=${cbsd_workdir} ${command} ${args}
 }
 
 cbsd_statsd_hoster_restart()
