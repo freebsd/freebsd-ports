@@ -1,7 +1,6 @@
 PORTNAME=	pygmo2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.18.0
-PORTREVISION=	2
+DISTVERSION=	2.19.3
 CATEGORIES=	science graphics
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -18,6 +17,7 @@ LIB_DEPENDS=	libpagmo.so:science/pagmo2 \
 		libnlopt.so:math/nlopt
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cloudpickle>0:devel/py-cloudpickle@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dill>0:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR}
@@ -34,6 +34,7 @@ CMAKE_ARGS=	-DFREEBSD_PYTHON_DISTVERSION=${PYTHON_DISTVERSION}
 CXXFLAGS+=	-I${LOCALBASE}/include/coin # see https://github.com/esa/pygmo2/issues/58
 
 do-test: install # tests require sysctl sudo sysctl kern.threads.max_threads_per_proc variable to be at least 15000 ; test taken from azure-pipelines.yml
+	# some tests fail, see https://github.com/esa/pygmo2/issues/135
 	@${PYTHON_CMD} -c "import pygmo; pygmo.test.run_test_suite(1); pygmo.mp_island.shutdown_pool(); pygmo.mp_bfe.shutdown_pool()"
 
 .include <bsd.port.mk>
