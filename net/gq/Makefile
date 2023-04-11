@@ -1,6 +1,6 @@
 PORTNAME=	gq
 PORTVERSION=	1.3.4
-PORTREVISION=	18
+PORTREVISION=	19
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}client/GQ%20Unstable/${PORTVERSION}
@@ -13,14 +13,16 @@ LICENSE=	GPLv2+ LGPL21+ # some source files are under lgpl
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: dt_entry_handler
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: dt_entry_handler
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libgcrypt.so:security/libgcrypt \
+		libgnome-keyring.so:security/libgnome-keyring \
+		libgpg-error.so:security/libgpg-error \
+		libharfbuzz.so:print/harfbuzz
 
-LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring
-
-USES=		desktop-file-utils gettext gmake gnome ldap pkgconfig \
+USES=		desktop-file-utils gettext gmake gnome iconv ldap pkgconfig \
 		shared-mime-info ssl
-USE_GNOME=	intltool libglade2
+USE_GNOME=	cairo intltool gdkpixbuf2 libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} --disable-update-mimedb
 
