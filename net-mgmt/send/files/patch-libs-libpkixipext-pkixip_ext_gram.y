@@ -1,5 +1,14 @@
 --- libs/libpkixipext/pkixip_ext_gram.y.orig	2019-02-27 16:25:45 UTC
 +++ libs/libpkixipext/pkixip_ext_gram.y
+@@ -42,7 +42,7 @@
+ #include "pkixip_ext.h"
+ #include "pkixip_local.h"
+ 
+-int linecnt;
++extern int linecnt;
+ 
+ extern char *pkixip_text;
+ extern int pkixip_lex(void);
 @@ -350,7 +350,7 @@ new_aor(void)
  
  	if (!ipc->u.addressesOrRanges &&

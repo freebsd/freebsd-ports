@@ -1,7 +1,7 @@
 PORTNAME=	send
 PORTVERSION=	0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	hrs@FreeBSD.org
@@ -10,12 +10,9 @@ COMMENT=	Secure Neighbor Discovery implementation for IPv6
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: params_linecnt
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: params_linecnt
-
 LIB_DEPENDS=	libdnet.so:net/libdnet
 
-USES=		gmake readline ssl
+USES=		gmake ncurses readline ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrs-allbsd
 USE_RC_SUBR=	sendd
