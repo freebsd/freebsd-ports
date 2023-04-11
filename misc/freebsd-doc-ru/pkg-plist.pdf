@@ -21,3 +21,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/faq_ru.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/handbook_ru.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porters-handbook_ru.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/pam/converse.c
+%%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam_unix.c
+%%DOCSDIR%%/%%DOCLANG%%/articles/pam/su.c
