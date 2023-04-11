@@ -1,4 +1,4 @@
-TIMESTAMP = 1679874549
+TIMESTAMP = 1681188517
 SHA256 (rust/crates/adler-1.0.2.crate) = f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe
 SIZE (rust/crates/adler-1.0.2.crate) = 12778
 SHA256 (rust/crates/arrayref-0.3.7.crate) = 6b4930d2cb77ce62f89ee5d5289b4ac049559b1c45539271f5ed4fdc7db34545
@@ -95,5 +95,5 @@ SHA256 (rust/crates/xmlparser-0.13.5.crate) = 4d25c75bf9ea12c4040a97f829154768bb
 SIZE (rust/crates/xmlparser-0.13.5.crate) = 26225
 SHA256 (rust/crates/xmlwriter-0.1.0.crate) = ec7a2a501ed189703dba8b08142f057e887dfc4b2cc4db2d343ac6376ba3e0b9
 SIZE (rust/crates/xmlwriter-0.1.0.crate) = 6261
-SHA256 (RazrFalcon-resvg-v0.30.0_GH0.tar.gz) = ba939c23bd7a2aecac6296d38691550c729a18f185081fad37b54652eae310fb
-SIZE (RazrFalcon-resvg-v0.30.0_GH0.tar.gz) = 8088454
+SHA256 (RazrFalcon-resvg-v0.31.0_GH0.tar.gz) = 9b8095b797414ea3375405f7427ac04bd0067af80ba5e38d35cfd0b0fda25a9c
+SIZE (RazrFalcon-resvg-v0.31.0_GH0.tar.gz) = 8093695
