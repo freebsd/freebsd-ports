@@ -158,6 +158,7 @@ include/fizz/server/TicketCodec-inl.h
 include/fizz/server/TicketCodec.h
 include/fizz/server/TicketPolicy.h
 include/fizz/server/TicketTypes.h
+include/fizz/server/TokenCipher.h
 include/fizz/server/test/Mocks.h
 include/fizz/server/test/Utils.h
 include/fizz/test/HandshakeTest.h
