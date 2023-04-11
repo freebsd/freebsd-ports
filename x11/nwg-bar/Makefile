@@ -1,7 +1,6 @@
 PORTNAME=	nwg-bar
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.2
-PORTREVISION=	1
+DISTVERSION=	0.1.3
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,10 +18,10 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GH_ACCOUNT=	nwg-piotr
 GH_TUPLE=	allan-simon:go-singleinstance:d0997106ab37:allan_simon_go_singleinstance/vendor/github.com/allan-simon/go-singleinstance \
-		dlasky:gotk3-layershell:5cca0b819261:dlasky_gotk3_layershell/vendor/github.com/dlasky/gotk3-layershell \
+		dlasky:gotk3-layershell:1f6674a3f872:dlasky_gotk3_layershell/vendor/github.com/dlasky/gotk3-layershell \
 		golang:sync:56d357773e84:golang_sync/vendor/golang.org/x/sync \
 		gotk3:gotk3:v0.6.1:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
-		joshuarubin:go-sway:v0.0.4:joshuarubin_go_sway/vendor/github.com/joshuarubin/go-sway \
+		joshuarubin:go-sway:v1.2.0:joshuarubin_go_sway/vendor/github.com/joshuarubin/go-sway \
 		joshuarubin:lifecycle:v1.0.0:joshuarubin_lifecycle/vendor/github.com/joshuarubin/lifecycle \
 		uber-go:atomic:v1.3.2:uber_go_atomic/vendor/go.uber.org/atomic \
 		uber-go:multierr:v1.1.0:uber_go_multierr/vendor/go.uber.org/multierr
