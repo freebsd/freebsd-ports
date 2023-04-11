@@ -1,7 +1,6 @@
 PORTNAME=	ldc
-PORTVERSION=	1.30.0
+PORTVERSION=	1.32.0
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://github.com/ldc-developers/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -35,7 +34,7 @@ CXX=		${LOCALBASE}/bin/clang++${_LLVM_VER}
 LLVM_CONFIG=	${LOCALBASE}/bin/llvm-config${_LLVM_VER}
 
 _GCC_VER=	11
-_LLVM_VER=	13
+_LLVM_VER=	15
 
 .include <bsd.port.pre.mk>
 

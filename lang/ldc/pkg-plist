@@ -3,6 +3,7 @@ bin/ldc-profdata
 bin/ldc-prune-cache
 bin/ldc2
 bin/ldmd2
+bin/timetrace2txt
 etc/ldc2.conf
 include/d/__builtins.di
 include/d/core/atomic.d
@@ -19,11 +20,13 @@ include/d/core/gc/registry.d
 include/d/core/int128.d
 include/d/core/internal/abort.d
 include/d/core/internal/array/appending.d
+include/d/core/internal/array/arrayassign.d
 include/d/core/internal/array/capacity.d
 include/d/core/internal/array/casting.d
 include/d/core/internal/array/comparison.d
 include/d/core/internal/array/concatenation.d
 include/d/core/internal/array/construction.d
+include/d/core/internal/array/duplication.d
 include/d/core/internal/array/equality.d
 include/d/core/internal/array/operations.d
 include/d/core/internal/array/utils.d
@@ -113,6 +116,7 @@ include/d/core/sync/config.d
 include/d/core/sync/event.d
 include/d/core/sync/exception.d
 include/d/core/sync/mutex.d
+include/d/core/sync/package.d
 include/d/core/sync/rwmutex.d
 include/d/core/sync/semaphore.d
 include/d/core/sys/bionic/err.d
@@ -164,6 +168,7 @@ include/d/core/sys/dragonflybsd/sys/mman.d
 include/d/core/sys/dragonflybsd/sys/socket.d
 include/d/core/sys/dragonflybsd/sys/sysctl.d
 include/d/core/sys/dragonflybsd/time.d
+include/d/core/sys/elf/package.d
 include/d/core/sys/freebsd/config.d
 include/d/core/sys/freebsd/dlfcn.d
 include/d/core/sys/freebsd/err.d
@@ -522,6 +527,7 @@ include/d/ldc/gccbuiltins_arm.di
 include/d/ldc/gccbuiltins_mips.di
 include/d/ldc/gccbuiltins_nvvm.di
 include/d/ldc/gccbuiltins_ppc.di
+include/d/ldc/gccbuiltins_riscv.di
 include/d/ldc/gccbuiltins_s390.di
 include/d/ldc/gccbuiltins_x86.di
 include/d/ldc/intrinsics.di
@@ -567,7 +573,6 @@ include/d/std/datetime/systime.d
 include/d/std/datetime/timezone.d
 include/d/std/demangle.d
 include/d/std/digest/crc.d
-include/d/std/digest/digest.d
 include/d/std/digest/hmac.d
 include/d/std/digest/md.d
 include/d/std/digest/murmurhash.d
@@ -606,7 +611,6 @@ include/d/std/experimental/logger/filelogger.d
 include/d/std/experimental/logger/multilogger.d
 include/d/std/experimental/logger/nulllogger.d
 include/d/std/experimental/logger/package.d
-include/d/std/experimental/typecons.d
 include/d/std/file.d
 include/d/std/format/internal/floats.d
 include/d/std/format/internal/read.d
@@ -639,6 +643,11 @@ include/d/std/internal/unicode_norm.d
 include/d/std/internal/unicode_tables.d
 include/d/std/internal/windows/advapi32.d
 include/d/std/json.d
+include/d/std/logger/core.d
+include/d/std/logger/filelogger.d
+include/d/std/logger/multilogger.d
+include/d/std/logger/nulllogger.d
+include/d/std/logger/package.d
 include/d/std/math/algebraic.d
 include/d/std/math/constants.d
 include/d/std/math/exponential.d
@@ -691,27 +700,26 @@ include/d/std/variant.d
 include/d/std/windows/charset.d
 include/d/std/windows/registry.d
 include/d/std/windows/syserror.d
-include/d/std/xml.d
 include/d/std/zip.d
 include/d/std/zlib.d
 lib/ldc_rt.dso.o
 lib/libdruntime-ldc-debug-shared.so
-lib/libdruntime-ldc-debug-shared.so.100
-lib/libdruntime-ldc-debug-shared.so.100.1
+lib/libdruntime-ldc-debug-shared.so.102
+lib/libdruntime-ldc-debug-shared.so.102.2
 lib/libdruntime-ldc-debug.a
 lib/libdruntime-ldc-lto.a
 lib/libdruntime-ldc-shared.so
-lib/libdruntime-ldc-shared.so.100
-lib/libdruntime-ldc-shared.so.100.1
+lib/libdruntime-ldc-shared.so.102
+lib/libdruntime-ldc-shared.so.102.2
 lib/libdruntime-ldc.a
 lib/libphobos2-ldc-debug-shared.so
-lib/libphobos2-ldc-debug-shared.so.100
-lib/libphobos2-ldc-debug-shared.so.100.1
+lib/libphobos2-ldc-debug-shared.so.102
+lib/libphobos2-ldc-debug-shared.so.102.2
 lib/libphobos2-ldc-debug.a
 lib/libphobos2-ldc-lto.a
 lib/libphobos2-ldc-shared.so
-lib/libphobos2-ldc-shared.so.100
-lib/libphobos2-ldc-shared.so.100.1
+lib/libphobos2-ldc-shared.so.102
+lib/libphobos2-ldc-shared.so.102.2
 lib/libphobos2-ldc.a
 @dir include/d/etc/c/zlib/doc
 @dir include/d/etc/c/zlib/test
