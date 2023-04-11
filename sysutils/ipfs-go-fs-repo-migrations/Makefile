@@ -5,7 +5,7 @@ PORTREVISION=	12
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/ipfs/fs-repo-migrations/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Migrations for the filesystem repository of ipfs clients
 WWW=		https://github.com/ipfs/fs-repo-migrations
 

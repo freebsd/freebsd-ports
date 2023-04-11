@@ -4,7 +4,7 @@ PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Debugging tool for Qt-application
 WWW=		https://www.kdab.com/development-resources/qt-tools/gammaray/
 

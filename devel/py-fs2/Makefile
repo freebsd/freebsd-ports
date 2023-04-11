@@ -5,7 +5,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python Filesystem abstraction layer, version 2.x
 WWW=		https://www.pyfilesystem.org/
 

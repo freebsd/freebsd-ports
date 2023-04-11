@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fixture configuration utils for py.test
 WWW=		https://github.com/manahl/pytest-plugins/tree/master/pytest-fixture-config
 

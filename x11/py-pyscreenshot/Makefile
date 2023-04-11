@@ -6,7 +6,7 @@ MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 #DISTNAME=	PyVirtualDisplay-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python module for taking screenshots
 WWW=		https://github.com/ponty/pyscreenshot
 

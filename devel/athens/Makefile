@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	13
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Proxy server for the Go Modules download API
 WWW=		https://github.com/gomods/athens
 

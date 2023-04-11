@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	12
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Command-line tool for working with Gerrit
 WWW=		https://godoc.org/golang.org/x/review/git-codereview
 

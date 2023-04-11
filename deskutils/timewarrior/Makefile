@@ -3,7 +3,7 @@ PORTVERSION=	1.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Track time from the command line
 WWW=		https://timewarrior.net/
 

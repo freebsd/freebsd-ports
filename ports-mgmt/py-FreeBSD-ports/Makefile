@@ -4,7 +4,7 @@ CATEGORIES=	ports-mgmt python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Parse FreeBSD Ports INDEX, provide search API
 WWW=		https://github.com/swills/py-FreeBSD-ports/
 

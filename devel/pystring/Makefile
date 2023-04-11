@@ -3,7 +3,7 @@ PORTVERSION=	1.1.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Collection of C++ functions which match python's string class
 WWW=		https://github.com/imageworks/pystring
 

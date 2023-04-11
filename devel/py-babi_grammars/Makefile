@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Grammars for the babi text editor
 WWW=		https://github.com/asottile/babi-grammars
 

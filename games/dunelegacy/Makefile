@@ -5,7 +5,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Open source clone of Dune II
 WWW=		http://dunelegacy.sourceforge.net/website/
 

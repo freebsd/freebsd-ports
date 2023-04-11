@@ -3,7 +3,7 @@ PORTVERSION=	4.0
 CATEGORIES=	textproc
 MASTER_SITES=	https://www.fourmilab.ch/fist/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Emphatic message generator
 WWW=		https://www.fourmilab.ch/fist/
 

@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 DIST_SUBDIR=	minio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Amazon S3 compatible object storage server
 WWW=		https://minio.io/
 

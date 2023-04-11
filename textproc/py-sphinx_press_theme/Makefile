@@ -4,7 +4,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Them for py-sphinx based on VuePress
 WWW=		https://schettino72.github.io/sphinx_press_site/
 

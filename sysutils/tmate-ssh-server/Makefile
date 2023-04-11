@@ -4,7 +4,7 @@ PORTEPOCH=	1
 PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Instant terminal sharing server
 WWW=		https://tmate.io/
 

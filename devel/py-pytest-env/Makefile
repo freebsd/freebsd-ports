@@ -4,7 +4,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Py.test plugin that allows you to add environment variables
 WWW=		https://github.com/MobileDynasty/pytest-env
 

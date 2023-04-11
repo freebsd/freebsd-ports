@@ -3,7 +3,7 @@ PORTVERSION=	g2018090201
 PORTREVISION=	4
 CATEGORIES=	multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Browser source plugin for obs-studio
 WWW=		https://github.com/swills/obs-qtwebkit
 

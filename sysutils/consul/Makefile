@@ -4,7 +4,7 @@ PORTREVISION=	8
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Service discovery and configuration made easy
 WWW=		https://www.consul.io/
 

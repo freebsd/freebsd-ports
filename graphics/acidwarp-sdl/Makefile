@@ -2,7 +2,7 @@ PORTNAME=	acidwarp-sdl
 PORTVERSION=	g2020062101
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Eye candy program which displays various patterns
 WWW=		https://github.com/dreamlayers/acidwarp
 

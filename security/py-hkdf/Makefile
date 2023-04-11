@@ -4,7 +4,7 @@ CATEGORIES=	security
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	HMAC-based Extract-and-Expand Key Derivation Function (HKDF)
 WWW=		https://github.com/casebeer/python-hkdf
 

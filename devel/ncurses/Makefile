@@ -5,7 +5,7 @@ MASTER_SITES=	ftp://ftp.invisible-island.net/${PORTNAME}/ \
 		https://invisible-mirror.net/archives/ncurses/
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Library for terminal-independent, full-screen output
 WWW=		https://invisible-island.net/ncurses/
 

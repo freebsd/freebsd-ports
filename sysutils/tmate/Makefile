@@ -3,7 +3,7 @@ PORTVERSION=	2.4.0
 PORTREVISION=	2
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Instant terminal sharing
 WWW=		https://tmate.io/
 

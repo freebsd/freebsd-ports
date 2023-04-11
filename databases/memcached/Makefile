@@ -4,7 +4,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://www.memcached.org/files/ \
 		GENTOO
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	High-performance distributed memory object cache system
 WWW=		https://memcached.org/
 

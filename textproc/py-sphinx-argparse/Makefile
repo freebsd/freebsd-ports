@@ -4,7 +4,7 @@ CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Sphinx extension that automatically documents argparse
 WWW=		https://github.com/ribozz/sphinx-argparse
 

@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	13
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Declarative YAML templating system tuned for BOSH deployment manifests
 WWW=		https://github.com/cloudfoundry-incubator/spiff
 

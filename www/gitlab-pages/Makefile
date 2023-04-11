@@ -6,7 +6,7 @@ CATEGORIES=	www
 MASTER_SITES+=	https://gitlab.com/gitlab-org/gitlab-pages/-/raw/v${DISTVERSION}/
 DISTFILES+=	go.mod
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Official GitLab Pages daemon
 WWW=		https://gitlab.com/gitlab-org/gitlab-pages
 

@@ -4,7 +4,7 @@ CATEGORIES=	security
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SPAKE2 password-authenticated key exchange (pure python)
 WWW=		https://github.com/warner/python-spake2
 

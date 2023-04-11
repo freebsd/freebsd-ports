@@ -4,7 +4,7 @@ CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Extensions to pyyaml
 WWW=		https://github.com/asottile/aspy.yaml
 

@@ -4,7 +4,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Pythonic binding for FFmpeg
 WWW=		https://docs.mikeboers.com/pyav/develop/
 

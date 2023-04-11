@@ -5,7 +5,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	IPython-like terminal frontend for Jupyter kernels in any language
 WWW=		https://jupyter-console.readthedocs.io/
 

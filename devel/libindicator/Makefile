@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://launchpad.net/${PORTNAME}/${PORTVERSION:R}/${PORTVERSION}/+download/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Symbols and convience functions for desktop indicators
 WWW=		https://launchpad.net/libindicator
 

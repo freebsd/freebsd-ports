@@ -4,7 +4,7 @@ PORTREVISION=	3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Qt 5-based Syncthing tray application
 WWW=		https://github.com/Martchus/syncthingtray
 

@@ -3,7 +3,7 @@ PORTVERSION=	21.06.21
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Utilities for managing storage devices
 WWW=		https://github.com/Seagate/openSeaChest
 

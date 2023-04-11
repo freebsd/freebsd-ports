@@ -5,7 +5,7 @@ CATEGORIES=	www
 MASTER_SITES=	https://releases.mattermost.com/${PORTVERSION}/
 DISTNAME=	mattermost-${PORTVERSION}-linux-amd64
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Webapp of Mattermost server
 WWW=		https://mattermost.org/
 

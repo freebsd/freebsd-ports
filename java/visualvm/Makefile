@@ -4,7 +4,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	https://github.com/oracle/visualvm/releases/download/${PORTVERSION}/
 DISTNAME=	visualvm_${PORTVERSION:S/.//g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GUI tool combining CLI JDK tools and profiling capabilities
 WWW=		https://visualvm.github.io/
 

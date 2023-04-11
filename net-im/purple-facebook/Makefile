@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/dequis/purple-facebook/releases/download/v${POR
 
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Facebook plugin for libpurple
 WWW=		https://github.com/dequis/purple-facebook
 

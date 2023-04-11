@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://mirror.roe.ch/rel/sslsplit/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Transparent and scalable SSL/TLS interception
 WWW=		https://www.roe.ch/SSLsplit
 

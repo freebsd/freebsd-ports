@@ -4,7 +4,7 @@ PORTREVISION=	2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Lab makes it simple to work with repositories on GitLab
 WWW=		https://zaquestion.github.io/lab
 

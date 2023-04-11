@@ -5,7 +5,7 @@ CATEGORIES=	devel multimedia python www
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	WebRTC and ORTC in Python
 WWW=		https://github.com/jlaine/aiortc/
 

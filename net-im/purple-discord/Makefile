@@ -2,7 +2,7 @@ PORTNAME=	purple-discord
 PORTVERSION=	g20210729
 CATEGORIES=	net-im
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Discord plugin for libpurple
 WWW=		https://github.com/EionRobb/purple-discord
 

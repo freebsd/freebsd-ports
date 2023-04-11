@@ -4,7 +4,7 @@ PORTREVISION=	4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Twitch chat client
 WWW=		https://chatterino.com/
 

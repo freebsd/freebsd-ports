@@ -2,7 +2,7 @@ PORTNAME=	creduce
 DISTVERSION=	2.11.0.20220927
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Produces small test cases
 WWW=		https://github.com/csmith-project/creduce
 

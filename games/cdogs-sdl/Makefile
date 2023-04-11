@@ -3,7 +3,7 @@ PORTVERSION=	1.4.0
 PORTREVISION=	1
 CATEGORIES=	games
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Classic overhead run-and-gun game
 WWW=		https://github.com/cxong/cdogs-sdl
 

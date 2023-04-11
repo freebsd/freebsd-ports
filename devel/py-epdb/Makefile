@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Enhanced Python Debugger
 WWW=		https://github.com/sassoftware/epdb
 

@@ -2,7 +2,7 @@ PORTNAME=	docbookrx
 DISTVERSION=	1.0.0.dev
 CATEGORIES=	textproc
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	DocBook to AsciiDoc converter
 WWW=		https://github.com/asciidoctor/docbookrx
 
