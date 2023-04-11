@@ -20,14 +20,18 @@ export workdir="${cbsd_workdir}"
 globalconf=${cbsd_globalconf:-"%%PREFIX%%/cbsd/cbsd.conf"}
 
 start_cmd=${name}_start
+stop_cmd=${name}_stop
 restart_cmd=${name}_restart
 extra_commands="restart"
 
 command="%%PREFIX%%/cbsd/tools/racct-bhyve-statsd"
-pidfile="/var/run/$name.pid"
-command_args="&"
+pidfile="${cbsd_workdir}/var/run/${name}.pid"
+daemon_pidfile="${cbsd_workdir}/var/run/${name}-daemon.pid"
+daemon_logdir="/var/log/${name}"
+workdir_normalize=$( echo ${cbsd_workdir} | /usr/bin/tr "/" "_" )
+daemon_logfile="${daemon_logdir}/cbsd-statsd-bhyve${workdir_normalize}.log"
 
-pidfile=/var/run/racct-bhyve-statsd.pid
+command_args="&"
 
 if [ ! -f ${globalconf} ]; then
 	echo "cbsd: no such ${globalconf}";
@@ -41,6 +45,34 @@ fi
 
 . ${globalconf}
 . ${subrdir}/nc.subr
+
+cbsd_statsd_bhyve_stop()
+{
+	local _pids
+
+	if [ -f "${daemon_pidfile}" ]; then
+		_pids=$( pgrep -F ${daemon_pidfile} 2>&1 )
+		_err=$?
+		/bin/rm -f ${daemon_pidfile}
+		if [ ${_err} -eq  0 ]; then
+			kill -9 ${_pids}
+		else
+			echo "pgrep: ${_pids}"
+		fi
+	fi
+	if [ -f "${pidfile}" ]; then
+		_pids=$( pgrep -F ${pidfile} 2>&1 )
+		_err=$?
+		/bin/rm -f ${pidfile}
+		if [ ${_err} -eq  0 ]; then
+			kill -9 ${_pids}
+		else
+			echo "pgrep: ${_pids}"
+		fi
+	fi
+
+	return 0
+}
 
 cbsd_statsd_bhyve_start()
 {
@@ -84,7 +116,10 @@ cbsd_statsd_bhyve_start()
 			;;
 	esac
 
-	exec env workdir=${cbsd_workdir} %%PREFIX%%/cbsd/tools/racct-bhyve-statsd ${args}
+	[ ! -d ${daemon_logdir} ] && mkdir -p ${daemon_logdir}
+	touch ${daemon_logfile}
+
+	/usr/sbin/daemon -f -R5 -P ${daemon_pidfile} -o ${daemon_logfile} /usr/bin/env workdir=${cbsd_workdir} ${command} ${args}
 }
 
 cbsd_statsd_bhyve_restart()
