@@ -42,3 +42,8 @@
 %%DOCSDIR%%/en/books/fdp-primer/fdp-primer_en.pdf
 %%DOCSDIR%%/en/books/handbook/handbook_en.pdf
 %%DOCSDIR%%/en/books/porters-handbook/porters-handbook_en.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/diff.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/init.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/pam/converse.c
+%%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam_unix.c
+%%DOCSDIR%%/%%DOCLANG%%/articles/pam/su.c

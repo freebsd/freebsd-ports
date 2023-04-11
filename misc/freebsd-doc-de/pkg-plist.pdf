@@ -11,3 +11,5 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/faq/faq_de.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/handbook_de.pdf
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/porters-handbook_de.pdf
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/diff.txt
+%%DOCSDIR%%/%%DOCLANG%%/articles/freebsd-update-server/init.txt

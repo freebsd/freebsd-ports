@@ -1,5 +1,6 @@
 PORTNAME=	freebsd-doc
 PORTVERSION=	20230410
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	misc docs
 MASTER_SITES=	LOCAL/blackend
@@ -63,14 +64,15 @@ BUILD_DEPENDS+=	docproj-fonts-cjk>0:textproc/docproj-fonts-cjk
 .endif
 .endif
 
-# when html is defined as the format, add HTML_COMMON.
+# when html is defined as the format, add HTML_COMMON and extras
+# extras files are example files, scripts, etc. coming with the doc
 .if ${PORT_OPTIONS:MHTML}
-PLIST_FORMATS+=	html-common
+PLIST_FORMATS+=	html-common extras
 .endif
 
 # example files, scripts, etc. coming with the doc and common
 # directories for all formats.
-PLIST_FORMATS+=	extras common
+#PLIST_FORMATS+=	extras common
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|enableGitInfo = true|#enableGitInfo = true|' \
@@ -90,10 +92,20 @@ do-build:
 do-install:
 	${MKDIR} ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}
 	${CP} -R ${WRKSRC}/public/* ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}
+# For PDF format extras files are copied with the .pdf in same directory
+.if ${PORT_OPTIONS:MPDF}
+	${GREP} -E '(\.c|\.txt)' ${.CURDIR}/pkg-plist.pdf | \
+		${SED} -e 's|%%DOCSDIR%%/%%DOCLANG%%/||' | \
+		${XARGS} -t -I % ${CP} -v ${WRKSRC}/static/source/% ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/${DOCLANG}/%;
+.endif
+# For HTML format extras files are in source/ directory
+.if ${PORT_OPTIONS:MHTML}
 	if ${TEST} -f ${.CURDIR}/pkg-plist.extras; then \
+		${MKDIR} ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/source; \
 		${CAT} ${.CURDIR}/pkg-plist.extras | \
 		${SED} -e 's|%%DOCSDIR%%/||' | \
 		${XARGS} -t -I % ${CP} -v ${WRKSRC}/static/% ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/; \
 	fi
+.endif
 
 .include <bsd.port.mk>
