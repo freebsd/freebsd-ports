@@ -1815,6 +1815,7 @@
     SUBDIR += py-wagtail-localize
     SUBDIR += py-wagtail-transfer
     SUBDIR += py-waitress
+    SUBDIR += py-wcag-contrast-ratio
     SUBDIR += py-webargs
     SUBDIR += py-webassets
     SUBDIR += py-webob
