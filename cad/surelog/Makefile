@@ -39,7 +39,7 @@ CMAKE_ARGS=	-DFREEBSD_JAVA_VERSION=${USE_JAVA} \
 CMAKE_TESTING_ON=	SURELOG_BUILD_TESTS # unclear how to run tests, see https://github.com/chipsalliance/Surelog/issues/3545
 CMAKE_TESTING_TARGET=	UnitTests
 
-CONFLICTS_INSTALL=	capnproto capnproto080 uhdm # bin/uhdm-dump lib/libcapnp.so
+CONFLICTS_INSTALL=	capnproto capnproto080
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH}
 
