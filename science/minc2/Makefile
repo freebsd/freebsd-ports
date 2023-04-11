@@ -1,7 +1,7 @@
 PORTNAME=	minc
 PORTVERSION=	2.2.00
 DISTVERSIONPREFIX=	release-
-PORTREVISION=	12
+PORTREVISION=	13
 PORTEPOCH=	1
 CATEGORIES=	science biology
 PKGNAMESUFFIX=	2
@@ -12,9 +12,6 @@ WWW=		https://www.bic.mni.mcgill.ca/ServicesSoftware/MINC
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: matrix_errno
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: matrix_errno
 
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libnetcdf.so:science/netcdf
