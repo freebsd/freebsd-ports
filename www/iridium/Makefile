@@ -1,6 +1,6 @@
 PORTNAME=	iridium
 PORTVERSION=	2023.03.111
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -71,7 +71,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
-USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gnome iconv jpeg \
+USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gnome iconv:wchar_t jpeg \
 		localbase:ldflags ninja perl5 pkgconfig python:3.7+,build qt:5 shebangfix \
 		tar:xz xorg
 

@@ -1,5 +1,6 @@
 PORTNAME=	ungoogled-chromium
 PORTVERSION=	112.0.5615.49
+PORTREVISION=	1
 UGVERSION=	${DISTVERSION}-1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/ \
@@ -72,7 +73,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
-USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gnome iconv jpeg \
+USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gnome iconv:wchar_t jpeg \
 		localbase:ldflags ninja perl5 pkgconfig python:3.7+,build qt:5 shebangfix \
 		tar:xz xorg
 
