@@ -1,5 +1,5 @@
 PORTNAME=	gap
-DISTVERSION=	4.12.1
+DISTVERSION=	4.12.2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/gap-system/gap/releases/download/v${DISTVERSION}/
 
@@ -39,21 +39,22 @@ post-build:
 			${CONFIGURE_ARGS:N--with-*} && \
 		${MAKE} ${MAKEFLAGS} && \
 		${MAKE} ${MAKEFLAGS} install-strip && \
-		${RM} bistellar
+		${MAKE} ${MAKEFLAGS} distclean
 
 post-install:
 	# install packages
 	cd ${WRKSRC} && ${COPYTREE_SHARE} pkg ${STAGEDIR}${DATADIR}
 	# remove redundant files
 	@${RM} \
-		${STAGEDIR}${DATADIR}/pkg/patternclass/lib/.DS_Store \
+		${STAGEDIR}${DATADIR}/pkg/agt/doc/mathjax \
 		${STAGEDIR}${DATADIR}/pkg/atlasrep/gap/utils.gi.new \
-		${STAGEDIR}${DATADIR}/pkg/*/*/pkgconfig.h.in \
 		${STAGEDIR}${DATADIR}/pkg/*/examples/.gitkeep
 	# remove empty directories
 	@${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
-	# strip binary
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libgap.so.8.0.0
+	# strip binaries
+	@${STRIP_CMD} \
+		${STAGEDIR}${PREFIX}/lib/gap/gap \
+		${STAGEDIR}${PREFIX}/lib/libgap.so.8.0.0
 
 do-test:
 	@cd ${WRKSRC} && ./gap ${FILESDIR}/test.g
