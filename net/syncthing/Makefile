@@ -1,13 +1,12 @@
 PORTNAME=	syncthing
-PORTVERSION=	1.22.0
-PORTREVISION=	6
+PORTVERSION=	1.23.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/syncthing/syncthing/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-source-${DISTVERSIONPREFIX}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Encrypted file sync tool
 WWW=		https://syncthing.net/
 
