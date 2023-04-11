@@ -5,7 +5,7 @@ PORTREVISION=	13
 CATEGORIES=	devel
 PKGNAMESUFFIX=	.build
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance extensible build system for reproducible builds
 WWW=		https://please.build/
 

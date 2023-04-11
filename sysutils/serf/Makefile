@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	hashicorp-
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Service discovery and configuration made easy
 WWW=		https://serfdom.io/
 

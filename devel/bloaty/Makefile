@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	8
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Size profiler for binaries
 WWW=		https://github.com/google/bloaty
 

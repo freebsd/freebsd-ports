@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN \
 		SF/${PORTNAME:tl}-perl/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl module for Gtk+ 2.x graphical user interface library
 WWW=		http://gtk2-perl.sourceforge.net/
 

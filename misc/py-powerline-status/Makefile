@@ -3,7 +3,7 @@ PORTVERSION=	2.8.2
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Statusline plugin for vim, zsh, bash, and more
 WWW=		https://github.com/powerline/powerline
 

@@ -4,7 +4,7 @@ CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension to manage RDF Site Summary (RSS) files
 WWW=		https://metacpan.org/release/XML-RSS
 

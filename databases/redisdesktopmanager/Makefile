@@ -2,7 +2,7 @@ PORTNAME=	redisdesktopmanager
 PORTVERSION=	2022.2
 CATEGORIES=	databases
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Redis DB management tool
 WWW=		https://redisdesktop.com/
 

@@ -7,7 +7,7 @@ MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:do
 DISTFILES=	prebuilt-x86_64.tar.xz:dockerx64 \
 		prebuilt-arm.tar.xz:dockerarm
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official GitLab Runner written in Go
 WWW=		https://gitlab.com/gitlab-org/gitlab-runner
 

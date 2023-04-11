@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	13
 CATEGORIES=	sysutils
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Environment variable manager for your shell
 WWW=		https://direnv.net/
 

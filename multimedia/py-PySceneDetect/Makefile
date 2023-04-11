@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenCV-based video scene detection program and Python library
 WWW=		https://pyscenedetect.readthedocs.io/en/latest/
 

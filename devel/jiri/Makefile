@@ -6,7 +6,7 @@ MASTER_SITES=	LOCAL/swills
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 DIST_SUBDIR=	jiri
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for multi-repo development
 WWW=		https://fuchsia.googlesource.com/jiri
 

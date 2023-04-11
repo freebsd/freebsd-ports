@@ -3,7 +3,7 @@ PORTVERSION=	0.1.11
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find the vendor for a given MAC address
 WWW=		https://github.com/bauerj/mac_vendor_lookup
 

@@ -4,7 +4,7 @@ PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://download.openzim.org/release/libzim/
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reference implementation of the ZIM specification
 WWW=		https://www.openzim.org/wiki/OpenZIM
 

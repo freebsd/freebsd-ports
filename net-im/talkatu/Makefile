@@ -6,7 +6,7 @@ MASTER_SITES=	https://bitbucket.org/pidgin/talkatu/get/
 DISTNAME=	1b7433db5cd5
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of Gtk+ widgets that are useful for chat applications
 WWW=		https://bitbucket.org/pidgin/talkatu/overview
 

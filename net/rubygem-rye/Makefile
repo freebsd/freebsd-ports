@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Safely run SSH commands on a bunch of machines at the same time
 WWW=		https://github.com/delano/rye/
 

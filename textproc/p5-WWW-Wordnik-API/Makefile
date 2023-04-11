@@ -7,7 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:PSILVA
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Wordnik API implementation
 WWW=		https://metacpan.org/release/WWW-Wordnik-API
 

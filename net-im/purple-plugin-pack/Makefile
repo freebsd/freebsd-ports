@@ -3,7 +3,7 @@ PORTVERSION=	2.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://dl.bintray.com/pidgin/releases/
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of libpurple plugins
 WWW=		https://keep.imfreedom.org/pidgin/purple-plugin-pack
 

@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	13
 CATEGORIES=	net-im
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chat network bridge
 WWW=		https://github.com/42wim/matterbridge
 

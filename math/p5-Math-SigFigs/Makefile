@@ -4,7 +4,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Do math with correct handling of significant figures
 WWW=		https://metacpan.org/release/Math-SigFigs
 

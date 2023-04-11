@@ -4,7 +4,7 @@ CATEGORIES=	editors python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text Editor written in Python
 WWW=		https://github.com/asottile/babi
 

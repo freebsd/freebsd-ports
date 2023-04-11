@@ -3,7 +3,7 @@ PORTVERSION=	2.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mattermost plugin for libpurple
 WWW=		https://github.com/EionRobb/purple-mattermost
 

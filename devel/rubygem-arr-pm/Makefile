@@ -3,7 +3,7 @@ PORTVERSION=	0.0.12
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Read and write rpm packages
 WWW=		https://rubygems.org/gems/arr-pm
 

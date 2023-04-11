@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Rapid DSL prototyping in Ruby
 WWW=		https://github.com/delano/caesars
 

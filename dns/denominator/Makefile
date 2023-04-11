@@ -5,7 +5,7 @@ MASTER_SITES=	https://bintray.com/artifact/download/netflixoss/maven/com/netflix
 DISTNAME=	${PORTNAME}-cli-${PORTVERSION}-fat.jar
 EXTRACT_SUFX=
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portably control DNS clouds
 WWW=		https://github.com/Netflix/denominator
 

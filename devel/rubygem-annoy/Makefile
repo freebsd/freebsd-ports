@@ -3,7 +3,7 @@ PORTVERSION=	0.5.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Present the user with a simple question before a destructive action
 WWW=		https://rubygems.org/gems/annoy
 

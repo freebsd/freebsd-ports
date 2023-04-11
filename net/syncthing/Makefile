@@ -7,7 +7,7 @@ MASTER_SITES=	https://github.com/syncthing/syncthing/releases/download/v${PORTVE
 DISTNAME=	${PORTNAME}-source-${DISTVERSIONPREFIX}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Encrypted file sync tool
 WWW=		https://syncthing.net/
 

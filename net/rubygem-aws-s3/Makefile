@@ -3,7 +3,7 @@ PORTVERSION=	0.6.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Client library for Amazon S3 REST API
 WWW=		https://rubygems.org/gems/aws-s3
 

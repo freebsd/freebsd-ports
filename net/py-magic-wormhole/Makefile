@@ -4,7 +4,7 @@ CATEGORIES=	net
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Get things from one computer to another, safely
 WWW=		https://github.com/warner/magic-wormhole
 

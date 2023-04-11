@@ -3,7 +3,7 @@ PORTVERSION=	0.9.17
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Library for accessing the Amazon Web Services APIs
 WWW=		https://github.com/grempe/amazon-ec2
 

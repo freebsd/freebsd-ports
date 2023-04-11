@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	EC2 deployment tool
 WWW=		http://solutious.com/projects/rudy/
 

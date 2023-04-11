@@ -5,7 +5,7 @@ CATEGORIES=	devel textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple configuration automation
 WWW=		https://metacpan.org/release/Config-YAML
 

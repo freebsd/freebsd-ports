@@ -3,7 +3,7 @@ DISTVERSION=	5.1.1
 PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to disasm, debug, analyze, and manipulate binary files
 WWW=		https://www.radare.org
 

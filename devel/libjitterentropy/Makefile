@@ -3,7 +3,7 @@ PORTVERSION=	3.3.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hardware RNG based on CPU timing jitter
 WWW=		https://www.chronox.de/jent.html
 

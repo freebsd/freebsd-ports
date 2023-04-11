@@ -7,7 +7,7 @@ MASTER_SITE_SUBDIR=	CPAN:PJB
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Crypt-Tea-${PORTVERSION}
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Tiny Encryption Algorithm in Perl and JavaScript
 WWW=		https://metacpan.org/release/PJB/Crypt-Tea-2.12
 

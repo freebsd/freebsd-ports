@@ -3,7 +3,7 @@ PORTVERSION=	2.7.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel python
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C-Vise is a super-parallel Python port of the C-Reduce
 WWW=		https://github.com/marxin/cvise
 

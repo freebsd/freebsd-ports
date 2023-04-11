@@ -4,7 +4,7 @@ PORTREVISION=	5
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.gocheese.cypherpunks.ru/download/
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python private package repository and caching proxy
 WWW=		http://www.gocheese.cypherpunks.ru/
 

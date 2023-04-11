@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	12
 CATEGORIES=	security
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 # co-maintainer: brd
 COMMENT=	Tool for securely accessing secrets
 WWW=		https://vaultproject.io/

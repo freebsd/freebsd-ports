@@ -4,7 +4,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for radare2 reverse engineering framework
 WWW=		https://github.com/radareorg/cutter
 

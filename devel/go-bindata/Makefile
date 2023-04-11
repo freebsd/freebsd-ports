@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	12
 CATEGORIES=	devel
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generates Go code from any file
 WWW=		https://github.com/go-bindata/go-bindata
 

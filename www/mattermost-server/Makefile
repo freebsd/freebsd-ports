@@ -6,7 +6,7 @@ CATEGORIES=	www
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
 DISTFILES=	go.mod:gomod
 
-MAINTAINER=	swills@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source Slack-alternative in Golang and React
 WWW=		https://mattermost.org/
 
