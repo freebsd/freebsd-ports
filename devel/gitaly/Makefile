@@ -21,7 +21,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 		rubygem-rugged>=1.5.1<1.6:devel/rubygem-rugged \
 		rubygem-gitlab-markup>=1.9.0<1.10.0:textproc/rubygem-gitlab-markup \
 		rubygem-activesupport61>=6.1.7.2<6.1.8:devel/rubygem-activesupport61 \
-		rubygem-grpc142>=1.42.0<2:net/rubygem-grpc142 \
+		rubygem-grpc>=1.42.0<2:net/rubygem-grpc \
 		rubygem-sentry-raven>=3.1<4:devel/rubygem-sentry-raven \
 		rubygem-rbtrace>=0.4.14:devel/rubygem-rbtrace \
 		rubygem-gitaly>=15.5.0<15.10:net/rubygem-gitaly \
