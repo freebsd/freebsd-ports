@@ -31,6 +31,7 @@
     SUBDIR += gtk-sharp30
     SUBDIR += gtk20
     SUBDIR += gtk30
+    SUBDIR += gtk4-layer-shell
     SUBDIR += gtk40
     SUBDIR += gtkd
     SUBDIR += gtkdatabox
