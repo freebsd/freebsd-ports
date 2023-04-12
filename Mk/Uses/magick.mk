@@ -63,7 +63,7 @@ IGNORE=		Incorrect USES=magick:${magick_ARGS} - multiple flavors defined
 .    endif
 .  endfor
 
-#=== Dependeny selection ===
+#=== Dependency selection ===
 _magick_depends=	lib build run test
 _magick_depend=		#
 .  for _depend in ${_magick_depends:O:u}
