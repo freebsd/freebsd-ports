@@ -1,6 +1,6 @@
 PORTNAME=	sleef
-DISTVERSION=	3.5.0
-PORTREVISION=	3
+DISTVERSION=	3.5.1-62
+DISTVERSIONSUFFIX=	-g85440a5
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -10,11 +10,14 @@ WWW=		https://sleef.org
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cmake compiler:c11
+USES=		cmake:testing compiler:c11 pathfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	shibatch
+
+CMAKE_OFF=	BUILD_TESTS
+CMAKE_TESTING_ON=	BUILD_TESTS
 
 .include <bsd.port.options.mk>
 
