@@ -1,4 +1,4 @@
---- lib/support/nginx/gitlab-ssl.orig	2020-11-20 12:00:55 UTC
+--- lib/support/nginx/gitlab-ssl.orig	2023-04-05 16:11:51 UTC
 +++ lib/support/nginx/gitlab-ssl
 @@ -23,7 +23,7 @@
  upstream gitlab-workhorse {
@@ -9,7 +9,7 @@
  }
  
  map $http_upgrade $connection_upgrade_gitlab_ssl {
-@@ -164,7 +164,7 @@ server {
+@@ -161,7 +161,7 @@ server {
    location ~ ^/(404|422|500|502|503)\.html$ {
      # Location to the GitLab's public directory,
      # for Omnibus this would be: /opt/gitlab/embedded/service/gitlab-rails/public
