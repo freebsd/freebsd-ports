@@ -1,4 +1,4 @@
---- configure.ac.orig	2021-12-15 02:00:45 UTC
+--- configure.ac.orig	2023-03-14 19:50:20 UTC
 +++ configure.ac
 @@ -55,6 +55,7 @@ AH_BOTTOM([
  
@@ -25,7 +25,7 @@
  
  dnl Haiku does not have network api in libc.
  PHP_CHECK_FUNC_LIB(setsockopt, network)
-@@ -1360,7 +1360,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
+@@ -1372,7 +1372,7 @@ EXPANDED_SYSCONFDIR=`eval echo $sysconfdir`
  EXPANDED_DATADIR=$datadir
  EXPANDED_PHP_CONFIG_FILE_PATH=`eval echo "$PHP_CONFIG_FILE_PATH"`
  EXPANDED_PHP_CONFIG_FILE_SCAN_DIR=`eval echo "$PHP_CONFIG_FILE_SCAN_DIR"`
@@ -34,7 +34,7 @@
  
  exec_prefix=$old_exec_prefix
  libdir=$old_libdir
-@@ -1579,7 +1579,7 @@ PHP_SUBST(all_targets)
+@@ -1591,7 +1591,7 @@ PHP_SUBST(all_targets)
  PHP_SUBST(install_targets)
  PHP_SUBST(install_binary_targets)
  

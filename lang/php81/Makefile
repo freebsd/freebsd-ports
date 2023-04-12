@@ -400,7 +400,11 @@ CONFIGURE_ARGS+=	--enable-odbc \
 .if ${PHP_MODNAME} == "opcache"
 # This is needed by Zend extensions, keep before everything.
 PHP_MOD_PRIO=		10
+.if ${ARCH} == aarch64
+CONFIGURE_ARGS+=	--disable-opcache-jit
+.else
 CONFIGURE_ARGS+=	--enable-opcache
+.endif
 .endif
 
 .if ${PHP_MODNAME} == "pcntl"

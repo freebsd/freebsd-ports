@@ -1,6 +1,6 @@
---- ext/hash/xxhash/xxhash.h.orig	2022-08-02 13:57:03 UTC
+--- ext/hash/xxhash/xxhash.h.orig	2023-03-14 16:11:05 UTC
 +++ ext/hash/xxhash/xxhash.h
-@@ -3048,22 +3048,32 @@ enum XXH_VECTOR_TYPE /* fake enum */ {
+@@ -3047,22 +3047,32 @@ enum XXH_VECTOR_TYPE /* fake enum */ {
   * inconsistent intrinsics, spotty coverage, and multiple endiannesses.
   */
  #if XXH_VECTOR == XXH_VSX

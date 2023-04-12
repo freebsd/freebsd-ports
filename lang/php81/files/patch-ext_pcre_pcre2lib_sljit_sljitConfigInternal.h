@@ -1,6 +1,6 @@
---- ext/pcre/pcre2lib/sljit/sljitConfigInternal.h.orig	2022-03-25 09:54:56 UTC
+--- ext/pcre/pcre2lib/sljit/sljitConfigInternal.h.orig	2023-03-14 19:50:20 UTC
 +++ ext/pcre/pcre2lib/sljit/sljitConfigInternal.h
-@@ -283,7 +283,7 @@
+@@ -319,7 +319,7 @@ extern "C" {
  /* Instruction cache flush. */
  /****************************/
  
