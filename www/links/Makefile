@@ -1,5 +1,5 @@
 PORTNAME=	links
-PORTVERSION=	2.28
+PORTVERSION=	2.29
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://links.twibright.com/download/
@@ -11,7 +11,7 @@ WWW=		http://links.twibright.com/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	links-0* links-hacked links1
+CONFLICTS_INSTALL=	links1
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
@@ -70,7 +70,8 @@ X11_PLIST_FILES=	share/pixmaps/links.xpm
 CIPHERSTRING?=	HIGH:!SSLv2:!aNULL:!eNULL:@STRENGTH
 
 .if ${PORT_OPTIONS:MDIRECTFB} || ${PORT_OPTIONS:MSVGALIB} || ${PORT_OPTIONS:MX11}
-LIB_DEPENDS+=	libpng.so:graphics/png \
+LIB_DEPENDS+=	libavif.so:graphics/libavif \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp
 USES+=		jpeg pkgconfig
@@ -79,9 +80,9 @@ CONFIGURE_ARGS+=	--enable-graphics
 .if ${PORT_OPTIONS:MSVG}
 IGNORE=	option SVG requires one of DIRECTFB, SVGALIB, or X11
 .endif
-CONFIGURE_ARGS+=	--disable-graphics --without-libjpeg \
-			--without-librsvg --without-libtiff \
-			--without-libwebp
+CONFIGURE_ARGS+=	--disable-graphics --without-libavif \
+			--without-libjpeg --without-librsvg \
+			--without-libtiff --without-libwebp
 .endif
 
 .if ${PORT_OPTIONS:MX11}
