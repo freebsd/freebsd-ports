@@ -1,6 +1,5 @@
 PORTNAME=	geoipupdate
-PORTVERSION=	4.11.1
-PORTREVISION=	1
+PORTVERSION=	5.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net geography
 
@@ -14,7 +13,7 @@ LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
 USES=		gmake go:modules,no_targets
-GO_MODULE=	github.com/maxmind/geoipupdate/v4
+GO_MODULE=	github.com/maxmind/geoipupdate/v5
 
 MAKE_ENV+=	${GO_ENV} \
 		CONFFILE=${PREFIX}/etc/GeoIP.conf \
