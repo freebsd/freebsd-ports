@@ -2,7 +2,8 @@ PORTNAME=	libbluray
 DISTVERSION=	1.3.4
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
+MASTER_SITES=	https://get.videolan.org/${PORTNAME}/${DISTVERSION}/ \
+		https://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Blu-Ray discs playback library for media players
