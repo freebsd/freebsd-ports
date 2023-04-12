@@ -1,3 +1,593 @@
+  <vuln vid="b54abe9d-7024-4d10-98b2-180cf1717766">
+    <topic>py-beaker -- arbitrary code execution vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-beaker</name>
+    <name>py38-beaker</name>
+    <name>py39-beaker</name>
+    <name>py310-beaker</name>
+    <name>py311-beaker</name>
+    <range><le>1.12.1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>matheusbrat reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2020-216">
+      <p>The Beaker library through 1.12.1 for Python is affected by deserialization of untrusted data, which could lead to arbitrary code execution.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-7489</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2020-216</url>
+    </references>
+    <dates>
+      <discovery>2020-06-26</discovery>
+      <entry>2023-04-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="374793ad-2720-4c4a-b86c-fc4a1780deac">
+    <topic>py-psutil -- double free vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-psutil121</name>
+    <name>py38-psutil121</name>
+    <name>py39-psutil121</name>
+    <name>py310-psutil121</name>
+    <name>py311-psutil121</name>
+    <range><lt>5.6.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>ret2libc reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2019-41">
+      <p>psutil (aka python-psutil) through 5.6.5 can have a double free.</p>
+      <p>This occurs because of refcount mishandling within a while or for loop that converts system data into a Python object.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2019-18874</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2019-41</url>
+      <url>https://osv.dev/vulnerability/GHSA-qfc5-mcwq-26q8</url>
+    </references>
+    <dates>
+      <discovery>2019-11-12</discovery>
+      <entry>2023-04-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e1b77733-a982-442e-8796-a200571bfcf2">
+    <topic>py-ansible -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+    <name>py37-ansible</name>
+    <name>py38-ansible</name>
+    <name>py39-ansible</name>
+    <name>py310-ansible</name>
+    <name>py311-ansible</name>
+    <range><le>7.2.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>abeluck reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2020-220">
+      <p>A flaw was found in Ansible Base when using the aws_ssm connection plugin as garbage collector is not happening after playbook run is completed.</p>
+      <p>Files would remain in the bucket exposing the data.</p>
+      <p>This issue affects directly data confidentiality.</p>
+    </blockquote>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2020-221">
+      <p>A flaw was found in Ansible Base when using the aws_ssm connection plugin as there is no namespace separation for file transfers.</p>
+      <p>Files are written directly to the root bucket, making possible to have collisions when running multiple ansible processes.</p>
+      <p>This issue affects mainly the service availability.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-25635</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2020-220</url>
+      <cvename>CVE-2020-25636</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2020-221</url>
+    </references>
+    <dates>
+      <discovery>2020-10-05</discovery>
+      <entry>2023-04-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f418cd50-561a-49a2-a133-965d03ede72a">
+    <topic>py-ansible -- data leak vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-ansible</name>
+    <name>py38-ansible</name>
+    <name>py39-ansible</name>
+    <name>py310-ansible</name>
+    <name>py311-ansible</name>
+    <range><le>7.1.0</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Tapas jena reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2021-125">
+      <p>A flaw was found in Ansible where the secret information present in async_files are getting disclosed when the user changes the jobdir to a world readable directory.</p>
+      <p>Any secret information in an async status file will be readable by a malicious user on that system.</p>
+      <p>This flaw affects Ansible Tower 3.7 and Ansible Automation Platform 1.2.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-3532</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2021-125</url>
+    </references>
+    <dates>
+      <discovery>2021-06-09</discovery>
+      <entry>2023-04-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="2acdf364-9f8d-4aaf-8d1b-867fdfd771c6">
+    <topic>py-kerberos -- DoS and MitM vulnerabilities</topic>
+    <affects>
+      <package>
+    <name>py37-kerberos</name>
+    <name>py38-kerberos</name>
+    <name>py39-kerberos</name>
+    <name>py310-kerberos</name>
+    <name>py311-kerberos</name>
+    <range><le>1.3.1</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>macosforgebot reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2017-49">
+      <p>The checkPassword function in python-kerberos does not authenticate the KDC it attempts to communicate with, which allows remote attackers to cause a denial of service (bad response), or have other unspecified impact by performing a man-in-the-middle attack.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2015-3206</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2017-49</url>
+    </references>
+    <dates>
+      <discovery>2017-08-25</discovery>
+      <entry>2023-04-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="c1a8ed1c-2814-4260-82aa-9e37c83aac93">
+    <topic>py-cryptography -- includes a vulnerable copy of OpenSSL</topic>
+    <affects>
+      <package>
+    <name>py37-cryptography</name>
+    <name>py38-cryptography</name>
+    <name>py39-cryptography</name>
+    <name>py310-cryptography</name>
+    <name>py311-cryptography</name>
+    <range><lt>39.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-x4qr-2fvf-3mr5">
+      <p>pyca/cryptography's wheels include a statically linked copy of OpenSSL.</p>
+      <p>The versions of OpenSSL included in cryptography 0.8.1-39.0.0  are vulnerable to a security issue.</p>
+      <p>More details about the vulnerabilities themselves can be found in https://www.openssl.org/news/secadv/20221213.txt and https://www.openssl.org/news/secadv/20230207.txt.</p>
+      <p>If you are building cryptography source ("sdist") then you are responsible for upgrading your copy of OpenSSL.</p>
+      <p>Only users installing from wheels built by the cryptography project (i.e., those distributed on PyPI) need to update their cryptography versions.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-0286</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-x4qr-2fvf-3mr5</url>
+    </references>
+    <dates>
+      <discovery>2023-02-08</discovery>
+      <entry>2023-04-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a32ef450-9781-414b-a944-39f2f61677f2">
+    <topic>py-cryptography -- allows programmers to misuse an API</topic>
+    <affects>
+      <package>
+    <name>py37-cryptography</name>
+    <name>py38-cryptography</name>
+    <name>py39-cryptography</name>
+    <name>py310-cryptography</name>
+    <name>py311-cryptography</name>
+    <range><ge>1.8</ge><lt>39.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>alex reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-w7pp-m8wf-vj6r">
+      <p>Previously, `Cipher.update_into` would accept Python objects which implement the buffer protocol, but provide only immutable buffers.</p>
+      <p>This would allow immutable objects (such as `bytes`) to be mutated, thus violating fundamental rules of Python.</p>
+      <p>This is a soundness bug -- it allows programmers to misuse an API, it cannot be exploited by attacker controlled data alone.</p>
+      <p>This now correctly raises an exception.</p>
+      <p>This issue has been present since `update_into` was originally introduced in cryptography 1.8.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-23931</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-w7pp-m8wf-vj6r</url>
+    </references>
+    <dates>
+      <discovery>2023-02-07</discovery>
+      <entry>2023-04-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="ae132c6c-d716-11ed-956f-7054d21a9e2a">
+    <topic>py-tensorflow -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-tensorflow</name>
+    <name>py38-tensorflow</name>
+    <name>py39-tensorflow</name>
+    <name>py310-tensorflow</name>
+    <name>py311-tensorflow</name>
+    <range><lt>2.8.4</lt></range>
+    <range><ge>2.9.0</ge><lt>2.9.3</lt></range>
+    <range><ge>2.10.0</ge><lt>2.10.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Kang Hong Jin, Neophytos Christou, 刘力源 and Pattarakrit Rattankul report:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-cqvq-fvhr-v6hc">
+      <p>Another instance of CVE-2022-35935, where `SobolSample` is vulnerable to a denial of service via assumed scalar inputs, was found and fixed.</p>
+    </blockquote>
+    <p>Pattarakrit Rattankul reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-xf83-q765-xm6m">
+      <p>Another instance of CVE-2022-35991, where `TensorListScatter` and `TensorListScatterV2` crash via non scalar inputs in`element_shape`, was found in eager mode and fixed.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-35935</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-cqvq-fvhr-v6hc</url>
+      <cvename>CVE-2022-35991</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-xf83-q765-xm6m</url>
+    </references>
+    <dates>
+      <discovery>2022-11-21</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="52311651-f100-4720-8c62-0887dad6d321">
+    <topic>py-tensorflow -- unchecked argument causing crash</topic>
+    <affects>
+      <package>
+    <name>py37-tensorflow</name>
+    <name>py38-tensorflow</name>
+    <name>py39-tensorflow</name>
+    <name>py310-tensorflow</name>
+    <name>py311-tensorflow</name>
+    <range><lt>2.7.2</lt></range>
+    <range><ge>2.8.0</ge><lt>2.8.1</lt></range>
+    <range><ge>2.9.0</ge><lt>2.9.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Jingyi Shi reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-mgmh-g2v6-mqw5">
+      <p>The 'AvgPoolOp' function takes an argument `ksize` that must be positive but is not checked.</p>
+      <p>A negative `ksize` can trigger a `CHECK` failure and crash the program.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-35941</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-mgmh-g2v6-mqw5</url>
+    </references>
+    <dates>
+      <discovery>2022-09-16</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="951b513a-9f42-436d-888d-2162615d0fe4">
+    <topic>py-pymatgen -- regular expression denial of service</topic>
+    <affects>
+      <package>
+    <name>py37-pymatgen</name>
+    <name>py38-pymatgen</name>
+    <name>py39-pymatgen</name>
+    <name>py310-pymatgen</name>
+    <name>py311-pymatgen</name>
+    <range><le>2022.9.21</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-5jqp-885w-xj32">
+      <p>An exponential ReDoS (Regular Expression Denial of Service) can be triggered in the pymatgen PyPI package, when an attacker is able to supply arbitrary input to the GaussianInput.from_string method.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-42964</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-5jqp-885w-xj32</url>
+    </references>
+    <dates>
+      <discovery>2022-11-10</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="e87a9326-dd35-49fc-b20b-f57cbebaae87">
+    <topic>py-nicotine-plus -- Denial of service vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-nicotine-plus</name>
+    <name>py38-nicotine-plus</name>
+    <name>py39-nicotine-plus</name>
+    <name>py310-nicotine-plus</name>
+    <name>py311-nicotine-plus</name>
+    <range><lt>3.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>ztauras reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-p4v2-r99v-wjc2">
+      <p>Denial of service (DoS) vulnerability in Nicotine+ starting with version 3.0.3 and prior to version 3.2.1 allows a user with a modified Soulseek client to crash Nicotine+ by sending a file download request with a file path containing a null character.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-45848</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-p4v2-r99v-wjc2</url>
+    </references>
+    <dates>
+      <discovery>2022-03-16</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="93db4f92-9997-4f4f-8614-3963d9e2b0ec">
+    <topic>py-slixmpp -- incomplete SSL certificate validation</topic>
+    <affects>
+      <package>
+    <name>py37-slixmpp</name>
+    <name>py38-slixmpp</name>
+    <name>py39-slixmpp</name>
+    <name>py310-slixmpp</name>
+    <name>py311-slixmpp</name>
+    <range><lt>1.8.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-q6cq-m9gm-6q2f">
+      <p>Slixmpp before 1.8.3 lacks SSL Certificate hostname validation in XMLStream, allowing an attacker to pose as any server in the eyes of Slixmpp.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-45197</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-q6cq-m9gm-6q2f</url>
+    </references>
+    <dates>
+      <discovery>2022-12-25</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b31f7029-817c-4c1f-b7d3-252de5283393">
+    <topic>py-suds -- vulnerable to symlink attacks</topic>
+    <affects>
+      <package>
+    <name>py37-suds</name>
+    <name>py38-suds</name>
+    <name>py39-suds</name>
+    <name>py310-suds</name>
+    <name>py311-suds</name>
+    <range><le>1.1.2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>SUSE reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2013-32">
+      <p>cache.py in Suds 0.4, when tempdir is set to None, allows local users to redirect SOAP queries and possibly have other unspecified impact via a symlink attack on a cache file with a predictable name in /tmp/suds/.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2013-2217</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2013-32</url>
+    </references>
+    <dates>
+      <discovery>2013-09-23</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b692a49c-9ae7-4958-af21-cbf8f5b819ea">
+    <topic>py-impacket -- multiple path traversal vulnerabilities</topic>
+    <affects>
+      <package>
+    <name>py37-impacket</name>
+    <name>py38-impacket</name>
+    <name>py39-impacket</name>
+    <name>py310-impacket</name>
+    <name>py311-impacket</name>
+    <range><ge>0.9.10</ge><lt>0.9.23</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>asolino reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/PYSEC-2021-17">
+      <p>Multiple path traversal vulnerabilities exist in smbserver.py in Impacket through 0.9.22. An attacker that connects to a running smbserver instance can list and write to arbitrary files via ../ directory traversal. This could potentially be abused to achieve arbitrary code execution by replacing /etc/shadow or an SSH authorized key.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-31800</cvename>
+      <url>https://osv.dev/vulnerability/PYSEC-2021-17</url>
+      <url>https://osv.dev/vulnerability/GHSA-mj63-64x7-57xf</url>
+    </references>
+    <dates>
+      <discovery>2021-05-05</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="326b2f3e-6fc7-4661-955d-a772760db9cf">
+    <topic>py-tflite -- buffer overflow vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-tflite</name>
+    <name>py38-tflite</name>
+    <name>py39-tflite</name>
+    <name>py310-tflite</name>
+    <name>py311-tflite</name>
+    <range><lt>2.8.4</lt></range>
+    <range><ge>2.9.0</ge><lt>2.9.3</lt></range>
+    <range><ge>2.10.0</ge><lt>2.10.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Thibaut Goetghebuer-Planchon reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-h6q3-vv32-2cq5">
+      <p>The reference kernel of the CONV_3D_TRANSPOSE TensorFlow Lite operator wrongly increments the data_ptr when adding the bias to the result.</p>
+      <p>Instead of `data_ptr += num_channels;` it should be `data_ptr += output_num_channels;` as if the number of input channels is different than the number of output channels, the wrong result will be returned and a buffer overflow will occur if num_channels &gt; output_num_channels.</p>
+      <p>An attacker can craft a model with a specific number of input channels in a way similar to the attached example script.</p>
+      <p>It is then possible to write specific values through the bias of the layer outside the bounds of the buffer.</p>
+      <p>This attack only works if the reference kernel resolver is used in the interpreter (i.e. `experimental_op_resolver_type=tf.lite.experimental.OpResolverType.BUILTIN_REF` is used).</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-41894</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-h6q3-vv32-2cq5</url>
+    </references>
+    <dates>
+      <discovery>2022-11-21</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="d82bcd2b-5cd6-421c-8179-b3ff0231029f">
+    <topic>py-tflite -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+    <name>py37-tflite</name>
+    <name>py38-tflite</name>
+    <name>py39-tflite</name>
+    <name>py310-tflite</name>
+    <name>py311-tflite</name>
+    <range><lt>2.3.4</lt></range>
+    <range><ge>2.4.0</ge><lt>2.4.3</lt></range>
+    <range><ge>2.5.0</ge><lt>2.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Yakun Zhang of Baidu Security reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-wf5p-c75w-w3wh">
+      <p>An attacker can craft a TFLite model that would trigger a null pointer dereference, which would result in a crash and denial of service</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2021-37689</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-wf5p-c75w-w3wh</url>
+    </references>
+    <dates>
+      <discovery>2021-08-25</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a0509648-65ce-4a1b-855e-520a75bd2549">
+    <topic>py-cinder -- unauthorized data access</topic>
+    <affects>
+      <package>
+    <name>py37-cinder</name>
+    <name>py38-cinder</name>
+    <name>py39-cinder</name>
+    <name>py310-cinder</name>
+    <name>py311-cinder</name>
+    <range><lt>19.1.2</lt></range>
+    <range><ge>20.0.0</ge><lt>20.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Utkarsh Gupta reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-7h75-hwxx-qpgc">
+      <p>An issue was discovered in OpenStack Cinder before 19.1.2, 20.x before 20.0.2, and 21.0.0; Glance before 23.0.1, 24.x before 24.1.1, and 25.0.0; and Nova before 24.1.2, 25.x before 25.0.2, and 26.0.0.</p>
+      <p>By supplying a specially created VMDK flat image that references a specific backing file path, an authenticated user may convince systems to return a copy of that file's contents from the server, resulting in unauthorized access to potentially sensitive data.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-47951</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-7h75-hwxx-qpgc</url>
+    </references>
+    <dates>
+      <discovery>2023-01-27</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="f4a94232-7864-4afb-bbf9-ff2dc8e288d1">
+    <topic>py-cinder -- data leak</topic>
+    <affects>
+      <package>
+    <name>py37-cinder</name>
+    <name>py38-cinder</name>
+    <name>py39-cinder</name>
+    <name>py310-cinder</name>
+    <name>py311-cinder</name>
+    <range><le>12.0.9</le></range>
+    <range><ge>13.0.0</ge><le>13.0.9</le></range>
+    <range><ge>14.0.0</ge><le>14.3.1</le></range>
+    <range><ge>15.0.0</ge><le>15.6.0</le></range>
+    <range><ge>16.0.0</ge><le>16.4.2</le></range>
+    <range><ge>17.0.0</ge><le>17.4.0</le></range>
+    <range><ge>18.0.0</ge><le>18.2.1</le></range>
+    <range><ge>19.0.0</ge><le>19.2.0</le></range>
+    <range><ge>20.0.0</ge><le>20.1.0</le></range>
+    <range><ge>21.0.0</ge><le>21.1.0</le></range>
+    <range><ge>22.0.0</ge><le>22.0.0.0rc2</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+    <p>Duncan Thomas reports:</p>
+    <blockquote cite="https://osv.dev/vulnerability/GHSA-qhch-g8qr-p497">
+      <p>The (1) GlusterFS and (2) Linux Smbfs drivers in OpenStack Cinder before 2014.1.3 allows remote authenticated users to obtain file data from the Cinder-volume host by cloning and attaching a volume with a crafted qcow2 header.</p>
+    </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2014-3641</cvename>
+      <url>https://osv.dev/vulnerability/GHSA-qhch-g8qr-p497</url>
+    </references>
+    <dates>
+      <discovery>2022-05-17</discovery>
+      <entry>2023-04-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="02e51cb3-d7e4-11ed-9f7a-5404a68ad561">
     <topic>traefik -- Use of vulnerable Go modules net/http, net/textproto</topic>
     <affects>
