@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	15.10.1
+PORTVERSION=	15.10.2
 PORTREVISION=	0
 CATEGORIES=	www devel
 
@@ -248,7 +248,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-countries>=4.1.3<4.2.0:devel/rubygem-countries \
 	rubygem-retriable>=3.1.2<3.2.0:devel/rubygem-retriable \
 	rubygem-lru_redux>0:devel/rubygem-lru_redux \
-	rubygem-mail27>=2.7.1<2.7.2,2:mail/rubygem-mail27 \
+	rubygem-mail>=2.8.1<2.8.2,2:mail/rubygem-mail \
 	rubygem-lockbox>=1.1.1<1.2:security/rubygem-lockbox \
 	rubygem-valid_email>=0.1<1:mail/rubygem-valid_email \
 	rubygem-json>=2.6.3<3:devel/rubygem-json \
@@ -268,7 +268,8 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-app_store_connect>=0:net/rubygem-app_store_connect \
 	rubygem-telesignenterprise>=2.2<3:devel/rubygem-telesignenterprise \
 	rubygem-net-protocol01>=0.1.3<0.2:net/rubygem-net-protocol01 \
-	rubygem-duo_api>=1.3<2:security/rubygem-duo_api
+	rubygem-duo_api>=1.3<2:security/rubygem-duo_api \
+	rubygem-google-cloud-profiler-v2>=0.3<1:textproc/rubygem-google-cloud-profiler-v2
 
 BUILD_DEPENDS=	gem:devel/ruby-gems \
 	${MY_DEPENDS}
@@ -288,7 +289,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	a2b7634113a2b2f3b9aad86b1a98c52c380e5e76
+GL_COMMIT=	ae06966da16860568740fd607fdf98377fcada81
 
 USERS=	git
 GROUPS=	git

@@ -1,4 +1,4 @@
---- Gemfile.orig	2023-02-21 16:38:51 UTC
+--- Gemfile.orig	2023-04-05 16:11:51 UTC
 +++ Gemfile
 @@ -19,7 +19,7 @@ gem 'bootsnap', '~> 1.16.0', require: false
  
@@ -9,7 +9,7 @@
  # This gem was originally bundled with Ruby 2.7, but is unbundled as of Ruby 3.
  # Since the latest version caused problems with GitLab, we pin this to an older
  # version for now.
-@@ -52,23 +52,23 @@ gem 'declarative_policy', '~> 1.1.0'
+@@ -49,23 +49,23 @@ gem 'declarative_policy', '~> 1.1.0'
  gem 'devise', '~> 4.8.1'
  gem 'devise-pbkdf2-encryptable', '~> 0.0.0', path: 'vendor/gems/devise-pbkdf2-encryptable'
  gem 'bcrypt', '~> 3.1', '>= 3.1.14'
@@ -37,8 +37,8 @@
 +gem 'omniauth-saml', '~> 2.0'
  gem 'omniauth-twitter', '~> 1.4'
  gem 'omniauth_crowd', '~> 2.4.0', path: 'vendor/gems/omniauth_crowd' # See vendor/gems/omniauth_crowd/README.md
- gem 'omniauth_openid_connect', '~> 0.6.0'
-@@ -78,7 +78,7 @@ gem 'openid_connect', '= 1.3.0'
+ gem 'omniauth_openid_connect', '~> 0.6.1'
+@@ -75,7 +75,7 @@ gem 'openid_connect', '= 1.3.0'
  gem 'omniauth-salesforce', '~> 1.0.5', path: 'vendor/gems/omniauth-salesforce' # See gem README.md
  gem 'omniauth-atlassian-oauth2', '~> 0.2.0'
  gem 'rack-oauth2', '~> 1.21.3'
@@ -47,7 +47,7 @@
  
  # Kerberos authentication. EE-only
  gem 'gssapi', '~> 1.3.1', group: :kerberos
-@@ -162,7 +162,7 @@ gem 'gitlab-fog-azure-rm', '~> 1.4.0', require: 'fog/a
+@@ -157,7 +157,7 @@ gem 'gitlab-fog-azure-rm', '~> 1.7.0', require: 'fog/a
  
  # for Google storage
  gem 'google-cloud-storage', '~> 1.44.0'
@@ -56,27 +56,18 @@
  gem 'google-apis-compute_v1', '~> 0.57.0'
  gem 'google-apis-container_v1', '~> 0.43.0'
  gem 'google-apis-container_v1beta1', '~> 0.43.0'
-@@ -348,7 +348,7 @@ gem 'pg_query', '~> 2.2', '>= 2.2.1'
- 
- gem 'premailer-rails', '~> 1.10.3'
- 
--gem 'gitlab-labkit', '~> 0.30.1'
-+gem 'gitlab-labkit', '~> 0.30'
- gem 'thrift', '>= 0.16.0'
- 
- # I18n
-@@ -367,116 +367,20 @@ gem 'peek', '~> 1.1'
+@@ -365,117 +365,20 @@ gem 'cloud_profiler_agent', '~> 0.0.0', path: 'vendor/
  gem 'snowplow-tracker', '~> 0.8.0'
  
  # Metrics
 -gem 'webrick', '~> 1.6.1', require: false
 +gem 'webrick', '~> 1.7.0', require: false
- gem 'prometheus-client-mmap', '~> 0.17', require: 'prometheus/client'
+ gem 'prometheus-client-mmap', '~> 0.19', require: 'prometheus/client'
  
  gem 'warning', '~> 1.3.0'
  
 -group :development do
--  gem 'lefthook', '~> 1.2.9', require: false
+-  gem 'lefthook', '~> 1.3.3', require: false
 -  gem 'rubocop'
 -  gem 'solargraph', '~> 0.47.2', require: false
 -
@@ -119,7 +110,7 @@
 -  gem 'bundler-audit', '~> 0.7.0.1', require: false
 -
 -  # Benchmarking & profiling
--  gem 'benchmark-ips', '~> 2.3.0', require: false
+-  gem 'benchmark-ips', '~> 2.11.0', require: false
 -  gem 'benchmark-memory', '~> 0.1', require: false
 -
 -  gem 'knapsack', '~> 1.21.1'
@@ -139,7 +130,7 @@
 -end
 -
  group :development, :test, :danger do
-   gem 'gitlab-dangerfiles', '~> 3.7.0', require: false
+   gem 'gitlab-dangerfiles', '~> 3.8.0', require: false
  end
  
 -group :development, :test, :coverage do
@@ -159,7 +150,7 @@
 -  gem 'rspec-retry', '~> 0.6.1'
 -  gem 'rspec_profiling', '~> 0.0.6'
 -  gem 'rspec-benchmark', '~> 0.6.0'
--  gem 'rspec-parameterized', require: false
+-  gem 'rspec-parameterized', '~> 1.0', require: false
 -
 -  gem 'capybara', '~> 3.35.3'
 -  gem 'capybara-screenshot', '~> 1.0.22'

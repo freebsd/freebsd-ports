@@ -1,6 +1,6 @@
---- config/gitlab.yml.example.orig	2023-02-21 16:38:51 UTC
+--- config/gitlab.yml.example.orig	2023-04-05 16:11:51 UTC
 +++ config/gitlab.yml.example
-@@ -1190,14 +1190,14 @@ production: &base
+@@ -1204,14 +1204,14 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.
        default:
@@ -18,7 +18,7 @@
      # archive_permissions: 0640 # Permissions for the resulting backup.tar file (default: 0600)
      # keep_time: 604800   # default: 0 (forever) (in seconds)
      # pg_schema: public     # default: nil, it means that all schemas will be backed up
-@@ -1232,12 +1232,12 @@ production: &base
+@@ -1246,12 +1246,12 @@ production: &base
  
    ## GitLab Shell settings
    gitlab_shell:
@@ -34,7 +34,7 @@
  
      # Git over HTTP
      upload_pack: true
-@@ -1252,13 +1252,13 @@ production: &base
+@@ -1266,13 +1266,13 @@ production: &base
    workhorse:
      # File that contains the secret key for verifying access for gitlab-workhorse.
      # Default is '.gitlab_workhorse_secret' relative to Rails.root (i.e. root of the GitLab app).
@@ -50,7 +50,7 @@
  
      # The URL to the external KAS API (used by the Kubernetes agents)
      # external_url: wss://kas.example.com
-@@ -1276,13 +1276,13 @@ production: &base
+@@ -1290,13 +1290,13 @@ production: &base
  
    ## GitLab Elasticsearch settings
    elasticsearch:
@@ -66,7 +66,7 @@
  
    ## Webpack settings
    # If enabled, this will tell rails to serve frontend assets from the webpack-dev-server running
-@@ -1303,18 +1303,18 @@ production: &base
+@@ -1317,18 +1317,18 @@ production: &base
  
      # Sidekiq exporter is a dedicated Prometheus metrics server optionally running alongside Sidekiq.
      sidekiq_exporter:
@@ -92,7 +92,7 @@
  
      # Web exporter is a dedicated Prometheus metrics server optionally running alongside Puma.
      web_exporter:
-@@ -1539,13 +1539,13 @@ test:
+@@ -1553,13 +1553,13 @@ test:
          gitaly_address: unix:tmp/tests/gitaly/praefect.socket
  
    gitaly:
