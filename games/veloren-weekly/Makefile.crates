@@ -14,6 +14,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		android_system_properties-0.1.5 \
 		ansi_term-0.12.1 \
 		anyhow-1.0.65 \
+		anymap2-0.13.0 \
 		app_dirs2-2.5.4 \
 		approx-0.3.2 \
 		approx-0.4.0 \
@@ -107,16 +108,17 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		core-video-sys-0.1.4 \
 		coreaudio-rs-0.10.0 \
 		coreaudio-sys-0.2.10 \
+		corosensei-0.1.3 \
 		cortex-m-0.7.6 \
 		cpal-0.13.5 \
 		cpal-0.14.0 \
 		cpufeatures-0.2.5 \
-		cranelift-bforest-0.76.0 \
-		cranelift-codegen-0.76.0 \
-		cranelift-codegen-meta-0.76.0 \
-		cranelift-codegen-shared-0.76.0 \
-		cranelift-entity-0.76.0 \
-		cranelift-frontend-0.76.0 \
+		cranelift-bforest-0.82.3 \
+		cranelift-codegen-0.82.3 \
+		cranelift-codegen-meta-0.82.3 \
+		cranelift-codegen-shared-0.82.3 \
+		cranelift-entity-0.82.3 \
+		cranelift-frontend-0.82.3 \
 		crc32fast-1.3.2 \
 		criterion-0.3.4 \
 		criterion-plot-0.4.5 \
@@ -174,6 +176,8 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		enum-iterator-1.1.3 \
 		enum-iterator-derive-0.7.0 \
 		enum-iterator-derive-1.1.0 \
+		enum-map-2.4.1 \
+		enum-map-derive-0.10.0 \
 		enumset-1.0.11 \
 		enumset_derive-0.6.0 \
 		epaint-0.12.0 \
@@ -222,7 +226,6 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		getrandom-0.2.7 \
 		gilrs-0.10.1 \
 		gilrs-core-0.5.1 \
-		gimli-0.25.0 \
 		gimli-0.26.2 \
 		glam-0.10.2 \
 		glob-0.3.0 \
@@ -395,6 +398,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		parking_lot_core-0.8.5 \
 		parking_lot_core-0.9.2 \
 		parse-zoneinfo-0.3.0 \
+		paste-1.0.8 \
 		peeking_take_while-0.1.2 \
 		pem-1.1.0 \
 		percent-encoding-2.2.0 \
@@ -455,7 +459,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		redox_syscall-0.1.57 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regalloc-0.0.31 \
+		regalloc-0.0.34 \
 		regex-1.6.0 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.27 \
@@ -468,6 +472,8 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		riscv-target-0.1.2 \
 		rkyv-0.7.39 \
 		rkyv_derive-0.7.39 \
+		rmp-0.8.11 \
+		rmp-serde-1.1.0 \
 		rodio-0.15.0 \
 		ron-0.6.6 \
 		ron-0.7.1 \
@@ -643,17 +649,19 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		wasm-bindgen-macro-support-0.2.83 \
 		wasm-bindgen-shared-0.2.83 \
 		wasm-encoder-0.17.0 \
-		wasmer-2.2.1 \
-		wasmer-compiler-2.2.1 \
-		wasmer-compiler-cranelift-2.2.1 \
-		wasmer-derive-2.2.1 \
-		wasmer-engine-2.2.1 \
-		wasmer-engine-dylib-2.2.1 \
-		wasmer-engine-universal-2.2.1 \
-		wasmer-object-2.2.1 \
-		wasmer-types-2.2.1 \
-		wasmer-vm-2.2.1 \
-		wasmparser-0.78.2 \
+		wasmer-2.3.0 \
+		wasmer-artifact-2.3.0 \
+		wasmer-compiler-2.3.0 \
+		wasmer-compiler-cranelift-2.3.0 \
+		wasmer-derive-2.3.0 \
+		wasmer-engine-2.3.0 \
+		wasmer-engine-dylib-2.3.0 \
+		wasmer-engine-universal-2.3.0 \
+		wasmer-engine-universal-artifact-2.3.0 \
+		wasmer-object-2.3.0 \
+		wasmer-types-2.3.0 \
+		wasmer-vm-2.3.0 \
+		wasmparser-0.83.0 \
 		wast-47.0.0 \
 		wat-1.0.49 \
 		wavefront-0.2.3 \
@@ -685,26 +693,32 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		windows-0.37.0 \
 		windows-0.43.0 \
 		windows-sys-0.30.0 \
+		windows-sys-0.33.0 \
 		windows-sys-0.34.0 \
 		windows_aarch64_gnullvm-0.42.0 \
 		windows_aarch64_msvc-0.30.0 \
+		windows_aarch64_msvc-0.33.0 \
 		windows_aarch64_msvc-0.34.0 \
 		windows_aarch64_msvc-0.37.0 \
 		windows_aarch64_msvc-0.42.0 \
 		windows_i686_gnu-0.30.0 \
+		windows_i686_gnu-0.33.0 \
 		windows_i686_gnu-0.34.0 \
 		windows_i686_gnu-0.37.0 \
 		windows_i686_gnu-0.42.0 \
 		windows_i686_msvc-0.30.0 \
+		windows_i686_msvc-0.33.0 \
 		windows_i686_msvc-0.34.0 \
 		windows_i686_msvc-0.37.0 \
 		windows_i686_msvc-0.42.0 \
 		windows_x86_64_gnu-0.30.0 \
+		windows_x86_64_gnu-0.33.0 \
 		windows_x86_64_gnu-0.34.0 \
 		windows_x86_64_gnu-0.37.0 \
 		windows_x86_64_gnu-0.42.0 \
 		windows_x86_64_gnullvm-0.42.0 \
 		windows_x86_64_msvc-0.30.0 \
+		windows_x86_64_msvc-0.33.0 \
 		windows_x86_64_msvc-0.34.0 \
 		windows_x86_64_msvc-0.37.0 \
 		windows_x86_64_msvc-0.42.0 \
