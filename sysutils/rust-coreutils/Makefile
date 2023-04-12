@@ -1,10 +1,6 @@
 PORTNAME=	rust-coreutils
-PORTVERSION=	0.0.17
-PORTREVISION=	3
+DISTVERSION=	0.0.18
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/uutils/coreutils/commit/
-PATCHFILES=	7da22b3ae22482089c013230d3b2bb9e6900ae54.patch:-p1
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Cross-platform Rust rewrite of the GNU coreutils
@@ -19,7 +15,6 @@ USES=		cargo pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	uutils
 GH_PROJECT=	coreutils
-#TEST_TARGET=	check
 
 CARGO_CRATES=	Inflector-0.11.4 \
 		adler-1.0.2 \
@@ -27,33 +22,39 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		aho-corasick-0.7.19 \
 		aliasable-0.1.3 \
 		android_system_properties-0.1.5 \
+		anstream-0.2.6 \
+		anstyle-0.3.5 \
+		anstyle-parse-0.1.1 \
+		anstyle-wincon-0.2.0 \
 		arrayref-0.3.6 \
 		arrayvec-0.7.2 \
-		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bigdecimal-0.3.0 \
 		binary-heap-plus-0.5.0 \
-		bindgen-0.62.0 \
+		bindgen-0.63.0 \
 		bitflags-1.3.2 \
-		blake2b_simd-1.0.0 \
-		blake3-1.3.2 \
+		blake2b_simd-1.0.1 \
+		blake3-1.3.3 \
 		block-buffer-0.10.3 \
-		bstr-1.0.1 \
+		bstr-1.4.0 \
 		bumpalo-3.11.1 \
 		bytecount-0.6.3 \
 		byteorder-1.4.3 \
 		cc-1.0.77 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
-		chrono-0.4.23 \
+		chrono-0.4.24 \
 		clang-sys-1.4.0 \
-		clap-4.0.26 \
-		clap_complete-4.0.6 \
-		clap_lex-0.3.0 \
+		clap-4.2.0 \
+		clap_builder-4.2.0 \
+		clap_complete-4.2.0 \
+		clap_lex-0.4.1 \
+		clap_mangen-0.2.9 \
 		codespan-reporting-0.11.1 \
 		compare-0.1.0 \
-		console-0.15.2 \
-		constant_time_eq-0.1.5 \
+		concolor-override-1.0.0 \
+		concolor-query-0.3.3 \
+		console-0.15.5 \
 		constant_time_eq-0.2.4 \
 		conv-0.3.3 \
 		core-foundation-sys-0.8.3 \
@@ -68,12 +69,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.12 \
 		crossbeam-utils-0.8.13 \
-		crossterm-0.25.0 \
+		crossterm-0.26.1 \
 		crossterm_winapi-0.9.0 \
 		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
 		ctor-0.1.26 \
-		ctrlc-3.2.3 \
+		ctrlc-3.2.4 \
 		custom_derive-0.1.7 \
 		cxx-1.0.82 \
 		cxx-build-1.0.82 \
@@ -91,16 +92,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		encode_unicode-0.3.6 \
 		env_logger-0.8.4 \
 		errno-0.2.8 \
+		errno-0.3.0 \
 		errno-dragonfly-0.1.2 \
-		exacl-0.9.0 \
+		exacl-0.10.0 \
 		fastrand-1.8.0 \
 		file_diff-1.0.0 \
 		filetime-0.2.18 \
 		flate2-1.0.24 \
 		fnv-1.0.7 \
-		fs_extra-1.2.0 \
+		fs_extra-1.3.0 \
 		fsevent-sys-4.1.0 \
-		fts-sys-0.2.3 \
+		fts-sys-0.2.4 \
+		fundu-0.5.0 \
 		futures-0.3.25 \
 		futures-channel-0.3.25 \
 		futures-core-0.3.25 \
@@ -111,24 +114,25 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		futures-task-0.3.25 \
 		futures-timer-3.0.2 \
 		futures-util-0.3.25 \
-		gcd-2.1.0 \
+		gcd-2.3.0 \
 		generic-array-0.14.6 \
 		getrandom-0.2.8 \
-		glob-0.3.0 \
-		half-2.1.0 \
+		glob-0.3.1 \
+		half-2.2.1 \
 		hashbrown-0.12.3 \
-		heck-0.4.0 \
 		hermit-abi-0.1.19 \
+		hermit-abi-0.3.1 \
 		hex-0.4.3 \
-		hex-literal-0.3.4 \
+		hex-literal-0.4.0 \
 		hostname-0.3.1 \
 		iana-time-zone-0.1.53 \
 		iana-time-zone-haiku-0.1.1 \
-		indicatif-0.17.2 \
+		indicatif-0.17.3 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
-		io-lifetimes-0.7.5 \
+		io-lifetimes-1.0.5 \
+		is-terminal-0.4.6 \
 		itertools-0.10.5 \
 		itoa-1.0.4 \
 		js-sys-0.3.60 \
@@ -137,10 +141,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.137 \
+		libc-0.2.140 \
 		libloading-0.7.4 \
 		link-cplusplus-1.0.7 \
-		linux-raw-sys-0.0.46 \
+		linux-raw-sys-0.1.4 \
+		linux-raw-sys-0.3.0 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		lscolors-0.13.0 \
@@ -148,14 +153,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		md-5-0.10.5 \
 		memchr-2.5.0 \
 		memmap2-0.5.8 \
-		memoffset-0.6.5 \
 		memoffset-0.7.1 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.4 \
 		mio-0.8.5 \
-		nix-0.25.0 \
-		nom-7.1.1 \
-		notify-5.0.0 \
+		nix-0.26.2 \
+		nom-7.1.3 \
+		notify-5.1.0 \
 		nu-ansi-term-0.46.0 \
 		num-bigint-0.4.3 \
 		num-integer-0.1.45 \
@@ -163,19 +167,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		num_cpus-1.14.0 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
-		once_cell-1.16.0 \
+		once_cell-1.17.1 \
 		onig-6.4.0 \
 		onig_sys-69.8.1 \
 		ordered-multimap-0.4.3 \
 		os_display-0.1.3 \
-		os_str_bytes-6.4.1 \
-		ouroboros-0.15.5 \
-		ouroboros_macro-0.15.5 \
+		ouroboros-0.15.6 \
+		ouroboros_macro-0.15.6 \
 		output_vt100-0.1.3 \
 		overload-0.1.1 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.4 \
-		paste-1.0.9 \
 		peeking_take_while-0.1.2 \
 		phf-0.11.1 \
 		phf_codegen-0.11.1 \
@@ -191,7 +193,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.47 \
-		procfs-0.14.1 \
+		procfs-0.15.1 \
 		quick-error-2.0.1 \
 		quickcheck-1.0.3 \
 		quote-1.0.21 \
@@ -199,68 +201,66 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
 		rand_pcg-0.3.1 \
-		rayon-1.6.0 \
-		rayon-core-1.10.1 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		reference-counted-singleton-0.1.2 \
-		regex-1.7.0 \
+		regex-1.7.3 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.28 \
-		remove_dir_all-0.5.3 \
-		remove_dir_all-0.7.0 \
-		retain_mut-0.1.7 \
-		rlimit-0.8.3 \
-		rstest-0.16.0 \
-		rstest_macros-0.16.0 \
+		regex-syntax-0.6.29 \
+		rlimit-0.9.1 \
+		roff-0.2.1 \
+		rstest-0.17.0 \
+		rstest_macros-0.17.0 \
 		rust-ini-0.18.0 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
-		rustix-0.35.13 \
-		rustversion-1.0.9 \
+		rustix-0.36.8 \
+		rustix-0.37.3 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		scratch-1.0.2 \
-		selinux-0.3.1 \
-		selinux-sys-0.6.1 \
+		selinux-0.4.0 \
+		selinux-sys-0.6.2 \
 		semver-1.0.14 \
 		serde-1.0.147 \
 		sha1-0.10.5 \
 		sha2-0.10.6 \
 		sha3-0.10.6 \
 		shlex-1.1.0 \
-		signal-hook-0.3.14 \
+		signal-hook-0.3.15 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.0 \
 		siphasher-0.3.10 \
 		slab-0.4.7 \
+		sm3-0.4.1 \
 		smallvec-1.10.0 \
 		smawk-0.3.1 \
 		socket2-0.4.7 \
+		static_assertions-1.1.0 \
 		strsim-0.10.0 \
-		strum-0.24.1 \
-		strum_macros-0.24.3 \
 		subtle-2.4.1 \
 		syn-1.0.103 \
-		tempfile-3.3.0 \
+		tempfile-3.4.0 \
 		term_grid-0.1.7 \
 		termcolor-1.1.3 \
-		terminal_size-0.1.17 \
-		terminal_size-0.2.2 \
+		terminal_size-0.2.5 \
 		textwrap-0.16.0 \
 		thiserror-1.0.37 \
 		thiserror-impl-1.0.37 \
-		time-0.3.17 \
+		time-0.3.20 \
 		time-core-0.1.0 \
-		time-macros-0.2.6 \
+		time-macros-0.2.8 \
 		typenum-1.15.0 \
 		unicode-ident-1.0.5 \
 		unicode-linebreak-0.1.4 \
-		unicode-segmentation-1.10.0 \
+		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
 		unicode-xid-0.2.4 \
-		unindent-0.1.10 \
+		unindent-0.2.1 \
 		users-0.11.0 \
 		utf-8-0.7.6 \
+		utf8parse-0.2.1 \
 		uuid-1.2.2 \
 		version_check-0.9.4 \
 		walkdir-2.3.2 \
@@ -277,23 +277,21 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.0 \
-		windows_aarch64_msvc-0.42.0 \
-		windows_i686_gnu-0.42.0 \
-		windows_i686_msvc-0.42.0 \
-		windows_x86_64_gnu-0.42.0 \
-		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.42.0 \
-		xattr-0.2.3 \
+		windows-sys-0.45.0 \
+		windows-targets-0.42.1 \
+		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_msvc-0.42.1 \
+		windows_i686_gnu-0.42.1 \
+		windows_i686_msvc-0.42.1 \
+		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_msvc-0.42.1 \
+		xattr-1.0.0 \
 		yansi-0.5.1 \
 		z85-3.0.5 \
-		zip-0.6.3
+		zip-0.6.4
 
-CARGO_ENV=	CARGO_PROFILE_RELEASE_LTO="true" \
-		CARGO_PROFILE_RELEASE_CODEGEN_UNITS=1
 CARGO_FEATURES=	unix
-# Fails when CARGO_PROFILE_RELEASE_PANIC="abort" is set
-LTO_UNSAFE=	yes
 BINPREFIX=	uu-
 PLIST_SUB=	BINPREFIX=${BINPREFIX}
 
