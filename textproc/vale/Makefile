@@ -1,7 +1,6 @@
 PORTNAME=	vale
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.24.0
-PORTREVISION=	2
+DISTVERSION=	2.24.1
 CATEGORIES=	textproc
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -28,7 +27,7 @@ GH_TUPLE=	\
 		gobwas:glob:v0.2.3:gobwas_glob/vendor/github.com/gobwas/glob \
 		golang:net:4f30a5c0130f:golang_net/vendor/golang.org/x/net \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:a9b59b0215f8:golang_sys/vendor/golang.org/x/sys \
 		golang:term:03fcf44c2211:golang_term/vendor/golang.org/x/term \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		gookit:color:v1.4.2:gookit_color/vendor/github.com/gookit/color \
