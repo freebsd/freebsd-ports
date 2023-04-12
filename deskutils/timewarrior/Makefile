@@ -1,5 +1,5 @@
 PORTNAME=	timewarrior
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -15,7 +15,8 @@ USES=		cmake:insource compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	GothenburgBitFactory
-GH_TUPLE=	GothenburgBitFactory:libshared:c1760be:libshared/src/libshared
+GH_TUPLE=	GothenburgBitFactory:libshared:47c3262:libshared/src/libshared
+
 CMAKE_ARGS+=	-DTIMEW_DOCDIR=${DOCSDIR}
 
 post-install:
