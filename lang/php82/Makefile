@@ -401,11 +401,7 @@ CONFIGURE_ARGS+=	--enable-odbc \
 .if ${PHP_MODNAME} == "opcache"
 # This is needed by Zend extensions, keep before everything.
 PHP_MOD_PRIO=		10
-.if ${ARCH} == aarch64
-CONFIGURE_ARGS+=        --disable-opcache-jit
-.else
 CONFIGURE_ARGS+=        --enable-opcache
-.endif
 .endif
 
 .if ${PHP_MODNAME} == "pcntl"
@@ -621,6 +617,10 @@ USES+=			pkgconfig
 .endif
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64 && ${PHP_MODNAME} == "opcache"
+CONFIGURE_ARGS+=--disable-opcache-jit
+.endif
 
 .if ${PHP_MODNAME} == "sqlite3" || ${PHP_MODNAME} == "zlib"
 post-extract:
