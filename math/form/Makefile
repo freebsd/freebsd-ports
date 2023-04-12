@@ -1,11 +1,7 @@
 PORTNAME=	form
-PORTVERSION=	4.3.0
+PORTVERSION=	4.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	28e15eaf0856a0a012795298d6a4b570e764a8b1.patch:-p1 # https://github.com/vermaseren/form/issues/422
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Symbolic Manipulation System
