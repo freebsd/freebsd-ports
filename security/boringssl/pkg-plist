@@ -44,6 +44,7 @@ include/openssl/hpke.h
 include/openssl/hrss.h
 include/openssl/is_boringssl.h
 include/openssl/kdf.h
+include/openssl/kyber.h
 include/openssl/lhash.h
 include/openssl/md4.h
 include/openssl/md5.h
