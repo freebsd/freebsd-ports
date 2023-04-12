@@ -5,7 +5,7 @@ CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GTK4 library for the Wayland layer-shell protocol
-WWW=		https://github.com/wmww/gtk-layer-shell
+WWW=		https://github.com/wmww/gtk4-layer-shell
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
