@@ -1,6 +1,6 @@
 PORTNAME=	spamcheck
 PORTVERSION=	1.0.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +10,7 @@ WWW=		https://rubygems.org/gems/spamcheck
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	rubygem-grpc142>=1.0<2.0:net/rubygem-grpc142
+RUN_DEPENDS=	rubygem-grpc>=1.0<2.0:net/rubygem-grpc
 
 USES=		gem
 
