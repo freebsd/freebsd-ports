@@ -54,6 +54,7 @@ SHEBANG_FILES=	\
 		llvm/tools/opt-viewer/optrecord.py \
 		llvm/utils/lit/lit.py \
 		llvm/utils/llvm-lit/llvm-lit.in
+LIT_MOD_NAME=	lit${LLVM_SUFFIX:S/-/_/g}
 
 SUB_FILES=	llvm-wrapper.sh
 SUB_LIST=	LLVM_PREFIX="${LLVM_PREFIX}" LLVM_SUFFIX="${LLVM_SUFFIX}"
@@ -156,6 +157,7 @@ GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
 GOLD_PLIST_FILES=	${LLVM_DIR}/lib/LLVMgold.so
 LIT_DESC=		Install lit and FileCheck test tools
 LIT_VARS=		_USES_PYTHON=python:3.6+
+LIT_PLIST_SUB=		LIT_MOD_NAME=${LIT_MOD_NAME}
 LLD_DESC=		Install lld, the LLVM linker
 LLDB_BUILD_DEPENDS=	swig:devel/swig
 LLDB_DESC=		Install lldb, the LLVM debugger
@@ -357,9 +359,9 @@ PLIST_SUB+=	${opt}="@comment "
 .endfor
 
 post-patch:
-	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
-	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
-	    -e 's|lit\.|lit${LLVM_SUFFIX}.|g' \
+	${REINPLACE_CMD} -e 's|import lit|import ${LIT_MOD_NAME}|' \
+	    -e 's|from lit|from ${LIT_MOD_NAME}|' \
+	    -e 's|lit\.|${LIT_MOD_NAME}.|g' \
 	    ${WRKSRC}/llvm/utils/lit/lit.py \
 	    ${WRKSRC}/llvm/utils/lit/lit/*.py \
 	    ${WRKSRC}/llvm/utils/lit/lit/formats/*.py
@@ -436,15 +438,15 @@ post-install-LIT-on:
 	    ${STAGEDIR}${PREFIX}/bin/lit${LLVM_SUFFIX}
 	${LN} -fs ../${LLVM_DIR}/bin/llvm-lit \
 	    ${STAGEDIR}${PREFIX}/bin/llvm-lit${LLVM_SUFFIX}
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/builtin_commands
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/formats
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/builtin_commands
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/formats
 	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/*.py \
-	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}
 	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/builtin_commands/*.py \
-	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/builtin_commands/
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/builtin_commands/
 	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/formats/*.py \
-	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}/formats/
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/formats/
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/FileCheck \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
 	${LN} -fs ../${LLVM_DIR}/bin/FileCheck \
@@ -490,8 +492,9 @@ build-plist:
 	    -e 's|/${LLVM_MAJOR}/|/%%LLVM_MAJOR%%/|' \
 	    -e 's|\([-./]\)${LLVM_MAJOR:C/\./\\./}$$|\1%%LLVM_MAJOR%%|' \
 	    | ${SORT} >> ${PLIST}.tmp
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${LIT_MOD_NAME} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' \
+	    -e 's|${LIT_MOD_NAME}|%%LIT_MOD_NAME%%|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
 	    -e 's|${LLVM_MAJOR}|%%LLVM_MAJOR%%|' | \
 	    ${SORT} >> ${PLIST}.tmp
