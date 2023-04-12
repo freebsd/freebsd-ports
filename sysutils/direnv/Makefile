@@ -1,7 +1,6 @@
 PORTNAME=	direnv
-PORTVERSION=	2.27.0
+PORTVERSION=	2.32.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	13
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -13,17 +12,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	bash:shells/bash
 
-USES=		gmake go:modules
+USES=		gmake go
 USE_GITHUB=	yes
 GH_SUBDIR=	src/github.com/direnv/direnv
-MAKE_ENV=	GOPATH=${WRKSRC}
-MAKEFILE=	GNUmakefile
+GH_TUPLE=	\
+		BurntSushi:toml:v1.2.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
+		golang:mod:v0.5.1:golang_mod/vendor/golang.org/x/mod \
+		golang:sys:bc2c85ada10a:golang_sys/vendor/golang.org/x/sys \
+		mattn:go-isatty:v0.0.14:mattn_go_isatty/vendor/github.com/mattn/go-isatty
 
-GH_TUPLE=	BurntSushi:toml:v0.3.1:burntsushi_toml/vendor/github.com/BurntSushi/toml \
-		direnv:go-dotenv:4cce6d1a66f7:direnv_go_dotenv/vendor/github.com/direnv/go-dotenv \
-		golang:mod:v0.4.0:golang_mod/vendor/golang.org/x/mod \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
-		mattn:go-isatty:v0.0.12:mattn_go_isatty/vendor/github.com/mattn/go-isatty
+MAKEFILE=	GNUmakefile
+MAKE_ENV=	GOPATH=${WRKSRC}
 
 PLIST_FILES=	bin/direnv \
 		man/man1/direnv-stdlib.1.gz \
