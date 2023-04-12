@@ -15,6 +15,7 @@ include/cbang/ServerApplication.h
 include/cbang/SmartPointer.h
 include/cbang/StdTypes.h
 include/cbang/String.h
+include/cbang/StringParseTypes.def
 include/cbang/Throw.h
 include/cbang/Zap.h
 include/cbang/acmev2/Account.h
@@ -380,6 +381,7 @@ include/cbang/util/StringMap.h
 include/cbang/util/StringOrNull.h
 include/cbang/util/StructPrinter.h
 include/cbang/util/UniqueID.h
+include/cbang/util/UUID.h
 include/cbang/util/Variant.h
 include/cbang/util/Version.h
 include/cbang/xml/ExpatXMLAdapter.h
