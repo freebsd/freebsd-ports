@@ -1288,6 +1288,7 @@ lib/zeek/python/broker/zeek.py
 %%ZEEKCTL%%lib/zeek/python/zeekctl/plugins/lb_myricom.py
 %%ZEEKCTL%%lib/zeek/python/zeekctl/plugins/lb_pf_ring.py
 %%ZEEKCTL%%lib/zeek/python/zeekctl/plugins/ps.py
+%%ZEEKCTL%%lib/zeek/python/zeekctl/plugins/zeek_port_warning.py
 %%ZEEKCTL%%man/man1/trace-summary.1.gz
 man/man1/zeek-cut.1.gz
 man/man8/zeek.8.gz
