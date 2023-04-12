@@ -1,3 +1,43 @@
+  <vuln vid="96d6809a-81df-46d4-87ed-2f78c79f06b1">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>5.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v5.0.8">
+	  <p> Receiving DNS responses from async DNS requests (via
+	  A specially-crafted stream of FTP packets containing a
+	  command reply with many intermediate lines can cause Zeek
+	  to spend a large amount of time processing data. </p>
+	  <p> A specially-crafted set of packets containing extremely
+	  large file offsets cause cause the reassembler code to
+	  allocate large amounts of memory. </p>
+	  <p> The DNS manager does not correctly expire responses
+	  that don't contain any data, such those containing NXDOMAIN
+	  or NODATA status codes. This can lead to Zeek allocating
+	  large amounts of memory for these responses and never
+	  deallocating them. </p>
+	  <p> A specially-crafted stream of RDP packets can cause
+	  Zeek to spend large protocol validation. </p>
+	  <p> A specially-crafted stream of SMTP packets can cause
+	  Zeek to spend large amounts of time processing data. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v5.0.8</url>
+    </references>
+    <dates>
+      <discovery>2023-04-12</discovery>
+      <entry>2023-04-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b54abe9d-7024-4d10-98b2-180cf1717766">
     <topic>py-beaker -- arbitrary code execution vulnerability</topic>
     <affects>
