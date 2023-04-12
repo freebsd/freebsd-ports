@@ -21,7 +21,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		deluxe-core-0.5.0 \
 		deluxe-macros-0.5.0 \
 		doxygen-rs-0.2.2 \
-		errno-0.3.0 \
+		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		fastrand-1.9.0 \
 		field-offset-0.3.5 \
@@ -61,10 +61,10 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		gstreamer-play-0.20.2 \
 		gstreamer-play-sys-0.20.0 \
 		gstreamer-sys-0.20.0 \
-		gstreamer-video-0.20.3 \
+		gstreamer-video-0.20.4 \
 		gstreamer-video-sys-0.20.0 \
-		gtk4-0.6.4 \
-		gtk4-macros-0.6.5 \
+		gtk4-0.6.6 \
+		gtk4-macros-0.6.6 \
 		gtk4-sys-0.6.3 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
@@ -79,8 +79,8 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		io-lifetimes-1.0.10 \
 		itoa-1.0.6 \
 		lazy_static-1.4.0 \
-		libadwaita-0.3.1 \
-		libadwaita-sys-0.3.0 \
+		libadwaita-0.4.1 \
+		libadwaita-sys-0.4.1 \
 		libc-0.2.141 \
 		libdbus-sys-0.2.4 \
 		libpulse-binding-2.27.1 \
@@ -132,12 +132,12 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		regex-1.7.3 \
 		regex-syntax-0.6.29 \
 		rustc_version-0.4.0 \
-		rustix-0.37.7 \
+		rustix-0.37.11 \
 		rustversion-1.0.12 \
 		ryu-1.0.13 \
 		semver-1.0.17 \
-		serde-1.0.159 \
-		serde_derive-1.0.159 \
+		serde-1.0.160 \
+		serde_derive-1.0.160 \
 		serde_json-1.0.95 \
 		serde_spanned-0.6.1 \
 		sharded-slab-0.1.4 \
@@ -150,7 +150,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		strum-0.24.1 \
 		strum_macros-0.24.3 \
 		syn-1.0.109 \
-		syn-2.0.13 \
+		syn-2.0.14 \
 		synchronoise-1.0.1 \
 		system-deps-6.0.4 \
 		temp-dir-0.1.11 \
