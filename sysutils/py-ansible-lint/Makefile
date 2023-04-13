@@ -1,5 +1,5 @@
 PORTNAME=	ansible-lint
-PORTVERSION=	6.14.4
+PORTVERSION=	6.14.6
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -30,6 +30,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>0:devel/py-cover
 		${PYTHON_PKGNAMEPREFIX}flake8>0:devel/py-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flake8-future-annotations>0:devel/py-flake8-future-annotations@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mypy>0:devel/py-mypy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		pylint${PYTHON_PKGNAMESUFFIX}>0:devel/pylint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>7.2.0:devel/py-pytest@${PY_FLAVOR} \
