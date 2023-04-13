@@ -1,5 +1,5 @@
 PORTNAME=	vscode
-DISTVERSION=	1.77.2
+DISTVERSION=	1.77.3
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/tagattie/FreeBSD-VSCode/releases/download/${DISTVERSION}/:yarn_cache
 DISTFILES=	yarn-offline-cache-${DISTVERSION}${EXTRACT_SUFX}:yarn_cache \
@@ -56,13 +56,13 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 TEST_DEPENDS=	electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
 		bash:shells/bash
 
-USES=		desktop-file-utils gl gmake gnome iconv jpeg localbase:ldflags \
-		pkgconfig python:build shebangfix xorg
+USES=		desktop-file-utils gl gmake gnome iconv:wchar_t jpeg \
+		localbase:ldflags pkgconfig python:build shebangfix xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	microsoft
 
-SOURCE_COMMIT_HASH=	e344f1f539a80912a0e9357cec841f36ce97a4e2
+SOURCE_COMMIT_HASH=	704ed70d4fd1c6bd6342c436f1ede30d1cff4710
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
