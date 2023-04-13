@@ -1,3 +1,3 @@
-TIMESTAMP = 1672826549
-SHA256 (csmith-project-creduce-2.11.0.20220927-8d56bee_GH0.tar.gz) = ca22cb970354823de06854c274daa6f19be85cfbf63e73e25dbd5fc744bdcbb7
-SIZE (csmith-project-creduce-2.11.0.20220927-8d56bee_GH0.tar.gz) = 747676
+TIMESTAMP = 1681391245
+SHA256 (csmith-project-creduce-2.11.0.llvm13.g20220117-4ae77d1e101135a6aea310b30c19e2af968b7bf6_GH0.tar.gz) = d7bb185ced0e7edd1361418940cd6589818f7a32f331877929e01d1417632f09
+SIZE (csmith-project-creduce-2.11.0.llvm13.g20220117-4ae77d1e101135a6aea310b30c19e2af968b7bf6_GH0.tar.gz) = 748042
