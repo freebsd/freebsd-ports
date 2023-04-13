@@ -1,6 +1,6 @@
 --- common/gr_texture.c.orig	2000-03-01 04:27:18 UTC
 +++ common/gr_texture.c
-@@ -274,7 +274,11 @@ read_gif_file (GrTexture *texture, char 
+@@ -274,7 +274,11 @@ read_gif_file (GrTexture *texture, char *filename)
    int index;
    int width, height;
  
@@ -12,7 +12,7 @@
    if (!file)
      return -1;
  
-@@ -419,7 +423,7 @@ read_png_file (GrTexture *texture, char 
+@@ -419,7 +423,7 @@ read_png_file (GrTexture *texture, char *filename)
    if (fread (header, 1, PNG_BYTES_TO_CHECK, file) != PNG_BYTES_TO_CHECK) {
      goto ERROR;
    }
@@ -21,7 +21,7 @@
      goto ERROR;
    }
  
-@@ -431,7 +435,7 @@ read_png_file (GrTexture *texture, char 
+@@ -431,7 +435,7 @@ read_png_file (GrTexture *texture, char *filename)
    if (!info_ptr) {
      goto ERROR;
    }

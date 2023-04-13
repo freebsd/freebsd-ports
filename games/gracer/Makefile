@@ -1,6 +1,6 @@
 PORTNAME=	gracer
 PORTVERSION=	0.1.5
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	games
 MASTER_SITES=	SF
 
@@ -11,16 +11,14 @@ WWW=		http://gracer.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: GrBreak
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: GrBreak
-
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:x11-toolkits/plib
 LIB_DEPENDS=	libgif.so:graphics/giflib \
 		libpng.so:graphics/png
 
-USES=		gl gmake jpeg localbase perl5 tcl
-USE_GL=		glut
+USES=		gl gmake jpeg localbase perl5 tcl xorg
+USE_GL=		gl glu glut
 USE_PERL5=	build
+USE_XORG=	ice sm x11 xext xi xmu xt
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-plib=${LOCALBASE}
 CPPFLAGS+=	-I${TCL_INCLUDEDIR}
