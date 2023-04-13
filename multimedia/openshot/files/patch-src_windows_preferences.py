@@ -1,6 +1,6 @@
---- src/windows/preferences.py.orig	2022-12-08 21:31:12 UTC
+--- src/windows/preferences.py.orig	2023-04-01 07:04:04 UTC
 +++ src/windows/preferences.py
-@@ -315,7 +315,7 @@ class Preferences(QDialog):
+@@ -318,7 +318,7 @@ class Preferences(QDialog):
                                  value_list.remove(value_item)
                              elif os_platform == "Windows" and v not in ("0", "3", "4"):
                                  value_list.remove(value_item)

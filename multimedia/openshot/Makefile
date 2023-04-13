@@ -1,7 +1,6 @@
 PORTNAME=	openshot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.0
-PORTREVISION=	1
+DISTVERSION=	3.1.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com
@@ -12,7 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libopenshot>=0.3.0:multimedia/libopenshot@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libopenshot>=0.3.1:multimedia/libopenshot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sentry-sdk>=0:devel/py-sentry-sdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=0:net/py-pyzmq@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distro>=0:sysutils/py-distro@${PY_FLAVOR} \
@@ -44,6 +43,6 @@ do-build-DOCS-on:
 
 do-install-DOCS-on:
 	@(cd ${INSTALL_WRKSRC}/doc/_build &&\
-		${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
+		${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR} "-not -name \.*")
 
 .include <bsd.port.mk>
