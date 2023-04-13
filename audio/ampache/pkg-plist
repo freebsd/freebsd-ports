@@ -32,8 +32,8 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/bin/installer
 %%WWWDIR%%/composer.json
 %%WWWDIR%%/composer.lock
-@sample %%WWWDIR%%/config/ampache.cfg.php.dist %WWWDIR%%/config/ampache.cfg.php
-@sample %%WWWDIR%%/config/registration_agreement.php.dist %WWWDIR%%/config/registration_agreement.php
+@sample %%WWWDIR%%/config/ampache.cfg.php.dist %%WWWDIR%%/config/ampache.cfg.php
+@sample %%WWWDIR%%/config/registration_agreement.php.dist %%WWWDIR%%/config/registration_agreement.php
 %%WWWDIR%%/index.php
 %%WWWDIR%%/locale/ar_SA/LC_MESSAGES/messages.mo
 %%WWWDIR%%/locale/ar_SA/LC_MESSAGES/messages.po
@@ -134,7 +134,7 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/public/broadcast.php
 %%WWWDIR%%/public/browse.php
 %%WWWDIR%%/public/channel.php
-@sample %%WWWDIR%%/public/channel/.htaccess.dist %WWWDIR%%/public/channel/.htaccess
+@sample %%WWWDIR%%/public/channel/.htaccess.dist %%WWWDIR%%/public/channel/.htaccess
 %%WWWDIR%%/public/channel/favicon.ico
 %%WWWDIR%%/public/channel/images/corner_bottomleft.jpg
 %%WWWDIR%%/public/channel/images/corner_bottomright.jpg
@@ -147,7 +147,7 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/public/channel/style.css
 %%WWWDIR%%/public/cookie_disclaimer.php
 %%WWWDIR%%/public/crossdomain.xml
-@sample %%WWWDIR%%/public/daap/.htaccess.dist %WWWDIR%%/public/daap/.htaccess
+@sample %%WWWDIR%%/public/daap/.htaccess.dist %%WWWDIR%%/public/daap/.htaccess
 %%WWWDIR%%/public/daap/index.php
 %%WWWDIR%%/public/democratic.php
 %%WWWDIR%%/public/error.php
@@ -1103,7 +1103,7 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/public/lib/components/tag-it/css/jquery.tagit.css
 %%WWWDIR%%/public/lib/components/tag-it/js/tag-it.js
 %%WWWDIR%%/public/lib/components/tag-it/tag-it-built.js
-@sample %%WWWDIR%%/public/lib/javascript/.htaccess.dist %WWWDIR%%/public/lib/javascript/.htaccess
+@sample %%WWWDIR%%/public/lib/javascript/.htaccess.dist %%WWWDIR%%/public/lib/javascript/.htaccess
 %%WWWDIR%%/public/lib/javascript/ajax.js
 %%WWWDIR%%/public/lib/javascript/base.js
 %%WWWDIR%%/public/lib/javascript/dynamicpage.js
@@ -1200,7 +1200,7 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/public/mashup.php
 %%WWWDIR%%/public/now_playing.php
 %%WWWDIR%%/public/phpinfo.php
-@sample %%WWWDIR%%/public/play/.htaccess.dist %WWWDIR%%/public/play/.htaccess
+@sample %%WWWDIR%%/public/play/.htaccess.dist %%WWWDIR%%/public/play/.htaccess
 %%WWWDIR%%/public/play/index.php
 %%WWWDIR%%/public/playlist.php
 %%WWWDIR%%/public/podcast.php
@@ -1210,11 +1210,11 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/public/radio.php
 %%WWWDIR%%/public/random.php
 %%WWWDIR%%/public/register.php
-@sample %%WWWDIR%%/public/rest/.htaccess.dist %WWWDIR%%/public/rest/.htaccess
+@sample %%WWWDIR%%/public/rest/.htaccess.dist %%WWWDIR%%/public/rest/.htaccess
 %%WWWDIR%%/public/rest/index.php
 %%WWWDIR%%/public/rss.php
 %%WWWDIR%%/public/search.php
-@sample %%WWWDIR%%/public/server/.htaccess.dist %WWWDIR%%/public/server/.htaccess
+@sample %%WWWDIR%%/public/server/.htaccess.dist %%WWWDIR%%/public/server/.htaccess
 %%WWWDIR%%/public/server/ajax.server.php
 %%WWWDIR%%/public/server/edit.server.php
 %%WWWDIR%%/public/server/fs.ajax.php
@@ -1229,7 +1229,7 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/public/song.php
 %%WWWDIR%%/public/stats.php
 %%WWWDIR%%/public/stream.php
-@sample %%WWWDIR%%/public/templates/.htaccess.dist %WWWDIR%%/public/templates/.htaccess
+@sample %%WWWDIR%%/public/templates/.htaccess.dist %%WWWDIR%%/public/templates/.htaccess
 %%WWWDIR%%/public/templates/base.css
 %%WWWDIR%%/public/templates/browse_content.inc.php
 %%WWWDIR%%/public/templates/browse_filters.inc.php
@@ -2917,7 +2917,7 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/Dockerfile
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/UploadHandler.php
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/files/.gitignore
-@sample %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/files/.htaccess.dist %WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/files/.htaccess
+@sample %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/files/.htaccess.dist %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/files/.htaccess
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/server/php/index.php
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/test/index.html
 %%WWWDIR%%/vendor/blueimp/jquery-file-upload/test/unit.js
