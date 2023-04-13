@@ -1,5 +1,6 @@
 PORTNAME=	nInvaders
-PORTVERSION=	0.1.1
+DISTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	ninvaders-${PORTVERSION}
@@ -8,10 +9,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Space Invaders clone for ncurses
 WWW=		http://ninvaders.sourceforge.net/
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: alienBlock
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: alienBlock
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 USES=		ncurses
+CFLAGS+=	-fcommon
 
 OPTIONS_DEFINE=	DOCS
 
