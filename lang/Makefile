@@ -307,7 +307,6 @@
     SUBDIR += rexx-regutil
     SUBDIR += rexx-wrapper
     SUBDIR += rhino
-    SUBDIR += ruby27
     SUBDIR += ruby30
     SUBDIR += ruby31
     SUBDIR += ruby32
