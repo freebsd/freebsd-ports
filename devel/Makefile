@@ -1551,6 +1551,7 @@
     SUBDIR += malloy
     SUBDIR += marisa-trie
     SUBDIR += marl
+    SUBDIR += massif-visualizer
     SUBDIR += mate-common
     SUBDIR += maven
     SUBDIR += maven-wrapper

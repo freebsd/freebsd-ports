@@ -1,0 +1,11 @@
+bin/massif-visualizer
+share/applications/org.kde.massif-visualizer.desktop
+share/config.kcfg/massif-visualizer-settings.kcfg
+share/icons/hicolor/scalable/apps/massif-visualizer.svg
+share/kxmlgui5/massif-visualizer/callgraphtabui.rc
+share/kxmlgui5/massif-visualizer/charttabui.rc
+share/kxmlgui5/massif-visualizer/documentwidgetui.rc
+share/kxmlgui5/massif-visualizer/massif-visualizerui.rc
+%%DATADIR%%/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/shortentemplates.png
+share/metainfo/org.kde.massif-visualizer.appdata.xml
+share/mime/packages/massif.xml
