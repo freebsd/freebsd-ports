@@ -16,6 +16,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	DIPlib
 
+CXXFLAGS_powerpc64=	-mvsx
 CMAKE_OFF=	DIP_BUILD_PYDIP
 CMAKE_TESTING_ON=	DIP_ENABLE_DOCTEST
 CMAKE_TESTING_TARGET=	check # one test fails, see https://github.com/DIPlib/diplib/issues/120
