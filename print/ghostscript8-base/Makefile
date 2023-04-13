@@ -14,6 +14,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ghostscript 8.x PostScript interpreter, base part
 WWW=		https://www.cs.wisc.edu/~ghost/doc/GPL/index.htm
 
+FORBIDDEN=	CVE-2023-28879
+
 LICENSE=	GPLv3
 
 DEPRECATED=	Obsolete and unsupported upstream, consider using a more recent version
