@@ -1,3 +1,41 @@
+  <vuln vid="25872b25-da2d-11ed-b715-a1e76793953b">
+    <topic>ghostscript10 -- exploitable buffer overflow</topic>
+    <affects>
+      <package><name>ghostscript</name> <range><lt>10.01.0</lt></range></package>
+      <package><name>ghostscript7-base</name><range><lt>10.01.0</lt></range></package>
+      <package><name>ghostscript7-commfont</name><range><lt>10.01.0</lt></range></package>
+      <package><name>ghostscript7-jpnfont</name><range><lt>10.01.0</lt></range></package>
+      <package><name>ghostscript7-korfont</name><range><lt>10.01.0</lt></range></package>
+      <package><name>ghostscript7-x11</name><range><lt>10.01.0</lt></range></package>
+      <package><name>ghostscript8-base</name><range><lt>10.01.0</lt></range></package>
+      <package><name>ghostscript8-x11</name><range><lt>10.01.0</lt></range></package>
+      <package><name>ghostscript9-agpl-base</name><range><lt>10.01.0</lt></range></package>
+      <package><name>ghostscript9-agpl-x11</name><range><lt>10.01.0</lt></range></package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="http://www.openwall.com/lists/oss-security/2023/04/12/4">
+	  <p>In Artifex Ghostscript through 10.01.0, there is a buffer overflow
+	leading to potential corruption of data internal to the PostScript
+	interpreter, in base/sbcp.c.  This affects BCPEncode, BCPDecode,
+	TBCPEncode, and TBCPDecode.  If the write buffer is filled to one
+	byte less than full, and one then tries to write an escaped character,
+	two bytes are written.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28879</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-28879</url>
+      <url>https://artifex.com/news/critical-security-vulnerability-fixed-in-ghostscript</url>
+    </references>
+    <dates>
+      <discovery>2023-03-23</discovery>
+      <entry>2023-04-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="96d6809a-81df-46d4-87ed-2f78c79f06b1">
     <topic>zeek -- potential DoS vulnerabilities</topic>
     <affects>
