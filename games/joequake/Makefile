@@ -1,6 +1,6 @@
 PORTNAME=	joequake
 PORTVERSION=	0.15b1329
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://joequake.runecentral.com/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
@@ -14,17 +14,14 @@ WWW=		http://runecentral.com/joequake/
 
 LICENSE=	GPLv2+
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: com_searchpaths
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: com_searchpaths
-
 LIB_DEPENDS=	libpng.so:graphics/png
-
-WRKSRC=		${WRKDIR}/src
 
 USES=		gmake zip
 USE_CSTD=	gnu89
 
 MAKEFILE=	Makefile.linux
+CFLAGS+=	-fcommon
+WRKSRC=		${WRKDIR}/src
 
 OPTIONS_MULTI=	UI
 OPTIONS_MULTI_UI=	OPENGL X11
