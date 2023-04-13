@@ -1,5 +1,6 @@
 PORTNAME=	libgme
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://bitbucket.org/mpyne/game-music-emu/downloads/
 DISTNAME=	game-music-emu-${DISTVERSION}
@@ -16,6 +17,8 @@ SHEBANG_FILES=	${PORTDOCS}
 USE_LDCONFIG=	yes
 
 PORTDOCS=	changes.txt design.txt gme.txt readme.txt
+
+CMAKE_OFF=	ENABLE_UBSAN
 
 OPTIONS_DEFINE=	DOCS
 
