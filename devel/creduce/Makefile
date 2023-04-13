@@ -1,5 +1,6 @@
 PORTNAME=	creduce
-DISTVERSION=	2.11.0.20220927
+DISTVERSION=	2.11.0.llvm13.g20220117
+PORTEPOCH=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -8,9 +9,6 @@ WWW=		https://github.com/csmith-project/creduce
 
 LICENSE=	NCSA
 LICENSE_FILE=	${WRKSRC}/COPYING
-
-BROKEN=		fails to build: needs some specific LLVM version
-BROKEN_FreeBSD_12_powerpc64=	fails to configure: cannot compile and link test program with selected LLVM
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:textproc/flex
 LIB_DEPENDS=	libzstd.so:archivers/zstd
@@ -23,12 +21,12 @@ RUN_DEPENDS=	topformflat:devel/delta \
 		p5-Getopt-Tabular>=0:devel/p5-Getopt-Tabular \
 		p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 
-USES=		cmake gnome compiler:c++14-lang llvm:build,lib,run perl5
+USES=		cmake gnome compiler:c++14-lang llvm:13,build,lib,run perl5
 
 USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	csmith-project
-GH_TAGNAME=	8d56bee
+GH_TAGNAME=	4ae77d1e101135a6aea310b30c19e2af968b7bf6
 USE_GNOME=	libxml2
 
 # See clang_delta/CMakeLists.txt for more details
