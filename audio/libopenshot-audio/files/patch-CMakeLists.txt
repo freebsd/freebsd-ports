@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2022-12-01 22:02:54 UTC
+--- CMakeLists.txt.orig	2023-03-21 22:56:18 UTC
 +++ CMakeLists.txt
 @@ -184,6 +184,12 @@ set_target_properties(openshot-audio PROPERTIES
    EXPORT_NAME Audio  # Exports as OpenShot::Audio target
@@ -34,7 +34,7 @@
  else()
    # For EXPORTED Config
    set(NEED_ALSA FALSE)
-@@ -274,10 +281,22 @@ endif()
+@@ -274,10 +281,51 @@ endif()
  
  # ZLIB -- uses IMPORTED target ZLIB::ZLIB which has existed since CMake 3.1
  find_package(ZLIB REQUIRED)
@@ -42,16 +42,45 @@
 +target_link_libraries(openshot-audio PRIVATE ZLIB::ZLIB)
  
 +# EXECINFO, SYSINFO
-+find_library(EXECINFO_LIBRARY NAMES execinfo)
-+if(NOT EXECINFO_LIBRARY)
-+	message(FATAL_ERROR "${EXECINFO_LIBRARY}")
-+endif(NOT EXECINFO_LIBRARY)
-+target_link_libraries(openshot-audio PRIVATE ${EXECINFO_LIBRARY})
-+find_library(SYSINFO_LIBRARY NAMES sysinfo)
-+if(NOT SYSINFO_LIBRARY)
-+	message(FATAL_ERROR "${SYSINFO_LIBRARY}")
-+endif(NOT SYSINFO_LIBRARY)
-+target_link_libraries(openshot-audio PRIVATE ${SYSINFO_LIBRARY})
++include(CheckFunctionExists)
++check_function_exists("backtrace" FUNCTION_BACKTRACE_FOUND)
++if(NOT FUNCTION_BACKTRACE_FOUND)
++	find_library(EXECINFO_LIBRARY NAMES execinfo)
++	if(NOT EXECINFO_LIBRARY)
++		message(FATAL_ERROR "${EXECINFO_LIBRARY}")
++	endif(NOT EXECINFO_LIBRARY)
++	target_link_libraries(openshot-audio PRIVATE ${EXECINFO_LIBRARY})
++endif(NOT FUNCTION_BACKTRACE_FOUND)
++unset(FUNCTION_BACKTRACE_FOUND)
++check_function_exists("sysinfo" FUNCTION_SYSINFO_FOUND)
++if(NOT FUNCTION_SYSINFO_FOUND)
++	find_library(SYSINFO_LIBRARY NAMES sysinfo)
++	if(NOT SYSINFO_LIBRARY)
++		message(FATAL_ERROR "${SYSINFO_LIBRARY}")
++	endif(NOT SYSINFO_LIBRARY)
++	target_link_libraries(openshot-audio PRIVATE ${SYSINFO_LIBRARY})
++endif(NOT FUNCTION_SYSINFO_FOUND)
++unset(FUNCTION_SYSINFO_FOUND)
++
++# JACK
++if(ENABLE_JACK)
++	find_package(PkgConfig QUIET)
++	if(NOT PKG_CONFIG_FOUND)
++		message(FATAL_ERROR "PKG_CONFIG_FOUND: ${PKG_CONFIG_FOUND}")
++	endif(NOT PKG_CONFIG_FOUND)
++	pkg_check_modules(JACK REQUIRED jack)
++	if(NOT JACK_FOUND)
++		message(FATAL_ERROR "JACK_FOUND: ${JACK_FOUND}")
++	endif(NOT JACK_FOUND)
++	if(NOT TARGET JACK::JACK)
++		add_library(JACK::JACK INTERFACE IMPORTED)
++		set_target_properties(JACK::JACK PROPERTIES
++			INTERFACE_INCLUDE_DIRECTORIES ${JACK_INCLUDE_DIRS}
++			INTERFACE_LINK_LIBRARIES ${JACK_LINK_LIBRARIES})
++	endif(NOT TARGET JACK::JACK)
++	target_link_libraries(openshot-audio PRIVATE JACK::JACK)
++	target_compile_definitions(openshot-audio PRIVATE JUCE_JACK=1)
++endif(ENABLE_JACK)
 +
  # Link with dynamic loader for platform
 -target_link_libraries(openshot-audio PUBLIC ${CMAKE_DL_LIBS})
