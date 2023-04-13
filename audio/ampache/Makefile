@@ -1,5 +1,6 @@
 PORTNAME=	ampache
 PORTVERSION=	5.5.7
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	_all
 CATEGORIES=	audio www
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${PORTVERSION}/
