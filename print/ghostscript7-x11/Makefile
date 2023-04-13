@@ -15,6 +15,8 @@ LICENSE=	GPLv2
 DEPRECATED=	Obsolete and unsupported upstream
 EXPIRATION_DATE=2023-06-30
 
+FORBIDDEN=	CVE-2023-28879
+
 CONFLICTS_INSTALL= \
 		gambc \
 		ghostscript[789] \

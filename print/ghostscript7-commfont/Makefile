@@ -23,6 +23,8 @@ PLIST_SUB=	GS_RESDIR="${GS_RESDIR}"
 USES=		ghostscript:7,run
 NO_ARCH=	yes
 
+FORBIDDEN=	CVE-2023-28879
+
 CONFLICTS_INSTALL= \
 		ghostscript[789] \
 		ghostscript[789]-nox11 \
