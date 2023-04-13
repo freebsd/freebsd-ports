@@ -1,15 +1,20 @@
---- src/CMakeLists.txt.orig	2022-12-01 22:04:03 UTC
+--- src/CMakeLists.txt.orig	2023-03-27 18:48:43 UTC
 +++ src/CMakeLists.txt
-@@ -516,6 +516,13 @@ See https://github.com/opencv/opencv/issues/19260]])
+@@ -516,6 +516,18 @@ See https://github.com/opencv/opencv/issues/19260]])
  endif()  # ENABLE_OPENCV
  add_feature_info("OpenCV algorithms" ENABLE_OPENCV "Use OpenCV algorithms")
  
 +# EXECINFO
-+find_library(EXECINFO_LIBRARY NAMES execinfo)
-+if(NOT EXECINFO_LIBRARY)
-+	message(FATAL_ERROR "${EXECINFO_LIBRARY}")
-+endif(NOT EXECINFO_LIBRARY)
-+target_link_libraries(openshot PRIVATE ${EXECINFO_LIBRARY})
++include(CheckFunctionExists)
++check_function_exists("backtrace" FUNCTION_BACKTRACE_FOUND)
++if(NOT FUNCTION_BACKTRACE_FOUND)
++	find_library(EXECINFO_LIBRARY NAMES execinfo)
++	if(NOT EXECINFO_LIBRARY)
++		message(FATAL_ERROR "${EXECINFO_LIBRARY}")
++	endif(NOT EXECINFO_LIBRARY)
++	target_link_libraries(openshot PRIVATE ${EXECINFO_LIBRARY})
++endif(NOT FUNCTION_BACKTRACE_FOUND)
++unset(FUNCTION_BACKTRACE_FOUND)
 +
  ###############  LINK LIBRARY  #################
  # Link remaining dependency libraries
