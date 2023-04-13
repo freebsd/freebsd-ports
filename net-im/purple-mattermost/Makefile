@@ -1,5 +1,5 @@
 PORTNAME=	purple-mattermost
-PORTVERSION=	2.0
+PORTVERSION=	2.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -18,7 +18,6 @@ USES=		gettext gmake gnome localbase pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	EionRobb
 
 PLIST_FILES=	lib/purple-2/libmattermost.so \
