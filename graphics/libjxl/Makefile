@@ -22,6 +22,8 @@ GH_TUPLE=	jbeich:skcms:b25b07b:skcms/third_party/skcms \
 		libjxl:testdata:d6168ff:testdata/testdata \
 		webmproject:sjpeg:868ab55:sjpeg/third_party/sjpeg \
 		${NULL}
+CFLAGS_powerpc64=	-DHWY_DISABLE_PPC8_CRYPTO
+CFLAGS_powerpc=	-DHWY_DISABLE_PPC8_CRYPTO
 CMAKE_ON=	JPEGXL_ENABLE_PLUGINS
 CMAKE_OFF=	${BENCHMARK FUZZERS TCMALLOC:L:S/^/JPEGXL_ENABLE_/}
 CMAKE_OFF+=	${OpenGL GLUT:L:S/^/CMAKE_DISABLE_FIND_PACKAGE_/} # sjpeg
