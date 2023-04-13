@@ -1,0 +1,19 @@
+--- src/APILookupGLib.txt.orig	2023-02-17 21:33:56 UTC
++++ src/APILookupGLib.txt
+@@ -132,6 +132,7 @@ class: ArrayG
+ 
+ struct: Array
+ class: ArrayG
++version 2.76: noCode: new_take_zero_terminated
+ 
+ struct: Base64
+ move: base64_decode_step Base64 decode_step
+@@ -714,6 +715,8 @@ class: PtrArray
+ 
+ struct: PtrArray
+ class: PtrArray
++version 2.76: noCode: new_from_null_terminated_array
++version 2.76: noCode: new_take_null_terminated
+ code: start
+ 	/**
+ 	 * Number of pointers in the array
