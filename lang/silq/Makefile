@@ -1,6 +1,5 @@
 PORTNAME=	silq
-PORTVERSION=	20220224
-PORTREVISION=	2
+PORTVERSION=	20230412
 CATEGORIES=	lang math science
 DIST_SUBDIR=	silq
 
@@ -19,9 +18,9 @@ BUILD_DEPENDS=	ldmd2:lang/ldc \
 
 USE_GITHUB=	yes
 
-GH_TUPLE=	eth-sri:silq:afaf865 \
-		tgehr:ast:d2f25fb:ast/ast \
-		tgehr:util:7e9f0ce:util/util
+GH_TUPLE=	eth-sri:silq:e9750cb \
+		tgehr:ast:072796e:ast/ast \
+		tgehr:util:a4532a4:util/util
 
 OPTIONS_DEFINE=	EXAMPLES
 
