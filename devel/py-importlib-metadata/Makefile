@@ -1,6 +1,5 @@
 PORTNAME=	importlib-metadata
-DISTVERSION=	6.0.0
-PORTREVISION=	2
+DISTVERSION=	6.3.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +17,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=56:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zipp>=0.5:devel/py-zipp@${PY_FLAVOR}
 
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist pytest
+USES=		python:3.7+
+USE_PYTHON=	autoplist distutils pytest
 
 NO_ARCH=	yes
 
