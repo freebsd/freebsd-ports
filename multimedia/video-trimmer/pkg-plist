@@ -2,6 +2,7 @@ bin/video-trimmer
 share/applications/org.gnome.gitlab.YaLTeR.VideoTrimmer.desktop
 share/icons/hicolor/scalable/apps/org.gnome.gitlab.YaLTeR.VideoTrimmer.svg
 share/icons/hicolor/symbolic/apps/org.gnome.gitlab.YaLTeR.VideoTrimmer-symbolic.svg
+share/locale/ar/LC_MESSAGES/video-trimmer.mo
 share/locale/cs/LC_MESSAGES/video-trimmer.mo
 share/locale/de/LC_MESSAGES/video-trimmer.mo
 share/locale/es/LC_MESSAGES/video-trimmer.mo
@@ -14,6 +15,7 @@ share/locale/hu/LC_MESSAGES/video-trimmer.mo
 share/locale/it/LC_MESSAGES/video-trimmer.mo
 share/locale/ja/LC_MESSAGES/video-trimmer.mo
 share/locale/nl/LC_MESSAGES/video-trimmer.mo
+share/locale/oc/LC_MESSAGES/video-trimmer.mo
 share/locale/pl/LC_MESSAGES/video-trimmer.mo
 share/locale/pt/LC_MESSAGES/video-trimmer.mo
 share/locale/pt_BR/LC_MESSAGES/video-trimmer.mo
