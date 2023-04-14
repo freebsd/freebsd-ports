@@ -1,4 +1,4 @@
---- mmc_cmds.c.orig	2021-12-18 19:59:21 UTC
+--- mmc_cmds.c.orig	2023-02-09 14:16:51 UTC
 +++ mmc_cmds.c
 @@ -28,7 +28,12 @@
  #include <errno.h>
@@ -13,7 +13,23 @@
  
  #include "mmc.h"
  #include "mmc_cmds.h"
-@@ -120,8 +125,19 @@ static __u32 get_size_in_blks(int fd)
+@@ -88,8 +93,15 @@ int write_extcsd_value(int fd, __u8 index, __u8 value,
+ 			(value << 8) |
+ 			EXT_CSD_CMD_SET_NORMAL;
+ 	idata.flags = MMC_RSP_SPI_R1B | MMC_RSP_R1B | MMC_CMD_AC;
++#if defined(__FreeBSD__)
++	if (timeout_ms != 0) {
++		fprintf(stderr, "Command timeout not supported\n");
++		return -EOPNOTSUPP;
++	}
++#else
+ 	/* Kernel will set cmd_timeout_ms if 0 is set */
+ 	idata.cmd_timeout_ms = timeout_ms;
++#endif
+ 
+ 	ret = ioctl(fd, MMC_IOC_CMD, &idata);
+ 	if (ret)
+@@ -121,8 +133,19 @@ static __u32 get_size_in_blks(int fd)
  {
  	int res;
  	int size;
@@ -33,27 +49,7 @@
  	if (res) {
  		fprintf(stderr, "Error getting device size, errno: %d\n",
  			errno);
-@@ -1605,13 +1621,18 @@ int do_read_extcsd(int nargs, char **argv)
- 	/* A441/A43: reserved	[197] [195] [193] [190] [188]
- 	 * [186] [184] [182] [180] [176] */
- 
--	if (ext_csd_rev >= 6)
-+	if (ext_csd_rev >= 6) {
- 		printf("I/O Driver Strength [DRIVER_STRENGTH: 0x%02x]\n",
- 			ext_csd[197]);
-+		printf("Enhanced Strobe mode [STROBE_SUPPORT: 0x%02x]\n",
-+			ext_csd[184]);
-+	}
- 
- 	/* DEVICE_TYPE in A45, CARD_TYPE in A441 */
- 	reg = ext_csd[196];
- 	printf("Card Type [CARD_TYPE: 0x%02x]\n", reg);
-+	if (reg & 0x80) printf(" HS400 Dual Data Rate eMMC @200MHz 1.2VI/O\n");
-+	if (reg & 0x40) printf(" HS400 Dual Data Rate eMMC @200MHz 1.8VI/O\n");
- 	if (reg & 0x20) printf(" HS200 Single Data Rate eMMC @200MHz 1.2VI/O\n");
- 	if (reg & 0x10) printf(" HS200 Single Data Rate eMMC @200MHz 1.8VI/O\n");
- 	if (reg & 0x08) printf(" HS Dual Data Rate eMMC @52MHz 1.2VI/O\n");
-@@ -1881,8 +1902,10 @@ int do_read_extcsd(int nargs, char **argv)
+@@ -1974,8 +1997,10 @@ int do_read_extcsd(int nargs, char **argv)
  		       (ext_csd[EXT_CSD_CMDQ_DEPTH] & 0x1f) + 1);
  		printf("Command Enabled [CMDQ_MODE_EN]: 0x%02x\n",
  		       ext_csd[EXT_CSD_CMDQ_MODE_EN]);
@@ -64,7 +60,7 @@
  	}
  out_free:
  	return ret;
-@@ -2515,6 +2538,7 @@ int do_cache_dis(int nargs, char **argv)
+@@ -2646,6 +2671,7 @@ int do_cache_dis(int nargs, char **argv)
  	return do_cache_ctrl(0, nargs, argv);
  }
  
@@ -72,7 +68,7 @@
  static int erase(int dev_fd, __u32 argin, __u32 start, __u32 end)
  {
  	int ret = 0;
-@@ -2657,6 +2681,7 @@ out:
+@@ -2800,6 +2826,7 @@ out:
  	close(dev_fd);
  	return ret;
  }
@@ -80,3 +76,16 @@
  
  
  int do_ffu(int nargs, char **argv)
+@@ -3145,6 +3172,7 @@ int do_preidle(int nargs, char **argv)
+ 	return 0;
+ }
+ 
++#if defined(__linux__)
+ int do_alt_boot_op(int nargs, char **argv)
+ {
+ 	int fd, ret, boot_data_fd;
+@@ -3247,3 +3275,4 @@ dev_fd_close:
+ 		exit(1);
+ 	return 0;
+ }
++#endif

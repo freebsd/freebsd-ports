@@ -1,18 +1,18 @@
 PORTNAME=	mmc-utils
-DISTVERSION=	20211202
+DISTVERSION=	20230209
 DISTVERSIONSUFFIX=	-${MMC_GITSHASH}
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kernel.org/pub/scm/utils/mmc/mmc-utils.git/snapshot/${MMC_GITHASH}${EXTRACT_SUFX}?dummy=/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Userspace tools for MMC/SD devices
-WWW=		https://www.kernel.org/doc/Documentation/mmc/mmc-tools.txt
+WWW=		https://www.kernel.org/doc/html/latest/driver-api/mmc/mmc-tools.html
 
 LICENSE=	BSD3CLAUSE GPLv2
 LICENSE_COMB=	multi
 
 IGNORE_DragonFly=	only supported on FreeBSD
-MMC_GITHASH=	a1b233c2a31baa5b77cb67c0c3be4767be86f727
+MMC_GITHASH=	d4c2910981ff99b983734426dfa99632fb81ac6b
 MMC_GITSHASH=	${MMC_GITHASH:C/^(........).*/\1/}
 PLIST_FILES=	man/man1/mmc.1.gz sbin/mmc
 USES=		gmake
