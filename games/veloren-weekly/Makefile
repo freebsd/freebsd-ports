@@ -1,5 +1,5 @@
 PORTNAME=	veloren
-PORTVERSION=	s20230413
+PORTVERSION=	s20230414
 CATEGORIES=	games wayland
 .if !make(makesum)
 MASTER_SITES=	LOCAL/jbeich
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cargo xorg
 USE_XORG=	xcb
 USE_GITLAB=	yes
-GL_COMMIT=	bbe7ca57a8768c7857bea1031c58c1c67bb2f4c3
+GL_COMMIT=	b40e2b4fe432833e548da6b12cfffd95ebd3c17b
 CARGO_ENV=	VELOREN_USERDATA_STRATEGY=system SHADERC_LIB_DIR="${LOCALBASE}/lib"
 PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		bin/${PORTNAME}-voxygen \
