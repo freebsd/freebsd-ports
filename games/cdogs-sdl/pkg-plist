@@ -530,7 +530,6 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/dogfights/map07.cdogscpn/graphics/bfg.png
 %%DATADIR%%/dogfights/map07.cdogscpn/graphics/bfg_plasma_20x20.png
 %%DATADIR%%/dogfights/map07.cdogscpn/graphics/bfg_spark.png
-%%DATADIR%%/dogfights/map07.cdogscpn/graphics/chainsaw.png
 %%DATADIR%%/dogfights/map07.cdogscpn/graphics/health_bonus.png
 %%DATADIR%%/dogfights/map07.cdogscpn/graphics/stimpack.png
 %%DATADIR%%/dogfights/map07.cdogscpn/guns.json
@@ -538,7 +537,6 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/dogfights/map07.cdogscpn/missions.json
 %%DATADIR%%/dogfights/map07.cdogscpn/sounds/bfg.ogg
 %%DATADIR%%/dogfights/map07.cdogscpn/sounds/bfg_hit.ogg
-%%DATADIR%%/dogfights/map07.cdogscpn/sounds/chainsaw.ogg
 %%DATADIR%%/dogfights/map07.cdogscpn/sounds/sshotgun.ogg
 %%DATADIR%%/dogfights/map07.cdogscpn/sounds/sshotgun_r.ogg
 %%DATADIR%%/dogfights/spells_n_spikes.cdogscpn/LICENSE.md
@@ -1705,6 +1703,7 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/graphics/hud/arrow.png
 %%DATADIR%%/graphics/hud/arrow.txt
 %%DATADIR%%/graphics/hud/back_bar.png
+%%DATADIR%%/graphics/hud/button_bg.png
 %%DATADIR%%/graphics/hud/gauge_back.png
 %%DATADIR%%/graphics/hud/gauge_inner.png
 %%DATADIR%%/graphics/hud/gauge_small_back.png
@@ -2431,6 +2430,19 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/missions/Sand.cdogscpn/sounds/splat.txt
 %%DATADIR%%/missions/Sand.cdogscpn/sounds/wurmtooth_flesh.ogg
 %%DATADIR%%/missions/Sand.cdogscpn/sounds/wurmtooth_flesh.txt
+%%DATADIR%%/missions/WOLF3D/AUDIOHED.WL1
+%%DATADIR%%/missions/WOLF3D/AUDIOT.WL1
+%%DATADIR%%/missions/WOLF3D/CONFIG.WL1
+%%DATADIR%%/missions/WOLF3D/FILE_ID.DIZ
+%%DATADIR%%/missions/WOLF3D/GAMEMAPS.WL1
+%%DATADIR%%/missions/WOLF3D/MAPHEAD.WL1
+%%DATADIR%%/missions/WOLF3D/VENDOR.DOC
+%%DATADIR%%/missions/WOLF3D/VGADICT.WL1
+%%DATADIR%%/missions/WOLF3D/VGAGRAPH.WL1
+%%DATADIR%%/missions/WOLF3D/VGAHEAD.WL1
+%%DATADIR%%/missions/WOLF3D/VSWAP.WL1
+%%DATADIR%%/missions/WOLF3D/wolf3d.ico
+%%DATADIR%%/missions/WOLF3D/wolfswas.ico
 %%DATADIR%%/missions/ai_insurgency.cdogscpn/LICENSE.md
 %%DATADIR%%/missions/ai_insurgency.cdogscpn/bullets.json
 %%DATADIR%%/missions/ai_insurgency.cdogscpn/campaign.json
@@ -2804,6 +2816,8 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/sounds/cells_pickup.txt
 %%DATADIR%%/sounds/chainsaw.ogg
 %%DATADIR%%/sounds/chainsaw.txt
+%%DATADIR%%/sounds/chainsaw_switch.ogg
+%%DATADIR%%/sounds/chainsaw_switch.txt
 %%DATADIR%%/sounds/chars/alert/alien/0.ogg
 %%DATADIR%%/sounds/chars/alert/alien/1.ogg
 %%DATADIR%%/sounds/chars/alert/alien/license.txt
@@ -3202,10 +3216,10 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/sounds/victory.txt
 %%DATADIR%%/sounds/whistle.ogg
 %%DATADIR%%/sounds/whistle.txt
-share/metainfo/io.github.cxong.cdogs-sdl.appdata.xml
 share/applications/io.github.cxong.cdogs-sdl.desktop
 share/icons/hicolor/128x128/apps/io.github.cxong.cdogs-sdl.png
 share/icons/hicolor/16x16/apps/io.github.cxong.cdogs-sdl.png
 share/icons/hicolor/22x22/apps/io.github.cxong.cdogs-sdl.png
 share/icons/hicolor/32x32/apps/io.github.cxong.cdogs-sdl.png
 share/icons/hicolor/48x48/apps/io.github.cxong.cdogs-sdl.png
+share/metainfo/io.github.cxong.cdogs-sdl.appdata.xml
