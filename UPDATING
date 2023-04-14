@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230414:
+  AFFECTS: users of www/gitea
+  AUTHOR: fernape@FreeBSD.org
+
+  Gitea 1.19.1 contains a breaking change.
+  actions unit has ben renamed to to repo.actions.
+
 20230407:
   AFFECTS: users of devel/sonarqube-community
   AUTHOR: netchild@FreeBSD.org
