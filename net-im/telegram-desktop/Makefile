@@ -16,9 +16,7 @@ BROKEN_i386=	does not build, webrtc related
 NOT_FOR_ARCHS=		powerpc powerpc64 powerpcspe
 NOT_FOR_ARCHS_REASON=	Only little endian is supported
 
-BUILD_DEPENDS=	alsa-lib>0:audio/alsa-lib \
-		microsoft-gsl>0:devel/microsoft-gsl \
-		pulseaudio>0:audio/pulseaudio \
+BUILD_DEPENDS=	microsoft-gsl>0:devel/microsoft-gsl \
 		range-v3>0:devel/range-v3 \
 		tl-expected>0:devel/tl-expected \
 		v4l_compat>0:multimedia/v4l_compat \
@@ -85,13 +83,15 @@ LDFLAGS+=	-lBlocksRuntime
 # It dynamically loads PulseAudio, and if this fails, it loads ALSA.
 # If both of them are not installed, then voice calls do not work, but other functionalities still work.
 OPTIONS_DEFAULT=	ALSA
-OPTIONS_MULTI=		AUDIO
-OPTIONS_MULTI_AUDIO=	ALSA PULSEAUDIO
+OPTIONS_GROUP=	AUDIO
+OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
 
 AUDIO_DESC=	Audio backend for voice calls
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+ALSA_CMAKE_BOOL_OFF=	LIBTGVOIP_DISABLE_ALSA
+PULSEAUDIO_CMAKE_BOOL_OFF=	LIBTGVOIP_DISABLE_PULSEAUDIO
 
 # Telegram asks each custom build to have its own API ID and hash.
 TELEGRAM_API_HASH=	20a3432aab43f24bb4460fceac5ba38d
