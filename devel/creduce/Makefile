@@ -3,7 +3,7 @@ DISTVERSION=	2.11.0.llvm13.g20220117
 PORTEPOCH=	1
 CATEGORIES=	devel
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Produces small test cases
 WWW=		https://github.com/csmith-project/creduce
 
