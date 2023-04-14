@@ -1,13 +1,23 @@
 PORTNAME=	crc32c
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Python package exposing the intel sse4.2 crc32c instruction
+WWW=		https://github.com/ICRAR/crc32c
+
+LICENSE=	BSD2CLAUSE BSD3CLAUSE LGPL21
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE.slice-by-8
+LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE.google-crc32c
+LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/crc32c.cpython-39.so
 
 .include <bsd.port.mk>
