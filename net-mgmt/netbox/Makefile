@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.4.7
+DISTVERSION=	3.4.8
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -25,7 +25,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 #
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django41>=4.1.7<4.2:www/py-django41@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-cors-headers>=3.14.0<4:www/py-dj41-django-cors-headers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj41-django-debug-toolbar>=3.7.0<4:www/py-dj41-django-debug-toolbar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj41-django-debug-toolbar>=3.7.0<5:www/py-dj41-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-filter>=23.1<24:www/py-dj41-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-graphiql-debug-toolbar>=0.2.0<1:www/py-dj41-django-graphiql-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-mptt>=0.14.0<0.15:www/py-dj41-django-mptt@${PY_FLAVOR} \

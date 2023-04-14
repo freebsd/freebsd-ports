@@ -236,6 +236,7 @@
 %%DATADIR%%/docs/integrations/rest-api.md
 %%DATADIR%%/docs/integrations/webhooks.md
 %%DATADIR%%/docs/introduction.md
+%%DATADIR%%/docs/media/admin_ui_grant_permission.png
 %%DATADIR%%/docs/media/admin_ui_run_permission.png
 %%DATADIR%%/docs/media/authentication/azure_ad_add_app_registration.png
 %%DATADIR%%/docs/media/authentication/azure_ad_add_client_secret.png
@@ -1037,7 +1038,6 @@
 %%DATADIR%%/templates/wireless/wirelesslan.html
 %%DATADIR%%/templates/wireless/wirelesslangroup.html
 %%DATADIR%%/templates/wireless/wirelesslink.html
-%%DATADIR%%/templates/wireless/wirelesslink_edit.html
 %%DATADIR%%/tenancy/__init__.py
 %%DATADIR%%/tenancy/api/__init__.py
 %%DATADIR%%/tenancy/api/nested_serializers.py
