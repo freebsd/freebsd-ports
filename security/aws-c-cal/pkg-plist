@@ -3,6 +3,7 @@ include/aws/cal/ecc.h
 include/aws/cal/exports.h
 include/aws/cal/hash.h
 include/aws/cal/hmac.h
+include/aws/cal/symmetric_cipher.h
 lib/aws-c-cal/cmake/aws-c-cal-config.cmake
 lib/aws-c-cal/cmake/modules/Findcrypto.cmake
 lib/aws-c-cal/cmake/shared/aws-c-cal-targets-%%CMAKE_BUILD_TYPE%%.cmake
