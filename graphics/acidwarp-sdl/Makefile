@@ -1,5 +1,5 @@
 PORTNAME=	acidwarp-sdl
-PORTVERSION=	g2020062101
+PORTVERSION=	g2022112701
 CATEGORIES=	graphics
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,7 +12,7 @@ USE_SDL=	sdl2
 USE_GITHUB=	yes
 GH_ACCOUNT=	dreamlayers
 GH_PROJECT=	acidwarp
-GH_TAGNAME=	698c4e1
+GH_TAGNAME=	c48e1e2
 
 # Fix build on recent current (clang11)
 CFLAGS+=	-fcommon
