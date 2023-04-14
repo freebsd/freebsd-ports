@@ -1,5 +1,5 @@
 PORTNAME=	fs
-PORTVERSION=	2.4.11
+PORTVERSION=	2.4.16
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,6 +20,7 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
 PORTSCOUT=	limit:^2\.
 
 .include <bsd.port.mk>
