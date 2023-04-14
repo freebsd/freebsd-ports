@@ -1,5 +1,5 @@
 PORTNAME=	httm
-DISTVERSION=	0.25.9
+DISTVERSION=	0.26.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -21,6 +21,7 @@ CARGO_CRATES=	ahash-0.8.3 \
 		autocfg-1.1.0 \
 		beef-0.5.2 \
 		bitflags-1.3.2 \
+		bitflags-2.1.0 \
 		bumpalo-3.12.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
@@ -78,13 +79,12 @@ CARGO_CRATES=	ahash-0.8.3 \
 		link-cplusplus-1.0.8 \
 		linux-raw-sys-0.1.4 \
 		log-0.4.17 \
-		lscolors-0.13.0 \
+		lscolors-0.14.0 \
 		memchr-2.5.0 \
 		memoffset-0.7.1 \
 		memoffset-0.8.0 \
 		nix-0.24.3 \
 		nix-0.26.2 \
-		nu-ansi-term-0.46.0 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
@@ -92,7 +92,6 @@ CARGO_CRATES=	ahash-0.8.3 \
 		number_prefix-0.4.0 \
 		once_cell-1.17.1 \
 		os_str_bytes-6.4.1 \
-		overload-0.1.1 \
 		partition-identity-0.3.0 \
 		pin-utils-0.1.0 \
 		portable-atomic-0.3.19 \
@@ -130,7 +129,7 @@ CARGO_CRATES=	ahash-0.8.3 \
 		time-macros-0.2.8 \
 		timer-0.2.0 \
 		tuikit-0.5.0 \
-		two_percent-0.10.4 \
+		two_percent-0.10.5 \
 		unicode-ident-1.0.8 \
 		unicode-width-0.1.10 \
 		utf8parse-0.2.1 \
