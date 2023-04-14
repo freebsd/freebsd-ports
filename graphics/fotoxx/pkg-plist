@@ -2,7 +2,6 @@ bin/fotoxx
 share/applications/fotoxx.desktop
 %%DATADIR%%/data/KB_shortcuts_E
 %%DATADIR%%/data/README
-%%DATADIR%%/data/capskeys
 %%DATADIR%%/data/colorwheel.jpg
 %%DATADIR%%/data/custom_kernel/blur5
 %%DATADIR%%/data/custom_kernel/brighten3
@@ -103,6 +102,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/albums-popmenu.jpg
 %%DATADIR%%/images/alien-colors1.jpg
 %%DATADIR%%/images/alien-colors2.jpg
+%%DATADIR%%/images/anti-alias.jpg
 %%DATADIR%%/images/area-rescale.jpg
 %%DATADIR%%/images/area-rescale2.jpg
 %%DATADIR%%/images/batch-change-meta.jpg
@@ -132,6 +132,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/burn-DVD.jpg
 %%DATADIR%%/images/calibrate-printer.jpg
 %%DATADIR%%/images/cartoon.jpg
+%%DATADIR%%/images/change-alpha.jpg
 %%DATADIR%%/images/choose-captions.jpg
 %%DATADIR%%/images/chromatic1.jpg
 %%DATADIR%%/images/chromatic1A.jpg
@@ -174,7 +175,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/edit-bookmarks.jpg
 %%DATADIR%%/images/edit-dist.jpg
 %%DATADIR%%/images/edit-metadata.jpg
-%%DATADIR%%/images/edit-plugins.jpg
 %%DATADIR%%/images/edit.png
 %%DATADIR%%/images/effects.png
 %%DATADIR%%/images/emboss.jpg
@@ -193,8 +193,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/flatten-photo2.jpg
 %%DATADIR%%/images/flatten1.jpg
 %%DATADIR%%/images/flatten2.jpg
-%%DATADIR%%/images/folder.png
 %%DATADIR%%/images/folder-tree.jpg
+%%DATADIR%%/images/folder.png
 %%DATADIR%%/images/fotoxx-views.jpg
 %%DATADIR%%/images/fotoxx.png
 %%DATADIR%%/images/gallery-screen.jpg
@@ -231,6 +231,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/manage-tags.jpg
 %%DATADIR%%/images/map-click.jpg
 %%DATADIR%%/images/maps.png
+%%DATADIR%%/images/margins.jpg
 %%DATADIR%%/images/markup.jpg
 %%DATADIR%%/images/mashup.jpg
 %%DATADIR%%/images/mashup1.jpg
@@ -268,6 +269,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/permissions.jpg
 %%DATADIR%%/images/perspective1.jpg
 %%DATADIR%%/images/perspective2.jpg
+%%DATADIR%%/images/plugins-edit.jpg
 %%DATADIR%%/images/plugins.jpg
 %%DATADIR%%/images/prev-next.png
 %%DATADIR%%/images/print-margins.jpg
@@ -280,7 +282,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/red-eyes2.jpg
 %%DATADIR%%/images/redball.png
 %%DATADIR%%/images/refine.png
-%%DATADIR%%/images/remove-alpha.jpg
 %%DATADIR%%/images/remove-dust.jpg
 %%DATADIR%%/images/remove-dust2.jpg
 %%DATADIR%%/images/remove-halo.jpg
@@ -295,8 +296,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/rotate.jpg
 %%DATADIR%%/images/saturation.jpg
 %%DATADIR%%/images/save.png
-%%DATADIR%%/images/search-images.jpg
 %%DATADIR%%/images/search-images-metadata.jpg
+%%DATADIR%%/images/search-images.jpg
 %%DATADIR%%/images/select-area-finish.jpg
 %%DATADIR%%/images/select-area.jpg
 %%DATADIR%%/images/select.png

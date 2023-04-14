@@ -45,7 +45,7 @@
 +}
 +#endif
 +
- //  get available memory in MB units
+ //  get available memory in MB units (includes swap space)
  //  typical < 0.1 milliseconds
  
  double availmemory()
@@ -68,13 +68,13 @@
  
 @@ -996,7 +1032,7 @@ double get_seconds()
     timespec    time1;
-    double      time2;
+    double      secs;
     
 -   clock_gettime(CLOCK_MONOTONIC_RAW,&time1);
 +   clock_gettime(CLOCK_MONOTONIC,&time1);
-    time2 = time1.tv_sec;
-    time2 += time1.tv_nsec * 0.000000001;
-    return time2;
+    secs = time1.tv_sec;
+    secs += time1.tv_nsec * 0.000000001;
+    return secs;
 @@ -1020,7 +1056,7 @@ void logtime_init(cchar *text)
     using namespace logtime_names;
  
