@@ -1,5 +1,5 @@
-TIMESTAMP = 1672122101
-SHA256 (go/biology_taxonkit/taxonkit-v0.14.1/v0.14.1.mod) = 091834993521d197914c2f19ce12591eb6bb0369262ad83f49fd91043200f7fb
-SIZE (go/biology_taxonkit/taxonkit-v0.14.1/v0.14.1.mod) = 1051
-SHA256 (go/biology_taxonkit/taxonkit-v0.14.1/v0.14.1.zip) = ceaa40ee2684b86e8fcefaef9bee4c6e5f45c6f63d11cfa20f8d28b43df0e1be
-SIZE (go/biology_taxonkit/taxonkit-v0.14.1/v0.14.1.zip) = 1600177
+TIMESTAMP = 1681528717
+SHA256 (go/biology_taxonkit/taxonkit-v0.14.2/v0.14.2.mod) = 821f2ea553848ba4acd76e01d18c1026ed94979d59314a16d2c1dd958a1fff92
+SIZE (go/biology_taxonkit/taxonkit-v0.14.2/v0.14.2.mod) = 1022
+SHA256 (go/biology_taxonkit/taxonkit-v0.14.2/v0.14.2.zip) = c02cbdd24e7c26b312b26fd63e0c1bf2de27fdab37d0905e8f473170e2031681
+SIZE (go/biology_taxonkit/taxonkit-v0.14.2/v0.14.2.zip) = 1601649
