@@ -1,5 +1,5 @@
 PORTNAME=	pytest-localserver
-PORTVERSION=	0.7.0
+PORTVERSION=	0.7.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosmtpd>0:mail/py-aiosmtpd@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=0.10:www/py-werkzeug@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR}
 
-USES=		pytest python:3.6+
+USES=		pytest python:3.7+
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
