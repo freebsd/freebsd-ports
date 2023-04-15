@@ -27,7 +27,6 @@ CXX=		${LOCALBASE}/bin/clang++13
 .endif
 
 do-test: # same as recommended in https://github.com/David-Haim/concurrencpp#building-installing-and-testing
-	# test async_lock_tests never finishes, see https://github.com/David-Haim/concurrencpp/issues/85
 	@cd ${WRKSRC} && \
 		${CMAKE_BIN} -S test -B build/test && \
 		${CMAKE_BIN} --build build/test && \
