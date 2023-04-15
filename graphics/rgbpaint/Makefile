@@ -1,6 +1,6 @@
 PORTNAME=	rgbpaint
 PORTVERSION=	0.8.7
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 MASTER_SITES=	SF/mtpaint/${PORTNAME}/${PORTVERSION}
 
@@ -10,14 +10,17 @@ WWW=		http://mtpaint.sourceforge.net/rgbpaint.html
 
 LICENSE=	GPLv2+
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: brcosa_pal
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: brcosa_pal
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
 
-USES=		gettext gnome pkgconfig tar:bzip2
-USE_GNOME=	gtk20
+USES=		gettext gnome pkgconfig tar:bzip2 xorg
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_XORG=	x11
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MAN1PREFIX}/man/man1 \
 		--locale=${PREFIX}/share/locale cflags slow intl man
+CFLAGS+=	-fcommon
 
 DESKTOP_ENTRIES="rgbPaint" "" "" "${PORTNAME}" "" true
 
