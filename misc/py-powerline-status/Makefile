@@ -1,11 +1,15 @@
 PORTNAME=	powerline-status
 PORTVERSION=	2.8.3
+PORTREVISION=	1
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Statusline plugin for vim, zsh, bash, and more
 WWW=		https://github.com/powerline/powerline
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	50d73bfbc8903d526e9de2bf98521e00206c018a.patch:-p1
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/docs/source/license-and-credits.rst
