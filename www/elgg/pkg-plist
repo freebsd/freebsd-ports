@@ -17994,6 +17994,8 @@
 %%WWWDIR%%/vendor/psr/http-message/CHANGELOG.md
 %%WWWDIR%%/vendor/psr/http-message/LICENSE
 %%WWWDIR%%/vendor/psr/http-message/README.md
+%%WWWDIR%%/vendor/psr/http-message/docs/PSR7-Interfaces.md
+%%WWWDIR%%/vendor/psr/http-message/docs/PSR7-Usage.md
 %%WWWDIR%%/vendor/psr/http-message/src/RequestInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/StreamInterface.php
 %%WWWDIR%%/vendor/psr/http-message/src/MessageInterface.php
