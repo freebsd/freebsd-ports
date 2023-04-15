@@ -67,7 +67,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: brnrd@FreeBSD.org
 
   Users using DEFAULT_VERSIONS=ssl=openssl-devel must update their
-  configuration to DEFAULT_VERSIUONS=ssl=openssl30 or openssl31.
+  configuration to DEFAULT_VERSIONS=ssl=openssl30 or openssl31.
 
 20230313:
   AFFECTS: users of databases/sqlite3
