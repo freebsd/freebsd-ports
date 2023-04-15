@@ -288,6 +288,8 @@ share/doc/HTML/es/kcontrol/componentchooser/index.cache.bz2
 share/doc/HTML/es/kcontrol/componentchooser/index.docbook
 share/doc/HTML/es/kcontrol/joystick/index.cache.bz2
 share/doc/HTML/es/kcontrol/joystick/index.docbook
+share/doc/HTML/es/kcontrol/kcmaccess/index.cache.bz2
+share/doc/HTML/es/kcontrol/kcmaccess/index.docbook
 share/doc/HTML/es/kcontrol/kcmlaunchfeedback/index.cache.bz2
 share/doc/HTML/es/kcontrol/kcmlaunchfeedback/index.docbook
 share/doc/HTML/es/kcontrol/kcmsmserver/index.cache.bz2
@@ -300,12 +302,16 @@ share/doc/HTML/es/kcontrol/mouse/index.cache.bz2
 share/doc/HTML/es/kcontrol/mouse/index.docbook
 share/doc/HTML/es/kcontrol/paths/index.cache.bz2
 share/doc/HTML/es/kcontrol/paths/index.docbook
+share/doc/HTML/es/kcontrol/solid-actions/index.cache.bz2
+share/doc/HTML/es/kcontrol/solid-actions/index.docbook
 share/doc/HTML/es/kcontrol/solid-device-automounter/index.cache.bz2
 share/doc/HTML/es/kcontrol/solid-device-automounter/index.docbook
 share/doc/HTML/es/kcontrol/spellchecking/index.cache.bz2
 share/doc/HTML/es/kcontrol/spellchecking/index.docbook
 share/doc/HTML/es/kcontrol/splashscreen/index.cache.bz2
 share/doc/HTML/es/kcontrol/splashscreen/index.docbook
+share/doc/HTML/es/kcontrol/workspaceoptions/index.cache.bz2
+share/doc/HTML/es/kcontrol/workspaceoptions/index.docbook
 share/doc/HTML/es/kfontview/index.cache.bz2
 share/doc/HTML/es/kfontview/index.docbook
 share/doc/HTML/es/knetattach/index.cache.bz2
@@ -2949,6 +2955,7 @@ share/locale/sk/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/sk/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/sk/LC_MESSAGES/kcm_tablet.mo
 share/locale/sk/LC_MESSAGES/kcm_touchpad.mo
+share/locale/sk/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/sk/LC_MESSAGES/kcm_workspace.mo
 share/locale/sk/LC_MESSAGES/kcmkclock.mo
 share/locale/sk/LC_MESSAGES/kcmkeyboard.mo

@@ -1,5 +1,4 @@
 PORTNAME=	kinfocenter
-PORTREVISION=	2
 DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	sysutils kde kde-plasma
 

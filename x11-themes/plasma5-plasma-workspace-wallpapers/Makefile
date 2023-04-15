@@ -1,5 +1,5 @@
 PORTNAME=	plasma-workspace-wallpapers
-DISTVERSION=	${KDE_PLASMA_VERSION}
+DISTVERSION=	${KDE_PLASMA_VERSION}.1
 CATEGORIES=	x11-themes kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org

@@ -713,6 +713,7 @@ share/locale/sk/LC_MESSAGES/kcm_glx.mo
 share/locale/sk/LC_MESSAGES/kcm_interrupts.mo
 share/locale/sk/LC_MESSAGES/kcm_kwinsupportinfo.mo
 share/locale/sk/LC_MESSAGES/kcm_nic.mo
+share/locale/sk/LC_MESSAGES/kcm_opencl.mo
 share/locale/sk/LC_MESSAGES/kcm_pci.mo
 share/locale/sk/LC_MESSAGES/kcm_vulkan.mo
 share/locale/sk/LC_MESSAGES/kcm_wayland.mo
