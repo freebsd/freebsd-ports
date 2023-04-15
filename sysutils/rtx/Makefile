@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.28.3
+DISTVERSION=	1.28.5
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -191,9 +191,9 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		sct-0.7.0 \
 		self_update-0.36.0 \
 		semver-1.0.17 \
-		serde-1.0.159 \
-		serde_derive-1.0.159 \
-		serde_json-1.0.95 \
+		serde-1.0.160 \
+		serde_derive-1.0.160 \
+		serde_json-1.0.96 \
 		serde_spanned-0.6.1 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.6 \
@@ -209,7 +209,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.13 \
+		syn-2.0.14 \
 		tempfile-3.5.0 \
 		tera-1.18.1 \
 		termcolor-1.1.3 \
