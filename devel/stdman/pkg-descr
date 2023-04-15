@@ -1,0 +1,5 @@
+stdman is a tool that parses archived HTML files from cppreference and
+generates groff-formatted manual pages for Unix-based systems.
+The goal is to provide excellent formatting for easy readability.
+
+This port installs pre-compiled man pages provided by upstream.
