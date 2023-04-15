@@ -1,8 +1,8 @@
 PORTNAME=	gstreamer1-libav
-PORTVERSION=	1.20.5
+DISTVERSION=	1.22.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-libav/
-DISTNAME=	gst-libav-${PORTVERSION}
+MASTER_SITES=	https://gstreamer.freedesktop.org/src/gst-libav/
+DISTNAME=	gst-libav-${DISTVERSION}
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer plug-in with many audio/video decoders/encoders
@@ -18,10 +18,11 @@ LIB_DEPENDS=	liborc-0.4.so:devel/orc \
 PORTSCOUT=	limitw:1,even
 
 USES=		bison gettext-runtime gnome gstreamer libtool localbase \
-		meson ninja pkgconfig python:3.8+,build tar:xz
+		meson ninja pkgconfig python:3.8+,build shebangfix tar:xz
 USE_GNOME=	glib20
-MESON_ARGS=	-Ddoc=disabled
+SHEBANG_FILES=	scripts/gen-changelog.py \
+		scripts/extract-release-date-from-doap-file.py
 
-BINARY_ALIAS=	python3=${PYTHON_VERSION}
+MESON_ARGS=	-Ddoc=disabled
 
 .include <bsd.port.mk>
