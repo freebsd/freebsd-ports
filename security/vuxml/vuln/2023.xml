@@ -1,3 +1,36 @@
+  <vuln vid="6f0327d4-9902-4042-9b68-6fc2266944bc">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>112.0.5615.121</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>112.0.5615.121</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/04/stable-channel-update-for-desktop_14.html">
+	 <p>This update includes 2 security fixes:</p>
+	 <ul>
+	   <li>[1432210] High CVE-2023-2033: Type Confusion in V8. Reported by Clément Lecigne of Google's Threat Analysis Group on 2023-04-11</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2033</cvename>
+      <url>https://chromereleases.googleblog.com/2023/04/stable-channel-update-for-desktop_14.html</url>
+    </references>
+    <dates>
+      <discovery>2023-04-14</discovery>
+      <entry>2023-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="25872b25-da2d-11ed-b715-a1e76793953b">
     <topic>ghostscript -- exploitable buffer overflow in (T)BCP in PS interpreter</topic>
     <affects>
