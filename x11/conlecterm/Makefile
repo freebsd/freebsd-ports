@@ -1,7 +1,7 @@
 PORTNAME=	conlecterm
-PORTVERSION=	1.4.3.0
+PORTVERSION=	1.4.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	0
 CATEGORIES=	x11
 
 MAINTAINER=	hsw@bitmark.com
@@ -25,54 +25,58 @@ INSTALL_TARGET=	install-strip
 USE_GITHUB=	yes
 GH_ACCOUNT=	hxw
 
-USE_CABAL=	OneTuple-0.3.1_2 \
+USE_CABAL=	OneTuple-0.4.1.1 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \
-		X11-1.10.2 \
-		aeson-2.0.3.0 \
-		alex-3.2.7.1 \
-		assoc-1.0.2_2 \
-		attoparsec-0.14.4_1 \
-		base-compat-0.12.1 \
-		base-compat-batteries-0.12.1_2 \
-		base-orphans-0.8.6 \
-		bifunctors-5.5.11_1 \
+		X11-1.10.3 \
+		aeson-2.1.2.1_3 \
+		alex-3.2.7.2 \
+		assoc-1.1 \
+		attoparsec-0.14.4_3 \
+		base-compat-0.13.0 \
+		base-compat-batteries-0.13.0 \
+		base-orphans-0.9.0 \
+		bifunctors-5.6.1 \
 		cairo-0.13.8.2 \
 		comonad-5.0.8_1 \
 		contravariant-1.5.5 \
+		data-array-byte-0.1.0.1_1 \
 		data-default-class-0.1.2.0 \
-		data-fix-0.3.2_2 \
+		data-fix-0.3.2_4 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
+		foldable1-classes-compat-0.1_2 \
+		generically-0.1.1_1 \
 		gio-0.13.8.2 \
 		glib-0.13.8.2 \
 		gtk2hs-buildtools-0.13.8.3 \
 		gtk3-0.15.7 \
-		happy-1.20.0 \
-		hashable-1.4.0.2 \
-		hashtables-1.3 \
-		indexed-traversable-0.1.2_1 \
-		indexed-traversable-instances-0.1.1 \
-		integer-logarithms-1.0.3.1_2 \
+		happy-1.20.1.1 \
+		hashable-1.4.2.0_1 \
+		hashtables-1.3.1 \
+		indexed-traversable-0.1.2.1 \
+		indexed-traversable-instances-0.1.1.2_1 \
+		integer-logarithms-1.0.3.1_4 \
 		pango-0.13.8.2 \
-		primitive-0.7.3.0 \
-		random-1.2.1 \
-		scientific-0.3.7.0_2 \
-		semialign-1.2.0.1_1 \
-		semigroupoids-5.3.7 \
-		splitmix-0.1.0.4 \
-		strict-0.4.0.1_4 \
-		tagged-0.8.6.1_2 \
-		text-short-0.1.5 \
-		th-abstraction-0.4.3.0 \
-		these-1.1.1.1_5 \
-		time-compat-1.9.6.1_3 \
-		transformers-compat-0.7.1_1 \
-		unordered-containers-0.2.17.0 \
+		primitive-0.8.0.0 \
+		random-1.2.1.1 \
+		scientific-0.3.7.0_5 \
+		semialign-1.3 \
+		semigroupoids-6.0.0.1 \
+		splitmix-0.1.0.4_2 \
+		strict-0.5 \
+		tagged-0.8.7 \
+		text-short-0.1.5_2 \
+		th-abstraction-0.5.0.0 \
+		these-1.2 \
+		time-compat-1.9.6.1_5 \
+		transformers-compat-0.7.2 \
+		unordered-containers-0.2.19.1_2 \
 		utf8-string-1.0.2 \
-		uuid-types-1.0.5_2 \
-		vector-0.12.3.1_1 \
-		witherable-0.4.2_2
+		uuid-types-1.0.5_4 \
+		vector-0.13.0.0_3 \
+		vector-stream-0.1.0.0_2 \
+		witherable-0.4.2_4
 
 PLIST_FILES+=	share/applications/conlecterm.desktop
 PLIST_FILES+=	share/icons/hicolor/scalable/apps/conlecterm.svg
