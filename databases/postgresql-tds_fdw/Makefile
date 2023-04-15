@@ -12,7 +12,7 @@ LICENSE=	PostgreSQL
 
 LIB_DEPENDS=	libsybdb.so:databases/freetds
 
-USES=		gmake pgsql:9.6+
+USES=		gmake pgsql:11+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	tds-fdw

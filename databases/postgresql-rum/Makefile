@@ -10,7 +10,7 @@ WWW=		https://github.com/postgrespro/rum
 
 LICENSE=	PostgreSQL
 
-USES=		gmake pgsql:9.6+
+USES=		gmake pgsql:11+
 
 LLD_UNSAFE=	yes
 USE_GITHUB=	yes

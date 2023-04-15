@@ -9,7 +9,7 @@ WWW=		https://github.com/dalibo/pg_stat_kcache
 
 LICENSE=	PostgreSQL
 
-USES=		gmake pgsql:9.6+
+USES=		gmake pgsql:11+
 LLD_UNSAFE=	yes
 WANT_PGSQL=	server contrib
 

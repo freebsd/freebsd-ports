@@ -5,13 +5,13 @@
 #
 # version 	Maintainer can set versions required. You can set this to
 #		[min]-[max] or min+ or -max or as an explicit version
-#		(eg. 9.3-9.6 for [min]-[max], 9.5+ or 9.6-
-#		for min+ and max-, 9.4 for an explicit version). Example:
+#		(eg. 11-14 for [min]-[max], 11+ or 12-
+#		for min+ and max-, 13 for an explicit version). Example:
 #
-#		    USES=pgsql:9.4		# Only use PostgreSQL 9.4
-#		    USES=pgsql:9.3+		# Use PostgreSQL 9.3 or newer
-#		    USES=pgsql:9.3-9.6	# Use PostgreSQL between 9.3 & 9.6
-#		    USES=pgsql:9.6-		# Use any PostgreSQL up to 9.6
+#		    USES=pgsql:13		# Only use PostgreSQL 13
+#		    USES=pgsql:11+		# Use PostgreSQL 11 or newer
+#		    USES=pgsql:11-14	# Use PostgreSQL between 11 & 14 inclusive
+#		    USES=pgsql:12-		# Use any PostgreSQL up to 12
 #		    USES=pgsql		# Use the default PostgreSQL
 #
 #		WANT_PGSQL=	server[:fetch] plperl plpython pltcl

@@ -13,7 +13,7 @@ LICENSE_NAME=	postcardware
 LICENSE_FILE=	${WRKSRC}/LICENSE
 LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
 
-USES=		compiler:c11 gmake pgsql:10+
+USES=		compiler:c11 gmake pgsql:11+
 
 LLD_UNSAFE=	yes
 MAKE_ARGS=	CC="${CC}"

@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/postgresql/pg_stat_kcache.so:databases/pg_stat_kca
 USE_GITHUB=	yes
 GH_ACCOUNT=	powa-team
 
-USES=		gmake pgsql:9.4+
+USES=		gmake pgsql:11+
 WANT_PGSQL=	server contrib
 
 pre-patch:

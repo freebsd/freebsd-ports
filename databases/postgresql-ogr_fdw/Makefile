@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libgdal.so:graphics/gdal
 
-USES=		gmake pgsql:9.3+
+USES=		gmake pgsql:11+
 WANT_PGSQL=	server
 USE_GITHUB=	yes
 GH_ACCOUNT=	pramsey

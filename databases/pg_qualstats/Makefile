@@ -11,7 +11,7 @@ LICENSE=	PostgreSQL
 USE_GITHUB=	yes
 GH_ACCOUNT=	powa-team
 
-USES=		gmake pgsql:9.4+
+USES=		gmake pgsql:11+
 LLD_UNSAFE=	yes
 WANT_PGSQL=	server
 
