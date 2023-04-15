@@ -12,7 +12,7 @@
 @@ -81,7 +83,7 @@ do
        fi
        for j in $set
-       do 
+       do
 -        netperf $HDR -T $i,$j -t omni -c -C -H $control_host -l $length $confidence -- $CSV -H $data -m 64K;HDR="-P 0";
 +        $NETPERF $HDR -T $i,$j -t omni -c -C -H $control_host -l $length $confidence -- $CSV -H $data -m 64K;HDR="-P 0";
        done

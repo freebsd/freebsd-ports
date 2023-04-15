@@ -11,11 +11,11 @@
 @@ -84,11 +87,11 @@ echo four dl585 G5 clients rh5.2, each w
    echo TCP_STREAM
    for i in $concurrent_sessions; do
-     j=0; 
+     j=0;
 -    NETUUID=`netperf -t uuid`;
 +    NETUUID=`$NETPERF -t uuid`;
      echo $i concurrent streams id $NETUUID;
-     while [ $j -lt $i ]; do 
+     while [ $j -lt $i ]; do
        client=`expr $j % $num_cli` ;
 -      netperf $HDR -t omni -c -C -H ${remote_hosts[$client]} -l $length $confidence -- $CSV -H ${remote_hosts[$client]} $socket_sizes -m 64K -u $NETUUID & HDR="-P 0";
 +      $NETPERF $HDR -t omni -c -C -H ${remote_hosts[$client]} -l $length $confidence -- $CSV -H ${remote_hosts[$client]} $socket_sizes -m 64K -u $NETUUID & HDR="-P 0";

@@ -1,16 +1,18 @@
 PORTNAME=	netperf
-PORTVERSION=	2.7.1.p20170921
+PORTVERSION=	2.7.1.p20210121
 PORTREVISION=	1
 CATEGORIES=	benchmarks
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	marius@FreeBSD.org
 COMMENT=	Network performance benchmarking package
 WWW=		https://hewlettpackard.github.io/netperf/
+
+USES=		autoreconf:build,2.69
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	HewlettPackard
 #GH_TAGNAME=	${PORTNAME}-${PORTVERSION}
-GH_TAGNAME=	d566775bf
+GH_TAGNAME=	3bc455b23
 
 OPTIONS_DEFINE=		EXAMPLES EXS HISTOGRAM INFO OMNI SCTP SOCKETS
 OPTIONS_DEFAULT=	${OPTIONS_DEFINE}
@@ -23,9 +25,7 @@ SOCKETS_DESC=	Enable Unix Domain socket support
 
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	"transform="
-CONFIGURE_ARGS=	--program-prefix="" --program-suffix="" --enable-dirty \
-		--enable-demo --enable-burst --enable-intervals
+CONFIGURE_ARGS=	--enable-burst --enable-demo --enable-dirty --enable-intervals
 CFLAGS+=	-fcommon
 
 INFO_INFO=	netperf
@@ -46,6 +46,10 @@ post-patch:
 .for i in ${SCRIPTS}
 	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' ${WRKSRC}/doc/examples/$i
 .endfor
+	@${REINPLACE_CMD} -E -e 's,(conf|header),\12.69,g' ${WRKSRC}/autogen.sh
+
+pre-configure:
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ./autogen.sh
 
 post-install:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

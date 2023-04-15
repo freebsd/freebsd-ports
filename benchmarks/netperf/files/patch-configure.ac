@@ -1,0 +1,20 @@
+--- configure.ac.orig	2021-01-21 16:02:24 UTC
++++ configure.ac
+@@ -472,7 +472,7 @@ case "$enable_sctp" in
+ #include <sys/socket.h>
+ ]])
+ 		case "$host" in
+-		*-*-freebsd[[7-9]].* | *-*-freebsd1[[0-2]].* )
++		*-*-freebsd[[7-9]].* | *-*-freebsd[[1-9]][[0-9]].*)
+ 			# FreeBSD 7.x and later SCTP support doesn't need -lsctp.
+ 			;;
+ 		*)
+@@ -704,7 +704,7 @@ case "$enable_cpuutil" in
+ 			enable_cpuutil="kstat - auto"
+ 			NETCPU_SOURCE="kstat"
+ 			;;
+-                     *-*-freebsd[[4-9]].* | *-*-freebsd1[[0-2]].* | *-*-netbsd[[1-9]].* )
++                     *-*-freebsd[[4-9]].* | *-*-freebsd[[1-9]][[0-9]].* | *-*-netbsd[[1-9]].* )
+ 			use_cpuutil=true
+ 			AC_DEFINE([USE_SYSCTL],,[Use MumbleBSD's sysctl interface to measure CPU util.])
+ 			enable_cpuutil="sysctl - auto"
