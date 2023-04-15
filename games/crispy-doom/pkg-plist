@@ -33,6 +33,7 @@ share/applications/screensavers/io.github.fabiangreffrath.Doom_Screensaver.deskt
 share/bash-completion/completions/crispy-doom
 share/bash-completion/completions/crispy-heretic
 share/bash-completion/completions/crispy-hexen
+share/bash-completion/completions/crispy-strife
 %%PORTDOCS%%%%DOCSDIR%%/CMDLINE.doom
 %%PORTDOCS%%%%DOCSDIR%%/COPYING.md
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
