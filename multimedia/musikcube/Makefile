@@ -1,5 +1,5 @@
 PORTNAME=	musikcube
-DISTVERSION=	0.99.7
+DISTVERSION=	0.99.8
 CATEGORIES=	multimedia audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,6 +30,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libvorbis.so:audio/libvorbis
 
 USES=		cmake:noninja compiler:c++17-lang pkgconfig ssl
+USES+=		localbase # workaround for https://github.com/clangen/musikcube/issues/600
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
