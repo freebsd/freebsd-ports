@@ -16,7 +16,6 @@ ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS=	zip:archivers/zip \
 		autoconf>0:devel/autoconf \
-		${LOCALBASE}/include/cups/cups.h:print/cups \
 		bash:shells/bash \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
@@ -69,6 +68,15 @@ BSD_JDK_VERSION=	1
 
 JDK_BUG_URL=	https://bugs.freebsd.org/bugzilla/enter_bug.cgi?product=Ports%20%26%20Packages&component=Individual%20Port(s)&short_desc=java/${PORTNAME}${JDK_MAJOR_VERSION}%3A%20
 
+OPTIONS_DEFINE=		CUPS
+OPTIONS_DEFAULT=	CUPS
+
+CUPS_CONFIGURE_ON=	--with-cups=${LOCALBASE}
+CUPS_CONFIGURE_OFF=	--with-cups-include=${WRKDIR}/cups-${CUPS_INC_VER}
+CUPS_BUILD_DEPENDS=	${LOCALBASE}/include/cups/cups.h:print/cups
+CUPS_INC_VER=		2.4.2
+CUPS_DISTFILES_OFF=	OpenPrinting-cups-v${CUPS_INC_VER}_GH0.tar.gz:cups
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC=${CC} \
 		CXX=${CXX} \
@@ -80,7 +88,6 @@ CONFIGURE_ARGS=	--with-boot-jdk=${BOOTSTRAPJDKDIR} \
 		--disable-hotspot-gtest \
 		--with-jvm-features=shenandoahgc \
 		--with-alsa=${LOCALBASE} \
-		--with-cups=${LOCALBASE} \
 		--with-fontconfig=${LOCALBASE} \
 		--with-freetype=system \
 		--with-freetype-include=${LOCALBASE}/include/freetype2 \
@@ -112,6 +119,10 @@ ALL_TARGET=		images
 JDK_BUILD_TYPE=		release
 
 .include <bsd.port.pre.mk>
+
+.if !${PORT_OPTIONS:MCUPS}
+MASTER_SITES+=	https://codeload.github.com/OpenPrinting/cups/tar.gz/v${CUPS_INC_VER}?dummy=/:cups
+.endif
 
 BOOTSTRAP_JDKS=	${LOCALBASE}/openjdk11 \
 		${LOCALBASE}/bootstrap-openjdk11
