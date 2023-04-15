@@ -13,7 +13,12 @@ lib/cmake/KF5KirigamiAddons/KF5KirigamiAddonsConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/private/MobileDateInput.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/private/TumblerTimePicker.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/dateandtime/qmldir
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/AbstractMaximizeComponent.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/AlbumMaximizeComponent.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/AlbumModelItem.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/ImageMaximizeDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/SearchPopupField.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/VideoMaximizeDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/libcomponentsplugin.so
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/components/qmldir
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/AboutKDE.qml
@@ -29,11 +34,13 @@ lib/cmake/KF5KirigamiAddons/KF5KirigamiAddonsConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormDelegateSeparator.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormRadioDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormSectionText.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormSpinBoxDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormSwitchDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormTextDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormTextFieldDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/libmobileformplugin.so
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/private/ContentItemLoader.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/private/SpinButton.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/qmldir
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/sounds/SoundsPicker.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/sounds/libsoundsplugin.so
