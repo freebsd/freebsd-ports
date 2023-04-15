@@ -1,6 +1,5 @@
 PORTNAME=	prowlarr
-DISTVERSION=	1.2.2.2699
-PORTREVISION=	1
+DISTVERSION=	1.3.2.3006
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Prowlarr/Prowlarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Prowlarr.master.${PORTVERSION}.freebsd-core-x64
@@ -15,6 +14,7 @@ ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		icu>0:devel/icu \
+		krb5>0:security/krb5 \
 		libiconv>0:converters/libiconv \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind \
