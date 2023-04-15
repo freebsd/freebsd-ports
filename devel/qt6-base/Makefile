@@ -4,6 +4,9 @@ PORTREVISION=	2
 CATEGORIES=	devel
 PKGNAMEPREFIX=	qt6-
 
+PATCH_SITES=	https://github.com/qt/qtbase/commit/
+PATCHFILES=	3f45905953d57e0174059d7d9d6bc75c3c1c406c.patch:-p1
+
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Qt base (core, gui, widgets, network,...)
 WWW=		https://www.qt.io/
