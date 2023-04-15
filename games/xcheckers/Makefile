@@ -1,6 +1,6 @@
 PORTNAME=	xcheckers
 PORTVERSION=	2.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://arton.cunst.net/xcheckers/
 
@@ -8,14 +8,13 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkers game for X11
 WWW=		https://arton.cunst.net/xcheckers/index.html
 
-BROKEN_FreeBSD_13=	duplicate symbol: board
-BROKEN_FreeBSD_14=	duplicate symbol: board
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		imake xorg
 USE_XORG=	x11 xext xpm
 
-post-patch:
-	@${REINPLACE_CMD} '/^#/d' ${WRKSRC}/Local.config
+CFLAGS+=	-fcommon
 
 pre-install:
 	@${REINPLACE_CMD} 's:@LOCALBASE@:${LOCALBASE}:g' \
