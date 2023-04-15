@@ -1,7 +1,6 @@
 PORTNAME=	rospo
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.4
-PORTREVISION=	1
+DISTVERSION=	0.10.5
 CATEGORIES=	net net-vpn sysutils
 MASTER_SITES=	https://github.com/ferama/rospo/releases/download/v${DISTVERSION}/ui-artifacts.tar.gz?dummy=/:artifacts
 DISTFILES=	${PORTNAME}-ui-artifacts-${DISTVERSION}.tar.gz:artifacts
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 GO_MODULE=	github.com/ferama/rospo
-GO_BUILDFLAGS=	-ldflags="-X github.com/ferama/rospo/cmd.Version=${DISTVERSION} ${STRIP}"
+GO_BUILDFLAGS=	-ldflags="-X github.com/ferama/rospo/cmd.Version=${PKGVERSION} ${STRIP}"
 
 PLIST_FILES=	bin/rospo \
 		etc/bash_completion.d/rospo \
