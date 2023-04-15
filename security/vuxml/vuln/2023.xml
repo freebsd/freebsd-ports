@@ -1,3 +1,37 @@
+  <vuln vid="e8b20517-dbb6-11ed-bf28-589cfc0f81b0">
+    <topic>mod_gnutls -- Infinite Loop on request read timeout</topic>
+    <affects>
+      <package>
+	<name>ap24-mod_gnutls</name>
+	<range><lt>0.12.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The mod_gnutls project reports:</p>
+	<blockquote cite="https://lists.gnupg.org/pipermail/mod_gnutls-devel/2023-February/000221.html">
+	  <p>Mod_gnutls is a TLS module for Apache HTTPD based on GnuTLS.  Versions
+	  from 0.9.0 to 0.12.0 (including) did not properly fail blocking
+	  read operations on TLS connections when the transport hit timeouts.
+	  Instead it entered an endless loop retrying the read operation,
+	  consuming CPU resources.  This could be exploited for denial of
+	  service attacks.  If trace level logging was enabled, it would also
+	  produce an excessive amount of log output during the loop, consuming
+	  disk space.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-25824</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-25824</url>
+      <url>https://mod.gnutls.org/browser/mod_gnutls/CHANGELOG?rev=17b2836dc3e27754159ffb098323a4cd4426192f</url>
+    </references>
+    <dates>
+      <discovery>2023-02-23</discovery>
+      <entry>2023-04-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6f0327d4-9902-4042-9b68-6fc2266944bc">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
