@@ -32,8 +32,12 @@
  gem 'net-pop', '~> 0.1.1'
  # Rails 6.1.6.1 does not work with Pysch 3.0.2, which is installed by default with Ruby 2.5. See https://github.com/rails/rails/issues/45590
  gem 'psych', '>= 3.1.0' if Gem.ruby_version < Gem::Version.new('2.6.0')
-@@ -37,82 +37,6 @@ end
-   gem 'net-ldap', '~> 0.17.0'
+@@ -34,85 +34,9 @@ group :ldap do
+ 
+ # Optional gem for LDAP authentication
+ group :ldap do
+-  gem 'net-ldap', '~> 0.17.0'
++  gem 'net-ldap', '>= 0.17.0'
  end
  
 -# Optional gem for exporting the gantt to a PNG file
