@@ -1,0 +1,11 @@
+--- src_c/P2P/Makefile.orig	2021-10-01 13:09:19 UTC
++++ src_c/P2P/Makefile
+@@ -50,7 +50,7 @@ BINARY:=IMB-P2P
+ TARGET=P2P
+ BINARY:=IMB-P2P
+ 
+-override CFLAGS += -O3 -Wall -Wextra -pedantic -Wno-long-long
++override CFLAGS += -Wall -Wextra -pedantic -Wno-long-long
+ override LDFLAGS += -lm
+ 
+ ifeq ($(origin CC),default)
