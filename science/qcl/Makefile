@@ -1,6 +1,5 @@
 PORTNAME=	qcl
-PORTVERSION=	0.6.4
-PORTREVISION=	2
+PORTVERSION=	0.6.7
 CATEGORIES=	science math
 MASTER_SITES=	http://tph.tuwien.ac.at/~oemer/tgz/
 
@@ -16,13 +15,14 @@ PLIST_FILES=	bin/qcl
 PORTDATA=	*
 
 OPTIONS_DEFINE=		PLOTUTILS
+OPTIONS_DEFAULT=	PLOTUTILS
 
 PLOTUTILS_DESC=		Plotting support via plotutils
 PLOTUTILS_LIB_DEPENDS=	libplotter.so:graphics/plotutils
 PLOTUTILS_CXXFLAGS=	-I${LOCALBASE}/include -DQCL_PLOT
 PLOTUTILS_LDFLAGS=	-L${LOCALBASE}/lib -lplotter
 
-post-patch:
+pre-configure:
 	@${REINPLACE_CMD} -e \
 		's|/usr/local|${PREFIX}| ; \
 		 s|lib/qcl|share/qcl| ; \
@@ -40,5 +40,8 @@ do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} qcl ${STAGEDIR}${PREFIX}/bin)
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 	(cd ${WRKSRC}/lib && ${INSTALL_DATA} *.qcl ${STAGEDIR}${DATADIR})
+
+do-test: install
+	qcl --color ${DATADIR}/test.qcl
 
 .include <bsd.port.mk>
