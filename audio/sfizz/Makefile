@@ -1,5 +1,5 @@
 PORTNAME=	sfizz
-DISTVERSION=	1.2.0
+DISTVERSION=	1.2.1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +26,7 @@ USES+=		compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	sfztools
 GH_TUPLE=	\
-		abseil:abseil-cpp:215105818dfde3174fe799600bb0f3cae233d0bf:abseil_abseil_cpp/external/abseil-cpp \
+		abseil:abseil-cpp:273292d1cfc0a94a65082ee350509af1d113344d:abseil_abseil_cpp/external/abseil-cpp \
 		steinbergmedia:vst3_base:985fe019276ee03c2751a1736ba3b390678e29f2:steinbergmedia_vst3_base/plugins/vst/external/VST_SDK/VST3_SDK/base \
 		steinbergmedia:vst3_pluginterfaces:93cef1afb7061e488625045ba5a82abaa83d27fe:steinbergmedia_vst3_pluginterfaces/plugins/vst/external/VST_SDK/VST3_SDK/pluginterfaces \
 		steinbergmedia:vst3_public_sdk:9589800ed94573354bc29de45eec5744523fbfcb:steinbergmedia_vst3_public_sdk/plugins/vst/external/VST_SDK/VST3_SDK/public.sdk \
@@ -35,11 +35,9 @@ GH_TUPLE=	\
 		sfztools:stb_vorbis:fc0bd698b26888da0a632da33f4c49b90763e69b:sfztools_stb_vorbis/external/st_audiofile/thirdparty/stb_vorbis \
 		sfztools:libaiff:78864a4a2e769e426be8cfd78ae7f5f72e236c33:sfztools_libaiff/external/st_audiofile/thirdparty/libaiff \
 		sfztools:sfzt_auwrapper:014311ae45b86571e1ae3aaa03ebbd7db8b3a32e:sfztools_sfzt_auwrapper/plugins/vst/external/sfzt_auwrapper \
-		gulrak:filesystem:614bbe87b80435d87ab8791564370e0c1d13627d:gulrak_filesystem/external/filesystem \
+		gulrak:filesystem:8a2edd6:gulrak_filesystem/external/filesystem \
 		simd-everywhere:simde:98075d0593f539762125dbb215d95e782a6ae344:simd_everywhere_simde/external/simde \
-		\
-		nemequ:munit:da8f73412998e4f1adf1100dc187533a51af77fd:nemequ_munit/external/simde/test/munit \
-		\
+			nemequ:munit:da8f73412998e4f1adf1100dc187533a51af77fd:nemequ_munit/external/simde/test/munit \
 		dr-soft:miniaudio:d1a166c83ab445b1c14bc83d37c84e18d172e5f5:dr_soft_miniaudio/external/st_audiofile/thirdparty/dr_libs/tests/external/miniaudio \
 
 USE_LDCONFIG=	yes
