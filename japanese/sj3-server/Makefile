@@ -1,6 +1,6 @@
 PORTNAME=	sj3
 PORTVERSION=	2.0.1.20
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	japanese
 MASTER_SITES=	LOCAL/nork
 PKGNAMESUFFIX=	-server
@@ -15,9 +15,6 @@ COMMENT=	Japanese input method, binary part
 LICENSE=	MIT
 LICENSE_FILE=	${FILESDIR}/COPYING
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: hs_point
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: hs_point
-
 LIB_DEPENDS=	libsj3lib.so:japanese/sj3-lib
 
 USES=		imake
@@ -25,7 +22,7 @@ USE_RC_SUBR=	sj3
 PLIST_SUB=	USERS=${USERS} GROUPS=${GROUPS}
 SUB_FILES=	sj3_freebsd.tmpl
 SUB_LIST=	DESTDIR=${DESTDIR}
-CFLAGS+=	-Wno-return-type
+CFLAGS+=	-Wno-return-type -fcommon
 USERS=		_sj3
 GROUPS=		_sj3
 PORTDOCS=	Nihongo.ps.Z hinsi.ms makedict.ms sj3lib.ms sj3serv.ms
