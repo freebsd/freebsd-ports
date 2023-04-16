@@ -1,5 +1,5 @@
 PORTNAME=	dplyr
-DISTVERSION=	1.0.10
+DISTVERSION=	1.1.1
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -16,11 +16,12 @@ BUILD_DEPENDS=	R-cran-assertthat>=0.2.0:math/R-cran-assertthat \
 		R-cran-pkgconfig>0:devel/R-cran-pkgconfig \
 		R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-Rcpp>=1.0.1:devel/R-cran-Rcpp \
-		R-cran-rlang>=0.4.0:devel/R-cran-rlang \
-		R-cran-tibble>=2.0.0:devel/R-cran-tibble \
+		R-cran-rlang>=1.1.0:devel/R-cran-rlang \
+		R-cran-tibble>=3.2.0:devel/R-cran-tibble \
 		R-cran-tidyselect>=0.2.5:devel/R-cran-tidyselect \
 		R-cran-BH>0:devel/R-cran-BH \
-		R-cran-plogr>=0.2.0:devel/R-cran-plogr
+		R-cran-plogr>=0.2.0:devel/R-cran-plogr \
+		R-cran-vctrs>=0.6.0:devel/R-cran-vctrs
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		cran:auto-plist,compiles
