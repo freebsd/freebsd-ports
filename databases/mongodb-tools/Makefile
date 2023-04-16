@@ -10,9 +10,6 @@ WWW=		https://docs.mongodb.com/database-tools/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 riscv64
-ONLY_FOR_ARCHS_REASON=	not yet ported to other architectures
-
 USES=		compiler:c++14-lang go localbase
 USE_GITHUB=	yes
 GH_ACCOUNT=	mongodb
@@ -21,7 +18,7 @@ GH_PROJECT=	mongo-tools
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${GH_PROJECT}
 GO_BUILDFLAGS=	-tags "${USE_MY_TAGS}"
 
-CONFLICTS_INSTALL=	mongodb36-tools mongodb4[02]-tools
+CONFLICTS_INSTALL=	mongodb4[02]-tools
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_DEFAULT=	BSONDUMP MONGODUMP MONGOEXPORT MONGOFILES MONGOIMPORT \
