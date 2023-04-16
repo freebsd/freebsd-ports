@@ -4,6 +4,7 @@ include/libtar_listhash.h
 lib/libtar.a
 lib/libtar.so
 lib/libtar.so.0
+lib/libtar.so.0.0.0
 man/man3/TH_ISBLK.3.gz
 man/man3/TH_ISCHR.3.gz
 man/man3/TH_ISDIR.3.gz
