@@ -1,6 +1,5 @@
 PORTNAME=	munge
-DISTVERSION=	0.5.14
-PORTREVISION=	1
+DISTVERSION=	0.5.15
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/dun/${PORTNAME}/releases/download/${PORTNAME}-${DISTVERSION}/
 
@@ -11,15 +10,17 @@ WWW=		https://dun.github.io/munge/
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-USES=		cpe libtool pathfix perl5 ssl tar:xz
-CPE_VENDOR=	opensuse
-GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 
+USES=		cpe libtool pathfix ssl tar:xz
+CPE_VENDOR=	opensuse
+USE_LDCONFIG=	yes
 USE_RC_SUBR=	munged
 
-INSTALL_TARGET=	install-strip
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl-prefix=${OPENSSLBASE}
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
