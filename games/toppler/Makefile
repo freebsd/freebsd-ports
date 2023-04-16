@@ -12,10 +12,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpng.so:graphics/png
 BUILD_DEPENDS=	gimp:graphics/gimp-app \
-		povray:graphics/povray-meta \
-		convert:graphics/ImageMagick7
+		povray:graphics/povray-meta
 
-USES=		gmake sdl pkgconfig
+USES=		gmake magick:build sdl pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	roever
 GL_COMMIT=	5e3e581bb7b58098f54df9b634c7bd4a23ba66b5
