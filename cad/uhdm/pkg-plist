@@ -58,6 +58,7 @@ include/uhdm/clocking_block.h
 include/uhdm/clocking_io_decl.h
 include/uhdm/clone_tree.h
 include/uhdm/concurrent_assertions.h
+include/uhdm/config.h
 include/uhdm/constant.h
 include/uhdm/constr_foreach.h
 include/uhdm/constr_if.h
@@ -205,6 +206,7 @@ include/uhdm/property_typespec.h
 include/uhdm/range.h
 include/uhdm/real_typespec.h
 include/uhdm/real_var.h
+include/uhdm/ref_module.h
 include/uhdm/ref_obj.h
 include/uhdm/ref_obj_interf_net_var_group.h
 include/uhdm/ref_var.h
@@ -290,7 +292,10 @@ include/uhdm/wait_fork.h
 include/uhdm/wait_stmt.h
 include/uhdm/waits.h
 include/uhdm/while_stmt.h
-lib/cmake/UHDMConfig.cmake
+lib/cmake/UHDM/UHDMConfig.cmake
+lib/cmake/UHDM/UHDMConfigVersion.cmake
+lib/cmake/UHDM/UHDMTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/UHDM/UHDMTargets.cmake
 lib/uhdm/UHDM.capnp
 lib/uhdm/libcapnp.so
 lib/uhdm/libcapnp.so.0.8.0
