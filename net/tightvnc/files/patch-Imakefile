@@ -1,0 +1,10 @@
+--- Imakefile.orig	2002-04-30 13:07:31 UTC
++++ Imakefile
+@@ -11,6 +11,7 @@ World:
+ 	@echo Built $(SUBDIRS).
+ 	@echo 'To build Xvnc, do "cd Xvnc", followed by "./configure" then "make"'
+ 	@echo ""
++	( cd Xvnc && ./configure && make )
+ 
+ libs:
+ 	@echo 'No libraries included.'

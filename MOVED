@@ -17858,7 +17858,6 @@ multimedia/dvdrip||2023-03-31|Has expired: Depends on broken transcode port
 multimedia/mkxvcd||2023-03-31|Has expired: Depends on broken transcode port
 multimedia/win32-codecs||2023-03-31|Has expired: Obsolete and users are recommended to utilize ffmpeg instead
 net/minisapserver||2023-03-31|Has expired: Obsolete utility, functionality is now included in multimedia/vlc
-net/tightvnc||2023-03-31|Has expired: Last release in 2009, newer version 2.x is available for Windows only
 news/nntpcache||2023-03-31|Has expired: Upstream site no longer available
 ports-mgmt/p5-FreeBSD-Portindex||2023-03-31|Has expired: Not working, and no fix forthcoming
 print/ghostscript9-x11||2023-03-31|Has expired: Released over 10 years ago and unsupported by upstream, consider print/ghostscript9-agpl-x11

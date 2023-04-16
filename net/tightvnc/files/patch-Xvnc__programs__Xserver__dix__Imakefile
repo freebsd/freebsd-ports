@@ -1,0 +1,20 @@
+--- Xvnc/programs/Xserver/dix/Imakefile.orig	2009-03-05 06:38:33 UTC
++++ Xvnc/programs/Xserver/dix/Imakefile
+@@ -43,15 +43,11 @@ OBJS = atom.o colormap.o cursor.o devices.o dispatch.o
+  * changed.
+  */
+ 
+-#ifdef DefaultFontPath
+-DEFAULTFONTPATH = DefaultFontPath
++DEFAULTFONTPATH = ${LOCALBASE}/share/fonts/misc
+ SITE_FONT_PATH = -DCOMPILEDDEFAULTFONTPATH=\"$(DEFAULTFONTPATH)\"
+-#endif
+ 
+-#ifdef DefaultRGBDatabase
+-DEFAULTRGBDATABASE = DefaultRGBDatabase
++DEFAULTRGBDATABASE = ${LOCALBASE}/lib/X11/rgb
+    SITE_RGB_DB = -DRGB_DB=\"$(DEFAULTRGBDATABASE)\"
+-#endif
+ 
+ #ifdef DefaultDisplayClass
+ DEFAULTDISPLAYCLASS = DefaultDisplayClass

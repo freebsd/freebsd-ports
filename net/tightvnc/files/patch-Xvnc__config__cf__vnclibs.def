@@ -1,0 +1,19 @@
+--- Xvnc/config/cf/vnclibs.def.orig	2003-05-03 09:31:55 UTC
++++ Xvnc/config/cf/vnclibs.def
+@@ -5,13 +5,6 @@
+  * and programs/Xserver/hw/vnc whenever you change this file.
+  */
+ 
+-VNCLIBS = $(TOP)/../libvncauth/libvncauth.a
+-
+-#ifdef OSF1Architecture
+-/* Avoid linking with different libjpeg in /usr/shlib under Tru64. */
+-VNCSYSLIBS = /usr/local/lib/libjpeg.a /usr/local/lib/libz.a -lcrypt
+-#else
+-VNCSYSLIBS = -L/usr/local/lib -ljpeg -lz -lcrypt
+-#endif
+-
+-VNCCPPFLAGS = -I$(TOP)/../include -I/usr/local/include
++VNCLIBS = $(TOP)/../libvncauth/libvncauth.a %%LOCALBASE%%/lib/libjpeg.a
++VNCCPPFLAGS = -I$(TOP)/../include -I%%LOCALBASE%%/include -L%%LOCALBASE%%/lib
++VNCSYSLIBS = -L%%LOCALBASE%%/lib -ljpeg -lz -lcrypt
