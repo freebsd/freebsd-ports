@@ -1,6 +1,5 @@
 PORTNAME=	vcmi
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	games
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -25,7 +24,7 @@ CMAKE_ARGS=	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON \
 		-DENABLE_GITVERSION:BOOL=OFF -DENABLE_TEST:BOOL=OFF \
 		-DFORCE_BUNDLED_FL:BOOL=OFF
 
-PORTDOCS=	AUTHORS ChangeLog README.md
+PORTDOCS=	AUTHORS ChangeLog.md README.md
 
 OPTIONS_DEFINE=	DOCS QT
 OPTIONS_DEFAULT=	QT
@@ -33,11 +32,12 @@ OPTIONS_SUB=	yes
 
 QT_DESC=	Build Qt-based game launcher and map editor
 QT_USES=	qt:5
-QT_USE=		QT=buildtools:build,qmake:build,core,gui,network,widgets
+QT_USE=		QT=buildtools:build,linguisttools:build,qmake:build \
+		QT=core,gui,network,widgets
 QT_CMAKE_OFF=	-DENABLE_LAUNCHER:BOOL=OFF -DENABLE_EDITOR:BOOL=OFF
 
 post-configure:
-	${SED} -e 's,@GIT_SHA1@,b429f0b,' ${WRKSRC}/Version.cpp.in \
+	${SED} -e 's,@GIT_SHA1@,c125e04,' ${WRKSRC}/Version.cpp.in \
 		> ${BUILD_WRKSRC}/Version.cpp
 
 post-install-DOCS-on:
