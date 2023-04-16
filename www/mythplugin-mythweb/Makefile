@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php shebangfix perl5
 USE_PERL5=	run
-USE_PHP=	json pcre posix mysqli session spl sockets
+USE_PHP=	posix mysqli session sockets
 USE_GITHUB=	yes
 GH_ACCOUNT=	MythTV
 SHEBANG_FILES=	mythweb.pl modules/_shared/lang/build_translation.pl \

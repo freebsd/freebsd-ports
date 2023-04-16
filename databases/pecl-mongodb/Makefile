@@ -8,8 +8,6 @@ WWW=		https://docs.mongodb.org/ecosystem/drivers/php/
 
 LICENSE=	APACHE20
 
-USES=		gmake php:pecl ssl
-USE_PHP=	spl:build
-CFLAGS+=	-I${LOCALBASE}/include
+USES=		gmake localbase php:build,pecl ssl
 
 .include <bsd.port.mk>

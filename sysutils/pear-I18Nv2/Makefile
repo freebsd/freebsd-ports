@@ -9,7 +9,7 @@ WWW=		https://pear.php.net/package/I18Nv2
 LICENSE=	PHP30
 
 USES=		pear
-USE_PHP=	iconv pcre
+USE_PHP=	iconv
 
 NO_ARCH=	yes
 

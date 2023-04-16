@@ -13,7 +13,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		drupal:7 php:web shebangfix
-USE_PHP=	dom filter gd hash json mbstring pcre pdo session simplexml xml
+USE_PHP=	dom filter gd mbstring pdo session simplexml xml
 
 SHEBANG_FILES=	scripts/password-hash.sh
 

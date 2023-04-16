@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 RUN_DEPENDS=	${LOCALBASE}/share/smarty3-${PHP_FLAVOR}/Smarty.class.php:www/smarty3@${PHP_FLAVOR}
 
 USES=		php:flavors,web
-USE_PHP=	filter hash ldap mbstring openssl phar session
+USE_PHP=	filter ldap mbstring phar session
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -102,7 +102,7 @@ USES+=		apache:run
 
 .if ${PORT_OPTIONS:MWEBHOST}
 USES+=	php
-USE_PHP=	bcmath ctype dom gettext hash iconv imap json mbstring \
+USE_PHP=	bcmath ctype dom gettext iconv imap mbstring \
 		mcrypt pdo pdo_sqlite posix session simplexml sockets \
 		sqlite3 tokenizer xml xmlreader xmlwriter xmlrpc
 

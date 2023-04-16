@@ -40,7 +40,7 @@ SHEBANG_FILES=	resources/timezones/*.php \
 		scripts/util/*.php \
 		support/aphlict/server/*.php
 
-USE_PHP=	ctype curl fileinfo filter hash iconv mbstring mysqli openssl \
+USE_PHP=	ctype curl fileinfo filter iconv mbstring mysqli \
 		pcntl posix zip
 
 OPTIONS_DEFINE=	GD OPCACHE

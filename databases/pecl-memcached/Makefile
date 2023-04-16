@@ -12,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	libmemcached>=1.0.18:databases/libmemcached
 LIB_DEPENDS=	libmemcached.so:databases/libmemcached
 
-USES=		php:pecl pkgconfig
-USE_PHP=	json:build session:build
+USES=		php:build,pecl pkgconfig
+USE_PHP=	session:build
 
 CONFIGURE_ARGS=	--enable-memcached-json \
 		--enable-memcached-protocol \

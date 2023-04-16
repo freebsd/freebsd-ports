@@ -12,7 +12,7 @@ USES=		cpe php shebangfix zip:infozip
 NO_BUILD=	yes
 PRESTADIR=	www/${PORTNAME}
 PLIST=		${WRKDIR}/plist
-USE_PHP=	ctype curl dom filter gd hash intl json mcrypt \
+USE_PHP=	ctype curl dom filter gd intl mcrypt \
 		mysqli pdo_mysql posix session simplexml soap
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message

@@ -1,5 +1,6 @@
 PORTNAME=	owncloud
 PORTVERSION=	10.12.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://download.owncloud.com/server/stable/ \
 		LOCAL/sunpoet
@@ -13,7 +14,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe php:flavors,web tar:bzip2
-USE_PHP=	bz2 ctype curl dom fileinfo filter gd hash iconv intl json \
+USE_PHP=	bz2 ctype curl dom fileinfo filter gd iconv intl \
 		mbstring pdo posix session simplexml xml xmlreader xmlwriter \
 		xsl zip zlib
 
@@ -28,10 +29,10 @@ PLIST_SUB=	OWNCLOUD_USER=${OWNCLOUD_USER} \
 		OWNCLOUD_GROUP=${OWNCLOUD_GROUP}
 SUB_FILES=	pkg-message newsyslog
 
-OPTIONS_DEFINE=	EXAMPLES EXIF LDAP SMB SSL
+OPTIONS_DEFINE=	EXAMPLES EXIF LDAP SMB
 OPTIONS_MULTI=	DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=EXIF LDAP MYSQL SMB SSL
+OPTIONS_DEFAULT=EXIF LDAP MYSQL SMB
 EXIF_DESC=	Image rotation support
 
 EXIF_USE=	PHP=exif
@@ -40,7 +41,6 @@ MYSQL_USE=	PHP=pdo_mysql
 PGSQL_USE=	PHP=pdo_pgsql
 SMB_RUN_DEPENDS=${PECL_PKGNAMEPREFIX}smbclient>=0.8.0:net/pecl-smbclient@${PHP_FLAVOR}
 SQLITE_USE=	PHP=pdo_sqlite
-SSL_USE=	PHP=openssl
 
 post-patch:
 	@${FIND} ${WRKSRC} -type d -empty -delete

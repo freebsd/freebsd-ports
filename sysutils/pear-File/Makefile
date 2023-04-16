@@ -8,6 +8,5 @@ COMMENT=	PEAR common file and directory routines
 WWW=		https://pear.php.net/package/File
 
 USES=		pear php
-USE_PHP=	pcre
 
 .include <bsd.port.mk>

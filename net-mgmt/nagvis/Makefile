@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gettext php:web
-USE_PHP=	gd gettext mbstring session json pdo pdo_sqlite
+USE_PHP=	gd gettext mbstring session pdo pdo_sqlite
 
 NO_BUILD=	yes
 NO_ARCH=	yes

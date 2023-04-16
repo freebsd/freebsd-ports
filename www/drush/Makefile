@@ -19,7 +19,7 @@ NO_ARCH=	yes
 
 USES=		php:cli,flavors
 # set php requirements same as drupal itself
-USE_PHP=	gd pcre session mbstring ctype json hash simplexml dom pdo filter phar
+USE_PHP=	gd session mbstring ctype simplexml dom pdo filter phar
 
 CONFLICTS_INSTALL=	drush-php* # bin/drush bin/drush.phar
 

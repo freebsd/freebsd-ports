@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}APCu>0:devel/pecl-APCu@${PHP_FLAVOR} \
 		${PECL_PKGNAMEPREFIX}uuid>0:devel/pecl-uuid@${PHP_FLAVOR}
 
 USES=		php:web,flavors
-USE_PHP=	curl dom gd iconv intl json mbstring openssl phar sodium tidy \
+USE_PHP=	curl dom gd iconv intl mbstring phar sodium tidy \
 		xml zip zlib
 
 NO_ARCH=	yes

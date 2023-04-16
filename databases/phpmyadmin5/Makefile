@@ -1,5 +1,6 @@
 PORTNAME=	phpMyAdmin
 DISTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	databases www
 MASTER_SITES=	https://files.phpmyadmin.net/${PORTNAME}/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -23,20 +24,21 @@ NO_BUILD=	yes
 
 # Note: composer.json files in the source list pcre as a required
 # extension, but pcre is compiled into PHP as standard on FreeBSD.
-# spl, libsodium are only required in the bundled vendor code. PMA
+# The same goes for the spl library.
+# libsodium are only required in the bundled vendor code. PMA
 # could, in principle, also use the PHP dbase extension, but it's not
 # available for PHP >= 7.0 and of only minority interest.
 
-USE_PHP=	ctype filter hash iconv json mysqli session spl xml xmlwriter
+USE_PHP=	ctype filter iconv mysqli session xml xmlwriter
 .endif
 
 # Note: default settings will pull in X11 client support.  If you don't
 # want this, either turn off GD in the config dialog, or else turn off
 # FONTCONFIG in the graphics/gd port options.
 
-OPTIONS_DEFINE=		BZ2 CURL GD GMP MBSTRING OPCACHE OPENSSL \
+OPTIONS_DEFINE=		BZ2 CURL GD GMP MBSTRING OPCACHE \
 			SODIUM ZIP ZLIB
-OPTIONS_DEFAULT=	BZ2 GD MBSTRING OPENSSL ZIP ZLIB
+OPTIONS_DEFAULT=	BZ2 GD MBSTRING ZIP ZLIB
 
 BZ2_DESC=	PHP bzip2 library support
 CURL_DESC=	PHP curl support
@@ -44,9 +46,8 @@ GD_DESC=	PHP GD library support (requires X11)
 GMP_DESC=	PHP GMP library support
 MBSTRING_DESC=	PHP Multi-byte String support
 OPCACHE_DESC=	PHP Opcache support
-OPENSSL_DESC=	PHP OpenSSL support
 PDF_DESC=	PHP PDFlib support
-SODIUM_DESC=	PHP libsodium support (only available for PHP >= 7.2)
+SODIUM_DESC=	PHP libsodium support
 ZIP_DESC=	PHP Zip compression support
 ZLIB_DESC=	PHP ZLIB support
 

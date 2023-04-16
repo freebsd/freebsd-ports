@@ -13,7 +13,7 @@ LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
 USES=		php
-USE_PHP=	pcre session
+USE_PHP=	session
 NO_BUILD=	yes
 NO_ARCH=	yes
 

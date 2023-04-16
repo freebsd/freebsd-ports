@@ -7,7 +7,7 @@ COMMENT=	Horde Facebook client
 WWW=		https://pear.horde.org
 
 USES=	horde php cpe
-USE_PHP=	json simplexml
+USE_PHP=	simplexml
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Http \
 		Horde_Translation \

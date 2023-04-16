@@ -17,7 +17,7 @@ USES=		php:web,flavors cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}php
 
-USE_PHP=	iconv pcre xml mbstring zlib dom
+USE_PHP=	iconv xml mbstring zlib dom
 
 NO_ARCH=	yes
 NO_BUILD=	yes

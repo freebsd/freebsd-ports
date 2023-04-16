@@ -13,8 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe php:flavors
 USE_GITHUB=	yes
-USE_PHP=	ctype curl dom filter gd hash iconv json mbstring mcrypt \
-		openssl pdo session simplexml xml zlib
+USE_PHP=	ctype curl dom filter gd iconv mbstring mcrypt \
+		pdo session simplexml xml zlib
 
 NO_ARCH=	yes
 NO_BUILD=	yes

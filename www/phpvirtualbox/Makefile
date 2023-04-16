@@ -9,7 +9,7 @@ WWW=		https://sourceforge.net/projects/phpvirtualbox/
 LICENSE=	GPLv3
 
 USES=		dos2unix php
-USE_PHP=	json session simplexml soap xml
+USE_PHP=	session simplexml soap xml
 
 NO_ARCH=	yes
 NO_BUILD=	yes

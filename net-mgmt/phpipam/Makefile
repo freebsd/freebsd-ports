@@ -16,8 +16,8 @@ IGNORE_WITH_PHP=	82
 USE_GITHUB=	yes
 GH_TAGNAME=	be8a2c4
 
-USE_PHP=	ctype curl dom filter gd gettext gmp iconv json mbstring mcrypt \
-		openssl pcntl pdo pdo_mysql posix session simplexml sockets
+USE_PHP=	ctype curl dom filter gd gettext gmp iconv mbstring mcrypt \
+		pcntl pdo pdo_mysql posix session simplexml sockets
 
 NO_ARCH=	yes
 NO_BUILD=	yes

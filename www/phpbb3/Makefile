@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE.txt
 
 USES=		cpe php tar:bzip2
-USE_PHP=	ctype dom filter hash json tokenizer
+USE_PHP=	ctype dom filter tokenizer
 
 CONFLICTS=	phpbb-[0-2]*
 

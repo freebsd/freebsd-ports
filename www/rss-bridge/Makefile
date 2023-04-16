@@ -12,7 +12,7 @@ LICENSE=	UNLICENSE
 USES=		php:web
 USE_GITHUB=	yes
 GH_ACCOUNT=	RSS-Bridge
-USE_PHP=	curl json mbstring openssl simplexml zip
+USE_PHP=	curl mbstring simplexml zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -11,6 +11,5 @@ USE_HORDE_RUN=	Horde_Exception \
 		Horde_Translation \
 		Horde_Url \
 		Horde_Util
-USE_PHP=	hash
 
 .include <bsd.port.mk>

@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 
 USES=		cpe php:flavors
 CPE_VENDOR=	${PORTNAME}_project
-USE_PHP=	pcre
 
 USE_GITHUB=	yes
 GH_PROJECT=	ADOdb

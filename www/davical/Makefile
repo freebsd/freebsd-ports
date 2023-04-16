@@ -24,7 +24,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	davical-project
 GL_COMMIT=	4301a795ac7a7636846bcc15348d96c68a1830fd
 
-USE_PHP=	calendar curl gettext iconv pcre pdo \
+USE_PHP=	calendar curl gettext iconv pdo \
 		pdo_pgsql pgsql session xml
 
 NO_ARCH=	yes

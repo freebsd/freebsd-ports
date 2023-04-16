@@ -10,8 +10,8 @@ WWW=		https://www.elgg.org/
 LICENSE=	GPLv2
 
 USES=		cpe gettext shebangfix zip php
-USE_PHP=	curl dom fileinfo filter gd hash intl \
-		json mbstring pdo_mysql \
+USE_PHP=	curl dom fileinfo filter gd intl \
+		mbstring pdo_mysql \
 		session simplexml soap sqlite3 xml xmlrpc
 
 NO_BUILD=	yes

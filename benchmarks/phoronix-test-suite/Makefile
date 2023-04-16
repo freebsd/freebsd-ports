@@ -16,7 +16,7 @@ RUN_DEPENDS=	sudo:security/sudo \
 
 USES=		php:cli,build,flavors python shebangfix
 USE_GITHUB=	yes
-USE_PHP=	curl dom gd openssl pcntl posix simplexml zip zlib
+USE_PHP=	curl dom gd pcntl posix simplexml zip zlib
 NO_BUILD=	yes
 
 PORTDATA=	*
@@ -48,12 +48,6 @@ X11_DESC=	Install X11 icons and mimetypes
 X11_USES=	desktop-file-utils shared-mime-info
 X11_CONFIGURE_OFF=	WITHOUT_X11=yes
 
-.include <bsd.port.pre.mk>
-
-.if ${FLAVOR} != php80
-USE_PHP+=	json
-.endif
-
 post-patch:
 	@${SED} -i '' -e "s|/usr/local|${LOCALBASE}|g" \
 		${WRKSRC}/phoronix-test-suite \
@@ -72,4 +66,4 @@ post-patch:
 do-install:
 	(cd ${WRKSRC} && ${CONFIGURE_ARGS} DESTDIR="${STAGEDIR}" ./install-sh ${PREFIX})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

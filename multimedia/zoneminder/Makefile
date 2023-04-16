@@ -40,7 +40,7 @@ GH_TUPLE=	FriendsOfCake:crud:1429237:crud/web/api/app/Plugin/Crud \
 		ZoneMinder:CakePHP-Enum-Behavior:ea90c0c:crud_plugin/web/api/app/Plugin/CakePHP-Enum-Behavior \
 		ZoneMinder:RtspServer:eab3285:rtsp_server/dep/RtspServer
 USE_RC_SUBR=	zoneminder
-USE_PHP=	ctype gd hash intl json opcache openssl pdo_mysql session sockets sysvsem
+USE_PHP=	ctype gd intl opcache pdo_mysql session sockets sysvsem
 
 OPTIONS_DEFINE=	NLS V4L
 OPTIONS_SUB=	yes

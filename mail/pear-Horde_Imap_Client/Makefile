@@ -8,7 +8,6 @@ COMMENT=	Horde IMAP abstraction interface
 WWW=		https://pear.horde.org
 
 USES=		horde php cpe
-USE_PHP=	hash
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Mail \
 		Horde_Mime \

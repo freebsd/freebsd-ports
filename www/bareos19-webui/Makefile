@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/webui/LICENSE
 USE_GITHUB=	yes
 
 USES=		cmake cpe gettext php:build
-USE_PHP=	ctype gettext hash iconv json openssl session
+USE_PHP=	ctype gettext iconv session
 NO_BUILD=	yes
 NO_ARCH=	yes
 

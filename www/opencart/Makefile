@@ -12,7 +12,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	opencart
 
 USES=		cpe php
-USE_PHP=	filter mysqli curl mbstring gd zlib mcrypt session zip hash openssl
+USE_PHP=	filter mysqli curl mbstring gd zlib mcrypt session zip
 WRKSRC_SUBDIR=	upload
 
 NO_BUILD=	yes

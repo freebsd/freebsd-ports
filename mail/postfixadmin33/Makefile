@@ -22,7 +22,7 @@ CPE_PRODUCT=	postfix_admin
 USE_GITHUB=	yes
 GH_ACCOUNT=	${DISTNAME}
 GH_PROJECT=	${DISTNAME}
-USE_PHP=	mbstring openssl pcre session spl
+USE_PHP=	mbstring session
 
 NO_ARCH=	yes
 NO_BUILD=	yes

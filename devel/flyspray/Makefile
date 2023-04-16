@@ -10,7 +10,7 @@ WWW=		https://www.flyspray.org/
 
 RUN_DEPENDS=	${LOCALBASE}/share/adodb/adodb.inc.php:databases/adodb5
 
-USE_PHP=	pcre session zlib xml gd
+USE_PHP=	session zlib xml gd
 USES=		cpe dos2unix php:web zip
 
 NO_BUILD=	yes

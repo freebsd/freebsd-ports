@@ -12,6 +12,5 @@ RUN_DEPENDS=	${PEARDIR}/XML/Serializer.php:devel/pear-XML_Serializer@${PHP_FLAVO
 		${PEARDIR}/HTTP/Request.php:www/pear-HTTP_Request@${PHP_FLAVOR}
 
 USES=		dos2unix pear php
-USE_PHP=	openssl
 
 .include <bsd.port.mk>

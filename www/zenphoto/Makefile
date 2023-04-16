@@ -12,7 +12,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe php:flavors,web
-USE_PHP=	gd gettext hash json mbstring mysqli pcre session
+USE_PHP=	gd gettext mbstring mysqli session
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -12,12 +12,12 @@ WWW=		https://pear.php.net/
 
 LICENSE=	PHP301
 
-USES=		cpe php:cli,flavors tar:xz
+USES=		cpe php:build,cli,flavors tar:xz
 CPE_VENDOR=	php
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USE_PHP=	pcre:build xml:build zlib:build
+USE_PHP=	xml:build zlib:build
 
 PEARDIR=	${PREFIX}/share/pear
 

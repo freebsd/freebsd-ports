@@ -11,8 +11,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		localbase:ldflags php:pecl
-USE_PHP=	curl json:build
+USES=		localbase:ldflags php:build,pecl
+USE_PHP=	curl
 
 IGNORE_WITH_PHP=82
 

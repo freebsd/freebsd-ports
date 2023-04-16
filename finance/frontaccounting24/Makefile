@@ -14,7 +14,7 @@ LICENSE=		GPLv3+
 LICENSE_FILE=		${WRKSRC}/doc/license.txt
 
 USES=			cpe
-USE_PHP+=		mysqli openssl session hash ctype zlib
+USE_PHP+=		mysqli session ctype zlib
 
 WRKSRC=			${WRKDIR}/${DIST_SUBDIR}
 NO_BUILD=		yes

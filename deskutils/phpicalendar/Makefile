@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		cpe php tar:bz2
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_PHP=	session pcre
+USE_PHP=	session
 PLIST_SUB=	WWWOWN="${WWWOWN}" WWWGRP="${WWWGRP}"
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

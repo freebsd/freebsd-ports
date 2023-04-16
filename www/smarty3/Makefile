@@ -12,7 +12,6 @@ LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe php:flavors,web
-USE_PHP=	pcre
 
 NO_ARCH=	yes
 NO_BUILD=	yes

@@ -9,8 +9,7 @@ WWW=		https://pecl.php.net/package/scrypt
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		php:pecl
-USE_PHP=	hash:build
+USES=		php:build,pecl
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 

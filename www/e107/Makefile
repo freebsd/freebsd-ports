@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe dos2unix php shebangfix
 
-USE_PHP=	dom exif hash pdo_mysql session xml
+USE_PHP=	dom exif pdo_mysql session xml
 WRKSRC=		${WRKDIR}/e107
 
 NO_BUILD=	yes

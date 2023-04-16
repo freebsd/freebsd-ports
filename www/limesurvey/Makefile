@@ -37,7 +37,7 @@ USE_PHP+=	ldap
 .if ${PORT_OPTIONS:MIMAP}
 USE_PHP+=	imap
 .endif
-USE_PHP+=	ctype dom hash iconv json mbstring openssl pcre session \
+USE_PHP+=	ctype dom iconv mbstring session \
 		simplexml xmlwriter zip zlib
 
 WWWDOCROOT?=		www

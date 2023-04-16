@@ -9,8 +9,8 @@ WWW=		https://pecl.php.net/package/redis
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		php:pecl
-USE_PHP=	hash:build json:build session:build
+USES=		php:build,pecl
+USE_PHP=	session:build
 
 OPTIONS_DEFINE=	IGBINARY
 IGBINARY_DESC=	Build with Igbinary serializer

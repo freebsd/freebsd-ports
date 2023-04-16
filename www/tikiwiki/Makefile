@@ -12,7 +12,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		php:web
-USE_PHP=	calendar dom fileinfo gd gettext intl mbstring mcrypt pcre \
+USE_PHP=	calendar dom fileinfo gd gettext intl mbstring mcrypt \
 		posix session xml zip zlib
 
 NO_BUILD=	yes

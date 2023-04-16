@@ -17,7 +17,7 @@ USES=		php
 
 NO_BUILD=	yes
 NO_ARCH=	yes
-USE_PHP=	pcre mysqli session memcache sqlite3 curl redis
+USE_PHP=	mysqli session memcache sqlite3 curl redis
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DATADIR}

@@ -14,8 +14,8 @@ RUN_DEPENDS=	p5-perl-ldap>=0:net/p5-perl-ldap \
 		p5-Quota>=0:sysutils/p5-Quota
 
 USES=		perl5 php:web tar:bzip2
-USE_PHP=	curl filter gd gettext gmp hash iconv json ldap mbstring \
-		openssl pcre session simplexml xml xmlreader xmlwriter zip
+USE_PHP=	curl filter gd gettext gmp iconv ldap mbstring \
+		session simplexml xml xmlreader xmlwriter zip
 
 WWWDIR=		${PREFIX}/www/${SHORTNAME}
 NO_ARCH=	yes

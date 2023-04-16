@@ -19,7 +19,7 @@ GH_ACCOUNT=	ReimuHakurei
 WRKSRC=		${WRKDIR}/phpPgAdmin-${DISTVERSION}${DISTVERSIONSUFFIX}
 
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	pgsql pcre session mbstring
+USE_PHP=	pgsql session mbstring
 .endif
 
 CPE_VENDOR=	phppgadmin_project

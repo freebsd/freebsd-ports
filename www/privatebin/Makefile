@@ -17,7 +17,7 @@ SUB_LIST=	PORTNAME=${PORTNAME}
 NO_BUILD=	yes
 NO_ARCH=	yes
 
-USE_PHP=	gd hash json zlib
+USE_PHP=	gd zlib
 USE_GITHUB=	yes
 GH_PROJECT=	PrivateBin
 

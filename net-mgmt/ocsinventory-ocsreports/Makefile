@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:web
-USE_PHP=	curl gd mbstring mysqli openssl pcre session simplexml soap xml zip zlib
+USE_PHP=	curl gd mbstring mysqli session simplexml soap xml zip zlib
 NO_ARCH=	yes
 NO_BUILD=	yes
 GH_ACCOUNT=	OCSInventory-NG

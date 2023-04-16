@@ -21,7 +21,7 @@ BCL_LOGDIR?=	${BCL_VARDIR}/log/${PORTNAME}
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-USE_PHP+=	ctype dom json session xml
+USE_PHP+=	ctype dom session xml
 
 OPTIONS_DEFINE?=EXAMPLES
 

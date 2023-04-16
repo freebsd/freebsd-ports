@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php zip
-USE_PHP=	ctype dom filter hash imap json mbstring openssl pdo_sqlite \
+USE_PHP=	ctype dom filter imap mbstring pdo_sqlite \
 		session xml xmlreader xmlwriter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

@@ -27,7 +27,7 @@ SHEBANG_FILES=	\
 		poller.php \
 		scripts/
 
-USE_PHP=	ctype filter gd iconv json mcrypt mysqli openssl posix session snmp tokenizer xml zlib
+USE_PHP=	ctype filter gd iconv mcrypt mysqli posix session snmp tokenizer xml zlib
 
 NO_ARCH=	yes
 NO_BUILD=	yes

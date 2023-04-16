@@ -12,7 +12,7 @@ LICENSE=	MPL20
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USES=		cpe php:web
-USE_PHP=	filter json mysqli pcre session xml xmlrpc xmlwriter zlib
+USE_PHP=	filter mysqli session xml xmlrpc xmlwriter zlib
 FAQ_DIR=	attachments data images inc pdf xml
 NO_BUILD=	YES
 NO_ARCH=	YES

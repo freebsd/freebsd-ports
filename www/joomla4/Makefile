@@ -29,7 +29,7 @@ PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 SUB_FILES=	pkg-message
 
-USE_PHP=	gd json mbstring pcre session simplexml xml zip zlib
+USE_PHP=	gd mbstring session simplexml xml zip zlib
 
 MYSQL_USE=	PHP=mysqli
 PGSQL_USE=	PHP=pgsql

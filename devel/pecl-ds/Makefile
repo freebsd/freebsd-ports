@@ -9,7 +9,6 @@ WWW=		https://pecl.php.net/package/ds
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		localbase php:pecl
-USE_PHP=	json:build
+USES=		localbase php:build,pecl
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:flavors shebangfix
-USE_PHP=	ctype mysqli openssl xml xsl zlib
+USE_PHP=	ctype mysqli xml xsl zlib
 SHEBANG_FILES=	database/delete_old_logs \
 		database/fetch_webserver_logs \
 		database/flush_cache \

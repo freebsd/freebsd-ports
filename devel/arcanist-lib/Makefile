@@ -26,7 +26,7 @@ SHEBANG_FILES=	bin/arc \
 		support/xhpast/*.php \
 		support/xhpast/bin/*.php
 
-USE_PHP=	curl dom hash json simplexml zlib
+USE_PHP=	curl dom simplexml zlib
 USE_GITHUB=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes

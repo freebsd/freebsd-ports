@@ -1,6 +1,6 @@
 PORTNAME=	nextcloud
 PORTVERSION=	26.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	https://download.nextcloud.com/server/releases/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -13,8 +13,8 @@ WWW=		https://nextcloud.com
 LICENSE=	AGPLv3
 
 USES=		cpe gettext-runtime php:flavors,web tar:bzip2
-USE_PHP=	bcmath bz2 ctype curl dom fileinfo filter gd gmp hash iconv \
-		json mbstring pcntl pdo posix session simplexml xml xmlreader \
+USE_PHP=	bcmath bz2 ctype curl dom fileinfo filter gd gmp iconv \
+		mbstring pcntl pdo posix session simplexml xml xmlreader \
 		xmlwriter xsl zip zlib
 
 NEXTCLOUD_USERNAME?=	${WWWOWN}
@@ -28,12 +28,12 @@ SUB_LIST=	NEXTCLOUD_USERNAME=${NEXTCLOUD_USERNAME} \
 		NEXTCLOUD_GROUPNAME=${NEXTCLOUD_GROUPNAME}
 PLIST_SUB=	${SUB_LIST}
 
-OPTIONS_DEFINE=		EXIF IMAGICK INTL LDAP PCNTL SMB SSL SYSVSEM
+OPTIONS_DEFINE=		EXIF IMAGICK INTL LDAP PCNTL SMB SYSVSEM
 OPTIONS_GROUP=		CACHING
 OPTIONS_GROUP_CACHING=	APCU OPCACHE REDIS
 OPTIONS_MULTI=		DB
 OPTIONS_MULTI_DB=	MYSQL PGSQL SQLITE
-OPTIONS_DEFAULT=	APCU EXIF INTL LDAP MYSQL OPCACHE SSL SYSVSEM
+OPTIONS_DEFAULT=	APCU EXIF INTL LDAP MYSQL OPCACHE SYSVSEM
 OPTIONS_SUB=		yes
 
 APCU_DESC=	Local data caching using APCu (recommended)
@@ -59,7 +59,6 @@ PGSQL_USE=	PHP=pdo_pgsql,pgsql
 REDIS_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}redis>=2.2.6:databases/pecl-redis@${PHP_FLAVOR}
 SMB_RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}smbclient>=0.9.0:net/pecl-smbclient@${PHP_FLAVOR}
 SQLITE_USE=	PHP=pdo_sqlite,sqlite3
-SSL_USE=	PHP=openssl
 SYSVSEM_USE=	PHP=sysvsem
 
 .include <bsd.port.options.mk>

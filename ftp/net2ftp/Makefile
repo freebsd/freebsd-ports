@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cpe php zip
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ftp mysqli pcre session zlib
+USE_PHP=	ftp mysqli session zlib
 .endif
 
 NO_ARCH=	yes

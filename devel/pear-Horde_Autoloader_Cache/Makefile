@@ -8,7 +8,6 @@ WWW=		https://pear.horde.org
 
 USES=		horde php cpe
 USE_HORDE_RUN=	Horde_Autoloader
-USE_PHP=	json
 
 CONFLICTS_INSTALL=	php*-pear-horde-Horde_Autoloader_Cache
 

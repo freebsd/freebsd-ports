@@ -12,7 +12,7 @@ WWW=		https://rainloop.net/
 LICENSE=	MIT
 
 USES=		php:web,flavors zip
-USE_PHP=	curl dom iconv json openssl pcre simplexml spl xml zlib
+USE_PHP=	curl dom iconv simplexml xml zlib
 
 NO_ARCH=	yes
 NO_BUILD=	yes

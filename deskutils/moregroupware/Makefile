@@ -12,7 +12,7 @@ WWW=		http://moregroupware.sourceforge.net/
 USES=		gettext php:mod
 WANT_PGSQL=	server
 # php extensions
-USE_PHP=	curl gd pcre session xml
+USE_PHP=	curl gd session xml
 
 SHAREOWN=	${WWWOWN}
 SHAREGRP=	${WWWGRP}

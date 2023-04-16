@@ -13,7 +13,7 @@ RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Console_Getargs>=1.3.3:devel/pear-Console_Geta
 		${PEAR_PKGNAMEPREFIX}File_Find>=1.3.0:sysutils/pear-File_Find@${PHP_FLAVOR}
 
 USES=		dos2unix pear
-USE_PHP=	pcre tokenizer
+USE_PHP=	tokenizer
 
 NO_ARCH=	yes
 

@@ -13,7 +13,7 @@ WWW=		https://ampache.org/
 LICENSE=	AGPLv3+
 
 USES=		cpe zip gettext php:flavors mysql
-USE_PHP=	pdo pdo_mysql hash session json intl simplexml curl dom xml
+USE_PHP=	pdo pdo_mysql session intl simplexml curl dom xml
 
 CONFLICTS_INSTALL=	ampache-php* # etc/periodic/daily/500.ampache-cron man/man1/ampache.1.gz
 

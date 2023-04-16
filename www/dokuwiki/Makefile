@@ -19,7 +19,7 @@ LICENSE_FILE_MIT=		${WRKSRC}/vendor/composer/LICENSE
 
 DIST_VER=	${PORTNAME}-2023-04-04
 USES=		cpe php:web,flavors shebangfix tar:tgz
-USE_PHP=	ctype filter gd hash iconv json mbstring ldap openssl pcre pdo_mysql session simplexml xml zlib
+USE_PHP=	ctype filter gd iconv mbstring ldap pdo_mysql session simplexml xml zlib
 NO_ARCH=	YES
 NO_BUILD=	YES
 

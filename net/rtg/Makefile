@@ -38,7 +38,7 @@ WEB_DESC=	Include PHP-based web client interface pre-requisites
 MYSQL_USES=	mysql:server
 
 WEB_USES=		php
-WEB_USE=		PHP=mysqli,spl
+WEB_USE=		PHP=mysqli
 WEB_SUB_FILES=		pkg-message
 
 post-patch:

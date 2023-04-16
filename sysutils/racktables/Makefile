@@ -23,20 +23,18 @@ USE_PERL5=	run
 SHEBANG_FILES=	gateways/*
 CPE_VENDOR=	racktables_project
 
-USE_PHP=	bcmath gd json mbstring mysqli pdo_mysql session
+USE_PHP=	bcmath gd mbstring mysqli pdo_mysql session
 SUB_FILES=	pkg-message
 PLIST_SUB=	WWWDIR_REL=${WWWDIR_REL} WWWDIR=${WWWDIR}
 WWWUSER?=	www
 WWWGRP?=	www
 
-OPTIONS_DEFINE=	LDAP SNMP CURL PCNTL PCRE EXAMPLES
-PCRE_DESC=	Regular Expression Support
+OPTIONS_DEFINE=	LDAP SNMP CURL PCNTL EXAMPLES
 PCNTL_DESC=	pcntl Support
 LDAP_USE=	PHP=ldap
 SNMP_USE=	PHP=snmp
 CURL_USE=	PHP=curl
 PCNTL_USE=	PHP=pcntl
-PCRE_USE=	PHP=pcre
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -type f -delete

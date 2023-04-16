@@ -9,7 +9,7 @@ COMMENT=	Next-generation free software blogging platform
 WWW=		http://habariproject.org/
 
 USES=		zip php:web
-USE_PHP=	ctype filter hash json mbstring pcre pdo session simplexml tokenizer zlib
+USE_PHP=	ctype filter mbstring pdo session simplexml tokenizer zlib
 NO_BUILD=	yes
 
 OPTIONS_MULTI=	DB

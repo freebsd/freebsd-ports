@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 IGNORE_WITH_MYSQL=	56 101m
 
 USES=		cpe php:web,flavors shebangfix
-USE_PHP=	ctype dom fileinfo filter hash intl json openssl pcre session simplexml \
-		spl tokenizer xml zip
+USE_PHP=	ctype dom fileinfo filter intl session simplexml \
+		tokenizer xml zip
 
 WRKSRC=		${WRKDIR}/${TYPO3SRC}
 SHEBANG_GLOB=	*.sh *.php
@@ -39,7 +39,7 @@ TYPO3DIR=	${PORTNAME}-${PORT_V_MAJOR}
 USERS=		${WWWOWN}
 GROUPS=		${WWWGRP}
 
-OPTIONS_DEFINE=	CURL GD GMP IMAGICK MBSTRING MYSQL POSTGRES SQLSRV SQLITE ZLIB
+OPTIONS_DEFINE=	CURL GD GMP IMAGICK MBSTRING MYSQL POSTGRES SQLITE ZLIB
 OPTIONS_DEFAULT=MYSQL
 GD_DESC=	GDlib/freetype support
 IMAGICK_DESC=	${IMAGEMAGICK_DESC}
@@ -47,15 +47,13 @@ MBSTRING_DESC=	${MULTIBYTE_DESC}
 MYSQL_DESC=	Use MySQL as DBMS
 POSTGRES_DESC=	Use PostgreSQL as DBMS
 SQLITE_DESC=	Use SQLite as DBMS
-SQLSRV_DESC=	Use MSSQL as DBMS
 
 CURL_USE=	PHP=curl
 GD_USE=		PHP=gd
 GMP_USE=	PHP=gmp
 MBSTRING_USE=	PHP=mbstring
 MYSQL_USE=	PHP=mysqli
-POSTGRES_USE=	PHP=postgresql
-SQLSRV_USE=	PHP=sqlsrv
+POSTGRES_USE=	PHP=pgsql
 SQLITE_USE=	PHP=sqlite3
 ZLIB_USE=	PHP=zlib
 

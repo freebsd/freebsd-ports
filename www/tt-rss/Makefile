@@ -15,7 +15,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 
 USES=		gettext-tools php:cli,web shebangfix
-USE_PHP=	ctype dom exif fileinfo filter hash iconv intl json mbstring \
+USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring \
 		openssl pcntl pdo phar posix session simplexml tokenizer xml \
 		xmlwriter zip
 USE_RC_SUBR=	ttrssd

@@ -14,7 +14,7 @@ CPE_VENDOR=	sabre-io
 USE_GITHUB=	yes
 GH_ACCOUNT=	sabre-io
 GH_PROJECT=	dav
-USE_PHP=	ctype dom iconv mbstring pcre simplexml spl xmlwriter
+USE_PHP=	ctype dom iconv mbstring simplexml xmlwriter
 
 NO_ARCH=	yes
 NO_BUILD=	yes

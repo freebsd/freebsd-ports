@@ -12,7 +12,6 @@ LICENSE=	PHP301
 RUN_DEPENDS=	${PEAR_PKGNAMEPREFIX}Console_Getargs>=1.3.3:devel/pear-Console_Getargs@${PHP_FLAVOR}
 
 USES=		pear
-USE_PHP=	pcre
 
 NO_ARCH=	yes
 

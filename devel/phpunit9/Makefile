@@ -13,7 +13,7 @@ WWW=		https://phpunit.de/ \
 LICENSE=	BSD3CLAUSE
 
 USES=		cpe php:flavors
-USE_PHP=	dom json pcre phar spl
+USE_PHP=	dom phar
 
 NO_ARCH=	yes
 NO_BUILD=	yes

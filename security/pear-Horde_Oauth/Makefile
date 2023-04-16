@@ -10,6 +10,5 @@ USES=		horde php cpe
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Http \
 		Horde_Util
-USE_PHP=	hash openssl
 
 .include <bsd.port.mk>

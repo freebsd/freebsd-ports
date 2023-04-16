@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		pgsql php:cli
 USE_GITHUB=	yes
 GH_ACCOUNT=	operasoftware
-USE_PHP=	curl intl json ldap mbstring pdo_pgsql
+USE_PHP=	curl intl ldap mbstring pdo_pgsql
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

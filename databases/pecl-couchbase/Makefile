@@ -13,6 +13,5 @@ LICENSE=	APACHE20
 BUILD_DEPENDS=	cmake:devel/cmake-core
 
 USES=		compiler:c++17-lang php:build,pecl
-USE_PHP=	json:build
 
 .include <bsd.port.mk>

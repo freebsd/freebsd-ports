@@ -12,7 +12,7 @@ LICENSE=	GPLv3+
 
 USES=		cpe php shebangfix zip
 
-USE_PHP=	calendar dom filter gd json pcre pdo_mysql session simplexml xml
+USE_PHP=	calendar dom filter gd pdo_mysql session simplexml xml
 
 SHEBANG_FILES=	webtrees/vendor/swiftmailer/swiftmailer/lib/swiftmailer_generate_mimes_config.php \
 		webtrees/vendor/tecnickcom/tcpdf/tools/tcpdf_addfont.php

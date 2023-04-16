@@ -7,7 +7,7 @@ COMMENT=	Horde Memcache API
 WWW=		https://pear.horde.org
 
 USES=		horde php
-USE_PHP=	memcache hash
+USE_PHP=	memcache
 USE_HORDE_RUN=	Horde_Exception
 
 .include <bsd.port.mk>

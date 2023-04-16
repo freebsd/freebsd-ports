@@ -15,7 +15,7 @@ RUN_DEPENDS=	git:devel/git
 
 NO_BUILD=	yes
 USES=		cpe php:web zip
-USE_PHP=	ctype hash json simplexml
+USE_PHP=	ctype simplexml
 
 PLIST=		${WRKDIR}/plist
 NO_WRKSUBDIR=	yes

@@ -17,8 +17,8 @@ RUN_DEPENDS=	icinga-php-library${PHP_PKGNAMESUFFIX}>=0.10.0:net-mgmt/icinga-php-
 		icingaweb2-module-incubator${PHP_PKGNAMESUFFIX}>=0.18.0:net-mgmt/icingaweb2-module-incubator@${PHP_FLAVOR}
 
 USES=		php:build,web,flavors shebangfix
-USE_PHP=	bcmath bitset ctype curl dom gd gettext hash iconv json ldap \
-		mbstring mcrypt memcache memcached opcache openssl pcre pdo \
+USE_PHP=	bcmath bitset ctype curl dom gd gettext iconv ldap \
+		mbstring mcrypt memcache memcached opcache pdo \
 		pdo_sqlite posix session simplexml soap sockets sqlite3 xml \
 		zlib
 

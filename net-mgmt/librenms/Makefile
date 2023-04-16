@@ -27,8 +27,8 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVO
 
 USES=		cpe php python shebangfix
 USE_GITHUB=	yes
-USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
-		mysqli openssl pdo pdo_mysql phar posix session simplexml snmp \
+USE_PHP=	ctype curl dom fileinfo filter gd ldap mbstring \
+		mysqli pdo pdo_mysql phar posix session simplexml snmp \
 		sockets tokenizer xml xmlwriter zip
 USE_RC_SUBR=	librenms
 

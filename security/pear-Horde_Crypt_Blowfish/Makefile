@@ -11,15 +11,6 @@ USES=	horde cpe
 USE_HORDE_RUN=	Horde_Exception \
 		Horde_Support
 
-OPTIONS_DEFINE=	MHASH OPENSSL
-MHASH_DESC=	Depend on mhash PHP extension
-OPENSSL_DESC=	Depend on OpenSSL PHP extension
-
-MHASH_USES=	php
-MHASH_USE=	PHP=hash
-OPENSSL_USES=	php
-OPENSSL_USE=	PHP=openssl
-
 NO_ARCH=	yes
 
 .include <bsd.port.mk>

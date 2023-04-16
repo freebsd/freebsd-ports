@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:web
-USE_PHP=	pcre session
+USE_PHP=	session
 
 NO_ARCH=	yes
 NO_BUILD=	yes
