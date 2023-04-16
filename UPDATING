@@ -6,7 +6,7 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
  
 20230416:
-  AFFECTS: users of databases/mongodb50
+  AFFECTS: users of databases/mongodb50 and databases/mongodb44
   AUTHOR: ronald@FreeBSD.org
 
   MongoDB removed the settings 'fork' and 'pidFilePath' from the default
