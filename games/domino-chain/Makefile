@@ -13,11 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfribidi.so:converters/fribidi \
 		libboost_filesystem.so:devel/boost-libs
-BUILD_DEPENDS=	povray:graphics/povray-meta \
-		convert:graphics/ImageMagick7
+BUILD_DEPENDS=	povray:graphics/povray-meta
 RUN_DEPENDS=	${FREESANS_DIR}/FreeSans.ttf:x11-fonts/freefont-ttf
 
-USES=		compiler:c++17-lang gettext gmake lua:52 pkgconfig sdl
+USES=		compiler:c++17-lang gettext gmake lua:52 magick:build \
+		pkgconfig sdl
 USE_GITLAB=	yes
 GL_PROJECT=	domino-chain.gitlab.io
 GL_COMMIT=	3969eaa66f753e873eca4ef33b263ca1307be2df
