@@ -17,12 +17,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pikepdf>0:textproc/py-pikepdf@${PY_FLAVOR} \
 TEST_DEPENDS=	${PY_NUMPY} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
-		convert:graphics/ImageMagick6 \
 		exiftool:graphics/p5-Image-ExifTool \
 		jpegtopnm:graphics/netpbm \
 		pdftocairo:graphics/poppler-utils
 
-USES=		python:3.5+ shebangfix
+USES=		python:3.5+ shebangfix magick:6,test
 USE_PYTHON=	autoplist concurrent distutils pytest
 # Some tests fail, see following link for more info:
 # https://gitlab.mister-muffin.de/josch/img2pdf/issues/152
