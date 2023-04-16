@@ -1,0 +1,51 @@
+diff --git gfx/thebes/gfxFont.cpp gfx/thebes/gfxFont.cpp
+--- gfx/thebes/gfxFont.cpp
++++ gfx/thebes/gfxFont.cpp
+@@ -2467,11 +2467,19 @@
+     fontParams.extraStrikes = 0;
+   }
+ 
+   // Figure out the maximum extents for the font, accounting for synthetic
+   // oblique and bold.
+-  fontParams.fontExtents = GetFontEntry()->GetFontExtents(mFUnitsConvFactor);
++  if (mFUnitsConvFactor > 0.0) {
++    fontParams.fontExtents = GetFontEntry()->GetFontExtents(mFUnitsConvFactor);
++  } else {
++    // Was it not an sfnt? Maybe on Linux... use arbitrary huge extents, so we
++    // don't inadvertently clip stuff. A bit less efficient than true extents,
++    // but this should be extremely rare.
++    auto size = GetAdjustedSize();
++    fontParams.fontExtents = Rect(-2 * size, -2 * size, 5 * size, 5 * size);
++  }
+   if (fontParams.obliqueSkew != 0.0f) {
+     gfx::Point p(fontParams.fontExtents.x, fontParams.fontExtents.y);
+     gfx::Matrix skew(1, 0, fontParams.obliqueSkew, 1, 0, 0);
+     fontParams.fontExtents = skew.TransformBounds(fontParams.fontExtents);
+   }
+diff --git gfx/thebes/gfxFontEntry.cpp gfx/thebes/gfxFontEntry.cpp
+--- gfx/thebes/gfxFontEntry.cpp
++++ gfx/thebes/gfxFontEntry.cpp
+@@ -282,15 +282,18 @@
+       uint32_t len;
+       const HeadTable* head =
+           reinterpret_cast<const HeadTable*>(hb_blob_get_data(headTable, &len));
+       if (len >= sizeof(HeadTable)) {
+         mUnitsPerEm = head->unitsPerEm;
++        if (int16_t(head->xMax) > int16_t(head->xMin) &&
++            int16_t(head->yMax) > int16_t(head->yMin)) {
++          mXMin = head->xMin;
++          mYMin = head->yMin;
++          mXMax = head->xMax;
++          mYMax = head->yMax;
++        }
+       }
+-      mXMin = head->xMin;
+-      mYMin = head->yMin;
+-      mXMax = head->xMax;
+-      mYMax = head->yMax;
+     }
+ 
+     // if we didn't find a usable 'head' table, or if the value was
+     // outside the valid range, record it as invalid
+     if (mUnitsPerEm < kMinUPEM || mUnitsPerEm > kMaxUPEM) {
+
