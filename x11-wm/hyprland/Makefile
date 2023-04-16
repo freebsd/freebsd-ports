@@ -73,7 +73,6 @@ CXX=		clang++${LLVM_VERSION}
 CPP=		clang-cpp${LLVM_VERSION}
 CONFIGURE_ENV+=	CC="${CC}" CXX="${CXX}" CPP="${CPP}"
 CMAKE_BIN=	${LOCALBASE}/bin/cmake
-CMAKE_ARGS+=	-GNinja
 
 # XXX Move into separate port and standardize via USES
 GH_TUPLE+=	llvm:llvm-project:llvmorg-16.0.1:libcxx
