@@ -1,5 +1,5 @@
 PORTNAME=	opensearch-dashboards
-DISTVERSION=	2.4.1
+DISTVERSION=	2.6.0
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
@@ -25,6 +25,8 @@ OPTIONS_DEFINE=	CHROME
 CHROME_DESC=	Add dependency on www/chromium (required for PDF reports)
 CHROME_RUN_DEPENDS=chrome:www/chromium
 
+NODE_VER=	14.21.1
+
 _DEVDIR=	${WRKDIR}/.devdir
 
 post-patch:
@@ -32,15 +34,14 @@ post-patch:
 		${WRKSRC}/bin/opensearch-dashboards \
 		${WRKSRC}/bin/opensearch-dashboards-keystore \
 		${WRKSRC}/bin/opensearch-dashboards-plugin \
-		${WRKSRC}/node_modules/re2/binding.gyp \
-		${WRKSRC}/plugins/reportsDashboards/server/routes/utils/constants.js
+		${WRKSRC}/node_modules/re2/binding.gyp
+	@${REINPLACE_CMD} -e 's|14.20.1|${NODE_VER}|g' ${WRKSRC}/package.json
 	${RM} \
 		${WRKSRC}/bin/*.orig \
 		${WRKSRC}/bin/*.bak \
 		${WRKSRC}/node_modules/re2/binding.gyp.orig \
 		${WRKSRC}/node_modules/re2/binding.gyp.bak \
-		${WRKSRC}/plugins/reportsDashboards/server/routes/utils/constants.js.orig \
-		${WRKSRC}/plugins/reportsDashboards/server/routes/utils/constants.js.bak
+		${WRKSRC}/package.json.bak
 	${RM} -r ${WRKSRC}/plugins/reportsDashboards/.chromium
 
 do-configure:
