@@ -1,6 +1,6 @@
-TIMESTAMP = 1681276824
-SHA256 (errata-ai-vale-v2.24.1_GH0.tar.gz) = aa30f373b858803297eca1dd2f391e0d81453cd96b54d802ab5f5d926731db9e
-SIZE (errata-ai-vale-v2.24.1_GH0.tar.gz) = 9624014
+TIMESTAMP = 1681669230
+SHA256 (errata-ai-vale-v2.24.2_GH0.tar.gz) = c66d6372cd831842e75b25d093689356e599f38093e52b96f695e90dc6ebaf2b
+SIZE (errata-ai-vale-v2.24.2_GH0.tar.gz) = 9623171
 SHA256 (adrg-strutil-v0.3.0_GH0.tar.gz) = 71ada495bd67945b6181f31caa80ad5f7f3120d2b2cf95ff1281b3da86800391
 SIZE (adrg-strutil-v0.3.0_GH0.tar.gz) = 16857
 SHA256 (antonmedv-expr-v1.12.0_GH0.tar.gz) = 5d161a68d4bdec6d29740c785f89a4cddac3f817986a40776df824be6abfc44f
