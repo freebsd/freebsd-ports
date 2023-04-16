@@ -1,0 +1,15 @@
+Obtained from: https://invent.kde.org/plasma/plasma-workspace/-/commit/f6dad3c07bd10ebe332a180aa912c9870856155a
+
+--- src/com.canonical.dbusmenu.xml.orig	2023-04-15 13:00:03 UTC
++++ src/com.canonical.dbusmenu.xml
+@@ -316,8 +316,8 @@ -->
+ 
+ <!-- Signals -->
+ 		<signal name="ItemsPropertiesUpdated">
+-			<annotation name="com.trolltech.QtDBus.QtTypeName.In0" value="DBusMenuItemList"/>
+-			<annotation name="com.trolltech.QtDBus.QtTypeName.In1" value="DBusMenuItemKeysList"/>
++			<annotation name="com.trolltech.QtDBus.QtTypeName.Out0" value="DBusMenuItemList"/>
++			<annotation name="com.trolltech.QtDBus.QtTypeName.Out1" value="DBusMenuItemKeysList"/>
+ 			<dox:d>
+ 			Triggered when there are lots of property updates across many items
+ 			so they all get grouped into a single dbus message.  The format is
