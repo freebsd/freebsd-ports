@@ -1,7 +1,5 @@
 bin/roundtrip
 bin/surelog
-cmake/Surelog-%%CMAKE_BUILD_TYPE%%.cmake
-cmake/Surelog.cmake
 include/Surelog/API/PythonAPI.h
 include/Surelog/API/SLAPI.h
 include/Surelog/API/Surelog.h
@@ -75,8 +73,13 @@ include/Surelog/Testbench/Property.h
 include/Surelog/Testbench/TaskMethod.h
 include/Surelog/Testbench/TypeDef.h
 include/Surelog/Testbench/Variable.h
+include/Surelog/config.h
+include/Surelog/surelog-version.h
 include/Surelog/surelog.h
-lib/cmake/SurelogConfig.cmake
+lib/cmake/Surelog/SurelogConfig.cmake
+lib/cmake/Surelog/SurelogConfigVersion.cmake
+lib/cmake/Surelog/SurelogTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Surelog/SurelogTargets.cmake
 lib/surelog/libantlr4-runtime.a
 lib/surelog/libflatbuffers.a
 lib/surelog/libsurelog.so

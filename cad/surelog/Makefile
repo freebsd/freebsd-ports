@@ -1,7 +1,6 @@
 PORTNAME=	surelog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.51
-PORTREVISION=	1
+DISTVERSION=	1.56
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -53,10 +52,11 @@ PYTHON_CMAKE_ON=	-DFREEBSD_PYTHON_DISTVERSION=${PYTHON_DISTVERSION}
 
 PORTSCOUT=	limit:^.*[0-9]\.[0-9] # prevent tags like 'show'
 
-post-install:
+post-install: # workaound for https://github.com/chipsalliance/Surelog/issues/3596
 	@${RMDIR} \
-		${STAGEDIR}${PREFIX}/bin/pkg/work \
-		${STAGEDIR}${PREFIX}/bin/pkg
+		${STAGEDIR}${DATADIR}/pkg/work \
+		${STAGEDIR}${DATADIR}/pkg \
+		${STAGEDIR}${DATADIR}
 
 post-test:
 	cd ${BUILD_WRKSRC} && ctest

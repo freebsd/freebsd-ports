@@ -1,12 +1,8 @@
-TIMESTAMP = 1680147427
-SHA256 (chipsalliance-Surelog-v1.51_GH0.tar.gz) = f874b4df3caaef2ec57e281f560f8abde7d147a6b8dd914df402cc43ee1dd247
-SIZE (chipsalliance-Surelog-v1.51_GH0.tar.gz) = 91928901
+TIMESTAMP = 1681668095
+SHA256 (chipsalliance-Surelog-v1.56_GH0.tar.gz) = 36396d327aa4d433b38e0673608316e25f696e0d37c5f2ce14976b71a24f0683
+SIZE (chipsalliance-Surelog-v1.56_GH0.tar.gz) = 91906822
 SHA256 (alainmarcel-antlr4-3143e88_GH0.tar.gz) = cc950334f511b91b9b47bc8b84b60a7f7ae85d3ab2cb7a8596a9a226a53386ce
 SIZE (alainmarcel-antlr4-3143e88_GH0.tar.gz) = 4310506
-SHA256 (chipsalliance-UHDM-1aaa156_GH0.tar.gz) = fb356d189c20e3361c30de3f73e579d60e3dbf9a32b51a580679552dc08593c0
-SIZE (chipsalliance-UHDM-1aaa156_GH0.tar.gz) = 1751813
-SHA256 (capnproto-capnproto-14f24a4_GH0.tar.gz) = 1130e78658e8b1ceb3a69a6b3a964913f22505532ab217299e5600f371922877
-SIZE (capnproto-capnproto-14f24a4_GH0.tar.gz) = 2121570
 SHA256 (google-googletest-e1ee0fa_GH0.tar.gz) = d2d59b967237e554f5d816892b4aa831ed024d3af7ffcfde1e232260a19d4501
 SIZE (google-googletest-e1ee0fa_GH0.tar.gz) = 865239
 SHA256 (google-flatbuffers-32a6744_GH0.tar.gz) = 826bb0eb96e79a909592c9fb4c4ef775d61a0b4c30e9db0249ff924830cf3cf7
