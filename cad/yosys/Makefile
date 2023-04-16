@@ -1,6 +1,6 @@
 PORTNAME=	yosys
 DISTVERSIONPREFIX=	yosys-
-DISTVERSION=	0.27
+DISTVERSION=	0.28
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,7 +32,7 @@ BINARY_ALIAS=	python3=${PYTHON_CMD} tclsh=${TCLSH}
 MAKE_ARGS=	ABCEXTERNAL=abc
 MAKE_ENV=	MAKE=${GMAKE}
 
-TEST_TARGET=	test # some tests fail, see https://github.com/YosysHQ/yosys/issues/3666
+TEST_TARGET=	test # some tests fail, see https://github.com/YosysHQ/yosys/issues/3731
 
 OPTIONS_GROUP=		SOLVERS
 OPTIONS_GROUP_SOLVERS=	CVC5 YICES Z3

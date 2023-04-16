@@ -162,8 +162,11 @@ bin/yosys-witness
 %%DATADIR%%/intel_alm/common/misc_sim.v
 %%DATADIR%%/intel_alm/common/quartus_rename.v
 %%DATADIR%%/intel_alm/cyclonev/cells_sim.v
+%%DATADIR%%/machxo2/arith_map.v
 %%DATADIR%%/machxo2/brams.txt
 %%DATADIR%%/machxo2/brams_map.v
+%%DATADIR%%/machxo2/cells_bb.v
+%%DATADIR%%/machxo2/cells_io.vh
 %%DATADIR%%/machxo2/cells_map.v
 %%DATADIR%%/machxo2/cells_sim.v
 %%DATADIR%%/machxo2/lutrams.txt
