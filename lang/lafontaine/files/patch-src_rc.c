@@ -1,9 +1,11 @@
---- src/rc.c.orig	Thu Jul 27 22:40:17 2006
-+++ src/rc.c	Thu Jul 27 22:43:36 2006
-@@ -39,6 +39,12 @@
+--- src/rc.c.orig	2002-09-17 20:06:21 UTC
++++ src/rc.c
+@@ -38,7 +38,13 @@
+ #include "turtle.h"
  #include "rc.h"
  
- struct s_turtle my_turtle;
+-struct s_turtle my_turtle;
++extern struct s_turtle my_turtle;
 +void rc_parse_group(GScanner *scanner);
 +void rc_parse_coresave(GScanner *scanner);
 +void rc_parse_history(GScanner *scanner);
@@ -13,7 +15,7 @@
  
  
  static const GScannerConfig gtk_rc_scanner_config =
-@@ -152,6 +158,7 @@
+@@ -152,6 +158,7 @@ void rc_parse_group(GScanner *scanner)
        rc_parse_coresave(scanner);
        break;
      default:
@@ -21,7 +23,7 @@
      }
  
  }
-@@ -176,6 +183,7 @@
+@@ -176,6 +183,7 @@ void rc_parse_coresave(GScanner *scanner)
  	  printf("coredump file: %s\n", keyval.value);
  	  break;
  	default:
@@ -29,7 +31,7 @@
  	}
      }
  
-@@ -203,6 +211,7 @@
+@@ -203,6 +211,7 @@ void rc_parse_history(GScanner *scanner)
  	  printf("history file: %s\n", keyval.value);
  	  break;
  	default:
