@@ -80,6 +80,7 @@ share/applications/luakit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/modules/lousy.widget.tab.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/lousy.widget.tabi.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/lousy.widget.tablist.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/lousy.widget.tgname.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/lousy.widget.uri.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/lousy.widget.zoom.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/luakit.html
@@ -102,6 +103,7 @@ share/applications/luakit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/modules/soup.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/styles.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/tab_favicons.html
+%%PORTDOCS%%%%DOCSDIR%%/modules/tabgroups.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/tabhistory.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/tabmenu.html
 %%PORTDOCS%%%%DOCSDIR%%/modules/taborder.html
@@ -181,6 +183,7 @@ share/applications/luakit.desktop
 %%DATADIR%%/lib/lousy/widget/tab.lua
 %%DATADIR%%/lib/lousy/widget/tabi.lua
 %%DATADIR%%/lib/lousy/widget/tablist.lua
+%%DATADIR%%/lib/lousy/widget/tgname.lua
 %%DATADIR%%/lib/lousy/widget/uri.lua
 %%DATADIR%%/lib/lousy/widget/zoom.lua
 %%DATADIR%%/lib/markdown.lua
@@ -200,6 +203,7 @@ share/applications/luakit.desktop
 %%DATADIR%%/lib/settings_chrome.lua
 %%DATADIR%%/lib/styles.lua
 %%DATADIR%%/lib/tab_favicons.lua
+%%DATADIR%%/lib/tabgroups.lua
 %%DATADIR%%/lib/tabhistory.lua
 %%DATADIR%%/lib/tabmenu.lua
 %%DATADIR%%/lib/taborder.lua
@@ -228,3 +232,4 @@ share/applications/luakit.desktop
 %%DATADIR%%/resources/icons/tab-icon-security-error@2x.png
 man/man1/luakit.1.gz
 share/pixmaps/luakit.png
+share/pixmaps/luakit.svg
