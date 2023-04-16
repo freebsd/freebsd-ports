@@ -1,6 +1,6 @@
 PORTNAME=	tree-sitter-graph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -54,13 +54,13 @@ CARGO_CRATES=	ahash-0.4.7 \
 		regex-1.7.3 \
 		regex-syntax-0.6.29 \
 		ryu-1.0.13 \
-		serde-1.0.159 \
-		serde_derive-1.0.159 \
-		serde_json-1.0.95 \
+		serde-1.0.160 \
+		serde_derive-1.0.160 \
+		serde_json-1.0.96 \
 		smallvec-1.10.0 \
 		string-interner-0.12.2 \
 		strsim-0.10.0 \
-		syn-2.0.13 \
+		syn-2.0.15 \
 		termcolor-1.2.0 \
 		textwrap-0.16.0 \
 		thiserror-1.0.40 \
