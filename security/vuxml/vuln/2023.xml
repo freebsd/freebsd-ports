@@ -1,3 +1,32 @@
+  <vuln vid="0bd7f07b-dc22-11ed-bf28-589cfc0f81b0">
+    <topic>libxml2 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>libxml2</name>
+	<range><lt>2.10.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The libxml2 project reports:</p>
+	<blockquote cite="https://gitlab.gnome.org/GNOME/libxml2/-/releases/v2.10.4">
+	  <p>Hashing of empty dict strings isn't deterministic</p>
+	  <p>Fix null deref in xmlSchemaFixupComplexType</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28484</cvename>
+      <cvename>CVE-2023-29469</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=2185984</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=2185994</url>
+    </references>
+    <dates>
+      <discovery>2023-04-11</discovery>
+      <entry>2023-04-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e8b20517-dbb6-11ed-bf28-589cfc0f81b0">
     <topic>mod_gnutls -- Infinite Loop on request read timeout</topic>
     <affects>
