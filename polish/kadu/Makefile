@@ -1,6 +1,6 @@
 PORTNAME=	kadu
 PORTVERSION=	4.3
-PORTREVISION=	24
+PORTREVISION=	25
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -14,6 +14,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet communicator supporting Gadu-Gadu and Jabber/XMPP
 WWW=		http://kadu.im
 
+BROKEN=		Does not build against net-im/qxmpp-qt5
+DEPRECATED=	Upstream website no longer exists, no update on SourceForge
+EXPIRATION_DATE=	2023-05-31
+
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash \
@@ -22,7 +26,7 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libsndfile.so:audio/libsndfile \
 		libinjeqt.so:devel/injeqt \
 		libidn.so:dns/libidn \
-		libqxmpp.so:net-im/qxmpp-qt5 \
+		libQXmppQt5.so:net-im/qxmpp-qt5 \
 		libgadu.so:polish/libgadu \
 		libgcrypt.so:security/libgcrypt \
 		libotr.so.5:security/libotr \
@@ -57,6 +61,7 @@ GG_EMOTS_DISTFILES=	${GG6_EMOTS_DISTFILE}:additions \
 post-patch:
 	@${REINPLACE_CMD} '/kadu_add_test/ s|^|#|' \
 		${WRKSRC}/kadu-core/plugin/CMakeLists.txt
+	# ${FIND} ${WRKSRC} -type f -name '*.h' -o -name '*.cpp' | ${XARGS} ${REINPLACE_CMD} '/^#include/ s|qxmpp/|QXmppQt5/|g' \
 
 post-install-GG_EMOTS-on:
 	@${MKDIR} ${WRKSRC}/varia/themes/emoticons
