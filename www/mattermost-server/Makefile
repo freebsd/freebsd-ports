@@ -1,5 +1,5 @@
 PORTNAME=	mattermost-server
-PORTVERSION=	7.9.2
+PORTVERSION=	7.10.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
 MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
