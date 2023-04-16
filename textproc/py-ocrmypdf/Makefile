@@ -1,6 +1,5 @@
 PORTNAME=	ocrmypdf
-DISTVERSION=	14.0.4
-PORTREVISION=	1
+DISTVERSION=	14.1.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,7 +30,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1:devel/py-pytest@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=2.0.1:textproc/py-python-xmp-toolkit@${PY_FLAVOR}
 
 USES=		ghostscript:run python:3.8+ shebangfix
-USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	autoplist concurrent pep517
 
 SHEBANG_FILES=	src/ocrmypdf/__main__.py \
