@@ -119,9 +119,8 @@ post-extract:
 		  ${WRKDIR}/.cache/node-gyp/${NODE_VERSION_PORTS}
 	@${CP} ${DISTDIR}/node-v${NODE_VERSION_PKGFETCH}.tar.gz ${DISTDIR}/node-v${NODE_VERSION_PORTS}.tar.gz \
 		${WRKDIR}/.pkg-cache/node
-	${MV} ${WRKDIR}/node-v${NODE_VERSION_PORTS}/include ${WRKDIR}/.cache/node-gyp/${NODE_VERSION}
+	${MV} ${WRKDIR}/node-v${NODE_VERSION_PORTS}/include ${WRKDIR}/.cache/node-gyp/${NODE_VERSION_PORTS}
 	${ECHO_CMD} '9' > ${WRKDIR}/.cache/node-gyp/${NODE_VERSION_PORTS}/installVersion
-
 
 	@${MKDIR} ${WRKSRC}/sdkjs-plugins/v1
 	@${CP} ${WRKSRC}/onlyoffice.github.io/sdkjs-plugins/v1/* ${WRKSRC}/sdkjs-plugins/v1
