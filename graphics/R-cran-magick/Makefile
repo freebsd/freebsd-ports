@@ -14,9 +14,8 @@ CRAN_DEPENDS=	R-cran-curl>0:ftp/R-cran-curl \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-Rcpp>0:devel/R-cran-Rcpp
 BUILD_DEPENDS+=	${CRAN_DEPENDS}
-RUN_DEPENDS=	ImageMagick7>0:graphics/ImageMagick7 \
-		${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=		cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles magick:run
 
 .include <bsd.port.mk>
