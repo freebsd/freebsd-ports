@@ -15,11 +15,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	martin-cs
 GH_TAGNAME=	c3acaf6
 
-CXXFLAGS+=	-I${WRKSRC}
-
 ALL_TARGET=	subdirs symfpu.a
-
 MAKE_ARGS=	SUBDIRS=baseTypes
+
+# these flags are x86-only and have been patched out
+# of ${WRKSRC}/flags for portability
+CXXFLAGS_amd64=	-msse -mfma -mno-fma4 -mfpmath=sse
+CXXFLAGS_i386=	${CXXFLAGS_amd64}
+CXXFLAGS+=	${CXXFLAGS_${ARCH}} -I${WRKSRC}
 
 do-install:
 	${MKDIR} \

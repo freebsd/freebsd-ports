@@ -1,0 +1,5 @@
+--- flags.orig	2023-04-17 21:44:48 UTC
++++ flags
+@@ -1 +1 @@
+-CXXFLAGS+=-std=gnu++11 -Wall -W -frounding-math -fsignaling-nans -ffp-contract=off -msse2 -mfpmath=sse -pedantic -mfma -mno-fma4
++CXXFLAGS+=-std=gnu++11 -Wall -W -frounding-math -fsignaling-nans -ffp-contract=off -pedantic
