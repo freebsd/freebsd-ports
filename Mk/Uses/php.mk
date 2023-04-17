@@ -382,10 +382,11 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 		pdo_odbc pdo_pgsql pdo_sqlite phar pgsql posix \
 		pspell radius random readline redis session shmop simplexml snmp \
 		soap sockets sodium spl sqlite3 sysvmsg sysvsem sysvshm \
-		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zip zlib
+		tidy tokenizer xml xmlreader xmlrpc xmlwriter xsl zephir_parser \
+		zip zlib
 # version specific components
-_USE_PHP_VER80=	${_USE_PHP_ALL} zephir_parser
-_USE_PHP_VER81=	${_USE_PHP_ALL} zephir_parser
+_USE_PHP_VER80=	${_USE_PHP_ALL}
+_USE_PHP_VER81=	${_USE_PHP_ALL}
 _USE_PHP_VER82=	${_USE_PHP_ALL}
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
