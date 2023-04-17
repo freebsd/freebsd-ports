@@ -44,8 +44,8 @@ command_args="-c -f -P ${pidfile} -u ${unbound_exporter_user} \
 	${unbound_exporter_cert:+-unbound.cert $unbound_exporter_cert} \
 	${unbound_exporter_host:+-unbound.host $unbound_exporter_host} \
 	${unbound_exporter_key:+-unbound.key $unbound_exporter_key} \
-	${unbound_exporter_bind:+-web.listen-adress $unbound_exporter_bin}
-	${unbound_exporter_path:+-web.telemetry-patch $unbound_exporter_path}
+	${unbound_exporter_bind:+-web.listen-address $unbound_exporter_bind} \
+	${unbound_exporter_path:+-web.telemetry-path $unbound_exporter_path} \
 	${unbound_exporter_args}"
 
 # these were used in the past, but now "daemon" takes care of everything and must run as root
