@@ -107,10 +107,12 @@
 @group wazuh
 /var/ossec/packages_files/agent_installation_scripts/add_localfiles.sh
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/HP-UX/localfile-commands.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/HP-UX/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/HP-UX/wodle-syscollector.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/README.md
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/aix/localfile-commands.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/aix/wodle-syscollector.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/alpine/rootcheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn/1/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn/2/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/bsd/localfile-commands.template
@@ -146,6 +148,7 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10/rootcheck.agent.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/11/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/7/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/8/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/9/sca.files
@@ -283,10 +286,13 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/20/cis_apple_macOS_11.1.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/21/cis_apple_macOS_12.0.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian10.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian11.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian7.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian8.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian9.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/generic/sca_unix_audit.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/hpux/cis_hpux_11i.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/hpux/cis_hpux_11i_bastille.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/mongodb/cis_mongodb_36.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/nginx/cis_nginx_1.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/oracledb/cis_oracle_database_19c.yml
@@ -362,9 +368,12 @@
 /var/ossec/ruleset/sca/cis_centos7_linux.yml
 /var/ossec/ruleset/sca/cis_centos8_linux.yml
 /var/ossec/ruleset/sca/cis_debian10.yml
+/var/ossec/ruleset/sca/cis_debian11.yml
 /var/ossec/ruleset/sca/cis_debian7.yml
 /var/ossec/ruleset/sca/cis_debian8.yml
 /var/ossec/ruleset/sca/cis_debian9.yml
+/var/ossec/ruleset/sca/cis_hpux_11i.yml
+/var/ossec/ruleset/sca/cis_hpux_11i_bastille.yml
 /var/ossec/ruleset/sca/cis_iis_10.yml
 /var/ossec/ruleset/sca/cis_mongodb_36.yml
 /var/ossec/ruleset/sca/cis_mysql5-6_community.yml
@@ -432,13 +441,14 @@
 @dir(root,wazuh,770) /var/ossec/etc/shared
 @dir(wazuh,wazuh,770) /var/ossec/etc
 @dir(root,wazuh,750) /var/ossec/lib
-@dir(wazuh,wazuh,750) /var/ossec/logs/wazuh
+@dir(wazuh,wazuh,770) /var/ossec/logs/wazuh
 @dir(wazuh,wazuh,770) /var/ossec/logs
 @mode 750
 @owner root
 @group wazuh
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/HP-UX
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/aix
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/alpine
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn/1
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn/2
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/amzn
@@ -457,6 +467,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/21
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/11
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/7
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/8
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/9
@@ -534,6 +545,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/debian
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/generic
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/hpux
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/mongodb
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/nginx
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/oracledb
