@@ -11,7 +11,7 @@ WWW=		http://exult.info
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS?=	libfreetype.so:print/freetype2 \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libogg.so:audio/libogg \
 		libpng.so:graphics/png \
 		libvorbis.so:audio/libvorbis
@@ -71,7 +71,7 @@ GIMP_USE=		GNOME=gtk20 \
 			pango
 GIMP_CONFIGURE_ENABLE=	gimp-plugin
 
-STUDIO_LIB_DEPENDS=		libharfbuzz.so:print/harfbuzz
+STUDIO_LIB_DEPENDS?=		libharfbuzz.so:print/harfbuzz
 STUDIO_USES=			gnome
 STUDIO_USE=			GNOME=libglade2
 STUDIO_CONFIGURE_ENABLE=	exult-studio exult-studio-support
