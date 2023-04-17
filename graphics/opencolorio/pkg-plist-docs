@@ -116,10 +116,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/searchtools.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/sphinx_highlight.js
-%%PORTDOCS%%%%DOCSDIR%%/html/_static/sphinx_press_theme.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/tabs.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/tabs.js
-%%PORTDOCS%%%%DOCSDIR%%/html/_static/theme-vendors.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/theme.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/theme.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/underscore-1.13.1.js
