@@ -1,6 +1,5 @@
 PORTNAME=	lidarr
-PORTVERSION=	1.0.2.2592
-PORTREVISION=	2
+PORTVERSION=	1.1.4.3027
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/lidarr/Lidarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Lidarr.master.${PORTVERSION}.freebsd-core-x64
@@ -16,6 +15,7 @@ ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		icu>0:devel/icu \
+		krb5>0:security/krb5 \
 		libiconv>0:converters/libiconv \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind \
