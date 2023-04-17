@@ -12568,6 +12568,8 @@
 %%DATADIR%%/3dmodels/Sensor.3dshapes/Aosong_DHT11_5.5x12.0_P2.54mm.wrl
 %%DATADIR%%/3dmodels/Sensor_Audio.3dshapes/CUI_CMC-4013-SMT.step
 %%DATADIR%%/3dmodels/Sensor_Audio.3dshapes/CUI_CMC-4013-SMT.wrl
+%%DATADIR%%/3dmodels/Sensor_Audio.3dshapes/InvenSense_ICS-43434-6_3.5x2.65mm.step
+%%DATADIR%%/3dmodels/Sensor_Audio.3dshapes/InvenSense_ICS-43434-6_3.5x2.65mm.wrl
 %%DATADIR%%/3dmodels/Sensor_Audio.3dshapes/ST_HLGA-6_3.76x4.72mm_P1.65mm.step
 %%DATADIR%%/3dmodels/Sensor_Audio.3dshapes/ST_HLGA-6_3.76x4.72mm_P1.65mm.wrl
 %%DATADIR%%/3dmodels/Sensor_Current.3dshapes/LEM_HO-NP.step
@@ -12582,6 +12584,7 @@
 %%DATADIR%%/3dmodels/Sensor_Distance.3dshapes/ST_VL53L1x.wrl
 %%DATADIR%%/3dmodels/Sensor_Pressure.3dshapes/NXP_MPL115A1_LGA-8_3x5mm_P1.25mm.step
 %%DATADIR%%/3dmodels/Sensor_Pressure.3dshapes/NXP_MPL115A1_LGA-8_3x5mm_P1.25mm.wrl
+%%DATADIR%%/3dmodels/Symbol.3dshapes/EasterEgg_EWG1308-2013_ClassA.step
 %%DATADIR%%/3dmodels/TerminalBlock_Altech.3dshapes/Altech_AK300_1x02_P5.00mm_45-Degree.step
 %%DATADIR%%/3dmodels/TerminalBlock_Altech.3dshapes/Altech_AK300_1x02_P5.00mm_45-Degree.wrl
 %%DATADIR%%/3dmodels/TerminalBlock_Altech.3dshapes/Altech_AK300_1x03_P5.00mm_45-Degree.step

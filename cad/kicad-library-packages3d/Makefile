@@ -1,5 +1,5 @@
 PORTNAME=	kicad
-PORTVERSION=	7.0.1
+PORTVERSION=	7.0.2
 CATEGORIES=	cad
 MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-packages3D/-/archive/${DISTVERSION}${DISTVERSIONSUFFIX}/
 PKGNAMESUFFIX=	-library-packages3d

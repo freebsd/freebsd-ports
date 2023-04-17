@@ -176,6 +176,7 @@
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_Push_1P1T_NO_CK_KSC7xxJ.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_Push_1P1T_NO_CK_PTS125Sx43PSMTR.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_Push_1P1T_NO_Vertical_Wuerth_434133025816.kicad_mod
+%%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_Push_1P1T_XKB_TS-1187A.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_Push_SPST_NO_Alps_SKRK.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SP3T_PCM13.kicad_mod
 %%DATADIR%%/footprints/Button_Switch_SMD.pretty/SW_SPDT_CK-JS102011SAQN.kicad_mod
@@ -1195,6 +1196,7 @@
 %%DATADIR%%/footprints/Connector_Coaxial.pretty/U.FL_Hirose_U.FL-R-SMT-1_Vertical.kicad_mod
 %%DATADIR%%/footprints/Connector_Coaxial.pretty/U.FL_Molex_MCRF_73412-0110_Vertical.kicad_mod
 %%DATADIR%%/footprints/Connector_Coaxial.pretty/WR-MMCX_Wuerth_66011102111302_Horizontal.kicad_mod
+%%DATADIR%%/footprints/Connector_Coaxial.pretty/WR-MMCX_Wuerth_66012102111404_Vertical.kicad_mod
 %%DATADIR%%/footprints/Connector_DIN.pretty/DIN41612_B2_2x16_Female_Vertical_THT.kicad_mod
 %%DATADIR%%/footprints/Connector_DIN.pretty/DIN41612_B2_2x16_Male_Horizontal_THT.kicad_mod
 %%DATADIR%%/footprints/Connector_DIN.pretty/DIN41612_B2_2x8_Female_Vertical_THT.kicad_mod
@@ -7071,6 +7073,8 @@
 %%DATADIR%%/footprints/Connector_Wuerth.pretty/Wuerth_WR-WTB_64801011622_1x10_P1.50mm_Vertical.kicad_mod
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_CUI_PBO-3-Sxx_THT_Vertical.kicad_mod
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_Hahn_HS-400xx_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_HiLink_HLK-10Mxx.kicad_mod
+%%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_HiLink_HLK-5Mxx.kicad_mod
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_HiLink_HLK-PMxx.kicad_mod
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_MeanWell_IRM-02-xx_SMD.kicad_mod
 %%DATADIR%%/footprints/Converter_ACDC.pretty/Converter_ACDC_MeanWell_IRM-02-xx_THT.kicad_mod
@@ -7124,6 +7128,7 @@
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_RECOM_R-78S-0.1_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_RECOM_R5xxxDA_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_RECOM_R5xxxPA_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_RECOM_RCD-24_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_RECOM_RPA60-xxxxSFW.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_RECOM_RPMx.x-x.0.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_Silvertel_Ag54xx.kicad_mod
@@ -7137,6 +7142,7 @@
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TEN20-xxxx-N4_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TEN20-xxxx_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THD_15-xxxxWIN_THT.kicad_mod
+%%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_THN30-xxxx_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMR-1-xxxx_Dual_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMR-1-xxxx_Single_THT.kicad_mod
 %%DATADIR%%/footprints/Converter_DCDC.pretty/Converter_DCDC_TRACO_TMR-1SM_SMD.kicad_mod
@@ -7285,6 +7291,7 @@
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_MicroCrystal_MS1V-T1K.kicad_mod
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_MicroCrystal_MS3V-T1R.kicad_mod
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_Qantek_QC5CB-2Pin_5x3.2mm.kicad_mod
+%%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_SeikoEpson_FA128-4Pin_2.0x1.6mm.kicad_mod
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_SeikoEpson_FA238-4Pin_3.2x2.5mm.kicad_mod
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_SeikoEpson_FA238-4Pin_3.2x2.5mm_HandSoldering.kicad_mod
 %%DATADIR%%/footprints/Crystal.pretty/Crystal_SMD_SeikoEpson_FA238V-4Pin_3.2x2.5mm.kicad_mod
@@ -7950,6 +7957,7 @@
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonModeChoke_Coilcraft_0603USB.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonModeChoke_Coilcraft_0805USB.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonModeChoke_Coilcraft_1812CAN.kicad_mod
+%%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonModeChoke_Murata_DLW5BTMxxxSQ2x_5x5mm.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonModeChoke_Wuerth_WE-SL5.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonMode_Delevan_4222.kicad_mod
 %%DATADIR%%/footprints/Inductor_SMD.pretty/L_CommonMode_Wuerth_WE-SL2.kicad_mod
@@ -9192,6 +9200,7 @@
 %%DATADIR%%/footprints/Oscillator.pretty/Oscillator_SMD_SeikoEpson_SG8002JC-4Pin_10.5x5.0mm_HandSoldering.kicad_mod
 %%DATADIR%%/footprints/Oscillator.pretty/Oscillator_SMD_SeikoEpson_SG8002LB-4Pin_5.0x3.2mm.kicad_mod
 %%DATADIR%%/footprints/Oscillator.pretty/Oscillator_SMD_SeikoEpson_SG8002LB-4Pin_5.0x3.2mm_HandSoldering.kicad_mod
+%%DATADIR%%/footprints/Oscillator.pretty/Oscillator_SMD_SeikoEpson_TG2520SMN-xxx-xxxxxx-4Pin_2.5x2.0mm.kicad_mod
 %%DATADIR%%/footprints/Oscillator.pretty/Oscillator_SMD_SiTime_PQFD-6L_3.2x2.5mm.kicad_mod
 %%DATADIR%%/footprints/Oscillator.pretty/Oscillator_SMD_SiTime_SiT9121-6Pin_3.2x2.5mm.kicad_mod
 %%DATADIR%%/footprints/Oscillator.pretty/Oscillator_SMD_Silicon_Labs_LGA-6_2.5x3.2mm_P1.25mm.kicad_mod
@@ -9599,6 +9608,9 @@
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Infineon_MLPQ-48-1EP_7x7mm_P0.5mm_Pad5.55x5.55mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Infineon_PQFN-22-15-4EP_6x5mm_P0.65mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Infineon_PQFN-44-31-5EP_7x7mm_P0.5mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/LQFN-10-1EP_2x2mm_P0.5mm_EP0.7x0.7mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/LQFN-12-1EP_2x2mm_P0.5mm_EP0.7x0.7mm.kicad_mod
+%%DATADIR%%/footprints/Package_DFN_QFN.pretty/LQFN-16-1EP_3x3mm_P0.5mm_EP1.7x1.7mm.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Linear_DE14MA.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/Linear_UGK52_QFN-46-52.kicad_mod
 %%DATADIR%%/footprints/Package_DFN_QFN.pretty/MLF-20-1EP_4x4mm_P0.5mm_EP2.6x2.6mm.kicad_mod
@@ -11419,6 +11431,7 @@
 %%DATADIR%%/footprints/RF_Antenna.pretty/Abracon_APAES868R8060C16-T.kicad_mod
 %%DATADIR%%/footprints/RF_Antenna.pretty/Abracon_PRO-OB-440.kicad_mod
 %%DATADIR%%/footprints/RF_Antenna.pretty/Abracon_PRO-OB-471.kicad_mod
+%%DATADIR%%/footprints/RF_Antenna.pretty/Astrocast_AST50127-00.kicad_mod
 %%DATADIR%%/footprints/RF_Antenna.pretty/Coilcraft_MA5532-AE_RFID.kicad_mod
 %%DATADIR%%/footprints/RF_Antenna.pretty/Johanson_2450AT18x100.kicad_mod
 %%DATADIR%%/footprints/RF_Antenna.pretty/Johanson_2450AT43F0100.kicad_mod
@@ -11428,6 +11441,7 @@
 %%DATADIR%%/footprints/RF_Antenna.pretty/Texas_SWRA416_868MHz_915MHz.kicad_mod
 %%DATADIR%%/footprints/RF_Converter.pretty/Anaren_0805_2012Metric-6.kicad_mod
 %%DATADIR%%/footprints/RF_Converter.pretty/Balun_Johanson_0896BM15A0001.kicad_mod
+%%DATADIR%%/footprints/RF_Converter.pretty/Balun_Johanson_0900FM15K0039.kicad_mod
 %%DATADIR%%/footprints/RF_Converter.pretty/Balun_Johanson_0900PC15J0013.kicad_mod
 %%DATADIR%%/footprints/RF_Converter.pretty/Balun_Johanson_1.6x0.8mm.kicad_mod
 %%DATADIR%%/footprints/RF_Converter.pretty/Balun_Johanson_5400BL15B050E.kicad_mod
@@ -11484,6 +11498,7 @@
 %%DATADIR%%/footprints/RF_Mini-Circuits.pretty/Mini-Circuits_YY161.kicad_mod
 %%DATADIR%%/footprints/RF_Mini-Circuits.pretty/Mini-Circuits_YY161_LandPatternPL-049.kicad_mod
 %%DATADIR%%/footprints/RF_Module.pretty/Ai-Thinker-Ra-01-LoRa.kicad_mod
+%%DATADIR%%/footprints/RF_Module.pretty/Astrocast_AST50147-00.kicad_mod
 %%DATADIR%%/footprints/RF_Module.pretty/Atmel_ATSAMR21G18-MR210UA_NoRFPads.kicad_mod
 %%DATADIR%%/footprints/RF_Module.pretty/BLE112-A.kicad_mod
 %%DATADIR%%/footprints/RF_Module.pretty/BM78SPPS5xC2.kicad_mod
@@ -11855,7 +11870,9 @@
 %%DATADIR%%/footprints/Sensor.pretty/Winson_GM-402B_5x5mm_P1.27mm.kicad_mod
 %%DATADIR%%/footprints/Sensor_Audio.pretty/CUI_CMC-4013-SMT.kicad_mod
 %%DATADIR%%/footprints/Sensor_Audio.pretty/Infineon_PG-LLGA-5-1.kicad_mod
+%%DATADIR%%/footprints/Sensor_Audio.pretty/InvenSense_ICS-43434-6_3.5x2.65mm.kicad_mod
 %%DATADIR%%/footprints/Sensor_Audio.pretty/Knowles_LGA-5_3.5x2.65mm.kicad_mod
+%%DATADIR%%/footprints/Sensor_Audio.pretty/Knowles_SPH0645LM4H-6_3.5x2.65mm.kicad_mod
 %%DATADIR%%/footprints/Sensor_Audio.pretty/ST_HLGA-6_3.76x4.72mm_P1.65mm.kicad_mod
 %%DATADIR%%/footprints/Sensor_Current.pretty/AKM_CQ_7.kicad_mod
 %%DATADIR%%/footprints/Sensor_Current.pretty/AKM_CQ_7S.kicad_mod
@@ -11928,6 +11945,7 @@
 %%DATADIR%%/footprints/Symbol.pretty/CE-Logo_42x30mm_SilkScreen.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/CE-Logo_56.1x40mm_SilkScreen.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/CE-Logo_8.5x6mm_SilkScreen.kicad_mod
+%%DATADIR%%/footprints/Symbol.pretty/EasterEgg_EWG1308-2013_ClassA.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/ESD-Logo_13.2x12mm_SilkScreen.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/ESD-Logo_22x20mm_SilkScreen.kicad_mod
 %%DATADIR%%/footprints/Symbol.pretty/ESD-Logo_33x30mm_SilkScreen.kicad_mod
