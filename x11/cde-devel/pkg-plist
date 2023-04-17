@@ -2623,12 +2623,12 @@ dt%%DT_ID%%/include/Dt/MenuButton.h
 dt%%DT_ID%%/include/Dt/Mmdb.h
 dt%%DT_ID%%/include/Dt/Mrm.h
 dt%%DT_ID%%/include/Dt/MsgLog.h
-dt%%DT_ID%%/include/Dt/PamSvc.h
 dt%%DT_ID%%/include/Dt/Print.h
 dt%%DT_ID%%/include/Dt/Saver.h
 dt%%DT_ID%%/include/Dt/Search.h
 dt%%DT_ID%%/include/Dt/Session.h
 dt%%DT_ID%%/include/Dt/SpinBox.h
+dt%%DT_ID%%/include/Dt/SvcPam.h
 dt%%DT_ID%%/include/Dt/Term.h
 dt%%DT_ID%%/include/Dt/TermPrim.h
 dt%%DT_ID%%/include/Dt/Wsm.h
