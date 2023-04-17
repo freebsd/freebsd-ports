@@ -18,6 +18,7 @@ bin/spamd
 @sample %%ETCDIR%%/v342.pre.sample
 @sample %%ETCDIR%%/v343.pre.sample
 @sample %%ETCDIR%%/v400.pre.sample
+@sample %%ETCDIR%%/v401.pre.sample
 include/libspamc.h
 lib/libspamc.so
 lib/libspamc.so.0
