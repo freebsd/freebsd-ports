@@ -1,10 +1,9 @@
 PORTNAME=	nginx
-PORTVERSION=	1.22.1
-PORTREVISION?=	5
+PORTVERSION=	1.24.0
+PORTREVISION?=	0
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
-		http://nginx.org/download/ \
 		LOCAL/joneum
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -15,14 +14,11 @@ WWW=		https://nginx.com/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_mips=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
-BROKEN_mips64=	error ngx_spinlock() or ngx_atomic_cmp_set() are not defined
-
 CONFLICTS_INSTALL=	nginx-devel
 
-PORTSCOUT=	limit:^1\.22\.[0-9]*
+PORTSCOUT=	limit:^1\.24\.[0-9]*
 
-USES=		compiler:c11 cpe
+USES=		cpe
 
 CPE_VENDOR=	f5
 CPE_PRODUCT=	nginx
@@ -41,8 +37,8 @@ CONFLICTS?=	nginx-devel-1.* \
 		nginx-full-1.* \
 		nginx-lite-1.* \
 		nginx-naxsi-1.*
-USE_RC_SUBR=	nginx
-SUB_FILES=	pkg-message
+USE_RC_SUBR?=	nginx
+SUB_FILES?=	pkg-message
 SUB_LIST+=	WWWOWN=${WWWOWN} \
 		WWWGRP=${WWWGRP} \
 		NGINX_RUNDIR=${NGINX_RUNDIR} \
@@ -52,7 +48,6 @@ SUB_LIST+=	WWWOWN=${WWWOWN} \
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--prefix=${ETCDIR} \
 		--with-cc-opt="-I ${LOCALBASE}/include" \
-		--with-ld-opt="-L ${LOCALBASE}/lib" \
 		--conf-path=${ETCDIR}/nginx.conf \
 		--sbin-path=${PREFIX}/sbin/nginx \
 		--pid-path=${NGINX_RUNDIR}/nginx.pid \
@@ -69,48 +64,28 @@ GROUPS?=${WWWGRP}
 
 NO_OPTIONS_SORT=	yes
 
-OPTIONS_GROUP=	MAILGRP HTTPGRP STREAMGRP
+OPTIONS_GROUP=	HTTPGRP MAILGRP STREAMGRP
 # Modules that are part of the base nginx distribution
 OPTIONS_GROUP_HTTPGRP=	GOOGLE_PERFTOOLS HTTP HTTP_ADDITION HTTP_AUTH_REQ \
-	HTTP_CACHE HTTP_DAV HTTP_FLV HTTP_GUNZIP_FILTER HTTP_GZIP_STATIC \
-	HTTP_IMAGE_FILTER HTTP_MP4 HTTP_PERL HTTP_RANDOM_INDEX HTTP_REALIP \
-	HTTP_SECURE_LINK HTTP_SLICE HTTP_SLICE_AHEAD \
-	HTTP_SSL HTTP_STATUS HTTP_SUB HTTP_XSLT HTTPV2 HTTPV2_AUTOTUNE
-
-# External modules (arrayvar MUST appear after devel_kit for build-dep)
-OPTIONS_GROUP_HTTPGRP+=	AJP AWS_AUTH BROTLI CACHE_PURGE CLOJURE CT DEVEL_KIT \
-	ARRAYVAR DRIZZLE DYNAMIC_TLS DYNAMIC_HC DYNAMIC_UPSTREAM ECHO ENCRYPTSESSION \
-	FORMINPUT GRIDFS HEADERS_MORE HTTP_ACCEPT_LANGUAGE \
-	HTTP_AUTH_DIGEST HTTP_AUTH_JWT HTTP_AUTH_KRB5 HTTP_AUTH_LDAP \
-	HTTP_AUTH_PAM HTTP_DAV_EXT HTTP_EVAL HTTP_FANCYINDEX HTTP_FOOTER \
-	HTTP_GEOIP2 HTTP_IP2LOCATION HTTP_IP2PROXY HTTP_JSON_STATUS HTTP_MOGILEFS \
-	HTTP_MP4_H264 HTTP_NOTICE HTTP_PUSH HTTP_PUSH_STREAM HTTP_REDIS \
-	HTTP_RESPONSE HTTP_SUBS_FILTER HTTP_TARANTOOL HTTP_UPLOAD \
-	HTTP_UPLOAD_PROGRESS HTTP_UPSTREAM_CHECK HTTP_UPSTREAM_FAIR \
-	HTTP_UPSTREAM_STICKY HTTP_VIDEO_THUMBEXTRACTOR HTTP_ZIP ICONV LET LINK LUA \
-	MEMC MODSECURITY3 NAXSI OPENTRACING PASSENGER POSTGRES RDS_CSV \
-	RDS_JSON REDIS2 RTMP SET_MISC SFLOW SHIBBOLETH SLOWFS_CACHE \
-	SMALL_LIGHT SRCACHE VOD VTS XSS WEBSOCKIFY
+	HTTP_CACHE HTTP_DAV HTTP_DEGRADATION HTTP_FLV HTTP_GUNZIP_FILTER \
+	HTTP_GZIP_STATIC HTTP_IMAGE_FILTER HTTP_MP4 HTTP_PERL \
+	HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK HTTP_SLICE HTTP_SSL \
+	HTTP_STATUS HTTP_SUB HTTP_XSLT HTTPV2 HTTPV3 HTTPV3_BORING HTTPV3_LSSL \
+	HTTPV3_QTLS
 
 OPTIONS_GROUP_MAILGRP=	MAIL MAIL_IMAP MAIL_POP3 MAIL_SMTP MAIL_SSL
 
 OPTIONS_GROUP_STREAMGRP=	STREAM STREAM_REALIP STREAM_SSL \
 	STREAM_SSL_PREREAD
 
-OPTIONS_DEFINE=	DEBUG DEBUGLOG DSO FILE_AIO IPV6 NJS THREADS WWW
-
+OPTIONS_DEFINE=		DEBUG DEBUGLOG DSO FILE_AIO IPV6 NJS NJS_XML THREADS WWW
 OPTIONS_DEFAULT?=	DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
-		HTTP_DAV HTTP_FLV HTTP_GZIP_STATIC HTTP_GUNZIP_FILTER \
-		HTTP_MP4 HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK \
-		HTTP_SLICE HTTP_REWRITE HTTP_SSL HTTP_STATUS HTTP_SUB \
-		HTTPV2 MAIL MAIL_SSL PCRE_ONE STREAM STREAM_SSL STREAM_REALIP \
-		STREAM_SSL_PREREAD THREADS WWW
+		HTTP_DAV HTTP_FLV HTTP_GUNZIP_FILTER HTTP_GZIP_STATIC HTTP_MP4 \
+		HTTP_RANDOM_INDEX HTTP_REALIP HTTP_SECURE_LINK HTTP_SLICE HTTP_SSL \
+		HTTP_STATUS HTTP_SUB HTTPV2 MAIL MAIL_SSL STREAM \
+		STREAM_REALIP STREAM_SSL STREAM_SSL_PREREAD THREADS WWW
 
-OPTIONS_RADIO+=		PCRE
-OPTIONS_RADIO_PCRE=	PCRE_ONE PCRE_TWO
-PCRE_ONE_LIB_DEPENDS=	libpcre.so:devel/pcre
-PCRE_ONE_CONFIGURE_ON=	--without-pcre2
-PCRE_TWO_LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
 OPTIONS_SUB=	yes
 
@@ -130,8 +105,9 @@ ${opt}_IMPLIES=	STREAM
 
 # If the target is makesum, make sure that every distfile is fetched.
 .if ${.TARGETS:Mmakesum}
-OPTIONS_DEFAULT=	${OPTIONS_DEFINE} ${OPTIONS_GROUP_HTTP} \
-	${OPTIONS_GROUP_MAIL} ${OPTIONS_GROUP_STREAM}
+OPTIONS_DEFAULT=	${OPTIONS_DEFINE} ${OPTIONS_GROUP_HTTPGRP} \
+	${OPTIONS_GROUP_MAILGRP} ${OPTIONS_GROUP_STREAMGRP} \
+	${OPTIONS_GROUP_THIRDPARTYGRP}
 .endif
 
 # Non-module options handling
@@ -158,6 +134,7 @@ HTTP_ADDITION_CONFIGURE_ON=	--with-http_addition_module
 HTTP_AUTH_REQ_CONFIGURE_ON=	--with-http_auth_request_module
 HTTP_CACHE_CONFIGURE_OFF=	--without-http-cache
 HTTP_DAV_CONFIGURE_ON=		--with-http_dav_module
+HTTP_DEGRADATION_CONFIGURE_ON=	--with-http_degradation_module
 HTTP_FLV_CONFIGURE_ON=		--with-http_flv_module
 HTTP_GZIP_STATIC_CONFIGURE_ON=	--with-http_gzip_static_module
 HTTP_GUNZIP_FILTER_CONFIGURE_ON=--with-http_gunzip_module
@@ -180,6 +157,22 @@ HTTP_XSLT_LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
 HTTP_XSLT_VARS=			DSO_BASEMODS+=http_xslt_module
 HTTPV2_IMPLIES=			HTTP_SSL
 HTTPV2_CONFIGURE_ON=		--with-http_v2_module
+HTTPV3_CONFIGURE_ON=		--build=nginx-quic \
+				--with-stream_quic_module \
+				--with-http_v3_module
+HTTPV3_EXTRA_PATCHES=		${PATCHDIR}/extra-patch-httpv3:-p1
+HTTPV3_BORING_BUILD_DEPENDS=	${LOCALBASE}/bin/bssl:security/boringssl
+HTTPV3_BORING_RUN_DEPENDS=	${LOCALBASE}/bin/bssl:security/boringssl
+HTTPV3_BORING_IMPLIES=		HTTPV3
+HTTPV3_BORING_PREVENTS=		HTTPV3_LSSL HTTPV3_QTLS
+HTTPV3_LSSL_BUILD_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
+HTTPV3_LSSL_BUILD_DEPENDS=	${LOCALBASE}/include/tls.h:security/libressl-devel
+HTTPV3_LSSL_IMPLIES=		HTTPV3
+HTTPV3_LSSL_PREVENTS=		HTTPV3_BORING HTTPV3_QTLS
+HTTPV3_QTLS_BUILD_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl-quictls
+HTTPV3_QTLS_RUN_DEPENDS=	${LOCALBASE}/include/openssl/quic.h:security/openssl-quictls
+HTTPV3_QTLS_IMPLIES=		HTTPV3
+HTTPV3_QTLS_PREVENTS=		HTTPV3_BORING HTTPV3_LSSL
 MAIL_VARS=			DSO_BASEMODS+=mail
 MAIL_IMAP_CONFIGURE_OFF=	--without-mail_imap_module
 MAIL_POP3_CONFIGURE_OFF=	--without-mail_pop3_module
@@ -188,9 +181,9 @@ MAIL_SSL_USES=			ssl
 MAIL_SSL_CONFIGURE_ON=		--with-mail_ssl_module
 STREAM_VARS=			DSO_BASEMODS+=stream
 STREAM_REALIP_CONFIGURE_ON=	--with-stream_realip_module
-STREAM_SSL_IMPLIES=		HTTP_SSL
+STREAM_SSL_USES=		ssl
 STREAM_SSL_CONFIGURE_ON=	--with-stream_ssl_module
-STREAM_SSL_PREREAD_CONFIGURE_ON=	--with-stream_ssl_preread_module
+STREAM_SSL_PREREAD_CONFIGURE_ON=--with-stream_ssl_preread_module
 
 ### External modules
 .include "Makefile.extmod"
@@ -232,13 +225,21 @@ CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
 .endif
 
-.if empty(PORT_OPTIONS:MPCRE_ONE) && empty(PORT_OPTIONS:MPCRE_TWO)
-IGNORE=		required at least PCRE_ONE or PCRE_TWO \
-		to be defined. Please do 'make config' again
+# Fix build failure on clang >= 12
+.if ${PORT_OPTIONS:MHTTP_PERL} && ${OSVERSION} >= 1301000
+CFLAGS+=	-Wno-compound-token-split-by-macro
 .endif
 
-.if ${PORT_OPTIONS:MPCRE_ONE}
-NJS_CONFIGURE_ARGS=	--no-pcre2
+.if empty(PORT_OPTIONS:MLUA) && empty(PORT_OPTIONS:MMODSECURITY3) && \
+    empty(PORT_OPTIONS:MPASSENGER)
+CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib"
+.else
+CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre"
+LIB_DEPENDS+=		libpcre.so:devel/pcre
+.endif
+
+.if empty(PORT_OPTIONS:MNJS_XML)
+NJS_CONFIGURE_ARGS=	--no-libxml2
 .endif
 
 pre-everything::
@@ -251,9 +252,8 @@ pre-everything::
 .endif
 	@${ECHO_MSG}
 
-post-extract-GRIDFS-on:
-	@${RMDIR} ${WRKSRC_gridfs}/mongo-c-driver/
-	@${MV} ${WRKSRC_mongo_c} ${WRKSRC_gridfs}/mongo-c-driver
+pre-patch-HTTPV3-on:
+	@${MV} ${WRKSRC}/README ${WRKSRC}/README.1st
 
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
@@ -272,9 +272,9 @@ post-patch-FASTDFS-on:
 		's!%%PREFIX%%!${PREFIX}!g;s!%%LOCALBASE%%!${LOCALBASE}!g' \
 		${WRKSRC_fastdfs}/src/config
 
-# Respect CFLAGS by remove needless --std=c99 flag
 post-patch-GRIDFS-on:
-	@${REINPLACE_CMD} 's!--std=c99!-DMONGO_HAVE_STDINT!' ${WRKSRC_gridfs}/config
+	@${REINPLACE_CMD} 's!\/usr!${LOCALBASE}!g' \
+		${WRKSRC_gridfs}/nginx-gridfs/config
 
 post-patch-HTTP_AUTH_KRB5-on:
 	@${REINPLACE_CMD} 's!%%GSSAPILIBS%%!${GSSAPILIBS}!g; \
@@ -316,16 +316,14 @@ post-patch-SFLOW-on:
 
 post-patch-VOD-on:
 	@${REINPLACE_CMD} \
-	's!%%PREFIX%%!${LOCALBASE}!g' \
-	${WRKSRC_vod}/config
+		's!%%PREFIX%%!${LOCALBASE}!g' \
+		${WRKSRC_vod}/config
 
 pre-configure-SMALL_LIGHT-on:
 	( cd ${WRKSRC_small_light} && ./setup )
 
 do-configure-NJS-on:
-	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} \
-		&& ${SETENV} ${MAKE_ENV} ${MAKE_CMD} njs \
-		&& ${MV} build/njs ${WRKSRC_njs} )
+	( cd ${WRKSRC_njs} && ${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${NJS_CONFIGURE_ARGS} )
 
 .if !target(do-install)
 do-install:
@@ -360,14 +358,13 @@ do-install-NAXSI-on:
 	${INSTALL_DATA} \
 	${WRKDIR}/naxsi-${NAXSI_NGINX_VER}/naxsi_config/naxsi_core.rules \
 	${STAGEDIR}${ETCDIR}
-
 .endif
 
 .if !target(post-install)
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/vim/vimfiles
 	cd ${WRKSRC}/contrib/vim && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/share/vim/vimfiles
-	${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${STAGEDIR}${MAN8PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/objs/nginx.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
 	${CAT} ${WRKSRC}/conf/nginx.conf >> ${STAGEDIR}${ETCDIR}/nginx.conf-dist
 
 post-install-WWW-on:

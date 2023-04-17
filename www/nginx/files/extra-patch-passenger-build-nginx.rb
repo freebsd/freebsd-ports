@@ -1,6 +1,6 @@
---- ../passenger-6.0.15/build/nginx.rb.orig	2018-05-20 08:43:19.389262000 +0200
-+++ ../passenger-6.0.15/build/nginx.rb	2018-05-20 09:11:27.500253000 +0200
-@@ -39,13 +39,12 @@ auto_generated_sources = %w(
+--- ../passenger-6.0.17/build/nginx.rb.orig	2013-10-26 18:00:00.000000000 -0400
++++ ../passenger-6.0.17/build/nginx.rb	2016-05-09 18:21:22.426777000 -0400
+@@ -33,13 +33,12 @@
  desc "Build Nginx support files"
  task :nginx => [
    :nginx_without_native_support,
@@ -15,7 +15,7 @@
  ].compact
  
  # Workaround for https://github.com/jimweirich/rake/issues/274
-@@ -53,7 +52,6 @@ task :_nginx => :nginx
+@@ -47,7 +46,6 @@
  
  task :nginx_without_native_support => [
    auto_generated_sources,
@@ -23,7 +23,7 @@
    COMMON_LIBRARY.only(*NGINX_LIBS_SELECTOR).link_objects
  ].flatten
  
-@@ -61,7 +59,6 @@ task :nginx_without_native_support => [
+@@ -55,7 +53,6 @@
  # it also creates a namespace:clean task to clean up the output_dir
  task :nginx_dynamic_without_native_support => [
    auto_generated_sources,

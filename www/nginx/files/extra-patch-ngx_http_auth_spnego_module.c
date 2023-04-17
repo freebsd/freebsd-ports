@@ -1,49 +1,52 @@
---- ../spnego-http-auth-nginx-module-c626163/ngx_http_auth_spnego_module.c.orig	2022-02-19 21:05:54.082252000 +0100
-+++ ../spnego-http-auth-nginx-module-c626163/ngx_http_auth_spnego_module.c	2022-02-19 21:12:17.316744000 +0100
-@@ -63,6 +63,11 @@
- #define spnego_log_error(fmt, args...)                                         \
-     ngx_log_error(NGX_LOG_ERR, r->connection->log, 0, fmt, ##args)
- 
-+#ifndef krb5_realm_length
-+#define krb5_realm_length(r) ((r).length)
-+#define krb5_realm_data(r) ((r).data)
-+#endif
-+
- /* Module handler */
- static ngx_int_t ngx_http_auth_spnego_handler(ngx_http_request_t *);
- 
-@@ -1195,12 +1200,12 @@ static krb5_error_code ngx_http_auth_spnego_verify_ser
+--- ../spnego-http-auth-nginx-module-c626163/ngx_http_auth_spnego_module.c.orig
++++ ../spnego-http-auth-nginx-module-c626163/ngx_http_auth_spnego_module.c
+@@ -502,6 +502,7 @@ ngx_http_auth_spnego_headers_basic_only(ngx_http_request_t *r,
      }
  
-     size_t tgs_principal_name_size =
--        (ngx_strlen(KRB5_TGS_NAME) + (principal->realm.length * 2) + 2) + 1;
-+        (ngx_strlen(KRB5_TGS_NAME) + (krb5_realm_length(principal->realm) * 2) + 2) + 1;
-     tgs_principal_name = (char *)ngx_pcalloc(r->pool, tgs_principal_name_size);
-     ngx_snprintf((u_char *)tgs_principal_name, tgs_principal_name_size,
--                 "%s/%*s@%*s", KRB5_TGS_NAME, principal->realm.length,
--                 principal->realm.data, principal->realm.length,
--                 principal->realm.data);
-+                 "%s/%*s@%*s", KRB5_TGS_NAME, krb5_realm_length(principal->realm),
-+                 krb5_realm_data(principal->realm), krb5_realm_length(principal->realm),
-+                 krb5_realm_data(principal->realm));
+     r->headers_out.www_authenticate->hash = 1;
++    r->headers_out.www_authenticate->next = NULL;
+     r->headers_out.www_authenticate->key.len = sizeof("WWW-Authenticate") - 1;
+     r->headers_out.www_authenticate->key.data = (u_char *)"WWW-Authenticate";
+     r->headers_out.www_authenticate->value.len = value.len;
+@@ -538,6 +539,7 @@ ngx_http_auth_spnego_headers(ngx_http_request_t *r,
+     }
  
-     if ((kerr = krb5_parse_name(kcontext, tgs_principal_name,
-                                 &match_creds.server))) {
-@@ -1341,13 +1346,13 @@ static ngx_int_t ngx_http_auth_spnego_obtain_server_cr
-     krb5_get_init_creds_opt_set_forwardable(&gicopts, 1);
+     r->headers_out.www_authenticate->hash = 1;
++    r->headers_out.www_authenticate->next = NULL;
+     r->headers_out.www_authenticate->key.len = sizeof("WWW-Authenticate") - 1;
+     r->headers_out.www_authenticate->key.data = (u_char *)"WWW-Authenticate";
+     r->headers_out.www_authenticate->value.len = value.len;
+@@ -559,6 +561,7 @@ ngx_http_auth_spnego_headers(ngx_http_request_t *r,
+         }
  
-     size_t tgs_principal_name_size =
--        (ngx_strlen(KRB5_TGS_NAME) + (principal->realm.length * 2) + 2) + 1;
-+        (ngx_strlen(KRB5_TGS_NAME) + (krb5_realm_length(principal->realm) * 2) + 2) + 1;
-     tgs_principal_name = (char *)ngx_pcalloc(r->pool, tgs_principal_name_size);
+         r->headers_out.www_authenticate->hash = 2;
++        r->headers_out.www_authenticate->next = NULL;
+         r->headers_out.www_authenticate->key.len =
+             sizeof("WWW-Authenticate") - 1;
+         r->headers_out.www_authenticate->key.data =
+@@ -758,6 +761,12 @@ ngx_http_auth_spnego_store_delegated_creds(ngx_http_request_t *r,
+     char *ccname = NULL;
+     char *escaped = NULL;
  
-     ngx_snprintf((u_char *)tgs_principal_name, tgs_principal_name_size,
--                 "%s/%*s@%*s", KRB5_TGS_NAME, principal->realm.length,
--                 principal->realm.data, principal->realm.length,
--                 principal->realm.data);
-+                 "%s/%*s@%*s", KRB5_TGS_NAME, krb5_realm_length(principal->realm),
-+                 krb5_realm_data(principal->realm), krb5_realm_length(principal->realm),
-+                 krb5_realm_data(principal->realm));
++    if ((kerr = krb5_init_context(&kcontext))) {
++        spnego_log_error("Kerberos error: Cannot initialize kerberos context");
++        spnego_log_krb5_error(kcontext, kerr);
++        goto done;
++    }
++
+     if (!delegated_creds.data) {
+         spnego_log_error(
+             "ngx_http_auth_spnego_store_delegated_creds() NULL credentials");
+@@ -766,12 +775,6 @@ ngx_http_auth_spnego_store_delegated_creds(ngx_http_request_t *r,
+         goto done;
+     }
  
-     kerr = krb5_get_init_creds_keytab(kcontext, &creds, principal, keytab, 0,
-                                       tgs_principal_name, &gicopts);
+-    if ((kerr = krb5_init_context(&kcontext))) {
+-        spnego_log_error("Kerberos error: Cannot initialize kerberos context");
+-        spnego_log_krb5_error(kcontext, kerr);
+-        goto done;
+-    }
+-
+     if ((kerr = krb5_parse_name(kcontext, (char *)principal_name->data,
+                                 &principal))) {
+         spnego_log_error("Kerberos error: Cannot parse principal %s",
