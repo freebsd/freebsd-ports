@@ -256,6 +256,7 @@
     SUBDIR += ezquake
     SUBDIR += f1spirit-remake
     SUBDIR += fairymax
+    SUBDIR += fakesteak
     SUBDIR += falconseye
     SUBDIR += fargoal
     SUBDIR += fbg2

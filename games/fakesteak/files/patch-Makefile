@@ -1,0 +1,28 @@
+--- Makefile.orig	2020-11-18 09:14:32 UTC
++++ Makefile
+@@ -1,7 +1,7 @@
+-CC := cc
+-CFLAGS += -Wall -O3
+-LDLIBS := -lm
+-PREFIX := /usr/local/
++CC ?= cc
++CFLAGS ?= -Wall -O3
++LDLIBS += -lm
++PREFIX ?= /usr/local/
+ NAME := fakesteak
+ 
+ all bin/$(NAME):
+@@ -12,9 +12,10 @@ debug: CFLAGS += -g
+ debug: all
+ 
+ install: bin/$(NAME)
+-	mkdir -p $(PREFIX)/bin
+-	cp bin/$(NAME) $(PREFIX)/bin
+-	chmod +x $(PREFIX)/bin/$(NAME)
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
++	cp bin/$(NAME) $(DESTDIR)$(PREFIX)/bin
++	chmod +x $(DESTDIR)$(PREFIX)/bin/$(NAME)
++	strip $(DESTDIR)$(PREFIX)/bin/$(NAME)
+ 
+ uninstall:
+ 	rm $(PREFIX)/bin/$(NAME)     
