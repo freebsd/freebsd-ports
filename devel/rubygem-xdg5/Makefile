@@ -12,8 +12,6 @@ WWW=		https://alchemists.io/projects/xdg \
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.adoc
 
-BROKEN_RUBY27=	yes
-
 USES=		gem
 
 NO_ARCH=	yes

@@ -10,8 +10,6 @@ WWW=		https://github.com/fedora-ruby/gem-compare
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_RUBY27=	yes
-
 RUN_DEPENDS=	rubygem-diffy>=0:textproc/rubygem-diffy \
 		rubygem-gemnasium-parser>=0:devel/rubygem-gemnasium-parser \
 		rubygem-json>=0:devel/rubygem-json \

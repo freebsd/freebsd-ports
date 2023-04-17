@@ -9,8 +9,6 @@ WWW=		https://github.com/socketry/io-event
 
 LICENSE=	MIT
 
-BROKEN_RUBY27=	yes
-
 USES=		gem
 
 .include <bsd.port.mk>
