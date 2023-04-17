@@ -63,9 +63,14 @@ include/HepMC3/bxzstr/lzma_stream_wrapper.hpp
 include/HepMC3/bxzstr/stream_wrapper.hpp
 include/HepMC3/bxzstr/strict_fstream.hpp
 include/HepMC3/bxzstr/z_stream_wrapper.hpp
+include/HepMC3/bxzstr/zstd_stream_wrapper.hpp
 lib/libHepMC3.so
 lib/libHepMC3.so.3
 lib/libHepMC3search.so
-lib/libHepMC3search.so.4
+lib/libHepMC3search.so.5
 share/HepMC3/cmake/HepMC3Config-version.cmake
 share/HepMC3/cmake/HepMC3Config.cmake
+share/HepMC3/cmake/HepMC3Targets-%%CMAKE_BUILD_TYPE%%.cmake
+share/HepMC3/cmake/HepMC3Targets.cmake
+share/HepMC3/cmake/HepMC3searchTargets-%%CMAKE_BUILD_TYPE%%.cmake
+share/HepMC3/cmake/HepMC3searchTargets.cmake

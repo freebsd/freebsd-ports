@@ -1,5 +1,5 @@
 PORTNAME=	hepmc3
-DISTVERSION=	3.2.5
+DISTVERSION=	3.2.6
 CATEGORIES=	science
 MASTER_SITES=	http://hepmc.web.cern.ch/hepmc/releases/
 DISTNAME=	HepMC3-${DISTVERSION}
@@ -11,9 +11,10 @@ WWW=		https://hepmc.web.cern.ch/hepmc/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang
+USES=		cmake:testing compiler:c++11-lang
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	HEPMC3_ENABLE_PYTHON HEPMC3_BUILD_STATIC_LIBS HEPMC3_ENABLE_ROOTIO HEPMC3_INSTALL_EXAMPLES
+CMAKE_TESTING_ON=	HEPMC3_ENABLE_TEST
 
 .include <bsd.port.mk>
