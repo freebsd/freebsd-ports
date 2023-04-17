@@ -1,3 +1,3 @@
-TIMESTAMP = 1675605848
-SHA256 (sphinx_autodoc_typehints-1.22.tar.gz) = 71fca2d5eee9b034204e4c686ab20b4d8f5eb9409396216bcae6c87c38e18ea6
-SIZE (sphinx_autodoc_typehints-1.22.tar.gz) = 35474
+TIMESTAMP = 1681490866
+SHA256 (sphinx_autodoc_typehints-1.23.0.tar.gz) = 5d44e2996633cdada499b6d27a496ddf9dbc95dd1f0f09f7b37940249e61f6e9
+SIZE (sphinx_autodoc_typehints-1.23.0.tar.gz) = 35945
