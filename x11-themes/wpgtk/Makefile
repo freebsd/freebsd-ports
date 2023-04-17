@@ -4,7 +4,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Colorscheme, wallpaper and template manager
 WWW=		https://deviantfero.github.io/wpgtk
 

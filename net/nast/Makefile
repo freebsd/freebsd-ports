@@ -2,7 +2,7 @@ PORTNAME=	nast
 DISTVERSION=	0.2.1-g20210616
 CATEGORIES=	net
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Packet sniffer
 WWW=		https://github.com/embyte0/nast
 

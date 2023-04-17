@@ -4,7 +4,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Generate and change color-schemes on the fly
 WWW=		https://github.com/dylanaraps/pywal
 
