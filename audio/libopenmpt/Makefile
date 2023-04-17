@@ -1,5 +1,5 @@
 PORTNAME=	libopenmpt
-DISTVERSION=	0.6.9
+DISTVERSION=	0.6.10
 DISTVERSIONSUFFIX=	+release.autotools
 CATEGORIES=	audio
 MASTER_SITES=	https://lib.openmpt.org/files/libopenmpt/src/ \
