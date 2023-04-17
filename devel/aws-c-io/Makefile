@@ -1,6 +1,6 @@
 PORTNAME=	aws-c-io
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.20
+DISTVERSION=	0.13.21
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -20,6 +20,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	awslabs
 
 USE_LDCONFIG=	yes
+
+# do-test: fails, "ld: error: lib/libaws-c-cal.so.1.0.0: undefined reference to aws_device_random_buffer_append [--no-allow-shlib-undefined]"
+# see also: https://github.com/awslabs/aws-c-io/issues/565
 
 CMAKE_ARGS+=	-DCMAKE_INSTALL_LIBDIR=${LOCALBASE}/lib
 CMAKE_ON=	BUILD_SHARED_LIBS
