@@ -1,6 +1,6 @@
---- ext/fs/lib.rs.orig	2023-04-04 15:26:01 UTC
-+++ ext/fs/lib.rs
-@@ -633,7 +633,7 @@ fn op_umask(state: &mut OpState, mask: Option<u32>) ->
+--- ext/fs/std_fs.rs.orig	2023-04-17 15:27:55 UTC
++++ ext/fs/std_fs.rs
+@@ -70,7 +70,7 @@ impl FileSystem for StdFs {
      {
        Ok(r.bits())
      }
