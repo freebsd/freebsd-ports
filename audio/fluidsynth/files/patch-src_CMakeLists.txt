@@ -1,4 +1,4 @@
---- src/CMakeLists.txt.orig	2022-12-28 11:43:59 UTC
+--- src/CMakeLists.txt.orig	2023-04-02 15:54:17 UTC
 +++ src/CMakeLists.txt
 @@ -25,6 +25,11 @@ if ( PULSE_SUPPORT )
    set ( fluid_pulse_SOURCES drivers/fluid_pulse.c )
@@ -12,7 +12,7 @@
  if ( ALSA_SUPPORT )
    set ( fluid_alsa_SOURCES drivers/fluid_alsa.c )
  endif ( ALSA_SUPPORT )
-@@ -245,6 +250,7 @@ add_library ( libfluidsynth-OBJ OBJECT
+@@ -244,6 +249,7 @@ add_library ( libfluidsynth-OBJ OBJECT
      ${fluid_oss_SOURCES}
      ${fluid_portaudio_SOURCES}
      ${fluid_pulse_SOURCES}
@@ -20,14 +20,14 @@
      ${fluid_dsound_SOURCES}
      ${fluid_wasapi_SOURCES}
      ${fluid_waveout_SOURCES}
-@@ -360,6 +366,10 @@ endif()
- 
- if ( TARGET PkgConfig::PULSE AND PULSE_SUPPORT )
-     target_link_libraries ( libfluidsynth-OBJ PUBLIC PkgConfig::PULSE )
+@@ -362,6 +368,10 @@ endif()
+ if ( PULSE_SUPPORT )
+     target_include_directories( libfluidsynth-OBJ PRIVATE ${PULSEAUDIO_INCLUDE_DIRS} )
+     target_link_libraries ( libfluidsynth-OBJ PUBLIC ${PULSEAUDIO_LIBRARIES} )
 +endif()
 +
 +if ( SNDIO_SUPPORT)
 +    target_link_libraries ( libfluidsynth-OBJ PUBLIC ${SNDIO_LIBRARIES} )
  endif()
  
- if ( ALSA_SUPPORT )
+ if ( TARGET ALSA::ALSA AND ALSA_SUPPORT )
