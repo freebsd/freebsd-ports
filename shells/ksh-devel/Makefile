@@ -21,8 +21,8 @@ LICENSE=	EPL
 
 BROKEN_FreeBSD_12=	exit code 139 making lib/libcmd
 
-HASH=		ceae1e44
-AST_COMMIT_DATE=	2023.03.30
+HASH=		641191e5
+AST_COMMIT_DATE=	2023.04.16
 
 USES=		compiler:c11
 
