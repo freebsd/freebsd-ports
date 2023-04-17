@@ -47,6 +47,7 @@ share/icons/hicolor/32x32/apps/org.xfce.tumbler.png
 %%NLS%%share/locale/de/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/el/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/tumbler.mo
+%%NLS%%share/locale/en_CA/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/es/LC_MESSAGES/tumbler.mo
 %%NLS%%share/locale/et/LC_MESSAGES/tumbler.mo
