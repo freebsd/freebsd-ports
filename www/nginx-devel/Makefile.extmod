@@ -99,7 +99,7 @@ HTTP_AUTH_KRB5_USES=		gssapi:mit
 HTTP_AUTH_LDAP_GH_TUPLE=	kvspb:nginx-auth-ldap:83c059b:http_auth_ldap
 HTTP_AUTH_LDAP_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ngx_http_auth_ldap_module.c
 HTTP_AUTH_LDAP_VARS=		DSO_EXTMODS+=http_auth_ldap
-HTTP_AUTH_LDAP_USE=		openldap=yes
+HTTP_AUTH_LDAP_USES=		ldap
 
 HTTP_AUTH_PAM_GH_TUPLE=		sto:ngx_http_auth_pam_module:v1.5.3:auth_pam
 HTTP_AUTH_PAM_VARS=		DSO_EXTMODS+=auth_pam

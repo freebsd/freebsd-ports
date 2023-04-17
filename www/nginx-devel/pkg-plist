@@ -63,6 +63,7 @@
 %%DSO%%%%LINK%%libexec/nginx/ngx_http_link_func_module.so
 %%DSO%%%%LUA%%libexec/nginx/ngx_http_lua_module.so
 %%DSO%%%%MAIL%%libexec/nginx/ngx_mail_module.so
+%%DSO%%%%MAIL%%%%CT%%libexec/nginx/ngx_mail_ssl_ct_module.so
 %%DSO%%%%MEMC%%libexec/nginx/ngx_http_memc_module.so
 %%DSO%%%%MODSECURITY3%%libexec/nginx/ngx_http_modsecurity_module.so
 %%DSO%%%%NAXSI%%libexec/nginx/ngx_http_naxsi_module.so
@@ -77,6 +78,8 @@
 %%DSO%%%%SHIBBOLETH%%libexec/nginx/ngx_http_shibboleth_module.so
 %%DSO%%%%SLOWFS_CACHE%%libexec/nginx/ngx_http_slowfs_module.so
 %%DSO%%%%SRCACHE%%libexec/nginx/ngx_http_srcache_filter_module.so
+%%DSO%%%%STREAM%%%%CT%%libexec/nginx/ngx_stream_ssl_ct_module.so
+%%DSO%%%%STREAM%%%%HTTP_GEOIP2%%libexec/nginx/ngx_stream_geoip2_module.so
 %%DSO%%%%STREAM%%%%NJS%%libexec/nginx/ngx_stream_js_module.so
 %%DSO%%%%STREAM%%libexec/nginx/ngx_stream_module.so
 %%DSO%%%%STS%%libexec/nginx/ngx_http_stream_server_traffic_status_module.so
