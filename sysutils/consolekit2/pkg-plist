@@ -7,6 +7,7 @@ etc/dbus-1/system.d/ConsoleKit.conf
 etc/logrotate.d/consolekit
 include/ConsoleKit/ck-connector/ck-connector.h
 include/ConsoleKit/libconsolekit.h
+include/ConsoleKit/sd-login.h
 lib/ConsoleKit/scripts/ck-get-x11-display-device
 lib/ConsoleKit/scripts/ck-get-x11-server-pid
 @sample lib/ConsoleKit/scripts/ck-system-hibernate.sample
