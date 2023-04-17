@@ -277,6 +277,7 @@
     SUBDIR += py-DendroPy
     SUBDIR += py-GPy
     SUBDIR += py-GPyOpt
+    SUBDIR += py-HepMC3
     SUBDIR += py-MDAnalysis
     SUBDIR += py-MDAnalysisTests
     SUBDIR += py-OpenFermion
