@@ -44,8 +44,8 @@
 %%DSO%%%%HTTP_MP4_H264%%libexec/nginx/ngx_http_h264_streaming_module.so
 %%DSO%%%%HTTP_NOTICE%%libexec/nginx/ngx_http_notice_module.so
 %%DSO%%%%HTTP_PERL%%libexec/nginx/ngx_http_perl_module.so
-%%DSO%%%%HTTP_PUSH%%libexec/nginx/ngx_nchan_module.so
 %%DSO%%%%HTTP_PUSH_STREAM%%libexec/nginx/ngx_http_push_stream_module.so
+%%DSO%%%%HTTP_PUSH%%libexec/nginx/ngx_nchan_module.so
 %%DSO%%%%HTTP_REDIS%%libexec/nginx/ngx_http_redis_module.so
 %%DSO%%%%HTTP_SUBS_FILTER%%libexec/nginx/ngx_http_subs_filter_module.so
 %%DSO%%%%HTTP_TARANTOOL%%libexec/nginx/ngx_http_tnt_module.so
@@ -62,8 +62,8 @@
 %%DSO%%%%LET%%libexec/nginx/ngx_http_let_module.so
 %%DSO%%%%LINK%%libexec/nginx/ngx_http_link_func_module.so
 %%DSO%%%%LUA%%libexec/nginx/ngx_http_lua_module.so
-%%DSO%%%%MAIL%%libexec/nginx/ngx_mail_module.so
 %%DSO%%%%MAIL%%%%CT%%libexec/nginx/ngx_mail_ssl_ct_module.so
+%%DSO%%%%MAIL%%libexec/nginx/ngx_mail_module.so
 %%DSO%%%%MEMC%%libexec/nginx/ngx_http_memc_module.so
 %%DSO%%%%MODSECURITY3%%libexec/nginx/ngx_http_modsecurity_module.so
 %%DSO%%%%NAXSI%%libexec/nginx/ngx_http_naxsi_module.so
