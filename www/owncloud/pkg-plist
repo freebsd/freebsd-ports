@@ -1235,6 +1235,8 @@
 %%WWWDIR%%/apps/federation/l10n/th_TH.json
 %%WWWDIR%%/apps/federation/l10n/tr.js
 %%WWWDIR%%/apps/federation/l10n/tr.json
+%%WWWDIR%%/apps/federation/l10n/tr_TR.js
+%%WWWDIR%%/apps/federation/l10n/tr_TR.json
 %%WWWDIR%%/apps/federation/l10n/ug.js
 %%WWWDIR%%/apps/federation/l10n/ug.json
 %%WWWDIR%%/apps/federation/l10n/uk.js
@@ -1513,6 +1515,8 @@
 %%WWWDIR%%/apps/files/l10n/tl_PH.json
 %%WWWDIR%%/apps/files/l10n/tr.js
 %%WWWDIR%%/apps/files/l10n/tr.json
+%%WWWDIR%%/apps/files/l10n/tr_TR.js
+%%WWWDIR%%/apps/files/l10n/tr_TR.json
 %%WWWDIR%%/apps/files/l10n/tzm.js
 %%WWWDIR%%/apps/files/l10n/tzm.json
 %%WWWDIR%%/apps/files/l10n/ug.js
@@ -1576,6 +1580,7 @@
 %%WWWDIR%%/apps/files_external/3rdparty/composer/installed.json
 %%WWWDIR%%/apps/files_external/3rdparty/composer/installed.php
 %%WWWDIR%%/apps/files_external/3rdparty/composer/platform_check.php
+%%WWWDIR%%/apps/files_external/3rdparty/firebase/php-jwt/CHANGELOG.md
 %%WWWDIR%%/apps/files_external/3rdparty/firebase/php-jwt/LICENSE
 %%WWWDIR%%/apps/files_external/3rdparty/firebase/php-jwt/README.md
 %%WWWDIR%%/apps/files_external/3rdparty/firebase/php-jwt/composer.json
@@ -1591,7 +1596,6 @@
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient-services/SECURITY.md
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient-services/autoload.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient-services/composer.json
-%%WWWDIR%%/apps/files_external/3rdparty/google/apiclient-services/renovate.json
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient-services/src/Drive.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient-services/src/Drive/About.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient-services/src/Drive/AboutDriveThemes.php
@@ -1653,11 +1657,11 @@
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient-services/src/Drive/TeamDriveList.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient-services/src/Drive/TeamDriveRestrictions.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient-services/src/Drive/User.php
+%%WWWDIR%%/apps/files_external/3rdparty/google/apiclient/CHANGELOG.md
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient/LICENSE
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient/README.md
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient/SECURITY.md
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient/composer.json
-%%WWWDIR%%/apps/files_external/3rdparty/google/apiclient/phpstan.neon.dist
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient/src/AccessToken/Revoke.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient/src/AccessToken/Verify.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/apiclient/src/AuthHandler/AuthHandlerFactory.php
@@ -1698,6 +1702,7 @@
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/AppIdentityCredentials.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/GCECredentials.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/IAMCredentials.php
+%%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/ImpersonatedServiceAccountCredentials.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/InsecureCredentials.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/ServiceAccountCredentials.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Credentials/ServiceAccountJwtAccessCredentials.php
@@ -1713,6 +1718,7 @@
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/HttpHandler/HttpClientCache.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/HttpHandler/HttpHandlerFactory.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Iam.php
+%%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/IamSignerTrait.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Middleware/AuthTokenMiddleware.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Middleware/ProxyAuthTokenMiddleware.php
 %%WWWDIR%%/apps/files_external/3rdparty/google/auth/src/Middleware/ScopedAccessTokenMiddleware.php
@@ -2176,6 +2182,8 @@
 %%WWWDIR%%/apps/files_external/l10n/th_TH.json
 %%WWWDIR%%/apps/files_external/l10n/tr.js
 %%WWWDIR%%/apps/files_external/l10n/tr.json
+%%WWWDIR%%/apps/files_external/l10n/tr_TR.js
+%%WWWDIR%%/apps/files_external/l10n/tr_TR.json
 %%WWWDIR%%/apps/files_external/l10n/ug.js
 %%WWWDIR%%/apps/files_external/l10n/ug.json
 %%WWWDIR%%/apps/files_external/l10n/uk.js
@@ -2509,6 +2517,8 @@
 %%WWWDIR%%/apps/files_sharing/l10n/th_TH.json
 %%WWWDIR%%/apps/files_sharing/l10n/tr.js
 %%WWWDIR%%/apps/files_sharing/l10n/tr.json
+%%WWWDIR%%/apps/files_sharing/l10n/tr_TR.js
+%%WWWDIR%%/apps/files_sharing/l10n/tr_TR.json
 %%WWWDIR%%/apps/files_sharing/l10n/ug.js
 %%WWWDIR%%/apps/files_sharing/l10n/ug.json
 %%WWWDIR%%/apps/files_sharing/l10n/uk.js
@@ -2757,6 +2767,8 @@
 %%WWWDIR%%/apps/files_trashbin/l10n/th_TH.json
 %%WWWDIR%%/apps/files_trashbin/l10n/tr.js
 %%WWWDIR%%/apps/files_trashbin/l10n/tr.json
+%%WWWDIR%%/apps/files_trashbin/l10n/tr_TR.js
+%%WWWDIR%%/apps/files_trashbin/l10n/tr_TR.json
 %%WWWDIR%%/apps/files_trashbin/l10n/ug.js
 %%WWWDIR%%/apps/files_trashbin/l10n/ug.json
 %%WWWDIR%%/apps/files_trashbin/l10n/uk.js
@@ -3410,6 +3422,8 @@
 %%WWWDIR%%/apps/systemtags/l10n/th_TH.json
 %%WWWDIR%%/apps/systemtags/l10n/tr.js
 %%WWWDIR%%/apps/systemtags/l10n/tr.json
+%%WWWDIR%%/apps/systemtags/l10n/tr_TR.js
+%%WWWDIR%%/apps/systemtags/l10n/tr_TR.json
 %%WWWDIR%%/apps/systemtags/l10n/ug.js
 %%WWWDIR%%/apps/systemtags/l10n/ug.json
 %%WWWDIR%%/apps/systemtags/l10n/uk.js
@@ -4178,6 +4192,8 @@
 %%WWWDIR%%/core/l10n/tl_PH.json
 %%WWWDIR%%/core/l10n/tr.js
 %%WWWDIR%%/core/l10n/tr.json
+%%WWWDIR%%/core/l10n/tr_TR.js
+%%WWWDIR%%/core/l10n/tr_TR.json
 %%WWWDIR%%/core/l10n/tzm.js
 %%WWWDIR%%/core/l10n/tzm.json
 %%WWWDIR%%/core/l10n/ug.js
@@ -9571,6 +9587,8 @@
 %%WWWDIR%%/lib/l10n/tl_PH.json
 %%WWWDIR%%/lib/l10n/tr.js
 %%WWWDIR%%/lib/l10n/tr.json
+%%WWWDIR%%/lib/l10n/tr_TR.js
+%%WWWDIR%%/lib/l10n/tr_TR.json
 %%WWWDIR%%/lib/l10n/tzm.js
 %%WWWDIR%%/lib/l10n/tzm.json
 %%WWWDIR%%/lib/l10n/ug.js
@@ -10680,6 +10698,8 @@
 %%WWWDIR%%/settings/l10n/th_TH.json
 %%WWWDIR%%/settings/l10n/tr.js
 %%WWWDIR%%/settings/l10n/tr.json
+%%WWWDIR%%/settings/l10n/tr_TR.js
+%%WWWDIR%%/settings/l10n/tr_TR.json
 %%WWWDIR%%/settings/l10n/ug.js
 %%WWWDIR%%/settings/l10n/ug.json
 %%WWWDIR%%/settings/l10n/uk.js

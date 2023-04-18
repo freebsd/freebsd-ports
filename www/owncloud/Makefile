@@ -1,6 +1,5 @@
 PORTNAME=	owncloud
-PORTVERSION=	10.12.0
-PORTREVISION=	1
+PORTVERSION=	10.12.1
 CATEGORIES=	www
 MASTER_SITES=	https://download.owncloud.com/server/stable/ \
 		LOCAL/sunpoet
