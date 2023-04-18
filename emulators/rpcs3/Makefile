@@ -2,6 +2,7 @@ PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.27-14874 # git rev-list --count HEAD
 DISTVERSIONSUFFIX=	-g98fc073f89
+PORTREVISION=	1
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -34,7 +35,7 @@ GH_TUPLE=	RPCS3:hidapi:hidapi-0.13.1-2-gecf1b62:hidapi/3rdparty/hidapi/hidapi \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-187-g85a1ed2:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2022.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
 		KhronosGroup:glslang:11.11.0-2-g10423ec6:glslang/3rdparty/glslang/glslang \
-		kinetiknz:cubeb:cubeb-0.2-1427-g70b4e3d:cubeb/3rdparty/cubeb/cubeb \
+		kinetiknz:cubeb:cubeb-0.2-1425-g88585b6:cubeb/3rdparty/cubeb/cubeb \
 		miniupnp:miniupnp:miniupnpd_2_3_2:miniupnp/3rdparty/miniupnp/miniupnp \
 		wolfSSL:wolfssl:v5.6.0-stable:wolfssl/3rdparty/wolfssl/wolfssl
 
