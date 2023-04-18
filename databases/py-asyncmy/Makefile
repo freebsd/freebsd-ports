@@ -18,6 +18,9 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=0:devel/py-poetry-core@${PY_F
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent cython pep517
 
+post-patch:
+	@${MV} ${WRKSRC}/build.py ${WRKSRC}/build_cython.py
+
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
