@@ -14,11 +14,13 @@
 %%LUA_MODSHAREDIR%%/resty/core.lua
 %%LUA_MODSHAREDIR%%/resty/core/base.lua
 %%LUA_MODSHAREDIR%%/resty/core/base64.lua
+%%LUA_MODSHAREDIR%%/resty/core/coroutine.lua
 %%LUA_MODSHAREDIR%%/resty/core/ctx.lua
 %%LUA_MODSHAREDIR%%/resty/core/exit.lua
 %%LUA_MODSHAREDIR%%/resty/core/hash.lua
 %%LUA_MODSHAREDIR%%/resty/core/misc.lua
 %%LUA_MODSHAREDIR%%/resty/core/ndk.lua
+%%LUA_MODSHAREDIR%%/resty/core/param.lua
 %%LUA_MODSHAREDIR%%/resty/core/phase.lua
 %%LUA_MODSHAREDIR%%/resty/core/regex.lua
 %%LUA_MODSHAREDIR%%/resty/core/request.lua
