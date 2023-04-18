@@ -1,0 +1,11 @@
+--- configure.orig	2022-11-30 17:07:45 UTC
++++ configure
+@@ -31429,7 +31429,7 @@ fi
+ # rather ncurses.  So we check for it.
+ TERMLIBS=
+ # Check for termlib before termcap because Solaris termcap needs libucb.
+-TERMLIB_VARIANTS="tinfo ncurses curses termlib termcap terminfo"
++TERMLIB_VARIANTS="tinfow ncurses curses termlib termcap terminfo"
+ for termlib in ${TERMLIB_VARIANTS}; do
+   as_ac_Lib=`printf "%s\n" "ac_cv_lib_${termlib}""_tgetent" | $as_tr_sh`
+ { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for tgetent in -l${termlib}" >&5
