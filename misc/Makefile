@@ -38,6 +38,7 @@
     SUBDIR += bsod
     SUBDIR += buffer
     SUBDIR += caffe
+    SUBDIR += chatgpt-shell-cli
     SUBDIR += cheat
     SUBDIR += chef
     SUBDIR += chmlib
