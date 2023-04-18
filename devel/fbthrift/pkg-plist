@@ -205,6 +205,7 @@ include/thrift/lib/cpp2/FieldRefTraits.h
 include/thrift/lib/cpp2/Flags.h
 include/thrift/lib/cpp2/GeneratedCodeHelper.h
 include/thrift/lib/cpp2/PluggableFunction.h
+include/thrift/lib/cpp2/server/ResourcePoolSet.h
 include/thrift/lib/cpp2/SerializationSwitch.h
 include/thrift/lib/cpp2/Thrift.h
 include/thrift/lib/cpp2/TrustedServerException.h
