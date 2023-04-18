@@ -1,3 +1,3 @@
-TIMESTAMP = 1677770925
-SHA256 (hatch_jupyter_builder-0.8.2.tar.gz) = 6436daace48622cefc8585c5d2988a1046c074b65ab5715de04666535a5edff7
-SIZE (hatch_jupyter_builder-0.8.2.tar.gz) = 53528
+TIMESTAMP = 1681843868
+SHA256 (hatch_jupyter_builder-0.8.3.tar.gz) = 0dbd14a8aef6636764f88a8fd1fcc9a91921e5c50356e6aab251782f264ae960
+SIZE (hatch_jupyter_builder-0.8.3.tar.gz) = 54754
