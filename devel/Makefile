@@ -4834,6 +4834,7 @@
     SUBDIR += py-keystoneauth1
     SUBDIR += py-keystonemiddleware
     SUBDIR += py-kitchen
+    SUBDIR += py-klepto
     SUBDIR += py-knack
     SUBDIR += py-l18n
     SUBDIR += py-lark
