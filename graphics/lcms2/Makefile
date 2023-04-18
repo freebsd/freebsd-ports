@@ -1,5 +1,6 @@
 PORTNAME=	lcms2
 PORTVERSION=	2.15
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mm2/Little-CMS/releases/download/lcms${PORTVERSION}/
 
@@ -13,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe libtool localbase:ldflags pathfix
 
+CONFIGURE_ARGS=	--with-fastfloat --with-threaded
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
