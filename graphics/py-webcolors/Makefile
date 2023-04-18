@@ -1,5 +1,5 @@
 PORTNAME=	webcolors
-PORTVERSION=	1.8.1
+PORTVERSION=	1.13
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,11 @@ WWW=		https://github.com/ubernostrum/webcolors
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=61.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
+USES=		python:3.7+
+USE_PYTHON=	autoplist pep517
 NO_ARCH=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
