@@ -9,7 +9,7 @@ ECLIPSE_TSTAMP=	20220616-0004
 
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	jonc@chen.org.nz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Eclipse IDE 2022-06
 WWW=		https://www.eclipse.org/
 
