@@ -3054,7 +3054,6 @@
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/_testimportmultiple%%PYTHON_EXT_SUFFIX%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/_testinternalcapi%%PYTHON_EXT_SUFFIX%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/_testmultiphase%%PYTHON_EXT_SUFFIX%%.so
-/var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/_tkinter%%PYTHON_EXT_SUFFIX%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/_uuid%%PYTHON_EXT_SUFFIX%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/_xxsubinterpreters%%PYTHON_EXT_SUFFIX%%.so
 /var/ossec/framework/python/%%PYTHON_LIBDIR%%/lib-dynload/_xxtestfuzz%%PYTHON_EXT_SUFFIX%%.so
