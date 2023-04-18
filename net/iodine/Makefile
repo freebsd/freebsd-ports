@@ -1,6 +1,5 @@
 PORTNAME=	iodine
-PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	net
 MASTER_SITES=	http://code.kryo.se/iodine/ \
 		http://redundancy.redundancy.org/mirror/
@@ -26,7 +25,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/iodine.8 ${STAGEDIR}${MANPREFIX}/man/man8
 	${GZIP_CMD} ${STAGEDIR}${MANPREFIX}/man/man8/iodine.8
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in README CHANGELOG TODO
+.for f in README.md CHANGELOG TODO
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
