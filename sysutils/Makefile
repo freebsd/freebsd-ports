@@ -339,6 +339,7 @@
     SUBDIR += dwatch-gource
     SUBDIR += dwatch-json
     SUBDIR += dwatch-pwsnoop
+    SUBDIR += dynamic_motd
     SUBDIR += e2fsprogs
     SUBDIR += e2fsprogs-core
     SUBDIR += e2tools

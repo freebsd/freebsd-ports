@@ -1,0 +1,23 @@
+[
+{ type: install
+  message: <<EOM
+The ${PREFIX}/etc/rc.motd script is responsible for generating content for
+/var/run/motd on each login. A sample script is provided in
+${PREFIX}/etc/rc.motd.sample that emulates the default motd(5) behavior.
+More extensive examples can be found in ${PREFIX}/share/examples/dynamic_motd.
+
+To enable the dynamic_motd service, update_motd should be disabled in
+/etc/rc.conf as it is no longer needed at system startup:
+
+    # sysrc update_motd="NO"
+
+The dynamic_motd service can then be enabled by issuing:
+
+    # sysrc dynamic_motd="YES"
+    # service dynamic_motd start
+
+Note: ${PREFIX}/etc/rc.motd can be updated without restarting the
+dynamic_motd service; changes are automatically picked up on next login.
+EOM
+}
+]

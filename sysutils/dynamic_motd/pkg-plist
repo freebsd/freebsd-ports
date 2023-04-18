@@ -1,0 +1,7 @@
+etc/rc.d/dynamic_motd
+@sample etc/rc.motd.sample
+libexec/dynamic_motd
+share/doc/dynamic_motd/CONTRIBUTING.md
+share/doc/dynamic_motd/README.md
+share/examples/dynamic_motd/motd.subr
+share/examples/dynamic_motd/rc.motd
