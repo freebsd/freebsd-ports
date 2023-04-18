@@ -1,6 +1,5 @@
 PORTNAME=	prettytable
-PORTVERSION=	3.6.0
-PORTREVISION=	2
+PORTVERSION=	3.7.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +9,7 @@ COMMENT=	Library for displaying tabular data in an ASCII table format
 WWW=		https://github.com/jazzband/prettytable
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0:devel/py-hatch-vcs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
