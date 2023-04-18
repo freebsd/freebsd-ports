@@ -1,9 +1,8 @@
 PORTNAME=	frozendict
-PORTVERSION=	2.3.6
-DISTVERSIONPREFIX=	v
+PORTVERSION=	2.3.7
 CATEGORIES=	devel python
-#MASTER_SITES=	PYPI \
-#		https://github.com/Marco-Sulla/python-frozendict/releases/download/v${PORTVERSSION}/
+MASTER_SITES=	PYPI \
+		https://github.com/Marco-Sulla/python-frozendict/releases/download/v${PORTVERSSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -17,10 +16,6 @@ USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ARGS=	custom_arg=c
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	Marco-Sulla
-GH_PROJECT=	python-frozendict
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
