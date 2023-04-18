@@ -5249,6 +5249,7 @@
     SUBDIR += py-pytest-checkdocs
     SUBDIR += py-pytest-console-scripts
     SUBDIR += py-pytest-cov
+    SUBDIR += py-pytest-cpp
     SUBDIR += py-pytest-datadir
     SUBDIR += py-pytest-django
     SUBDIR += py-pytest-enabler
