@@ -23,5 +23,6 @@ GH_ACCOUNT=	darioizzo
 
 CMAKE_OFF=	AUDI_BUILD_TESTS
 CMAKE_TESTING_ON=	AUDI_BUILD_TESTS
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
