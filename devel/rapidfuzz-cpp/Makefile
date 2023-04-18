@@ -1,6 +1,6 @@
 PORTNAME=	rapidfuzz-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.4
+DISTVERSION=	1.11.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,12 +10,11 @@ WWW=		https://github.com/maxbachmann/rapidfuzz-cpp
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-TEST_DEPENDS=	catch>0:devel/catch
+TEST_DEPENDS=	catch2>0:devel/catch2
 
-USES=		cmake:testing compiler:c++11-lib
+USES=		cmake:testing compiler:c++17-lang
 
-CMAKE_TESTING_ON=	RAPIDFUZZ_BUILD_TESTING # tests use downloaded catch3 instead of catch2 from ports
-# tests fail to configure, see https://github.com/maxbachmann/rapidfuzz-cpp/issues/96, they require Catch2-3
+CMAKE_TESTING_ON=	RAPIDFUZZ_BUILD_TESTING
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	maxbachmann
