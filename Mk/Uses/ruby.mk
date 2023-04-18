@@ -161,7 +161,7 @@ RUBY_PORTREVISION=	0
 #
 # Ruby 3.2
 #
-RUBY_DISTVERSION=	3.2.1
+RUBY_DISTVERSION=	3.2.2
 RUBY_PORTREVISION=	0
 
 # When adding a version, please keep the comment in
