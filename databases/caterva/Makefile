@@ -11,6 +11,9 @@ WWW=		https://github.com/Blosc/caterva
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use archivers/c-blosc2 instead. All the features of Caterva have been included in the C-Blosc2 NDim object
+EXPIRATION_DATE=2023-06-30
+
 USES=		cmake:testing pkgconfig
 
 CFLAGS+=	-I${WRKSRC}/contribs/c-blosc2/blosc
