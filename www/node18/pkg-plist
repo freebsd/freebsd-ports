@@ -2281,8 +2281,6 @@ lib/node_modules/corepack/dist/npm.js
 lib/node_modules/corepack/dist/npx.js
 lib/node_modules/corepack/dist/pnpm.js
 lib/node_modules/corepack/dist/pnpx.js
-lib/node_modules/corepack/dist/vcc.js
-lib/node_modules/corepack/dist/vendors-_yarn_berry_cache_proxy-agent-npm-5_0_0-41772f4b01-9_zip_node_modules_proxy-agent_index_js.js
 lib/node_modules/corepack/dist/yarn.js
 lib/node_modules/corepack/dist/yarnpkg.js
 lib/node_modules/corepack/package.json
