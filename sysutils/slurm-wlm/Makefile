@@ -20,8 +20,9 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libmunge.so:security/munge \
 		liblz4.so:archivers/liblz4
 
-USES=		compiler:c11 cpe gmake gnome libtool localbase lua pkgconfig \
-		python:build readline shebangfix ssl tar:bz2
+USES=		compiler:c11 cpe gmake gnome libtool localbase lua perl5 \
+		pkgconfig python:build readline shebangfix ssl tar:bz2
+USE_PERL5=	build
 CPE_VENDOR=	schedmd
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	slurmctld slurmd
