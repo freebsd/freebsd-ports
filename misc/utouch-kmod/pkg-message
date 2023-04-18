@@ -7,7 +7,7 @@ To load installed driver in to the kernel type:
 It may be necessary to unload conflicting uhid(4)
 and usbhid(4) drivers with "kldunload uhid" or
 "kldunload usbhid" after utouch.ko has been loaded.
-Note: hms(4) driver from FreeBSD 13 has implemented
+Note: hms(4) driver from FreeBSD 13+ has implemented
 similar functionality.
 
 To load driver automaticaly at the boot time add
