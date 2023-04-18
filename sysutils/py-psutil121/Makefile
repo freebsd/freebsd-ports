@@ -12,6 +12,9 @@ WWW=		https://pypi.org/project/psutil/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Use sysutils/py-psutil instead
+EXPIRATION_DATE=2023-04-30
+
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}psutil
 
 PORTSCOUT=	limit:^1\.2\.
