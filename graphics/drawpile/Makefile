@@ -30,4 +30,6 @@ PORTDOCS=	*
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+PORTSCOUT=	limit:^\d+\. # prevent tags like 'continuous'
+
 .include <bsd.port.mk>
