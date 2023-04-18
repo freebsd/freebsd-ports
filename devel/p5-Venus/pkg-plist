@@ -55,6 +55,7 @@
 %%SITE_PERL%%/Venus/Role/Makeable.pm
 %%SITE_PERL%%/Venus/Role/Mappable.pm
 %%SITE_PERL%%/Venus/Role/Matchable.pm
+%%SITE_PERL%%/Venus/Role/Mockable.pm
 %%SITE_PERL%%/Venus/Role/Optional.pm
 %%SITE_PERL%%/Venus/Role/Pluggable.pm
 %%SITE_PERL%%/Venus/Role/Printable.pm
@@ -141,6 +142,7 @@
 %%PERL5_MAN3%%/Venus::Role::Makeable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Mappable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Matchable.3.gz
+%%PERL5_MAN3%%/Venus::Role::Mockable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Optional.3.gz
 %%PERL5_MAN3%%/Venus::Role::Pluggable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Printable.3.gz
