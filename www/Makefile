@@ -1791,6 +1791,7 @@
     SUBDIR += py-starlette
     SUBDIR += py-swapper
     SUBDIR += py-textile
+    SUBDIR += py-ticketutil
     SUBDIR += py-tornado
     SUBDIR += py-tornado4
     SUBDIR += py-tornado5
