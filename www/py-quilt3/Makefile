@@ -1,5 +1,5 @@
 PORTNAME=	quilt3
-PORTVERSION=	5.2.1
+PORTVERSION=	5.3.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,6 +26,11 @@ USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	ANNDATA
+ANNDATA_DESC=	Annotated data support
+
+ANNDATA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anndata>=0.8.0:devel/py-anndata@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
 
