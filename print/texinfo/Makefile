@@ -41,7 +41,7 @@ PKGDEINSTALL=	${PKGINSTALL}
 INFO=		info-stnd texi2any_api texi2any_internals texinfo
 
 # Use the date on https://ftp.gnu.org/gnu/texinfo/
-HTMLXREF_CNF_RELDATE=	20221130
+HTMLXREF_CNF_RELDATE=	20230402
 TEXI2DVI_RELDATE=	20221130
 TEXINFO_TEX_RELDATE=	20230327
 
