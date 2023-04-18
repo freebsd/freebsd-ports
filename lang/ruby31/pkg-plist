@@ -12453,6 +12453,8 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/URI/Generic/component-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/Generic/component-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/Generic/component_ary-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/URI/Generic/decoded_password-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/URI/Generic/decoded_user-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/Generic/default_port-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/Generic/default_port-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/Generic/eql%3f-i.ri
@@ -12590,9 +12592,13 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/URI/WS/cdesc-WS.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/WS/request_uri-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/WSS/cdesc-WSS.ri
+%%RDOC%%%%RUBY_RIDIR%%/URI/_decode_uri_component-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/URI/_encode_uri_component-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/cdesc-URI.ri
+%%RDOC%%%%RUBY_RIDIR%%/URI/decode_uri_component-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/decode_www_form-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/decode_www_form_component-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/URI/encode_uri_component-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/encode_www_form-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/encode_www_form_component-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/URI/extract-c.ri
