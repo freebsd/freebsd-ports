@@ -4,5 +4,3 @@ types in a Ruby DSL. You may write definitions in this DSL directly, but we
 recommend using protoc's Ruby generation support with .proto files. The build
 process in this directory only installs the extension; you need to install
 protoc as well to have Ruby code generation functionality.
-
-See also: https://github.com/google/protobuf/tree/master/ruby
