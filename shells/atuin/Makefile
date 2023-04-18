@@ -1,7 +1,6 @@
 PORTNAME=	atuin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	13.0.1
-PORTREVISION=	1
+DISTVERSION=	14.0.1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,13 +8,16 @@ COMMENT=	Magical shell history
 WWW=		https://atuin.sh
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ellie
 
+WRKSRC_SUBDIR=	atuin
+
+CARGO_BUILD_ARGS=	-p atuin
 CARGO_CRATES=	ahash-0.7.6 \
 		aho-corasick-0.7.19 \
 		android_system_properties-0.1.5 \
@@ -27,7 +29,6 @@ CARGO_CRATES=	ahash-0.7.6 \
 		axum-0.6.4 \
 		axum-core-0.3.2 \
 		base64-0.13.1 \
-		base64-0.20.0 \
 		base64-0.21.0 \
 		beef-0.5.2 \
 		bitflags-1.3.2 \
@@ -40,21 +41,23 @@ CARGO_CRATES=	ahash-0.7.6 \
 		cfg-if-1.0.0 \
 		chrono-0.4.22 \
 		chronoutil-0.2.3 \
-		clap-4.0.18 \
-		clap_complete-4.0.3 \
-		clap_derive-4.0.18 \
-		clap_lex-0.3.0 \
+		clap-4.1.14 \
+		clap_builder-4.1.14 \
+		clap_complete-4.2.0 \
+		clap_derive-4.1.14 \
+		clap_lex-0.4.1 \
+		colored-2.0.0 \
 		config-0.13.2 \
-		console-0.15.1 \
+		console-0.15.5 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
 		cpufeatures-0.2.5 \
 		crc-3.0.0 \
 		crc-catalog-2.1.0 \
-		crossbeam-channel-0.5.6 \
+		crossbeam-channel-0.5.8 \
 		crossbeam-queue-0.3.6 \
 		crossbeam-utils-0.8.11 \
-		crossterm-0.26.0 \
+		crossterm-0.26.1 \
 		crossterm_winapi-0.9.0 \
 		crypto-common-0.1.6 \
 		digest-0.10.5 \
@@ -67,7 +70,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.31 \
 		env_logger-0.10.0 \
-		errno-0.2.8 \
+		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		event-listener-2.5.3 \
 		eyre-0.6.8 \
@@ -84,6 +87,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		futures-sink-0.3.24 \
 		futures-task-0.3.24 \
 		futures-util-0.3.24 \
+		fuzzy-matcher-0.3.7 \
 		generic-array-0.14.6 \
 		getrandom-0.2.7 \
 		h2-0.3.14 \
@@ -91,7 +95,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		hashlink-0.8.0 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.2.6 \
+		hermit-abi-0.3.1 \
 		hex-0.4.3 \
 		hkdf-0.12.3 \
 		hmac-0.12.1 \
@@ -107,20 +111,20 @@ CARGO_CRATES=	ahash-0.7.6 \
 		idna-0.3.0 \
 		indenter-0.3.3 \
 		indexmap-1.9.1 \
-		indicatif-0.17.1 \
+		indicatif-0.17.3 \
 		instant-0.1.12 \
 		interim-0.1.0 \
-		io-lifetimes-1.0.3 \
+		io-lifetimes-1.0.10 \
 		ipnet-2.5.0 \
-		is-terminal-0.4.1 \
+		is-terminal-0.4.7 \
 		itertools-0.10.5 \
 		itoa-1.0.3 \
 		js-sys-0.3.60 \
 		lazy_static-1.4.0 \
-		libc-0.2.138 \
+		libc-0.2.141 \
 		libsodium-sys-0.2.7 \
 		libsqlite3-sys-0.24.2 \
-		linux-raw-sys-0.1.4 \
+		linux-raw-sys-0.3.1 \
 		lock_api-0.4.8 \
 		log-0.4.17 \
 		logos-0.12.1 \
@@ -144,9 +148,8 @@ CARGO_CRATES=	ahash-0.7.6 \
 		num-traits-0.2.15 \
 		num_cpus-1.13.1 \
 		number_prefix-0.4.0 \
-		once_cell-1.14.0 \
+		once_cell-1.17.1 \
 		openssl-probe-0.1.5 \
-		os_str_bytes-6.3.0 \
 		overload-0.1.1 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
@@ -162,27 +165,27 @@ CARGO_CRATES=	ahash-0.7.6 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.25 \
+		portable-atomic-0.3.19 \
 		ppv-lite86-0.2.16 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.43 \
-		quote-1.0.21 \
+		proc-macro2-1.0.56 \
+		quote-1.0.26 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.3 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.6.0 \
+		regex-1.7.2 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.27 \
+		regex-syntax-0.6.29 \
 		reqwest-0.11.12 \
 		ring-0.16.20 \
 		rmp-0.8.11 \
 		rmp-serde-1.1.1 \
-		rpassword-7.0.0 \
+		rpassword-7.2.0 \
+		rtoolbox-0.0.1 \
 		runtime-format-0.1.2 \
 		rustc-hash-1.1.0 \
-		rustix-0.36.5 \
+		rustix-0.37.11 \
 		rustls-0.20.6 \
 		rustls-native-certs-0.6.2 \
 		rustls-pemfile-1.0.1 \
@@ -205,7 +208,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		sha2-0.10.6 \
 		sharded-slab-0.1.4 \
 		shellexpand-2.1.2 \
-		signal-hook-0.3.14 \
+		signal-hook-0.3.15 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.0 \
 		signature-1.6.1 \
@@ -214,7 +217,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		socket2-0.4.7 \
 		sodiumoxide-0.2.7 \
 		spin-0.5.2 \
-		spin-0.9.4 \
+		spin-0.9.8 \
 		sql-builder-3.1.1 \
 		sqlformat-0.2.0 \
 		sqlx-0.6.2 \
@@ -225,13 +228,12 @@ CARGO_CRATES=	ahash-0.7.6 \
 		strsim-0.10.0 \
 		subtle-2.4.1 \
 		syn-1.0.99 \
+		syn-2.0.14 \
 		sync_wrapper-0.1.1 \
-		synstructure-0.12.6 \
 		termcolor-1.1.3 \
-		terminal_size-0.1.17 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
-		thread_local-1.1.4 \
+		thread_local-1.1.7 \
 		time-0.1.44 \
 		tiny-bip39-1.0.0 \
 		tinyvec-1.6.0 \
@@ -255,9 +257,8 @@ CARGO_CRATES=	ahash-0.7.6 \
 		unicode-bidi-0.3.8 \
 		unicode-ident-1.0.3 \
 		unicode-normalization-0.1.21 \
-		unicode-segmentation-1.9.0 \
+		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
-		unicode-xid-0.2.4 \
 		unicode_categories-0.1.1 \
 		untrusted-0.7.1 \
 		url-2.3.1 \
@@ -285,21 +286,30 @@ CARGO_CRATES=	ahash-0.7.6 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.36.1 \
 		windows-sys-0.42.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.0 \
 		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_gnullvm-0.48.0 \
 		windows_aarch64_msvc-0.36.1 \
 		windows_aarch64_msvc-0.42.0 \
+		windows_aarch64_msvc-0.48.0 \
 		windows_i686_gnu-0.36.1 \
 		windows_i686_gnu-0.42.0 \
+		windows_i686_gnu-0.48.0 \
 		windows_i686_msvc-0.36.1 \
 		windows_i686_msvc-0.42.0 \
+		windows_i686_msvc-0.48.0 \
 		windows_x86_64_gnu-0.36.1 \
 		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnu-0.48.0 \
 		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.36.1 \
 		windows_x86_64_msvc-0.42.0 \
+		windows_x86_64_msvc-0.48.0 \
 		winreg-0.10.1 \
-		zeroize-1.5.7 \
-		zeroize_derive-1.3.3
+		zeroize-1.6.0 \
+		zeroize_derive-1.4.2
 
 PLIST_FILES=	bin/${PORTNAME}
 
