@@ -90,6 +90,8 @@ DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
 DOCS_PLIST_FILES=	${MAN1SRCS:S|^|man/man1/|:S|.1$|${LLVM_SUFFIX}.1.gz|}
 DOCS_PORTDOCS=		llvm
 LIT_DESC=		Install lit and FileCheck test tools
+LIT_MOD_NAME=		lit${LLVM_SUFFIX:S/-/_/g}
+LIT_PLIST_SUB=		LIT_MOD_NAME=${LIT_MOD_NAME}
 LLD_DESC=		Install lld linker
 LLD_PORTDOCS=		lld
 LLDB_DESC=		Install lldb, the LLVM debugger
@@ -155,9 +157,9 @@ USES+=		${_USES_PYTHON}
 .include "${.CURDIR}/Makefile.MAN1SRCS"
 
 post-patch:
-	${REINPLACE_CMD} -e 's|import lit|import lit${LLVM_SUFFIX}|' \
-	    -e 's|from lit|from lit${LLVM_SUFFIX}|' \
-	    -e 's|lit\.|lit${LLVM_SUFFIX}.|' \
+	${REINPLACE_CMD} -e 's|import lit|import ${LIT_MOD_NAME}|' \
+	    -e 's|from lit|from ${LIT_MOD_NAME}|' \
+	    -e 's|lit\.|${LIT_MOD_NAME}.|' \
 	    ${WRKSRC}/llvm/utils/lit/lit.py ${WRKSRC}/llvm/utils/lit/lit/*.py
 
 post-patch-LLD-on:
@@ -224,12 +226,12 @@ post-install-LIT-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/llvm-lit
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
-	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}lit${COMMAND_SUFFIX}
+	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}lit${LLVM_SUFFIX}
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/lit \
-	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}llvm-lit${COMMAND_SUFFIX}
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
+	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}llvm-lit${LLVM_SUFFIX}
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}
 	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/*.py \
-	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/lit${LLVM_SUFFIX}
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/FileCheck \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
@@ -265,8 +267,9 @@ build-plist:
 	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' \
 	    -e 's|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|' \
 	    | ${SORT} >> ${PLIST}.tmp
-	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/lit${LLVM_SUFFIX} -type f | \
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR}/${LIT_MOD_NAME} -type f | \
 	    ${SED} -e 's|${STAGEDIR}${PYTHON_SITELIBDIR}|%%LIT%%%%PYTHON_SITELIBDIR%%|' \
+	    -e 's|${LIT_MOD_NAME}|%%LIT_MOD_NAME%%|' \
 	    -e 's|${LLVM_RELEASE:C/\./\\./g}|%%LLVM_RELEASE%%|' \
 	    -e 's|${LLVM_MAJOR:C/\./\\./}|%%LLVM_MAJOR%%|' \
 	    -e 's|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|' \
