@@ -1,11 +1,12 @@
 PORTNAME=	sinatra-contrib
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Collection of useful Sinatra extensions
-WWW=		https://github.com/sinatra/sinatra-contrib
+WWW=		https://sinatrarb.com/contrib/ \
+		https://github.com/sinatra/sinatra
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
