@@ -69,7 +69,7 @@ GH_TAGNAME=	${LLVM_COMMIT}
 .sinclude "${.PARSEDIR}/Makefile.snapshot"
 .endif
 
-OPTIONS_DEFINE=	CLANG DOCS LIT LLD
+OPTIONS_DEFINE=	CLANG DOCS LIT LLD STATIC_LIBS
 OPTIONS_DEFAULT=	CLANG LIT LLD
 OPTIONS_SUB=	yes
 
@@ -91,6 +91,7 @@ LLD_DESC=		Install lld linker
 LLD_PORTDOCS=		lld
 LLDB_DESC=		Install lldb, the LLVM debugger
 LLDB_BUILD_DEPENDS=	swig:devel/swig
+STATIC_LIBS_DESC=	Install static libraries (does not effect sanitizers)
 
 LLVM_TARGETS?=		AArch64;ARM;PowerPC;RISCV;X86
 
@@ -230,6 +231,9 @@ post-install-LIT-on:
 	${LN} -f ${STAGEDIR}${LLVM_PREFIX}/bin/FileCheck \
 	    ${STAGEDIR}${PREFIX}/bin/${COMMAND_PREFIX}FileCheck${COMMAND_SUFFIX}
 
+post-install-STATIC_LIBS-off:
+	${RM} ${STAGEDIR}${LLVM_PREFIX}/lib/lib*.a
+
 TEST_CMD=	'(cd ${WRKSRC}/llvm/test; ${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKSRC}/Release/lib ${MAKE_CMD} check-local-lit)'
 do-test:
 	if [ `${ID} -u` = 0 ]; then \
@@ -264,6 +268,7 @@ build-plist:
 	    -e 's|${LLVM_SUFFIX}|%%LLVM_SUFFIX%%|' \
 	    | ${SORT} >> ${PLIST}.tmp
 	awk '{ \
+	    if ($$0 ~ /lib.lib[a-zA-Z].*\.a$$/) {printf "%%%%STATIC_LIBS%%%%"} \
 	    if ($$0 ~ /clang/ && $$0 !~ /omp.h/) {printf "%%%%CLANG%%%%"} \
 	    if ($$0 ~ /(bin\/(ld|lld|wasm-ld))|liblld[^b]|\/lld\// && $$0 !~ /lldb/) {printf "%%%%LLD%%%%"} \
 	    if ($$0 ~ /(argdumper|lldb)/) {printf "%%%%LLDB%%%%"} \
