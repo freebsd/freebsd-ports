@@ -1,0 +1,6 @@
+bin/rospo
+etc/bash_completion.d/rospo
+%%DOCSDIR%%/README.md
+%%DOCSDIR%%/config_template.yaml
+share/fish/vendor_completions.d/rospo.fish
+share/zsh/site_functions/_rospo
