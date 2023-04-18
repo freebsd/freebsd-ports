@@ -12,8 +12,11 @@ WWW=		https://github.com/wagtail/wagtail-localize
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR} \
-		${RUN_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.2:www/py-django32@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}flit-core>=3.2<4:devel/py-flit-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}polib>=1.1<2.0:devel/py-polib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0:devel/py-typing-extensions@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wagtail>=4.1:www/py-wagtail@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.2:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}polib>=1.1<2.0:devel/py-polib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0:devel/py-typing-extensions@${PY_FLAVOR} \
