@@ -1,6 +1,5 @@
 PORTNAME=	httpx
-PORTVERSION=	0.23.3
-PORTREVISION=	4
+PORTVERSION=	0.24.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,13 +11,11 @@ WWW=		https://github.com/encode/httpx
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-# idna is from rfc3986[idna2008]
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>=0:devel/py-hatch-fancy-pypi-readme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpcore>=0.15.0<0.18.0:www/py-httpcore@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=0:dns/py-idna@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rfc3986>=1.3,1<2,1:www/py-rfc3986@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sniffio>=0:devel/py-sniffio@${PY_FLAVOR}
 
 USES=		cpe python:3.7+
