@@ -4939,6 +4939,7 @@
     SUBDIR += py-mypy-boto3-s3
     SUBDIR += py-mypy-protobuf
     SUBDIR += py-mypy_extensions
+    SUBDIR += py-mystic
     SUBDIR += py-naiveBayesClassifier
     SUBDIR += py-nanotime
     SUBDIR += py-natsort
