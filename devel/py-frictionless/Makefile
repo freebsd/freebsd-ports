@@ -1,5 +1,5 @@
 PORTNAME=	frictionless
-PORTVERSION=	5.10.5
+PORTVERSION=	5.11.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -38,8 +38,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=	API AWS BIGQUERY CKAN DATASETTE EXCEL GITHUB GSHEETS HTML JSON MYSQL PANDAS PARQUET POSTGRESQL SQL VISIDATA WKT
-API_DESC=	API support
+OPTIONS_DEFINE=	AWS BIGQUERY CKAN DATASETTE EXCEL GITHUB GSHEETS HTML JSON MYSQL PANDAS PARQUET POSTGRESQL SERVER SQL VISIDATA WKT
 AWS_DESC=	AWS S3 support
 BIGQUERY_DESC=	BigQuery support
 CKAN_DESC=	CKAN API support
@@ -52,13 +51,11 @@ JSON_DESC=	JSON file support
 PANDAS_DESC=	Pandas support
 PARQUET_DESC=	Parquet file format support
 POSTGRESQL_DESC=PostgreSQL database support
+SERVER_DESC=	Server support
 SQL_DESC=	SQL databases support
 VISIDATA_DESC=	VisiData support
 WKT_DESC=	Well-known text (WKT) support
 
-API_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>=0.78:www/py-fastapi@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}uvicorn>=0.17:www/py-uvicorn@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0:www/py-python-multipart@${PY_FLAVOR}
 AWS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>=1.9:www/py-boto3@${PY_FLAVOR}
 BIGQUERY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-python-client>=1.12.1:www/py-google-api-python-client@${PY_FLAVOR}
 CKAN_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}frictionless-ckan-mapper>=1.0:devel/py-frictionless-ckan-mapper@${PY_FLAVOR}
@@ -78,6 +75,9 @@ PANDAS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pandas>=1.0:math/py-pandas@${PY_FLAVO
 PARQUET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastparquet>=0.8:databases/py-fastparquet@${PY_FLAVOR}
 POSTGRESQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg>=3.0:databases/py-psycopg@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4:databases/py-sqlalchemy14@${PY_FLAVOR}
+SERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fastapi>=0.78:www/py-fastapi@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}uvicorn>=0.17:www/py-uvicorn@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0:www/py-python-multipart@${PY_FLAVOR}
 SQL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4:databases/py-sqlalchemy14@${PY_FLAVOR}
 VISIDATA_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}visidata>=2.10:devel/py-visidata@${PY_FLAVOR}
 WKT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}grako>=3.99:textproc/py-grako@${PY_FLAVOR}
