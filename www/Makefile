@@ -2450,6 +2450,7 @@
     SUBDIR += yarn-node16
     SUBDIR += yarn-node18
     SUBDIR += yarn-node19
+    SUBDIR += yarn-node20
     SUBDIR += yarr
     SUBDIR += yaws
     SUBDIR += you-get
