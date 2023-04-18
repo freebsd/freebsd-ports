@@ -1,0 +1,51 @@
+--- lldb/bindings/CMakeLists.txt.orig	2021-06-28 16:23:38 UTC
++++ lldb/bindings/CMakeLists.txt
+@@ -26,8 +26,6 @@ set(SWIG_COMMON_FLAGS
+   -features autodoc
+   -I${LLDB_SOURCE_DIR}/include
+   -I${CMAKE_CURRENT_SOURCE_DIR}
+-  -D__STDC_LIMIT_MACROS
+-  -D__STDC_CONSTANT_MACROS
+   ${DARWIN_EXTRAS}
+ )
+ 
+--- lldb/bindings/interface/SBValueList.i.orig	2021-06-28 16:23:38 UTC
++++ lldb/bindings/interface/SBValueList.i
+@@ -103,7 +103,6 @@ class SBValueList (public)
+     GetFirstValueByName (const char* name) const;
+ 
+     %extend {
+-       %nothreadallow;
+        std::string lldb::SBValueList::__str__ (){
+            lldb::SBStream description;
+            const size_t n = $self->GetSize();
+@@ -122,7 +121,6 @@ class SBValueList (public)
+                --desc_len;
+            return std::string(desc, desc_len);
+        }
+-       %clearnothreadallow;
+     }
+ 
+ #ifdef SWIGPYTHON
+--- lldb/bindings/interfaces.swig.orig	2021-06-28 16:23:38 UTC
++++ lldb/bindings/interfaces.swig
+@@ -1,8 +1,5 @@
+ /* Various liblldb typedefs that SWIG needs to know about.  */
+ #define __extension__ /* Undefine GCC keyword to make Swig happy when processing glibc's stdint.h. */
+-/* The ISO C99 standard specifies that in C++ implementations limit macros such
+-   as INT32_MAX should only be defined if __STDC_LIMIT_MACROS is. */
+-#define __STDC_LIMIT_MACROS
+ %include "stdint.i"
+ 
+ %include "lldb/lldb-defines.h"
+--- lldb/bindings/python/python-typemaps.swig.orig	2021-06-28 16:23:38 UTC
++++ lldb/bindings/python/python-typemaps.swig
+@@ -439,7 +439,7 @@ bool SetNumberFromPyObject<double>(double &number, PyO
+ 
+ %typemap(out) lldb::FileSP {
+   $result = nullptr;
+-  lldb::FileSP &sp = $1;
++  const lldb::FileSP &sp = $1;
+   if (sp) {
+     PythonFile pyfile = unwrapOrSetPythonException(PythonFile::FromFile(*sp));
+     if (!pyfile.IsValid())
