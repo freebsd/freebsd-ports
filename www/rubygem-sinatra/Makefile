@@ -1,11 +1,12 @@
 PORTNAME=	sinatra
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Classy web development framework in ruby
-WWW=		http://www.sinatrarb.com/
+WWW=		https://sinatrarb.com/ \
+		https://github.com/sinatra/sinatra
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
