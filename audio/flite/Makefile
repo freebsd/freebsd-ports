@@ -1,8 +1,8 @@
 PORTNAME=	flite
 PORTVERSION=	2.1
+DISTVERSIONSUFFIX=	-release
 CATEGORIES=	audio
-MASTER_SITES=	http://www.festvox.org/flite/packed/${PORTNAME}-2.1/
-DISTNAME=	${PORTNAME}-${PORTVERSION:}-release
+MASTER_SITES=	http://www.festvox.org/flite/packed/${PORTNAME}-${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small run-time speech synthesis engine
