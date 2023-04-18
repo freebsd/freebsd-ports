@@ -800,6 +800,7 @@ lib/libruby%%RUBY_SHLIBVER%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/rubygems/commands/contents_command.rb
 %%RUBY_LIBDIR%%/rubygems/commands/dependency_command.rb
 %%RUBY_LIBDIR%%/rubygems/commands/environment_command.rb
+%%RUBY_LIBDIR%%/rubygems/commands/exec_command.rb
 %%RUBY_LIBDIR%%/rubygems/commands/fetch_command.rb
 %%RUBY_LIBDIR%%/rubygems/commands/generate_index_command.rb
 %%RUBY_LIBDIR%%/rubygems/commands/help_command.rb
@@ -3928,6 +3929,18 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/EnvironmentCommand/execute-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/EnvironmentCommand/git_path-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/EnvironmentCommand/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/activate%21-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/cdesc-ExecCommand.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/check_executable-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/execute-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/handle_options-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/install-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/install_if_needed-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/load%21-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/print_command-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/set_gem_exec_install_paths-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/ExecCommand/suppress_always_install-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/FetchCommand/cdesc-FetchCommand.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/FetchCommand/execute-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Commands/FetchCommand/new-c.ri
@@ -4203,6 +4216,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/class_name-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/make-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/ruby-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/Builder/run-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/DylibNotFoundError/cdesc-DylibNotFoundError.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Ext/CargoBuilder/DylibNotFoundError/new-c.ri
@@ -4494,10 +4508,13 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/header-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/length-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/new-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/open-c.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/pos%3d-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/pos-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/read-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/readpartial-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/rewind-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/seek-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/size-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/Entry/symlink%3f-i.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Package/TarReader/UnexpectedEOF/cdesc-UnexpectedEOF.ri
@@ -5370,6 +5387,7 @@ man/man1/ruby%%RUBY_SUFFIX%%.1.gz
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_all_by_full_name-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_all_by_name-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_all_satisfiers-i.ri
+%%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_by_full_name-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_by_name-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_by_path-c.ri
 %%RDOC%%%%RUBY_RIDIR%%/Gem/Specification/find_in_unresolved-c.ri

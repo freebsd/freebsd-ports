@@ -1,6 +1,6 @@
---- tool/rbinstall.rb.orig	2022-09-08 21:09:50 UTC
+--- tool/rbinstall.rb.orig	2023-03-30 11:06:29 UTC
 +++ tool/rbinstall.rb
-@@ -906,152 +906,6 @@ end
+@@ -909,155 +909,6 @@ end
  
  # :startdoc:
  
@@ -121,9 +121,12 @@
 -    next if /^\s*(?:#|$)/ =~ name
 -    next unless /^(\S+)\s+(\S+).*/ =~ name
 -    gem_name = "#$1-#$2"
--    path = "#{srcdir}/.bundle/specifications/#{gem_name}.gemspec"
+-    # Try to find the gemspec file for C ext gems
+-    # ex .bundle/gems/debug-1.7.1/debug-1.7.1.gemspec
+-    # This gemspec keep the original dependencies
+-    path = "#{srcdir}/.bundle/gems/#{gem_name}/#{gem_name}.gemspec"
 -    unless File.exist?(path)
--      path = "#{srcdir}/.bundle/gems/#{gem_name}/#{gem_name}.gemspec"
+-      path = "#{srcdir}/.bundle/specifications/#{gem_name}.gemspec"
 -      next unless File.exist?(path)
 -    end
 -    spec = load_gemspec(path, "#{srcdir}/.bundle/gems/#{gem_name}")
