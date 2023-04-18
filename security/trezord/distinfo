@@ -1,6 +1,6 @@
-TIMESTAMP = 1665040548
-SHA256 (trezor-trezord-go-v2.0.32_GH0.tar.gz) = 4738eba87fcae0e81ab89696eca45915a8f00aaf778f784b715523baad89e4a3
-SIZE (trezor-trezord-go-v2.0.32_GH0.tar.gz) = 645142
+TIMESTAMP = 1681804602
+SHA256 (trezor-trezord-go-v2.0.33_GH0.tar.gz) = b589b857888811cfdd6593dd911e0574b8257fce24a9d9366a187be3b859fa59
+SIZE (trezor-trezord-go-v2.0.33_GH0.tar.gz) = 645382
 SHA256 (felixge-httpsnoop-v1.0.1_GH0.tar.gz) = 02f506689067855a2afcbea692a63f60bcb50a3994722650339c82027d1cbe3e
 SIZE (felixge-httpsnoop-v1.0.1_GH0.tar.gz) = 10725
 SHA256 (gorilla-csrf-v1.7.0_GH0.tar.gz) = 8cbc7df34ba5266f78c81b5d1a86b822d4107533dd4c3fd9fe16cdee4d916db5
