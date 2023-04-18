@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Abstract syntax tree for Python with inference support
-WWW=		https://github.com/PyCQA/astroid
+WWW=		https://github.com/pylint-dev/astroid
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
