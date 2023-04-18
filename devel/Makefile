@@ -4397,6 +4397,7 @@
     SUBDIR += py-cftime
     SUBDIR += py-chainmap
     SUBDIR += py-characteristic
+    SUBDIR += py-check-jsonschema
     SUBDIR += py-check-manifest
     SUBDIR += py-cheetah3
     SUBDIR += py-circuitbreaker
