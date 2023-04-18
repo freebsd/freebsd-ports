@@ -1,0 +1,4 @@
+%%SITE_PERL%%/Hash/Ordered.pm
+%%SITE_PERL%%/Hash/Ordered/Benchmarks.pod
+%%PERL5_MAN3%%/Hash::Ordered.3.gz
+%%PERL5_MAN3%%/Hash::Ordered::Benchmarks.3.gz
