@@ -1,6 +1,6 @@
 PORTNAME=	sentencepiece
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.97
+DISTVERSION=	0.1.98
 CATEGORIES=	textproc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,6 +9,8 @@ WWW=		https://github.com/google/sentencepiece
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	libtcmalloc_minimal.so:devel/google-perftools
 
 USES=		cmake:testing compiler:c++17-lang
 USE_LDCONFIG=	yes
