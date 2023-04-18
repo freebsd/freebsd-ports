@@ -1,0 +1,7 @@
+pytest-order is a pytest plugin that allows you to customize the order in which
+your tests are run. It uses the marker order that defines when a specific test
+shall run, either by using an ordinal number, or by specifying the relationship
+to other tests.
+
+pytest-order is a fork of pytest-ordering that provides additional features like
+ordering relative to other tests.

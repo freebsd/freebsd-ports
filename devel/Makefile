@@ -5276,6 +5276,7 @@
     SUBDIR += py-pytest-mypy
     SUBDIR += py-pytest-mypy-plugins
     SUBDIR += py-pytest-nunit
+    SUBDIR += py-pytest-order
     SUBDIR += py-pytest-parallel
     SUBDIR += py-pytest-pep8
     SUBDIR += py-pytest-plus
