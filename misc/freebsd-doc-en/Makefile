@@ -1,9 +1,8 @@
 PORTNAME=	freebsd-doc
-PORTVERSION=	20230410
-PORTREVISION=	1
+PORTVERSION=	20230420
 PORTEPOCH=	1
 CATEGORIES=	misc docs
-MASTER_SITES=	LOCAL/blackend
+MASTER_SITES=	LOCAL/doceng
 PKGNAMEPREFIX?=	en-
 
 MAINTAINER=	doceng@FreeBSD.org
@@ -14,48 +13,29 @@ LICENSE=	BSD2CLAUSE
 BUILD_DEPENDS=	docproj>=4.1:textproc/docproj
 
 WRKSRC=		${WRKDIR}/doc/documentation
-PLIST_SUB=	DOCSDIR=${DOCBASE} \
-		DOCLANG=${DOCLANG} \
-		DOCLANG_PREFIX=${DOCLANG_PREFIX}
-MAKE_ARGS=	${DOCFORMAT} \
-		DOC_LANG="${DOCLANG}"
+PLIST_SUB=	DOCBASE=${DOCBASE}
 NO_ARCH=	yes
 
-# To populate correctly the stage directory
-TMPDESTDIR=	${STAGEDIR}${DESTDIR}/${PREFIX}/${DOCBASE}
-DESTDIRNAME=	TMPDESTDIR
-
-PLIST=		${WRKDIR}/pkg-plist
-
 DOCLANG?=		en
-DOCLANG_PREFIX?=	${DOCLANG:C/_.*$//}
 DOCBASE?=		share/doc/freebsd
 
-# HTML format disabled for localized languages
-.if ${DOCLANG:Men}
-AVAILABLEFORMATS=	HTML PDF
-.else
-AVAILABLEFORMATS=	PDF
-.endif
-
-OPTIONS_DEFINE=		${AVAILABLEFORMATS}
-OPTIONS_DEFAULT=	PDF
-HTML_DESC=		Single HTML file per document
+OPTIONS_DEFINE=	HTML PDF
+OPTIONS_DEFAULT=	HTML PDF
+OPTIONS_SUB=	yes
+HTML_DESC=		HTML format
 PDF_DESC=		PDF format
 
-# if PACKAGE_BUILDING=yes, enable all of $AVAILABLEFORMATS.
-.if defined(PACKAGE_BUILDING)
-OPTIONS_DEFAULT+=	${AVAILABLEFORMATS}
+# HTML build needs to include English for all languages
+.if ${DOCLANG:Men}
+HTML_DOC_LANG= en
+.else
+HTML_DOC_LANG= ${DOCLANG} en
 .endif
 
 .include <bsd.port.options.mk>
-
-.for O in ${AVAILABLEFORMATS}
-.if ${PORT_OPTIONS:M${O}}
-DOCFORMAT+=	${O:tl}
-PLIST_FORMATS+=	${O:tl}
+.if empty(PORT_OPTIONS)
+IGNORE=		at least one option must be enabled
 .endif
-.endfor
 
 .if ${PORT_OPTIONS:MPDF}
 BUILD_DEPENDS+=	asciidoctor-pdf:textproc/rubygem-asciidoctor-pdf
@@ -64,48 +44,51 @@ BUILD_DEPENDS+=	docproj-fonts-cjk>0:textproc/docproj-fonts-cjk
 .endif
 .endif
 
-# when html is defined as the format, add HTML_COMMON and extras
-# extras files are example files, scripts, etc. coming with the doc
-.if ${PORT_OPTIONS:MHTML}
-PLIST_FORMATS+=	html-common extras
-.endif
-
-# example files, scripts, etc. coming with the doc and common
-# directories for all formats.
-#PLIST_FORMATS+=	extras common
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|enableGitInfo = true|#enableGitInfo = true|' \
 		${WRKSRC}/config/_default/config.toml
 
-pre-build:
-.for i in ${PLIST_FORMATS:S,^,${.CURDIR}/pkg-plist.,}
-	if ${TEST} -f ${i}; then \
-		${CAT} ${i} >> ${PLIST}; \
-	fi
-.endfor
+do-build-HTML-on:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DOC_LANG="${HTML_DOC_LANG}" \
+		${MAKE} html
+.if ${DOCLANG} == "en"
+	@${RM} ${WRKSRC}/public/articles/index.html \
+		${WRKSRC}/public/books/index.html
+	@${RM} -r ${WRKSRC}/public/languages/
+.else
+	@${RM} -r ${WRKSRC}/public/${DOCLANG}/languages/
+.endif
+
+do-build-PDF-on:
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DOC_LANG="${DOCLANG}" \
+		${MAKE} pdf
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS}
+	@${DO_NADA}
+
+pre-install:
+	${MKDIR} ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/${DOCLANG}
+
+do-install-HTML-on:
+.if ${DOCLANG} == "en"
+	@${FIND} ${WRKSRC}/public/ -type f -name "*.html" | \
+		${XARGS} ${REINPLACE_CMD} -i '' \
+			-e 's|img src=../../../images|img src=../../images|g'
+	@${FIND} ${WRKSRC}/public/ -name "*.orig" -delete
+	${ECHO} "English HTML documents are in ../articles and ../books" \
+		> ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/${DOCLANG}/README.txt
+	${CP} -R ${WRKSRC}/public/* ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}
+.else
+	${CP} -R ${WRKSRC}/public/${DOCLANG}/* ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/${DOCLANG}
+.endif
+
+do-install-PDF-on:
+	cd ${WRKSRC}/public/ && ${FIND} ${DOCLANG}/ -type d -exec ${MKDIR} \
+		${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/{} \;
+	cd ${WRKSRC}/public/ && ${FIND} ${DOCLANG}/ -type f -name "*.pdf" \
+		-exec ${INSTALL_DATA} {} ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/{} \;
 
 do-install:
-	${MKDIR} ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}
-	${CP} -R ${WRKSRC}/public/* ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}
-# For PDF format extras files are copied with the .pdf in same directory
-.if ${PORT_OPTIONS:MPDF}
-	${GREP} -E '(\.c|\.txt)' ${.CURDIR}/pkg-plist.pdf | \
-		${SED} -e 's|%%DOCSDIR%%/%%DOCLANG%%/||' | \
-		${XARGS} -t -I % ${CP} -v ${WRKSRC}/static/source/% ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/${DOCLANG}/%;
-.endif
-# For HTML format extras files are in source/ directory
-.if ${PORT_OPTIONS:MHTML}
-	if ${TEST} -f ${.CURDIR}/pkg-plist.extras; then \
-		${MKDIR} ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/source; \
-		${CAT} ${.CURDIR}/pkg-plist.extras | \
-		${SED} -e 's|%%DOCSDIR%%/||' | \
-		${XARGS} -t -I % ${CP} -v ${WRKSRC}/static/% ${STAGEDIR}${DESTDIR}${PREFIX}/${DOCBASE}/; \
-	fi
-.endif
+	@${DO_NADA}
 
 .include <bsd.port.mk>
