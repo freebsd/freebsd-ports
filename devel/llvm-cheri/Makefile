@@ -25,8 +25,7 @@ COMMAND_SUFFIX=	${LLVM_SUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
-USES=		cmake compiler:c++11-lib cpe libedit perl5 \
-		shebangfix
+USES=		cmake compiler:c++17-lang cpe shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 SHEBANG_FILES=	\
 		clang/tools/clang-format/git-clang-format \
@@ -56,6 +55,8 @@ CMAKE_ARGS+=	-DLLVM_BUILD_LLVM_DYLIB=ON -DLLVM_LINK_LLVM_DYLIB=ON
 CMAKE_ARGS+=	-DCMAKE_INSTALL_MANDIR:PATH="share/man"
 CMAKE_ARGS+=	-DLLVM_PARALLEL_LINK_JOBS=1
 CMAKE_ARGS+=	-DLLVM_ENABLE_Z3_SOLVER=OFF
+CMAKE_ARGS+=	-DLLVM_ENABLE_LIBXML2=OFF
+CMAKE_ARGS+=	-DLLVM_ENABLE_LIBEDIT=OFF
 CMAKE_ARGS+=	-DLLVM_TARGETS_TO_BUILD="${LLVM_TARGETS}"
 
 .ifndef MASTERDIR
@@ -75,9 +76,11 @@ OPTIONS_SUB=	yes
 
 CLANG_DESC=		Build clang
 CLANG_PORTDOCS=		clang
+CLANG_USES=		perl5
+# scan-build does require, but users can install it manually.
+CLANG_USE=		PERL5=build
 PLIST_FILES+=		share/toolchains/llvm${LLVM_SUFFIX}.mk
 SUB_FILES+=		xtoolchain.mk
-CLANG_USE=		GNOME=libxml2
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}recommonmark>=0.0.20180530:textproc/py-recommonmark@${PY_FLAVOR}
 DOCS_CMAKE_ON=		-DLLVM_ENABLE_SPHINX=ON \
@@ -124,7 +127,8 @@ USES+=		gnome
 
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=	${LIT_MAN1SRCS}
-_USES_PYTHON=	python:3.6+
+# lit requires python, but don't install it by default.  Users can install.
+#_USES_PYTHON=	python:3.6+
 .endif
 
 .if ${PORT_OPTIONS:MLLD}
