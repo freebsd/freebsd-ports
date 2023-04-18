@@ -126,6 +126,6 @@ include/mega/waiter.h
 include/megaapi.h
 include/megaapi_impl.h
 lib/libmega.so
-lib/libmega.so.30911
-lib/libmega.so.30911.0.0
+lib/libmega.so.41701
+lib/libmega.so.41701.0.0
 libdata/pkgconfig/libmega.pc
