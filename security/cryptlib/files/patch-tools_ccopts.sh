@@ -1,5 +1,14 @@
 --- tools/ccopts.sh.orig	2021-10-21 02:27:26 UTC
 +++ tools/ccopts.sh
+@@ -675,7 +675,7 @@ hasSafeStackLibs()
+ 
+ if [ $ISCLANG -gt 0 ] && [ $ISSPECIAL -eq 0 ] ; then
+ 	if [ $COMPILER_VER -ge 47 ] ; then
+-		if [ "$OSNAME" = "Darwin" ] || [ "$OSNAME" = "OpenBSD" ] ; then
++		if [ "$OSNAME" = "Darwin" ] || [ "$OSNAME" = "OpenBSD" ] || [ "$OSNAME" = "FreeBSD" -a "$ARCH" = "arm" ] ; then
+ 			# The versions of clang shipped with OS X or OpenBSD don't
+ 			# support -fsanitize=safe-stack even as late as clang 12, so
+ 			# there's not much that we can do.
 @@ -892,31 +892,6 @@ fi
  # a big deal.  As a convenient side-effect, this also enables the use of
  # ASLR where it's supported.
