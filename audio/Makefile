@@ -594,6 +594,7 @@
     SUBDIR += pc-mixer
     SUBDIR += pcaudiolib
     SUBDIR += pd
+    SUBDIR += pd-cyclone
     SUBDIR += pear-Text_Spell_Audio
     SUBDIR += penguinsap
     SUBDIR += pianobar
