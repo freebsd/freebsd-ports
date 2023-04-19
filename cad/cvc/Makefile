@@ -1,6 +1,6 @@
 PORTNAME=	cvc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.3
+DISTVERSION=	1.1.4
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,9 +25,5 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	d-m-bailey
 
 MAKE_ARGS=	INTLLIBS=-lintl
-
-OPTIONS_DEFINE=	DOCS
-
-PORTDOCS=	*
 
 .include <bsd.port.mk>
