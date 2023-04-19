@@ -1,5 +1,5 @@
 PORTNAME=	pynndescent
-DISTVERSION=	0.5.8
+DISTVERSION=	0.5.9
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,14 +12,14 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}joblib>0:devel/py-joblib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}llvmlite>=0.34:devel/py-llvmlite@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}joblib>0.11:devel/py-joblib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}llvmlite>=0.30:devel/py-llvmlite@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numba>=0.51.2:devel/py-numba@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-learn>=0.18:science/py-scikit-learn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
 
-USES=		python:3.5+
-USE_PYTHON=	distutils autoplist pytest
+USES=		python:3.6+
+USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/lmcinnes/pynndescent/issues/216
 
 NO_ARCH=	yes
 
