@@ -2,16 +2,18 @@ diff --git src/EGL/libegl.c src/EGL/libegl.c
 index 9fea10a..e235f46 100644
 --- src/EGL/libegl.c
 +++ src/EGL/libegl.c
-@@ -32,6 +32,8 @@
+@@ -32,6 +32,10 @@
  #include <unistd.h>
  #include <sys/mman.h>
  
++#ifdef __CHERI_PURE_CAPABILITY__
 +#include <cheri/cheric.h>
++#endif
 +
  #if defined(ENABLE_EGL_X11)
  #include <X11/Xlib.h>
  #endif
-@@ -145,7 +147,12 @@ static EGLBoolean _eglPointerIsDereferencable(void *p)
+@@ -145,7 +149,12 @@ static EGLBoolean _eglPointerIsDereferencable(void *p)
       * depending on what system we're building on. Since we don't actually need
       * that result, just cast it to a void* so that it works either way.
       */
