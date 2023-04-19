@@ -1,5 +1,6 @@
 PORTNAME=	nim
 DISTVERSION=	1.6.12
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -81,6 +82,7 @@ do-install:
 	# Install nim lib files
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}
 	(cd ${WRKSRC}/lib && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/${PORTNAME} "! -name libnimrtl.so")
+	${REINPLACE_CMD} 's|\.\.\/doc|/usr/local/share/doc/nim|g' ${WRKSRC}/compiler/commands.nim
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/compiler
 	(cd ${WRKSRC}/compiler && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/lib/${PORTNAME}/compiler "! -name nim ! -name nim1")
 	# Configuration files
