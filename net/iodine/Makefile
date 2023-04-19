@@ -1,14 +1,14 @@
 PORTNAME=	iodine
 PORTVERSION=	0.8.0
 CATEGORIES=	net
-MASTER_SITES=	http://code.kryo.se/iodine/ \
-		http://redundancy.redundancy.org/mirror/
+MASTER_SITES=	https://code.kryo.se/iodine/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	p.mousavizadeh@protonmail.com
 COMMENT=	Tunnel IPv4 data through a DNS server
 WWW=		https://code.kryo.se/iodine/
 
 LICENSE=	ISCL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe
 CPE_VENDOR=	kryo
@@ -25,7 +25,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/man/iodine.8 ${STAGEDIR}${MANPREFIX}/man/man8
 	${GZIP_CMD} ${STAGEDIR}${MANPREFIX}/man/man8/iodine.8
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.for f in README.md CHANGELOG TODO
+.for f in README.md CHANGELOG
 	${INSTALL_DATA} ${WRKSRC}/${f} ${STAGEDIR}${DOCSDIR}
 .endfor
 
