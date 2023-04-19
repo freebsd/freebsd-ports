@@ -17907,3 +17907,4 @@ textproc/rubygem-rouge329|textproc/rubygem-rouge|2023-04-09|Remove obsoleted por
 www/rubygem-erubi19|www/rubygem-erubi|2023-04-09|Remove obsoleted port. Use www/rubygem-erubi instead
 multimedia/mythtv-frontend|multimedia/mythtv|2023-04-10|Frontend is no part of multimedia/mythtv
 lang/ruby27|lang/ruby30|2023-04-13|Please migrate to newer versions. Ruby 2.7 will reach its EoL on April 12, 2023
+www/py-requests-futures0|www/py-requests-futures|2023-04-19|Remove obsoleted port. Use www/py-requests-futures instead
