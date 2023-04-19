@@ -1,0 +1,11 @@
+--- libnetmap/GNUmakefile.orig	2022-02-11 07:45:02 UTC
++++ libnetmap/GNUmakefile
+@@ -1,6 +1,7 @@
+ SRCDIR ?= ../
+ PREFIX ?= usr/local
+-CFLAGS=-O2 -pipe -Wall -Werror
++CFLAGS=-O2 -pipe -Wall
++CFLAGS=-O2 -pipe -Wall
+ CFLAGS +=-g
+ CFLAGS += -I $(SRCDIR)/sys
+ VPATH = $(SRCDIR)/libnetmap
