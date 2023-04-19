@@ -47,6 +47,7 @@
 %%PYTHON_SITELIBDIR%%/pykep/trajopt/gym/_juice.py
 %%PYTHON_SITELIBDIR%%/pykep/trajopt/gym/_messenger.py
 %%PYTHON_SITELIBDIR%%/pykep/trajopt/gym/_rosetta.py
+%%PYTHON_SITELIBDIR%%/pykep/trajopt/gym/_solar_orbiter.py
 %%PYTHON_SITELIBDIR%%/pykep/trajopt/gym/_tandem.py
 %%PYTHON_SITELIBDIR%%/pykep/util/__init__.py
 %%PYTHON_SITELIBDIR%%/pykep/util/gravity_models/Ceres/jgdwn_cer18d.txt
