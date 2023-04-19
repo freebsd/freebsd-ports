@@ -10,6 +10,7 @@ include/fluent-bit/flb_aws_util.h
 include/fluent-bit/flb_base64.h
 include/fluent-bit/flb_bits.h
 include/fluent-bit/flb_bucket_queue.h
+include/fluent-bit/flb_byteswap.h
 include/fluent-bit/flb_callback.h
 include/fluent-bit/flb_chunk_trace.h
 include/fluent-bit/flb_compat.h
@@ -64,6 +65,14 @@ include/fluent-bit/flb_kv.h
 include/fluent-bit/flb_langinfo.h
 include/fluent-bit/flb_lib.h
 include/fluent-bit/flb_log.h
+include/fluent-bit/flb_log_event.h
+include/fluent-bit/flb_log_event_decoder.h
+include/fluent-bit/flb_log_event_encoder.h
+include/fluent-bit/flb_log_event_encoder_body_macros.h
+include/fluent-bit/flb_log_event_encoder_dynamic_field.h
+include/fluent-bit/flb_log_event_encoder_metadata_macros.h
+include/fluent-bit/flb_log_event_encoder_primitives.h
+include/fluent-bit/flb_log_event_encoder_root_macros.h
 include/fluent-bit/flb_lua.h
 include/fluent-bit/flb_luajit.h
 include/fluent-bit/flb_macros.h
@@ -84,11 +93,14 @@ include/fluent-bit/flb_parser_decoder.h
 include/fluent-bit/flb_pipe.h
 include/fluent-bit/flb_plugin.h
 include/fluent-bit/flb_plugin_proxy.h
+include/fluent-bit/flb_processor.h
+include/fluent-bit/flb_processor_plugin.h
 include/fluent-bit/flb_pthread.h
 include/fluent-bit/flb_ra_key.h
 include/fluent-bit/flb_random.h
 include/fluent-bit/flb_record_accessor.h
 include/fluent-bit/flb_regex.h
+include/fluent-bit/flb_reload.h
 include/fluent-bit/flb_ring_buffer.h
 include/fluent-bit/flb_router.h
 include/fluent-bit/flb_routes_mask.h
