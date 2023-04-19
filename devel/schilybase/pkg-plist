@@ -318,7 +318,6 @@ share/man/man3/fexecl.3.gz
 share/man/man3/fexecle.3.gz
 share/man/man3/fexecv.3.gz
 share/man/man3/fexecve.3.gz
-share/man/man3/fgetline.3.gz
 share/man/man3/file_raise.3.gz
 share/man/man3/fileclose.3.gz
 share/man/man3/fileluopen.3.gz
@@ -345,13 +344,14 @@ share/man/man3/getfiles.3.gz
 share/man/man3/getlallargs.3.gz
 share/man/man3/getlargs.3.gz
 share/man/man3/getlfiles.3.gz
-share/man/man3/getline.3.gz
 share/man/man3/getopt.3.gz
 share/man/man3/getsubopt.3.gz
 share/man/man3/getvallargs.3.gz
 share/man/man3/getvargs.3.gz
 share/man/man3/getvfiles.3.gz
 share/man/man3/handlecond.3.gz
+share/man/man3/js_fgetline.3.gz
+share/man/man3/js_getline.3.gz
 share/man/man3/librmt.3.gz
 share/man/man3/movebytes.3.gz
 share/man/man3/mtg2rmtg.3.gz
