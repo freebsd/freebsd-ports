@@ -20,6 +20,6 @@ logfile="/var/log/${name}.log"
 
 procname=%%PREFIX%%/bin/frps
 command="/usr/sbin/daemon"
-command_args="-u %%USER%% -o ${logfile} -t ${name} %%PREFIX%%/bin/frps -c %%PREFIX%%/etc/frps.ini"
+command_args="-u %%DAEMON_USER%% -o ${logfile} -t ${name} %%PREFIX%%/bin/frps -c %%PREFIX%%/etc/frps.ini"
 
 run_rc_command "$1"
