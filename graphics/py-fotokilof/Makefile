@@ -1,0 +1,36 @@
+PORTNAME=	fotokilof
+PORTVERSION=	4.2.6
+CATEGORIES=	graphics
+MASTER_SITES=	PYPI
+PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	FotoKilof-${PORTVERSION}
+
+MAINTAINER=	nivit@FreeBSD.org
+COMMENT=	GUI for ImageMagick and Wand
+WWW=		https://github.com/TeaM-TL/FotoKilof
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0.40.0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=9.5.0:graphics/py-pillow@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tkcolorpicker>=2.1.3:graphics/py-tkcolorpicker@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Wand>=0.6.11:graphics/py-wand@${PY_FLAVOR}
+
+USES=		magick:run python:3.7+
+
+# the project really doesn't have PEP-517 support, but distutils/setuptools
+# create a "wrong" entry_points script, so we use our pep517 feature
+# (at least partially).
+USE_PYTHON=		autoplist pep517
+PYDISTUTILS_BUILD_TARGET=	bdist_wheel
+PEP517_BUILD_CMD=	${PYTHON_CMD} ${PYDISTUTILS_SETUP} \
+			${PYDISTUTILS_BUILD_TARGET}
+
+# fix Python wheel name (lower case)
+post-patch:
+	${REINPLACE_CMD} -e 's/\(__appname__ = \)"${PORTNAME}"/\1"${PORTNAME}"/1i' \
+		${WRKSRC}/fotokilof/version.py
+
+.include <bsd.port.mk>

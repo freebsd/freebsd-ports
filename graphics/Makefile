@@ -860,6 +860,7 @@
     SUBDIR += py-face_recognition
     SUBDIR += py-face_recognition_models
     SUBDIR += py-fiona
+    SUBDIR += py-fotokilof
     SUBDIR += py-freeimagepy
     SUBDIR += py-gdal
     SUBDIR += py-geomdl
