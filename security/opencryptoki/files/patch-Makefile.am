@@ -51,7 +51,7 @@
  if ENABLE_P11SAK
  	test -f $(DESTDIR)$(sysconfdir)/opencryptoki || $(MKDIR_P) $(DESTDIR)$(sysconfdir)/opencryptoki || true
 -	test -f $(DESTDIR)$(sysconfdir)/opencryptoki/p11sak_defined_attrs.conf || $(INSTALL) -g pkcs11 -m 0640 $(srcdir)/usr/sbin/p11sak/p11sak_defined_attrs.conf $(DESTDIR)$(sysconfdir)/opencryptoki/p11sak_defined_attrs.conf || true
-+	test -f $(DESTDIR)$(sysconfdir)/opencryptoki/p11sak_defined_attrs.conf.sample || $(INSTALL) -g @PKCS11GROUP@ -m 0640 $(srcdir)/usr/sbin/p11sak/p11sak_defined_attrs.conf $(DESTDIR)$(sysconfdir)/opencryptoki/p11sak_defined_attrs.conf.sample || true
++	test -f $(DESTDIR)$(sysconfdir)/opencryptoki/p11sak_defined_attrs.conf.sample || $(INSTALL) -m 0640 $(srcdir)/usr/sbin/p11sak/p11sak_defined_attrs.conf $(DESTDIR)$(sysconfdir)/opencryptoki/p11sak_defined_attrs.conf.sample || true
  endif
  if ENABLE_ICATOK
  	cd $(DESTDIR)$(libdir)/opencryptoki/stdll && \
