@@ -1,6 +1,5 @@
 PORTNAME=	pichi
-DISTVERSION=	1.4.0
-PORTREVISION=	3
+DISTVERSION=	1.5.0
 CATEGORIES=	net
 
 MAINTAINER=	pichi@elude.in
@@ -9,8 +8,6 @@ WWW=		https://github.com/pichi-router/pichi
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN=		fails to build
 
 BUILD_DEPENDS=	rapidjson>=1.1.0:devel/rapidjson
 
@@ -26,14 +23,15 @@ PLIST_SUB=	DISTVERSION=${DISTVERSION}
 CMAKE_BUILD_TYPE=	MinSizeRel
 CMAKE_ARGS=		-DVERSION=${DISTVERSION}
 CMAKE_ON=		BUILD_SERVER BUILD_TEST
+CMAKE_OFF=	ENABLE_CONAN TRANSPARENT_IPTABLES
 INSTALL_TARGET=		install/strip
 TEST_TARGET=		test
 
-OPTIONS_DEFINE=		DEVEL STATIC
+OPTIONS_DEFINE=		DEVEL STATIC TLS_FINGERPRINT TRANSPARENT
 OPTIONS_SUB=		yes
 
 STATIC_DESC=		Static linking
-STATIC_CMAKE_BOOL=	STATIC_LINK
+STATIC_CMAKE_BOOL_OFF=	BUILD_SHARED_LIBS
 STATIC_BUILD_DEPENDS=	boost-libs>=1.67.0:devel/boost-libs \
 			libmaxminddb>=1.3.0:net/libmaxminddb \
 			libsodium>=1.0.12:security/libsodium \
@@ -52,12 +50,31 @@ STATIC_USE_OFF=		LDCONFIG=yes
 DEVEL_DESC=		Install development files
 DEVEL_CMAKE_BOOL=	INSTALL_DEVEL
 
+TLS_FINGERPRINT_DESC=		Simulate TLS fingerprint of Google Chrome
+TLS_FINGERPRINT_CMAKE_BOOL=	TLS_FINGERPRINT
+
+TRANSPARENT_DESC=		Enable transparent ingress feature
+TRANSPARENT_CMAKE_BOOL=		TRANSPARENT_PF
+
 .include <bsd.port.options.mk>
 
+.if ${PORT_OPTIONS:MTLS_FINGERPRINT}
+.if ${PORT_OPTIONS:MSTATIC}
+BUILD_DEPENDS+=	brotli>=1.0.0:archivers/brotli \
+			boringssl>=0.0.0.0.2022.12.22.01:security/boringssl
+.else
+LIB_DEPENDS+=	libbrotlicommon.so:archivers/brotli \
+			libbrotlidec.so:security/boringssl \
+			libbrotlienc.so:security/boringssl \
+			libssl.so:security/boringssl \
+			libcrypto.so:security/boringssl
+.endif
+.else
 .if ${PORT_OPTIONS:MSTATIC}
 USES+=		ssl:build
 .else
 USES+=		ssl
+.endif
 .endif
 
 post-install:
