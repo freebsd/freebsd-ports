@@ -1,11 +1,11 @@
 PORTNAME=	postfix
-DISTVERSION=	3.7.4
-PORTREVISION?=	1
+DISTVERSION=	3.8.0
+PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	http://ftp.porcupine.org/mirrors/postfix-release/ \
+MASTER_SITES=	http://cdn.postfix.johnriley.me/mirrors/postfix-release/ \
+		http://ftp.porcupine.org/mirrors/postfix-release/ \
 		http://de.postfix.org/ftpmirror/ \
-		http://cdn.postfix.johnriley.me/mirrors/postfix-release/ \
 		http://www.artfiles.org/postfix.org/postfix-release/ \
 		http://mirror.lhsolutions.nl/postfix-release/ \
 		ftp://postfix.mirrors.pair.com/
