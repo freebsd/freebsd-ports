@@ -1,6 +1,5 @@
 PORTNAME=	xfce4-calculator-plugin
-PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTVERSION=	0.7.2
 CATEGORIES=	math xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -11,9 +10,11 @@ WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-calculator-plugin
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bz2 xfce xorg
-USE_GNOME=	cairo gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	panel
 USE_XORG=	x11
 
