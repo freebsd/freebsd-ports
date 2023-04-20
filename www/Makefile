@@ -182,6 +182,7 @@
     SUBDIR += geneweb
     SUBDIR += geolizer
     SUBDIR += get_flash_videos
+    SUBDIR += ghostunnel
     SUBDIR += gist
     SUBDIR += gitea
     SUBDIR += gitlab-ce
