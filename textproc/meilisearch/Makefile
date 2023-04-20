@@ -1,7 +1,6 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.1.1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
 		SF/mecab/mecab-ipadic/2.7.0-20070801/:mecab_ipadic \
@@ -38,8 +37,8 @@ USE_GITHUB=	yes
 # Following is generated with following:
 # curl -s https://api.github.com/repos/meilisearch/meilisearch/commits/$(make -V GH_TAGNAME) | \
 # jq -r '.sha, .commit.committer.date'
-REPO_COMMIT_SHA=	950f73b8bbc85c4e5c3485d7054ff697cb0c0052
-REPO_COMMIT_TS=		2023-03-30T08:31:29Z
+REPO_COMMIT_SHA=	4b953d62fbab81278324e71b4037eb06355dd49a
+REPO_COMMIT_TS=		2023-04-13T16:24:16Z
 
 GH_TUPLE=	meilisearch:lmdb:6a01c0a:lmdb/../lmdb-rs-501aa34a1ab7f092e3ff54a6c22ff6c55931a2d8/lmdb-sys/lmdb
 DASHBOARD_VERSION=	0.2.7
