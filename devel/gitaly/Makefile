@@ -1,5 +1,5 @@
 PORTNAME=	gitaly
-DISTVERSION=	15.10.2
+DISTVERSION=	15.10.3
 PORTREVISION=	0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
@@ -49,7 +49,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	aee76b7fd5b7e2fd68911f2b6b5203ee7512e0fe
+GL_COMMIT=	e7b8d1136de856bce239c4511f922e2003f94314
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
