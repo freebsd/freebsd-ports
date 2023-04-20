@@ -1,8 +1,10 @@
---- regress/Makefile.orig	2021-03-16 21:43:57 UTC
+--- regress/Makefile.orig	2023-04-15 23:28:20 UTC
 +++ regress/Makefile
-@@ -1,3 +1,5 @@
- SUBDIR = cmdline delta deltify idset path fetch
- 
-+SUBDIR_TARGETS+= regress
+@@ -1,4 +1,6 @@
+-SUBDIR = cmdline delta deltify idset path fetch
++SUBDIR = cmdline delta deltify idset path fetch tog
 +
- .include <bsd.subdir.mk>
++SUBDIR_TARGETS+= regress
+ 
+ .if make(clean)
+ SUBDIR += gotd 

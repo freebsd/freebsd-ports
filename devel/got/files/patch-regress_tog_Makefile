@@ -1,0 +1,10 @@
+--- regress/tog/Makefile.orig	2023-04-17 19:05:41 UTC
++++ regress/tog/Makefile
+@@ -12,4 +12,6 @@ diff:
+ blame:
+ 	./blame.sh -q -r "$(GOT_TEST_ROOT)"
+ 
+-.include <bsd.regress.mk>
++regress: ${REGRESS_TARGETS} .PHONY .SILENT
++
++.include <bsd.prog.mk>
