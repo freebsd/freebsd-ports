@@ -1,13 +1,11 @@
---- electrum/ecc_fast.py.orig	2023-01-14 09:57:57 UTC
+--- electrum/ecc_fast.py.orig	2023-04-20 06:44:28 UTC
 +++ electrum/ecc_fast.py
-@@ -46,8 +46,8 @@ def load_library():
+@@ -43,6 +43,8 @@ def load_library():
+         libnames = ['libsecp256k1-1.dll', 'libsecp256k1-0.dll', ]
      elif 'ANDROID_DATA' in os.environ:
-         library_paths = ('libsecp256k1.so',)
+         libnames = ['libsecp256k1.so', ]
++    elif 'freebsd' in sys.platform:
++        libnames = ['libsecp256k1.so', ]
      else:  # desktop Linux and similar
--        library_paths = (os.path.join(os.path.dirname(__file__), 'libsecp256k1.so.0'),
--                         'libsecp256k1.so.0')
-+        library_paths = (os.path.join(os.path.dirname(__file__), 'libsecp256k1.so'),
-+                         'libsecp256k1.so')
- 
-     exceptions = []
-     secp256k1 = None
+         libnames = ['libsecp256k1.so.1', 'libsecp256k1.so.0', ]
+     library_paths = []
