@@ -1,6 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	20.20.0
-PORTREVISION=	1
+PORTVERSION=	20.21.1
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,10 +9,12 @@ WWW=		https://virtualenv.pypa.io
 
 LICENSE=	MIT
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distlib>=0.3.6:devel/py-distlib@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distlib>=0.3.6:devel/py-distlib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.3:devel/py-hatch-vcs@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}distlib>=0.3.6:devel/py-distlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>=3.4.1:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=2.4:devel/py-platformdirs@${PY_FLAVOR}
+# tests: 299 passed, 35 skipped, 705 warnings
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.2.2:devel/py-covdefaults@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=1.0:devel/py-coverage_enable_subprocess@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flaky>=3.7.0:devel/py-flaky@${PY_FLAVOR} \
@@ -28,15 +29,6 @@ USES=		cpe python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pypa
 USE_PYTHON=	autoplist concurrent pep517 pytest
-
-PEP517_BUILD_DEPEND=	${PYTHON_PKGNAMEPREFIX}hatch-vcs>=0.3:devel/py-hatch-vcs@${PY_FLAVOR}
-PEP517_BUILD_CMD=	${PYTHON_CMD} -m hatchling build --target wheel
-PEP517_INSTALL_DEPEND=	${PKGNAMEPREFIX}pip>=22.3.1:devel/py-pip@${PY_FLAVOR}
-PEP517_INSTALL_CMD=	${PYTHON_CMD} -m pip install --no-color --no-compile \
-			--ignore-installed --no-deps --no-warn-script-location \
-			--prefix ${PREFIX} --progress-bar off --root \
-			${STAGEDIR} --root-user-action ignore --verbose \
-			${BUILD_WRKSRC}/dist/${PORTNAME:C/[-_]+/_/g}-${PORTVERSION}-*.whl
 
 # Fix the LookupError: setuptools-scm was unable to detect version (build target)
 MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION="${PORTVERSION}"
@@ -77,11 +69,6 @@ post-patch:
 	@${SED} -i.bak -e 's,%%VIRTUALENV_WHEEL%%,${VIRTUALENV_WHEEL},1' \
 	-e 's,%%PYTHON_VER%%,${PYTHON_VER},1' \
 	${WRKSRC}/docs/conf.py
-
-post-install:
-	${PYTHON_CMD} -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	${PYTHON_CMD} -O -m compileall -d ${PYTHON_SITELIBDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}
-	@cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
 
 post-install-DOCS-on:
 	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b html -n ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
