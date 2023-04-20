@@ -203,6 +203,7 @@
     SUBDIR += mailman-exim4
     SUBDIR += mailman-postfix
     SUBDIR += mailman3
+    SUBDIR += mailpit
     SUBDIR += mailscanner
     SUBDIR += mailslurper
     SUBDIR += mailsync
