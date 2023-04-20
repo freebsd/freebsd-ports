@@ -1,6 +1,5 @@
 PORTNAME=	suricata
-DISTVERSION=	6.0.9
-PORTREVISION=	4
+DISTVERSION=	6.0.11
 CATEGORIES=	security
 MASTER_SITES=	https://www.openinfosecfoundation.org/download/
 
@@ -79,7 +78,7 @@ LUAJIT_CONFIGURE_ON=	--enable-luajit
 LUA_USES=		lua:51
 LUA_CONFIGURE_ON=	--enable-lua
 
-NETMAP_CONFIGURE_ENABLE=	netmap
+NETMAP_CONFIGURE_ENABLE=	netmap # netmap-v14
 
 NSS_LIB_DEPENDS=	libnspr4.so:devel/nspr \
 			libnss3.so:security/nss
