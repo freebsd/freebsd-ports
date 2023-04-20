@@ -4,10 +4,6 @@ include/KPublicTransport/KPublicTransport/Backend
 include/KPublicTransport/KPublicTransport/BackendModel
 include/KPublicTransport/KPublicTransport/CoverageArea
 include/KPublicTransport/KPublicTransport/Datatypes
-include/KPublicTransport/KPublicTransport/Departure
-include/KPublicTransport/KPublicTransport/DepartureQueryModel
-include/KPublicTransport/KPublicTransport/DepartureReply
-include/KPublicTransport/KPublicTransport/DepartureRequest
 include/KPublicTransport/KPublicTransport/Disruption
 include/KPublicTransport/KPublicTransport/Equipment
 include/KPublicTransport/KPublicTransport/IndividualTransport
@@ -23,6 +19,7 @@ include/KPublicTransport/KPublicTransport/LocationQueryModel
 include/KPublicTransport/KPublicTransport/LocationReply
 include/KPublicTransport/KPublicTransport/LocationRequest
 include/KPublicTransport/KPublicTransport/Manager
+include/KPublicTransport/KPublicTransport/OnboardStatus
 include/KPublicTransport/KPublicTransport/Path
 include/KPublicTransport/KPublicTransport/PathModel
 include/KPublicTransport/KPublicTransport/Platform
@@ -42,10 +39,6 @@ include/KPublicTransport/kpublictransport/backend.h
 include/KPublicTransport/kpublictransport/backendmodel.h
 include/KPublicTransport/kpublictransport/coveragearea.h
 include/KPublicTransport/kpublictransport/datatypes.h
-include/KPublicTransport/kpublictransport/departure.h
-include/KPublicTransport/kpublictransport/departurequerymodel.h
-include/KPublicTransport/kpublictransport/departurereply.h
-include/KPublicTransport/kpublictransport/departurerequest.h
 include/KPublicTransport/kpublictransport/disruption.h
 include/KPublicTransport/kpublictransport/equipment.h
 include/KPublicTransport/kpublictransport/individualtransport.h
@@ -54,6 +47,7 @@ include/KPublicTransport/kpublictransport/journeyquerymodel.h
 include/KPublicTransport/kpublictransport/journeyreply.h
 include/KPublicTransport/kpublictransport/journeyrequest.h
 include/KPublicTransport/kpublictransport/kpublictransport_export.h
+include/KPublicTransport/kpublictransport/kpublictransportonboard_export.h
 include/KPublicTransport/kpublictransport/line.h
 include/KPublicTransport/kpublictransport/load.h
 include/KPublicTransport/kpublictransport/location.h
@@ -83,9 +77,15 @@ lib/cmake/KPublicTransport/KPublicTransportTargets.cmake
 lib/libKPublicTransport.so
 lib/libKPublicTransport.so.1
 lib/libKPublicTransport.so.%%KDE_APPLICATIONS_SHLIB_VER%%
+lib/libKPublicTransportOnboard.so
+lib/libKPublicTransportOnboard.so.1
+lib/libKPublicTransportOnboard.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_QMLDIR%%/org/kde/kpublictransport/libkpublictransportqmlplugin.so
+%%QT_QMLDIR%%/org/kde/kpublictransport/onboard/libkpublictransportonboardqmlplugin.so
+%%QT_QMLDIR%%/org/kde/kpublictransport/onboard/qmldir
 %%QT_QMLDIR%%/org/kde/kpublictransport/qmldir
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/VehicleSectionItem.qml
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/libkpublictransportquickplugin.so
 %%QT_QMLDIR%%/org/kde/kpublictransport/ui/qmldir
 share/qlogging-categories5/org_kde_kpublictransport.categories
+share/qlogging-categories5/org_kde_kpublictransport_onboard.categories

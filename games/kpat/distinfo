@@ -1,3 +1,3 @@
-TIMESTAMP = 1677828253
-SHA256 (KDE/release-service/22.12.3/kpat-22.12.3.tar.xz) = eea12d664d146c7e0ed48bdf52383e8d37329ce7532ef34f3fb4f3641ce31355
-SIZE (KDE/release-service/22.12.3/kpat-22.12.3.tar.xz) = 3751384
+TIMESTAMP = 1681548417
+SHA256 (KDE/release-service/23.04.0/kpat-23.04.0.tar.xz) = 9fae8b86624b44714751f14ecea652b6ef2be338beb08a6a698a0f516ad35239
+SIZE (KDE/release-service/23.04.0/kpat-23.04.0.tar.xz) = 3752000

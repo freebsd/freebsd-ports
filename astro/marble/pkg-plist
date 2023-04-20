@@ -267,7 +267,6 @@ share/icons/hicolor/22x22/apps/marble.png
 share/icons/hicolor/32x32/apps/marble.png
 share/icons/hicolor/48x48/apps/marble.png
 share/icons/hicolor/64x64/apps/marble.png
-share/knsrcfiles/marble.knsrc
 share/kservices5/marble_part.desktop
 share/kservices5/marble_thumbnail_geojson.desktop
 share/kservices5/marble_thumbnail_gpx.desktop
@@ -331,7 +330,9 @@ share/locale/en_GB/LC_MESSAGES/plasma_runner_marble.mo
 share/locale/en_GB/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/eo/LC_MESSAGES/marble.mo
 share/locale/eo/LC_MESSAGES/marble_qt.qm
+share/locale/eo/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo
 share/locale/eo/LC_MESSAGES/plasma_runner_marble.mo
+share/locale/eo/LC_MESSAGES/plasma_wallpaper_org.kde.plasma.worldmap.mo
 share/locale/es/LC_MESSAGES/marble.mo
 share/locale/es/LC_MESSAGES/marble_qt.qm
 share/locale/es/LC_MESSAGES/plasma_applet_org.kde.plasma.worldclock.mo

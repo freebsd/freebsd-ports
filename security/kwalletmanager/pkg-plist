@@ -1,6 +1,6 @@
 bin/kwalletmanager5
 lib/libexec/kauth/kcm_kwallet_helper5
-%%QT_PLUGINDIR%%/kcm_kwallet5.so
+%%QT_PLUGINDIR%%/plasma/kcms/systemsettings_qwidgets/kcm_kwallet5.so
 share/applications/kwalletmanager5-kwalletd.desktop
 share/applications/org.kde.kwalletmanager5.desktop
 share/dbus-1/services/org.kde.kwalletmanager5.service
@@ -19,7 +19,6 @@ share/icons/hicolor/48x48/apps/kwalletmanager.png
 share/icons/hicolor/48x48/apps/kwalletmanager2.png
 share/icons/hicolor/64x64/apps/kwalletmanager.png
 share/icons/hicolor/64x64/apps/kwalletmanager2.png
-share/kservices5/kwalletconfig5.desktop
 share/kservices5/kwalletmanager5_show.desktop
 share/locale/ar/LC_MESSAGES/kcmkwallet.mo
 share/locale/ar/LC_MESSAGES/kwalletmanager.mo
@@ -79,6 +78,8 @@ share/locale/ia/LC_MESSAGES/kcmkwallet.mo
 share/locale/ia/LC_MESSAGES/kwalletmanager.mo
 share/locale/id/LC_MESSAGES/kcmkwallet.mo
 share/locale/id/LC_MESSAGES/kwalletmanager.mo
+share/locale/ie/LC_MESSAGES/kcmkwallet.mo
+share/locale/ie/LC_MESSAGES/kwalletmanager.mo
 share/locale/is/LC_MESSAGES/kcmkwallet.mo
 share/locale/is/LC_MESSAGES/kwalletmanager.mo
 share/locale/it/LC_MESSAGES/kcmkwallet.mo

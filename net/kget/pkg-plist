@@ -21,7 +21,7 @@ share/config.kcfg/kget_multisegkiofactory.kcfg
 share/dbus-1/services/org.kde.kget.service
 share/icons/hicolor/128x128/apps/kget.png
 share/icons/hicolor/16x16/apps/kget.png
-share/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/apps/kget.png
+share/icons/hicolor/22x22/apps/kget.png
 share/icons/hicolor/32x32/apps/kget.png
 share/icons/hicolor/48x48/apps/kget.png
 share/icons/hicolor/64x64/apps/kget.png

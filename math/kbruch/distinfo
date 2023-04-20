@@ -1,3 +1,3 @@
-TIMESTAMP = 1677828082
-SHA256 (KDE/release-service/22.12.3/kbruch-22.12.3.tar.xz) = af37e47c89bc4154fcafb2a93b21ed1ac81a43d425d21e6f729c33740121215f
-SIZE (KDE/release-service/22.12.3/kbruch-22.12.3.tar.xz) = 5655508
+TIMESTAMP = 1681548330
+SHA256 (KDE/release-service/23.04.0/kbruch-23.04.0.tar.xz) = 7054f48afd366cb774fb221b32400fce62098e267a63263c8382eb4b7d3cf655
+SIZE (KDE/release-service/23.04.0/kbruch-23.04.0.tar.xz) = 5655772

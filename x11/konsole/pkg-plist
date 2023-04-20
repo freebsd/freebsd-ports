@@ -1,6 +1,8 @@
 bin/konsole
 bin/konsoleprofile
+etc/xdg/konsolerc
 lib/kconf_update_bin/konsole_globalaccel
+lib/kconf_update_bin/konsole_show_menubar
 lib/libkonsoleapp.so.1
 lib/libkonsoleapp.so.%%KDE_APPLICATIONS_VERSION%%
 lib/libkonsoleprivate.so.1
@@ -9,7 +11,8 @@ lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/konsoleplugins/konsole_quickcommandsplugin.so
 %%QT_PLUGINDIR%%/konsoleplugins/konsole_sshmanagerplugin.so
 share/applications/org.kde.konsole.desktop
-share/kconf_update/konsole_globalaccel.upd
+share/kconf_update/konsole.upd
+share/kconf_update/konsole_add_hamburgermenu_to_toolbar.sh
 share/kio/servicemenus/konsolerun.desktop
 share/knotifications5/konsole.notifyrc
 share/knsrcfiles/konsole.knsrc
@@ -128,3 +131,4 @@ share/locale/zh_CN/LC_MESSAGES/konsole.mo
 share/locale/zh_TW/LC_MESSAGES/konsole.mo
 share/metainfo/org.kde.konsole.appdata.xml
 share/qlogging-categories5/konsole.categories
+share/zsh/site-functions/_konsole

@@ -14,16 +14,15 @@ LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
 		libtelepathy-qt5.so:net-im/telepathy-qt \
 		libtelepathy-logger-qt.so:net-im/telepathy-logger-qt5 \
 		libKTpCommonInternals.so:net-im/ktp-common-internals \
-		libKF5AkonadiPrivate.so:databases/akonadi \
 		libsignon-qt5.so:sysutils/signon-qt5
 RUN_DEPENDS=	${KDE_PREFIX}/bin/ktp-contactlist:net-im/ktp-contact-list  \
 		${QT_PLUGINDIR}/kaccounts/ui/owncloud_plugin_kaccounts.so:net-im/kaccounts-providers \
 		accounts-qml-module>=0:sysutils/accounts-qml-module
 
-USES=		compiler:c++11-lang cmake gettext gnome kde:5 \
-		pkgconfig qt:5 tar:xz
+USES=		cmake compiler:c++11-lang gettext gnome kde:5 pkgconfig qt:5 \
+		tar:xz
 USE_GNOME=	intltool
-USE_KDE=	auth codecs config configwidgets coreaddons i18n \
+USE_KDE=	akonadi auth codecs config configwidgets coreaddons i18n \
 		iconthemes itemviews kcmutils kio notifications notifyconfig \
 		service texteditor wallet widgetsaddons windowsystem \
 		ecm:build

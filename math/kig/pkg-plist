@@ -312,7 +312,6 @@ share/katepart5/syntax/python-kig.xml
 %%DATADIR%%/icons/hicolor/scalable/actions/vectorsum.svgz
 %%DATADIR%%/icons/hicolor/scalable/actions/w.svgz
 %%DATADIR%%/tips
-share/kservices5/kig_part.desktop
 share/kxmlgui5/kig/kigpartui.rc
 share/kxmlgui5/kig/kigui.rc
 share/locale/ar/LC_MESSAGES/kig.mo

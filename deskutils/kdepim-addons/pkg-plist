@@ -14,16 +14,10 @@ lib/libexpireaccounttrashfolderconfig.so.5
 lib/libexpireaccounttrashfolderconfig.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libfolderconfiguresettings.so.5
 lib/libfolderconfiguresettings.so.%%KDE_APPLICATIONS_SHLIB_VER%%
-lib/libgrammarcommon.so.5
-lib/libgrammarcommon.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libkaddressbookmergelibprivate.so.5
 lib/libkaddressbookmergelibprivate.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libkmailconfirmbeforedeleting.so.5
 lib/libkmailconfirmbeforedeleting.so.%%KDE_APPLICATIONS_SHLIB_VER%%
-lib/libkmailgrammalecte.so.5
-lib/libkmailgrammalecte.so.%%KDE_APPLICATIONS_SHLIB_VER%%
-lib/libkmaillanguagetool.so.5
-lib/libkmaillanguagetool.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libkmailmarkdown.so.5
 lib/libkmailmarkdown.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 lib/libkmailquicktextpluginprivate.so.5
@@ -120,7 +114,6 @@ share/icons/hicolor/scalable/status/moon-phase-first-quarter.svg
 share/icons/hicolor/scalable/status/moon-phase-full.svg
 share/icons/hicolor/scalable/status/moon-phase-last-quarter.svg
 share/icons/hicolor/scalable/status/moon-phase-new.svg
-share/kconf_update/languagetool_kmail.upd
 share/kconf_update/webengineurlinterceptoradblock.upd
 share/locale/af/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/af/LC_MESSAGES/korganizer_plugins.mo
@@ -724,6 +717,7 @@ share/locale/lt/LC_MESSAGES/customtoolsplugin.mo
 share/locale/lt/LC_MESSAGES/importwizard_plugins.mo
 share/locale/lt/LC_MESSAGES/kaddressbook_importexportplugins.mo
 share/locale/lt/LC_MESSAGES/kaddressbook_plugins.mo
+share/locale/lt/LC_MESSAGES/kmail_checkbeforedeleting_plugins.mo
 share/locale/lt/LC_MESSAGES/kmail_editor_plugins.mo
 share/locale/lt/LC_MESSAGES/kmail_editorconvertertext_plugins.mo
 share/locale/lt/LC_MESSAGES/kmail_editorgrammar_plugins.mo

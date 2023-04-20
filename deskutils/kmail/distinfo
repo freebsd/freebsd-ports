@@ -1,3 +1,3 @@
-TIMESTAMP = 1677828316
-SHA256 (KDE/release-service/22.12.3/kmail-22.12.3.tar.xz) = 786d2a02596cdf3252403a9de2c4b37f08b50cbbbbc758086beb57bdd0d1028e
-SIZE (KDE/release-service/22.12.3/kmail-22.12.3.tar.xz) = 7659560
+TIMESTAMP = 1681548341
+SHA256 (KDE/release-service/23.04.0/kmail-23.04.0.tar.xz) = 4a06cd4bddef1d507898f42203b334aed8e3bc50759fd46f2095dec00c1fd9bb
+SIZE (KDE/release-service/23.04.0/kmail-23.04.0.tar.xz) = 7645140

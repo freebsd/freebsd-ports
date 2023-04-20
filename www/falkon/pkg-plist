@@ -147,7 +147,9 @@ share/locale/ar/LC_MESSAGES/falkon_flashcookiemanager_qt.qm
 share/locale/ar/LC_MESSAGES/falkon_gnomekeyringpasswords_qt.qm
 share/locale/ar/LC_MESSAGES/falkon_greasemonkey_qt.qm
 share/locale/ar/LC_MESSAGES/falkon_hellopython.mo
+share/locale/ar/LC_MESSAGES/falkon_helloqml.mo
 share/locale/ar/LC_MESSAGES/falkon_kdeframeworksintegration_qt.qm
+share/locale/ar/LC_MESSAGES/falkon_middleclickloader.mo
 share/locale/ar/LC_MESSAGES/falkon_mousegestures_qt.qm
 share/locale/ar/LC_MESSAGES/falkon_pim_qt.qm
 share/locale/ar/LC_MESSAGES/falkon_qt.qm
@@ -523,6 +525,7 @@ share/locale/ko/LC_MESSAGES/falkon_testplugin_qt.qm
 share/locale/ko/LC_MESSAGES/falkon_verticaltabs_qt.qm
 share/locale/lt/LC_MESSAGES/falkon_autoscroll_qt.qm
 share/locale/lt/LC_MESSAGES/falkon_flashcookiemanager_qt.qm
+share/locale/lt/LC_MESSAGES/falkon_gnomekeyringpasswords_qt.qm
 share/locale/lt/LC_MESSAGES/falkon_greasemonkey_qt.qm
 share/locale/lt/LC_MESSAGES/falkon_hellopython.mo
 share/locale/lt/LC_MESSAGES/falkon_helloqml.mo

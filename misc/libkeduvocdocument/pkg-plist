@@ -21,6 +21,7 @@ include/libkeduvocdocument/keduvoccontainer.h
 include/libkeduvocdocument/keduvocdeclension.h
 include/libkeduvocdocument/keduvocdocument.h
 include/libkeduvocdocument/keduvocdocument_export.h
+include/libkeduvocdocument/keduvocdocument_version.h
 include/libkeduvocdocument/keduvocexpression.h
 include/libkeduvocdocument/keduvocidentifier.h
 include/libkeduvocdocument/keduvockvtml2writer.h
@@ -38,7 +39,7 @@ lib/cmake/libkeduvocdocument/LibKEduVocDocumentTargets-%%CMAKE_BUILD_TYPE%%.cmak
 lib/cmake/libkeduvocdocument/LibKEduVocDocumentTargets.cmake
 lib/libKEduVocDocument.so
 lib/libKEduVocDocument.so.5
-lib/libKEduVocDocument.so.5.0.0
+lib/libKEduVocDocument.so.5.1.0
 share/locale/ar/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/az/LC_MESSAGES/libkeduvocdocument.mo
 share/locale/be/LC_MESSAGES/libkeduvocdocument.mo

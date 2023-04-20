@@ -1,7 +1,7 @@
 include/KF5/KCompactDisc/KCompactDisc
 include/KF5/KCompactDisc/kcompactdisc.h
 include/KF5/KCompactDisc/kcompactdisc_export.h
-include/KF5/kcompactdisc_version.h
+include/KF5/KCompactDisc/kcompactdisc_version.h
 lib/cmake/KF5CompactDisc/KF5CompactDiscConfig.cmake
 lib/cmake/KF5CompactDisc/KF5CompactDiscConfigVersion.cmake
 lib/cmake/KF5CompactDisc/KF5CompactDiscTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -66,6 +66,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sr@latin/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sv/LC_MESSAGES/libkcompactdisc.mo
+share/locale/ta/LC_MESSAGES/libkcompactdisc.mo
 share/locale/th/LC_MESSAGES/libkcompactdisc.mo
 share/locale/tr/LC_MESSAGES/libkcompactdisc.mo
 share/locale/ug/LC_MESSAGES/libkcompactdisc.mo

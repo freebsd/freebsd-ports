@@ -59,6 +59,7 @@ lib/libkwebenginepart.so
 %%QT_PLUGINDIR%%/konqueror_kcms/kcm_performance.so
 %%QT_PLUGINDIR%%/konqueror_kcms/khtml_appearance.so
 %%QT_PLUGINDIR%%/konqueror_kcms/khtml_behavior.so
+%%QT_PLUGINDIR%%/konqueror_kcms/khtml_cache.so
 %%QT_PLUGINDIR%%/konqueror_kcms/khtml_filter.so
 %%QT_PLUGINDIR%%/konqueror_kcms/khtml_general.so
 %%QT_PLUGINDIR%%/konqueror_kcms/khtml_java_js.so
@@ -100,12 +101,12 @@ share/icons/hicolor/16x16/actions/imagegallery.png
 share/icons/hicolor/16x16/actions/webarchiver.png
 share/icons/hicolor/16x16/apps/konqueror.png
 share/icons/hicolor/16x16/apps/webengine.png
-share/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/babelfish.png
-share/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/imagegallery.png
-share/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/webarchiver.png
-share/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/apps/fsview.png
-share/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/apps/konqueror.png
-share/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/apps/webengine.png
+share/icons/hicolor/22x22/actions/babelfish.png
+share/icons/hicolor/22x22/actions/imagegallery.png
+share/icons/hicolor/22x22/actions/webarchiver.png
+share/icons/hicolor/22x22/apps/fsview.png
+share/icons/hicolor/22x22/apps/konqueror.png
+share/icons/hicolor/22x22/apps/webengine.png
 share/icons/hicolor/32x32/apps/fsview.png
 share/icons/hicolor/32x32/apps/konqueror.png
 share/icons/hicolor/32x32/apps/webengine.png
@@ -139,7 +140,7 @@ share/konqsidebartng/plugins/konqsidebar_tree.desktop
 %%DATADIR%%/about/tips.html
 %%DATADIR%%/about/top-left-konqueror.png
 %%DATADIR%%/icons/hicolor/16x16/actions/google.png
-%%DATADIR%%/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/google.png
+%%DATADIR%%/icons/hicolor/22x22/actions/google.png
 %%DATADIR%%/icons/hicolor/32x32/actions/google.png
 %%DATADIR%%/icons/hicolor/48x48/actions/google.png
 %%DATADIR%%/icons/hicolor/64x64/actions/google.png

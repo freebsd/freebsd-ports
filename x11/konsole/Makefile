@@ -21,7 +21,7 @@ USE_KDE=	auth attica bookmarks codecs completion config configwidgets \
 		newstuff notifications notifyconfig parts pty service solid sonnet \
 		textwidgets widgetsaddons windowsystem xmlgui \
 		ecm:build
-USE_QT=		concurrent core dbus gui network printsupport script scripttools sql \
+USE_QT=		concurrent core dbus gui multimedia network printsupport script scripttools sql \
 		widgets xml \
 		buildtools:build qmake:build
 USE_XORG=	x11

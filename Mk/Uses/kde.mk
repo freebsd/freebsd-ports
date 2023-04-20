@@ -83,10 +83,10 @@ KDE_FRAMEWORKS_VERSION?=	5.105.0
 KDE_FRAMEWORKS_BRANCH?= 	stable
 
 # Current KDE applications.
-KDE_APPLICATIONS_VERSION?=	22.12.3
-KDE_APPLICATIONS_SHLIB_VER?=	5.22.3
+KDE_APPLICATIONS_VERSION?=	23.04.0
+KDE_APPLICATIONS_SHLIB_VER?=	5.23.0
 # G as in KDE Gear, and as in "don't make the variable name longer than required"
-KDE_APPLICATIONS_SHLIB_G_VER?=	22.12.3
+KDE_APPLICATIONS_SHLIB_G_VER?=	23.4.0
 KDE_APPLICATIONS_BRANCH?=	stable
 
 # Extended KDE universe applications.
@@ -242,7 +242,7 @@ _USE_FRAMEWORKS_TIER2=	auth completion crash doctools \
 _USE_FRAMEWORKS_TIER3=	activities activities-stats baloo5 bookmarks configwidgets \
 			designerplugin emoticons globalaccel guiaddons \
 			iconthemes init kcmutils kdav kdeclarative \
-			kded kdesu kdewebkit kio newstuff notifyconfig parts \
+			kded kdesu kdewebkit kio kpipewire newstuff notifyconfig parts \
 			people plasma-framework purpose runner service texteditor \
 			textwidgets wallet xmlgui xmlrpcclient
 
@@ -289,7 +289,7 @@ _USE_KDEPIM5_ALL=	akonadicontacts akonadiimportwizard akonadimime akonadinotes \
 			kalarm kontact kmail mbox-importer \
 			akonadiconsole akregator grantlee-editor kaddressbook \
 			kalarm kmail-account-wizard kmail knotes kontact \
-			korganizer pim-data-exporter
+			korganizer pim-data-exporter ktextaddons
 
 _USE_KDE5_ALL=		${_USE_FRAMEWORKS_ALL} \
 			${_USE_PLASMA_ALL} \
@@ -538,9 +538,21 @@ kde-xmlgui_LIB=			libKF5XmlGui.so
 
 kde-xmlrpcclient_PORT=		net/kf5-kxmlrpcclient
 kde-xmlrpcclient_LIB=		libKF5XmlRpcClient.so
+
+kde-calendarcore_PORT=		net/kf5-kcalendarcore
+kde-calendarcore_LIB=		libKF5CalendarCore.so
+
+kde-contacts_PORT=		net/kf5-kcontacts
+kde-contacts_LIB=		libKF5Contacts.so
+
+kde-kdav_PORT=			net/kf5-kdav
+kde-kdav_LIB=			libKF5DAV.so
 # ====================== end of frameworks components ==========================
 
 # ====================== plasma components =====================================
+kde-kpipewire_PORT=		audio/plasma5-kpipewire
+kde-kpipewire_LIB=		libKPipeWire.so
+
 kde-activitymanagerd_PORT=	x11/plasma5-kactivitymanagerd
 kde-activitymanagerd_LIB=	libkactivitymanagerd_plugin.so
 
@@ -658,58 +670,49 @@ kde-xdg-desktop-portal-kde_PORT=	deskutils/plasma5-xdg-desktop-portal-kde
 
 # ====================== pim5 components =======================================
 kde-akonadicontacts_PORT=	net/akonadi-contacts
-kde-akonadicontacts_LIB=	libKF5AkonadiContact.so
+kde-akonadicontacts_LIB=	libKPim5AkonadiContact.so
 
 kde-akonadiimportwizard_PORT=	deskutils/akonadi-import-wizard
-kde-akonadiimportwizard_LIB=	libKPimImportWizard.so
+kde-akonadiimportwizard_LIB=	libKPim5ImportWizard.so
 
 kde-akonadimime_PORT=		net/akonadi-mime
-kde-akonadimime_LIB=		libKF5AkonadiMime.so
+kde-akonadimime_LIB=		libKPim5AkonadiMime.so
 
 kde-akonadinotes_PORT=		net/akonadi-notes
-kde-akonadinotes_LIB=		libKF5AkonadiNotes.so
+kde-akonadinotes_LIB=		libKPim5AkonadiNotes.so
 
 kde-akonadicalendar_PORT=	net/akonadi-calendar
-kde-akonadicalendar_LIB=	libKF5AkonadiCalendar.so
+kde-akonadicalendar_LIB=	libKPim5AkonadiCalendar.so
 
 kde-akonadisearch_PORT=		net/akonadi-search
-kde-akonadisearch_LIB=		libKF5AkonadiSearchCore.so
+kde-akonadisearch_LIB=		libKPim5AkonadiSearchCore.so
 
 kde-calendarsupport_PORT=	net/calendarsupport
-kde-calendarsupport_LIB=	libKF5CalendarSupport.so
-
-kde-calendarcore_PORT=		net/kf5-kcalendarcore
-kde-calendarcore_LIB=		libKF5CalendarCore.so
+kde-calendarsupport_LIB=	libKPim5CalendarSupport.so
 
 kde-calendarutils_PORT=		net/kcalutils
-kde-calendarutils_LIB=		libKF5CalendarUtils.so
-
-kde-contacts_PORT=		net/kf5-kcontacts
-kde-contacts_LIB=		libKF5Contacts.so
+kde-calendarutils_LIB=		libKPim5CalendarUtils.so
 
 kde-eventviews_PORT=		net/eventviews
-kde-eventviews_LIB=		libKF5EventViews.so
+kde-eventviews_LIB=		libKPim5EventViews.so
 
 kde-gapi_PORT=			net/libkgapi
-kde-gapi_LIB=			libKPimGAPICore.so
+kde-gapi_LIB=			libKPim5GAPIBlogger.so
 
 kde-grantleetheme_PORT=		deskutils/grantleetheme
-kde-grantleetheme_LIB=		libKF5GrantleeTheme.so
+kde-grantleetheme_LIB=		libKPim5GrantleeTheme.so
 
 kde-gravatar_PORT=		net/libgravatar
-kde-gravatar_LIB=		libKF5Gravatar.so
+kde-gravatar_LIB=		libKPim5Gravatar.so
 
 kde-identitymanagement_PORT=	net/kidentitymanagement
-kde-identitymanagement_LIB=	libKF5IdentityManagement.so
+kde-identitymanagement_LIB=	libKPim5IdentityManagement.so
 
 kde-imap_PORT=			net/kimap
-kde-imap_LIB=			libKF5IMAP.so
+kde-imap_LIB=			libKPim5IMAP.so
 
 kde-incidenceeditor_PORT=	net/incidenceeditor
-kde-incidenceeditor_LIB=	libKF5IncidenceEditor.so
-
-kde-kdav_PORT=			net/kf5-kdav
-kde-kdav_LIB=			libKF5DAV.so
+kde-incidenceeditor_LIB=	libKPim5IncidenceEditor.so
 
 kde-kdepim-addons_PORT=	deskutils/kdepim-addons
 kde-kdepim-addons_PATH=	${QT_PLUGINDIR}/pim5/contacteditor/editorpageplugins/cryptopageplugin.so
@@ -718,55 +721,58 @@ kde-kdepim-runtime5_PORT=	deskutils/kdepim-runtime
 kde-kdepim-runtime5_PATH=	${KDE_PREFIX}/bin/gidmigrator
 
 kde-kitinerary_PORT=		net/kitinerary
-kde-kitinerary_LIB=		libKPimItinerary.so
+kde-kitinerary_LIB=		libKPim5Itinerary.so
 
 kde-kontactinterface_PORT=	net/kontactinterface
-kde-kontactinterface_LIB=	libKF5KontactInterface.so
+kde-kontactinterface_LIB=	libKPim5KontactInterface.so
 
 kde-kpkpass_PORT=		security/kpkpass
-kde-kpkpass_LIB=		libKPimPkPass.so
+kde-kpkpass_LIB=		libKPim5PkPass.so
 
 kde-ksmtp_PORT=			net/ksmtp
-kde-ksmtp_LIB=			libKPimSMTP.so
+kde-ksmtp_LIB=			libKPim5SMTP.so
 
 kde-ldap_PORT=			net/kldap
-kde-ldap_LIB=			libKF5Ldap.so
+kde-ldap_LIB=			libKPim5Ldap.so
 
 kde-libkdepim_PORT=		deskutils/libkdepim
-kde-libkdepim_LIB=		libKF5Libkdepim.so
+kde-libkdepim_LIB=		libKPim5Libkdepim.so
 
 kde-libkleo_PORT=		security/libkleo
-kde-libkleo_LIB=		libKF5Libkleo.so
+kde-libkleo_LIB=		libKPim5Libkleo.so
 
 kde-libksieve_PORT=		net/libksieve
-kde-libksieve_LIB=		libKF5KSieve.so
+kde-libksieve_LIB=		libKPim5KSieve.so
 
 kde-mailcommon_PORT=		net/mailcommon
-kde-mailcommon_LIB=		libKF5MailCommon.so
+kde-mailcommon_LIB=		libKPim5MailCommon.so
 
 kde-mailimporter_PORT=		net/mailimporter
-kde-mailimporter_LIB=		libKF5MailImporter.so
+kde-mailimporter_LIB=		libKPim5MailImporter.so
 
 kde-mailtransport_PORT=		net/kmailtransport
-kde-mailtransport_LIB=		libKF5MailTransport.so
+kde-mailtransport_LIB=		libKPim5MailTransport.so
 
 kde-mbox_PORT=			net/kmbox
-kde-mbox_LIB=			libKF5Mbox.so
+kde-mbox_LIB=			libKPim5Mbox.so
 
 kde-messagelib_PORT=		net/messagelib
-kde-messagelib_LIB=		libKF5MessageList.so
+kde-messagelib_LIB=		libKPim5MessageList.so
 
 kde-mime_PORT=			net/kmime
-kde-mime_LIB=			libKF5Mime.so
+kde-mime_LIB=			libKPim5Mime.so
 
 kde-pimcommon_PORT=		net/pimcommon
 kde-pimcommon_LIB=		libKF5PimCommon.so
 
 kde-pimtextedit_PORT=		net/kpimtextedit
-kde-pimtextedit_LIB=		libKF5PimTextEdit.so
+kde-pimtextedit_LIB=		libKPim5TextEdit.so
 
 kde-tnef_PORT=			net/ktnef
-kde-tnef_LIB=			libKF5Tnef.so
+kde-tnef_LIB=			libKPim5Tnef.so
+
+kde-ktextaddons_PORT=		devel/ktextaddons
+kde-ktextaddons_LIB=		libKF5TextAutoCorrection.so
 
 # PIM Applications
 kde-akonadiconsole_PORT=	deskutils/akonadiconsole
@@ -808,7 +814,7 @@ kde-pim-data-exporter_PATH=	${KDE_PREFIX}/bin/pimdataexporter
 
 # ====================== multiversion component ================================
 kde-akonadi5_PORT=		databases/akonadi
-kde-akonadi5_LIB=		libKF5AkonadiPrivate.so
+kde-akonadi5_LIB=		libKPim5AkonadiPrivate.so
 
 kde-baloo-widgets5_PORT=	sysutils/baloo-widgets
 kde-baloo-widgets5_LIB=		libKF5BalooWidgets.so

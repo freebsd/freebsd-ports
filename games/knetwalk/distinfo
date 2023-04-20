@@ -1,3 +1,3 @@
-TIMESTAMP = 1677828230
-SHA256 (KDE/release-service/22.12.3/knetwalk-22.12.3.tar.xz) = d28fb0a31761c569bbde5e44780d225eba8b1aaa21edf7c8761cc1807b3ce59a
-SIZE (KDE/release-service/22.12.3/knetwalk-22.12.3.tar.xz) = 1104488
+TIMESTAMP = 1681548445
+SHA256 (KDE/release-service/23.04.0/knetwalk-23.04.0.tar.xz) = ba32b15a3037d4c2fa8ef15afc904e5c324741cd005ba25c7f2bed454b27592c
+SIZE (KDE/release-service/23.04.0/knetwalk-23.04.0.tar.xz) = 1104640

@@ -12,7 +12,8 @@ LIB_DEPENDS=	libfakekey.so:x11/libfakekey \
 		libwayland-client.so:graphics/wayland \
 		libKF5PulseAudioQt.so:audio/pulseaudio-qt
 BUILD_DEPENDS=	kpeoplevcard>0:net/kpeoplevcard \
-		${LOCALBASE}/include/linux/input.h:devel/evdev-proto
+		${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
+		wayland-protocols>=0:graphics/wayland-protocols
 RUN_DEPENDS=	sshpass:security/sshpass \
 		sshfs:sysutils/fusefs-sshfs \
 		kpeoplevcard>0:net/kpeoplevcard

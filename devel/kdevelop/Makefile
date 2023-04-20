@@ -21,17 +21,18 @@ LIB_DEPENDS=	libKasten4Controllers.so:devel/okteta \
 RUN_DEPENDS=	gmake:devel/gmake
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext grantlee:5 \
-		kde:5 llvm:build,run qt:5 shared-mime-info shebangfix tar:xz xorg
-USE_KDE=	archive attica auth bookmarks codecs completion config configwidgets \
-		coreaddons crash guiaddons emoticons i18n iconthemes init \
-		itemmodels itemviews jobwidgets kcmutils kdeclarative \
-		kio libksysguard newstuff notifications \
-		notifyconfig package parts plasma-framework purpose \
-		runner service solid sonnet syntaxhighlighting texteditor \
-		textwidgets threadweaver \
-		widgetsaddons windowsystem xmlgui
+		kde:5 llvm:build,run pkgconfig qt:5 shared-mime-info \
+		shebangfix tar:xz xorg
+USE_KDE=	archive attica auth bookmarks codecs completion config \
+		configwidgets coreaddons crash emoticons guiaddons i18n \
+		iconthemes init itemmodels itemviews jobwidgets kcmutils \
+		kdeclarative kio libksysguard newstuff notifications \
+		notifyconfig package parts plasma-framework purpose runner \
+		service solid sonnet syntaxhighlighting texteditor textwidgets \
+		threadweaver widgetsaddons windowsystem xmlgui
 USE_QT=		concurrent core dbus declarative gui help network printsupport \
-		script sql widgets xml buildtools:build qmake:build
+		script sql widgets xml \
+		buildtools:build qmake:build
 USE_XORG=	x11
 SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \
 		kdevplatform/util/.zshrc
@@ -42,11 +43,12 @@ SHEBANG_FILES=	kdevplatform/util/kdevplatform_shell_environment.sh \
 USE_KDE+=	ecm
 USE_QT+=	testlib
 
-CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW -DLLVM_ROOT=${LLVM_PREFIX}
+CMAKE_ARGS=	-DCMAKE_POLICY_DEFAULT_CMP0074=NEW \
+		-DClang_DIR=${LLVM_PREFIX}/lib/cmake/clang
 
 # Versioning values, to reduce plist churn
-SO_VER=		510
-SO_VER_LONG=	5.10.221203
+SO_VER=		511
+SO_VER_LONG=	5.11.230400
 PLIST_SUB+=	SO_VER=${SO_VER} SO_VER_LONG=${SO_VER_LONG}
 
 OPTIONS_DEFINE=	WEBENGINE

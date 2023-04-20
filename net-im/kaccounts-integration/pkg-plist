@@ -35,6 +35,7 @@ lib/libkaccounts.so.%%KDE_APPLICATIONS_VERSION%%
 %%QT_PLUGINDIR%%/plasma/kcms/systemsettings/kcm_kaccounts.so
 %%QT_QMLDIR%%/org/kde/kaccounts/libkaccountsdeclarativeplugin.so
 %%QT_QMLDIR%%/org/kde/kaccounts/qmldir
+share/applications/kcm_kaccounts.desktop
 share/kpackage/kcms/kcm_kaccounts/contents/ui/AccountDetails.qml
 share/kpackage/kcms/kcm_kaccounts/contents/ui/AvailableAccounts.qml
 share/kpackage/kcms/kcm_kaccounts/contents/ui/MessageBoxSheet.qml

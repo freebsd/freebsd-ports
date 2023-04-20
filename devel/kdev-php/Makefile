@@ -21,7 +21,7 @@ USE_QT=		concurrent core dbus gui network webkit widgets xml \
 USE_XORG=	x11
 
 # Versioning values, to reduce plist churn (match with devel/kdevelop)
-PLATFORM_VER=	510
+PLATFORM_VER=	511
 PRIVATE_VER=	5.7
 PLIST_SUB+=	PLATFORM_VER=${PLATFORM_VER} PRIVATE_VER=${PRIVATE_VER}
 

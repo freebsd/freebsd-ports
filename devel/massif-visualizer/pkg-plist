@@ -6,6 +6,6 @@ share/kxmlgui5/massif-visualizer/callgraphtabui.rc
 share/kxmlgui5/massif-visualizer/charttabui.rc
 share/kxmlgui5/massif-visualizer/documentwidgetui.rc
 share/kxmlgui5/massif-visualizer/massif-visualizerui.rc
-%%DATADIR%%/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/shortentemplates.png
+%%DATADIR%%/icons/hicolor/22x22/actions/shortentemplates.png
 share/metainfo/org.kde.massif-visualizer.appdata.xml
 share/mime/packages/massif.xml

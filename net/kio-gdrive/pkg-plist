@@ -6,6 +6,7 @@ share/accounts/services/kde/google-drive.service
 share/knotifications5/gdrive.notifyrc
 share/locale/ar/LC_MESSAGES/kio5_gdrive.mo
 share/locale/az/LC_MESSAGES/kio5_gdrive.mo
+share/locale/be/LC_MESSAGES/kio5_gdrive.mo
 share/locale/ca/LC_MESSAGES/kio5_gdrive.mo
 share/locale/ca@valencia/LC_MESSAGES/kio5_gdrive.mo
 share/locale/cs/LC_MESSAGES/kio5_gdrive.mo

@@ -1,3 +1,3 @@
-TIMESTAMP = 1677828330
-SHA256 (KDE/release-service/22.12.3/kfind-22.12.3.tar.xz) = fd4cae69f08f00f49d6ec603ae746ffab6f64305cc6d8381b803af6f99d115a8
-SIZE (KDE/release-service/22.12.3/kfind-22.12.3.tar.xz) = 340372
+TIMESTAMP = 1681548347
+SHA256 (KDE/release-service/23.04.0/kfind-23.04.0.tar.xz) = e806f337e8ed689a7bdd0066360a81dfe38dd1d1fc79ec1637a5294cf5364ceb
+SIZE (KDE/release-service/23.04.0/kfind-23.04.0.tar.xz) = 342804

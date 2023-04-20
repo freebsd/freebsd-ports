@@ -38,6 +38,7 @@ share/locale/ar/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/az/LC_MESSAGES/dolphin.mo
 share/locale/az/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/be/LC_MESSAGES/dolphin.mo
+share/locale/be/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/be@latin/LC_MESSAGES/dolphin.mo
 share/locale/bg/LC_MESSAGES/dolphin.mo
 share/locale/bg/LC_MESSAGES/dolphin_servicemenuinstaller.mo
@@ -60,6 +61,7 @@ share/locale/el/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/en_GB/LC_MESSAGES/dolphin.mo
 share/locale/en_GB/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/eo/LC_MESSAGES/dolphin.mo
+share/locale/eo/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/es/LC_MESSAGES/dolphin.mo
 share/locale/es/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/et/LC_MESSAGES/dolphin.mo
@@ -173,3 +175,4 @@ share/locale/zh_TW/LC_MESSAGES/dolphin.mo
 share/locale/zh_TW/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/metainfo/org.kde.dolphin.appdata.xml
 share/qlogging-categories5/dolphin.categories
+share/zsh/site-functions/_dolphin

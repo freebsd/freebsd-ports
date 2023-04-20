@@ -3,6 +3,8 @@ bin/krfb-virtualmonitor
 lib/libkrfbprivate.so.5
 lib/libkrfbprivate.so.5.0
 %%QT_PLUGINDIR%%/krfb/events/x11.so
+%%QT_PLUGINDIR%%/krfb/events/xdp.so
+%%QT_PLUGINDIR%%/krfb/framebuffer/pw.so
 %%QT_PLUGINDIR%%/krfb/framebuffer/qt.so
 %%QT_PLUGINDIR%%/krfb/framebuffer/xcb.so
 share/applications/org.kde.krfb.desktop

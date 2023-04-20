@@ -1,3 +1,3 @@
-TIMESTAMP = 1677828313
-SHA256 (KDE/release-service/22.12.3/akonadi-import-wizard-22.12.3.tar.xz) = 62c0ba2721b98716ae22c965c938eaeff0ddd28d57f50839970a566fc756f248
-SIZE (KDE/release-service/22.12.3/akonadi-import-wizard-22.12.3.tar.xz) = 514460
+TIMESTAMP = 1681548354
+SHA256 (KDE/release-service/23.04.0/akonadi-import-wizard-23.04.0.tar.xz) = 0969c6d87f027af12af96243c1af124a7a03b511067c95d5e82ae7bc7503d59b
+SIZE (KDE/release-service/23.04.0/akonadi-import-wizard-23.04.0.tar.xz) = 514904

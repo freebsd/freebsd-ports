@@ -1,5 +1,6 @@
 bin/kdialog
 bin/kdialog_progress_helper
+share/applications/org.kde.kdialog.desktop
 share/dbus-1/interfaces/org.kde.kdialog.ProgressDialog.xml
 share/locale/af/LC_MESSAGES/kdialog.mo
 share/locale/ar/LC_MESSAGES/kdialog.mo

@@ -1,3 +1,3 @@
-TIMESTAMP = 1677828317
-SHA256 (KDE/release-service/22.12.3/libkdepim-22.12.3.tar.xz) = fb24959661d870bf2d682e87a539e79189f2370d629dbd3b84e26530f790e68e
-SIZE (KDE/release-service/22.12.3/libkdepim-22.12.3.tar.xz) = 286196
+TIMESTAMP = 1681548335
+SHA256 (KDE/release-service/23.04.0/libkdepim-23.04.0.tar.xz) = 605b1725c2dc656016ff3ea16e3119354caeb9e555e7de79dd752883d440ebcb
+SIZE (KDE/release-service/23.04.0/libkdepim-23.04.0.tar.xz) = 286568

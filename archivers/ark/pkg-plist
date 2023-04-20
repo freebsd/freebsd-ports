@@ -1,6 +1,5 @@
 bin/ark
 etc/xdg/arkrc
-man/sr@latin/man1/ark.1.gz
 lib/libkerfuffle.so.%%KDE_APPLICATIONS_VERSION_SHORT%%
 lib/libkerfuffle.so.%%KDE_APPLICATIONS_SHLIB_VER%%
 %%QT_PLUGINDIR%%/kerfuffle/kerfuffle_cli7z.so
@@ -26,6 +25,7 @@ man/nl/man1/ark.1.gz
 man/pt/man1/ark.1.gz
 man/pt_BR/man1/ark.1.gz
 man/sr/man1/ark.1.gz
+man/sr@latin/man1/ark.1.gz
 man/sv/man1/ark.1.gz
 man/uk/man1/ark.1.gz
 share/applications/org.kde.ark.desktop
@@ -38,6 +38,7 @@ share/kconf_update/ark.upd
 share/kconf_update/ark_add_hamburgermenu_to_toolbar.sh
 share/locale/af/LC_MESSAGES/ark.mo
 share/locale/ar/LC_MESSAGES/ark.mo
+share/locale/ast/LC_MESSAGES/ark.mo
 share/locale/az/LC_MESSAGES/ark.mo
 share/locale/be/LC_MESSAGES/ark.mo
 share/locale/bg/LC_MESSAGES/ark.mo

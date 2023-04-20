@@ -106,9 +106,9 @@ share/locale/zh_TW/LC_MESSAGES/lokalize.mo
 %%DATADIR%%/icons/hicolor/22x22/actions/insert_arg.png
 %%DATADIR%%/icons/hicolor/22x22/actions/insert_tag.png
 %%DATADIR%%/icons/hicolor/22x22/actions/l10n/sr/approved.png
-%%DATADIR%%/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/l10n/sr@ijekavian/approved.png
-%%DATADIR%%/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/l10n/sr@ijekavianlatin/approved.png
-%%DATADIR%%/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/l10n/sr@latin/approved.png
+%%DATADIR%%/icons/hicolor/22x22/actions/l10n/sr@ijekavian/approved.png
+%%DATADIR%%/icons/hicolor/22x22/actions/l10n/sr@ijekavianlatin/approved.png
+%%DATADIR%%/icons/hicolor/22x22/actions/l10n/sr@latin/approved.png
 %%DATADIR%%/icons/hicolor/22x22/actions/msgid2msgstr.png
 %%DATADIR%%/icons/hicolor/22x22/actions/nexterror.png
 %%DATADIR%%/icons/hicolor/22x22/actions/nextfuzzy.png

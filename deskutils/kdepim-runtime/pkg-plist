@@ -133,6 +133,7 @@ share/knotifications5/akonadi_pop3_resource.notifyrc
 share/kservices5/akonadi/davgroupware-providers/citadel.desktop
 share/kservices5/akonadi/davgroupware-providers/davical.desktop
 share/kservices5/akonadi/davgroupware-providers/egroupware.desktop
+share/kservices5/akonadi/davgroupware-providers/mailbox-org.desktop
 share/kservices5/akonadi/davgroupware-providers/nextcloud.desktop
 share/kservices5/akonadi/davgroupware-providers/opengroupware.desktop
 share/kservices5/akonadi/davgroupware-providers/owncloud-pre5.desktop

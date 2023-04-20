@@ -7,7 +7,8 @@ COMMENT=	Image viewer and browser for KDE
 WWW=		http://gwenview.sourceforge.net
 
 BUILD_DEPENDS=	${LOCALBASE}/share/xsl/docbook/html/docbook.xsl:textproc/docbook-xsl \
-		docbook-xml>0:textproc/docbook-xml
+		docbook-xml>0:textproc/docbook-xml \
+		wayland-protocols>=0:graphics/wayland-protocols
 LIB_DEPENDS=	libexiv2.so:graphics/exiv2 \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \

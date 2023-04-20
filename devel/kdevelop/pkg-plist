@@ -574,7 +574,7 @@ share/icons/hicolor/16x16/apps/github-repo.png
 share/icons/hicolor/16x16/apps/kdevelop.png
 share/icons/hicolor/16x16/apps/kdevgh.png
 share/icons/hicolor/16x16/apps/subversion.png
-share/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/breakpoint.png
+share/icons/hicolor/22x22/actions/breakpoint.png
 share/icons/hicolor/256x256/apps/kdevelop.png
 share/icons/hicolor/32x32/actions/breakpoint.png
 share/icons/hicolor/32x32/apps/cmake.png
@@ -650,7 +650,7 @@ share/kdevcodeutils/templates/rest_python.txt
 %%DATADIR%%/icons/hicolor/16x16/actions/dirsync.png
 %%DATADIR%%/icons/hicolor/16x16/actions/methodnew.png
 %%DATADIR%%/icons/hicolor/16x16/actions/variablenew.png
-%%DATADIR%%/icons/hicolor/%%KDE_APPLICATIONS_VERSION_SHORT%%x%%KDE_APPLICATIONS_VERSION_SHORT%%/actions/classnew.png
+%%DATADIR%%/icons/hicolor/22x22/actions/classnew.png
 %%DATADIR%%/icons/hicolor/32x32/actions/classnew.png
 %%DATADIR%%/kdevflatpak/replicate.sh
 %%DATADIR%%/pics/CTchildren.png
@@ -2684,6 +2684,7 @@ share/locale/ru/LC_MESSAGES/kdevclazy.mo
 share/locale/ru/LC_MESSAGES/kdevcmake.mo
 share/locale/ru/LC_MESSAGES/kdevcmakebuilder.mo
 share/locale/ru/LC_MESSAGES/kdevcodeutils.mo
+share/locale/ru/LC_MESSAGES/kdevcompileanalyzercommon.mo
 share/locale/ru/LC_MESSAGES/kdevcontextbrowser.mo
 share/locale/ru/LC_MESSAGES/kdevcppcheck.mo
 share/locale/ru/LC_MESSAGES/kdevcustombuildsystem.mo

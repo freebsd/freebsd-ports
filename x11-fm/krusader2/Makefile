@@ -10,6 +10,8 @@ WWW=		https://krusader.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-2.0-or-later.txt
 
+RUN_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
+
 USES=		cmake compiler:c++11-lang cpe desktop-file-utils gettext \
 		kde:5 qt:5 tar:xz xorg
 USE_KDE=	archive auth auth bookmarks codecs completion config \
