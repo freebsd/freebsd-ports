@@ -1,3 +1,44 @@
+  <vuln vid="90c48c04-d549-4fc0-a503-4775e32d438e">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>112.0.5615.165</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>112.0.5615.165</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/04/stable-channel-update-for-desktop_18.html">
+	 <p>This update includes 8 security fixes:</p>
+	 <ul>
+	    <li>[1429197] High CVE-2023-2133: Out of bounds memory access in Service Worker API. Reported by Rong Jian of VRI on 2023-03-30</li>
+	    <li>[1429201] High CVE-2023-2134: Out of bounds memory access in Service Worker API. Reported by Rong Jian of VRI on 2023-03-30</li>
+	    <li>[1424337] High CVE-2023-2135: Use after free in DevTools. Reported by Cassidy Kim(@cassidy6564) on 2023-03-14</li>
+	    <li>[1432603] High CVE-2023-2136: Integer overflow in Skia. Reported by Clément Lecigne of Google's Threat Analysis Group on 2023-04-12</li>
+	    <li>[1430644] Medium CVE-2023-2137: Heap buffer overflow in sqlite. Reported by Nan Wang(@eternalsakura13) and Guang Gong of 360 Vulnerability Research Institute on 2023-04-05</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2133</cvename>
+      <cvename>CVE-2023-2134</cvename>
+      <cvename>CVE-2023-2135</cvename>
+      <cvename>CVE-2023-2136</cvename>
+      <cvename>CVE-2023-2137</cvename>
+      <url>https://chromereleases.googleblog.com/2023/04/stable-channel-update-for-desktop_18.html</url>
+    </references>
+    <dates>
+      <discovery>2023-04-20</discovery>
+      <entry>2023-04-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0bd7f07b-dc22-11ed-bf28-589cfc0f81b0">
     <topic>libxml2 -- multiple vulnerabilities</topic>
     <affects>
