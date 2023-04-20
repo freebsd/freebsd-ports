@@ -1,5 +1,6 @@
 PORTNAME=	fio
 DISTVERSION=	3.34
+POTREVISION=	1
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://brick.kernel.dk/snaps/
 
@@ -10,7 +11,7 @@ WWW=		https://git.kernel.dk/?p=fio.git
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		compiler:c11 gmake tar:bzip2
+USES=		compiler:c11 gmake pkgconfig tar:bzip2
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-native \
