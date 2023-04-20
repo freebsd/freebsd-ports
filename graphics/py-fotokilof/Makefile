@@ -22,11 +22,7 @@ USES=		magick:run python:3.7+
 
 # the project really doesn't have PEP-517 support, but distutils/setuptools
 # create a "wrong" entry_points script, so we use our pep517 feature
-# (at least partially).
 USE_PYTHON=		autoplist pep517
-PYDISTUTILS_BUILD_TARGET=	bdist_wheel
-PEP517_BUILD_CMD=	${PYTHON_CMD} ${PYDISTUTILS_SETUP} \
-			${PYDISTUTILS_BUILD_TARGET}
 
 # fix Python wheel name (lower case)
 post-patch:
