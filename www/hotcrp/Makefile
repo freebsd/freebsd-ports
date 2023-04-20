@@ -1,6 +1,6 @@
 PORTNAME=	hotcrp
 PORTVERSION=	2.102
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	www
 MASTER_SITES=	http://www.read.seas.harvard.edu/~kohler/hotcrp/
 
