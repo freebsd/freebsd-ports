@@ -1,7 +1,6 @@
 PORTNAME=	CAMotics
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.2-rc1
-PORTREVISION=	3
+DISTVERSION=	1.3.0
 CATEGORIES=	cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -30,7 +29,8 @@ GH_ACCOUNT=	CauldronDevelopmentLLC
 USES=		compiler:c++14-lang desktop-file-utils gettext-runtime gl gnome	\
 		localbase:ldflags mysql:client pkgconfig python qt:5 scons	\
 		shared-mime-info shebangfix sqlite ssl
-SHEBANG_FILES=	examples/python/camotics_python_example.py
+SHEBANG_FILES=	examples/python/camotics_python_example.py	\
+		tests/testHarness
 USE_GL=		gl glu
 USE_GNOME=	cairo
 USE_QT=		assistant buildtools core dbus gui linguisttools network opengl	\
@@ -49,7 +49,12 @@ QT5_LIBS_=	${qt-core_LIB}	\
 		${qt-widgets_LIB}
 QT5_LIBS=	-L${QT_LIBDIR} ${QT5_LIBS_:C/^lib/-l/:C/.so//}
 
-OPTIONS_DEFINE=		EXAMPLES
+DATADIR=	${PREFIX}/share/${PORTNAME:tl}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:tl}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME:tl}
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+PORTDOCS=	*
 PORTEXAMPLES=	*
 
 MAKE_ARGS+=	cc="${CC}"	\
@@ -60,6 +65,7 @@ MAKE_ARGS+=	cc="${CC}"	\
 		linkflags="${LDFLAGS} ${QT5_LIBS}"	\
 		libpath="${LIBPATH}"	\
 		sharedlib=1	\
+		wrap_glibc=0	\
 		install_prefix="${STAGEDIR}${PREFIX}"	\
 		compiler="${CHOSEN_COMPILER_TYPE:C/gcc/gnu/}"	\
 		disable_local="zlib bzip2 lz4 sqlite3 expat libevent re2 libyaml"
@@ -69,6 +75,8 @@ MAKE_ENV+=	QT5DIR="${LOCALBASE}"	\
 MAKE_ARGS+=	debug=1 strict=0
 .endif
 
+BIN2STRIP=	camotics camsim gcodetool planner tplang
+
 TEST_WRKSRC=	${WRKSRC}/tests
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${TEST_ARGS}
 
@@ -77,10 +85,13 @@ pre-configure:
 	${RLN} ${LOCALBASE}/include ${WRKDIR}/cbang/
 	${REINPLACE_CMD} -e "/python_version/s|'3'|'${PYTHON_VER}'|"	\
 		${WRKSRC}/SConstruct
-	${REINPLACE_CMD} -e 's|/usr/bin/env python2| ${PYTHON_CMD}|'	\
-		${TEST_WRKSRC}/testHarness
+	${REINPLACE_CMD} -e 's|/share/doc/camotics/examples|/${EXAMPLESDIR_REL}|'	\
+		${WRKSRC}/src/camotics/qt/QtWin.cpp
 
 post-install:
+.for pgm in ${BIN2STRIP}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${pgm}
+.endfor
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/metainfo	\
 		${STAGEDIR}${PREFIX}/share/mime/packages
 	${INSTALL_DATA} ${WRKSRC}/CAMotics.desktop	\
@@ -91,12 +102,13 @@ post-install:
 		${STAGEDIR}${PREFIX}/share/mime/packages/${PORTNAME}.xml
 	${INSTALL_DATA} ${WRKSRC}/images/*.png	\
 		${STAGEDIR}${PREFIX}/share/pixmaps
+	${MV} ${STAGEDIR}${PREFIX}/share/doc/${PORTNAME:tl}/examples	\
+		${STAGEDIR}${EXAMPLESDIR}
 
 post-install-EXAMPLES-on:
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-#do-test:
-#	(cd ${TEST_WRKSRC} && ./testHarness)
+do-test:
+	(cd ${TEST_WRKSRC} && ./testHarness)
 
 .include <bsd.port.mk>
