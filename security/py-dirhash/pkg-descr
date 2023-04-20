@@ -1,0 +1,11 @@
+A lightweight python module and CLI for computing the hash of any directory
+based on its files structure and content.
+
+- Supports all hashing algorithms of Python's built-in hashlib module.
+- Glob/wildcard (".gitignore style") path matching for expressive filtering of
+  files to include/exclude.
+- Multiprocessing for up to 6x speed-up
+
+The hash is computed according to the Dirhash Standard, which is designed to
+allow for consistent and collision resistant generation/verification of
+directory hashes across implementations.
