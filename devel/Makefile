@@ -5440,6 +5440,7 @@
     SUBDIR += py-saneyaml
     SUBDIR += py-sarge
     SUBDIR += py-sarif-om
+    SUBDIR += py-scantree
     SUBDIR += py-schedule
     SUBDIR += py-scheduler
     SUBDIR += py-schema
