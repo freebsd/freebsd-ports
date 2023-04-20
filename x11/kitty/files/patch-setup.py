@@ -1,6 +1,6 @@
---- setup.py.orig	2022-10-19 17:45:56 UTC
+--- setup.py.orig	2023-04-08 12:02:15 UTC
 +++ setup.py
-@@ -130,25 +130,9 @@ def libcrypto_flags() -> Tuple[List[str], List[str]]:
+@@ -126,25 +126,9 @@ def libcrypto_flags() -> Tuple[List[str], List[str]]:
      # Apple use their special snowflake TLS libraries and additionally
      # have an ancient broken system OpenSSL, so we need to check for one
      # installed by all the various macOS package managers.

@@ -1,0 +1,11 @@
+--- docs/Makefile.orig	2023-04-09 05:08:22 UTC
++++ docs/Makefile
+@@ -6,7 +6,7 @@ override FAIL_WARN=-W
+ endif
+ 
+ # You can set these variables from the command line.
+-SPHINXOPTS    = -n -q -j auto -T $(FAIL_WARN) $(OPTS)
++SPHINXOPTS    = -n -j auto -T $(FAIL_WARN) $(OPTS)
+ SPHINXBUILD   = sphinx-build
+ SPHINXPROJ    = kitty
+ SOURCEDIR     = .

@@ -1,9 +1,9 @@
 PORTNAME=	kitty
-DISTVERSION=	0.26.5
+DISTVERSION=	0.28.0
+DISTVERSIONPREFIX=v
 CATEGORIES=	x11 wayland
-MASTER_SITES=	https://github.com/kovidgoyal/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	alexis.praga@free.fr
+MAINTAINER=	alexis.praga@proton.me
 COMMENT=	Cross-platform, fast, featureful, GPU-based terminal emulator
 WWW=		https://sw.kovidgoyal.net/kitty/
 
@@ -11,6 +11,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-copybutton>0:textproc/py-sphinx-copybutton@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx-inline-tabs>0:textproc/py-sphinx-inline-tabs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
@@ -29,11 +30,12 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		pkgconfig python:3.5+ shebangfix ssl tar:xz terminfo xorg
+		go:modules pkgconfig python:3.5+ shebangfix ssl tar:xz terminfo xorg
 CPE_VENDOR=	kitty_project
 USE_GL=		gl
 USE_XORG=	x11 xcb xcursor xi xinerama xrandr
 
+GO_MODULE=	github.com/kovidgoyal/kitty
 SHEBANG_FILES=	build-terminfo count-lines-of-code mypy-editor-integration \
 		update-on-ox update-on-ubuntu
 SHEBANG_GLOB=	*.py
@@ -46,13 +48,25 @@ LDFLAGS+=	`pkg-config --libs epoll-shim-interpose`
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
+GH_TUPLE=	\
+		ALTree:bigfloat:38c8b72a9924:altree_bigfloat/vendor/github.com/ALTree/bigfloat \
+		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
+		golang:exp:54bba9f4231b:golang_exp/vendor/golang.org/x/exp \
+		golang:image:v0.3.0:golang_image/vendor/golang.org/x/image \
+		golang:sys:v0.4.0:golang_sys/vendor/golang.org/x/sys \
+		google:go-cmp:v0.5.8:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
+		jamesruan:go-rfc1924:2767ca7c638f:jamesruan_go_rfc1924/vendor/github.com/jamesruan/go-rfc1924 \
+		seancfoley:bintree:v1.2.1:seancfoley_bintree/vendor/github.com/seancfoley/bintree \
+		seancfoley:ipaddress-go:v1.5.3:seancfoley_ipaddress_go/vendor/github.com/seancfoley/ipaddress-go
+
 INSTALL_WRKSRC=	${WRKSRC}/linux-package
 
 _STRIP_TARGETS=	lib/kitty/kitty/fast_data_types.so lib/kitty/kitty/glfw-x11.so \
 		lib/kitty/kittens/diff/diff_speedup.so \
 		lib/kitty/kittens/unicode_input/unicode_names.so \
 		lib/kitty/kitty/glfw-wayland.so \
-		lib/kitty/kittens/choose/subseq_matcher.so bin/kitty \
+		bin/kitten bin/kitty \
 		lib/kitty/kittens/transfer/rsync.so
 
 _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
