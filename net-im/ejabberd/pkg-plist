@@ -183,6 +183,8 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_log_opt.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_mnesia.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_room.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_rtbl.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_rtbl_opt.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_sql.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_sup.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_multicast.beam
@@ -764,6 +766,9 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0403.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0405.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0417.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0422.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0424.beam
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0425.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xep0430.beam
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xmpp.app
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/lib/xmpp-%%XMPP_VER%%/ebin/xmpp.beam
@@ -872,6 +877,7 @@
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/lite.sql
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/lite.new.sql
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/mssql.sql
+%%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/mssql.new.sql
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/mysql.new.sql
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/mysql.old-to-new.sql
 %%EJABBERD_LIBDIR%%/%%PORTNAME%%-%%PORTVERSION%%/priv/sql/mysql.sql
