@@ -1,6 +1,7 @@
 PORTNAME=	frr
 PORTVERSION=	8.5
 DISTVERSIONPREFIX=	frr-
+PORTREVISION=	1
 CATEGORIES=	net
 .if defined(PYTHONTOOLS)
 PKGNAMESUFFIX=	8-pythontools
@@ -67,16 +68,17 @@ PKGMESSAGE=	""
 .else
 INFO=		frr
 
-OPTIONS_DEFINE=		CONFIGROLLBACKS FPM DATACENTER LDPD PAM SHELLACCESS \
+OPTIONS_DEFINE=		BACKTRACE CONFIGROLLBACKS FPM DATACENTER LDPD PAM SHELLACCESS \
 			VTYSH MANPAGES MULTIPATH TCMALLOC RPKI SHARPD SNMP
-OPTIONS_DEFAULT=	VTYSH RPKI FPM MANPAGES
+OPTIONS_DEFAULT=	BACKTRACE VTYSH RPKI FPM MANPAGES
 OPTIONS_SUB=	yes
 
+BACKTRACE_DESC=	Enable backtrace
 CONFIGROLLBACKS_DESC=	Enable configuration rollback support
 FPM_DESC=		Enable Forwarding Plane Manager support
 DATACENTER_DESC=	Use reduced BGP timers
 LDPD_DESC=		Build ldpd
-MULTIPATH_DESC=		Enable multipath function
+MULTIPATH_DESC=		Allow 64 multipath routes (16 default)
 PAM_DESC=		Use libpam for PAM support in vtysh
 RPKI_DESC=		Add BGP RPKI (RFC 6810) support
 SHELLACCESS_DESC=	Allow users to access shell/telnet/ssh
@@ -91,23 +93,23 @@ GROUPS=	frr frrvty
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-# PIM compile but didn't work on FreeBSD
+# PIM compile but doesn't work on FreeBSD
 CONFIGURE_ARGS=	--enable-user=frr \
 		--enable-group=frr \
 		--enable-vty-group=frrvty \
 		--disable-doc-html \
 		--sysconfdir=${ETCDIR} \
 		--localstatedir=/var/run/frr \
-		--disable-backtrace \
 		--disable-nhrpd \
 		--disable-pathd \
 		--disable-ospfclient \
 		--disable-pimd \
-		--disable-vrrpd \
 		--with-vtysh-pager=cat
 
 MANPAGES_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
 MANPAGES_CONFIGURE_OFF=		--disable-doc
+BACKTRACE_LIB_DEPENDS=	libunwind.so:devel/libunwind
+BACKTRACE_CONFIGURE_ENABLE=	backtrace
 CONFIGROLLBACKS_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 CONFIGROLLBACKS_CONFIGURE_ENABLE=	config-rollbacks
 DATACENTER_CONFIGURE_ENABLE=	datacenter
