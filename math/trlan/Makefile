@@ -48,7 +48,7 @@ do-build:
 	@${ECHO_CMD} "Building static archive ..."
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
 		${ALL_TARGET}
-	@${STRIP_CMD} -x -o ${WRKDIR}/libtrlan.a ${WRKSRC}/libtrlan.a
+	@${STRIP_CMD} --strip-unneeded -o ${WRKDIR}/libtrlan.a ${WRKSRC}/libtrlan.a
 	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
 		clean
 	@${ECHO_CMD} "Building shared library ..."
