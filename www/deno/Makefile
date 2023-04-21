@@ -1,6 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.32.4
+DISTVERSION=	1.32.5
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -120,9 +120,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		deno_graph-0.47.1 \
 		deno_lint-0.43.0 \
 		deno_lockfile-0.13.0 \
-		deno_npm-0.2.0 \
-		deno_semver-0.2.1 \
-		deno_task_shell-0.10.0 \
+		deno_npm-0.3.0 \
+		deno_semver-0.2.2 \
+		deno_task_shell-0.11.0 \
 		der-0.6.1 \
 		der-parser-8.2.0 \
 		derive_more-0.99.17 \
@@ -161,7 +161,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.10.0 \
 		fastrand-1.9.0 \
-		fastwebsockets-0.1.0 \
+		fastwebsockets-0.1.3 \
 		fd-lock-3.0.10 \
 		ff-0.12.1 \
 		filetime-0.2.20 \
@@ -193,7 +193,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		glibc_version-0.1.2 \
 		glob-0.3.1 \
 		group-0.12.1 \
-		h2-0.3.16 \
+		h2-0.3.17 \
 		hashbrown-0.12.3 \
 		hashlink-0.8.1 \
 		heck-0.4.1 \
@@ -209,7 +209,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
 		humantime-2.1.0 \
-		hyper-0.14.25 \
+		hyper-0.14.26 \
 		hyper-rustls-0.23.2 \
 		ident_case-1.0.1 \
 		idna-0.2.3 \
@@ -236,6 +236,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		keccak-0.1.3 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
+		lazy-regex-2.5.0 \
+		lazy-regex-proc_macros-2.4.1 \
 		lazy_static-1.4.0 \
 		lexical-6.1.1 \
 		lexical-core-0.8.5 \
@@ -301,6 +303,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.8.6 \
 		parking_lot_core-0.9.7 \
+		password-hash-0.5.0 \
 		path-clean-0.1.0 \
 		path-dedot-3.0.18 \
 		pathdiff-0.2.1 \
@@ -368,10 +371,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustyline-10.0.0 \
 		rustyline-derive-0.7.0 \
 		ryu-1.0.13 \
+		salsa20-0.10.2 \
 		same-file-1.0.6 \
 		schannel-0.1.21 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.1.0 \
+		scrypt-0.11.0 \
 		sct-0.7.0 \
 		sec1-0.3.0 \
 		security-framework-2.8.2 \
