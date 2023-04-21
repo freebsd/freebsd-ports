@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.5
+DISTVERSION=	1.6.2
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -34,14 +34,15 @@ GH_TUPLE=	\
 		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
 		dustin:go-humanize:v1.0.1:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
+		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gogs:chardet:b7413eaefb8f:gogs_chardet/vendor/github.com/gogs/chardet \
-		golang:crypto:v0.7.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:image:v0.6.0:golang_image/vendor/golang.org/x/image \
-		golang:mod:v0.9.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.8.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.8.0:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.7.0:golang_tools/vendor/golang.org/x/tools \
+		golang:crypto:v0.8.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:image:v0.7.0:golang_image/vendor/golang.org/x/image \
+		golang:mod:v0.10.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.9.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.7.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.9.0:golang_text/vendor/golang.org/x/text \
+		golang:tools:v0.8.0:golang_tools/vendor/golang.org/x/tools \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.5.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
@@ -50,9 +51,9 @@ GH_TUPLE=	\
 		jhillyerd:enmime:v0.11.1:jhillyerd_enmime/vendor/github.com/jhillyerd/enmime \
 		k3a:html2text:v1.1.0:k3a_html2text/vendor/github.com/k3a/html2text \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		klauspost:compress:v1.16.3:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.16.5:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
-		leporo:sqlf:v1.3.0:leporo_sqlf/vendor/github.com/leporo/sqlf \
+		leporo:sqlf:v1.4.0:leporo_sqlf/vendor/github.com/leporo/sqlf \
 		lukechampine:uint128:v1.3.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
 		mattn:go-isatty:v0.0.18:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.14:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
@@ -64,7 +65,7 @@ GH_TUPLE=	\
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
 		sirupsen:logrus:v1.9.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
-		spf13:cobra:v1.6.1:spf13_cobra/vendor/github.com/spf13/cobra \
+		spf13:cobra:v1.7.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		ssor:bom:6386211fdfcf:ssor_bom/vendor/github.com/ssor/bom \
 		tg123:go-htpasswd:v1.2.1:tg123_go_htpasswd/vendor/github.com/tg123/go-htpasswd \
@@ -74,11 +75,11 @@ USE_GITLAB=	nodefault
 GL_TUPLE=	\
 		cznic:cc:03159e8e41eec8d08c1e502bfc46868b9a03aa57:cznic_cc/vendor/modernc.org/cc/v3 \
 		cznic:ccgo:0641811a3b4e1b829e42b48fa6cf751b3a681ed5:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
-		cznic:libc:1e22c18cf2de8aa86d5b19b165f354f99c70479c:cznic_libc/vendor/modernc.org/libc \
+		cznic:libc:43454080a172124dbb34a4870ef7fc6d6ee6c2da:cznic_libc/vendor/modernc.org/libc \
 		cznic:mathutil:b13e5b5643328f15fd2fcedc85f647f0d8f9180f:cznic_mathutil/vendor/modernc.org/mathutil \
 		cznic:memory:93bf078bc8d6adb7f31db2b81355b62eb168b17f:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
-		cznic:sqlite:df33b8d15107f3cc777799c0fe105f74ef499e62:cznic_sqlite/vendor/modernc.org/sqlite \
+		cznic:sqlite:e027e08b760bce2d519410400054da9199e19c34:cznic_sqlite/vendor/modernc.org/sqlite \
 		cznic:strutil:bba0c72b66bb9ced2dfd2ee521b7f16b2cbb39fa:cznic_strutil/vendor/modernc.org/strutil \
 		cznic:token:24e30cd78ee0f2d5d4516917d9cc1101e3ccc1ab:cznic_token/vendor/modernc.org/token
 
