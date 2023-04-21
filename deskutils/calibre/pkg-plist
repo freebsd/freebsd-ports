@@ -63,7 +63,6 @@ lib/calibre/calibre/db/cli/tests.py
 lib/calibre/calibre/db/cli/utils.py
 lib/calibre/calibre/db/copy_to_library.py
 lib/calibre/calibre/db/covers.py
-lib/calibre/calibre/db/delete_service.py
 lib/calibre/calibre/db/errors.py
 lib/calibre/calibre/db/fields.py
 lib/calibre/calibre/db/fts/__init__.py
@@ -1053,6 +1052,7 @@ lib/calibre/calibre/gui2/toc/__init__.py
 lib/calibre/calibre/gui2/toc/location.py
 lib/calibre/calibre/gui2/toc/main.py
 lib/calibre/calibre/gui2/tools.py
+lib/calibre/calibre/gui2/trash.py
 lib/calibre/calibre/gui2/tts/__init__.py
 lib/calibre/calibre/gui2/tts/common.py
 lib/calibre/calibre/gui2/tts/develop.py
