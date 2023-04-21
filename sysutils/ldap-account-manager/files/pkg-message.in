@@ -6,9 +6,9 @@
 
 You should add the following to your Apache configuration file:
 
-Alias /lam /usr/local/www/lam
+Alias /lam %%PREFIX%%/www/lam
 
-<Directory /usr/local/www/lam>
+<Directory %%PREFIX%%/www/lam>
   Options +FollowSymLinks
   AllowOverride All
   Require all granted
