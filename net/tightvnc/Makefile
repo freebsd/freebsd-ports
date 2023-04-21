@@ -26,6 +26,7 @@ CONFLICTS=	tigervnc
 WRKSRC=		${WRKDIR}/vnc_unixsrc
 SHEBANG_FILES=	vncserver
 CFLAGS+=	-Wno-return-type
+CFLAGS+=	-Wno-int-conversion
 ALL_TARGET=	World
 MAKE_ARGS=	CC=${CC}
 
