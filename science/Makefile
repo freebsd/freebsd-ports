@@ -42,7 +42,6 @@
     SUBDIR += buddy
     SUBDIR += cantera
     SUBDIR += cardioid
-    SUBDIR += cdcl
     SUBDIR += cdf
     SUBDIR += cdk
     SUBDIR += cdo
@@ -455,7 +454,6 @@
     SUBDIR += rubygem-rgeo-geojson
     SUBDIR += rubygem-rgeo-proj4
     SUBDIR += rubygem-rgeo-shapefile
-    SUBDIR += rubygem-ruby-dcl
     SUBDIR += rubygem-ruby-netcdf
     SUBDIR += scidavis
     SUBDIR += sciplot
