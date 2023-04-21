@@ -1,0 +1,4 @@
+bin/git-arc
+bin/mfc-candidates
+man/man1/git-arc.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/HOWTO
