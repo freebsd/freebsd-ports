@@ -210,16 +210,16 @@
   <vuln vid="25872b25-da2d-11ed-b715-a1e76793953b">
     <topic>ghostscript -- exploitable buffer overflow in (T)BCP in PS interpreter</topic>
     <affects>
-      <package><name>ghostscript</name> <range><lt>10.01.0</lt></range></package>
-      <package><name>ghostscript7-base</name><range><lt>10.01.0</lt></range></package>
-      <package><name>ghostscript7-commfont</name><range><lt>10.01.0</lt></range></package>
-      <package><name>ghostscript7-jpnfont</name><range><lt>10.01.0</lt></range></package>
-      <package><name>ghostscript7-korfont</name><range><lt>10.01.0</lt></range></package>
-      <package><name>ghostscript7-x11</name><range><lt>10.01.0</lt></range></package>
-      <package><name>ghostscript8-base</name><range><lt>10.01.0</lt></range></package>
-      <package><name>ghostscript8-x11</name><range><lt>10.01.0</lt></range></package>
-      <package><name>ghostscript9-agpl-base</name><range><lt>10.01.0</lt></range></package>
-      <package><name>ghostscript9-agpl-x11</name><range><lt>10.01.0</lt></range></package>
+      <package><name>ghostscript</name> <range><lt>10.01.1</lt></range></package>
+      <package><name>ghostscript7-base</name><range><lt>10.01.1</lt></range></package>
+      <package><name>ghostscript7-commfont</name><range><lt>10.01.1</lt></range></package>
+      <package><name>ghostscript7-jpnfont</name><range><lt>10.01.1</lt></range></package>
+      <package><name>ghostscript7-korfont</name><range><lt>10.01.1</lt></range></package>
+      <package><name>ghostscript7-x11</name><range><lt>10.01.1</lt></range></package>
+      <package><name>ghostscript8-base</name><range><lt>10.01.1</lt></range></package>
+      <package><name>ghostscript8-x11</name><range><lt>10.01.1</lt></range></package>
+      <package><name>ghostscript9-agpl-base</name><range><lt>10.01.1</lt></range></package>
+      <package><name>ghostscript9-agpl-x11</name><range><lt>10.01.1</lt></range></package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -242,6 +242,7 @@
     <dates>
       <discovery>2023-03-23</discovery>
       <entry>2023-04-13</entry>
+      <updated>2023-04-23</updated>
     </dates>
   </vuln>
 
