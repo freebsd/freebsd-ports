@@ -12,6 +12,7 @@ share/icons/hicolor/scalable/apps/xfce4-time-out-plugin.svg
 %%NLS%%share/locale/el/LC_MESSAGES/xfce4-time-out-plugin.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/xfce4-time-out-plugin.mo
 %%NLS%%share/locale/en_CA/LC_MESSAGES/xfce4-time-out-plugin.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-time-out-plugin.mo
 %%NLS%%share/locale/eo/LC_MESSAGES/xfce4-time-out-plugin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-time-out-plugin.mo
 %%NLS%%share/locale/et/LC_MESSAGES/xfce4-time-out-plugin.mo
