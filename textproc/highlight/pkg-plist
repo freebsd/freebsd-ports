@@ -106,6 +106,7 @@ share/fish/vendor_completions.d/highlight.fish
 %%DATADIR%%/langDefs/go.lang
 %%DATADIR%%/langDefs/graphviz.lang
 %%DATADIR%%/langDefs/haml.lang
+%%DATADIR%%/langDefs/hare.lang
 %%DATADIR%%/langDefs/haskell.lang
 %%DATADIR%%/langDefs/haxe.lang
 %%DATADIR%%/langDefs/hcl.lang
