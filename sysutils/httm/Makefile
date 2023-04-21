@@ -1,5 +1,5 @@
 PORTNAME=	httm
-DISTVERSION=	0.26.0
+DISTVERSION=	0.26.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,7 +12,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	kimono-koans
-
 CARGO_CRATES=	ahash-0.8.3 \
 		aho-corasick-0.7.20 \
 		android_system_properties-0.1.5 \
