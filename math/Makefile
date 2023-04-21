@@ -639,6 +639,7 @@
     SUBDIR += octave-forge-symbolic
     SUBDIR += octave-forge-tcl-octave
     SUBDIR += octave-forge-tsa
+    SUBDIR += octave-forge-velas
     SUBDIR += octave-forge-video
     SUBDIR += octave-forge-websockets
     SUBDIR += octave-forge-zenity
