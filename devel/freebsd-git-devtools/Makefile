@@ -1,11 +1,11 @@
 PORTNAME=	freebsd-git-devtools
 PORTVERSION=	20230223
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://cgit.freebsd.org/src/plain/tools/tools/git/
 DISTFILES=	git-arc.sh?id=${_REV} \
 		git-arc.1?id=${_REV} \
-		mfc-candidates.sh?id=${_REV} \
-		HOWTO?id=${_REV}
+		mfc-candidates.sh?id=${_REV}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	jrm@FreeBSD.org
@@ -25,9 +25,11 @@ NO_BUILD=	yes
 
 NO_WRKSUBDIR=	yes
 
-OPTIONS_DEFINE=	DOCS
+PLIST_FILES=	bin/git-arc \
+		bin/mfc-candidates \
+		man/man1/git-arc.1.gz
 
-_REV=		613aaf59afa307fc77c8eed01962a59423b1c5f3
+_REV=		0455b90beeddb636b0644c5d47ef80ffb3e4b4c7
 
 post-patch:
 	for f in ${WRKSRC}/*\?id=*; do \
@@ -38,9 +40,5 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/git-arc.sh ${STAGEDIR}${PREFIX}/bin/git-arc
 	${INSTALL_SCRIPT} ${WRKSRC}/mfc-candidates.sh ${STAGEDIR}${PREFIX}/bin/mfc-candidates
 	${INSTALL_MAN} ${WRKSRC}/git-arc.1 ${STAGEDIR}${MAN1PREFIX}/man/man1/
-
-do-install-DOCS-on:
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/HOWTO ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
