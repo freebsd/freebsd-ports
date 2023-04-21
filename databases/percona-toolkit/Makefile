@@ -1,5 +1,5 @@
 PORTNAME=	percona-toolkit
-DISTVERSION=	3.5.1
+DISTVERSION=	3.5.2
 CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/${PORTNAME}/${PORTVERSION}/source/tarball/
 
