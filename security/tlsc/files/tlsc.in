@@ -1,0 +1,44 @@
+#!/bin/sh
+
+# PROVIDE: tlsc
+# REQUIRE: DAEMON
+# BEFORE:  LOGIN
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name=tlsc
+desc="TLS connect daemon"
+
+rcvar=tlsc_enable
+
+load_rc_config ${name}
+
+: ${tlsc_enable:=NO}
+
+start_precmd=tlsc_prestart
+command="%%PREFIX%%/bin/tlsc"
+pidfile=/var/run/tlsc/tlsc.pid
+command_args="-p ${pidfile} ${tlsc_flags} ${tlsc_tunnels}"
+
+tlsc_prestart()
+{
+	if [ -z "${tlsc_tunnels}" ]; then
+		err 1 "tlsc_tunnels must be configured."
+	fi
+	if [ -n "${tlsc_user}" ]; then
+		rc_flags="-u ${tlsc_user} ${rc_flags}"
+	fi
+	if [ -n "${tlsc_group}" ]; then
+		rc_flags="-g ${tlsc_group} ${rc_flags}"
+	fi
+
+	# tlsc handles user and group itself
+	unset _user
+	unset _group
+	install -d -m 755 -o ${tlsc_user:-root} $(dirname ${pidfile})
+
+	return 0
+}
+
+run_rc_command "$1"
