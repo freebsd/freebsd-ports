@@ -1,5 +1,5 @@
 PORTNAME=	scipy
-DISTVERSION=	1.10.0
+DISTVERSION=	1.10.1
 CATEGORIES=	science python
 MASTER_SITES=	https://docs.scipy.org/doc/${PORTNAME}-${DISTVERSION}/:doc \
 		PYPI:source \
@@ -24,6 +24,13 @@ BUILD_DEPENDS=	${PYNUMPY} \
 LIB_DEPENDS=	libblas.so:math/blas \
 		libopenblas.so:math/openblas
 RUN_DEPENDS=	${PYNUMPY}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mpmath>0:math/py-mpmath@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pooch>0:devel/py-pooch@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-timeout>0:devel/py-pytest-timeout@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scikit-umfpack>0:math/py-scikit-umfpack@${PY_FLAVOR}
 
 USES=		compiler:c++14-lang cpe fortran python:3.8-3.10 shebangfix
 USE_PYTHON=	autoplist concurrent cython distutils
