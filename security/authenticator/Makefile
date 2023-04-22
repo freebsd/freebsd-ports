@@ -9,6 +9,8 @@ WWW=		https://gitlab.gnome.org/World/Authenticator
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to build in aes crate
+
 LIB_DEPENDS=	libgraphene-1.0.so:graphics/graphene \
 		libzbar.so:graphics/zbar \
 		libpipewire-0.3.so:multimedia/pipewire
