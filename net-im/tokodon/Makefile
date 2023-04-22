@@ -1,8 +1,6 @@
 PORTNAME=	tokodon
-DISTVERSION=	23.02.0
-PORTREVISION=	1
-CATEGORIES=	net-im kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE mastodon client
