@@ -1,6 +1,10 @@
 PORTNAME=	gstreamer1-plugins-rust
 DISTVERSION=	0.10.6
+PORTREVISION=	1
 CATEGORIES=	multimedia
+
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	7915189a1599.patch:-p1 # https://gitlab.freedesktop.org/gstreamer/gst-plugins-rs/-/merge_requests/1191
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Various GStreamer plugins written in Rust
