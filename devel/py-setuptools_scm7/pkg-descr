@@ -1,0 +1,2 @@
+Handles managing your python package versions in scm metadata instead of
+declaring them as the version argument or in a scm managed file.
