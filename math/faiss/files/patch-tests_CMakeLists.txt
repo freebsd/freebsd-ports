@@ -1,0 +1,13 @@
+- workaround for https://github.com/facebookresearch/faiss/issues/2827
+
+--- tests/CMakeLists.txt.orig	2023-04-19 13:18:30 UTC
++++ tests/CMakeLists.txt
+@@ -52,6 +52,8 @@ find_package(OpenMP REQUIRED)
+ target_link_libraries(faiss_test PRIVATE
+   OpenMP::OpenMP_CXX
+   gtest_main
++  gtest
++  pthread
+ )
+ 
+ # Defines `gtest_discover_tests()`.

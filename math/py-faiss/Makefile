@@ -1,6 +1,6 @@
 PORTNAME=	faiss
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.3
+DISTVERSION=	1.7.4
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,26 +20,27 @@ LIB_DEPENDS=	libfaiss.so:math/faiss
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		cmake compiler:c++11-lang localbase python
+USE_PYTHON=	flavors pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookresearch
 
 WRKSRC_SUBDIR=	faiss/python
 
-PLIST_FILES=	\
-		${PYTHON_SITELIBDIR}/${PORTNAME}/_swigfaiss.so \
-		${PYTHON_SITELIBDIR}/${PORTNAME}/__init__.py \
-		${PYTHON_SITELIBDIR}/${PORTNAME}/loader.py \
-		${PYTHON_SITELIBDIR}/${PORTNAME}/swigfaiss.py
+CMAKE_ARGS=	-DPython_EXECUTABLE:STRING=${PYTHON_CMD}
+
+TEST_WRKSRC=	${WRKSRC}/../..
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
+
+post-patch: # remove GPU testcases
+	${RM} -r ${WRKSRC}/../../faiss/gpu
 
 do-install: # see https://github.com/facebookresearch/faiss/issues/2194
 	${MKDIR} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 	${INSTALL_LIB} ${BUILD_WRKSRC}/_swigfaiss.so ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
-.for f in __init__.py loader.py swigfaiss.py
+.for f in __init__.py array_conversions.py class_wrappers.py extra_wrappers.py gpu_wrappers.py loader.py swigfaiss.py
 	${INSTALL_DATA} ${BUILD_WRKSRC}/${f} ${STAGEDIR}${PYTHON_SITELIBDIR}/${PORTNAME}
 .endfor
-
-do-test: install
-	@${PYTHON_CMD} ${FILESDIR}/test.py
+	cd ${BUILD_WRKSRC} && ${COPYTREE_SHARE} contrib ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
