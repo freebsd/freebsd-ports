@@ -25,7 +25,7 @@
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Oracle reports:</p>
-	<blockquote cite="https://www.oracle.com/security-alerts/cpujan2023.html#AppendixMSQL">
+	<blockquote cite="https://www.oracle.com/security-alerts/cpuapr2023.html#AppendixMSQL">
 	  <p>This Critical Patch Update contains 34 new security patches, plus
 	    additional third party patches noted below, for Oracle MySQL. 11 of
 	    these vulnerabilities may be remotely exploitable without
@@ -61,11 +61,12 @@
       <cvename>CVE-2023-21940</cvename>
       <cvename>CVE-2023-21947</cvename>
       <cvename>CVE-2023-21963</cvename>
-      <url>https://www.oracle.com/security-alerts/cpujan2023.html#AppendixMSQL</url>
+      <url>https://www.oracle.com/security-alerts/cpuapr2023.html#AppendixMSQL</url>
     </references>
     <dates>
       <discovery>2023-04-19</discovery>
       <entry>2023-04-22</entry>
+      <modified>2023-04-22</modified>
     </dates>
   </vuln>
 
