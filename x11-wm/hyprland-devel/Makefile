@@ -1,16 +1,12 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.1
-PORTREVISION=	2
+DISTVERSION=	0.24.1-87
+DISTVERSIONSUFFIX=	-g4a92deec
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	efee6a1cda27.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/2026
-PATCHFILES+=	8944db49be38.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/2065
-PATCHFILES+=	63841c8aac8c.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/2066
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
+COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks (development snapshot) #'
 WWW=		https://hyprland.org/
 
 LICENSE=	BSD3CLAUSE
@@ -19,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.25:graphics/wayland-protocols \
-		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
+		wlroots>=0.16.0.346<0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
@@ -32,11 +28,11 @@ USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 GH_PROJECT=	Hyprland
-GH_TUPLE=	hyprwm:hyprland-protocols:d7d403b:hyprland_protocols/subprojects/hyprland-protocols \
+GH_TUPLE=	hyprwm:hyprland-protocols:4d29e48:hyprland_protocols/subprojects/hyprland-protocols \
 		canihavesomecoffee:udis86:1.7.2-186-g5336633:udis86/subprojects/udis86
 MESON_ARGS=	-Dsystemd=disabled
 
-CONFLICTS_INSTALL=	${PORTNAME}-devel
+CONFLICTS_INSTALL=	${PORTNAME}
 
 OPTIONS_DEFINE=	X11
 OPTIONS_DEFAULT=X11
@@ -62,8 +58,8 @@ post-patch:
 .ifdef GH_TUPLE
 post-install:
 # XXX USES=meson invokes ninja directly, so doesn't support --skip-subprojects
+	@${RM} -r ${STAGEDIR}${PREFIX}/share/hyprland-protocols
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/protocols
 .endif
 
 # XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
@@ -93,4 +89,5 @@ bundled-libcxx:
 .endif
 .endif # exists(/usr/lib/libc++.so)
 
+.include "${.CURDIR:H:H}/x11-toolkits/wlroots-devel/override.mk"
 .include <bsd.port.mk>
