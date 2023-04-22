@@ -1,20 +1,19 @@
 PORTNAME=	pychess
-PORTVERSION=	1.0.2
-PORTREVISION=	4
+PORTVERSION=	1.0.4
 CATEGORIES=	games python
 MASTER_SITES=	https://github.com/pychess/pychess/releases/download/${PORTVERSION}/
 
 MAINTAINER=	kevinz5000@gmail.com
 COMMENT=	GTK chess client written in Python
-WWW=		https://www.pychess.org/
+WWW=		https://github.com/pychess/pychess
 
 LICENSE=	GPLv3
 
 COMMON_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sqlalchemy13>1.:databases/py-sqlalchemy13@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy20>0:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0.:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gobject3>2:devel/py-gobject3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}websockets>7.:devel/py-websockets@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}websockets>11.:devel/py-websockets@${PY_FLAVOR}
 RUN_DEPENDS=	${COMMON_DEPENDS}
 BUILD_DEPENDS=	${COMMON_DEPENDS}
 
