@@ -1,4 +1,4 @@
-TIMESTAMP = 1681827576
+TIMESTAMP = 1682106517
 SHA256 (nginx-1.24.0.tar.gz) = 77a2541637b92a621e3ee76776c8b7b40cf6d707e69ba53a940283e30ff2f55d
 SIZE (nginx-1.24.0.tar.gz) = 1112471
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
@@ -89,8 +89,8 @@ SHA256 (jaygooby-nginx-upstream-fair-10ecdcf_GH0.tar.gz) = 93f71b7cf0db9c6dbf97e
 SIZE (jaygooby-nginx-upstream-fair-10ecdcf_GH0.tar.gz) = 10433
 SHA256 (dvershinin-nginx-sticky-module-ng-2753211_GH0.tar.gz) = e4a533dfa214ea28122301aeebbb1a38e1d1972edb7ee9bc72271c14f2693005
 SIZE (dvershinin-nginx-sticky-module-ng-2753211_GH0.tar.gz) = 120676
-SHA256 (Novetta-nginx-video-thumbextractor-module-f5b5bae_GH0.tar.gz) = cb4ecc14bf8503eb73c50ca5e9952ce1f99badbf2e7fdd2346c73d2e7905a5a5
-SIZE (Novetta-nginx-video-thumbextractor-module-f5b5bae_GH0.tar.gz) = 34434
+SHA256 (Novetta-nginx-video-thumbextractor-module-28861f2_GH0.tar.gz) = 04656da527d9e64cbdf1bf475a93193fa60324ffea160d05d4cc53c864943bc1
+SIZE (Novetta-nginx-video-thumbextractor-module-28861f2_GH0.tar.gz) = 34447
 SHA256 (vince2678-mod_zip-5b2604b_GH0.tar.gz) = 4fe63be3b842882494152e586f0b87e73f51bfbfd801b78f033c71a011cba789
 SIZE (vince2678-mod_zip-5b2604b_GH0.tar.gz) = 29559
 SHA256 (calio-iconv-nginx-module-v0.14_GH0.tar.gz) = b8b9f355c05c0790226512f6732348a2404d48531688a1fc04ce6768163bf462
