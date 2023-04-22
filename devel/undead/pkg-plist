@@ -1,0 +1,17 @@
+include/d/undead/bitarray.d
+include/d/undead/cstream.d
+include/d/undead/date.d
+include/d/undead/datebase.d
+include/d/undead/dateparse.d
+include/d/undead/doformat.d
+include/d/undead/internal/file.d
+include/d/undead/metastrings.d
+include/d/undead/regexp.d
+include/d/undead/signals.d
+include/d/undead/socketstream.d
+include/d/undead/stream.d
+include/d/undead/string.d
+include/d/undead/utf.d
+include/d/undead/xml.d
+lib/d/libundead.a
+libdata/pkgconfig/undead.pc

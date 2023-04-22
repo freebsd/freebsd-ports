@@ -1,0 +1,10 @@
+prefix=%%PREFIX%%
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: undead
+Description: Obsolete Phobos modules, back from the dead.
+Version: %%DISTVERSION%%
+Libs: -L-L${libdir}/d -L-lundead
+Cflags: -I${includedir}/d
