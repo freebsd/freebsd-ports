@@ -17,20 +17,22 @@ RUN_DEPENDS=	rubygem-nokogiri>=1.8:textproc/rubygem-nokogiri
 
 USES=	ruby
 USE_GITHUB=	yes
-
-OPTIONS_DEFINE=	DOCS
-
 GH_ACCOUNT=	allanjude
 GH_PROJECT=	docbookrx
 GH_TAGNAME=	06cae39
-
-GEM_ENV+=	RB_USER_INSTALL=yes
 USE_LOCALE?=	en_US.UTF-8
-GEM_ENV+=	LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
+GEM_ENV+=	RB_USER_INSTALL=yes LANG=${USE_LOCALE} LC_ALL=${USE_LOCALE}
+
+NO_ARCH=	yes
+
+OPTIONS_DEFINE=	DOCS
+
+DOCS_VARS=	RUBYGEM_ARGS+="--document rdoc,ri"
+DOCS_VARS_OFF=	RUBYGEM_ARGS+=--no-document
+
 RUBYGEM_ARGS=	-l --no-update-sources --ignore-dependencies \
 		--install-dir  ${STAGEDIR}${PREFIX}/lib/ruby/gems/${RUBY_VER} \
 		--bindir=${STAGEDIR}${PREFIX}/bin
-
 RUBYGEMBIN=	${LOCALBASE}/bin/gem
 GEMS_BASE_DIR=	lib/ruby/gems/${RUBY_VER}
 GEMS_DIR=	${GEMS_BASE_DIR}/gems
@@ -38,14 +40,6 @@ DOC_DIR=	${GEMS_BASE_DIR}/doc
 CACHE_DIR=	${GEMS_BASE_DIR}/cache
 EXT_DIR=	${GEMS_BASE_DIR}/extensions
 GEM_LIB_DIR?=	${GEMS_DIR}/${PORTNAME}-${DISTVERSION}
-
-.include <bsd.port.options.mk>
-
-.if ${PORT_OPTIONS:MDOCS}
-RUBYGEM_ARGS+=	--document rdoc,ri
-.else
-RUBYGEM_ARGS+=	--no-document
-.endif
 
 do-build:
 	cd ${BUILD_WRKSRC} && ${SETENV} ${GEM_ENV} ${RUBYGEMBIN} build --force ${PORTNAME}.gemspec
@@ -60,15 +54,16 @@ do-install:
 	${RMDIR} ${STAGEDIR}${PREFIX}/${EXT_DIR} 2> /dev/null || ${TRUE}
 	${ECHO} bin/docbookrx >> ${TMPPLIST}
 	${ECHO} ${GEMS_BASE_DIR}/specifications/${PORTNAME}-${DISTVERSION}.gemspec >> ${TMPPLIST}
-.if ${PORT_OPTIONS:MDOCS}
-	${FIND} -ds ${STAGEDIR}${PREFIX}/${DOC_DIR} -type f -print | ${SED} -E -e \
-		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
-.endif
 	${FIND} -ds ${STAGEDIR}${PREFIX}/${GEM_LIB_DIR} -type f -print | ${SED} -E -e \
 		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
 		@if [ -d ${STAGEDIR}${PREFIX}/${EXT_DIR} ]; then \
 			${FIND} -ds ${STAGEDIR}${PREFIX}/${EXT_DIR} -type f -print | ${SED} -E -e \
 			's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST} ; \
 		fi
+	${ECHO} '@dir ${GEMS_BASE_DIR}/plugins' >> ${TMPPLIST}
+
+do-install-DOCS-on:
+	${FIND} -ds ${STAGEDIR}${PREFIX}/${DOC_DIR} -type f -print | ${SED} -E -e \
+		's,^${STAGEDIR}${PREFIX}/?,,' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
