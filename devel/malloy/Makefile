@@ -1,5 +1,5 @@
 PORTNAME=	malloy
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.2
 CATEGORIES=	devel
 
 MAINTAINER=	jbo@insane.engineer
