@@ -4731,6 +4731,7 @@
     SUBDIR += py-identify
     SUBDIR += py-ijson
     SUBDIR += py-imgkit
+    SUBDIR += py-immutabledict
     SUBDIR += py-immutables
     SUBDIR += py-importlab
     SUBDIR += py-importlib-metadata
