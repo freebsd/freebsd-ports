@@ -13,6 +13,7 @@
 #                               Default is "%%PREFIX%%/etc/pgbouncer.ini".
 # pgbouncer_flags (string):     Additional flags passed to pgbouncer.
 #                               Default is "".
+# pgbouncer_sig_stop (str):     Default to "TERM"
 
 . /etc/rc.subr
 
@@ -24,11 +25,26 @@ load_rc_config "$name"
 : ${pgbouncer_user="pgbouncer"}
 : ${pgbouncer_conf="%%PREFIX%%/etc/$name.ini"}
 
-extra_commands="reload"
+gracefulstop_cmd="pgbouncer_gracefulstop"
+stop_precmd="pgbouncer_prestop"
+
+extra_commands="reload gracefulstop"
 
 command="%%PREFIX%%/bin/pgbouncer"
 pidfile="%%PGBOUNCER_RUNDIR%%/$name.pid"
 required_files="${pgbouncer_conf}"
 command_args="-d ${pgbouncer_conf}"
+
+pgbouncer_gracefulstop()
+{
+	echo "Performing a graceful stop:"
+	sig_stop="INT"
+	run_rc_command ${rc_prefix}stop ${rc_extra_args} || return 1
+}
+
+pgbouncer_prestop()
+{
+	sig_stop="${pgbouncer_sig_stop:-TERM}"
+}
 
 run_rc_command "$1"
