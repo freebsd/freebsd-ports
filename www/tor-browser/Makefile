@@ -1,10 +1,9 @@
 PORTNAME=	tor-browser
-DISTVERSION=	12.0.2
-PORTREVISION=	7 # previous DISTVERSION was 12.0-2 which becomes 12.0.2 too in 1
+DISTVERSION=	12.0.5
 CATEGORIES=	www net security wayland
 MASTER_SITES=	TOR
 MASTER_SITE_SUBDIR=torbrowser/${DISTVERSION}
-DISTNAME=	src-firefox-tor-browser-102.7.0esr-${DISTVERSION:R}-1-build1
+DISTNAME=	src-firefox-tor-browser-102.10.0esr-${DISTVERSION:R}-1-build2
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Tor Browser for FreeBSD
@@ -29,7 +28,7 @@ RUN_DEPENDS=	tor:security/tor \
 		obfs4proxy:security/obfs4proxy-tor
 
 USES=		compiler:c++11-lib libtool \
-		perl5 pkgconfig python:3.4+ shebangfix localbase:ldflags tar:xz
+		perl5 pkgconfig python:3.7+ shebangfix localbase:ldflags tar:xz
 USE_GECKO=	gecko
 
 SSP_UNSAFE=	yes
@@ -51,7 +50,6 @@ MOZ_EXPORT+=	MOZ_TELEMETRY_REPORTING="" \
 MOZ_OPTIONS=	--with-tor-browser-version=${DISTVERSION}-1 \
 	--enable-official-branding \
 	--enable-optimize \
-	--enable-rust-simd \
 	--enable-bundled-fonts \
 	--disable-tests \
 	--disable-debug \
@@ -70,6 +68,9 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/src-//}
 .include	"${.CURDIR}/../../www/firefox/Makefile.options"
 .include <bsd.port.options.mk>
 
+.if ${ARCH} == amd64
+MOZ_OPTIONS+=	--enable-rust-simd
+.endif
 .if ${ARCH} == powerpc64
 MOZ_OPTIONS+=	--disable-webrtc --without-wasm-sandboxed-libraries
 .else

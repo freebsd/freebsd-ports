@@ -1,3 +1,3 @@
-TIMESTAMP = 1674405921
-SHA256 (src-firefox-tor-browser-102.7.0esr-12.0-1-build1.tar.xz) = da8c3a9775f4f808ea78428cadbe848d0f2fdf26a6c193b3452590e24f557bf3
-SIZE (src-firefox-tor-browser-102.7.0esr-12.0-1-build1.tar.xz) = 511809384
+TIMESTAMP = 1682198187
+SHA256 (src-firefox-tor-browser-102.10.0esr-12.0-1-build2.tar.xz) = 2c8eae982f992e7c4b8b38d91664123c0080f081f6f832319b981f65d40c912f
+SIZE (src-firefox-tor-browser-102.10.0esr-12.0-1-build2.tar.xz) = 511962796
