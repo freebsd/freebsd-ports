@@ -105,6 +105,7 @@
     SUBDIR += py-spacetrack
     SUBDIR += py-spktype01
     SUBDIR += py-spktype21
+    SUBDIR += py-sunpy
     SUBDIR += pykep
     SUBDIR += pyweather
     SUBDIR += qmapshack
