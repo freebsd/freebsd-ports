@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/process/launch.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/process/launch.h.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/base/process/launch.h
-@@ -199,7 +199,7 @@ struct BASE_EXPORT LaunchOptions {
+@@ -198,7 +198,7 @@ struct BASE_EXPORT LaunchOptions {
    bool clear_environment = false;
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_POSIX) || BUILDFLAG(IS_FUCHSIA)
  

@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/media/capture/video/linux/v4l2_capture_delegate.cc
 @@ -4,8 +4,10 @@
  
@@ -11,7 +11,7 @@
  #include <poll.h>
  #include <sys/fcntl.h>
  #include <sys/ioctl.h>
-@@ -25,10 +27,10 @@ using media::mojom::MeteringMode;
+@@ -28,10 +30,10 @@ using media::mojom::MeteringMode;
  
  using media::mojom::MeteringMode;
  
@@ -24,7 +24,7 @@
  
  // TODO(aleksandar.stojiljkovic): Wrap this with kernel version check once the
  // format is introduced to kernel.
-@@ -660,7 +662,7 @@ V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
+@@ -667,7 +669,7 @@ V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
  
  V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
  
@@ -33,7 +33,7 @@
    int num_retries = 0;
    for (; DoIoctl(request, argp) < 0 && num_retries < kMaxIOCtrlRetries;
         ++num_retries) {
-@@ -670,7 +672,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
+@@ -677,7 +679,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
    return num_retries != kMaxIOCtrlRetries;
  }
  

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/common/BUILD.gn.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/common/BUILD.gn.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/content/common/BUILD.gn
-@@ -420,6 +420,9 @@ if (is_linux || is_chromeos) {
+@@ -447,6 +447,9 @@ if (is_linux || is_chromeos) {
      public = [ "set_process_title_linux.h" ]
      sources = [ "set_process_title_linux.cc" ]
      deps = [ "//base" ]

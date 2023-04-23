@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux.cc
-@@ -19,7 +19,9 @@
+@@ -20,7 +20,9 @@
  #include "content/public/common/result_codes.h"
  #include "content/public/common/sandboxed_process_launcher_delegate.h"
  #include "content/public/common/zygote/sandbox_support_linux.h"
@@ -10,15 +10,15 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  
  namespace content {
-@@ -68,6 +70,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -74,6 +76,7 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
      int* launch_result) {
    *is_synchronous_launch = true;
- 
+   Process process;
 +#if !BUILDFLAG(IS_BSD)
    ZygoteHandle zygote_handle =
        base::CommandLine::ForCurrentProcess()->HasSwitch(switches::kNoZygote)
            ? nullptr
-@@ -81,7 +84,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -87,7 +90,6 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          GetProcessType());
      *launch_result = LAUNCH_RESULT_SUCCESS;
  
@@ -26,22 +26,26 @@
      if (handle) {
        // It could be a renderer process or an utility process.
        int oom_score = content::kMiscOomScore;
-@@ -90,13 +92,13 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
+@@ -96,15 +98,17 @@ ChildProcessLauncherHelper::LaunchProcessOnLauncherThr
          oom_score = content::kLowestRendererOomScore;
        ZygoteHostImpl::GetInstance()->AdjustRendererOOMScore(handle, oom_score);
      }
 -#endif
  
-     Process process;
      process.process = base::Process(handle);
      process.zygote = zygote_handle;
-     return process;
+   } else {
++#endif
+     process.process = base::LaunchProcess(*command_line(), options);
+     *launch_result = process.process.IsValid() ? LAUNCH_RESULT_SUCCESS
+                                                : LAUNCH_RESULT_FAILURE;
++#if !BUILDFLAG(IS_BSD)
    }
 +#endif
  
-   Process process;
-   process.process = base::LaunchProcess(*command_line(), options);
-@@ -114,10 +116,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
+ #if BUILDFLAG(IS_CHROMEOS)
+   if (GetProcessType() == switches::kRendererProcess) {
+@@ -124,10 +128,14 @@ ChildProcessTerminationInfo ChildProcessLauncherHelper
      const ChildProcessLauncherHelper::Process& process,
      bool known_dead) {
    ChildProcessTerminationInfo info;
@@ -56,7 +60,7 @@
      info.status = base::GetKnownDeadTerminationStatus(process.process.Handle(),
                                                        &info.exit_code);
    } else {
-@@ -141,13 +147,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
+@@ -151,13 +159,17 @@ void ChildProcessLauncherHelper::ForceNormalProcessTer
    DCHECK(CurrentlyOnProcessLauncherTaskRunner());
    process.process.Terminate(RESULT_CODE_NORMAL_EXIT, false);
    // On POSIX, we must additionally reap the child.

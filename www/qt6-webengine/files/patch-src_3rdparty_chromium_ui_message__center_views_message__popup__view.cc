@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/ui/message_center/views/message_popup_view.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/message_center/views/message_popup_view.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/ui/message_center/views/message_popup_view.cc
-@@ -123,7 +123,7 @@ void MessagePopupView::Show() {
+@@ -118,7 +118,7 @@ void MessagePopupView::Show() {
    params.z_order = ui::ZOrderLevel::kFloatingWindow;
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

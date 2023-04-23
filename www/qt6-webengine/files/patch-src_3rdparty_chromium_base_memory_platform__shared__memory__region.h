@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/memory/platform_shared_memory_region.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/memory/platform_shared_memory_region.h.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/base/memory/platform_shared_memory_region.h
-@@ -14,7 +14,7 @@
+@@ -16,7 +16,7 @@
  
  #include <stdint.h>
  
@@ -9,7 +9,7 @@
  namespace content {
  class SandboxIPCHandler;
  }
-@@ -81,7 +81,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
+@@ -83,7 +83,7 @@ class BASE_EXPORT PlatformSharedMemoryRegion {
      kMaxValue = GET_SHMEM_TEMP_DIR_FAILURE
    };
  

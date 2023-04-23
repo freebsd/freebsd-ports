@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/sandbox/policy/BUILD.gn.orig	2022-11-08 21:18:48 UTC
+--- src/3rdparty/chromium/sandbox/policy/BUILD.gn.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/sandbox/policy/BUILD.gn
 @@ -5,6 +5,8 @@ import("//build/config/chromeos/ui_mode.gni")
  import("//build/buildflag_header.gni")
  import("//build/config/chromecast_build.gni")
  import("//build/config/chromeos/ui_mode.gni")
-+# Required for QtPDF to get a successful build
++# Import ozone_platform_x11, required for QtPDF to get a successful build
 +import("//build/config/ozone.gni")
  import("//build/config/sanitizers/sanitizers.gni")
- import("//chromeos/assistant/assistant.gni")
- import("//printing/buildflags/buildflags.gni")
-@@ -34,7 +36,7 @@ component("policy") {
+ import("//chromeos/ash/components/assistant/assistant.gni")
+ import("//components/services/screen_ai/buildflags/features.gni")
+@@ -35,7 +37,7 @@ component("policy") {
      "//sandbox/policy/mojom",
    ]
    public_deps = [ "//sandbox:common" ]
@@ -18,7 +18,7 @@
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -89,6 +91,28 @@ component("policy") {
+@@ -94,6 +96,28 @@ component("policy") {
        "//sandbox/linux:sandbox_services",
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",
@@ -35,7 +35,7 @@
 +    ]
 +    libs = [ "util" ]
 +  }
-+  # Required to avoid assertion errors during build of QtPDF
++  # The use of ozone_platform_x11 is required to avoid assertion errors during build of QtPDF
 +  if (is_freebsd && ozone_platform_x11) {
 +    sources += [
 +      "freebsd/sandbox_freebsd.cc",

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/allocator/partition_allocator/spinning_mutex.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/allocator/partition_allocator/spinning_mutex.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/base/allocator/partition_allocator/spinning_mutex.cc
-@@ -17,7 +17,15 @@
+@@ -18,7 +18,15 @@
  
  #if defined(PA_HAS_LINUX_KERNEL)
  #include <errno.h>
@@ -16,7 +16,7 @@
  #include <sys/syscall.h>
  #include <unistd.h>
  #endif  // defined(PA_HAS_LINUX_KERNEL)
-@@ -116,8 +124,13 @@ void SpinningMutex::FutexWait() {
+@@ -107,8 +115,13 @@ void SpinningMutex::FutexWait() {
    // |kLockedContended| anymore. Note that even without spurious wakeups, the
    // value of |state_| is not guaranteed when this returns, as another thread
    // may get the lock before we get to run.
@@ -30,7 +30,7 @@
  
    if (err) {
      // These are programming error, check them.
-@@ -129,8 +142,14 @@ void SpinningMutex::FutexWake() {
+@@ -120,8 +133,14 @@ void SpinningMutex::FutexWake() {
  
  void SpinningMutex::FutexWake() {
    int saved_errno = errno;

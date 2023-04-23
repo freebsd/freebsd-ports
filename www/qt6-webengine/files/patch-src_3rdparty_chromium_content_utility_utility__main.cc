@@ -1,12 +1,11 @@
---- src/3rdparty/chromium/content/utility/utility_main.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/utility/utility_main.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/content/utility/utility_main.cc
-@@ -32,18 +32,20 @@
+@@ -31,17 +31,19 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
  #include "third_party/icu/source/i18n/unicode/timezone.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
- #include "components/services/screen_ai/sandbox/screen_ai_sandbox_hook_linux.h"
  #include "content/utility/speech/speech_recognition_sandbox_hook_linux.h"
  #if BUILDFLAG(ENABLE_PRINTING)
  #include "printing/sandbox/print_backend_sandbox_hook_linux.h"
@@ -23,7 +22,7 @@
  #include "gpu/config/gpu_info_collector.h"
  #include "media/gpu/sandbox/hardware_video_decoding_sandbox_hook_linux.h"
  
-@@ -52,6 +54,10 @@
+@@ -50,6 +52,10 @@
  #include "third_party/angle/src/gpu_info_util/SystemInfo.h"  // nogncheck
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -33,8 +32,8 @@
 +
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  #include "ash/services/ime/ime_sandbox_hook.h"
- #include "chromeos/assistant/buildflags.h"
-@@ -139,7 +145,7 @@ int UtilityMain(MainFunctionParams parameters) {
+ #include "chromeos/ash/components/assistant/buildflags.h"
+@@ -130,7 +136,7 @@ int UtilityMain(MainFunctionParams parameters) {
      }
    }
  
@@ -43,16 +42,16 @@
    // Initializes the sandbox before any threads are created.
    // TODO(jorgelo): move this after GTK initialization when we enable a strict
    // Seccomp-BPF policy.
-@@ -169,7 +175,7 @@ int UtilityMain(MainFunctionParams parameters) {
-       pre_sandbox_hook = base::BindOnce(&screen_ai::ScreenAIPreSandboxHook);
+@@ -162,7 +168,7 @@ int UtilityMain(MainFunctionParams parameters) {
  #endif
        break;
+ #endif
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)
      case sandbox::mojom::Sandbox::kHardwareVideoDecoding:
        pre_sandbox_hook =
            base::BindOnce(&media::HardwareVideoDecodingPreSandboxHook);
-@@ -192,10 +198,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -185,10 +191,11 @@ int UtilityMain(MainFunctionParams parameters) {
      default:
        break;
    }
@@ -65,7 +64,7 @@
      if (sandbox_type == sandbox::mojom::Sandbox::kHardwareVideoDecoding) {
        // The kHardwareVideoDecoding sandbox needs to know the GPU type in order
        // to select the right policy.
-@@ -208,6 +215,11 @@ int UtilityMain(MainFunctionParams parameters) {
+@@ -201,6 +208,11 @@ int UtilityMain(MainFunctionParams parameters) {
      sandbox::policy::Sandbox::Initialize(
          sandbox_type, std::move(pre_sandbox_hook), sandbox_options);
    }

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/base/debug/stack_trace_posix.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/debug/stack_trace_posix.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/base/debug/stack_trace_posix.cc
-@@ -38,7 +38,7 @@
+@@ -39,7 +39,7 @@
  #include <AvailabilityMacros.h>
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/debug/proc_maps_linux.h"
  #endif
  
-@@ -695,6 +695,9 @@ class SandboxSymbolizeHelper {
+@@ -699,6 +699,9 @@ class SandboxSymbolizeHelper {
    // for the modules that are loaded in the current process.
    // Returns true on success.
    bool CacheMemoryRegions() {
@@ -19,7 +19,7 @@
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -712,6 +715,7 @@ class SandboxSymbolizeHelper {
+@@ -716,6 +719,7 @@ class SandboxSymbolizeHelper {
  
      is_initialized_ = true;
      return true;
@@ -27,7 +27,7 @@
    }
  
    // Opens all object files and caches their file descriptors.
-@@ -868,7 +872,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
+@@ -872,7 +876,7 @@ size_t CollectStackTrace(void** trace, size_t count) {
    // If we do not have unwind tables, then try tracing using frame pointers.
    return base::debug::TraceStackFramePointers(const_cast<const void**>(trace),
                                                count, 0);
@@ -35,4 +35,4 @@
 +#elif !defined(__UCLIBC__) && !defined(_AIX) && !BUILDFLAG(IS_BSD)
    // Though the backtrace API man page does not list any possible negative
    // return values, we take no chance.
-   return base::saturated_cast<size_t>(backtrace(trace, count));
+   return base::saturated_cast<size_t>(

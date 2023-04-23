@@ -1,6 +1,5 @@
 %%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdfdocument_p.h
 %%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdffile_p.h
-%%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdfiohandler_p.h
 %%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdflink_p.h
 %%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdflinkmodel_p.h
 %%QT_INCDIR%%/QtPdf/%%FULLVER%%/QtPdf/private/qpdflinkmodel_p_p.h
@@ -80,6 +79,10 @@
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineNotification
 %%QT_INCDIR%%/QtWebEngineCore/QWebEnginePage
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineProfile
+%%QT_INCDIR%%/QtWebEngineQuick/QQuickWebEngineViewAccessible
+%%QT_INCDIR%%/QtWebEngineQuick/qquickwebengine_accessible.h
+%%QT_INCDIR%%/QtWebEngineQuick/render_widget_host_view_qt_delegate_quickwindow.h
+%%QT_INCDIR%%/QtWebEngineQuick/ui_delegates_manager.h
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineQuotaRequest
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineRegisterProtocolHandlerRequest
 %%QT_INCDIR%%/QtWebEngineCore/QWebEngineScript
@@ -152,12 +155,17 @@
 %%QT_INCDIR%%/QtWebEngineQuick/qtwebenginequick-config.h
 %%QT_INCDIR%%/QtWebEngineQuick/qtwebenginequickglobal.h
 %%QT_INCDIR%%/QtWebEngineQuick/qtwebenginequickversion.h
+%%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/autofillpopupwidget_p.h
+%%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/touchhandlewidget_p.h
+%%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/touchselectionmenuwidget_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebenginenotificationpresenter_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/%%FULLVER%%/QtWebEngineWidgets/private/qwebengineview_p.h
 %%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineView
+%%QT_INCDIR%%/QtWebEngineWidgets/QWebEngineViewAccessible
 %%QT_INCDIR%%/QtWebEngineWidgets/QtWebEngineWidgets
 %%QT_INCDIR%%/QtWebEngineWidgets/QtWebEngineWidgetsDepends
 %%QT_INCDIR%%/QtWebEngineWidgets/QtWebEngineWidgetsVersion
+%%QT_INCDIR%%/QtWebEngineWidgets/qwebengine_accessible.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qtwebenginewidgetsglobal.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qtwebenginewidgetsversion.h
 %%QT_INCDIR%%/QtWebEngineWidgets/qwebengineview.h
@@ -321,6 +329,7 @@ lib/cmake/Qt6WebEngineWidgets/Qt6WebEngineWidgetsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtWebEngine/ControlsDelegates/AutofillPopup.qml
 %%QT_QMLDIR%%/QtWebEngine/ControlsDelegates/ColorDialog.qml
 %%QT_QMLDIR%%/QtWebEngine/ControlsDelegates/ConfirmDialog.qml
+%%QT_QMLDIR%%/QtWebEngine/ControlsDelegates/DirectoryPicker.qml
 %%QT_QMLDIR%%/QtWebEngine/ControlsDelegates/FilePicker.qml
 %%QT_QMLDIR%%/QtWebEngine/ControlsDelegates/Menu.qml
 %%QT_QMLDIR%%/QtWebEngine/ControlsDelegates/MenuItem.qml

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/shell/BUILD.gn.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/shell/BUILD.gn.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/content/shell/BUILD.gn
-@@ -882,7 +882,7 @@ group("content_shell_crash_test") {
+@@ -905,7 +905,7 @@ group("content_shell_crash_test") {
    if (is_win) {
      data_deps += [ "//build/win:copy_cdb_to_output" ]
    }

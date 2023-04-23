@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/net/proxy_resolution/proxy_config_service_linux.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/net/proxy_resolution/proxy_config_service_linux.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/net/proxy_resolution/proxy_config_service_linux.cc
 @@ -6,7 +6,9 @@
  
@@ -10,7 +10,7 @@
  #include <unistd.h>
  
  #include <map>
-@@ -506,6 +508,7 @@ bool SettingGetterImplGSettings::CheckVersion(
+@@ -502,6 +504,7 @@ bool SettingGetterImplGSettings::CheckVersion(
  }
  #endif  // defined(USE_GIO)
  
@@ -18,7 +18,7 @@
  // Converts |value| from a decimal string to an int. If there was a failure
  // parsing, returns |default_value|.
  int StringToIntOrDefault(base::StringPiece value, int default_value) {
-@@ -1007,6 +1010,7 @@ class SettingGetterImplKDE : public ProxyConfigService
+@@ -1030,6 +1033,7 @@ class SettingGetterImplKDE : public ProxyConfigService
    // events on.
    scoped_refptr<base::SequencedTaskRunner> file_task_runner_;
  };
@@ -26,7 +26,7 @@
  
  }  // namespace
  
-@@ -1223,9 +1227,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
+@@ -1246,9 +1250,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE3:
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:
@@ -36,5 +36,5 @@
        break;
 +#endif
      case base::nix::DESKTOP_ENVIRONMENT_XFCE:
+     case base::nix::DESKTOP_ENVIRONMENT_LXQT:
      case base::nix::DESKTOP_ENVIRONMENT_OTHER:
-       break;

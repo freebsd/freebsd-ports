@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/linux_util.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/linux_util.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/base/linux_util.cc
 @@ -15,6 +15,7 @@
  
@@ -18,7 +18,7 @@
    // 25 > strlen("/proc//task") + strlen(std::to_string(INT_MAX)) + 1 = 22
    char buf[25];
    strings::SafeSPrintf(buf, "/proc/%d/task", pid);
-@@ -154,6 +158,7 @@ bool GetThreadsForProcess(pid_t pid, std::vector<pid_t
+@@ -152,6 +156,7 @@ bool GetThreadsForProcess(pid_t pid, std::vector<pid_t
    }
  
    return true;

@@ -1,29 +1,20 @@
---- src/3rdparty/chromium/ui/gfx/render_text_api_fuzzer.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/gfx/render_text_api_fuzzer.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/ui/gfx/render_text_api_fuzzer.cc
-@@ -21,7 +21,7 @@
- // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
- // complete.
- #if BUILDFLAG(IS_ANDROID) || \
--    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD))
- #include "base/test/test_discardable_memory_allocator.h"
+@@ -20,7 +20,7 @@
+ #include "ui/gfx/font_util.h"
+ #include "ui/gfx/render_text.h"
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+ #include "third_party/test_fonts/fontconfig/fontconfig_util_linux.h"
  #endif
  
-@@ -44,7 +44,7 @@ struct Environment {
- // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
- // complete.
- #if BUILDFLAG(IS_ANDROID) || \
--    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD))
-     // Some platforms require discardable memory to use bitmap fonts.
-     base::DiscardableMemoryAllocator::SetInstance(
-         &discardable_memory_allocator);
-@@ -56,7 +56,7 @@ struct Environment {
- // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
- // complete.
- #if BUILDFLAG(IS_ANDROID) || \
--    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
-+    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD))
-   base::TestDiscardableMemoryAllocator discardable_memory_allocator;
- #endif
+@@ -47,7 +47,7 @@ struct Environment {
  
+     CHECK(base::i18n::InitializeICU());
+ 
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+     test_fonts::SetUpFontconfig();
+ #endif
+     gfx::InitializeFonts();

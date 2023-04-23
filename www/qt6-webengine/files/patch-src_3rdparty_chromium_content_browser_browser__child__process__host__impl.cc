@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/browser_child_process_host_impl.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/browser/browser_child_process_host_impl.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/content/browser/browser_child_process_host_impl.cc
-@@ -292,6 +292,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
+@@ -316,6 +316,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
        switches::kDisableBestEffortTasks,
        switches::kDisableLogging,
        switches::kEnableLogging,

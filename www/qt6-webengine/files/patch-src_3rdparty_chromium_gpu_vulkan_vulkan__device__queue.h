@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.h.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.h
-@@ -155,7 +155,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue {
+@@ -158,7 +158,7 @@ class COMPONENT_EXPORT(VULKAN) VulkanDeviceQueue {
  
    bool allow_protected_memory_ = false;
  

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/dns/dns_config_service_posix.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/net/dns/dns_config_service_posix.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/net/dns/dns_config_service_posix.cc
-@@ -33,6 +33,11 @@
+@@ -34,6 +34,11 @@
  #include "net/dns/dns_config_watcher_mac.h"
  #endif
  
@@ -12,7 +12,7 @@
  namespace net {
  
  namespace internal {
-@@ -129,6 +134,11 @@ class DnsConfigServicePosix::Watcher : public DnsConfi
+@@ -130,6 +135,11 @@ class DnsConfigServicePosix::Watcher : public DnsConfi
  
    bool Watch() override {
      CheckOnCorrectSequence();

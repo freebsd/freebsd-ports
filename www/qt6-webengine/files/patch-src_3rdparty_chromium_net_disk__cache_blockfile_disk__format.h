@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/disk_cache/blockfile/disk_format.h.orig	2022-06-08 06:40:31 UTC
+--- src/3rdparty/chromium/net/disk_cache/blockfile/disk_format.h.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/net/disk_cache/blockfile/disk_format.h
-@@ -149,7 +149,9 @@ struct RankingsNode {
+@@ -153,7 +153,9 @@ struct RankingsNode {
  };
  #pragma pack(pop)
  

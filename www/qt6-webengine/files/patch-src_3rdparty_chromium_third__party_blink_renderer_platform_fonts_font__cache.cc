@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_cache.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_cache.cc
-@@ -75,7 +75,7 @@ SkFontMgr* FontCache::static_font_manager_ = nullptr;
+@@ -72,7 +72,7 @@ SkFontMgr* FontCache::static_font_manager_ = nullptr;
  
  SkFontMgr* FontCache::static_font_manager_ = nullptr;
  
@@ -9,12 +9,12 @@
  float FontCache::device_scale_factor_ = 1.0;
  #endif
  
-@@ -120,7 +120,7 @@ FontPlatformData* FontCache::SystemFontPlatformData(
+@@ -139,7 +139,7 @@ FontPlatformData* FontCache::SystemFontPlatformData(
  FontPlatformData* FontCache::SystemFontPlatformData(
      const FontDescription& font_description) {
    const AtomicString& family = FontCache::SystemFontFamily();
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
-   if (family.IsEmpty() || family == font_family_names::kSystemUi)
+   if (family.empty() || family == font_family_names::kSystemUi)
      return nullptr;
  #else

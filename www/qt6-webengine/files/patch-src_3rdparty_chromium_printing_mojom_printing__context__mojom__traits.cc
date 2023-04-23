@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/printing/mojom/printing_context_mojom_traits.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/printing/mojom/printing_context_mojom_traits.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/printing/mojom/printing_context_mojom_traits.cc
-@@ -16,7 +16,7 @@
+@@ -15,7 +15,7 @@
  #include "ui/gfx/geometry/mojom/geometry_mojom_traits.h"
  #include "ui/gfx/geometry/size.h"
  
@@ -9,7 +9,7 @@
  #include "mojo/public/mojom/base/values.mojom.h"
  #endif
  
-@@ -162,7 +162,7 @@ bool StructTraits<
+@@ -147,7 +147,7 @@ bool StructTraits<
    }
  
    out->set_pages_per_sheet(data.pages_per_sheet());

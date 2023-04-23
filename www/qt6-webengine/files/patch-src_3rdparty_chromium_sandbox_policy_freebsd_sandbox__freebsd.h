@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/sandbox/policy/freebsd/sandbox_freebsd.h.orig	2022-11-07 19:58:12 UTC
+--- src/3rdparty/chromium/sandbox/policy/freebsd/sandbox_freebsd.h.orig	2023-04-16 15:58:20 UTC
 +++ src/3rdparty/chromium/sandbox/policy/freebsd/sandbox_freebsd.h
 @@ -0,0 +1,278 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
@@ -16,7 +16,7 @@
 +#include "sandbox/policy/export.h"
 +#include "sandbox/policy/linux/sandbox_seccomp_bpf_linux.h"
 +#include "sandbox/policy/mojom/sandbox.mojom.h"
-+#include "sandbox/policy/sanitizer_buildflags.h"
++#include "base/sanitizer_buildflags.h"
 +
 +#if BUILDFLAG(USING_SANITIZER)
 +#include <sanitizer/common_interface_defs.h>

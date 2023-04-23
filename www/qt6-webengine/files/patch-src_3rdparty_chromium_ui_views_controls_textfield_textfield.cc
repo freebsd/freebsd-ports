@@ -1,15 +1,15 @@
---- src/3rdparty/chromium/ui/views/controls/textfield/textfield.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/views/controls/textfield/textfield.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/ui/views/controls/textfield/textfield.cc
-@@ -73,7 +73,7 @@
- 
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
- #include "ui/base/ime/linux/text_edit_command_auralinux.h"
- #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
+@@ -71,7 +71,7 @@
+ #include "base/win/win_util.h"
  #endif
-@@ -166,7 +166,7 @@ bool IsControlKeyModifier(int flags) {
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "ui/base/ime/linux/text_edit_command_auralinux.h"
+ #include "ui/linux/linux_ui.h"
+ #endif
+@@ -164,7 +164,7 @@ bool IsControlKeyModifier(int flags) {
  // Control-modified key combination, but we cannot extend it to other platforms
  // as Control has different meanings and behaviors.
  // https://crrev.com/2580483002/#msg46
@@ -18,25 +18,25 @@
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -720,7 +720,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -707,7 +707,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+   if (!textfield)
+     return handled;
  
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
-   ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-       ui::GetTextEditKeyBindingsDelegate();
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -866,7 +866,7 @@ bool Textfield::SkipDefaultKeyEventProcessing(const ui
+   if (!handled && linux_ui &&
+@@ -851,7 +851,7 @@ bool Textfield::SkipDefaultKeyEventProcessing(const ui
+ }
+ 
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Skip any accelerator handling that conflicts with custom keybindings.
-   ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
-       ui::GetTextEditKeyBindingsDelegate();
-@@ -1728,7 +1728,7 @@ bool Textfield::ShouldDoLearning() {
+   auto* linux_ui = ui::LinuxUi::instance();
+   std::vector<ui::TextEditCommandAuraLinux> commands;
+@@ -1721,7 +1721,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }
  
@@ -45,7 +45,7 @@
  // TODO(https://crbug.com/952355): Implement this method to support Korean IME
  // reconversion feature on native text fields (e.g. find bar).
  bool Textfield::SetCompositionFromExistingText(
-@@ -2227,14 +2227,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2220,14 +2220,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }

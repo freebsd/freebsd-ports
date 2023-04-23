@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/sandbox/policy/switches.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/sandbox/policy/switches.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/sandbox/policy/switches.cc
-@@ -52,7 +52,7 @@ const char kMirroringSandbox[] = "mirroring";
+@@ -54,7 +54,7 @@ const char kMirroringSandbox[] = "mirroring";
  const char kMirroringSandbox[] = "mirroring";
  #endif  // BUILDFLAG(IS_MAC)
  
@@ -9,7 +9,7 @@
  const char kHardwareVideoDecodingSandbox[] = "hardware_video_decoding";
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
  
-@@ -99,7 +99,9 @@ const char kNoSandbox[] = "no-sandbox";
+@@ -101,7 +101,9 @@ const char kNoSandbox[] = "no-sandbox";
  // Meant to be used as a browser-level switch for testing purposes only.
  const char kNoSandbox[] = "no-sandbox";
  

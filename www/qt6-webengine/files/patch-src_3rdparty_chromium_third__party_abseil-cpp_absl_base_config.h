@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/third_party/abseil-cpp/absl/base/config.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/abseil-cpp/absl/base/config.h.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/third_party/abseil-cpp/absl/base/config.h
-@@ -448,7 +448,8 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
+@@ -460,7 +460,8 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
  // POSIX.1-2001.
  #ifdef ABSL_HAVE_SCHED_YIELD
  #error ABSL_HAVE_SCHED_YIELD cannot be directly set
@@ -10,7 +10,7 @@
  #define ABSL_HAVE_SCHED_YIELD 1
  #endif
  
-@@ -463,7 +464,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
+@@ -475,7 +476,7 @@ static_assert(ABSL_INTERNAL_INLINE_NAMESPACE_STR[0] !=
  // platforms.
  #ifdef ABSL_HAVE_SEMAPHORE_H
  #error ABSL_HAVE_SEMAPHORE_H cannot be directly set

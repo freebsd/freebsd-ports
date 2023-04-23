@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/download/download_manager_impl.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/browser/download/download_manager_impl.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/content/browser/download/download_manager_impl.cc
-@@ -90,7 +90,7 @@
+@@ -92,7 +92,7 @@
  #include "third_party/blink/public/common/storage_key/storage_key.h"
  #include "url/origin.h"
  
@@ -9,7 +9,7 @@
  #include "base/nix/xdg_util.h"
  #endif
  
-@@ -218,7 +218,7 @@ class DownloadItemFactoryImpl : public download::Downl
+@@ -219,7 +219,7 @@ class DownloadItemFactoryImpl : public download::Downl
    }
  };
  
@@ -18,7 +18,7 @@
  base::FilePath GetTemporaryDownloadDirectory() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
    return base::nix::GetXDGDirectory(env.get(), "XDG_DATA_HOME", ".local/share");
-@@ -654,7 +654,7 @@ base::FilePath DownloadManagerImpl::GetDefaultDownload
+@@ -655,7 +655,7 @@ base::FilePath DownloadManagerImpl::GetDefaultDownload
  
  base::FilePath DownloadManagerImpl::GetDefaultDownloadDirectory() {
    base::FilePath default_download_directory;

@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/content/browser/renderer_host/render_view_host_impl.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/content/browser/renderer_host/render_view_host_impl.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/content/browser/renderer_host/render_view_host_impl.cc
-@@ -259,7 +259,7 @@ void RenderViewHostImpl::GetPlatformSpecificPrefs(
+@@ -253,7 +253,7 @@ void RenderViewHostImpl::GetPlatformSpecificPrefs(
        display::win::ScreenWin::GetSystemMetricsInDIP(SM_CYVSCROLL);
    prefs->arrow_bitmap_width_horizontal_scroll_bar_in_dips =
        display::win::ScreenWin::GetSystemMetricsInDIP(SM_CXHSCROLL);

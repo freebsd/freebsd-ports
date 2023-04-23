@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_description.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_description.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_description.cc
 @@ -39,7 +39,7 @@
  #include "third_party/blink/renderer/platform/wtf/text/string_hash.h"
@@ -9,7 +9,7 @@
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -262,7 +262,7 @@ FontCacheKey FontDescription::CacheKey(
+@@ -270,7 +270,7 @@ FontCacheKey FontDescription::CacheKey(
        static_cast<unsigned>(fields_.orientation_) << 1 |          // bit 2-3
        static_cast<unsigned>(fields_.subpixel_text_position_);     // bit 1
  

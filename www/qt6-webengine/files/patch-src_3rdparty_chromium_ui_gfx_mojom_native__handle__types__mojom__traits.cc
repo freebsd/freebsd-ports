@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/gfx/mojom/native_handle_types_mojom_traits.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/ui/gfx/mojom/native_handle_types_mojom_traits.cc
 @@ -8,11 +8,11 @@ namespace mojo {
  
@@ -30,5 +30,5 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    out->modifier = data.modifier();
- #endif
- 
+   out->supports_zero_copy_webgpu_import =
+       data.supports_zero_copy_webgpu_import();

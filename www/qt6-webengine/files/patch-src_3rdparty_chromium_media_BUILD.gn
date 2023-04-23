@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/media/BUILD.gn.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/media/BUILD.gn.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/media/BUILD.gn
-@@ -78,6 +78,9 @@ config("media_config") {
+@@ -86,6 +86,9 @@ config("media_config") {
        defines += [ "DLOPEN_PULSEAUDIO" ]
      }
    }

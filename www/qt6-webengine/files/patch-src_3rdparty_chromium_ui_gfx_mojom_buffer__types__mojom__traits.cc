@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/ui/gfx/mojom/buffer_types_mojom_traits.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/ui/gfx/mojom/buffer_types_mojom_traits.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/ui/gfx/mojom/buffer_types_mojom_traits.cc
 @@ -33,7 +33,7 @@ gfx::mojom::GpuMemoryBufferPlatformHandlePtr StructTra
        return gfx::mojom::GpuMemoryBufferPlatformHandle::NewSharedMemoryHandle(
@@ -16,5 +16,5 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(USE_OZONE)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(USE_OZONE) || BUILDFLAG(IS_BSD)
      case gfx::mojom::GpuMemoryBufferPlatformHandleDataView::Tag::
-         NATIVE_PIXMAP_HANDLE:
+         kNativePixmapHandle:
        out->type = gfx::NATIVE_PIXMAP;

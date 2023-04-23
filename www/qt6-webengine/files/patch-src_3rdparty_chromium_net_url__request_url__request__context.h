@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/net/url_request/url_request_context.h.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/net/url_request/url_request_context.h.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/net/url_request/url_request_context.h
-@@ -89,7 +89,7 @@ class NET_EXPORT URLRequestContext {
+@@ -87,7 +87,7 @@ class NET_EXPORT URLRequestContext final {
  // TODO(crbug.com/1052397): Revisit once build flag switch of lacros-chrome is
  // complete.
  #if !BUILDFLAG(IS_WIN) && \

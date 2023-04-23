@@ -1,15 +1,6 @@
---- src/3rdparty/chromium/base/process/memory.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/process/memory.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/base/process/memory.cc
-@@ -65,14 +65,16 @@ NOINLINE void OnNoMemoryInternal(size_t size) {
- 
- }  // namespace internal
- 
-+#if !BUILDFLAG(IS_BSD)
- void TerminateBecauseOutOfMemory(size_t size) {
-   internal::OnNoMemoryInternal(size);
- }
-+#endif
- 
+@@ -28,7 +28,7 @@ namespace base {
  // Defined in memory_mac.mm for macOS + use_allocator="none".  In case of
  // USE_PARTITION_ALLOC_AS_MALLOC, no need to route the call to the system
  // default calloc of macOS.

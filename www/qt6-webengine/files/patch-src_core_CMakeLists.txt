@@ -1,6 +1,6 @@
---- src/core/CMakeLists.txt.orig	2022-11-08 21:18:48 UTC
+--- src/core/CMakeLists.txt.orig	2023-03-28 19:45:02 UTC
 +++ src/core/CMakeLists.txt
-@@ -16,7 +16,7 @@ add_subdirectory(tools)
+@@ -19,7 +19,7 @@ add_subdirectory(tools)
  #   TOOLCHAIN SETUP
  ##
  
@@ -9,22 +9,25 @@
      setup_toolchains()
  endif()
  
-@@ -366,12 +366,12 @@ foreach(arch ${archs})
+@@ -389,7 +389,7 @@ foreach(arch ${archs})
              CONDITION QT_FEATURE_webengine_embedded_build
          )
  
 -        if(LINUX)
 +        if(LINUX OR FREEBSD)
              list(APPEND gnArgArg
-                 use_cups=false
-                 use_gio=false
-                 use_gnome_keyring=false
+                 use_gtk=false # GTK toolkit bindings
+                 use_qt=false # Qt5 toolkit bindings
+@@ -400,7 +400,7 @@ foreach(arch ${archs})
+                 use_glib=false
+                 use_bluez=false
+                 use_vaapi=false
 -                use_udev=true
 +                use_udev=false
-                 use_bundled_fontconfig=false
                  enable_session_service=false
                  is_cfi=false
-@@ -425,6 +425,10 @@ foreach(arch ${archs})
+                 use_ozone=true
+@@ -450,6 +450,10 @@ foreach(arch ${archs})
              extend_gn_list(gnArgArg
                  ARGS use_pulseaudio
                  CONDITION QT_FEATURE_webengine_system_pulseaudio

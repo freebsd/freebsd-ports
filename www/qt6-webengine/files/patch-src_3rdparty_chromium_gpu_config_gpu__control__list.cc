@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/config/gpu_control_list.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/gpu/config/gpu_control_list.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/gpu/config/gpu_control_list.cc
-@@ -261,7 +261,7 @@ GpuControlList::GLType GpuControlList::More::GetDefaul
+@@ -302,7 +302,7 @@ GpuControlList::GLType GpuControlList::More::GetDefaul
  GpuControlList::GLType GpuControlList::More::GetDefaultGLType() {
  #if BUILDFLAG(IS_CHROMEOS)
    return kGLTypeGL;
@@ -9,7 +9,7 @@
    return kGLTypeGL;
  #elif BUILDFLAG(IS_MAC)
    return kGLTypeGL;
-@@ -784,7 +784,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
+@@ -844,7 +844,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
    return kOsAndroid;
  #elif BUILDFLAG(IS_FUCHSIA)
    return kOsFuchsia;

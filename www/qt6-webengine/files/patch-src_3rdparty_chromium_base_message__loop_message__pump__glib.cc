@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/base/message_loop/message_pump_glib.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/base/message_loop/message_pump_glib.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/base/message_loop/message_pump_glib.cc
 @@ -8,6 +8,11 @@
  #include <glib.h>
@@ -10,9 +10,9 @@
 +#endif
 +
  #include "base/logging.h"
+ #include "base/memory/raw_ptr.h"
  #include "base/notreached.h"
- #include "base/numerics/safe_conversions.h"
-@@ -50,9 +55,13 @@ bool RunningOnMainThread() {
+@@ -51,9 +56,13 @@ bool RunningOnMainThread() {
  }
  
  bool RunningOnMainThread() {

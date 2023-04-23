@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/components/crash/core/common/BUILD.gn.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/components/crash/core/common/BUILD.gn.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/components/crash/core/common/BUILD.gn
 @@ -8,7 +8,7 @@ declare_args() {
  
@@ -9,12 +9,3 @@
  }
  
  group("common") {
-@@ -190,7 +190,7 @@ source_set("unit_tests") {
-     sources += [ "crash_key_breakpad_ios_unittest.cc" ]
-     deps += [ "//third_party/breakpad:client" ]
-     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
--  } else if (!is_mac && !is_win && !is_fuchsia && !is_android) {
-+  } else if (!is_mac && !is_win && !is_fuchsia && !is_android && !is_bsd) {
-     include_dirs = [ "//third_party/breakpad/breakpad/src/" ]
-     sources += [ "crash_key_breakpad_unittest.cc" ]
-   }

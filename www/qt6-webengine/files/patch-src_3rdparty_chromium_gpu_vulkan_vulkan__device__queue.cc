@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.cc.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.cc.orig	2023-03-28 19:45:02 UTC
 +++ src/3rdparty/chromium/gpu/vulkan/vulkan_device_queue.cc
-@@ -85,7 +85,7 @@ bool VulkanDeviceQueue::Initialize(
+@@ -89,7 +89,7 @@ bool VulkanDeviceQueue::Initialize(
  
        // In dual-CPU cases, we cannot detect the active GPU correctly on Linux,
        // so don't select GPU device based on the |gpu_info|.
