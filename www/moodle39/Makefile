@@ -13,7 +13,8 @@ LICENSE=	GPLv3
 DEPRECATED=	Requires php74 which has been removed from the tree
 EXPIRATION_DATE=	2023-04-30
 
-CONFLICTS=	moodle311-3.11.[0-9]* moodle40-4.0.[0-9]* moodle41-4.1.[0-9]*
+CONFLICTS=	moodle311-3.11.[0-9]* moodle40-4.0.[0-9]* moodle41-4.1.[0-9]* \
+		moodle42-4.2
 
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom fileinfo filter gd iconv intl mbstring \
