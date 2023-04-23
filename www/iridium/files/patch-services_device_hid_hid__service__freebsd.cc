@@ -1,4 +1,4 @@
---- services/device/hid/hid_service_freebsd.cc.orig	2023-03-13 07:33:08 UTC
+--- services/device/hid/hid_service_freebsd.cc.orig	2023-04-22 17:45:15 UTC
 +++ services/device/hid/hid_service_freebsd.cc
 @@ -0,0 +1,395 @@
 +// Copyright 2014 The Chromium Authors. All rights reserved.
@@ -49,7 +49,7 @@
 +	allow_protected_reports(allow_protected_reports),
 +	allow_fido_reports(allow_fido_reports),
 +        callback(std::move(callback)),
-+        task_runner(base::SequencedTaskRunner::GetCurrentDefault()),
++	task_runner(base::SequencedTaskRunner::GetCurrentDefault()),
 +        blocking_task_runner(
 +            base::ThreadPool::CreateSequencedTaskRunner(kBlockingTaskTraits)) {}
 +  ~ConnectParams() {}
@@ -67,7 +67,7 @@
 + public:
 +  BlockingTaskRunnerHelper(base::WeakPtr<HidServiceFreeBSD> service)
 +      : service_(std::move(service)),
-+        task_runner_(base::SequencedTaskRunner::GetCurrentDefault()) {
++	task_runner_(base::SequencedTaskRunner::GetCurrentDefault()) {
 +    DETACH_FROM_SEQUENCE(sequence_checker_);
 +
 +    timer_.reset(new base::RepeatingTimer());

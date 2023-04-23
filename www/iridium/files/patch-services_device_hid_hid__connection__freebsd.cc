@@ -1,4 +1,4 @@
---- services/device/hid/hid_connection_freebsd.cc.orig	2023-03-13 07:33:08 UTC
+--- services/device/hid/hid_connection_freebsd.cc.orig	2023-04-22 17:45:15 UTC
 +++ services/device/hid/hid_connection_freebsd.cc
 @@ -0,0 +1,240 @@
 +// Copyright (c) 2014 The Chromium Authors. All rights reserved.
@@ -30,7 +30,7 @@
 +                     base::WeakPtr<HidConnectionFreeBSD> connection)
 +      : fd_(std::move(fd)),
 +        connection_(connection),
-+        origin_task_runner_(base::SequencedTaskRunner::GetCurrentDefault()) {
++	origin_task_runner_(base::SequencedTaskRunner::GetCurrentDefault()) {
 +    DETACH_FROM_SEQUENCE(sequence_checker_);
 +    // Report buffers must always have room for the report ID.
 +    report_buffer_size_ = device_info->max_input_report_size() + 1;

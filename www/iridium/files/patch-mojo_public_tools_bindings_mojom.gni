@@ -1,7 +1,7 @@
---- mojo/public/tools/bindings/mojom.gni.orig	2023-03-13 07:33:08 UTC
+--- mojo/public/tools/bindings/mojom.gni.orig	2023-04-22 17:45:15 UTC
 +++ mojo/public/tools/bindings/mojom.gni
-@@ -703,6 +703,16 @@ template("mojom") {
-       enabled_features += [ "is_win" ]
+@@ -723,6 +723,16 @@ template("mojom") {
+       enabled_features += [ "is_apple" ]
      }
  
 +    if (is_openbsd) {
@@ -15,5 +15,5 @@
 +    }
 +
      action(parser_target_name) {
-       script = mojom_parser_script
-       inputs = mojom_parser_sources + ply_sources + [ build_metadata_filename ]
+       allow_remote = true
+       custom_processor = "mojom_parser"

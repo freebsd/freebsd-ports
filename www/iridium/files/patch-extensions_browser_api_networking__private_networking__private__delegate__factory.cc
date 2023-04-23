@@ -1,4 +1,4 @@
---- extensions/browser/api/networking_private/networking_private_delegate_factory.cc.orig	2022-10-05 07:34:01 UTC
+--- extensions/browser/api/networking_private/networking_private_delegate_factory.cc.orig	2023-04-22 17:45:15 UTC
 +++ extensions/browser/api/networking_private/networking_private_delegate_factory.cc
 @@ -14,7 +14,7 @@
  #include "extensions/browser/api/networking_private/networking_private_chromeos.h"
@@ -9,7 +9,7 @@
  #include "extensions/browser/api/networking_private/networking_private_linux.h"
  #elif BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC)
  #include "components/wifi/wifi_service.h"
-@@ -66,7 +66,7 @@ KeyedService* NetworkingPrivateDelegateFactory::BuildS
+@@ -68,7 +68,7 @@ KeyedService* NetworkingPrivateDelegateFactory::BuildS
    delegate = new NetworkingPrivateChromeOS(browser_context);
  #elif BUILDFLAG(IS_CHROMEOS_LACROS)
    delegate = new NetworkingPrivateLacros(browser_context);

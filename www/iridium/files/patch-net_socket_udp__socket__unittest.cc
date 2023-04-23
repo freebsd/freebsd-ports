@@ -1,6 +1,6 @@
---- net/socket/udp_socket_unittest.cc.orig	2023-03-13 07:33:08 UTC
+--- net/socket/udp_socket_unittest.cc.orig	2023-04-22 17:45:15 UTC
 +++ net/socket/udp_socket_unittest.cc
-@@ -341,7 +341,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
+@@ -345,7 +345,7 @@ TEST_F(UDPSocketTest, PartialRecv) {
    EXPECT_EQ(second_packet, received);
  }
  
@@ -9,7 +9,7 @@
  // - MacOS: requires root permissions on OSX 10.7+.
  // - Android: devices attached to testbots don't have default network, so
  // broadcasting to 255.255.255.255 returns error -109 (Address not reachable).
-@@ -601,7 +601,7 @@ TEST_F(UDPSocketTest, ClientSetDoNotFragment) {
+@@ -656,7 +656,7 @@ TEST_F(UDPSocketTest, ClientSetDoNotFragment) {
      EXPECT_THAT(rv, IsOk());
  
      rv = client.SetDoNotFragment();
@@ -18,7 +18,7 @@
      // TODO(crbug.com/945590): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
  #elif BUILDFLAG(IS_MAC)
-@@ -629,7 +629,7 @@ TEST_F(UDPSocketTest, ServerSetDoNotFragment) {
+@@ -684,7 +684,7 @@ TEST_F(UDPSocketTest, ServerSetDoNotFragment) {
      EXPECT_THAT(rv, IsOk());
  
      rv = server.SetDoNotFragment();
@@ -27,7 +27,7 @@
      // TODO(crbug.com/945590): IP_MTU_DISCOVER is not implemented on Fuchsia.
      EXPECT_THAT(rv, IsError(ERR_NOT_IMPLEMENTED));
  #elif BUILDFLAG(IS_MAC)
-@@ -694,7 +694,7 @@ TEST_F(UDPSocketTest, JoinMulticastGroup) {
+@@ -749,7 +749,7 @@ TEST_F(UDPSocketTest, JoinMulticastGroup) {
  
  // TODO(https://crbug.com/947115): failing on device on iOS 12.2.
  // TODO(https://crbug.com/1227554): flaky on Mac 11.
@@ -36,7 +36,7 @@
  #define MAYBE_SharedMulticastAddress DISABLED_SharedMulticastAddress
  #else
  #define MAYBE_SharedMulticastAddress SharedMulticastAddress
-@@ -748,7 +748,7 @@ TEST_F(UDPSocketTest, MAYBE_SharedMulticastAddress) {
+@@ -803,7 +803,7 @@ TEST_F(UDPSocketTest, MAYBE_SharedMulticastAddress) {
                                  NetLogSource());
    ASSERT_THAT(client_socket.Connect(send_address), IsOk());
  

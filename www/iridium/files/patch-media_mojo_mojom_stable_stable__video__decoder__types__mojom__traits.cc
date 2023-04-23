@@ -1,6 +1,6 @@
---- media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.cc.orig	2023-03-13 07:33:08 UTC
+--- media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.cc.orig	2023-04-22 17:45:15 UTC
 +++ media/mojo/mojom/stable/stable_video_decoder_types_mojom_traits.cc
-@@ -42,7 +42,7 @@ media::stable::mojom::VideoFrameDataPtr MakeVideoFrame
+@@ -39,7 +39,7 @@ gfx::GpuMemoryBufferHandle GetVideoFrameGpuMemoryBuffe
    gfx::GpuMemoryBufferHandle gpu_memory_buffer_handle =
        input->GetGpuMemoryBuffer()->CloneHandle();
  

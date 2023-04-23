@@ -1,4 +1,4 @@
---- components/feature_engagement/public/feature_constants.h.orig	2023-03-13 07:33:08 UTC
+--- components/feature_engagement/public/feature_constants.h.orig	2023-04-22 17:45:15 UTC
 +++ components/feature_engagement/public/feature_constants.h
 @@ -22,7 +22,7 @@ BASE_DECLARE_FEATURE(kUseClientConfigIPH);
  BASE_DECLARE_FEATURE(kIPHDummyFeature);
@@ -9,7 +9,7 @@
  BASE_DECLARE_FEATURE(kIPHBatterySaverModeFeature);
  BASE_DECLARE_FEATURE(kIPHDesktopSharedHighlightingFeature);
  BASE_DECLARE_FEATURE(kIPHDesktopTabGroupsNewGroupFeature);
-@@ -180,7 +180,8 @@ BASE_DECLARE_FEATURE(kIPHiOSDefaultBrowserSettingsBadg
+@@ -181,7 +181,8 @@ BASE_DECLARE_FEATURE(kIPHiOSAppStorePromoFeature);
  #endif  // BUILDFLAG(IS_IOS)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

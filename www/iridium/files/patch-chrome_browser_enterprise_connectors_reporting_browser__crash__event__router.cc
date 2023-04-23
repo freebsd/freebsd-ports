@@ -1,19 +1,20 @@
---- chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc.orig	2022-12-01 10:35:46 UTC
+--- chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc.orig	2023-04-22 17:45:15 UTC
 +++ chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc
-@@ -19,14 +19,14 @@
- #include "chrome/common/chrome_paths.h"
- #include "components/version_info/version_info.h"
- 
--#if !BUILDFLAG(IS_FUCHSIA)
-+#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_BSD)
- #include "components/crash/core/app/crashpad.h"
- #include "third_party/crashpad/crashpad/client/crash_report_database.h"
- #endif  // !BUILDFLAG(IS_FUCHSIA)
- 
- namespace enterprise_connectors {
- 
--#if !BUILDFLAG(IS_FUCHSIA)
-+#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_BSD)
- namespace {
- // key names used when building the dictionary to pass to the real-time
- // reporting API
+@@ -14,7 +14,7 @@ BrowserCrashEventRouter::BrowserCrashEventRouter(
+   if (!base::FeatureList::IsEnabled(kBrowserCrashEventsEnabled)) {
+     return;
+   }
+-#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_CHROMEOS_ASH)
++#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_CHROMEOS_ASH) && !BUILDFLAG(IS_BSD)
+   CrashReportingContext* crash_reporting_context =
+       CrashReportingContext::GetInstance();
+   Profile* profile = Profile::FromBrowserContext(context);
+@@ -27,7 +27,7 @@ BrowserCrashEventRouter::~BrowserCrashEventRouter() {
+   if (!base::FeatureList::IsEnabled(kBrowserCrashEventsEnabled)) {
+     return;
+   }
+-#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_CHROMEOS_ASH)
++#if !BUILDFLAG(IS_FUCHSIA) && !BUILDFLAG(IS_CHROMEOS_ASH) && !BUILDFLAG(IS_BSD)
+   CrashReportingContext* crash_reporting_context =
+       CrashReportingContext::GetInstance();
+   crash_reporting_context->RemoveProfile(this);

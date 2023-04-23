@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/partition_root.cc.orig	2023-03-13 07:33:08 UTC
+--- base/allocator/partition_allocator/partition_root.cc.orig	2023-04-22 17:45:15 UTC
 +++ base/allocator/partition_allocator/partition_root.cc
 @@ -42,7 +42,7 @@
  #include "wow64apiset.h"
@@ -27,7 +27,7 @@
    // It's better for slot_usage to be stack-allocated and fixed-size, which
    // demands that its size be constexpr. On IS_APPLE and Linux on arm64,
    // PartitionPageSize() is always SystemPageSize() << 2, so regardless of
-@@ -800,7 +800,7 @@ void PartitionRoot<thread_safe>::Init(PartitionOptions
+@@ -811,7 +811,7 @@ void PartitionRoot<thread_safe>::Init(PartitionOptions
      // apple OSes.
      PA_CHECK((internal::SystemPageSize() == (size_t{1} << 12)) ||
               (internal::SystemPageSize() == (size_t{1} << 14)));

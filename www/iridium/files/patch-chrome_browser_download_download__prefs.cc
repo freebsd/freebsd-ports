@@ -1,4 +1,4 @@
---- chrome/browser/download/download_prefs.cc.orig	2023-03-13 07:33:08 UTC
+--- chrome/browser/download/download_prefs.cc.orig	2023-04-22 17:45:15 UTC
 +++ chrome/browser/download/download_prefs.cc
 @@ -11,6 +11,7 @@
  
@@ -8,8 +8,8 @@
  #include "base/feature_list.h"
  #include "base/files/file_util.h"
  #include "base/functional/bind.h"
-@@ -61,6 +62,10 @@
- #include "chrome/browser/ui/pdf/adobe_reader_info_win.h"
+@@ -64,6 +65,10 @@
+ #include "chrome/browser/download/bubble/download_bubble_prefs.h"
  #endif
  
 +#if BUILDFLAG(IS_OPENBSD)
@@ -19,7 +19,7 @@
  using content::BrowserContext;
  using content::BrowserThread;
  using content::DownloadManager;
-@@ -71,7 +76,7 @@ namespace {
+@@ -74,7 +79,7 @@ namespace {
  // Consider downloads 'dangerous' if they go to the home directory on Linux and
  // to the desktop on any platform.
  bool DownloadPathIsDangerous(const base::FilePath& download_path) {
@@ -28,7 +28,7 @@
    base::FilePath home_dir = base::GetHomeDir();
    if (download_path == home_dir) {
      return true;
-@@ -182,7 +187,7 @@ DownloadPrefs::DownloadPrefs(Profile* profile) : profi
+@@ -185,7 +190,7 @@ DownloadPrefs::DownloadPrefs(Profile* profile) : profi
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -37,7 +37,7 @@
    should_open_pdf_in_system_reader_ =
        prefs->GetBoolean(prefs::kOpenPdfDownloadInSystemReader);
  #endif
-@@ -302,7 +307,7 @@ void DownloadPrefs::RegisterProfilePrefs(
+@@ -312,7 +317,7 @@ void DownloadPrefs::RegisterProfilePrefs(
    registry->RegisterTimePref(prefs::kDownloadLastCompleteTime,
                               /*default_value=*/base::Time());
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -46,7 +46,7 @@
    registry->RegisterBooleanPref(prefs::kOpenPdfDownloadInSystemReader, false);
  #endif
  #if BUILDFLAG(IS_ANDROID)
-@@ -475,7 +480,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
+@@ -485,7 +490,7 @@ void DownloadPrefs::DisableAutoOpenByUserBasedOnExtens
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -55,7 +55,7 @@
  void DownloadPrefs::SetShouldOpenPdfInSystemReader(bool should_open) {
    if (should_open_pdf_in_system_reader_ == should_open)
      return;
-@@ -507,7 +512,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
+@@ -517,7 +522,7 @@ bool DownloadPrefs::ShouldOpenPdfInSystemReader() cons
  
  void DownloadPrefs::ResetAutoOpenByUser() {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -64,7 +64,7 @@
    SetShouldOpenPdfInSystemReader(false);
  #endif
    auto_open_by_user_.clear();
-@@ -538,7 +543,7 @@ void DownloadPrefs::SaveAutoOpenState() {
+@@ -548,7 +553,7 @@ void DownloadPrefs::SaveAutoOpenState() {
  bool DownloadPrefs::CanPlatformEnableAutoOpenForPdf() const {
  #if BUILDFLAG(IS_CHROMEOS)
    return false;  // There is no UI for auto-open on ChromeOS.
@@ -73,7 +73,7 @@
    return ShouldOpenPdfInSystemReader();
  #else
    return false;
-@@ -662,7 +667,14 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
+@@ -672,7 +677,14 @@ base::FilePath DownloadPrefs::SanitizeDownloadTargetPa
  #else
    // If the stored download directory is an absolute path, we presume it's
    // correct; there's not really much more validation we can do here.

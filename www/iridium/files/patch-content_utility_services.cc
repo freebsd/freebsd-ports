@@ -1,4 +1,4 @@
---- content/utility/services.cc.orig	2023-03-13 07:33:08 UTC
+--- content/utility/services.cc.orig	2023-04-22 17:45:15 UTC
 +++ content/utility/services.cc
 @@ -64,7 +64,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
@@ -16,7 +16,7 @@
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) && \
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)) && \
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
- #include "media/mojo/services/stable_video_decoder_factory_service.h"  // nogncheck
+ #include "media/mojo/services/stable_video_decoder_factory_process_service.h"  // nogncheck
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
 @@ -215,7 +215,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
        << "task_policy_set TASK_QOS_POLICY";
@@ -34,9 +34,9 @@
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) && \
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)) && \
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
- auto RunStableVideoDecoderFactoryService(
-     mojo::PendingReceiver<media::stable::mojom::StableVideoDecoderFactory>
-@@ -331,7 +331,7 @@ auto RunStableVideoDecoderFactoryService(
+ auto RunStableVideoDecoderFactoryProcessService(
+     mojo::PendingReceiver<
+@@ -330,7 +330,7 @@ auto RunStableVideoDecoderFactoryProcessService(
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  
@@ -45,14 +45,14 @@
  auto RunVideoEncodeAcceleratorProviderFactory(
      mojo::PendingReceiver<media::mojom::VideoEncodeAcceleratorProviderFactory>
          receiver) {
-@@ -389,13 +389,13 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -388,13 +388,13 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
 -#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) && \
 +#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD)) && \
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
-   services.Add(RunStableVideoDecoderFactoryService);
+   services.Add(RunStableVideoDecoderFactoryProcessService);
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  

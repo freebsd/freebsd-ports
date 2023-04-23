@@ -1,9 +1,9 @@
---- media/base/audio_latency.cc.orig	2022-12-06 08:09:13 UTC
+--- media/base/audio_latency.cc.orig	2023-04-22 17:45:15 UTC
 +++ media/base/audio_latency.cc
 @@ -147,7 +147,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
    }
  
- #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_APPLE) || \
 -    BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    // On Linux, MacOS and Fuchsia, the low level IO implementations on the

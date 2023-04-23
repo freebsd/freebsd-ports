@@ -1,4 +1,4 @@
---- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2023-03-13 07:33:08 UTC
+--- ui/ozone/platform/wayland/ozone_platform_wayland.cc.orig	2023-04-22 17:45:15 UTC
 +++ ui/ozone/platform/wayland/ozone_platform_wayland.cc
 @@ -71,7 +71,7 @@
  #include "ui/ozone/platform/wayland/host/wayland_cursor_factory.h"
@@ -18,7 +18,7 @@
      linux_ui_delegate_ =
          std::make_unique<LinuxUiDelegateWayland>(connection_.get());
  #endif
-@@ -469,7 +469,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -470,7 +470,7 @@ class OzonePlatformWayland : public OzonePlatform,
    DrmRenderNodePathFinder path_finder_;
  #endif
  

@@ -1,4 +1,4 @@
---- content/browser/browser_url_handler_impl.cc.orig	2023-01-17 19:19:00 UTC
+--- content/browser/browser_url_handler_impl.cc.orig	2023-04-22 17:45:15 UTC
 +++ content/browser/browser_url_handler_impl.cc
 @@ -12,6 +12,7 @@
  #include "content/browser/webui/web_ui_impl.h"
@@ -12,9 +12,9 @@
  
  static void gfxlog_request2(const std::string &caller, const GURL &url)
  {
-+        base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
-+        if (!command_line->HasSwitch(switches::kTrk))
-+                return;
++	base::CommandLine* command_line = base::CommandLine::ForCurrentProcess();
++	if (!command_line->HasSwitch(switches::kTrk))
++		return;
 +
  	auto browser = chrome::FindLastActive();
  	if (browser == nullptr)

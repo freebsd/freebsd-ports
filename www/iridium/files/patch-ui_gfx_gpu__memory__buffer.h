@@ -1,4 +1,4 @@
---- ui/gfx/gpu_memory_buffer.h.orig	2023-01-17 19:19:00 UTC
+--- ui/gfx/gpu_memory_buffer.h.orig	2023-04-22 17:45:15 UTC
 +++ ui/gfx/gpu_memory_buffer.h
 @@ -15,7 +15,7 @@
  #include "ui/gfx/geometry/rect.h"
@@ -7,7 +7,7 @@
 -#if BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_OZONE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  #include "ui/gfx/native_pixmap_handle.h"
- #elif BUILDFLAG(IS_MAC)
+ #elif BUILDFLAG(IS_APPLE)
  #include "ui/gfx/mac/io_surface.h"
 @@ -75,7 +75,7 @@ struct GFX_EXPORT GpuMemoryBufferHandle {
    base::UnsafeSharedMemoryRegion region;
@@ -16,5 +16,5 @@
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
    NativePixmapHandle native_pixmap_handle;
- #elif BUILDFLAG(IS_MAC)
+ #elif BUILDFLAG(IS_APPLE)
    ScopedIOSurface io_surface;

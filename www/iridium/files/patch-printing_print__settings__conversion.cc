@@ -1,6 +1,6 @@
---- printing/print_settings_conversion.cc.orig	2023-03-13 07:33:08 UTC
+--- printing/print_settings_conversion.cc.orig	2023-04-22 17:45:15 UTC
 +++ printing/print_settings_conversion.cc
-@@ -275,7 +275,7 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
+@@ -277,7 +277,7 @@ std::unique_ptr<PrintSettings> PrintSettingsFromJobSet
      settings->set_is_modifiable(is_modifiable.value());
    }
  
