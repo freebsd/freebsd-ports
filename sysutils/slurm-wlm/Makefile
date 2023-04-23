@@ -1,6 +1,6 @@
 PORTNAME=	slurm
 DISTVERSION=	20.02.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils python
 MASTER_SITES=	https://ftp.icm.edu.pl/packages/slurm/
 PKGNAMESUFFIX=	-wlm

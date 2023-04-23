@@ -1,5 +1,6 @@
 PORTNAME=	h5utils
 DISTVERSION=	1.13.2
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/NanoComp/${PORTNAME}/releases/download/${DISTVERSION}/
 

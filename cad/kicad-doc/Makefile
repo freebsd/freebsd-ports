@@ -1,5 +1,6 @@
 PORTNAME=	kicad
 PORTVERSION=	7.0.2
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://kicad-downloads.s3.cern.ch/docs/
 PKGNAMESUFFIX=	-doc

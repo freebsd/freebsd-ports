@@ -1,5 +1,6 @@
 PORTNAME=	undernet-ircu
 PORTVERSION=	2.10.12.19
+PORTREVISION=	1
 CATEGORIES=	irc net
 MASTER_SITES=	https://github.com/UndernetIRC/ircu2/releases/download/u${PORTVERSION}/ \
 		ftp://ftpmirror.uk/freebsd-ports/undernet-ircu/

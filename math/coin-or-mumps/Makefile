@@ -1,7 +1,7 @@
 PORTNAME=	mumps
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://coin-or-tools.github.io/ThirdParty-Mumps/:mumps
 PKGNAMEPREFIX=	coin-or-

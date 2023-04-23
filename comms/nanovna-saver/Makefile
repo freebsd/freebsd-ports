@@ -1,6 +1,7 @@
 PORTNAME=	nanovna-saver
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	hamradio@FreeBSD.org

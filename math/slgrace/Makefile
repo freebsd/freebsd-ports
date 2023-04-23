@@ -1,6 +1,6 @@
 PORTNAME=	slgrace
 PORTVERSION=	0.2.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	math devel
 MASTER_SITES=	ftp://space.mit.edu/pub/davis/slang/v${SLANG_VER}/modules/grace/ \
 		ftp://ftp.fu-berlin.de/pub/unix/misc/slang/v${SLANG_VER}/modules/grace/ \

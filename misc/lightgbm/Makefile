@@ -1,6 +1,7 @@
 PORTNAME=	lightgbm
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.5
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org

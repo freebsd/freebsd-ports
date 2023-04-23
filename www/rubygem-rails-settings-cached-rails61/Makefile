@@ -1,5 +1,6 @@
 PORTNAME=	rails-settings-cached
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	-rails61

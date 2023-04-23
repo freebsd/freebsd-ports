@@ -1,5 +1,5 @@
 PORTVERSION=		2.99.5
-PORTREVISION=		1
+PORTREVISION=		2
 PKGNAMESUFFIX=		3
 
 WWW=		https://corosync.github.io/corosync/

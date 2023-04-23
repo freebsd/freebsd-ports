@@ -1,5 +1,6 @@
 PORTNAME=	penaltymodel
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

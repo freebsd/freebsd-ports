@@ -1,6 +1,7 @@
 PORTNAME=	chimes-calculator
 DISTVERSIONPREFIX=	v.
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	qiskit-optimization
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	science python # quantum-computing
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

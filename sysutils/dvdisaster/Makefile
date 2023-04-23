@@ -1,6 +1,6 @@
 PORTNAME=	dvdisaster
 PORTVERSION=	0.79.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ml1.org.uk/distfiles/ \
 		http://www.ancientgeek.org.uk/distfiles/

@@ -1,5 +1,6 @@
 PORTNAME=	cpp2py
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

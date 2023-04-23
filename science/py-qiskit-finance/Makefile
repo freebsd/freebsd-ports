@@ -1,5 +1,6 @@
 PORTNAME=	qiskit-finance
 DISTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	science finance python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

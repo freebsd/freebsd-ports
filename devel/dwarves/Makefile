@@ -1,5 +1,6 @@
 PORTNAME=	dwarves
 DISTVERSION=	1.19
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://fedorapeople.org/~acme/dwarves/
 

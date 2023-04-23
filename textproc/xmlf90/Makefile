@@ -1,5 +1,6 @@
 PORTNAME=	xmlf90
 DISTVERSION=	1.5.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://gitlab.com/siesta-project/libraries/xmlf90/-/archive/1.5.5/
 

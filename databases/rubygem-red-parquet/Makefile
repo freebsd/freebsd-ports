@@ -1,5 +1,6 @@
 PORTNAME=	red-parquet
 PORTVERSION=	8.0.0
+PORTREVISION=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

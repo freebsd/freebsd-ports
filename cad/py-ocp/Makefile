@@ -1,6 +1,6 @@
 PORTNAME=	ocp
 DISTVERSION=	7.4-RC2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	cad
 # Direct access to github is needed because the release added an extra archive which
 # we need to build from, rather than the initial release.

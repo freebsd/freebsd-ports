@@ -1,5 +1,6 @@
 PORTNAME=	OpenFermion-Dirac
 DISTVERSION=	g20220812
+PORTREVISION=	1
 CATEGORIES=	science python # chemistry, quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

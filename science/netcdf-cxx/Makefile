@@ -1,6 +1,6 @@
 PORTNAME=	netcdf-cxx
 PORTVERSION=	4.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://downloads.unidata.ucar.edu/netcdf-cxx/${PORTVERSION}/ \
 		LOCAL/sunpoet

@@ -1,5 +1,6 @@
 PORTNAME=	pymbd
 DISTVERSION=	0.12.5
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 MASTER_SITES=	https://github.com/libmbd/libmbd/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

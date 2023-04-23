@@ -1,5 +1,6 @@
 PORTNAME=	fplll
 DISTVERSION=	5.4.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	gcc-msp430-ti-toolchain
 PORTVERSION=	${TI_VERSION}.${RELEASE_DATE}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	GCC/releases/gcc-${GCC_REL_VERSION}:gcc \
 		SOURCEWARE/binutils/releases:binutils \

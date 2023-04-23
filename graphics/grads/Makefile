@@ -1,6 +1,6 @@
 PORTNAME=	grads
 PORTVERSION=	1.9b4
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	graphics science math
 MASTER_SITES=	ftp://grads.iges.org/grads/1.9/:src \
 		ftp://cola.gmu.edu/grads/1.9/:src \

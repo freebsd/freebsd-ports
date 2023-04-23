@@ -1,5 +1,6 @@
 PORTNAME=	fgallery
 PORTVERSION=	1.9.1
+PORTREVISION=	1
 CATEGORIES=	www graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org

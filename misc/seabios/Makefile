@@ -1,6 +1,6 @@
 PORTNAME=	seabios
 PORTVERSION=	1.16.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://www.seabios.org/downloads/
 

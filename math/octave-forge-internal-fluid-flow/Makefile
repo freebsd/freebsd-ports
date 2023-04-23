@@ -1,7 +1,7 @@
 PORTNAME=	octave-forge-internal-fluid-flow
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

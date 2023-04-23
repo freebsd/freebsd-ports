@@ -1,5 +1,6 @@
 PORTNAME=	pcsc-cyberjack
 DISTVERSION=	3.99.5final.SP15
+PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	https://support.reiner-sct.de/downloads/LINUX/V3.99.5_SP15/
 DISTNAME=	${PORTNAME}_${DISTVERSION}

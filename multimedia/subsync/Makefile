@@ -1,5 +1,6 @@
 PORTNAME=	subsync
 DISTVERSION=	g20190702
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 
 MAINTAINER=	yuri@FreeBSD.org

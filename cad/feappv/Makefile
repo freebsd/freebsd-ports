@@ -1,6 +1,6 @@
 PORTNAME=	feappv
 PORTVERSION=	4.1i
-PORTREVISION=	4
+PORTREVISION=	5
 DISTVERSIONPREFIX=v
 CATEGORIES=	cad education science
 MASTER_SITES=	http://projects.ce.berkeley.edu/feap/${PORTNAME}/:1

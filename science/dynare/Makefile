@@ -1,5 +1,6 @@
 PORTNAME=	dynare
 DISTVERSION=	5.4
+PORTREVISION=	1
 CATEGORIES=	science # economics
 MASTER_SITES=	https://www.dynare.org/release/source/
 

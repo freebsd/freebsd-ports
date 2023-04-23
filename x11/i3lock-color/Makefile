@@ -1,5 +1,6 @@
 PORTNAME=	i3lock-color
 DISTVERSION=	2.13.c.4
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	fjachuf@gmail.com

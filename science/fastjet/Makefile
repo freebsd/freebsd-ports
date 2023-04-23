@@ -1,6 +1,6 @@
 PORTNAME=	fastjet
 DISTVERSION=	3.4.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://fastjet.fr/repo/
 

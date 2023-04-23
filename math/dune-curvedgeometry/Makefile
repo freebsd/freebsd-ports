@@ -1,5 +1,6 @@
 PORTNAME=	dune-curvedgeometry
 DISTVERSION=	g20201116
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org

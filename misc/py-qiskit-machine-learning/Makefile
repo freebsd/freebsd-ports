@@ -1,5 +1,6 @@
 PORTNAME=	qiskit-machine-learning
 DISTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	misc python # quantum-computing, machine-learning
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

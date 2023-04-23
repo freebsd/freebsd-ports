@@ -1,6 +1,6 @@
 PORTNAME=	kicad
 DISTVERSION=	r${GIT_TMPL_DATE}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-templates/-/archive/${GL_COMMIT}/
 PKGNAMESUFFIX=	-library-tmpl-devel

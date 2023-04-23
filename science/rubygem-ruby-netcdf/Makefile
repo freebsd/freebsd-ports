@@ -1,5 +1,6 @@
 PORTNAME=	ruby-netcdf
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	science rubygems
 MASTER_SITES=	RG
 

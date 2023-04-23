@@ -1,5 +1,6 @@
 PORTNAME=	dwave-greedy
 DISTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

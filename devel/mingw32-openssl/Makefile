@@ -1,5 +1,6 @@
 PORTNAME=	openssl
 PORTVERSION=	1.0.2u
+PORTREVISION=	1
 CATEGORIES=	devel security
 MASTER_SITES=	https://www.openssl.org/source/old/${PORTVERSION:C/[a-z]*$//}/ \
 		http://artfiles.org/openssl.org/source/old/${PORTVERSION:C/[a-z]*$//}/

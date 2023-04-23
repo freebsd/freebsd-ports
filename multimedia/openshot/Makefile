@@ -1,6 +1,7 @@
 PORTNAME=	openshot
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	tatsuki_makino@hotmail.com

@@ -1,6 +1,6 @@
 PORTNAME=	ini_file_manager
 PORTVERSION=	03
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	misc
 MASTER_SITES=	http://sourceforge.net/projects/${SFPATH}/
 DISTNAME=	ini-files-${PORTVERSION}

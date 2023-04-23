@@ -1,5 +1,6 @@
 PORTNAME=	shotcut
 DISTVERSION=	22.06.23
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/v${DISTVERSION}/
 DISTNAME=	${PORTNAME}-src-${DISTVERSION:C/\.//g}

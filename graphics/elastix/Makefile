@@ -1,5 +1,6 @@
 PORTNAME=	elastix
 DISTVERSION=	5.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org

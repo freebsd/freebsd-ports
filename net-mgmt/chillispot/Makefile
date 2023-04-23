@@ -1,6 +1,6 @@
 PORTNAME=	chillispot
 PORTVERSION=	1.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.chillispot.info/download/ \
 		http://www.geeklan.co.uk/files/ \

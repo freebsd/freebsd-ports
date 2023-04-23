@@ -1,6 +1,7 @@
 PORTNAME=	frugally-deep
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.15.20-p0
+PORTREVISION=	1
 CATEGORIES=	misc # deep-learning
 
 MAINTAINER=	yuri@FreeBSD.org

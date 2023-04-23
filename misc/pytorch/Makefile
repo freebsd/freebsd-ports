@@ -1,6 +1,7 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.13.1
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v1.13.1/
 DIST_SUBDIR=	${PORTNAME}

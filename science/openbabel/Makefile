@@ -1,6 +1,6 @@
 PORTNAME=	openbabel
 DISTVERSION=	3.1.1
-PORTREVISION=	7
+PORTREVISION=	8
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/openbabel/openbabel/releases/download/openbabel-${PORTVERSION:C/\./-/g}/

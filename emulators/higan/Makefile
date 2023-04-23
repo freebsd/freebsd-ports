@@ -1,6 +1,6 @@
 PORTNAME=	higan
 PORTVERSION=	106
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	emulators games
 MASTER_SITES=	http://download.byuu.org/ \
 		http://www.cyberbotx.com/higan/

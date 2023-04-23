@@ -1,5 +1,6 @@
 PORTNAME=	qd
 DISTVERSION=	2.3.23
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://www.davidhbailey.com/dhbsoftware/
 

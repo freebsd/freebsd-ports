@@ -1,6 +1,7 @@
 PORTNAME=	symengine
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	math python
 #MASTER_SITES=	PYPI # latest release isn't compatible with math/symengine
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

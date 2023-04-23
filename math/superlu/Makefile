@@ -1,6 +1,7 @@
 PORTNAME=	superlu
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.3.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	robert.ayrapetyan@gmail.com

@@ -1,6 +1,6 @@
 PORTNAME=	arduino
 PORTVERSION=	1.0.6
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	devel java lang
 MASTER_SITES=	https://arduino.cc/download.php?f=/

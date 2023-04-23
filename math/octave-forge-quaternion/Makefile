@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-quaternion
 PORTVERSION=	2.4.0
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}

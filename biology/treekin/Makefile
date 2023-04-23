@@ -1,6 +1,6 @@
 PORTNAME=	treekin
 DISTVERSION=	0.5.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	biology
 MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/packages/source/
 DISTNAME=	Treekin-${DISTVERSION}

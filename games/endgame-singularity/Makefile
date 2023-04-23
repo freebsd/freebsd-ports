@@ -1,5 +1,6 @@
 PORTNAME=	singularity
 PORTVERSION=	1.00
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${PORTVERSION}/
 PKGNAMEPREFIX=	endgame-

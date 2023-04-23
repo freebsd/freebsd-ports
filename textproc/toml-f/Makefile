@@ -1,5 +1,6 @@
 PORTNAME=	toml-f
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 

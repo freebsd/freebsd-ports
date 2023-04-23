@@ -1,6 +1,6 @@
 PORTNAME=	openkim-models
 DISTVERSION=	2021-08-11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
 MASTER_SITES=	https://s3.openkim.org/archives/collection/
 

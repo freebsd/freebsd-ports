@@ -1,5 +1,6 @@
 PORTNAME=	libint2-psi4
 DISTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/loriab/libint/releases/download/v${DISTVERSION}/
 DISTFILES=	Libint2-export-5-4-3-6-5-4_mm4f12ob2.tgz

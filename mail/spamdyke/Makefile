@@ -1,6 +1,6 @@
 PORTNAME=	spamdyke
 PORTVERSION=	5.0.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	http://www.spamdyke.org/releases/
 

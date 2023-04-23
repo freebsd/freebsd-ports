@@ -1,5 +1,6 @@
 PORTNAME=	vips
 PORTVERSION=	1.0.13
+PORTREVISION=	3
 CATEGORIES=	graphics
 
 MAINTAINER=	mops@punkt.de

@@ -1,6 +1,6 @@
 PORTNAME=	scss
 PORTVERSION=	0.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc scheme
 MASTER_SITES=	SAVANNAH \
 		http://www.c-s.li/ports/

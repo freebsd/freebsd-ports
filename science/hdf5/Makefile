@@ -1,6 +1,6 @@
 PORTNAME=	hdf5
 PORTVERSION=	1.12.2
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${PORTVERSION:R}/hdf5-${PORTVERSION}/src/

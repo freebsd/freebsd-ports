@@ -1,6 +1,6 @@
 PORTNAME=	arduino-openglcd
 DISTVERSION=	1.0rc3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://bitbucket.org/bperrybap/openglcd/downloads/
 DISTNAME=	openGLCD-v${DISTVERSION}

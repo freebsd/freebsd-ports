@@ -1,6 +1,6 @@
 PORTNAME=	lemon
 DISTVERSION=	1.3.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	https://lemon.cs.elte.hu/pub/sources/
 PKGNAMEPREFIX=	coin-or-

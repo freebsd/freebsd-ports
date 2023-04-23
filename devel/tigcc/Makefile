@@ -1,6 +1,6 @@
 PORTNAME=	tigcc
 PORTVERSION=	0.96.b8
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	devel
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/:gcc LOCAL/danfe:gcc \
 		GNU/binutils:gas \

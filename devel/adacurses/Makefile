@@ -1,5 +1,6 @@
 PORTNAME=	adacurses
 DISTVERSION=	20211021
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.invisible-island.net/AdaCurses/
 DISTNAME=	AdaCurses-${DISTVERSION}

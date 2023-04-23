@@ -1,6 +1,7 @@
 PORTNAME=	mctc-lib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.1
+PORTREVISION=	1
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org

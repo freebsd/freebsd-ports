@@ -1,5 +1,6 @@
 PORTNAME=	nlopt
 DISTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	math
 #MASTER_SITES=	PYPI # https://github.com/DanielBok/nlopt-python/issues/15
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

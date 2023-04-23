@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-legacy

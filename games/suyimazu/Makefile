@@ -1,5 +1,6 @@
 PORTNAME=	suyimazu
 DISTVERSION=	2023
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://codeberg.org/Alexander88207/Suyimazu/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 

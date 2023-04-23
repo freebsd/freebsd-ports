@@ -1,5 +1,6 @@
 PORTNAME=	mpfrcx
 DISTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.multiprecision.org/downloads/
 

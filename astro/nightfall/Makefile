@@ -1,6 +1,6 @@
 PORTNAME=	nightfall
 PORTVERSION=	1.92
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	astro education
 MASTER_SITES=	http://www.la-samhna.de/nightfall/
 

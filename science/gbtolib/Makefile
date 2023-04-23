@@ -1,6 +1,6 @@
 PORTNAME=	gbtolib
 DISTVERSION=	3.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science # chemistry, physics
 MASTER_SITES=	https://zenodo.org/record/5798035/files/
 DISTNAME=	GBTOLib-${DISTVERSION}

@@ -1,6 +1,6 @@
 PORTNAME=	cmh
 DISTVERSION=	1.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.multiprecision.org/downloads/
 

@@ -1,4 +1,5 @@
 PORTNAME=	boost-libs
+PORTREVISION=	1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Framework for interfacing Python and C++

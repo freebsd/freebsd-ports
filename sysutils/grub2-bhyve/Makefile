@@ -1,7 +1,7 @@
 PORTNAME=	grub2-bhyve
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.40
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	sysutils
 
 PATCH_SITES+=	https://github.com/grehan-freebsd/grub2-bhyve/commit/

@@ -1,6 +1,6 @@
 PORTNAME=	directx
 PORTVERSION=	20020518
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://www.libsdl.org/extras/win32/cygwin/
 PKGNAMEPREFIX=	mingw32-

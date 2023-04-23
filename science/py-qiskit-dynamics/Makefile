@@ -1,5 +1,6 @@
 PORTNAME=	qiskit-dynamics
 DISTVERSION=	0.4.0
+PORTREVISION=	1
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 

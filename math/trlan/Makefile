@@ -1,6 +1,6 @@
 PORTNAME=	trlan
 PORTVERSION=	201009
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	math
 MASTER_SITES=	https://codeforge.lbl.gov/frs/download.php/210/:1 \
 		http://crd.lbl.gov/~kewu/ps/:2 \

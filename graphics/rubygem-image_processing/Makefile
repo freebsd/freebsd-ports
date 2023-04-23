@@ -1,5 +1,6 @@
 PORTNAME=	image_processing
 PORTVERSION=	1.12.2
+PORTREVISION=	1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 

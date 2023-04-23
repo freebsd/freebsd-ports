@@ -1,6 +1,7 @@
 PORTNAME=	inkscape-open-symbols
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	nivit@FreeBSD.org

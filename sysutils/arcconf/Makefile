@@ -1,5 +1,6 @@
 PORTNAME=	arcconf
 DISTVERSION=	4_01_24763
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://download.adaptec.com/raid/storage_manager/

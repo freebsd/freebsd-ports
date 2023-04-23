@@ -1,6 +1,6 @@
 PORTNAME=	octave-forge-data-smoothing
 PORTVERSION=	1.3.0
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	math
 MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Releases
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}
