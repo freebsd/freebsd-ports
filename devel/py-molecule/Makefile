@@ -1,5 +1,5 @@
 PORTNAME=	molecule
-PORTVERSION=	3.6.1
+PORTVERSION=	4.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=1.0:devel/py-setuptools_scm_git_archive@${PY_FLAVOR}
 # click-help-colors >= 0.9
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=1.0.0:sysutils/py-ansible-compat@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.1.0:sysutils/py-ansible-compat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Cerberus>=1.3.1:devel/py-cerberus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cookiecutter>=1.7.3:devel/py-cookiecutter@${PY_FLAVOR} \
@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=1.0.0:sysutils/py-ansible-co
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.11.3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=0.7.1:devel/py-pluggy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rich>-9.5.1:textproc/py-rich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}rich>=9.5.1:textproc/py-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR}
 # ansi2html >= 1.6.0
 # pytest-cov >= 2.10.1
@@ -52,28 +52,20 @@ TEST_ENV=	LANG=en_US.UTF-8 \
 
 NO_ARCH=	yes
 
-OPTIONS_DEFINE=		AZURE DOCKER DOCS EC2 GCE LINT
+OPTIONS_DEFINE=		DOCKER DOCS LINT
 OPTIONS_DEFAULT=	LINT
-AZURE_DESC=		For testing on Microsoft Azure Platform
 DOCKER_DESC=		For testing on Docker Platform(Remote)
-EC2_DESC=		For testing on Amazon EC2 Platform
-GCE_DESC=		For testing on Google Compute Engine Platform
 LINT_DESC=		For linting molecule itself
-AZURE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-cli>0:sysutils/py-azure-cli@${PY_FLAVOR}
 DOCKER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docker>=2.0.0:sysutils/py-docker@${PY_FLAVOR}
-# Sphinx >= 4.5.0, < 5.0.0  # https://github.com/sphinx-doc/sphinx/issues/10112
-# simplejson >= 3.17.2
 # sphinx-ansible-theme >= 0.8.0, < 0.10.0
 # sphinx-notfound-page >= 0.7.1
-DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>-2.12.0:sysutils/py-ansible-core@${PY_FLAVOR} \
+DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.11.3:devel/py-Jinja2@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}ansible-core>=2.12.0:sysutils/py-ansible-core@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}simplejson>=3.17.2:devel/py-simplejson@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}sphinx>=4.3.1:textproc/py-sphinx@${PY_FLAVOR}
-EC2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}boto>0:devel/py-boto@${PY_FLAVOR}
-GCE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libcloud>0:net/py-libcloud@${PY_FLAVOR}
+			${PYTHON_PKGNAMEPREFIX}sphinx>=5.0.0:textproc/py-sphinx@${PY_FLAVOR}
 # lint =
 LINT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=3.8.4:devel/py-flake8@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}pre-commit>=1.21.0:devel/py-pre-commit@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}pre-commit>=2.10.1:devel/py-pre-commit@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}yamllint>0:devel/py-yamllint@${PY_FLAVOR}
 
 do-test:
