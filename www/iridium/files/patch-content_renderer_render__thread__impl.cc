@@ -1,15 +1,15 @@
---- content/renderer/render_thread_impl.cc.orig	2023-03-13 07:33:08 UTC
+--- content/renderer/render_thread_impl.cc.orig	2023-04-22 17:45:15 UTC
 +++ content/renderer/render_thread_impl.cc
-@@ -200,6 +200,8 @@
+@@ -201,6 +201,8 @@
  
- #if BUILDFLAG(IS_MAC)
+ #if BUILDFLAG(IS_APPLE)
  #include <malloc/malloc.h>
 +#elif BUILDFLAG(IS_BSD)
 +#include <stdlib.h>
  #else
  #include <malloc.h>
  #endif
-@@ -1051,7 +1053,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1069,7 +1071,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
            kGpuStreamPriorityMedia);
  
    const bool enable_video_decode_accelerator =
@@ -18,7 +18,7 @@
        base::FeatureList::IsEnabled(media::kVaapiVideoDecodeLinux) &&
  #endif  // BUILDFLAG(IS_LINUX)
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoDecode) &&
-@@ -1060,7 +1062,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
+@@ -1078,7 +1080,7 @@ media::GpuVideoAcceleratorFactories* RenderThreadImpl:
         gpu::kGpuFeatureStatusEnabled);
  
    const bool enable_video_encode_accelerator =
@@ -27,7 +27,7 @@
        base::FeatureList::IsEnabled(media::kVaapiVideoEncodeLinux) &&
  #else
        !cmd_line->HasSwitch(switches::kDisableAcceleratedVideoEncode) &&
-@@ -1843,7 +1845,7 @@ std::unique_ptr<CodecFactory> RenderThreadImpl::Create
+@@ -1863,7 +1865,7 @@ std::unique_ptr<CodecFactory> RenderThreadImpl::Create
      bool enable_video_encode_accelerator) {
    mojo::PendingRemote<media::mojom::VideoEncodeAcceleratorProvider>
        vea_provider;

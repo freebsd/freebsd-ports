@@ -1,6 +1,6 @@
---- third_party/sqlite/src/amalgamation/sqlite3.c.orig	2023-03-13 07:33:08 UTC
+--- third_party/sqlite/src/amalgamation/sqlite3.c.orig	2023-04-22 17:45:15 UTC
 +++ third_party/sqlite/src/amalgamation/sqlite3.c
-@@ -43302,7 +43302,12 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+@@ -43591,7 +43591,12 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
    memset(zBuf, 0, nBuf);
    randomnessPid = osGetpid(0);
  #if !defined(SQLITE_TEST) && !defined(SQLITE_OMIT_RANDOMNESS)
@@ -13,7 +13,7 @@
      int fd, got;
      fd = robust_open("/dev/urandom", O_RDONLY, 0);
      if( fd<0 ){
-@@ -43317,6 +43322,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
+@@ -43606,6 +43611,7 @@ static int unixRandomness(sqlite3_vfs *NotUsed, int nB
        robust_close(0, fd, __LINE__);
      }
    }

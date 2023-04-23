@@ -1,6 +1,6 @@
---- third_party/maldoca/BUILD.gn.orig	2022-03-28 18:11:04 UTC
+--- third_party/maldoca/BUILD.gn.orig	2023-04-22 17:45:15 UTC
 +++ third_party/maldoca/BUILD.gn
-@@ -299,6 +299,10 @@ static_library("maldoca") {
+@@ -264,6 +264,10 @@ source_set("maldoca-public-headers") {
      ":maldoca_chromium_config",
      ":maldoca_flags",
    ]
@@ -10,4 +10,4 @@
 +  }
  }
  
- fuzzer_test("process_doc_fuzzer") {
+ static_library("maldoca") {

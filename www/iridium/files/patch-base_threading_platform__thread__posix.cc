@@ -1,15 +1,15 @@
---- base/threading/platform_thread_posix.cc.orig	2023-03-13 07:33:08 UTC
+--- base/threading/platform_thread_posix.cc.orig	2023-04-22 17:45:15 UTC
 +++ base/threading/platform_thread_posix.cc
-@@ -77,7 +77,7 @@ void* ThreadFunc(void* params) {
+@@ -76,7 +76,7 @@ void* ThreadFunc(void* params) {
      if (!thread_params->joinable)
        base::DisallowSingleton();
  
--#if !BUILDFLAG(IS_NACL)
-+#if !BUILDFLAG(IS_NACL) && !BUILDFLAG(IS_BSD)
- #if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && BUILDFLAG(USE_STARSCAN)
+-#if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && BUILDFLAG(USE_STARSCAN)
++#if BUILDFLAG(USE_PARTITION_ALLOC_AS_MALLOC) && BUILDFLAG(USE_STARSCAN) && !BUILDFLAG(IS_BSD)
      partition_alloc::internal::PCScan::NotifyThreadCreated(
          partition_alloc::internal::GetStackPointer());
-@@ -379,6 +379,9 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
+ #endif
+@@ -374,6 +374,9 @@ void SetCurrentThreadTypeImpl(ThreadType thread_type,
                                MessagePumpType pump_type_hint) {
  #if BUILDFLAG(IS_NACL)
    NOTIMPLEMENTED();

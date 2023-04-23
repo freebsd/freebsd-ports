@@ -1,8 +1,8 @@
---- gpu/command_buffer/tests/gl_gpu_memory_buffer_unittest.cc.orig	2022-10-05 07:34:01 UTC
+--- gpu/command_buffer/tests/gl_gpu_memory_buffer_unittest.cc.orig	2023-04-22 17:45:15 UTC
 +++ gpu/command_buffer/tests/gl_gpu_memory_buffer_unittest.cc
 @@ -28,7 +28,7 @@
  #include "ui/gl/gl_image.h"
- #include "ui/gl/test/gl_image_test_support.h"
+ #include "ui/gl/test/gl_test_support.h"
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

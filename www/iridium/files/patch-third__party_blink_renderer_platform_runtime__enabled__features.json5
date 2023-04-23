@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-03-13 07:33:08 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-04-22 17:45:15 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -1347,7 +1347,7 @@
+@@ -1531,7 +1531,7 @@
        depends_on: ["FileSystemAccessLocal"],
        status: {"Android": "test", "default": "stable"},
        origin_trial_feature_name: "FileHandling",
@@ -9,16 +9,16 @@
        base_feature: "FileHandlingAPI",
      },
      {
-@@ -2924,7 +2924,7 @@
-     {
+@@ -3358,7 +3358,7 @@
        name: "UnrestrictedSharedArrayBuffer",
+       base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
 -      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
      },
      {
        name: "URLPatternCompareComponent",
-@@ -2944,7 +2944,7 @@
+@@ -3379,7 +3379,7 @@
        origin_trial_feature_name: "UserAgentReduction",
        origin_trial_allows_third_party: true,
        // iOS not included as it should not send a reduced User-Agent string.
@@ -27,9 +27,9 @@
        base_feature: "ReduceUserAgent",
      },
      {
-@@ -3107,12 +3107,12 @@
-       name: "WebAppUrlHandling",
+@@ -3553,12 +3553,12 @@
        status: "experimental",
+       base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",
 -      origin_trial_os: ["win", "mac", "linux"],
 +      origin_trial_os: ["win", "mac", "linux", "openbsd", "freebsd"],
@@ -40,5 +40,5 @@
 -      origin_trial_os: ["win", "mac", "linux", "chromeos"],
 +      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
        status: "stable",
+       base_feature: "none",
      },
-     {

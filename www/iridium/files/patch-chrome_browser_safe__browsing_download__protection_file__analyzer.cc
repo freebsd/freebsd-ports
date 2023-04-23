@@ -1,4 +1,4 @@
---- chrome/browser/safe_browsing/download_protection/file_analyzer.cc.orig	2022-12-06 08:09:13 UTC
+--- chrome/browser/safe_browsing/download_protection/file_analyzer.cc.orig	2023-04-22 17:45:15 UTC
 +++ chrome/browser/safe_browsing/download_protection/file_analyzer.cc
 @@ -20,7 +20,7 @@
  #include "content/public/browser/browser_thread.h"
@@ -18,7 +18,7 @@
    } else if (inspection_type == DownloadFileType::OFFICE_DOCUMENT) {
      StartExtractDocumentFeatures();
  #endif
-@@ -326,7 +326,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
+@@ -325,7 +325,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
  }
  #endif  // BUILDFLAG(IS_MAC)
  

@@ -1,4 +1,4 @@
---- content/app/content_main_runner_impl.cc.orig	2023-03-13 07:33:08 UTC
+--- content/app/content_main_runner_impl.cc.orig	2023-04-22 17:45:15 UTC
 +++ content/app/content_main_runner_impl.cc
 @@ -139,13 +139,13 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
@@ -76,7 +76,7 @@
    PreSandboxInit();
  #endif
  
-@@ -823,11 +834,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -824,11 +835,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -90,7 +90,7 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1012,6 +1022,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1023,6 +1033,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
    }
  #endif
  
@@ -107,7 +107,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1079,7 +1099,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1090,7 +1110,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
            ->ReconfigureAfterFeatureListInit(process_type);
      }
  
@@ -116,7 +116,7 @@
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -1112,6 +1132,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1128,6 +1148,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

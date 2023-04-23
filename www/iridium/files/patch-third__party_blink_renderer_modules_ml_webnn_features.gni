@@ -1,9 +1,9 @@
---- third_party/blink/renderer/modules/ml/webnn/features.gni.orig	2023-01-17 19:19:00 UTC
+--- third_party/blink/renderer/modules/ml/webnn/features.gni.orig	2023-04-22 17:45:15 UTC
 +++ third_party/blink/renderer/modules/ml/webnn/features.gni
 @@ -7,5 +7,5 @@ declare_args() {
    # This enables building WebNN with XNNPACK. Currently only available for
-   # Linux or Windows on x64 that aligns with build_tflite_with_xnnpack.
-   # See third_party/tflite/features.gni
--  build_webnn_with_xnnpack = (is_win || is_linux) && current_cpu == "x64"
-+  build_webnn_with_xnnpack = !is_bsd && (is_win || is_linux) && current_cpu == "x64"
+   # Windows on x64 or x86.
+   build_webnn_with_xnnpack =
+-      is_win && (current_cpu == "x64" || current_cpu == "x86")
++      !is_bsd && (is_win && (current_cpu == "x64" || current_cpu == "x86"))
  }

@@ -1,6 +1,6 @@
---- chrome/browser/web_applications/os_integration/os_integration_test_override.cc.orig	2023-03-13 07:33:08 UTC
+--- chrome/browser/web_applications/os_integration/os_integration_test_override.cc.orig	2023-04-22 17:45:15 UTC
 +++ chrome/browser/web_applications/os_integration/os_integration_test_override.cc
-@@ -147,7 +147,7 @@ bool OsIntegrationTestOverride::IsRunOnOsLoginEnabled(
+@@ -179,7 +179,7 @@ bool OsIntegrationTestOverride::IsRunOnOsLoginEnabled(
      Profile* profile,
      const AppId& app_id,
      const std::string& app_name) {
@@ -9,7 +9,7 @@
    std::string shortcut_filename =
        "chrome-" + app_id + "-" + profile->GetBaseName().value() + ".desktop";
    return base::PathExists(startup().Append(shortcut_filename));
-@@ -217,7 +217,7 @@ base::FilePath OsIntegrationTestOverride::GetShortcutP
+@@ -349,7 +349,7 @@ base::FilePath OsIntegrationTestOverride::GetShortcutP
        app_installed_profiles.end()) {
      return shortcut_path;
    }
@@ -18,7 +18,7 @@
    std::string shortcut_filename =
        "chrome-" + app_id + "-" + profile->GetBaseName().value() + ".desktop";
    base::FilePath shortcut_path = shortcut_dir.Append(shortcut_filename);
-@@ -242,7 +242,7 @@ bool OsIntegrationTestOverride::IsShortcutCreated(Prof
+@@ -374,7 +374,7 @@ bool OsIntegrationTestOverride::IsShortcutCreated(Prof
    base::FilePath app_shortcut_path =
        GetShortcutPath(profile, chrome_apps_folder(), app_id, app_name);
    return base::PathExists(app_shortcut_path);
@@ -27,7 +27,7 @@
    base::FilePath desktop_shortcut_path =
        GetShortcutPath(profile, desktop(), app_id, app_name);
    return base::PathExists(desktop_shortcut_path);
-@@ -270,7 +270,7 @@ bool OsIntegrationTestOverride::SimulateDeleteShortcut
+@@ -402,7 +402,7 @@ bool OsIntegrationTestOverride::SimulateDeleteShortcut
        GetShortcutPath(profile, chrome_apps_folder(), app_id, app_name);
    DCHECK(base::PathExists(app_folder_shortcut_path));
    return base::DeletePathRecursively(app_folder_shortcut_path);
@@ -36,7 +36,7 @@
    base::FilePath desktop_shortcut_path =
        GetShortcutPath(profile, desktop(), app_id, app_name);
    LOG(INFO) << desktop_shortcut_path;
-@@ -287,7 +287,7 @@ bool OsIntegrationTestOverride::ForceDeleteAllShortcut
+@@ -419,7 +419,7 @@ bool OsIntegrationTestOverride::ForceDeleteAllShortcut
    return DeleteDesktopDirOnWin() && DeleteApplicationMenuDirOnWin();
  #elif BUILDFLAG(IS_MAC)
    return DeleteChromeAppsDir();
@@ -45,7 +45,7 @@
    return DeleteDesktopDirOnLinux();
  #else
    NOTREACHED() << "Not implemented on ChromeOS/Fuchsia ";
-@@ -327,7 +327,7 @@ void OsIntegrationTestOverride::EnableOrDisablePathOnL
+@@ -459,7 +459,7 @@ void OsIntegrationTestOverride::EnableOrDisablePathOnL
    startup_enabled_[file_path] = enable_on_login;
  }
  
@@ -54,7 +54,7 @@
  bool OsIntegrationTestOverride::DeleteDesktopDirOnLinux() {
    if (desktop_.IsValid()) {
      return desktop_.Delete();
-@@ -360,7 +360,7 @@ OsIntegrationTestOverride::OsIntegrationTestOverride(
+@@ -492,7 +492,7 @@ OsIntegrationTestOverride::OsIntegrationTestOverride(
  #elif BUILDFLAG(IS_MAC)
      bool success = chrome_apps_folder_.CreateUniqueTempDirUnderPath(base_path);
      DCHECK(success);
@@ -63,7 +63,7 @@
      bool success = desktop_.CreateUniqueTempDirUnderPath(base_path);
      DCHECK(success);
      success = startup_.CreateUniqueTempDirUnderPath(base_path);
-@@ -379,7 +379,7 @@ OsIntegrationTestOverride::OsIntegrationTestOverride(
+@@ -511,7 +511,7 @@ OsIntegrationTestOverride::OsIntegrationTestOverride(
  #elif BUILDFLAG(IS_MAC)
      bool success = chrome_apps_folder_.CreateUniqueTempDir();
      DCHECK(success);
@@ -72,7 +72,7 @@
      bool success = desktop_.CreateUniqueTempDir();
      DCHECK(success);
      success = startup_.CreateUniqueTempDir();
-@@ -387,7 +387,7 @@ OsIntegrationTestOverride::OsIntegrationTestOverride(
+@@ -519,7 +519,7 @@ OsIntegrationTestOverride::OsIntegrationTestOverride(
  #endif
    }
  
@@ -81,7 +81,7 @@
    auto callback =
        base::BindRepeating([](base::FilePath filename, std::string xdg_command,
                               std::string file_contents) {
-@@ -421,7 +421,7 @@ OsIntegrationTestOverride::~OsIntegrationTestOverride(
+@@ -553,7 +553,7 @@ OsIntegrationTestOverride::~OsIntegrationTestOverride(
        }
      }
    }

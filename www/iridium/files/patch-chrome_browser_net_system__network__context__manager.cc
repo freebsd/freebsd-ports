@@ -1,6 +1,6 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2023-03-13 07:33:08 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2023-04-22 17:45:15 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
-@@ -92,7 +92,7 @@
+@@ -93,7 +93,7 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  #include "chrome/common/chrome_paths_internal.h"
  #include "chrome/grit/chromium_strings.h"
  #include "ui/base/l10n/l10n_util.h"
-@@ -177,7 +177,7 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
+@@ -178,7 +178,7 @@ network::mojom::HttpAuthDynamicParamsPtr CreateHttpAut
    auth_dynamic_params->basic_over_http_enabled =
        local_state->GetBoolean(prefs::kBasicAuthOverHttpEnabled);
  
@@ -18,7 +18,7 @@
    auth_dynamic_params->delegate_by_kdc_policy =
        local_state->GetBoolean(prefs::kAuthNegotiateDelegateByKdcPolicy);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -455,7 +455,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -456,7 +456,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
    pref_change_registrar_.Add(prefs::kAllHttpAuthSchemesAllowedForOrigins,
                               auth_pref_callback);
  
@@ -27,7 +27,16 @@
    pref_change_registrar_.Add(prefs::kAuthNegotiateDelegateByKdcPolicy,
                               auth_pref_callback);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -527,7 +527,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -489,7 +489,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+           base::Unretained(this)));
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+   pref_change_registrar_.Add(
+       prefs::kEnforceLocalAnchorConstraintsEnabled,
+       base::BindRepeating(&SystemNetworkContextManager::
+@@ -539,7 +539,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kKerberosEnabled, false);
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -36,3 +45,21 @@
    registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
                                  false);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
+@@ -568,7 +568,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+   registry->RegisterBooleanPref(prefs::kChromeRootStoreEnabled, false);
+ #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+   // Note that the default value is not relevant because the pref is only
+   // evaluated when it is managed.
+   registry->RegisterBooleanPref(prefs::kEnforceLocalAnchorConstraintsEnabled,
+@@ -944,7 +944,7 @@ void SystemNetworkContextManager::UpdateExplicitlyAllo
+ }
+ 
+ #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
+-    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
++    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
+ void SystemNetworkContextManager::UpdateEnforceLocalAnchorConstraintsEnabled() {
+   const PrefService::Preference* enforce_local_anchor_constraints_enabled_pref =
+       local_state_->FindPreference(

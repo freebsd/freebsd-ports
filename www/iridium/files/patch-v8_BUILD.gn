@@ -1,9 +1,9 @@
---- v8/BUILD.gn.orig	2023-03-13 07:33:08 UTC
+--- v8/BUILD.gn.orig	2023-04-22 17:45:15 UTC
 +++ v8/BUILD.gn
-@@ -1299,6 +1299,14 @@ config("toolchain") {
-   } else if (target_os == "win") {
+@@ -1304,6 +1304,14 @@ config("toolchain") {
+   } else if (target_os == "chromeos") {
      defines += [ "V8_HAVE_TARGET_OS" ]
-     defines += [ "V8_TARGET_OS_WIN" ]
+     defines += [ "V8_TARGET_OS_CHROMEOS" ]
 +  } else if (target_os == "openbsd") {
 +    defines += [ "V8_HAVE_TARGET_OS" ]
 +    defines += [ "V8_TARGET_OS_OPENBSD" ]
@@ -15,7 +15,7 @@
    }
  
    # TODO(infra): Support v8_enable_prof on Windows.
-@@ -5702,7 +5710,7 @@ v8_component("v8_libbase") {
+@@ -5717,7 +5725,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -24,7 +24,7 @@
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -5713,6 +5721,18 @@ v8_component("v8_libbase") {
+@@ -5728,6 +5736,18 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

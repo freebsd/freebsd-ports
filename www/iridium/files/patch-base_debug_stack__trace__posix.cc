@@ -1,6 +1,6 @@
---- base/debug/stack_trace_posix.cc.orig	2023-03-13 07:33:08 UTC
+--- base/debug/stack_trace_posix.cc.orig	2023-04-22 17:45:15 UTC
 +++ base/debug/stack_trace_posix.cc
-@@ -40,7 +40,7 @@
+@@ -41,7 +41,7 @@
  // execinfo.h and backtrace(3) are really only present in glibc and in macOS
  // libc.
  #if BUILDFLAG(IS_APPLE) || \
@@ -9,7 +9,7 @@
  #define HAVE_BACKTRACE
  #include <execinfo.h>
  #endif
-@@ -58,7 +58,7 @@
+@@ -59,7 +59,7 @@
  #include <AvailabilityMacros.h>
  #endif
  
@@ -18,7 +18,7 @@
  #include "base/debug/proc_maps_linux.h"
  #endif
  
-@@ -761,6 +761,9 @@ class SandboxSymbolizeHelper {
+@@ -799,6 +799,9 @@ class SandboxSymbolizeHelper {
    // for the modules that are loaded in the current process.
    // Returns true on success.
    bool CacheMemoryRegions() {
@@ -28,7 +28,7 @@
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -778,6 +781,7 @@ class SandboxSymbolizeHelper {
+@@ -816,6 +819,7 @@ class SandboxSymbolizeHelper {
  
      is_initialized_ = true;
      return true;

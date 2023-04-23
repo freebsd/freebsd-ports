@@ -1,8 +1,8 @@
---- extensions/browser/api/api_browser_context_keyed_service_factories.cc.orig	2023-01-17 19:19:00 UTC
+--- extensions/browser/api/api_browser_context_keyed_service_factories.cc.orig	2023-04-22 17:45:15 UTC
 +++ extensions/browser/api/api_browser_context_keyed_service_factories.cc
-@@ -71,7 +71,7 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt
-   IdleManagerFactory::GetInstance();
-   ManagementAPI::GetFactoryInstance();
+@@ -94,7 +94,7 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt
+   MessageService::GetFactoryInstance();
+   MessagingAPIMessageFilter::EnsureAssociatedFactoryBuilt();
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
 -    BUILDFLAG(IS_MAC)
 +    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
