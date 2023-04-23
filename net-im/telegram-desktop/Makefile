@@ -1,6 +1,5 @@
 PORTNAME=	telegram-desktop
-DISTVERSION=	4.7.1
-PORTREVISION=	1
+DISTVERSION=	4.8.0
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/releases/download/v${DISTVERSION}/
 DISTNAME=	tdesktop-${DISTVERSION}-full
@@ -72,7 +71,6 @@ USE_XORG=	x11 xcb xcomposite xdamage xext xfixes xrandr xrender xtst
 CMAKE_ARGS=	-DTDESKTOP_API_ID=${TELEGRAM_API_ID} -DTDESKTOP_API_HASH=${TELEGRAM_API_HASH}
 CMAKE_ON=	DESKTOP_APP_USE_PACKAGED DESKTOP_APP_DISABLE_CRASH_REPORTS \
 		DESKTOP_APP_DISABLE_WAYLAND_INTEGRATION
-CMAKE_OFF=	DESKTOP_APP_USE_PACKAGED_FONTS
 
 # Since cmake 3.25.0, BSDs are no longer recognised as Linux (in this port).
 CMAKE_ARGS+=	-DLINUX=true
@@ -83,16 +81,19 @@ LDFLAGS+=	-lBlocksRuntime
 # Telegram uses OpenAL for its audio, but libtgvoip (for voice calls) can use PulseAudio or ALSA.
 # It dynamically loads PulseAudio, and if this fails, it loads ALSA.
 # If both of them are not installed, then voice calls do not work, but other functionalities still work.
+OPTIONS_DEFINE=		SYSTEM_FONTS
 OPTIONS_DEFAULT=	ALSA
 OPTIONS_GROUP=	AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
 
-AUDIO_DESC=	Audio backend for voice calls
+AUDIO_DESC=		Audio backend for voice calls
+SYSTEM_FONTS_DESC=	Use system fonts instead of bundled patches ones
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 ALSA_CMAKE_BOOL_OFF=	LIBTGVOIP_DISABLE_ALSA
 PULSEAUDIO_CMAKE_BOOL_OFF=	LIBTGVOIP_DISABLE_PULSEAUDIO
+SYSTEM_FONTS_CMAKE_BOOL=	DESKTOP_APP_USE_PACKAGED_FONTS
 
 # Telegram asks each custom build to have its own API ID and hash.
 TELEGRAM_API_HASH=	20a3432aab43f24bb4460fceac5ba38d
