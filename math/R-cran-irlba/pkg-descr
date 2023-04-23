@@ -1,2 +1,3 @@
-A fast and memory-efficient method for computing a few approximate
-singular values and singular vectors of large matrices.
+Fast and memory efficient methods for truncated singular value
+decomposition and principal components analysis of large sparse and
+dense matrices.
