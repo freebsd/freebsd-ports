@@ -17,6 +17,7 @@ RUN_DEPENDS:=	psselect:print/psutils
 MAKE_JOBS_UNSAFE=	yes
 
 USES=		cpe gmake iconv:wchar_t perl5 makeinfo
+USE_CXXSTD=	gnu++98
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-urw-fonts-dir=${LOCALBASE}/share/ghostscript/fonts/ \
 			--with-awk=/usr/bin/awk \
