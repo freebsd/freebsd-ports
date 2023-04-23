@@ -1,5 +1,5 @@
 PORTNAME=	apache-solr
-PORTVERSION=	9.1.1
+PORTVERSION=	9.2.0
 PORTREVISION=	0
 CATEGORIES=	textproc java
 MASTER_SITES=	https://archive.apache.org/dist/solr/solr/${PORTVERSION}/
@@ -41,7 +41,6 @@ JTS_RUN_DEPENDS=	jts>0:math/jts
 do-install:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/oom_solr.sh ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/post ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/postlogs ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/solr ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
