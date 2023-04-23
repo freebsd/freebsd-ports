@@ -1,5 +1,5 @@
 PORTNAME=       ruby-install
-PORTVERSION=    0.8.5
+PORTVERSION=    0.9.0
 DISTVERSIONPREFIX=      v
 CATEGORIES=     devel ruby
 
