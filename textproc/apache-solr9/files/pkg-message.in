@@ -40,6 +40,10 @@ https://github.com/rohitbemax/dataimporthandler
 Make also sure to always check the manual if you need to modify your
 configs or schemas:
 https://solr.apache.org/guide/9_0/solr-upgrade-notes.html
+
+Maybe you want also to check some examples:
+https://dovecot.org/pipermail/dovecot/2022-May/124701.html
+https://dovecot.org/pipermail/dovecot/2022-May/124711.html
 EOM
 }
 ]
