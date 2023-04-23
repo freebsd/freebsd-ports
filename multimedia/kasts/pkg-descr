@@ -1,0 +1,10 @@
+Kasts is a convergent podcast application
+
+Its main features are:
+
+- Episode management through play queue
+- Sync playback positions with other clients through gpodder.net
+  or gpodder-nextcloud
+- Variable playback speed
+- Search for podcasts
+- Full system integration: e.g. inhibit system suspend while listening

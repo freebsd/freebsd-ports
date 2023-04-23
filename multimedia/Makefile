@@ -137,6 +137,7 @@
     SUBDIR += jmref
     SUBDIR += kaffeine
     SUBDIR += kamoso
+    SUBDIR += kasts
     SUBDIR += kdemultimedia
     SUBDIR += kdemultimedia-ffmpegthumbs
     SUBDIR += kdenlive
