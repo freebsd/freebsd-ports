@@ -65,6 +65,7 @@
     SUBDIR += pure-ftpd
     SUBDIR += py-aioftp
     SUBDIR += py-ftputil
+    SUBDIR += py-parfive
     SUBDIR += py-pycurl
     SUBDIR += py-pyftpdlib
     SUBDIR += py-requests-ftp
