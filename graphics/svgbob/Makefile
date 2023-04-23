@@ -1,5 +1,6 @@
 PORTNAME=	svgbob
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	mikael@FreeBSD.org

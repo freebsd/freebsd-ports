@@ -1,6 +1,7 @@
 PORTNAME=	git-branchless
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,7 +15,6 @@ USES=		cargo
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	arxanas
-
 
 CARGO_BUILD_ARGS=	--package=git-branchless
 CARGO_INSTALL_PATH=	git-branchless

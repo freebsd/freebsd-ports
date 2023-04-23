@@ -1,5 +1,6 @@
 PORTNAME=	hybrid-bar
 DISTVERSION=	0.4.9
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org

@@ -1,6 +1,6 @@
 PORTNAME=	tor-browser
 DISTVERSION=	12.0.2
-PORTREVISION=	6 # previous DISTVERSION was 12.0-2 which becomes 12.0.2 too in 1
+PORTREVISION=	7 # previous DISTVERSION was 12.0-2 which becomes 12.0.2 too in 1
 CATEGORIES=	www net security wayland
 MASTER_SITES=	TOR
 MASTER_SITE_SUBDIR=torbrowser/${DISTVERSION}

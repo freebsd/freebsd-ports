@@ -1,5 +1,6 @@
 PORTNAME=	rustc-demangle
 DISTVERSION=	0.1.22
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org

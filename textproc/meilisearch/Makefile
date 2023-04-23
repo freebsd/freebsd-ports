@@ -1,6 +1,7 @@
 PORTNAME=	meilisearch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	https://github.com/meilisearch/mini-dashboard/releases/download/v${DASHBOARD_VERSION}/build.zip?dummy=/:mini_dashboard_assets \
 		SF/mecab/mecab-ipadic/2.7.0-20070801/:mecab_ipadic \

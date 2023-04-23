@@ -1,5 +1,6 @@
 PORTNAME=	veloren
 PORTVERSION=	s20230419
+PORTREVISION=	1
 CATEGORIES=	games wayland
 .if !make(makesum)
 MASTER_SITES=	LOCAL/jbeich
