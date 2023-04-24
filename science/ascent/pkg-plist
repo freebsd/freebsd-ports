@@ -28,7 +28,6 @@ include/ascent/ascent_expression_jit_filters.hpp
 include/ascent/ascent_expressions_ast.hpp
 include/ascent/ascent_expressions_parser.hpp
 include/ascent/ascent_expressions_tokens.hpp
-include/ascent/ascent_file_system.hpp
 include/ascent/ascent_flow_runtime.hpp
 include/ascent/ascent_hola.hpp
 %%NO_NOMPI%%include/ascent/ascent_hola_mpi.hpp
@@ -47,10 +46,8 @@ include/ascent/ascent_memory_manager.hpp
 include/ascent/ascent_meshes.hpp
 include/ascent/ascent_metadata.hpp
 include/ascent/ascent_mpi_utils.hpp
-include/ascent/ascent_png_compare.hpp
-include/ascent/ascent_png_decoder.hpp
-include/ascent/ascent_png_encoder.hpp
 include/ascent/ascent_resources.hpp
+include/ascent/ascent_resources_ascent_web.hpp
 include/ascent/ascent_resources_cinema_web.hpp
 include/ascent/ascent_runtime.hpp
 include/ascent/ascent_runtime_blueprint_filters.hpp
@@ -77,6 +74,10 @@ include/ascent/flow_graph.hpp
 include/ascent/flow_registry.hpp
 include/ascent/flow_timer.hpp
 include/ascent/flow_workspace.hpp
+include/ascent/png_utils/ascent_png_compare.hpp
+include/ascent/png_utils/ascent_png_decoder.hpp
+include/ascent/png_utils/ascent_png_encoder.hpp
+include/ascent/png_utils/ascent_png_utils_exports.h
 lib/cmake/ascent/AscentConfig.cmake
 lib/cmake/ascent/AscentConfigVersion.cmake
 lib/cmake/ascent/ascent-%%CMAKE_BUILD_TYPE%%.cmake
