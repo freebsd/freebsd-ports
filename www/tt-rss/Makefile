@@ -1,10 +1,7 @@
 PORTNAME=	tt-rss
-PORTVERSION=	g20230307
+PORTVERSION=	g20230413
 PORTEPOCH=	2
 CATEGORIES=	www
-MASTER_SITES=	https://git-gitea.tt-rss.org/fox/tt-rss/archive/
-DISTNAME=	${_GIT_TAGNAME}
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
@@ -15,14 +12,17 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	${LOCALBASE}/bin/git:devel/git
 
 USES=		gettext-tools php:cli,web shebangfix
-USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring \
-		openssl pcntl pdo phar posix session simplexml tokenizer xml \
-		xmlwriter zip
+
+USE_GITLAB=	yes
+GL_SITE=	https://gitlab.tt-rss.org
+GL_COMMIT=	0578bf802571781a0a7e3debbbec66437a7d28b4
+
+USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring openssl \
+		pcntl pdo phar posix session simplexml tokenizer xml xmlwriter \
+		zip
 USE_RC_SUBR=	ttrssd
 
 SHEBANG_FILES=	update.php update_daemon2.php
-
-_GIT_TAGNAME=	cddbf5bf5
 
 REINPLACE_ARGS=	-i ""
 
@@ -33,8 +33,6 @@ SUB_FILES=	config.php httpd-tt-rss.conf pkg-message
 SUB_LIST=	MYSQL=${MYSQL} \
 		PGSQL=${PGSQL} \
 		WWWOWN=${WWWOWN}
-
-WRKSRC=		${WRKDIR}/tt-rss
 
 PLIST_SUB=	WWWGRP=${WWWGRP} \
 		WWWOWN=${WWWOWN}
@@ -65,7 +63,7 @@ do-install:
 		"! -name LICENSE ! -name .empty ! -name Jenkinsfile")
 	${RM} -r ${STAGEDIR}${WWWDIR}/debian
 	${INSTALL_DATA} ${WRKDIR}/httpd-tt-rss.conf ${STAGEDIR}${DATADIR}
-	${ECHO} "${OPSYS}:${PORTVERSION}:${_GIT_TAGNAME}" > \
+	${ECHO} "${OPSYS}:${PORTVERSION}:${GL_COMMIT:C/^(.{11}).*$/\1/W}}" > \
 		"${STAGEDIR}${WWWDIR}/version_static.txt"
 	${RM} ${STAGEDIR}${WWWDIR}/config.php-dist
 	${INSTALL_DATA} ${WRKDIR}/config.php \
