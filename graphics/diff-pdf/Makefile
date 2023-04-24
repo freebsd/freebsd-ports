@@ -1,7 +1,6 @@
 PORTNAME=	diff-pdf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5
-PORTREVISION=	23
+DISTVERSION=	0.5.1
 CATEGORIES=	graphics
 
 MAINTAINER=	uzsolt@uzsolt.hu
@@ -17,7 +16,6 @@ LIB_DEPENDS=	libpoppler.so:graphics/poppler \
 USES=		autoreconf compiler:c++11-lang gnome pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	vslavik
-GH_TAGNAME=	d494f96
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-wx-config=${WX_CONFIG}
 USE_GNOME=	cairo glib20
