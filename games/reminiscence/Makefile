@@ -1,5 +1,5 @@
 PORTNAME=	REminiscence
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.1
 CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 		https://mirror.amdmi3.ru/distfiles/
