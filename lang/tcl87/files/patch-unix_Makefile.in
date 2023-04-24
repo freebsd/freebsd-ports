@@ -9,6 +9,15 @@
  
  # Directory in which to install bundled packages:
  PACKAGE_DIR		= @PACKAGE_DIR@
+@@ -151,7 +151,7 @@ SHELL			= @MAKEFILE_SHELL@
+ # distribution, which is slower but guaranteed to work.
+ 
+ INSTALL_STRIP_PROGRAM	= -s
+-INSTALL_STRIP_LIBRARY	= -S -x
++INSTALL_STRIP_LIBRARY	= -S --strip-unneeded
+ 
+ INSTALL			= $(SHELL) $(UNIX_DIR)/install-sh -c
+ INSTALL_PROGRAM		= ${INSTALL}
 @@ -1003,30 +1003,23 @@ install-binaries: binaries
  	@EXTRA_INSTALL_BINARIES@
  	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"

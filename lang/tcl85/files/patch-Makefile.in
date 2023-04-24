@@ -9,6 +9,15 @@
  
  # Path to the private tcl header dir:
  PRIVATE_INCLUDE_DIR	= @PRIVATE_INCLUDE_DIR@
+@@ -149,7 +151,7 @@ SHELL			= @MAKEFILE_SHELL@
+ # distribution, which is slower but guaranteed to work.
+ 
+ INSTALL_STRIP_PROGRAM   = -s
+-INSTALL_STRIP_LIBRARY   = -S -x
++INSTALL_STRIP_LIBRARY   = -S --strip-unneeded
+ 
+ INSTALL			= $(SHELL) $(UNIX_DIR)/install-sh -c
+ INSTALL_PROGRAM		= ${INSTALL}
 @@ -546,7 +548,7 @@ SRCS = $(GENERIC_SRCS) $(TOMMATH_SRCS) $(UNIX_SRCS) $(
  
  all: binaries libraries doc

@@ -18,6 +18,15 @@
  
  # Directory in which to install the demo files:
  DEMO_INSTALL_DIR	= $(INSTALL_ROOT)$(TK_LIBRARY)/demos
+@@ -220,7 +222,7 @@ TKTEST_EXE		= tktest${EXE_SUFFIX}
+ # with the distribution, which is slower but guaranteed to work.
+ 
+ INSTALL_STRIP_PROGRAM   = -s
+-INSTALL_STRIP_LIBRARY   = -S -x
++INSTALL_STRIP_LIBRARY   = -S --strip-unneeded
+ 
+ INSTALL			= $(SHELL) $(UNIX_DIR)/install-sh -c
+ INSTALL_PROGRAM		= ${INSTALL}
 @@ -561,6 +563,8 @@ TTK_HDRS = $(TTK_DIR)/ttkTheme.h $(TTK_DIR)/ttkDecls.h
  PUBLIC_HDRS = $(GENERIC_DIR)/tk.h $(GENERIC_DIR)/tkDecls.h \
  	$(GENERIC_DIR)/tkPlatDecls.h $(@TK_WINDOWINGSYSTEM@_HDRS)
