@@ -1,6 +1,5 @@
 PORTNAME=	petsc4py
-DISTVERSION=	3.18.5
-PORTREVISION=	1
+DISTVERSION=	3.19.0
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,14 +11,12 @@ WWW=		https://gitlab.com/petsc/petsc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-BROKEN=		the upstream failed to update petsc4py on PYPI, it also breaks with pythran-0.12.0, see bug#270507
-
 BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libpetsc.so:science/PETSc
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://gitlab.com/petsc/petsc/-/issues/1301
+USE_PYTHON=	distutils cython autoplist pytest # tests fail to run, see https://gitlab.com/petsc/petsc/-/issues/1301
 
 MAKE_ENV=	PETSC_DIR=${LOCALBASE}
 
