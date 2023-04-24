@@ -273,8 +273,8 @@ BUILD_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PHP_PORT}
 .  endif
 RUN_DEPENDS+=	${PHPBASE}/include/php/main/php.h:${PHP_PORT}
 .  if  ${php_ARGS:Mmod} || (${php_ARGS:Mweb} && defined(PHP_VERSION) && ${PHP_SAPI:Mcgi} == "" && ${PHP_SAPI:Mfpm} == "")
-USES=	apache:run
-.include "${PORTSDIR}/Mk/Uses/apache.mk"
+apache_ARGS?=run
+.include "${USESDIR}/apache.mk"
 RUN_DEPENDS+=	${PHPBASE}/${APACHEMODDIR}/libphp.so:${MOD_PHP_PORT}
 .  endif
 
