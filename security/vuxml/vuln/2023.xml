@@ -1,3 +1,32 @@
+  <vuln vid="bb528d7c-e2c6-11ed-a3e6-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>3.1.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyfaq developers report:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2023-04-23">
+	  <p>XSS</p>
+	  <p>email address manipulation</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://huntr.dev/bounties/20d3a0b3-2693-4bf1-b196-10741201a540/</url>
+      <url>https://huntr.dev/bounties/89005a6d-d019-4cb7-ae88-486d2d44190d/</url>
+      <url>https://huntr.dev/bounties/cee65b6d-b003-4e6a-9d14-89aa94bee43e/</url>
+      <url>https://huntr.dev/bounties/840c8d91-c97e-4116-a9f8-4ab1a38d239b/</url>
+    </references>
+    <dates>
+      <discovery>2023-04-23</discovery>
+      <entry>2023-04-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f504a8d2-e105-11ed-85f6-84a93843eb75">
     <topic>MySQL -- Multiple vulnerabilities</topic>
     <affects>
