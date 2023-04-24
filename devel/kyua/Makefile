@@ -1,6 +1,6 @@
 PORTNAME=	kyua
 PORTVERSION=	0.13
-PORTREVISION=	5
+PORTREVISION=	6
 PORTEPOCH=	3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/jmmv/kyua/releases/download/${PORTNAME}-${PORTVERSION}/ \
@@ -15,6 +15,7 @@ LICENSE=	BSD3CLAUSE
 LIB_DEPENDS=	liblutok.so:devel/lutok
 
 USES=		lua pkgconfig sqlite
+USE_CXXSTD=	gnu++11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
