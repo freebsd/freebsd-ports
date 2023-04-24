@@ -1,7 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.28.5
-PORTREVISION=	1
+DISTVERSION=	1.29.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,11 +18,13 @@ GH_ACCOUNT=	jdxcode
 CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
 		aho-corasick-0.7.20 \
+		aho-corasick-1.0.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.2.6 \
-		anstyle-0.3.5 \
-		anstyle-parse-0.1.1 \
-		anstyle-wincon-0.2.0 \
+		anstream-0.3.0 \
+		anstyle-1.0.0 \
+		anstyle-parse-0.2.0 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
 		base64-0.21.0 \
@@ -31,16 +32,16 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		block-buffer-0.10.4 \
 		bstr-1.4.0 \
 		built-0.6.0 \
-		bumpalo-3.12.0 \
+		bumpalo-3.12.1 \
 		byteorder-1.4.3 \
 		bytes-1.4.0 \
 		cargo-lock-8.0.3 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.24 \
-		clap-4.2.1 \
-		clap_builder-4.2.1 \
-		clap_complete-4.2.0 \
+		clap-4.2.4 \
+		clap_builder-4.2.4 \
+		clap_complete-4.2.1 \
 		clap_derive-4.2.0 \
 		clap_lex-0.4.1 \
 		clap_mangen-0.2.10 \
@@ -49,11 +50,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		color-print-0.3.4 \
 		color-print-proc-macro-0.3.4 \
 		color-spantrace-0.2.0 \
-		concolor-override-1.0.0 \
-		concolor-query-0.3.3 \
+		colorchoice-1.0.0 \
 		console-0.15.5 \
 		core-foundation-sys-0.8.4 \
-		cpufeatures-0.2.6 \
+		cpufeatures-0.2.7 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.3 \
@@ -100,7 +100,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		git2-0.16.1 \
 		globset-0.4.10 \
 		globwalk-0.8.1 \
-		h2-0.3.16 \
+		h2-0.3.18 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
 		hermit-abi-0.2.6 \
@@ -110,7 +110,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
 		humantime-2.1.0 \
-		hyper-0.14.25 \
+		hyper-0.14.26 \
 		hyper-rustls-0.23.2 \
 		iana-time-zone-0.1.56 \
 		iana-time-zone-haiku-0.1.1 \
@@ -130,12 +130,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		jobserver-0.1.26 \
 		js-sys-0.3.61 \
 		lazy_static-1.4.0 \
-		libc-0.2.141 \
+		libc-0.2.142 \
 		libgit2-sys-0.14.2+1.5.1 \
 		libz-sys-1.1.8 \
 		link-cplusplus-1.0.8 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.3.1 \
+		linux-raw-sys-0.3.4 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		memoffset-0.8.0 \
@@ -152,7 +152,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		number_prefix-0.4.0 \
 		object-0.30.3 \
 		once_cell-1.17.1 \
-		os_pipe-1.1.3 \
+		os_pipe-1.1.4 \
 		output_vt100-0.1.3 \
 		owo-colors-3.5.0 \
 		paste-1.0.12 \
@@ -174,15 +174,15 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regex-1.7.3 \
-		regex-syntax-0.6.29 \
+		regex-1.8.1 \
+		regex-syntax-0.7.1 \
 		reqwest-0.11.16 \
 		ring-0.16.20 \
 		rmp-0.8.11 \
 		rmp-serde-1.1.1 \
 		roff-0.2.1 \
-		rustc-demangle-0.1.22 \
-		rustix-0.37.11 \
+		rustc-demangle-0.1.23 \
+		rustix-0.37.14 \
 		rustls-0.20.8 \
 		rustls-pemfile-1.0.2 \
 		ryu-1.0.13 \
@@ -210,7 +210,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.14 \
+		syn-2.0.15 \
 		tempfile-3.5.0 \
 		tera-1.18.1 \
 		termcolor-1.1.3 \
@@ -234,7 +234,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tracing-0.1.37 \
 		tracing-core-0.1.30 \
 		tracing-error-0.2.0 \
-		tracing-subscriber-0.3.16 \
+		tracing-subscriber-0.3.17 \
 		try-lock-0.2.4 \
 		typenum-1.16.0 \
 		ucd-trie-0.1.5 \
