@@ -1,6 +1,6 @@
---- arcunp.c.orig	2010-08-07 13:06:42 UTC
+--- arcunp.c.orig	2013-06-27 02:00:19 UTC
 +++ arcunp.c
-@@ -39,8 +39,8 @@ extern int	lastc;
+@@ -37,8 +37,8 @@ extern int	lastc;
  #define NOHIST 0		/* no relevant history */
  #define INREP 1			/* sending a repeated value */
  
@@ -11,7 +11,7 @@
  #if	!DOS
  static int	gotcr;		/* got a carriage return? */
  #endif
-@@ -122,7 +122,7 @@ unpack(f, t, hdr)		/* unpack an archive entry */
+@@ -120,7 +120,7 @@ unpack(f, t, hdr)		/* unpack an archive entry */
  		break;
  
  	default:		/* unknown method */
@@ -20,7 +20,7 @@
  			printf("I don't know how to unpack file %s\n", hdr->name);
  			printf("I think you need a newer version of ARC\n");
  			nerrs++;
-@@ -134,7 +134,7 @@ unpack(f, t, hdr)		/* unpack an archive entry */
+@@ -132,7 +132,7 @@ unpack(f, t, hdr)		/* unpack an archive entry */
  	/* cleanups common to all methods */
  
  	if (crcval != hdr->crc) {

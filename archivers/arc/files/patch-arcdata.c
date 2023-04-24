@@ -1,6 +1,6 @@
---- arcdata.c.orig	2010-08-07 13:06:42 UTC
+--- arcdata.c.orig	2013-06-27 02:00:19 UTC
 +++ arcdata.c
-@@ -35,7 +35,7 @@ char            tmpchr[2] = "-";/* Tempo
+@@ -33,7 +33,7 @@ int		hold = 0;	/* true to pause before exit */
  #if	GEMDOS
  int		hold = 0;	/* true to pause before exit */
  #endif

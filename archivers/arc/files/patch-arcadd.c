@@ -1,6 +1,6 @@
---- arcadd.c.orig	2010-08-07 13:06:42 UTC
+--- arcadd.c.orig	2013-06-27 02:00:19 UTC
 +++ arcadd.c
-@@ -119,7 +119,7 @@ int             fresh;		/* true if fresh
+@@ -117,7 +117,7 @@ int             fresh;		/* true if freshening */
  			}
  #endif
  		}
@@ -9,7 +9,7 @@
  			printf("No files match: %s\n", arg[n]);
  	}
  
-@@ -133,7 +133,7 @@ int             fresh;		/* true if fresh
+@@ -131,7 +131,7 @@ int             fresh;		/* true if freshening */
  		free(path);
  		free(name);
  	}
@@ -18,7 +18,7 @@
  		printf("No files were added.\n");
  }
  
-@@ -227,7 +227,7 @@ addbunch(nfiles, path, name, move, updat
+@@ -225,7 +225,7 @@ addbunch(nfiles, path, name, move, update, fresh)	/* a
  	if (move) {		/* if this was a move */
  		for (n = 0; n < nfiles; n++) {	/* then delete each file
  						 * added */
@@ -27,7 +27,7 @@
  				printf("Cannot unsave %s\n", path[n]);
  				nerrs++;
  			}
-@@ -259,7 +259,7 @@ addfile(path, name, update, fresh)	/* ad
+@@ -257,7 +257,7 @@ addfile(path, name, update, fresh)	/* add named file t
  	if (!f)
  #endif
  	{
@@ -36,7 +36,7 @@
  			printf("Cannot read file: %s\n", path);
  			nerrs++;
  		}
-@@ -267,7 +267,7 @@ addfile(path, name, update, fresh)	/* ad
+@@ -265,7 +265,7 @@ addfile(path, name, update, fresh)	/* add named file t
  	}
  #if	!DOS
  	if (strlen(name) >= FNLEN) {

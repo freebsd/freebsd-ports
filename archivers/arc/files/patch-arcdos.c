@@ -1,6 +1,6 @@
---- arcdos.c.orig	2010-08-07 13:06:42 UTC
+--- arcdos.c.orig	2013-06-27 02:00:19 UTC
 +++ arcdos.c
-@@ -175,14 +175,20 @@ setstamp(f, date, time)		/* set a file's
+@@ -173,14 +173,20 @@ setstamp(f, date, time)		/* set a file's date/time sta
  	struct tm	tm;
  	struct timeval  tvp[2];
  	int	utimes();

@@ -1,6 +1,6 @@
---- arclzw.c.orig	2010-08-07 13:06:42 UTC
+--- arclzw.c.orig	2013-06-27 02:00:19 UTC
 +++ arclzw.c
-@@ -57,9 +57,11 @@ static VOID     putcode();
+@@ -55,9 +55,11 @@ extern u_char	*pinbuf;
  #define NOT_FND  0xFFFF
  
  extern u_char	*pinbuf;
@@ -15,7 +15,7 @@
  
  static int      sp;		/* current stack pointer */
  static int	inflag;
-@@ -560,7 +562,7 @@ decomp(squash, f, t)		/* decompress a file */
+@@ -558,7 +560,7 @@ decomp(squash, f, t)		/* decompress a file */
  		 */
  		if (code >= free_ent) {
  			if (code > free_ent) {
