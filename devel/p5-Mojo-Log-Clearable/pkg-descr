@@ -1,0 +1,10 @@
+Mojo::Log is a simple logger class. It holds a filehandle once it writes to
+a log, and changing "path" in Mojo::Log does not open a new filehandle for
+logging.
+
+Mojo::Log::Role::Clearable is a role that provides a "clear_handle" method
+and automatically calls it when "path" in Mojo::Log is modified, so the
+logging handle is reopened at the new path.
+
+The "clear_handle" method can also be used to reopen the logging handle
+after log rotation.
