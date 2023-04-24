@@ -1,13 +1,14 @@
 PORTNAME=		tl-expected
 DISTVERSIONPREFIX=	v
 DISTVERSION=		1.1.0
+PORTREVISION=		1
 CATEGORIES=		devel
 
 MAINTAINER=		henry.hu.sh@gmail.com
 COMMENT=		C++11/14/17 std::expected with functional-style extensions
 WWW=		https://github.com/TartanLlama/expected
 
-LICENSE=		PD
+LICENSE=		CC0-1.0
 LICENSE_FILE=		${WRKSRC}/COPYING
 
 USES=			cmake
@@ -22,6 +23,11 @@ OPTIONS_DEFAULT=
 TESTS_DESC=		Build tests
 TESTS_CMAKE_BOOL=	EXPECTED_BUILD_TESTS
 TESTS_CMAKE_ON=		-DFETCHCONTENT_SOURCE_DIR_CATCH2=${WRKSRC}/catch2
+
+PLIST_FILES=	include/tl/expected.hpp \
+		share/cmake/tl-expected/tl-expected-config-version.cmake \
+		share/cmake/tl-expected/tl-expected-config.cmake \
+		share/cmake/tl-expected/tl-expected-targets.cmake
 
 .include <bsd.port.options.mk>
 
