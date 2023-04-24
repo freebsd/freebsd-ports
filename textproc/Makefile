@@ -242,6 +242,7 @@
     SUBDIR += gmetadom
     SUBDIR += gnugrep
     SUBDIR += go-md2man
+    SUBDIR += go-transifex-client
     SUBDIR += go-yq
     SUBDIR += gojq
     SUBDIR += goldendict
