@@ -5,7 +5,7 @@ CATEGORIES=	sysutils
 PATCH_SITES=	https://github.com/NixOS/nix/commit/
 PATCHFILES=	7c112351d9e941567e64063638396259546d9a48.patch:-p1  # libutil: EPERM from kill(-1, ...) is fine #4530
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Purely functional package manager
 WWW=		https://nixos.org/nix/
 
