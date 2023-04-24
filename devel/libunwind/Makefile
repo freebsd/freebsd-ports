@@ -6,6 +6,9 @@ MASTER_SITES=	SAVANNAH \
 		https://github.com/libunwind/libunwind/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-1.6.2
 
+PATCH_SITES=	https://github.com/libunwind/libunwind/commit/
+PATCHFILES=	ce7e1002888a03fde0eea631748489b12ff56490.patch:-p1
+
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generic stack unwinding library
 WWW=		https://www.nongnu.org/libunwind/
@@ -13,7 +16,7 @@ WWW=		https://www.nongnu.org/libunwind/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc powerpc64 powerpc64le
 
 USES=		compiler:c11 cpe libtool pathfix pkgconfig
 
@@ -24,13 +27,13 @@ GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	ARCH=${ARCH:S|amd64|x86_64|:C|armv.|arm|:S|i386|x86|:C|powerpc64.*|ppc64|}
+PLIST_SUB=	ARCH=${ARCH:S|amd64|x86_64|:C|armv.|arm|:S|i386|x86|:C|powerpc64.*|ppc64|:S|powerpc|ppc32|}
 
 CPE_VENDOR=	libunwind_project
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH:Mpowerpc*}
 PLIST_SUB+=	COREDUMP="@comment "
 .else
 PLIST_SUB+=	COREDUMP=""
