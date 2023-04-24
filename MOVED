@@ -17910,3 +17910,4 @@ science/cdcl||2023-04-21|Has expired: Broken since 2021
 science/rubygem-ruby-dcl||2023-04-21|Has expired: requires deprecated science/cdcl
 net-im/webinar||2023-04-24|Has expired: Requires EOLed electron18
 devel/electron18||2023-04-24|Has expired: EOLed upstream, switch to newer version
+devel/datovka|mail/datovka|2023-04-25|Move port to proper category

@@ -87,6 +87,7 @@
     SUBDIR += cyrus2courier
     SUBDIR += cyrus2dovecot
     SUBDIR += davmail
+    SUBDIR += datovka
     SUBDIR += dbmail
     SUBDIR += dcc-dccd
     SUBDIR += deforaos-mailer

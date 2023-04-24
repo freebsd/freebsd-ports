@@ -1,6 +1,6 @@
 PORTNAME=	datovka
-DISTVERSION=	4.22.0
-CATEGORIES=	devel
+DISTVERSION=	4.22.1
+CATEGORIES=	mail
 MASTER_SITES=	https://secure.nic.cz/files/datove_schranky/${DISTVERSION}/
 
 MAINTAINER=	freebsd@sysctl.cz
