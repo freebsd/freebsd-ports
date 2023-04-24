@@ -591,7 +591,6 @@
     SUBDIR += efl
     SUBDIR += egypt
     SUBDIR += eiffelstudio
-    SUBDIR += electron18
     SUBDIR += electron19
     SUBDIR += electron21
     SUBDIR += electron22
