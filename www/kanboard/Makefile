@@ -1,6 +1,6 @@
 PORTNAME=	kanboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.22
+DISTVERSION=	1.2.28
 CATEGORIES=	www
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -11,7 +11,9 @@ WWW=		https://kanboard.net/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe php:flavors
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
+
+USES=		cpe php:flavors python:3.8+
 USE_GITHUB=	yes
 USE_PHP=	ctype curl dom filter gd iconv mbstring mcrypt \
 		pdo session simplexml xml zlib

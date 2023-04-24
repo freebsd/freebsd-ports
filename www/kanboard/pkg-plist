@@ -606,6 +606,7 @@
 %%WWWDIR%%/app/Pagination/TaskPagination.php
 %%WWWDIR%%/app/Pagination/UserPagination.php
 %%WWWDIR%%/app/Schema/Migration.php
+%%WWWDIR%%/app/Schema/Mssql.php
 %%WWWDIR%%/app/Schema/Mysql.php
 %%WWWDIR%%/app/Schema/Postgres.php
 %%WWWDIR%%/app/Schema/Sql/mysql.sql
@@ -866,6 +867,7 @@
 %%WWWDIR%%/app/Template/project_user_overview/tasks.php
 %%WWWDIR%%/app/Template/project_user_overview/tooltip_users.php
 %%WWWDIR%%/app/Template/project_view/duplicate.php
+%%WWWDIR%%/app/Template/project_view/importTasks.php
 %%WWWDIR%%/app/Template/project_view/integrations.php
 %%WWWDIR%%/app/Template/project_view/notifications.php
 %%WWWDIR%%/app/Template/project_view/share.php
@@ -1995,14 +1997,13 @@
 %%WWWDIR%%/vendor/symfony/polyfill-php73/bootstrap.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/LICENSE
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Php80.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/PhpToken.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/Attribute.php
+%%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/PhpToken.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/Stringable.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/Resources/stubs/ValueError.php
 %%WWWDIR%%/vendor/symfony/polyfill-php80/bootstrap.php
-%%WWWDIR%%/vendor/symfony/service-contracts/Attribute/Required.php
-%%WWWDIR%%/vendor/symfony/service-contracts/Attribute/SubscribedService.php
-%%WWWDIR%%/vendor/symfony/service-contracts/CHANGELOG.md
 %%WWWDIR%%/vendor/symfony/service-contracts/LICENSE
 %%WWWDIR%%/vendor/symfony/service-contracts/ResetInterface.php
 %%WWWDIR%%/vendor/symfony/service-contracts/ServiceLocatorTrait.php
