@@ -1,7 +1,6 @@
 PORTNAME=	jql
-DISTVERSIONPREFIX=	v
-DISTVERSION=	5.2.0
-PORTREVISION=	2
+DISTVERSIONPREFIX=	jql-v
+DISTVERSION=	6.0.5
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,23 +16,17 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	yamafaktory
 
 CARGO_CRATES=	anes-0.1.6 \
-		anyhow-1.0.69 \
-		async-attributes-1.1.2 \
-		async-channel-1.8.0 \
-		async-executor-1.5.0 \
-		async-global-executor-2.3.1 \
-		async-io-1.12.0 \
-		async-lock-2.6.0 \
-		async-process-1.6.0 \
-		async-std-1.12.0 \
-		async-task-4.3.0 \
-		atomic-waker-1.1.0 \
+		anstream-0.3.0 \
+		anstyle-1.0.0 \
+		anstyle-parse-0.2.0 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.0 \
+		anyhow-1.0.70 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
-		block-buffer-0.10.3 \
-		blocking-1.3.0 \
 		bumpalo-3.12.0 \
+		bytes-1.4.0 \
 		cast-0.3.0 \
 		cc-1.0.78 \
 		cfg-if-1.0.0 \
@@ -41,68 +34,54 @@ CARGO_CRATES=	anes-0.1.6 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
 		clap-3.2.23 \
-		clap-4.1.8 \
+		clap-4.2.4 \
+		clap_builder-4.2.4 \
+		clap_derive-4.2.0 \
 		clap_lex-0.2.4 \
-		clap_lex-0.3.1 \
-		colored_json-3.0.1 \
-		concurrent-queue-2.1.0 \
-		cpufeatures-0.2.5 \
+		clap_lex-0.4.1 \
+		colorchoice-1.0.0 \
+		colored_json-3.1.0 \
 		criterion-0.4.0 \
 		criterion-plot-0.5.0 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.13 \
 		crossbeam-utils-0.8.14 \
-		crypto-common-0.1.6 \
-		ctor-0.1.26 \
-		digest-0.10.6 \
 		either-1.8.1 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
-		event-listener-2.5.3 \
-		fastrand-1.8.0 \
-		futures-channel-0.3.25 \
-		futures-core-0.3.25 \
-		futures-io-0.3.25 \
-		futures-lite-1.12.0 \
-		generic-array-0.14.6 \
-		gloo-timers-0.2.6 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
+		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.2.6 \
+		hermit-abi-0.3.1 \
 		indexmap-1.9.2 \
-		instant-0.1.12 \
 		io-lifetimes-1.0.4 \
-		is-terminal-0.4.2 \
+		is-terminal-0.4.5 \
 		itertools-0.10.5 \
 		itoa-1.0.5 \
 		js-sys-0.3.60 \
-		kv-log-macro-1.0.7 \
 		lazy_static-1.4.0 \
 		libc-0.2.139 \
 		linux-raw-sys-0.1.4 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		memoffset-0.7.1 \
+		minimal-lexical-0.2.1 \
+		nom-7.1.3 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
 		once_cell-1.17.0 \
 		oorandom-11.1.3 \
 		os_str_bytes-6.4.1 \
-		parking-2.0.0 \
-		pest-2.5.6 \
-		pest_derive-2.5.6 \
-		pest_generator-2.5.6 \
-		pest_meta-2.5.6 \
 		pin-project-lite-0.2.9 \
-		pin-utils-0.1.0 \
 		plotters-0.3.4 \
 		plotters-backend-0.3.4 \
 		plotters-svg-0.3.3 \
-		polling-2.5.2 \
-		proc-macro2-1.0.50 \
-		quote-1.0.23 \
+		proc-macro2-1.0.53 \
+		psm-0.1.21 \
+		quote-1.0.26 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		regex-1.7.1 \
@@ -111,52 +90,57 @@ CARGO_CRATES=	anes-0.1.6 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
-		serde_json-1.0.94 \
-		sha2-0.10.6 \
-		signal-hook-0.3.14 \
-		signal-hook-registry-1.4.0 \
-		slab-0.4.7 \
-		socket2-0.4.7 \
+		serde-1.0.160 \
+		serde_derive-1.0.160 \
+		serde_json-1.0.96 \
+		serde_stacker-0.1.8 \
+		stacker-0.1.15 \
 		strsim-0.10.0 \
 		syn-1.0.107 \
-		termcolor-1.2.0 \
+		syn-2.0.10 \
 		textwrap-0.16.0 \
-		thiserror-1.0.38 \
-		thiserror-impl-1.0.38 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
 		tinytemplate-1.2.1 \
-		typenum-1.16.0 \
-		ucd-trie-0.1.5 \
+		tokio-1.27.0 \
+		tokio-macros-2.0.0 \
 		unicode-ident-1.0.6 \
-		value-bag-1.0.0-alpha.9 \
-		version_check-0.9.4 \
-		waker-fn-1.1.0 \
+		utf8parse-0.2.1 \
 		walkdir-2.3.2 \
 		wasm-bindgen-0.2.83 \
 		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-futures-0.4.33 \
 		wasm-bindgen-macro-0.2.83 \
 		wasm-bindgen-macro-support-0.2.83 \
 		wasm-bindgen-shared-0.2.83 \
 		web-sys-0.3.60 \
-		wepoll-ffi-0.1.2 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.1 \
-		windows_aarch64_msvc-0.42.1 \
-		windows_i686_gnu-0.42.1 \
-		windows_i686_msvc-0.42.1 \
-		windows_x86_64_gnu-0.42.1 \
-		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_msvc-0.42.1 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.0 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
 		yansi-0.5.1
 PLIST_FILES=	bin/${PORTNAME}
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKDIR}/target/*/release/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} # otherwise there's error: found a virtual manifest at `xx` instead of a package manifest
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
