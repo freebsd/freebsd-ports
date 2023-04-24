@@ -1,5 +1,6 @@
 PORTNAME=	freebsd-sysroot
 DISTVERSION=	a2023-03-23
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${_SYSROOT_DIST:@f@https://download.freebsd.org/$f?dummy=/:${FLAVOR}@} \
 		LOCAL/rust:${FLAVOR}
@@ -20,9 +21,6 @@ FLAVORS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le \
 		powerpcspe riscv64
 FLAVOR?=	${FLAVORS:[1]}
 
-powerpc_BUILD_DEPENDS=		powerpc-binutils>0:devel/binutils@powerpc
-powerpc_RUN_DEPENDS=		powerpc-binutils>0:devel/binutils@powerpc
-
 QA_ENV=		IGNORE_QA_baselibs=1 \
 		IGNORE_QA_no_arch=1 \
 		IGNORE_QA_proxydeps=1 \
@@ -38,8 +36,7 @@ SUB_FILES=	${exists(${FILESDIR}/${FLAVOR}-c++.in):?${FLAVOR}-c++:} \
 SUB_LIST=	FREEBSD_SYSROOT="${_SYSROOT}" \
 		FREEBSD_SYSROOT_CC="${CC}" \
 		FREEBSD_SYSROOT_CXX="${CXX}" \
-		FREEBSD_SYSROOT_LLVM_TRIPLE="${_SYSROOT_LLVM_TRIPLE}" \
-		FREEBSD_SYSROOT_POWERPC_LD="$$(${ECHO_CMD} ${LOCALBASE}/bin/powerpc-unknown-${OPSYS:tl}*[0-9]-ld.bfd)"
+		FREEBSD_SYSROOT_LLVM_TRIPLE="${_SYSROOT_LLVM_TRIPLE}"
 PLIST=		${.CURDIR}/pkg-plist.${FLAVOR}
 PLIST_SUB=	ROOT=${_SYSROOT:S,^${PREFIX}/,,}
 
