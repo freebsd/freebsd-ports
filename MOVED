@@ -17908,3 +17908,4 @@ www/py-requests-futures0|www/py-requests-futures|2023-04-19|Remove obsoleted por
 mail/rubygem-mail27|mail/rubygem-mail|2023-04-19|Remove obsoleted port. Use mail/rubygem-mail instead
 science/cdcl||2023-04-21|Has expired: Broken since 2021
 science/rubygem-ruby-dcl||2023-04-21|Has expired: requires deprecated science/cdcl
+net-im/webinar||2023-04-24|Has expired: Requires EOLed electron18
