@@ -1,6 +1,5 @@
 PORTNAME=	amberol
-DISTVERSION=	0.9.2
-PORTREVISION=	6
+DISTVERSION=	0.10.0
 CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,7 +23,7 @@ USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
 USE_GSTREAMER=	bad good libav
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
-GL_COMMIT=	c23ec2f11fa441c402b80f7a1733ac9aea65c81d
+GL_COMMIT=	ff8cab6f65a6147b9e65b1e2f0ca229898ee1906
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
@@ -32,10 +31,6 @@ CARGO_TEST=	no
 GLIB_SCHEMAS=	io.bassi.Amberol.gschema.xml
 
 post-patch:
-# Allow running from background via xdg-desktop-portal
-	@${REINPLACE_CMD} -e 's/linux/${OPSYS:tl}/' \
-		${WRKSRC}/src/window.rs \
-		${WRKSRC}/Cargo.toml
 # Make each cargo subcommand very verbose
 # Add explicit <triple> subdir for --target from USES=cargo
 	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
