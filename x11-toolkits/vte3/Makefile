@@ -1,10 +1,13 @@
 PORTNAME=	vte
 PORTVERSION=	0.70.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
 DIST_SUBDIR=	gnome
+
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/vte/-/commit/
+PATCHFILES+=	9b41cd101429.patch:-p1 #https://gitlab.gnome.org/GNOME/vte/-/issues/2618
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Terminal widget with improved accessibility and I18N support
