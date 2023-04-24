@@ -30,7 +30,7 @@ DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${LLVM_SUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${LLVM_SUFFIX}
 
 USES=		cmake compiler:c++17-lang cpe shebangfix
-_USES_PYTHON?=	python:3.6+,build
+_USES_PYTHON?=	python:3.7+,build
 USES+=		${_USES_PYTHON}
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
 SHEBANG_FILES=	\
@@ -156,7 +156,7 @@ GOLD_CMAKE_ON=		-DLLVM_BINUTILS_INCDIR=${LOCALBASE}/include
 GOLD_BUILD_DEPENDS=	${LOCALBASE}/bin/ld.gold:devel/binutils
 GOLD_PLIST_FILES=	${LLVM_DIR}/lib/LLVMgold.so
 LIT_DESC=		Install lit and FileCheck test tools
-LIT_VARS=		_USES_PYTHON=python:3.6+
+LIT_VARS=		_USES_PYTHON=python:3.7+
 LIT_PLIST_SUB=		LIT_MOD_NAME=${LIT_MOD_NAME}
 LLD_DESC=		Install lld, the LLVM linker
 LLDB_BUILD_DEPENDS=	swig:devel/swig
@@ -165,7 +165,7 @@ LLDB_IMPLIES=		CLANG
 LLDB_PLIST_SUB=		PYTHON_ABIVER=${PYTHON_ABIVER}
 LLDB_USES=		lua:53 libedit
 LLDB_USE=		GNOME=libxml2
-LLDB_VARS=		_USES_PYTHON=python:3.6+
+LLDB_VARS=		_USES_PYTHON=python:3.7+
 MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CMAKE_ON=	-DLIBOMPTARGET_BUILD_DEVICERTL_BCLIB=OFF
