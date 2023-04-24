@@ -1,6 +1,5 @@
 PORTNAME=	pstoedit
-PORTVERSION=	3.70
-PORTREVISION=	12
+PORTVERSION=	3.78
 CATEGORIES=	graphics print
 MASTER_SITES=	SF
 
@@ -28,17 +27,18 @@ OPTIONS_DEFAULT=	EMF MAGICK MING PLOTUTILS
 OPTIONS_SUB=		yes
 
 EMF_DESC=		WMF/EMF support via libEMF
+MING_DESC=		Flash support via Ming
+PLOTUTILS_DESC=		Plotting support via Plotutils
+
 EMF_LIB_DEPENDS=	libEMF.so:graphics/libemf
 EMF_CONFIGURE_ON=	--with-libemf-include=${LOCALBASE}/include/libEMF
 EMF_CONFIGURE_OFF=	--without-emf
 MAGICK_USES=		magick
 MAGICK_CONFIGURE_ON=	--with-magick
 MAGICK_CONFIGURE_OFF=	--without-magick
-MING_DESC=		Flash support via Ming
 MING_LIB_DEPENDS=	libming.so:graphics/ming
 MING_CONFIGURE_ON=	--with-swf
 MING_CONFIGURE_OFF=	--without-swf
-PLOTUTILS_DESC=		Plotting support via Plotutils
 PLOTUTILS_LIB_DEPENDS=	libplotter.so:graphics/plotutils
 PLOTUTILS_CONFIGURE_ON=	--with-libplot
 PLOTUTILS_CONFIGURE_OFF=	--without-libplot

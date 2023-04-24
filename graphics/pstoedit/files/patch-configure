@@ -1,6 +1,6 @@
---- configure	2014-12-28 20:39:58 UTC
+--- configure.orig	2023-04-21 16:38:20 UTC
 +++ configure
-@@ -8263,6 +8263,7 @@
+@@ -8517,6 +8517,7 @@ else
    cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <stdlib.h>
@@ -8,7 +8,7 @@
  #include <stdarg.h>
  #include <string.h>
  #include <float.h>
-@@ -16701,12 +16702,12 @@
+@@ -17994,12 +17995,12 @@ if test -n "$LIBMAGICK_CFLAGS"; then
      pkg_cv_LIBMAGICK_CFLAGS="$LIBMAGICK_CFLAGS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
@@ -24,7 +24,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -16718,12 +16719,12 @@
+@@ -18011,12 +18012,12 @@ if test -n "$LIBMAGICK_LIBS"; then
      pkg_cv_LIBMAGICK_LIBS="$LIBMAGICK_LIBS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
@@ -40,7 +40,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -16744,9 +16745,9 @@
+@@ -18037,9 +18038,9 @@ else
          _pkg_short_errors_supported=no
  fi
          if test $_pkg_short_errors_supported = yes; then
