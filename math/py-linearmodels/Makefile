@@ -1,6 +1,5 @@
 PORTNAME=	linearmodels
-PORTVERSION=	4.27
-PORTREVISION=	1
+PORTVERSION=	4.29
 CATEGORIES=	math python # statistics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,12 +19,14 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}formulaic>=0.3.2:math/py-formulaic@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pyhdfe>=0.1:math/py-pyhdfe@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.2:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}statsmodels>=0.11:math/py-statsmodels@${PY_FLAVOR}
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>=6.4.2,<7.0.0:devel/py-setuptools_scm@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.7+ shebangfix
-USE_PYTHON=	autoplist cython distutils
+USE_PYTHON=	distutils cython autoplist pytest # tests fail to run, see https://github.com/bashtage/linearmodels/issues/512
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/linearmodels/panel/_utility${PYTHON_EXT_SUFFIX}.so
