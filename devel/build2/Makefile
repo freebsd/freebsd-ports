@@ -15,6 +15,11 @@ BROKEN_i386=	error: timestamp is not lock-free on this architecture
 
 USES=		gmake pkgconfig sqlite tar:xz
 
+# warning: clang@/usr/local/libexec/ccache/clang looks like a ccache wrapper
+#  info: ccache cannot be used as a C compiler
+#  info: use config.c to override
+NO_CCACHE=	yes
+
 pre-build:
 # phase 1
 	@cd ${WRKSRC}/build2 && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} bootstrap.gmake ${_MAKE_JOBS}
