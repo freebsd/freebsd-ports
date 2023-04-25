@@ -1,6 +1,5 @@
 PORTNAME=	caret
-DISTVERSION=	6.0-93
-PORTREVISION=	1
+DISTVERSION=	6.0-94
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,9 +9,9 @@ WWW=		https://topepo.github.io/caret/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
-		R-cran-e1071>0:science/R-cran-e1071 \
+CRAN_DEPENDS=	R-cran-e1071>0:science/R-cran-e1071 \
 		R-cran-foreach>0:devel/R-cran-foreach \
+		R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 		R-cran-ModelMetrics>=1.2.2.2:devel/R-cran-ModelMetrics \
 		R-cran-plyr>0:devel/R-cran-plyr \
 		R-cran-pROC>0:graphics/R-cran-pROC \
@@ -22,6 +21,6 @@ CRAN_DEPENDS=	R-cran-ggplot2>0:graphics/R-cran-ggplot2 \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
