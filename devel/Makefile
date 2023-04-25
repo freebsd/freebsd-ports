@@ -130,6 +130,7 @@
     SUBDIR += R-cran-vctrs
     SUBDIR += R-cran-waldo
     SUBDIR += R-cran-whisker
+    SUBDIR += R-cran-whoami
     SUBDIR += R-cran-withr
     SUBDIR += R-cran-zeallot
     SUBDIR += RStudio
