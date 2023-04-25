@@ -1,6 +1,6 @@
-TIMESTAMP = 1681979986
-SHA256 (wlroots-wlroots-44069dfd5e9e3efa150ce468f48c64916f2de0ae_GL0.tar.gz) = e2a5940ef2e20faed246ac39aa0c9b4c55bb522fd32929ab139838bd81c5821a
-SIZE (wlroots-wlroots-44069dfd5e9e3efa150ce468f48c64916f2de0ae_GL0.tar.gz) = 611892
+TIMESTAMP = 1682436395
+SHA256 (wlroots-wlroots-6830bfc17fd94709e2cdd4da0af989f102a26e59_GL0.tar.gz) = 5d98944fcbaf01e1bde121fd971d3f24aaa9e5d71d8fefc54f81f732963f4874
+SIZE (wlroots-wlroots-6830bfc17fd94709e2cdd4da0af989f102a26e59_GL0.tar.gz) = 615155
 SHA256 (10f80a8f1bb2.patch) = ca65f8eecf32e7364d5ba43cd9ee91060710a6fb8392892c86ad71e4f2a4c0b5
 SIZE (10f80a8f1bb2.patch) = 6097
 SHA256 (3196c73d487f.patch) = 69c6bc4658852bb45a24b129f625a7faaed8035dab0d79c388ae74d650beacdc
