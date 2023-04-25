@@ -1,0 +1,42 @@
+--- configure.orig	2021-08-26 13:29:58 UTC
++++ configure
+@@ -44,7 +44,6 @@ CFG_HAVE_OPTIONS="$CFG_HAVE_OPTIONS -DHAVE_UNSTABLE_RE
+ # Check for some essential tools.
+ 
+ REQUIRE_GMAKE
+-REQUIRE_GCC
+ 
+ # Find out and verify the basedir of the source installation,
+ # and where to install the binary.
+@@ -82,7 +81,7 @@ fi
+ if CHECK_INCLUDE cpuid.h cpuid; then
+   CFG_HAVE_OPTIONS="$CFG_HAVE_OPTIONS -DHAVE_CPUID"
+ fi
+-CHECK_LIBRARY intl gettext intl
++# CHECK_LIBRARY intl gettext intl
+ CHECK_LIBRARY cam cam_open_device cam
+ 
+ # Look for required functions
+@@ -100,10 +99,10 @@ if ! CHECK_FUNCTION getopt_long ; then
+   fi
+ fi
+ 
+-if ! CHECK_FUNCTION gettext ; then
+-  echo " [previous test forces -with-nls=no]"
++# if ! CHECK_FUNCTION gettext ; then
++#  echo " [previous test forces -with-nls=no]"
+   cfg_force_with_nls=no
+-fi
++# fi
+ 
+ CHECK_FUNCTION round
+ 
+@@ -124,7 +123,7 @@ CHECK_ALTIVEC
+ 
+ PRINT_MESSAGE "\nChecking for additional tools..."
+ 
+-if ! EXECUTE_PROGRAM "xgettext --help" xgettext \
++if ! EXECUTE_PROGRAM "no-xgettext --help" xgettext \
+  ||! EXECUTE_PROGRAM "msgmerge --help" msgmerge \
+  ||! EXECUTE_PROGRAM "msgfmt --help" msgfmt ; then
+   echo "* You need to install the GNU gettext tools"

@@ -1,67 +1,77 @@
 PORTNAME=	dvdisaster
-PORTVERSION=	0.79.5
-PORTREVISION=	3
+DISTVERSION=	0.79.10
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.ml1.org.uk/distfiles/ \
-		http://www.ancientgeek.org.uk/distfiles/
+MASTER_SITES=	https://dvdisaster.jcea.es/downloads/
 
 MAINTAINER=	bob@eager.cx
 COMMENT=	Optical disc error correction data and recovery tool
-WWW=		https://www.bobeager.uk/software.html
+WWW=		https://dvdisaster.jcea.es
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libfreetype.so:print/freetype2
 
-USES=		gmake gnome pkgconfig
-USE_GCC=	yes
-USE_GNOME=	gdkpixbuf2 gtk20 cairo
+FLAVORS=	default nox11
+FLAVOR?=	${FLAVORS:[1]}
+nox11_PKGNAMESUFFIX=	-nox11
 
-CFLAGS+=	-Wno-stringop-overflow
-MAKEFILE=	GNUmakefile
+USES=		gmake gnome pkgconfig tar:bz2
+USE_GNOME=	glib20
+
 HAS_CONFIGURE=	yes
 CONFIGURE_LOG=	configure.log
-CONFIGURE_ARGS=	--docsubdir="/" \
-		--localedir=${PREFIX}/share/locale \
-		--buildroot=${STAGEDIR}
+MAKEFILE=	GNUmakefile
 MAKE_JOBS_UNSAFE=	yes
 
-PORTDOCS=	*
-SUB_FILES=	pkg-message DEVICES.md DEVICES.html
+CONFIGURE_ARGS=	--docsubdir="/" \
+		--localedir=${PREFIX}/share/locale \
+		--buildroot=${STAGEDIR} \
+		--with-nls=no
 
-OPTIONS_DEFINE=	DOCS NLS
+SUB_FILES=	pkg-message
+FLAVORS_SUB=	yes
+
+.if ${FLAVOR} == default
+LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
+			libfreetype.so:print/freetype2
+USE_GNOME+=		cairo gdkpixbuf2 gtk20
+CONFIGURE_ARGS+=	--with-gui=yes
+.endif
+
+.if ${FLAVOR} == nox11
+COMMENT+=		(without GUI)
+CONFIGURE_ARGS+=	--with-gui=no
+.endif
+
+OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 
 DOCS_CONFIGURE_ON=	--docdir=${DOCSDIR}
-NLS_USES=	gettext
-NLS_CONFIGURE_OFF=	-with-nls=no
 
-post-patch:
-	${REINPLACE_CMD} -e '/dvdisaster uninstaller/,+19 d' \
-			${WRKSRC}/GNUmakefile.template
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/documentation/${PORTNAME}.en.1 ${STAGEDIR}${PREFIX}/man/man1/${PORTNAME}.1
 
-post-patch-DOCS-off:
-	${REINPLACE_CMD} -e 's|THESE_ARE_THE_DEVEL_SOURCES;|GNUmakefile;|; \
-		/install -d $$(BUILDROOT)$$(DOCSUBDIR)/,+7 d' \
-			${WRKSRC}/GNUmakefile.template
-
-post-patch-NLS-off:
-	${REINPLACE_CMD} -Ee 's|(PO_LOCALES)|#\1|; \
-		s|install -m 644 CREDITS\*|install -m 644 CREDITS\.en|' \
-			${WRKSRC}/GNUmakefile.template
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${FILESDIR}/devices.txt.in ${STAGEDIR}${DOCSDIR}/devices.txt
+	${INSTALL_DATA} ${WRKSRC}/documentation/codec-specs/codecs.pdf ${STAGEDIR}${DOCSDIR}
+.if ${FLAVOR} == default
+	${INSTALL_DATA} ${WRKSRC}/documentation/user-manual/manual.pdf ${STAGEDIR}${DOCSDIR}/${PORTNAME}.pdf
+.endif
 
 post-install:
+.if ${FLAVOR} == default
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/contrib/dvdisaster48.png ${STAGEDIR}${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/contrib/dvdisaster16.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/contrib/dvdisaster24.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/contrib/dvdisaster32.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/contrib/dvdisaster48.png ${STAGEDIR}${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/contrib/dvdisaster64.png ${STAGEDIR}${PREFIX}/share/pixmaps
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKSRC}/contrib/dvdisaster.desktop ${STAGEDIR}${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/contrib/dvdisaster.desktop ${STAGEDIR}${PREFIX}/share/applications
+.endif
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-
-post-install-DOCS-on:
-	${INSTALL_MAN} ${WRKDIR}/DEVICES.md ${STAGEDIR}${DOCSDIR}
-	${INSTALL_MAN} ${WRKDIR}/DEVICES.html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
