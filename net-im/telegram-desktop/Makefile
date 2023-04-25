@@ -87,7 +87,7 @@ OPTIONS_GROUP=	AUDIO
 OPTIONS_GROUP_AUDIO=	ALSA PULSEAUDIO
 
 AUDIO_DESC=		Audio backend for voice calls
-SYSTEM_FONTS_DESC=	Use system fonts instead of bundled patches ones
+SYSTEM_FONTS_DESC=	Use system fonts instead of bundled patched ones
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
