@@ -5,10 +5,5 @@
 %%SITE_PERL%%/MooseX/Types/Structured.pm
 %%SITE_PERL%%/MooseX/Types/Structured/MessageStack.pm
 %%SITE_PERL%%/MooseX/Types/Structured/OverflowHandler.pm
-%%PERL5_MAN3%%/MooseX::Meta::TypeCoercion::Structured.3.gz
-%%PERL5_MAN3%%/MooseX::Meta::TypeCoercion::Structured::Optional.3.gz
 %%PERL5_MAN3%%/MooseX::Meta::TypeConstraint::Structured.3.gz
-%%PERL5_MAN3%%/MooseX::Meta::TypeConstraint::Structured::Optional.3.gz
 %%PERL5_MAN3%%/MooseX::Types::Structured.3.gz
-%%PERL5_MAN3%%/MooseX::Types::Structured::MessageStack.3.gz
-%%PERL5_MAN3%%/MooseX::Types::Structured::OverflowHandler.3.gz
