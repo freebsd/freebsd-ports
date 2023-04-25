@@ -205,7 +205,7 @@ HTTP_VIDEO_THUMBEXTRACTOR_LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 					libavutil.so:multimedia/ffmpeg \
 					libswscale.so:multimedia/ffmpeg
 HTTP_VIDEO_THUMBEXTRACTOR_USES=		jpeg
-HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	Novetta:nginx-video-thumbextractor-module:f5b5bae:vte
+HTTP_VIDEO_THUMBEXTRACTOR_GH_TUPLE=	Novetta:nginx-video-thumbextractor-module:28861f2:vte
 HTTP_VIDEO_THUMBEXTRACTOR_VARS=		DSO_EXTMODS+=vte
 
 HTTP_ZIP_GH_TUPLE=	vince2678:mod_zip:5b2604b:mod_zip
