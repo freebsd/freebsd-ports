@@ -25,6 +25,7 @@ share/icons/gnome/32x32/mimetypes/gnome-mime-application-x-multipart-ldraw.png
 %%DATADIR%%/license.txt
 %%DATADIR%%/m6459.ldr
 %%DATADIR%%/todo.txt
+share/metainfo/io.github.tcobbs.LDView.metainfo.xml
 share/mime-info/ldraw.keys
 share/mime-info/ldraw.mime
 share/mime/packages/ldraw.xml
