@@ -1,7 +1,8 @@
 PORTNAME=	opus
-PORTVERSION=	1.3.1
+DISTVERSION=	1.4
 CATEGORIES=	audio
-MASTER_SITES=	MOZILLA/opus
+MASTER_SITES=	https://downloads.xiph.org/releases/opus/ \
+		https://github.com/xiph/opus/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	IETF audio codec
@@ -22,6 +23,7 @@ TEST_TARGET=	check
 
 .include <bsd.port.options.mk>
 
+# drop after FreeBSD 12 EOL
 .if ${ARCH} == "arm"
 CONFIGURE_ARGS+=--enable-fixed-point
 .endif
