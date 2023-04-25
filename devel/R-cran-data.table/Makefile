@@ -1,10 +1,9 @@
 PORTNAME=	data.table
-DISTVERSION=	1.14.2
-PORTREVISION=	1
+DISTVERSION=	1.14.8
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extension of Data.frame
 WWW=		https://cran.r-project.org/web/packages/data.table/
 
