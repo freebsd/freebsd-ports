@@ -1,5 +1,6 @@
 PORTNAME=	autotalent
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://tombaran.info/
 DIST_SUBDIR=	repacked

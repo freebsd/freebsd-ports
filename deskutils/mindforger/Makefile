@@ -1,5 +1,6 @@
 PORTNAME=	mindforger
 PORTVERSION=	1.54.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	danfe@FreeBSD.org

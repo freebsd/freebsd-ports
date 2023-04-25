@@ -1,6 +1,7 @@
 PORTNAME=	visualization.shadertoy
 PORTVERSION=	20.3.0
 DISTVERSIONSUFFIX=	-Nexus
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com

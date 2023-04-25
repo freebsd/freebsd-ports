@@ -1,6 +1,6 @@
 PORTNAME=	pycharm-pro
 PORTVERSION=	2022.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java python
 MASTER_SITES=	https://download.jetbrains.com/python/ \
 		http://download.jetbrains.com/python/

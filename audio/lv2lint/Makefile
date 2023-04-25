@@ -1,5 +1,6 @@
 PORTNAME=	lv2lint
 DISTVERSION=	0.16.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://git.open-music-kontrollers.ch/lv2/lv2lint/snapshot/
 

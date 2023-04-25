@@ -1,6 +1,7 @@
 PORTNAME=	pvr.iptvsimple
 DISTVERSION=	20.8.1
 DISTVERSIONSUFFIX=	-Nexus
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	decke@FreeBSD.org

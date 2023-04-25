@@ -1,5 +1,6 @@
 PORTNAME=	glaxnimate
 DISTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org

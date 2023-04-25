@@ -1,5 +1,6 @@
 PORTNAME=	purple-rocketchat
 PORTVERSION=	0.20220915
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	mizhka@freebsd.org

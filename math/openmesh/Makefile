@@ -1,5 +1,6 @@
 PORTNAME=	openmesh
 DISTVERSION=	9.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.openmesh.org/media/Releases/${DISTVERSION}/
 DISTNAME=	OpenMesh-${DISTVERSION}

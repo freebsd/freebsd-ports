@@ -1,6 +1,7 @@
 PORTNAME=	budgie-trash-applet
 DISTVERSION=	2.1.2
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	deskutils budgie
 
 MAINTAINER=	duchateau.olivier@gmail.com

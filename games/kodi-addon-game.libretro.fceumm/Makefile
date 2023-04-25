@@ -1,6 +1,7 @@
 PORTNAME=	game.libretro.fceumm
 PORTVERSION=	0.0.1.41
 DISTVERSIONSUFFIX=	-Matrix
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com

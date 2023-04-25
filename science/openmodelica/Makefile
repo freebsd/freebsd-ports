@@ -1,7 +1,7 @@
 PORTNAME=	openmodelica
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science cad java
 MASTER_SITES=	https://build.openmodelica.org/omc/bootstrap/:bootstrap
 DISTFILES=	sources.tar.gz:bootstrap

@@ -1,5 +1,6 @@
 PORTNAME=	zoneminder
 DISTVERSION=	1.36.33
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	bsd@abinet.ru

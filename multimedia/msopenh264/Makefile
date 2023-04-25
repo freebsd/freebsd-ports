@@ -1,5 +1,6 @@
 PORTNAME=	msopenh264
 DISTVERSION=	5.2.0
+PORTREVISION=	1
 CATEGORIES=	multimedia net
 
 MAINTAINER=	bofh@FreeBSD.org

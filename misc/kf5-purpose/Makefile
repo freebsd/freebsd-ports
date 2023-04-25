@@ -1,5 +1,6 @@
 PORTNAME=	purpose
 DISTVERSION=	${KDE_FRAMEWORKS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde kde-frameworks
 
 MAINTAINER=	kde@FreeBSD.org

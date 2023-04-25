@@ -1,5 +1,6 @@
 PORTNAME=	xf86-video-qxl
 DISTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	x11-drivers
 
 MAINTAINER=	hrs@FreeBSD.org

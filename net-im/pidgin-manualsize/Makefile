@@ -1,6 +1,6 @@
 PORTNAME=	manualsize
 PORTVERSION=	0.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/eugen \
 		http://www.grosbein.net/freebsd/distfiles/

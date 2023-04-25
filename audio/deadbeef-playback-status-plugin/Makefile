@@ -1,6 +1,6 @@
 PORTNAME=	deadbeef-playback-status-plugin
 DISTVERSION=	0.0.2015.09.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	lsp-plugins
 DISTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/sadko4u/lsp-plugins/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-lv2

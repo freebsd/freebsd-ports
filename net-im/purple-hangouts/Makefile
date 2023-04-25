@@ -1,5 +1,6 @@
 PORTNAME=	purple-hangouts
 PORTVERSION=	20210630
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org

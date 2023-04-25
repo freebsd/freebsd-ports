@@ -1,7 +1,7 @@
 PORTNAME=	ecwolf
 PORTVERSION=	1.4.1
 DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	http://maniacsvault.net/ecwolf/files/ecwolf/1.x/
 

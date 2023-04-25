@@ -1,6 +1,6 @@
 PORTNAME=	waiho
 PORTVERSION=	0.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	ftp gnustep
 MASTER_SITES=	http://www.roard.com/waiho/download/
 DISTNAME=	Waiho-${PORTVERSION}

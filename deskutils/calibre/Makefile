@@ -1,5 +1,6 @@
 PORTNAME=	calibre
 PORTVERSION=	6.16.0
+PORTREVISION=	1
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/ \
 		https://curl.haxx.se/ca/:cacert

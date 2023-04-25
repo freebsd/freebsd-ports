@@ -1,5 +1,6 @@
 PORTNAME=	ffmpegthumbnailer
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia graphics
 MASTER_SITES=	https://github.com/dirkvdb/${PORTNAME}/releases/download/${PORTVERSION}/
 

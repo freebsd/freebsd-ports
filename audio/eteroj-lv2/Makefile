@@ -1,5 +1,6 @@
 PORTNAME=	eteroj
 DISTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://git.open-music-kontrollers.ch/lv2/eteroj.lv2/snapshot/
 PKGNAMESUFFIX=	-lv2

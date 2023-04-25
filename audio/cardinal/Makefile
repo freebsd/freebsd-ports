@@ -1,5 +1,6 @@
 PORTNAME=	cardinal
 DISTVERSION=	22.05
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/DISTRHO/Cardinal/releases/download/${DISTVERSION}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	fs-uae-launcher
 PORTVERSION=	3.0.5
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	emulators
 MASTER_SITES=	https://fs-uae.net/stable/${PORTVERSION}/
 

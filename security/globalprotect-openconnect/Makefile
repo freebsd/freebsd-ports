@@ -1,6 +1,7 @@
 PORTNAME=	globalprotect-openconnect
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.9
+PORTREVISION=	1
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	jwb@FreeBSD.org

@@ -1,6 +1,7 @@
 PORTNAME=	game.libretro.genplus
 PORTVERSION=	1.7.4.40
 DISTVERSIONSUFFIX=	-Matrix
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com

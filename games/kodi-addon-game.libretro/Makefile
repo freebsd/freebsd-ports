@@ -1,6 +1,7 @@
 PORTNAME=	game.libretro
 PORTVERSION=	20.1.0
 DISTVERSIONSUFFIX=	-Nexus
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com

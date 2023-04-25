@@ -1,5 +1,6 @@
 PORTNAME=	simgear
 PORTVERSION=	2020.3.18
+PORTREVISION=	1
 CATEGORIES=	devel games
 MASTER_SITES=	SF/flightgear/release-${PORTVERSION:R}
 

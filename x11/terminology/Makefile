@@ -1,5 +1,6 @@
 PORTNAME=	terminology
 DISTVERSION=	1.13.0
+PORTREVISION=	1
 CATEGORIES=	x11 enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment

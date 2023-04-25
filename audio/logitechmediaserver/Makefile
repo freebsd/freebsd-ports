@@ -1,6 +1,7 @@
 
 PORTNAME=	logitechmediaserver
 DISTVERSION=	8.3.1
+PORTREVISION=	1
 CATEGORIES=	audio
 
 MAINTAINER=	trueos@norwegianrockcat.com

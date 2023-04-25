@@ -1,5 +1,6 @@
 PORTNAME=	caps-plugins
 PORTVERSION=	0.4.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://quitte.de/dsp/
 DISTNAME=	caps_${PORTVERSION}

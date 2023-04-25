@@ -1,6 +1,6 @@
 PORTNAME=	spectmorph
 DISTVERSION=	0.5.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://spectmorph.org/files/releases/
 

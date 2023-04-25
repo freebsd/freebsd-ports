@@ -1,5 +1,6 @@
 PORTNAME=	qpwgraph
 DISTVERSION=	0.0.9
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org

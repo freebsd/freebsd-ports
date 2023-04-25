@@ -1,5 +1,6 @@
 PORTNAME=	timbre-mill
 DISTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/sadko4u/timbre-mill/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-src-${DISTVERSION}

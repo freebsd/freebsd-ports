@@ -1,6 +1,6 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.11.51
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm # wayland: depends on https://github.com/Plagman/gamescope/issues/543
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

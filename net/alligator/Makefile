@@ -1,5 +1,6 @@
 PORTNAME=	alligator
 DISTVERSION=	23.01.0
+PORTREVISION=	1
 CATEGORIES=	net kde
 MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	deadbeef-spectrogram-plugin
 DISTVERSION=	0.0.2015.01.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 
 MAINTAINER=	danfe@FreeBSD.org

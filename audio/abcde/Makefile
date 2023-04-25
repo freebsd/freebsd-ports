@@ -1,5 +1,6 @@
 PORTNAME=	abcde
 DISTVERSION=	2.9.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://abcde.einval.com/download/
 

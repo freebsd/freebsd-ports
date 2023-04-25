@@ -1,6 +1,6 @@
 PORTNAME=	iceicepenguin
 PORTVERSION=	1.5.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games python
 MASTER_SITES=	SF/${PORTNAME}/Default/Ice%20Ice%20Penguin/ \
 		SF/nemysisfreebsdp/games/:icons

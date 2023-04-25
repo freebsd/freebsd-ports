@@ -1,6 +1,7 @@
 PORTNAME=	browsh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.8.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/browsh-org/browsh/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	browsh_${DISTVERSION}_freebsd_${ARCH:S/i386/386/}

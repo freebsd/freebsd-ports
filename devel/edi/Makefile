@@ -1,5 +1,6 @@
 PORTNAME=	edi
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	https://github.com/Enlightenment/edi/releases/download/v${PORTVERSION}/ # http://download.enlightenment.org/rel/apps/${PORTNAME}/
 DIST_SUBDIR=	enlightenment

@@ -1,6 +1,6 @@
 PORTNAME=	jumpnbump
 PORTVERSION=	1.61
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://gitlab.com/LibreGames/jumpnbump/uploads/95acdae2a232513f068e260977371dcf/
 

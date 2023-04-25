@@ -1,6 +1,6 @@
 PORTNAME=	amsynth
 DISTVERSION=	1.11.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/amsynth/amsynth/releases/download/release-${DISTVERSION}/
 

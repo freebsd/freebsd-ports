@@ -1,5 +1,6 @@
 PORTNAME=	latte-dock
 DISTVERSION=	0.10.9
+PORTREVISION=	1
 CATEGORIES=	deskutils kde
 MASTER_SITES=	KDE/stable/latte-dock
 

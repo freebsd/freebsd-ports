@@ -1,5 +1,6 @@
 PORTNAME=	lurch
 DISTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	net-im security
 MASTER_SITES=	https://github.com/gkdr/lurch/releases/download/v${DISTVERSION}/
 EXTRACT_SUFX=	-src.tar.gz

@@ -1,5 +1,6 @@
 PORTNAME=	mod_amd
 PORTVERSION=	g20150926
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	numisemis@yahoo.com

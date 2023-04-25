@@ -1,5 +1,6 @@
 PORTNAME=	rosegarden
 DISTVERSION=	22.12.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://sourceforge.net/projects/${PORTNAME}/files/${PORTNAME}/${DISTVERSION:R}/
 

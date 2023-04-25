@@ -1,6 +1,7 @@
 PORTNAME=	harvid
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	marcelbonnet@gmail.com

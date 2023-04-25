@@ -1,6 +1,6 @@
 PORTNAME=	speech-dispatcher
 DISTVERSION=	0.11.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	accessibility audio
 MASTER_SITES=	https://github.com/brailcom/speechd/releases/download/${PORTVERSION}/
 

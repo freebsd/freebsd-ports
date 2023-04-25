@@ -1,5 +1,6 @@
 PORTNAME=	dclock
 PORTVERSION=	2.2.2
+PORTREVISION=	1
 CATEGORIES=	x11-clocks
 MASTER_SITES=	http://opencircuitdesign.com/~tim/programs/dclock/archive/
 

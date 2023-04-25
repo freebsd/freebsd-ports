@@ -1,6 +1,6 @@
 PORTNAME=	monsterz
 PORTVERSION=	0.7.1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	http://sam.zoy.org/monsterz/ \
 		SF/nemysisfreebsdp/:icons

@@ -1,5 +1,6 @@
 PORTNAME=	purple-facebook
 PORTVERSION=	0.9.6
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://github.com/dequis/purple-facebook/releases/download/v${PORTVERSION}/
 

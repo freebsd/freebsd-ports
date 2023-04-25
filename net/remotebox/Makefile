@@ -1,5 +1,6 @@
 PORTNAME=	remotebox
 DISTVERSION=	3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://remotebox.knobgoblin.org.uk/downloads/
 DISTNAME=	RemoteBox-${DISTVERSION}

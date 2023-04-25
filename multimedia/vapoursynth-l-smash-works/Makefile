@@ -1,6 +1,7 @@
 PORTNAME=	l-smash-works
 DISTVERSION=	0.0-940 # git rev-list --count HEAD
 DISTVERSIONSUFFIX=	-g198cc78
+PORTREVISION=	1
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 

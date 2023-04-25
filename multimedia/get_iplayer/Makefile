@@ -1,6 +1,7 @@
 PORTNAME=	get_iplayer
 PORTVERSION=	3.31
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	multimedia net
 
 MAINTAINER=	jamie@catflap.org

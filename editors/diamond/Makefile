@@ -1,5 +1,6 @@
 PORTNAME=	diamond
 DISTVERSION=	1.3.8
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://download.copperspice.com/${PORTNAME}/source/
 PKGNAMESUFFIX=	-cs

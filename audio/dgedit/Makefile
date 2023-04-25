@@ -1,5 +1,6 @@
 PORTNAME=	dgedit
 DISTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.drumgizmo.org/releases/${PORTNAME}-${DISTVERSION}/
 

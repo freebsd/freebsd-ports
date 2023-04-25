@@ -1,6 +1,6 @@
 PORTNAME=	gnome-shell-extension-panel-osd
 PORTVERSION=	0.0.0.20171023
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 DIST_SUBDIR=	gnome
 

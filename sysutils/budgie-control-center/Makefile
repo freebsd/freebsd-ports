@@ -1,5 +1,6 @@
 PORTNAME=	budgie-control-center
 DISTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	sysutils budgie
 MASTER_SITES=	BUDGIE
 

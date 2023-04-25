@@ -1,6 +1,6 @@
 PORTNAME=	furnace
 PORTVERSION=	0.5.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	http://sid.ethz.ch/debian/furnace/ \
 		LOCAL/ehaupt

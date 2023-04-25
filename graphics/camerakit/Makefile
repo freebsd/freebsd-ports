@@ -1,6 +1,6 @@
 PORTNAME=	camerakit
 PORTVERSION=	0.0.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 DISTNAME=	CameraKit-20041011

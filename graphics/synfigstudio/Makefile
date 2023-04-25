@@ -1,7 +1,7 @@
 PORTNAME=	synfigstudio
 PORTVERSION=	1.4.4
 DISTVERSIONPREFIX=v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics multimedia
 
 MAINTAINER=	portmaster@BSDforge.com

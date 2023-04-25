@@ -1,6 +1,6 @@
 PORTNAME=	maxr
 PORTVERSION=	0.2.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	https://www.maxr.org/downloads/
 

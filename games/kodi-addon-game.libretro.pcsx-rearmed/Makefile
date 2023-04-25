@@ -1,7 +1,7 @@
 PORTNAME=	game.libretro.pcsx-rearmed
 PORTVERSION=	23.0.0.44
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com

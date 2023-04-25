@@ -1,5 +1,6 @@
 PORTNAME=	aloadimage
 DISTVERSION=	0.6.2.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	hoverboard
 PORTVERSION=	0.8.0
+PORTREVISION=	1
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	copperspice
 DISTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://download.copperspice.com/${PORTNAME}/source/
 

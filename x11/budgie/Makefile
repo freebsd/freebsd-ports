@@ -1,5 +1,6 @@
 PORTNAME=	budgie
 PORTVERSION=	10.7
+PORTREVISION=	1
 CATEGORIES=	x11 budgie
 
 MAINTAINER=	duchateau.olivier@gmail.com

@@ -1,6 +1,7 @@
 PORTNAME=	peripheral.joystick
 DISTVERSION=	20.1.0
 DISTVERSIONSUFFIX=	-Nexus
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com

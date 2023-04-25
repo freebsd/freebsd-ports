@@ -1,5 +1,6 @@
 PORTNAME=	acfgfs
 DISTVERSION=	0.6.2.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbeich@FreeBSD.org

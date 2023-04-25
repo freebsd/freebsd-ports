@@ -1,6 +1,6 @@
 PORTNAME=	convertall
 PORTVERSION=	0.8.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/doug-101/ConvertAll/releases/download/v${PORTVERSION}/
 

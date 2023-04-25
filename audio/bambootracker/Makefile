@@ -1,6 +1,7 @@
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/BambooTracker/BambooTracker/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
 DISTNAME=	BambooTracker-src-${DISTVERSIONPREFIX}${DISTVERSION}

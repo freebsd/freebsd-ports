@@ -1,6 +1,6 @@
 PORTNAME=	vm
 DISTVERSION=	0.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://git.open-music-kontrollers.ch/lv2/vm.lv2/snapshot/
 PKGNAMESUFFIX=	-lv2

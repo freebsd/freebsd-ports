@@ -1,6 +1,6 @@
 PORTNAME=	amb-plugins
 PORTVERSION=	0.8.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://kokkinizita.linuxaudio.org/linuxaudio/downloads/
 DISTNAME=	AMB-plugins-${PORTVERSION}

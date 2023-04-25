@@ -1,5 +1,6 @@
 PORTNAME=	mswebrtc
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	multimedia net
 MASTER_SITES=	https://www.linphone.org/releases/sources/plugins/mswebrtc/
 

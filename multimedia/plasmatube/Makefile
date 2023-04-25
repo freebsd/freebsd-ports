@@ -1,5 +1,6 @@
 PORTNAME=	plasmatube
 DISTVERSION=	23.01.0
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}/
 

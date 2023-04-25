@@ -1,7 +1,7 @@
 PORTNAME=	game.libretro.picodrive
 PORTVERSION=	1.99.0.30
 DISTVERSIONSUFFIX=	-Matrix
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 
 MAINTAINER=	rozhuk.im@gmail.com

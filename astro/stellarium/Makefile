@@ -1,5 +1,6 @@
 PORTNAME=	stellarium
 PORTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}

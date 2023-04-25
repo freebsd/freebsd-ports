@@ -1,7 +1,7 @@
 PORTNAME=	libresonic
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www java
 MASTER_SITES=	https://github.com/Libresonic/libresonic/releases/download/v${DISTVERSION}/
 PKGNAMESUFFIX=	-standalone

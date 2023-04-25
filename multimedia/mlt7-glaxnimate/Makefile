@@ -1,7 +1,7 @@
 MASTERDIR=	${.CURDIR:H}/mlt7
 SLAVEPORT=	glaxnimate
 
-PORTREVISION=	1
+PORTREVISION=	2
 PKGNAMESUFFIX=	-glaxnimate
 
 COMMENT=	2D animations plugin for the MLT multimedia framework

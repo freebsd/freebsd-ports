@@ -1,6 +1,6 @@
 PORTNAME=	sherlock
 DISTVERSION=	0.28.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://git.open-music-kontrollers.ch/lv2/sherlock.lv2/snapshot/
 PKGNAMESUFFIX=	-lv2

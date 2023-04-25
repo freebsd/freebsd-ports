@@ -1,6 +1,6 @@
 PORTNAME=	SoQt
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=		1
 CATEGORIES=	x11-toolkits
 # cannot USE_GITHUB: submodules required, distfile built by upstream

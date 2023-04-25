@@ -1,6 +1,7 @@
 PORTNAME=	wolf-shaper
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org

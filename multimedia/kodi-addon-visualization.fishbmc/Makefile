@@ -1,6 +1,7 @@
 PORTNAME=	visualization.fishbmc
 PORTVERSION=	20.2.0
 DISTVERSIONSUFFIX=	-Nexus
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	rozhuk.im@gmail.com

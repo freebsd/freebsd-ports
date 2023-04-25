@@ -1,6 +1,6 @@
 PORTNAME=	sox
 DISTVERSION=	14.4.2.20210509
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://dev.gentoo.org/~fordfrog/distfiles/
 DISTNAME=	sox-code-42b3557e13e0fe01a83465b672d89faddbe65f49

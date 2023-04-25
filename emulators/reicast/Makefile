@@ -1,6 +1,6 @@
 PORTNAME=	reicast
 PORTVERSION=	0.20201231
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators games
 
 MAINTAINER=	beyert@cs.ucr.edu

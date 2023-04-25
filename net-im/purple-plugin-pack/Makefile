@@ -1,5 +1,6 @@
 PORTNAME=	purple-plugin-pack
 PORTVERSION=	2.8.0
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	https://dl.bintray.com/pidgin/releases/
 

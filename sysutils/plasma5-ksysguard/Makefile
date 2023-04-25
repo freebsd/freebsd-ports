@@ -1,6 +1,6 @@
 PORTNAME=	ksysguard
 DISTVERSION=	5.22.0	# No longer released as part of KDE Plasma
-PORTREVISION=	3
+PORTREVISION=	4
 PKGNAMEPREFIX=	plasma5-
 CATEGORIES=	sysutils kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}/
