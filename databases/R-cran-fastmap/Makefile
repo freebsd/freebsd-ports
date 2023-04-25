@@ -1,10 +1,9 @@
 PORTNAME=	fastmap
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fast Implementation of a Key-Value Store
 WWW=		https://cran.r-project.org/web/packages/fastmap/
 
