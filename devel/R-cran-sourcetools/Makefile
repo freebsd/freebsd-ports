@@ -1,10 +1,9 @@
 PORTNAME=	sourcetools
-PORTVERSION=	0.1.7
-PORTREVISION=	4
+DISTVERSION=	0.1.7-1
 CATEGORIES=	devel
-DISTNAME=	${PORTNAME}_${PORTVERSION}
+DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for the Reading and Tokenization of R Code
 WWW=		https://cran.r-project.org/web/packages/sourcetools/
 
