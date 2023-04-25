@@ -1,0 +1,3 @@
+Parse dates automatically, without the need of specifying a format. Currently
+it includes the git date parser. It can also recognize and parse all ISO 8601
+formats.
