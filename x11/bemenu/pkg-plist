@@ -8,5 +8,4 @@ lib/libbemenu.so
 lib/libbemenu.so.0
 lib/libbemenu.so.%%SOVERSION%%
 libdata/pkgconfig/bemenu.pc
-share/man/man1/bemenu-run.1.gz
 share/man/man1/bemenu.1.gz
