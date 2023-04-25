@@ -1,6 +1,5 @@
 PORTNAME=	pak
-DISTVERSION=	0.4.0
-PORTREVISION=	1
+DISTVERSION=	0.5.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -28,7 +27,7 @@ TEST_DEPENDS=	R-cran-jsonlite>=1.8.0:converters/R-cran-jsonlite \
 		R-cran-pingr>0:net/R-cran-pingr \
 		R-cran-digest>0:security/R-cran-digest \
 		R-cran-gitcreds>0:security/R-cran-gitcreds \
-		R-cran-processx>=3.5.2:sysutils/R-cran-processx \
+		R-cran-processx>=3.8.1:sysutils/R-cran-processx \
 		R-cran-ps>=1.6.0:sysutils/R-cran-ps
 
 USES=		cran:auto-plist
