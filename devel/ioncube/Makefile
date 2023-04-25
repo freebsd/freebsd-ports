@@ -1,5 +1,5 @@
 PORTNAME=	ioncube
-DISTVERSION=	12.0.2
+DISTVERSION=	12.0.5
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.ioncube.com/loader_downloads/ \
 		http://downloads2.ioncube.com/loader_downloads/ \
@@ -19,10 +19,10 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 IGNORE_DragonFly=	is unsupported on DragonFly
 ONLY_FOR_ARCHS=	amd64 i386
-NO_BUILD=	yes
 USES=		php:flavors
 IGNORE_WITH_PHP=	80 82
 
+NO_BUILD=	yes
 SUB_FILES=	pkg-message
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
