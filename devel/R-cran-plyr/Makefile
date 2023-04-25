@@ -1,10 +1,9 @@
 PORTNAME=	plyr
-PORTVERSION=	1.8.7
-PORTREVISION=	1
+PORTVERSION=	1.8.8
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for splitting, applying, and combining data
 WWW=		https://cran.r-project.org/web/packages/plyr/
 
