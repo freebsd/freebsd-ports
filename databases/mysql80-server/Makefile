@@ -1,6 +1,6 @@
 PORTNAME?=		mysql
 PORTVERSION=		8.0.32
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
@@ -40,6 +40,7 @@ LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_armv7=	libunwind.so:devel/libunwind
 LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc=		libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64=		libunwind.so:devel/libunwind
 LIB_DEPENDS_powerpc64le=	libunwind.so:devel/libunwind
 
@@ -49,6 +50,7 @@ BUILD_DEPENDS_aarch64=	libunwind>0:devel/libunwind
 BUILD_DEPENDS_amd64=	libunwind>0:devel/libunwind
 BUILD_DEPENDS_armv7=	libunwind>0:devel/libunwind
 BUILD_DEPENDS_i386=	libunwind>0:devel/libunwind
+BUILD_DEPENDS_powerpc=	libunwind>0:devel/libunwind
 BUILD_DEPENDS_powerpc64=	libunwind>0:devel/libunwind
 BUILD_DEPENDS_powerpc64le=	libunwind>0:devel/libunwind
 
