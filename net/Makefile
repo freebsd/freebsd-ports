@@ -1533,6 +1533,7 @@
     SUBDIR += trafshow
     SUBDIR += trafshow3
     SUBDIR += trickle
+    SUBDIR += trippy
     SUBDIR += tsclient
     SUBDIR += tsctp
     SUBDIR += tsocks
