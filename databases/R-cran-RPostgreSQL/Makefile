@@ -1,6 +1,5 @@
 PORTNAME=	RPostgreSQL
-DISTVERSION=	0.7-4
-PORTREVISION=	1
+DISTVERSION=	0.7-5
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -17,8 +16,7 @@ RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist,compiles pgsql shebangfix
 
-SHEBANG_FILES=	inst/devTests/*.r \
-		inst/devTests/*.sh
+SHEBANG_FILES=	inst/devTests/*.r inst/devTests/*.sh
 SHEBANG_LANG=	r
 r_OLD_CMD=	/usr/bin/r
 r_CMD=		${LOCALBASE}/bin/R
