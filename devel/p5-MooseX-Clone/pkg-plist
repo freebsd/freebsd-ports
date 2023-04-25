@@ -7,8 +7,6 @@
 %%SITE_PERL%%/MooseX/Clone/Meta/Attribute/Trait/StorableClone.pm
 %%PERL5_MAN3%%/MooseX::Clone.3.gz
 %%PERL5_MAN3%%/MooseX::Clone::Meta::Attribute::Trait::Clone.3.gz
-%%PERL5_MAN3%%/MooseX::Clone::Meta::Attribute::Trait::Clone::Base.3.gz
-%%PERL5_MAN3%%/MooseX::Clone::Meta::Attribute::Trait::Clone::Std.3.gz
 %%PERL5_MAN3%%/MooseX::Clone::Meta::Attribute::Trait::Copy.3.gz
 %%PERL5_MAN3%%/MooseX::Clone::Meta::Attribute::Trait::NoClone.3.gz
 %%PERL5_MAN3%%/MooseX::Clone::Meta::Attribute::Trait::StorableClone.3.gz
