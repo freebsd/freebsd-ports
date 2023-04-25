@@ -1,6 +1,5 @@
 PORTNAME=	gstreamer1-libav
-DISTVERSION=	1.22.1
-PORTREVISION=	2
+DISTVERSION=	${_GST_VERSION}
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gst-libav/
 DISTNAME=	gst-libav-${DISTVERSION}
