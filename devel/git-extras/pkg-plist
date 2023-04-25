@@ -71,6 +71,7 @@ bin/git-touch
 bin/git-undo
 bin/git-unlock
 bin/git-utimes
+etc/bash_completion.d/git-extras
 man/man1/git-abort.1.gz
 man/man1/git-alias.1.gz
 man/man1/git-archive-file.1.gz
@@ -143,4 +144,3 @@ man/man1/git-touch.1.gz
 man/man1/git-undo.1.gz
 man/man1/git-unlock.1.gz
 man/man1/git-utimes.1.gz
-share/bash-completion/completions/git-extras
