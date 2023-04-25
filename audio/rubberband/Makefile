@@ -1,5 +1,5 @@
 PORTNAME=	rubberband
-DISTVERSION=	3.1.0
+DISTVERSION=	3.2.1
 CATEGORIES=	audio
 MASTER_SITES=	https://breakfastquay.com/files/releases/
 
@@ -21,6 +21,12 @@ USES=		localbase meson pkgconfig tar:bzip2
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dfft=fftw \
-		-Dresampler=libsamplerate
+		-Dresampler=libsamplerate \
+		-Djni=disabled
+
+OPTIONS_DEFINE=	TEST
+
+TEST_BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
+TEST_MESON_ENABLED=	tests
 
 .include <bsd.port.mk>
