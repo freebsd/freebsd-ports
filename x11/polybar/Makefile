@@ -5,7 +5,7 @@ MASTER_SITES=	https://github.com/polybar/polybar/releases/download/${DISTVERSION
 
 MAINTAINER=	rigoletto@FreeBSD.org
 COMMENT=	Fast and easy-to-use status bar
-WWW=		https://github.com/jaagr/polybar
+WWW=		https://github.com/polybar/polybar
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
