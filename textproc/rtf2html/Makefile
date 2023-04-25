@@ -7,6 +7,9 @@ MASTER_SITES=	LOCAL/ehaupt
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Simple rtf2html converter
 
+DEPRECATED=	Abandonware, please use something modern like markdown
+EXPIRATION_DATE=2023-05-25
+
 LICENSE=	BSD2CLAUSE
 
 CONFLICTS_INSTALL=	p5-RTF-Parser
