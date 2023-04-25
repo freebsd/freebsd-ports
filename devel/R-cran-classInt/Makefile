@@ -1,10 +1,9 @@
 PORTNAME=	classInt
-DISTVERSION=	0.4-7
-PORTREVISION=	1
+DISTVERSION=	0.4-9
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Choose Univariate Class Intervals
 WWW=		https://cran.r-project.org/web/packages/classInt/
 
