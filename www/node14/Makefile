@@ -13,6 +13,9 @@ WWW=		https://nodejs.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Consider using www/node16 or later as Upstream EOL on 2023-04-30
+EXPIRATION_DATE=	2023-05-26
+
 ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386 powerpc64 powerpc64le
 
 BUILD_DEPENDS+=	brotli>=1.0.9,1:archivers/brotli \
@@ -27,7 +30,7 @@ LIB_DEPENDS+=	libbrotlidec.so:archivers/brotli \
 
 USES=		compiler:c++11-lib gmake localbase pkgconfig \
 		python:2.7-3.10,build shebangfix
-BROKEN_SSL=	libressl libressl-devel
+BROKEN_SSL=	libressl libressl-devel openssl30 openssl31
 BROKEN_SSL_REASON=	node.js ${PORTVERSION:R:R}.x LTS requires OpenSSL 1.1.x or the BUNDLED_SSL option enabled
 SHEBANG_FILES=	deps/v8/third_party/inspector_protocol/*.py deps/v8/tools/*.py \
 		tools/*.py tools/inspector_protocol/*.py
