@@ -183,7 +183,6 @@
     SUBDIR += libXxf86dga
     SUBDIR += libXxf86vm
     SUBDIR += libclipboard
-    SUBDIR += libdmx
     SUBDIR += libexo
     SUBDIR += libfakekey
     SUBDIR += libfm
