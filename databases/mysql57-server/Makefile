@@ -20,7 +20,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 SLAVEDIRS=	databases/mysql57-client
 USES=		bison:build cmake:noninja compiler:c11 compiler:c++11-lib \
 		cpe groff:run libedit localbase perl5 shebangfix ssl
-
+IGNORE_SSL=	openssl30 openssl31
+IGNORE_SSL_REASON=	Upstream only supports OpenSSL 1.0.1 upto 1.1.X
 CPE_VENDOR=	oracle
 
 USE_PERL5=	run
