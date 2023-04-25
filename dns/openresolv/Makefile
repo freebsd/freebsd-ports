@@ -1,15 +1,18 @@
-PORTNAME=	openresolv
-PORTVERSION=	3.12.0
-PORTREVISION=	1
-CATEGORIES=	dns
-MASTER_SITES=	https://roy.marples.name/downloads/openresolv/
+PORTNAME=		openresolv
+DISTVERSIONPREFIX=	v
+DISTVERSION=		3.13.1
+CATEGORIES=		dns
 
-MAINTAINER=	roy@marples.name
+MAINTAINER=	driesm@FreeBSD.org
 COMMENT=	Resolvconf compatible framework for managing resolv.conf
 WWW=		https://roy.marples.name/projects/openresolv/
+LICENSE=	BSD2CLAUSE
 
-USES=		cpe tar:xz
+USES=		cpe
 CPE_VENDOR=	${PORTNAME}_project
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	NetworkConfiguration
 
 GNU_CONFIGURE=	yes
 
