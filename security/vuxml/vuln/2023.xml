@@ -1,3 +1,37 @@
+  <vuln vid="4ee322e9-e363-11ed-b934-b42e991fc52e">
+    <topic>jellyfin -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>jellyfin</name>
+	<range><lt>10.8.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/jellyfin/jellyfin-web/security/advisories/GHSA-89hp-h43h-r5pq">
+	  <p>Jellyfin is a free-software media system.  Versions starting with
+	10.8.0 and prior to 10.8.10 and prior have a directory traversal
+	vulnerability inside the `ClientLogController`, specifically
+	`/ClientLog/Document`.  When combined with a cross-site scripting
+	vulnerability (CVE-2023-30627), this can result in file write and
+	arbitrary code execution.  Version 10.8.10 has a patch for this
+	issue.  There are no known workarounds.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-30626</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-30626</url>
+      <cvename>CVE-2023-30627</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-30627</url>
+    </references>
+    <dates>
+      <discovery>2023-04-24</discovery>
+      <entry>2023-04-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bb528d7c-e2c6-11ed-a3e6-589cfc0f81b0">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
