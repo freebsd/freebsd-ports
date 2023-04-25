@@ -1,4 +1,4 @@
-TIMESTAMP = 1681672822
+TIMESTAMP = 1682395084
 SHA256 (cabal/Diff-0.4.1/Diff-0.4.1.tar.gz) = fd5e4aaac7219bcbb14834fb8580ebe0aae905958d0ad74f5338ea290b372670
 SIZE (cabal/Diff-0.4.1/Diff-0.4.1.tar.gz) = 8759
 SHA256 (cabal/ListLike-4.7.8/ListLike-4.7.8.tar.gz) = 9a7929f29011e5647b39b8d6ef1cadf76a6ada19b747eabec5fdc077bc7437d1
@@ -373,5 +373,5 @@ SHA256 (cabal/zlib-0.6.3.0/zlib-0.6.3.0.tar.gz) = 9eaa989ad4534438b5beb51c1d3a4c
 SIZE (cabal/zlib-0.6.3.0/zlib-0.6.3.0.tar.gz) = 369595
 SHA256 (cabal/zlib-0.6.3.0/revision/1.cabal) = 9adce39e4ca0b7a87d45df0a243134816c57059a08e28cff5469c98ae1f54dfc
 SIZE (cabal/zlib-0.6.3.0/revision/1.cabal) = 5367
-SHA256 (cabal/diku-dk-futhark-v0.24.2_GH0.tar.gz) = ff3500bcc26e7007f6010389fcde18ea8a348e12ab127f41a98b6a22949f5918
-SIZE (cabal/diku-dk-futhark-v0.24.2_GH0.tar.gz) = 1693982
+SHA256 (cabal/diku-dk-futhark-v0.24.3_GH0.tar.gz) = c4413cfaa175a6e1a0402731ac4e556c9c4db5e9d17ed0f45129bf89903cc9a5
+SIZE (cabal/diku-dk-futhark-v0.24.3_GH0.tar.gz) = 1698010

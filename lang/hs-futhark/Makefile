@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.2
+DISTVERSION=	0.24.3
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -150,6 +150,7 @@ USE_CABAL=      Diff-0.4.1 \
 		void-0.7.3 \
 		witherable-0.4.2_4 \
 		zlib-0.6.3.0_1
+
 CABAL_PROJECT=	remove
 
 USE_GITHUB=	yes
