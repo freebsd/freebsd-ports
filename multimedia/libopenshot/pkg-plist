@@ -97,8 +97,8 @@ include/libopenshot/effects/Wave.h
 include/libopenshot/sort_filter/Hungarian.h
 include/libopenshot/sort_filter/KalmanTracker.h
 lib/libopenshot.so
-lib/libopenshot.so.0.3.1
-lib/libopenshot.so.24
+lib/libopenshot.so.0.3.2
+lib/libopenshot.so.25
 %%PYTHON_SITELIBDIR%%/_openshot.so
 %%PYTHON_SITELIBDIR%%/openshot.py
 %%RUBY%%%%RUBY_VENDORARCHLIBDIR%%/openshot.so
