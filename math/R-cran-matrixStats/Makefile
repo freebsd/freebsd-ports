@@ -1,10 +1,9 @@
 PORTNAME=	matrixStats
-PORTVERSION=	0.62.0
-PORTREVISION=	1
+PORTVERSION=	0.63.0
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functions that Apply to Rows and Columns of Matrices
 WWW=		https://cran.r-project.org/web/packages/matrixStats/
 
