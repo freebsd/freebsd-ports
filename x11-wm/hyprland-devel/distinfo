@@ -1,6 +1,6 @@
-TIMESTAMP = 1682526833
-SHA256 (hyprwm-Hyprland-v0.24.1-105-g62213229_GH0.tar.gz) = a2d28b867335f4755ac2f36ce6ddb6895f56f7af552628c9f9264882cf6f72c1
-SIZE (hyprwm-Hyprland-v0.24.1-105-g62213229_GH0.tar.gz) = 763781
+TIMESTAMP = 1682714444
+SHA256 (hyprwm-Hyprland-v0.24.1-115-gfbb938fc_GH0.tar.gz) = 5bc37c9cf6e4c1f6d8f1599d79118d27f81787988ed26ba6223cb8cf38f0729a
+SIZE (hyprwm-Hyprland-v0.24.1-115-gfbb938fc_GH0.tar.gz) = 763952
 SHA256 (hyprwm-hyprland-protocols-4d29e48_GH0.tar.gz) = 1384ccdbb0149cdc40d74fbe21fba97d706db08b718c7df9481076381d852c74
 SIZE (hyprwm-hyprland-protocols-4d29e48_GH0.tar.gz) = 6340
 SHA256 (canihavesomecoffee-udis86-1.7.2-186-g5336633_GH0.tar.gz) = 69aff959179ff6247b375b92e797221dbd8e078eabbf1366280b0532617e7fb8

@@ -1,7 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.1-105
-DISTVERSIONSUFFIX=	-g62213229
+DISTVERSION=	0.24.1-115
+DISTVERSIONSUFFIX=	-gfbb938fc
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX=	-devel
 
@@ -60,6 +60,10 @@ post-configure:
 	@${REINPLACE_CMD} 's/meson install/& \
 		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
 .endif
+
+post-install:
+# Plugin API installs all headers (no private vs. public)
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} include/${PORTNAME} ! -type d) >>${TMPPLIST}
 
 # XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)
