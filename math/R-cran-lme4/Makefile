@@ -1,10 +1,9 @@
 PORTNAME=	lme4
-DISTVERSION=	1.1-30
-PORTREVISION=	1
+DISTVERSION=	1.1-33
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linear mixed-effects models using Eigen and S4
 WWW=		https://github.com/lme4/lme4
 
@@ -17,6 +16,6 @@ CRAN_DEPENDS=	R-cran-minqa>=1.1.15:math/R-cran-minqa \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
