@@ -311,6 +311,7 @@
     SUBDIR += py-caffeine-ng
     SUBDIR += py-i3-quickterm
     SUBDIR += py-i3ipc
+    SUBDIR += py-mouseinfo
     SUBDIR += py-pynput
     SUBDIR += py-pyscreenshot
     SUBDIR += py-python-xapp
