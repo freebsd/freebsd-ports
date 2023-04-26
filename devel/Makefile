@@ -5483,6 +5483,7 @@
     SUBDIR += py-simplejson
     SUBDIR += py-simpleparse
     SUBDIR += py-simpletal
+    SUBDIR += py-simple-term-menu
     SUBDIR += py-simpy
     SUBDIR += py-single-version
     SUBDIR += py-sip
