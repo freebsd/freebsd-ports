@@ -1,6 +1,5 @@
 PORTNAME=	forecast
-PORTVERSION=	8.17.0
-PORTREVISION=	1
+PORTVERSION=	8.21
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -17,14 +16,14 @@ CRAN_DEPENDS=	R-cran-colorspace>0:graphics/R-cran-colorspace \
 		R-cran-lmtest>0:finance/R-cran-lmtest \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-Rcpp>=0.11.0:devel/R-cran-Rcpp \
+		R-cran-RcppArmadillo>=0.2.35:math/R-cran-RcppArmadillo \
 		R-cran-timeDate>0:finance/R-cran-timeDate \
 		R-cran-tseries>0:finance/R-cran-tseries \
 		R-cran-urca>0:finance/R-cran-urca \
-		R-cran-zoo>0:math/R-cran-zoo \
-		R-cran-RcppArmadillo>=0.2.35:math/R-cran-RcppArmadillo
+		R-cran-zoo>0:math/R-cran-zoo
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
