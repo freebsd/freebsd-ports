@@ -3,7 +3,7 @@ DISTVERSION=	1.3.9
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
-PKGNAMESUFFIX=	13
+PKGNAMESUFFIX=	14
 
 MAINTAINER=	opensearch@FreeBSD.org
 COMMENT?=	Visualization dashboards for OpenSearch
@@ -11,6 +11,9 @@ WWW=		https://opensearch.org
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+DEPRECATED=	Requires upstream EOL node14
+EXPIRATION_DATE=	2023-05-26
 
 BUILD_DEPENDS=	npm-node14>0:www/npm-node14
 
