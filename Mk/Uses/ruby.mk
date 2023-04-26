@@ -149,7 +149,7 @@ RUBY?=			${LOCALBASE}/bin/ruby${RUBY_SUFFIX}
 # Ruby 3.0
 #
 RUBY_DISTVERSION=	3.0.6
-RUBY_PORTREVISION=	0
+RUBY_PORTREVISION=	1
 .      elif ${RUBY_VER} == 3.1
 #
 # Ruby 3.1
