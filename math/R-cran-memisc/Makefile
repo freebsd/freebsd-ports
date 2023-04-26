@@ -1,20 +1,20 @@
 PORTNAME=	memisc
-DISTVERSION=	0.99.30.7
-PORTREVISION=	1
+DISTVERSION=	0.99.31.6
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Provides an infrastructure for the management of survey data
-WWW=		https://www.martin-elff.net/software/ #memisc
+WWW=		https://www.elff.eu/software/memisc/
 
-LICENSE=	GPLv2
+LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-repr>0:devel/R-cran-repr \
-		R-cran-data.table>0:devel/R-cran-data.table
+CRAN_DEPENDS=	R-cran-data.table>0:devel/R-cran-data.table \
+		R-cran-jsonlite>0:converters/R-cran-jsonlite \
+		R-cran-yaml>0:textproc/R-cran-yaml
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
