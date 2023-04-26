@@ -1,9 +1,9 @@
 bin/openshot-qt
-%%PYTHON_SITELIBDIR%%/openshot_qt-3.1.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/openshot_qt-3.1.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/openshot_qt-3.1.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/openshot_qt-3.1.0-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/openshot_qt-3.1.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-3.1.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/openshot_qt-3.1.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-3.1.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-3.1.1-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/openshot_qt-3.1.1-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/openshot_qt/__init__.py
 %%PYTHON_SITELIBDIR%%/openshot_qt/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/openshot_qt/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
