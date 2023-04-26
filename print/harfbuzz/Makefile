@@ -1,5 +1,5 @@
 PORTNAME=	harfbuzz
-DISTVERSION=	7.1.0
+DISTVERSION=	7.2.0
 PORTREVISION?=	0
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/harfbuzz/harfbuzz/releases/download/${DISTVERSION}/
@@ -23,7 +23,7 @@ CPE_VENDOR=	harfbuzz_project
 
 MESON_ARGS=	-Dgraphite2=enabled -Dchafa=disabled -Dtests=disabled
 
-PLIST_SUB+=	LIBVER=0.60710.0
+PLIST_SUB+=	LIBVER=0.60720.0
 
 HARFBUZZ_SLAVE?=	no
 
