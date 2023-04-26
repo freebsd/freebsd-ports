@@ -1,19 +1,18 @@
 PORTNAME=	httpuv
-PORTVERSION=	1.6.6
-PORTREVISION=	1
+PORTVERSION=	1.6.9
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP and WebSocket server library for R
 WWW=		https://cran.r-project.org/web/packages/httpuv/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-Rcpp>=1.0.7:devel/R-cran-Rcpp \
-		R-cran-R6>0:devel/R-cran-R6 \
+CRAN_DEPENDS=	R-cran-later>=0.8.0:devel/R-cran-later \
 		R-cran-promises>0:devel/R-cran-promises \
-		R-cran-later>=0.8.0:devel/R-cran-later
+		R-cran-R6>0:devel/R-cran-R6 \
+		R-cran-Rcpp>=1.0.7:devel/R-cran-Rcpp
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
