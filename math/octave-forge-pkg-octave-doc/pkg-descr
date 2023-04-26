@@ -1,0 +1,12 @@
+The octave-forge package is the result of The GNU Octave Repositry project,
+which is intended to be a central location for custom scripts, functions and
+extensions for GNU Octave. contains the source for all the functions plus
+build and install scripts.
+
+This is pkg-octave-doc.
+
+ This package provides functions for generating HTML pages that
+contain the help texts of the functions of an octave package. The package is
+designed to work with installed packages and use their INDEX file for creating
+the respective functions' HTML pages. The default layout is based on boootstrap
+5 and it follows the design of the Octave Packages GitHub page.
