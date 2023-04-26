@@ -1,0 +1,11 @@
+erdtree is a modern, cross-platform, and multi-threaded filesystem and
+disk-usage analysis tool. The following are some feature highlights:
+
+ -  Respects hidden file and gitignore rules by default.
+ -  Supports regular expressions and glob based searching by file-type.
+ -  Supports Unix-based file permissions (Unix systems only).
+ -  Comes with a variety of layouts.
+ -  Support icons.
+ -  Colorized with LS_COLORS.
+
+You can think of erdtree as a combination of du, tree, find, and ls.
