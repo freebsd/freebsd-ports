@@ -1,10 +1,9 @@
 PORTNAME=	wk
-PORTVERSION=	0.6.0
-PORTREVISION=	1
+PORTVERSION=	0.7.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight Well-Known Geometry Parsing
 WWW=		https://cran.r-project.org/web/packages/wk/
 
