@@ -1,4 +1,4 @@
---- core/CMakeLists.txt.orig	2020-04-23 11:51:20 UTC
+--- core/CMakeLists.txt.orig	2023-03-12 13:19:01 UTC
 +++ core/CMakeLists.txt
 @@ -10,6 +10,7 @@ APPLY_COMMON_POLICIES()
  
@@ -8,7 +8,15 @@
  message(STATUS "----------------------------------------------------------------------------------")
  message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION_STRING}")
  message(STATUS "")
-@@ -341,8 +342,13 @@ endif()
+@@ -132,6 +133,7 @@ if(ENABLE_AKONADICONTACTSUPPORT)
+ 
+     find_package(KF5 ${AKONADI_MIN_VERSION} QUIET
+                  OPTIONAL_COMPONENTS
++                 Akonadi                # We need to search for Akonadi explicitly so that the KF5::AkonadiCore target is defined after KDE PIM 23.04
+                  AkonadiContact         # For KDE Mail Contacts support.
+                  Contacts               # API for contacts/address book data.
+     )
+@@ -379,8 +381,13 @@ endif()
  
  find_package(Doxygen)
  
@@ -22,4 +30,4 @@
 +    link_directories(${LQR-1_LIBDIR})
  endif()
  
- # -- libgphoto2 rules ----------------------------------------------------------
+ if(BUILD_WITH_CCACHE)
