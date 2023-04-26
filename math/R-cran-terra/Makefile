@@ -1,10 +1,9 @@
 PORTNAME=	terra
-DISTVERSION=	1.6-17
-PORTREVISION=	4
+DISTVERSION=	1.7-29
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spatiall Data Analysis
 WWW=		https://cran.r-project.org/web/packages/terra/
 
