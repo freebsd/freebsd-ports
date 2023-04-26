@@ -1,5 +1,5 @@
 PORTNAME=	tcpdump
-PORTVERSION=	4.99.3
+PORTVERSION=	4.99.4
 CATEGORIES=	net
 MASTER_SITES=	http://www.tcpdump.org/release/
 
