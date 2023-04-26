@@ -36,6 +36,7 @@
     SUBDIR += wmclock
     SUBDIR += wmclockmon
     SUBDIR += wmfishtime
+    SUBDIR += wmitime
     SUBDIR += wmtime
     SUBDIR += wmtimer
     SUBDIR += xalarm

@@ -6100,7 +6100,6 @@ security/sudosh||2014-07-01|Has expired: Funcition replaced by sudo -s
 security/sudosh2||2014-07-01|Has expired: Funcition replaced by sudo -s
 lang/pike76|lang/pike78|2014-07-01|Has expired: Outdated: Users should switch to lang/pike78
 archivers/rpm|archivers/rpm4|2014-07-03|rpm3 is long EOLed, rpm4 is the default rpm archivers for most of linux distributions
-x11-clocks/wmitime||2014-07-04|Has expired
 x11/xorg-edit||2014-07-04|Has expired: Depends on older version of wxGTK
 net/ttbudget||2014-07-06|Has expired: does not build, mastersite disapperead, not staged
 sysutil/psgconf||2014-07-06|Removed: abandonware
