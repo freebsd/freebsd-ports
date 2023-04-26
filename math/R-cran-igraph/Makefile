@@ -1,6 +1,5 @@
 PORTNAME=	igraph
-DISTVERSION=	1.3.4
-PORTREVISION=	1
+DISTVERSION=	1.4.2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -12,12 +11,13 @@ LICENSE=	GPLv2+
 
 BROKEN_sparc64=	does not compile on sparc64: uses i386 assembler
 
-LIB_DEPENDS=	libgmp.so:math/gmp \
-		libglpk.so:math/glpk
-CRAN_DEPENDS=	R-cran-magrittr>0:devel/R-cran-magrittr \
+CRAN_DEPENDS=	R-cran-cpp11>=0.2.0:devel/R-cran-cpp11 \
+		R-cran-magrittr>0:devel/R-cran-magrittr \
 		R-cran-pkgconfig>=2.0.0:devel/R-cran-pkgconfig \
 		R-cran-rlang>0:devel/R-cran-rlang
 BUILD_DEPENDS=	${CRAN_DEPENDS}
+LIB_DEPENDS=	libglpk.so:math/glpk \
+		libgmp.so:math/gmp
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		compiler:c++11-lang cran:auto-plist,compiles gnome
