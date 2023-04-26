@@ -314,6 +314,7 @@
     SUBDIR += py-mouseinfo
     SUBDIR += py-pynput
     SUBDIR += py-pyscreenshot
+    SUBDIR += py-pyscreeze
     SUBDIR += py-python-xapp
     SUBDIR += py-pyvirtualdisplay
     SUBDIR += py-screeninfo
