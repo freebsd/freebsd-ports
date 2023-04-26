@@ -1,10 +1,9 @@
 PORTNAME=	fracdiff
-DISTVERSION=	1.5-1
-PORTREVISION=	2
+DISTVERSION=	1.5-2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fractionally differenced ARIMA aka ARFIMA(p,d,q) models
 WWW=		https://cran.r-project.org/web/packages/fracdiff/
 
