@@ -1,0 +1,47 @@
+PR:		https://github.com/signalapp/libsignal/issues/519
+Obtained from:	https://gitlab.alpinelinux.org/alpine/aports/-/blob/master/testing/signal-desktop/libsignal-fix-build-rust-1.69.patch
+
+diff --git a/rust/attest/src/dcap/sgx_report_body.rs b/rust/attest/src/dcap/sgx_report_body.rs
+index 056bef2b..6d3f0d5d 100644
+--- rust/attest/src/dcap/sgx_report_body.rs
++++ rust/attest/src/dcap/sgx_report_body.rs
+@@ -20,7 +20,7 @@ const SGX_HASH_SIZE: usize = 32;
+ 
+ pub type MREnclave = [u8; SGX_HASH_SIZE];
+ 
+-#[derive(Debug)]
++#[derive(Copy, Clone, Debug)]
+ #[repr(C, packed)]
+ // sgx_report_body_t
+ pub(crate) struct SgxReportBody {
+diff --git a/rust/attest/src/endian.rs b/rust/attest/src/endian.rs
+index ae9351eb..2e08c711 100644
+--- rust/attest/src/endian.rs
++++ rust/attest/src/endian.rs
+@@ -7,7 +7,7 @@ use std::convert::{TryFrom, TryInto};
+ 
+ use hex::FromHex;
+ 
+-#[derive(Debug)]
++#[derive(Copy, Clone, Debug)]
+ #[repr(C, packed)]
+ pub(crate) struct UInt16LE {
+     bytes: [u8; 2],
+@@ -27,7 +27,7 @@ impl From<u16> for UInt16LE {
+     }
+ }
+ 
+-#[derive(Debug)]
++#[derive(Copy, Clone, Debug)]
+ #[repr(C, packed)]
+ pub(crate) struct UInt32LE {
+     bytes: [u8; 4],
+@@ -66,7 +66,7 @@ impl FromHex for UInt32LE {
+     }
+ }
+ 
+-#[derive(Debug)]
++#[derive(Copy, Clone, Debug)]
+ #[repr(C, packed)]
+ pub(crate) struct UInt64LE {
+     bytes: [u8; 8],
