@@ -27,7 +27,8 @@ USE_LDCONFIG=	yes
 CPE_VENDOR=	packagekit_project
 SHEBANG_FILES=	contrib/cron/packagekit-background.cron
 
-MESON_ARGS=	-Dlocalstatedir=/var -Dsystemd=false -Doffline_update=false \
+MESON_ARGS=	-Dlocalstatedir=/var -Dsysconfdir=${PREFIX}/etc \
+		-Dsystemd=false -Doffline_update=false \
 		-Dbash_completion=false -Dbash_command_not_found=false \
 		-Dgstreamer_plugin=false
 
