@@ -40,7 +40,7 @@ USES+=	xorg
 .if ${COMPONENT} != osmesa
 LIB_DEPENDS+=	libdrm.so:graphics/libdrm
 .endif
-.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH} == armv7 || ${ARCH} == i386 || ${ARCH} == powerpc || ${ARCH} == powerpc64 || ${ARCH} == powerpc64le
 LIB_DEPENDS+=	libunwind.so:devel/libunwind
 .endif
 .if ${OPSYS} == DragonFly
