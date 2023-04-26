@@ -1,22 +1,22 @@
 PORTNAME=	htmltools
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.5
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools for HTML generation and output
 WWW=		https://cran.r-project.org/web/packages/htmltools/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-digest>0:security/R-cran-digest \
-		R-cran-base64enc>0:converters/R-cran-base64enc \
-		R-cran-rlang>=0.4.10:devel/R-cran-rlang \
-		R-cran-fastmap>=1.1.0:databases/R-cran-fastmap
+CRAN_DEPENDS=	R-cran-base64enc>0:converters/R-cran-base64enc \
+		R-cran-digest>0:security/R-cran-digest \
+		R-cran-ellipsis>0:devel/R-cran-ellipsis \
+		R-cran-fastmap>=1.1.0:databases/R-cran-fastmap \
+		R-cran-rlang>=0.4.10:devel/R-cran-rlang
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
