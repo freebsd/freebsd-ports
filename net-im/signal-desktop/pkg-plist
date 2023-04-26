@@ -99,10 +99,10 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/uk.pak
 %%DATADIR%%/locales/ur.pak
 %%DATADIR%%/locales/vi.pak
+%%DATADIR%%/locales/yue.pak
 %%DATADIR%%/locales/zh-CN.pak
 %%DATADIR%%/locales/zh-HK.pak
 %%DATADIR%%/locales/zh-TW.pak
-%%DATADIR%%/locales/zh-YU.pak
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/app.asar
 %%DATADIR%%/resources/app.asar.unpacked/node_modules/@signalapp/better-sqlite3/build/Release/better_sqlite3.node
