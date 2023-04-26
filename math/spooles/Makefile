@@ -10,7 +10,7 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}
 DIST_SUBDIR=	spooles
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	SParse Object Oriented Linear Equations Solver
 WWW=		https://www.netlib.org/linalg/spooles/spooles.2.2.html
 
@@ -22,24 +22,24 @@ LIB_DEPENDS=	libmpich.so:net/mpich
 
 USES=		gmake tar:tgz
 
+.if defined(WITH_MPI)
+CONFLICTS=	spooles-2*
+PLIST_SUB=	MPI="" MT="@comment "
+.else
+CONFLICTS=	spooles-mpich-2*
+PLIST_SUB=	MPI="@comment " MT=""
+.endif
+
 OPTIONS_DEFINE=	DOCS
 
-.if defined(WITH_MPI)
-PLIST_SUB+=	MPI=""
-PLIST_SUB+=	MT="@comment "
-CONFLICTS=	spooles-2*
-.else
-PLIST_SUB+=	MT=""
-PLIST_SUB+=	MPI="@comment "
-CONFLICTS=	spooles-mpich-2*
-.endif
+DOCS_DISTFILES=	${DISTNAME}${EXTRACT_SUFX} AllInOne.ps.gz Eigen.ps.gz \
+		Install.ps.gz LinSol.ps.gz Ordering.ps.gz \
+		PP99.ps.gz ReferenceManual.ps.gz
 
 .include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MDOCS}
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} AllInOne.ps.gz Eigen.ps.gz \
-		Install.ps.gz LinSol.ps.gz Ordering.ps.gz \
-		PP99.ps.gz ReferenceManual.ps.gz
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
 .endif
 
 .if ${ARCH} == "sparc64"
@@ -102,7 +102,8 @@ do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/spooles/${i}
 	${INSTALL_DATA} ${WRKSRC}/${i}/*.h ${STAGEDIR}${PREFIX}/include/spooles/${i}
 .endfor
-.if ${PORT_OPTIONS:MDOCS}
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/AllInOne.ps.gz	${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Eigen.ps.gz		${STAGEDIR}${DOCSDIR}
@@ -111,6 +112,5 @@ do-install:
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/Ordering.ps.gz	${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/PP99.ps.gz		${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/ReferenceManual.ps.gz	${STAGEDIR}${DOCSDIR}
-.endif
 
 .include <bsd.port.post.mk>
