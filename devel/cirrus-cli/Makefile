@@ -1,5 +1,5 @@
 PORTNAME=	cirrus-cli
-PORTVERSION=	0.96.0
+PORTVERSION=	0.96.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 MASTER_SITES=   https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
