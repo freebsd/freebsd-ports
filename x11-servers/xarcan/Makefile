@@ -1,10 +1,6 @@
 PORTNAME=	xarcan
-DISTVERSION=	0.6.0
-PORTREVISION=	6
+DISTVERSION=	0.6.1
 CATEGORIES=	x11-servers
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	2be9063af666.patch:-p1 # https://github.com/letoram/xarcan/pull/8
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	X11 server as Arcan client
@@ -15,14 +11,16 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
-		libarcan_shmif_ext.so:multimedia/arcan
+		libarcan_shmif_ext.so:multimedia/arcan \
+		libxcb-util.so:x11/xcb-util \
+		libxcb-icccm.so:x11/xcb-util-wm
 RUN_DEPENDS=	xkbcomp:x11/xkbcomp \
 		xkeyboard-config>0:x11/xkeyboard-config
 
 USES=		compiler:c11 gl meson pkgconfig xorg
 USE_GITHUB=	yes
 USE_GL=		gbm gl
-USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
+USE_XORG=	pixman xau xcb xdmcp xfont2 xkbfile xshmfence xtrans
 GH_ACCOUNT=	letoram
 MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \

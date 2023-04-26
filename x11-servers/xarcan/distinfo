@@ -1,5 +1,3 @@
-TIMESTAMP = 1606663795
-SHA256 (letoram-xarcan-0.6.0_GH0.tar.gz) = db582bf9c412842fb263d4eb5118f4c1eb6e7b579042a179044d9467fdb98193
-SIZE (letoram-xarcan-0.6.0_GH0.tar.gz) = 5129571
-SHA256 (2be9063af666.patch) = 6a7602ec2a09110f5aab44cb703970d43b36168cd07ad480df02294c2df9a54c
-SIZE (2be9063af666.patch) = 756
+TIMESTAMP = 1650192289
+SHA256 (letoram-xarcan-0.6.1_GH0.tar.gz) = b31c053a3b33e0af37528b8388f5687fe0d4af572bda0e507667dc7dd80ee1ba
+SIZE (letoram-xarcan-0.6.1_GH0.tar.gz) = 5490251
