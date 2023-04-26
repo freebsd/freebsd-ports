@@ -50,6 +50,10 @@ CONFIGURE_ENV+=	ABI="64"
 CONFIGURE_ENV+=	ABI="32"
 .endif
 
+.if ${ABI:Mpurecap}
+CONFIGURE_ARGS+=--disable-assembly
+.endif
+
 post-extract:
 	@${RM} ${WRKSRC}/doc/gmp.info*
 
