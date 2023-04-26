@@ -1,12 +1,11 @@
 PORTNAME=	minqa
-PORTVERSION=	1.2.4
-PORTREVISION=	6
+PORTVERSION=	1.2.5
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Derivative-free optimization algorithms by quadratic approximation
-WWW=		http://cran.r-project.org/web/minqa/
+WWW=		https://cran.r-project.org/web/minqa/
 
 LICENSE=	GPLv2
 
