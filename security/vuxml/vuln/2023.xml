@@ -1,3 +1,43 @@
+  <vuln vid="d2c6173f-e43b-11ed-a1d7-002590f2a714">
+    <topic>git -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>git</name>
+	<range><lt>2.40.1</lt></range>
+      </package>
+      <package>
+	<name>git-lite</name>
+	<range><lt>2.40.1</lt></range>
+      </package>
+      <package>
+	<name>git-tiny</name>
+	<range><lt>2.40.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>git developers reports:</p>
+	<blockquote cite="INSERT URL HERE">
+	  <p>This update includes 2 security fixes:</p>
+	  <ul>
+	     <li>CVE-2023-25652: By feeding specially crafted input to `git apply --reject`, a path outside the working tree can be overwritten with partially controlled contents (corresponding to the rejected hunk(s) from the given patch)</li>
+	     <li>CVE-2023-29007: A specially crafted `.gitmodules` file with submodule URLs that are longer than 1024 characters can used to exploit a bug that can be used to inject arbitrary configuration into user's git config.  This can result in arbitrary execution of code, by inserting values for core.pager, core.editor and so on</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-25652</cvename>
+      <url>https://github.com/git/git/security/advisories/GHSA-2hvf-7c8p-28fx</url>
+      <cvename>CVE-2023-29007</cvename>
+      <url>https://github.com/git/git/security/advisories/GHSA-v48j-4xgg-4844</url>
+    </references>
+    <dates>
+      <discovery>2023-04-25</discovery>
+      <entry>2023-04-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c676bb1b-e3f8-11ed-b37b-901b0e9408dc">
     <topic>element-web -- matrix-react-sdk vulnerable to HTML injection in search results via plaintext message highlighting</topic>
     <affects>
