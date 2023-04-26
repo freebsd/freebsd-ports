@@ -1,18 +1,21 @@
 PORTNAME=	stringr
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make it easier to work with strings
 WWW=		https://cran.r-project.org/web/packages/stringr/
 
-LICENSE=	GPLv2
+LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-glue>=1.2.0:devel/R-cran-glue \
+CRAN_DEPENDS=	R-cran-cli>0:devel/R-cran-cli \
+		R-cran-glue>=1.6.1:devel/R-cran-glue \
+		R-cran-lifecycle>=1.0.3:devel/R-cran-lifecycle \
 		R-cran-magrittr>0:devel/R-cran-magrittr \
-		R-cran-stringi>=1.1.7:textproc/R-cran-stringi
+		R-cran-rlang>=1.0.0:devel/R-cran-rlang \
+		R-cran-stringi>=1.5.3:textproc/R-cran-stringi \
+		R-cran-vctrs>0:devel/R-cran-vctrs
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
