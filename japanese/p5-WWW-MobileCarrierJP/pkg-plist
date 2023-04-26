@@ -31,7 +31,6 @@ bin/www-mobilecarrierjp-dump_all.pl
 %%PERL5_MAN1%%/www-mobilecarrierjp-dump_all.pl.1.gz
 %%PERL5_MAN3%%/WWW::MobileCarrierJP.3.gz
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::AirHPhone::CIDR.3.gz
-%%PERL5_MAN3%%/WWW::MobileCarrierJP::Declare.3.gz
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::DoCoMo::CIDR.3.gz
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::DoCoMo::Display.3.gz
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::DoCoMo::Flash.3.gz
@@ -50,11 +49,4 @@ bin/www-mobilecarrierjp-dump_all.pl
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::Java.3.gz
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::PictogramInfo.3.gz
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::Softbank::Service.3.gz
-%%PERL5_MAN3%%/WWW::MobileCarrierJP::ThirdForce::CIDR.3.gz
-%%PERL5_MAN3%%/WWW::MobileCarrierJP::ThirdForce::Display.3.gz
-%%PERL5_MAN3%%/WWW::MobileCarrierJP::ThirdForce::Flash.3.gz
-%%PERL5_MAN3%%/WWW::MobileCarrierJP::ThirdForce::HTTPHeader.3.gz
-%%PERL5_MAN3%%/WWW::MobileCarrierJP::ThirdForce::Java.3.gz
-%%PERL5_MAN3%%/WWW::MobileCarrierJP::ThirdForce::PictogramInfo.3.gz
-%%PERL5_MAN3%%/WWW::MobileCarrierJP::ThirdForce::Service.3.gz
 %%PERL5_MAN3%%/WWW::MobileCarrierJP::ThirdForce::UserAgent.3.gz
