@@ -1,10 +1,9 @@
 PORTNAME=	openssl
-PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTVERSION=	2.0.6
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Toolkit for Encryption, Signatures and Certificates Based on OpenSSL
 WWW=		https://cran.r-project.org/web/packages/openssl/
 
