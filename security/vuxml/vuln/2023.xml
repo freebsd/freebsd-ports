@@ -1,3 +1,36 @@
+  <vuln vid="c676bb1b-e3f8-11ed-b37b-901b0e9408dc">
+    <topic>element-web -- matrix-react-sdk vulnerable to HTML injection in search results via plaintext message highlighting</topic>
+    <affects>
+      <package>
+	<name>element-web</name>
+	<range><lt>1.11.30</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix developers report:</p>
+	<blockquote cite="https://github.com/advisories/GHSA-xv83-x443-7rmw">
+	  <p>matrix-react-sdk is a react-based SDK for inserting a Matrix chat/VoIP
+	client into a web page.  Prior to version 3.71.0, plain text messages
+	containing HTML tags are rendered as HTML in the search results.
+	To exploit this, an attacker needs to trick a user into searching
+	for a specific message containing an HTML injection payload.  No
+	cross-site scripting attack is possible due to the hardcoded content
+	security policy.  Version 3.71.0 of the SDK patches over the issue.
+	As a workaround, restarting the client will clear the HTML injection.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-30609</cvename>
+      <url>https://github.com/advisories/GHSA-xv83-x443-7rmw</url>
+    </references>
+    <dates>
+      <discovery>2023-04-25</discovery>
+      <entry>2023-04-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ee322e9-e363-11ed-b934-b42e991fc52e">
     <topic>jellyfin -- Multiple vulnerabilities</topic>
     <affects>
