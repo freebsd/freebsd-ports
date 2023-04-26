@@ -1,7 +1,7 @@
 PORTNAME=	chronograf
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.9.4
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	net-mgmt
 MASTER_SITES+=	https://nodejs.org/download/release/v${NODEJS_VERSION}/:node
 DISTFILES=	yarn-cache-${PKGNAME}.tar.xz:prefetch \
@@ -14,6 +14,9 @@ WWW=		https://www.influxdata.com/time-series-platform/chronograf/
 
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=	Requires upstream EOL node14
+EXPIRATION_DATE=	2023-05-26
 
 FETCH_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		yarn:www/yarn-node${NODEJS_VERSION_MAJOR}
