@@ -307,12 +307,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/node/build/Release/obj.target/libsignal_client_freebsd_${NODE_ARCH}.node/geni/rust/${RUST_ARCH}-unknown-freebsd/release/libsignal_node.so \
 		${STAGEDIR}${PREFIX}/lib/
 
-create-caches-tarball:
-	# do some cleanup first
-	${RM} -r  ${WRKDIR}/.cache/yarn/v6/.tmp
-	${FIND} ${WRKDIR}/.cache -type f -perm 755 -exec file {} \; | ${EGREP} "ELF|PE32+|Mach-O" | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${RM}
-
-	cd ${WRKDIR} && \
-		${TAR} czf libsignal-node-${DISTVERSION}-yarn-cache.tar.gz .cache yarn-cache
-
 .include <bsd.port.mk>
