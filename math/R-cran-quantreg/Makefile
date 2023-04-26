@@ -1,6 +1,5 @@
 PORTNAME=	quantreg
-PORTVERSION=	5.94
-PORTREVISION=	1
+PORTVERSION=	5.95
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,11 +9,11 @@ WWW=		https://cran.r-project.org/web/packages/quantreg/
 
 LICENSE=	GPLv2+
 
-CRAN_DEPENDS=	R-cran-SparseM>0:math/R-cran-SparseM \
-		R-cran-MatrixModels>0:math/R-cran-MatrixModels
+CRAN_DEPENDS=	R-cran-MatrixModels>0:math/R-cran-MatrixModels \
+		R-cran-SparseM>0:math/R-cran-SparseM
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
