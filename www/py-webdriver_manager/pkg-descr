@@ -1,0 +1,12 @@
+The main idea is to simplify management of binary drivers for different
+browsers.
+
+For now support:
+
+ChromeDriver
+EdgeChromiumDriver
+GeckoDriver
+IEDriver
+OperaDriver
+
+Compatible with Selenium 4.x and below.
