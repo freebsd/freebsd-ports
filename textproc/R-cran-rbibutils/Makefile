@@ -1,10 +1,9 @@
 PORTNAME=	rbibutils
-PORTVERSION=	2.2.9
-PORTREVISION=	1
+PORTVERSION=	2.2.13
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert Between Bibliography Formats
 WWW=		https://cran.r-project.org/web/packages/rbibutils/
 
