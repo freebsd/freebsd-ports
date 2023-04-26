@@ -1,10 +1,9 @@
 PORTNAME=	knitr
-PORTVERSION=	1.40
-PORTREVISION=	1
+PORTVERSION=	1.42
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General-Purpose Package for Dynamic Report Generation in R
 WWW=		https://cran.r-project.org/web/packages/knitr/
 
@@ -12,12 +11,11 @@ LICENSE=	GPLv2+
 
 CRAN_DEPENDS=	R-cran-evaluate>=0.15:devel/R-cran-evaluate \
 		R-cran-highr>0:textproc/R-cran-highr \
-		R-cran-stringr>=0.6:textproc/R-cran-stringr \
 		R-cran-yaml>=2.1.19:textproc/R-cran-yaml \
-		R-cran-xfun>=0.29:misc/R-cran-xfun
+		R-cran-xfun>=0.34:misc/R-cran-xfun
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
