@@ -1,6 +1,5 @@
 PORTNAME=	formatR
-DISTVERSION=	1.12
-PORTREVISION=	1
+DISTVERSION=	1.14
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/formatR/
 
 LICENSE=	GPLv2+
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
