@@ -1,6 +1,5 @@
 PORTNAME=	markdown
-PORTVERSION=	1.1
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,8 +9,8 @@ WWW=		https://cran.r-project.org/web/packages/markdown/
 
 LICENSE=	GPLv2
 
-CRAN_DEPENDS=	R-cran-xfun>0:misc/R-cran-xfun \
-		R-cran-mime>=0.3:misc/R-cran-mime
+CRAN_DEPENDS=	R-cran-commonmark>=1.9.0:textproc/R-cran-commonmark \
+		R-cran-xfun>=0.38:misc/R-cran-xfun
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
