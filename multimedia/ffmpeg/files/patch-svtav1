@@ -15,6 +15,10 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/ded0334d214f
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/70887d44ffa3
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe100bc556d7
 https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/031f1561cd28
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/1c6fd7d756af
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/96748ac54f99
+https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fe196fd29a67
 
 --- configure.orig	2021-10-24 20:47:11 UTC
 +++ configure
@@ -108,7 +112,27 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
  } SvtContext;
  
  static const struct {
-@@ -151,11 +154,126 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
+@@ -120,16 +123,12 @@ static int alloc_buffer(EbSvtAv1EncConfiguration *conf
+ 
+ static int alloc_buffer(EbSvtAv1EncConfiguration *config, SvtContext *svt_enc)
+ {
+-    const int    pack_mode_10bit =
+-        (config->encoder_bit_depth > 8) && (config->compressed_ten_bit_format == 0) ? 1 : 0;
+-    const size_t luma_size_8bit  =
+-        config->source_width * config->source_height * (1 << pack_mode_10bit);
+-    const size_t luma_size_10bit =
+-        (config->encoder_bit_depth > 8 && pack_mode_10bit == 0) ? luma_size_8bit : 0;
++    const size_t luma_size = config->source_width * config->source_height *
++        (config->encoder_bit_depth > 8 ? 2 : 1);
+ 
+     EbSvtIOFormat *in_data;
+ 
+-    svt_enc->raw_size = (luma_size_8bit + luma_size_10bit) * 3 / 2;
++    svt_enc->raw_size = luma_size * 3 / 2;
+ 
+     // allocate buffer for in and out
+     svt_enc->in_buf           = av_mallocz(sizeof(*svt_enc->in_buf));
+@@ -151,11 +150,132 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
  {
      SvtContext *svt_enc = avctx->priv_data;
      const AVPixFmtDescriptor *desc;
@@ -116,14 +140,19 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
  
 +    // Update param from options
 +#if FF_API_SVTAV1_OPTS
-+    param->hierarchical_levels      = svt_enc->hierarchical_level;
-+    param->tier                     = svt_enc->tier;
-+    param->scene_change_detection   = svt_enc->scd;
-+    param->tile_columns             = svt_enc->tile_columns;
-+    param->tile_rows                = svt_enc->tile_rows;
++    if (svt_enc->hierarchical_level >= 0)
++        param->hierarchical_levels    = svt_enc->hierarchical_level;
++    if (svt_enc->tier >= 0)
++        param->tier                   = svt_enc->tier;
++    if (svt_enc->scd >= 0)
++        param->scene_change_detection = svt_enc->scd;
++    if (svt_enc->tile_columns >= 0)
++        param->tile_columns           = svt_enc->tile_columns;
++    if (svt_enc->tile_rows >= 0)
++        param->tile_rows              = svt_enc->tile_rows;
 +
 +    if (svt_enc->la_depth >= 0)
-+        param->look_ahead_distance  = svt_enc->la_depth;
++        param->look_ahead_distance    = svt_enc->la_depth;
 +#endif
 +
 +    if (svt_enc->enc_mode >= 0)
@@ -140,7 +169,8 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
 +        param->min_qp_allowed       = avctx->qmin;
 +    }
 +    param->max_bit_rate             = avctx->rc_max_rate;
-+    param->vbv_bufsize              = avctx->rc_buffer_size;
++    if (avctx->bit_rate && avctx->rc_buffer_size)
++        param->maximum_buffer_size_ms = avctx->rc_buffer_size * 1000LL / avctx->bit_rate;
 +
 +    if (svt_enc->crf > 0) {
 +        param->qp                   = svt_enc->crf;
@@ -236,7 +266,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
      param->encoder_bit_depth = desc->comp[0].depth;
  
      if (desc->log2_chroma_w == 1 && desc->log2_chroma_h == 1)
-@@ -169,12 +287,6 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
+@@ -169,12 +289,6 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
          return AVERROR(EINVAL);
      }
  
@@ -249,7 +279,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
      if ((param->encoder_color_format == EB_YUV422 || param->encoder_bit_depth > 10)
           && param->profile != FF_PROFILE_AV1_PROFESSIONAL ) {
          av_log(avctx, AV_LOG_WARNING, "Forcing Professional profile\n");
-@@ -184,40 +296,21 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
+@@ -184,40 +298,21 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
          param->profile = FF_PROFILE_AV1_HIGH;
      }
  
@@ -263,7 +293,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
 +    avctx->bit_rate       = param->rate_control_mode > 0 ?
 +                            param->target_bit_rate : 0;
 +    avctx->rc_max_rate    = param->max_bit_rate;
-+    avctx->rc_buffer_size = param->vbv_bufsize;
++    avctx->rc_buffer_size = param->maximum_buffer_size_ms * avctx->bit_rate / 1000LL;
  
 -    param->target_bit_rate          = avctx->bit_rate;
 +    if (avctx->bit_rate || avctx->rc_max_rate || avctx->rc_buffer_size) {
@@ -301,7 +331,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
      return 0;
  }
  
-@@ -330,11 +423,8 @@ static int eb_send_frame(AVCodecContext *avctx, const 
+@@ -330,11 +425,8 @@ static int eb_send_frame(AVCodecContext *avctx, const 
          if (svt_enc->eos_flag == EOS_SENT)
              return 0;
  
@@ -315,7 +345,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
          headerPtrLast.flags         = EB_BUFFERFLAG_EOS;
  
          svt_av1_enc_send_picture(svt_enc->svt_handle, &headerPtrLast);
-@@ -350,6 +440,16 @@ static int eb_send_frame(AVCodecContext *avctx, const 
+@@ -350,6 +442,16 @@ static int eb_send_frame(AVCodecContext *avctx, const 
      headerPtr->p_app_private = NULL;
      headerPtr->pts           = frame->pts;
  
@@ -332,7 +362,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
      svt_av1_enc_send_picture(svt_enc->svt_handle, headerPtr);
  
      return 0;
-@@ -472,21 +572,22 @@ static const AVOption options[] = {
+@@ -472,21 +574,22 @@ static const AVOption options[] = {
  #define OFFSET(x) offsetof(SvtContext, x)
  #define VE AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_ENCODING_PARAM
  static const AVOption options[] = {
@@ -340,7 +370,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
 -      AV_OPT_TYPE_INT, { .i64 = 4 }, 3, 4, VE , "hielevel"},
 +#if FF_API_SVTAV1_OPTS
 +    { "hielevel", "Hierarchical prediction levels setting (Deprecated, use svtav1-params)", OFFSET(hierarchical_level),
-+      AV_OPT_TYPE_INT, { .i64 = 4 }, 3, 4, VE | AV_OPT_FLAG_DEPRECATED , "hielevel"},
++      AV_OPT_TYPE_INT, { .i64 = -1 }, -1, 4, VE | AV_OPT_FLAG_DEPRECATED , "hielevel"},
          { "3level", NULL, 0, AV_OPT_TYPE_CONST, { .i64 = 3 },  INT_MIN, INT_MAX, VE, "hielevel" },
          { "4level", NULL, 0, AV_OPT_TYPE_CONST, { .i64 = 4 },  INT_MIN, INT_MAX, VE, "hielevel" },
  
@@ -355,7 +385,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
 -    { "tier", "Set operating point tier", OFFSET(tier),
 -      AV_OPT_TYPE_INT, { .i64 = 0 }, 0, 1, VE, "tier" },
 +    { "tier", "Set operating point tier (Deprecated, use svtav1-params)", OFFSET(tier),
-+      AV_OPT_TYPE_INT, { .i64 = 0 }, 0, 1, VE | AV_OPT_FLAG_DEPRECATED, "tier" },
++      AV_OPT_TYPE_INT, { .i64 = -1 }, -1, 1, VE | AV_OPT_FLAG_DEPRECATED, "tier" },
          { "main", NULL, 0, AV_OPT_TYPE_CONST, { .i64 = 0 }, 0, 0, VE, "tier" },
          { "high", NULL, 0, AV_OPT_TYPE_CONST, { .i64 = 1 }, 0, 0, VE, "tier" },
 +#endif
@@ -364,7 +394,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
  
      FF_AV1_PROFILE_OPTS
  
-@@ -518,21 +619,20 @@ static const AVOption options[] = {
+@@ -518,21 +621,20 @@ static const AVOption options[] = {
          { LEVEL("7.3", 73) },
  #undef LEVEL
  
@@ -379,12 +409,12 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
 +      AV_OPT_TYPE_INT, { .i64 = 0 }, 0, 63, VE },
 +#if FF_API_SVTAV1_OPTS
 +    { "sc_detection", "Scene change detection (Deprecated, use svtav1-params)", OFFSET(scd),
-+      AV_OPT_TYPE_BOOL, { .i64 = 0 }, 0, 1, VE | AV_OPT_FLAG_DEPRECATED },
++      AV_OPT_TYPE_BOOL, { .i64 = -1 }, -1, 1, VE | AV_OPT_FLAG_DEPRECATED },
  
 -    { "qp", "Quantizer to use with cqp rate control mode", OFFSET(qp),
 -      AV_OPT_TYPE_INT, { .i64 = 50 }, 0, 63, VE },
-+    { "tile_columns", "Log2 of number of tile columns to use (Deprecated, use svtav1-params)", OFFSET(tile_columns), AV_OPT_TYPE_INT, { .i64 = 0 }, 0, 4, VE | AV_OPT_FLAG_DEPRECATED },
-+    { "tile_rows", "Log2 of number of tile rows to use (Deprecated, use svtav1-params)", OFFSET(tile_rows), AV_OPT_TYPE_INT, { .i64 = 0 }, 0, 6, VE | AV_OPT_FLAG_DEPRECATED },
++    { "tile_columns", "Log2 of number of tile columns to use (Deprecated, use svtav1-params)", OFFSET(tile_columns), AV_OPT_TYPE_INT, { .i64 = -1 }, -1, 4, VE | AV_OPT_FLAG_DEPRECATED },
++    { "tile_rows", "Log2 of number of tile rows to use (Deprecated, use svtav1-params)", OFFSET(tile_rows), AV_OPT_TYPE_INT, { .i64 = -1 }, -1, 6, VE | AV_OPT_FLAG_DEPRECATED },
 +#endif
  
 -    { "sc_detection", "Scene change detection", OFFSET(scd),
@@ -397,7 +427,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
      {NULL},
  };
  
-@@ -544,9 +644,10 @@ static const AVCodecDefault eb_enc_defaults[] = {
+@@ -544,9 +646,10 @@ static const AVCodecDefault eb_enc_defaults[] = {
  };
  
  static const AVCodecDefault eb_enc_defaults[] = {
@@ -410,7 +440,7 @@ https://git.ffmpeg.org/gitweb/ffmpeg.git/commitdiff/fb70e0611bd7
      { "qmax",      "63"    },
      { NULL },
  };
-@@ -561,12 +662,11 @@ AVCodec ff_libsvtav1_encoder = {
+@@ -561,12 +664,11 @@ AVCodec ff_libsvtav1_encoder = {
      .receive_packet = eb_receive_packet,
      .close          = eb_enc_close,
      .capabilities   = AV_CODEC_CAP_DELAY | AV_CODEC_CAP_OTHER_THREADS,
