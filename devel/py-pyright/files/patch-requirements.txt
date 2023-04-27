@@ -1,6 +1,0 @@
---- requirements.txt.orig	2022-06-08 08:49:31 UTC
-+++ requirements.txt
-@@ -1,2 +1,2 @@
--nodeenv>=1.6.0
-+nodeenv>=1.5.0
- typing-extensions>=3.7; python_version < '3.8'
