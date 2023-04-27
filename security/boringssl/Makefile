@@ -1,5 +1,5 @@
 PORTNAME=	boringssl
-PORTVERSION=	0.0.0.0.2023.04.18.01
+PORTVERSION=	0.0.0.0.2023.04.26.01
 CATEGORIES=	security
 
 MAINTAINER=	osa@FreeBSD.org
@@ -18,7 +18,7 @@ CPE_VENDOR=	google
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
-GH_TAGNAME=	6776d5c
+GH_TAGNAME=	a02b743
 GH_TUPLE=	golang:crypto:v0.6.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:net:v0.7.0:golang_net/vendor/golang.org/x/net \
 		golang:sys:v0.5.0:golang_sys/vendor/golang.org/x/sys \
