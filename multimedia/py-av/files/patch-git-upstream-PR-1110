@@ -1,0 +1,238 @@
+From 8871e13848cbf78615ba7b429d301adc071841ea Mon Sep 17 00:00:00 2001
+From: Mattias Wadman <mattias.wadman@gmail.com>
+Date: Tue, 21 Mar 2023 17:01:22 +0100
+Subject: [PATCH] Update to ffmpeg 6.0
+
+Removed and renamed constants with entry from API changes
+https://git.ffmpeg.org/gitweb/ffmpeg.git/blob/HEAD:/doc/APIchanges
+
+Remove use of AVCodecContext.sub_text_format
+  2021-09-20 - 176b8d785bf - lavc 59.9.100 - avcodec.h
+    Deprecate AVCodecContext.sub_text_format and the corresponding
+    AVOptions. It is unused since the last major bump.
+
+AV_CODEC_CAP_TRUNCATED removed:
+  2021-09-20 - dd846bc4a91 - lavc 59.8.100 - avcodec.h codec.h
+    Deprecate AV_CODEC_FLAG_TRUNCATED and AV_CODEC_CAP_TRUNCATED,
+    as they are redundant with parsers.
+
+AV_CODEC_CAP_AUTO_THREADS renamed to AV_CODEC_CAP_AUTO_THREADS
+  2021-03-16 - 7d09579190 - lavc 58.132.100 - codec.h
+    Add AV_CODEC_CAP_OTHER_THREADS as a new name for
+    AV_CODEC_CAP_AUTO_THREADS. AV_CODEC_CAP_AUTO_THREADS
+    is now deprecated.
+
+AV_CODEC_CAP_INTRA_ONLY removed (use AV_CODEC_PROP_INTRA_ONLY instead):
+AV_CODEC_CAP_LOSSLESS removed (use AV_CODEC_PROP_LOESSNES instead):
+  2020-05-21 - 13b1bbff0b - lavc 58.86.101 - avcodec.h
+    Deprecated AV_CODEC_CAP_INTRA_ONLY and AV_CODEC_CAP_LOSSLESS.
+
+AV_CODEC_FLAG_TRUNCATED removed:
+AV_CODEC_CAP_TRUNCATED removed:
+  2021-09-20 - dd846bc4a91 - lavc 59.8.100 - avcodec.h codec.h
+    Deprecate AV_CODEC_FLAG_TRUNCATED and AV_CODEC_CAP_TRUNCATED,
+    as they are redundant with parsers.
+
+AV_CODEC_FLAG2_DROP_FRAME_TIMECODE removed:
+  Not API changelog but was removed in f843460eb790d37e444e5946628f228421916537:
+  avcodec/avcodec: Remove AV_CODEC_FLAG2_DROP_FRAME_TIMECODE
+
+  It has been deprecated in 94d68a4
+  and can't be set via AVOptions. The only codecs that use it
+  (the MPEG-1/2 encoders) have private options for this.
+  So remove it.
+
+AVFMT_FLAG_PRIV_OPT removed:
+  2021-03-03 - 2ff40b98ec - lavf 58.70.100 - avformat.h
+    Deprecate AVFMT_FLAG_PRIV_OPT. It will do nothing
+    as soon as av_demuxer_open() is removed.
+
+Related to #1106
+---
+ av/codec/codec.pyx               | 12 ++++--------
+ av/codec/context.pyx             | 11 -----------
+ av/container/core.pyx            |  3 ---
+ include/libavcodec/avcodec.pxd   | 10 +---------
+ include/libavformat/avformat.pxd |  1 -
+ scripts/activate.sh              |  2 +-
+ 6 files changed, 6 insertions(+), 33 deletions(-)
+
+diff --git a/av/codec/codec.pyx b/av/codec/codec.pyx
+index ad3198fd..978d4277 100644
+--- av/codec/codec.pyx
++++ av/codec/codec.pyx
+@@ -52,7 +52,6 @@ Capabilities = define_enum('Capabilities', 'av.codec', (
+         """Codec uses get_buffer() for allocating buffers and supports custom allocators.
+         If not set, it might not use get_buffer() at all or use operations that
+         assume the buffer was allocated by avcodec_default_get_buffer."""),
+-    ('TRUNCATED', lib.AV_CODEC_CAP_TRUNCATED),
+     ('HWACCEL', 1 << 4),
+     ('DELAY', lib.AV_CODEC_CAP_DELAY,
+         """Encoder or decoder requires flushing with NULL input at the end in order to
+@@ -102,8 +101,10 @@ Capabilities = define_enum('Capabilities', 'av.codec', (
+         """Codec supports slice-based (or partition-based) multithreading."""),
+     ('PARAM_CHANGE', lib.AV_CODEC_CAP_PARAM_CHANGE,
+         """Codec supports changed parameters at any point."""),
+-    ('AUTO_THREADS', lib.AV_CODEC_CAP_AUTO_THREADS,
+-        """Codec supports avctx->thread_count == 0 (auto)."""),
++    ('AUTO_THREADS', lib.AV_CODEC_CAP_OTHER_THREADS,
++        """Codec supports multithreading through a method other than slice- or
++        frame-level multithreading. Typically this marks wrappers around
++        multithreading-capable external libraries."""),
+     ('VARIABLE_FRAME_SIZE', lib.AV_CODEC_CAP_VARIABLE_FRAME_SIZE,
+         """Audio encoder supports receiving a different number of samples in each call."""),
+     ('AVOID_PROBING', lib.AV_CODEC_CAP_AVOID_PROBING,
+@@ -114,10 +115,6 @@ Capabilities = define_enum('Capabilities', 'av.codec', (
+         the stream.
+         A decoder marked with this flag should only be used as last resort
+         choice for probing."""),
+-    ('INTRA_ONLY', lib.AV_CODEC_CAP_INTRA_ONLY,
+-        """Codec is intra only."""),
+-    ('LOSSLESS', lib.AV_CODEC_CAP_LOSSLESS,
+-        """Codec is lossless."""),
+     ('HARDWARE', lib.AV_CODEC_CAP_HARDWARE,
+         """Codec is backed by a hardware implementation. Typically used to
+         identify a non-hwaccel hardware decoder. For information about hwaccels, use
+@@ -312,7 +309,6 @@ cdef class Codec(object):
+ 
+     draw_horiz_band = capabilities.flag_property('DRAW_HORIZ_BAND')
+     dr1 = capabilities.flag_property('DR1')
+-    truncated = capabilities.flag_property('TRUNCATED')
+     hwaccel = capabilities.flag_property('HWACCEL')
+     delay = capabilities.flag_property('DELAY')
+     small_last_frame = capabilities.flag_property('SMALL_LAST_FRAME')
+diff --git a/av/codec/context.pyx b/av/codec/context.pyx
+index 5c831461..2cdf7ef5 100644
+--- av/codec/context.pyx
++++ av/codec/context.pyx
+@@ -96,9 +96,6 @@ Flags = define_enum('Flags', __name__, (
+         """Only decode/encode grayscale."""),
+     ('PSNR', lib.AV_CODEC_FLAG_PSNR,
+         """error[?] variables will be set during encoding."""),
+-    ('TRUNCATED', lib.AV_CODEC_FLAG_TRUNCATED,
+-        """Input bitstream might be truncated at a random location
+-        instead of only at frame boundaries."""),
+     ('INTERLACED_DCT', lib.AV_CODEC_FLAG_INTERLACED_DCT,
+         """Use interlaced DCT."""),
+     ('LOW_DELAY', lib.AV_CODEC_FLAG_LOW_DELAY,
+@@ -122,8 +119,6 @@ Flags2 = define_enum('Flags2', __name__, (
+         """Skip bitstream encoding."""),
+     ('LOCAL_HEADER', lib.AV_CODEC_FLAG2_LOCAL_HEADER,
+         """Place global headers at every keyframe instead of in extradata."""),
+-    ('DROP_FRAME_TIMECODE', lib.AV_CODEC_FLAG2_DROP_FRAME_TIMECODE,
+-        """Timecode is in drop frame format. DEPRECATED!!!!"""),
+     ('CHUNKS', lib.AV_CODEC_FLAG2_CHUNKS,
+         """Input bitstream might be truncated at a packet boundaries
+         instead of only at frame boundaries."""),
+@@ -168,10 +163,6 @@ cdef class CodecContext(object):
+         self.ptr.thread_count = 0
+         self.ptr.thread_type = 2
+ 
+-        # Use "ass" format for subtitles (default as of FFmpeg 5.0), not the
+-        # deprecated "ass_with_timings" formats.
+-        self.ptr.sub_text_format = 0
+-
+     def _get_flags(self):
+         return self.ptr.flags
+ 
+@@ -195,7 +186,6 @@ cdef class CodecContext(object):
+     loop_filter = flags.flag_property('LOOP_FILTER')
+     gray = flags.flag_property('GRAY')
+     psnr = flags.flag_property('PSNR')
+-    truncated = flags.flag_property('TRUNCATED')
+     interlaced_dct = flags.flag_property('INTERLACED_DCT')
+     low_delay = flags.flag_property('LOW_DELAY')
+     global_header = flags.flag_property('GLOBAL_HEADER')
+@@ -219,7 +209,6 @@ cdef class CodecContext(object):
+     fast = flags2.flag_property('FAST')
+     no_output = flags2.flag_property('NO_OUTPUT')
+     local_header = flags2.flag_property('LOCAL_HEADER')
+-    drop_frame_timecode = flags2.flag_property('DROP_FRAME_TIMECODE')
+     chunks = flags2.flag_property('CHUNKS')
+     ignore_crop = flags2.flag_property('IGNORE_CROP')
+     show_all = flags2.flag_property('SHOW_ALL')
+diff --git a/av/container/core.pyx b/av/container/core.pyx
+index d21893c4..1c5c75b8 100755
+--- av/container/core.pyx
++++ av/container/core.pyx
+@@ -157,8 +157,6 @@ Flags = define_enum('Flags', __name__, (
+         This flag is mainly intended for testing."""),
+     ('SORT_DTS', lib.AVFMT_FLAG_SORT_DTS,
+         "Try to interleave outputted packets by dts (using this flag can slow demuxing down)."),
+-    ('PRIV_OPT', lib.AVFMT_FLAG_PRIV_OPT,
+-        "Enable use of private options by delaying codec open (this could be made default once all code is converted)."),
+     ('FAST_SEEK', lib.AVFMT_FLAG_FAST_SEEK,
+         "Enable fast, but inaccurate seeks for some formats."),
+     ('SHORTEST', lib.AVFMT_FLAG_SHORTEST,
+@@ -329,7 +327,6 @@ cdef class Container(object):
+     flush_packets = flags.flag_property('FLUSH_PACKETS')
+     bit_exact = flags.flag_property('BITEXACT')
+     sort_dts = flags.flag_property('SORT_DTS')
+-    priv_opt = flags.flag_property('PRIV_OPT')
+     fast_seek = flags.flag_property('FAST_SEEK')
+     shortest = flags.flag_property('SHORTEST')
+     auto_bsf = flags.flag_property('AUTO_BSF')
+diff --git a/include/libavcodec/avcodec.pxd b/include/libavcodec/avcodec.pxd
+index 1e611180..0334b18e 100644
+--- include/libavcodec/avcodec.pxd
++++ include/libavcodec/avcodec.pxd
+@@ -39,7 +39,6 @@ cdef extern from "libavcodec/avcodec.h" nogil:
+     cdef enum:
+         AV_CODEC_CAP_DRAW_HORIZ_BAND
+         AV_CODEC_CAP_DR1
+-        AV_CODEC_CAP_TRUNCATED
+         # AV_CODEC_CAP_HWACCEL
+         AV_CODEC_CAP_DELAY
+         AV_CODEC_CAP_SMALL_LAST_FRAME
+@@ -51,11 +50,9 @@ cdef extern from "libavcodec/avcodec.h" nogil:
+         AV_CODEC_CAP_FRAME_THREADS
+         AV_CODEC_CAP_SLICE_THREADS
+         AV_CODEC_CAP_PARAM_CHANGE
+-        AV_CODEC_CAP_AUTO_THREADS
++        AV_CODEC_CAP_OTHER_THREADS
+         AV_CODEC_CAP_VARIABLE_FRAME_SIZE
+         AV_CODEC_CAP_AVOID_PROBING
+-        AV_CODEC_CAP_INTRA_ONLY
+-        AV_CODEC_CAP_LOSSLESS
+         AV_CODEC_CAP_HARDWARE
+         AV_CODEC_CAP_HYBRID
+         AV_CODEC_CAP_ENCODER_REORDERED_OPAQUE
+@@ -76,7 +73,6 @@ cdef extern from "libavcodec/avcodec.h" nogil:
+         AV_CODEC_FLAG_LOOP_FILTER
+         AV_CODEC_FLAG_GRAY
+         AV_CODEC_FLAG_PSNR
+-        AV_CODEC_FLAG_TRUNCATED
+         AV_CODEC_FLAG_INTERLACED_DCT
+         AV_CODEC_FLAG_LOW_DELAY
+         AV_CODEC_FLAG_GLOBAL_HEADER
+@@ -89,7 +85,6 @@ cdef extern from "libavcodec/avcodec.h" nogil:
+         AV_CODEC_FLAG2_FAST
+         AV_CODEC_FLAG2_NO_OUTPUT
+         AV_CODEC_FLAG2_LOCAL_HEADER
+-        AV_CODEC_FLAG2_DROP_FRAME_TIMECODE
+         AV_CODEC_FLAG2_CHUNKS
+         AV_CODEC_FLAG2_IGNORE_CROP
+         AV_CODEC_FLAG2_SHOW_ALL
+@@ -224,9 +219,6 @@ cdef extern from "libavcodec/avcodec.h" nogil:
+         int frame_size
+         int channel_layout
+ 
+-        # Subtitles.
+-        int sub_text_format
+-
+         #: .. todo:: ``get_buffer`` is deprecated for get_buffer2 in newer versions of FFmpeg.
+         int get_buffer(AVCodecContext *ctx, AVFrame *frame)
+         void release_buffer(AVCodecContext *ctx, AVFrame *frame)
+diff --git a/include/libavformat/avformat.pxd b/include/libavformat/avformat.pxd
+index ed3e503f..06029d9f 100644
+--- include/libavformat/avformat.pxd
++++ include/libavformat/avformat.pxd
+@@ -146,7 +146,6 @@ cdef extern from "libavformat/avformat.h" nogil:
+         AVFMT_FLAG_FLUSH_PACKETS
+         AVFMT_FLAG_BITEXACT
+         AVFMT_FLAG_SORT_DTS
+-        AVFMT_FLAG_PRIV_OPT
+         AVFMT_FLAG_FAST_SEEK
+         AVFMT_FLAG_SHORTEST
+         AVFMT_FLAG_AUTO_BSF
+
