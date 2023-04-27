@@ -8,3 +8,12 @@
      ],
      extras_require={
          'extra_pubkey_algs': ['oscrypto>=1.2.1'],
+@@ -79,7 +78,7 @@ setup(
+             'fonttools>=4.33.3',
+             # uharfbuzz sometimes includes breaking changes, so
+             # we set an explicit range
+-            'uharfbuzz>=0.25.0,<0.31.0'
++            'uharfbuzz>=0.25.0,<0.36.0'
+         ],
+         'image-support': [
+             # Only tested systematically on 8.x,
