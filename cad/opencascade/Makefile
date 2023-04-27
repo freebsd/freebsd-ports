@@ -86,9 +86,11 @@ OCCROOT=	${PREFIX}/${LOCCROOT}
 PLIST_SUB=	OCCROOT="${LOCCROOT}" BITS=${BITS} CC=${CHOSEN_COMPILER_TYPE}	\
 		VE=${PORTVERSION:R} VER=${DISTVERSION:C/-beta//}
 
-FFMPEG_CMAKE_ON=	-DUSE_FFMPEG:BOOL=ON
+FFMPEG_CMAKE_ON=	-DUSE_FFMPEG:BOOL=ON \
+			-D3RDPARTY_FFMPEG_INCLUDE_DIR=${LOCALBASE}/ffmpeg4/include \
+			-D3RDPARTY_FFMPEG_DIR=${LOCALBASE}/ffmpeg4
 FFMPEG_CMAKE_OFF=	-DUSE_FFMPEG:BOOL=OFF
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg		\
+FFMPEG_LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4	\
 			libtheoraenc.so:multimedia/libtheora	\
 			libunistring.so:devel/libunistring	\
 			libvdpau.so:multimedia/libvdpau		\
