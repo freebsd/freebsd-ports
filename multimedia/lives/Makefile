@@ -14,6 +14,8 @@ LICENSE_COMB=		multi
 LICENSE_FILE_GPLv3+ =	${WRKSRC}/COPYING
 LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LGPL
 
+BROKEN=		fails to build with FFmpeg 6
+
 BUILD_DEPENDS=	${LOCALBASE}/include/linux/input.h:devel/evdev-proto \
 		analyseplugin:audio/ladspa
 LIB_DEPENDS=	liboil-0.3.so:devel/liboil \
