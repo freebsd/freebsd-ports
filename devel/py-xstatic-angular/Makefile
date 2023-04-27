@@ -1,5 +1,6 @@
 PORTNAME=	xstatic-angular
 PORTVERSION=	1.8.2.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,11 +8,10 @@ DISTNAME=	XStatic-Angular-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Angular (XStatic packaging standard)
-WWW=		https://angularjs.org/
+WWW=		https://angularjs.org/ \
+		https://github.com/openstack/xstatic-angular
 
 LICENSE=	MIT
-
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
