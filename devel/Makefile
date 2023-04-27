@@ -5060,6 +5060,7 @@
     SUBDIR += py-pdm
     SUBDIR += py-pdm-backend
     SUBDIR += py-pdm-pep517
+    SUBDIR += py-pdoc
     SUBDIR += py-pebble
     SUBDIR += py-pefile
     SUBDIR += py-pendulum
