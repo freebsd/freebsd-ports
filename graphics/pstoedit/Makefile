@@ -12,10 +12,10 @@ LICENSE=	GPLv2+
 LIB_DEPENDS=	libgd.so:graphics/gd	\
 		libzip.so:archivers/libzip
 
-USES=		ghostscript libtool localbase pathfix pkgconfig
+USES=		ghostscript gmake libtool localbase pathfix pkgconfig
+USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
-USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-isystem ${LOCALBASE}/include/ming
 
