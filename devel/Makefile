@@ -6785,6 +6785,7 @@
     SUBDIR += rubygem-google-apis-iam_v2beta
     SUBDIR += rubygem-google-apis-iamcredentials_v1
     SUBDIR += rubygem-google-apis-monitoring_v3
+    SUBDIR += rubygem-google-apis-playcustomapp_v1
     SUBDIR += rubygem-google-apis-pubsub_v1
     SUBDIR += rubygem-google-apis-serviceusage_v1
     SUBDIR += rubygem-google-apis-sheets_v4
