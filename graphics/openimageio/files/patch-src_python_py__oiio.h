@@ -1,6 +1,6 @@
---- src/python/py_oiio.h.orig	2022-02-27 08:12:20 UTC
+--- src/python/py_oiio.h.orig	2023-01-30 22:36:11 UTC
 +++ src/python/py_oiio.h
-@@ -41,6 +41,13 @@ OIIO_CLANG_PRAGMA(GCC diagnostic ignored "-Wunused-val
+@@ -42,6 +42,13 @@ OIIO_CLANG_PRAGMA(GCC diagnostic ignored "-Wunused-val
  OIIO_CLANG_PRAGMA(GCC diagnostic ignored "-Wunused-value")
  #endif
  
