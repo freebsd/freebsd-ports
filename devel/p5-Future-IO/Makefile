@@ -1,5 +1,5 @@
 PORTNAME=	Future-IO
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PEVANS
@@ -16,7 +16,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Future>=0:devel/p5-Future \
 		p5-Struct-Dumb>=0:devel/p5-Struct-Dumb
-TEST_DEPENDS=	p5-Test2-Suite>=0:devel/p5-Test2-Suite
+TEST_DEPENDS=	p5-Test-Future-IO-Impl>=0:devel/p5-Test-Future-IO-Impl \
+		p5-Test2-Suite>=0:devel/p5-Test2-Suite
 
 USES=		perl5
 USE_PERL5=	modbuild
