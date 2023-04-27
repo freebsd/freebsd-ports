@@ -19,6 +19,8 @@ BROKEN_armv6=	qemu: uncaught target signal 11 (Segmentation fault) - core dumped
 SLAVEDIRS=	databases/mysql56-client
 USES=		bison:build cmake:noninja compiler:c++11-lib cpe groff:run \
 		libedit localbase perl5 shebangfix ssl
+IGNORE_SSL=	openssl30 openssl31
+IGNORE_SSL_REASON=	Upstream only supports OpenSSL 1.0.1 upto 1.1.X
 
 CPE_VENDOR=	oracle
 
