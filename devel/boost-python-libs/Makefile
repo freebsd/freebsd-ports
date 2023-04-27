@@ -1,5 +1,4 @@
 PORTNAME=	boost-libs
-PORTREVISION=	1
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 COMMENT=	Framework for interfacing Python and C++
@@ -68,6 +67,7 @@ post-install:
 		-e "s|%%PYTHON_INCLUDEDIR%%|${PYTHON_INCLUDEDIR}|g" \
 		-e "s|%%PYTHON_LIBDIR%%|${PYTHON_LIBDIR}|g" \
 		-e "s|%%PYTHON_VERSION%%|${PYTHON_VERSION}|g" ${PKGMESSAGE}
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libboost_*.so
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libboost_numpy*.so.${BOOST_SHARED_LIB_VER}
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libboost_python*.so.${BOOST_SHARED_LIB_VER}
 
 .include <bsd.port.post.mk>
