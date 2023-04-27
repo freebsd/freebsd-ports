@@ -1,6 +1,5 @@
 PORTNAME=	sphinx-book-theme
-PORTVERSION=	0.3.3
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI \
 		LOCAL/sunpoet:static
@@ -15,9 +14,8 @@ WWW=		https://github.com/executablebooks/sphinx-book-theme
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydata-sphinx-theme>=0.8.0<0.9:textproc/py-pydata-sphinx-theme@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>=0:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sphinx>=3,1<6,1:textproc/py-sphinx@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydata-sphinx-theme>=0.13.3:textproc/py-pydata-sphinx-theme@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sphinx>=4,1<7,1:textproc/py-sphinx@${PY_FLAVOR} \
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils

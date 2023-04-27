@@ -4,8 +4,8 @@ setup(
     name = 'sphinx-book-theme',
     version = '%%PORTVERSION%%',
     description = 'A clean book theme for scientific explanations and documentation with Sphinx',
-    maintainer = 'Chris Holdgraf',
-    maintainer_email = 'choldgraf@gmail.com',
+    maintainer = 'Executable Books Team',
+    maintainer_email = 'executablebooks@gmail.com',
     url = None,
     packages = [
         'sphinx_book_theme',
@@ -14,44 +14,43 @@ setup(
     package_dir = {'': 'src'},
     package_data = {'': ['*']},
     install_requires = [
-        'sphinx>=3,<6',
-        'pydata-sphinx-theme~=0.8.0',
-        'pyyaml',
+        'sphinx>=4,<7',
+        'pydata-sphinx-theme>=0.13.3',
     ],
     extras_require = {
         'code_style': [
-            'pre-commit~=2.7.0'
+            'pre-commit'
         ],
         'doc': [
-            'ablog~=0.10.13',
+            'ablog',
             'ipywidgets',
             'folium',
             'numpy',
             'matplotlib',
             'numpydoc',
-            'myst-nb~=0.13.2',
+            'myst-nb',
             'nbclient',
             'pandas',
             'plotly',
-            'sphinx~=4.0',  # Force Sphinx to be the latest version
-            'sphinx-copybutton',
             'sphinx-design',
             'sphinx-examples',
-            'sphinx-tabs',
-            'sphinx-togglebutton>=0.2.1',
-            'sphinx-thebe>=0.1.1',
-            'sphinxcontrib-bibtex~=2.2',
+            'sphinx-copybutton',
+            'sphinx-tabs<=3.4.0', # sphinx-tabs 3.4.1 needs docutils >.17, which would conflict with our pin above
+            'docutils==0.17.1', # docutils 0.18, 0.19 need a patch fix https://sourceforge.net/p/docutils/patches/195/, un-pin when 0.20 is released
+            'sphinx-togglebutton',
+            'sphinx-thebe',
+            'sphinxcontrib-bibtex',
             'sphinxcontrib-youtube',
             'sphinxext-opengraph',
         ],
         'test': [
-            'beautifulsoup4>=4.6.1,<5',
+            'beautifulsoup4',
             'coverage',
-            'myst_nb~=0.13.2',
-            'pytest~=6.0.1',
+            'myst-nb',
+            'pytest',
             'pytest-cov',
-            'pytest-regressions~=2.0.1',
-            'sphinx_thebe'
+            'pytest-regressions',
+            'sphinx_thebe',
         ],
     },
     entry_points = {
