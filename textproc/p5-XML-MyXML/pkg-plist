@@ -2,5 +2,3 @@
 %%SITE_PERL%%/XML/MyXML/Object.pm
 %%SITE_PERL%%/XML/MyXML/Util.pm
 %%PERL5_MAN3%%/XML::MyXML.3.gz
-%%PERL5_MAN3%%/XML::MyXML::Object.3.gz
-%%PERL5_MAN3%%/XML::MyXML::Util.3.gz
