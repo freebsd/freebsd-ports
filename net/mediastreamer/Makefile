@@ -54,7 +54,7 @@ VIDEOOPT_DESC=	Video options
 QTGL_DESC=		Qt OpenGL rendering support
 
 FFMPEG_IMPLIES=		VIDEO
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
+FFMPEG_LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4
 FFMPEG_CMAKE_BOOL=	ENABLE_FFMPEG
 G726_LIB_DEPENDS=	libspandsp.so:comms/spandsp
 G726_CMAKE_BOOL=	ENABLE_G726
@@ -98,6 +98,8 @@ XVIDEO_LDFLAGS=		-L${LOCALBASE}/lib -lX11
 post-patch:
 	@${REINPLACE_CMD} 's,gsm/gsm\.h,gsm.h,' \
 		${WRKSRC}/cmake/FindGSM.cmake ${WRKSRC}/src/audiofilters/gsm.c
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/CMakeLists.txt
 .if ${CHOSEN_COMPILER_TYPE} == gcc
 	@${REINPLACE_CMD} '/-Wno-format-truncation/d' ${WRKSRC}/CMakeLists.txt
 .endif
