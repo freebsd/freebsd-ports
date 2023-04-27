@@ -12,6 +12,9 @@ WWW=		http://zxid.org/
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on deprecated security/zxid
+EXPIRATION_DATE=	2023-05-27
+
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzxid.so:security/zxid
 
