@@ -5,6 +5,7 @@ bin/sfeed_curses
 bin/sfeed_frames
 bin/sfeed_gopher
 bin/sfeed_html
+bin/sfeed_json
 bin/sfeed_markread
 bin/sfeed_mbox
 bin/sfeed_opml_export
@@ -21,6 +22,7 @@ man/man1/sfeed_curses.1.gz
 man/man1/sfeed_frames.1.gz
 man/man1/sfeed_gopher.1.gz
 man/man1/sfeed_html.1.gz
+man/man1/sfeed_json.1.gz
 man/man1/sfeed_markread.1.gz
 man/man1/sfeed_mbox.1.gz
 man/man1/sfeed_opml_export.1.gz
