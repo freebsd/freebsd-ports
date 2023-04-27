@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create moodbars from video files
 WWW=		https://nordlicht.github.io/
 
+DEPRECATED=	Unmaintained for years upstream and fails to build with FFmpeg 6
+EXPIRATION_DATE=2023-05-31
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
