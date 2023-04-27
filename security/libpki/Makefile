@@ -15,6 +15,8 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf gnome libtool ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0 or later
 USE_GITHUB=	yes
 GH_ACCOUNT=	openca
 USE_GNOME=	libxml2
