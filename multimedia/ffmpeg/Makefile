@@ -488,8 +488,8 @@ SVTAV1_CONFIGURE_ON=	--enable-libsvtav1
 # svt-hevc
 SVTHEVC_LIB_DEPENDS=	libSvtHevcEnc.so:multimedia/svt-hevc
 SVTHEVC_CONFIGURE_ON=	--enable-libsvthevc
-SVTHEVC_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-HEVC/raw/v1.5.0-3-g86b58f77/ffmpeg_plugin/:svthevc
-SVTHEVC_PATCHFILES=	0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1:svthevc \
+SVTHEVC_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-HEVC/raw/v1.5.1-12-g62d22016/ffmpeg_plugin/:svthevc
+SVTHEVC_PATCHFILES=	master-0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.patch:-p1:svthevc \
 			0002-doc-Add-libsvt_hevc-encoder-docs.patch:-p1:svthevc
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTHEVC
