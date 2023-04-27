@@ -19,10 +19,5 @@ bin/orepan2-merge-index
 %%PERL5_MAN1%%/orepan2-merge-index.1.gz
 %%PERL5_MAN3%%/OrePAN2.3.gz
 %%PERL5_MAN3%%/OrePAN2::Auditor.3.gz
-%%PERL5_MAN3%%/OrePAN2::CLI::Indexer.3.gz
-%%PERL5_MAN3%%/OrePAN2::CLI::Inject.3.gz
 %%PERL5_MAN3%%/OrePAN2::Index.3.gz
-%%PERL5_MAN3%%/OrePAN2::Indexer.3.gz
 %%PERL5_MAN3%%/OrePAN2::Injector.3.gz
-%%PERL5_MAN3%%/OrePAN2::Repository.3.gz
-%%PERL5_MAN3%%/OrePAN2::Repository::Cache.3.gz
