@@ -871,6 +871,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/scripts/split_all_markers.lua
 %%DATADIR%%/scripts/stop_at_marker.lua
 %%DATADIR%%/scripts/store_recall_mixer.lua
+%%DATADIR%%/scripts/surround_to_stereo.lua
 %%DATADIR%%/scripts/tomsloop.lua
 %%DATADIR%%/scripts/track_organizer.lua
 %%DATADIR%%/scripts/tx_raw_midi_from_file.lua
