@@ -1,10 +1,9 @@
 PORTNAME=	xine
-DISTVERSION=	1.2.12
-PORTREVISION=	6
+DISTVERSION=	1.2.13
 CATEGORIES=	multimedia
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${DISTVERSION}
 PKGNAMEPREFIX=	lib
-DISTNAME=	${PORTNAME}-lib-${PORTVERSION}
+DISTNAME=	${PORTNAME}-lib-${DISTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries for xine multimedia player
@@ -50,7 +49,8 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-libflac \
 		--enable-musepack \
 		--enable-real-codecs \
-		--without-esound
+		--without-esound \
+		--disable-crypto
 
 MAKE_ENV=	V=1
 MAKE_ARGS=	pkgdatadir="${DATADIR}" \
@@ -62,7 +62,7 @@ CFLAGS_i386=	-fomit-frame-pointer
 DOCSDIR=	${PREFIX}/share/doc/xine-lib
 # Please sync with XINE_PLUGINSDIR in multimedia/xine
 # and multimedia/vdr-plugin-xineliboutput
-PLUGINSDIR=	lib/xine/plugins/2.10
+PLUGINSDIR=	lib/xine/plugins/2.11
 PLIST_SUB=	PLUGINSDIR="${PLUGINSDIR}"
 
 OPTIONS_DEFINE=		AALIB ALSA AOM CACA DAV1D DOCS DMX_IMAGE DVB \

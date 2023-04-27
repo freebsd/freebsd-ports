@@ -49,7 +49,7 @@ lib/libxine.la
 lib/libxine-interface.la
 lib/libxine.so
 lib/libxine.so.2
-lib/libxine.so.2.10.0
+lib/libxine.so.2.11.0
 %%PLUGINSDIR%%/mime.types
 %%PLUGINSDIR%%/post/xineplug_post_audio_filters.so
 %%PLUGINSDIR%%/post/xineplug_post_goom.so
