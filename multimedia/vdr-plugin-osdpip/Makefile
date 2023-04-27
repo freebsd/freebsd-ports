@@ -13,6 +13,8 @@ WWW=		https://projects.vdr-developer.org/projects/plg-osdpip
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with FFmpeg 6
+
 LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 
 USES=		pkgconfig tar:tgz
