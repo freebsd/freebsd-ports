@@ -19,4 +19,6 @@ RUN_DEPENDS=	p5-AnyEvent>=0:devel/p5-AnyEvent \
 USES=		perl5
 USE_PERL5=	modbuildtiny
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
