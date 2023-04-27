@@ -16,6 +16,8 @@ WWW=		https://www.mltframework.org/
 LICENSE?=		GPLv2 GPLv3 LGPL21
 LICENSE_COMB?=		multi
 
+BROKEN=			fails to build with FFmpeg 6 (PR 270293)
+
 USES+=			alias cmake compiler:c++11-lang eigen:3 localbase pkgconfig
 
 DATADIR=		${PREFIX}/share/mlt
