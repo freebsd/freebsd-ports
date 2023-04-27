@@ -1,11 +1,11 @@
 PORTNAME=	pip
-PORTVERSION=	23.1.1
+PORTVERSION=	23.1.2
 CATEGORIES=	devel python
-MASTER_SITES=	https://files.pythonhosted.org/packages/a4/53/bfc6409447ca024558b8b19d055de94c813c3e32c0296c48a0873a161cf5/:test_setuptools \
-		https://files.pythonhosted.org/packages/27/d6/003e593296a85fd6ed616ed962795b2f87709c3eee2bca4f6d0fe55c6d00/:test_wheel
+MASTER_SITES=	https://files.pythonhosted.org/packages/c3/9e/8a7ba2c9984a060daa6c6f9fff4d576b7ace3936239d6b771541eab972ed/:test_setuptools \
+		https://files.pythonhosted.org/packages/61/86/cc8d1ff2ca31a312a25a708c891cf9facbad4eae493b3872638db6785eb5/:test_wheel
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTFILES=	setuptools-63.2.0-py3-none-any.whl:test_setuptools \
-		wheel-0.37.1-py2.py3-none-any.whl:test_wheel
+DISTFILES=	setuptools-67.6.0-py3-none-any.whl:test_setuptools \
+		wheel-0.40.0-py3-none-any.whl:test_wheel
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -70,8 +70,8 @@ post-install-DOCS-on:
 pre-test:
 	${MKDIR} ${WRKSRC}/tests/data/common_wheels
 	# the tests check for these wheel files, so fetch them and copy them in
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/setuptools-63.2.0-py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/wheel-0.37.1-py2.py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/setuptools-67.6.0-py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/wheel-0.40.0-py3-none-any.whl ${WRKSRC}/tests/data/common_wheels
 	${LN} -sf ${LOCALBASE}/bin/pip ${LOCALBASE}/bin/pip3
 
 .include <bsd.port.mk>
