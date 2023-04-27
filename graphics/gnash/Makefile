@@ -21,7 +21,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libboost_thread.so:devel/boost-libs \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig \
-		libavcodec.so:multimedia/ffmpeg \
+		libavcodec.so.58:multimedia/ffmpeg4 \
 		libtheora.so:multimedia/libtheora \
 		libogg.so:audio/libogg \
 		libvorbis.so:audio/libvorbis \
@@ -32,7 +32,7 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl \
 CONFLICTS=	gnash-devel
 
 USES=		cpe tar:bzip2 compiler:c++11-lang autoreconf gmake libtool \
-		pkgconfig jpeg gnome gl sdl desktop-file-utils xorg
+		pkgconfig jpeg gnome gl sdl desktop-file-utils xorg localbase:ldflags
 USE_CSTD=	gnu11
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
@@ -43,17 +43,17 @@ USE_SDL=	sdl
 SYSCONFIGDIR=	${PREFIX}/etc
 
 # jemalloc leads to infinite recursion on FreeBSD
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/ffmpeg4/include
+CPPFLAGS+=	-I${LOCALBASE}/ffmpeg4/include
+LDFLAGS+=	-L${LOCALBASE}/ffmpeg4/lib
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
 		--with-plugins-install=prefix \
 		--sysconfdir="${SYSCONFIGDIR}" \
 		--enable-gui=gtk \
 		--enable-media=ffmpeg \
-		--with-ffmpeg-incl=${LOCALBASE}/include/libavcodec \
-		--with-ffmpeg-lib=${LOCALBASE}/lib \
+		--with-ffmpeg-incl="${LOCALBASE}/ffmpeg4/include/libavcodec" \
+		--with-ffmpeg-lib=${LOCALBASE}/ffmpeg4/lib \
 		--disable-testsuite \
 		--disable-kparts3 \
 		--disable-jemalloc \
