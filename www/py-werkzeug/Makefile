@@ -1,5 +1,5 @@
 PORTNAME=	werkzeug
-PORTVERSION=	2.2.3
+PORTVERSION=	2.3.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +13,12 @@ WWW=		https://palletsprojects.com/p/werkzeug/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markupsafe>=2.1.1:textproc/py-markupsafe@${PY_FLAVOR}
 
-USES=		cpe python:3.7+
-USE_PYTHON=	autoplist concurrent distutils
+USES=		cpe python:3.8+
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
