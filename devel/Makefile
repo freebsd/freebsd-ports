@@ -5483,12 +5483,12 @@
     SUBDIR += py-shellingham
     SUBDIR += py-shtab
     SUBDIR += py-signalr-client-aio
+    SUBDIR += py-simple-term-menu
     SUBDIR += py-simpleeval
     SUBDIR += py-simplegeneric
     SUBDIR += py-simplejson
     SUBDIR += py-simpleparse
     SUBDIR += py-simpletal
-    SUBDIR += py-simple-term-menu
     SUBDIR += py-simpy
     SUBDIR += py-single-version
     SUBDIR += py-sip
