@@ -113,7 +113,7 @@ GH_TUPLE=	\
 		golang:tools:v0.6.0:golang_tools/vendor/golang.org/x/tools \
 		golang:xerrors:5ec99f83aff1:golang_xerrors/vendor/golang.org/x/xerrors \
 		golang-jwt:jwt:v3.2.1:golang_jwt_jwt/vendor/github.com/golang-jwt/jwt \
-		golang-jwt:jwt:v4.4.2:golang_jwt_jwt_v4/vendor/github.com/golang-jwt/jwt/v4 \
+		golang-jwt:jwt:v4.4.3:golang_jwt_jwt_v4/vendor/github.com/golang-jwt/jwt/v4 \
 		golang-migrate:migrate:v4.7.0:golang_migrate_migrate/vendor/github.com/golang-migrate/migrate/v4 \
 		golang-sql:civil:cb61b32ac6fe:golang_sql_civil/vendor/github.com/golang-sql/civil \
 		gomodule:redigo:v2.0.0:gomodule_redigo/vendor/github.com/gomodule/redigo \
@@ -121,7 +121,7 @@ GH_TUPLE=	\
 		google:btree:v1.0.1:google_btree/vendor/github.com/google/btree \
 		google:flatbuffers:v2.0.0:google_flatbuffers/vendor/github.com/google/flatbuffers \
 		google:go-cloud:99801bbb523a:google_go_cloud/vendor/gocloud.dev \
-		google:go-cmp:v0.5.8:google_go_cmp/vendor/github.com/google/go-cmp \
+		google:go-cmp:v0.5.9:google_go_cmp/vendor/github.com/google/go-cmp \
 		google:go-genproto:81c1377c94b1:google_go_genproto/vendor/google.golang.org/genproto \
 		google:subcommands:v1.0.1:google_subcommands/vendor/github.com/google/subcommands \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
@@ -141,7 +141,7 @@ GH_TUPLE=	\
 		grafana:grafana-google-sdk-go:b190293eaf58:grafana_grafana_google_sdk_go/vendor/github.com/grafana/grafana-google-sdk-go \
 		grafana:grafana-plugin-sdk-go:v0.131.0:grafana_grafana_plugin_sdk_go/vendor/github.com/grafana/grafana-plugin-sdk-go \
 		grafana:loki:7832783b1caa:grafana_loki/vendor/github.com/grafana/loki \
-		grafana:saml:9d456850a65a:grafana_saml/vendor/github.com/crewjam/saml \
+		grafana:saml:67cbfa09c7b6:grafana_saml/vendor/github.com/crewjam/saml \
 		grafana:xorm:2fcda7565af6:grafana_xorm/vendor/xorm.io/xorm \
 		grpc-ecosystem:go-grpc-middleware:v1.3.0:grpc_ecosystem_go_grpc_middleware/vendor/github.com/grpc-ecosystem/go-grpc-middleware \
 		grpc-ecosystem:go-grpc-prometheus:6af20e3a5340:grpc_ecosystem_go_grpc_prometheus/vendor/github.com/grpc-ecosystem/go-grpc-prometheus \
@@ -221,7 +221,7 @@ GH_TUPLE=	\
 		robfig:cron:b41be1df6967:robfig_cron/vendor/github.com/robfig/cron \
 		robfig:cron:v3.0.1:robfig_cron_v3/vendor/github.com/robfig/cron/v3 \
 		rs:cors:v1.8.0:rs_cors/vendor/github.com/rs/cors \
-		russellhaering:goxmldsig:v1.1.1:russellhaering_goxmldsig/vendor/github.com/russellhaering/goxmldsig \
+		russellhaering:goxmldsig:v1.2.0:russellhaering_goxmldsig/vendor/github.com/russellhaering/goxmldsig \
 		russross:blackfriday:v2.0.1:russross_blackfriday_v2/vendor/github.com/russross/blackfriday/v2 \
 		sean-:seed:e2103e2c3529:sean__seed/vendor/github.com/sean-/seed \
 		segmentio:asm:v1.1.1:segmentio_asm/vendor/github.com/segmentio/asm \
@@ -233,8 +233,8 @@ GH_TUPLE=	\
 		shurcooL:vfsgen:0d455de96546:shurcool_vfsgen/vendor/github.com/shurcooL/vfsgen \
 		sirupsen:logrus:v1.8.1:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		square:go-jose:v2.5.1:square_go_jose/vendor/gopkg.in/square/go-jose.v2 \
-		stretchr:objx:v0.2.0:stretchr_objx/vendor/github.com/stretchr/objx \
-		stretchr:testify:v1.7.0:stretchr_testify/vendor/github.com/stretchr/testify \
+		stretchr:objx:v0.5.0:stretchr_objx/vendor/github.com/stretchr/objx \
+		stretchr:testify:v1.8.1:stretchr_testify/vendor/github.com/stretchr/testify \
 		teris-io:shortid:771a37caa5cf:teris_io_shortid/vendor/github.com/teris-io/shortid \
 		ua-parser:uap-go:00c877edfe0f:ua_parser_uap_go/vendor/github.com/ua-parser/uap-go \
 		uber-go:atomic:v1.9.0:uber_go_atomic/vendor/go.uber.org/atomic \
