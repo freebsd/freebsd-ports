@@ -1,5 +1,5 @@
 PORTNAME=	afdko
-PORTVERSION=	3.9.4
+PORTVERSION=	3.9.5
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +29,7 @@ RUN_DEPENDS=	afdko>=${PORTVERSION}<${PORTVERSION}_99:x11-fonts/afdko \
 		${PYTHON_PKGNAMEPREFIX}ufoprocessor>=1.9.0:x11-fonts/py-ufoprocessor@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zopfli>=0.1.4:archivers/py-zopfli@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
