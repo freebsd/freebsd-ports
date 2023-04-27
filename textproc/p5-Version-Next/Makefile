@@ -17,4 +17,6 @@ RUN_DEPENDS=	p5-Sub-Exporter>=0:devel/p5-Sub-Exporter
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
