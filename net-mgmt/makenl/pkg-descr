@@ -1,0 +1,5 @@
+MakeNL is an open-sourced version of MakeNL, the Fido/FTN nodelist
+processing program.  It is used to process Fido/FTN nodelists for
+submission to coordinators and/or for creation of nodelist files for
+distribution.  It is a near drop-in replacement for an existing
+installation of MakeNL.

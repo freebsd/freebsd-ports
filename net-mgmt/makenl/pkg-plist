@@ -1,0 +1,16 @@
+bin/makenl
+share/man/man1/makenl.1.gz
+%%EXAMPLES%%%%DOCSDIR%%/examples/cpyright.txt
+%%EXAMPLES%%%%DOCSDIR%%/examples/distrib.ctl
+%%EXAMPLES%%%%DOCSDIR%%/examples/epilog.txt
+%%EXAMPLES%%%%DOCSDIR%%/examples/hub.ctl
+%%EXAMPLES%%%%DOCSDIR%%/examples/net-l.ctl
+%%EXAMPLES%%%%DOCSDIR%%/examples/net-s.ctl
+%%EXAMPLES%%%%DOCSDIR%%/examples/node.ctl
+%%EXAMPLES%%%%DOCSDIR%%/examples/prolog.txt
+%%EXAMPLES%%%%DOCSDIR%%/examples/regional.ctl
+%%EXAMPLES%%%%DOCSDIR%%/examples/zone.ctl
+%%PORTDOCS%%%%DOCSDIR%%/fts-5000.txt
+%%PORTDOCS%%%%DOCSDIR%%/makenl.md
+%%PORTDOCS%%%%DOCSDIR%%/readme.md
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew.md
