@@ -1,6 +1,6 @@
 PORTNAME=	aubio
 PORTVERSION=	0.4.9
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	audio
 MASTER_SITES=	https://aubio.org/pub/
 

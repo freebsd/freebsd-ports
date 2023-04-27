@@ -1,6 +1,6 @@
 PORTNAME=	citra
 PORTVERSION=	s20220902
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	emulators
 .if make(makesum)
 MASTER_SITES=	https://api.citra-emu.org/gamedb/?dummy=/:gamedb

@@ -1,6 +1,6 @@
 PORTNAME=	blender
 DISTVERSION=	3.4.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \

@@ -1,6 +1,6 @@
 PORTNAME=	owntone
 DISTVERSION=	28.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/owntone/owntone-server/releases/download/${DISTVERSION}/
 

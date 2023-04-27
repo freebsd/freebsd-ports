@@ -1,6 +1,6 @@
 PORTNAME=	cfdg
 DISTVERSION=	3.4.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.contextfreeart.org/download/ \
 		http://glyphic.s3.amazonaws.com/cfa/download/
