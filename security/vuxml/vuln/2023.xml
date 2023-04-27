@@ -38,6 +38,88 @@
     </dates>
   </vuln>
 
+  <vuln vid="0b85b1cd-e468-11ed-834b-6c3be5272acd">
+    <topic>Grafana -- Critical vulnerability in golang</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><lt>8.5.24</lt></range>
+	<range><ge>9.0.0</ge><lt>9.2.17</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.13</lt></range>
+	<range><ge>9.4.0</ge><lt>9.4.9</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><lt>8.5.24</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><lt>9.2.17</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.13</lt></range>
+	<range><ge>9.4.0</ge><lt>9.4.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/04/26/precautionary-patches-for-grafana-released-following-critical-go-vulnerability-cve-2023-24538/">
+	  <p>An issue in how go handles backticks (`) with Javascript can lead to
+	  an injection of arbitrary code into go templates. While Grafana Labs software
+	  contains potentially vulnerable versions of go, we have not identified any
+	  exploitable use cases at this time.</p>
+	  <p>The CVSS score for this vulnerability is 0.0 (adjusted), 9.8 (base).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-24538</cvename>
+      <url>https://grafana.com/blog/2023/04/26/precautionary-patches-for-grafana-released-following-critical-go-vulnerability-cve-2023-24538/</url>
+    </references>
+    <dates>
+      <discovery>2023-04-19</discovery>
+      <entry>2023-04-26</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5e257b0d-e466-11ed-834b-6c3be5272acd">
+    <topic>Grafana -- Exposure of sensitive information to an unauthorized actor</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<name>grafana9</name>
+	<range><ge>9.1.0</ge><lt>9.2.17</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.13</lt></range>
+	<range><ge>9.4.0</ge><lt>9.4.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/04/26/grafana-security-release-new-versions-of-grafana-with-security-fixes-for-cve-2023-28119-and-cve-2023-1387/">
+	  <p>When setting up Grafana, there is an option to enable
+	  <a href="https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/jwt/">
+	  JWT authentication</a>. Enabling this will allow users to authenticate towards
+	  the Grafana instance with a special header (default <code>X-JWT-Assertion</code>
+	  ).</p>
+	  <p>In Grafana, there is an additional way to authenticate using JWT called
+	  <a href="https://grafana.com/docs/grafana/latest/setup-grafana/configure-security/configure-authentication/jwt/#url-login">
+	  URL login</a> where the token is passed as a query parameter.</p>
+	  <p>When using this option, a JWT token is passed to the data source as a header,
+	  which leads to exposure of sensitive information to an unauthorized party.</p>
+	  <p>The CVSS score for this vulnerability is 4.2 Medium</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-1387</cvename>
+      <url>https://grafana.com/security/security-advisories/cve-2023-1387/</url>
+    </references>
+    <dates>
+      <discovery>2023-04-26</discovery>
+      <entry>2023-04-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="c676bb1b-e3f8-11ed-b37b-901b0e9408dc">
     <topic>element-web -- matrix-react-sdk vulnerable to HTML injection in search results via plaintext message highlighting</topic>
     <affects>
