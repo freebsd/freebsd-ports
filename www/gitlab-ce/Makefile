@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -156,7 +156,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-redis-namespace19>=1.9.0<1.10.0:databases/rubygem-redis-namespace19 \
 	rubygem-gitlab-sidekiq-fetcher>=0.9.0<0.10:devel/rubygem-gitlab-sidekiq-fetcher \
 	rubygem-fugit>=1.8.1<1.9:devel/rubygem-fugit \
-	rubygem-httparty>=0.20.0<0.21:www/rubygem-httparty \
+	rubygem-httparty020>=0.20.0<0.21:www/rubygem-httparty020 \
 	rubygem-rainbow>=3.1.1<4.0:devel/rubygem-rainbow \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
 	rubygem-settingslogic>=2.0.9<2.1.0:devel/rubygem-settingslogic \
