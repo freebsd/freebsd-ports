@@ -1,4 +1,4 @@
---- libcdi/src/cgribexlib.c.orig	2022-05-25 13:46:13 UTC
+--- libcdi/src/cgribexlib.c.orig	2023-04-16 12:23:50 UTC
 +++ libcdi/src/cgribexlib.c
 @@ -12,7 +12,7 @@
  #pragma GCC diagnostic warning "-Wstrict-overflow"
@@ -9,7 +9,7 @@
  #pragma options nostrict
  #include <ppu_intrinsics.h>
  #endif
-@@ -737,8 +737,8 @@ void pwr6_minmax_val_double_unrolled6(const double *re
+@@ -736,8 +736,8 @@ void pwr6_minmax_val_double_unrolled6(const double *re
    {
      size_t residual =  datasize % __UNROLL_DEPTH_1;
      size_t ofs = datasize - residual;
@@ -20,7 +20,7 @@
  
      for (size_t j = 0; j < __UNROLL_DEPTH_1; ++j) 
        {
-@@ -750,21 +750,21 @@ void pwr6_minmax_val_double_unrolled6(const double *re
+@@ -749,21 +749,21 @@ void pwr6_minmax_val_double_unrolled6(const double *re
        {
  	for (size_t j = 0; j < __UNROLL_DEPTH_1; ++j) 
  	  {
