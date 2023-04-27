@@ -498,7 +498,7 @@ SVTHEVC_PATCHFILES=	master-0001-lavc-svt_hevc-add-libsvt-hevc-encoder-wrapper.pa
 # svt-vp9
 SVTVP9_LIB_DEPENDS=	libSvtVp9Enc.so:multimedia/svt-vp9
 SVTVP9_CONFIGURE_ON=	--enable-libsvtvp9
-SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.3.0-4-gabd5c59/ffmpeg_plugin/:svtvp9
+SVTVP9_PATCH_SITES=	https://github.com/OpenVisualCloud/SVT-VP9/raw/v0.3.0-17-g15bd454/ffmpeg_plugin/:svtvp9
 SVTVP9_PATCHFILES=	master-0001-Add-ability-for-ffmpeg-to-run-svt-vp9.patch:-p1:svtvp9
 .if make(makesum)
 .MAKEFLAGS:		WITH+=SVTVP9
