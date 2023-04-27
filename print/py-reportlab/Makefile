@@ -1,5 +1,5 @@
 PORTNAME=	reportlab
-PORTVERSION=	3.6.12
+PORTVERSION=	3.6.13
 CATEGORIES=	print python
 MASTER_SITES=	PYPI \
 		https://www.reportlab.com/ftp/
@@ -17,7 +17,7 @@ LICENSE=	BSD3CLAUSE
 RUN_DEPENDS=	${PY_PILLOW}
 
 USES=		cpe python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
 
 CONFLICTS=	py*-reportlab[^3]-[^3].* \
 		py*-reportlab-[^3].*
