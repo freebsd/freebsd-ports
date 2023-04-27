@@ -5,5 +5,3 @@ This package is intended to be used by any project that needs these files.
 It intentionally does not provide any extra code except some metadata nor has
 any extra requirements. You MAY use some minimal support code from the XStatic
 base package, if you like.
-
-See also: https://github.com/openstack-archive/deb-python-xstatic-tv4
