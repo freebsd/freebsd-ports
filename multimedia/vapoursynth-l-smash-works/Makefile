@@ -12,6 +12,8 @@ WWW=		https://github.com/VFR-maniac/L-SMASH-Works/tree/master/VapourSynth
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		fails to build with FFmpeg 6 (PR 270303)
+
 BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VSHelper.h:multimedia/vapoursynth
 BUILD_DEPENDS+=	ffmpeg>=3.2,1:multimedia/ffmpeg
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
