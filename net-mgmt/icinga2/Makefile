@@ -1,7 +1,7 @@
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.13.6
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 PATCH_SITES+=	https://github.com/Icinga/icinga2/commit/

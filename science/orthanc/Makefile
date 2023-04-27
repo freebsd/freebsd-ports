@@ -1,6 +1,6 @@
 PORTNAME=	orthanc
 DISTVERSION=	1.11.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	science
 MASTER_SITES=	https://www.orthanc-server.com/downloads/get.php?path=/orthanc/
 DISTNAME=	Orthanc-${PORTVERSION}

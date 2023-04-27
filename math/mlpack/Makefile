@@ -1,6 +1,6 @@
 PORTNAME=	mlpack
 DISTVERSION=	4.0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math # machine-learning
 MASTER_SITES=	https://mlpack.org/files/
 
