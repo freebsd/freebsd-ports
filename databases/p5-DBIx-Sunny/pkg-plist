@@ -3,4 +3,3 @@
 %%SITE_PERL%%/DBIx/Sunny/Util.pm
 %%PERL5_MAN3%%/DBIx::Sunny.3.gz
 %%PERL5_MAN3%%/DBIx::Sunny::Schema.3.gz
-%%PERL5_MAN3%%/DBIx::Sunny::Util.3.gz
