@@ -320,6 +320,7 @@ LIBBLURAY_CONFIGURE_ENABLE=	libbluray
 # libplacebo
 LIBPLACEBO_LIB_DEPENDS=	libplacebo.so:graphics/libplacebo
 LIBPLACEBO_CONFIGURE_ENABLE=	libplacebo
+LIBPLACEBO_IMPLIES=	VULKAN
 
 # librsvg
 LIBRSVG2_USES=			gnome
