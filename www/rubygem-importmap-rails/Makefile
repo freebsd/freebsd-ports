@@ -1,5 +1,5 @@
 PORTNAME=	importmap-rails
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
