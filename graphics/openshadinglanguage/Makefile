@@ -1,15 +1,11 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.6.2
-PORTREVISION=	4
+DISTVERSION=	1.12.11.0
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
 COMMENT?=	Advanced shading language for production GI renderers
 WWW=		https://github.com/AcademySoftwareFoundation/OpenShadingLanguage
-
-PATCH_SITES=	https://github.com/AcademySoftwareFoundation/OpenShadingLanguage/commit/
-PATCHFILES=	41cc6d78dba4115b7d4adcae7e4759ffa43c3833.patch:-p1
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
@@ -17,15 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 BROKEN_FreeBSD_12_powerpc64=	fails to compile: llvm_ops.cpp:101:10: fatal error: 'iostream' file not found
 BROKEN_riscv64=		fails to build: /usr/include/c++/v1/__threading_support:135:3: Unsupported architecture
 
-BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libImath.so:math/Imath \
 		libOpenEXR.so:graphics/openexr \
 		libOpenImageIO.so:graphics/openimageio \
 		libpugixml.so:textproc/pugixml
-RUN_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 
-USES=		bison cmake compiler:c++14-lang localbase ncurses qt:5
+USES=		bison cmake compiler:c++14-lang llvm:lib localbase ncurses qt:5
 
 USE_QT=		buildtools:build qmake:build
 
@@ -34,8 +28,7 @@ GH_ACCOUNT=	AcademySoftwareFoundation
 GH_PROJECT=	OpenShadingLanguage
 
 CMAKE_ON=	ENABLERTTI OSL_BUILD_TESTS USE_LLVM_BITCODE USE_LIBCPLUSPLUS
-CMAKE_OFF=	USE_BOOST_WAVE
-CMAKE_ARGS+=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_DEFAULT}" \
+CMAKE_ARGS+=	-DLLVM_CONFIG:STRING="${LOCALBASE}/bin/llvm-config${LLVM_VERSION}" \
 		-DCMAKE_INSTALL_DOCDIR:STRING=${DOCSDIR} -DCMAKE_CXX_STANDARD=14
 
 OPTIONS_DEFINE=		OSLTOY
