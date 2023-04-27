@@ -1,0 +1,27 @@
+Obtained from https://git.alpinelinux.org/aports/tree/community/nymphcast/ffmpeg6.patch
+diff --git a/src/server/ffplay/cmdutils.c.bak b/src/server/ffplay/cmdutils.c.bak
+index 0e8561a..ab0b166 100644
+--- ffplay/cmdutils.c.bak
++++ ffplay/cmdutils.c.bak
+@@ -719,7 +719,7 @@ static void init_parse_context(OptionParseContext *octx,
+     memset(octx, 0, sizeof(*octx));
+ 
+     octx->nb_groups = nb_groups;
+-    octx->groups    = av_mallocz_array(octx->nb_groups, sizeof(*octx->groups));
++    octx->groups    = av_calloc(octx->nb_groups, sizeof(*octx->groups));
+     if (!octx->groups)
+         exit_program(1);
+ 
+diff --git a/src/server/ffplay/stream_handler.cpp b/src/server/ffplay/stream_handler.cpp
+index f6db69a..27d9fcd 100644
+--- ffplay/stream_handler.cpp
++++ ffplay/stream_handler.cpp
+@@ -137,7 +137,7 @@ AVDictionary **setup_find_stream_info_opts(AVFormatContext *s, AVDictionary *cod
+     int i;
+     AVDictionary **opts;
+     if (!s->nb_streams) { return NULL; }
+-	opts = (AVDictionary**) av_mallocz_array(s->nb_streams, sizeof(*opts));
++	opts = (AVDictionary**) av_calloc(s->nb_streams, sizeof(*opts));
+     if (!opts) {
+         av_log(NULL, AV_LOG_ERROR, "Could not alloc memory for stream options.\n");
+         return NULL;
