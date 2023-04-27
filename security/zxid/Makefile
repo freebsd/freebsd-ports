@@ -13,18 +13,22 @@ LICENSE_NAME=	End2End Trust Architecture (e2eta) Software Copying
 LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS=	# none
 
+DEPRECATED=	Do not build with OpenSSL 1.1.1e and later
+EXPIRATION_DATE=	2023-05-27
+
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		gmake localbase tar:tgz ssl
 USE_CSTD=	gnu89
+USE_LDCONFIG=	yes
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" \
 		LD="${CC}" LDFLAGS="${LDFLAGS}" \
 		PREFIX="${PREFIX}" OPENSSL_ROOT="${OPENSSLBASE}" \
 		POSTLIBS="${LDFLAGS}" TARGET="${OPSYS:tl}" \
 		V=1
-ALL_TARGET=	default smime libzxid.so.0.0
-USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET=	default smime libzxid.so.0.0
 
 CFLAGS+=	-D_LSEEK_DECLARED -fPIC
 
