@@ -1,7 +1,6 @@
 PORTNAME=	4ti2
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	1_6_9
-PORTREVISION=	1
+DISTVERSION=	1_6_10
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,11 +14,16 @@ LIB_DEPENDS=	libglpk.so:math/glpk \
 		libgmp.so:math/gmp
 
 USES=		autoreconf compiler:c++11-lang gmake libtool
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static --enable-shared --with-glpk=${LOCALBASE} --with-gmp=${LOCALBASE}
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static --enable-shared --with-glpk=${LOCALBASE} --with-gmp=${LOCALBASE}
+
+INSTALL_TARGET=	install-strip
+
 TEST_TARGET=	check # tests fail to run: https://github.com/4ti2/4ti2/issues/26
+
+OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
