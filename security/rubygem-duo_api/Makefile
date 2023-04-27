@@ -9,4 +9,6 @@ WWW=		https://github.com/duosecurity/duo_api_ruby
 
 USES=		gem
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
