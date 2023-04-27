@@ -4,8 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	2cebc65ad7f8.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7992
-PATCHFILES+=	90c476983ce9.patch:-p1 # https://github.com/obsproject/obs-studio/pull/7992
+PATCHFILES=	e98c9fbd65aa4e3d91da081b6020962c7b3e68ee.patch:-p1 \
+		0a257a71e83225d1e6b503a5cc2dc0eea99c1e13.patch:-p1 \
+		2e79d4c902abf3e6bb4ad1b5bf779c0cc22a6fd0.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
