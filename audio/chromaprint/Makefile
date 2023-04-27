@@ -1,8 +1,7 @@
 PORTNAME=	chromaprint
-PORTVERSION=	1.5.1
-PORTREVISION=	1
+DISTVERSION=	1.5.1.a.20221217
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/acoustid/${PORTNAME}/releases/download/v${PORTVERSION}/
+#MASTER_SITES=	https://github.com/acoustid/${PORTNAME}/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	AcoustID audio fingerprinting library
@@ -15,6 +14,9 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.md
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 USES=		cmake compiler:c++11-lib pathfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	acoustid
+GH_TAGNAME=	aa67c95
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DBUILD_TOOLS:BOOL=true \
