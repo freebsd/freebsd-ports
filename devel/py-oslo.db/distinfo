@@ -1,3 +1,3 @@
-TIMESTAMP = 1675191031
-SHA256 (oslo.db-12.3.1.tar.gz) = 19dec50240f08fbab5ae767354eb59175a14773f0271d783a57fcac49e4a6da1
-SIZE (oslo.db-12.3.1.tar.gz) = 181970
+TIMESTAMP = 1682354514
+SHA256 (oslo.db-13.0.0.tar.gz) = 88f0be1b31b137bb608f122c7afb42fca62bfebc1e3daeaa7f3664ece628547e
+SIZE (oslo.db-13.0.0.tar.gz) = 173315
