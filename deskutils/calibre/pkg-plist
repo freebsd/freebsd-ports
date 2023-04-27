@@ -61,6 +61,7 @@ lib/calibre/calibre/db/cli/cmd_show_metadata.py
 lib/calibre/calibre/db/cli/main.py
 lib/calibre/calibre/db/cli/tests.py
 lib/calibre/calibre/db/cli/utils.py
+lib/calibre/calibre/db/constants.py
 lib/calibre/calibre/db/copy_to_library.py
 lib/calibre/calibre/db/covers.py
 lib/calibre/calibre/db/errors.py
@@ -854,6 +855,7 @@ lib/calibre/calibre/gui2/dialogs/trim_image.py
 lib/calibre/calibre/gui2/dnd.py
 lib/calibre/calibre/gui2/ebook_download.py
 lib/calibre/calibre/gui2/email.py
+lib/calibre/calibre/gui2/extra_files_watcher.py
 lib/calibre/calibre/gui2/filename_pattern_ui.py
 lib/calibre/calibre/gui2/flow_toolbar.py
 lib/calibre/calibre/gui2/font_family_chooser.py
@@ -892,6 +894,8 @@ lib/calibre/calibre/gui2/lrf_renderer/main_ui.py
 lib/calibre/calibre/gui2/lrf_renderer/text.py
 lib/calibre/calibre/gui2/main.py
 lib/calibre/calibre/gui2/main_window.py
+lib/calibre/calibre/gui2/markdown_editor.py
+lib/calibre/calibre/gui2/markdown_syntax_highlighter.py
 lib/calibre/calibre/gui2/metadata/__init__.py
 lib/calibre/calibre/gui2/metadata/basic_widgets.py
 lib/calibre/calibre/gui2/metadata/bulk_download.py
@@ -1311,6 +1315,7 @@ lib/calibre/calibre/utils/fonts/sfnt/maxp.py
 lib/calibre/calibre/utils/fonts/sfnt/merge.py
 lib/calibre/calibre/utils/fonts/sfnt/metrics.py
 lib/calibre/calibre/utils/fonts/sfnt/subset.py
+lib/calibre/calibre/utils/fonts/subset.py
 lib/calibre/calibre/utils/fonts/utils.py
 lib/calibre/calibre/utils/fonts/win_fonts.py
 lib/calibre/calibre/utils/formatter.py
