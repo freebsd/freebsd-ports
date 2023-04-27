@@ -24,6 +24,7 @@ man/man6/freeciv.6.gz
 %%GTK2%%man/man6/freeciv-gtk2.6.gz
 @comment man/man6/freeciv-gtk3.22.6.gz
 %%GTK3%%man/man6/freeciv-gtk3.6.gz
+%%GTK4%%man/man6/freeciv-mp-gtk4.6.gz
 man/man6/freeciv-manual.6.gz
 man/man6/freeciv-modpack.6.gz
 man/man6/freeciv-mp-cli.6.gz
@@ -133,6 +134,9 @@ share/icons/hicolor/64x64/apps/freeciv-server.png
 %%NLS%%share/locale/es/LC_MESSAGES/freeciv-nations.mo
 %%QT5%%%%NLS%%share/locale/es/LC_MESSAGES/freeciv-ruledit.mo
 %%NLS%%share/locale/es/LC_MESSAGES/freeciv-core.mo
+%%NLS%%share/locale/es_419/LC_MESSAGES/freeciv-nations.mo
+%%QT5%%%%NLS%%share/locale/es_419/LC_MESSAGES/freeciv-ruledit.mo
+%%NLS%%share/locale/es_419/LC_MESSAGES/freeciv-core.mo
 %%NLS%%share/locale/et/LC_MESSAGES/freeciv-nations.mo
 %%QT5%%%%NLS%%share/locale/et/LC_MESSAGES/freeciv-ruledit.mo
 %%NLS%%share/locale/et/LC_MESSAGES/freeciv-core.mo
