@@ -41,8 +41,5 @@
 %%PERL5_MAN3%%/HTML::Shakan::Model::DataModel.3.gz
 %%PERL5_MAN3%%/HTML::Shakan::Model::Teng.3.gz
 %%PERL5_MAN3%%/HTML::Shakan::Renderer::HTML.3.gz
-%%PERL5_MAN3%%/HTML::Shakan::Role::Filter.3.gz
-%%PERL5_MAN3%%/HTML::Shakan::Role::Model.3.gz
-%%PERL5_MAN3%%/HTML::Shakan::Utils.3.gz
 %%PERL5_MAN3%%/HTML::Shakan::Widgets::Simple.3.gz
 %%PERL5_MAN3%%/HTML::Shakan::Widgets::jQueryUI.3.gz
