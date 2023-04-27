@@ -1,5 +1,6 @@
 PORTNAME=	xstatic-bootstrap-datepicker
 PORTVERSION=	1.4.0.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,11 +8,10 @@ DISTNAME=	XStatic-Bootstrap-Datepicker-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Datepicker for Bootstrap (bootstrap-datepicker)
-WWW=		https://github.com/uxsolutions/bootstrap-datepicker
+WWW=		https://github.com/openstack/xstatic-bootstrap-datepicker \
+		https://github.com/uxsolutions/bootstrap-datepicker
 
 LICENSE=	APACHE20
-
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xstatic>=0:devel/py-xstatic@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
