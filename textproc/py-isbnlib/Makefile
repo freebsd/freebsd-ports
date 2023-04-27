@@ -1,5 +1,5 @@
 PORTNAME=	isbnlib
-PORTVERSION=	3.10.13
+PORTVERSION=	3.10.14
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,8 +11,10 @@ WWW=		https://github.com/xlcnd/isbnlib
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE-LGPL-3.0.txt
 
-USES=		python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
+
+USES=		python:3.8+
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
