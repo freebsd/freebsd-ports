@@ -1,6 +1,5 @@
 PORTNAME=	matrix-synapse
-DISTVERSION=	1.80.0
-PORTREVISION=	1
+DISTVERSION=	1.82.0
 CATEGORIES=	net-im python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,12 +15,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools-rust>=1.3:devel/py-setuptools-rust@${PY_FLAVOR}
 
-# Keep the RUN_DEPENDS layout similar to the master/synapse/python_dependencies.py file
+# Keep the RUN_DEPENDS layout similar to the pyproject.toml file
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}frozendict>=1:devel/py-frozendict@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}immutabledict>=2.0:devel/py-immutabledict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unpaddedbase64>=2.1.0:devel/py-unpaddedbase64@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}canonicaljson>=1.5.0:devel/py-canonicaljson@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}signedjson>=1.1.0:security/py-signedjson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}canonicaljson>=2.0.0<3.0.0:devel/py-canonicaljson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}signedjson>=1.1.0<2.0.0:security/py-signedjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=18.1.0:security/py-service_identity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}twisted>=18.9.0:devel/py-twisted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}treq>=15.1:www/py-treq@${PY_FLAVOR} \
@@ -32,7 +31,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.7:security/py-bcrypt@${PY_FLAVOR} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=1.5.2:devel/py-sortedcontainers@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.5.0:security/py-pysaml2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymacaroons>=0.13.0:security/py-pymacaroons@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msgpack>=0.5.2:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}phonenumbers>=8.2.0:devel/py-phonenumbers@${PY_FLAVOR} \
@@ -42,11 +40,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=1.4.3:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10.0.1:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cryptography>=3.4.7:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ijson>=3.1.4:devel/py-ijson@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}matrix-common>=1.3.0<2.0.0:devel/py-matrix-common@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=16.1:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}matrix-common>=1.3.0:devel/py-matrix-common@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydantic>=1.7.4:devel/py-pydantic@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pysaml2>=4.5.0:security/py-pysaml2@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv@${PY_FLAVOR} \
@@ -65,61 +64,6 @@ CARGO_BUILD=	no
 CARGO_TEST=	no
 CARGO_INSTALL=	no
 CARGO_CARGOTOML=	${WRKSRC}/rust/Cargo.toml
-CARGO_CRATES=	aho-corasick-0.7.19 \
-		anyhow-1.0.70 \
-		arc-swap-1.5.1 \
-		autocfg-1.1.0 \
-		bitflags-1.3.2 \
-		blake2-0.10.6 \
-		block-buffer-0.10.3 \
-		cfg-if-1.0.0 \
-		crypto-common-0.1.6 \
-		digest-0.10.5 \
-		generic-array-0.14.6 \
-		hex-0.4.3 \
-		indoc-1.0.7 \
-		itoa-1.0.4 \
-		lazy_static-1.4.0 \
-		libc-0.2.135 \
-		lock_api-0.4.9 \
-		log-0.4.17 \
-		memchr-2.5.0 \
-		memoffset-0.6.5 \
-		once_cell-1.15.0 \
-		parking_lot-0.12.1 \
-		parking_lot_core-0.9.3 \
-		proc-macro2-1.0.52 \
-		pyo3-0.17.3 \
-		pyo3-build-config-0.17.3 \
-		pyo3-ffi-0.17.3 \
-		pyo3-log-0.8.1 \
-		pyo3-macros-0.17.3 \
-		pyo3-macros-backend-0.17.3 \
-		pythonize-0.17.0 \
-		quote-1.0.26 \
-		redox_syscall-0.2.16 \
-		regex-1.7.1 \
-		regex-syntax-0.6.27 \
-		ryu-1.0.11 \
-		scopeguard-1.1.0 \
-		serde-1.0.157 \
-		serde_derive-1.0.157 \
-		serde_json-1.0.94 \
-		smallvec-1.10.0 \
-		subtle-2.4.1 \
-		syn-1.0.104 \
-		syn-2.0.2 \
-		target-lexicon-0.12.4 \
-		typenum-1.15.0 \
-		unicode-ident-1.0.5 \
-		unindent-0.1.10 \
-		version_check-0.9.4 \
-		windows-sys-0.36.1 \
-		windows_aarch64_msvc-0.36.1 \
-		windows_i686_gnu-0.36.1 \
-		windows_i686_msvc-0.36.1 \
-		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_msvc-0.36.1
 
 SUB_FILES=	pkg-message log.config
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} DBDIR=${DBDIR} LOGDIR=${LOGDIR} PIDDIR=${PIDDIR} USERS=${USERS}
