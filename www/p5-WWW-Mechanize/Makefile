@@ -1,5 +1,5 @@
 PORTNAME=	WWW-Mechanize
-PORTVERSION=	2.16
+PORTVERSION=	2.17
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,13 +23,10 @@ RUN_DEPENDS=	p5-HTML-Form>=6.08:www/p5-HTML-Form \
 TEST_DEPENDS=	p5-HTTP-Daemon>=6.12:www/p5-HTTP-Daemon \
 		p5-Path-Tiny>=0:devel/p5-Path-Tiny \
 		p5-Test-Deep>=0:devel/p5-Test-Deep \
-		p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Fatal>=0:devel/p5-Test-Fatal \
-		p5-Test-Memory-Cycle>=1.06:devel/p5-Test-Memory-Cycle \
-		p5-Test-NoWarnings>=1.04:devel/p5-Test-NoWarnings \
+		p5-Test-Memory-Cycle>=0:devel/p5-Test-Memory-Cycle \
 		p5-Test-Output>=0:devel/p5-Test-Output \
 		p5-Test-Taint>=1.08:devel/p5-Test-Taint \
-		p5-Test-Warn>=0:devel/p5-Test-Warn \
 		p5-Test-Warnings>=0:devel/p5-Test-Warnings
 
 USES=		perl5
