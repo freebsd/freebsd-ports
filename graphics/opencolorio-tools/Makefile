@@ -1,4 +1,4 @@
-PORTREVISION=	3
+PORTREVISION=	0
 PKGNAMESUFFIX=	-tools
 
 COMMENT=	Tools to work with OpenColorIO profiles

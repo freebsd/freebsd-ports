@@ -2,7 +2,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/CMakeLists.html
 %%PORTDOCS%%%%DOCSDIR%%/html/INSTALL.html
 %%PORTDOCS%%%%DOCSDIR%%/html/README.html
-%%PORTDOCS%%%%DOCSDIR%%/html/V2_DOC_README.html
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/gn10_to_linear_light.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/gnf_to_linear_light.jpeg
 %%PORTDOCS%%%%DOCSDIR%%/html/_images/lg10_to_linear_light.jpeg
@@ -17,7 +16,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/CMakeLists.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/INSTALL.md.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/README.md.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/V2_DOC_README.md.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/api/_index.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/api/apphelpers.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/api/baker.rst.txt
@@ -54,6 +52,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/concepts/publications/publications.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/configurations/_index.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/configurations/aces_1.0.3.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/configurations/aces_cg.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/configurations/aces_studio.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/configurations/nuke_default.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/configurations/ocio_v2_demo.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/configurations/spi_anim.rst.txt
@@ -94,21 +94,23 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/quick_start/for_contributors.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/quick_start/for_devs.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/quick_start/installation.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/releases/_index.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/releases/ocio_2_0.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/releases/ocio_2_1.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_sources/releases/ocio_2_2.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/requirements.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/toc_redirect.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/tutorials/_index.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/tutorials/baking_luts.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/tutorials/contributing.rst.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/upgrading_v2/_index.rst.txt
-%%PORTDOCS%%%%DOCSDIR%%/html/_sources/upgrading_v2/how_to.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/_sphinx_javascript_frameworks_compat.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/OpenColorIO_withText.svg
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/doctools.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/documentation_options.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/file.png
-%%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery-3.6.0.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery-3.6.0.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/minus.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/ocio_b.svg
@@ -158,6 +160,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/concepts/publications/publications.html
 %%PORTDOCS%%%%DOCSDIR%%/html/configurations/_index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/configurations/aces_1.0.3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/configurations/aces_cg.html
+%%PORTDOCS%%%%DOCSDIR%%/html/configurations/aces_studio.html
 %%PORTDOCS%%%%DOCSDIR%%/html/configurations/nuke_default.html
 %%PORTDOCS%%%%DOCSDIR%%/html/configurations/ocio_v2_demo.html
 %%PORTDOCS%%%%DOCSDIR%%/html/configurations/spi_anim.html
@@ -200,6 +204,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/quick_start/for_contributors.html
 %%PORTDOCS%%%%DOCSDIR%%/html/quick_start/for_devs.html
 %%PORTDOCS%%%%DOCSDIR%%/html/quick_start/installation.html
+%%PORTDOCS%%%%DOCSDIR%%/html/releases/_index.html
+%%PORTDOCS%%%%DOCSDIR%%/html/releases/ocio_2_0.html
+%%PORTDOCS%%%%DOCSDIR%%/html/releases/ocio_2_1.html
+%%PORTDOCS%%%%DOCSDIR%%/html/releases/ocio_2_2.html
 %%PORTDOCS%%%%DOCSDIR%%/html/requirements.html
 %%PORTDOCS%%%%DOCSDIR%%/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/html/searchindex.js
@@ -207,5 +215,3 @@
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorials/_index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorials/baking_luts.html
 %%PORTDOCS%%%%DOCSDIR%%/html/tutorials/contributing.html
-%%PORTDOCS%%%%DOCSDIR%%/html/upgrading_v2/_index.html
-%%PORTDOCS%%%%DOCSDIR%%/html/upgrading_v2/how_to.html

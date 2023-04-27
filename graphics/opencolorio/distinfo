@@ -1,3 +1,5 @@
-TIMESTAMP = 1674865156
-SHA256 (AcademySoftwareFoundation-OpenColorIO-v2.1.3_GH0.tar.gz) = c826a4088a6358fcf39628c852a460c145a4191a5e16ef96fe6a0aaed065d36a
-SIZE (AcademySoftwareFoundation-OpenColorIO-v2.1.3_GH0.tar.gz) = 11024701
+TIMESTAMP = 1674065371
+SHA256 (AcademySoftwareFoundation-OpenColorIO-v2.2.1_GH0.tar.gz) = 36f27c5887fc4e5c241805c29b8b8e68725aa05520bcaa7c7ec84c0422b8580e
+SIZE (AcademySoftwareFoundation-OpenColorIO-v2.2.1_GH0.tar.gz) = 11336775
+SHA256 (madler-zlib-v1.2.13_GH0.tar.gz) = 1525952a0a567581792613a9723333d7f8cc20b87a81f920fb8bc7e3f2251428
+SIZE (madler-zlib-v1.2.13_GH0.tar.gz) = 1556687
