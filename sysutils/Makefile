@@ -166,6 +166,7 @@
     SUBDIR += byobu
     SUBDIR += calamares
     SUBDIR += catfish
+    SUBDIR += catsit
     SUBDIR += cbsd
     SUBDIR += cbsd-mq-api
     SUBDIR += cbsd-mq-router
