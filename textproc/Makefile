@@ -1987,6 +1987,7 @@
     SUBDIR += txt2html
     SUBDIR += txt2man
     SUBDIR += txt2tags
+    SUBDIR += typst
     SUBDIR += uchardet
     SUBDIR += ucto
     SUBDIR += uctodata
