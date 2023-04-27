@@ -1,6 +1,6 @@
 PORTNAME=	vaultwarden
 DISTVERSION=	1.28.1
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	mr@FreeBSD.org
@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=WEBVAULT
 
 WEBVAULT_DESC=	Vaultwarden web (bw_web_builds)
 
-WEBVAULT_RUN_DEPENDS=	${WWWDIR}/web-vault:www/vaultwarden-web_vault
+WEBVAULT_RUN_DEPENDS=	${WWWDIR}/web-vault/index.html:www/vaultwarden-web_vault
 
 # make cargo-crates > Makefile.crates
 
