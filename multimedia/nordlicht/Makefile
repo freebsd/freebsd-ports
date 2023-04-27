@@ -12,13 +12,13 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	help2man:misc/help2man
-LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
+LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4 \
 		libpopt.so:devel/popt \
 		libpng.so:graphics/png
 
 USE_GITHUB=	yes
 
-USES=		cmake pkgconfig shebangfix
+USES=		cmake pathfix pkgconfig shebangfix
 USE_LDCONFIG=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
@@ -28,9 +28,10 @@ SHEBANG_FILES=	utils/mpv-nordlicht
 OPTIONS_DEFINE=	EXAMPLES
 
 post-patch:
-	@${REINPLACE_CMD} \
-		-e 's|$${CMAKE_INSTALL_LIBDIR}/pkgconfig|libdata/pkgconfig|' \
-		-e 's|share/man/man1|man/man1|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|share/man/man1|man/man1|' \
+		${PATCH_WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		${PATCH_WRKSRC}/cmake/FindFFmpeg.cmake
 
 post-install:
 	@cd ${WRKSRC}/utils && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
