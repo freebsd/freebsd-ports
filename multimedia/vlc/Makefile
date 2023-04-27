@@ -85,6 +85,7 @@ OPTIONS_DEFAULT=ASS AVAHI DAV1D DBUS DVDREAD DVDNAV GNUTLS HARFBUZZ JPEG \
 OPTIONS_DEFAULT_powerpc=	ALTIVEC
 OPTIONS_DEFAULT_powerpc64=	ALTIVEC
 OPTIONS_EXCLUDE=LIBPLACEBO # https://code.videolan.org/videolan/vlc/-/commit/8e22c39ea3c3
+OPTIONS_EXCLUDE+=	VAAPI # Not compatible until VLC 4
 OPTIONS_SUB=	yes
 
 AOM_DESC=	AV1 video encoding/decoding via libaom
