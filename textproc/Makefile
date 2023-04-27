@@ -1280,6 +1280,7 @@
     SUBDIR += py-QDarkStyle
     SUBDIR += py-RTFDE
     SUBDIR += py-Tempita
+    SUBDIR += py-accessible-pygments
     SUBDIR += py-acora
     SUBDIR += py-aeidon
     SUBDIR += py-agate

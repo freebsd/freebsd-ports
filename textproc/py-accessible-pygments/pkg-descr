@@ -1,0 +1,6 @@
+Accessible pygments themes includes a collection of accessible themes for
+pygments based on multiple open-source syntax highlighting themes.
+
+Note: What do we mean by accessible? In this context we are specially referring
+to themes which meet the WCAG 2.1 criteria for color contrast. Some themes
+included are also color-blind friendly.
