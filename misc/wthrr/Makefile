@@ -1,7 +1,6 @@
 PORTNAME=	wthrr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.0.2
 CATEGORIES=	misc
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -16,8 +15,9 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	tobealive
 GH_PROJECT=	${PORTNAME}-the-weathercrab
 
-CARGO_CRATES=	aho-corasick-0.7.20 \
+CARGO_CRATES=	aho-corasick-1.0.1 \
 		android_system_properties-0.1.5 \
+		anstyle-1.0.0 \
 		anyhow-1.0.70 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -29,9 +29,10 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.24 \
-		clap-4.1.13 \
-		clap_derive-4.1.12 \
-		clap_lex-0.3.3 \
+		clap-4.2.4 \
+		clap_builder-4.2.4 \
+		clap_derive-4.2.0 \
+		clap_lex-0.4.1 \
 		codespan-reporting-0.11.1 \
 		colored-2.0.0 \
 		console-0.15.5 \
@@ -41,9 +42,9 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		cxx-build-1.0.94 \
 		cxxbridge-flags-1.0.94 \
 		cxxbridge-macro-1.0.94 \
-		dialoguer-0.10.3 \
-		directories-4.0.1 \
-		dirs-sys-0.3.7 \
+		dialoguer-0.10.4 \
+		directories-5.0.0 \
+		dirs-sys-0.4.0 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.32 \
 		errno-0.2.8 \
@@ -53,17 +54,17 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.1.0 \
-		futures-0.3.27 \
-		futures-channel-0.3.27 \
-		futures-core-0.3.27 \
-		futures-executor-0.3.27 \
-		futures-io-0.3.27 \
-		futures-macro-0.3.27 \
-		futures-sink-0.3.27 \
-		futures-task-0.3.27 \
-		futures-util-0.3.27 \
+		futures-0.3.28 \
+		futures-channel-0.3.28 \
+		futures-core-0.3.28 \
+		futures-executor-0.3.28 \
+		futures-io-0.3.28 \
+		futures-macro-0.3.28 \
+		futures-sink-0.3.28 \
+		futures-task-0.3.28 \
+		futures-util-0.3.28 \
 		getrandom-0.2.8 \
-		h2-0.3.16 \
+		h2-0.3.17 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
@@ -104,7 +105,6 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		optional_struct-0.3.1 \
 		optional_struct_internal-0.3.1 \
 		optional_struct_macro_impl-0.3.1 \
-		os_str_bytes-6.5.0 \
 		percent-encoding-2.2.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
@@ -114,9 +114,9 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		quote-1.0.26 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.7.3 \
-		regex-syntax-0.6.29 \
-		reqwest-0.11.15 \
+		regex-1.8.1 \
+		regex-syntax-0.7.1 \
+		reqwest-0.11.16 \
 		ron-0.8.0 \
 		rustix-0.36.11 \
 		rustversion-1.0.12 \
@@ -126,9 +126,9 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		scratch-1.0.5 \
 		security-framework-2.8.2 \
 		security-framework-sys-2.8.0 \
-		serde-1.0.158 \
-		serde_derive-1.0.158 \
-		serde_json-1.0.94 \
+		serde-1.0.160 \
+		serde_derive-1.0.160 \
+		serde_json-1.0.96 \
 		serde_urlencoded-0.7.1 \
 		shell-words-1.1.0 \
 		slab-0.4.8 \
@@ -144,8 +144,8 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		thiserror-impl-1.0.40 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.26.0 \
-		tokio-macros-1.8.2 \
+		tokio-1.27.0 \
+		tokio-macros-2.0.0 \
 		tokio-native-tls-0.3.1 \
 		tokio-util-0.7.7 \
 		tower-service-0.3.2 \
