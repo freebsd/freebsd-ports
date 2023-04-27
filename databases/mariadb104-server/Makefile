@@ -27,6 +27,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		bison:build cmake:insource,noninja compiler:c++11-lib cpe iconv:translit libedit ncurses shebangfix ssl
+IGNORE_SSL=	openssl30 openssl31
+IGNORE_SSL_REASON=	Upstream only supports OpenSSL 1.0.1 upto 1.1.X
 
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
