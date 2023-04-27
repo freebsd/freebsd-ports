@@ -5,7 +5,7 @@ MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Ruby extension to Google Protocol Buffers
-WWW=		https://developers.google.com/protocol-buffers/ \
+WWW=		https://protobuf.dev/ \
 		https://github.com/protocolbuffers/protobuf \
 		https://github.com/protocolbuffers/protobuf/tree/main/ruby
 
