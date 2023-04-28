@@ -19,6 +19,7 @@ include/qcoro%%QT_VER%%/QCoro/QCoroQmlTask
 include/qcoro%%QT_VER%%/QCoro/QCoroSignal
 include/qcoro%%QT_VER%%/QCoro/QCoroTask
 include/qcoro%%QT_VER%%/QCoro/QCoroTcpServer
+include/qcoro%%QT_VER%%/QCoro/QCoroTest
 include/qcoro%%QT_VER%%/QCoro/QCoroThread
 include/qcoro%%QT_VER%%/QCoro/QCoroTimer
 include/qcoro%%QT_VER%%/QCoro/QCoroWebSocket
@@ -55,6 +56,7 @@ include/qcoro%%QT_VER%%/qcoro/qcoroquick_export.h
 include/qcoro%%QT_VER%%/qcoro/qcorosignal.h
 include/qcoro%%QT_VER%%/qcoro/qcorotask.h
 include/qcoro%%QT_VER%%/qcoro/qcorotcpserver.h
+include/qcoro%%QT_VER%%/qcoro/qcorotest.h
 include/qcoro%%QT_VER%%/qcoro/qcorothread.h
 include/qcoro%%QT_VER%%/qcoro/qcorotimer.h
 include/qcoro%%QT_VER%%/qcoro/qcorowebsocket.h
@@ -89,6 +91,9 @@ lib/cmake/QCoro%%QT_VER%%Quick/QCoro%%QT_VER%%QuickConfig.cmake
 lib/cmake/QCoro%%QT_VER%%Quick/QCoro%%QT_VER%%QuickConfigVersion.cmake
 lib/cmake/QCoro%%QT_VER%%Quick/QCoro%%QT_VER%%QuickTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/QCoro%%QT_VER%%Quick/QCoro%%QT_VER%%QuickTargets.cmake
+lib/cmake/QCoro%%QT_VER%%Test/QCoro%%QT_VER%%TestConfig.cmake
+lib/cmake/QCoro%%QT_VER%%Test/QCoro%%QT_VER%%TestConfigVersion.cmake
+lib/cmake/QCoro%%QT_VER%%Test/QCoro%%QT_VER%%TestTargets.cmake
 lib/cmake/QCoro%%QT_VER%%WebSockets/QCoro%%QT_VER%%WebSocketsConfig.cmake
 lib/cmake/QCoro%%QT_VER%%WebSockets/QCoro%%QT_VER%%WebSocketsConfigVersion.cmake
 lib/cmake/QCoro%%QT_VER%%WebSockets/QCoro%%QT_VER%%WebSocketsTargets-%%CMAKE_BUILD_TYPE%%.cmake
@@ -105,4 +110,5 @@ lib/libQCoro%%QT_VER%%WebSockets.a
 %%QT_MKSPECDIR%%/modules/qt_QCoroNetwork.pri
 %%QT_MKSPECDIR%%/modules/qt_QCoroQml.pri
 %%QT_MKSPECDIR%%/modules/qt_QCoroQuick.pri
+%%QT_MKSPECDIR%%/modules/qt_QCoroTest.pri
 %%QT_MKSPECDIR%%/modules/qt_QCoroWebSockets.pri
