@@ -457,7 +457,11 @@ _sub_need_clean=
 .    else
 _sub_need_clean=	\#\#
 .    endif
+# The Qt modules have an install- and deinstall-step for wrangling
+# the qconfig-modules.h header, but qmake does not.
+.  if ${PORTNAME} != "qmake"
 post-install: qt-post-install
+.  endif # PORTNAME != qmake
 qt-post-install:
 # We can't use SUB_FILES with the shared pkg-change.in.
 # We need it to be a script instead of a group of @unexecs.
