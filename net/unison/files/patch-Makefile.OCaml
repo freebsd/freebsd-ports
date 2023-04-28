@@ -1,18 +1,6 @@
---- Makefile.OCaml.orig	2023-03-19 12:38:58 UTC
+--- Makefile.OCaml.orig	2023-04-24 16:49:02 UTC
 +++ Makefile.OCaml
-@@ -34,7 +34,11 @@ ifeq ($(shell uname),NetBSD)
- else
- ifeq ($(shell uname),NetBSD)
-   OSARCH=NetBSD
-+else
-+ifeq ($(shell uname),FreeBSD)
-+  OSARCH=FreeBSD
- endif
-+endif
- ifeq ($(shell uname),Linux)
-   OSARCH=Linux
- endif
-@@ -271,7 +275,7 @@ OCAMLOBJS+=main.cmo
+@@ -248,7 +248,7 @@ OCAMLOBJS+=main.cmo
  
  # OCaml libraries for the bytecode version
  # File extensions will be substituted for the native code version
@@ -21,7 +9,7 @@
  INCLFLAGS+=-I +unix -I +str
  
  COBJS+=osxsupport$(OBJ_EXT) pty$(OBJ_EXT) bytearray_stubs$(OBJ_EXT) hash_compat$(OBJ_EXT) props_xattr$(OBJ_EXT) props_acl$(OBJ_EXT)
-@@ -332,6 +336,11 @@ ifeq ($(OSARCH),Linux)
+@@ -309,6 +309,11 @@ ifeq ($(OSARCH),Linux)
  ### Filesystem monitoring
  
  ifeq ($(OSARCH),Linux)

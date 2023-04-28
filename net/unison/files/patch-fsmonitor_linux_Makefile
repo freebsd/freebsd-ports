@@ -1,6 +1,6 @@
---- fsmonitor/linux/Makefile.orig	2017-03-23 16:47:46 UTC
+--- fsmonitor/linux/Makefile.orig	2023-04-24 16:49:02 UTC
 +++ fsmonitor/linux/Makefile
-@@ -18,6 +18,10 @@ else
+@@ -18,6 +18,10 @@ endif
    FSMCAMLLIBS=$(FSMOCAMLLIBS)
  endif
  
@@ -11,10 +11,3 @@
  buildexecutable:: $(FSMONITOR)$(EXEC_EXT)
  
  $(FSMONITOR)$(EXEC_EXT): $(FSMCAMLOBJS) $(FSMCOBJS)
-@@ -26,4 +30,4 @@ $(FSMONITOR)$(EXEC_EXT): $(FSMCAMLOBJS) $(FSMCOBJS)
- 
- clean::
- 	rm -f $(DIR)/*.cm[iox] $(DIR)/*.o $(DIR)/*~
--	rm -f $(FSMONITOR)$(EXEC_EXT)
-\ No newline at end of file
-+	rm -f $(FSMONITOR)$(EXEC_EXT)

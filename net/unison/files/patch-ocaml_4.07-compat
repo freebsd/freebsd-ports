@@ -1,6 +1,6 @@
-From b787de04da85da2f911c8248e07342e58b4e8625 Mon Sep 17 00:00:00 2001
-From: Tõivo Leedjärv <toivol@gmail.com>
-Date: Fre, 24 Mar 2023 17:22:09 +0100
+From ad79ecf3c42e0f10b05c7cb8eb5671c66b8a09e9 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?T=C3=B5ivo=20Leedj=C3=A4rv?= <toivol@gmail.com>
+Date: Thu, 17 Nov 2022 11:53:35 +0100
 Subject: [PATCH] Restore compatibility with OCaml 4.06 and 4.07 (temporary
  patch)
 
@@ -13,13 +13,16 @@ Makefile.OCaml).
  src/fswatchold.ml            |  25 +++--
  src/remote.ml                |   3 +-
  src/system/system_generic.ml | 204 +++++++++++++++++++++++++++++++++++
- src/uitext.ml                |   1 -
- 6 files changed, 326 insertions(+), 14 deletions(-)
+ src/ubase/umarshal.ml        | 105 ++++++++++++++++++
+ src/uicommon.ml              |  12 +--
+ src/uitext.ml                |   3 +-
+ 6 files changed, 332 insertions(+), 20 deletions(-)
 
-index 17f22dcb..13cab93b 100644
+diff --git a/src/fswatchold.ml b/src/fswatchold.ml
+index 84912071a..5b266f519 100644
 --- fswatchold.ml
 +++ fswatchold.ml
-@@ -116,19 +116,22 @@ let readChanges wi =
+@@ -113,19 +113,22 @@ let readChanges wi =
  let watcherRunning archHash =
    RootMap.mem archHash !watchers &&
      let wi = RootMap.find archHash !watchers in
@@ -54,7 +57,7 @@ index 17f22dcb..13cab93b 100644
  let getChanges archHash =
    if StringSet.mem archHash !newWatchers then
 diff --git a/src/remote.ml b/src/remote.ml
-index d320470a..0ed393ae 100644
+index d101c3903..bedf2e3ba 100644
 --- remote.ml
 +++ remote.ml
 @@ -1887,11 +1887,12 @@ let buildShellConnection shell host userOpt portOpt rootName termInteract =
@@ -72,7 +75,7 @@ index d320470a..0ed393ae 100644
          let () = at_exit end_ssh in
          (None, pid)
 diff --git a/src/system/system_generic.ml b/src/system/system_generic.ml
-index 2147d44d..3ef4fb09 100644
+index 6f6c6895a..15509abd5 100644
 --- system/system_generic.ml
 +++ system/system_generic.ml
 @@ -15,6 +15,210 @@
@@ -286,11 +289,183 @@ index 2147d44d..3ef4fb09 100644
  type fspath = string
  
  let mfspath = Umarshal.string
+diff --git a/src/ubase/umarshal.ml b/src/ubase/umarshal.ml
+index 5c5f061ad..d65e1a7c5 100644
+--- ubase/umarshal.ml
++++ ubase/umarshal.ml
+@@ -15,6 +15,111 @@
+     along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ *)
+ 
++(* OCaml 4.07 compatibility ONLY *)
++module Bytes = struct
++
++include Bytes
++
++(* The following code is taken from OCaml sources.
++   Authors of the code snippet: Alain Frisch and Daniel Bünzli *)
++
++(**************************************************************************)
++(*                                                                        *)
++(*                                 OCaml                                  *)
++(*                                                                        *)
++(*             Xavier Leroy, projet Cristal, INRIA Rocquencourt           *)
++(*                                                                        *)
++(*   Copyright 1996 Institut National de Recherche en Informatique et     *)
++(*     en Automatique.                                                    *)
++(*                                                                        *)
++(*   All rights reserved.  This file is distributed under the terms of    *)
++(*   the GNU Lesser General Public License version 2.1, with the          *)
++(*   special exception on linking described in the file LICENSE.          *)
++(*                                                                        *)
++(**************************************************************************)
++
++(** {6 Binary encoding/decoding of integers} *)
++
++external get_uint8 : bytes -> int -> int = "%string_safe_get"
++external get_uint16_ne : bytes -> int -> int = "%caml_string_get16"
++external get_int32_ne : bytes -> int -> int32 = "%caml_string_get32"
++external get_int64_ne : bytes -> int -> int64 = "%caml_string_get64"
++external set_int8 : bytes -> int -> int -> unit = "%string_safe_set"
++external set_int16_ne : bytes -> int -> int -> unit = "%caml_string_set16"
++external set_int32_ne : bytes -> int -> int32 -> unit = "%caml_string_set32"
++external set_int64_ne : bytes -> int -> int64 -> unit = "%caml_string_set64"
++external swap16 : int -> int = "%bswap16"
++external swap32 : int32 -> int32 = "%bswap_int32"
++external swap64 : int64 -> int64 = "%bswap_int64"
++
++let get_int8 b i =
++  ((get_uint8 b i) lsl (Sys.int_size - 8)) asr (Sys.int_size - 8)
++
++let get_uint16_le b i =
++  if Sys.big_endian then swap16 (get_uint16_ne b i)
++  else get_uint16_ne b i
++
++let get_uint16_be b i =
++  if not Sys.big_endian then swap16 (get_uint16_ne b i)
++  else get_uint16_ne b i
++
++let get_int16_ne b i =
++  ((get_uint16_ne b i) lsl (Sys.int_size - 16)) asr (Sys.int_size - 16)
++
++let get_int16_le b i =
++  ((get_uint16_le b i) lsl (Sys.int_size - 16)) asr (Sys.int_size - 16)
++
++let get_int16_be b i =
++  ((get_uint16_be b i) lsl (Sys.int_size - 16)) asr (Sys.int_size - 16)
++
++let get_int32_le b i =
++  if Sys.big_endian then swap32 (get_int32_ne b i)
++  else get_int32_ne b i
++
++let get_int32_be b i =
++  if not Sys.big_endian then swap32 (get_int32_ne b i)
++  else get_int32_ne b i
++
++let get_int64_le b i =
++  if Sys.big_endian then swap64 (get_int64_ne b i)
++  else get_int64_ne b i
++
++let get_int64_be b i =
++  if not Sys.big_endian then swap64 (get_int64_ne b i)
++  else get_int64_ne b i
++
++let set_int16_le b i x =
++  if Sys.big_endian then set_int16_ne b i (swap16 x)
++  else set_int16_ne b i x
++
++let set_int16_be b i x =
++  if not Sys.big_endian then set_int16_ne b i (swap16 x)
++  else set_int16_ne b i x
++
++let set_int32_le b i x =
++  if Sys.big_endian then set_int32_ne b i (swap32 x)
++  else set_int32_ne b i x
++
++let set_int32_be b i x =
++  if not Sys.big_endian then set_int32_ne b i (swap32 x)
++  else set_int32_ne b i x
++
++let set_int64_le b i x =
++  if Sys.big_endian then set_int64_ne b i (swap64 x)
++  else set_int64_ne b i x
++
++let set_int64_be b i x =
++  if not Sys.big_endian then set_int64_ne b i (swap64 x)
++  else set_int64_ne b i x
++
++let set_uint8 = set_int8
++let set_uint16_ne = set_int16_ne
++let set_uint16_be = set_int16_be
++let set_uint16_le = set_int16_le
++
++end
++(* / *)
++
+ exception Error of string
+ 
+ type 'a t = {
+diff --git a/src/uicommon.ml b/src/uicommon.ml
+index 94fbc66ef..8a16270c3 100644
+--- uicommon.ml
++++ uicommon.ml
+@@ -484,7 +484,7 @@ let addIgnorePattern theRegExp =
+ module Stats = struct
+ 
+ let calcETA rem rate =
+-  if Float.is_nan rate || Float.is_nan rem || rem < 0. then "" else
++  if rate <> rate || rem <> rem || rem < 0. then "" else
+   let t = truncate (rem /. rate +. 0.5) in
+   (* Estimating the remaining time is not accurate. Reduce the display
+      precision (and reduce more when longer time remaining). *)
+@@ -501,8 +501,8 @@ let calcETA rem rate =
+   Printf.sprintf "%02d:%02d:%02d" h m sec
+ 
+ let movAvg curr prev ?(c = 1.) deltaTime avgPeriod =
+-  if Float.is_nan prev then curr else
+-  let a = c *. Float.min (1. -. exp (-. deltaTime /. avgPeriod)) 1. in
++  if prev <> prev then curr else
++  let a = c *. min (1. -. exp (-. deltaTime /. avgPeriod)) 1. in
+   (* Simplified from a *. curr +. (1. -. a) *. prev *)
+   prev +. a *. (curr -. prev)
+ 
+@@ -525,7 +525,7 @@ let init totalToTransfer =
+   let t0 = 0. in
+   { t0; t = t0; totalToComplete = Uutil.Filesize.toInt64 totalToTransfer;
+     completed = 0L;
+-    curRate = Float.nan; avgRateS = Float.nan; avgRateDoubleSGauss = Float.nan;
++    curRate = nan; avgRateS = nan; avgRateDoubleSGauss = nan;
+   }
+ 
+ let calcAvgRate' sta totTime deltaCompleted deltaTime =
+@@ -534,11 +534,11 @@ let calcAvgRate' sta totTime deltaCompleted deltaTime =
+      changes (like switching from cache to disk or from disk to network
+      of from receiving to sending or with wildly variable network speed). *)
+   let avgRateS = movAvg curRate sta.avgRateS deltaTime
+-    (Float.min_num totTime avgPeriodS) in
++    (min totTime avgPeriodS) in
+   let cpr = (avgRateS -. sta.avgRateDoubleSGauss) /. sta.avgRateDoubleSGauss in
+   let c = 1. -. exp (-.(cpr ** 2.) /. gaussC) in
+   let avgRateDoubleSGauss = movAvg avgRateS sta.avgRateDoubleSGauss ~c deltaTime
+-    (Float.min_num totTime avgPeriodD) in
++    (min totTime avgPeriodD) in
+   sta.curRate <- curRate;
+   sta.avgRateS <- avgRateS;
+   sta.avgRateDoubleSGauss <- avgRateDoubleSGauss
 diff --git a/src/uitext.ml b/src/uitext.ml
-index 1c2e509d..fbb4f7f1 100644
+index 5d1513a03..fc1f8c716 100644
 --- uitext.ml
 +++ uitext.ml
-@@ -1621,7 +1621,6 @@ and breakRepeat = function
+@@ -833,7 +833,7 @@ let doTransport reconItemList numskip isSkip =
+         else if v >= 100. then "00:00:00"
+         else
+           let rate = Uicommon.Stats.avgRate1 sta in
+-          if Float.is_nan rate then "--:--"
++          if rate <> rate then "--:--"
+           else
+             Format.sprintf "%8s/s    %s"
+               (Util.bytes2string (Int64.of_float rate))
+@@ -1692,7 +1692,6 @@ and breakRepeat = function
    | Assert_failure _
    | Match_failure _
    | Invalid_argument _
@@ -298,6 +473,3 @@ index 1c2e509d..fbb4f7f1 100644
    (* Async exceptions *)
    | Out_of_memory
    | Stack_overflow
--- 
-2.39.2
-
