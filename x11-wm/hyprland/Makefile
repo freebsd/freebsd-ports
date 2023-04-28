@@ -60,10 +60,9 @@ post-patch:
 		${WRKSRC}/src/Compositor.cpp
 
 .ifdef GH_TUPLE
-post-install:
-# XXX USES=meson invokes ninja directly, so doesn't support --skip-subprojects
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/protocols
+post-configure:
+	@${REINPLACE_CMD} 's/meson install/& \
+		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
 .endif
 
 # XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
