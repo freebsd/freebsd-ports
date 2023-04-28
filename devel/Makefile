@@ -24,6 +24,7 @@
     SUBDIR += R-cran-callr
     SUBDIR += R-cran-caret
     SUBDIR += R-cran-checkmate
+    SUBDIR += R-cran-chk
     SUBDIR += R-cran-chron
     SUBDIR += R-cran-classInt
     SUBDIR += R-cran-cli
