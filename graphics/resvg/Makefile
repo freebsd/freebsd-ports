@@ -1,6 +1,6 @@
 PORTNAME=	resvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.31.1
+DISTVERSION=	0.32.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,7 +29,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		flate2-1.0.25 \
 		float-cmp-0.9.0 \
 		fontconfig-parser-0.5.2 \
-		fontdb-0.13.0 \
+		fontdb-0.13.1 \
 		gif-0.12.0 \
 		imagesize-0.11.0 \
 		jpeg-decoder-0.3.0 \
@@ -53,8 +53,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		smallvec-1.10.0 \
 		strict-num-0.1.0 \
 		svgtypes-0.11.0 \
-		tiny-skia-0.8.4 \
-		tiny-skia-path-0.8.4 \
+		tiny-skia-0.9.0 \
+		tiny-skia-path-0.9.0 \
 		ttf-parser-0.18.1 \
 		unicode-bidi-0.3.13 \
 		unicode-bidi-mirroring-0.1.0 \
