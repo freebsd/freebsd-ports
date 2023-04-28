@@ -11,6 +11,10 @@ WWW=		https://www1.cs.columbia.edu/~angelos/keynote.html
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Upstream last release in 2000
+EXPIRATION_DATE=	2023-05-28
+IGNORE=	Requires upstream EOL OpenSSL 1.0.X routines
+
 # gmake required to support parallel (-jX) builds
 USES=		gmake ssl
 GNU_CONFIGURE=	yes
@@ -23,14 +27,6 @@ PLIST_FILES=	bin/keynote include/keynote.h lib/libkeynote.a \
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
-
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT} == base
-BROKEN_FreeBSD_12=	incomplete definition of type 'struct evp_pkey_st'
-BROKEN_FreeBSD_13=	incomplete definition of type 'struct evp_pkey_st'
-BROKEN_FreeBSD_14=	incomplete definition of type 'struct evp_pkey_st'
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keynote ${STAGEDIR}${PREFIX}/bin
@@ -46,4 +42,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/HOWTO.add.crypto ${WRKSRC}/TODO \
 		${WRKSRC}/doc/rfc*.txt ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
