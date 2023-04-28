@@ -12,6 +12,8 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cargo ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	garak92
