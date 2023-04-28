@@ -164,6 +164,7 @@
     SUBDIR += telegram-desktop
     SUBDIR += telegram-purple
     SUBDIR += telegramqml
+    SUBDIR += teleirc
     SUBDIR += telepathy-accounts-signon
     SUBDIR += telepathy-farstream
     SUBDIR += telepathy-gabble

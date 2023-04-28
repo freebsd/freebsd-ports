@@ -1,0 +1,2 @@
+bin/teleirc
+@sample(%%USER%%,%%GROUP%%,0640) etc/teleirc.conf.sample etc/teleirc.conf

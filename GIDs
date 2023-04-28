@@ -260,7 +260,7 @@ nut:*:316:
 hedgedoc:*:317:
 # free: 318, UID used by icingadirector
 rustdesk:*:319:
-# free: 320
+teleirc:*:320:
 # free: 321
 # free: 322
 # free: 323

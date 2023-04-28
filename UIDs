@@ -265,7 +265,7 @@ nut:*:316:316::0:0:Network UPS Tools user:/nonexistent:/usr/sbin/nologin
 hedgedoc:*:317:317::0:0:HedgeDoc user:/nonexistent:/usr/sbin/nologin
 icingadirector:*:318:183::0:0:icingadirector user:/nonexistent:/usr/sbin/nologin
 rustdesk:*:319:319::0:0:rustdesk-server user:/nonexistent:/usr/sbin/nologin
-# free: 320
+teleirc:*:320:320::0:0:Telegram and IRC bridge:/nonexistent:/usr/sbin/nologin
 # free: 321
 # free: 322
 # free: 323

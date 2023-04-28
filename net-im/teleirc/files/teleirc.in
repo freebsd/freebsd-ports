@@ -1,0 +1,58 @@
+#!/bin/sh
+
+# PROVIDE: teleirc
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for teleirc in /etc/rc.conf
+#
+# teleirc_enable (bool):		Enable teleirc. (Default=NO)
+# teleirc_conf (str):			Teleirc configuration file. (Default=%%PREFIX%%/etc/teleirc.conf)
+# teleirc_flags (str):			Flags used for teleirc. (Default=-conf ${teleirc_conf})
+# teleirc_logfile (str):		Log file used for teleirc. (Default=/var/log/teleirc.log)
+# teleirc_program (str):		Path to teleirc application. (Default=%%PREFIX%%/bin/teleirc)
+# teleirc_username (str):		User to run teleirc as. (Default=teleirc)
+# teleirc_restart_delay_seconds (int):	Supervise and restart teleirc after the specified delay if it
+#					has been terminated. (Default=30)
+
+. /etc/rc.subr
+
+name="teleirc"
+desc="Bridge between IRC and Telegram"
+rcvar="teleirc_enable"
+start_cmd="teleirc_start"
+restart_cmd="teleirc_restart"
+procname=/usr/sbin/daemon
+
+load_rc_config $name
+
+: ${teleirc_enable:=NO}
+: ${teleirc_conf:=%%PREFIX%%/etc/teleirc.conf}
+: ${teleirc_flags=-conf "${teleirc_conf}"}
+: ${teleirc_logfile:=/var/log/teleirc.log}
+: ${teleirc_program:=%%PREFIX%%/bin/teleirc}
+: ${teleirc_username:=teleirc}
+: ${teleirc_restart_delay_seconds:=30}
+: ${teleirc_pidfile:=/var/run/teleirc.pid}
+
+pidfile="${teleirc_pidfile}"
+
+teleirc_start()
+{
+        echo "Starting ${name}." && sleep 1
+        ${procname} \
+		-t "${desc}" \
+		-R "${teleirc_restart_delay_seconds}" \
+		-u "${teleirc_username}" \
+                -o "${teleirc_logfile}" \
+                -P "${pidfile}" \
+        ${teleirc_program} ${teleirc_flags}
+}
+
+teleirc_restart()
+{
+        run_rc_command stop &&
+        run_rc_command start
+}
+
+run_rc_command "$1"
