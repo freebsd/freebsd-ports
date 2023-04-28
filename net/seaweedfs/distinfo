@@ -1,5 +1,5 @@
-TIMESTAMP = 1678211237
-SHA256 (go/net_seaweedfs/seaweedfs-seaweedfs-3.43_GH0/go.mod) = 0cdd688bc5782459c3b9427508c047a426ff23cad4f5e049936cc65797748abb
-SIZE (go/net_seaweedfs/seaweedfs-seaweedfs-3.43_GH0/go.mod) = 11607
-SHA256 (go/net_seaweedfs/seaweedfs-seaweedfs-3.43_GH0/seaweedfs-seaweedfs-3.43_GH0.tar.gz) = e2116557bfa72f25687080de5eb58385a417f61e8aa632bbeeda28cf515d7877
-SIZE (go/net_seaweedfs/seaweedfs-seaweedfs-3.43_GH0/seaweedfs-seaweedfs-3.43_GH0.tar.gz) = 29769231
+TIMESTAMP = 1682594268
+SHA256 (go/net_seaweedfs/seaweedfs-seaweedfs-3.47_GH0/go.mod) = 3c81d36551018f7f6082d844ba0f9a8dbb63657e7a852f8bb7d80d5cbd8ce080
+SIZE (go/net_seaweedfs/seaweedfs-seaweedfs-3.47_GH0/go.mod) = 15015
+SHA256 (go/net_seaweedfs/seaweedfs-seaweedfs-3.47_GH0/seaweedfs-seaweedfs-3.47_GH0.tar.gz) = 1265000fbe2cd09c796cab9c3ec775770afe53b86176c3dbeb32500ac5240131
+SIZE (go/net_seaweedfs/seaweedfs-seaweedfs-3.47_GH0/seaweedfs-seaweedfs-3.47_GH0.tar.gz) = 29780737
