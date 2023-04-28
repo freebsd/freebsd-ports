@@ -1,0 +1,11 @@
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2023-02-01 18:43:07 UTC
++++ base/allocator/partition_allocator/partition_alloc.gni
+@@ -200,7 +200,7 @@ assert(!use_asan_unowned_ptr || is_asan,
+        "AsanUnownedPtr requires AddressSanitizer")
+ 
+ declare_args() {
+-  enable_pkeys = is_linux && target_cpu == "x64"
++  enable_pkeys = (is_linux && !is_bsd) && target_cpu == "x64"
+ }
+ assert(!enable_pkeys || (is_linux && target_cpu == "x64"),
+        "Pkeys are only supported on x64 linux")

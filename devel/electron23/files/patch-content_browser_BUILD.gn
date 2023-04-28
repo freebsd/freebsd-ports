@@ -1,0 +1,16 @@
+--- content/browser/BUILD.gn.orig	2023-02-15 13:08:45 UTC
++++ content/browser/BUILD.gn
+@@ -2369,6 +2369,13 @@ source_set("browser") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "sandbox_ipc_linux.cc",
++      "sandbox_ipc_linux.h",
++    ]
++  }
++
+   if (is_chromeos) {
+     sources += [
+       "handwriting/handwriting_recognition_service_impl_cros.cc",

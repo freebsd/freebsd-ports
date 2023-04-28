@@ -1,0 +1,11 @@
+--- chrome/test/BUILD.gn.orig	2023-03-06 02:35:51 UTC
++++ chrome/test/BUILD.gn
+@@ -10225,7 +10225,7 @@ test("chrome_app_unittests") {
+     "//components/heap_profiling/in_process",
+     "//components/safe_browsing:buildflags",
+   ]
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     deps += [ "//third_party/breakpad:client" ]
+   }
+   if (enable_gwp_asan) {
