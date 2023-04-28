@@ -1,0 +1,11 @@
+--- src/translations/CMakeLists.txt.orig	2023-04-28 19:51:06 UTC
++++ src/translations/CMakeLists.txt
+@@ -17,7 +17,7 @@ set(TS_FILES
+   qwinff_zh_TW.ts
+   )
+ 
+-qt5_create_translation(QM_FILES ${TS_FILES})
++qt_add_translation(QM_FILES ${TS_FILES})
+ add_custom_target(translations ALL DEPENDS ${QM_FILES})
+ 
+ install(FILES ${QM_FILES} DESTINATION share/qwinff/translations)
