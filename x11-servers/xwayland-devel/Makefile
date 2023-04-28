@@ -1,14 +1,15 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
 DISTVERSION=	21.0.99.1-454
-DISTVERSIONSUFFIX=	-g8f7279ade
+DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	537acb3eb02f.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
-PATCHFILES+=	3930d00746b0.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
-PATCHFILES+=	74813b4c09ca.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
+PATCH_SITES+=	https://github.com/mirror/${GL_PROJECT}/commit/:github
+PATCHFILES+=	cd6c9c1246af.patch:-p1:github # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
+PATCHFILES+=	3930d00746b0.patch:-p1:github # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
+PATCHFILES+=	3b0d1a3a2296.patch:-p1:github # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/432
+PATCH_SITES+=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	8b9bf0a22640.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1047
 PATCHFILES+=	0c90fb305e9b.patch:-p1 # https://gitlab.freedesktop.org/xorg/xserver/-/merge_requests/1051
 
@@ -32,12 +33,14 @@ RUN_DEPENDS=	xkbcomp:x11/xkbcomp \
 CONFLICTS_INSTALL=	${PORTNAME}
 
 USES=		compiler:c11 gl meson pkgconfig xorg
-USE_GITHUB=	yes
+USE_GITLAB=	yes
 USE_GL=		gbm gl
 USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
-GH_ACCOUNT=	freedesktop
-GH_PROJECT=	xorg-xserver
-GH_TUPLE=	freedesktop:xorg-xorgproto:xorgproto-2022.2:xorgproto/subprojects/xorgproto
+GL_SITE=	https://gitlab.freedesktop.org
+GL_ACCOUNT=	xorg
+GL_PROJECT=	xserver
+GL_COMMIT=	8f7279ade26961ae790a3345ce11a239c842c773
+GL_TUPLE=	xorg/proto:xorgproto:824001c947cb1962209c6a8f2c63c2637877220d:xorgproto/subprojects/xorgproto
 MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
 		-Dxnest=false \
@@ -76,7 +79,7 @@ NVIDIA_DESC=		EGLStream support for glamor on Xwayland
 NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
 NVIDIA_MESON_TRUE=	xwayland_eglstream
 
-.ifdef GH_TUPLE
+.ifdef GL_TUPLE
 post-install:
 # XXX USES=meson invokes ninja directly, so doesn't support --skip-subprojects
 	@${RM} -r ${STAGEDIR}${PREFIX}/include/GL
