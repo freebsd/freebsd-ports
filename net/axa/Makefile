@@ -1,5 +1,5 @@
 PORTNAME=	axa
-PORTVERSION=	2.2.2
+PORTVERSION=	3.0.1
 PORTREVISION=	0
 CATEGORIES=	net dns
 MASTER_SITES=	FARSIGHT LOCAL/truckman/farsight
@@ -12,8 +12,6 @@ LICENSE=	APACHE20 PD
 LICENSE_COMB=	multi
 LICENSE_FILE_APACHE20=	${WRKSRC}/COPYRIGHT
 LICENSE_FILE_PD=	${WRKSRC}/license_pd
-
-BROKEN_aarch64=	alignment error at link time
 
 BUILD_DEPENDS=	bash:shells/bash \
 		sie-nmsg>0:net/sie-nmsg
