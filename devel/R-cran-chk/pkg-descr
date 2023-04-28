@@ -1,0 +1,3 @@
+For developers to check user-supplied function arguments. It is
+designed to be simple, fast and customizable. Error messages
+follow the tidyverse style guide.
