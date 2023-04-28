@@ -1,4 +1,4 @@
-bin/cjpeg_hdr
+%%JPEG%%bin/cjpeg_hdr
 bin/cjxl
 bin/djxl
 bin/jxlinfo
