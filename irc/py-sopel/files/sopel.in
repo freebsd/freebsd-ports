@@ -1,0 +1,147 @@
+#!/bin/sh
+
+# PROVIDE: sopel
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Configuration settings for sopel in /etc/rc.conf
+#
+# sopel_enable (bool):	Enable sopel. (default=NO)
+# sopel_piddir (str):	Directory in which to put the process ID file. (default=/var/run/sopel)
+# sopel_confdir (str):	Configuration directory. (default=%%ETCDIR%%)
+# sopel_flags (str):	Flags used for sopel. (default=--config-dir "${sopel_confdir}")
+# sopel_script (str):	Path to sopel application. (default=%%PREFIX%%/bin/sopel)
+# sopel_user (str):	User to run sopel as. (default=sopel)
+# sopel_profiles (str):	List of profiles for running multiple sopel instances.
+#			(default=default)
+# sopel_prefix (str):	Each profile or configuration file must begin with thix prefix
+#			followed by the profile name, followed by the extension .cfg,
+#			such as sopel-default.cfg, sopel-libera.chat.cfg, etc.
+#			(default=sopel-)
+# sopel_output (str):	Send stdout and stderr to a file. If you set the logdir parameter in
+#			the sopel file configuration, your best option is to send the output
+#			to /dev/null. But this can be changed for debugging.
+#			(default=/dev/null)
+
+. /etc/rc.subr
+
+name=sopel
+rcvar=sopel_enable
+desc="Simple, easy-to-use, open-source IRC utility bot, written in Python"
+start_precmd=sopel_checkprofile
+stop_precmd=sopel_checkprofile
+start_cmd=sopel_start
+stop_cmd=sopel_stop
+restart_cmd=sopel_restart
+status_cmd=sopel_status
+configure_cmd=sopel_configure
+extra_commands="configure status"
+command_interpreter="%%PYTHON_CMD%%"
+
+load_rc_config $name
+
+: ${sopel_enable:=NO}
+: ${sopel_piddir:=/var/run/sopel}
+: ${sopel_confdir:=%%ETCDIR%%}
+: ${sopel_flags=--config-dir "${sopel_confdir}"}
+: ${sopel_script:=%%PREFIX%%/bin/sopel}
+: ${sopel_user:=sopel}
+: ${sopel_profiles:=default}
+: ${sopel_prefix:=sopel-}
+: ${sopel_output:=/dev/null}
+
+sopel_checkprofile()
+{
+	if ! [ -f "${sopel_confdir}/${sopel_prefix}${profile}.cfg" ]; then
+		echo "Sopel profile '${profile}' does not exist."
+		return 1
+	fi
+
+	return 0
+}
+
+sopel_start()
+{
+	local profile
+
+	profile="$1"; shift
+
+	echo "Starting sopel profile '${profile}'." && sleep 1
+        daemon \
+		-o "${sopel_output}" \
+		-t "${desc}" \
+		-u "${sopel_user}" \
+		${command_interpreter} \
+		${sopel_script} start ${sopel_flags} \
+			-c "${sopel_prefix}${profile}" $@
+}
+
+sopel_stop()
+{
+	local pid pidfile profile
+
+	profile="$1"; shift
+
+	pidfile="${sopel_piddir}/sopel-${sopel_prefix}${profile}.pid"
+	if ! [ -f "${pidfile}" ]; then
+		echo "sopel profile '${profile}' not running? (check ${sopel_piddir}/sopel-${sopel_prefix}${profile}.pid)."
+		return 1
+	fi
+
+	pid=`cat ${pidfile}`
+
+	echo "Stopping sopel profile '${profile}'."
+        daemon \
+		-o "${sopel_output}" \
+		${command_interpreter} \
+		${sopel_script} stop ${sopel_flags} \
+			-c "${sopel_prefix}${profile}" $@
+
+	wait_for_pids $pid
+}
+
+sopel_restart()
+{
+	local profile
+
+	profile="$1"; shift
+
+        run_rc_command stop "${profile}" $@
+        run_rc_command start "${profile}" $@
+}
+
+sopel_status()
+{
+	local profile pid
+
+	profile="$1"; shift
+
+	pid=`check_pidfile \
+		"${sopel_piddir}/sopel-${sopel_prefix}${profile}.pid" \
+		"${sopel_script}" \
+		"${command_interpreter}"`
+
+	if [ -n "${pid}" ]; then
+		echo "Sopel profile '${profile}' is running as pid ${pid}."
+	else
+		echo "Sopel profile '${profile}' is not running."
+	fi
+}
+
+sopel_configure()
+{
+	local profile
+
+	profile="$1"; shift
+
+	echo "Configuring profile '${profile}'..."
+
+	${command_interpreter} \
+        ${sopel_script} configure ${sopel_flags} \
+		-c "${sopel_confdir}/${sopel_prefix}${profile}" $@
+}
+
+cmd="$1"; shift
+for profile in ${sopel_profiles}; do
+	run_rc_command "${cmd}" "${profile}" $@
+done

@@ -84,6 +84,7 @@
     SUBDIR += pounce
     SUBDIR += py-irc
     SUBDIR += py-limnoria
+    SUBDIR += py-sopel
     SUBDIR += quassel
     SUBDIR += quassel-core
     SUBDIR += quirc

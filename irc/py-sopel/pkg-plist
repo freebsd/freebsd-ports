@@ -1,0 +1,6 @@
+@sample(%%USER%%,%%GROUP%%,640) %%ETCDIR%%/sopel-default.cfg.sample %%ETCDIR%%/sopel-default.cfg
+@dir(%%USER%%,%%GROUP%%,0700) %%ETCDIR%%
+@dir(%%USER%%,%%GROUP%%,0700) /var/db/sopel
+@dir(%%USER%%,%%GROUP%%,) /var/db/sopel/www
+@dir(%%USER%%,%%GROUP%%,0700) /var/log/sopel
+@dir(%%USER%%,%%GROUP%%,0700) /var/run/sopel
