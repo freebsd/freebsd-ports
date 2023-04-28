@@ -16,6 +16,8 @@ LIB_DEPENDS=	libgit2.so:devel/libgit2 \
 		libssh2.so:security/libssh2
 
 USES=		cargo ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to find OpenSSL development headers
 
 CARGO_CRATES=	aho-corasick-0.7.6 \
 		ansi_term-0.11.0 \
