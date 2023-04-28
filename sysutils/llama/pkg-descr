@@ -1,0 +1,4 @@
+llama is a simple and minimalistic file manager. It's a fast way to
+navigate the filesystem, and a cd and ls replacement. It allows for
+quick navigation with fuzzy searching and the cd-integration with
+the shell is a one-liner.
