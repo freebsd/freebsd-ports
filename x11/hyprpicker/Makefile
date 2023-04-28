@@ -33,7 +33,7 @@ post-patch:
 	@${REINPLACE_CMD} -i .nogit -e '/Get git info/,/^#$$/d' \
 		-e 's/$${GIT_BRANCH}/main/' \
 		-e 's/$${GIT_COMMIT_HASH}/${GH_TAGNAME}/' \
-		-e 's/$${GIT_COMMIT_MESSAGE}/?/' \
+		-e '/$${GIT_COMMIT_MESSAGE}/d' \
 		-e 's/$${GIT_DIRTY}/portbld/' \
 		${WRKSRC}/CMakeLists.txt
 # https://clang.llvm.org/cxx_status.html#cxx23
