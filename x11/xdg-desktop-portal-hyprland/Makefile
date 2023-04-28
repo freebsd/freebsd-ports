@@ -43,10 +43,9 @@ SLURP_DESC=		Simple output chooser
 SLURP_RUN_DEPENDS=	slurp:x11/slurp
 
 .ifdef GH_TUPLE
-post-install:
-# XXX USES=meson invokes ninja directly, so doesn't support --skip-subprojects
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/hyprland-protocols
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig
+post-configure:
+	@${REINPLACE_CMD} 's/meson install/& \
+		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
 .endif
 
 .include <bsd.port.mk>
