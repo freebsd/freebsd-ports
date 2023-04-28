@@ -12839,7 +12839,6 @@ devel/p5-rpm-build-perl||2020-01-10|Has expired: Broken for more than 7 months
 devel/shedskin||2020-01-10|Has expired: Broken for more than 3 months, unmaintained
 games/stonesoup-sdl||2020-01-10|Has expired: Broken for more than 8 months
 games/xtris||2020-01-10|Has expired: Broken for more than 3 months
-graphics/mapnik||2020-01-10|Has expired: Broken for more than 8 months
 lang/js_of_ocaml||2020-01-10|Has expired: Depends on broken and expiring devel/ocaml-deriving-ocsigen
 lang/rubinius||2020-01-10|Has expired: Broken for more than 7 months
 sysutils/hfm||2020-01-10|Has expired: Broken for more than 4 months
