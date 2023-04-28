@@ -1,6 +1,5 @@
 PORTNAME=	formulaic
-PORTVERSION=	0.5.2
-PORTREVISION=	2
+PORTVERSION=	0.6.0
 CATEGORIES=	math python # statistics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,7 +28,7 @@ RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>=1.3:math/py-sympy@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	pep517 autoplist pytest # 2 tests fail, see https://github.com/matthewwardrop/formulaic/issues/140
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
