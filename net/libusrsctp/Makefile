@@ -9,8 +9,6 @@ WWW=		https://github.com/sctplab/usrsctp
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_FreeBSD_14=	compilation fails: no netinet6/ip6protosw.h on FreeBSD 14, see https://github.com/sctplab/usrsctp/issues/667
-
 USES=		cmake
 USE_LDCONFIG=	yes
 
@@ -28,4 +26,11 @@ PLIST_FILES=	include/usrsctp.h \
 
 CFLAGS+=	-Wno-error
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${OSVERSION} >= 1400000
+	@${REINPLACE_CMD} -e 's|ip6protosw.h|ip6_var.h|g' \
+		${WRKSRC}/usrsctplib/netinet/sctp_os_userspace.h
+.endif
+.include <bsd.port.post.mk>
