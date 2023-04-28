@@ -20,7 +20,7 @@ LIB_DEPENDS=	libdate-tz.so:devel/date \
 		libxkbregistry.so:x11/libxkbcommon
 TEST_DEPENDS=	catch>0:devel/catch
 
-FLAVORS=	default hyprland nopulse
+FLAVORS=	default hyprland hyprland_nopulse nopulse
 CONFLICTS_INSTALL=	${PORTNAME}*
 
 USES=		compiler:c++17-lang gnome meson pkgconfig
@@ -33,7 +33,7 @@ PLIST_FILES=	bin/${PORTNAME} \
 		etc/xdg/${PORTNAME}/config \
 		etc/xdg/${PORTNAME}/style.css
 
-.if ${FLAVOR:U} == hyprland
+.if ${FLAVOR:U:Mhyprland*}
 # https://gitlab.freedesktop.org/wayland/wayland-protocols/-/merge_requests/40
 MESON_ARGS+=	-Dexperimental=true
 .endif
@@ -46,7 +46,7 @@ SUB_FILES+=	date.pc
 
 OPTIONS_DEFINE=	DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD MPRIS PULSEAUDIO SNDIO UDEV UPOWER
 OPTIONS_DEFAULT=DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD MPRIS PULSEAUDIO SNDIO UDEV UPOWER
-.if ${FLAVOR:U} == nopulse
+.if ${FLAVOR:U:M*nopulse}
 OPTIONS_EXCLUDE=PULSEAUDIO
 .endif
 
@@ -144,7 +144,7 @@ post-patch:
 # Respect PREFIX for icons
 	@${REINPLACE_CMD} 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/src/modules/wlr/taskbar.cpp
-.if ${FLAVOR:U} == hyprland
+.if ${FLAVOR:U:Mhyprland*}
 # Use hyprctl to switch workspaces
 	@${REINPLACE_CMD} 's/zext_workspace_handle_v1_activate(workspace_handle_);/const std::string command = "hyprctl dispatch workspace " + name_;\n\tsystem(command.c_str());/g' \
 		${WRKSRC}/src/modules/wlr/workspace_manager.cpp
