@@ -80,12 +80,9 @@ NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
 NVIDIA_MESON_TRUE=	xwayland_eglstream
 
 .ifdef GL_TUPLE
-post-install:
-# XXX USES=meson invokes ninja directly, so doesn't support --skip-subprojects
-	@${RM} -r ${STAGEDIR}${PREFIX}/include/GL
-	@${RM} -r ${STAGEDIR}${PREFIX}/include/X11
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/doc/xorgproto
-	@${RM} -r ${STAGEDIR}${PREFIX}/share/pkgconfig
+post-configure:
+	@${REINPLACE_CMD} 's/meson install/& \
+		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
 .endif
 
 .include <bsd.port.mk>
