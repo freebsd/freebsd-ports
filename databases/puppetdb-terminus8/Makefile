@@ -1,8 +1,8 @@
 PORTNAME=	puppetdb-terminus
-PORTVERSION=	7.13.0
+PORTVERSION=	8.0.0
 CATEGORIES=	databases ruby
 MASTER_SITES=	https://downloads.puppetlabs.com/puppetdb/
-PKGNAMESUFFIX=	7
+PKGNAMESUFFIX=	8
 DISTNAME=	puppetdb-${PORTVERSION}
 
 MAINTAINER=	puppet@FreeBSD.org

@@ -16,7 +16,7 @@ EXPIRATION_DATE=2023-06-01
 
 BUILD_DEPENDS=	puppet6>=0:sysutils/puppet6
 
-CONFLICTS_INSTALL=	puppetdb-terminus5 puppetdb-terminus7
+CONFLICTS_INSTALL=	puppetdb-terminus[0-9]
 NO_BUILD=	yes
 USES=		gmake ruby
 

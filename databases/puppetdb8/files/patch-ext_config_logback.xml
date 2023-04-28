@@ -1,0 +1,29 @@
+--- ext/config/logback.xml.orig	2017-04-24 12:27:57.366296793 -0700
++++ ext/config/logback.xml	2017-04-24 12:28:48.723259627 -0700
+@@ -6,10 +6,10 @@
+     </appender>
+ 
+     <appender name="F1" class="ch.qos.logback.core.rolling.RollingFileAppender">
+-        <file>/var/log/puppetlabs/puppetdb/puppetdb.log</file>
++        <file>/var/log/puppetdb/puppetdb.log</file>
+         <append>true</append>
+         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+-            <fileNamePattern>/var/log/puppetlabs/puppetdb/puppetdb-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
++            <fileNamePattern>/var/log/puppetdb/puppetdb-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+             <!-- each file should be at most 200MB, keep 90 days worth of history, but at most 1GB total-->
+             <maxFileSize>200MB</maxFileSize>
+             <maxHistory>90</maxHistory>
+@@ -31,11 +31,11 @@
+         level="info"/>
+ 
+     <appender name="STATUS" class="ch.qos.logback.core.rolling.RollingFileAppender">
+-        <file>/var/log/puppetlabs/puppetdb/puppetdb-status.log</file>
++        <file>/var/log/puppetdb/puppetdb-status.log</file>
+         <append>true</append>
+         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+             <!-- rollover daily -->
+-            <fileNamePattern>/var/log/puppetlabs/puppetdb/puppetdb-status-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
++            <fileNamePattern>/var/log/puppetdb/puppetdb-status-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+             <!-- each file should be at most 200MB, keep 90 days worth of history, but at most 1GB total-->
+             <maxFileSize>200MB</maxFileSize>
+             <maxHistory>90</maxHistory>
