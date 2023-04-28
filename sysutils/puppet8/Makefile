@@ -1,9 +1,8 @@
 PORTNAME=	puppet
-PORTVERSION=	6.28.0
-PORTREVISION=	4
+PORTVERSION=	8.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
-PKGNAMESUFFIX=	6
+PKGNAMESUFFIX=	8
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Configuration management framework written in Ruby
@@ -12,22 +11,18 @@ WWW=		https://puppet.com/docs/puppet/latest/puppet_index.html
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-DEPRECATED=	Puppet 6 has reached EOL
-EXPIRATION_DATE=2023-06-01
+BROKEN_RUBY27=	yes
 BROKEN_RUBY30=	yes
-BROKEN_RUBY31=	yes
-BROKEN_RUBY32=	yes
 
-RUN_DEPENDS=	rubygem-concurrent-ruby11>=1.0:devel/rubygem-concurrent-ruby11 \
-		rubygem-deep_merge>=1.0:devel/rubygem-deep_merge \
-		rubygem-fast_gettext1>=1.1:devel/rubygem-fast_gettext1 \
-		rubygem-ffi>=1.9.24:devel/rubygem-ffi \
-		rubygem-hiera>=3.2.1:sysutils/rubygem-hiera \
-		rubygem-httpclient>=2.8:www/rubygem-httpclient \
+RUN_DEPENDS=	rubygem-concurrent-ruby11>1.0:devel/rubygem-concurrent-ruby11 \
+		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
+		rubygem-facter>=4.0:sysutils/rubygem-facter \
+		rubygem-fast_gettext>=2.1:devel/rubygem-fast_gettext \
 		rubygem-locale>=2.1:devel/rubygem-locale \
 		rubygem-multi_json>=1.10:devel/rubygem-multi_json \
-		rubygem-puppet-resource_api>=0:devel/rubygem-puppet-resource_api \
+		rubygem-puppet-resource_api>=1.5:devel/rubygem-puppet-resource_api \
 		rubygem-ruby-augeas>=0:textproc/rubygem-ruby-augeas \
+		rubygem-scanf>=1:devel/rubygem-scanf \
 		rubygem-semantic_puppet>=1:devel/rubygem-semantic_puppet
 
 USES=		cpe ruby
@@ -47,31 +42,20 @@ SUB_FILES+=	pkg-message
 SUB_LIST=	RUBY=${RUBY}
 
 OPTIONS_DEFINE=		DOCS EXAMPLES
-OPTIONS_DEFAULT=	CFACTER
-OPTIONS_RADIO=		FACTER
-OPTIONS_RADIO_FACTER=	CFACTER RFACTER
-
-RFACTER_DESC=	Use facter 4.x (future facter, written in Ruby)
-CFACTER_DESC=	Use facter 3.x (written in C++)
-
-RFACTER_BUILD_DEPENDS=	rubygem-facter>=4.0:sysutils/rubygem-facter
-RFACTER_RUN_DEPENDS=	rubygem-facter>=4.0:sysutils/rubygem-facter
-
-CFACTER_BUILD_DEPENDS=	facter>=3.0:sysutils/facter
-CFACTER_RUN_DEPENDS=	facter>=3.0:sysutils/facter
 
 # Get versions from
-# https://github.com/puppetlabs/puppet-agent/tree/6.x/configs/components
-FORGE_MODULES=	augeas_core=1.1.2 \
-		cron_core=1.0.5 \
-		host_core=1.0.3 \
-		mount_core=1.0.4 \
-		scheduled_task=1.0.0 \
-		selinux_core=1.1.0 \
-		sshkeys_core=1.0.3 \
-		yumrepo_core=1.0.7 \
-		zfs_core=1.2.0 \
-		zone_core=1.0.3
+# https://github.com/puppetlabs/puppet-agent/tree/main/configs/components
+# for f in configs/components/module-puppetlabs-*.json; do echo ${${f#*/module-puppetlabs-}%.json}=${${$(jq .ref $f)#*/v}%\"}; done
+FORGE_MODULES=	augeas_core=1.3.0 \
+		cron_core=1.2.0 \
+		host_core=1.2.0 \
+		mount_core=1.2.0 \
+		scheduled_task=3.1.1 \
+		selinux_core=1.3.0 \
+		sshkeys_core=2.4.0 \
+		yumrepo_core=1.2.0 \
+		zfs_core=1.4.0 \
+		zone_core=1.1.0
 
 .for module in ${FORGE_MODULES}
 DISTFILES+=	puppetlabs-${module:C/=.*//}-${module:C/.*=//}.tar.gz:forge
@@ -96,7 +80,11 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|/var/log/puppetlabs/puppet|/var/log/puppet|" \
 		${WRKSRC}/install.rb \
 		${WRKSRC}/lib/puppet/util/run_mode.rb
+	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/public|/var/puppet/state|" \
+		${WRKSRC}/install.rb \
+		${WRKSRC}/lib/puppet/util/run_mode.rb
 	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/modules|${ETCDIR}/modules|" \
+		-e "s|/etc/puppetlabs/puppetserver/ca|/var/puppetserver/ca|" \
 		-e "s|/opt/puppetlabs/puppet/vendor_modules|${ETCDIR}/vendor_modules|" \
 		${WRKSRC}/lib/puppet/defaults.rb
 	@${REINPLACE_CMD} -e "s|/opt/puppetlabs/puppet/bin/gem|${LOCALBASE}/bin/gem|" \
@@ -108,7 +96,7 @@ post-patch:
 
 do-install:
 	@cd ${WRKSRC} && ${SETENV} PREFIX=${PREFIX} LC_ALL=C.UTF-8 ${RUBY} ${WRKSRC}/install.rb --no-configs --destdir=${STAGEDIR} \
-		--localedir=${RUBY_SITELIBDIR}/puppet/locales
+		--localedir=${RUBY_SITELIBDIR}/puppet/locales --publicdir=/var/puppet/state/
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}/manifests
@@ -118,7 +106,6 @@ post-install:
 	(cd ${WRKDIR}/puppetlabs-${module:C/=.*//}-${module:C/.*=//} && ${COPYTREE_SHARE} . ${STAGEDIR}${ETCDIR}/vendor_modules/${module:C/=.*//})
 .endfor
 	${MKDIR} ${STAGEDIR}/var/puppet
-	${INSTALL_DATA} ${WRKSRC}/conf/auth.conf ${STAGEDIR}${ETCDIR}/auth.conf-dist
 	${SETENV} LC_ALL=C.UTF-8 ${RUBY} -I ${STAGEDIR}/${RUBY_SITELIBDIR} ${STAGEDIR}${PREFIX}/bin/puppet agent --genconfig \
 		--confdir=${ETCDIR} \
 		--rundir=/var/run/puppet \
