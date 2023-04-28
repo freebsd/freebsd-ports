@@ -1061,6 +1061,7 @@
     SUBDIR += puppet8
     SUBDIR += puppetserver6
     SUBDIR += puppetserver7
+    SUBDIR += puppetserver8
     SUBDIR += pv
     SUBDIR += pwd_unmkdb
     SUBDIR += pwgen
