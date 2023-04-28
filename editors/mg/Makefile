@@ -4,7 +4,7 @@ PORTEPOCH=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/ibara/mg/releases/download/mg-${PORTVERSION}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cgr.nil@gmail.com
 COMMENT=	Small, fast Emacs-like editor
 WWW=		https://github.com/ibara/mg
 
