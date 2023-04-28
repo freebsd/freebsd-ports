@@ -48,7 +48,7 @@ post-patch:
 # Extract (snapshot) version from the port instead of meson.build
 	@${REINPLACE_CMD} -i .nogit -e "/GIT_BRANCH/s/run_command.*/'main'/" \
 		-e "/GIT_COMMIT_HASH/s/run_command.*/'${DISTVERSIONFULL}'/" \
-		-e "/GIT_COMMIT_MESSAGE/s/run_command.*/'?'/" \
+		-e "/GIT_COMMIT_MESSAGE/d" \
 		-e "/GIT_DIRTY/s/run_command.*/'portbld'/" \
 		-e "/version.*jq/s/run_command.*/'${DISTVERSIONFULL}',/" \
 		${WRKSRC}/meson.build
