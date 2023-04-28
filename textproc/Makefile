@@ -1500,6 +1500,7 @@
     SUBDIR += py-readchar
     SUBDIR += py-recommonmark
     SUBDIR += py-regex
+    SUBDIR += py-reindent
     SUBDIR += py-reno
     SUBDIR += py-restructuredtext-lint
     SUBDIR += py-reverend
