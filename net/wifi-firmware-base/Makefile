@@ -8,6 +8,9 @@ MAINTAINER=	bz@FreeBSD.org
 COMMENT=	Firmware modules for ${FWDRV} ${FLAVOR} WiFi NIC
 WWW?=		https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/${FWSUBDIR}
 
+FWDRV_VERSION?=	0
+FWDRV?=		base
+
 LICENSE_NAME?=	firmware license (${FWDRV})
 LICENSE_FILE?=	${WRKSRC}/${LICENSE}
 LICENSE_PERMS?=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
