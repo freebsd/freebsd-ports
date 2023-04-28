@@ -10,8 +10,12 @@ include/vulkan/generated/vk_format_utils.cpp
 include/vulkan/generated/vk_format_utils.h
 include/vulkan/generated/vk_layer_dispatch_table.h
 include/vulkan/generated/vk_object_types.h
-include/vulkan/generated/vk_safe_struct.cpp
 include/vulkan/generated/vk_safe_struct.h
+include/vulkan/generated/vk_safe_struct_core.cpp
+include/vulkan/generated/vk_safe_struct_ext.cpp
+include/vulkan/generated/vk_safe_struct_khr.cpp
+include/vulkan/generated/vk_safe_struct_utils.cpp
+include/vulkan/generated/vk_safe_struct_vendor.cpp
 include/vulkan/generated/vk_typemap_helper.h
 include/vulkan/generated/vk_validation_error_messages.h
 include/vulkan/utils/cast_utils.h
