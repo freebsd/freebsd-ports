@@ -436,8 +436,7 @@
       <package><name>ghostscript7-x11</name><range><lt>10.01.1</lt></range></package>
       <package><name>ghostscript8-base</name><range><lt>10.01.1</lt></range></package>
       <package><name>ghostscript8-x11</name><range><lt>10.01.1</lt></range></package>
-      <package><name>ghostscript9-agpl-base</name><range><lt>10.01.1</lt></range></package>
-      <package><name>ghostscript9-agpl-x11</name><range><lt>10.01.1</lt></range></package>
+      <package><name>ghostscript9-agpl-base</name><range><lt>9.56.1_10</lt></range></package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -460,7 +459,7 @@
     <dates>
       <discovery>2023-03-23</discovery>
       <entry>2023-04-13</entry>
-      <modified>2023-04-23</modified>
+      <modified>2023-04-28</modified>
     </dates>
   </vuln>
 
