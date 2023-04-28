@@ -15,6 +15,8 @@ LIB_DEPENDS=	libltdl.so:devel/libltdl
 
 USES=		compiler:c++11-lang desktop-file-utils gmake localbase \
 		pkgconfig qt:5 shared-mime-info ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Uses deprecated and removed OpenSSL routines
 USE_QT=		buildtools:build core gui help linguist:build sql widgets
 USE_CXXSTD=	c++11
 
