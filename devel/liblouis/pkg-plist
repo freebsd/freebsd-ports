@@ -390,6 +390,7 @@
 %%DATADIR%%/tables/uz-g1.utb
 %%DATADIR%%/tables/ve-za-g1.utb
 %%DATADIR%%/tables/ve-za-g2.ctb
+%%DATADIR%%/tables/vi-cb8.utb
 %%DATADIR%%/tables/vi-charsdef.uti
 %%DATADIR%%/tables/vi-lettersdef.uti
 %%DATADIR%%/tables/vi-puncsdef.uti
@@ -397,7 +398,6 @@
 %%DATADIR%%/tables/vi-vn-g0.utb
 %%DATADIR%%/tables/vi-vn-g1.ctb
 %%DATADIR%%/tables/vi-vn-g2.ctb
-%%DATADIR%%/tables/vi.ctb
 %%DATADIR%%/tables/wiskunde-chardefs.cti
 %%DATADIR%%/tables/wordcx.dis
 %%DATADIR%%/tables/xh-za-g1.utb
@@ -436,7 +436,7 @@ libdata/pkgconfig/liblouis.pc
 lib/liblouis.a
 lib/liblouis.so
 lib/liblouis.so.20
-lib/liblouis.so.20.0.12
+lib/liblouis.so.20.0.13
 man/man1/lou_allround.1.gz
 man/man1/lou_checkhyphens.1.gz
 man/man1/lou_checktable.1.gz
