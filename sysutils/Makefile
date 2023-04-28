@@ -562,6 +562,7 @@
     SUBDIR += i7z
     SUBDIR += iat
     SUBDIR += iichid
+    SUBDIR += imgurbash2
     SUBDIR += immortal
     SUBDIR += incron
     SUBDIR += inotify-tools

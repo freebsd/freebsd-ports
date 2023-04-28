@@ -1,0 +1,12 @@
+imgurbash2 is a simple bash script that allows you to upload images
+and videos to imgur. Once an image/video is uploaded, the link is
+displayed on the terminal and copied to your clipboard.
+
+Features:
+
+* Upload remote HTTP/HTTPS images and videos to imgur.
+* Upload multiple images and videos at one go.
+* Upload images/videos to your album and to your account.
+* Delete previously uploaded images/videos.
+* Automatically images/videos deletion.
+* Copy uploaded images/videos' URLs to clipboard.
