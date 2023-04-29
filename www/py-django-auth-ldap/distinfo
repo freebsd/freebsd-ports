@@ -1,3 +1,3 @@
-TIMESTAMP = 1680100715
-SHA256 (django-auth-ldap-4.2.0.tar.gz) = aac71e65b0a8bdcfc5cd08b70997ee3cdc37786ffd5d975b7e2cfa47595d427f
-SIZE (django-auth-ldap-4.2.0.tar.gz) = 53356
+TIMESTAMP = 1682785559
+SHA256 (django-auth-ldap-4.3.0.tar.gz) = 788b5b1ee70054681d7fae7d085deaa76f2fa6f64cc9fe3dd79daef62c2f6121
+SIZE (django-auth-ldap-4.3.0.tar.gz) = 53474
