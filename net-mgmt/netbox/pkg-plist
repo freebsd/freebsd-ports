@@ -729,6 +729,7 @@
 %%DATADIR%%/project-static/src/buttons/markdownPreview.ts
 %%DATADIR%%/project-static/src/buttons/moveOptions.ts
 %%DATADIR%%/project-static/src/buttons/reslug.ts
+%%DATADIR%%/project-static/src/buttons/secretToggle.ts
 %%DATADIR%%/project-static/src/buttons/selectAll.ts
 %%DATADIR%%/project-static/src/buttons/selectMultiple.ts
 %%DATADIR%%/project-static/src/clipboard.ts
@@ -764,6 +765,7 @@
 %%DATADIR%%/project-static/src/stores/objectDepth.ts
 %%DATADIR%%/project-static/src/stores/previousPkCheck.ts
 %%DATADIR%%/project-static/src/stores/rackImages.ts
+%%DATADIR%%/project-static/src/stores/secret.ts
 %%DATADIR%%/project-static/src/tableConfig.ts
 %%DATADIR%%/project-static/src/tables/index.ts
 %%DATADIR%%/project-static/src/tables/interfaceTable.ts
