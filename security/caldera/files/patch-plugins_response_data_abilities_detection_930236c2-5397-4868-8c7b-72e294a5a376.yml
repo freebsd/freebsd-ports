@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/detection/930236c2-5397-4868-8c7b-72e294a5a376.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/detection/930236c2-5397-4868-8c7b-72e294a5a376.yml
+@@ -7,7 +7,7 @@
+     name: x
+   repeatable: True
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           filepath="#{file.sensitive.path}";
+@@ -46,4 +46,4 @@
+         edge: has_hash
+         target: file.sensitive.hash
+     - plugins.stockpile.app.requirements.paw_provenance:
+-        - source: file.sensitive.hash
+\ No newline at end of file
++        - source: file.sensitive.hash

@@ -1,0 +1,18 @@
+--- plugins/response/data/abilities/detection/9bc10f37-0853-4d73-b547-019c11eda22f.yml.orig	2021-10-13 20:41:40 UTC
++++ plugins/response/data/abilities/detection/9bc10f37-0853-4d73-b547-019c11eda22f.yml
+@@ -7,7 +7,7 @@
+     name: x
+   repeatable: True
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           directory="#{directory.sensitive.path}";
+@@ -68,4 +68,4 @@
+           edge: has_hash
+           target: directory.sensitive.hash
+     - plugins.stockpile.app.requirements.paw_provenance:
+-        - source: directory.sensitive.hash
+\ No newline at end of file
++        - source: directory.sensitive.hash

@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/exfiltration/0582dc26-e0cf-4645-88cf-f37a02279976.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/0582dc26-e0cf-4645-88cf-f37a02279976.yml
+@@ -10,7 +10,7 @@
+     attack_id: T1567.001
+     name: Exfiltration to Code Repository
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: | # Temporary file needed to avoid curl length restrictions
+           GHUser="#{github.user.name}";

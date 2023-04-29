@@ -1,0 +1,53 @@
+[
+{ type: install
+  message: <<EOM
+Caldera port were installed
+
+1) Take on mind it is a modifying version of Caldera for include FreeBSD as 
+   supported OS and you could found some issues. Problem reports are welcome.
+
+2) Add the following lines to /etc/rc.conf
+
+  # sysrc caldera_enable="YES"
+
+3) Before of start Caldera you must run some scripts for generate/update payload
+   files
+
+   # cd %%WWWDIR%%/plugins/manx && sh update-shells.sh
+   # cd %%WWWDIR%%/plugins/sandcat && sh update-agents.sh
+
+4) Do not forget modify configuration files before of run Caldera. For default
+   it runs in insecure mode (http). Caldera configuration files are located at
+
+   %%WWWDIR%%/conf
+
+5) If you want run it in secure mode (https) take a look in ssl plugin section:
+
+   https://caldera.readthedocs.io/en/latest/Plugin-library.html#ssl
+
+6) Start Caldera service
+
+   # service caldera start
+
+7) When Caldera is starting, atomic plugin will use git to download files from
+   the following link:
+
+   https://github.com/redcanaryco/atomic-red-team
+
+   Those files are necessary for generate yml files used by Caldera abilities
+
+8) Caldera web listens on port 8888 by default and it uses red/admin or 
+   blue/admin like user/password.
+
+   http://your_caldera_server_ip:8888
+
+9) Log file is located at /var/log/caldera.log
+
+10) For more configure information you can look at the following link:
+
+   https://caldera.readthedocs.io/en/latest/
+
+11) Enjoy it
+EOM
+}
+]

@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/collection/b007fe0c-c6b0-4fda-915c-255bbc070de2.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/collection/b007fe0c-c6b0-4fda-915c-255bbc070de2.yml
+@@ -16,7 +16,7 @@
+       psh,pwsh:
+         command: |
+           Get-Clipboard -raw
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           xclip -o

@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/ce485320-41a4-42e8-a510-f5a8fe96a644.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/ce485320-41a4-42e8-a510-f5a8fe96a644.yml
+@@ -8,7 +8,7 @@
+     attack_id: T1018
+     name: Remote System Discovery
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: host "#{target.org.domain}" | grep mail | grep -oE '[^ ]+$' | rev | cut -c 2- | rev
+         parsers:

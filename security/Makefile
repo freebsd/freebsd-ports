@@ -62,6 +62,7 @@
     SUBDIR += bzrtp
     SUBDIR += ca_root_nss
     SUBDIR += caesarcipher
+    SUBDIR += caldera
     SUBDIR += calife
     SUBDIR += cardpeek
     SUBDIR += cargo-audit

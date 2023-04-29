@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/collection/10fad81e-3f68-47be-83b6-fbee7711c6a9.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/collection/10fad81e-3f68-47be-83b6-fbee7711c6a9.yml
+@@ -33,7 +33,7 @@
+         parsers:
+           plugins.stockpile.app.parsers.basic:
+             - source: host.dir.staged
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           chmod +x ./file_search.sh; ./file_search.sh --extensions '#{linux.included.extensions}'

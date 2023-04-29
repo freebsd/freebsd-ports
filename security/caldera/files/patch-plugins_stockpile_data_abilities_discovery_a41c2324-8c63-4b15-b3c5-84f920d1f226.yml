@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/a41c2324-8c63-4b15-b3c5-84f920d1f226.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/a41c2324-8c63-4b15-b3c5-84f920d1f226.yml
+@@ -6,7 +6,7 @@
+     attack_id: T1083
+     name: File and Directory Discovery
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: 'find ~ -type f -name #{host.print.file} 2>/dev/null'
+         parsers:

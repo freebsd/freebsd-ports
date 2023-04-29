@@ -1,0 +1,40 @@
+--- plugins/human/templates/human.html.orig	2022-09-06 17:33:12 UTC
++++ plugins/human/templates/human.html
+@@ -60,6 +60,7 @@
+                                 <select id="base-platform">
+                                     <option disabled="disabled" selected="">Select target OS</option>
+                                     <option value="darwin">MacOS</option>
++                                    <option value="freebsd">FreeBSD</option>
+                                     <option value="linux">Linux</option>
+                                     <option value="windows-psh">Windows (PowerShell)</option>
+                                 </select>
+@@ -257,6 +258,11 @@
+                     ' && virtualenv -p python3 \''+humanName+'\' && \''+humanName+'/bin/pip\' install -r \''+humanName+'/requirements.txt\' && \''+humanName+'/bin/python\' \''+humanName+'/human.py\' --clustersize '+taskCount+' ' +
+                     '--taskinterval '+taskInterval+' --taskgroupinterval '+taskClusterInterval+' --extra '+extra;
+                 break;
++            case "freebsd":
++                baseHuman = 'curl -sk -o \''+humanName+'.tar.gz\' -X POST -H \'file:'+humanName+'.tar.gz\' '+http+'/file/download 2>&1 && mkdir \''+humanName+'\' && tar -C \''+humanName+'\' -zxvf \''+humanName+'.tar.gz\' ' +
++                    ' && virtualenv -p python3.9 \''+humanName+'\' && \''+humanName+'/bin/pip\' install -r \''+humanName+'/requirements.txt\' && \''+humanName+'/bin/python\' \''+humanName+'/human.py\' --clustersize '+taskCount+' ' +
++                    '--taskinterval '+taskInterval+' --taskgroupinterval '+taskClusterInterval+' --extra '+extra;
++                break;               
+             case "linux":
+                 baseHuman = 'curl -sk -o \''+humanName+'.tar.gz\' -X POST -H \'file:'+humanName+'.tar.gz\' '+http+'/file/download 2>&1 && mkdir \''+humanName+'\' && tar -C \''+humanName+'\' -zxvf \''+humanName+'.tar.gz\' ' +
+                     ' && virtualenv -p python3 \''+humanName+'\' && \''+humanName+'/bin/pip\' install -r \''+humanName+'/requirements.txt\' && \''+humanName+'/bin/python\' \''+humanName+'/human.py\' --clustersize '+taskCount+' ' +
+@@ -293,6 +299,10 @@
+         $.each(extra, function(i, command) {
+             switch (platform) {
+                 case "darwin":
++                    command = command.replace(/\\/g, '\\\\');
++                    command = command.replace(/"/g, '\\\"');
++                    break;
++                case "freebsd":
+                     command = command.replace(/\\/g, '\\\\');
+                     command = command.replace(/"/g, '\\\"');
+                     break;
+@@ -317,4 +327,4 @@
+         return provided_value || default_value;
+     }
+ 
+-</script>
+\ No newline at end of file
++</script>

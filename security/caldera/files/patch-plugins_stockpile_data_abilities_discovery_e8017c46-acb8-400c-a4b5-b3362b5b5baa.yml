@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/e8017c46-acb8-400c-a4b5-b3362b5b5baa.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/e8017c46-acb8-400c-a4b5-b3362b5b5baa.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           sudo ifconfig
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           sudo ifconfig

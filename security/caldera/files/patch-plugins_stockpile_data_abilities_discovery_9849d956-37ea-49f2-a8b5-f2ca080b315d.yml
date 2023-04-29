@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/9849d956-37ea-49f2-a8b5-f2ca080b315d.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/9849d956-37ea-49f2-a8b5-f2ca080b315d.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           which go
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           which go

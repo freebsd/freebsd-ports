@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/5f77ecf9-613f-4863-8d2f-ed6b447a4633.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/5f77ecf9-613f-4863-8d2f-ed6b447a4633.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           cat ~/.ssh/known_hosts
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           cat ~/.ssh/known_hosts

@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/discovery/3a2ce3d5-e9e2-4344-ae23-470432ff8687.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/discovery/3a2ce3d5-e9e2-4344-ae23-470432ff8687.yml
+@@ -12,7 +12,7 @@
+       sh:
+         command: |
+           nmap -sV -p #{remote.host.port} #{remote.host.ip}
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           nmap -sV -p #{remote.host.port} #{remote.host.ip}

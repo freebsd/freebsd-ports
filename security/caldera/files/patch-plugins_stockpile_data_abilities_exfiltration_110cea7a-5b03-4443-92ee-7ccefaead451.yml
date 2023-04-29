@@ -1,0 +1,18 @@
+--- plugins/stockpile/data/abilities/exfiltration/110cea7a-5b03-4443-92ee-7ccefaead451.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/110cea7a-5b03-4443-92ee-7ccefaead451.yml
+@@ -6,7 +6,7 @@
+     attack_id: T1029
+     name: Scheduled Transfer
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           crontab -l > /tmp/origcron;
+@@ -46,4 +46,4 @@
+ 
+           Register-ScheduledTask -TaskName "Scheduled exfiltration" -Trigger $trigger -Action $action;
+         cleanup: |
+-          Unregister-ScheduledTask -TaskName "Scheduled exfiltration" -Confirm:$false;
+\ No newline at end of file
++          Unregister-ScheduledTask -TaskName "Scheduled exfiltration" -Confirm:$false;

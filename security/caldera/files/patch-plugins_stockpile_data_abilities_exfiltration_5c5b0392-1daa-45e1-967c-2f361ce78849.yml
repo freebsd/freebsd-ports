@@ -1,0 +1,11 @@
+--- plugins/stockpile/data/abilities/exfiltration/5c5b0392-1daa-45e1-967c-2f361ce78849.yml.orig	2022-09-14 02:24:22 UTC
++++ plugins/stockpile/data/abilities/exfiltration/5c5b0392-1daa-45e1-967c-2f361ce78849.yml
+@@ -11,7 +11,7 @@
+     attack_id: T1030
+     name: Data Transfer Size Limits
+   platforms:
+-    linux:
++    freebsd,linux:
+       sh:
+         command: |
+           tar -C #{host.dir.staged} -czf - . | gpg -c --pinentry-mode=loopback --passphrase '#{host.archive.password}' > #{host.dir.staged}.tar.gz.gpg;
