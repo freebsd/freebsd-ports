@@ -1,7 +1,7 @@
 PORTNAME=	wazuh
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.4.1
-POREREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	LOCAL/acm/${PORTNAME}/
 PKGNAMESUFFIX=  -dashboard
@@ -14,9 +14,6 @@ COMMENT=	Web user interface for data visualization and analysis
 WWW=		https://github.com/wazuh/wazuh-kibana-app
 
 LICENSE=	GPLv2
-
-DEPRECATED=	Requires opensearch-dashboards which depends on upstream EOL node14
-EXPIRATION_DATE=	2023-05-26
 
 RUN_DEPENDS=	${LOCALBASE}/www/opensearch-dashboards/bin/opensearch-dashboards:textproc/opensearch-dashboards
 
