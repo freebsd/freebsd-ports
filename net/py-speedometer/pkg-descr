@@ -1,0 +1,3 @@
+Speedometer is a minimalistic python script that provides a TUI
+interface to measure and display the speed of data across a network
+connection or data being stored in a file.
