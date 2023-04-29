@@ -1,0 +1,3 @@
+Haishoku is a development tool for grabbing the dominant color or
+representative color palette from an image, it depends on Python3
+and Pillow.
