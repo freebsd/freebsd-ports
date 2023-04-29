@@ -43,6 +43,12 @@ PLIST_SUB=	USERS="${USERS}" GROUPS="${GROUPS}"
 USERS=		_pkcs11
 GROUPS=		_pkcs11
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-patch:
 	cd ${WRKSRC} && \
 	    ${REINPLACE_CMD} 's,%%DLLDIR%%,${PREFIX}/lib/opencryptoki/stdll,' \
@@ -56,4 +62,4 @@ post-install:
 	${RMDIR} ${STAGEDIR}/var/run/opencryptoki/* \
 	    ${STAGEDIR}/var/run/opencryptoki
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
