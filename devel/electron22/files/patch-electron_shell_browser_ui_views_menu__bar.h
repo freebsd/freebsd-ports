@@ -1,6 +1,6 @@
---- electron/shell/browser/ui/views/menu_bar.h.orig	2022-05-18 15:31:32 UTC
+--- electron/shell/browser/ui/views/menu_bar.h.orig	2023-04-26 08:11:51 UTC
 +++ electron/shell/browser/ui/views/menu_bar.h
-@@ -79,7 +79,7 @@ class MenuBar : public views::AccessiblePaneView,
+@@ -82,7 +82,7 @@ class MenuBar : public views::AccessiblePaneView,
    View* FindAccelChild(char16_t key);
  
    SkColor background_color_;
