@@ -77,6 +77,10 @@ KMK_ARCH=	freebsd.${ARCH}
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 SYMBOLSUFFIX=	debug
 PLIST_SUB+=	SYMBOLSUFFIX=${SYMBOLSUFFIX}
 
