@@ -1,7 +1,7 @@
 PORTNAME=	liburcu
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://lttng.org/files/urcu/
+MASTER_SITES=	https://lttng.org/files/urcu/
 DISTNAME=	userspace-rcu-${PORTVERSION}
 
 MAINTAINER=	freebsd@dns-lab.com
