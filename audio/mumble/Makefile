@@ -18,6 +18,8 @@ LIB_DEPENDS+=	libspeex.so:audio/speex \
 		libopus.so:audio/opus
 
 USES=		compiler:c++11-lang cpe desktop-file-utils gl gmake gnome pkgconfig python:build qmake qt:5 ssl xorg
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated CRYPTO_MEM_CHECK_ON
 
 PATCHVERSION=	${PORTVERSION}
 MINORVERSION=	${PORTVERSION:R}
