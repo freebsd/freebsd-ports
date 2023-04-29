@@ -1,7 +1,7 @@
 PORTNAME=	opensearch-dashboards
 DISTVERSION=	2.6.0
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-linux-x64
+PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 
@@ -12,14 +12,11 @@ WWW=		https://opensearch.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-DEPRECATED=	Requires upstream EOL node14
-EXPIRATION_DATE=	2023-05-26
-
-BUILD_DEPENDS=	npm-node14>0:www/npm-node14
+BUILD_DEPENDS=	npm-node16>0:www/npm-node16
 
 CONFLICTS=	opensearch-dashboard13
 
-USES=		nodejs:14,build,run python:build
+USES=		nodejs:16,build,run python:build
 USE_RC_SUBR=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
@@ -29,7 +26,7 @@ OPTIONS_DEFINE=	CHROME
 CHROME_DESC=	Add dependency on www/chromium (required for PDF reports)
 CHROME_RUN_DEPENDS=chrome:www/chromium
 
-NODE_VER=	14.21.1
+NODE_VER=	16.20.0
 
 _DEVDIR=	${WRKDIR}/.devdir
 
