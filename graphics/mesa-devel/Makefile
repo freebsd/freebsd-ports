@@ -1,6 +1,7 @@
 PORTNAME=	mesa
 DISTVERSION=	23.1-branchpoint-780
 DISTVERSIONSUFFIX=	-gb07f575a91d
+PORTREVISION=	1
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-devel
 
@@ -174,6 +175,6 @@ post-patch-COINST-on:
 
 post-install-COINST-on:
 	@${INSTALL_DATA} ${WRKDIR}/libmap.conf \
-		${STAGEDIR}${PREFIX}/etc/libmap.d/${PKGBASE}.conf.sample
+		${STAGEDIR}${PREFIX}/etc/libmap.d/${PKGBASE}.conf
 
 .include <bsd.port.mk>

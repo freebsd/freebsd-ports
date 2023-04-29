@@ -1,7 +1,7 @@
 %%VKLAYERS%%bin/mesa-overlay-control.py
 %%NO_COINST%%%%OPENCL%%etc/OpenCL/vendors/mesa.icd
 %%OPENCL%%etc/OpenCL/vendors/rusticl.icd
-%%COINST%%@sample etc/libmap.d/mesa%%SUFFIX%%.conf.sample
+%%COINST%%etc/libmap.d/mesa%%SUFFIX%%.conf
 %%NO_COINST%%include/EGL/eglext_angle.h
 %%NO_COINST%%include/EGL/eglmesaext.h
 %%NO_COINST%%include/GL/internal/dri_interface.h
