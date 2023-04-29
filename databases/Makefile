@@ -858,6 +858,7 @@
     SUBDIR += qt5-sqldrivers-sqlite2
     SUBDIR += qt5-sqldrivers-sqlite3
     SUBDIR += qt5-sqldrivers-tds
+    SUBDIR += qt6-base_sqldriver
     SUBDIR += quake
     SUBDIR += recutils
     SUBDIR += redis
