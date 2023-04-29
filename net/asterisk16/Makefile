@@ -14,6 +14,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit
 WWW=		https://www.asterisk.org
 
+DEPRECATED=		Upstream EOL reaches on 2023-10-09
+EXPIRATION_DATE=	2023-12-31
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
