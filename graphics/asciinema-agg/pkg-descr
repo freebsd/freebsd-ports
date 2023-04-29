@@ -1,0 +1,4 @@
+agg is a command-line tool for generating animated GIF files from
+asciicast v2 files produced by asciinema terminal recorder. It uses
+the excellent gifski library to produce optimized, high quality GIF
+output with accurate frame timing.

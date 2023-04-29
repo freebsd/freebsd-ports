@@ -61,6 +61,7 @@
     SUBDIR += appleseed
     SUBDIR += argyllcms
     SUBDIR += art
+    SUBDIR += asciinema-agg
     SUBDIR += asciio
     SUBDIR += aseprite
     SUBDIR += atril

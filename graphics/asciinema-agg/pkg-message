@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+agg was installed and there are some notes:
+
+1. You need at least one font family that is used by the --font-family
+   parameter.
+
+2. It is recommended to install graphics/gifsicle if you want to
+   optimize your GIF.
+EOM
+}
+]
