@@ -17,6 +17,8 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cmake cpe gnome localbase:ldflags pkgconfig readline shebangfix ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to build with OpenSSL 3.0.0 and later
 SHEBANG_GLOB=	*.sh
 SHEBANG_FILES=	utils/cms_monPerf
 USE_GNOME=	libxml2
