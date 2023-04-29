@@ -18,6 +18,8 @@ LIB_DEPENDS=	libonig.so:devel/oniguruma \
 		librdkafka.so:net/librdkafka
 
 USES=		cargo lua:53 ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
 USE_GITHUB=	yes
 GH_ACCOUNT=	timberio
 GH_TUPLE=	bytecodealliance:wasmtime:3de418630a263ca214931d69f796879be50d4f72:wasmtime \
