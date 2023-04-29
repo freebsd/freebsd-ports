@@ -356,6 +356,7 @@
     SUBDIR += setlayout
     SUBDIR += setxkbmap
     SUBDIR += sfwbar
+    SUBDIR += shikane
     SUBDIR += shotman
     SUBDIR += showkeys
     SUBDIR += showmethekey

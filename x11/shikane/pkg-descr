@@ -1,0 +1,11 @@
+A dynamic output configuration tool that automatically detects and configures
+connected outputs based on a set of profiles.
+
+Each profile specifies a set of outputs with additional parameters (e.g., mode).
+A profile will be applied automatically if all specified outputs and modes can
+be perfectly matched to the currently connected outputs and their capabilities.
+
+This is a Wayland equivalent for tools like autorandr.
+It aims to fully replace kanshi and add new features.
+shikane works with Wayland compositors supporting version 3 of the
+wlr-output-management protocol (e.g., compositors using wlroots v0.16).
