@@ -1,5 +1,5 @@
 PORTNAME=	mqttwarn
-DISTVERSION=	0.31.0
+DISTVERSION=	0.34.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,20 +10,24 @@ WWW=		https://github.com/jpmens/mqttwarn
 
 LICENSE=	EPL
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}six>=1.13.0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}paho-mqtt>=1.4.0:net/py-paho-mqtt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10.1:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}attrs>=19.3.0:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}docopt>=0.6.2:devel/py-docopt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.22.0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}future>=0.18.2:devel/py-future@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}configparser>=3.5.3:devel/py-configparser@${PY_FLAVOR}
-
 # based on setup.py : tests_require=extras['test'],
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}versioningit>=0:devel/py-versioningit@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}attrs>=19.3.0:devel/py-attrs@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}docopt>=0.6.2:devel/py-docopt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}funcy>0:devel/py-funcy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}future>=0.18.2:devel/py-future@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10.1:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}paho-mqtt>=1.4.0:net/py-paho-mqtt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests>=2.22.0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}six>=1.13.0:devel/py-six@${PY_FLAVOR}
+
 USES=		python:3.6+ shebangfix
-USE_PYTHON=	autoplist concurrent distutils
+
+USE_PYTHON=	autoplist concurrent pep517
 SHEBANG_REGEX=	'.*\.py$$'
 
 NO_ARCH=	yes
@@ -32,14 +36,13 @@ NO_ARCH=	yes
 # The following were omitted because their dependencies are not found in the
 # FreeBSD port tree: AMQP APPRISE ASTERISK FBCHAT IOHUB NMA NSCA OSXNOTIFY PASTEBINPUB PROWL PUSHBULLET
 #                    SLACK TOOTPASTE XIVELY XMPP
-OPTIONS_DEFINE=	DOCS EXAMPLES \
-		APNS CELERY DNSUPDATE GSS2 MYSQL POSTGRES REISPUB RRDTOOL \
-		SERIAL SSH TWILIO TWITTER WEBSOCKET
+OPTIONS_DEFINE=	APNS CELERY DNSUPDATE DOCS EXAMPLES GSS2 MYSQL POSTGRES REISPUB \
+		RRDTOOL SERIAL SSH TWILIO TWITTER WEBSOCKET
 
 USERS=		mqttwarn
 GROUPS=		mqttwarn
 
-SUB_FILES=	pkg-message mqttwarn
+SUB_FILES=	mqttwarn pkg-message
 
 APNS_DESC=	Apple Push Notifications
 CELERY_DESC=	Asynchronous task queue/job queue
