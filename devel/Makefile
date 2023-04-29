@@ -5653,6 +5653,7 @@
     SUBDIR += py-venusian
     SUBDIR += py-verboselogs
     SUBDIR += py-versioneer
+    SUBDIR += py-versioningit
     SUBDIR += py-versiontools
     SUBDIR += py-verspec
     SUBDIR += py-vine
