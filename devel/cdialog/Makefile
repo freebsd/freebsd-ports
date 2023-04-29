@@ -1,5 +1,5 @@
 PORTNAME=	cdialog
-DISTVERSION=	1.3-20221229
+DISTVERSION=	1.3-20230209
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	https://invisible-island.net/archives/${PORTNAME:S|^c||}/\
