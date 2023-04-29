@@ -84,6 +84,8 @@ ODBC_CFLAGS=			-I/usr/local/include
 ODBC_LDFLAGS=			-L/usr/local/lib
 OPENSSL_USES=			ssl
 OPENSSL_CONFIGURE_WITH=		ssl=${OPENSSLBASE}
+OPENSSL_VARS=	BROKEN_SSL="openssl30 openssl31" \
+				BROKEN_SSL_REASON="Cannot find function FIPS_mode"
 SCTP_CONFIGURE_ENABLE=		sctp
 THREADS_CONFIGURE_ENABLE=	threads
 WX_USES=			gl
