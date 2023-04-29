@@ -4665,6 +4665,7 @@
     SUBDIR += py-gelidum
     SUBDIR += py-genson
     SUBDIR += py-genty
+    SUBDIR += py-geocoder
     SUBDIR += py-geojson
     SUBDIR += py-get-reader
     SUBDIR += py-gevent
