@@ -1,6 +1,5 @@
 PORTNAME=	xfce4-netload-plugin
-PORTVERSION=	1.4.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	XFCE/panel-plugins
 DIST_SUBDIR=	xfce4
@@ -12,9 +11,11 @@ WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-netload-plugin
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
+
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
-USE_GNOME=	cairo gtk30 intltool
+USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool
 USE_XFCE=	panel
 
 GNU_CONFIGURE=	yes
@@ -27,7 +28,7 @@ NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext-runtime
 
 post-patch:
-	@${REINPLACE_CMD} -e 's, || __FreeBSD_kernel__,,' \
+	@${REINPLACE_CMD} -e 's/ || defined \{0,1\}(__FreeBSD_kernel__)//' \
 		${WRKSRC}/panel-plugin/net.c \
 		${WRKSRC}/panel-plugin/net.h \
 		${WRKSRC}/panel-plugin/os.h
