@@ -22,6 +22,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 BUILD_DEPENDS=	7zz:archivers/7-zip
 
 BROKEN_FreeBSD_12=	ld: error: undefined symbol: streflop_libm::__inline_isnanf(float)
+BROKEN_FreeBSD_14=	ld: error: undefined symbol: streflop_libm::__inline_isnanf(float)
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	relies on x86 floating-point math and amd64 atomic ops
 
