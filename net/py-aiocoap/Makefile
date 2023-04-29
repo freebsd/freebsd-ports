@@ -1,5 +1,5 @@
 PORTNAME=	aiocoap
-DISTVERSION=	0.4.5
+DISTVERSION=	0.4.7
 CATEGORIES=	net
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +9,6 @@ COMMENT=	Python CoAP library
 WWW=		https://github.com/chrysn/aiocoap
 
 LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist distutils
