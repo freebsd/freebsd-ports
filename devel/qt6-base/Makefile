@@ -72,6 +72,12 @@ CMAKE_ON=	QT_AVOID_CMAKE_ARCHIVING_API \
 		QT_FIND_ALL_PACKAGES_ALWAYS
 CMAKE_OFF=	QT_FEATURE_eglfs \
 		QT_FEATURE_gssapi
+# sql drivers are handled in the qt6-base-sqldriver port
+CMAKE_OFF+=	FEATURE_sql_mysql \
+		FEATURE_sql_odbc \
+		FEATURE_sql_psql \
+		FEATURE_sql_sqlite
+
 SHEBANG_FILES=	${WRKSRC}/mkspecs/features/uikit/device_destinations.sh \
 		${WRKSRC}/mkspecs/features/uikit/devices.py \
 		${WRKSRC}/mkspecs/features/data/mac/objc_namespace.sh \
@@ -83,40 +89,11 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 BINARY_ALIAS=	zstd=${LOCALBASE}/bin/zstd
 
 OPTIONS_DEFINE=		CUPS
-OPTIONS_GROUP=		SQL
-OPTIONS_GROUP_SQL=	IBASE MYSQL ODBC PSQL SQLITE
-OPTIONS_DEFAULT=	CUPS SQLITE
+OPTIONS_DEFAULT=	CUPS
 OPTIONS_SUB=		yes
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CMAKE_OFF=		-DFEATURE_cups=OFF
-
-IBASE_DESC=		InterBase database support
-IBASE_CMAKE_ON=		-DFEATURE_sql_ibase=ON
-IBASE_CMAKE_OFF=	-DFEATURE_sql_ibase=OFF
-IBASE_USES=		firebird:4.0
-IBASE_BROKEN=		IBASE: fatal error: 'gen/iberror.h' file not found
-
-MYSQL_DESC=		MySQL database support
-MYSQL_CMAKE_ON=		-DFEATURE_sql_mysql=ON
-MYSQL_CMAKE_OFF=	-DFEATURE_sql_mysql=OFF
-MYSQL_USES=		mysql
-
-ODBC_DESC=		ODBC database support
-ODBC_CMAKE_ON=		-DFEATURE_sql_odbc=ON
-ODBC_CMAKE_OFF=		-DFEATURE_sql_odbc=OFF
-ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
-
-PSQL_DESC=		PostgreSQL database support
-PSQL_CMAKE_ON=		-DFEATURE_sql_psql=ON
-PSQL_CMAKE_OFF=		-DFEATURE_sql_psql=OFF
-PSQL_USES=		pgsql
-
-SQLITE_DESC=		Sqlite database support
-SQLITE_CMAKE_ON=	-DFEATURE_sql_sqlite=ON \
-			-DQT_FEATURE_system_sqlite=ON
-SQLITE_CMAKE_OFF=	-DFEATURE_sql_sqlite=OFF
-SQLITE_USES=		sqlite:3
 
 .include <bsd.port.pre.mk>
 
