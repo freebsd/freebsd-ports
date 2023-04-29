@@ -196,6 +196,7 @@
     SUBDIR += py-python-lzo
     SUBDIR += py-python-rpm-packaging
     SUBDIR += py-python-snappy
+    SUBDIR += py-pyunpack
     SUBDIR += py-rarfile
     SUBDIR += py-rcssmin
     SUBDIR += py-rjsmin
