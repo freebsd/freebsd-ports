@@ -4564,6 +4564,7 @@
     SUBDIR += py-eggtestinfo
     SUBDIR += py-ejson
     SUBDIR += py-enlighten
+    SUBDIR += py-entrypoint2
     SUBDIR += py-entrypoints
     SUBDIR += py-enum-compat
     SUBDIR += py-envier
