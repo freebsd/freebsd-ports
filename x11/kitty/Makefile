@@ -74,6 +74,10 @@ _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=invalid-utf8 -Winvalid-utf8
+.endif
+
 .if ${ARCH} == powerpc64 || ${ARCH:Mriscv64*}
 MAKE_ENV+=	KITTY_NO_LTO=1
 .endif
