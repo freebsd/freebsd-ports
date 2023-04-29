@@ -17,6 +17,8 @@ LIB_DEPENDS+=	libgmp.so:math/gmp
 LIB_DEPENDS+=	libnettle.so:security/nettle
 
 USES=		cargo ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
 USE_LDCONFIG=	yes
 USE_GITLAB=	yes
 GL_ACCOUNT=	sequoia-pgp
