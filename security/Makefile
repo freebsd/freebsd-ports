@@ -914,6 +914,7 @@
     SUBDIR += py-gvm-tools
     SUBDIR += py-hkdf
     SUBDIR += py-htpasswd
+    SUBDIR += py-iris-client
     SUBDIR += py-itsdangerous
     SUBDIR += py-josepy
     SUBDIR += py-keepkey
