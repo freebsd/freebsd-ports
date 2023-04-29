@@ -1,10 +1,12 @@
 PORTNAME=	chez-scheme
-PORTVERSION=	9.5.8
+PORTVERSION=	9.5.8a
 DISTVERSIONPREFIX=	v
 CATEGORIES=	lang
-MASTER_SITES=	http://distfiles.pirateparty.in/ashish/:boot \
+MASTER_SITES=	https://github.com/cisco/ChezScheme/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/ \
+		http://distfiles.pirateparty.in/ashish/:boot \
 		LOCAL/ashish:boot
-DISTFILES=	${PORTNAME}-boot-ta6fb-${PORTVERSION}.tar.xz:boot \
+DISTFILES=	csv9.5.8${EXTRACT_SUFX} \
+		${PORTNAME}-boot-ta6fb-${PORTVERSION}.tar.xz:boot \
 		${PORTNAME}-boot-ti3fb-${PORTVERSION}.tar.xz:boot
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -20,13 +22,6 @@ LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libossp-uuid.so:misc/ossp-uuid
 
 USES=		gmake iconv:lib ncurses
-USE_GITHUB=	yes
-GH_ACCOUNT=	cisco
-GH_PROJECT=	ChezScheme
-GH_TUPLE=	nanopass:nanopass-framework-scheme:v1.9.2:nanopass/nanopass \
-		madler:zlib:v1.2.12:zlib/zlib \
-		dybvig:stex:v1.2.2:stex/stex \
-		lz4:lz4:v1.9.3:lz4/lz4
 
 OPTIONS_DEFAULT=	X11
 OPTIONS_DEFINE=	X11
@@ -35,7 +30,8 @@ HAS_CONFIGURE=	yes
 ALL_TARGET=	build
 CONFLICTS_INSTALL=	petite-chez
 STRIP_FILES=	bin/petite bin/${PORTNAME} bin/${PORTNAME}-script
-CHEZ_LIBDIR=lib/csv${PORTVERSION}
+CHEZ_LIBDIR=lib/csv9.5.8
+WRKSRC=		${WRKDIR}/csv9.5.8
 CFLAGS+=	-fPIC
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib -luuid
