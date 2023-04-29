@@ -5393,6 +5393,7 @@
     SUBDIR += py-rapidfuzz
     SUBDIR += py-rapidfuzz-capi
     SUBDIR += py-rapidfuzz2
+    SUBDIR += py-ratelim
     SUBDIR += py-ratelimiter
     SUBDIR += py-rauth
     SUBDIR += py-raven

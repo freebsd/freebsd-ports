@@ -1,0 +1,9 @@
+Ratelim is a simple Python library that limits the number of times a function
+can be called during a time interval. It is particularly useful when using
+online APIs, which commonly enforce rate limits.
+
+Features
+
+- Works in Py2 and Py3.
+- Greedy and patient rate limiting.
+- Preserves function signature.
