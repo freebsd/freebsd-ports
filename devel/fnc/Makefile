@@ -1,5 +1,5 @@
 PORTNAME=	fnc
-DISTVERSION=	0.13
+DISTVERSION=	0.15
 CATEGORIES=	devel
 MASTER_SITES=	https://fnc.bsdbox.org/tarball/${DISTVERSION}/ \
 		https://distfiles.pirateparty.in/ashish/
