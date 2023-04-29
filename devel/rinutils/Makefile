@@ -1,5 +1,5 @@
 PORTNAME=	rinutils
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/shlomif/${PORTNAME}/releases/download/${DISTVERSION}/
 
