@@ -47,40 +47,33 @@ OPTIONS_DEFAULT=	PMILTER DKIM SASL2 TLS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 
-PMILTER_DESC=	Adds policy milter support
 DKIM_DESC=	Enable DKIM signing support
 MSP_DESC=	Enable mail submision program
-SASL2_DESC=	Adds SASL2 support
+PMILTER_DESC=	Adds policy milter support
 SASL2AUTHD_DESC=	Enable plaintext authentication via SASL2
+SASL2_DESC=	Adds SASL2 support
 
+DKIM_CONFIGURE_ENABLE=	DKIM
+IPV6_MAKE_ENV=	MTA_NETINET6=1
+MSP_CONFIGURE_ENABLE=	msp
+MSP_CONFLICTS=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-* sendmail-*
 PMILTER_USES=		ssl
 PMILTER_CONFIGURE_ENABLE=	pmilter
-DKIM_CONFIGURE_ENABLE=	DKIM
-MSP_CONFIGURE_ENABLE=	msp
+SASL2AUTHD_IMPLIES=	SASL2
+SASL2AUTHD_RUN_DEPENDS=	saslauthd:security/cyrus-sasl2-saslauthd
 SASL2_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
-SASL2_CONFIGURE_ENABLE=	SASL
 SASL2_CONFIGURE_ON=	--with-sasl-incdir=${LOCALBASE}/include \
 			--with-sasl-libdir=${LOCALBASE}/lib
-SASL2AUTHD_RUN_DEPENDS=	saslauthd:security/cyrus-sasl2-saslauthd
+SASL2_CONFIGURE_ENABLE=	SASL
 TLS_USES=		ssl
 TLS_CONFIGURE_ENABLE=	TLS
 TLS_CPPFLAGS=		-I${LOCALBASE}/include
 TLS_LDFLAGS=		-L${LOCALBASE}/lib
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${PORT_OPTIONS:MIPV6}
-MAKE_ENV+=	MTA_NETINET6=1
-.endif
-
-.if ${PORT_OPTIONS:MMSP}
-CONFLICTS+=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-* sendmail-*
-.endif
-
-.if ${PORT_OPTIONS:MSASL2AUTHD}
-.if empty(PORT_OPTIONS:MSASL2)
-IGNORE=		option SASL2AUTHD needs option SASL2
-.endif
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
 .endif
 
 post-configure:
@@ -120,4 +113,4 @@ post-install:
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}/
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
