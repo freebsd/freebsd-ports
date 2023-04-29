@@ -1,6 +1,17 @@
 PORTNAME=	boringssl
 PORTVERSION=	0.0.0.0.2023.04.26.01
+PORTREVISION=	1
 CATEGORIES=	security
+MASTER_SITES+=	https://proxy.golang.org/:gomods
+DISTFILES+=	golang.org/x/crypto/@v/v0.6.0.zip:gomods \
+		golang.org/x/crypto/@v/v0.6.0.mod:gomods \
+		golang.org/x/net/@v/v0.7.0.zip:gomods \
+		golang.org/x/net/@v/v0.7.0.mod:gomods \
+		golang.org/x/sys/@v/v0.5.0.zip:gomods \
+		golang.org/x/sys/@v/v0.5.0.mod:gomods \
+		golang.org/x/term/@v/v0.5.0.zip:gomods \
+		golang.org/x/term/@v/v0.5.0.mod:gomods
+EXTRACT_ONLY=	${GH_ACCOUNT}-${PORTNAME}-${PORTVERSION}-${GH_TAGNAME}_GH0.tar.gz
 
 MAINTAINER=	osa@FreeBSD.org
 COMMENT=	Fork of OpenSSL
@@ -19,18 +30,13 @@ CPE_VENDOR=	google
 USE_GITHUB=	yes
 GH_ACCOUNT=	google
 GH_TAGNAME=	a02b743
-GH_TUPLE=	golang:crypto:v0.6.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:net:v0.7.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.5.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.5.0:golang_term/vendor/golang.org/x/term
 CMAKE_ARGS+=	-DBUILD_SHARED_LIBS=1 \
 		-DCMAKE_BUILD_TYPE=Release
 USE_LDCONFIG=	yes
 LDFLAGS+=	-Wl,-rpath,${LOCALBASE}/lib
 TEST_TARGET=	run_tests
-MAKE_ENV+=	GOFLAGS=-mod=mod \
-		GOPATH=${WRKSRC}/vendor \
-		GOPROXY=off
+MAKE_ENV+=	GOFLAGS=-mod=readonly \
+		GOPROXY=file://${DISTDIR}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tool/bssl ${STAGEDIR}${PREFIX}/bin/

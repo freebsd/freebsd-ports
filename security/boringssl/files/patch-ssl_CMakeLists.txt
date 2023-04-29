@@ -1,6 +1,6 @@
---- ssl/CMakeLists.txt.orig	2023-02-17 15:49:44.924011000 -0500
-+++ ssl/CMakeLists.txt	2023-02-17 15:49:50.939101000 -0500
-@@ -55,3 +55,5 @@
+--- ssl/CMakeLists.txt.orig	2023-04-26 21:06:18 UTC
++++ ssl/CMakeLists.txt
+@@ -55,3 +55,5 @@ add_executable(
  )
  target_link_libraries(ssl_test test_support_lib boringssl_gtest_main ssl crypto)
  add_dependencies(all_tests ssl_test)
