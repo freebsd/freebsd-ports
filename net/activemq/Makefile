@@ -1,11 +1,11 @@
 PORTNAME=	activemq
-PORTVERSION=	5.17.2
+PORTVERSION=	5.18.1
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	-bin.tar.gz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	james@elstone.net
 COMMENT=	Messaging and Integration Patterns provider
 WWW=		https://activemq.apache.org
 
@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cpe
 CPE_VENDOR=	apache
 USE_JAVA=	yes
+JAVA_VERSION=	18
 USE_RC_SUBR=	activemq
 
 NO_ARCH=	yes
@@ -30,7 +31,8 @@ PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
 do-install:
-	${RM} ${WRKSRC}/conf/log4j.properties.orig
+	@${REINPLACE_CMD} -i '' -e 's|$\{sys:activemq.data\}\/audit.log|\$\{sys:activemq.logs\}\/audit.log|g' ${WRKSRC}/conf/log4j2.properties
+	@${REINPLACE_CMD} -i '' -e 's|$\{sys:activemq.data\}\/activemq.log|\$\{sys:activemq.logs\}\/activemq.log|g' ${WRKSRC}/conf/log4j2.properties
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
 	cd ${WRKSRC}/conf && for f in *; do \
 		${INSTALL_DATA} ${WRKSRC}/conf/$$f ${STAGEDIR}${ETCDIR}/$$f.sample; \
