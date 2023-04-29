@@ -3,5 +3,5 @@ include/lightning/jit_%%JIT_ARCH%%.h
 lib/liblightning.a
 lib/liblightning.so
 lib/liblightning.so.2
-lib/liblightning.so.2.0.0
+lib/liblightning.so.2.0.1
 libdata/pkgconfig/lightning.pc
