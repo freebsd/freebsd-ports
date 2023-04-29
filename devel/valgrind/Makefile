@@ -1,5 +1,5 @@
 PORTNAME=	valgrind
-PORTVERSION=	3.20.0
+PORTVERSION=	3.21.0
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	SOURCEWARE/valgrind
@@ -13,9 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-USES=		autoreconf cpe gmake pathfix perl5 pkgconfig shebangfix tar:bz2
+USES=		autoreconf cpe gmake pathfix perl5 pkgconfig shebangfix python:3.9+,run tar:bz2
 USE_PERL5=	build
-SHEBANG_FILES=	callgrind/callgrind_annotate.in callgrind/callgrind_control.in
+SHEBANG_FILES= callgrind/callgrind_annotate.in callgrind/callgrind_control.in cachegrind/cg_merge.in cachegrind/cg_diff.in cachegrind/cg_annotate.in
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	ac_cv_path_PERL=${PERL}
 
