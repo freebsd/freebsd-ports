@@ -6,7 +6,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Subscribe to MQTT topics and notify pluggable services
-WWW=		https://github.com/jpmens/mqttwarn
+WWW=		https://mqttwarn.readthedocs.io/
+			https://github.com/jpmens/mqttwarn
+			https://pypi.org/project/mqttwarn/
 
 LICENSE=	EPL
 
