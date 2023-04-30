@@ -1,6 +1,6 @@
 PORTNAME=	h2o
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3.0-dev.20220519
+DISTVERSION=	2.3.0-dev.20230427
 CATEGORIES=	www
 PKGNAMESUFFIX=	-devel
 
@@ -15,13 +15,14 @@ BROKEN_armv6=		fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assem
 BROKEN_armv7=		fails to compile: asm_arm.inc:139:36: '.syntax divided' arm assembly not supported
 BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: unrecognized option '-Wl,-rpath=/usr/local/lib/gcc6'
 
+BUILD_DEPENDS=	rubygem-rake>=0:devel/rubygem-rake
 LIB_DEPENDS=	libuv.so:devel/libuv
 
 USES=		cmake:noninja compiler:c11 cpe perl5 shebangfix ssl pkgconfig
 CPE_VENDOR=	dena
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
-GH_TAGNAME=	cf59e67
+GH_TAGNAME=	f010336
 CONFLICTS=	h2o
 
 SHEBANG_FILES=	share/h2o/start_server
