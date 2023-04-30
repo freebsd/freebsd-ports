@@ -17,11 +17,13 @@ LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libprotobuf-c.so:devel/protobuf-c
 
 USES=		autoreconf gmake libtool localbase ssl
-GNU_CONFIGURE=	yes
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated CRYPTO_MEM_CHECK_ON
 USE_GITHUB=	yes
-CONFIGURE_ARGS=	--with-ssl=openssl
-
 USE_RC_SUBR=	umurmur
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-ssl=openssl
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/configure.ac
