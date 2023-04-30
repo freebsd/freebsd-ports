@@ -1,6 +1,6 @@
 PORTNAME?=		mysql
 PORTVERSION=		8.0.32
-PORTREVISION?=		2
+PORTREVISION?=		3
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
@@ -32,7 +32,6 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libicutu.so:devel/icu \
 		liblz4.so:archivers/liblz4 \
 		libzstd.so:archivers/zstd \
-		libprotobuf.so:devel/protobuf \
 		libfido2.so:security/libfido2 \
 		libhidapi.so:comms/hidapi \
 		${LIB_DEPENDS_${ARCH}}
@@ -66,6 +65,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DINSTALL_INCLUDEDIR="include/mysql" \
 		-DINSTALL_INFODIR="${INFO_PATH}" \
 		-DINSTALL_LIBDIR="lib/mysql" \
+		-DINSTALL_PRIV_LIBDIR="lib/mysql/private" \
 		-DINSTALL_MANDIR="share/man" \
 		-DINSTALL_MYSQLDATADIR="${MY_DBDIR}" \
 		-DINSTALL_MYSQLKEYRINGDIR="etc/mysql/keyring" \
