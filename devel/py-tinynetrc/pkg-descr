@@ -1,0 +1,6 @@
+tinynetrc uses the netrc module from the standard library under the hood and
+adds a few improvements:
+
+- Adds write functionality.
+- Fixes a std lib bug with formatting a .netrc file.*
+- Parses .netrc into dictionary values rather than tuples.
