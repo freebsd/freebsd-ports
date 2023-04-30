@@ -1,7 +1,6 @@
 PORTNAME=	lfortran
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
-PORTREVISION=	2
+DISTVERSION=	0.19.0
 CATEGORIES=	lang
 
 MAINTAINER=	fortran@FreeBSD.org
@@ -18,28 +17,39 @@ BUILD_DEPENDS=	bash:shells/bash		\
 		dwarfdump:devel/dwarfdump	\
 		rapidjson>0:devel/rapidjson
 LIB_DEPENDS=	libfmt.so:devel/libfmt	\
+		libzstd.so:archivers/zstd	\
 		libunwind.so:devel/libunwind	\
 		libLLVM-${LLVM_VERSION}.so:devel/llvm${LLVM_VERSION}
 RUN_DEPENDS=	dwarfdump:devel/dwarfdump
 
 USE_GITHUB=	yes
 
-USES=		bison cmake:testing compiler:c++17-lang python:build shebangfix
+USES=		bison cmake:testing compiler:c++17-lang pkgconfig	\
+		python:build ssl shebangfix
 SHEBANG_FILES=	*.sh
 BINARY_ALIAS=	python=${PYTHON_CMD}
-CMAKE_ON=	LFORTRAN_BUILD_ALL WITH_DWARFDUMP WITH_FMT WITH_JSON WITH_LINKH WITH_LLVM WITH_UNWIND
+CMAKE_ON=	LFORTRAN_BUILD_ALL WITH_DWARFDUMP WITH_FMT WITH_JSON	\
+		WITH_LINKH WITH_LLVM WITH_STACKTRACE WITH_UNWIND
 
-LLVM_VERSION=	11
+LLVM_VERSION=	15
 
 OPTIONS_DEFINE=	DOCS
 
-# Xeus: version 2.4.1 is required
-#LIB_DEPENDS+=	libxeus.so:devel/xeus
-#CMAKE_ON+=	WITH_XEUS
+# Xeus: version 3.0.5 is required and xeus-zmq 1.0.2
+# + xtl-quant-stack + cppzmq + nlohmann_json + LibUUID + libzmq4
+BUILD_DEPENDS+=	xtl-quant-stack>=0.7:devel/xtl-quant-stack	\
+		nlohmann-json>0:devel/nlohmann-json	\
+		cppzmq>=4.8.1:net/cppzmq
+LIB_DEPENDS+=	libxeus.so:devel/xeus	\
+		libzmq.so:net/libzmq4	\
+		libxeus-zmq.so:devel/xeus-zmq	\
+		libuuid.so:misc/e2fsprogs-libuuid
+CMAKE_ON+=	WITH_XEUS
 
-# BFD: /usr/local/include/bfd.h:2108:3: error: unknown type name 'ENUM_BITFIELD'
-#USE_BINUTILS=	yes
-#CMAKE_ON+=	WITH_BFD
+# BFD:
+USE_BINUTILS=	yes
+CMAKE_ON+=	WITH_BFD
+LIB_DEPENDS+=	libbfd-2.40.so:devel/binutils
 
 pre-configure:
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/version
