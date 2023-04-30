@@ -1,7 +1,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
-DISTVERSION?=	1.14.4
-PORTREVISION?=	2
+DISTVERSION?=	1.15
+PORTREVISION?=	0
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -26,12 +26,13 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrydgard
-GH_TUPLE?=	hrydgard:glslang:8.13.3743-339-gdc11adde:glslang/ext/glslang \
+GH_TUPLE?=	hrydgard:glslang:8.13.3743-948-gb34f619e:glslang/ext/glslang \
 		hrydgard:miniupnp:miniupnpd_2_1-502-g3a87be3:miniupnp/ext/miniupnp \
-		facebook:zstd:v1.4.7-1276-g096dccbc:zstd/ext/zstd \
+		facebook:zstd:v1.5.5:zstd/ext/zstd \
+		google:cpu_features:v0.7.0-60-g75ec988:cpu_features/ext/cpu_features \
 		unknownbrackets:ppsspp-debugger:9776332:debugger/assets/debugger \
-		KhronosGroup:SPIRV-Cross:2021-01-15:SPIRV/ext/SPIRV-Cross \
-		Kingcom:armips:v0.11.0-184-g6719ede:armips/ext/armips \
+		KhronosGroup:SPIRV-Cross:sdk-1.3.239.0:SPIRV/ext/SPIRV-Cross \
+		Kingcom:armips:v0.11.0-188-g7bd1ec9:armips/ext/armips \
 		Kingcom:filesystem:v1.3.2-12-g3f1c185:filesystem/ext/armips/ext/filesystem
 
 CONFLICTS_INSTALL=	${PORTNAME}-*
