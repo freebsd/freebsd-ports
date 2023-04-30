@@ -1,6 +1,5 @@
 PORTNAME=	audacious-plugins
-PORTVERSION=	4.3
-PORTREVISION=	6
+PORTVERSION=	4.3.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.audacious-media-player.org/
 
@@ -27,7 +26,7 @@ USE_XORG=	x11
 
 CONFIGURE_ENV=		LIBRARY_PATH="${LOCALBASE}/lib"
 MAKE_ENV=		LIBRARY_PATH="${LOCALBASE}/lib"
-MESON_ARGS=		-Dconsole=false -Dmms=false -Dsoxr=false -Dcoreaudio=false
+MESON_ARGS=		-Dmms=false -Dcoreaudio=false
 
 qt5_CONFLICTS_INSTALL=	audacious-plugins-qt6 audacious-plugins-gtk2 audacious-plugins-gtk3
 qt5_RUN_DEPENDS=	audacious:multimedia/audacious@qt5
@@ -70,9 +69,10 @@ USE_GNOME+=		cairo gtk30
 PLIST_SUB=		QT="@comment " QT6="@comment " GTK=""
 .endif
 
-OPTIONS_DEFINE=	AAC ADPLUG AMIDI BS2B CDDA CUE FFMPEG FLAC LAME LIRC \
+OPTIONS_DEFINE=	AAC ADPLUG AMIDI BS2B CDDA CONSOLE CUE FFMPEG FLAC LAME LIRC \
 		MODPLUG MPG123 MPRIS NEON NLS NOTIFY OPENGL OPENMPT OPUS \
-		SAMPLERATE SCROBBLER SID SNDFILE SPEEDPITCH VORBIS WAVPACK
+		SAMPLERATE SCROBBLER SID SNDFILE SOXR SPEEDPITCH VORBIS \
+		WAVPACK
 OPTIONS_MULTI=		OUTPUT
 OPTIONS_MULTI_OUTPUT=	ALSA FILEWRITER JACK OSS PIPEWIRE PULSEAUDIO SDL SNDIO
 OPTIONS_DEFAULT=	AAC ADPLUG CDDA CUE FILEWRITER FFMPEG FLAC MPRIS \
@@ -89,6 +89,7 @@ ADPLUG_DESC=		ADPLUG plugin
 AMIDI_DESC=		Amidi decoder
 AOSD_DESC=		Audacious OSD
 BS2B_DESC=		BS2B effect
+CONSOLE_DESC=		Game Console Music Emulation
 FILEWRITER_DESC=	File writer
 MPRIS_DESC=		NPRIS plugin
 NEON_DESC=		Neon plugin
@@ -118,6 +119,7 @@ CDDA_LIB_DEPENDS=	libcdio_cdda.so:sysutils/libcdio-paranoia \
 			libcddb.so:audio/libcddb \
 			libcdio.so:sysutils/libcdio
 CDDA_MESON_TRUE=	cdaudio
+CONSOLE_MESON_TRUE=	console
 CUE_LIB_DEPENDS=	libcue.so:textproc/libcue
 CUE_MESON_TRUE=		cue
 FILEWRITER_MESON_TRUE=	filewriter
@@ -170,6 +172,8 @@ SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
 SNDFILE_MESON_TRUE=	sndfile
 SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 SNDIO_MESON_TRUE=	sndio
+SOXR_LIB_DEPENDS=	libsoxr.so:audio/libsoxr
+SOXR_MESON_TRUE=	soxr
 SPEEDPITCH_MESON_TRUE=	speedpitch
 SPEEDPITCH_IMPLIES=	SAMPLERATE
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
@@ -199,12 +203,6 @@ MESON_ARGS+=	-Dfilewriter-ogg=false
 .else
 MESON_ARGS+=	-Dfilewriter-flac=false -Dfilewriter-mp3=false -Dfilewriter-ogg=false
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/src/aac/meson.build \
-		${WRKSRC}/src/filewriter/meson.build \
-		${WRKSRC}/src/lirc/meson.build
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
