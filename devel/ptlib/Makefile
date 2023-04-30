@@ -14,6 +14,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2
 
 USES=		autoreconf:build bison:wrapper compiler:c11 gmake localbase:ldflags \
 		pathfix pkgconfig ssl tar:xz
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Uses OpenSSL 3.0.0 deprecated BIO_s_file_internal
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -118,8 +120,8 @@ CONFIGURE_ARGS+=	--disable-dc
 post-patch:
 	@${REINPLACE_CMD} -e 's/RTF_WASCLONED/0x20000/' ${WRKSRC}/src/ptlib/unix/socket.cxx
 
-#pre-configure:
-#	(cd ${WRKSRC}/plugins/ && ${AUTORECONF} -fi)
+pre-configure:
+	(cd ${WRKSRC}/plugins/ && ${AUTORECONF} -fi)
 
 post-install:
 	${LN} -sf libpt.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt.so.${PVERSION_MAJOR}
