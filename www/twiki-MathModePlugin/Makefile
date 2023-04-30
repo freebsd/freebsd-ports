@@ -1,6 +1,6 @@
 PORTNAME=	MathModePlugin
 SVNREV=		15934
-PORTREVISION=	1
+PORTREVISION=	2
 MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
 		LOCAL/skv
 

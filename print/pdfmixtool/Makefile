@@ -1,5 +1,6 @@
 PORTNAME=	pdfmixtool
 DISTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	print graphics editors
 PKGNAMESUFFIX=	-${FLAVOR}
 

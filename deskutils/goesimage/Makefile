@@ -1,5 +1,6 @@
 PORTNAME=	goesimage
 DISTVERSION=	0.1.3
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org

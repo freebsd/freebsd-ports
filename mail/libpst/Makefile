@@ -1,6 +1,6 @@
 PORTNAME=	libpst
 PORTVERSION=	0.6.76
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail converters
 MASTER_SITES=	https://www.five-ten-sg.com/libpst/packages/ \
 		https://fossies.org/unix/privat/ \

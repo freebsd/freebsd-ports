@@ -1,5 +1,6 @@
 PORTNAME=	chatgpt-shell-cli
 DISTVERSION=	g20230411
+PORTREVISION=	1
 CATEGORIES=	misc
 
 MAINTAINER=	nivit@FreeBSD.org

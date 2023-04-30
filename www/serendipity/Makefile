@@ -1,5 +1,6 @@
 PORTNAME=	serendipity
 PORTVERSION=	2.3.5
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	joneum@FreeBSD.org

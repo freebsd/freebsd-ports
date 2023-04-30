@@ -1,6 +1,6 @@
 PORTNAME=	l2p
 PORTVERSION=	1.1.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics print perl5
 MASTER_SITES=	http://static.redsymbol.net/software/l2p/dist/ \
 		http://nivit.altervista.org/FreeBSD/ports/distfiles/

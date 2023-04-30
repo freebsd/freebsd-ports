@@ -1,6 +1,6 @@
 PORTNAME=	freetype-gl
 DISTVERSION=	g20210208
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/

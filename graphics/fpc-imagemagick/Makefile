@@ -1,3 +1,4 @@
+PORTREVISION=	4
 CATEGORIES=	graphics lang
 PKGNAMESUFFIX=	-imagemagick
 
