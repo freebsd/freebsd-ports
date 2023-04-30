@@ -17915,3 +17915,4 @@ sysutils/u-boot-utilite||2023-04-30|Has expired: This port depends on the long t
 sysutils/py-psutil121|sysutils/py-psutil|2023-04-30|Has expired: Use sysutils/py-psutil instead
 www/dolibarr13||2023-04-30|Has expired: No support PHP >= 8.x
 www/dolibarr15||2023-04-30|Has expired: No support PHP >= 8.x
+www/dolibarr14||2023-04-30|Has expired: No support PHP >= 8.x

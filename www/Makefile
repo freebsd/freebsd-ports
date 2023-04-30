@@ -115,7 +115,6 @@
     SUBDIR += dojo
     SUBDIR += dokuwiki
     SUBDIR += dolibarr
-    SUBDIR += dolibarr14
     SUBDIR += dolibarr16
     SUBDIR += domoticz
     SUBDIR += dooble
