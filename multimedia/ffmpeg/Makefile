@@ -627,6 +627,8 @@ INSTALL_TARGET=	install-progs install-doc install-data \
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 MAKE_ENV+=	V=1
+CFLAGS_armv6=	-Wno-error=int-conversion
+CFLAGS_armv7=	-Wno-error=int-conversion
 CFLAGS_i386=	-Wno-error=int-conversion
 LDFLAGS_aarch64=-Wl,-z,notext
 LDFLAGS_armv6=	-Wl,-z,notext
