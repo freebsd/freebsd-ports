@@ -3552,6 +3552,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%DATADIR%%/i18n/qgis_ro.qm
 %%DATADIR%%/i18n/qgis_ru.qm
 %%DATADIR%%/i18n/qgis_sc.qm
+%%DATADIR%%/i18n/qgis_sk.qm
 %%DATADIR%%/i18n/qgis_sv.qm
 %%DATADIR%%/i18n/qgis_tr.qm
 %%DATADIR%%/i18n/qgis_uk.qm
