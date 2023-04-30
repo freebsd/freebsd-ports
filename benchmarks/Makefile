@@ -100,7 +100,6 @@
     SUBDIR += spp
     SUBDIR += stream
     SUBDIR += stress-ng
-    SUBDIR += super-smack
     SUBDIR += sysbench
     SUBDIR += tcpblast
     SUBDIR += thrulay
