@@ -28,6 +28,8 @@ LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 		libre2.so:devel/re2
 
 USES=		cmake compiler:c++17-lang pkgconfig ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated MD5_/SHA256_ routines
 USE_GITHUB=	yes
 GH_ACCOUNT=	GoogleCloudPlatform
 GH_TUPLE=	googleapis:googleapis:59f97e6044a1275f83427ab7962a154c00d915b5:googleapis
