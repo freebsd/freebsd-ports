@@ -27,7 +27,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
-
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	no matching function for call to 'CRYPTO_get_ex_new_index'
 CONFLICTS=	squid3-* squid-4.*
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
