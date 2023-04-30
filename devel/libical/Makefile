@@ -1,6 +1,6 @@
 PORTNAME=	libical
-DISTVERSION=	3.0.8
-PORTREVISION=	9
+DISTVERSION=	3.0.16
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/libical/libical/releases/download/v${PORTVERSION}/
 
