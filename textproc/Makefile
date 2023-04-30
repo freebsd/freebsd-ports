@@ -1320,6 +1320,7 @@
     SUBDIR += py-docstring-parser
     SUBDIR += py-docstring-to-markdown
     SUBDIR += py-docutils
+    SUBDIR += py-docx-generator
     SUBDIR += py-docx2txt
     SUBDIR += py-docxcompose
     SUBDIR += py-docxtpl
