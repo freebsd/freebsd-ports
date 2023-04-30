@@ -1322,6 +1322,7 @@
     SUBDIR += py-docutils
     SUBDIR += py-docx2txt
     SUBDIR += py-docxcompose
+    SUBDIR += py-docxtpl
     SUBDIR += py-dominate
     SUBDIR += py-dparse
     SUBDIR += py-duecredit
