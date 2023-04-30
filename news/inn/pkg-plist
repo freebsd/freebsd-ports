@@ -76,6 +76,7 @@ bin/ovdb_server
 bin/ovdb_stat
 bin/overchan
 %%SQLITE%%bin/ovsqlite-server
+%%SQLITE%%bin/ovsqlite-util
 bin/perl-nocem
 bin/pgpverify
 bin/procbatch
@@ -291,6 +292,7 @@ man/man8/ovdb_monitor.8.gz
 man/man8/ovdb_server.8.gz
 man/man8/ovdb_stat.8.gz
 %%SQLITE%%man/man8/ovsqlite-server.8.gz
+%%SQLITE%%man/man8/ovsqlite-util.8.gz
 man/man8/overchan.8.gz
 man/man8/perl-nocem.8.gz
 man/man8/procbatch.8.gz
