@@ -9,14 +9,24 @@ WWW=		https://www.astro.caltech.edu/~mcs/tecla/
 
 LICENSE=	MIT
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-GNU_CONFIGURE=	yes
-USE_SUBMAKE=	yes
-ALL_TARGET=	default
 USE_LDCONFIG=	yes
+USE_SUBMAKE=	yes
+
+GNU_CONFIGURE=	yes
+
 MAKE_JOBS_UNSAFE=	yes
-SSP_UNSAFE=	yes
+ALL_TARGET=	default
+
 LLD_UNSAFE=	yes
+SSP_UNSAFE=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=       -Wno-error=int-conversion
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^OPT = -O,OPT =,' \
@@ -47,4 +57,4 @@ do-install:
 		${INSTALL_MAN} $${n%.in} ${STAGEDIR}${PREFIX}/man/man7/$${d%.in}.7; \
 	done
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
