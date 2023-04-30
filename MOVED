@@ -17912,3 +17912,4 @@ devel/datovka|mail/datovka|2023-04-25|Move port to proper category
 benchmarks/super-smack||2023-04-30|Has expired: Unfetchable
 www/moodle39||2023-04-30|Has expired: Requires php74 which has been removed from the tree
 sysutils/u-boot-utilite||2023-04-30|Has expired: This port depends on the long time unsupported upstream devel/arm-none-eabi-gcc492
+sysutils/py-psutil121|sysutils/py-psutil|2023-04-30|Has expired: Use sysutils/py-psutil instead
