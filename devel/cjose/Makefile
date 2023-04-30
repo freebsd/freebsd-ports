@@ -13,6 +13,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libjansson.so:devel/jansson
 
 USES=		compiler:c++11-lang libtool pathfix pkgconfig ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_ routines
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
