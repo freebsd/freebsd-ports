@@ -1,3 +1,37 @@
+  <vuln vid="4da51989-5a8b-4eb9-b442-46d94ec0802d">
+      <topic>h2o -- Malformed HTTP/1.1 causes Out-of-Memory Denial of Service</topic>
+    <affects>
+      <package>
+    <name>h2o</name>
+    <range><le>2.2.6</le></range>
+      </package>
+      <package>
+    <name>h2o-devel</name>
+    <range><lt>2.3.0.d.20230427</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Elijah Glover reports:</p>
+    <blockquote cite="https://github.com/h2o/h2o/issues/3228">
+       <p>
+       Malformed HTTP/1.1 requests can crash worker processes.
+       occasionally locking up child workers and causing denial of
+       service, and an outage dropping any open connections.
+       </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-30847</cvename>
+      <url>https://github.com/h2o/h2o/security/advisories/GHSA-p5hj-phwj-hrvx</url>
+    </references>
+    <dates>
+      <discovery>2023-04-27</discovery>
+      <entry>2023-04-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d2c6173f-e43b-11ed-a1d7-002590f2a714">
     <topic>git -- Multiple vulnerabilities</topic>
     <affects>
