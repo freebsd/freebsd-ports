@@ -589,6 +589,10 @@ lib/R/library/grDevices/enc/MacRoman.enc
 lib/R/library/grDevices/enc/PDFDoc.enc
 lib/R/library/grDevices/enc/TeXtext.enc
 lib/R/library/grDevices/enc/WinAnsi.enc
+lib/R/library/grDevices/fonts/Montserrat/static/Montserrat-BoldItalic.ttf
+lib/R/library/grDevices/fonts/Montserrat/static/Montserrat-Medium.ttf
+lib/R/library/grDevices/fonts/Roboto/LICENSE.txt
+lib/R/library/grDevices/fonts/Roboto/Roboto-Medium.ttf
 lib/R/library/grDevices/help/AnIndex
 lib/R/library/grDevices/help/aliases.rds
 lib/R/library/grDevices/help/grDevices.rdb
@@ -708,8 +712,9 @@ lib/R/library/lattice/Meta/hsearch.rds
 lib/R/library/lattice/Meta/links.rds
 lib/R/library/lattice/Meta/nsInfo.rds
 lib/R/library/lattice/Meta/package.rds
+lib/R/library/lattice/Meta/vignette.rds
 lib/R/library/lattice/NAMESPACE
-lib/R/library/lattice/NEWS
+lib/R/library/lattice/NEWS.md
 lib/R/library/lattice/R/lattice
 lib/R/library/lattice/R/lattice.rdb
 lib/R/library/lattice/R/lattice.rdx
@@ -720,6 +725,10 @@ lib/R/library/lattice/demo/intervals.R
 lib/R/library/lattice/demo/labels.R
 lib/R/library/lattice/demo/lattice.R
 lib/R/library/lattice/demo/panel.R
+lib/R/library/lattice/doc/grid.R
+lib/R/library/lattice/doc/grid.Rnw
+lib/R/library/lattice/doc/grid.pdf
+lib/R/library/lattice/doc/index.html
 lib/R/library/lattice/help/AnIndex
 lib/R/library/lattice/help/aliases.rds
 lib/R/library/lattice/help/lattice.rdb
@@ -1017,6 +1026,7 @@ lib/R/library/stats/Meta/hsearch.rds
 lib/R/library/stats/Meta/links.rds
 lib/R/library/stats/Meta/nsInfo.rds
 lib/R/library/stats/Meta/package.rds
+%%TEXDOCS%%lib/R/library/stats/Meta/vignette.rds
 lib/R/library/stats/NAMESPACE
 lib/R/library/stats/R/stats
 lib/R/library/stats/R/stats.rdb
@@ -1026,6 +1036,10 @@ lib/R/library/stats/demo/glm.vr.R
 lib/R/library/stats/demo/lm.glm.R
 lib/R/library/stats/demo/nlm.R
 lib/R/library/stats/demo/smooth.R
+%%TEXDOCS%%lib/R/library/stats/doc/index.html
+%%TEXDOCS%%lib/R/library/stats/doc/reshape.R
+%%TEXDOCS%%lib/R/library/stats/doc/reshape.Rnw
+%%TEXDOCS%%lib/R/library/stats/doc/reshape.pdf
 lib/R/library/stats/help/AnIndex
 lib/R/library/stats/help/aliases.rds
 lib/R/library/stats/help/paths.rds
