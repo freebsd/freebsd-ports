@@ -1,5 +1,5 @@
 PORTNAME=	audacious
-PORTVERSION=	4.3
+PORTVERSION=	4.3.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	https://distfiles.audacious-media-player.org/
 
@@ -71,10 +71,6 @@ LIBARCHIVE_MESON_TRUE=	libarchive
 LIBARCHIVE_USES=	libarchive
 
 NLS_USES=		gettext-runtime
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
-		${WRKSRC}/src/libaudqt/meson.build
 
 post-patch-NLS-off:
 	@${REINPLACE_CMD} -e "/^subdir('po')/d" ${WRKSRC}/meson.build
