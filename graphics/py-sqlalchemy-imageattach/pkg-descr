@@ -1,0 +1,7 @@
+SQLAlchemy-ImageAttach is a SQLAlchemy extension for attaching images to entity
+objects. It provides the following features:
+
+- Storage backend interface
+- Maintaining multiple image sizes
+- Every image has its URL
+- SQLAlchemy transaction aware
