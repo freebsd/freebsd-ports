@@ -2,8 +2,8 @@ bin/srain
 %%ETCDIR%%/builtin.cfg
 %%PORTDOCS%%man/man1/srain.1.gz
 share/applications/im.srain.Srain.desktop
-share/icons/hicolor/128x128/apps/im.srain.Srain.png
 share/icons/hicolor/128x128/apps/im.srain.Srain.Red.png
+share/icons/hicolor/128x128/apps/im.srain.Srain.png
 share/locale/nl/LC_MESSAGES/srain.mo
 share/locale/ru/LC_MESSAGES/srain.mo
 share/locale/uk/LC_MESSAGES/srain.mo
@@ -51,6 +51,7 @@ share/metainfo/im.srain.Srain.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/prefs.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/start.rst.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/_sources/support.rst.txt
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/_sphinx_javascript_frameworks_compat.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/alabaster.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/basic.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/custom.css
@@ -58,13 +59,14 @@ share/metainfo/im.srain.Srain.metainfo.xml
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/documentation_options.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/file.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/im.srain.Srain.png
-%%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery-3.5.1.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery-3.6.0.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/jquery.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/language_data.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/minus.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/sphinx_highlight.js
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/srain-connect-custom-server.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/srain-connect-predefined-server.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/srain-connected-server.png

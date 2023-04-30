@@ -10,13 +10,11 @@ WWW=		https://srain.im/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to package
-
 LIB_DEPENDS=	libconfig.so:devel/libconfig \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup
 
-USES=		compiler:c11 gettext-tools gnome meson pkgconfig ssl
+USES=		compiler:c11 gettext-tools desktop-file-utils gnome meson pkgconfig ssl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
 
 OPTIONS_DEFINE=	DOCS
