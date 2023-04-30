@@ -1,0 +1,7 @@
+This is a python class file for use with other python scripts to send events to
+a Splunk http event collector.
+
+Supported products:
+
+Splunk v6.3.X+
+Splunk v6.4.X+ for the raw input option
