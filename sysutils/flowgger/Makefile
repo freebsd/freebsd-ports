@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	capnp:devel/capnproto
 
 USES=		cargo ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Cannot detect OpenSSL 3.0.0 and later
 CARGO_CRATES=	adler32-1.0.4 \
 		ansi_term-0.11.0 \
 		ascii-0.9.3 \
