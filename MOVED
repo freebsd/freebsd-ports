@@ -17916,3 +17916,4 @@ sysutils/py-psutil121|sysutils/py-psutil|2023-04-30|Has expired: Use sysutils/py
 www/dolibarr13||2023-04-30|Has expired: No support PHP >= 8.x
 www/dolibarr15||2023-04-30|Has expired: No support PHP >= 8.x
 www/dolibarr14||2023-04-30|Has expired: No support PHP >= 8.x
+devel/zpu-gcc||2023-04-30|Has expired: Broken with latest C compiler and port unused
