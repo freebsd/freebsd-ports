@@ -1,8 +1,7 @@
 %%PORTNAME%%/bin/create-account
+%%PORTNAME%%/bin/dendrite
 %%PORTNAME%%/bin/dendrite-demo-pinecone
 %%PORTNAME%%/bin/dendrite-demo-yggdrasil
-%%PORTNAME%%/bin/dendrite-monolith-server
-%%PORTNAME%%/bin/dendrite-polylith-multi
 %%PORTNAME%%/bin/dendrite-upgrade-tests
 %%PORTNAME%%/bin/furl
 %%PORTNAME%%/bin/generate-config

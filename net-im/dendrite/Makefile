@@ -1,7 +1,6 @@
 PORTNAME=	dendrite
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.11.1
-PORTREVISION=	3
+DISTVERSION=	0.12.2
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -19,9 +18,9 @@ USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
 DENDRITE_BINS=	create-account dendrite-demo-pinecone			\
-		dendrite-demo-yggdrasil dendrite-monolith-server	\
-		dendrite-polylith-multi dendrite-upgrade-tests		\
-		furl generate-config generate-keys resolve-state
+		dendrite-demo-yggdrasil dendrite			\
+		dendrite-upgrade-tests furl generate-config 		\
+		generate-keys resolve-state
 
 .for f in ${DENDRITE_BINS}
 GO_TARGET+=	./cmd/$f:${PREFIX}/dendrite/bin/$f
@@ -30,6 +29,7 @@ GO_TARGET+=	./cmd/$f:${PREFIX}/dendrite/bin/$f
 USE_GITHUB=	yes
 USE_GITLAB=	nodefault
 GH_ACCOUNT=	matrix-org
+GH_TAGNAME=	helm-dendrite-${DISTVERSION}
 GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arceliar/ironwood \
 		Arceliar:phony:dde1a8dca979:arceliar_phony/vendor/github.com/Arceliar/phony \
 		DATA-DOG:go-sqlmock:v1.5.0:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
@@ -71,21 +71,21 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:v0.5.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.6.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:47842c84f3db:golang_exp/vendor/golang.org/x/exp \
 		golang:geo:740aa86cb551:golang_geo/vendor/github.com/golang/geo \
 		golang:glog:v1.0.0:golang_glog/vendor/github.com/golang/glog \
-		golang:image:v0.1.0:golang_image/vendor/golang.org/x/image \
+		golang:image:v0.5.0:golang_image/vendor/golang.org/x/image \
 		golang:mobile:b36e6246172e:golang_mobile/vendor/golang.org/x/mobile \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.6.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.5.0:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.7.0:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:v0.4.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.4.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.6.0:golang_text/vendor/golang.org/x/text \
-		golang:time:v0.1.0:golang_time/vendor/golang.org/x/time \
+		golang:sys:v0.5.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.5.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.7.0:golang_text/vendor/golang.org/x/text \
+		golang:time:v0.3.0:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.2.0:golang_tools/vendor/golang.org/x/tools \
 		gologme:log:v1.3.0:gologme_log/vendor/github.com/gologme/log \
 		google:go-cmp:v0.5.9:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -100,18 +100,18 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		juju:errors:v1.0.0:juju_errors/vendor/github.com/juju/errors \
 		kardianos:minwinsvc:v1.0.2:kardianos_minwinsvc/vendor/github.com/kardianos/minwinsvc \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		klauspost:compress:v1.15.11:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.16.0:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.1:kr_pretty/vendor/github.com/kr/pretty \
 		lib:pq:v1.10.7:lib_pq/vendor/github.com/lib/pq \
 		lukechampine:uint128:v1.2.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:ceba4d9f7530:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:122f1e0e3fa1:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:gomatrixserverlib:4dd7ff2f0e3a:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
 		matrix-org:pinecone:8c3b24f2649a:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:399730281e66:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-isatty:v0.0.16:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-sqlite3:v1.14.15:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
+		mattn:go-sqlite3:v1.14.16:mattn_go_sqlite3/vendor/github.com/mattn/go-sqlite3 \
 		matttproud:golang_protobuf_extensions:c182affec369:matttproud_golang_protobuf_extensions/vendor/github.com/matttproud/golang_protobuf_extensions \
 		minio:highwayhash:v1.0.2:minio_highwayhash/vendor/github.com/minio/highwayhash \
 		moby:moby:v20.10.19:moby_moby/vendor/github.com/docker/docker \
@@ -121,13 +121,12 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		morikuni:aec:v1.0.0:morikuni_aec/vendor/github.com/morikuni/aec \
 		mschoch:smat:v0.2.0:mschoch_smat/vendor/github.com/mschoch/smat \
 		nats-io:jwt:v2.3.0:nats_io_jwt_v2/vendor/github.com/nats-io/jwt \
-		nats-io:nats-server:v2.9.8:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
-		nats-io:nats.go:v1.20.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
+		nats-io:nats-server:v2.9.15:nats_io_nats_server_v2/vendor/github.com/nats-io/nats-server/v2 \
+		nats-io:nats.go:v1.24.0:nats_io_nats_go/vendor/github.com/nats-io/nats.go \
 		nats-io:nkeys:v0.3.0:nats_io_nkeys/vendor/github.com/nats-io/nkeys \
 		nats-io:nuid:v1.0.1:nats_io_nuid/vendor/github.com/nats-io/nuid \
 		neilalexander:utp:54ae7b1cd5f9:neilalexander_utp/vendor/github.com/neilalexander/utp \
 		nfnt:resize:83c6a9932646:nfnt_resize/vendor/github.com/nfnt/resize \
-		ngrok:sqlmw:97c9c04efc79:ngrok_sqlmw/vendor/github.com/ngrok/sqlmw \
 		nhooyr:websocket:v1.8.7:nhooyr_websocket/vendor/nhooyr.io/websocket \
 		onsi:ginkgo:v2.3.0:onsi_ginkgo_v2/vendor/github.com/onsi/ginkgo/v2 \
 		onsi:gomega:v1.22.1:onsi_gomega/vendor/github.com/onsi/gomega \
@@ -170,7 +169,7 @@ GL_TUPLE=	cznic:cc:03159e8e41eec8d08c1e502bfc46868b9a03aa57:cznic_cc/vendor/mode
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/dendrite-sample.monolith.yaml ${STAGEDIR}${ETCDIR}/${PORTNAME}.yaml.sample
+	${INSTALL_DATA} ${WRKSRC}/dendrite-sample.yaml ${STAGEDIR}${ETCDIR}/${PORTNAME}.yaml.sample
 	${INSTALL_DATA} ${WRKSRC}/README.md ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
