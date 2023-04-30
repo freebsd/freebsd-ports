@@ -1,0 +1,22 @@
+Ingest EVTX files into a Splunk instance.
+
+This tool is based on the work of :
+
+Omer BenAmram
+Blardy
+Thanks to Ekto for its contribution.
+
+Key features:
+
+- Splunk HEC support with token auto-creation
+- Splunk index auto-creation
+- Multiprocessing support
+- Caching for evtx reuse without reconverting
+- Windows and Linux compatibility
+- Rely on the great and fast evtx_dump Rust tool of Omer
+- Evtx message resolutions from database
+
+Note: evtx2splunk converts the EVTX to JSON and stores them in a temporary
+place. Hence, up to the size of source EVTX can be created during the process.
+These files are removed at the end of the process, except if keep_cache is
+enabled.
