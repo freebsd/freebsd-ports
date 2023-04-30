@@ -352,6 +352,8 @@ usage()
 
 # main
 
+trap cleanup 1 2 3 15
+
 if [ ! -r ${INDEX} ] ; then
 	echo "${INDEX} not readable, exiting" >&2
 	exit 66
@@ -471,7 +473,3 @@ while [ "${answer}" = "y" ] ; do
 done
 
 commit
-
-cleanup
-
-# EOF
