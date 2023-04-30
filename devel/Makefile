@@ -7731,7 +7731,6 @@
     SUBDIR += zfp
     SUBDIR += zls
     SUBDIR += zookeeper
-    SUBDIR += zpu-binutils
     SUBDIR += zthread
     SUBDIR += zycore-c
     SUBDIR += zydis
