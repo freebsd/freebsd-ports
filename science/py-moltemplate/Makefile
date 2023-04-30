@@ -1,7 +1,6 @@
 PORTNAME=	moltemplate
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.20.17
-PORTREVISION=	1
+DISTVERSION=	2.20.20
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,6 +9,7 @@ COMMENT=	Tool to prepare simulations of molecules, complex molecular assemblies
 WWW=		https://www.moltemplate.org/
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
@@ -31,7 +31,6 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} PATH=${STAGEDIR}${LOCALBASE}/bin:${PATH}
 
 do-test: # testsuite instructions: https://github.com/jewettaij/moltemplate/issues/65#issuecomment-1022740972
-	# 1 test fails, see https://github.com/jewettaij/moltemplate/issues/86
 	@cd ${WRKSRC} && \
 		([ -e shunit2 ] || (${MKDIR} tests/shunit2 && ${RM} tests/shunit2/shunit2 && ${LN} -s ${LOCALBASE}/bin/shunit2 tests/shunit2/shunit2)) && \
 		${SETENV} ${TEST_ENV} bash tests/test_read_coords_pdb.sh && \
