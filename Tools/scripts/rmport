@@ -316,7 +316,7 @@ commit()
 	answer=$(ask "Do you want to tweak the commit message")
 	if [ "${answer}" = "y" ] ; then
 		${GIT} pull --ff-only --rebase 2>&1
-		${GIT} commit 2>&1 # modify final commit message
+		${GIT} commit --amend # modify final commit message
 		echo "All done, check the result and push when everything is OK."
 	fi
 }
