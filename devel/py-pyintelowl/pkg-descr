@@ -1,0 +1,13 @@
+Robust Python SDK and Command Line Client for interacting with IntelOwl's API.
+
+Features
+
+- Easy one-time configuration with self documented help and hints along the
+  way.
+- Request new analysis for observables and files.
+- Select which analyzers you want to run for every analysis you perform.
+- Choose whether you want to HTTP poll for the analysis to finish or not.
+- List all jobs or view one job in a prettified tabular form.
+- List all tags or view one tag in a prettified tabular form.
+- Tabular view of the analyzer_config.json and connector_config.json from
+  IntelOwl with RegEx matching capabilities.
