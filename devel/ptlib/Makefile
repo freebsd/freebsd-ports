@@ -12,110 +12,71 @@ LICENSE=	MPL10
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
-CONFLICTS=	pwlib-1.*
-
 USES=		autoreconf:build bison:wrapper compiler:c11 gmake localbase:ldflags \
 		pathfix pkgconfig ssl tar:xz
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CPPFLAGS+=	-I${OPENSSLINC}
-LDFLAGS+=	-L${OPENSSLLIB}
 
-CONFIGURE_ARGS+=--enable-audio \
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=--disable-lua \
+		--disable-sasl \
+		--enable-audio \
 		--enable-ipv6 \
 		--enable-exceptions \
 		--enable-oss \
 		--enable-plugins
-
-CONFIGURE_ARGS+=--disable-lua \
-		--disable-sasl
-
 # --with-expat-dir="${LOCALBASE}"
-CONFIGURE_ENV+=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl"
 
-OPTIONS_DEFINE=	DEBUG ODBC ALSA JABBER V4L SDL LDAP PULSEAUDIO
-OPTIONS_DEFAULT=SDL V4L JABBER
+ALL_TARGET=	optshared
 
-BSDVIDEO_DESC=	BSD video support
-DEBUG_DESC=	Install debug library
+CPPFLAGS+=	-I${OPENSSLINC}
+LDFLAGS+=	-L${OPENSSLLIB}
 
-.include <bsd.port.options.mk>
-
-.if (${OPSYS} == FreeBSD && ${OSVERSION} < 1300082)
-OPTIONS_DEFINE+=	BSDVIDEO
-OPTIONS_DEFAULT+=	BSDVIDEO
-.endif
-
-.if (${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-src_ptclib_pssl.cxx-openssl111
-.else
-EXTRA_PATCHES+= ${FILESDIR}/extra-patch-src_ptclib_pssl.cxx
-.endif
+CONFLICTS=	pwlib-1.*
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		PVERSION_MAJOR=${PVERSION_MAJOR} \
 		PVERSION_MINOR=${PVERSION_MINOR}
 
+OPTIONS_DEFINE=	DEBUG BSDVIDEO ODBC ALSA JABBER V4L SDL LDAP PULSEAUDIO
+OPTIONS_DEFAULT=BSDVIDEO SDL V4L JABBER
+OPTIONS_EXCLUDE_FreeBSD_13=	BSDVIDEO
+OPTIONS_EXCLUDE_FreeBSD_14=	BSDVIDEO
+OPTIONS_SUB=	yes
+
+BSDVIDEO_DESC=	BSD video support
+
+ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+ALSA_CONFIGURE_ENABLE=alsa
+BSDVIDEO_CONFIGURE_ENABLE=bsdvideo
+BSDVIDEO_VARS=	PTLIB_VIDEO=1
+DEBUG_ALL_TARGET=	debugshared
+JABBER_CONFIGURE_ON=--enable-jabber
+JABBER_VARS=	PLLIB_VIDEO=1
+LDAP_USES=	ldap
+LDAP_CONFIGURE_ENABLE=openldap
+ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+ODBC_CONFIGURE_ENABLE=	odbc
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_ENABLE=pulse
+SDL_USES=		sdl
+SDL_USE=	SDL=sdl
+SDL_CONFIGURE_ENABLE=sdl
+V4L_BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
+V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
+V4L_CONFIGURE_ENABLE=	v4l v4l2
+V4L_VARS=	PTLIB_VIDEO=1
+
 PVERSION_MAJOR=	${PORTVERSION:C/.[0-9]+.[0-9]+.//}
 PVERSION_MINOR=	${PORTVERSION:C/.[0-9]+$//g}
 
-.if ${PORT_OPTIONS:MDEBUG}
-ALL_TARGET=	optshared debugshared
-PLIST_SUB+=	DEBUG=""
-.else
-ALL_TARGET=	optshared
-PLIST_SUB+=	DEBUG="@comment "
-.endif
+.include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MPULSEAUDIO}
-LIB_DEPENDS+=	libpulse.so:audio/pulseaudio
-CONFIGURE_ARGS+=--enable-pulse
-PLIST_SUB+=	PULSEAUDIO=""
+.if (${OPSYS} == FreeBSD && ${SSL_DEFAULT} == base) || ${SSL_DEFAULT} == openssl
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-src_ptclib_pssl.cxx-openssl111
 .else
-CONFIGURE_ARGS+=--disable-pulse
-PLIST_SUB+=	PULSEAUDIO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MJABBER}
-CONFIGURE_ARGS+=--enable-jabber
-PLLIB_VIDEO=1
-.endif
-
-.if ${PORT_OPTIONS:MODBC}
-LIB_DEPENDS+=	libodbc.so:databases/unixODBC
-CONFIGURE_ARGS+=--enable-odbc
-.else
-CONFIGURE_ARGS+=--disable-odbc
-.endif
-
-.if ${PORT_OPTIONS:MALSA}
-LIB_DEPENDS+=	libasound.so:audio/alsa-lib
-CONFIGURE_ARGS+=--enable-alsa
-PLIST_SUB+=	ALSA=""
-.else
-CONFIGURE_ARGS+=--disable-alsa
-PLIST_SUB+=	ALSA="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MBSDVIDEO}
-CONFIGURE_ARGS+=--enable-bsdvideo
-PLIST_SUB+=	BSDVIDEO=""
-PTLIB_VIDEO=1
-.else
-CONFIGURE_ARGS+=--disable-bsdvideo
-PLIST_SUB+=	BSDVIDEO="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MV4L}
-BUILD_DEPENDS+=	v4l_compat>=0:multimedia/v4l_compat
-LIB_DEPENDS+=	libv4l2.so:multimedia/libv4l
-CONFIGURE_ARGS+=--enable-v4l --enable-v4l2
-PLIST_SUB+=	V4L=""
-PTLIB_VIDEO=1
-.else
-CONFIGURE_ARGS+=--disable-v4l --disable-v4l2
-PLIST_SUB+=	V4L="@comment "
+EXTRA_PATCHES+= ${FILESDIR}/extra-patch-src_ptclib_pssl.cxx
 .endif
 
 .if defined(PTLIB_VIDEO)
@@ -124,21 +85,6 @@ PLIST_SUB+=	VIDEODIR=""
 .else
 CONFIGURE_ARGS+=--disable-video --disable-vidfile
 PLIST_SUB+=	VIDEODIR="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MSDL}
-USES+=		sdl
-USE_SDL+=	sdl
-CONFIGURE_ARGS+=--enable-sdl
-.else
-CONFIGURE_ARGS+=--disable-sdl
-.endif
-
-.if ${PORT_OPTIONS:MLDAP}
-USES+=	ldap
-CONFIGURE_ARGS+=--enable-openldap
-.else
-CONFIGURE_ARGS+=--disable-openldap
 .endif
 
 # ONLY FOR THE BRAVE!
@@ -172,19 +118,19 @@ CONFIGURE_ARGS+=	--disable-dc
 post-patch:
 	@${REINPLACE_CMD} -e 's/RTF_WASCLONED/0x20000/' ${WRKSRC}/src/ptlib/unix/socket.cxx
 
-pre-configure:
-	(cd ${WRKSRC}/plugins/ && ${AUTORECONF} -fi)
+#pre-configure:
+#	(cd ${WRKSRC}/plugins/ && ${AUTORECONF} -fi)
 
 post-install:
 	${LN} -sf libpt.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt.so.${PVERSION_MAJOR}
 	${LN} -sf libpt.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt.so.${PVERSION_MINOR}
-.if ${PORT_OPTIONS:MDEBUG}
-	${LN} -sf libpt_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt_d.so.${PVERSION_MAJOR}
-	${LN} -sf libpt_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt_d.so.${PVERSION_MINOR}
-.endif
 	@${CHMOD} 0755 ${STAGEDIR}${PREFIX}/lib/libpt.so.${PORTVERSION} \
 		${STAGEDIR}${PREFIX}/lib/ptlib-${PORTVERSION}/devices/*/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libpt.so.${PORTVERSION}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ptlib-${PORTVERSION}/devices/*/*.so
+
+post-install-DEBUG-on:
+	${LN} -sf libpt_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt_d.so.${PVERSION_MAJOR}
+	${LN} -sf libpt_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt_d.so.${PVERSION_MINOR}
 
 .include <bsd.port.mk>
