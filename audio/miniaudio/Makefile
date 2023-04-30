@@ -1,5 +1,5 @@
 PORTNAME=	miniaudio
-DISTVERSION=	0.11.9 # upstream doesn't tag the repository
+DISTVERSION=	0.11.15 # upstream sometimes doesn't tag the repository
 PORTEPOCH=	1
 CATEGORIES=	audio devel
 
@@ -16,7 +16,6 @@ CPE_VENDOR=	miniaudio_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mackron
-GH_TAGNAME=	4dfe7c4c31df46e78d9a1cc0d2d6f1aef5a5d58c
 
 NO_BUILD=	yes
 NO_ARCH=	yes
