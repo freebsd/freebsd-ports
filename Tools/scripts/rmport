@@ -411,7 +411,7 @@ gitlog=$(mktemp -t gitlog)
 gitrmlist=$(mktemp -t gitrmlist)
 
 if [ $# -eq 1 ] ; then
-	topic="$1"
+	topic="${1%/}"
 	plural=""
 else
 	log "/!\\ Removing multiple ports at once, commit topic will be generic /!\\"
