@@ -1,5 +1,5 @@
 PORTNAME=	mnn
-DISTVERSION=	2.4.0
+DISTVERSION=	2.5.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -64,5 +64,7 @@ do-install-CONVERTER-on:
 post-test:
 	@cd ${BUILD_WRKSRC} && \
 		cd ${BUILD_WRKSRC} && ./run_test.out
+
+# 5 tests fail, see https://github.com/alibaba/MNN/issues/2358
 
 .include <bsd.port.post.mk>
