@@ -915,6 +915,7 @@
     SUBDIR += py-gvm-tools
     SUBDIR += py-hkdf
     SUBDIR += py-htpasswd
+    SUBDIR += py-iris-check-module
     SUBDIR += py-iris-client
     SUBDIR += py-iris-misp-module
     SUBDIR += py-iris-module-interface
