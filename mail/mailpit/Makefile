@@ -13,9 +13,6 @@ WWW=		https://github.com/axllent/mailpit
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=	aarch64 amd64
-ONLY_FOR_ARCHS_REASON=	Unsupported platform by required npm module
-
 BUILD_DEPENDS+=	npm>0:www/npm
 
 USES=		go:modules tar:zstd
@@ -91,7 +88,7 @@ pre-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} npm run build
 
 # (for maintainer) helper target to generate node_modules tarball
-make-npm-cache: extract
+make-npm-cache: patch
 	@cd ${WRKDIR} && ${RM} -r .npm
 	@cd ${WRKSRC} && ${SETENV} HOME=${WRKDIR} npm ci
 	@cd ${WRKDIR} \
