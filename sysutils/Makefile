@@ -1520,7 +1520,6 @@
     SUBDIR += u-boot-sopine
     SUBDIR += u-boot-sopine-spi
     SUBDIR += u-boot-tools
-    SUBDIR += u-boot-utilite
     SUBDIR += u-boot-wandboard
     SUBDIR += ua
     SUBDIR += ucspi-ipc
