@@ -852,6 +852,7 @@
     SUBDIR += py-cogdumper
     SUBDIR += py-colorcet
     SUBDIR += py-colorthief
+    SUBDIR += py-colorz
     SUBDIR += py-colour
     SUBDIR += py-descartes
     SUBDIR += py-django-easy-thumbnails
