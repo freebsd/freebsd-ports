@@ -1,6 +1,6 @@
 PORTNAME=	qxmpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.4
+DISTVERSION=	1.5.5
 CATEGORIES=	net-im
 
 MAINTAINER=	kde@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSES/LGPL-2.1-or-later.txt
 LIB_DEPENDS=	libomemo-c.so:security/libomemo-c
 
 USES=		cmake compiler:c++17-lang libtool pathfix pkgconfig qca qt:5
-USE_QT=	core gui network xml \
+USE_QT=		core gui network xml \
 		buildtools:build qmake:build testlib:build
 CMAKE_ARGS=	-DQT_VERSION_MAJOR=5
 CMAKE_ON=	BUILD_OMEMO
