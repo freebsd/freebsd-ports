@@ -1,5 +1,5 @@
---- rblcheck.c	2002-11-16 21:32:39 UTC
-+++ rblcheck.c	2020-03-19 11:45:01 EST
+--- rblcheck.c.orig	2002-11-16 21:32:39 UTC
++++ rblcheck.c
 @@ -21,15 +21,15 @@
  **
  */
@@ -18,7 +18,7 @@
  
  /*-- PORTABILITY ------------------------------------------------------------*/
  
-@@ -184,23 +184,26 @@ struct rbl * togglesite( char * sitename
+@@ -184,23 +184,26 @@ struct rbl * togglesite( char * sitename, struct rbl *
   * domain. If "txt" is non-zero, we perform a TXT record lookup. We
   * return the text returned from a TXT match, or an empty string, on
   * a successful match, or NULL on an unsuccessful match. */
@@ -51,7 +51,7 @@
  
  	/* Make our DNS query. */
  	res_init();
-@@ -239,11 +242,11 @@ char * rblcheck( int a, int b, int c, in
+@@ -239,11 +242,11 @@ char * rblcheck( int a, int b, int c, int d, char * rb
  	}
  
  	/* Skip the header and the address we queried. */
@@ -66,7 +66,7 @@
  			cp++;
  	}
  
-@@ -258,8 +261,8 @@ char * rblcheck( int a, int b, int c, in
+@@ -258,8 +261,8 @@ char * rblcheck( int a, int b, int c, int d, char * rb
  	cp += ( NS_INT16SZ * 2 ) + NS_INT32SZ;
  
  	/* Get the length and end of the buffer. */
@@ -77,7 +77,7 @@
  
  	/* Iterate over any multiple answers we might have. In
  	   this context, it's unlikely, but anyway. */
-@@ -267,10 +270,10 @@ char * rblcheck( int a, int b, int c, in
+@@ -267,10 +270,10 @@ char * rblcheck( int a, int b, int c, int d, char * rb
  	rend = result + RESULT_SIZE - 1;
  	while( cp < cend && rp < rend )
  	{
@@ -92,7 +92,7 @@
  			{
  				if( *cp == '\n' || *cp == '"' ||
  				  *cp == '\\' )
-@@ -289,22 +292,38 @@ char * rblcheck( int a, int b, int c, in
+@@ -289,22 +292,38 @@ char * rblcheck( int a, int b, int c, int d, char * rb
   * RBL listing, handling output of results if necessary. */
  int full_rblcheck( char * addr )
  {
@@ -137,3 +137,14 @@
  		if( !quiet || response )
  			printf( "%s %s%s%s%s%s%s", addr,
  			  ( !quiet && !response ? "not " : "" ),
+@@ -328,9 +347,7 @@ int full_rblcheck( char * addr )
+ 
+ /*-- MAINLINE ---------------------------------------------------------------*/
+ 
+-int main( argc, argv )
+-	int argc;
+-	char **argv;
++int main( int argc, char ** argv )
+ {
+ 	int a;
+ 	struct rbl * ptr;
