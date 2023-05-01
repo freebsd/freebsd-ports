@@ -10,6 +10,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	World wide web server benchmarking with SSL support
 WWW=		https://crypto.stanford.edu/~nagendra/projects/WebStone/
 
+DEPRECATED=	Requires upstream EOL OpenSSL 1.0.X
+EXPIRATION_DATE=	2023-06-01
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
