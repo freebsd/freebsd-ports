@@ -19,10 +19,10 @@ GH_ACCOUNT=	sdroege
 CONFLICTS_INSTALL=	libebur128
 
 do-build:
-	@${CARGO_CARGO_RUN} cbuild --verbose ${CARGO_BUILD_ARGS}
+	@${CARGO_CARGO_RUN} cbuild --verbose --verbose ${CARGO_BUILD_ARGS}
 
 do-install:
-	@${CARGO_CARGO_RUN} cinstall --verbose \
+	@${CARGO_CARGO_RUN} cinstall --verbose --verbose \
 		--destdir "${STAGEDIR}" \
 		--prefix "${PREFIX}" \
 		${CARGO_INSTALL_ARGS}
