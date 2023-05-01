@@ -852,6 +852,7 @@
     SUBDIR += py-cartopy
     SUBDIR += py-cogdumper
     SUBDIR += py-colorcet
+    SUBDIR += py-colorthief
     SUBDIR += py-colour
     SUBDIR += py-descartes
     SUBDIR += py-django-easy-thumbnails

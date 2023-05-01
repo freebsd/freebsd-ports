@@ -1,0 +1,4 @@
+colorthief is a minimalistic python module that can be used without
+adding overhead or many dependencies to your script for grabbing
+the dominant color or a representative color palette of an image
+using Pillow.
