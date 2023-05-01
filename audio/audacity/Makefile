@@ -1,7 +1,6 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.2.5
-PORTREVISION=	2
+DISTVERSION=	3.3.1
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
@@ -15,11 +14,13 @@ BUILD_DEPENDS=	conan:sysutils/conan
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
+		libopenjp2.so:graphics/openjpeg \
 		libmp3lame.so:audio/lame \
 		libmpg123.so:audio/mpg123 \
 		libopus.so:audio/opus \
 		libportaudio.so:audio/portaudio \
 		libportmidi.so:audio/portmidi \
+		libpng.so:graphics/png \
 		libsndfile.so:audio/libsndfile \
 		libsoxr.so:audio/libsoxr \
 		libsqlite3.so:databases/sqlite3 \
@@ -34,11 +35,12 @@ USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_WX=		3.2+
 CPE_VENDOR=	audacityteam
 WX_COMPS=	wx
-PORTDOCS=	README.txt
+PORTDOCS=	README.md
 
 CMAKE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_curl:STRING=system \
 		-Daudacity_use_expat:STRING=system \
+		-Daudacity_use_jpeg:STRING=system \
 		-Daudacity_use_libmp3lame:STRING=system \
 		-Daudacity_use_libmpg123:STRING=system \
 		-Daudacity_use_libopus:STRING=system \
@@ -48,9 +50,9 @@ CMAKE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_portaudio:STRING=system \
 		-Daudacity_use_portmixer:STRING=local \
 		-Daudacity_use_portsmf:STRING=local \
+		-Daudacity_use_png:STRING=system \
 		-Daudacity_use_soxr:STRING=system \
 		-Daudacity_use_sqlite:STRING=system \
-		-Daudacity_use_uuid:STRING=system \
 		-Daudacity_use_wavpack=system \
 		-Daudacity_use_wxwidgets:STRING=system \
 		-Daudacity_use_zlib:STRING=system
@@ -163,3 +165,4 @@ post-install-DOCS-on:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
+
