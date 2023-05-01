@@ -18,7 +18,7 @@ RUN_DEPENDS=	abinit>0:science/abinit \
 		quantum-espresso>0:science/quantum-espresso
 
 USES=		fortran gmake localbase perl5 shebangfix
-USE_PERL5=	run
+USE_PERL5=	build run
 
 SHEBANG_GLOB=	*.pl
 
