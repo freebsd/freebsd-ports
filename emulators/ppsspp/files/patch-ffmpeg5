@@ -40,7 +40,7 @@ https://github.com/hrydgard/ppsspp/issues/15308
  	if (pmp_Codec == NULL){
  		ERROR_LOG(ME, "Can not find H264 codec, please update ffmpeg");
  		return false;
---- Core/HW/MediaEngine.cpp.orig	2023-01-03 10:14:31 UTC
+--- Core/HW/MediaEngine.cpp.orig	2023-04-30 11:42:05 UTC
 +++ Core/HW/MediaEngine.cpp
 @@ -38,6 +38,10 @@ extern "C" {
  #include "libavutil/imgutils.h"
@@ -53,7 +53,7 @@ https://github.com/hrydgard/ppsspp/issues/15308
  }
  #endif // USE_FFMPEG
  
-@@ -434,7 +438,11 @@ bool MediaEngine::addVideoStream(int streamNum, int st
+@@ -410,13 +414,19 @@ bool MediaEngine::addVideoStream(int streamNum, int st
  #else
  			stream->request_probe = 0;
  #endif
@@ -65,7 +65,15 @@ https://github.com/hrydgard/ppsspp/issues/15308
  			// We could set the width here, but we don't need to.
  			if (streamNum >= m_expectedVideoStreams) {
  				++m_expectedVideoStreams;
-@@ -521,7 +529,7 @@ bool MediaEngine::setVideoStream(int streamNum, bool f
+ 			}
+ 
++#if LIBAVFORMAT_VERSION_INT < AV_VERSION_INT(57, 33, 100)
+ 			m_codecsToClose.push_back(stream->codec);
++#endif
+ 			return true;
+ 		}
+ 	}
+@@ -499,7 +509,7 @@ bool MediaEngine::setVideoStream(int streamNum, bool f
  
  		AVStream *stream = m_pFormatCtx->streams[streamNum];
  #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(57, 33, 100)
