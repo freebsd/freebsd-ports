@@ -10,6 +10,8 @@ WWW=		https://qtum.org/
 
 LICENSE=	GPLv3
 
+DEPRECATED=	Broken for nearly a year
+EXPIRATION_DATE=	2023-05-31
 BROKEN_i386=	does not compile: invalid operand for instruction ... ASJ(jnz, 0, b) ... "jnz"
 BROKEN=		does not compile: error: expected ';' after expression
 
