@@ -1,5 +1,5 @@
 PORTNAME=	courier-sox
-DISTVERSION=	0.16
+DISTVERSION=	0.17
 CATEGORIES=	net
 MASTER_SITES=	SF/courier/sox/${DISTVERSION}
 
@@ -24,6 +24,7 @@ USE_LDCONFIG=	yes
 USE_RC_SUBR=	sockd
 
 GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
