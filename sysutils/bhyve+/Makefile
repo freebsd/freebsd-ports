@@ -15,6 +15,7 @@ USES=		kmod uidfix
 
 SRCS=		${SRC_BASE}/sys/modules/vmm \
 		${SRC_BASE}/sys/amd64/vmm \
+		${SRC_BASE}/sys/conf \
 		${SRC_BASE}/lib/libvmmapi \
 		${SRC_BASE}/usr.sbin/bhyve \
 		${SRC_BASE}/usr.sbin/bhyvectl \
@@ -64,6 +65,7 @@ _LINKS=		sys/cam/ctl \
 		sys/dev/virtio \
 		sys/amd64/include \
 		sys/x86/include \
+		sys/libkern \
 		stand/userboot
 
 post-extract:
