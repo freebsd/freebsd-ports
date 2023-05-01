@@ -12,6 +12,8 @@ WWW=		https://nixos.org/nix/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=	undefined symbol: Aws::Crt::ByteCursorFromArray
+
 BUILD_DEPENDS=	${LOCALBASE}/share/aclocal/ax_cxx_compile_stdcxx.m4:devel/autoconf-archive \
 		bash:shells/bash \
 		docbook-xsl-ns>=0:textproc/docbook-xsl-ns \
