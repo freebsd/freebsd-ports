@@ -1,6 +1,6 @@
 PORTNAME=	nginx
 PORTVERSION=	1.24.0
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -87,6 +87,11 @@ OPTIONS_DEFAULT?=	DSO FILE_AIO HTTP HTTP_ADDITION HTTP_AUTH_REQ HTTP_CACHE \
 
 LIB_DEPENDS+=	libpcre2-8.so:devel/pcre2
 
+OPTIONS_RADIO+=		GSSAPI
+OPTIONS_RADIO_GSSAPI=	GSSAPI_HEIMDAL GSSAPI_MIT
+GSSAPI_HEIMDAL_USES=	gssapi:heimdal,flags
+GSSAPI_MIT_USES=	gssapi:mit
+
 OPTIONS_SUB=	yes
 
 .include "Makefile.options.desc"
@@ -102,6 +107,9 @@ ${opt}_IMPLIES=	HTTP
 .for opt in ${OPTIONS_GROUP_STREAMGRP:NSTREAM}
 ${opt}_IMPLIES=	STREAM
 .endfor
+
+GSSAPI_HEIMDAL_IMPLIES=	HTTP_AUTH_KRB5
+GSSAPI_MIT_IMPLIES=	HTTP_AUTH_KRB5
 
 # If the target is makesum, make sure that every distfile is fetched.
 .if ${.TARGETS:Mmakesum}
@@ -218,6 +226,12 @@ CONFIGURE_ARGS+=	--${_addextmod}=${WRKDIR}/${moddir}
 .if empty(PORT_OPTIONS:MHTTP) && empty(PORT_OPTIONS:MMAIL)
 IGNORE=		requires at least HTTP or MAIL to \
 		be defined.  Please do 'make config' again
+.endif
+
+.if ${PORT_OPTIONS:MHTTP_AUTH_KRB5} && (empty(PORT_OPTIONS:MGSSAPI_HEIMDAL) && empty(PORT_OPTIONS:MGSSAPI_MIT))
+IGNORE=		required at least GSSAPI_HEIMDAL or \
+		GSSAPI_MIT to be defined. Please do \
+		'make config' again
 .endif
 
 .if ${PORT_OPTIONS:MPASSENGER} && empty(PORT_OPTIONS:MDEBUG)
