@@ -8,8 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IRC bot for Nagios
 WWW=		http://www.vanheusden.com/nagircbot/
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: pfh
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: pfh
+DEPRECATED=	Broken for more than a year and fails to build on all supported release
+EXPIRATION_DATE=	2023-06-01
+BROKEN=	ld: error: duplicate symbol: pfh
 
 USES=		gmake ssl tar:tgz
 USE_RC_SUBR=	nagircbot
