@@ -131,6 +131,7 @@
     SUBDIR += eawpats
     SUBDIR += eawplus
     SUBDIR += ebumeter
+    SUBDIR += ebur128
     SUBDIR += ecasound
     SUBDIR += elisa
     SUBDIR += emms
