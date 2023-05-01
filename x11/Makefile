@@ -112,6 +112,7 @@
     SUBDIR += gtkterm2
     SUBDIR += guake
     SUBDIR += gxkb
+    SUBDIR += habak
     SUBDIR += hamclock
     SUBDIR += hhpc
     SUBDIR += hs-xmobar
