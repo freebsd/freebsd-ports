@@ -68,8 +68,10 @@
 @sample %%T%%/conf/web.xml.sample
 %%T%%/temp/safeToDelete.tmp
 %%DOCS%%%%T%%/webapps/docs/BUILDING.txt
+%%DOCS%%%%T%%/webapps/docs/META-INF/context.xml
 %%DOCS%%%%T%%/webapps/docs/RELEASE-NOTES.txt
 %%DOCS%%%%T%%/webapps/docs/RUNNING.txt
+%%DOCS%%%%T%%/webapps/docs/WEB-INF/jsp/403.jsp
 %%DOCS%%%%T%%/webapps/docs/WEB-INF/web.xml
 %%DOCS%%%%T%%/webapps/docs/aio.html
 %%DOCS%%%%T%%/webapps/docs/annotationapi/index.html
@@ -387,6 +389,8 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/403.jsp
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/403.jsp.html
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/debug-taglib.tld
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/example-taglib.tld
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/jsp2-example-taglib.tld
