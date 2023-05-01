@@ -1,3 +1,35 @@
+  <vuln vid="02562a78-e6b7-11ed-b0ce-b42e991fc52e">
+    <topic>cloud-init -- sensitive data exposure in cloud-init logs</topic>
+    <affects>
+      <package>
+	<name>cloud-init</name>
+	<range><lt>23.1.2</lt></range>
+      </package>
+      <package>
+	<name>cloud-init-devel</name>
+	<range><lt>23.1.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>security@ubuntu.com reports:</p>
+	<blockquote cite="https://bugs.launchpad.net/cloud-init/+bug/2013967">
+	  <p>Sensitive data could be exposed in logs of cloud-init before version
+	23.1.2.  An attacker could use this information to find hashed
+	passwords and possibly escalate their privilege.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-1786</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-1786</url>
+    </references>
+    <dates>
+      <discovery>2023-04-26</discovery>
+      <entry>2023-04-29</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4da51989-5a8b-4eb9-b442-46d94ec0802d">
       <topic>h2o -- Malformed HTTP/1.1 causes Out-of-Memory Denial of Service</topic>
     <affects>
