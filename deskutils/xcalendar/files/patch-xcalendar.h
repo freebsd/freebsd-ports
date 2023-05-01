@@ -1,5 +1,5 @@
---- xcalendar.h.orig	Sun Oct  1 12:21:42 1995
-+++ xcalendar.h	Mon Mar 12 20:54:02 2001
+--- xcalendar.h.orig	1995-09-30 20:21:42.000000000 -0700
++++ xcalendar.h	2023-04-30 21:02:14.402254000 -0700
 @@ -75,7 +75,7 @@
  #include <X11/Xaw/Xawi18n.h>
  #endif
