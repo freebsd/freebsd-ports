@@ -10,6 +10,9 @@ WWW=		https://github.com/samr7/vanitygen
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Broken for more than a year and upstream last release was 11 years ago
+EXPIRATION_DATE=	2023-05-31
+
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USE_GITHUB=	yes
