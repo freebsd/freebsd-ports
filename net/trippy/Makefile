@@ -1,5 +1,6 @@
 PORTNAME=	trippy
 PORTVERSION=	0.7.0
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -13,11 +14,14 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	fujiapple852
 
-OPTIONS_DEFINE=	SUID
-OPTIONS_DEFAULT=SUID
-SUID_DESC=	Use suid to allow execution as non root
+OPTIONS_DEFINE=		SUID
+OPTIONS_DEFAULT=	SUID
+SUID_DESC=		Use suid to allow execution as non root
 
 SUID_PLIST_FILES=	"@(,,4110) bin/trip"
 SUID_PLIST_FILES_OFF=	"@(,,0100) bin/trip"
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/trip
 
 .include <bsd.port.mk>
