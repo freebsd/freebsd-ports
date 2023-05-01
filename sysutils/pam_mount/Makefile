@@ -11,6 +11,9 @@ WWW=		http://pam-mount.sourceforge.net/
 LICENSE=	LGPL21 GPLv2
 LICENSE_COMB=	multi
 
+DEPRECATED= Requires upstream EOL OpenSSL 1.0.X and linux only libmount which is not available for FreeBSD
+EXPIRATION_DATE=	2023-05-31
+
 LIB_DEPENDS=	libHX.so:lang/libhx
 
 USES=		gnome libtool perl5 pkgconfig ssl tar:xz
