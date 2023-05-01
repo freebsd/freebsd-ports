@@ -53,6 +53,8 @@ CONFIGURE_ARGS=	--cc="${CC}" \
 
 MAKE_ENV+=	PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
 
+CFLAGS+=	-I${LOCALBASE}/ffmpeg4/include
+
 common-post-patch:
 	@${REINPLACE_CMD} \
 		-e 's|/dev/dvd|${DEFAULT_DVD_DEVICE}|; \
