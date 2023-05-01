@@ -13,6 +13,8 @@ LICENSE=	GPLv2
 BROKEN_mips=		fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
 BROKEN_mips64=		fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
 BROKEN_powerpc64=	fails to build: error: nested functions are disabled, use -fnested-functions to re-enable
+DEPRECATED=	Broken for more than a year and last upstream release was in 2015
+EXPIRATION_DATE=	2023-06-01
 
 RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:sysutils/ucspi-tcp
 
