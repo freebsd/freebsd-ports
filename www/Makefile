@@ -1390,6 +1390,7 @@
     SUBDIR += php82-tidy
     SUBDIR += phpbb
     SUBDIR += phpbb3
+    SUBDIR += phpfpmtop
     SUBDIR += phpgroupware
     SUBDIR += phpmustache
     SUBDIR += phpmyfaq
