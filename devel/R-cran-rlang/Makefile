@@ -1,10 +1,9 @@
 PORTNAME=	rlang
-PORTVERSION=	1.1.0
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Functions for Base Types and Core R and 'Tidyverse' Features
 WWW=		https://cran.r-project.org/web/packages/rlang/
 
