@@ -1,6 +1,6 @@
 PORTNAME=	ssh-audit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.0
+DISTVERSION=	2.9.0
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,7 +10,7 @@ WWW=		https://github.com/jtesta/ssh-audit
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_GITHUB=	yes
 GH_ACCOUNT=	jtesta
 USE_PYTHON=	autoplist distutils
