@@ -222,7 +222,7 @@ REACTIVEOBJC_VER=		74ab5baccc6f7202c8ac69a8d1e152c29dc1ea76
 # See ${WRKSRC}/electron/DEPS for MANTLE_VER
 MANTLE_VER=			78d3966b3c331292ea29ec38661b25df0a245948
 
-YARN_TIMESTAMP=	1681806367
+YARN_TIMESTAMP=	1682835011
 
 .include "Makefile.version"
 .include <bsd.port.pre.mk>

@@ -1,4 +1,4 @@
---- electron/shell/app/node_main.cc.orig	2023-02-06 19:29:11 UTC
+--- electron/shell/app/node_main.cc.orig	2023-04-26 18:09:19 UTC
 +++ electron/shell/app/node_main.cc
 @@ -42,7 +42,7 @@
  #include "content/public/common/content_descriptors.h"
@@ -27,7 +27,7 @@
    electron::crash_keys::GetCrashKeys(&keys);
  #endif
    return gin::ConvertToV8(isolate, keys);
-@@ -235,7 +235,7 @@ int NodeMain(int argc, char* argv[]) {
+@@ -236,7 +236,7 @@ int NodeMain(int argc, char* argv[]) {
        // Setup process.crashReporter in child node processes
        gin_helper::Dictionary reporter = gin::Dictionary::CreateEmpty(isolate);
        reporter.SetMethod("getParameters", &GetParameters);
