@@ -23,7 +23,7 @@ do-build:
 
 do-install:
 	@${CARGO_CARGO_RUN} cinstall --verbose \
-		--destdir "${STAGEDIR}"
+		--destdir "${STAGEDIR}" \
 		--prefix "${PREFIX}" \
 		${CARGO_INSTALL_ARGS}
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
