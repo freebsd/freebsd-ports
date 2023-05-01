@@ -15,6 +15,7 @@ BROKEN_armv6=	fails to package: cp: bazel: No such file or directory
 BROKEN_armv7=	fails to package: cp: bazel: No such file or directory
 BROKEN_i386=	fails to build: ./src/tools/singlejar/mapped_file_posix.inc:31:2: error: This code for 64 bit Unix
 BROKEN_FreeBSD_12_powerpc64=	fails to compile: Action failed to execute: java.io.IOException: Cannot run program /usr/bin/clang
+BROKEN_FreeBSD_14=	fails to compile: error: builtin __has_trivial_destructor is deprecated; use __is_trivially_destructible instead
 
 BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip
