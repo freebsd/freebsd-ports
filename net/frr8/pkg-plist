@@ -167,7 +167,6 @@ lib/libfrrcares.so.0.0.0
 %%MANPAGES%%%%LDPD%%man/man8/frr-ldpd.8.gz
 %%MANPAGES%%man/man8/frr-ospf6d.8.gz
 %%MANPAGES%%man/man8/frr-ospfd.8.gz
-%%MANPAGES%%man/man8/frr-pbrd.8.gz
 %%MANPAGES%%man/man8/frr-ripd.8.gz
 %%MANPAGES%%man/man8/frr-ripngd.8.gz
 %%MANPAGES%%man/man8/frr-zebra.8.gz
@@ -180,7 +179,6 @@ sbin/fabricd
 sbin/frr-reload
 sbin/ospf6d
 sbin/ospfd
-sbin/pbrd
 sbin/ripd
 sbin/ripngd
 sbin/staticd

@@ -1,5 +1,5 @@
 PORTNAME=	frr
-PORTVERSION=	8.5
+PORTVERSION=	8.5.1
 DISTVERSIONPREFIX=	frr-
 PORTREVISION=	1
 CATEGORIES=	net
@@ -93,7 +93,7 @@ GROUPS=	frr frrvty
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-# PIM compile but doesn't work on FreeBSD
+# PIMD and PBRD compile but doesn't work on FreeBSD
 CONFIGURE_ARGS=	--enable-user=frr \
 		--enable-group=frr \
 		--enable-vty-group=frrvty \
@@ -104,6 +104,7 @@ CONFIGURE_ARGS=	--enable-user=frr \
 		--disable-pathd \
 		--disable-ospfclient \
 		--disable-pimd \
+		--disable-pbrd \
 		--with-vtysh-pager=cat
 
 MANPAGES_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${PY_FLAVOR}
