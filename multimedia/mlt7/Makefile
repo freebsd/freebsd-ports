@@ -9,6 +9,10 @@ MASTER_SITES=		https://github.com/mltframework/mlt/releases/download/v${DISTVERS
 DISTFILES=		mlt-${DISTVERSION}${EXTRACT_SUFX}
 WRKSRC=			${WRKDIR}/mlt-${DISTVERSION}
 
+PATCH_SITES=		https://github.com/mltframework/mlt/commit/
+PATCHFILES=		a3d49ccb92e2544bcc1957ce046bf63f71b468a6.patch:-p1 \
+			1eee2187410ae16f520409dcdcf6de789d8bafd9.patch:-p1
+
 MAINTAINER=		kde@FreeBSD.org
 COMMENT?=		Multimedia framework for TV broadcasting
 WWW=		https://www.mltframework.org/
