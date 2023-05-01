@@ -10,10 +10,12 @@ WWW=		https://github.com/zetacoin/zetacoin
 
 LICENSE=	MIT
 
+BROKEN=		error: use of undeclared identifier '_1'
+DEPRECATED=	Broken for nearly a year
+EXPIRATION_DATE=	2023-06-01
+
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent
-
-BROKEN=		error: use of undeclared identifier '_1'
 
 USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig shebangfix ssl
 
