@@ -1,5 +1,6 @@
 PORTNAME=	pyzipper
 PORTVERSION=	0.3.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,5 +20,6 @@ NO_ARCH=	yes
 
 post-patch:
 	@${RM} ${WRKSRC}/test/badsyntax_*.py
+	@${RM} ${WRKSRC}/test/__init__.py
 
 .include <bsd.port.mk>
