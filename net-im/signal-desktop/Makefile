@@ -6,13 +6,9 @@ CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
 		LOCAL/mikael/signal-desktop/:yarn \
-		https://nodejs.org/download/release/v${NODE_VERSION}/:node \
-		https://electronjs.org/headers/v${ELECTRON_GYP_VERSION}/:electron_gyp \
 		https://build-artifacts.signal.org/desktop/:sqlcipher
 DISTFILES=	signal-desktop-${DISTVERSION}-yarn-cache.tar.gz:yarn \
 		signal-desktop-6.4.1-npm-cache.tar.gz:npm \
-		node-v${NODE_VERSION}-headers.tar.gz:node \
-		node-v${ELECTRON_GYP_VERSION}-headers.tar.gz:electron_gyp \
 		${SQLCIPHER}.tar.gz:sqlcipher
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -84,10 +80,6 @@ MAKE_ENV+=	ESBUILD_BINARY_PATH=${WRKDIR}/esbuild-freebsd-64/package/bin/esbuild
 _BUILD_DATE=	$$(date +'%s')
 
 ELECTRON_VER_MAJOR=	22
-# keep NODE_VERSION in sync with www/node16 DISTVERSION
-NODE_VERSION=		16.20.0
-# bump ELECTRON_GYP_VERSION when ELECTRON_VER_MAJOR is changed
-ELECTRON_GYP_VERSION=	22.3.5
 
 # sh get_deps.sh
 NPM_SIGNAL_DIR=		npm-@signalapp-libsignal-client-0.22.0-d57441612df46f90df68fc5d9ad45b857b9d2c44-integrity
@@ -132,15 +124,9 @@ post-patch:
 		${WRKSRC}/ts/scripts/get-expire-time.ts
 
 post-extract:
-	${MKDIR} ${WRKDIR}/.cache/node-gyp/${NODE_VERSION} \
-		 ${WRKDIR}/.electron-gyp/${ELECTRON_GYP_VERSION}
-	${MV} ${WRKDIR}/node-v${NODE_VERSION}/include ${WRKDIR}/.cache/node-gyp/${NODE_VERSION}
-	${MV} ${WRKDIR}/node_headers/include ${WRKDIR}/.electron-gyp/${ELECTRON_GYP_VERSION}
-	${ECHO_CMD} '9' > ${WRKDIR}/.cache/node-gyp/${NODE_VERSION}/installVersion
-	${ECHO_CMD} '9' > ${WRKDIR}/.electron-gyp/${ELECTRON_GYP_VERSION}/installVersion
-
 	# install yarn modules and fail silently
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' > ${WRKSRC}/.yarnrc
+	${ECHO_CMD} 'nodedir "${LOCALBASE}"' >> ${WRKSRC}/.yarnrc
 	# Update node engine
 	${PREFIX}/bin/jq '.engines.node = "${NODE_VERSION}"' ${WRKSRC}/package.json > ${WRKSRC}/package.json.tmp
 	${MV} ${WRKSRC}/package.json.tmp ${WRKSRC}/package.json
@@ -152,6 +138,7 @@ post-extract:
 
 do-build:
 	${ECHO_CMD} 'yarn-offline-mirror "../yarn-offline-cache"' > ${WRKSRC}/.yarnrc
+	${ECHO_CMD} 'nodedir "/usr/local/share/electron22/node_headers"' >> ${WRKSRC}/.yarnrc
 
 # electron-builder is stupid and tries to open ${LOCALBASE}/share/electron22/electron with WRITE priv
 # copy ${LOCALBASE}/share/electron22 in WRKDIR
