@@ -27,9 +27,9 @@
 %%T%%/lib/catalina-storeconfig.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-4.25.jar
+%%T%%/lib/ecj-4.27.jar
 %%T%%/lib/el-api.jar
-%%T%%/lib/jakartaee-migration-1.0.5-shaded.jar
+%%T%%/lib/jakartaee-migration-1.0.6-shaded.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
 %%T%%/lib/jaspic-api.jar
@@ -63,7 +63,6 @@
 @dir %%T%%/temp
 @dir %%T%%/webapps
 @dir %%T%%/work
-@sample %%T%%/conf/catalina.policy.sample
 @sample %%T%%/conf/catalina.properties.sample
 @sample %%T%%/conf/context.xml.sample
 @sample %%T%%/conf/jaspic-providers.xml.sample
@@ -75,8 +74,10 @@
 @sample %%T%%/conf/web.xml.sample
 %%T%%/temp/safeToDelete.tmp
 %%DOCS%%%%T%%/webapps/docs/BUILDING.txt
+%%DOCS%%%%T%%/webapps/docs/META-INF/context.xml
 %%DOCS%%%%T%%/webapps/docs/RELEASE-NOTES.txt
 %%DOCS%%%%T%%/webapps/docs/RUNNING.txt
+%%DOCS%%%%T%%/webapps/docs/WEB-INF/jsp/403.jsp
 %%DOCS%%%%T%%/webapps/docs/WEB-INF/web.xml
 %%DOCS%%%%T%%/webapps/docs/aio.html
 %%DOCS%%%%T%%/webapps/docs/api/index.html
@@ -197,7 +198,6 @@
 %%DOCS%%%%T%%/webapps/docs/realm-howto.html
 %%DOCS%%%%T%%/webapps/docs/rewrite.html
 %%DOCS%%%%T%%/webapps/docs/security-howto.html
-%%DOCS%%%%T%%/webapps/docs/security-manager-howto.html
 %%DOCS%%%%T%%/webapps/docs/servletapi/index.html
 %%DOCS%%%%T%%/webapps/docs/setup.html
 %%DOCS%%%%T%%/webapps/docs/ssi-howto.html
@@ -398,6 +398,8 @@
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer$1.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.class
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/classes/websocket/snake/SnakeTimer.java
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/403.jsp
+%%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/403.jsp.html
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/debug-taglib.tld
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/example-taglib.tld
 %%EXAMPLES%%%%T%%/webapps/examples/WEB-INF/jsp/jsp2-example-taglib.tld
