@@ -15,4 +15,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	jiixyj
 USE_LDCONFIG=	yes
 
+CONFLICTS_INSTALL=	ebur128
+
 .include <bsd.port.mk>
