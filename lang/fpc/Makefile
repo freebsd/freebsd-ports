@@ -1,6 +1,6 @@
 PORTNAME=	fpc
 PORTVERSION=	3.2.2
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES?=	lang
 MASTER_SITES=	SF/freepascal/Source/${PORTVERSION}:source \
 		https://downloads.freepascal.org/${PORTNAME}/dist/${PORTVERSION}/source/:source \
