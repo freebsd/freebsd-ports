@@ -13,6 +13,9 @@ WWW=		https://www.bareos.org/
 LICENSE=	AGPLv3 LGPL3
 LICENSE_COMB=	multi
 
+DEPRECATED=	Upstream EOL reached on 2020-02-03
+EXPIRATION_DATE=	2023-06-01
+
 CONFLICTS?=	bareos17-server bareos16-server bareos-server
 
 LIB_DEPENDS+=	liblzo2.so:archivers/lzo2 \
