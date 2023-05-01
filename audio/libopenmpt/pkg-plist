@@ -7,11 +7,15 @@ include/libopenmpt/libopenmpt_ext.hpp
 include/libopenmpt/libopenmpt_stream_callbacks_buffer.h
 include/libopenmpt/libopenmpt_stream_callbacks_fd.h
 include/libopenmpt/libopenmpt_stream_callbacks_file.h
+include/libopenmpt/libopenmpt_stream_callbacks_file_mingw.h
+include/libopenmpt/libopenmpt_stream_callbacks_file_msvcrt.h
+include/libopenmpt/libopenmpt_stream_callbacks_file_posix.h
+include/libopenmpt/libopenmpt_stream_callbacks_file_posix_lfs64.h
 include/libopenmpt/libopenmpt_version.h
 lib/libopenmpt.a
 lib/libopenmpt.so
 lib/libopenmpt.so.0
-lib/libopenmpt.so.0.3.3
+lib/libopenmpt.so.0.4.4
 libdata/pkgconfig/libopenmpt.pc
 %%OPENMPT123%%man/man1/openmpt123.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/README.md
