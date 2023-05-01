@@ -2,7 +2,7 @@ PORTNAME=	binkd
 DISTVERSION=	1.1a-115
 CATEGORIES=	net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dz@dolik.dev
 COMMENT=	Fidonet TCP/IP mailer
 WWW=		https://github.com/pgul/binkd/
 
