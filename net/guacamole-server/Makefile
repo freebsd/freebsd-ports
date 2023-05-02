@@ -87,6 +87,13 @@ VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 WEBP_CONFIGURE_WITH=	webp
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=       -Wno-error=strict-prototypes \
+			   -Wno-error=unused-but-set-variable
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's/-Werror//' ${WRKSRC}/src/libguac/Makefile.am \
 		${WRKSRC}/src/protocols/vnc/Makefile.am
@@ -98,4 +105,4 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${ETCDIR} ${STAGEDIR}${GUACAMOLE_HOME}
 	${INSTALL_DATA} ${FILESDIR}/guacd.conf.sample ${STAGEDIR}${ETCDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
