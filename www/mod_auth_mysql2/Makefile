@@ -26,8 +26,14 @@ OPTIONS_DEFINE=	DOCS OPENSSL
 OPENSSL_USES=		ssl
 OPENSSL_VARS=	AP_EXTRAS+=-DMYSQL_USE_SSL
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+AP_EXTRAS+=       '-Wc, -Wno-error=int-conversion'
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
