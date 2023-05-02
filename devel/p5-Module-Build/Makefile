@@ -1,10 +1,9 @@
-#
 # If you have compelling evidence that some ports need at least this version of
 # p5-Module-Build to build, be sure to update the BUILD_DEPENDS version in
 # Mk/Uses/perl5.mk.
 
 PORTNAME=	Module-Build
-PORTVERSION=	0.4232
+PORTVERSION=	0.4234
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
