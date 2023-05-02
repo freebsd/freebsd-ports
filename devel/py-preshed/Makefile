@@ -18,11 +18,14 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.6+
-USE_PYTHON=	pep517 cython autoplist pytest # tests fail, see https://github.com/explosion/preshed/issues/45
+USE_PYTHON=	pep517 cython autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/preshed/*.so
+
+do-test:
+	@cd ${WRKDIR} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest --pyargs preshed
 
 .include <bsd.port.mk>
