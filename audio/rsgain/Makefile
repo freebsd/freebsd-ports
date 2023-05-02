@@ -1,6 +1,7 @@
 PORTNAME=	rsgain
 DISTVERSION=	3.3
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/complexlogic/rsgain/releases/download/v${DISTVERSION}/
 
@@ -11,7 +12,7 @@ WWW=		https://github.com/complexlogic/rsgain
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libebur128.so:audio/libebur128 \
+LIB_DEPENDS=	libebur128.so:audio/ebur128 \
 		libtag.so:audio/taglib \
 		libfmt.so:devel/libfmt \
 		libinih.so:devel/inih \

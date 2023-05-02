@@ -1,7 +1,7 @@
 PORTNAME=		cantata
 DISTVERSIONPREFIX=	v
 DISTVERSION=		2.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=		audio kde
 
 MAINTAINER=		kde@FreeBSD.org
@@ -94,7 +94,7 @@ VLC_CMAKE_BOOL=		ENABLE_LIBVLC
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MFFMPEG} || ${PORT_OPTIONS:MMPG123}
-LIB_DEPENDS+=		libebur128.so:audio/libebur128
+LIB_DEPENDS+=		libebur128.so:audio/ebur128
 PLIST_SUB+=		REPLAYGAIN=""
 .else
 PLIST_SUB+=		REPLAYGAIN="@comment "

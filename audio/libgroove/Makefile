@@ -1,6 +1,6 @@
 PORTNAME=	libgroove
 PORTVERSION=	4.3.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	audio
 
 MAINTAINER=	ports@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4 \
 		libchromaprint.so:audio/chromaprint \
-		libebur128.so:audio/libebur128 \
+		libebur128.so:audio/ebur128 \
 		libspeexdsp.so:audio/speexdsp
 
 USE_GITHUB=	yes

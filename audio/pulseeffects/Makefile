@@ -1,7 +1,7 @@
 PORTNAME=	pulseeffects
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.6.8
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	audio
 
 MAINTAINER=	daniel@shafer.cc
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libbs2b.so:audio/libbs2b \
 		libdbus-1.so:devel/dbus \
-		libebur128.so:audio/libebur128 \
+		libebur128.so:audio/ebur128 \
 		liblilv-0.so:audio/lilv \
 		libpulse.so:audio/pulseaudio \
 		librubberband.so:audio/rubberband \

@@ -1,6 +1,6 @@
 PORTNAME=	mixxx
 DISTVERSION=	2.3.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	audio
 
 MAINTAINER=	acm@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	libchromaprint.so:audio/chromaprint \
 		libmodplug.so:audio/libmodplug \
 		libportaudio.so:audio/portaudio \
 		libSoundTouch.so:audio/soundtouch \
-		libebur128.so:audio/libebur128 \
+		libebur128.so:audio/ebur128 \
 		librubberband.so:audio/rubberband \
 		libsndfile.so:audio/libsndfile \
 		libogg.so:audio/libogg \
