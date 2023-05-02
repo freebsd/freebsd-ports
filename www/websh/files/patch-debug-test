@@ -1,0 +1,30 @@
+The two cookiecontext-tests fail repeatedly on Poudriere, but I'm
+unable to reproduce the failures on my own FreeBSD-14 box. These
+changes will make the test-failures more verbose, which might give
+me the clue necessary to fix them properly.
+--- ../tests/cookiecontext.test	2009-09-11 04:02:42.000000000 -0400
++++ ../tests/cookiecontext.test	2023-05-01 22:47:41.210491000 -0400
+@@ -52,6 +52,10 @@
+ 	set time [clock scan $timestring]
+ 	set result [expr {($now - $time) < 2}]
++        if {$result != 1} {
++            set result "$timestring: $now vs. $time"
++        }
++        set result
+     } else {
+-	set result 0
++	set result "Text: <<$text>>, Now: <<$now>>"
+     }
+ 
+@@ -86,6 +90,10 @@
+ 	set time [clock scan $timestring]
+ 	set result [expr {($now + 86400 - $time) < 2}]
++        if {$result != 1} {
++            set result "$timestring: $now vs. $time"
++        }
++        set result
+     } else {
+-	set result 0
++	set result "Text: <<$text1a>>, Now: <<$now>>"
+     }
+ 
