@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	GNU/gnu-arch \
 		http://www.atai.org/gnuarch/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Original arch source control management CLI written in C
 WWW=		https://www.gnu.org/software/gnu-arch/
 
@@ -17,10 +17,8 @@ BUILD_DEPENDS=	gpatch:devel/patch \
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USES=		gmake pkgconfig ssl
-HAS_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
-TEST_TARGET=	test
 
+HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	../configure
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-gnu-patch gpatch \
@@ -29,11 +27,21 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--with-gnu-tar gtar
 CONFIGURE_ENV=	ne_cv_libsfor_SSL_library_init=yes
 
-ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
+MAKE_JOBS_UNSAFE=	yes
+TEST_TARGET=	test
+
 PATCH_WRKSRC=	${ORIGWRKSRC}/..
 WRKSRC=		${ORIGWRKSRC}/=build
 
 OPTIONS_DEFINE=	DOCS
+
+ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CPPFLAGS+=       -Wno-error=int-conversion
+.endif
 
 pre-install:
 	${RM} -r ${ORIGWRKSRC}/docs-tla/PLUGIN \
@@ -48,4 +56,4 @@ do-install:
 	cd ${ORIGWRKSRC}/docs-tla && ${FIND} . -name '*.html' | \
 		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
