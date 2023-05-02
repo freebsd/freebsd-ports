@@ -1,5 +1,5 @@
 PORTNAME=	Data-Visitor
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,7 +13,6 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Moose>=0.89:devel/p5-Moose \
-		p5-Sub-Name>=0:devel/p5-Sub-Name \
 		p5-Tie-ToObject>=0.01:devel/p5-Tie-ToObject \
 		p5-namespace-clean>=0.19:devel/p5-namespace-clean
 TEST_DEPENDS=	p5-Data-Alias>=0:devel/p5-Data-Alias \
