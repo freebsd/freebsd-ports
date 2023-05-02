@@ -928,6 +928,7 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.el_GR
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.eo
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.es
+%%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.fa
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.fr
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.he
 %%DATADIR%%/%%EMACS_VER%%/etc/tutorials/TUTORIAL.it
