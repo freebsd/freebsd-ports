@@ -28,17 +28,19 @@ OPTIONS_DEFINE=		DKIM
 OPTIONS_DEFAULT=	DKIM
 
 DKIM_DESC=		DKIM signing support
+
 DKIM_LIB_DEPENDS=	libopendkim.so:mail/opendkim
+DKIM_CMAKE_OFF=	-DENABLE_DKIM=OFF
 
 .include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=       -Wno-error=int-conversion
+.endif
 
 # Workaround to prevent bsd.milter.mk from breaking the build with the recent clang
 WITHOUT_MILTER_LDFLAGS=	yes
 .include "${PORTSDIR}/mail/sendmail/bsd.milter.mk"
-
-.if ! ${PORT_OPTIONS:MDKIM}
-CMAKE_ARGS+=	-DENABLE_DKIM=OFF
-.endif
 
 post-patch:
 	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
