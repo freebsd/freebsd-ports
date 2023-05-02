@@ -1,5 +1,5 @@
 PORTNAME=	requirementslib
-PORTVERSION=	2.2.5
+PORTVERSION=	2.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,15 +14,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=40.8.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.33.0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=19.2:devel/py-attrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cached-property>=0:devel/py-cached-property@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}distlib>=0.2.8:devel/py-distlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pep517>=0.5.0:devel/py-pep517@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=23.1:devel/py-pip@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}platformdirs>=0:devel/py-platformdirs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plette>=0:devel/py-plette@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.5.3:textproc/py-tomlkit@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}vistir>=0.8.0<0.8.0_99:devel/py-vistir@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.5.3:textproc/py-tomlkit@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent pep517
