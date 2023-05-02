@@ -113,6 +113,8 @@ RUN_DEPENDS+=	gcc${GCC_DEFAULT}>0:lang/gcc${GCC_DEFAULT}
 USES=		autoreconf bison compiler:c++11-lib cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome iconv jpeg perl5 pkgconfig \
 		shared-mime-info ssl tar:bzip2 xorg
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	unsupported option -print-multi-os-directory
 USE_GL=		gl glu
 USE_GNOME=	gdkpixbuf2 gdkpixbuf2xlib gtk20 libxslt libidl glib20
 USE_JAVA=	yes
