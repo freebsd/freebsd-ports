@@ -1,5 +1,5 @@
 PORTNAME=	pymarc
-PORTVERSION=	4.2.2
+PORTVERSION=	5.0.0
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
@@ -11,7 +11,7 @@ WWW=		https://github.com/edsu/pymarc
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python:3.6+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils unittest
 
 NO_ARCH=	yes
