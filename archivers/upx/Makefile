@@ -24,8 +24,14 @@ PLIST_FILES=	bin/upx \
 
 CPE_VENDOR=	upx_project
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=       -Wno-error=unused-but-set-variable
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/upx.out ${STAGEDIR}${PREFIX}/bin/upx
 	${INSTALL_MAN} ${WRKSRC}/doc/upx.1 ${STAGEDIR}${PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
