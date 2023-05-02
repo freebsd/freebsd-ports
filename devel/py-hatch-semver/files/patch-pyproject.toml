@@ -8,3 +8,12 @@
  ]
  build-backend = "hatchling.build"
  
+@@ -41,7 +40,7 @@ classifiers = [
+ 
+ dependencies = [
+     "hatchling",
+-    "semver ~= 2.13.0",
++    "semver >= 2.13.0",
+ ]
+ 
+ dynamic = [
