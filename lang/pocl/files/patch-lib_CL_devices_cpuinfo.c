@@ -1,5 +1,5 @@
---- lib/CL/devices/cpuinfo.c.orig	2021-10-12 16:33:15.000000000 +0200
-+++ lib/CL/devices/cpuinfo.c	2021-10-16 09:29:13.414668000 +0200
+--- lib/CL/devices/cpuinfo.c.orig	2022-06-10 10:09:05 UTC
++++ lib/CL/devices/cpuinfo.c
 @@ -34,6 +34,12 @@
  #include "config.h"
  #include "cpuinfo.h"
@@ -13,7 +13,7 @@
  static const char* cpuinfo = "/proc/cpuinfo";
  #define MAX_CPUINFO_SIZE 64*1024
  //#define DEBUG_POCL_CPUINFO
-@@ -41,9 +47,6 @@
+@@ -41,9 +47,6 @@ static const char* cpufreq_file="/sys/devices/system/c
  //Linux' cpufrec interface
  static const char* cpufreq_file="/sys/devices/system/cpu/cpu0/cpufreq/cpuinfo_max_freq";
  
@@ -23,7 +23,7 @@
  /* Strings to parse in /proc/cpuinfo. Else branch is for x86, x86_64 */
  #if   defined  __powerpc__
   #define FREQSTRING "clock"
-@@ -156,8 +159,51 @@
+@@ -156,8 +159,51 @@ pocl_cpuinfo_detect_max_clock_frequency()
      } 
    return -1;  
  }
@@ -75,7 +75,7 @@
  /**
   * Detects the number of parallel hardware threads supported by
   * the CPU by parsing the cpuinfo.
-@@ -235,6 +281,19 @@
+@@ -235,6 +281,19 @@ pocl_cpuinfo_detect_compute_unit_count()
      } 
    return -1;  
  }
@@ -95,7 +95,7 @@
  
  #if __arm__ || __aarch64__
  enum
-@@ -302,6 +361,7 @@
+@@ -302,6 +361,7 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_device_id devi
     * short_name is in the .data anyways.*/
    device->long_name = device->short_name;
  
@@ -103,7 +103,7 @@
    /* default vendor and vendor_id, in case it cannot be found by other means */
    device->vendor = cpuvendor_default;
    if (device->vendor_id == 0)
-@@ -404,7 +464,26 @@
+@@ -404,7 +464,26 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_device_id devi
    char *new_name = (char*)malloc (len);
    snprintf (new_name, len, "%s-%s", device->short_name, start);
    device->long_name = new_name;
@@ -130,7 +130,7 @@
    /* If the vendor_id field is still empty, we should get the PCI ID associated
     * with the CPU vendor (if there is one), to be ready for the (currently
     * provisional) OpenCL 3.0 specification that has finally clarified the
-@@ -415,13 +494,23 @@
+@@ -415,13 +494,23 @@ pocl_cpuinfo_get_cpu_name_and_vendor(cl_device_id devi
     */
    if (!device->vendor_id)
      {
