@@ -1,7 +1,6 @@
 PORTNAME=	miniserve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.23.1
-PORTREVISION=	1
+DISTVERSION=	0.23.2
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -38,15 +37,16 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		ahash-0.7.6 \
 		ahash-0.8.3 \
 		aho-corasick-0.7.20 \
+		aho-corasick-1.0.1 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
 		alphanumeric-sort-1.5.1 \
 		android_system_properties-0.1.5 \
-		anstream-0.3.0 \
+		anstream-0.3.1 \
 		anstyle-1.0.0 \
 		anstyle-parse-0.2.0 \
 		anstyle-query-1.0.0 \
-		anstyle-wincon-1.0.0 \
+		anstyle-wincon-1.0.1 \
 		anyhow-1.0.70 \
 		askama_escape-0.10.3 \
 		assert_cmd-2.0.11 \
@@ -62,19 +62,18 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		brotli-3.3.4 \
 		brotli-decompressor-2.3.4 \
 		bstr-1.4.0 \
-		bumpalo-3.12.0 \
+		bumpalo-3.12.1 \
 		byteorder-1.4.3 \
 		bytes-1.4.0 \
 		bytesize-1.2.0 \
 		bytestring-1.3.0 \
-		c_linked_list-1.1.1 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.24 \
 		chrono-humanize-0.2.2 \
-		clap-4.2.2 \
-		clap_builder-4.2.2 \
-		clap_complete-4.2.0 \
+		clap-4.2.5 \
+		clap_builder-4.2.5 \
+		clap_complete-4.2.1 \
 		clap_derive-4.2.0 \
 		clap_lex-0.4.1 \
 		clap_mangen-0.2.10 \
@@ -84,7 +83,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		comrak-0.18.0 \
 		convert_case-0.4.0 \
 		core-foundation-sys-0.8.4 \
-		cpufeatures-0.2.6 \
+		cpufeatures-0.2.7 \
 		crc32fast-1.3.2 \
 		crossbeam-utils-0.8.15 \
 		crypto-common-0.1.6 \
@@ -123,16 +122,13 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		futures-task-0.3.28 \
 		futures-timer-3.0.2 \
 		futures-util-0.3.28 \
-		gcc-0.3.55 \
 		generic-array-0.14.7 \
-		get_if_addrs-0.5.3 \
-		get_if_addrs-sys-0.1.1 \
 		getrandom-0.2.9 \
 		globset-0.4.10 \
 		globwalk-0.8.1 \
 		grass-0.12.3 \
 		grass_compiler-0.12.3 \
-		h2-0.3.17 \
+		h2-0.3.18 \
 		hashbrown-0.11.2 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
@@ -151,6 +147,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		iana-time-zone-0.1.56 \
 		iana-time-zone-haiku-0.1.1 \
 		idna-0.3.0 \
+		if-addrs-0.10.1 \
 		ignore-0.4.20 \
 		indexmap-1.9.3 \
 		instant-0.1.12 \
@@ -164,11 +161,11 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		language-tags-0.3.2 \
 		lasso-0.6.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.141 \
+		libc-0.2.142 \
 		libflate-1.3.0 \
 		libflate_lz77-1.2.0 \
 		link-cplusplus-1.0.8 \
-		linux-raw-sys-0.3.1 \
+		linux-raw-sys-0.3.5 \
 		local-channel-0.1.3 \
 		local-waker-0.1.3 \
 		lock_api-0.4.9 \
@@ -221,9 +218,9 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		rand_core-0.6.4 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
-		regex-1.7.3 \
+		regex-1.8.1 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.29 \
+		regex-syntax-0.7.1 \
 		reqwest-0.11.16 \
 		ring-0.16.20 \
 		rle-decode-fast-1.0.3 \
@@ -231,7 +228,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		rstest-0.17.0 \
 		rstest_macros-0.17.0 \
 		rustc_version-0.4.0 \
-		rustix-0.37.11 \
+		rustix-0.37.15 \
 		rustls-0.20.8 \
 		rustls-pemfile-1.0.2 \
 		rustversion-1.0.12 \
@@ -279,11 +276,11 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		time-macros-0.2.8 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.27.0 \
+		tokio-1.28.0 \
 		tokio-rustls-0.23.4 \
-		tokio-util-0.7.7 \
+		tokio-util-0.7.8 \
 		tower-service-0.3.2 \
-		tracing-0.1.37 \
+		tracing-0.1.38 \
 		tracing-core-0.1.30 \
 		try-lock-0.2.4 \
 		typed-arena-2.0.2 \
@@ -313,7 +310,6 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		web-sys-0.3.61 \
 		webpki-0.22.0 \
 		webpki-roots-0.22.6 \
-		winapi-0.2.8 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
