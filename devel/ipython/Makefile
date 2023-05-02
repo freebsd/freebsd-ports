@@ -1,5 +1,5 @@
 PORTNAME=	ipython
-PORTVERSION=	8.12.0
+PORTVERSION=	8.13.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backcall>=0:devel/py-backcall@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traitlets>=5:devel/py-traitlets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib-inline>0:math/py-matplotlib-inline@${PY_FLAVOR}
 
-USES=		cpe python:3.7+
+USES=		cpe python:3.9+
 USE_PYTHON=	autoplist concurrent pep517
 
 CONFLICTS_INSTALL=	py*-ipython5
