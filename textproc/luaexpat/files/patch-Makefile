@@ -1,19 +1,19 @@
---- Makefile.orig	2022-04-01 08:20:20 UTC
+--- Makefile.orig	2022-10-03 09:23:43 UTC
 +++ Makefile
 @@ -27,10 +27,12 @@ src/$(LIBNAME):
- 	$(CC) $(CF) -o $@ src/$(T)lib.c $(LF)
+ 	$(CC) $(CF) $(RPM_OPT_FLAGS) $(RPM_LD_FLAGS) -o $@ src/$(T)lib.c $(LF)
  
  install:
 -	$(INSTALL_PROGRAM) -D src/$(LIBNAME) $(DESTDIR)$(LUA_CDIR)/$(LIBNAME)
--	$(INSTALL_PROGRAM) -D src/$T/lom.lua $(DESTDIR)$(LUA_LDIR)/$T/lom.lua
--	$(INSTALL_PROGRAM) -D src/$T/totable.lua $(DESTDIR)$(LUA_LDIR)/$T/totable.lua
--	$(INSTALL_PROGRAM) -D src/$T/threat.lua $(DESTDIR)$(LUA_LDIR)/$T/threat.lua
+-	$(INSTALL_DATA) -D src/$T/lom.lua $(DESTDIR)$(LUA_LDIR)/$T/lom.lua
+-	$(INSTALL_DATA) -D src/$T/totable.lua $(DESTDIR)$(LUA_LDIR)/$T/totable.lua
+-	$(INSTALL_DATA) -D src/$T/threat.lua $(DESTDIR)$(LUA_LDIR)/$T/threat.lua
 +	mkdir -p $(DESTDIR)$(LUA_CDIR)
 +	mkdir -p $(DESTDIR)$(LUA_LDIR)/$T
 +	$(INSTALL_PROGRAM) src/$(LIBNAME) $(DESTDIR)$(LUA_CDIR)/$(LIBNAME)
-+	$(INSTALL_PROGRAM) src/$T/lom.lua $(DESTDIR)$(LUA_LDIR)/$T/lom.lua
-+	$(INSTALL_PROGRAM) src/$T/totable.lua $(DESTDIR)$(LUA_LDIR)/$T/totable.lua
-+	$(INSTALL_PROGRAM) src/$T/threat.lua $(DESTDIR)$(LUA_LDIR)/$T/threat.lua
++	$(INSTALL_DATA) src/$T/lom.lua $(DESTDIR)$(LUA_LDIR)/$T/lom.lua
++	$(INSTALL_DATA) src/$T/totable.lua $(DESTDIR)$(LUA_LDIR)/$T/totable.lua
++	$(INSTALL_DATA) src/$T/threat.lua $(DESTDIR)$(LUA_LDIR)/$T/threat.lua
  
  clean:
  	$(RM) src/$(LIBNAME) $(OBJS)
