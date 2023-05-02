@@ -25,6 +25,8 @@ LIB_DEPENDS=	libyaml.so:textproc/libyaml
 RUN_DEPENDS=	libffi>=0:devel/libffi
 
 USES=		autoreconf cpe ruby:none ssl tar:xz
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Do not build openssl module
 
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
