@@ -1,6 +1,5 @@
 PORTNAME=	typer
-PORTVERSION=	0.7.0
-PORTREVISION=	2
+PORTVERSION=	0.8.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,6 +24,7 @@ OPTIONS_DEFAULT=ALL
 ALL_DESC=	All dependencies
 
 ALL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colorama>=0.4.3<0.5.0:devel/py-colorama@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}rich>=10.11.0<14.0.0:textproc/py-rich@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}shellingham>=1.3.0<2.0.0:devel/py-shellingham@${PY_FLAVOR}
 
 .include <bsd.port.mk>
