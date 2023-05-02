@@ -11,6 +11,8 @@ WWW=		https://www.haproxy.org
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=	Upstream EOL reached on 2021-03-31
+EXPIRATION_DATE=	2023-06-02
 BROKEN_mips=		fails to build: undefined reference to '__sync_sub_and_fetch_4'
 BROKEN_mips64=		fails to build: undefined reference to '__sync_sub_and_fetch_4'
 
@@ -39,6 +41,8 @@ DEVICEATLAS_LIB_DEPENDS=	libda.so:net/deviceatlas-enterprise-c
 DEVICEATLAS_MAKE_ARGS=		USE_DEVICEATLAS=1 DEVICEATLAS_LIB=${LOCALBASE}/lib DEVICEATLAS_INC=${LOCALBASE}/include
 OPENSSL_USES=		ssl
 OPENSSL_MAKE_ARGS=	USE_OPENSSL=1 SSL_LIB=${OPENSSLLIB} SSL_INC=${OPENSSLINC}
+OPENSSL_VARS=	IGNORE_SSL="openssl30 openssl31" \
+		IGNORE_SSL_REASON="Fails to build with OpenSSL 3.0.0 and later"
 LUA_USES=		lua:53
 LUA_MAKE_ARGS=		USE_LUA=1 LUA_INC=${LUA_INCDIR} LUA_LIB=${LUA_LIBDIR} LUA_LIB_NAME=lua-${LUA_VER}
 
