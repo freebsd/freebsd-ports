@@ -22,4 +22,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=22.1.0:devel/py-black@${PY_FLAVOR} \
 USES=		python:3.7+
 USE_PYTHON=	autoplist pep517 pytest
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
