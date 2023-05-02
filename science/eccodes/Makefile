@@ -10,6 +10,9 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ECMWF API for WMO FM-92 GRIB and FM-94 BUFR messages
 WWW=		https://confluence.ecmwf.int/display/ECC
 
+ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le riscv64
+ONLY_FOR_ARCHS_REASON=	ecCodes only supports 64 bit platforms
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
