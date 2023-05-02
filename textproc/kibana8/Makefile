@@ -1,6 +1,7 @@
 PORTNAME=	kibana
 DISTVERSION=	8.7.0
 DISTVERSIONSUFFIX=	-darwin-x86_64
+PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
