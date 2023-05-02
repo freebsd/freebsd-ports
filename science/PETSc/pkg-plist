@@ -131,6 +131,7 @@ include/petsc/private/viewercgnsimpl.h
 include/petsc/private/viewerexodusiiimpl.h
 include/petsc/private/viewerhdf5impl.h
 include/petsc/private/viewerimpl.h
+include/petsc_kokkos.hpp
 include/petscaijdevice.h
 include/petscao.h
 include/petscao.mod
@@ -201,6 +202,7 @@ include/petscds.h
 include/petscdstypes.h
 include/petscdt.h
 include/petscdt.mod
+include/petscdualspace.h
 include/petscerror.h
 include/petscfe.h
 include/petscfeceed.h
@@ -251,6 +253,7 @@ include/petscsnes.h
 include/petscsnes.mod
 include/petscsnesdef.mod
 include/petscsnesdefdummy.mod
+include/petscspace.h
 include/petscstring.h
 include/petscsys.h
 include/petscsys.mod
@@ -652,6 +655,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex5.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex50.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex51.c
+%%DATADIR%%/examples/src/dm/impls/plex/tests/ex52.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex55.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex56.c
 %%DATADIR%%/examples/src/dm/impls/plex/tests/ex57.c
@@ -1391,6 +1395,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex51_0_nsize-1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex51_0_nsize-2.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex51_0_nsize-4.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex52_0.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex55_10-v3.16.0-v1.0.0_a.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex55_10-v3.16.0-v1.0.0_c.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex55_10-v3.16.0-v1.0.0_d.out
@@ -3015,6 +3020,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex27_4d.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex27_4e.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex27_4f.out
+%%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex27_4f_nonzero.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex27_4g.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex27_5.out
 %%DATADIR%%/examples/src/ksp/ksp/tutorials/output/ex27_6_hdf5.out
