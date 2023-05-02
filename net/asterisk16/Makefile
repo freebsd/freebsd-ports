@@ -9,30 +9,33 @@ MASTER_SITE_SUBDIR=	asterisk/ \
 PKGNAMESUFFIX=	16
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
+EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open Source PBX and telephony toolkit
 WWW=		https://www.asterisk.org
 
-DEPRECATED=		Upstream EOL reaches on 2023-10-09
-EXPIRATION_DATE=	2023-12-31
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=		Upstream EOL reaches on 2023-10-09
+EXPIRATION_DATE=	2023-12-31
 
 LIB_DEPENDS=	libuuid.so:misc/e2fsprogs-libuuid \
 		libjansson.so:devel/jansson
 
 USES=		bison compiler:c11 cpe gmake gnome iconv libedit localbase \
 		pkgconfig shebangfix sqlite ssl ncurses
+CPE_VENDOR=	digium
+USE_GITHUB=	nodefault
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	asterisk
-USE_GITHUB=	nodefault
 
-EXTRACT_ONLY:=	${DISTNAME}${EXTRACT_SUFX}
+SHEBANG_FILES=	agi/agi-test.agi \
+		agi/jukebox.agi \
+		contrib/scripts/astversion
 
-PJSIP_VERSION=	2.12.1
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--with-ilbc=internal \
@@ -40,12 +43,8 @@ CONFIGURE_ARGS=	--datarootdir=${DATADIR} \
 		--with-ssl=${OPENSSLBASE} \
 		--with-externals-cache=${DISTDIR}/${DIST_SUBDIR}
 
-CPE_VENDOR=	digium
-
-SHEBANG_FILES=	agi/agi-test.agi \
-		agi/jukebox.agi \
-		contrib/scripts/astversion
-LDFLAGS+=	-L.
+MAKE_ARGS+=	NOISY_BUILD=yes \
+		ASTDATADIR=${DATADIR}
 MAKE_ENV=	PTHREAD_LIBS="-lpthread" \
 		MKDIR="${MKDIR}" \
 		PWLIBDIR=${LOCALBASE}/share/pwlib \
@@ -53,62 +52,55 @@ MAKE_ENV=	PTHREAD_LIBS="-lpthread" \
 		DOCSDIR=${DOCSDIR} \
 		ASTCFLAGS="${CFLAGS}" \
 		ASTLDFLAGS="${LDFLAGS}"
-MAKE_ARGS+=	NOISY_BUILD=yes \
-		ASTDATADIR=${DATADIR}
+
+LDFLAGS+=	-L.
 
 CONFLICTS=		ossp-uuid
 CONFLICTS_BUILD=	linuxthreads
 CONFLICTS_INSTALL=	asterisk13 asterisk18
 
+USERS=	${ASTERISK_USER}
+GROUPS=	${ASTERISK_GROUP} dahdi
+
 OPTIONS_DEFINE=			ASTVERSION BACKTRACE CURL EXCHANGE FREETDS G729 LDAP LUA MACRO \
 				MP3PLAYER OOH323 OPTIMIZED_CFLAGS PJSIP PORTAUDIO RADIUS SNMP \
 				SPANDSP SRTP SYSINFO URIPARSER XMLDOC XMPP
-OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MACRO MP3PLAYER NEWT ODBC OPUS MYSQL PGSQL \
-				PJSIP PORTAUDIO RADIUS SNMP SPANDSP SPEEX SRTP URIPARSER \
-				VORBIS XMLDOC
-
-OPTIONS_DEFINE_i386=		DAHDI GEOLOCATION
-OPTIONS_DEFINE_amd64=		DAHDI GEOLOCATION
 OPTIONS_DEFINE_aarch64=		GEOLOCATION
-OPTIONS_DEFINE_sparc64=		DAHDI
+OPTIONS_DEFINE_amd64=		DAHDI GEOLOCATION
+OPTIONS_DEFINE_i386=		DAHDI GEOLOCATION
 OPTIONS_DEFINE_powerpc=		DAHDI
 OPTIONS_DEFINE_powerpc64=	DAHDI
 OPTIONS_DEFINE_powerpc64le=	DAHDI
-
-OPTIONS_DEFAULT_i386=		DAHDI XMPP
+OPTIONS_DEFINE_sparc64=		DAHDI
+OPTIONS_DEFAULT=		CURL FREETDS GSM LUA MACRO MP3PLAYER NEWT ODBC OPUS MYSQL PGSQL \
+				PJSIP PORTAUDIO RADIUS SNMP SPANDSP SPEEX SRTP URIPARSER \
+				VORBIS XMLDOC
 OPTIONS_DEFAULT_amd64=		DAHDI XMPP
-OPTIONS_DEFAULT_sparc64=	DAHDI XMPP
+OPTIONS_DEFAULT_i386=		DAHDI XMPP
 OPTIONS_DEFAULT_powerpc=	DAHDI XMPP
 OPTIONS_DEFAULT_powerpc64=	DAHDI XMPP
 OPTIONS_DEFAULT_powerpc64le=	DAHDI XMPP
-
-OPTIONS_GROUP=			CODECS
+OPTIONS_DEFAULT_sparc64=	DAHDI XMPP
+OPTIONS_GROUP=			CODECS DATABASE
 OPTIONS_GROUP_CODECS=		GSM NEWG711 OPUS SPEEX VORBIS
-CODECS_DESC=			Encoder/Decoder (Codec) Support
-
-OPTIONS_GROUP+=			DATABASE
 OPTIONS_GROUP_DATABASE=		MYSQL ODBC PGSQL
-DATABASE_DESC=			Database Support
-
 OPTIONS_MULTI=			MENU
 OPTIONS_MULTI_MENU=		NCURSES NEWT
-MENU_DESC=			Menuselect Interface Backend
-NEWT_DESC=			Newt User Interface
-
-ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.5.tar.gz
-ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
-G729_DISTFILES=			${ASTERISK_CORE_G729_SOUNDS}:g729 \
-				${ASTERISK_MOH_G729_SOUNDS}:g729
+OPTIONS_SUB=		yes
 
 ASTVERSION_DESC?= Install astversion (requires bash)
 BACKTRACE_DESC?= Stack backtrace support via (lib)execinfo
+CODECS_DESC=			Encoder/Decoder (Codec) Support
 DAHDI_DESC?=	DAHDI support
+DATABASE_DESC=			Database Support
 EXCHANGE_DESC?=	Exchange calendar support
 G729_DESC?=	Install G.729 format sounds for Music-on-Hold (MoH)
 GEOLOCATION_DESC?= Enable SIP Geolocation support
 MACRO_DESC?=	Enable app_macro (deprecated)
+MENU_DESC=			Menuselect Interface Backend
 MP3PLAYER_DESC=	Install MP3 Player for Music-On-Hold (mpg123)
 NEWG711_DESC?=	New G711 Codec
+NEWT_DESC=			Newt User Interface
 OOH323_DESC?=	ooh323 support
 OPUS_DESC?=	Opus Codec
 PJSIP_DESC?=	Build the PJSIP based SIP channel
@@ -118,110 +110,91 @@ URIPARSER_DESC?= Use RFC 3986 compliant uriparser library
 XMLDOC_DESC?=	Build and install XML documentation
 XMPP_DESC?=	XMPP/GTALK support
 
-OPTIONS_SUB=		yes
-
 ASTVERSION_RUN_DEPENDS=		bash:shells/bash
-
 BACKTRACE_CONFIGURE_WITH=	execinfo
-
-CURL_CONFIGURE_WITH=	libcurl
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
-
-DAHDI_CONFIGURE_WITH=	dahdi openr2
+CURL_CONFIGURE_WITH=	libcurl
 DAHDI_LIB_DEPENDS=	libpri.so:misc/libpri \
 			libopenr2.so:misc/openr2 \
 			libtonezone.so:misc/dahdi
-
-EXCHANGE_CONFIGURE_OFF=	--without-neon --without-neon29
+DAHDI_CONFIGURE_WITH=	dahdi openr2
 EXCHANGE_LIB_DEPENDS=	libneon.so:www/neon \
 			libexpat.so:textproc/expat2
 EXCHANGE_USES=		gettext-runtime
-
+EXCHANGE_CONFIGURE_OFF=	--without-neon --without-neon29
+FREETDS_LIB_DEPENDS=	libsybdb.so:databases/freetds
 FREETDS_CONFIGURE_ON=	--with-tds=${LOCALBASE}
 FREETDS_CONFIGURE_OFF=	--without-tds
-FREETDS_LIB_DEPENDS=	libsybdb.so:databases/freetds
-
+G729_DISTFILES=			${ASTERISK_CORE_G729_SOUNDS}:g729 \
+				${ASTERISK_MOH_G729_SOUNDS}:g729
 GEOLOCATION_USE=	GNOME=libxslt
-
-GSM_CONFIGURE_WITH=	gsm
 GSM_LIB_DEPENDS=	libgsm.so:audio/gsm
-
-LDAP_CONFIGURE_WITH=	ldap
+GSM_CONFIGURE_WITH=	gsm
 LDAP_USES=		ldap
-
-LUA_CONFIGURE_WITH=	lua
+LDAP_CONFIGURE_WITH=	ldap
 LUA_USES=		lua
+LUA_CONFIGURE_WITH=	lua
 LUA_CFLAGS=		-I${LUA_INCDIR}
 LUA_LDFLAGS=		-L${LUA_LIBDIR}
-
-MYSQL_CONFIGURE_WITH=	mysqlclient
-MYSQL_USES=		mysql
-
 MP3PLAYER_RUN_DEPENDS=	mpg123:audio/mpg123
-
+MYSQL_USES=		mysql
+MYSQL_CONFIGURE_WITH=	mysqlclient
 NCURSES_USES=		ncurses
 NEWT_LIB_DEPENDS=	libnewt.so:devel/newt
-
-ODBC_CONFIGURE_WITH=	unixodbc
-ODBC_CONFIGURE_ON=	--with-ltdl
 ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC \
 			libltdl.so:devel/libltdl
-
-OPUS_LIB_DEPENDS=	libopus.so:audio/opus
+ODBC_CONFIGURE_ON=	--with-ltdl
+ODBC_CONFIGURE_WITH=	unixodbc
 OPUS_EXTRACT_ONLY=	${DISTFILE_opus}
+OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_GH_TUPLE=		traud:asterisk-opus:83e1b458c77e0e287adeca494eeb79edb077b0ff:opus
-
-PGSQL_CONFIGURE_WITH=	postgres
 PGSQL_USES=		pgsql
-
-PJSIP_CONFIGURE_WITH=	pjproject pjproject-bundled
+PGSQL_CONFIGURE_WITH=	postgres
 PJSIP_LIB_DEPENDS=	libsrtp2.so:net/libsrtp2 \
 			libspeex.so:audio/speex \
 			libspeexdsp.so:audio/speexdsp
 PJSIP_GH_TUPLE=		pjsip:pjproject:${PJSIP_VERSION}:pjsip
-
-PORTAUDIO_CONFIGURE_WITH=	portaudio
+PJSIP_CONFIGURE_WITH=	pjproject pjproject-bundled
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
-
-RADIUS_CONFIGURE_WITH=	radius
+PORTAUDIO_CONFIGURE_WITH=	portaudio
 RADIUS_LIB_DEPENDS=	libradiusclient-ng.so:net/radiusclient
-
-SNMP_CONFIGURE_WITH=	netsnmp
+RADIUS_CONFIGURE_WITH=	radius
 SNMP_LIB_DEPENDS=	libnetsnmp.so:net-mgmt/net-snmp \
 			libpkg.so:${PKG_ORIGIN}
-
-SPANDSP_CONFIGURE_WITH=	spandsp
+SNMP_CONFIGURE_WITH=	netsnmp
 SPANDSP_LIB_DEPENDS=	libspandsp.so:comms/spandsp \
 			libtiff.so:graphics/tiff
-
-SPEEX_CONFIGURE_WITH=	speex
+SPANDSP_CONFIGURE_WITH=	spandsp
 SPEEX_LIB_DEPENDS=	libspeex.so:audio/speex \
 			libspeexdsp.so:audio/speexdsp
-
-SRTP_CONFIGURE_WITH=	srtp
+SPEEX_CONFIGURE_WITH=	speex
 SRTP_LIB_DEPENDS=	libsrtp2.so:net/libsrtp2
-
+SRTP_CONFIGURE_WITH=	srtp
 SYSINFO_LIB_DEPENDS=	libsysinfo.so:devel/libsysinfo
-
-URIPARSER_CONFIGURE_WITH=	uriparser
 URIPARSER_LIB_DEPENDS=	liburiparser.so:net/uriparser
-
-VORBIS_CONFIGURE_WITH=	ogg
+URIPARSER_CONFIGURE_WITH=	uriparser
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis \
 			libogg.so:audio/libogg
-
+VORBIS_CONFIGURE_WITH=	ogg
 XMLDOC_CONFIGURE_ENABLE=	xmldoc
-
-XMPP_CONFIGURE_WITH=	iksemel
 XMPP_LIB_DEPENDS=	libiksemel.so:textproc/iksemel
+XMPP_CONFIGURE_WITH=	iksemel
 
+ASTERISK_CORE_G729_SOUNDS=	asterisk-core-sounds-en-g729-1.5.tar.gz
+ASTERISK_MOH_G729_SOUNDS=	asterisk-moh-opsound-g729-2.03.tar.gz
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
-
-USERS=	${ASTERISK_USER}
-GROUPS=	${ASTERISK_GROUP} dahdi
+PJSIP_VERSION=	2.12.1
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+USES+=		llvm:max=14
+CPP=            clang-cpp${LLVM_VERSION}
+CC=             clang${LLVM_VERSION}
+CXX=            clang++${LLVM_VERSION}
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if empty(ICONV_LIB)
