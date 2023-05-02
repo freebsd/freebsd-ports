@@ -1,6 +1,6 @@
 PORTNAME=	ghostscript
 PORTVERSION=	8.71
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	print
 MASTER_SITES=	http://downloads.ghostscript.com/public/:gs_srcs \
 		SF/ghostscript/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \

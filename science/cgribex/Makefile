@@ -1,6 +1,6 @@
 PORTNAME=	cgribex
 PORTVERSION=	1.9.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://code.mpimet.mpg.de/attachments/download/21178/ \
 		LOCAL/sunpoet
