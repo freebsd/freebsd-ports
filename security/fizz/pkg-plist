@@ -27,6 +27,7 @@ include/fizz/crypto/Utils.h
 include/fizz/crypto/aead/AESGCM128.h
 include/fizz/crypto/aead/AESGCM256.h
 include/fizz/crypto/aead/AESOCB128.h
+include/fizz/crypto/aead/AEGISCipher.h
 include/fizz/crypto/aead/Aead.h
 include/fizz/crypto/aead/ChaCha20Poly1305.h
 include/fizz/crypto/aead/IOBufUtil.h
@@ -79,6 +80,7 @@ include/fizz/extensions/tokenbinding/TokenBindingServerExtension.h
 include/fizz/extensions/tokenbinding/Types.h
 include/fizz/extensions/tokenbinding/Utils.h
 include/fizz/extensions/tokenbinding/Validator.h
+include/fizz/fizz-config.h
 include/fizz/protocol/Actions.h
 include/fizz/protocol/AsyncFizzBase.h
 include/fizz/protocol/BrotliCertificateCompressor.h
