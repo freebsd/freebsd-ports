@@ -1,7 +1,6 @@
 PORTNAME=	sqldeveloper
-DISTVERSION=	22.2.1.234.1810
+DISTVERSION=	23.1.0.097.1607
 DISTVERSIONSUFFIX=	-no-jre
-PORTREVISION=	1
 CATEGORIES=	databases java
 # https://www.oracle.com/tools/downloads/sqldev-downloads.html
 MASTER_SITES=
@@ -63,7 +62,7 @@ do-install:
 
 .for d in configuration dataminer dropins equinox \
     external ide javavm jdbc jdev jlib jviews modules \
-    netbeans orakafka rdbms sleepycat sqldeveloper sqlj svnkit
+    netbeans rdbms sleepycat sqldeveloper sqlj svnkit
 	${ECHO_MSG} -n ">> Installing data directory '${d}'..."
 	cd ${WRKSRC} && ${FIND} ${d} -type d \
 		-exec ${MKDIR} ${STAGEDIR}/${DATADIR}/\{} \;

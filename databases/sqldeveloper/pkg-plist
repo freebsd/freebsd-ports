@@ -156,6 +156,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_3To12_2_0_0_4.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_4To12_2_0_0_5.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_5To12_2_0_0_6.sql
+%%DATADIR%%/dataminer/scripts/upgradeRepo12_2_0_0_6To12_2_0_0_7.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepoFromORToBinary.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepoWithNewTableSpace.sql
 %%DATADIR%%/dataminer/scripts/upgradeRepository.sql
@@ -184,7 +185,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/external/oracle.external.apache.commons-codec.jar
 %%DATADIR%%/external/oracle.external.apache.commons-collections4.jar
 %%DATADIR%%/external/oracle.external.apache.commons-compress.jar
-%%DATADIR%%/external/oracle.external.apache.commons-logging.jar
 %%DATADIR%%/external/oracle.external.apache.commons-math3.jar
 %%DATADIR%%/external/oracle.external.apache.xmlbeans.jar
 %%DATADIR%%/external/oracle.external.apache_httpclient.jar
@@ -198,6 +198,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/external/oracle.external.cloudstorage.jar
 %%DATADIR%%/external/oracle.external.commons-codec.jar
 %%DATADIR%%/external/oracle.external.commons-httpclient.jar
+%%DATADIR%%/external/oracle.external.commons-io.jar
 %%DATADIR%%/external/oracle.external.curvesapi.jar
 %%DATADIR%%/external/oracle.external.el-for-uix2.jar
 %%DATADIR%%/external/oracle.external.el.jar
@@ -234,7 +235,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/external/oracle.external.qb.jar
 %%DATADIR%%/external/oracle.external.rsyntaxtextarea.jar
 %%DATADIR%%/external/oracle.external.servlet-runtime.jar
-%%DATADIR%%/external/oracle.external.slf4j-api.jar
+%%DATADIR%%/external/oracle.external.slf4j.jar
 %%DATADIR%%/external/oracle.external.spatial.jar
 %%DATADIR%%/external/oracle.external.sqldev.mina-sshd.jar
 %%DATADIR%%/external/oracle.external.sqlj-rt.jar
@@ -351,7 +352,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/ide/themes/fusionblue.jar
 %%DATADIR%%/ide/themes/sizingmargins.png
 %%DATADIR%%/javavm/lib/aurora.jar
-%%DATADIR%%/jdbc/lib/ojdbc8.jar
+%%DATADIR%%/jdbc/lib/ojdbc11.jar
 %%DATADIR%%/jdev/bin/ojwebupdate
 %%DATADIR%%/jdev/bin/ojwebupdate-logging.conf
 %%DATADIR%%/jdev/bin/ojwebupdate.boot
@@ -575,7 +576,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/modules/org.glassfish.javax.el.jar
 %%DATADIR%%/modules/org.glassfish.javax.json.jar
 %%DATADIR%%/modules/thirdparty/asm-9.0.jar
-%%DATADIR%%/modules/thirdparty/batik-all-1.14.0.0.1.jar
+%%DATADIR%%/modules/thirdparty/batik-all-1.16.0.0.1.jar
 %%DATADIR%%/modules/thirdparty/commons-codec-1.15.jar
 %%DATADIR%%/modules/thirdparty/commons-io-2.8.0.jar
 %%DATADIR%%/modules/thirdparty/commons-logging-1.2.0.0.2.jar
@@ -1190,7 +1191,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/netbeans/platform/update_tracking/org-openide-util-ui.xml
 %%DATADIR%%/netbeans/platform/update_tracking/org-openide-util.xml
 %%DATADIR%%/netbeans/platform/update_tracking/org-openide-windows.xml
-%%DATADIR%%/orakafka/orakafka.zip
 %%DATADIR%%/rdbms/jlib/ojdi.jar
 %%DATADIR%%/rdbms/jlib/xdb.jar
 %%DATADIR%%/sleepycat/je-3.3.98/lib/je-3.3.98.jar
@@ -2122,7 +2122,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/reactive-streams.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/rxjava.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/slf4j-api.jar
-%%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/snakeyaml.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.pgql/lib/truffle-api.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.rdfgraph.jar
 %%DATADIR%%/sqldeveloper/extensions/oracle.sqldeveloper.rdfgraph/lib/rdfgraph_help.jar
@@ -2151,17 +2150,18 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/lib/PropertyStorage.jar
 %%DATADIR%%/sqldeveloper/lib/ST4.jar
 %%DATADIR%%/sqldeveloper/lib/SparseBitSet.jar
+%%DATADIR%%/sqldeveloper/lib/annotations.jar
 %%DATADIR%%/sqldeveloper/lib/antlr-all-2.7.6.jar
 %%DATADIR%%/sqldeveloper/lib/antlr-runtime-3.1.3.jar
 %%DATADIR%%/sqldeveloper/lib/antlr-runtime.jar
+%%DATADIR%%/sqldeveloper/lib/antlr4-runtime.jar
 %%DATADIR%%/sqldeveloper/lib/asm.jar
 %%DATADIR%%/sqldeveloper/lib/aurora.jar
-%%DATADIR%%/sqldeveloper/lib/auto-service-annotations.jar
 %%DATADIR%%/sqldeveloper/lib/common.jar
 %%DATADIR%%/sqldeveloper/lib/commons-codec.jar
 %%DATADIR%%/sqldeveloper/lib/commons-collections4.jar
 %%DATADIR%%/sqldeveloper/lib/commons-compress.jar
-%%DATADIR%%/sqldeveloper/lib/commons-logging.jar
+%%DATADIR%%/sqldeveloper/lib/commons-io.jar
 %%DATADIR%%/sqldeveloper/lib/commons-math3.jar
 %%DATADIR%%/sqldeveloper/lib/curvesapi.jar
 %%DATADIR%%/sqldeveloper/lib/dbtools-common.jar
@@ -2173,6 +2173,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/lib/editor.jar
 %%DATADIR%%/sqldeveloper/lib/emapi.jar
 %%DATADIR%%/sqldeveloper/lib/ext/cpat.jar
+%%DATADIR%%/sqldeveloper/lib/ext/dbtools-apex.jar
 %%DATADIR%%/sqldeveloper/lib/ext/dbtools-aq.jar
 %%DATADIR%%/sqldeveloper/lib/ext/dbtools-cpat.jar
 %%DATADIR%%/sqldeveloper/lib/ext/dbtools-dg.jar
@@ -2187,7 +2188,9 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/lib/jackson-core.jar
 %%DATADIR%%/sqldeveloper/lib/jackson-jr-objects.jar
 %%DATADIR%%/sqldeveloper/lib/jackson-jr-stree.jar
+%%DATADIR%%/sqldeveloper/lib/jakarta.json-api.jar
 %%DATADIR%%/sqldeveloper/lib/jansi.jar
+%%DATADIR%%/sqldeveloper/lib/jcl-over-slf4j.jar
 %%DATADIR%%/sqldeveloper/lib/jdbcrest.jar
 %%DATADIR%%/sqldeveloper/lib/jgraphx.jar
 %%DATADIR%%/sqldeveloper/lib/jline3.jar
@@ -2195,6 +2198,7 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/lib/log4j-1.2-api.jar
 %%DATADIR%%/sqldeveloper/lib/log4j-api.jar
 %%DATADIR%%/sqldeveloper/lib/log4j-core.jar
+%%DATADIR%%/sqldeveloper/lib/log4j-over-slf4j.jar
 %%DATADIR%%/sqldeveloper/lib/low-level-api.jar
 %%DATADIR%%/sqldeveloper/lib/mongodbjdbc.jar
 %%DATADIR%%/sqldeveloper/lib/mvclient.jar
@@ -2208,8 +2212,9 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/lib/orajsoda.jar
 %%DATADIR%%/sqldeveloper/lib/osdt_cert.jar
 %%DATADIR%%/sqldeveloper/lib/osdt_core.jar
+%%DATADIR%%/sqldeveloper/lib/parsson.jar
 %%DATADIR%%/sqldeveloper/lib/plugin-api.jar
-%%DATADIR%%/sqldeveloper/lib/poi-ooxml-schemas.jar
+%%DATADIR%%/sqldeveloper/lib/poi-ooxml-lite.jar
 %%DATADIR%%/sqldeveloper/lib/poi-ooxml.jar
 %%DATADIR%%/sqldeveloper/lib/poi.jar
 %%DATADIR%%/sqldeveloper/lib/resource-templates.jar
@@ -2225,7 +2230,6 @@ share/icons/hicolor/32x32/apps/sqldeveloper.png
 %%DATADIR%%/sqldeveloper/lib/sshd-scp.jar
 %%DATADIR%%/sqldeveloper/lib/sshd-sftp.jar
 %%DATADIR%%/sqldeveloper/lib/stringtemplate-3.1b1.jar
-%%DATADIR%%/sqldeveloper/lib/ucp11.jar
 %%DATADIR%%/sqldeveloper/lib/xdb.jar
 %%DATADIR%%/sqldeveloper/lib/xmlbeans.jar
 %%DATADIR%%/sqldeveloper/lib/xmlparserv2_sans_jaxp_services.jar
