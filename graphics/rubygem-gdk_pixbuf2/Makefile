@@ -1,5 +1,5 @@
 PORTNAME=	gdk_pixbuf2
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
