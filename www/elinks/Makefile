@@ -1,6 +1,6 @@
 PORTNAME=	elinks
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.16.0
+DISTVERSION=	0.16.1.1
 CATEGORIES=	www
 
 MAINTAINER=	jailbird@fdf.net
@@ -10,9 +10,9 @@ WWW=		https://github.com/rkd77/elinks/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison:alias cpe gmake iconv meson perl5 pkgconfig python:3.7+ ssl
 BUILD_DEPENDS=	xmlto:textproc/xmlto
 
+USES=		bison:alias cpe gmake iconv meson perl5 pkgconfig python:3.7+ ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	rkd77
 

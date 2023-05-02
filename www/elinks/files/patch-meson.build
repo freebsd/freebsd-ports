@@ -1,17 +1,6 @@
---- meson.build.orig	2022-12-25 18:17:02 UTC
+--- meson.build.orig	2023-05-01 08:45:22 UTC
 +++ meson.build
-@@ -3,9 +3,7 @@ srcdir = meson.source_root()
- 
- srcdir = meson.source_root()
- 
--txt = run_command('git', '--git-dir=' + srcdir + '/.git', 'rev-parse', 'HEAD', check:false).stdout().strip()
--dirty = run_command(srcdir + '/git-dirty.sh', check:false).stdout().strip()
--add_global_arguments('-DBUILD_ID="' + txt + dirty + '"', language : 'c')
-+add_global_arguments('-DBUILD_ID="\\0"', language : 'c')
- 
- conf_data = configuration_data()
- conf_data.set('VERSION', meson.project_version())
-@@ -171,6 +169,10 @@ endif
+@@ -178,6 +178,10 @@ endif
      conf_data.set('HAVE_FCNTL_H', 1)
  endif
  
@@ -22,7 +11,7 @@
  if compiler.has_header('libgen.h')
      conf_data.set('HAVE_LIBGEN_H', 1)
  endif
-@@ -838,7 +840,7 @@ endif
+@@ -845,7 +849,7 @@ endif
      conf_data.set('HAVE_ICONV', 1)
  endif
  
@@ -31,7 +20,7 @@
      conf_data.set('HAVE_ALLOCA', 1)
  endif
  
-@@ -854,7 +856,7 @@ endif
+@@ -861,7 +865,7 @@ endif
      conf_data.set('HAVE_GNUTLS_CERTIFICATE_SET_X509_SYSTEM_TRUST', 1)
  endif
  
