@@ -1,11 +1,11 @@
 PORTNAME=	liblcf
-PORTVERSION=	0.7.0
-PORTREVISION=	3
+PORTVERSION=	0.8
 CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Library to handle RPG Maker 2000/2003 and EasyRPG projects
-WWW=		https://easyrpg.org/
+WWW=		https://easyrpg.org/ \
+		https://github.com/EasyRPG/liblcf
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING

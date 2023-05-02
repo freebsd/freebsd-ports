@@ -60,6 +60,8 @@ include/lcf/rpg/save.h
 include/lcf/rpg/saveactor.h
 include/lcf/rpg/savecommonevent.h
 include/lcf/rpg/saveeasyrpgdata.h
+include/lcf/rpg/saveeasyrpgtext.h
+include/lcf/rpg/saveeasyrpgwindow.h
 include/lcf/rpg/saveeventexecframe.h
 include/lcf/rpg/saveeventexecstate.h
 include/lcf/rpg/saveinventory.h
@@ -97,7 +99,10 @@ include/lcf/third_party/span.h
 include/lcf/third_party/string_view.h
 include/lcf/writer_lcf.h
 include/lcf/writer_xml.h
+lib/cmake/liblcf/liblcf-config-version.cmake
 lib/cmake/liblcf/liblcf-config.cmake
+lib/cmake/liblcf/liblcf-targets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/liblcf/liblcf-targets.cmake
 lib/liblcf.so
 lib/liblcf.so.0
 libdata/pkgconfig/liblcf.pc
