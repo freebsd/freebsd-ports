@@ -37,6 +37,10 @@ UTF8_CONFIGURE_ENABLE=	utf8
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=       -Wno-error=int-conversion
+.endif
+
 .if !empty(ICONV_LIB)
 CONFIGURE_ENV+=ac_cv_func_iconv_open=yes
 .endif
