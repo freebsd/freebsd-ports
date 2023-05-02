@@ -126,6 +126,7 @@ include/folly/concurrency/CoreCachedSharedPtr.h
 include/folly/concurrency/DeadlockDetector.h
 include/folly/concurrency/DynamicBoundedQueue.h
 include/folly/concurrency/PriorityUnboundedQueueSet.h
+include/folly/concurrency/ProcessLocalUniqueId.h
 include/folly/concurrency/ThreadCachedSynchronized.h
 include/folly/concurrency/UnboundedQueue.h
 include/folly/concurrency/detail/AtomicSharedPtr-detail.h
