@@ -14,6 +14,7 @@ USES=		python:3.8+
 USE_PYTHON=	autoplist distutils
 
 MAKE_ENV=	ATPUBLIC_BUILD_EXTENSION=1
+NO_ARCH=	yes
 
 post-extract:
 	${CP} ${FILESDIR}/setup* ${WRKSRC}
