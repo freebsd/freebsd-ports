@@ -40,6 +40,9 @@ OPTIONS_SUB=	yes
 
 # issue 166367: adding symlinks for back-compatibility with ${lib}_r
 post-install:
+#	@${RM} ${STAGEDIR}${PREFIX}/lib/mysql/private/libprotobuf-lite.so.3.19.4
+#	@${RM} ${STAGEDIR}${PREFIX}/lib/mysql/private/libprotobuf.so.3.19.4
+	@${RM} -r ${STAGEDIR}${PREFIX}/lib/mysql/private
 	@${LN} -s libmysqlclient.a ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.a
 	@${LN} -s libmysqlclient.so ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so
 	@${LN} -s libmysqlclient.so.21 ${STAGEDIR}${PREFIX}/lib/mysql/libmysqlclient_r.so.21
