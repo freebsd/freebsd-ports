@@ -18,8 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-fixture-config>0:devel/py-pytest-fixt
 		${PYTHON_PKGNAMEPREFIX}virtualenv>0:devel/py-virtualenv@${PY_FLAVOR}
 
 USES=		python:3.6+
-
 USE_PYTHON=	autoplist concurrent distutils
+
+NO_ARCH=	yes
 
 do-test:
 	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest -v -rs)
