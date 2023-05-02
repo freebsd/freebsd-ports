@@ -40,9 +40,15 @@ CMAKE_OFF=	BUILD_TESTING GOOGLE_CLOUD_CPP_ENABLE_CXX_EXCEPTIONS
 CFLAGS+=	-I${BUILD_WRKSRC}/external/googleapis/src/googleapis_project-build
 LDFLAGS+=	-L${BUILD_WRKSRC}/external/googleapis/src/googleapis_project-build
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=       -Wno-error=unused-but-set-variable
+.endif
+
 post-extract:
 	@${MKDIR} ${BUILD_WRKSRC}/external/googleapis/src/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTFILE_googleapis} \
 		${BUILD_WRKSRC}/external/googleapis/src/370e9f9ac14dbc73f56e15257bccc06dfebd4196.tar.gz
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
