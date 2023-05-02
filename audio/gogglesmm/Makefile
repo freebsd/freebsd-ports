@@ -1,6 +1,5 @@
 PORTNAME=	gogglesmm
-PORTVERSION=	1.2.2
-PORTREVISION=	11
+PORTVERSION=	1.2.3
 CATEGORIES=	audio
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -21,7 +20,7 @@ USES=		cmake compiler:c++11-lib desktop-file-utils gnome \
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11
 
-CMAKE_OFF=	WITH_CFOX WITH_IMPORT
+CMAKE_OFF=	WITH_CFOX
 
 PORTDOCS=	AUTHORS ChangeLog README
 
