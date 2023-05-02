@@ -10,6 +10,9 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python XML schema bindings
 WWW=		https://pyxb.sourceforge.net/
 
+DEPRECATED=	Upstream issued End-of-Life notice. Use devel/py-pyxb-x instead
+EXPIRATION_DATE=2023-05-31
+
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
