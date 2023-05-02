@@ -3,7 +3,7 @@ PORTVERSION=	1.1.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Functions for Base Types and Core R and 'Tidyverse' Features
 WWW=		https://cran.r-project.org/web/packages/rlang/
 
