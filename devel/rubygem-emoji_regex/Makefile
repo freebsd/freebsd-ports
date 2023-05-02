@@ -1,5 +1,5 @@
 PORTNAME=	emoji_regex
-PORTVERSION=	3.2.3
+PORTVERSION=	15.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
