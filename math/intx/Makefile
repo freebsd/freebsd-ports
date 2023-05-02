@@ -1,6 +1,6 @@
 PORTNAME=	intx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.2
+DISTVERSION=	0.10.0
 CATEGORIES=	math
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/chfast/intx
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake compiler:c++20-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	chfast
 
