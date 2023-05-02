@@ -1,3 +1,47 @@
+  <vuln vid="4ffcccae-e924-11ed-9c88-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.11.0</ge><lt>15.11.1</lt></range>
+	<range><ge>15.10.0</ge><lt>15.10.5</lt></range>
+	<range><ge>9.0</ge><lt>15.9.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/05/02/security-release-gitlab-15-11-1-released/">
+	  <p>Privilege escalation for external users when OIDC is enabled under certain conditions</p>
+	  <p>Account takeover through open redirect for Group SAML accounts</p>
+	  <p>Users on banned IP addresses can still commit to projects</p>
+	  <p>User with developer role (group) can modify Protected branches setting on imported project and leak group CI/CD variables</p>
+	  <p>The Gitlab web interface does not guarantee file integrity when downloading source code or installation packages from a tag or from a release.</p>
+	  <p>Banned group member continues to have access to the public projects of a public group with the access level as same as before the ban.</p>
+	  <p>The main branch of a repository with a specially designed name allows an attacker to create repositories with malicious code.</p>
+	  <p>XSS and content injection and iframe injection when viewing raw files on iOS devices</p>
+	  <p>Authenticated users can find other users by their private email</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2182</cvename>
+      <cvename>CVE-2023-1965</cvename>
+      <cvename>CVE-2023-1621</cvename>
+      <cvename>CVE-2023-2069</cvename>
+      <cvename>CVE-2023-1178</cvename>
+      <cvename>CVE-2023-0805</cvename>
+      <cvename>CVE-2023-0756</cvename>
+      <cvename>CVE-2023-1836</cvename>
+      <cvename>CVE-2022-4376</cvename>
+      <url>https://about.gitlab.com/releases/2023/05/02/security-release-gitlab-15-11-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-02</discovery>
+      <entry>2023-05-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="02562a78-e6b7-11ed-b0ce-b42e991fc52e">
     <topic>cloud-init -- sensitive data exposure in cloud-init logs</topic>
     <affects>
