@@ -77,6 +77,12 @@ USES+=		ssl
 .endif
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=unqualified-std-cast-call
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
 	${INSTALL_DATA} ${WRKSRC}/test/geo.mmdb ${STAGEDIR}${ETCDIR}/geo.mmdb
@@ -86,4 +92,4 @@ post-install-DEVEL-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/include/pichi.h ${STAGEDIR}${PREFIX}/include/pichi.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
