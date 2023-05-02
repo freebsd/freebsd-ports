@@ -1,5 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	13.1.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	GCC
 PKGNAMESUFFIX=	${SUFFIX}
@@ -67,10 +68,6 @@ CONFIGURE_TARGET=	x86_64-portbld-${OPSYS:tl}${OSREL}
 
 .elif defined(PPC_ABI) && ${PPC_ABI} == ELFv2
 CONFIGURE_ARGS+=	--with-abi=elfv2
-USE_GCC=	yes
-
-.elif ${ARCH} == powerpc64le
-USE_GCC=	yes
 .endif
 
 LANGUAGES:=	c,c++,objc,fortran,jit
