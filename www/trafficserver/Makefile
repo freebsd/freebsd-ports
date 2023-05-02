@@ -76,6 +76,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/#ifdef HAVE_EVENTFD/#if defined(HAVE_EVENTFD) \&\& TS_USE_EPOLL == 1/' \
 		${WRKSRC}/src/tscore/EventNotify.cc \
 		${WRKSRC}/include/tscore/EventNotify.h
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+	@${REINPLACE_CMD} -e 's/std::nullptr_t/nullptr_t/g' \
+		${WRKSRC}/include/tscore/Ptr.h
+.endif
 
 post-install:
 	${RMDIR} ${STAGEDIR}${DATADIR}
