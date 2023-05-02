@@ -1,5 +1,5 @@
 PORTNAME=	virtualenv
-PORTVERSION=	20.21.1
+PORTVERSION=	20.23.0
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -34,10 +34,8 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 MAKE_ENV=	SETUPTOOLS_SCM_PRETEND_VERSION="${PORTVERSION}"
 
 .if make(test)
-TEST_DEPENDS+=	python2:lang/python2
 TEST_ENV=	PYTHONIOENCODING=utf-8 \
 		PYTHONPATH="${STAGEDIR}${PYTHON_SITELIBDIR}"
-QA_ENV=		IGNORE_QA_depends_blacklist=yes # we also need lang/python2 to pass some tests
 .endif
 
 NO_ARCH=	yes
