@@ -10,6 +10,9 @@ WWW=		https://github.com/andrewrk/libgroove
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Fails to build with FFmpeg 6 and very little activity upstream
+EXPIRATION_DATE=2023-06-30
+
 LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4 \
 		libchromaprint.so:audio/chromaprint \
 		libebur128.so:audio/ebur128 \
