@@ -13,6 +13,8 @@ LICENSE=	GPLv2+ LGPL21+ # some source files are under lgpl
 LICENSE_COMB=	multi
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 
+DEPRECATED=	Upstream last release was in 2008
+
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libgcrypt.so:security/libgcrypt \
@@ -20,21 +22,32 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgpg-error.so:security/libgpg-error \
 		libharfbuzz.so:print/harfbuzz
 
-USES=		desktop-file-utils gettext gmake gnome iconv ldap pkgconfig \
-		shared-mime-info ssl
+USES=		desktop-file-utils gettext gmake gnome iconv ldap localbase \
+		pkgconfig shared-mime-info ssl
 USE_GNOME=	cairo intltool gdkpixbuf2 libglade2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-ldap-prefix=${LOCALBASE} --disable-update-mimedb
 
-CPPFLAGS+=	-I${LOCALBASE}/include -Wno-return-type
-LIBS+=		-L${LOCALBASE}/lib -lcrypto
+CPPFLAGS+=	-Wno-return-type
+LIBS+=		-lcrypto
 
 OPTIONS_DEFINE=	DND CACHE
 OPTIONS_DEFAULT=	DND CACHE
-DND_DESC=	Enable Drag and drop support in browse mode
-DND_CONFIGURE_ENABLE=	browser-dns
+
 CACHE_DESC=	Support the OpenLDAP experimental client cache
+DND_DESC=	Enable Drag and drop support in browse mode
+
 CACHE_CONFIGURE_ENABLE=	cache
+DND_CONFIGURE_ENABLE=	browser-dns
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+BROKEN=	Fails to build with OpenSSL 1.1.1t and later
+BROKEN_SSL=	base openssl openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to build with OpenSSL 1.1.1t and later
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h>|glib.h>|g' \
@@ -45,4 +58,4 @@ post-patch:
 		${WRKSRC}/src/gq-stack.[ch] \
 		${WRKSRC}/src/gq-tab.h
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
