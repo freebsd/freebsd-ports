@@ -101,10 +101,16 @@ LZMA_CONFIGURE_WITH=	lzma
 
 BZIP2_CONFIGURE_WITH=	bzip2
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-patch-MANPAGES-off:
 	@${REINPLACE_CMD} -e '/AC_CHECK_PROGS/ s|pandoc|&-not-found|' ${WRKSRC}/configure.ac
 
 post-patch-DOXYGEN-off:
 	@${REINPLACE_CMD} -e '/AC_CHECK_PROGS/ s|doxygen|&-not-found|' ${WRKSRC}/configure.ac
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
