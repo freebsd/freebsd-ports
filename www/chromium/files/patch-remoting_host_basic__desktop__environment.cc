@@ -1,6 +1,6 @@
---- remoting/host/basic_desktop_environment.cc.orig	2023-03-09 06:31:50 UTC
+--- remoting/host/basic_desktop_environment.cc.orig	2023-04-28 17:01:32 UTC
 +++ remoting/host/basic_desktop_environment.cc
-@@ -182,7 +182,7 @@ BasicDesktopEnvironment::CreateVideoCapturer() {
+@@ -188,7 +188,7 @@ BasicDesktopEnvironment::CreateVideoCapturer() {
    scoped_refptr<base::SingleThreadTaskRunner> capture_task_runner;
  #if BUILDFLAG(IS_CHROMEOS_ASH)
    capture_task_runner = ui_task_runner_;

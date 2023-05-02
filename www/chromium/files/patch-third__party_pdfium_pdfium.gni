@@ -1,7 +1,7 @@
---- third_party/pdfium/pdfium.gni.orig	2023-02-08 09:03:45 UTC
+--- third_party/pdfium/pdfium.gni.orig	2023-04-28 17:01:32 UTC
 +++ third_party/pdfium/pdfium.gni
 @@ -42,7 +42,7 @@ declare_args() {
-   pdf_use_cxx20 = is_win && is_component_build
+   pdf_use_cxx20 = (is_win && is_component_build) || is_fuchsia
  
    # Build PDFium with PartitionAlloc as the memory allocator.
 -  pdf_use_partition_alloc = pdf_use_partition_alloc_override

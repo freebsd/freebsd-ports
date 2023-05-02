@@ -1,11 +1,11 @@
---- third_party/blink/renderer/modules/webgpu/gpu_queue.cc.orig	2023-04-05 11:05:06 UTC
+--- third_party/blink/renderer/modules/webgpu/gpu_queue.cc.orig	2023-04-28 17:01:32 UTC
 +++ third_party/blink/renderer/modules/webgpu/gpu_queue.cc
-@@ -707,7 +707,7 @@ bool GPUQueue::CopyFromCanvasSourceImage(
- // platform requires interop supported. According to the bug, this change will
- // be a long time task. So disable using webgpu mailbox texture uploading path
+@@ -676,7 +676,7 @@ bool GPUQueue::CopyFromCanvasSourceImage(
  // on linux platform.
+ // TODO(crbug.com/1424119): using a webgpu mailbox texture on the OpenGLES
+ // backend is failing for unknown reasons.
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   use_webgpu_mailbox_texture = false;
-   unaccelerated_image = image->MakeUnaccelerated();
-   image = unaccelerated_image.get();
+   bool forceReadback = true;
+ #else
+   bool forceReadback =

@@ -1,4 +1,4 @@
---- chrome/app/chromium_strings.grd.orig	2022-11-30 08:12:58 UTC
+--- chrome/app/chromium_strings.grd.orig	2023-04-28 17:01:32 UTC
 +++ chrome/app/chromium_strings.grd
 @@ -296,7 +296,7 @@ If you update this file, be sure also to update google
            Welcome to Chromium; new browser window opened
@@ -9,7 +9,7 @@
          <message name="IDS_FIRST_RUN_DIALOG_WINDOW_TITLE" desc="Window title of First Run dialog on Mac and Linux, displayed in title bar">
            Welcome to Chromium
          </message>
-@@ -425,7 +425,7 @@ If you update this file, be sure also to update google
+@@ -437,7 +437,7 @@ If you update this file, be sure also to update google
                      To get future Chromium updates, you'll need Windows 10 or later. This computer is using Windows 8.1.
          </message>
        </if>

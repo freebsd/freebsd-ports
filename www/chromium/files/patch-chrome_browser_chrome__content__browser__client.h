@@ -1,6 +1,6 @@
---- chrome/browser/chrome_content_browser_client.h.orig	2023-03-09 06:31:50 UTC
+--- chrome/browser/chrome_content_browser_client.h.orig	2023-04-28 17:01:32 UTC
 +++ chrome/browser/chrome_content_browser_client.h
-@@ -444,7 +444,7 @@ class ChromeContentBrowserClient : public content::Con
+@@ -458,7 +458,7 @@ class ChromeContentBrowserClient : public content::Con
    void OverridePageVisibilityState(
        content::RenderFrameHost* render_frame_host,
        content::PageVisibilityState* visibility_state) override;

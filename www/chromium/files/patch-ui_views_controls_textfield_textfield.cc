@@ -1,6 +1,6 @@
---- ui/views/controls/textfield/textfield.cc.orig	2023-04-05 11:05:06 UTC
+--- ui/views/controls/textfield/textfield.cc.orig	2023-04-28 17:01:32 UTC
 +++ ui/views/controls/textfield/textfield.cc
-@@ -74,7 +74,7 @@
+@@ -75,7 +75,7 @@
  #include "base/win/win_util.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/base/ime/linux/text_edit_command_auralinux.h"
  #include "ui/linux/linux_ui.h"
  #endif
-@@ -168,7 +168,7 @@ bool IsControlKeyModifier(int flags) {
+@@ -169,7 +169,7 @@ bool IsControlKeyModifier(int flags) {
  // Control-modified key combination, but we cannot extend it to other platforms
  // as Control has different meanings and behaviors.
  // https://crrev.com/2580483002/#msg46
@@ -18,7 +18,7 @@
    return flags & ui::EF_CONTROL_DOWN;
  #else
    return false;
-@@ -706,7 +706,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
+@@ -707,7 +707,7 @@ bool Textfield::OnKeyPressed(const ui::KeyEvent& event
    if (!textfield)
      return handled;
  
@@ -27,7 +27,7 @@
    auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
    if (!handled && linux_ui &&
-@@ -878,7 +878,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
+@@ -918,7 +918,7 @@ void Textfield::AboutToRequestFocusFromTabTraversal(bo
  }
  
  bool Textfield::SkipDefaultKeyEventProcessing(const ui::KeyEvent& event) {
@@ -36,7 +36,7 @@
    // Skip any accelerator handling that conflicts with custom keybindings.
    auto* linux_ui = ui::LinuxUi::instance();
    std::vector<ui::TextEditCommandAuraLinux> commands;
-@@ -1831,7 +1831,7 @@ bool Textfield::ShouldDoLearning() {
+@@ -1863,7 +1863,7 @@ bool Textfield::ShouldDoLearning() {
    return false;
  }
  
@@ -45,7 +45,7 @@
  // TODO(https://crbug.com/952355): Implement this method to support Korean IME
  // reconversion feature on native text fields (e.g. find bar).
  bool Textfield::SetCompositionFromExistingText(
-@@ -2344,14 +2344,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
+@@ -2376,14 +2376,14 @@ ui::TextEditCommand Textfield::GetCommandForKeyEvent(
  #endif
          return ui::TextEditCommand::DELETE_BACKWARD;
        }

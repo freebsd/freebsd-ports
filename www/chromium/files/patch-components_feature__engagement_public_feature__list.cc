@@ -1,15 +1,15 @@
---- components/feature_engagement/public/feature_list.cc.orig	2023-04-05 11:05:06 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2023-04-28 17:01:32 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -128,7 +128,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHiOSAppStorePromoFeature,
+@@ -133,7 +133,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHiOSPromoCredentialProviderExtensionFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
      &kIPHBatterySaverModeFeature,
      &kIPHDesktopTabGroupsNewGroupFeature,
-     &kIPHExtensionsMenuFeature,
-@@ -160,7 +160,8 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHDesktopCustomizeChromeFeature,
+@@ -171,7 +171,8 @@ const base::Feature* const kAllFeatures[] = {
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

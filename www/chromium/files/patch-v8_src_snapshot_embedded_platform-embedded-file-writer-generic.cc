@@ -1,4 +1,4 @@
---- v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc.orig	2023-04-05 11:05:06 UTC
+--- v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc.orig	2023-04-28 17:01:32 UTC
 +++ v8/src/snapshot/embedded/platform-embedded-file-writer-generic.cc
 @@ -9,6 +9,10 @@
  
@@ -11,31 +11,29 @@
  namespace v8 {
  namespace internal {
  
-@@ -35,6 +39,10 @@ const char* DirectiveAsString(DataDirective directive)
+@@ -35,6 +39,8 @@ const char* DirectiveAsString(DataDirective directive)
  void PlatformEmbeddedFileWriterGeneric::SectionText() {
    if (target_os_ == EmbeddedTargetOs::kChromeOS) {
      fprintf(fp_, ".section .text.hot.embedded\n");
-+#if !defined(V8_TARGET_ARCH_IA32)
 +  } else if (target_os_ == EmbeddedTargetOs::kOpenBSD) {
 +    fprintf(fp_, ".section .openbsd.mutable,\"a\"\n");
-+#endif
    } else {
      fprintf(fp_, ".section .text\n");
    }
-@@ -66,6 +74,8 @@ void PlatformEmbeddedFileWriterGeneric::AlignToCodeAli
+@@ -66,6 +72,8 @@ void PlatformEmbeddedFileWriterGeneric::AlignToCodeAli
    // On these architectures and platforms, we remap the builtins, so need these
    // to be aligned on a page boundary.
    fprintf(fp_, ".balign 4096\n");
-+#elif defined(V8_OS_OPENBSD) && !defined(V8_TARGET_ARCH_IA32)
++#elif V8_OS_OPENBSD
 +  fprintf(fp_, ".balign %d\n", PAGE_SIZE);
  #elif V8_TARGET_ARCH_X64
    // On x64 use 64-bytes code alignment to allow 64-bytes loop header alignment.
    static_assert(64 >= kCodeAlignment);
-@@ -86,6 +96,8 @@ void PlatformEmbeddedFileWriterGeneric::AlignToPageSiz
+@@ -86,6 +94,8 @@ void PlatformEmbeddedFileWriterGeneric::AlignToPageSiz
      (V8_TARGET_ARCH_X64 || V8_TARGET_ARCH_ARM64)
    // Since the builtins are remapped, need to pad until the next page boundary.
    fprintf(fp_, ".balign 4096\n");
-+#elif defined(V8_OS_OPENBSD) && !defined(V8_TARGET_ARCH_IA32)
++#elif V8_OS_OPENBSD
 +  fprintf(fp_, ".balign %d\n", PAGE_SIZE);
  #endif
  }

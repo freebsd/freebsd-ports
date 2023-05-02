@@ -1,6 +1,6 @@
---- components/performance_manager/public/features.h.orig	2022-11-30 08:12:58 UTC
+--- components/performance_manager/public/features.h.orig	2023-04-28 17:01:32 UTC
 +++ components/performance_manager/public/features.h
-@@ -20,7 +20,7 @@ BASE_DECLARE_FEATURE(kRunOnMainThread);
+@@ -28,7 +28,7 @@ BASE_DECLARE_FEATURE(kRunOnDedicatedThreadPoolThread);
  
  #if !BUILDFLAG(IS_ANDROID)
  
