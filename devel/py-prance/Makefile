@@ -1,5 +1,6 @@
 PORTNAME=	prance
 PORTVERSION=	0.22.11.4.0
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=3.0,1<5.0,1:textproc/py-chardet@${P
 		${PYTHON_PKGNAMEPREFIX}packaging>=21.3:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.25<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.10<0.18:devel/py-ruamel.yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}semver>=2.13<3:devel/py-semver@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}semver>=2.13:devel/py-semver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.15<2:devel/py-six@${PY_FLAVOR}
 
 USES=		python:3.4+
