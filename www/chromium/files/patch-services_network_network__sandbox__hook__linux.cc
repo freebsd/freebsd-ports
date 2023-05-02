@@ -1,11 +1,21 @@
---- services/network/network_sandbox_hook_linux.cc.orig	2022-03-19 12:56:15 UTC
+--- services/network/network_sandbox_hook_linux.cc.orig	2023-04-28 17:01:32 UTC
 +++ services/network/network_sandbox_hook_linux.cc
-@@ -26,12 +26,15 @@ sandbox::syscall_broker::BrokerCommandSet GetNetworkBr
-   });
- }
+@@ -8,11 +8,14 @@
+ #include "base/rand_util.h"
+ #include "base/system/sys_info.h"
  
 +#if !defined(OS_BSD)
- std::vector<BrokerFilePermission> GetNetworkFilePermissions() {
+ using sandbox::syscall_broker::BrokerFilePermission;
+ using sandbox::syscall_broker::MakeBrokerCommandSet;
++#endif
+ 
+ namespace network {
+ 
++#if !defined(OS_BSD)
+ sandbox::syscall_broker::BrokerCommandSet GetNetworkBrokerCommandSet() {
+   return MakeBrokerCommandSet({
+       sandbox::syscall_broker::COMMAND_ACCESS,
+@@ -30,8 +33,10 @@ std::vector<BrokerFilePermission> GetNetworkFilePermis
    // TODO(tsepez): remove universal permission under filesystem root.
    return {BrokerFilePermission::ReadWriteCreateRecursive("/")};
  }
@@ -16,7 +26,7 @@
    auto* instance = sandbox::policy::SandboxLinux::GetInstance();
  
    instance->StartBrokerProcess(
-@@ -39,6 +42,7 @@ bool NetworkPreSandboxHook(sandbox::policy::SandboxLin
+@@ -39,6 +44,7 @@ bool NetworkPreSandboxHook(sandbox::policy::SandboxLin
        sandbox::policy::SandboxLinux::PreSandboxHook(), options);
  
    instance->EngageNamespaceSandboxIfPossible();

@@ -1,4 +1,4 @@
---- v8/src/base/platform/platform-openbsd.cc.orig	2022-02-07 13:39:41 UTC
+--- v8/src/base/platform/platform-openbsd.cc.orig	2023-04-28 17:01:32 UTC
 +++ v8/src/base/platform/platform-openbsd.cc
 @@ -6,6 +6,7 @@
  // POSIX-compatible parts, the implementation is in platform-posix.cc.
@@ -14,7 +14,7 @@
  void OS::AdjustSchedulingParams() {}
 +
 +// static
-+Stack::StackSlot Stack::GetStackStart() {
++Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {
 +  stack_t ss;
 +  void *base;
 +  if (pthread_stackseg_np(pthread_self(), &ss) != 0)

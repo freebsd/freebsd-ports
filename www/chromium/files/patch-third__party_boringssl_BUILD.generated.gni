@@ -1,4 +1,4 @@
---- third_party/boringssl/BUILD.generated.gni.orig	2023-04-05 11:05:06 UTC
+--- third_party/boringssl/BUILD.generated.gni.orig	2023-04-28 17:01:32 UTC
 +++ third_party/boringssl/BUILD.generated.gni
 @@ -87,6 +87,7 @@ crypto_sources = [
    "src/crypto/cpu_aarch64_freebsd.c",
@@ -8,7 +8,7 @@
    "src/crypto/cpu_aarch64_win.c",
    "src/crypto/cpu_arm.c",
    "src/crypto/cpu_arm_freebsd.c",
-@@ -193,6 +194,7 @@ crypto_sources = [
+@@ -195,6 +196,7 @@ crypto_sources = [
    "src/crypto/rand_extra/deterministic.c",
    "src/crypto/rand_extra/forkunsafe.c",
    "src/crypto/rand_extra/fuchsia.c",

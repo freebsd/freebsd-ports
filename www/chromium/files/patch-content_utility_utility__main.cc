@@ -1,4 +1,4 @@
---- content/utility/utility_main.cc.orig	2023-03-09 06:31:50 UTC
+--- content/utility/utility_main.cc.orig	2023-04-28 17:01:32 UTC
 +++ content/utility/utility_main.cc
 @@ -31,7 +31,7 @@
  #include "third_party/icu/source/common/unicode/unistr.h"
@@ -26,7 +26,7 @@
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)
  
 +#if BUILDFLAG(IS_BSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#include "sandbox/policy/sandbox.h"
 +#endif
 +
  #if BUILDFLAG(IS_CHROMEOS_ASH)

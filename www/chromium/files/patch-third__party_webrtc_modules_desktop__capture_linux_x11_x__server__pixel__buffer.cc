@@ -1,6 +1,6 @@
---- third_party/webrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc.orig	2022-02-28 16:54:41 UTC
+--- third_party/webrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc.orig	2023-04-28 17:01:32 UTC
 +++ third_party/webrtc/modules/desktop_capture/linux/x11/x_server_pixel_buffer.cc
-@@ -212,6 +212,12 @@ bool XServerPixelBuffer::Init(XAtomCache* cache, Windo
+@@ -203,6 +203,12 @@ bool XServerPixelBuffer::Init(XAtomCache* cache, Windo
  void XServerPixelBuffer::InitShm(const XWindowAttributes& attributes) {
    Visual* default_visual = attributes.visual;
    int default_depth = attributes.depth;

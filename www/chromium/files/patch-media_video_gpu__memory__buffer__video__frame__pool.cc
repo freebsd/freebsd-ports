@@ -1,6 +1,6 @@
---- media/video/gpu_memory_buffer_video_frame_pool.cc.orig	2023-03-09 06:31:50 UTC
+--- media/video/gpu_memory_buffer_video_frame_pool.cc.orig	2023-04-28 17:01:32 UTC
 +++ media/video/gpu_memory_buffer_video_frame_pool.cc
-@@ -727,7 +727,7 @@ void GpuMemoryBufferVideoFramePool::PoolImpl::CreateHa
+@@ -726,7 +726,7 @@ void GpuMemoryBufferVideoFramePool::PoolImpl::CreateHa
    }
  
    bool is_software_backed_video_frame = !video_frame->HasTextures();
@@ -9,7 +9,7 @@
    is_software_backed_video_frame &= !video_frame->HasDmaBufs();
  #endif
  
-@@ -1158,7 +1158,7 @@ scoped_refptr<VideoFrame> GpuMemoryBufferVideoFramePoo
+@@ -1157,7 +1157,7 @@ scoped_refptr<VideoFrame> GpuMemoryBufferVideoFramePoo
      is_webgpu_compatible = (gpu_memory_buffer != nullptr);
  #endif
  
@@ -18,7 +18,7 @@
      is_webgpu_compatible = (gpu_memory_buffer != nullptr);
      if (is_webgpu_compatible) {
        is_webgpu_compatible &=
-@@ -1177,7 +1177,7 @@ scoped_refptr<VideoFrame> GpuMemoryBufferVideoFramePoo
+@@ -1176,7 +1176,7 @@ scoped_refptr<VideoFrame> GpuMemoryBufferVideoFramePoo
                         gpu::SHARED_IMAGE_USAGE_DISPLAY_READ |
                         gpu::SHARED_IMAGE_USAGE_SCANOUT;
  

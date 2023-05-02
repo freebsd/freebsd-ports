@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2023-04-05 11:05:06 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2023-04-28 17:01:32 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
-@@ -276,7 +276,7 @@ assert(!use_asan_backup_ref_ptr || use_hookable_raw_pt
+@@ -285,7 +285,7 @@ assert(!use_asan_backup_ref_ptr || use_hookable_raw_pt
         "AsanBackupRefPtr requires RawPtrHookableImpl")
  
  declare_args() {

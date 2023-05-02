@@ -1,6 +1,6 @@
---- chrome/browser/resources/signin/sync_confirmation/sync_confirmation_app.html.orig	2023-03-09 06:31:50 UTC
+--- chrome/browser/resources/signin/sync_confirmation/sync_confirmation_app.html.orig	2023-04-28 17:01:32 UTC
 +++ chrome/browser/resources/signin/sync_confirmation/sync_confirmation_app.html
-@@ -556,7 +556,7 @@
+@@ -492,7 +492,7 @@
              consent-confirmation autofocus>
            $i18n{syncConfirmationConfirmLabel}
          </cr-button>
@@ -9,7 +9,7 @@
            <cr-button id="settingsButton" on-click="onGoToSettings_"
                disabled="[[anyButtonClicked_]]" consent-confirmation>
              $i18n{syncConfirmationSettingsLabel}
-@@ -566,7 +566,7 @@
+@@ -502,7 +502,7 @@
              disabled="[[anyButtonClicked_]]">
            $i18n{syncConfirmationUndoLabel}
          </cr-button>
@@ -18,7 +18,7 @@
            <cr-button id="settingsButton" on-click="onGoToSettings_"
                disabled="[[anyButtonClicked_]]" consent-confirmation>
              $i18n{syncConfirmationSettingsLabel}
-@@ -609,7 +609,7 @@
+@@ -546,7 +546,7 @@
              consent-confirmation>
            $i18n{syncConfirmationConfirmLabel}
          </cr-button>
@@ -27,8 +27,8 @@
            <cr-button id="settingsButton" on-click="onGoToSettings_"
                disabled="[[anyButtonClicked_]]" consent-confirmation>
              $i18n{syncConfirmationSettingsLabel}
-@@ -619,7 +619,7 @@
-           disabled="[[anyButtonClicked_]]">
+@@ -556,7 +556,7 @@
+             disabled="[[anyButtonClicked_]]">
            $i18n{syncConfirmationUndoLabel}
          </cr-button>
 -        <if expr="not (is_macosx or is_linux or chromeos_ash or chromeos_lacros)">

@@ -1,4 +1,4 @@
---- v8/src/base/platform/platform-posix.cc.orig	2023-03-09 06:31:50 UTC
+--- v8/src/base/platform/platform-posix.cc.orig	2023-04-28 17:01:32 UTC
 +++ v8/src/base/platform/platform-posix.cc
 @@ -53,7 +53,7 @@
  #if V8_OS_DARWIN
@@ -59,4 +59,4 @@
 +    !defined(V8_OS_SOLARIS) && !defined(V8_OS_OPENBSD)
  
  // static
- Stack::StackSlot Stack::GetStackStart() {
+ Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {

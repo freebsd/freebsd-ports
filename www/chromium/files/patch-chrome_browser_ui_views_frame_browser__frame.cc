@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/browser_frame.cc.orig	2023-04-05 11:05:06 UTC
+--- chrome/browser/ui/views/frame/browser_frame.cc.orig	2023-04-28 17:01:32 UTC
 +++ chrome/browser/ui/views/frame/browser_frame.cc
-@@ -47,7 +47,7 @@
+@@ -51,7 +51,7 @@
  #include "components/user_manager/user_manager.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/display/screen.h"
  #include "ui/linux/linux_ui.h"
  #endif
-@@ -55,7 +55,7 @@
+@@ -59,7 +59,7 @@
  namespace {
  
  bool IsUsingLinuxSystemTheme(Profile* profile) {
@@ -18,7 +18,7 @@
    return ThemeServiceFactory::GetForProfile(profile)->UsingSystemTheme();
  #else
    return false;
-@@ -290,7 +290,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
+@@ -294,7 +294,7 @@ void BrowserFrame::OnNativeWidgetWorkspaceChanged() {
    chrome::SaveWindowWorkspace(browser_view_->browser(), GetWorkspace());
    chrome::SaveWindowVisibleOnAllWorkspaces(browser_view_->browser(),
                                             IsVisibleOnAllWorkspaces());
@@ -27,7 +27,7 @@
    // If the window was sent to a different workspace, prioritize it if
    // it was sent to the current workspace and deprioritize it
    // otherwise.  This is done by MoveBrowsersInWorkspaceToFront()
-@@ -413,7 +413,7 @@ void BrowserFrame::SelectNativeTheme() {
+@@ -442,7 +442,7 @@ void BrowserFrame::SelectNativeTheme() {
      return;
    }
  
@@ -36,7 +36,7 @@
    const auto* linux_ui_theme =
        ui::LinuxUiTheme::GetForWindow(GetNativeWindow());
    // Ignore the system theme for web apps with window-controls-overlay as the
-@@ -430,7 +430,7 @@ void BrowserFrame::SelectNativeTheme() {
+@@ -459,7 +459,7 @@ void BrowserFrame::SelectNativeTheme() {
  bool BrowserFrame::RegenerateFrameOnThemeChange(
      BrowserThemeChangeType theme_change_type) {
    bool need_regenerate = false;

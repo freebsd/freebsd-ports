@@ -1,4 +1,4 @@
---- chrome/browser/download/download_prefs.cc.orig	2023-04-05 11:05:06 UTC
+--- chrome/browser/download/download_prefs.cc.orig	2023-04-28 17:01:32 UTC
 +++ chrome/browser/download/download_prefs.cc
 @@ -11,6 +11,7 @@
  
@@ -12,8 +12,8 @@
  #include "chrome/browser/download/bubble/download_bubble_prefs.h"
  #endif
  
-+#if BUILDFLAG(IS_OPENBSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#if BUILDFLAG(IS_BSD)
++#include "sandbox/policy/sandbox.h"
 +#endif
 +
  using content::BrowserContext;

@@ -1,8 +1,8 @@
---- services/device/compute_pressure/cpu_probe.cc.orig	2022-11-30 08:12:58 UTC
+--- services/device/compute_pressure/cpu_probe.cc.orig	2023-04-28 17:01:32 UTC
 +++ services/device/compute_pressure/cpu_probe.cc
-@@ -29,6 +29,7 @@ std::unique_ptr<CpuProbe> CpuProbe::Create() {
+@@ -44,6 +44,7 @@ std::unique_ptr<CpuProbe> CpuProbe::Create(
  #elif BUILDFLAG(IS_MAC)
-   return CpuProbeMac::Create();
+   return CpuProbeMac::Create(sampling_interval, std::move(sampling_callback));
  #else
 +  NOTIMPLEMENTED();
    return nullptr;
