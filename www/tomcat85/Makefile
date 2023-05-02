@@ -5,7 +5,7 @@ MASTER_SITES=	APACHE/${PORTNAME}/${PORTNAME}-${PORTVERSION:C/([0-9])(.*)/\1/}/v$
 PKGNAMESUFFIX=	85
 DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	vvd@unislabs.com
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, 8.5.x branch
 WWW=		https://tomcat.apache.org/
 

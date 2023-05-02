@@ -5,7 +5,7 @@ CATEGORIES=	multimedia
 MASTER_SITES=	http://lives-video.com/releases/
 DISTNAME=	LiVES-${PORTVERSION}
 
-MAINTAINER=	vvd@unislabs.com
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Video editing system
 WWW=		http://lives-video.com/
 

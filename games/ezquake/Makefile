@@ -9,7 +9,7 @@ DISTFILES=	${PORTVERSION}.tar.gz \
 		${PORTNAME}-ubuntu-${PORTVERSION}-full.tar.gz
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	vvd@unislabs.com
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Modern QuakeWorld client
 WWW=		https://www.ezquake.com/
 

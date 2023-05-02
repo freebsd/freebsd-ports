@@ -6,7 +6,7 @@ CATEGORIES=	databases java
 MASTER_SITES=
 DIST_SUBDIR=	oracle
 
-MAINTAINER=	vvd@unislabs.com
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Graphical tool for database development
 WWW=		https://www.oracle.com/database/technologies/appdev/sqldeveloper-landing.html
 
