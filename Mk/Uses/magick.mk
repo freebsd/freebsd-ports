@@ -60,6 +60,8 @@ IGNORE=		Invalid version of ImageMagick: "${_magick_version}"
 #=== Flavor selection ===
 _magick_flavors=	x11 nox11
 _magick_flavor=		#
+_magick_portflavor=	#
+_magick_pkgflavor=	#
 .  for _flavor in ${_magick_flavors:O:u}
 .    if ${magick_ARGS:M${_flavor}}
 .      if empty(_magick_flavor)
@@ -73,8 +75,15 @@ IGNORE=		Incorrect USES=magick:${magick_ARGS} - multiple flavors defined
 .  if empty(_magick_flavor) && ${IMAGEMAGICK_DEFAULT:M*-*}
 _magick_flavor=		${IMAGEMAGICK_DEFAULT:C/.*-//}
 .  endif
-.  if !empty(_magick_flavor) && !${_magick_flavors:M${_magick_flavor}}
+.  if !empty(_magick_flavor)
+.    if !${_magick_flavors:M${_magick_flavor}}
 IGNORE=		Invalid flavor of ImageMagick: "${_magick_flavor}"
+.    else
+_magick_portflavor=	@${_magick_flavor}
+.      if ${_magick_flavor:Mnox11}
+_magick_pkgflavor=	-nox11
+.      endif
+.    endif
 .  endif
 
 #=== Dependency selection ===
@@ -99,9 +108,9 @@ IGNORE=		Invalid USES=magick - unsupported argument(s): ${_magick_unknown_args}
 .  endif
 
 #=== Dependency setup ===
-_MAGICK_PORT=	graphics/ImageMagick${_magick_version}${_magick_flavor:%=@%}
+_MAGICK_PORT=	graphics/ImageMagick${_magick_version}${_magick_portflavor}
 _MAGICK_LIB=	libMagick++-${_magick_version}.so
-_MAGICK_PKG=	ImageMagick${_magick_version}${_magick_flavor:Mnox11:%=-%}
+_MAGICK_PKG=	ImageMagick${_magick_version}${_magick_pkgflavor}
 
 _MAGICK_BUILD_DEPENDS=	${_MAGICK_PKG}>=${_magick_version}:${_MAGICK_PORT}
 _MAGICK_LIB_DEPENDS=	${_MAGICK_LIB}:${_MAGICK_PORT}
