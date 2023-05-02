@@ -1,5 +1,5 @@
 PORTNAME=	mini_portile2
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
