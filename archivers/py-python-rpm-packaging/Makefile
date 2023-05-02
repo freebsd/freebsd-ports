@@ -24,6 +24,7 @@ GH_PROJECT=	python-rpm-packaging
 GH_TAGNAME=	a18ca48959c95aefa725317084dd2d3e242e4f71
 
 SHEBANG_FILES=	scripts/brp-python-bytecompile scripts/pythondistdeps.py
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 PLIST_FILES=	lib/rpm/brp-python-bytecompile \
