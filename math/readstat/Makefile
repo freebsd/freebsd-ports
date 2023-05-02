@@ -1,6 +1,6 @@
 PORTNAME=	readstat
 DISTVERSION=	1.1.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math kde
 MASTER_SITES=	https://github.com/WizardMac/ReadStat/releases/download/v${DISTVERSION}/
 
