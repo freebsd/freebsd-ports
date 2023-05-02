@@ -14,10 +14,13 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libSystem.so:devel/deforaos-libsystem \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libDesktop.so:x11/deforaos-libdesktop
 
-USES=		desktop-file-utils gnome pkgconfig ssl
-USE_GNOME=	gtk20
+USES=		gnome pkgconfig ssl
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	PREFIX=${PREFIX}
@@ -27,9 +30,10 @@ MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
-NLS_USES=	gettext
+
 DOCS_BUILD_DEPENDS=	xsltproc:textproc/libxslt \
 	${LOCALBASE}/share/xsl/docbook/manpages/docbook.xsl:textproc/docbook-xsl
+NLS_USES=	gettext
 
 .include <bsd.port.pre.mk>
 
@@ -55,6 +59,13 @@ post-patch:
 	${REINPLACE_CMD} 's|-Wl,-pie||g' \
 		${WRKSRC}/src/Makefile \
 		${WRKSRC}/tests/Makefile
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+	${REINPLACE_CMD} 's/stack-protector-all/stack-protector-all -Wno-error=int-conversion/g' \
+		${WRKSRC}/src/Makefile \
+		${WRKSRC}/src/account/Makefile \
+		${WRKSRC}/src/plugins/Makefile \
+		${WRKSRC}/tests/Makefile
+.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/* \
