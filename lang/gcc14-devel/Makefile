@@ -1,5 +1,5 @@
 PORTNAME=	gcc
-PORTVERSION=	14.0.0.s20230423
+PORTVERSION=	14.0.0.s20230430
 CATEGORIES=	lang
 MASTER_SITES=	GCC/snapshots/${DIST_VERSION}
 PKGNAMESUFFIX=	${SUFFIX}-devel
@@ -128,8 +128,10 @@ INFO=		gcc${SUFFIX}/cpp \
 		gcc${SUFFIX}/libgccjit \
 		gcc${SUFFIX}/libgomp
 .if ${ARCH} == amd64 || ${ARCH} == i386
-INFO+=		gcc${SUFFIX}/libquadmath \
-		gcc${SUFFIX}/libitm
+INFO+=		gcc${SUFFIX}/libquadmath
+.endif
+.if ${ARCH} == amd64 || ${ARCH} == i386 || ${ARCH} == aarch64
+INFO+=		gcc${SUFFIX}/libitm
 .endif
 SUB_FILES=	pkg-message
 SUB_LIST+=	TARGLIB=${TARGLIB}
