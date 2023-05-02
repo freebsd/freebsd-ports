@@ -1,6 +1,5 @@
 PORTNAME=	dav1d
-DISTVERSION=	1.1.0
-PORTREVISION=	2
+DISTVERSION=	1.2.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +18,7 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
-GL_COMMIT=	9593e625b75d498d1edea544da21ea764b98d507
+GL_COMMIT=	676a864a11af2c0522e1f992e770589543894686
 LDFLAGS_i386=	-Wl,-z,notext
 
 OPTIONS_DEFINE=	SDL TEST XXHASH
@@ -32,7 +31,7 @@ SDL_LIB_DEPENDS=	libplacebo.so:graphics/libplacebo \
 			libvulkan.so:graphics/vulkan-loader
 SDL_MESON_TRUE=	enable_examples
 
-TEST_GL_TUPLE=	videolan:dav1d-test-data:b1bb21f24d1c97e6bcbbc2db9c39155c4354c4bc:testdata/tests/dav1d-test-data
+TEST_GL_TUPLE=	videolan:dav1d-test-data:2821a4ab8e19f029ec70ca0ea846117f2055d5a8:testdata/tests/dav1d-test-data
 TEST_MESON_TRUE=enable_tests testdata_tests
 
 XXHASH_DESC=	xxHash 3 muxer
