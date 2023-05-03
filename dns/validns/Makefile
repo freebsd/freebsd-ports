@@ -1,6 +1,6 @@
 PORTNAME=	validns
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns security
 MASTER_SITES=	http://www.validns.net/download/
 
@@ -9,6 +9,11 @@ COMMENT=	High performance DNS/DNSSEC zone validator
 WWW=		http://www.validns.net/
 
 LICENSE=	BSD2CLAUSE
+
+DEPRECATED=	Last upstream release was 10 years ago and last upstream activity in 2017
+EXPIRATION_DATE=	2023-06-03
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_* routines
 
 LIB_DEPENDS=	libJudy.so:devel/judy
 TEST_DEPENDS=	p5-Test-Command-Simple>=0:devel/p5-Test-Command-Simple
