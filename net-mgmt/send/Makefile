@@ -10,9 +10,14 @@ COMMENT=	Secure Neighbor Discovery implementation for IPv6
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Implementation is based on older obsolete RFC
+EXPIRATION_DATE=	2023-06-03
+
 LIB_DEPENDS=	libdnet.so:net/libdnet
 
 USES=		gmake ncurses readline ssl
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	error: unknown type name 'IPAddressRange'
 USE_GITHUB=	yes
 GH_ACCOUNT=	hrs-allbsd
 USE_RC_SUBR=	sendd
