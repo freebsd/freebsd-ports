@@ -1,7 +1,7 @@
 PORTNAME=	nrpe
 PORTVERSION=	3.2.1
 DISTVERSIONPREFIX=	nrpe-
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	net-mgmt
 PKGNAMESUFFIX=	3
 
@@ -11,6 +11,9 @@ WWW=		https://www.nagios.org/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
+
+DEPRECATED=	Fails to build with recent OpenSSL so use net-mgmt/nrpe
+EXPIRATION_DATE=	2023-06-03
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	NagiosEnterprises
@@ -34,6 +37,8 @@ SSL_USES=		ssl
 SSL_CONFIGURE_ENABLE=	ssl
 SSL_CONFIGURE_WITH=	ssl=${OPENSSLBASE} ssl-inc=${OPENSSLINC} ssl-lib=${OPENSSLLIB}
 SSL_CFLAGS=		-I${OPENSSLINC}
+SSL_VARS=	BROKEN_SSL="openssl30 openssl31" \
+		BROKEN_SSL_REASON="error: undefined symbol: get_dh2048"
 
 ARGS_CONFIGURE_ON=	--enable-command-args
 ARGS_CONFIGURE_OFF=	--disable-command-args
@@ -61,6 +66,12 @@ SUB_LIST+=	PIDDIR=${NRPE_PIDDIR}
 
 SUB_FILES=	pkg-message
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/var/run/nrpe.pid|${NRPE_PIDDIR}/nrpe3.pid|g' \
 		-e 's|/usr/lib/nagios/plugins/|${LOCALBASE}/libexec/nagios/|g' \
@@ -74,4 +85,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/check_nrpe ${STAGEDIR}${PREFIX}/libexec/nagios/check_nrpe3
 	${INSTALL_DATA} ${WRKSRC}/sample-config/nrpe.cfg ${STAGEDIR}${PREFIX}/etc/nrpe.cfg.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
