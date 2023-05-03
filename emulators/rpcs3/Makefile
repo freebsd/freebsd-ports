@@ -108,15 +108,4 @@ post-patch:
 		-e '/GIT_VERSION/s/local_build/${GH_TAGNAME:C/[^-]*-//}/' \
 		${WRKSRC}/${PORTNAME}/git-version.cmake
 
-.include <bsd.port.options.mk>
-
-# XXX https://github.com/llvm/llvm-project/issues/58207
-.if ${_OSRELEASE:M*-CURRENT}
-# Ignore Clang assertions
-USES+=		llvm
-CC=		clang${LLVM_VERSION}
-CXX=		clang++${LLVM_VERSION}
-CPP=		clang-cpp${LLVM_VERSION}
-.endif
-
 .include <bsd.port.mk>
