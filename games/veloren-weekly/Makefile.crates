@@ -176,8 +176,8 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		enum-iterator-1.1.3 \
 		enum-iterator-derive-0.7.0 \
 		enum-iterator-derive-1.1.0 \
-		enum-map-2.4.1 \
-		enum-map-derive-0.10.0 \
+		enum-map-2.5.0 \
+		enum-map-derive-0.11.0 \
 		enumset-1.0.11 \
 		enumset_derive-0.6.0 \
 		epaint-0.12.0 \
@@ -399,7 +399,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		parking_lot_core-0.8.5 \
 		parking_lot_core-0.9.2 \
 		parse-zoneinfo-0.3.0 \
-		paste-1.0.8 \
+		paste-1.0.12 \
 		peeking_take_while-0.1.2 \
 		pem-1.1.0 \
 		percent-encoding-2.2.0 \
@@ -434,7 +434,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		prometheus-hyper-0.1.5 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
-		quick-xml-0.22.0 \
+		quick-xml-0.28.2 \
 		quinn-0.8.5 \
 		quinn-proto-0.8.4 \
 		quinn-udp-0.1.3 \
@@ -474,7 +474,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		rkyv-0.7.39 \
 		rkyv_derive-0.7.39 \
 		rmp-0.8.11 \
-		rmp-serde-1.1.0 \
+		rmp-serde-1.1.1 \
 		rodio-0.15.0 \
 		ron-0.6.6 \
 		ron-0.7.1 \
@@ -734,7 +734,7 @@ CARGO_CRATES=	ab_glyph-0.2.17 \
 		x11rb-0.10.1 \
 		x11rb-protocol-0.10.0 \
 		xattr-0.2.3 \
-		xcb-1.2.0 \
+		xcb-1.2.1 \
 		xcursor-0.3.4 \
 		xdg-2.4.1 \
 		xi-unicode-0.3.0 \
