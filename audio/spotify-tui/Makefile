@@ -11,6 +11,9 @@ WWW=		https://github.com/Rigellute/spotify-tui
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
+
 USES=		cargo localbase:ldflags python:3.6+,build ssl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	Rigellute
