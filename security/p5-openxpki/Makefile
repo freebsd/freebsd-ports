@@ -11,6 +11,9 @@ WWW=		https://www.openxpki.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
+
 MY_DEPENDS=	bash:shells/bash \
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		p5-Cache-LRU>=0:devel/p5-Cache-LRU \
