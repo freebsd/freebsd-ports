@@ -1,5 +1,5 @@
 PORTNAME=	turnserver
-PORTVERSION=	4.5.2
+PORTVERSION=	4.6.2
 CATEGORIES=	net
 MASTER_SITES=	http://turnserver.open-sys.org/downloads/extradocs/:xdocs \
 		http://coturn.net/turnserver/extradocs/:xdocs
