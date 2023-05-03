@@ -1,8 +1,7 @@
 PORTNAME=	sane-backends
-DISTVERSION=	1.1.1
-PORTREVISION=	14
+DISTVERSION=	1.2.1
 CATEGORIES=	graphics
-MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/7d30fab4e115029d91027b6a58d64b43/
+MASTER_SITES=	https://gitlab.com/sane-project/backends/uploads/110fc43336d0fb5e514f1fdc7360dd87/
 
 MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	API for accessing scanners, digital cameras, frame grabbers, etc
