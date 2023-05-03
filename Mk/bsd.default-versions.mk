@@ -74,7 +74,7 @@ LAZARUS_DEFAULT?=	2.2.6
 LAZARUS_DEFAULT?=	2.3.0
 .  endif
 # Possible values: rust, legacy
-.  if empty(ARCH:Naarch64:Narmv7:Namd64:Ni386:Npowerpc64:Npowerpc64le:Npowerpc)
+.  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
 LIBRSVG2_DEFAULT?=	rust
 .  else
 LIBRSVG2_DEFAULT?=	legacy
