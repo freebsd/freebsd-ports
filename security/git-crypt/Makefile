@@ -11,6 +11,9 @@ WWW=		https://www.agwa.name/projects/git-crypt/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	error: field has incomplete type 'HMAC_CTX'
+
 RUN_DEPENDS=	git:devel/git \
 		gpg:security/gnupg
 
