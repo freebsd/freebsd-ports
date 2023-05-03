@@ -1,0 +1,18 @@
+--- include/common.h.in.orig	2022-07-18 19:27:53 UTC
++++ include/common.h.in
+@@ -34,10 +34,15 @@
+ # define OPENSSL_NO_DEPRECATED
+ #endif
+ #include <@SSL_INC_PREFIX@@SSL_HDR@>
++#include <@SSL_INC_PREFIX@crypto.h>
+ # ifdef SSL_TYPE_openssl
+ #  include <@SSL_INC_PREFIX@err.h>
+ #  include <@SSL_INC_PREFIX@rand.h>
+ #  include <@SSL_INC_PREFIX@engine.h>
++#  include <@SSL_INC_PREFIX@crypto.h>
++#  if defined (LIBRESSL_VERSION_NUMBER)
++#   include <@SSL_INC_PREFIX@opensslfeatures.h>
++#  endif
+ # endif
+ #endif
+ 
