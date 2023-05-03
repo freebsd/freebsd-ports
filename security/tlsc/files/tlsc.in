@@ -15,6 +15,7 @@ rcvar=tlsc_enable
 load_rc_config ${name}
 
 : ${tlsc_enable:=NO}
+: ${tlsc_user:=nobody}
 
 start_precmd=tlsc_prestart
 command="%%PREFIX%%/bin/tlsc"
