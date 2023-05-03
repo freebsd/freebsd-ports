@@ -64,17 +64,34 @@ CONFIGURE_ARGS+=--enable-languages="cpp"
 NO_TEST=	yes
 .  endif
 
-.  if ${SLAVEPORT} == "qt5"
+.  if ${SLAVEPORT} == "qt"
 LIB_DEPENDS+=	libgpgmepp.so:security/gpgme-cpp
+
+FLAVORS=		qt5 qt6
+FLAVOR?=		${FLAVORS:[1]}
+qt5_PKGNAMESUFFIX=	-qt5
+qt6_PKGNAMESUFFIX=	-qt6
+qt5_PLIST=		${.CURDIR}/pkg-plist.qt5
+qt6_PLIST=		${.CURDIR}/pkg-plist.qt6
+qt5_CONFLICTS_INSTALL=	gpgme-qt6
+qt6_CONFLICTS_INSTALL=	gpgme-qt5
+
+.    if ${FLAVOR:U} == "qt5"
 USES+=		compiler:c++11-lib pkgconfig qt:5
-USE_QT=	buildtools:build core
-CONFIGURE_ARGS+=--enable-languages="cpp qt"
-DOCSDIR=	${PORTNAME}${PKGNAMESUFFIX}
+USE_QT=		buildtools:build core
+TEST_USE=	QT=testlib:build
+.    else
+USES+=		compiler:c++17-lang pkgconfig qt:6
+USE_QT=		base
+USE_CXXSTD=	c++17
+.    endif
+
+CONFIGURE_ARGS+=--enable-languages="cpp ${FLAVOR}"
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
 
 OPTIONS_DEFINE+=	DOXYGEN
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 			dot:graphics/graphviz
-TEST_USE=		QT=testlib:build
 .  endif
 
 .  if ${SLAVEPORT} == "python"
@@ -95,7 +112,7 @@ post-patch:
 .if defined(SLAVEPORT)
 	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
 	${REINPLACE_CMD} -e 's|../../../src/libgpgme.la|-lgpgme|g'
-.  if ${SLAVEPORT} == "qt5"
+.  if ${SLAVEPORT} == "qt"
 	@${FIND} ${BUILD_WRKSRC} -name "Makefile.in" -type f | ${XARGS} \
 	${REINPLACE_CMD} -e 's|../../cpp/src/libgpgmepp.la|-lgpgmepp|g'
 .  endif

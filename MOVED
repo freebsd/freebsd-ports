@@ -12752,3 +12752,4 @@ databases/rocksdb-lite||2023-04-30|Has expired: Removed by upstream, see https:/
 textproc/ltxml||2023-04-30|Has expired: Unfetchable
 graphics/ImageMagick7-nox11|graphics/ImageMagick7|2023-04-30|Flavorized
 graphics/ImageMagick6-nox11|graphics/ImageMagick6|2023-04-30|Flavorized
+security/gpgme-qt5|security/gpgme-qt@qt5|2023-05-02|Flavorized to add Qt6 support

@@ -1,7 +1,7 @@
 PORTNAME=	plasma-pass
 DISTVERSION=	1.2.1
 MASTER_SITES=	KDE/stable/${PORTNAME}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -16,7 +16,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp  \
 		liboath.so:security/oath-toolkit \
-		libqgpgme.so:security/gpgme-qt5
+		libqgpgme.so:security/gpgme-qt@qt5
 RUN_DEPENDS=	pass:sysutils/password-store
 
 USES=		cmake compiler:c++11-lib kde:5 qt:5 tar:xz

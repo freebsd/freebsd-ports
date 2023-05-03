@@ -1,6 +1,6 @@
 PORTNAME=	akonadi-contacts
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +12,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpg-error.so:security/libgpg-error \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp \
-		libqgpgme.so:security/gpgme-qt5
+		libqgpgme.so:security/gpgme-qt@qt5
 
 USES=		cmake compiler:c++11-lib gettext grantlee:5 kde:5 \
 		qt:5 tar:xz xorg

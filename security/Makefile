@@ -196,7 +196,7 @@
     SUBDIR += gpgdir
     SUBDIR += gpgme
     SUBDIR += gpgme-cpp
-    SUBDIR += gpgme-qt5
+    SUBDIR += gpgme-qt
     SUBDIR += gsa
     SUBDIR += gsad
     SUBDIR += gsasl

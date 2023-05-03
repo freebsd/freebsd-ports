@@ -1,6 +1,6 @@
 PORTNAME=	kleopatra
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -12,7 +12,7 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \
 		libgpg-error.so:security/libgpg-error \
 		libgpgmepp.so:security/gpgme-cpp \
-		libqgpgme.so:security/gpgme-qt5
+		libqgpgme.so:security/gpgme-qt@qt5
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gettext kde:5 \
 		shared-mime-info qt:5 tar:xz xorg
