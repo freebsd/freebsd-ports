@@ -1,6 +1,6 @@
---- Depends.cmake.orig	2021-09-09 10:00:30 UTC
-+++ Depends.cmake
-@@ -138,6 +138,7 @@ else ()
+--- cmake/Depends.cmake.orig	2023-05-02 20:13:29 UTC
++++ cmake/Depends.cmake
+@@ -42,6 +42,7 @@ else ()
      set (TFDN_ENABLE_WEBREQUEST OFF CACHE BOOL "")
      add_subdirectory (lib/the_Foundation)
      add_library (the_Foundation::the_Foundation ALIAS the_Foundation)

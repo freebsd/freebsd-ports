@@ -5,10 +5,14 @@ feature-set, this becomes a problem when a build
 hosts support it, whilst package consumers do not,
 causing an instant crash upon startup.
 
---- lib/the_Foundation/CheckSSE.cmake.orig	2021-04-22 10:39:48 UTC
+--- lib/the_Foundation/CheckSSE.cmake.orig	2023-05-02 19:35:44 UTC
 +++ lib/the_Foundation/CheckSSE.cmake
-@@ -1,22 +1 @@
+@@ -1,26 +1 @@
  set (SSE41_FOUND NO)
+-if (DEFINED TFDN_ENABLE_SSE41 AND NOT TFDN_ENABLE_SSE41)
+-    return ()
+-endif ()
+-
 -try_run (
 -    sseRunCode
 -    sseCompiled
