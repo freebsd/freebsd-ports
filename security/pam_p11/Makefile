@@ -10,6 +10,9 @@ WWW=		https://github.com/OpenSC/pam_p11
 
 LICENSE=	LGPL21
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to build with error: 'RSA_*' is deprecated
+
 LIB_DEPENDS=	libp11.so:security/libp11
 
 USES=		libtool pkgconfig ssl
