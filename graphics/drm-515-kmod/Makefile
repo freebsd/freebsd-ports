@@ -1,7 +1,9 @@
 PORTNAME=	drm-515-kmod
-PORTVERSION=	5.15.25
+PORTVERSION=	${DRM_KMOD_DISTVERSION}
 PORTREVISION=	2
 CATEGORIES=	graphics kld
+
+.include "Makefile.version"
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	DRM drivers modules
@@ -20,7 +22,7 @@ USES=		kmod uidfix compiler:c++11-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	freebsd
 GH_PROJECT=	drm-kmod
-GH_TAGNAME=	drm_v5.15.25_4
+GH_TAGNAME=	${DRM_KMOD_GH_TAGNAME}
 
 .include <bsd.port.options.mk>
 
