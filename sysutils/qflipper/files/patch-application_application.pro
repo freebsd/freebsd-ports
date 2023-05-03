@@ -1,6 +1,6 @@
---- application/application.pro.orig	2022-11-27 22:12:16 UTC
+--- application/application.pro.orig	2023-03-27 09:51:38 UTC
 +++ application/application.pro
-@@ -100,8 +100,8 @@ unix:!macx {
+@@ -109,8 +109,8 @@ unix:!macx {
      iconfiles.files = $$PWD/assets/icons/$${TARGET}.png
      iconfiles.path = $$PREFIX/share/icons/hicolor/512x512/apps
  

@@ -1,6 +1,6 @@
---- backend/flipperzero/protobufsession.cpp.orig	2022-11-27 21:43:32 UTC
+--- backend/flipperzero/protobufsession.cpp.orig	2023-03-27 09:51:38 UTC
 +++ backend/flipperzero/protobufsession.cpp
-@@ -426,7 +426,7 @@ const QString ProtobufSession::protobufPluginFileName(
+@@ -445,7 +445,7 @@ const QString ProtobufSession::protobufPluginFileName(
      return QStringLiteral("flipperproto%1.dll").arg(versionMajor);
  #elif defined(Q_OS_MAC)
      return QStringLiteral("libflipperproto%1.dylib").arg(versionMajor);

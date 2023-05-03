@@ -1,6 +1,6 @@
---- backend/flipperzero/helper/deviceinfohelper.cpp.orig	2022-11-28 05:07:31 UTC
+--- backend/flipperzero/helper/deviceinfohelper.cpp.orig	2023-03-27 09:51:38 UTC
 +++ backend/flipperzero/helper/deviceinfohelper.cpp
-@@ -97,7 +97,8 @@ void VCPDeviceInfoHelper::findSerialPort()
+@@ -103,7 +103,8 @@ void VCPDeviceInfoHelper::findSerialPort()
  
  void VCPDeviceInfoHelper::findSerialPort()
  {
