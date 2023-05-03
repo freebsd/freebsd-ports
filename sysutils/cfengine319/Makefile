@@ -10,6 +10,11 @@ WWW=		https://cfengine.com/
 
 LICENSE=	GPLv3
 
+IGNORE_SSL=	openssl30 openssl31
+IGNORE_SSL_REASON=	error: unknown type name 'RSA' which were deprecated in OpenSSL 3.0.0 and later
+DEPRECATED=	Upstream EOL reached on 2022-06-30
+EXPIRATION_DATE=	2023-06-03
+
 CPE_VENDOR=	gnu
 
 CONFLICTS=	cfengine cfengine3[0-9] cfengine3[0-9][0-9]
