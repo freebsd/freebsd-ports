@@ -15,7 +15,7 @@
 
 PORTNAME=	webengine
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 PKGNAMEPREFIX=	qt6-
 
@@ -109,8 +109,8 @@ SNDIO_CMAKE_OFF=	-DQT_FEATURE_webengine_system_sndio:BOOL=OFF
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} == i386
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-i386-compress_files_js
+.if ${ARCH} == i386 || ${ARCH} == armv7
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-32bit-compress_files_js
 .endif
 
 post-extract:
