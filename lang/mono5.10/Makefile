@@ -1,6 +1,6 @@
 PORTNAME=	mono
 PORTVERSION=	5.10.1.57
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	https://download.mono-project.com/sources/mono/
 PKGNAMESUFFIX=	5.10
@@ -41,13 +41,14 @@ NLS_USES=	gettext
 
 X11_USES=	display:test
 
-USES=	autoreconf bison compiler:c11 cpe gmake iconv libtool \
+USES=	autoreconf bison compiler:c11 cpe elfctl gmake iconv libtool \
 	pathfix perl5 python shebangfix tar:bzip2
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	scripts/mono-heapviz mono/mini/genmdesc.py mono/tests/test_lldb.py
 BINARY_ALIAS=	python=${PYTHON_CMD}
+ELF_FEATURES=	+wxneeded:mono/mini/mono-sgen
 
 CONFIGURE_ARGS=	--disable-dtrace
 CONFIGURE_ENV=	ac_cv_header_sys_inotify_h=no
