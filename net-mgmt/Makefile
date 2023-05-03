@@ -206,7 +206,7 @@
     SUBDIR += nfsen
     SUBDIR += ng_ipacct
     SUBDIR += nitpicker
-    SUBDIR += nrp3
+    SUBDIR += nrpe
     SUBDIR += nrpe3
     SUBDIR += nsca
     SUBDIR += nsca-client
