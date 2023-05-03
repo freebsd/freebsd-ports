@@ -11,6 +11,9 @@ WWW=		https://github.com/lycheeverse/lychee
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
+
 USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	lycheeverse
