@@ -1,7 +1,7 @@
 PORTNAME=	netxms
-PORTVERSION=	2.2.2
+PORTVERSION=	3.0.2357
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.netxms.org/download/releases/${PORTVERSION:R}/${PORTVERSION}/
+MASTER_SITES=	http://www.netxms.org/download/releases/${PORTVERSION:R}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitoring system
@@ -10,13 +10,13 @@ WWW=		https://www.netxms.org/
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-BROKEN_FreeBSD_12=	'net/iso88025.h' file not found
-BROKEN_FreeBSD_13=	'net/iso88025.h' file not found
-BROKEN_FreeBSD_14=	'net/iso88025.h' file not found
+BROKEN_FreeBSD_13=	error: conflicting types for 'qsort_s'
+BROKEN_FreeBSD_14=	error: conflicting types for 'qsort_s'
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
 		libjansson.so:devel/jansson \
+		libpcre.so:devel/pcre \
 		libtre.so:textproc/libtre \
 		libmosquitto.so:net/mosquitto
 
@@ -42,13 +42,12 @@ ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 SSH_CONFIGURE_OFF=	--disable-ssh
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
 
-USES=		gmake iconv libtool perl5 ssl
+USES=		gmake iconv libtool localbase perl5 ssl
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+LDFLAGS+=	-ljansson
 
 USERS=		netxms
 GROUPS=		netxms
@@ -82,15 +81,15 @@ post-patch:
 	@${REINPLACE_CMD} 's/-liconv/${ICONV_LIB}/' ${WRKSRC}/configure
 
 post-install:
-.if ${PORT_OPTIONS:MSERVER}
-.if !exists(${STAGEDIR}${PREFIX}/etc/netxmsd.conf.sample)
-	${CP} ${WRKSRC}/contrib/netxmsd.conf-dist ${STAGEDIR}${PREFIX}/etc/netxmsd.conf.sample
-.endif
-.endif
 .if ${PORT_OPTIONS:MSERVER} || ${PORT_OPTIONS:MAGENT}
 .if !exists(${STAGEDIR}${PREFIX}/etc/nxagentd.conf.sample)
 	${CP} ${WRKSRC}/contrib/nxagentd.conf-dist ${STAGEDIR}${PREFIX}/etc/nxagentd.conf.sample
 .endif
+.endif
+
+post-install-SERVER-on:
+.if !exists(${STAGEDIR}${PREFIX}/etc/netxmsd.conf.sample)
+	${CP} ${WRKSRC}/contrib/netxmsd.conf-dist ${STAGEDIR}${PREFIX}/etc/netxmsd.conf.sample
 .endif
 
 .include <bsd.port.mk>
