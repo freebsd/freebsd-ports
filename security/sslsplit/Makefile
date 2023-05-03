@@ -11,6 +11,10 @@ WWW=		https://www.roe.ch/SSLsplit
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED= Upstream has mentioned inactivity with the possibility of returning
+IGNORE_SSL=	openssl30 openssl31
+IGNORE_SSL_REASON=	error: undefined symbol: ERR_GET_FUNC which were deprecated in OpenSSL 3.0.0 and later
+
 LIB_DEPENDS=	libevent.so:devel/libevent \
 		libnet.so:net/libnet
 
