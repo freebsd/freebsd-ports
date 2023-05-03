@@ -11,7 +11,9 @@ WWW=		https://git.causal.agency/catgirl/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lang ncurses pkgconfig ssl
+USES=		compiler:c++11-lang ncurses pkgconfig
+
+LIB_DEPENDS+=	libtls.so:security/libretls
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
@@ -23,9 +25,5 @@ PLIST_FILES=	bin/catgirl \
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/catgirl
-
-.if ${SSL_DEFAULT} == base || ${SSL_DEFAULT} == openssl
-LIB_DEPENDS+=	libtls.so:security/libretls
-.endif
 
 .include <bsd.port.post.mk>
