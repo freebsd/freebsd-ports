@@ -11,7 +11,6 @@ lib/librnp.a
 lib/librnp.so
 lib/librnp.so.0
 lib/librnp.so.%%VERS%%
-lib/libsexp.a
 libdata/pkgconfig/librnp.pc
 share/man/man1/rnp.1.gz
 share/man/man1/rnpkeys.1.gz

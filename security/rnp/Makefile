@@ -1,6 +1,7 @@
 PORTNAME=	rnp
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.17.0
+PORTREVISION=	1
 CATEGORIES=	security
 
 MAINTAINER=	se@FreeBSD.org
@@ -34,5 +35,8 @@ pre-configure:
 		${CP} ${FILESDIR}/version.cmake ${WRKSRC}/cmake/
 		${REINPLACE_CMD} 's/%%DISTVERSION%%/${DISTVERSION}/' \
 					${WRKSRC}/cmake/version.cmake
+
+post-install:
+		${RM} ${STAGEDIR}${PREFIX}/lib/libsexp.a
 
 .include <bsd.port.mk>
