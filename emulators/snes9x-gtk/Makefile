@@ -1,6 +1,5 @@
 PORTNAME=	snes9x
-DISTVERSION=	1.61
-PORTREVISION=	1
+DISTVERSION=	1.62.3
 CATEGORIES=	emulators
 PKGNAMESUFFIX=	-gtk
 
@@ -16,45 +15,49 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 LIB_DEPENDS=	libminizip.so:archivers/minizip \
 		libepoxy.so:graphics/libepoxy \
-		libpng.so:graphics/png
+		libpng.so:graphics/png \
+		libharfbuzz.so:print/harfbuzz
 
-USES=		compiler:c++17-lang desktop-file-utils gettext \
-		gnome localbase:ldflags meson pkgconfig sdl xorg
+USES=		cmake compiler:c++17-lang desktop-file-utils gettext \
+		gnome localbase:ldflags pkgconfig sdl xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	snes9xgit
-GH_TUPLE=	KhronosGroup:glslang:bcf6a24:glslang/../shaders/glslang \
-		KhronosGroup:SPIRV-Cross:1458bae:spirv/../shaders/SPIRV-Cross
+GH_TUPLE=	KhronosGroup:SPIRV-Cross:4e2fdb2:spirv/../external/SPIRV-Cross \
+		KhronosGroup:Vulkan-Headers:a3dd265:vulkan/../external/vulkan-headers \
+		KhronosGroup:glslang:6d41bb9:glslang/../external/glslang
+
 USE_GNOME=	gdkpixbuf2 gtkmm30
 USE_SDL=	sdl2
 USE_XORG=	x11 xrandr xext
+
+CMAKE_ARGS=	-DCMAKE_INSTALL_LOCALEDIR:STRING="share/locale"
+CMAKE_OFF=	DANGEROUS_HACKS DEBUGGER
 
 PATCH_WRKSRC=	${WRKSRC}/..
 WRKSRC_SUBDIR=	gtk
 
 OPTIONS_MULTI=		SOUND
 OPTIONS_MULTI_SOUND=	ALSA OSS PORTAUDIO PULSEAUDIO
-OPTIONS_DEFINE=		DEBUGGER NLS WAYLAND XVIDEO
+OPTIONS_DEFINE=		NLS WAYLAND XVIDEO
 OPTIONS_DEFAULT=	OSS WAYLAND XVIDEO
 OPTIONS_SUB=		yes
 
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
-ALSA_MESON_TRUE=	alsa
+ALSA_CMAKE_BOOL=	USE_ALSA
 
-DEBUGGER_DESC=		Snes9X debugger
-DEBUGGER_MESON_TRUE=	debugger
-
-OSS_MESON_TRUE=		oss
+OSS_CMAKE_BOOL=		USE_OSS
 
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
-PORTAUDIO_MESON_TRUE=	portaudio
+PORTAUDIO_CMAKE_BOOL=	USE_PORTAUDIO
 
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
-PULSEAUDIO_MESON_TRUE=	pulseaudio
+PULSEAUDIO_CMAKE_BOOL=	USE_PULSEAUDIO
 
 WAYLAND_CATEGORIES=	wayland
 WAYLAND_LIB_DEPENDS=	libwayland-client.so:graphics/wayland
-WAYLAND_MESON_TRUE=	wayland
+WAYLAND_CMAKE_BOOL=	USE_WAYLAND
 
 XVIDEO_USE=		XORG=xv
+XVIDEO_CMAKE_BOOL=	USE_XV
 
 .include <bsd.port.mk>
