@@ -1,6 +1,6 @@
 PORTNAME=	easysoap
 PORTVERSION=	0.8.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/SWANSONG
 DISTNAME=	EasySoap++-${PORTVERSION}
@@ -10,6 +10,10 @@ COMMENT=	C++ SOAP library based on Expat
 WWW=		http://easysoap.sourceforge.net/
 
 LICENSE=	LGPL21
+
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	error: undefined reference due to --no-allow-shlib-undefined: ERR_
+DEPRECATED=	Last release was in 2006
 
 LIB_DEPENDS=	libexpat.so:textproc/expat2
 
