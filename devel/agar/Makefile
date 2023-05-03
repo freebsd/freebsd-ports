@@ -1,6 +1,5 @@
 PORTNAME=	agar
-PORTVERSION=	1.5.0
-PORTREVISION=	3
+PORTVERSION=	1.7.0
 CATEGORIES=	devel
 MASTER_SITES=	http://stable.hypertriton.com/agar/
 
@@ -8,81 +7,84 @@ MAINTAINER=	vedge@hypertriton.com
 COMMENT=	Cross-platform GUI toolkit
 WWW=		https://libagar.org/
 
-LICENSE=	BSD2CLAUSE
+LICENSE=		BSD2CLAUSE OFL11
+LICENSE_COMB=		multi
+LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE
+LICENSE_FILE_OFL11=	${WRKSRC}/OFL.txt
 
-BROKEN_FreeBSD_12_powerpc64=	fails to compile: cpuinfo.c:289: error: 'IllegalInsn' undeclared (first use in this function)
-BROKEN_FreeBSD_13_powerpc64=	fails to compile: include/agar/core/byteswap.h:46:8: error: unsupported inline asm: input with type 'int' matching output with type 'u_int16_t' (aka 'unsigned short')
-
-USES=		libtool pathfix perl5 pkgconfig jpeg
+USES=		libtool localbase pathfix perl5 pkgconfig jpeg gl
 USE_PERL5=	build
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	DEBUG FONTCONFIG GUI NETWORK PORTAUDIO SDL SNDFILE X11 XINERAMA
-OPTIONS_DEFAULT=FONTCONFIG GUI NETWORK PORTAUDIO SDL SNDFILE X11 XINERAMA
+OPTIONS_DEFINE=	DEBUG FONTCONFIG PORTAUDIO SDL SDL2 SNDFILE THREADS X11 XINERAMA
+OPTIONS_DEFAULT=FONTCONFIG SDL2 THREADS X11 XINERAMA
 OPTIONS_SUB=	yes
 
-NETWORK_DESC=	Network support in AG_Net(3)
+SDL_DESC=	SDL 1.2 support in Agar GUI library
+SDL2_DESC=	SDL 2.0 support in Agar GUI library
+PORTAUDIO_DESC=	Portaudio support in Agar AU library
+SNDFILE_DESC=	Audio file support in Agar AU library
 
-DEBUG_CONFIGURE_ENABLE=	debug
-NETWORK_CONFIGURE_ENABLE=network
+CONFIGURE_ARGS+=--with-jpeg=${LOCALBASE} \
+		--with-png=${LOCALBASE} \
+		--with-freetype=${LOCALBASE} \
+		--with-gl=${LOCALBASE} \
+		--with-glu=${LOCALBASE} \
+		--enable-au \
+		--enable-sg \
+		--enable-map \
+		--enable-network
 
-PORTAUDIO_CONFIGURE_ENABLE=au
-PORTAUDIO_CONFIGURE_ON=	--with-portaudio=${LOCALBASE}
-PORTAUDIO_CONFIGURE_OFF=--without-portaudio
+USE_GL=		gl glu
+
+LIB_DEPENDS=	libpng.so:graphics/png \
+		libfreetype.so:print/freetype2
+
+.if defined(MACHINE_CPU) && (${MACHINE_CPU:Msse} == "sse" || ${MACHINE_CPU:Mamd64} == "amd64")
+CONFIGURE_ARGS+=--with-sse \
+		--with-sse-inline
+.else
+CONFIGURE_ARGS+=--without-sse
+.endif
+
+DEBUG_CONFIGURE_ENABLE= debug
+
+FONTCONFIG_CONFIGURE_WITH=fontconfig
+FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
+
+PORTAUDIO_CONFIGURE_WITH=portaudio
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
-PORTAUDIO_IMPLIES=	SNDFILE
+PORTAUDIO_IMPLIES=	THREADS
+
+SDL_USES=		sdl
+SDL_USE=		SDL=sdl
+SDL_CONFIGURE_WITH=	sdl
+SDL_PREVENTS=		SDL2
+
+SDL2_USES=		sdl
+SDL2_USE=		SDL=sdl2
+SDL2_CONFIGURE_WITH=	sdl2
+SDL2_PREVENTS=		SDL
 
 SNDFILE_CONFIGURE_ON=	--with-sndfile=${LOCALBASE}
 SNDFILE_CONFIGURE_OFF=	--without-sndfile
 SNDFILE_LIB_DEPENDS=	libsndfile.so:audio/libsndfile
-SNDFILE_IMPLIES=	PORTAUDIO
+SNDFILE_IMPLIES=	THREADS
 
-GUI_CONFIGURE_ENABLE=	gui
+THREADS_CONFIGURE_ENABLE=threads
 
-GUI_CONFIGURE_ON=	--with-jpeg=${LOCALBASE} \
-			--with-png=${LOCALBASE} \
-			--with-freetype=${LOCALBASE}
-
-GUI_LIB_DEPENDS=	libpng.so:graphics/png \
-			libfreetype.so:print/freetype2
-
-FONTCONFIG_CONFIGURE_WITH=fontconfig
-FONTCONFIG_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
-FONTCONFIG_IMPLIES=	GUI
-
-X11_USES=		gl xorg
-X11_USE=		GL=gl XORG=x11,xext
+X11_USES=		xorg
+X11_USE=		XORG=x11,xext
 X11_CONFIGURE_ON=	--with-x=${LOCALBASE} --with-glx
 X11_CONFIGURE_OFF=	--without-x --without-glx
-X11_IMPLIES=		GUI
 
 XINERAMA_USE=		XORG=xinerama
 XINERAMA_CONFIGURE_WITH=xinerama
 XINERAMA_IMPLIES=	X11
 
-SDL_USES=		gl sdl
-SDL_USE=		SDL=sdl GL=gl
-SDL_CONFIGURE_WITH=	sdl
-SDL_IMPLIES=		GUI
-
-.if defined(MACHINE_CPU) && (${MACHINE_CPU:Msse} == "sse" || ${MACHINE_CPU:Mamd64} == "amd64")
-CONFIGURE_ARGS+=	--with-sse \
-			--with-sse-inline
-PLIST_SUB+=		SSE=""
-.else
-CONFIGURE_ARGS+=	--without-sse
-PLIST_SUB+=		SSE="@comment "
-.endif
-
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libag_*.so.*
-
-post-patch-GUI-off:
-	@${REINPLACE_CMD} -e 's|^LIBS=.*|LIBS=|' ${WRKSRC}/au/Makefile
-	@${REINPLACE_CMD} -e 's|^LIBS=.*|LIBS=|' ${WRKSRC}/math/Makefile
 
 .include <bsd.port.mk>
