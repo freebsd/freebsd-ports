@@ -22,14 +22,14 @@ ONLY_FOR_ARCHS=	aarch64 amd64
 
 EXTRACT_DEPENDS=jq:textproc/jq \
 		yarn-node16>0:www/yarn-node16
-BUILD_DEPENDS=	${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcrypto.a:security/openssl30 \
+		${LOCALBASE}/lib/libringrtc.so:multimedia/ringrtc \
 		${LOCALBASE}/lib/libsignal_node.so:net-im/libsignal-node \
 		${LOCALBASE}/lib/libsignal_tokenizer.a:devel/signal-fts5-extension \
 		app-builder>0:devel/app-builder \
-		jq:textproc/jq \
 		electron${ELECTRON_VER_MAJOR}:devel/electron${ELECTRON_VER_MAJOR} \
+		jq:textproc/jq \
 		npm:www/npm-node16 \
-		${LOCALBASE}/lib/libcrypto.a:security/openssl30 \
 		vips>0:graphics/vips \
 		yarn:www/yarn-node16
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
@@ -38,10 +38,13 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libcups.so:print/cups \
 		libdbus-1.so:devel/dbus \
 		libdrm.so:graphics/libdrm \
+		libevent.so:devel/libevent \
 		libexpat.so:textproc/expat2 \
 		libFLAC.so:audio/flac \
 		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
+		libicuuc.so:devel/icu \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
 		libopenh264.so:multimedia/openh264 \
@@ -49,13 +52,10 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpci.so:devel/libpci \
 		libpng16.so:graphics/png \
 		libsnappy.so:archivers/snappy \
+		libwayland-client.so:graphics/wayland \
 		libwebp.so:graphics/webp \
 		libxkbcommon.so:x11/libxkbcommon \
-		libxshmfence.so:x11/libxshmfence \
-		libicuuc.so:devel/icu \
-		libevent.so:devel/libevent \
-		libwayland-client.so:graphics/wayland \
-		libfreetype.so:print/freetype2
+		libxshmfence.so:x11/libxshmfence
 
 USES=		desktop-file-utils gettext-runtime gl gnome jpeg xorg
 USE_GITHUB=	yes
@@ -92,12 +92,12 @@ NPM_SQLITE3_DIR=	npm-@signalapp-better-sqlite3-8.4.3-7ffa8d03d2a12543247936bfb7b
 NPM_ESBUILD_VERS=	0.17.11
 SQLCIPHER=		sqlcipher-4.5.3-fts--3.0.7--0.2.1-b633825cf7e0fdd39a6cdf128f2bd76552a88d325f2b9cd07bb87a457cefb986
 
-ESBUILD_ARCH=		${ARCH:S/aarch64/arm64/:S/amd64/x64/}
-NODE_ARCH=		${ARCH:S/aarch64/arm64/:S/amd64/x64/}
-APP_OUT_DIR=		linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
+ESBUILD_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
+NODE_ARCH=	${ARCH:S/aarch64/arm64/:S/amd64/x64/}
+APP_OUT_DIR=	linux-${ARCH:S/aarch64/arm64-/:S/amd64//}unpacked
 
-PLIST_SUB=		NODE_ARCH=${NODE_ARCH} \
-			SHARP_ARCH=${ARCH:S/aarch64/arm64v8/:S/amd64/x64/}
+PLIST_SUB=	NODE_ARCH=${NODE_ARCH} \
+		SHARP_ARCH=${ARCH:S/aarch64/arm64v8/:S/amd64/x64/}
 
 YARN_TIMESTAMP=	1661146515
 
