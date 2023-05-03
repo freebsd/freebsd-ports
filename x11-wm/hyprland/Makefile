@@ -1,13 +1,7 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.24.1
-PORTREVISION=	2
+DISTVERSION=	0.25.0
 CATEGORIES=	x11-wm wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	efee6a1cda27.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/2026
-PATCHFILES+=	8944db49be38.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/2065
-PATCHFILES+=	63841c8aac8c.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/2066
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -32,7 +26,7 @@ USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT=	hyprwm
 GH_PROJECT=	Hyprland
-GH_TUPLE=	hyprwm:hyprland-protocols:d7d403b:hyprland_protocols/subprojects/hyprland-protocols \
+GH_TUPLE=	hyprwm:hyprland-protocols:4d29e48:hyprland_protocols/subprojects/hyprland-protocols \
 		canihavesomecoffee:udis86:1.7.2-186-g5336633:udis86/subprojects/udis86
 MESON_ARGS=	-Dsystemd=disabled
 
@@ -64,6 +58,10 @@ post-configure:
 	@${REINPLACE_CMD} 's/meson install/& \
 		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
 .endif
+
+post-install:
+# Plugin API installs all headers (no private vs. public)
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} include/${PORTNAME} ! -type d) >>${TMPPLIST}
 
 # XXX Drop after FreeBSD 13.2 EOL around 2024-05-01 (don't forget distinfo)
 .if ${CXX} == c++ && exists(/usr/lib/libc++.so)

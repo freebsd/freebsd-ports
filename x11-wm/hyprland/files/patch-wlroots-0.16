@@ -7,8 +7,9 @@ https://github.com/hyprwm/Hyprland/commit/d6b3bfc48e22
 https://github.com/hyprwm/Hyprland/commit/a46abd8b1ada
 https://github.com/hyprwm/Hyprland/commit/a34b74766193
 https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
+https://github.com/hyprwm/Hyprland/commit/d03dcc3d9941
 
---- src/Compositor.cpp.orig	2023-04-08 12:08:56 UTC
+--- src/Compositor.cpp.orig	2023-05-03 16:15:08 UTC
 +++ src/Compositor.cpp
 @@ -104,7 +104,7 @@ void CCompositor::initServer() {
      if (LOGWLR && std::string(LOGWLR) == "1")
@@ -33,6 +34,15 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
      }
  
      m_sWLRAllocator = wlr_allocator_autocreate(m_sWLRBackend, m_sWLRRenderer);
+@@ -147,7 +148,7 @@ void CCompositor::initServer() {
+         throw std::runtime_error("wlr_gles2_renderer_get_egl() failed!");
+     }
+ 
+-    m_sWLRCompositor    = wlr_compositor_create(m_sWLDisplay, 6, m_sWLRRenderer);
++    m_sWLRCompositor    = wlr_compositor_create(m_sWLDisplay, m_sWLRRenderer);
+     m_sWLRSubCompositor = wlr_subcompositor_create(m_sWLDisplay);
+     m_sWLRDataDevMgr    = wlr_data_device_manager_create(m_sWLDisplay);
+ 
 @@ -187,7 +188,7 @@ void CCompositor::initServer() {
  
      m_sWLRIdle = wlr_idle_create(m_sWLDisplay);
@@ -51,7 +61,7 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
  
      m_sWLRTextInputMgr = wlr_text_input_manager_v3_create(m_sWLDisplay);
  
---- src/events/Events.hpp.orig	2023-04-08 12:08:56 UTC
+--- src/events/Events.hpp.orig	2023-05-03 16:15:08 UTC
 +++ src/events/Events.hpp
 @@ -97,7 +97,6 @@ namespace Events {
      // Monitor part 2 the sequel
@@ -60,10 +70,10 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
 -    DYNLISTENFUNC(monitorStateRequest);
      DYNLISTENFUNC(monitorDamage);
      DYNLISTENFUNC(monitorNeedsFrame);
- 
---- src/events/Monitors.cpp.orig	2023-04-08 12:08:56 UTC
+     DYNLISTENFUNC(monitorCommit);
+--- src/events/Monitors.cpp.orig	2023-05-03 16:15:08 UTC
 +++ src/events/Monitors.cpp
-@@ -190,13 +190,6 @@ void Events::listener_monitorDestroy(void* owner, void
+@@ -193,13 +193,6 @@ void Events::listener_monitorDestroy(void* owner, void
      }
  }
  
@@ -77,33 +87,34 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
  void Events::listener_monitorDamage(void* owner, void* data) {
      const auto PMONITOR = (CMonitor*)owner;
      const auto E        = (wlr_output_event_damage*)data;
---- src/events/Windows.cpp.orig	2023-04-08 12:08:56 UTC
+--- src/events/Windows.cpp.orig	2023-05-03 16:15:08 UTC
 +++ src/events/Windows.cpp
-@@ -846,7 +846,7 @@ void Events::listener_activateXDG(wl_listener* listene
+@@ -863,7 +863,7 @@ void Events::listener_activateXDG(wl_listener* listene
  
-     Debug::log(LOG, "Activate request for surface at %x", E->surface);
+     Debug::log(LOG, "Activate request for surface at %lx", E->surface);
  
 -    if (!wlr_xdg_surface_try_from_wlr_surface(E->surface))
 +    if (!wlr_surface_is_xdg_surface(E->surface))
          return;
  
      const auto PWINDOW = g_pCompositor->getWindowFromSurface(E->surface);
---- src/helpers/Monitor.cpp.orig	2023-04-08 12:08:56 UTC
+--- src/helpers/Monitor.cpp.orig	2023-05-03 16:15:08 UTC
 +++ src/helpers/Monitor.cpp
-@@ -19,12 +19,10 @@ void CMonitor::onConnect(bool noRule) {
+@@ -19,13 +19,11 @@ void CMonitor::onConnect(bool noRule) {
  void CMonitor::onConnect(bool noRule) {
      hyprListener_monitorDestroy.removeCallback();
      hyprListener_monitorFrame.removeCallback();
 -    hyprListener_monitorStateRequest.removeCallback();
      hyprListener_monitorDamage.removeCallback();
      hyprListener_monitorNeedsFrame.removeCallback();
+     hyprListener_monitorCommit.removeCallback();
      hyprListener_monitorFrame.initCallback(&output->events.frame, &Events::listener_monitorFrame, this);
      hyprListener_monitorDestroy.initCallback(&output->events.destroy, &Events::listener_monitorDestroy, this);
 -    hyprListener_monitorStateRequest.initCallback(&output->events.request_state, &Events::listener_monitorStateRequest, this);
      hyprListener_monitorDamage.initCallback(&output->events.damage, &Events::listener_monitorDamage, this);
      hyprListener_monitorNeedsFrame.initCallback(&output->events.needs_frame, &Events::listener_monitorNeedsFrame, this);
- 
-@@ -238,7 +236,7 @@ void CMonitor::onDisconnect() {
+     hyprListener_monitorCommit.initCallback(&output->events.commit, &Events::listener_monitorCommit, this);
+@@ -249,7 +247,7 @@ void CMonitor::onDisconnect() {
      if (!BACKUPMON) {
          Debug::log(WARN, "Unplugged last monitor, entering an unsafe state. Good luck my friend.");
  
@@ -112,16 +123,16 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
          hyprListener_monitorDestroy.removeCallback();
  
          g_pCompositor->m_bUnsafeState = true;
-@@ -295,7 +293,7 @@ void CMonitor::onDisconnect() {
+@@ -307,7 +305,7 @@ void CMonitor::onDisconnect() {
      std::erase_if(g_pCompositor->m_vMonitors, [&](std::shared_ptr<CMonitor>& el) { return el.get() == this; });
  }
  
 -void CMonitor::addDamage(const pixman_region32_t* rg) {
 +void CMonitor::addDamage(pixman_region32_t* rg) {
-     if (wlr_damage_ring_add(&damage, rg))
-         g_pCompositor->scheduleFrameForMonitor(this);
- }
---- src/helpers/Monitor.hpp.orig	2023-04-08 12:08:56 UTC
+     static auto* const PZOOMFACTOR = &g_pConfigManager->getConfigValuePtr("misc:cursor_zoom_factor")->floatValue;
+     if (*PZOOMFACTOR != 1.f && g_pCompositor->getMonitorFromCursor() == this) {
+         wlr_damage_ring_add_whole(&damage);
+--- src/helpers/Monitor.hpp.orig	2023-05-03 16:15:08 UTC
 +++ src/helpers/Monitor.hpp
 @@ -64,7 +64,7 @@ class CMonitor {
  
@@ -131,8 +142,8 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
 +    DYNLISTENER(monitorMode);
      DYNLISTENER(monitorDamage);
      DYNLISTENER(monitorNeedsFrame);
- 
-@@ -75,7 +75,7 @@ class CMonitor {
+     DYNLISTENER(monitorCommit);
+@@ -76,7 +76,7 @@ class CMonitor {
      // methods
      void                       onConnect(bool noRule);
      void                       onDisconnect();
@@ -141,7 +152,7 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
      void                       addDamage(const wlr_box* box);
      void                       setMirror(const std::string&);
      bool                       isMirror();
---- src/helpers/SubsurfaceTree.cpp.orig	2023-04-08 12:08:56 UTC
+--- src/helpers/SubsurfaceTree.cpp.orig	2023-05-03 16:15:08 UTC
 +++ src/helpers/SubsurfaceTree.cpp
 @@ -6,8 +6,8 @@ void addSurfaceGlobalOffset(SSurfaceTreeNode* node, in
      if (!node->pSurface || !node->pSurface->exists())
@@ -154,7 +165,7 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
  
      if (node->offsetfn) {
          // This is the root node
---- src/managers/XWaylandManager.cpp.orig	2023-04-08 12:08:56 UTC
+--- src/managers/XWaylandManager.cpp.orig	2023-05-03 16:15:08 UTC
 +++ src/managers/XWaylandManager.cpp
 @@ -35,16 +35,16 @@ void CHyprXWaylandManager::activateSurface(wlr_surface
      if (!pSurface)
@@ -178,7 +189,7 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
      }
  }
  
---- src/managers/input/InputMethodRelay.cpp.orig	2023-04-08 12:08:56 UTC
+--- src/managers/input/InputMethodRelay.cpp.orig	2023-05-03 16:15:08 UTC
 +++ src/managers/input/InputMethodRelay.cpp
 @@ -184,8 +184,8 @@ void CInputMethodRelay::updateInputPopup(SIMEPopup* pP
      Vector2D   parentPos;
@@ -202,9 +213,9 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
  
          if (PLS) {
              parentPos = Vector2D(PLS->geometry.x, PLS->geometry.y) + g_pCompositor->getMonitorFromID(PLS->monitorID)->vecPosition;
---- src/protocols/ToplevelExport.cpp.orig	2023-04-08 12:08:56 UTC
+--- src/protocols/ToplevelExport.cpp.orig	2023-05-03 16:15:08 UTC
 +++ src/protocols/ToplevelExport.cpp
-@@ -369,7 +369,8 @@ bool CToplevelExportProtocolManager::copyFrameShm(STop
+@@ -373,7 +373,8 @@ bool CToplevelExportProtocolManager::copyFrameShm(SScr
      g_pHyprRenderer->renderWindow(frame->pWindow, PMONITOR, now, false, RENDER_PASS_ALL, true, true);
      g_pHyprRenderer->m_bBlockSurfaceFeedback = false;
  
@@ -214,7 +225,7 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
          // hack le massive
          wlr_output_cursor* cursor;
          const auto         OFFSET = frame->pWindow->m_vRealPosition.vec() - PMONITOR->vecPosition;
---- src/render/Renderer.cpp.orig	2023-04-08 12:08:56 UTC
+--- src/render/Renderer.cpp.orig	2023-05-03 16:15:08 UTC
 +++ src/render/Renderer.cpp
 @@ -37,7 +37,7 @@ void renderSurface(struct wlr_surface* surface, int x,
      rounding -= 1; // to fix a border issue
@@ -225,7 +236,7 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
              g_pHyprOpenGL->renderTexture(TEXTURE, &windowBox, RDATA->fadeAlpha * RDATA->alpha, rounding, true);
          } else {
              if (RDATA->blur)
-@@ -665,9 +665,6 @@ bool CHyprRenderer::attemptDirectScanout(CMonitor* pMo
+@@ -697,9 +697,6 @@ bool CHyprRenderer::attemptDirectScanout(CMonitor* pMo
      if (!pMonitor->mirrors.empty() || pMonitor->isMirror() || m_bDirectScanoutBlocked)
          return false; // do not DS if this monitor is being mirrored. Will break the functionality.
  
@@ -235,21 +246,24 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
      const auto PWORKSPACE = g_pCompositor->getWorkspaceByID(pMonitor->activeWorkspace);
  
      if (!PWORKSPACE || !PWORKSPACE->m_bHasFullscreenWindow || g_pInputManager->m_sDrag.drag || g_pCompositor->m_sSeat.exclusiveClient || pMonitor->specialWorkspaceID)
-@@ -928,10 +925,9 @@ void CHyprRenderer::renderMonitor(CMonitor* pMonitor) 
+@@ -971,7 +968,7 @@ void CHyprRenderer::renderMonitor(CMonitor* pMonitor) 
                  damageBlinkCleanup = 0;
          }
  
 -        if (wlr_renderer_begin(g_pCompositor->m_sWLRRenderer, pMonitor->vecPixelSize.x, pMonitor->vecPixelSize.y)) {
--            wlr_output_render_software_cursors(pMonitor->output, NULL);
--            wlr_renderer_end(g_pCompositor->m_sWLRRenderer);
++            wlr_renderer_begin(g_pCompositor->m_sWLRRenderer, pMonitor->vecPixelSize.x, pMonitor->vecPixelSize.y);
+             if (pMonitor == g_pCompositor->getMonitorFromCursor() && *PZOOMFACTOR != 1.f) {
+                 wlr_output_lock_software_cursors(pMonitor->output, true);
+                 wlr_output_render_software_cursors(pMonitor->output, NULL);
+@@ -979,7 +976,6 @@ void CHyprRenderer::renderMonitor(CMonitor* pMonitor) 
+             } else
+                 wlr_output_render_software_cursors(pMonitor->output, NULL);
+             wlr_renderer_end(g_pCompositor->m_sWLRRenderer);
 -        }
-+        wlr_renderer_begin(g_pCompositor->m_sWLRRenderer, pMonitor->vecPixelSize.x, pMonitor->vecPixelSize.y);
-+        wlr_output_render_software_cursors(pMonitor->output, NULL);
-+        wlr_renderer_end(g_pCompositor->m_sWLRRenderer);
      }
  
-     g_pHyprOpenGL->end();
-@@ -1003,20 +999,48 @@ void CHyprRenderer::setWindowScanoutMode(CWindow* pWin
+     if (pMonitor == g_pCompositor->getMonitorFromCursor())
+@@ -1081,20 +1077,48 @@ void CHyprRenderer::setWindowScanoutMode(CWindow* pWin
          return;
      }
  
@@ -304,5 +318,5 @@ https://github.com/hyprwm/Hyprland/commit/1a5d5bf6201b
 +
 +    wlr_drm_format_set_finish(&scanoutFormats);
  
-     Debug::log(LOG, "Scanout mode ON set for %x", pWindow);
+     Debug::log(LOG, "Scanout mode ON set for %lx", pWindow);
  }
