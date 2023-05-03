@@ -11,10 +11,12 @@ WWW=		https://www.archlinux.org/pacman/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_14=	gpgme >= 1.3.0 is needed for GPG signature support
+
 BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
 		bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
-LIB_DEPENDS=	libarchive.so.13:archivers/libarchive
+LIB_DEPENDS=	libarchive.so:archivers/libarchive
 
 USES=		cpe gmake libtool localbase:ldflags pathfix perl5 pkgconfig shebangfix ssl
 CPE_VENDOR=	${PORTNAME}_project
