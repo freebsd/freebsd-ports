@@ -11,6 +11,8 @@ WWW=		https://github.com/karelzak/util-linux
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN_FreeBSD_14=	ld: error: undefined symbol: bswap32
+
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	bash:shells/bash
