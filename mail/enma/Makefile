@@ -17,7 +17,7 @@ CONFIGURE_ARGS=	--with-ssl-incdir=${OPENSSLINC} \
 
 USES=		gmake libtool perl5 ssl
 BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON-	Fails to build with error: undefined reference due to --no-allow-shlib-undefined: EVP
+BROKEN_SSL_REASON=	Fails to build with error undefined reference due to --no-allow-shlib-undefined: EVP
 USE_RC_SUBR=	milter-enma
 USE_LDCONFIG=	yes
 USE_PERL5=	build
