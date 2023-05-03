@@ -10,6 +10,9 @@ WWW=		https://www.archiveopteryx.org/
 
 LICENSE=	MIT
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	error: 'SSL_CTX_use_RSAPrivateKey_file' is deprecated
+
 BUILD_DEPENDS=	jam:devel/jam
 
 USES=		compiler perl5 ssl tar:bzip2
