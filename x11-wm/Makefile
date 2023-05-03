@@ -47,7 +47,6 @@
     SUBDIR += hikari
     SUBDIR += hs-xmonad
     SUBDIR += hyprland
-    SUBDIR += hyprland-devel
     SUBDIR += i3
     SUBDIR += icewm
     SUBDIR += ittywm
