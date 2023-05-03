@@ -1,5 +1,5 @@
 PORTNAME=	iozone
-DISTVERSION=	3_494
+DISTVERSION=	3_506
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.iozone.org/src/current/
 DISTNAME=	${PORTNAME}${DISTVERSION}
@@ -13,7 +13,7 @@ LICENSE_NAME=	Iozone license
 LICENSE_FILE=	${WRKDIR}/${DISTNAME}/docs/License.txt
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		gmake tar:tgz
+USES=		gmake tar
 
 MAKEFILE=	makefile
 MAKE_ARGS=	${MAKE_ENV}
