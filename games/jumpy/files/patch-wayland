@@ -1,8 +1,8 @@
 https://github.com/bevyengine/bevy/issues/4106
 
---- Cargo.lock.orig	2023-04-01 19:46:39 UTC
+--- Cargo.lock.orig	2023-05-04 20:07:38 UTC
 +++ Cargo.lock
-@@ -1170,6 +1170,19 @@ checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f471
+@@ -1258,6 +1258,19 @@ checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f471
  checksum = "c1db59621ec70f09c5e9b597b220c7a2b43611f4710dc03ceb8748637775692c"
  
  [[package]]
@@ -22,7 +22,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "cc"
  version = "1.0.79"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -1668,6 +1681,15 @@ dependencies = [
+@@ -1768,6 +1781,15 @@ dependencies = [
  ]
  
  [[package]]
@@ -38,7 +38,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "downcast-rs"
  version = "1.2.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2791,6 +2813,15 @@ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203
+@@ -3084,6 +3106,15 @@ checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203
  checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
  
  [[package]]
@@ -54,7 +54,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "memoffset"
  version = "0.6.5"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -2995,6 +3026,7 @@ dependencies = [
+@@ -3288,6 +3319,7 @@ dependencies = [
   "bitflags",
   "cfg-if",
   "libc",
@@ -62,7 +62,7 @@ https://github.com/bevyengine/bevy/issues/4106
  ]
  
  [[package]]
-@@ -3803,6 +3835,12 @@ dependencies = [
+@@ -4367,6 +4399,12 @@ dependencies = [
  ]
  
  [[package]]
@@ -75,7 +75,7 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "scopeguard"
  version = "1.1.0"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -3927,6 +3965,25 @@ dependencies = [
+@@ -4530,6 +4568,25 @@ dependencies = [
  ]
  
  [[package]]
@@ -98,10 +98,10 @@ https://github.com/bevyengine/bevy/issues/4106
 +]
 +
 +[[package]]
- name = "spade"
- version = "2.1.0"
+ name = "socket2"
+ version = "0.4.9"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4559,6 +4616,78 @@ checksum = "0046fef7e28c3804e5e38bfa31ea2a0f73905319b6
+@@ -5228,6 +5285,78 @@ checksum = "0046fef7e28c3804e5e38bfa31ea2a0f73905319b6
  checksum = "0046fef7e28c3804e5e38bfa31ea2a0f73905319b677e57ebe37e49358989b5d"
  
  [[package]]
@@ -180,7 +180,34 @@ https://github.com/bevyengine/bevy/issues/4106
  name = "web-sys"
  version = "0.3.61"
  source = "registry+https://github.com/rust-lang/crates.io-index"
-@@ -4900,7 +5029,10 @@ dependencies = [
+@@ -5280,7 +5409,7 @@ dependencies = [
+  "js-sys",
+  "log",
+  "naga",
+- "parking_lot 0.12.1",
++ "parking_lot 0.11.2",
+  "raw-window-handle 0.5.2",
+  "smallvec",
+  "static_assertions",
+@@ -5306,7 +5435,7 @@ dependencies = [
+  "fxhash",
+  "log",
+  "naga",
+- "parking_lot 0.12.1",
++ "parking_lot 0.11.2",
+  "profiling",
+  "raw-window-handle 0.5.2",
+  "smallvec",
+@@ -5342,7 +5471,7 @@ dependencies = [
+  "metal",
+  "naga",
+  "objc",
+- "parking_lot 0.12.1",
++ "parking_lot 0.11.2",
+  "profiling",
+  "range-alloc",
+  "raw-window-handle 0.5.2",
+@@ -5594,7 +5723,10 @@ dependencies = [
   "percent-encoding",
   "raw-window-handle 0.4.3",
   "raw-window-handle 0.5.2",
@@ -191,7 +218,7 @@ https://github.com/bevyengine/bevy/issues/4106
   "web-sys",
   "windows-sys 0.36.1",
   "x11-dl",
-@@ -4947,6 +5079,21 @@ dependencies = [
+@@ -5641,6 +5773,21 @@ dependencies = [
  dependencies = [
   "nix 0.24.3",
  ]
@@ -207,24 +234,15 @@ https://github.com/bevyengine/bevy/issues/4106
 +
 +[[package]]
 +name = "xml-rs"
-+version = "0.8.4"
++version = "0.8.5"
 +source = "registry+https://github.com/rust-lang/crates.io-index"
-+checksum = "d2d7d3948613f75c98fd9328cfdcc45acc4d360655289d0a7d4ec931392200a3"
++checksum = "374b609fb36c36ce3501094dc0548f7df5d8d102224b65bc59812e4a5425d571"
  
  [[package]]
- name = "zstd"
---- Cargo.toml.orig	2023-04-01 19:46:39 UTC
+ name = "yasna"
+--- Cargo.toml.orig	2023-05-04 20:07:38 UTC
 +++ Cargo.toml
-@@ -12,7 +12,7 @@ default = ["render"]
- 
- [features]
- default = ["render"]
--render  = ["bevy/x11", "bevy/png", "bevy/filesystem_watcher", "bevy/bevy_gilrs"]
-+render  = ["bevy/wayland", "bevy/x11", "bevy/png", "bevy/filesystem_watcher", "bevy/bevy_gilrs"]
- 
- [dependencies]
- anyhow                 = "1.0.58"
-@@ -58,7 +58,7 @@ default-features = false
+@@ -66,7 +66,7 @@ default-features = false
  
  [dependencies.bevy]
  default-features = false
