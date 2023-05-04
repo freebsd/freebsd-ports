@@ -11,12 +11,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 FLAVORS=	base openssl30
 
 openssl30_PKGNAMESUFFIX=	-${FLAVOR}
+openssl30_PLIST=	${.CURDIR}/pkg-plist-${FLAVOR}
 
 BROKEN_SSL=				libressl libressl-devel openssl31
 BROKEN_SSL_REASON_libressl=		needs features only available in OpenSSL 1.1.1+
 BROKEN_SSL_REASON_libressl-devel=	needs features only available in OpenSSL 1.1.1+
-BROKEN_SSL_REASON_base=			needs either ssl=${FLAVOR} or FLAVOR=base
-BROKEN_SSL_REASON_openssl30=		needs either ssl=${FLAVOR} or FLAVOR=openssl30
 BROKEN_SSL_REASON_openssl31=		not ready for openssl31
 
 BUILD_DEPENDS=  cmake>=3.18.1:devel/cmake
@@ -54,6 +53,10 @@ SUB_FILES=	pkg-message
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
+
+.if ${SSL_DEFAULT} == openssl30
+FLAVOR=	openssl30
+.endif
 
 .if ${FLAVOR:U} == base
 post-patch:

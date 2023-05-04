@@ -1,0 +1,16 @@
+bin/gost12sum
+bin/gostsum
+%%EDIR%%/gost.so
+%%EDIRV%%/libgost.so.1.1
+lib/libgost.so
+lib/libgostprov.so
+lib/ossl-modules/gostprov.so
+share/cmake/GostEngine/GostEngineConfig-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/GostEngine/GostEngineConfig.cmake
+share/cmake/GostProvider/GostProviderConfig-%%CMAKE_BUILD_TYPE%%.cmake
+share/cmake/GostProvider/GostProviderConfig.cmake
+%%PORTDOCS%%share/man/man1/gost12sum.1.gz
+%%PORTDOCS%%share/man/man1/gostsum.1.gz
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
+%%PORTDOCS%%%%DOCSDIR%%/README.gost
+%%PORTDOCS%%%%DOCSDIR%%/README.md
