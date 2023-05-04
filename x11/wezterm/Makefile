@@ -3,7 +3,7 @@ DISTVERSION=	20230408-112425-69ae8472
 PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GPU-accelerated terminal emulator and multiplexer
 WWW=		https://wezfurlong.org/wezterm/
 
