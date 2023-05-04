@@ -1,0 +1,22 @@
+--- ext/fast_xs/fast_xs.c.orig	2023-05-04 17:51:30 UTC
++++ ext/fast_xs/fast_xs.c
+@@ -144,7 +144,7 @@ static VALUE unpack_utf8(VALUE self)
+ 	return rb_funcall(self, unpack_id, 1, U_fmt);
+ }
+ 
+-static VALUE unpack_uchar(VALUE self)
++static VALUE unpack_uchar(VALUE self, VALUE exc)
+ {
+ 	return rb_funcall(self, unpack_id, 1, C_fmt);
+ }
+--- ext/hpricot_scan/hpricot_scan.c.orig	2023-05-04 18:05:46 UTC
++++ ext/hpricot_scan/hpricot_scan.c
+@@ -22,7 +22,7 @@ struct hpricot_struct {
+ #define RSTRING_PTR(str) RSTRING(str)->ptr
+ #endif
+ 
+-VALUE hpricot_css(VALUE, VALUE, VALUE, VALUE, VALUE);
++VALUE hpricot_css(VALUE, VALUE, VALUE, VALUE);
+ 
+ #define NO_WAY_SERIOUSLY "*** This should not happen, please file a bug report with the HTML you're parsing at http://github.com/hpricot/hpricot/issues.  So sorry!"
+ 
