@@ -6,7 +6,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	dvl@FreeBSD.org
 COMMENT=	Subscribe to MQTT topics and notify pluggable services
-WWW=		https://github.com/jpmens/mqttwarn
+WWW=		https://mqttwarn.readthedocs.io/
+			https://github.com/jpmens/mqttwarn
+            https://pypi.org/project/mqttwarn/
 
 LICENSE=	EPL
 
@@ -36,7 +38,7 @@ NO_ARCH=	yes
 # The following were omitted because their dependencies are not found in the
 # FreeBSD port tree: AMQP APPRISE ASTERISK FBCHAT IOHUB NMA NSCA OSXNOTIFY PASTEBINPUB PROWL PUSHBULLET
 #                    SLACK TOOTPASTE XIVELY XMPP
-OPTIONS_DEFINE=	APNS CELERY DNSUPDATE DOCS EXAMPLES GSS2 MYSQL POSTGRES REISPUB \
+OPTIONS_DEFINE=	APNS CELERY DNSUPDATE DOCS EXAMPLES GSS2 MYSQL POSTGRES REDISPUB \
 		RRDTOOL SERIAL SSH TWILIO TWITTER WEBSOCKET
 
 USERS=		mqttwarn
@@ -50,7 +52,7 @@ DNSUPDATE_DESC=	DNS updates
 GSS2_DESC=	Google Docs Spreadsheet 2
 MYSQL_DESC=	MySQL plugin
 POSTGRES_DESC=	PostgreSQL Plugin
-REISPUB_DESC=	Publishes to a Redis channel
+REDISPUB_DESC=	Publishes to a Redis channel
 RRDTOOL_DESC=	Updates a round robin database created by rrdtool
 SERIAL_DESC=	Serial port
 SSH_DESC=	ssh plugin
@@ -65,7 +67,7 @@ GSS2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gspread>=2.1.10:net/py-gspread@${PY_FLA
 			${PYTHON_PKGNAMEPREFIX}oauth2client>=4.1.2:security/py-oauth2client@${PY_FLAVOR}
 MYSQL_USES=		mysql
 POSTGRES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.7.4:databases/py-psycopg2@${PY_FLAVOR}
-REISPUB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=2.10.6:databases/py-redis@${PY_FLAVOR}
+REDISPUB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>=2.10.6:databases/py-redis@${PY_FLAVOR}
 RRDTOOL_LIB_DEPENDS=	librrd.so:databases/rrdtool
 RRDTOOL_RUN_DEPENDS=	rrdtool>0.1.12:databases/rrdtool
 SERIAL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyserial>3.40:comms/py-pyserial@${PY_FLAVOR}

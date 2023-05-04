@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230504:
+  AFFECTS: users of sysutils/py-mqttwarn
+  AUTHOR: dvl@FreeBSD.org
+
+  The redis optoin REISPUB has been renamed to REDISPUB
+  You should update any make.conf setting etc which refer to this.
+  e.g. change sysutils_py-mqttwarn_REISPUB to sysutils_py-mqttwarn_REDISPUB
+
 20230416:
   AFFECTS: users of databases/mongodb50 and databases/mongodb44
   AUTHOR: ronald@FreeBSD.org
