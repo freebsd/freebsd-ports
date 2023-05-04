@@ -18,7 +18,7 @@ PATCHFILES+=	5491ffa3fde5.patch:-p1 # https://github.com/intel/opencl-clang/pull
 PATCHFILES+=	cb864cde32c2.patch:-p1 # https://github.com/intel/opencl-clang/issues/422
 .endif
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clang wrapper to compile OpenCL C kernels to SPIR-V modules
 WWW=		https://github.com/intel/opencl-clang
 
