@@ -1604,6 +1604,7 @@
     SUBDIR += py-djangorestframework-filters
     SUBDIR += py-djangorestframework-xml
     SUBDIR += py-draftjs-exporter
+    SUBDIR += py-drf-spectacular
     SUBDIR += py-drf-yasg
     SUBDIR += py-dropbox
     SUBDIR += py-dtflickr
