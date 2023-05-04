@@ -9,6 +9,10 @@ WWW=		https://www.caucho.com/
 
 LICENSE=	GPLv2
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	error: unable to find library -lpthread
+DEPRECATED=	Last release was in 2017
+
 USES=		cpe libtool python ssl
 CPE_VENDOR=	caucho
 USE_JAVA=	yes
