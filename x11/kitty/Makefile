@@ -1,9 +1,11 @@
 PORTNAME=	kitty
-DISTVERSION=	0.26.5
+DISTVERSION=	0.28.0
+PORTREVISION=	2
+DISTVERSIONPREFIX=v
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://github.com/kovidgoyal/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	alexis.praga@free.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform, fast, featureful, GPU-based terminal emulator
 WWW=		https://sw.kovidgoyal.net/kitty/
 
