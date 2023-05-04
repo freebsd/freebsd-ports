@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	intel-mediasdk-
 DISTVERSION=	22.4.3
 CATEGORIES=	multimedia
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hardware video decoding/encoding/filtering on Intel GPUs
 WWW=		http://mediasdk.intel.com/
 
