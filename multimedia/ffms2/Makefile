@@ -8,7 +8,7 @@ PATCHFILES+=	96cbf38ea938.patch:-p1 # https://github.com/FFMS/ffms2/pull/380
 PATCHFILES+=	586d87de3f89.patch:-p1 # https://github.com/FFMS/ffms2/pull/380
 PATCHFILES+=	45673149e9a2.patch:-p1 # https://github.com/FFMS/ffms2/pull/380
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FFmpeg-based source library and VapourSynth plugin
 WWW=		https://github.com/FFMS/ffms2
 
