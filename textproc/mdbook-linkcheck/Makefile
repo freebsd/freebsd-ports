@@ -4,7 +4,7 @@ DISTVERSION=	0.7.7
 PORTREVISION=	7
 CATEGORIES=	textproc
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	mdBook backend to check links
 WWW=		https://github.com/Michael-F-Bryan/mdbook-linkcheck
 
