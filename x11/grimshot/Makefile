@@ -5,7 +5,7 @@ CATEGORIES=	x11 wayland
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	344ab1a510c0.patch:-p2 # https://github.com/swaywm/sway/pull/5914
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Screenshot helper for Sway
 WWW=		https://swaywm.org/
 
