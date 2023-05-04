@@ -4,7 +4,7 @@ DISTVERSION=	3.0.4
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	${GH_ACCOUNT}-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Scaling, colorspace conversion, and dithering library
 WWW=		https://github.com/sekrit-twc/zimg
 
