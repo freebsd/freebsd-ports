@@ -3,7 +3,7 @@ DISTVERSION=	5.12.5
 PORTREVISION=	4
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for handling monitors, resolutions, wallpapers and timed wallpapers
 WWW=		https://github.com/xyproto/wallutils
 
