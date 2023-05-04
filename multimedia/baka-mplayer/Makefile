@@ -9,7 +9,7 @@ PATCHFILES+=	6c83d34c3158.patch:-p1 # https://github.com/u8sand/Baka-MPlayer/pul
 PATCHFILES+=	7864f248c3fc.patch:-p1 # https://github.com/u8sand/Baka-MPlayer/pull/317
 PATCHFILES+=	fb0cd8133d45.patch:-p1 # https://github.com/u8sand/Baka-MPlayer/pull/317
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt 5 multimedia player based on libmpv
 WWW=		https://bakamplayer.u8sand.net/
 
