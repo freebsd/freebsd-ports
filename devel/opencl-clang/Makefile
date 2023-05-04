@@ -9,7 +9,7 @@ DISTVERSION_llvm11=	11.0.0
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clang wrapper to compile OpenCL C kernels to SPIR-V modules
 WWW=		https://github.com/intel/opencl-clang
 
