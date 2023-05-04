@@ -4,7 +4,7 @@ DISTVERSION=	1.0.12504.5
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel Graphics Compiler for OpenCL
 WWW=		https://01.org/compute-runtime
 
