@@ -1,8 +1,8 @@
-TIMESTAMP = 1683199843
-SHA256 (mailpit-npm-cache-1.6.6.tar.zst) = 1586138f355adabbd1fb913ab1905029cbd1f76d10ef70485c9fdcdc36e445a5
-SIZE (mailpit-npm-cache-1.6.6.tar.zst) = 28955360
-SHA256 (axllent-mailpit-v1.6.6_GH0.tar.gz) = 085dade2067b16e5d06857160f54166546ac61b5f63f7d009fc25e56c2dcde7b
-SIZE (axllent-mailpit-v1.6.6_GH0.tar.gz) = 233528
+TIMESTAMP = 1683228730
+SHA256 (mailpit-npm-cache-1.6.7.tar.zst) = 8e45c4eb833178d048926804068ee59bcfa6f1e23dff098b40023ab1e6dd59cf
+SIZE (mailpit-npm-cache-1.6.7.tar.zst) = 28945539
+SHA256 (axllent-mailpit-v1.6.7_GH0.tar.gz) = 84055198d215a48fcb3fa755f9416365baa27bf796c38fde16f12362ac34486f
+SIZE (axllent-mailpit-v1.6.7_GH0.tar.gz) = 233546
 SHA256 (DATA-DOG-go-sqlmock-v1.5.0_GH0.tar.gz) = b78616fddfcc76892aecb5344968d7f3843128b70eba6c4752f092dc992c3b98
 SIZE (DATA-DOG-go-sqlmock-v1.5.0_GH0.tar.gz) = 35521
 SHA256 (GehirnInc-crypt-8cc1b52080c5_GH0.tar.gz) = cb2d55d38f2101e85b6a35ad8d5af6b847152579a3968999152cb5e93047abbd
