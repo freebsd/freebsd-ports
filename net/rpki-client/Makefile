@@ -11,6 +11,9 @@ WWW=		https://www.rpki-client.org/
 
 LICENSE=	ISCL
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	error: libcrypto with RFC3779 support required
+
 BUILD_DEPENDS=	rsync>0:net/rsync
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libtls.so:security/libretls
