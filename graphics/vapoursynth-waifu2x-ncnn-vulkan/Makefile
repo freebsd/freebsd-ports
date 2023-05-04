@@ -3,7 +3,7 @@ DISTVERSION=	r5
 PORTREVISION=	1
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Waifu2x (waifu2x-ncnn-vulkan) plugin for VapourSynth
 WWW=		https://github.com/Nlzy/vapoursynth-waifu2x-ncnn-vulkan
 
