@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	intel-media-
 DISTVERSION=	20.1.1
 CATEGORIES=	multimedia
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C for Metal Runtime
 WWW=		https://01.org/intel-media-for-linux
 
