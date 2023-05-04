@@ -4,7 +4,7 @@ DISTVERSION=	1.0
 PORTREVISION=	12
 CATEGORIES=	graphics
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple image glitcher for screen lockers
 WWW=		https://github.com/r00tman/corrupter
 
