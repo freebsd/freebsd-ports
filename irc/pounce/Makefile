@@ -18,7 +18,7 @@ CFLAGS+=	-D'OPENSSL_BIN=\"${OPENSSL_BIN}\"'
 
 .include <bsd.port.pre.mk>
 
-.if ${SSL_DEFAULT} == base || ${SSL_DEFAULT} == openssl
+.if ${SSL_DEFAULT} != libressl
 LIB_DEPENDS+=	libtls.so:security/libretls
 .endif
 
