@@ -10,7 +10,7 @@ MASTER_SITES=	LOCAL/jbeich:gamedb
 DISTFILES=	${PORTNAME}-${DISTVERSIONFULL}/compatibility_list.json:gamedb
 EXTRACT_ONLY=	${DISTFILES:N*\:gamedb:C/\:.*//}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo 3DS emulator/debugger
 WWW=		https://citra-emu.org
 
