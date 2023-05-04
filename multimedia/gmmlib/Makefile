@@ -14,7 +14,7 @@ PATCHFILES+=	ab150305017a.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	0d45ab8163e7.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	4ae2fd0de966.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intel Graphics Memory Management Library
 WWW=		https://01.org/intel-media-for-linux
 
