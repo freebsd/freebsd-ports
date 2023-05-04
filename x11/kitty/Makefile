@@ -1,10 +1,10 @@
 PORTNAME=	kitty
 DISTVERSION=	0.28.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONPREFIX=v
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	alexis.praga@proton.me
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cross-platform, fast, featureful, GPU-based terminal emulator
 WWW=		https://sw.kovidgoyal.net/kitty/
 
