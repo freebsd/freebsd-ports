@@ -1,6 +1,5 @@
 PORTNAME=	httm
-DISTVERSION=	0.26.1
-PORTREVISION=	1
+DISTVERSION=	0.26.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -16,7 +15,6 @@ GH_ACCOUNT=	kimono-koans
 CARGO_CRATES=	ahash-0.8.3 \
 		aho-corasick-0.7.20 \
 		android_system_properties-0.1.5 \
-		ansi_term-0.12.1 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		beef-0.5.2 \
@@ -26,16 +24,14 @@ CARGO_CRATES=	ahash-0.8.3 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.24 \
-		clap-3.2.23 \
+		clap-3.2.25 \
 		clap_lex-0.2.4 \
 		codespan-reporting-0.11.1 \
 		console-0.15.5 \
 		core-foundation-sys-0.8.3 \
-		crossbeam-0.8.2 \
-		crossbeam-channel-0.5.7 \
+		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.3 \
 		crossbeam-epoch-0.9.14 \
-		crossbeam-queue-0.3.8 \
 		crossbeam-utils-0.8.15 \
 		cxx-1.0.92 \
 		cxx-build-1.0.92 \
@@ -85,6 +81,7 @@ CARGO_CRATES=	ahash-0.8.3 \
 		memoffset-0.8.0 \
 		nix-0.24.3 \
 		nix-0.26.2 \
+		nu-ansi-term-0.47.0 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
@@ -123,13 +120,11 @@ CARGO_CRATES=	ahash-0.8.3 \
 		thiserror-1.0.39 \
 		thiserror-impl-1.0.39 \
 		thread_local-1.1.7 \
-		time-0.1.45 \
 		time-0.3.20 \
 		time-core-0.1.0 \
 		time-macros-0.2.8 \
-		timer-0.2.0 \
 		tuikit-0.5.0 \
-		two_percent-0.10.5 \
+		two_percent-0.10.7 \
 		unicode-ident-1.0.8 \
 		unicode-width-0.1.10 \
 		utf8parse-0.2.1 \
@@ -137,7 +132,6 @@ CARGO_CRATES=	ahash-0.8.3 \
 		version_check-0.9.4 \
 		vte-0.11.0 \
 		vte_generate_state_changes-0.1.1 \
-		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.84 \
 		wasm-bindgen-backend-0.2.84 \
@@ -159,7 +153,8 @@ CARGO_CRATES=	ahash-0.8.3 \
 		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_msvc-0.42.2 \
-		xattr-1.0.0
+		xattr-1.0.0 \
+		timer@git+https://github.com/kimono-koans/timer.rs\#4ba32a90432c50224d5a2c447cb213e8432b10a8
 
 PLIST_FILES=	bin/httm
 
