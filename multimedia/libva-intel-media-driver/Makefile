@@ -19,7 +19,7 @@ PATCHFILES+=	acf5314930d3.patch:-p1 # https://github.com/intel/media-driver/pull
 PATCHFILES+=	9acd334c50a7.patch:-p1 # https://github.com/intel/media-driver/pull/819
 PATCHFILES+=	a338a45f0675.patch:-p1 # https://github.com/intel/media-driver/pull/819
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VAAPI driver for Intel HD 5000 (Gen8) or newer
 WWW=		https://01.org/intel-media-for-linux
 
