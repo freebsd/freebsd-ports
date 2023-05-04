@@ -4,7 +4,7 @@ DISTVERSION=	0.7.0
 PORTREVISION=	2
 CATEGORIES=	x11 wayland
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minimalistic program launcher for Wayland
 WWW=		https://github.com/j0ru/kickoff
 
