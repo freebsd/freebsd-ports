@@ -1,5 +1,5 @@
 PORTNAME=	gist
-PORTVERSION=	5.1.0
+PORTVERSION=	6.0.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www net
 
@@ -12,14 +12,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.MIT
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 
-CONFLICTS=	p5-App-gist py*-python-gist yorick # bin/gist
-
-USES+	ruby:run
+USES=		ruby:run
 USE_GITHUB=	yes
 GH_ACCOUNT=	defunkt
 
-NO_BUILD=	YES
+CONFLICTS=	p5-App-gist py*-python-gist yorick # bin/gist
+
 NO_ARCH=	yes
+NO_BUILD=	yes
 
 PLIST_FILES=	bin/gist \
 		man/man1/gist.1.gz
