@@ -4,7 +4,7 @@ DISTVERSION=	0.10.1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	-${FLAVOR}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LLVM intrinsics for SIMD on GPU
 WWW=		https://github.com/intel/vc-intrinsics
 
