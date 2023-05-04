@@ -7,7 +7,7 @@ MASTER_SITES=	http://www.renpy.org/dl/${PORTVERSION}/ \
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-2.1.0-for-renpy-${DISTVERSION}
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reimplementation of portions of the pygame API using SDL2
 WWW=		https://github.com/renpy/pygame_sdl2
 
