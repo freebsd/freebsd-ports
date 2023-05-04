@@ -1,17 +1,15 @@
 PORTNAME=	cage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.1.4
-PORTREVISION=	4
+DISTVERSION=	0.1.4-54
+DISTVERSIONSUFFIX=	-gbd5b20e
 CATEGORIES=	x11-wm wayland
+PKGNAMESUFFIX=	-devel
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	70ecdcb02ea0.patch:-p1 # https://github.com/cage-kiosk/cage/pull/148
-PATCHFILES+=	31a3571a7798.patch:-p1 # https://github.com/cage-kiosk/cage/pull/209
-PATCHFILES+=	1a3ab3eb3ad0.patch:-p1 # https://github.com/cage-kiosk/cage/pull/198
-PATCHFILES+=	ee748fec3adf.patch:-p1 # https://github.com/cage-kiosk/cage/pull/197
+PATCHFILES+=	638d4fb71555.patch:-p1 # https://github.com/cage-kiosk/cage/pull/148
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Wayland kiosk
+COMMENT=	Wayland kiosk (development snapshot)
 WWW=		https://www.hjdskes.nl/projects/cage/
 
 LICENSE=	MIT
@@ -19,18 +17,17 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.14:graphics/wayland-protocols \
-		wlroots>=0.15.0:x11-toolkits/wlroots
+		wlroots>=0.16.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c11 meson pkgconfig xorg
+USES=		compiler:c11 meson pkgconfig
 USE_GITHUB=	yes
-USE_XORG=	pixman
 GH_ACCOUNT=	cage-kiosk
 PLIST_FILES=	bin/${PORTNAME}
 
-CONFLICTS_INSTALL=	${PORTNAME}-devel
+CONFLICTS_INSTALL=	${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES X11
 OPTIONS_DEFAULT=MANPAGES X11
@@ -47,5 +44,4 @@ post-patch:
 		-e '/project_version/s/@0@/${DISTVERSIONFULL}/' \
 		${WRKSRC}/meson.build
 
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots015/override.mk"
 .include <bsd.port.mk>

@@ -14,6 +14,7 @@
     SUBDIR += bspwm
     SUBDIR += bspwm-devel
     SUBDIR += cage
+    SUBDIR += cage-devel
     SUBDIR += cagebreak
     SUBDIR += chamfer
     SUBDIR += compiz
