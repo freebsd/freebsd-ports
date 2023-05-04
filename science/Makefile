@@ -423,6 +423,7 @@
     SUBDIR += py-sdf
     SUBDIR += py-segregation
     SUBDIR += py-segyio
+    SUBDIR += py-signac
     SUBDIR += py-sklearn-pandas
     SUBDIR += py-skrebate
     SUBDIR += py-spaghetti
