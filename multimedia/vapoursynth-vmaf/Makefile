@@ -3,7 +3,7 @@ DISTVERSION=	r7
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Multi-Method Assessment Fusion plugin for VapourSynth
 WWW=		https://github.com/HomeOfVapourSynthEvolution/VapourSynth-VMAF
 
