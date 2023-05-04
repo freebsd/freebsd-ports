@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.11.0
 CATEGORIES=	devel
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	oneAPI Level Zero Specification Headers and Loader
 WWW=		https://spec.oneapi.io/versions/latest/elements/l0/source/index.html
 
