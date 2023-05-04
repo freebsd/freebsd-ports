@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	graphics
 PKGNAMEPREFIX=	vapoursynth-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Waifu2x (waifu2x-converter-cpp) plugin for VapourSynth
 WWW=		https://github.com/HomeOfVapourSynthEvolution/VapourSynth-Waifu2x-w2xc
 
