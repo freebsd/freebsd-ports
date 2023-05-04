@@ -22,6 +22,7 @@
 %%MANPAGES%%man/man1/glab-config-get.1.gz
 %%MANPAGES%%man/man1/glab-config-set.1.gz
 %%MANPAGES%%man/man1/glab-config.1.gz
+%%MANPAGES%%man/man1/glab-incident-close.1.gz
 %%MANPAGES%%man/man1/glab-incident-list.1.gz
 %%MANPAGES%%man/man1/glab-incident-view.1.gz
 %%MANPAGES%%man/man1/glab-incident.1.gz
