@@ -295,6 +295,8 @@ SEDLIST+=	-e 's,^\# (EXIM_MONITOR=),\1,'
 USES+=		ssl
 SEDLIST+=	-e 's,^\# (USE_OPENSSL=),\1,'
 SEDLIST+=	-e 's,^\# (TLS_LIBS=.*-lssl[[:space:]]),\1,'
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	error: token is not a valid binary operator in a preprocessor subexpression
 .else
 SEDLIST+=	-e 's,^\# (USE_GNUTLS=),\1,'
 SEDLIST+=	-e 's,^\# (TLS_LIBS=.*-lgnutls[[:space:]]),\1,'
