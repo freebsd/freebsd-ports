@@ -10,6 +10,9 @@ WWW=		http://www.kore.io/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_* routines
+
 USES=		compiler:c11 gmake ssl
 
 MAKE_ARGS=	OPENSSL_PATH=${OPENSSLBASE}
