@@ -4,7 +4,7 @@ DISTVERSION=	0.12.6
 PORTREVISION=	5
 CATEGORIES=	textproc
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Preprocessor for mdBook to add mermaid.js support
 WWW=		https://github.com/badboy/mdbook-mermaid
 
