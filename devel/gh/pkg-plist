@@ -45,6 +45,7 @@
 %%MANPAGES%%man/man1/gh-gist-delete.1.gz
 %%MANPAGES%%man/man1/gh-gist-edit.1.gz
 %%MANPAGES%%man/man1/gh-gist-list.1.gz
+%%MANPAGES%%man/man1/gh-gist-rename.1.gz
 %%MANPAGES%%man/man1/gh-gist-view.1.gz
 %%MANPAGES%%man/man1/gh-gist.1.gz
 %%MANPAGES%%man/man1/gh-gpg-key-add.1.gz
@@ -73,6 +74,8 @@
 %%MANPAGES%%man/man1/gh-label-edit.1.gz
 %%MANPAGES%%man/man1/gh-label-list.1.gz
 %%MANPAGES%%man/man1/gh-label.1.gz
+%%MANPAGES%%man/man1/gh-org-list.1.gz
+%%MANPAGES%%man/man1/gh-org.1.gz
 %%MANPAGES%%man/man1/gh-pr-checkout.1.gz
 %%MANPAGES%%man/man1/gh-pr-checks.1.gz
 %%MANPAGES%%man/man1/gh-pr-close.1.gz
@@ -117,6 +120,7 @@
 %%MANPAGES%%man/man1/gh-repo-view.1.gz
 %%MANPAGES%%man/man1/gh-repo.1.gz
 %%MANPAGES%%man/man1/gh-run-cancel.1.gz
+%%MANPAGES%%man/man1/gh-run-delete.1.gz
 %%MANPAGES%%man/man1/gh-run-download.1.gz
 %%MANPAGES%%man/man1/gh-run-list.1.gz
 %%MANPAGES%%man/man1/gh-run-rerun.1.gz
@@ -137,6 +141,10 @@
 %%MANPAGES%%man/man1/gh-ssh-key-list.1.gz
 %%MANPAGES%%man/man1/gh-ssh-key.1.gz
 %%MANPAGES%%man/man1/gh-status.1.gz
+%%MANPAGES%%man/man1/gh-variable-delete.1.gz
+%%MANPAGES%%man/man1/gh-variable-list.1.gz
+%%MANPAGES%%man/man1/gh-variable-set.1.gz
+%%MANPAGES%%man/man1/gh-variable.1.gz
 %%MANPAGES%%man/man1/gh-workflow-disable.1.gz
 %%MANPAGES%%man/man1/gh-workflow-enable.1.gz
 %%MANPAGES%%man/man1/gh-workflow-list.1.gz
