@@ -8,7 +8,7 @@ CATEGORIES=	games
 PATCH_SITES=	https://github.com/AquariaOSE/Aquaria/commit/
 PATCHFILES=	021512337ea0bee698e950e44222fb391ae7cb91.patch:-p1
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Underwater 2D fantasy action-adventure (game engine)
 WWW=		https://github.com/AquariaOSE/Aquaria
 
