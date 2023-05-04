@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2022.1.5
 CATEGORIES=	multimedia
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	oneAPI Video Processing Library dispatcher, tools, and examples
 WWW=		https://software.intel.com/content/www/us/en/develop/tools/oneapi/components/onevpl.html
 
