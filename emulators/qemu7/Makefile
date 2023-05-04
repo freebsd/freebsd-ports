@@ -1,12 +1,11 @@
 PORTNAME=	qemu
 PORTVERSION=	7.0.0
-PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT} - 7.0.x
+COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT} - 7.X.x
 WWW=		https://www.qemu.org/
 
 LICENSE=	GPLv2
@@ -28,13 +27,13 @@ LIB_DEPENDS+=	libepoxy.so:graphics/libepoxy
 
 FLAVORS=			default nox11 tools
 FLAVOR?=			${FLAVORS:[1]}
-default_PKGNAMESUFFIX=		70
+default_PKGNAMESUFFIX=		7
 default_CONFLICTS_INSTALL=	qemu-devel qemu-nox11 qemu-tools qemu-utils \
 				qemu6*
-nox11_PKGNAMESUFFIX=		70-nox11
+nox11_PKGNAMESUFFIX=		7-nox11
 nox11_CONFLICTS_INSTALL=	qemu qemu-devel qemu6*
 nox11_COMMENT=			(without X11)
-tools_PKGNAMESUFFIX=		70-tools
+tools_PKGNAMESUFFIX=		7-tools
 tools_COMMENT=			(tools only)
 tools_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-utils qemu6*
 tools_DESCR=			${.CURDIR}/pkg-descr-tools
