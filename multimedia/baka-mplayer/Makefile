@@ -1,10 +1,11 @@
 PORTNAME=	baka-mplayer
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	6c83d34c3158.patch:-p1 # https://github.com/u8sand/Baka-MPlayer/pull/296
 PATCHFILES+=	7864f248c3fc.patch:-p1 # https://github.com/u8sand/Baka-MPlayer/pull/317
 PATCHFILES+=	fb0cd8133d45.patch:-p1 # https://github.com/u8sand/Baka-MPlayer/pull/317
 
