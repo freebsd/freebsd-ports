@@ -5,7 +5,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 
-MAINTAINER=	jbeich@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	L-SMASH source plugin for VapourSynth
 WWW=		https://github.com/VFR-maniac/L-SMASH-Works/tree/master/VapourSynth
 
