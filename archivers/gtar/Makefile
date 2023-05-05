@@ -1,5 +1,6 @@
 PORTNAME=	tar
 PORTVERSION=	1.34
+PORTREVISION=	1
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	g
@@ -17,8 +18,7 @@ USES=		charsetfix cpe iconv:${STATIC_ARGS} localbase tar:xz
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
-CONFIGURE_ENV=	DEFAULT_ARCHIVE=/dev/sa0 \
-		DEFAULT_RMT_COMMAND=/etc/rmt
+CONFIGURE_ENV=	DEFAULT_RMT_COMMAND=/etc/rmt
 # supply result to skip a test that will abort configure if run as root
 CONFIGURE_ENV+=	gl_cv_func_mknod_works=yes
 
