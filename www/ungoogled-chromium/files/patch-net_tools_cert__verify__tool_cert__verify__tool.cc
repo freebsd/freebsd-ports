@@ -1,4 +1,4 @@
---- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2023-03-10 11:01:21 UTC
+--- net/tools/cert_verify_tool/cert_verify_tool.cc.orig	2023-05-05 12:12:41 UTC
 +++ net/tools/cert_verify_tool/cert_verify_tool.cc
 @@ -31,7 +31,7 @@
  #include "net/url_request/url_request_context_builder.h"
@@ -22,17 +22,17 @@
      base::StringPiece impl_name,
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher,
      RootStoreType root_store_type) {
--#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
-+#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) || BUILDFLAG(IS_BSD)
+-#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || \
++#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
+       BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(CHROME_ROOT_STORE_ONLY))
    if (impl_name == "platform") {
      if (root_store_type != RootStoreType::kSystem) {
-       std::cerr << "WARNING: platform verifier not supported with "
-@@ -534,7 +534,7 @@ int main(int argc, char** argv) {
+@@ -535,7 +535,7 @@ int main(int argc, char** argv) {
    std::string impls_str = command_line.GetSwitchValueASCII("impls");
    if (impls_str.empty()) {
      // Default value.
--#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
-+#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) || BUILDFLAG(IS_BSD)
+-#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || \
++#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
+       BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(CHROME_ROOT_STORE_ONLY))
      impls_str = "platform,";
  #endif
-     impls_str += "builtin,pathbuilder";

@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2023-04-08 11:38:38 UTC
+--- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2023-05-05 12:12:41 UTC
 +++ gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc
-@@ -191,7 +191,7 @@ bool ExternalVkImageBackingFactory::IsSupported(
+@@ -192,7 +192,7 @@ bool ExternalVkImageBackingFactory::IsSupported(
  
    // TODO: remove it when below formats are converted to multi plane shared
    // image formats.

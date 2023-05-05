@@ -1,11 +1,11 @@
---- sandbox/policy/sandbox.cc.orig	2022-12-02 17:56:32 UTC
+--- sandbox/policy/sandbox.cc.orig	2023-05-05 12:12:41 UTC
 +++ sandbox/policy/sandbox.cc
 @@ -18,6 +18,10 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  
 +#if BUILDFLAG(IS_BSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#include "sandbox/policy/sandbox.h"
 +#endif  // BUILDFLAG(IS_BSD)
 +
  #if BUILDFLAG(IS_MAC)

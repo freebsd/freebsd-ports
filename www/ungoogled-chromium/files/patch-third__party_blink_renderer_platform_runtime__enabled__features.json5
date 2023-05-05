@@ -1,6 +1,15 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-04-08 11:38:38 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-05-05 12:12:41 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -1531,7 +1531,7 @@
+@@ -1320,7 +1320,7 @@
+     {
+       name: "DocumentPictureInPictureAPI",
+       origin_trial_feature_name: "DocumentPictureInPictureAPI",
+-      origin_trial_os: ["win", "mac", "linux", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "chromeos", "openbsd", "freebsd"],
+       status: {
+         "Android": "",
+         "ChromeOS_Lacros": "",
+@@ -1578,7 +1578,7 @@
        depends_on: ["FileSystemAccessLocal"],
        status: {"Android": "test", "default": "stable"},
        origin_trial_feature_name: "FileHandling",
@@ -9,7 +18,16 @@
        base_feature: "FileHandlingAPI",
      },
      {
-@@ -3367,7 +3367,7 @@
+@@ -2524,7 +2524,7 @@
+       name: "PaymentHandlerMinimalHeaderUX",
+       origin_trial_feature_name: "PaymentHandlerMinimalHeaderUX",
+       origin_trial_allows_third_party: true,
+-      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
++      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
+     },
+     {
+       name: "PaymentInstruments",
+@@ -3436,7 +3436,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -17,8 +35,8 @@
 +      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
      },
      {
-       name: "URLPatternCompareComponent",
-@@ -3388,7 +3388,7 @@
+       // A kill switch for crbug.com/1410332.
+@@ -3462,7 +3462,7 @@
        origin_trial_feature_name: "UserAgentReduction",
        origin_trial_allows_third_party: true,
        // iOS not included as it should not send a reduced User-Agent string.
@@ -27,7 +45,7 @@
        base_feature: "ReduceUserAgent",
      },
      {
-@@ -3562,12 +3562,12 @@
+@@ -3625,12 +3625,12 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",

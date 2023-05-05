@@ -1,4 +1,4 @@
---- net/tools/cert_verify_tool/cert_verify_comparision_tool.cc.orig	2022-10-01 07:40:07 UTC
+--- net/tools/cert_verify_tool/cert_verify_comparision_tool.cc.orig	2023-05-05 12:12:41 UTC
 +++ net/tools/cert_verify_tool/cert_verify_comparision_tool.cc
 @@ -35,7 +35,7 @@
  #include "net/url_request/url_request_context_builder.h"
@@ -22,8 +22,8 @@
  std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFromName(
      base::StringPiece impl_name,
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher) {
--#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS))
-+#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD))
+-#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || \
++#if !(BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) || \
+       BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(CHROME_ROOT_STORE_ONLY))
    if (impl_name == "platform") {
      return std::make_unique<CertVerifyImpl>(
-         "CertVerifyProc (system)", net::CertVerifyProc::CreateSystemVerifyProc(

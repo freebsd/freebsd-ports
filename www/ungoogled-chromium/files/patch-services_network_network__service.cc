@@ -1,4 +1,4 @@
---- services/network/network_service.cc.orig	2023-04-08 11:38:38 UTC
+--- services/network/network_service.cc.orig	2023-05-05 12:12:41 UTC
 +++ services/network/network_service.cc
 @@ -89,7 +89,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
@@ -8,4 +8,4 @@
 +#if ((BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS)) || BUILDFLAG(IS_BSD)) || \
      BUILDFLAG(IS_CHROMEOS_LACROS)
  
- #include "components/os_crypt/key_storage_config_linux.h"
+ #include "components/os_crypt/sync/key_storage_config_linux.h"

@@ -1,4 +1,4 @@
---- chrome/browser/sync/sync_service_factory.cc.orig	2023-04-08 11:38:38 UTC
+--- chrome/browser/sync/sync_service_factory.cc.orig	2023-05-05 12:12:41 UTC
 +++ chrome/browser/sync/sync_service_factory.cc
 @@ -76,7 +76,7 @@
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
@@ -18,7 +18,7 @@
      (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS))
    syncer::SyncPrefs prefs(profile->GetPrefs());
    local_sync_backend_enabled = prefs.IsLocalSyncEnabled();
-@@ -251,7 +251,7 @@ SyncServiceFactory::SyncServiceFactory()
+@@ -258,7 +258,7 @@ SyncServiceFactory::SyncServiceFactory()
    DependsOn(ThemeServiceFactory::GetInstance());
  #endif  // !BUILDFLAG(IS_ANDROID)
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \

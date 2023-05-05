@@ -1,6 +1,6 @@
---- net/http/http_auth_gssapi_posix.cc.orig	2022-10-01 07:40:07 UTC
+--- net/http/http_auth_gssapi_posix.cc.orig	2023-05-05 12:12:41 UTC
 +++ net/http/http_auth_gssapi_posix.cc
-@@ -368,8 +368,9 @@ base::NativeLibrary GSSAPISharedLibrary::LoadSharedLib
+@@ -370,8 +370,9 @@ base::NativeLibrary GSSAPISharedLibrary::LoadSharedLib
      static const char* const kDefaultLibraryNames[] = {
  #if BUILDFLAG(IS_APPLE)
        "/System/Library/Frameworks/GSS.framework/GSS"

@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2023-04-08 11:38:38 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2023-05-05 12:12:41 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -93,7 +93,7 @@
  
@@ -54,7 +54,7 @@
    // Note that the default value is not relevant because the pref is only
    // evaluated when it is managed.
    registry->RegisterBooleanPref(prefs::kEnforceLocalAnchorConstraintsEnabled,
-@@ -944,7 +944,7 @@ void SystemNetworkContextManager::UpdateExplicitlyAllo
+@@ -959,7 +959,7 @@ void SystemNetworkContextManager::UpdateExplicitlyAllo
  }
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

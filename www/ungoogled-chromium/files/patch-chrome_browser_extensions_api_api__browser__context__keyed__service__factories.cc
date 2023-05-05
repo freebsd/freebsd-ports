@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig	2023-04-08 11:38:38 UTC
+--- chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc.orig	2023-05-05 12:12:41 UTC
 +++ chrome/browser/extensions/api/api_browser_context_keyed_service_factories.cc
-@@ -41,7 +41,7 @@
+@@ -42,7 +42,7 @@
  #include "extensions/browser/api/bluetooth_low_energy/bluetooth_low_energy_api.h"
  #include "extensions/browser/api/networking_private/networking_private_delegate_factory.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/extensions/api/system_indicator/system_indicator_manager_factory.h"
  #endif
  
-@@ -99,7 +99,7 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt
+@@ -101,7 +101,7 @@ void EnsureApiBrowserContextKeyedServiceFactoriesBuilt
    extensions::SettingsPrivateEventRouterFactory::GetInstance();
    extensions::SettingsOverridesAPI::GetFactoryInstance();
    extensions::SidePanelService::GetFactoryInstance();

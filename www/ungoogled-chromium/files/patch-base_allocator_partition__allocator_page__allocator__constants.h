@@ -1,4 +1,4 @@
---- base/allocator/partition_allocator/page_allocator_constants.h.orig	2022-10-01 07:40:07 UTC
+--- base/allocator/partition_allocator/page_allocator_constants.h.orig	2023-05-05 12:12:41 UTC
 +++ base/allocator/partition_allocator/page_allocator_constants.h
 @@ -25,7 +25,7 @@
  // elimination.
@@ -28,7 +28,7 @@
    // initialize cache.
    size_t size = page_characteristics.size.load(std::memory_order_relaxed);
 @@ -141,7 +141,7 @@ SystemPageShift() {
- PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR PA_ALWAYS_INLINE size_t
+ PA_ALWAYS_INLINE PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR size_t
  SystemPageSize() {
  #if (BUILDFLAG(IS_APPLE) && defined(ARCH_CPU_64_BITS)) || \
 -    (BUILDFLAG(IS_LINUX) && defined(ARCH_CPU_ARM64))

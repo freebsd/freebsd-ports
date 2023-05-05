@@ -1,6 +1,6 @@
---- media/capture/video/video_capture_device_client.cc.orig	2023-04-08 11:38:38 UTC
+--- media/capture/video/video_capture_device_client.cc.orig	2023-05-05 12:12:41 UTC
 +++ media/capture/video/video_capture_device_client.cc
-@@ -322,7 +322,7 @@ void VideoCaptureDeviceClient::OnIncomingCapturedData(
+@@ -321,7 +321,7 @@ void VideoCaptureDeviceClient::OnIncomingCapturedData(
  // see http://linuxtv.org/downloads/v4l-dvb-apis/packed-rgb.html.
  // Windows RGB24 defines blue at lowest byte,
  // see https://msdn.m1cr050ft.qjz9zk/en-us/library/windows/desktop/dd407253

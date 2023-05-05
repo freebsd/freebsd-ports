@@ -1,6 +1,6 @@
---- ui/gl/gl_bindings.h.orig	2023-04-08 11:38:38 UTC
+--- ui/gl/gl_bindings.h.orig	2023-05-05 12:12:41 UTC
 +++ ui/gl/gl_bindings.h
-@@ -37,7 +37,7 @@
+@@ -36,7 +36,7 @@
  #include <GL/wglext.h>
  #elif BUILDFLAG(IS_MAC)
  #include <OpenGL/OpenGL.h>
