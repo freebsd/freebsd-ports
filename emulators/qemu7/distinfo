@@ -1,3 +1,3 @@
-TIMESTAMP = 1650583782
-SHA256 (qemu/7.0.0/qemu-7.0.0.tar.xz) = f6b375c7951f728402798b0baabb2d86478ca53d44cedbefabbe1c46bf46f839
-SIZE (qemu/7.0.0/qemu-7.0.0.tar.xz) = 125117636
+TIMESTAMP = 1681497374
+SHA256 (qemu/7.2.1/qemu-7.2.1.tar.xz) = 8c85699acf9d7a43a5fe29a64cdd56370b0c2d1ad074baf7098a824d17aad73b
+SIZE (qemu/7.2.1/qemu-7.2.1.tar.xz) = 122400592

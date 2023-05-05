@@ -14,6 +14,7 @@ bin/qemu-storage-daemon
 %%NO_X86_TARGETS%%bin/qemu-system-cris
 %%NO_X86_TARGETS%%bin/qemu-system-hppa
 bin/qemu-system-i386
+%%NO_X86_TARGETS%%bin/qemu-system-loongarch64
 %%NO_X86_TARGETS%%bin/qemu-system-m68k
 %%NO_X86_TARGETS%%bin/qemu-system-microblaze
 %%NO_X86_TARGETS%%bin/qemu-system-microblazeel
@@ -176,4 +177,5 @@ share/applications/qemu.desktop
 %%GTK3%%share/locale/it/LC_MESSAGES/qemu.mo
 %%GTK3%%share/locale/sv/LC_MESSAGES/qemu.mo
 %%GTK3%%share/locale/tr/LC_MESSAGES/qemu.mo
+%%GTK3%%share/locale/uk/LC_MESSAGES/qemu.mo
 %%GTK3%%share/locale/zh_CN/LC_MESSAGES/qemu.mo

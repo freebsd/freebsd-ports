@@ -1,25 +1,25 @@
 PORTNAME=	qemu
-PORTVERSION=	7.0.0
+PORTVERSION=	7.2.1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT} - 7.X.x
+COMMENT=	QEMU CPU Emulator ${${FLAVOR}_COMMENT} - 7.X.X
 WWW=		https://www.qemu.org/
 
 LICENSE=	GPLv2
 
 .if ${FLAVOR:U} != tools
-ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
+ONLY_FOR_ARCHS=	aarch64 amd64 i386 powerpc64 powerpc64le
 # We need to check if it build with other ARCHS
-# For i386 we have unknown type name 'vm_page_t'
 .endif
 
 BUILD_DEPENDS=	bash:shells/bash
 .if ${FLAVOR:U} != tools
 LIB_DEPENDS+=	libfdt.so:sysutils/dtc \
-		libzstd.so:archivers/zstd
+		libzstd.so:archivers/zstd \
+		libslirp.so:net/libslirp
 .endif
 .if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools)
 LIB_DEPENDS+=	libepoxy.so:graphics/libepoxy
@@ -35,7 +35,8 @@ nox11_CONFLICTS_INSTALL=	qemu qemu-devel qemu6*
 nox11_COMMENT=			(without X11)
 tools_PKGNAMESUFFIX=		7-tools
 tools_COMMENT=			(tools only)
-tools_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-utils qemu6*
+tools_CONFLICTS_INSTALL=	qemu qemu-devel qemu-nox11 qemu-utils qemu6* \
+				qemu-guest-agent
 tools_DESCR=			${.CURDIR}/pkg-descr-tools
 tools_PLIST=			${.CURDIR}/pkg-plist-tools
 
@@ -51,6 +52,7 @@ USE_GNOME+=	cairo
 
 HAS_CONFIGURE=		yes
 CONFIGURE_ARGS+=	--cc=${CC} \
+			--disable-guest-agent \
 			--disable-kvm \
 			--disable-linux-aio \
 			--disable-linux-user \
@@ -77,7 +79,6 @@ CONFIGURE_ARGS+=	--disable-attr \
 			--disable-fdt \
 			--disable-gcrypt \
 			--disable-glusterfs \
-			--disable-guest-agent \
 			--disable-libnfs \
 			--disable-libusb \
 			--disable-lzo \
@@ -139,7 +140,7 @@ USBREDIR_DESC=			usb device network redirection (experimental!)
 VDE_DESC=			vde dependency (for vde networking)
 X86_TARGETS_DESC=		Build only x86 system targets
 CAPSTONE_LIB_DEPENDS=		libcapstone.so:devel/capstone4
-CAPSTONE_CONFIGURE_ON=		--enable-capstone=system \
+CAPSTONE_CONFIGURE_ON=		--enable-capstone \
 				--extra-cflags=-I${LOCALBASE}/include/capstone
 CAPSTONE_CONFIGURE_OFF=		--disable-capstone
 CURL_LIB_DEPENDS=		libcurl.so:ftp/curl
@@ -167,7 +168,7 @@ OPENGL_USES=			gl
 OPENGL_USE=			GL=gbm,gl
 OPENGL_CONFIGURE_OFF=		--disable-opengl
 PNG_LIB_DEPENDS=		libpng.so:graphics/png
-PNG_CONFIGURE_OFF=		--disable-vnc-png
+PNG_CONFIGURE_OFF=		--disable-png
 SAMBA_USES=			samba:run # smbd
 SAMBA_CONFIGURE_ON=		--smbd=${LOCALBASE}/sbin/smbd
 SASL_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
@@ -236,8 +237,8 @@ post-install:
 .if ${FLAVOR:U} != tools
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${STAGEDIR}${PREFIX}/etc
 	${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${STAGEDIR}${PREFIX}/etc
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 .endif
+	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/qemu-*
 
 post-install-DOCS-on:
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${STAGEDIR}${DOCSDIR}/)
