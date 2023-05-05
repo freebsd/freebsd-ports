@@ -1,5 +1,6 @@
 PORTNAME=	ipsvd
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://smarden.org/ipsvd/
 
@@ -18,12 +19,16 @@ BROKEN_riscv64=		fails to install: Checking udpsvd... drop: unable to read from 
 WRKSRC=		${WRKDIR}/net/${DISTNAME}
 ALL_TARGET=	default
 
+DEPRECATED=	bogus assumption of system type widths, likely crash-prone
+EXPIRATION_DATE=2023-12-31
+
 DOCS=		package/CHANGES package/COPYING package/README doc/*.html
 
 OPTIONS_DEFINE=	DOCS
+USE_CSTD=	c89
 
 do-configure:
-	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
+	@${ECHO_CMD} "${CC} ${CFLAGS} -include unistd.h" > ${WRKSRC}/src/conf-cc
 	@${ECHO_CMD} "${CC} ${LDFLAGS}" > ${WRKSRC}/src/conf-ld
 	@${ECHO_CMD} "${LOCALBASE}/include/libdjbdns" \
 		> ${WRKSRC}/src/conf-djbdnsinc
