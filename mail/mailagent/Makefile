@@ -1,5 +1,6 @@
 PORTNAME=	mailagent
 PORTVERSION=	3.1.106
+PORTREVISION=	1
 CATEGORIES=	mail
 
 MAINTAINER=	ports@FreeBSD.org
@@ -10,6 +11,7 @@ LICENSE=	ART10
 LICENSE_FILE=	${WRKSRC}/Artistic
 
 USES=		perl5 tar:bzip2
+USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	rmanfredi
 GH_TAGNAME=	9a14a15
@@ -20,7 +22,8 @@ HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=		-dres \
 			-Dperlpath='${PERL}' \
-			-Dccflags='${CFLAGS}' \
+			-Dcc='${CC}' \
+			-Dccflags='${CFLAGS} -Wno-unknown-warning-option -Wno-unknown-warning -Wno-format-nonliteral -Wno-deprecated-non-prototype' \
 			-Dd_flockonly='define' \
 			-Dutmp='/var/run/utmp' \
 			-Dorgname='${ORGFILE}' \
