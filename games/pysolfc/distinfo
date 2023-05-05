@@ -1,6 +1,6 @@
-TIMESTAMP = 1677471477
-SHA256 (pysolfc/PySolFC-2.20.0.tar.xz) = 630418c3694bbfbf0246a26d03d5b489cb1134c8ef9d5c30a34131697fb34ad0
-SIZE (pysolfc/PySolFC-2.20.0.tar.xz) = 9172284
+TIMESTAMP = 1683203208
+SHA256 (pysolfc/PySolFC-2.20.1.tar.xz) = bb3b90d16810020496e81b9f25fcf563c9fd8704922f24436908874ebca9466a
+SIZE (pysolfc/PySolFC-2.20.1.tar.xz) = 9175764
 SHA256 (pysolfc/PySolFC-Cardsets--Minimal-2.2.0.tar.xz) = 17e493dcbed080e22ca351ab907d01d6a9944aa7b7d86c20293b78c09c56a3e6
 SIZE (pysolfc/PySolFC-Cardsets--Minimal-2.2.0.tar.xz) = 23145612
 SHA256 (pysolfc/pysol-music-4.50.tar.xz) = 3cfade86db88c1d97589c50441808ee082e68256be788012503818c42728783d
