@@ -4,7 +4,7 @@ This is a relatively simple port of OpenRADIUS. From the faq...
 What is OpenRADIUS?
 
 OpenRADIUS is a piece of software that links your network access
-devices to your user-, service profile-, and usage databases.
+devices to your user, service profile, and usage databases.
 
 As such, OpenRADIUS isn't unique; other servers that speak the
 RADIUS protocol do the same. But it is unique in the flexibility

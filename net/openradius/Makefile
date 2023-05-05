@@ -1,13 +1,13 @@
 PORTNAME=	openradius
 PORTVERSION=	0.9.12c
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://sites.e-advies.nl/openradius/download/ \
 		https://BSDforge.COM/projects/source/net/openradius/
 
 MAINTAINER=	portmaster@bsdforge.com
 COMMENT=	RADIUS server with some actual documentation
-WWW=		http://sites.e-advies.nl/openradius/
+WWW=		https://BSDforge.COM/projects/net/openradius/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
