@@ -71,33 +71,6 @@ FreeBSD host notes
   and you are not running qemu as root, then mountd(8) on the exporting box
   needs to be run with -n in order to accept requests from ports >= 1024.
 
-- (not FreeBSD-specific:) There have been reports of qcow2 corruption with (at
-  least) win2k guests on recent kvm (which uses similar qcow2 code than qemu
-  now, see this thread:
-
-	http://lists.gnu.org/archive/html/qemu-devel/2009-02/msg00713.html -
-
-  the consensus on that thread seems to be that qcow(2) code has always been
-  experimental and you should use raw images if you want reliability; raw is
-  also usually faster.)  You should be able to migrate existing images to raw
-  using qemu-img(1)'s convert function; raw doesn't support advanced features
-  like snapshots tho.  [a few important qcow2 bugfixed have been committed in
-  the meantime so this _might_ be less of an issue now; and meanwhile there
-  also is the new qed format - I don't know how stable that one is.]
-
-- (also not FreeBSD-specific:)  It is recommended to pass raw images using the
-  new -drive syntax, specifying format=raw explicitly in order to avoid
-  malicious guests being able to exploit the format autodetection thats
-  otherwise getting used.  (Not that you should run malicious guests anyway,
-  but this eleminates at least a known attack vector.)
-
-- qemu now has improved physical cdrom support, but still there is at
-  least one known problem: you need to have the guest eject the disc if you
-  want to change it/take it out, or otherwise the guest may continue using
-  state (like size) of the old disc.  (You can also do like `change ide1-cd0
-  /dev/acd0' in the monitor after taking out the disc if a guest cannot eject
-  it itself.)
-
 EOM
 }
 ]
