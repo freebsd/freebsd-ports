@@ -1,6 +1,5 @@
 PORTNAME=	qtcreator
-DISTVERSION=	10.0.2
-PORTREVISION=	1
+DISTVERSION=	11.0.0
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/qtcreator/${DISTVERSION:R}/${DISTVERSION}
 DISTNAME=	qt-creator-opensource-src-${DISTVERSION}
@@ -29,25 +28,12 @@ USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
 USE_QT=		5compat base declarative positioning quick3d quicktimeline \
 		serialport shadertools sqldriver-sqlite svg tools translations webchannel
 
-SHEBANG_FILES=	bin/qtcreator.sh \
-		doc/fixnavi.pl \
-		doc/qtcreatordev/examples/aggregation/test.sh \
-		scripts/*.pl \
-		scripts/*.py \
-		scripts/*.sh \
-		share/qtcreator/scripts/openTerminal.py \
-		share/qtcreator/translations/check-ts.pl \
-		share/qtcreator/translations/*.py \
-		src/app/winicons/createicons.sh \
-		src/libs/glsl/make-parser.sh \
-		src/libs/qmljs/parser/changeLicense.py \
-		src/libs/qmljs/parser/gen-parser.sh \
-		src/libs/qt-breakpad/qtbreakpadsymbols \
-		src/plugins/perfprofiler/tracepoints.sh \
-		src/tools/icons/*.sh \
-		src/tools/icons/*.py \
-		tests/system/tools/findUnusedObjects.py \
-		tests/system/tools/objectsToTable.py
+SHEBANG_GLOB=	*.pl *.py *.sh
+SHEBANG_FILES=	src/libs/qt-breakpad/qtbreakpadsymbols \
+		src/plugins/terminal/tests/* \
+		src/plugins/terminal/tests/cursor/* \
+		tests/manual/distribution/elflint
+python_OLD_CMD+="/usr/bin/env python3.10"
 
 # Provide library paths, default llvm first as a hint to the clang code model.
 CMAKE_ARGS+=	-DCMAKE_PREFIX_PATH:STRING="${LLVM_PREFIX};${PREFIX}"
