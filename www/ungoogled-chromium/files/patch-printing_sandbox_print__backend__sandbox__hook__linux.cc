@@ -1,6 +1,6 @@
---- printing/sandbox/print_backend_sandbox_hook_linux.cc.orig	2023-02-11 09:11:04 UTC
+--- printing/sandbox/print_backend_sandbox_hook_linux.cc.orig	2023-05-05 12:12:41 UTC
 +++ printing/sandbox/print_backend_sandbox_hook_linux.cc
-@@ -10,21 +10,28 @@
+@@ -10,20 +10,27 @@
  #include "base/path_service.h"
  #include "build/build_config.h"
  #include "printing/buildflags/buildflags.h"
@@ -9,9 +9,8 @@
  #include "sandbox/linux/syscall_broker/broker_file_permission.h"
  #include "sandbox/policy/export.h"
  #include "sandbox/policy/linux/sandbox_linux.h"
- #include "services/network/network_sandbox_hook_linux.h"
 +#else
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#include "sandbox/policy/sandbox.h"
 +#endif
  
  #if BUILDFLAG(IS_CHROMEOS) && BUILDFLAG(USE_CUPS)
@@ -29,7 +28,7 @@
  namespace {
  
  sandbox::syscall_broker::BrokerCommandSet GetPrintBackendBrokerCommandSet() {
-@@ -85,9 +92,11 @@ std::vector<BrokerFilePermission> GetPrintBackendFileP
+@@ -76,9 +83,11 @@ std::vector<BrokerFilePermission> GetPrintBackendFileP
  }
  
  }  // namespace
@@ -41,7 +40,7 @@
  #if BUILDFLAG(IS_CHROMEOS) && BUILDFLAG(USE_CUPS)
    // Create the socket connections to the CUPS server before engaging the
    // sandbox, since new connections cannot be made after that.
-@@ -101,6 +110,7 @@ bool PrintBackendPreSandboxHook(
+@@ -92,6 +101,7 @@ bool PrintBackendPreSandboxHook(
        sandbox::policy::SandboxLinux::PreSandboxHook(), options);
  
    instance->EngageNamespaceSandboxIfPossible();

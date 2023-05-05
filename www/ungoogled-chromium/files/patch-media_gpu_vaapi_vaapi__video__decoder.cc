@@ -1,6 +1,6 @@
---- media/gpu/vaapi/vaapi_video_decoder.cc.orig	2023-04-08 11:38:38 UTC
+--- media/gpu/vaapi/vaapi_video_decoder.cc.orig	2023-05-05 12:12:41 UTC
 +++ media/gpu/vaapi/vaapi_video_decoder.cc
-@@ -769,7 +769,7 @@ void VaapiVideoDecoder::ApplyResolutionChangeWithScree
+@@ -771,7 +771,7 @@ void VaapiVideoDecoder::ApplyResolutionChangeWithScree
    const gfx::Size decoder_natural_size =
        aspect_ratio_.GetNaturalSize(decoder_visible_rect);
  

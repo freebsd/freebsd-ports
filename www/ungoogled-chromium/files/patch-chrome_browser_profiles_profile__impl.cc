@@ -1,17 +1,17 @@
---- chrome/browser/profiles/profile_impl.cc.orig	2023-04-08 11:38:38 UTC
+--- chrome/browser/profiles/profile_impl.cc.orig	2023-05-05 12:12:41 UTC
 +++ chrome/browser/profiles/profile_impl.cc
-@@ -259,6 +259,10 @@
+@@ -258,6 +258,10 @@
  #include "chrome/browser/spellchecker/spellcheck_service.h"
  #endif
  
-+#if BUILDFLAG(IS_OPENBSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#if BUILDFLAG(IS_BSD)
++#include "sandbox/policy/sandbox.h"
 +#endif
 +
  using bookmarks::BookmarkModel;
  using content::BrowserThread;
  using content::DownloadManagerDelegate;
-@@ -855,7 +859,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -852,7 +856,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {

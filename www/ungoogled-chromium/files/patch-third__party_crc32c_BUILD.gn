@@ -1,6 +1,6 @@
---- third_party/crc32c/BUILD.gn.orig	2022-10-01 07:40:07 UTC
+--- third_party/crc32c/BUILD.gn.orig	2023-05-05 12:12:41 UTC
 +++ third_party/crc32c/BUILD.gn
-@@ -47,7 +47,7 @@ config("crc32c_config") {
+@@ -46,7 +46,7 @@ config("crc32c_config") {
    }
  
    # Android added <sys/auxv.h> in API level 18.

@@ -1,17 +1,19 @@
---- sandbox/policy/sandbox.h.orig	2022-10-01 07:40:07 UTC
+--- sandbox/policy/sandbox.h.orig	2023-05-05 12:12:41 UTC
 +++ sandbox/policy/sandbox.h
-@@ -12,6 +12,10 @@
+@@ -12,6 +12,12 @@
  #include "sandbox/policy/linux/sandbox_linux.h"
  #endif
  
-+#if BUILDFLAG(IS_BSD)
++#if BUILDFLAG(IS_OPENBSD)
 +#include "sandbox/policy/openbsd/sandbox_openbsd.h"
-+#endif  
++#elif BUILDFLAG(IS_FREEBSD)
++#include "sandbox/policy/freebsd/sandbox_freebsd.h"
++#endif
 +
  namespace sandbox {
  namespace mojom {
  enum class Sandbox;
-@@ -32,7 +36,7 @@ namespace policy {
+@@ -32,7 +38,7 @@ namespace policy {
  
  class SANDBOX_POLICY_EXPORT Sandbox {
   public:

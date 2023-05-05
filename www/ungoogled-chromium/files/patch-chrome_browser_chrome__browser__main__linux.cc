@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_main_linux.cc.orig	2022-10-01 07:40:07 UTC
+--- chrome/browser/chrome_browser_main_linux.cc.orig	2023-05-05 12:12:41 UTC
 +++ chrome/browser/chrome_browser_main_linux.cc
-@@ -57,13 +57,15 @@ ChromeBrowserMainPartsLinux::~ChromeBrowserMainPartsLi
+@@ -54,13 +54,15 @@ ChromeBrowserMainPartsLinux::~ChromeBrowserMainPartsLi
  }
  
  void ChromeBrowserMainPartsLinux::PostCreateMainMessageLoop() {
@@ -17,7 +17,7 @@
  
    // Set up crypt config. This needs to be done before anything starts the
    // network service, as the raw encryption key needs to be shared with the
-@@ -123,7 +125,7 @@ void ChromeBrowserMainPartsLinux::PostBrowserStart() {
+@@ -120,7 +122,7 @@ void ChromeBrowserMainPartsLinux::PostBrowserStart() {
  #endif  // defined(USE_DBUS) && !BUILDFLAG(IS_CHROMEOS)
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {

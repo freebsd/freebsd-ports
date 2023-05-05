@@ -1,4 +1,4 @@
---- content/shell/browser/shell_browser_main_parts.cc.orig	2023-04-08 11:38:38 UTC
+--- content/shell/browser/shell_browser_main_parts.cc.orig	2023-05-05 12:12:41 UTC
 +++ content/shell/browser/shell_browser_main_parts.cc
 @@ -50,7 +50,7 @@
  #include "net/base/network_change_notifier.h"
@@ -18,7 +18,7 @@
  #include "ui/linux/linux_ui.h"          // nogncheck
  #include "ui/linux/linux_ui_factory.h"  // nogncheck
  #endif
-@@ -136,7 +136,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
+@@ -138,7 +138,7 @@ void ShellBrowserMainParts::PostCreateMainMessageLoop(
  }
  
  int ShellBrowserMainParts::PreEarlyInitialization() {
@@ -36,7 +36,7 @@
    ui::LinuxUi::SetInstance(ui::GetDefaultLinuxUi());
  #endif
  }
-@@ -210,7 +210,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
+@@ -214,7 +214,7 @@ void ShellBrowserMainParts::PostMainMessageLoopRun() {
    ShellDevToolsManagerDelegate::StopHttpHandler();
    browser_context_.reset();
    off_the_record_browser_context_.reset();

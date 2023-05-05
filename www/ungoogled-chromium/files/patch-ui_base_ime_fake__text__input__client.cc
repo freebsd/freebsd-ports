@@ -1,6 +1,6 @@
---- ui/base/ime/fake_text_input_client.cc.orig	2022-10-01 07:40:07 UTC
+--- ui/base/ime/fake_text_input_client.cc.orig	2023-05-05 12:12:41 UTC
 +++ ui/base/ime/fake_text_input_client.cc
-@@ -163,7 +163,7 @@ bool FakeTextInputClient::ShouldDoLearning() {
+@@ -167,7 +167,7 @@ bool FakeTextInputClient::ShouldDoLearning() {
    return false;
  }
  

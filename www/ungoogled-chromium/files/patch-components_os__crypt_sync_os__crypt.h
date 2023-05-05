@@ -1,5 +1,5 @@
---- components/os_crypt/os_crypt.h.orig	2023-01-13 08:56:02 UTC
-+++ components/os_crypt/os_crypt.h
+--- components/os_crypt/sync/os_crypt.h.orig	2023-05-05 12:12:41 UTC
++++ components/os_crypt/sync/os_crypt.h
 @@ -14,7 +14,7 @@
  #include "build/build_config.h"
  #include "build/chromecast_buildflags.h"

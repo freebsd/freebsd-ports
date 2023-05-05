@@ -1,4 +1,4 @@
---- media/audio/sndio/sndio_input.cc.orig	2023-03-10 11:01:21 UTC
+--- media/audio/sndio/sndio_input.cc.orig	2023-05-05 12:12:41 UTC
 +++ media/audio/sndio/sndio_input.cc
 @@ -0,0 +1,200 @@
 +// Copyright 2013 The Chromium Authors. All rights reserved.
@@ -196,7 +196,7 @@
 +
 +
 +    // invoke callback
-+    callback->OnData(audio_bus.get(), base::TimeTicks::Now() - delay, 1.);
++    callback->OnData(audio_bus.get(), base::TimeTicks::Now() - delay, 1., {});
 +  }
 +}
 +

@@ -1,4 +1,4 @@
---- content/app/content_main_runner_impl.cc.orig	2023-04-08 11:38:38 UTC
+--- content/app/content_main_runner_impl.cc.orig	2023-05-05 12:12:41 UTC
 +++ content/app/content_main_runner_impl.cc
 @@ -139,13 +139,13 @@
  #include "content/browser/posix_file_descriptor_info_impl.h"
@@ -16,8 +16,8 @@
  #include "base/files/file_path_watcher_inotify.h"
  #include "base/native_library.h"
  #include "base/rand_util.h"
-@@ -186,6 +186,10 @@
- #include "media/base/media_switches.h"
+@@ -188,6 +188,10 @@
+ #include "chromeos/startup/startup_switches.h"
  #endif
  
 +#if BUILDFLAG(IS_BSD)
@@ -27,7 +27,7 @@
  #if BUILDFLAG(IS_ANDROID)
  #include "base/system/sys_info.h"
  #include "content/browser/android/battery_metrics.h"
-@@ -371,7 +375,7 @@ void InitializeZygoteSandboxForBrowserProcess(
+@@ -389,7 +393,7 @@ void InitializeZygoteSandboxForBrowserProcess(
  }
  #endif  // BUILDFLAG(USE_ZYGOTE)
  
@@ -36,17 +36,26 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
  // Loads the (native) libraries but does not initialize them (i.e., does not
-@@ -407,15 +411,17 @@ void PreloadLibraryCdms() {
- }
- #endif  // BUILDFLAG(ENABLE_LIBRARY_CDMS)
+@@ -427,7 +431,10 @@ void PreloadLibraryCdms() {
  
--#if BUILDFLAG(USE_ZYGOTE)
-+#if BUILDFLAG(USE_ZYGOTE) || BUILDFLAG(IS_BSD)
  void PreSandboxInit() {
-   // Pre-acquire resources needed by BoringSSL. See
+   // Ensure the /dev/urandom is opened.
++  // we use arc4random
++#if !BUILDFLAG(IS_BSD)
+   base::GetUrandomFD();
++#endif
+ 
+   // May use sysinfo(), sched_getaffinity(), and open various /sys/ and /proc/
+   // files.
+@@ -438,9 +445,16 @@ void PreSandboxInit() {
    // https://boringssl.9oo91esource.qjz9zk/boringssl/+/HEAD/SANDBOXING.md
    CRYPTO_pre_sandbox_init();
  
++#if BUILDFLAG(IS_BSD)
++  // "cache" the amount of physical memory before pledge(2)
++  base::SysInfo::AmountOfPhysicalMemoryMB();
++#endif
++
 +#if !BUILDFLAG(IS_BSD)
    // Pre-read /proc/sys/fs/inotify/max_user_watches so it doesn't have to be
    // allowed by the sandbox.
@@ -55,28 +64,7 @@
  
  #if BUILDFLAG(ENABLE_PPAPI)
    // Ensure access to the Pepper plugins before the sandbox is turned on.
-@@ -434,6 +440,11 @@ void PreSandboxInit() {
-   }
- #endif
- 
-+#if BUILDFLAG(IS_BSD)
-+  // "cache" the amount of physical memory before pledge(2)
-+  base::SysInfo::AmountOfPhysicalMemoryMB();
-+#endif
-+
-   // Set the android SkFontMgr for blink. We need to ensure this is done
-   // before the sandbox is initialized to allow the font manager to access
-   // font configuration files on disk.
-@@ -621,7 +632,7 @@ int NO_STACK_PROTECTOR RunZygote(ContentMainDelegate* 
-   delegate->ZygoteStarting(&zygote_fork_delegates);
-   media::InitializeMediaLibrary();
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-   PreSandboxInit();
- #endif
- 
-@@ -824,11 +835,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -810,11 +824,10 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
               kFieldTrialDescriptor + base::GlobalDescriptors::kBaseDescriptor);
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -90,8 +78,12 @@
  
  #endif  // !BUILDFLAG(IS_WIN)
  
-@@ -1023,6 +1033,16 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+@@ -1002,8 +1015,20 @@ int ContentMainRunnerImpl::Initialize(ContentMainParam
+       process_type == switches::kZygoteProcess) {
+     PreSandboxInit();
    }
++#elif BUILDFLAG(IS_BSD)
++  PreSandboxInit();
  #endif
  
 +#if BUILDFLAG(IS_BSD)
@@ -107,7 +99,7 @@
    delegate_->SandboxInitialized(process_type);
  
  #if BUILDFLAG(USE_ZYGOTE)
-@@ -1090,7 +1110,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1071,7 +1096,7 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
            ->ReconfigureAfterFeatureListInit(process_type);
      }
  
@@ -116,7 +108,7 @@
      // If dynamic Mojo Core is being used, ensure that it's loaded very early in
      // the child/zygote process, before any sandbox is initialized. The library
      // is not fully initialized with IPC support until a ChildProcess is later
-@@ -1128,6 +1148,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
+@@ -1106,6 +1131,11 @@ int NO_STACK_PROTECTOR ContentMainRunnerImpl::Run() {
    content_main_params_.reset();
  
    RegisterMainThreadFactories();

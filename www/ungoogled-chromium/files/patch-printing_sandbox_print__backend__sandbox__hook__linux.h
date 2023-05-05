@@ -1,4 +1,4 @@
---- printing/sandbox/print_backend_sandbox_hook_linux.h.orig	2022-10-01 07:40:07 UTC
+--- printing/sandbox/print_backend_sandbox_hook_linux.h.orig	2023-05-05 12:12:41 UTC
 +++ printing/sandbox/print_backend_sandbox_hook_linux.h
 @@ -5,8 +5,13 @@
  #ifndef PRINTING_SANDBOX_PRINT_BACKEND_SANDBOX_HOOK_LINUX_H_
@@ -7,7 +7,7 @@
 +#include "build/build_config.h"
  #include "base/component_export.h"
 +#if defined(OS_BSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#include "sandbox/policy/sandbox.h"
 +#else
  #include "sandbox/policy/linux/sandbox_linux.h"
 +#endif

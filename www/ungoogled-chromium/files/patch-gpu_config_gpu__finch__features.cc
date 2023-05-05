@@ -1,6 +1,6 @@
---- gpu/config/gpu_finch_features.cc.orig	2023-04-08 11:38:38 UTC
+--- gpu/config/gpu_finch_features.cc.orig	2023-05-05 12:12:41 UTC
 +++ gpu/config/gpu_finch_features.cc
-@@ -57,7 +57,7 @@ bool IsDeviceBlocked(const char* field, const std::str
+@@ -58,7 +58,7 @@ bool IsDeviceBlocked(const char* field, const std::str
  BASE_FEATURE(kUseGles2ForOopR,
               "UseGles2ForOopR",
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -9,7 +9,7 @@
               base::FEATURE_DISABLED_BY_DEFAULT
  #else
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -135,7 +135,8 @@ const base::FeatureParam<std::string>
+@@ -136,7 +136,8 @@ const base::FeatureParam<std::string>
  BASE_FEATURE(kDefaultEnableGpuRasterization,
               "DefaultEnableGpuRasterization",
  #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || \
