@@ -1,6 +1,7 @@
 PORTNAME=	ocl-icd
-DISTVERSIONPREFIX=	v
 PORTVERSION=	2.3.1
+PORTREVISION=	1
+DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
 MAINTAINER=	ohartmann@walstatt.org
@@ -10,28 +11,28 @@ WWW=		https://github.com/OCL-dev/ocl-icd
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	opencl>3.0:devel/opencl
+BUILD_DEPENDS=	opencl>=3.0:devel/opencl
 
 USES=		autoreconf gmake libtool localbase:ldflags pathfix ruby:build
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	OCL-dev
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-DCL_TARGET_OPENCL_VERSION=300
+USE_GITHUB=		yes
+GH_ACCOUNT=		OCL-dev
+USE_LDCONFIG=		yes
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--enable-official-khronos-headers \
+			--enable-custom-vendordir \
+			--enable-pthread-once
 
 INSTALL_TARGET=	install-strip
 
-CONFIGURE_ARGS+=--disable-official-khronos-headers \
-		--enable-custom-vendordir \
-		--enable-pthread-once
+CPPFLAGS+=	-DCL_TARGET_OPENCL_VERSION=300
 
-OPTIONS_DEFINE=	DOCS MANPAGES
-OPTIONS_DEFAULT=MANPAGES
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		DOCS MANPAGES
+OPTIONS_DEFAULT=	MANPAGES
+OPTIONS_SUB=		yes
 
-MANPAGES_BUILD_DEPENDS=	xmlto:textproc/xmlto \
-			asciidoc:textproc/asciidoc
+MANPAGES_BUILD_DEPENDS=	asciidoc:textproc/asciidoc \
+			xmlto:textproc/xmlto
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/|${LOCALBASE}/etc/|g' \
