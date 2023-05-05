@@ -86,6 +86,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/00-intro.html
 %%DATADIR%%/help/00-lexicon.html
 %%DATADIR%%/help/00-previously.html
+%%DATADIR%%/help/00-notenglish.html
 %%DATADIR%%/help/00-whatsnew.html
 %%DATADIR%%/help/dlg-acco.html
 %%DATADIR%%/help/dlg-arch.html
@@ -168,6 +169,7 @@ share/mime/packages/homebank.xml
 %%DATADIR%%/help/images/doc_balance.png
 %%DATADIR%%/help/images/doc_title.png
 %%DATADIR%%/help/images/d-warn.png
+%%DATADIR%%/help/images/g_translate.png
 %%DATADIR%%/help/images/hb-ope-auto.png
 %%DATADIR%%/help/images/hb-ope-budget.png
 %%DATADIR%%/help/images/hb-ope-cleared.png
