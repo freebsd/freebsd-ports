@@ -1,30 +1,73 @@
 Index: src/link.c
 ===================================================================
 --- src/link.c	(revision 2481)
-+++ src/link.c	(revision 2483)
-@@ -1549,7 +1549,7 @@ LinkSetCommand(Context ctx, int ac, const char *const 
++++ src/link.c	(working copy)
+@@ -435,7 +435,8 @@ LinkCreate(Context ctx, int ac, const char *const av[]
+ 
+ 	/* Initialize link configuration with defaults */
+ 	l->conf.mru = LCP_DEFAULT_MRU;
+-        l->conf.mtu = LCP_DEFAULT_MRU;
++	/* Do not assume any MTU value for this moment */
++	l->conf.mtu = 0;
+ 	l->conf.mrru = MP_DEFAULT_MRRU;
+         l->conf.accmap = 0x000a0000;
+         l->conf.max_redial = -1;
+@@ -1549,9 +1562,9 @@ LinkSetCommand(Context ctx, int ac, const char *const 
      	    name = ((intptr_t)arg == SET_MTU) ? "MTU" : "MRU";
      	    if (val < LCP_MIN_MRU)
  		Error("min %s is %d", name, LCP_MIN_MRU);
 -    	    else if (l->type && (val > l->type->mru)) {
 +    	    else if (l->type && (val > l->type->mtu)) {
  		Error("max %s on type \"%s\" links is %d",
- 		    name, l->type->name, l->type->mru);
+-		    name, l->type->name, l->type->mru);
++		    name, l->type->name, l->type->mtu);
      	    } else if ((intptr_t)arg == SET_MTU)
+ 		l->conf.mtu = val;
+     	    else
+Index: src/phys.c
+===================================================================
+--- src/phys.c	(revision 2481)
++++ src/phys.c	(working copy)
+@@ -483,7 +483,7 @@ PhysGetMtu(Link l, int conf)
+ 	    else
+ 		return (0);
+ 	} else
+-	    return (l->conf.mtu);
++	    return (l->conf.mtu ? l->conf.mtu : LCP_DEFAULT_MRU);
+     } else
+ 	return (0);
+ }
 Index: src/pppoe.c
 ===================================================================
 --- src/pppoe.c	(revision 2481)
-+++ src/pppoe.c	(revision 2483)
-@@ -31,7 +31,7 @@
++++ src/pppoe.c	(working copy)
+@@ -31,6 +31,7 @@
   * DEFINITIONS
   */
  
--#define PPPOE_MTU		1492	/* allow room for PPPoE overhead */
-+#define PPPOE_MTU		(ETHER_MAX_LEN_JUMBO - 8)
++#define PPPOE_MTU_MAX		(ETHER_MAX_LEN_JUMBO - 8)
+ #define PPPOE_MTU		1492	/* allow room for PPPoE overhead */
  #define PPPOE_MRU		1492
  
- #define PPPOE_CONNECT_TIMEOUT	9
-@@ -1712,6 +1712,7 @@ PppoeSetCommand(Context ctx, int ac, const char *const
+@@ -181,7 +182,7 @@ static void	PppoeDoClose(Link l);
+ const struct phystype gPppoePhysType = {
+     .name		= "pppoe",
+     .descr		= "PPP over Ethernet",
+-    .mtu		= PPPOE_MTU,
++    .mtu		= PPPOE_MTU_MAX,
+     .mru		= PPPOE_MRU,
+     .tmpl		= 1,
+     .init		= PppoeInit,
+@@ -886,7 +887,7 @@ PppoeGetMtu(Link l, int conf)
+ 	    if (conf == 0)
+ 		return (l->type->mtu);
+ 	    else
+-		return (l->conf.mtu);
++		return (l->conf.mtu ? l->conf.mtu : PPPOE_MTU);
+ }
+ 
+ static u_short
+@@ -1712,6 +1718,7 @@ PppoeSetCommand(Context ctx, int ac, const char *const
  	unsigned i;
  #ifdef NGM_PPPOE_SETMAXP_COOKIE
  	int ap;
@@ -32,7 +75,7 @@ Index: src/pppoe.c
  #endif
  	switch ((intptr_t)arg) {
  	case SET_IFACE:
-@@ -1732,6 +1733,20 @@ PppoeSetCommand(Context ctx, int ac, const char *const
+@@ -1732,6 +1739,20 @@ PppoeSetCommand(Context ctx, int ac, const char *const
  				}
  			}
  			strlcpy(pi->hook, hookname, sizeof(pi->hook));
@@ -53,7 +96,7 @@ Index: src/pppoe.c
  			break;
  		default:
  			return(-1);
-@@ -1762,8 +1777,18 @@ PppoeSetCommand(Context ctx, int ac, const char *const
+@@ -1762,8 +1783,18 @@ PppoeSetCommand(Context ctx, int ac, const char *const
  		if (ac != 1)
  			return(-1);
  		ap = atoi(av[0]);
