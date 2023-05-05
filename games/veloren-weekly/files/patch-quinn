@@ -23,8 +23,8 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
                  let local_ip = incoming.local_ip().expect("Local IP must be available");
                  assert!(local_ip.is_loopback());
              } else {
---- cargo-crates/quinn-udp-0.1.3/src/unix.rs.orig	1970-01-01 00:00:00 UTC
-+++ cargo-crates/quinn-udp-0.1.3/src/unix.rs
+--- cargo-crates/quinn-udp-0.1.4/src/unix.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/quinn-udp-0.1.4/src/unix.rs
 @@ -99,7 +99,7 @@ fn init(io: &std::net::UdpSocket) -> io::Result<()> {
  
  fn init(io: &std::net::UdpSocket) -> io::Result<()> {
@@ -34,7 +34,7 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
          cmsg_platform_space +=
              unsafe { libc::CMSG_SPACE(mem::size_of::<libc::in6_pktinfo>() as _) as usize };
      }
-@@ -174,13 +174,20 @@ fn init(io: &std::net::UdpSocket) -> io::Result<()> {
+@@ -179,13 +179,20 @@ fn init(io: &std::net::UdpSocket) -> io::Result<()> {
              if rc == -1 {
                  return Err(io::Error::last_os_error());
              }
@@ -58,7 +58,7 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
                      &on as *const _ as _,
                      mem::size_of_val(&on) as _,
                  )
-@@ -190,12 +197,28 @@ fn init(io: &std::net::UdpSocket) -> io::Result<()> {
+@@ -195,12 +202,28 @@ fn init(io: &std::net::UdpSocket) -> io::Result<()> {
              }
          }
      }
@@ -87,7 +87,7 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
                  libc::IPV6_RECVTCLASS,
                  &on as *const _ as _,
                  mem::size_of_val(&on) as _,
-@@ -210,11 +233,21 @@ fn send(
+@@ -215,11 +238,21 @@ fn send(
  
  #[cfg(not(any(target_os = "macos", target_os = "ios")))]
  fn send(
@@ -109,7 +109,7 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
      let mut msgs: [libc::mmsghdr; BATCH_SIZE] = unsafe { mem::zeroed() };
      let mut iovecs: [libc::iovec; BATCH_SIZE] = unsafe { mem::zeroed() };
      let mut cmsgs = [cmsg::Aligned([0u8; CMSG_LEN]); BATCH_SIZE];
-@@ -240,13 +273,13 @@ fn send(
+@@ -245,13 +278,13 @@ fn send(
              &mut msgs[i].msg_hdr,
              &mut iovecs[i],
              &mut cmsgs[i],
@@ -125,7 +125,7 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
          if n == -1 {
              let e = io::Error::last_os_error();
              match e.kind() {
-@@ -302,9 +335,18 @@ fn send(
+@@ -307,9 +340,18 @@ fn send(
      let mut iov: libc::iovec = unsafe { mem::zeroed() };
      let mut ctrl = cmsg::Aligned([0u8; CMSG_LEN]);
      let mut sent = 0;
@@ -145,7 +145,7 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
          let n = unsafe { libc::sendmsg(io.as_raw_fd(), &hdr, 0) };
          if n == -1 {
              let e = io::Error::last_os_error();
-@@ -355,7 +397,7 @@ fn recv(
+@@ -360,7 +402,7 @@ fn recv(
              libc::recvmmsg(
                  io.as_raw_fd(),
                  hdrs.as_mut_ptr(),
@@ -154,7 +154,7 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
                  0,
                  std::ptr::null_mut(),
              )
-@@ -418,6 +460,8 @@ fn prepare_msg(
+@@ -423,6 +465,8 @@ fn prepare_msg(
      hdr: &mut libc::msghdr,
      iov: &mut libc::iovec,
      ctrl: &mut cmsg::Aligned<[u8; CMSG_LEN]>,
@@ -163,7 +163,7 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
  ) {
      iov.iov_base = transmit.contents.as_ptr() as *const _ as *mut _;
      iov.iov_len = transmit.contents.len();
-@@ -449,9 +493,10 @@ fn prepare_msg(
+@@ -454,9 +498,10 @@ fn prepare_msg(
      }
  
      if let Some(ip) = &transmit.src_ip {
@@ -177,7 +177,7 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
                      let pktinfo = libc::in_pktinfo {
                          ipi_ifindex: 0,
                          ipi_spec_dst: libc::in_addr {
-@@ -461,16 +506,25 @@ fn prepare_msg(
+@@ -466,16 +511,25 @@ fn prepare_msg(
                      };
                      encoder.push(libc::IPPROTO_IP, libc::IP_PKTINFO, pktinfo);
                  }
@@ -211,7 +211,7 @@ https://github.com/quinn-rs/quinn/commit/166e0fb60a64
          }
      }
  
-@@ -519,11 +573,17 @@ fn decode_recv(
+@@ -524,11 +578,17 @@ fn decode_recv(
                      ecn_bits = cmsg::decode::<libc::c_int>(cmsg) as u8;
                  }
              },
