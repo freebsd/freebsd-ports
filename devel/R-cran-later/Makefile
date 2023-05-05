@@ -1,10 +1,9 @@
 PORTNAME=	later
-PORTVERSION=	1.3.0
-PORTREVISION=	1
+PORTVERSION=	1.3.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for Delaying Function Execution
 WWW=		https://cran.r-project.org/web/packages/later/
 
