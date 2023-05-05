@@ -1,5 +1,5 @@
 Ntfs2btrfs is a tool which does in-place conversion of Microsoft's NTFS
 file system to the open-source file system Btrfs, much as btrfs-convert
-does for ext2.  The original image is saved as a reflink copy at
-``image/ntfs.img'', and if you want to keep the conversion you can delete
-this to free up space.
+does for ext2.  The original file system image is saved as a reflink copy
+at `image/ntfs.img', and can be deleted to free up space if you want to
+keep the conversion.

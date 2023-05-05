@@ -1,5 +1,5 @@
 PORTNAME=	ntfs2btrfs
-PORTVERSION=	20220812
+PORTVERSION=	20230501
 CATEGORIES=	sysutils
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -19,7 +19,7 @@ PLIST_FILES=	sbin/${PORTNAME} share/man/man8/${PORTNAME}.8.gz
 
 post-patch:
 # One should not try to mmap(2) disk devices on FreeBSD, it won't work
-	@${REINPLACE_CMD} -e '3390s,WIN32,_${OPSYS}__,' \
+	@${REINPLACE_CMD} -e '3449s,WIN32,_${OPSYS}__,' \
 		${WRKSRC}/src/ntfs2btrfs.cpp
 
 .include <bsd.port.mk>
