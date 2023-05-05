@@ -1,6 +1,5 @@
 PORTNAME=	xarchiver
-DISTVERSION=	0.5.4.20
-PORTREVISION=	1
+DISTVERSION=	0.5.4.21
 CATEGORIES=	archivers
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -21,11 +20,10 @@ RUN_DEPENDS=	7zz:archivers/7-zip \
 		zip:archivers/zip
 
 USES=		autoreconf desktop-file-utils gmake gnome libtool:build pkgconfig
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	ib
-
 USE_GNOME=	cairo gdkpixbuf2 glib20 intltool
+
 GNU_CONFIGURE=	yes
 
 PORTSCOUT=	limit:^\d\.\d\.\d\.\d+$ # avoid tags like identical_to_xfce_git_content
