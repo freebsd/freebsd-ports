@@ -1,3 +1,48 @@
+  <vuln vid="d55e1b4d-eadc-11ed-9cc0-080027de9982">
+    <topic>Django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py37-django32</name>
+	<name>py38-django32</name>
+	<name>py39-django32</name>
+	<name>py310-django32</name>
+	<name>py311-django32</name>
+	<range><lt>3.2.19</lt></range>
+      </package>
+      <package>
+	<name>py38-django41</name>
+	<name>py39-django41</name>
+	<name>py310-django41</name>
+	<name>py311-django41</name>
+	<range><lt>4.1.9</lt></range>
+      </package>
+      <package>
+	<name>py38-django42</name>
+	<name>py39-django42</name>
+	<name>py310-django42</name>
+	<name>py311-django42</name>
+	<range><lt>4.2.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Django reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2023/may/03/security-releases/">
+	  <p>CVE-2023-31047: Potential bypass of validation when uploading multiple
+	    files using one form field.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-31047</cvename>
+      <url>https://www.djangoproject.com/weblog/2023/may/03/security-releases/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-01</discovery>
+      <entry>2023-05-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="246174d3-e979-11ed-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
