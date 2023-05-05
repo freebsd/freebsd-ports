@@ -1,6 +1,5 @@
 PORTNAME=	pandas
-PORTVERSION=	1.5.3
-PORTREVISION=	1
+PORTVERSION=	2.0.1
 PORTEPOCH=	1
 CATEGORIES=	math devel python
 MASTER_SITES=	PYPI
@@ -13,7 +12,9 @@ WWW=		https://pandas.pydata.org/
 LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.32<3:lang/cython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}numpy>=1.20.3,1:math/py-numpy@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}numpy>=1.20.3,1:math/py-numpy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}versioneer>=0:devel/py-versioneer@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.32<3:lang/cython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.20.3,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=2.8.1:devel/py-dateutil@${PY_FLAVOR} \
