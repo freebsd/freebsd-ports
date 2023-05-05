@@ -35,6 +35,7 @@ lib/swipl/boot/syspred.pl
 lib/swipl/boot/tabling.pl
 lib/swipl/boot/toplevel.pl
 lib/swipl/boot/topvars.pl
+lib/swipl/cmake/swipl.cmake
 lib/swipl/customize/README.md
 lib/swipl/customize/edit
 lib/swipl/customize/init.pl
@@ -67,6 +68,7 @@ lib/swipl/demo/likes.pl
 %%PORTDOCS%%lib/swipl/doc/Manual/broadcast.html
 %%PORTDOCS%%lib/swipl/doc/Manual/broadcast.png
 %%PORTDOCS%%lib/swipl/doc/Manual/builtin.html
+%%PORTDOCS%%lib/swipl/doc/Manual/builtin-statistics.html
 %%PORTDOCS%%lib/swipl/doc/Manual/builtinlist.html
 %%PORTDOCS%%lib/swipl/doc/Manual/by-sa.png
 %%PORTDOCS%%lib/swipl/doc/Manual/charconv.html
@@ -127,12 +129,14 @@ lib/swipl/demo/likes.pl
 %%PORTDOCS%%lib/swipl/doc/Manual/ext-lists.html
 %%PORTDOCS%%lib/swipl/doc/Manual/ext-syntax.html
 %%PORTDOCS%%lib/swipl/doc/Manual/extensions.html
+%%PORTDOCS%%lib/swipl/doc/Manual/fastrw.html
 %%PORTDOCS%%lib/swipl/doc/Manual/files.html
 %%PORTDOCS%%lib/swipl/doc/Manual/findappfile.html
 %%PORTDOCS%%lib/swipl/doc/Manual/findhome.html
 %%PORTDOCS%%lib/swipl/doc/Manual/flags.html
 %%PORTDOCS%%lib/swipl/doc/Manual/forall2.html
 %%PORTDOCS%%lib/swipl/doc/Manual/foreign.html
+%%PORTDOCS%%lib/swipl/doc/Manual/foreign-streams.html
 %%PORTDOCS%%lib/swipl/doc/Manual/foreigninclude.html
 %%PORTDOCS%%lib/swipl/doc/Manual/foreignlink.html
 %%PORTDOCS%%lib/swipl/doc/Manual/foreignnotes.html
@@ -148,6 +152,7 @@ lib/swipl/demo/likes.pl
 %%PORTDOCS%%lib/swipl/doc/Manual/guitracer.html
 %%PORTDOCS%%lib/swipl/doc/Manual/gvar.html
 %%PORTDOCS%%lib/swipl/doc/Manual/hack.html
+%%PORTDOCS%%lib/swipl/doc/Manual/heaps.html
 %%PORTDOCS%%lib/swipl/doc/Manual/highorder.html
 %%PORTDOCS%%lib/swipl/doc/Manual/history.html
 %%PORTDOCS%%lib/swipl/doc/Manual/home.gif
@@ -164,6 +169,7 @@ lib/swipl/demo/likes.pl
 %%PORTDOCS%%lib/swipl/doc/Manual/initfile.html
 %%PORTDOCS%%lib/swipl/doc/Manual/initgoal.html
 %%PORTDOCS%%lib/swipl/doc/Manual/intercept.html
+%%PORTDOCS%%lib/swipl/doc/Manual/interrupt.html
 %%PORTDOCS%%lib/swipl/doc/Manual/intlibs.html
 %%PORTDOCS%%lib/swipl/doc/Manual/intro.html
 %%PORTDOCS%%lib/swipl/doc/Manual/iostream.html
@@ -233,6 +239,7 @@ lib/swipl/demo/likes.pl
 %%PORTDOCS%%lib/swipl/doc/Manual/quasiquotations.html
 %%PORTDOCS%%lib/swipl/doc/Manual/quickstart.html
 %%PORTDOCS%%lib/swipl/doc/Manual/random.html
+%%PORTDOCS%%lib/swipl/doc/Manual/rbtrees.html
 %%PORTDOCS%%lib/swipl/doc/Manual/readutil.html
 %%PORTDOCS%%lib/swipl/doc/Manual/record.html
 %%PORTDOCS%%lib/swipl/doc/Manual/reexport.html
@@ -292,9 +299,13 @@ lib/swipl/demo/likes.pl
 %%PORTDOCS%%lib/swipl/doc/Manual/url.html
 %%PORTDOCS%%lib/swipl/doc/Manual/usingmodules.html
 %%PORTDOCS%%lib/swipl/doc/Manual/varnumbers.html
+%%PORTDOCS%%lib/swipl/doc/Manual/wasm-calling.html
+%%PORTDOCS%%lib/swipl/doc/Manual/wasm-js-call.html
+%%PORTDOCS%%lib/swipl/doc/Manual/wasm-loading.html
+%%PORTDOCS%%lib/swipl/doc/Manual/wasm.html
 %%PORTDOCS%%lib/swipl/doc/Manual/whymodules.html
 %%PORTDOCS%%lib/swipl/doc/Manual/widechars.html
-%%PORTDOCS%%lib/swipl/doc/Manual/www_browser.html
+%%PORTDOCS%%lib/swipl/doc/Manual/wwwbrowser.html
 %%PORTDOCS%%lib/swipl/doc/Manual/xref.html
 %%PORTDOCS%%lib/swipl/doc/Manual/xrefchatdep.png
 %%PORTDOCS%%lib/swipl/doc/Manual/xrefchatfile.png
@@ -317,8 +328,8 @@ lib/swipl/demo/likes.pl
 %%PORTEXAMPLES%%lib/swipl/doc/packages/examples/cpp/README.md
 %%PORTEXAMPLES%%lib/swipl/doc/packages/examples/cpp/likes.cpp
 %%PORTEXAMPLES%%lib/swipl/doc/packages/examples/cpp/likes.pl
-%%PORTEXAMPLES%%lib/swipl/doc/packages/examples/cpp/test.cpp
-%%PORTEXAMPLES%%lib/swipl/doc/packages/examples/cpp/test.pl
+%%PORTEXAMPLES%%lib/swipl/doc/packages/examples/cpp/test_cpp.cpp
+%%PORTEXAMPLES%%lib/swipl/doc/packages/examples/cpp/test_ffi.c
 %%ODBC%%%%PORTEXAMPLES%%lib/swipl/doc/packages/examples/cql/cql_demo.pl
 %%PORTEXAMPLES%%lib/swipl/doc/packages/examples/http/README.md
 %%PORTEXAMPLES%%lib/swipl/doc/packages/examples/http/calc.pl
@@ -425,7 +436,6 @@ lib/swipl/demo/likes.pl
 %%PORTDOCS%%lib/swipl/doc/packages/nlp.html
 %%ODBC%%%%PORTDOCS%%lib/swipl/doc/packages/odbc.html
 %%PORTDOCS%%lib/swipl/doc/packages/paxos.html
-%%PORTDOCS%%lib/swipl/doc/packages/pcre.html
 %%PORTDOCS%%lib/swipl/doc/packages/penarch.png
 %%PORTDOCS%%lib/swipl/doc/packages/pengines.html
 %%PORTDOCS%%lib/swipl/doc/packages/pl2cpp.html
@@ -445,6 +455,7 @@ lib/swipl/demo/likes.pl
 %%PORTDOCS%%lib/swipl/doc/packages/utf8proc.html
 %%PORTDOCS%%lib/swipl/doc/packages/yaml.html
 %%PORTDOCS%%lib/swipl/doc/packages/zlib.html
+lib/swipl/include/SWI-cpp2.h
 lib/swipl/include/SWI-Prolog.h
 lib/swipl/include/SWI-Stream.h
 lib/swipl/include/SWI-cpp.h
@@ -463,13 +474,12 @@ lib/swipl/lib/%%ARCH%%-%%OS%%/isub.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/json.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/libedit4pl.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/libswipl.so
-lib/swipl/lib/%%ARCH%%-%%OS%%/libswipl.so.8
-lib/swipl/lib/%%ARCH%%-%%OS%%/libswipl.so.8.4.1
+lib/swipl/lib/%%ARCH%%-%%OS%%/libswipl.so.9
+lib/swipl/lib/%%ARCH%%-%%OS%%/libswipl.so.9.0.4
 lib/swipl/lib/%%ARCH%%-%%OS%%/md54pl.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/memfile.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/ntriples.so
 %%ODBC%%lib/swipl/lib/%%ARCH%%-%%OS%%/odbc4pl.so
-lib/swipl/lib/%%ARCH%%-%%OS%%/pcre4pl.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/pdt_console.so
 %%XPCE%%lib/swipl/lib/%%ARCH%%-%%OS%%/pl2xpce.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/porter_stem.so
@@ -481,6 +491,7 @@ lib/swipl/lib/%%ARCH%%-%%OS%%/readline4pl.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/readutil.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/redis4pl.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/rlimit.so
+lib/swipl/lib/%%ARCH%%-%%OS%%/sched.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/sgml2pl.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/sha4pl.so
 lib/swipl/lib/%%ARCH%%-%%OS%%/snowball.so
@@ -523,6 +534,11 @@ lib/swipl/library/backcomp.pl
 lib/swipl/library/base32.pl
 lib/swipl/library/base64.pl
 lib/swipl/library/broadcast.pl
+lib/swipl/library/build/cmake.pl
+lib/swipl/library/build/conan.pl
+lib/swipl/library/build/make.pl
+lib/swipl/library/build/tools.pl
+lib/swipl/library/http/graphql.pl
 lib/swipl/library/c14n2.pl
 lib/swipl/library/cgi.pl
 lib/swipl/library/charsio.pl
@@ -747,7 +763,7 @@ lib/swipl/library/http/web/icons/generic.png
 lib/swipl/library/http/web/icons/layout.png
 lib/swipl/library/http/web/icons/openid-logo-square.png
 lib/swipl/library/http/web/icons/openid-logo-tiny.png
-lib/swipl/library/http/web/js/jquery-1.11.3.min.js
+lib/swipl/library/http/web/js/jquery-3.6.0.min.js
 lib/swipl/library/http/web/js/pengines.js
 lib/swipl/library/http/websocket.pl
 lib/swipl/library/http/yadis.pl
@@ -797,7 +813,6 @@ lib/swipl/library/ordsets.pl
 lib/swipl/library/oset.pl
 lib/swipl/library/pairs.pl
 lib/swipl/library/paxos.pl
-lib/swipl/library/pcre.pl
 lib/swipl/library/pdt_console.pl
 lib/swipl/library/pengines.pl
 lib/swipl/library/pengines_io.pl
@@ -900,6 +915,8 @@ lib/swipl/library/rewrite_term.pl
 lib/swipl/library/rlimit.pl
 lib/swipl/library/saml.pl
 lib/swipl/library/sandbox.pl
+lib/swipl/library/sched.pl
+lib/swipl/library/streams.pl
 lib/swipl/library/semweb/INDEX.pl
 lib/swipl/library/semweb/dc.rdfs
 lib/swipl/library/semweb/eor.rdfs
