@@ -1,0 +1,708 @@
+Temporarily revert https://gitlab.com/gilrs-project/gilrs/-/commit/7cd001dacfb1
+
+error[E0432]: unresolved import `nix::sys::epoll`
+  --> cargo-crates/gilrs-core-0.5.5/src/platform/linux/gamepad.rs:21:15
+   |
+21 | use nix::sys::epoll::{EpollEvent, EpollFlags, EpollOp};
+   |               ^^^^^ could not find `epoll` in `sys`
+
+error[E0432]: unresolved import `nix::sys::eventfd`
+  --> cargo-crates/gilrs-core-0.5.5/src/platform/linux/gamepad.rs:22:15
+   |
+22 | use nix::sys::eventfd::EfdFlags;
+   |               ^^^^^^^ could not find `eventfd` in `sys`
+
+error[E0432]: unresolved imports `nix::sys::epoll`, `nix::sys::eventfd`
+  --> cargo-crates/gilrs-core-0.5.5/src/platform/linux/gamepad.rs:23:16
+   |
+23 | use nix::sys::{epoll, eventfd};
+   |                ^^^^^  ^^^^^^^
+   |                |      |
+   |                |      no `eventfd` in `sys`
+   |                |      help: a similar name exists in the module: `event`
+   |                no `epoll` in `sys`
+
+--- cargo-crates/gilrs-0.10.2/examples/ev.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-0.10.2/examples/ev.rs
+@@ -9,6 +9,8 @@ use std::process;
+ use gilrs::GilrsBuilder;
+ 
+ use std::process;
++use std::thread;
++use std::time::Duration;
+ 
+ fn main() {
+     env_logger::init();
+@@ -29,15 +31,12 @@ fn main() {
+     let repeat_filter = Repeat::new();
+ 
+     loop {
+-        while let Some(ev) = gilrs
+-            .next_event_blocking(None)
+-            .filter_ev(&repeat_filter, &mut gilrs)
+-        {
++        while let Some(ev) = gilrs.next_event().filter_ev(&repeat_filter, &mut gilrs) {
+             gilrs.update(&ev);
+             println!("{:?}", ev);
+         }
+ 
+-        if gilrs.counter() % 25 == 0 {
++        if gilrs.counter() % 250 == 0 {
+             for (id, gamepad) in gilrs.gamepads() {
+                 println!(
+                     "Power info of gamepad {}({}): {:?}",
+@@ -49,5 +48,6 @@ fn main() {
+         }
+ 
+         gilrs.inc();
++        thread::sleep(Duration::from_millis(33));
+     }
+ }
+--- cargo-crates/gilrs-0.10.2/examples/gui.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-0.10.2/examples/gui.rs
+@@ -290,7 +290,6 @@ fn main() {
+ 
+ #[cfg(not(target_arch = "wasm32"))]
+ fn main() {
+-    env_logger::init();
+     let native_options = eframe::NativeOptions {
+         initial_window_size: Some(Vec2::new(1024.0, 768.0)),
+         ..Default::default()
+--- cargo-crates/gilrs-0.10.2/src/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-0.10.2/src/gamepad.rs
+@@ -30,7 +30,6 @@ use std::{
+     error,
+     fmt::{self, Display},
+     sync::mpsc::Sender,
+-    time::Duration,
+ };
+ 
+ pub use gilrs_core::PowerInfo;
+@@ -153,30 +152,15 @@ impl Gilrs {
+ 
+     /// Returns next pending event. If there is no pending event, `None` is
+     /// returned. This function will not block current thread and should be safe
+-    /// to call in async context. Doesn't block the thread it is run in
++    /// to call in async context.
+     pub fn next_event(&mut self) -> Option<Event> {
+-        self.next_event_inner(false, None)
+-    }
+-
+-    /// Same as [Gilrs::next_event], but blocks the thread it is run in. Useful
+-    /// for apps that aren't run inside a loop and just react to the user's input,
+-    /// like GUI apps.
+-    ///
+-    /// ## Platform support
+-    ///
+-    /// This function is not supported on web and will always panic.
+-    pub fn next_event_blocking(&mut self, timeout: Option<Duration>) -> Option<Event> {
+-        self.next_event_inner(true, timeout)
+-    }
+-
+-    fn next_event_inner(&mut self, is_blocking: bool, blocking_timeout: Option<Duration>) -> Option<Event> {
+         use crate::ev::filter::{axis_dpad_to_button, deadzone, Filter, Jitter};
+ 
+         let ev = if self.default_filters {
+             let jitter_filter = Jitter::new();
+             loop {
+                 let ev = self
+-                    .next_event_priv(is_blocking, blocking_timeout)
++                    .next_event_priv()
+                     .filter_ev(&axis_dpad_to_button, self)
+                     .filter_ev(&jitter_filter, self)
+                     .filter_ev(&deadzone, self);
+@@ -188,7 +172,7 @@ impl Gilrs {
+                 }
+             }
+         } else {
+-            self.next_event_priv(is_blocking, blocking_timeout)
++            self.next_event_priv()
+         };
+ 
+         if self.update_state {
+@@ -201,17 +185,11 @@ impl Gilrs {
+     }
+ 
+     /// Returns next pending event.
+-    fn next_event_priv(&mut self, is_blocking: bool, blocking_timeout: Option<Duration>) -> Option<Event> {
++    fn next_event_priv(&mut self) -> Option<Event> {
+         if let Some(ev) = self.events.pop_front() {
+             Some(ev)
+         } else {
+-            let event = if is_blocking {
+-                self.inner.next_event_blocking(blocking_timeout)
+-            } else {
+-                self.inner.next_event()
+-            };
+-
+-            match event {
++            match self.inner.next_event() {
+                 Some(RawEvent { id, event, time }) => {
+                     trace!("Original event: {:?}", RawEvent { id, event, time });
+                     let id = GamepadId(id);
+--- cargo-crates/gilrs-core-0.5.5/Cargo.toml.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.5/Cargo.toml
+@@ -64,7 +64,6 @@ features = [
+ version = "0.26.2"
+ features = [
+     "ioctl",
+-    "event",
+ ]
+ default-features = false
+ 
+--- cargo-crates/gilrs-core-0.5.5/examples/ev_core.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.5/examples/ev_core.rs
+@@ -5,7 +5,7 @@ fn main() {
+ 
+     let mut gilrs = Gilrs::new().unwrap();
+     loop {
+-        while let Some(ev) = gilrs.next_event_blocking(None) {
++        while let Some(ev) = gilrs.next_event() {
+             println!("{:?}", ev);
+         }
+     }
+--- cargo-crates/gilrs-core-0.5.5/src/lib.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.5/src/lib.rs
+@@ -116,11 +116,6 @@ impl Gilrs {
+         self.inner.next_event()
+     }
+ 
+-    /// Returns oldest event, waiting for new event if necessary.
+-    pub fn next_event_blocking(&mut self, timeout: Option<Duration>) -> Option<Event> {
+-        self.inner.next_event_blocking(timeout)
+-    }
+-
+     /// Borrows `Gamepad` or return `None` if index is invalid. Returned gamepad may be disconnected.
+     pub fn gamepad(&self, id: usize) -> Option<&Gamepad> {
+         unsafe {
+--- cargo-crates/gilrs-core-0.5.5/src/platform/default/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.5/src/platform/default/gamepad.rs
+@@ -11,7 +11,6 @@ use std::fmt::{Display, Formatter, Result as FmtResult
+ use uuid::Uuid;
+ 
+ use std::fmt::{Display, Formatter, Result as FmtResult};
+-use std::time::Duration;
+ 
+ #[derive(Debug)]
+ pub struct Gilrs {}
+@@ -22,10 +21,6 @@ impl Gilrs {
+     }
+ 
+     pub(crate) fn next_event(&mut self) -> Option<Event> {
+-        None
+-    }
+-
+-    pub(crate) fn next_event_blocking(&mut self, timeout: Option<Duration>) -> Option<Event> {
+         None
+     }
+ 
+--- cargo-crates/gilrs-core-0.5.5/src/platform/linux/ff.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.5/src/platform/linux/ff.rs
+@@ -12,7 +12,6 @@ use super::ioctl::{self, ff_effect, ff_replay, ff_rumb
+ use std::{mem, slice};
+ 
+ use super::ioctl::{self, ff_effect, ff_replay, ff_rumble_effect, input_event};
+-use nix::errno::Errno;
+ use std::time::Duration;
+ 
+ #[derive(Debug)]
+@@ -111,12 +110,10 @@ impl Drop for Device {
+         let effect = self.effect as ::libc::c_int;
+ 
+         if let Err(err) = unsafe { ioctl::eviocrmff(self.file.as_raw_fd(), effect) } {
+-            if err != Errno::ENODEV {
+-                error!(
+-                    "Failed to remove effect of gamepad {:?}: {}",
+-                    self.file, err
+-                )
+-            }
++            error!(
++                "Failed to remove effect of gamepad {:?}: {}",
++                self.file, err
++            )
+         };
+     }
+ }
+--- cargo-crates/gilrs-core-0.5.5/src/platform/linux/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.5/src/platform/linux/gamepad.rs
+@@ -17,33 +17,22 @@ use vec_map::VecMap;
+ use uuid::Uuid;
+ use vec_map::VecMap;
+ 
+-use nix::errno::Errno;
+-use nix::sys::epoll::{EpollEvent, EpollFlags, EpollOp};
+-use nix::sys::eventfd::EfdFlags;
+-use nix::sys::{epoll, eventfd};
+-use std::collections::VecDeque;
+ use std::ffi::CStr;
+ use std::fmt::{Display, Formatter, Result as FmtResult};
+-use std::fs::File;
+-use std::io::Write;
+ use std::mem::{self, MaybeUninit};
+ use std::ops::Index;
+ use std::os::raw::c_char;
+-use std::os::unix::io::{AsRawFd, FromRawFd, OwnedFd, RawFd};
+ use std::str;
+ use std::sync::mpsc;
+ use std::sync::mpsc::{Receiver, Sender};
+ use std::time::{Duration, SystemTime, UNIX_EPOCH};
+ use std::{error, thread};
+ 
+-const HOTPLUG_DATA: u64 = u64::MAX;
+-
+ #[derive(Debug)]
+ pub struct Gilrs {
+     gamepads: Vec<Gamepad>,
+-    epoll: OwnedFd,
++    event_counter: usize,
+     hotplug_rx: Receiver<HotplugEvent>,
+-    to_check: VecDeque<usize>,
+ }
+ 
+ impl Gilrs {
+@@ -66,27 +55,9 @@ impl Gilrs {
+         unsafe { en.add_match_property(cstr_new(b"ID_INPUT_JOYSTICK\0"), cstr_new(b"1\0")) }
+         en.scan_devices();
+ 
+-        let epoll =
+-            epoll::epoll_create().map_err(|e| errno_to_platform_error(e, "creating epoll fd"))?;
+-        let epoll = unsafe { OwnedFd::from_raw_fd(epoll) };
+-
+-        let hotplug_event = eventfd::eventfd(1, EfdFlags::EFD_NONBLOCK)
+-            .map_err(|e| errno_to_platform_error(e, "creating eventfd"))?;
+-        epoll::epoll_ctl(
+-            epoll.as_raw_fd(),
+-            EpollOp::EpollCtlAdd,
+-            hotplug_event,
+-            &mut EpollEvent::new(EpollFlags::EPOLLIN | EpollFlags::EPOLLET, HOTPLUG_DATA),
+-        )
+-        .map_err(|e| errno_to_platform_error(e, "adding evevntfd do epoll"))?;
+-
+         for dev in en.iter() {
+             if let Some(dev) = Device::from_syspath(&udev, &dev) {
+                 if let Some(gamepad) = Gamepad::open(&dev) {
+-                    let idx = gamepads.len();
+-                    gamepad
+-                        .register_fd(epoll.as_raw_fd(), idx as u64)
+-                        .map_err(|e| errno_to_platform_error(e, "registering gamepad in epoll"))?;
+                     gamepads.push(gamepad);
+                 }
+             }
+@@ -110,96 +81,49 @@ impl Gilrs {
+                 }
+             };
+ 
+-            handle_hotplug(hotplug_tx, monitor, hotplug_event)
++            handle_hotplug(hotplug_tx, monitor)
+         });
+ 
+         Ok(Gilrs {
+             gamepads,
+-            epoll,
++            event_counter: 0,
+             hotplug_rx,
+-            to_check: VecDeque::new(),
+         })
+     }
+ 
+     pub(crate) fn next_event(&mut self) -> Option<Event> {
+-        self.next_event_impl(Some(Duration::new(0, 0)))
+-    }
+-
+-    pub(crate) fn next_event_blocking(&mut self, timeout: Option<Duration>) -> Option<Event> {
+-        self.next_event_impl(timeout)
+-    }
+-
+-    fn next_event_impl(&mut self, timeout: Option<Duration>) -> Option<Event> {
+-        let mut check_hotplug = false;
+-
+-        if self.to_check.is_empty() {
+-            let mut events = [EpollEvent::new(EpollFlags::empty(), 0); 16];
+-            let timeout = if let Some(timeout) = timeout {
+-                timeout.as_millis().try_into().expect("timeout too large")
+-            } else {
+-                -1
+-            };
+-
+-            let n = match epoll::epoll_wait(self.epoll.as_raw_fd(), &mut events, timeout) {
+-                Ok(n) => n,
+-                Err(e) => {
+-                    error!("epoll failed: {}", e);
+-                    return None;
+-                }
+-            };
+-
+-            if n == 0 {
+-                return None;
+-            }
+-
+-            for event in events {
+-                if event.events().contains(EpollFlags::EPOLLIN) {
+-                    if event.data() == HOTPLUG_DATA {
+-                        check_hotplug = true;
+-                    } else {
+-                        self.to_check.push_back(event.data() as usize);
+-                    }
+-                }
+-            }
++        if let Some(event) = self.handle_hotplug() {
++            return Some(event);
+         }
+ 
+-        if check_hotplug {
+-            if let Some(event) = self.handle_hotplug() {
+-                return Some(event);
+-            }
+-        }
+-
+-        while let Some(idx) = self.to_check.front().copied() {
+-            let gamepad = match self.gamepads.get_mut(idx) {
++        loop {
++            let gamepad = match self.gamepads.get_mut(self.event_counter) {
+                 Some(gp) => gp,
+                 None => {
+-                    warn!("Somehow got invalid index from event");
+-                    self.to_check.pop_front();
++                    self.event_counter = 0;
+                     return None;
+                 }
+             };
+ 
+             if !gamepad.is_connected {
+-                self.to_check.pop_front();
++                self.event_counter += 1;
+                 continue;
+             }
+ 
+             match gamepad.event() {
+                 Some((event, time)) => {
+                     return Some(Event {
+-                        id: idx,
++                        id: self.event_counter,
+                         event,
+                         time,
+                     });
+                 }
+                 None => {
+-                    self.to_check.pop_front();
++                    self.event_counter += 1;
+                     continue;
+                 }
+             };
+         }
+-
+-        None
+     }
+ 
+     pub fn gamepad(&self, id: usize) -> Option<&Gamepad> {
+@@ -219,17 +143,9 @@ impl Gilrs {
+                         .iter()
+                         .position(|gp| gp.uuid() == gamepad.uuid && !gp.is_connected)
+                     {
+-                        if let Err(e) = gamepad.register_fd(self.epoll.as_raw_fd(), id as u64) {
+-                            error!("Failed to add gamepad to epoll: {}", e);
+-                        }
+                         self.gamepads[id] = *gamepad;
+                         Some(Event::new(id, EventType::Connected))
+                     } else {
+-                        if let Err(e) =
+-                            gamepad.register_fd(self.epoll.as_raw_fd(), self.gamepads.len() as u64)
+-                        {
+-                            error!("Failed to add gamepad to epoll: {}", e);
+-                        }
+                         self.gamepads.push(*gamepad);
+                         Some(Event::new(self.gamepads.len() - 1, EventType::Connected))
+                     }
+@@ -240,15 +156,6 @@ impl Gilrs {
+                         .iter()
+                         .position(|gp| devpath == gp.devpath && gp.is_connected)
+                     {
+-                        if let Err(e) = epoll::epoll_ctl(
+-                            self.epoll.as_raw_fd(),
+-                            EpollOp::EpollCtlDel,
+-                            self.gamepads[id].fd,
+-                            &mut EpollEvent::empty(),
+-                        ) {
+-                            error!("Failed to remove disconnected gamepad from epoll: {}", e);
+-                        }
+-
+                         self.gamepads[id].disconnect();
+                         return Some(Event::new(id, EventType::Disconnected));
+                     } else {
+@@ -267,9 +174,7 @@ enum HotplugEvent {
+     Removed(String),
+ }
+ 
+-fn handle_hotplug(sender: Sender<HotplugEvent>, monitor: Monitor, event: RawFd) {
+-    let mut event = unsafe { File::from_raw_fd(event) };
+-
++fn handle_hotplug(sender: Sender<HotplugEvent>, monitor: Monitor) {
+     loop {
+         if !monitor.wait_hotplug_available() {
+             continue;
+@@ -291,15 +196,12 @@ fn handle_hotplug(sender: Sender<HotplugEvent>, monito
+                 None => continue,
+             };
+ 
+-            let mut sent = false;
+-
+             if action == cstr_new(b"add\0") {
+                 if let Some(gamepad) = Gamepad::open(&dev) {
+                     if sender.send(HotplugEvent::New(Box::new(gamepad))).is_err() {
+                         debug!("All receivers dropped, ending hot plug loop.");
+                         break;
+                     }
+-                    sent = true;
+                 }
+             } else if action == cstr_new(b"remove\0") {
+                 if let Some(devnode) = dev.devnode() {
+@@ -308,21 +210,11 @@ fn handle_hotplug(sender: Sender<HotplugEvent>, monito
+                             debug!("All receivers dropped, ending hot plug loop.");
+                             break;
+                         }
+-                        sent = true;
+                     } else {
+                         warn!("Received event with devnode that is not valid utf8: {devnode:?}")
+                     }
+                 }
+             }
+-
+-            if sent {
+-                if let Err(e) = event.write(&0u64.to_ne_bytes()) {
+-                    error!(
+-                        "Failed to notify other thread about new hotplug events: {}",
+-                        e
+-                    );
+-                }
+-            }
+         }
+     }
+ }
+@@ -468,15 +360,6 @@ impl Gamepad {
+         Some(gamepad)
+     }
+ 
+-    fn register_fd(&self, epoll: RawFd, data: u64) -> Result<(), Errno> {
+-        epoll::epoll_ctl(
+-            epoll,
+-            EpollOp::EpollCtlAdd,
+-            self.fd,
+-            &mut EpollEvent::new(EpollFlags::EPOLLIN, data),
+-        )
+-    }
+-
+     fn collect_axes_and_buttons(&mut self) {
+         let mut key_bits = [0u8; (KEY_MAX / 8) as usize + 1];
+         let mut abs_bits = [0u8; (ABS_MAX / 8) as usize + 1];
+@@ -596,7 +479,7 @@ impl Gamepad {
+ 
+     fn battery_fd(dev: &Device) -> (i32, i32) {
+         use std::ffi::OsStr;
+-        use std::fs::{self};
++        use std::fs::{self, File};
+         use std::os::unix::ffi::OsStrExt;
+         use std::os::unix::io::IntoRawFd;
+         use std::path::Path;
+@@ -950,7 +833,6 @@ enum Error {
+ enum Error {
+     UdevCtx,
+     UdevEnumerate,
+-    Errno(Errno, &'static str),
+ }
+ 
+ impl Display for Error {
+@@ -958,16 +840,11 @@ impl Display for Error {
+         match *self {
+             Error::UdevCtx => f.write_str("Failed to create udev context"),
+             Error::UdevEnumerate => f.write_str("Failed to create udev enumerate object"),
+-            Error::Errno(e, ctx) => f.write_fmt(format_args!("{} failed: {}", ctx, e)),
+         }
+     }
+ }
+ 
+ impl error::Error for Error {}
+-
+-fn errno_to_platform_error(errno: Errno, ctx: &'static str) -> PlatformError {
+-    PlatformError::Other(Box::new(Error::Errno(errno, ctx)))
+-}
+ 
+ const KEY_MAX: u16 = 0x2ff;
+ #[allow(dead_code)]
+--- cargo-crates/gilrs-core-0.5.5/src/platform/macos/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.5/src/platform/macos/gamepad.rs
+@@ -24,7 +24,6 @@ use std::thread;
+ use std::sync::mpsc::{self, Receiver, Sender};
+ use std::sync::{Arc, Mutex};
+ use std::thread;
+-use std::time::Duration;
+ 
+ #[derive(Debug)]
+ pub struct Gilrs {
+@@ -79,22 +78,7 @@ impl Gilrs {
+     }
+ 
+     pub(crate) fn next_event(&mut self) -> Option<Event> {
+-        let event = self.rx.try_recv().ok();
+-        self.handle_event(event)
+-    }
+-
+-    pub(crate) fn next_event_blocking(&mut self, timeout: Option<Duration>) -> Option<Event> {
+-        let event = if let Some(timeout) = timeout {
+-            self.rx.recv_timeout(timeout).ok()
+-        } else {
+-            self.rx.recv().ok()
+-        };
+-
+-        self.handle_event(event)
+-    }
+-
+-    fn handle_event(&mut self, event: Option<(Event, Option<IOHIDDevice>)>) -> Option<Event> {
+-        match event {
++        match self.rx.try_recv().ok() {
+             Some((event, Some(device))) => {
+                 if event.event == EventType::Connected {
+                     if self.gamepads.get(event.id).is_some() {
+--- cargo-crates/gilrs-core-0.5.5/src/platform/wasm/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.5/src/platform/wasm/gamepad.rs
+@@ -7,7 +7,6 @@ use std::fmt::{Display, Formatter, Result as FmtResult
+ 
+ use std::collections::VecDeque;
+ use std::fmt::{Display, Formatter, Result as FmtResult};
+-use std::time::Duration;
+ 
+ use uuid::Uuid;
+ use wasm_bindgen::JsCast;
+@@ -144,10 +143,6 @@ impl Gilrs {
+         }
+ 
+         self.event_cache.pop_front()
+-    }
+-
+-    pub(crate) fn next_event_blocking(&mut self, timeout: Option<Duration>) -> Option<Event> {
+-        unimplemented!("next_event_blocking is not supported on web. Use next_event.")
+     }
+ 
+     pub fn gamepad(&self, id: usize) -> Option<&Gamepad> {
+--- cargo-crates/gilrs-core-0.5.5/src/platform/windows_wgi/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.5/src/platform/windows_wgi/gamepad.rs
+@@ -185,55 +185,36 @@ impl Gilrs {
+     }
+ 
+     pub(crate) fn next_event(&mut self) -> Option<Event> {
+-        self.rx
+-            .try_recv()
+-            .ok()
+-            .map(|wgi_event: WgiEvent| self.handle_event(wgi_event))
+-    }
++        self.rx.try_recv().ok().map(|wgi_event: WgiEvent| {
++            // Find the index of the gamepad in our vec or insert it
++            let id = self
++                .gamepads
++                .iter()
++                .position(
++                    |gamepad| match wgi_event.raw_game_controller.NonRoamableId() {
++                        Ok(id) => id == gamepad.non_roamable_id,
++                        _ => false,
++                    },
++                )
++                .unwrap_or_else(|| {
++                    self.gamepads.push(Gamepad::new(
++                        self.gamepads.len() as u32,
++                        wgi_event.raw_game_controller,
++                    ));
++                    self.gamepads.len() - 1
++                });
+ 
+-    pub(crate) fn next_event_blocking(&mut self, timeout: Option<Duration>) -> Option<Event> {
+-        if let Some(timeout) = timeout {
+-            self.rx
+-                .recv_timeout(timeout)
+-                .ok()
+-                .map(|wgi_event: WgiEvent| self.handle_event(wgi_event))
+-        } else {
+-            self.rx
+-                .recv()
+-                .ok()
+-                .map(|wgi_event: WgiEvent| self.handle_event(wgi_event))
+-        }
+-    }
+-
+-    fn handle_event(&mut self, wgi_event: WgiEvent) -> Event {
+-        // Find the index of the gamepad in our vec or insert it
+-        let id = self
+-            .gamepads
+-            .iter()
+-            .position(
+-                |gamepad| match wgi_event.raw_game_controller.NonRoamableId() {
+-                    Ok(id) => id == gamepad.non_roamable_id,
+-                    _ => false,
+-                },
+-            )
+-            .unwrap_or_else(|| {
+-                self.gamepads.push(Gamepad::new(
+-                    self.gamepads.len() as u32,
+-                    wgi_event.raw_game_controller,
+-                ));
+-                self.gamepads.len() - 1
+-            });
+-
+-        match wgi_event.event {
+-            EventType::Connected => self.gamepads[id].is_connected = true,
+-            EventType::Disconnected => self.gamepads[id].is_connected = false,
+-            _ => (),
+-        }
+-        Event {
+-            id,
+-            event: wgi_event.event,
+-            time: wgi_event.time,
+-        }
++            match wgi_event.event {
++                EventType::Connected => self.gamepads[id].is_connected = true,
++                EventType::Disconnected => self.gamepads[id].is_connected = false,
++                _ => (),
++            }
++            Event {
++                id,
++                event: wgi_event.event,
++                time: wgi_event.time,
++            }
++        })
+     }
+ 
+     pub fn gamepad(&self, id: usize) -> Option<&Gamepad> {
+--- cargo-crates/gilrs-core-0.5.5/src/platform/windows_xinput/gamepad.rs.orig	1970-01-01 00:00:00 UTC
++++ cargo-crates/gilrs-core-0.5.5/src/platform/windows_xinput/gamepad.rs
+@@ -72,24 +72,7 @@ impl Gilrs {
+ 
+     pub(crate) fn next_event(&mut self) -> Option<Event> {
+         let ev = self.rx.try_recv().ok();
+-        self.handle_evevnt(ev);
+ 
+-        ev
+-    }
+-
+-    pub(crate) fn next_event_blocking(&mut self, timeout: Option<Duration>) -> Option<Event> {
+-        let ev = if let Some(tiemout) = timeout {
+-            self.rx.recv_timeout(tiemout).ok()
+-        } else {
+-            self.rx.recv().ok()
+-        };
+-
+-        self.handle_evevnt(ev);
+-
+-        ev
+-    }
+-
+-    fn handle_evevnt(&mut self, ev: Option<Event>) {
+         if let Some(ev) = ev {
+             match ev.event {
+                 EventType::Connected => self.gamepads[ev.id].is_connected = true,
+@@ -97,6 +80,8 @@ impl Gilrs {
+                 _ => (),
+             }
+         }
++
++        ev
+     }
+ 
+     pub fn gamepad(&self, id: usize) -> Option<&Gamepad> {
