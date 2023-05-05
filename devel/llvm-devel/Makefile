@@ -33,7 +33,7 @@ BUILD_DEPENDS=
 
 USES=		cmake compiler:c++17-lang cpe shebangfix
 USE_LDCONFIG=	${LLVM_PREFIX}/lib
-_USES_PYTHON?=	python:build,3.6+
+_USES_PYTHON?=	python:3.7+,build
 USES+=		${_USES_PYTHON}
 SHEBANG_FILES=	\
 		clang/tools/scan-build-py/bin/analyze-build \
@@ -146,6 +146,8 @@ FLANG_IMPLIES=		MLIR
 FLANG_PORTDOCS=		flang
 FLANG_PLIST_DIRS=	${LLVM_DIR}/include/flang/Config
 LIT_DESC=		Install lit and FileCheck test tools
+LIT_VARS=		_USES_PYTHON=python:3.7+
+LIT_PLIST_SUB=		LIT_MOD_NAME=${LIT_MOD_NAME}
 LLD_DESC=		Install lld, the LLVM linker
 LLDB_BUILD_DEPENDS=	swig:devel/swig
 LLDB_DESC=		Install lldb, the LLVM debugger
@@ -153,7 +155,7 @@ LLDB_IMPLIES=		CLANG
 LLDB_PLIST_SUB=		PYTHON_ABIVER=${PYTHON_ABIVER}
 LLDB_USES=		lua:53 libedit
 LLDB_USE=		GNOME=libxml2
-LLDB_VARS=		_USES_PYTHON=python:3.6+
+LLDB_VARS=		_USES_PYTHON=python:3.7+
 MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CMAKE_ON=	-DLIBOMPTARGET_BUILD_DEVICERTL_BCLIB=OFF
