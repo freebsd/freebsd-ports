@@ -1,6 +1,6 @@
 PORTNAME?=	netmagis
-PORTVERSION?=	2.3.4
-PORTREVISION=	2
+PORTVERSION?=	2.3.6
+PORTREVISION=	1
 CATEGORIES?=	net-mgmt
 MASTER_SITES=	http://netmagis.org/files/
 PKGNAMESUFFIX?=	-common

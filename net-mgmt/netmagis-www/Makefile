@@ -6,9 +6,6 @@ COMMENT=	Netmagis web module
 
 LICENSE=	CECILL-B
 
-BROKEN_FreeBSD_13=	ld: error: duplicate symbol: mobjlist
-BROKEN_FreeBSD_14=	ld: error: duplicate symbol: mobjlist
-
 RUN_DEPENDS=	netmagis-config:net-mgmt/netmagis-common \
 		dot:graphics/graphviz \
 		pwgen:sysutils/pwgen \
