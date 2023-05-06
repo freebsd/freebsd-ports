@@ -25,4 +25,10 @@ PLIST_FILES=	bin/bladeRF-cli \
 		lib/libbladeRF.so.2 \
 		libdata/pkgconfig/libbladeRF.pc
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=       -Wno-error=unused-but-set-variable
+.endif
+
+.include <bsd.port.post.mk>
