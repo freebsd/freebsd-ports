@@ -1,8 +1,8 @@
---- PATCHES.orig	2022-06-05 20:10:55 UTC
+--- PATCHES.orig	2023-05-05 18:53:09 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.0.ats.date_conditional.1
---- hdrline.c.orig	2022-06-05 20:10:55 UTC
+--- hdrline.c.orig	2023-05-05 18:53:09 UTC
 +++ hdrline.c
 @@ -428,6 +428,53 @@ hdr_format_str (char *dest,
        const char *cp;
@@ -58,7 +58,7 @@
  
        p = dest;
  
---- muttlib.c.orig	2022-05-21 16:36:29 UTC
+--- muttlib.c.orig	2023-01-02 04:42:19 UTC
 +++ muttlib.c
 @@ -1701,7 +1701,16 @@ void mutt_FormatString (char *dest,		/* output buffer 
        if (*src == '?')

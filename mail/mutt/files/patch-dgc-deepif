@@ -1,4 +1,4 @@
---- muttlib.c.orig	2022-06-05 20:10:55 UTC
+--- muttlib.c.orig	2023-05-05 18:53:09 UTC
 +++ muttlib.c
 @@ -1744,6 +1744,12 @@ void mutt_FormatString (char *dest,		/* output buffer 
  	count = 0;

@@ -1,8 +1,8 @@
---- PATCHES.orig	2022-06-05 20:10:54 UTC
+--- PATCHES.orig	2023-05-05 18:53:08 UTC
 +++ PATCHES
 @@ -0,0 +1 @@
 +patch-1.5.7.ust.maildir-mtime.2
---- browser.c.orig	2022-06-05 18:00:36 UTC
+--- browser.c.orig	2023-03-25 19:50:20 UTC
 +++ browser.c
 @@ -32,6 +32,7 @@
  #ifdef USE_IMAP
