@@ -7533,3 +7533,4 @@ graphics/ImageMagick6-nox11|graphics/ImageMagick6|2023-04-30|Flavorized
 security/gpgme-qt5|security/gpgme-qt@qt5|2023-05-02|Flavorized to add Qt6 support
 x11-wm/hyprland-devel|x11-wm/hyprland|2023-05-03|Out of date: use x11-wm/hyprland for now
 emulators/qemu70|emulators/qemu7|2023-05-04|Use emulators/qemu or emulators/qemu-devel
+www/resin3||2023-05-06|Deprecated version, unsupported by upstream for years

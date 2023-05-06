@@ -1863,7 +1863,6 @@
     SUBDIR += reportmagic
     SUBDIR += repos-style
     SUBDIR += reproxy
-    SUBDIR += resin3
     SUBDIR += restbed
     SUBDIR += restinio
     SUBDIR += retawq
