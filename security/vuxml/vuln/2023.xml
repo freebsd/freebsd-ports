@@ -1,3 +1,31 @@
+  <vuln vid="89fdbd85-ebd2-11ed-9c88-001b217b3468">
+    <topic>Gitlab -- Multiple Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.11.0</ge><lt>15.11.2</lt></range>
+	<range><ge>15.10.0</ge><lt>15.10.6</lt></range>
+	<range><ge>9.0</ge><lt>15.9.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/05/05/critical-security-release-gitlab-15-11-2-released/">
+	  <p>Malicious Runner Attachment via GraphQL</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2478</cvename>
+      <url>https://about.gitlab.com/releases/2023/05/05/critical-security-release-gitlab-15-11-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-05</discovery>
+      <entry>2023-05-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d55e1b4d-eadc-11ed-9cc0-080027de9982">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
