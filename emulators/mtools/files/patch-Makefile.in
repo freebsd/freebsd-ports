@@ -1,30 +1,25 @@
---- Makefile.in.orig	2018-12-09 19:54:34 UTC
+--- Makefile.in.orig	2022-10-09 09:55:19 UTC
 +++ Makefile.in
-@@ -72,10 +72,13 @@ INSTALL_INFO	= @INSTALL_INFO@
- .SUFFIXES: .o .c
- .SUFFIXES: .o .c
- 
--MAN1 = floppyd.1 floppyd_installtest.1 mattrib.1 mbadblocks.1 mcat.1 mcd.1 \
-+MAN1 = mattrib.1 mbadblocks.1 mcat.1 mcd.1 \
- mclasserase.1 mcopy.1 mdel.1 mdeltree.1 mdir.1 mdu.1 mformat.1  minfo.1 \
- mkmanifest.1 mlabel.1 mmd.1 mmount.1 mmove.1 mpartition.1 \
- mrd.1 mren.1 mshortname.1 mshowfat.1 mtoolstest.1 mtools.1 mtype.1 mzip.1
+@@ -77,6 +77,9 @@ mcd.1 mcopy.1 mdel.1 mdeltree.1 mdir.1 mdu.1 mformat.1
+ minfo.1 mkmanifest.1 mlabel.1 mmd.1 mmount.1 mmove.1 mpartition.1	\
+ mrd.1 mren.1 mshortname.1 mshowfat.1 mtoolstest.1 mtools.1 mtype.1	\
+ mzip.1
 +ifndef WITHOUT_X11
-+MAN1 +=	floppyd.1 floppyd_installtest.1
++MAN1 += floppyd.1 floppyd_installtest.1
 +endif
- MAN1EXT	= 1
- MAN1DIR	= $(DESTDIR)$(mandir)/man${MAN1EXT}
- MAN5	= mtools.5
-@@ -133,7 +136,7 @@ scsi.c signal.c stream.c streamcache.c subdir.c unixdi
- xdf_io.c mkmanifest.c
  
+ MAN1EXT = 1
+ MAN1DIR	= $(DESTDIR)$(mandir)/man${MAN1EXT}
+@@ -119,7 +122,7 @@ privileges.c remap.c scsi_io.c scsi.c signal.c stream.
+ swap.c unix2dos.s unixdir.c tty.c vfat.c mkmanifest.c			\
+ @FLOPPYD_IO_SRC@ @XDF_IO_SRC@
  
 -SCRIPTS = mcheck mxtar uz tgz mcomp amuFormat.sh
 +SCRIPTS = mcheck mxtar mcomp amuFormat.sh
  
- LINKS=mattrib mcat mcd mclasserase mcopy mdel mdeltree mdir mdu mformat minfo \
- mlabel mmd mmount mmove mpartition mrd mren mtype mtoolstest mshortname \
-@@ -278,11 +281,11 @@ install-links: $(DESTDIR)$(bindir)/mtools
+ LINKS=mattrib mcat mcd mcopy mdel mdeltree mdir mdu	\
+ mformat minfo mlabel mmd mmount mmove mpartition mrd mren mtype	\
+@@ -264,11 +267,11 @@ install-links: $(DESTDIR)$(bindir)/mtools
  install-scripts: $(DESTDIR)$(bindir)/mtools
  	@$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
  	@for j in $(SCRIPTS) ; do \
