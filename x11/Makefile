@@ -108,6 +108,7 @@
     SUBDIR += gtk-app-menu
     SUBDIR += gtk-theme-switch2
     SUBDIR += gtkchtheme
+    SUBDIR += gtklock
     SUBDIR += gtkterm2
     SUBDIR += guake
     SUBDIR += gxkb
