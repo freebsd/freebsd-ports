@@ -11,6 +11,8 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_aarch64=	ld: error: /usr/lib/dtrace/drti.o is incompatible with dtrace_viamillipede.o.xxx
+NOT_FOR_ARCHS=	armv6 armv7
+NOT_FOR_ARCHS_REASON=	libdtrace/common/dt_link.c(843): arm not implemented
 
 USES=		uidfix
 USE_GITHUB=	yes
