@@ -17,12 +17,13 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake compiler:c++11-lang localbase pkgconfig python:build
+USES=		cmake compiler:c++14-lang localbase pkgconfig python:build
+USE_CXXSTD=	c++14 # googletest 1.13
 USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	cpp
 
-CMAKE_ARGS=	-DARROW_SIMD_LEVEL=NONE -DARROW_RUNTIME_SIMD_LEVEL=NONE
+CMAKE_ARGS=	-DCMAKE_CXX_STANDARD=14 -DARROW_SIMD_LEVEL=NONE -DARROW_RUNTIME_SIMD_LEVEL=NONE
 CMAKE_OFF=	ARROW_BUILD_STATIC ARROW_WITH_BACKTRACE ARROW_BUILD_TESTS ARROW_BUILD_BENCHMARKS
 
 OPTIONS_GROUP=			COMPRESSION COMPONENTS # components are listed in cpp/cmake_modules/DefineOptions.cmake
