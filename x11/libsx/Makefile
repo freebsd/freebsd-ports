@@ -5,17 +5,24 @@ CATEGORIES=	x11
 MASTER_SITES=	XCONTRIB/libraries
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Simple X11 library
 
 LIB_DEPENDS=	libXaw3d.so:x11-toolkits/Xaw3d
 
 USES=		tar:Z xorg
 USE_XORG=	x11 xaw xext xmu xt
-ALL_TARGET=	src freq
+
 MAKE_JOBS_UNSAFE=	yes
+ALL_TARGET=	src freq
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=       -Wno-error=int-conversion
+.endif
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/libsx.a  ${STAGEDIR}${PREFIX}/lib
@@ -29,4 +36,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/docs/* ${STAGEDIR}${PREFIX}/share/doc/libsx
 	${GZIP_CMD} ${STAGEDIR}${PREFIX}/share/doc/libsx/*.doc
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
