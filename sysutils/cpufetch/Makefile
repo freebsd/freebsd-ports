@@ -1,13 +1,13 @@
 PORTNAME=	cpufetch
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.02
+DISTVERSION=	1.04
 CATEGORIES=	sysutils
 
 MAINTAINER=	jbo@insane.engineer
 COMMENT=	Simple yet fancy CPU architecture fetching tool
 WWW=		https://github.com/Dr-Noob/cpufetch
 
-LICENSE=	MIT
+LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
