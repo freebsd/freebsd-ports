@@ -149,6 +149,8 @@ WITH_LTO=	yes
 RUSTFLAGS+=	${CFLAGS:M-march=*:S/-march=/-C target-cpu=/}
 .  elif ${ARCH:Mpowerpc*}
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/:S/power/pwr/}
+.  elif ${ARCH} == aarch64 || ${ARCH} == armv7
+RUSTFLAGS+=	-C target-cpu=${CPUTYPE:C/\+.+//g}
 .  else
 RUSTFLAGS+=	${CFLAGS:M-mcpu=*:S/-mcpu=/-C target-cpu=/}
 .  endif
