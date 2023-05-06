@@ -1,11 +1,7 @@
 PORTNAME=	libheif
-DISTVERSION=	1.15.2
+DISTVERSION=	1.16.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/strukturag/${PORTNAME}/commit/
-PATCHFILES=	be16fc6767c8b3a2f6e78efdc9d2b6f07e3e558a.patch:-p1 \
-		4fd25823d16ccbe082ad3be9b96656296284d9b4.patch:-p1
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	ISO/IEC 23008-12:2017 HEIF file format de- and encoder
@@ -13,6 +9,8 @@ WWW=		https://github.com/strukturag/libheif
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libsharpyuv.so:graphics/webp
 
 USES=		cmake compiler:c++11-lang cpe gettext-runtime gnome \
 		localbase:ldflags pkgconfig
