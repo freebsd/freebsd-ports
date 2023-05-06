@@ -30,6 +30,12 @@ MAKE_ARGS=	PREFIX=${STAGEDIR}${PREFIX}
 ALL_TARGET=	# none
 USE_LDCONFIG=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=       -Wno-error=int-conversion
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/librle.so
 
@@ -41,4 +47,4 @@ post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/img
 	@(cd ${WRKSRC}/img && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}/img)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
