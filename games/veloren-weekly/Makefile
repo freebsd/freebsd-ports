@@ -38,6 +38,10 @@ PORTDATA=	*
 
 CONFLICTS_INSTALL=	${PORTNAME}
 
+.if ${MACHINE_ARCH} == i386
+# Fixes error "Rust cannot catch foreign exceptions"
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
 # Fixes error "Instruction does not dominate all uses!"
 LTO_UNSAFE=	yes
 
