@@ -1,5 +1,6 @@
 PORTNAME=	sawyer
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-addressable>=2.3.5:www/rubygem-addressable \
-		rubygem-faraday>=0.17.3<3:www/rubygem-faraday
+		rubygem-faraday1>=0.17.3<3:www/rubygem-faraday1
 
 USES=		gem
 
