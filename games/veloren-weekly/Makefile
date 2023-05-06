@@ -53,7 +53,7 @@ post-patch:
 		${WRKSRC}/common/build.rs
 # Extract (snapshot) version from the port instead of empty file
 	@${REINPLACE_CMD} -e '/GIT_HASH/s/=.*/= "${GL_COMMIT:C/(.{8}).*/\1/}";/' \
-		-e "/GIT_DATE.*static/s/=.*/= \"$$(date -r $$(${AWK} '/TIMESTAMP/ { print $$3 }' \
+		-e "/GIT_DATE.*static/s/=.*/= \"$$(TZ=UTC date -r $$(${AWK} '/TIMESTAMP/ { print $$3 }' \
 			${DISTINFO_FILE}) +'%Y-%m-%d-%H:%M')\";/" \
 		${WRKSRC}/common/src/util/mod.rs
 # Respect PREFIX != /usr/local for system assets
