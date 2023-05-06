@@ -1,0 +1,1142 @@
+bin/scratch
+man/man1/scratch.1.gz
+%%DATADIR%%/Help/en/ScratchGettingStartedv14.pdf
+%%DATADIR%%/Help/en/ScratchReferenceGuide14.pdf
+%%DATADIR%%/Help/en/addList.gif
+%%DATADIR%%/Help/en/addVariable.gif
+%%DATADIR%%/Help/en/allMotorsOff.gif
+%%DATADIR%%/Help/en/allMotorsOn.gif
+%%DATADIR%%/Help/en/allscreens.html
+%%DATADIR%%/Help/en/and.gif
+%%DATADIR%%/Help/en/answer.gif
+%%DATADIR%%/Help/en/append_toList_.gif
+%%DATADIR%%/Help/en/backgroundIndex.gif
+%%DATADIR%%/Help/en/bounceOffEdge.gif
+%%DATADIR%%/Help/en/broadcastHat.gif
+%%DATADIR%%/Help/en/broadcast_.gif
+%%DATADIR%%/Help/en/changeGraphicEffect_by_.gif
+%%DATADIR%%/Help/en/changePenHueBy_.gif
+%%DATADIR%%/Help/en/changePenShadeBy_.gif
+%%DATADIR%%/Help/en/changePenSizeBy_.gif
+%%DATADIR%%/Help/en/changeSizeBy_.gif
+%%DATADIR%%/Help/en/changeTempoBy_.gif
+%%DATADIR%%/Help/en/changeVolumeBy_.gif
+%%DATADIR%%/Help/en/changeXposBy_.gif
+%%DATADIR%%/Help/en/changeYposBy_.gif
+%%DATADIR%%/Help/en/clearPenTrails.gif
+%%DATADIR%%/Help/en/color_sees_.gif
+%%DATADIR%%/Help/en/comeToFront.gif
+%%DATADIR%%/Help/en/computeFunction_of_.gif
+%%DATADIR%%/Help/en/concatenate_with_.gif
+%%DATADIR%%/Help/en/contentsOfList_.gif
+%%DATADIR%%/Help/en/costumeIndex.gif
+%%DATADIR%%/Help/en/deleteLine_ofList_.gif
+%%DATADIR%%/Help/en/deleteList.gif
+%%DATADIR%%/Help/en/deleteVariable.gif
+%%DATADIR%%/Help/en/distanceTo_.gif
+%%DATADIR%%/Help/en/divide.gif
+%%DATADIR%%/Help/en/doAsk.gif
+%%DATADIR%%/Help/en/doBroadcastAndWait.gif
+%%DATADIR%%/Help/en/doForever.gif
+%%DATADIR%%/Help/en/doForeverIf.gif
+%%DATADIR%%/Help/en/doIf.gif
+%%DATADIR%%/Help/en/doIfElse.gif
+%%DATADIR%%/Help/en/doPlaySoundAndWait.gif
+%%DATADIR%%/Help/en/doRepeat.gif
+%%DATADIR%%/Help/en/doReturn.gif
+%%DATADIR%%/Help/en/doUntil.gif
+%%DATADIR%%/Help/en/doWaitUntil.gif
+%%DATADIR%%/Help/en/drum_duration_elapsed_from_.gif
+%%DATADIR%%/Help/en/equals.gif
+%%DATADIR%%/Help/en/filterReset.gif
+%%DATADIR%%/Help/en/forward_.gif
+%%DATADIR%%/Help/en/getAttribute_of_.gif
+%%DATADIR%%/Help/en/getLine_ofList_.gif
+%%DATADIR%%/Help/en/glideSecs_toX_y_elapsed_from_.gif
+%%DATADIR%%/Help/en/goBackByLayers_.gif
+%%DATADIR%%/Help/en/gotoSpriteOrMouse_.gif
+%%DATADIR%%/Help/en/gotoX_y_.gif
+%%DATADIR%%/Help/en/greaterThan.gif
+%%DATADIR%%/Help/en/heading.gif
+%%DATADIR%%/Help/en/heading_.gif
+%%DATADIR%%/Help/en/hide.gif
+%%DATADIR%%/Help/en/hideVariable_.gif
+%%DATADIR%%/Help/en/images/getting-started-thumb.gif
+%%DATADIR%%/Help/en/images/help-menu.gif
+%%DATADIR%%/Help/en/images/helpscreens-thumb.gif
+%%DATADIR%%/Help/en/images/scratch-interface-1.gif
+%%DATADIR%%/Help/en/images/scratch-logo.gif
+%%DATADIR%%/Help/en/images/support-site.gif
+%%DATADIR%%/Help/en/index.html
+%%DATADIR%%/Help/en/insert_at_ofList_.gif
+%%DATADIR%%/Help/en/isLoud.gif
+%%DATADIR%%/Help/en/keyHat.gif
+%%DATADIR%%/Help/en/keyPressed_.gif
+%%DATADIR%%/Help/en/lessThan.gif
+%%DATADIR%%/Help/en/letter_of_.gif
+%%DATADIR%%/Help/en/lineCountOfList_.gif
+%%DATADIR%%/Help/en/list_contains_.gif
+%%DATADIR%%/Help/en/lookLike_.gif
+%%DATADIR%%/Help/en/midiInstrument_.gif
+%%DATADIR%%/Help/en/minus.gif
+%%DATADIR%%/Help/en/mod.gif
+%%DATADIR%%/Help/en/motorOnFor_elapsed_from_.gif
+%%DATADIR%%/Help/en/mousePressed.gif
+%%DATADIR%%/Help/en/mouseX.gif
+%%DATADIR%%/Help/en/mouseY.gif
+%%DATADIR%%/Help/en/mouseclickHat.gif
+%%DATADIR%%/Help/en/nextBackground.gif
+%%DATADIR%%/Help/en/nextCostume.gif
+%%DATADIR%%/Help/en/not.gif
+%%DATADIR%%/Help/en/noteOn_duration_elapsed_from_.gif
+%%DATADIR%%/Help/en/or.gif
+%%DATADIR%%/Help/en/penColor_.gif
+%%DATADIR%%/Help/en/penSize_.gif
+%%DATADIR%%/Help/en/playSound_.gif
+%%DATADIR%%/Help/en/plus.gif
+%%DATADIR%%/Help/en/pointTowards_.gif
+%%DATADIR%%/Help/en/putPenDown.gif
+%%DATADIR%%/Help/en/putPenUp.gif
+%%DATADIR%%/Help/en/randomFrom_to_.gif
+%%DATADIR%%/Help/en/rest_elapsed_from_.gif
+%%DATADIR%%/Help/en/rounded.gif
+%%DATADIR%%/Help/en/say_.gif
+%%DATADIR%%/Help/en/say_duration_elapsed_from_.gif
+%%DATADIR%%/Help/en/scale.gif
+%%DATADIR%%/Help/en/sensorPressed_.gif
+%%DATADIR%%/Help/en/sensor_.gif
+%%DATADIR%%/Help/en/setGraphicEffect_to_.gif
+%%DATADIR%%/Help/en/setLine_ofList_to_.gif
+%%DATADIR%%/Help/en/setMotorDirection_.gif
+%%DATADIR%%/Help/en/setPenHueTo_.gif
+%%DATADIR%%/Help/en/setPenShadeTo_.gif
+%%DATADIR%%/Help/en/setSizeTo_.gif
+%%DATADIR%%/Help/en/setTempoTo_.gif
+%%DATADIR%%/Help/en/setVolumeTo_.gif
+%%DATADIR%%/Help/en/show.gif
+%%DATADIR%%/Help/en/showBackground_.gif
+%%DATADIR%%/Help/en/showVariable_.gif
+%%DATADIR%%/Help/en/soundLevel.gif
+%%DATADIR%%/Help/en/stampCostume.gif
+%%DATADIR%%/Help/en/startHat.gif
+%%DATADIR%%/Help/en/startMotorPower_.gif
+%%DATADIR%%/Help/en/stopAll.gif
+%%DATADIR%%/Help/en/stopAllSounds.gif
+%%DATADIR%%/Help/en/stringLength_.gif
+%%DATADIR%%/Help/en/tempo.gif
+%%DATADIR%%/Help/en/think_.gif
+%%DATADIR%%/Help/en/think_duration_elapsed_from_.gif
+%%DATADIR%%/Help/en/timer.gif
+%%DATADIR%%/Help/en/timerReset.gif
+%%DATADIR%%/Help/en/times.gif
+%%DATADIR%%/Help/en/touchingColor_.gif
+%%DATADIR%%/Help/en/touching_.gif
+%%DATADIR%%/Help/en/turnLeft_.gif
+%%DATADIR%%/Help/en/turnRight_.gif
+%%DATADIR%%/Help/en/variable.gif
+%%DATADIR%%/Help/en/variableChangeBy.gif
+%%DATADIR%%/Help/en/variableSet.gif
+%%DATADIR%%/Help/en/volume.gif
+%%DATADIR%%/Help/en/wait_elapsed_from_.gif
+%%DATADIR%%/Help/en/xpos.gif
+%%DATADIR%%/Help/en/xpos_.gif
+%%DATADIR%%/Help/en/ypos.gif
+%%DATADIR%%/Help/en/ypos_.gif
+%%DATADIR%%/Media/Backgrounds/Indoors/bedroom1.gif
+%%DATADIR%%/Media/Backgrounds/Indoors/bedroom2.gif
+%%DATADIR%%/Media/Backgrounds/Indoors/chalkboard.jpg
+%%DATADIR%%/Media/Backgrounds/Indoors/clothing-store.jpg
+%%DATADIR%%/Media/Backgrounds/Indoors/hall.jpg
+%%DATADIR%%/Media/Backgrounds/Indoors/kitchen.jpg
+%%DATADIR%%/Media/Backgrounds/Indoors/party-room.jpg
+%%DATADIR%%/Media/Backgrounds/Indoors/room1.jpg
+%%DATADIR%%/Media/Backgrounds/Indoors/room2.jpg
+%%DATADIR%%/Media/Backgrounds/Indoors/room3.jpg
+%%DATADIR%%/Media/Backgrounds/Indoors/scratchthumbs.db
+%%DATADIR%%/Media/Backgrounds/Indoors/spotlight-stage.jpg
+%%DATADIR%%/Media/Backgrounds/Indoors/the-movies-inside.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/beach-malibu.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/canyon.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/desert.gif
+%%DATADIR%%/Media/Backgrounds/Nature/flower-bed.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/flowers.gif
+%%DATADIR%%/Media/Backgrounds/Nature/forest.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/garden-rock.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/grand-canyon.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/gravel-desert.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/hill.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/lake.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/moon.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/pathway.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/scratchthumbs.db
+%%DATADIR%%/Media/Backgrounds/Nature/stars.gif
+%%DATADIR%%/Media/Backgrounds/Nature/tree.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/underwater.gif
+%%DATADIR%%/Media/Backgrounds/Nature/water-and-rocks.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/wave.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/woods-and-bench.jpg
+%%DATADIR%%/Media/Backgrounds/Nature/woods.gif
+%%DATADIR%%/Media/Backgrounds/Outdoors/all-sports-mural.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/atom-playground.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/bench-with-view.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/berkeley-mural.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/boardwalk.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/brick-wall-and-stairs.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/brick-wall1.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/brick-wall2.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/building-at-mit.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/building-fireproof.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/castle.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/city-with-water.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/city-with-water2.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/driveway.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/graffiti.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/hallway_outdoors.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/hay_field.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/houses.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/mansion.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/mural-faro.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/night-city-with-street.gif
+%%DATADIR%%/Media/Backgrounds/Outdoors/night-city.gif
+%%DATADIR%%/Media/Backgrounds/Outdoors/parking-ramp.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/pool.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/route66.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/school1.gif
+%%DATADIR%%/Media/Backgrounds/Outdoors/school2.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/scratchthumbs.db
+%%DATADIR%%/Media/Backgrounds/Outdoors/silos.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/the-movies.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/train-tracks1.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/train-tracks2.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/train-tracks3.gif
+%%DATADIR%%/Media/Backgrounds/Outdoors/village.jpg
+%%DATADIR%%/Media/Backgrounds/Outdoors/wooden-house.jpg
+%%DATADIR%%/Media/Backgrounds/Sports/baseball-field.jpg
+%%DATADIR%%/Media/Backgrounds/Sports/basketball-court1-a.jpg
+%%DATADIR%%/Media/Backgrounds/Sports/basketball-court1-b.jpg
+%%DATADIR%%/Media/Backgrounds/Sports/basketball-court2.png
+%%DATADIR%%/Media/Backgrounds/Sports/football-field.jpg
+%%DATADIR%%/Media/Backgrounds/Sports/playing-field.jpg
+%%DATADIR%%/Media/Backgrounds/Sports/scratchthumbs.db
+%%DATADIR%%/Media/Backgrounds/Sports/tennis-backboard.jpg
+%%DATADIR%%/Media/Backgrounds/scratchthumbs.db
+%%DATADIR%%/Media/Backgrounds/xy-grid.gif
+%%DATADIR%%/Media/Costumes/Animals/Crawling Ant.sprite
+%%DATADIR%%/Media/Costumes/Animals/Follow-mouse Fish.sprite
+%%DATADIR%%/Media/Costumes/Animals/Gravity Cat.sprite
+%%DATADIR%%/Media/Costumes/Animals/Running Ant.sprite
+%%DATADIR%%/Media/Costumes/Animals/bat1-a.png
+%%DATADIR%%/Media/Costumes/Animals/bat1-b.png
+%%DATADIR%%/Media/Costumes/Animals/bat2-a.png
+%%DATADIR%%/Media/Costumes/Animals/bat2-b.png
+%%DATADIR%%/Media/Costumes/Animals/bee1.gif
+%%DATADIR%%/Media/Costumes/Animals/bird-flying.gif
+%%DATADIR%%/Media/Costumes/Animals/buffalo1.gif
+%%DATADIR%%/Media/Costumes/Animals/butterfly1-a.png
+%%DATADIR%%/Media/Costumes/Animals/butterfly1-b.png
+%%DATADIR%%/Media/Costumes/Animals/butterfly2.png
+%%DATADIR%%/Media/Costumes/Animals/butterfly3.png
+%%DATADIR%%/Media/Costumes/Animals/cat1-a.gif
+%%DATADIR%%/Media/Costumes/Animals/cat1-b.gif
+%%DATADIR%%/Media/Costumes/Animals/cat2.gif
+%%DATADIR%%/Media/Costumes/Animals/cat3.png
+%%DATADIR%%/Media/Costumes/Animals/cat4.png
+%%DATADIR%%/Media/Costumes/Animals/cat5.gif
+%%DATADIR%%/Media/Costumes/Animals/clam1.png
+%%DATADIR%%/Media/Costumes/Animals/cow1.gif
+%%DATADIR%%/Media/Costumes/Animals/crab1-a.png
+%%DATADIR%%/Media/Costumes/Animals/crab1-b.png
+%%DATADIR%%/Media/Costumes/Animals/crab2.gif
+%%DATADIR%%/Media/Costumes/Animals/cub1.png
+%%DATADIR%%/Media/Costumes/Animals/dinosaur1.png
+%%DATADIR%%/Media/Costumes/Animals/dinosaur2.png
+%%DATADIR%%/Media/Costumes/Animals/dog1-a.png
+%%DATADIR%%/Media/Costumes/Animals/dog1-b.png
+%%DATADIR%%/Media/Costumes/Animals/dog2-a.png
+%%DATADIR%%/Media/Costumes/Animals/dog2-b.png
+%%DATADIR%%/Media/Costumes/Animals/dog2-c.png
+%%DATADIR%%/Media/Costumes/Animals/duck1.png
+%%DATADIR%%/Media/Costumes/Animals/elephant.gif
+%%DATADIR%%/Media/Costumes/Animals/elephant1-a.png
+%%DATADIR%%/Media/Costumes/Animals/elephant1-b.png
+%%DATADIR%%/Media/Costumes/Animals/fish1-a.gif
+%%DATADIR%%/Media/Costumes/Animals/fish1-b.gif
+%%DATADIR%%/Media/Costumes/Animals/fish2.png
+%%DATADIR%%/Media/Costumes/Animals/fish3.png
+%%DATADIR%%/Media/Costumes/Animals/fish4.png
+%%DATADIR%%/Media/Costumes/Animals/fox1.png
+%%DATADIR%%/Media/Costumes/Animals/frog1.gif
+%%DATADIR%%/Media/Costumes/Animals/giraffe1-a.gif
+%%DATADIR%%/Media/Costumes/Animals/giraffe1-b.gif
+%%DATADIR%%/Media/Costumes/Animals/grasshopper1.gif
+%%DATADIR%%/Media/Costumes/Animals/grasshopper2.gif
+%%DATADIR%%/Media/Costumes/Animals/hippo1.png
+%%DATADIR%%/Media/Costumes/Animals/horse1-a.png
+%%DATADIR%%/Media/Costumes/Animals/horse1-b.png
+%%DATADIR%%/Media/Costumes/Animals/horse2.png
+%%DATADIR%%/Media/Costumes/Animals/insect1-a.gif
+%%DATADIR%%/Media/Costumes/Animals/insect1-b.gif
+%%DATADIR%%/Media/Costumes/Animals/insect2.gif
+%%DATADIR%%/Media/Costumes/Animals/lion1-a.png
+%%DATADIR%%/Media/Costumes/Animals/lion1-b.png
+%%DATADIR%%/Media/Costumes/Animals/lioness1.png
+%%DATADIR%%/Media/Costumes/Animals/lobster1.png
+%%DATADIR%%/Media/Costumes/Animals/monkey1.png
+%%DATADIR%%/Media/Costumes/Animals/mouse1.png
+%%DATADIR%%/Media/Costumes/Animals/octopus1-a.png
+%%DATADIR%%/Media/Costumes/Animals/octopus1-b.png
+%%DATADIR%%/Media/Costumes/Animals/parrot1-a.png
+%%DATADIR%%/Media/Costumes/Animals/parrot1-b.png
+%%DATADIR%%/Media/Costumes/Animals/rabbit1.png
+%%DATADIR%%/Media/Costumes/Animals/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Animals/shark1-a.png
+%%DATADIR%%/Media/Costumes/Animals/shark1-b.png
+%%DATADIR%%/Media/Costumes/Animals/shark1-c.png
+%%DATADIR%%/Media/Costumes/Animals/squirrel1.png
+%%DATADIR%%/Media/Costumes/Animals/starfish1-a.png
+%%DATADIR%%/Media/Costumes/Animals/starfish1-b.png
+%%DATADIR%%/Media/Costumes/Animals/whale1.gif
+%%DATADIR%%/Media/Costumes/Animals/zebra1.png
+%%DATADIR%%/Media/Costumes/Fantasy/Growing Dragon.sprite
+%%DATADIR%%/Media/Costumes/Fantasy/JetPack Girl.sprite
+%%DATADIR%%/Media/Costumes/Fantasy/Jump-flip Monster.sprite
+%%DATADIR%%/Media/Costumes/Fantasy/Jumping Jack.sprite
+%%DATADIR%%/Media/Costumes/Fantasy/Painting Unicorn.sprite
+%%DATADIR%%/Media/Costumes/Fantasy/dragon1-a.png
+%%DATADIR%%/Media/Costumes/Fantasy/dragon1-b.png
+%%DATADIR%%/Media/Costumes/Fantasy/dragon2.gif
+%%DATADIR%%/Media/Costumes/Fantasy/fairy.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy1-a.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy1-b.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy10.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy11.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy12.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy13.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy14.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy2.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy3.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy4.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy5.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy6.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy7.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy8.png
+%%DATADIR%%/Media/Costumes/Fantasy/fantasy9.png
+%%DATADIR%%/Media/Costumes/Fantasy/ghost1.png
+%%DATADIR%%/Media/Costumes/Fantasy/ghost2-a.png
+%%DATADIR%%/Media/Costumes/Fantasy/ghost2-b.png
+%%DATADIR%%/Media/Costumes/Fantasy/ghoul1-a.png
+%%DATADIR%%/Media/Costumes/Fantasy/ghoul1-b.png
+%%DATADIR%%/Media/Costumes/Fantasy/gobo1.gif
+%%DATADIR%%/Media/Costumes/Fantasy/gobo2.gif
+%%DATADIR%%/Media/Costumes/Fantasy/gobo3.gif
+%%DATADIR%%/Media/Costumes/Fantasy/knight1.png
+%%DATADIR%%/Media/Costumes/Fantasy/monkeyking.png
+%%DATADIR%%/Media/Costumes/Fantasy/monster1-a.png
+%%DATADIR%%/Media/Costumes/Fantasy/monster1-b.png
+%%DATADIR%%/Media/Costumes/Fantasy/robot1.png
+%%DATADIR%%/Media/Costumes/Fantasy/robot2.png
+%%DATADIR%%/Media/Costumes/Fantasy/robot3.gif
+%%DATADIR%%/Media/Costumes/Fantasy/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Fantasy/skull1.png
+%%DATADIR%%/Media/Costumes/Fantasy/snowman1.png
+%%DATADIR%%/Media/Costumes/Fantasy/snowman2.png
+%%DATADIR%%/Media/Costumes/Fantasy/sun.gif
+%%DATADIR%%/Media/Costumes/Fantasy/troll1.png
+%%DATADIR%%/Media/Costumes/Fantasy/unicorn1.png
+%%DATADIR%%/Media/Costumes/Fantasy/wild1.png
+%%DATADIR%%/Media/Costumes/Fantasy/witch1.png
+%%DATADIR%%/Media/Costumes/Fantasy/wizard1.png
+%%DATADIR%%/Media/Costumes/Letters/auto/0.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/1.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/2.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/3.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/4.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/5.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/6.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/7.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/8.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/9.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/a.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/b.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/c.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/d.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/e.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/f.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/g.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/h.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/i.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/j.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/k.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/l.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/m.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/n.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/o.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/p.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/q.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/r.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/s.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Letters/auto/t.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/u.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/v.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/w.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/x.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/y.gif
+%%DATADIR%%/Media/Costumes/Letters/auto/z.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/0.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/1.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/2.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/3.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/4.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/5.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/6.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/7.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/8.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/9.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/a.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/b.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/c.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/d.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/e.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/f.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/g.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/h.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/i.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/j.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/k.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/l.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/m.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/n.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/o.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/p.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/q.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/r.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/s.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Letters/bubbles/t.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/u.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/v.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/w.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/x.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/y.gif
+%%DATADIR%%/Media/Costumes/Letters/bubbles/z.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/0.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/1.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/2.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/3.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/4.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/5.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/6.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/7.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/8.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/9.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/a.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/b.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/c.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/d.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/e.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/f.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/g.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/h.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/i.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/j.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/k.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/l.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/m.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/n.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/o.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/p.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/q.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/r.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/s.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Letters/circles/t.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/u.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/v.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/w.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/x.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/y.gif
+%%DATADIR%%/Media/Costumes/Letters/circles/z.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/0.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/1.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/2.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/3.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/4.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/5.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/6.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/7.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/8.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/9.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/a.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/b.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/c.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/d.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/e.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/f.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/g.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/h.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/i.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/j.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/k.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/l.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/m.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/n.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/o.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/p.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/q.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/r.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/s.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Letters/curly/t.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/u.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/v.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/w.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/x.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/y.gif
+%%DATADIR%%/Media/Costumes/Letters/curly/z.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/0.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/1.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/2.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/3.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/4.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/5.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/6.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/7.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/8.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/9.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/a.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/b.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/c.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/d.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/e.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/f.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/g.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/h.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/i.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/j.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/k.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/l.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/m.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/n.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/o.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/p.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/q.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/r.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/s.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Letters/digital/t.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/u.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/v.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/w.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/x.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/y.gif
+%%DATADIR%%/Media/Costumes/Letters/digital/z.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/0.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/1.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/2.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/3.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/4.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/5.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/6.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/7.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/8.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/9.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/a.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/b.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/c.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/d.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/e.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/f.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/g.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/h.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/i.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/j.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/k.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/l.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/m.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/n.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/o.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/p.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/q.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/r.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/s.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Letters/funky/t.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/u.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/v.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/w.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/x.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/y.gif
+%%DATADIR%%/Media/Costumes/Letters/funky/z.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/0.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/1.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/2.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/3.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/4.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/5.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/6.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/7.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/8.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/9.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/a.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/b.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/c.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/d.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/e.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/f.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/g.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/h.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/i.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/j.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/k.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/l.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/m.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/n.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/o.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/p.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/q.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/r.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/s.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Letters/keys/t.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/u.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/v.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/w.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/x.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/y.gif
+%%DATADIR%%/Media/Costumes/Letters/keys/z.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/a.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/b.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/c.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/d.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/e.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/f.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/g.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/h.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/i.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/j.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/k.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/l.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/m.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/n.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/o.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/p.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/q.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/r.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/s.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Letters/outline/t.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/u.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/v.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/w.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/x.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/y.gif
+%%DATADIR%%/Media/Costumes/Letters/outline/z.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/0.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/1.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/2.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/3.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/4.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/5.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/6.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/7.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/8.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/9.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/a.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/b.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/c.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/d.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/e.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/f.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/g.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/h.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/i.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/j.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/k.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/l.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/m.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/n.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/o.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/p.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/q.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/r.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/s.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Letters/scratch/t.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/u.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/v.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/w.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/x.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/y.gif
+%%DATADIR%%/Media/Costumes/Letters/scratch/z.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/0.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/1.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/2.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/3.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/4.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/5.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/6.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/7.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/8.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/9.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/a.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/b.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/c.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/d.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/e.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/f.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/g.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/h.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/i.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/j.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/k.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/l.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/m.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/n.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/o.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/p.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/q.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/r.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/s.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Letters/stone/t.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/u.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/v.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/w.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/x.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/y.gif
+%%DATADIR%%/Media/Costumes/Letters/stone/z.gif
+%%DATADIR%%/Media/Costumes/People/Dancer.sprite
+%%DATADIR%%/Media/Costumes/People/Gymnast.sprite
+%%DATADIR%%/Media/Costumes/People/Talking Person.sprite
+%%DATADIR%%/Media/Costumes/People/Walking Dude.sprite
+%%DATADIR%%/Media/Costumes/People/Whirling Girl.sprite
+%%DATADIR%%/Media/Costumes/People/amon1.gif
+%%DATADIR%%/Media/Costumes/People/anjuli-1.gif
+%%DATADIR%%/Media/Costumes/People/anjuli-2.gif
+%%DATADIR%%/Media/Costumes/People/anjuli-3.gif
+%%DATADIR%%/Media/Costumes/People/anjuli-4.gif
+%%DATADIR%%/Media/Costumes/People/anjuli-5.gif
+%%DATADIR%%/Media/Costumes/People/anna-1.gif
+%%DATADIR%%/Media/Costumes/People/anna-2.gif
+%%DATADIR%%/Media/Costumes/People/anna-3.gif
+%%DATADIR%%/Media/Costumes/People/baby.png
+%%DATADIR%%/Media/Costumes/People/ballerina-a.png
+%%DATADIR%%/Media/Costumes/People/ballerina-b.png
+%%DATADIR%%/Media/Costumes/People/ballerina-c.png
+%%DATADIR%%/Media/Costumes/People/ballerina-d.png
+%%DATADIR%%/Media/Costumes/People/boy1-standing.gif
+%%DATADIR%%/Media/Costumes/People/boy1-walking.gif
+%%DATADIR%%/Media/Costumes/People/boy2.gif
+%%DATADIR%%/Media/Costumes/People/boy3.gif
+%%DATADIR%%/Media/Costumes/People/boy4-laughing.gif
+%%DATADIR%%/Media/Costumes/People/boy4-shrugging.gif
+%%DATADIR%%/Media/Costumes/People/boy4-walking-a.gif
+%%DATADIR%%/Media/Costumes/People/boy4-walking-b.gif
+%%DATADIR%%/Media/Costumes/People/boy4-walking-c.gif
+%%DATADIR%%/Media/Costumes/People/boy4-walking-d.gif
+%%DATADIR%%/Media/Costumes/People/boy4-walking-e.gif
+%%DATADIR%%/Media/Costumes/People/boycurly.png
+%%DATADIR%%/Media/Costumes/People/boyshorts.png
+%%DATADIR%%/Media/Costumes/People/breakdancer-1.gif
+%%DATADIR%%/Media/Costumes/People/breakdancer-2.gif
+%%DATADIR%%/Media/Costumes/People/breakdancer-3.gif
+%%DATADIR%%/Media/Costumes/People/breakdancer-4.gif
+%%DATADIR%%/Media/Costumes/People/breakdancer1.gif
+%%DATADIR%%/Media/Costumes/People/breakdancer2.gif
+%%DATADIR%%/Media/Costumes/People/breakdancer3.gif
+%%DATADIR%%/Media/Costumes/People/calvrett-jumping.gif
+%%DATADIR%%/Media/Costumes/People/calvrett-thinking.gif
+%%DATADIR%%/Media/Costumes/People/calvrett.gif
+%%DATADIR%%/Media/Costumes/People/cassy-chillin.gif
+%%DATADIR%%/Media/Costumes/People/cassy-dancing-1.gif
+%%DATADIR%%/Media/Costumes/People/cassy-dancing-2.gif
+%%DATADIR%%/Media/Costumes/People/cassy-dancing-3.gif
+%%DATADIR%%/Media/Costumes/People/cassy-dancing-4.gif
+%%DATADIR%%/Media/Costumes/People/cassy-jumping-1.gif
+%%DATADIR%%/Media/Costumes/People/cassy-jumping-2.gif
+%%DATADIR%%/Media/Costumes/People/cassy-phone-1.gif
+%%DATADIR%%/Media/Costumes/People/cassy-sitting-1.gif
+%%DATADIR%%/Media/Costumes/People/cassy-standing-1.gif
+%%DATADIR%%/Media/Costumes/People/chamak1.gif
+%%DATADIR%%/Media/Costumes/People/chamak2.gif
+%%DATADIR%%/Media/Costumes/People/dan1.gif
+%%DATADIR%%/Media/Costumes/People/dan2.gif
+%%DATADIR%%/Media/Costumes/People/dan3.gif
+%%DATADIR%%/Media/Costumes/People/dan4.gif
+%%DATADIR%%/Media/Costumes/People/dan5.gif
+%%DATADIR%%/Media/Costumes/People/dan6.gif
+%%DATADIR%%/Media/Costumes/People/diver1.png
+%%DATADIR%%/Media/Costumes/People/diver2.png
+%%DATADIR%%/Media/Costumes/People/ed.gif
+%%DATADIR%%/Media/Costumes/People/football-run.gif
+%%DATADIR%%/Media/Costumes/People/football-stand.gif
+%%DATADIR%%/Media/Costumes/People/girl1-standing.gif
+%%DATADIR%%/Media/Costumes/People/girl1-walking.gif
+%%DATADIR%%/Media/Costumes/People/girl2-shouting.gif
+%%DATADIR%%/Media/Costumes/People/girl2-standing.gif
+%%DATADIR%%/Media/Costumes/People/girl3-basketball.gif
+%%DATADIR%%/Media/Costumes/People/girl3-running.gif
+%%DATADIR%%/Media/Costumes/People/girl3-standing.gif
+%%DATADIR%%/Media/Costumes/People/girl4-sitting.gif
+%%DATADIR%%/Media/Costumes/People/girl4-standing.gif
+%%DATADIR%%/Media/Costumes/People/girl5.gif
+%%DATADIR%%/Media/Costumes/People/jay.gif
+%%DATADIR%%/Media/Costumes/People/jodi1.gif
+%%DATADIR%%/Media/Costumes/People/jodi2.gif
+%%DATADIR%%/Media/Costumes/People/lee-fan.gif
+%%DATADIR%%/Media/Costumes/People/mako-laughing.gif
+%%DATADIR%%/Media/Costumes/People/mako-screaming.gif
+%%DATADIR%%/Media/Costumes/People/mako-stop.gif
+%%DATADIR%%/Media/Costumes/People/marissa-crouching.gif
+%%DATADIR%%/Media/Costumes/People/marissa-sitting.gif
+%%DATADIR%%/Media/Costumes/People/marissa.gif
+%%DATADIR%%/Media/Costumes/People/nathan.gif
+%%DATADIR%%/Media/Costumes/People/nina1.gif
+%%DATADIR%%/Media/Costumes/People/paul1.gif
+%%DATADIR%%/Media/Costumes/People/prince1.png
+%%DATADIR%%/Media/Costumes/People/prince2.png
+%%DATADIR%%/Media/Costumes/People/princess1.png
+%%DATADIR%%/Media/Costumes/People/referee1.gif
+%%DATADIR%%/Media/Costumes/People/referee2.gif
+%%DATADIR%%/Media/Costumes/People/ribbon-dancer.gif
+%%DATADIR%%/Media/Costumes/People/roundman.png
+%%DATADIR%%/Media/Costumes/People/royalperson.png
+%%DATADIR%%/Media/Costumes/People/sam.gif
+%%DATADIR%%/Media/Costumes/People/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/People/singer1.png
+%%DATADIR%%/Media/Costumes/People/squaregirl.png
+%%DATADIR%%/Media/Costumes/People/squareguy.png
+%%DATADIR%%/Media/Costumes/People/thai-dancer.gif
+%%DATADIR%%/Media/Costumes/People/thai-dancer2.gif
+%%DATADIR%%/Media/Costumes/People/womanbun.png
+%%DATADIR%%/Media/Costumes/People/womanwaving.png
+%%DATADIR%%/Media/Costumes/Things/Bouncy Ball.sprite
+%%DATADIR%%/Media/Costumes/Things/Click-N-Drag Basketball.sprite
+%%DATADIR%%/Media/Costumes/Things/Clickable Drum.sprite
+%%DATADIR%%/Media/Costumes/Things/Clock-hand.sprite
+%%DATADIR%%/Media/Costumes/Things/Disappearing Bananas.sprite
+%%DATADIR%%/Media/Costumes/Things/Draggable.sprite
+%%DATADIR%%/Media/Costumes/Things/Drawing Pencil.sprite
+%%DATADIR%%/Media/Costumes/Things/Following Arrow.sprite
+%%DATADIR%%/Media/Costumes/Things/Friction Marble.sprite
+%%DATADIR%%/Media/Costumes/Things/Gravity Marble.sprite
+%%DATADIR%%/Media/Costumes/Things/Touch-me Trampoline.sprite
+%%DATADIR%%/Media/Costumes/Things/bananas1.png
+%%DATADIR%%/Media/Costumes/Things/baseball1.png
+%%DATADIR%%/Media/Costumes/Things/basketball.png
+%%DATADIR%%/Media/Costumes/Things/beachball1.png
+%%DATADIR%%/Media/Costumes/Things/button.gif
+%%DATADIR%%/Media/Costumes/Things/buttonPressed.gif
+%%DATADIR%%/Media/Costumes/Things/cheesy-puffs.gif
+%%DATADIR%%/Media/Costumes/Things/drum1.gif
+%%DATADIR%%/Media/Costumes/Things/drum2.gif
+%%DATADIR%%/Media/Costumes/Things/fire-hydrant.gif
+%%DATADIR%%/Media/Costumes/Things/flower-vase.gif
+%%DATADIR%%/Media/Costumes/Things/fortune_cookie.gif
+%%DATADIR%%/Media/Costumes/Things/fruit_platter.gif
+%%DATADIR%%/Media/Costumes/Things/hair1.gif
+%%DATADIR%%/Media/Costumes/Things/hair2.gif
+%%DATADIR%%/Media/Costumes/Things/key1.png
+%%DATADIR%%/Media/Costumes/Things/lamp.gif
+%%DATADIR%%/Media/Costumes/Things/laptop.png
+%%DATADIR%%/Media/Costumes/Things/lego.gif
+%%DATADIR%%/Media/Costumes/Things/manhole.png
+%%DATADIR%%/Media/Costumes/Things/marble-building.gif
+%%DATADIR%%/Media/Costumes/Things/mic.png
+%%DATADIR%%/Media/Costumes/Things/palmtree.gif
+%%DATADIR%%/Media/Costumes/Things/partyhat1.png
+%%DATADIR%%/Media/Costumes/Things/partyhat2.png
+%%DATADIR%%/Media/Costumes/Things/partyhat3.png
+%%DATADIR%%/Media/Costumes/Things/rock.png
+%%DATADIR%%/Media/Costumes/Things/scoreboard.gif
+%%DATADIR%%/Media/Costumes/Things/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Things/scream-O-meter.sprite
+%%DATADIR%%/Media/Costumes/Things/soccer1.png
+%%DATADIR%%/Media/Costumes/Things/sunglassF1.png
+%%DATADIR%%/Media/Costumes/Things/sunglassF2.png
+%%DATADIR%%/Media/Costumes/Things/sunglassF3.png
+%%DATADIR%%/Media/Costumes/Things/sunglassF4.png
+%%DATADIR%%/Media/Costumes/Things/tennisball.png
+%%DATADIR%%/Media/Costumes/Things/trampoline.gif
+%%DATADIR%%/Media/Costumes/Things/umbrella.gif
+%%DATADIR%%/Media/Costumes/Things/wizardhat.png
+%%DATADIR%%/Media/Costumes/Transportation/Back-and-forth bus.sprite
+%%DATADIR%%/Media/Costumes/Transportation/Perspective Ship.sprite
+%%DATADIR%%/Media/Costumes/Transportation/Rotating Car.sprite
+%%DATADIR%%/Media/Costumes/Transportation/airplane.gif
+%%DATADIR%%/Media/Costumes/Transportation/airplane1.png
+%%DATADIR%%/Media/Costumes/Transportation/bike.gif
+%%DATADIR%%/Media/Costumes/Transportation/bus.gif
+%%DATADIR%%/Media/Costumes/Transportation/car-blue.gif
+%%DATADIR%%/Media/Costumes/Transportation/car-bug.gif
+%%DATADIR%%/Media/Costumes/Transportation/car-cow.gif
+%%DATADIR%%/Media/Costumes/Transportation/car1.png
+%%DATADIR%%/Media/Costumes/Transportation/car2.png
+%%DATADIR%%/Media/Costumes/Transportation/convertible1.gif
+%%DATADIR%%/Media/Costumes/Transportation/convertible2.gif
+%%DATADIR%%/Media/Costumes/Transportation/convertible3.gif
+%%DATADIR%%/Media/Costumes/Transportation/helicopter1.png
+%%DATADIR%%/Media/Costumes/Transportation/magiccarpet.png
+%%DATADIR%%/Media/Costumes/Transportation/sail-boat.gif
+%%DATADIR%%/Media/Costumes/Transportation/scratchthumbs.db
+%%DATADIR%%/Media/Costumes/Transportation/street-cleaner-mit.png
+%%DATADIR%%/Media/Costumes/Transportation/train.gif
+%%DATADIR%%/Media/Costumes/Transportation/tug-boat.gif
+%%DATADIR%%/Media/Costumes/Transportation/yacht.gif
+%%DATADIR%%/Media/Sounds/Animal/Bird.wav
+%%DATADIR%%/Media/Sounds/Animal/Cat.wav
+%%DATADIR%%/Media/Sounds/Animal/Cricket.wav
+%%DATADIR%%/Media/Sounds/Animal/Crickets.wav
+%%DATADIR%%/Media/Sounds/Animal/Dog1.wav
+%%DATADIR%%/Media/Sounds/Animal/Dog2.wav
+%%DATADIR%%/Media/Sounds/Animal/Duck.wav
+%%DATADIR%%/Media/Sounds/Animal/Goose.wav
+%%DATADIR%%/Media/Sounds/Animal/Horse.wav
+%%DATADIR%%/Media/Sounds/Animal/HorseGallop.wav
+%%DATADIR%%/Media/Sounds/Animal/Kitten.wav
+%%DATADIR%%/Media/Sounds/Animal/Meow.wav
+%%DATADIR%%/Media/Sounds/Animal/Owl.wav
+%%DATADIR%%/Media/Sounds/Animal/Rooster.wav
+%%DATADIR%%/Media/Sounds/Animal/SeaLion.wav
+%%DATADIR%%/Media/Sounds/Animal/WolfHowl.wav
+%%DATADIR%%/Media/Sounds/Effects/BalloonScratch.wav
+%%DATADIR%%/Media/Sounds/Effects/BellToll.wav
+%%DATADIR%%/Media/Sounds/Effects/Bubbles.wav
+%%DATADIR%%/Media/Sounds/Effects/CarPassing.wav
+%%DATADIR%%/Media/Sounds/Effects/DoorClose.wav
+%%DATADIR%%/Media/Sounds/Effects/DoorCreak.wav
+%%DATADIR%%/Media/Sounds/Effects/MotorcyclePassing.wav
+%%DATADIR%%/Media/Sounds/Effects/Plunge.wav
+%%DATADIR%%/Media/Sounds/Effects/Pop.wav
+%%DATADIR%%/Media/Sounds/Effects/Rattle.wav
+%%DATADIR%%/Media/Sounds/Effects/Ripples.wav
+%%DATADIR%%/Media/Sounds/Effects/SewingMachine.wav
+%%DATADIR%%/Media/Sounds/Effects/Typing.wav
+%%DATADIR%%/Media/Sounds/Effects/WaterDrop.wav
+%%DATADIR%%/Media/Sounds/Effects/WaterRunning.wav
+%%DATADIR%%/Media/Sounds/Electronic/AlienCreak1.wav
+%%DATADIR%%/Media/Sounds/Electronic/AlienCreak2.wav
+%%DATADIR%%/Media/Sounds/Electronic/ComputerBeeps1.wav
+%%DATADIR%%/Media/Sounds/Electronic/ComputerBeeps2.wav
+%%DATADIR%%/Media/Sounds/Electronic/DirtyWhir.wav
+%%DATADIR%%/Media/Sounds/Electronic/Fairydust.wav
+%%DATADIR%%/Media/Sounds/Electronic/Laser1.wav
+%%DATADIR%%/Media/Sounds/Electronic/Laser2.wav
+%%DATADIR%%/Media/Sounds/Electronic/Peculiar.wav
+%%DATADIR%%/Media/Sounds/Electronic/Screech.wav
+%%DATADIR%%/Media/Sounds/Electronic/SpaceRipple.wav
+%%DATADIR%%/Media/Sounds/Electronic/Spiral.wav
+%%DATADIR%%/Media/Sounds/Electronic/Whoop.wav
+%%DATADIR%%/Media/Sounds/Electronic/Zoop.wav
+%%DATADIR%%/Media/Sounds/Human/BabyCry.wav
+%%DATADIR%%/Media/Sounds/Human/Cough-female.wav
+%%DATADIR%%/Media/Sounds/Human/Cough-male.wav
+%%DATADIR%%/Media/Sounds/Human/FingerSnap.wav
+%%DATADIR%%/Media/Sounds/Human/Footsteps-1.wav
+%%DATADIR%%/Media/Sounds/Human/Footsteps-2.wav
+%%DATADIR%%/Media/Sounds/Human/Laugh-female.wav
+%%DATADIR%%/Media/Sounds/Human/Laugh-male1.wav
+%%DATADIR%%/Media/Sounds/Human/Laugh-male2.wav
+%%DATADIR%%/Media/Sounds/Human/Laugh-male3.wav
+%%DATADIR%%/Media/Sounds/Human/PartyNoise.wav
+%%DATADIR%%/Media/Sounds/Human/Scream-female.wav
+%%DATADIR%%/Media/Sounds/Human/Scream-male1.wav
+%%DATADIR%%/Media/Sounds/Human/Scream-male2.wav
+%%DATADIR%%/Media/Sounds/Human/Slurp.wav
+%%DATADIR%%/Media/Sounds/Human/Sneeze-female.wav
+%%DATADIR%%/Media/Sounds/Human/Sneeze-male.wav
+%%DATADIR%%/Media/Sounds/Instruments/AfroString.wav
+%%DATADIR%%/Media/Sounds/Instruments/Chord.wav
+%%DATADIR%%/Media/Sounds/Instruments/Dijjeridoo.wav
+%%DATADIR%%/Media/Sounds/Instruments/GuitarStrum.wav
+%%DATADIR%%/Media/Sounds/Instruments/SpookyString.wav
+%%DATADIR%%/Media/Sounds/Instruments/StringAccent.wav
+%%DATADIR%%/Media/Sounds/Instruments/StringPluck.wav
+%%DATADIR%%/Media/Sounds/Instruments/Suspense.wav
+%%DATADIR%%/Media/Sounds/Instruments/Tambura.wav
+%%DATADIR%%/Media/Sounds/Instruments/Trumpet1.wav
+%%DATADIR%%/Media/Sounds/Instruments/Trumpet2.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Cave.wav
+%%DATADIR%%/Media/Sounds/Music Loops/DripDrop.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Drum.wav
+%%DATADIR%%/Media/Sounds/Music Loops/DrumMachine.wav
+%%DATADIR%%/Media/Sounds/Music Loops/DrumSet1.wav
+%%DATADIR%%/Media/Sounds/Music Loops/DrumSet2.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Eggs.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Garden.wav
+%%DATADIR%%/Media/Sounds/Music Loops/GuitarChords1.wav
+%%DATADIR%%/Media/Sounds/Music Loops/GuitarChords2.wav
+%%DATADIR%%/Media/Sounds/Music Loops/HipHop.wav
+%%DATADIR%%/Media/Sounds/Music Loops/HumanBeatbox1.wav
+%%DATADIR%%/Media/Sounds/Music Loops/HumanBeatbox2.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Jungle.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Medieval1.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Medieval2.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Techno.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Techno2.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Triumph.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Xylo1.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Xylo2.wav
+%%DATADIR%%/Media/Sounds/Music Loops/Xylo3.wav
+%%DATADIR%%/Media/Sounds/Music Loops/xylo4.wav
+%%DATADIR%%/Media/Sounds/Percussion/CymbalCrash.wav
+%%DATADIR%%/Media/Sounds/Percussion/DrumBuzz.wav
+%%DATADIR%%/Media/Sounds/Percussion/Gong.wav
+%%DATADIR%%/Media/Sounds/Percussion/HandClap.wav
+%%DATADIR%%/Media/Sounds/Percussion/RideCymbal.wav
+%%DATADIR%%/Media/Sounds/Percussion/Shaker.wav
+%%DATADIR%%/Media/Sounds/Vocals/BeatBox1.wav
+%%DATADIR%%/Media/Sounds/Vocals/BeatBox2.wav
+%%DATADIR%%/Media/Sounds/Vocals/Come-and-play.wav
+%%DATADIR%%/Media/Sounds/Vocals/Doy-doy-doy.wav
+%%DATADIR%%/Media/Sounds/Vocals/Got-inspiration.wav
+%%DATADIR%%/Media/Sounds/Vocals/Hey-yay-hey.wav
+%%DATADIR%%/Media/Sounds/Vocals/Join-us.wav
+%%DATADIR%%/Media/Sounds/Vocals/Oooo-badada.wav
+%%DATADIR%%/Media/Sounds/Vocals/Sing-me-a-song.wav
+%%DATADIR%%/Media/Sounds/Vocals/Singer1.wav
+%%DATADIR%%/Media/Sounds/Vocals/Singer2.wav
+%%DATADIR%%/Media/Sounds/Vocals/Ya.wav
+%%DATADIR%%/Plugins/so.CameraPlugin
+%%DATADIR%%/Plugins/so.ScratchPlugin
+%%DATADIR%%/Plugins/so.UnicodePlugin
+%%DATADIR%%/Projects/Animation/1 Playground.sb
+%%DATADIR%%/Projects/Animation/2 Ideas.sb
+%%DATADIR%%/Projects/Animation/3 Trampoline.sb
+%%DATADIR%%/Projects/Animation/4 FunWithAnimation.sb
+%%DATADIR%%/Projects/Animation/5 EweAndMe.sb
+%%DATADIR%%/Projects/Animation/6 Aquarium.sb
+%%DATADIR%%/Projects/Animation/7 Jellyfish.sb
+%%DATADIR%%/Projects/Animation/8 DayDream.sb
+%%DATADIR%%/Projects/Games/1 GuessingGame.sb
+%%DATADIR%%/Projects/Games/2 PacMan.sb
+%%DATADIR%%/Projects/Games/3 FishChomp.sb
+%%DATADIR%%/Projects/Games/4 Pong.sb
+%%DATADIR%%/Projects/Games/5 MarbleRacer.sb
+%%DATADIR%%/Projects/Games/6 FruitcraftRPG.sb
+%%DATADIR%%/Projects/Games/7 BugOnAPlate.sb
+%%DATADIR%%/Projects/Games/8 ScrollingDemo.sb
+%%DATADIR%%/Projects/Greetings/1 HelloInManyLanguages.sb
+%%DATADIR%%/Projects/Greetings/2 SaySorryToYourFriend.sb
+%%DATADIR%%/Projects/Greetings/3 Slideshow.sb
+%%DATADIR%%/Projects/Greetings/4 Celebration.sb
+%%DATADIR%%/Projects/Greetings/5 ForWodunne.sb
+%%DATADIR%%/Projects/Greetings/6 Christmas.sb
+%%DATADIR%%/Projects/Greetings/7 Birthday.sb
+%%DATADIR%%/Projects/Greetings/8 HappyBirthdayPooja.sb
+%%DATADIR%%/Projects/Interactive Art/1 MonkeyDressUp.sb
+%%DATADIR%%/Projects/Interactive Art/2 ExpressionCreator.sb
+%%DATADIR%%/Projects/Interactive Art/3 PlayWithYourFace.sb
+%%DATADIR%%/Projects/Interactive Art/4 Kaleidoscope.sb
+%%DATADIR%%/Projects/Interactive Art/5 MouseRecorder.sb
+%%DATADIR%%/Projects/Interactive Art/6 WHEEE.sb
+%%DATADIR%%/Projects/Interactive Art/7 GardenSecret.sb
+%%DATADIR%%/Projects/Interactive Art/8 ZenRockGarden.sb
+%%DATADIR%%/Projects/Music and Dance/1 RobotDance.sb
+%%DATADIR%%/Projects/Music and Dance/2 ChickenNoodleSoup.sb
+%%DATADIR%%/Projects/Music and Dance/3 MelodyList.sb
+%%DATADIR%%/Projects/Music and Dance/4 TwinkleTwinkle.sb
+%%DATADIR%%/Projects/Music and Dance/5 DanceDressUp.sb
+%%DATADIR%%/Projects/Music and Dance/6 BreakDance.sb
+%%DATADIR%%/Projects/Music and Dance/7 CanYouDance.sb
+%%DATADIR%%/Projects/Music and Dance/8 OceanMusicBox.sb
+%%DATADIR%%/Projects/Music and Dance/9 PianoMachine.sb
+%%DATADIR%%/Projects/Names/1 BouncingInitials.sb
+%%DATADIR%%/Projects/Names/2 Tamika.sb
+%%DATADIR%%/Projects/Names/3 NameSurprise.sb
+%%DATADIR%%/Projects/Names/4 NatalieDucks.sb
+%%DATADIR%%/Projects/Names/5 WORDO.sb
+%%DATADIR%%/Projects/Names/6 ForMyLittleBrother.sb
+%%DATADIR%%/Projects/Names/7 Tamara.sb
+%%DATADIR%%/Projects/Sensors and Motors/Sensorboard 1 Sunrise.sb
+%%DATADIR%%/Projects/Sensors and Motors/Sensorboard 2 Everything.sb
+%%DATADIR%%/Projects/Sensors and Motors/Sensorboard 3 Trombone.sb
+%%DATADIR%%/Projects/Sensors and Motors/Sensorboard 4 FruitOPhone.sb
+%%DATADIR%%/Projects/Sensors and Motors/Sensorboard 5 Squish.sb
+%%DATADIR%%/Projects/Sensors and Motors/WeDo 1 MagicWand.sb
+%%DATADIR%%/Projects/Sensors and Motors/WeDo 2 Puppet.sb
+%%DATADIR%%/Projects/Sensors and Motors/WeDo 3 Castle.sb
+%%DATADIR%%/Projects/Sensors and Motors/WeDo 4 Labyrinth.sb
+%%DATADIR%%/Projects/Sensors and Motors/WeDo 5 FriendlyGator.sb
+%%DATADIR%%/Projects/Simulations/1 Spinner.sb
+%%DATADIR%%/Projects/Simulations/2 GravityBlocks.sb
+%%DATADIR%%/Projects/Simulations/3 SoundGraph.sb
+%%DATADIR%%/Projects/Simulations/4 MyLittleTown.sb
+%%DATADIR%%/Projects/Simulations/5 SimpleCircuit.sb
+%%DATADIR%%/Projects/Simulations/6 WeatherSimulation.sb
+%%DATADIR%%/Projects/Simulations/7 VirtualDog.sb
+%%DATADIR%%/Projects/Simulations/8 BouncingMusicBalls.sb
+%%DATADIR%%/Projects/Speak Up/1 SmokingKills.sb
+%%DATADIR%%/Projects/Speak Up/2 SaveTheBats.sb
+%%DATADIR%%/Projects/Speak Up/3 AgainstSpammers.sb
+%%DATADIR%%/Projects/Speak Up/4 OneDay.sb
+%%DATADIR%%/Projects/Speak Up/5 E-Cocat'sEarthTips.sb
+%%DATADIR%%/Projects/Speak Up/6 GlobalWarming.sb
+%%DATADIR%%/Projects/Stories/1 Joke.sb
+%%DATADIR%%/Projects/Stories/2 MadLibs.sb
+%%DATADIR%%/Projects/Stories/3 BowlOfMemories.sb
+%%DATADIR%%/Projects/Stories/4 CreationStory.sb
+%%DATADIR%%/Projects/Stories/5 SNN#1.sb
+%%DATADIR%%/Projects/Stories/6 WodunnesWorld.sb
+%%DATADIR%%/Projects/Stories/7 BeeStory.sb
+%%DATADIR%%/Scratch.image
+%%DATADIR%%/Scratch.ini
+%%DATADIR%%/icons/128x128/gnome-mime-application-x-scratch-project.png
+%%DATADIR%%/icons/128x128/scratch.png
+%%DATADIR%%/icons/128x128/scratch2.png
+%%DATADIR%%/icons/32x32/scratch.png
+%%DATADIR%%/icons/32x32/scratch.xpm
+%%DATADIR%%/icons/48x48/gnome-mime-application-x-scratch-project.png
+%%DATADIR%%/icons/48x48/scratch.png
+%%DATADIR%%/icons/48x48/scratch2.png
+%%DATADIR%%/locale/Scratch.pot
+%%DATADIR%%/locale/ar.po
+%%DATADIR%%/locale/bg.po
+%%DATADIR%%/locale/ca.po
+%%DATADIR%%/locale/cs.po
+%%DATADIR%%/locale/da.po
+%%DATADIR%%/locale/de.po
+%%DATADIR%%/locale/el.po
+%%DATADIR%%/locale/es.po
+%%DATADIR%%/locale/et.po
+%%DATADIR%%/locale/eu.po
+%%DATADIR%%/locale/fa.po
+%%DATADIR%%/locale/fi.po
+%%DATADIR%%/locale/fr.po
+%%DATADIR%%/locale/fr_CA.po
+%%DATADIR%%/locale/gl.po
+%%DATADIR%%/locale/he.po
+%%DATADIR%%/locale/hr.po
+%%DATADIR%%/locale/ht.po
+%%DATADIR%%/locale/hu.po
+%%DATADIR%%/locale/id.po
+%%DATADIR%%/locale/is.po
+%%DATADIR%%/locale/it.po
+%%DATADIR%%/locale/ja.po
+%%DATADIR%%/locale/ja_HIRA.po
+%%DATADIR%%/locale/kn.po
+%%DATADIR%%/locale/ko.po
+%%DATADIR%%/locale/lt.po
+%%DATADIR%%/locale/mk.po
+%%DATADIR%%/locale/mn.po
+%%DATADIR%%/locale/mr.po
+%%DATADIR%%/locale/ms.po
+%%DATADIR%%/locale/ne.po
+%%DATADIR%%/locale/nl.po
+%%DATADIR%%/locale/no.po
+%%DATADIR%%/locale/pl.po
+%%DATADIR%%/locale/pt.po
+%%DATADIR%%/locale/pt_BR.po
+%%DATADIR%%/locale/ro.po
+%%DATADIR%%/locale/ru.po
+%%DATADIR%%/locale/rw.po
+%%DATADIR%%/locale/sk.po
+%%DATADIR%%/locale/sl.po
+%%DATADIR%%/locale/sv.po
+%%DATADIR%%/locale/th.po
+%%DATADIR%%/locale/tr.po
+%%DATADIR%%/locale/uk.po
+%%DATADIR%%/locale/vi.po
+%%DATADIR%%/locale/zh_CN.po
+%%DATADIR%%/locale/zh_TW.po

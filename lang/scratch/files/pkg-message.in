@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+In current Scratch, some resource require at /usr/share/scratch.
+This is hard coded at Scratch.image.
+
+Some function assume Scratch resources at /usr/share/scratch like:
+- locale for change languages,
+- Media files: costume, sound, background, and so on
+
+If you want to use these function, try create symbolic link AT YOUR OWN LISK.
+# ln -s %%PREFIX%%/share/scratch /usr/share/scratch
+EOM
+}
+]

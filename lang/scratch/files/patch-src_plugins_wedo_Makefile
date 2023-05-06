@@ -1,0 +1,13 @@
+--- src/plugins/wedo/Makefile.orig	2011-06-03 14:56:20 UTC
++++ src/plugins/wedo/Makefile
+@@ -1,8 +1,8 @@
+ all: clean build
+ 
+ build:	
+-	gcc $(CFLAGS) -fPIC -Wall -c -O2 *.c
+-	gcc -shared *.o -o ../../../Plugins/so.WeDoPlugin
++	$(CC) $(CFLAGS) -fPIC -Wall -c -O2 *.c
++	$(CC) -shared *.o -o ../../../Plugins/so.WeDoPlugin
+ 
+ clean:
+ 	rm -f *.o ../../../Plugins/so.WeDoPlugin

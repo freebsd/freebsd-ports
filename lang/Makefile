@@ -324,6 +324,7 @@
     SUBDIR += scala
     SUBDIR += scheme48
     SUBDIR += scm
+    SUBDIR += scratch
     SUBDIR += sdcc
     SUBDIR += see
     SUBDIR += seed7
