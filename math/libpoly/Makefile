@@ -19,4 +19,10 @@ USE_LDCONFIG=	yes
 
 CMAKE_OFF=	LIBPOLY_BUILD_PYTHON_API LIBPOLY_BUILD_STATIC LIBPOLY_BUILD_STATIC_PIC
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=       -Wno-error=unused-but-set-variable
+.endif
+
+.include <bsd.port.post.mk>
