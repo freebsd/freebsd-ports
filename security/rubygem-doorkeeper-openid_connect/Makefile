@@ -1,5 +1,5 @@
 PORTNAME=	doorkeeper-openid_connect
-PORTVERSION=	1.8.3
+PORTVERSION=	1.8.5
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-doorkeeper>=5.5<5.7:security/rubygem-doorkeeper \
-		rubygem-json-jwt115>=1.11:www/rubygem-json-jwt115
+		rubygem-jwt>=2.5:www/rubygem-jwt
 
 USES=		gem
 
