@@ -1,9 +1,6 @@
 PORTNAME=	veloren
 PORTVERSION=	s20230506
 CATEGORIES=	games wayland
-.if !make(makesum)
-MASTER_SITES=	LOCAL/jbeich
-.endif
 PKGNAMESUFFIX=	-weekly
 
 MAINTAINER=	jbeich@FreeBSD.org
