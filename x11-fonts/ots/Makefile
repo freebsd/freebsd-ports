@@ -17,7 +17,8 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		liblz4.so:archivers/liblz4 \
 		libwoff2dec.so:devel/woff2
 
-USES=		compiler:c++11-lang meson pkgconfig tar:xz
+USES=		compiler:c++14-lang meson pkgconfig tar:xz
+USE_CXXSTD=	c++14 # googletest 1.13
 
 MESON_ARGS=	--default-library=both -Ddebug=false -Dgraphite=true
 
