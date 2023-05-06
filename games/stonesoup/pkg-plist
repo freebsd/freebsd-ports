@@ -21,6 +21,10 @@ bin/%%GAME%%
 %%DATADIR%%/dat/database/randname.txt
 %%DATADIR%%/dat/database/shout.txt
 %%DATADIR%%/dat/database/wpnnoise.txt
+%%DATADIR%%/dat/database/zh/FAQ.txt
+%%DATADIR%%/dat/database/zh/help.txt
+%%DATADIR%%/dat/database/zh/monflee.txt
+%%DATADIR%%/dat/database/zh/montitle.txt
 %%DATADIR%%/dat/defaults/autopickup_exceptions.txt
 %%DATADIR%%/dat/defaults/glyph_colours.txt
 %%DATADIR%%/dat/defaults/menu_colours.txt
@@ -356,6 +360,7 @@ bin/%%GAME%%
 %%DATADIR%%/dat/descript/nl/ability.txt
 %%DATADIR%%/dat/descript/nl/tutorial.txt
 %%DATADIR%%/dat/descript/nl/unident.txt
+%%DATADIR%%/dat/descript/passives.txt
 %%DATADIR%%/dat/descript/pl/ability.txt
 %%DATADIR%%/dat/descript/pl/backgrounds.txt
 %%DATADIR%%/dat/descript/pl/cards.txt
@@ -430,10 +435,13 @@ bin/%%GAME%%
 %%DATADIR%%/dat/descript/zh/hints.txt
 %%DATADIR%%/dat/descript/zh/items.txt
 %%DATADIR%%/dat/descript/zh/monsters.txt
+%%DATADIR%%/dat/descript/zh/mutations.txt
+%%DATADIR%%/dat/descript/zh/passives.txt
 %%DATADIR%%/dat/descript/zh/quotes.txt
 %%DATADIR%%/dat/descript/zh/skills.txt
 %%DATADIR%%/dat/descript/zh/species.txt
 %%DATADIR%%/dat/descript/zh/spells.txt
+%%DATADIR%%/dat/descript/zh/status.txt
 %%DATADIR%%/dat/descript/zh/tutorial.txt
 %%DATADIR%%/dat/descript/zh/unident.txt
 %%DATADIR%%/dat/descript/zh/unrand.txt
@@ -632,6 +640,7 @@ bin/%%GAME%%
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_duvessa_dowan.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_gastronok.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_baconkid_mnoleg.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_benadryl_antaeus.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_Cws_Minotauros.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_dragon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_denzi_evil_mage.png
@@ -646,8 +655,10 @@ bin/%%GAME%%
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_natasha_and_boris.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_rune_and_run_failed_on_dis.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_froggy_thunder_fist_nikola.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_gompami_kohu_xbow.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_kaonedong_ignis_the_dying_flame.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_kaonedong_menkaure_prince_of_dust.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_micah_c_ereshkigal.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_nibiki_octopode.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_omndra_zot_demon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_peileppe_bloax_eye.png
@@ -658,6 +669,7 @@ bin/%%GAME%%
 %%SDL%%%%DATADIR%%/dat/tiles/title_psiweapon_roxanne.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_sastrei_chei.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_shadyamish_octm.png
+%%SDL%%%%DATADIR%%/dat/tiles/title_SpinningBird_djinn_sears_gnolls.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_white_noise_entering_the_dungeon.png
 %%SDL%%%%DATADIR%%/dat/tiles/title_white_noise_grabbing_the_orb.png
 %%SDL%%%%DATADIR%%/dat/tiles/wall.png
