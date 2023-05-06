@@ -1,9 +1,9 @@
 PORTNAME=	fastapi-users
-DISTVERSION=	10.1.5
-PORTREVISION=	2
+DISTVERSION=	11.0.0
 CATEGORIES=	www devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	fastapi_users-${DISTVERSION}
 
 MAINTAINER=	meka@tilda.center
 COMMENT=	Ready-to-use and customizable users management for FastAPI
@@ -13,24 +13,25 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=3.1.0:security/py-bcrypt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}email-validator>=1.1.0,<1.4:mail/py-email-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}email-validator>=1.1.0,<2.1:mail/py-email-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fastapi>=0.65.2:www/py-fastapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}makefun>=1.11.2,<2.0:devel/py-makefun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>=0:security/py-passlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.1.0:www/py-pyjwt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-multipart>=0.0.5:www/py-python-multipart@${PY_FLAVOR}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asynctest>=0:devel/py-asynctest@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgi-lifespan>=0:devel/py-asgi-lifespan@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}asynctest>=0:devel/py-asynctest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}httpx-oauth>=0:www/py-httpx-oauth@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymongo>=0:databases/py-pymongo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-asyncio>=0:devel/py-pytest-asyncio@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
-
-# Tests will need ${PYTHON_PKGNAMEPREFIX}asgi-lifespan>=0:devel/py-asgi-lifespan@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist distutils pytest
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src
+TEST_ARGS=	--ignore=tests/test_authentication_strategy_redis.py \
+		--ignore=test_build.py
 
 NO_ARCH=	yes
 
