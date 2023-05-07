@@ -25,13 +25,12 @@ USES=		cargo python:3.7+
 USE_PYTHON=	autoplist concurrent pep517
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
-
-CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}libcst03
-
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_CARGOLOCK=${WRKSRC}/native/Cargo.lock
 CARGO_CARGOTOML=${WRKSRC}/native/Cargo.toml
+
+CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}libcst03
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
