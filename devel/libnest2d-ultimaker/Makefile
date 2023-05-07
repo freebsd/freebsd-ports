@@ -21,4 +21,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
 GH_PROJECT=	libnest2d
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
