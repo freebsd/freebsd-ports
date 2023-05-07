@@ -1,6 +1,6 @@
 PORTNAME=	cramjam
 PORTVERSION=	2.6.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ WWW=		https://github.com/milesgranger/pyrus-cramjam
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.13<0.14:devel/py-maturin@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.13:devel/py-maturin@${PY_FLAVOR}
 
 USES=		cargo python:3.7+
 USE_PYTHON=	autoplist concurrent pep517
