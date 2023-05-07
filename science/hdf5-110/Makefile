@@ -1,5 +1,5 @@
 PORTNAME=	hdf5
-PORTVERSION=	1.10.9
+PORTVERSION=	1.10.10
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-${PORTVERSION:R}/${DISTNAME}/src/ \
 		LOCAL/sunpoet
@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c11 cpe libtool localbase tar:bzip2
 
+CFLAGS+=	-D__LONG_LONG_SUPPORTED
 CONFIGURE_ARGS=	--enable-hl \
 		--enable-instrument \
 		--enable-strict-format-checks \
@@ -38,6 +39,7 @@ OPTIONS_DEFINE=	DEBUG EXAMPLES FORTRAN SZIP
 OPTIONS_RADIO=	SUPPORT
 OPTIONS_RADIO_SUPPORT=	CXX PARALLEL
 OPTIONS_DEFAULT=CXX SZIP
+OPTIONS_DEFAULT+=FORTRAN
 OPTIONS_SUB=	yes
 PARALLEL_DESC=	Parallel support
 
@@ -64,7 +66,7 @@ post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
 		${REINPLACE_CMD} -e 's|libhdf5|libhdf5${PKGNAMESUFFIX}|g' \
 			-e 's|libhdf5${PKGNAMESUFFIX}.settings|libhdf5.settings|g'
-	@${REINPLACE_CMD} -e 's|libhdf5|libhdf5${PKGNAMESUFFIX}|g' ${WRKSRC}/test/testlibinfo.sh.in
+	@${REINPLACE_CMD} -e 's|libhdf5|libhdf5${PKGNAMESUFFIX}|g' ${WRKSRC}/test/test_libinfo.sh.in
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/lib/libhdf5.settings	${STAGEDIR}${PREFIX}/lib/libhdf5${PKGNAMESUFFIX}.settings
