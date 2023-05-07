@@ -10,7 +10,11 @@ WWW=		https://github.com/khaledhosny/ots
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	meson>=0.55.2:devel/meson
+BUILD_DEPENDS=	brotli>=1.0.9:archivers/brotli \
+		freetype2>=2.12.1:print/freetype2 \
+		googletest>=1.11.0:devel/googletest \
+		liblz4>=1.9.4:archivers/liblz4 \
+		woff2>=1.0.2:devel/woff2
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libfreetype.so:print/freetype2 \
 		libgtest.so:devel/googletest \
@@ -18,9 +22,9 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libwoff2dec.so:devel/woff2
 
 USES=		compiler:c++14-lang meson pkgconfig tar:xz
-USE_CXXSTD=	c++14 # googletest 1.13
 
 MESON_ARGS=	--default-library=both -Ddebug=false -Dgraphite=true
+USE_CXXSTD=	c++14
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
