@@ -1,6 +1,6 @@
 PORTNAME=	benchmark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,5 +28,7 @@ CXXFLAGS_gcc=	-Wno-stringop-truncation
 BINARY_ALIAS=	git=false
 
 PLIST_SUB=	VERSION=${DISTVERSION}
+
+# tests fail to compile, see https://github.com/google/benchmark/issues/1593
 
 .include <bsd.port.mk>
