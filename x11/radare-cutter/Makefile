@@ -1,6 +1,6 @@
 PORTNAME=	radare-cutter
 PORTVERSION=	0.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -10,6 +10,9 @@ WWW=		https://github.com/radareorg/cutter
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/../COPYING
+
+DEPRECATED=	Cutter for radare has been discontinued as Cutter has moved to use rizin as their backend framework
+EXPIRATION_DATE=	2023-06-07
 
 LIB_DEPENDS=	libcapstone.so:devel/capstone4 \
 		libr_bin.so:devel/radare2
