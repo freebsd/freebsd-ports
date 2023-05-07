@@ -1,12 +1,14 @@
-PORTNAME=	Shapely
+PORTNAME=	shapely
 PORTVERSION=	1.8.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	Shapely-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Package for Manipulation 2D Geospatial Geometry
-WWW=		https://pypi.org/project/Shapely/
+WWW=		https://pypi.org/project/shapely/
 
 LICENSE=	BSD3CLAUSE
 
