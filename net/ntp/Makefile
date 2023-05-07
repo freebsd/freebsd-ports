@@ -13,7 +13,7 @@ WWW=		https://www.ntp.org/
 
 LIB_DEPENDS=	libevent.so:devel/libevent
 
-CONFLICTS=	ntp-devel ntpsec openntpd
+CONFLICTS=	ntpsec openntpd
 
 USES=		cpe pathfix shebangfix libedit libtool localbase:ldflags \
 		pkgconfig
