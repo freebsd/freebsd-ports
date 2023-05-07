@@ -8,6 +8,9 @@ MAINTAINER=	tmh.public@gmail.com
 COMMENT=	Graphical frontend for the Music Player Daemon
 WWW=		http://gbemol.sourceforge.net/
 
+DEPRECATED=	Unmaintained for years and depends on deprecated GTK2
+EXPIRATION_DATE=2023-06-30
+
 LIB_DEPENDS=	libmpd.so:audio/libmpd \
 		libcurl.so:ftp/curl \
 		libxml2.so:textproc/libxml2
