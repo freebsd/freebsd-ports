@@ -45,7 +45,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		liburiparser.so:net/uriparser \
 		libzzip.so:devel/zziplib
 
-USES=		bison cmake:noninja gettext-tools gmake gnome jpeg pkgconfig ssl xorg
+USES=		bison cmake:noninja dos2unix gettext-tools gmake gnome jpeg pkgconfig ssl xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	MiKTeX
