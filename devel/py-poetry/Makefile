@@ -14,7 +14,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.1.0:devel/py-poetry-core@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}CacheControl>=0.12.9<0.13.0:www/py-cachecontrol@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cachecontrol>=0.12.9<0.13.0:www/py-cachecontrol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cleo>=2.0.0<3.0.0:devel/py-cleo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}crashtest>=0.4.1<0.5.0:devel/py-crashtest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dulwich020>=0.20.46<0.21.0:devel/py-dulwich020@${PY_FLAVOR} \
