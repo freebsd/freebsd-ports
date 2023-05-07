@@ -390,10 +390,6 @@ _PYTHON_RUN_DEP=	yes
 _PYTHON_TEST_DEP=	yes
 .  endif
 
-.  if ${PYTHON2_DEFAULT} != ${PYTHON_DEFAULT} && ${PYTHON3_DEFAULT} != ${PYTHON_DEFAULT}
-WARNING+=	"PYTHON_DEFAULT must be a version present in PYTHON2_DEFAULT or PYTHON3_DEFAULT, if you want more Python flavors, set BUILD_ALL_PYTHON_FLAVORS in your make.conf"
-.  endif
-
 .  if ${_PYTHON_ARGS} == 2.7
 DEV_WARNING+=		"lang/python27 reached End of Life and will be removed somewhere in the future, please convert to a modern version of python"
 .  elif ${_PYTHON_ARGS} == 2
@@ -437,7 +433,7 @@ _PYTHON_VERSION_NONSUPPORTED=	${_PYTHON_VERSION_MAXIMUM} at most
 # If we have an unsupported version of Python, try another.
 .  if defined(_PYTHON_VERSION_NONSUPPORTED)
 .undef _PYTHON_VERSION
-.    for ver in ${PYTHON2_DEFAULT} ${PYTHON3_DEFAULT} ${_PYTHON_VERSIONS}
+.    for ver in ${PYTHON_DEFAULT} ${PYTHON2_DEFAULT} ${_PYTHON_VERSIONS}
 __VER=		${ver}
 .      if !defined(_PYTHON_VERSION) && \
 	!(!empty(_PYTHON_VERSION_MINIMUM) && ( \
@@ -455,7 +451,7 @@ IGNORE=		needs an unsupported version of Python
 # Automatically generates FLAVORS if empty
 .  if empty(FLAVORS) && defined(_PYTHON_FEATURE_FLAVORS)
 .  undef _VALID_PYTHON_VERSIONS
-.    for ver in ${PYTHON_DEFAULT} ${PYTHON2_DEFAULT} ${PYTHON3_DEFAULT} ${_PYTHON_VERSIONS}
+.    for ver in ${PYTHON_DEFAULT} ${PYTHON2_DEFAULT} ${_PYTHON_VERSIONS}
 __VER=		${ver}
 .      if !(!empty(_PYTHON_VERSION_MINIMUM) && ( \
 		${__VER:${_VC}} < ${_PYTHON_VERSION_MINIMUM:${_VC}})) && \
@@ -477,7 +473,7 @@ _ALL_PYTHON_FLAVORS=	${_PYTHON_VERSIONS:S/.//:S/^/py/}
 .    if defined(BUILD_ALL_PYTHON_FLAVORS) || defined(_PYTHON_FEATURE_ALLFLAVORS)
 FLAVORS=	${_ALL_PYTHON_FLAVORS}
 .    else
-.      for _v in ${PYTHON_DEFAULT} ${PYTHON2_DEFAULT} ${PYTHON3_DEFAULT}
+.      for _v in ${PYTHON_DEFAULT} ${PYTHON2_DEFAULT}
 _f=	py${_v:S/.//}
 .        if ${_ALL_PYTHON_FLAVORS:M${_f}} && !${FLAVORS:M${_f}}
 .          if !empty(FLAVORS)
@@ -909,7 +905,9 @@ do-install:
 	@cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${PEP517_INSTALL_CMD}
 	@${PYTHON_CMD} -B ${PORTSDIR}/Mk/Scripts/strip_RECORD.py \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${PORTNAME:C|[-_]+|_|g}-${DISTVERSION}*.dist-info/RECORD >> ${_PYTHONPKGLIST}
-	@${REINPLACE_CMD} -e 's|^|${PYTHONPREFIX_SITELIBDIR}/|' \
+	@${REINPLACE_CMD} \
+		-e '/\.pyc$$/d' \
+		-e 's|^|${PYTHONPREFIX_SITELIBDIR}/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../etc/|etc/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../bin/|bin/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../include/|include/|' \
@@ -919,7 +917,7 @@ do-install:
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../man/|man/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../sbin/|sbin/|' \
 		-e 's|^${PYTHONPREFIX_SITELIBDIR}/../../../share/|share/|' \
-		${_PYTHONPKGLIST}
+			${_PYTHONPKGLIST}
 	@cd ${STAGEDIR}${PREFIX} && ${FIND} lib -name '*.pyc' >> ${_PYTHONPKGLIST}
 .    endif
 .  endif # defined(_PYTHON_FEATURE_PEP517)
