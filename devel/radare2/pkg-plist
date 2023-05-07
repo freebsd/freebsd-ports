@@ -271,7 +271,6 @@ libdata/pkgconfig/r_search.pc
 libdata/pkgconfig/r_socket.pc
 libdata/pkgconfig/r_syscall.pc
 libdata/pkgconfig/r_util.pc
-man/man1/r2-docker.1.gz
 man/man1/r2.1.gz
 man/man1/r2agent.1.gz
 man/man1/r2pm.1.gz
@@ -376,6 +375,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/cons/focus
 %%DATADIR%%/%%PORTVERSION%%/cons/gb
 %%DATADIR%%/%%PORTVERSION%%/cons/gentoo
+%%DATADIR%%/%%PORTVERSION%%/cons/greepy
 %%DATADIR%%/%%PORTVERSION%%/cons/iaito
 %%DATADIR%%/%%PORTVERSION%%/cons/lima
 %%DATADIR%%/%%PORTVERSION%%/cons/matrix
@@ -679,6 +679,10 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/syscall/s110-arm-16.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/windows-x86-32.sdb
 %%DATADIR%%/%%PORTVERSION%%/syscall/windows-x86-64.sdb
+%%DATADIR%%/%%PORTVERSION%%/www/bolt/Makefile
+%%DATADIR%%/%%PORTVERSION%%/www/bolt/index.html
+%%DATADIR%%/%%PORTVERSION%%/www/bolt/r2.js
+%%DATADIR%%/%%PORTVERSION%%/www/bolt/r2bolt.sh
 %%DATADIR%%/%%PORTVERSION%%/www/console.html
 %%DATADIR%%/%%PORTVERSION%%/www/d3/d3.js
 %%DATADIR%%/%%PORTVERSION%%/www/d3/d3.layout.js
