@@ -80,7 +80,7 @@ CONFIGURE_ARGS+=	--enable-fdt=system \
 .endif
 .if ${FLAVOR:U} == tools || ${FLAVOR:U} == guestagent
 CONFIGURE_ARGS+=	--disable-attr \
-			--disable-blobs \
+			--disable-install-blobs \
 			--disable-brlapi \
 			--disable-bzip2 \
 			--disable-cap-ng \
