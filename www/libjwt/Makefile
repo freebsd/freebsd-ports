@@ -1,6 +1,6 @@
 PORTNAME=	libjwt
-PORTVERSION=	1.15.2
-DISTVERSIONPREFIX=	v
+PORTVERSION=	1.15.3
+MASTER_SITES=	https://github.com/benmcollins/libjwt/releases/download/v${PORTVERSION}/
 CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -23,8 +23,5 @@ INSTALL_TARGET=	install-strip
 TEST_ARGS=	CFLAGS+=-I${LOCALBASE}/include LIBS+="-L${LOCALBASE}/lib -lcheck"
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	benmcollins
 
 .include <bsd.port.mk>
