@@ -40,9 +40,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}CacheControl>=0.12.9<0.13.0:www/py-cachecont
 USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent pep517
 
-NO_ARCH=	yes
-
 BINARY_ALIAS=	git=false
+NO_ARCH=	yes
 
 .include <bsd.port.pre.mk>
 
