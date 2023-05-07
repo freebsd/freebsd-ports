@@ -1,6 +1,5 @@
 PORTNAME=	psycopg
-PORTVERSION=	3.1.8
-PORTREVISION=	1
+PORTVERSION=	3.1.9
 CATEGORIES=	databases python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +25,7 @@ OPTIONS_DEFAULT=C POOL
 C_DESC=		C extension support
 POOL_DESC=	Connection pool support
 
-C_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}psycopg-c>=3.1.6<${PORTVERSION}_99:databases/py-psycopg-c@${PY_FLAVOR}
+C_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}psycopg-c>=${PORTVERSION}<${PORTVERSION}_99:databases/py-psycopg-c@${PY_FLAVOR}
 POOL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg-pool>=0:databases/py-psycopg-pool@${PY_FLAVOR}
 
 .include <bsd.port.pre.mk>
