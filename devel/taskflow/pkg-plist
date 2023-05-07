@@ -1,10 +1,16 @@
 include/taskflow/algorithm/critical.hpp
 include/taskflow/algorithm/data_pipeline.hpp
+include/taskflow/algorithm/find.hpp
 include/taskflow/algorithm/for_each.hpp
+include/taskflow/algorithm/launch.hpp
+include/taskflow/algorithm/partitioner.hpp
 include/taskflow/algorithm/pipeline.hpp
 include/taskflow/algorithm/reduce.hpp
+include/taskflow/algorithm/scan.hpp
 include/taskflow/algorithm/sort.hpp
 include/taskflow/algorithm/transform.hpp
+include/taskflow/core/async.hpp
+include/taskflow/core/async_task.hpp
 include/taskflow/core/declarations.hpp
 include/taskflow/core/environment.hpp
 include/taskflow/core/error.hpp
@@ -36,8 +42,8 @@ include/taskflow/cuda/cuda_execution_policy.hpp
 include/taskflow/cuda/cuda_graph.hpp
 include/taskflow/cuda/cuda_memory.hpp
 include/taskflow/cuda/cuda_meta.hpp
+include/taskflow/cuda/cuda_object.hpp
 include/taskflow/cuda/cuda_optimizer.hpp
-include/taskflow/cuda/cuda_pool.hpp
 include/taskflow/cuda/cuda_stream.hpp
 include/taskflow/cuda/cuda_task.hpp
 include/taskflow/cuda/cudaflow.hpp
