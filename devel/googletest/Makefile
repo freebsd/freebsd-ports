@@ -16,7 +16,6 @@ USES=		cmake:testing compiler:c++14-lang python:test
 CMAKE_OFF=	gmock_build_tests gtest_build_samples gtest_build_tests gtest_disable_pthreads gtest_hide_internal_symbols
 CMAKE_ON=	BUILD_GMOCK BUILD_SHARED_LIBS INSTALL_GTEST
 CMAKE_TESTING_ON=	gmock_build_tests gtest_build_tests
-USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
