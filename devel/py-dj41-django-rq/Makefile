@@ -27,6 +27,8 @@ NO_ARCH=	yes
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}*${PORTNAME}
 
+PORTSCOUT=	limit:^2\.7\.
+
 # https://github.com/rq/django-rq/blob/master/Makefile
 do-test:
 	cd ${WRKSRC} && coverage-${PYTHON_VER} run ${LOCALBASE}/bin/django-admin.py test django_rq --settings=django_rq.tests.settings --pythonpath=.
