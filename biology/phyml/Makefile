@@ -1,6 +1,7 @@
 PORTNAME=	phyml
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.20220408
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	biology
 
@@ -42,11 +43,10 @@ CONFIGURE_ARGS+=	--disable-mpi
 BIN_SUFFIX=		# none
 .endif
 
-post-patch:
 .if ${ARCH} != amd64 && ${ARCH} != i386
+post-patch:
 	@${REINPLACE_CMD} -e 's|VECTOR_FLAG=-march=native|dnl &|' ${WRKSRC}/configure.ac
 .endif
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/src/utilities.h
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
