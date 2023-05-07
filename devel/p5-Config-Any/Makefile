@@ -1,5 +1,5 @@
 PORTNAME=	Config-Any
-PORTVERSION=	0.32
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,8 +23,8 @@ NO_ARCH=	yes
 USES=		perl5
 USE_PERL5=	configure
 
-GENERAL_BUILD_DEPENDS=	p5-Config-General>=2.47:devel/p5-Config-General
-GENERAL_RUN_DEPENDS=	p5-Config-General>=2.47:devel/p5-Config-General
+GENERAL_BUILD_DEPENDS=	p5-Config-General>=2.48:devel/p5-Config-General
+GENERAL_RUN_DEPENDS=	p5-Config-General>=2.48:devel/p5-Config-General
 INI_BUILD_DEPENDS=	p5-Config-Tiny>=0:devel/p5-Config-Tiny
 INI_RUN_DEPENDS=	p5-Config-Tiny>=0:devel/p5-Config-Tiny
 JSON_BUILD_DEPENDS=	p5-Cpanel-JSON-XS>=0:converters/p5-Cpanel-JSON-XS
