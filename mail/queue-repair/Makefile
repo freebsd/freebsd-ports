@@ -1,10 +1,10 @@
 PORTNAME=	queue-repair
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail python
 MASTER_SITES=	http://pyropus.ca/software/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jeff.jschmidt@gmail.com
 COMMENT=	Qmail queue diagnostic and repair tool
 WWW=		http://pyropus.ca/software/queue-repair/
 
