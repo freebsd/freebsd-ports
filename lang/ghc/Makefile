@@ -118,7 +118,7 @@ SHEBANG_FILES+=		hadrian/bootstrap/bootstrap.py
 HADRIAN_CMD=		${WRKSRC}/hadrian/bootstrap/_build/bin/hadrian ${HADRIAN_DOCS_ARG} ${HADRIAN_GMP_ARG}
 DO_MAKE_BUILD=		${SETENV} ${MAKE_ENV} ${HADRIAN_CMD} ${_MAKE_JOBS} --flavour=ports
 ALL_TARGET=		binary-dist-dir
-INSTALL_WRKSRC=		${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${GHC_ARCH}-portbld-freebsd
+INSTALL_WRKSRC=		${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}-${CONFIGURE_TARGET}
 INSTALL_TARGET=		install
 PLIST=			${.CURDIR}/pkg-plist.hadrian
 
