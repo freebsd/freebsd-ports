@@ -1,6 +1,6 @@
---- src/vs/base/node/ps.ts.orig	2023-03-29 09:14:46 UTC
+--- src/vs/base/node/ps.ts.orig	2023-05-03 19:37:04 UTC
 +++ src/vs/base/node/ps.ts
-@@ -214,7 +214,7 @@ export function listProcesses(rootPid: number): Promis
+@@ -217,7 +217,7 @@ export function listProcesses(rootPid: number): Promis
  
  			exec('which ps', {}, (err, stdout, stderr) => {
  				if (err || stderr) {
@@ -9,7 +9,7 @@
  						reject(err || new Error(stderr.toString()));
  					} else {
  						const cmd = JSON.stringify(FileAccess.asFileUri('vs/base/node/ps.sh').fsPath);
-@@ -229,7 +229,8 @@ export function listProcesses(rootPid: number): Promis
+@@ -232,7 +232,8 @@ export function listProcesses(rootPid: number): Promis
  					}
  				} else {
  					const ps = stdout.toString().trim();

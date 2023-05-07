@@ -1,6 +1,6 @@
---- product.json.orig	2023-04-04 22:49:54 UTC
+--- product.json.orig	2023-05-03 19:37:04 UTC
 +++ product.json
-@@ -29,6 +29,16 @@
+@@ -32,6 +32,16 @@
  	"reportIssueUrl": "https://github.com/microsoft/vscode/issues/new",
  	"urlProtocol": "code-oss",
  	"webviewContentExternalBaseUrlTemplate": "https://{{uuid}}.vscode-cdn.net/insider/ef65ac1ba57f57f2a3961bfe94aa20481caca4c6/out/vs/workbench/contrib/webview/browser/pre/",
