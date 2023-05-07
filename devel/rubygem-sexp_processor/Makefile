@@ -1,5 +1,5 @@
 PORTNAME=	sexp_processor
-PORTVERSION=	4.16.1
+PORTVERSION=	4.17.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
