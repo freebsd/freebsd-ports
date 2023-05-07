@@ -1,0 +1,4 @@
+pydantic-core provides the core functionality for pydantic. The package is
+currently a work in progress and subject to significant change. There is, as
+yet, no integration with pydantic, so schemas can only be defined via
+dictionaries.

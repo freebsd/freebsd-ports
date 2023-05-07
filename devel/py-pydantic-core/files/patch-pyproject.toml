@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2023-04-18 07:57:46 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ['maturin>=0.14.16,<0.15', 'typing_extensions']
++requires = ['maturin>=0.13,<0.15']
+ build-backend = 'maturin'
+ 
+ [project]
