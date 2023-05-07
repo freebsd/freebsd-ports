@@ -41,14 +41,16 @@ PLIST_FILES=	bin/bolt \
 		etc/bash_completion.d/bolt
 
 OPTIONS_SINGLE=	PUPPET
-OPTIONS_SINGLE_PUPPET=PUPPET6 PUPPET7
+OPTIONS_SINGLE_PUPPET=PUPPET6 PUPPET7 PUPPET8
 OPTIONS_DEFAULT=PUPPET7
 
 PUPPET6_DESC=	Depend on sysutils/puppet6
 PUPPET7_DESC=	Depend on sysutils/puppet7
+PUPPET8_DESC=	Depend on sysutils/puppet8
 
 PUPPET6_RUN_DEPENDS=puppet:sysutils/puppet6
 PUPPET7_RUN_DEPENDS=puppet:sysutils/puppet7
+PUPPET8_RUN_DEPENDS=puppet:sysutils/puppet8
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
