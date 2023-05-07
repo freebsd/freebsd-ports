@@ -1,22 +1,22 @@
 PORTNAME=	log4cpp
 PORTVERSION=	1.1.4
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}.x%20%28new%29/${PORTNAME}-${PORTVERSION:R}
+MASTER_SITES=	SF/log4cpp/log4cpp-1.1.x%20%28new%29/log4cpp-1.1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library of C++ classes for flexible logging
-WWW=		http://log4cpp.sourceforge.net/
+WWW=		https://log4cpp.sourceforge.net/
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler:c++11-lang gmake libtool pathfix
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-html-docs
-INSTALL_TARGET=	install-strip
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+CONFIGURE_ARGS=	--disable-dot --disable-doxygen --disable-html-docs --disable-latex-docs
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+USE_LDCONFIG=	yes
+WRKSRC=		${WRKDIR}/log4cpp
 
 OPTIONS_DEFINE=	DOXYGEN
 OPTIONS_SUB=	yes
