@@ -18,6 +18,7 @@ LIB_DEPENDS=	libpthsem.so:devel/pthsem
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:devel/argp-standalone
 
 USES=	compiler gmake autoreconf pkgconfig
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-I${LOCALBASE}/include -L/${LOCALBASE}/lib"
@@ -32,6 +33,7 @@ LIBCURL_DESC=	Install libcurl for Clickatell SMS support
 LIBLUA_DESC=	Install liblua for scripting
 MYSQL_DESC=	Install libmysql for logging & persist
 
+LIBESMTP_CFLAGS=	-lesmtp
 LIBESMTP_CONFIGURE_ENABLE=	smtp
 LIBESMTP_LIB_DEPENDS=	libesmtp.so:mail/libesmtp
 LIBCURL_CONFIGURE_WITH=	libcurl
