@@ -15,8 +15,8 @@ BUILD_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list
 
 USES=		localbase:ldflags meson pkgconfig python:build shebangfix tar:lz
 
-MESON_ARGS=	-Dbuiltin=true \
-		-Ddefault_library=both \
+MESON_ARGS=	--default-library=both \
+		-Dbuiltin=true \
 		-Ddocs=false \
 		-Dpsl_file=${LOCALBASE}/share/public_suffix_list/public_suffix_list.dat \
 		-Dpsl_testfile=${LOCALBASE}/share/public_suffix_list/test_psl.txt
