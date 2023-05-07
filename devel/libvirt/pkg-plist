@@ -291,6 +291,7 @@ share/augeas/lenses/virtvboxd.aug
 %%NLS%%share/locale/pl/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/si/LC_MESSAGES/libvirt.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/libvirt.mo
