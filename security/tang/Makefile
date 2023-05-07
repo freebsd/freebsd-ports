@@ -1,5 +1,5 @@
 PORTNAME=	tang
-DISTVERSION=	12
+DISTVERSION=	13
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/latchset/${PORTNAME}/releases/download/v${DISTVERSION}/
 
