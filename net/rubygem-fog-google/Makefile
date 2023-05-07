@@ -1,6 +1,5 @@
 PORTNAME=	fog-google
-PORTVERSION=	1.19.0
-PORTREVISION=	2
+PORTVERSION=	1.20.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -14,13 +13,13 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 RUN_DEPENDS=	rubygem-fog-core210>=0<2.3:devel/rubygem-fog-core210 \
 		rubygem-fog-json>=1.2<2:devel/rubygem-fog-json \
 		rubygem-fog-xml>=0.1.0<0.2:textproc/rubygem-fog-xml \
-		rubygem-google-apis-compute_v1>=0.14<1:devel/rubygem-google-apis-compute_v1 \
-		rubygem-google-apis-dns_v1>=0.12<1:dns/rubygem-google-apis-dns_v1 \
-		rubygem-google-apis-iamcredentials_v1>=0.6<1:devel/rubygem-google-apis-iamcredentials_v1 \
-		rubygem-google-apis-monitoring_v3>=0.12<1:devel/rubygem-google-apis-monitoring_v3 \
-		rubygem-google-apis-pubsub_v1>=0.7<1:devel/rubygem-google-apis-pubsub_v1 \
-		rubygem-google-apis-sqladmin_v1beta4>=0.13<1:devel/rubygem-google-apis-sqladmin_v1beta4 \
-		rubygem-google-apis-storage_v1>=0.6<1:devel/rubygem-google-apis-storage_v1 \
+		rubygem-google-apis-compute_v1>=0.53<1:devel/rubygem-google-apis-compute_v1 \
+		rubygem-google-apis-dns_v1>=0.28<1:dns/rubygem-google-apis-dns_v1 \
+		rubygem-google-apis-iamcredentials_v1>=0.15<1:devel/rubygem-google-apis-iamcredentials_v1 \
+		rubygem-google-apis-monitoring_v3>=0.37<1:devel/rubygem-google-apis-monitoring_v3 \
+		rubygem-google-apis-pubsub_v1>=0.30<1:devel/rubygem-google-apis-pubsub_v1 \
+		rubygem-google-apis-sqladmin_v1beta4>=0.38<1:devel/rubygem-google-apis-sqladmin_v1beta4 \
+		rubygem-google-apis-storage_v1>=0.20<1:devel/rubygem-google-apis-storage_v1 \
 		rubygem-google-cloud-env>=1.2<2:net/rubygem-google-cloud-env
 
 USES=		gem shebangfix
