@@ -8,8 +8,11 @@ MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Conditional Correlation GARCH models
 WWW=		https://cran.r-project.org/web/packages/ccgarch/
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
+LICENSE=	GPLv2+
+
+DEPRECATED=	Fails to build with R 4.3.0+ and abandoned upstream
+EXPIRATION_DATE=	2023-06-30
+BROKEN=		does not build
 
 USES=		cran:auto-plist,compiles
 
