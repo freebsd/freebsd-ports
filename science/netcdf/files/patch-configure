@@ -1,0 +1,29 @@
+--- configure.orig	2023-03-14 20:35:12 UTC
++++ configure
+@@ -18321,7 +18321,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -18427,7 +18427,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -23316,7 +23316,7 @@ then :
+   printf %s "(cached) " >&6
+ else $as_nop
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-ldl  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 

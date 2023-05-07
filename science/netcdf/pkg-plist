@@ -18,7 +18,7 @@ lib/libnetcdf.a
 lib/libnetcdf.settings
 lib/libnetcdf.so
 lib/libnetcdf.so.19
-lib/libnetcdf.so.19.1.0
+lib/libnetcdf.so.19.2.2
 libdata/pkgconfig/netcdf.pc
 man/man1/nccopy.1.gz
 man/man1/ncdump.1.gz
