@@ -1,38 +1,32 @@
 PORTNAME=	log4cxx
-PORTVERSION=	0.11.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel
-MASTER_SITES=	https://archive.apache.org/dist/logging/${PORTNAME}/${PORTVERSION}/
-DISTNAME=	apache-${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	https://archive.apache.org/dist/logging/log4cxx/${PORTVERSION}/
+DISTNAME=	apache-log4cxx-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ port of the Log4j project
-WWW=		https://logging.apache.org/log4cxx/
+WWW=		https://logging.apache.org/log4cxx/ \
+		https://github.com/apache/logging-log4cxx
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS=	libapr-1.so:devel/apr1
+LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+		libexpat.so:textproc/expat2 \
+		libfmt.so:devel/libfmt
+TEST_DEPENDS=	zip:archivers/zip
 
-USES=		autoreconf pathfix libtool
-GNU_CONFIGURE=	yes
+USES=		cmake:testing compiler:c++17-lang pathfix
+
+CMAKE_OFF=	APACHE_MAINTAINER APR_STATIC APU_STATIC BUILD_TESTING ENABLE_COVERAGE LIBESMTP_STATIC LOG4CXX_ENABLE_ESMTP LOG4CXX_ENABLE_ODBC LOG4CXX_UNICHAR
+CMAKE_ON=	BUILD_SHARED_LIBS ENABLE_FMT_LAYOUT LOG4CXX_INSTALL_PDB LOG4CXX_WCHAR_T
+CMAKE_TESTING_O=	BUILD_TESTING
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
-MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	BOOST DOXYGEN
+OPTIONS_DEFINE=	BOOST
 
 BOOST_BUILD_DEPENDS=	${LOCALBASE}/include/boost/regex.hpp:devel/boost-libs
-
-DOXYGEN_CONFIGURE_OFF=	--disable-doxygen
-DOXYGEN_BUILD_DEPENDS=	${LOCALBASE}/bin/doxygen:devel/doxygen
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|-dpR|-pr|' \
-		-e '/^htmldest/ s|$$(pkgdatadir)|${DOCSDIR}|' \
-		${WRKSRC}/src/site/doxy/Makefile
-
-post-install-DOXYGEN-on:
-	@cd ${STAGEDIR}${PREFIX} && \
-		${FIND} ${DOCSDIR:S|${PREFIX}/||} ! -type d >> ${TMPPLIST}
+BOOST_CMAKE_BOOL=	PREFER_BOOST
 
 .include <bsd.port.mk>
