@@ -4,11 +4,13 @@ PORTREVISION=	4
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	tota@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Algorithms and Framework for Nonnegative Matrix Factorization
 WWW=		https://cran.r-project.org/web/packages/NMF/
 
 LICENSE=	GPLv2+
+
+BROKEN=		does not build with R 4.3.0+
 
 CRAN_DEPENDS=	R-cran-pkgmaker>=0.20:devel/R-cran-pkgmaker \
 		R-cran-registry>0:devel/R-cran-registry \
