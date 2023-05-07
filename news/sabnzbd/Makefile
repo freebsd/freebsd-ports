@@ -1,6 +1,5 @@
-PORTNAME=	sabnzbdplus
-DISTVERSION=	3.7.2
-PORTEPOCH=	1
+PORTNAME=	sabnzbd
+DISTVERSION=	4.0.0
 CATEGORIES=	news
 MASTER_SITES=	https://github.com/sabnzbd/sabnzbd/releases/download/${DISTVERSION}/
 DISTNAME=	SABnzbd-${DISTVERSION}-src
@@ -20,14 +19,14 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>=0:devel/py-cheetah3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=6.0.0:textproc/py-feedparser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}portend>=0:net/py-portend@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}sabyenc3>=0:news/py-sabyenc3@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}sabctools>=0:news/py-sabctools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}guessit>0:multimedia/py-guessit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}puremagic>0:sysutils/py-puremagic@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pysocks>0:net/py-pysocks@${PY_FLAVOR} \
 		par2repair:archivers/par2cmdline \
 		unrar:archivers/unrar
 
-USES=		python:3.7+ shebangfix gettext
+USES=		python:3.8+ shebangfix gettext
 USE_RC_SUBR=	sabnzbd
 
 SHEBANG_FILES=	SABnzbd.py tools/msgfmt.py

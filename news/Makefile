@@ -54,7 +54,7 @@
     SUBDIR += py-sabctools
     SUBDIR += rntrack
     SUBDIR += s-news
-    SUBDIR += sabnzbdplus
+    SUBDIR += sabnzbd
     SUBDIR += slrn
     SUBDIR += slrnface
     SUBDIR += suck

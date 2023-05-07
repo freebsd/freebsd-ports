@@ -7535,3 +7535,4 @@ x11-wm/hyprland-devel|x11-wm/hyprland|2023-05-03|Out of date: use x11-wm/hyprlan
 emulators/qemu70|emulators/qemu7|2023-05-04|Use emulators/qemu or emulators/qemu-devel
 www/resin3||2023-05-06|Deprecated version, unsupported by upstream for years
 news/py-sabyenc3|news/py-sabctools|2023-05-08|Renamed upstream
+news/sabnzbdplus|news/sabnzbd|2023-05-08|Update to proper upstream name
