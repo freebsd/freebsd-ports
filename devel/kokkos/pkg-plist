@@ -474,7 +474,7 @@ lib/cmake/Kokkos/KokkosTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Kokkos/KokkosTargets.cmake
 lib/libkokkoscontainers.so
 lib/libkokkoscontainers.so.3.7
-lib/libkokkoscontainers.so.3.7.00
+lib/libkokkoscontainers.so.3.7.01
 lib/libkokkoscore.so
 lib/libkokkoscore.so.3.7
-lib/libkokkoscore.so.3.7.00
+lib/libkokkoscore.so.3.7.01
