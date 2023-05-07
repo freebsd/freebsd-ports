@@ -1,5 +1,5 @@
 PORTNAME=	libpci
-PORTVERSION=	3.9.0
+PORTVERSION=	3.10.0
 CATEGORIES=	devel
 MASTER_SITES=	KERNEL_ORG/software/utils/pciutils \
 		LOCAL/sunpoet
@@ -31,12 +31,6 @@ LIBPCI_FILES=	include/pci/config.h \
 		lib/libpci.a \
 		lib/libpci.so.3 \
 		libdata/pkgconfig/libpci.pc
-
-.include <bsd.port.options.mk>
-
-.if ${OSVERSION} < 1300000
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-freebsd12
-.endif
 
 post-patch:
 	@${LN} -s . ${WRKSRC}/lib/pci

@@ -1,16 +1,16 @@
---- Makefile.orig	2022-11-20 11:58:03 UTC
+--- Makefile.orig	2023-05-01 12:59:54 UTC
 +++ Makefile
 @@ -1,8 +1,8 @@
  # Makefile for The PCI Utilities
- # (c) 1998--2022 Martin Mares <mj@ucw.cz>
+ # (c) 1998--2023 Martin Mares <mj@ucw.cz>
  
 -OPT=-O2
 -CFLAGS=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
 +#OPT=-O2
 +CFLAGS+=$(OPT) -Wall -W -Wno-parentheses -Wstrict-prototypes -Wmissing-prototypes
  
- VERSION=3.9.0
- DATE=2022-11-20
+ VERSION=3.10.0
+ DATE=2023-05-01
 @@ -32,11 +32,11 @@ HWDB=
  ABI_VERSION=3
  
@@ -25,18 +25,22 @@
  MANDIR:=$(shell if [ -d $(PREFIX)/share/man ] ; then echo $(PREFIX)/share/man ; else echo $(PREFIX)/man ; fi)
  INCDIR=$(PREFIX)/include
  LIBDIR=$(PREFIX)/lib
-@@ -46,11 +46,11 @@ PKGCFDIR=$(LIBDIR)/pkgconfig
+@@ -45,13 +45,13 @@ PKGCFDIR=$(LIBDIR)/pkgconfig
+ # Commands
  INSTALL=install
  DIRINSTALL=install -d
- STRIP=-s
 -ifdef CROSS_COMPILE
+-STRIP=--strip-program $(CROSS_COMPILE)-strip
 -CC=$(CROSS_COMPILE)gcc
 -else
+-STRIP=-s
 -CC=cc
 -endif
 +#ifdef CROSS_COMPILE
++#STRIP=--strip-program $(CROSS_COMPILE)-strip
 +#CC=$(CROSS_COMPILE)gcc
 +#else
++#STRIP=-s
 +#CC=cc
 +#endif
  AR=$(CROSS_COMPILE)ar
