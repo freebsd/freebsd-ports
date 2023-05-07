@@ -16,6 +16,7 @@ include/onnx/common/stl_backports.h
 include/onnx/common/tensor.h
 include/onnx/common/version.h
 include/onnx/defs/attr_proto_util.h
+include/onnx/defs/controlflow/utils.h
 include/onnx/defs/data_propagators.h
 include/onnx/defs/data_type_utils.h
 include/onnx/defs/function.h
