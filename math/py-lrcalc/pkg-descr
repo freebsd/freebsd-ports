@@ -1,0 +1,4 @@
+This package provides Python bindings for the Littlewood-Richardson Calculator
+library (see the port math/lrcalc).
+
+See also: https://bitbucket.org/asbuch/lrcalc/src/master/python/
