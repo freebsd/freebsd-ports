@@ -1,8 +1,7 @@
 PORTNAME=	augeas
-PORTVERSION=	1.12.0
-PORTREVISION=	3
+DISTVERSION=	1.14.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://download.augeas.net/
+MASTER_SITES=	https://github.com/hercules-team/augeas/releases/download/release-${DISTVERSION}/
 
 MAINTAINER=	puppet@FreeBSD.org
 COMMENT=	Configuration editing tool

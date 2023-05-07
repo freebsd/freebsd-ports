@@ -1,5 +1,6 @@
 bin/augmatch
 bin/augparse
+bin/augprint
 bin/augtool
 bin/fadot
 include/augeas.h
@@ -7,7 +8,7 @@ include/fa.h
 lib/libaugeas.a
 lib/libaugeas.so
 lib/libaugeas.so.0
-lib/libaugeas.so.0.24.2
+lib/libaugeas.so.0.25.0
 lib/libfa.a
 lib/libfa.so
 lib/libfa.so.1
@@ -15,6 +16,7 @@ lib/libfa.so.1.5.3
 libdata/pkgconfig/augeas.pc
 man/man1/augmatch.1.gz
 man/man1/augparse.1.gz
+man/man1/augprint.1.gz
 man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/access.aug
 %%DATADIR%%/lenses/dist/activemq_conf.aug
@@ -29,7 +31,9 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/aptconf.aug
 %%DATADIR%%/lenses/dist/aptpreferences.aug
 %%DATADIR%%/lenses/dist/aptsources.aug
+%%DATADIR%%/lenses/dist/authinfo2.aug
 %%DATADIR%%/lenses/dist/authorized_keys.aug
+%%DATADIR%%/lenses/dist/authselectpam.aug
 %%DATADIR%%/lenses/dist/automaster.aug
 %%DATADIR%%/lenses/dist/automounter.aug
 %%DATADIR%%/lenses/dist/avahi.aug
@@ -45,8 +49,10 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/channels.aug
 %%DATADIR%%/lenses/dist/chrony.aug
 %%DATADIR%%/lenses/dist/clamav.aug
+%%DATADIR%%/lenses/dist/cmdline.aug
 %%DATADIR%%/lenses/dist/cobblermodules.aug
 %%DATADIR%%/lenses/dist/cobblersettings.aug
+%%DATADIR%%/lenses/dist/cockpit.aug
 %%DATADIR%%/lenses/dist/collectd.aug
 %%DATADIR%%/lenses/dist/cpanel.aug
 %%DATADIR%%/lenses/dist/cron.aug
@@ -71,6 +77,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/ethers.aug
 %%DATADIR%%/lenses/dist/exports.aug
 %%DATADIR%%/lenses/dist/fai_diskconfig.aug
+%%DATADIR%%/lenses/dist/fail2ban.aug
 %%DATADIR%%/lenses/dist/fonts.aug
 %%DATADIR%%/lenses/dist/fstab.aug
 %%DATADIR%%/lenses/dist/fuse.aug
@@ -202,6 +209,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/smbusers.aug
 %%DATADIR%%/lenses/dist/solaris_system.aug
 %%DATADIR%%/lenses/dist/soma.aug
+%%DATADIR%%/lenses/dist/sos.aug
 %%DATADIR%%/lenses/dist/spacevars.aug
 %%DATADIR%%/lenses/dist/splunk.aug
 %%DATADIR%%/lenses/dist/squid.aug
@@ -232,7 +240,9 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_aptconf.aug
 %%DATADIR%%/lenses/dist/tests/test_aptpreferences.aug
 %%DATADIR%%/lenses/dist/tests/test_aptsources.aug
+%%DATADIR%%/lenses/dist/tests/test_authinfo2.aug
 %%DATADIR%%/lenses/dist/tests/test_authorized_keys.aug
+%%DATADIR%%/lenses/dist/tests/test_authselectpam.aug
 %%DATADIR%%/lenses/dist/tests/test_automaster.aug
 %%DATADIR%%/lenses/dist/tests/test_automounter.aug
 %%DATADIR%%/lenses/dist/tests/test_avahi.aug
@@ -248,8 +258,10 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_channels.aug
 %%DATADIR%%/lenses/dist/tests/test_chrony.aug
 %%DATADIR%%/lenses/dist/tests/test_clamav.aug
+%%DATADIR%%/lenses/dist/tests/test_cmdline.aug
 %%DATADIR%%/lenses/dist/tests/test_cobblermodules.aug
 %%DATADIR%%/lenses/dist/tests/test_cobblersettings.aug
+%%DATADIR%%/lenses/dist/tests/test_cockpit.aug
 %%DATADIR%%/lenses/dist/tests/test_collectd.aug
 %%DATADIR%%/lenses/dist/tests/test_cpanel.aug
 %%DATADIR%%/lenses/dist/tests/test_cron.aug
@@ -274,6 +286,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_ethers.aug
 %%DATADIR%%/lenses/dist/tests/test_exports.aug
 %%DATADIR%%/lenses/dist/tests/test_fai_diskconfig.aug
+%%DATADIR%%/lenses/dist/tests/test_fail2ban.aug
 %%DATADIR%%/lenses/dist/tests/test_fonts.aug
 %%DATADIR%%/lenses/dist/tests/test_fstab.aug
 %%DATADIR%%/lenses/dist/tests/test_fuse.aug
@@ -405,6 +418,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_smbusers.aug
 %%DATADIR%%/lenses/dist/tests/test_solaris_system.aug
 %%DATADIR%%/lenses/dist/tests/test_soma.aug
+%%DATADIR%%/lenses/dist/tests/test_sos.aug
 %%DATADIR%%/lenses/dist/tests/test_spacevars.aug
 %%DATADIR%%/lenses/dist/tests/test_splunk.aug
 %%DATADIR%%/lenses/dist/tests/test_squid.aug
@@ -423,6 +437,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_systemd.aug
 %%DATADIR%%/lenses/dist/tests/test_termcap.aug
 %%DATADIR%%/lenses/dist/tests/test_thttpd.aug
+%%DATADIR%%/lenses/dist/tests/test_tinc.aug
 %%DATADIR%%/lenses/dist/tests/test_tmpfiles.aug
 %%DATADIR%%/lenses/dist/tests/test_toml.aug
 %%DATADIR%%/lenses/dist/tests/test_trapperkeeper.aug
@@ -444,6 +459,7 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/tests/test_yaml.aug
 %%DATADIR%%/lenses/dist/tests/test_yum.aug
 %%DATADIR%%/lenses/dist/thttpd.aug
+%%DATADIR%%/lenses/dist/tinc.aug
 %%DATADIR%%/lenses/dist/tmpfiles.aug
 %%DATADIR%%/lenses/dist/toml.aug
 %%DATADIR%%/lenses/dist/trapperkeeper.aug
@@ -464,5 +480,8 @@ man/man1/augtool.1.gz
 %%DATADIR%%/lenses/dist/xymon_alerting.aug
 %%DATADIR%%/lenses/dist/yaml.aug
 %%DATADIR%%/lenses/dist/yum.aug
+share/bash-completion/completions/augmatch
+share/bash-completion/completions/augprint
+share/bash-completion/completions/augtool
 share/vim/vimfiles/ftdetect/augeas.vim
 share/vim/vimfiles/syntax/augeas.vim
