@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/glurp/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Unmaintained for years and depends on deprecated GTK2
+EXPIRATION_DATE=2023-06-30
+
 LIB_DEPENDS=	libmpd.so:audio/libmpd
 
 GNU_CONFIGURE=	yes
