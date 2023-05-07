@@ -10,6 +10,7 @@
 
 PORTNAME=	libyuv
 DISTVERSION=	0.0.1789
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/mikael/libyuv/:libyuv \
 		LOCAL/tcberner/libyuv/:libyuv
@@ -27,6 +28,12 @@ SUB_FILES=	libyuv.pc
 SUB_LIST=	DISTVERSION=${DISTVERSION}
 
 LIBYUV_HASH=	0896c34873e83ca3d1690286a94e278a81d0a760
+
+OPTIONS_DEFINE=	JPEG
+OPTIONS_DEFAULT=JPEG
+
+JPEG_USES=		jpeg
+JPEG_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_JPEG
 
 # sha256 changes everytime you download the archive, need to host it on freefall
 # To download the distfile: as mikael: make MAINTAINER_MODE=yes fetch
