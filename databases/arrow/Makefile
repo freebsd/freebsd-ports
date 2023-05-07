@@ -18,7 +18,6 @@ LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
 USES=		cmake compiler:c++14-lang localbase pkgconfig python:build
-USE_CXXSTD=	c++14 # googletest 1.13
 USE_LDCONFIG=	yes
 
 WRKSRC_SUBDIR=	cpp
