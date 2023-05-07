@@ -1,7 +1,6 @@
 PORTNAME=	nwg-look
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.1
-PORTREVISION=	2
+DISTVERSION=	0.2.2
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,6 +23,7 @@ CGO_LDFLAGS+=	-Wl,--as-needed # harfbuzz, freetype2
 PLIST_FILES=	bin/${PORTNAME} \
 		${DATADIR}/langs/en_US.json \
 		${DATADIR}/langs/pl_PL.json \
+		${DATADIR}/langs/ru_RU.json \
 		${DATADIR}/main.glade \
 		share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.svg
