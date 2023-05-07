@@ -26,4 +26,6 @@ USE_GITHUB=	yes
 GH_PROJECT=	${PORTNAME}.py
 USE_PYTHON=	distutils concurrent autoplist
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
