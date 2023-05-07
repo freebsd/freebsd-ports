@@ -1,5 +1,5 @@
 PORTNAME=	libwps
-PORTVERSION=	0.4.13
+PORTVERSION=	0.4.14
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -21,7 +21,7 @@ USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
-LIBVERSION=	4.0.13
+LIBVERSION=	4.0.14
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 .include <bsd.port.mk>
