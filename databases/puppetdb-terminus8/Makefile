@@ -11,8 +11,6 @@ WWW=		https://docs.puppetlabs.com/puppetdb/latest/
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	puppet7>=0:sysutils/puppet7
-
 CONFLICTS_INSTALL=	puppetdb-terminus[0-9]
 NO_BUILD=	yes
 USES=		gmake ruby
