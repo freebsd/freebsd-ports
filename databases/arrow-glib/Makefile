@@ -20,7 +20,7 @@ LIB_DEPENDS=	libarrow.so:databases/arrow
 USES=		compiler:c++11-lang gnome meson pkgconfig
 USE_GNOME=	introspection
 
-MESON_ARGS=	--default-library=both --default-library=both -Darrow_cpp_build_dir='' -Darrow_cpp_build_type='release' -Dgtk_doc=false
+MESON_ARGS=	--default-library=both -Darrow_cpp_build_dir='' -Darrow_cpp_build_type='release' -Dgtk_doc=false
 WRKSRC_SUBDIR=	c_glib
 
 .include <bsd.port.mk>
