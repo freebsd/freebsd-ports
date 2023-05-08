@@ -1,6 +1,5 @@
 PORTNAME=	chaoskube
-PORTVERSION=	0.27.0
-PORTREVISION=	5
+PORTVERSION=	0.28.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -18,9 +17,8 @@ GH_ACCOUNT=	linki
 
 PLIST_FILES=	bin/${PORTNAME}
 GH_TUPLE=	\
-		alecthomas:kingpin:v2.2.6:alecthomas_kingpin/vendor/gopkg.in/alecthomas/kingpin.v2 \
-		alecthomas:template:fb15b899a751:alecthomas_template/vendor/github.com/alecthomas/template \
-		alecthomas:units:f65c72e2690d:alecthomas_units/vendor/github.com/alecthomas/units \
+		alecthomas:kingpin:v2.3.2:alecthomas_kingpin_v2/vendor/github.com/alecthomas/kingpin/v2 \
+		alecthomas:units:b94a6e3cc137:alecthomas_units/vendor/github.com/alecthomas/units \
 		beorn7:perks:v1.0.1:beorn7_perks/vendor/github.com/beorn7/perks \
 		cespare:xxhash:v2.1.2:cespare_xxhash_v2/vendor/github.com/cespare/xxhash/v2 \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
@@ -36,12 +34,12 @@ GH_TUPLE=	\
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
 		golang:groupcache:41bb18bfe9da:golang_groupcache/vendor/github.com/golang/groupcache \
-		golang:net:1e63c2f08a10:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.7.0:golang_net/vendor/golang.org/x/net \
 		golang:oauth2:ee480838109b:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sys:v0.3.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.3.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.5.0:golang_text/vendor/golang.org/x/text \
+		golang:sys:v0.5.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.5.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.7.0:golang_text/vendor/golang.org/x/text \
 		golang:time:90d013bbcef8:golang_time/vendor/golang.org/x/time \
 		google:gnostic:v0.5.7-v3refs:google_gnostic/vendor/github.com/google/gnostic \
 		google:go-cmp:v0.5.9:google_go_cmp/vendor/github.com/google/go-cmp \
@@ -54,9 +52,9 @@ GH_TUPLE=	\
 		kubernetes-sigs:json:f223a00ba0e2:kubernetes_sigs_json/vendor/sigs.k8s.io/json \
 		kubernetes-sigs:structured-merge-diff:v4.2.3:kubernetes_sigs_structured_merge_diff/vendor/sigs.k8s.io/structured-merge-diff/v4 \
 		kubernetes-sigs:yaml:v1.3.0:kubernetes_sigs_yaml/vendor/sigs.k8s.io/yaml \
-		kubernetes:api:v0.26.0:kubernetes_api/vendor/k8s.io/api \
-		kubernetes:apimachinery:v0.26.0:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
-		kubernetes:client-go:v0.26.0:kubernetes_client_go/vendor/k8s.io/client-go \
+		kubernetes:api:v0.26.3:kubernetes_api/vendor/k8s.io/api \
+		kubernetes:apimachinery:v0.26.3:kubernetes_apimachinery/vendor/k8s.io/apimachinery \
+		kubernetes:client-go:v0.26.3:kubernetes_client_go/vendor/k8s.io/client-go \
 		kubernetes:klog:v1.0.0:kubernetes_klog/vendor/k8s.io/klog \
 		kubernetes:klog:v2.80.1:kubernetes_klog_1/vendor/k8s.io/klog/v2 \
 		kubernetes:kube-openapi:172d655c2280:kubernetes_kube_openapi/vendor/k8s.io/kube-openapi \
@@ -75,6 +73,7 @@ GH_TUPLE=	\
 		protocolbuffers:protobuf-go:v1.28.1:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		sirupsen:logrus:v1.9.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
-		stretchr:testify:v1.8.1:stretchr_testify/vendor/github.com/stretchr/testify
+		stretchr:testify:v1.8.2:stretchr_testify/vendor/github.com/stretchr/testify \
+		xhit:go-str2duration:v2.1.0:xhit_go_str2duration_v2/vendor/github.com/xhit/go-str2duration/v2
 
 .include <bsd.port.mk>
