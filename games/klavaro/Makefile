@@ -1,6 +1,5 @@
 PORTNAME=	klavaro
-PORTVERSION=	3.11
-PORTREVISION=	1
+PORTVERSION=	3.14
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/
 
@@ -10,15 +9,14 @@ WWW=		http://klavaro.sourceforge.net/
 
 LICENSE=	GPLv3
 
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libgtkdatabox.so:x11-toolkits/gtkdatabox
 
-USES=		gettext gmake gnome iconv pkgconfig tar:bzip2
+USES=		gettext gmake gnome iconv localbase pkgconfig tar:bzip2
 USE_GNOME=	cairo gtk30 intlhack
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-rdynamic
-LIBS+=		-L${LOCALBASE}/lib
 
 GNU_CONFIGURE=	yes
 
