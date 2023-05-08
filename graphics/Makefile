@@ -92,7 +92,6 @@
     SUBDIR += cairo
     SUBDIR += cairomm
     SUBDIR += cal3d
-    SUBDIR += camera
     SUBDIR += camerakit
     SUBDIR += cbonsai
     SUBDIR += cbviewer
