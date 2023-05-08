@@ -14,7 +14,8 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	\
-	p5-File-pushd>0:devel/p5-File-pushd
+	p5-File-pushd>0:devel/p5-File-pushd \
+	p5-Sub-Name>0:devel/p5-Sub-Name
 TEST_DEPENDS=	\
 	p5-Test-NoWarnings>0:devel/p5-Test-NoWarnings \
 	p5-Test-Requires>0:devel/p5-Test-Requires \
