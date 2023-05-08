@@ -527,7 +527,7 @@ PYTHON_PORTSDIR=	${_PYTHON_RELPORTDIR}${PYTHON_SUFFIX}
 .include "${PORTSDIR}/${PYTHON_PORTSDIR}/Makefile.version"
 .  endif
 # Create a 5 integer version string, prefixing 0 to the minor and patch
-# tokens if it's a single character. Only use the the first 3 tokens of
+# tokens if it's a single character. Only use the first 3 tokens of
 # PORTVERSION to support pre-release versions (rc3, alpha4, etc) of
 # any Python port (lang/pythonXY)
 PYTHON_REL=	${PYTHON_DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/:C/\.([0-9])$/.0\1/:C/\.([0-9]\.[0-9]+)/.0\1/:S/.//g}
