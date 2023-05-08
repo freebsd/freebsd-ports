@@ -3,7 +3,7 @@ DISTVERSION=	1.0-12
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Simple Features for R
 WWW=		https://cran.r-project.org/web/packages/sf/
 
