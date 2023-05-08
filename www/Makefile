@@ -245,6 +245,7 @@
     SUBDIR += httrack
     SUBDIR += hurl
     SUBDIR += hypermail
+    SUBDIR += icapeg
     SUBDIR += igal2
     SUBDIR += ikiwiki
     SUBDIR += ilias
