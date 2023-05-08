@@ -1,3 +1,41 @@
+  <vuln vid="96b2d4db-ddd2-11ed-b6ea-080027f5fec9">
+    <topic>redis -- HINCRBYFLOAT can be used to crash a redis-server process</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>7.0.11</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><lt>6.2.12</lt></range>
+      </package>
+      <package>
+	<name>redis6</name>
+	<range><lt>6.0.19</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redis core team reports:</p>
+	<blockquote cite="https://github.com/redis/redis/security/advisories/GHSA-hjv8-vjf6-wcr6">
+	  <p>
+	    Authenticated users can use the HINCRBYFLOAT command to
+	    create an invalid hash field that may later crash Redis on
+	    access.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28856</cvename>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-hjv8-vjf6-wcr6</url>
+    </references>
+    <dates>
+      <discovery>2023-04-17</discovery>
+      <entry>2023-05-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="89fdbd85-ebd2-11ed-9c88-001b217b3468">
     <topic>Gitlab -- Multiple Vulnerabilities</topic>
     <affects>
