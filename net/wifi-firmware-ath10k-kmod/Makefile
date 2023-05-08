@@ -1,4 +1,4 @@
-BASEDIR=	${.CURDIR}/../wifi-firmware-base
+BASEDIR=	${.CURDIR}/../wifi-firmware-kmod
 
 FWDRV=		ath10k
 FWSUBDIR=	ath10k
@@ -85,4 +85,4 @@ DISTFILES_lic=	\
 	${DISTFILES_QCA9984_hw10_lic} \
 	${DISTFILES_QCA99X0_hw20_lic}
 
-.include "${BASEDIR}/Makefile"
+.include "${BASEDIR}/Makefile.inc"

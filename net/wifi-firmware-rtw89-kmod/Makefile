@@ -1,4 +1,4 @@
-BASEDIR=	${.CURDIR}/../wifi-firmware-base
+BASEDIR=	${.CURDIR}/../wifi-firmware-kmod
 
 FWDRV=		rtw89
 FWSUBDIR=	rtw89
@@ -25,4 +25,4 @@ DISTFILES_fw= \
 
 DISTFILES_lic=
 
-.include "${BASEDIR}/Makefile"
+.include "${BASEDIR}/Makefile.inc"

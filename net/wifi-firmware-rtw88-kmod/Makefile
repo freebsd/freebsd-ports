@@ -1,4 +1,4 @@
-BASEDIR=	${.CURDIR}/../wifi-firmware-base
+BASEDIR=	${.CURDIR}/../wifi-firmware-kmod
 
 FWDRV=		rtw88
 FWSUBDIR=	rtw88
@@ -31,4 +31,4 @@ DISTFILES_fw= \
 DISTFILES_lic= \
 	${FWSUBDIR}/README${DISTURL_SUFFIX}
 
-.include "${BASEDIR}/Makefile"
+.include "${BASEDIR}/Makefile.inc"

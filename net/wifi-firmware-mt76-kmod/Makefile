@@ -1,4 +1,4 @@
-BASEDIR=	${.CURDIR}/../wifi-firmware-base
+BASEDIR=	${.CURDIR}/../wifi-firmware-kmod
 
 FWDRV=		mt76
 FWSUBDIR=	mediatek
@@ -28,4 +28,4 @@ DISTFILES_fw= \
 	${DISTFILES_mt7921}
 DISTFILES_lic=
 
-.include "${BASEDIR}/Makefile"
+.include "${BASEDIR}/Makefile.inc"

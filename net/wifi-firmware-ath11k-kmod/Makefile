@@ -1,4 +1,4 @@
-BASEDIR=	${.CURDIR}/../wifi-firmware-base
+BASEDIR=	${.CURDIR}/../wifi-firmware-kmod
 
 FWDRV=		ath11k
 FWSUBDIR=	ath11k
@@ -102,4 +102,4 @@ DISTFILES_lic=	\
 #	${DISTFILES_WCN6855_hw20_lic} \
 #	${DISTFILES_WCN6750_hw10_lic}
 
-.include "${BASEDIR}/Makefile"
+.include "${BASEDIR}/Makefile.inc"
