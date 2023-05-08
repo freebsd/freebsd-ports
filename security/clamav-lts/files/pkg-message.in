@@ -1,0 +1,13 @@
+[
+{ type: remove
+  message: <<EOM
+If you want remove clamav permanently from you system
+execute following commands:
+
+ # rm -rf %%LOGDIR%%
+ # rm -rf %%RUNDIR%%
+ # rm -rf %%DBDIR%%
+ # pw userdel %%CLAMAVUSER%%
+EOM
+}
+]
