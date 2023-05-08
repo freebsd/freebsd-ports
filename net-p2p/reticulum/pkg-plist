@@ -214,15 +214,30 @@ bin/rnx
 %%PYTHON_SITELIBDIR%%/RNS/vendor/i2plib/sam.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/i2plib/tunnel.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/i2plib/utils.py
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__init__.py
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_posix%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_posix%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_shared%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_shared%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_win32%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/_win32%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/niwrapper%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/__pycache__/niwrapper%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/_posix.py
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/_shared.py
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/_win32.py
+%%PYTHON_SITELIBDIR%%/RNS/vendor/ifaddr/niwrapper.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/platformutils.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/six.py
 %%PYTHON_SITELIBDIR%%/RNS/vendor/umsgpack.py
-%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/entry_points.txt
-%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/requires.txt
-%%PYTHON_SITELIBDIR%%/rns-0.5.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/rns-0.5.1-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/rns-0.5.1-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/rns-0.5.1-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/rns-0.5.1-py%%PYTHON_VER%%.egg-info/entry_points.txt
+%%PYTHON_SITELIBDIR%%/rns-0.5.1-py%%PYTHON_VER%%.egg-info/requires.txt
+%%PYTHON_SITELIBDIR%%/rns-0.5.1-py%%PYTHON_VER%%.egg-info/top_level.txt
 @owner %%USERS%%
 @group %%GROUPS%%
 @dir /var/db/reticulum
