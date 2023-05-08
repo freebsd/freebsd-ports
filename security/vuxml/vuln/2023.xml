@@ -1,3 +1,53 @@
+  <vuln vid="68958e18-ed94-11ed-9688-b42e991fc52e">
+    <topic>glpi -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>glpi</name>
+	<range><lt>10.0.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>glpi Project reports:</p>
+	<blockquote cite="https://github.com/glpi-project/glpi/releases/tag/10.0.7">
+	  <p>Multiple vulnerabilities found and fixed in this version:</p>
+	  <ul>
+	    <li>High CVE-2023-28849: SQL injection and Stored XSS via inventory agent request.</li>
+	    <li>High CVE-2023-28632: Account takeover by authenticated user.</li>
+	    <li>High CVE-2023-28838: SQL injection through dynamic reports.</li>
+	    <li>Moderate CVE-2023-28852: Stored XSS through dashboard administration.</li>
+	    <li>Moderate CVE-2023-28636: Stored XSS on external links.</li>
+	    <li>Moderate CVE-2023-28639: Reflected XSS in search pages.</li>
+	    <li>Moderate CVE-2023-28634: Privilege Escalation from technician to super-admin.</li>
+	    <li>Low CVE-2023-28633: Blind Server-Side Request Forgery (SSRF) in RSS feeds.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename></cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=</url>
+      <cvename>CVE-2023-28849</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28849</url>
+      <cvename>CVE-2023-28632</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28632</url>
+      <cvename>CVE-2023-28838</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28838</url>
+      <cvename>CVE-2023-28852</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28852</url>
+      <cvename>CVE-2023-28636</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28636</url>
+      <cvename>CVE-2023-28639</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28639</url>
+      <cvename>CVE-2023-28634</cvename>
+      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28634</url>
+    </references>
+    <dates>
+      <discovery>2023-03-20</discovery>
+      <entry>2023-05-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="96b2d4db-ddd2-11ed-b6ea-080027f5fec9">
     <topic>redis -- HINCRBYFLOAT can be used to crash a redis-server process</topic>
     <affects>
