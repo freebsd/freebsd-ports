@@ -2,21 +2,6 @@ https://bz-attachments.freebsd.org/attachment.cgi?id=242009
 
 --- queue_repair.py.orig	2003-10-22 15:54:13 UTC
 +++ queue_repair.py
-@@ -1,4 +1,4 @@
--#!/usr/bin/python
-+#!/usr/local/bin/python3.9
- '''queue_repair.py - qmail tools in Python.
- Copyright (C) 2001 Charles Cazabon <pqt @ discworld.dyndns.org>
- 
-@@ -58,7 +58,7 @@ users = {
- 
- groups = {
-     'qmail' : None,
--    'nofiles' : None,
-+    'qnofiles' : None,
- }
- 
- dirs = {
 @@ -66,24 +66,24 @@ dirs = {
      #   key: pathname - all paths are relative to conf-qmail
      #   data: (user, group, mode, split)
