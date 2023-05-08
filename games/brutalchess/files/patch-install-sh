@@ -1,5 +1,5 @@
---- install-sh.orig	Sat Mar 11 01:36:44 2006
-+++ install-sh	Tue Feb  6 23:51:32 2007
+--- install-sh.orig	2006-03-11 00:36:44 UTC
++++ install-sh
 @@ -0,0 +1,251 @@
 +#!/bin/sh
 +#
