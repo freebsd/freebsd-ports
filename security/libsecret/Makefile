@@ -1,6 +1,6 @@
 PORTNAME=	libsecret
 PORTVERSION=	0.20.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 
@@ -15,7 +15,13 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gi-docgen>0:textproc/py-gi-docgen@${PY_FLA
 LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 		libgpg-error.so:security/libgpg-error
 
-USES=		gnome meson pkgconfig python:3.8+ tar:xz vala:build
+USES=		compiler gnome meson pkgconfig python:3.8+ tar:xz vala:build
 USE_GNOME=	glib20 intltool introspection:build libxslt:build
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang
+CFLAGS+=	-Wno-incompatible-function-pointer-types
+.endif
+
+.include <bsd.port.post.mk>
