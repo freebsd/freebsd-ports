@@ -427,12 +427,11 @@
 %%WWWDIR%%/css/lib/tabler/core/src/scss/vendor/_litepicker.scss
 %%WWWDIR%%/css/lib/tabler/core/src/scss/vendor/_nouislider.scss
 %%WWWDIR%%/css/lib/tabler/core/src/scss/vendor/_tom-select.scss
-%%WWWDIR%%/css/lib/tabler/icons/iconfont/fonts/tabler-icons.eot
-%%WWWDIR%%/css/lib/tabler/icons/iconfont/fonts/tabler-icons.svg
-%%WWWDIR%%/css/lib/tabler/icons/iconfont/fonts/tabler-icons.ttf
-%%WWWDIR%%/css/lib/tabler/icons/iconfont/fonts/tabler-icons.woff
-%%WWWDIR%%/css/lib/tabler/icons/iconfont/fonts/tabler-icons.woff2
-%%WWWDIR%%/css/lib/tabler/icons/iconfont/tabler-icons.scss
+%%WWWDIR%%/css/lib/tabler/icons-webfont/fonts/tabler-icons.eot
+%%WWWDIR%%/css/lib/tabler/icons-webfont/fonts/tabler-icons.ttf
+%%WWWDIR%%/css/lib/tabler/icons-webfont/fonts/tabler-icons.woff
+%%WWWDIR%%/css/lib/tabler/icons-webfont/fonts/tabler-icons.woff2
+%%WWWDIR%%/css/lib/tabler/icons-webfont/tabler-icons.scss
 %%WWWDIR%%/css/palettes/_defaults.scss
 %%WWWDIR%%/css/palettes/aerialgreen.scss
 %%WWWDIR%%/css/palettes/auror.scss
@@ -1043,6 +1042,7 @@
 %%WWWDIR%%/front/slalevelcriteria.form.php
 %%WWWDIR%%/front/slm.form.php
 %%WWWDIR%%/front/slm.php
+%%WWWDIR%%/front/smtp_oauth2_callback.php
 %%WWWDIR%%/front/snmpcredential.form.php
 %%WWWDIR%%/front/snmpcredential.php
 %%WWWDIR%%/front/socket.form.php
@@ -1188,6 +1188,17 @@
 %%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/simcard.php
 %%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/transfer.php
 %%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6/unmanaged.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/contract.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/domains_items.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/indexes.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/oauth_smtp.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/profils.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/ruleticket.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/softwarelicense.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/ticket_fix_internal_tto_escalation.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/unmanageds.php
+%%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7/wrong_fkey.php
 %%WWWDIR%%/install/migrations/update_9.1.0_to_9.1.1.php
 %%WWWDIR%%/install/migrations/update_9.1.1_to_9.1.3.php
 %%WWWDIR%%/install/migrations/update_9.1.x_to_9.2.0.php
@@ -1266,6 +1277,7 @@
 %%WWWDIR%%/install/mysql/glpi-10.0.3-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.4-empty.sql
 %%WWWDIR%%/install/mysql/glpi-10.0.5-empty.sql
+%%WWWDIR%%/install/mysql/glpi-10.0.6-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.0-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.1-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.3.2-empty.sql
@@ -1283,6 +1295,7 @@
 %%WWWDIR%%/install/mysql/glpi-9.5.10-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.11-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.12-empty.sql
+%%WWWDIR%%/install/mysql/glpi-9.5.13-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.2-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.3-empty.sql
 %%WWWDIR%%/install/mysql/glpi-9.5.4-empty.sql
@@ -1773,6 +1786,7 @@
 %%WWWDIR%%/pics/warning.png
 %%WWWDIR%%/pics/warning_min.png
 %%WWWDIR%%/pics/web.png
+%%WWWDIR%%/public/index.php
 %%WWWDIR%%/public/lib/base.css
 %%WWWDIR%%/public/lib/base.css.map
 %%WWWDIR%%/public/lib/base.js
@@ -2637,6 +2651,7 @@
 %%WWWDIR%%/src/Console/Plugin/ActivateCommand.php
 %%WWWDIR%%/src/Console/Plugin/DeactivateCommand.php
 %%WWWDIR%%/src/Console/Plugin/InstallCommand.php
+%%WWWDIR%%/src/Console/Plugin/UninstallCommand.php
 %%WWWDIR%%/src/Console/Rules/ProcessSoftwareCategoryRulesCommand.php
 %%WWWDIR%%/src/Console/Rules/ReplayDictionnaryRulesCommand.php
 %%WWWDIR%%/src/Console/Security/ChangekeyCommand.php
@@ -2822,6 +2837,7 @@
 %%WWWDIR%%/src/HTMLTableUnknownHeadersOrder.php
 %%WWWDIR%%/src/Holiday.php
 %%WWWDIR%%/src/Html.php
+%%WWWDIR%%/src/Http/ProxyRouter.php
 %%WWWDIR%%/src/Http/Response.php
 %%WWWDIR%%/src/IPAddress.php
 %%WWWDIR%%/src/IPAddress_IPNetwork.php
@@ -2940,6 +2956,10 @@
 %%WWWDIR%%/src/Lockedfield.php
 %%WWWDIR%%/src/Log.php
 %%WWWDIR%%/src/Mail/Protocol/ProtocolInterface.php
+%%WWWDIR%%/src/Mail/SMTP/OauthConfig.php
+%%WWWDIR%%/src/Mail/SMTP/OauthProvider/Azure.php
+%%WWWDIR%%/src/Mail/SMTP/OauthProvider/Google.php
+%%WWWDIR%%/src/Mail/SMTP/OauthProvider/ProviderInterface.php
 %%WWWDIR%%/src/MailCollector.php
 %%WWWDIR%%/src/ManualLink.php
 %%WWWDIR%%/src/Manufacturer.php
@@ -3244,12 +3264,15 @@
 %%WWWDIR%%/src/System/Requirement/ExtensionFunction.php
 %%WWWDIR%%/src/System/Requirement/ExtensionGroup.php
 %%WWWDIR%%/src/System/Requirement/InstallationNotOverriden.php
+%%WWWDIR%%/src/System/Requirement/IntegerSize.php
 %%WWWDIR%%/src/System/Requirement/LogsWriteAccess.php
 %%WWWDIR%%/src/System/Requirement/MemoryLimit.php
 %%WWWDIR%%/src/System/Requirement/MysqliMysqlnd.php
+%%WWWDIR%%/src/System/Requirement/PhpSupportedVersion.php
 %%WWWDIR%%/src/System/Requirement/PhpVersion.php
 %%WWWDIR%%/src/System/Requirement/ProtectedWebAccess.php
 %%WWWDIR%%/src/System/Requirement/RequirementInterface.php
+%%WWWDIR%%/src/System/Requirement/SafeDocumentRoot.php
 %%WWWDIR%%/src/System/Requirement/SeLinux.php
 %%WWWDIR%%/src/System/Requirement/SessionsConfiguration.php
 %%WWWDIR%%/src/System/Requirement/SessionsSecurityConfiguration.php
@@ -3417,6 +3440,7 @@
 %%WWWDIR%%/templates/pages/admin/inventory/agent.html.twig
 %%WWWDIR%%/templates/pages/admin/inventory/lockedfield.html.twig
 %%WWWDIR%%/templates/pages/admin/inventory/upload_form.html.twig
+%%WWWDIR%%/templates/pages/admin/inventory/upload_result.html.twig
 %%WWWDIR%%/templates/pages/admin/ldap.choose_directory.html.twig
 %%WWWDIR%%/templates/pages/admin/ldap.groups.html.twig
 %%WWWDIR%%/templates/pages/admin/ldap.users.html.twig
@@ -3441,6 +3465,7 @@
 %%WWWDIR%%/templates/pages/management/line.html.twig
 %%WWWDIR%%/templates/pages/management/softwarelicense.html.twig
 %%WWWDIR%%/templates/pages/self-service/home.html.twig
+%%WWWDIR%%/templates/pages/setup/apiclient.html.twig
 %%WWWDIR%%/templates/pages/setup/authentication.html.twig
 %%WWWDIR%%/templates/pages/setup/dropdowns_list.html.twig
 %%WWWDIR%%/templates/pages/setup/general/base_form.html.twig
@@ -3545,6 +3570,17 @@
 %%WWWDIR%%/vendor/elvanto/litemoji/composer.json
 %%WWWDIR%%/vendor/elvanto/litemoji/src/LitEmoji.php
 %%WWWDIR%%/vendor/elvanto/litemoji/src/shortcodes-array.php
+%%WWWDIR%%/vendor/firebase/php-jwt/CHANGELOG.md
+%%WWWDIR%%/vendor/firebase/php-jwt/LICENSE
+%%WWWDIR%%/vendor/firebase/php-jwt/README.md
+%%WWWDIR%%/vendor/firebase/php-jwt/composer.json
+%%WWWDIR%%/vendor/firebase/php-jwt/src/BeforeValidException.php
+%%WWWDIR%%/vendor/firebase/php-jwt/src/CachedKeySet.php
+%%WWWDIR%%/vendor/firebase/php-jwt/src/ExpiredException.php
+%%WWWDIR%%/vendor/firebase/php-jwt/src/JWK.php
+%%WWWDIR%%/vendor/firebase/php-jwt/src/JWT.php
+%%WWWDIR%%/vendor/firebase/php-jwt/src/Key.php
+%%WWWDIR%%/vendor/firebase/php-jwt/src/SignatureInvalidException.php
 %%WWWDIR%%/vendor/glpi-project/inventory_format/CHANGELOG.md
 %%WWWDIR%%/vendor/glpi-project/inventory_format/LICENSE
 %%WWWDIR%%/vendor/glpi-project/inventory_format/README.md
@@ -3554,13 +3590,9 @@
 %%WWWDIR%%/vendor/glpi-project/inventory_format/bin/validate
 %%WWWDIR%%/vendor/glpi-project/inventory_format/composer.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/data/README.md
-%%WWWDIR%%/vendor/glpi-project/inventory_format/data/iftype.csv
 %%WWWDIR%%/vendor/glpi-project/inventory_format/data/iftype.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/data/oui.txt
 %%WWWDIR%%/vendor/glpi-project/inventory_format/data/ouis.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/data/pci.ids
 %%WWWDIR%%/vendor/glpi-project/inventory_format/data/pciid.json
-%%WWWDIR%%/vendor/glpi-project/inventory_format/data/usb.ids
 %%WWWDIR%%/vendor/glpi-project/inventory_format/data/usbid.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/inventory.schema.json
 %%WWWDIR%%/vendor/glpi-project/inventory_format/lib/php/Converter.php
@@ -4373,6 +4405,44 @@
 %%WWWDIR%%/vendor/league/csv/src/XMLConverter.php
 %%WWWDIR%%/vendor/league/csv/src/functions.php
 %%WWWDIR%%/vendor/league/csv/src/functions_include.php
+%%WWWDIR%%/vendor/league/oauth2-client/LICENSE
+%%WWWDIR%%/vendor/league/oauth2-client/README.md
+%%WWWDIR%%/vendor/league/oauth2-client/composer.json
+%%WWWDIR%%/vendor/league/oauth2-client/src/Grant/AbstractGrant.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Grant/AuthorizationCode.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Grant/ClientCredentials.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Grant/Exception/InvalidGrantException.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Grant/GrantFactory.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Grant/Password.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Grant/RefreshToken.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/OptionProvider/HttpBasicAuthOptionProvider.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/OptionProvider/OptionProviderInterface.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/OptionProvider/PostAuthOptionProvider.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Provider/AbstractProvider.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Provider/Exception/IdentityProviderException.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Provider/GenericProvider.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Provider/GenericResourceOwner.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Provider/ResourceOwnerInterface.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Token/AccessToken.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Token/AccessTokenInterface.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Token/ResourceOwnerAccessTokenInterface.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Tool/ArrayAccessorTrait.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Tool/BearerAuthorizationTrait.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Tool/GuardedPropertyTrait.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Tool/MacAuthorizationTrait.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Tool/ProviderRedirectTrait.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Tool/QueryBuilderTrait.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Tool/RequestFactory.php
+%%WWWDIR%%/vendor/league/oauth2-client/src/Tool/RequiredParameterTrait.php
+%%WWWDIR%%/vendor/league/oauth2-google/CHANGELOG.md
+%%WWWDIR%%/vendor/league/oauth2-google/CONTRIBUTING.md
+%%WWWDIR%%/vendor/league/oauth2-google/LICENSE
+%%WWWDIR%%/vendor/league/oauth2-google/README.md
+%%WWWDIR%%/vendor/league/oauth2-google/composer.json
+%%WWWDIR%%/vendor/league/oauth2-google/phpunit.xml.dist
+%%WWWDIR%%/vendor/league/oauth2-google/src/Exception/HostedDomainException.php
+%%WWWDIR%%/vendor/league/oauth2-google/src/Provider/Google.php
+%%WWWDIR%%/vendor/league/oauth2-google/src/Provider/GoogleUser.php
 %%WWWDIR%%/vendor/mexitek/phpcolors/LICENSE
 %%WWWDIR%%/vendor/mexitek/phpcolors/README.md
 %%WWWDIR%%/vendor/mexitek/phpcolors/composer.json
@@ -4636,7 +4706,6 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-be.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-bg.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ca.php
-%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ch.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-cs.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-da.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-de.php
@@ -4662,6 +4731,7 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-lt.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-lv.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-mg.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-mn.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-ms.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-nb.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-nl.php
@@ -4681,6 +4751,7 @@
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-vi.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh_cn.php
+%%WWWDIR%%/vendor/phpmailer/phpmailer/src/DSNConfigurator.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/Exception.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/OAuth.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/OAuthTokenProvider.php
@@ -6159,6 +6230,14 @@
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_barcodes_2d.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_import.php
 %%WWWDIR%%/vendor/tecnickcom/tcpdf/tcpdf_parser.php
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/CHANGELOG.md
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/LICENSE.md
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/README.md
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/composer.json
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Grant/JwtBearer.php
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Provider/Azure.php
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Provider/AzureResourceOwner.php
+%%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Token/AccessToken.php
 %%WWWDIR%%/vendor/true/punycode/CHANGELOG.md
 %%WWWDIR%%/vendor/true/punycode/LICENSE
 %%WWWDIR%%/vendor/true/punycode/README.md
@@ -6232,6 +6311,8 @@
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/FloorDivBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/GreaterBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/GreaterEqualBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/HasEveryBinary.php
+%%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/HasSomeBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/InBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/LessBinary.php
 %%WWWDIR%%/vendor/twig/twig/src/Node/Expression/Binary/LessEqualBinary.php
@@ -6352,26 +6433,49 @@
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/CHANGELOG.md
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/LICENSE
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/README.md
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/_config.yml
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/composer.json
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/docs/API.md
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/docs/Drivers.md
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/docs/Usage.md
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/phpunit.xml.dist
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Archive7z.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/ArchiveEntry.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/ArchiveInformation.php
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/CamApplication.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/AddFileCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/BaseArchiveCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/BaseCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/BaseFileCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/CommentCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/CreateCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/DeleteFileCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/DetailsCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/DriversCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/ExtractArchiveCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/ExtractFileCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/ExtractFilesCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/FoldersCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/FormatCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/FormatsCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/InfoCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/ListCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/PrintCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/TableCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/TestCommand.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands/TypesCommand.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/AlchemyZippy.php
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/BasicDriver.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/Basic/BasicDriver.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/Basic/BasicExtensionDriver.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/Basic/BasicPureDriver.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/Basic/BasicUtilityDriver.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/Cab.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/Iso.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/NelexaZip.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/OneFile/Bzip.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/OneFile/Gzip.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/OneFile/Lzma.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/OneFile/OneFileDriver.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/Rar.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/SevenZip.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/SplitbrainPhpArchive.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/TarByPear.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/TarByPhar.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/Zip.php
@@ -6385,7 +6489,7 @@
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Exceptions/UnsupportedOperationException.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Formats.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/LzwStreamWrapper.php
-%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/PclzipZipInterface.php
+%%WWWDIR%%/vendor/wapmorgan/unified-archive/src/PclZipInterface.php
 %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/UnifiedArchive.php
 %%WWWDIR%%/vendor/webmozart/assert/CHANGELOG.md
 %%WWWDIR%%/vendor/webmozart/assert/LICENSE
@@ -6395,7 +6499,7 @@
 %%WWWDIR%%/vendor/webmozart/assert/src/Assert.php
 %%WWWDIR%%/vendor/webmozart/assert/src/InvalidArgumentException.php
 %%WWWDIR%%/vendor/webmozart/assert/src/Mixin.php
-%%WWWDIR%%/version/10.0.6
+%%WWWDIR%%/version/10.0.7
 @dir %%WWWDIR%%/ajax
 @dir %%WWWDIR%%/bin
 @dir %%WWWDIR%%/config
@@ -6441,9 +6545,8 @@
 @dir %%WWWDIR%%/css/lib/tabler/core/src/scss/ui/typo
 @dir %%WWWDIR%%/css/lib/tabler/core/src/scss/utils
 @dir %%WWWDIR%%/css/lib/tabler/core/src/scss/vendor
-@dir %%WWWDIR%%/css/lib/tabler/icons
-@dir %%WWWDIR%%/css/lib/tabler/icons/iconfont
-@dir %%WWWDIR%%/css/lib/tabler/icons/iconfont/fonts
+@dir %%WWWDIR%%/css/lib/tabler/icons-webfont
+@dir %%WWWDIR%%/css/lib/tabler/icons-webfont/fonts
 @dir %%WWWDIR%%/css/palettes
 @dir %%WWWDIR%%/css/palettes/previews
 @dir %%WWWDIR%%/css/standalone
@@ -6475,6 +6578,7 @@
 @dir %%WWWDIR%%/install/migrations/update_10.0.3_to_10.0.4
 @dir %%WWWDIR%%/install/migrations/update_10.0.4_to_10.0.5
 @dir %%WWWDIR%%/install/migrations/update_10.0.5_to_10.0.6
+@dir %%WWWDIR%%/install/migrations/update_10.0.6_to_10.0.7
 @dir %%WWWDIR%%/install/migrations/update_9.4.x_to_9.5.0
 @dir %%WWWDIR%%/install/migrations/update_9.5.x_to_10.0.0
 @dir %%WWWDIR%%/install/mysql
@@ -6596,6 +6700,8 @@
 @dir %%WWWDIR%%/src/Inventory/Asset
 @dir %%WWWDIR%%/src/Mail
 @dir %%WWWDIR%%/src/Mail/Protocol
+@dir %%WWWDIR%%/src/Mail/SMTP
+@dir %%WWWDIR%%/src/Mail/SMTP/OauthProvider
 @dir %%WWWDIR%%/src/Marketplace
 @dir %%WWWDIR%%/src/Marketplace/Api
 @dir %%WWWDIR%%/src/Plugin
@@ -6676,6 +6782,9 @@
 @dir %%WWWDIR%%/vendor/elvanto
 @dir %%WWWDIR%%/vendor/elvanto/litemoji
 @dir %%WWWDIR%%/vendor/elvanto/litemoji/src
+@dir %%WWWDIR%%/vendor/firebase
+@dir %%WWWDIR%%/vendor/firebase/php-jwt
+@dir %%WWWDIR%%/vendor/firebase/php-jwt/src
 @dir %%WWWDIR%%/vendor/glpi-project
 @dir %%WWWDIR%%/vendor/glpi-project/inventory_format
 @dir %%WWWDIR%%/vendor/glpi-project/inventory_format/bin
@@ -6767,6 +6876,19 @@
 @dir %%WWWDIR%%/vendor/league
 @dir %%WWWDIR%%/vendor/league/csv
 @dir %%WWWDIR%%/vendor/league/csv/src
+@dir %%WWWDIR%%/vendor/league/oauth2-client
+@dir %%WWWDIR%%/vendor/league/oauth2-client/src
+@dir %%WWWDIR%%/vendor/league/oauth2-client/src/Grant
+@dir %%WWWDIR%%/vendor/league/oauth2-client/src/Grant/Exception
+@dir %%WWWDIR%%/vendor/league/oauth2-client/src/OptionProvider
+@dir %%WWWDIR%%/vendor/league/oauth2-client/src/Provider
+@dir %%WWWDIR%%/vendor/league/oauth2-client/src/Provider/Exception
+@dir %%WWWDIR%%/vendor/league/oauth2-client/src/Token
+@dir %%WWWDIR%%/vendor/league/oauth2-client/src/Tool
+@dir %%WWWDIR%%/vendor/league/oauth2-google
+@dir %%WWWDIR%%/vendor/league/oauth2-google/src
+@dir %%WWWDIR%%/vendor/league/oauth2-google/src/Exception
+@dir %%WWWDIR%%/vendor/league/oauth2-google/src/Provider
 @dir %%WWWDIR%%/vendor/mexitek
 @dir %%WWWDIR%%/vendor/mexitek/phpcolors
 @dir %%WWWDIR%%/vendor/mexitek/phpcolors/src
@@ -7097,6 +7219,12 @@
 @dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/fonts/freefont-20120503
 @dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/include
 @dir %%WWWDIR%%/vendor/tecnickcom/tcpdf/include/barcodes
+@dir %%WWWDIR%%/vendor/thenetworg
+@dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure
+@dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/src
+@dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Grant
+@dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Provider
+@dir %%WWWDIR%%/vendor/thenetworg/oauth2-azure/src/Token
 @dir %%WWWDIR%%/vendor/true
 @dir %%WWWDIR%%/vendor/true/punycode
 @dir %%WWWDIR%%/vendor/true/punycode/src
@@ -7129,7 +7257,9 @@
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/docs
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Commands
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers
+@dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/Basic
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Drivers/OneFile
 @dir %%WWWDIR%%/vendor/wapmorgan/unified-archive/src/Exceptions
 @dir %%WWWDIR%%/vendor/webmozart
