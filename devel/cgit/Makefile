@@ -2,8 +2,7 @@ PORTNAME=	cgit
 PORTVERSION=	1.2.3
 CATEGORIES=	devel www
 MASTER_SITES=	http://git.zx2c4.com/cgit/snapshot/:cgit \
-		${MASTER_SITES_KERNEL_ORG}:git
-MASTER_SITE_SUBDIR=	software/scm/git:git
+		KERNEL_ORG/software/scm/git:git
 DISTFILES=	cgit-${PORTVERSION}${EXTRACT_SUFX}:cgit \
 		git-${GIT_VERSION}${EXTRACT_SUFX}:git
 
