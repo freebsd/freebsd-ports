@@ -1,6 +1,6 @@
---- src/md3view.cpp.orig	2007-09-02 15:56:32.000000000 +0200
-+++ src/md3view.cpp	2007-09-02 16:00:35.000000000 +0200
-@@ -72,7 +72,7 @@
+--- src/md3view.cpp.orig	2006-04-18 22:26:16 UTC
++++ src/md3view.cpp
+@@ -72,7 +72,7 @@ void quit( int returnCode )
  	exit( returnCode );
  }
  
@@ -9,7 +9,7 @@
  // function to reset our viewport after a window resize
  int resizeWindow( int width, int height )
  {
-@@ -108,7 +108,7 @@
+@@ -108,7 +108,7 @@ int resizeWindow( int width, int height )
  
  
  // general OpenGL initialization function

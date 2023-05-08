@@ -1,5 +1,5 @@
---- src/fontloader.h.orig	2013-12-13 10:49:49.000000000 +0100
-+++ src/fontloader.h	2013-12-13 10:50:39.000000000 +0100
+--- src/fontloader.h.orig	2006-12-19 04:00:01 UTC
++++ src/fontloader.h
 @@ -12,11 +12,9 @@
  //FreeType Headers
  #include <ft2build.h>
