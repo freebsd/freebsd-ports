@@ -1,1 +1,1 @@
-*/5	*	*	*	*	_tuptime	(grep '^tuptime_enable="YES"' /etc/rc.conf) && /usr/local/bin/tuptime -q
+*/5	*	*	*	*	_tuptime	(/usr/sbin/service tuptime enabled) && /usr/local/bin/tuptime -q
