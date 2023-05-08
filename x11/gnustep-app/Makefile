@@ -1,6 +1,6 @@
 PORTNAME=	gnustep-app
 PORTVERSION=	2.0.0
-PORTREVISION=	18
+PORTREVISION=	19
 CATEGORIES=	x11 gnustep
 
 MAINTAINER=	ports@FreeBSD.org
@@ -16,7 +16,6 @@ RUN_DEPENDS=	aclock>0:x11-clocks/aclock \
 		appwrapper>0:deskutils/appwrapper \
 		batmon>0:sysutils/batmon \
 		biococoa>0:biology/biococoa \
-		camera>0:graphics/camera \
 		camerakit>0:graphics/camerakit \
 		cartotheque>0:deskutils/cartotheque \
 		cddb-bundle>0:audio/cddb-bundle \
