@@ -9,6 +9,9 @@ WWW=		https://github.com/pete-gordon/hivelytracker
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Abandoned upstream, use audio/ocp instead
+EXPIRATION_DATE=	2023-06-09
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	pete-gordon
 GH_PROJECT=	hivelytracker
