@@ -1,6 +1,5 @@
 PORTNAME=	remmina
-DISTVERSION=	1.4.29
-PORTREVISION=	3
+DISTVERSION=	1.4.30
 CATEGORIES=	net gnome
 
 MAINTAINER=	fernape@FreeBSD.org
@@ -27,7 +26,7 @@ USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pat
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_COMMIT=	fb19eb5f11f206ffb442a9e0c519cb0f2cb3fd8b
+GL_COMMIT=	61ea9b6681104cadf0a3f8c25bd3e5685ee6691a
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 
