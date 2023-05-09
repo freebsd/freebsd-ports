@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_power_monitor.h.orig	2023-01-24 16:58:16 UTC
+--- electron/shell/browser/api/electron_api_power_monitor.h.orig	2023-05-03 13:27:52 UTC
 +++ electron/shell/browser/api/electron_api_power_monitor.h
-@@ -39,7 +39,7 @@ class PowerMonitor : public gin::Wrappable<PowerMonito
+@@ -40,7 +40,7 @@ class PowerMonitor : public gin::Wrappable<PowerMonito
    explicit PowerMonitor(v8::Isolate* isolate);
    ~PowerMonitor() override;
  

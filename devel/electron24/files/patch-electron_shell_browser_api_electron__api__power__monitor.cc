@@ -1,7 +1,7 @@
---- electron/shell/browser/api/electron_api_power_monitor.cc.orig	2023-01-24 16:58:16 UTC
+--- electron/shell/browser/api/electron_api_power_monitor.cc.orig	2023-05-03 13:27:52 UTC
 +++ electron/shell/browser/api/electron_api_power_monitor.cc
-@@ -77,6 +77,11 @@ void PowerMonitor::OnResume() {
-   Emit("resume");
+@@ -118,6 +118,11 @@ void PowerMonitor::OnSpeedLimitChange(int speed_limit)
+       gin::DataObjectBuilder(isolate).Set("limit", speed_limit).Build());
  }
  
 +#if BUILDFLAG(IS_BSD)
@@ -12,7 +12,7 @@
  #if BUILDFLAG(IS_LINUX)
  void PowerMonitor::SetListeningForShutdown(bool is_listening) {
    if (is_listening) {
-@@ -103,7 +108,7 @@ gin::ObjectTemplateBuilder PowerMonitor::GetObjectTemp
+@@ -144,7 +149,7 @@ gin::ObjectTemplateBuilder PowerMonitor::GetObjectTemp
    auto builder =
        gin_helper::EventEmitterMixin<PowerMonitor>::GetObjectTemplateBuilder(
            isolate);
