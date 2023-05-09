@@ -165,6 +165,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/bgfx/effects/misc/deposterize-pass1.json
 %%DATADIR%%/bgfx/effects/misc/lut.json
 %%DATADIR%%/bgfx/effects/misc/saturation.json
+%%DATADIR%%/bgfx/effects/misc/texconv_argb32.json
 %%DATADIR%%/bgfx/effects/misc/texconv_palette16.json
 %%DATADIR%%/bgfx/effects/misc/texconv_rgb32.json
 %%DATADIR%%/bgfx/effects/misc/texconv_yuy16.json
@@ -297,6 +298,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/bgfx/shaders/dx11/chains/misc/vs_deposterize-pass0.bin
 %%DATADIR%%/bgfx/shaders/dx11/chains/misc/vs_deposterize-pass1.bin
 %%DATADIR%%/bgfx/shaders/dx11/chains/misc/vs_lut.bin
+%%DATADIR%%/bgfx/shaders/dx11/chains/misc/vs_resize_blit.bin
 %%DATADIR%%/bgfx/shaders/dx11/chains/misc/vs_saturation.bin
 %%DATADIR%%/bgfx/shaders/dx11/chains/pillarbox_left_horizontal/fs_gaussian.bin
 %%DATADIR%%/bgfx/shaders/dx11/chains/pillarbox_left_horizontal/fs_offset_sat.bin
@@ -483,6 +485,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/bgfx/shaders/dx9/chains/misc/vs_deposterize-pass0.bin
 %%DATADIR%%/bgfx/shaders/dx9/chains/misc/vs_deposterize-pass1.bin
 %%DATADIR%%/bgfx/shaders/dx9/chains/misc/vs_lut.bin
+%%DATADIR%%/bgfx/shaders/dx9/chains/misc/vs_resize_blit.bin
 %%DATADIR%%/bgfx/shaders/dx9/chains/misc/vs_saturation.bin
 %%DATADIR%%/bgfx/shaders/dx9/chains/pillarbox_left_horizontal/fs_gaussian.bin
 %%DATADIR%%/bgfx/shaders/dx9/chains/pillarbox_left_horizontal/fs_offset_sat.bin
@@ -669,6 +672,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/bgfx/shaders/essl/chains/misc/vs_deposterize-pass0.bin
 %%DATADIR%%/bgfx/shaders/essl/chains/misc/vs_deposterize-pass1.bin
 %%DATADIR%%/bgfx/shaders/essl/chains/misc/vs_lut.bin
+%%DATADIR%%/bgfx/shaders/essl/chains/misc/vs_resize_blit.bin
 %%DATADIR%%/bgfx/shaders/essl/chains/misc/vs_saturation.bin
 %%DATADIR%%/bgfx/shaders/essl/chains/pillarbox_left_horizontal/fs_gaussian.bin
 %%DATADIR%%/bgfx/shaders/essl/chains/pillarbox_left_horizontal/fs_offset_sat.bin
@@ -855,6 +859,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/bgfx/shaders/glsl/chains/misc/vs_deposterize-pass0.bin
 %%DATADIR%%/bgfx/shaders/glsl/chains/misc/vs_deposterize-pass1.bin
 %%DATADIR%%/bgfx/shaders/glsl/chains/misc/vs_lut.bin
+%%DATADIR%%/bgfx/shaders/glsl/chains/misc/vs_resize_blit.bin
 %%DATADIR%%/bgfx/shaders/glsl/chains/misc/vs_saturation.bin
 %%DATADIR%%/bgfx/shaders/glsl/chains/pillarbox_left_horizontal/fs_gaussian.bin
 %%DATADIR%%/bgfx/shaders/glsl/chains/pillarbox_left_horizontal/fs_offset_sat.bin
@@ -1041,6 +1046,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/bgfx/shaders/metal/chains/misc/vs_deposterize-pass0.bin
 %%DATADIR%%/bgfx/shaders/metal/chains/misc/vs_deposterize-pass1.bin
 %%DATADIR%%/bgfx/shaders/metal/chains/misc/vs_lut.bin
+%%DATADIR%%/bgfx/shaders/metal/chains/misc/vs_resize_blit.bin
 %%DATADIR%%/bgfx/shaders/metal/chains/misc/vs_saturation.bin
 %%DATADIR%%/bgfx/shaders/metal/chains/pillarbox_left_horizontal/fs_gaussian.bin
 %%DATADIR%%/bgfx/shaders/metal/chains/pillarbox_left_horizontal/fs_offset_sat.bin
@@ -1227,6 +1233,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/bgfx/shaders/spirv/chains/misc/vs_deposterize-pass0.bin
 %%DATADIR%%/bgfx/shaders/spirv/chains/misc/vs_deposterize-pass1.bin
 %%DATADIR%%/bgfx/shaders/spirv/chains/misc/vs_lut.bin
+%%DATADIR%%/bgfx/shaders/spirv/chains/misc/vs_resize_blit.bin
 %%DATADIR%%/bgfx/shaders/spirv/chains/misc/vs_saturation.bin
 %%DATADIR%%/bgfx/shaders/spirv/chains/pillarbox_left_horizontal/fs_gaussian.bin
 %%DATADIR%%/bgfx/shaders/spirv/chains/pillarbox_left_horizontal/fs_offset_sat.bin
@@ -1360,11 +1367,14 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/a800_cass.xml
 %%DATADIR%%/hash/a800_flop.xml
 %%DATADIR%%/hash/abc1600_flop.xml
-%%DATADIR%%/hash/abc800.xml
 %%DATADIR%%/hash/abc800_hdd.xml
-%%DATADIR%%/hash/abc806.xml
+%%DATADIR%%/hash/abc806_flop.xml
 %%DATADIR%%/hash/abc80_cass.xml
 %%DATADIR%%/hash/abc80_flop.xml
+%%DATADIR%%/hash/abc80_rom.xml
+%%DATADIR%%/hash/abc830_flop.xml
+%%DATADIR%%/hash/abc832_flop.xml
+%%DATADIR%%/hash/abc838_flop.xml
 %%DATADIR%%/hash/acrnsys_flop.xml
 %%DATADIR%%/hash/acrnsys_rom.xml
 %%DATADIR%%/hash/adam_cart.xml
@@ -1446,6 +1456,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/bbcmc_flop.xml
 %%DATADIR%%/hash/bdesignm_design_cart.xml
 %%DATADIR%%/hash/bdesignm_game_cart.xml
+%%DATADIR%%/hash/bingobear.xml
 %%DATADIR%%/hash/bk0010.xml
 %%DATADIR%%/hash/bkrankp_cart.xml
 %%DATADIR%%/hash/bml3_flop.xml
@@ -1480,6 +1491,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/cgenie_cass.xml
 %%DATADIR%%/hash/cgenie_flop_rom.xml
 %%DATADIR%%/hash/channelf.xml
+%%DATADIR%%/hash/chessking_cart.xml
 %%DATADIR%%/hash/chessmstdm.xml
 %%DATADIR%%/hash/chip8_quik.xml
 %%DATADIR%%/hash/clickstart_cart.xml
@@ -1490,8 +1502,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/compclr2_flop.xml
 %%DATADIR%%/hash/compis.xml
 %%DATADIR%%/hash/comx35_flop.xml
-%%DATADIR%%/hash/conchess_plymate.xml
-%%DATADIR%%/hash/conchess_standard.xml
+%%DATADIR%%/hash/conchess.xml
 %%DATADIR%%/hash/copera.xml
 %%DATADIR%%/hash/cpc_cass.xml
 %%DATADIR%%/hash/cpc_flop.xml
@@ -1592,7 +1603,8 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/horizon.xml
 %%DATADIR%%/hash/hp85_rom.xml
 %%DATADIR%%/hash/hp86_rom.xml
-%%DATADIR%%/hash/hp9825b_rom.xml
+%%DATADIR%%/hash/hp9825_rom.xml
+%%DATADIR%%/hash/hp9831_rom.xml
 %%DATADIR%%/hash/hp9835a_rom.xml
 %%DATADIR%%/hash/hp9845a_rom.xml
 %%DATADIR%%/hash/hp9845b_rom.xml
@@ -1705,6 +1717,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/mikrosha_cass.xml
 %%DATADIR%%/hash/mindset_flop.xml
 %%DATADIR%%/hash/misterx.xml
+%%DATADIR%%/hash/mk14_quik.xml
 %%DATADIR%%/hash/mm1_flop.xml
 %%DATADIR%%/hash/mo5_cart.xml
 %%DATADIR%%/hash/mo5_cass.xml
@@ -1714,9 +1727,11 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/mo6_flop.xml
 %%DATADIR%%/hash/mobigo_cart.xml
 %%DATADIR%%/hash/monon_color.xml
+%%DATADIR%%/hash/mpf1_rom.xml
 %%DATADIR%%/hash/mpu1000.xml
 %%DATADIR%%/hash/mpz80.xml
 %%DATADIR%%/hash/msx.hsi
+%%DATADIR%%/hash/msx1_bee_card.xml
 %%DATADIR%%/hash/msx1_cart.xml
 %%DATADIR%%/hash/msx1_cass.xml
 %%DATADIR%%/hash/msx1_flop.xml
@@ -1726,6 +1741,8 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/msx2_cass.xml
 %%DATADIR%%/hash/msx2_flop.xml
 %%DATADIR%%/hash/msx2p_flop.xml
+%%DATADIR%%/hash/msx_softcard.xml
+%%DATADIR%%/hash/msx_yamaha_minicart.xml
 %%DATADIR%%/hash/msxr_flop.xml
 %%DATADIR%%/hash/mt65_cass.xml
 %%DATADIR%%/hash/mt65_rom.xml
@@ -1768,6 +1785,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/octopus.xml
 %%DATADIR%%/hash/ondra.xml
 %%DATADIR%%/hash/orao.xml
+%%DATADIR%%/hash/oric1_cass.xml
 %%DATADIR%%/hash/orion_cart.xml
 %%DATADIR%%/hash/orion_cass.xml
 %%DATADIR%%/hash/orion_flop.xml
@@ -1805,6 +1823,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/pcw.xml
 %%DATADIR%%/hash/pcw16.xml
 %%DATADIR%%/hash/pcx_flop.xml
+%%DATADIR%%/hash/pda600.xml
 %%DATADIR%%/hash/pdp1_ptp.xml
 %%DATADIR%%/hash/pecom_cass.xml
 %%DATADIR%%/hash/pegasus_cart.xml
@@ -1843,6 +1862,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/psi98.xml
 %%DATADIR%%/hash/psion1.xml
 %%DATADIR%%/hash/psion2.xml
+%%DATADIR%%/hash/psion_ssd.xml
 %%DATADIR%%/hash/psx.xml
 %%DATADIR%%/hash/pt68k2.xml
 %%DATADIR%%/hash/pv1000.xml
@@ -1919,6 +1939,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/spectrum_mgt_flop.xml
 %%DATADIR%%/hash/spectrum_microdrive.xml
 %%DATADIR%%/hash/spectrum_wafadrive.xml
+%%DATADIR%%/hash/sprachmg.xml
 %%DATADIR%%/hash/squale_cart.xml
 %%DATADIR%%/hash/ssem_quik.xml
 %%DATADIR%%/hash/st_cart.xml
@@ -1961,6 +1982,7 @@ man/man6/%%EMULATOR%%.6.gz
 %%DATADIR%%/hash/to8_cass.xml
 %%DATADIR%%/hash/to8_qd.xml
 %%DATADIR%%/hash/to_flop.xml
+%%DATADIR%%/hash/triton_rom.xml
 %%DATADIR%%/hash/trs80_cass.xml
 %%DATADIR%%/hash/trs80_flop.xml
 %%DATADIR%%/hash/trs80_quik.xml

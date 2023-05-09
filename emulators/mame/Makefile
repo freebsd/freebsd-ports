@@ -1,16 +1,21 @@
-PORTNAME?=	mame
-PORTVERSION=	0.250
+PORTNAME=	mame
+PORTVERSION=	0.254
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
-COMMENT?=	MAME: a multi-purpose emulation framework
-WWW?=		https://mamedev.org/
+COMMENT=	MAME: a multi-purpose emulation framework
+WWW=		https://mamedev.org/
 
-LICENSE=	BSD3CLAUSE GPLv2
+LICENSE=	BSD2CLAUSE BSD3CLAUSE CC0-1.0 GPLv2 LGPL21 MIT ZLIB
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/docs/LICENSE
+LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/docs/legal/BSD-2-Clause
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/docs/legal/BSD-3-Clause
+LICENSE_FILE_CC0-1.0=	${WRKSRC}/docs/legal/CC0
 LICENSE_FILE_GPLv2=	${WRKSRC}/docs/legal/GPL-2.0
+LICENSE_FILE_LGPL21=	${WRKSRC}/docs/legal/LGPL-2.1
+LICENSE_FILE_MIT=	${WRKSRC}/docs/legal/MIT
+LICENSE_FILE_ZLIB=	${WRKSRC}/docs/legal/Zlib
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
 ONLY_FOR_ARCHS_REASON=	not yet ported to any architecture other than armv7, x86, and powerpc*
@@ -23,10 +28,8 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libpugixml.so:textproc/pugixml
 RUN_DEPENDS=	liberation-fonts-ttf>=0:x11-fonts/liberation-fonts-ttf
 
-USES=		compiler:c++14-lang gl gmake jpeg localbase pkgconfig \
+USES=		compiler:c++14-lang gl gmake jpeg localbase lua:54 pkgconfig \
 		python:3.9,build qt:5 sdl shebangfix sqlite:3 xorg
-
-BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	mamedev
@@ -54,6 +57,7 @@ MAKE_ENV=	FULLNAME="mame" \
 		TARGET="${MTARGET}" \
 		USE_NETWORK=1
 
+BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}
 SUB_FILES=	pkg-message target.ini
 SUB_LIST=	MSUBTARGET=${MSUBTARGET} \
 		MTARGET=${MTARGET}
@@ -61,16 +65,16 @@ SUB_LIST=	MSUBTARGET=${MSUBTARGET} \
 PORTDOCS=	LICENSE html/* legal/*
 PORTEXAMPLES=	${MSUBTARGET}.ini
 
-DEBUG_MAKE_ENV=	DEBUG=1
-
 OPTIONS_DEFINE=	DEBUG DOCS EXAMPLES
 DEBUG_DESC=	Build with debug profiling and symbols
 DOCS_DESC=	Install additional MAME documentation
 EXAMPLES_DESC=	Install example ${EMULATOR}.ini configuration
 
+DEBUG_MAKE_ENV=	DEBUG=1
+
 GENIE=		${WRKSRC}/3rdparty/genie
-MSUBTARGET?=	mame
-MTARGET?=	mame
+MSUBTARGET=	mame
+MTARGET=	mame
 
 .include <bsd.port.options.mk>
 
@@ -96,63 +100,46 @@ do-build-DOCS-on:
 	@${RM} ${WRKSRC}/docs/build/html/.buildinfo
 
 do-install:
-.if ${MSUBTARGET:Mmame}
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} castool chdman floptool imgtool \
-		jedutil ldresample ldverify nltool nlwav pngcmp regrep \
-		romcmp split srcclean testkeys unidasm \
-		${STAGEDIR}${PREFIX}/bin)
-.endif
+.for PROGRAM in castool chdman floptool imgtool jedutil ldresample ldverify \
+	nltool nlwav pngcmp regrep romcmp split srcclean testkeys unidasm
+	${INSTALL_PROGRAM} ${WRKSRC}/${PROGRAM} \
+		${STAGEDIR}${PREFIX}/bin
+.endfor
 
-.for data in artwork bgfx ctrlr ini language hash plugins samples
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} ${data} ${STAGEDIR}${DATADIR})
+.for data in artwork bgfx ctrlr ini hash language plugins samples
+	(cd ${WRKSRC} && \
+		${COPYTREE_SHARE} ${data} ${STAGEDIR}${DATADIR})
 .endfor
 
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-.if ${MSUBTARGET:Mmess}
-	${INSTALL_MAN} ${WRKSRC}/docs/man/${MTARGET}.6 \
-		${STAGEDIR}${MANPREFIX}/man/man6/${EMULATOR}.6
-.else
 	${INSTALL_MAN} ${WRKSRC}/docs/man/*.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/build/man/*.1 \
 		${STAGEDIR}${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/docs/man/${EMULATOR}.6 \
 		${STAGEDIR}${MANPREFIX}/man/man6
-	${INSTALL_MAN} ${WRKSRC}/docs/LICENSE ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} legal ${STAGEDIR}${DOCSDIR})
-.endif
+	${INSTALL_MAN} ${WRKSRC}/docs/LICENSE \
+		${STAGEDIR}${DOCSDIR}
+	(cd ${WRKSRC}/docs && \
+		${COPYTREE_SHARE} legal ${STAGEDIR}${DOCSDIR})
 
 do-install-DEBUG-off:
-.if ${MSUBTARGET:Mmess}
-	${INSTALL_PROGRAM} ${WRKSRC}/${MTARGET}${MSUBTARGET} \
-		${STAGEDIR}${PREFIX}/bin/${EMULATOR}
-.else
 	${INSTALL_PROGRAM} ${WRKSRC}/${MSUBTARGET} \
 		${STAGEDIR}${PREFIX}/bin/${EMULATOR}
-.endif
 
 do-install-DEBUG-on:
-.if ${MSUBTARGET:Mmess}
-	${INSTALL_PROGRAM} ${WRKSRC}/${MTARGET}${MSUBTARGET}d \
-		${STAGEDIR}${PREFIX}/bin/${EMULATOR}
-.else
 	${INSTALL_PROGRAM} ${WRKSRC}/${MSUBTARGET}d \
 		${STAGEDIR}${PREFIX}/bin/${EMULATOR}
-.endif
 
 post-build:
-.if ${MSUBTARGET:Mmame}
 	cd ${WRKSRC}/docs && ${SETENV} ${MAKE_ENV} \
 		${MAKE_CMD} ${MAKE_ARGS} man \
 		SPHINXBUILD=sphinx-build-${PYTHON_VER}
-.endif
 
 post-install-DOCS-on:
-.if ${MSUBTARGET:Mmame}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	(cd ${WRKSRC}/docs/build && ${COPYTREE_SHARE} html \
-		${STAGEDIR}${DOCSDIR})
-.endif
+	(cd ${WRKSRC}/docs/build && \
+		${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
@@ -162,7 +149,8 @@ post-install-EXAMPLES-on:
 post-patch:
 	@${RM} ${WRKSRC}/3rdparty/bx/include/compat/freebsd/dirent.h
 	@${RM} ${WRKSRC}/3rdparty/bx/include/compat/freebsd/signal.h
-	@${MV} ${GENIE}/build/gmake.freebsd ${GENIE}/build/gmake.bsd
+	@${MV} ${GENIE}/build/gmake.freebsd \
+		${GENIE}/build/gmake.bsd
 	@${REINPLACE_CMD} -e \
 		's|^\(AR \)|#\1| ; \
 		 s|^\(CC \)|#\1| ; \
@@ -179,10 +167,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|= \"gcc|= \"cc|; s|= \"g++|= \"c++|' \
 		-e "s|'CXX =|'#CXX =|; s|'CC  =|'#CC  =|; s| .(ARCH)| |g" \
 		${GENIE}/src/host/scripts.c
-	@${GREP} -rl '"png.h"' ${WRKSRC}/src | ${XARGS} ${REINPLACE_CMD} \
-		-e 's|"png.h"|"localpng.h"|'
+	@${GREP} -rl '"png.h"' ${WRKSRC}/src | \
+		${XARGS} ${REINPLACE_CMD} -e 's|"png.h"|"localpng.h"|'
 	@${REINPLACE_CMD} -e 's|"util/png.h"|"util/localpng.h"|' \
 		${WRKSRC}/src/frontend/mame/ui/icorender.cpp
-	@${MV} ${WRKSRC}/src/lib/util/png.h ${WRKSRC}/src/lib/util/localpng.h
+	@${MV} ${WRKSRC}/src/lib/util/png.h \
+		${WRKSRC}/src/lib/util/localpng.h
 
 .include <bsd.port.mk>
