@@ -621,6 +621,9 @@ bin/plugout_drive
 bin/plugout_ijk
 bin/plugout_tt
 bin/plugout_tta
+bin/prog_list.txt
+bin/prog_list_bin.txt
+bin/prog_list_scripts.txt
 bin/prompt_popup
 bin/prompt_user
 bin/python_module_test.py
