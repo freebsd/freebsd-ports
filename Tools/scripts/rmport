@@ -473,3 +473,5 @@ while [ "${answer}" = "y" ] ; do
 done
 
 commit
+
+cleanup
