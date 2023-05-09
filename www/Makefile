@@ -1838,6 +1838,7 @@
     SUBDIR += py-wsaccel
     SUBDIR += py-wsgidav
     SUBDIR += py-xandikos
+    SUBDIR += py-xyzservices
     SUBDIR += py-yarl
     SUBDIR += pydio-cells
     SUBDIR += qdecoder
