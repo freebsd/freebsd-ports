@@ -1,7 +1,7 @@
 PORTNAME=	signal-desktop
 DISTVERSIONPREFIX=	v
 DISTVERSION=	6.15.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	LOCAL/mikael/signal-desktop/:npm \
 		LOCAL/mikael/signal-desktop/:sqlite \
@@ -51,7 +51,11 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libsnappy.so:archivers/snappy \
 		libwebp.so:graphics/webp \
 		libxkbcommon.so:x11/libxkbcommon \
-		libxshmfence.so:x11/libxshmfence
+		libxshmfence.so:x11/libxshmfence \
+		libicuuc.so:devel/icu \
+		libevent.so:devel/libevent \
+		libwayland-client.so:graphics/wayland \
+		libfreetype.so:print/freetype2
 
 USES=		desktop-file-utils gettext-runtime gl gnome jpeg xorg
 USE_GITHUB=	yes
