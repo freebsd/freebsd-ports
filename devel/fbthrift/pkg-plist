@@ -406,6 +406,7 @@ include/thrift/lib/cpp2/server/Cpp2ConnContext.h
 include/thrift/lib/cpp2/server/Cpp2Connection.h
 include/thrift/lib/cpp2/server/Cpp2Worker.h
 include/thrift/lib/cpp2/server/ExecutorToThreadManagerAdaptor.h
+include/thrift/lib/cpp2/server/IOUringUtil.h
 include/thrift/lib/cpp2/server/IOWorkerContext.h
 include/thrift/lib/cpp2/server/LoggingEvent.h
 include/thrift/lib/cpp2/server/LoggingEventHelper.h
@@ -479,6 +480,7 @@ include/thrift/lib/cpp2/transport/http2/common/testutil/ChannelTestFixture.h
 include/thrift/lib/cpp2/transport/http2/common/testutil/FakeProcessors.h
 include/thrift/lib/cpp2/transport/http2/common/testutil/FakeResponseHandler.h
 include/thrift/lib/cpp2/transport/http2/server/ThriftRequestHandler.h
+include/thrift/lib/cpp2/transport/rocket/FdSocketMetadata.h
 include/thrift/lib/cpp2/transport/rocket/PayloadUtils.h
 include/thrift/lib/cpp2/transport/rocket/RocketException.h
 include/thrift/lib/cpp2/transport/rocket/Types.h
