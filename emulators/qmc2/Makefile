@@ -1,20 +1,19 @@
 PORTNAME=	qmc2
 PORTVERSION=	0.243
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
 COMMENT=	Qt based UNIX MAME frontend
-WWW=		https://qmc2.batcom-it.net/
+WWW=		https://github.com/qmc2/qmc2-mame-fe
 
 LICENSE=	GPLv2+
 
 BUILD_DEPENDS=	bash>0:shells/bash \
 		gawk>0:lang/gawk
 RUN_DEPENDS=	libglvnd>0:graphics/libglvnd \
-		mame>=0.250:emulators/mame \
-		mess>=0.250:emulators/mess
+		mame>=0.250:emulators/mame
 
 USES=		compiler:c++11-lang desktop-file-utils gmake gl qt:5 sdl \
 		shebangfix tar:bzip2 xorg
@@ -58,7 +57,7 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_DESC=	Comprehensive qmc2 documentaion
 
 DOCS_ALL_TARGET=	doc
-DOCS_PORTDOCS=	html
+DOCS_PORTDOCS=		html
 
 .include <bsd.port.options.mk>
 
@@ -71,17 +70,20 @@ post-patch:
 		${WRKSRC}/inst/*.template
 
 do-install:
-	(cd ${WRKSRC} && ${INSTALL_PROGRAM} qmc2-sdlmame \
+	(cd ${WRKSRC} && \
+		${INSTALL_PROGRAM} qmc2-sdlmame \
 		${STAGEDIR}${PREFIX}/bin/qmc2-mame)
-	(cd ${WRKSRC}/src/arcade && ${INSTALL_PROGRAM} qmc2-arcade \
+	(cd ${WRKSRC}/src/arcade && \
+		${INSTALL_PROGRAM} qmc2-arcade \
 		${STAGEDIR}${PREFIX}/bin)
-	(cd ${WRKSRC}/src/tools/qchdman && ${INSTALL_PROGRAM} qchdman \
+	(cd ${WRKSRC}/src/tools/qchdman && \
+		${INSTALL_PROGRAM} qchdman \
 		${STAGEDIR}${PREFIX}/bin)
 
 	@${MKDIR} ${STAGEDIR}${DATADIR}
 .for data in img lng opt
-	(cd ${WRKSRC}/data && ${COPYTREE_SHARE} ${data} \
-		${STAGEDIR}${DATADIR})
+	(cd ${WRKSRC}/data && \
+		${COPYTREE_SHARE} ${data} ${STAGEDIR}${DATADIR})
 .endfor
 
 	${INSTALL_MAN} ${WRKSRC}/data/doc/man/qchdman.6.gz \
@@ -92,17 +94,19 @@ do-install:
 		${STAGEDIR}${MANPREFIX}/man/man6/qmc2-mame.6.gz
 
 .for dsktop_entry in qchdman.desktop qmc2-arcade.desktop qmc2.desktop
-	(cd ${WRKSRC}/inst && ${INSTALL_DATA} ${dsktop_entry}.template \
+	(cd ${WRKSRC}/inst && \
+		${INSTALL_DATA} ${dsktop_entry}.template \
 		${STAGEDIR}${LOCALBASE}/share/applications/${dsktop_entry})
 .endfor
 
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
-	(cd ${WRKSRC}/inst && ${INSTALL_DATA} qmc2.ini.template \
+	(cd ${WRKSRC}/inst && \
+		${INSTALL_DATA} qmc2.ini.template \
 		${STAGEDIR}${ETCDIR}/qmc2.ini.sample)
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@(cd ${WRKSRC}/data/doc && ${COPYTREE_SHARE} html \
-		${STAGEDIR}${DOCSDIR})
+	@(cd ${WRKSRC}/data/doc && \
+		${COPYTREE_SHARE} html ${STAGEDIR}${DOCSDIR})
 
 .include <bsd.port.mk>
