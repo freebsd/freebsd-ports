@@ -38,6 +38,12 @@ DESKTOP_ENTRIES="HyperRogue" \
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc
+USE_GCC=	yes
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/hyperrogue ${STAGEDIR}${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKSRC}/hr-icon.ico ${STAGEDIR}${PREFIX}/share/pixmaps/${PORTNAME}.ico
