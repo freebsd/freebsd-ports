@@ -4,7 +4,8 @@ PORTREVISION=	4
 CATEGORIES=	x11
 
 PATCH_SITES=	https://github.com/PonasKovas/rlaunch/commit/
-PATCHFILES=	2f73499553d4a14840ed4e092a0c93fe1e928c64.patch:-p1
+PATCHFILES=	2f73499553d4a14840ed4e092a0c93fe1e928c64.patch:-p1 \
+		8e3d22fa4e536cce10b02366b0ba9b47c9b00b81.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Fast, light-weight and modern application launcher for X11
