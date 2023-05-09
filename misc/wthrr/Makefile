@@ -1,6 +1,6 @@
 PORTNAME=	wthrr
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.2
+DISTVERSION=	1.1.1
 CATEGORIES=	misc
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -18,36 +18,36 @@ GH_PROJECT=	${PORTNAME}-the-weathercrab
 CARGO_CRATES=	aho-corasick-1.0.1 \
 		android_system_properties-0.1.5 \
 		anstyle-1.0.0 \
-		anyhow-1.0.70 \
+		anyhow-1.0.71 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		base64-0.13.1 \
 		base64-0.21.0 \
 		bitflags-1.3.2 \
-		bumpalo-3.12.0 \
+		bumpalo-3.12.1 \
 		bytes-1.4.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.24 \
-		clap-4.2.4 \
-		clap_builder-4.2.4 \
+		clap-4.2.7 \
+		clap_builder-4.2.7 \
 		clap_derive-4.2.0 \
 		clap_lex-0.4.1 \
 		codespan-reporting-0.11.1 \
 		colored-2.0.0 \
 		console-0.15.5 \
 		core-foundation-0.9.3 \
-		core-foundation-sys-0.8.3 \
+		core-foundation-sys-0.8.4 \
 		cxx-1.0.94 \
 		cxx-build-1.0.94 \
 		cxxbridge-flags-1.0.94 \
 		cxxbridge-macro-1.0.94 \
 		dialoguer-0.10.4 \
-		directories-5.0.0 \
-		dirs-sys-0.4.0 \
+		directories-5.0.1 \
+		dirs-sys-0.4.1 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.32 \
-		errno-0.2.8 \
+		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		fastrand-1.9.0 \
 		fnv-1.0.7 \
@@ -63,8 +63,8 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		futures-sink-0.3.28 \
 		futures-task-0.3.28 \
 		futures-util-0.3.28 \
-		getrandom-0.2.8 \
-		h2-0.3.17 \
+		getrandom-0.2.9 \
+		h2-0.3.18 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
@@ -74,21 +74,21 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
-		hyper-0.14.25 \
+		hyper-0.14.26 \
 		hyper-tls-0.5.0 \
-		iana-time-zone-0.1.54 \
+		iana-time-zone-0.1.56 \
 		iana-time-zone-haiku-0.1.1 \
 		idna-0.3.0 \
 		indexmap-1.9.3 \
 		instant-0.1.12 \
-		io-lifetimes-1.0.9 \
-		ipnet-2.7.1 \
+		io-lifetimes-1.0.10 \
+		ipnet-2.7.2 \
 		itoa-1.0.6 \
 		js-sys-0.3.61 \
 		lazy_static-1.4.0 \
-		libc-0.2.140 \
+		libc-0.2.143 \
 		link-cplusplus-1.0.8 \
-		linux-raw-sys-0.1.4 \
+		linux-raw-sys-0.3.7 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		mime-0.3.17 \
@@ -98,27 +98,29 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
 		once_cell-1.17.1 \
-		openssl-0.10.48 \
-		openssl-macros-0.1.0 \
+		openssl-0.10.52 \
+		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.83 \
+		openssl-sys-0.9.87 \
+		option-ext-0.2.0 \
 		optional_struct-0.3.1 \
 		optional_struct_internal-0.3.1 \
 		optional_struct_macro_impl-0.3.1 \
 		percent-encoding-2.2.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.26 \
-		proc-macro2-1.0.54 \
+		pkg-config-0.3.27 \
+		proc-macro2-1.0.56 \
 		pure-rust-locales-0.5.6 \
 		quote-1.0.26 \
 		redox_syscall-0.2.16 \
+		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
 		regex-1.8.1 \
 		regex-syntax-0.7.1 \
-		reqwest-0.11.16 \
+		reqwest-0.11.17 \
 		ron-0.8.0 \
-		rustix-0.36.11 \
+		rustix-0.37.19 \
 		rustversion-1.0.12 \
 		ryu-1.0.13 \
 		schannel-0.1.21 \
@@ -126,8 +128,8 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		scratch-1.0.5 \
 		security-framework-2.8.2 \
 		security-framework-sys-2.8.0 \
-		serde-1.0.160 \
-		serde_derive-1.0.160 \
+		serde-1.0.162 \
+		serde_derive-1.0.162 \
 		serde_json-1.0.96 \
 		serde_urlencoded-0.7.1 \
 		shell-words-1.1.0 \
@@ -137,17 +139,17 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		strum-0.24.1 \
 		strum_macros-0.24.3 \
 		syn-1.0.109 \
-		syn-2.0.10 \
-		tempfile-3.4.0 \
+		syn-2.0.15 \
+		tempfile-3.5.0 \
 		termcolor-1.2.0 \
 		thiserror-1.0.40 \
 		thiserror-impl-1.0.40 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.27.0 \
-		tokio-macros-2.0.0 \
+		tokio-1.28.0 \
+		tokio-macros-2.1.0 \
 		tokio-native-tls-0.3.1 \
-		tokio-util-0.7.7 \
+		tokio-util-0.7.8 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-core-0.1.30 \
@@ -171,17 +173,26 @@ CARGO_CRATES=	aho-corasick-1.0.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-0.46.0 \
+		windows-0.48.0 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
+		windows-targets-0.48.0 \
 		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
 		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
 		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
 		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
 		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
 		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
 		winreg-0.10.1
 
 MAKE_ENV=	OPENSSL_DIR=${OPENSSLDIR}
