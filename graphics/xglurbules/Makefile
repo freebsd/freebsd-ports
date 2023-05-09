@@ -1,10 +1,10 @@
 PORTNAME=	xglurbules
 PORTVERSION=	3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://stephenroome.com/xglurbules/
 
-MAINTAINER=	steve@pepcross.com
+MAINTAINER=	steve.roome@gmail.com
 COMMENT=	Burning particle system eye candy program thingy for X11
 WWW=		http://stephenroome.com/xglurbules/
 
