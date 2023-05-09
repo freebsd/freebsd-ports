@@ -1,0 +1,2 @@
+PostgreSQL Audit Extension (pgAudit) provides detailed session and/or
+object audit logging via the standard PostgreSQL logging facility.
