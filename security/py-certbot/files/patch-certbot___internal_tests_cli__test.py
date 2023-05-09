@@ -1,7 +1,5 @@
-# See files/patch-certbot-compat-misc.py
-
---- tests/cli_test.py.orig	2023-03-07 21:17:25 UTC
-+++ tests/cli_test.py
+--- certbot/_internal/tests/cli_test.py.orig	2023-04-04 15:06:41 UTC
++++ certbot/_internal/tests/cli_test.py
 @@ -1,6 +1,7 @@
  """Tests for certbot._internal.cli."""
  import argparse
