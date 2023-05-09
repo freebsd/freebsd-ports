@@ -15,7 +15,8 @@ rcvar=tlsc_enable
 load_rc_config ${name}
 
 : ${tlsc_enable:=NO}
-: ${tlsc_user:=nobody}
+: ${tlsc_user:=tlsc}
+: ${tlsc_group:=tlsc}
 
 start_precmd=tlsc_prestart
 command="%%PREFIX%%/bin/tlsc"
@@ -37,7 +38,8 @@ tlsc_prestart()
 	# tlsc handles user and group itself
 	unset _user
 	unset _group
-	install -d -m 755 -o ${tlsc_user:-root} $(dirname ${pidfile})
+	install -d -m 755 -g ${tlsc_group} -o ${tlsc_user} \
+		$(dirname ${pidfile})
 
 	return 0
 }
