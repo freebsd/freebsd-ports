@@ -6,7 +6,7 @@ reference T101. Technically identical to IEEE Std 1003.1-2017 and ISO/IEC
 It is simultaneously The Open Group Base Specifications Issue 7.
 
 POSIX.1-2017 defines a standard operating system interface and environment,
-including a command interpreter (or “shell”), and common utility programs to
+including a command interpreter (or "shell"), and common utility programs to
 support applications portability at the source code level. POSIX.1-2017 is
 intended to be used by both application developers and system implementors.
 

@@ -3,9 +3,9 @@ It allows the hypervisor host to perform various operations in the guest,
 such as:
 
 * get information from the guest
-* set the guest’s system time
+* set the guest's system time
 * read/write a file
 * sync and freeze the filesystems
 * suspend the guest
 * reconfigure guest local processors
-* set user’s password
+* set user's password

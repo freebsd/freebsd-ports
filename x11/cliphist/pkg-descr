@@ -6,6 +6,6 @@ cliphist is clipboard history "manager" for wayland
 - clipboard is preserved byte-for-byte
   - leading / trailing whitespace / no whitespace or newlines are
     preserved
-  - won’t break fancy editor selections like vim wordwise, linewise,
+  - won't break fancy editor selections like vim wordwise, linewise,
     block mode
 - no concept of a picker, only pipes

@@ -3,7 +3,7 @@ This package provides Extensions for using Rich with the Django framework.
 These extensions consist of the following subclasses:
 
 * django_rich.management.RichCommand:
-  Subclass of Django’s BaseCommand class that sets its self.console to a
+  Subclass of Django's BaseCommand class that sets its self.console to a
   Rich Console.
 
 * django_rich.test.RichRunner:
