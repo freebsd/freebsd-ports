@@ -16,4 +16,10 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	libfann
 GH_TAGNAME=	8409b42
 
+.if !exists(/usr/include/omp.h)
+PLIST_SUB=	OPENMP="@comment "
+.else
+PLIST_SUB=	OPENMP=""
+.endif
+
 .include <bsd.port.mk>

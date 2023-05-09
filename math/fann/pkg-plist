@@ -12,8 +12,8 @@ include/fann_train.h
 include/fann_training_data_cpp.h
 include/fixedfann.h
 include/floatfann.h
-include/parallel_fann.h
-include/parallel_fann.hpp
+%%OPENMP%%include/parallel_fann.h
+%%OPENMP%%include/parallel_fann.hpp
 lib/cmake/fann/fann-config.cmake
 lib/cmake/fann/fann-use.cmake
 lib/libdoublefann.a
