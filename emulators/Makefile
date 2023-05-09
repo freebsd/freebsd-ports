@@ -134,6 +134,7 @@
     SUBDIR += stella
     SUBDIR += stonx
     SUBDIR += teo
+    SUBDIR += tic-80
     SUBDIR += tiemu3
     SUBDIR += tilem
     SUBDIR += tme
