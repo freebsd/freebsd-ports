@@ -1,7 +1,6 @@
 PORTNAME=	svls
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.8
-PORTREVISION=	1
+DISTVERSION=	0.2.9
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +16,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dalance
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
-		anyhow-1.0.70 \
+		anyhow-1.0.71 \
 		async-trait-0.1.53 \
 		atty-0.2.14 \
 		auto_impl-1.0.1 \
@@ -53,7 +52,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		itoa-1.0.1 \
 		lazy_static-1.4.0 \
 		libc-0.2.125 \
-		libloading-0.7.3 \
+		libloading-0.8.0 \
 		lock_api-0.4.7 \
 		log-0.4.17 \
 		lsp-types-0.94.0 \
@@ -89,8 +88,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		ryu-1.0.9 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.158 \
-		serde_derive-1.0.158 \
+		serde-1.0.162 \
+		serde_derive-1.0.162 \
 		serde_json-1.0.81 \
 		serde_regex-1.1.0 \
 		serde_repr-0.1.8 \
@@ -106,7 +105,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		sv-parser-parser-0.13.1 \
 		sv-parser-pp-0.13.1 \
 		sv-parser-syntaxtree-0.13.1 \
-		svlint-0.7.1 \
+		svlint-0.7.2 \
 		syn-1.0.104 \
 		syn-2.0.7 \
 		term-0.7.0 \
@@ -121,7 +120,6 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		tokio-1.18.1 \
 		tokio-macros-1.7.0 \
 		tokio-util-0.7.1 \
-		toml-0.5.11 \
 		toml-0.7.3 \
 		toml_datetime-0.6.1 \
 		toml_edit-0.19.7 \
@@ -144,6 +142,15 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.0 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.48.0 \
 		winnow-0.3.6
 
 PLIST_FILES=	bin/${PORTNAME}
