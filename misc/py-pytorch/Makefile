@@ -1,6 +1,7 @@
 PORTNAME=	pytorch
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.0
+PORTREVISION=	1
 CATEGORIES=	misc # machine-learning
 MASTER_SITES=	https://github.com/pytorch/pytorch/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -39,6 +40,8 @@ USE_PYTHON=	distutils autoplist
 
 MAKE_ENV=	USE_NINJA=no # ninja breaks for some reason
 MAKE_ENV+=	BUILD_TEST=0 # ninja breaks for some reason
+MAKE_ENV+=	USE_MKLDNN=0 # disable MKLDNN that doesn't exist, see https://github.com/pytorch/pytorch/issues/100957
+MAKE_ENV+=	USE_CUDNN=0
 LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	make=${GMAKE}
