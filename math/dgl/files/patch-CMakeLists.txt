@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2023-05-09 05:00:36 UTC
++++ CMakeLists.txt
+@@ -197,7 +197,7 @@ if(NOT MSVC)
+   include_directories(${GKLIB_PATH})
+   include_directories("third_party/METIS/include/")
+   add_subdirectory("third_party/METIS/libmetis/")
+-  list(APPEND DGL_LINKER_LIBS metis)
++  list(APPEND DGL_LINKER_LIBS dgl_metis)
+ endif(NOT MSVC)
+ 
+ # Compile LIBXSMM

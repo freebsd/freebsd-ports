@@ -268,6 +268,7 @@
     SUBDIR += cvc5
     SUBDIR += dbcsr
     SUBDIR += deal.ii
+    SUBDIR += dgl
     SUBDIR += dieharder
     SUBDIR += dihydrogen
     SUBDIR += dionysus
