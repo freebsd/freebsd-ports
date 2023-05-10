@@ -11,7 +11,7 @@ Some features found on Windows, macOS and Linux are not implemented:
 - Crash Reporter (requires Google Breakpad and reproducible builds)
 - WebVR (requires open source runtime)
 - TCP fast open
-- `about:networking` (requires link state notification)
+- `about:networking#networkid` (requires link state notification)
 
 ## Audio backend
 
