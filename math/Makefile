@@ -905,6 +905,7 @@
     SUBDIR += py-cyipopt
     SUBDIR += py-cypari2
     SUBDIR += py-deap
+    SUBDIR += py-dgl
     SUBDIR += py-dionysus
     SUBDIR += py-disjoint-set
     SUBDIR += py-docplex
