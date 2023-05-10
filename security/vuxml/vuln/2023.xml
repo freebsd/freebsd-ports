@@ -1,3 +1,31 @@
+  <vuln vid="7913fe6d-2c6e-40ba-a7d7-35696f3db2b6">
+    <topic>vscode -- Visual Studio Code Information Disclosure Vulnerability</topic>
+    <affects>
+      <package>
+	<name>vscode</name>
+	<range><lt>1.78.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>secure@microsoft.com reports:</p>
+	<blockquote cite="https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-29338">
+	  <p>Visual Studio Code Information Disclosure Vulnerability</p>
+	  <p>A information disclosure vulnerability exists in VS Code 1.78.0 and earlier versions on Windows when file system operations are performed on malicious UNC paths. Examples include reading or resolving metadata of such paths. An authorised attacker must send the user a malicious file and convince the user to open it for the vulnerability to occur. Exploiting this vulnerability could allow the disclosure of NTLM hashes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-29338</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-29338</url>
+      <url>https://github.com/microsoft/vscode/security/advisories/GHSA-mmfh-4pv3-39hr</url>
+    </references>
+    <dates>
+      <discovery>2023-05-09</discovery>
+      <entry>2023-05-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="68958e18-ed94-11ed-9688-b42e991fc52e">
     <topic>glpi -- multiple vulnerabilities</topic>
     <affects>
