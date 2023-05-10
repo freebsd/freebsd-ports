@@ -12,11 +12,12 @@ LICENSE=	CC-BY-SA-3.0 GPLv2 MIT
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pkg-config:devel/pkgconf \
-		v4l_compat>=1.0.20100321:multimedia/v4l_compat
-LIB_DEPENDS=	libpango-1.0.so:x11-toolkits/pango \
-		libv4l2.so:multimedia/libv4l
+BUILD_DEPENDS=	v4l_compat>=1.0.20100321:multimedia/v4l_compat
+LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
 RUN_DEPENDS=	squeak:lang/squeak
+
+USES=		gnome pkgconfig
+USE_GNOME=	pango
 
 DESKTOP_ENTRIES=	"Scratch" \
 			"${COMMENT}" \
