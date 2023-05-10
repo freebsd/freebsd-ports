@@ -64,7 +64,7 @@ if not all hosts in a table are up and a critical if a table
 and/or redirect is totally down.
 
 Options:
- --help 
+ --help
     Print detailed this screen
  --redirect STRING
     String with name of redirect to check. Multiple redirects
@@ -74,13 +74,13 @@ Options:
     can be seperated by comma
 
 Examples:
- $0 
+ $0
 
     Checks if all redirects, tables and hosts which are
     defined at the relayd startup are active.
 
  $0 --redirect smtp --table pmtahost,pmtahostfallback
-    
+
     Checks if the specified redirects and tables exists.
     Besides there will be an alert if any other redirect
     or table defined in the checked relayd is not active.
@@ -126,10 +126,10 @@ my @execute = ($command, $parameter);
 
 # make unbuffered output
 $|=1;
-open STDERR, ">&STDOUT" or die "Can’t dup STDOUT: $!";
+open STDERR, ">&STDOUT" or die "Cannot dup STDOUT: $!";
 
 eval {
-	my @return = split(/\n/, `@execute`) 
+	my @return = split(/\n/, `@execute`)
 		or die "command returns an errorcode $?: '@execute'";
 
 	foreach ( @return ) {
@@ -149,7 +149,7 @@ eval {
 	if ( $cnt_hosts{'up'} == 0 ) {
 		print "CRITICAL: relayd does not find any hosts up\n";
 		exit(2);
-	} 
+	}
 
 	for my $red ( keys %cnt_redirects ) {
 		if ( $cnt_redirects{$red} == 0 ) {
