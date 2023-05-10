@@ -28,7 +28,7 @@ MAKE_ENV+=	FREEBSD_SRC_DIR=${SRC_BASE}
 .endif
 
 # Tests not included in the release tarball, uncomment if this changes.
-# TEST_DEPENDS=→${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+# TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 #do-test:
 #	@cd ${WRKSRC} && ${PYTHON_CMD} -m pytest -rs -v
 

@@ -20,7 +20,7 @@ EOM
 { type: upgrade
   maximum_version: 1.15.1
   message: <<EOM
-We remind users that a bug was discovered with gitea dump in 1.14.3–1.14.6
+We remind users that a bug was discovered with gitea dump in 1.14.3-1.14.6
 and 1.15.0.  Database dumps from these versions cause broken fields in the
 repo_unit and login_source tables causing the issue identified in #16961.
 Users on 1.14.x must upgrade to 1.14.7 before running gitea dump.  See the
