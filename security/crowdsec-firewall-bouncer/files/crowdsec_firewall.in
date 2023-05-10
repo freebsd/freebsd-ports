@@ -37,8 +37,7 @@ crowdsec_firewall_precmd() {
     orig_line="api_key: \${API_KEY}"
     # IF the bouncer is not configured
     if grep -q "^${orig_line}" "${crowdsec_firewall_config}"; then
-        SUFFIX=$(LC_CTYPE=C tr -dc A-Za-z0-9 </dev/urandom | head -c 8)
-        BOUNCER="cs-firewall-bouncer-${SUFFIX}"
+        BOUNCER="cs-firewall-bouncer-$(date +%s)"
         # AND crowdsec is installed..
         if command -v "$CSCLI" >/dev/null; then
             # THEN, register it to the local API
