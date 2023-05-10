@@ -543,6 +543,7 @@
     SUBDIR += xlogo
     SUBDIR += xlsatoms
     SUBDIR += xlsclients
+    SUBDIR += xlupe
     SUBDIR += xmag
     SUBDIR += xman
     SUBDIR += xmangekyou
