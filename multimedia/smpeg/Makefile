@@ -1,6 +1,6 @@
 PORTNAME=	smpeg
 PORTVERSION=	0.4.4
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	multimedia
 MASTER_SITES=	GENTOO
 
@@ -17,7 +17,7 @@ USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GLBASE="${LOCALBASE}" \
-		CC="${CXX}" REAL_CC="${CC}" \
+		CC="${CC}" CXX="${CXX} -std=gnu++98" \
 		SDL_CONFIG="${SDL_CONFIG}"
 #If you want to try the opengl/gtk player (which doesn't seem to work)
 #comment out the following line.
