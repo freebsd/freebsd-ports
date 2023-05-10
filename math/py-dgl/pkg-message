@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOM
+You installed DGL: Deep Graph Library.
+
+It expects the DGLBACKEND environment variable
+during runtime that matches the BACKEND option chosen
+during build.
+
+EOM
+}
+]

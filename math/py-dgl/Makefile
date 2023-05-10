@@ -1,6 +1,6 @@
 PORTNAME=	dgl
 DISTVERSION=	1.1.0
-CATEGORIES=	math python
+CATEGORIES=	math python # machine-learning
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,7 +31,7 @@ GH_ACCOUNT=	dmlc
 
 MAKE_ENV=	DGL_LIBRARY_PATH=${LOCALBASE}/lib
 
-POST_PLIST=	rm-tests-from-plist
+POST_PLIST=	fix-plist
 
 OPTIONS_RADIO=			BACKEND
 OPTIONS_RADIO_BACKEND=		PYTORCH TENSORFLOW MXNET
@@ -61,7 +61,7 @@ post-install:
 	# strip binaries
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/dgl/_ffi/_cy3/core${PYTHON_EXT_SUFFIX}.so
 
-rm-tests-from-plist:
+fix-plist:
 	# workaround for https://github.com/dmlc/dgl/issues/5665
 	@${REINPLACE_CMD} ' \
 		/dgl\/libdgl.so/d ; \
