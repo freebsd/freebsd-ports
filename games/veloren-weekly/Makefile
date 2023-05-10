@@ -1,5 +1,5 @@
 PORTNAME=	veloren
-PORTVERSION=	s20230506
+PORTVERSION=	s20230510
 CATEGORIES=	games wayland
 PKGNAMESUFFIX=	-weekly
 
@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-pl
 USES=		cargo xorg
 USE_XORG=	xcb
 USE_GITLAB=	yes
-GL_COMMIT=	95a38ff8f60d8895461971eb1266a5530cca8cce
+GL_COMMIT=	db860de51760d94e1f501390c5e1f472d89a8db7
 CARGO_ENV=	VELOREN_USERDATA_STRATEGY=system SHADERC_LIB_DIR="${LOCALBASE}/lib"
 PLIST_FILES=	bin/${PORTNAME}-server-cli \
 		bin/${PORTNAME}-voxygen \
@@ -59,6 +59,13 @@ post-patch:
 # Respect PREFIX != /usr/local for system assets
 	@${REINPLACE_CMD} -e 's,/usr/share,${DATADIR:H},' \
 		${WRKSRC}/common/assets/src/lib.rs
+
+do-install:
+# XXX [workspace.dependencies] breaks rebuild in subdirs
+.for f in ${CARGO_INSTALL_PATH}
+	${INSTALL_PROGRAM} ${CARGO_TARGET_DIR}/*/*/${PORTNAME}-$f \
+		${STAGEDIR}${PREFIX}/bin
+.endfor
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
