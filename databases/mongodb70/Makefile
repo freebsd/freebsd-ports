@@ -1,6 +1,7 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
 DISTVERSION=	7.0.0-rc0
+PORTREVISION=	1
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -52,6 +53,7 @@ python_OLD_CMD=	@python_interpreter@
 MAKE_ARGS=	--cxx-std=20 \
 		--disable-warnings-as-errors \
 		--libc++ \
+		--allocator=system \
 		--runtime-hardening=on \
 		--use-system-libunwind \
 		--use-system-pcre2 \
@@ -86,6 +88,14 @@ SSL_USES=	ssl
 SSL_MAKE_ARGS=	--ssl
 
 .include <bsd.port.pre.mk>
+
+# MongoDB 7.0 fails on clang15.
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+_LLVM_VERSION=  14
+BUILD_DEPENDS+= clang${_LLVM_VERSION}:devel/llvm${_LLVM_VERSION}
+CC=             ${LOCALBASE}/bin/clang${_LLVM_VERSION}
+CXX=            ${LOCALBASE}/bin/clang++${_LLVM_VERSION}
+.endif
 
 ALL_TARGET=	install-core
 
