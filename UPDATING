@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230505:
+  AFFECTS: users of mail/mutt
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  The patches included in the mail/mutt port will be removed in approximately a
+  month making the port more inline with upstream. If you require any of these
+  features most are available in mail/neomutt or it's possible to use
+  EXTRA_PATCH_TREE to patch a port when building locally.
+
 20230504:
   AFFECTS: users of sysutils/py-mqttwarn
   AUTHOR: dvl@FreeBSD.org
