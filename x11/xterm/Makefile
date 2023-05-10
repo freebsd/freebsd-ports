@@ -1,5 +1,5 @@
 PORTNAME=	xterm
-PORTVERSION=	379
+PORTVERSION=	380
 CATEGORIES=	x11
 MASTER_SITES=	ftp://ftp.invisible-island.net/xterm/:src1 \
 		https://invisible-mirror.net/archives/xterm/:src1 \
@@ -80,8 +80,8 @@ XINERAMA_CONFIGURE_OFF=		--without-xinerama
 ICONVERSION=	1
 
 post-extract:
-	@${CP} ${WRKDIR}/bsd-xterm-icons-1/*.png \
-		${WRKDIR}/bsd-xterm-icons-1/*.xpm \
+	@${CP} ${WRKDIR}/bsd-xterm-icons-${ICONVERSION}/*.png \
+		${WRKDIR}/bsd-xterm-icons-${ICONVERSION}/*.xpm \
 			${WRKSRC}/icons/
 
 post-install:
