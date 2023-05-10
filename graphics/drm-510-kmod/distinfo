@@ -1,3 +1,3 @@
-TIMESTAMP = 1680624498
-SHA256 (freebsd-drm-kmod-5.10.163-drm_v5.10.163_4_GH0.tar.gz) = 4571ff64ebbdc2fb6d464decaf0f08c9366886335cbed4d43e71af84fa1b403a
-SIZE (freebsd-drm-kmod-5.10.163-drm_v5.10.163_4_GH0.tar.gz) = 20095577
+TIMESTAMP = 1683703181
+SHA256 (freebsd-drm-kmod-5.10.163-drm_v5.10.163_5_GH0.tar.gz) = 221f9ecbe2c28116cb65ce2ad271a68dcec6e42b9f0ee0f37b9a6f653d79a283
+SIZE (freebsd-drm-kmod-5.10.163-drm_v5.10.163_5_GH0.tar.gz) = 20096286
