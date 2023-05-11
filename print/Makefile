@@ -84,6 +84,7 @@
     SUBDIR += html2ps
     SUBDIR += hyperlatex
     SUBDIR += indexinfo
+    SUBDIR += ipp-usb
     SUBDIR += kde_poster
     SUBDIR += latex-beamer
     SUBDIR += latex-biber
