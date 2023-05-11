@@ -5,6 +5,59 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230511:
+  AFFECTS: users of net-mgmt/py-netbox-secretstore
+  AUTHOR: kai@FreeBSD.org
+
+  Upstream no longer maintains py-netbox-secretstore which it is not
+  compatible with NetBox 3.5 or newer.  To ensure compatibility with newer
+  releases of NetBox, the py-netbox-secrets plugin should be used instead.
+
+  To migrate from security/py-netbox-secretstore to
+  security/py-netbox-secrets please do following steps:
+
+   1. Make a backup.
+
+   2. Install security/py-netbox-secrets
+
+   3. Enable both plugins by updating the following line in the netbox
+      configuration (e.g. /usr/local/share/netbox/netbox/configuration.py):
+
+      PLUGINS = ['netbox_secretstore', 'netbox_secrets']
+
+   4. Run NetBox migrations:
+
+      # cd /usr/local/share/netbox
+      # python3.9 manage.py migrate
+
+   5. Re-adjust the indices for the netbox-secrets plugin:
+
+      # python3.9 manage.py sqlsequencereset netbox_secrets > output.sql
+
+   6. Run the output of the previous command in the database, e.g.:
+
+      # psql -d NETBOXDB < output.sql
+
+   7. You can now remove netbox-secretstore from the application by removing
+      it from the PLUGINS line in the netbox configuration:
+
+      PLUGINS = ['netbox_secrets']
+
+   8. Collect static files of the netbox-secrets plugin:
+
+      # python3.9 manage.py collectstatic --no-input
+
+   9. Restart WSGI/httpd environment (supervisord/apache/nginx/etc.).
+
+  10. You may have clean up your database of the old tables manually, e.g.:
+
+      DROP TABLE netbox_secretstore_secret;
+      DROP TABLE netbox_secretstore_secretrole;
+      DROP TABLE netbox_secretstore_sessionkey;
+      DROP TABLE netbox_secretstore_userkey;
+
+  11. Uninstall security/py-netbox-secretstore.
+
 20230505:
   AFFECTS: users of mail/mutt
   AUTHOR: dereks@lifeofadishwasher.com
