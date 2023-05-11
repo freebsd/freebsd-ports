@@ -1,9 +1,9 @@
 PORTNAME=	syslog-ng
-DISTVERSION=	4.1.1
+DISTVERSION=	4.2.0
 CATEGORIES=	sysutils
-# using a self generated release tgz as upstream 4.0.1 tgz is broken on FreeBSD
-# see: https://github.com/syslog-ng/syslog-ng/issues/4275
+# official master site:
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
+# for development snapshots:
 # MASTER_SITES=	https://peter.czanik.hu/freebsd/
 
 MAINTAINER=	cy@FreeBSD.org
@@ -54,7 +54,6 @@ SHEBANG_FILES=	lib/merge-grammar.py
 GNU_CONFIGURE=	yes
 # Note: Even if PYTHON is deselected, glib20 will install python.
 USE_GNOME=	glib20
-# USE_PYTHON=	allflavors
 SUB_FILES=	pkg-message
 INSTALL_TARGET=	install-strip
 
@@ -148,8 +147,8 @@ JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-api-2.17.2.jar \
 				lib/syslog-ng/java-modules/http.jar \
 				lib/syslog-ng/java-modules/syslog-ng-common.jar
 
-PYTHON_USES=			python:3.5+
 PYTHON_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+PYTHON_USES=			python:3.5+
 PYTHON_CONFIGURE_ON=		--enable-python
 PYTHON_CONFIGURE_OFF=		--disable-python
 PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
@@ -178,6 +177,9 @@ PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \
 		lib/syslog-ng/python/syslogng/modules/example/__init__.py \
 		lib/syslog-ng/python/syslogng/modules/example/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
 		lib/syslog-ng/python/syslogng/modules/example/scl/example.conf \
+		lib/syslog-ng/python/syslogng/modules/hypr/__init__.py \
+		lib/syslog-ng/python/syslogng/modules/hypr/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc \
+		lib/syslog-ng/python/syslogng/modules/hypr/scl/hypr.conf \
 		lib/syslog-ng/python/syslogng/parser.py \
 		lib/syslog-ng/python/syslogng/persist.py \
 		lib/syslog-ng/python/syslogng/source.py \
