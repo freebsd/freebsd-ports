@@ -1,3 +1,81 @@
+  <vuln vid="4b636f50-f011-11ed-bbae-6cc21735f730">
+    <topic>postgresql-server -- Row security policies disregard user ID changes after inlining</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><lt>15.3</lt></range>
+	<range><lt>14.8</lt></range>
+	<range><lt>13.11</lt></range>
+	<range><lt>12.15</lt></range>
+	<range><lt>11.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL Project reports</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2023-2455/">
+	  <p>
+	    While CVE-2016-2193 fixed most interaction between row security and
+	    user ID changes, it missed a scenario involving function
+	    inlining. This leads to potentially incorrect policies being
+	    applied in cases where role-specific policies are used and a
+	    given query is planned under one role and then executed under
+	    other roles. This scenario can happen under security definer
+	    functions or when a common user and query is planned
+	    initially and then re-used across multiple SET ROLEs.
+	    Applying an incorrect policy may permit a user to complete
+	    otherwise-forbidden reads and modifications. This affects
+	    only databases that have used CREATE POLICY to define a row
+	    security policy.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2455</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2023-2455/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-11</discovery>
+      <entry>2023-05-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="fbb5a260-f00f-11ed-bbae-6cc21735f730">
+    <topic>postgresql-server -- CREATE SCHEMA ... schema elements defeats protective search_path changes</topic>
+    <affects>
+      <package>
+	<name>postgresql-server</name>
+	<range><lt>15.3</lt></range>
+	<range><lt>14.8</lt></range>
+	<range><lt>13.11</lt></range>
+	<range><lt>12.15</lt></range>
+	<range><lt>11.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PostgreSQL Project reports</p>
+	<blockquote cite="https://www.postgresql.org/support/security/CVE-2023-2454/">
+	  <p>
+	    This enabled an attacker having database-level CREATE
+	    privilege to execute arbitrary code as the bootstrap
+	    superuser. Database owners have that right by default,
+	    and explicit grants may extend it to other users.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2454</cvename>
+      <url>https://www.postgresql.org/support/security/CVE-2023-2454/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-11</discovery>
+      <entry>2023-05-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7913fe6d-2c6e-40ba-a7d7-35696f3db2b6">
     <topic>vscode -- Visual Studio Code Information Disclosure Vulnerability</topic>
     <affects>
