@@ -1,7 +1,6 @@
 PORTNAME=	transient
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.7
-PORTREVISION=	7
+DISTVERSION=	0.4.0
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	${EMACS_PKGNAMESUFFIX}
 
@@ -12,9 +11,14 @@ WWW=		https://github.com/magit/transient
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.4.1:misc/compat.el@${EMACS_FLAVOR}
+RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.4.1:misc/compat.el@${EMACS_FLAVOR}
+
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
+
+MAKE_ENV+=	LOAD_PATH="-L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat"
 
 ALL_TARGET=	lisp info
 
@@ -24,7 +28,7 @@ NO_ARCH=	yes
 
 INFO=		transient
 
-PORTDOCS=	CHANGELOG README.md transient.html
+PORTDOCS=	CHANGELOG README.org transient.html
 
 OPTIONS_DEFINE=	DOCS PDF
 
@@ -48,7 +52,7 @@ do-install:
 
 do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.md ${WRKSRC}/docs/CHANGELOG \
+	${INSTALL_DATA} ${WRKSRC}/README.org ${WRKSRC}/CHANGELOG \
 		${WRKSRC}/docs/transient.html ${STAGEDIR}${DOCSDIR}
 
 do-install-PDF-on:
