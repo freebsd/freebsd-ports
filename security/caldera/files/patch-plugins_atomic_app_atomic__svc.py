@@ -9,3 +9,12 @@
  EXECUTORS = dict(command_prompt='cmd', sh='sh', powershell='psh', bash='sh')
  RE_VARIABLE = re.compile('(#{(.*?)})', re.DOTALL)
  PREFIX_HASH_LEN = 6
+@@ -45,7 +45,7 @@ class AtomicService(BaseService):
+         the `repo_url` parameter (eg. if you want to use a fork).
+         """
+         if not repo_url:
+-            repo_url = 'https://github.com/redcanaryco/atomic-red-team.git'
++            repo_url = 'https://github.com/alonsobsd/atomic-red-team.git'
+ 
+         if not os.path.exists(self.repo_dir) or not os.listdir(self.repo_dir):
+             self.log.debug('cloning repo %s' % repo_url)

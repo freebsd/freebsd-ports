@@ -1,5 +1,6 @@
 PORTNAME=	caldera
 DISTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
@@ -70,6 +71,11 @@ USES=		go:run python:3.8+
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+CALDERA_USER=	caldera
+CALDERA_GROUP=	caldera
+USERS=		${CALDERA_USER}
+GROUPS=		${CALDERA_GROUP}
+
 USE_RC_SUBR=	${PORTNAME:S/-/_/}
 SUB_FILES=	pkg-message
 SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
@@ -78,7 +84,7 @@ SUB_LIST=	PYTHON_CMD=${PYTHON_CMD} \
 OPTIONS_DEFINE=	HAPROXY
 OPTIONS_DEFAULT=HAPROXY
 HAPROXY_DESC=	Support for HTTPS
-HAPROXY_RUN_DEPENDS=haproxy18>0:net/haproxy18
+HAPROXY_RUN_DEPENDS=haproxy20>0:net/haproxy20
 
 post-extract:
 	${RM} -R ${WRKSRC}/.github

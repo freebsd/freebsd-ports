@@ -22,11 +22,11 @@ export PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
 : ${caldera_enable:=NO}
 : ${caldera_flags="--insecure"}
 
-caldera_user="www"
+caldera_user="caldera"
+caldera_wwwdir="%%WWWDIR%%"
+caldera_logfile="/var/log/caldera.log"
 
 pidfile="/var/run/${name}.pid"
-
-caldera_wwwdir="%%WWWDIR%%"
 python_command="%%PYTHON_CMD%%"
 python_script="${caldera_wwwdir}/server.py"
 start_cmd=${name}_start
@@ -40,7 +40,7 @@ caldera_start()
 	if [ ! -f ${pidfile} ]
 	then
 		cd ${caldera_wwwdir} && \
-			daemon -u ${caldera_user} -p ${pidfile} -t ${name} -o /var/log/caldera.log \
+			daemon -u ${caldera_user} -p ${pidfile} -t ${name} -o ${caldera_logfile} \
 				${python_command} ${python_script}  \
 				${caldera_flags}
 

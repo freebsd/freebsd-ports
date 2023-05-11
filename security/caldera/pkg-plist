@@ -1,6 +1,6 @@
 @mode 640
-@owner www
-@group www
+@owner caldera
+@group caldera
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
@@ -1269,8 +1269,8 @@
 %%WWWDIR%%/tests/web_server/test_core_endpoints.py
 %%WWWDIR%%/tox.ini
 @mode 750
-@owner www
-@group www
+@owner caldera
+@group caldera
 @dir %%WWWDIR%%
 @dir %%WWWDIR%%/plugins
 @dir %%WWWDIR%%/plugins/atomic/data
