@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
 RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/signal.tar.gz:math/octave-forge-signal
 
-USES=		octave autoreconf
+USES=		octave autoreconf pkgconfig
 
 OCTAVE_SRC=	${OCTAVE_PKGNAME}
 
