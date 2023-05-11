@@ -266,7 +266,7 @@ hedgedoc:*:317:317::0:0:HedgeDoc user:/nonexistent:/usr/sbin/nologin
 icingadirector:*:318:183::0:0:icingadirector user:/nonexistent:/usr/sbin/nologin
 rustdesk:*:319:319::0:0:rustdesk-server user:/nonexistent:/usr/sbin/nologin
 teleirc:*:320:320::0:0:Telegram and IRC bridge:/nonexistent:/usr/sbin/nologin
-# free: 321
+caldera:*:321:321::0:0:Caldera Mitre user:/nonexistent:/usr/sbin/nologin
 # free: 322
 # free: 323
 # free: 324
