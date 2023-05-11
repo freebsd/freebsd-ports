@@ -1,5 +1,6 @@
 PORTNAME=	ansible-lint
 PORTVERSION=	6.16.0
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,29 +23,29 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>=2.12.0:sysutils/py-ansible-cor
 		${PYTHON_PKGNAMEPREFIX}wcmatch>=8.1.2:textproc/py-wcmatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yamllint>=1.30.0:devel/py-yamllint@${PY_FLAVOR}
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.0.0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm7>=7.0.5:devel/py-setuptools_scm7@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>0:devel/py-coverage_enable_subprocess@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}coverage>-6.4.4:devel/py-coverage@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}mypy>0:devel/py-mypy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}netaddr>0:net/py-netaddr@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
-		pylint${PYTHON_PKGNAMESUFFIX}>0:devel/pylint@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>7.2.2:devel/py-pytest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=0:devel/py-coverage_enable_subprocess@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}coverage>=6.4.4:devel/py-coverage@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jmespath>=0:devel/py-jmespath@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}mypy>=0:devel/py-mypy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}netaddr>=0:net/py-netaddr@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
+		pylint${PYTHON_PKGNAMESUFFIX}>=0:devel/pylint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest>=7.2.2:devel/py-pytest@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-plus>=0.2:devel/py-pytest-plus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=2.1.0:devel/py-pytest-xdist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruamel.yaml.clib>0:devel/py-ruamel.yaml.clib${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}spdx-tools>0.7.1:misc/py-spdx-tools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}types-jsonschema>0:devel/py-types-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}types-PyYAML>0:devel/py-types-PyYAML@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml.clib>=0:devel/py-ruamel.yaml.clib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}spdx-tools>=0.7.1:misc/py-spdx-tools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}types-jsonschema>=0:devel/py-types-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}types-PyYAML>=0:devel/py-types-PyYAML@${PY_FLAVOR}
 
 USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
+TEST_ENV=	LC_ALL=C.UTF-8 PYTHONPATH=${WRKSRC}/src
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
