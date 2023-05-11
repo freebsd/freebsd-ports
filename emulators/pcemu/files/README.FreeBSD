@@ -1,7 +1,3 @@
-This is an excerpt of what you can see with the standalone "system".
- -- Jörg
-
-
 1. This looks like PC, but where is DOS? How to get pcemu really running
 
 Pcemu is an emulator that emulates an 8086 CPU as well as a bunch of
@@ -102,7 +98,7 @@ need them.  It's not wise to make the whole BSD hierarchy available
 since DOS does not provide multiuser protection.
 
 Should you wish to override some of the emulator defaults like
-size and location of the bootfile, you can do this by settig up a
+size and location of the bootfile, you can do this by setting up a
 $HOME/.pcemurc file.  Refer to sections 2. and 3. below.
 
 
@@ -110,14 +106,14 @@ $HOME/.pcemurc file.  Refer to sections 2. and 3. below.
 2. Information about this FreeBSD port
 
 
-This `port' of pcemu to FreeBSD has been prepared by Jörg Wunsch.  It
+This `port' of pcemu to FreeBSD has been prepared by JÃ¶rg Wunsch.  It
 is a modified version of David's code, a few problems have been fixed
 for the BSD compilation environment, the location of the default boot
 file has been moved in order to get you started with just what you are
 reading now.  Unfortunately David is no longer developing pcemu, so
 during the past years, a number of improvements have been added to the
 FreeBSD port.  Thanks to Arne Henrik Juul <arnej@math.ntnu.no> who
-submitted a large patchset, among them fixes to make harddisk access
+submitted a large patchset, among them fixes to make hard disk access
 work.
 
 The PostScript document David is mentioning under 3. below has
@@ -128,20 +124,20 @@ been compressed and stored under
 It is huge however, so if you don't care much for it you might wish
 to remove it later.
 
-Since i'm living in Germany with a German keyboard, i found the
+Since I'm living in Germany with a German keyboard, I found the
 original X11 KeySym to PC scancode translation unacceptable.  Several
-scancodes have been unreachable for me.  Hence i decided to add another
+scancodes have been unreachable for me.  Hence I decided to add another
 section to the .pcemurc file allowing to instruct pcemu of specific
 keyboard layout semantics.  They consist of the keyword keymap,
 followed by the desired PC scancode, an equal sign, and the character
 that is generated for this key under X11 without any shift keys.  (Note
 that no space is allowed on either side of the equal sign.)  This way
-i won't get a German key mapping under DOS, but at least a valid keyboard
+I won't get a German key mapping under DOS, but at least a valid keyboard
 layout where all the scan codes can actually be generated at all.
 
 The appropriate section of my .pcemurc file looks like:
 
-keymap 12=ß
+keymap 12=ÃŸ
 keymap 13='
 keymap 21=z
 keymap 26=]
@@ -155,7 +151,7 @@ keymap 53=-
 keymap 86=<
 
 Another recent addition to the .pcemurc file was the option to add
-floppy and hard disk defintions dynamically.  (Previously, everything
+floppy and hard disk definitions dynamically.  (Previously, everything
 needed to be compiled into the emulator.)  The syntax of those entries
 is:
 
@@ -174,7 +170,3 @@ letting DOS tools access your hard disks...
 
 Should you wish to contact me regarding this FreeBSD port, you can
 reach me as joerg_wunsch@uriah.heep.sax.de.
-
-
-
-
