@@ -1,0 +1,18 @@
+This is the continuation of the NetBox Secretstore app. The original plugin is
+minimally maintained and has a lot of issues.
+
+This plugin is a complete rewrite of the original plugin.  It is more generic
+and flexible than the original plugin.  It is also regularly tested with the
+latest NetBox releases to ensure compatibility and stability.
+
+Features:
+
+* Store secrets in the database encrypted with a public key (RSA)
+* More generic and flexible than the original plugin (e.g. secrets
+  can be assigned to any object in NetBox)
+* Secrets can be assigned to contacts to associate them with
+  a secret (e.g. SSH key)
+* Updated user interface to make it easier to use and more intuitive
+  to navigate
+* Regularly tested with the latest NetBox releases to ensure
+  compatibility and stability
