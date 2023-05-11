@@ -37,8 +37,8 @@ sub usage {
 Usage: $0 [options] [<category>/]<portname>
 
 Options:
-    -l              - shaLlow, only bump ports with direct dependencies.
-    -g              - Grandchildren, also bump for indirect dependencies (default).
+    -l              - shaLlow, only bump ports with direct dependencies. (default).
+    -g              - Grandchildren, also bump for indirect dependencies.
     -n              - Check only (dry-run), do not change Makefiles.
     -f              - No tmpdir, just use the directory where INDEX resides.
     -i <filename>   - Use this for INDEX name. Defaults to \${PORTSDIR}/INDEX-n,
@@ -125,8 +125,8 @@ my ($portsdir, $INDEX);
 	die "Options -g and -l given, which are mutually exclusive. Pick either.";
     }
     if (not $opt_l and not $opt_g) {
-	warn "Neither -g nor -l given. Defaulting to -g";
-	$opt_g = 1;
+	warn "Neither -g nor -l given. Defaulting to -l";
+	$opt_l = 1;
     }
     $portsdir = $opt_p ? $opt_p : '/usr/ports';
 
