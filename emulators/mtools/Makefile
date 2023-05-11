@@ -4,7 +4,7 @@ CATEGORIES=	emulators
 MASTER_SITES=	GNU
 
 MAINTAINER=	skreuzer@FreeBSD.org
-COMMENT=	Collection of tools for manipulating MS-DOS files
+COMMENT=	Tools for manipulating MS-DOS disks and images
 WWW=		https://www.gnu.org/software/mtools/intro.html
 
 LICENSE=	GPLv3

@@ -1,3 +1,4 @@
-Mtools is a collection of utilities for accessing MS-DOS disks from Unix without
-mounting them. It supports Win95 style long file names, OS/2 Xdf disks, ZIP/JAZ
-disks, and 2m disks (store up to 1992k on a high density 3 1/2" disk).
+Mtools is a collection of utilities for accessing MS-DOS disks and file
+system images from Unix without mounting them.  It supports Win95-style
+long file names, OS/2 XDF-formatted disks, ZIP/JAZ disks, and 2MB disks
+(store up to 1992kB on a high-density 3.5" diskette).
