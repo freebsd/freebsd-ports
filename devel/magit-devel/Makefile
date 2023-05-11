@@ -1,8 +1,7 @@
 PORTNAME=	magit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0-540
-PORTREVISION=	5
-DISTVERSIONSUFFIX=	-g28bb411a
+DISTVERSION=	3.3.0-629
+DISTVERSIONSUFFIX=	-g5d91aadd
 CATEGORIES=	devel elisp
 PKGNAMESUFFIX=	-devel${EMACS_PKGNAMESUFFIX}
 
@@ -13,14 +12,14 @@ WWW=		https://magit.vc/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=28.1.1.0:misc/compat.el@${EMACS_FLAVOR} \
+BUILD_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.3.4:misc/compat.el@${EMACS_FLAVOR} \
 		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
-		transient-devel${EMACS_PKGNAMESUFFIX}>=0.3.7:devel/transient-devel@${EMACS_FLAVOR} \
-		with-editor-devel${EMACS_PKGNAMESUFFIX}>=3.0.5:editors/with-editor-devel@${EMACS_FLAVOR}
-RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=28.1.1.0:misc/compat.el@${EMACS_FLAVOR} \
+		transient-devel${EMACS_PKGNAMESUFFIX}>=0.4.0:devel/transient-devel@${EMACS_FLAVOR} \
+		with-editor-devel${EMACS_PKGNAMESUFFIX}>=3.2.0:editors/with-editor-devel@${EMACS_FLAVOR}
+RUN_DEPENDS=	compat.el${EMACS_PKGNAMESUFFIX}>=29.1.3.4:misc/compat.el@${EMACS_FLAVOR} \
 		dash.el${EMACS_PKGNAMESUFFIX}>=2.19.1:devel/dash.el@${EMACS_FLAVOR} \
-		transient-devel${EMACS_PKGNAMESUFFIX}>=0.3.7:devel/transient-devel@${EMACS_FLAVOR} \
-		with-editor-devel${EMACS_PKGNAMESUFFIX}>=3.0.5:editors/with-editor-devel@${EMACS_FLAVOR}
+		transient-devel${EMACS_PKGNAMESUFFIX}>=0.4.0:devel/transient-devel@${EMACS_FLAVOR} \
+		with-editor-devel${EMACS_PKGNAMESUFFIX}>=3.2.0:editors/with-editor-devel@${EMACS_FLAVOR}
 
 USES=		emacs gmake makeinfo
 USE_GITHUB=	yes
@@ -29,7 +28,7 @@ MAKE_ENV+=	docdir=${DOCSDIR} \
 		infodir=${PREFIX}/${INFO_PATH} \
 		INSTALL_INFO=install-info \
 		lispdir=${PREFIX}/${ELISPDIR} \
-		LOAD_PATH="-L ${WRKSRC}/lisp -L ${PREFIX}/${EMACS_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/ghub" \
+		LOAD_PATH="-L ${WRKSRC}/lisp -L ${PREFIX}/${EMACS_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat" \
 		VERSION=${PORTVERSION}
 # Parallel build fails if Emacs is built with native compilation enabled
 MAKE_JOBS_UNSAFE=	yes

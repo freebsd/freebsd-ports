@@ -51,8 +51,6 @@
 %%ELISPDIR%%/magit-mode.elc
 %%ELISPDIR%%/magit-notes.el
 %%ELISPDIR%%/magit-notes.elc
-%%ELISPDIR%%/magit-obsolete.el
-%%ELISPDIR%%/magit-obsolete.elc
 %%ELISPDIR%%/magit-patch.el
 %%ELISPDIR%%/magit-patch.elc
 %%ELISPDIR%%/magit-process.el
