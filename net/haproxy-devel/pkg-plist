@@ -112,6 +112,7 @@ sbin/haproxy
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/haproxy.init
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lua/README
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/lua/event_handler.lua
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lua/mailers.lua
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/option-http_proxy.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/quick-test.cfg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/socks4.cfg
