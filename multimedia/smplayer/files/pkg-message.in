@@ -3,7 +3,7 @@
   message: <<EOM
 SMPlayer has been installed.
 
-For Youtube Videos please use multimedia/smtube port.
+For YouTube videos please use multimedia/smtube port.
 EOM
 }
 ]

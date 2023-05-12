@@ -19,11 +19,11 @@ USE_QT=		buildtools:build linguisttools:build \
 USE_XORG=	x11 xext
 
 CPE_VENDOR=	ricardo_villalba
-DOS2UNIX_REGEX=	.*.[^p][^n][^g]$
+DOS2UNIX_GLOB=	*.md *.txt
 
 ALL_TARGET=	src/smplayer
 CONFIGURE_WRKSRC=	${WRKSRC}/src
-MAKE_ARGS=	PREFIX=${PREFIX} DESTDIR=${STAGEDIR}
+MAKE_ENV=	DESTDIR=${STAGEDIR} LRELEASE=${LRELEASE}
 QMAKE_ARGS=	"DEFINES_DISABLED+=MPLAYER2_SUPPORT"
 
 PORTDOCS=	${DOCS:T}
@@ -57,10 +57,6 @@ PORTSCOUT=	site:http://sourceforge.net/projects/smplayer/files/Unstable/releases
 SUB_FILES=	pkg-message
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|&& $$(QMAKE) $$(QMAKE_OPTS)||; \
-		s|lrelease|${LRELEASE}|; \
-		s| make| ${MAKE_CMD}|g' \
-		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-O2 -W -Wall -Werror|${CFLAGS}|' \
 		${WRKSRC}/webserver/Makefile
 	@${REINPLACE_CMD} -e 's|^sed|#sed|' \
