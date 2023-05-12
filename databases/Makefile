@@ -33,6 +33,7 @@
     SUBDIR += cegobridge
     SUBDIR += clickhouse
     SUBDIR += closql
+    SUBDIR += closql-devel
     SUBDIR += cockroach
     SUBDIR += couchdb3
     SUBDIR += courier-authlib-mysql

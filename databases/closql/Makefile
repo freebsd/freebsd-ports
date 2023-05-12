@@ -19,7 +19,7 @@ USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	magit
 
-CONFLICTS_INSTALL=	closql closql-emacs_* # share/doc/closql/README.md
+CONFLICTS_INSTALL=	closql closql-devel* closql-emacs_*
 
 NO_ARCH=	yes
 
