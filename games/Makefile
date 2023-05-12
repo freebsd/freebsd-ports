@@ -129,6 +129,7 @@
     SUBDIR += bsp
     SUBDIR += bstone
     SUBDIR += bubble-chains
+    SUBDIR += bucklespring
     SUBDIR += bugsquish
     SUBDIR += bugsx
     SUBDIR += bumprace
