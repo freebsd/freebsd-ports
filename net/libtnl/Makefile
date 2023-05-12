@@ -5,21 +5,27 @@ CATEGORIES=	net devel
 MASTER_SITES=	SF/opentnl/TNL%20Source/${PORTVERSION}
 DISTNAME=	tnl-${PORTVERSION}-source
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Robust, secure, easy to use cross-platform C++ networking API
 WWW=		https://sourceforge.net/projects/opentnl/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/../LICENSE.txt
 
+# Other arches can be added easily, provided there is hardware to test:
+ONLY_FOR_ARCHS=	amd64 i386 powerpc powerpc64 powerpc64le
+
 USES=		uidfix
 USE_GCC=	yes
-WRKSRC=		${WRKDIR}/tnl/tnl
 USE_LDCONFIG=	yes
+
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-# Other arches can be added easily, provided there is hardware to test:
-ONLY_FOR_ARCHS=	i386 amd64 powerpc powerpc64 powerpc64le
-.if defined(NO_PROFILE) || defined(NOPROFILE)
+
+WRKSRC=		${WRKDIR}/tnl/tnl
+
+.include <bsd.port.pre.mk>
+
+.if defined(NO_PROFILE) || defined(NOPROFILE) || ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079 )
 PLIST_SUB+=	PROFILE='@comment '
 .else
 PLIST_SUB+=	PROFILE=''
@@ -34,4 +40,4 @@ PLIST_SUB+=	PROFILE=''
 pre-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/tnl
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
