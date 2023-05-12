@@ -1,3 +1,3 @@
-TIMESTAMP = 1675279500
-SHA256 (tuf-2.1.0.tar.gz) = dbfe18fbdeba6d76144931db88b76e473fa40c431b60d25b455a9adbb07c2397
-SIZE (tuf-2.1.0.tar.gz) = 261568
+TIMESTAMP = 1683897873
+SHA256 (tuf-3.0.0.tar.gz) = 493f5e9dc60c6a216320a82e052f6bd6f4b12cf8dfafc90ce6de537545ccfa61
+SIZE (tuf-3.0.0.tar.gz) = 266374
