@@ -21,10 +21,10 @@
  my($CPUOID) = "1.3.6.1.4.1.9.2.1.58.0";
 +my($FNDRYCPUOID) = "1.3.6.1.4.1.1991.1.1.2.1.35.0";
  my($MEMOID) = "1.3.6.1.4.1.9.9.48.1.1.1.5.1"; # have to find out
-+my($FNDRYMEMOID) = "1.3.6.1.4.1.1991.1.1.2.1.55.0"; 
-+my($FNDRYMAXMEMOID) = "1.3.6.1.4.1.1991.1.1.2.1.54.0"; 
-+my($FNDRYBGPOID) = "1.3.6.1.4.1.1991.1.2.11.1.27.0"; 
-+my($FNDRYTEMPOID) = "1.3.6.1.4.1.1991.1.1.1.1.18.0"; 
++my($FNDRYMEMOID) = "1.3.6.1.4.1.1991.1.1.2.1.55.0";
++my($FNDRYMAXMEMOID) = "1.3.6.1.4.1.1991.1.1.2.1.54.0";
++my($FNDRYBGPOID) = "1.3.6.1.4.1.1991.1.2.11.1.27.0";
++my($FNDRYTEMPOID) = "1.3.6.1.4.1.1991.1.1.1.1.18.0";
  # Cisco 7200 Series Temperature
  my($CISCOTEMP) = "1.3.6.1.4.1.9.9.13.1.3.1";
  
@@ -222,7 +222,7 @@
 +	print CFG "Target[".$routers{$rk}{hostname}.".TEMP]: "
 +		.$routers{$rk}{temp}."&".$routers{$rk}{temp}.":"
 +		.$routers{$rk}{community}."\@".$routers{$rk}{hostname}." / 2\n";
-+	# 100°C is sufficient to handle this. At this temperature, we can think
++	# 100Â°C is sufficient to handle this. At this temperature, we can think
 +	#       that router ... near to die.
 +	print CFG "MaxBytes[".$routers{$rk}{hostname}.".TEMP]: 100\n";
 +	print CFG "Options[".$routers{$rk}{hostname}.".TEMP]: "
@@ -230,7 +230,7 @@
 +	print CFG "routers.cgi*UnScaled[".$routers{$rk}{hostname}.".TEMP]: none\n";
 +	print CFG "Title[".$routers{$rk}{hostname}.".TEMP]: "
 +		.$routers{$rk}{name}." Temperature\n";
-+	print CFG "ShortLegend[".$routers{$rk}{hostname}.".TEMP]: °C\n";
++	print CFG "ShortLegend[".$routers{$rk}{hostname}.".TEMP]: Â°C\n";
 +	print CFG "PageTop[".$routers{$rk}{hostname}.".TEMP]: Temperature\n";
 +	print CFG "LegendI[".$routers{$rk}{hostname}.".TEMP]: Temperature\n";
 +	print CFG "Legend1[".$routers{$rk}{hostname}.".TEMP]: Temperature\n";

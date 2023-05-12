@@ -2,7 +2,7 @@
 
 		NOTES ON ESTIC IN FREEBSD (/usr/ports/comms/estic/)
 		By Julian Stacey <jhs@freebsd.org> November 1996
-		 
+
 INDEX
 	1	EXAMPLE CONFIG FILE
 	2	C++ & FreeBSD VERSIONS
@@ -53,45 +53,45 @@ which I've duplicated & translated ...
   {--------
   * Generic Original by "Ullrich von Bassewitz" <uz@ibb.schwaben.com>
   + Generic Translation by "Julian H. Stacey"	<jhs@FreeBSD.org>
-  
-  Die ESTIC-Sourcen bzw. die ESTIC Binaries dürfen unter folgenden
+
+  Die ESTIC-Sourcen bzw. die ESTIC Binaries dÃ¼rfen unter folgenden
   Bedingungen weitergegeben werden:
   The ESTIC sources & binaries may be distributed under the following conditions
-  
+
     * Die Weitergabe geschieht im kompletten Paket mit Dokumentation.
     + Distribution as complete package including documentation.
-  
+
     * Die Weitergabe geschieht kostenlos. Dies bedeutet insbesondere,
-      daß ESTIC nicht ohne meine vorherige, schriftliche Genehmigung auf
+      daÃŸ ESTIC nicht ohne meine vorherige, schriftliche Genehmigung auf
       CD-ROMS vertrieben werden darf, genauso sind Mailboxen/FTP-Server
-      ausgeschlossen, bei denen der Zugang zu den Daten nicht frei für
+      ausgeschlossen, bei denen der Zugang zu den Daten nicht frei fÃ¼r
       jedermann ist.
     + Distribution to be free of charge, This means in particular,
       that ESTIC may not without my prior written permission be sold on CD-ROMs,
       neither may it be provided on mailbox systems or FTP servers that only
       offer restricted non public access.
-  
-    * Es dürfen keine geänderten Sourcen weitergegeben werden. Die Weitergabe
-      von geänderten Binaries, sowie diffs zu den Sourcen ist hingegen
-      zulässig. Das soll keine Schikane sein, sondern nur verhindern, daß
-      mehrere verschiedene Versionen der Sourcen auf dem Netz verfügbar
+
+    * Es dÃ¼rfen keine geÃ¤nderten Sourcen weitergegeben werden. Die Weitergabe
+      von geÃ¤nderten Binaries, sowie diffs zu den Sourcen ist hingegen
+      zulÃ¤ssig. Das soll keine Schikane sein, sondern nur verhindern, daÃŸ
+      mehrere verschiedene Versionen der Sourcen auf dem Netz verfÃ¼gbar
       sind, was zwangslaeufig mit unnoetigem Aufwand fuer mich verbunden ist.
     + No changed sources may be distributed.  The distribution of changed
       binaries & diffs to the sources is however allowed.
      This is not intended as chicanery, but to hinder multiple availability
      of multiple versions of source on the net, which would create excess work
      for me.
-  
-    * Binaries, die durch Änderungen an den Sourcen erstellt wurden
+
+    * Binaries, die durch Ã„nderungen an den Sourcen erstellt wurden
       unterliegen weiterhin den hier angegebenen Bedingungen, d.h. es ist
       keine kommerzielle Verwertung oder ein kommerzieller Vertrieb ohne
       meine vorherige, schriftliche(!) Zustimmung erlaubt.
     + Binaries produced from changed sources come under these conditions,
      .... no commercial value added ... sales ... allowed, without my prior
      written agreement.
-  
-  Ansonsten bin ich durchaus gesprächsbereit, d.h. wer aus irgendwelchen
-  Gründen gegen eine der hier angegebenen Bestimmungen verstossen will, der
+
+  Ansonsten bin ich durchaus gesprÃ¤chsbereit, d.h. wer aus irgendwelchen
+  GrÃ¼nden gegen eine der hier angegebenen Bestimmungen verstossen will, der
   kann sich gerne an mich wenden.
   ... I'm open to discuss proposed breaches of these requirements.
   --------}
@@ -103,15 +103,15 @@ which I've duplicated & translated ...
   Subject: Re: FreeBSD Ports wrapper for Estic-1.30
   To: jhs@freebsd.org
   Date: Mon, 23 Sep 1996 19:15:16 +0100 (MET DST)
-  
+
   > May we have your permission to put your unchanged generic distribution
   > sources (ie currently estic-1.30.zip on the FreeBSD CD-ROMs please ?
   > (FreeBSD is a non profit org. like X inc & FSF,
   > but Walnut Creek (who provide a free host for our co-ordination,
-  > at http://www.freebsd.org 
+  > at http://www.freebsd.org
   > (& others occasionally) take snaps & release of FreeBSD
   > & provide the whole sources + binaries of all src + ports
-  
+
   No problem. You are allowed to do so. The paragraph you cited is thought to
   help control who earns money selling my code, but I've no problems with that
   in the case of freebsd cdroms.
@@ -122,12 +122,12 @@ which I've duplicated & translated ...
   Subject: Re: istec 1008
   To: jhs@freebsd.org
   Date: Tue, 19 Nov 1996 09:41:14 +0100 (MET)
-  
+
   > I lost (or filed obscurely) the earlier permission you gave me,
   > for FreeBSD to store your sources & a packaged binary on the FreeBSD CD-Roms,
   > maybe you could give me some words again please, which I'll embed straight
   > in the wrapper & not loose this time ;-)
-  
+
   I will change that in the next version anyway. So, you may distribute ESTIC
   as you like, as long as you leave the archive files intact.
   --------}
@@ -138,7 +138,7 @@ which I've duplicated & translated ...
 http://africa.geomic.uni-oldenburg.de/~joey/Linux/istec-befehle
 	Istec 1008 intern
 	Da das Interesse gro_ ist (meines auch), hier der etwas
-	aufbereitete Text. Vielen vielen Dank an Hergen Lehmann, der sich die  
+	aufbereitete Text. Vielen vielen Dank an Hergen Lehmann, der sich die
 	M|he des Reverse-Engineering gemacht hat. <p>
 	From: HERGEN_LEHMANN@TBX.BerliNet.DE (Hergen Lehmann)
 
@@ -157,8 +157,8 @@ http://www.symmetrix.ch/Public/janti/isdnfaq.html
 http://africa.geomic.uni-oldenburg.de/~joey/Linux/isdn-istec-befehle.html
 	<h1>ISTEC 1008 intern</h1>
 	Da das Interesse gro&szlig; ist (meines auch), hier der etwas
-	aufbereitete Text. Vielen vielen Dank an <a 
-	href="mailto:Hergen_Lehmann@TBX.BerliNet.DE">Hergen Lehmann</a>, 
+	aufbereitete Text. Vielen vielen Dank an <a
+	href="mailto:Hergen_Lehmann@TBX.BerliNet.DE">Hergen Lehmann</a>,
 	der sich die
 	M&uuml;he des Reverse-Engineering gemacht hat. <p>
 
@@ -177,12 +177,12 @@ http://www.bestweb.com/intfun/jrs/euroinfo.html
 From: AmIstec (another package) / CE-Istec.LiesMich
   WICHTIGER HINWEIS ZU DEN NEUEN ISTEC-ANLAGEN MIT CE-ZEICHEN!!
   =============================================================
-	 
+
   Die neuen Istec-Anlagen mit CE-Zeichen funktionieren leider
   nicht mehr ohne weiteres an Nicht-Dosen, weil Emmerich die
   serielle Schnittstelle galvanisch von der Anlage entkoppeln
   mu_te. Die f|r die Daten|bertragung erforderlichen Spannungen
-  werden daher einfach von von den DTR- und RTS-Leitungen  
+  werden daher einfach von von den DTR- und RTS-Leitungen
   bezogen. Dazu wird bei der Originalsoftware DTR auf logisch 1
   und RTS auf logisch 0 gesetzt um so die negative bzw. positive
   Spannung der Istec zur Verf|gung zu stellen.
@@ -201,7 +201,7 @@ From: AmIstec (another package) / CE-Istec.LiesMich
   Dazu wird die DTR-Leitung direkt |ber die Hardware gesetzt,
   soda_ die Istec genau das bekommt, was sie erwartet. Dieser
   Patch wird durch den Tooltype CEPATCH aktiviert bzw. bei
-  einem CLI-Aufruf als Parameter mitgegeben. 
+  einem CLI-Aufruf als Parameter mitgegeben.
 
 From: uz@wuschel.ibb.schwaben.com (Ullrich von Bassewitz)
 To: jhs@freebsd.org
@@ -214,12 +214,12 @@ Date: Thu, 14 Nov 1996 14:44:52 +0100 (MET)
   pins with a voltmeter), this means that there is an error in the serial
   module. The DTR pin should be inactive if there is no hardware handshaking
   enabled as is the case with ESTIC.
-  
-  
+
+
   The only thing that was really new for me was the call to DTROff. I will
   check the serial module, since this call cures a symptom and not the error
   itself (but you may use it anyway).
-  
+
   If you make any changes (apart from those in Oliver's diffs), I would like
   to hear from it. I got a few mails from FreeBSD people and I would like to
   incorporate any changes that make ESTIC work for FreeBSD into the main
@@ -248,7 +248,7 @@ I append a quote: (which can be deleted once the port is committed).
 > ....
 > No, as stated above, it works fine now.
 > Just getting the 1.40 zip-file, applying the ports and changing the
-> config file was sufficient. 
+> config file was sufficient.
 > Now you have another data point in the sets of working configurations.
 ------
 > From: Robert Eckardt <roberte@mep.ruhr-uni-bochum.de>
@@ -269,7 +269,7 @@ I append a quote: (which can be deleted once the port is committed).
 > Nevertheless, it's a graet port for a very useful program.
 
 --------------------------------------------------------------------------------
-7	Bugs & Problems 
+7	Bugs & Problems
 =======================
 - I have to start it as 	xestic -display :0	else I get
   Internal error: ScrInit: Cannot open display, file xsrc/console.cc, line 898
@@ -277,7 +277,7 @@ I append a quote: (which can be deleted once the port is committed).
 	Malloc warning: free(): junk pointer (too high)
   but after that it runs fine.
 - Alt X does not exit properly.
-- Strange error messages if a file does not exist, 
+- Strange error messages if a file does not exist,
 	First I get a nice error message:
 		Cannot open the alias file!
 	ESC
