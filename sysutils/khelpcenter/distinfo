@@ -1,3 +1,3 @@
-TIMESTAMP = 1681548281
-SHA256 (KDE/release-service/23.04.0/khelpcenter-23.04.0.tar.xz) = b6e05d020278729bf8b45ce5ec5097c8a209508764c12bcfaa296508aa33b5bf
-SIZE (KDE/release-service/23.04.0/khelpcenter-23.04.0.tar.xz) = 4369148
+TIMESTAMP = 1683866845
+SHA256 (KDE/release-service/23.04.1/khelpcenter-23.04.1.tar.xz) = ff0dc1e5fcd8158521d8db78d9cc770ab11112a6e6976fc8ebbba72e4b69c895
+SIZE (KDE/release-service/23.04.1/khelpcenter-23.04.1.tar.xz) = 4369228

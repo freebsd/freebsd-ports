@@ -32,6 +32,7 @@ include/KF5/PimCommon/PimCommon/TemplateManager
 include/KF5/PimCommon/pimcommon/abstractgenericplugin.h
 include/KF5/PimCommon/pimcommon/abstractgenericplugininterface.h
 include/KF5/PimCommon/pimcommon/broadcaststatus.h
+include/KF5/PimCommon/pimcommon/config-pimcommon.h
 include/KF5/PimCommon/pimcommon/configureimmutablewidgetutils.h
 include/KF5/PimCommon/pimcommon/configureplugindialog.h
 include/KF5/PimCommon/pimcommon/configurepluginslistwidget.h

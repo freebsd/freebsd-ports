@@ -13,6 +13,7 @@ lib/libkonsoleprivate.so.%%KDE_APPLICATIONS_VERSION%%
 share/applications/org.kde.konsole.desktop
 share/kconf_update/konsole.upd
 share/kconf_update/konsole_add_hamburgermenu_to_toolbar.sh
+share/kglobalaccel/org.kde.konsole.desktop
 share/kio/servicemenus/konsolerun.desktop
 share/knotifications5/konsole.notifyrc
 share/knsrcfiles/konsole.knsrc
