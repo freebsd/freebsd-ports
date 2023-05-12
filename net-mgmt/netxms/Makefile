@@ -1,5 +1,5 @@
 PORTNAME=	netxms
-PORTVERSION=	3.2.472
+PORTVERSION=	3.3.350
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/releases/${PORTVERSION:R}/
 
