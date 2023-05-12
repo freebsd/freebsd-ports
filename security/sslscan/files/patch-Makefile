@@ -1,14 +1,19 @@
---- Makefile.orig	2018-06-15 17:47:17 UTC
-+++ Makefile
-@@ -1,6 +1,6 @@
+--- Makefile.orig	2023-04-08 22:36:58.000000000 +0100
++++ Makefile	2023-05-11 22:40:28.158615000 +0100
+@@ -1,11 +1,6 @@
  # set gcc as default if CC is not set
  
 -GIT_VERSION = $(shell git describe --tags --always --dirty=-wip)
-+#GIT_VERSION = $(shell git describe --tags --always --dirty=-wip)
+-
+-# Ugly hack to get version if git isn't installed
+-ifeq ($(GIT_VERSION),)
+-  GIT_VERSION = $(shell grep -E -o -m 1 "[0-9]+\.[0-9]+\.[0-9]+" Changelog)
+-endif
++VERSION = $(shell grep -E -o -m 1 "[0-9]+\.[0-9]+\.[0-9]+" Changelog)
  
- # Ugly hack to get version if git isn't installed
- ifeq ($(GIT_VERSION),)
-@@ -25,7 +25,7 @@ endif
+ # Detect OS
+ OS := $(shell uname)
+@@ -26,11 +21,11 @@
  
  SRCS      = sslscan.c
  BINDIR    = $(PREFIX)/bin
@@ -16,8 +21,50 @@
 +MANDIR    = $(PREFIX)/man
  MAN1DIR   = $(MANDIR)/man1
  
- WARNINGS  = -Wall -Wformat=2 -Wformat-security
-@@ -101,6 +101,9 @@ ifeq ($(OS), Darwin)
+ WARNINGS  = -Wall -Wformat=2 -Wformat-security -Wno-deprecated-declarations
+-DEFINES   = -DVERSION=\"$(GIT_VERSION)\"
++DEFINES   = -DVERSION=\"$(VERSION)\"
+ 
+ # for dynamic linking
+ LIBS      = -lssl -lcrypto
+@@ -58,35 +53,11 @@
+ CFLAGS += -std=gnu11
+ 
+ # for static linking
+-ifeq ($(STATIC_BUILD), TRUE)
+ PWD          = $(shell pwd)/openssl
+ LDFLAGS      += -L${PWD}/
+ CFLAGS       += -I${PWD}/include/ -I${PWD}/
+-ifeq ($(OS), Darwin)
+-LIBS	     = ./openssl/libssl.a ./openssl/libcrypto.a -lz -lpthread
+-else
+ LIBS         = -lssl -lcrypto -lz -lpthread
+-endif
+-ifneq ($(OS), FreeBSD)
+-	LIBS += -ldl
+-endif
+-ifeq ($(OS), SunOS)
+-	LIBS += -lsocket -lnsl
+-endif
+-GIT_VERSION  := $(GIT_VERSION)-static
+-else
+-# for dynamic linking
+-LDFLAGS   += -L/usr/local/lib -L/usr/local/ssl/lib -L/usr/local/opt/openssl/lib -L/opt/local/lib
+-CFLAGS    += -I/usr/local/include -I/usr/local/ssl/include -I/usr/local/ssl/include/openssl -I/usr/local/opt/openssl/include -I/opt/local/include -I/opt/local/include/openssl
+-endif
+-
+-# Find the number of processors on the system (used in -j option in building OpenSSL).
+-# Uses /usr/bin/nproc if available, otherwise defaults to 1.
+-NUM_PROCS = 1
+-ifneq (,$(wildcard /usr/bin/nproc))
+-	NUM_PROCS = `/usr/bin/nproc --all`
+-endif
+-
++VERSION  := $(VERSION)-static
+ 
+ .PHONY: all sslscan clean install uninstall static opensslpull
+ 
+@@ -114,6 +85,9 @@
  	install sslscan $(DESTDIR)$(BINDIR)/sslscan;
  	install -d $(DESTDIR)$(MAN1DIR)/;
  	install sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
@@ -27,3 +74,32 @@
  else
  	install -D sslscan $(DESTDIR)$(BINDIR)/sslscan;
  	install -D sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
+@@ -126,11 +100,7 @@
+ .openssl.is.fresh: opensslpull
+ 	true
+ opensslpull:
+-	if [ -d openssl -a -d openssl/.git ]; then \
+-		cd ./openssl && git checkout OpenSSL_1_1_1-stable && git pull | grep -q "Already up-to-date." && [ -e ../.openssl.is.fresh ] || touch ../.openssl.is.fresh ; \
+-	else \
+-		git clone --depth 1 -b OpenSSL_1_1_1-stable https://github.com/openssl/openssl ./openssl && cd ./openssl && touch ../.openssl.is.fresh ; \
+-	fi
++	true
+ 
+ # Need to build OpenSSL differently on OSX
+ ifeq ($(OS), Darwin)
+@@ -148,12 +118,11 @@
+ endif
+ 
+ openssl/libcrypto.a: openssl/Makefile
+-	$(MAKE) -j $(NUM_PROCS) -C openssl depend
+-	$(MAKE) -j $(NUM_PROCS) -C openssl all
+-#	$(MAKE) -j $(NUM_PROCS) -C openssl test # Disabled because this takes 45+ minutes for OpenSSL v1.1.1.
++	$(MAKE) -C openssl depend
++	$(MAKE) -C openssl build_sw
+ 
+ static: openssl/libcrypto.a
+-	$(MAKE) -j $(NUM_PROCS) sslscan STATIC_BUILD=TRUE
++	$(MAKE) sslscan STATIC_BUILD=TRUE
+ 
+ docker:
+ 	docker build -t sslscan:sslscan .

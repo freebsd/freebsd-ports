@@ -1,8 +1,9 @@
 PORTNAME=	sslscan
-DISTVERSION=	1.11.12
-DISTVERSIONSUFFIX=	-${GH_ACCOUNT}
-PORTREVISION=	1
+DISTVERSION=	2.0.16
 CATEGORIES=	security
+MASTER_SITES=	https://www.openssl.org/source/:openssl \
+		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/:openssl
+DISTFILES=	openssl-${OPENSSL_VERSION}.tar.gz:openssl
 
 MAINTAINER=	gavin@FreeBSD.org
 COMMENT=	Fast SSL port scanner
@@ -10,27 +11,15 @@ WWW=		https://github.com/rbsec/sslscan/
 
 LICENSE=	GPLv3
 
-USES=		gmake
+USES=		gmake perl5
+USE_PERL5=	build
 USE_GITHUB=	yes
 GH_ACCOUNT=	rbsec
+OPENSSL_VERSION=	3.1.0
 
-OPTIONS_DEFINE=	UNSAFESSL
-OPTIONS_DEFAULT=	UNSAFESSL
-UNSAFESSL_DESC=	Use openssl-unsafe as libssl provider (SSLv2 etc.)
+ALL_TARGET=	static
 
-UNSAFESSL_USES_OFF=	ssl
-UNSAFESSL_BUILD_DEPENDS=	${LOCALBASE}/openssl-unsafe/lib/libssl.so:security/openssl-unsafe
-UNSAFESSL_RUN_DEPENDS=		${UNSAFESSL_BUILD_DEPENDS}
-UNSAFESSL_CFLAGS=	-I${LOCALBASE}/openssl-unsafe/include \
-			-Wl,-rpath,${LOCALBASE}/openssl-unsafe/lib
-UNSAFESSL_LDFLAGS=	-L${LOCALBASE}/openssl-unsafe/lib \
-			-Wl,-rpath,${LOCALBASE}/openssl-unsafe/lib
-UNSAFESSL_ALL_TARGET=	sslscan
+post-patch:
+	$(LN) -sf "${WRKDIR}/openssl-${OPENSSL_VERSION}" "${WRKSRC}/openssl"
 
-.include <bsd.port.pre.mk>
-
-.if empty(PORT_OPTIONS:MUNSAFESSL) && ${SSL_DEFAULT:Mopenssl}
-BROKEN=		Does not build with openssl
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
