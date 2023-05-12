@@ -1,6 +1,5 @@
 PORTNAME=	xml2
-PORTVERSION=	1.3.3
-PORTREVISION=	3
+PORTVERSION=	1.3.4
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,7 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/xml2/
 
 LICENSE=	MIT
 
-USES=	cran:auto-plist,compiles gnome
+USES=		cran:auto-plist,compiles gnome
 USE_GNOME=	libxml2
 
 .include <bsd.port.mk>
