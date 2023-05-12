@@ -59,6 +59,7 @@
     SUBDIR += ejdb
     SUBDIR += emacs-sqlite3-api
     SUBDIR += emacsql
+    SUBDIR += emacsql-devel
     SUBDIR += erlfdb
     SUBDIR += evolution-data-server
     SUBDIR += fastdb

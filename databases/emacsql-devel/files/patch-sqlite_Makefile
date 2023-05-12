@@ -1,0 +1,24 @@
+--- sqlite/Makefile.orig	2022-10-11 15:22:51 UTC
++++ sqlite/Makefile
+@@ -1,8 +1,8 @@
+ -include ../.config.mk
+ 
+ .POSIX:
+-LDLIBS = -ldl -lm
+-CFLAGS = -O2 -Wall -Wextra -Wno-implicit-fallthrough \
++LDLIBS = -lsqlite3
++CFLAGS += \
+     -DSQLITE_THREADSAFE=0 \
+     -DSQLITE_DEFAULT_FOREIGN_KEYS=1 \
+     -DSQLITE_ENABLE_FTS5 \
+@@ -12,8 +12,8 @@ CFLAGS = -O2 -Wall -Wextra -Wno-implicit-fallthrough \
+     -DSQLITE_ENABLE_JSON1 \
+     -DSQLITE_SOUNDEX
+ 
+-emacsql-sqlite: emacsql.c sqlite3.c
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ emacsql.c sqlite3.c $(LDLIBS)
++emacsql-sqlite: emacsql.c
++	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ emacsql.c $(LDLIBS)
+ 
+ clean:
+ 	rm -f emacsql-sqlite
