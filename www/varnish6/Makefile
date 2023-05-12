@@ -49,6 +49,10 @@ OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=deprecated-non-prototype
+.endif
+
 post-patch:
 .if defined(BAD_TESTS)
 	${RM} ${BAD_TESTS:C|.+|${WRKSRC}/bin/varnishtest/tests/\0.vtc|}
