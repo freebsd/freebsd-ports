@@ -17,9 +17,16 @@ USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
 
 LENSESDIR=	${PREFIX}/share/augeas/lenses
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=-Wno-error=int-conversion
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:/bin/bash:/usr/bin/env bash:' ${WRKSRC}/tests/*.sh
@@ -29,4 +36,4 @@ post-patch:
 		${WRKSRC}/lenses/puppet_auth.aug \
 		${WRKSRC}/lenses/puppetfileserver.aug
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
