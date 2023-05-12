@@ -27,7 +27,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules/
-	${INSTALL_LIB} ${WRKSRC}/build/${UNIT_MODNAME}.unit.so \
+	${INSTALL_LIB} ${WRKSRC}/build/lib/unit/modules/${UNIT_MODNAME}.unit.so \
 		${STAGEDIR}${PREFIX}/libexec/unit/modules/
 
 # Overwrite the target in the ${MASTERDIR}/Makefile

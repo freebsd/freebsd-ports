@@ -51,10 +51,12 @@ UNIT_TMPDIR?=	${UNIT_VARDIR}/tmp/unit
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--ld-opt="-L${LOCALBASE}/lib" \
 		--log=${UNIT_LOGFILE} \
-		--modules=libexec/unit/modules \
+		--logdir=${UNIT_LOGDIR} \
+		--modulesdir=${PREFIX}/libexec/unit/modules \
 		--pid=${UNIT_PIDFILE} \
-		--state=${UNIT_DBDIR} \
-		--tmp=${UNIT_TMPDIR} \
+		--runstatedir=${UNIT_RUNDIR} \
+		--statedir=${UNIT_DBDIR} \
+		--tmpdir=${UNIT_TMPDIR} \
 		--user=${WWWOWN} --group=${WWWGRP}
 
 USERS?=	${WWWOWN}
@@ -84,6 +86,7 @@ CONFIGURE_ARGS+=--no-ipv6
 .endif
 
 .if ${PORT_OPTIONS:MNJS}
+USES+=	pkgconfig
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libnjs.a:devel/libnjs
 CONFIGURE_ARGS+=--njs \
 	--cc-opt="-I${LOCALBASE}/include" \
@@ -132,7 +135,8 @@ post-install:
 	${ECHO_CMD} @dir ${UNIT_RUNDIR} >> ${TMPPLIST}
 	${ECHO_CMD} @dir ${UNIT_TMPDIR} >> ${TMPPLIST}
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/unit/modules
-	${INSTALL_MAN} ${WRKSRC}/build/unitd.8 ${STAGEDIR}${MAN8PREFIX}/share/man/man8
+	${INSTALL_MAN} ${WRKSRC}/build/share/man/man8/unitd.8 \
+		${STAGEDIR}${MAN8PREFIX}/share/man/man8
 .endif
 
 .include "../../www/unit/version.mk"

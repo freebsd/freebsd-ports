@@ -37,7 +37,7 @@ PLIST_FILES+=	include/nxt_auto_config.h \
 		lib/libunit.a
 
 do-build:
-	@cd ${WRKSRC} && ${MAKE} build/libunit.a
+	@cd ${WRKSRC} && ${MAKE} build/lib/libunit.a
 
 do-install:
 	${MAKE} -C ${WRKSRC} libunit-install DESTDIR=${STAGEDIR}
