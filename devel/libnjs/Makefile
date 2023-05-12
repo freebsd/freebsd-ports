@@ -1,5 +1,6 @@
 PORTNAME=	libnjs
 DISTVERSION=	0.7.12
+PORTREVISION=	1
 CATEGORIES=	devel www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -9,6 +10,8 @@ WWW=		https://nginx.org/en/docs/njs/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
+
 USES=		cpe ssl
 
 CPE_VENDOR=	f5
@@ -16,8 +19,6 @@ CPE_VENDOR=	f5
 USE_GITHUB=	yes
 GH_TUPLE=	nginx:njs:${DISTVERSION}
 HAS_CONFIGURE=	yes
-
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 PLIST_FILES=	include/njs_addr2line.h \
 		include/njs_arr.h \
@@ -91,14 +92,16 @@ PLIST_FILES=	include/njs_addr2line.h \
 		include/njs_vm.h \
 		include/njs_vmcode.h \
 		include/njs.h \
-		lib/libnjs.a
+		lib/libnjs.a \
+		libdata/pkgconfig/njs.pc
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} build/libnjs.a
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} libnjs
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/*.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/build/njs_auto_config.h ${STAGEDIR}${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/build/libnjs.a ${STAGEDIR}${PREFIX}/lib
+	${INSTALL_DATA} ${WRKSRC}/build/njs.pc ${STAGEDIR}${PREFIX}/libdata/pkgconfig
 
 .include <bsd.port.mk>
