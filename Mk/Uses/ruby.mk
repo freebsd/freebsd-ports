@@ -164,13 +164,20 @@ RUBY_PORTREVISION=	1
 RUBY_DISTVERSION=	3.2.2
 RUBY_PORTREVISION=	1
 
+.      elif ${RUBY_VER} == 3.3
+#
+# Ruby 3.2
+#
+RUBY_DISTVERSION=	3.3.0-preview1
+RUBY_PORTREVISION=	0
+
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
 .      else
 #
 # Other versions
 #
-IGNORE=	Only ruby 3.0, 3.1 and 3.2 are supported
+IGNORE=	Only ruby 3.0, 3.1, 3,2 and 3.3 are supported
 _INVALID_RUBY_VER=	1
 .      endif
 RUBY_PORTEPOCH=		1
@@ -182,6 +189,7 @@ RUBY_VERSION=	${RUBY_DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}
 RUBY30?=		"@comment "
 RUBY31?=		"@comment "
 RUBY32?=		"@comment "
+RUBY33?=		"@comment "
 
 .      if defined(BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E})
 .        if ${BROKEN_RUBY${RUBY_VER:R}${RUBY_VER:E}} == "yes"

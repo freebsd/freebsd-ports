@@ -126,7 +126,7 @@ PYTHON_DEFAULT?=	3.9
 PYTHON2_DEFAULT?=	2.7
 # Possible values: 3.7, 3.8, 3.9, 3.10, 3.11
 PYTHON3_DEFAULT?=	3.9
-# Possible values: 3.0, 3.1, 3.2
+# Possible values: 3.0, 3.1, 3.2, 3.3
 RUBY_DEFAULT?=		3.1
 # Possible values: rust, rust-nightly
 RUST_DEFAULT?=		rust
