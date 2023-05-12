@@ -2581,6 +2581,9 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/LocalFilesEditor/language/es_ES/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/LocalFilesEditor/language/es_ES/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/LocalFilesEditor/language/es_ES/plugin.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/LocalFilesEditor/language/es_MX/description.txt
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/LocalFilesEditor/language/es_MX/index.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/LocalFilesEditor/language/es_MX/plugin.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/LocalFilesEditor/language/et_EE/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/LocalFilesEditor/language/et_EE/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/LocalFilesEditor/language/et_EE/plugin.lang.php
@@ -3014,6 +3017,8 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/language/eo_EO/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/language/es_ES/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/language/es_ES/index.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/language/es_MX/description.txt
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/language/es_MX/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/language/et_EE/description.txt
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/language/et_EE/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/plugins/language_switch/language/eu_ES/description.txt
@@ -3611,6 +3616,8 @@
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/en_UK/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/eo_EO/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/es_ES/theme.lang.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/es_MX/index.php
+@(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/es_MX/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/et_EE/theme.lang.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/eu_ES/index.php
 @(%%WWWOWN%%,%%WWWGRP%%,750) %%WWWDIR%%/themes/elegant/language/eu_ES/theme.lang.php
