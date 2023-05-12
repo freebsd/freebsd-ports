@@ -57,6 +57,7 @@
     SUBDIR += diesel
     SUBDIR += duckdb
     SUBDIR += ejdb
+    SUBDIR += emacs-sqlite3-api
     SUBDIR += emacsql
     SUBDIR += erlfdb
     SUBDIR += evolution-data-server
