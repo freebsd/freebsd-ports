@@ -1,6 +1,5 @@
 PORTNAME=	gdata
-PORTVERSION=	2.18.0.1
-PORTREVISION=	1
+PORTVERSION=	2.19.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,7 +9,9 @@ WWW=		https://cran.r-project.org/web/packages/gdata/
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	R-cran-gtools>0:devel/R-cran-gtools
+CRAN_DEPENDS=	R-cran-gtools>0:devel/R-cran-gtools
+BUILD_DEPENDS=	${CRAN_DEPENDS}
+RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		cran:auto-plist perl5 shebangfix
 USE_PERL5=	run
