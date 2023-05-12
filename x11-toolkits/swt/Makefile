@@ -43,6 +43,8 @@ WEBKIT_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 WEBKIT_MAKE_ENV=	BUILD_WEBKIT2EXTENSION=yes
 WEBKIT_MAKE_ENV_OFF=	BUILD_WEBKIT2EXTENSION=no
 
+.include <bsd.port.pre.mk>
+
 post-extract:
 	@(cd ${WRKSRC} && ${UNZIP_CMD} -qo "*.zip")
 	@${CP} ${FILESDIR}/build.xml ${WRKSRC}/build.xml
@@ -50,6 +52,10 @@ post-extract:
 	@${CP} ${FILESDIR}/*.css ${WRKSRC}/org/eclipse/swt/internal/gtk/
 
 post-patch:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+	${REINPLACE_CMD} -e 's|-DGTK|-DGTK -Wno-error=deprecated-non-prototype|g' \
+		${WRKSRC}/make_freebsd.mak
+.endif
 	${SED} -e 's|freebsd|dragonfly|g' ${WRKSRC}/make_freebsd.mak \
 		> ${WRKSRC}/make_dragonfly.mak
 
@@ -58,4 +64,4 @@ do-install:
 	${INSTALL_LIB} ${WRKSRC}/libswt-*.so ${STAGEDIR}${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/swt.jar ${STAGEDIR}${JAVAJARDIR}/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
