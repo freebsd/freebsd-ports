@@ -1,3 +1,28 @@
+  <vuln vid="ec63bc8e-f092-11ed-85ca-001517a2e1a4">
+    <topic>piwigo -- SQL injection</topic>
+    <affects>
+      <package>
+	<name>piwigo</name>
+	<range><lt>13.7.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Piwigo reports:</p>
+	<blockquote cite="https://www.piwigo.org/release-13.7.0">
+	  <p>Piwigo is affected by multiple SQL injection issues.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.piwigo.org/release-13.7.0</url>
+    </references>
+    <dates>
+      <discovery>2023-03-01</discovery>
+      <entry>2023-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4b636f50-f011-11ed-bbae-6cc21735f730">
     <topic>postgresql-server -- Row security policies disregard user ID changes after inlining</topic>
     <affects>
