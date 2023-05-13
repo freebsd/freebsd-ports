@@ -1,0 +1,53 @@
+Since Apache r1908095 [1], it has become far less forgiving of 'invalid characters' in Rewrite patterns, for example patterns with spaces.
+
+Songs often have spaces in the filenames, so it is necessary to pass them.
+
+[1] https://svn.apache.org/viewvc?view=revision&revision=1908095
+
+[2] https://webmasters.stackexchange.com/questions/141837/ah10411-rewritten-query-string-contains-control-characters-or-spaces
+
+diff --git a/public/daap/.htaccess b/public/daap/.htaccess
+index b1e0ee01b..0d8fc6e69 100644
+--- public/daap/.htaccess
++++ public/daap/.htaccess
+@@ -2,5 +2,5 @@
+     RewriteEngine On
+     RewriteCond %{REQUEST_FILENAME} !-d
+     RewriteCond %{REQUEST_FILENAME} !-s
+-    RewriteRule ^(.+)$ /index.php?action=$1 [PT,L,QSA]
+-</IfModule>
+\ No newline at end of file
++    RewriteRule ^(.+)$ /index.php?action=$1 "[PT,L,QSA,B= ?,BNP]"
++</IfModule>
+diff --git a/public/play/.htaccess.dist b/public/play/.htaccess.dist
+index e1320aaae..6a11825a9 100644
+--- public/play/.htaccess.dist
++++ public/play/.htaccess.dist
+@@ -2,8 +2,8 @@
+     RewriteEngine On
+     RewriteCond %{REQUEST_FILENAME} !-d
+     RewriteCond %{REQUEST_FILENAME} !-s
+-    RewriteRule ^art/([^/]+)/([^/]+)/([0-9]+)/thumb([0-9]*)\.([a-z]+)$ /image.php?object_type=$2&object_id=$3&auth=$1&thumb=$4&name=art.jpg [L]
+-    RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)(/.*)?$ /play/$5?$1=$2&$3=$4 [N,QSA]
+-    RewriteRule ^([^/]+)/([^/]+)(/.*)?$ /play/$3?$1=$2 [N,QSA]
+-    RewriteRule ^(/[^/]+|[^/]+/|/?)$ /play/index.php [L,QSA]
++    RewriteRule ^art/([^/]+)/([^/]+)/([0-9]+)/thumb([0-9]*)\.([a-z]+)$ /image.php?object_type=$2&object_id=$3&auth=$1&thumb=$4&name=art.jpg "[L,B= ?,BNP]"
++    RewriteRule ^([^/]+)/([^/]+)/([^/]+)/([^/]+)(/.*)?$ /play/$5?$1=$2&$3=$4 "[N,QSA,B= ?,BNP]"
++    RewriteRule ^([^/]+)/([^/]+)(/.*)?$ /play/$3?$1=$2 "[N,QSA,B= ?,BNP]"
++    RewriteRule ^(/[^/]+|[^/]+/|/?)$ /play/index.php "[L,QSA,B= ?,BNP]"
+ </IfModule>
+diff --git a/public/rest/.htaccess.dist b/public/rest/.htaccess.dist
+index 182930219..65cff9e4f 100644
+--- public/rest/.htaccess.dist
++++ public/rest/.htaccess.dist
+@@ -2,6 +2,6 @@
+     RewriteEngine On
+     RewriteCond %{REQUEST_FILENAME} !-d
+     RewriteCond %{REQUEST_FILENAME} !-s
+-    RewriteRule ^(.+)\.view$ /rest/index.php?ssaction=$1 [PT,L,QSA]
+-    RewriteRule ^fake/(.+)$ /play/$1 [PT,L,QSA]
+-</IfModule>
+\ No newline at end of file
++    RewriteRule ^(.+)\.view$ /rest/index.php?ssaction=$1 "[PT,L,QSA,B= ?,BNP]"
++    RewriteRule ^fake/(.+)$ /play/$1 "[PT,L,QSA,B= ?,BNP]"
++</IfModule>
