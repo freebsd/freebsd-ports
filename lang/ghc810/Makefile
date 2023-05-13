@@ -20,9 +20,9 @@ BASE_PACKAGES=		Cabal-3.2.1.0 array-0.5.4.0 base-4.14.3.0 binary-0.8.8.0 \
 			process-1.6.13.2 stm-2.5.0.1 template-haskell-2.16.0.0 \
 			terminfo-0.4.1.4 text-1.2.4.1 time-1.9.3 \
 			transformers-0.5.6.2 unix-2.7.2.2 xhtml-3000.2.2.1
+BOOT_GHC_VERSION=	8.10.7
 
-EXTRA_PATCHES=	${MASTERDIR}/files/extra-utils_llvm-targets_gen-data-layout.sh \
-		${MASTERDIR}/files/patch-llvm-targets
+EXTRA_PATCHES=	${MASTERDIR}/files/extra-utils_llvm-targets_gen-data-layout.sh
 
 MASTERDIR=	${.CURDIR}/../ghc
 PATCHDIR=	${.CURDIR}/files

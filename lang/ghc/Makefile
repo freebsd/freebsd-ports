@@ -1,6 +1,6 @@
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION?=	2
+PORTREVISION?=	0
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot
@@ -27,7 +27,7 @@ USE_LOCALE=		en_US.UTF-8
 USE_PERL5=		build
 NO_CCACHE=		yes
 OPTIONS_SUB=		yes
-SHEBANG_FILES=		boot
+SHEBANG_FILES=		${BOOT_SCRIPT}
 
 OPTIONS_DEFINE?=	DYNAMIC GMP PROFILE DOCS
 OPTIONS_DEFAULT=	DYNAMIC PROFILE GMP
@@ -69,21 +69,21 @@ GMP_VARS_OFF=		hadrian_gmp_arg=--bignum=native
 PROFILE_VARS=		enable_profile=YES hadrian_setting_profile=True
 PROFILE_VARS_OFF=	enable_profile=NO hadrian_setting_profile=False
 
-GHC_VERSION?=		9.2.7
-LLVM_VERSION?=		12
-BOOT_GHC_VERSION?=	8.10.7
+GHC_VERSION?=		9.4.5
+LLVM_VERSION?=		13
+BOOT_GHC_VERSION?=	9.2.7
 # LLVM version that bootstrap compiler uses
-BOOT_LLVM_VERSION?=	10
+BOOT_LLVM_VERSION?=	12
 
-BASE_PACKAGES?=		Cabal-3.6.3.0 array-0.5.4.0 base-4.16.4.0 binary-0.8.9.0 \
-			bytestring-0.11.4.0 containers-0.6.5.1 deepseq-1.4.6.1 \
-			directory-1.3.6.2 exceptions-0.10.4 filepath-1.4.2.2 \
-			ghc-${GHC_VERSION} ghc-bignum-1.2 ghc-compact-0.1.0.0 \
-			ghc-prim-0.8.0 haskeline-0.8.2 hpc-0.6.1.0 \
-			integer-gmp-1.1 mtl-2.2.2 parsec-3.1.15.0 pretty-1.3.3.6 \
-			process-1.6.16.0 stm-2.5.0.2 template-haskell-2.18.0.0 \
-			terminfo-0.4.1.5 text-1.2.5.0 time-1.11.1.1 \
-			transformers-0.5.6.2 unix-2.7.2.2 xhtml-3000.2.2.1
+BASE_PACKAGES?=		Cabal-3.8.1.0 array-0.5.4.0 base-4.17.1.0 binary-0.8.9.1 \
+			bytestring-0.11.4.0 containers-0.6.7 deepseq-1.4.8.0 \
+			directory-1.3.7.1 exceptions-0.10.5 filepath-1.4.2.2 \
+			ghc-${GHC_VERSION} ghc-bignum-1.3 ghc-compact-0.1.0.0 \
+			ghc-prim-0.9.0 haskeline-0.8.2 hpc-0.6.1.0 \
+			integer-gmp-1.1 mtl-2.2.2 parsec-3.1.16.1 pretty-1.1.3.6 \
+			process-1.6.16.0 stm-2.5.1.0 template-haskell-2.19.0.0 \
+			terminfo-0.4.1.5 text-2.0.2 time-1.12.2 \
+			transformers-0.5.6.2 unix-2.7.3 xhtml-3000.2.2.1
 
 .for pkg in ${BASE_PACKAGES}
 PLIST_SUB+=	${pkg:C/-([0-9.])+//:tu}_VERSION=${pkg:C/^([^\.]*-)+//}
@@ -108,6 +108,12 @@ BUILD_MK=		DYNAMIC_GHC_PROGRAMS=${ENABLE_DYNAMIC} \
 # hadrian build on i386 fails due to https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=269570
 # relocation R_386_TLS_LE cannot be used with -shared
 USE_HADRIAN=		yes
+.endif
+
+.if ${GHC_VERSION:C/\..*//g} >= 9 && ${GHC_VERSION:C/[^\.]*\.//:C/\..*//g} >= 4
+BOOT_SCRIPT=	./boot.source
+.else
+BOOT_SCRIPT=	./boot
 .endif
 
 .if ${SLAVE_PORT} != "yes"
@@ -137,7 +143,12 @@ IGNORE=			Building with Hadrian requires both DYNAMIC and PROFILE for now
 GHC_ARCH=		${ARCH:S/amd64/x86_64/:C/armv.*/arm/}
 CONFIGURE_TARGET=	${GHC_ARCH}-portbld-${OPSYS:tl}
 BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-boot
-BOOT_GHC=		${BOOT_DIR}/bin/ghc-${BOOT_GHC_VERSION}
+BOOT_INSTALL_DIR=	${WRKDIR}/ghc-boot-install
+BOOT_GHC=		${BOOT_INSTALL_DIR}/bin/ghc-${BOOT_GHC_VERSION}
+
+.if ${BOOT_GHC_VERSION:C/\..*//g} >= 9
+BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-${CONFIGURE_TARGET}
+.endif
 
 # This version of ncurses is needed by bootstrap compiler
 .if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT)
@@ -178,19 +189,21 @@ post-patch:
 		${PATCHDIR}/UserSettings.hs > ${WRKSRC}/hadrian/src/UserSettings.hs
 .endif
 
+.if ${BOOT_GHC_VERSION:C/\..*//g} < 9
 # TODO: remove this after rerolling all bootstraps
 post-patch-BOOT-off:
 	@${REINPLACE_CMD} -e '/^mandir/d' ${BOOT_DIR}/mk/build.mk
 	@${REINPLACE_CMD} -e '/^infodir/d' ${BOOT_DIR}/mk/build.mk
 	@${REINPLACE_CMD} -e '/^docdir/d' ${BOOT_DIR}/mk/build.mk
 	@${REINPLACE_CMD} -e '/^htmldir/d' ${BOOT_DIR}/mk/build.mk
+.endif
 
 pre-configure:
 	# Call the bootstrap script
-	cd ${WRKSRC}/ && ./boot
+	cd ${WRKSRC}/ && ${BOOT_SCRIPT}
 # If we are using bootstrap compiler, configure and install it into ${BOOT_DIR}
 .if empty(PORT_OPTIONS:MBOOT)
-	cd ${BOOT_DIR} && ${CONFIGURE_ENV} ${CONFIGURE_CMD} --prefix=${BOOT_DIR}
+	cd ${BOOT_DIR} && ${CONFIGURE_ENV} ${CONFIGURE_CMD} --prefix=${BOOT_INSTALL_DIR}
 	cd ${BOOT_DIR} && PACKAGES='' ${MAKE_CMD} install
 .endif
 .ifdef USE_HADRIAN
@@ -218,7 +231,9 @@ post-install:
 	${FIND} ${STAGEDIR}${PREFIX}/lib/ghc-${GHC_VERSION} -name '*.so' -exec ${STRIP_CMD} {} +
 	${RM} ${STAGEDIR}${PREFIX}/bin/haddock
 .if ${SLAVE_PORT} == "yes"
+.  ifndef USE_HADRIAN
 	${MV} ${STAGEDIR}${PREFIX}/bin/hsc2hs ${STAGEDIR}${PREFIX}/bin/hsc2hs-ghc-${GHC_VERSION}
+.  endif
 	${FIND} ${STAGEDIR}${PREFIX}/bin -not -type d -not -regex '.*-${GHC_VERSION}' -delete
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/ghc-${GHC_VERSION}/html
 	${RM} -r ${STAGEDIR}${PREFIX}/lib/ghc-${GHC_VERSION}/latex
@@ -231,8 +246,8 @@ post-install-DOCS-off:
 # to be built.
 	${RM} -r ${STAGEDIR}${DOCSDIR}/html
 
-.if exists(${BOOT_DIR}/bin/runhaskell)
-RUNHASKELL?=	${BOOT_DIR}/bin/runhaskell
+.if exists(${BOOT_INSTALL_DIR}/bin/runhaskell)
+RUNHASKELL?=	${BOOT_INSTALL_DIR}/bin/runhaskell
 .else
 RUNHASKELL?=	${LOCALBASE}/bin/runhaskell
 .endif
