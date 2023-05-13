@@ -1,10 +1,9 @@
 PORTNAME=	ytfzf
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
-PORTREVISION=	2
+DISTVERSION=	2.6.0
 CATEGORIES=	multimedia
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Find and watch YouTube videos from the terminal
 WWW=		https://github.com/pystardust/ytfzf
 
@@ -28,21 +27,20 @@ PYTHON_NO_DEPENDS=	yes
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	bin/${PORTNAME}
+PLIST_FILES=	bin/${PORTNAME} \
+		share/man/man1/${PORTNAME}.1.gz \
+		share/man/man5/${PORTNAME}.5.gz
 
-PORTDOCS=	USAGE.md conf.sh
 PORTEXAMPLES=	conf.sh
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	EXAMPLES
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/docs/man/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
+	${INSTALL_MAN} ${WRKSRC}/docs/man/${PORTNAME}.5 ${STAGEDIR}${PREFIX}/share/man/man5
 
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/USAGE.md ${STAGEDIR}${DOCSDIR}
-
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/conf.sh ${STAGEDIR}${EXAMPLESDIR}
-	${RLN} ${STAGEDIR}${EXAMPLESDIR}/conf.sh ${STAGEDIR}${DOCSDIR}/conf.sh
 
 .include <bsd.port.mk>
