@@ -1,6 +1,6 @@
 PORTNAME=	mutt
 DISTVERSION=	2.2.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
 		https://bitbucket.org/mutt/mutt/downloads/ \
@@ -181,7 +181,8 @@ SASL_CYRUS_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 SASL_CYRUS_CONFIGURE_WITH=	sasl=${LOCALBASE}
 SASL_GSASL_LIB_DEPENDS=		libgsasl.so:security/libgsasl
 SASL_GSASL_CONFIGURE_WITH=	gsasl=${LOCALBASE}
-SASL_NONE_CONFIGURE_WITH=	sasl=no
+SASL_NONE_CONFIGURE_ON=		--with-sasl=no
+SASL_NONE_CONFIGURE_OFF=
 
 # Handle ncurses/ncurses-port/slang
 SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
