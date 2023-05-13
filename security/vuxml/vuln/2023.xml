@@ -1,3 +1,31 @@
+  <vuln vid="4a08a4fb-f152-11ed-9c88-001b217b3468">
+    <topic>Gitlab -- Vulnerability</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.11.0</ge><lt>15.11.3</lt></range>
+	<range><ge>15.10.0</ge><lt>15.10.7</lt></range>
+	<range><ge>9.0</ge><lt>15.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/05/10/security-release-gitlab-15-11-3-released/">
+	  <p>Smuggling code changes via merge requests with refs/replace</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2181</cvename>
+      <url>https://about.gitlab.com/releases/2023/05/10/security-release-gitlab-15-11-3-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-10</discovery>
+      <entry>2023-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec63bc8e-f092-11ed-85ca-001517a2e1a4">
     <topic>piwigo -- SQL injection</topic>
     <affects>
