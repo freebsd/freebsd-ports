@@ -1,7 +1,11 @@
 PORTNAME=	pinfo
 DISTVERSION=	0.6.13
+PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
+PATCHFILES+=	27.patch:-p1 \
+		34.patch:-p1
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Ncurses based, lynx style info documentation browser
