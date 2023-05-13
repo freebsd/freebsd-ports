@@ -3,8 +3,8 @@ PORTVERSION=	1.2.5
 CATEGORIES=	sysutils gnome
 PKGNAMESUFFIX=	2
 
-# Support for DRM/evdev
-PATCH_SITES=	https://github.com/unrelentingtech/ConsoleKit2/commit/
+# https://github.com/ConsoleKit2/ConsoleKit2/pull/116
+PATCH_SITES=	https://github.com/ConsoleKit2/ConsoleKit2/commit/
 PATCHFILES=	03eaa9779f2c9c7b0acf0521a5547036bdec2245.patch:-p1 \
 		05f26e99539e7a442e57035ed6d64fdd9a50feb9.patch:-p1 \
 		ea4a569100dfa44a0c9d42b1cf7381fd8f88c837.patch:-p1 \
