@@ -3,9 +3,11 @@ DISTVERSION=	0.6.13
 PORTREVISION=	1
 CATEGORIES=	misc
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/pull/
-PATCHFILES+=	27.patch:-p1 \
-		34.patch:-p1
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+# PR 27 and PR 34
+PATCHFILES+=	fc67ceacd81f0c74fcab85447c23a532ae482827.patch:-p1 \
+		ab604fdb67296dad27f3a25f3c9aabdd2fb8c3fa.patch:-p1 \
+		db0f2b808103d44fa36ea6c96321b87da9ac1add.patch:-p1
 
 MAINTAINER=	otis@FreeBSD.org
 COMMENT=	Ncurses based, lynx style info documentation browser
