@@ -2017,6 +2017,7 @@
 %%WWWDIR%%/plugins/toggle_sidebar/init.php
 %%WWWDIR%%/prefs.php
 %%WWWDIR%%/public.php
+%%WWWDIR%%/ttrss_db_check.php
 %%WWWDIR%%/schema/ttrss_schema_mysql.sql
 %%WWWDIR%%/schema/ttrss_schema_pgsql.sql
 %%WWWDIR%%/sql/mysql/migrations/3.sql

@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230513:
+  AFFECTS: users of www/tt-rss
+  AUTHOR: dereks@lifeofadishwasher.com
+
+  www/tt-rss now expects the user to install the database drivers by hand
+  allowing the port to be database independent however it would be best if you
+  mark the php driver packages as a non-automatic package such that
+  pkg-autoremove doesn't uninstall them.
+
+  Change 80 to your corresponding php version (80, 81, 82)
+
+  mysql: pkg set -yA 0 php80-mysqli php80-pdo_mysql;
+  pgsql: pkg set -yA 0 php80-pgsql php80-pdo_pgsql;
+
 20230511:
   AFFECTS: users of net-mgmt/py-netbox-secretstore
   AUTHOR: kai@FreeBSD.org

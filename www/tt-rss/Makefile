@@ -1,5 +1,5 @@
 PORTNAME=	tt-rss
-PORTVERSION=	g20230413
+PORTVERSION=	g20230509
 PORTEPOCH=	2
 CATEGORIES=	www
 
@@ -15,7 +15,7 @@ USES=		gettext-tools php:cli,web shebangfix
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.tt-rss.org
-GL_COMMIT=	0578bf802571781a0a7e3debbbec66437a7d28b4
+GL_COMMIT=	11946f0148d0b8a76ecc120fd9c1dc0b7fa04664
 
 USE_PHP=	ctype dom exif fileinfo filter iconv intl mbstring openssl \
 		pcntl pdo phar posix session simplexml tokenizer xml xmlwriter \
@@ -29,30 +29,28 @@ REINPLACE_ARGS=	-i ""
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-SUB_FILES=	config.php httpd-tt-rss.conf pkg-message
-SUB_LIST=	MYSQL=${MYSQL} \
-		PGSQL=${PGSQL} \
+# Instead of depending on the extact database driver list php packages that tt-rss
+# depends on during install pkg-message as a post install setup.
+# mysql: php-mysqli php-pdo_mysql
+# pgsql: php-pgsql php-pdo_pgsql
+#
+# from Mk/Uses/php.mk create sub vars for mysqli/pdo_mysql pgsql/pdo_pgsql values
+SUB_FILES=	config.php httpd-tt-rss.conf pkg-message ttrss_db_check.php
+SUB_LIST=	MYSQL_DEPS="${mysqli_DEPENDS:T} ${pdo_mysql_DEPENDS:T}" \
+		PGSQL_DEPS="${pgsql_DEPENDS:T} ${pdo_pgsql_DEPENDS:T}" \
 		WWWOWN=${WWWOWN}
 
 PLIST_SUB=	WWWGRP=${WWWGRP} \
 		WWWOWN=${WWWOWN}
 
 OPTIONS_DEFINE=		CURL GD
-OPTIONS_DEFAULT=	CURL GD MYSQL
-OPTIONS_SINGLE=		DB
-OPTIONS_SINGLE_DB=	MYSQL PGSQL
+OPTIONS_DEFAULT=	CURL GD
 
 CURL_DESC=	Use SimplePie instead of Magpie
 GD_DESC=	Use OTP QR code generation
 
 CURL_USE=	PHP=curl
 GD_USE=		PHP=gd
-
-MYSQL_USE=	PHP=mysqli,pdo_mysql
-MYSQL_VARS_OFF=	MYSQL="\#"
-
-PGSQL_USE=	PHP=pdo_pgsql,pgsql
-PGSQL_VARS_OFF=	PGSQL="\#"
 
 do-install:
 	${MKDIR} \
@@ -68,6 +66,8 @@ do-install:
 	${RM} ${STAGEDIR}${WWWDIR}/config.php-dist
 	${INSTALL_DATA} ${WRKDIR}/config.php \
 		${STAGEDIR}${WWWDIR}/config.php.sample
+	${INSTALL_DATA} ${WRKDIR}/ttrss_db_check.php \
+		${STAGEDIR}${WWWDIR}/ttrss_db_check.php
 	${INSTALL_DATA} ${FILESDIR}/newsyslog.sample \
 		${STAGEDIR}${EXAMPLESDIR}
 
