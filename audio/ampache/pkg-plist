@@ -5916,6 +5916,7 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/vendor/myclabs/deep-copy/src/DeepCopy/DeepCopy.php
 %%WWWDIR%%/vendor/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php
 %%WWWDIR%%/vendor/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php
+%%WWWDIR%%/vendor/myclabs/deep-copy/src/DeepCopy/Filter/ChainableFilter.php
 %%WWWDIR%%/vendor/myclabs/deep-copy/src/DeepCopy/Filter/Doctrine/DoctrineCollectionFilter.php
 %%WWWDIR%%/vendor/myclabs/deep-copy/src/DeepCopy/Filter/Doctrine/DoctrineEmptyCollectionFilter.php
 %%WWWDIR%%/vendor/myclabs/deep-copy/src/DeepCopy/Filter/Doctrine/DoctrineProxyFilter.php
@@ -7359,7 +7360,7 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/PHPMailer.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/POP3.php
 %%WWWDIR%%/vendor/phpmailer/phpmailer/src/SMTP.php
-%%WWWDIR%%/vendor/phpunit/php-code-coverage/ChangeLog.md
+%%WWWDIR%%/vendor/phpunit/php-code-coverage/ChangeLog-9.2.md
 %%WWWDIR%%/vendor/phpunit/php-code-coverage/LICENSE
 %%WWWDIR%%/vendor/phpunit/php-code-coverage/README.md
 %%WWWDIR%%/vendor/phpunit/php-code-coverage/composer.json
@@ -10117,6 +10118,8 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/src/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.1.inc.fixed
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/src/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.2.inc
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/src/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.2.inc.fixed
+%%WWWDIR%%/vendor/squizlabs/php_codesniffer/src/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.3.inc
+%%WWWDIR%%/vendor/squizlabs/php_codesniffer/src/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.3.inc.fixed
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/src/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.css
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/src/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.css.fixed
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/src/Standards/Generic/Tests/WhiteSpace/DisallowTabIndentUnitTest.js
@@ -11081,6 +11084,10 @@ man/man1/ampache.1.gz
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/tests/Core/Tokenizer/FinallyTest.php
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/tests/Core/Tokenizer/GotoLabelTest.inc
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/tests/Core/Tokenizer/GotoLabelTest.php
+%%WWWDIR%%/vendor/squizlabs/php_codesniffer/tests/Core/Tokenizer/HeredocNowdocCloserTest.inc
+%%WWWDIR%%/vendor/squizlabs/php_codesniffer/tests/Core/Tokenizer/HeredocNowdocCloserTest.php
+%%WWWDIR%%/vendor/squizlabs/php_codesniffer/tests/Core/Tokenizer/HeredocStringTest.inc
+%%WWWDIR%%/vendor/squizlabs/php_codesniffer/tests/Core/Tokenizer/HeredocStringTest.php
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/tests/Core/Tokenizer/NamedFunctionCallArgumentsTest.inc
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/tests/Core/Tokenizer/NamedFunctionCallArgumentsTest.php
 %%WWWDIR%%/vendor/squizlabs/php_codesniffer/tests/Core/Tokenizer/NullsafeObjectOperatorTest.inc
