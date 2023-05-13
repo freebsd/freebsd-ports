@@ -1,34 +1,28 @@
 PORTNAME=	wmfocus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.0
-PORTREVISION=	17
+DISTVERSION=	1.4.0
 CATEGORIES=	x11
 
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	c646aa39614b.patch:-p1 # https://github.com/svenstaro/wmfocus/pull/72
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Visually focus windows by label
 WWW=		https://github.com/svenstaro/wmfocus
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	libxkbcommon>0:x11/libxkbcommon
-LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
-		libxcb-keysyms.so:x11/xcb-util-keysyms
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig
 
-USES=		cargo gnome python:3.4+,build xorg
+USES=		cargo gnome xorg
 USE_GITHUB=	yes
-USE_GNOME=	cairo
-USE_XORG=	x11 xcb
 GH_ACCOUNT=	svenstaro
+USE_GNOME=	cairo
+USE_XORG=	xcb
+
 CARGO_FEATURES=	i3
+
 PLIST_FILES=	bin/${PORTNAME}
 
-post-patch:
-# lang/python3 cannot be used as a dependency
-	@${REINPLACE_CMD} -e 's/"python3"/"${PYTHON_CMD:T}"/' \
-		${WRKSRC_crate_xcb}/build.rs
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.mk>
