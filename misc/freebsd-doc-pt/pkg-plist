@@ -9,6 +9,8 @@
 %%HTML%%%%DOCBASE%%/pt-br/articles/fonts/index.html
 %%HTML%%%%DOCBASE%%/pt-br/articles/freebsd-questions/index.html
 %%HTML%%%%DOCBASE%%/pt-br/articles/freebsd-releng/index.html
+%%HTML%%%%DOCBASE%%/pt-br/articles/freebsd-src-lsp/index.html
+%%HTML%%%%DOCBASE%%/pt-br/articles/freebsd-status-report-process/index.html
 %%HTML%%%%DOCBASE%%/pt-br/articles/freebsd-update-server/index.html
 %%HTML%%%%DOCBASE%%/pt-br/articles/geom-class/index.html
 %%HTML%%%%DOCBASE%%/pt-br/articles/gjournal-desktop/index.html
@@ -16,6 +18,7 @@
 %%HTML%%%%DOCBASE%%/pt-br/articles/ipsec-must/index.html
 %%HTML%%%%DOCBASE%%/pt-br/articles/ldap-auth/index.html
 %%HTML%%%%DOCBASE%%/pt-br/articles/leap-seconds/index.html
+%%HTML%%%%DOCBASE%%/pt-br/articles/license-guide/index.html
 %%HTML%%%%DOCBASE%%/pt-br/articles/linux-emulation/index.html
 %%HTML%%%%DOCBASE%%/pt-br/articles/linux-users/index.html
 %%HTML%%%%DOCBASE%%/pt-br/articles/mailing-list-faq/index.html
@@ -127,6 +130,8 @@
 %%PDF%%%%DOCBASE%%/pt-br/articles/fonts/fonts_pt-br.pdf
 %%PDF%%%%DOCBASE%%/pt-br/articles/freebsd-questions/freebsd-questions_pt-br.pdf
 %%PDF%%%%DOCBASE%%/pt-br/articles/freebsd-releng/freebsd-releng_pt-br.pdf
+%%PDF%%%%DOCBASE%%/pt-br/articles/freebsd-src-lsp/freebsd-src-lsp_pt-br.pdf
+%%PDF%%%%DOCBASE%%/pt-br/articles/freebsd-status-report-process/freebsd-status-report-process_pt-br.pdf
 %%PDF%%%%DOCBASE%%/pt-br/articles/freebsd-update-server/freebsd-update-server_pt-br.pdf
 %%PDF%%%%DOCBASE%%/pt-br/articles/geom-class/geom-class_pt-br.pdf
 %%PDF%%%%DOCBASE%%/pt-br/articles/gjournal-desktop/gjournal-desktop_pt-br.pdf
@@ -134,6 +139,7 @@
 %%PDF%%%%DOCBASE%%/pt-br/articles/ipsec-must/ipsec-must_pt-br.pdf
 %%PDF%%%%DOCBASE%%/pt-br/articles/ldap-auth/ldap-auth_pt-br.pdf
 %%PDF%%%%DOCBASE%%/pt-br/articles/leap-seconds/leap-seconds_pt-br.pdf
+%%PDF%%%%DOCBASE%%/pt-br/articles/license-guide/license-guide_pt-br.pdf
 %%PDF%%%%DOCBASE%%/pt-br/articles/linux-emulation/linux-emulation_pt-br.pdf
 %%PDF%%%%DOCBASE%%/pt-br/articles/linux-users/linux-users_pt-br.pdf
 %%PDF%%%%DOCBASE%%/pt-br/articles/mailing-list-faq/mailing-list-faq_pt-br.pdf
