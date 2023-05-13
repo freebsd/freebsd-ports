@@ -4591,7 +4591,7 @@
       </package>
     </affects>
     <description>
-      <body>
+      <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>MinIO reports:</p>
 	<blockquote cite="https://github.com/minio/minio/security/advisories/GHSA-2j69-jjmg-534q">
 	  <p>
