@@ -34,6 +34,12 @@ MAKE_ARGS+=	ETCPREFIX=${PREFIX} MANPREFIX=${PREFIX}/man ETCSUFFIX=.sample
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=strict-prototypes
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -i '' 's|/etc/monkeysphere|${PREFIX}/etc/monkeysphere|g' \
 	  ${WRKSRC}/etc/*.conf ${WRKSRC}/examples/* \
@@ -60,4 +66,4 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/agent-transfer
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
