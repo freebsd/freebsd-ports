@@ -4,17 +4,25 @@ PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Console-based tool for handling Postfix 1, Postfix 2, and Exim queues
 WWW=		http://pfqueue.sourceforge.net/
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static
 USES=		libtool ncurses
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static
+
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>
