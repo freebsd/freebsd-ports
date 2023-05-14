@@ -1,6 +1,5 @@
 PORTNAME=	racket
-PORTVERSION=	8.5
-PORTREVISION=	1
+PORTVERSION=	8.9
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://mirror.racket-lang.org/installers/${PORTVERSION}/ \
 		http://www.cs.utah.edu/plt/installers/${PORTVERSION}/ \
@@ -24,13 +23,15 @@ NOT_FOR_ARCHS_REASON=	unsupported platform
 
 LIB_DEPENDS=	libcairo.so:graphics/cairo \
 		libffi.so:devel/libffi \
+		liblz4.so:archivers/liblz4 \
 		libpng.so:graphics/png
 
 USES=		cpe gmake gnome iconv jpeg libtool localbase sqlite tar:tgz
 CPE_VENDOR=	${PORTNAME}-lang
 USE_GNOME=	cairo pango
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-pthread \
+CONFIGURE_ARGS=	--enable-liblz4 \
+		--enable-pthread \
 		--mandir=${MANPREFIX}/man
 WRKSRC=		${WRKDIR}/racket-${PORTVERSION}/src
 PATCH_WRKSRC=	${WRKDIR}/racket-${PORTVERSION}
