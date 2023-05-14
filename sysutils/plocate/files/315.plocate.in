@@ -1,0 +1,32 @@
+#!/bin/sh -
+#
+# $FreeBSD$
+#
+
+# If there is a global system configuration file, suck it in.
+#
+if [ -r /etc/defaults/periodic.conf ]
+then
+    . /etc/defaults/periodic.conf
+    source_periodic_confs
+fi
+
+case "$daily_plocate_enable" in
+    [Yy][Ee][Ss])
+	echo ""
+	echo "Rebuilding plocate database:"
+
+	SBINDIR=%%PREFIX%%/sbin
+	LOCATEGROUP=plocate
+	DBFILE=/var/db/plocate/plocate.db
+
+	touch $DBFILE && rc=0 || rc=3
+
+	cd /
+	nice -n 5 $SBINDIR/updatedb
+    ;;
+
+    *)  rc=0;;
+esac
+
+exit $rc

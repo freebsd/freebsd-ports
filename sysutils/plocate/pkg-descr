@@ -1,0 +1,5 @@
+plocate is a locate(1) based on posting lists, completely replacing mlocate
+with a much faster (and smaller) index. It is suitable as a default locate on
+your system.  Like mlocate and slocate, the returned file set is
+user-dependent, ie. a user will only see a file if find(1) would list it (all
+directories from the root have +rx permissions).
