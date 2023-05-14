@@ -14,6 +14,8 @@ LICENSE=	PD
 USES=		uidfix zip
 USE_LDCONFIG=	yes
 
+PORTSCOUT=	limitw:1,even
+
 WRKSRC_SUBDIR=	src
 
 .include <bsd.port.pre.mk>
