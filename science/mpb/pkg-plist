@@ -8,6 +8,9 @@ include/mpb/maxwell.h
 include/mpb/scalar.h
 include/mpb/verbosity.h
 lib/libmpb.a
+lib/libmpb.so
+lib/libmpb.so.1
+lib/libmpb.so.1.4.1
 man/man1/mpb-data.1.gz
 man/man1/mpb-split.1.gz
 man/man1/mpb.1.gz
