@@ -1,4 +1,5 @@
 Temporarily revert https://gitlab.com/gilrs-project/gilrs/-/commit/7cd001dacfb1
+until https://github.com/nix-rust/nix/issues/2037
 
 error[E0432]: unresolved import `nix::sys::epoll`
   --> cargo-crates/gilrs-core-0.5.5/src/platform/linux/gamepad.rs:21:15
