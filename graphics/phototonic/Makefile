@@ -1,10 +1,10 @@
 PORTNAME=	phototonic
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1
-PORTREVISION=	1
+DISTVERSION=	2.1-132
+DISTVERSIONSUFFIX=	-gfce9bfb
 CATEGORIES=	graphics
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Image viewer and organizer
 WWW=		http://oferkv.github.io/phototonic/
 
