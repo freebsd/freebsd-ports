@@ -1,5 +1,6 @@
 PORTNAME=	chef-bin
 PORTVERSION=	16.18.0
+PORTREVISION=	1
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/chef/chef/tree/main/chef-bin
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-chef>=${PORTVERSION}:sysutils/rubygem-chef
+RUN_DEPENDS=	rubygem-chef16>=${PORTVERSION}:sysutils/rubygem-chef16
 
 USES=		gem
 
