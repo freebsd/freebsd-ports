@@ -1,33 +1,34 @@
 PORTNAME=	mg
-PORTVERSION=	7.0
+DISTVERSION=	20230501
 PORTEPOCH=	1
 CATEGORIES=	editors
-MASTER_SITES=	https://github.com/ibara/mg/releases/download/mg-${PORTVERSION}/
 
-MAINTAINER=	cgr.nil@gmail.com
+MAINTAINER=	cdr.nil@gmail.com
 COMMENT=	Small, fast Emacs-like editor
-WWW=		https://github.com/ibara/mg
+WWW=		https://github.com/hboetes/mg
 
 LICENSE=	PD
 
+USES=		ncurses
+USE_GITHUB=	yes
+GH_ACCOUNT=	hboetes
+STAGEOWN=	${USER}
+STAGEGRP!=	id -gn
+MAKE_ARGS+=	BINOWN=${STAGEOWN} BINGRP=${STAGEGRP} MANOWN=${STAGEOWN} \
+		MANGRP=${STAGEGRP} BINDIR=${PREFIX}/bin \
+		MANDIR=${PREFIX}/man/man NCURSESLIB=${NCURSESLIB} \
+		NCURSESINC=${NCURSESINC}
 FLAVORS=	dynamic static
 FLAVOR?=	${FLAVORS:[1]}
-
 static_PKGNAMESUFFIX=	-static
 .if ${FLAVOR} == static
-COMMENT+=		(rescue(8) version)
-.endif
-
-USES=		ncurses
-HAS_CONFIGURE=	yes
-.if ${FLAVOR} == static
-CONFIGURE_ARGS=	--enable-static
+COMMENT+=	(rescue(8) version)
+MAKE_ARGS+= 	NO_SHARED=yes
 PLIST_FILES=	/rescue/mg
 .else
 PLIST_FILES=	bin/mg \
 		man/man1/mg.1.gz
-PORTDOCS=	README-Mg README.md tutorial
-
+PORTDOCS=	README README.md tutorial
 OPTIONS_DEFINE=	DOCS
 .endif
 
