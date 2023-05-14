@@ -1,13 +1,12 @@
 PORTNAME=	gitlab-runner
-DISTVERSION=	15.10.0
-PORTREVISION=	1
+DISTVERSION=	15.11.0
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
 DISTFILES=	prebuilt-x86_64.tar.xz:dockerx64 \
 		prebuilt-arm.tar.xz:dockerarm
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	Official GitLab Runner written in Go
 WWW=		https://gitlab.com/gitlab-org/gitlab-runner
 
@@ -34,8 +33,8 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find tags here:
 # https://gitlab.com/gitlab-org/gitlab-runner/tags
-GL_COMMIT=	456e34824406b57e26b4dec29e9038edc2ac0396
-GITBRANCH=	15-10-stable
+GL_COMMIT=	436955cbc8f66f59294ea16e5e538fec8ab44a02
+GITBRANCH=	15-11-stable
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
