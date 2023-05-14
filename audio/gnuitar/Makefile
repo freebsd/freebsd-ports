@@ -4,32 +4,47 @@ PORTREVISION=	10
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Real-time guitar processor
 WWW=		http://www.gnuitar.com
 
-USE_GNOME=	gtk20
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz
+
 USES=		gmake gnome pkgconfig tar:bzip2
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gtk2 \
-		--enable-clip-everywhere \
-		--enable-float
+CONFIGURE_ARGS=	--enable-clip-everywhere \
+		--enable-float \
+		--with-gtk2
+
+DESKTOP_ENTRIES=	"GNUitar" \
+			"Apply guitar effects in real-time" \
+			"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
+			"gnuitar" \
+			"" \
+			true
 
 TXT_DOCS=	AUTHORS COPYING FAQ INSTALL NEWS README TODO ChangeLog
 HTML_DOCS=	faq.html index.html install.html readme.html
-PORTDOCS=	${TXT_DOCS} ${HTML_DOCS}
+PORTDOCS=	${HTML_DOCS} ${TXT_DOCS}
 
-DESKTOP_ENTRIES="GNUitar" \
-		"Apply guitar effects in real-time" \
-		"${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
-		"gnuitar" \
-		"" \
-		true
-
-OPTIONS_DEFINE=	SUID DOCS
+OPTIONS_DEFINE=		DOCS SUID
 OPTIONS_DEFAULT=	SUID
+OPTIONS_SUB=		yes
+
 SUID_DESC=	Use suid to allow highest priority (priv. dropped)
-OPTIONS_SUB=	yes
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 pre-everything::
 	@${CAT} ${PKGMESSAGE}
@@ -43,4 +58,4 @@ do-install-DOCS-on:
 	${INSTALL_DATA} ${TXT_DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${HTML_DOCS:S,^,${WRKSRC}/docs/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
