@@ -432,6 +432,7 @@
     SUBDIR += wl-mirror
     SUBDIR += wlogout
     SUBDIR += wlr-randr
+    SUBDIR += wlr-which-key
     SUBDIR += wlrctl
     SUBDIR += wmappl
     SUBDIR += wmblob
