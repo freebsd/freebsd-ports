@@ -1,7 +1,5 @@
 bin/reggae
 @sample %%ETCDIR%%.conf.sample
-man/man1/reggae-project.1.gz
-man/man1/reggae-provision.1.gz
 man/man1/reggae.1.gz
 %%DATADIR%%/cbsd-profile/jail-freebsd-reggae.conf
 %%DATADIR%%/cbsd-profile/skel/etc/crontab
@@ -139,6 +137,7 @@ man/man1/reggae.1.gz
 %%DATADIR%%/templates/network
 %%DATADIR%%/templates/network-jail.conf
 %%DATADIR%%/templates/nsd.conf
+%%DATADIR%%/templates/pf-jail.conf
 %%DATADIR%%/templates/pf.conf
 %%DATADIR%%/templates/pkg.conf
 %%DATADIR%%/templates/reggae-register.sh
