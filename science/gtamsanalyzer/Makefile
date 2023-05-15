@@ -5,7 +5,7 @@ CATEGORIES=	science gnustep
 MASTER_SITES=	SF/tamsys/gnustep%20tams/GTAMSAnalyzer%2${PORTVERSION}
 DISTNAME=	GTAMSAnalyzer.src.${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Qualitative Research Software for the Free World for GNUstep
 WWW=		http://tamsys.sourceforge.net/gtams/
 
@@ -16,6 +16,12 @@ USE_GNUSTEP=	back build
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/Source
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-patch:
 	${RM} "${WRKSRC}/obj"
 	@${REINPLACE_CMD} '/^GNUSTEP_INSTALLATION_DIR/ s|=|=$$(DESTDIR)|' \
@@ -24,4 +30,4 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/GTAMSAnalyzer.app/GTAMSAnalyzer
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
