@@ -1,6 +1,7 @@
 PORTNAME=	TIC-80
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.2164
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -45,20 +46,23 @@ USE_SDL=	sdl2
 #		nodejs:http-parser:ec8b5ee63f0e51191ea43bb0c6eac7bfbff3141d:http_parser/vendor/http-parser
 #		glennrp:libpng:dbe3e0c43e549a1602286144d94b0666549b18e6:libpng/vendor/libpng
 #		libsdl-org:SDL:b424665e0899769b200231ba943353a5fee1b6b6:sdl2/vendor/sdl2
+#		grimfang4:sdl-gpu:e3d350b325a0e0d0b3007f69ede62313df46c6ef:sdl_gpu/vendor/sdl-gpu
 
 # not actually needed
 #		smuehlst:circle-stdlib:fdb3c4a948421d47fddab8042a92f980cba43915:circle_stdlib/vendor/circle-stdlib
 #		floooh:sokol:487822d82ca79dba7b67718d962e1ba6beef01b2:sokol/vendor/sokol
-#		grimfang4:sdl-gpu:e3d350b325a0e0d0b3007f69ede62313df46c6ef:sdl_gpu/vendor/sdl-gpu
 #		mruby:mruby:0f45836b5954accf508f333f932741b925214471:mruby/vendor/mruby
 
 # the demo carts are built, but don't seem to end up being installed
 # mruby: to be decided later; not essential
 CMAKE_OFF=	BUILD_DEMO_CARTS BUILD_WITH_MRUBY BUILD_LIBRETRO
-CMAKE_ARGS=	-DLPEG_LIBRARY:STRING=${LUA_REFMODLIBDIR}/lpeg.so
 
-OPTIONS_DEFINE=	PRO
+OPTIONS_DEFINE=	PRO SDLGPU
+OPTIONS_DEFAULT=	SDLGPU
 PRO_DESC=	Build PRO Version
+SDLGPU_DESC=	Support sdl-gpu through graphics/sdl2_gpu
 PRO_CMAKE_BOOL=	BUILD_PRO
+SDLGPU_LIB_DEPENDS=	libSDL2_gpu.so:graphics/sdl2_gpu
+SDLGPU_CMAKE_BOOL=	BUILD_SDLGPU
 
 .include <bsd.port.mk>

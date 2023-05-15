@@ -348,16 +348,88 @@
  endif()
  
  if(BUILD_PRO)
-@@ -982,7 +823,7 @@ if(ANDROID)
- endif()
+@@ -914,80 +755,6 @@ endif()
+ target_compile_definitions(tic80studio PUBLIC BUILD_EDITORS)
  
- if(NOT EMSCRIPTEN)
+ ################################
+-# SDL GPU
+-################################
+-
+-if(BUILD_SDLGPU)
+-
+-set(SDLGPU_DIR ${THIRDPARTY_DIR}/sdl-gpu/src)
+-set(SDLGPU_SRC
+-    ${SDLGPU_DIR}/renderer_GLES_2.c
+-    ${SDLGPU_DIR}/SDL_gpu.c
+-    ${SDLGPU_DIR}/SDL_gpu_matrix.c
+-    ${SDLGPU_DIR}/SDL_gpu_renderer.c
+-    ${SDLGPU_DIR}/externals/stb_image/stb_image.c
+-    ${SDLGPU_DIR}/externals/stb_image_write/stb_image_write.c
+-)
+-
+-if(NOT ANDROID)
+-    list(APPEND SDLGPU_SRC
+-        ${SDLGPU_DIR}/renderer_GLES_1.c
+-        ${SDLGPU_DIR}/renderer_GLES_3.c
+-        ${SDLGPU_DIR}/renderer_OpenGL_1.c
+-        ${SDLGPU_DIR}/renderer_OpenGL_1_BASE.c
+-        ${SDLGPU_DIR}/renderer_OpenGL_2.c
+-        ${SDLGPU_DIR}/renderer_OpenGL_3.c
+-        ${SDLGPU_DIR}/renderer_OpenGL_4.c
+-        ${SDLGPU_DIR}/SDL_gpu_shapes.c
+-        ${SDLGPU_DIR}/externals/glew/glew.c
+-    )
+-endif()
+-
+-add_library(sdlgpu STATIC ${SDLGPU_SRC})
+-
+-if(EMSCRIPTEN OR ANDROID)
+-    target_compile_definitions(sdlgpu PRIVATE GLEW_STATIC SDL_GPU_DISABLE_GLES_1 SDL_GPU_DISABLE_GLES_3 SDL_GPU_DISABLE_OPENGL)
+-else()
+-    target_compile_definitions(sdlgpu PRIVATE GLEW_STATIC SDL_GPU_DISABLE_GLES SDL_GPU_DISABLE_OPENGL_3 SDL_GPU_DISABLE_OPENGL_4)
+-endif()
+-
+-target_include_directories(sdlgpu PUBLIC ${THIRDPARTY_DIR}/sdl-gpu/include)
+-target_include_directories(sdlgpu PRIVATE ${THIRDPARTY_DIR}/sdl-gpu/src/externals/glew)
+-target_include_directories(sdlgpu PRIVATE ${THIRDPARTY_DIR}/sdl-gpu/src/externals/glew/GL)
+-target_include_directories(sdlgpu PRIVATE ${THIRDPARTY_DIR}/sdl-gpu/src/externals/stb_image)
+-target_include_directories(sdlgpu PRIVATE ${THIRDPARTY_DIR}/sdl-gpu/src/externals/stb_image_write)
+-
+-if(WIN32)
+-    target_link_libraries(sdlgpu opengl32)
+-endif()
+-
+-if(LINUX)
+-    target_link_libraries(sdlgpu GL)
+-endif()
+-
+-if(APPLE)
+-    find_library(OPENGL_LIBRARY OpenGL)
+-    target_link_libraries(sdlgpu ${OPENGL_LIBRARY})
+-endif()
+-
+-if(ANDROID)
+-    find_library( ANDROID_LOG_LIBRARY log )
+-    find_library( ANDROID_GLES2_LIBRARY GLESv2 )
+-    find_library( ANDROID_GLES1_LIBRARY GLESv1_CM )
+-    target_link_libraries(sdlgpu
+-        ${ANDROID_LOG_LIBRARY}
+-        ${ANDROID_GLES2_LIBRARY}
+-        ${ANDROID_GLES1_LIBRARY}
+-    )
+-endif()
+-
+-if(NOT EMSCRIPTEN)
 -    target_link_libraries(sdlgpu SDL2-static)
-+    target_link_libraries(sdlgpu ${SDL2_LIBRARIES})
- endif()
+-endif()
+-
+-endif()
+-
+-################################
+ # TIC-80 app
+ ################################
  
- endif()
-@@ -1028,7 +869,7 @@ if(BUILD_SDL)
+@@ -1028,7 +795,7 @@ if(BUILD_SDL)
          endif()
  
      elseif(NOT ANDROID)
@@ -366,7 +438,14 @@
      endif()
  
      target_link_libraries(tic80 tic80studio)
-@@ -1050,7 +891,7 @@ if(BUILD_SDL)
+@@ -1044,13 +811,13 @@ if(BUILD_SDL)
+     endif()
+ 
+     if(BUILD_SDLGPU)
+-        target_link_libraries(tic80 sdlgpu)
++        target_link_libraries(tic80 SDL2_gpu)
+     else()
+         if(EMSCRIPTEN)
          elseif(RPI)
              target_link_libraries(tic80 libSDL2.a bcm_host)
          else()
@@ -375,7 +454,7 @@
          endif()
      endif()
  
-@@ -1121,7 +962,7 @@ if(N3DS)
+@@ -1121,7 +888,7 @@ if(N3DS)
          ${CMAKE_SOURCE_DIR}/src)
  
      target_link_directories(tic80_n3ds PRIVATE ${DEVKITPRO}/libctru/lib ${DEVKITPRO}/portlibs/3ds/lib)
@@ -384,7 +463,7 @@
  
      add_custom_command(TARGET tic80_n3ds
             POST_BUILD
-@@ -1181,7 +1022,7 @@ if(BUILD_STUB)
+@@ -1181,7 +948,7 @@ if(BUILD_STUB)
              endif()
  
          else()
@@ -393,7 +472,14 @@
          endif()
  
          target_link_libraries(tic80${SCRIPT} tic80core${SCRIPT} argparse)
-@@ -1199,7 +1040,7 @@ if(BUILD_STUB)
+@@ -1193,13 +960,13 @@ if(BUILD_STUB)
+         endif()
+ 
+         if(BUILD_SDLGPU)
+-            target_link_libraries(tic80${SCRIPT} sdlgpu)
++            target_link_libraries(tic80${SCRIPT} SDL2_gpu)
+         else()
+             if(EMSCRIPTEN)
              elseif(RPI)
                  target_link_libraries(tic80${SCRIPT} libSDL2.a bcm_host pthread dl)
              else()
