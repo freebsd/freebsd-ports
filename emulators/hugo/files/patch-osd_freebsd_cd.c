@@ -1,6 +1,6 @@
---- osd_freebsd_cd.c.orig	Fri May 19 01:33:50 2006
-+++ osd_freebsd_cd.c	Fri May 19 01:36:44 2006
-@@ -38,7 +38,7 @@
+--- osd_freebsd_cd.c.orig	2003-10-12 21:45:03 UTC
++++ osd_freebsd_cd.c
+@@ -38,7 +38,7 @@ void osd_cd_close()
  }
  
  
@@ -9,7 +9,7 @@
  {
  /*
    int retries = 0;
-@@ -236,15 +236,3 @@
+@@ -236,15 +236,3 @@ void osd_cd_play_audio_range(UChar min_from, UChar sec
      perror("play_audio_range");
  */
  }
