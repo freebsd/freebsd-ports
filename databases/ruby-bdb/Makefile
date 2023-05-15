@@ -15,6 +15,7 @@ WWW=		https://github.com/knu/ruby-bdb
 LICENSE=	RUBY
 
 BROKEN_RUBY32=	yes
+BROKEN_RUBY33=	yes
 
 BUILD_DEPENDS=	rubygem-rdoc>=0.a:devel/rubygem-rdoc
 
