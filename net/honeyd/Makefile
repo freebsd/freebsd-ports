@@ -36,6 +36,10 @@ CONFIGURE_ARGS+=	--without-python
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CPPFLAGS+=	-Wno-error=int-conversion
+.endif
+
 .if !defined(WITH_PYTHON)
 pre-everything::
 	@${ECHO_MSG} "===>"
