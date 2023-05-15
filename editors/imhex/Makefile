@@ -39,7 +39,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libmbedtls.so:security/mbedtls \
 		libtre.so:textproc/libtre
 
-USES=		cmake desktop-file-utils gl gnome pkgconfig python:3.8+ xorg
+USES=		cmake desktop-file-utils gl gnome llvm:min=16,build pkgconfig python:3.8+ xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xcb xau xdmcp
@@ -68,6 +68,8 @@ GH_TAG_LIBWOLV=	bcd987c
 GH_TAG_NATIVEFILEDIALOG=	7909f55
 GH_TAG_PATTERN_LANGUAGE=	68210bd
 GH_TAG_YARA=	96790e5
+
+CXX=	${LOCALBASE}/bin/clang++${LLVM_VERSION}
 
 CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON \
 		-DIMHEX_STRIP_RELEASE=OFF -DIMHEX_PLUGINS_IN_SHARE=ON \
