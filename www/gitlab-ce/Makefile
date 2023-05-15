@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.11.3
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -160,7 +161,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-ruby-progressbar>=1.11<2:devel/rubygem-ruby-progressbar \
 	rubygem-settingslogic>=2.0.9<2.1.0:devel/rubygem-settingslogic \
 	rubygem-re2>=1.6.0<1.7.0:devel/rubygem-re2 \
-	rubygem-semver_dialects>=1.2.1<1.3:textproc/rubygem-semver_dialects \
+	rubygem-semver_dialects>=1.2.1<1.3:devel/rubygem-semver_dialects \
 	rubygem-version_sorter>=2.3<3:textproc/rubygem-version_sorter \
 	rubygem-js_regex>=3.8<4.0:textproc/rubygem-js_regex \
 	rubygem-device_detector>=0:devel/rubygem-device_detector \
