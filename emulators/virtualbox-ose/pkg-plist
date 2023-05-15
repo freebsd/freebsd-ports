@@ -552,6 +552,7 @@ lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%NLS%%%%DATADIR%%/nls/VirtualBox_id.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_it.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_ja.qm
+%%NLS%%%%DATADIR%%/nls/VirtualBox_ka.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_km_KH.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_ko.qm
 %%NLS%%%%DATADIR%%/nls/VirtualBox_lt.qm
@@ -590,6 +591,7 @@ lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%NLS%%%%DATADIR%%/nls/qt_id.qm
 %%NLS%%%%DATADIR%%/nls/qt_it.qm
 %%NLS%%%%DATADIR%%/nls/qt_ja.qm
+%%NLS%%%%DATADIR%%/nls/qt_ka.qm
 %%NLS%%%%DATADIR%%/nls/qt_km_KH.qm
 %%NLS%%%%DATADIR%%/nls/qt_ko.qm
 %%NLS%%%%DATADIR%%/nls/qt_lt.qm
