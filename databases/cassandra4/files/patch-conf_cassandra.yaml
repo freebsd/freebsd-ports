@@ -1,6 +1,6 @@
---- conf/cassandra.yaml.orig	2020-07-17 21:24:30 UTC
+--- conf/cassandra.yaml.orig	2022-05-06 16:40:06 UTC
 +++ conf/cassandra.yaml
-@@ -73,7 +73,7 @@ max_hints_delivery_threads: 2
+@@ -77,7 +77,7 @@ max_hints_delivery_threads: 2
  
  # Directory where Cassandra should store hints.
  # If not set, the default directory is $CASSANDRA_HOME/data/hints.
@@ -9,7 +9,7 @@
  
  # How often hints should be flushed from the internal buffers to disk.
  # Will *not* trigger fsync.
-@@ -200,13 +200,13 @@ partitioner: org.apache.cassandra.dht.Murmur3Partition
+@@ -204,8 +204,8 @@ partitioner: org.apache.cassandra.dht.Murmur3Partition
  # directories are specified, Cassandra will spread data evenly across 
  # them by partitioning the token ranges.
  # If not set, the default directory is $CASSANDRA_HOME/data/data.
@@ -18,6 +18,9 @@
 +data_file_directories:
 +    - /var/db/cassandra/data
  
+ # Directory were Cassandra should store the data of the local system keyspaces.
+ # By default Cassandra will store the data of the local system keyspaces in the first of the data directories specified
+@@ -217,7 +217,7 @@ partitioner: org.apache.cassandra.dht.Murmur3Partition
  # commit log.  when running on magnetic HDD, this should be a
  # separate spindle than the data directories.
  # If not set, the default directory is $CASSANDRA_HOME/data/commitlog.
@@ -26,7 +29,7 @@
  
  # Enable / disable CDC functionality on a per-node basis. This modifies the logic used
  # for write path allocation rejection (standard: never reject. cdc: reject Mutation
-@@ -217,7 +217,7 @@ cdc_enabled: false
+@@ -228,7 +228,7 @@ cdc_enabled: false
  # segment contains mutations for a CDC-enabled table. This should be placed on a
  # separate spindle than the data directories. If not set, the default directory is
  # $CASSANDRA_HOME/data/cdc_raw.
@@ -35,7 +38,7 @@
  
  # Policy for data disk failures:
  #
-@@ -309,20 +309,12 @@ key_cache_save_period: 14400
+@@ -320,20 +320,12 @@ key_cache_save_period: 14400
  
  # Row cache implementation class name. Available implementations:
  #
@@ -57,12 +60,12 @@
  #
  # Default value is 0, to disable row caching.
  row_cache_size_in_mb: 0
-@@ -369,7 +361,7 @@ counter_cache_save_period: 7200
+@@ -380,7 +372,7 @@ counter_cache_save_period: 7200
  
  # saved caches
  # If not set, the default directory is $CASSANDRA_HOME/data/saved_caches.
 -# saved_caches_directory: /var/lib/cassandra/saved_caches
 +saved_caches_directory: /var/db/cassandra/saved_caches
  
- # commitlog_sync may be either "periodic", "group", or "batch." 
- # 
+ # Number of seconds the server will wait for each cache (row, key, etc ...) to load while starting
+ # the Cassandra process. Setting this to a negative value is equivalent to disabling all cache loading on startup
