@@ -15,10 +15,16 @@ LICENSE_COMB=	dual
 USES=		perl5
 USE_PERL5=	configure
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} '/LDDLFLAGS/d' ${WRKSRC}/Makefile.PL
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/XML/Bare/Bare.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
