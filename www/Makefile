@@ -20,6 +20,7 @@
     SUBDIR += Stikked
     SUBDIR += UniversalFeedCreator
     SUBDIR += adguardhome
+    SUBDIR += adjuster
     SUBDIR += adzap
     SUBDIR += alef-webfont
     SUBDIR += amfora
