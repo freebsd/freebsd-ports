@@ -238,6 +238,7 @@
     SUBDIR += ipsec-tools
     SUBDIR += ipv6toolkit
     SUBDIR += isal-kmod
+    SUBDIR += ismtp
     SUBDIR += isnprober
     SUBDIR += john
     SUBDIR += kbfsd
