@@ -4,7 +4,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	net-p2p
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C/C++ implementation of Ethash and ProgPoW
 WWW=		https://github.com/chfast/ethash
 
@@ -20,4 +20,12 @@ GH_ACCOUNT=	chfast
 
 CMAKE_OFF=	HUNTER_ENABLED
 
-.include <bsd.port.mk>
+CFLAGS+=	-Wno-error=deprecated-declarations
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=strict-prototypes
+.endif
+
+.include <bsd.port.post.mk>
