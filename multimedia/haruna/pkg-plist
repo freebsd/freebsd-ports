@@ -1,7 +1,17 @@
 bin/haruna
 share/applications/org.kde.haruna.desktop
+share/doc/HTML/ca/haruna/index.cache.bz2
+share/doc/HTML/ca/haruna/index.docbook
 share/doc/HTML/en/haruna/index.cache.bz2
 share/doc/HTML/en/haruna/index.docbook
+share/doc/HTML/es/haruna/index.cache.bz2
+share/doc/HTML/es/haruna/index.docbook
+share/doc/HTML/it/haruna/index.cache.bz2
+share/doc/HTML/it/haruna/index.docbook
+share/doc/HTML/nl/haruna/index.cache.bz2
+share/doc/HTML/nl/haruna/index.docbook
+share/doc/HTML/uk/haruna/index.cache.bz2
+share/doc/HTML/uk/haruna/index.docbook
 share/icons/hicolor/128x128/apps/haruna.png
 share/icons/hicolor/150x150/apps/haruna.png
 share/icons/hicolor/16x16/apps/haruna.png
