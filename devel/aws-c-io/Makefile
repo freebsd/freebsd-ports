@@ -1,10 +1,7 @@
 PORTNAME=	aws-c-io
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.13.21
-PORTREVISION=	1
+DISTVERSION=	0.13.22
 CATEGORIES=	devel
-PATCH_SITES=	https://github.com/awslabs/aws-c-io/commit/
-PATCHFILES=	4dc663c0c3f7cf1e3aebb1d8e28dd48f012e3db8.patch:-p1
 
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Event driven framework for implementing application protocols
