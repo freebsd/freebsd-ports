@@ -12,6 +12,7 @@
 %%DATADIR%%/Discovery/DNS/shubs-stackoverflow.txt
 %%DATADIR%%/Discovery/DNS/shubs-subdomains.txt
 %%DATADIR%%/Discovery/DNS/sortedcombined-knock-dnsrecon-fierce-reconng.txt
+%%DATADIR%%/Discovery/DNS/subdomains-spanish.txt
 %%DATADIR%%/Discovery/DNS/subdomains-top1million-110000.txt
 %%DATADIR%%/Discovery/DNS/subdomains-top1million-20000.txt
 %%DATADIR%%/Discovery/DNS/subdomains-top1million-5000.txt
@@ -179,7 +180,6 @@
 %%DATADIR%%/Discovery/Web-Content/URLs/urls-wordpress-3.3.1.txt
 %%DATADIR%%/Discovery/Web-Content/UnixDotfiles.fuzz.txt
 %%DATADIR%%/Discovery/Web-Content/Vignette.fuzz.txt
-%%DATADIR%%/Discovery/Web-Content/WEB-INF-dict.txt
 %%DATADIR%%/Discovery/Web-Content/Web-Services/README.md
 %%DATADIR%%/Discovery/Web-Content/Web-Services/SOAP-functions.txt
 %%DATADIR%%/Discovery/Web-Content/WebTechnologyPaths-Trickest-Wordlists/drupal-all-levels.txt
@@ -205,10 +205,10 @@
 %%DATADIR%%/Discovery/Web-Content/api/api-endpoints-res.txt
 %%DATADIR%%/Discovery/Web-Content/api/api-endpoints.txt
 %%DATADIR%%/Discovery/Web-Content/api/api-seen-in-wild.txt
+%%DATADIR%%/Discovery/Web-Content/api/ispsystem_billmanager_api.txt
 %%DATADIR%%/Discovery/Web-Content/api/objects-lowercase.txt
 %%DATADIR%%/Discovery/Web-Content/api/objects-uppercase.txt
 %%DATADIR%%/Discovery/Web-Content/api/objects.txt
-%%DATADIR%%/Discovery/Web-Content/api/ispsystem_billmanager_api.txt
 %%DATADIR%%/Discovery/Web-Content/api/salesforce-aura-objects.txt
 %%DATADIR%%/Discovery/Web-Content/axis.txt
 %%DATADIR%%/Discovery/Web-Content/big.txt
@@ -238,8 +238,8 @@
 %%DATADIR%%/Discovery/Web-Content/domino-endpoints-coldfusion39.txt
 %%DATADIR%%/Discovery/Web-Content/dsstorewordlist.txt
 %%DATADIR%%/Discovery/Web-Content/elmah.txt
-%%DATADIR%%/Discovery/Web-Content/forefront-identity-management.txt
 %%DATADIR%%/Discovery/Web-Content/fnf-fuzz.txt
+%%DATADIR%%/Discovery/Web-Content/forefront-identity-management.txt
 %%DATADIR%%/Discovery/Web-Content/frontpage.txt
 %%DATADIR%%/Discovery/Web-Content/golang.txt
 %%DATADIR%%/Discovery/Web-Content/graphql.txt
@@ -284,6 +284,7 @@
 %%DATADIR%%/Discovery/Web-Content/raft-small-words.txt
 %%DATADIR%%/Discovery/Web-Content/reverse-proxy-inconsistencies.txt
 %%DATADIR%%/Discovery/Web-Content/ror.txt
+%%DATADIR%%/Discovery/Web-Content/sap-analytics-cloud.txt
 %%DATADIR%%/Discovery/Web-Content/sap.txt
 %%DATADIR%%/Discovery/Web-Content/sharepoint-ennumeration.txt
 %%DATADIR%%/Discovery/Web-Content/spring-boot.txt
@@ -295,11 +296,13 @@
 %%DATADIR%%/Discovery/Web-Content/uri-from-top-55-most-popular-apps.txt
 %%DATADIR%%/Discovery/Web-Content/url-params_from-top-55-most-popular-apps.txt
 %%DATADIR%%/Discovery/Web-Content/versioning_metafiles.txt
+%%DATADIR%%/Discovery/Web-Content/vulnerability-scan_j2ee-websites_WEB-INF.txt
 %%DATADIR%%/Discovery/Web-Content/web-all-content-types.txt
 %%DATADIR%%/Discovery/Web-Content/web-extensions.txt
 %%DATADIR%%/Discovery/Web-Content/web-mutations.txt
 %%DATADIR%%/Discovery/Web-Content/weblogic.txt
 %%DATADIR%%/Discovery/Web-Content/websphere.txt
+%%DATADIR%%/Discovery/Web-Content/wso2-enterprise-integrator.txt
 %%DATADIR%%/Fuzzing/1-4_all_letters_a-z.txt
 %%DATADIR%%/Fuzzing/3-digits-000-999.txt
 %%DATADIR%%/Fuzzing/4-digits-0000-9999.txt
@@ -5324,12 +5327,12 @@
 %%DATADIR%%/Pattern-Matching/thickclient-basic.txt
 %%DATADIR%%/Payloads/Anti-Virus/eicar-com.txt
 %%DATADIR%%/Payloads/File-Names/README.md
+%%DATADIR%%/Payloads/File-Names/directory-traversal.zip
 %%DATADIR%%/Payloads/File-Names/exec/Hello$(hostname)World.txt
 %%DATADIR%%/Payloads/File-Names/exec/Hello`hostname`World.txt
 %%DATADIR%%/Payloads/File-Names/max-length.zip
 %%DATADIR%%/Payloads/File-Names/null-byte/Hello%00World.txt
 %%DATADIR%%/Payloads/File-Names/null-byte/Hello.php%00World.txt
-%%DATADIR%%/Payloads/File-Names/directory-traversal.zip
 %%DATADIR%%/Payloads/Flash/xssproject.swf
 %%DATADIR%%/Payloads/Images/lottapixel.jpg
 %%DATADIR%%/Payloads/Images/uber.gif

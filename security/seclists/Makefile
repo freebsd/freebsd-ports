@@ -1,5 +1,5 @@
 PORTNAME=	seclists
-DISTVERSION=	2023.1
+DISTVERSION=	2023.2
 CATEGORIES=	security www
 
 MAINTAINER=	salvadore@FreeBSD.org
@@ -26,6 +26,7 @@ FILES_TO_BE_REMOVED=	.gitattributes \
 			Discovery/Web-Content/Domino-Hunter/LICENCE \
 			LICENSE \
 			README.md \
+			SecLists.png \
 			Web-Shells/laudanum-0.8/GPL
 
 DIRS_TO_BE_REMOVED=	.bin .github
