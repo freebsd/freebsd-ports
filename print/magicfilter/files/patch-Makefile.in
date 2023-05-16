@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-07-07 11:57:40.878417316 +0800
-+++ Makefile.in	2014-07-07 11:59:03.900407189 +0800
+--- Makefile.in.orig	2009-11-23 03:45:02 UTC
++++ Makefile.in
 @@ -44,46 +44,46 @@ cfmagic: file/magic
  	@MAKE_MAGIC@ magic
  
