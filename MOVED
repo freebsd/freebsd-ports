@@ -7538,3 +7538,4 @@ news/sabnzbdplus|news/sabnzbd|2023-05-08|Update to proper upstream name
 graphics/camera||2023-05-08|Has expired: abandoned upstream, does not fetch, website disappeared, unmaintained
 emulators/mess||2023-05-08|Merged into emulators/mame in upstream
 textproc/rubygem-semver_dialects|devel/rubygem-semver_dialects|2023-05-15|Removed duplicated port
+devel/rubygem-ruby-openai|www/rubygem-ruby-openai37|2023-05-16|Moved to match www/rubygem-ruby-openai

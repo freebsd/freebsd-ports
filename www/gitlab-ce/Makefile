@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.11.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -176,7 +176,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-asana1>=0.10.13<3:www/rubygem-asana1 \
 	rubygem-ruby-fogbugz>=0.3.0<0.4.0:devel/rubygem-ruby-fogbugz \
 	rubygem-kubeclient>=4.11.0<4.12.0:www/rubygem-kubeclient \
-	rubygem-ruby-openai>=3.7<4:devel/rubygem-ruby-openai \
+	rubygem-ruby-openai37>=3.7<4:www/rubygem-ruby-openai37 \
 	rubygem-sanitize>=6.0<7:textproc/rubygem-sanitize \
 	rubygem-babosa>=1.0.4<1.1.0:textproc/rubygem-babosa \
 	rubygem-loofah>=2.20.0<2.21:textproc/rubygem-loofah \

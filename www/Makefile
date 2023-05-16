@@ -2182,6 +2182,7 @@
     SUBDIR += rubygem-rtlit
     SUBDIR += rubygem-ruby-oembed
     SUBDIR += rubygem-ruby-openai
+    SUBDIR += rubygem-ruby-openai37
     SUBDIR += rubygem-ruby-readability
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-sawyer

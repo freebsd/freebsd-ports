@@ -1,7 +1,8 @@
 PORTNAME=	ruby-openai
 PORTVERSION=	3.7.0
-CATEGORIES=	devel rubygems
+CATEGORIES=	www rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	37
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	OpenAI API + Ruby
