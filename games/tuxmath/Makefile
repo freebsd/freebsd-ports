@@ -1,6 +1,6 @@
 PORTNAME=	tuxmath
 PORTVERSION=	2.0.3
-PORTREVISION=	10
+PORTREVISION=	11
 PORTEPOCH=	1
 CATEGORIES=	games education
 MASTER_SITES=	DEBIAN_POOL \
@@ -15,7 +15,11 @@ WWW=		http://tux4kids.alioth.debian.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/COPYING_GPL3
 
-LIB_DEPENDS=	libpng.so:graphics/png
+DEPRECATED=		Upstream last release was in 2011
+EXPIRATION_DATE=	2023-06-16
+
+LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+		libpng.so:graphics/png
 
 USES=		gmake gnome iconv localbase perl5 pkgconfig sdl
 USE_GNOME=	libxml2
@@ -47,6 +51,12 @@ NLS_LDFLAGS=	-lintl
 SVG_USE=	GNOME=librsvg2
 SVG_CONFIGURE_WITH=	rsvg
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-extract:
 	@${LN} -sf ${T4K_WRKSRC} ${WRKDIR}/${T4K_NAME}
 
@@ -75,4 +85,4 @@ post-install-DOCS-on:
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
