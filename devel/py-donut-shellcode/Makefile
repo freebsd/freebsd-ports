@@ -1,5 +1,6 @@
 PORTNAME=	donut-shellcode
 DISTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +11,9 @@ WWW=		https://github.com/TheWover/donut
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		dos2unix python:3.6+
 USE_PYTHON=	distutils autoplist
+
+DOS2UNIX_GLOB=	*.py
 
 .include <bsd.port.mk>
