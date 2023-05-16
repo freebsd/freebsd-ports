@@ -1,5 +1,5 @@
 PORTNAME=	ansible-compat
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.4
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,6 +27,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>0:devel/py-coverage@${PY_FLAVOR} \
 
 USES=		python:3.9+
 USE_PYTHON=	autoplist pep517 pytest
+
+TEST_ENV=	LC_ALL=C.UTF-8 PYTHONPATH=${WRKSRC}/src
 
 NO_ARCH=	yes
 
