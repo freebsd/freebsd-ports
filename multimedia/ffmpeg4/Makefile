@@ -1,6 +1,6 @@
 PORTNAME=	ffmpeg
 PORTVERSION=	4.4.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia audio net
 MASTER_SITES=	https://ffmpeg.org/releases/
 PKGNAMESUFFIX=	4
