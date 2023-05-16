@@ -1,5 +1,5 @@
 PORTNAME=	python-lsp-server
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.3
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,10 +43,10 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}yapf>0:textproc/py-yapf@${PY_FLAVOR} \
 		${PYNUMPY}
 
-# make test: 6 failed, 161 passed, 8 skipped, 21 warnings
-# devel/py-pydocstyle v6.3.0 is too new atm :(
-USES=		python:3.7+ pytest
-USE_PYTHON=	autoplist concurrent pep517
+# make test: 3 failed, 168 passed, 8 skipped, 11 warnings
+# test/plugins/test_flake8_lint.py:90,219,241: AssertionError
+USES=		python:3.7+
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 NO_ARCH=	yes
 
