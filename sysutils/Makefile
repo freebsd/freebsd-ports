@@ -53,6 +53,7 @@
     SUBDIR += apcpwr
     SUBDIR += apcupsd
     SUBDIR += appjail
+    SUBDIR += appjail-devel
     SUBDIR += apt-mirror-devel
     SUBDIR += aptly
     SUBDIR += arc_summary
