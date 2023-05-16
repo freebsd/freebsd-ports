@@ -184,8 +184,6 @@
       </body>
     </description>
     <references>
-      <cvename></cvename>
-      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=</url>
       <cvename>CVE-2023-28849</cvename>
       <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28849</url>
       <cvename>CVE-2023-28632</cvename>
