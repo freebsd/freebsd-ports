@@ -20,8 +20,9 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 
 USES=		gmake pkgconfig tar:bzip2 uidfix ssl
 MAKEFILE=	GNUmakefile
-MAKE_ENV=	DESTDIR=${STAGEDIR} MANDIR=${PREFIX}/man INSTALLUID=${UID} INSTALLGID=${GID}
-PLIST_FILES=	bin/sslsplit man/man1/sslsplit.1.gz man/man5/sslsplit.conf.5.gz \
+MAKE_ENV=	MANDIR=${PREFIX}/man INSTALLUID=${UID} INSTALLGID=${GID}
+PLIST_FILES=	bin/sslsplit man/man1/sslsplit.1.gz \
+		man/man5/sslsplit.conf.5.gz \
 		"@sample %%ETCDIR%%/sslsplit.conf.sample"
 
 post-install:

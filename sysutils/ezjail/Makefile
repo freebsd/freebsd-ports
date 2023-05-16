@@ -10,6 +10,4 @@ WWW=		https://erdgeist.org/arts/software/ezjail/
 
 USES=		tar:bzip2
 
-MAKE_ENV=	DESTDIR=${STAGEDIR}
-
 .include <bsd.port.mk>
