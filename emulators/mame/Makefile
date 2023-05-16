@@ -84,6 +84,9 @@ MAKE_ENV+=	DEBUG="1" \
 		OPTIMIZE="0" \
 		PROFILER="1" \
 		SYMBOLS="1"
+.else
+# avoid address space exhaustion in linker on armv7
+LDFLAGS+=	-s
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
@@ -160,11 +163,11 @@ post-patch:
 		 s| .(ARCH)||g' \
 		 ${WRKSRC}/makefile \
 		 ${GENIE}/build/gmake.bsd/genie.make
-	@${REINPLACE_CMD} -e 's|gcc|cc|; s|g++|c++|' \
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|g++|${CXX}|' \
 		${GENIE}/src/tools/gcc.lua \
 		${GENIE}/src/tools/snc.lua \
 		${GENIE}/tests/test_gmake_cpp.lua
-	@${REINPLACE_CMD} -e 's|= \"gcc|= \"cc|; s|= \"g++|= \"c++|' \
+	@${REINPLACE_CMD} -e 's|= \"gcc|= \"${CC}|; s|= \"g++|= \"${CXX}|' \
 		-e "s|'CXX =|'#CXX =|; s|'CC  =|'#CC  =|; s| .(ARCH)| |g" \
 		${GENIE}/src/host/scripts.c
 	@${GREP} -rl '"png.h"' ${WRKSRC}/src | \
