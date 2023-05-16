@@ -4,6 +4,9 @@ COMMENT=	MCollective agent to manage the Puppet Agent
 
 # See MASTERDIR for MAINTAINER.
 
+DEPRECATED=	Depends on broken sysutils/mcollective
+EXPIRATION_DATE=	2023-06-30
+
 RUN_DEPENDS=	mcollective-puppet-common>=${PORTVERSION}:sysutils/mcollective-puppet-common
 
 MASTERDIR=	${.CURDIR}/../mcollective-puppet-common

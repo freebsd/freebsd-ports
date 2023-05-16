@@ -10,8 +10,12 @@ WWW=		http://docs.puppetlabs.com/mcollective/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Broken with all supported Ruby versions
+EXPIRATION_DATE=	2023-06-30
 BROKEN_RUBY30=	yes
 BROKEN_RUBY31=	yes
+BROKEN_RUBY32=	yes
+BROKEN_RUBY33=	yes
 
 RUN_DEPENDS=	rubygem-stomp>=0:devel/rubygem-stomp
 

@@ -5,6 +5,9 @@ COMMENT=	MCollective agent to interact with the NRPE monitoring system
 
 # See MASTERDIR for MAINTAINER.
 
+DEPRECATED=	Depends on broken sysutils/mcollective
+EXPIRATION_DATE=	2023-06-30
+
 RUN_DEPENDS=	mcollective-nrpe-common>=${PORTVERSION}:sysutils/mcollective-nrpe-common
 
 MASTERDIR=	${.CURDIR}/../mcollective-nrpe-common

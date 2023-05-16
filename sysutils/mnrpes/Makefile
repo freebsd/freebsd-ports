@@ -8,6 +8,9 @@ WWW=		https://github.com/nullDowntimeLtd/mnrpes
 
 LICENSE=	APACHE20
 
+DEPRECATED=	Depends on broken sysutils/mcollective
+EXPIRATION_DATE=	2023-06-30
+
 RUN_DEPENDS=	mcollective>=2:sysutils/mcollective \
 		rubygem-rufus-scheduler>=0.1:devel/rubygem-rufus-scheduler
 

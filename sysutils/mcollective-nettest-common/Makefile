@@ -8,7 +8,8 @@ WWW=		https://github.com/puppetlabs/mcollective-nettest-agent
 
 LICENSE=	APACHE20
 
-DEPRECATED=	Agents are better distributed through the Puppet forge
+DEPRECATED=	Depends on broken sysutils/mcollective
+EXPIRATION_DATE=	2023-06-30
 
 RUN_DEPENDS?=	mcollective>=2:sysutils/mcollective
 

@@ -4,6 +4,9 @@ COMMENT=	MCollective agent to test ICMP and TCP connectivity
 
 # See MASTERDIR for MAINTAINER.
 
+DEPRECATED=	Depends on broken sysutils/mcollective
+EXPIRATION_DATE=	2023-06-30
+
 RUN_DEPENDS=	mcollective-nettest-common>=${PORTVERSION}:sysutils/mcollective-nettest-common \
 		rubygem-net-ping>=1:net/rubygem-net-ping
 

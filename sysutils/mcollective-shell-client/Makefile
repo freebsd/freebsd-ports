@@ -9,6 +9,9 @@ WWW=		https://github.com/puppetlabs/mcollective-shell-agent
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Depends on broken sysutils/mcollective
+EXPIRATION_DATE=	2023-06-30
+
 RUN_DEPENDS=	mcollective>=2.2.4:sysutils/mcollective
 
 USE_GITHUB=	yes
