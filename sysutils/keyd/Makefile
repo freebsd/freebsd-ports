@@ -1,11 +1,7 @@
 PORTNAME=	keyd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.2
-PORTREVISION=	1
+DISTVERSION=	2.4.3
 CATEGORIES=	sysutils
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	8fa138cf7534.patch:-p1 # https://github.com/rvaiya/keyd/issues/261
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Key remapping daemon for evdev
@@ -52,11 +48,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,/usr,${PREFIX},' \
 		-e 's,/etc,${PREFIX}&,' \
 		${WRKSRC}/docs/*.scdoc \
-		${WRKSRC}/examples/*.conf \
-		${WRKSRC}/src/config.c \
-		${WRKSRC}/src/${PORTNAME}.c
+		${WRKSRC}/examples/*.conf
 # https://lists.freebsd.org/pipermail/freebsd-x11/2019-March/023097.html
 	@${REINPLACE_CMD} -e 's,__FreeBSD,&_disabled,' \
+		${WRKSRC}/src/keyd.h \
 		${WRKSRC}/src/vkbd/uinput.c
 
 post-install:
