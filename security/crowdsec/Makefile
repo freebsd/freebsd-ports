@@ -1,7 +1,7 @@
 PORTNAME=	crowdsec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.6
-PORTREVISION=	2
+DISTVERSION=	1.5.1
+DISTVERSIONSUFFIX=	-freebsd
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net
@@ -11,15 +11,12 @@ WWW=		https://github.com/crowdsecurity/crowdsec
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	git:devel/git@lite
-
-USES=		gmake go:1.19,no_targets
+USES=		gmake go:no_targets
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	crowdsecurity
 GH_PROJECT=	crowdsec
-GH_TAGNAME=	${DISTVERSIONFULL}-freebsd
-_BUILD_TAG=	c8cb9ac9
+_BUILD_TAG=	b76e95e3
 USE_RC_SUBR=	crowdsec
 
 MAKE_ARGS=	BUILD_VERSION="${DISTVERSIONFULL}" \
@@ -36,7 +33,7 @@ OPTIONS_DEFINE=	FIREWALL_BOUNCER
 OPTIONS_DEFAULT=
 
 FIREWALL_BOUNCER_DESC=	Depend on security/crowdsec-firewall-bouncer
-FIREWALL_BOUNCER_RUN_DEPENDS=	crowdsec-firewall-bouncer>=0.0.23.r2:security/crowdsec-firewall-bouncer
+FIREWALL_BOUNCER_RUN_DEPENDS=	crowdsec-firewall-bouncer>=0.0.27:security/crowdsec-firewall-bouncer
 
 PLUGIN_DIR=	${PREFIX}/lib/crowdsec/plugins
 STAGE_PLUGINS=	${STAGEDIR}${PLUGIN_DIR}
@@ -143,6 +140,8 @@ do-install:
 	@${RM} ${STAGEDIR}${ETCDIR}/crowdsec.service
 	@${RM} ${STAGEDIR}${ETCDIR}/dev.yaml
 	@${RM} ${STAGEDIR}${ETCDIR}/user.yaml
+	@${RM} ${STAGEDIR}${ETCDIR}/detect.yaml
+	@${RM} ${STAGEDIR}${ETCDIR}/context.yaml
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/email
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/http
 	@${RMDIR} ${STAGEDIR}${ETCDIR}/notifications/slack
