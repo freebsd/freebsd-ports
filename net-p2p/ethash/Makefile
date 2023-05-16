@@ -1,7 +1,6 @@
 PORTNAME=	ethash
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	net-p2p
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -22,10 +21,4 @@ CMAKE_OFF=	HUNTER_ENABLED
 
 CFLAGS+=	-Wno-error=deprecated-declarations
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
-CFLAGS+=	-Wno-error=strict-prototypes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
