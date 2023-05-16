@@ -1,6 +1,6 @@
---- win/Qt/qt_pre.h.orig	2022-03-11 00:02:45 UTC
+--- win/Qt/qt_pre.h.orig	2023-05-16 21:33:58 UTC
 +++ win/Qt/qt_pre.h
-@@ -28,7 +28,7 @@
+@@ -42,7 +42,7 @@
  #pragma GCC diagnostic ignored "-Wshadow"
  #endif
  

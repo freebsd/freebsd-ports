@@ -1,4 +1,4 @@
---- sys/unix/Makefile.top.orig	2022-05-26 12:31:08 UTC
+--- sys/unix/Makefile.top.orig	2023-05-16 21:33:58 UTC
 +++ sys/unix/Makefile.top
 @@ -25,15 +25,15 @@ NHSROOT=.
  GAME     = xnethack
@@ -43,7 +43,7 @@
  #	Qt without X11; assumes GRAPHIC_TOMBSTONE:
  # VARDATND = nhtiles.bmp pet_mark.xbm pilemark.xbm rip.xpm
  
-@@ -134,13 +136,11 @@ $(TOPLUALIB): $(LUATOP)/liblua.a
+@@ -136,13 +138,11 @@ $(TOPLUALIB): $(LUATOP)/liblua.a
  	@( if test -d lib/lua ; then true ; else mkdir -p lib/lua ; fi )
  	cp $(LUATOP)/liblua.a $@
  
@@ -61,7 +61,7 @@
  	@echo '/*nhlua.h*/' >> $@
  # LUATESTTARGET is this by default
  lib/lua-$(LUA_VERSION)/src/lua.h:
-@@ -261,39 +261,22 @@ dofiles:
+@@ -273,39 +273,22 @@ dofiles:
  		-e '}' 					\
  	  	-e '$$s/.*/nodlb/p' < dat/options` ;	\
  	$(MAKE) dofiles-$${target-nodlb}
@@ -109,7 +109,7 @@
  #
  # This is not part of the dependency build hierarchy.
  # It requires an explicit "make fetch-Lua".
-@@ -330,25 +313,17 @@ install: rootcheck $(GAME) recover $(VARDAT) spec_levs
+@@ -342,25 +325,17 @@ install: rootcheck $(GAME) recover $(VARDAT) spec_levs
  	true; $(PREINSTALL)
  # set up the directories
  # not all mkdirs have -p; those that don't will create a -p directory

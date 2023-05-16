@@ -1,7 +1,6 @@
 PORTNAME=	xNetHack
 DISTVERSIONPREFIX=	xnh
-DISTVERSION=	7.1
-PORTREVISION=	1
+DISTVERSION=	8.0
 CATEGORIES=	games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -42,10 +41,10 @@ GRAPHICS=	# none
 .elif ${FLAVOR} == "qt"
 USES+=		localbase pkgconfig qt:5
 USE_QT=		buildtools:build core gui multimedia network widgets
-MAKE_ENV+=	MOCPATH=${MOC} LINK="${CXX} -pie"
-# Qt wants PIC for some reason.  For C code, PIE should be enough.
-CFLAGS+=	-I${QT_INCDIR} -fpie
-CXXFLAGS+=	-I${QT_INCDIR} -fpic
+MAKE_ENV+=	MOCPATH=${MOC} LINK=${CXX}
+CFLAGS+=	-I${QT_INCDIR} -DSND_LIB_QTSOUND
+CXXFLAGS+=	-fpic -I${QT_INCDIR} -DQT_WIDGETS_LIB -DQT_MULTIMEDIA_LIB \
+		-DQT_NETWORK_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DSND_LIB_QTSOUND
 GRAPHICS=	QT_GRAPHICS
 .endif
 
@@ -61,12 +60,12 @@ SANDBOX_CFLAGS=	-DNHL_SANDBOX
 
 .include <bsd.port.pre.mk>
 
-post-patch:
-.for f in include/config.h sys/unix/Makefile.doc sys/unix/Makefile.src sys/unix/Makefile.top
+pre-configure:
+.for f in include/config.h sys/unix/Makefile.top
 	@${REINPLACE_CMD} -e 's|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' \
 		${WRKSRC}/${f}
 .endfor
-.for f in dlb.6 nethack.6 recover.6
+.for f in nethack.6 recover.6
 	@${REINPLACE_CMD} -e 's|%%HACKDIR%%|${PREFIX}/${HACKDIR}|g' \
 		${WRKSRC}/doc/${f}
 .endfor

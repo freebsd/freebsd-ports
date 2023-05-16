@@ -1,15 +1,33 @@
---- doc/nethack.6.orig	2022-03-07 23:57:15 UTC
+--- doc/nethack.6.orig	2023-05-16 21:33:58 UTC
 +++ doc/nethack.6
-@@ -16,7 +16,7 @@ nethack \- Exploring The Mazes of Menace
- .SH SYNOPSIS
- .na
- .hy 0
+@@ -20,7 +20,7 @@ nethack \- Exploring The Mazes of Menace
+ .\" have been arranged to fit within an 80-column page with nearly full
+ .\" lines while avoiding splitting "[" and "-opt ]" or "[ -opt" and "]"
+ .\" across line boundaries.  It would be better to do that with 'roff magic.
 -.B nethack
 +.B xnethack
  [
- .B \-d
+ .BR \-d | \-\-directory
  .I directory
-@@ -218,7 +218,7 @@ option, which must be the first argument if it appears
+@@ -92,7 +92,7 @@ Also
+ .BR \-W | \-Wiz
+ ]
+ .PP
+-.B nethack
++.B xnethack
+ [
+ .BR \-d | \-\-directory
+ .I directory
+@@ -114,7 +114,7 @@ Also
+ .I playernames
+ ]
+ .PP
+-.B nethack
++.B xnethack
+ [
+ .B \-\-usage
+ |
+@@ -310,7 +310,7 @@ option, which must be the first argument if it appears
  supplies a directory which is to serve as the playground.
  It overrides the value from NETHACKDIR, HACKDIR,
  or the directory specified by the game administrator during compilation
@@ -18,7 +36,7 @@
  This option is usually only useful to the game administrator.
  The playground must contain several auxiliary files such as help files,
  the list of top scorers, and a subdirectory
-@@ -264,7 +264,7 @@ name is '.xnethackrc' in the user's home directory.
+@@ -418,7 +418,7 @@ name is '.xnethackrc' in the user's home directory.
  
  .br
  All other files are in the playground directory,

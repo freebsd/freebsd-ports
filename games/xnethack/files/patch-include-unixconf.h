@@ -1,4 +1,4 @@
---- include/unixconf.h.orig	2022-03-07 23:57:15 UTC
+--- include/unixconf.h.orig	2023-05-16 21:33:58 UTC
 +++ include/unixconf.h
 @@ -20,13 +20,13 @@
   */
@@ -16,7 +16,7 @@
                       /* of Linux */
  /* #define HPUX */   /* Hewlett-Packard's Unix, version 6.5 or higher */
                       /* use SYSV for < v6.5 */
-@@ -317,7 +317,7 @@
+@@ -327,7 +327,7 @@
  #endif
  
  #if defined(BSD) || defined(ULTRIX)

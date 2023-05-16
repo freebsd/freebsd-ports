@@ -72,6 +72,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/Wiz-goal.lua
 %%DATADIR%%/Wiz-loca.lua
 %%DATADIR%%/Wiz-strt.lua
+%%DATADIR%%/abyssfill.lua
 %%DATADIR%%/air.lua
 %%DATADIR%%/asmodeus.lua
 %%DATADIR%%/astral.lua
@@ -80,6 +81,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/bigrm-10.lua
 %%DATADIR%%/bigrm-11.lua
 %%DATADIR%%/bigrm-12.lua
+%%DATADIR%%/bigrm-13.lua
 %%DATADIR%%/bigrm-2.lua
 %%DATADIR%%/bigrm-3.lua
 %%DATADIR%%/bigrm-4.lua
@@ -91,14 +93,19 @@ bin/%%HACKNAME%%
 %%DATADIR%%/bogusmon
 %%DATADIR%%/castle.lua
 %%DATADIR%%/cmdhelp
+%%DATADIR%%/cocytusfill.lua
 %%DATADIR%%/data
+%%DATADIR%%/demogorgon.lua
+%%DATADIR%%/dis.lua
+%%DATADIR%%/dispater.lua
 %%DATADIR%%/dungeon.lua
 %%DATADIR%%/earth.lua
 %%DATADIR%%/engrave
 %%DATADIR%%/epitaph
-%%DATADIR%%/fakewiz1.lua
-%%DATADIR%%/fakewiz2.lua
 %%DATADIR%%/fire.lua
+%%DATADIR%%/geryon.lua
+%%DATADIR%%/hellfill.lua
+%%DATADIR%%/hellgate.lua
 %%DATADIR%%/help
 %%DATADIR%%/hh
 %%DATADIR%%/history
@@ -160,6 +167,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/soko3-2.lua
 %%DATADIR%%/soko4-1.lua
 %%DATADIR%%/soko4-2.lua
+%%DATADIR%%/styxmarsh.lua
 %%DATADIR%%/symbols
 @sample(games,games,) %%DATADIR%%/sysconf.sample
 %%DATADIR%%/themerms.lua
@@ -168,6 +176,9 @@ bin/%%HACKNAME%%
 %%DATADIR%%/tower3.lua
 %%DATADIR%%/tower4.lua
 %%DATADIR%%/tribute
+%%DATADIR%%/tut-1.lua
+%%DATADIR%%/tut-2.lua
+%%DATADIR%%/usagehlp
 %%DATADIR%%/valley.lua
 %%DATADIR%%/water.lua
 %%DATADIR%%/wizard1.lua
@@ -175,6 +186,7 @@ bin/%%HACKNAME%%
 %%DATADIR%%/wizard3.lua
 %%DATADIR%%/wizhelp
 %%DATADIR%%/x11tiles
+%%DATADIR%%/yeenoghu.lua
 @sample(games,games,664) %%DATADIR%%/xlogfile.sample
 @owner
 @group
