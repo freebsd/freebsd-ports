@@ -6684,6 +6684,7 @@
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/LanguageConfigOverrideInstallTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/LanguageDependencyInjectionTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/LanguageFallbackTest.php
+%%WWWDIR%%/core/modules/language/tests/src/Kernel/LanguageNegotiatorPluginTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/LanguageSelectWidgetTest.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/LanguageTestBase.php
 %%WWWDIR%%/core/modules/language/tests/src/Kernel/Migrate/d6/MigrateDefaultLanguageTest.php
@@ -6992,6 +6993,7 @@
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkItemTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/LinkItemUrlValidationTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Kernel/Plugin/migrate/field/d7/LinkFieldTest.php
+%%WWWDIR%%/core/modules/link/tests/src/Unit/LinkFormatterTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkAccessConstraintValidatorTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkExternalProtocolsConstraintValidatorTest.php
 %%WWWDIR%%/core/modules/link/tests/src/Unit/Plugin/Validation/Constraint/LinkNotExistingInternalConstraintValidatorTest.php
@@ -7317,6 +7319,7 @@
 %%WWWDIR%%/core/modules/media/tests/src/Kernel/MediaSourceFileTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Kernel/MediaSourceTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Kernel/MediaTest.php
+%%WWWDIR%%/core/modules/media/tests/src/Kernel/MediaThumbnailFormatterTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Kernel/MediaTranslationTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Kernel/OEmbedIframeControllerTest.php
 %%WWWDIR%%/core/modules/media/tests/src/Kernel/OEmbedResourceConstraintValidatorTest.php
@@ -9443,6 +9446,8 @@
 %%WWWDIR%%/core/modules/system/tests/modules/default_format_test/src/DefaultFormatTestController.php
 %%WWWDIR%%/core/modules/system/tests/modules/delay_cache_tags_invalidation/delay_cache_tags_invalidation.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/delay_cache_tags_invalidation/delay_cache_tags_invalidation.module
+%%WWWDIR%%/core/modules/system/tests/modules/dependency_version_test/dependency_version_test.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/dependency_version_test/dependency_version_test.module
 %%WWWDIR%%/core/modules/system/tests/modules/deprecated_module/config/install/deprecated_module.settings.yml
 %%WWWDIR%%/core/modules/system/tests/modules/deprecated_module/config/schema/deprecated_module.schema.yml
 %%WWWDIR%%/core/modules/system/tests/modules/deprecated_module/deprecated_module.info.yml
@@ -9874,6 +9879,35 @@
 %%WWWDIR%%/core/modules/system/tests/modules/mail_html_test/mail_html_test.info.yml
 %%WWWDIR%%/core/modules/system/tests/modules/mail_html_test/mail_html_test.module
 %%WWWDIR%%/core/modules/system/tests/modules/mail_html_test/src/Plugin/Mail/TestHtmlMailCollector.php
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/noop.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_114_a.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_114_b.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_114_c.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_115_a.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_115_b.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_116_a.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_116_b.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_116_c.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_116_d.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_116_e.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/css/weighted/weighted_116_f.css
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/noop.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_114_a.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_114_b.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_114_c.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_115_a.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_115_b.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_a.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_b.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_c.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_d.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_e.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/js/weighted/weighted_116_f.js
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/many_assets_test.info.yml
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/many_assets_test.libraries.yml
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/many_assets_test.module
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/many_assets_test.routing.yml
+%%WWWDIR%%/core/modules/system/tests/modules/many_assets_test/src/Controller/ManyAssetsTestController.php
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/config/install/language/nl/menu_test.menu_item.yml
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/config/install/menu_test.links.action.yml
 %%WWWDIR%%/core/modules/system/tests/modules/menu_test/config/install/menu_test.menu_item.yml
@@ -10271,6 +10305,7 @@
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Database/SelectPagerDefaultTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Database/SelectTableSortDefaultTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Datetime/DrupalDateTimeTest.php
+%%WWWDIR%%/core/modules/system/tests/src/Functional/Datetime/TimeZoneAbbreviationRouteTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/DrupalKernel/ContainerRebuildWebTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/DrupalKernel/ContentNegotiationTest.php
 %%WWWDIR%%/core/modules/system/tests/src/Functional/Entity/EntityAddUITest.php
@@ -11920,6 +11955,7 @@
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_attachment_ui.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_block_exposed_ajax.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_block_exposed_ajax_with_page.yml
+%%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_boolean_grouped_filter_view.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_cache.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_click_sort.yml
 %%WWWDIR%%/core/modules/views/tests/modules/views_test_config/test_views/views.view.test_click_sort_ajax.yml
@@ -12209,6 +12245,7 @@
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Entity/LatestTranslationAffectedRevisionTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Entity/RowEntityRenderersTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Entity/ViewEntityDependenciesTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Kernel/Entity/ViewSelectionEntityReferenceTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/EventSubscriber/ViewsEntitySchemaSubscriberIntegrationTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/FieldApiDataTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Handler/AreaDisplayLinkTest.php
@@ -12240,6 +12277,7 @@
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Handler/FieldRenderedEntityTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Handler/FieldUrlTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Handler/FilterBooleanOperatorDefaultTest.php
+%%WWWDIR%%/core/modules/views/tests/src/Kernel/Handler/FilterBooleanOperatorGroupTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Handler/FilterBooleanOperatorStringTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Handler/FilterBooleanOperatorTest.php
 %%WWWDIR%%/core/modules/views/tests/src/Kernel/Handler/FilterCombineTest.php
@@ -13015,6 +13053,7 @@
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/components/content/card-common/card-common.css
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/components/content/card/card.css
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/components/content/full/node-full.css
+%%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/components/content/node-preview.css
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/components/content/node.css
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/components/fields/field.css
 %%WWWDIR%%/core/profiles/demo_umami/themes/umami/css/components/fields/ingredients.css
@@ -13525,6 +13564,7 @@
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/StandardInstallerTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Installer/TestingProfileInstallTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Libraries/JqueryUiLibraryAssetsTest.php
+%%WWWDIR%%/core/tests/Drupal/FunctionalTests/Libraries/ManyAssetsLoadOrderTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/MailCaptureTest.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Menu/MenuActiveTrail403Test.php
 %%WWWDIR%%/core/tests/Drupal/FunctionalTests/Rest/BaseFieldOverrideJsonAnonTest.php
@@ -13597,6 +13637,7 @@
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Asset/LibraryDiscoveryIntegrationTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Asset/ResolvedLibraryDefinitionsFilesMatchTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Batch/BatchKernelTest.php
+%%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Batch/BatchNegotiatorTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Block/MultipleBlockFormTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Bootstrap/ExtensionPathResolverTest.php
 %%WWWDIR%%/core/tests/Drupal/KernelTests/Core/Bootstrap/ResettableStaticTest.php
@@ -15239,6 +15280,7 @@
 %%WWWDIR%%/core/themes/claro/templates/views/views-ui-view-preview-section--exposed.html.twig
 %%WWWDIR%%/core/themes/engines/twig/twig.engine
 %%WWWDIR%%/core/themes/engines/twig/twig.info.yml
+%%WWWDIR%%/core/themes/olivero/README.md
 %%WWWDIR%%/core/themes/olivero/config/install/core.date_format.olivero_medium.yml
 %%WWWDIR%%/core/themes/olivero/config/install/olivero.settings.yml
 %%WWWDIR%%/core/themes/olivero/config/optional/block.block.olivero_account_menu.yml
@@ -16470,8 +16512,6 @@
 %%WWWDIR%%/vendor/psr/http-client/src/ClientInterface.php
 %%WWWDIR%%/vendor/psr/http-client/src/NetworkExceptionInterface.php
 %%WWWDIR%%/vendor/psr/http-client/src/RequestExceptionInterface.php
-%%WWWDIR%%/vendor/psr/http-factory/.gitignore
-%%WWWDIR%%/vendor/psr/http-factory/.pullapprove.yml
 %%WWWDIR%%/vendor/psr/http-factory/LICENSE
 %%WWWDIR%%/vendor/psr/http-factory/README.md
 %%WWWDIR%%/vendor/psr/http-factory/composer.json
