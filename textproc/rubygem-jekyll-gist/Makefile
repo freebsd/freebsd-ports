@@ -1,5 +1,6 @@
 PORTNAME=	jekyll-gist
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/jekyll/jekyll-gist
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-octokit>=4.2<5:net/rubygem-octokit
+RUN_DEPENDS=	rubygem-octokit4>=4.2<5:net/rubygem-octokit4
 
 USES=		gem shebangfix
 
