@@ -1,5 +1,6 @@
 PORTNAME=	stack
 PORTVERSION=	2.9.3
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel haskell
 
@@ -16,7 +17,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		${LOCALBASE}/lib/compat/libffi.so.6:devel/libffi321 \
 		${LOCALBASE}/lib/compat/libffi.so.7:devel/libffi33
 
-USES=		cabal gmake perl5 pkgconfig
+USES=		cabal gmake iconv:wchar_t perl5 pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	commercialhaskell
 USE_PERL5=	run

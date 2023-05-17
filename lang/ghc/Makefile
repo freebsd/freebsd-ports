@@ -1,6 +1,6 @@
 PORTNAME=	ghc
 PORTVERSION=	${GHC_VERSION}
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	lang haskell
 MASTER_SITES=	https://www.haskell.org/ghc/dist/${PORTVERSION}/:source \
 		LOCAL/arrowd/:boot
@@ -15,8 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
 
-USES=			autoreconf compiler:c11 gmake iconv:patch,translit \
-			localbase:ldflags ncurses perl5 python:build shebangfix \
+USES=			autoreconf compiler:c11 gmake \
+			ncurses perl5 python:build shebangfix \
 			tar:xz
 
 GNU_CONFIGURE=		yes
