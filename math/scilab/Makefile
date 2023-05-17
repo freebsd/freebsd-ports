@@ -132,6 +132,10 @@ CONFIGURE_ARGS+=	--enable-debug
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 .if ${GCC_DEFAULT} >= 10
 # workaround for Rank mismatch between actual argument at (1) and actual argument at (2) (rank-1 and scalar)
 FFLAGS+=	-fallow-argument-mismatch
