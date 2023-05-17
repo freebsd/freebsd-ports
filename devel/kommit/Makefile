@@ -1,7 +1,6 @@
-PORTNAME=	gitklient
-DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3
-PORTREVISION=	1
+PORTNAME=	kommit
+DISTVERSION=	1.0.2
+MASTER_SITES=	KDE/stable/${PORTNAME}/
 CATEGORIES=	devel kde
 
 MAINTAINER=	kde@FreeBSD.org
@@ -11,10 +10,7 @@ WWW=		https://github.com/HamedMasafi/GitKlient
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake kde:5 localbase:ldflags pkgconfig qt:5 xorg
-USE_GITHUB=	yes
-GH_ACCOUNT=	HamedMasafi
-GH_PROJECT=	GitKlient
+USES=		cmake kde:5 localbase:ldflags pkgconfig qt:5 xorg tar:xz
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons crash dbusaddons doctools ecm i18n itemviews \
 		jobwidgets kio parts service solid sonnet syntaxhighlighting \

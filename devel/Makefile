@@ -840,7 +840,6 @@
     SUBDIR += gitg
     SUBDIR += github-backup-utils
     SUBDIR += gitinspector
-    SUBDIR += gitklient
     SUBDIR += gitlab-metrics-exporter
     SUBDIR += gitlab-runner
     SUBDIR += gitlab-shell
@@ -1108,6 +1107,7 @@
     SUBDIR += kms-cmake-utils
     SUBDIR += kodi-platform
     SUBDIR += kokkos
+    SUBDIR += kommit
     SUBDIR += kore
     SUBDIR += kpublictransport
     SUBDIR += kronosnet

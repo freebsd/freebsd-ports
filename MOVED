@@ -7540,3 +7540,4 @@ emulators/mess||2023-05-08|Merged into emulators/mame in upstream
 textproc/rubygem-semver_dialects|devel/rubygem-semver_dialects|2023-05-15|Removed duplicated port
 devel/rubygem-ruby-openai|www/rubygem-ruby-openai37|2023-05-16|Moved to match www/rubygem-ruby-openai
 sysutils/rundeck2|sysutils/rundeck3|2023-05-17|Has expired: unmaintained and newer version available in sysutils/rundeck3
+devel/gitklient|devel/kommit|2023-05-17|Renamed upstream
