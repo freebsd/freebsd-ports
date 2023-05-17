@@ -2,18 +2,13 @@ PORTNAME=	consul
 PORTVERSION=	1.15.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
-MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/consul/${DISTVERSIONFULL}/ \
-		https://raw.githubusercontent.com/hashicorp/consul/${DISTVERSIONFULL}/:api \
-		https://raw.githubusercontent.com/hashicorp/consul/${DISTVERSIONFULL}/:envoyextensions \
-		https://raw.githubusercontent.com/hashicorp/consul/${DISTVERSIONFULL}/:proto_public \
-		https://raw.githubusercontent.com/hashicorp/consul/${DISTVERSIONFULL}/:sdk \
-		https://raw.githubusercontent.com/hashicorp/consul/${DISTVERSIONFULL}/:troubleshoot
+MASTER_SITES=	https://raw.githubusercontent.com/hashicorp/consul/${DISTVERSIONFULL}/
 DISTFILES=	go.mod \
-		api/go.mod:api \
-		envoyextensions/go.mod:envoyextensions \
-		proto-public/go.mod:proto_public \
-		sdk/go.mod:sdk \
-		troubleshoot/go.mod:troubleshoot
+		api/go.mod \
+		envoyextensions/go.mod \
+		proto-public/go.mod \
+		sdk/go.mod \
+		troubleshoot/go.mod
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Service discovery and configuration made easy
@@ -24,11 +19,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe go:modules
 CPE_VENDOR=	hashicorp
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	hashicorp
-
-GITID=		5e08e22
 USE_RC_SUBR=	consul
 
 GO_MODULE=	github.com/hashicorp/consul
@@ -42,14 +34,16 @@ SUB_LIST=	CONSUL_DBDIR=${CONSUL_DBDIR} \
 		GROUP=${CONSUL_GROUP} \
 		USER=${CONSUL_USER}
 
-CONSUL_USER?=	consul
-CONSUL_GROUP?=	consul
-CONSUL_DBDIR?=	/var/db/${PORTNAME}
-
 USERS=		${CONSUL_USER}
 GROUPS=		${CONSUL_GROUP}
 
 PLIST_FILES=	bin/consul
+
+CONSUL_USER?=	consul
+CONSUL_GROUP?=	consul
+CONSUL_DBDIR?=	/var/db/${PORTNAME}
+
+GITID=		5e08e22
 
 # Bring DISTINFO_FILE into scope so we can get the timestamp.
 .include <bsd.port.pre.mk>
