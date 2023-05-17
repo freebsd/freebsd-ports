@@ -59,7 +59,7 @@ post-patch:
 	${REINPLACE_CMD} 's|-Wl,-pie||g' \
 		${WRKSRC}/src/Makefile \
 		${WRKSRC}/tests/Makefile
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 	${REINPLACE_CMD} 's/stack-protector-all/stack-protector-all -Wno-error=int-conversion/g' \
 		${WRKSRC}/src/Makefile \
 		${WRKSRC}/src/account/Makefile \

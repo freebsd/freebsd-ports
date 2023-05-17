@@ -72,7 +72,7 @@ _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=invalid-utf8 -Winvalid-utf8
 .endif
 

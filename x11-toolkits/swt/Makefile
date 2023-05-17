@@ -52,7 +52,7 @@ post-extract:
 	@${CP} ${FILESDIR}/*.css ${WRKSRC}/org/eclipse/swt/internal/gtk/
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 	${REINPLACE_CMD} -e 's|-DGTK|-DGTK -Wno-error=deprecated-non-prototype|g' \
 		${WRKSRC}/make_freebsd.mak
 .endif
