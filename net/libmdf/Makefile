@@ -1,5 +1,5 @@
 PORTNAME=	libmdf
-PORTVERSION=	1.0.26
+PORTVERSION=	1.0.27
 CATEGORIES=	net finance
 MASTER_SITES=	https://packages.millistream.com/source/
 
@@ -9,6 +9,8 @@ WWW=		https://millistream.com
 
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libzstd.so:archivers/zstd
 
 USES=		libtool pkgconfig ssl
 
