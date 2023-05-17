@@ -24,7 +24,6 @@ LIB_DEPENDS=	libepoll-shim.so:devel/libepoll-shim \
 		libevdev.so:devel/libevdev
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-dbusmock>0:devel/py-python-dbusmock@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}StrEnum>0:devel/py-strenum@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}structlog>0:devel/py-structlog@${PY_FLAVOR}
 
 USES=		compiler:c11 localbase meson pkgconfig python:build
@@ -54,4 +53,10 @@ pre-test:
 		${TOUCH} ${WRKDIR}/.meson_build_tests; \
 	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31100
+TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}StrEnum>0:devel/py-strenum@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
