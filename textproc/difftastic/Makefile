@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.46.0
-PORTREVISION=	1
+DISTVERSION=	0.47.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,8 +16,7 @@ GH_ACCOUNT=	Wilfred
 
 PLIST_FILES=	bin/difft
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
-		ansi_term-0.12.1 \
+CARGO_CRATES=	aho-corasick-0.7.20 \
 		assert_cmd-2.0.5 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -47,7 +45,9 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		fixedbitset-0.4.1 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
+		glob-0.3.1 \
 		hashbrown-0.11.2 \
+		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		humantime-1.3.0 \
 		indexmap-1.7.0 \
@@ -69,14 +69,14 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		once_cell-1.17.1 \
 		os_str_bytes-6.0.1 \
 		output_vt100-0.1.3 \
-		owo-colors-3.4.0 \
+		owo-colors-3.5.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.6 \
 		petgraph-0.6.1 \
 		predicates-2.1.1 \
 		predicates-core-1.0.3 \
 		predicates-tree-1.0.5 \
-		pretty_assertions-1.2.1 \
+		pretty_assertions-1.3.0 \
 		pretty_env_logger-0.4.0 \
 		proc-macro2-1.0.39 \
 		quick-error-1.2.3 \
@@ -85,10 +85,11 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		rayon-1.6.1 \
 		rayon-core-1.10.1 \
 		redox_syscall-0.2.16 \
-		regex-1.5.6 \
+		regex-1.7.3 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.26 \
+		regex-syntax-0.6.29 \
 		rustc-hash-1.1.0 \
+		rustversion-1.0.12 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
 		signal-hook-0.3.14 \
@@ -96,6 +97,8 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		signal-hook-registry-1.4.0 \
 		smallvec-1.10.0 \
 		strsim-0.10.0 \
+		strum-0.24.1 \
+		strum_macros-0.24.3 \
 		syn-1.0.95 \
 		termcolor-1.1.3 \
 		terminal_size-0.1.17 \
@@ -108,7 +111,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		unicode-xid-0.2.3 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
-		walkdir-2.3.2 \
+		walkdir-2.3.3 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
@@ -123,6 +126,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		windows_x86_64_gnullvm-0.42.1 \
 		windows_x86_64_msvc-0.42.1 \
 		wu-diff-0.1.2 \
+		yansi-0.5.1 \
 		tree_magic_mini@git+https://github.com/Wilfred/tree_magic?branch=fix-panic-for-empty-strings\#13dd6dda15c7062bd8f7dd5bc9bb5b16ce9ee613
 
 PORTDOCS=	*
