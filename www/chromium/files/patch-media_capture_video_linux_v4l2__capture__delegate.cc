@@ -1,4 +1,4 @@
---- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2023-05-02 13:49:23 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2023-05-17 10:17:13 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
 @@ -4,8 +4,10 @@
  
@@ -24,7 +24,7 @@
  
  // TODO(aleksandar.stojiljkovic): Wrap this with kernel version check once the
  // format is introduced to kernel.
-@@ -729,7 +733,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
+@@ -727,7 +731,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
  
  V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
  
@@ -33,7 +33,7 @@
    int num_retries = 0;
    for (; DoIoctl(request, argp) < 0 && num_retries < kMaxIOCtrlRetries;
         ++num_retries) {
-@@ -739,7 +743,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
+@@ -737,7 +741,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
    return num_retries != kMaxIOCtrlRetries;
  }
  
@@ -42,7 +42,7 @@
    return HANDLE_EINTR(v4l2_->ioctl(device_fd_.get(), request, argp));
  }
  
-@@ -779,6 +783,7 @@ bool V4L2CaptureDelegate::IsControllableControl(int co
+@@ -777,6 +781,7 @@ bool V4L2CaptureDelegate::IsControllableControl(int co
  }
  
  void V4L2CaptureDelegate::ReplaceControlEventSubscriptions() {
@@ -50,7 +50,7 @@
    constexpr uint32_t kControlIds[] = {V4L2_CID_AUTO_EXPOSURE_BIAS,
                                        V4L2_CID_AUTO_WHITE_BALANCE,
                                        V4L2_CID_BRIGHTNESS,
-@@ -806,6 +811,7 @@ void V4L2CaptureDelegate::ReplaceControlEventSubscript
+@@ -804,6 +809,7 @@ void V4L2CaptureDelegate::ReplaceControlEventSubscript
                    << ", {type = V4L2_EVENT_CTRL, id = " << control_id << "}";
      }
    }
@@ -58,7 +58,7 @@
  }
  
  mojom::RangePtr V4L2CaptureDelegate::RetrieveUserControlRange(int control_id) {
-@@ -975,7 +981,11 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -984,7 +990,11 @@ void V4L2CaptureDelegate::DoCapture() {
  
    pollfd device_pfd = {};
    device_pfd.fd = device_fd_.get();
@@ -70,7 +70,7 @@
  
    const int result =
        HANDLE_EINTR(v4l2_->poll(&device_pfd, 1, kCaptureTimeoutMs));
-@@ -1013,6 +1023,7 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1022,6 +1032,7 @@ void V4L2CaptureDelegate::DoCapture() {
      timeout_count_ = 0;
    }
  
@@ -78,7 +78,7 @@
    // Dequeue events if the driver has filled in some.
    if (device_pfd.revents & POLLPRI) {
      bool controls_changed = false;
-@@ -1047,6 +1058,7 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1056,6 +1067,7 @@ void V4L2CaptureDelegate::DoCapture() {
        client_->OnCaptureConfigurationChanged();
      }
    }
