@@ -76,10 +76,12 @@ share/bash-completion/completions/clifm
 %%DATADIR%%/plugins/vid_viewer.sh
 %%DATADIR%%/plugins/virtualize.sh
 %%DATADIR%%/plugins/wallpaper_setter.sh
+%%DATADIR%%/plugins/xclip.sh
 %%DATADIR%%/preview.clifm
 %%DATADIR%%/prompts.clifm
 %%DATADIR%%/readline.clifm
 %%DATADIR%%/tools/deroff.py
 %%DATADIR%%/tools/manpages_comp_gen.py
+share/fish/vendor_completions.d/clifm.fish
 share/icons/hicolor/scalable/apps/clifm.svg
 share/zsh/site-functions/_clifm
