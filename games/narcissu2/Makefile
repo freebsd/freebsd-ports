@@ -5,7 +5,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.neechin.net/file_download/22/:game \
 		http://www.neechin.net/file_download/27/:script \
 		https://aur.archlinux.org/cgit/aur.git/plain/${PORTNAME}-en.png?h=${PORTNAME}-en&id=9768eea&foo=/:icon
-DISTFILES=	[Denpa]_Narcissu_2_Eng_[unix].tar.bz2.link:game \
+DISTFILES=	[Denpa]_Narcissu_2_Eng_[unix].tar.bz2:game \
 		Narcissu_2_Eng_v${PORTVERSION}_script_[All_platforms].zip:script \
 		${PORTNAME}-en.png:icon
 EXTRACT_ONLY=	${DISTFILES:N*\:icon:C/:.*//}
