@@ -30,6 +30,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 USES=		compiler:c11 localbase meson pkgconfig python:build
 USE_GITHUB=	nodefault
 USE_GITLAB=	yes
+USE_LDCONFIG=	yes
 GH_TUPLE=	nemequ:munit:v0.2.0-38-gfbbdf14:munit/subprojects/munit
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	libinput
