@@ -17,8 +17,8 @@ LICENSE_FILE_MIT=	${WRKSRC}/docs/legal/MIT
 LICENSE_FILE_ZLIB=	${WRKSRC}/docs/legal/Zlib
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	not yet ported to any architecture other than armv7, x86, and powerpc*
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	not yet ported to any architecture other than armv7, arm64, x86, and powerpc*
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-svg2pdfconverter>0:textproc/py-sphinxcontrib-svg2pdfconverter@${PY_FLAVOR}
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \

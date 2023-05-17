@@ -1,0 +1,14 @@
+--- makefile.orig	2023-05-17 11:43:34 UTC
++++ makefile
+@@ -1425,6 +1425,11 @@ $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile: make
+ 
+ .PHONY: freebsd_x64_clang
+ freebsd_x64_clang: generate $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile
++	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64 precompile
++	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64
++
++.PHONY: freebsd_arm64_clang
++freebsd_arm64_clang: generate $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile
+ 	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64 precompile
+ 	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64
+ 
