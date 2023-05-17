@@ -1,6 +1,5 @@
 PORTNAME=	ansible-lint
-PORTVERSION=	6.16.0
-PORTREVISION=	1
+PORTVERSION=	6.16.1
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>=2.12.0:sysutils/py-ansible-cor
 		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.10.0:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=21.3:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=12.0.0:textproc/py-rich@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.24:devel/py-ruamel.yaml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.0<0.18:devel/py-ruamel.yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}subprocess-tee>=0.4.1:devel/py-subprocess-tee@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wcmatch>=8.1.2:textproc/py-wcmatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.4.1:devel/py-yaml@${PY_FLAVOR} \
@@ -37,6 +36,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=0:devel/py-cove
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>=0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-plus>=0.2:devel/py-pytest-plus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=2.1.0:devel/py-pytest-xdist@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.26:devel/py-ruamel.yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ruamel.yaml.clib>=0:devel/py-ruamel.yaml.clib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}spdx-tools>=0.7.1:misc/py-spdx-tools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-jsonschema>=0:devel/py-types-jsonschema@${PY_FLAVOR} \
