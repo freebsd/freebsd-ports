@@ -2,9 +2,9 @@ On really fast machines some of the .o files aren't being added to
 libray.a because they are generated so fast that make(1) thinks the
 library is up-to-date.  Marvel at the horrific hack below.
 
---- libray/Makefile.orig	Sat Feb 26 16:41:28 2000
-+++ libray/Makefile	Sat Feb 26 16:42:36 2000
-@@ -12,6 +12,8 @@
+--- libray/Makefile.orig	1992-02-10 03:03:05 UTC
++++ libray/Makefile
+@@ -12,6 +12,8 @@ default:
  	for i in $(STUFF); do \
  		(cd $$i && $(MAKE)); \
  	done

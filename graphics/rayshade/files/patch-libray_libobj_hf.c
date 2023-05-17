@@ -1,6 +1,6 @@
---- libray/libobj/hf.c.orig	Mon Feb 10 04:04:18 1992
-+++ libray/libobj/hf.c	Wed Feb  7 18:27:10 2007
-@@ -42,7 +42,7 @@
+--- libray/libobj/hf.c.orig	1992-02-10 03:04:18 UTC
++++ libray/libobj/hf.c
+@@ -42,7 +42,7 @@ typedef struct {
  	Vector cp, pDX, pDY;
  } Trav2D;
  

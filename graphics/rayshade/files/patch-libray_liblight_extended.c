@@ -1,6 +1,6 @@
---- libray/liblight/extended.c.orig	Mon Feb 10 04:03:43 1992
-+++ libray/liblight/extended.c	Wed Feb  7 18:34:20 2007
-@@ -54,7 +54,7 @@
+--- libray/liblight/extended.c.orig	1992-02-10 03:03:43 UTC
++++ libray/liblight/extended.c
+@@ -54,7 +54,7 @@ ExtendedMethods()
  /*
   * Compute intensity ('color') of extended light source 'lp' from 'pos'.
   */
