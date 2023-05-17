@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.27-15003 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gf11770b88b
+DISTVERSION=	0.0.27-15033 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-ge1744ceab2
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -29,7 +29,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	RPCS3
 GH_TUPLE=	RPCS3:hidapi:hidapi-0.13.1-2-gecf1b62:hidapi/3rdparty/hidapi/hidapi \
 		RPCS3:soundtouch:2.3.1-16-g83cfba6:soundtouch/3rdparty/SoundTouch/soundtouch \
-		asmjit:asmjit:06d0bad:asmjit/3rdparty/asmjit/asmjit \
+		asmjit:asmjit:c598476:asmjit/3rdparty/asmjit/asmjit \
 		jbeder:yaml-cpp:yaml-cpp-0.7.0-1-g0b67821:yamlcpp/3rdparty/yaml-cpp/yaml-cpp \
 		KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-187-g85a1ed2:spirv_headers/3rdparty/SPIRV/SPIRV-Headers \
 		KhronosGroup:SPIRV-Tools:v2022.4:spirv_tools/3rdparty/SPIRV/SPIRV-Tools \
@@ -51,7 +51,7 @@ ELF_FEATURES=	+noaslr,wxneeded:bin/${PORTNAME}
 
 .if ${FLAVOR:U} == qt6 || make(makesum) || make(fetch)
 PATCH_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/:qt6
-PATCHFILES+=	6c51424a704d.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
+PATCHFILES+=	0ace2c316444.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
 PKGNAMESUFFIX=	-${FLAVOR}
 USES:=		${USES:S/qt:5/qt:6/}
 USE_QT=		base multimedia svg
@@ -105,6 +105,13 @@ VULKAN_DESC=		Vulkan renderer
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_CMAKE_BOOL=	USE_VULKAN
+
+# XXX Unbundle audio/rtmidi
+GH_TUPLE+=		thestk:rtmidi:5.0.0:rtmidi/3rdparty/rtmidi/rtmidi
+ALSA_LIB_DEPENDS+=	libasound.so:audio/alsa-lib
+ALSA_CMAKE_BOOL+= 	RTMIDI_API_ALSA
+JACK_LIB_DEPENDS+=	libjack.so:audio/jack
+JACK_CMAKE_BOOL+=	RTMIDI_API_JACK
 
 post-patch:
 	@${REINPLACE_CMD} -e '/GIT_BRANCH/s/local_build/master/' \
