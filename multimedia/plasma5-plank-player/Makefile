@@ -1,6 +1,5 @@
 PORTNAME=	plank-player
 DISTVERSION=	${KDE_PLASMA_VERSION}
-PORTREVISION=	1
 CATEGORIES=	multimedia kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
