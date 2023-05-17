@@ -1,3 +1,46 @@
+  <vuln vid="bea52545-f4a7-11ed-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>113.0.5672.126</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>113.0.5672.126</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/05/stable-channel-update-for-desktop_16.html">
+	 <p>This update includes 12 security fixes:</p>
+	 <ul>
+	    <li>[1444360] Critical CVE-2023-2721: Use after free in Navigation. Reported by Guang Gong of Alpha Lab, Qihoo 360 on 2023-05-10</li>
+	    <li>[1400905] High CVE-2023-2722: Use after free in Autofill UI. Reported by Rong Jian of VRI on 2022-12-14</li>
+	    <li>[1435166] High CVE-2023-2723: Use after free in DevTools. Reported by asnine on 2023-04-21</li>
+	    <li>[1433211] High CVE-2023-2724: Type Confusion in V8. Reported by Sergei Glazunov of Google Project Zero on 2023-04-14</li>
+	    <li>[1442516] High CVE-2023-2725: Use after free in Guest View. Reported by asnine on 2023-05-04</li>
+	    <li>[1442018] Medium CVE-2023-2726: Inappropriate implementation in WebApp Installs. Reported by Ahmed ElMasry on 2023-05-03</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2721</cvename>
+      <cvename>CVE-2023-2722</cvename>
+      <cvename>CVE-2023-2723</cvename>
+      <cvename>CVE-2023-2724</cvename>
+      <cvename>CVE-2023-2725</cvename>
+      <cvename>CVE-2023-2726</cvename>
+      <url>https://chromereleases.googleblog.com/2023/05/stable-channel-update-for-desktop_16.html</url>
+    </references>
+    <dates>
+      <discovery>2023-05-16</discovery>
+      <entry>2023-05-17</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4a08a4fb-f152-11ed-9c88-001b217b3468">
     <topic>Gitlab -- Vulnerability</topic>
     <affects>
