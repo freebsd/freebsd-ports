@@ -1,7 +1,7 @@
 PORTNAME=	kitty
-DISTVERSION=	0.28.0
-PORTREVISION=	3
-DISTVERSIONPREFIX=v
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.28.1
+PORTREVISION=	0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	nivit@FreeBSD.org
@@ -31,26 +31,10 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		go:modules pkgconfig python:3.5+ shebangfix ssl tar:xz terminfo xorg
+		go:modules pkgconfig python:3.5+ shebangfix ssl tar:xz terminfo \
+		xorg
 CPE_VENDOR=	kitty_project
-USE_GL=		gl
-USE_XORG=	x11 xcb xcursor xi xinerama xrandr
-
-GO_MODULE=	github.com/kovidgoyal/kitty
-SHEBANG_FILES=	build-terminfo count-lines-of-code mypy-editor-integration \
-		update-on-ox update-on-ubuntu
-SHEBANG_GLOB=	*.py
-
-TEST_ENV=	PATH="${STAGEDIR}${PREFIX}/bin:${PATH}"
-TEST_TARGET=	test
-
-CPPFLAGS+=	`pkg-config --cflags epoll-shim-interpose`
-LDFLAGS+=	`pkg-config --libs epoll-shim-interpose`
-
-BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}
-
-GH_TUPLE=	\
-		ALTree:bigfloat:38c8b72a9924:altree_bigfloat/vendor/github.com/ALTree/bigfloat \
+GH_TUPLE=	ALTree:bigfloat:38c8b72a9924:altree_bigfloat/vendor/github.com/ALTree/bigfloat \
 		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
 		golang:exp:54bba9f4231b:golang_exp/vendor/golang.org/x/exp \
 		golang:image:v0.3.0:golang_image/vendor/golang.org/x/image \
@@ -61,13 +45,27 @@ GH_TUPLE=	\
 		seancfoley:bintree:v1.2.1:seancfoley_bintree/vendor/github.com/seancfoley/bintree \
 		seancfoley:ipaddress-go:v1.5.3:seancfoley_ipaddress_go/vendor/github.com/seancfoley/ipaddress-go
 
+USE_GL=		gl
+USE_XORG=	x11 xcb xcursor xi xinerama xrandr
+
+SHEBANG_FILES=	build-terminfo count-lines-of-code mypy-editor-integration \
+		update-on-ox update-on-ubuntu
+SHEBANG_GLOB=	*.py
+
+GO_MODULE=	github.com/kovidgoyal/kitty
+
+TEST_ENV=	PATH="${STAGEDIR}${PREFIX}/bin:${PATH}"
+TEST_TARGET=	test
+
+CPPFLAGS+=	`pkg-config --cflags epoll-shim-interpose`
+LDFLAGS+=	`pkg-config --libs epoll-shim-interpose`
+
+BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}
+
 INSTALL_WRKSRC=	${WRKSRC}/linux-package
 
 _STRIP_TARGETS=	lib/kitty/kitty/fast_data_types.so lib/kitty/kitty/glfw-x11.so \
-		lib/kitty/kittens/diff/diff_speedup.so \
-		lib/kitty/kittens/unicode_input/unicode_names.so \
-		lib/kitty/kitty/glfw-wayland.so \
-		bin/kitten bin/kitty \
+		lib/kitty/kitty/glfw-wayland.so bin/kitten bin/kitty \
 		lib/kitty/kittens/transfer/rsync.so
 
 _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
