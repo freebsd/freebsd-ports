@@ -45,6 +45,7 @@
 %%DSO%%%%HTTP_NOTICE%%libexec/nginx/ngx_http_notice_module.so
 %%DSO%%%%HTTP_PERL%%libexec/nginx/ngx_http_perl_module.so
 %%DSO%%%%HTTP_PUSH%%libexec/nginx/ngx_nchan_module.so
+%%DSO%%%%HTTP_PROXY_CONNECT%%libexec/nginx/ngx_http_proxy_connect_module.so
 %%DSO%%%%HTTP_PUSH_STREAM%%libexec/nginx/ngx_http_push_stream_module.so
 %%DSO%%%%HTTP_REDIS%%libexec/nginx/ngx_http_redis_module.so
 %%DSO%%%%HTTP_SUBS_FILTER%%libexec/nginx/ngx_http_subs_filter_module.so

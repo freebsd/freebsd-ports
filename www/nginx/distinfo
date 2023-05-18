@@ -1,6 +1,8 @@
 TIMESTAMP = 1684343308
 SHA256 (nginx-1.24.0.tar.gz) = 77a2541637b92a621e3ee76776c8b7b40cf6d707e69ba53a940283e30ff2f55d
 SIZE (nginx-1.24.0.tar.gz) = 1112471
+SHA256 (chobits-ngx_http_proxy_connect_module-75febef_GH0.tar.gz) = 6169361f31607af0ec8c78b356e62c2aeb128649161d688d7ea92f4d2c1c39f9
+SIZE (chobits-ngx_http_proxy_connect_module-75febef_GH0.tar.gz) = 32645
 SHA256 (nginx_mogilefs_module-1.0.4.tar.gz) = 7ac230d30907f013dff8d435a118619ea6168aa3714dba62c6962d350c6295ae
 SIZE (nginx_mogilefs_module-1.0.4.tar.gz) = 11208
 SHA256 (nginx_mod_h264_streaming-2.2.7.tar.gz) = 6d974ba630cef59de1f60996c66b401264a345d25988a76037c2856cec756c19
