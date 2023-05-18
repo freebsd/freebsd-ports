@@ -329,7 +329,7 @@ post-patch:
 	    -e 's|%%VBOX_ETC%%|${VBOX_ETC}|g' \
 	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh
-        @${REINPLACE_CMD} -e 's|%%VBOX_ETC%%|${VBOX_ETC}|g' \
+	@${REINPLACE_CMD} -e 's|%%VBOX_ETC%%|${VBOX_ETC}|g' \
 	    ${WRKSRC}/src/VBox/HostDrivers/adpctl/VBoxNetAdpCtl.cpp
 	@${REINPLACE_CMD} \
 	    -e 's|^versions =.*|versions = ["${PYTHON_VER}${PYTHON_ABIVER}"]|' \
