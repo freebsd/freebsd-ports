@@ -1,5 +1,6 @@
 PORTNAME=	mame
 PORTVERSION=	0.254
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
@@ -89,7 +90,7 @@ MAKE_ENV+=	DEBUG="1" \
 LDFLAGS+=	-s
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
 MAKE_ARGS+=	PTR64=1
 .endif
 
