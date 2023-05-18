@@ -1,6 +1,6 @@
 PORTNAME=	jade
 PORTVERSION=	1.2.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.jclark.com/pub/jade/ \
 		http://dist.bsdlab.org/
@@ -20,6 +20,7 @@ CONFLICTS=	sp-1.*
 
 GNU_CONFIGURE=	yes
 USES=		desthack gmake libtool
+USE_CXXSTD=	gnu++98
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog
 MAKE_JOBS_UNSAFE=	yes
