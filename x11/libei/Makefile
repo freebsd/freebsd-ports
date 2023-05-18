@@ -6,11 +6,11 @@ PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	e01ce3480e9a.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
 PATCHFILES+=	dd817c8ddec6.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
 PATCHFILES+=	2a2c4cdd49f4.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
-PATCHFILES+=	98252a806e3b.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
 PATCHFILES+=	143bfd52603f.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
 PATCHFILES+=	57a9059d644c.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
 PATCHFILES+=	7015fa6ad0ac.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/203
 PATCHFILES+=	3b8ce3dca19e.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/203
+PATCHFILES+=	0387bf23aa80.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/205
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for Emulated Input
