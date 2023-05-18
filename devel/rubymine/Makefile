@@ -1,10 +1,11 @@
 PORTNAME=	rubymine
 PORTVERSION=	2023.1.1
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	https://download.jetbrains.com/ruby/
 DISTNAME=	RubyMine-${PORTVERSION}
 
-MAINTAINER=	rene@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby on Rails IDE by JetBrains
 WWW=		https://www.jetbrains.com/ruby/
 
