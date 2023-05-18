@@ -52,6 +52,7 @@ USERS=		${VBOXUSER}
 GROUPS=		${VBOXGROUP}
 VBOX_DIR=	${PREFIX}/${VBOX_DIR_REL}
 VBOX_DIR_REL=	lib/virtualbox
+VBOX_ETC=	${PREFIX}/etc/vbox
 VBOX_LINKS=	VBoxVRDP
 VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 		VBoxManage
@@ -323,8 +324,9 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-	@${REINPLACE_CMD} -e 's|/usr/local/lib/virtualbox|${VBOX_DIR}|' \
-	    -e 's|/usr/local|${PREFIX}|' \
+	@${REINPLACE_CMD} -e 's|%%VBOX_DIR%%|${VBOX_DIR}|g' \
+	    -e 's|%%VBOX_ETC%%|${VBOX_ETC}|g' \
+	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh
 	@${REINPLACE_CMD} \
 	    -e 's|^versions =.*|versions = ["${PYTHON_VER}${PYTHON_ABIVER}"]|' \

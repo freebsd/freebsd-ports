@@ -45,6 +45,7 @@ USERS=		${VBOXUSER}
 GROUPS=		${VBOXGROUP}
 VBOX_DIR=	${PREFIX}/${VBOX_DIR_REL}
 VBOX_DIR_REL=	lib/virtualbox
+VBOX_ETC=	${PREFIX}/etc/vbox
 VBOX_LINKS=	VBoxVRDP
 VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 		VBoxManage
@@ -314,7 +315,6 @@ post-patch:
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \
 	    ${WRKSRC}/kBuild/header.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
 	    ${WRKSRC}/kBuild/units/qt5.kmk ${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
-	    ${WRKSRC}/src/VBox/HostDrivers/adpctl/VBoxNetAdpCtl.cpp \
 	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
 	@${REINPLACE_CMD} \
 	    -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' \
@@ -325,10 +325,12 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-	# Causes a "reinplace" QA warning with default PREFIX/VBOX_DIR
-	@${REINPLACE_CMD} -e 's|/usr/local/lib/virtualbox|${VBOX_DIR}|' \
-	    -e 's|/usr/local|${PREFIX}|' \
+	@${REINPLACE_CMD} -e 's|%%VBOX_DIR%%|${VBOX_DIR}|g' \
+	    -e 's|%%VBOX_ETC%%|${VBOX_ETC}|g' \
+	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh
+        @${REINPLACE_CMD} -e 's|%%VBOX_ETC%%|${VBOX_ETC}|g' \
+	    ${WRKSRC}/src/VBox/HostDrivers/adpctl/VBoxNetAdpCtl.cpp
 	@${REINPLACE_CMD} \
 	    -e 's|^versions =.*|versions = ["${PYTHON_VER}${PYTHON_ABIVER}"]|' \
 	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py

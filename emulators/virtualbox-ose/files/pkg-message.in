@@ -62,7 +62,7 @@ To check if AIO is used use: kldstat -v | grep aio
 
 When assigning IP addresses in host-only mode from ranges outside
 of VirtualBox's defaults, the respective ranges need to be listed
-in %%LOCALBASE%%/etc/vbox/networks.conf (PR#259399).
+in %%VBOX_ETC%%/networks.conf (PR#259399).
 
 Check wiki page for known issues and troubleshooting:
 http://wiki.freebsd.org/VirtualBox
@@ -87,10 +87,10 @@ EOM
   maximum_version: 6.1.32_1
   message: <<EOM
 To comply to hier(7) requirements, networks.conf's location changed
-to %%LOCALBASE%%/etc/vbox/networks.conf.
+to %%VBOX_ETC%%/networks.conf.
 
 In case /etc/vbox/networks.conf exists, it needs to be moved to
-%%LOCALBASE%%/etc/vbox and /etc/vbox should be deleted.
+%%VBOX_ETC%% and /etc/vbox should be deleted.
 EOM
 }
 ]
