@@ -11,6 +11,8 @@ WWW=		https://samesame.kruijff.org/
 
 LICENSE=	BSD2CLAUSE
 
+BROKEN_FreeBSD_14=	ld: error: undefined symbol: eprol
+
 CONFLICTS=	samefile
 
 HAS_CONFIGURE=	yes
