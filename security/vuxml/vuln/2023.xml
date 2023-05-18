@@ -1,3 +1,36 @@
+  <vuln vid="b09d77d0-b27c-48ae-b69b-9641bb68b39e">
+    <topic>electron -- vulnerability</topic>
+    <affects>
+      <package>
+	<name>electron22</name>
+	<range><lt>22.3.10</lt></range>
+      </package>
+      <package>
+	<name>electron23</name>
+	<range><lt>23.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v22.3.10">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-29469</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-29469</cvename>
+      <url>https://github.com/advisories/GHSA-7jv7-hr35-fwjr</url>
+    </references>
+    <dates>
+      <discovery>2023-05-17</discovery>
+      <entry>2023-05-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bea52545-f4a7-11ed-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
