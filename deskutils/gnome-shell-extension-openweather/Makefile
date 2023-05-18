@@ -8,6 +8,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	OpenWeather extension for the GNOME3 shell
 WWW=		https://github.com/jenslody/gnome-shell-extension-openweather
 
+DEPRECATED=	Upstream vaporized
+EXPIRATION_DATE=	2023-06-18
 BROKEN=		does not fetch
 
 BUILD_DEPENDS=	gnome-autogen.sh:devel/gnome-common \
