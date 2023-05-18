@@ -1918,6 +1918,7 @@
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chosen-rails
     SUBDIR += rubygem-chromedriver-helper
+    SUBDIR += rubygem-circuitbox
     SUBDIR += rubygem-cookiejar
     SUBDIR += rubygem-crass
     SUBDIR += rubygem-cssbundling-rails
@@ -2121,6 +2122,7 @@
     SUBDIR += rubygem-rack-timeout
     SUBDIR += rubygem-rack16
     SUBDIR += rubygem-rack22
+    SUBDIR += rubygem-rack227
     SUBDIR += rubygem-rack_csrf
     SUBDIR += rubygem-rackup
     SUBDIR += rubygem-rails-settings-cached
