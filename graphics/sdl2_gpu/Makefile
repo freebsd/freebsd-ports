@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	0.12.0
 CATEGORIES=	graphics
 
-MAINTAINER=	fuz@fuz.su
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Hardware-accelerated 2D graphics library
 WWW=		https://github.com/grimfang4/sdl-gpu
 
