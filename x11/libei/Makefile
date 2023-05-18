@@ -5,10 +5,12 @@ CATEGORIES=	x11
 PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
 PATCHFILES+=	e01ce3480e9a.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
 PATCHFILES+=	dd817c8ddec6.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
-PATCHFILES+=	a6e5bae3e0bd.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
-PATCHFILES+=	58371a9f1143.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
+PATCHFILES+=	2a2c4cdd49f4.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
+PATCHFILES+=	98252a806e3b.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
 PATCHFILES+=	143bfd52603f.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
 PATCHFILES+=	57a9059d644c.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
+PATCHFILES+=	7015fa6ad0ac.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/203
+PATCHFILES+=	3b8ce3dca19e.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/203
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for Emulated Input
@@ -36,7 +38,6 @@ GL_ACCOUNT=	libinput
 GL_COMMIT=	df268d618a199ca5c71f47b1e17cd6cd3d87fc0e
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 MESON_ARGS=	-Dsd-bus-provider=basu -Dtests=disabled
-CFLAGS+=	-Wno-typedef-redefinition # https://gitlab.freedesktop.org/libinput/libei/-/issues/31
 
 OPTIONS_DEFINE=	BASU
 OPTIONS_DEFAULT=BASU
