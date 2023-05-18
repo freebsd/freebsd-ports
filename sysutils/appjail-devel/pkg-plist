@@ -1,6 +1,9 @@
 bin/appjail
 bin/appjail-config
+bin/appjail-config-user
 bin/appjail-dns
+bin/appjail-user
+@sample %%ETCDIR%%/appjail.conf.sample
 etc/rc.d/appjail
 etc/rc.d/appjail-natnet
 libexec/appjail/appjail-config/appjail-config
@@ -114,12 +117,15 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/write/build/RESTART
 %%DATADIR%%/makejail/write/build/START
 %%DATADIR%%/makejail/write/build/STOP
+%%DATADIR%%/scripts/ajconf-user.sh
 %%DATADIR%%/scripts/ajconf.sh
+%%DATADIR%%/scripts/ajuser.sh
 %%DATADIR%%/scripts/ascii2oct.sh
 %%DATADIR%%/scripts/dns.sh
 %%DATADIR%%/scripts/get_depends.sh
 %%DATADIR%%/scripts/run_init.sh
 %%DATADIR%%/scripts/run_jail.sh
+%%DATADIR%%/scripts/runas.sh
 %%EXAMPLESDIR%%/templates/bridge.conf
 %%EXAMPLESDIR%%/templates/linux.conf
 %%EXAMPLESDIR%%/templates/vnet.conf
