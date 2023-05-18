@@ -1,7 +1,6 @@
 PORTNAME=	notus-scanner
-DISTVERSION=	22.4.5
+DISTVERSION=	22.5.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	security python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -43,7 +42,7 @@ post-patch:
 	${REINPLACE_CMD} -i "" -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/notus/scanner/cli/parser.py
 	${REINPLACE_CMD} -i "" -e 's|/etc/openvas/gnupg|/var/lib/openvas/gnupg|g' \
 		${WRKSRC}/notus/scanner/loader/gpg_sha_verifier.py
-	${REINPLACE_CMD} '37d' ${WRKSRC}/pyproject.toml
+	${REINPLACE_CMD} '38d' ${WRKSRC}/pyproject.toml
 	@${RM} ${WRKSRC}/notus/scanner/cli/parser.py.orig
 	@${RM} ${WRKSRC}/notus/scanner/config.py.orig
 
