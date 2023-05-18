@@ -29,7 +29,7 @@ ENCRYPTED_FILE_DESC=	Install pycrypto to support the Encrypted File backend
 GNOME_KEYRING_DESC=	Install GNOME Keyring to support the Gnome backend
 PYFS_DESC=		Install pyfilesystem to support the pyfs backend
 
-ENCRYPTED_FILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycrypto>=2.5:security/py-pycrypto@${PY_FLAVOR}
+ENCRYPTED_FILE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodomex>0:security/py-pycryptodomex@${PY_FLAVOR}
 GNOME_KEYRING_USES=		gnome
 GNOME_KEYRING_USE=		GNOME=pygobject3
 PYFS_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}fs>=0.5:devel/py-fs@${PY_FLAVOR}
