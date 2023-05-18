@@ -1,0 +1,3 @@
+This is a Python framework for easy manipulation of .part.met files
+(Overnet/eDonkey2000 download meta-information).  This set of classes
+allows for rapid development of ed2k tools, using a very simple API.
