@@ -1,10 +1,8 @@
-PORTNAME=	python-igraph # it has been renamed to igraph
-DISTVERSION=	0.9.9
-PORTREVISION=	4
+PORTNAME=	igraph
+DISTVERSION=	0.10.4
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	igraph-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	High performance graph data structures and algorithms

@@ -4591,7 +4591,6 @@ devel/p5-IO-stringy|devel/p5-IO-Stringy|2020-06-26|New development starts as IO-
 devel/looks|devel/jgoodies-looks|2020-06-26|Renamed to match upstream
 comms/py-serial|comms/py-pyserial|2020-06-27|Rename to match upstream naming
 devel/py-usb|devel/py-pyusb|2020-06-27|Rename to match upstream naming
-math/py-igraph|math/py-python-igraph|2020-06-27|Rename to match upstream naming
 net/bnxt-kmod||2020-06-28|Has expired: Unsupported on all supported FreeBSD versions
 databases/p5-Search-Xapian10|databases/p5-Search-Xapian|2020-06-30|Has expired: Depend on unsupported xapian-core. Use databases/p5-Search-Xapian instead
 databases/xapian-core10|databases/xapian-core|2020-06-30|Has expired: Unsupported by upstream. Use databases/xapian-core instead
@@ -7540,3 +7539,4 @@ textproc/rubygem-semver_dialects|devel/rubygem-semver_dialects|2023-05-15|Remove
 devel/rubygem-ruby-openai|www/rubygem-ruby-openai37|2023-05-16|Moved to match www/rubygem-ruby-openai
 sysutils/rundeck2|sysutils/rundeck3|2023-05-17|Has expired: unmaintained and newer version available in sysutils/rundeck3
 devel/gitklient|devel/kommit|2023-05-17|Renamed upstream
+math/py-python-igraph|math/py-igraph|2023-05-18|Rename to match upstream renaming
