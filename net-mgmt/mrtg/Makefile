@@ -1,6 +1,5 @@
 PORTNAME=	mrtg
-PORTVERSION=	2.17.4
-PORTREVISION=	8
+PORTVERSION=	2.17.10
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -8,15 +7,17 @@ MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
 		ftp://ftp.nstu.ru/pub/sources/nettools/monitoring/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/
 
-MAINTAINER=	ports@subnets.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-router traffic grapher
 WWW=		https://oss.oetiker.ch/mrtg/
 
-LIB_DEPENDS=	libgd.so:${GD_PORT}
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	libgd.so:graphics/gd \
+		libpng16.so:graphics/png
 RUN_DEPENDS=	p5-SNMP_Session>=0:net-mgmt/p5-SNMP_Session
 
-# slave ports override with languages specific gd
-GD_PORT?=	graphics/gd
+USES=		perl5 shebangfix
 
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
@@ -24,7 +25,6 @@ CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 USERS=		mrtg
 GROUPS=		mrtg
 
-USES=		perl5 shebangfix
 MAKE_ENV+=	PERL=${PERL}
 MRTG_RUNDIR?=	/var/run/mrtg
 SHEBANG_FILES=	bin/mrtg-traffic-sum
@@ -44,7 +44,8 @@ CONFIGURE_ENV=	PERL=${PERL}
 MANPAGE=	cfgmaker.1 indexmaker.1 mrtg-contrib.1 mrtg-faq.1 mrtg-forum.1 \
 		mrtg-ipv6.1 mrtg-logfile.1 mrtg-mibhelp.1 mrtg-nt-guide.1 \
 		mrtg-nw-guide.1 mrtg-reference.1 mrtg-rrd.1 mrtg-squid.1 \
-		mrtg-unix-guide.1 mrtg-webserver.1 mrtg.1 mrtglib.1
+		mrtg-unix-guide.1 mrtg-webserver.1 mrtg.1
+MANPAGE3=	mrtglib.3
 
 DOCS=		CHANGES COPYRIGHT MANIFEST README
 EXAMPLES=	cfgmaker.pod indexmaker.pod mrtg-contrib.pod mrtg-faq.pod \
@@ -56,13 +57,13 @@ EXAMPLES=	cfgmaker.pod indexmaker.pod mrtg-contrib.pod mrtg-faq.pod \
 		mrtg-logfile.txt mrtg-mibhelp.txt mrtg-nt-guide.txt \
 		mrtg-nw-guide.txt mrtg-reference.txt mrtg-rrd.txt \
 		mrtg-squid.txt mrtg-unix-guide.txt mrtg-webserver.txt \
-		mrtg.txt mrtglib.txt mrtg-l.png mrtg-m.png mrtg-r.png \
-		mrtg-ti.png mrtg-l.gif mrtg-m.gif mrtg-r.gif
+		mrtg.txt mrtglib.txt
 IMAGES=		favicon.ico mrtg-l.gif mrtg-l.png mrtg-m.gif mrtg-m.png \
 		mrtg-r.gif mrtg-r.png mrtg-ti.gif mrtg-ti.png
 SCRIPTS=	cfgmaker indexmaker mrtg mrtg-traffic-sum
 
 OPTIONS_DEFINE=	DOCS EXAMPLES IPV6 SNMPV3
+SNMPV3_DESC=	Build with support for SNMPv3
 
 IPV6_RUN_DEPENDS=	p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6
 SNMPV3_RUN_DEPENDS=	p5-Net-SNMP>=0:net-mgmt/p5-Net-SNMP
@@ -91,6 +92,8 @@ do-install:
 		${STAGEDIR}${ETCDIR}/mrtg.cfg.sample
 	${INSTALL_DATA} ${MANPAGE:S,^,${WRKSRC}/doc/,} \
 		${STAGEDIR}${PREFIX}/man/man1
+	${INSTALL_DATA} ${MANPAGE3:S,^,${WRKSRC}/doc/,} \
+		${STAGEDIR}${PREFIX}/man/man3
 	cd ${WRKSRC}/lib/mrtg2 && \
 		${COPYTREE_SHARE} "*.pm" ${STAGEDIR}${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/rateup ${STAGEDIR}${PREFIX}/bin
