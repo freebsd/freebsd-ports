@@ -12,8 +12,9 @@ WWW=		https://www.defora.org/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BROKEN_FreeBSD_13=	network.c:298:19: error: variable has incomplete type 'struct ifdatareq'
-BROKEN_FreeBSD_14=	network.c:298:19: error: variable has incomplete type 'struct ifdatareq'
+DEPRECATED=	Broken on all supported versions
+EXPIRATION_DATE=	2023-06-18
+BROKEN=	network.c:298:19: error: variable has incomplete type 'struct ifdatareq'
 
 LIB_DEPENDS=	libDesktop.so:x11/deforaos-libdesktop \
 		libSystem.so:devel/deforaos-libsystem \
