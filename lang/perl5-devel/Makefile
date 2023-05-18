@@ -32,7 +32,7 @@ USES=		cpe
 USE_GITHUB=	yes
 GH_ACCOUNT=	Perl
 GH_PROJECT=	perl5
-GH_TAGNAME=	v5.37.0-271-gb0fb28a3e3
+GH_TAGNAME=	v5.37.11-68-g7151e1628e
 
 # Give a hint of where libperl.so can be found.
 USE_LDCONFIG=	${PREFIX}/${_ARCH_LIB}/CORE
@@ -47,8 +47,7 @@ TEST_ENV=	${MAKE_ENV} \
 
 HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	Configure
-CONFIGURE_ARGS=		-Accflags='-DUSE_THREAD_SAFE_LOCALE' \
-			-Darchlib=${PREFIX}/${_ARCH_LIB} \
+CONFIGURE_ARGS=		-Darchlib=${PREFIX}/${_ARCH_LIB} \
 			-Dcc="${CC}" \
 			-Dcf_by=${MAINTAINER:C,@.*,,} \
 			-Dcf_email=${MAINTAINER} \
