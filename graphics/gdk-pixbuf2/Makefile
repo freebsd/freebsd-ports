@@ -30,7 +30,7 @@ OPTIONS_DEFINE=	JPEG MANPAGES PNG TIFF
 OPTIONS_DEFAULT=JPEG MANPAGES PNG TIFF
 
 JPEG_USES=		jpeg
-JPEG_MESON_ENABLE=	jpeg
+JPEG_MESON_ENABLED=	jpeg
 
 MANPAGES_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 			rst2man:textproc/py-docutils
@@ -38,9 +38,9 @@ MANPAGES_USE=		gnome=libxslt:build
 MANPAGES_MESON_TRUE=	man
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
-PNG_MESON_ENABLE=	png
+PNG_MESON_ENABLED=	png
 
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
-TIFF_MESON_ENABLE=	tiff
+TIFF_MESON_ENABLED=	tiff
 
 .include <bsd.port.mk>
