@@ -1,3 +1,41 @@
+  <vuln vid="a4f8bb03-f52f-11ed-9859-080027083a05">
+    <topic>curl -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>8.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wei Chong Tan, Harry Sintonen, and Hiroki Kurosawa reports:</p>
+	<blockquote cite="https://curl.se/docs/security.html">
+	  <p>This update fixes 4 security vulnerabilities:</p>
+	    <ul>
+	      <li>Medium CVE-2023-28319: UAF in SSH sha256 fingerprint check. Reported by Wei Chong Tan on 2023-03-21</li>
+	      <li>Low CVE-2023-28320: siglongjmp race condition. Reported by Harry Sintonen on 2023-04-02</li>
+	      <li>Low CVE-2023-28321: IDN wildcard match. Reported by Hiroki Kurosawa on 2023-04-17</li>
+	      <li>Low CVE-2023-28322: more POST-after-PUT confusion. Reported by Hiroki Kurosawa on 2023-04-19</li>
+	    </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28319</cvename>
+	<url>https://curl.se/docs/CVE-2023-28319.html</url>
+	<cvename>CVE-2023-28320</cvename>
+	<url>https://curl.se/docs/CVE-2023-28320.html</url>
+	<cvename>CVE-2023-28321</cvename>
+	<url>https://curl.se/docs/CVE-2023-28321.html</url>
+	<cvename>CVE-2023-28322</cvename>
+	<url>https://curl.se/docs/CVE-2023-28322.html</url>
+    </references>
+    <dates>
+      <discovery>2023-03-21</discovery>
+      <entry>2023-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1ab7357f-a3c2-406a-89fb-fd00e49a71b5">
     <topic>zeek -- potential DoS vulnerabilities</topic>
     <affects>
