@@ -31,6 +31,7 @@
     SUBDIR += cascadia-code
     SUBDIR += charis
     SUBDIR += charis-compact
+    SUBDIR += chomsky
     SUBDIR += clearsans
     SUBDIR += code2000
     SUBDIR += comfortaa-ttf
