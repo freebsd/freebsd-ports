@@ -1,6 +1,6 @@
 PORTNAME=	resvg
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.32.0
+DISTVERSION=	0.33.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +15,8 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	RazrFalcon
 
+WRKSRC_SUBDIR=	crates/resvg
+
 CARGO_CRATES=	adler-1.0.2 \
 		arrayref-0.3.7 \
 		arrayvec-0.7.2 \
@@ -26,18 +28,17 @@ CARGO_CRATES=	adler-1.0.2 \
 		crc32fast-1.3.2 \
 		data-url-0.2.0 \
 		fdeflate-0.3.0 \
-		flate2-1.0.25 \
+		flate2-1.0.26 \
 		float-cmp-0.9.0 \
 		fontconfig-parser-0.5.2 \
-		fontdb-0.13.1 \
+		fontdb-0.14.1 \
 		gif-0.12.0 \
-		imagesize-0.11.0 \
+		imagesize-0.12.0 \
 		jpeg-decoder-0.3.0 \
-		kurbo-0.9.3 \
-		libc-0.2.142 \
+		kurbo-0.9.5 \
+		libc-0.2.144 \
 		log-0.4.17 \
-		memmap2-0.5.10 \
-		miniz_oxide-0.6.2 \
+		memmap2-0.6.1 \
 		miniz_oxide-0.7.1 \
 		once_cell-1.17.1 \
 		pico-args-0.5.0 \
@@ -53,9 +54,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		smallvec-1.10.0 \
 		strict-num-0.1.0 \
 		svgtypes-0.11.0 \
-		tiny-skia-0.9.0 \
+		tiny-skia-0.9.1 \
 		tiny-skia-path-0.9.0 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.1 \
 		ttf-parser-0.18.1 \
+		ttf-parser-0.19.0 \
 		unicode-bidi-0.3.13 \
 		unicode-bidi-mirroring-0.1.0 \
 		unicode-ccc-0.1.2 \
