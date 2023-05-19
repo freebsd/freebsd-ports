@@ -1,5 +1,5 @@
 PORTNAME=	matterhorn
-PORTVERSION=	50200.17.0
+PORTVERSION=	50200.18.0
 CATEGORIES=	net-im
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -10,136 +10,138 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cabal
 
-USE_CABAL=	HTTP-4000.4.1_1 \
+USE_CABAL=	HTTP-4000.4.1_2 \
 		Hclip-3.0.0.4 \
-		OneTuple-0.3.1_3 \
+		OneTuple-0.4.1.1 \
 		QuickCheck-2.14.2 \
 		SHA-1.6.4.4 \
 		StateVar-1.2.2 \
-		aeson-2.0.3.0_1 \
-		ansi-terminal-0.11.4 \
+		aeson-2.1.2.1_3 \
+		ansi-terminal-1.0 \
+		ansi-terminal-types-0.11.5_1 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
 		aspell-pipe-0.6 \
-		assoc-1.0.2_3 \
-		async-2.2.4_2 \
-		attoparsec-0.14.4_2 \
+		assoc-1.0.2_4 \
+		async-2.2.4_3 \
+		attoparsec-0.14.4_3 \
 		base-compat-0.12.2 \
 		base-compat-batteries-0.12.2 \
-		base-orphans-0.8.7 \
+		base-orphans-0.9.0 \
 		base64-bytestring-1.2.1.0 \
 		basement-0.0.15 \
-		bifunctors-5.5.13 \
-		bitvec-1.1.3.0 \
+		bifunctors-5.5.15 \
+		bimap-0.5.0 \
+		bitvec-1.1.4.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
-		blaze-markup-0.8.2.8_3 \
-		brick-0.70.1 \
-		brick-skylighting-0.3 \
+		blaze-markup-0.8.2.8_4 \
+		brick-1.6 \
+		brick-skylighting-1.0 \
 		bytestring-builder-0.10.8.2.0 \
-		cabal-doctest-1.0.9_2 \
+		cabal-doctest-1.0.9_3 \
 		case-insensitive-1.2.1.0 \
 		cereal-0.5.8.3 \
 		clock-0.8.3 \
 		colour-2.3.6 \
 		commonmark-0.2.2 \
-		commonmark-extensions-0.2.3.3 \
+		commonmark-extensions-0.2.3.4 \
 		comonad-5.0.8_1 \
 		conduit-1.3.4.3_1 \
 		conduit-extra-1.3.6 \
-		config-ini-0.2.5.0 \
+		config-ini-0.2.5.0_1 \
 		connection-0.3.1_1 \
 		contravariant-1.5.5 \
-		cryptohash-md5-0.11.101.0_1 \
-		cryptohash-sha1-0.11.101.0_1 \
+		cryptohash-md5-0.11.101.0_2 \
+		cryptohash-sha1-0.11.101.0_2 \
 		cryptonite-0.30 \
 		data-clist-0.1.2.3_1 \
 		data-default-class-0.1.2.0 \
-		data-fix-0.3.2_3 \
+		data-fix-0.3.2_4 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
 		emojis-0.1.2 \
-		entropy-0.4.1.10 \
+		entropy-0.4.1.10_1 \
 		extensible-exceptions-0.1.1.4 \
+		generically-0.1.1_1 \
 		gitrev-1.3.1 \
-		happy-1.20.0_1 \
-		hashable-1.3.5.0_1 \
-		haskell-lexer-1.1 \
+		happy-1.20.1.1 \
+		hashable-1.4.2.0_1 \
+		haskell-lexer-1.1.1 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.8_1 \
-		http-media-0.8.0.0_7 \
-		indexed-traversable-0.1.2_2 \
-		indexed-traversable-instances-0.1.1.1 \
-		integer-logarithms-1.0.3.1_3 \
-		mattermost-api-50200.13.0 \
-		megaparsec-9.2.2 \
+		hsc2hs-0.68.9 \
+		http-media-0.8.0.0_8 \
+		indexed-traversable-0.1.2.1 \
+		indexed-traversable-instances-0.1.1.2_1 \
+		integer-logarithms-1.0.3.1_4 \
+		mattermost-api-50200.14.0 \
+		megaparsec-9.3.1 \
 		memory-0.18.0 \
-		microlens-0.4.12.0 \
-		microlens-ghc-0.4.13.2 \
-		microlens-mtl-0.2.0.2 \
-		microlens-platform-0.4.2.1 \
-		microlens-th-0.4.3.10_1 \
-		modern-uri-0.3.6.0 \
+		microlens-0.4.13.1 \
+		microlens-ghc-0.4.14.1 \
+		microlens-mtl-0.2.0.3 \
+		microlens-platform-0.4.3.3 \
+		microlens-th-0.4.3.13 \
+		modern-uri-0.3.6.0_1 \
 		mono-traversable-1.0.15.3 \
-		network-3.1.2.7 \
+		network-3.1.3.0 \
 		network-info-0.2.1 \
-		network-uri-2.6.4.1 \
-		parallel-3.2.2.0_5 \
+		network-uri-2.6.4.2 \
 		parser-combinators-1.3.0 \
 		pem-0.2.4 \
 		pretty-show-1.10 \
-		primitive-0.7.4.0 \
-		profunctors-5.6.2_2 \
+		primitive-0.8.0.0 \
+		profunctors-5.6.2_3 \
 		random-1.1_1 \
-		reflection-2.1.6_1 \
-		resource-pool-0.3.1.0 \
+		reflection-2.1.7 \
+		resource-pool-0.4.0.0 \
 		resourcet-1.3.0 \
 		safe-0.3.19 \
-		scientific-0.3.7.0_3 \
+		scientific-0.3.7.0_5 \
 		semialign-1.2.0.1_3 \
-		semigroupoids-5.3.7 \
+		semigroupoids-5.3.7_1 \
 		semigroups-0.19.2_2 \
 		skylighting-core-0.12.3.1 \
 		socks-0.6.1 \
 		split-0.2.3.5 \
-		splitmix-0.1.0.4_1 \
+		splitmix-0.1.0.4_2 \
 		stm-delay-0.1.1.1 \
-		streaming-commons-0.2.2.5 \
+		streaming-commons-0.2.2.6 \
 		strict-0.4.0.1_4 \
-		tagged-0.8.6.1_3 \
+		tagged-0.8.7 \
 		temporary-1.3 \
-		text-short-0.1.5_1 \
-		text-zipper-0.11 \
-		th-abstraction-0.4.5.0 \
-		th-compat-0.1.4 \
+		text-short-0.1.5_2 \
+		text-zipper-0.12 \
+		th-abstraction-0.5.0.0 \
+		th-compat-0.1.4_2 \
 		these-1.1.1.1_6 \
-		time-compat-1.9.6.1_4 \
+		time-compat-1.9.6.1_5 \
 		timezone-olson-0.2.1 \
 		timezone-series-0.1.13_1 \
 		tls-1.6.0 \
 		transformers-compat-0.7.2 \
-		typed-process-0.2.10.1 \
-		unicode-data-0.4.0 \
-		unicode-transforms-0.4.0.1_2 \
-		unliftio-core-0.2.0.1_2 \
-		unordered-containers-0.2.19.1_1 \
+		typed-process-0.2.11.0 \
+		unicode-data-0.4.0.1_1 \
+		unicode-transforms-0.4.0.1_3 \
+		unliftio-core-0.2.1.0_2 \
+		unordered-containers-0.2.19.1_2 \
 		utf8-string-1.0.2 \
 		uuid-1.3.15_2 \
-		uuid-types-1.0.5_3 \
-		vector-0.12.3.1_2 \
-		vector-algorithms-0.9.0.1_1 \
-		vty-5.35.1 \
-		websockets-0.12.7.3_1 \
-		witherable-0.4.2_3 \
+		uuid-types-1.0.5_4 \
+		vector-0.12.3.1_4 \
+		vector-algorithms-0.9.0.1_2 \
+		vty-5.38 \
+		websockets-0.12.7.3_2 \
+		witherable-0.4.2_4 \
 		word-wrap-0.4.1_1 \
 		x509-1.7.7 \
 		x509-store-1.6.9 \
 		x509-system-1.6.7 \
 		x509-validation-1.6.12 \
 		xdg-basedir-0.2.2 \
-		xml-conduit-1.9.1.1_2 \
+		xml-conduit-1.9.1.2 \
 		xml-types-0.3.8 \
-		zlib-0.6.3.0
+		zlib-0.6.3.0_1
 
 .include <bsd.port.mk>
