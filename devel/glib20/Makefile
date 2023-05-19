@@ -84,7 +84,7 @@ pre-configure-FAM_ALTBACKEND-on:
 # Meson does not seem to provide a way to express that dependency.
 #
 # Hack it into the generated ninja build instead.
-post-configure-DOCS-on:
+post-configure-GTKDOC-on:
 	@${REINPLACE_CMD} -e '\+^build docs/reference/gio/gdbus-object-manager-example/gdbus-object-manager-example-decl.txt:+s+$$+ || gio/tests/gdbus-object-manager-example/libgdbus-example-objectmanager.so+' ${BUILD_WRKSRC}/build.ninja
 
 post-patch:
