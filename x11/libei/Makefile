@@ -47,6 +47,12 @@ BASU_DESC=		XDG RemoteDesktop portal via basu
 BASU_LIB_DEPENDS=	libbasu.so:devel/basu
 BASU_MESON_ENABLED=	liboeffis
 
+.ifdef GH_TUPLE
+post-configure:
+	@${REINPLACE_CMD} 's/meson install/& \
+		--skip-subprojects/' ${BUILD_WRKSRC}/build.ninja
+.endif
+
 pre-test:
 	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
 		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
