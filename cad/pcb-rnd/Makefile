@@ -1,9 +1,9 @@
 PORTNAME=	pcb-rnd
-DISTVERSION=	3.0.6
+DISTVERSION=	3.1.1
 CATEGORIES=	cad
 MASTER_SITES=	http://repo.hu/projects/pcb-rnd/releases/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hasdalcodes@gmail.com
 COMMENT=	Flexible, modular Printed Circuit Board editor
 WWW=		http://www.repo.hu/projects/pcb-rnd/
 
