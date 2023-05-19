@@ -1,6 +1,5 @@
 PORTNAME=	p4api
 PORTVERSION=	${YEAR}.${MAJOR}.${MINOR}
-PORTREVISION=	1
 CATEGORIES=	devel
 # Perforce does not version their distfiles when they patch.
 # This does not play well with FreeBSD's conventions.
