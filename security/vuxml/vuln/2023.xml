@@ -1,3 +1,39 @@
+  <vuln vid="1ab7357f-a3c2-406a-89fb-fd00e49a71b5">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>5.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v5.0.9">
+	  <p> A specially-crafted series of FTP packets with a CMD
+	  command with a large path followed by a very large number
+	  of replies could cause Zeek to spend a long time processing
+	  the data. </p>
+	  <p> A specially-crafted with a truncated header can cause
+	  Zeek to overflow memory and potentially crash. </p>
+	  <p> A specially-crafted series of SMTP packets can cause
+	  Zeek to generate a very large number of events and take
+	  a long time to process them. </p>
+	  <p> A specially-crafted series of POP3 packets containing
+	  MIME data can cause Zeek to spend a long time dealing
+	  with each individual file ID. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v5.0.9</url>
+    </references>
+    <dates>
+      <discovery>2023-05-19</discovery>
+      <entry>2023-05-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b09d77d0-b27c-48ae-b69b-9641bb68b39e">
     <topic>electron -- vulnerability</topic>
     <affects>
