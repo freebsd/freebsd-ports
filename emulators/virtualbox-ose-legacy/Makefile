@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	5.2.44
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.oracle.com/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX?=	-legacy
@@ -59,14 +59,13 @@ VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 		VBoxSVC VBoxXPCOMIPCD
 
-OPTIONS_DEFINE=	ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS PULSEAUDIO \
+OPTIONS_DEFINE=	ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS PULSEAUDIO \
 		PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
 OPTIONS_DEFAULT=	DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
 OPTIONS_SUB=	yes
 
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
-MANUAL_DESC=	Build with user manual
 NLS_DESC=	Native language support (requires QT5)
 QT5_DESC=	Build with QT5 frontend (requires X11)
 R0LOGGING_DESC=	Enable R0 logging (requires DEBUG)
@@ -81,8 +80,8 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DEBUG_CONFIGURE_ON=	--build-debug
-MANUAL_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
-MANUAL_CONFIGURE_OFF=	--disable-docs
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
+DOCS_CONFIGURE_OFF=	--disable-docs
 NLS_IMPLIES=		QT5
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
@@ -139,7 +138,7 @@ LICENSE_PERMS_Additions=	auto-accept
 LICENSE_DISTFILES_Additions=	${GUESTADDITIONS}
 .endif
 
-.if ${PORT_OPTIONS:MMANUAL}
+.if ${PORT_OPTIONS:MDOCS}
 DBKXMLDIR=	${LOCALBASE}/share/xml/docbook/4.4
 DBKXSLDIR=	${LOCALBASE}/share/xsl/docbook
 USES+=		tex
@@ -378,7 +377,7 @@ do-install:
 	    ${STAGEDIR}${VBOX_DIR}/additions/VBoxGuestAdditions.iso
 .endif
 
-.if ${PORT_OPTIONS:MMANUAL}
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${KMK_BUILDDIR}/bin/UserManual*.pdf \
 	    ${STAGEDIR}${DOCSDIR}
