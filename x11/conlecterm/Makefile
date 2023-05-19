@@ -1,7 +1,7 @@
 PORTNAME=	conlecterm
 PORTVERSION=	1.4.3.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11
 
 MAINTAINER=	hsw@bitmark.com
@@ -30,34 +30,33 @@ USE_CABAL=	OneTuple-0.4.1.1 \
 		StateVar-1.2.2 \
 		X11-1.10.3 \
 		aeson-2.1.2.1_3 \
-		alex-3.2.7.2 \
+		alex-3.2.7.4 \
 		assoc-1.1 \
 		attoparsec-0.14.4_3 \
 		base-compat-0.13.0 \
 		base-compat-batteries-0.13.0 \
 		base-orphans-0.9.0 \
 		bifunctors-5.6.1 \
-		cairo-0.13.8.2 \
+		cairo-0.13.10.0 \
 		comonad-5.0.8_1 \
 		contravariant-1.5.5 \
-		data-array-byte-0.1.0.1_1 \
 		data-default-class-0.1.2.0 \
 		data-fix-0.3.2_4 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
 		foldable1-classes-compat-0.1_2 \
 		generically-0.1.1_1 \
-		gio-0.13.8.2 \
-		glib-0.13.8.2 \
-		gtk2hs-buildtools-0.13.8.3 \
-		gtk3-0.15.7 \
+		gio-0.13.10.0 \
+		glib-0.13.10.0 \
+		gtk2hs-buildtools-0.13.10.0 \
+		gtk3-0.15.8 \
 		happy-1.20.1.1 \
 		hashable-1.4.2.0_1 \
 		hashtables-1.3.1 \
 		indexed-traversable-0.1.2.1 \
 		indexed-traversable-instances-0.1.1.2_1 \
 		integer-logarithms-1.0.3.1_4 \
-		pango-0.13.8.2 \
+		pango-0.13.10.0 \
 		primitive-0.8.0.0 \
 		random-1.2.1.1 \
 		scientific-0.3.7.0_5 \
