@@ -268,6 +268,7 @@
     SUBDIR += tkfont
     SUBDIR += tlwg-ttf
     SUBDIR += tmu
+    SUBDIR += tt2020
     SUBDIR += tv-fonts
     SUBDIR += twemoji-color-font-ttf
     SUBDIR += ubuntu-font
