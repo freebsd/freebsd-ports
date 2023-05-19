@@ -14,6 +14,8 @@ WWW=		https://github.com/ymherklotz/verismith
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	ghc-9.2.7:lang/ghc92
+
 USES=		cabal
 
 USE_CABAL=	OneTuple-0.3.1_3 \
