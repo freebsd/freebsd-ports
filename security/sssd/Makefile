@@ -1,10 +1,10 @@
 PORTNAME=	sssd
 PORTVERSION=	1.16.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	security
 MASTER_SITES=	https://releases.pagure.org/SSSD/${PORTNAME}/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jhixson@FreeBSD.org
 COMMENT=	System Security Services Daemon
 WWW=		https://pagure.io/SSSD/sssd
 
