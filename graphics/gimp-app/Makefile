@@ -104,8 +104,6 @@ LIB_DEPENDS+=	libgimp-2.0.so:graphics/gimp-app
 
 .else
 
-DEBUG_CONFIGURE_ON=	--enable-debug
-
 AALIB_DESC=	Ascii-art Plug-in
 OPENJPEG_DESC=	Enhanced JPEG (jpeg2000) graphics support
 
