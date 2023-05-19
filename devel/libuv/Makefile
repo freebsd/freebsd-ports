@@ -1,8 +1,7 @@
 PORTNAME=	libuv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.44.2
+DISTVERSION=	1.45.0
 CATEGORIES=	devel
-MASTER_SITES=	https://dist.libuv.org/dist/v${DISTVERSION}/
 
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Multi-platform support library with a focus on asynchronous I/O
@@ -12,6 +11,8 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf cpe libtool pathfix pkgconfig
+
+USE_GITHUB=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
