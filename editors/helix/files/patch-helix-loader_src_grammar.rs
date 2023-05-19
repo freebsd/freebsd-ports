@@ -1,6 +1,6 @@
---- helix-loader/src/grammar.rs.orig	2023-03-31 08:14:01 UTC
+--- helix-loader/src/grammar.rs.orig	2023-05-18 07:01:26 UTC
 +++ helix-loader/src/grammar.rs
-@@ -89,60 +89,6 @@ pub fn fetch_grammars() -> Result<()> {
+@@ -90,57 +90,6 @@ pub fn fetch_grammars() -> Result<()> {
      let mut grammars = get_grammar_configs()?;
      grammars.retain(|grammar| !matches!(grammar.source, GrammarSource::Local { .. }));
  
@@ -12,15 +12,12 @@
 -    let mut git_up_to_date = 0;
 -    let mut non_git = Vec::new();
 -
--    for res in results {
+-    for (grammar_id, res) in results {
 -        match res {
 -            Ok(FetchStatus::GitUpToDate) => git_up_to_date += 1,
--            Ok(FetchStatus::GitUpdated {
--                grammar_id,
--                revision,
--            }) => git_updated.push((grammar_id, revision)),
--            Ok(FetchStatus::NonGit { grammar_id }) => non_git.push(grammar_id),
--            Err(e) => errors.push(e),
+-            Ok(FetchStatus::GitUpdated { revision }) => git_updated.push((grammar_id, revision)),
+-            Ok(FetchStatus::NonGit) => non_git.push(grammar_id),
+-            Err(e) => errors.push((grammar_id, e)),
 -        }
 -    }
 -
@@ -52,10 +49,10 @@
 -
 -    if !errors.is_empty() {
 -        let len = errors.len();
--        println!("{} grammars failed to fetch", len);
--        for (i, error) in errors.into_iter().enumerate() {
--            println!("\tFailure {}/{}: {}", i + 1, len, error);
+-        for (i, (grammar, error)) in errors.into_iter().enumerate() {
+-            println!("Failure {}/{len}: {grammar} {error}", i + 1);
 -        }
+-        bail!("{len} grammars failed to fetch");
 -    }
 -
      Ok(())
