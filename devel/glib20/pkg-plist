@@ -875,7 +875,7 @@ share/gettext/its/gschema.loc
 %%GTKDOC%%share/gtk-doc/html/gobject/gobject.devhelp2
 %%GTKDOC%%share/gtk-doc/html/gobject/gtype-conventions.html
 %%GTKDOC%%share/gtk-doc/html/gobject/gtype-instantiatable-classed.html
-%%GTKDOC%%share/gtk-doc/html/gobject/gtype-non-instantiatable-classed.html
+%%GTKDOC%%share/gtk-doc/html/gobject/gtype-non-instantiatable-non-classed.html
 %%GTKDOC%%share/gtk-doc/html/gobject/gtype-non-instantiatable.html
 %%GTKDOC%%share/gtk-doc/html/gobject/home.png
 %%GTKDOC%%share/gtk-doc/html/gobject/howto-gobject-chainup.html
