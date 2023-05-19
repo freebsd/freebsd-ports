@@ -1,5 +1,5 @@
 PORTNAME=	octave-forge-fileio
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
