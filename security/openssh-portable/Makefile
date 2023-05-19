@@ -1,5 +1,5 @@
 PORTNAME=	openssh
-DISTVERSION=	9.2p1
+DISTVERSION=	9.3p1
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	security
@@ -101,7 +101,7 @@ PATCH_SITES+=	http://mirror.shatow.net/freebsd/${PORTNAME}/:DEFAULT,hpn,gsskex
 
 # Must add this patch before HPN due to conflicts
 .if ${PORT_OPTIONS:MKERB_GSSAPI} || ${FLAVOR:U} == gssapi
-#BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
+BROKEN=	KERB_GSSAPI No patch for ${DISTVERSION} yet.
 .  if ${PORT_OPTIONS:MHPN} || ${PORT_OPTIONS:MNONECIPHER}
 # Needed glue for applying HPN patch without conflict
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-hpn-gss-glue
