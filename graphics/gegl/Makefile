@@ -95,7 +95,7 @@ SPIRO_MESON_ENABLED=	libspiro
 
 V4L_BUILD_DEPENDS=	v4l_compat>=0:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
-V4L_MESON_ENABLED=	libv4l2
+V4L_MESON_ENABLED=	libv4l libv4l2
 V4L_VARS=		LICENSE+=LGPL20+
 
 WEBP_LIB_DEPENDS=	libwebp.so:graphics/webp
