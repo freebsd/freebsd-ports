@@ -56,8 +56,6 @@ USE_GNOME=	gdkpixbuf2 gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
 
-CXXSTD=		gnu++17
-
 DATETAG=	2022-12-01_b0a8486541
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}_${DATETAG}
