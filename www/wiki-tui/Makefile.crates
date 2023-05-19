@@ -132,8 +132,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		precomputed-hash-0.1.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.51 \
-		quote-1.0.23 \
+		proc-macro2-1.0.52 \
+		quote-1.0.26 \
 		rand-0.7.3 \
 		rand-0.8.5 \
 		rand_chacha-0.2.2 \
@@ -154,9 +154,9 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		security-framework-2.8.2 \
 		security-framework-sys-2.8.0 \
 		select-0.5.0 \
-		serde-1.0.118 \
+		serde-1.0.158 \
 		serde-value-0.7.0 \
-		serde_derive-1.0.118 \
+		serde_derive-1.0.158 \
 		serde_json-1.0.93 \
 		serde_repr-0.1.10 \
 		serde_urlencoded-0.7.1 \
@@ -176,6 +176,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		structopt-0.3.26 \
 		structopt-derive-0.4.18 \
 		syn-1.0.57 \
+		syn-2.0.3 \
 		tempfile-3.3.0 \
 		tendril-0.4.3 \
 		term_size-0.3.2 \
