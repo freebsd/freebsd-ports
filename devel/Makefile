@@ -4249,6 +4249,7 @@
     SUBDIR += py-awscli
     SUBDIR += py-awscrt
     SUBDIR += py-azure-appconfiguration
+    SUBDIR += py-azure-appcontainers
     SUBDIR += py-azure-batch
     SUBDIR += py-azure-core
     SUBDIR += py-azure-cosmos
