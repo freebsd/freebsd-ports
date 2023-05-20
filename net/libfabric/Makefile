@@ -1,5 +1,6 @@
 PORTNAME=	libfabric
 DISTVERSION=	1.15.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/ofiwg/${PORTNAME}/releases/download/v${DISTVERSION}/
 
