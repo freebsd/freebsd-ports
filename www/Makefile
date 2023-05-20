@@ -1470,7 +1470,6 @@
     SUBDIR += py-dj40-django-taggit
     SUBDIR += py-dj40-django-timezone-field
     SUBDIR += py-dj40-djangorestframework
-    SUBDIR += py-dj40-drf-yasg
     SUBDIR += py-dj41-django-auth-ldap
     SUBDIR += py-dj41-django-cors-headers
     SUBDIR += py-dj41-django-debug-toolbar
