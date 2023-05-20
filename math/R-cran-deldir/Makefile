@@ -1,6 +1,5 @@
 PORTNAME=	deldir
-DISTVERSION=	1.0-6
-PORTREVISION=	1
+DISTVERSION=	1.0-9
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/deldir/
 
 LICENSE=	GPLv2+
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
