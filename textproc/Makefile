@@ -1355,6 +1355,7 @@
     SUBDIR += py-agate-dbf
     SUBDIR += py-agate-excel
     SUBDIR += py-alabaster
+    SUBDIR += py-anonip
     SUBDIR += py-ansi2html
     SUBDIR += py-ansicolors
     SUBDIR += py-ansiwrap
