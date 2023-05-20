@@ -1,11 +1,10 @@
 PORTNAME=	dust
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.5
-PORTREVISION=	1
+DISTVERSION=	0.8.6
 CATEGORIES=	sysutils
 
-MAINTAINER=	antranigv@freebsd.am
-COMMENT=	More intuitive version of du
+MAINTAINER=	adamw@FreeBSD.org
+COMMENT=	More useful and intuitive version of du
 WWW=		https://github.com/bootandy/dust
 
 LICENSE=	APACHE20
@@ -15,9 +14,17 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	bootandy
 
-PLIST_FILES=	bin/${PORTNAME}
+OPTIONS_DEFINE=	EXAMPLES
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/dust
+	${INSTALL_MAN}  ${WRKSRC}/man-page/dust.1       ${STAGEDIR}${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/completions/dust.bash ${STAGEDIR}${PREFIX}/share/bash-completion/completions/dust
+	${INSTALL_DATA} ${WRKSRC}/completions/dust.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d
+	${INSTALL_DATA} ${WRKSRC}/completions/_dust     ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/config/config.toml ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
