@@ -1,6 +1,5 @@
 PORTNAME=	DiagrammeR
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	1.0.10
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,13 +9,12 @@ WWW=		https://cran.r-project.org/web/packages/DiagrammeR/
 
 LICENSE=	MIT
 
-CRAN_DEPENDS=	R-cran-dplyr>=1.0.7:math/R-cran-dplyr \
-		R-cran-downloader>=0.4:www/R-cran-downloader \
+CRAN_DEPENDS=	R-cran-downloader>=0.4:www/R-cran-downloader \
+		R-cran-dplyr>=1.0.7:math/R-cran-dplyr \
 		R-cran-glue>=1.5.0:devel/R-cran-glue \
 		R-cran-htmltools>=0.5.2:textproc/R-cran-htmltools \
 		R-cran-htmlwidgets>=1.5:www/R-cran-htmlwidgets \
 		R-cran-igraph>=1.2.11:math/R-cran-igraph \
-		R-cran-influenceR>=0.1.0.1:math/R-cran-influenceR \
 		R-cran-magrittr>=1.5:devel/R-cran-magrittr \
 		R-cran-purrr>=0.3.4:devel/R-cran-purrr \
 		R-cran-RColorBrewer>=1.1.2:graphics/R-cran-RColorBrewer \
@@ -32,6 +30,6 @@ CRAN_DEPENDS=	R-cran-dplyr>=1.0.7:math/R-cran-dplyr \
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
