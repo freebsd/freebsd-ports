@@ -1464,7 +1464,6 @@
     SUBDIR += py-cssutils
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj40-django-js-asset
-    SUBDIR += py-dj40-django-mptt
     SUBDIR += py-dj40-django-prometheus
     SUBDIR += py-dj40-django-timezone-field
     SUBDIR += py-dj40-djangorestframework
