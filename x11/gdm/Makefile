@@ -87,7 +87,7 @@ GNOME_LOCALSTATEDIR=	/var
 
 OPTIONS_DEFINE=	IPV6
 
-IPV6_MESON_ENABLED=	ipv6
+IPV6_MESON_TRUE=	ipv6
 
 .include <bsd.port.options.mk>
 
