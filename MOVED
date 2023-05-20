@@ -7555,3 +7555,4 @@ devel/py-dj40-graphene-django|devel/py-dj41-graphene-django|2023-05-20|Has expir
 www/py-dj40-django-mptt|www/py-dj41-django-mptt|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj40-django-js-asset|www/py-dj41-django-js-asset|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj40-django-prometheus|www/py-dj41-django-prometheus|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj40-django-timezone-field|www/py-dj41-django-timezone-field|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
