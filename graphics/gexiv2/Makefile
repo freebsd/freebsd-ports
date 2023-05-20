@@ -1,5 +1,5 @@
 PORTNAME=	gexiv2
-PORTVERSION=	0.14.0
+PORTVERSION=	0.14.1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
@@ -14,12 +14,15 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 LIB_DEPENDS= 	libexiv2.so:graphics/exiv2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang gnome libtool:build meson pathfix pkgconfig \
+USES=		compiler:c++17-lang gnome libtool:build meson pathfix pkgconfig \
 		python:build tar:xz vala:build
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 BINARY_WRAPPERS=	gm4
 BINARY_ALIAS=	python3=${PYTHON_CMD}
+
+# https://gitlab.gnome.org/GNOME/gexiv2/-/issues/73
+USE_CXXSTD=	c++17 -D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
