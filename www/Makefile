@@ -1465,7 +1465,6 @@
     SUBDIR += py-dj-database-url
     SUBDIR += py-dj40-django-cors-headers
     SUBDIR += py-dj40-django-debug-toolbar
-    SUBDIR += py-dj40-django-filter
     SUBDIR += py-dj40-django-graphiql-debug-toolbar
     SUBDIR += py-dj40-django-js-asset
     SUBDIR += py-dj40-django-mptt

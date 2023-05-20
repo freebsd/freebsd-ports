@@ -7542,3 +7542,4 @@ devel/gitklient|devel/kommit|2023-05-17|Renamed upstream
 math/py-python-igraph|math/py-igraph|2023-05-18|Rename to match upstream renaming
 www/py-dj40-django-auth-ldap|www/py-dj41-django-auth-ldap|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj40-django-rich|www/py-dj41-django-rich|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj40-django-filter|www/py-dj41-django-filter|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
