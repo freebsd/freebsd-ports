@@ -1,4 +1,3 @@
-bin/genreflex
 bin/hadd
 bin/hist2workspace
 bin/prepareHistFactory
@@ -9,7 +8,6 @@ bin/root
 bin/root-config
 bin/root.exe
 bin/rootbrowse
-bin/rootcint
 bin/rootcling
 bin/rootcp
 bin/rootdrawtree
@@ -1135,7 +1133,6 @@ include/root/RooMultiGenFunction.h
 include/root/RooMultiVarGaussian.h
 include/root/RooNDKeysPdf.h
 include/root/RooNLLVar.h
-include/root/RooNaNPacker.h
 include/root/RooNameReg.h
 include/root/RooNonCPEigenDecay.h
 include/root/RooNonCentralChiSquare.h
@@ -7121,3 +7118,6 @@ lib/root/libRooFitXRooFit.so.%%SHLIB_VER%%
 %%DATADIR%%/ui5/distribution/resources/sap/ui/commons/themes/sap_fiori_3/img-RTL/arrow_up.png
 %%ONLY_INSTALLED_ON_AARCH64%%lib/root/%%AARCH64_PCM_PREFIX%%GenVector_G__GenVector32%%AARCH64_PCM_SUFFIX%%.pcm
 %%ONLY_INSTALLED_ON_AARCH64%%lib/root/%%AARCH64_PCM_PREFIX%%Smatrix_G__Smatrix32%%AARCH64_PCM_SUFFIX%%.pcm
+include/root/RooFit/Config.h
+include/root/RooFit/ModelConfig.h
+include/root/RooStats/HistFactory/Detail/HistFactoryImpl.h

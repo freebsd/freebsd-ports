@@ -1,6 +1,5 @@
 PORTNAME=	root
-DISTVERSION=	6.28.02
-PORTREVISION=	2
+DISTVERSION=	6.28.04
 CATEGORIES=	devel science math parallel python
 MASTER_SITES=	https://root.cern/download/
 DISTFILES=	${PORTNAME}_v${DISTVERSION}.source${EXTRACT_SUFX}
@@ -29,6 +28,7 @@ LIB_DEPENDS=	libAfterImage.so:graphics/libafterimage \
 		libpng.so:graphics/png \
 		libtbb.so:devel/onetbb \
 		libtiff.so:graphics/tiff \
+		libunwind.so:devel/libunwind \
 		libvdt.so:math/vdt \
 		libxkbcommon.so:x11/libxkbcommon \
 		libXrdCl.so:databases/xrootd \
@@ -36,7 +36,7 @@ LIB_DEPENDS=	libAfterImage.so:graphics/libafterimage \
 		libzstd.so:archivers/zstd
 
 USES=		blaslapack:openblas cmake compiler:c++17-lang desktop-file-utils \
-		gettext-runtime gl gnome iconv jpeg mysql:57 pgsql:13+ python:3.9+ \
+		gettext-runtime gl gnome iconv jpeg mysql pgsql:13+ python:3.9+ \
 		shebangfix sqlite ssl xorg
 USE_GL=		glew glu opengl
 USE_GNOME=	cairo gdkpixbuf2 glib20 librsvg2 libxml2
