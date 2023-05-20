@@ -51,8 +51,8 @@ Index: src/lcp.h
  
 Index: src/link.c
 ===================================================================
---- src/link.c	(revision 2452)
-+++ src/link.c	(revision 2454)
+--- src/link.c.orig	2023-05-20 18:00:54.620544000 +0700
++++ src/link.c	2023-05-20 18:01:56.814757000 +0700
 @@ -52,6 +52,17 @@
      SET_NO
    };
@@ -71,15 +71,52 @@ Index: src/link.c
    #define RBUF_SIZE		100
  
  /*
-@@ -193,6 +204,7 @@ LinkOpenCmd(Context ctx)
+@@ -185,6 +196,18 @@ LinksShutdown(void)
+ }
+ 
+ /*
++ * LinkOpenAdm()
++ */
++
++void
++LinkOpenAdm(Link l)
++{
++    l->admin_state = LINK_ADMINSTATE_OPERATIONAL;
++    RecordLinkUpDownReason(NULL, l, 1, STR_MANUALLY, NULL);
++    LinkOpen(l);
++}
++
++/*
+  * LinkOpenCmd()
+  */
+ 
+@@ -193,12 +216,23 @@ LinkOpenCmd(Context ctx)
  {
      if (ctx->lnk->tmpl)
  	Error("impossible to open template");
-+    ctx->lnk->admin_state = LINK_ADMINSTATE_OPERATIONAL;
-     RecordLinkUpDownReason(NULL, ctx->lnk, 1, STR_MANUALLY, NULL);
-     LinkOpen(ctx->lnk);
+-    RecordLinkUpDownReason(NULL, ctx->lnk, 1, STR_MANUALLY, NULL);
+-    LinkOpen(ctx->lnk);
++    LinkOpenAdm(ctx->lnk);
      return (0);
-@@ -207,6 +219,7 @@ LinkCloseCmd(Context ctx)
+ }
+ 
+ /*
++ * LinkCloseAdm()
++ */
++
++void
++LinkCloseAdm(Link l)
++{
++    l->admin_state = LINK_ADMINSTATE_DOWN;
++    RecordLinkUpDownReason(NULL, l, 0, STR_MANUALLY, NULL);
++    LinkClose(l);
++}
++
++/*
+  * LinkCloseCmd()
+  */
+ 
+@@ -207,6 +241,7 @@ LinkCloseCmd(Context ctx)
  {
      if (ctx->lnk->tmpl)
  	Error("impossible to close template");
@@ -87,7 +124,7 @@ Index: src/link.c
      RecordLinkUpDownReason(NULL, ctx->lnk, 0, STR_MANUALLY, NULL);
      LinkClose(ctx->lnk);
      return (0);
-@@ -258,7 +271,7 @@ LinkDown(Link l)
+@@ -258,7 +293,7 @@ LinkDown(Link l)
  {
      Log(LG_LINK, ("[%s] Link: DOWN event", l->name));
  
@@ -96,7 +133,7 @@ Index: src/link.c
  	if (((l->conf.max_redial != 0) && (l->num_redial >= l->conf.max_redial)) ||
  	    gShutdownInProgress) {
  	    if (l->conf.max_redial >= 0) {
-@@ -307,6 +320,8 @@ LinkReopenTimeout(void *arg)
+@@ -307,6 +342,8 @@ LinkReopenTimeout(void *arg)
      Log(LG_LINK, ("[%s] Link: reconnection attempt %hu",
  	l->name, l->num_redial));
      RecordLinkUpDownReason(NULL, l, 1, STR_REDIAL, NULL);
@@ -105,7 +142,7 @@ Index: src/link.c
      PhysOpen(l);
  }
  
-@@ -411,6 +426,7 @@ LinkCreate(Context ctx, int ac, const char *const av[]
+@@ -411,6 +448,7 @@ LinkCreate(Context ctx, int ac, const char *const av[]
  	strlcpy(l->name, av[0 + stay], sizeof(l->name));
  	l->type = pt;
  	l->tmpl = tmpl;
@@ -113,7 +150,7 @@ Index: src/link.c
  	l->stay = stay;
  	l->parent = -1;
  	SLIST_INIT(&l->actions);
-@@ -551,6 +567,7 @@ LinkInst(Link lt, const char *name, int tmpl, int stay
+@@ -552,6 +590,7 @@ LinkInst(Link lt, const char *name, int tmpl, int stay
  	    SLIST_INSERT_AFTER(ap, a, next);
  	ap = a;
      }
@@ -121,7 +158,7 @@ Index: src/link.c
      l->tmpl = tmpl;
      l->stay = stay;
      /* Count link as one more child of parent. */
-@@ -1321,6 +1338,7 @@ LinkStat(Context ctx, int ac, const char *const av[], 
+@@ -1322,6 +1361,7 @@ LinkStat(Context ctx, int ac, const char *const av[], 
  	Printf("\tChildren       : %d\r\n", l->children);
      else {
  	Printf("\tState          : %s\r\n", gPhysStateNames[l->state]);
@@ -131,8 +168,8 @@ Index: src/link.c
  	if (l->state == PHYS_STATE_UP)
 Index: src/link.h
 ===================================================================
---- src/link.h	(revision 2452)
-+++ src/link.h	(revision 2454)
+--- src/link.h.orig	2023-05-20 18:00:54.621341000 +0700
++++ src/link.h	2023-05-20 18:01:56.808633000 +0700
 @@ -115,7 +115,8 @@
      int			id;			/* Index of this link in gLinks */
      u_char		tmpl;			/* This is template, not an instance */
@@ -143,6 +180,33 @@ Index: src/link.h
      u_char		joined_bund;		/* Link successfully joined bundle */
      u_char		originate;		/* Who originated the connection */
      u_char		die;			/* LCP agreed to die */
+@@ -179,6 +180,8 @@
+   extern void	LinkDown(Link l);
+   extern void	LinkOpen(Link l);
+   extern void	LinkClose(Link l);
++  extern void	LinkOpenAdm(Link l);
++  extern void	LinkCloseAdm(Link l);
+   extern int	LinkOpenCmd(Context ctx);
+   extern int	LinkCloseCmd(Context ctx);
+ 
+--- src/main.c.orig	2023-05-20 17:59:19.804688000 +0700
++++ src/main.c	2023-05-20 18:01:56.815786000 +0700
+@@ -556,13 +556,11 @@ OpenCloseSignal(int sig)
+ 	if (sig == SIGUSR1) {
+ 	    Log(LG_ALWAYS, ("[%s] rec'd signal %s, opening",
+     		l->name, sys_signame[sig]));
+-	    RecordLinkUpDownReason(NULL, l, 1, STR_MANUALLY, NULL);
+-	    LinkOpen(l);
++	    LinkOpenAdm(l);
+ 	} else {
+ 	    Log(LG_ALWAYS, ("[%s] rec'd signal %s, closing",
+     		l->name, sys_signame[sig]));
+-	    RecordLinkUpDownReason(NULL, l, 0, STR_MANUALLY, NULL);
+-	    LinkClose(l);
++	    LinkCloseAdm(l);
+ 	}
+     } else
+ 	Log(LG_ALWAYS, ("rec'd signal %s, ignored", sys_signame[sig]));
 Index: src/phys.c
 ===================================================================
 --- src/phys.c	(revision 2452)
