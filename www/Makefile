@@ -1471,7 +1471,6 @@
     SUBDIR += py-dj40-django-mptt
     SUBDIR += py-dj40-django-prometheus
     SUBDIR += py-dj40-django-redis
-    SUBDIR += py-dj40-django-rich
     SUBDIR += py-dj40-django-tables2
     SUBDIR += py-dj40-django-taggit
     SUBDIR += py-dj40-django-timezone-field
