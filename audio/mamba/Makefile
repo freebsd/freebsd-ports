@@ -1,7 +1,6 @@
 PORTNAME=	mamba
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.3
-PORTREVISION=	1
+DISTVERSION=	2.5
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +24,7 @@ USE_XORG=	x11
 USE_GITHUB=	yes
 GH_ACCOUNT=	brummer10
 GH_PROJECT=	Mamba
-GH_TUPLE=	brummer10:libxputty:58c33d0:libxputty/libxputty
+GH_TUPLE=	brummer10:libxputty:62ec1cf:libxputty/libxputty
 
 PLIST_FILES=	bin/mamba \
 		share/applications/Mamba.desktop \
