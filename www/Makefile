@@ -1463,7 +1463,6 @@
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
     SUBDIR += py-dj-database-url
-    SUBDIR += py-dj40-django-auth-ldap
     SUBDIR += py-dj40-django-cors-headers
     SUBDIR += py-dj40-django-debug-toolbar
     SUBDIR += py-dj40-django-filter
