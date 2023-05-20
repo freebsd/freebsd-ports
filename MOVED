@@ -7553,3 +7553,4 @@ www/py-dj40-django-tables2|www/py-dj41-django-tables2|2023-05-20|Has expired: Ex
 www/py-dj40-django-taggit|www/py-dj41-django-taggit|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
 devel/py-dj40-graphene-django|devel/py-dj41-graphene-django|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj40-django-mptt|www/py-dj41-django-mptt|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
+www/py-dj40-django-js-asset|www/py-dj41-django-js-asset|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
