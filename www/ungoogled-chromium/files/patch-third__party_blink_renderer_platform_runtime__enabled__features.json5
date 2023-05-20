@@ -1,4 +1,4 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-05-05 12:12:41 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-05-20 06:21:07 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
 @@ -1320,7 +1320,7 @@
      {
@@ -45,7 +45,7 @@
        base_feature: "ReduceUserAgent",
      },
      {
-@@ -3625,12 +3625,12 @@
+@@ -3630,12 +3630,12 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",
