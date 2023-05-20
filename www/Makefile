@@ -1466,7 +1466,6 @@
     SUBDIR += py-dj40-django-js-asset
     SUBDIR += py-dj40-django-mptt
     SUBDIR += py-dj40-django-prometheus
-    SUBDIR += py-dj40-django-taggit
     SUBDIR += py-dj40-django-timezone-field
     SUBDIR += py-dj40-djangorestframework
     SUBDIR += py-dj41-django-auth-ldap
