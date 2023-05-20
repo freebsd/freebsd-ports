@@ -4,9 +4,9 @@ repository.
 
 There __FreeBSD_version is 1000009, so we start enabling the support
 from __FreeBSD_version == 1000010.
---- gcc/configure.orig	2023-05-04 17:36:54 UTC
+--- gcc/configure.orig	2023-05-11 22:33:34 UTC
 +++ gcc/configure
-@@ -24214,6 +24214,11 @@ EOF
+@@ -24214,6 +24214,13 @@ EOF
  #else
  # if defined __sun__ && defined __svr4__
     /* Solaris ld.so.1 supports .init_array/.fini_array since Solaris 8.  */
@@ -14,6 +14,8 @@ from __FreeBSD_version == 1000010.
 +#  include <sys/param.h>
 +#   if __FreeBSD_version >= 1000010
 +     /* FreeBSD supports .init_array/.fini_array since FreeBSD 10.  */
++#   else
++#    error The C library not known to support .init_array/.fini_array
 +#   endif
  # else
  #  error The C library not known to support .init_array/.fini_array
