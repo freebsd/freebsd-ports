@@ -13,8 +13,6 @@ USES=		cpe
 CPE_VENDOR=	aertherwide
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
 
-DOCS=		CHANGES README
-
 OPTIONS_DEFINE=	DOCS
 
 do-install:
