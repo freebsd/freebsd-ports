@@ -9,7 +9,7 @@ PATCHFILES+=	e0927f7bce95.patch:-p1 # https://github.com/ValveSoftware/gamescope
 PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/ValveSoftware/gamescope/issues/120
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Micro-compositor from SteamOS
+COMMENT=	SteamOS session compositing window manager
 WWW=		https://github.com/ValveSoftware/gamescope
 
 LICENSE=	BSD2CLAUSE
