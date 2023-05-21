@@ -1,5 +1,6 @@
 PORTNAME=	phpvirtualbox
 DISTVERSION=	6.1
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	vbox@FreeBSD.org
