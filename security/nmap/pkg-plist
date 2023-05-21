@@ -23,7 +23,6 @@ man/zh/man1/nmap.1.gz
 %%SSL%%share/ncat/ca-bundle.crt
 %%DATADIR%%/nmap-mac-prefixes
 %%DATADIR%%/nmap-os-db
-%%DATADIR%%/nmap-payloads
 %%DATADIR%%/nmap-protocols
 %%DATADIR%%/nmap-rpc
 %%DATADIR%%/nmap-service-probes
@@ -90,6 +89,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/nselib/data/snmpcommunities.lst
 %%DATADIR%%/nselib/data/ssl-fingerprints
 %%DATADIR%%/nselib/data/targets-ipv6-wordlist
+%%DATADIR%%/nselib/data/tftp-fingerprints.lua
 %%DATADIR%%/nselib/data/tftplist.txt
 %%DATADIR%%/nselib/data/usernames.lst
 %%DATADIR%%/nselib/data/vhosts-default.lst
@@ -786,6 +786,7 @@ man/zh/man1/nmap.1.gz
 %%DATADIR%%/scripts/telnet-encryption.nse
 %%DATADIR%%/scripts/telnet-ntlm-info.nse
 %%DATADIR%%/scripts/tftp-enum.nse
+%%DATADIR%%/scripts/tftp-version.nse
 %%DATADIR%%/scripts/tls-alpn.nse
 %%DATADIR%%/scripts/tls-nextprotoneg.nse
 %%DATADIR%%/scripts/tls-ticketbleed.nse

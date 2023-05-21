@@ -1,5 +1,5 @@
 PORTNAME=	nmap
-DISTVERSION=	7.93
+DISTVERSION=	7.94
 CATEGORIES=	security
 MASTER_SITES=	https://nmap.org/dist/ \
 		LOCAL/ohauer
