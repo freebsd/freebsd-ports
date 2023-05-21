@@ -32,6 +32,7 @@
 %%DATADIR%%/bin/Localization/Core/ar.json
 %%DATADIR%%/bin/Localization/Core/bg.json
 %%DATADIR%%/bin/Localization/Core/bn.json
+%%DATADIR%%/bin/Localization/Core/bs.json
 %%DATADIR%%/bin/Localization/Core/ca.json
 %%DATADIR%%/bin/Localization/Core/cs.json
 %%DATADIR%%/bin/Localization/Core/da.json
@@ -39,12 +40,16 @@
 %%DATADIR%%/bin/Localization/Core/el.json
 %%DATADIR%%/bin/Localization/Core/en.json
 %%DATADIR%%/bin/Localization/Core/es.json
+%%DATADIR%%/bin/Localization/Core/es_MX.json
+%%DATADIR%%/bin/Localization/Core/et.json
 %%DATADIR%%/bin/Localization/Core/fa.json
 %%DATADIR%%/bin/Localization/Core/fi.json
 %%DATADIR%%/bin/Localization/Core/fr.json
 %%DATADIR%%/bin/Localization/Core/he.json
 %%DATADIR%%/bin/Localization/Core/hi.json
+%%DATADIR%%/bin/Localization/Core/hr.json
 %%DATADIR%%/bin/Localization/Core/hu.json
+%%DATADIR%%/bin/Localization/Core/id.json
 %%DATADIR%%/bin/Localization/Core/is.json
 %%DATADIR%%/bin/Localization/Core/it.json
 %%DATADIR%%/bin/Localization/Core/ja.json
@@ -59,7 +64,9 @@
 %%DATADIR%%/bin/Localization/Core/ro.json
 %%DATADIR%%/bin/Localization/Core/ru.json
 %%DATADIR%%/bin/Localization/Core/sk.json
+%%DATADIR%%/bin/Localization/Core/sr.json
 %%DATADIR%%/bin/Localization/Core/sv.json
+%%DATADIR%%/bin/Localization/Core/ta.json
 %%DATADIR%%/bin/Localization/Core/th.json
 %%DATADIR%%/bin/Localization/Core/tr.json
 %%DATADIR%%/bin/Localization/Core/uk.json
@@ -202,6 +209,7 @@
 %%DATADIR%%/bin/Microsoft.IdentityModel.Tokens.dll
 %%DATADIR%%/bin/Microsoft.JSInterop.dll
 %%DATADIR%%/bin/Microsoft.Net.Http.Headers.dll
+%%DATADIR%%/bin/Microsoft.OpenApi.dll
 %%DATADIR%%/bin/Microsoft.VisualBasic.Core.dll
 %%DATADIR%%/bin/Microsoft.VisualBasic.dll
 %%DATADIR%%/bin/Microsoft.Win32.Primitives.dll
@@ -252,6 +260,8 @@
 %%DATADIR%%/bin/ServiceUninstall
 %%DATADIR%%/bin/SixLabors.Fonts.dll
 %%DATADIR%%/bin/SixLabors.ImageSharp.dll
+%%DATADIR%%/bin/Swashbuckle.AspNetCore.Swagger.dll
+%%DATADIR%%/bin/Swashbuckle.AspNetCore.SwaggerGen.dll
 %%DATADIR%%/bin/System.AppContext.dll
 %%DATADIR%%/bin/System.Buffers.dll
 %%DATADIR%%/bin/System.Collections.Concurrent.dll
