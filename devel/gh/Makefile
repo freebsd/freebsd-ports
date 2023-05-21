@@ -1,6 +1,6 @@
 PORTNAME=	gh
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.28.0
+DISTVERSION=	2.29.0
 CATEGORIES=	devel
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -104,7 +104,8 @@ GO_BUILDFLAGS=	-ldflags "\
 
 _DOCS=		README.md docs/gh-vs-hub.md docs/releasing.md \
 		docs/command-line-syntax.md docs/source.md \
-		docs/install_linux.md docs/project-layout.md docs/triage.md
+		docs/install_linux.md docs/project-layout.md docs/triage.md \
+		docs/working-with-us.md
 PORTDOCS=	${_DOCS:T}
 
 OPTIONS_DEFINE=		COMPLETIONS DOCS MANPAGES

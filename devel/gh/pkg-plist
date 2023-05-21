@@ -1,4 +1,5 @@
 %%MANPAGES%%man/man1/gh-alias-delete.1.gz
+%%MANPAGES%%man/man1/gh-alias-import.1.gz
 %%MANPAGES%%man/man1/gh-alias-list.1.gz
 %%MANPAGES%%man/man1/gh-alias-set.1.gz
 %%MANPAGES%%man/man1/gh-alias.1.gz
