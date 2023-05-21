@@ -1,7 +1,6 @@
 PORTNAME=	opensearch-dashboards
-DISTVERSION=	2.6.0
+DISTVERSION=	2.7.0
 DISTVERSIONSUFFIX=	-linux-x64
-PORTREVISION=	2
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 
@@ -32,9 +31,6 @@ _DEVDIR=	${WRKDIR}/.devdir
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' -e 's|%%LOCALBASE%%|${LOCALBASE}|' -e 's|%%WRKSRC%%|${WRKSRC}|' \
-		${WRKSRC}/bin/opensearch-dashboards \
-		${WRKSRC}/bin/opensearch-dashboards-keystore \
-		${WRKSRC}/bin/opensearch-dashboards-plugin \
 		${WRKSRC}/node_modules/re2/binding.gyp
 	@${REINPLACE_CMD} -e 's|14.20.1|${NODE_VER}|g' ${WRKSRC}/package.json
 	${RM} \
