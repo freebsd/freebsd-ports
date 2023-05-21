@@ -1,3 +1,4 @@
+bin/conduit_adjset_validate
 bin/conduit_blueprint_verify
 bin/conduit_relay_entangle.py
 bin/conduit_relay_io_convert
@@ -26,6 +27,7 @@ include/conduit/conduit_blueprint_mesh_examples_polystar.hpp
 include/conduit/conduit_blueprint_mesh_examples_related_boundary.hpp
 include/conduit/conduit_blueprint_mesh_examples_rz_cylinder.hpp
 include/conduit/conduit_blueprint_mesh_examples_venn.hpp
+include/conduit/conduit_blueprint_mesh_kdtree.hpp
 include/conduit/conduit_blueprint_mesh_topology_metadata.hpp
 include/conduit/conduit_blueprint_mesh_utils.hpp
 %%NO_NOMPI%%include/conduit/conduit_blueprint_mpi.hpp
@@ -33,6 +35,7 @@ include/conduit/conduit_blueprint_mesh_utils.hpp
 %%NO_NOMPI%%include/conduit/conduit_blueprint_mpi_mesh.hpp
 %%NO_NOMPI%%include/conduit/conduit_blueprint_mpi_mesh_examples.hpp
 %%NO_NOMPI%%include/conduit/conduit_blueprint_mpi_mesh_partition.hpp
+%%NO_NOMPI%%include/conduit/conduit_blueprint_mpi_mesh_utils.hpp
 include/conduit/conduit_blueprint_ndarray_index.hpp
 include/conduit/conduit_blueprint_o2mrelation.hpp
 include/conduit/conduit_blueprint_o2mrelation_examples.hpp
