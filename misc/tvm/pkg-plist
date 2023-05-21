@@ -21,7 +21,6 @@ include/tvm/ir/affine_type.h
 include/tvm/ir/attrs.h
 include/tvm/ir/diagnostic.h
 include/tvm/ir/env_func.h
-include/tvm/ir/error.h
 include/tvm/ir/expr.h
 include/tvm/ir/function.h
 include/tvm/ir/global_var_supply.h
@@ -30,7 +29,7 @@ include/tvm/ir/memory_pools.h
 include/tvm/ir/module.h
 include/tvm/ir/name_supply.h
 include/tvm/ir/op.h
-include/tvm/ir/span.h
+include/tvm/ir/source_map.h
 include/tvm/ir/tensor_type.h
 include/tvm/ir/transform.h
 include/tvm/ir/type.h
@@ -61,11 +60,10 @@ include/tvm/node/node.h
 include/tvm/node/object_path.h
 include/tvm/node/reflection.h
 include/tvm/node/repr_printer.h
+include/tvm/node/script_printer.h
 include/tvm/node/serialization.h
 include/tvm/node/structural_equal.h
 include/tvm/node/structural_hash.h
-include/tvm/parser/parser.h
-include/tvm/parser/source_map.h
 include/tvm/relay/adt.h
 include/tvm/relay/analysis.h
 include/tvm/relay/attrs/algorithm.h
@@ -87,6 +85,7 @@ include/tvm/relay/base.h
 include/tvm/relay/dataflow_matcher.h
 include/tvm/relay/dataflow_pattern.h
 include/tvm/relay/dataflow_pattern_functor.h
+include/tvm/relay/error.h
 include/tvm/relay/executor.h
 include/tvm/relay/expr.h
 include/tvm/relay/expr_functor.h
@@ -96,6 +95,7 @@ include/tvm/relay/interpreter.h
 include/tvm/relay/op.h
 include/tvm/relay/op_attr_types.h
 include/tvm/relay/op_strategy.h
+include/tvm/relay/parser.h
 include/tvm/relay/pattern_functor.h
 include/tvm/relay/qnn/attrs.h
 include/tvm/relay/qnn/transform.h
@@ -161,14 +161,9 @@ include/tvm/script/ir_builder/ir/frame.h
 include/tvm/script/ir_builder/ir/ir.h
 include/tvm/script/ir_builder/tir/frame.h
 include/tvm/script/ir_builder/tir/ir.h
-include/tvm/script/printer.h
 include/tvm/script/printer/doc.h
-include/tvm/script/printer/doc_printer.h
-include/tvm/script/printer/frame.h
 include/tvm/script/printer/ir_docsifier.h
-include/tvm/script/printer/traced_object.h
-include/tvm/script/printer/traced_object_functor.h
-include/tvm/script/printer/var_table.h
+include/tvm/script/printer/ir_docsifier_functor.h
 include/tvm/support/parallel_for.h
 include/tvm/support/random_engine.h
 include/tvm/support/span.h
@@ -240,6 +235,8 @@ include/tvm/topi/nn/bnn.h
 include/tvm/topi/nn/dense.h
 include/tvm/topi/nn/dilate.h
 include/tvm/topi/nn/flatten.h
+include/tvm/topi/nn/group_norm.h
+include/tvm/topi/nn/instance_norm.h
 include/tvm/topi/nn/layer_norm.h
 include/tvm/topi/nn/local_response_norm.h
 include/tvm/topi/nn/mapping.h

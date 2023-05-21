@@ -1,6 +1,6 @@
-TIMESTAMP = 1679108696
-SHA256 (apache-tvm-v0.11.1_GH0.tar.gz) = b5d577bbdae8b22ddd729336f38db70e5f404fb239054c743bdb1bd8b0d1afa2
-SIZE (apache-tvm-v0.11.1_GH0.tar.gz) = 8073758
+TIMESTAMP = 1684710630
+SHA256 (apache-tvm-v0.12.0_GH0.tar.gz) = c5423cc2ad4813514e82318455e418fcb458c1caaa9031953ed7fdd2b070ae14
+SIZE (apache-tvm-v0.12.0_GH0.tar.gz) = 8457476
 SHA256 (dmlc-dlpack-e2bdd3b_GH0.tar.gz) = e88e702277cf4cfa4814afdbb27b07b75041d80b3df60da387cdd7e0ebeb6817
 SIZE (dmlc-dlpack-e2bdd3b_GH0.tar.gz) = 76235
 SHA256 (dmlc-dmlc-core-09511cf_GH0.tar.gz) = 8b7ba0e19a9f2c5d65d49758ab14631e99c4f501b689842fa6535fc44a05c46f
