@@ -288,7 +288,6 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/header.py
 %%PYTHON_SITELIBDIR%%/psi4/metadata.py
 %%PYTHON_SITELIBDIR%%/psi4/pytest.ini
-%%PYTHON_SITELIBDIR%%/psi4/tests/adcc_reference_data.json
 %%PYTHON_SITELIBDIR%%/psi4/tests/addons.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/aediis-1/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/aediis-1/test_input.py
@@ -584,6 +583,8 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/dct10/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dct11/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/dct11/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/dct12/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/dct12/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dct2/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/dct2/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dct3/input.dat
@@ -801,6 +802,8 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/dlpnomp2-1/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/dlpnomp2-2/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/dlpnomp2-2/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/dlpnomp2-3/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/dlpnomp2-3/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/docs-bases/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/docs-bases/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/docs-dft/input.dat
@@ -847,6 +850,8 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/fd-freq-gradient/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/fd-gradient/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/fd-gradient/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/fisapt-siao1/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/fisapt-siao1/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/fnocc1/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/fnocc1/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/fnocc2/input.dat
@@ -916,6 +921,10 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/gpu_dfcc/gpudfcc1/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/gpu_dfcc/gpudfcc2/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/gpu_dfcc/gpudfcc2/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/isapt-charged/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/isapt-charged/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/isapt-siao1/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/isapt-siao1/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/isapt1/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/isapt1/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/isapt2/input.dat
@@ -936,7 +945,6 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/json/schema-1-tamps/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/json/schema-1-throws/input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/json/schema-1-throws/test_input.py
-%%PYTHON_SITELIBDIR%%/psi4/tests/large-atoms/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/lccd-grad1/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/lccd-grad1/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/lccd-grad2/input.dat
@@ -991,6 +999,8 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/mints12/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/mints15/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/mints15/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/mints2-bse/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/mints2-bse/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/mints2/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/mints2/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/mints3/Lx-6-311Gss.dat
@@ -1169,6 +1179,8 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/opt14/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/opt15/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/opt15/test_input.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/opt16/input.dat
+%%PYTHON_SITELIBDIR%%/psi4/tests/opt16/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/opt2-fd/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/opt2-fd/test_input.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/opt2/input.dat
@@ -1491,6 +1503,7 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/tdscf_reference_data.json
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_aaa_profiling.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_adcc.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/test_adcc/adcc_reference_data.json
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_addons.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_addons_qcschema.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_ccresponse.py
@@ -1524,6 +1537,7 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_geometric.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_gradients.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_jkmemory.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/test_large_atoms.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_matrix.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_mcmurchie_davidson.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_mdi.py
@@ -1577,6 +1591,7 @@ include/psi4/times.h
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_vector.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_vibanalysis.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_weird_basis.py
+%%PYTHON_SITELIBDIR%%/psi4/tests/test_wfn.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/test_zeta.py
 %%PYTHON_SITELIBDIR%%/psi4/tests/tu1-h2o-energy/input.dat
 %%PYTHON_SITELIBDIR%%/psi4/tests/tu1-h2o-energy/test_input.py
@@ -5067,6 +5082,8 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/samples/dct10/test.in
 %%DATADIR%%/samples/dct11/input.dat
 %%DATADIR%%/samples/dct11/test.in
+%%DATADIR%%/samples/dct12/input.dat
+%%DATADIR%%/samples/dct12/test.in
 %%DATADIR%%/samples/dct2/input.dat
 %%DATADIR%%/samples/dct2/test.in
 %%DATADIR%%/samples/dct3/input.dat
@@ -5275,6 +5292,8 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/samples/dlpnomp2-1/test.in
 %%DATADIR%%/samples/dlpnomp2-2/input.dat
 %%DATADIR%%/samples/dlpnomp2-2/test.in
+%%DATADIR%%/samples/dlpnomp2-3/input.dat
+%%DATADIR%%/samples/dlpnomp2-3/test.in
 %%DATADIR%%/samples/erd/mp2-module/input.dat
 %%DATADIR%%/samples/erd/mp2-module/test.in
 %%DATADIR%%/samples/erd/scf5/input.dat
@@ -5313,6 +5332,8 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/samples/fd-freq-gradient/test.in
 %%DATADIR%%/samples/fd-gradient/input.dat
 %%DATADIR%%/samples/fd-gradient/test.in
+%%DATADIR%%/samples/fisapt-siao1/input.dat
+%%DATADIR%%/samples/fisapt-siao1/test.in
 %%DATADIR%%/samples/fnocc1/input.dat
 %%DATADIR%%/samples/fnocc1/test.in
 %%DATADIR%%/samples/fnocc2/input.dat
@@ -5383,6 +5404,10 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/samples/gpu_dfcc/gpudfcc1/test.in
 %%DATADIR%%/samples/gpu_dfcc/gpudfcc2/input.dat
 %%DATADIR%%/samples/gpu_dfcc/gpudfcc2/test.in
+%%DATADIR%%/samples/isapt-charged/input.dat
+%%DATADIR%%/samples/isapt-charged/test.in
+%%DATADIR%%/samples/isapt-siao1/input.dat
+%%DATADIR%%/samples/isapt-siao1/test.in
 %%DATADIR%%/samples/isapt1/input.dat
 %%DATADIR%%/samples/isapt1/test.in
 %%DATADIR%%/samples/isapt2/input.dat
@@ -5457,6 +5482,8 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/samples/mints12/test.in
 %%DATADIR%%/samples/mints15/input.dat
 %%DATADIR%%/samples/mints15/test.in
+%%DATADIR%%/samples/mints2-bse/input.dat
+%%DATADIR%%/samples/mints2-bse/test.in
 %%DATADIR%%/samples/mints2/input.dat
 %%DATADIR%%/samples/mints2/test.in
 %%DATADIR%%/samples/mints3/input.dat
@@ -5611,6 +5638,8 @@ share/cmake/psi4/xhost.cmake
 %%DATADIR%%/samples/opt14/test.in
 %%DATADIR%%/samples/opt15/input.dat
 %%DATADIR%%/samples/opt15/test.in
+%%DATADIR%%/samples/opt16/input.dat
+%%DATADIR%%/samples/opt16/test.in
 %%DATADIR%%/samples/opt2-fd/input.dat
 %%DATADIR%%/samples/opt2-fd/test.in
 %%DATADIR%%/samples/opt2/input.dat
