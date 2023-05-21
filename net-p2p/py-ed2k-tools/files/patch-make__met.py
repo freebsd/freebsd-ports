@@ -18,7 +18,7 @@
 +		print("argument, which represents the ed2k:// link provided as the second arg.")
 +		print()
 +		print("Useful for adding things to your download list without actually opening")
-+		print("Overnet / Donkey.")
++		print("Overnet/eDonkey2000.")
  		sys.exit( -1 );
  	
  	temp_dir = sys.argv[ 1 ];
@@ -40,7 +40,7 @@
  	# Convert the printed hash into a byte representation.
  	# Surely there's an easier way to do this.
 -	new_hash = "";	
-+	new_hash = b''
++	new_hash = b""
  	while hash:
  		part = hash[ 0 : 2 ];
  		hash = hash[ 2 : ];

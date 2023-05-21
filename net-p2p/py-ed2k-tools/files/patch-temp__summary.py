@@ -50,7 +50,7 @@
  		
  		# Set the total downloaded to the file size.
  		down = size;
-@@ -71,19 +66,39 @@ if __name__ == "__main__":
+@@ -71,19 +66,42 @@ if __name__ == "__main__":
  		bar = "#" * ( WIDTH - 2 );
  		for gap in gaps:
  			gap_start, gap_end = gaps[ gap ];
@@ -60,7 +60,7 @@
 +			char_gap_end = int(gap_end / bytes_per_char)
  			bar = bar[ : char_gap_start ] + " " * ( char_gap_end - char_gap_start ) + bar[ char_gap_end : ];
 +
-+		# Account for CJK characters occupy two terminal spaces
++		# Account for CJK characters occupy two fixed-width spaces.
 +		def char_width(c: str) -> int:
 +			if not c.isprintable(): return 0
 +			return 2 if unicodedata.category(c) == 'Lo' else 1
@@ -68,15 +68,18 @@
 +		def visible_len(s: str) -> int:
 +			return sum(char_width(c) for c in s)
 +
++		# Truncate string to specified limit.  If truncation happens
++		# on double-width character (like it would have to be cut in
++		# half), append an extra space for nicer alignment.
 +		def visible_substr_padded(s: str, l: int) -> str:
 +			vislen = 0
 +			cut_here = 0
 +			padding = ''
 +			for c in s:
 +				vislen += char_width(c)
-+				if (vislen <= l): cut_here += 1
-+				if (vislen == l): break
-+				if (vislen > l): padding = ' '; break
++				if vislen <= l: cut_here += 1
++				if vislen == l: break
++				if vislen > l: padding = ' '; break
 +			return s[:cut_here] + padding
  				
  		# Print out our summary.  Limit the filenames.

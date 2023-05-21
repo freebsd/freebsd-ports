@@ -28,7 +28,7 @@
 +		print("If you want to create new .met files with this 'bug' corrected, run this")
 +		print("program with the affected .met files as the command line arguments.  You")
 +		print("will get new .met files titled X.new, where X was the original .part.met")
-+		print("file.  Copy these over the top of your originals if you're sure thats what")
++		print("file.  Copy these over the top of your originals if you're sure that's what")
 +		print("you want to do.")
 +		print()
 +		print("Of course, Overnet will re-break these files on its next exit.  You'll")
