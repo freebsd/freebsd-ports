@@ -3,7 +3,7 @@ PORTVERSION=	4.10.0
 DISTVERSIONPREFIX=v
 CATEGORIES=	net-mgmt
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OCF Compliant Resource Agents
 WWW=		http://www.linux-ha.org/wiki/Resource_agents
 
