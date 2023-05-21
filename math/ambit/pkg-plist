@@ -20,9 +20,11 @@ include/ambit/print.h
 include/ambit/settings.h
 include/ambit/sym_blocked_tensor.h
 include/ambit/tensor.h
+include/ambit/tensor/indices.h
 include/ambit/timer.h
 lib/libambit.so
 share/cmake/ambit/FindTargetHDF5.cmake
+share/cmake/ambit/FindTargetLAPACK.cmake
 share/cmake/ambit/ambitConfig.cmake
 share/cmake/ambit/ambitConfigVersion.cmake
 share/cmake/ambit/ambitTargets-shared-%%CMAKE_BUILD_TYPE%%.cmake
