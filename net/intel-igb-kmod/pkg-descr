@@ -1,0 +1,2 @@
+This release includes the gigabit FreeBSD igb(4) drivers for Intel(R) 82575/6
+and 82580-Based Gigabit Network Connections.
