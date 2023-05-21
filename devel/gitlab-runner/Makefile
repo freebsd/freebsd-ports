@@ -32,7 +32,7 @@ GO_BUILDFLAGS= -ldflags=" \
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find tags here:
-# https://gitlab.com/gitlab-org/gitlab-runner/tags
+# https://gitlab.com/gitlab-org/gitlab-runner/-/tags
 GL_COMMIT=	436955cbc8f66f59294ea16e5e538fec8ab44a02
 GITBRANCH=	15-11-stable
 
