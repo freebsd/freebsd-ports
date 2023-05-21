@@ -7,7 +7,7 @@
    DEFINES = -D__COMPILING_LIBINT2=1
    DEP_FILE = CMakeFiles/int-obj.dir/Unity/unity_1935_cxx.cxx.o.d
 -  FLAGS = -O2 -pipe -fstack-protector-strong -fno-strict-aliasing -O2 -pipe -fstack-protector-strong -fno-strict-aliasing   -DNDEBUG -fPIC
-+  FLAGS = -pipe -fstack-protector-strong -fno-strict-aliasing -pipe -fstack-protector-strong -fno-strict-aliasing   -DNDEBUG -fPIC
-   INCLUDES = -I%%BUILD_WRKSRC%%/include -I%%WRKDIR%%/libint-2.7.1/src -I%%WRKDIR%%/libint-2.7.1/include -I%%WRKDIR%%/libint-2.7.1/include/libint2
++  FLAGS =     -pipe -fstack-protector-strong -fno-strict-aliasing     -pipe -fstack-protector-strong -fno-strict-aliasing   -DNDEBUG -fPIC
+   INCLUDES = -I%%BUILD_WRKSRC%%/include -I%%WRKDIR%%/libint-2.7.2/src -I%%WRKDIR%%/libint-2.7.2/include -I%%WRKDIR%%/libint-2.7.2/include/libint2
    OBJECT_DIR = CMakeFiles/int-obj.dir
    OBJECT_FILE_DIR = CMakeFiles/int-obj.dir/Unity
