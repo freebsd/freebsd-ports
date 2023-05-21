@@ -1,0 +1,2 @@
+%%PYTHON_SITELIBDIR%%/ambit/__init__.py
+%%PYTHON_SITELIBDIR%%/ambit/pyambit%%PYTHON_EXT_SUFFIX%%.so

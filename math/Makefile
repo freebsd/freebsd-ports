@@ -875,6 +875,7 @@
     SUBDIR += py-affine
     SUBDIR += py-algopy
     SUBDIR += py-altgraph
+    SUBDIR += py-ambit
     SUBDIR += py-amply
     SUBDIR += py-animatplot
     SUBDIR += py-animatplot-ng
