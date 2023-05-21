@@ -6,7 +6,9 @@ CATEGORIES=	x11-wm wayland
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	cd9d1038a822.patch:-p1 # https://github.com/swaywm/sway/pull/5090
 PATCHFILES+=	f98ca3ab7ca1.patch:-p1 # https://github.com/swaywm/sway/pull/5090
+.ifndef PKGNAMESUFFIX
 PATCHFILES+=	dee032d0a0ec.patch:-p1 # https://github.com/swaywm/sway/pull/7525
+.endif
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT?=	i3-compatible Wayland compositor
