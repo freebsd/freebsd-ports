@@ -1,6 +1,6 @@
---- configure.ac.orig	2022-06-20 10:25:02 UTC
+--- configure.ac.orig	2023-05-20 12:59:00 UTC
 +++ configure.ac
-@@ -359,8 +359,6 @@ freebsd*)
+@@ -358,8 +358,6 @@ freebsd*)
                      libconfig
                      nice
                      jansson >= $jansson_version
@@ -9,7 +9,7 @@
                      zlib"
  esac
  PKG_CHECK_MODULES([JANUS],"$PKGCHECKMODULES")
-@@ -956,8 +954,6 @@ AS_IF([test "x$enable_post_processing" = "xyes"],
+@@ -940,8 +938,6 @@ AS_IF([test "x$enable_post_processing" = "xyes"],
                           [
                             glib-2.0 >= $glib_version
                             jansson >= $jansson_version

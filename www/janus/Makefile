@@ -1,7 +1,7 @@
 PORTNAME=	janus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.3
-PORTREVISION=	1
+DISTVERSION=	1.1.4
+PORTREVISION=	0
 CATEGORIES=	www
 
 MAINTAINER=	vanilla@FreeBSD.org
@@ -44,14 +44,15 @@ USE_LDCONFIG=		yes
 SUB_FILES=		pkg-message
 
 OPTIONS_SUB=				yes
-OPTIONS_DEFINE=				JAVASCRIPT LUA NANOMSG POSTPROCESSING \
-					RABBITMQ
+OPTIONS_DEFINE=				JAVASCRIPT LUA MQTT NANOMSG \
+					POSTPROCESSING RABBITMQ
 JAVASCRIPT_DESC=			JavaScript scripting language support
-#MQTT_DESC=	MQTT integration
+MQTT_DESC=				MQTT integration
 NANOMSG_DESC=				Nanomsg integration
 RABBITMQ_DESC=				RabbitMQ integration
 POSTPROCESSING_DESC=			Post processing integration
 JAVASCRIPT_LIB_DEPENDS=			libduktape.so:lang/duktape-lib
+MQTT_LIB_DEPENDS=			libpaho-mqtt3c.so:net/libpaho-mqtt3
 NANOMSG_LIB_DEPENDS=			libnanomsg.so:net/nanomsg
 RABBITMQ_LIB_DEPENDS=			librabbitmq.so:net/rabbitmq-c
 JAVASCRIPT_CONFIGURE_ENABLE=		plugin-duktape
