@@ -1,6 +1,7 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.010
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -60,6 +61,9 @@ pre-configure:
 
 post-build:
 	@${STRIP_CMD} ${WRKSRC}/bin/verilator_bin
+
+post-install: # workaround for https://github.com/verilator/verilator/issues/4213: share/verilator/include/verilated.mk contains non-existent AR=/usr/local/bin/ar
+	@${REINPLACE_CMD} -i '' -e 's|^AR = .*|AR = /usr/bin/ar|' ${STAGEDIR}${PREFIX}/share/verilator/include/verilated.mk
 
 post-install-INSTALL_DBG_EXECUTABLES-off:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/verilator_bin
