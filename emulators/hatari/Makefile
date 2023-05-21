@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://download.tuxfamily.org/hatari/${PORTVERSION}/
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Atari ST emulator
 WWW=		https://hatari.tuxfamily.org/
 
