@@ -54,6 +54,9 @@ VULKAN_MESON_ENABLED=	vulkan
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,' \
 		${WRKSRC}/src/vulkan/utils_gen.py
+# https://github.com/mesonbuild/meson/issues/7746
+	@${REINPLACE_CMD} "s,static:,dirs: '${LOCALBASE}/lib'\, &," \
+		${WRKSRC}/src/glsl/meson.build
 # Extract (snapshot) version from port version instead of meson.build
 	@${REINPLACE_CMD} "s/version_pretty/'${DISTVERSIONFULL}'/" \
 		${WRKSRC}/src/meson.build
