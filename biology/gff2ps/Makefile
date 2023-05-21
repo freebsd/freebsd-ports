@@ -5,7 +5,7 @@ MASTER_SITES=	ftp://genome.crg.es/pub/gff_tools/gff2ps/ \
 		http://genome.crg.es/software/gfftools/gff2ps_docs/manual/:doc
 DISTFILES=	${PORTNAME}_v${PORTVERSION}.gz
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert gff-formatted genomic data sets to PostScript
 WWW=		https://genome.crg.es/software/gfftools/GFF2PS.html
 
