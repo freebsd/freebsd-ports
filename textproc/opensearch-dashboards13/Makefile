@@ -1,9 +1,9 @@
 PORTNAME=	opensearch-dashboards
-DISTVERSION=	1.3.9
+DISTVERSION=	1.3.10
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
-PKGNAMESUFFIX=	14
+PKGNAMESUFFIX=	13
 
 MAINTAINER=	opensearch@FreeBSD.org
 COMMENT?=	Visualization dashboards for OpenSearch
@@ -12,6 +12,7 @@ WWW=		https://opensearch.org
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN=		does not start with node14: wants node10 and fail with: TypeError: Cannot set property 'writecb' of undefined
 DEPRECATED=	Requires upstream EOL node14
 EXPIRATION_DATE=	2023-05-26
 
@@ -35,7 +36,6 @@ _DEVDIR=	${WRKDIR}/.devdir
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' -e 's|%%LOCALBASE%%|${LOCALBASE}|' -e 's|%%WRKSRC%%|${WRKSRC}|' \
-		${WRKSRC}/bin/opensearch-dashboards \
 		${WRKSRC}/bin/opensearch-dashboards-keystore \
 		${WRKSRC}/bin/opensearch-dashboards-plugin \
 		${WRKSRC}/node_modules/re2/binding.gyp
