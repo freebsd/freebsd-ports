@@ -1,5 +1,5 @@
 PORTNAME=	swoole
-PORTVERSION=	5.0.2
+PORTVERSION=	5.0.3
 CATEGORIES=	devel net
 
 MAINTAINER=	vanilla@FreeBSD.org
