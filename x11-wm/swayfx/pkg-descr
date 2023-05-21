@@ -5,6 +5,7 @@ the simple wlr_renderer, and replaces it with our fx_renderer, capable
 of rendering with fancy GLES2 effects. This, along with a couple of
 minor changes, expands sway's featureset to include the following:
 
++ Blur
 + Anti-aliased rounded corners, borders, and titlebars
 + Shadows
 + Dim unfocused windows
