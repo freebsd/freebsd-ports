@@ -30,8 +30,6 @@ SHEBANG_FILES=	meson_post_install.py \
 USE_GNOME=	cairo gdkpixbuf2 gtk20 intltool libxml2
 USE_XORG=	x11
 
-INSTALLS_ICONS=yes
-
 MESON_ARGS=	-Dtls=enabled -Dgtk-frontend=true -Dwith-python=python-${PYTHON_VER}
 
 SUB_FILES=	pkg-message
