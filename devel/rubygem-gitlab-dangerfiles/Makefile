@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-dangerfiles
-PORTVERSION=	3.9.0
+PORTVERSION=	3.10.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
