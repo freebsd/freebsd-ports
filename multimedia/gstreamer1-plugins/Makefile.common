@@ -363,8 +363,5 @@ GST_PLUGIN_SUFFIX?=	-${GST_PLUGIN}
 
 USE_GSTREAMER+=	${DIST:base=}
 
-GST_INC_DIR=		include/gstreamer-${VERSION}
-GST_LIB_DIR=		lib/gstreamer-${VERSION}
-
 .endif # NO_GSTREAMER_COMMON
 

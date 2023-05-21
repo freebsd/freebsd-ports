@@ -143,13 +143,6 @@ DISTFILES+=	${BASE_DISTFILE}:base ${BAD_DISTFILE}:bad \
 BROKEN=		Unknown dist setting
 .endif
 
-# cdrom/dvd default device
-.ifdef(WITH_DVD_DEVICE)
-DEFAULT_DVD_DEVICE=${WITH_DVD_DEVICE}
-.else
-DEFAULT_DVD_DEVICE=/dev/cd0
-.endif
-
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/gstreamer-${VERSION}
 
