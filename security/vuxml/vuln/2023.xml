@@ -1,3 +1,29 @@
+  <vuln vid="7d6be8d4-f812-11ed-a7ff-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>3.1.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyfaq developers report:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2023-04-23">
+	  <p>Multiple XSS vulnerabilities</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://huntr.dev/bounties/4d89c7cc-fb4c-4b64-9b67-f0189f70a620/</url>
+      <url>https://huntr.dev/bounties/8282d78e-f399-4bf4-8403-f39103a31e78/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-17</discovery>
+      <entry>2023-05-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a4f8bb03-f52f-11ed-9859-080027083a05">
     <topic>curl -- multiple vulnerabilities</topic>
     <affects>
