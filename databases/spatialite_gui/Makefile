@@ -33,6 +33,5 @@ CPPFLAGS+=	`${WX_CONFIG} --cppflags`
 LDFLAGS+=	${ICONV_LIB} `${WX_CONFIG} --libs` -lsqlite3
 CONFIGURE_ARGS=	CFLAGS="${CFLAGS} ${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		--with-wxconfig=${WX_CONFIG}
-INSTALLS_ICONS=	yes
 
 .include <bsd.port.mk>
