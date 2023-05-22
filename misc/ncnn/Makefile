@@ -1,6 +1,5 @@
 PORTNAME=	ncnn
-DISTVERSION=	20220729
-PORTREVISION=	2
+DISTVERSION=	20230517
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +11,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libprotobuf.so:devel/protobuf
 
-USES=		cmake:testing
+USES=		cmake:testing # 2 tests fail, see https://github.com/Tencent/ncnn/issues/4742
 .if !exists(/usr/include/omp.h)
 CMAKE_OFF=	NCNN_OPENMP
 .endif
@@ -28,7 +27,7 @@ OPTIONS_DEFINE=		VULKAN
 OPTIONS_DEFAULT=	VULKAN
 
 VULKAN_DESC=		Vulkan compute support
-VULKAN_GH_TUPLE=	KhronosGroup:glslang:11.9.0-19-g86ff4bca:glslang/glslang
+VULKAN_GH_TUPLE=	KhronosGroup:glslang:88fd417:glslang/glslang
 VULKAN_BUILD_DEPENDS=	${LOCALBASE}/include/vulkan/vulkan.h:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_CMAKE_BOOL=	NCNN_VULKAN
