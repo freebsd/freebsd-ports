@@ -1,7 +1,6 @@
 PORTNAME=	wolf-shaper
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.1
-PORTREVISION=	1
+DISTVERSION=	1.0.2
 CATEGORIES=	audio multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,7 @@ USE_SDL=	sdl2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	wolf-plugins
-GH_TUPLE=	DISTRHO:DPF:03c3616:DISTRHO_DPF/dpf \
+GH_TUPLE=	DISTRHO:DPF:a4c83bf:DISTRHO_DPF/dpf \
 		DISTRHO:pugl:844528e:DISTRHO_DPF_pugl/dpf/dgl/src/pugl-upstream
 
 SHEBANG_FILES=	dpf/utils/generate-ttl.sh
