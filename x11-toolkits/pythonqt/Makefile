@@ -1,12 +1,7 @@
 PORTNAME=	pythonqt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.0-27
-DISTVERSIONSUFFIX=	-gf52ff96
-PORTREVISION=	1
+DISTVERSION=	3.4.1
 CATEGORIES=	x11-toolkits devel python
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	f9149ea9fefdcd0e9ece092ad44fb4bd0c1b4da9.patch:-p1 # fix install paths by adding INSTALL_PREFIX, https://github.com/MeVisLab/pythonqt/pull/92
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Dynamic Python binding for Qt Applications

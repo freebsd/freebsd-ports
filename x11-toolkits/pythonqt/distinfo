@@ -1,5 +1,3 @@
-TIMESTAMP = 1675238707
-SHA256 (MeVisLab-pythonqt-v3.3.0-27-gf52ff96_GH0.tar.gz) = 1536819a45f8f696d3a3d376c14abb6e43f1495a1cc252b533ce6c783f32ffe7
-SIZE (MeVisLab-pythonqt-v3.3.0-27-gf52ff96_GH0.tar.gz) = 5314463
-SHA256 (f9149ea9fefdcd0e9ece092ad44fb4bd0c1b4da9.patch) = 00503762eeecd5fac7186af5f4323578bdf00b9c79b52c174c77b184b9ce48dd
-SIZE (f9149ea9fefdcd0e9ece092ad44fb4bd0c1b4da9.patch) = 1403
+TIMESTAMP = 1684728662
+SHA256 (MeVisLab-pythonqt-v3.4.1_GH0.tar.gz) = c5cabd231e88fbc508b54d01a2275150c3f442fea36c14e29bfcfe26db75ed05
+SIZE (MeVisLab-pythonqt-v3.4.1_GH0.tar.gz) = 5313310
