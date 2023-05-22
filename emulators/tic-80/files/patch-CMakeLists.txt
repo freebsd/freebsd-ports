@@ -8,7 +8,7 @@
  if(Git_FOUND)
      execute_process(
          COMMAND ${GIT_EXECUTABLE} status
-@@ -155,51 +154,13 @@ set(THIRDPARTY_DIR ${CMAKE_SOURCE_DIR}/vendor)
+@@ -155,72 +154,18 @@ set(THIRDPARTY_DIR ${CMAKE_SOURCE_DIR}/vendor)
  
  include(ExternalProject)
  
@@ -62,16 +62,28 @@
  if(N3DS)
      target_compile_definitions(lua PUBLIC LUA_32BITS)
  endif()
-@@ -218,7 +179,7 @@ set(LPEG_SRC
- )
- 
- add_library(lpeg STATIC ${LPEG_SRC})
--target_include_directories(lpeg PRIVATE ${LUA_DIR})
-+target_include_directories(lpeg PRIVATE ${LUA_INCLUDE_DIRS})
  
  ################################
+-# LPEG
+-################################
+-
+-set(LPEG_DIR ${THIRDPARTY_DIR}/lpeg)
+-set(LPEG_SRC
+-    ${LPEG_DIR}/lpcap.c
+-    ${LPEG_DIR}/lpcode.c
+-    ${LPEG_DIR}/lpprint.c
+-    ${LPEG_DIR}/lptree.c
+-    ${LPEG_DIR}/lpvm.c
+-)
+-
+-add_library(lpeg STATIC ${LPEG_SRC})
+-target_include_directories(lpeg PRIVATE ${LUA_DIR})
+-
+-################################
  # WREN
-@@ -335,59 +296,11 @@ target_include_directories(wasm PUBLIC ${THIRDPARTY_DI
+ ################################
+ 
+@@ -335,59 +280,11 @@ target_include_directories(wasm PUBLIC ${THIRDPARTY_DI
  #target_include_directories(wasm PRIVATE ${THIRDPARTY_DIR}/wasm3/src/optional)
  #target_include_directories(wasm PRIVATE ${THIRDPARTY_DIR}/wasm3/src/vm)
  
@@ -132,7 +144,7 @@
  
  ################################
  # Blipbuf
-@@ -397,13 +310,6 @@ add_library(blipbuf STATIC ${THIRDPARTY_DIR}/blip-buf/
+@@ -397,13 +294,6 @@ add_library(blipbuf STATIC ${THIRDPARTY_DIR}/blip-buf/
  target_include_directories(blipbuf INTERFACE ${THIRDPARTY_DIR}/blip-buf)
  
  ################################
@@ -146,7 +158,7 @@
  # TIC-80 core
  ################################
  
-@@ -440,19 +346,21 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
+@@ -440,19 +330,20 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
          PRIVATE
              ${THIRDPARTY_DIR}/moonscript
              ${THIRDPARTY_DIR}/fennel
@@ -157,7 +169,7 @@
  
      target_link_libraries(tic80core${SCRIPT}
 -        lua 
-         lpeg 
+-        lpeg 
 +        ${LUA_LIBRARIES} 
          wren 
          wasm 
@@ -170,7 +182,7 @@
      )
  
      if(BUILD_WITH_MRUBY)
-@@ -461,7 +369,7 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
+@@ -461,7 +352,7 @@ macro(MACRO_CORE SCRIPT DEFINE BUILD_DEPRECATED)
  
      if(${BUILD_DEPRECATED})
          target_compile_definitions(tic80core${SCRIPT} PRIVATE BUILD_DEPRECATED)
@@ -179,7 +191,7 @@
      endif()
  
      if(LINUX)
-@@ -498,6 +406,8 @@ endif()
+@@ -498,6 +389,8 @@ endif()
  ################################
  if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
  
@@ -188,7 +200,7 @@
      if(WIN32)
          set(HAVE_LIBC TRUE)
      endif()
-@@ -507,10 +417,6 @@ if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
+@@ -507,10 +400,6 @@ if(BUILD_SDL AND NOT EMSCRIPTEN AND NOT RPI)
          set(SDL_STATIC_PIC ON CACHE BOOL "" FORCE)
      endif()
  
@@ -199,7 +211,7 @@
  endif()
  
  ################################
-@@ -531,7 +437,7 @@ if(BUILD_SDL AND BUILD_PLAYER AND NOT RPI)
+@@ -531,7 +420,7 @@ if(BUILD_SDL AND BUILD_PLAYER AND NOT RPI)
          target_link_options(player-sdl PRIVATE -static)
      endif()
  
@@ -208,7 +220,7 @@
  endif()
  
  ################################
-@@ -657,34 +563,8 @@ endif()
+@@ -657,34 +546,8 @@ endif()
  # ZLIB
  ################################
  
@@ -244,7 +256,7 @@
  ################################
  # ZIP
  ################################
-@@ -693,6 +573,12 @@ set(CMAKE_DISABLE_TESTING ON CACHE BOOL "" FORCE)
+@@ -693,6 +556,12 @@ set(CMAKE_DISABLE_TESTING ON CACHE BOOL "" FORCE)
  add_subdirectory(${THIRDPARTY_DIR}/zip)
  
  ################################
@@ -257,7 +269,7 @@
  # bin2txt cart2prj prj2cart xplode wasmp2cart
  ################################
  
-@@ -713,7 +599,7 @@ if(BUILD_DEMO_CARTS)
+@@ -713,7 +582,7 @@ if(BUILD_DEMO_CARTS)
      target_link_libraries(wasmp2cart tic80core)
  
      add_executable(bin2txt ${TOOLS_DIR}/bin2txt.c)
@@ -266,7 +278,7 @@
  
      add_executable(xplode
          ${TOOLS_DIR}/xplode.c
-@@ -722,7 +608,7 @@ if(BUILD_DEMO_CARTS)
+@@ -722,7 +591,7 @@ if(BUILD_DEMO_CARTS)
          ${CMAKE_SOURCE_DIR}/src/studio/project.c)
  
      target_include_directories(xplode PRIVATE ${CMAKE_SOURCE_DIR}/src ${CMAKE_SOURCE_DIR}/include)
@@ -275,7 +287,7 @@
  
      if(LINUX)
          target_link_libraries(xplode m)
-@@ -803,54 +689,9 @@ target_include_directories(argparse INTERFACE ${THIRDP
+@@ -803,54 +672,9 @@ target_include_directories(argparse INTERFACE ${THIRDP
  # libuv
  ################################
  
@@ -331,7 +343,7 @@
  # TIC-80 studio
  ################################
  
-@@ -894,13 +735,13 @@ if(WIN32)
+@@ -894,13 +718,13 @@ if(WIN32)
      target_include_directories(tic80studio PRIVATE ${THIRDPARTY_DIR}/dirent/include)
  endif()
  
@@ -348,7 +360,7 @@
  endif()
  
  if(BUILD_PRO)
-@@ -914,80 +755,6 @@ endif()
+@@ -914,80 +738,6 @@ endif()
  target_compile_definitions(tic80studio PUBLIC BUILD_EDITORS)
  
  ################################
@@ -429,7 +441,7 @@
  # TIC-80 app
  ################################
  
-@@ -1028,7 +795,7 @@ if(BUILD_SDL)
+@@ -1028,7 +778,7 @@ if(BUILD_SDL)
          endif()
  
      elseif(NOT ANDROID)
@@ -438,7 +450,7 @@
      endif()
  
      target_link_libraries(tic80 tic80studio)
-@@ -1044,13 +811,13 @@ if(BUILD_SDL)
+@@ -1044,13 +794,13 @@ if(BUILD_SDL)
      endif()
  
      if(BUILD_SDLGPU)
@@ -454,7 +466,7 @@
          endif()
      endif()
  
-@@ -1121,7 +888,7 @@ if(N3DS)
+@@ -1121,7 +871,7 @@ if(N3DS)
          ${CMAKE_SOURCE_DIR}/src)
  
      target_link_directories(tic80_n3ds PRIVATE ${DEVKITPRO}/libctru/lib ${DEVKITPRO}/portlibs/3ds/lib)
@@ -463,7 +475,7 @@
  
      add_custom_command(TARGET tic80_n3ds
             POST_BUILD
-@@ -1181,7 +948,7 @@ if(BUILD_STUB)
+@@ -1181,7 +931,7 @@ if(BUILD_STUB)
              endif()
  
          else()
@@ -472,7 +484,7 @@
          endif()
  
          target_link_libraries(tic80${SCRIPT} tic80core${SCRIPT} argparse)
-@@ -1193,13 +960,13 @@ if(BUILD_STUB)
+@@ -1193,13 +943,13 @@ if(BUILD_STUB)
          endif()
  
          if(BUILD_SDLGPU)
