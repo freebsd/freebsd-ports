@@ -1,7 +1,9 @@
 PORTNAME=		gtultra
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.4.2.2
+DISTVERSION=		1.5.1
 CATEGORIES=		audio
+PATCH_SITES=		https://github.com/jpage8580/GTUltra/commit/
+PATCHFILES=		214f43896352e07f09f4c0f2250eb0a3511812f3.patch:-p1
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Music tracker for the C64, fork of goattracker
@@ -36,9 +38,11 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/linux/${p} \
 			${STAGEDIR}${PREFIX}/bin
 .endfor
-		# Avoid conflict with original goattracker:
-		${INSTALL_PROGRAM} ${WRKSRC}/linux/ins2snd2 \
-			${STAGEDIR}${PREFIX}/bin/ins2snd2u
+# Avoid conflict with original goattracker:
+.for p in gt2reloc ins2snd2
+		${INSTALL_PROGRAM} ${WRKSRC}/linux/${p} \
+			${STAGEDIR}${PREFIX}/bin/${p}u
+.endfor
 		${INSTALL_DATA} ${WRKSRC}/src/gt2stereo_2.ico \
 			${STAGEDIR}${PREFIX}/share/pixmaps/gtultra.ico
 
