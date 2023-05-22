@@ -3,9 +3,13 @@
 %%MANPAGES%%man/man1/glab-alias-set.1.gz
 %%MANPAGES%%man/man1/glab-alias.1.gz
 %%MANPAGES%%man/man1/glab-api.1.gz
+%%MANPAGES%%man/man1/glab-ask-git.1.gz
+%%MANPAGES%%man/man1/glab-ask.1.gz
 %%MANPAGES%%man/man1/glab-auth-login.1.gz
 %%MANPAGES%%man/man1/glab-auth-status.1.gz
 %%MANPAGES%%man/man1/glab-auth.1.gz
+%%MANPAGES%%man/man1/glab-changelog-generate.1.gz
+%%MANPAGES%%man/man1/glab-changelog.1.gz
 %%MANPAGES%%man/man1/glab-check-update.1.gz
 %%MANPAGES%%man/man1/glab-ci-artifact.1.gz
 %%MANPAGES%%man/man1/glab-ci-delete.1.gz
@@ -24,6 +28,8 @@
 %%MANPAGES%%man/man1/glab-config.1.gz
 %%MANPAGES%%man/man1/glab-incident-close.1.gz
 %%MANPAGES%%man/man1/glab-incident-list.1.gz
+%%MANPAGES%%man/man1/glab-incident-reopen.1.gz
+%%MANPAGES%%man/man1/glab-incident-unsubscribe.1.gz
 %%MANPAGES%%man/man1/glab-incident-view.1.gz
 %%MANPAGES%%man/man1/glab-incident.1.gz
 %%MANPAGES%%man/man1/glab-issue-board-create.1.gz
