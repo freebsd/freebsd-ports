@@ -1,5 +1,5 @@
 PORTNAME=	faust
-DISTVERSION=	2.54.9
+DISTVERSION=	2.59.6
 CATEGORIES=	audio devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	\
-		grame-cncm:faustlibraries:f9efea9:grame_cncm_faustlibraries/libraries
+		grame-cncm:faustlibraries:b91fdeb:grame_cncm_faustlibraries/libraries \
+		ccrma:faust2ck:db879cb:faust2ck/tools/faust2ck
 
 SHEBANG_FILES=	tools/faust2appls/* tools/benchmark/faustbench tools/sound2faust/sound2reader
 
@@ -71,5 +72,11 @@ post-install-HIGHLIGHT-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/vim/vimfiles/syntax
 	${INSTALL_DATA} ${WRKSRC}/syntax-highlighting/faust.vim ${STAGEDIR}${PREFIX}/share/vim/vimfiles/syntax/
 	# 6) EMACS TODO
+
+do-test: install
+	@${CP} ${FILESDIR}/example-freeverb_demo.dsp ${TEST_WRKSRC}
+	@cd ${TEST_WRKSRC} && \
+		faust2jaqt example-freeverb_demo.dsp && \
+		./example-freeverb_demo
 
 .include <bsd.port.mk>

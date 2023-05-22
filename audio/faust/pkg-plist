@@ -262,7 +262,7 @@ lib/ios-libsndfile.a
 lib/libOSCFaust.a
 lib/libfaust.so
 lib/libfaust.so.2
-lib/libfaust.so.2.54.9
+lib/libfaust.so.2.59.6
 %%HIGHLIGHT%%share/apps/katepart/syntax/faust.xml
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.cpp
 %%DATADIR%%/AU/AUPublic/AUBase/AUBase.h
@@ -844,6 +844,7 @@ lib/libfaust.so.2.54.9
 %%DATADIR%%/stdfaust.lib
 %%DATADIR%%/supercollider.cpp
 %%DATADIR%%/synths.lib
+%%DATADIR%%/teensy/README.md
 %%DATADIR%%/teensy/teensy.cpp
 %%DATADIR%%/teensy/teensy.h
 %%DATADIR%%/template-llvm.cpp
