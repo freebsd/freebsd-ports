@@ -63,6 +63,7 @@ include/filament/FilamentAPI.h
 include/filament/Frustum.h
 include/filament/IndexBuffer.h
 include/filament/IndirectLight.h
+include/filament/InstanceBuffer.h
 include/filament/LightManager.h
 include/filament/Material.h
 include/filament/MaterialChunkType.h
