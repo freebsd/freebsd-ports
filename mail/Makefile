@@ -84,6 +84,7 @@
     SUBDIR += cyrus-imapd32
     SUBDIR += cyrus-imapd34
     SUBDIR += cyrus-imapd36
+    SUBDIR += cyrus-imapd38
     SUBDIR += cyrus2courier
     SUBDIR += cyrus2dovecot
     SUBDIR += datovka
