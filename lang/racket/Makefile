@@ -21,8 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 NOT_FOR_ARCHS=	riscv64
 NOT_FOR_ARCHS_REASON=	unsupported platform
 
-LIB_DEPENDS=	libcairo.so:graphics/cairo \
-		libffi.so:devel/libffi \
+LIB_DEPENDS=	libffi.so:devel/libffi \
 		liblz4.so:archivers/liblz4 \
 		libpng.so:graphics/png
 
