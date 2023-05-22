@@ -1,5 +1,6 @@
 PORTNAME=	octave-forge-octave-pool
 DISTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -17,6 +18,8 @@ GH_ACCOUNT=	reprostat
 GH_PROJECT=	octave-pool
 
 OCTAVE_SRC=	${GH_PROJECT}-${DISTVERSION}
+
+WRKSRC=		${WRKDIR}/${OCTAVE_SRC} # Required so that patch will apply.
 
 NO_ARCH=	yes
 NO_BUILD=	yes
