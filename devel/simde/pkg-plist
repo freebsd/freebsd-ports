@@ -37,6 +37,7 @@ include/simde/arm/neon/cnt.h
 include/simde/arm/neon/combine.h
 include/simde/arm/neon/create.h
 include/simde/arm/neon/cvt.h
+include/simde/arm/neon/cvtn.h
 include/simde/arm/neon/dot.h
 include/simde/arm/neon/dot_lane.h
 include/simde/arm/neon/dup_lane.h
@@ -51,6 +52,7 @@ include/simde/arm/neon/get_lane.h
 include/simde/arm/neon/get_low.h
 include/simde/arm/neon/hadd.h
 include/simde/arm/neon/hsub.h
+include/simde/arm/neon/ld1.h
 include/simde/arm/neon/ld1_dup.h
 include/simde/arm/neon/ld1_lane.h
 include/simde/arm/neon/ld1_x2.h
@@ -70,6 +72,7 @@ include/simde/arm/neon/min.h
 include/simde/arm/neon/minnm.h
 include/simde/arm/neon/minv.h
 include/simde/arm/neon/mla.h
+include/simde/arm/neon/mla_lane.h
 include/simde/arm/neon/mla_n.h
 include/simde/arm/neon/mlal.h
 include/simde/arm/neon/mlal_high.h
@@ -228,6 +231,7 @@ include/simde/wasm/relaxed-simd.h
 include/simde/wasm/simd128.h
 include/simde/x86/avx.h
 include/simde/x86/avx2.h
+include/simde/x86/avx512.h
 include/simde/x86/avx512/2intersect.h
 include/simde/x86/avx512/4dpwssd.h
 include/simde/x86/avx512/4dpwssds.h
