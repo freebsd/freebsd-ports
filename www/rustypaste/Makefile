@@ -1,7 +1,6 @@
 PORTNAME=	rustypaste
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.4
-PORTREVISION=	4
+DISTVERSION=	0.9.0
 CATEGORIES=	www
 
 MAINTAINER=	DtxdF@disroot.org
@@ -18,18 +17,36 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	orhun
 USE_RC_SUBR=	${PORTNAME}
 
+CARGO_FEATURES=	--no-default-features
+
 SUB_LIST+=	USER="${USERS:[0]}"
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
 
-PLIST_SUB+=	USER="${USERS:[0]}" \
-		GROUP="${GROUPS:[0]}"
+PLIST_SUB+=	GROUP="${GROUPS:[0]}" \
+		USER="${USERS:[0]}"
+
+OPTIONS_DEFINE=		SHUTTLE
+OPTIONS_DEFAULT=	OPENSSL
+OPTIONS_RADIO=		TLS
+OPTIONS_RADIO_TLS=	OPENSSL RUSTLS
+
+OPENSSL_DESC=	Use distro OpenSSL (binary size is reduced ~20%)
+RUSTLS_DESC=	Use modern TLS library in Rust
+SHUTTLE_DESC=	Enable an entry point for deploying on Shuttle
+
+OPENSSL_USES=	ssl
+
+OPENSSL_VARS=		CARGO_FEATURES+=openssl
+RUSTLS_VARS=		CARGO_FEATURES+=rustls
+SHUTTLE_BUILD_DEPENDS=	protoc:devel/protobuf
+SHUTTLE_VARS=		CARGO_FEATURES+=shuttle
 
 UPLOAD_PATH=	/var/db/${PORTNAME}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^upload_path=/s#=.*#="${UPLOAD_PATH}"#' ${WRKSRC}/config.toml
+	@${REINPLACE_CMD} -e '/^upload_path[[:space:]]*=/s#=.*#= "${UPLOAD_PATH}"#' ${WRKSRC}/config.toml
 
 post-install:
 	${MKDIR} ${STAGEDIR}${ETCDIR}
