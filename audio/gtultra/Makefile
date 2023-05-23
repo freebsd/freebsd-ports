@@ -1,9 +1,7 @@
 PORTNAME=		gtultra
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.5.1
+DISTVERSION=		1.5.2
 CATEGORIES=		audio
-PATCH_SITES=		https://github.com/jpage8580/GTUltra/commit/
-PATCHFILES=		214f43896352e07f09f4c0f2250eb0a3511812f3.patch:-p1
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	Music tracker for the C64, fork of goattracker
