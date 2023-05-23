@@ -137,6 +137,7 @@
     SUBDIR += iansui
     SUBDIR += inconsolata-lgc-ttf
     SUBDIR += inconsolata-ttf
+    SUBDIR += intel-one-mono
     SUBDIR += intlfonts
     SUBDIR += iosevka
     SUBDIR += isabella
