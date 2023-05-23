@@ -46,7 +46,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage_enable_subprocess>=0:devel/py-cove
 USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent pep517 pytest
 
-TEST_ENV=	LC_ALL=C.UTF-8 PYTHONPATH=${WRKSRC}/src
+TEST_ENV=	LC_ALL=C.UTF-8 PYTHONPATH=${WRKSRC}/src TMPDIR=${WRKDIR}/
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
