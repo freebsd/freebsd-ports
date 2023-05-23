@@ -1,5 +1,5 @@
 PORTNAME=	amberol
-DISTVERSION=	0.10.2
+DISTVERSION=	0.10.3
 CATEGORIES=	audio
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -21,7 +21,7 @@ USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
 USE_GSTREAMER=	bad good libav
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
-GL_COMMIT=	a11feabf354bc39816b77aabf4aa1376153fbd1e
+GL_COMMIT=	31137155adb25a2e3a80de83b09e723dc2d78f4a
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
