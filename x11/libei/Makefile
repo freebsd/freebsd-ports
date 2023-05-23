@@ -1,16 +1,6 @@
 PORTNAME=	libei
-DISTVERSION=	0.99.1
+DISTVERSION=	0.99.2
 CATEGORIES=	x11
-
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	e01ce3480e9a.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
-PATCHFILES+=	dd817c8ddec6.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
-PATCHFILES+=	2a2c4cdd49f4.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
-PATCHFILES+=	143bfd52603f.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
-PATCHFILES+=	57a9059d644c.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/202
-PATCHFILES+=	7015fa6ad0ac.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/203
-PATCHFILES+=	3b8ce3dca19e.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/203
-PATCHFILES+=	0387bf23aa80.patch:-p1 # https://gitlab.freedesktop.org/libinput/libei/-/merge_requests/205
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Library for Emulated Input
@@ -35,7 +25,7 @@ USE_LDCONFIG=	yes
 GH_TUPLE=	nemequ:munit:v0.2.0-38-gfbbdf14:munit/subprojects/munit
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	libinput
-GL_COMMIT=	df268d618a199ca5c71f47b1e17cd6cd3d87fc0e
+GL_COMMIT=	93fd69cdf3abeb097a12b701140bf2a210d92cf1
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 MESON_ARGS=	-Dsd-bus-provider=basu -Dtests=disabled
 
