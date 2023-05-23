@@ -36,6 +36,7 @@ WX_COMPS=	python:run
 PLIST_FILES=	share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.png
 
+PORTSCOUT=	ignore:1
 NO_ARCH=	yes
 
 post-patch:
