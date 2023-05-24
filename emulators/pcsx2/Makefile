@@ -1,5 +1,6 @@
 PORTNAME=	pcsx2
 PORTVERSION=	1.7.4097
+DISTVERSIONPREFIX=	v
 PORTREVISION=	2
 CATEGORIES=	emulators
 
@@ -38,7 +39,6 @@ USES=		cmake desktop-file-utils gl pkgconfig qt:6 sdl xorg
 
 USE_GITHUB=	yes
 GH_PROJECT=	pcsx2
-GH_TAGNAME=	v${PORTVERSION}
 .include "${.CURDIR}/Makefile.tuples"
 
 USE_GL=		egl

@@ -1,4 +1,5 @@
 PORTNAME=	unhide
+DISTVERSIONPREFIX=	v
 DISTVERSION=	20210124
 CATEGORIES=	security
 
@@ -13,7 +14,6 @@ USES=		tar:tgz
 USE_GITHUB=	yes
 GH_ACCOUNT=	YJesus
 GH_PROJECT=	Unhide
-GH_TAGNAME=	v${DISTVERSION}
 
 PLIST_FILES=	man/man8/unhide.8.gz \
 		man/man8/unhide-tcp.8.gz \

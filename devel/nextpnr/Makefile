@@ -1,4 +1,5 @@
 PORTNAME=	nextpnr
+DISTVERSIONPREFIX=	${PORTNAME}-
 DISTVERSION=	0.4
 PORTREVISION=	1
 PORTEPOCH=	1
@@ -27,7 +28,6 @@ USE_QT=		buildtools:build core gui opengl qmake:build widgets
 USE_GL=		gl glu
 USE_GITHUB=	yes
 GH_ACCOUNT=	YosysHQ
-GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 GH_TUPLE=	YosysHQ:nextpnr-tests:00c55a9e:tests/tests
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}

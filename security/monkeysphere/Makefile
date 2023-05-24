@@ -1,5 +1,6 @@
 PORTNAME=	monkeysphere
 PORTVERSION=	0.43
+DISTVERSIONPREFIX=	${PORTNAME}_
 CATEGORIES=	security
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -20,7 +21,6 @@ RUN_DEPENDS=	gpg2:security/gnupg \
 USES=		gmake perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	dkg
-GH_TAGNAME=	${PORTNAME}_${PORTVERSION}
 
 SHEBANG_FILES=	src/monkeysphere* \
 		src/share/c* src/share/defaultenv src/share/keytrans \

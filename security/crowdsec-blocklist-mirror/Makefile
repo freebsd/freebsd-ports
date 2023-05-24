@@ -1,6 +1,7 @@
 PORTNAME=	crowdsec-blocklist-mirror
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.0.2
+DISTVERSIONSUFFIX=	-freebsd
 CATEGORIES=	security
 
 MAINTAINER=	marco@crowdsec.net
@@ -17,7 +18,6 @@ USES=		gmake go:no_targets
 USE_GITHUB=	yes
 GH_ACCOUNT=	crowdsecurity
 GH_PROJECT=	cs-blocklist-mirror
-GH_TAGNAME=	${DISTVERSIONFULL}-freebsd
 _BUILD_TAG=	60597cec
 USE_RC_SUBR=	crowdsec_mirror
 

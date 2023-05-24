@@ -1,6 +1,6 @@
 TIMESTAMP = 1684701408
-SHA256 (ginuerzh-gost-2.11.5-v2.11.5_GH0.tar.gz) = dab48b785f4d2df6c2f5619a4b9a2ac6e8b708f667a4d89c7d08df67ad7c5ca7
-SIZE (ginuerzh-gost-2.11.5-v2.11.5_GH0.tar.gz) = 189348
+SHA256 (ginuerzh-gost-v2.11.5_GH0.tar.gz) = dab48b785f4d2df6c2f5619a4b9a2ac6e8b708f667a4d89c7d08df67ad7c5ca7
+SIZE (ginuerzh-gost-v2.11.5_GH0.tar.gz) = 189348
 SHA256 (FiloSottile-edwards25519-390f27c3be20_GH0.tar.gz) = 7c6d366447a2dd9d2f2ead98d9eb9f52f7f14a1f6f767670b4a2a45fec136989
 SIZE (FiloSottile-edwards25519-390f27c3be20_GH0.tar.gz) = 39893
 SHA256 (LiamHaworth-go-tproxy-ef7efd7f24ed_GH0.tar.gz) = dfa13a22d6329716cc74c97c59d7515d698edf153cfa5cd67cd81b7218cdc8a2

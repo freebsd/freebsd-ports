@@ -20,7 +20,6 @@ USES=		cargo gmake pgsql:12+
 USE_GITHUB=	yes
 GH_ACCOUNT=	timescale
 GH_PROJECT=	promscale_extension
-GH_TAGNAME=	${PORTVERSION}
 
 WANT_PGSQL=	server
 

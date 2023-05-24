@@ -20,7 +20,6 @@ GO_TARGET=	src/sessionmanagerplugin-main/main.go:${PREFIX}/bin/session-manager-p
 USE_GITHUB=	yes
 GH_ACCOUNT=	aws
 GH_PROJECT=	session-manager-plugin
-GH_TAGNAME=	${DISTVERSION}
 GH_SUBDIR=	${GH_PROJECT}
 GH_TUPLE=	eiannone:keyboard:6d2a597fd0f1:eiannone_keyboard/vendor/github.com/eiannone/keyboard \
 		fsnotify:fsnotify:v1.4.7:fsnotify_fsnotify/vendor/github.com/fsnotify/fsnotify \

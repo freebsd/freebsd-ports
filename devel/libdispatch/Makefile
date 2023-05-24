@@ -1,5 +1,7 @@
 PORTNAME=	libdispatch
+DISTVERSIONPREFIX=	swift-
 DISTVERSION=	5.5
+DISTVERSIONSUFFIX=	-RELEASE
 PORTEPOCH=	1
 CATEGORIES=	devel
 
@@ -15,7 +17,6 @@ USE_CXXSTD=	c++17
 USE_GITHUB=	yes
 GH_ACCOUNT=	apple
 GH_PROJECT=	swift-corelibs-libdispatch
-GH_TAGNAME=	swift-${DISTVERSION}-RELEASE
 
 .include <bsd.port.options.mk>
 

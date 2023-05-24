@@ -16,7 +16,6 @@ USES=		emacs
 USE_GITHUB=	yes
 GH_ACCOUNT=	emarsden
 GH_PROJECT=	pg-el
-GH_TAGNAME=	${DISTVERSIONPREFIX}${DISTVERSION}
 
 CONFLICTS_INSTALL=	pg.el pg.el-emacs_* # share/doc/pg.el/README
 

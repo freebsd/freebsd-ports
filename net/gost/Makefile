@@ -1,4 +1,5 @@
 PORTNAME=	gost
+DISTVERSIONPREFIX=	v
 DISTVERSION=	2.11.5
 CATEGORIES=	net
 
@@ -13,7 +14,6 @@ USES=		go:1.19,modules
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ginuerzh
-GH_TAGNAME=	v${DISTVERSION}
 
 GH_TUPLE=	FiloSottile:edwards25519:390f27c3be20:filosottile_edwards25519/vendor/filippo.io/edwards25519 \
 		LiamHaworth:go-tproxy:ef7efd7f24ed:liamhaworth_go_tproxy/vendor/github.com/LiamHaworth/go-tproxy \

@@ -1,4 +1,5 @@
 PORTNAME=	pinfo
+DISTVERSIONPREFIX=	v
 DISTVERSION=	0.6.13
 PORTREVISION=	1
 CATEGORIES=	misc
@@ -19,7 +20,6 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		autoreconf gettext-tools libtool localbase makeinfo ncurses
 USE_GITHUB=	yes
 GH_ACCOUNT=	baszoetekouw
-GH_TAGNAME=	v${DISTVERSION}
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-curses=${NCURSESBASE}

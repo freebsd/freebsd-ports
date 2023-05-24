@@ -1,7 +1,7 @@
 PORTNAME=	NTPoly
 DISTVERSION=	2.7.1
+DISTVERSIONPREFIX=	${PORTNAME:tl}-v
 PORTREVISION=	1
-DISTVERSIONPREFIX=	v
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -19,7 +19,6 @@ TEST_DEPENDS=	${PYNUMPY}	\
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	william-dawson
-GH_TAGNAME=	${PORTNAME:tl}-${DISTVERSIONPREFIX}${DISTVERSION}
 
 USES=		blaslapack:openblas cmake fortran mpi python
 FFLAGS+=	-fopenmp -fallow-argument-mismatch

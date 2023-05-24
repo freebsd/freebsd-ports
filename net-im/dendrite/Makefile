@@ -1,5 +1,5 @@
 PORTNAME=	dendrite
-DISTVERSIONPREFIX=	v
+DISTVERSIONPREFIX=	helm-dendrite-
 DISTVERSION=	0.12.3
 CATEGORIES=	net-im
 
@@ -29,7 +29,6 @@ GO_TARGET+=	./cmd/$f:${PREFIX}/dendrite/bin/$f
 USE_GITHUB=	yes
 USE_GITLAB=	nodefault
 GH_ACCOUNT=	matrix-org
-GH_TAGNAME=	helm-dendrite-${DISTVERSION}
 GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arceliar/ironwood \
 		Arceliar:phony:dde1a8dca979:arceliar_phony/vendor/github.com/Arceliar/phony \
 		DATA-DOG:go-sqlmock:v1.5.0:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \

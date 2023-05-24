@@ -1,5 +1,6 @@
 PORTNAME=	gir-to-d
 PORTVERSION=	0.23.1
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	lang
 
@@ -20,7 +21,6 @@ USE_GNOME=	introspection
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	gtkd-developers
-GH_TAGNAME=	v${DISTVERSION}
 
 # a workaround for https://github.com/ldc-developers/ldc/issues/4000
 CONFIGURE_ENV=	DFLAGS=--allinst

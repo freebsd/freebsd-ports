@@ -1,6 +1,6 @@
 TIMESTAMP = 1684014464
-SHA256 (baszoetekouw-pinfo-0.6.13-v0.6.13_GH0.tar.gz) = 9dc5e848a7a86cb665a885bc5f0fdf6d09ad60e814d75e78019ae3accb42c217
-SIZE (baszoetekouw-pinfo-0.6.13-v0.6.13_GH0.tar.gz) = 157103
+SHA256 (baszoetekouw-pinfo-v0.6.13_GH0.tar.gz) = 9dc5e848a7a86cb665a885bc5f0fdf6d09ad60e814d75e78019ae3accb42c217
+SIZE (baszoetekouw-pinfo-v0.6.13_GH0.tar.gz) = 157103
 SHA256 (fc67ceacd81f0c74fcab85447c23a532ae482827.patch) = c11ec086f73e7b2bf38a5cc07c64c4cbee06da270d9eb0f4c86403e7df7a021c
 SIZE (fc67ceacd81f0c74fcab85447c23a532ae482827.patch) = 860
 SHA256 (ab604fdb67296dad27f3a25f3c9aabdd2fb8c3fa.patch) = 7690ed298a139b82b763979e59998afdac88b4265d867f746811e317a152f57d

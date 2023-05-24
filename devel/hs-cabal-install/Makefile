@@ -1,5 +1,6 @@
 PORTNAME=	cabal-install
 PORTVERSION=	3.10.1.0
+DISTVERSIONPREFIX=	${PORTNAME}-v
 PORTREVISION=	1
 CATEGORIES=	devel haskell
 EXTRACT_ONLY=	${DISTNAME_DEFAULT}${_GITHUB_EXTRACT_SUFX}
@@ -15,7 +16,6 @@ USES=		cabal:nodefault compiler:c11 python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	haskell
 GH_PROJECT=	cabal
-GH_TAGNAME=	${PORTNAME}-v${PORTVERSION}
 
 USE_CABAL=	async-2.2.4_2 \
 		base16-bytestring-1.0.2.0 \

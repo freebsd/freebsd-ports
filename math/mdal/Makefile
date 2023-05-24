@@ -1,4 +1,5 @@
 PORTNAME=	mdal
+DISTVERSIONPREFIX=	release-
 DISTVERSION=	1.0.1
 PORTREVISION=	1
 CATEGORIES=	math geography
@@ -31,7 +32,6 @@ PLIST_FILES=	bin/mdal_translate \
 USE_GITHUB=	yes
 GH_ACCOUNT=	lutraconsulting
 GH_PROJECT=	MDAL
-GH_TAGNAME=	release-${DISTVERSION}
 
 CMAKE_ARGS=	-DSQLITE3_INCLUDE_DIRS="${LOCALBASE}/include" \
 		-DSQLITE3_LIBRARY="${LOCALBASE}/lib/libsqlite3.so"
