@@ -14,6 +14,7 @@ include/fluent-bit/flb_byteswap.h
 include/fluent-bit/flb_callback.h
 include/fluent-bit/flb_chunk_trace.h
 include/fluent-bit/flb_compat.h
+include/fluent-bit/flb_compression.h
 include/fluent-bit/flb_config.h
 include/fluent-bit/flb_config_format.h
 include/fluent-bit/flb_config_map.h
