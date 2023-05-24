@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.30.1
+DISTVERSION=	1.30.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -27,12 +27,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		anstyle-wincon-1.0.1 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
-		base64-0.21.0 \
+		base64-0.21.1 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.4 \
-		bstr-1.4.0 \
+		bstr-1.5.0 \
 		built-0.6.0 \
-		bumpalo-3.12.2 \
+		bumpalo-3.13.0 \
 		byteorder-1.4.3 \
 		bytes-1.4.0 \
 		cargo-lock-8.0.3 \
@@ -50,7 +50,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		color-print-proc-macro-0.3.4 \
 		color-spantrace-0.2.0 \
 		colorchoice-1.0.0 \
-		console-0.15.6 \
+		console-0.15.7 \
 		core-foundation-sys-0.8.4 \
 		cpufeatures-0.2.7 \
 		crc32fast-1.3.2 \
@@ -61,7 +61,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		crypto-common-0.1.6 \
 		ctor-0.1.26 \
 		ctor-0.2.0 \
-		ctrlc-3.2.5 \
+		ctrlc-3.3.0 \
 		dialoguer-0.10.4 \
 		diff-0.1.13 \
 		digest-0.10.7 \
@@ -170,8 +170,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regex-1.8.1 \
-		regex-syntax-0.7.1 \
+		regex-1.8.2 \
+		regex-syntax-0.7.2 \
 		reqwest-0.11.18 \
 		ring-0.16.20 \
 		rmp-0.8.11 \
