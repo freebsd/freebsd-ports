@@ -1,5 +1,6 @@
 PORTNAME=	pysam
 DISTVERSION=	0.20.0
+PORTREVISION=	1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,12 +12,15 @@ WWW=		https://github.com/pysam-developers/pysam
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libhts.so:biology/htslib
+
 USES=		gmake python:3.6-3.9
 USE_PYTHON=	autoplist distutils cython cython_run pytest
 
-CFLAGS+=	-fPIC # workaround for https://github.com/pysam-developers/pysam/issues/1146
-
 BINARY_ALIAS=	make=${GMAKE}
+MAKE_ENV=	HTSLIB_MODE=external \
+		HTSLIB_LIBRARY_DIR=${LOCALBASE}/lib \
+		HTSLIB_INCLUDE_DIR=${LOCALBASE}/include
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/pysam/lib*${PYTHON_EXT_SUFFIX}.so
