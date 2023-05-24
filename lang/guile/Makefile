@@ -1,6 +1,6 @@
 PORTNAME=	guile
 PORTVERSION=	3.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 
@@ -20,12 +20,13 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 		libltdl.so:devel/libltdl \
 		libunistring.so:devel/libunistring
 
-USES=		charsetfix compiler:gcc-c++11-lib cpe gmake iconv libtool \
+USES=		charsetfix compiler:c11 cpe gmake iconv libtool \
 		makeinfo pathfix pkgconfig readline tar:lz
 CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-lto=${WITHOUT_LTO:Dno:U${WITH_LTO:Dyes:Uno}}
 
 #MAKE_JOBS_UNSAFE=	yes
 INSTALL_TARGET=	install-strip
