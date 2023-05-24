@@ -1056,6 +1056,7 @@ domoticz/plugins/examples/Mutli-Threaded.py
 domoticz/plugins/examples/Pinger.py
 domoticz/plugins/examples/RAVEn.py
 domoticz/plugins/examples/UDP Discovery.py
+domoticz/plugins/examples/Web Socket Client.py
 domoticz/scripts/_domoticz_main
 domoticz/scripts/_domoticz_main.bat
 domoticz/scripts/buienradar_rain_example.pl
@@ -1092,6 +1093,7 @@ domoticz/scripts/lua_parsers/example.lua
 domoticz/scripts/lua_parsers/example_json.lua
 domoticz/scripts/lua_parsers/example_owm.lua
 domoticz/scripts/lua_parsers/example_xml.lua
+domoticz/scripts/lua_parsers/readme.txt
 domoticz/scripts/python/domoticz.py
 domoticz/scripts/python/googlepubsub.py
 domoticz/scripts/python/reloader.py
@@ -1127,6 +1129,7 @@ domoticz/scripts/update_domoticz
 domoticz/server_cert.pem
 domoticz/updatedomo
 domoticz/www/app/AboutController.js
+domoticz/www/app/ApplicationsController.js
 domoticz/www/app/CamController.js
 domoticz/www/app/CustomIconsController.js
 domoticz/www/app/DPFibaroController.js
@@ -1195,6 +1198,8 @@ domoticz/www/app/hardware/extra/MQTTParams.html
 domoticz/www/app/hardware/extra/MQTTParams.js
 domoticz/www/app/hardware/setup/BleBox.html
 domoticz/www/app/hardware/setup/BleBox.js
+domoticz/www/app/hardware/setup/EnOceanESP3.html
+domoticz/www/app/hardware/setup/EnOceanESP3.js
 domoticz/www/app/hardware/setup/Kodi.html
 domoticz/www/app/hardware/setup/Kodi.js
 domoticz/www/app/hardware/setup/MySensors.html
@@ -1266,6 +1271,7 @@ domoticz/www/app/timers/DeviceTimersController.js
 domoticz/www/app/timers/SceneTimersController.js
 domoticz/www/app/timers/components.js
 domoticz/www/app/timers/factories.js
+domoticz/www/app/timers/planning.js
 domoticz/www/css/bootstrap-responsive.css
 domoticz/www/css/bootstrap.css
 domoticz/www/css/colpick.css
@@ -1305,6 +1311,7 @@ domoticz/www/css/jquery-ui-timepicker-addon.css
 domoticz/www/css/jquery.dataTables.min.css
 domoticz/www/css/jquery.uix.multiselect.css
 domoticz/www/css/legacy.css
+domoticz/www/css/planning.css
 domoticz/www/css/remote.css
 domoticz/www/css/style.css
 domoticz/www/css/ui-darkness/images/animated-overlay.gif
@@ -1326,14 +1333,32 @@ domoticz/www/css/ui-darkness/jquery-ui.min.css
 domoticz/www/css/ui-grid.min.css
 domoticz/www/css/wheelcolorpicker.css
 domoticz/www/favicon.ico
+domoticz/www/font-awesome/css/all.css
+domoticz/www/font-awesome/css/all.min.css
+domoticz/www/font-awesome/css/brands.css
+domoticz/www/font-awesome/css/brands.min.css
+domoticz/www/font-awesome/css/fontawesome.css
 domoticz/www/font-awesome/css/fontawesome.min.css
+domoticz/www/font-awesome/css/regular.css
+domoticz/www/font-awesome/css/regular.min.css
+domoticz/www/font-awesome/css/solid.css
 domoticz/www/font-awesome/css/solid.min.css
-domoticz/www/font-awesome/webfonts/fa-solid-900.eot
-domoticz/www/font-awesome/webfonts/fa-solid-900.svg
+domoticz/www/font-awesome/css/svg-with-js.css
+domoticz/www/font-awesome/css/svg-with-js.min.css
+domoticz/www/font-awesome/css/v4-font-face.css
+domoticz/www/font-awesome/css/v4-font-face.min.css
+domoticz/www/font-awesome/css/v4-shims.css
+domoticz/www/font-awesome/css/v4-shims.min.css
+domoticz/www/font-awesome/css/v5-font-face.css
+domoticz/www/font-awesome/css/v5-font-face.min.css
+domoticz/www/font-awesome/webfonts/fa-brands-400.ttf
+domoticz/www/font-awesome/webfonts/fa-brands-400.woff2
+domoticz/www/font-awesome/webfonts/fa-regular-400.ttf
+domoticz/www/font-awesome/webfonts/fa-regular-400.woff2
 domoticz/www/font-awesome/webfonts/fa-solid-900.ttf
-domoticz/www/font-awesome/webfonts/fa-solid-900.woff
 domoticz/www/font-awesome/webfonts/fa-solid-900.woff2
-domoticz/www/html5.appcache
+domoticz/www/font-awesome/webfonts/fa-v4compatibility.ttf
+domoticz/www/font-awesome/webfonts/fa-v4compatibility.woff2
 domoticz/www/i18n/domoticz-ar.json.gz
 domoticz/www/i18n/domoticz-bg.json.gz
 domoticz/www/i18n/domoticz-bs.json.gz
@@ -1413,7 +1438,6 @@ domoticz/www/images/Door48_Off.png
 domoticz/www/images/Door48_On.png
 domoticz/www/images/Down48.png
 domoticz/www/images/Down48_2.png
-domoticz/www/images/Fan.png
 domoticz/www/images/Fan48_Off.png
 domoticz/www/images/Fan48_On.png
 domoticz/www/images/Fireplace.png
@@ -1575,6 +1599,7 @@ domoticz/www/images/evohome/TemporaryOverride.png
 domoticz/www/images/evohome/TemporaryOverrideInv.png
 domoticz/www/images/expand16.png
 domoticz/www/images/failed.png
+domoticz/www/images/fan.png
 domoticz/www/images/favorite.png
 domoticz/www/images/floorplans/example.jpg
 domoticz/www/images/forward_disabled.png
@@ -1611,9 +1636,14 @@ domoticz/www/images/logo/114.png
 domoticz/www/images/logo/144.png
 domoticz/www/images/logo/152.png
 domoticz/www/images/logo/180.png
+domoticz/www/images/logo/192.png
+domoticz/www/images/logo/256.png
+domoticz/www/images/logo/384.png
+domoticz/www/images/logo/512.png
 domoticz/www/images/logo/57.png
 domoticz/www/images/logo/72.png
 domoticz/www/images/logo/76.png
+domoticz/www/images/logo/maskable_icon.png
 domoticz/www/images/logo192.png
 domoticz/www/images/logout.png
 domoticz/www/images/lux.png
@@ -1823,7 +1853,6 @@ domoticz/www/js/highcharts/modules/xrange.js.gz
 domoticz/www/js/highcharts/themes/dark-unica.js.gz
 domoticz/www/js/html5shiv.js.gz
 domoticz/www/js/i18next-1.8.0.min.js.gz
-domoticz/www/js/jquery-3.5.1.min.js.gz
 domoticz/www/js/jquery-3.6.0.min.js.gz
 domoticz/www/js/jquery-ui-timepicker-addon.js.gz
 domoticz/www/js/jquery-ui.min.js.gz
@@ -1846,10 +1875,12 @@ domoticz/www/js/noty/noty.min.js.gz
 domoticz/www/js/noty/relax.css
 domoticz/www/js/require.min.js.gz
 domoticz/www/js/respond.min.js.gz
+domoticz/www/js/sw-toolbox.js
 domoticz/www/js/ui-bootstrap.min.js.gz
 domoticz/www/js/ui-grid.min.js.gz
 domoticz/www/js/wow.min.js.gz
 domoticz/www/js/zip-without-map.sh
+domoticz/www/manifest.json
 domoticz/www/media/1x1.gif
 domoticz/www/media/click.mp3
 domoticz/www/media/click.wav
@@ -1896,6 +1927,7 @@ domoticz/www/secpanel/media/key.ogg
 domoticz/www/secpanel/media/wrongcode.aac
 domoticz/www/secpanel/media/wrongcode.mp3
 domoticz/www/secpanel/media/wrongcode.ogg
+domoticz/www/service-worker.js
 domoticz/www/styles/dark-th3me/base.css
 domoticz/www/styles/dark-th3me/custom.css
 domoticz/www/styles/dark-th3me/custom.js
@@ -1932,6 +1964,7 @@ domoticz/www/switch_icons.txt
 domoticz/www/templates/custom.example
 domoticz/www/templates/readme.txt
 domoticz/www/views/about.html
+domoticz/www/views/applications.html
 domoticz/www/views/cam.html
 domoticz/www/views/customicons.html
 domoticz/www/views/dashboard.html
@@ -1946,6 +1979,7 @@ domoticz/www/views/forecast.html
 domoticz/www/views/frontpage.html
 domoticz/www/views/frontpage_example.html
 domoticz/www/views/history.html
+domoticz/www/views/inc_topbar.html
 domoticz/www/views/lights.html
 domoticz/www/views/log.html
 domoticz/www/views/login.html
