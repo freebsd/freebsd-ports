@@ -193,7 +193,7 @@ math/php70-bcmath|math/php72-bcmath|2018-12-05|Has expired: Security Support end
 math/php70-gmp|math/php72-gmp|2018-12-05|Has expired: Security Support ends on 3 Dec 2018
 lang/php70|lang/php72|2018-12-05|Has expired: Security Support ends on 3 Dec 2018
 math/vtk5-data||2018-12-05|Removed
-devel/py-interface|devel/py-py_interface|2018-12-05|Rename to match upstream naming
+devel/py-interface|devel/py-py_interface|2018-12-05|Renamed to match upstream naming
 graphics/drm-stable-kmod|graphics/drm-fbsd11.2-kmod|2018-12-09|Cleaning up DRM ports nomenclature
 graphics/drm-next-kmod|graphics/drm-fbsd12.0-kmod|2018-12-09|Cleaning up DRM ports nomenclature
 deskutils/multisync-backup||2018-12-11|Has expired: GNOME 2 application
@@ -1033,9 +1033,9 @@ databases/postgresql93-server|databases/postgresql94-server|2019-01-09|Has expir
 mail/drac||2019-01-16|Has expired: Unmaintained upstream since 2003
 lang/clang35|devel/llvm70|2019-01-18|Removed, unmaintained and not depended on
 lang/clang-devel|devel/llvm-devel|2019-01-18|Unneeded metaport
-sysutils/py-nomad|sysutils/py-python-nomad|2019-01-25|renamed to match project name
+sysutils/py-nomad|sysutils/py-python-nomad|2019-01-25|Renamed to match upstream naming
 devel/py-easyconfig|devel/py-python-easyconfig|2019-01-28|Rename to reflect official Python modules naming scheme
-sysutils/py-consul|sysutils/py-python-consul|2019-01-30|renamed to match project name
+sysutils/py-consul|sysutils/py-python-consul|2019-01-30|Renamed to match upstream naming
 astro/weatherspect||2019-02-02|Has expired: Weather Underground does not provide free API keys anymore
 devel/rubygem-temple07|devel/rubygem-temple|2019-02-02|Obsolete, please use devel/rubygem-temple instead
 mail/dovecot-pigeonhole04|mail/dovecot-pigeonhole|2019-02-04|Has expired: End of Life upstream, use mail/dovecot-pigeonhole instead
@@ -1062,11 +1062,11 @@ sysutils/yum||2019-02-07|Has expired: Abandoned upstream, does not work with pyt
 sysutils/createrepo||2019-02-07|Has expired: Abandoned upstream, does not work with python3
 www/wml||2019-02-08|Removing to be properly added back with svn copy
 misc/soapysdr-hackrf|comms/soapysdrhackrf|2019-02-09|Move to the proper category/name
-math/wxMaxima|math/wxmaxima|2019-02-10|rename for consistency
+math/wxMaxima|math/wxmaxima|2019-02-10|Renamed for consistency with other ports
 net-mgmt/py-snmp4|net-mgmt/py-pysnmp|2019-02-11|Renamed to match upstream naming
 net-mgmt/py-snmp4-apps|net-mgmt/py-pysnmp-apps|2019-02-11|Renamed to match upstream naming
 net-mgmt/py-snmp4-mibs|net-mgmt/py-pysnmp-mibs|2019-02-11|Renamed to match upstream naming
-science/mmtf|science/mmtf-cpp|2019-02-16|Rename to match the project name on github
+science/mmtf|science/mmtf-cpp|2019-02-16|Renamed to match upstream naming
 dns/p5-pgeodns||2019-02-16|Has expired: Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
 ftp/proftpd-mod_geoip||2019-02-16|Has expired: Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
 net/go-geoip||2019-02-16|Has expired: Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
@@ -1091,7 +1091,7 @@ net-p2p/verlihub-plugins-luascript||2019-02-16|Has expired: Verlihub uses legacy
 net-p2p/verlihub-plugins-messanger||2019-02-16|Has expired: Verlihub uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
 net-p2p/verlihub-plugins-stats||2019-02-16|Has expired: Verlihub uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
 www/mod_geoip2|www/mod_maxminddb|2019-02-16|Has expired: Uses legacy GeoIP 1 format which no longer works; switch to GeoIP 2 where possible
-devel/libdouble-conversion|devel/double-conversion|2019-02-16|Rename to match the project name on github and on most other systems, and in installed cmake files
+devel/libdouble-conversion|devel/double-conversion|2019-02-16|Renamed to match upstream naming
 security/tmux-cssh||2019-02-17|Upstream has disappeared; sysutils/scct is an alternative
 net/GeoIP|net/libmaxminddb|2019-02-17|Has expired: Legacy databases no longer available. Switch to net/libmaxminddb instead
 x11-toolkits/bakery||2019-02-20|Abandonware, no depend on
@@ -1677,7 +1677,7 @@ net/frr4|net/frr7|2019-04-16|Has expired: Upstream no longer maintained
 mail/pop3proxy||2019-04-17|Has expired: no upstream and does not properly initiate SSL/TLS connections
 devel/go-gocode||2019-04-17|Has expired: Unmaintained upstream and has issues with Go >= 1.10
 audio/raop_play|audio/pulseaudio|2019-04-17|Has expired: Abandonware. Use module-raop-sink from audio/pulseaudio instead
-devel/py-sdl2|devel/py-pysdl2|2019-04-20|Rename to match upstream naming
+devel/py-sdl2|devel/py-pysdl2|2019-04-20|Renamed to match upstream naming
 www/rubygem-select2-rails3|www/rubygem-select2-rails|2019-04-23|Has expired: Use www/rubygem-select2-rails instead
 www/rubygem-jquery-atwho-rails13|www/rubygem-jquery-atwho-rails|2019-04-23|Has expired: Use www/rubygem-jquery-atwho-rails instead
 devel/rubygem-recaptcha3|devel/rubygem-recaptcha|2019-04-23|Has expired: Use devel/rubygem-recaptcha instead
@@ -2284,7 +2284,7 @@ dns/bind912|dns/bind914|2019-05-31|Has expired: Support ends, please move to dns
 multimedia/vdr-plugin-softhddevice||2019-05-31|Has expired: unmaintained and depends on vulnerable multimedia/ffmpeg0
 devel/pecl-pthreads||2019-06-02|Has expired: Does not work with recent versions of php
 net-mgmt/ccnet-client||2019-06-10|Removed, no longer has dependencies and has been abandoned upstream
-textproc/cdiff|textproc/ydiff|2019-06-11|Renamed to match upstream
+textproc/cdiff|textproc/ydiff|2019-06-11|Renamed to match upstream naming
 sysutils/zol|sysutils/openzfs|2019-06-11|Renamed to match upstream changes
 sysutils/zol-kmod|sysutils/openzfs-kmod|2019-06-11|Renamed to match upstream changes
 archivers/nulib||2019-06-12|Abandonware
@@ -2302,7 +2302,7 @@ devel/py-pydocumentdb|devel/py-azure-cosmos|2019-06-20|Renamed upstream
 www/rubygem-lograge-rails50|www/rubygem-lograge-rails5|2019-06-21|Obsolete by gitlab-ce upgrade, use www/rubygem-lograge-rails5 instead
 devel/rubygem-batch-loader12|devel/rubygem-batch-loader|2019-06-21|Obsolete by gitlab-ce upgrade, use devel/rubygem-batch-loader instead
 security/easy-rsa2|security/easy-rsa|2019-06-23|Has expired: Use easy-rsa 3 instead
-devel/py-robotframework-selenium2library|devel/py-robotframework-seleniumlibrary|2019-06-25|Renamed to match upstream
+devel/py-robotframework-selenium2library|devel/py-robotframework-seleniumlibrary|2019-06-25|Renamed to match upstream naming
 net/tigervnc||2019-06-29|Removed: Non-essential meta port
 sysutils/cfengine33|sysutils/cfengine313|2019-06-30|Has expired: No longer supported upstream
 sysutils/cfengine-masterfiles38|sysutils/cfengine-masterfiles313|2019-06-30|Has expired: No longer supported upstream
@@ -2357,7 +2357,7 @@ emulators/pearpc||2019-08-01|Has expired: Abandonware
 sysutils/bbcp||2019-08-03|Has expired: the port is broken for more than a year
 multimedia/gnome-mpv|multimedia/celluloid|2019-08-03|Renamed upstream
 net/remmina-plugin-telepathy||2019-08-04|Disabled upstream for build Issues
-devel/py-mimeparse|devel/py-python-mimeparse|2019-08-11|Rename to match upstream naming
+devel/py-mimeparse|devel/py-python-mimeparse|2019-08-11|Renamed to match upstream naming
 devel/rubygem-web-console|devel/rubygem-web-console-rails5|2019-08-11|Rename to match our rubygem- port naming
 devel/rubygem-spring-rails5|devel/rubygem-spring|2019-08-11|Remove unnecessary port after devel/rubygem-spring update
 devel/rubygem-spring-rails50|devel/rubygem-spring|2019-08-11|Remove unnecessary port after devel/rubygem-spring update
@@ -2984,7 +2984,7 @@ math/py-onnx-tf|misc/py-onnx-tf|2019-11-24|Move to a more appropriate category
 misc/console-bridge|devel/ros-console_bridge|2019-11-24|Use devel/ros-console_bridge instead
 misc/urdfdom-headers|devel/ros-urdfdom_headers|2019-11-24|Use devel/ros-urdfdom_headers instead
 misc/urdfdom|devel/ros-urdfdom|2019-11-24|Use devel/ros-urdfdom instead
-sysutils/kdirstat|sysutils/k4dirstat|2019-11-25|Renamed to match the upstream name
+sysutils/kdirstat|sysutils/k4dirstat|2019-11-25|Renamed to match upstream naming
 lang/gcc7-devel|lang/gcc7|2019-11-28|The GCC 7 branch is end of life, use the final release (or a new major version)
 multimedia/cuse4bsd-kmod||2019-11-30|Removed, in base system on all supported versions
 java/jdk9-doc||2019-11-30|Has expired: The corresponding JDK port is EoL
@@ -3240,9 +3240,9 @@ x11-toolkits/soqt-devel|x11-toolkits/soqt|2020-01-17|This is now the stable vers
 graphics/py-pivy-devel|graphics/py-pivy|2020-01-17|This is now the stable version
 net/py-coherence||2020-01-18|fails with python-3.X, and python-2.7 is EOLed (GH bug#32)
 net/py-upnp-inspector||2020-01-18|Missing dependency: net/py-coherence is python-2.7-only
-security/py-pymacaroons-pynacl|security/py-pymacaroons|2020-01-20|Rename to match upstream naming
+security/py-pymacaroons-pynacl|security/py-pymacaroons|2020-01-20|Renamed to match upstream naming
 math/jakarta-commons-math3|math/apache-commons-math|2020-01-24|Renamed upstream
-audio/py-mpd2|audio/py-python-mpd2|2020-01-25|Rename to match upstream naming
+audio/py-mpd2|audio/py-python-mpd2|2020-01-25|Renamed to match upstream naming
 audio/gstreamer1-plugins-spc|audio/gstreamer1-plugins-gme|2020-01-26|spc was removed inflavour for the gme plugin
 accessibility/py-papi||2020-01-27|Has expired: Unmaintained, uses EOLed python27
 archivers/py-czipfile||2020-01-27|Has expired: Unmaintained, uses EOLed python27
@@ -3723,7 +3723,7 @@ security/py-Products.PluggableAuthService||2020-02-06|Has expired: Outdated, use
 www/py-collective.templateengines||2020-02-06|Has expired: Outdated, uses EOLed python27
 www/zope213||2020-02-06|Has expired: Outdated, uses EOLed python27
 misc/py-glance||2020-02-06|Has expired: Outdated, uses EOLed python27
-devel/py-memory_profiler|devel/py-memory-profiler|2020-02-08|Rename to match upstream naming
+devel/py-memory_profiler|devel/py-memory-profiler|2020-02-08|Renamed to match upstream naming
 graphics/wayland-protocols-devel|graphics/wayland-protocols|2020-02-10|Merged into master port
 devel/hachoir-core||2020-02-11|Has expired: Outdated, uses EOLed python27
 devel/hachoir-parser||2020-02-11|Has expired: Outdated, uses EOLed python27
@@ -3733,8 +3733,8 @@ sysutils/hachoir-subfile||2020-02-11|Has expired: Outdated, uses EOLed python27
 sysutils/hachoir-urwid||2020-02-11|Has expired: Outdated, uses EOLed python27
 sysutils/hachoir-wx||2020-02-11|Has expired: Outdated, uses EOLed python27
 net/py-xmlrpc||2020-02-12|Has expired: Unmaintained, uses EOLed python27
-www/py-django-jsonfield2|www/py-jsonfield2|2020-02-13|Rename to match upstream naming
-www/py-dj22-django-jsonfield2|www/py-dj22-jsonfield2|2020-02-13|Rename to match upstream naming
+www/py-django-jsonfield2|www/py-jsonfield2|2020-02-13|Renamed to match upstream naming
+www/py-dj22-django-jsonfield2|www/py-dj22-jsonfield2|2020-02-13|Renamed to match upstream naming
 devel/go-godef||2020-02-14|Removed
 devel/racerd||2020-02-14|Has expired: Old, unmaintained, and fails to build with Rust 1.41.0 or newer; use rls from lang/rust instead
 www/plexwatchweb||2020-02-14|Removed
@@ -3961,7 +3961,7 @@ devel/openmp||2020-03-08|Has expired: Part of base system since FreeBSD 11.3/12.
 www/node8|www/node10|2020-03-10|Has expired: Node.js 8.x has reached end-of-life, see https://github.com/nodejs/Release
 www/npm-node8|www/npm-node10|2020-03-10|Removed, slave of www/node8
 www/yarn-node8|www/yarn-node10|2020-03-10|Removed, slave of www/node8
-security/swatch|security/swatchdog|2020-03-15|Rename to match upstream naming
+security/swatch|security/swatchdog|2020-03-15|Renamed to match upstream naming
 lang/go14||2020-03-17|Unused in the ports tree
 devel/py-Products.validation||2020-03-20|Has expired: Old, uses EOLed python27
 devel/py-Acquisition||2020-03-20|Has expired: Old, uses EOLed python27
@@ -4045,7 +4045,7 @@ dns/bind914|dns/bind916|2020-04-30|Has expired: End of life, please migrate to a
 net/py-pcap|net/py-pypcap|2020-05-01|Has expired: Broken with python3 please consider using net/py-pypcap
 x11-drivers/xf86-video-tseng||2020-05-01|Has expired: broken
 x11-drivers/xf86-video-s3virge||2020-05-01|Has expired: broken
-net/py-smart_open|net/py-smart-open|2020-05-02|Rename to match upstream naming
+net/py-smart_open|net/py-smart-open|2020-05-02|Renamed to match upstream naming
 net-im/pidgin-rocketchat|net-im/purple-rocketchat|2020-05-05|Generalized into a libpurple plugin
 audio/festvox-czech||2020-05-05|Has expired: Broken for more than 6 months
 audio/gkrellmvolume2||2020-05-05|Has expired: Broken for more than 6 months
@@ -4487,7 +4487,7 @@ sysutils/rdiff-backup|sysutils/py-rdiff-backup|2020-05-16|Renamed comply with Py
 www/py-django-happenings|www/py-django-happenings-update|2020-05-17|Has expired: Doesn't work with Django 2.2+, please use www/py-django-happenings-update instead
 devel/py-django-tastypie-mongoengine||2020-05-17|Has expired: Not necessary anymore, and project unmaintained
 sysutils/py-cpuinfo|sysutils/py-py-cpuinfo|2020-05-18|Rename to match PyPI name
-devel/py-jupyterlab_server|devel/py-jupyterlab-server|2020-05-19|Rename to match upstream naming
+devel/py-jupyterlab_server|devel/py-jupyterlab-server|2020-05-19|Renamed to match upstream naming
 math/py-onnx|misc/py-onnx|2020-05-23|Move to misc category because it's not related to math
 net/get_iplayer|multimedia/get_iplayer|2020-05-24|Move to a proper category
 lang/gnatdroid-armv7||2020-05-24|Has expired: Broken for more than 6 months
@@ -4588,9 +4588,9 @@ www/redmine-redcarpet_formatter|www/redmine4|2020-06-25|Removed, build-time exte
 www/redmine-single_auth|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
 www/redmine-wiki_notes|www/redmine4|2020-06-25|Removed, build-time extension of www/redmine
 devel/p5-IO-stringy|devel/p5-IO-Stringy|2020-06-26|New development starts as IO-Stringy
-devel/looks|devel/jgoodies-looks|2020-06-26|Renamed to match upstream
-comms/py-serial|comms/py-pyserial|2020-06-27|Rename to match upstream naming
-devel/py-usb|devel/py-pyusb|2020-06-27|Rename to match upstream naming
+devel/looks|devel/jgoodies-looks|2020-06-26|Renamed to match upstream naming
+comms/py-serial|comms/py-pyserial|2020-06-27|Renamed to match upstream naming
+devel/py-usb|devel/py-pyusb|2020-06-27|Renamed to match upstream naming
 net/bnxt-kmod||2020-06-28|Has expired: Unsupported on all supported FreeBSD versions
 databases/p5-Search-Xapian10|databases/p5-Search-Xapian|2020-06-30|Has expired: Depend on unsupported xapian-core. Use databases/p5-Search-Xapian instead
 databases/xapian-core10|databases/xapian-core|2020-06-30|Has expired: Unsupported by upstream. Use databases/xapian-core instead
@@ -5208,11 +5208,11 @@ www/rubygem-redmine_acts_as_taggable_on||2020-12-03|Has expired: Unmaintained by
 www/rubygem-gitlab-grack||2020-12-03|Has expired: Deprecated by upstream
 databases/db6||2020-12-03|Has expired: latest 6.2.x version and newer not downloadable without registration
 graphics/geeqie-devel|graphics/geeqie|2020-12-04|Development version no longer necessary
-devel/py-microversion_parse|devel/py-microversion-parse|2020-12-05|Rename to match upstream naming
-devel/py-semantic_version|devel/py-semantic-version|2020-12-05|Rename to match upstream naming
-devel/py-wsgi_intercept|devel/py-wsgi-intercept|2020-12-05|Rename to match upstream naming
-net/py-ndg_httpsclient|net/py-ndg-httpsclient|2020-12-05|Rename to match upstream naming
-www/py-draftjs_exporter|www/py-draftjs-exporter|2020-12-05|Rename to match upstream naming
+devel/py-microversion_parse|devel/py-microversion-parse|2020-12-05|Renamed to match upstream naming
+devel/py-semantic_version|devel/py-semantic-version|2020-12-05|Renamed to match upstream naming
+devel/py-wsgi_intercept|devel/py-wsgi-intercept|2020-12-05|Renamed to match upstream naming
+net/py-ndg_httpsclient|net/py-ndg-httpsclient|2020-12-05|Renamed to match upstream naming
+www/py-draftjs_exporter|www/py-draftjs-exporter|2020-12-05|Renamed to match upstream naming
 devel/py-XStatic|devel/py-xstatic|2020-12-05|Use lowercase PORTNAME and path
 devel/py-XStatic-Angular|devel/py-xstatic-angular|2020-12-05|Use lowercase PORTNAME and path
 devel/py-XStatic-Angular-Bootstrap|devel/py-xstatic-angular-bootstrap|2020-12-05|Use lowercase PORTNAME and path
@@ -5242,14 +5242,14 @@ devel/py-XStatic-smart-table|devel/py-xstatic-smart-table|2020-12-05|Use lowerca
 devel/py-XStatic-term.js|devel/py-xstatic-term.js|2020-12-05|Use lowercase PORTNAME and path
 devel/py-XStatic-tv4|devel/py-xstatic-tv4|2020-12-05|Use lowercase PORTNAME and path
 textproc/py-MarkupSafe|textproc/py-markupsafe|2020-12-05|Use lowercase PORTNAME and path
-devel/py-git_semver|devel/py-git-semver|2020-12-05|Rename to match upstream naming
-devel/py-readme_renderer|devel/py-readme-renderer|2020-12-05|Rename to match upstream naming
+devel/py-git_semver|devel/py-git-semver|2020-12-05|Renamed to match upstream naming
+devel/py-readme_renderer|devel/py-readme-renderer|2020-12-05|Renamed to match upstream naming
 sysutils/datadog|sysutils/datadog-agent|2020-12-06|Renamed
 devel/py-libpeas@py27||2020-12-07|Removed flavor
 www/moodle37|www/moodle39|2020-12-10|Has expired: Unmaintained by upstream
-devel/py-prompt_toolkit|devel/py-prompt-toolkit|2020-12-11|Rename to match upstream naming
-devel/py-prompt_toolkit1|devel/py-prompt-toolkit1|2020-12-11|Rename to match upstream naming
-devel/py-prompt_toolkit2|devel/py-prompt-toolkit2|2020-12-11|Rename to match upstream naming
+devel/py-prompt_toolkit|devel/py-prompt-toolkit|2020-12-11|Renamed to match upstream naming
+devel/py-prompt_toolkit1|devel/py-prompt-toolkit1|2020-12-11|Renamed to match upstream naming
+devel/py-prompt_toolkit2|devel/py-prompt-toolkit2|2020-12-11|Renamed to match upstream naming
 deskutils/kdepim-apps-libs|net/akonadi-contacts|2020-12-11|Reintegrated into other packages
 astro/libkgeomap||2020-12-11|No longer shipped in 20.12, as there are no consumers left
 comms/py-libconcord||2020-12-12|Has expired: Uses deprecated version of python
@@ -5666,8 +5666,8 @@ devel/allegro-devel|devel/allegro5|2021-02-20|Rename to better match upstream na
 www/py-djangorestframework311||2021-02-26|Removed: Used as a transitional package for www/seahub, please use www/py-djangorestframework instead
 editors/mg-static|editors/mg@static|2021-02-28|Flavored
 devel/snorenotify||2021-02-28|Has expired: Unmaintained upstream
-multimedia/kodi-addon-pvr-iptvsimple|multimedia/kodi-addon-pvr.iptvsimple|2021-03-01|Renamed to match upstream name
-multimedia/kodi-addon-pvr-hts|multimedia/kodi-addon-pvr.hts|2021-03-01|Renamed to match upstream name
+multimedia/kodi-addon-pvr-iptvsimple|multimedia/kodi-addon-pvr.iptvsimple|2021-03-01|Renamed to match upstream naming
+multimedia/kodi-addon-pvr-hts|multimedia/kodi-addon-pvr.hts|2021-03-01|Renamed to match upstream naming
 audio/beatslash-lv2||2021-03-01|Has expired: Unmaintained and doesn't build with the latest audio/lvtk version 2.x
 multimedia/kodi-addon-vfs.libarchive-devel||2021-03-01|Has expired: Depends on deprecated multimedia/kodi-devel
 multimedia/kodi-addon-peripheral.joystick-devel||2021-03-01|Has expired: Depends on deprecated multimedia/kodi-devel
@@ -5677,7 +5677,7 @@ print/cloud-print-connector||2021-03-01|Has expired: Google Cloud Print has been
 dns/knot2|dns/knot3|2021-03-01|Has expired: Use knot3, it is functionally compatible with 2.9.x
 print/cups-cloud-print||2021-03-01|Has expired: Google Cloud Print has been shut down by Google as of December 31, 2020
 www/helma||2021-03-01|Has expired: Upstream is basically dead and recommends ringojs.org
-multimedia/kodi-addon-peripheral-joystick|multimedia/kodi-addon-peripheral.joystick|2021-03-01|Renamed to match upstream name
+multimedia/kodi-addon-peripheral-joystick|multimedia/kodi-addon-peripheral.joystick|2021-03-01|Renamed to match upstream naming
 sysutils/py-salt-2019|sysutils/py-salt|2021-03-02|Has expired: Deprecated. Please use sysutils/py-salt instead
 www/rubygem-gitlab-puma_worker_killer|www/rubygem-puma_worker_killer|2021-03-03|Obsolete, use www/rubygem-puma_worker_killer instead
 www/rubygem-gitlab-puma|www/rubygem-puma|2021-03-03|Obsolete, use www/rubygem-puma instead
@@ -5699,7 +5699,7 @@ www/py-django-jsonfield||2021-03-24|Removed: This port will be deleted in the fu
 devel/hs-c2hs||2021-03-27|Has expired: Was used as BUILD_DEPENDS, not useful on its own
 x11-toolkits/tile||2021-03-27|Has expired: The Tile widget set is part of Tk 8.5 and above, see TIP 248
 lang/Gofer||2021-03-28|Has expired: Old, unmaintained language
-net/libsignal|net/libsignal-protocol-c|2021-03-30|Rename to match upstream naming
+net/libsignal|net/libsignal-protocol-c|2021-03-30|Renamed to match upstream naming
 databases/redis4|databases/redis|2021-04-06|Has expired: End of life, please use modern version
 lang/ruby25|lang/ruby27|2021-04-06|Has expired: Use newer version, e.g. lang/ruby27 or above. Ruby 2.5 is in security maintenance phase and planned for EOL on March 31, 2021
 www/gtkhtml3|www/gtkhtml4|2021-04-06|Has expired: Obsolete by upstream, doesn't build with recent versions of pango
@@ -5842,12 +5842,12 @@ print/rubygem-pdf-core07|print/rubygem-pdf-core|2021-05-16|Obsoleted. Use print/
 security/bitwarden_rs|security/vaultwarden|2021-05-16|Project was renamed
 sysutils/kdiskmark|benchmarks/kdiskmark|2021-05-18|Moved to a more appropriate category
 sysutils/edk2@xen|sysutils/edk2@xen_x64|2021-05-18|Add Xen arch to the flavor name to be futur-proof
-devel/py-jupyter_core|devel/py-jupyter-core|2021-05-18|Rename to match upstream naming
+devel/py-jupyter_core|devel/py-jupyter-core|2021-05-18|Renamed to match upstream naming
 devel/sope4|devel/sope|2021-05-19|Obsolete, please use devel/sope
 sysutils/ansible27|sysutils/ansible|2021-05-21|Has expired: Upstream support ended; consider upgrading to sysutils/ansible
 sysutils/ansible28|sysutils/ansible|2021-05-21|Has expired: Upstream support ended; consider upgrading to sysutils/ansible
 devel/omnisharp-server||2021-05-23|Dead upstream, no depends in ports tree
-devel/py-jupyter_client|devel/py-jupyter-client|2021-05-26|Rename to match upstream naming
+devel/py-jupyter_client|devel/py-jupyter-client|2021-05-26|Renamed to match upstream naming
 textproc/gi-docgen|textproc/py-gi-docgen|2021-05-27|Follow standard python port conventions
 x11/phosh||2021-05-29|Incomplete
 multimedia/libav|multimedia/ffmpeg|2021-05-31|Has expired: Unmaintained upstream, use multimedia/ffmpeg instead
@@ -6010,13 +6010,13 @@ www/py-django-rest-swagger|www/py-drf-yasg|2021-09-17|Has expired: Has expired: 
 www/py-django-taggit-serializer|www/py-django-taggit|2021-09-17|Has expired: Obsolete, please use www/py-django-taggit instead
 www/efront||2021-09-17|Has expired: Unsupported by upstream
 devel/pear-PHPDoc|devel/pear-PhpDocumentor|2021-09-19|This package is not maintained anymore and has been superseded. Use devel/pear-PhpDocumentor instead
-devel/py-application|devel/py-python-application|2021-09-19|Rename to match upstream naming
+devel/py-application|devel/py-python-application|2021-09-19|Renamed to match upstream naming
 net-mgmt/zabbix52-agent||2021-09-19|Has expired: Unsupported by upstream
 net-mgmt/zabbix52-frontend||2021-09-19|Has expired: Unsupported by upstream
 net-mgmt/zabbix52-java||2021-09-19|Has expired: Unsupported by upstream
 net-mgmt/zabbix52-proxy||2021-09-19|Has expired: Unsupported by upstream
 net-mgmt/zabbix52-server||2021-09-19|Has expired: Unsupported by upstream
-sysutils/roottail|sysutils/root-tail|2021-09-26|Renamed to match upstream
+sysutils/roottail|sysutils/root-tail|2021-09-26|Renamed to match upstream naming
 devel/py-pyyaml-env-tag|devel/py-pyyaml_env_tag|2021-09-28|Renamed to match upstream naming
 mail/opensmtpd-devel|mail/opensmtpd|2021-09-28|Has expired: move to offical releases
 devel/erlang-exmpp||2021-09-30|Removed, last upstream patches over 10 years ago
@@ -6106,7 +6106,7 @@ www/rubygem-rails613|www/rubygem-rails61|2021-10-22|Removed: Use www/rubygem-rai
 www/rubygem-railties613|www/rubygem-railties61|2021-10-22|Removed: Use www/rubygem-railties61 instead
 www/rubygem-responders-rails613|www/rubygem-responders-rails61|2021-10-22|Removed: Use www/rubygem-responders-rails61 instead
 net/asterisk13|net/asterisk18|2021-10-24|Has expired: Asterisk 13.x will reach EOL on 2021-10-24. Please migrate to net/asterisk18
-textproc/py-tomli_w|textproc/py-tomli-w|2021-10-25|Rename to match upstream naming
+textproc/py-tomli_w|textproc/py-tomli-w|2021-10-25|Renamed to match upstream naming
 devel/rubygem-chef-provisioning||2021-10-25|Chef Provisioning is EoL'd on August 31, 2019
 devel/rubygem-grit||2021-10-25|Deprecated by upstream. Unmaintained since January 29, 2014
 graphics/rubygem-goocanvas||2021-10-25|Deprecated by upstream. Unmaintained since October 12, 2014
@@ -6159,7 +6159,7 @@ games/xnethack-nox11|games/xnethack@nox11|2021-12-16|Turned into flavor
 devel/py-dexml||2021-12-20|Has expired: Use devel/py-dexml2
 misc/cmatrix|games/cmatrix|2021-12-20|Move to a more appropriate category
 games/homura|games/suyimazu|2021-12-21|Project renamed
-textproc/py-markdown-math|textproc/py-python-markdown-math|2021-12-21|Rename to match upstream naming
+textproc/py-markdown-math|textproc/py-python-markdown-math|2021-12-21|Renamed to match upstream naming
 databases/rubygem-flipper-active_record017|databases/rubygem-flipper-active_record|2021-12-21|Remove obsoleted port. Use databases/rubygem-flipper-active_record instead
 databases/rubygem-mysql204|databases/rubygem-mysql2|2021-12-21|Remove obsoleted port. Use databases/rubygem-mysql2 instead
 databases/rubygem-pg0|databases/rubygem-pg|2021-12-21|Remove obsoleted port. Use databases/rubygem-pg instead
@@ -6425,7 +6425,7 @@ x11-toolkits/py-qt5-quick3d|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt
 x11-toolkits/py-qt5-quickwidgets|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt5-pyqt
 x11-toolkits/py-qt5-widgets|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt5-pyqt
 x11/py-qt5-opengl|devel/py-qt5-pyqt|2022-01-27|Merged into devel/py-qt5-pyqt
-x11-fonts/sourcesanspro-ttf|x11-fonts/source-sans-ttf|2022-01-28|Rename to match upstream naming
+x11-fonts/sourcesanspro-ttf|x11-fonts/source-sans-ttf|2022-01-28|Renamed to match upstream naming
 audio/nekobi-lv2|audio/dpf-plugins-lv2|2022-01-28|Nekobi is part of dpf-plugins
 audio/kars-lv2|audio/dpf-plugins-lv2|2022-01-28|Kars is part of dpf-plugins
 converters/p5-JSON1|converters/p5-JSON|2022-01-29|Remove obsoleted port. Use converters/p5-JSON instead
@@ -6507,7 +6507,7 @@ databases/postgresql96-plpython||2022-03-11|Has expired: PostgreSQL-9.6 has reac
 databases/postgresql96-pltcl||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
 databases/postgresql96-server||2022-03-11|Has expired: PostgreSQL-9.6 has reached end-of-life
 net-im/pidgin-bs|net-im/pidgin-bot-sentry|2022-03-13|Project was renamed
-math/qalculate|math/qalculate-gtk|2022-03-14|Renamed to match project name
+math/qalculate|math/qalculate-gtk|2022-03-14|Renamed to match upstream naming
 deskutils/nautilus-actions||2022-03-15|Abandonware
 textproc/rarian||2022-03-15|Abandonware
 devel/ORBit2||2022-03-15|Gnome2 library unused anymore
@@ -7096,10 +7096,10 @@ net/zeroconf-ioslave|net/kio-zeroconf|2022-08-18|Renamed upstream
 japanese/font-hackgen-nerd|japanese/font-hackgen-nf|2022-08-20|Renamed upstream
 x11-themes/adwaita-qt|x11-themes/adwaita-qt5|2022-08-23|Renamed to make space for x11-themes/adwaita-qt6
 net/gstreamer1-plugins-libmms||2022-08-26|Microsoft deprecated MMS in 2003
-mail/py-email_reply_parser|mail/py-email-reply-parser|2022-08-27|Rename to match upstream naming
-print/py-pdf2|print/py-pypdf2|2022-08-27|Rename to match upstream naming
-textproc/py-Chameleon|textproc/py-chameleon|2022-08-27|Rename to match upstream naming
-print/py-pdf|print/py-pypdf|2022-08-27|Rename to match upstream naming
+mail/py-email_reply_parser|mail/py-email-reply-parser|2022-08-27|Renamed to match upstream naming
+print/py-pdf2|print/py-pypdf2|2022-08-27|Renamed to match upstream naming
+textproc/py-Chameleon|textproc/py-chameleon|2022-08-27|Renamed to match upstream naming
+print/py-pdf|print/py-pypdf|2022-08-27|Renamed to match upstream naming
 shells/ksh93-devel|shells/ksh-devel|2022-08-28|Development has resumed under a new GH account
 devel/boehm-gc-redirect||2022-08-29|No consumer in ports tree
 devel/libthreader|devel/libthreadar|2022-08-29|Fix directory name
@@ -7112,13 +7112,13 @@ x11-drivers/xf86-video-trident||2022-09-04|Has expired: Broken with recent xorg,
 x11-drivers/xf86-video-s3||2022-09-04|Has expired: Broken with recent xorg, no fixes upstream
 x11-drivers/xf86-video-glint||2022-09-04|Has expired: Broken with recent xorg, no fixes upstream
 www/mediawiki136||2022-09-04|Has expired: Upstream no longer maintained
-games/sopwith|games/sdl-sopwith|2022-09-04|Moved to match upstream name
+games/sopwith|games/sdl-sopwith|2022-09-04|Renamed to match upstream naming
 graphics/drm-fbsd13-kmod|graphics/drm-510-kmod|2022-09-07|Obsolete, use graphics/drm-510-kmod
 graphics/drm-54-kmod|graphics/drm-510-kmod|2022-09-07|Obsolete, use graphics/drm-510-kmod
 archivers/ppmd-7z|archivers/7-zip|2022-09-11|ppmd-7z was a mis-named p7zip project that is unmaintained and has numerous vulnerabilities, users should use 7-zip instead
 science/R-cran-AMORE||2022-09-12|Has expired: Upstream no longer maintained
 www/moodle310|www/moodle311|2022-09-12|Has expired: Upstream no longer maintained, upgrade to next LTS
-security/s2n|security/s2n-tls|2022-09-13|Moved to match upstream name
+security/s2n|security/s2n-tls|2022-09-13|Renamed to match upstream naming
 audio/kid3-kf5|audio/kid3@kf5|2022-09-13|Merged into flavorized version
 audio/kid3-qt5|audio/kid3@qt5|2022-09-13|Merged into flavorized version
 audio/phaserotate-lv2|audio/x42-plugins-lv2|2022-09-13|phaserotate-lv2 LV2 plugin is included in the x42-plugins-lv2 plugin collection
@@ -7161,7 +7161,7 @@ www/rubygem-jwt21|www/rubygem-jwt|2022-10-09|Remove obsoleted port. Use www/ruby
 www/rubygem-protocol-rack01|www/rubygem-protocol-rack|2022-10-09|Remove obsoleted port. Use www/rubygem-protocol-rack instead
 www/rubygem-rack223|www/rubygem-rack|2022-10-09|Remove obsoleted port. Use www/rubygem-rack instead
 databases/pymongo|databases/py-pymongo|2022-10-09|Add the py- prefix which all Python ports should have
-audio/protracker|audio/pt2-clone|2022-10-12|Renamed to match project name
+audio/protracker|audio/pt2-clone|2022-10-12|Renamed to match upstream naming
 multimedia/gstreamer1-transcoder|multimedia/gstreamer1-plugins-bad|2022-10-15|Upstream included transcoding in plugins-bad
 devel/py-ipykernel5|devel/py-ipykernel|2022-10-15|ipykernel5 is discontinued, ipykernel is used instead
 x11-toolkits/libshumate-shortwave|x11-toolkits/libshumate|2022-10-15|No longer used by audio/shortwave
@@ -7538,7 +7538,7 @@ textproc/rubygem-semver_dialects|devel/rubygem-semver_dialects|2023-05-15|Remove
 devel/rubygem-ruby-openai|www/rubygem-ruby-openai37|2023-05-16|Moved to match www/rubygem-ruby-openai
 sysutils/rundeck2|sysutils/rundeck3|2023-05-17|Has expired: unmaintained and newer version available in sysutils/rundeck3
 devel/gitklient|devel/kommit|2023-05-17|Renamed upstream
-math/py-python-igraph|math/py-igraph|2023-05-18|Rename to match upstream renaming
+math/py-python-igraph|math/py-igraph|2023-05-18|Renamed to match upstream naming
 www/py-dj40-django-auth-ldap|www/py-dj41-django-auth-ldap|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj40-django-rich|www/py-dj41-django-rich|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
 www/py-dj40-django-filter|www/py-dj41-django-filter|2023-05-20|Has expired: Extended support of Django 4.0 ends April 2023, upgrade to the Django 4.1+ version of this port. See https://www.djangoproject.com/download/
