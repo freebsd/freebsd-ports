@@ -1,6 +1,5 @@
 PORTNAME=	blender
-DISTVERSION=	3.4.1
-PORTREVISION=	9
+DISTVERSION=	3.5.1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -27,18 +26,18 @@ RUN_DEPENDS=	${PYNUMPY}
 # libraries are used, if either of the most common options in blender
 # are set. We will pull boost in just to be on the safe side.
 
-USES=		cmake compiler:c++17-lang cpe gl jpeg llvm:min=9 \
+USES=		cmake compiler:c++17-lang cpe gl jpeg llvm:min=9,max=15 \
 		python:3.10 shebangfix tar:xz xorg
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
 
 CMAKE_OFF=	WITH_PYTHON_INSTALL \
 		WITH_PYTHON_INSTALL_NUMPY WITH_INSTALL_PORTABLE \
-		WITH_CYCLES_LOGGING WITH_USD
+		WITH_USD
 
-SHEBANG_FILES=	release/scripts/modules/bl_i18n_utils/merge_po.py \
-		release/scripts/modules/bl_i18n_utils/utils_rtl.py \
-		release/scripts/modules/blend_render_info.py
+SHEBANG_FILES=	scripts/modules/bl_i18n_utils/merge_po.py \
+		scripts/modules/bl_i18n_utils/utils_rtl.py \
+		scripts/modules/blend_render_info.py
 CFLAGS+=	${CFLAGS_${CHOSEN_COMPILER_TYPE}}
 CFLAGS_gcc=	-Wno-float-conversion
 CFLAGS_i386=	-march=i586
@@ -71,7 +70,9 @@ COLLADA_USE=			GNOME=libxml2
 COLLADA_USES=			gnome
 COMPOSITOR_CMAKE_BOOL=		WITH_COMPOSITOR
 CYCLES_IMPLIES=			OPENIMAGEIO TBB
-CYCLES_CMAKE_BOOL=		WITH_CYCLES
+CYCLES_CMAKE_BOOL=		WITH_CYCLES WITH_CYCLES_LOGGING
+CYCLES_LIB_DEPENDS=		libgflags.so:devel/gflags
+CYCLES_LDFLAGS=			-L${LOCALBASE}/lib -lgflags
 CYCLESEMBR_IMPLIES=		CYCLES
 CYCLESEMBR_CMAKE_BOOL=		WITH_CYCLES_EMBREE
 CYCLESEMBR_LIB_DEPENDS=		libembree3.so:graphics/embree
