@@ -21,4 +21,4 @@ PG_USER?=	postgres
 PG_GROUP?=	postgres
 PG_UID?=	770
 
-.include "${.CURDIR}/../postgresql14-server/Makefile"
+.include "${.CURDIR}/../postgresql16-server/Makefile"
