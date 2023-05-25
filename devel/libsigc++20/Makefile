@@ -1,5 +1,5 @@
 PORTNAME=	libsigc++
-PORTVERSION=	2.10.8
+PORTVERSION=	2.12.0
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -10,7 +10,7 @@ WWW=		http://libsigc.sourceforge.net/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-PORTSCOUT=	limit:^2\.10\.
+PORTSCOUT=	limit:^2\.12\.
 
 INSTALL_TARGET=	install-strip
 USES=		compiler:c++11-lang meson tar:xz
