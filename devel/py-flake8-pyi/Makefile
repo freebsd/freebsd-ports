@@ -24,7 +24,7 @@ NO_ARCH=	yes
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 30900
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ast-decompiler>=0.7.0<1.0:deve/py-ast-decompiler@${PY_FLAVOR}
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}ast-decompiler>=0.7.0<1.0:devel/py-ast-decompiler@${PY_FLAVOR}
 .endif
 
 .include <bsd.port.post.mk>
