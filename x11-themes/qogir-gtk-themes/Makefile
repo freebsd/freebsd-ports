@@ -1,5 +1,5 @@
 PORTNAME=	qogir-gtk-themes
-DISTVERSION=	2023-02-27
+DISTVERSION=	2023-05-24
 CATEGORIES=	x11-themes
 
 MAINTAINER=	duchateau.olivier@gmail.com
