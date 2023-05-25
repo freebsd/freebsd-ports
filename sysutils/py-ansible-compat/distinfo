@@ -1,3 +1,3 @@
-TIMESTAMP = 1684754950
-SHA256 (ansible-compat-4.0.5.tar.gz) = 4d7e333f8d4f35b103eabc027d91b585d55dd6193a14b91187fc66b1add6c6cd
-SIZE (ansible-compat-4.0.5.tar.gz) = 65711
+TIMESTAMP = 1684999166
+SHA256 (ansible-compat-4.1.0.tar.gz) = bcc6b3cf4bb102e1b1b36a8639fee7ad18ddb1d99fb055d208c8a0f650a51621
+SIZE (ansible-compat-4.1.0.tar.gz) = 66781
