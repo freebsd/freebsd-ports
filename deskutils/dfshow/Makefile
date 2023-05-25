@@ -1,6 +1,6 @@
 PORTNAME=	dfshow
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9.7-beta
+DISTVERSION=	0.10.0-beta
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
-USES=		autoreconf gmake localbase ncurses
+USES=		autoreconf gettext-runtime gettext-tools gmake localbase ncurses
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	roberthawdon
