@@ -1,6 +1,6 @@
---- intern/cycles/CMakeLists.txt.orig	2019-07-31 13:03:30 UTC
+--- intern/cycles/CMakeLists.txt.orig	2023-05-12 23:31:31 UTC
 +++ intern/cycles/CMakeLists.txt
-@@ -260,9 +260,9 @@ if(WITH_CYCLES_DEBUG)
+@@ -312,9 +312,9 @@ endif()
    add_definitions(-DWITH_CYCLES_DEBUG)
  endif()
  
