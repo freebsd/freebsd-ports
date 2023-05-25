@@ -266,6 +266,9 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/vm_offset_t address;/s,vm_offset_t ,void *,' \
 		${WRKSRC}/src/${NVSRC}/nvidia_subr.c
 .endif
+# Fix a K&R prototype
+	${REINPLACE_CMD} -e '/nvlink_allocLock/s,(),(void),' \
+		${WRKSRC}/src/${NVSRC}/nvlink_freebsd.c
 # Finally, process OPTIONS
 .if ${PORT_OPTIONS:MFREEBSD_AGP}
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
