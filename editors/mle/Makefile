@@ -1,6 +1,6 @@
 PORTNAME=	mle
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.0
+DISTVERSION=	1.7.2
 CATEGORIES=	editors
 
 MAINTAINER=	as@php.net
@@ -11,7 +11,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/uthash.h:devel/uthash
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 TEST_DEPENDS=	${LOCALBASE}/bin/gpaste:sysutils/coreutils \
 		${LOCALBASE}/bin/grep:textproc/gnugrep \
 		bash:shells/bash \
@@ -37,10 +37,6 @@ post-patch:
 		${WRKSRC}/tests/func/*.sh
 	@${REINPLACE_CMD} -e 's|p a s t e|g p a s t e|g' \
 		${WRKSRC}/tests/func/test_lua.sh
-
-	# Remove assertion that relies on UTF-8 codeset (fixed upstream)
-	@${REINPLACE_CMD} -e '/0wv/d' \
-		${WRKSRC}/tests/unit/test_bline_insert.c
 
 	# Remove assertions that rely on GNU tooling output
 	@${REINPLACE_CMD} -e '/shell_line/d' \
