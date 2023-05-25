@@ -1,5 +1,5 @@
---- xcoloredit.c.orig	Wed May 30 22:10:09 2007
-+++ xcoloredit.c	Wed May 30 22:10:57 2007
+--- xcoloredit.c.orig	1992-01-25 08:00:21.000000000 -0800
++++ xcoloredit.c	2023-05-25 01:40:26.543747000 -0700
 @@ -38,6 +38,7 @@
   */
  
@@ -35,6 +35,15 @@
  char **argv;
  {
  	Status ok;
+@@ -350,7 +353,7 @@
+ 	unboxedGC = XtGetGC(mixingForm, GCForeground | GCLineWidth, &values);
+ 
+ 	original_background = values.foreground;
+-	bars_locked = NULL;
++	bars_locked = 0;
+ 
+ 	XtAddCallback(redScroll, XtNjumpProc, Thumbed, (XtPointer)RED);
+ 	XtAddCallback(greenScroll, XtNjumpProc, Thumbed, (XtPointer)GREEN);
 @@ -696,7 +699,7 @@
  								(float)0.025);
  	XawScrollbarSetThumb(valScroll, (float)(1.0 - hsv_values.v),
