@@ -1,7 +1,6 @@
 PORTNAME=	oidn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.3
-PORTREVISION=	6
+DISTVERSION=	2.0.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://freebsd.org/:weights # bogus URL to make the framework happy, the fetch uses Git URL below
 DISTFILES=	${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}:weights
@@ -26,7 +25,9 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenImageDenoise
-GH_TUPLE=	OpenImageDenoise:mkl-dnn:f53274c:m/mkl-dnn
+GH_TUPLE=	OpenImageDenoise:mkl-dnn:9bea36e:m/external/mkl-dnn \
+		ROCmSoftwarePlatform:composable_kernel:e85178b:composable_kernel/external/composable_kernel \
+		NVIDIA:cutlass:66d9cdd:cutlass/external/cutlass
 
 CMAKE_ARGS=	-DTBB_ROOT:STRING=${LOCALBASE} -DTBB_INCLUDE_DIR:STRING=${LOCALBASE}/include -DPYTHON_EXECUTABLE:STRING=${PYTHON_CMD}
 
@@ -47,7 +48,7 @@ OPENIMAGEIO_LIB_DEPENDS=	libOpenImageIO.so:graphics/openimageio
 OPENIMAGEIO_IMPLIES=		APPS # OpenImageIO is only used by apps and examples
 
 WEIGHTS_GIT_URL=	https://github.com/OpenImageDenoise/oidn-weights.git
-WEIGHTS_GIT_HASH=	a34b7641349c5a79e46a617d61709c35df5d6c28
+WEIGHTS_GIT_HASH=	4322c25e25a05584f65da1a4be5cef40a4b2e90b
 
 pre-fetch:
 	@if [ "${FORCE_FETCH_ALL}" = "true" ] || ! [ -f "${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-weights-${WEIGHTS_GIT_HASH}${EXTRACT_SUFX}" ]; then \
