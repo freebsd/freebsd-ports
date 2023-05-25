@@ -17,9 +17,6 @@ lib/lv2/controlfilter.lv2/controlfilter.so
 lib/lv2/controlfilter.lv2/controlfilter.ttl
 lib/lv2/controlfilter.lv2/manifest.ttl
 lib/lv2/controlfilter.lv2/presets.ttl
-lib/lv2/convo.lv2/convoLV2.so
-lib/lv2/convo.lv2/convoLV2.ttl
-lib/lv2/convo.lv2/manifest.ttl
 lib/lv2/darc.lv2/darc.so
 lib/lv2/darc.lv2/darc.ttl
 lib/lv2/darc.lv2/darcUI_gl.so
