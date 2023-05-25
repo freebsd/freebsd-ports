@@ -2,10 +2,11 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		abscissa_derive-0.6.0 \
 		addr2line-0.19.0 \
 		adler-1.0.2 \
-		aho-corasick-0.7.20 \
+		aho-corasick-1.0.1 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.70 \
+		anyhow-1.0.71 \
 		arc-swap-1.6.0 \
+		ash-0.30.0 \
 		askama_derive-0.11.2 \
 		askama_escape-0.10.3 \
 		askama_shared-0.12.2 \
@@ -13,8 +14,8 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		atom_syndication-0.12.1 \
 		atty-0.2.14 \
 		auditable-extract-0.3.2 \
-		auditable-info-0.6.2 \
-		auditable-serde-0.5.2 \
+		auditable-info-0.7.0 \
+		auditable-serde-0.6.0 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
 		base64-0.13.1 \
@@ -22,7 +23,7 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		binfarce-0.2.1 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.4 \
-		bumpalo-3.12.0 \
+		bumpalo-3.12.2 \
 		byteorder-1.3.1 \
 		byteorder-1.4.3 \
 		bytes-1.4.0 \
@@ -30,33 +31,28 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		canonical-path-2.0.2 \
 		cargo_metadata-0.14.2 \
 		cargo-edit-9-0.9.3 \
-		cargo-lock-8.0.3 \
 		cargo-platform-0.1.2 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
+		chrono-0.4.19 \
 		chrono-0.4.24 \
-		clap_derive-3.2.18 \
+		clap_derive-3.2.25 \
 		clap_lex-0.2.4 \
-		clap-3.2.23 \
-		codespan-reporting-0.11.1 \
+		clap-3.2.25 \
 		color-eyre-0.6.2 \
 		combine-4.6.6 \
-		comrak-0.16.0 \
+		comrak-0.18.0 \
 		concolor-control-0.0.7 \
 		concolor-query-0.0.4 \
 		core-foundation-0.9.3 \
-		core-foundation-sys-0.8.3 \
-		cpufeatures-0.2.6 \
-		crates-index-0.19.7 \
-		crossbeam-channel-0.5.7 \
+		core-foundation-sys-0.8.4 \
+		cpufeatures-0.2.7 \
+		crates-index-0.19.10 \
+		crossbeam-channel-0.5.8 \
 		crossbeam-deque-0.8.3 \
 		crossbeam-epoch-0.9.14 \
 		crossbeam-utils-0.8.15 \
 		crypto-common-0.1.6 \
-		cxx-1.0.94 \
-		cxx-build-1.0.94 \
-		cxxbridge-flags-1.0.94 \
-		cxxbridge-macro-1.0.94 \
 		darling_core-0.14.4 \
 		darling_macro-0.14.4 \
 		darling-0.14.4 \
@@ -68,13 +64,12 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		diligent-date-parser-0.1.4 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
-		dunce-1.0.3 \
+		dunce-1.0.4 \
 		either-1.8.1 \
 		encoding_rs-0.8.32 \
 		entities-1.0.1 \
 		env_proxy-0.4.1 \
-		errno-0.2.8 \
-		errno-0.3.0 \
+		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		eyre-0.6.8 \
 		fastrand-1.9.0 \
@@ -87,7 +82,7 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		form_urlencoded-1.1.0 \
 		fs-err-2.9.0 \
 		generic-array-0.14.7 \
-		getrandom-0.2.8 \
+		getrandom-0.2.9 \
 		gimli-0.27.2 \
 		git2-0.16.1 \
 		gumdrop_derive-0.8.1 \
@@ -99,33 +94,33 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		hermit-abi-0.2.6 \
 		hermit-abi-0.3.1 \
 		hex-0.4.3 \
-		home-0.5.4 \
+		home-0.5.5 \
 		humansize-1.1.1 \
 		humantime-2.1.0 \
 		humantime-serde-1.1.1 \
-		iana-time-zone-0.1.54 \
-		iana-time-zone-haiku-0.1.1 \
+		iana-time-zone-0.1.56 \
+		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
 		idna-0.2.3 \
 		idna-0.3.0 \
+		inconceivable-0.9.0 \
 		indenter-0.3.3 \
 		indexmap-1.8.1 \
 		indexmap-1.9.3 \
 		instant-0.1.12 \
-		io-lifetimes-1.0.9 \
+		io-lifetimes-1.0.10 \
 		itertools-0.10.5 \
 		itoa-1.0.6 \
 		jobserver-0.1.26 \
-		js-sys-0.3.61 \
+		js-sys-0.3.62 \
 		kstring-1.0.6 \
 		lazy_static-1.4.0 \
-		libc-0.2.140 \
+		libc-0.2.144 \
 		libgit2-sys-0.14.2+1.5.1 \
+		libloading-0.5.2 \
 		libssh2-sys-0.2.23 \
-		libz-sys-1.1.8 \
-		link-cplusplus-1.0.8 \
-		linux-raw-sys-0.1.4 \
-		linux-raw-sys-0.3.1 \
+		libz-sys-1.1.9 \
+		linux-raw-sys-0.3.7 \
 		log-0.4.17 \
 		matchers-0.1.0 \
 		matches-0.1.9 \
@@ -144,87 +139,88 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		num-traits-0.2.15 \
 		object-0.30.3 \
 		once_cell-1.17.1 \
-		openssl-0.10.49 \
+		openssl-0.10.52 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
-		openssl-src-111.25.2+1.1.1t \
-		openssl-sys-0.9.84 \
+		openssl-src-111.25.3+1.1.1t \
+		openssl-sys-0.9.87 \
 		os_str_bytes-6.5.0 \
 		overload-0.1.1 \
 		owo-colors-3.5.0 \
+		parity-wasm-0.45.0 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.1.0 \
 		percent-encoding-2.2.0 \
-		pest_derive-2.5.7 \
-		pest_generator-2.5.7 \
-		pest_meta-2.5.7 \
-		pest-2.5.7 \
 		petgraph-0.6.0 \
 		petgraph-0.6.3 \
 		pin-project-lite-0.2.9 \
-		pkg-config-0.3.26 \
+		pkg-config-0.3.27 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.37 \
-		proc-macro2-1.0.55 \
-		quick-xml-0.28.1 \
+		proc-macro2-1.0.57 \
+		quick-xml-0.28.2 \
 		quote-1.0.18 \
-		quote-1.0.26 \
+		quote-1.0.27 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regex-1.7.3 \
+		regex-1.8.1 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.29 \
+		regex-syntax-0.7.1 \
 		ring-0.16.20 \
 		rust-embed-6.6.1 \
 		rust-embed-impl-6.5.0 \
 		rust-embed-utils-7.5.0 \
-		rustc-demangle-0.1.22 \
+		rustc_version-0.2.3 \
+		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
-		rustix-0.36.11 \
-		rustix-0.37.6 \
+		rustix-0.37.19 \
 		rustls-0.20.8 \
+		rustsec-example-crate-0.0.0 \
 		rustsec-example-crate-0.0.1 \
 		ryu-1.0.13 \
 		same-file-1.0.6 \
 		schannel-0.1.21 \
 		scopeguard-1.1.0 \
-		scratch-1.0.5 \
 		sct-0.7.0 \
 		secrecy-0.8.0 \
-		security-framework-2.8.2 \
-		security-framework-sys-2.8.0 \
+		security-framework-2.9.0 \
+		security-framework-sys-2.9.0 \
+		semver-0.9.0 \
 		semver-1.0.17 \
 		semver-1.0.7 \
+		semver-parser-0.7.0 \
 		serde_derive-1.0.136 \
-		serde_derive-1.0.159 \
-		serde_json-1.0.95 \
+		serde_derive-1.0.163 \
+		serde_json-1.0.96 \
 		serde_spanned-0.6.1 \
 		serde-1.0.136 \
-		serde-1.0.159 \
+		serde-1.0.163 \
 		sha2-0.10.6 \
 		sharded-slab-0.1.4 \
 		slug-0.1.4 \
 		smallvec-1.10.0 \
-		smol_str-0.1.24 \
+		smol_str-0.2.0 \
 		socks-0.3.4 \
 		spin-0.5.2 \
 		strsim-0.10.0 \
 		subprocess-0.2.9 \
 		syn-1.0.109 \
 		syn-1.0.91 \
-		syn-2.0.13 \
+		syn-2.0.16 \
 		synstructure-0.12.6 \
 		tempfile-3.5.0 \
 		termcolor-1.2.0 \
-		terminal_size-0.2.5 \
+		terminal_size-0.2.6 \
 		textwrap-0.16.0 \
 		thiserror-1.0.40 \
 		thiserror-impl-1.0.40 \
 		thread_local-1.1.7 \
+		time-0.1.45 \
 		tinyvec_macros-0.1.0 \
 		tinyvec_macros-0.1.1 \
 		tinyvec-1.5.1 \
@@ -237,13 +233,12 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		toml-0.7.3 \
 		topological-sort-0.2.2 \
 		tracing-0.1.37 \
-		tracing-attributes-0.1.23 \
-		tracing-core-0.1.30 \
+		tracing-attributes-0.1.24 \
+		tracing-core-0.1.31 \
 		tracing-log-0.1.3 \
-		tracing-subscriber-0.3.16 \
+		tracing-subscriber-0.3.17 \
 		typed-arena-2.0.2 \
 		typenum-1.16.0 \
-		ucd-trie-0.1.5 \
 		unicase-2.6.0 \
 		unicode_categories-0.1.1 \
 		unicode-bidi-0.3.13 \
@@ -251,7 +246,6 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		unicode-ident-1.0.8 \
 		unicode-normalization-0.1.19 \
 		unicode-normalization-0.1.22 \
-		unicode-width-0.1.10 \
 		unicode-xid-0.2.2 \
 		unicode-xid-0.2.4 \
 		untrusted-0.7.1 \
@@ -263,13 +257,14 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.3 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.84 \
-		wasm-bindgen-backend-0.2.84 \
-		wasm-bindgen-macro-0.2.84 \
-		wasm-bindgen-macro-support-0.2.84 \
-		wasm-bindgen-shared-0.2.84 \
-		web-sys-0.3.61 \
+		wasm-bindgen-0.2.85 \
+		wasm-bindgen-backend-0.2.85 \
+		wasm-bindgen-macro-0.2.85 \
+		wasm-bindgen-macro-support-0.2.85 \
+		wasm-bindgen-shared-0.2.85 \
+		web-sys-0.3.62 \
 		webpki-0.22.0 \
 		webpki-roots-0.22.6 \
 		winapi-0.3.9 \
@@ -277,16 +272,25 @@ CARGO_CRATES=	abscissa_core-0.6.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
 		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
 		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
 		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
 		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
 		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.42.2 \
-		windows-0.46.0 \
+		windows_x86_64_msvc-0.48.0 \
+		windows-0.48.0 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
-		winnow-0.4.1 \
-		xml-rs-0.8.4 \
+		windows-targets-0.48.0 \
+		winnow-0.4.6 \
+		xml-rs-0.8.11 \
 		zeroize-1.6.0
