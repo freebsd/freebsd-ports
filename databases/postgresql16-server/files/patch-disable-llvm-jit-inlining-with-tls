@@ -1,0 +1,24 @@
+Do not inline functions which access TLS in LLVM JIT, as
+this leads to crashes with unsupported relocation error
+
+diff --git src/backend/jit/llvm/llvmjit_inline.cpp src/backend/jit/llvm/llvmjit_inline.cpp
+index 2617a46..a063edb 100644
+--- src/backend/jit/llvm/llvmjit_inline.cpp
++++ src/backend/jit/llvm/llvmjit_inline.cpp
+@@ -608,6 +608,16 @@ function_inlinable(llvm::Function &F,
+ 		if (rv->materialize())
+ 			elog(FATAL, "failed to materialize metadata");
+ 
++		/*
++		 * Don't inline functions with thread-local variables until
++		 * related crashes are investigated (see BUG #16696)
++		 */
++		if (rv->isThreadLocal()) {
++			ilog(DEBUG1, "cannot inline %s due to thread-local variable %s",
++				F.getName().data(), rv->getName().data());
++			return false;
++		}
++
+ 		/*
+ 		 * Never want to inline externally visible vars, cheap enough to
+ 		 * reference.
