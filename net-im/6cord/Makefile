@@ -69,6 +69,9 @@ GL_COMMIT=	ba5dcdd139d35078f31d957e4fb43f88528a32f5
 GL_TUPLE=	diamondburned:go-w3m:1b390b8a3d1fd142bcaf77a949223cb36ef84cbc:diamondburned_go_w3m/vendor/gitlab.com/diamondburned/go-w3m \
 		diamondburned:ueberzug-go:7c15a5f63b064530b92411f2850d0fc7fe9059ea:diamondburned_ueberzug_go/vendor/gitlab.com/diamondburned/ueberzug-go
 
+DEPRECATED=	Upstream no longer maintained
+EXPIRATION_DATE=	2023-08-25
+
 GO_BUILDFLAGS=	-tags nokeyring
 
 SUB_FILES=	pkg-message
