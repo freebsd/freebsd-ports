@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.7
 CATEGORIES=	security
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OAuth2/OIDC Client and Relying Party library
 WWW=		https://github.com/babelouest/iddawc
 

@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.9
 CATEGORIES=	security
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Javascript Object Signing and Encryption (JOSE) library
 WWW=		https://github.com/babelouest/rhonabwy
 
