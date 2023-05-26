@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230526:
+  AFFECTS: users of mail/exim
+  AUTHOR: pi@FreeBSD.org
+
+  The port changes from USE_DB to USE_NDBM. Any existing configuration like
+  ${lookup{$needle}dbm{haystack.db}}
+  will need to change to
+  ${lookup{$needle}dbm{haystack}}.
+
+  Please also rename your old DBM files while the exim daemon is stopped:
+  find /var/spool/exim/db/* -not -name \*.lockfile -exec mv -i {} {}.db \;
+
 20230513:
   AFFECTS: users of www/tt-rss
   AUTHOR: dereks@lifeofadishwasher.com
