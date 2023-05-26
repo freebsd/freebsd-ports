@@ -4122,6 +4122,7 @@
     SUBDIR += poco
     SUBDIR += poetry
     SUBDIR += popt
+    SUBDIR += poser
     SUBDIR += poxml
     SUBDIR += ppl
     SUBDIR += pprof
