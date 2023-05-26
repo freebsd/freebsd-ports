@@ -4,7 +4,7 @@ CATEGORIES=	mail
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official Python bindings for the GNU Mailman 3 REST API
 WWW=		https://gitlab.com/mailman/mailmanclient
 
