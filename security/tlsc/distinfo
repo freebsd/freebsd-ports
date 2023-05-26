@@ -1,5 +1,3 @@
-TIMESTAMP = 1683715711
-SHA256 (Zirias-tlsc-v1.3_GH0.tar.gz) = 37bdf6975d099e0481cab1270191254b8527e925e151b1ca94bf790db31b146e
-SIZE (Zirias-tlsc-v1.3_GH0.tar.gz) = 23249
-SHA256 (Zirias-zimk-0def4fa_GH0.tar.gz) = faff68b6f7a0e337c9d42da7a7686b83e64a430592471d7eeaee3c5e2525d8fc
-SIZE (Zirias-zimk-0def4fa_GH0.tar.gz) = 12738
+TIMESTAMP = 1685715308
+SHA256 (tlsc-2.0.tar.xz) = 3f5b53c08f8e5ae1163da59ae7b5cc23294ea195d3de53b7f8e238e385fc2de3
+SIZE (tlsc-2.0.tar.xz) = 17164

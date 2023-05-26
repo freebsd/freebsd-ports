@@ -1,7 +1,8 @@
-PORTNAME=	tlsc
-DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3
-CATEGORIES=	security
+PORTNAME=		tlsc
+DISTVERSION=		2.0
+CATEGORIES=		security
+MASTER_SITES=		https://github.com/Zirias/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/download/v${DISTVERSION}
 
 MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	TLS connect daemon
@@ -10,12 +11,9 @@ WWW=		https://github.com/Zirias/tlsc
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c11 gmake ssl
+LIB_DEPENDS=	libposercore.so:devel/poser
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Zirias
-GH_PROJECT=	zimk:zimk
-GH_TAGNAME=	0def4fa:zimk
+USES=		compiler:c11 gmake pkgconfig tar:xz
 
 USE_RC_SUBR=	${PORTNAME}
 
@@ -26,8 +24,5 @@ USERS=		tlsc
 GROUPS=		tlsc
 
 PLIST_FILES=	bin/tlsc
-
-post-extract:
-	@${MV} ${WRKSRC_zimk}/* ${WRKSRC}/zimk/
 
 .include <bsd.port.mk>
