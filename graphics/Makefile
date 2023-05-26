@@ -1,5 +1,6 @@
     COMMENT = Graphics tools and libraries
 
+    SUBDIR += 3d-ascii-viewer-c
     SUBDIR += 4va
     SUBDIR += Coin
     SUBDIR += GraphicsMagick
