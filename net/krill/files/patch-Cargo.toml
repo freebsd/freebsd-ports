@@ -1,19 +1,17 @@
---- Cargo.toml.orig	2022-09-08 14:50:49 UTC
+--- Cargo.toml.orig	2023-04-26 14:23:10 UTC
 +++ Cargo.toml
-@@ -76,7 +76,6 @@ syslog          = "^4.0"
- [features]
+@@ -76,13 +76,12 @@ syslog          = "^4.0"
  default = [ "multi-user", "hsm" ]
+ hsm = ["backoff", "kmip", "once_cell", "cryptoki", "r2d2"]
  multi-user = [ "basic-cookies", "jmespatch/sync", "regex", "oso", "openidconnect", "rpassword", "scrypt", "unicode-normalization", "urlparse" ]
 -static-openssl = [ "openssl/vendored" ]
  
  # Preview features - not ready for production use
- aspa = []
-@@ -84,7 +83,7 @@ rta = []
- hsm = ["backoff", "kmip", "once_cell", "cryptoki", "r2d2"]
+ rta = []
  
  # Internal features - not for external use
--all-except-ui-tests = [ "multi-user", "rta", "static-openssl", "aspa" ]
-+all-except-ui-tests = [ "multi-user", "rta", "aspa" ]
- ui-tests = []
+-all = [ "multi-user", "rta", "static-openssl" ]
++all = [ "multi-user", "rta"]
  hsm-tests-kmip = [ "hsm" ]
  hsm-tests-pkcs11 = [ "hsm" ]
+ 
