@@ -25,7 +25,7 @@ Supported backends and default probing order is as follows:
 To force a specific backend open `about:config` page and create
 `media.cubeb.backend` preference.
 
-Microphone selection only works in `oss`, `pulse`, `pulse-rust` backends.
+Microphone selection only works in `oss`, `pulse-rust` backends.
 Other backends are limited to `default` which is usually `/dev/dsp`,
 so use virtual_oss to reroute microphones from non-default devices.
 
