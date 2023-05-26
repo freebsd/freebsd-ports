@@ -1,0 +1,47 @@
+bin/crow
+share/Crow Translate/Crow Translate/translations/crow-translate_ar_SA.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_az_AZ.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_de_DE.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_el_GR.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_es_ES.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_fi_FI.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_fr_FR.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_hi_IN.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_hu_HU.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_id_ID.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_it_IT.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_ko_KR.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_ms_MY.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_nl_NL.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_pl_PL.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_pt_BR.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_pt_PT.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_ru_RU.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_sq_AL.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_tr_TR.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_ug_CN.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_uk_UA.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_zh_CN.qm
+share/Crow Translate/Crow Translate/translations/crow-translate_zh_TW.qm
+share/applications/io.crow_translate.CrowTranslate.desktop
+share/icons/hicolor/128x128/apps/crow-translate.png
+share/icons/hicolor/150x150/apps/crow-translate.png
+share/icons/hicolor/16x16/apps/crow-translate.png
+share/icons/hicolor/16x16/status/crow-translate-tray-dark.png
+share/icons/hicolor/16x16/status/crow-translate-tray-light.png
+share/icons/hicolor/22x22/apps/crow-translate.png
+share/icons/hicolor/22x22/status/crow-translate-tray-dark.png
+share/icons/hicolor/22x22/status/crow-translate-tray-light.png
+share/icons/hicolor/24x24/status/crow-translate-tray-dark.png
+share/icons/hicolor/24x24/status/crow-translate-tray-light.png
+share/icons/hicolor/256x256/apps/crow-translate.png
+share/icons/hicolor/310x310/apps/crow-translate.png
+share/icons/hicolor/32x32/apps/crow-translate.png
+share/icons/hicolor/44x44/apps/crow-translate.png
+share/icons/hicolor/48x48/apps/crow-translate.png
+share/icons/hicolor/512x512/apps/crow-translate.png
+share/icons/hicolor/64x64/apps/crow-translate.png
+share/icons/hicolor/scalable/apps/crow-translate.svg
+share/icons/hicolor/scalable/status/crow-translate-tray-dark.svg
+share/icons/hicolor/scalable/status/crow-translate-tray-light.svg
+share/metainfo/io.crow_translate.CrowTranslate.metainfo.xml

@@ -116,6 +116,7 @@
     SUBDIR += cpp-peglib
     SUBDIR += cpptoml
     SUBDIR += crex
+    SUBDIR += crow-translate
     SUBDIR += crunch
     SUBDIR += cs-aspell
     SUBDIR += cs-hunspell
