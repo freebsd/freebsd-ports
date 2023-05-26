@@ -1,4 +1,4 @@
---- absl/base/internal/unscaledcycleclock.cc.orig	2020-08-09 20:09:49 UTC
+--- absl/base/internal/unscaledcycleclock.cc.orig	2021-11-03 15:26:14 UTC
 +++ absl/base/internal/unscaledcycleclock.cc
 @@ -24,8 +24,10 @@
  #ifdef __GLIBC__
