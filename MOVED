@@ -7509,6 +7509,7 @@ science/cdcl||2023-04-21|Has expired: Broken since 2021
 science/rubygem-ruby-dcl||2023-04-21|Has expired: requires deprecated science/cdcl
 net-im/webinar||2023-04-24|Has expired: Requires EOLed electron18
 devel/electron18||2023-04-24|Has expired: EOLed upstream, switch to newer version
+x11/libdmx||2023-04-25|Upstream removed support for Xdmx server
 devel/datovka|mail/datovka|2023-04-25|Move port to proper category
 benchmarks/super-smack||2023-04-30|Has expired: Unfetchable
 www/moodle39||2023-04-30|Has expired: Requires php74 which has been removed from the tree
