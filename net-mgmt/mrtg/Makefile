@@ -1,5 +1,6 @@
 PORTNAME=	mrtg
 PORTVERSION=	2.17.10
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
@@ -7,17 +8,20 @@ MASTER_SITES=	http://oss.oetiker.ch/mrtg/pub/ \
 		ftp://ftp.nstu.ru/pub/sources/nettools/monitoring/ \
 		ftp://ftp.chg.ru/pub/networking/monitoring/mrtg/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Multi-router traffic grapher
 WWW=		https://oss.oetiker.ch/mrtg/
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libgd.so:graphics/gd \
+LIB_DEPENDS=	libgd.so:${GD_PORT} \
 		libpng16.so:graphics/png
 RUN_DEPENDS=	p5-SNMP_Session>=0:net-mgmt/p5-SNMP_Session
 
 USES=		perl5 shebangfix
+
+# override with languages specific gd fonts
+GD_PORT?=	graphics/gd
 
 CONFIGURE_ARGS=	--with-gd-lib=${LOCALBASE}/lib \
 		--with-gd-inc=${LOCALBASE}/include
