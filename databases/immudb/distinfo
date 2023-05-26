@@ -1,0 +1,5 @@
+TIMESTAMP = 1685050165
+SHA256 (go/databases_immudb/immudb-v1.4.1/v1.4.1.mod) = cba588a430551addda983e4864a96d48d0b9205f9da1b92c3641af9c86b39b4e
+SIZE (go/databases_immudb/immudb-v1.4.1/v1.4.1.mod) = 2388
+SHA256 (go/databases_immudb/immudb-v1.4.1/v1.4.1.zip) = d8aca5ed02f6080c845c9d60e679fa4432d300084cd3e6108a9be82b10167378
+SIZE (go/databases_immudb/immudb-v1.4.1/v1.4.1.zip) = 3019202

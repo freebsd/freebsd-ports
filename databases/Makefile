@@ -102,6 +102,7 @@
     SUBDIR += hashtypes
     SUBDIR += hiredis
     SUBDIR += hsqldb
+    SUBDIR += immudb
     SUBDIR += influxdb
     SUBDIR += influxdb2-cli
     SUBDIR += innotop

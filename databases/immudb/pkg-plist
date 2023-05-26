@@ -1,0 +1,4 @@
+bin/immuadmin
+bin/immuclient
+bin/immudb
+bin/immutest
