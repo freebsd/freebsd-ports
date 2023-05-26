@@ -30,7 +30,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler-windows.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-WS-231.8770.64
+%%DATADIR%%/lib/build-marker-WS-231.9011.35
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
