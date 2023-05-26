@@ -1,0 +1,50 @@
+From 57d70161718e02927a22d6a3481803b72035ac46 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Sat, 31 Dec 2022 13:37:17 +0000
+Subject: [PATCH] Close server smtp socket explicitly on connect ACL "drop"
+
+---
+ src/smtp_in.c            | 13 ++++++++
+ test/confs/0022              |  2 ++
+ test/log/0022                |  2 ++
+ test/rejectlog/0022          |  3 ++
+ test/scripts/0000-Basic/0022 | 13 ++++++++
+ test/stderr/0022             | 60 ++++++++++++++++++------------------
+ test/stdout/0022             |  6 ++++
+ 7 files changed, 69 insertions(+), 30 deletions(-)
+ create mode 100644 test/rejectlog/0022
+
+diff --git a/src/smtp_in.c b/src/smtp_in.c
+index 1cfcc0404..6880e3c09 100644
+--- a/src/smtp_in.c
++++ b/src/smtp_in.c
+@@ -3563,10 +3563,23 @@ log_write(L_smtp_connection, LOG_MAIN, "%s closed by DROP in ACL",
+ /* Run the not-quit ACL, but without any custom messages. This should not be a
+ problem, because we get here only if some other ACL has issued "drop", and
+ in that case, *its* custom messages will have been used above. */
+ 
+ smtp_notquit_exit(US"acl-drop", NULL, NULL);
++
++/* An overenthusiastic fail2ban/iptables implimentation has been seen to result
++in the TCP conn staying open, and retrying, despite this process exiting. A
++malicious client could possibly do the same, tying up server netowrking
++resources. Close the socket explicitly to try to avoid that (there's a note in
++the Linux socket(7) manpage, SO_LINGER para, to the effect that exim() without
++close() results in the socket always lingering). */
++
++(void) poll_one_fd(fileno(smtp_in), POLLIN, 200);
++DEBUG(D_any) debug_printf_indent("SMTP(close)>>\n");
++(void) fclose(smtp_in);
++(void) fclose(smtp_out);
++
+ return 2;
+ }
+ 
+ 
+ 
+diff --git a/test/rejectlog/0022 b/test/rejectlog/0022
+new file mode 100644
+index 000000000..68e21fff3
+-- 
+2.39.0
+
