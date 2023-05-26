@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.10
+DISTVERSION=	1.6.11
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -55,7 +55,7 @@ GH_TUPLE=	\
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		leporo:sqlf:v1.4.0:leporo_sqlf/vendor/github.com/leporo/sqlf \
 		lukechampine:uint128:v1.3.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
-		mattn:go-isatty:v0.0.18:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-isatty:v0.0.19:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
 		mattn:go-runewidth:v0.0.14:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mattn:go-shellwords:v1.0.12:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
 		mhale:smtpd:v0.8.0:mhale_smtpd/vendor/github.com/mhale/smtpd \
