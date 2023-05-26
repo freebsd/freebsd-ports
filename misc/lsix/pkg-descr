@@ -1,0 +1,3 @@
+This program is like ls(1), but for images: it shows thumbnails in
+terminal using DEC SIXEL graphics.  It uses ImageMagick, so pretty
+much any image format will be supported.

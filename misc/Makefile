@@ -246,6 +246,7 @@
     SUBDIR += localedata
     SUBDIR += logsurfer
     SUBDIR += lscolors
+    SUBDIR += lsix
     SUBDIR += lv
     SUBDIR += lxde-common
     SUBDIR += lxi-tools
