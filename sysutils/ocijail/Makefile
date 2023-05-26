@@ -10,7 +10,7 @@ LICENSE=	BSD3CLAUSE
 
 IGNORE_FreeBSD_12= Not supported on FreeBSD 12 (uses c++20)
 
-BUILD_DEPENDS=	bazel:devel/bazel bash:shells/bash
+BUILD_DEPENDS=	bazel:devel/bazel5 bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dfr

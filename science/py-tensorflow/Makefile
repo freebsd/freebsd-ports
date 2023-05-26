@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		bash:shells/bash \
 		cython:lang/cython \
 		swig:devel/swig \
-		bazel:devel/bazel \
+		bazel:devel/bazel5 \
 		git:devel/git
 LIB_DEPENDS=	libnsync.so:devel/nsync \
 		libgpr.so:devel/grpc \
