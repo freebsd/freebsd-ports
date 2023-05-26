@@ -1,6 +1,6 @@
 PORTNAME=	rofi-emoji
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.1
+DISTVERSION=	3.2.0
 CATEGORIES=	x11
 
 MAINTAINER=	maja.reberc@freedommail.ch
