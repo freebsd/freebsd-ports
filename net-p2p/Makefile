@@ -27,7 +27,7 @@
     SUBDIR += deluge
     SUBDIR += deluge-cli
     SUBDIR += ed2k
-    SUBDIR += edonkey-tool-hash
+    SUBDIR += ed2k-hash
     SUBDIR += eiskaltdcpp-cli
     SUBDIR += eiskaltdcpp-daemon
     SUBDIR += eiskaltdcpp-data
