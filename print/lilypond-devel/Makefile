@@ -1,6 +1,5 @@
 PORTNAME=	lilypond
-DISTVERSION=	2.23.80
-PORTREVISION=	1
+DISTVERSION=	2.25.5
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 PKGNAMESUFFIX=	-devel
@@ -27,14 +26,15 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libgmp.so:math/gmp \
 		libguile-2.2.so:lang/guile2 \
 		libharfbuzz.so:print/harfbuzz \
-		libltdl.so:devel/libltdl
+		libltdl.so:devel/libltdl \
+		libpng16.so:graphics/png
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu \
 		mftrace:print/mftrace
 
 USES=		bison:build compiler:c++11-lib cpe ghostscript gmake gnome \
 		magick:7,build perl5 pkgconfig python:3.5+
 USE_CXXSTD=	c++14
-USE_GNOME=	pango
+USE_GNOME=	cairo pango
 USE_PERL5=	build
 
 GNU_CONFIGURE=		yes
@@ -75,8 +75,6 @@ URW_RUN_DEPENDS_OFF=	urw-base35-fonts>0:x11-fonts/urw-base35-fonts
 URW_CONFIGURE_WITH=	urwotf-dir=${LOCALBASE}/share/fonts/urw-base35-fonts
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|<FlexLexer.h>|"/usr/include/FlexLexer.h"|' \
-		${WRKSRC}/lily/include/includable-lexer.hh
 	@${SED} -e 's|%%FONTDIR%%|${WRKDIR}/fontconfig/cache/|'  \
 		${FILESDIR}/fonts.conf > ${WRKDIR}/.fonts.conf
 

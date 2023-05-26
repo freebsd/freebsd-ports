@@ -1,6 +1,6 @@
---- Documentation/GNUmakefile.orig	2022-03-26 15:12:51 UTC
+--- Documentation/GNUmakefile.orig	2023-05-21 08:46:38 UTC
 +++ Documentation/GNUmakefile
-@@ -188,6 +188,7 @@ INFO_DOCS = \
+@@ -139,6 +139,7 @@ INFO_DOCS = \
    lilypond-internals \
    lilypond-learning \
    lilypond-notation \
@@ -8,7 +8,7 @@
    lilypond-usage \
    music-glossary
  # Some info files should only be processed if `$(out)` is equal to `www`, but we
-@@ -196,11 +197,9 @@ INFO_DOCS = \
+@@ -147,11 +148,9 @@ INFO_DOCS = \
  # older LilyPond versions inserted more entries that are no longer present.
  ALL_INFO_DOCS = \
    $(INFO_DOCS) \
