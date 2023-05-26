@@ -1,4 +1,5 @@
-SHA256 (BlenderManualIen.23.html.tar.gz) = 56c5c9f8a3432be5856a6c0127cde4feed29b420b7d118124220909fcc5ff1cf
-SIZE (BlenderManualIen.23.html.tar.gz) = 42009856
-SHA256 (BlenderManualIIen.23.html.tar.gz) = 24d1efbce60fc1a3fffe26a6f87497b8b8650bf0d596b1be1b8e02c91a12eead
-SIZE (BlenderManualIIen.23.html.tar.gz) = 2826944
+TIMESTAMP = 1685049956
+SHA256 (blender-doc-3.5/blender_manual_html.zip) = aba3c29c1ed0145a222a11d298dd51e952ad24d886426168b2d36ee21bdc16bb
+SIZE (blender-doc-3.5/blender_manual_html.zip) = 263326985
+SHA256 (blender-doc-3.5/blender_manual_epub.zip) = 1c51afda32a18a5926d33c8a229d737982b966a532736940e74b18a8b92f0f88
+SIZE (blender-doc-3.5/blender_manual_epub.zip) = 253200767

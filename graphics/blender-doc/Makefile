@@ -1,26 +1,27 @@
 PORTNAME=	blender
-PORTVERSION=	2.3
+PORTVERSION=	3.5
 CATEGORIES=	graphics
-MASTER_SITES=	http://download.blender.org/documentation/
+MASTER_SITES=	https://docs.blender.org/manual/en/${PORTVERSION}/
 PKGNAMESUFFIX=	-doc
-DISTFILES=	BlenderManualIen.23.html.tar.gz BlenderManualIIen.23.html.tar.gz
+DISTFILES=	blender_manual_html.zip blender_manual_epub.zip
+DIST_SUBDIR=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Blender Documentation
 WWW=		https://docs.blender.org/
 
+USES=		zip
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 NO_ARCH=	yes
+VER=		v350
 
 SUB_FILES=	pkg-message
-
-pre-patch:
-	@cd ${WRKSRC}/htmlI/PartAT/volumetrics/gfx/ && \
-		${RM} -r  "Nuova cartella" "Nuova cartella (2)"
+PLIST_SUB+=	VER=${VER}
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} "htmlI htmlII" ${STAGEDIR}${DOCSDIR}/
+	@cd ${WRKSRC} && ${COPYTREE_SHARE} "${PORTNAME}*" ${STAGEDIR}${DOCSDIR}/
 
 .include <bsd.port.mk>
