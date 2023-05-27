@@ -1,5 +1,5 @@
 PORTNAME=	mixlib-install
-PORTVERSION=	3.12.20
+PORTVERSION=	3.12.27
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
