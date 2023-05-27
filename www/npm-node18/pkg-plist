@@ -567,6 +567,7 @@ lib/node_modules/npm/node_modules/@npmcli/node-gyp/lib/index.js
 lib/node_modules/npm/node_modules/@npmcli/node-gyp/package.json
 lib/node_modules/npm/node_modules/@npmcli/package-json/LICENSE
 lib/node_modules/npm/node_modules/@npmcli/package-json/lib/index.js
+lib/node_modules/npm/node_modules/@npmcli/package-json/lib/normalize.js
 lib/node_modules/npm/node_modules/@npmcli/package-json/lib/update-dependencies.js
 lib/node_modules/npm/node_modules/@npmcli/package-json/lib/update-scripts.js
 lib/node_modules/npm/node_modules/@npmcli/package-json/lib/update-workspaces.js
@@ -2139,6 +2140,8 @@ lib/node_modules/npm/node_modules/sigstore/dist/external/index.d.ts
 lib/node_modules/npm/node_modules/sigstore/dist/external/index.js
 lib/node_modules/npm/node_modules/sigstore/dist/external/rekor.d.ts
 lib/node_modules/npm/node_modules/sigstore/dist/external/rekor.js
+lib/node_modules/npm/node_modules/sigstore/dist/external/tsa.d.ts
+lib/node_modules/npm/node_modules/sigstore/dist/external/tsa.js
 lib/node_modules/npm/node_modules/sigstore/dist/identity/ci.d.ts
 lib/node_modules/npm/node_modules/sigstore/dist/identity/ci.js
 lib/node_modules/npm/node_modules/sigstore/dist/identity/index.d.ts
@@ -2179,10 +2182,14 @@ lib/node_modules/npm/node_modules/sigstore/dist/tlog/verify/index.d.ts
 lib/node_modules/npm/node_modules/sigstore/dist/tlog/verify/index.js
 lib/node_modules/npm/node_modules/sigstore/dist/tlog/verify/set.d.ts
 lib/node_modules/npm/node_modules/sigstore/dist/tlog/verify/set.js
+lib/node_modules/npm/node_modules/sigstore/dist/tsa/index.d.ts
+lib/node_modules/npm/node_modules/sigstore/dist/tsa/index.js
 lib/node_modules/npm/node_modules/sigstore/dist/tuf/index.d.ts
 lib/node_modules/npm/node_modules/sigstore/dist/tuf/index.js
 lib/node_modules/npm/node_modules/sigstore/dist/tuf/target.d.ts
 lib/node_modules/npm/node_modules/sigstore/dist/tuf/target.js
+lib/node_modules/npm/node_modules/sigstore/dist/types/fetch.d.ts
+lib/node_modules/npm/node_modules/sigstore/dist/types/fetch.js
 lib/node_modules/npm/node_modules/sigstore/dist/types/signature.d.ts
 lib/node_modules/npm/node_modules/sigstore/dist/types/signature.js
 lib/node_modules/npm/node_modules/sigstore/dist/types/sigstore/index.d.ts
