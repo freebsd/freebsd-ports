@@ -13,6 +13,6 @@ inbox, sentbox, and trash.
 
 The gem is constantly growing and improving its functionality. As it is used
 with our parallel development ging / social_stream we are finding and fixing
-bugs continuously. If you want some functionality not supported yet or marked
-as TODO, you can create an issue to ask for it. It will be great feedback for
-us, and we will know what you may find useful in the gem.
+bugs continuously. If you want some functionality not supported yet or marked as
+TODO, you can create an issue to ask for it. It will be great feedback for us,
+and we will know what you may find useful in the gem.
