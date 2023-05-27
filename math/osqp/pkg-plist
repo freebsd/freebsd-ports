@@ -13,6 +13,7 @@ include/osqp/proj.h
 include/osqp/scaling.h
 include/osqp/types.h
 include/osqp/util.h
+include/osqp/version.h
 include/qdldl/qdldl.h
 include/qdldl/qdldl_types.h
 lib/cmake/osqp/osqp-config.cmake
