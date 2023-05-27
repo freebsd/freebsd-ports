@@ -1,5 +1,5 @@
 PORTNAME=	Crypt-URandom
-PORTVERSION=	0.36
+PORTVERSION=	0.38
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,7 @@ LICENSE_COMB=	dual
 
 USES=		perl5
 USE_PERL5=	configure
-NO_ARCH=	YES
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
