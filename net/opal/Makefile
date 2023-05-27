@@ -10,6 +10,9 @@ WWW=		http://opalvoip.org/
 
 LICENSE=	MPL10
 
+DEPRECATED=	Very outdated, current version in tree was released back in 2013 and upstream is still active
+EXPIRATION_DATE=2023-06-30
+
 LIB_DEPENDS=	libpt.so:devel/ptlib
 
 USES=		compiler:c11 gmake pathfix pkgconfig tar:xz
