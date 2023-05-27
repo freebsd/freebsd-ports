@@ -1,5 +1,5 @@
 PORTNAME=	uharfbuzz
-PORTVERSION=	0.36.0
+PORTVERSION=	0.37.0
 CATEGORIES=	print python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/harfbuzz/uharfbuzz
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	harfbuzz>=7.2.0:print/harfbuzz \
+BUILD_DEPENDS=	harfbuzz>=7.3.0:print/harfbuzz \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=36.4:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=2.1:devel/py-setuptools_scm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
