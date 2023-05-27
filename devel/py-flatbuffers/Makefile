@@ -1,19 +1,19 @@
 PORTNAME=	flatbuffers
-PORTVERSION=	2.0
+PORTVERSION=	23.5.9
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	FlatBuffers serialization format for Python
-WWW=		https://google.github.io/flatbuffers/
+WWW=		https://google.github.io/flatbuffers/ \
+		https://github.com/google/flatbuffers
 
 LICENSE=	APACHE20
 
 USES=		cpe python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
-MAKE_ENV=	VERSION=${PORTVERSION}
 NO_ARCH=	yes
 
 CPE_VENDOR=	google

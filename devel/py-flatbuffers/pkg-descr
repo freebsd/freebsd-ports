@@ -4,5 +4,3 @@ parsing/unpacking it first, while still having great forwards/backwards
 compatibility.
 
 Python runtime library for use with the Flatbuffers serialization format.
-
-See also: https://github.com/google/flatbuffers
