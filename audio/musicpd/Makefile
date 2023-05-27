@@ -168,7 +168,7 @@ SNDIO_LIB_DEPENDS=	libsndio.so:audio/sndio
 # Input plugins
 CDPARANOIA_MESON_ENABLED=	cdio_paranoia
 CDPARANOIA_LIB_DEPENDS=	libcdio_paranoia.so:sysutils/libcdio-paranoia
-CURL_MESON_ENABLED=	curl
+CURL_MESON_ENABLED=	curl webdav
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 SMB_MESON_ENABLED=	smbclient
 SMB_USES=		samba:lib
