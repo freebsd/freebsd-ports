@@ -1087,7 +1087,6 @@
     SUBDIR += rubygem-doorkeeper-rails5
     SUBDIR += rubygem-doorkeeper-rails50
     SUBDIR += rubygem-doorkeeper-rails61
-    SUBDIR += rubygem-doorkeeper562
     SUBDIR += rubygem-duo_api
     SUBDIR += rubygem-ed25519
     SUBDIR += rubygem-ed2551912
