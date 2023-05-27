@@ -5007,6 +5007,7 @@
     SUBDIR += py-openstacksdk
     SUBDIR += py-opentelemetry-api
     SUBDIR += py-opentelemetry-sdk
+    SUBDIR += py-opentelemetry-semantic-conventions
     SUBDIR += py-opentracing
     SUBDIR += py-opster
     SUBDIR += py-optik
