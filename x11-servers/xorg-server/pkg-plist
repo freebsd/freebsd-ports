@@ -160,7 +160,7 @@ include/xorg/xvdix.h
 include/xorg/xvmcext.h
 include/xorg/xf86-input-inputtest-protocol.h
 lib/xorg/modules/drivers/modesetting_drv.so
-lib/xorg/modules/extensions/.xorg/libglx.so
+lib/xorg/modules/extensions/libglx.so
 lib/xorg/modules/input/inputtest_drv.so
 lib/xorg/modules/libexa.so
 lib/xorg/modules/libglamoregl.so

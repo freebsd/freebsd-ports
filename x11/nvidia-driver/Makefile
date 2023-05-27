@@ -64,9 +64,6 @@ SUB_FILES=	pkg-message
 .if !defined(LIBGLDIR)
 SUB_FILES+=	nvidia.conf
 .endif
-.if ${NVVERSION} < 410.057
-SUB_FILES+=	pkg-deinstall pkg-install
-.endif
 SUB_PATCHES=	extra-patch-src-Makefile \
 		extra-patch-src-nv-freebsd.h
 .if ${NVVERSION} < 510.03901
