@@ -1,5 +1,5 @@
 PORTNAME=	nkf
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,5 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.txt
 
 USES=		gem
-
-NO_ARCH=	yes
 
 .include <bsd.port.mk>
