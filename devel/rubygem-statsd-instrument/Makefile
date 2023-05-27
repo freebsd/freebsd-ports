@@ -1,5 +1,5 @@
 PORTNAME=	statsd-instrument
-PORTVERSION=	3.5.8
+PORTVERSION=	3.5.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
