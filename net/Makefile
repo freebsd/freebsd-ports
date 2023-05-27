@@ -1369,6 +1369,7 @@
     SUBDIR += rubygem-pcaprub
     SUBDIR += rubygem-private_address_check
     SUBDIR += rubygem-proxifier
+    SUBDIR += rubygem-proxifier2
     SUBDIR += rubygem-qiniu
     SUBDIR += rubygem-rabbiter
     SUBDIR += rubygem-rbvmomi
