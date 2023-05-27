@@ -7018,6 +7018,7 @@
     SUBDIR += rubygem-octopress-hooks
     SUBDIR += rubygem-oj
     SUBDIR += rubygem-oj-introspect
+    SUBDIR += rubygem-oj313
     SUBDIR += rubygem-omniauth_crowd
     SUBDIR += rubygem-omnibus
     SUBDIR += rubygem-open3
