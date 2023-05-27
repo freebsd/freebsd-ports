@@ -4486,6 +4486,7 @@
     SUBDIR += py-crashtest
     SUBDIR += py-crc32c
     SUBDIR += py-crcmod
+    SUBDIR += py-crontab
     SUBDIR += py-cson
     SUBDIR += py-csv23
     SUBDIR += py-ctags
