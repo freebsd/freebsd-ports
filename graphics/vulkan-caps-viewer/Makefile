@@ -1,5 +1,5 @@
 PORTNAME=	vulkan-caps-viewer
-DISTVERSION=	3.30
+DISTVERSION=	3.31
 CATEGORIES=	graphics
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
