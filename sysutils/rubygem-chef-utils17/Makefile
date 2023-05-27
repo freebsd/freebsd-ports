@@ -1,5 +1,5 @@
 PORTNAME=	chef-utils
-PORTVERSION=	17.10.0
+PORTVERSION=	17.10.68
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	17
@@ -14,5 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		gem
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^17\.
 
 .include <bsd.port.mk>
