@@ -1,5 +1,5 @@
 PORTNAME=	chef-config
-PORTVERSION=	17.10.0
+PORTVERSION=	17.10.68
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	17
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
-		rubygem-chef-utils17>=${PORTVERSION}:sysutils/rubygem-chef-utils17 \
+		rubygem-chef-utils17>=${PORTVERSION}<${PORTVERSION}_99:sysutils/rubygem-chef-utils17 \
 		rubygem-fuzzyurl>=0:www/rubygem-fuzzyurl \
 		rubygem-mixlib-config>=2.2.12<4.0:devel/rubygem-mixlib-config \
 		rubygem-mixlib-shellout>=2.0<4.0:devel/rubygem-mixlib-shellout \
@@ -21,5 +21,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 USES=		gem
 
 NO_ARCH=	yes
+
+PORTSCOUT=	limit:^17\.
 
 .include <bsd.port.mk>
