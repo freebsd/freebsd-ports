@@ -1,3 +1,3 @@
-TIMESTAMP = 1663672854
-SHA256 (pytest_httpserver-1.0.6.tar.gz) = 9040d07bf59ac45d8de3db1d4468fd2d1d607975e4da4c872ecc0402cdbf7b3e
-SIZE (pytest_httpserver-1.0.6.tar.gz) = 57026
+TIMESTAMP = 1685162188
+SHA256 (pytest_httpserver-1.0.8.tar.gz) = e052f69bc8a9073db02484681e8e47004dd1fb3763b0ae833bd899e5895c559a
+SIZE (pytest_httpserver-1.0.8.tar.gz) = 60126
