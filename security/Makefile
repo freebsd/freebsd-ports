@@ -1305,6 +1305,7 @@
     SUBDIR += tpm2-abrmd
     SUBDIR += tpm2-tools
     SUBDIR += tpm2-tss
+    SUBDIR += transcrypt
     SUBDIR += trezord
     SUBDIR += tripwire
     SUBDIR += trousers
