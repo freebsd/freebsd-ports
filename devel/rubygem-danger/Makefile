@@ -1,5 +1,6 @@
 PORTNAME=	danger
 PORTVERSION=	9.3.0
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -20,7 +21,7 @@ RUN_DEPENDS=	rubygem-claide>=1.0<2:devel/rubygem-claide \
 		rubygem-kramdown>=2.3<3:textproc/rubygem-kramdown \
 		rubygem-kramdown-parser-gfm>=1.0<2:textproc/rubygem-kramdown-parser-gfm \
 		rubygem-no_proxy_fix>=0:net/rubygem-no_proxy_fix \
-		rubygem-octokit>=5<6:net/rubygem-octokit \
+		rubygem-octokit5>=5<6:net/rubygem-octokit5 \
 		rubygem-terminal-table>=1<4:textproc/rubygem-terminal-table
 
 USES=		gem
