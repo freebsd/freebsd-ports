@@ -1,11 +1,20 @@
---- omnibus.gemspec.orig	2023-01-05 19:49:39 UTC
+--- omnibus.gemspec.orig	2023-05-08 16:24:32 UTC
 +++ omnibus.gemspec
+@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<aws-sdk-s3>.freeze, ["~> 1.116.0"])
++  s.add_runtime_dependency(%q<aws-sdk-s3>.freeze, ["~> 1.116"])
+   s.add_runtime_dependency(%q<chef-utils>.freeze, [">= 15.4"])
+   s.add_runtime_dependency(%q<chef-cleanroom>.freeze, ["~> 1.0"])
+   s.add_runtime_dependency(%q<ffi-yajl>.freeze, ["~> 2.2"])
 @@ -30,7 +30,7 @@ Gem::Specification.new do |s|
-   s.add_runtime_dependency(%q<ohai>.freeze, [">= 15", "< 18"])
+   s.add_runtime_dependency(%q<ohai>.freeze, [">= 16", "< 19"])
    s.add_runtime_dependency(%q<ruby-progressbar>.freeze, ["~> 1.7"])
    s.add_runtime_dependency(%q<thor>.freeze, [">= 0.18", "< 2.0"])
 -  s.add_runtime_dependency(%q<license_scout>.freeze, ["~> 1.0"])
 +  s.add_runtime_dependency(%q<license_scout>.freeze, [">= 1.0"])
    s.add_runtime_dependency(%q<contracts>.freeze, [">= 0.16.0", "< 0.17.0"])
+   s.add_runtime_dependency(%q<rexml>.freeze, ["~> 3.2"])
    s.add_runtime_dependency(%q<mixlib-versioning>.freeze, [">= 0"])
-   s.add_runtime_dependency(%q<pedump>.freeze, [">= 0"])
