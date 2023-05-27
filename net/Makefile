@@ -1396,6 +1396,7 @@
     SUBDIR += rubygem-t
     SUBDIR += rubygem-train
     SUBDIR += rubygem-train-core
+    SUBDIR += rubygem-train-rest
     SUBDIR += rubygem-train-winrm
     SUBDIR += rubygem-tweetstream
     SUBDIR += rubygem-twitter
