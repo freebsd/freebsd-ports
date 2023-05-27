@@ -1,6 +1,7 @@
 PORTNAME=	vxl
 DISTVERSIONPREFIX=	v
 DISTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	misc science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,7 +11,8 @@ WWW=		https://vxl.github.io/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/core/vxl_copyright.h
 
-LIB_DEPENDS=	libpng.so:graphics/png \
+LIB_DEPENDS=	libgeotiff.so:graphics/libgeotiff \
+		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
 USES=		cmake compiler:c++11-lang jpeg
@@ -22,7 +24,9 @@ CONFLICTS_BUILD=	openjpeg15
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING
 
-do-test:
+CONFLICTS_BUILD=	dcmtk # because it is bundled
+
+do-test: # 1 test fails, see https://github.com/vxl/vxl/issues/920
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DBUILD_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
