@@ -1,5 +1,5 @@
 PORTNAME=	openstacksdk
-PORTVERSION=	0.103.0
+PORTVERSION=	1.1.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,7 +20,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.3.0:devel/py-appdirs@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}jmespath>=0.9.0:devel/py-jmespath@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jsonpatch>=1.16:devel/py-jsonpatch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}keystoneauth1>=3.18.0:devel/py-keystoneauth1@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}munch>=2.1.0:devel/py-munch@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0.10.4:net/py-netifaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}os-service-types>=1.7.0:devel/py-os-service-types@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pbr>=2.0.0:devel/py-pbr@${PY_FLAVOR} \
