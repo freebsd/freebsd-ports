@@ -1,5 +1,5 @@
 PORTNAME=	slim
-PORTVERSION=	5.1.0
+PORTVERSION=	5.1.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-temple>=0.10.0<0.11:devel/rubygem-temple \
-		rubygem-tilt>=2.0.6<2.2:devel/rubygem-tilt
+		rubygem-tilt>=2.1.0:devel/rubygem-tilt
 
 USES=		gem
 
