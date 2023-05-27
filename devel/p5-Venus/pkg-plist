@@ -32,6 +32,7 @@
 %%SITE_PERL%%/Venus/Name.pm
 %%SITE_PERL%%/Venus/Number.pm
 %%SITE_PERL%%/Venus/Opts.pm
+%%SITE_PERL%%/Venus/Os.pm
 %%SITE_PERL%%/Venus/Path.pm
 %%SITE_PERL%%/Venus/Process.pm
 %%SITE_PERL%%/Venus/Prototype.pm
@@ -120,6 +121,7 @@
 %%PERL5_MAN3%%/Venus::Name.3.gz
 %%PERL5_MAN3%%/Venus::Number.3.gz
 %%PERL5_MAN3%%/Venus::Opts.3.gz
+%%PERL5_MAN3%%/Venus::Os.3.gz
 %%PERL5_MAN3%%/Venus::Path.3.gz
 %%PERL5_MAN3%%/Venus::Process.3.gz
 %%PERL5_MAN3%%/Venus::Prototype.3.gz
