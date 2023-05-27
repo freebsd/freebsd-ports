@@ -33,7 +33,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-umfpack>0:math/py-scikit-umfpack@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang cpe fortran python:3.8-3.10 shebangfix
+USES=		compiler:c++14-lang cpe fortran python:3.8-3.11 shebangfix
 USE_PYTHON=	autoplist concurrent cython distutils
 
 FFLAGS+=	-std=legacy
