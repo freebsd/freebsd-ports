@@ -12,6 +12,9 @@ WWW=		https://libdlna.geexbox.org/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, development discontinued
+EXPIRATION_DATE=2023-06-30
+
 LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4
 
 HAS_CONFIGURE=	yes
