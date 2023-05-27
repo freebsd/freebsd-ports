@@ -1,5 +1,5 @@
 PORTNAME=	ohai
-PORTVERSION=	17.9.1
+PORTVERSION=	18.1.3
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/chef/ohai
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-chef-config>=14.12<18:sysutils/rubygem-chef-config \
-		rubygem-chef-utils>=16.0<18:sysutils/rubygem-chef-utils \
+RUN_DEPENDS=	rubygem-chef-config>=14.12<19:sysutils/rubygem-chef-config \
+		rubygem-chef-utils>=16.0<19:sysutils/rubygem-chef-utils \
 		rubygem-ffi>=1.9<2:devel/rubygem-ffi \
 		rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl \
 		rubygem-ipaddress>=0:net/rubygem-ipaddress \
