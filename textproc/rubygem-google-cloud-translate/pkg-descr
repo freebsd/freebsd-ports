@@ -5,7 +5,6 @@ pairs. Translation lets websites and programs programmatically integrate with
 the translation service.
 
 Actual client classes for the various versions of this API are defined in
-versioned client gems, with names of the form google-cloud-translate-v*.
-The gem google-cloud-translate is the main client library that brings the
-versioned gems in as dependencies, and provides high-level methods for
-constructing clients.
+versioned client gems, with names of the form google-cloud-translate-v*. The gem
+google-cloud-translate is the main client library that brings the versioned gems
+in as dependencies, and provides high-level methods for constructing clients.
