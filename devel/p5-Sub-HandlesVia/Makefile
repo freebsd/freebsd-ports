@@ -1,9 +1,9 @@
 PORTNAME=	Sub-HandlesVia
 PORTVERSION=	0.050
+DISTVERSIONSUFFIX=	000
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	Sub-HandlesVia-${PORTVERSION}000
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Alternative handles_via implementation
