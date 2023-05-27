@@ -7559,3 +7559,4 @@ www/py-django40|www/py-django41|2023-05-20|Has expired: Extended support of Djan
 net-p2p/edonkey-tool-hash|net-p2p/ed2k-hash|2023-05-26|Renamed to match upstream naming
 net-im/qxmpp-qt5|net-im/qxmpp|2023-05-26|Port flavorized for Qt 5 and 6
 devel/rubygem-aws-sdk-core3170|devel/rubygem-aws-sdk-core|2023-05-27|Remove obsoleted port. Use devel/rubygem-aws-sdk-core instead
+devel/rubygem-aws-sdk-s31119|devel/rubygem-aws-sdk-s3|2023-05-27|Remove obsoleted port. Use devel/rubygem-aws-sdk-s3 instead

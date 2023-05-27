@@ -6310,7 +6310,6 @@
     SUBDIR += rubygem-aws-sdk-route53recoveryreadiness
     SUBDIR += rubygem-aws-sdk-route53resolver
     SUBDIR += rubygem-aws-sdk-s3
-    SUBDIR += rubygem-aws-sdk-s31119
     SUBDIR += rubygem-aws-sdk-s31121
     SUBDIR += rubygem-aws-sdk-s3control
     SUBDIR += rubygem-aws-sdk-s3outposts
