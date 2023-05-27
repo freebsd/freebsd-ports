@@ -1,6 +1,5 @@
 PORTNAME=	opam
-PORTVERSION=	2.1.2
-PORTREVISION=	1
+DISTVERSION=	2.1.5
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ocaml/opam/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-
@@ -11,6 +10,9 @@ COMMENT=	Source-based package manager for OCaml
 WWW=		https://opam.ocaml.org/
 
 LICENSE=	LGPL21
+
+BROKEN_armv6=	ld: error: can't create dynamic relocation R_ARM_ABS32 against symbol: caml_program in readonly segment
+BROKEN_armv7=	ld: error: can't create dynamic relocation R_ARM_ABS32 against symbol: caml_program in readonly segment
 
 RUN_DEPENDS=	curl:ftp/curl \
 		gpatch:devel/patch
