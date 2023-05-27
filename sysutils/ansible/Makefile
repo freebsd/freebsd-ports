@@ -1,5 +1,5 @@
 PORTNAME=	ansible
-DISTVERSION=	7.1.0
+DISTVERSION=	7.6.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-core>0:sysutils/py-ansible-core@${PY_FLAVOR}
 
-USES=		ansible:env cpe python:3.6+ shebangfix
+USES=		ansible:env cpe python:3.9+ shebangfix
 CPE_VENDOR=	redhat
 USE_PYTHON=	autoplist concurrent distutils
 
@@ -32,18 +32,10 @@ SHEBANG_FILES=	ansible_collections/community/zabbix/roles/zabbix_proxy/files/ins
 SHEBANG_REGEX=	(([^/])|(/[^m])|(/m[^o])|(/mo[^d])|(/mod[^u])|(/modu[^l])|(/modul[^e])|(/module[^s])|(/modules[^/]))*\.(py|sh|build.py.generic)
 python_OLD_CMD=	/Users/kbreit/Documents/Programming/ansible_collections/cisco/meraki/venv/bin/python
 
-CONFLICTS_INSTALL=	${_ANSIBLE_PACKAGES:N${PKGBASE}}
-
 NO_ARCH=	yes
 
-DO_MAKE_TEST=	ansible -m ping
+DO_MAKE_TEST=	env LC_ALL=C.UTF-8 ansible -m ping
 TEST_TARGET=	localhost
-
-_ANSIBLE_VERSIONS=	1 2 23 24 25 26 27 28 4
-_ANSIBLE_PACKAGES=	${PYTHON_PKGNAMEPREFIX}ansible
-.for version in ${_ANSIBLE_VERSIONS}
-_ANSIBLE_PACKAGES+=	${PYTHON_PKGNAMEPREFIX}ansible${version}
-.endfor
 
 post-patch:
 	${FIND} ${WRKSRC} -type f -exec ${GREP} --null -El '(/etc/ansible|/usr/share/ansible)' {} + | ${XARGS} -n 500 -0 ${REINPLACE_CMD} \
