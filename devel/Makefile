@@ -5175,6 +5175,7 @@
     SUBDIR += py-py
     SUBDIR += py-py-partiql-parser
     SUBDIR += py-py-ubjson
+    SUBDIR += py-py3nvml
     SUBDIR += py-pyTooling
     SUBDIR += py-py_interface
     SUBDIR += py-pyasn1
