@@ -1710,6 +1710,7 @@
     SUBDIR += rubygem-diff_match_patch
     SUBDIR += rubygem-diffy
     SUBDIR += rubygem-docdiff
+    SUBDIR += rubygem-elastic-transport
     SUBDIR += rubygem-elasticsearch
     SUBDIR += rubygem-elasticsearch-api
     SUBDIR += rubygem-elasticsearch-api713
