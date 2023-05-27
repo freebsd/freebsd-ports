@@ -1,6 +1,7 @@
 PORTNAME=	gitaly
 DISTVERSION=	15.11.3
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -26,7 +27,7 @@ MY_DEPENDS=	git>=2.40.1:devel/git \
 		rubygem-gitaly>=15.5.0<15.10:net/rubygem-gitaly \
 		rubygem-gitlab-labkit>=0.31<1:devel/rubygem-gitlab-labkit \
 		rubygem-licensee>=9.15<10:devel/rubygem-licensee \
-		rubygem-google-protobuf>=3.22.3<3.23:devel/rubygem-google-protobuf \
+		rubygem-google-protobuf322>=3.22.3<3.23:devel/rubygem-google-protobuf322 \
 		rubygem-nokogiri>=1.14.1<1.15:textproc/rubygem-nokogiri \
 		rubygem-license_finder>=7.0<8:devel/rubygem-license_finder \
 		rubygem-redis4>=4.8.0<5:databases/rubygem-redis4
