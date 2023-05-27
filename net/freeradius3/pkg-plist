@@ -242,6 +242,9 @@ include/freeradius/vqp.h
 %%EXPM%%%%JSON%%%%LIBDIR%%/rlm_json.a
 %%EXPM%%%%JSON%%%%LIBDIR%%/rlm_json.la
 %%EXPM%%%%JSON%%%%LIBDIR%%/rlm_json.so
+%%EXPM%%%%REDIS%%%%LIBDIR%%/rlm_cache_redis.a
+%%EXPM%%%%REDIS%%%%LIBDIR%%/rlm_cache_redis.la
+%%EXPM%%%%REDIS%%%%LIBDIR%%/rlm_cache_redis.so
 %%EXPM%%%%REDIS%%%%LIBDIR%%/rlm_redis.a
 %%EXPM%%%%REDIS%%%%LIBDIR%%/rlm_redis.la
 %%EXPM%%%%REDIS%%%%LIBDIR%%/rlm_redis.so
@@ -957,6 +960,7 @@ sbin/radmin
 %%DATADIR%%/dictionary.dlink
 %%DATADIR%%/dictionary.dragonwave
 %%DATADIR%%/dictionary.efficientip
+%%DATADIR%%/dictionary.eleven
 %%DATADIR%%/dictionary.eltex
 %%DATADIR%%/dictionary.epygi
 %%DATADIR%%/dictionary.equallogic
