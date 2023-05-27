@@ -72,6 +72,7 @@
 %%SITE_PERL%%/Venus/Role/Unpackable.pm
 %%SITE_PERL%%/Venus/Role/Valuable.pm
 %%SITE_PERL%%/Venus/Scalar.pm
+%%SITE_PERL%%/Venus/Schema.pm
 %%SITE_PERL%%/Venus/Search.pm
 %%SITE_PERL%%/Venus/Space.pm
 %%SITE_PERL%%/Venus/String.pm
@@ -159,6 +160,7 @@
 %%PERL5_MAN3%%/Venus::Role::Unpackable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Valuable.3.gz
 %%PERL5_MAN3%%/Venus::Scalar.3.gz
+%%PERL5_MAN3%%/Venus::Schema.3.gz
 %%PERL5_MAN3%%/Venus::Search.3.gz
 %%PERL5_MAN3%%/Venus::Space.3.gz
 %%PERL5_MAN3%%/Venus::String.3.gz
