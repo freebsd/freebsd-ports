@@ -2,5 +2,5 @@ include/cgif.h
 lib/libcgif.a
 lib/libcgif.so
 lib/libcgif.so.0
-lib/libcgif.so.0.3.0
+lib/libcgif.so.%%PORTVERSION%%
 libdata/pkgconfig/cgif.pc
