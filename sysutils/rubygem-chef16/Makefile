@@ -1,6 +1,5 @@
 PORTNAME=	chef
-PORTVERSION=	16.18.0
-PORTREVISION=	1
+PORTVERSION=	16.18.30
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 PKGNAMESUFFIX=	16
@@ -22,7 +21,7 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-diff-lcs>=1.2.4<1.6.0:textproc/rubygem-diff-lcs \
 		rubygem-ed25519>=1.2<2:security/rubygem-ed25519 \
 		rubygem-erubis>=2.7<3:www/rubygem-erubis \
-		rubygem-ffi>=1.9.25:devel/rubygem-ffi \
+		rubygem-ffi>=1.15:devel/rubygem-ffi \
 		rubygem-ffi-libarchive>=1.0.3<2:devel/rubygem-ffi-libarchive \
 		rubygem-ffi-yajl>=2.2<3:devel/rubygem-ffi-yajl \
 		rubygem-highline>=1.6.9<3:devel/rubygem-highline \
@@ -42,7 +41,6 @@ RUN_DEPENDS=	rubygem-addressable>=0:www/rubygem-addressable \
 		rubygem-plist>=3.2<4:devel/rubygem-plist \
 		rubygem-proxifier>=1.0<2:net/rubygem-proxifier \
 		rubygem-syslog-logger>=1.6<2:sysutils/rubygem-syslog-logger \
-		rubygem-train-core>=3.2.28<4:net/rubygem-train-core \
 		rubygem-train-winrm>=0.2.5:net/rubygem-train-winrm \
 		rubygem-tty-prompt>=0.21<1:devel/rubygem-tty-prompt \
 		rubygem-tty-screen>=0.6<1:devel/rubygem-tty-screen \
