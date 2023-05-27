@@ -1,5 +1,5 @@
 PORTNAME=	red-datasets
-PORTVERSION=	0.1.5
+PORTVERSION=	0.1.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
