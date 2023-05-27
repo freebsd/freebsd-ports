@@ -6241,6 +6241,7 @@
     SUBDIR += rubygem-aws-sdk-mediaconvert
     SUBDIR += rubygem-aws-sdk-medialive
     SUBDIR += rubygem-aws-sdk-mediapackage
+    SUBDIR += rubygem-aws-sdk-mediapackagev2
     SUBDIR += rubygem-aws-sdk-mediapackagevod
     SUBDIR += rubygem-aws-sdk-mediastore
     SUBDIR += rubygem-aws-sdk-mediastoredata
