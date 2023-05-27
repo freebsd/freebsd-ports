@@ -1,12 +1,12 @@
 PORTNAME=	mypy
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Optional static typing for Python
-WWW=		http://www.mypy-lang.org/ \
+WWW=		https://www.mypy-lang.org/ \
 		https://github.com/python/mypy
 
 LICENSE=	MIT
