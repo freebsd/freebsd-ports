@@ -1,8 +1,6 @@
 PORTNAME=	alizams
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.3-34
-PORTREVISION=	1
-DISTVERSIONSUFFIX=	-ge36859b
+DISTVERSION=	1.9.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,10 +12,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_i386=	compilation fails: use of undeclared identifier '_mm_cvtsd_si64', see https://github.com/InsightSoftwareConsortium/ITK/issues/3771
 
-LIB_DEPENDS=	libITKCommon-${ITK_VER}.so:science/InsightToolkit
+LIB_DEPENDS=	libITKCommon-${ITK_VER}.so:science/InsightToolkit \
+		libvnl.so:misc/vxl
 TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake:testing desktop-file-utils eigen:3 qt:5 gl
+USES=		cmake desktop-file-utils eigen:3 qt:5 gl
 USE_QT=		core gui printsupport sql svg widgets
 USE_GL=		gl opengl
 
