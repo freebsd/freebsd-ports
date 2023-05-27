@@ -1,9 +1,9 @@
---- pyproject.toml.orig	2023-04-04 10:26:30 UTC
+--- pyproject.toml.orig	2023-05-11 11:46:32 UTC
 +++ pyproject.toml
 @@ -1,5 +1,5 @@
  [build-system]
 -requires = ["setuptools", "scikit-build", "cython", "cmake", "ninja", "oldest-supported-numpy"]
 +requires = ["setuptools", "scikit-build", "cython", "numpy"]
  
- [tool.cibuildwheel]
- skip = "cp36-* cp37-* pp37-* *-manylinux_i686 *_ppc64le *_s390x *-musllinux*"
+ [project]
+ name = "blosc2"
