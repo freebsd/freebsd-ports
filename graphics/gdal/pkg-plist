@@ -25,6 +25,7 @@ bin/ogr2ogr
 bin/ogrinfo
 bin/ogrlineref
 bin/ogrtindex
+bin/sozip
 etc/bash_completion.d/gdal-bash-completion.sh
 include/cpl_atomic_ops.h
 include/cpl_auto_close.h
@@ -116,8 +117,8 @@ lib/cmake/gdal/GDALConfig.cmake
 lib/cmake/gdal/GDALConfigVersion.cmake
 lib/gdalplugins/drivers.ini
 lib/libgdal.so
-lib/libgdal.so.32
-lib/libgdal.so.32.%%PORTVERSION%%
+lib/libgdal.so.33
+lib/libgdal.so.33.%%PORTVERSION%%
 libdata/pkgconfig/gdal.pc
 share/bash-completion/completions/gdal-config
 share/bash-completion/completions/gdal2tiles.py
@@ -169,6 +170,7 @@ share/bash-completion/completions/ogrtindex
 %%DATADIR%%/epsg.wkt
 %%DATADIR%%/esri_StatePlane_extra.wkt
 %%DATADIR%%/gdalicon.png
+%%DATADIR%%/gdalinfo_output.schema.json
 %%DATADIR%%/gdalmdiminfo_output.schema.json
 %%DATADIR%%/gdalvrt.xsd
 %%DATADIR%%/gml_registry.xml
@@ -190,6 +192,7 @@ share/bash-completion/completions/ogrtindex
 %%DATADIR%%/grib2_table_4_2_0_191.csv
 %%DATADIR%%/grib2_table_4_2_0_2.csv
 %%DATADIR%%/grib2_table_4_2_0_20.csv
+%%DATADIR%%/grib2_table_4_2_0_21.csv
 %%DATADIR%%/grib2_table_4_2_0_3.csv
 %%DATADIR%%/grib2_table_4_2_0_4.csv
 %%DATADIR%%/grib2_table_4_2_0_5.csv
@@ -211,6 +214,7 @@ share/bash-completion/completions/ogrtindex
 %%DATADIR%%/grib2_table_4_2_2_3.csv
 %%DATADIR%%/grib2_table_4_2_2_4.csv
 %%DATADIR%%/grib2_table_4_2_2_5.csv
+%%DATADIR%%/grib2_table_4_2_2_6.csv
 %%DATADIR%%/grib2_table_4_2_3_0.csv
 %%DATADIR%%/grib2_table_4_2_3_1.csv
 %%DATADIR%%/grib2_table_4_2_3_2.csv
@@ -274,6 +278,7 @@ share/bash-completion/completions/ogrtindex
 %%DATADIR%%/netcdf_config.xsd
 %%DATADIR%%/nitf_spec.xml
 %%DATADIR%%/nitf_spec.xsd
+%%DATADIR%%/ogrinfo_output.schema.json
 %%DATADIR%%/ogrvrt.xsd
 %%DATADIR%%/osmconf.ini
 %%DATADIR%%/ozi_datum.csv
@@ -345,3 +350,4 @@ share/man/man1/ogrmerge.1.gz
 share/man/man1/ogrtindex.1.gz
 share/man/man1/pct2rgb.1.gz
 share/man/man1/rgb2pct.1.gz
+share/man/man1/sozip.1.gz

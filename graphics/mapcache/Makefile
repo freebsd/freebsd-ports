@@ -1,6 +1,6 @@
 PORTNAME=		mapcache
 DISTVERSION=		1.14.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=		graphics
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
