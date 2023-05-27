@@ -6,7 +6,8 @@ MASTER_SITES=	SF
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PDF manipulation library and tools
-WWW=		http://podofo.sourceforge.net/
+WWW=		https://podofo.sourceforge.net/ \
+		https://github.com/podofo/podofo
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
