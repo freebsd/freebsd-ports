@@ -1,10 +1,9 @@
---- sqlite3.gemspec.orig	2023-01-05 18:17:12 UTC
+--- sqlite3.gemspec.orig	2023-05-27 18:38:56 UTC
 +++ sqlite3.gemspec
-@@ -24,7 +24,6 @@ Gem::Specification.new do |s|
+@@ -24,6 +24,5 @@ Gem::Specification.new do |s|
  
    s.specification_version = 4
  
 -  s.add_runtime_dependency(%q<mini_portile2>.freeze, ["~> 2.8.0"])
-   s.add_development_dependency(%q<minitest>.freeze, ["~> 5.15"])
-   s.add_development_dependency(%q<rake-compiler>.freeze, ["~> 1.2.0"])
-   s.add_development_dependency(%q<rake-compiler-dock>.freeze, ["~> 1.2.1"])
+ end
+ 
