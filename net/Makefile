@@ -1154,6 +1154,7 @@
     SUBDIR += py-tofu
     SUBDIR += py-transip
     SUBDIR += py-trio
+    SUBDIR += py-trio-websocket
     SUBDIR += py-tweepy
     SUBDIR += py-twitter-tools
     SUBDIR += py-txamqp
