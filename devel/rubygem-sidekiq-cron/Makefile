@@ -1,5 +1,5 @@
 PORTNAME=	sidekiq-cron
-PORTVERSION=	1.10.0
+PORTVERSION=	1.10.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
