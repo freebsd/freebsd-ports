@@ -1,5 +1,5 @@
 PORTNAME=	Object-Pad
-PORTVERSION=	0.78
+PORTVERSION=	0.79
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	p5-XS-Parse-Keyword>=0.29:devel/p5-XS-Parse-Keyword \
 		p5-XS-Parse-Sublike>=0.15:devel/p5-XS-Parse-Sublike
-TEST_DEPENDS=	p5-Test-Fatal>=0:devel/p5-Test-Fatal \
-		p5-Test-Refcount>=0:devel/p5-Test-Refcount
+TEST_DEPENDS=	p5-Test2-Suite>=0.000148:devel/p5-Test2-Suite
 
 USES=		perl5
 USE_PERL5=	modbuild
