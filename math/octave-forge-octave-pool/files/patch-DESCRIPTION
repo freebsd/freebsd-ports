@@ -1,9 +1,0 @@
---- DESCRIPTION.orig	2023-05-19 11:01:49 UTC
-+++ DESCRIPTION
-@@ -1,5 +1,5 @@
- name: octave-pool
--version: 1.0.0
-+version: 1.1.0
- date: 2023-05-01
- author: Tibor Auer <tibor.auer@gmail.com>
- maintainer: Tibor Auer <tibor.auer@gmail.com>
