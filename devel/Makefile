@@ -4171,7 +4171,6 @@
     SUBDIR += py-PyUtilib
     SUBDIR += py-QtPy
     SUBDIR += py-RPyC
-    SUBDIR += py-strenum
     SUBDIR += py-ZopeUndo
     SUBDIR += py-about-time
     SUBDIR += py-absl
@@ -5536,6 +5535,7 @@
     SUBDIR += py-stopit
     SUBDIR += py-strategies
     SUBDIR += py-streamparse
+    SUBDIR += py-strenum
     SUBDIR += py-strict-rfc3339
     SUBDIR += py-stringbrewer
     SUBDIR += py-stringcase
@@ -6581,7 +6581,6 @@
     SUBDIR += rubygem-coffee-script-source
     SUBDIR += rubygem-colorize
     SUBDIR += rubygem-columnize
-    SUBDIR += rubygem-corefoundation
     SUBDIR += rubygem-commander
     SUBDIR += rubygem-concurrent-ruby
     SUBDIR += rubygem-concurrent-ruby-edge
@@ -6597,6 +6596,7 @@
     SUBDIR += rubygem-cookbook-omnifetch
     SUBDIR += rubygem-cool.io
     SUBDIR += rubygem-corefines
+    SUBDIR += rubygem-corefoundation
     SUBDIR += rubygem-cork
     SUBDIR += rubygem-countries
     SUBDIR += rubygem-cow_proxy
