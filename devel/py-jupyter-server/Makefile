@@ -1,5 +1,5 @@
 PORTNAME=	jupyter-server
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI \
 		https://github.com/jupyter-server/jupyter_server/releases/download/v${PORTVERSION}/
@@ -20,10 +20,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.1.0:devel/py-anyio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-client>=7.4.4:devel/py-jupyter-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-core>=4.12:devel/py-jupyter-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.4.0:devel/py-jupyter-events@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jupyter-events>=0.6.0:devel/py-jupyter-events@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jupyter-server-terminals>=0:devel/py-jupyter-server-terminals@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbconvert>=6.4.4:devel/py-nbconvert@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbformat>=5.3.0:devel/py-nbformat@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}overrides>=0:devel/py-overrides@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}prometheus-client>=0:net-mgmt/py-prometheus-client@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyzmq>=24:net/py-pyzmq@${PY_FLAVOR} \
