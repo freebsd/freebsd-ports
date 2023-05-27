@@ -1,5 +1,5 @@
 PORTNAME=	wagtail
-PORTVERSION=	4.2.3
+PORTVERSION=	5.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.8<4.13:www/py-beautifulsoup@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.2:www/py-django32@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}django32>=3.2<4.3:www/py-django32@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-filter>=2.2<23:www/py-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-modelcluster>=6.0<7.0:www/py-django-modelcluster@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-permissionedforms>=0.1<1.0:www/py-django-permissionedforms@${PY_FLAVOR} \
@@ -28,9 +28,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>=0.1.5:textproc/py-anyascii@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}pillow>=4.0.0<10.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.11.1<3.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}telepath>=0.1.1<1:devel/py-telepath@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}willow>=1.4<1.5:graphics/py-willow@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}willow>=1.5<1.6:graphics/py-willow@${PY_FLAVOR}
 
-USES=		cpe python:3.6+ shebangfix
+USES=		cpe python:3.7+ shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
