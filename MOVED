@@ -7568,3 +7568,4 @@ security/rubygem-ed2551912|security/rubygem-ed25519|2023-05-27|Remove obsoleted 
 sysutils/rubygem-chef16|sysutils/rubygem-chef|2023-05-27|Remove obsoleted port. Use sysutils/rubygem-chef instead
 sysutils/rubygem-ohai16|sysutils/rubygem-ohai|2023-05-27|Remove obsoleted port. Use sysutils/rubygem-ohai instead
 textproc/rubygem-loofah219|textproc/rubygem-loofah|2023-05-27|Remove obsoleted port. Use textproc/rubygem-loofah instead
+www/rubygem-asana0|www/rubygem-asana|2023-05-27|Remove obsoleted port. Use www/rubygem-asana instead
