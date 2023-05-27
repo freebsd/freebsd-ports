@@ -41,6 +41,6 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extens
 .endif
 
 post-patch:
-	@${CP} ${FILESDIR}/setup.py ${WRKSRC}/
+	@${PRINTF} "from setuptools import setup\n\nsetup()\n" > ${WRKSRC}/setup.py
 
 .include <bsd.port.post.mk>
