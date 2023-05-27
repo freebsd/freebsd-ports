@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	15.11.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -79,7 +79,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-rubyzip>=2.3.2<2.4:archivers/rubygem-rubyzip \
 	rubygem-acme-client>=2.0.9<3:security/rubygem-acme-client \
 	rubygem-browser>=5.3.1<5.4:www/rubygem-browser \
-	rubygem-ohai>=17.9<18:sysutils/rubygem-ohai \
+	rubygem-ohai17>=17.9<18:sysutils/rubygem-ohai17 \
 	rubygem-gpgme>=2.0.22<2.1.0:security/rubygem-gpgme \
 	rubygem-gitlab_omniauth-ldap>=2.2.0<2.3.0:net/rubygem-gitlab_omniauth-ldap \
 	rubygem-net-ldap017>=0.17.1<0.18:net/rubygem-net-ldap017 \
@@ -218,7 +218,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-warning>=1.3.0<1.4:devel/rubygem-warning \
 	rubygem-license_finder>=7.0.0<8:devel/rubygem-license_finder \
 	rubygem-gitlab-dangerfiles>=3.9.0<3.10:devel/rubygem-gitlab-dangerfiles \
-	rubygem-octokit>=4.20<6.0:net/rubygem-octokit \
+	rubygem-octokit5>=4.20<6.0:net/rubygem-octokit5 \
 	rubygem-gitlab-mail_room>=0.0.23<0.1.0:mail/rubygem-gitlab-mail_room \
 	rubygem-email_reply_trimmer>=0.1<1.0:mail/rubygem-email_reply_trimmer \
 	rubygem-html2text>=0:textproc/rubygem-html2text \
