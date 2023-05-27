@@ -7564,3 +7564,4 @@ devel/rubygem-clamp11|devel/rubygem-clamp|2023-05-27|Remove obsoleted port. Use 
 net/rubygem-grpc142|net/rubygem-grpc|2023-05-27|Remove obsoleted port. Use net/rubygem-grpc instead
 net/rubygem-ipaddr122|net/rubygem-ipaddr|2023-05-27|Remove obsoleted port. Use net/rubygem-ipaddr instead
 security/rubygem-doorkeeper562|security/rubygem-doorkeeper|2023-05-27|Remove obsoleted port. Use security/rubygem-doorkeeper instead
+security/rubygem-ed2551912|security/rubygem-ed25519|2023-05-27|Remove obsoleted port. Use security/rubygem-ed25519 instead

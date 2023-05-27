@@ -1089,7 +1089,6 @@
     SUBDIR += rubygem-doorkeeper-rails61
     SUBDIR += rubygem-duo_api
     SUBDIR += rubygem-ed25519
-    SUBDIR += rubygem-ed2551912
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-googleauth
