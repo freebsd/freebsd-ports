@@ -166,7 +166,7 @@ RUBY_PORTREVISION=	1
 
 .      elif ${RUBY_VER} == 3.3
 #
-# Ruby 3.2
+# Ruby 3.3
 #
 RUBY_DISTVERSION=	3.3.0-preview1
 RUBY_PORTREVISION=	0
