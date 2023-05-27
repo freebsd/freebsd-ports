@@ -1,5 +1,5 @@
 PORTNAME=	cf-uaa-lib
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
