@@ -1,5 +1,5 @@
 PORTNAME=	librsync
-PORTVERSION=	2.3.2
+PORTVERSION=	2.3.4
 CATEGORIES=	net devel
 MASTER_SITES=	https://github.com/librsync/librsync/releases/download/v${PORTVERSION}/
 
@@ -15,6 +15,8 @@ LIB_DEPENDS=	libpopt.so:devel/popt
 USES=		cmake compiler:c11 cpe perl5
 USE_PERL5=	test
 
+CMAKE_OFF=	ENABLE_TRACE
+CMAKE_ON=	BUILD_RDIFF BUILD_SHARED_LIBS ENABLE_COMPRESSION USE_LIBB2
 TEST_TARGET=	check
 USE_LDCONFIG=	yes
 
