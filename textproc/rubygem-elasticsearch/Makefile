@@ -1,5 +1,5 @@
 PORTNAME=	elasticsearch
-PORTVERSION=	7.17.1
+PORTVERSION=	7.17.7
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -10,8 +10,8 @@ WWW=		https://github.com/elastic/elasticsearch-ruby
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-elasticsearch-api>=${PORTVERSION}:textproc/rubygem-elasticsearch-api \
-		rubygem-elasticsearch-transport>=${PORTVERSION}:textproc/rubygem-elasticsearch-transport
+RUN_DEPENDS=	rubygem-elasticsearch-api>=${PORTVERSION}<${PORTVERSION}_99:textproc/rubygem-elasticsearch-api \
+		rubygem-elasticsearch-transport>=${PORTVERSION}<${PORTVERSION}_99:textproc/rubygem-elasticsearch-transport
 
 USES=		gem
 
