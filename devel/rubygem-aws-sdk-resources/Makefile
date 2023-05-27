@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-resources
-PORTVERSION=	3.163.0
+PORTVERSION=	3.164.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -225,6 +225,7 @@ RUN_DEPENDS=	rubygem-aws-sdk-accessanalyzer>=1<2:devel/rubygem-aws-sdk-accessana
 		rubygem-aws-sdk-mediaconvert>=1<2:devel/rubygem-aws-sdk-mediaconvert \
 		rubygem-aws-sdk-medialive>=1<2:devel/rubygem-aws-sdk-medialive \
 		rubygem-aws-sdk-mediapackage>=1<2:devel/rubygem-aws-sdk-mediapackage \
+		rubygem-aws-sdk-mediapackagev2>=1<2:devel/rubygem-aws-sdk-mediapackagev2 \
 		rubygem-aws-sdk-mediapackagevod>=1<2:devel/rubygem-aws-sdk-mediapackagevod \
 		rubygem-aws-sdk-mediastore>=1<2:devel/rubygem-aws-sdk-mediastore \
 		rubygem-aws-sdk-mediastoredata>=1<2:devel/rubygem-aws-sdk-mediastoredata \
