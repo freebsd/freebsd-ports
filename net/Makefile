@@ -1314,7 +1314,6 @@
     SUBDIR += rubygem-httpauth
     SUBDIR += rubygem-interfacez
     SUBDIR += rubygem-ipaddr
-    SUBDIR += rubygem-ipaddr122
     SUBDIR += rubygem-ipaddress
     SUBDIR += rubygem-iproto
     SUBDIR += rubygem-kas-grpc

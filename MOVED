@@ -7562,3 +7562,4 @@ devel/rubygem-aws-sdk-core3170|devel/rubygem-aws-sdk-core|2023-05-27|Remove obso
 devel/rubygem-aws-sdk-s31119|devel/rubygem-aws-sdk-s3|2023-05-27|Remove obsoleted port. Use devel/rubygem-aws-sdk-s3 instead
 devel/rubygem-clamp11|devel/rubygem-clamp|2023-05-27|Remove obsoleted port. Use devel/rubygem-clamp instead
 net/rubygem-grpc142|net/rubygem-grpc|2023-05-27|Remove obsoleted port. Use net/rubygem-grpc instead
+net/rubygem-ipaddr122|net/rubygem-ipaddr|2023-05-27|Remove obsoleted port. Use net/rubygem-ipaddr instead
