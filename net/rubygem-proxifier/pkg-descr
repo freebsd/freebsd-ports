@@ -5,6 +5,6 @@ when using TCPSockets. Either manually with Proxifier::Proxy#open or by require
 "proxifier/env".
 
 The second purpose is to use ruby code that doesn't use proxies for users that
-have to use proxies.  The pruby and pirb executables are simple wrappers for
+have to use proxies. The pruby and pirb executables are simple wrappers for
 their respective ruby executables that support proxies from environment
 variables.
