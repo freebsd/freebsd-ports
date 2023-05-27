@@ -821,6 +821,7 @@
     SUBDIR += namefix
     SUBDIR += nbosd
     SUBDIR += ncdu
+    SUBDIR += ncdu2
     SUBDIR += ndmpd
     SUBDIR += neofetch
     SUBDIR += nerdctl
