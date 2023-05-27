@@ -1,8 +1,8 @@
---- third_party/CMakeLists.txt.orig	2022-09-22 09:00:38 UTC
+--- third_party/CMakeLists.txt.orig	2023-05-25 10:34:56 UTC
 +++ third_party/CMakeLists.txt
-@@ -9,24 +9,24 @@ set(INSTALL_DIR  ${CMAKE_BINARY_DIR}/third_party)
- # workaround for using it in target_include_directories
- file(MAKE_DIRECTORY ${INSTALL_DIR}/include)
+@@ -15,24 +15,24 @@ if(NOT MSVC)
+     set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -Wno-unused-parameter")
+ endif()
  
 -set(RAPIDJSON_COMMIT 22a62fcc2c2fa2418f5d358cdf65c1df73b418ae)
 -ExternalProject_Add(proj_rapidjson
@@ -40,9 +40,9 @@
 +target_include_directories(lib_rapidjson INTERFACE ${INSTALL_DIR}/rapidjson/include)
 +#add_dependencies(lib_rapidjson proj_rapidjson)
  target_compile_definitions(lib_rapidjson INTERFACE RAPIDJSON_HAS_STDSTRING=1)
+ set_target_properties(proj_rapidjson PROPERTIES EXCLUDE_FROM_ALL TRUE)
  
- if(NOT MSVC)
-@@ -38,153 +38,153 @@ endif()
+@@ -45,153 +45,153 @@ endif()
  # To avoid building everything for re2, including test binvaries:
  #     BUILD_COMMAND cmake --build <BINARY_DIR> --target re2
  # But this is not enough, because the install target run afterwards insists on building everything
@@ -310,14 +310,14 @@
  # Appsec event rules
 -ExternalProject_Add(proj_event_rules
 -    GIT_REPOSITORY https://github.com/DataDog/appsec-event-rules.git
--    GIT_TAG 1.3.2
+-    GIT_TAG 1.7.1
 -    GIT_SHALLOW ON
 -    CONFIGURE_COMMAND ""
 -    BUILD_COMMAND ""
 -    INSTALL_COMMAND "")
 +#ExternalProject_Add(proj_event_rules
 +#    GIT_REPOSITORY https://github.com/DataDog/appsec-event-rules.git
-+#    GIT_TAG 1.3.2
++#    GIT_TAG 1.7.1
 +#    GIT_SHALLOW ON
 +#    CONFIGURE_COMMAND ""
 +#    BUILD_COMMAND ""
