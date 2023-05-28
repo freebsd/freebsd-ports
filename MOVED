@@ -7572,3 +7572,5 @@ www/rubygem-asana0|www/rubygem-asana|2023-05-27|Remove obsoleted port. Use www/r
 www/rubygem-jwt25|www/rubygem-jwt|2023-05-27|Remove obsoleted port. Use www/rubygem-jwt instead
 www/rubygem-webrick17|www/rubygem-webrick|2023-05-27|Remove obsoleted port. Use www/rubygem-webrick instead
 textproc/rtf2html||2023-05-28|Has expired: Abandonware, please use something modern like markdown
+databases/mariadb103-server|databases/mariadb106-server|2023-05-28|Has expired: Use databases/mariadb106-server
+databases/mariadb103-client|databases/mariadb106-client|2023-05-28|Has expired: Use databases/mariadb106-server

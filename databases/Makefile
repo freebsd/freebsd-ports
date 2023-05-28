@@ -177,8 +177,6 @@
     SUBDIR += mariadb-connector-odbc
     SUBDIR += mariadb1011-client
     SUBDIR += mariadb1011-server
-    SUBDIR += mariadb103-client
-    SUBDIR += mariadb103-server
     SUBDIR += mariadb104-client
     SUBDIR += mariadb104-server
     SUBDIR += mariadb105-client
