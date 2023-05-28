@@ -127,10 +127,11 @@ include/highs/util/HighsSplay.h
 include/highs/util/HighsTimer.h
 include/highs/util/HighsUtils.h
 include/highs/util/stringutil.h
+include/highs_export.h
 lib/cmake/highs/highs-config.cmake
 lib/cmake/highs/highs-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/highs/highs-targets.cmake
 lib/libhighs.so
 lib/libhighs.so.1.5
-lib/libhighs.so.1.5.1
+lib/libhighs.so.1.5.3
 libdata/pkgconfig/highs.pc
