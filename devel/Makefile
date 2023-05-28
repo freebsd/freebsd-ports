@@ -4582,6 +4582,7 @@
     SUBDIR += py-etils
     SUBDIR += py-evdev
     SUBDIR += py-eventlib
+    SUBDIR += py-ewah-bool-utils
     SUBDIR += py-ewmh
     SUBDIR += py-exam
     SUBDIR += py-exceptiongroup
