@@ -1,6 +1,6 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.11.2
-PORTREVISION?=	1
+PORTVERSION=	10.11.3
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
 		https://mirror.one.com/${SITESDIR}/ \
@@ -185,7 +185,6 @@ MROONGA_IMPLIES=	LZ4
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack-c
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
-ROCKSDB_BROKEN=		RocksDB engine build failure "incompatible pointer to integer conversion"
 ROCKSDB_USES=		python
 ROCKSDB_CMAKE_ON=	-DPYTHON_SHEBANG=${PYTHON_CMD} -DWITH_ROCKSDB_zstd=ON
 S3_LIB_DEPENDS=		libcurl.so:ftp/curl

@@ -87,6 +87,7 @@ include/mysql/server/m_string.h
 include/mysql/server/ma_dyncol.h
 include/mysql/server/mariadb_capi_rename.h
 include/mysql/server/my_alloc.h
+include/mysql/server/my_alloca.h
 include/mysql/server/my_attribute.h
 include/mysql/server/my_byteorder.h
 include/mysql/server/my_compiler.h
@@ -494,6 +495,7 @@ share/aclocal/mysql.m4
 %%DATADIR%%/fill_help_tables.sql
 %%DATADIR%%/french/errmsg.sys
 %%DATADIR%%/german/errmsg.sys
+%%DATADIR%%/georgian/errmsg.sys
 %%DATADIR%%/greek/errmsg.sys
 %%DATADIR%%/hindi/errmsg.sys
 %%DATADIR%%/hungarian/errmsg.sys

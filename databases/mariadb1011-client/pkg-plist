@@ -55,6 +55,7 @@ include/mysql/mariadb_dyncol.h
 include/mysql/mariadb_rpl.h
 include/mysql/mariadb_stmt.h
 include/mysql/mariadb_version.h
+include/mysql/my_alloca.h
 include/mysql/my_config.h
 include/mysql/my_global.h
 include/mysql/my_sys.h
