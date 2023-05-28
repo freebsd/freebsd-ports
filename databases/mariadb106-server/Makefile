@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.6.12
+PORTVERSION=	10.6.13
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
@@ -164,7 +164,7 @@ ${ENGINE}_CMAKE_OFF=	-DPLUGIN_${ENGINE}=NO
 ${ENGINE}_CMAKE_ON=	-DPLUGIN_${ENGINE}=DYNAMIC
 .endfor
 INNOBASE_VARS_OFF=	disabled_plugins+=INNOBASE
-#COLUMNSTORE_BROKEN=	fatal error: 'sys/sysinfo.h' file not found
+COLUMNSTORE_BROKEN=	error: __float128 is not supported on this target
 CONNECT_EXTRA_LIB_DEPENDS=	libodbc.so:databases/unixODBC
 CONNECT_EXTRA_USE=		gnome=libxml2
 CONNECT_EXTRA_USES=		gnome
