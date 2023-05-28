@@ -12,6 +12,7 @@ include/uWebSockets/Http3Response.h
 include/uWebSockets/Http3ResponseData.h
 include/uWebSockets/HttpContext.h
 include/uWebSockets/HttpContextData.h
+include/uWebSockets/HttpErrors.h
 include/uWebSockets/HttpParser.h
 include/uWebSockets/HttpResponse.h
 include/uWebSockets/HttpResponseData.h
