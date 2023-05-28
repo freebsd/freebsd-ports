@@ -71,7 +71,7 @@ include/qpdf/qpdfjob-c.h
 include/qpdf/qpdflogger-c.h
 lib/libqpdf.so
 lib/libqpdf.so.29
-lib/libqpdf.so.29.3.0
+lib/libqpdf.so.29.4.0
 lib/cmake/qpdf/libqpdfTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/qpdf/libqpdfTargets.cmake
 lib/cmake/qpdf/qpdfConfig.cmake
@@ -101,4 +101,5 @@ man/man1/zlib-flate.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/qpdf-job.cc
 %%PORTDOCS%%%%DOCSDIR%%/examples/qpdfjob-c-save-attachment.c
 %%PORTDOCS%%%%DOCSDIR%%/examples/qpdfjob-c.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/qpdfjob-remove-annotations.cc
 %%PORTDOCS%%%%DOCSDIR%%/examples/qpdfjob-save-attachment.cc
