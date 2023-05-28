@@ -17,10 +17,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-
-PLIST_SUB=	SO_SHORT_VER=8 \
-		SO_VER=8.0.0
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>
