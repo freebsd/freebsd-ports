@@ -7571,3 +7571,4 @@ textproc/rubygem-loofah219|textproc/rubygem-loofah|2023-05-27|Remove obsoleted p
 www/rubygem-asana0|www/rubygem-asana|2023-05-27|Remove obsoleted port. Use www/rubygem-asana instead
 www/rubygem-jwt25|www/rubygem-jwt|2023-05-27|Remove obsoleted port. Use www/rubygem-jwt instead
 www/rubygem-webrick17|www/rubygem-webrick|2023-05-27|Remove obsoleted port. Use www/rubygem-webrick instead
+textproc/rtf2html||2023-05-28|Has expired: Abandonware, please use something modern like markdown

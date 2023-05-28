@@ -1656,7 +1656,6 @@
     SUBDIR += ro-hunspell
     SUBDIR += ro-hyphen
     SUBDIR += ro-mythes
-    SUBDIR += rtf2html
     SUBDIR += rtfreader
     SUBDIR += ruby-escape
     SUBDIR += ruby-format
