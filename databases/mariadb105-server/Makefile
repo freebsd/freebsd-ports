@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.5.19
+PORTVERSION=	10.5.20
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	\
@@ -181,7 +181,7 @@ MROONGA_IMPLIES=	LZ4
 MSGPACK_LIB_DEPENDS=	libmsgpackc.so:devel/msgpack-c
 OQGRAPH_LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 			libJudy.so:devel/judy
-ROCKSDB_BROKEN=		RocksDB build failure "incompatible pointer to integer conversion assigning to 'size_t'"	
+#ROCKSDB_BROKEN=		RocksDB build failure "incompatible pointer to integer conversion assigning to 'size_t'"
 ROCKSDB_USES=		python
 ROCKSDB_CMAKE_ON=	-DPYTHON_SHEBANG=${PYTHON_CMD}
 SNAPPY_CMAKE_ON=	-DWITH_INNODB_SNAPPY=ON  -DWITH_ROCKSDB_snappy=ON
