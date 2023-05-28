@@ -7579,3 +7579,4 @@ textproc/opensearch-dashboards13|textproc/opensearch-dashboards|2023-05-28|Has e
 www/yarn-node14||2023-05-28|Has expired: Requires upstream EOL node14
 www/npm-node14||2023-05-28|Has expired: Requires upstream EOL www/node14
 www/node14||2023-05-28|Has expired: Consider using www/node16 or later as Upstream EOL on 2023-04-30
+security/p5-Net-SAML||2023-05-28|Has expired: Depends on deprecated security/zxid
