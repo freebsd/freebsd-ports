@@ -1,5 +1,5 @@
 PORTNAME=	s2
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -9,7 +9,7 @@ WWW=		https://cran.r-project.org/web/packages/s2/
 
 LICENSE=	APACHE20
 
-NOT_FOR_ARCHS=	armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS=	armv6 armv7 mips powerpc powerpcspe
 NOT_FOR_ARCHS_REASON=	is currently 64-bit only
 
 CRAN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp \
