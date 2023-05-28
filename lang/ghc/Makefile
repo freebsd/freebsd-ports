@@ -112,6 +112,8 @@ USE_HADRIAN=		yes
 
 .if ${GHC_VERSION:C/\..*//g} >= 9 && ${GHC_VERSION:C/[^\.]*\.//:C/\..*//g} >= 4
 BOOT_SCRIPT=	./boot.source
+IGNORE_i386=	requires Hadrian build which doesn't work on i386
+IGNORE_aarch64=	requires Hadrian build which doesn't work on aarch64
 .else
 BOOT_SCRIPT=	./boot
 .endif
