@@ -97,7 +97,7 @@ MONO_DEFAULT?=		5.10
 MYSQL_DEFAULT?=		8.0
 # Possible values: ninja, samurai
 NINJA_DEFAULT?=		ninja
-# Possible value: 14, 16, 18, 19, 20, current, lts (Note: current = 20 and lts = 18)
+# Possible value: 16, 18, 19, 20, current, lts (Note: current = 20 and lts = 18)
 NODEJS_DEFAULT?=	lts
 # Possible value: 24, 25, 26
 OPENLDAP_DEFAULT?=	26
