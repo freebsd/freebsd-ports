@@ -45,7 +45,6 @@
     SUBDIR += check_ups_health
     SUBDIR += chillispot
     SUBDIR += choparp
-    SUBDIR += chronograf
     SUBDIR += cidr
     SUBDIR += ciscoconf
     SUBDIR += clog

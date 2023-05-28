@@ -7574,3 +7574,4 @@ www/rubygem-webrick17|www/rubygem-webrick|2023-05-27|Remove obsoleted port. Use 
 textproc/rtf2html||2023-05-28|Has expired: Abandonware, please use something modern like markdown
 databases/mariadb103-server|databases/mariadb106-server|2023-05-28|Has expired: Use databases/mariadb106-server
 databases/mariadb103-client|databases/mariadb106-client|2023-05-28|Has expired: Use databases/mariadb106-server
+net-mgmt/chronograf||2023-05-28|Has expired: Requires upstream EOL node14
