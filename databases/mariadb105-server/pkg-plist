@@ -66,6 +66,7 @@ bin/resolveip
 %%WSREP%%%%ETCDIR%%/conf.d/wsrep.cnf.sample
 @sample %%ETCDIR%%/user_map.conf.sample
 @comment data/test/db.opt
+@comment include/mysql/my_alloca.h
 include/mysql/server/big_endian.h
 include/mysql/server/byte_order_generic.h
 include/mysql/server/byte_order_generic_x86.h
@@ -82,6 +83,7 @@ include/mysql/server/m_string.h
 include/mysql/server/ma_dyncol.h
 include/mysql/server/mariadb_capi_rename.h
 include/mysql/server/my_alloc.h
+include/mysql/server/my_alloca.h
 include/mysql/server/my_attribute.h
 include/mysql/server/my_byteorder.h
 include/mysql/server/my_compiler.h
