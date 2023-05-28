@@ -81,6 +81,7 @@ include/mysql/server/m_string.h
 include/mysql/server/ma_dyncol.h
 include/mysql/server/mariadb_capi_rename.h
 include/mysql/server/my_alloc.h
+include/mysql/server/my_alloca.h
 include/mysql/server/my_attribute.h
 include/mysql/server/my_byteorder.h
 include/mysql/server/my_compiler.h
