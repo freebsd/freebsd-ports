@@ -1,6 +1,5 @@
 PORTNAME=	yt
-DISTVERSION=	4.1.4
-PORTREVISION=	1
+DISTVERSION=	4.2.0
 CATEGORIES=	math astro python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,10 +12,12 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 # dependencies are in setup.cfg
-BUILD_DEPENDS=	${PYNUMPY}
+BUILD_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}ewah-bool-utils>=1.0.2:devel/py-ewah-bool-utils@${PY_FLAVOR}
 RUN_DEPENDS=	\
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cmyt>=0.2.2:math/py-cmyt@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}ewah-bool-utils>=1.0.2:devel/py-ewah-bool-utils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>=1.0:devel/ipython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
