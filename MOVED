@@ -7582,3 +7582,4 @@ www/node14||2023-05-28|Has expired: Consider using www/node16 or later as Upstre
 security/p5-Net-SAML||2023-05-28|Has expired: Depends on deprecated security/zxid
 security/zxid||2023-05-28|Has expired: Do not build with OpenSSL 1.1.1e and later
 security/keynote||2023-05-28|Has expired: Upstream last release in 2000
+security/esteidfirefoxplugin||2023-05-28|Has expired: Upstream last release in 2013 and has been migrated into other products of upstream
