@@ -118,8 +118,10 @@ BOOT_SCRIPT=	./boot
 
 .if ${SLAVE_PORT} != "yes"
 PORTDOCS=		*
+HADRIAN_PLAN=		${PATCHDIR}/plan-bootstrap-${BOOT_GHC_VERSION:C/\./_/g}.json
 .else
 HADRIAN_DOCS_ARG=	--docs=none
+HADRIAN_PLAN=		${MASTERDIR}/files/plan-bootstrap-${BOOT_GHC_VERSION:C/\./_/g}.json
 PLIST_SUB+=		GMP=
 .endif
 
@@ -313,7 +315,7 @@ create-hadrian-bootstrap:
 # Predefined plans use integer-gmp, while we build bootstraps with integer-simple
 # Predefined plans aren't pretty-printed, so we can't easily patch them
 	cd ${WRKSRC}/hadrian/bootstrap && \
-		./bootstrap.py -w ${BOOT_GHC} --deps ${PATCHDIR}/plan-bootstrap-${BOOT_GHC_VERSION:C/\./_/g}.json fetch -o /tmp/hadrian-${GHC_VERSION}-boot
+		./bootstrap.py -w ${BOOT_GHC} --deps ${HADRIAN_PLAN} fetch -o /tmp/hadrian-${GHC_VERSION}-boot
 
 	@cd /tmp \
 		&& sha256 hadrian-${GHC_VERSION}-boot.tar.gz \
