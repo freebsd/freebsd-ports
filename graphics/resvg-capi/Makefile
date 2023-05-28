@@ -1,6 +1,6 @@
 PORTNAME=	resvg-c-api
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.33.0
+DISTVERSION=	0.34.1
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +22,7 @@ WRKSRC_SUBDIR=	crates/c-api
 CARGO_CRATES=	adler-1.0.2 \
 		arrayref-0.3.7 \
 		arrayvec-0.7.2 \
-		base64-0.21.0 \
+		base64-0.21.2 \
 		bitflags-1.3.2 \
 		bytemuck-1.13.1 \
 		cfg-if-1.0.0 \
@@ -40,7 +40,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		kurbo-0.9.5 \
 		libc-0.2.144 \
 		log-0.4.17 \
-		memmap2-0.6.1 \
+		memmap2-0.6.2 \
 		miniz_oxide-0.7.1 \
 		once_cell-1.17.1 \
 		pico-args-0.5.0 \
@@ -54,10 +54,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		siphasher-0.3.10 \
 		slotmap-1.0.6 \
 		smallvec-1.10.0 \
-		strict-num-0.1.0 \
+		strict-num-0.1.1 \
 		svgtypes-0.11.0 \
-		tiny-skia-0.9.1 \
-		tiny-skia-path-0.9.0 \
+		tiny-skia-0.10.0 \
+		tiny-skia-path-0.10.0 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		ttf-parser-0.18.1 \
