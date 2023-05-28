@@ -75,7 +75,6 @@ include/openssl/ui.h
 include/openssl/ui_compat.h
 include/openssl/whrlpool.h
 include/openssl/x509.h
-include/openssl/x509_verify.h
 include/openssl/x509_vfy.h
 include/openssl/x509v3.h
 include/tls.h
