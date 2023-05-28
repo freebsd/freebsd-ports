@@ -7575,3 +7575,4 @@ textproc/rtf2html||2023-05-28|Has expired: Abandonware, please use something mod
 databases/mariadb103-server|databases/mariadb106-server|2023-05-28|Has expired: Use databases/mariadb106-server
 databases/mariadb103-client|databases/mariadb106-client|2023-05-28|Has expired: Use databases/mariadb106-server
 net-mgmt/chronograf||2023-05-28|Has expired: Requires upstream EOL node14
+textproc/opensearch-dashboards13|textproc/opensearch-dashboards|2023-05-28|Has expired: Requires upstream EOL node14
