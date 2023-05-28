@@ -1,3 +1,46 @@
+  <vuln vid="5d1b1a0a-fd36-11ed-a0d1-84a93843eb75">
+    <topic>MariaDB -- Nullpointer dereference</topic>
+    <affects>
+      <package>
+	<name>mariadb1011-server</name>
+	<range><lt>10.11.3</lt></range>
+      </package>
+      <package>
+	<name>mariadb106-server</name>
+	<range><lt>10.6.13</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.20</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-server</name>
+	<range><lt>10.4.29</lt></range>
+      </package>
+      <package>
+	<name>mariadb103-server</name>
+	<range><lt>10.3.39</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MariaDB project reports:</p>
+	<blockquote cite="https://mariadb.com/kb/en/security/">
+	  <p>MariaDB Server is vulnerable to Denial of Service. It is possible for
+	    function spider_db_mbase::print_warnings to dereference a null pointer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-47015</cvename>
+      <url>https://mariadb.com/kb/en/security/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-10</discovery>
+      <entry>2023-05-28</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7d6be8d4-f812-11ed-a7ff-589cfc0f81b0">
     <topic>phpmyfaq -- multiple vulnerabilities</topic>
     <affects>
