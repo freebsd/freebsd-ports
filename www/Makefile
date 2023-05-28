@@ -451,7 +451,6 @@
     SUBDIR += nibbleblog
     SUBDIR += nift
     SUBDIR += node
-    SUBDIR += node14
     SUBDIR += node16
     SUBDIR += node18
     SUBDIR += node19
@@ -462,7 +461,6 @@
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm
-    SUBDIR += npm-node14
     SUBDIR += npm-node16
     SUBDIR += npm-node18
     SUBDIR += npm-node19
@@ -2437,7 +2435,6 @@
     SUBDIR += yabb
     SUBDIR += yanopaste
     SUBDIR += yarn
-    SUBDIR += yarn-node14
     SUBDIR += yarn-node16
     SUBDIR += yarn-node18
     SUBDIR += yarn-node19

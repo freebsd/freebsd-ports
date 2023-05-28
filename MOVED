@@ -7576,3 +7576,6 @@ databases/mariadb103-server|databases/mariadb106-server|2023-05-28|Has expired: 
 databases/mariadb103-client|databases/mariadb106-client|2023-05-28|Has expired: Use databases/mariadb106-server
 net-mgmt/chronograf||2023-05-28|Has expired: Requires upstream EOL node14
 textproc/opensearch-dashboards13|textproc/opensearch-dashboards|2023-05-28|Has expired: Requires upstream EOL node14
+www/yarn-node14||2023-05-28|Has expired: Requires upstream EOL node14
+www/npm-node14||2023-05-28|Has expired: Requires upstream EOL www/node14
+www/node14||2023-05-28|Has expired: Consider using www/node16 or later as Upstream EOL on 2023-04-30
