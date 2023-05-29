@@ -1,6 +1,5 @@
 PORTNAME=	waybar
-DISTVERSION=	0.9.17
-PORTREVISION=	4
+DISTVERSION=	0.9.18
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	${FLAVOR:N${FLAVORS:[1]}:C/.+/-${FLAVOR}/}
 
@@ -44,11 +43,15 @@ CONFIGURE_ENV+=	PKG_CONFIG_PATH="${WRKDIR}"
 SUB_FILES+=	date.pc
 .endif
 
-OPTIONS_DEFINE=	DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD MPRIS PULSEAUDIO SNDIO UDEV UPOWER
-OPTIONS_DEFAULT=DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD MPRIS PULSEAUDIO SNDIO UDEV UPOWER
+OPTIONS_DEFINE=		CAVA DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD MPRIS PULSEAUDIO SNDIO UDEV UPOWER
+OPTIONS_DEFAULT=	CAVA DBUS EVDEV GLS ICONSFONT JACK MANPAGES MPD MPRIS PULSEAUDIO SNDIO UDEV UPOWER
+OPTIONS_EXCLUDE+=	CAVA # https://github.com/karlstav/cava/issues/487
 .if ${FLAVOR:U:M*nopulse}
-OPTIONS_EXCLUDE=PULSEAUDIO
+OPTIONS_EXCLUDE+=	PULSEAUDIO
 .endif
+
+CAVA_LIB_DEPENDS=	libcava.so:audio/cava
+CAVA_MESON_ENABLED=	cava
 
 DBUS_LIB_DEPENDS=	libdbusmenu-gtk3.so:devel/libdbusmenu
 DBUS_MESON_ENABLED=	dbusmenu-gtk
@@ -79,8 +82,10 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-cpu.5.gz \
 			man/man5/${PORTNAME}-custom.5.gz \
 			man/man5/${PORTNAME}-disk.5.gz \
+			man/man5/${PORTNAME}-dwl-tags.5.gz \
 			man/man5/${PORTNAME}-gamemode.5.gz \
 			man/man5/${PORTNAME}-idle-inhibitor.5.gz \
+			man/man5/${PORTNAME}-image.5.gz \
 			man/man5/${PORTNAME}-inhibitor.5.gz \
 			man/man5/${PORTNAME}-keyboard-state.5.gz \
 			man/man5/${PORTNAME}-memory.5.gz \
@@ -88,6 +93,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-mpris.5.gz \
 			man/man5/${PORTNAME}-network.5.gz \
 			man/man5/${PORTNAME}-pulseaudio.5.gz \
+			man/man5/${PORTNAME}-river-layout.5.gz \
 			man/man5/${PORTNAME}-river-mode.5.gz \
 			man/man5/${PORTNAME}-river-tags.5.gz \
 			man/man5/${PORTNAME}-river-window.5.gz \
@@ -101,6 +107,7 @@ MANPAGES_PLIST_FILES=	man/man5/${PORTNAME}-backlight.5.gz \
 			man/man5/${PORTNAME}-temperature.5.gz \
 			man/man5/${PORTNAME}-tray.5.gz \
 			man/man5/${PORTNAME}-upower.5.gz \
+			man/man5/${PORTNAME}-wireplumber.5.gz \
 			man/man5/${PORTNAME}-wlr-taskbar.5.gz \
 			man/man5/${PORTNAME}-wlr-workspaces.5.gz \
 			man/man5/${PORTNAME}.5.gz \
