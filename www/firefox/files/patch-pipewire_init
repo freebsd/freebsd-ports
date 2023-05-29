@@ -2,10 +2,36 @@
     
     Ref: https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/1819
 
-diff --git third_party/libwebrtc/modules/desktop_capture/linux/wayland/pipewire.sigs third_party/libwebrtc/modules/desktop_capture/linux/wayland/pipewire.sigs
-index 06a97b8f294e..ea14a8014431 100644
---- third_party/libwebrtc/modules/desktop_capture/linux/wayland/pipewire.sigs
-+++ third_party/libwebrtc/modules/desktop_capture/linux/wayland/pipewire.sigs
+diff --git third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
+index 49b64845100b..283c387db770 100644
+--- third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
++++ third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
+@@ -402,7 +402,7 @@ bool SharedScreenCastStreamPrivate::StartScreenCastStream(
+ 
+   pw_stream_node_id_ = stream_node_id;
+ 
+-  pw_init(/*argc=*/nullptr, /*argc=*/nullptr);
++  pipewire_init(/*argc=*/nullptr, /*argc=*/nullptr);
+ 
+   pw_main_loop_ = pw_thread_loop_new("pipewire-main-loop", nullptr);
+ 
+diff --git third_party/libwebrtc/modules/desktop_capture/linux/wayland/test/test_screencast_stream_provider.cc third_party/libwebrtc/modules/desktop_capture/linux/wayland/test/test_screencast_stream_provider.cc
+index 3b829959aca8..9bdcdf1ffd51 100644
+--- third_party/libwebrtc/modules/desktop_capture/linux/wayland/test/test_screencast_stream_provider.cc
++++ third_party/libwebrtc/modules/desktop_capture/linux/wayland/test/test_screencast_stream_provider.cc
+@@ -36,7 +36,7 @@ TestScreenCastStreamProvider::TestScreenCastStreamProvider(Observer* observer,
+     return;
+   }
+ 
+-  pw_init(/*argc=*/nullptr, /*argc=*/nullptr);
++  pipewire_init(/*argc=*/nullptr, /*argc=*/nullptr);
+ 
+   pw_main_loop_ = pw_thread_loop_new("pipewire-test-main-loop", nullptr);
+ 
+diff --git third_party/libwebrtc/modules/portal/pipewire.sigs third_party/libwebrtc/modules/portal/pipewire.sigs
+index 139a8c37a551..9fe131d8daa6 100644
+--- third_party/libwebrtc/modules/portal/pipewire.sigs
++++ third_party/libwebrtc/modules/portal/pipewire.sigs
 @@ -15,7 +15,7 @@ pw_loop * pw_loop_new(const spa_dict *props);
  
  
@@ -15,19 +41,6 @@ index 06a97b8f294e..ea14a8014431 100644
  const char* pw_get_library_version();
  
  // properties.h
-diff --git third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
-index 0ca75d00fc96..b7b5b39aa425 100644
---- third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
-+++ third_party/libwebrtc/modules/desktop_capture/linux/wayland/shared_screencast_stream.cc
-@@ -396,7 +396,7 @@ bool SharedScreenCastStreamPrivate::StartScreenCastStream(
- 
-   pw_stream_node_id_ = stream_node_id;
- 
--  pw_init(/*argc=*/nullptr, /*argc=*/nullptr);
-+  pipewire_init(/*argc=*/nullptr, /*argc=*/nullptr);
- 
-   pw_main_loop_ = pw_thread_loop_new("pipewire-main-loop", nullptr);
- 
 diff --git third_party/pipewire/libpipewire/mozpipewire.cpp third_party/pipewire/libpipewire/mozpipewire.cpp
 index fbeeb8e5a760..46f768790946 100644
 --- third_party/pipewire/libpipewire/mozpipewire.cpp
