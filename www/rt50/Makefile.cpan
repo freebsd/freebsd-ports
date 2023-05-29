@@ -314,7 +314,7 @@ SMIME_DEPS=	p5-Crypt-X509>0:security/p5-Crypt-X509 \
 ### GraphViz2
 ### IPC::Run 0.90
 
-GRAPHVIZ_DEPS=	p5-GraphViz>0:graphics/p5-GraphViz2 \
+GRAPHVIZ_DEPS=	p5-GraphViz2>0:graphics/p5-GraphViz2 \
 		p5-IPC-Run>=0.90:devel/p5-IPC-Run
 
 ### -- GD --
