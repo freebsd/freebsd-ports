@@ -18,5 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	openxpki
 USE_PERL5=	configure
 NO_ARCH=	yes
+PORTSCOUT=	limit:v?([0-9]+\.)+[0-9]+ \
+		site:https://github.com/openxpki/Crypt-X509/tags
 
 .include <bsd.port.mk>
