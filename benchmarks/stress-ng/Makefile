@@ -1,6 +1,6 @@
 PORTNAME=	stress-ng
 DISTVERSIONPREFIX=	V
-DISTVERSION=	0.15.06
+DISTVERSION=	0.15.08
 CATEGORIES=	benchmarks
 
 MAINTAINER=	pizzamig@FreeBSD.org
@@ -51,6 +51,10 @@ USE_GL=	egl glesv2 gbm
 
 pre-patch:
 	${MKDIR} ${WRKSRC}/configs
+.if ${ARCH} == i386
+	${TOUCH} ${WRKSRC}/configs/HAVE_VECMATH
+.endif
+
 
 #to dsiable Intel IPSEC detection
 post-patch-INTELIPSEC-off:
