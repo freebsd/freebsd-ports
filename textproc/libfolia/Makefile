@@ -1,7 +1,6 @@
 PORTNAME=	libfolia
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13
-PORTREVISION=	1
+DISTVERSION=	2.15
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +14,7 @@ BUILD_DEPENDS=	autoconf-archive>=0:devel/autoconf-archive
 LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libticcutils.so:devel/ticcutils
 
-USES=		autoreconf compiler:c++11-lang gmake gnome libtool pkgconfig
+USES=		autoreconf compiler:c++14-lang gmake gnome libtool pkgconfig
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 
