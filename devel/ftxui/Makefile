@@ -1,6 +1,6 @@
 PORTNAME=	ftxui
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.0.0
+DISTVERSION=	4.1.1
 CATEGORIES=	devel science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	benchmark>0:devel/benchmark \
 		googletest>0:devel/googletest
 
-USES=		cmake:testing compiler:c++17-lang
+USES=		cmake:testing compiler:c++20-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
