@@ -467,6 +467,7 @@
     SUBDIR += py-tflite
     SUBDIR += py-tflite-support
     SUBDIR += py-toil
+    SUBDIR += py-torch-geometric
     SUBDIR += py-torchvision
     SUBDIR += py-tqdm
     SUBDIR += py-tvm
