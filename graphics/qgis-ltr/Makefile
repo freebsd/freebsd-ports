@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.28.6
-PORTREVISION=	1
+DISTVERSION=	3.28.7
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 PKGNAMESUFFIX=	-ltr
@@ -119,6 +118,7 @@ USE_QT=		3d buildtools:build core concurrent dbus declarative \
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
+		-DHAVE_PGCONFIG=1 \
 		-DLazPerf_INCLUDE_DIR:PATH=${LOCALBASE}/include/lazperf \
 		-DWITH_INTERNAL_MDAL:BOOL=false \
 		-DPYRCC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER} \
@@ -162,6 +162,11 @@ SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 CMAKE_ARGS+=	-DFLEX_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/flex
 .endif
+
+pre-patch:
+	# Only PostgreSQL Client headers, not Server
+	@${REINPLACE_CMD} -e 's|set(POSTGRES_INCLUDE_DIR \$${PostgreSQL_INCLUDE_DIRS})|set(POSTGRES_INCLUDE ${LOCALBASE}/include)|g' \
+		${WRKSRC}/cmake/FindPostgres.cmake
 
 post-patch:
 # On i386, '-mllvm -inline-threshold=128' does not build under all circumstances
