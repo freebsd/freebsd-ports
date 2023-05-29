@@ -1,7 +1,6 @@
 PORTNAME=	ucto
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.27
-PORTREVISION=	1
+DISTVERSION=	0.29
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,5 +30,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 .include <bsd.port.mk>
