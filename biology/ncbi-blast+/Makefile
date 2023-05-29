@@ -12,6 +12,9 @@ WWW=		https://blast.ncbi.nlm.nih.gov
 LICENSE=	PD
 LICENSE_FILE=	${WRKSRC}/scripts/projects/blast/LICENSE
 
+ONLY_FOR_ARCHS=		aarch64 amd64 powerpc64 powerpc64le riscv64
+ONLY_FOR_ARCHS_REASON=	Requires 64-bit processor
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		liblmdb.so:databases/lmdb \
 		liblzo2.so:archivers/lzo2 \
