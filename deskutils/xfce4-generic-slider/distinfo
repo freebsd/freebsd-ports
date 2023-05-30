@@ -1,3 +1,3 @@
-TIMESTAMP = 1677161206
-SHA256 (panel-plugins-xfce4-generic-slider-158b29bf84d2a4be150fe7ac278c605eb5309c0c_GL0.tar.gz) = 3e4e8d0277a572f8db595b44ff0622aac8af999085d10612ea4b57bdf848ecd7
-SIZE (panel-plugins-xfce4-generic-slider-158b29bf84d2a4be150fe7ac278c605eb5309c0c_GL0.tar.gz) = 22286
+TIMESTAMP = 1685376239
+SHA256 (xfce4/xfce4-generic-slider-1.0.0.tar.bz2) = 06074d1123c1767bd0e25c6e7b34ade0a1e9edf51c996b8a643772e5881024bb
+SIZE (xfce4/xfce4-generic-slider-1.0.0.tar.bz2) = 359724
