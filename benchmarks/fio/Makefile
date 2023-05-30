@@ -1,6 +1,5 @@
 PORTNAME=	fio
-DISTVERSION=	3.34
-POTREVISION=	1
+DISTVERSION=	3.35
 CATEGORIES=	benchmarks
 MASTER_SITES=	https://brick.kernel.dk/snaps/
 
@@ -14,7 +13,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		compiler:c11 gmake pkgconfig tar:bzip2
 
 HAS_CONFIGURE=		yes
-CONFIGURE_ARGS=		--disable-native \
+TEST_TARGET=		test
+CONFIGURE_ARGS=		--disable-http \
+			--disable-native \
 			--disable-optimizations
 MAKE_ARGS=		DEBUGFLAGS= \
 			OPTFLAGS= \
