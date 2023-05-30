@@ -1,0 +1,11 @@
+--- Makefile.orig	2023-05-29 09:11:15 UTC
++++ Makefile
+@@ -1,7 +1,6 @@
+ TARGET = trurl
+ OBJS = trurl.o
+-LDLIBS = $$(curl-config --libs)
+-CFLAGS = $$(curl-config --cflags) -W -Wall -Wshadow -Werror -pedantic -g
++CFLAGS+=-W -Wall -Wshadow -Werror -pedantic -g
+ MANUAL = trurl.1
+ 
+ PREFIX ?= /usr/local
