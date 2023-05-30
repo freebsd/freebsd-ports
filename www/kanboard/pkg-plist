@@ -587,6 +587,7 @@
 %%WWWDIR%%/app/Model/TaskReorderModel.php
 %%WWWDIR%%/app/Model/TaskStatusModel.php
 %%WWWDIR%%/app/Model/TaskTagModel.php
+%%WWWDIR%%/app/Model/ThemeModel.php
 %%WWWDIR%%/app/Model/TimezoneModel.php
 %%WWWDIR%%/app/Model/TransitionModel.php
 %%WWWDIR%%/app/Model/UserLockingModel.php
@@ -1021,7 +1022,8 @@
 %%WWWDIR%%/app/common.php
 %%WWWDIR%%/app/constants.php
 %%WWWDIR%%/app/functions.php
-%%WWWDIR%%/assets/css/app.min.css
+%%WWWDIR%%/assets/css/auto.min.css
+%%WWWDIR%%/assets/css/dark.min.css
 %%WWWDIR%%/assets/css/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%WWWDIR%%/assets/css/images/ui-bg_flat_75_ffffff_40x100.png
 %%WWWDIR%%/assets/css/images/ui-bg_glass_55_fbf9ee_1x400.png
@@ -1041,6 +1043,7 @@
 %%WWWDIR%%/assets/css/images/ui-icons_cc0000_256x240.png
 %%WWWDIR%%/assets/css/images/ui-icons_cd0a0a_256x240.png
 %%WWWDIR%%/assets/css/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/assets/css/light.min.css
 %%WWWDIR%%/assets/css/print.min.css
 %%WWWDIR%%/assets/css/vendor.min.css
 %%WWWDIR%%/assets/fonts/FontAwesome.otf
