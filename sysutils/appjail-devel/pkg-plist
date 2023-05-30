@@ -5,6 +5,7 @@ bin/appjail-dns
 bin/appjail-user
 @sample %%ETCDIR%%/appjail.conf.sample
 etc/rc.d/appjail
+etc/rc.d/appjail-health
 etc/rc.d/appjail-natnet
 libexec/appjail/appjail-config/appjail-config
 libexec/appjail/appjail-config/tok
@@ -20,6 +21,7 @@ libexec/appjail/network/network
 %%DATADIR%%/cmd/expose
 %%DATADIR%%/cmd/fetch
 %%DATADIR%%/cmd/fstab
+%%DATADIR%%/cmd/healthcheck
 %%DATADIR%%/cmd/help
 %%DATADIR%%/cmd/jail
 %%DATADIR%%/cmd/limits
@@ -36,6 +38,7 @@ libexec/appjail/network/network
 %%DATADIR%%/cmd/service
 %%DATADIR%%/cmd/start
 %%DATADIR%%/cmd/startup
+%%DATADIR%%/cmd/status
 %%DATADIR%%/cmd/stop
 %%DATADIR%%/cmd/sysrc
 %%DATADIR%%/cmd/update
@@ -78,8 +81,10 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/cmd/all/CLEAR
 %%DATADIR%%/makejail/cmd/all/CMD
 %%DATADIR%%/makejail/cmd/all/COPY
+%%DATADIR%%/makejail/cmd/all/DESTROY
 %%DATADIR%%/makejail/cmd/all/ENTRYPOINT
 %%DATADIR%%/makejail/cmd/all/ENV
+%%DATADIR%%/makejail/cmd/all/EXEC
 %%DATADIR%%/makejail/cmd/all/MOUNT
 %%DATADIR%%/makejail/cmd/all/PKG
 %%DATADIR%%/makejail/cmd/all/RAW
@@ -101,6 +106,8 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/write/all/ARG
 %%DATADIR%%/makejail/write/all/CMD
 %%DATADIR%%/makejail/write/all/COPY
+%%DATADIR%%/makejail/write/all/DESTROY
+%%DATADIR%%/makejail/write/all/EXEC
 %%DATADIR%%/makejail/write/all/MOUNT
 %%DATADIR%%/makejail/write/all/PKG
 %%DATADIR%%/makejail/write/all/RAW
@@ -126,6 +133,7 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/run_init.sh
 %%DATADIR%%/scripts/run_jail.sh
 %%DATADIR%%/scripts/runas.sh
+%%EXAMPLESDIR%%/appjail.conf
 %%EXAMPLESDIR%%/templates/bridge.conf
 %%EXAMPLESDIR%%/templates/linux.conf
 %%EXAMPLESDIR%%/templates/vnet.conf
