@@ -1,6 +1,5 @@
 PORTNAME=	opencoarrays
-DISTVERSION=	2.10.0
-PORTREVISION=	1
+DISTVERSION=	2.10.1
 CATEGORIES=	lang parallel
 
 MAINTAINER=	miguel@gocobachi.dev
@@ -10,21 +9,24 @@ WWW=		http://www.opencoarrays.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_aarch64=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
-BROKEN_FreeBSD_12_powerpc=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
-BROKEN_FreeBSD_12_powerpc64=	Lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug#255890
+BROKEN_aarch64=	lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug #255890
+BROKEN_FreeBSD_12_powerpc=	lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug #255890
+BROKEN_FreeBSD_12_powerpc64=	lack of IEEE754 support in gcc causes "Cannot find an intrinsic module named 'ieee_arithmetic'", see bug #255890
 
 BUILD_DEPENDS=	bash:shells/bash
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cmake fortran
 USE_CSTD=	gnu99
+USE_GCC=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	sourceryinstitute
 GH_PROJECT=	OpenCoarrays
 USE_LDCONFIG=	yes
 
-PLIST_SUB=	GCC_VER=${_GCC_VER} PORTVERSION=${PORTVERSION} SOVERSION=3
+PLIST_SUB=	GCC_VER=${_GCC_VER} \
+		PORTVERSION=${PORTVERSION} \
+		SOVERSION=3
 
 OPTIONS_SINGLE=		MPI
 OPTIONS_SINGLE_MPI=	MPICH OPENMPI
@@ -41,6 +43,8 @@ OPTIONS_DEFAULT_i386=	OPENMPI
 OPTIONS_DEFAULT_mips=	OPENMPI
 OPTIONS_DEFAULT_powerpc=	OPENMPI
 OPTIONS_DEFAULT_powerpcspe=	OPENMPI
+
+CMAKE_C_COMPILER=	gcc
 
 MPICH_BUILD_DEPENDS=	mpif90:net/mpich
 MPICH_RUN_DEPENDS=	mpif90:net/mpich
