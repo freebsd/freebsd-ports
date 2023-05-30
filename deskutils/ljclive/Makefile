@@ -7,6 +7,7 @@ DISTNAME=	clive-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line client for posting LiveJournal entries
+WWW=		https://sourceforge.net/projects/ljclive/
 
 USES=		iconv
 GNU_CONFIGURE=	yes
