@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-12-02 04:28:08 UTC
+--- CMakeLists.txt.orig	2023-05-20 18:52:40 UTC
 +++ CMakeLists.txt
-@@ -234,6 +234,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+@@ -71,6 +71,9 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
  elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux")
  	set(D_PLATFORM_OS "linux")
  	set(D_PLATFORM_LINUX 1)
@@ -10,7 +10,7 @@
  elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
  	set(D_PLATFORM_OS "macos")
  	set(D_PLATFORM_MAC 1)
-@@ -368,7 +371,7 @@ endif()
+@@ -345,7 +348,7 @@ endif()
  # Installation / Packaging
  if(STANDALONE)
  	set(STRUCTURE_UNIFIED CACHE BOOL "Install for use in a Plugin Manager")
@@ -19,7 +19,7 @@
  		set(STRUCTURE_PACKAGEMANAGER CACHE BOOL "Install for use in a Package Manager (system-wide installation)")
  	elseif(D_PLATFORM_MAC)
  		set(STRUCTURE_BUNDLE ON CACHE BOOL "Install as a Loadable Bundle (.plugin)")
-@@ -931,7 +934,7 @@ if(TRUE) # OpenGL
+@@ -930,7 +933,7 @@ if(TRUE) # OpenGL
  				PRIVATE
  				"${PROJECT_SOURCE_DIR}/third-party/khronos/glad/src/wgl.c"
  			)
@@ -28,7 +28,7 @@
  			target_sources(khronos_glad
  				PRIVATE
  				"${PROJECT_SOURCE_DIR}/third-party/khronos/glad/src/glx.c"
-@@ -1627,9 +1630,9 @@ if((CMAKE_C_COMPILER_ID STREQUAL "GNU")
+@@ -1601,9 +1604,9 @@ if((CMAKE_C_COMPILER_ID STREQUAL "GNU")
  	OR (CMAKE_C_COMPILER_ID STREQUAL "Clang")
  	OR (CMAKE_CXX_COMPILER_ID STREQUAL "Clang"))
  	if(CMAKE_CXX_COMPILER_VERSION VERSION_LESS 9.0)
@@ -41,16 +41,16 @@
  	endif()
  endif()
  
-@@ -1812,7 +1815,7 @@ if(D_PLATFORM_WINDOWS AND ((CMAKE_CXX_COMPILER_ID STRE
+@@ -1791,7 +1794,7 @@ if(D_PLATFORM_WINDOWS AND ((CMAKE_CXX_COMPILER_ID STRE
  	foreach(FLAG ${FLAGS})
  		target_compile_options(${PROJECT_NAME} PRIVATE "$<$<CONFIG:Release,RelWithDebInfo,MinSizeRel>:${FLAG}>")
  	endforeach()
 -elseif(D_PLATFORM_LINUX AND ((CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")))
 +elseif((D_PLATFORM_LINUX OR D_PLATFORM_FREEBSD) AND ((CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")))
  	# GCC/Clang
- 	message(STATUS "${LOGPREFIX}Applying custom flags for GCC/Clang style build.")
+ 	message(STATUS "Applying custom flags for GCC/Clang style build.")
  
-@@ -2088,7 +2091,7 @@ if(STANDALONE)
+@@ -2067,7 +2070,7 @@ if(STANDALONE)
  					DESTINATION "data/" COMPONENT StreamFX
  				)
  			endif()
@@ -59,7 +59,7 @@
  			install(
  				TARGETS ${PROJECT_NAME}
  				RUNTIME DESTINATION "bin/linux-${D_PLATFORM_INSTR}-${D_PLATFORM_BITS}/" COMPONENT StreamFX
-@@ -2139,7 +2142,7 @@ if(STANDALONE)
+@@ -2118,7 +2121,7 @@ if(STANDALONE)
  				DESTINATION "data/obs-plugins/${PROJECT_NAME}/" COMPONENT StreamFX
  			)
  		endif()

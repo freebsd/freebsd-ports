@@ -1,6 +1,5 @@
 PORTNAME=	obs-streamfx
-DISTVERSION=	0.12.0b164
-PORTREVISION=	3
+DISTVERSION=	0.12.0b299
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,8 +27,8 @@ GH_PROJECT=	obs-StreamFX
 
 GH_TUPLE=	nlohmann:json:db78ac1d7716f56fc9f1b030b715f872f93964e4:nlohmann_json/third-party/nlohmann-json \
 		Xaymar:msvc-redist-helper:aa4665ccf68a382f1c2b115fb6c9668b6a8bd64d:Xaymar_msvc_redist_helper/third-party/msvc-redist-helper \
-		NVIDIA:MAXINE-AR-SDK:cf68600:NVIDIA_MAXINE_AR_SDK/third-party/nvidia-maxine-ar-sdk \
-		NVIDIA:MAXINE-VFX-SDK:3058988:NVIDIA_MAXINE_VFX_SDK/third-party/nvidia-maxine-vfx-sdk \
+		NVIDIA:MAXINE-AR-SDK:ca10ac3:NVIDIA_MAXINE_AR_SDK/third-party/nvidia-maxine-ar-sdk \
+		NVIDIA:MAXINE-VFX-SDK:f63d9d1:NVIDIA_MAXINE_VFX_SDK/third-party/nvidia-maxine-vfx-sdk \
 		Xaymar:cmake-clang:f249747:Xaymar_cmake_clang/cmake/clang \
 		Xaymar:cmake-version:16bfa95:Xaymar_cmake_version/cmake/version
 
