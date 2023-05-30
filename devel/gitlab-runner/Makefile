@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-runner
-DISTVERSION=	15.11.0
+DISTVERSION=	16.0.1
 CATEGORIES=	devel
 MASTER_SITES=	https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerx64 \
 		https://gitlab-runner-downloads.s3.amazonaws.com/master/docker/:dockerarm
@@ -33,8 +33,8 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find tags here:
 # https://gitlab.com/gitlab-org/gitlab-runner/-/tags
-GL_COMMIT=	436955cbc8f66f59294ea16e5e538fec8ab44a02
-GITBRANCH=	15-11-stable
+GL_COMMIT=	79704081c9fe038e6054066d7d7462c712d7345e
+GITBRANCH=	16-0-stable
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy
