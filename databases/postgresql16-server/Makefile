@@ -105,13 +105,15 @@ ZSTD_CONFIGURE_WITH=	zstd
 ZSTD_LIB_DEPENDS+=	libzstd.so:archivers/zstd
 .  endif
 
-.  if ${DISTVERSION:C/([0-9][0-9]).*/\1/g} >= 11
 OPTIONS_DEFINE+=	LLVM
 OPTIONS_DEFAULT+=	LLVM
 LLVM_DESC=		Build with support for JIT-compiling expressions
 OPTIONS_EXCLUDE+=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
 OPTIONS_EXCLUDE_powerpc64_12=	LLVM
-.  endif
+LLVM_CONFIGURE_WITH=	llvm
+LLVM_CONFIGURE_ENV=	LLVM_CONFIG=${LLVM_CONFIG} \
+			CLANG=${LOCALBASE}/bin/clang${LLVM_VERSION}
+LLVM_USES=		llvm:max=15,min=11,lib
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
@@ -185,10 +187,11 @@ SUB_LIST+=		PG_VERSION=${PORTVERSION:R} \
 
 .include <bsd.port.options.mk>
 
+# i386 older than Pentium lacks SSE2 so the binary will not run if we build with clang -msse2
+# For such ancient CPUs, gcc must be used to build PostgreSQL.
+# https://www.postgresql.org/message-id/20190307140421.GA8362%40gate.oper.dinoex.org
 .if ${ARCH} == "i386"
-USES+=		compiler:gcc-c++11-lib
-.else
-USES+=		compiler
+CFLAGS+=	-msse2
 .endif
 
 .if !defined(SLAVE_ONLY)
@@ -228,49 +231,7 @@ CONFIGURE_ARGS+=--with-krb5
 .include <bsd.port.pre.mk>
 
 .if ${PORT_OPTIONS:MLLVM}
-CONFIGURE_ARGS+=	--with-llvm
-BUILD_DEPENDS+=		llvm${PG_LLVM_VERSION}>0:devel/llvm${PG_LLVM_VERSION}
-BUILD_DEPENDS+=		llvm-config${PG_LLVM_VERSION}:devel/llvm${PG_LLVM_VERSION}
-RUN_DEPENDS+=		llvm-config${PG_LLVM_VERSION}:devel/llvm${PG_LLVM_VERSION}
-CONFIGURE_ENV+=		LLVM_CONFIG=${LOCALBASE}/bin/llvm-config${PG_LLVM_VERSION}
-.endif
-
-# Convert LLVM_DEFAULT to COMPILER_VERSION format to make it
-# suitable for version comparison.
-.if ${LLVM_DEFAULT} >= 70 && ${LLVM_DEFAULT} <= 90
-LLVM_DEFAULT_VERSION=	${LLVM_DEFAULT}
-.else
-LLVM_DEFAULT_VERSION=	${LLVM_DEFAULT}0
-.endif
-
-# Convert COMPILER_VERSION to LLVM_DEFAULT format to make it
-# suitable for LLVM port name.
-# All supported FreeBSD versions have Clang 10.0.1 or later.
-LLVM_PORT_SUFFIX=	${COMPILER_VERSION:C/.$//}
-
-# sync LLVM to the preferred compiler if possible
-# or else use a lower version compiler that is compatible
-.if ${COMPILER_VERSION} > ${LLVM_DEFAULT_VERSION}
-# LLVM versions in ports are, in order, 70, 80 90, 10, 11, 12... where 10 > 90. [sic]
-.  if ${LLVM_PORT_SUFFIX} < 70
-PG_LLVM_VERSION=${LLVM_PORT_SUFFIX}
-PG_COMPILER_VERSION=${LLVM_PORT_SUFFIX}
-.  else
-PG_LLVM_VERSION=11
-PG_COMPILER_VERSION=11
-.  endif
-.else
-PG_LLVM_VERSION=${LLVM_DEFAULT}
-PG_COMPILER_VERSION=${LLVM_PORT_SUFFIX}
-.endif
-
-.if ${DISTVERSION:C/([0-9]*).*/\1/} >= 11
-.  if defined(SERVER_ONLY) && ${PORT_OPTIONS:MLLVM}
 INSTALL_DIRS+=		src/backend/jit/llvm
-.    if ${LLVM_PORT_SUFFIX} != ${PG_COMPILER_VERSION}
-LLVM_CONFIGURE_ARGS?=	CC=${LOCALBASE}/bin/clang${PG_COMPILER_VERSION}
-.    endif
-.  endif
 .endif
 
 .if defined(SERVER_ONLY)
