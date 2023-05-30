@@ -1,10 +1,10 @@
 PORTNAME=	spleen
-DISTVERSION=	1.9.1
+DISTVERSION=	2.0.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/fcambus/spleen/releases/download/${DISTVERSION}/
 PKGNAMESUFFIX=	-font
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	laxul@pm.me
 COMMENT=	Monospaced bitmap fonts for Xorg and vt(4)
 WWW=		https://github.com/fcambus/spleen
 
