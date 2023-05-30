@@ -1,6 +1,6 @@
---- src/external/cpython/Makefile.pre.in	2022-02-08 10:05:54.000000000 -0500
-+++ src/external/cpython/Makefile.pre.in	2022-07-29 16:26:56.387414000 -0500
-@@ -70,7 +70,7 @@
+--- src/external/cpython/Makefile.pre.in.orig	2023-03-21 17:26:00 UTC
++++ src/external/cpython/Makefile.pre.in
+@@ -70,14 +70,14 @@ INSTALL_SCRIPT= @INSTALL_SCRIPT@
  INSTALL_DATA=	@INSTALL_DATA@
  # Shared libraries must be installed with executable mode on some systems;
  # rather than figuring out exactly which, we always give them executable mode.
@@ -9,7 +9,15 @@
  
  MKDIR_P=	@MKDIR_P@
  
-@@ -474,7 +474,7 @@
+ MAKESETUP=      $(srcdir)/Modules/makesetup
+ 
+ # Compiler options
+-OPT=		@OPT@
++OPT=		-DNDEBUG
+ BASECFLAGS=	@BASECFLAGS@
+ BASECPPFLAGS=	@BASECPPFLAGS@
+ CONFIGURE_CFLAGS=	@CFLAGS@
+@@ -474,7 +474,7 @@ DTRACE_DEPS = \
  # Default target
  all:		@DEF_MAKE_ALL_RULE@
  build_all:	check-clean-src $(BUILDPYTHON) oldsharedmods sharedmods gdbhooks \
@@ -18,7 +26,7 @@
  
  # Check that the source is clean when building out of source.
  check-clean-src:
-@@ -723,8 +723,8 @@
+@@ -723,8 +723,8 @@ Makefile Modules/config.c: Makefile.pre \
  	@echo "The Makefile was updated, you may need to re-run make."
  
  
@@ -29,7 +37,7 @@
  
  ############################################################################
  # Importlib
-@@ -797,8 +797,8 @@
+@@ -797,8 +797,8 @@ Modules/getpath.o: $(srcdir)/Modules/getpath.c Makefil
  Programs/python.o: $(srcdir)/Programs/python.c
  	$(MAINCC) -c $(PY_CORE_CFLAGS) -o $@ $(srcdir)/Programs/python.c
  
@@ -40,7 +48,7 @@
  
  Modules/_sre.o: $(srcdir)/Modules/_sre.c $(srcdir)/Modules/sre.h $(srcdir)/Modules/sre_constants.h $(srcdir)/Modules/sre_lib.h
  
-@@ -1254,7 +1254,7 @@
+@@ -1255,7 +1255,7 @@ install: @FRAMEWORKINSTALLFIRST@ commoninstall bininst
  			upgrade) ensurepip="--upgrade" ;; \
  			install|*) ensurepip="" ;; \
  		esac; \
@@ -49,7 +57,7 @@
  			$$ensurepip --root=$(DESTDIR)/ ; \
  	fi
  
-@@ -1264,7 +1264,7 @@
+@@ -1265,7 +1265,7 @@ altinstall: commoninstall
  			upgrade) ensurepip="--altinstall --upgrade" ;; \
  			install|*) ensurepip="--altinstall" ;; \
  		esac; \
@@ -58,7 +66,7 @@
  			$$ensurepip --root=$(DESTDIR)/ ; \
  	fi
  
-@@ -1549,37 +1549,10 @@
+@@ -1550,37 +1550,10 @@ libinstall:	build_all $(srcdir)/Modules/xxmodule.c
  		$(INSTALL_DATA) $(srcdir)/Modules/xxmodule.c \
  			$(DESTDIR)$(LIBDEST)/distutils/tests ; \
  	fi
@@ -98,7 +106,7 @@
  
  # bpo-21536: Misc/python-config.sh is generated in the build directory
  # from $(srcdir)Misc/python-config.sh.in.
-@@ -1693,7 +1666,7 @@
+@@ -1694,7 +1667,7 @@ libainstall:	@DEF_MAKE_RULE@ python-config
  # Install the dynamically loadable modules
  # This goes into $(exec_prefix)
  sharedinstall: sharedmods
@@ -107,7 +115,7 @@
  	   	--prefix=$(prefix) \
  		--install-scripts=$(BINDIR) \
  		--install-platlib=$(DESTSHARED) \
-@@ -1859,7 +1832,7 @@
+@@ -1860,7 +1833,7 @@ clean-retain-profile: pycremoval
  	find build -name '*.py[co]' -exec rm -f {} ';' || true
  	-rm -f pybuilddir.txt
  	-rm -f Lib/lib2to3/*Grammar*.pickle

@@ -30,9 +30,13 @@ Wazuh Manager was installed
 
   # sysrc wazuh_manager_enable="YES"
 
+  or
+  
+  # service wazuh-manager enable
+
 6) Start Wazuh manager
 
-  # service wazuh_manager start
+  # service wazuh-manager start
 
 7) Enjoy it ;)
 EOM

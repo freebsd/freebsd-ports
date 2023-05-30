@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.4.1
+DISTVERSION=	4.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/20/libraries/sources/:wazuh_sources
@@ -95,7 +95,6 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|HOST_NAME_MAX|_POSIX_HOST_NAME_MAX|g' ${WRKSRC}/src/wazuh_modules/wm_database.c
 	${REINPLACE_CMD} -e 's|CC=|CC?=|g' -e 's|AR=|AR?=|g' ${WRKSRC}/src/external/bzip2/Makefile
-	${REINPLACE_CMD} '114d' ${WRKSRC}/src/wazuh_modules/syscollector/CMakeLists.txt
 
 do-build:
 	cd ${WRKSRC}/src/ && ${SETENV} ${MAKE_ENV} STAGEDIR=${STAGEDIR} \

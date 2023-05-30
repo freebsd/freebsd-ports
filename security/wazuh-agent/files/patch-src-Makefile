@@ -1,6 +1,6 @@
---- src/Makefile	2023-03-27 05:11:56.000000000 -0500
-+++ src/Makefile	2023-03-28 21:38:29.729243000 -0500
-@@ -38,9 +38,11 @@
+--- src/Makefile.orig	2023-05-24 19:23:05 UTC
++++ src/Makefile
+@@ -39,9 +39,11 @@ endif
  
  HAS_CHECKMODULE = $(shell command -v checkmodule > /dev/null && echo YES)
  HAS_SEMODULE_PACKAGE = $(shell command -v semodule_package > /dev/null && echo YES)
@@ -12,7 +12,7 @@
  
  ARCH_FLAGS =
  
-@@ -239,10 +241,10 @@
+@@ -240,10 +242,10 @@ else
  ifeq (${uname_S},FreeBSD)
  		DEFINES+=-DFreeBSD
  		OSSEC_CFLAGS+=-pthread -I/usr/local/include
@@ -25,7 +25,7 @@
  		AR_LDFLAGS+=-L/usr/local/lib
  		AR_LDFLAGS+='-Wl,-rpath,$$ORIGIN/../../lib'
  		PRECOMPILED_OS:=freebsd
-@@ -853,6 +855,8 @@
+@@ -855,6 +857,8 @@ ifeq (${TARGET},winagent)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  else ifeq (${uname_S},Linux)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
@@ -34,7 +34,7 @@
  else ifeq (${uname_S},Darwin)
  	EXTERNAL_LIBS += $(LIBCURL_LIB)
  endif
-@@ -2218,14 +2222,37 @@
+@@ -2224,14 +2228,37 @@ else
  	mkdir -p ${WPYTHON_DIR}
  	cp external/${WPYTHON_TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} && ${TAR} ${WPYTHON_DIR}/${WPYTHON_TAR} -C ${WPYTHON_DIR} && rm -rf ${WPYTHON_DIR}/${WPYTHON_TAR}
  endif
@@ -74,7 +74,7 @@
  endif
  
  install_framework: install_python
-@@ -2238,7 +2265,7 @@
+@@ -2244,7 +2271,7 @@ install_api: install_python
  
  install_mitre: install_python
  	cd ../tools/mitre && ${WPYTHON_DIR}/bin/python3 mitredb.py -d ${INSTALLDIR}/var/db/mitre.db

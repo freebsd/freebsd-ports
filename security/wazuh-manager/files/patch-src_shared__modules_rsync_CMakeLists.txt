@@ -1,0 +1,11 @@
+--- src/shared_modules/rsync/CMakeLists.txt.orig	2023-05-22 04:56:09 UTC
++++ src/shared_modules/rsync/CMakeLists.txt
+@@ -72,7 +72,7 @@ elseif(UNIX AND NOT APPLE)
+   endif(NOT CMAKE_SYSTEM_NAME STREQUAL "AIX")
+ endif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+ 
+-target_link_libraries(rsync dbsync wazuhext)
++target_link_libraries(rsync dbsync nghttp2 wazuhext)
+ 
+ if(CMAKE_BUILD_TYPE STREQUAL "Release")
+   if(CMAKE_SYSTEM_NAME STREQUAL "AIX")

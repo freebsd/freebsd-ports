@@ -1,5 +1,5 @@
---- src/rootcheck/os_string.c	2022-10-06 08:35:58.000000000 -0500
-+++ src/rootcheck/os_string.c	2022-10-30 14:31:56.614900000 -0500
+--- src/rootcheck/os_string.c.orig	2023-05-12 12:30:40 UTC
++++ src/rootcheck/os_string.c
 @@ -42,6 +42,9 @@
  #include <locale.h>
  #include <unistd.h>

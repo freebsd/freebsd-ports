@@ -1,6 +1,6 @@
---- tools/mitre/mitredb.py	2022-07-26 14:50:02.401104000 -0500
-+++ tools/mitre/mitredb.py	2022-07-26 15:25:13.375626000 -0500
-@@ -763,13 +763,6 @@
+--- tools/mitre/mitredb.py.orig	2023-05-12 12:30:40 UTC
++++ tools/mitre/mitredb.py
+@@ -766,13 +766,6 @@ def main(database=None):
      # Parse enterprise-attack.json file:
      parse_json(pathfile, session, database)
  

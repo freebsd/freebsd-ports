@@ -310,6 +310,12 @@ www/opensearch-dashboards/plugins/wazuh/node_modules/@types/react/jsx-dev-runtim
 www/opensearch-dashboards/plugins/wazuh/node_modules/@types/react/jsx-runtime.d.ts
 www/opensearch-dashboards/plugins/wazuh/node_modules/@types/react/next.d.ts
 www/opensearch-dashboards/plugins/wazuh/node_modules/@types/react/package.json
+www/opensearch-dashboards/plugins/wazuh/node_modules/@types/react/ts5.0/experimental.d.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/@types/react/ts5.0/global.d.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/@types/react/ts5.0/index.d.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/@types/react/ts5.0/jsx-dev-runtime.d.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/@types/react/ts5.0/jsx-runtime.d.ts
+www/opensearch-dashboards/plugins/wazuh/node_modules/@types/react/ts5.0/next.d.ts
 www/opensearch-dashboards/plugins/wazuh/node_modules/@types/scheduler/LICENSE
 www/opensearch-dashboards/plugins/wazuh/node_modules/@types/scheduler/README.md
 www/opensearch-dashboards/plugins/wazuh/node_modules/@types/scheduler/index.d.ts
@@ -2779,6 +2785,14 @@ www/opensearch-dashboards/plugins/wazuh/node_modules/has-property-descriptors/RE
 www/opensearch-dashboards/plugins/wazuh/node_modules/has-property-descriptors/index.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/has-property-descriptors/package.json
 www/opensearch-dashboards/plugins/wazuh/node_modules/has-property-descriptors/test/index.js
+www/opensearch-dashboards/plugins/wazuh/node_modules/has-proto/.eslintrc
+www/opensearch-dashboards/plugins/wazuh/node_modules/has-proto/.github/FUNDING.yml
+www/opensearch-dashboards/plugins/wazuh/node_modules/has-proto/CHANGELOG.md
+www/opensearch-dashboards/plugins/wazuh/node_modules/has-proto/LICENSE
+www/opensearch-dashboards/plugins/wazuh/node_modules/has-proto/README.md
+www/opensearch-dashboards/plugins/wazuh/node_modules/has-proto/index.js
+www/opensearch-dashboards/plugins/wazuh/node_modules/has-proto/package.json
+www/opensearch-dashboards/plugins/wazuh/node_modules/has-proto/test/index.js
 www/opensearch-dashboards/plugins/wazuh/node_modules/has-symbols/.eslintrc
 www/opensearch-dashboards/plugins/wazuh/node_modules/has-symbols/.github/FUNDING.yml
 www/opensearch-dashboards/plugins/wazuh/node_modules/has-symbols/.nycrc
