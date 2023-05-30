@@ -3,7 +3,7 @@ bin/lowdown-diff
 include/lowdown.h
 lib/liblowdown.a
 lib/liblowdown.so
-lib/liblowdown.so.2
+lib/liblowdown.so.3
 libdata/pkgconfig/lowdown.pc
 share/man/man1/lowdown.1.gz
 share/man/man1/lowdown-diff.1.gz
