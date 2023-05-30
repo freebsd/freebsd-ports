@@ -1,5 +1,27 @@
---- config/gitlab.yml.example.orig	2023-05-18 16:48:55 UTC
+--- config/gitlab.yml.example.orig	2023-05-22 18:44:12 UTC
 +++ config/gitlab.yml.example
+@@ -456,7 +456,7 @@ production: &base
+   ## GitLab Pages
+   pages:
+     enabled: false
+-    access_control: false
++    access_control: true
+     # The location where pages are stored (default: shared/pages).
+     # path: shared/pages
+ 
+@@ -466,9 +466,9 @@ production: &base
+     host: example.com
+     port: 80 # Set to 443 if you serve the pages with HTTPS
+     https: false # Set to true if you serve the pages with HTTPS
+-    artifacts_server: true # Set to false if you want to disable online view of HTML artifacts
+-    # external_http: ["1.1.1.1:80", "[2001::1]:80"] # If defined, enables custom domain support in GitLab Pages
+-    # external_https: ["1.1.1.1:443", "[2001::1]:443"] # If defined, enables custom domain and certificate support in GitLab Pages
++    artifacts_server: false # Set to false if you want to disable online view of HTML artifacts
++    external_http: ["127.0.0.1:8090"] # If defined, enables custom domain support in GitLab Pages
++    # external_https: ["127.0.0.1:8090"] # If defined, enables custom domain and certificate support in GitLab Pages
+ 
+     # File that contains the shared secret key for verifying access for gitlab-pages.
+     # Default is '.gitlab_pages_secret' relative to Rails.root (i.e. root of the GitLab app).
 @@ -1192,14 +1192,14 @@ production: &base
      # real path not the symlink.
      storages: # You must have at least a `default` storage path.

@@ -1,0 +1,9 @@
+--- gitlab-pages.conf.sample.orig	2023-05-30 05:09:18 UTC
++++ gitlab-pages.conf.sample
+@@ -0,0 +1,6 @@
++listen-http=:8090
++pages-root=%%PREFIX%%/www/gitlab-ce/shared/pages
++api-secret-key=%%PREFIX%%/www/gitlab-ce/.gitlab_pages_secret
++pages-domain=pages.example.com
++internal-gitlab-server=https://gitlab.example.com
++
