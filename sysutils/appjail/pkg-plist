@@ -46,7 +46,6 @@ libexec/appjail/network/network
 %%DATADIR%%/files/rctl-resources
 %%DATADIR%%/files/rctl-subjects
 %%DATADIR%%/lib/atexit
-%%DATADIR%%/lib/cache
 %%DATADIR%%/lib/check_func
 %%DATADIR%%/lib/colors
 %%DATADIR%%/lib/copy
@@ -117,3 +116,20 @@ libexec/appjail/network/network
 %%DATADIR%%/scripts/get_depends.sh
 %%DATADIR%%/scripts/run_init.sh
 %%DATADIR%%/scripts/run_jail.sh
+bin/appjail-config
+bin/appjail-config-user
+bin/appjail-user
+etc/rc.d/appjail-health
+libexec/appjail/appjail-config/appjail-config
+libexec/appjail/appjail-config/tok
+%%DATADIR%%/cmd/healthcheck
+%%DATADIR%%/cmd/status
+%%DATADIR%%/makejail/cmd/all/DESTROY
+%%DATADIR%%/makejail/cmd/all/EXEC
+%%DATADIR%%/makejail/write/all/DESTROY
+%%DATADIR%%/makejail/write/all/EXEC
+%%DATADIR%%/scripts/ajconf-user.sh
+%%DATADIR%%/scripts/ajconf.sh
+%%DATADIR%%/scripts/ajuser.sh
+%%DATADIR%%/scripts/runas.sh
+@sample %%ETCDIR%%/appjail.conf.sample
