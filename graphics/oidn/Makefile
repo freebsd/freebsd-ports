@@ -14,7 +14,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=		amd64
 ONLY_FOR_ARCHS_REASON=	Intel(R) MKL-DNN supports x86 64 bit platforms only (oidn contains a custom version of mkl-dnn, see math/mkl-dnn), and ISPC has a limited availability
-BROKEN_FreeBSD_12=	error: unknown type name 'cpuset_t'; did you mean 'cpusetid_t'?
 
 FETCH_DEPENDS=	git:devel/git \
 		git-lfs:devel/git-lfs
