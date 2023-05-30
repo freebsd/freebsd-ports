@@ -1,7 +1,11 @@
 PORTNAME=	musikcube
 DISTVERSION=	0.99.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	2ee397091946.patch:-p1 # https://github.com/clangen/musikcube/pull/614
+PATCHFILES+=	a9b08fab3be3.patch:-p1 # https://github.com/clangen/musikcube/pull/614
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal-based music player, audio engine, metadata indexer, server
@@ -13,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	asio>0:net/asio
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libavcodec.so:multimedia/ffmpeg \
+		libbasu.so:devel/basu \
 		libboost_system.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libev.so:devel/libev \
@@ -33,6 +38,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 USES=		cmake:noninja compiler:c++17-lang pkgconfig ssl
 USES+=		localbase # workaround for https://github.com/clangen/musikcube/issues/600
 USE_LDCONFIG=	yes
+CMAKE_ON=	USE_BASU
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	clangen
@@ -48,13 +54,13 @@ post-install:
 
 .if ${OPSYS} == "FreeBSD" && ${OSVERSION} >= 1300079
 USES+=		ncurses
-CMAKE_ARGS=	-DNCURSES_DISABLE_LIB_SUFFIXES=false
-CMAKE_ON=	FREEBSD_USE_BASE_NCURSES
+CMAKE_ARGS+=	-DNCURSES_DISABLE_LIB_SUFFIXES=false
+CMAKE_ON+=	FREEBSD_USE_BASE_NCURSES
 .else
 USES+=		ncurses:port
 CFLAGS+=	-I${LOCALBASE}/include/ncurses
-CMAKE_ARGS=	-DNCURSES_DISABLE_LIB_SUFFIXES=true
-CMAKE_OFF=	FREEBSD_USE_BASE_NCURSES
+CMAKE_ARGS+=	-DNCURSES_DISABLE_LIB_SUFFIXES=true
+CMAKE_OFF+=	FREEBSD_USE_BASE_NCURSES
 .endif
 
 .include <bsd.port.mk>
