@@ -1,6 +1,6 @@
---- remoting/host/it2me/it2me_host.cc.orig	2023-03-09 06:31:50 UTC
+--- remoting/host/it2me/it2me_host.cc.orig	2023-05-31 08:12:17 UTC
 +++ remoting/host/it2me/it2me_host.cc
-@@ -43,7 +43,7 @@
+@@ -44,7 +44,7 @@
  #include "remoting/signaling/signaling_id_util.h"
  #include "services/network/public/cpp/shared_url_loader_factory.h"
  
@@ -9,7 +9,7 @@
  #include "remoting/host/linux/wayland_manager.h"
  #include "remoting/host/linux/wayland_utils.h"
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -144,7 +144,7 @@ void It2MeHost::Connect(
+@@ -111,7 +111,7 @@ void It2MeHost::Connect(
  
    OnPolicyUpdate(std::move(policies));
  
@@ -18,7 +18,7 @@
    if (IsRunningWayland()) {
      WaylandManager::Get()->Init(host_context_->ui_task_runner());
    }
-@@ -283,7 +283,7 @@ void It2MeHost::ConnectOnNetworkThread(
+@@ -251,7 +251,7 @@ void It2MeHost::ConnectOnNetworkThread(
  
    // Set up the desktop environment options.
    DesktopEnvironmentOptions options(DesktopEnvironmentOptions::CreateDefault());

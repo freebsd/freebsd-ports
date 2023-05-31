@@ -1,6 +1,6 @@
---- ui/base/test/skia_gold_pixel_diff.cc.orig	2023-01-11 09:17:16 UTC
+--- ui/base/test/skia_gold_pixel_diff.cc.orig	2023-05-31 08:12:17 UTC
 +++ ui/base/test/skia_gold_pixel_diff.cc
-@@ -151,7 +151,7 @@ std::string SkiaGoldPixelDiff::GetPlatform() {
+@@ -153,7 +153,7 @@ std::string SkiaGoldPixelDiff::GetPlatform() {
    return "macOS";
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

@@ -1,7 +1,7 @@
---- content/public/browser/render_process_host.h.orig	2023-04-28 17:01:32 UTC
+--- content/public/browser/render_process_host.h.orig	2023-05-31 08:12:17 UTC
 +++ content/public/browser/render_process_host.h
 @@ -54,7 +54,7 @@
- #include "content/public/browser/android/child_process_importance.h"
+ #include "services/network/public/mojom/attribution.mojom-forward.h"
  #endif
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

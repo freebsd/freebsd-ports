@@ -1,4 +1,4 @@
---- content/browser/browser_main_loop.cc.orig	2023-03-09 06:31:50 UTC
+--- content/browser/browser_main_loop.cc.orig	2023-05-31 08:12:17 UTC
 +++ content/browser/browser_main_loop.cc
 @@ -245,6 +245,12 @@
  #include "mojo/public/cpp/bindings/lib/test_random_mojo_delays.h"
@@ -29,9 +29,9 @@
 @@ -575,7 +587,7 @@ int BrowserMainLoop::EarlyInitialization() {
    base::PlatformThread::SetCurrentThreadType(base::ThreadType::kCompositing);
  
- #if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
+ #if BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
 -    BUILDFLAG(IS_ANDROID)
 +    BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_BSD)
    // We use quite a few file descriptors for our IPC as well as disk the disk
-   // cache,and the default limit on the Mac is low (256), so bump it up.
+   // cache, and the default limit on Apple is low (256), so bump it up.
  

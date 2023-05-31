@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig	2023-04-28 17:01:32 UTC
+--- gpu/command_buffer/service/webgpu_decoder_impl.cc.orig	2023-05-31 08:12:17 UTC
 +++ gpu/command_buffer/service/webgpu_decoder_impl.cc
-@@ -1238,7 +1238,7 @@ void WebGPUDecoderImpl::RequestAdapterImpl(
+@@ -1231,7 +1231,7 @@ void WebGPUDecoderImpl::RequestAdapterImpl(
  
    if (gr_context_type_ != GrContextType::kVulkan &&
        use_webgpu_adapter_ != WebGPUAdapterName::kCompat) {

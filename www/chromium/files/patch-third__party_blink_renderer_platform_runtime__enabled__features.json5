@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-05-17 10:17:13 UTC
+--- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig	2023-05-31 08:12:17 UTC
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -1320,7 +1320,7 @@
+@@ -1381,7 +1381,7 @@
      {
        name: "DocumentPictureInPictureAPI",
        origin_trial_feature_name: "DocumentPictureInPictureAPI",
@@ -9,16 +9,7 @@
        status: {
          "Android": "",
          "ChromeOS_Lacros": "",
-@@ -1578,7 +1578,7 @@
-       depends_on: ["FileSystemAccessLocal"],
-       status: {"Android": "test", "default": "stable"},
-       origin_trial_feature_name: "FileHandling",
--      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos"],
-+      origin_trial_os: ["win", "mac", "linux", "fuchsia", "chromeos", "openbsd", "freebsd"],
-       base_feature: "FileHandlingAPI",
-     },
-     {
-@@ -2515,7 +2515,7 @@
+@@ -2590,7 +2590,7 @@
        name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_feature_name: "PaymentHandlerMinimalHeaderUX",
        origin_trial_allows_third_party: true,
@@ -27,7 +18,7 @@
      },
      {
        name: "PaymentInstruments",
-@@ -3427,7 +3427,7 @@
+@@ -3478,7 +3478,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -36,7 +27,7 @@
      },
      {
        // A kill switch for crbug.com/1410332.
-@@ -3453,7 +3453,7 @@
+@@ -3509,7 +3509,7 @@
        origin_trial_feature_name: "UserAgentReduction",
        origin_trial_allows_third_party: true,
        // iOS not included as it should not send a reduced User-Agent string.
@@ -45,7 +36,7 @@
        base_feature: "ReduceUserAgent",
      },
      {
-@@ -3621,12 +3621,12 @@
+@@ -3660,12 +3660,12 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",

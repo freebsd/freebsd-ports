@@ -1,6 +1,6 @@
---- chrome/app/chrome_main.cc.orig	2023-04-28 17:01:32 UTC
+--- chrome/app/chrome_main.cc.orig	2023-05-31 08:12:17 UTC
 +++ chrome/app/chrome_main.cc
-@@ -28,11 +28,11 @@
+@@ -27,11 +27,11 @@
  #include "chrome/app/notification_metrics.h"
  #endif
  
@@ -14,7 +14,7 @@
  #include "chrome/app/chrome_main_linux.h"
  #endif
  
-@@ -147,7 +147,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -136,7 +136,7 @@ int ChromeMain(int argc, const char** argv) {
    SetUpBundleOverrides();
  #endif
  
@@ -23,7 +23,7 @@
    AppendExtraArgumentsToCommandLine(command_line);
  #endif
  
-@@ -175,7 +175,7 @@ int ChromeMain(int argc, const char** argv) {
+@@ -164,7 +164,7 @@ int ChromeMain(int argc, const char** argv) {
      headless::SetUpCommandLine(command_line);
    } else {
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \

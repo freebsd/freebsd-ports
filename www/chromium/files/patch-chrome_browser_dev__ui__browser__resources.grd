@@ -1,6 +1,6 @@
---- chrome/browser/dev_ui_browser_resources.grd.orig	2023-02-08 09:03:45 UTC
+--- chrome/browser/dev_ui_browser_resources.grd.orig	2023-05-31 08:12:17 UTC
 +++ chrome/browser/dev_ui_browser_resources.grd
-@@ -33,7 +33,7 @@ This file specifies browser resources for developer-fa
+@@ -34,7 +34,7 @@ This file specifies browser resources for developer-fa
        <include name="IDR_PREDICTORS_JS" file="${root_gen_dir}\chrome\browser\resources\predictors\predictors.js" use_base_dir="false" type="BINDATA" />
        <include name="IDR_PREDICTORS_RESOURCE_PREFETCH_PREDICTOR_JS" file="${root_gen_dir}\chrome\browser\resources\predictors\resource_prefetch_predictor.js" use_base_dir="false" type="BINDATA" />
  

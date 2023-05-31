@@ -1,6 +1,6 @@
---- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2023-04-05 11:05:06 UTC
+--- chrome/browser/extensions/api/settings_private/prefs_util.cc.orig	2023-05-31 08:12:17 UTC
 +++ chrome/browser/extensions/api/settings_private/prefs_util.cc
-@@ -191,7 +191,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+@@ -196,7 +196,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
    (*s_allowlist)[::prefs::kUseCustomChromeFrame] =
        settings_api::PrefType::PREF_TYPE_BOOLEAN;
  #endif
-@@ -203,7 +203,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
+@@ -208,7 +208,7 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlist
        settings_api::PrefType::PREF_TYPE_STRING;
    (*s_allowlist)[::prefs::kPolicyThemeColor] =
        settings_api::PrefType::PREF_TYPE_NUMBER;
