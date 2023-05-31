@@ -7588,3 +7588,4 @@ devel/arm-none-eabi-gcc492|devel/arm-none-eabi-gcc|2023-05-31|Has expired: Long 
 multimedia/nordlicht||2023-05-31|Has expired: Unmaintained for years upstream and fails to build with FFmpeg 6
 finance/vanitygen||2023-05-31|Has expired: Broken for more than a year and upstream last release was 11 years ago
 net-p2p/qtum||2023-05-31|Has expired: Broken for nearly a year
+sysutils/pam_mount||2023-05-31|Has expired: Requires upstream EOL OpenSSL 1.0.X and linux only libmount which is not available for FreeBSD
