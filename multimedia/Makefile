@@ -252,7 +252,6 @@
     SUBDIR += naludump
     SUBDIR += navidrome
     SUBDIR += neolink
-    SUBDIR += nordlicht
     SUBDIR += nostt
     SUBDIR += nymphcast
     SUBDIR += nymphcastlib
