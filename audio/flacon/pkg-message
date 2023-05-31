@@ -7,8 +7,7 @@
 
 		audio/faac		audio/flac
 		audio/lame		audio/mac
-		audio/mp3gain		audio/opus-tools
-		audio/tta		audio/vorbisgain
+		audio/opus-tools	audio/tta
 		audio/vorbis-tools	audio/wavpack
 EOM
 }
