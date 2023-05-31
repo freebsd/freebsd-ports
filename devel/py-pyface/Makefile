@@ -1,6 +1,5 @@
 PORTNAME=	pyface
-DISTVERSION=	7.4.4
-PORTREVISION=	1
+DISTVERSION=	8.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,12 +15,14 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/image_LICENSE_Nuvola.txt
 LICENSE_FILE_LGPL3=	${WRKSRC}/image_LICENSE_OOo.txt
 #See file ${WRKSRC}/image_LICENSE.txt for files with non BSD3CLAUSE licenses
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6.0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.1.0:devel/py-importlib-resources@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traits>=6.2:devel/py-traits@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
 
@@ -32,6 +33,6 @@ OPTIONS_DEFAULT=	QT5
 
 QT5_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 QT5_USES=		pyqt:5
-QT5_USE=		PYQT=pyqt5:run,pyqt5:test
+QT5_USE=		PYQT=pyqt5:run
 
 .include <bsd.port.mk>
