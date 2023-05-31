@@ -1,6 +1,5 @@
 PORTNAME=	goldendict
-DISTVERSION=	1.5.0-g20220602
-PORTREVISION=	2
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc
 
 MAINTAINER=	danfe@FreeBSD.org
@@ -20,7 +19,6 @@ LIB_DEPENDS=	libhunspell-1.7.so:textproc/hunspell \
 USES=		compiler:c++11-lang gnome iconv:wchar_t pkgconfig \
 		qmake qt:5 xorg
 USE_GITHUB=	yes
-GH_TAGNAME=	99982a1
 USE_XORG=	x11 xtst
 USE_QT=		buildtools:build linguisttools:build core gui help \
 		network printsupport sql svg webkit widgets \
@@ -47,7 +45,7 @@ OPENCC_LIB_DEPENDS=	libopencc.so:chinese/opencc
 OPENCC_QMAKE_ON=	CONFIG+="chinese_conversion_support"
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^VERSION = /s,git,&${GH_TAGNAME},' \
+	@${REINPLACE_CMD} -e '/^VERSION = /s,git,&-8c5b26a,' \
 		${WRKSRC}/goldendict.pro
 	@${REINPLACE_CMD} -e '/^#include <stdio\.h>/ { x; \
 		s/^/#include <locale.h>/; G; }' ${WRKSRC}/main.cc
