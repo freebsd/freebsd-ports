@@ -1,5 +1,5 @@
 PORTNAME=	zabbix4
-PORTVERSION=	4.0.45
+PORTVERSION=	4.0.46
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${PORTVERSION:R}/
