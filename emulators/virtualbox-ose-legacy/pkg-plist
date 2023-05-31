@@ -436,7 +436,7 @@ lib/virtualbox/components/VBoxXPCOMBase.xpt
 lib/virtualbox/components/VBoxXPCOMIPCC.so
 lib/virtualbox/components/VirtualBox_XPCOM.xpt
 %%QT%%share/applications/virtualbox.desktop
-%%MANUAL%%%%DOCSDIR%%/UserManual.pdf
+%%DOCS%%%%DOCSDIR%%/UserManual.pdf
 %%QT%%share/pixmaps/VBox.png
 %%DATADIR%%/idl/VirtualBox_XPCOM.idl
 %%DATADIR%%/idl/ipcIClientObserver.idl

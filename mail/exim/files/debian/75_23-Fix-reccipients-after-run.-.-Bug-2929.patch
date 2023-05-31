@@ -1,0 +1,45 @@
+From 6b331d5834d12bdda21857cd6fffac17038ce3c7 Mon Sep 17 00:00:00 2001
+From: Ruben Jenster <r.jenster@drachenfels.de>
+Date: Thu, 3 Nov 2022 21:38:15 +0000
+Subject: [PATCH 2/2] Fix $reccipients after ${run...}.  Bug 2929
+
+Broken-by: cfe6acff2d
+---
+ doc/ChangeLog | 3 +++
+ src/transport.c   | 3 ++-
+ 2 files changed, 5 insertions(+), 1 deletion(-)
+
+--- a/doc/ChangeLog
++++ b/doc/ChangeLog
+@@ -20,10 +20,13 @@
+ 
+ JH/12 Bug 2930: Fix daemon startup.  When started from any process apart from
+       pid 1, in the normal "background daemon" mode, having to drop process-
+       group leadership also lost track of needing to create listener sockets.
+ 
++JH/13 Bug 2929: Fix using $recipients after ${run...}.  A change made for 4.96
++      resulted in the variable appearing empty.  Find and fix by Ruben Jenster.
++
+ 
+ 
+ Exim version 4.96
+ -----------------
+ 
+--- a/src/transport.c
++++ b/src/transport.c
+@@ -2342,13 +2342,14 @@
+     /* Handle normal expansion string */
+ 
+     else
+       {
+       const uschar *expanded_arg;
++      BOOL enable_dollar_recipients_g = f.enable_dollar_recipients;
+       f.enable_dollar_recipients = allow_dollar_recipients;
+       expanded_arg = expand_cstring(argv[i]);
+-      f.enable_dollar_recipients = FALSE;
++      f.enable_dollar_recipients = enable_dollar_recipients_g;
+ 
+       if (!expanded_arg)
+         {
+         uschar *msg = string_sprintf("Expansion of \"%s\" "
+           "from command \"%s\" in %s failed: %s",

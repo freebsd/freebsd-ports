@@ -9,6 +9,9 @@
 # cardano_db_sync_enable:          Set to YES to enable cardano_db_sync.
 #                               Default: "NO"
 #
+# cardano_db_sync_jail_enable:     Set to YES to run the service in a minimal jail.
+#                               Default: "NO"
+#
 # cardano_db_sync_net:             A network name to connect to.
 #                               Default: "mainnet"
 #
@@ -17,7 +20,7 @@
 #                               Default: "/var/db/cardano_db_sync"
 #
 # cardano_db_sync_cnode_socket:    An absolute path to the cardano-node socket file.
-#                               Default: "/var/db/cardano_node/jail/socket/cardano-node.sock"
+#                               Default: "/var/db/cardano_node/cardano-node.sock"
 #
 # Advanced settings that usually don't need to be changed for simple usage cases:
 #
@@ -38,59 +41,130 @@
 
 name=cardano_db_sync
 desc="Cardano DB-Sync daemon"
-rcvar=cardano_db_sync_enable
+rcvar="cardano_db_sync_enable"
 command=%%PREFIX%%/bin/cardano-db-sync
 
 cardano_deployment_url="https://raw.githubusercontent.com/cardano-bsd-alliance/freebsd-ports-cardano-artifacts/master/cardano-db-sync"
 cardano_config_files="config db-sync-config byron-genesis shelley-genesis alonzo-genesis"
 cardano_networks="mainnet preview preprod"
 
-start_cmd="${name}_start"
-start_precmd="${name}_prestart"
-stop_cmd="${name}_stop"
-status_cmd="${name}_status"
-fetch_cmd="${name}_fetch"
+start_cmd="cardano_db_sync_start"
+start_precmd="cardano_db_sync_prestart"
+stop_cmd="cardano_db_sync_stop"
+status_cmd="cardano_db_sync_status"
+fetch_cmd="cardano_db_sync_fetch"
 
 extra_commands="status fetch"
 
 load_rc_config $name
 : ${cardano_db_sync_enable:=NO}
+: ${cardano_db_sync_jail_enable:=NO}
 : ${cardano_db_sync_net:="mainnet"}
 : ${cardano_db_sync_home:="/var/db/cardano_db_sync"}
-: ${cardano_db_sync_cnode_socket:="/var/db/cardano_node/jail/socket/cardano-node.sock"}
+: ${cardano_db_sync_cnode_socket:="/var/db/cardano_node/cardano-node.sock"}
 : ${cardano_db_sync_pgpass:="${cardano_db_sync_home}/${cardano_db_sync_net}-configs/.pgpass"}
 : ${cardano_db_sync_config:="${cardano_db_sync_home}/${cardano_db_sync_net}-configs/db-sync-config.json"}
-: ${cardano_db_sync_schema:="%%LOCALBASE%%/share/cardano-db-sync/schema"}
+: ${cardano_db_sync_schema:="%%PREFIX%%/share/cardano-db-sync/schema"}
 : ${cardano_db_sync_flags:=""}
 
 cardano_db_sync_state="${cardano_db_sync_home}/${cardano_db_sync_net}-state"
-export PGPASSFILE=${cardano_db_sync_pgpass}
+
+# aliases
+_home=${cardano_db_sync_home}
+_net=${cardano_db_sync_net}
+_socket=${cardano_db_sync_cnode_socket}
+_pgpass=${cardano_db_sync_pgpass}
+_config=${cardano_db_sync_config}
+_schema=${cardano_db_sync_schema}
+_state=${cardano_db_sync_state}
+_flags=${cardano_db_sync_flags}
+
+jail_schema="/schema"
+jail_config="/${_net}-configs/`basename ${_config}`"
+jail_pgpass="/${_net}-configs/`basename ${_pgpass}`"
+jail_socket="/socket/`basename ${_socket}`"
+jail_state="/${_net}-state"
+jail_args="name=cardano_db_sync_jail exec.jail_user=cardano exec.system_jail_user host=inherit"
+jail_command=/bin/cardano-db-sync
+
+jail_root="${_home}/jail"
+jail_copy_resolv_conf=yes
+jail_copy_services=yes
+jail_copy_programs="$command /usr/sbin/nologin /bin/sh %%LOCALBASE%%/bin/psql"
+jail_ip_inherit=yes
+jail_prepare_inside_cmds="mkdir ./tmp ;\
+                          chmod +s ./bin/cardano-db-sync"
+jail_nullfs_mounts="`dirname ${_config}` ./${_net}-configs ro \
+                    ${_schema} ./schema ro \
+                    ${_state} ./${_net}-state ro"
+
+if checkyesno "cardano_db_sync_jail_enable"; then
+    export PGPASSFILE=${jail_pgpass}
+    _schema_arg="${jail_schema}"
+    _state_arg="${jail_state}"
+    _socket_arg="${jail_socket}"
+    _config_arg="${jail_config}"
+    # We need to override ${command} to make check_pidfile work correctly when
+    # rc.subr calls it as "check_pidfile ${pidfile} ${command}"
+    command=/usr/sbin/jail
+else
+    export PGPASSFILE=${_pgpass}
+    _schema_arg="${_schema}"
+    _state_arg="${_state}"
+    _socket_arg="${_socket}"
+    _config_arg="${_config}"
+fi
+
 pidfile="/var/run/cardano-db-sync.pid"
-logfile="/var/log/cardano-db-sync.log"
-flags=" --schema-dir ${cardano_db_sync_schema} \
-        --state-dir ${cardano_db_sync_state} \
-        --socket-path ${cardano_db_sync_cnode_socket} \
-        --config ${cardano_db_sync_config} \
-        ${cardano_db_sync_flags}"
+flags=" --schema-dir ${_schema_arg} \
+        --state-dir ${_state_arg} \
+        --socket-path ${_socket_arg} \
+        --config ${_config_arg} \
+        ${_flags}"
+
+. %%LOCALBASE%%/share/rc-subr-jail/rc.subr.jail
+
+# dirname_realpath path
+# Return an absolute dirname for a given path
+# Correctly handles symlinks pointing to a non-existant files
+dirname_realpath()
+{
+    local _path _dirname _realpath
+    _path=$1
+    _dirname=$(dirname ${_path})
+
+    _realpath=$(/bin/sh -c "cd $_dirname && readlink ${_path}" 2> /dev/null)
+    if [ $? = "0" ]; then
+        _dirname=$(dirname ${_realpath})
+        if [ $_dirname == "." ]; then
+            echo $(dirname ${_path})
+        else
+            echo $(/bin/sh -c "cd ${_dirname} && pwd" 2> /dev/null)
+        fi
+        return 0
+    fi
+    echo $(dirname ${_path})
+}
 
 sanity_check()
 {
-    if [ ! -f ${cardano_db_sync_config} ]
-    then
-        echo "Invalid value for cardano_db_sync_config: missing file ${cardano_db_sync_config}"
+    if [ ! -f ${_config} ]; then
+        echo "Invalid value for cardano_db_sync_config: missing file ${_config}"
         echo "You might want to run service cardano_db_sync onefetch"
         exit 1
     fi
-    if [ ! -f ${cardano_db_sync_pgpass} ]
-    then
-        echo "Invalid value for cardano_db_sync_pgpass: missing file ${cardano_db_sync_pgpass}"
+    if [ ! -f ${_pgpass} ]; then
+        echo "Invalid value for cardano_db_sync_pgpass: missing file ${_pgpass}"
         echo "Did you setup postgresql database access?"
         exit 1
     fi
-    if [ ! -d `dirname ${cardano_db_sync_cnode_socket}` ]
-    then
-        echo "The directory for the socket file ${cardano_db_sync_cnode_socket} is missing"
-        echo "Cardano-node is not running and/or wrong path specified for /jail/socket/ dir"
+    if [ ! \( -L ${_socket} -o -S ${_socket} \) ]; then
+        echo "Invalid value for cardano_db_sync_cnode_socket: ${_socket} is not a socket or a symlink"
+        echo "cardano_node might be not running and/or wrong path specified for the socket file"
+        exit 1
+    fi
+    if [ ! -d `dirname ${_schema}` ]; then
+        echo "The directory for the database schema ${_schema} is missing"
         exit 1
     fi
     return 0
@@ -99,12 +173,14 @@ sanity_check()
 cardano_db_sync_prestart()
 {
     # Create cardano_db_sync home directory, if not exists
-    if [ ! -d "${cardano_db_sync_home}" ]; then
-        mkdir -p "${cardano_db_sync_home}"
+    if [ ! -d "${_home}" ]; then
+        mkdir -p "${_home}"
+        chown cardano:cardano "${_home}"
     fi
     # Create cardano_db_sync state directory, if not exists
-    if [ ! -d "${cardano_db_sync_state}" ]; then
-        mkdir -p "${cardano_db_sync_state}"
+    if [ ! -d "${_state}" ]; then
+        mkdir -p "${_state}"
+        chown cardano:cardano "${_state}"
     fi
 
     sanity_check
@@ -114,33 +190,58 @@ cardano_db_sync_start()
 {
     check_startmsgs && echo "Starting ${name}."
 
-    cd $cardano_db_sync_home && /usr/bin/env PATH=$PATH:%%LOCALBASE%%/bin /usr/sbin/daemon -p $pidfile -S -T cardano-db-sync \
-        ${command} ${flags} 2>&1 > /dev/null
+    local _socketdir=$(dirname_realpath ${_socket})
+    jail_nullfs_mounts="$jail_nullfs_mounts ${_socketdir} ./socket ro"
+
+    if checkyesno "cardano_db_sync_jail_enable"; then
+        prepare_jail $jail_root
+        if [ "$?" != "0" ]; then
+            echo "Failed to start ${name}: jail creation error"
+            return 1
+        fi
+
+        cd ${_home} && /bin/sh -c "/usr/sbin/daemon -p $pidfile -S -T cardano-db-sync \
+            ${command} -c ${jail_prepared_args} ${jail_args} command=${jail_command} ${flags}"
+    else
+        cd ${_home} && /usr/bin/env "PATH=${PATH}:%%LOCALBASE%%/bin" /usr/sbin/daemon -p $pidfile -S -T cardano-db-sync \
+            ${command} ${flags}
+    fi
 }
 
 cardano_db_sync_stop()
 {
-    pid=$(check_pidfile "${pidfile}" "${command}")
+    local _ret
+    local _socketdir=$(dirname_realpath ${_socket})
+    jail_nullfs_mounts="$jail_nullfs_mounts ${_socketdir} ./socket ro"
+
+    pid=$(check_pidfile "${pidfile}" "$command")
+
     if [ -z "${pid}" ]
     then
         echo "${name} is not running"
-        return 1
+        _ret=1
     else
         echo "Stopping ${name}."
-        /bin/kill -INT "$pid"
+        kill_jail "$pid" -INT "cardano_db_sync_jail_enable"
         wait_for_pids "$pid"
+        _ret=0
+    fi
+
+    if checkyesno "cardano_db_sync_jail_enable"; then
+            destroy_jail $jail_root 2> /dev/null
     fi
 }
 
 cardano_db_sync_status()
 {
-    pid=$(check_pidfile "${pidfile}" "${command}")
+    pid=$(check_pidfile "${pidfile}" "$command")
+
     if [ -z "${pid}" ]
     then
-      echo "${name} is not running"
-      return 1
+        echo "${name} is not running"
+        return 1
     else
-      echo ${name} is running as pid $pid
+        echo ${name} is running as pid $pid
     fi
 }
 
@@ -149,9 +250,10 @@ cardano_db_sync_fetch()
     for net in ${cardano_networks}
     do
         echo "Fetching configuration files for ${net}"
-        mkdir -p "${cardano_db_sync_home}/${net}-configs"
+        mkdir -p "${_home}/${net}-configs"
         /usr/bin/apply "/usr/bin/fetch -a -o \
-        ${cardano_db_sync_home}/${net}-configs ${cardano_deployment_url}/${net}-configs/%1.json" $cardano_config_files
+        ${_home}/${net}-configs ${cardano_deployment_url}/${net}-configs/%1.json" $cardano_config_files
+        chown -R cardano:cardano "${_home}/${net}-configs"
     done
 }
 

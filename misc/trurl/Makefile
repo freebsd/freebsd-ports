@@ -1,5 +1,6 @@
 PORTNAME=	trurl
-DISTVERSION=	0.6
+DISTVERSIONPREFIX=	${PORTNAME}-
+DISTVERSION=	0.7
 CATEGORIES=	misc www
 
 MAINTAINER=	otis@FreeBSD.org
@@ -10,17 +11,24 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 
+USES=		python:test
 USE_GITHUB=	yes
 GH_ACCOUNT=	curl
-GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 
-MAKE_ARGS=	CFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-lcurl" \
+		LDLIBS="-L${LOCALBASE}/lib" \
+		MANDIR="${PREFIX}/man/man1"
 
 ALL_TARGET=	${PORTNAME}
+TEST_TARGET=	test
 
 PLIST_FILES=	bin/trurl \
-		share/man/man1/trurl.1.gz
+		man/man1/trurl.1.gz
+
+post-install:
+		${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/trurl
 
 .include <bsd.port.mk>

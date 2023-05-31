@@ -1,6 +1,6 @@
 PORTNAME=	inkscape
 DISTVERSION=	1.2.2
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
@@ -55,8 +55,6 @@ USES=		compiler:c++17-lang cmake cpe desktop-file-utils gnome \
 USE_GNOME=	gdkpixbuf2 gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
 USE_LDCONFIG=	yes
-
-CXXSTD=		gnu++17
 
 DATETAG=	2022-12-01_b0a8486541
 

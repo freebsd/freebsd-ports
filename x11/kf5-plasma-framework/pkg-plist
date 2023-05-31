@@ -543,7 +543,6 @@ share/plasma/desktoptheme/default/icons/list.svgz
 share/plasma/desktoptheme/default/icons/mail.svgz
 share/plasma/desktoptheme/default/icons/media.svgz
 share/plasma/desktoptheme/default/icons/mobile.svgz
-share/plasma/desktoptheme/default/icons/nepomuk.svgz
 share/plasma/desktoptheme/default/icons/network.svgz
 share/plasma/desktoptheme/default/icons/notification.svgz
 share/plasma/desktoptheme/default/icons/osd.svgz
@@ -553,6 +552,7 @@ share/plasma/desktoptheme/default/icons/plasmavault_error.svgz
 share/plasma/desktoptheme/default/icons/preferences.svgz
 share/plasma/desktoptheme/default/icons/printer.svgz
 share/plasma/desktoptheme/default/icons/quassel.svgz
+share/plasma/desktoptheme/default/icons/search.svgz
 share/plasma/desktoptheme/default/icons/slc.svgz
 share/plasma/desktoptheme/default/icons/software.svgz
 share/plasma/desktoptheme/default/icons/start.svgz

@@ -1,6 +1,6 @@
 PORTNAME=	osv-scanner
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.3
 CATEGORIES=	security
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		go:modules
 
 _BUILD_VERSION=	${DISTVERSION}
-_BUILD_COMMIT=	c6d02d1
+_BUILD_COMMIT=	dbeadde
 _BUILD_DATE=	$$(date +%Y-%m-%d)
 
 GO_MODULE=	github.com/google/${PORTNAME}

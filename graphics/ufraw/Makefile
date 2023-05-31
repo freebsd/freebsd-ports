@@ -1,6 +1,6 @@
 PORTNAME=	ufraw
 PORTVERSION=	0.22.20210424
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -18,6 +18,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext \
 		gmake gnome jpeg pkgconfig
+USE_CXXSTD=	gnu++98
 USE_GITHUB=	yes
 GH_ACCOUNT=	sergiomb2
 GH_TAGNAME=	f34669b

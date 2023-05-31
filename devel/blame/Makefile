@@ -1,18 +1,19 @@
 PORTNAME=	blame
-PORTVERSION=	1.3.1
+DISTVERSION=	1.3.1-20221108
 CATEGORIES=	devel
-MASTER_SITES=	ftp://ftp.invisible-island.net/rcs-blame/
+MASTER_SITES=	https://invisible-island.net/archives/rcs-blame/
 
-MAINTAINER=	jhein@symmetricom.com
+MAINTAINER=	fuz@FreeBSD.org
 COMMENT=	Display last modification for each line in an RCS file
 WWW=		https://invisible-island.net/rcs-blame/
 
-USE_CSTD=	gnu89
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USES=		tar:tgz
 GNU_CONFIGURE=	yes
+TEST_TARGET=	check
 PLIST_FILES=	bin/blame \
 		man/man1/blame.1.gz
-
-# Fix build with clang11
-CFLAGS+=	-fcommon
 
 .include <bsd.port.mk>

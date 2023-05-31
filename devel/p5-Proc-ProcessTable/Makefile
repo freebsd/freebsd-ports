@@ -1,5 +1,5 @@
 PORTNAME=	Proc-ProcessTable
-PORTVERSION=	0.634
+PORTVERSION=	0.635
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:JWB
@@ -17,7 +17,7 @@ USE_PERL5=	configure
 
 OPTIONS_DEFINE=	DOCS
 
-PORTSCOUT=	limit:^[0-9\.]*$$ skipv:0.611,0.612
+PORTSCOUT=	limit:^[0-9\.]*$$
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Proc/ProcessTable/ProcessTable.so

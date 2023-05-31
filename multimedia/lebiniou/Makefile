@@ -39,6 +39,5 @@ GL_ACCOUNT=	lebiniou
 GL_COMMIT=	2049ce3d9ee5f860fb6a5d516c4af797f4669b58
 
 GNU_CONFIGURE=	YES
-INSTALLS_ICONS=	YES
 
 .include <bsd.port.mk>

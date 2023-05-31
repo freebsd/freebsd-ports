@@ -27,7 +27,7 @@
     SUBDIR += deluge
     SUBDIR += deluge-cli
     SUBDIR += ed2k
-    SUBDIR += edonkey-tool-hash
+    SUBDIR += ed2k-hash
     SUBDIR += eiskaltdcpp-cli
     SUBDIR += eiskaltdcpp-daemon
     SUBDIR += eiskaltdcpp-data
@@ -78,6 +78,7 @@
     SUBDIR += p5-WWW-BitTorrent
     SUBDIR += phex
     SUBDIR += prowlarr
+    SUBDIR += py-ed2k-tools
     SUBDIR += py-libtorrent-rasterbar
     SUBDIR += py-nicotine-plus
     SUBDIR += py-transmission-rpc

@@ -1,5 +1,5 @@
 PORTNAME=	elasticsearch-xpack
-PORTVERSION=	7.17.1
+PORTVERSION=	7.17.7
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 

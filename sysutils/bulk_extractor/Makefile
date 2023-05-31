@@ -1,5 +1,6 @@
 PORTNAME=	bulk_extractor
 PORTVERSION=	2.0.0
+DISTVERSIONPREFIX=	v
 PORTREVISION=	4
 CATEGORIES=	sysutils
 
@@ -27,7 +28,6 @@ GH_ACCOUNT=	simsong
 GH_TUPLE=	simsong:be20_api:${GH_TAG_BE20_API}:be20_api \
 		dfxml-working-group:dfxml_cpp:${GH_TAG_DFXML_CPP}:dfxml_cpp \
 		dfxml-working-group:dfxml_schema:${GH_TAG_DFXML_SCHEMA}:dfxml_schema
-GH_TAGNAME=	v${PORTVERSION}
 GH_TAG_BE20_API=	f63dcd5
 GH_TAG_DFXML_CPP=	09030bc
 GH_TAG_DFXML_SCHEMA=	f2a702e

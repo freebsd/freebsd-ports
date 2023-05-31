@@ -1,9 +1,9 @@
 PORTNAME=	evaluate
-PORTVERSION=	0.20
+DISTVERSION=	0.21
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Parsing and Evaluation Tools
 WWW=		https://cran.r-project.org/web/packages/evaluate/
 

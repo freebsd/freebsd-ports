@@ -9,13 +9,17 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Intelligent algorithms for DNA searches
 WWW=		http://www.ebi.ac.uk/Wise2/
 
-BUILD_WRKSRC=	${WRKSRC}/src
+LICENSE=	BSD3CLAUSE GPLv2
+LICENSE_COMB=	dual
 
 USES=		gnome pkgconfig
 USE_GNOME=	glib20
+
 MAKEFILE=	makefile
 
 SUB_FILES=	pkg-message
+
+BUILD_WRKSRC=	${WRKSRC}/src
 
 #
 # Actually want an 'ALL_TARGET = all perl' which then requires
@@ -27,6 +31,12 @@ SUB_FILES=	pkg-message
 # something like '@cd ${WRKSRC}/perl/Wise2; ${MAKE} install'
 #
 
+PLIST_FILES=	${BINFILES:S,^,bin/,} ${DATAFILES:S,^,%%DATADIR%%/,}
+PORTDOCS=	*
+PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
 BINFILES=	dba dnal estwise estwisedb genewise genewisedb promoterwise \
 		psw pswdb scanwise scanwise_server
 DATAFILES=	BLOSUM30.bla BLOSUM45.bla BLOSUM62.bla BLOSUM80.bla aa.rnd \
@@ -35,11 +45,11 @@ DATAFILES=	BLOSUM30.bla BLOSUM45.bla BLOSUM62.bla BLOSUM80.bla aa.rnd \
 		human.stats idenity.bla methods pb.gf pombe.gf tm.pri \
 		wise.2 wise.per worm.gf
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
-PLIST_FILES=	${BINFILES:S,^,bin/,} ${DATAFILES:S,^,%%DATADIR%%/,}
+.include <bsd.port.pre.mk>
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-patch:
 	@${FIND} ${BUILD_WRKSRC} -name "makefile" | ${XARGS} \
@@ -68,4 +78,4 @@ do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	(cd ${WRKSRC}/test_data && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

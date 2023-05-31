@@ -1,6 +1,6 @@
 PORTNAME=	FlexGet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.6.9
+DISTVERSION=	3.7.2
 CATEGORIES=	www
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.3.10:databases/py-sqlalchemy14@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy20>0:databases/py-sqlalchemy20@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rebulk>=2.0.0:devel/py-rebulk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rpyc>=5.0:devel/py-RPyC@${PY_FLAVOR} \

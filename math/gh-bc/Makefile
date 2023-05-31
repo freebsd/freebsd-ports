@@ -1,5 +1,5 @@
 PORTNAME=		bc
-PORTVERSION=		6.5.0
+PORTVERSION=		6.6.0
 CATEGORIES=		math lang
 MASTER_SITES=		https://github.com/gavinhoward/bc/releases/download/${PORTVERSION}/
 PKGNAMEPREFIX=		gh-

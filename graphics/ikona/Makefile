@@ -14,6 +14,10 @@ WWW=		https://kde.org/applications/system/org.kde.Ikona
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/LICENSE
 
+BROKEN=		does not compile, unaligned references E0793
+DEPRECATED=	abandoned upstream, broken
+EXPIRATION_DATE=	2023-06-29
+
 BUILD_DEPENDS=		rustc:lang/${RUST_DEFAULT}
 
 USES=			cmake:noninja compiler:c++11-lang desktop-file-utils \

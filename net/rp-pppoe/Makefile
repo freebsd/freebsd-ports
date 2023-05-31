@@ -12,6 +12,7 @@ LICENSE=	GPLv2+
 
 DEPRECATED=	Upstream restricting future OS support to Linux. Use net/mpd5 or pppoed instead. https://dianne.skoll.ca/pipermail/rp-pppoe/2023q2/000639.html
 EXPIRATION_DATE=2023-12-31
+PORTSCOUT=	limit:3\.
 
 GNU_CONFIGURE=	yes
 PATCH_WRKSRC=	${WRKSRC}/src

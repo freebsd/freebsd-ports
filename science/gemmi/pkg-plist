@@ -9,6 +9,7 @@ include/gemmi/atox.hpp
 include/gemmi/bessel.hpp
 include/gemmi/binner.hpp
 include/gemmi/blob.hpp
+include/gemmi/bond_idx.hpp
 include/gemmi/c4322.hpp
 include/gemmi/calculate.hpp
 include/gemmi/ccp4.hpp
@@ -58,6 +59,7 @@ include/gemmi/neighbor.hpp
 include/gemmi/neutron92.hpp
 include/gemmi/numb.hpp
 include/gemmi/pdb.hpp
+include/gemmi/pdb_id.hpp
 include/gemmi/pirfasta.hpp
 include/gemmi/polyheur.hpp
 include/gemmi/qcp.hpp
@@ -65,10 +67,7 @@ include/gemmi/read_cif.hpp
 include/gemmi/read_map.hpp
 include/gemmi/recgrid.hpp
 include/gemmi/reciproc.hpp
-include/gemmi/refine/geom.hpp
-include/gemmi/refine/ll.hpp
 include/gemmi/refln.hpp
-include/gemmi/reindex.hpp
 include/gemmi/remarks.hpp
 include/gemmi/resinfo.hpp
 include/gemmi/riding_h.hpp
@@ -87,7 +86,6 @@ include/gemmi/symmetry.hpp
 include/gemmi/third_party/fast_float.h
 include/gemmi/third_party/pocketfft_hdronly.h
 include/gemmi/third_party/sajson.h
-include/gemmi/third_party/stb_sprintf.h
 include/gemmi/third_party/tao/LICENSE
 include/gemmi/third_party/tao/NOTES
 include/gemmi/third_party/tao/pegtl.hpp

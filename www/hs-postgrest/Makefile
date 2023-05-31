@@ -1,6 +1,6 @@
 PORTNAME=	postgrest
 DISTVERSIONPREFIX=	v
-DISTVERSION=	10.1.2
+DISTVERSION=	11.0.1
 CATEGORIES=	www databases haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -12,7 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	amd64 i386
 
-BUILD_DEPENDS=	pg_config:databases/postgresql${PGSQL_DEFAULT}-client
+BUILD_DEPENDS=	pg_config:databases/postgresql${PGSQL_DEFAULT}-client \
+		ghc-9.2.7:lang/ghc92
 
 USES=		cabal pgsql
 

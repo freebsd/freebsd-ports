@@ -7,8 +7,12 @@ include/DensityMatrixSolvers.h
 include/DensityMatrixSolvers_c.h
 include/EigenBounds.h
 include/EigenBounds_c.h
+include/EigenSolvers.h
+include/EigenSolvers_c.h
 include/ExponentialSolvers.h
 include/ExponentialSolvers_c.h
+include/FermiOperator.h
+include/FermiOperator_c.h
 include/GeometryOptimization.h
 include/GeometryOptimization_c.h
 include/HermiteSolvers.h
@@ -64,9 +68,14 @@ include/densitymatrixsolversmodule_wrp.mod
 include/dmatrixmodule.mod
 include/eigenboundsmodule.mod
 include/eigenboundsmodule_wrp.mod
+include/eigenexamodule.mod
+include/eigensolversmodule.mod
+include/eigensolversmodule_wrp.mod
 include/errormodule.mod
 include/exponentialsolversmodule.mod
 include/exponentialsolversmodule_wrp.mod
+include/fermioperatormodule.mod
+include/fermioperatormodule_wrp.mod
 include/gemmtasksmodule.mod
 include/geometryoptimizationmodule.mod
 include/geometryoptimizationmodule_wrp.mod
@@ -104,6 +113,7 @@ include/rootsolversmodule.mod
 include/rootsolversmodule_wrp.mod
 include/signsolversmodule.mod
 include/signsolversmodule_wrp.mod
+include/singularvaluesolversmodule.mod
 include/smatrixalgebramodule.mod
 include/smatrixalgebramodule_wrp.mod
 include/smatrixmodule.mod

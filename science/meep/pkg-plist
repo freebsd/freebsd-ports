@@ -7,8 +7,8 @@ include/meep/mympi.hpp
 include/meep/vec.hpp
 lib/libmeep.a
 lib/libmeep.so
-lib/libmeep.so.31
-lib/libmeep.so.31.0.0
+lib/libmeep.so.32
+lib/libmeep.so.32.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -32,8 +32,8 @@ lib/libmeep.so.31.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/__pycache__/visualization%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.a
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.so.31
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.so.31.0.0
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.so.32
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/_meep.so.32.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -49,6 +49,8 @@ lib/libmeep.so.31.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/objective%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/optimization_problem%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/optimization_problem%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/unfilter_design%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/unfilter_design%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/utils%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/__pycache__/wrapper%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -59,6 +61,7 @@ lib/libmeep.so.31.0.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/filters.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/objective.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/optimization_problem.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/unfilter_design.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/utils.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/adjoint/wrapper.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/meep/binary_partition_utils.py

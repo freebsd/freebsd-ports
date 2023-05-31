@@ -1,14 +1,14 @@
---- build.xml.orig	2020-08-28 13:55:55 UTC
+--- build.xml.orig	2022-07-12 10:18:13 UTC
 +++ build.xml
-@@ -23,6 +23,7 @@
+@@ -31,6 +31,7 @@
      <property file="build.properties" />
      <property file="build.properties.default" />
      <property name="debuglevel" value="source,lines,vars"/>
 +    <property name="pycmd" value="python"/>
  
      <!-- default version and SCM information -->
-     <property name="base.version" value="4.0-beta2"/>
-@@ -74,14 +75,14 @@
+     <property name="base.version" value="4.0.5"/>
+@@ -81,7 +82,7 @@
      <condition property="version" value="${base.version}">
        <isset property="release"/>
      </condition>
@@ -17,101 +17,59 @@
      <property name="version.properties.dir"
                value="${build.src.resources}/org/apache/cassandra/config/" />
      <property name="final.name" value="${ant.project.name}-${version}"/>
- 
-     <!-- details of what version of Maven ANT Tasks to fetch -->
-     <property name="maven-ant-tasks.version" value="2.1.3" />
--    <property name="maven-ant-tasks.local" value="${user.home}/.m2/repository/org/apache/maven/maven-ant-tasks"/>
-+    <property name="maven-ant-tasks.local" value="${localm2}/org/apache/maven/maven-ant-tasks"/>
-     <property name="maven-ant-tasks.url"
-               value="https://repo.maven.apache.org/maven2/org/apache/maven/maven-ant-tasks" />
-     <!-- details of how and which Maven repository we publish to -->
-@@ -271,7 +272,7 @@
-     </path>
-     <path id="cassandra.classpath.test">
-         <file file="${build.dir}/${final.name}.jar"/> <!-- we need the jar for tests and benchmarks (multi-version jar) -->
--        <fileset dir="${build.lib}">
-+        <fileset dir="${stagedlib}">
-             <include name="**/*.jar" />
-             <exclude name="**/*-sources.jar"/>
+@@ -288,6 +289,24 @@
              <exclude name="**/ant-*.jar"/>
-@@ -291,7 +292,7 @@
+         </fileset>
+     </path>
++    <path id="cassandra.classpath.staged">
++        <file file="${build.dir}/${final.name}.jar"/> <!-- we need the jar for tests and benchmarks (multi-version jar) -->
++        <fileset dir="${stagedlib}">
++            <include name="**/*.jar" />
++        </fileset>
++        <fileset dir="${build.dir.lib}">
++            <include name="**/assertj-core-3.15.0.jar" />
++            <include name="**/byteman*.jar" />
++            <include name="**/commons-lang-2.4.jar" />
++            <include name="**/commons-collections-3.2.1.jar" />
++            <include name="**/ohc-core-0.5.1.jar" />
++            <include name="**/ohc-core-j8-0.5.1.jar" />
++        </fileset>
++        <fileset dir="${test.lib}/jars">
++            <include name="**/*.jar" />
++            <exclude name="**/ant-*.jar"/>
++        </fileset>
++    </path>
+ 
+   <macrodef name="create-javadoc">
+     <attribute name="destdir"/>
+@@ -297,7 +316,7 @@
          windowtitle="${ant.project.name} API" classpathref="cassandra.classpath"
-         bottom="Copyright &amp;copy; 2009-2020 The Apache Software Foundation"
+         bottom="Copyright &amp;copy; 2009-2022 The Apache Software Foundation"
          useexternalfile="yes" encoding="UTF-8" failonerror="false"
 -        maxmemory="256m" additionalparam="${jdk11-javadoc-exports}">
 +        maxmemory="512m" additionalparam="${jdk11-javadoc-exports}">
          <filesets/>
        </javadoc>
        <fail message="javadoc failed">
-@@ -416,8 +417,7 @@
-         <artifact:dependencies pathId="wikitext.classpath">
-             <dependency groupId="com.datastax.wikitext" artifactId="wikitext-core-ant" version="1.3"/>
-             <dependency groupId="org.fusesource.wikitext" artifactId="textile-core" version="1.3"/>
--            <remoteRepository refid="central"/>
--            <remoteRepository refid="apache"/>
-+            <localRepository path="${localm2}"/>
-         </artifact:dependencies>
-         <taskdef classpathref="wikitext.classpath" resource="wikitexttasks.properties" />
-         <wikitext-to-html markupLanguage="Textile">
-@@ -430,6 +430,8 @@
-     <target name="gen-doc" depends="maven-ant-tasks-init" description="Generate documentation" unless="ant.gen-doc.skip">
+@@ -438,6 +457,8 @@
+     <target name="gen-doc" description="Generate documentation" depends="gen-asciidoc,generate-cql-html" unless="ant.gen-doc.skip">
          <exec executable="make" osfamily="unix" dir="${doc.dir}">
              <arg value="html"/>
 +            <arg value="PYTHON_CMD=${pycmd}"/>
 +            <arg value="PYTHON_VER=${pyver}"/>
          </exec>
-         <exec executable="cmd" osfamily="dos" dir="${doc.dir}">
-             <arg value="/c"/>
-@@ -472,10 +474,6 @@
-             description="Initialize Maven ANT Tasks">
-       <typedef uri="antlib:org.apache.maven.artifact.ant" classpathref="maven-ant-tasks.classpath" />
+     </target>
  
--      <!-- define the remote repositories we use -->
--      <artifact:remoteRepository id="central"   url="${artifact.remoteRepository.central}"/>
--      <artifact:remoteRepository id="apache"    url="${artifact.remoteRepository.apache}"/>
--
-       <macrodef name="install">
-         <attribute name="pomFile"/>
-         <attribute name="file"/>
-@@ -889,16 +887,14 @@
-                              filesetId="build-dependency-jars"
-                              cacheDependencyRefs="true"
-                              dependencyRefsBuildFile="${build.dir}/build-dependencies.xml">
--          <remoteRepository refid="central"/>
--          <remoteRepository refid="apache"/>
-+          <localRepository path="${localm2}"/>
-       </artifact:dependencies>
-       <!-- retrieve -source.jar artifacts using the reference-pom with the artifacts that have these -->
-       <artifact:dependencies pomRefId="build-deps-pom-sources"
-                              sourcesFilesetId="build-dependency-sources"
-                              cacheDependencyRefs="true"
-                              dependencyRefsBuildFile="${build.dir}/build-dependencies-sources.xml">
--          <remoteRepository refid="central"/>
--          <remoteRepository refid="apache"/>
-+          <localRepository path="${localm2}"/>
-       </artifact:dependencies>
-       <copy todir="${build.dir.lib}/jars">
-           <fileset refid="build-dependency-jars"/>
-@@ -911,7 +907,7 @@
-       <!-- code coverage tools -->
-       <artifact:dependencies pomRefId="coverage-deps-pom"
-                              filesetId="coverage-dependency-jars">
--          <remoteRepository refid="central"/>
-+          <localRepository path="${localm2}"/>
-       </artifact:dependencies>
-       <copy todir="${build.dir.lib}/jars">
-           <fileset refid="coverage-dependency-jars"/>
-@@ -940,8 +936,7 @@
-                              sourcesFilesetId="test-dependency-sources"
-                              cacheDependencyRefs="true"
-                              dependencyRefsBuildFile="${build.dir}/test-dependencies.xml">
--        <remoteRepository refid="apache"/>
--        <remoteRepository refid="central"/>
-+        <localRepository path="${localm2}"/>
-       </artifact:dependencies>
-       <copy todir="${test.lib}/jars">
-         <fileset refid="test-dependency-jars"/>
-@@ -1251,6 +1246,87 @@
+@@ -896,7 +917,7 @@
+         </javac>
+     </target>
+ 
+-    <target depends="init,gen-cql3-grammar,generate-cql-html,generate-jflex-java,rat-check"
++    <target depends="init,gen-cql3-grammar,generate-cql-html,generate-jflex-java"
+             name="build-project">
+         <echo message="${ant.project.name}: ${ant.file}"/>
+         <!-- Order matters! -->
+@@ -1147,6 +1168,89 @@
        </copy>
      </target>
  
@@ -127,7 +85,7 @@
 +          <exclude name="netty-all*.jar"/>
 +          <exclude name="ohc*.jar"/>
 +          <exclude name="licenses/snappy*.txt"/>
-+          <exclude name="licenses/netty-4*.txt"/>
++          <exclude name="licenses/netty-all*.txt"/>
 +          <exclude name="licenses/ohc*.txt"/>
 +        </fileset>
 +        <fileset dir="${build.dir}">
@@ -152,6 +110,8 @@
 +          <include name="**" />
 +          <exclude name="**/*.pyc" />
 +          <exclude name="Dockerfile.ubuntu.*" />
++          <exclude name="cqlshlib/test/**" />
++          <exclude name="cassandra-cqlsh-tests.sh" />
 +        </fileset>
 +      </copy>
 +      <copy todir="${dist.dir}/">
@@ -197,36 +157,23 @@
 +    </target>
 +    
      <!-- creates release tarballs -->
-     <target name="artifacts" depends="_artifacts-init"
+     <target name="artifacts" depends="_artifacts-init,gen-doc,sources-jar,javadoc-jar"
              description="Create Cassandra release artifacts">
-@@ -1371,6 +1447,7 @@
-   <target name="_build-test">
-     <javac
-      fork="true"
-+     memorymaximumsize="512M"
-      compiler="modern"
-      debug="true"
-      debuglevel="${debuglevel}"
-@@ -1960,8 +2037,8 @@
-     <exec executable="nproc" outputproperty="cores.count" os="Linux,SunOS,Solaris" failifexecutionfails="false">
-       <arg value="--all"/>
-     </exec>
--    <!-- support for Mac OS X -->
--    <exec executable="sysctl" outputproperty="cores.count" os="Mac,Mac OS X,Darwin" failifexecutionfails="false">
-+    <!-- support for Mac OS X and FreeBSD -->
-+    <exec executable="sysctl" outputproperty="cores.count" os="Mac,Mac OS X,Darwin,FreeBSD" failifexecutionfails="false">
-       <arg value="-n"/>
-       <arg value="hw.ncpu"/>
-     </exec>
-@@ -1981,6 +2058,11 @@
-     <exec executable="sysctl" outputproperty="mem.size" os="Mac,Mac OS X,Darwin" failifexecutionfails="false">
-       <arg value="-n"/>
-       <arg value="hw.memsize"/>
-+    </exec>
-+    <!-- support for FreeBSD -->
-+    <exec executable="sysctl" outputproperty="mem.size" os="FreeBSD" failifexecutionfails="false">
-+      <arg value="-n"/>
-+      <arg value="hw.physmem"/>
-     </exec>
-     <echo message="Mem size : ${mem.size}"/>
+@@ -1397,7 +1501,7 @@
+           <pathelement path="${java.class.path}"/>
+           <pathelement location="${stress.build.classes}"/>
+           <pathelement location="${fqltool.build.classes}"/>
+-          <path refid="cassandra.classpath.test" />
++          <path refid="cassandra.classpath.staged" />
+           <pathelement location="${test.classes}"/>
+           <pathelement location="${stress.test.classes}"/>
+           <pathelement location="${fqltool.test.classes}"/>
+@@ -2089,7 +2193,7 @@
    </target>
+ 
+   <!-- ECJ 4.6.1 in standalone mode does not work with JPMS, so we skip this target for Java 11 -->
+-  <target name="eclipse-warnings" depends="build, _assert_rat_output" description="Run eclipse compiler code analysis" if="java.version.8">
++  <target name="eclipse-warnings" depends="build" description="Run eclipse compiler code analysis" if="java.version.8">
+         <property name="ecj.log.dir" value="${build.dir}/ecj" />
+         <property name="ecj.warnings.file" value="${ecj.log.dir}/eclipse_compiler_checks.txt"/>
+         <mkdir  dir="${ecj.log.dir}" />

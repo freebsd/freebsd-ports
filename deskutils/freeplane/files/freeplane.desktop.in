@@ -1,0 +1,14 @@
+[Desktop Entry]
+Version=1.0
+Name=Freeplane
+Categories=Office;
+Comment=A free tool to structure and organise your information with mind mapping
+Exec=%%PREFIX%%/bin/freeplane %F
+GenericName=Freeplane
+Icon=%%DATADIR%%/freeplane.svg
+Keywords=Mindmaps; Knowledge management; Organize information; Brainstorming; ...;
+MimeType=application/x-freeplane;
+StartupNotify=true
+StartupWMClass=org-knopflerfish-framework-BundleThread
+Terminal=false
+Type=Application

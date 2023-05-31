@@ -1,5 +1,5 @@
 PORTNAME=	fq
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	misc
 
@@ -18,11 +18,11 @@ GH_TUPLE=	\
 		creasty:defaults:v1.7.0:creasty_defaults/vendor/github.com/creasty/defaults \
 		go-check:check:8fa46927fb4f:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
-		golang:crypto:v0.8.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.9.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:f062dba9d201:golang_exp/vendor/golang.org/x/exp \
-		golang:net:v0.9.0:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.10.0:golang_net/vendor/golang.org/x/net \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:v0.7.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:v0.8.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.9.0:golang_text/vendor/golang.org/x/text \
 		gomarkdown:markdown:663e2500819c:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
 		gopacket:gopacket:v1.1.0:gopacket_gopacket/vendor/github.com/gopacket/gopacket \

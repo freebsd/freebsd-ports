@@ -1,5 +1,5 @@
 PORTNAME=	jaro_winkler
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,7 @@ COMMENT=	Jaro-Winkler distance algorithm implementation
 WWW=		https://github.com/tonytonyjan/jaro_winkler
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		gem
 

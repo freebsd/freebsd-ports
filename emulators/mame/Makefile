@@ -1,5 +1,6 @@
 PORTNAME=	mame
 PORTVERSION=	0.254
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
@@ -17,8 +18,8 @@ LICENSE_FILE_MIT=	${WRKSRC}/docs/legal/MIT
 LICENSE_FILE_ZLIB=	${WRKSRC}/docs/legal/Zlib
 LICENSE_FILE=	${WRKSRC}/docs/LICENSE
 
-ONLY_FOR_ARCHS=	amd64 armv7 i386 powerpc powerpc64 powerpc64le
-ONLY_FOR_ARCHS_REASON=	not yet ported to any architecture other than armv7, x86, and powerpc*
+ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le
+ONLY_FOR_ARCHS_REASON=	not yet ported to any architecture other than armv7, arm64, x86, and powerpc*
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-svg2pdfconverter>0:textproc/py-sphinxcontrib-svg2pdfconverter@${PY_FLAVOR}
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
@@ -84,9 +85,12 @@ MAKE_ENV+=	DEBUG="1" \
 		OPTIMIZE="0" \
 		PROFILER="1" \
 		SYMBOLS="1"
+.else
+# avoid address space exhaustion in linker on armv7
+LDFLAGS+=	-s
 .endif
 
-.if ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
+.if ${ARCH} == aarch64 || ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
 MAKE_ARGS+=	PTR64=1
 .endif
 
@@ -160,11 +164,11 @@ post-patch:
 		 s| .(ARCH)||g' \
 		 ${WRKSRC}/makefile \
 		 ${GENIE}/build/gmake.bsd/genie.make
-	@${REINPLACE_CMD} -e 's|gcc|cc|; s|g++|c++|' \
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|g++|${CXX}|' \
 		${GENIE}/src/tools/gcc.lua \
 		${GENIE}/src/tools/snc.lua \
 		${GENIE}/tests/test_gmake_cpp.lua
-	@${REINPLACE_CMD} -e 's|= \"gcc|= \"cc|; s|= \"g++|= \"c++|' \
+	@${REINPLACE_CMD} -e 's|= \"gcc|= \"${CC}|; s|= \"g++|= \"${CXX}|' \
 		-e "s|'CXX =|'#CXX =|; s|'CC  =|'#CC  =|; s| .(ARCH)| |g" \
 		${GENIE}/src/host/scripts.c
 	@${GREP} -rl '"png.h"' ${WRKSRC}/src | \

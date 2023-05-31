@@ -1,16 +1,16 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.11.51
 PORTREVISION=	2
-CATEGORIES=	x11-wm # wayland: depends on https://github.com/Plagman/gamescope/issues/543
+CATEGORIES=	x11-wm # wayland: depends on https://github.com/ValveSoftware/gamescope/issues/543
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	2a84a44f6897.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	e0927f7bce95.patch:-p1 # https://github.com/Plagman/gamescope/pull/119
-PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/Plagman/gamescope/issues/120
+PATCHFILES+=	2a84a44f6897.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/119
+PATCHFILES+=	e0927f7bce95.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/119
+PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/ValveSoftware/gamescope/issues/120
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	Micro-compositor from SteamOS
-WWW=		https://github.com/Plagman/gamescope
+COMMENT=	SteamOS session compositing window manager
+WWW=		https://github.com/ValveSoftware/gamescope
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -35,7 +35,7 @@ USES=		compiler:c++11-lib meson pkgconfig sdl xorg
 USE_GITHUB=	yes
 USE_SDL=	sdl2
 USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xres xtst xxf86vm
-GH_ACCOUNT=	Plagman
+GH_ACCOUNT=	ValveSoftware
 GH_TUPLE=	nothings:stb:af1a5bc:stb/subprojects/stb \
 		Joshua-Ashton:vkroots:e6b8949:vkroots/subprojects/vkroots
 PLIST_FILES=	bin/${PORTNAME} \

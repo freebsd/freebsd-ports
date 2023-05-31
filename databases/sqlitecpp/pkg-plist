@@ -5,6 +5,7 @@ include/SQLiteCpp/Database.h
 include/SQLiteCpp/Exception.h
 include/SQLiteCpp/ExecuteMany.h
 include/SQLiteCpp/SQLiteCpp.h
+include/SQLiteCpp/SQLiteCppExport.h
 include/SQLiteCpp/Savepoint.h
 include/SQLiteCpp/Statement.h
 include/SQLiteCpp/Transaction.h

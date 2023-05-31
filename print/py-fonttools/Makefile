@@ -1,5 +1,6 @@
 PORTNAME=	fonttools
-PORTVERSION=	4.39.3
+PORTVERSION=	4.39.4
+PORTREVISION=	1
 CATEGORIES=	print python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ufolib2>=0:print/py-ufolib2@${PY_FLAVOR}
 
 USES=		python:3.7+ zip
-USE_PYTHON=	autoplist concurrent distutils
-
-MAKE_ENV=	FONTTOOLS_MANPATH="man"
-NO_ARCH=	yes
+USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	GRAPHITE INTERPOLATABLE LXML PLOT REPACKER SYMFONT UFO UNICODE WOFF
 OPTIONS_DEFAULT=LXML UFO UNICODE
@@ -46,5 +44,8 @@ WOFF_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.1:archivers/py-brotli@${PY_
 .if ${PORT_OPTIONS:UNICODE} && ${PYTHON_REL} < 31200
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}unicodedata2>=15.0.0:devel/py-unicodedata2@${PY_FLAVOR}
 .endif
+
+post-install:
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.post.mk>

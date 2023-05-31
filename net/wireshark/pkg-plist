@@ -653,10 +653,10 @@ include/wireshark/wsutil/wslog.h
 include/wireshark/wsutil/xtea.h
 lib/libwireshark.so
 lib/libwireshark.so.16
-lib/libwireshark.so.16.0.5
+lib/libwireshark.so.16.0.6
 lib/libwiretap.so
 lib/libwiretap.so.13
-lib/libwiretap.so.13.0.5
+lib/libwiretap.so.13.0.6
 lib/libwsutil.so
 lib/libwsutil.so.14
 lib/libwsutil.so.14.0.0

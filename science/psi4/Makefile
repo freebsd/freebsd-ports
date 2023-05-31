@@ -1,7 +1,6 @@
 PORTNAME=	psi4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7
-PORTREVISION=	1
+DISTVERSION=	1.8
 CATEGORIES=	science # quantum-chemistry
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -95,5 +94,7 @@ do-test: # tests are generally broken, but virtually all individual tests pass s
 	#		(cd $$f && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/psi4 input.dat) \
 	#	done \
 	#)
+
+# QCEngine fails while running some psi4 tests: https://github.com/MolSSI/QCEngine/issues/404
 
 .include <bsd.port.mk>

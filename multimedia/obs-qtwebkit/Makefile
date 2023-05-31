@@ -1,6 +1,6 @@
 PORTNAME=	obs-qtwebkit
 PORTVERSION=	g2018090201
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/swills/obs-qtwebkit
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+DEPRECATED=		OBS ships with their own browser plugin from version 25 onwards
+EXPIRATION_DATE=	2023-06-16
 
 LIB_DEPENDS=	libobs.so:multimedia/obs-studio \
 		libinotify.so:devel/libinotify

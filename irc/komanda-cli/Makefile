@@ -16,6 +16,9 @@ GH_ACCOUNT=	mephux
 GH_TAGNAME=	b5ba03b
 GH_TUPLE=	golang:sys:v0.6.0:sys
 
+DEPRECATED=	Upstream no longer maintained
+EXPIRATION_DATE=	2023-08-25
+
 _BUILD_SHA=	${GH_TAGNAME}
 _BUILD_COUNT=	138
 _BUILD_TAG=	${_BUILD_COUNT}.${_BUILD_SHA}

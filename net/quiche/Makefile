@@ -14,7 +14,6 @@ USES=		cargo
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	cloudflare
-GH_TAGNAME=	${PORTVERSION}
 GH_TUPLE=	google:boringssl:f1c75347d:boringssl/quiche/deps/boringssl
 
 CARGO_CRATES=	aho-corasick-0.7.18 \

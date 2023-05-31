@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.11
 CATEGORIES=	www
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web Framework to build REST APIs, Webservices in C
 WWW=		https://github.com/babelouest/ulfius
 

@@ -27,7 +27,7 @@ MAKE_ENV+=	LOAD_PATH="-L ${PREFIX}/${EMACS_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VE
 MAKE_JOBS_UNSAFE=	yes
 TEST_TARGET=	test
 
-CONFLICTS_INSTALL=	emacsql emacsql-emacs_*
+CONFLICTS_INSTALL=	emacsql emacsql-devel* emacsql-emacs_*
 
 PORTDOCS=	README.md
 

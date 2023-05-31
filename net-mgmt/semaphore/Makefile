@@ -6,7 +6,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	egypcio@FreeBSD.org
 COMMENT=	Open Source alternative to Ansible Tower
-WWW=		https://ansible-semaphore.github.io/semaphore/
+WWW=		https://www.ansible-semaphore.com/
 
 LICENSE=	MIT
 LICENSE_FILE=	${GO_WRKSRC}/LICENSE

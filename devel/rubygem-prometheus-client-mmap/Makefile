@@ -1,5 +1,5 @@
 PORTNAME=	prometheus-client-mmap
-DISTVERSION=	0.19.1
+DISTVERSION=	0.23.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,6 +8,8 @@ COMMENT=	Suite of instrumentation metric primitives
 WWW=		https://gitlab.com/gitlab-org/prometheus-client-mmap
 
 LICENSE=	APACHE20
+
+RUN_DEPENDS=	rubygem-rb_sys>=0.9<1:lang/rubygem-rb_sys
 
 USES=		gem
 

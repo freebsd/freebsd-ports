@@ -583,5 +583,5 @@ SHA256 (rust/crates/xml-rs-0.8.4.crate) = d2d7d3948613f75c98fd9328cfdcc45acc4d36
 SIZE (rust/crates/xml-rs-0.8.4.crate) = 52690
 SHA256 (rust/crates/zeroize-1.6.0.crate) = 2a0956f1ba7c7909bfb66c2e9e4124ab6f6482560f6628b5aaeba39207c9aad9
 SIZE (rust/crates/zeroize-1.6.0.crate) = 19049
-SHA256 (RustSec-rustsec-v0.17.5-cargo-audit-v0.17.5_GH0.tar.gz) = 7fe9998fe5ec6c45c44cc05a07d266f4ef5cdebfdb71a8445dcb337df5778b57
-SIZE (RustSec-rustsec-v0.17.5-cargo-audit-v0.17.5_GH0.tar.gz) = 978380
+SHA256 (RustSec-rustsec-cargo-audit-v0.17.5_GH0.tar.gz) = 7fe9998fe5ec6c45c44cc05a07d266f4ef5cdebfdb71a8445dcb337df5778b57
+SIZE (RustSec-rustsec-cargo-audit-v0.17.5_GH0.tar.gz) = 978380

@@ -1,6 +1,5 @@
 PORTNAME=	rpy2
-PORTVERSION=	3.5.11
-PORTREVISION=	1
+PORTVERSION=	3.5.12
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,7 @@ LIB_DEPENDS=	libR.so:math/R \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>=0,1:devel/py-pytz@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}tzlocal>=0:devel/py-tzlocal@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}tzlocal>=0<5.0:devel/py-tzlocal@${PY_FLAVOR}
 
 USES=		compiler:c11 fortran python:3.7+ readline
 USE_PYTHON=	autoplist concurrent pep517

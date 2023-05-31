@@ -1,6 +1,6 @@
 PORTNAME=	libcdr
 PORTVERSION=	0.1.7
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics devel
 MASTER_SITES=	LODEV
 PKGNAMESUFFIX=	01
@@ -23,6 +23,7 @@ USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
+CPPFLAGS+=	-DCMS_NO_REGISTER_KEYWORD
 CPPFLAGS+=	-I${LOCALBASE}/include
 CXXFLAGS+=	-Wno-long-long
 

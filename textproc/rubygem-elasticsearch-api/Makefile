@@ -1,5 +1,5 @@
 PORTNAME=	elasticsearch-api
-PORTVERSION=	7.17.1
+PORTVERSION=	8.8.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -8,7 +8,7 @@ COMMENT=	Ruby API for Elasticsearch
 WWW=		https://github.com/elastic/elasticsearch-ruby/tree/master/elasticsearch-api
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-multi_json>=0:devel/rubygem-multi_json
 

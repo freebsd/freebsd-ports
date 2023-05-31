@@ -1,24 +1,25 @@
 PORTNAME=	llfuse
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.4
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Python bindings for low-level FUSE API
-WWW=		https://github.com/python-llfuse/python-llfuse/
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Python bindings for the low-level FUSE API
+WWW=		https://github.com/python-llfuse/python-llfuse
 
 LICENSE=	LGPL20+
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		compiler:c++11-lang fuse pkgconfig python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist concurrent pep517 pytest
+
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/llfuse*.so
-
-do-test:
-	# apparently the code does not understand FreeBSD's /proc/NNN/status layout and looks for a line
-	# prefixed Groups: which FreeBSD 13 does not provide.
-	cd ${WRKSRC} && ${SETENV} PYTHONPATH=${STAGEDIR}${PREFIX}/lib/python3.9/site-packages ${PYTHON_CMD} -m pytest -x
+	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
 .include <bsd.port.mk>

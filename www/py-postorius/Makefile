@@ -4,7 +4,7 @@ CATEGORIES=	www
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Django app provoding web user interface to access GNU Mailman
 WWW=		https://pypi.org/project/postorius/
 

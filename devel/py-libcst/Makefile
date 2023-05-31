@@ -1,6 +1,5 @@
 PORTNAME=	libcst
-PORTVERSION=	0.4.9
-PORTREVISION=	6
+PORTVERSION=	0.4.10
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=5.2:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4.2:devel/py-typing-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-inspect>=0.4.0:devel/py-typing-inspect@${PY_FLAVOR}
 
-USES=		cargo python:3.7+
+USES=		cargo dos2unix python:3.7+
 USE_PYTHON=	autoplist concurrent pep517
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}

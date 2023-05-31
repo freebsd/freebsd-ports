@@ -1,0 +1,31 @@
+--- Makefile.orig	2023-05-01 15:27:50 UTC
++++ Makefile
+@@ -2,7 +2,7 @@
+ 
+ PROG=	mg
+ 
+-LDADD+=	`pkg-config --libs ncurses` -lutil
++LDADD+=	-L${NCURSESLIB} -lncurses -lutil
+ DPADD+=	${LIBUTIL}
+ 
+ # (Common) compile-time options:
+@@ -11,7 +11,7 @@ DPADD+=	${LIBUTIL}
+ #	STARTUPFILE	-- look for and handle initialization file.
+ #	MGLOG		-- debug mg internals to a log file.
+ #
+-CFLAGS+=-Wall -DREGEX `pkg-config --cflags-only-I ncurses`
++CFLAGS+=-Wall -DREGEX -L${NCURSESINC}
+ 
+ SRCS=	autoexec.c basic.c bell.c buffer.c cinfo.c dir.c display.c \
+ 	echo.c extend.c file.c fileio.c funmap.c help.c kbd.c keymap.c \
+@@ -28,10 +28,5 @@ SRCS+=	cmode.c cscope.c dired.c grep.c interpreter.c t
+ # -DMGLOG source file.
+ #
+ #SRCS+=	log.c
+-
+-afterinstall:
+-	${INSTALL} -d -o root -g wheel ${DESTDIR}${DOCDIR}/mg
+-	${INSTALL} ${INSTALL_COPY} -o ${DOCOWN} -g ${DOCGRP} -m ${DOCMODE} \
+-	    ${.CURDIR}/tutorial ${DESTDIR}${DOCDIR}/mg
+ 
+ .include <bsd.prog.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	netxms
-PORTVERSION=	3.3.350
+PORTVERSION=	3.4.313
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/releases/${PORTVERSION:R}/
 
@@ -20,37 +20,43 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtre.so:textproc/libtre \
 		libmosquitto.so:net/mosquitto
 
-OPTIONS_DEFINE=	SERVER CLIENT AGENT SSH
-OPTIONS_DEFAULT=	CLIENT AGENT SSH
-OPTIONS_SINGLE=	SERVER
-OPTIONS_SINGLE_SERVER=	MYSQL PGSQL ODBC
-OPTIONS_SUB=	yes
-
-SERVER_DESC=	Install NetXMS server & agent
-CLIENT_DESC=	Install NetXMS client
-AGENT_DESC=	Install NetXMS agent
-
-CLIENT_CONFIGURE_ON=	--with-client
-AGENT_CONFIGURE_ON=	--with-agent
-SERVER_CONFIGURE_ON=	--with-server
-MYSQL_CONFIGURE_ON=	--with-mysql
-MYSQL_USES=		mysql
-PGSQL_CONFIGURE_ON=	--with-pgsql
-PGSQL_USES=		pgsql
-ODBC_CONFIGURE_ON=	--with-odbc
-ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
-SSH_CONFIGURE_OFF=	--disable-ssh
-SSH_LIB_DEPENDS=	libssh.so:security/libssh
-
 USES=		gmake iconv libtool localbase perl5 ssl
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
 
 LDFLAGS+=	-ljansson
 
 USERS=		netxms
 GROUPS=		netxms
+
+PLIST_SUB=	SONUM=${SONUM}
+
+OPTIONS_DEFINE=	SERVER CLIENT AGENT SSH
+OPTIONS_DEFAULT=	CLIENT AGENT SSH
+OPTIONS_SINGLE=	SERVER
+OPTIONS_SINGLE_SERVER=	MYSQL PGSQL ODBC
+OPTIONS_SUB=	yes
+
+AGENT_DESC=	Install NetXMS agent
+CLIENT_DESC=	Install NetXMS client
+SERVER_DESC=	Install NetXMS server & agent
+
+AGENT_CONFIGURE_ON=	--with-agent
+CLIENT_CONFIGURE_ON=	--with-client
+MYSQL_USES=		mysql
+MYSQL_CONFIGURE_ON=	--with-mysql
+ODBC_LIB_DEPENDS=	libodbc.so:databases/unixODBC
+ODBC_CONFIGURE_ON=	--with-odbc
+PGSQL_USES=		pgsql
+PGSQL_CONFIGURE_ON=	--with-pgsql
+SERVER_CONFIGURE_ON=	--with-server
+SSH_LIB_DEPENDS=	libssh.so:security/libssh
+SSH_CONFIGURE_OFF=	--disable-ssh
+
+SONUM=	34
 
 .include <bsd.port.options.mk>
 

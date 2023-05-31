@@ -1,5 +1,5 @@
-TIMESTAMP = 1650392672
-SHA256 (brummer10-Mamba-v2.3_GH0.tar.gz) = 4f35fd17d7a71421ee3f0d99ed31ad832a4759eb3445b7c62a968e276107830c
-SIZE (brummer10-Mamba-v2.3_GH0.tar.gz) = 135955
-SHA256 (brummer10-libxputty-58c33d0_GH0.tar.gz) = 527c09d493ae6f38890ea1aa4bf9f10f939e84cfbf0171957cf4155ec4ee515b
-SIZE (brummer10-libxputty-58c33d0_GH0.tar.gz) = 523074
+TIMESTAMP = 1684605776
+SHA256 (brummer10-Mamba-v2.5_GH0.tar.gz) = fb062ebf037593cc79690394bf1e023a65cf203064f879281bb8adcf20a9edf7
+SIZE (brummer10-Mamba-v2.5_GH0.tar.gz) = 151150
+SHA256 (brummer10-libxputty-62ec1cf_GH0.tar.gz) = 360f6953f336454cbce218e0ad9608e526e9187f83005645f07227fc0e8ac796
+SIZE (brummer10-libxputty-62ec1cf_GH0.tar.gz) = 534098

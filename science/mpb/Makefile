@@ -1,6 +1,6 @@
 PORTNAME=	mpb
 DISTVERSION=	1.11.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/NanoComp/mpb/releases/download/v${DISTVERSION}/
 
@@ -11,34 +11,38 @@ WWW=		https://mpb.readthedocs.io/en/latest/
 LICENSE=	GPLv2
 
 BUILD_DEPENDS=	bash:shells/bash
+# NLOPT should be enabled in science/libctl
 LIB_DEPENDS=	libctl.so:science/libctl \
 		libfftw3.so:math/fftw3 \
 		libgc-threaded.so:devel/boehm-gc-threaded \
 		libguile-2.2.so:lang/guile2 \
-		libhdf5.so:science/hdf5
+		libhdf5.so:science/hdf5 \
+		libnlopt.so:math/nlopt
 
 USES=		fortran libtool pkgconfig readline
-GNU_CONFIGURE=	yes
 USE_GCC=	yes
+USE_LDCONFIG=	yes
 # Do not use --with-mpi, because it is not guaranted
 # that science/hdf5 also built with option PARALLEL
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-shared
+
+MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
+
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-MAKE_JOBS_UNSAFE=	yes
-
-OPTIONS_DEFINE=		ATLAS NLOPT OPENMP
-OPTIONS_DEFAULT=	NLOPT
+OPTIONS_DEFINE=		ATLAS OPENMP
 
 ATLAS_DESC=	Use math/atlas instead of math/openblas
-NLOPT_DESC=	Use math/nlopt (enable also in science/libctl)
 OPENMP_DESC=	Use OpenMP (enable also in math/fftw3)
 
 ATLAS_LIB_DEPENDS=	libatlas.so:math/atlas
 ATLAS_USES_OFF=		blaslapack:openblas
 ATLAS_CONFIGURE_ON=	--with-lapack=-lalapack
 ATLAS_CONFIGURE_OFF=	--with-blas=openblas --with-lapack=-lopenblas
-NLOPT_LIB_DEPENDS=	libnlopt.so:math/nlopt
 OPENMP_CONFIGURE_ON=	--with-openmp
 
 post-install:

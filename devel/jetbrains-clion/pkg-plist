@@ -88,7 +88,7 @@ share/applications/clion.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler-windows.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-CL-231.8770.66
+%%DATADIR%%/lib/build-marker-CL-231.9011.31
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar

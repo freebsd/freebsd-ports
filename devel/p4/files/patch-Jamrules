@@ -1,4 +1,4 @@
---- Jamrules.orig	2023-01-19 09:37:52 UTC
+--- Jamrules.orig	2022-12-15 10:39:01 UTC
 +++ Jamrules
 @@ -673,12 +673,11 @@
  	# P4BIN is set to ../p4-bin (relative to P4)
@@ -14,7 +14,7 @@
  		$(BUILD)
  		$(TYPE:L) ;
  
-@@ -1224,11 +1223,6 @@
+@@ -1245,11 +1244,6 @@
  		OPTIM += -Wno-parentheses -Wno-switch -fwrapv ;
  
  		_mflags = ;

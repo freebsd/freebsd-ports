@@ -1,5 +1,5 @@
 bin/alizams
-include/mdcmopenjpeg-2.3/opj_config.h
+include/mdcmopenjpeg-2.5/opj_config.h
 %%DATADIR%%/datasets/001US/TESTXX02.dcm
 %%DATADIR%%/datasets/001US/TESTXX04_SR.dcm
 share/applications/alizams.desktop

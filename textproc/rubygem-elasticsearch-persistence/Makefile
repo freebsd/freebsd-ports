@@ -1,5 +1,6 @@
 PORTNAME=	elasticsearch-persistence
 PORTVERSION=	7.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	rubygem-activemodel5>=4:databases/rubygem-activemodel5 \
 		rubygem-activesupport5>=4:devel/rubygem-activesupport5 \
-		rubygem-elasticsearch>=7<8:textproc/rubygem-elasticsearch \
+		rubygem-elasticsearch7>=7<8:textproc/rubygem-elasticsearch7 \
 		rubygem-elasticsearch-model>=${PORTVERSION}:textproc/rubygem-elasticsearch-model \
 		rubygem-hashie>=0:devel/rubygem-hashie
 

@@ -1,5 +1,5 @@
 PORTNAME=	python-dotenv
-PORTVERSION=	0.21.1
+PORTVERSION=	1.0.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,7 +11,7 @@ WWW=		https://github.com/theskumar/python-dotenv
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7+
+USES=		python:3.8+
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	rubygem-dotenv # bin/dotenv

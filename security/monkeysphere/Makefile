@@ -1,5 +1,6 @@
 PORTNAME=	monkeysphere
 PORTVERSION=	0.43
+DISTVERSIONPREFIX=	${PORTNAME}_
 CATEGORIES=	security
 
 MAINTAINER=	egypcio@FreeBSD.org
@@ -20,7 +21,6 @@ RUN_DEPENDS=	gpg2:security/gnupg \
 USES=		gmake perl5 shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	dkg
-GH_TAGNAME=	${PORTNAME}_${PORTVERSION}
 
 SHEBANG_FILES=	src/monkeysphere* \
 		src/share/c* src/share/defaultenv src/share/keytrans \
@@ -33,6 +33,12 @@ GROUPS=	monkeysphere
 MAKE_ARGS+=	ETCPREFIX=${PREFIX} MANPREFIX=${PREFIX}/man ETCSUFFIX=.sample
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=strict-prototypes
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -i '' 's|/etc/monkeysphere|${PREFIX}/etc/monkeysphere|g' \
@@ -60,4 +66,4 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/agent-transfer
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

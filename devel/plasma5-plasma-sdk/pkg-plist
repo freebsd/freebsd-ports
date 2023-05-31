@@ -32,6 +32,8 @@ man/ru/man1/plasmaengineexplorer.1.gz
 man/ru/man1/plasmoidviewer.1.gz
 man/sv/man1/plasmaengineexplorer.1.gz
 man/sv/man1/plasmoidviewer.1.gz
+man/tr/man1/plasmaengineexplorer.1.gz
+man/tr/man1/plasmoidviewer.1.gz
 man/uk/man1/plasmaengineexplorer.1.gz
 man/uk/man1/plasmoidviewer.1.gz
 share/applications/org.kde.plasma.cuttlefish.desktop
@@ -328,6 +330,8 @@ share/locale/nn/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/nn/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/nn/LC_MESSAGES/plasmoidviewer.mo
 share/locale/oc/LC_MESSAGES/plasmaengineexplorer.mo
+share/locale/or/LC_MESSAGES/plasmaengineexplorer.mo
+share/locale/or/LC_MESSAGES/plasmoidviewer.mo
 share/locale/pa/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/pa/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/pa/LC_MESSAGES/plasmoidviewer.mo

@@ -1,5 +1,5 @@
 PORTNAME=	gawk
-PORTVERSION=	5.2.1
+PORTVERSION=	5.2.2
 CATEGORIES=	lang
 MASTER_SITES=	GNU
 
@@ -25,7 +25,7 @@ MPFR_CONFIGURE_OFF=	--without-gmp --without-mpfr
 INFO=		gawk gawkinet gawkworkflow pm-gawk
 
 GNU_CONFIGURE=	yes
-USES=		iconv libtool makeinfo readline tar:lz
+USES=		gmake iconv libtool makeinfo readline tar:lz
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG} \
 		--with-libintl-prefix=${LOCALBASE} \
 		AWK=${AWK}
@@ -33,8 +33,5 @@ INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
-
-post-patch:
-	@${RM} ${WRKSRC}/doc/*.info
 
 .include <bsd.port.mk>

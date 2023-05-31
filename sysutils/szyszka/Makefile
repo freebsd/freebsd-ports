@@ -1,6 +1,5 @@
 PORTNAME=	szyszka
-DISTVERSION=	2.0.0
-PORTREVISION=	5
+DISTVERSION=	3.0.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,88 +10,197 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo gnome
-USE_GNOME=	glib20 gtk30
+USE_GNOME=	glib20 gtk40 gdkpixbuf2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	qarmin
 
-CARGO_CRATES=	anyhow-1.0.42 \
-		atk-0.14.0 \
-		atk-sys-0.14.0 \
-		autocfg-1.0.1 \
-		bitflags-1.2.1 \
-		cairo-rs-0.14.1 \
-		cairo-sys-rs-0.14.0 \
-		cfg-expr-0.7.4 \
-		chrono-0.4.19 \
-		either-1.6.1 \
-		field-offset-0.3.4 \
-		futures-channel-0.3.15 \
-		futures-core-0.3.15 \
-		futures-executor-0.3.15 \
-		futures-io-0.3.15 \
-		futures-task-0.3.15 \
-		futures-util-0.3.15 \
-		gdk-0.14.0 \
-		gdk-pixbuf-0.14.0 \
-		gdk-pixbuf-sys-0.14.0 \
-		gdk-sys-0.14.0 \
-		gio-0.14.0 \
-		gio-sys-0.14.0 \
-		glib-0.14.2 \
-		glib-macros-0.14.1 \
-		glib-sys-0.14.0 \
-		gobject-sys-0.14.0 \
-		gtk-0.14.0 \
-		gtk-sys-0.14.0 \
-		gtk3-macros-0.14.0 \
-		heck-0.3.3 \
-		humansize-1.1.1 \
-		itertools-0.10.1 \
-		libc-0.2.98 \
-		memoffset-0.6.4 \
-		num-integer-0.1.44 \
-		num-traits-0.2.14 \
-		once_cell-1.8.0 \
-		open-1.7.1 \
-		pango-0.14.0 \
-		pango-sys-0.14.0 \
-		pathdiff-0.2.0 \
-		pest-2.1.3 \
-		pin-project-lite-0.2.7 \
+CARGO_CRATES=	aho-corasick-1.0.1 \
+		android_system_properties-0.1.5 \
+		anyhow-1.0.71 \
+		arc-swap-1.6.0 \
+		autocfg-1.1.0 \
+		bitflags-1.3.2 \
+		block-0.1.6 \
+		block-buffer-0.10.4 \
+		bumpalo-3.13.0 \
+		cairo-rs-0.17.0 \
+		cairo-sys-rs-0.17.0 \
+		cc-1.0.79 \
+		cfg-expr-0.15.1 \
+		cfg-if-1.0.0 \
+		chrono-0.4.24 \
+		core-foundation-sys-0.8.4 \
+		cpufeatures-0.2.7 \
+		crossbeam-0.8.2 \
+		crossbeam-channel-0.5.8 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.14 \
+		crossbeam-queue-0.3.8 \
+		crossbeam-utils-0.8.15 \
+		crypto-common-0.1.6 \
+		dashmap-5.4.0 \
+		deunicode-1.3.3 \
+		digest-0.10.7 \
+		directories-next-2.0.0 \
+		dirs-sys-next-0.1.2 \
+		displaydoc-0.2.4 \
+		either-1.8.1 \
+		field-offset-0.3.5 \
+		find-crate-0.6.3 \
+		fluent-0.16.0 \
+		fluent-bundle-0.15.2 \
+		fluent-langneg-0.13.0 \
+		fluent-syntax-0.11.0 \
+		futures-channel-0.3.28 \
+		futures-core-0.3.28 \
+		futures-executor-0.3.28 \
+		futures-io-0.3.28 \
+		futures-macro-0.3.28 \
+		futures-task-0.3.28 \
+		futures-util-0.3.28 \
+		gdk-pixbuf-0.17.0 \
+		gdk-pixbuf-sys-0.17.0 \
+		gdk4-0.6.3 \
+		gdk4-sys-0.6.3 \
+		generic-array-0.14.7 \
+		getrandom-0.2.9 \
+		gio-0.17.9 \
+		gio-sys-0.17.4 \
+		glib-0.17.9 \
+		glib-macros-0.17.9 \
+		glib-sys-0.17.4 \
+		gobject-sys-0.17.4 \
+		graphene-rs-0.17.1 \
+		graphene-sys-0.17.0 \
+		gsk4-0.6.3 \
+		gsk4-sys-0.6.3 \
+		gtk4-0.6.6 \
+		gtk4-macros-0.6.6 \
+		gtk4-sys-0.6.3 \
+		hashbrown-0.12.3 \
+		heck-0.4.1 \
+		hermit-abi-0.2.6 \
+		humansize-2.1.3 \
+		i18n-config-0.4.4 \
+		i18n-embed-0.13.9 \
+		i18n-embed-fl-0.6.7 \
+		i18n-embed-impl-0.8.1 \
+		iana-time-zone-0.1.56 \
+		iana-time-zone-haiku-0.1.2 \
+		indexmap-1.9.3 \
+		intl-memoizer-0.5.1 \
+		intl_pluralrules-7.0.2 \
+		is-docker-0.2.0 \
+		is-wsl-0.4.0 \
+		itoa-1.0.6 \
+		js-sys-0.3.63 \
+		jwalk-0.8.1 \
+		lazy_static-1.4.0 \
+		libc-0.2.144 \
+		libm-0.2.7 \
+		locale_config-0.3.0 \
+		lock_api-0.4.9 \
+		log-0.4.17 \
+		malloc_buf-0.0.6 \
+		memchr-2.5.0 \
+		memoffset-0.8.0 \
+		num-integer-0.1.45 \
+		num-traits-0.2.15 \
+		num_cpus-1.15.0 \
+		objc-0.2.7 \
+		objc-foundation-0.1.1 \
+		objc_id-0.1.1 \
+		once_cell-1.17.1 \
+		open-4.1.0 \
+		pango-0.17.4 \
+		pango-sys-0.17.0 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.7 \
+		pathdiff-0.2.1 \
+		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
-		pkg-config-0.3.19 \
-		proc-macro-crate-1.0.0 \
+		pkg-config-0.3.27 \
+		proc-macro-crate-1.3.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.27 \
-		quote-1.0.9 \
-		rustc_version-0.3.3 \
+		proc-macro2-1.0.58 \
+		quote-1.0.27 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
+		redox_syscall-0.2.16 \
+		redox_users-0.4.3 \
+		regex-1.8.2 \
+		regex-syntax-0.7.2 \
+		rust-embed-6.6.1 \
+		rust-embed-impl-6.5.0 \
+		rust-embed-utils-7.5.0 \
+		rustc-hash-1.1.0 \
+		rustc_version-0.4.0 \
+		ryu-1.0.13 \
 		same-file-1.0.6 \
-		semver-0.11.0 \
-		semver-parser-0.10.2 \
-		serde-1.0.126 \
-		slab-0.4.3 \
-		smallvec-1.6.1 \
-		strum-0.21.0 \
-		strum_macros-0.21.1 \
-		syn-1.0.73 \
-		system-deps-3.1.2 \
-		thiserror-1.0.26 \
-		thiserror-impl-1.0.26 \
-		time-0.1.44 \
-		toml-0.5.8 \
-		ucd-trie-0.1.3 \
-		unicode-segmentation-1.8.0 \
-		unicode-xid-0.2.2 \
-		version-compare-0.0.11 \
-		version_check-0.9.3 \
-		walkdir-2.3.2 \
+		scopeguard-1.1.0 \
+		self_cell-0.10.2 \
+		semver-1.0.17 \
+		serde-1.0.163 \
+		serde_derive-1.0.163 \
+		serde_json-1.0.96 \
+		serde_spanned-0.6.2 \
+		sha2-0.10.6 \
+		slab-0.4.8 \
+		slugmin-1.0.2 \
+		smallvec-1.10.0 \
+		strsim-0.10.0 \
+		syn-1.0.109 \
+		syn-2.0.16 \
+		system-deps-6.1.0 \
+		target-lexicon-0.12.7 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
+		time-0.1.45 \
+		tinystr-0.7.1 \
+		toml-0.5.11 \
+		toml-0.7.4 \
+		toml_datetime-0.6.2 \
+		toml_edit-0.19.10 \
+		type-map-0.4.0 \
+		typenum-1.16.0 \
+		unic-langid-0.9.1 \
+		unic-langid-impl-0.9.1 \
+		unicode-ident-1.0.8 \
+		version-compare-0.1.1 \
+		version_check-0.9.4 \
+		walkdir-2.3.3 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.86 \
+		wasm-bindgen-backend-0.2.86 \
+		wasm-bindgen-macro-0.2.86 \
+		wasm-bindgen-macro-support-0.2.86 \
+		wasm-bindgen-shared-0.2.86 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-0.48.0 \
+		windows-sys-0.45.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.0 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
+		winnow-0.4.6
 
 PLIST_FILES=	bin/${PORTNAME}
 

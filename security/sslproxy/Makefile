@@ -19,8 +19,9 @@ GH_ACCOUNT=	sonertari
 GH_PROJECT=	SSLproxy
 
 MAKEFILE=	GNUmakefile
-MAKE_ENV=	DESTDIR=${STAGEDIR} MANDIR=man INSTALLUID=${UID} INSTALLGID=${GID}
-PLIST_FILES=	bin/sslproxy man/man1/sslproxy.1.gz man/man5/sslproxy.conf.5.gz \
+MAKE_ENV=	MANDIR=man INSTALLUID=${UID} INSTALLGID=${GID}
+PLIST_FILES=	bin/sslproxy man/man1/sslproxy.1.gz \
+		man/man5/sslproxy.conf.5.gz \
 		"@sample etc/sslproxy.conf.sample"
 
 post-patch:

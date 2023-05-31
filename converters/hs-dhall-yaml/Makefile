@@ -1,6 +1,5 @@
 PORTNAME=	dhall-yaml
-PORTVERSION=	1.2.10
-PORTREVISION=	1
+PORTVERSION=	1.2.12
 CATEGORIES=	converters lang haskell
 
 MAINTAINER=	malcolm.matalka@acsl.se
@@ -12,74 +11,76 @@ LICENSE=	BSD3CLAUSE
 USES=		cabal
 
 USE_CABAL=	Diff-0.4.1 \
-		HsYAML-0.2.1.1_1 \
-		HsYAML-aeson-0.2.0.1_5 \
-		OneTuple-0.3.1_3 \
+		HsYAML-0.2.1.1_2 \
+		HsYAML-aeson-0.2.0.1_6 \
+		OneTuple-0.4.1.1 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \
-		aeson-2.0.3.0 \
+		aeson-2.1.2.1_3 \
 		aeson-pretty-0.8.9_2 \
 		aeson-yaml-1.1.0.1_3 \
-		ansi-terminal-0.11.3 \
-		ansi-wl-pprint-0.6.9_3 \
+		ansi-terminal-0.11.5 \
+		ansi-terminal-types-0.11.5_1 \
+		ansi-wl-pprint-0.6.9_4 \
 		appar-0.1.8 \
 		asn1-encoding-0.9.6_2 \
 		asn1-parse-0.9.5 \
 		asn1-types-0.3.4 \
-		assoc-1.0.2_3 \
-		async-2.2.4_2 \
+		assoc-1.1 \
+		async-2.2.4_3 \
 		atomic-write-0.2.0.7 \
-		attoparsec-0.14.4_2 \
-		base-compat-0.12.2 \
-		base-compat-batteries-0.12.2 \
-		base-orphans-0.8.7 \
+		attoparsec-0.14.4_3 \
+		base-compat-0.13.0 \
+		base-compat-batteries-0.13.0 \
+		base-orphans-0.9.0 \
 		base16-bytestring-1.0.2.0 \
 		base64-bytestring-1.2.1.0 \
 		basement-0.0.15 \
-		bifunctors-5.5.13 \
+		bifunctors-5.6.1 \
 		blaze-builder-0.4.2.2_1 \
 		byteorder-1.0.4 \
-		cabal-doctest-1.0.9_2 \
+		cabal-doctest-1.0.9_3 \
 		case-insensitive-1.2.1.0 \
-		cborg-0.2.8.0_1 \
+		cborg-0.2.9.0 \
 		cborg-json-0.2.5.0_1 \
 		cereal-0.5.8.3 \
 		charset-0.3.9 \
-		cmdargs-0.10.21 \
+		cmdargs-0.10.22 \
 		colour-2.3.6 \
 		comonad-5.0.8_1 \
 		connection-0.3.1_1 \
 		contravariant-1.5.5 \
-		cookie-0.4.5 \
-		cryptohash-sha256-0.11.102.1_1 \
+		cookie-0.4.6 \
+		cryptohash-sha256-0.11.102.1_2 \
 		cryptonite-0.30 \
 		data-default-class-0.1.2.0 \
-		data-fix-0.3.2_3 \
-		dhall-1.41.2_3 \
+		data-fix-0.3.2_4 \
+		dhall-1.41.2_5 \
 		dhall-json-1.7.11_1 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
 		dotgen-0.4.3 \
-		either-5.0.2 \
-		generically-0.1 \
+		either-5.0.2_1 \
+		foldable1-classes-compat-0.1_2 \
+		generically-0.1.1_1 \
 		half-0.3.1 \
-		hashable-1.4.1.0 \
+		hashable-1.4.2.0_1 \
 		hourglass-0.2.12 \
-		hsc2hs-0.68.8_1 \
-		http-client-0.7.13.1 \
+		hsc2hs-0.68.9 \
+		http-client-0.7.13.1_1 \
 		http-client-tls-0.3.6.1 \
 		http-types-0.12.3 \
-		indexed-traversable-0.1.2_2 \
-		indexed-traversable-instances-0.1.1.1 \
-		integer-logarithms-1.0.3.1_3 \
+		indexed-traversable-0.1.2.1 \
+		indexed-traversable-instances-0.1.1.2_1 \
+		integer-logarithms-1.0.3.1_4 \
 		iproute-1.7.12 \
 		lens-family-core-2.1.2 \
-		megaparsec-9.2.2 \
+		megaparsec-9.3.1 \
 		memory-0.18.0 \
 		mime-types-0.1.1.0 \
 		mmorph-1.2.0_3 \
-		network-3.1.2.7 \
-		network-uri-2.6.4.1 \
+		network-3.1.3.0 \
+		network-uri-2.6.4.2 \
 		optparse-applicative-0.17.0.0 \
 		parser-combinators-1.3.0 \
 		parsers-0.12.11 \
@@ -87,43 +88,43 @@ USE_CABAL=	Diff-0.4.1 \
 		pretty-simple-4.1.2.0 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
-		primitive-0.7.4.0 \
-		profunctors-5.6.2_2 \
+		primitive-0.8.0.0 \
+		profunctors-5.6.2_3 \
 		random-1.2.1.1 \
 		repline-0.4.2.0 \
-		scientific-0.3.7.0_3 \
-		semialign-1.2.0.1_3 \
-		semigroupoids-5.3.7 \
-		serialise-0.2.6.0_1 \
+		scientific-0.3.7.0_5 \
+		semialign-1.3 \
+		semigroupoids-6.0.0.1 \
+		serialise-0.2.6.0_3 \
 		socks-0.6.1 \
-		splitmix-0.1.0.4_1 \
-		streaming-commons-0.2.2.5 \
-		strict-0.4.0.1_4 \
-		tagged-0.8.6.1_3 \
+		splitmix-0.1.0.4_2 \
+		streaming-commons-0.2.2.6 \
+		strict-0.5 \
+		tagged-0.8.7 \
 		temporary-1.3 \
 		text-manipulate-0.3.1.0 \
-		text-short-0.1.5_1 \
-		th-abstraction-0.4.5.0 \
-		th-compat-0.1.4 \
-		th-lift-0.8.2_2 \
+		text-short-0.1.5_2 \
+		th-abstraction-0.5.0.0 \
+		th-compat-0.1.4_2 \
+		th-lift-0.8.3 \
 		th-lift-instances-0.1.20 \
-		these-1.1.1.1_6 \
-		time-compat-1.9.6.1_4 \
+		these-1.2 \
+		time-compat-1.9.6.1_5 \
 		tls-1.6.0 \
 		transformers-compat-0.7.2 \
-		unix-compat-0.6_1 \
-		unordered-containers-0.2.19.1_1 \
+		unix-compat-0.7 \
+		unordered-containers-0.2.19.1_2 \
 		uri-encode-1.5.0.7_2 \
 		utf8-string-1.0.2 \
-		uuid-types-1.0.5_3 \
-		vector-0.12.3.1_2 \
-		vector-stream-0.1.0.0_1 \
-		witherable-0.4.2_3 \
+		uuid-types-1.0.5_4 \
+		vector-0.13.0.0_3 \
+		vector-stream-0.1.0.0_2 \
+		witherable-0.4.2_4 \
 		x509-1.7.7 \
 		x509-store-1.6.9 \
 		x509-system-1.6.7 \
 		x509-validation-1.6.12 \
-		zlib-0.6.3.0
+		zlib-0.6.3.0_1
 
 CABAL_EXECUTABLES=	dhall-to-yaml-ng yaml-to-dhall
 CABAL_PROJECT=		remove

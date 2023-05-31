@@ -4,7 +4,7 @@ CATEGORIES=	mail
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries and templates for Django-based interfaces interacting with Mailman
 WWW=		https://gitlab.com/mailman/django-mailman3
 

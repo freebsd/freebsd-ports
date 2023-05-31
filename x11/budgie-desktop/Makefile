@@ -1,7 +1,6 @@
 PORTNAME=	budgie-desktop
-DISTVERSION=	10.7.1
+DISTVERSION=	10.7.2
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	x11 budgie
 MASTER_SITES=	BUDGIE
 
@@ -14,7 +13,8 @@ LICENSE=	GPLv2 LGPL21
 
 BUILD_DEPENDS=	gnome-settings-daemon>0:sysutils/gnome-settings-daemon \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
-		sassc:textproc/sassc
+		sassc:textproc/sassc \
+		zenity>0:x11/zenity
 LIB_DEPENDS=	libpolkit-gobject-1.so:sysutils/polkit \
 		libpeas-1.0.so:devel/libpeas \
 		libuuid.so:misc/e2fsprogs-libuuid \
@@ -47,6 +47,9 @@ MESON_ARGS=	-Dwith-gtk-doc=false \
 		-Dwith-bluetooth=false \
 		-Dwith-hibernate=false \
 		-Dwith-libuuid-time-safe=false
+
+# If zenity >= 3.90 → build against Gtk4 (new API)
+MESON_ARGS+=	-Duse-old-zenity=true
 
 GLIB_SCHEMAS=	20_buddiesofbudgie.budgie-desktop.notifications.gschema.override \
 		20_solus-project.budgie.wm.gschema.override \

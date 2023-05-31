@@ -1,3 +1,3 @@
-TIMESTAMP = 1682616664
-SHA256 (dask_histogram-2023.4.4.tar.gz) = e50b57360c0b1b6df1b7751941560777a10a755593c55cb64c2b7e70a126a3ba
-SIZE (dask_histogram-2023.4.4.tar.gz) = 22801
+TIMESTAMP = 1685162118
+SHA256 (dask_histogram-2023.5.1.tar.gz) = abf3e425448ef46c66314db98d80899c6cd78650a252c7dbfa5dd209bf09853a
+SIZE (dask_histogram-2023.5.1.tar.gz) = 23036

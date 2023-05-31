@@ -1,5 +1,5 @@
 PORTNAME=	heimer
-DISTVERSION=	4.1.0
+DISTVERSION=	4.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/juzzlin/Heimer/releases/download/${DISTVERSION}/
 

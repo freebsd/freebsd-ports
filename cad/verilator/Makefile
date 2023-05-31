@@ -1,6 +1,7 @@
 PORTNAME=	verilator
 DISTVERSIONPREFIX=	v
 DISTVERSION=	5.010
+PORTREVISION=	2
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +18,8 @@ BUILD_DEPENDS=	autoconf>0:devel/autoconf \
 		${LOCALBASE}/bin/ar:devel/binutils \
 		help2man:misc/help2man
 LIB_DEPENDS=	libsystemc.so:devel/systemc
-RUN_DEPENDS=	gmake:devel/gmake # verilator runs gmake for the --hierarchical option when the 'gmake' method is chosen
+RUN_DEPENDS=	${LOCALBASE}/bin/ar:devel/binutils \
+		gmake:devel/gmake # verilator runs gmake for the --hierarchical option when the 'gmake' method is chosen
 
 USES=		bison compiler:c++14-lang gmake localbase:ldflags pathfix perl5 python:build,run,test shebangfix tar:tgz
 USE_GITHUB=	yes

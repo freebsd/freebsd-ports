@@ -14,7 +14,6 @@ USES=		imake xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	beyert
 GH_PROJECT=	xlupe
-GH_TAGNAME=	${PORTVERSION}
 USE_XORG=	xaw xmu xt sm ice xpm xext x11
 
 PLIST_FILES=	bin/xlupe

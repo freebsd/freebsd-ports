@@ -12,6 +12,9 @@ WWW=		https://www.redmine.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/doc/COPYING
 
+DEPRECATED=	Broken with all supported Ruby versions
+EXPIRATION_DATE=	2023-06-30
+
 RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 		rubygem-rails52>=5.2.8.1<5.3:www/rubygem-rails52 \
 		rubygem-rouge3>=3.26.0:textproc/rubygem-rouge3 \
@@ -34,6 +37,8 @@ RUN_DEPENDS=	rubygem-bundler>=1.5.0:sysutils/rubygem-bundler \
 USES=		cpe ruby
 BROKEN_RUBY30=	yes
 BROKEN_RUBY31=	yes
+BROKEN_RUBY32=	yes
+BROKEN_RUBY33=	yes
 
 CONFLICTS_INSTALL=	redmine4
 

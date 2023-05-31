@@ -20,6 +20,7 @@
     SUBDIR += Stikked
     SUBDIR += UniversalFeedCreator
     SUBDIR += adguardhome
+    SUBDIR += adjuster
     SUBDIR += adzap
     SUBDIR += alef-webfont
     SUBDIR += amfora
@@ -450,7 +451,6 @@
     SUBDIR += nibbleblog
     SUBDIR += nift
     SUBDIR += node
-    SUBDIR += node14
     SUBDIR += node16
     SUBDIR += node18
     SUBDIR += node19
@@ -461,7 +461,6 @@
     SUBDIR += npapi-xine
     SUBDIR += npc
     SUBDIR += npm
-    SUBDIR += npm-node14
     SUBDIR += npm-node16
     SUBDIR += npm-node18
     SUBDIR += npm-node19
@@ -1462,21 +1461,6 @@
     SUBDIR += py-cssselect
     SUBDIR += py-cssutils
     SUBDIR += py-dj-database-url
-    SUBDIR += py-dj40-django-auth-ldap
-    SUBDIR += py-dj40-django-cors-headers
-    SUBDIR += py-dj40-django-debug-toolbar
-    SUBDIR += py-dj40-django-filter
-    SUBDIR += py-dj40-django-graphiql-debug-toolbar
-    SUBDIR += py-dj40-django-js-asset
-    SUBDIR += py-dj40-django-mptt
-    SUBDIR += py-dj40-django-prometheus
-    SUBDIR += py-dj40-django-redis
-    SUBDIR += py-dj40-django-rich
-    SUBDIR += py-dj40-django-tables2
-    SUBDIR += py-dj40-django-taggit
-    SUBDIR += py-dj40-django-timezone-field
-    SUBDIR += py-dj40-djangorestframework
-    SUBDIR += py-dj40-drf-yasg
     SUBDIR += py-dj41-django-auth-ldap
     SUBDIR += py-dj41-django-cors-headers
     SUBDIR += py-dj41-django-debug-toolbar
@@ -1594,7 +1578,6 @@
     SUBDIR += py-django-webpack-loader
     SUBDIR += py-django-widget-tweaks
     SUBDIR += py-django32
-    SUBDIR += py-django40
     SUBDIR += py-django41
     SUBDIR += py-django42
     SUBDIR += py-django_compressor
@@ -1899,7 +1882,6 @@
     SUBDIR += rubygem-amazon-ecs
     SUBDIR += rubygem-anemone
     SUBDIR += rubygem-asana
-    SUBDIR += rubygem-asana0
     SUBDIR += rubygem-asana1
     SUBDIR += rubygem-async-http
     SUBDIR += rubygem-async-pool
@@ -1918,6 +1900,7 @@
     SUBDIR += rubygem-cgi_multipart_eof_fix
     SUBDIR += rubygem-chosen-rails
     SUBDIR += rubygem-chromedriver-helper
+    SUBDIR += rubygem-circuitbox
     SUBDIR += rubygem-cookiejar
     SUBDIR += rubygem-crass
     SUBDIR += rubygem-cssbundling-rails
@@ -2031,7 +2014,6 @@
     SUBDIR += rubygem-json-jwt
     SUBDIR += rubygem-json-jwt115
     SUBDIR += rubygem-jwt
-    SUBDIR += rubygem-jwt25
     SUBDIR += rubygem-kaminari
     SUBDIR += rubygem-kaminari-actionview
     SUBDIR += rubygem-kaminari-actionview-rails5
@@ -2121,6 +2103,7 @@
     SUBDIR += rubygem-rack-timeout
     SUBDIR += rubygem-rack16
     SUBDIR += rubygem-rack22
+    SUBDIR += rubygem-rack227
     SUBDIR += rubygem-rack_csrf
     SUBDIR += rubygem-rackup
     SUBDIR += rubygem-rails-settings-cached
@@ -2182,6 +2165,7 @@
     SUBDIR += rubygem-rtlit
     SUBDIR += rubygem-ruby-oembed
     SUBDIR += rubygem-ruby-openai
+    SUBDIR += rubygem-ruby-openai37
     SUBDIR += rubygem-ruby-readability
     SUBDIR += rubygem-savon
     SUBDIR += rubygem-sawyer
@@ -2226,7 +2210,6 @@
     SUBDIR += rubygem-webdrivers
     SUBDIR += rubygem-webmock
     SUBDIR += rubygem-webrick
-    SUBDIR += rubygem-webrick17
     SUBDIR += rubygem-webrobots
     SUBDIR += rubygem-websocket
     SUBDIR += rubygem-websocket-client-simple
@@ -2452,7 +2435,6 @@
     SUBDIR += yabb
     SUBDIR += yanopaste
     SUBDIR += yarn
-    SUBDIR += yarn-node14
     SUBDIR += yarn-node16
     SUBDIR += yarn-node18
     SUBDIR += yarn-node19

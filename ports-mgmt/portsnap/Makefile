@@ -1,10 +1,10 @@
 PORTNAME=	portsnap
 PORTVERSION=	1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ports-mgmt net
 MASTER_SITES=	http://www.daemonology.net/portsnap/
 
-MAINTAINER=	bofh@FreBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Provides secure snapshots of the ports directory
 WWW=		http://www.daemonology.net/portsnap/
 
@@ -20,8 +20,8 @@ PLIST_FILES=	"@sample etc/portsnap.conf.sample" \
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1500000
-IGNORE=	portsnap is in base systems but will be removed from 14.0-RELEASE
+.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1400087
+IGNORE=	portsnap is in base systems and has been removed from 14.0-RELEASE
 .endif
 
 post-patch:

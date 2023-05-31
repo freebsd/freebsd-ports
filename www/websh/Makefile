@@ -1,6 +1,6 @@
 PORTNAME=	websh
 PORTVERSION=	3.6.0b5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www tcl
 MASTER_SITES=	https://archive.apache.org/dist/tcl/${PORTNAME}/source/
 EXTRACT_SUFX=	-src.tar.gz
@@ -43,7 +43,7 @@ post-patch:
 	done
 	${REINPLACE_CMD} -e 's,\.html,.whtml,g' ${WRKSRC:H:H}/doc/mod_websh/htdocs/*.ws3
 	${REINPLACE_CMD} -e 's|__declspec(dllexport)|DLLEXPORT|' \
-		${WRKSRC}/../generic/*.[ch]
+		${WRKSRC:H}/generic/*.[ch]
 
 post-configure:
 	# Remove the "STUBS" and the PACKAGE_* defines, which may conflict

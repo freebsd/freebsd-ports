@@ -1,5 +1,6 @@
 PORTNAME=	libndp
 PORTVERSION=	1.8
+DISTVERSIONPREFIX=	v
 CATEGORIES=	net
 
 MAINTAINER=	arrowd@FreeBSD.org
@@ -16,6 +17,5 @@ USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jpirko
-GH_TAGNAME=	v${PORTVERSION}
 
 .include <bsd.port.mk>

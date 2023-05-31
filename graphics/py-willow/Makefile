@@ -1,6 +1,5 @@
 PORTNAME=	willow
-PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTVERSION=	1.5
 CATEGORIES=	graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,10 @@ WWW=		https://github.com/wagtail/Willow
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.5+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}defusedxml>=0.7<1.0:devel/py-defusedxml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}filetype>=1.0.7:devel/py-filetype@${PY_FLAVOR}
+
+USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

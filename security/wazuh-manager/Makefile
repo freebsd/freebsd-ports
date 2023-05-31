@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.4.1
+DISTVERSION=	4.4.3
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/20/libraries/sources/:wazuh_sources \
@@ -24,12 +24,13 @@ LIB_DEPENDS+=	libgdbm.so:databases/gdbm \
 
 USES=		cpe gmake perl5 python:3.9 readline shebangfix sqlite:3 uidfix
 
+IGNORE_FreeBSD_12_aarch64=	FreeBSD 12.x is not supported on ${ARCH}
 ONLY_FOR_ARCHS=	amd64 aarch64
 
 USE_GITHUB=	yes
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 
-MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LIB}" PYTHON_SOURCE=yes
+MAKE_ARGS+=	TARGET=server INSTALLDIR=${WAZUHPREFIX} INSTALL_SHARED="${INSTALL_LIB}" PYTHON_SOURCE=yes OPTIMIZE_CPYTHON=no
 
 WAZUH_CACHEFILE=	${PORTNAME}-cache-any-${DISTVERSION}${EXTRACT_SUFX}
 EXTERNAL_DISTFILES=	cJSON.tar.gz:wazuh_sources \
@@ -90,11 +91,12 @@ WZBIN_FILES=	wazuh-logcollector wazuh-syscheckd wazuh-execd  manage_agents wazuh
 WZARBIN_FILES=	default-firewall-drop pf npf ipfw firewalld-drop disable-account \
 		host-deny ip-customblock restart-wazuh route-null kaspersky wazuh-slack
 
-WZSHEBANG_FILES=fixup_pubsub_v1_keywords.py pasteurize rst2xetex.py connexion rst2man.py rst2odt.py \
-		pyrsa-priv2pub pyrsa-encrypt cygdb pyrsa-sign rstpep2html.py rst2s5.py rst2latex.py \
-		chardetect futurize cython rst2pseudoxml.py pyrsa-keygen wsdump.py rst2odt_prepstyles.py \
-		jp.py cythonize pyrsa-verify normalizer rst2html.py rst2html5.py openapi-spec-validator \
-		rst2html4.py jsonschema rst2xml.py tabulate flask pyrsa-decrypt
+WZSHEBANG_FILES=chardetect connexion cygdb cython cythonize f2py3.9 f2py3 f2py fixup_pubsub_v1_keywords.py \
+		flask futurize jp.py jsonschema normalizer openapi-spec-validator pasteurize \
+		plasma_store pyrsa-decrypt pyrsa-encrypt pyrsa-keygen pyrsa-priv2pub pyrsa-sign \
+		pyrsa-verify rstpep2html.py rst2s5.py rst2xetex.py rst2man.py rst2odt.py \
+		rst2latex.py rst2pseudoxml.py rst2odt_prepstyles.py rst2html.py rst2html5.py \
+		rst2html4.py rst2xml.py tabulate wsdump.py
 
 WAZUHMOD750=	/ /logs/wazuh /logs/archives /logs/alerts /logs/firewall \
 		/logs/api /logs/cluster /bin /lib /queue /queue/agentless \
@@ -124,7 +126,9 @@ WZPYTHONWHEELS=	aiohttp-3.8.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		hiredis-1.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		MarkupSafe-2.1.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		multidict-5.1.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		numpy-1.21.6-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		psutil-5.8.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
+		pyarrow-8.0.0-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		PyYAML-5.4.1-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		SQLAlchemy-1.3.11-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
 		uvloop-0.15.2-cp39-cp39-${FBSD_VERSION_BASE}_${ARCH_BASE}.whl \
@@ -141,7 +145,7 @@ FBSD_VERSION_BASE=freebsd_12_4_release_p1
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd12-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1300139 && ${OSVERSION} < 1400000
-FBSD_VERSION_BASE=freebsd_13_1_release_p6
+FBSD_VERSION_BASE=freebsd_13_2_release
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd13-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .elif ${OSVERSION} >= 1400000
@@ -149,7 +153,7 @@ FBSD_VERSION_BASE=freebsd_14_0_current
 WAZUH_CACHENAME=${PORTNAME}-cache-fbsd14-${ARCH}-${DISTVERSION}
 DISTFILES+=	${WAZUH_CACHENAME}${EXTRACT_SUFX}:wazuh_cache
 .else
-IGNORE=		FreeBSD ${OSVERSION} is not supported
+IGNORE=		FreeBSD ${OSVERSION} ${ARCH} is not supported
 .endif
 
 post-extract:
@@ -166,7 +170,6 @@ post-extract:
 post-patch:
 	${REINPLACE_CMD} -e 's|HOST_NAME_MAX|_POSIX_HOST_NAME_MAX|g' ${WRKSRC}/src/wazuh_modules/wm_database.c
 	${REINPLACE_CMD} -e 's|CC=|CC?=|g' -e 's|AR=|AR?=|g' ${WRKSRC}/src/external/bzip2/Makefile
-	${REINPLACE_CMD} '114d' ${WRKSRC}/src/wazuh_modules/syscollector/CMakeLists.txt
 	${REINPLACE_CMD} -e 's|^\( *MULTIARCH=\).*--print-multiarch.*|\1|' ${WRKSRC}/src/external/cpython/configure
 
 do-build:

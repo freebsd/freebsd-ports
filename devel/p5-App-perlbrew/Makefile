@@ -1,6 +1,5 @@
 PORTNAME=	App-perlbrew
-PORTVERSION=	0.96
-PORTREVISION=	1
+PORTVERSION=	0.97
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GUGOD
@@ -14,10 +13,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	p5-CPAN-Perl-Releases>=5.20220720:devel/p5-CPAN-Perl-Releases \
+RUN_DEPENDS=	p5-CPAN-Perl-Releases>=5.20230423:devel/p5-CPAN-Perl-Releases \
 		p5-Capture-Tiny>=0.48:devel/p5-Capture-Tiny \
 		p5-Devel-PatchPerl>=2.08:devel/p5-Devel-PatchPerl \
-		p5-Pod-Parser>=1.63:textproc/p5-Pod-Parser \
 		p5-local-lib>=2.000014:devel/p5-local-lib
 TEST_DEPENDS=	p5-File-Which>=1.21:sysutils/p5-File-Which \
 		p5-IO-All>=0.51:devel/p5-IO-All \

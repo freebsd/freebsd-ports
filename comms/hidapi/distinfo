@@ -1,3 +1,3 @@
-TIMESTAMP = 1673359967
-SHA256 (libusb-hidapi-hidapi-0.13.1_GH0.tar.gz) = 476a2c9a4dc7d1fc97dd223b84338dbea3809a84caea2dcd887d9778725490e3
-SIZE (libusb-hidapi-hidapi-0.13.1_GH0.tar.gz) = 244666
+TIMESTAMP = 1684809437
+SHA256 (libusb-hidapi-hidapi-0.14.0_GH0.tar.gz) = a5714234abe6e1f53647dd8cba7d69f65f71c558b7896ed218864ffcf405bcbd
+SIZE (libusb-hidapi-hidapi-0.14.0_GH0.tar.gz) = 348221

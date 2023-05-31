@@ -54,7 +54,6 @@ include/wabt/leb128.h
 include/wabt/lexer-source-line-finder.h
 include/wabt/lexer-source.h
 include/wabt/literal.h
-include/wabt/make-unique.h
 include/wabt/opcode-code-table.h
 include/wabt/opcode.def
 include/wabt/opcode.h
@@ -62,6 +61,7 @@ include/wabt/option-parser.h
 include/wabt/range.h
 include/wabt/resolve-names.h
 include/wabt/result.h
+include/wabt/sha256.h
 include/wabt/shared-validator.h
 include/wabt/stream.h
 include/wabt/string-format.h
@@ -76,6 +76,7 @@ include/wabt/validator.h
 include/wabt/wast-lexer.h
 include/wabt/wast-parser.h
 include/wabt/wat-writer.h
+include/wasm-rt-exceptions.h
 include/wasm-rt.h
 lib/cmake/wabt/wabt-config-version.cmake
 lib/cmake/wabt/wabt-config.cmake
@@ -95,5 +96,6 @@ share/man/man1/wasm2wat.1.gz
 share/man/man1/wast2json.1.gz
 share/man/man1/wat-desugar.1.gz
 share/man/man1/wat2wasm.1.gz
+%%DATADIR%%/wasm2c/wasm-rt-exceptions-impl.c
 %%DATADIR%%/wasm2c/wasm-rt-impl.c
 %%DATADIR%%/wasm2c/wasm-rt-impl.h

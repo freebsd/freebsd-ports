@@ -1,5 +1,6 @@
     COMMENT = Graphics tools and libraries
 
+    SUBDIR += 3d-ascii-viewer-c
     SUBDIR += 4va
     SUBDIR += Coin
     SUBDIR += GraphicsMagick
@@ -1076,6 +1077,7 @@
     SUBDIR += scrot
     SUBDIR += scwm-icons
     SUBDIR += sdl2_gfx
+    SUBDIR += sdl2_gpu
     SUBDIR += sdl2_image
     SUBDIR += sdl2_ttf
     SUBDIR += sdl_gfx

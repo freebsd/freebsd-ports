@@ -1,0 +1,11 @@
+--- src/data_provider/CMakeLists.txt.orig	2023-05-24 19:23:05 UTC
++++ src/data_provider/CMakeLists.txt
+@@ -152,7 +152,7 @@ elseif(APPLE)
+   target_link_libraries(sysinfo cjson ${SRC_FOLDER}/external/libplist/bin/lib/libplist-2.0.a)
+ endif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+ 
+-target_link_libraries(sysinfo wazuhext)
++target_link_libraries(sysinfo nghttp2 wazuhext)
+ 
+ 
+ if(APPLE)

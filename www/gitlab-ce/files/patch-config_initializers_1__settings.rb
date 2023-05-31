@@ -1,6 +1,6 @@
---- config/initializers/1_settings.rb.orig	2023-04-05 16:11:51 UTC
+--- config/initializers/1_settings.rb.orig	2023-05-18 16:48:55 UTC
 +++ config/initializers/1_settings.rb
-@@ -209,11 +209,7 @@ Settings.gitlab['url'] ||= Settings.__send__(:build_gi
+@@ -203,11 +203,7 @@ Settings.gitlab['url'] ||= Settings.__send__(:build_gi
  Settings.gitlab['user'] ||= 'git'
  # External configuration may cause the ssh user to differ from the GitLab user
  Settings.gitlab['ssh_user'] ||= Settings.gitlab.user

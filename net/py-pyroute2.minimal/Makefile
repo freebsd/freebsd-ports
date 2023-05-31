@@ -1,13 +1,12 @@
 PORTNAME=	pyroute2.minimal
-PORTVERSION=	0.7.3
-PORTREVISION=	2
+PORTVERSION=	0.7.8
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Netlink library: minimal installation
-WWW=		https://github.com/svinota/pyroute2/tree/master/pyroute2.minimal
+WWW=		https://github.com/svinota/pyroute2
 
 LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual

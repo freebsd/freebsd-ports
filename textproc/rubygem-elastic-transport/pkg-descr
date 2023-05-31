@@ -1,0 +1,3 @@
+Elastic Transport provides a low-level Ruby client for connecting to an Elastic
+cluster. It powers both the Elasticsearch client and the Elastic Enterprise
+Search client.

@@ -1,8 +1,9 @@
 PORTNAME=	Prima
-PORTVERSION=	1.68
+PORTVERSION=	1.68.002
 CATEGORIES=	x11-toolkits graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Extensible Perl toolkit for multi-platform GUI development

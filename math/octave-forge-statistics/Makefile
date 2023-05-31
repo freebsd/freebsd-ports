@@ -1,7 +1,6 @@
 PORTNAME=	octave-forge-statistics
 DISTVERSIONPREFIX=	release-
-DISTVERSION=	1.5.4
-PORTREVISION=	2
+DISTVERSION=	1.6.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

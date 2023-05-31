@@ -1677,7 +1677,7 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/graphics/flower.txt
 %%DATADIR%%/graphics/flower_wreck.png
 %%DATADIR%%/graphics/folder.png
-%%DATADIR%%/graphics/folder.txt
+%%DATADIR%%/graphics/folder2.txt
 %%DATADIR%%/graphics/folder2.png
 %%DATADIR%%/graphics/font.json
 %%DATADIR%%/graphics/font.png
@@ -1931,6 +1931,7 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/graphics/table_wood_round_wreck.png
 %%DATADIR%%/graphics/table_wood_wreck.png
 %%DATADIR%%/graphics/table_wreck.png
+%%DATADIR%%/graphics/teddy.png
 %%DATADIR%%/graphics/terminal_17x23.png
 %%DATADIR%%/graphics/tile/biggrid/alt1.png
 %%DATADIR%%/graphics/tile/biggrid/alt2.png
@@ -2554,6 +2555,7 @@ bin/cdogs-sdl-editor
 %%DATADIR%%/missions/custom/techdemo/cyberdogs.cdogscpn/graphics/powergun.png
 %%DATADIR%%/missions/custom/techdemo/cyberdogs.cdogscpn/guns.json
 %%DATADIR%%/missions/custom/techdemo/cyberdogs.cdogscpn/missions.json
+%%DATADIR%%/missions/custom/techdemo/cyberdogs.cdogscpn/pickups.json
 %%DATADIR%%/missions/custom/techdemo/followtheleader.cpn
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/bullets.json
 %%DATADIR%%/missions/custom/techdemo/funwithguns.cdogscpn/campaign.json

@@ -36,7 +36,6 @@ USES=		cmake compiler:c++17-lang gettext-runtime gl gnome python:build \
 USE_GL=		gl
 USE_GNOME=	glib20
 USE_QT=		base declarative shadertools
-USE_XORG=	x11 xau xcb xdmcp
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
 .include <bsd.port.mk>

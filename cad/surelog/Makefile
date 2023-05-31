@@ -1,6 +1,7 @@
 PORTNAME=	surelog
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.58
+DISTVERSION=	1.59
+PORTREVISION=	1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -30,9 +31,9 @@ JAVA_RUN=	no
 USE_GITHUB=	yes
 GH_ACCOUNT=	chipsalliance
 GH_PROJECT=	Surelog
-GH_TUPLE=	alainmarcel:antlr4:2406774:antlr4/third_party/antlr4 \
-		google:googletest:dea0484:googletest/third_party/googletest \
-		google:flatbuffers:6eae49a:flatbuffers/third_party/flatbuffers
+GH_TUPLE=	alainmarcel:antlr4:cae2b22:antlr4/third_party/antlr4 \
+		google:googletest:cb455a7:googletest/third_party/googletest \
+		google:flatbuffers:ae67536:flatbuffers/third_party/flatbuffers
 
 CMAKE_ON=	BUILD_SHARED_LIBS SURELOG_USE_HOST_UHDM
 CMAKE_OFF=	SURELOG_BUILD_TESTS
@@ -50,6 +51,7 @@ OPTIONS_SUB=	yes
 
 PYTHON_USES=		python
 PYTHON_USES_OFF=	python:build
+PYTHON_BUILD_DEPENDS=	swig:devel/swig
 PYTHON_CMAKE_BOOL=	SURELOG_WITH_PYTHON
 PYTHON_CMAKE_ON=	-DFREEBSD_PYTHON_DISTVERSION=${PYTHON_DISTVERSION}
 

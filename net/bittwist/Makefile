@@ -1,20 +1,34 @@
 PORTNAME=	bittwist
-PORTVERSION=	1.1
+PORTVERSION=	3.0
+DISTVERSIONPREFIX=	bsd-
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/_BSD/Bit-Twist%20${PORTVERSION}
-DISTNAME=	${PORTNAME}-bsd-${PORTVERSION}
+MASTER_SITES=	SF/bittwist/BSD/Bit-Twist%20${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Libpcap-based Ethernet packet generator, with PCAP editor
-WWW=		http://bittwist.sourceforge.net
+WWW=		https://bittwist.sourceforge.io/
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-USES=		dos2unix gmake
-DOS2UNIX_FILES=	Makefile
+LICENSE=	GPLv2+
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-PLIST_FILES=	bin/bittwist bin/bittwistb bin/bittwiste \
-		man/man1/bittwist.1.gz \
-		man/man1/bittwistb.1.gz \
-		man/man1/bittwiste.1.gz
+USES=		dos2unix
+
+LDFLAGS+=	-lpcap
+
+PLIST_FILES=	bin/bittwist \
+		bin/bittwiste \
+		share/man/man1/bittwist.1.gz \
+		share/man/man1/bittwiste.1.gz
+
+DOS2UNIX_FILES=	COPYING
+
+do-build:
+	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/src/bittwist.c -o ${WRKSRC}/src/bittwist
+	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/src/bittwiste.c -o ${WRKSRC}/src/bittwiste
+
+do-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/bin/ ${STAGEDIR}${PREFIX}/share/man/man1/
+	${INSTALL_PROGRAM} ${WRKSRC}/src/bittwist ${WRKSRC}/src/bittwiste ${STAGEDIR}${PREFIX}/bin/
+	${INSTALL_MAN} ${WRKSRC}/doc/bittwist.1 ${WRKSRC}/doc/bittwiste.1 ${STAGEDIR}${PREFIX}/share/man/man1/
 
 .include <bsd.port.mk>

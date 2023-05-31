@@ -1,5 +1,5 @@
 PORTNAME=	blender
-DISTVERSION=	2.93.17
+DISTVERSION=	2.93.18
 PORTREVISION=	1
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://download.blender.org/source/ \
@@ -15,7 +15,6 @@ WWW=		https://www.blender.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/license/GPL3-license.txt
 
-#BROKEN=		fails to build
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	uses 64bit atomic functions
 
@@ -33,7 +32,6 @@ USES=		cmake compiler:c++17-lang cpe gl jpeg python:3.9 shebangfix \
 USE_XORG=	x11 xext xfixes xmu xrender
 USE_GL=		gl glu glew
 
-INSTALLS_ICONS=	yes
 CMAKE_OFF=	WITH_PYTHON_INSTALL \
 		WITH_PYTHON_INSTALL_NUMPY WITH_INSTALL_PORTABLE \
 		WITH_CYCLES_LOGGING

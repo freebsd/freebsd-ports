@@ -1,16 +1,17 @@
---- Makefile.orig	2015-08-31 19:26:16 UTC
+--- Makefile.orig	2023-05-09 16:28:29 UTC
 +++ Makefile
-@@ -112,11 +112,11 @@ install: NVIDIA_XCONFIG_install MANPAGE_
- 
+@@ -112,12 +112,12 @@ install: NVIDIA_XCONFIG_install MANPAGE_install
+ .PHONY: NVIDIA_XCONFIG_install
  NVIDIA_XCONFIG_install: $(NVIDIA_XCONFIG)
  	$(MKDIR) $(BINDIR)
 -	$(INSTALL) $(INSTALL_BIN_ARGS) $< $(BINDIR)/$(notdir $<)
-+	$(INSTALL_PROGRAM) $< $(BINDIR)/$(notdir $<)
++	$(BSD_INSTALL_PROGRAM) $< $(BINDIR)/$(notdir $<)
  
+ .PHONY: MANPAGE_install
  MANPAGE_install: $(MANPAGE)
  	$(MKDIR) $(MANDIR)
 -	$(INSTALL) $(INSTALL_DOC_ARGS) $< $(MANDIR)/$(notdir $<)
-+	$(INSTALL_MAN) $< $(MANDIR)/$(notdir $<)
++	$(BSD_INSTALL_MAN) $< $(MANDIR)/$(notdir $<)
  
- $(NVIDIA_XCONFIG): $(OBJS)
- 	$(call quiet_cmd,LINK) $(CFLAGS) $(LDFLAGS) $(BIN_LDFLAGS) \
+ $(eval $(call DEBUG_INFO_RULES, $(NVIDIA_XCONFIG)))
+ $(NVIDIA_XCONFIG).unstripped: $(OBJS)

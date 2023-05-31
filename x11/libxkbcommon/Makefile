@@ -1,6 +1,6 @@
 PORTNAME=	libxkbcommon
 PORTVERSION=	1.5.0
-CATEGORIES=	x11 wayland
+CATEGORIES=	x11
 MASTER_SITES=	https://xkbcommon.org/download/
 
 MAINTAINER=	x11@FreeBSD.org

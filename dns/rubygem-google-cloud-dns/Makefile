@@ -1,5 +1,5 @@
 PORTNAME=	google-cloud-dns
-PORTVERSION=	0.36.0
+PORTVERSION=	0.36.1
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 

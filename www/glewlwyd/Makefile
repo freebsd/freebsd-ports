@@ -4,7 +4,7 @@ DISTVERSION=	2.7.4
 PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Single Sign On server, multiple factor authentication
 WWW=		https://github.com/babelouest/glewlwyd
 

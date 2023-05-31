@@ -1,7 +1,6 @@
 PORTNAME=	matplotplusplus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.0
-PORTREVISION=	1
+DISTVERSION=	1.2.0
 CATEGORIES=	graphics devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +18,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		cmake compiler:c++17-lang jpeg
+USE_WX=		3.2+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	alandefreitas

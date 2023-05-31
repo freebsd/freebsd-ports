@@ -185,6 +185,7 @@
     SUBDIR += libXxf86dga
     SUBDIR += libXxf86vm
     SUBDIR += libclipboard
+    SUBDIR += libei
     SUBDIR += libexo
     SUBDIR += libfakekey
     SUBDIR += libfm
@@ -415,6 +416,7 @@
     SUBDIR += wapanel
     SUBDIR += way-displays
     SUBDIR += waybar
+    SUBDIR += wayidle
     SUBDIR += wayland-logout
     SUBDIR += waylock
     SUBDIR += wayout

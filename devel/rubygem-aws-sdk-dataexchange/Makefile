@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-dataexchange
-PORTVERSION=	1.31.0
+PORTVERSION=	1.33.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 

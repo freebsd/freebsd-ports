@@ -17,7 +17,7 @@ USES=		cmake compiler:c++11-lang gettext kde:5 pkgconfig qt:5 tar:xz \
 		xorg
 USE_KDE=	attica auth codecs completion config configwidgets coreaddons \
 		dbusaddons globalaccel guiaddons i18n jobwidgets kdeclarative \
-		kio kpipewire libkipi newstuff notifications package purpose \
+		kio libkipi newstuff notifications package purpose \
 		service solid wayland widgetsaddons windowsystem xmlgui \
 		doctools:build ecm:build
 USE_QT=		concurrent core dbus declarative gui network printsupport \
@@ -25,6 +25,11 @@ USE_QT=		concurrent core dbus declarative gui network printsupport \
 		buildtools:build qmake:build testlib:build
 USE_XORG=	x11 xcb xext xfixes
 
-OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFINE=			DOCS PIPEWIRE
+OPTIONS_DEFAULT=		PIPEWIRE
+PIPEWIRE_DESC=			Screen capture via PipeWire
+PIPEWIRE_USE=			KDE=kpipewire
+PIPEWIRE_CMAKE_BOOL_OFF=	DISABLE_PIPEWIRE
+PIPEWIRE_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-patch-pipewire-off
 
 .include <bsd.port.mk>

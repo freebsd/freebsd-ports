@@ -1,6 +1,6 @@
 PORTNAME=		gtultra
 DISTVERSIONPREFIX=	v
-DISTVERSION=		1.4.2.2
+DISTVERSION=		1.5.2
 CATEGORIES=		audio
 
 MAINTAINER=	zirias@FreeBSD.org
@@ -36,9 +36,11 @@ do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/linux/${p} \
 			${STAGEDIR}${PREFIX}/bin
 .endfor
-		# Avoid conflict with original goattracker:
-		${INSTALL_PROGRAM} ${WRKSRC}/linux/ins2snd2 \
-			${STAGEDIR}${PREFIX}/bin/ins2snd2u
+# Avoid conflict with original goattracker:
+.for p in gt2reloc ins2snd2
+		${INSTALL_PROGRAM} ${WRKSRC}/linux/${p} \
+			${STAGEDIR}${PREFIX}/bin/${p}u
+.endfor
 		${INSTALL_DATA} ${WRKSRC}/src/gt2stereo_2.ico \
 			${STAGEDIR}${PREFIX}/share/pixmaps/gtultra.ico
 

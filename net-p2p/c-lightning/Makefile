@@ -68,9 +68,15 @@ SUB_FILES=	lightningd-bitcoin.conf.sample pkg-message
 SUB_LIST=	U="${USERS}" G="${GROUPS}" LIGHTNINGD_BASE_DIR="${DESTDIR}/var/db/c-lightning"
 PLIST_SUB=	U="${USERS}" G="${GROUPS}"
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=       -Wno-error=unused-but-set-variable
+.endif
+
 post-install:
 	${INSTALL_DATA} \
 		${WRKDIR}/lightningd-bitcoin.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/lightningd-bitcoin.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

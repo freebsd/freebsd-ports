@@ -5,7 +5,7 @@ CATEGORIES=	graphics gnustep
 MASTER_SITES=	http://download.gna.org/gsimageapps/
 DISTNAME=	Pixen-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Graphics editing software for small-scale pictures for GNUstep
 WWW=		https://www.opensword.org/Pixen/
 
@@ -17,7 +17,13 @@ USE_GNUSTEP=	back build
 
 ADDITIONAL_OBJCFLAGS+=	-Dlog2=logb
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Pixen.app/Pixen
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -1,0 +1,11 @@
+--- Makefiledefault.orig	2023-03-02 09:01:41 UTC
++++ Makefiledefault
+@@ -1,7 +1,7 @@
+ ifeq ($(MLCOMP)x,x)
+ #MLCOMP=mlton @MLton ram-slop 0.7 -- -disable-pass deepFlatten -disable-pass refFlatten
+ #MLCOMP=mlton @MLton ram-slop 0.7 -- -disable-pass deepFlatten -disable-pass refFlatten
+-MLCOMP=mlton @MLton ram-slop 0.7 -- -drop-pass deepFlatten -drop-pass refFlatten
++MLCOMP=mlton @MLton fixed-heap 4G -- -drop-pass deepFlatten -drop-pass refFlatten
+ #mlton @MLton ram-slop 0.7 gc-summary -- -drop-pass deepFlatten -verbose 3
+ endif
+ 

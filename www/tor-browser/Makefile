@@ -1,10 +1,9 @@
 PORTNAME=	tor-browser
-DISTVERSION=	12.0.5
-PORTREVISION=	1
+DISTVERSION=	12.0.6
 CATEGORIES=	www net security wayland
 MASTER_SITES=	TOR
 MASTER_SITE_SUBDIR=torbrowser/${DISTVERSION}
-DISTNAME=	src-firefox-tor-browser-102.10.0esr-${DISTVERSION:R}-1-build2
+DISTNAME=	src-firefox-tor-browser-102.11.0esr-${DISTVERSION:R}-1-build1
 
 MAINTAINER=	freebsd@sysctl.cz
 COMMENT=	Tor Browser for FreeBSD

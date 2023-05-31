@@ -1,5 +1,5 @@
 PORTNAME=	unuran
-PORTVERSION=	1.10.0
+PORTVERSION=	1.11.0
 CATEGORIES=	math
 MASTER_SITES=	http://statmath.wu-wien.ac.at/unuran/
 

@@ -94,15 +94,6 @@ https://github.com/hrydgard/ppsspp/issues/15308
  #include "libavutil/samplefmt.h"
 --- Core/HW/SimpleAudioDec.h.orig	2023-01-03 10:14:31 UTC
 +++ Core/HW/SimpleAudioDec.h
-@@ -23,7 +23,7 @@ struct AVFrame;
- #include "Core/HLE/sceAudio.h"
- 
- struct AVFrame;
--struct AVCodec;
-+const struct AVCodec;
- struct AVCodecContext;
- struct SwrContext;
- 
 @@ -78,7 +78,7 @@ class SimpleAudio { (private)
  	int wanted_resample_freq; // wanted resampling rate/frequency
  

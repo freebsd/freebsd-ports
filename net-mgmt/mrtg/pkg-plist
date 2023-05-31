@@ -23,4 +23,4 @@ man/man1/mrtg-squid.1.gz
 man/man1/mrtg-unix-guide.1.gz
 man/man1/mrtg-webserver.1.gz
 man/man1/mrtg.1.gz
-man/man1/mrtglib.1.gz
+man/man3/mrtglib.3.gz

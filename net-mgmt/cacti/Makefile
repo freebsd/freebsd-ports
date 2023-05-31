@@ -1,5 +1,6 @@
 PORTNAME=	cacti
-PORTVERSION=	1.2.23
+DISTVERSION=	1.2.23
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	http://www.cacti.net/downloads/ \
 		ftp://ftpmirror.uk/freebsd-ports/cacti/
@@ -15,7 +16,8 @@ RUN_DEPENDS=	rrdtool:databases/rrdtool
 
 USES=		cpe mysql php:web shebangfix
 
-USE_PHP=	ctype filter gd gettext gmp ldap mbstring pdo pdo_mysql posix session simplexml sockets snmp xml zlib
+USE_PHP=	ctype filter gd gettext gmp intl ldap mbstring pcntl pdo \
+		pdo_mysql posix session simplexml sockets snmp xml zlib
 NO_ARCH=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

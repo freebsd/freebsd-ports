@@ -140,7 +140,6 @@
     SUBDIR += easy-rsa
     SUBDIR += enchive
     SUBDIR += eschalot
-    SUBDIR += esteidfirefoxplugin
     SUBDIR += expiretable
     SUBDIR += f-prot
     SUBDIR += fakebo
@@ -170,6 +169,7 @@
     SUBDIR += gcr
     SUBDIR += gef
     SUBDIR += git-credential-gopass
+    SUBDIR += git-credential-oauth
     SUBDIR += git-crypt
     SUBDIR += git-remote-gcrypt
     SUBDIR += git-secret
@@ -238,6 +238,7 @@
     SUBDIR += ipsec-tools
     SUBDIR += ipv6toolkit
     SUBDIR += isal-kmod
+    SUBDIR += ismtp
     SUBDIR += isnprober
     SUBDIR += john
     SUBDIR += kbfsd
@@ -248,7 +249,6 @@
     SUBDIR += keepassxc
     SUBDIR += keybase
     SUBDIR += keychain
-    SUBDIR += keynote
     SUBDIR += keyprint
     SUBDIR += keysmith
     SUBDIR += kf5-kdesu
@@ -673,7 +673,6 @@
     SUBDIR += p5-Net-OpenID-JanRain
     SUBDIR += p5-Net-OpenID-Server
     SUBDIR += p5-Net-Radius-Server
-    SUBDIR += p5-Net-SAML
     SUBDIR += p5-Net-SAML2
     SUBDIR += p5-Net-SSH-AuthorizedKeysFile
     SUBDIR += p5-Net-SSL-ExpireDate
@@ -1086,10 +1085,8 @@
     SUBDIR += rubygem-doorkeeper-rails5
     SUBDIR += rubygem-doorkeeper-rails50
     SUBDIR += rubygem-doorkeeper-rails61
-    SUBDIR += rubygem-doorkeeper562
     SUBDIR += rubygem-duo_api
     SUBDIR += rubygem-ed25519
-    SUBDIR += rubygem-ed2551912
     SUBDIR += rubygem-encryptor
     SUBDIR += rubygem-ezcrypto
     SUBDIR += rubygem-googleauth
@@ -1304,6 +1301,7 @@
     SUBDIR += tpm2-abrmd
     SUBDIR += tpm2-tools
     SUBDIR += tpm2-tss
+    SUBDIR += transcrypt
     SUBDIR += trezord
     SUBDIR += tripwire
     SUBDIR += trousers
@@ -1361,7 +1359,6 @@
     SUBDIR += zaproxy
     SUBDIR += zeek
     SUBDIR += zeronet
-    SUBDIR += zxid
     SUBDIR += zzuf
 
 .include <bsd.port.subdir.mk>

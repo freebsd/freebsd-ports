@@ -1,3 +1,3 @@
-TIMESTAMP = 1649423976
-SHA256 (pytest-httpbin-1.0.2.tar.gz) = 52c9d3f75f8f43f1488b5a0be321eeca3cc5f0fae0c85445ece66bd53c95fe0e
-SIZE (pytest-httpbin-1.0.2.tar.gz) = 15494
+TIMESTAMP = 1684104776
+SHA256 (pytest-httpbin-2.0.0.tar.gz) = 3e739cad9b8f8df58952df7329d9295fe17449d3a647f49c4ce634fd81d71b8e
+SIZE (pytest-httpbin-2.0.0.tar.gz) = 16081

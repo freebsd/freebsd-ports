@@ -1,5 +1,5 @@
 PORTNAME=	license_scout
-PORTVERSION=	2.6.7
+PORTVERSION=	2.6.10
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 

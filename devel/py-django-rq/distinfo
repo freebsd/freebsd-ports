@@ -1,3 +1,3 @@
-TIMESTAMP = 1683227615
-SHA256 (django-rq-2.8.0.tar.gz) = 161fcd037aa837e047400db909d2efa2867294c5efe1c45bcaf8d888ad1839b4
-SIZE (django-rq-2.8.0.tar.gz) = 47430
+TIMESTAMP = 1685162124
+SHA256 (django-rq-2.8.1.tar.gz) = ff053aa4d1b1e1acc47c99b4a21b514de8745894c00d1e6f4abc8b37d35d66d6
+SIZE (django-rq-2.8.1.tar.gz) = 46955

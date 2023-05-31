@@ -1,6 +1,5 @@
 PORTNAME=	pipe-viewer
-PORTVERSION=	0.4.5
-PORTREVISION=	1
+PORTVERSION=	0.4.6
 CATEGORIES=	multimedia perl5
 
 MAINTAINER?=	DtxdF@disroot.org
@@ -23,8 +22,10 @@ USE_PERL5=	modbuild
 
 CONFLICTS_INSTALL?=	multimedia/gtk-pipe-viewer
 
-OPTIONS_DEFINE=			GTK3 JSON_XS LOCAL_CACHE READLINE SHARE_DIR
-OPTIONS_DEFAULT?=		JSON_XS LINE_BREAK LOCAL_CACHE READLINE YT_DLP
+OPTIONS_DEFINE=			FORK_MANAGER GTK3 JSON_XS LOCAL_CACHE READLINE \
+				SHARE_DIR
+OPTIONS_DEFAULT?=		FORK_MANAGER JSON_XS LINE_BREAK LOCAL_CACHE \
+				READLINE YT_DLP
 OPTIONS_RADIO=			FIXED_WIDTH YOUTUBE
 OPTIONS_RADIO_FIXED_WIDTH=	CHAR_WIDTH LINE_BREAK
 OPTIONS_RADIO_YOUTUBE=		YOUTUBE_DL YT_DLP
@@ -33,6 +34,7 @@ OPTIONS_SUB=	yes
 
 CHAR_WIDTH_DESC=	Install with p5-Unicode-LineBreak
 FIXED_WIDTH_DESC=	Fixed-width formatting
+FORK_MANAGER_DESC=	Enable *_parallel config-options support
 JSON_XS_DESC=		Faster JSON deserialization
 LINE_BREAK_DESC=	Install with p5-Text-CharWidth
 LOCAL_CACHE_DESC=	Local cache support
@@ -42,8 +44,8 @@ YOUTUBE_DL_DESC=	Enable Youtube support with youtube_dl
 YT_DLP_DESC=		Enable Youtube support with yt-dlp
 
 CHAR_WIDTH_RUN_DEPENDS=		p5-Text-CharWidth>0:textproc/p5-Text-CharWidth
+FORK_MANAGER_RUN_DEPENDS=	p5-Parallel-ForkManager>0:devel/p5-Parallel-ForkManager
 GTK3_RUN_DEPENDS=		p5-Gtk3>0:x11-toolkits/p5-Gtk3
-GTK3_USES=			desktop-file-utils
 GTK3_CONFIGURE_ON=		--gtk
 JSON_XS_RUN_DEPENDS=		p5-JSON-XS>0:converters/p5-JSON-XS
 LINE_BREAK_RUN_DEPENDS=		p5-Unicode-LineBreak>0:textproc/p5-Unicode-LineBreak

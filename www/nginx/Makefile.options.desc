@@ -54,6 +54,7 @@ HTTP_MP4_DESC=			Enable http_mp4 module
 HTTP_MP4_H264_DESC=		3rd party mp4/h264 module
 HTTP_NOTICE_DESC=		3rd party notice module
 HTTP_PERL_DESC=			Enable http_perl module
+HTTP_PROXY_CONNECT_DESC=	3rd party https proxy connect module
 HTTP_PUSH_DESC=			3rd party push module
 HTTP_PUSH_STREAM_DESC=		3rd party push stream module
 HTTP_RANDOM_INDEX_DESC=		Enable http_random_index module

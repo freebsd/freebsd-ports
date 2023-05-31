@@ -1,0 +1,2 @@
+StrEnum is a Python enum.Enum that inherits from str to complement
+enum.IntEnum in the standard library.

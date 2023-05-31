@@ -1,2 +1,5 @@
+TIMESTAMP = 1684142855
 SHA256 (jwhois-4.0.tar.gz) = fa9bb86782b915c6d730bb723f876dc9b345a617db375aaf3416ec22553cd64e
 SIZE (jwhois-4.0.tar.gz) = 493007
+SHA256 (jwhois-4.0-73.fc38.src.rpm) = 3c4311e428530b93a0a9aa2ca1a7224b5a1c3ba39d62864796144fa097b7d13e
+SIZE (jwhois-4.0-73.fc38.src.rpm) = 555052

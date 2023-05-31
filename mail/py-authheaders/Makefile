@@ -4,7 +4,7 @@ CATEGORIES=	mail python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate email authentication headers
 WWW=		https://github.com/ValiMail/authentication-headers
 

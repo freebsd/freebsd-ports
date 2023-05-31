@@ -16,7 +16,6 @@ CONFLICTS=	igal-1.*
 USES=		perl5
 NO_BUILD=	yes
 NO_ARCH=	yes
-MAKE_ENV+=	DESTDIR=${STAGEDIR}
 
 OPTIONS_DEFINE=	EXIF
 EXIF_DESC=	Support EXIF data (-e option)

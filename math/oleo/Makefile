@@ -19,7 +19,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-xlt --without-sciplot
 # With -O2 configure hangs at "checking for working mktime..."
 CONFIGURE_ENV=	CFLAGS="${CFLAGS:C/-O2//} -fwrapv"
-MAKE_ARGS+=	DESTDIR="${STAGEDIR}"
 
 BINARY_ALIAS=	makeinfo=false # disable detecting local makeinfo
 

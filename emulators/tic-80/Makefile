@@ -1,6 +1,7 @@
 PORTNAME=	TIC-80
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.0.2164
+PORTREVISION=	2
 CATEGORIES=	emulators games
 
 MAINTAINER=	fuz@FreeBSD.org
@@ -21,6 +22,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libunwind.so:devel/libunwind \
 		libuv.so:devel/libuv
 
+# for moonscript
+RUN_DEPENDS=	${LUA_REFMODLIBDIR}/lpeg.so:devel/lua-lpeg@${LUA_FLAVOR}
+
 USES=		cmake desktop-file-utils gl localbase:ldflags lua:53 pkgconfig sdl
 USE_GITHUB=	yes
 GH_ACCOUNT=	nesbox
@@ -30,8 +34,7 @@ GH_TUPLE=	nesbox:blip-buf:330226d9b55ecbeea644e17b5e0f096a165ca07e:blip_buf/vend
 		kuba--:zip:d7df626f3aa457e01669f65e61bf8f484e352941:zip/vendor/zip \
 		nesbox:moonscript:17179283012b392bff972ad66231d73bfeec6e90:moonscript/vendor/moonscript \
 		cofyc:argparse:0d5f5d0745df14a3f373f7eed85bf524714f4524:argparse/vendor/argparse \
-		wasm3:wasm3:a3abb3f2d320994be59dfbe2cdafa8d0b6a8253e:wasm3/vendor/wasm3 \
-		nesbox:lpeg:73d8614a8dea404cf7bfe25a6e4cea7183dc9fb7:lpeg/vendor/lpeg
+		wasm3:wasm3:a3abb3f2d320994be59dfbe2cdafa8d0b6a8253e:wasm3/vendor/wasm3
 USE_GL=		gl glu glut
 USE_SDL=	sdl2
 
@@ -45,20 +48,24 @@ USE_SDL=	sdl2
 #		nodejs:http-parser:ec8b5ee63f0e51191ea43bb0c6eac7bfbff3141d:http_parser/vendor/http-parser
 #		glennrp:libpng:dbe3e0c43e549a1602286144d94b0666549b18e6:libpng/vendor/libpng
 #		libsdl-org:SDL:b424665e0899769b200231ba943353a5fee1b6b6:sdl2/vendor/sdl2
+#		grimfang4:sdl-gpu:e3d350b325a0e0d0b3007f69ede62313df46c6ef:sdl_gpu/vendor/sdl-gpu
+#		nesbox:lpeg:73d8614a8dea404cf7bfe25a6e4cea7183dc9fb7:lpeg/vendor/lpeg
 
 # not actually needed
 #		smuehlst:circle-stdlib:fdb3c4a948421d47fddab8042a92f980cba43915:circle_stdlib/vendor/circle-stdlib
 #		floooh:sokol:487822d82ca79dba7b67718d962e1ba6beef01b2:sokol/vendor/sokol
-#		grimfang4:sdl-gpu:e3d350b325a0e0d0b3007f69ede62313df46c6ef:sdl_gpu/vendor/sdl-gpu
 #		mruby:mruby:0f45836b5954accf508f333f932741b925214471:mruby/vendor/mruby
 
 # the demo carts are built, but don't seem to end up being installed
 # mruby: to be decided later; not essential
 CMAKE_OFF=	BUILD_DEMO_CARTS BUILD_WITH_MRUBY BUILD_LIBRETRO
-CMAKE_ARGS=	-DLPEG_LIBRARY:STRING=${LUA_REFMODLIBDIR}/lpeg.so
 
-OPTIONS_DEFINE=	PRO
+OPTIONS_DEFINE=	PRO SDLGPU
+OPTIONS_DEFAULT=	SDLGPU
 PRO_DESC=	Build PRO Version
+SDLGPU_DESC=	Support sdl-gpu through graphics/sdl2_gpu
 PRO_CMAKE_BOOL=	BUILD_PRO
+SDLGPU_LIB_DEPENDS=	libSDL2_gpu.so:graphics/sdl2_gpu
+SDLGPU_CMAKE_BOOL=	BUILD_SDLGPU
 
 .include <bsd.port.mk>

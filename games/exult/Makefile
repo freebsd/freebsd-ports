@@ -39,7 +39,6 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-version.cc \
 		${PATCHDIR}/extra-patch-configure.ac
 .else
 USE_GITHUB=	yes
-GH_TAGNAME=	snapshot-${DISTVERSIONPREFIX}${DISTVERSION}
 .endif
 
 OPTIONS_DEFINE=		ALSA DEBUG DOCS FLUIDSYNTH GIMP STUDIO

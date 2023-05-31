@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.3.1
 CATEGORIES=	devel
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Potluck with different functions for different purposes
 WWW=		https://github.com/babelouest/orcania
 

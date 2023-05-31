@@ -9,7 +9,6 @@ lib/kitty/kittens/broadcast/main.py
 lib/kitty/kittens/clipboard/__init__.py
 lib/kitty/kittens/clipboard/main.py
 lib/kitty/kittens/diff/__init__.py
-lib/kitty/kittens/diff/diff_speedup.so
 lib/kitty/kittens/diff/main.py
 lib/kitty/kittens/hints/__init__.py
 lib/kitty/kittens/hints/main.py
@@ -59,7 +58,6 @@ lib/kitty/kittens/tui/spinners.py
 lib/kitty/kittens/tui/utils.py
 lib/kitty/kittens/unicode_input/__init__.py
 lib/kitty/kittens/unicode_input/main.py
-lib/kitty/kittens/unicode_input/unicode_names.so
 lib/kitty/kitty/__init__.py
 lib/kitty/kitty/actions.py
 lib/kitty/kitty/bash.py

@@ -1,6 +1,6 @@
---- src/janus.c.orig	2022-05-23 09:14:54 UTC
+--- src/janus.c.orig	2023-05-20 12:59:00 UTC
 +++ src/janus.c
-@@ -4449,6 +4449,7 @@ gint main(int argc, char *argv[]) {
+@@ -4618,6 +4618,7 @@ gint main(int argc, char *argv[]) {
  				if (exit_on_dl_error)
  					exit(1);
  			} else {
@@ -8,7 +8,7 @@
  				create_l *create = (create_l*) dlsym(event, "create");
  				const char *dlsym_error = dlerror();
  				if (dlsym_error) {
-@@ -5474,6 +5475,7 @@ gint main(int argc, char *argv[]) {
+@@ -5649,6 +5650,7 @@ gint main(int argc, char *argv[]) {
  				exit(1);
  			}
  		} else {

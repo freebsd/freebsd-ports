@@ -1,0 +1,4 @@
+A simple security tunnel written in Golang.
+
+It can listen on multiple ports, chain proxies, supports
+wide variety of protocols (HTTP, HTTP2, HTTPS, SOCKS).

@@ -1,6 +1,6 @@
 PORTNAME=	kadu
 PORTVERSION=	4.3
-PORTREVISION=	26
+PORTREVISION=	27
 PORTEPOCH=	1
 CATEGORIES=	polish net-im
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/:kadu \
@@ -26,7 +26,7 @@ LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
 		libsndfile.so:audio/libsndfile \
 		libinjeqt.so:devel/injeqt \
 		libidn.so:dns/libidn \
-		libQXmppQt5.so:net-im/qxmpp-qt5 \
+		libQXmppQt5.so:net-im/qxmpp@qt5 \
 		libgadu.so:polish/libgadu \
 		libgcrypt.so:security/libgcrypt \
 		libotr.so.5:security/libotr \

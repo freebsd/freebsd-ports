@@ -1,13 +1,13 @@
 PORTNAME=	flit
-PORTVERSION=	3.8.0
-PORTREVISION=	2
+PORTVERSION=	3.9.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Simple packaging tool for simple packages
-WWW=		https://github.com/pypa/flit
+WWW=		https://flit.pypa.io/en/stable/ \
+		https://github.com/pypa/flit
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE

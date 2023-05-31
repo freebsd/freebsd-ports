@@ -14,15 +14,22 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LICENSE_PERMS=	auto-accept
 
 USES=		uidfix
+
 MAKEFILE=	${FILESDIR}/Makefile.bsd
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.2.2
 
 OPTIONS_DEFINE=	DOCS
 
-post-install:
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=strict-prototypes
+.endif
+
+post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/README \
 		${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

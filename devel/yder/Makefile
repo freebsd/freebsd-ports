@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	1.4.18
 CATEGORIES=	devel
 
-MAINTAINER=	dvl@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logging library for C applications
 WWW=		https://github.com/babelouest/yder
 

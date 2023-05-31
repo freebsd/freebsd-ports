@@ -1,6 +1,6 @@
 PORTNAME=	norm
 PORTVERSION=	1.5r6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.pf.itd.nrl.navy.mil/norm/archive/:norm \
 		https://waf.io/:waf
@@ -20,6 +20,7 @@ WWW=		https://www.nrl.navy.mil/itd/ncs/products/norm
 WRKSRC=		${WRKDIR}/norm-${DISTVERSION}
 
 USES=		libtool tar:tgz waf
+USE_CXXSTD=	gnu++98
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/normApi.h lib/libnorm.so lib/libnorm.so.1 \
 		lib/libnorm.so.1.0.0

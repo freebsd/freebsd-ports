@@ -1,6 +1,5 @@
 PORTNAME=	xdg-desktop-portal-kde
-DISTVERSION=	${KDE_PLASMA_VERSION}.1
-PORTREVISION=	1
+DISTVERSION=	${KDE_PLASMA_VERSION}
 CATEGORIES=	deskutils kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org

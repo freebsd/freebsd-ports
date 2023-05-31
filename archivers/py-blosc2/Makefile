@@ -1,6 +1,5 @@
 PORTNAME=	blosc2
-PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTVERSION=	2.2.3
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,8 @@ WWW=		https://github.com/Blosc/python-blosc2
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-BUILD_DEPENDS=	cmake:devel/cmake-core \
+BUILD_DEPENDS=	c-blosc2>=2.9.1:archivers/c-blosc2 \
+		cmake:devel/cmake-core \
 		ninja:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>=0:devel/py-scikit-build@${PY_FLAVOR} \
@@ -28,9 +28,6 @@ USES=		pkgconfig python:3.8+
 USE_PYTHON=	autoplist concurrent cython pep517
 
 MAKE_ENV=	CMAKE_ARGS=-DUSE_SYSTEM_BLOSC2=ON
-
-post-extract:
-	@${RM} ${WRKSRC}/blosc2/c-blosc2/blosc/shuffle-avx2.c.orig
 
 post-patch:
 # Clean up bundled libraries

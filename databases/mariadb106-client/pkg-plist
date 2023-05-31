@@ -55,6 +55,7 @@ include/mysql/mariadb_dyncol.h
 include/mysql/mariadb_rpl.h
 include/mysql/mariadb_stmt.h
 include/mysql/mariadb_version.h
+include/mysql/my_alloca.h
 include/mysql/my_config.h
 include/mysql/my_global.h
 include/mysql/my_sys.h
@@ -81,6 +82,7 @@ lib/mysql/plugin/daemon_example.ini
 lib/mysql/plugin/dialog.so
 lib/mysql/plugin/mysql_clear_password.so
 lib/mysql/plugin/sha256_password.so
+@comment lib/mysql/plugin/zstd.so
 libdata/pkgconfig/libmariadb.pc
 share/man/man1/mariadb.1.gz
 share/man/man1/mariadb-access.1.gz

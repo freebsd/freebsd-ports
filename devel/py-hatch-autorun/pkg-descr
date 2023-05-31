@@ -1,0 +1,2 @@
+hatch-autorun provides a build hook plugin for Hatch that injects code into an
+installation that will automatically run before the first import.

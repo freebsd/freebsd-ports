@@ -1,5 +1,5 @@
 PORTNAME=	nvidia-libs
-DISTVERSION?=	525.105.17
+DISTVERSION?=	525.116.03
 # Always try to set PORTREVISION as it can be overridden by the slave ports
 PORTREVISION?=	0
 CATEGORIES=	x11 linux

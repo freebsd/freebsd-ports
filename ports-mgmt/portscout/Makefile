@@ -1,6 +1,10 @@
 PORTNAME=	portscout
 PORTVERSION=	0.8.1.6
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	e618f1b.patch:-p1 # https://github.com/freebsd/portscout/pull/22
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Tool to scan for new versions of FreeBSD ports

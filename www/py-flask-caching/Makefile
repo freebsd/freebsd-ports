@@ -1,20 +1,19 @@
-# created by Rene Thuemmler <rt@scientifics.de>
-
 PORTNAME=	flask-caching
-PORTVERSION=	1.9.0
+PORTVERSION=	2.0.2
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Flask-Caching-${PORTVERSION}
 
-MAINTAINER=	rt@scientifics.de
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Flask-Caching is an extension to Flask
-WWW=		https://pythonhosted.org/Flask-Cache/
+WWW=		https://github.com/pallets-eco/flask-caching
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.8:www/py-flask@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.8:www/py-flask@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}cachelib>0:www/py-cachelib@${PY_FLAVOR}
 
 USES=		python:3.6+
 USE_PYTHON=	autoplist distutils

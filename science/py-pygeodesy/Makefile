@@ -1,5 +1,5 @@
 PORTNAME=	pygeodesy
-PORTVERSION=	22.7.7
+PORTVERSION=	23.4.23
 CATEGORIES=	science python
 MASTER_SITES=	PYPI \
 		https://github.com/mrJean1/PyGeodesy/raw/master/dist/
@@ -12,7 +12,7 @@ WWW=		https://github.com/mrJean1/PyGeodesy
 
 LICENSE=	MIT
 
-USES=		python:3.8+ zip
+USES=		python:3.9+ zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

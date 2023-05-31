@@ -4,13 +4,23 @@ PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	XCONTRIB/applications
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Graphical shell for the X Window System
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/Copyright
 
 USES=		imake xorg
 USE_XORG=	xaw
+
 MAKE_JOBS_UNSAFE=	yes
 
-.include <bsd.port.mk>
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>

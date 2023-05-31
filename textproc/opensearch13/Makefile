@@ -1,5 +1,5 @@
 PORTNAME=	opensearch
-DISTVERSION=	1.3.9
+DISTVERSION=	1.3.10
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
@@ -87,9 +87,7 @@ do-install:
 	${LN} -s ${JAVASHAREDIR}/classes/jna.jar ${STAGEDIR}${PREFIX}/lib/opensearch/lib/jna.jar
 
 do-install-PLUGINS-on:
-	${MKDIR} ${STAGEDIR}${ETCDIR}/opensearch-notifications-core \
-		 ${STAGEDIR}${ETCDIR}/opensearch-notifications \
-		 ${STAGEDIR}${ETCDIR}/opensearch-observability \
+	${MKDIR} ${STAGEDIR}${ETCDIR}/opensearch-observability \
 		 ${STAGEDIR}${ETCDIR}/opensearch-performance-analyzer \
 		 ${STAGEDIR}${ETCDIR}/opensearch-reports-scheduler
 .for f in ${PLUGINS_CONFIG_FILES}

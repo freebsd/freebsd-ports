@@ -137,7 +137,7 @@
     SUBDIR += py-unmessage
     SUBDIR += qTox
     SUBDIR += quaternion
-    SUBDIR += qxmpp-qt5
+    SUBDIR += qxmpp
     SUBDIR += ricochet
     SUBDIR += rubygem-discordrb-webhooks
     SUBDIR += rubygem-discordrb-webhooks-blackst0ne

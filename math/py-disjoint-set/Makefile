@@ -1,5 +1,5 @@
 PORTNAME=	disjoint-set
-DISTVERSION=	0.7.3
+DISTVERSION=	0.7.4
 CATEGORIES=	math
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +12,10 @@ WWW=		https://github.com/mrapacz/disjoint-set
 LICENSE=	MIT
 
 USES=		python:3.6+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 .include <bsd.port.mk>

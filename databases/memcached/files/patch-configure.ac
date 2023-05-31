@@ -1,6 +1,6 @@
---- configure.ac.orig	2020-11-21 00:10:41 UTC
+--- configure.ac.orig	2023-03-08 21:34:27 UTC
 +++ configure.ac
-@@ -182,7 +182,7 @@ if test "x$enable_dtrace" = "xyes"; then
+@@ -201,7 +201,7 @@ if test "x$enable_dtrace" = "xyes"; then
    if test "x$DTRACE" != "xno"; then
      AC_DEFINE([ENABLE_DTRACE],1,[Set to nonzero if you want to include DTRACE])
      build_dtrace=yes
@@ -9,12 +9,3 @@
      if test $? -eq 0
      then
          dtrace_instrument_obj=yes
-@@ -793,7 +793,7 @@ then
- elif test "$GCC" = "yes"
- then
-   GCC_VERSION=`$CC -dumpversion`
--  CFLAGS="$CFLAGS -Wall -Werror -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls"
-+  CFLAGS="$CFLAGS -Wall -pedantic -Wmissing-prototypes -Wmissing-declarations -Wredundant-decls"
-   if test "x$enable_asan" = "xyes"; then
-     CFLAGS="$CFLAGS -fsanitize=address"
-   fi

@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
-PORTVERSION=	6.1.36
-PORTREVISION=	2
+PORTVERSION=	6.1.44
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -46,6 +46,7 @@ USERS=		${VBOXUSER}
 GROUPS=		${VBOXGROUP}
 VBOX_DIR=	${PREFIX}/${VBOX_DIR_REL}
 VBOX_DIR_REL=	lib/virtualbox
+VBOX_ETC=	${PREFIX}/etc/vbox
 VBOX_LINKS=	VBoxVRDP
 VBOX_PROGS=	VBoxAutostart VBoxBalloonCtrl VBoxBugReport VBoxHeadless \
 		VBoxManage
@@ -54,7 +55,7 @@ VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	AIO ALSA DBUS DEBUG GUESTADDITIONS MANUAL NLS OPUS PULSEAUDIO \
+OPTIONS_DEFINE=	AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS OPUS PULSEAUDIO \
 		PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
 OPTIONS_DEFAULT=	AIO DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
 # Since version 6.1.24 pulseaudio is broken at runtime, preventing
@@ -65,7 +66,6 @@ OPTIONS_SUB=	yes
 AIO_DESC=	Enable Asyncronous IO support (check pkg-message)
 DEBUG_DESC=	Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
-MANUAL_DESC=	Build with user manual
 NLS_DESC=	Native language support (requires QT5)
 OPUS_DESC=	Use libvpx for audio recording (requires VPX)
 QT5_DESC=	Build with QT5 frontend (requires X11)
@@ -81,8 +81,8 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DEBUG_CONFIGURE_ON=	--build-debug
-MANUAL_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
-MANUAL_CONFIGURE_OFF=	--disable-docs
+DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
+DOCS_CONFIGURE_OFF=	--disable-docs
 NLS_IMPLIES=		QT5
 OPUS_CONFIGURE_OFF=	--disable-libopus
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
@@ -143,7 +143,7 @@ LICENSE_PERMS_Additions=	auto-accept
 LICENSE_DISTFILES_Additions=	${GUESTADDITIONS}
 .endif
 
-.if ${PORT_OPTIONS:MMANUAL}
+.if ${PORT_OPTIONS:MDOCS}
 DBKXMLDIR=	${LOCALBASE}/share/xml/docbook/4.4
 DBKXSLDIR=	${LOCALBASE}/share/xsl/docbook
 USES+=		tex
@@ -211,10 +211,16 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && \
+    (${OSVERSION} < 1300513 || ${OSVERSION} >= 1400000 && ${OSVERSION} < 1400026)
+EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_VBox_Devices_PC_DevFwCommon.cpp
+.endif
+
 .if ${CHOSEN_COMPILER_TYPE} == clang
 # llvm10 in FreeBSD before r364284 miscompiles virtualbox 6.1 causing errors.
 # force llvm11 from ports
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300109
+.if ${OPSYS} == FreeBSD && \
+    (${OSVERSION} < 1203502 || ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300109)
 BUILD_DEPENDS+=	clang${VBOX_LLVM_VER}:devel/llvm${VBOX_LLVM_VER}
 CC=		clang${VBOX_LLVM_VER}
 CXX=		clang++${VBOX_LLVM_VER}
@@ -315,7 +321,6 @@ post-patch:
 	    ${WRKSRC}/Config.kmk ${WRKSRC}/configure \
 	    ${WRKSRC}/kBuild/header.kmk ${WRKSRC}/kBuild/units/qt4.kmk \
 	    ${WRKSRC}/kBuild/units/qt5.kmk ${WRKSRC}/kBuild/sdks/LIBSDL.kmk \
-	    ${WRKSRC}/src/VBox/HostDrivers/adpctl/VBoxNetAdpCtl.cpp \
 	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
 	@${REINPLACE_CMD} \
 	    -e 's|\$$KBUILDDIR_BIN/kmk_sed|${LOCALBASE}/bin/kmk_sed|g' \
@@ -326,10 +331,12 @@ post-patch:
 	    ${WRKSRC}/src/VBox/Runtime/Makefile.kmk
 	@${ECHO_CMD} 'VBOX_ICONV_DEFS = LIBICONV_PLUG' >> ${WRKSRC}/LocalConfig.kmk
 .endif
-	# Causes a "reinplace" QA warning with default PREFIX/VBOX_DIR
-	@${REINPLACE_CMD} -e 's|/usr/local/lib/virtualbox|${VBOX_DIR}|' \
-	    -e 's|/usr/local|${PREFIX}|' \
+	@${REINPLACE_CMD} -e 's|%%VBOX_DIR%%|${VBOX_DIR}|g' \
+	    -e 's|%%VBOX_ETC%%|${VBOX_ETC}|g' \
+	    -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	    ${WRKSRC}/src/VBox/Installer/freebsd/VBox.sh
+	@${REINPLACE_CMD} -e 's|%%VBOX_ETC%%|${VBOX_ETC}|g' \
+	    ${WRKSRC}/src/VBox/HostDrivers/adpctl/VBoxNetAdpCtl.cpp
 	@${REINPLACE_CMD} \
 	    -e 's|^versions =.*|versions = ["${PYTHON_VER}${PYTHON_ABIVER}"]|' \
 	    ${WRKSRC}/src/libs/xpcom18a4/python/gen_python_deps.py
@@ -384,7 +391,7 @@ do-install:
 	    ${STAGEDIR}${VBOX_DIR}/additions/VBoxGuestAdditions.iso
 .endif
 
-.if ${PORT_OPTIONS:MMANUAL}
+.if ${PORT_OPTIONS:MDOCS}
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${KMK_BUILDDIR}/bin/UserManual*.pdf \
 	    ${STAGEDIR}${DOCSDIR}

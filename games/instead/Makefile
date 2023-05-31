@@ -1,6 +1,6 @@
 PORTNAME=	instead
 PORTVERSION=	3.5.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -12,16 +12,15 @@ WWW=		https://instead.syscall.ru/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake compiler:c++11-lang iconv lua:51 pkgconfig sdl
+USES=		cmake compiler:c++11-lang iconv pkgconfig sdl
 USE_SDL=	sdl2 image2 ttf2 mixer2
-CMAKE_ARGS=	-DMANDIR=share/man
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PORTDOCS=	*
 PORTDATA=	*
 
-OPTIONS_DEFINE=		LUAJIT DOCS # HARFBUZZ # requires unreleased version of sdl2_ttf
+OPTIONS_DEFINE=		LUAJIT DOCS HARFBUZZ
 OPTIONS_DEFAULT=	LUAJIT GTK3
 OPTIONS_RADIO=		GTK_VERSION
 OPTIONS_RADIO_GTK_VERSION=	GTK2 GTK3
@@ -38,16 +37,10 @@ GTK2_CMAKE_BOOL=	WITH_GTK2
 GTK3_USES=		gnome
 GTK3_USE=		GNOME=gtk30
 GTK3_CMAKE_BOOL=	WITH_GTK3
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit
-LUAJIT_USE_OFF=		lua:51
+LUAJIT_USES=		luajit
+LUAJIT_USES_OFF=	lua:51
 LUAJIT_CMAKE_BOOL=	WITH_LUAJIT
 HARFBUZZ_CMAKE_BOOL=	WITH_HARFBUZZ
 HARFBUZZ_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH:Mpowerpc64*}
-LUAJIT_LIB_DEPENDS=	libluajit-5.1.so:lang/luajit-openresty
-.endif
 
 .include <bsd.port.mk>

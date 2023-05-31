@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-01-17 18:39:22 UTC
+--- CMakeLists.txt.orig	2023-05-25 10:34:56 UTC
 +++ CMakeLists.txt
 @@ -8,23 +8,23 @@ set(CMAKE_PROJECT_VERSION ${version})
  configure_file(src/version.hpp.in ${CMAKE_CURRENT_SOURCE_DIR}/src/version.hpp)
@@ -42,18 +42,18 @@
 +#add_subdirectory(third_party)
  
  set(LIBDDWAF_SOURCE
-     ${libddwaf_SOURCE_DIR}/src/clock.cpp
-@@ -121,7 +121,8 @@ install(FILES ${libddwaf_SOURCE_DIR}/include/ddwaf.h D
+     ${libddwaf_SOURCE_DIR}/src/ruleset_builder.cpp
+@@ -123,7 +123,8 @@ install(FILES ${libddwaf_SOURCE_DIR}/include/ddwaf.h D
+ 
  # System dependencies
  set(LIBDDWAF_INTERFACE_LIBRARIES "")
- set(LIBDDWAF_PRIVATE_LIBRARIES 
--    lib_re2 lib_rapidjson lib_ac lib_injection lib_radix lib_utf8proc)
-+#    lib_re2 lib_rapidjson lib_ac lib_injection lib_radix lib_utf8proc)
-+    lib_radix)
+-set(LIBDDWAF_PRIVATE_LIBRARIES lib_re2 lib_ac lib_injection lib_radix lib_utf8proc)
++#set(LIBDDWAF_PRIVATE_LIBRARIES lib_re2 lib_ac lib_injection lib_radix lib_utf8proc)
++set(LIBDDWAF_PRIVATE_LIBRARIES lib_radix)
  
  if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
  # needed for glibc <2.17. We compile with --as-needed so the library won't
-@@ -149,6 +150,27 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
+@@ -151,6 +152,27 @@ if(${CMAKE_SYSTEM_NAME} STREQUAL "Linux")
  elseif(WIN32)
      list(APPEND LIBDDWAF_INTERFACE_LIBRARIES ws2_32)
  endif()
@@ -81,7 +81,7 @@
  
  target_link_libraries(libddwaf_objects
      PRIVATE ${LIBDDWAF_PRIVATE_LIBRARIES}
-@@ -173,66 +195,67 @@ if (LIBDDWAF_BUILD_STATIC)
+@@ -175,66 +197,67 @@ if (LIBDDWAF_BUILD_STATIC)
          INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
  
      # Post-processing on the static library

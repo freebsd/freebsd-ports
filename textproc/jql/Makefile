@@ -1,6 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	6.0.6
+DISTVERSION=	6.0.8
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -21,7 +21,7 @@ CARGO_CRATES=	anes-0.1.6 \
 		anstyle-parse-0.2.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.0 \
-		anyhow-1.0.70 \
+		anyhow-1.0.71 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
@@ -34,8 +34,8 @@ CARGO_CRATES=	anes-0.1.6 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
 		clap-3.2.23 \
-		clap-4.2.4 \
-		clap_builder-4.2.4 \
+		clap-4.2.7 \
+		clap_builder-4.2.7 \
 		clap_derive-4.2.0 \
 		clap_lex-0.2.4 \
 		clap_lex-0.4.1 \
@@ -90,8 +90,8 @@ CARGO_CRATES=	anes-0.1.6 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.160 \
-		serde_derive-1.0.160 \
+		serde-1.0.163 \
+		serde_derive-1.0.163 \
 		serde_json-1.0.96 \
 		serde_stacker-0.1.8 \
 		stacker-0.1.15 \
@@ -102,8 +102,8 @@ CARGO_CRATES=	anes-0.1.6 \
 		thiserror-1.0.40 \
 		thiserror-impl-1.0.40 \
 		tinytemplate-1.2.1 \
-		tokio-1.27.0 \
-		tokio-macros-2.0.0 \
+		tokio-1.28.1 \
+		tokio-macros-2.1.0 \
 		unicode-ident-1.0.6 \
 		utf8parse-0.2.1 \
 		walkdir-2.3.2 \

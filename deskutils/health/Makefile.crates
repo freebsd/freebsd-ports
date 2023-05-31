@@ -74,8 +74,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		gsk4-0.4.8 \
 		gsk4-sys-0.4.8 \
 		gtk-macros-0.3.0 \
-		gtk4-0.4.8 \
-		gtk4-macros-0.4.8 \
+		gtk4-0.4.9 \
+		gtk4-macros-0.4.10 \
 		gtk4-sys-0.4.8 \
 		heck-0.4.0 \
 		http-0.2.8 \

@@ -24,6 +24,7 @@ bin/hx
 %%DATADIR%%/runtime/grammars/diff.so
 %%DATADIR%%/runtime/grammars/dockerfile.so
 %%DATADIR%%/runtime/grammars/dot.so
+%%DATADIR%%/runtime/grammars/dtd.so
 %%DATADIR%%/runtime/grammars/edoc.so
 %%DATADIR%%/runtime/grammars/eex.so
 %%DATADIR%%/runtime/grammars/elixir.so
@@ -54,6 +55,7 @@ bin/hx
 %%DATADIR%%/runtime/grammars/heex.so
 %%DATADIR%%/runtime/grammars/hosts.so
 %%DATADIR%%/runtime/grammars/html.so
+%%DATADIR%%/runtime/grammars/hurl.so
 %%DATADIR%%/runtime/grammars/iex.so
 %%DATADIR%%/runtime/grammars/ini.so
 %%DATADIR%%/runtime/grammars/java.so
@@ -62,6 +64,7 @@ bin/hx
 %%DATADIR%%/runtime/grammars/json.so
 %%DATADIR%%/runtime/grammars/jsonnet.so
 %%DATADIR%%/runtime/grammars/julia.so
+%%DATADIR%%/runtime/grammars/just.so
 %%DATADIR%%/runtime/grammars/kdl.so
 %%DATADIR%%/runtime/grammars/kotlin.so
 %%DATADIR%%/runtime/grammars/latex.so
@@ -71,6 +74,7 @@ bin/hx
 %%DATADIR%%/runtime/grammars/llvm.so
 %%DATADIR%%/runtime/grammars/lua.so
 %%DATADIR%%/runtime/grammars/make.so
+%%DATADIR%%/runtime/grammars/markdoc.so
 %%DATADIR%%/runtime/grammars/markdown.so
 %%DATADIR%%/runtime/grammars/markdown_inline.so
 %%DATADIR%%/runtime/grammars/matlab.so
@@ -84,6 +88,7 @@ bin/hx
 %%DATADIR%%/runtime/grammars/ocaml-interface.so
 %%DATADIR%%/runtime/grammars/ocaml.so
 %%DATADIR%%/runtime/grammars/odin.so
+%%DATADIR%%/runtime/grammars/opencl.so
 %%DATADIR%%/runtime/grammars/openscad.so
 %%DATADIR%%/runtime/grammars/org.so
 %%DATADIR%%/runtime/grammars/pascal.so
@@ -102,6 +107,7 @@ bin/hx
 %%DATADIR%%/runtime/grammars/regex.so
 %%DATADIR%%/runtime/grammars/rego.so
 %%DATADIR%%/runtime/grammars/rescript.so
+%%DATADIR%%/runtime/grammars/robot.so
 %%DATADIR%%/runtime/grammars/rst.so
 %%DATADIR%%/runtime/grammars/ruby.so
 %%DATADIR%%/runtime/grammars/rust.so
@@ -132,6 +138,7 @@ bin/hx
 %%DATADIR%%/runtime/grammars/vhdl.so
 %%DATADIR%%/runtime/grammars/vhs.so
 %%DATADIR%%/runtime/grammars/vue.so
+%%DATADIR%%/runtime/grammars/wast.so
 %%DATADIR%%/runtime/grammars/wat.so
 %%DATADIR%%/runtime/grammars/wgsl.so
 %%DATADIR%%/runtime/grammars/wit.so
@@ -208,6 +215,8 @@ bin/hx
 %%DATADIR%%/runtime/queries/dockerfile/injections.scm
 %%DATADIR%%/runtime/queries/dot/highlights.scm
 %%DATADIR%%/runtime/queries/dot/injections.scm
+%%DATADIR%%/runtime/queries/dtd/highlights.scm
+%%DATADIR%%/runtime/queries/dtd/injections.scm
 %%DATADIR%%/runtime/queries/ecma/highlights.scm
 %%DATADIR%%/runtime/queries/ecma/indents.scm
 %%DATADIR%%/runtime/queries/ecma/injections.scm
@@ -298,6 +307,9 @@ bin/hx
 %%DATADIR%%/runtime/queries/hosts/highlights.scm
 %%DATADIR%%/runtime/queries/html/highlights.scm
 %%DATADIR%%/runtime/queries/html/injections.scm
+%%DATADIR%%/runtime/queries/hurl/highlights.scm
+%%DATADIR%%/runtime/queries/hurl/indents.scm
+%%DATADIR%%/runtime/queries/hurl/injections.scm
 %%DATADIR%%/runtime/queries/iex/highlights.scm
 %%DATADIR%%/runtime/queries/iex/injections.scm
 %%DATADIR%%/runtime/queries/ini/highlights.scm
@@ -325,6 +337,13 @@ bin/hx
 %%DATADIR%%/runtime/queries/julia/indents.scm
 %%DATADIR%%/runtime/queries/julia/injections.scm
 %%DATADIR%%/runtime/queries/julia/locals.scm
+%%DATADIR%%/runtime/queries/julia/textobjects.scm
+%%DATADIR%%/runtime/queries/just/folds.scm
+%%DATADIR%%/runtime/queries/just/highlights.scm
+%%DATADIR%%/runtime/queries/just/indents.scm
+%%DATADIR%%/runtime/queries/just/injections.scm
+%%DATADIR%%/runtime/queries/just/locals.scm
+%%DATADIR%%/runtime/queries/just/textobjects.scm
 %%DATADIR%%/runtime/queries/kdl/highlights.scm
 %%DATADIR%%/runtime/queries/kotlin/folds.scm
 %%DATADIR%%/runtime/queries/kotlin/highlights.scm
@@ -358,6 +377,8 @@ bin/hx
 %%DATADIR%%/runtime/queries/lua/textobjects.scm
 %%DATADIR%%/runtime/queries/make/highlights.scm
 %%DATADIR%%/runtime/queries/make/injections.scm
+%%DATADIR%%/runtime/queries/markdoc/highlights.scm
+%%DATADIR%%/runtime/queries/markdoc/injections.scm
 %%DATADIR%%/runtime/queries/markdown.inline/highlights.scm
 %%DATADIR%%/runtime/queries/markdown.inline/injections.scm
 %%DATADIR%%/runtime/queries/markdown/highlights.scm
@@ -390,6 +411,12 @@ bin/hx
 %%DATADIR%%/runtime/queries/ocaml/injections.scm
 %%DATADIR%%/runtime/queries/ocaml/locals.scm
 %%DATADIR%%/runtime/queries/odin/highlights.scm
+%%DATADIR%%/runtime/queries/odin/indents.scm
+%%DATADIR%%/runtime/queries/odin/injections.scm
+%%DATADIR%%/runtime/queries/opencl/highlights.scm
+%%DATADIR%%/runtime/queries/opencl/indents.scm
+%%DATADIR%%/runtime/queries/opencl/injections.scm
+%%DATADIR%%/runtime/queries/opencl/textobjects.scm
 %%DATADIR%%/runtime/queries/openscad/highlights.scm
 %%DATADIR%%/runtime/queries/org/highlights.scm
 %%DATADIR%%/runtime/queries/org/injections.scm
@@ -446,6 +473,7 @@ bin/hx
 %%DATADIR%%/runtime/queries/rmarkdown/highlights.scm
 %%DATADIR%%/runtime/queries/rmarkdown/indents.scm
 %%DATADIR%%/runtime/queries/rmarkdown/injections.scm
+%%DATADIR%%/runtime/queries/robot/highlights.scm
 %%DATADIR%%/runtime/queries/ron/highlights.scm
 %%DATADIR%%/runtime/queries/ron/indents.scm
 %%DATADIR%%/runtime/queries/ron/injections.scm
@@ -555,6 +583,7 @@ bin/hx
 %%DATADIR%%/runtime/themes/README.md
 %%DATADIR%%/runtime/themes/acme.toml
 %%DATADIR%%/runtime/themes/adwaita-dark.toml
+%%DATADIR%%/runtime/themes/amberwood.toml
 %%DATADIR%%/runtime/themes/autumn.toml
 %%DATADIR%%/runtime/themes/autumn_night.toml
 %%DATADIR%%/runtime/themes/ayu_dark.toml
@@ -583,6 +612,7 @@ bin/hx
 %%DATADIR%%/runtime/themes/everblush.toml
 %%DATADIR%%/runtime/themes/everforest_dark.toml
 %%DATADIR%%/runtime/themes/everforest_light.toml
+%%DATADIR%%/runtime/themes/ferra.toml
 %%DATADIR%%/runtime/themes/flatwhite.toml
 %%DATADIR%%/runtime/themes/fleet_dark.toml
 %%DATADIR%%/runtime/themes/github_dark.toml

@@ -133,13 +133,22 @@
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/rootcheck.manager.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/centos/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/15/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/16/localfile-extra.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/16/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/17/localfile-extra.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/17/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/18/localfile-extra.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/18/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/19/localfile-extra.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/19/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/20/localfile-extra.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/20/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/21/localfile-extra.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/21/sca.files
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/22/localfile-extra.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/22/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/localfile-commands.template
+/var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/localfile-extra.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/sca.files
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/sca.template
 /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/syscheck.agent.template
@@ -285,6 +294,7 @@
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/19/cis_apple_macOS_10.15.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/20/cis_apple_macOS_11.1.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/darwin/21/cis_apple_macOS_12.0.yml
+/var/ossec/packages_files/agent_installation_scripts/sca/darwin/22/cis_apple_macOS_13.x.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian10.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian11.yml
 /var/ossec/packages_files/agent_installation_scripts/sca/debian/cis_debian7.yml
@@ -364,6 +374,7 @@
 /var/ossec/ruleset/sca/cis_apple_macOS_10.15.yml
 /var/ossec/ruleset/sca/cis_apple_macOS_11.1.yml
 /var/ossec/ruleset/sca/cis_apple_macOS_12.0.yml
+/var/ossec/ruleset/sca/cis_apple_macOS_13.x.yml
 /var/ossec/ruleset/sca/cis_centos6_linux.yml
 /var/ossec/ruleset/sca/cis_centos7_linux.yml
 /var/ossec/ruleset/sca/cis_centos8_linux.yml
@@ -465,6 +476,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/19
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/20
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/21
+@dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin/22
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/darwin
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/10
 @dir /var/ossec/packages_files/agent_installation_scripts/etc/templates/config/debian/11
@@ -542,6 +554,7 @@
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/19
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/20
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/21
+@dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin/22
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/darwin
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/debian
 @dir /var/ossec/packages_files/agent_installation_scripts/sca/generic

@@ -1,6 +1,5 @@
 PORTNAME=	jax
-PORTVERSION=	0.4.8
-PORTREVISION=	1
+PORTVERSION=	0.4.10
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +12,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0.0.3:math/py-ml-dtypes@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ml-dtypes>=0.1.0:math/py-ml-dtypes@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.21,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opt-einsum>=0:math/py-opt-einsum@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.7:science/py-scipy@${PY_FLAVOR}

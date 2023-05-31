@@ -1,0 +1,11 @@
+--- ddtrace.gemspec.orig	2023-05-27 11:40:52 UTC
++++ ddtrace.gemspec
+@@ -25,7 +25,7 @@ Gem::Specification.new do |s|
+   s.specification_version = 4
+ 
+   s.add_runtime_dependency(%q<msgpack>.freeze, [">= 0"])
+-  s.add_runtime_dependency(%q<debase-ruby_core_source>.freeze, [">= 0.10.16", "<= 3.2.0"])
++  s.add_runtime_dependency(%q<debase-ruby_core_source>.freeze, ["= 3.2.1"])
+   s.add_runtime_dependency(%q<libddwaf>.freeze, ["~> 1.8.2.0.0"])
+   s.add_runtime_dependency(%q<libdatadog>.freeze, ["~> 2.0.0.1.0"])
+ end

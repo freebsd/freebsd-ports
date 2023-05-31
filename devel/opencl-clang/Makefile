@@ -15,7 +15,7 @@ PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	529a9188114b.patch:-p1 # https://github.com/intel/opencl-clang/pull/415
 PATCHFILES+=	9f50367661bb.patch:-p1 # https://github.com/intel/opencl-clang/pull/419
 PATCHFILES+=	5491ffa3fde5.patch:-p1 # https://github.com/intel/opencl-clang/pull/416
-PATCHFILES+=	cb864cde32c2.patch:-p1 # https://github.com/intel/opencl-clang/issues/422
+PATCHFILES+=	8102ee2f83c3.patch:-p1 # https://github.com/intel/opencl-clang/pull/439
 .endif
 
 MAINTAINER=	ports@FreeBSD.org

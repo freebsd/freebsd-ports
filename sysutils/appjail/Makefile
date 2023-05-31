@@ -1,13 +1,17 @@
 PORTNAME=	appjail
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.4.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Simple and easy-to-use tool for creating portable jails
+WWW=		https://github.com/DtxdF/AppJail
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+CONFLICTS=	appjail-devel
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	DtxdF

@@ -61,6 +61,8 @@ include/stan/math/fwd/fun/fmod.hpp
 include/stan/math/fwd/fun/gamma_p.hpp
 include/stan/math/fwd/fun/gamma_q.hpp
 include/stan/math/fwd/fun/grad_inc_beta.hpp
+include/stan/math/fwd/fun/hypergeometric_2F1.hpp
+include/stan/math/fwd/fun/hypergeometric_pFq.hpp
 include/stan/math/fwd/fun/hypot.hpp
 include/stan/math/fwd/fun/inc_beta.hpp
 include/stan/math/fwd/fun/inv.hpp
@@ -675,7 +677,6 @@ include/stan/math/prim/err/validate_positive_index.hpp
 include/stan/math/prim/err/validate_unit_vector_index.hpp
 include/stan/math/prim/fun.hpp
 include/stan/math/prim/fun/Eigen.hpp
-include/stan/math/prim/fun/F32.hpp
 include/stan/math/prim/fun/LDLT_factor.hpp
 include/stan/math/prim/fun/MatrixExponential.h
 include/stan/math/prim/fun/Phi.hpp
@@ -725,6 +726,7 @@ include/stan/math/prim/fun/col.hpp
 include/stan/math/prim/fun/cols.hpp
 include/stan/math/prim/fun/columns_dot_product.hpp
 include/stan/math/prim/fun/columns_dot_self.hpp
+include/stan/math/prim/fun/complex_schur_decompose.hpp
 include/stan/math/prim/fun/conj.hpp
 include/stan/math/prim/fun/constants.hpp
 include/stan/math/prim/fun/copysign.hpp
@@ -804,10 +806,15 @@ include/stan/math/prim/fun/gp_periodic_cov.hpp
 include/stan/math/prim/fun/grad_2F1.hpp
 include/stan/math/prim/fun/grad_F32.hpp
 include/stan/math/prim/fun/grad_inc_beta.hpp
+include/stan/math/prim/fun/grad_pFq.hpp
 include/stan/math/prim/fun/grad_reg_inc_beta.hpp
 include/stan/math/prim/fun/grad_reg_inc_gamma.hpp
 include/stan/math/prim/fun/grad_reg_lower_inc_gamma.hpp
 include/stan/math/prim/fun/head.hpp
+include/stan/math/prim/fun/hypergeometric_2F1.hpp
+include/stan/math/prim/fun/hypergeometric_2F2.hpp
+include/stan/math/prim/fun/hypergeometric_3F2.hpp
+include/stan/math/prim/fun/hypergeometric_pFq.hpp
 include/stan/math/prim/fun/hypot.hpp
 include/stan/math/prim/fun/i_times.hpp
 include/stan/math/prim/fun/identity_constrain.hpp
@@ -877,6 +884,7 @@ include/stan/math/prim/fun/log_modified_bessel_first_kind.hpp
 include/stan/math/prim/fun/log_rising_factorial.hpp
 include/stan/math/prim/fun/log_softmax.hpp
 include/stan/math/prim/fun/log_sum_exp.hpp
+include/stan/math/prim/fun/log_sum_exp_signed.hpp
 include/stan/math/prim/fun/logb.hpp
 include/stan/math/prim/fun/logical_and.hpp
 include/stan/math/prim/fun/logical_eq.hpp
@@ -1022,6 +1030,7 @@ include/stan/math/prim/fun/tgamma.hpp
 include/stan/math/prim/fun/to_array_1d.hpp
 include/stan/math/prim/fun/to_array_2d.hpp
 include/stan/math/prim/fun/to_complex.hpp
+include/stan/math/prim/fun/to_int.hpp
 include/stan/math/prim/fun/to_matrix.hpp
 include/stan/math/prim/fun/to_ref.hpp
 include/stan/math/prim/fun/to_row_vector.hpp
@@ -1063,6 +1072,7 @@ include/stan/math/prim/functor/coupled_ode_system.hpp
 include/stan/math/prim/functor/finite_diff_gradient.hpp
 include/stan/math/prim/functor/finite_diff_gradient_auto.hpp
 include/stan/math/prim/functor/for_each.hpp
+include/stan/math/prim/functor/hcubature.hpp
 include/stan/math/prim/functor/integrate_1d.hpp
 include/stan/math/prim/functor/integrate_1d_adapter.hpp
 include/stan/math/prim/functor/integrate_ode_rk45.hpp
@@ -1128,7 +1138,9 @@ include/stan/math/prim/meta/is_rev_matrix.hpp
 include/stan/math/prim/meta/is_stan_scalar.hpp
 include/stan/math/prim/meta/is_stan_scalar_or_eigen.hpp
 include/stan/math/prim/meta/is_string_convertible.hpp
+include/stan/math/prim/meta/is_tuple.hpp
 include/stan/math/prim/meta/is_var.hpp
+include/stan/math/prim/meta/is_var_and_matrix_types.hpp
 include/stan/math/prim/meta/is_var_dense_dynamic.hpp
 include/stan/math/prim/meta/is_var_eigen.hpp
 include/stan/math/prim/meta/is_var_matrix.hpp
@@ -1139,6 +1151,7 @@ include/stan/math/prim/meta/is_vector_like.hpp
 include/stan/math/prim/meta/partials_return_type.hpp
 include/stan/math/prim/meta/partials_type.hpp
 include/stan/math/prim/meta/plain_type.hpp
+include/stan/math/prim/meta/possibly_sum.hpp
 include/stan/math/prim/meta/promote_args.hpp
 include/stan/math/prim/meta/promote_scalar_type.hpp
 include/stan/math/prim/meta/ref_type.hpp
@@ -1678,6 +1691,8 @@ include/stan/math/rev/fun/gp_exp_quad_cov.hpp
 include/stan/math/rev/fun/gp_periodic_cov.hpp
 include/stan/math/rev/fun/grad.hpp
 include/stan/math/rev/fun/grad_inc_beta.hpp
+include/stan/math/rev/fun/hypergeometric_2F1.hpp
+include/stan/math/rev/fun/hypergeometric_pFq.hpp
 include/stan/math/rev/fun/hypot.hpp
 include/stan/math/rev/fun/identity_constrain.hpp
 include/stan/math/rev/fun/identity_free.hpp
@@ -1795,8 +1810,6 @@ include/stan/math/rev/fun/value_of_rec.hpp
 include/stan/math/rev/fun/variance.hpp
 include/stan/math/rev/functor.hpp
 include/stan/math/rev/functor/algebra_solver_fp.hpp
-include/stan/math/rev/functor/algebra_solver_newton.hpp
-include/stan/math/rev/functor/algebra_solver_powell.hpp
 include/stan/math/rev/functor/algebra_system.hpp
 include/stan/math/rev/functor/apply_scalar_binary.hpp
 include/stan/math/rev/functor/apply_scalar_unary.hpp
@@ -1825,6 +1838,8 @@ include/stan/math/rev/functor/ode_bdf.hpp
 include/stan/math/rev/functor/ode_store_sensitivities.hpp
 include/stan/math/rev/functor/operands_and_partials.hpp
 include/stan/math/rev/functor/reduce_sum.hpp
+include/stan/math/rev/functor/solve_newton.hpp
+include/stan/math/rev/functor/solve_powell.hpp
 include/stan/math/rev/meta.hpp
 include/stan/math/rev/meta/arena_type.hpp
 include/stan/math/rev/meta/conditional_var_value.hpp

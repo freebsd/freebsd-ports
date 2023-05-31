@@ -1,5 +1,5 @@
 PORTNAME=	glib
-DISTVERSION=	2.76.2
+DISTVERSION=	2.76.3
 PORTEPOCH=	2
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
@@ -38,7 +38,7 @@ CPE_VENDOR=	gnome
 
 CONFLICTS_INSTALL=	p5-Giovanni
 
-_LIBVERSION=	0.7600.2
+_LIBVERSION=	0.7600.3
 PLIST_SUB=	LIBVERSION=${_LIBVERSION}
 
 OPTIONS_DEFINE=		DEBUG GTKDOC FAM_ALTBACKEND MANPAGES NLS TEST
@@ -84,7 +84,7 @@ pre-configure-FAM_ALTBACKEND-on:
 # Meson does not seem to provide a way to express that dependency.
 #
 # Hack it into the generated ninja build instead.
-post-configure-DOCS-on:
+post-configure-GTKDOC-on:
 	@${REINPLACE_CMD} -e '\+^build docs/reference/gio/gdbus-object-manager-example/gdbus-object-manager-example-decl.txt:+s+$$+ || gio/tests/gdbus-object-manager-example/libgdbus-example-objectmanager.so+' ${BUILD_WRKSRC}/build.ninja
 
 post-patch:

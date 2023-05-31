@@ -17,4 +17,6 @@ RUN_DEPENDS=	p5-Term-ReadKey>=0:devel/p5-Term-ReadKey
 USES=		perl5
 USE_PERL5=	configure
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>

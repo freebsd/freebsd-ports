@@ -44,7 +44,14 @@ post-patch:
 		 s|-R/usr/local/lib||' ${WRKSRC}/configure
 
 post-install:
-	@${MKDIR} ${STAGEDIR}${DATADIR}/signatures
+	@${MKDIR} ${STAGEDIR}${DATADIR}/signatures \
+		${STAGEDIR}/var/binaries \
+		${STAGEDIR}/var/hexdumps \
+		${STAGEDIR}/var/log/pcap \
+		${STAGEDIR}/var/spool/nepenthes/gotek \
+		${STAGEDIR}/var/spool/nepenthes/submitpostgres \
+		${STAGEDIR}/var/cache/nepenthes/pcap \
+		${STAGEDIR}/var/cache/nepenthes/signatures
 	(cd ${WRKSRC}/modules/shellcode-signatures && ${INSTALL_DATA} \
 		shellcode-signatures.sc ${STAGEDIR}${DATADIR}/signatures)
 

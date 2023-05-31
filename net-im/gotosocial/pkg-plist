@@ -29,6 +29,7 @@
 %%WWWDIR%%/assets/default_avatars/GoToSocial_icon6.png
 %%WWWDIR%%/assets/mastodon.svg
 %%WWWDIR%%/assets/logo.svg
+%%WWWDIR%%/assets/plyr.svg
 %%WWWDIR%%/assets/default_header.png
 %%WWWDIR%%/assets/fonts/OFL.txt
 %%WWWDIR%%/assets/fonts/noto-sans-v27-latin-700.woff
@@ -50,6 +51,7 @@
 %%WWWDIR%%/assets/Fork-Awesome/css/fork-awesome.min.css
 %%WWWDIR%%/assets/tusky.svg
 %%WWWDIR%%/assets/logo.png
+%%WWWDIR%%/assets/dist/index.css
 %%WWWDIR%%/assets/dist/profile.css
 %%WWWDIR%%/assets/dist/_colors.css
 %%WWWDIR%%/assets/dist/settings.js

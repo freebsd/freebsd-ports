@@ -5,7 +5,7 @@ CATEGORIES=	x11
 MASTER_SITES=	XCONTRIB/../R5contrib
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Find colour values by graphical colour mixing
 
 USES=		imake tar:Z xorg

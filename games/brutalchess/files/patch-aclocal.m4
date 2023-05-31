@@ -1,6 +1,6 @@
---- aclocal.m4.orig	Tue Feb  6 23:28:00 2007
-+++ aclocal.m4	Tue Feb  6 23:28:12 2007
-@@ -926,7 +926,7 @@
+--- aclocal.m4.orig	2006-12-27 04:28:00 UTC
++++ aclocal.m4
+@@ -926,7 +926,7 @@ fi
  # restrict ourselves to GNU make (using the --version option ensures
  # this.)
  AC_DEFUN([AM_PROG_MKDIR_P],

@@ -1,5 +1,5 @@
---- dht.c	2018-12-16 08:38:37.000000000 -0500
-+++ dht.c	2018-12-30 19:22:30.679020000 -0500
+--- dht.c.orig	2022-04-27 07:37:34.000000000 -0700
++++ dht.c	2023-05-19 06:27:34.710210000 -0700
 @@ -382,5 +382,5 @@
      switch(sa->sa_family) {
      case AF_INET: {
@@ -14,7 +14,7 @@
 +        const struct sockaddr_in6 *sin6 = (const struct sockaddr_in6*)sa;
          const unsigned char *address = (const unsigned char*)&sin6->sin6_addr;
          return sin6->sin6_port == 0 ||
-@@ -1444,13 +1444,13 @@
+@@ -1448,13 +1448,13 @@
      int i, len;
      struct storage *st;
 -    unsigned char *ip;
@@ -33,7 +33,7 @@
 +        ip = (const unsigned char*)&sin6->sin6_addr;
          len = 16;
      } else {
-@@ -1569,15 +1569,15 @@
+@@ -1573,15 +1573,15 @@
  make_token(const struct sockaddr *sa, int old, unsigned char *token_return)
  {
 -    void *ip;
@@ -52,56 +52,63 @@
 +        const struct sockaddr_in6 *sin6 = (const struct sockaddr_in6*)sa;
          ip = &sin6->sin6_addr;
          iplen = 16;
-@@ -2047,5 +2047,5 @@
+@@ -1844,5 +1844,5 @@
+ 
+ int
+-dht_uninit()
++dht_uninit(void)
+ {
+     if(dht_socket < 0 && dht_socket6 < 0) {
+@@ -2051,5 +2051,5 @@
          }
  
 -        if(((char*)buf)[buflen] != '\0') {
 +        if(((const char*)buf)[buflen] != '\0') {
              debugf("Unterminated message.\n");
              errno = EINVAL;
-@@ -2904,5 +2904,5 @@
+@@ -2908,5 +2908,5 @@
  
  #define CHECK(ptr, len)                                                 \
 -    if(((unsigned char*)ptr) + (len) > (buf) + (buflen)) goto overflow;
 +    if(((const unsigned char*)ptr) + (len) > (buf) + (buflen)) goto overflow;
  
      p = dht_memmem(buf, buflen, "1:t", 3);
-@@ -2910,5 +2910,5 @@
+@@ -2914,5 +2914,5 @@
          long l;
          char *q;
 -        l = strtol((char*)p + 3, &q, 10);
 +        l = strtol((const char*)p + 3, &q, 10);
          if(q && *q == ':' && l > 0 && l < PARSE_TID_LEN) {
              CHECK(q + 1, l);
-@@ -2934,5 +2934,5 @@
+@@ -2938,5 +2938,5 @@
          long l;
          char *q;
 -        l = strtol((char*)p + 7, &q, 10);
 +        l = strtol((const char*)p + 7, &q, 10);
          if(q && *q == 'e' && l > 0 && l < 0x10000)
              m->port = l;
-@@ -2943,5 +2943,5 @@
+@@ -2947,5 +2947,5 @@
          long l;
          char *q;
 -        l = strtol((char*)p + 16, &q, 10);
 +        l = strtol((const char*)p + 16, &q, 10);
          if(q && *q == 'e' && l > 0 && l < 0x10000)
              m->implied_port = l;
-@@ -2958,5 +2958,5 @@
+@@ -2962,5 +2962,5 @@
          long l;
          char *q;
 -        l = strtol((char*)p + 7, &q, 10);
 +        l = strtol((const char*)p + 7, &q, 10);
          if(q && *q == ':' && l > 0 && l < PARSE_TOKEN_LEN) {
              CHECK(q + 1, l);
-@@ -2970,5 +2970,5 @@
+@@ -2974,5 +2974,5 @@
          long l;
          char *q;
 -        l = strtol((char*)p + 7, &q, 10);
 +        l = strtol((const char*)p + 7, &q, 10);
          if(q && *q == ':' && l > 0 && l <= PARSE_NODES_LEN) {
              CHECK(q + 1, l);
-@@ -2982,5 +2982,5 @@
+@@ -2986,5 +2986,5 @@
          long l;
          char *q;
 -        l = strtol((char*)p + 8, &q, 10);

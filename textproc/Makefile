@@ -116,6 +116,7 @@
     SUBDIR += cpp-peglib
     SUBDIR += cpptoml
     SUBDIR += crex
+    SUBDIR += crow-translate
     SUBDIR += crunch
     SUBDIR += cs-aspell
     SUBDIR += cs-hunspell
@@ -516,7 +517,6 @@
     SUBDIR += openjade
     SUBDIR += opensearch
     SUBDIR += opensearch-dashboards
-    SUBDIR += opensearch-dashboards13
     SUBDIR += opensearch13
     SUBDIR += opensp
     SUBDIR += openvanilla-framework
@@ -586,6 +586,7 @@
     SUBDIR += p5-HTML-RewriteAttributes
     SUBDIR += p5-HTML-SBC
     SUBDIR += p5-HTML-SuperForm
+    SUBDIR += p5-HTML-T5
     SUBDIR += p5-HTML-TagFilter
     SUBDIR += p5-HTML-Tidy
     SUBDIR += p5-HTML-Tidy5
@@ -1400,6 +1401,7 @@
     SUBDIR += py-mathics-pygments
     SUBDIR += py-mdit-py-plugins
     SUBDIR += py-mdurl
+    SUBDIR += py-merge3
     SUBDIR += py-mike
     SUBDIR += py-misaka
     SUBDIR += py-mistletoe
@@ -1653,7 +1655,6 @@
     SUBDIR += ro-hunspell
     SUBDIR += ro-hyphen
     SUBDIR += ro-mythes
-    SUBDIR += rtf2html
     SUBDIR += rtfreader
     SUBDIR += ruby-escape
     SUBDIR += ruby-format
@@ -1707,8 +1708,10 @@
     SUBDIR += rubygem-diff_match_patch
     SUBDIR += rubygem-diffy
     SUBDIR += rubygem-docdiff
+    SUBDIR += rubygem-elastic-transport
     SUBDIR += rubygem-elasticsearch
     SUBDIR += rubygem-elasticsearch-api
+    SUBDIR += rubygem-elasticsearch-api7
     SUBDIR += rubygem-elasticsearch-api713
     SUBDIR += rubygem-elasticsearch-dsl
     SUBDIR += rubygem-elasticsearch-model
@@ -1718,6 +1721,7 @@
     SUBDIR += rubygem-elasticsearch-transport
     SUBDIR += rubygem-elasticsearch-transport713
     SUBDIR += rubygem-elasticsearch-xpack
+    SUBDIR += rubygem-elasticsearch7
     SUBDIR += rubygem-elasticsearch713
     SUBDIR += rubygem-emot
     SUBDIR += rubygem-escape_utils
@@ -1774,7 +1778,8 @@
     SUBDIR += rubygem-liquid4
     SUBDIR += rubygem-loggability
     SUBDIR += rubygem-loofah
-    SUBDIR += rubygem-loofah219
+    SUBDIR += rubygem-loofah220
+    SUBDIR += rubygem-loofah221
     SUBDIR += rubygem-ltsv
     SUBDIR += rubygem-markaby
     SUBDIR += rubygem-mdl

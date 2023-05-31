@@ -7,7 +7,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Netlink library: supplementary protocols
-WWW=		https://github.com/svinota/pyroute2/tree/master/pyroute2.protocols
+WWW=		https://github.com/svinota/pyroute2/tree/master/pyroute2/protocols
 
 LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual

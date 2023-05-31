@@ -85,8 +85,6 @@ bin/ospd-openvas
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/dryrun%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/errors%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/errors%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/feed%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/feed%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/gpg_sha_verifier%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/gpg_sha_verifier%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/ospd_openvas/__pycache__/lock%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -106,7 +104,6 @@ bin/ospd-openvas
 %%PYTHON_SITELIBDIR%%/ospd_openvas/db.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/dryrun.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/errors.py
-%%PYTHON_SITELIBDIR%%/ospd_openvas/feed.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/gpg_sha_verifier.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/lock.py
 %%PYTHON_SITELIBDIR%%/ospd_openvas/messages/__init__.py

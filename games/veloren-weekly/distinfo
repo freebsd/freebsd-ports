@@ -1,4 +1,4 @@
-TIMESTAMP = 1683755570
+TIMESTAMP = 1684952009
 SHA256 (rust/crates/ab_glyph-0.2.21.crate) = 5110f1c78cf582855d895ecd0746b653db010cec6d9f5575293f27934d980a39
 SIZE (rust/crates/ab_glyph-0.2.21.crate) = 17764
 SHA256 (rust/crates/ab_glyph_rasterizer-0.1.8.crate) = c71b1793ee61086797f5c80b6efa2b8ffa6d5dd703f118545808a7f2e27f7046
@@ -1565,5 +1565,5 @@ SHA256 (hasenbanck-egui_wgpu_backend-63a002c6a9b6c016e45806dd065864431caab621_GH
 SIZE (hasenbanck-egui_wgpu_backend-63a002c6a9b6c016e45806dd065864431caab621_GH0.tar.gz) = 11500
 SHA256 (yoanlcq-vek-84d5cb65841d46599a986c5477341bea4456be26_GH0.tar.gz) = f6fc0b8e9b1290729ea94865be84a8c47846e49e3c193dab700940e1452d2fed
 SIZE (yoanlcq-vek-84d5cb65841d46599a986c5477341bea4456be26_GH0.tar.gz) = 90485
-SHA256 (veloren-veloren-db860de51760d94e1f501390c5e1f472d89a8db7_GL0.tar.gz) = f26615339514f26bdd85d643266a3f4eb5f627d1c15931f70fe3f4d053a86b6f
-SIZE (veloren-veloren-db860de51760d94e1f501390c5e1f472d89a8db7_GL0.tar.gz) = 263372562
+SHA256 (veloren-veloren-68491dde556b6b5d9736061d1728817b9d3c5eb2_GL0.tar.gz) = cfe9380d200c8f8f4faac9bb1fcbe7b505f8498434566e230dd3920d09fa2669
+SIZE (veloren-veloren-68491dde556b6b5d9736061d1728817b9d3c5eb2_GL0.tar.gz) = 264009879

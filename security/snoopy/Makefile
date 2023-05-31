@@ -1,5 +1,5 @@
 PORTNAME=	snoopy
-PORTVERSION=	2.4.15
+PORTVERSION=	2.5.1
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/a2o/snoopy/releases/download/snoopy-${PORTVERSION}/
 

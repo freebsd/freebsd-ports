@@ -1,7 +1,7 @@
 PORTNAME=	qdrant
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -468,6 +468,10 @@ PLIST_FILES=	bin/${PORTNAME} \
 		bin/schema_generator
 
 post-install:
+	# install config sample
+	@${MKDIR} ${STAGEDIR}${ETCDIR}
+	@${INSTALL_DATA} ${WRKSRC}/config/config.yaml ${STAGEDIR}${ETCDIR}/config.yaml.sample
+	# strip binaries
 	@${STRIP_CMD} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}  \
 		${STAGEDIR}${PREFIX}/bin/schema_generator

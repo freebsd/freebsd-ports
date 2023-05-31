@@ -1,8 +1,8 @@
 PORTNAME=	radarr
-PORTVERSION=	4.4.4.7068
+DISTVERSION=	4.5.2.7388
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Radarr/Radarr/releases/download/v${PORTVERSION}/
-DISTNAME=	Radarr.master.${PORTVERSION}.freebsd-core-x64
+DISTNAME=	Radarr.master.${DISTVERSION}.freebsd-core-x64
 
 MAINTAINER=	michiel@vanbaak.eu
 COMMENT=	Movie Library Manager for Usenet and BitTorrent users

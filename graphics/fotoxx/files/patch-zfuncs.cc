@@ -124,14 +124,14 @@
     return;
  }
 @@ -2234,7 +2275,7 @@ int diskspace(cchar *file)                            
-    int      avail;
     FILE     *fid;
  
--   snprintf(command,200,"df --output=avail \"%s\" ",file);
-+   snprintf(command,200,"df -k '%s' | awk '{print $4}'",file);
-    pp = strchr(command,'/');
-    if (! pp) return 0;
+    pp = zescape_quotes(file);                                                    //  23.4
+-   snprintf(command,200,"df --output=avail \"%s\" ",pp);
++   snprintf(command,200,"df -k '%s' | awk '{print $4}'",pp);
+    zfree(pp);
     
+    fid = popen(command,"r");
 @@ -4115,14 +4156,18 @@ cchar * SearchWildCase(cchar *wpath, int &uflag) 
     flist and flist[*] are subjects for zfree().
  

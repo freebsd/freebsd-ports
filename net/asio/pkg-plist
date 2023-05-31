@@ -1,10 +1,13 @@
 include/asio.hpp
+include/asio/any_completion_executor.hpp
+include/asio/any_completion_handler.hpp
 include/asio/any_io_executor.hpp
 include/asio/append.hpp
 include/asio/as_tuple.hpp
 include/asio/associated_allocator.hpp
 include/asio/associated_cancellation_slot.hpp
 include/asio/associated_executor.hpp
+include/asio/associated_immediate_executor.hpp
 include/asio/associator.hpp
 include/asio/async_result.hpp
 include/asio/awaitable.hpp
@@ -31,6 +34,7 @@ include/asio/basic_writable_pipe.hpp
 include/asio/bind_allocator.hpp
 include/asio/bind_cancellation_slot.hpp
 include/asio/bind_executor.hpp
+include/asio/bind_immediate_executor.hpp
 include/asio/buffer.hpp
 include/asio/buffer_registration.hpp
 include/asio/buffered_read_stream.hpp
@@ -48,6 +52,7 @@ include/asio/completion_condition.hpp
 include/asio/compose.hpp
 include/asio/connect.hpp
 include/asio/connect_pipe.hpp
+include/asio/consign.hpp
 include/asio/coroutine.hpp
 include/asio/deadline_timer.hpp
 include/asio/defer.hpp
@@ -69,6 +74,7 @@ include/asio/detail/call_stack.hpp
 include/asio/detail/chrono.hpp
 include/asio/detail/chrono_time_traits.hpp
 include/asio/detail/completion_handler.hpp
+include/asio/detail/composed_work.hpp
 include/asio/detail/concurrency_hint.hpp
 include/asio/detail/conditionally_enabled_event.hpp
 include/asio/detail/conditionally_enabled_mutex.hpp
@@ -162,6 +168,9 @@ include/asio/detail/impl/winrt_ssocket_service_base.ipp
 include/asio/detail/impl/winrt_timer_scheduler.hpp
 include/asio/detail/impl/winrt_timer_scheduler.ipp
 include/asio/detail/impl/winsock_init.ipp
+include/asio/detail/initiate_defer.hpp
+include/asio/detail/initiate_dispatch.hpp
+include/asio/detail/initiate_post.hpp
 include/asio/detail/io_control.hpp
 include/asio/detail/io_object_impl.hpp
 include/asio/detail/io_uring_descriptor_read_at_op.hpp
@@ -390,6 +399,7 @@ include/asio/experimental/cancellation_condition.hpp
 include/asio/experimental/channel.hpp
 include/asio/experimental/channel_error.hpp
 include/asio/experimental/channel_traits.hpp
+include/asio/experimental/co_composed.hpp
 include/asio/experimental/co_spawn.hpp
 include/asio/experimental/concurrent_channel.hpp
 include/asio/experimental/coro.hpp
@@ -403,21 +413,24 @@ include/asio/experimental/detail/channel_receive_op.hpp
 include/asio/experimental/detail/channel_send_functions.hpp
 include/asio/experimental/detail/channel_send_op.hpp
 include/asio/experimental/detail/channel_service.hpp
-include/asio/experimental/detail/completion_handler_erasure.hpp
+include/asio/experimental/detail/coro_completion_handler.hpp
 include/asio/experimental/detail/coro_promise_allocator.hpp
 include/asio/experimental/detail/has_signature.hpp
 include/asio/experimental/detail/impl/channel_service.hpp
 include/asio/experimental/detail/partial_promise.hpp
 include/asio/experimental/impl/as_single.hpp
 include/asio/experimental/impl/channel_error.ipp
+include/asio/experimental/impl/co_composed.hpp
 include/asio/experimental/impl/coro.hpp
 include/asio/experimental/impl/parallel_group.hpp
 include/asio/experimental/impl/promise.hpp
 include/asio/experimental/impl/use_coro.hpp
+include/asio/experimental/impl/use_promise.hpp
 include/asio/experimental/parallel_group.hpp
 include/asio/experimental/prepend.hpp
 include/asio/experimental/promise.hpp
 include/asio/experimental/use_coro.hpp
+include/asio/experimental/use_promise.hpp
 include/asio/file_base.hpp
 include/asio/generic/basic_endpoint.hpp
 include/asio/generic/datagram_protocol.hpp
@@ -430,6 +443,7 @@ include/asio/handler_alloc_hook.hpp
 include/asio/handler_continuation_hook.hpp
 include/asio/handler_invoke_hook.hpp
 include/asio/high_resolution_timer.hpp
+include/asio/impl/any_completion_executor.ipp
 include/asio/impl/any_io_executor.ipp
 include/asio/impl/append.hpp
 include/asio/impl/as_tuple.hpp
@@ -441,10 +455,9 @@ include/asio/impl/co_spawn.hpp
 include/asio/impl/connect.hpp
 include/asio/impl/connect_pipe.hpp
 include/asio/impl/connect_pipe.ipp
-include/asio/impl/defer.hpp
+include/asio/impl/consign.hpp
 include/asio/impl/deferred.hpp
 include/asio/impl/detached.hpp
-include/asio/impl/dispatch.hpp
 include/asio/impl/error.ipp
 include/asio/impl/error_code.ipp
 include/asio/impl/execution_context.hpp
@@ -455,7 +468,6 @@ include/asio/impl/handler_alloc_hook.ipp
 include/asio/impl/io_context.hpp
 include/asio/impl/io_context.ipp
 include/asio/impl/multiple_exceptions.ipp
-include/asio/impl/post.hpp
 include/asio/impl/prepend.hpp
 include/asio/impl/read.hpp
 include/asio/impl/read_at.hpp
@@ -528,6 +540,7 @@ include/asio/local/connect_pair.hpp
 include/asio/local/datagram_protocol.hpp
 include/asio/local/detail/endpoint.hpp
 include/asio/local/detail/impl/endpoint.ipp
+include/asio/local/seq_packet_protocol.hpp
 include/asio/local/stream_protocol.hpp
 include/asio/multiple_exceptions.hpp
 include/asio/packaged_task.hpp
@@ -554,6 +567,7 @@ include/asio/require_concept.hpp
 include/asio/serial_port.hpp
 include/asio/serial_port_base.hpp
 include/asio/signal_set.hpp
+include/asio/signal_set_base.hpp
 include/asio/socket_base.hpp
 include/asio/spawn.hpp
 include/asio/ssl.hpp

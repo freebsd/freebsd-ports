@@ -154,7 +154,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/crop-buttons.jpg
 %%DATADIR%%/images/crop.jpg
 %%DATADIR%%/images/custom-kernel.jpg
-%%DATADIR%%/images/custom-widgets.jpg
+%%DATADIR%%/images/custom-widgets.png
 %%DATADIR%%/images/custom.png
 %%DATADIR%%/images/defog.jpg
 %%DATADIR%%/images/defog2.jpg
@@ -188,7 +188,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/first-startup.jpg
 %%DATADIR%%/images/fix-motion-blur.jpg
 %%DATADIR%%/images/fix-motion-blur1.jpg
-%%DATADIR%%/images/fix-motion-blur2.jpg
 %%DATADIR%%/images/flatten-photo1.jpg
 %%DATADIR%%/images/flatten-photo2.jpg
 %%DATADIR%%/images/flatten1.jpg
@@ -209,15 +208,17 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/greenball.png
 %%DATADIR%%/images/grid-lines.jpg
 %%DATADIR%%/images/help.png
+%%DATADIR%%/images/image-array.jpg
 %%DATADIR%%/images/image-diffs.jpg
 %%DATADIR%%/images/image-locations.jpg
 %%DATADIR%%/images/image-management.jpg
-%%DATADIR%%/images/image-table.jpg
 %%DATADIR%%/images/index-files1.jpg
 %%DATADIR%%/images/index-files2.jpg
 %%DATADIR%%/images/inside-out1.jpg
 %%DATADIR%%/images/inside-out2.jpg
 %%DATADIR%%/images/interpolation.jpg
+%%DATADIR%%/images/jpeg-artifacts.jpg
+%%DATADIR%%/images/jpeg-artifacts1.jpg
 %%DATADIR%%/images/jpeg-quality.jpg
 %%DATADIR%%/images/local-retx.jpg
 %%DATADIR%%/images/local-retx2.jpg
@@ -253,6 +254,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/mosaic1.jpg
 %%DATADIR%%/images/mosaic2.jpg
 %%DATADIR%%/images/netmap-locs.jpg
+%%DATADIR%%/images/nonlinear slider.png
 %%DATADIR%%/images/number-keys.jpg
 %%DATADIR%%/images/outboard-programs.jpg
 %%DATADIR%%/images/paint-edits.jpg
@@ -289,7 +291,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/rename-folder.jpg
 %%DATADIR%%/images/rename.jpg
 %%DATADIR%%/images/repair.png
-%%DATADIR%%/images/resize.jpg
+%%DATADIR%%/images/rescale.jpg
 %%DATADIR%%/images/retouch.jpg
 %%DATADIR%%/images/rotate-left.png
 %%DATADIR%%/images/rotate-right.png

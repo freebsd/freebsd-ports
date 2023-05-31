@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/copying.txt
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYGAME} \
-		${PY_PILLOW} \
+		${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
 		${LOCALBASE}/share/${PORTNAME}/default.ttf:games/fretsonfire-data
 

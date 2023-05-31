@@ -659,6 +659,7 @@
     SUBDIR += py-pyradio
     SUBDIR += py-pysndfile
     SUBDIR += py-python-mpd2
+    SUBDIR += py-pyttsx3
     SUBDIR += py-resampy
     SUBDIR += py-simpleaudio
     SUBDIR += py-soundcloud

@@ -31,12 +31,14 @@
     SUBDIR += cascadia-code
     SUBDIR += charis
     SUBDIR += charis-compact
+    SUBDIR += chomsky
     SUBDIR += clearsans
     SUBDIR += code2000
     SUBDIR += comfortaa-ttf
     SUBDIR += comic-neue
     SUBDIR += consolamono-ttf
     SUBDIR += courier-prime
+    SUBDIR += cozette
     SUBDIR += croscorefonts-fonts-ttf
     SUBDIR += crosextrafonts-caladea-ttf
     SUBDIR += crosextrafonts-carlito-ttf
@@ -136,6 +138,7 @@
     SUBDIR += iansui
     SUBDIR += inconsolata-lgc-ttf
     SUBDIR += inconsolata-ttf
+    SUBDIR += intel-one-mono
     SUBDIR += intlfonts
     SUBDIR += iosevka
     SUBDIR += isabella
@@ -267,6 +270,7 @@
     SUBDIR += tkfont
     SUBDIR += tlwg-ttf
     SUBDIR += tmu
+    SUBDIR += tt2020
     SUBDIR += tv-fonts
     SUBDIR += twemoji-color-font-ttf
     SUBDIR += ubuntu-font

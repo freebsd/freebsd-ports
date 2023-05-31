@@ -1,6 +1,5 @@
 PORTNAME=	gitlab-shell
-PORTVERSION=	14.18.0
-PORTREVISION=	1
+PORTVERSION=	14.20.0
 CATEGORIES=	devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -18,8 +17,8 @@ CGO_ENABLED=	0
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
-# Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/tags
-GL_COMMIT=	f76503aeb40e6e4702d9697a29ff38fad4a0352f
+# Find the commit hash here: https://gitlab.com/gitlab-org/gitlab-shell/-/tags
+GL_COMMIT=	68d860f64eb02b46d9d8f861770b4edee77e1aa5
 
 USERS=		git
 GROUPS=		git

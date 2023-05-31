@@ -237,6 +237,7 @@ include/armadillo_bits/fn_trunc_exp.hpp
 include/armadillo_bits/fn_trunc_log.hpp
 include/armadillo_bits/fn_unique.hpp
 include/armadillo_bits/fn_var.hpp
+include/armadillo_bits/fn_vecnorm.hpp
 include/armadillo_bits/fn_vectorise.hpp
 include/armadillo_bits/fn_wishrnd.hpp
 include/armadillo_bits/fn_zeros.hpp
@@ -418,6 +419,8 @@ include/armadillo_bits/op_misc_bones.hpp
 include/armadillo_bits/op_misc_meat.hpp
 include/armadillo_bits/op_nonzeros_bones.hpp
 include/armadillo_bits/op_nonzeros_meat.hpp
+include/armadillo_bits/op_norm2est_bones.hpp
+include/armadillo_bits/op_norm2est_meat.hpp
 include/armadillo_bits/op_norm_bones.hpp
 include/armadillo_bits/op_norm_meat.hpp
 include/armadillo_bits/op_normalise_bones.hpp
@@ -484,6 +487,8 @@ include/armadillo_bits/op_unique_bones.hpp
 include/armadillo_bits/op_unique_meat.hpp
 include/armadillo_bits/op_var_bones.hpp
 include/armadillo_bits/op_var_meat.hpp
+include/armadillo_bits/op_vecnorm_bones.hpp
+include/armadillo_bits/op_vecnorm_meat.hpp
 include/armadillo_bits/op_vectorise_bones.hpp
 include/armadillo_bits/op_vectorise_meat.hpp
 include/armadillo_bits/op_wishrnd_bones.hpp
@@ -564,6 +569,8 @@ include/armadillo_bits/spop_trimat_bones.hpp
 include/armadillo_bits/spop_trimat_meat.hpp
 include/armadillo_bits/spop_var_bones.hpp
 include/armadillo_bits/spop_var_meat.hpp
+include/armadillo_bits/spop_vecnorm_bones.hpp
+include/armadillo_bits/spop_vecnorm_meat.hpp
 include/armadillo_bits/spop_vectorise_bones.hpp
 include/armadillo_bits/spop_vectorise_meat.hpp
 include/armadillo_bits/spsolve_factoriser_bones.hpp
@@ -610,7 +617,7 @@ include/armadillo_bits/xvec_htrans_bones.hpp
 include/armadillo_bits/xvec_htrans_meat.hpp
 lib/libarmadillo.so
 lib/libarmadillo.so.12
-lib/libarmadillo.so.12.2.0
+lib/libarmadillo.so.12.4.0
 libdata/pkgconfig/armadillo.pc
 share/Armadillo/CMake/ArmadilloConfig.cmake
 share/Armadillo/CMake/ArmadilloConfigVersion.cmake

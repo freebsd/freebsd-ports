@@ -1,7 +1,6 @@
 PORTNAME=	frescobaldi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.2
-PORTREVISION=	2
+DISTVERSION=	3.3.0
 CATEGORIES=	print kde python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -16,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-ly>=0:print/py-python-ly@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}python-poppler-qt5>=0:graphics/py-python-poppler-qt5@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qpageview>=0:graphics/py-qpageview@${PY_FLAVOR}
 
-USES=		desktop-file-utils gettext gmake pyqt:5 python:3.5+ qmake qt:5
+USES=		desktop-file-utils gettext gmake pyqt:5 python:3.8+ qmake qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	frescobaldi
 USE_PYQT=	pyqt5 sip webengine

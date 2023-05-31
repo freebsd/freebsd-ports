@@ -1,5 +1,5 @@
 PORTNAME=	lupa
-PORTVERSION=	1.14.1
+PORTVERSION=	2.0
 CATEGORIES=	lang python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,9 +12,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		lua pkgconfig python:3.6+
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent cython distutils unittest
 
-MAKE_ARGS=	--no-bundle
+MAKE_ARGS=	--no-bundle --with-cython --with-lua-checks
+TEST_ARGS=	lupa.tests.test
 
 post-patch:
 # Clean up bundled libraries
@@ -22,8 +23,5 @@ post-patch:
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
-
-do-test:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py test
 
 .include <bsd.port.mk>

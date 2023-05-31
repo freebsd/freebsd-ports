@@ -1,7 +1,7 @@
 diff -r ac779115ed6e README
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/README	Fri Mar 31 00:04:13 2023 -0400
-@@ -0,0 +1,389 @@
++++ b/README	Thu May 11 11:48:37 2023 -0400
+@@ -0,0 +1,386 @@
 +Experimental QUIC support for nginx
 +-----------------------------------
 +
@@ -123,10 +123,6 @@ diff -r ac779115ed6e README
 +
 +        ssl_early_data on;
 +
-+    Make sure that TLS 1.3 is configured which is required for QUIC:
-+
-+        ssl_protocols TLSv1.3;
-+
 +    To enable GSO (Generic Segmentation Offloading):
 +
 +        quic_gso on;
@@ -139,6 +135,8 @@ diff -r ac779115ed6e README
 +
 +        quic_host_key <filename>;
 +
++    QUIC requires TLSv1.3 protocol, which is enabled by the default
++    by "ssl_protocols" directive.
 +
 +    By default, GSO Linux-specific optimization [10] is disabled.
 +    Enable it in case a corresponding network interface is configured to
@@ -179,7 +177,6 @@ diff -r ac779115ed6e README
 +
 +            ssl_certificate     certs/example.com.crt;
 +            ssl_certificate_key certs/example.com.key;
-+            ssl_protocols       TLSv1.3;
 +
 +            location / {
 +                # required for browsers to direct them into quic port
@@ -393,7 +390,7 @@ diff -r ac779115ed6e README
 +    [10] http://vger.kernel.org/lpc_net2018_talks/willemdebruijn-lpc2018-udpgso-paper-DRAFT-1.pdf
 diff -r ac779115ed6e auto/lib/openssl/conf
 --- a/auto/lib/openssl/conf	Tue Mar 28 18:01:53 2023 +0300
-+++ b/auto/lib/openssl/conf	Fri Mar 31 00:04:13 2023 -0400
++++ b/auto/lib/openssl/conf	Thu May 11 11:48:37 2023 -0400
 @@ -5,12 +5,17 @@
  
  if [ $OPENSSL != NONE ]; then
@@ -463,7 +460,7 @@ diff -r ac779115ed6e auto/lib/openssl/conf
  
 diff -r ac779115ed6e auto/make
 --- a/auto/make	Tue Mar 28 18:01:53 2023 +0300
-+++ b/auto/make	Fri Mar 31 00:04:13 2023 -0400
++++ b/auto/make	Thu May 11 11:48:37 2023 -0400
 @@ -6,9 +6,10 @@
  echo "creating $NGX_MAKEFILE"
  
@@ -479,7 +476,7 @@ diff -r ac779115ed6e auto/make
           $NGX_OBJS/src/misc
 diff -r ac779115ed6e auto/modules
 --- a/auto/modules	Tue Mar 28 18:01:53 2023 +0300
-+++ b/auto/modules	Fri Mar 31 00:04:13 2023 -0400
++++ b/auto/modules	Thu May 11 11:48:37 2023 -0400
 @@ -102,7 +102,7 @@ if [ $HTTP = YES ]; then
      fi
  
@@ -644,7 +641,7 @@ diff -r ac779115ed6e auto/modules
      ngx_module_name=ngx_regex_module
 diff -r ac779115ed6e auto/options
 --- a/auto/options	Tue Mar 28 18:01:53 2023 +0300
-+++ b/auto/options	Fri Mar 31 00:04:13 2023 -0400
++++ b/auto/options	Thu May 11 11:48:37 2023 -0400
 @@ -45,6 +45,8 @@ USE_THREADS=NO
  
  NGX_FILE_AIO=NO
@@ -734,7 +731,7 @@ diff -r ac779115ed6e auto/options
    --with-stream_geoip_module=dynamic enable dynamic ngx_stream_geoip_module
 diff -r ac779115ed6e auto/os/linux
 --- a/auto/os/linux	Tue Mar 28 18:01:53 2023 +0300
-+++ b/auto/os/linux	Fri Mar 31 00:04:13 2023 -0400
++++ b/auto/os/linux	Thu May 11 11:48:37 2023 -0400
 @@ -232,6 +232,50 @@ ngx_feature_test="struct crypt_data  cd;
  ngx_include="sys/vfs.h";     . auto/include
  
@@ -788,7 +785,7 @@ diff -r ac779115ed6e auto/os/linux
  ngx_feature="UDP_SEGMENT"
 diff -r ac779115ed6e auto/sources
 --- a/auto/sources	Tue Mar 28 18:01:53 2023 +0300
-+++ b/auto/sources	Fri Mar 31 00:04:13 2023 -0400
++++ b/auto/sources	Thu May 11 11:48:37 2023 -0400
 @@ -83,7 +83,7 @@ CORE_SRCS="src/core/nginx.c \
  
  EVENT_MODULES="ngx_events_module ngx_event_core_module"
@@ -798,9 +795,67 @@ diff -r ac779115ed6e auto/sources
  
  EVENT_DEPS="src/event/ngx_event.h \
              src/event/ngx_event_timer.h \
+diff -r ac779115ed6e auto/unix
+--- a/auto/unix	Tue Mar 28 18:01:53 2023 +0300
++++ b/auto/unix	Thu May 11 11:48:37 2023 -0400
+@@ -448,6 +448,54 @@ ngx_feature_test="setsockopt(0, IPPROTO_
+ . auto/feature
+ 
+ 
++# IP packet fragmentation
++
++ngx_feature="IP_MTU_DISCOVER"
++ngx_feature_name="NGX_HAVE_IP_MTU_DISCOVER"
++ngx_feature_run=no
++ngx_feature_incs="#include <sys/socket.h>
++                  #include <netinet/in.h>"
++ngx_feature_path=
++ngx_feature_libs=
++ngx_feature_test="(void) IP_PMTUDISC_DO;
++                  setsockopt(0, IPPROTO_IP, IP_MTU_DISCOVER, NULL, 0)"
++. auto/feature
++
++
++ngx_feature="IPV6_MTU_DISCOVER"
++ngx_feature_name="NGX_HAVE_IPV6_MTU_DISCOVER"
++ngx_feature_run=no
++ngx_feature_incs="#include <sys/socket.h>
++                  #include <netinet/in.h>"
++ngx_feature_path=
++ngx_feature_libs=
++ngx_feature_test="(void) IPV6_PMTUDISC_DO;
++                  setsockopt(0, IPPROTO_IPV6, IPV6_MTU_DISCOVER, NULL, 0)"
++. auto/feature
++
++
++ngx_feature="IP_DONTFRAG"
++ngx_feature_name="NGX_HAVE_IP_DONTFRAG"
++ngx_feature_run=no
++ngx_feature_incs="#include <sys/socket.h>
++                  #include <netinet/in.h>"
++ngx_feature_path=
++ngx_feature_libs=
++ngx_feature_test="setsockopt(0, IPPROTO_IP, IP_DONTFRAG, NULL, 0)"
++. auto/feature
++
++
++ngx_feature="IPV6_DONTFRAG"
++ngx_feature_name="NGX_HAVE_IPV6_DONTFRAG"
++ngx_feature_run=no
++ngx_feature_incs="#include <sys/socket.h>
++                  #include <netinet/in.h>"
++ngx_feature_path=
++ngx_feature_libs=
++ngx_feature_test="setsockopt(0, IPPROTO_IP, IPV6_DONTFRAG, NULL, 0)"
++. auto/feature
++
++
+ ngx_feature="TCP_DEFER_ACCEPT"
+ ngx_feature_name="NGX_HAVE_DEFERRED_ACCEPT"
+ ngx_feature_run=no
 diff -r ac779115ed6e src/core/nginx.c
 --- a/src/core/nginx.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/core/nginx.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/core/nginx.c	Thu May 11 11:48:37 2023 -0400
 @@ -680,6 +680,9 @@ ngx_exec_new_binary(ngx_cycle_t *cycle, 
  
      ls = cycle->listening.elts;
@@ -813,7 +868,7 @@ diff -r ac779115ed6e src/core/nginx.c
  
 diff -r ac779115ed6e src/core/ngx_bpf.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/core/ngx_bpf.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/core/ngx_bpf.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,143 @@
 +
 +/*
@@ -960,7 +1015,7 @@ diff -r ac779115ed6e src/core/ngx_bpf.c
 +}
 diff -r ac779115ed6e src/core/ngx_bpf.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/core/ngx_bpf.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/core/ngx_bpf.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,43 @@
 +
 +/*
@@ -1007,7 +1062,7 @@ diff -r ac779115ed6e src/core/ngx_bpf.h
 +#endif /* _NGX_BPF_H_INCLUDED_ */
 diff -r ac779115ed6e src/core/ngx_connection.c
 --- a/src/core/ngx_connection.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/core/ngx_connection.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/core/ngx_connection.c	Thu May 11 11:48:37 2023 -0400
 @@ -72,10 +72,6 @@ ngx_create_listening(ngx_conf_t *cf, str
  
      ngx_memcpy(ls->addr_text.data, text, len);
@@ -1019,7 +1074,86 @@ diff -r ac779115ed6e src/core/ngx_connection.c
      ls->fd = (ngx_socket_t) -1;
      ls->type = SOCK_STREAM;
  
-@@ -1037,6 +1033,12 @@ ngx_close_listening_sockets(ngx_cycle_t 
+@@ -1014,6 +1010,78 @@ ngx_configure_listening_sockets(ngx_cycl
+         }
+ 
+ #endif
++
++#if (NGX_HAVE_IP_MTU_DISCOVER)
++
++        if (ls[i].quic && ls[i].sockaddr->sa_family == AF_INET) {
++            value = IP_PMTUDISC_DO;
++
++            if (setsockopt(ls[i].fd, IPPROTO_IP, IP_MTU_DISCOVER,
++                           (const void *) &value, sizeof(int))
++                == -1)
++            {
++                ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_socket_errno,
++                              "setsockopt(IP_MTU_DISCOVER) "
++                              "for %V failed, ignored",
++                              &ls[i].addr_text);
++            }
++        }
++
++#elif (NGX_HAVE_IP_DONTFRAG)
++
++        if (ls[i].quic && ls[i].sockaddr->sa_family == AF_INET) {
++            value = 1;
++
++            if (setsockopt(ls[i].fd, IPPROTO_IP, IP_DONTFRAG,
++                           (const void *) &value, sizeof(int))
++                == -1)
++            {
++                ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_socket_errno,
++                              "setsockopt(IP_DONTFRAG) "
++                              "for %V failed, ignored",
++                              &ls[i].addr_text);
++            }
++        }
++
++#endif
++
++#if (NGX_HAVE_INET6)
++
++#if (NGX_HAVE_IPV6_MTU_DISCOVER)
++
++        if (ls[i].quic && ls[i].sockaddr->sa_family == AF_INET6) {
++            value = IPV6_PMTUDISC_DO;
++
++            if (setsockopt(ls[i].fd, IPPROTO_IPV6, IPV6_MTU_DISCOVER,
++                           (const void *) &value, sizeof(int))
++                == -1)
++            {
++                ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_socket_errno,
++                              "setsockopt(IPV6_MTU_DISCOVER) "
++                              "for %V failed, ignored",
++                              &ls[i].addr_text);
++            }
++        }
++
++#elif (NGX_HAVE_IP_DONTFRAG)
++
++        if (ls[i].quic && ls[i].sockaddr->sa_family == AF_INET6) {
++            value = 1;
++
++            if (setsockopt(ls[i].fd, IPPROTO_IPV6, IPV6_DONTFRAG,
++                           (const void *) &value, sizeof(int))
++                == -1)
++            {
++                ngx_log_error(NGX_LOG_ALERT, cycle->log, ngx_socket_errno,
++                              "setsockopt(IPV6_DONTFRAG) "
++                              "for %V failed, ignored",
++                              &ls[i].addr_text);
++            }
++        }
++
++#endif
++
++#endif
+     }
+ 
+     return;
+@@ -1037,6 +1105,12 @@ ngx_close_listening_sockets(ngx_cycle_t 
      ls = cycle->listening.elts;
      for (i = 0; i < cycle->listening.nelts; i++) {
  
@@ -1034,7 +1168,7 @@ diff -r ac779115ed6e src/core/ngx_connection.c
          if (c) {
 diff -r ac779115ed6e src/core/ngx_connection.h
 --- a/src/core/ngx_connection.h	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/core/ngx_connection.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/core/ngx_connection.h	Thu May 11 11:48:37 2023 -0400
 @@ -73,6 +73,7 @@ struct ngx_listening_s {
      unsigned            reuseport:1;
      unsigned            add_reuseport:1;
@@ -1056,7 +1190,7 @@ diff -r ac779115ed6e src/core/ngx_connection.h
  #endif
 diff -r ac779115ed6e src/core/ngx_core.h
 --- a/src/core/ngx_core.h	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/core/ngx_core.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/core/ngx_core.h	Thu May 11 11:48:37 2023 -0400
 @@ -27,6 +27,7 @@ typedef struct ngx_connection_s      ngx
  typedef struct ngx_thread_task_s     ngx_thread_task_t;
  typedef struct ngx_ssl_s             ngx_ssl_t;
@@ -1087,7 +1221,7 @@ diff -r ac779115ed6e src/core/ngx_core.h
  #define LF     (u_char) '\n'
 diff -r ac779115ed6e src/event/ngx_event.c
 --- a/src/event/ngx_event.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/event/ngx_event.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/ngx_event.c	Thu May 11 11:48:37 2023 -0400
 @@ -267,6 +267,18 @@ ngx_process_events_and_timers(ngx_cycle_
  ngx_int_t
  ngx_handle_read_event(ngx_event_t *rev, ngx_uint_t flags)
@@ -1146,7 +1280,7 @@ diff -r ac779115ed6e src/event/ngx_event.c
  
 diff -r ac779115ed6e src/event/ngx_event_openssl.c
 --- a/src/event/ngx_event_openssl.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/event/ngx_event_openssl.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/ngx_event_openssl.c	Thu May 11 11:48:37 2023 -0400
 @@ -33,9 +33,6 @@ static int ngx_ssl_new_client_session(ng
  #ifdef SSL_READ_EARLY_DATA_SUCCESS
  static ngx_int_t ngx_ssl_try_early_data(ngx_connection_t *c);
@@ -1182,7 +1316,7 @@ diff -r ac779115ed6e src/event/ngx_event_openssl.c
      ngx_ssl_ocsp_cleanup(c);
 diff -r ac779115ed6e src/event/ngx_event_openssl.h
 --- a/src/event/ngx_event_openssl.h	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/event/ngx_event_openssl.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/ngx_event_openssl.h	Thu May 11 11:48:37 2023 -0400
 @@ -24,6 +24,14 @@
  #include <openssl/engine.h>
  #endif
@@ -1210,7 +1344,7 @@ diff -r ac779115ed6e src/event/ngx_event_openssl.h
  ssize_t ngx_ssl_recv_chain(ngx_connection_t *c, ngx_chain_t *cl, off_t limit);
 diff -r ac779115ed6e src/event/ngx_event_udp.c
 --- a/src/event/ngx_event_udp.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/event/ngx_event_udp.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/ngx_event_udp.c	Thu May 11 11:48:37 2023 -0400
 @@ -12,13 +12,6 @@
  
  #if !(NGX_WIN32)
@@ -1227,7 +1361,7 @@ diff -r ac779115ed6e src/event/ngx_event_udp.c
      size_t size);
 diff -r ac779115ed6e src/event/ngx_event_udp.h
 --- a/src/event/ngx_event_udp.h	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/event/ngx_event_udp.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/ngx_event_udp.h	Thu May 11 11:48:37 2023 -0400
 @@ -23,6 +23,13 @@
  #endif
  
@@ -1244,7 +1378,7 @@ diff -r ac779115ed6e src/event/ngx_event_udp.h
  typedef union {
 diff -r ac779115ed6e src/event/quic/bpf/bpfgen.sh
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/bpfgen.sh	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/bpf/bpfgen.sh	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,113 @@
 +#!/bin/bash
 +
@@ -1361,7 +1495,7 @@ diff -r ac779115ed6e src/event/quic/bpf/bpfgen.sh
 +
 diff -r ac779115ed6e src/event/quic/bpf/makefile
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/makefile	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/bpf/makefile	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,30 @@
 +CFLAGS=-O2 -Wall
 +
@@ -1395,7 +1529,7 @@ diff -r ac779115ed6e src/event/quic/bpf/makefile
 +.DELETE_ON_ERROR:
 diff -r ac779115ed6e src/event/quic/bpf/ngx_quic_reuseport_helper.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/bpf/ngx_quic_reuseport_helper.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/bpf/ngx_quic_reuseport_helper.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,140 @@
 +#include <errno.h>
 +#include <linux/string.h>
@@ -1539,8 +1673,8 @@ diff -r ac779115ed6e src/event/quic/bpf/ngx_quic_reuseport_helper.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic.c	Fri Mar 31 00:04:13 2023 -0400
-@@ -0,0 +1,1444 @@
++++ b/src/event/quic/ngx_event_quic.c	Thu May 11 11:48:37 2023 -0400
+@@ -0,0 +1,1445 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -2025,6 +2159,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic.c
 +
 +        /* drop packets from retransmit queues, no ack is expected */
 +        for (i = 0; i < NGX_QUIC_SEND_CTX_LAST; i++) {
++            ngx_quic_free_frames(c, &qc->send_ctx[i].frames);
 +            ngx_quic_free_frames(c, &qc->send_ctx[i].sent);
 +        }
 +
@@ -2987,7 +3122,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,131 @@
 +
 +/*
@@ -3122,8 +3257,8 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic.h
 +#endif /* _NGX_EVENT_QUIC_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_ack.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ack.c	Fri Mar 31 00:04:13 2023 -0400
-@@ -0,0 +1,1194 @@
++++ b/src/event/quic/ngx_event_quic_ack.c	Thu May 11 11:48:37 2023 -0400
+@@ -0,0 +1,1192 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -3862,7 +3997,8 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_ack.c
 +
 +        q = ngx_queue_last(&ctx->sent);
 +        f = ngx_queue_data(q, ngx_quic_frame_t, queue);
-+        w = (ngx_msec_int_t) (f->last + ngx_quic_pto(c, ctx) - now);
++        w = (ngx_msec_int_t) (f->last + (ngx_quic_pto(c, ctx) << qc->pto_count)
++                              - now);
 +
 +        if (w < 0) {
 +            w = 0;
@@ -3908,17 +4044,12 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_ack.c
 +    qc = ngx_quic_get_connection(c);
 +
 +    /* RFC 9002, Appendix A.8.  Setting the Loss Detection Timer */
++
 +    duration = qc->avg_rtt;
-+
 +    duration += ngx_max(4 * qc->rttvar, NGX_QUIC_TIME_GRANULARITY);
-+    duration <<= qc->pto_count;
-+
-+    if (qc->congestion.in_flight == 0) { /* no in-flight packets */
-+        return duration;
-+    }
 +
 +    if (ctx->level == ssl_encryption_application && c->ssl->handshaked) {
-+        duration += qc->ctp.max_ack_delay << qc->pto_count;
++        duration += qc->ctp.max_ack_delay;
 +    }
 +
 +    return duration;
@@ -3976,7 +4107,9 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_ack.c
 +            continue;
 +        }
 +
-+        if ((ngx_msec_int_t) (f->last + ngx_quic_pto(c, ctx) - now) > 0) {
++        if ((ngx_msec_int_t) (f->last + (ngx_quic_pto(c, ctx) << qc->pto_count)
++                              - now) > 0)
++        {
 +            continue;
 +        }
 +
@@ -4320,7 +4453,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_ack.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_ack.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ack.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_ack.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,30 @@
 +
 +/*
@@ -4354,7 +4487,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_ack.h
 +#endif /* _NGX_EVENT_QUIC_ACK_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_bpf.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_bpf.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_bpf.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,657 @@
 +
 +/*
@@ -5015,7 +5148,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_bpf.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_bpf_code.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_bpf_code.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_bpf_code.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,88 @@
 +/* AUTO-GENERATED, DO NOT EDIT. */
 +
@@ -5107,7 +5240,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_bpf_code.c
 +};
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_connection.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connection.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_connection.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,283 @@
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -5394,7 +5527,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_connection.h
 +#endif /* _NGX_EVENT_QUIC_CONNECTION_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_connid.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connid.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_connid.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,502 @@
 +
 +/*
@@ -5900,7 +6033,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_connid.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_connid.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_connid.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_connid.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,29 @@
 +
 +/*
@@ -5933,8 +6066,8 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_connid.h
 +#endif /* _NGX_EVENT_QUIC_CONNID_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_frames.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_frames.c	Fri Mar 31 00:04:13 2023 -0400
-@@ -0,0 +1,891 @@
++++ b/src/event/quic/ngx_event_quic_frames.c	Thu May 11 11:48:37 2023 -0400
+@@ -0,0 +1,894 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -6256,6 +6389,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_frames.c
 +ngx_quic_split_frame(ngx_connection_t *c, ngx_quic_frame_t *f, size_t len)
 +{
 +    size_t                     shrink;
++    ngx_chain_t               *out;
 +    ngx_quic_frame_t          *nf;
 +    ngx_quic_buffer_t          qb;
 +    ngx_quic_ordered_frame_t  *of, *onf;
@@ -6296,10 +6430,12 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_frames.c
 +    ngx_memzero(&qb, sizeof(ngx_quic_buffer_t));
 +    qb.chain = f->data;
 +
-+    f->data = ngx_quic_read_buffer(c, &qb, of->length);
-+    if (f->data == NGX_CHAIN_ERROR) {
++    out = ngx_quic_read_buffer(c, &qb, of->length);
++    if (out == NGX_CHAIN_ERROR) {
 +        return NGX_ERROR;
 +    }
++
++    f->data = out;
 +
 +    nf = ngx_quic_alloc_frame(c);
 +    if (nf == NULL) {
@@ -6828,7 +6964,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_frames.c
 +#endif
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_frames.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_frames.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_frames.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,45 @@
 +
 +/*
@@ -6877,8 +7013,8 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_frames.h
 +#endif /* _NGX_EVENT_QUIC_FRAMES_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_migration.c	Fri Mar 31 00:04:13 2023 -0400
-@@ -0,0 +1,671 @@
++++ b/src/event/quic/ngx_event_quic_migration.c	Thu May 11 11:48:37 2023 -0400
+@@ -0,0 +1,714 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -6897,6 +7033,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.c
 +    ngx_quic_path_t *path);
 +static ngx_int_t ngx_quic_send_path_challenge(ngx_connection_t *c,
 +    ngx_quic_path_t *path);
++static void ngx_quic_set_path_timer(ngx_connection_t *c);
 +static ngx_quic_path_t *ngx_quic_get_path(ngx_connection_t *c, ngx_uint_t tag);
 +
 +
@@ -7049,6 +7186,8 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.c
 +    path->validated = 1;
 +    path->validating = 0;
 +    path->limited = 0;
++
++    ngx_quic_set_path_timer(c);
 +
 +    return NGX_OK;
 +}
@@ -7377,6 +7516,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.c
 +                   "quic initiated validation of path seq:%uL", path->seqnum);
 +
 +    path->validating = 1;
++    path->tries = 0;
 +
 +    if (RAND_bytes(path->challenge1, 8) != 1) {
 +        return NGX_ERROR;
@@ -7391,14 +7531,11 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.c
 +    }
 +
 +    ctx = ngx_quic_get_send_ctx(qc, ssl_encryption_application);
-+    pto = ngx_quic_pto(c, ctx);
++    pto = ngx_max(ngx_quic_pto(c, ctx), 1000);
 +
 +    path->expires = ngx_current_msec + pto;
-+    path->tries = NGX_QUIC_PATH_RETRIES;
 +
-+    if (!qc->path_validation.timer_set) {
-+        ngx_add_timer(&qc->path_validation, pto);
-+    }
++    ngx_quic_set_path_timer(c);
 +
 +    return NGX_OK;
 +}
@@ -7444,6 +7581,47 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.c
 +}
 +
 +
++static void
++ngx_quic_set_path_timer(ngx_connection_t *c)
++{
++    ngx_msec_t              now;
++    ngx_queue_t            *q;
++    ngx_msec_int_t          left, next;
++    ngx_quic_path_t        *path;
++    ngx_quic_connection_t  *qc;
++
++    qc = ngx_quic_get_connection(c);
++
++    now = ngx_current_msec;
++    next = -1;
++
++    for (q = ngx_queue_head(&qc->paths);
++         q != ngx_queue_sentinel(&qc->paths);
++         q = ngx_queue_next(q))
++    {
++        path = ngx_queue_data(q, ngx_quic_path_t, queue);
++
++        if (!path->validating) {
++            continue;
++        }
++
++        left = path->expires - now;
++        left = ngx_max(left, 1);
++
++        if (next == -1 || left < next) {
++            next = left;
++        }
++    }
++
++    if (next != -1) {
++        ngx_add_timer(&qc->path_validation, next);
++
++    } else if (qc->path_validation.timer_set) {
++        ngx_del_timer(&qc->path_validation);
++    }
++}
++
++
 +void
 +ngx_quic_path_validation_handler(ngx_event_t *ev)
 +{
@@ -7459,7 +7637,6 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.c
 +    qc = ngx_quic_get_connection(c);
 +
 +    ctx = ngx_quic_get_send_ctx(qc, ssl_encryption_application);
-+    pto = ngx_quic_pto(c, ctx);
 +
 +    next = -1;
 +    now = ngx_current_msec;
@@ -7486,7 +7663,9 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.c
 +            continue;
 +        }
 +
-+        if (--path->tries) {
++        if (++path->tries < NGX_QUIC_PATH_RETRIES) {
++            pto = ngx_max(ngx_quic_pto(c, ctx), 1000) << path->tries;
++
 +            path->expires = ngx_current_msec + pto;
 +
 +            if (next == -1 || pto < next) {
@@ -7552,7 +7731,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_migration.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_migration.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,42 @@
 +
 +/*
@@ -7598,7 +7777,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_migration.h
 +#endif /* _NGX_EVENT_QUIC_MIGRATION_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_openssl_compat.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_openssl_compat.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_openssl_compat.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,646 @@
 +
 +/*
@@ -8248,7 +8427,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_openssl_compat.c
 +#endif /* NGX_QUIC_OPENSSL_COMPAT */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_openssl_compat.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_openssl_compat.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_openssl_compat.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,60 @@
 +
 +/*
@@ -8312,8 +8491,8 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_openssl_compat.h
 +#endif /* _NGX_EVENT_QUIC_OPENSSL_COMPAT_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_output.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_output.c	Fri Mar 31 00:04:13 2023 -0400
-@@ -0,0 +1,1298 @@
++++ b/src/event/quic/ngx_event_quic_output.c	Thu May 11 11:48:37 2023 -0400
+@@ -0,0 +1,1293 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -9198,7 +9377,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_output.c
 +ngx_int_t
 +ngx_quic_send_cc(ngx_connection_t *c)
 +{
-+    ngx_quic_frame_t       *frame;
++    ngx_quic_frame_t        frame;
 +    ngx_quic_connection_t  *qc;
 +
 +    qc = ngx_quic_get_connection(c);
@@ -9214,27 +9393,22 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_output.c
 +        return NGX_OK;
 +    }
 +
-+    frame = ngx_quic_alloc_frame(c);
-+    if (frame == NULL) {
-+        return NGX_ERROR;
-+    }
++    ngx_memzero(&frame, sizeof(ngx_quic_frame_t));
 +
-+    frame->level = qc->error_level;
-+    frame->type = qc->error_app ? NGX_QUIC_FT_CONNECTION_CLOSE_APP
-+                                : NGX_QUIC_FT_CONNECTION_CLOSE;
-+    frame->u.close.error_code = qc->error;
-+    frame->u.close.frame_type = qc->error_ftype;
++    frame.level = qc->error_level;
++    frame.type = qc->error_app ? NGX_QUIC_FT_CONNECTION_CLOSE_APP
++                               : NGX_QUIC_FT_CONNECTION_CLOSE;
++    frame.u.close.error_code = qc->error;
++    frame.u.close.frame_type = qc->error_ftype;
 +
 +    if (qc->error_reason) {
-+        frame->u.close.reason.len = ngx_strlen(qc->error_reason);
-+        frame->u.close.reason.data = (u_char *) qc->error_reason;
++        frame.u.close.reason.len = ngx_strlen(qc->error_reason);
++        frame.u.close.reason.data = (u_char *) qc->error_reason;
 +    }
-+
-+    ngx_quic_queue_frame(qc, frame);
 +
 +    qc->last_cc = ngx_current_msec;
 +
-+    return ngx_quic_output(c);
++    return ngx_quic_frame_sendto(c, &frame, 0, qc->path);
 +}
 +
 +
@@ -9544,7 +9718,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_output.c
 +    static u_char           dst[NGX_QUIC_MAX_UDP_PAYLOAD_SIZE];
 +
 +    qc = ngx_quic_get_connection(c);
-+    ctx = ngx_quic_get_send_ctx(qc, ssl_encryption_application);
++    ctx = ngx_quic_get_send_ctx(qc, frame->level);
 +
 +    ngx_quic_init_packet(c, ctx, &pkt, path);
 +
@@ -9614,7 +9788,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_output.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_output.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_output.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_output.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,40 @@
 +
 +/*
@@ -9658,7 +9832,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_output.h
 +#endif /* _NGX_EVENT_QUIC_OUTPUT_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_protection.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_protection.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_protection.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,1087 @@
 +
 +/*
@@ -10749,7 +10923,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_protection.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_protection.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_protection.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_protection.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,114 @@
 +
 +/*
@@ -10867,7 +11041,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_protection.h
 +#endif /* _NGX_EVENT_QUIC_PROTECTION_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_socket.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_socket.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_socket.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,237 @@
 +
 +/*
@@ -11108,7 +11282,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_socket.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_socket.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_socket.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_socket.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,28 @@
 +
 +/*
@@ -11140,7 +11314,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_socket.h
 +#endif /* _NGX_EVENT_QUIC_SOCKET_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_ssl.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ssl.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_ssl.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,600 @@
 +
 +/*
@@ -11744,7 +11918,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_ssl.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_ssl.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_ssl.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_ssl.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,19 @@
 +
 +/*
@@ -11767,8 +11941,8 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_ssl.h
 +#endif /* _NGX_EVENT_QUIC_SSL_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_streams.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_streams.c	Fri Mar 31 00:04:13 2023 -0400
-@@ -0,0 +1,1768 @@
++++ b/src/event/quic/ngx_event_quic_streams.c	Thu May 11 11:48:37 2023 -0400
+@@ -0,0 +1,1779 @@
 +
 +/*
 + * Copyright (C) Nginx, Inc.
@@ -12243,6 +12417,17 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_streams.c
 +
 +        if (qc->streams.initialized) {
 +            ngx_post_event(rev, &ngx_posted_events);
++
++            if (qc->push.posted) {
++                /*
++                 * The posted stream can produce output immediately.
++                 * By postponing the push event, we coalesce the stream
++                 * output with queued frames in one UDP datagram.
++                 */
++
++                ngx_delete_posted_event(&qc->push);
++                ngx_post_event(&qc->push, &ngx_posted_events);
++            }
 +        }
 +    }
 +
@@ -13539,7 +13724,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_streams.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_streams.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_streams.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_streams.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,44 @@
 +
 +/*
@@ -13587,7 +13772,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_streams.h
 +#endif /* _NGX_EVENT_QUIC_STREAMS_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_tokens.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_tokens.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_tokens.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,289 @@
 +
 +/*
@@ -13880,7 +14065,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_tokens.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_tokens.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_tokens.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_tokens.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,35 @@
 +
 +/*
@@ -13919,7 +14104,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_tokens.h
 +#endif /* _NGX_EVENT_QUIC_TOKENS_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_transport.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_transport.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_transport.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,2199 @@
 +
 +/*
@@ -16122,7 +16307,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_transport.c
 +}
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_transport.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_transport.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_transport.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,397 @@
 +
 +/*
@@ -16523,7 +16708,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_transport.h
 +#endif /* _NGX_EVENT_QUIC_TRANSPORT_H_INCLUDED_ */
 diff -r ac779115ed6e src/event/quic/ngx_event_quic_udp.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/event/quic/ngx_event_quic_udp.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/event/quic/ngx_event_quic_udp.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,473 @@
 +
 +/*
@@ -17000,7 +17185,7 @@ diff -r ac779115ed6e src/event/quic/ngx_event_quic_udp.c
 +}
 diff -r ac779115ed6e src/http/modules/ngx_http_ssl_module.c
 --- a/src/http/modules/ngx_http_ssl_module.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/http/modules/ngx_http_ssl_module.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/modules/ngx_http_ssl_module.c	Thu May 11 11:48:37 2023 -0400
 @@ -9,6 +9,10 @@
  #include <ngx_core.h>
  #include <ngx_http.h>
@@ -17194,7 +17379,7 @@ diff -r ac779115ed6e src/http/modules/ngx_http_ssl_module.c
 +#endif
 diff -r ac779115ed6e src/http/ngx_http.c
 --- a/src/http/ngx_http.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/http/ngx_http.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/ngx_http.c	Thu May 11 11:48:37 2023 -0400
 @@ -1200,7 +1200,10 @@ ngx_http_add_listen(ngx_conf_t *cf, ngx_
      port = cmcf->ports->elts;
      for (i = 0; i < cmcf->ports->nelts; i++) {
@@ -17300,7 +17485,7 @@ diff -r ac779115ed6e src/http/ngx_http.c
          if (addr[i].hash.buckets == NULL
 diff -r ac779115ed6e src/http/ngx_http.h
 --- a/src/http/ngx_http.h	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/http/ngx_http.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/ngx_http.h	Thu May 11 11:48:37 2023 -0400
 @@ -20,6 +20,8 @@ typedef struct ngx_http_file_cache_s  ng
  typedef struct ngx_http_log_ctx_s     ngx_http_log_ctx_t;
  typedef struct ngx_http_chunked_s     ngx_http_chunked_t;
@@ -17343,7 +17528,7 @@ diff -r ac779115ed6e src/http/ngx_http.h
  size_t ngx_http_huff_encode(u_char *src, size_t len, u_char *dst,
 diff -r ac779115ed6e src/http/ngx_http_core_module.c
 --- a/src/http/ngx_http_core_module.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/http/ngx_http_core_module.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/ngx_http_core_module.c	Thu May 11 11:48:37 2023 -0400
 @@ -3005,6 +3005,7 @@ ngx_http_core_server(ngx_conf_t *cf, ngx
          lsopt.socklen = sizeof(struct sockaddr_in);
  
@@ -17428,7 +17613,7 @@ diff -r ac779115ed6e src/http/ngx_http_core_module.c
          for (i = 0; i < n; i++) {
 diff -r ac779115ed6e src/http/ngx_http_core_module.h
 --- a/src/http/ngx_http_core_module.h	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/http/ngx_http_core_module.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/ngx_http_core_module.h	Thu May 11 11:48:37 2023 -0400
 @@ -75,6 +75,8 @@ typedef struct {
      unsigned                   wildcard:1;
      unsigned                   ssl:1;
@@ -17465,7 +17650,7 @@ diff -r ac779115ed6e src/http/ngx_http_core_module.h
  } ngx_http_conf_port_t;
 diff -r ac779115ed6e src/http/ngx_http_request.c
 --- a/src/http/ngx_http_request.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/http/ngx_http_request.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/ngx_http_request.c	Thu May 11 11:48:37 2023 -0400
 @@ -29,10 +29,6 @@ static ngx_int_t ngx_http_process_connec
  static ngx_int_t ngx_http_process_user_agent(ngx_http_request_t *r,
      ngx_table_elt_t *h, ngx_uint_t offset);
@@ -17605,7 +17790,7 @@ diff -r ac779115ed6e src/http/ngx_http_request.c
  #endif
 diff -r ac779115ed6e src/http/ngx_http_request.h
 --- a/src/http/ngx_http_request.h	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/http/ngx_http_request.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/ngx_http_request.h	Thu May 11 11:48:37 2023 -0400
 @@ -24,6 +24,7 @@
  #define NGX_HTTP_VERSION_10                1000
  #define NGX_HTTP_VERSION_11                1001
@@ -17643,7 +17828,7 @@ diff -r ac779115ed6e src/http/ngx_http_request.h
      unsigned                          done:1;
 diff -r ac779115ed6e src/http/ngx_http_request_body.c
 --- a/src/http/ngx_http_request_body.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/http/ngx_http_request_body.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/ngx_http_request_body.c	Thu May 11 11:48:37 2023 -0400
 @@ -92,6 +92,13 @@ ngx_http_read_client_request_body(ngx_ht
      }
  #endif
@@ -17702,7 +17887,7 @@ diff -r ac779115ed6e src/http/ngx_http_request_body.c
          return NGX_OK;
 diff -r ac779115ed6e src/http/ngx_http_upstream.c
 --- a/src/http/ngx_http_upstream.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/http/ngx_http_upstream.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/ngx_http_upstream.c	Thu May 11 11:48:37 2023 -0400
 @@ -521,6 +521,13 @@ ngx_http_upstream_init(ngx_http_request_
      }
  #endif
@@ -17739,7 +17924,7 @@ diff -r ac779115ed6e src/http/ngx_http_upstream.c
      if (ngx_event_flags & NGX_USE_KQUEUE_EVENT) {
 diff -r ac779115ed6e src/http/ngx_http_write_filter_module.c
 --- a/src/http/ngx_http_write_filter_module.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/http/ngx_http_write_filter_module.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/ngx_http_write_filter_module.c	Thu May 11 11:48:37 2023 -0400
 @@ -240,6 +240,10 @@ ngx_http_write_filter(ngx_http_request_t
              r->out = NULL;
              c->buffered &= ~NGX_HTTP_WRITE_BUFFERED;
@@ -17764,8 +17949,8 @@ diff -r ac779115ed6e src/http/ngx_http_write_filter_module.c
      }
 diff -r ac779115ed6e src/http/v3/ngx_http_v3.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3.c	Fri Mar 31 00:04:13 2023 -0400
-@@ -0,0 +1,116 @@
++++ b/src/http/v3/ngx_http_v3.c	Thu May 11 11:48:37 2023 -0400
+@@ -0,0 +1,113 @@
 +
 +/*
 + * Copyright (C) Roman Arutyunyan
@@ -17827,9 +18012,6 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3.c
 +failed:
 +
 +    ngx_log_error(NGX_LOG_ERR, c->log, 0, "failed to create http3 session");
-+
-+    ngx_http_v3_finalize_connection(c, NGX_HTTP_V3_ERR_INTERNAL_ERROR,
-+                                    "failed to create http3 session");
 +    return NGX_ERROR;
 +}
 +
@@ -17884,7 +18066,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3.c
 +}
 diff -r ac779115ed6e src/http/v3/ngx_http_v3.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,170 @@
 +
 +/*
@@ -18058,7 +18240,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3.h
 +#endif /* _NGX_HTTP_V3_H_INCLUDED_ */
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_encode.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_encode.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_encode.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,304 @@
 +
 +/*
@@ -18366,7 +18548,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_encode.c
 +}
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_encode.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_encode.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_encode.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,34 @@
 +
 +/*
@@ -18404,7 +18586,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_encode.h
 +#endif /* _NGX_HTTP_V3_ENCODE_H_INCLUDED_ */
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_filter_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_filter_module.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_filter_module.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,1536 @@
 +
 +/*
@@ -19944,7 +20126,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_filter_module.c
 +}
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_module.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_module.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,554 @@
 +
 +/*
@@ -20502,7 +20684,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_module.c
 +}
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_parse.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_parse.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_parse.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,2013 @@
 +
 +/*
@@ -22519,7 +22701,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_parse.c
 +}
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_parse.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_parse.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_parse.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,146 @@
 +
 +/*
@@ -22669,7 +22851,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_parse.h
 +#endif /* _NGX_HTTP_V3_PARSE_H_INCLUDED_ */
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_request.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_request.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_request.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,1718 @@
 +
 +/*
@@ -24391,7 +24573,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_request.c
 +}
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_table.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_table.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_table.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,715 @@
 +
 +/*
@@ -25110,7 +25292,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_table.c
 +}
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_table.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_table.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_table.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,58 @@
 +
 +/*
@@ -25172,7 +25354,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_table.h
 +#endif /* _NGX_HTTP_V3_TABLE_H_INCLUDED_ */
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_uni.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_uni.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_uni.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,781 @@
 +
 +/*
@@ -25923,7 +26105,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_uni.c
 +
 +    for (q = ngx_queue_head(&h3c->pushing);
 +         q != ngx_queue_sentinel(&h3c->pushing);
-+         q = ngx_queue_next(&h3c->pushing))
++         q = ngx_queue_next(q))
 +    {
 +        push = (ngx_http_v3_push_t *) q;
 +
@@ -25957,7 +26139,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_uni.c
 +}
 diff -r ac779115ed6e src/http/v3/ngx_http_v3_uni.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/http/v3/ngx_http_v3_uni.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/http/v3/ngx_http_v3_uni.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,38 @@
 +
 +/*
@@ -25999,7 +26181,7 @@ diff -r ac779115ed6e src/http/v3/ngx_http_v3_uni.h
 +#endif /* _NGX_HTTP_V3_UNI_H_INCLUDED_ */
 diff -r ac779115ed6e src/os/unix/ngx_socket.h
 --- a/src/os/unix/ngx_socket.h	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/os/unix/ngx_socket.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/os/unix/ngx_socket.h	Thu May 11 11:48:37 2023 -0400
 @@ -13,6 +13,8 @@
  
  
@@ -26011,7 +26193,7 @@ diff -r ac779115ed6e src/os/unix/ngx_socket.h
  
 diff -r ac779115ed6e src/os/win32/ngx_socket.h
 --- a/src/os/win32/ngx_socket.h	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/os/win32/ngx_socket.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/os/win32/ngx_socket.h	Thu May 11 11:48:37 2023 -0400
 @@ -14,6 +14,8 @@
  
  
@@ -26023,7 +26205,7 @@ diff -r ac779115ed6e src/os/win32/ngx_socket.h
  typedef SOCKET  ngx_socket_t;
 diff -r ac779115ed6e src/stream/ngx_stream.c
 --- a/src/stream/ngx_stream.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/stream/ngx_stream.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/stream/ngx_stream.c	Thu May 11 11:48:37 2023 -0400
 @@ -518,6 +518,24 @@ ngx_stream_optimize_servers(ngx_conf_t *
              ls->reuseport = addr[i].opt.reuseport;
  #endif
@@ -26071,7 +26253,7 @@ diff -r ac779115ed6e src/stream/ngx_stream.c
      }
 diff -r ac779115ed6e src/stream/ngx_stream.h
 --- a/src/stream/ngx_stream.h	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/stream/ngx_stream.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/stream/ngx_stream.h	Thu May 11 11:48:37 2023 -0400
 @@ -16,6 +16,10 @@
  #include <ngx_stream_ssl_module.h>
  #endif
@@ -26101,7 +26283,7 @@ diff -r ac779115ed6e src/stream/ngx_stream.h
  
 diff -r ac779115ed6e src/stream/ngx_stream_core_module.c
 --- a/src/stream/ngx_stream_core_module.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/stream/ngx_stream_core_module.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/stream/ngx_stream_core_module.c	Thu May 11 11:48:37 2023 -0400
 @@ -760,6 +760,29 @@ ngx_stream_core_listen(ngx_conf_t *cf, n
  #endif
          }
@@ -26147,7 +26329,7 @@ diff -r ac779115ed6e src/stream/ngx_stream_core_module.c
          }
 diff -r ac779115ed6e src/stream/ngx_stream_handler.c
 --- a/src/stream/ngx_stream_handler.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/stream/ngx_stream_handler.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/stream/ngx_stream_handler.c	Thu May 11 11:48:37 2023 -0400
 @@ -129,6 +129,10 @@ ngx_stream_init_connection(ngx_connectio
      s->ssl = addr_conf->ssl;
  #endif
@@ -26183,7 +26365,7 @@ diff -r ac779115ed6e src/stream/ngx_stream_handler.c
  
 diff -r ac779115ed6e src/stream/ngx_stream_proxy_module.c
 --- a/src/stream/ngx_stream_proxy_module.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/stream/ngx_stream_proxy_module.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/stream/ngx_stream_proxy_module.c	Thu May 11 11:48:37 2023 -0400
 @@ -1772,6 +1772,21 @@ ngx_stream_proxy_process(ngx_stream_sess
          if (dst->type == SOCK_STREAM && pscf->half_close
              && src->read->eof && !u->half_closed && !dst->buffered)
@@ -26208,7 +26390,7 @@ diff -r ac779115ed6e src/stream/ngx_stream_proxy_module.c
                                       ngx_shutdown_socket_n " failed");
 diff -r ac779115ed6e src/stream/ngx_stream_quic_module.c
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/stream/ngx_stream_quic_module.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/stream/ngx_stream_quic_module.c	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,377 @@
 +
 +/*
@@ -26589,7 +26771,7 @@ diff -r ac779115ed6e src/stream/ngx_stream_quic_module.c
 +}
 diff -r ac779115ed6e src/stream/ngx_stream_quic_module.h
 --- /dev/null	Thu Jan 01 00:00:00 1970 +0000
-+++ b/src/stream/ngx_stream_quic_module.h	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/stream/ngx_stream_quic_module.h	Thu May 11 11:48:37 2023 -0400
 @@ -0,0 +1,20 @@
 +
 +/*
@@ -26613,7 +26795,7 @@ diff -r ac779115ed6e src/stream/ngx_stream_quic_module.h
 +#endif /* _NGX_STREAM_QUIC_H_INCLUDED_ */
 diff -r ac779115ed6e src/stream/ngx_stream_ssl_module.c
 --- a/src/stream/ngx_stream_ssl_module.c	Tue Mar 28 18:01:53 2023 +0300
-+++ b/src/stream/ngx_stream_ssl_module.c	Fri Mar 31 00:04:13 2023 -0400
++++ b/src/stream/ngx_stream_ssl_module.c	Thu May 11 11:48:37 2023 -0400
 @@ -9,6 +9,10 @@
  #include <ngx_core.h>
  #include <ngx_stream.h>
@@ -26666,3 +26848,20 @@ diff -r ac779115ed6e src/stream/ngx_stream_ssl_module.c
 +
      return NGX_OK;
  }
+diff -r ac779115ed6e src/stream/ngx_stream_write_filter_module.c
+--- a/src/stream/ngx_stream_write_filter_module.c	Tue Mar 28 18:01:53 2023 +0300
++++ b/src/stream/ngx_stream_write_filter_module.c	Thu May 11 11:48:37 2023 -0400
+@@ -277,7 +277,12 @@ ngx_stream_write_filter(ngx_stream_sessi
+     *out = chain;
+ 
+     if (chain) {
+-        if (c->shared) {
++        if (c->shared
++#if (NGX_STREAM_QUIC)
++            && c->quic == NULL
++#endif
++           )
++        {
+             ngx_log_error(NGX_LOG_ALERT, c->log, 0,
+                           "shared connection is busy");
+             return NGX_ERROR;

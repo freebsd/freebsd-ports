@@ -1,6 +1,6 @@
 PORTNAME=	chezmoi
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.33.1
+DISTVERSION=	2.33.6
 CATEGORIES=	sysutils
 EXTRACT_ONLY=	${_DISTFILES:N*.js}
 
@@ -19,16 +19,18 @@ GH_ACCOUNT=	twpayne
 
 GH_TUPLE=	FiloSottile:age:v1.1.1:filosottile_age/vendor/filippo.io/age \
 		Masterminds:goutils:v1.1.1:masterminds_goutils/vendor/github.com/Masterminds/goutils \
-		Masterminds:semver:v3.2.0:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
+		Masterminds:semver:v3.2.1:masterminds_semver_v3/vendor/github.com/Masterminds/semver/v3 \
 		Masterminds:sprig:v3.2.3:masterminds_sprig_v3/vendor/github.com/Masterminds/sprig/v3 \
-		Microsoft:go-winio:v0.6.0:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
-		ProtonMail:go-crypto:d34776aa93ec:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
-		Shopify:ejson:v1.3.3:shopify_ejson/vendor/github.com/Shopify/ejson \
+		Microsoft:go-winio:v0.6.1:microsoft_go_winio/vendor/github.com/Microsoft/go-winio \
+		ProtonMail:go-crypto:58e86b294756:protonmail_go_crypto/vendor/github.com/ProtonMail/go-crypto \
+		Shopify:ejson:v1.4.0:shopify_ejson/vendor/github.com/Shopify/ejson \
 		acomagu:bufpipe:v1.0.4:acomagu_bufpipe/vendor/github.com/acomagu/bufpipe \
+		alecthomas:assert:v2.2.2:alecthomas_assert_v2/vendor/github.com/alecthomas/assert/v2 \
 		alecthomas:chroma:v0.10.0:alecthomas_chroma/vendor/github.com/alecthomas/chroma \
+		alecthomas:repr:v0.2.0:alecthomas_repr/vendor/github.com/alecthomas/repr \
 		alessio:shellescape:v1.4.1:alessio_shellescape/vendor/github.com/alessio/shellescape \
 		atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clipboard \
-		aws:aws-sdk-go-v2:v1.17.8:aws_aws_sdk_go_v2/vendor/github.com/aws/aws-sdk-go-v2 \
+		aws:aws-sdk-go-v2:v1.18.0:aws_aws_sdk_go_v2/vendor/github.com/aws/aws-sdk-go-v2 \
 		aws:smithy-go:v1.13.5:aws_smithy_go/vendor/github.com/aws/smithy-go \
 		aymanbagabas:go-osc52:v2.0.1:aymanbagabas_go_osc52_v2/vendor/github.com/aymanbagabas/go-osc52/v2 \
 		aymerick:douceur:v0.2.0:aymerick_douceur/vendor/github.com/aymerick/douceur \
@@ -40,12 +42,11 @@ GH_TUPLE=	FiloSottile:age:v1.1.1:filosottile_age/vendor/filippo.io/age \
 		charmbracelet:glamour:v0.6.0:charmbracelet_glamour/vendor/github.com/charmbracelet/glamour \
 		charmbracelet:harmonica:v0.2.0:charmbracelet_harmonica/vendor/github.com/charmbracelet/harmonica \
 		charmbracelet:lipgloss:v0.7.1:charmbracelet_lipgloss/vendor/github.com/charmbracelet/lipgloss \
-		cloudflare:circl:v1.3.2:cloudflare_circl/vendor/github.com/cloudflare/circl \
+		cloudflare:circl:v1.3.3:cloudflare_circl/vendor/github.com/cloudflare/circl \
 		containerd:console:v1.0.3:containerd_console/vendor/github.com/containerd/console \
 		coreos:go-semver:v0.3.1:coreos_go_semver/vendor/github.com/coreos/go-semver \
-		danieljoos:wincred:v1.1.2:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
-		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
-		dlclark:regexp2:v1.9.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
+		danieljoos:wincred:v1.2.0:danieljoos_wincred/vendor/github.com/danieljoos/wincred \
+		dlclark:regexp2:v1.10.0:dlclark_regexp2/vendor/github.com/dlclark/regexp2 \
 		dustin:gojson:2e71ec9dd5ad:dustin_gojson/vendor/github.com/dustin/gojson \
 		emirpasic:gods:v1.18.1:emirpasic_gods/vendor/github.com/emirpasic/gods \
 		etcd-io:bbolt:v1.3.7:etcd_io_bbolt/vendor/go.etcd.io/bbolt \
@@ -58,24 +59,25 @@ GH_TUPLE=	FiloSottile:age:v1.1.1:filosottile_age/vendor/filippo.io/age \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		godbus:dbus:v5.1.0:godbus_dbus_v5/vendor/github.com/godbus/dbus/v5 \
 		golang:appengine:v1.6.7:golang_appengine/vendor/google.golang.org/appengine \
-		golang:crypto:v0.8.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:exp:10a507213a29:golang_exp/vendor/golang.org/x/exp \
+		golang:crypto:v0.9.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:exp:dd950f8aeaea:golang_exp/vendor/golang.org/x/exp \
 		golang:mod:v0.10.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.9.0:golang_net/vendor/golang.org/x/net \
-		golang:oauth2:v0.7.0:golang_oauth2/vendor/golang.org/x/oauth2 \
+		golang:net:v0.10.0:golang_net/vendor/golang.org/x/net \
+		golang:oauth2:v0.8.0:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.5.3:golang_protobuf/vendor/github.com/golang/protobuf \
-		golang:sync:v0.1.0:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.7.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.7.0:golang_term/vendor/golang.org/x/term \
+		golang:sync:v0.2.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.8.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.8.0:golang_term/vendor/golang.org/x/term \
 		golang:text:v0.9.0:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.8.0:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.9.1:golang_tools/vendor/golang.org/x/tools \
 		google:btree:v1.1.2:google_btree/vendor/github.com/google/btree \
-		google:go-github:v51.0.0:google_go_github_v51/vendor/github.com/google/go-github/v51 \
+		google:go-github:v52.0.0:google_go_github_v52/vendor/github.com/google/go-github/v52 \
 		google:go-querystring:v1.1.0:google_go_querystring/vendor/github.com/google/go-querystring \
 		google:renameio:v2.0.0:google_renameio_v2/vendor/github.com/google/renameio/v2 \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
 		gregjones:httpcache:901d90724c79:gregjones_httpcache/vendor/github.com/gregjones/httpcache \
+		hexops:gotextdiff:v1.0.3:hexops_gotextdiff/vendor/github.com/hexops/gotextdiff \
 		huandu:xstrings:v1.4.0:huandu_xstrings/vendor/github.com/huandu/xstrings \
 		imdario:mergo:v0.3.15:imdario_mergo/vendor/github.com/imdario/mergo \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
@@ -83,7 +85,7 @@ GH_TUPLE=	FiloSottile:age:v1.1.1:filosottile_age/vendor/filippo.io/age \
 		itchyny:timefmt-go:v0.1.5:itchyny_timefmt_go/vendor/github.com/itchyny/timefmt-go \
 		jbenet:go-context:d14ea06fba99:jbenet_go_context/vendor/github.com/jbenet/go-context \
 		kevinburke:ssh_config:v1.2.0:kevinburke_ssh_config/vendor/github.com/kevinburke/ssh_config \
-		klauspost:compress:v1.16.4:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.16.5:klauspost_compress/vendor/github.com/klauspost/compress \
 		lucasb-eyer:go-colorful:v1.2.0:lucasb_eyer_go_colorful/vendor/github.com/lucasb-eyer/go-colorful \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
 		mattn:go-isatty:v0.0.18:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
@@ -104,15 +106,14 @@ GH_TUPLE=	FiloSottile:age:v1.1.1:filosottile_age/vendor/filippo.io/age \
 		peterbourgon:diskv:v2.0.1:peterbourgon_diskv/vendor/github.com/peterbourgon/diskv \
 		pjbgf:sha1cd:v0.3.0:pjbgf_sha1cd/vendor/github.com/pjbgf/sha1cd \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
-		pmezard:go-difflib:v1.0.0:pmezard_go_difflib/vendor/github.com/pmezard/go-difflib \
 		protocolbuffers:protobuf-go:v1.30.0:protocolbuffers_protobuf_go/vendor/google.golang.org/protobuf \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		rogpeppe:go-internal:v1.10.0:rogpeppe_go_internal/vendor/github.com/rogpeppe/go-internal \
-		rs:zerolog:v1.29.0:rs_zerolog/vendor/github.com/rs/zerolog \
+		rs:zerolog:v1.29.1:rs_zerolog/vendor/github.com/rs/zerolog \
 		sergi:go-diff:v1.1.0:sergi_go_diff/vendor/github.com/sergi/go-diff \
 		shopspring:decimal:v1.3.1:shopspring_decimal/vendor/github.com/shopspring/decimal \
-		skeema:knownhosts:v1.1.0:skeema_knownhosts/vendor/github.com/skeema/knownhosts \
-		spf13:cast:v1.5.0:spf13_cast/vendor/github.com/spf13/cast \
+		skeema:knownhosts:v1.1.1:skeema_knownhosts/vendor/github.com/skeema/knownhosts \
+		spf13:cast:v1.5.1:spf13_cast/vendor/github.com/spf13/cast \
 		spf13:cobra:v1.7.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		stretchr:testify:v1.8.2:stretchr_testify/vendor/github.com/stretchr/testify \

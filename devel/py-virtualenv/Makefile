@@ -20,7 +20,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.2.2:devel/py-covdefaults@${P
 		${PYTHON_PKGNAMEPREFIX}flaky>=3.7.0:devel/py-flaky@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=21.3:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-env>=0.6.2:devel/py-pytest-env@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-freezegun>=0.4.2:devel/py-pytest-freezegun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-randomly>=3.10.3:devel/py-pytest-randomly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=2.1.0:devel/py-pytest-timeout@${PY_FLAVOR}

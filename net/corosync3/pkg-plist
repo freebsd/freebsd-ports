@@ -1,5 +1,6 @@
 bin/corosync-blackbox
 @sample %%ETCDIR%%/corosync.conf.example %%ETCDIR%%/corosync.conf
+%%DBUS%%etc/dbus-1/system.d/corosync-signals.conf
 etc/logrotate.d/corosync
 include/corosync/cfg.h
 include/corosync/cmap.h
@@ -13,7 +14,7 @@ include/corosync/votequorum.h
 lib/libcfg.a
 lib/libcfg.so
 lib/libcfg.so.7
-lib/libcfg.so.7.1.0
+lib/libcfg.so.7.3.0
 lib/libcmap.a
 lib/libcmap.so
 lib/libcmap.so.4
@@ -29,7 +30,7 @@ lib/libcpg.so.4.1.0
 lib/libquorum.a
 lib/libquorum.so
 lib/libquorum.so.5
-lib/libquorum.so.5.0.0
+lib/libquorum.so.5.1.0
 lib/libsam.a
 lib/libsam.so
 lib/libsam.so.4
@@ -90,6 +91,7 @@ man/man3/quorum_fd_get.3.gz
 man/man3/quorum_finalize.3.gz
 man/man3/quorum_getquorate.3.gz
 man/man3/quorum_initialize.3.gz
+man/man3/quorum_model_initialize.3.gz
 man/man3/quorum_overview.3.gz
 man/man3/quorum_trackstart.3.gz
 man/man3/quorum_trackstop.3.gz
@@ -125,8 +127,8 @@ man/man3/votequorum_trackstart.3.gz
 man/man3/votequorum_trackstop.3.gz
 man/man5/corosync.conf.5.gz
 man/man5/votequorum.5.gz
+man/man7/cmap_keys.7.gz
 man/man7/corosync_overview.7.gz
-man/man8/cmap_keys.8.gz
 man/man8/corosync-blackbox.8.gz
 man/man8/corosync-cfgtool.8.gz
 man/man8/corosync-cmapctl.8.gz
@@ -142,7 +144,6 @@ sbin/corosync-cpgtool
 sbin/corosync-keygen
 sbin/corosync-notifyd
 sbin/corosync-quorumtool
-%%SNMP%%share/snmp/mibs/COROSYNC-MIB.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -161,7 +162,7 @@ sbin/corosync-quorumtool
 %%PORTDOCS%%%%DOCSDIR%%/html/cmap_iter_finalize.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cmap_iter_init.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cmap_iter_next.3.html
-%%PORTDOCS%%%%DOCSDIR%%/html/cmap_keys.8.html
+%%PORTDOCS%%%%DOCSDIR%%/html/cmap_keys.7.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cmap_overview.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cmap_set.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/cmap_track_add.3.html
@@ -203,6 +204,7 @@ sbin/corosync-quorumtool
 %%PORTDOCS%%%%DOCSDIR%%/html/quorum_finalize.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/quorum_getquorate.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/quorum_initialize.3.html
+%%PORTDOCS%%%%DOCSDIR%%/html/quorum_model_initialize.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/quorum_overview.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/quorum_trackstart.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/quorum_trackstop.3.html
@@ -237,7 +239,7 @@ sbin/corosync-quorumtool
 %%PORTDOCS%%%%DOCSDIR%%/html/votequorum_setvotes.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/votequorum_trackstart.3.html
 %%PORTDOCS%%%%DOCSDIR%%/html/votequorum_trackstop.3.html
-%%DBUS%%etc/dbus-1/system.d/corosync-signals.conf
+%%SNMP%%share/snmp/mibs/COROSYNC-MIB.txt
 @dir %%ETCDIR%%/service.d
 @dir %%ETCDIR%%/uidgid.d
 @dir /var/lib/corosync

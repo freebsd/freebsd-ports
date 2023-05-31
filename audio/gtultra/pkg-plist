@@ -1,3 +1,4 @@
+bin/gt2relocu
 bin/gtultra
 bin/ins2snd2u
 bin/mod2sng2
@@ -9,6 +10,7 @@ bin/ss2stereo
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Jammer/$3TrippyTrappy.sng
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Jammer/$6Boileroom_2SID.sng
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Jammer/$6StarsAreUs_2SID.sng
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/JasonPage/RType_Amiga2SID.sng
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/LMan/$3LMan-Rivalry-Dubs.sng
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/LMan/$3LMan-SID-Chip-Club-Menu.sng
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Linus/$3Cold-War-Generation.sng

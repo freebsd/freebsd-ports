@@ -19,4 +19,7 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+post-extract:
+	@${RM} ${WRKSRC}/jupyterlab_lsp/labextensions/@jupyter-lsp/jupyterlab-lsp/schemas/@jupyter-lsp/jupyterlab-lsp/package.json.orig
+
 .include <bsd.port.mk>

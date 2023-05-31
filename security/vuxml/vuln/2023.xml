@@ -1,3 +1,250 @@
+  <vuln vid="5d1b1a0a-fd36-11ed-a0d1-84a93843eb75">
+    <topic>MariaDB -- Nullpointer dereference</topic>
+    <affects>
+      <package>
+	<name>mariadb1011-server</name>
+	<range><lt>10.11.3</lt></range>
+      </package>
+      <package>
+	<name>mariadb106-server</name>
+	<range><lt>10.6.13</lt></range>
+      </package>
+      <package>
+	<name>mariadb105-server</name>
+	<range><lt>10.5.20</lt></range>
+      </package>
+      <package>
+	<name>mariadb104-server</name>
+	<range><lt>10.4.29</lt></range>
+      </package>
+      <package>
+	<name>mariadb103-server</name>
+	<range><lt>10.3.39</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The MariaDB project reports:</p>
+	<blockquote cite="https://mariadb.com/kb/en/security/">
+	  <p>MariaDB Server is vulnerable to Denial of Service. It is possible for
+	    function spider_db_mbase::print_warnings to dereference a null pointer.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-47015</cvename>
+      <url>https://mariadb.com/kb/en/security/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-10</discovery>
+      <entry>2023-05-28</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="7d6be8d4-f812-11ed-a7ff-589cfc0f81b0">
+    <topic>phpmyfaq -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyfaq</name>
+	<range><lt>3.1.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpmyfaq developers report:</p>
+	<blockquote cite="https://www.phpmyfaq.de/security/advisory-2023-04-23">
+	  <p>Multiple XSS vulnerabilities</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://huntr.dev/bounties/4d89c7cc-fb4c-4b64-9b67-f0189f70a620/</url>
+      <url>https://huntr.dev/bounties/8282d78e-f399-4bf4-8403-f39103a31e78/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-17</discovery>
+      <entry>2023-05-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="a4f8bb03-f52f-11ed-9859-080027083a05">
+    <topic>curl -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>curl</name>
+	<range><lt>8.1.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Wei Chong Tan, Harry Sintonen, and Hiroki Kurosawa reports:</p>
+	<blockquote cite="https://curl.se/docs/security.html">
+	  <p>This update fixes 4 security vulnerabilities:</p>
+	    <ul>
+	      <li>Medium CVE-2023-28319: UAF in SSH sha256 fingerprint check. Reported by Wei Chong Tan on 2023-03-21</li>
+	      <li>Low CVE-2023-28320: siglongjmp race condition. Reported by Harry Sintonen on 2023-04-02</li>
+	      <li>Low CVE-2023-28321: IDN wildcard match. Reported by Hiroki Kurosawa on 2023-04-17</li>
+	      <li>Low CVE-2023-28322: more POST-after-PUT confusion. Reported by Hiroki Kurosawa on 2023-04-19</li>
+	    </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-28319</cvename>
+	<url>https://curl.se/docs/CVE-2023-28319.html</url>
+	<cvename>CVE-2023-28320</cvename>
+	<url>https://curl.se/docs/CVE-2023-28320.html</url>
+	<cvename>CVE-2023-28321</cvename>
+	<url>https://curl.se/docs/CVE-2023-28321.html</url>
+	<cvename>CVE-2023-28322</cvename>
+	<url>https://curl.se/docs/CVE-2023-28322.html</url>
+    </references>
+    <dates>
+      <discovery>2023-03-21</discovery>
+      <entry>2023-05-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1ab7357f-a3c2-406a-89fb-fd00e49a71b5">
+    <topic>zeek -- potential DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>zeek</name>
+	<range><lt>5.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tim Wojtulewicz of Corelight reports:</p>
+	<blockquote cite="https://github.com/zeek/zeek/releases/tag/v5.0.9">
+	  <p> A specially-crafted series of FTP packets with a CMD
+	  command with a large path followed by a very large number
+	  of replies could cause Zeek to spend a long time processing
+	  the data. </p>
+	  <p> A specially-crafted with a truncated header can cause
+	  Zeek to overflow memory and potentially crash. </p>
+	  <p> A specially-crafted series of SMTP packets can cause
+	  Zeek to generate a very large number of events and take
+	  a long time to process them. </p>
+	  <p> A specially-crafted series of POP3 packets containing
+	  MIME data can cause Zeek to spend a long time dealing
+	  with each individual file ID. </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/zeek/zeek/releases/tag/v5.0.9</url>
+    </references>
+    <dates>
+      <discovery>2023-05-19</discovery>
+      <entry>2023-05-19</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="b09d77d0-b27c-48ae-b69b-9641bb68b39e">
+    <topic>electron -- vulnerability</topic>
+    <affects>
+      <package>
+	<name>electron22</name>
+	<range><lt>22.3.10</lt></range>
+      </package>
+      <package>
+	<name>electron23</name>
+	<range><lt>23.3.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v22.3.10">
+	  <p>This update fixes the following vulnerability:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-29469</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-29469</cvename>
+      <url>https://github.com/advisories/GHSA-7jv7-hr35-fwjr</url>
+    </references>
+    <dates>
+      <discovery>2023-05-17</discovery>
+      <entry>2023-05-18</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bea52545-f4a7-11ed-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>113.0.5672.126</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>113.0.5672.126</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/05/stable-channel-update-for-desktop_16.html">
+	 <p>This update includes 12 security fixes:</p>
+	 <ul>
+	    <li>[1444360] Critical CVE-2023-2721: Use after free in Navigation. Reported by Guang Gong of Alpha Lab, Qihoo 360 on 2023-05-10</li>
+	    <li>[1400905] High CVE-2023-2722: Use after free in Autofill UI. Reported by Rong Jian of VRI on 2022-12-14</li>
+	    <li>[1435166] High CVE-2023-2723: Use after free in DevTools. Reported by asnine on 2023-04-21</li>
+	    <li>[1433211] High CVE-2023-2724: Type Confusion in V8. Reported by Sergei Glazunov of Google Project Zero on 2023-04-14</li>
+	    <li>[1442516] High CVE-2023-2725: Use after free in Guest View. Reported by asnine on 2023-05-04</li>
+	    <li>[1442018] Medium CVE-2023-2726: Inappropriate implementation in WebApp Installs. Reported by Ahmed ElMasry on 2023-05-03</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2721</cvename>
+      <cvename>CVE-2023-2722</cvename>
+      <cvename>CVE-2023-2723</cvename>
+      <cvename>CVE-2023-2724</cvename>
+      <cvename>CVE-2023-2725</cvename>
+      <cvename>CVE-2023-2726</cvename>
+      <url>https://chromereleases.googleblog.com/2023/05/stable-channel-update-for-desktop_16.html</url>
+    </references>
+    <dates>
+      <discovery>2023-05-16</discovery>
+      <entry>2023-05-17</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="4a08a4fb-f152-11ed-9c88-001b217b3468">
+    <topic>Gitlab -- Vulnerability</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>15.11.0</ge><lt>15.11.3</lt></range>
+	<range><ge>15.10.0</ge><lt>15.10.7</lt></range>
+	<range><ge>9.0</ge><lt>15.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/05/10/security-release-gitlab-15-11-3-released/">
+	  <p>Smuggling code changes via merge requests with refs/replace</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2181</cvename>
+      <url>https://about.gitlab.com/releases/2023/05/10/security-release-gitlab-15-11-3-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-05-10</discovery>
+      <entry>2023-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ec63bc8e-f092-11ed-85ca-001517a2e1a4">
     <topic>piwigo -- SQL injection</topic>
     <affects>
@@ -156,8 +403,6 @@
       </body>
     </description>
     <references>
-      <cvename></cvename>
-      <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=</url>
       <cvename>CVE-2023-28849</cvename>
       <url>https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2023-28849</url>
       <cvename>CVE-2023-28632</cvename>
@@ -4563,7 +4808,7 @@
       </package>
     </affects>
     <description>
-      <body>
+      <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>MinIO reports:</p>
 	<blockquote cite="https://github.com/minio/minio/security/advisories/GHSA-2j69-jjmg-534q">
 	  <p>

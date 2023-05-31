@@ -1,6 +1,7 @@
 PORTNAME=	libwebsockets
 DISTVERSIONPREFIX=	v
 DISTVERSION=	4.3.2
+PORTREVISION=	1
 CATEGORIES=	net devel
 MASTER_SITES=	https://libwebsockets.org/git/libwebsockets/snapshot/
 
@@ -79,12 +80,5 @@ LIBEVENT_LIB_DEPENDS=	libevent.so:devel/libevent
 LIBEVENT_CMAKE_BOOL=	LWS_WITH_LIBEVENT
 LIBUV_LIB_DEPENDS=	libuv.so:devel/libuv
 LIBUV_CMAKE_BOOL=	LWS_WITH_LIBUV
-
-.include <bsd.port.options.mk>
-
-# Allow usage of LibreSSL via OPENSSL option
-.if ${PORT_OPTIONS:MOPENSSL} && ${SSL_DEFAULT} == libressl
-CMAKE_ARGS+=	-DLWS_OPENSSL_LIBRARIES='${OPENSSLLIB}/libtls.so;${OPENSSLLIB}/libssl.so;${OPENSSLLIB}/libcrypto.so' -DLWS_OPENSSL_INCLUDE_DIRS=${OPENSSLINC}/ssl
-.endif
 
 .include <bsd.port.mk>

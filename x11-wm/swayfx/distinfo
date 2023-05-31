@@ -1,9 +1,7 @@
-TIMESTAMP = 1679910379
-SHA256 (WillPower3309-swayfx-0.2_GH0.tar.gz) = fe5f6070b9b3fc97fafb1bfe1caddce71458632ef4fb884a9ec28d1a458b4e55
-SIZE (WillPower3309-swayfx-0.2_GH0.tar.gz) = 5534158
+TIMESTAMP = 1684643020
+SHA256 (WillPower3309-swayfx-0.3_GH0.tar.gz) = 0df303db0559537b474c6aa6273190849f4bcb9aa9a427ae3d713eec93d2987b
+SIZE (WillPower3309-swayfx-0.3_GH0.tar.gz) = 5746551
 SHA256 (cd9d1038a822.patch) = 266891cbe27a67f81740879dbe39819e3bf0f17b681bdc93087ae05987c2f88d
 SIZE (cd9d1038a822.patch) = 8968
 SHA256 (f98ca3ab7ca1.patch) = b3a427b6edbf1c89bbf5fdeb5e3fc4c6708478e6d2031fcead87d29bf5c409fa
 SIZE (f98ca3ab7ca1.patch) = 2673
-SHA256 (dee032d0a0ec.patch) = 7f6673efaf77bfa90368c71afc320cc7fe59b04fcb1238dc369563ce87bf3029
-SIZE (dee032d0a0ec.patch) = 1908

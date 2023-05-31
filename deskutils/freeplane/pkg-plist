@@ -1,4 +1,5 @@
 bin/freeplane
+share/applications/freeplane.desktop
 %%DATADIR%%/core/org.freeplane.core/META-INF/MANIFEST.MF
 %%DATADIR%%/core/org.freeplane.core/lib/common-image-3.9.4.jar
 %%DATADIR%%/core/org.freeplane.core/lib/common-io-3.9.4.jar
@@ -253,7 +254,6 @@ bin/freeplane
 %%DATADIR%%/freeplane.png
 %%DATADIR%%/freeplane.policy
 %%DATADIR%%/freeplane.sh
-%%DATADIR%%/freeplane.sh.orig
 %%DATADIR%%/freeplane.svg
 %%DATADIR%%/freeplaneConsole.l4j.ini
 %%DATADIR%%/freeplaneIcons.dll

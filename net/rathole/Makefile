@@ -1,7 +1,6 @@
 PORTNAME=	rathole
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.7
-PORTREVISION=	3
+DISTVERSION=	0.4.8
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,8 +19,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		aead-0.4.3 \
 		aes-0.7.5 \
 		aes-gcm-0.9.4 \
-		android_system_properties-0.1.5 \
-		ansi_term-0.12.1 \
 		anyhow-1.0.66 \
 		async-http-proxy-1.2.5 \
 		async-socks5-0.5.1 \
@@ -38,19 +35,16 @@ CARGO_CRATES=	adler-1.0.2 \
 		bitflags-1.3.2 \
 		blake2-0.10.4 \
 		block-buffer-0.10.3 \
-		bumpalo-3.11.1 \
 		byteorder-1.4.3 \
 		bytes-1.2.1 \
 		cc-1.0.74 \
 		cfg-if-1.0.0 \
 		chacha20-0.8.2 \
 		chacha20poly1305-0.9.1 \
-		chrono-0.4.22 \
 		cipher-0.3.0 \
 		clap-3.2.23 \
 		clap_derive-3.2.18 \
 		clap_lex-0.2.4 \
-		codespan-reporting-0.11.1 \
 		console-api-0.4.0 \
 		console-subscriber-0.1.8 \
 		core-foundation-0.9.3 \
@@ -62,10 +56,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		crypto-common-0.1.6 \
 		ctr-0.8.0 \
 		curve25519-dalek-4.0.0-pre.2 \
-		cxx-1.0.80 \
-		cxx-build-1.0.80 \
-		cxxbridge-flags-1.0.80 \
-		cxxbridge-macro-1.0.80 \
 		digest-0.10.5 \
 		either-1.8.0 \
 		enum-iterator-1.1.3 \
@@ -92,7 +82,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		getset-0.1.2 \
 		ghash-0.4.4 \
 		git2-0.14.4 \
-		h2-0.3.15 \
+		h2-0.3.18 \
 		hashbrown-0.12.3 \
 		hdrhistogram-7.5.2 \
 		heck-0.4.0 \
@@ -106,8 +96,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		humantime-2.1.0 \
 		hyper-0.14.22 \
 		hyper-timeout-0.4.1 \
-		iana-time-zone-0.1.53 \
-		iana-time-zone-haiku-0.1.1 \
 		idna-0.3.0 \
 		indexmap-1.9.1 \
 		inotify-0.9.6 \
@@ -116,17 +104,14 @@ CARGO_CRATES=	adler-1.0.2 \
 		itertools-0.10.5 \
 		itoa-1.0.4 \
 		jobserver-0.1.25 \
-		js-sys-0.3.60 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
 		lazy_static-1.4.0 \
 		libc-0.2.137 \
-		libgit2-sys-0.13.4+1.4.2 \
+		libgit2-sys-0.13.5+1.4.5 \
 		libz-sys-1.1.8 \
-		link-cplusplus-1.0.7 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
-		matchers-0.0.1 \
 		matchers-0.1.0 \
 		matchit-0.5.0 \
 		memchr-2.5.0 \
@@ -137,17 +122,18 @@ CARGO_CRATES=	adler-1.0.2 \
 		native-tls-0.2.11 \
 		nom-7.1.1 \
 		notify-5.0.0 \
-		num-integer-0.1.45 \
+		nu-ansi-term-0.46.0 \
 		num-traits-0.2.15 \
 		num_cpus-1.14.0 \
 		num_threads-0.1.6 \
 		once_cell-1.16.0 \
 		opaque-debug-0.3.0 \
-		openssl-0.10.42 \
+		openssl-0.10.48 \
 		openssl-macros-0.1.0 \
 		openssl-probe-0.1.5 \
-		openssl-sys-0.9.77 \
+		openssl-sys-0.9.83 \
 		os_str_bytes-6.3.1 \
+		overload-0.1.1 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.8.5 \
@@ -182,7 +168,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		same-file-1.0.6 \
 		schannel-0.1.20 \
 		scopeguard-1.1.0 \
-		scratch-1.0.2 \
 		security-framework-2.7.0 \
 		security-framework-sys-2.6.1 \
 		semver-1.0.14 \
@@ -212,7 +197,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		time-macros-0.2.5 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.21.2 \
+		tokio-1.24.2 \
 		tokio-io-timeout-1.2.0 \
 		tokio-macros-1.8.0 \
 		tokio-native-tls-0.3.0 \
@@ -229,15 +214,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		tracing-core-0.1.30 \
 		tracing-futures-0.2.5 \
 		tracing-log-0.1.3 \
-		tracing-serde-0.1.3 \
-		tracing-subscriber-0.2.25 \
 		tracing-subscriber-0.3.16 \
 		try-lock-0.2.3 \
 		typenum-1.15.0 \
 		unicode-bidi-0.3.8 \
 		unicode-ident-1.0.5 \
 		unicode-normalization-0.1.22 \
-		unicode-width-0.1.10 \
 		universal-hash-0.4.1 \
 		url-2.3.1 \
 		valuable-0.1.0 \
@@ -247,11 +229,6 @@ CARGO_CRATES=	adler-1.0.2 \
 		walkdir-2.3.2 \
 		want-0.3.0 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.83 \
-		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-macro-0.2.83 \
-		wasm-bindgen-macro-support-0.2.83 \
-		wasm-bindgen-shared-0.2.83 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \

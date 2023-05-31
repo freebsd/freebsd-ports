@@ -1,7 +1,6 @@
 PORTNAME=	pet
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.0
-PORTREVISION=	13
+DISTVERSION=	0.5.0
 CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,6 +17,7 @@ GH_TUPLE=	\
 		BurntSushi:toml:v0.3.0:burntsushi_toml/vendor/github.com/BurntSushi/toml \
 		alessio:shellescape:52074bc9df61:alessio_shellescape_1/vendor/gopkg.in/alessio/shellescape.v1 \
 		alessio:shellescape:v1.4.1:alessio_shellescape/vendor/github.com/alessio/shellescape \
+		atotto:clipboard:v0.1.4:atotto_clipboard/vendor/github.com/atotto/clipboard \
 		briandowns:spinner:48dbb65d7bd5:briandowns_spinner/vendor/github.com/briandowns/spinner \
 		chzyer:logex:v1.1.10:chzyer_logex/vendor/github.com/chzyer/logex \
 		chzyer:readline:2972be24d48e:chzyer_readline/vendor/github.com/chzyer/readline \
@@ -29,7 +29,7 @@ GH_TUPLE=	\
 		golang:oauth2:f42d05182288:golang_oauth2/vendor/golang.org/x/oauth2 \
 		golang:protobuf:v1.2.0:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:sync:036812b2e83c:golang_sync/vendor/golang.org/x/sync \
-		golang:sys:v0.5.0:golang_sys/vendor/golang.org/x/sys \
+		golang:sys:0a5406a5449c:golang_sys/vendor/golang.org/x/sys \
 		golang:time:555d28b269f0:golang_time/vendor/golang.org/x/time \
 		google:go-github:v15.0.0:google_go_github/vendor/github.com/google/go-github \
 		google:go-querystring:v1.0.0:google_go_querystring/vendor/github.com/google/go-querystring \

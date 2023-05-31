@@ -21,7 +21,7 @@
 @@ -1067,7 +1067,7 @@ void flatdist_func(int _radius, int _flatten, int _deb
     EFflatdist.menufunc = m_flatdist;
     EFflatdist.Farea = 2;                                                         //  select area usable
-    EFflatdist.Frestart = 1;                                                      //  restartable
+    EFflatdist.Fscript = 1;                                                       //  scripting supported                   23.4
 -   EFflatdist.threadfunc = thread;
 +   EFflatdist.threadfunc = flatdist_names::thread;
  

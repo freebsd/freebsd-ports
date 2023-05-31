@@ -1,5 +1,5 @@
 PORTNAME=	ocserv
-DISTVERSION=	1.1.6
+DISTVERSION=	1.1.7
 CATEGORIES=	net net-vpn security
 MASTER_SITES=	https://www.infradead.org/ocserv/download/
 
@@ -8,7 +8,7 @@ COMMENT=	Server implementing the AnyConnect SSL VPN protocol
 WWW=		https://ocserv.gitlab.io/www/index.html
 
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	bash:shells/bash \
 		gsed:textproc/gsed

@@ -1,0 +1,94 @@
+From 7ad1a2b2cc57b5f4bcb59186a9a8abcbed9f4f76 Mon Sep 17 00:00:00 2001
+From: Jeremy Harris <jgh146exb@wizmail.org>
+Date: Fri, 11 Nov 2022 18:22:00 +0000
+Subject: [PATCH 2/2] Fix regex substring capture variables for null matches
+ (again).  Bug 2933
+
+Broken-by: 59d66fdc13f0
+---
+ src/exim.c               | 11 +++++------
+ src/malware.c            | 10 +++++-----
+ src/regex.c              |  8 ++++----
+ test/aux-var-src/0383.F      |  4 ++--
+ test/log/0383                |  4 ++--
+ test/mail/0383.CALLER        |  8 ++++----
+ test/scripts/0000-Basic/0002 |  2 ++
+ test/stdout/0002             |  2 ++
+ 8 files changed, 26 insertions(+), 23 deletions(-)
+
+--- a/src/exim.c
++++ b/src/exim.c
+@@ -160,20 +160,19 @@
+ 			PCRE_EOPT | options, md, pcre_mtc_ctx);
+ BOOL yield;
+ 
+ if ((yield = (res >= 0)))
+   {
++  PCRE2_SIZE * ovec = pcre2_get_ovector_pointer(md);
+   res = pcre2_get_ovector_count(md);
+   expand_nmax = setup < 0 ? 0 : setup + 1;
+   for (int matchnum = setup < 0 ? 0 : 1; matchnum < res; matchnum++)
+     {
+-    PCRE2_SIZE len;
+-    pcre2_substring_get_bynumber(md, matchnum,
+-      (PCRE2_UCHAR **)&expand_nstring[expand_nmax], &len);
+-    if (!expand_nstring[expand_nmax])
+-      { expand_nstring[expand_nmax] = US""; len = 0; }
+-    expand_nlength[expand_nmax++] = (int)len;
++    int off = matchnum * 2;
++    int len = ovec[off + 1] - ovec[off];
++    expand_nstring[expand_nmax] = string_copyn(subject + ovec[off], len);
++    expand_nlength[expand_nmax++] = len;
+     }
+   expand_nmax--;
+   }
+ else if (res != PCRE2_ERROR_NOMATCH) DEBUG(D_any)
+   {
+--- a/src/malware.c
++++ b/src/malware.c
+@@ -319,19 +319,19 @@
+ uschar *
+ m_pcre_exec(const pcre2_code * cre, uschar * text)
+ {
+ pcre2_match_data * md = pcre2_match_data_create(2, pcre_gen_ctx);
+ int i = pcre2_match(cre, text, PCRE2_ZERO_TERMINATED, 0, 0, md, pcre_mtc_ctx);
+-PCRE2_UCHAR * substr = NULL;
+-PCRE2_SIZE slen;
++uschar * substr = NULL;
+ 
+ if (i >= 2)				/* Got it */
+   {
+-  pcre2_substring_get_bynumber(md, 1, &substr, &slen);
+-  if (!substr) substr = US"";
++  PCRE2_SIZE * ovec = pcre2_get_ovector_pointer(md);
++  int len = ovec[3] - ovec[2];
++  substr = string_copyn(text + ovec[2], len);
+   }
+-return US substr;
++return substr;
+ }
+ 
+ static const pcre2_code *
+ m_pcre_nextinlist(const uschar ** list, int * sep,
+  char * listerr, uschar ** errstr)
+--- a/src/regex.c
++++ b/src/regex.c
+@@ -81,14 +81,14 @@
+ 	      sizeof(regex_match_string_buffer)-1);
+     regex_match_string = regex_match_string_buffer;
+ 
+     for (int nn = 1; nn < n; nn++)
+       {
+-      PCRE2_UCHAR * cstr;
+-      PCRE2_SIZE cslen;
+-      pcre2_substring_get_bynumber(md, nn, &cstr, &cslen);
+-      regex_vars[nn-1] = cstr ? CUS cstr : CUS"";
++      PCRE2_SIZE * ovec = pcre2_get_ovector_pointer(md);
++      int off = nn * 2;
++      int len = ovec[off + 1] - ovec[off];
++      regex_vars[nn-1] = string_copyn(linebuffer + ovec[off], len);
+       }
+ 
+     return OK;
+     }
+   }

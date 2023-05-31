@@ -1,6 +1,6 @@
 PORTNAME=	libuv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.44.2
+DISTVERSION=	1.45.0
 CATEGORIES=	devel
 MASTER_SITES=	https://dist.libuv.org/dist/v${DISTVERSION}/
 
@@ -12,6 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf cpe libtool pathfix pkgconfig
+
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip

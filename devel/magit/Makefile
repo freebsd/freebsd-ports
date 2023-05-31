@@ -26,7 +26,7 @@ MAKE_ENV+=	docdir=${DOCSDIR} \
 		infodir=${PREFIX}/${INFO_PATH} \
 		INSTALL_INFO=install-info \
 		lispdir=${PREFIX}/${ELISPDIR} \
-		LOAD_PATH="-L ${WRKSRC}/lisp -L ${PREFIX}/${EMACS_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/ghub" \
+		LOAD_PATH="-L ${WRKSRC}/lisp -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR} -L ${PREFIX}/${EMACS_VERSION_SITE_LISPDIR}/compat" \
 		VERSION=${PORTVERSION}
 # Parallel build fails if Emacs is built with native compilation enabled
 MAKE_JOBS_UNSAFE=	yes

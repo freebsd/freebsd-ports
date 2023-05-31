@@ -1,3 +1,3 @@
-TIMESTAMP = 1625068343
-SHA256 (ncbi-blast-2.12.0+-src.tar.gz) = fda3c9c9d488cad6c1880a98a236d842bcf3610e3e702af61f7a48cf0a714b88
-SIZE (ncbi-blast-2.12.0+-src.tar.gz) = 58245348
+TIMESTAMP = 1685108714
+SHA256 (ncbi-blast-2.14.0+-src.tar.gz) = bf477f1b0c3b82f0b7a7094bf003a9a83e37e3b0716c1df799060c4feab17500
+SIZE (ncbi-blast-2.14.0+-src.tar.gz) = 28200227

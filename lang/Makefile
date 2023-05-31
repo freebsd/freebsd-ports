@@ -59,6 +59,7 @@
     SUBDIR += erlang-runtime23
     SUBDIR += erlang-runtime24
     SUBDIR += erlang-runtime25
+    SUBDIR += erlang-runtime26
     SUBDIR += erlang-wx
     SUBDIR += execline
     SUBDIR += expect
@@ -103,6 +104,7 @@
     SUBDIR += gforth
     SUBDIR += ghc
     SUBDIR += ghc810
+    SUBDIR += ghc92
     SUBDIR += gir-to-d
     SUBDIR += gjs
     SUBDIR += gleam
@@ -188,6 +190,7 @@
     SUBDIR += micropython
     SUBDIR += mit-scheme
     SUBDIR += mixal
+    SUBDIR += mlkit
     SUBDIR += mlton
     SUBDIR += mmix
     SUBDIR += mono
@@ -312,6 +315,8 @@
     SUBDIR += ruby30
     SUBDIR += ruby31
     SUBDIR += ruby32
+    SUBDIR += ruby33
+    SUBDIR += rubygem-rb_sys
     SUBDIR += rubygem-ruby_language_server
     SUBDIR += runawk
     SUBDIR += rust

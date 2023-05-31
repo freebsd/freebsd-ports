@@ -1,6 +1,6 @@
 PORTNAME=	fluent-bit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.2
+DISTVERSION=	2.1.4
 CATEGORIES=	sysutils
 
 MAINTAINER=	girgen@FreeBSD.org
@@ -48,7 +48,7 @@ USES+=		compiler:gcc-c++11-lib
 USES+=		compiler:c11
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=int-conversion
 .endif
 

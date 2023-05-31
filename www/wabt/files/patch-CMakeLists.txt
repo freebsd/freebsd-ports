@@ -1,29 +1,29 @@
---- CMakeLists.txt.orig	2022-12-28 00:00:50 UTC
+--- CMakeLists.txt.orig	2023-05-12 21:56:46 UTC
 +++ CMakeLists.txt
-@@ -358,7 +358,7 @@ set(WABT_LIBRARY_H
+@@ -387,7 +387,7 @@ set(WABT_LIBRARY_H
  
  set(WABT_LIBRARY_SRC ${WABT_LIBRARY_CC} ${WABT_LIBRARY_H})
  
 -add_library(wabt STATIC ${WABT_LIBRARY_SRC})
 +add_library(wabt ${WABT_LIBRARY_SRC})
+ add_dependencies(wabt gen-wasm2c-prebuilt-target)
  add_library(wabt::wabt ALIAS wabt)
  
- target_compile_features(wabt PUBLIC cxx_std_17)
-@@ -382,7 +382,7 @@ if (WABT_INSTALL_RULES)
-   )
- endif ()
+@@ -420,7 +420,7 @@ endif ()
  
--add_library(wasm-rt-impl STATIC wasm2c/wasm-rt-impl.c wasm2c/wasm-rt-impl.h)
-+add_library(wasm-rt-impl wasm2c/wasm-rt-impl.c wasm2c/wasm-rt-impl.h)
+ set(WASM_RT_FILES "wasm2c/wasm-rt-impl.h" "wasm2c/wasm-rt-impl.c" "wasm2c/wasm-rt-exceptions-impl.c")
+ 
+-add_library(wasm-rt-impl STATIC ${WASM_RT_FILES})
++add_library(wasm-rt-impl ${WASM_RT_FILES})
  add_library(wabt::wasm-rt-impl ALIAS wasm-rt-impl)
  if (WABT_BIG_ENDIAN)
    target_compile_definitions(wasm-rt-impl PUBLIC WABT_BIG_ENDIAN=1)
-@@ -409,7 +409,7 @@ endif ()
+@@ -447,7 +447,7 @@ endif ()
  
  if (BUILD_FUZZ_TOOLS)
    set(FUZZ_FLAGS "-fsanitize=fuzzer,address")
 -  add_library(wabt-fuzz STATIC ${WABT_LIBRARY_SRC})
 +  add_library(wabt-fuzz ${WABT_LIBRARY_SRC})
+   target_link_libraries(wabt-fuzz PUBLIC wabt)
    set_target_properties(wabt-fuzz
      PROPERTIES
-     COMPILE_FLAGS "${FUZZ_FLAGS}"

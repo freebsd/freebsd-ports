@@ -1,3 +1,3 @@
-TIMESTAMP = 1677771437
-SHA256 (rubygem/aws-sdk-cloudtrail-1.58.0.gem) = 72005494985c3fc16ef7d098083864af57b2868b58eebdd3866d61adb4bcd77d
-SIZE (rubygem/aws-sdk-cloudtrail-1.58.0.gem) = 78336
+TIMESTAMP = 1685162280
+SHA256 (rubygem/aws-sdk-cloudtrail-1.59.0.gem) = c72c44c5575ffcf7722c341e6f9ab027e54f2f755bbd2edc1be4110c0210cc6e
+SIZE (rubygem/aws-sdk-cloudtrail-1.59.0.gem) = 79360

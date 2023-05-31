@@ -1,8 +1,8 @@
---- perf/CMakeLists.txt.orig	2022-09-22 09:00:38 UTC
+--- perf/CMakeLists.txt.orig	2023-05-25 10:34:56 UTC
 +++ perf/CMakeLists.txt
-@@ -13,8 +13,8 @@ target_link_libraries(benchcmp PRIVATE lib_yamlcpp m)
- add_executable(benchmerge benchmerge.cpp)
- target_link_libraries(benchmerge PRIVATE lib_yamlcpp m)
+@@ -29,8 +29,8 @@ set_target_properties(benchmerge PROPERTIES
+     CXX_EXTENSIONS NO)
+ 
  
 -ExternalProject_Get_property(proj_event_rules SOURCE_DIR)
 -set(EVENT_RULES_SOURCE_DIR ${SOURCE_DIR})
@@ -11,7 +11,7 @@
  
  add_custom_target(run_benchmark
      COMMAND ${CMAKE_BINARY_DIR}/perf/benchmark
-@@ -27,4 +27,4 @@ add_custom_target(run_benchmark
+@@ -43,4 +43,4 @@ add_custom_target(run_benchmark
      WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}
  )
  

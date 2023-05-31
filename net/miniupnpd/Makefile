@@ -1,9 +1,7 @@
 PORTNAME=	miniupnpd
-PORTVERSION=	2.1.20200510
+PORTVERSION=	2.3.3
 PORTEPOCH=	1
 CATEGORIES=	net
-MASTER_SITES=	http://miniupnp.tuxfamily.org/files/ \
-		http://miniupnp.free.fr/files/
 
 MAINTAINER=	squat@squat.no
 COMMENT=	UPnP IGD implementation which uses pf/ipf
@@ -13,6 +11,12 @@ LICENSE=	BSD3CLAUSE
 
 USES=		cpe ssl
 CPE_VENDOR=	miniupnp_project
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	miniupnp
+GH_PROJECT=	miniupnp
+GH_TAGNAME=	e439318
+
 USE_RC_SUBR=	miniupnpd
 
 HAS_CONFIGURE=	yes
@@ -20,6 +24,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-I${OPENSSLINC}
 LDFLAGS+=	-L${OPENSSLLIB}
+
+WRKSRC_SUBDIR=	miniupnpd
 
 PLIST_FILES=	etc/miniupnpd.conf.sample \
 		man/man8/miniupnpd.8.gz \
@@ -29,7 +35,7 @@ OPTIONS_DEFINE=			CHECK_PORTINUSE IPV6 LEASEFILE UPNP_IGDV2 \
 				UPNP_STRICT
 OPTIONS_DEFAULT=		AUTODETECT_FW
 OPTIONS_SINGLE=			FIREWALL
-OPTIONS_SINGLE_FIREWALL=	AUTODETECT_FW PF IPFW
+OPTIONS_SINGLE_FIREWALL=	AUTODETECT_FW IPFW PF
 AUTODETECT_FW_DESC=		Try to autodetect firewall type
 CHECK_PORTINUSE_DESC=		Check if ports are in use
 IPFW_DESC=			Use IPFW as firewall type

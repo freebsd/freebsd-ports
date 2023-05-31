@@ -68,6 +68,7 @@ include/antlr4-runtime/atn/DecisionInfo.h
 include/antlr4-runtime/atn/DecisionState.h
 include/antlr4-runtime/atn/EpsilonTransition.h
 include/antlr4-runtime/atn/ErrorInfo.h
+include/antlr4-runtime/atn/HashUtils.h
 include/antlr4-runtime/atn/LL1Analyzer.h
 include/antlr4-runtime/atn/LexerATNConfig.h
 include/antlr4-runtime/atn/LexerATNSimulator.h

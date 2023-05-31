@@ -24,6 +24,12 @@ OPTIONS_DEFAULT=	ZSH
 
 ZSH_PLIST_FILES=	share/zsh/site-functions/jshon_zsh_completion
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=strict-prototypes
+.endif
+
 pre-configure:
 	@${REINPLACE_CMD} -e 's|^\(#define JSHONVER \).*|\1"${PORTVERSION}-${GH_TAGNAME}"|' \
 	-e 's|\({printf("%\)i\(\\n", JSHONVER); exit(0);}\)|\1s\2|' \
@@ -37,4 +43,4 @@ post-install-ZSH-on:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${WRKSRC}/jshon_zsh_completion ${STAGEDIR}${PREFIX}/share/zsh/site-functions/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

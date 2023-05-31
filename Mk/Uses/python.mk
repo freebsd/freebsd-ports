@@ -50,7 +50,7 @@
 # Exported variables:
 #
 # PYTHON_VERSION	- The chosen Python interpreter including the version,
-#			  e.g. python2.7, python3.5, etc.
+#			  e.g. python2.7, python3.7, etc.
 #
 # Variables, which can be set by the port:
 #
@@ -217,10 +217,10 @@
 # PYTHON_PORTSDIR	- The port directory of the chosen Python interpreter
 #
 # PYTHON_REL		- The release number of the chosen Python interpreter
-#			  without dots, e.g. 20706, 30401, ...
+#			  without dots, e.g. 20706, 30701, ...
 #
 # PYTHON_SUFFIX		- The major-minor release number of the chosen Python
-#			  interpreter without dots, e.g. 27, 36, ...
+#			  interpreter without dots, e.g. 27, 37, ...
 #			  Used for prefixes and suffixes.
 #
 # PYTHON_MAJOR_VER	- The major release version of the chosen Python

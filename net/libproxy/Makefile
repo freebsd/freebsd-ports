@@ -55,6 +55,12 @@ RUN_DEPENDS+=	libproxy-pacrunner>=${DISTVERSION}:net/libproxy-pacrunner
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${LIBPROXY_SLAVE:Mperl}
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+.endif
+
 # Hackery for the to python backends.
 .if ${LIBPROXY_SLAVE:Mpython}
 CMAKE_ON+=		WITH_PYTHON3

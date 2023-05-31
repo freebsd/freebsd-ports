@@ -1,5 +1,5 @@
 PORTNAME=	hledger
-DISTVERSION=	1.29
+DISTVERSION=	1.29.2
 CATEGORIES=	finance haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,21 +19,22 @@ USE_CABAL=	Decimal-0.5.2 \
 		Only-0.1_1 \
 		QuickCheck-2.14.2 \
 		StateVar-1.2.2 \
-		aeson-2.1.2.1_1 \
+		aeson-2.1.2.1_3 \
 		aeson-pretty-0.8.9_2 \
-		ansi-terminal-0.11.4 \
-		ansi-wl-pprint-0.6.9_3 \
-		assoc-1.0.2_4 \
+		ansi-terminal-1.0 \
+		ansi-terminal-types-0.11.5_1 \
+		ansi-wl-pprint-0.6.9_4 \
+		assoc-1.1 \
 		async-2.2.4_3 \
 		attoparsec-0.14.4_3 \
-		base-compat-0.12.2 \
-		base-compat-batteries-0.12.2 \
+		base-compat-0.13.0 \
+		base-compat-batteries-0.13.0 \
 		base-orphans-0.9.0 \
-		bifunctors-5.5.15 \
-		bitvec-1.1.3.0 \
+		bifunctors-5.6.1 \
+		bitvec-1.1.4.0 \
 		blaze-builder-0.4.2.2_1 \
 		blaze-html-0.9.1.2_2 \
-		blaze-markup-0.8.2.8_3 \
+		blaze-markup-0.8.2.8_4 \
 		cabal-doctest-1.0.9_3 \
 		call-stack-0.4.0 \
 		case-insensitive-1.2.1.0 \
@@ -48,7 +49,6 @@ USE_CABAL=	Decimal-0.5.2 \
 		contravariant-1.5.5 \
 		control-monad-free-0.6.2 \
 		csv-0.1.2 \
-		data-array-byte-0.1.0.1_1 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
 		data-default-instances-containers-0.0.1 \
@@ -58,30 +58,31 @@ USE_CABAL=	Decimal-0.5.2 \
 		deferred-folds-0.9.18.3 \
 		distributive-0.6.2.1_1 \
 		dlist-1.0 \
-		doclayout-0.4_1 \
+		doclayout-0.4.0.1 \
 		emojis-0.1.2 \
-		extra-1.7.12 \
+		extra-1.7.13 \
 		file-embed-0.0.15.0 \
-		foldl-1.4.14_1 \
-		generically-0.1.1 \
+		foldable1-classes-compat-0.1_2 \
+		foldl-1.4.14_2 \
+		generically-0.1.1_1 \
 		githash-0.1.6.3 \
 		hashable-1.4.2.0_1 \
 		hashtables-1.3.1 \
-		hledger-lib-1.29 \
+		hledger-lib-1.29.2 \
 		hsc2hs-0.68.9 \
 		html-1.0.1.2 \
 		indexed-traversable-0.1.2.1 \
 		indexed-traversable-instances-0.1.1.2_1 \
 		integer-logarithms-1.0.3.1_4 \
 		isomorphism-class-0.1.0.9 \
-		lucid-2.11.1_1 \
+		lucid-2.11.20230408 \
 		math-functions-0.3.4.2 \
-		megaparsec-9.3.0 \
+		megaparsec-9.3.1 \
 		microlens-0.4.13.1 \
-		microlens-th-0.4.3.11 \
+		microlens-th-0.4.3.13 \
 		mmorph-1.2.0_3 \
 		mono-traversable-1.0.15.3 \
-		network-3.1.2.8 \
+		network-3.1.3.0 \
 		old-locale-1.0.0.7_2 \
 		optparse-applicative-0.17.0.0 \
 		pager-0.1.1.0 \
@@ -97,36 +98,36 @@ USE_CABAL=	Decimal-0.5.2 \
 		resourcet-1.3.0 \
 		safe-0.3.19 \
 		scientific-0.3.7.0_5 \
-		semialign-1.2.0.1_3 \
-		semigroupoids-5.3.7_1 \
-		shakespeare-2.0.30 \
+		semialign-1.3 \
+		semigroupoids-6.0.0.1 \
+		shakespeare-2.1.0 \
 		split-0.2.3.5 \
 		splitmix-0.1.0.4_2 \
-		streaming-commons-0.2.2.5 \
-		strict-0.4.0.1_4 \
-		tabular-0.2.2.8 \
+		streaming-commons-0.2.2.6 \
+		strict-0.5 \
+		tabular-0.2.2.8_1 \
 		tagged-0.8.7 \
 		tasty-1.4.3 \
 		tasty-hunit-0.10.0.3 \
 		temporary-1.3 \
-		text-ansi-0.2.1 \
+		text-ansi-0.2.1.1 \
 		text-builder-0.6.7 \
 		text-builder-dev-0.3.3.2 \
 		text-short-0.1.5_2 \
-		th-abstraction-0.4.5.0_1 \
+		th-abstraction-0.5.0.0 \
 		th-compat-0.1.4_2 \
 		th-lift-0.8.3 \
-		these-1.1.1.1_6 \
+		these-1.2 \
 		time-compat-1.9.6.1_5 \
 		timeit-2.0_2 \
 		transformers-compat-0.7.2 \
 		typed-process-0.2.11.0 \
 		uglymemo-0.1.0.1 \
-		unliftio-core-0.2.1.0_1 \
+		unliftio-core-0.2.1.0_2 \
 		unordered-containers-0.2.19.1_2 \
 		utf8-string-1.0.2 \
-		utility-ht-0.0.16 \
-		uuid-types-1.0.5_3 \
+		utility-ht-0.0.17 \
+		uuid-types-1.0.5_4 \
 		vector-0.13.0.0_3 \
 		vector-algorithms-0.9.0.1_2 \
 		vector-stream-0.1.0.0_2 \

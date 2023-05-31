@@ -4,13 +4,14 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://ftp.vector.co.jp/18/98/1364/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Record, repeat, and play key sequence from keyboard
 WWW=		https://kozos.jp/myfreesoft/
 
 MAKE_ENV=	X11BASE="${LOCALBASE}"
 USES=		xorg
 USE_XORG=	x11 xt
+CFLAGS+=	-Wno-int-conversion -Wno-pointer-sign
 
 PORTDOCS=	README
 PORTEXAMPLES=	demo.dat xkeywrap_demo.c

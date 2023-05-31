@@ -1,0 +1,48 @@
+--- bootstrap/linux-9.4.4.json.orig	2023-03-09 15:46:30 UTC
++++ bootstrap/linux-9.4.4.json
+@@ -14,7 +14,7 @@
+         },
+         {
+             "package": "base",
+-            "version": "4.17.0.0"
++            "version": "4.17.1.0"
+         },
+         {
+             "package": "array",
+@@ -26,7 +26,7 @@
+         },
+         {
+             "package": "ghc-boot-th",
+-            "version": "9.4.4"
++            "version": "9.4.5"
+         },
+         {
+             "package": "pretty",
+@@ -38,11 +38,11 @@
+         },
+         {
+             "package": "bytestring",
+-            "version": "0.11.3.1"
++            "version": "0.11.4.0"
+         },
+         {
+             "package": "containers",
+-            "version": "0.6.6"
++            "version": "0.6.7"
+         },
+         {
+             "package": "binary",
+@@ -74,11 +74,11 @@
+         },
+         {
+             "package": "text",
+-            "version": "2.0.1"
++            "version": "2.0.2"
+         },
+         {
+             "package": "parsec",
+-            "version": "3.1.15.0"
++            "version": "3.1.16.1"
+         },
+         {
+             "package": "process",

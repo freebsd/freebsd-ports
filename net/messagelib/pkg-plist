@@ -83,6 +83,7 @@ include/KPim5/MessageComposer/MessageComposer/StatusBarLabelToggledState
 include/KPim5/MessageComposer/MessageComposer/TextPart
 include/KPim5/MessageComposer/MessageComposer/TransparentJob
 include/KPim5/MessageComposer/MessageComposer/Util
+include/KPim5/MessageComposer/config-messagecomposer.h
 include/KPim5/MessageComposer/messagecomposer/abstractencryptjob.h
 include/KPim5/MessageComposer/messagecomposer/akonadisender.h
 include/KPim5/MessageComposer/messagecomposer/aliasesexpandjob.h

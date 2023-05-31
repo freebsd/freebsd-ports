@@ -1,6 +1,6 @@
 TIMESTAMP = 1645265605
-SHA256 (simsong-bulk_extractor-2.0.0-v2.0.0_GH0.tar.gz) = 57efb6fac52fdd70f9778bfad96f76ce01466b48e4a0bb732a39b66abb698cfb
-SIZE (simsong-bulk_extractor-2.0.0-v2.0.0_GH0.tar.gz) = 42333931
+SHA256 (simsong-bulk_extractor-v2.0.0_GH0.tar.gz) = 57efb6fac52fdd70f9778bfad96f76ce01466b48e4a0bb732a39b66abb698cfb
+SIZE (simsong-bulk_extractor-v2.0.0_GH0.tar.gz) = 42333931
 SHA256 (simsong-be20_api-f63dcd5_GH0.tar.gz) = 76713af7d1430d5ade05603f218f5a0d9523357b292319e935ef941033a8b4c2
 SIZE (simsong-be20_api-f63dcd5_GH0.tar.gz) = 485552
 SHA256 (dfxml-working-group-dfxml_cpp-09030bc_GH0.tar.gz) = caf43f6b8440fb7acc3069602d513d36886c7413209043274cc88f6615363502

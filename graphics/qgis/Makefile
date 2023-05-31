@@ -1,5 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.30.2
+DISTVERSION=	3.30.3
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -109,13 +109,14 @@ USE_LDCONFIG=	yes
 USE_PYQT=	pyqt5 qscintilla2 pysip sip
 USE_QT=		3d buildtools:build core concurrent dbus declarative \
 		designer:build qdoc:build gamepad gui linguist:build location \
-		network printsupport qmake:build script serialport \
-		sql sql-pgsql sql-sqlite3 svg uitools:build \
+		multimedia network printsupport qmake:build script serialport \
+		sql sql-pgsql sql-sqlite3 svg testlib uitools:build \
 		webengine webkit widgets xml
 
 SHEBANG_FILES=	src/plugins/grass/scripts/*.py
 
 CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
+		-DHAVE_PGCONFIG=1 \
 		-DPYRCC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyrcc5-${PYTHON_VER} \
 		-DPYUIC_PROGRAM:FILEPATH=${LOCALBASE}/bin/pyuic5-${PYTHON_VER} \
 		-DQSCI_SIP_DIR:PATH=${PYQT_SIPDIR}/Qsci \
@@ -125,7 +126,7 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE WITH_BINDINGS \
 		WITH_COPC WITH_CUSTOM_WIDGETS WITH_EPT  WITH_INTERNAL_LAZPERF \
 		WITH_POSTGRESQL WITH_PDAL
-CMAKE_OFF=	ENABLE_TESTS WITH_INTERNAL_MDAL WITH_QWTPOLAR
+CMAKE_OFF=	ENABLE_TESTING WITH_INTERNAL_MDAL WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis-ltr
 
@@ -157,6 +158,10 @@ SERVER_CMAKE_BOOL=	WITH_SERVER WITH_SERVER_PLUGINS WITH_QSPATIALITE
 BUILD_DEPENDS+=	${LOCALBASE}/bin/flex:textproc/flex
 CMAKE_ARGS+=	-DFLEX_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/flex
 .endif
+
+pre-patch:
+	@${REINPLACE_CMD} -e 's|set(POSTGRES_INCLUDE_DIR \$${PostgreSQL_INCLUDE_DIRS})|set(POSTGRES_INCLUDE ${LOCALBASE}/include)|g' \
+		${WRKSRC}/cmake/FindPostgres.cmake
 
 post-patch:
 # On i386, '-mllvm -inline-threshold=128' does not build under all circumstances

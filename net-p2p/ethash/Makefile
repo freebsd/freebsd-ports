@@ -1,10 +1,9 @@
 PORTNAME=	ethash
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
 CATEGORIES=	net-p2p
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C/C++ implementation of Ethash and ProgPoW
 WWW=		https://github.com/chfast/ethash
 
@@ -19,5 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	chfast
 
 CMAKE_OFF=	HUNTER_ENABLED
+
+CFLAGS+=	-Wno-error=deprecated-declarations
 
 .include <bsd.port.mk>

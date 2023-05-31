@@ -1,10 +1,7 @@
 PORTNAME=	vulkan-extension-layer
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.248
+DISTVERSION=	1.3.250
 CATEGORIES=	graphics
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	62c6b62d0766.patch:-p1 # https://github.com/KhronosGroup/Vulkan-ExtensionLayer/pull/207
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Layer providing Vulkan features when native support is unavailable

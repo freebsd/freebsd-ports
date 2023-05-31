@@ -1,5 +1,6 @@
 PORTNAME=	glibd
 PORTVERSION=	2.4.2
+DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	devel
 
@@ -22,6 +23,5 @@ USE_GNOME=	glib20 introspection
 USE_GITHUB=	yes
 GH_ACCOUNT=	gtkd-developers
 GH_PROJECT=	GlibD
-GH_TAGNAME=	v${DISTVERSION}
 
 .include <bsd.port.mk>

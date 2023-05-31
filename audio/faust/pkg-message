@@ -6,13 +6,13 @@ signal processing.
 
 In order to try it, you can put the dsp program from
 https://faustdoc.grame.fr/tutorials/basic-osc/ into the source file
-example.dsp, and run the faust compiler that will create
+example-freeverb_demo.dsp, and run the faust compiler that will create
 Qt UI with Jack audio backend:
 
 $ sudo pkg install -A qt6-base
-$ cp files/example.dsp .
-$ faust2jaqt example.dsp
-$ ./example # this assumes that Jack audio server is up and running
+$ cp files/example-freeverb_demo.dsp .
+$ faust2jaqt example-freeverb_demo.dsp
+$ ./example-freeverb_demo # this assumes that Jack audio server is up and running
 
 It will create the window with sliders and a button that you would
 need to press.

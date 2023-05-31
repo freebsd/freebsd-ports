@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2022-07-31 09:44:18 UTC
+--- CMakeLists.txt.orig	2022-08-10 18:13:08 UTC
 +++ CMakeLists.txt
+@@ -656,7 +656,7 @@ if(APPLE)
+ 	list(APPEND CMAKE_PREFIX_PATH /opt/homebrew/)
+ endif()
+ 
+-if(NOT WIN32 OR NOT MSVC)
++if(FALSE)
+ 	include(CheckCXXSourceCompiles)
+ 	set(FS_SRC "
+ 	#include <experimental/filesystem> 
 @@ -807,7 +807,7 @@ endif()
  # Stratagus definitions
  
@@ -41,7 +50,7 @@
  	set(stratagus_LIBS ${stratagus_LIBS} ${THEORA_LIBRARY})
  endif()
  
-@@ -1311,7 +1311,7 @@ if (WIN32)
+@@ -1311,8 +1311,8 @@ if (WIN32)
  	install(TARGETS midiplayer DESTINATION ${GAMEDIR})
  endif()
  
@@ -50,6 +59,7 @@
 +if(ENABLE_DOC)
  	install(FILES
  		doc/development.html
+ 		doc/faq.html
 @@ -1325,8 +1325,11 @@ if(ENABLE_DOC AND DOXYGEN_FOUND)
  		doc/README-SDL.txt
  		DESTINATION share/doc/stratagus

@@ -9,11 +9,3 @@
  EOF
  if { (eval echo configure:1061: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest${ac_exeext}; then
    ac_cv_prog_cc_works=yes
-@@ -2335,6 +2332,7 @@ rm -f conftest*
- 
- CFLAGS="$CFLAGS $SDL_CFLAGS"
- LIBS="$LIBS $SDL_LIBS"
-+CC="$REAL_CC"
- 
- echo $ac_n "checking for sqrt in -lm""... $ac_c" 1>&6
- echo "configure:2341: checking for sqrt in -lm" >&5

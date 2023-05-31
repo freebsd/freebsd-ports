@@ -1,6 +1,16 @@
---- src/datasource/domain.c.orig	2020-12-17 13:03:54 UTC
+--- src/datasource/domain.c.orig	2022-08-27 02:05:09 UTC
 +++ src/datasource/domain.c
-@@ -44,7 +44,7 @@
+@@ -36,7 +36,9 @@
+ #include   <errno.h>
+ #include   <limits.h>
+ #include   <stdio.h>
++#define __BSD_VISIBLE 1
+ #include   <string.h>
++#undef __BSD_VISIBLE
+ #include   <unistd.h>
+ 
+ 
+@@ -44,7 +46,7 @@
  /*
   * Local defines
   */
@@ -9,7 +19,7 @@
  #define   HOSTS_PATH            "/etc/hosts"
  #define   HOSTS_LINE_SIZE_MAX   1024
  #define   HOSTS_LINE_POS_MAX    1023
-@@ -76,12 +76,12 @@ int snoopy_datasource_domain (char * const result, cha
+@@ -76,12 +78,12 @@ int snoopy_datasource_domain (char * const result, __a
       * START: COPY FROM datasource/hostname
       */
      /* Get my hostname first */

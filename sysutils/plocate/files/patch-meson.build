@@ -1,0 +1,56 @@
+--- meson.build.orig	2023-05-04 07:34:20 UTC
++++ meson.build
+@@ -1,7 +1,7 @@
+ project('plocate', 'cpp', default_options: ['buildtype=debugoptimized','cpp_std=c++17'], version: '1.1.18')
+ 
+ add_project_arguments('-DGROUPNAME="' + get_option('locategroup') + '"', language: 'cpp')
+-add_project_arguments('-DUPDATEDB_CONF="/etc/updatedb.conf"', language: 'cpp')
++add_project_arguments('-DUPDATEDB_CONF= "' + get_option('prefix') + '/etc/updatedb.conf"', language: 'cpp')
+ dbfile = join_paths(get_option('sharedstatedir'), get_option('dbpath'))
+ add_project_arguments('-DDBFILE="' + dbfile + '"', language: 'cpp')
+ add_project_arguments('-DPACKAGE_NAME="plocate"', language: 'cpp')
+@@ -30,16 +30,12 @@ if cxx.compiles(code, name: 'function multiversioning'
+ 	add_project_arguments('-DHAS_FUNCTION_MULTIVERSIONING', language: 'cpp')
+ endif
+ 
+-executable('plocate', ['plocate.cpp', 'io_uring_engine.cpp', 'turbopfor.cpp', 'parse_trigrams.cpp', 'serializer.cpp', 'access_rx_cache.cpp', 'needle.cpp', 'complete_pread.cpp'],
++executable('plocate', ['plocate.cpp', 'io_uring_engine.cpp', 'turbopfor.cpp', 'parse_trigrams.cpp', 'serializer.cpp', 'access_rx_cache.cpp', 'needle.cpp', 'complete_pread.cpp', 'mntent_compat.c++'],
+ 	dependencies: [uringdep, zstddep, threaddep, atomicdep],
+ 	install: true,
+ 	install_mode: ['rwxr-sr-x', 'root', get_option('locategroup')])
+-executable('plocate-build', ['plocate-build.cpp', 'database-builder.cpp'],
+-	dependencies: [zstddep],
+-	install: true,
+-	install_dir: get_option('sbindir'))
+ updatedb_progname = get_option('updatedb_progname')
+-executable(updatedb_progname, ['updatedb.cpp', 'database-builder.cpp', 'conf.cpp', 'lib.cpp', 'bind-mount.cpp', 'complete_pread.cpp'],
++executable(updatedb_progname, ['updatedb.cpp', 'database-builder.cpp', 'conf.cpp', 'lib.cpp', 'bind-mount.cpp', 'complete_pread.cpp', 'mntent_compat.c++'],
+ 	dependencies: [zstddep, threaddep],
+ 	install: true,
+ 	install_dir: get_option('sbindir'))
+@@ -49,7 +45,7 @@ conf_data.set('PROCESSED_BY_MESON', '1')
+ conf_data.set('sbindir', join_paths(get_option('prefix'), get_option('sbindir')))
+ conf_data.set('groupname', get_option('locategroup'))
+ conf_data.set('dbfile', dbfile)
+-conf_data.set('updatedb_conf', '/etc/updatedb.conf')
++conf_data.set('updatedb_conf',get_option('prefix')+'/etc/updatedb.conf')
+ conf_data.set('updatedb_progname', updatedb_progname)
+ update_script = configure_file(input: 'update-plocate.sh',
+                output: 'update-plocate.sh',
+@@ -64,7 +60,6 @@ if get_option('install_cron')
+ 		rename: 'plocate')
+ endif
+ install_man('plocate.1')
+-install_man('plocate-build.8')
+ 
+ updatedb_man = configure_file(input: 'updatedb.8.in',
+                output: updatedb_progname + '.8',
+@@ -102,7 +97,7 @@ if run_command('[', '-r', pfordir + '/libic.a', ']', c
+ 	turbopfordep = declare_dependency(
+ 		include_directories: include_directories('TurboPFor-Integer-Compression'),
+ 		dependencies: meson.get_compiler('cpp').find_library('ic', dirs: pfordir))
+-	executable('bench', ['bench.cpp', 'io_uring_engine.cpp', 'turbopfor.cpp', 'complete_pread.cpp'],
++	executable('bench', ['bench.cpp', 'io_uring_engine.cpp', 'turbopfor.cpp', 'complete_pread.cpp', 'mntent_compat.c++'],
+ 		dependencies: [uringdep, turbopfordep],
+ 		build_by_default: false,
+ 		install: false)

@@ -43,7 +43,7 @@ MANPAGES_PLIST_FILES=	share/man/man1/certbot.1.gz \
 			share/man/man7/certbot.7.gz
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot/compat/misc.py ${WRKSRC}/tests/cli_test.py
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' ${WRKSRC}/certbot/compat/misc.py ${WRKSRC}/certbot/_internal/tests/cli_test.py
 
 post-build-MANPAGES-on:
 	# Avoid gmake / ${DO_MAKE_BUILD} -C ${WRKSRC}/docs man

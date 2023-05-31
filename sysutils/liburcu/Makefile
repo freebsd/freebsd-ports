@@ -1,7 +1,7 @@
 PORTNAME=	liburcu
-PORTVERSION=	0.13.0
+PORTVERSION=	0.14.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://lttng.org/files/urcu/
+MASTER_SITES=	https://lttng.org/files/urcu/
 DISTNAME=	userspace-rcu-${PORTVERSION}
 
 MAINTAINER=	freebsd@dns-lab.com
@@ -17,10 +17,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--docdir=${DOCSDIR}
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
-
-PLIST_SUB=	SO_SHORT_VER=8 \
-		SO_VER=8.0.0
-
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 PORTNAME=	rar
-PORTVERSION=	6.20
+PORTVERSION=	6.21
 PORTEPOCH=	3
 CATEGORIES=	archivers
 MASTER_SITES=	https://www.rarlab.com/rar/

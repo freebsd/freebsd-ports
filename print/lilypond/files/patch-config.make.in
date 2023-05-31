@@ -1,11 +1,11 @@
---- config.make.in.orig	2020-08-16 10:58:56 UTC
+--- config.make.in.orig	2023-02-10 17:44:03 UTC
 +++ config.make.in
-@@ -94,7 +94,7 @@ mandir = @mandir@
+@@ -92,7 +92,7 @@ mandir = @mandir@
  package = lilypond
  package_datadir = $(datadir)/$(package)
  package_docdir = $(docdir)/$(package)
 -package_infodir = $(infodir)/$(package)
 +package_infodir = $(infodir)
+ package_libdir = $(libdir)/$(package)
  prefix = @prefix@
  program_prefix = @program_prefix@
- program_suffix = @program_suffix@

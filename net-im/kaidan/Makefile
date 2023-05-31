@@ -1,6 +1,6 @@
 PORTNAME=	kaidan
 DISTVERSION=	0.8.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im kde
 MASTER_SITES=	KDE/unstable/${PORTNAME}/${DISTVERSION}
 
@@ -8,7 +8,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	User-friendly XMPP client for every device
 WWW=		https://www.kaidan.im/
 
-LIB_DEPENDS=	libQXmppQt5.so:net-im/qxmpp-qt5 \
+LIB_DEPENDS=	libQXmppQt5.so:net-im/qxmpp@qt5 \
 		libZXing.so:textproc/zxing-cpp
 
 USES=		cmake compiler:c++11-lang desktop-file-utils kde:5 \

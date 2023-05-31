@@ -245,6 +245,7 @@ cbsd/etc/defaults/vm-linux-CentOS-stream-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-ClearLinux-Server-x86_64.conf
 cbsd/etc/defaults/vm-linux-Debian-x86-10.conf
 cbsd/etc/defaults/vm-linux-Debian-x86-11.conf
+cbsd/etc/defaults/vm-linux-EuroLinux-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-FreePBX-64bit-16.conf
 cbsd/etc/defaults/vm-linux-Kali-2022-amd64.conf
 cbsd/etc/defaults/vm-linux-Mint-21.conf
@@ -269,6 +270,7 @@ cbsd/etc/defaults/vm-linux-cloud-CentOS-stream-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-10.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-11.conf
 cbsd/etc/defaults/vm-linux-cloud-Debian-x86-9.conf
+cbsd/etc/defaults/vm-linux-cloud-Euro-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Fedora-36-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Fedora-37-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Fedora-38-x86_64.conf

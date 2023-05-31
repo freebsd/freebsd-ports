@@ -78,4 +78,4 @@ lib/cmake/aluminum/FindHWLOC.cmake
 lib/cmake/aluminum/FindNCCL.cmake
 lib/cmake/aluminum/FindRoctracer.cmake
 lib/libAl.so
-lib/libAl.so.1.3.0
+lib/libAl.so.1.3.1

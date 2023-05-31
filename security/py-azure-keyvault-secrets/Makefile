@@ -1,5 +1,5 @@
 PORTNAME=	azure-keyvault-secrets
-PORTVERSION=	4.4.0
+PORTVERSION=	4.7.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,12 +9,14 @@ COMMENT=	Microsoft Azure Key Vault Secrets Client Library for Python
 WWW=		https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/keyvault/azure-keyvault-secrets
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-common>=1.1<2:www/py-azure-common@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}azure-core>=1.20.0<2.0.0:devel/py-azure-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}msrest>=0.6.21:net-mgmt/py-msrest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}azure-core>=1.24.0<2.0.0:devel/py-azure-core@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}isodate>=0.6.1:devel/py-isodate@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.1:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.6+ zip
+USES=		python:3.7+ zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

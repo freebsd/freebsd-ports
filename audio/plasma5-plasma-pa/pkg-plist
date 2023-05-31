@@ -93,6 +93,8 @@ share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/lt/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
+share/locale/ml/LC_MESSAGES/kcm_pulseaudio.mo
+share/locale/ml/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo
 share/locale/nb/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/nl/LC_MESSAGES/kcm_pulseaudio.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.plasma.volume.mo

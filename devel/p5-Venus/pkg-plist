@@ -32,6 +32,7 @@
 %%SITE_PERL%%/Venus/Name.pm
 %%SITE_PERL%%/Venus/Number.pm
 %%SITE_PERL%%/Venus/Opts.pm
+%%SITE_PERL%%/Venus/Os.pm
 %%SITE_PERL%%/Venus/Path.pm
 %%SITE_PERL%%/Venus/Process.pm
 %%SITE_PERL%%/Venus/Prototype.pm
@@ -72,6 +73,7 @@
 %%SITE_PERL%%/Venus/Role/Unpackable.pm
 %%SITE_PERL%%/Venus/Role/Valuable.pm
 %%SITE_PERL%%/Venus/Scalar.pm
+%%SITE_PERL%%/Venus/Schema.pm
 %%SITE_PERL%%/Venus/Search.pm
 %%SITE_PERL%%/Venus/Space.pm
 %%SITE_PERL%%/Venus/String.pm
@@ -119,6 +121,7 @@
 %%PERL5_MAN3%%/Venus::Name.3.gz
 %%PERL5_MAN3%%/Venus::Number.3.gz
 %%PERL5_MAN3%%/Venus::Opts.3.gz
+%%PERL5_MAN3%%/Venus::Os.3.gz
 %%PERL5_MAN3%%/Venus::Path.3.gz
 %%PERL5_MAN3%%/Venus::Process.3.gz
 %%PERL5_MAN3%%/Venus::Prototype.3.gz
@@ -159,6 +162,7 @@
 %%PERL5_MAN3%%/Venus::Role::Unpackable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Valuable.3.gz
 %%PERL5_MAN3%%/Venus::Scalar.3.gz
+%%PERL5_MAN3%%/Venus::Schema.3.gz
 %%PERL5_MAN3%%/Venus::Search.3.gz
 %%PERL5_MAN3%%/Venus::Space.3.gz
 %%PERL5_MAN3%%/Venus::String.3.gz

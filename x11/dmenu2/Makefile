@@ -16,7 +16,6 @@ USES=		xorg
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	beyert
-GH_TAGNAME=	${PORTVERSION}
 
 USE_XORG=	x11 xft xrender
 

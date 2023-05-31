@@ -1,5 +1,5 @@
 PORTNAME=	nvidia-xconfig
-PORTVERSION=	470.86
+PORTVERSION=	525.116.04
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -9,20 +9,17 @@ WWW=		https://www.nvidia.com/object/unix.html
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libpciaccess.so:devel/libpciaccess
+
 USES=		gmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	NVIDIA
 
 MAKE_ENV=	NV_VERBOSE=1 \
-		INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
-		INSTALL_MAN="${INSTALL_MAN}" \
-		prefix=${PREFIX}
+		PCIACCESS_CFLAGS=-I${LOCALBASE}/include \
+		PCIACCESS_LDFLAGS=-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/nvidia-xconfig \
-		man/man1/nvidia-xconfig.1.gz
-
-post-patch:	.SILENT
-	${REINPLACE_CMD} -e '/^MANDIR/s|share/||' \
-		${WRKSRC}/utils.mk
+		share/man/man1/nvidia-xconfig.1.gz
 
 .include <bsd.port.mk>

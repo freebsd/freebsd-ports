@@ -1,5 +1,5 @@
 PORTNAME=	termcolor
-PORTVERSION=	2.1.0
+PORTVERSION=	2.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,12 +10,12 @@ WWW=		https://pypi.org/project/termcolor/
 
 LICENSE=	MIT
 
-USES=		python:3.6+ pytest
-USE_PYTHON=	distutils autoplist
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}hatch-vcs>0:devel/py-hatch-vcs@${PY_FLAVOR}
+
+USES=		python pytest
+USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes
-
-post-extract:
-	@${ECHO_CMD} 'from setuptools import setup; setup()' > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>

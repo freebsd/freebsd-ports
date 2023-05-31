@@ -4,7 +4,7 @@ CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Add HTTP or SOCKS proxies support and force TCPSocket to use
+COMMENT=	Add HTTP or SOCKS proxies support and force TCPSocket to use proxies
 WWW=		https://github.com/samuelkadolph/ruby-proxifier
 
 LICENSE=	MIT
@@ -15,5 +15,7 @@ USES=		gem
 NO_ARCH=	yes
 
 PLIST_FILES=	bin/pirb bin/pruby
+
+CONFLICTS_INSTALL=	rubygem-proxifier2
 
 .include <bsd.port.mk>

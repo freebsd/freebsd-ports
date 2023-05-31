@@ -28,6 +28,8 @@ share/doc/HTML/ru/kcontrol/kgamma5/index.cache.bz2
 share/doc/HTML/ru/kcontrol/kgamma5/index.docbook
 share/doc/HTML/sv/kcontrol/kgamma5/index.cache.bz2
 share/doc/HTML/sv/kcontrol/kgamma5/index.docbook
+share/doc/HTML/tr/kcontrol/kgamma5/index.cache.bz2
+share/doc/HTML/tr/kcontrol/kgamma5/index.docbook
 share/doc/HTML/uk/kcontrol/kgamma5/index.cache.bz2
 share/doc/HTML/uk/kcontrol/kgamma5/index.docbook
 share/kgamma/pics/background.png
@@ -78,6 +80,7 @@ share/locale/ko/LC_MESSAGES/kcmkgamma.mo
 share/locale/lt/LC_MESSAGES/kcmkgamma.mo
 share/locale/lv/LC_MESSAGES/kcmkgamma.mo
 share/locale/mk/LC_MESSAGES/kcmkgamma.mo
+share/locale/ml/LC_MESSAGES/kcmkgamma.mo
 share/locale/mr/LC_MESSAGES/kcmkgamma.mo
 share/locale/ms/LC_MESSAGES/kcmkgamma.mo
 share/locale/nb/LC_MESSAGES/kcmkgamma.mo

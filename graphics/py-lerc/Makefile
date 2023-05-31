@@ -1,7 +1,7 @@
 PORTNAME=	lerc
-PORTVERSION=	4.0.0
-DISTVERSIONPREFIX=	v
+PORTVERSION=	4.0.1
 CATEGORIES=	graphics python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -10,21 +10,17 @@ WWW=		https://esri.github.io/lerc/ \
 		https://github.com/Esri/lerc/tree/master/OtherLanguages/Python
 
 LICENSE=	APACHE20
-LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 LIB_DEPENDS=	libLerc.so:graphics/lerc
 
-USES=		python:3.6+
+USES=		dos2unix python:3.6+
 USE_PYTHON=	autoplist concurrent distutils
 
-WRKSRC_SUBDIR=	OtherLanguages/Python
-
-GH_ACCOUNT=	Esri
-USE_GITHUB=	yes
+post-patch:
+	@${RM} ${WRKSRC}/lerc/libLerc.so.4
 
 # lib/libLerc.* are not available until configure phase
 post-configure:
-	@${MKDIR} ${WRKSRC}/../../bin/FreeBSD/
-	@${CP} ${LOCALBASE}/lib/libLerc.so.* ${WRKSRC}/../../bin/FreeBSD/
+	@${CP} ${LOCALBASE}/lib/libLerc.so.* ${WRKSRC}/lerc/
 
 .include <bsd.port.mk>

@@ -8,7 +8,8 @@ DISTNAME=	${PORTNAME}4-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	C++ library for machine-independent, array-oriented data access
-WWW=		https://www.unidata.ucar.edu/software/netcdf/
+WWW=		https://www.unidata.ucar.edu/software/netcdf/ \
+		https://github.com/Unidata/netcdf-cxx4
 
 LICENSE=	UCAR_UNIDATA
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT

@@ -1,6 +1,6 @@
 PORTNAME=	evince
 DISTVERSION=	43.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME/sources/${PORTNAME}/${PORTVERSION:C/^([0-9]+)\..*/\1/}
 DIST_SUBDIR=	gnome
@@ -27,7 +27,6 @@ RUN_DEPENDS=	adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
-SLAVEPORT?=	no
 
 USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome gstreamer libarchive \
 		localbase:ldflags meson pkgconfig tar:xz xorg

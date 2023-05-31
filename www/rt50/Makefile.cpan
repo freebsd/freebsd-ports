@@ -16,14 +16,13 @@
 ### CSS::Squish 0.06
 ### Data::GUID
 ### Data::ICal
-### Data::Page::Pageset
-### Date::Extract 0.02
+### Date::Extract 0.07
 ### Date::Manip
 ### DateTime 0.44
 ### DateTime::Format::Natural 0.67
 ### DateTime::Locale 0.40
 ### DBI 1.37
-### DBIx::SearchBuilder 1.71
+### DBIx::SearchBuilder 1.76
 ### Devel::GlobalDestruction
 ### Devel::StackTrace 1.19
 ### Digest::base                                perl std
@@ -64,13 +63,13 @@
 ### MIME::Entity 5.504
 ### MIME::Types
 ### Module::Refresh 0.03
+### Module::Runtime
 ### Module::Versions::Report 1.05
 ### Net::CIDR
 ### Net::IP
-### Fork::Manager
+### Parallel::ForkManager
 ### Plack 1.0002
 ### Plack::Handler::Starlet
-### Pod::Select
 ### Regexp::Common
 ### Regexp::Common::net::CIDR
 ### Regexp::IPv6
@@ -89,7 +88,6 @@
 ### Time::HiRes                                perl std
 ### Time::ParseDate
 ### Tree::Simple 1.04
-### UNIVERSAL::require
 ### URI 1.59
 ### URI::QueryParam
 ### XML::RSS 1.05
@@ -106,10 +104,10 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Convert-Color>0:graphics/p5-Convert-Color				\
 		p5-Crypt-Eksblowfish>0:security/p5-Crypt-Eksblowfish			\
 		p5-DBI>=1.37:databases/p5-DBI						\
-		p5-DBIx-SearchBuilder>=1.71:databases/p5-DBIx-SearchBuilder		\
+		p5-DBIx-SearchBuilder>=1.76:databases/p5-DBIx-SearchBuilder		\
 		p5-Data-GUID>0:devel/p5-Data-GUID					\
 		p5-Data-ICal>0:deskutils/p5-Data-ICal					\
-		p5-Data-Page-Pageset>0:devel/p5-Data-Page-Pageset			\
+		p5-Data-Page>0:databases/p5-Data-Page					\
 		p5-Date-Extract>=0.02:devel/p5-Date-Extract				\
 		p5-Date-Manip>0:devel/p5-Date-Manip					\
 		p5-DateTime>=0.44:devel/p5-DateTime					\
@@ -146,6 +144,7 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-MIME-Types>=0:mail/p5-MIME-Types					\
 		p5-Mail-Tools>=2.12:mail/p5-Mail-Tools					\
 		p5-Module-Refresh>=0.03:devel/p5-Module-Refresh				\
+		p5-Module-Runtime>0:devel/p5-Module-Runtime				\
 		p5-Module-Versions-Report>=1.05:devel/p5-Module-Versions-Report		\
 		p5-Net-CIDR>0:net-mgmt/p5-Net-CIDR					\
 		p5-Net-IP>=0:net-mgmt/p5-Net-IP						\
@@ -167,7 +166,6 @@ CORE_DEPS=	p5-Apache-Session>=1.53:www/p5-Apache-Session				\
 		p5-Text-Wrapper>0:textproc/p5-Text-Wrapper				\
 		p5-Time-modules>0:devel/p5-Time-modules					\
 		p5-Tree-Simple>=1.04:devel/p5-Tree-Simple				\
-		p5-UNIVERSAL-require>0:devel/p5-UNIVERSAL-require			\
 		p5-URI>=1.59:net/p5-URI							\
 		p5-XML-RSS>=1.05:textproc/p5-XML-RSS
 
@@ -234,6 +232,7 @@ REST2_DEPS=	p5-Module-Runtime>0:devel/p5-Module-Runtime				\
 ### Test::Expect 0.31
 ### Test::LongString
 ### Test::MockTime
+### Test::MockTime::HiRes
 ### Test::NoWarnings
 ### Test::Pod
 ### Test::Warn
@@ -257,6 +256,7 @@ DEVELOPER_DEPS=	p5-Email-Abstract>0:mail/p5-Email-Abstract				\
 		p5-Test-Expect>=0.31:devel/p5-Test-Expect				\
 		p5-Test-LongString>0:devel/p5-Test-LongString				\
 		p5-Test-MockTime>0:devel/p5-Test-MockTime				\
+		p5-Test-MockTime-HiRes>0:devel/p5-Test-MockTime-HiRes			\
 		p5-Test-NoWarnings>0:devel/p5-Test-NoWarnings				\
 		p5-Test-Pod>0:devel/p5-Test-Pod						\
 		p5-Test-WWW-Mechanize-PSGI>0:devel/p5-Test-WWW-Mechanize-PSGI		\
@@ -288,9 +288,9 @@ MYSQL_DEPS=	p5-DBD-mysql>=2.1018:databases/p5-DBD-mysql
 PGSQL_DEPS=	p5-DBD-Pg>=1.43:databases/p5-DBD-Pg
 
 ### --- SQLITE ---
-### DBD::SQLite 1.00
+### DBD::SQLite 1.72
 
-SQLITE_DEPS=	p5-DBD-SQLite>=1.00:databases/p5-DBD-SQLite
+SQLITE_DEPS=	p5-DBD-SQLite>=1.72:databases/p5-DBD-SQLite
 
 ### --- GPG ---
 ### File::Which
@@ -311,19 +311,19 @@ SMIME_DEPS=	p5-Crypt-X509>0:security/p5-Crypt-X509 \
 		p5-String-ShellQuote>0:textproc/p5-String-ShellQuote
 
 ### --- GRAPHVIZ ---
-### GraphViz
+### GraphViz2
 ### IPC::Run 0.90
 
-GRAPHVIZ_DEPS=	p5-GraphViz>0:graphics/p5-GraphViz \
+GRAPHVIZ_DEPS=	p5-GraphViz2>0:graphics/p5-GraphViz2 \
 		p5-IPC-Run>=0.90:devel/p5-IPC-Run
 
 ### -- GD --
 ### GD
-### GD::Graph 1.47
+### GD::Graph 1.56
 ### GD::Text
 
 GD_DEPS=	p5-GD>0:graphics/p5-GD \
-		p5-GD-Graph>0:graphics/p5-GD-Graph \
+		p5-GD-Graph>=1.56:graphics/p5-GD-Graph \
 		p5-GD-TextUtil>0:graphics/p5-GD-TextUtil
 
 ### --- EXTERNALAUTH ---

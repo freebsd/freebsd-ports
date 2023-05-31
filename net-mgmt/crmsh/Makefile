@@ -2,7 +2,7 @@ PORTNAME=	crmsh
 PORTVERSION=	4.3.1
 CATEGORIES=	net-mgmt python
 
-MAINTAINER=	egypcio@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	Command-line interface for High-Availability cluster management
 WWW=		https://crmsh.github.io
 

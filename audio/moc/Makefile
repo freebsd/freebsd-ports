@@ -21,7 +21,9 @@ INSTALL_TARGET=	install-strip
 CPPFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
 
-OPTIONS_DEFINE=	AAC CURL DEBUG FFMPEG FLAC JACK MODPLUG MP3 MUSEPACK RCC \
+CONFIGURE_ARGS=	--without-ffmpeg
+
+OPTIONS_DEFINE=	AAC CURL DEBUG FLAC JACK MODPLUG MP3 MUSEPACK RCC \
 		SAMPLERATE SIDPLAY2 SNDFILE SPEEX VORBIS WAVPACK
 OPTIONS_DEFAULT=	MP3 VORBIS FLAC CURL WAVPACK
 CURL_DESC=	curl support (Internet streams)
@@ -36,10 +38,6 @@ CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_CONFIGURE_OFF=	--without-curl
 
 DEBUG_CONFIGURE_OFF=	--enable-debug=no
-
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
-FFMPEG_PLIST_FILES=	lib/moc/decoder_plugins/libffmpeg_decoder.so
-FFMPEG_CONFIGURE_OFF=	--without-ffmpeg
 
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FLAC_PLIST_FILES=	lib/moc/decoder_plugins/libflac_decoder.so

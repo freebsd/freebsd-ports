@@ -1,6 +1,7 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.11.0
+DISTVERSION=	1.12.12.0
+PORTREVISION=	1
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
@@ -19,7 +20,7 @@ LIB_DEPENDS=	libboost_thread.so:devel/boost-libs \
 		libOpenImageIO.so:graphics/openimageio \
 		libpugixml.so:textproc/pugixml
 
-USES=		bison cmake compiler:c++14-lang llvm:lib localbase ncurses qt:5
+USES=		bison cmake compiler:c++14-lang llvm:max=15,lib localbase ncurses qt:5
 
 USE_QT=		buildtools:build qmake:build
 

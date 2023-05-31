@@ -1,5 +1,5 @@
 PORTNAME=	keepassxc
-DISTVERSION=	2.7.4
+DISTVERSION=	2.7.5
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/keepassxreboot/keepassxc/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src

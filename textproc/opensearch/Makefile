@@ -1,5 +1,5 @@
 PORTNAME=	opensearch
-DISTVERSION=	2.6.0
+DISTVERSION=	2.7.0
 DISTVERSIONSUFFIX=	-linux-x64
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
@@ -97,6 +97,7 @@ do-install:
 .for f in ${BINS}
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${STAGEDIR}${PREFIX}/lib/opensearch/bin
 .endfor
+	${MKDIR} ${STAGEDIR}${PREFIX}/lib/opensearch/extensions
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/opensearch/lib
 	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "lib modules" ${STAGEDIR}${PREFIX}/lib/opensearch/)
 	${MKDIR} ${STAGEDIR}${PREFIX}/libexec/opensearch
@@ -127,6 +128,7 @@ post-install:
 .endfor
 	${FIND} -s ${STAGEDIR}${PREFIX}/lib/opensearch -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
+	${ECHO} "@dir lib/opensearch/extensions" >> ${TMPPLIST}
 .if ${PORT_OPTIONS:MPLUGINS}
 	${ECHO} "@dir lib/opensearch/plugins" >> ${TMPPLIST}
 .endif

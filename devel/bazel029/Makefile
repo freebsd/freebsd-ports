@@ -20,7 +20,7 @@ BROKEN_FreeBSD_12_powerpc64=	fails to compile: Action failed to execute: java.io
 BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip
 
-CONFLICTS_INSTALL=	bazel
+CONFLICTS_INSTALL=	bazel[0-9]*
 
 USES=		cpe python:3.3+ shebangfix zip:infozip
 

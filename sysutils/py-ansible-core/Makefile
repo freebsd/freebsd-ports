@@ -1,5 +1,5 @@
 PORTNAME=	ansible-core
-DISTVERSION=	2.14.3
+DISTVERSION=	2.15.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,38 +11,34 @@ WWW=		https://www.ansible.com/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Jinja2>3.0.0:devel/py-Jinja2@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=45.2.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}resolvelib>=0.5.3<0.9:devel/py-resolvelib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}yaml>5.1:devel/py-yaml@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}resolvelib>=0.5.3<1.1.0:devel/py-resolvelib@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}bcrypt>=0:security/py-bcrypt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>0:www/py-boto3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}passlib>0:security/py-passlib@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pycrypto>=0:security/py-pycrypto@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pycryptodome>=0:security/py-pycryptodome@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-mock>0:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		git:devel/git
 
-USES=		ansible:env cpe gmake python:3.8+ shebangfix
+USES=		ansible:env cpe python:3.9+ shebangfix
 CPE_VENDOR=	redhat
 CPE_PRODUCT=	ansible
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 SHEBANG_REGEX=	[.]/test/.*[.]py
 
-TEST_ARGS=	VERSION=${DISTVERSION} \
-		PYTHON=${PYTHON_CMD} \
-		DATE=
 # Pass MAKE_ENV to TEST_ENV so that binary aliases via an updated PATH.
-TEST_ENV=	${MAKE_ENV} PYTHON_VERSION=${PYTHON_VER}
-TEST_TARGET=	tests
-
-CONFLICTS=	py*-ansible-base py*-ansible2 py-ansible-core211
+TEST_ENV=	${MAKE_ENV}
 
 # The "python" binary alias is needed for the tests.
 BINARY_ALIAS=	python=${PYTHON_CMD}
@@ -98,6 +94,9 @@ pre-test:
 	${RM} ${WRKSRC}/test/units/module_utils/basic/test_selinux.py
 # Disable some failing tests. They fail to detect that emoji are of width 2 istead of 1.
 	${RM} ${WRKSRC}/test/units/utils/test_display.py
+
+do-test:
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ./bin/ansible-test units -v --python ${PYTHON_VER}
 
 .include <bsd.port.mk>
 
