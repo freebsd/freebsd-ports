@@ -1,9 +1,10 @@
 --- temp_summary.py.orig	2003-05-06 11:53:14 UTC
 +++ temp_summary.py
-@@ -2,11 +2,9 @@
+@@ -1,12 +1,9 @@
+ #!/usr/bin/python
  from ed2k_metutils import *
  import os
- import stat
+-import stat
 +import unicodedata
  
 -# I'm really surprised there's no easy way to get the terminal
@@ -14,7 +15,7 @@
  
  if __name__ == "__main__":
  	# Here's an example to cut and keep.
-@@ -15,13 +13,10 @@ if __name__ == "__main__":
+@@ -15,26 +12,22 @@ if __name__ == "__main__":
  	# see how much data I actually got from night to night.
  	
  	if len( sys.argv ) < 2:
@@ -32,7 +33,14 @@
  		sys.exit( -1 );
  	
  	total_size = total_down = 0;
-@@ -34,7 +29,7 @@ if __name__ == "__main__":
+ 	
+-	sta = os.stat( sys.argv[ 1 ] )[ 0 ];
+-	if stat.S_ISDIR( sta ):
+-		mets = [ "%s%s" % ( sys.argv[ 1 ], x ) for x in os.listdir( sys.argv[ 1 ] ) if x.endswith( ".met" ) ];
++	if os.path.isdir(sys.argv[1]):
++		mets = [ "%s/%s" % (sys.argv[1], x) for x in os.listdir(sys.argv[1]) if x.endswith(".met") ]
+ 	else:
+ 		mets = sys.argv[ 1 : ];
  	
  	for met_file in mets:
  		
@@ -41,7 +49,7 @@
  		data = fh.read();
  		fh.close();
  		
-@@ -43,7 +38,7 @@ if __name__ == "__main__":
+@@ -43,7 +36,7 @@ if __name__ == "__main__":
  		
  		# We're interested in the name, the total size, and some kind of... anti-gapping.
  		size = met_data.FindTags( TAG_HANDLE_FILESIZE )[ 0 ].value;
@@ -50,7 +58,7 @@
  		
  		# Set the total downloaded to the file size.
  		down = size;
-@@ -71,19 +66,42 @@ if __name__ == "__main__":
+@@ -71,19 +64,42 @@ if __name__ == "__main__":
  		bar = "#" * ( WIDTH - 2 );
  		for gap in gaps:
  			gap_start, gap_end = gaps[ gap ];
