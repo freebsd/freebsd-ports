@@ -22,7 +22,6 @@
     SUBDIR += ftpcopy
     SUBDIR += ftpfind
     SUBDIR += ftplib
-    SUBDIR += ftpmirror
     SUBDIR += ftpproxy
     SUBDIR += ftpsesame
     SUBDIR += ftpsync
