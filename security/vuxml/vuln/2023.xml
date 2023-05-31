@@ -107,7 +107,19 @@
       </body>
     </description>
     <references>
-      <cvename></cvename>
+      <cvename>CVE-2023-2929</cvename>
+      <cvename>CVE-2023-2930</cvename>
+      <cvename>CVE-2023-2931</cvename>
+      <cvename>CVE-2023-2932</cvename>
+      <cvename>CVE-2023-2933</cvename>
+      <cvename>CVE-2023-2934</cvename>
+      <cvename>CVE-2023-2935</cvename>
+      <cvename>CVE-2023-2936</cvename>
+      <cvename>CVE-2023-2937</cvename>
+      <cvename>CVE-2023-2938</cvename>
+      <cvename>CVE-2023-2939</cvename>
+      <cvename>CVE-2023-2940</cvename>
+      <cvename>CVE-2023-2941</cvename>
       <url>https://chromereleases.googleblog.com/2023/05/stable-channel-update-for-desktop_30.html</url>
     </references>
     <dates>
