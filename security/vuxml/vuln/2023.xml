@@ -1,3 +1,42 @@
+  <vuln vid="eb9a3c57-ff9e-11ed-a0d1-84a93843eb75">
+    <topic>OpenSSL -- Possible DoS translating ASN.1 identifiers</topic>
+    <affects>
+      <package>
+	<name>openssl</name>
+	<range><lt>1.1.1u,1</lt></range>
+      </package>
+      <package>
+	<name>openssl30</name>
+	<range><lt>3.0.9</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.1</lt></range>
+      </package>
+      <package>
+	<name>openssl-quictls</name>
+	<range><lt>3.0.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20230530.txt">
+	  <p>Severity: Moderate. Processing some specially crafted ASN.1
+	    object identifiers or data containing them may be very slow.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2650</cvename>
+      <url>https://www.openssl.org/news/secadv/20230530.txt</url>
+    </references>
+    <dates>
+      <discovery>2023-05-30</discovery>
+      <entry>2023-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="79514fcd-feb4-11ed-92b5-b42e991fc52e">
     <topic>Kanboard -- Clipboard based cross-site scripting (blocked with default CSP) in Kanboard</topic>
     <affects>
