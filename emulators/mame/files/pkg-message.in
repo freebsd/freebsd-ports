@@ -1,12 +1,15 @@
 [
 { type: install
   message: <<EOM
-An example configuration file has been installed in
-"%%EXAMPLESDIR%%/%%MSUBTARGET%%.ini" This configuration can be copied to your
-"~/.%%MSUBTARGET%%" directory; alternatively, run "%%MSUBTARGET%% -createconfig" to
-create a clean copy of "%%MSUBTARGET%%.ini", which can be copied to
-"~/.%%MSUBTARGET%%", or elsewhere.
-To run %%MSUBTARGET%% with a custom path, run "%%MSUBTARGET%% -inipath path-to-%%MSUBTARGET%%.ini"
+Sample configuration files have been installed in "%%ETCDIR%%/"
+The configuration data can be copied to your "~/.mame" directory; alternatively,
+to create clean copies of MAME's configuration, run "mame -createconfig",
+the output from this can be stored in ~/.mame or elsewhere.
+
+To run mame with a custom path, run "mame -inipath path-to-mame.ini"
+
+By default, MAME will search and write to the current working directory, unless
+it finds configuration data.
 EOM
 }
 ]

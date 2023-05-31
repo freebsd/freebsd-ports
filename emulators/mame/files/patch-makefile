@@ -1,14 +1,27 @@
---- makefile.orig	2023-05-17 11:43:34 UTC
+--- makefile.orig	2023-04-25 15:19:25 UTC
 +++ makefile
-@@ -1425,6 +1425,11 @@ $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile: make
+@@ -447,9 +447,9 @@ ifneq ($(TARGETOS),asmjs)
+ endif
  
- .PHONY: freebsd_x64_clang
- freebsd_x64_clang: generate $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile
-+	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64 precompile
-+	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64
+ ifneq ($(TARGETOS),asmjs)
+-CC := $(SILENT)gcc
+-LD := $(SILENT)g++
+-CXX:= $(SILENT)g++
++CC ?= $(SILENT)gcc
++LD ?= $(SILENT)g++
++CXX ?= $(SILENT)g++
+ endif
+ 
+ #-------------------------------------------------
+@@ -1409,6 +1409,11 @@ $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile: make
+ 
+ $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile: makefile $(SCRIPTS) $(GENIE)
+ 	$(SILENT) $(GENIE) $(PARAMS) $(TARGET_PARAMS) --gcc=freebsd-clang --gcc_version=$(CLANG_VERSION) $(MAKETYPE)
 +
 +.PHONY: freebsd_arm64_clang
 +freebsd_arm64_clang: generate $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile
- 	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64 precompile
- 	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64
++	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64 precompile
++	$(SILENT) $(MAKE) -C $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang config=$(CONFIG)64
  
+ .PHONY: freebsd_x64_clang
+ freebsd_x64_clang: generate $(PROJECTDIR)/$(MAKETYPE)-freebsd-clang/Makefile

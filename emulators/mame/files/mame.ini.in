@@ -7,31 +7,31 @@ writeconfig               0
 #
 # CORE SEARCH PATH OPTIONS
 #
-homepath                  ~/.%%MTARGET%%
-rompath                   ~/.%%MTARGET%%/roms;%%DATADIR%%/roms/
-hashpath                  ~/.%%MTARGET%%/hash;%%DATADIR%%/hash/
-samplepath                ~/.%%MTARGET%%/samples;%%DATADIR%%/samples/
-artpath                   ~/.%%MTARGET%%/artwork;%%DATADIR%%/artwork/
-ctrlrpath                 ~/.%%MTARGET%%/ctrlr;%%DATADIR%%/ctrlr/
-inipath                   ~/.%%MTARGET%%/;.;~/.%%MTARGET%%/ini;%%DATADIR%%/ini/
-fontpath                  ~/.%%MTARGET%%/font;%%DATADIR%%/font/
-cheatpath                 ~/.%%MTARGET%%/cheat;%%DATADIR%%/cheat/
-crosshairpath             ~/.%%MTARGET%%/crosshair;%%DATADIR%%/crosshair/
-pluginspath               ~/.%%MTARGET%%/plugins;%%DATADIR%%/plugins/
-languagepath              ~/.%%MTARGET%%/language;%%DATADIR%%/language/
-swpath                    ~/.%%MTARGET%%/software;%%DATADIR%%/software/
+homepath                  ~/.mame
+rompath                   ~/.mame/roms;%%DATADIR%%/roms/
+hashpath                  ~/.mame/hash;%%DATADIR%%/hash/
+samplepath                ~/.mame/samples;%%DATADIR%%/samples/
+artpath                   ~/.mame/artwork;%%DATADIR%%/artwork/
+ctrlrpath                 ~/.mame/ctrlr;%%DATADIR%%/ctrlr/
+inipath                   ~/.mame/ini;%%DATADIR%%/ini/;.
+fontpath                  ~/.mame/font;%%DATADIR%%/font/
+cheatpath                 ~/.mame/cheat;%%DATADIR%%/cheat/
+crosshairpath             ~/.mame/crosshair;%%DATADIR%%/crosshair/
+pluginspath               ~/.mame/plugins;%%DATADIR%%/plugins/
+languagepath              ~/.mame/language;%%DATADIR%%/language/
+swpath                    ~/.mame/software;%%DATADIR%%/software/
 
 #
 # CORE OUTPUT DIRECTORY OPTIONS
 #
-cfg_directory             ~/.%%MTARGET%%/cfg
-nvram_directory           ~/.%%MTARGET%%/nvram
-input_directory           ~/.%%MTARGET%%/inp
-state_directory           ~/.%%MTARGET%%/state
-snapshot_directory        ~/.%%MTARGET%%/snapshot
-diff_directory            ~/.%%MTARGET%%/diff
-comment_directory         ~/.%%MTARGET%%/comments
-share_directory           ~/.%%MTARGET%%/share
+cfg_directory             ~/.mame/cfg
+nvram_directory           ~/.mame/nvram
+input_directory           ~/.mame/inp
+state_directory           ~/.mame/state
+snapshot_directory        ~/.mame/snapshot
+diff_directory            ~/.mame/diff
+comment_directory         ~/.mame/comments
+share_directory           ~/.mame/share
 
 #
 # CORE STATE/PLAYBACK OPTIONS
@@ -138,6 +138,7 @@ offscreen_reload          0
 joystick_map              auto
 joystick_deadzone         0.3
 joystick_saturation       0.85
+joystick_threshold        0.3
 natural                   0
 joystick_contradictory    0
 coin_impulse              0
@@ -211,9 +212,11 @@ http_port                 8080
 http_root                 web
 
 #
-# OSD KEYBOARD MAPPING OPTIONS
+# OSD INPUT MAPPING OPTIONS
 #
 uimodekey                 auto
+controller_map            none
+background_input          0
 
 #
 # OSD FONT OPTIONS
@@ -329,6 +332,16 @@ glsl_shader_screen9       none
 #
 sound                     auto
 audio_latency             2
+
+#
+# OSD MIDI OPTIONS
+#
+midiprovider              auto
+
+#
+# OSD EMULATED NETWORKING OPTIONS
+#
+networkprovider           auto
 
 #
 # BGFX POST-PROCESSING OPTIONS
