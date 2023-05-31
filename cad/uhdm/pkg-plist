@@ -115,7 +115,10 @@ include/uhdm/func_call.h
 include/uhdm/function.h
 include/uhdm/gate.h
 include/uhdm/gate_array.h
+include/uhdm/gen_case.h
+include/uhdm/gen_for.h
 include/uhdm/gen_if.h
+include/uhdm/gen_if_else.h
 include/uhdm/gen_scope.h
 include/uhdm/gen_scope_array.h
 include/uhdm/gen_stmt.h
