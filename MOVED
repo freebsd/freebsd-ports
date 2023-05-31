@@ -7584,3 +7584,4 @@ security/zxid||2023-05-28|Has expired: Do not build with OpenSSL 1.1.1e and late
 security/keynote||2023-05-28|Has expired: Upstream last release in 2000
 security/esteidfirefoxplugin||2023-05-28|Has expired: Upstream last release in 2013 and has been migrated into other products of upstream
 devel/py-pyxb|devel/py-pyxb-x|2023-05-31|Has expired: Upstream issued End-of-Life notice. Use devel/py-pyxb-x instead
+devel/arm-none-eabi-gcc492|devel/arm-none-eabi-gcc|2023-05-31|Has expired: Long time unsupported upstream

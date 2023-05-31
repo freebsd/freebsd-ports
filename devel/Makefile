@@ -207,7 +207,6 @@
     SUBDIR += argtable
     SUBDIR += arm-elf-binutils
     SUBDIR += arm-none-eabi-gcc
-    SUBDIR += arm-none-eabi-gcc492
     SUBDIR += arm-none-eabi-newlib
     SUBDIR += aros-sdk
     SUBDIR += arpc
