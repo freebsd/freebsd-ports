@@ -1,3 +1,48 @@
+  <vuln vid="fd87a250-ff78-11ed-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>114.0.5735.90</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>114.0.5735.90</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/05/stable-channel-update-for-desktop_30.html">
+	 <p>This update includes 16 security fixes:</p>
+	 <ul>
+	    <li>[1410191] High CVE-2023-2929: Out of bounds write in Swiftshader. Reported by Jaehun Jeong(@n3sk) of Theori on 2023-01-25</li>
+	    <li>[1443401] High CVE-2023-2930: Use after free in Extensions. Reported by asnine on 2023-05-08</li>
+	    <li>[1444238] High CVE-2023-2931: Use after free in PDF. Reported by Huyna at Viettel Cyber Security on 2023-05-10</li>
+	    <li>[1444581] High CVE-2023-2932: Use after free in PDF. Reported by Huyna at Viettel Cyber Security on 2023-05-11</li>
+	    <li>[1445426] High CVE-2023-2933: Use after free in PDF. Reported by Quang Nguyễn (@quangnh89) of Viettel Cyber Security and Nguyen Phuong  on 2023-05-15</li>
+	    <li>[1429720] High CVE-2023-2934: Out of bounds memory access in Mojo. Reported by Mark Brand of Google Project Zero on 2023-04-01</li>
+	    <li>[1440695] High CVE-2023-2935: Type Confusion in V8. Reported by Sergei Glazunov of Google Project Zero on 2023-04-27</li>
+	    <li>[1443452] High CVE-2023-2936: Type Confusion in V8. Reported by Sergei Glazunov of Google Project Zero on 2023-05-08</li>
+	    <li>[1413813] Medium CVE-2023-2937: Inappropriate implementation in Picture In Picture. Reported by NDevTK on 2023-02-08</li>
+	    <li>[1416350] Medium CVE-2023-2938: Inappropriate implementation in Picture In Picture. Reported by Alesandro Ortiz on 2023-02-15</li>
+	    <li>[1427431] Medium CVE-2023-2939: Insufficient data validation in Installer. Reported by ycdxsb from VARAS@IIE on 2023-03-24</li>
+	    <li>[1426807] Medium CVE-2023-2940: Inappropriate implementation in Downloads. Reported by Axel Chong on 2023-03-22</li>
+	    <li>[1430269] Low CVE-2023-2941: Inappropriate implementation in Extensions API. Reported by Jasper Rebane on 2023-04-04</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename></cvename>
+      <url>https://chromereleases.googleblog.com/2023/05/stable-channel-update-for-desktop_30.html</url>
+    </references>
+    <dates>
+      <discovery>2023-05-30</discovery>
+      <entry>2023-05-31</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="5d1b1a0a-fd36-11ed-a0d1-84a93843eb75">
     <topic>MariaDB -- Nullpointer dereference</topic>
     <affects>
