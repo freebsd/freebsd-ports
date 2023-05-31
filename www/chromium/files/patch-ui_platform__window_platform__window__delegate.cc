@@ -1,6 +1,6 @@
---- ui/platform_window/platform_window_delegate.cc.orig	2023-04-05 11:05:06 UTC
+--- ui/platform_window/platform_window_delegate.cc.orig	2023-05-31 08:12:17 UTC
 +++ ui/platform_window/platform_window_delegate.cc
-@@ -29,7 +29,7 @@ PlatformWindowDelegate::PlatformWindowDelegate() = def
+@@ -36,7 +36,7 @@ PlatformWindowDelegate::PlatformWindowDelegate() = def
  
  PlatformWindowDelegate::~PlatformWindowDelegate() = default;
  

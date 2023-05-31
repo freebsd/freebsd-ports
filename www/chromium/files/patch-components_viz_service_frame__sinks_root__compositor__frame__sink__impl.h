@@ -1,6 +1,6 @@
---- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2023-03-09 06:31:50 UTC
+--- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h.orig	2023-05-31 08:12:17 UTC
 +++ components/viz/service/frame_sinks/root_compositor_frame_sink_impl.h
-@@ -200,7 +200,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
+@@ -204,7 +204,7 @@ class VIZ_SERVICE_EXPORT RootCompositorFrameSinkImpl
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

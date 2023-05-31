@@ -1,4 +1,4 @@
---- net/BUILD.gn.orig	2023-04-28 17:01:32 UTC
+--- net/BUILD.gn.orig	2023-05-31 08:12:17 UTC
 +++ net/BUILD.gn
 @@ -107,7 +107,7 @@ net_configs = [
    "//build/config/compiler:wexit_time_destructors",
@@ -9,12 +9,16 @@
    net_configs += [ "//build/config/linux:libresolv" ]
  }
  
-@@ -1219,6 +1219,15 @@ component("net") {
+@@ -1231,6 +1231,19 @@ component("net") {
      deps += [ "//third_party/xdg_shared_mime_info" ]
    }
  
 +  if (is_bsd) {
 +    sources -= [
++      "base/address_map_cache_linux.cc",
++      "base/address_map_cache_linux.h",
++      "base/address_map_linux.cc",
++      "base/address_map_linux.h",
 +      "base/address_tracker_linux.cc",
 +      "base/address_tracker_linux.h",
 +      "base/network_change_notifier_linux.cc",
@@ -25,16 +29,7 @@
    if (is_mac) {
      sources += [
        "base/network_notification_thread_mac.cc",
-@@ -1345,7 +1354,7 @@ component("net") {
-     }
-   }
- 
--  if (is_android || is_chromeos) {
-+  if (is_android || is_chromeos || is_bsd) {
-     sources += [
-       "base/network_change_notifier_posix.cc",
-       "base/network_change_notifier_posix.h",
-@@ -1378,7 +1387,7 @@ component("net") {
+@@ -1386,7 +1399,7 @@ component("net") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.
@@ -43,8 +38,8 @@
      sources += [
        "base/network_interfaces_getifaddrs.cc",
        "base/network_interfaces_getifaddrs.h",
-@@ -2822,7 +2831,7 @@ test("net_unittests") {
-     sources += [ "proxy_resolution/proxy_config_service_linux_unittest.cc" ]
+@@ -2847,7 +2860,7 @@ test("net_unittests") {
+     ]
    }
  
 -  if (is_linux || is_chromeos) {
@@ -52,7 +47,7 @@
      sources += [
        "base/address_tracker_linux_unittest.cc",
        "base/network_interfaces_linux_unittest.cc",
-@@ -2893,6 +2902,10 @@ test("net_unittests") {
+@@ -2915,6 +2928,10 @@ test("net_unittests") {
      "//url:buildflags",
    ]
  
@@ -63,7 +58,7 @@
    if (enable_websockets) {
      deps += [ "//net/server:tests" ]
    }
-@@ -2960,7 +2973,7 @@ test("net_unittests") {
+@@ -2996,7 +3013,7 @@ test("net_unittests") {
      ]
    }
  
@@ -72,7 +67,7 @@
      sources += [ "tools/quic/quic_simple_server_test.cc" ]
    }
  
-@@ -3088,7 +3101,7 @@ test("net_unittests") {
+@@ -3131,7 +3148,7 @@ test("net_unittests") {
    }
  
    # Use getifaddrs() on POSIX platforms, except Linux.

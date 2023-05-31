@@ -1,6 +1,6 @@
---- third_party/blink/renderer/core/frame/web_frame_test.cc.orig	2023-04-28 17:01:32 UTC
+--- third_party/blink/renderer/core/frame/web_frame_test.cc.orig	2023-05-31 08:12:17 UTC
 +++ third_party/blink/renderer/core/frame/web_frame_test.cc
-@@ -6458,7 +6458,7 @@ TEST_F(WebFrameTest, DISABLED_PositionForPointTest) {
+@@ -6455,7 +6455,7 @@ TEST_F(WebFrameTest, DISABLED_PositionForPointTest) {
  }
  
  #if BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
@@ -9,7 +9,7 @@
  // TODO(crbug.com/1090246): Fix these tests on Fuchsia and re-enable.
  // TODO(crbug.com/1317375): Build these tests on all platforms.
  #define MAYBE_SelectRangeStaysHorizontallyAlignedWhenMoved \
-@@ -6866,7 +6866,7 @@ TEST_F(CompositedSelectionBoundsTest, LargeSelectionSc
+@@ -6864,7 +6864,7 @@ TEST_F(CompositedSelectionBoundsTest, LargeSelectionSc
  TEST_F(CompositedSelectionBoundsTest, LargeSelectionNoScroll) {
    RunTest("composited_selection_bounds_large_selection_noscroll.html");
  }

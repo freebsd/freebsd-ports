@@ -1,8 +1,8 @@
---- media/base/video_frame.h.orig	2023-04-28 17:01:32 UTC
+--- media/base/video_frame.h.orig	2023-05-31 08:12:17 UTC
 +++ media/base/video_frame.h
 @@ -44,7 +44,7 @@
  #include "base/mac/scoped_cftyperef.h"
- #endif  // BUILDFLAG(IS_MAC)
+ #endif  // BUILDFLAG(IS_APPLE)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
@@ -27,7 +27,7 @@
    // Wraps provided dmabufs
    // (https://www.kernel.org/doc/html/latest/driver-api/dma-buf.html) with a
    // VideoFrame. The frame will take ownership of |dmabuf_fds|, and will
-@@ -604,7 +604,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -599,7 +599,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // mailbox, the caller must wait for the included sync point.
    const gpu::MailboxHolder& mailbox_holder(size_t texture_index) const;
  
@@ -36,7 +36,7 @@
    // Returns a vector containing the backing DmaBufs for this frame. The number
    // of returned DmaBufs will be equal or less than the number of planes of
    // the frame. If there are less, this means that the last FD contains the
-@@ -822,7 +822,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
+@@ -817,7 +817,7 @@ class MEDIA_EXPORT VideoFrame : public base::RefCounte
    // GPU memory buffer, if this frame is STORAGE_GPU_MEMORY_BUFFER.
    std::unique_ptr<gfx::GpuMemoryBuffer> gpu_memory_buffer_;
  

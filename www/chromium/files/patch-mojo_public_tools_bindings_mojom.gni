@@ -1,6 +1,6 @@
---- mojo/public/tools/bindings/mojom.gni.orig	2023-04-28 17:01:32 UTC
+--- mojo/public/tools/bindings/mojom.gni.orig	2023-05-31 08:12:17 UTC
 +++ mojo/public/tools/bindings/mojom.gni
-@@ -732,6 +732,16 @@ template("mojom") {
+@@ -744,6 +744,16 @@ template("mojom") {
        enabled_features += [ "is_apple" ]
      }
  

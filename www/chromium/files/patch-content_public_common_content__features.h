@@ -1,6 +1,6 @@
---- content/public/common/content_features.h.orig	2023-04-05 11:05:06 UTC
+--- content/public/common/content_features.h.orig	2023-05-31 08:12:17 UTC
 +++ content/public/common/content_features.h
-@@ -115,7 +115,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kFractionalScrollO
+@@ -117,7 +117,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kFractionalScrollO
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kGetDisplayMediaSet);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kGetDisplayMediaSetAutoSelectAllScreens);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kGreaseUACH);
