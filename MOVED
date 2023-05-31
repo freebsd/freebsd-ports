@@ -7586,3 +7586,4 @@ security/esteidfirefoxplugin||2023-05-28|Has expired: Upstream last release in 2
 devel/py-pyxb|devel/py-pyxb-x|2023-05-31|Has expired: Upstream issued End-of-Life notice. Use devel/py-pyxb-x instead
 devel/arm-none-eabi-gcc492|devel/arm-none-eabi-gcc|2023-05-31|Has expired: Long time unsupported upstream
 multimedia/nordlicht||2023-05-31|Has expired: Unmaintained for years upstream and fails to build with FFmpeg 6
+finance/vanitygen||2023-05-31|Has expired: Broken for more than a year and upstream last release was 11 years ago

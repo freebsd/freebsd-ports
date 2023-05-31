@@ -138,7 +138,6 @@
     SUBDIR += sql-ledger
     SUBDIR += ticker
     SUBDIR += tickrs
-    SUBDIR += vanitygen
     SUBDIR += venice
     SUBDIR += weberp
     SUBDIR += xtrader
