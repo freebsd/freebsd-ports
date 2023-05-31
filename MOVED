@@ -7590,3 +7590,8 @@ finance/vanitygen||2023-05-31|Has expired: Broken for more than a year and upstr
 net-p2p/qtum||2023-05-31|Has expired: Broken for nearly a year
 sysutils/pam_mount||2023-05-31|Has expired: Requires upstream EOL OpenSSL 1.0.X and linux only libmount which is not available for FreeBSD
 polish/kadu||2023-05-31|Has expired: Upstream website no longer exists, no update on SourceForge
+net-mgmt/zabbix62-agent|net-mgmt/zabbix64-agent|2023-05-31|Has expired: Will reach end of life on 2023-05-31
+net-mgmt/zabbix62-frontend|net-mgmt/zabbix64-frontend|2023-05-31|Has expired: Will reach end of life on 2023-05-31
+net-mgmt/zabbix62-java|net-mgmt/zabbix64-java|2023-05-31|Has expired: Will reach end of life on 2023-05-31
+net-mgmt/zabbix62-proxy|net-mgmt/zabbix64-proxy|2023-05-31|Has expired: Will reach end of life on 2023-05-31
+net-mgmt/zabbix62-server|net-mgmt/zabbix64-server|2023-05-31|Has expired: Will reach end of life on 2023-05-31
