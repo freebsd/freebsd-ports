@@ -1,0 +1,11 @@
+--- Compile/SPIRV-Cross/CMakeLists.txt.orig	2023-05-31 14:55:36 UTC
++++ Compile/SPIRV-Cross/CMakeLists.txt
+@@ -459,7 +459,7 @@ if (SPIRV_CROSS_CLI)
+ 		#  - Update the reference files
+ 		#  - Get cycle counts from malisc
+ 		#  - Keep failing outputs
+-		find_package(PythonInterp)
++		find_package(PythonInterp ${FREEBSD_PYTHON_VER} EXACT REQUIRED)
+ 		find_program(spirv-cross-glslang NAMES glslangValidator
+ 				PATHS ${CMAKE_CURRENT_SOURCE_DIR}/external/glslang-build/output/bin
+ 				NO_DEFAULT_PATH)
