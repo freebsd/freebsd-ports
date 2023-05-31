@@ -85,7 +85,6 @@
     SUBDIR += py-tremc
     SUBDIR += py-vertex
     SUBDIR += qbittorrent
-    SUBDIR += qtum
     SUBDIR += radarr
     SUBDIR += readarr
     SUBDIR += reticulum
