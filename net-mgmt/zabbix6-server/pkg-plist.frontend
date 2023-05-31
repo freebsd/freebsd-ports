@@ -729,7 +729,6 @@
 %%WWWDIR%%/include/classes/helpers/CEncryptHelper.php
 %%WWWDIR%%/include/classes/helpers/CHintBoxHelper.php
 %%WWWDIR%%/include/classes/helpers/CHousekeepingHelper.php
-%%WWWDIR%%/include/classes/helpers/CHtml.php
 %%WWWDIR%%/include/classes/helpers/CMapHelper.php
 %%WWWDIR%%/include/classes/helpers/CMathHelper.php
 %%WWWDIR%%/include/classes/helpers/CMediatypeHelper.php
@@ -1212,7 +1211,6 @@
 %%WWWDIR%%/js/browsers.js
 %%WWWDIR%%/js/chkbxrange.js
 %%WWWDIR%%/js/class.base-component.js
-%%WWWDIR%%/js/class.bbcode.js
 %%WWWDIR%%/js/class.browsertab.js
 %%WWWDIR%%/js/class.calendar.js
 %%WWWDIR%%/js/class.cdate.js
