@@ -113,7 +113,6 @@
     SUBDIR += enma
     SUBDIR += eps
     SUBDIR += epstools
-    SUBDIR += esmtp
     SUBDIR += evolution
     SUBDIR += evolution-ews
     SUBDIR += exilog
