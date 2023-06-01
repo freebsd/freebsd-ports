@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.44
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -217,14 +217,25 @@ EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_VBox_Devices_PC_DevFwCommon.cpp
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
-# llvm10 in FreeBSD before r364284 miscompiles virtualbox 6.1 causing errors.
-# force llvm11 from ports
+# 1) llvm10 in FreeBSD before r364284 miscompiles virtualbox 6.1 causing errors.
+# 2) llvm15 in FreeBSD miscompiles virtualbox 6.1 causing errors: PR#270189.
+# Force llvm from ports.
 .if ${OPSYS} == FreeBSD && \
-    (${OSVERSION} < 1203502 || ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300109)
+    (${OSVERSION} < 1203502 || ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300109 || \
+    ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 || ${OSVERSION} >= 1400079)
+# USES must be before .include <bsd.port.pre.mk>, but CHOSEN_COMPILER_TYPE must be after.
+# This is a workaround with possibility to define different llvm via VBOX_LLVM_VER in make.conf.
+#USES+=		llvm:min=11,max=14
+#CC=		clang${LLVM_VERSION}
+#CXX=		clang++${LLVM_VERSION}
 BUILD_DEPENDS+=	clang${VBOX_LLVM_VER}:devel/llvm${VBOX_LLVM_VER}
 CC=		clang${VBOX_LLVM_VER}
 CXX=		clang++${VBOX_LLVM_VER}
-VBOX_LLVM_VER?=	11
+.if ${LLVM_DEFAULT} < 11 || ${LLVM_DEFAULT} > 14
+VBOX_LLVM_VER?=	14
+.else
+VBOX_LLVM_VER?=	${LLVM_DEFAULT}
+.endif
 .endif
 PATCH_DEPENDS+=	${LOCALBASE}/share/kBuild/tools/GXX3.kmk:devel/kBuild
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src-VBox-Devices-PC-ipxe-Makefile.kmk
