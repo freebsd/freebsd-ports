@@ -15,6 +15,7 @@ include/xeus/xmessage.hpp
 include/xeus/xserver.hpp
 include/xeus/xstring_utils.hpp
 include/xeus/xsystem.hpp
+lib/cmake/xeus/CompilerWarnings.cmake
 lib/cmake/xeus/FindLibUUID.cmake
 lib/cmake/xeus/WasmBuildOptions.cmake
 lib/cmake/xeus/xeusConfig.cmake
@@ -23,5 +24,5 @@ lib/cmake/xeus/xeusTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/xeus/xeusTargets.cmake
 lib/libxeus.a
 lib/libxeus.so
-lib/libxeus.so.8
-lib/libxeus.so.8.1.0
+lib/libxeus.so.9
+lib/libxeus.so.9.0.0
