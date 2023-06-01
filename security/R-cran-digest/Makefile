@@ -3,7 +3,7 @@ PORTVERSION=	0.6.31
 CATEGORIES=	security
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Create cryptographic hash digests of R objects
 WWW=		https://cran.r-project.org/web/packages/digest/
 

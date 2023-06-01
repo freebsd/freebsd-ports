@@ -3,7 +3,7 @@ PORTVERSION=	0.2.7
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Generate Isolines and Isobands from Regularly Spaced Elevation Grids
 WWW=		https://cran.r-project.org/web/packages/isoband/
 

@@ -3,7 +3,7 @@ PORTVERSION=	0.10
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Syntax Highlighting for R Source Code
 WWW=		https://cran.r-project.org/web/packages/highr/
 

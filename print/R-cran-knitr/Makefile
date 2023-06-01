@@ -3,7 +3,7 @@ PORTVERSION=	1.42
 CATEGORIES=	print
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	General-Purpose Package for Dynamic Report Generation in R
 WWW=		https://cran.r-project.org/web/packages/knitr/
 

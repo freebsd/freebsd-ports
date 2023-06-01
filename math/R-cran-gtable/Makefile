@@ -3,7 +3,7 @@ PORTVERSION=	0.3.3
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Arrange grobs in tables
 WWW=		https://cran.r-project.org/web/packages/gtable/
 

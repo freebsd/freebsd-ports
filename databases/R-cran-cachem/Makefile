@@ -3,7 +3,7 @@ PORTVERSION=	1.0.8
 CATEGORIES=	databases
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Cache R Objects with Automatic Pruning
 WWW=		https://cran.r-project.org/web/packages/cachem/
 

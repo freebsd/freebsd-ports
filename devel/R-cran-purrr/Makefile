@@ -3,7 +3,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Functional Programming Tools
 WWW=		https://cran.r-project.org/web/packages/purrr/
 

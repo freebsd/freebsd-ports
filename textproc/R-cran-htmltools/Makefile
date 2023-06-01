@@ -3,7 +3,7 @@ PORTVERSION=	0.5.5
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Tools for HTML generation and output
 WWW=		https://cran.r-project.org/web/packages/htmltools/
 

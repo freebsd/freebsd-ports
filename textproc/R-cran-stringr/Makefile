@@ -3,7 +3,7 @@ PORTVERSION=	1.5.0
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Make it easier to work with strings
 WWW=		https://cran.r-project.org/web/packages/stringr/
 
