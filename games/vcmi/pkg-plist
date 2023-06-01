@@ -26,8 +26,8 @@ share/icons/hicolor/64x64/apps/vcmiclient.png
 %%DATADIR%%/Mods/vcmi/Data/StackQueueLarge.png
 %%DATADIR%%/Mods/vcmi/Data/StackQueueSmall.png
 %%DATADIR%%/Mods/vcmi/Data/debug/blocked.png
-%%DATADIR%%/Mods/vcmi/Data/debug/cached.png
 %%DATADIR%%/Mods/vcmi/Data/debug/grid.png
+%%DATADIR%%/Mods/vcmi/Data/debug/spellRange.png
 %%DATADIR%%/Mods/vcmi/Data/debug/visitable.png
 %%DATADIR%%/Mods/vcmi/Data/questDialog.png
 %%DATADIR%%/Mods/vcmi/Data/s/std.verm

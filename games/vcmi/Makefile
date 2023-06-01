@@ -1,7 +1,9 @@
 PORTNAME=	vcmi
-PORTVERSION=	1.2.0
-PORTREVISION=	3
+PORTVERSION=	1.2.1
 CATEGORIES=	games
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	c7bee037d2c06c56893d631651288c33e.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open-source engine for Heroes of Might and Magic III
