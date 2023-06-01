@@ -7,6 +7,9 @@ PKGNAMESUFFIX=	2-gtk4
 DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 DIST_SUBDIR=	gnome
 
+PATCH_SITES=	https://github.com/WebKit/WebKit/commit/
+PATCHFILES=	285ff73b5f6d46d6e502aca30061667e41a3114b.diff:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 4 toolkit
 WWW=		https://webkitgtk.org/
