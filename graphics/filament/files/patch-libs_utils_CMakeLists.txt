@@ -1,7 +1,7 @@
---- libs/utils/CMakeLists.txt.orig	2022-08-16 18:01:04 UTC
+--- libs/utils/CMakeLists.txt.orig	2023-05-30 23:22:31 UTC
 +++ libs/utils/CMakeLists.txt
-@@ -81,8 +81,10 @@ if (ANDROID)
-     list(APPEND SRCS src/android/ThermalManager.cpp)
+@@ -82,8 +82,10 @@ if (ANDROID)
+     list(APPEND SRCS src/android/Systrace.cpp)
  endif()
  if (LINUX OR ANDROID)
 -    list(APPEND SRCS src/linux/Condition.cpp)
