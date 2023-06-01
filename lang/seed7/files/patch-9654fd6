@@ -1,0 +1,35 @@
+From 9654fd670035297f239284013f38a3032e5a392c Mon Sep 17 00:00:00 2001
+From: Thomas Mertes <thomas.mertes@gmx.at>
+Date: Thu, 1 Jun 2023 12:46:17 +0200
+Subject: [PATCH] Fix issue with clang compiling chkarr
+
+---
+ ../lib/comp/arr_act.s7i | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git ../lib/comp/arr_act.s7i.orig ../lib/comp/arr_act.s7i
+index b393c9c2..206e4a0d 100644
+--- ../lib/comp/arr_act.s7i.orig
++++ ../lib/comp/arr_act.s7i
+@@ -448,7 +448,9 @@ const proc: process_const_arr_idx (in reference: function, in reference: anArray
+       index_value := getValue(evaluatedParam, integer);
+       if index_value < arrayMinIdx(anArray) or index_value > arrayMaxIdx(anArray) then
+         warning(DOES_RAISE, "INDEX_ERROR", c_expr);
+-        c_expr.expr &:= intRaiseError("INDEX_ERROR");
++        c_expr.expr &:= "(";
++        c_expr.expr &:= type_name(resultType(getType(function)));
++        c_expr.expr &:= ")(raiseError(INDEX_ERROR), 0)";
+       else
+         c_expr.expr &:= "arr[";
+         c_expr.expr &:= str(const_table[anArray]);
+@@ -462,7 +464,9 @@ const proc: process_const_arr_idx (in reference: function, in reference: anArray
+       if indexRange.maxValue < arrayMinIdx(anArray) or
+           indexRange.minValue > arrayMaxIdx(anArray) then
+         warning(DOES_RAISE, "INDEX_ERROR", c_expr);
+-        c_expr.expr &:= intRaiseError("INDEX_ERROR");
++        c_expr.expr &:= "(";
++        c_expr.expr &:= type_name(resultType(getType(function)));
++        c_expr.expr &:= ")(raiseError(INDEX_ERROR), 0)";
+       else
+         c_expr.expr &:= "arr[";
+         c_expr.expr &:= str(const_table[anArray]);
