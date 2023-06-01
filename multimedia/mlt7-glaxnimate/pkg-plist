@@ -1,2 +1,2 @@
-lib/mlt-7/libmltglaxnimate.so
-%%DATADIR%%/glaxnimate/producer_glaxnimate.yml
+lib/mlt-7/libmltglaxnimate%%QT_VERSION_SUFFIX%%.so
+%%DATADIR%%/glaxnimate%%QT_VERSION_SUFFIX%%/producer_glaxnimate.yml

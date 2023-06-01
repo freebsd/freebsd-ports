@@ -96,6 +96,12 @@ libdata/pkgconfig/mlt-framework-7.pc
 share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/avformat/blacklist.txt
 %%AVFORMAT%%%%DATADIR%%/avformat/consumer_avformat.yml
+%%AVFORMAT%%%%DATADIR%%/avformat/filter_avcolour_space.yml
+%%AVFORMAT%%%%DATADIR%%/avformat/filter_avdeinterlace.yml
+%%AVFORMAT%%%%DATADIR%%/avformat/filter_swresample.yml
+%%AVFORMAT%%%%DATADIR%%/avformat/filter_swscale.yml
+%%AVFORMAT%%%%DATADIR%%/avformat/link_avdeinterlace.yml
+%%AVFORMAT%%%%DATADIR%%/avformat/link_swresample.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/producer_avformat.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/resolution_scale.yml
 %%AVFORMAT%%%%DATADIR%%/avformat/yuv_only.txt
@@ -161,6 +167,8 @@ share/man/man1/melt-7.1.gz
 %%KDENLIVE%%%%DATADIR%%/kdenlive/producer_framebuffer.yml
 %%DATADIR%%/metaschema.yaml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_blur.yml
+%%MOVIT%%%%DATADIR%%/movit/filter_movit_convert.yml
+%%MOVIT%%%%DATADIR%%/movit/filter_movit_crop.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_deconvolution_sharpen.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_diffusion.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_flip.yml
@@ -169,6 +177,8 @@ share/man/man1/melt-7.1.gz
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_mirror.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_opacity.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_rect.yml
+%%MOVIT%%%%DATADIR%%/movit/filter_movit_resample.yml
+%%MOVIT%%%%DATADIR%%/movit/filter_movit_resize.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_saturation.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_vignette.yml
 %%MOVIT%%%%DATADIR%%/movit/filter_movit_white_balance.yml
@@ -306,6 +316,14 @@ share/man/man1/melt-7.1.gz
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/stills/TGA
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/stills/TIFF
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/stills/webp
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/AV1
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/DNxHR-HQ
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/FFV1
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/ProRes 422
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/ProRes 444
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/ProRes HQ
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/x264-high10
+%%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/ten_bit/x265-main10
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/vp9
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/webm
 %%AVFORMAT%%%%DATADIR%%/presets/consumer/avformat/webm-pass1
@@ -403,6 +421,7 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/profiles/vertical_hd_30
 %%DATADIR%%/profiles/vertical_hd_60
 %%RESAMPLE%%%%DATADIR%%/resample/filter_resample.yml
+%%RESAMPLE%%%%DATADIR%%/resample/link_resample.yml
 %%RTAUDIO%%%%DATADIR%%/rtaudio/consumer_rtaudio.yml
 %%RUBBERBAND%%%%DATADIR%%/rubberband/filter_rbpitch.yml
 %%SDL2%%%%DATADIR%%/sdl2/consumer_sdl2.yml
@@ -412,6 +431,8 @@ share/man/man1/melt-7.1.gz
 %%VIDSTAB%%%%DATADIR%%/vid.stab/filter_deshake.yml
 %%VIDSTAB%%%%DATADIR%%/vid.stab/filter_vidstab.yml
 %%VORBIS%%%%DATADIR%%/vorbis/producer_vorbis.yml
+%%XINE%%%%DATADIR%%/xine/filter_deinterlace.yml
+%%XINE%%%%DATADIR%%/xine/link_deinterlace.yml
 %%DATADIR%%/xml/consumer_xml.yml
 %%DATADIR%%/xml/mlt-xml.dtd
 %%DATADIR%%/xml/producer_xml-nogl.yml
