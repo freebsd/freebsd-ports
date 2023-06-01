@@ -1,7 +1,6 @@
 PORTNAME=	mongodb
 DISTVERSIONPREFIX=	r
-DISTVERSION=	7.0.0-rc0
-PORTREVISION=	1
+DISTVERSION=	7.0.0-rc2
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
 
@@ -88,14 +87,6 @@ SSL_USES=	ssl
 SSL_MAKE_ARGS=	--ssl
 
 .include <bsd.port.pre.mk>
-
-# MongoDB 7.0 fails on clang15.
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-_LLVM_VERSION=  14
-BUILD_DEPENDS+= clang${_LLVM_VERSION}:devel/llvm${_LLVM_VERSION}
-CC=             ${LOCALBASE}/bin/clang${_LLVM_VERSION}
-CXX=            ${LOCALBASE}/bin/clang++${_LLVM_VERSION}
-.endif
 
 ALL_TARGET=	install-core
 
