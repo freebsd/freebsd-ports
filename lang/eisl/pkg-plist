@@ -18,6 +18,7 @@ bin/eisl
 %%DATADIR%%/library/functions-dataj.lsp
 %%DATADIR%%/library/functions.lsp
 %%DATADIR%%/library/functionsj.lsp
+%%DATADIR%%/library/hash.lsp
 %%DATADIR%%/library/i18n.lsp
 %%DATADIR%%/library/lazy.lsp
 %%DATADIR%%/library/list.lsp
