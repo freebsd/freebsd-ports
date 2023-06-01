@@ -7609,3 +7609,4 @@ www/webstone-ssl||2023-06-01|Has expired: Requires upstream EOL OpenSSL 1.0.X
 sysutils/bareos18-client|sysutils/bareos19-client|2023-06-01|Has expired: Upstream EOL reached on 2020-02-03
 sysutils/bareos18-server|sysutils/bareos19-server|2023-06-01|Has expired: Upstream EOL reached on 2020-02-03
 sysutils/bareos18-traymonitor|sysutils/bareos19-traymonitor|2023-06-01|Has expired: Upstream EOL reached on 2020-02-03
+net-mgmt/nagircbot||2023-06-01|Has expired: Broken for more than a year and fails to build on all supported release
