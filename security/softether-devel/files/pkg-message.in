@@ -13,11 +13,13 @@ sysrc softether_bridge_enable=yes
 To run SoftEtherVPN traffic server from startup, run
 sysrc softether_trafficserver_enable=yes
 
-Initial and further configuration of all softether services can be
-done either by using a Windows client to connect to the running
-services or by vpncmd from command line.
+Initial and further configuration of all SoftEther services can be
+done either by using VPN Client/Server/Bridge Manager for Windows
+or by vpncmd from command line.
 
-Please note client functionality is not supported on FreeBSD right now.
+Please note client functionality is currently not supported in this
+version on FreeBSD.  Use security/softether5 instead to use SoftEther
+as VPN client.
 
 When removing SoftEther VPN without the desire to reinstall, please
 ensure to remove the following directories as well:
