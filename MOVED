@@ -7600,3 +7600,7 @@ ftp/ftpmirror||2023-05-31|Has expired: Abandonware
 net-p2p/zetacoin||2023-06-01|Has expired: Broken for nearly a year
 net-p2p/zetacoin-daemon||2023-06-01|Has expired: Broken for nearly a year
 net-p2p/zetacoin-utils||2023-06-01|Has expired: Broken for nearly a year
+sysutils/puppet6|sysutils/puppet7|2023-06-01|Has expired: Puppet 6 has reached EOL
+sysutils/puppetserver6|sysutils/puppetserver7|2023-06-01|Has expired: Puppet 6 has reached EOL
+databases/puppetdb6|databases/puppetdb7|2023-06-01|Has expired: Puppet 6 has reached EOL
+databases/puppetdb-terminus6|databases/puppetdb-terminus7|2023-06-01|Has expired: Puppet 6 has reached EOL
