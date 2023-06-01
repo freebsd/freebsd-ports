@@ -1,8 +1,6 @@
-lib/libVkLayer_khronos_memory_decompression.so
 lib/libVkLayer_khronos_shader_object.so
 lib/libVkLayer_khronos_synchronization2.so
 lib/libVkLayer_khronos_timeline_semaphore.so
-share/vulkan/explicit_layer.d/VkLayer_khronos_memory_decompression.json
 share/vulkan/explicit_layer.d/VkLayer_khronos_shader_object.json
 share/vulkan/explicit_layer.d/VkLayer_khronos_synchronization2.json
 share/vulkan/explicit_layer.d/VkLayer_khronos_timeline_semaphore.json
