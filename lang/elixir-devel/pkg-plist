@@ -99,8 +99,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_items-E0C1E45F.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-884E26FE.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_items-30F9369C.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-97B1255C.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/DynamicSupervisor.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Enum.EmptyError.html
@@ -228,8 +228,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_items-91637E35.js
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-A617186B.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_items-71C3552A.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-0B2EBC7C.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.AssertionError.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.Assertions.html
@@ -280,7 +280,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_items-4B8453E1.js
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_items-198B4EC6.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/sidebar_items-2DA67A2F.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/IEx.Helpers.html
@@ -357,8 +357,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_items-62AE72C3.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-56ED419B.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/search_items-2497C274.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/sidebar_items-E6615DF8.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/Mix.ElixirVersionError.html
