@@ -1,10 +1,10 @@
 PORTNAME=	ruamel.yaml
-PORTVERSION=	0.17.26
+PORTVERSION=	0.17.31
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	pi@FreeBSD.org
+MAINTAINER=	matthew@FreeBSD.org
 COMMENT=	YAML 1.2 loader/dumper package for Python
 WWW=		https://sourceforge.net/p/ruamel-yaml
 
