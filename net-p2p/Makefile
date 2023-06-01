@@ -109,8 +109,5 @@
     SUBDIR += vuze
     SUBDIR += xbt
     SUBDIR += xmrig
-    SUBDIR += zetacoin
-    SUBDIR += zetacoin-daemon
-    SUBDIR += zetacoin-utils
 
 .include <bsd.port.subdir.mk>

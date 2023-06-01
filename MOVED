@@ -7597,3 +7597,6 @@ net-mgmt/zabbix62-proxy|net-mgmt/zabbix64-proxy|2023-05-31|Has expired: Will rea
 net-mgmt/zabbix62-server|net-mgmt/zabbix64-server|2023-05-31|Has expired: Will reach end of life on 2023-05-31
 mail/esmtp||2023-05-31|Has expired: Upstream announced that this project is no longer being maintained. See https://esmtp.sourceforge.net/links.html for alternatives
 ftp/ftpmirror||2023-05-31|Has expired: Abandonware
+net-p2p/zetacoin||2023-06-01|Has expired: Broken for nearly a year
+net-p2p/zetacoin-daemon||2023-06-01|Has expired: Broken for nearly a year
+net-p2p/zetacoin-utils||2023-06-01|Has expired: Broken for nearly a year
