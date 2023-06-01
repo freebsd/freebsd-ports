@@ -18,10 +18,4 @@ GH_ACCOUNT=	KhronosGroup
 GH_PROJECT=	Vulkan-ExtensionLayer
 CMAKE_OFF=	BUILD_TESTS
 
-post-install:
-# https://github.com/KhronosGroup/Vulkan-ExtensionLayer/commit/bd02fcde74f1
-	@if [ `${CC} -dM -E -</dev/null | ${AWK} '/__SIZEOF_POINTER__/ { print $$3 }'` -eq 4 ]; then \
-		${REINPLACE_CMD} '/shader_object/d' ${TMPPLIST}; \
-	fi
-
 .include <bsd.port.mk>
