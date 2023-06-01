@@ -7605,3 +7605,4 @@ sysutils/puppetserver6|sysutils/puppetserver7|2023-06-01|Has expired: Puppet 6 h
 databases/puppetdb6|databases/puppetdb7|2023-06-01|Has expired: Puppet 6 has reached EOL
 databases/puppetdb-terminus6|databases/puppetdb-terminus7|2023-06-01|Has expired: Puppet 6 has reached EOL
 sysutils/boxbackup-devel||2023-06-01|Has expired: Requires upstream EOL OpenSSL 1.0.X
+www/webstone-ssl||2023-06-01|Has expired: Requires upstream EOL OpenSSL 1.0.X
