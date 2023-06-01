@@ -786,7 +786,7 @@ beehive:*:832:832::0:0:beehive user:/nonexistent:/usr/sbin/nologin
 # free: 837
 # free: 838
 # free: 839
-netdisco:*:840:840::0:0:netdisco daemon:/nonexistent:/usr/sbin/nologin
+netdisco:*:840:840::0:0:netdisco daemon:/usr/local/etc/netdisco:/bin/sh
 tcpcryptd:*:841:841::0:0:tcpcrypt daemon:/nonexistent:/usr/sbin/nologin
 munin:*:842:842::0:0:Munin:/var/munin:/usr/sbin/nologin
 # free: 843

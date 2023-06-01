@@ -1,5 +1,5 @@
 PORTNAME=	netdisco
-DISTVERSION=	2.047002
+DISTVERSION=	2.061001
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:OLIVER
@@ -26,6 +26,7 @@ RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Authen-Radius>=0:security/p5-Authen-Radius \
 		p5-Authen-TacacsPlus>=0:security/p5-Authen-TacacsPlus \
 		p5-CGI-Expand>=2.05:www/p5-CGI-Expand \
+		p5-Crypt-Bcrypt>=0:security/p5-Crypt-Bcrypt \
 		p5-Data-Printer>=0:devel/p5-Data-Printer \
 		p5-Data-Visitor-Tiny>=0:devel/p5-Data-Visitor-Tiny \
 		p5-DBIx-Class-Helpers>=2.033004:databases/p5-DBIx-Class-Helpers \

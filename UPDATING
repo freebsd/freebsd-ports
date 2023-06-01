@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230531:
+  AFFECTS: users of net-mgmt/netdisco
+  AUTHOR: dgeo@centrale-marseille.fr
+
+  The netdisco user now needs a HOME and a shell.
+  For existing installs you will need to set
+  HOME to /usr/local/etc/netdisco and shell to /bin/sh.
+
+  For example in one shell line:
+  pw user mod netdisco -d /usr/local/etc/netdisco -s /bin/sh
+
 20230526:
   AFFECTS: users of mail/exim
   AUTHOR: pi@FreeBSD.org
