@@ -1,6 +1,6 @@
 PORTNAME=	tree-sitter-graph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.10.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -43,16 +43,16 @@ CARGO_CRATES=	ahash-0.4.7 \
 		lazy_static-1.4.0 \
 		libc-0.2.144 \
 		libloading-0.7.4 \
-		log-0.4.17 \
+		log-0.4.18 \
 		memchr-2.5.0 \
-		once_cell-1.17.1 \
+		once_cell-1.17.2 \
 		os_str_bytes-6.5.0 \
-		proc-macro2-1.0.58 \
-		quote-1.0.27 \
+		proc-macro2-1.0.59 \
+		quote-1.0.28 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.8.1 \
-		regex-syntax-0.7.1 \
+		regex-1.8.3 \
+		regex-syntax-0.7.2 \
 		ryu-1.0.13 \
 		serde-1.0.163 \
 		serde_derive-1.0.163 \
@@ -60,7 +60,7 @@ CARGO_CRATES=	ahash-0.4.7 \
 		smallvec-1.10.0 \
 		string-interner-0.12.2 \
 		strsim-0.10.0 \
-		syn-2.0.16 \
+		syn-2.0.18 \
 		termcolor-1.2.0 \
 		textwrap-0.16.0 \
 		thiserror-1.0.40 \
@@ -71,7 +71,7 @@ CARGO_CRATES=	ahash-0.4.7 \
 		tree-sitter-loader-0.19.0 \
 		tree-sitter-python-0.19.1 \
 		tree-sitter-tags-0.20.2 \
-		unicode-ident-1.0.8 \
+		unicode-ident-1.0.9 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
