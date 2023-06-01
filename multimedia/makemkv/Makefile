@@ -1,6 +1,5 @@
 PORTNAME=	makemkv
-DISTVERSION=	1.17.3
-PORTREVISION=	1
+DISTVERSION=	1.17.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.makemkv.com/download/:makemkv \
 		http://www.makemkv.com/download/old/:makemkv \
