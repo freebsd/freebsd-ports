@@ -1,5 +1,5 @@
 PORTNAME=	emacs
-DISTVERSION=	30.0.50.20230515
+DISTVERSION=	30.0.50.20230601
 PORTEPOCH=	3
 CATEGORIES=	editors
 PKGNAMESUFFIX=	-devel
@@ -24,7 +24,7 @@ USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
-GH_TAGNAME=	ebf5e4c
+GH_TAGNAME=	2d6ba3e
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
@@ -134,6 +134,8 @@ ALSA_CONFIGURE_ON=		--with-sound=alsa
 CAIRO_IMPLIES=			PNG
 CAIRO_PREVENTS=			XFT
 CAIRO_USE=			GNOME=cairo
+CAIRO_LIB_DEPENDS=		libfreetype.so:print/freetype2 \
+				libfontconfig.so:x11-fonts/fontconfig
 CAIRO_CONFIGURE_WITH=		cairo
 DBUS_LIB_DEPENDS=		libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=		dbus

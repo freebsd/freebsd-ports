@@ -909,10 +909,12 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-operandi-deuteranopia-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-operandi-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-operandi-tinted-theme.el
+%%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-operandi-tritanopia-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-themes.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-deuteranopia-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-tinted-theme.el
+%%DATADIR%%/%%EMACS_VER%%/etc/themes/modus-vivendi-tritanopia-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/tango-dark-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/tango-theme.el
 %%DATADIR%%/%%EMACS_VER%%/etc/themes/tsdh-dark-theme.el
