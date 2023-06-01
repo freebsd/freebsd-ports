@@ -62,6 +62,12 @@ IMAGES=		Squeak${IMAGE_FULL_VERSION}.image \
 		Squeak${IMAGE_FULL_VERSION}.changes \
 		${SQUEAK_SRC}
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,<utmp\.h>,<utmpx.h>,' \
 		${WRKSRC}/unix/plugins/PseudoTTYPlugin/openpty.h
@@ -81,4 +87,4 @@ post-install:
 	${INSTALL_DATA} ${IMAGES:S,^,${WRKDIR}/,} \
 		${STAGEDIR}${PREFIX}/lib/squeak
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
