@@ -139,7 +139,6 @@
     SUBDIR += blisp
     SUBDIR += boot-extract
     SUBDIR += bottom
-    SUBDIR += boxbackup-devel
     SUBDIR += bpytop
     SUBDIR += brasero
     SUBDIR += brename

@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-To run bbackupd at startup, add bbackupd_enable="YES" to /etc/rc.conf
-Please see http://www.boxbackup.org/client.html for client configuration
-options
-EOM
-}
-]
