@@ -1,7 +1,6 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.32.5
-PORTREVISION=	1
+DISTVERSION=	1.34.1
 CATEGORIES=	www
 
 MAINTAINER=	mikael@FreeBSD.org
@@ -17,14 +16,14 @@ BUILD_DEPENDS=	gn:devel/gn \
 		libunwind>0:devel/libunwind
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cargo compiler:c++17-lang cpe gmake gnome ninja:build pkgconfig:build python:3.9+,build
+USES=		cargo compiler:c++20-lang cpe gmake gnome ninja:build pkgconfig:build python:3.9+,build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	denoland
 
 USE_GNOME=	glib20
 
-V8_VERS=	0.68.0
+V8_VERS=	0.73.0
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -50,8 +49,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		asn1-rs-0.5.2 \
 		asn1-rs-derive-0.4.0 \
 		asn1-rs-impl-0.1.0 \
-		ast_node-0.8.6 \
+		ast_node-0.9.3 \
 		async-compression-0.3.15 \
+		async-compression-0.4.0 \
 		async-stream-0.3.4 \
 		async-stream-impl-0.3.4 \
 		async-trait-0.1.68 \
@@ -59,6 +59,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		auto_impl-0.5.0 \
 		autocfg-1.1.0 \
 		base16ct-0.1.1 \
+		base16ct-0.2.0 \
 		base32-0.4.0 \
 		base64-0.13.1 \
 		base64-0.21.0 \
@@ -70,7 +71,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
 		bitflags-1.3.2 \
-		block-buffer-0.9.0 \
+		bitflags-2.1.0 \
 		block-buffer-0.10.4 \
 		block-modes-0.9.1 \
 		block-padding-0.3.2 \
@@ -104,27 +105,27 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crossbeam-epoch-0.9.14 \
 		crossbeam-utils-0.8.15 \
 		crypto-bigint-0.4.9 \
+		crypto-bigint-0.5.2 \
 		crypto-common-0.1.6 \
 		ctor-0.1.26 \
 		ctr-0.9.2 \
 		curve25519-dalek-2.1.3 \
 		curve25519-dalek-3.2.0 \
-		darling-0.13.4 \
-		darling_core-0.13.4 \
-		darling_macro-0.13.4 \
 		dashmap-5.4.0 \
 		data-encoding-2.3.3 \
 		data-url-0.2.0 \
-		deno_ast-0.25.0 \
-		deno_doc-0.61.0 \
-		deno_emit-0.19.0 \
-		deno_graph-0.47.1 \
-		deno_lint-0.43.0 \
-		deno_lockfile-0.13.0 \
-		deno_npm-0.3.0 \
+		deno_ast-0.26.0 \
+		deno_doc-0.62.0 \
+		deno_emit-0.20.0 \
+		deno_graph-0.48.1 \
+		deno_lint-0.45.0 \
+		deno_lockfile-0.14.1 \
+		deno_media_type-0.1.0 \
+		deno_npm-0.6.0 \
 		deno_semver-0.2.2 \
-		deno_task_shell-0.11.0 \
+		deno_task_shell-0.12.0 \
 		der-0.6.1 \
+		der-0.7.3 \
 		der-parser-8.2.0 \
 		derive_more-0.99.17 \
 		diff-0.1.13 \
@@ -137,34 +138,37 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dlopen_derive-0.1.4 \
 		dotenv-0.15.0 \
 		dprint-core-0.60.0 \
-		dprint-plugin-json-0.17.0 \
+		dprint-plugin-json-0.17.2 \
 		dprint-plugin-markdown-0.15.2 \
-		dprint-plugin-typescript-0.84.0 \
-		dprint-swc-ext-0.8.0 \
+		dprint-plugin-typescript-0.84.4 \
+		dprint-swc-ext-0.9.0 \
+		dsa-0.6.1 \
 		dyn-clone-1.0.11 \
 		dynasm-1.2.3 \
 		dynasmrt-1.2.3 \
 		ecb-0.1.1 \
 		ecdsa-0.14.8 \
+		ecdsa-0.16.6 \
 		either-1.8.1 \
 		elliptic-curve-0.12.3 \
+		elliptic-curve-0.13.4 \
 		encoding_rs-0.8.31 \
 		endian-type-0.1.2 \
 		enum-as-inner-0.5.1 \
-		enum_kind-0.2.1 \
 		env_logger-0.9.0 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		error-code-2.3.1 \
 		escape8259-0.5.2 \
-		eszip-0.40.0 \
+		eszip-0.41.0 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.10.0 \
 		fastrand-1.9.0 \
-		fastwebsockets-0.1.3 \
+		fastwebsockets-0.3.1 \
 		fd-lock-3.0.10 \
 		ff-0.12.1 \
+		ff-0.13.0 \
 		filetime-0.2.20 \
 		fixedbitset-0.4.2 \
 		flaky_test-0.1.0 \
@@ -172,7 +176,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		fly-accept-encoding-0.2.0 \
 		fnv-1.0.7 \
 		form_urlencoded-1.1.0 \
-		from_variant-0.1.4 \
+		from_variant-0.1.5 \
 		fs3-0.5.0 \
 		fsevent-sys-4.1.0 \
 		fslock-0.1.8 \
@@ -194,6 +198,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		glibc_version-0.1.2 \
 		glob-0.3.1 \
 		group-0.12.1 \
+		group-0.13.0 \
 		h2-0.3.17 \
 		hashbrown-0.12.3 \
 		hashlink-0.8.1 \
@@ -207,12 +212,13 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		hostname-0.3.1 \
 		http-0.2.9 \
 		http-body-0.4.5 \
+		http-body-1.0.0-rc.2 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
 		humantime-2.1.0 \
 		hyper-0.14.26 \
-		hyper-rustls-0.23.2 \
-		ident_case-1.0.1 \
+		hyper-1.0.0-rc.3 \
+		hyper-rustls-0.24.0 \
 		idna-0.2.3 \
 		idna-0.3.0 \
 		if_chain-1.0.2 \
@@ -232,7 +238,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		itoa-1.0.6 \
 		jobserver-0.1.26 \
 		js-sys-0.3.61 \
-		jsonc-parser-0.21.0 \
+		jsonc-parser-0.21.1 \
 		junction-0.2.0 \
 		keccak-0.1.3 \
 		kqueue-1.0.7 \
@@ -273,7 +279,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.5.4 \
 		mio-0.8.6 \
-		monch-0.4.1 \
+		monch-0.4.2 \
 		napi-build-1.2.1 \
 		napi-sys-2.2.3 \
 		netif-0.1.6 \
@@ -298,8 +304,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		os_str_bytes-6.4.1 \
 		output_vt100-0.1.3 \
 		outref-0.5.1 \
+		p224-0.13.2 \
 		p256-0.11.1 \
+		p256-0.13.2 \
 		p384-0.11.2 \
+		p384-0.13.0 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.8.6 \
@@ -310,6 +319,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pathdiff-0.2.1 \
 		pbkdf2-0.12.1 \
 		pem-rfc7468-0.6.0 \
+		pem-rfc7468-0.7.0 \
 		percent-encoding-2.2.0 \
 		petgraph-0.6.3 \
 		phf-0.10.1 \
@@ -322,6 +332,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pin-utils-0.1.0 \
 		pkcs1-0.4.1 \
 		pkcs8-0.9.0 \
+		pkcs8-0.10.2 \
 		pkg-config-0.3.26 \
 		pmutil-0.5.3 \
 		polyval-0.6.0 \
@@ -329,6 +340,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		precomputed-hash-0.1.1 \
 		pretty_assertions-1.3.0 \
 		prettyplease-0.1.25 \
+		primeorder-0.13.1 \
 		proc-macro-crate-1.3.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
@@ -353,9 +365,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		regex-1.7.1 \
 		regex-syntax-0.6.28 \
 		relative-path-1.8.0 \
-		reqwest-0.11.14 \
+		reqwest-0.11.18 \
 		resolv-conf-0.7.0 \
 		rfc6979-0.3.1 \
+		rfc6979-0.4.0 \
 		ring-0.16.20 \
 		ripemd-0.1.3 \
 		rsa-0.7.2 \
@@ -365,9 +378,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rustc_version-0.4.0 \
 		rusticata-macros-4.1.0 \
 		rustix-0.36.9 \
-		rustls-0.20.8 \
+		rustls-0.21.0 \
 		rustls-native-certs-0.6.2 \
 		rustls-pemfile-1.0.2 \
+		rustls-webpki-0.100.1 \
 		rustversion-1.0.12 \
 		rustyline-10.0.0 \
 		rustyline-derive-0.7.0 \
@@ -380,6 +394,9 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		scrypt-0.11.0 \
 		sct-0.7.0 \
 		sec1-0.3.0 \
+		sec1-0.7.1 \
+		secp256k1-0.27.0 \
+		secp256k1-sys-0.8.1 \
 		security-framework-2.8.2 \
 		security-framework-sys-2.8.0 \
 		semver-0.9.0 \
@@ -392,7 +409,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_json-1.0.94 \
 		serde_repr-0.1.9 \
 		serde_urlencoded-0.7.1 \
-		sha-1-0.9.8 \
 		sha-1-0.10.0 \
 		sha1-0.10.5 \
 		sha2-0.10.6 \
@@ -400,6 +416,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		shell-escape-0.1.5 \
 		signal-hook-registry-1.4.1 \
 		signature-1.6.4 \
+		signature-2.1.0 \
 		simdutf8-0.1.4 \
 		siphasher-0.3.10 \
 		slab-0.4.8 \
@@ -409,41 +426,42 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		sourcemap-6.2.3 \
 		spin-0.5.2 \
 		spki-0.6.0 \
+		spki-0.7.1 \
 		stable_deref_trait-1.2.0 \
 		stacker-0.1.15 \
 		static_assertions-1.1.0 \
 		str-buf-1.0.6 \
 		string_cache-0.8.7 \
 		string_cache_codegen-0.5.2 \
-		string_enum-0.3.3 \
+		string_enum-0.4.0 \
 		strsim-0.10.0 \
 		subtle-2.4.1 \
-		swc_atoms-0.4.39 \
-		swc_bundler-0.208.4 \
-		swc_common-0.29.37 \
-		swc_config-0.1.4 \
-		swc_config_macro-0.1.0 \
-		swc_ecma_ast-0.100.1 \
-		swc_ecma_codegen-0.135.2 \
-		swc_ecma_codegen_macros-0.7.1 \
-		swc_ecma_dep_graph-0.102.2 \
-		swc_ecma_loader-0.41.39 \
-		swc_ecma_parser-0.130.2 \
-		swc_ecma_transforms_base-0.122.3 \
-		swc_ecma_transforms_classes-0.111.3 \
-		swc_ecma_transforms_macros-0.5.0 \
-		swc_ecma_transforms_optimization-0.181.4 \
-		swc_ecma_transforms_proposal-0.156.4 \
-		swc_ecma_transforms_react-0.167.4 \
-		swc_ecma_transforms_typescript-0.171.4 \
-		swc_ecma_utils-0.113.3 \
-		swc_ecma_visit-0.86.1 \
+		swc_atoms-0.5.3 \
+		swc_bundler-0.213.23 \
+		swc_common-0.31.4 \
+		swc_config-0.1.5 \
+		swc_config_macro-0.1.1 \
+		swc_ecma_ast-0.103.4 \
+		swc_ecma_codegen-0.138.11 \
+		swc_ecma_codegen_macros-0.7.2 \
+		swc_ecma_dep_graph-0.105.10 \
+		swc_ecma_loader-0.43.6 \
+		swc_ecma_parser-0.133.10 \
+		swc_ecma_transforms_base-0.126.13 \
+		swc_ecma_transforms_classes-0.115.13 \
+		swc_ecma_transforms_macros-0.5.1 \
+		swc_ecma_transforms_optimization-0.186.20 \
+		swc_ecma_transforms_proposal-0.160.16 \
+		swc_ecma_transforms_react-0.172.19 \
+		swc_ecma_transforms_typescript-0.176.19 \
+		swc_ecma_utils-0.116.10 \
+		swc_ecma_visit-0.89.4 \
 		swc_eq_ignore_macros-0.1.1 \
-		swc_fast_graph-0.17.38 \
-		swc_graph_analyzer-0.18.41 \
-		swc_macros_common-0.3.6 \
-		swc_visit-0.5.4 \
-		swc_visit_macros-0.5.5 \
+		swc_fast_graph-0.19.4 \
+		swc_graph_analyzer-0.20.5 \
+		swc_macros_common-0.3.7 \
+		swc_visit-0.5.5 \
+		swc_visit_macros-0.5.6 \
 		syn-0.15.44 \
 		syn-1.0.109 \
 		syn-2.0.13 \
@@ -455,19 +473,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		testing_macros-0.2.8 \
 		text-size-1.1.0 \
 		text_lines-0.6.0 \
-		thiserror-1.0.38 \
-		thiserror-impl-1.0.38 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
 		time-0.3.20 \
 		time-core-0.1.0 \
 		time-macros-0.2.8 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.25.0 \
-		tokio-macros-1.8.2 \
-		tokio-rustls-0.23.4 \
+		tokio-1.28.1 \
+		tokio-macros-2.1.0 \
+		tokio-rustls-0.24.0 \
 		tokio-socks-0.5.1 \
 		tokio-stream-0.1.12 \
-		tokio-tungstenite-0.16.1 \
 		tokio-util-0.7.7 \
 		toml-0.5.11 \
 		toml_datetime-0.6.1 \
@@ -487,7 +504,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		trust-dns-server-0.22.0 \
 		try-lock-0.2.4 \
 		trybuild-1.0.79 \
-		tungstenite-0.16.0 \
 		twox-hash-1.6.3 \
 		typed-arena-2.0.1 \
 		typenum-1.16.0 \
@@ -512,7 +528,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.1 \
 		uuid-1.3.0 \
-		v8-0.68.0 \
+		v8-0.73.0 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		vsimd-0.8.0 \
@@ -540,14 +556,23 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
 		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
+		windows-targets-0.48.0 \
 		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
 		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
 		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
 		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
 		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
 		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
 		winnow-0.3.6 \
 		winreg-0.10.1 \
 		winres-0.1.12 \
@@ -564,8 +589,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 CARGO_INSTALL=	no
 
 .include <bsd.port.pre.mk>
-.if ${COMPILER_VERSION} != 130
-LLVM_DEFAULT=		13
+.if ${COMPILER_VERSION} != 160
+LLVM_DEFAULT=		16
 BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \

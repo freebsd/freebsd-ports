@@ -1,5 +1,5 @@
---- cargo-crates/v8-0.68.0/build/config/compiler/BUILD.gn.orig	1973-11-29 22:33:09 UTC
-+++ cargo-crates/v8-0.68.0/build/config/compiler/BUILD.gn
+--- cargo-crates/v8-0.73.0/build/config/compiler/BUILD.gn.orig	1973-11-29 22:33:09 UTC
++++ cargo-crates/v8-0.73.0/build/config/compiler/BUILD.gn
 @@ -135,7 +135,7 @@ declare_args() {
    #
    # TODO(crbug.com/1131993): This regresses binary size by ~1MB on Android and
@@ -7,9 +7,9 @@
 -  init_stack_vars = !(is_android && is_official_build)
 +  init_stack_vars = !is_bsd && !(is_android && is_official_build)
  
-   # This argument is to control whether enabling text section splitting in the
-   # final binary. When enabled, the separated text sections with prefix
-@@ -238,7 +238,7 @@ config("no_unresolved_symbols") {
+   # Zero init has favorable performance/size tradeoffs for Chrome OS
+   # but was not evaluated for other platforms.
+@@ -251,7 +251,7 @@ config("no_unresolved_symbols") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -18,7 +18,7 @@
        (is_linux || is_chromeos || is_android || is_fuchsia)) {
      ldflags = [
        "-Wl,-z,defs",
-@@ -356,7 +356,7 @@ config("compiler") {
+@@ -369,7 +369,7 @@ config("compiler") {
      }
  
      # Linker warnings.
@@ -27,7 +27,7 @@
          current_os != "zos") {
        ldflags += [ "-Wl,--fatal-warnings" ]
      }
-@@ -543,7 +543,7 @@ config("compiler") {
+@@ -556,7 +556,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -36,16 +36,16 @@
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -827,7 +827,7 @@ config("compiler") {
+@@ -835,7 +835,7 @@ config("compiler") {
+   # * Apple platforms (e.g. MacOS, iPhone, iPad) aren't supported because xcode
    #   lldb doesn't have the needed changes yet.
-   # * Fuchsia isn't supported as zxdb doesn't support simple template names yet.
    # TODO(crbug.com/1379070): Remove if the upstream default ever changes.
--  if (is_clang && !is_nacl && !is_win && !is_apple && !is_fuchsia) {
-+  if (is_clang && !is_nacl && !is_win && !is_apple && !is_fuchsia && !is_bsd) {
+-  if (is_clang && !is_nacl && !is_win && !is_apple) {
++  if (is_clang && !is_nacl && !is_win && !is_apple && !is_bsd) {
      cflags_cc += [ "-gsimple-template-names" ]
    }
  
-@@ -1002,7 +1002,7 @@ config("compiler_cpu_abi") {
+@@ -1030,7 +1030,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -54,7 +54,7 @@
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1347,10 +1347,10 @@ config("compiler_deterministic") {
+@@ -1380,10 +1380,10 @@ config("compiler_deterministic") {
      } else {
        # -ffile-compilation-dir is an alias for both -fdebug-compilation-dir=
        # and -fcoverage-compilation-dir=.
@@ -67,7 +67,7 @@
        # We don't use clang -cc1as on Windows (yet? https://crbug.com/762167)
        asmflags = [ "-Wa,-fdebug-compilation-dir,." ]
      }
-@@ -1911,7 +1911,7 @@ config("thin_archive") {
+@@ -1953,7 +1953,7 @@ config("thin_archive") {
    # archives.
    # TODO(crbug.com/1221615): Enable on is_apple if use_lld once that no longer
    # confuses lldb.
@@ -76,16 +76,7 @@
      arflags = [ "-T" ]
    } else if (is_win && use_lld) {
      arflags = [ "/llvmlibthin" ]
-@@ -2440,7 +2440,7 @@ config("symbols") {
-     # flag, so we can use use -g1 for pnacl and nacl-clang compiles.
-     # gcc nacl is is_nacl && !is_clang, pnacl and nacl-clang are && is_clang.
-     if ((!is_nacl || is_clang) && current_os != "zos") {
--      cflags += [ "-g2" ]
-+      cflags += [ "-g0" ]
-     }
- 
-     if (!is_nacl && is_clang && !is_tsan && !is_asan) {
-@@ -2475,7 +2475,7 @@ config("symbols") {
+@@ -2526,7 +2526,7 @@ config("symbols") {
      # DWARF info may be corrupt; offsets in a range list entry are in different
      # sections" there.  Maybe just a bug in nacl_switch_32.S.
      _enable_gdb_index =
