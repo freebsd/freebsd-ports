@@ -1,7 +1,6 @@
 PORTNAME=	par2cmdline-turbo
-PORTVERSION=	0.9.0
+PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
 CATEGORIES=	archivers
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -10,7 +9,7 @@ WWW=		https://github.com/animetosho/par2cmdline-turbo
 
 LICENSE=	GPLv2
 
-ONLY_FOR_ARCHS=	amd64 aarch64
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 ONLY_FOR_ARCHS_REASON=	untested on other archs
 
 USES=		autoreconf compiler:c++11-lang
