@@ -1,0 +1,56 @@
+Patch by Heiko Becker upstream:
+
+Without INDI present I get the following error:
+
+"x86_64-pc-linux-gnu-ld: ../lib/libKStarsLib.a(robuststatistics.cpp.o):
+in function `Mathematics::GSLHelpers::gslMedianFromSortedData(
+double const*, unsigned long, unsigned long)':
+.../work/kstars-3.6.5/kstars/auxiliary/gslhelpers.h:306: undefined
+reference to `gsl_stats_median_from_sorted_data'"
+
+That is the case because Mathematics::RobustStatistics is used
+unconditionally, which pulls in gslhelpers and the need to link with
+GSL.
+
+Also drop the duplicate linking of KF5::Notifications, KStarsLib already
+links to it in the NOT ANDROID case.
+
+
+--- kstars/CMakeLists.txt.orig	2023-05-31 08:23:38 UTC
++++ kstars/CMakeLists.txt
+@@ -1169,6 +1169,8 @@ set(kstars_SRCS ${kstars_SRCS} ${fits2_SRCS} ${sep_SRC
+ set(kstarslite_SRCS ${kstarslite_SRCS} ${fits_klite_SRCS} ${sep_SRCS} ${hough_SRCS} ${fits2_klite_SRCS} ${kstarslite_libtess_SRC})
+ 
+ IF (NOT ANDROID)
++    # GSL
++    find_package(GSL REQUIRED)
+     qt5_add_dbus_adaptor(kstars_SRCS org.kde.kstars.xml kstars.h KStars)
+     qt5_add_dbus_adaptor(kstars_SRCS org.kde.kstars.SimClock.xml simclock.h SimClock)
+     qt5_add_dbus_adaptor(kstars_SRCS org.kde.kstars.FOV.xml fov.h FOV)
+@@ -1213,6 +1215,7 @@ IF (NOT ANDROID)
+     )
+ 
+     add_library(KStarsLib STATIC ${kstars_SRCS})
++    target_link_options(KStarsLib PUBLIC ${CMAKE_THREAD_LIBS_INIT})
+ 
+     if (BUILD_PYKSTARS)
+       set_target_properties(KStarsLib PROPERTIES POSITION_INDEPENDENT_CODE ON)
+@@ -1243,6 +1246,7 @@ IF (NOT ANDROID)
+         Qt5::WebSockets
+         ${ZLIB_LIBRARIES}
+         Eigen3::Eigen
++        GSL::gsl
+         )
+ 
+     if (Qt5Keychain_FOUND)
+@@ -1313,10 +1317,6 @@ if(INDI_FOUND)
+     ## Linux + MacOS Lite: Requires INDI Qt5 Client
+     ## Android: Requires INDI Qt5 Client built for Android
+     if (NOT ANDROID)
+-        # GSL
+-        find_package(GSL REQUIRED)
+-        include_directories(${GSL_INCLUDE_DIRS})
+-        target_link_libraries(KStarsLib ${GSL_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} KF5::Notifications)
+         # StellarSolver
+         target_link_libraries(KStarsLib StellarSolver::stellarsolver)
+     endif ()
