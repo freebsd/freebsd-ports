@@ -1,5 +1,5 @@
 PORTNAME=	readarr
-DISTVERSION=	0.1.5.1832
+DISTVERSION=	0.1.6.1867
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Readarr/Readarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Readarr.develop.${DISTVERSION}.freebsd-core-x64
