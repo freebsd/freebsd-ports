@@ -123,7 +123,8 @@ CARGO_CRATES=	adler32-1.0.4 \
 		syntect-3.3.0 \
 		tempdir-0.3.7 \
 		thread_local-1.0.1 \
-		time-0.1.43 \
+		time-0.1.45 \
+		time-0.2.0 \
 		toml-0.5.6 \
 		typenum-1.12.0 \
 		unicode-bidi-0.3.4 \
@@ -138,6 +139,7 @@ CARGO_CRATES=	adler32-1.0.4 \
 		void-1.0.2 \
 		walkdir-2.3.1 \
 		wasi-0.9.0+wasi-snapshot-preview1 \
+		wasi-0.10.0+wasi-snapshot-preview1 \
 		winapi-0.2.8 \
 		winapi-0.3.8 \
 		winapi-build-0.1.1 \
