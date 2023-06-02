@@ -1,6 +1,5 @@
 PORTNAME=	CGI-Upload
-PORTVERSION=	1.11
-PORTREVISION=	2
+PORTVERSION=	1.13
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +16,9 @@ RUN_DEPENDS=	p5-HTTP-BrowserDetect>=0:www/p5-HTTP-BrowserDetect \
 		p5-File-MMagic>=0:devel/p5-File-MMagic \
 		p5-CGI>=0:www/p5-CGI
 
-USES=		perl5
+USES=		perl5 shebangfix
 USE_PERL5=	configure
+
+SHEBANG_FILES=	cgi.pl
 
 .include <bsd.port.mk>
