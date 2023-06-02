@@ -1,5 +1,5 @@
 PORTNAME=	woob
-PORTVERSION=	3.5
+PORTVERSION=	3.6
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -43,9 +43,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unidecode>=0:converters/py-unidecode@${PY_FL
 		gpg2:security/gnupg \
 		yt-dlp:www/yt-dlp
 
-USES=		python:3.7+ shebangfix
+USES=		python:3.7+
 USE_PYTHON=	autoplist pep517
-SHEBANG_FILES=	woob/applications/main/main.py
 
 NO_ARCH=	yes
 
