@@ -325,4 +325,52 @@ EOD
    purpose.
 EOD
 }
+{ type: upgrade
+  maximum_version: 3.5.2
+  message: <<EOD
+1. If the plugin security/py-netbox-secretstore is used, which is no longer
+   maintained by upstream, the following steps must be done before upgrading to
+   NetBox 3.5:
+
+   * Migrate from security/py-netbox-secretstore (= 1.4.2_2) to
+     security/py-netbox-secrets (= 1.7.6) with a NetBox 3.4.x instance.
+
+     It is very important that the versions of py-netbox-secretstore and
+     py-netbox-secrets match as specified otherwise the migration will not
+     be successful.
+
+     The reason for this is that py-netbox-secrets 1.8.x is not backwards
+     compatible with Netbox 3.4.  For further details please see the updating
+     instructions of py-netbox-secretstore or the UPDATING entry of 2023-05-11.
+
+2. The NetBox 3.5 release contains some breaking changes, so the following
+   items should be checked as well:
+
+   * The "account: field has been removed from the provider model.
+     This information is now tracked using the new provider account model.
+     Multiple accounts can be assigned per provider.
+
+   * A minimum length of 50 characters is now enforced for the SECRET_KEY
+     configuration parameter.
+
+   * The JobResult model has been moved from the "extras" app to "core" and
+     renamed to Job. Accordingly, its REST API endpoint has been moved from
+     "/api/extras/job-results/" to "/api/core/jobs/".
+
+   * The "obj_type" field on the Job model (previously JobResult) has been
+     renamed to "object_type" for consistency with other models.
+
+   * The JOBRESULT_RETENTION configuration parameter has been renamed
+     to JOB_RETENTION.
+
+   * The "obj" context variable is no longer passed when rendering custom
+     links: Use "object" instead.
+
+   * The REST API schema is now generated using the OpenAPI 3.0 spec
+
+   * The URLs for the REST API schema documentation have changed:
+       - "/api/docs/" is now "/api/schema/swagger-ui/"
+       - "/api/redoc/" is now "/api/schema/redoc/"
+EOD
+}
 ]
