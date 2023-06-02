@@ -822,6 +822,7 @@ man/man7/gitworkflows.7.gz
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.39.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.40.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.40.1.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.41.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.0.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.1.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/2.2.2.txt
@@ -1333,10 +1334,7 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/coccinelle/swap.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/tests/free.c
 %%CONTRIB%%share/git-core/contrib/coccinelle/tests/free.res
-%%CONTRIB%%share/git-core/contrib/coccinelle/tests/unused.c
-%%CONTRIB%%share/git-core/contrib/coccinelle/tests/unused.res
-%%CONTRIB%%share/git-core/contrib/coccinelle/the_repository.pending.cocci
-%%CONTRIB%%share/git-core/contrib/coccinelle/unused.cocci
+%%CONTRIB%%share/git-core/contrib/coccinelle/the_repository.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/xcalloc.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/xopen.cocci
 %%CONTRIB%%share/git-core/contrib/coccinelle/xstrdup_or_null.cocci
@@ -1348,9 +1346,6 @@ share/emacs/site-lisp/git/git.el
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts
 %%CONTRIB%%share/git-core/contrib/contacts/git-contacts.txt
 %%CONTRIB%%share/git-core/contrib/coverage-diff.sh
-%%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/.gitignore
-%%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/Makefile
-%%CONTRIB%%share/git-core/contrib/credential/gnome-keyring/git-credential-gnome-keyring.c
 %%CONTRIB%%share/git-core/contrib/credential/libsecret/Makefile
 %%CONTRIB%%share/git-core/contrib/credential/libsecret/git-credential-libsecret.c
 %%CONTRIB%%share/git-core/contrib/credential/netrc/Makefile
@@ -1463,6 +1458,7 @@ share/git-core/templates/hooks/pre-rebase.sample
 share/git-core/templates/hooks/pre-receive.sample
 share/git-core/templates/hooks/prepare-commit-msg.sample
 share/git-core/templates/hooks/push-to-checkout.sample
+share/git-core/templates/hooks/sendemail-validate.sample
 share/git-core/templates/hooks/update.sample
 share/git-core/templates/info/exclude
 %%NLS%%share/locale/bg/LC_MESSAGES/git.mo
@@ -1480,6 +1476,7 @@ share/git-core/templates/info/exclude
 %%NLS%%share/locale/ru/LC_MESSAGES/git.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/git.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/git.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/git.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/git.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/git.mo
