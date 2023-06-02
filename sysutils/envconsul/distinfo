@@ -1,5 +1,5 @@
-TIMESTAMP = 1684261621
-SHA256 (go/sysutils_envconsul/envconsul-v0.13.1/v0.13.1.mod) = afe2c2e269e88735ab2c55563f60351dea8f21965d3a6c93e5b38b4f0cff1e81
-SIZE (go/sysutils_envconsul/envconsul-v0.13.1/v0.13.1.mod) = 3408
-SHA256 (go/sysutils_envconsul/envconsul-v0.13.1/v0.13.1.zip) = 192650c4f63a9de725ebe2280a820675e6abcdfe1795edce16606f9323a4d13b
-SIZE (go/sysutils_envconsul/envconsul-v0.13.1/v0.13.1.zip) = 86535
+TIMESTAMP = 1685722081
+SHA256 (go/sysutils_envconsul/envconsul-v0.13.2/v0.13.2.mod) = bc848d960df713365cfec8943353de42e79dd219df093d4ef05b0dbb210845a8
+SIZE (go/sysutils_envconsul/envconsul-v0.13.2/v0.13.2.mod) = 2628
+SHA256 (go/sysutils_envconsul/envconsul-v0.13.2/v0.13.2.zip) = dc86771fdef7bd5c20dbc0571c1b5cb6741b75d7556cd3928b18ddcdc15d59c8
+SIZE (go/sysutils_envconsul/envconsul-v0.13.2/v0.13.2.zip) = 87172
