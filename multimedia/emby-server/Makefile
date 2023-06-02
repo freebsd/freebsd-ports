@@ -1,5 +1,5 @@
 PORTNAME=	emby-server
-DISTVERSION?=	4.7.12.0
+DISTVERSION?=	4.7.13.0
 PORTREVISION?=	0
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/MediaBrowser/Emby.Releases/releases/download/${DISTVERSION}/ \
