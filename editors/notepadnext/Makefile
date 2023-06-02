@@ -1,6 +1,6 @@
 PORTNAME=	notepadnext
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
+DISTVERSION=	0.6.3
 CATEGORIES=	editors
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,8 +23,8 @@ GH_PROJECT=	NotepadNext
 
 GH_TUPLE=	alex-spataru:QSimpleUpdater:62e0ce7dde4c76e7533f2f0ee53f19ee1690c8dd:alex_spataru_QSimpleUpdater/src/QSimpleUpdater \
 		editorconfig:editorconfig-core-qt:52820d59769fcba6d0ed94f685406c0383fe1a30:editorconfig_editorconfig_core_qt/src/editorconfig-core-qt \
-		githubuser0xFFFF:Qt-Advanced-Docking-System:89ff0ad311ec0cba7e7685c070d3be3a055cce71:githubuser0xFFFF_Qt_Advanced_Docking_System/src/ads \
-		itay-grudev:SingleApplication:d0c43a51ad7d4f74ae5cff8d8cbf8aba0cf5e51c:itay_grudev_SingleApplication/src/singleapplication
+		githubuser0xFFFF:Qt-Advanced-Docking-System:89ff0ad:githubuser0xFFFF_Qt_Advanced_Docking_System/src/ads \
+		itay-grudev:SingleApplication:d0c43a5:itay_grudev_SingleApplication/src/singleapplication
 
 QMAKE_SOURCE_PATH=	${WRKSRC}/src/NotepadNext.pro
 
