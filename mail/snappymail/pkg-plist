@@ -75,6 +75,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Log/Drivers/StderrStream.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Log/Drivers/Syslog.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Log/Enumerations/Type.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Log/Inherit.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Log/Logger.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/Attachment.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/MailSo/Mail/AttachmentCollection.php
