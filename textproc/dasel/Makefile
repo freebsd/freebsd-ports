@@ -1,7 +1,6 @@
 PORTNAME=	dasel
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.27.3
-PORTREVISION=	5
+DISTVERSION=	2.3.4
 CATEGORIES=	textproc
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -13,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-GO_MODULE=	github.com/tomwright/${PORTNAME}
+GO_MODULE=	github.com/tomwright/${PORTNAME}/v2
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-tags noupdater \
 		-ldflags "\
