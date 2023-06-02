@@ -1761,6 +1761,7 @@ man/man6/mame.6.gz
 %%DATADIR%%/hash/mz700_cass.xml
 %%DATADIR%%/hash/mz800_cass.xml
 %%DATADIR%%/hash/n64.xml
+%%DATADIR%%/hash/n64_lodgenet.xml
 %%DATADIR%%/hash/n64dd.xml
 %%DATADIR%%/hash/nascom_flop.xml
 %%DATADIR%%/hash/nascom_snap.xml
