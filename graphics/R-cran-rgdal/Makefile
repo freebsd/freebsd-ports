@@ -1,6 +1,5 @@
 PORTNAME=	rgdal
-DISTVERSION=	1.6-6
-PORTREVISION=	1
+DISTVERSION=	1.6-7
 CATEGORIES=	graphics
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -10,10 +9,10 @@ WWW=		https://cran.r-project.org/web/packages/rgdal/
 
 LICENSE=	GPLv2+
 
-LIB_DEPENDS=	libgdal.so:graphics/gdal \
-		libproj.so:graphics/proj
 CRAN_DEPENDS=	R-cran-sp>=1.1.0:math/R-cran-sp
 BUILD_DEPENDS=	${CRAN_DEPENDS}
+LIB_DEPENDS=	libgdal.so:graphics/gdal \
+		libproj.so:graphics/proj
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
 USES=		compiler:c++11-lang cran:auto-plist,compiles pkgconfig
