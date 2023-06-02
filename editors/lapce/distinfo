@@ -1,4 +1,4 @@
-TIMESTAMP = 1679041128
+TIMESTAMP = 1685689502
 SHA256 (rust/crates/Inflector-0.11.4.crate) = fe438c63458706e03479442743baae6c88256498e6431708f6dfc520a26515d3
 SIZE (rust/crates/Inflector-0.11.4.crate) = 17438
 SHA256 (rust/crates/addr2line-0.17.0.crate) = b9ecd88a8c8378ca913a680cd98f0f13ac67383d35993f86c90a70e3f137816b
@@ -1221,5 +1221,5 @@ SHA256 (theHamsta-tree-sitter-glsl-74329feb2605deccd32b1c644af507daa6fb82f1_GH0.
 SIZE (theHamsta-tree-sitter-glsl-74329feb2605deccd32b1c644af507daa6fb82f1_GH0.tar.gz) = 262352
 SHA256 (tree-sitter-tree-sitter-php-ab2e72179ceb8bb0b249c8ac9162a148e911b3dc_GH0.tar.gz) = 9744d16cbf910d4bf8776cf735215572917aa7a9e8e562e9e659cce7dacea90e
 SIZE (tree-sitter-tree-sitter-php-ab2e72179ceb8bb0b249c8ac9162a148e911b3dc_GH0.tar.gz) = 263279
-SHA256 (lapce-lapce-v0.2.7_GH0.tar.gz) = c4e0668bf98e83a8c451fe69173c51d8345511a1bd580c412750f3b940531c27
-SIZE (lapce-lapce-v0.2.7_GH0.tar.gz) = 2058851
+SHA256 (lapce-lapce-v0.2.8_GH0.tar.gz) = 650b81c3dfbd727101111de60c208c191258fb27a96b1cec392afa7c0579a6ff
+SIZE (lapce-lapce-v0.2.8_GH0.tar.gz) = 2065470
