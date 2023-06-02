@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-09-11 09:38:36 UTC
+--- CMakeLists.txt.orig	2023-03-08 16:08:22 UTC
 +++ CMakeLists.txt
-@@ -29,7 +29,7 @@ set(PROJECT_MANINTAINER "${PROJECT_MANINTAINER_NAME} <
+@@ -30,7 +30,7 @@ include(misc)
  # CMake modules
  set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake" "${CMAKE_CURRENT_SOURCE_DIR}/external/cmake-modules")
  include(misc)
@@ -9,7 +9,7 @@
  
  # C++
  set(CMAKE_CXX_STANDARD 17)
-@@ -39,14 +39,14 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
+@@ -40,14 +40,14 @@ set(VERSION_SUFFIX "-git-" CACHE STRING "")
  set(VERSION_NAKED ${PROJECT_VERSION})
  set(VERSION_SUFFIX "-git-" CACHE STRING "")
  
@@ -26,4 +26,22 @@
 +elseif(FALSE AND NOT VERSION_SUFFIX STREQUAL "")
      set(PROJECT_VERSION "${PROJECT_VERSION}+${VERSION_SUFFIX}")
  endif()
+ 
+@@ -90,8 +90,15 @@ endif()
+ 
+ # Qt
+ #find_package(Qt5Qml QUIET)
+-set(QT_VERSION_MAJOR 5)
+-find_package(QT NAMES Qt5 Qt6 COMPONENTS Core QUIET)
++option(WITH_QT5 "Build against Qt5" ON)
++option(WITH_QT6 "Build against Qt6" OFF)
++if ( WITH_QT5 )
++    set(QT_VERSION_MAJOR 5)
++endif()
++if ( WITH_QT6 )
++    set(QT_VERSION_MAJOR 6)
++endif()
++find_package(QT NAMES Qt${QT_VERSION_MAJOR} COMPONENTS Core QUIET)
+ find_package(Qt${QT_VERSION_MAJOR} COMPONENTS Core Widgets Xml UiTools Concurrent Network Svg REQUIRED)
+ message(STATUS "Using Qt ${QT_VERSION_MAJOR}")
  
