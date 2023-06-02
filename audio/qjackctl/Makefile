@@ -1,7 +1,6 @@
 PORTNAME=	qjackctl
 DISTVERSIONPREFIX=	qjackctl_
-DISTVERSION=	0_9_10
-PORTREVISION=	1
+DISTVERSION=	0_9_11
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,10 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		cmake compiler:c++11-lib desktop-file-utils gl localbase:ldflags pkgconfig qt:6
+USES=		cmake compiler:c++17-lang desktop-file-utils gl localbase:ldflags pkgconfig qt:6
 USE_QT=		base svg tools:build
 USE_GL=		gl
-USE_CXXSTD=	c++11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
@@ -43,5 +41,7 @@ SYSTRAY_CMAKE_BOOL=	CONFIG_SYSTEM_TRAY
 XUNIQUE_CMAKE_BOOL=	CONFIG_XUNIQUE
 XUNIQUE_USES=		xorg
 XUNIQUE_USE=		XORG=x11
+
+BINARY_ALIAS=	git=false
 
 .include <bsd.port.mk>
