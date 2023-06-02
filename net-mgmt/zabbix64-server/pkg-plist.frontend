@@ -838,6 +838,7 @@
 %%WWWDIR%%/include/classes/html/CFormList.php
 %%WWWDIR%%/include/classes/html/CHorList.php
 %%WWWDIR%%/include/classes/html/CHostAvailability.php
+%%WWWDIR%%/include/classes/html/CHtmlEntity.php
 %%WWWDIR%%/include/classes/html/CHtmlPage.php
 %%WWWDIR%%/include/classes/html/CHtmlPageHeader.php
 %%WWWDIR%%/include/classes/html/CIFrame.php
