@@ -1,6 +1,5 @@
 PORTNAME=	qsynth
-DISTVERSION=	0.9.10
-PORTREVISION=	1
+DISTVERSION=	0.9.11
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -13,8 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libfluidsynth.so:audio/fluidsynth
 
-USES=		cmake compiler:c++11-lang pkgconfig qt:6
-USE_CXXSTD=	c++11
+USES=		cmake compiler:c++17-lang pkgconfig qt:6
 USE_QT=		base svg tools:build
 
 # cf. PR 224488
@@ -32,6 +30,8 @@ SYSTEM_TRAY_CMAKE_BOOL=		CONFIG_SYSTEM_TRAY
 XUNIQUE_USES=			xorg
 XUNIQUE_USE=			XORG=x11
 XUNIQUE_CMAKE_BOOL=		CONFIG_XUNIQUE
+
+BINARY_ALIAS=	git=false
 
 post-patch:
 	@${REINPLACE_CMD} -e ' \
