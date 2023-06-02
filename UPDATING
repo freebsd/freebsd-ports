@@ -5,6 +5,28 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230602:
+  AFFECTS: users of net-mgmt/netbox
+  AUTHOR: kai@FreeBSD.org
+
+  1. If the plugin security/py-netbox-secretstore is used, which is no
+     longer maintained by upstream, the following steps must be done before
+     upgrading to NetBox 3.5:
+
+     * Migrate from security/py-netbox-secretstore (= 1.4.2_2) to
+       security/py-netbox-secrets (= 1.7.6) with a NetBox 3.4.x instance.
+
+       It is very important that the versions of py-netbox-secretstore and
+       py-netbox-secrets match as specified otherwise the migration will not
+       be successful.
+
+       The reason for this is that py-netbox-secrets 1.8.x is not backwards
+       compatible with Netbox 3.4.  For further details please see the
+       updating instructions of py-netbox-secretstore or the UPDATING entry
+       of 2023-05-11.
+
+  2. Please also check the pkg-message and the changelogs for further info.
+
 20230531:
   AFFECTS: users of net-mgmt/netdisco
   AUTHOR: dgeo@centrale-marseille.fr
