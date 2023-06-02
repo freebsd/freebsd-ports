@@ -17,8 +17,8 @@ Caldera port was installed
 3) Before of start Caldera you must run some scripts for generate/update payload
    files
 
-   # cd %%WWWDIR%%/plugins/manx && sh update-shells.sh
-   # cd %%WWWDIR%%/plugins/sandcat && sh update-agents.sh
+   # su -m caldera -c 'cd %%WWWDIR%%/plugins/manx && sh update-shells.sh'
+   # su -m caldera -c 'cd %%WWWDIR%%/plugins/sandcat && sh update-agents.sh'
 
 4) Do not forget modify configuration files before of run Caldera. For default
    it runs in insecure mode (http). Caldera configuration files are located at

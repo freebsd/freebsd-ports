@@ -1,6 +1,6 @@
 PORTNAME=	caldera
 DISTVERSION=	4.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
@@ -43,6 +43,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>0:math/py-numpy@${PY_FLAVOR} \
 		upx>0:archivers/upx \
+		base64>0:converters/base64 \
 		git>0:devel/git \
 		bash>0:shells/bash
 
