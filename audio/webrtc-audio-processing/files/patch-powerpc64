@@ -1,0 +1,67 @@
+Modified https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/merge_requests/17/diffs?commit_id=c18b3945a1cc for FreeBSD + pffft patch to include altivec.h.
+--- webrtc/common_audio/wav_file.cc.orig	2020-11-27 19:30:53 UTC
++++ webrtc/common_audio/wav_file.cc
+@@ -14,7 +14,7 @@
+ 
+ #include <algorithm>
+ #include <array>
+-#include <byteswap.h>
++#include <sys/endian.h>
+ #include <cstdio>
+ #include <type_traits>
+ #include <utility>
+@@ -123,7 +123,7 @@ size_t WavReader::ReadSamples(const size_t num_samples
+   }
+ #ifndef WEBRTC_ARCH_LITTLE_ENDIAN
+   for (size_t i = 0; i < num_samples; i++) {
+-    samples[i] = bswap_16(samples[i]);
++    samples[i] = bswap16(samples[i]);
+   }
+ #endif
+ 
+@@ -171,7 +171,7 @@ size_t WavReader::ReadSamples(const size_t num_samples
+ #ifndef WEBRTC_ARCH_LITTLE_ENDIAN
+   // TODO: is this the right place for this?
+   for (size_t i = 0; i < num_samples; i++) {
+-    samples[i] = bswap_16(samples[i]);
++    samples[i] = bswap16(samples[i]);
+   }
+ #endif
+ 
+@@ -229,7 +229,7 @@ void WavWriter::WriteSamples(const int16_t* samples, s
+ #else
+       std::array<int16_t, kMaxChunksize> converted_samples;
+       for (size_t j = 0; j < num_samples_to_write; ++j) {
+-        converted_samples[j] = bswap_16(samples[i + j]);
++        converted_samples[j] = bswap16(samples[i + j]);
+       }
+       RTC_CHECK(
+           file_.Write(converted_samples.data(),
+@@ -241,7 +241,7 @@ void WavWriter::WriteSamples(const int16_t* samples, s
+       for (size_t j = 0; j < num_samples_to_write; ++j) {
+         int16_t sample = samples[i + j];
+ #ifndef WEBRTC_ARCH_LITTLE_ENDIAN
+-        sample = bswap_16(sample);
++        sample = bswap16(sample);
+ #endif
+         converted_samples[j] = S16ToFloat(sample);
+       }
+@@ -267,7 +267,7 @@ void WavWriter::WriteSamples(const float* samples, siz
+       for (size_t j = 0; j < num_samples_to_write; ++j) {
+         int16_t sample = FloatS16ToS16(samples[i + j]);
+ #ifndef WEBRTC_ARCH_LITTLE_ENDIAN
+-        sample = bswap_16(sample);
++        sample = bswap16(sample);
+ #endif
+         converted_samples[j] = sample;
+       }
+--- webrtc/third_party/pffft/src/pffft.c.orig	2020-11-27 19:30:53 UTC
++++ webrtc/third_party/pffft/src/pffft.c
+@@ -100,6 +100,7 @@
+    Altivec support macros 
+ */
+ #if !defined(PFFFT_SIMD_DISABLE) && (defined(__ppc__) || defined(__ppc64__))
++#include <altivec.h>
+ typedef vector float v4sf;
+ #  define SIMD_SZ 4
+ #  define VZERO() ((vector float) vec_splat_u8(0))
