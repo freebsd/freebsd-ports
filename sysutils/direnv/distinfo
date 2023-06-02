@@ -1,6 +1,6 @@
-TIMESTAMP = 1681319301
-SHA256 (direnv-direnv-v2.32.2_GH0.tar.gz) = 352b3a65e8945d13caba92e13e5666e1854d41749aca2e230938ac6c64fa8ef9
-SIZE (direnv-direnv-v2.32.2_GH0.tar.gz) = 86969
+TIMESTAMP = 1685715944
+SHA256 (direnv-direnv-v2.32.3_GH0.tar.gz) = c66f6d1000f28f919c6106b5dcdd0a0e54fb553602c63c60bf59d9bbdf8bd33c
+SIZE (direnv-direnv-v2.32.3_GH0.tar.gz) = 87653
 SHA256 (BurntSushi-toml-v1.2.0_GH0.tar.gz) = 9b1d4e09cc3f2e6f64245efffbd3a3b18a6a04d7e477b134d2c4fde19c922019
 SIZE (BurntSushi-toml-v1.2.0_GH0.tar.gz) = 96597
 SHA256 (golang-mod-v0.5.1_GH0.tar.gz) = 0ceb1aa06f263416ac67b6844a1704cc8078749c7e8ea9c3900a5c06d00e6036
