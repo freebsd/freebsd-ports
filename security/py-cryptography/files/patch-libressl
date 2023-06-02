@@ -167,30 +167,6 @@
  
  /* These functions were added in OpenSSL 1.1.0f commit d0c50e80a8 */
  /* Define our own to simplify support across all versions. */
---- src/_cffi_src/openssl/evp.py.orig	2021-08-24 17:02:37 UTC
-+++ src/_cffi_src/openssl/evp.py
-@@ -203,7 +203,20 @@ int (*EVP_PKEY_set1_tls_encodedpoint)(EVP_PKEY *, cons
-                                       size_t) = NULL;
- #endif
- 
--#if CRYPTOGRAPHY_OPENSSL_LESS_THAN_111
-+#if CRYPTOGRAPHY_IS_LIBRESSL
-+static const long Cryptography_HAS_ONESHOT_EVP_DIGEST_SIGN_VERIFY = 1;
-+static const long Cryptography_HAS_RAW_KEY = 0;
-+static const long Cryptography_HAS_EVP_DIGESTFINAL_XOF = 0;
-+int (*EVP_DigestFinalXOF)(EVP_MD_CTX *, unsigned char *, size_t) = NULL;
-+EVP_PKEY *(*EVP_PKEY_new_raw_private_key)(int, ENGINE *, const unsigned char *,
-+                                       size_t) = NULL;
-+EVP_PKEY *(*EVP_PKEY_new_raw_public_key)(int, ENGINE *, const unsigned char *,
-+                                      size_t) = NULL;
-+int (*EVP_PKEY_get_raw_private_key)(const EVP_PKEY *, unsigned char *,
-+                                    size_t *) = NULL;
-+int (*EVP_PKEY_get_raw_public_key)(const EVP_PKEY *, unsigned char *,
-+                                   size_t *) = NULL;
-+#elif CRYPTOGRAPHY_OPENSSL_LESS_THAN_111
- static const long Cryptography_HAS_ONESHOT_EVP_DIGEST_SIGN_VERIFY = 0;
- static const long Cryptography_HAS_RAW_KEY = 0;
- static const long Cryptography_HAS_EVP_DIGESTFINAL_XOF = 0;
 --- src/_cffi_src/openssl/fips.py.orig	2021-08-24 17:17:17 UTC
 +++ src/_cffi_src/openssl/fips.py
 @@ -17,11 +17,5 @@ int FIPS_mode(void);
