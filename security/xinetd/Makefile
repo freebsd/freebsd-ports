@@ -1,5 +1,5 @@
 PORTNAME=	xinetd
-PORTVERSION=	2.3.15
+DISTVERSION=	2-3-15
 PORTREVISION=	2
 CATEGORIES=	security
 
@@ -15,8 +15,8 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 USES=		cpe shebangfix
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	xinetd-org
-GH_TAGNAME=	xinetd-2-3-15
+GH_ACCOUNT=	${PORTNAME}-org
+GH_TAGNAME=	${PORTNAME}-${DISTVERSION}
 USE_RC_SUBR=	xinetd
 
 SHEBANG_FILES=	${WRKSRC}/xinetd/xconv.pl
@@ -35,6 +35,8 @@ IPV6_CONFIGURE_WITH=	ipv6
 LIBWRAP_CONFIGURE_WITH=	libwrap
 XCONV_USES=	perl5
 XCONV_USE=	PERL5=run
+
+PORTSCOUT=	ignore:1
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/xinetd/xconfig.h
