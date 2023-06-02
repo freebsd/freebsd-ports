@@ -1,8 +1,9 @@
-PORTNAME=	mattermost-server
-PORTVERSION=	7.10.1
+PORTNAME=	mattermost
+PORTVERSION=	7.10.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www
-MASTER_SITES=	https://raw.githubusercontent.com/${GH_ACCOUNT}/${GH_PROJECT}/${DISTVERSIONFULL}/:gomod
+MASTER_SITES=	https://raw.githubusercontent.com/${PORTNAME}/${PORTNAME}/${DISTVERSIONFULL}/:gomod
+PKGNAMESUFFIX=	-server
 DISTFILES=	go.mod:gomod
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -22,7 +23,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mattermost
 USE_RC_SUBR=	mattermostd
 
-GO_MODULE=	github.com/mattermost/mattermost-server
+GO_MODULE=	github.com/mattermost/mattermost-server/v6
 GO_TARGET=	./cmd/mattermost ./scripts/config_generator
 GO_BUILDFLAGS=	-ldflags="-X github.com/mattermost/mattermost-server/v6/model.BuildNumber=${PORTVERSION}"
 
