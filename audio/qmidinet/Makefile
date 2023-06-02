@@ -1,6 +1,5 @@
 PORTNAME=	qmidinet
-DISTVERSION=	0.9.9
-PORTREVISION=	1
+DISTVERSION=	0.9.10
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -18,5 +17,7 @@ USE_QT=		base svg tools:build
 USE_GL=		gl opengl
 
 CMAKE_OFF=	CONFIG_ALSA_MIDI # libalsa doesn't have MIDI functionality on FreeBSD
+
+BINARY_ALIAS=	git=false
 
 .include <bsd.port.mk>
