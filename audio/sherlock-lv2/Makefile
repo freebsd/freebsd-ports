@@ -22,4 +22,10 @@ USES=		compiler:c11 gl meson pkgconfig tar:xz xorg
 USE_XORG=	x11 xext
 USE_GL=		gl glew glu
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>
