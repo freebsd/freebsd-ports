@@ -1,8 +1,10 @@
+include/aws/io/async_stream.h
 include/aws/io/channel.h
 include/aws/io/channel_bootstrap.h
 include/aws/io/event_loop.h
 include/aws/io/exports.h
 include/aws/io/file_utils.h
+include/aws/io/future.h
 include/aws/io/host_resolver.h
 include/aws/io/io.h
 include/aws/io/logging.h
@@ -17,7 +19,9 @@ include/aws/io/statistics.h
 include/aws/io/stream.h
 include/aws/io/tls_channel_handler.h
 include/aws/io/uri.h
+include/aws/testing/async_stream_tester.h
 include/aws/testing/io_testing_channel.h
+include/aws/testing/stream_tester.h
 lib/aws-c-io/cmake/aws-c-io-config.cmake
 lib/aws-c-io/cmake/shared/aws-c-io-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/aws-c-io/cmake/shared/aws-c-io-targets.cmake
