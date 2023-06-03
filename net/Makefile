@@ -245,7 +245,6 @@
     SUBDIR += hanstunnel
     SUBDIR += haproxy
     SUBDIR += haproxy-devel
-    SUBDIR += haproxy17
     SUBDIR += haproxy18
     SUBDIR += haproxy20
     SUBDIR += haproxy22
