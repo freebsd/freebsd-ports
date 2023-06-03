@@ -53,21 +53,13 @@ LIB_DEPENDS=	\
 		libvulkan.so:graphics/vulkan-loader \
 		libwacom.so:x11/libwacom \
 		libwayland-client.so:graphics/wayland \
-		libxcb-cursor.so:x11/xcb-util-cursor \
-		libxcb-ewmh.so:x11/xcb-util-wm \
-		libxcb-image.so:x11/xcb-util-image \
-		libxcb-keysyms.so:x11/xcb-util-keysyms \
-		libxcb-render-util.so:x11/xcb-util-renderutil \
-		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \
 		libzstd.so:archivers/zstd
 
 USES=		cmake compiler:c++17-lang gl gnome jpeg perl5 pkgconfig python \
-		qt-dist:6 shebangfix xorg
-USE_GL=		egl gl
+		qt-dist:6 shebangfix
+USE_GL=		egl opengl
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30 pango
-USE_XORG=	ice pixman sm x11 xau xcb xcomposite xcursor xdamage xdmcp \
-		xext xfixes xi xinerama xrandr xrender
 CMAKE_ON=	QT_AVOID_CMAKE_ARCHIVING_API \
 		QT_FIND_ALL_PACKAGES_ALWAYS
 CMAKE_OFF=	QT_FEATURE_eglfs \
@@ -88,12 +80,22 @@ USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 # zstd from base fails to compress files during the build (error 11: unsupported argument)
 BINARY_ALIAS=	zstd=${LOCALBASE}/bin/zstd
 
-OPTIONS_DEFINE=		CUPS
-OPTIONS_DEFAULT=	CUPS
+OPTIONS_DEFINE=		CUPS X11
+OPTIONS_DEFAULT=	CUPS X11
 OPTIONS_SUB=		yes
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_CMAKE_OFF=		-DFEATURE_cups=OFF
+
+X11_USES=		xorg
+X11_USE=		XORG=ice,pixman,sm,x11,xau,xcb,xcomposite,xcursor,xdamage,xdmcp,xext,xfixes,xi,xinerama,xrandr,xrender
+X11_CMAKE_BOOL=		FEATURE_xcb FEATURE_xlib
+X11_LIB_DEPENDS=	libxcb-cursor.so:x11/xcb-util-cursor \
+			libxcb-icccm.so:x11/xcb-util-wm \
+			libxcb-image.so:x11/xcb-util-image \
+			libxcb-keysyms.so:x11/xcb-util-keysyms \
+			libxcb-render-util.so:x11/xcb-util-renderutil \
+			libxcb-util.so:x11/xcb-util
 
 .include <bsd.port.pre.mk>
 
