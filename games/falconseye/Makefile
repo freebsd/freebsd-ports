@@ -11,19 +11,30 @@ WWW=		http://falconseye.sourceforge.net/
 
 RUN_DEPENDS=	timidity:audio/timidity
 
-USES=		cpe ncurses perl5 sdl xorg zip
+USES=		cpe localbase ncurses perl5 sdl xorg zip
 CPE_VENDOR=	${PORTNAME}_project
-DATADIR=	${PREFIX}/share/falconseyedir
-MAKE_ENV=	NHDIR="${DATADIR}" NETHACKCONFIG="${NETHACKCONFIG}"
-MAKE_ARGS=	WINTTYLIB="-lncurses"
-NETHACKCONFIG=	${FILESDIR}/x-config
-USE_SDL=	sdl
 USE_PERL5=	build
-USE_XORG=	x11 xpm xaw
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -I${LOCALBASE}/include/SDL11 \
-		-Wno-return-type
-NO_WRKSUBDIR=	yes
+USE_SDL=	sdl
+USE_XORG=	x11 xaw xext xmu xpm xt
+
+MAKE_ARGS=	WINTTYLIB="-lncurses"
+MAKE_ENV=	NHDIR="${DATADIR}" NETHACKCONFIG="${NETHACKCONFIG}"
 MAKE_JOBS_UNSAFE=	yes
+
+CFLAGS+=	-L${LOCALBASE}/lib -I${LOCALBASE}/include/SDL11 \
+		-Wno-return-type
+
+DATADIR=	${PREFIX}/share/falconseyedir
+
+NO_WRKSUBDIR=	yes
+
+NETHACKCONFIG=	${FILESDIR}/x-config
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s|<malloc.h>|<stdlib.h>|" \
@@ -48,4 +59,4 @@ post-install:
 	${TOUCH} ${STAGEDIR}${DATADIR}/logfile ${STAGEDIR}${DATADIR}/perm \
 		${STAGEDIR}${DATADIR}/record
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

@@ -262,5 +262,4 @@ man/man6/frecover.6.gz
 %%DATADIR%%/wizard3.lev
 %%DATADIR%%/wizhelp
 @dir(,games,575) %%DATADIR%%/save
-@unexec rm -f %D/%%DATADIR%%/logfile %D/%%DATADIR%%/perm %D/%%DATADIR%%/record %D/%%DATADIR%%/jtp_log.txt
-@unexec rm -rf %D/%%DATADIR%%/save
+@postunexec rm -f %D/%%DATADIR%%/logfile %D/%%DATADIR%%/perm %D/%%DATADIR%%/record %D/%%DATADIR%%/jtp_log.txt
