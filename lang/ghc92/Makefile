@@ -6,7 +6,7 @@ CONFIGURE_ARGS=		${GMP_CONFIGURE_ON}
 
 OPTIONS_DEFINE=		DYNAMIC PROFILE
 
-GHC_VERSION=		9.2.7
+GHC_VERSION=		9.2.8
 LLVM_VERSION=		12
 BASE_PACKAGES=		Cabal-3.6.3.0 array-0.5.4.0 base-4.16.4.0 binary-0.8.9.0 \
 			bytestring-0.11.4.0 containers-0.6.5.1 deepseq-1.4.6.1 \
@@ -22,6 +22,6 @@ BOOT_LLVM_VERSION=	10
 
 MASTERDIR=	${.CURDIR}/../ghc
 PATCHDIR=	${.CURDIR}/files
-PLIST=		${.CURDIR}/pkg-plist
+# PLIST for this port is set in the master one
 
 .include	"${MASTERDIR}/Makefile"

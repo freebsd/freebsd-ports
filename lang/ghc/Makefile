@@ -154,6 +154,15 @@ BOOT_GHC=		${BOOT_INSTALL_DIR}/bin/ghc-${BOOT_GHC_VERSION}
 BOOT_DIR=		${WRKDIR}/ghc-${BOOT_GHC_VERSION}-${CONFIGURE_TARGET}
 .endif
 
+# this is hacky but 92 is special as it is compiled with autotools on i386 and with Hadrian elsewhere
+.if ${SLAVE_PORT} == "yes" && ${PKGNAMESUFFIX} == "92"
+.  ifdef USE_HADRIAN
+PLIST=			${.CURDIR}/../ghc92/pkg-plist.hadrian
+.  else
+PLIST=			${.CURDIR}/../ghc92/pkg-plist
+.  endif
+.endif
+
 # This version of ncurses is needed by bootstrap compiler
 .if ${OSVERSION} > 1300078 && empty(PORT_OPTIONS:MBOOT)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/compat/libncursesw.so.8:misc/compat12x
