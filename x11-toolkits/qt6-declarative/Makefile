@@ -24,7 +24,7 @@ LIB_DEPENDS=	libdouble-conversion.so:devel/double-conversion \
 
 USES=		cmake compiler:c++17-lang gettext-runtime gl gnome pkgconfig python:3.5+ xorg \
 		qt-dist:6
-USE_GL=		gl
+USE_GL=		opengl
 USE_GNOME=	glib20
 USE_QT=		base shadertools
 USE_XORG=	x11 xau xcb xdmcp
