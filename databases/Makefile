@@ -103,6 +103,7 @@
     SUBDIR += hiredis
     SUBDIR += hsqldb
     SUBDIR += immudb
+    SUBDIR += imposm3
     SUBDIR += influxdb
     SUBDIR += influxdb2-cli
     SUBDIR += innotop

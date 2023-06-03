@@ -1,0 +1,6 @@
+Imposm is an importer for OpenStreetMap data. It reads PBF files and
+imports the data into PostgreSQL/PostGIS. It can also automatically
+update the database with the latest changes from OSM.
+
+It is designed to create databases that are optimized for rendering
+(i.e. generating tiles or for WMS services).
