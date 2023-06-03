@@ -10,8 +10,10 @@ WWW=		https://gmi.skyjake.fi/lagrange/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_SSL=	libressl
+BROKEN_SSL=	libressl openssl30 openssl31
 BROKEN_SSL_REASON_libressl=	needs features only available in OpenSSL
+BROKEN_SSL_REASON_openssl30=	Fails to build with undefined symbol: ERR_load_BIO_strings
+BROKEN_SSL_REASON_openssl31=	Fails to build with undefined symbol: ERR_load_BIO_strings
 
 BUILD_DEPENDS=	zip>0:archivers/zip
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
