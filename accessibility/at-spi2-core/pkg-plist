@@ -1,4 +1,4 @@
-%%NO_ATKONLY%%etc/xdg/Xwayland-session.d/00-at-spi
+%%NO_ATKONLY%%%%X11%%etc/xdg/Xwayland-session.d/00-at-spi
 %%NO_ATKONLY%%etc/xdg/autostart/at-spi-dbus-bus.desktop
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-accessible.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-action.h
@@ -8,7 +8,7 @@
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-constants.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-device-legacy.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-device-listener.h
-%%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-device-x11.h
+%%NO_ATKONLY%%%%X11%%include/at-spi-2.0/atspi/atspi-device-x11.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-device.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-document.h
 %%NO_ATKONLY%%include/at-spi-2.0/atspi/atspi-editabletext.h
