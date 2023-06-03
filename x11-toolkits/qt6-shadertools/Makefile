@@ -24,7 +24,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		cmake compiler:c++17-lang gettext-runtime gl gnome python:build xorg \
 		qt-dist:6
-USE_GL=		gl
+USE_GL=		opengl
 USE_GNOME=	glib20
 USE_QT=		base
 USE_XORG=	x11 xau xcb xdmcp
