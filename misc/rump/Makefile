@@ -22,6 +22,10 @@ USES=		compiler
 
 .include <bsd.port.pre.mk>
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=strict-prototypes -Wno-error=array-parameter
+.endif
+
 .if ${ARCH} == amd64 || ${ARCH} == i386
 PLIST_SUB+=	X8664=""
 .else
