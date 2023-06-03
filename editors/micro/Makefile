@@ -1,7 +1,7 @@
 PORTNAME=	micro
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.0.11
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	editors
 
 MAINTAINER=	lcook@FreeBSD.org
@@ -41,7 +41,7 @@ DEBUG_DESC=	Enable debug logging
 DEBUG_VARS=	_BUILD_DEBUG=ON
 
 pre-build:
-	cd ${GO_WRKSRC} && ${SETENV} ${GO_ENV} ${GO_CMD} generate ./runtime
+	cd ${GO_WRKSRC} && ${SETENV} ${MAKE_ENV} ${GO_ENV} ${GO_CMD} generate ./runtime
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/assets/packaging/micro.1 \
