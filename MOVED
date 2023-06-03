@@ -7617,3 +7617,4 @@ net-mgmt/send||2023-06-03|Has expired: Implementation is based on older obsolete
 dns/validns||2023-06-03|Has expired: Last upstream release was 10 years ago and last upstream activity in 2017
 sysutils/cfengine319||2023-06-03|Has expired: Upstream EOL reached on 2022-06-30
 sysutils/cfengine-masterfiles319||2023-06-03|Removed, part of expired sysutils/cfengine319
+net-mgmt/nrpe3|net-mgmt/nrpe|2023-06-03|Has expired: Fails to build with recent OpenSSL so use net-mgmt/nrpe
