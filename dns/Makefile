@@ -238,7 +238,6 @@
     SUBDIR += unbound
     SUBDIR += updatedd
     SUBDIR += utdns
-    SUBDIR += validns
     SUBDIR += vhostcname
     SUBDIR += vizone
     SUBDIR += void-zones-tools
