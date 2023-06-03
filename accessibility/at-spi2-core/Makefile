@@ -27,7 +27,7 @@ ATKONLY_LIB_DEPENDS_OFF=	libdbus-1.so:devel/dbus
 ATKONLY_MESON_TRUE= atk_only
 
 X11_USES=		xorg
-X11_USE=		XORG=ice,sm,x11,xext,xi,xtst
+X11_USE=		XORG=x11,xi,xtst
 X11_MESON_ENABLED=	x11
 
 post-install:
