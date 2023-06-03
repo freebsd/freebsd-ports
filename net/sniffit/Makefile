@@ -3,21 +3,26 @@ PORTVERSION=	0.5
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	net security
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Packet sniffer program. For educational use
 
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		autoreconf cpe
+CPE_VENDOR=	sniffit_project
 USE_GITHUB=	yes
 GH_ACCOUNT=	resurrecting-open-source-projects
-
-CPE_VENDOR=	sniffit_project
 
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/sniffit ${STAGEDIR}${PREFIX}/sbin
@@ -35,4 +40,4 @@ do-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/sample_config_file ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
