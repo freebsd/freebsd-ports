@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-11-13 18:41:37 UTC
+--- CMakeLists.txt.orig	2023-05-31 13:17:00 UTC
 +++ CMakeLists.txt
-@@ -285,7 +285,7 @@ if(CIFPP_DOWNLOAD_CCD)
+@@ -310,7 +310,7 @@ if(CIFPP_DOWNLOAD_CCD)
  		find_program(GUNZIP gunzip)
  
  		if(GUNZIP)
@@ -9,3 +9,12 @@
  				SHOW_PROGRESS)
  			add_custom_command(OUTPUT ${COMPONENTS_CIF}
  				COMMAND ${GUNZIP} ${COMPONENTS_CIF}.gz
+@@ -478,7 +478,7 @@ if(CIFPP_INSTALL_UPDATE_SCRIPT)
+ 	install(DIRECTORY DESTINATION "${CIFPP_ETC_DIR}/libcifpp/cache-update.d")
+ 
+ 	# a config to, to make it complete
+-	if(NOT EXISTS "${CIFPP_ETC_DIR}/libcifpp.conf")
++	if(TRUE OR NOT EXISTS "${CIFPP_ETC_DIR}/libcifpp.conf")
+ 		file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/libcifpp.conf [[# Uncomment the next line to enable automatic updates
+ # update=true
+ ]])

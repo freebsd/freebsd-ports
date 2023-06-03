@@ -1,7 +1,6 @@
 PORTNAME=	libcifpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.3-1
-DISTVERSIONSUFFIX=	-gdffbf52
+DISTVERSION=	5.0.9
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.wwpdb.org/pub/pdb/data/monomers/:components
 DISTFILES=	components.cif.gz:components
@@ -18,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_iostreams.so:devel/boost-libs
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake:testing compiler:c++20-lang shebangfix
+USES=		cmake:testing compiler:c++20-lang eigen:3 shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -33,5 +32,6 @@ CMAKE_TESTING_ON=	ENABLE_TESTING
 post-install:
 	@cd ${STAGEDIR}${PREFIX} && \
 		${RM} -r var etc/libcifpp etc/periodic
+	@${RM} -r ${STAGEDIR}/var/cache/libcifpp
 
 .include <bsd.port.mk>
