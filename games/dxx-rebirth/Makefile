@@ -41,6 +41,10 @@ PLIST_FILES=	bin/d1x-rebirth \
 MAKE_ARGS+=	lto=1
 .endif
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=	-Wno-error=unused-but-set-parameter -Wno-error=unused-but-set-variable
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/d1x-rebirth \
 		${STAGEDIR}${PREFIX}/bin/d2x-rebirth
