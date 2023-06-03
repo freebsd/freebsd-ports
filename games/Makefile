@@ -927,7 +927,6 @@
     SUBDIR += solarus-quest-editor
     SUBDIR += solver
     SUBDIR += spacejunk
-    SUBDIR += spacezero
     SUBDIR += speak
     SUBDIR += species
     SUBDIR += spellcast
