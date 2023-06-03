@@ -12,7 +12,7 @@ USES=		cabal gnome pkgconfig xorg
 
 USE_GNOME=	cairo pango
 
-OPTIONS_DEFINE=		EXAMPLES XFT XPM MPD INOTIFY DATEZONE THREADED UVMETER
+OPTIONS_DEFINE=		XFT XPM MPD INOTIFY DATEZONE THREADED UVMETER
 OPTIONS_DEFAULT=	XFT
 
 XFT_DESC=		Use Xft to render text (UTF-8 support included)
@@ -150,9 +150,5 @@ USE_CABAL=	OneTuple-0.4.1.1 \
 
 CABAL_FLAGS=		with_weather with_rtsopts with_utf8 \
 			-with_mpris -with_dbus -with_iwlib -with_nl80211 -with_alsa -all_extensions
-
-post-install-EXAMPLES-on:
-	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/xmobar.config ${STAGEDIR}${EXAMPLESDIR}
 
 .include <bsd.port.mk>
