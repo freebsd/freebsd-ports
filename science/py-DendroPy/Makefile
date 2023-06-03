@@ -4,7 +4,7 @@ CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Phylogenetic computing library
 WWW=		http://packages.python.org/DendroPy/
 
