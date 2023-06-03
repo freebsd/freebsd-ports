@@ -1,0 +1,12 @@
+[
+{ type: install
+  message: <<EOD
+To use gitup,
+
+%%PREFIX%%/etc/gitup.conf
+
+must be created. Refer to gitup.conf(5) for further details and/or follow
+%%PREFIX%%/etc/gitup.conf.sample as an example.
+EOD
+}
+]

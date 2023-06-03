@@ -1,6 +1,7 @@
 PORTNAME=	gitup
 DISTVERSION=	0.98-3
 DISTVERSIONSUFFIX=	-g50f1e8c
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -11,20 +12,19 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		ssl
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	johnmehr
 
 MAKE_ENV+=	CONFIG_FILE_PATH=${LOCALBASE}/etc/gitup.conf
 
+SUB_FILES=	pkg-message
+PLIST_FILES=	bin/gitup \
+		etc/gitup.conf.sample \
+		share/man/man1/gitup.1.gz \
+		share/man/man5/gitup.conf.5.gz
 PORTDOCS=	README.md
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|stable\/12|stable\/${OSREL:R}| ; \
-		s|releng\/11.4|releng\/${OSREL}|' \
-		${WRKSRC}/gitup.conf
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
