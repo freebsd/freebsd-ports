@@ -25,7 +25,7 @@ LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 
 USES=		cmake compiler:c++17-lang gettext-runtime gl gnome llvm:lib python:build xorg \
 		qt-dist:6
-USE_GL=		gl
+USE_GL=		opengl
 USE_GNOME=	glib20
 USE_QT=		base declarative
 USE_XORG=	x11 xau xcb xdmcp
