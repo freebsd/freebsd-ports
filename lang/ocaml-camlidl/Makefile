@@ -24,6 +24,12 @@ DOCSDIR=	${PREFIX}/share/doc/ocaml/${PORTNAME}
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-extract:
 	@${REINPLACE_CMD} -e "s,^\(OCAMLLIB=\).*,\1${STAGEDIR}${PREFIX}/lib/ocaml,g" \
 		-e "s,^\(BINDIR=\).*,\1${STAGEDIR}${PREFIX}/bin,g" \
@@ -56,4 +62,4 @@ test:
 		${WRKSRC}/tests/Makefile
 	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MAKE} all
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
