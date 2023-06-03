@@ -25,8 +25,10 @@ PLIST_FILES=	bin/dmucs bin/gethost bin/loadavg bin/monitor bin/remhost
 
 .include <bsd.port.pre.mk>
 
+post-patch:
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CPPFLAGS+=	-Wno-error=int-conversion
+	@${REINPLACE_CMD} -e 's|CFLAGS    = -O -I./HDR|CFLAGS=-Wno-error=int-conversion -O -I./HDR|' \
+		${WRKSRC}/COSMIC/Makefile
 .endif
 
 .include <bsd.port.post.mk>
