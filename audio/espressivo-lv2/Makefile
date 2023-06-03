@@ -24,4 +24,10 @@ PLIST_FILES=	lib/lv2/espressivo.lv2/espressivo.so \
 		lib/lv2/espressivo.lv2/espressivo.ttl \
 		lib/lv2/espressivo.lv2/manifest.ttl
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>
