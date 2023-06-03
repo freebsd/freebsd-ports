@@ -123,6 +123,16 @@ post-patch:
 		${WRKSRC}/setup.py
 .endif
 
+# This is just a dirty hack for building with OpenSSL 3.0.0 and later
+# There is no plain string OPENSSL_VERSION_NUMBER available in
+# openssl/opensslv.h so setup.py just detects the string as 00000000
+# However care should be taken for the OSVERSION. If OpenSSL 3.0.9
+# lands later the OSVERSION string should be fixed accordingly
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400089 && (${SSL_DEFAULT} == base || ${SSL_DEFAULT:Mopenssl3*} )
+	@${REINPLACE_CMD} -e 's|00907000|00000000|' \
+		${WRKSRC}/setup.py
+.endif
+
 post-install:
 	for i in ${STAGEDIR}${PREFIX}/lib/python2.7/lib-dynload/*.so; do \
 		${STRIP_CMD} $$i; done						# Strip shared extensions
