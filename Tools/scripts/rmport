@@ -415,13 +415,15 @@ gitrmlist=$(mktemp -t gitrmlist)
 if [ $# -eq 1 ] ; then
 	topic="${1%/}"
 	plural=""
+	colon=""
 else
 	log "/!\\ Removing multiple ports at once, commit topic will be generic /!\\"
 	topic="cleanup"
 	plural="s"
+	colon=":"
 fi
 
-echo "${topic}: Remove expired port${plural}:" > ${gitlog}
+echo "${topic}: Remove expired port${plural}${colon}" > ${gitlog}
 echo "" >> ${gitlog}
 
 for catport in $* ; do
