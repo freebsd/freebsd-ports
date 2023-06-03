@@ -11,7 +11,6 @@ WWW=		https://puppet.com/docs/puppet/latest/puppet_index.html
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_RUBY27=	yes
 BROKEN_RUBY30=	yes
 
 RUN_DEPENDS=	rubygem-concurrent-ruby11>1.0:devel/rubygem-concurrent-ruby11 \
