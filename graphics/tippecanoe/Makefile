@@ -1,5 +1,5 @@
 PORTNAME=	tippecanoe
-DISTVERSION=	2.6.3
+DISTVERSION=	2.26.1
 CATEGORIES=	graphics
 
 MAINTAINER=	darcy@dbitech.ca
@@ -10,6 +10,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
+BUILD_DEPENDS=	bash:shells/bash
 
 USES=		gmake
 USE_GITHUB=	yes
@@ -17,8 +18,14 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	felt
 
 PLIST_FILES=	bin/tile-join bin/tippecanoe bin/tippecanoe-decode \
- 		bin/tippecanoe-enumerate bin/tippecanoe-json-tool \
+		bin/tippecanoe-enumerate bin/tippecanoe-json-tool \
 		man/man1/tippecanoe.1.gz
+
+# Suppress a clang-16 error on 32-bit arch:
+#  non-constant-expression cannot be narrowed from type 'uint64_t'
+.if ${ARCH} == i386
+CXXFLAGS+=	-Wno-narrowing
+.endif
 
 do-install:
 .for file in tile-join tippecanoe tippecanoe-decode tippecanoe-enumerate tippecanoe-json-tool
