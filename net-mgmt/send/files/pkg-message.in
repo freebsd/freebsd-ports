@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-To run sendd from startup, add sendd_enable="YES"
-in your /etc/rc.conf.
-Configiration options can be found in %%PREFIX%%/etc/sendd
-EOM
-}
-]

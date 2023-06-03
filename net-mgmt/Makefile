@@ -370,7 +370,6 @@
     SUBDIR += seafile-gui
     SUBDIR += seafile-server
     SUBDIR += semaphore
-    SUBDIR += send
     SUBDIR += sendip
     SUBDIR += sipcalc
     SUBDIR += sjitter

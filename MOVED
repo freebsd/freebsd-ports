@@ -7613,3 +7613,4 @@ net-mgmt/nagircbot||2023-06-01|Has expired: Broken for more than a year and fail
 mail/spamdyke||2023-06-01|Has expired: Broken for more than a year and last upstream release was in 2015
 net/haproxy17||2023-06-03|Has expired: Upstream EOL reached on 2021-03-31
 net/haproxy18||2023-06-03|Has expired: Upstream EOL reached on 2022-12-31
+net-mgmt/send||2023-06-03|Has expired: Implementation is based on older obsolete RFC

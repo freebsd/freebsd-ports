@@ -1,9 +1,0 @@
---- libs/Makefile.lib.common.orig	2019-02-27 16:25:45 UTC
-+++ libs/Makefile.lib.common
-@@ -1,5 +1,5 @@
- 
--CFLAGS += -Wall -O3
-+CFLAGS?= -Wall -O3
- 
- ifeq ($(DEBUG_POLICY),DEBUG)
- CPPFLAGS += -g # enable for general debugging
