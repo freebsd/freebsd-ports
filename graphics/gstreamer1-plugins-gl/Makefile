@@ -22,7 +22,7 @@ WAYLAND_BUILD_DEPENDS=		wayland-protocols>=0:graphics/wayland-protocols
 WAYLAND_LIB_DEPENDS=		libwayland-egl.so:graphics/wayland
 
 USES=		gl
-USE_GL=		glu glesv2 egl
+USE_GL=		gl glu glesv2 egl
 USE_XORG+=	x11 \
 		xext \
 		xcb
