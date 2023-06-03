@@ -3,7 +3,7 @@ PORTVERSION=	2.0.32
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	cs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Helper to test WSGI applications
 WWW=		https://pythonpaste.org/webtest/
 
