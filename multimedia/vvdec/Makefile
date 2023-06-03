@@ -1,6 +1,6 @@
 PORTNAME=	vvdec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
+DISTVERSION=	2.0.0
 CATEGORIES=	multimedia python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,8 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	fraunhoferhhi
 
-CMAKE_ON=	BUILD_SHARED_LIBS
+CMAKE_ON=	BUILD_SHARED_LIBS \
+		VVDEC_INSTALL_VVDECAPP
 CMAKE_OFF=	FREEBSD_VVDEC_ENABLE_X86_SIMD
 CMAKE_TESTING_TARGET=	test enable-bitstream-download=1 # tests fail to download bitstreams, see https://github.com/fraunhoferhhi/vvdec/issues/125
 
