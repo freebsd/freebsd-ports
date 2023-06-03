@@ -183,11 +183,9 @@
     SUBDIR += cfengine-masterfiles
     SUBDIR += cfengine-masterfiles-devel
     SUBDIR += cfengine-masterfiles318
-    SUBDIR += cfengine-masterfiles319
     SUBDIR += cfengine-masterfiles320
     SUBDIR += cfengine-masterfiles321
     SUBDIR += cfengine318
-    SUBDIR += cfengine319
     SUBDIR += cfengine320
     SUBDIR += cfengine321
     SUBDIR += chaoskube
