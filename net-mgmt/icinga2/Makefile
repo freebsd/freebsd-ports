@@ -1,11 +1,8 @@
 PORTNAME=	icinga2
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.13.6
-PORTREVISION=	1
+DISTVERSION=	2.13.7
+PORTREVISION=	0
 CATEGORIES=	net-mgmt
-
-PATCH_SITES+=	https://github.com/Icinga/icinga2/commit/
-PATCHFILES+=	dd51997c73c6b4b328e3ad006eb8c86678001780.patch:-p1
 
 MAINTAINER=	joneum@FreeBSD.org
 COMMENT=	Monitoring and management system for hosts, services and networks
