@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.30.4
+DISTVERSION=	1.30.6
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +19,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
 		aho-corasick-0.7.20 \
 		aho-corasick-1.0.1 \
+		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.3.2 \
 		anstyle-1.0.0 \
@@ -27,7 +28,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		anstyle-wincon-1.0.1 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
-		base64-0.21.1 \
+		base64-0.21.2 \
 		bitflags-1.3.2 \
 		block-buffer-0.10.4 \
 		bstr-1.5.0 \
@@ -38,7 +39,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cargo-lock-8.0.3 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		chrono-0.4.24 \
+		chrono-0.4.26 \
 		clap-4.3.0 \
 		clap_builder-4.3.0 \
 		clap_complete-4.3.0 \
@@ -60,8 +61,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		crossbeam-utils-0.8.15 \
 		crypto-common-0.1.6 \
 		ctor-0.1.26 \
-		ctor-0.2.0 \
-		ctrlc-3.3.0 \
+		ctor-0.2.2 \
+		ctrlc-3.4.0 \
 		dialoguer-0.10.4 \
 		diff-0.1.13 \
 		digest-0.10.7 \
@@ -113,11 +114,11 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		ignore-0.4.20 \
 		indenter-0.3.3 \
 		indexmap-1.9.3 \
-		indicatif-0.17.3 \
+		indicatif-0.17.4 \
 		indoc-2.0.1 \
 		insta-1.29.0 \
 		instant-0.1.12 \
-		io-lifetimes-1.0.10 \
+		io-lifetimes-1.0.11 \
 		ipnet-2.7.2 \
 		is-terminal-0.4.7 \
 		itertools-0.10.5 \
@@ -130,23 +131,22 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		libz-sys-1.1.9 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \
-		log-0.4.17 \
+		log-0.4.18 \
 		memchr-2.5.0 \
 		memoffset-0.8.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.6.2 \
 		miniz_oxide-0.7.1 \
-		mio-0.8.6 \
+		mio-0.8.8 \
 		nix-0.26.2 \
 		nom-7.1.3 \
-		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
 		object-0.30.3 \
-		once_cell-1.17.1 \
+		once_cell-1.17.2 \
 		os_pipe-1.1.4 \
 		output_vt100-0.1.3 \
 		owo-colors-3.5.0 \
@@ -159,18 +159,17 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
-		portable-atomic-0.3.20 \
-		portable-atomic-1.3.2 \
+		portable-atomic-1.3.3 \
 		pretty_assertions-1.3.0 \
-		proc-macro2-1.0.58 \
+		proc-macro2-1.0.59 \
 		quick-xml-0.23.1 \
-		quote-1.0.27 \
+		quote-1.0.28 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regex-1.8.2 \
+		regex-1.8.3 \
 		regex-syntax-0.7.2 \
 		reqwest-0.11.18 \
 		ring-0.16.20 \
@@ -206,9 +205,9 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.16 \
+		syn-2.0.18 \
 		tempfile-3.5.0 \
-		tera-1.18.1 \
+		tera-1.19.0 \
 		termcolor-1.1.3 \
 		terminal_size-0.2.6 \
 		thiserror-1.0.40 \
@@ -219,13 +218,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		time-macros-0.2.9 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.28.1 \
+		tokio-1.28.2 \
 		tokio-rustls-0.24.0 \
 		tokio-util-0.7.8 \
 		toml-0.5.11 \
 		toml-0.7.4 \
 		toml_datetime-0.6.2 \
-		toml_edit-0.19.9 \
+		toml_edit-0.19.10 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-core-0.1.31 \
@@ -241,7 +240,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unic-ucd-segment-0.9.0 \
 		unic-ucd-version-0.9.0 \
 		unicode-bidi-0.3.13 \
-		unicode-ident-1.0.8 \
+		unicode-ident-1.0.9 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
