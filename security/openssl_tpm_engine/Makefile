@@ -11,8 +11,15 @@ WWW=		https://github.com/mgerstner/openssl_tpm_engine
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/tcsd:security/trousers
+DEPRECATED=	Requires older openssl and upstream unmaintained since 2017
+EXPIRATION_DATE=	2023-07-02
+BROKEN_SSL=		openssl30 openssl31
+BROKEN_SSL_REASON=	Requires openssl 1.0.x or 1.1.x
+IGNORE_SSL=		libressl libressl-devel
+IGNORE_SSL_REASON=	Detected LibreSSL (RAND_METHOD structure unsupported)
+
 LIB_DEPENDS=	libtspi.so:security/trousers
+RUN_DEPENDS=	${LOCALBASE}/sbin/tcsd:security/trousers
 
 USES=		autoreconf gmake libtool localbase ssl pkgconfig
 USE_GITHUB=	yes
@@ -28,12 +35,6 @@ INSTALL_TARGET=	install-strip
 PORTEXAMPLES=	openssl.cnf.sample
 
 OPTIONS_DEFINE=	EXAMPLES
-
-.include <bsd.port.pre.mk>
-
-.if ${SSL_DEFAULT:Mlibressl*}
-IGNORE=	Detected LibreSSL (RAND_METHOD structure unsupported)
-.endif
 
 post-patch:
 	(${CAT} ${OPENSSLINC}/openssl/opensslv.h; \
@@ -60,4 +61,4 @@ post-install-EXAMPLES-on:
 	${INSTALL_DATA} ${WRKSRC}/dist/openssl.cnf.sample \
 	    ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
