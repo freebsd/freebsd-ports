@@ -1,6 +1,6 @@
---- Imakefile.orig	Sat Oct 14 07:16:08 2000
-+++ Imakefile	Sat Oct 14 07:16:45 2000
-@@ -4,4 +4,4 @@
+--- Imakefile.orig	2023-06-03 14:41:54 UTC
++++ Imakefile
+@@ -4,4 +4,4 @@ SYS_LIBRARIES = -lX11 -lm
  SRCS = xskyroot.c draw.c colorname.c astro.c
  OBJS = xskyroot.o draw.o colorname.o astro.o
  

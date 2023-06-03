@@ -1,5 +1,5 @@
---- xskyroot.c-	Thu May 29 08:56:15 1997
-+++ xskyroot.c	Thu May 29 08:52:51 1997
+--- xskyroot.c.orig	2023-06-03 14:41:54 UTC
++++ xskyroot.c
 @@ -1,4 +1,4 @@
 -
 +#include <stdlib.h>
