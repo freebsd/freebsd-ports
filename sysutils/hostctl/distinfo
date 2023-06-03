@@ -1,5 +1,5 @@
-TIMESTAMP = 1679115951
-SHA256 (go/sysutils_hostctl/hostctl-v1.1.3/v1.1.3.mod) = 4bd393459f591473c8d0d66eca190943712b28b18e29940e61a71f2cc1a5f55b
-SIZE (go/sysutils_hostctl/hostctl-v1.1.3/v1.1.3.mod) = 1709
-SHA256 (go/sysutils_hostctl/hostctl-v1.1.3/v1.1.3.zip) = 9b36ecb52b0738ecbee60434811b333a49155ac69287d5cfa726bc3aca4bb4a2
-SIZE (go/sysutils_hostctl/hostctl-v1.1.3/v1.1.3.zip) = 338496
+TIMESTAMP = 1685778170
+SHA256 (go/sysutils_hostctl/hostctl-v1.1.4/v1.1.4.mod) = 1848b6c0f361f476fb30997cdea7f0563e4e00009a2c7243b91222ad208f9c83
+SIZE (go/sysutils_hostctl/hostctl-v1.1.4/v1.1.4.mod) = 1652
+SHA256 (go/sysutils_hostctl/hostctl-v1.1.4/v1.1.4.zip) = 0c42d45b1b89ce4ea11526507c996669937a50463037b0f7a34c3110445ea0d6
+SIZE (go/sysutils_hostctl/hostctl-v1.1.4/v1.1.4.zip) = 338667
