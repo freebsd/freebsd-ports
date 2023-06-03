@@ -1,7 +1,6 @@
 PORTNAME=	CyLP
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.91.5
-PORTREVISION=	1
+DISTVERSION=	0.91.6
 CATEGORIES=	math python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -21,16 +20,21 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libCbc.so:math/cbc \
 		libCgl.so:math/cgl \
 		libClp.so:math/clp \
-		liblapack.so:math/lapack
+		libCoinUtils.so:math/coinutils \
+		liblapack.so:math/lapack \
+		libOsi.so:math/osi
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		compiler:c++11-lang python:3.6+
-USE_PYTHON=	distutils cython autoplist
+USE_PYTHON=	distutils cython autoplist pytest
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
 
 MAKE_ENV=	COIN_INSTALL_DIR=${LOCALBASE}
+
+TEST_WRKSRC=	${WRKSRC}/cylp
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/cylp/cy/Cy*.so
