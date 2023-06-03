@@ -1,4 +1,4 @@
-bin/gdico
+bin/dico
 etc/dicod.conf.sample
 include/dico/argcv.h
 include/dico/assoc.h

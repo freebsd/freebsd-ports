@@ -7619,3 +7619,4 @@ sysutils/cfengine319||2023-06-03|Has expired: Upstream EOL reached on 2022-06-30
 sysutils/cfengine-masterfiles319||2023-06-03|Removed, part of expired sysutils/cfengine319
 net-mgmt/nrpe3|net-mgmt/nrpe|2023-06-03|Has expired: Fails to build with recent OpenSSL so use net-mgmt/nrpe
 games/spacezero||2023-06-03|Has expired: broken, abandoned upstream, depends on deprecated gtk2
+net/gnu-dico|net/dico|2023-06-03|Renamed to match upstream naming

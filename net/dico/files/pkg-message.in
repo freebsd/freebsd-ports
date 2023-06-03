@@ -1,7 +1,7 @@
 [
 { type: install
   message: <<EOM
-This port installs Dict server dicod and Dict client gdico.
+This port installs Dict server dicod and Dict client dico.
 
 To enable the server, add the following line to /etc/rc.conf:
 

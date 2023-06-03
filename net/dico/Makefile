@@ -1,9 +1,7 @@
 PORTNAME=	dico
-PORTVERSION=	2.10
-PORTREVISION=	1
+DISTVERSION=	2.11
 CATEGORIES=	net textproc
 MASTER_SITES=	GNU
-PKGNAMEPREFIX=	gnu-
 
 MAINTAINER=	info@dikt.tv
 COMMENT=	Flexible modular implementation of DICT server
@@ -14,10 +12,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl
 
-USES=		gmake libtool localbase pkgconfig tar:xz
+USES=		gmake libtool localbase pkgconfig readline tar:xz
 USE_LDCONFIG=	yes
-
 GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
 
 INFO=		dico
 
@@ -32,10 +30,12 @@ OPTIONS_DEFAULT=	PYTHON PCRE
 OPTIONS_SUB=	yes
 GSASL_DESC=	GSASL support
 
+GSASL_USES=		iconv
 GSASL_LIB_DEPENDS=	libgsasl.so:security/libgsasl
 GSASL_CONFIGURE_WITH=	gsasl
 
-GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
+GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
+			libgc-threaded.so:devel/boehm-gc-threaded
 GUILE_CONFIGURE_OFF=	--without-guile
 
 LDAP_USES=		ldap
@@ -55,7 +55,6 @@ PYTHON_CONFIGURE_OFF=	--without-python
 
 post-patch:
 	@${REINPLACE_CMD} 's/@bindir@/@sbindir@/' ${WRKSRC}/dicod/Makefile.in
-	@${REINPLACE_CMD} 's/(bindir)..dir/&\/gdico/' ${WRKSRC}/dico/Makefile.in
 	@${REINPLACE_CMD} \
 		-e 's/mu_check_lib_save_LIBS/LIBS/' \
 		-e 's/python-config/$${PYTHON_CONFIG}/' \
