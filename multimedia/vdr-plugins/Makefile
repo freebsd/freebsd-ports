@@ -7,6 +7,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Video Disk Recorder - plugin metaport
 WWW=		http://www.tvdr.de/
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 RUN_DEPENDS+=	vdr:multimedia/vdr
 
 USES=		metaport

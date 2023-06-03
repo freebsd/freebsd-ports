@@ -14,6 +14,9 @@ WWW=		http://www.reel-multimedia.com
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:S/b1.7.15//}
 

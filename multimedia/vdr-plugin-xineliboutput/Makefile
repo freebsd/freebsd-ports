@@ -13,6 +13,9 @@ WWW=		https://sourceforge.net/projects/xineliboutput/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 LIB_DEPENDS=	libavutil.so:multimedia/ffmpeg \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libvdpau.so:multimedia/libvdpau \

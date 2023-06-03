@@ -15,6 +15,9 @@ WWW=		http://andreas.vdr-developer.org/enigmang/index.html
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 USES=		pkgconfig
 
 PATCH_STRIP=	-p1

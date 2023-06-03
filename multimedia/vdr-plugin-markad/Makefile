@@ -16,6 +16,9 @@ LICENSE_TEXT_LOGOS=	Installs station logos
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING
 LICENSE_PERMS_LOGOS=	auto-accept
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 BROKEN=		does not fetch
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg

@@ -12,6 +12,9 @@ WWW=		https://github.com/pipelka/vdr-plugin-xvdr
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 GITHASH=	e4cab47
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/pipelka-${PORTNAME}-${GITHASH}

@@ -12,6 +12,9 @@ WWW=		https://projects.vdr-developer.org/projects/plg-ttxtsubs
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION}
 

@@ -12,6 +12,9 @@ WWW=		http://www.tvdr.de/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandoned "work in progress" fork in 2015
+EXPIRATION_DATE=2023-06-30
+
 BUILD_DEPENDS=	v4l_compat>=1.0.20120501:multimedia/v4l_compat \
 		${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:x11-fonts/fontconfig \

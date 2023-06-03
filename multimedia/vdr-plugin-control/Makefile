@@ -16,6 +16,9 @@ WWW=		http://ricomp.de/vdr/down_en.html
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 USES=		tar:tgz
 PATCH_STRIP=	-p1
 WRKSRC=		${WRKDIR}/${PLUGIN}-${DISTVERSION:S/a45/a/}

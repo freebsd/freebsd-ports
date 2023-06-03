@@ -13,6 +13,9 @@ WWW=		http://winni.vdr-developer.org/epgsearch/index_eng.html
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libtre.so:textproc/libtre
 

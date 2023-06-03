@@ -14,6 +14,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN=		fails to build with FFmpeg 6
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
 
 LIB_DEPENDS+=	libavcodec.so:multimedia/ffmpeg
 

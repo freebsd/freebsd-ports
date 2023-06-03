@@ -13,6 +13,9 @@ WWW=		http://streamdev.vdr-developer.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		shebangfix tar:tgz

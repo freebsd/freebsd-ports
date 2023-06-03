@@ -12,6 +12,9 @@ WWW=		http://www.saunalahti.fi/~rahrenbe/vdr/iptv/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
+
 USES=		tar:tgz
 PATCH_STRIP=	-p1
 MAKE_ARGS=	IPTV_EXTSHELL=/bin/sh

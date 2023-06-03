@@ -12,6 +12,8 @@ COMMENT=	Video Disk Recorder - live web plugin
 WWW=		http://live.vdr-developer.org/
 
 BROKEN=		does not build: 'tr1/functional' file not found
+DEPRECATED=	Depends on abandoned fork of VDR
+EXPIRATION_DATE=2023-06-30
 
 LIB_DEPENDS+=	libtntnet.so:www/tntnet \
 		libpcre.so:devel/pcre
