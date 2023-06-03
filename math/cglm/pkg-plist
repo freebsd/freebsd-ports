@@ -94,6 +94,12 @@ include/cglm/simd/sse2/mat2.h
 include/cglm/simd/sse2/mat3.h
 include/cglm/simd/sse2/mat4.h
 include/cglm/simd/sse2/quat.h
+include/cglm/simd/wasm.h
+include/cglm/simd/wasm/affine.h
+include/cglm/simd/wasm/mat2.h
+include/cglm/simd/wasm/mat3.h
+include/cglm/simd/wasm/mat4.h
+include/cglm/simd/wasm/quat.h
 include/cglm/simd/x86.h
 include/cglm/sphere.h
 include/cglm/struct.h
@@ -147,5 +153,5 @@ include/cglm/vec4.h
 include/cglm/version.h
 lib/libcglm.so
 lib/libcglm.so.0
-lib/libcglm.so.0.8.9
+lib/libcglm.so.0.9.0
 libdata/pkgconfig/cglm.pc
