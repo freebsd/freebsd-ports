@@ -4,17 +4,21 @@ PORTREVISION=	15
 CATEGORIES=	math
 MASTER_SITES=	GNU
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GNU spreadsheet for X11 and terminals
 WWW=		https://www.gnu.org/software/oleo/oleo.html
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+NOT_FOR_ARCHS=	i386
+NOT_FOR_ARCHS_REASON=	ld: error: duplicate symbol: yydebug
+
 LIB_DEPENDS=	libgsl.so:math/gsl
 
 USES=		bison:alias localbase ncurses perl5
 USE_PERL5=	build
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-xlt --without-sciplot
 # With -O2 configure hangs at "checking for working mktime..."
@@ -39,11 +43,16 @@ MOTIF_USES=		jpeg motif xorg
 MOTIF_USE=		XORG=ice,sm,x11,xext,xpm,xt
 MOTIF_CONFIGURE_WITH=	motif x
 MOTIF_LIBS=		-lXft -lfontconfig
-
 NLS_USES=		gettext
-NLS_LIBS=		-lintl
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES_OFF=		gettext-tools
+NLS_CONFIGURE_ENABLE=	nls
+NLS_LIBS=		-lintl
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=	-Wno-error=int-conversion
+.endif
 
 pre-configure:
 	@${GREP} -lR "malloc\.h" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
@@ -57,4 +66,4 @@ pre-configure:
 		${WRKSRC}/doc/Makefile.in
 	${REINPLACE_CMD} -e "s|gslblas|gslcblas|" ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
