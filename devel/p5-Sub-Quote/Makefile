@@ -1,5 +1,6 @@
 PORTNAME=	Sub-Quote
 PORTVERSION=	2.006008
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HAARG
@@ -12,6 +13,8 @@ WWW=		https://metacpan.org/pod/Sub::Quote
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	p5-XString>=0:textproc/p5-XString
 
 USES=		perl5
 USE_PERL5=	configure
