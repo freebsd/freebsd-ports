@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.14
+DISTVERSION=	1.6.16
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -42,7 +42,7 @@ GH_TUPLE=	\
 		golang:net:v0.10.0:golang_net/vendor/golang.org/x/net \
 		golang:sys:v0.8.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.9.0:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.9.1:golang_tools/vendor/golang.org/x/tools \
+		golang:tools:v0.9.3:golang_tools/vendor/golang.org/x/tools \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.5.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
@@ -61,6 +61,8 @@ GH_TUPLE=	\
 		mhale:smtpd:v0.8.0:mhale_smtpd/vendor/github.com/mhale/smtpd \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
 		pkg:errors:v0.9.1:pkg_errors/vendor/github.com/pkg/errors \
+		reiver:go-oi:v1.0.0:reiver_go_oi/vendor/github.com/reiver/go-oi \
+		reiver:go-telnet:9ff0b2ab096e:reiver_go_telnet/vendor/github.com/reiver/go-telnet \
 		remyoudompheng:bigfft:24d4a6f8daec:remyoudompheng_bigfft/vendor/github.com/remyoudompheng/bigfft \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
