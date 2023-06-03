@@ -1,10 +1,10 @@
 PORTNAME=	DendroPy
-PORTVERSION=	4.5.2
+PORTVERSION=	4.6.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Phylogenetic computing library
 WWW=		http://packages.python.org/DendroPy/
 
