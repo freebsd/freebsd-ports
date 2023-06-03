@@ -10,6 +10,9 @@ WWW=		https://kristall.random-projects.net
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	undefined symbol: RSA_generate_key
+
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libgumbo.so:devel/gumbo
 
