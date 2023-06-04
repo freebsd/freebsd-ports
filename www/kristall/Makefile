@@ -12,6 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_SSL=	openssl30 openssl31
 BROKEN_SSL_REASON=	undefined symbol: RSA_generate_key
+DEPRECATED=	Requires older openssl
+EXPIRATION_DATE=	2023-07-02
 
 LIB_DEPENDS=	libcmark.so:textproc/cmark \
 		libgumbo.so:devel/gumbo
