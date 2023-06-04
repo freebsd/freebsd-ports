@@ -124,10 +124,13 @@ man/man1/pandoc.1.gz
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.tei
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.texinfo
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.textile
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.typst
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.xwiki
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/default.zimwiki
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/definitions.typst
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/styles.citations.html
 %%NO_EMBED_DATA%%%%DATADIR%%/data/templates/styles.html
+%%NO_EMBED_DATA%%%%DATADIR%%/data/templates/template.typst
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/am.yaml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/ar.yaml
 %%NO_EMBED_DATA%%%%DATADIR%%/data/translations/bg.yaml
