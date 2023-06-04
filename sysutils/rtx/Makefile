@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.30.6
+DISTVERSION=	1.32.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,12 +40,12 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
-		clap-4.3.0 \
-		clap_builder-4.3.0 \
-		clap_complete-4.3.0 \
-		clap_derive-4.3.0 \
+		clap-4.3.1 \
+		clap_builder-4.3.1 \
+		clap_complete-4.3.1 \
+		clap_derive-4.3.1 \
 		clap_lex-0.5.0 \
-		clap_mangen-0.2.11 \
+		clap_mangen-0.2.12 \
 		color-eyre-0.6.2 \
 		color-print-0.3.4 \
 		color-print-proc-macro-0.3.4 \
