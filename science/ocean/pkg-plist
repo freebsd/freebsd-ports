@@ -29,6 +29,7 @@ bin/dft.pl
 bin/dotter.x
 bin/dressximunu.x
 bin/edges.pl
+bin/eps2exc.x
 bin/exciton_plot.x
 bin/extractPsp.pl
 bin/fhi2eric.x
@@ -42,6 +43,7 @@ bin/jdftx_dendip.pl
 bin/jdftx_density.x
 bin/jdftx_energy.x
 bin/kgen2.x
+bin/kkconv.x
 bin/lqp
 bin/makeacell.x
 bin/makeatompp.x
@@ -51,6 +53,7 @@ bin/meljtv.x
 bin/mkrbfile_mult.x
 bin/mkximunu.x
 bin/mpi_avg.x
+bin/mpse.pl
 bin/nbse.pl
 bin/nelectron.x
 bin/o_spect.x
@@ -88,6 +91,7 @@ bin/rixs_plane.x
 bin/rscombine.x
 bin/screen.pl
 bin/screen_driver.x
+bin/selfenergy.x
 bin/setup2.x
 bin/shifted_conugtoux.x
 bin/spec_average.x
@@ -107,6 +111,22 @@ bin/specpnt.21
 bin/specpnt.22
 bin/specpnt.23
 bin/specpnt.24
+bin/specpnt.25
+bin/specpnt.26
+bin/specpnt.27
+bin/specpnt.28
+bin/specpnt.29
+bin/specpnt.30
+bin/specpnt.31
+bin/specpnt.32
+bin/specpnt.33
+bin/specpnt.34
+bin/specpnt.35
+bin/specpnt.36
+bin/specpnt.37
+bin/specpnt.38
+bin/specpnt.39
+bin/specpnt.40
 bin/specpnt.5
 bin/specpnt.6
 bin/specpnt.7
