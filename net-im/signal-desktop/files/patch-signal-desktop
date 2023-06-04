@@ -41,15 +41,6 @@
  export function getUserAgent(appVersion: string): string {
 --- ts/types/Settings.ts.orig	2022-02-16 16:11:39.000000000 +0100
 +++ ts/types/Settings.ts	2022-02-19 22:18:16.945135000 +0100
-@@ -19,7 +19,7 @@ export function getAudioNotificationSupport(): AudioNo
-   if (OS.isWindows(MIN_WINDOWS_VERSION) || OS.isMacOS()) {
-     return AudioNotificationSupport.Native;
-   }
--  if (OS.isLinux()) {
-+  if (OS.isLinux() || OS.isFreeBSD) {
-     return AudioNotificationSupport.Custom;
-   }
-   return AudioNotificationSupport.None;
 @@ -60,7 +60,7 @@ export const getTitleBarVisibility = (): TitleBarVisib
   */
  export const isSystemTraySupported = (appVersion: string): boolean =>

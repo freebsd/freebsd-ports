@@ -82,8 +82,6 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/sl-SI.pak
 %%DATADIR%%/locales/sl.pak
 %%DATADIR%%/locales/sq-AL.pak
-%%DATADIR%%/locales/sr-RS.pak
-%%DATADIR%%/locales/sr-YR.pak
 %%DATADIR%%/locales/sr.pak
 %%DATADIR%%/locales/sv.pak
 %%DATADIR%%/locales/sw.pak
@@ -102,6 +100,7 @@ share/pixmaps/signal-desktop.png
 %%DATADIR%%/locales/yue.pak
 %%DATADIR%%/locales/zh-CN.pak
 %%DATADIR%%/locales/zh-HK.pak
+%%DATADIR%%/locales/zh-Hant.pak
 %%DATADIR%%/locales/zh-TW.pak
 %%DATADIR%%/resources.pak
 %%DATADIR%%/resources/app.asar

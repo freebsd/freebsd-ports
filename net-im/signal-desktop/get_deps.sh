@@ -1,5 +1,5 @@
 #!/bin/sh
-SIGNAL_VERS=v6.17.1
+SIGNAL_VERS=v6.20.0
 
 fetch -qo /tmp/package.json https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/package.json
 ringrtc_version=$(grep '@signalapp/ringrtc"' /tmp/package.json | awk -F ":" '{print $2}' | sed -E 's#("|,| )##g')
@@ -31,7 +31,7 @@ echo "Signal-FTS5-Extension= ${TOKENIZER_VERSION}"
 echo "SQLCIPHER=sqlcipher-${TAG}-${HASH}" | portedit merge -i Makefile
 
 fetch -qo /tmp/yarn.lock https://raw.githubusercontent.com/signalapp/Signal-Desktop/${SIGNAL_VERS}/yarn.lock
-npm_signal_hash=$(grep libsignal-client /tmp/yarn.lock | awk -F '#' /resolved/'{print $2}' | sed 's/"//g')
+npm_signal_hash=$(egrep "libsignal-client.*${libsignalclient_version}" /tmp/yarn.lock | awk -F '#' /resolved/'{print $2}' | sed 's/"//g')
 echo "NPM_SIGNAL_DIR=npm-@signalapp-libsignal-client-${libsignalclient_version}-${npm_signal_hash}-integrity" | portedit merge -i Makefile
 
 npm_ringrtc_hash=$(grep ringrtc /tmp/yarn.lock | awk -F '#' /resolved/'{print $2}' | sed 's/"//g')
