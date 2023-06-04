@@ -19,7 +19,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	wayland-protocols>=1.31:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
-		libseat.so:sysutils/seatd \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 gl meson pkgconfig xorg
@@ -46,6 +45,7 @@ DRM_BUILD_DEPENDS=	hwdata>0:misc/hwdata
 DRM_LIB_DEPENDS=	libudev.so:devel/libudev-devd \
 			libliftoff.so:graphics/libliftoff \
 			libdisplay-info.so:sysutils/libdisplay-info \
+			libseat.so:sysutils/seatd \
 			libinput.so:x11/libinput
 DRM_MESON_ENABLED=	session
 DRM_VARS=		BACKENDS+="drm libinput"
