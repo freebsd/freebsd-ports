@@ -1,6 +1,5 @@
 PORTNAME=	edalize
-DISTVERSION=	0.5.0
-PORTREVISION=	1
+DISTVERSION=	0.5.1
 CATEGORIES=	cad python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,7 +11,8 @@ WWW=		https://github.com/olofk/edalize
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}types-Jinja2>0:devel/py-types-Jinja2@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=3:devel/py-Jinja2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}types-Jinja2>0:devel/py-types-Jinja2@${PY_FLAVOR} \
 		gmake:devel/gmake \
 		yosys:cad/yosys
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}vunit-hdl>0:cad/py-vunit-hdl@${PY_FLAVOR}
