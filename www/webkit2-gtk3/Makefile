@@ -1,11 +1,14 @@
 PORTNAME=	webkit
 DISTVERSION=	2.34.6
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	https://webkitgtk.org/releases/
 PKGNAMESUFFIX=	2-gtk3
 DISTNAME=	${PORTNAME}gtk-${PORTVERSION}
 DIST_SUBDIR=	gnome
+
+PATCH_SITES=	https://github.com/WebKit/WebKit/commit/
+PATCHFILES=	06f9978e52a8408ed6c2c8296afb1e7449c2f1ee.patch:-p1 # https://bugs.webkit.org/show_bug.cgi?id=247770
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Opensource browser engine using the GTK+ 3 toolkit
