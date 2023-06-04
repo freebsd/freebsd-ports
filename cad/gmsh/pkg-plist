@@ -136,6 +136,7 @@ bin/onelab.py
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/fleur.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/fragment_numbering.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/hybrid_occ_builtin.geo
+%%PORTDOCS%%%%DOCSDIR%%/examples/boolean/hyperboloid.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/import.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/import2.geo
 %%PORTDOCS%%%%DOCSDIR%%/examples/boolean/intersect_line_volume.geo
@@ -272,6 +273,7 @@ bin/onelab.py
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/julia/t3.jl
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/julia/t4.jl
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/julia/t5.jl
+%%PORTDOCS%%%%DOCSDIR%%/tutorials/julia/t6.jl
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/python/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/python/t1.py
 %%PORTDOCS%%%%DOCSDIR%%/tutorials/python/t10.py
