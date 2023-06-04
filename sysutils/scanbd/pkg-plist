@@ -1,0 +1,17 @@
+%%ETCDIR%%/scripts/action.script
+%%ETCDIR%%/scripts/example.script
+%%ETCDIR%%/scripts/insert.script
+%%ETCDIR%%/scripts/scanadf.script
+%%ETCDIR%%/scripts/test.script
+%%ETCDIR%%/scanbd.conf
+%%ETCDIR%%/scanner.d/avision.conf
+%%ETCDIR%%/scanner.d/canon.conf
+%%ETCDIR%%/scanner.d/fujitsu.conf
+%%ETCDIR%%/scanner.d/hp.conf
+%%ETCDIR%%/scanner.d/pixma.conf
+%%ETCDIR%%/scanner.d/plustek.conf
+%%ETCDIR%%/scanner.d/snapscan.conf
+sbin/scanbd
+sbin/scanbm
+man/man8/scanbm.8.gz
+man/man8/scanbd.8.gz

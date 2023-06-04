@@ -1,0 +1,16 @@
+#!/bin/sh
+# PROVIDE: scanbd
+# REQUIRE: DAEMON FILESYSTEMS dbus
+# KEYWORD:
+
+. /etc/rc.subr
+
+name=scanbd
+# scanbd_user=saned  # Fix this
+rcvar=scanbd_enable
+command_args=""
+command="%%PREFIX%%/sbin/${name}"
+
+load_rc_config $name
+run_rc_command "$1"
+
