@@ -69,6 +69,7 @@ libexec/appjail/network/network
 %%DATADIR%%/lib/mount
 %%DATADIR%%/lib/network
 %%DATADIR%%/lib/random
+%%DATADIR%%/lib/repeat
 %%DATADIR%%/lib/replace
 %%DATADIR%%/lib/strlen
 %%DATADIR%%/lib/sysexits
