@@ -1,6 +1,5 @@
 PORTNAME=	ocrmypdf
-DISTVERSION=	14.1.0
-PORTREVISION=	1
+DISTVERSION=	14.2.1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,16 +25,24 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coloredlogs>=14.0:devel/py-coloredlogs@${PY_
 		${PYTHON_PKGNAMEPREFIX}pikepdf>=5.0.1:textproc/py-pikepdf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=0.13.0:devel/py-pluggy@${PY_FLAVOR} \
 		tesseract:graphics/tesseract
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=4.4.1:devel/py-pytest@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=6.0.0:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=2.2.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=2.0.1:textproc/py-python-xmp-toolkit@${PY_FLAVOR}
 
 USES=		ghostscript:run python:3.8+ shebangfix
-USE_PYTHON=	autoplist concurrent pep517
+USE_PYTHON=	autoplist concurrent pep517 pytest
+# Skip some checks as they yield wrong results if run with the root account
+PYTEST_IGNORED_TESTS=	test_chmod \
+			test_dev_null \
+			test_input_file_not_readable \
+			test_outputtype_none
 
 SHEBANG_FILES=	src/ocrmypdf/__main__.py \
 		src/ocrmypdf/hocrtransform.py \
 		src/ocrmypdf/pdfinfo/__init__.py
+
+TEST_ARGS=	-n ${MAKE_JOBS_NUMBER}
+TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
@@ -65,14 +72,5 @@ post-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/misc/completion/ocrmypdf.bash ${STAGEDIR}${PREFIX}/etc/bash_completion.d/
 	${INSTALL_DATA} ${WRKSRC}/misc/completion/ocrmypdf.fish ${STAGEDIR}${PREFIX}/share/fish/vendor_completions.d/
-
-do-test:
-	# Skip some checks as they yield wrong results if run with the root account
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} -m pytest -rs -v \
-	       	-n ${MAKE_JOBS_NUMBER} -k ' \
-		not test_dev_null \
-		and not test_input_file_not_readable \
-		and not test_outputtype_none \
-		and not test_chmod'
 
 .include <bsd.port.post.mk>
