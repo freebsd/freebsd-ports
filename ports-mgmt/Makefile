@@ -25,6 +25,7 @@
     SUBDIR += parfetch-overlay
     SUBDIR += pchecker
     SUBDIR += pkg
+    SUBDIR += pkg-appstream
     SUBDIR += pkg-devel
     SUBDIR += pkg-graph
     SUBDIR += pkg-provides
