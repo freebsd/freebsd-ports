@@ -1,9 +1,9 @@
 PORTNAME=	rmarkdown
-PORTVERSION=	2.21
+DISTVERSION=	2.22
 CATEGORIES=	textproc
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Dynamic Documents for R
 WWW=		https://cran.r-project.org/web/packages/rmarkdown/
 
