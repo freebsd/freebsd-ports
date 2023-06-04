@@ -7,13 +7,14 @@ include/xeus-zmq/xserver_control_main.hpp
 include/xeus-zmq/xserver_shell_main.hpp
 include/xeus-zmq/xserver_zmq.hpp
 include/xeus-zmq/xserver_zmq_split.hpp
+include/xeus-zmq/xthread.hpp
+include/xeus-zmq/xzmq_context.hpp
 include/xeus-zmq/xzmq_serializer.hpp
-lib/cmake/xeus-zmq/FindLibUUID.cmake
 lib/cmake/xeus-zmq/xeus-zmqConfig.cmake
 lib/cmake/xeus-zmq/xeus-zmqConfigVersion.cmake
 lib/cmake/xeus-zmq/xeus-zmqTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/xeus-zmq/xeus-zmqTargets.cmake
 lib/libxeus-zmq.a
 lib/libxeus-zmq.so
-lib/libxeus-zmq.so.1
-lib/libxeus-zmq.so.1.0.0
+lib/libxeus-zmq.so.2
+lib/libxeus-zmq.so.2.0.0
