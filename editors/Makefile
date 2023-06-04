@@ -222,9 +222,9 @@
     SUBDIR += novelwriter
     SUBDIR += nvi-m17n
     SUBDIR += nvi2
-    SUBDIR += o
     SUBDIR += openoffice-4
     SUBDIR += openoffice-devel
+    SUBDIR += orbiton
     SUBDIR += ox
     SUBDIR += p5-Proc-InvokeEditor
     SUBDIR += p5-Vimana
