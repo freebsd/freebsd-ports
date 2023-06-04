@@ -21,7 +21,7 @@ include/dftbplus/modfiles/dftbp_common_accuracy.mod
 include/dftbplus/modfiles/dftbp_common_assert.mod
 include/dftbplus/modfiles/dftbp_common_atomicmass.mod
 include/dftbplus/modfiles/dftbp_common_atomicrad.mod
-%%MPI%%include/dftbplus/modfiles/dftbp_common_blacsenv.mod
+%%MPIX%%include/dftbplus/modfiles/dftbp_common_blacsenv.mod
 include/dftbplus/modfiles/dftbp_common_coherence.mod
 include/dftbplus/modfiles/dftbp_common_constants.mod
 include/dftbplus/modfiles/dftbp_common_environment.mod
@@ -30,7 +30,7 @@ include/dftbplus/modfiles/dftbp_common_filesystem.mod
 include/dftbplus/modfiles/dftbp_common_globalenv.mod
 include/dftbplus/modfiles/dftbp_common_hamiltoniantypes.mod
 include/dftbplus/modfiles/dftbp_common_memman.mod
-%%MPI%%include/dftbplus/modfiles/dftbp_common_mpienv.mod
+%%MPIX%%include/dftbplus/modfiles/dftbp_common_mpienv.mod
 include/dftbplus/modfiles/dftbp_common_optarg.mod
 include/dftbplus/modfiles/dftbp_common_schedule.mod
 include/dftbplus/modfiles/dftbp_common_status.mod
@@ -171,6 +171,7 @@ include/dftbplus/modfiles/dftbp_io_hsdutils2.mod
 include/dftbplus/modfiles/dftbp_io_indexselection.mod
 include/dftbplus/modfiles/dftbp_io_intrinsicpr.mod
 %%SOCKETS%%include/dftbplus/modfiles/dftbp_io_ipisocket.mod
+include/dftbplus/modfiles/dftbp_io_linereader.mod
 include/dftbplus/modfiles/dftbp_io_logger.mod
 include/dftbplus/modfiles/dftbp_io_message.mod
 include/dftbplus/modfiles/dftbp_io_taggedoutput.mod
@@ -215,15 +216,15 @@ include/dftbplus/modfiles/dftbp_mixer_diismixer.mod
 include/dftbplus/modfiles/dftbp_mixer_mixer.mod
 include/dftbplus/modfiles/dftbp_mixer_simplemixer.mod
 include/dftbplus/modfiles/dftbp_mmapi.mod
-include/dftbplus/modfiles/dftbp_poisson_bulkpot.mod
-include/dftbplus/modfiles/dftbp_poisson_fancybc.mod
-include/dftbplus/modfiles/dftbp_poisson_gallocation.mod
-include/dftbplus/modfiles/dftbp_poisson_gewald.mod
-include/dftbplus/modfiles/dftbp_poisson_mpi_poisson.mod
-include/dftbplus/modfiles/dftbp_poisson_parameters.mod
-include/dftbplus/modfiles/dftbp_poisson_parcheck.mod
-include/dftbplus/modfiles/dftbp_poisson_poisson.mod
-include/dftbplus/modfiles/dftbp_poisson_structure.mod
+%%POISSON%%include/dftbplus/modfiles/dftbp_poisson_bulkpot.mod
+%%POISSON%%include/dftbplus/modfiles/dftbp_poisson_fancybc.mod
+%%POISSON%%include/dftbplus/modfiles/dftbp_poisson_gallocation.mod
+%%POISSON%%include/dftbplus/modfiles/dftbp_poisson_gewald.mod
+%%POISSON%%include/dftbplus/modfiles/dftbp_poisson_mpi_poisson.mod
+%%POISSON%%include/dftbplus/modfiles/dftbp_poisson_parameters.mod
+%%POISSON%%include/dftbplus/modfiles/dftbp_poisson_parcheck.mod
+%%POISSON%%include/dftbplus/modfiles/dftbp_poisson_poisson.mod
+%%POISSON%%include/dftbplus/modfiles/dftbp_poisson_structure.mod
 include/dftbplus/modfiles/dftbp_reks_reks.mod
 include/dftbplus/modfiles/dftbp_reks_rekscommon.mod
 include/dftbplus/modfiles/dftbp_reks_rekscpeqn.mod
@@ -324,5 +325,5 @@ lib/cmake/dftbplus/dftbplus-config.cmake
 lib/cmake/dftbplus/dftbplus-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dftbplus/dftbplus-targets.cmake
 lib/libdftbplus.so
-lib/libmudpack.so
+%%POISSON%%lib/libmudpack.so
 libdata/pkgconfig/dftbplus.pc

@@ -1,6 +1,6 @@
-TIMESTAMP = 1653543614
-SHA256 (dftbplus-dftbplus-22.1_GH0.tar.gz) = f0fc9a076aa2d7be03c31a3a845d8151fc0cc0b1d421e11c37044f78a42abb33
-SIZE (dftbplus-dftbplus-22.1_GH0.tar.gz) = 5255561
+TIMESTAMP = 1685904291
+SHA256 (dftbplus-dftbplus-22.2_GH0.tar.gz) = ca69a5e21bf9071179c5a2c57d89cdcbb0543e771661ac5e8be584fafa4c61df
+SIZE (dftbplus-dftbplus-22.2_GH0.tar.gz) = 5388024
 SHA256 (aradi-fytest-94e05ac_GH0.tar.gz) = f29e91bb0a002ded95108091d4b2d20d99a6c4e465e068b1ec24252e1b4e4141
 SIZE (aradi-fytest-94e05ac_GH0.tar.gz) = 16503
 SHA256 (dftbplus-testparams-cd7536f_GH0.tar.gz) = 73bfe7b631afa5fbedeb534228afe0f210cb44fdf48d916b66c7ba40d6327ca3
@@ -9,5 +9,3 @@ SHA256 (dftd4-dftd4-1189af7_GH0.tar.gz) = 091e42c2eac683f0d05ae27afc4ec3e178e281
 SIZE (dftd4-dftd4-1189af7_GH0.tar.gz) = 221077
 SHA256 (grimme-lab-gbsa-parameters-6836c4d_GH0.tar.gz) = 5b898662131b6a5b976fd45138a6cc2eb87a83c90188bb77823d4014f30f8f57
 SIZE (grimme-lab-gbsa-parameters-6836c4d_GH0.tar.gz) = 57824
-SHA256 (rk-lindsey-chimes_calculator-98e3653_GH0.tar.gz) = ac510ddb54031ddc6cc02db2250957d2cca7d3c9d5abf42bdd4c141865e8584a
-SIZE (rk-lindsey-chimes_calculator-98e3653_GH0.tar.gz) = 1184959

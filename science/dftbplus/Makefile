@@ -1,6 +1,5 @@
 PORTNAME=	dftbplus
-DISTVERSION=	22.1
-PORTREVISION=	2
+DISTVERSION=	22.2
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -40,16 +39,16 @@ BINARY_ALIAS=	git=false
 CMAKE_ON=	BLAS_DETECTION BUILD_SHARED_LIBS WITH_API ENABLE_DYNAMIC_LOADING
 CMAKE_ARGS=	-DLAPACK_LIBRARY=lapack -DSCALAPACK_LIBRARY=scalapack
 
-BINARY_ALIAS=		python=${PYTHON_CMD} python3=${PYTHON_CMD}
+BINARY_ALIAS=		git=false python=${PYTHON_CMD} python3=${PYTHON_CMD}
 
-OPTIONS_DEFINE=		ARPACK CHIMES DFTD3 MBD MPI PLUMED POISSON PYTHON SOCKETS TBLITE TRANSPORT # see config.cmake for a complete list
-OPTIONS_DEFAULT=	CHIMES DFTD3 MBD MPI PLUMED POISSON TRANSPORT SOCKETS # PYTHON TBLITE
+OPTIONS_DEFINE=		ARPACK CHIMES DFTD3 MBD MPIX PLUMED POISSON PYTHON SOCKETS TBLITE TRANSPORT # see config.cmake for a complete list
+OPTIONS_DEFAULT=	CHIMES DFTD3 MBD MPIX PLUMED POISSON TRANSPORT SOCKETS # PYTHON TBLITE
 OPTIONS_SUB=		yes
 
 ARPACK_DESC=		Build with ARPACK for large eigenvalue problems
 ARPACK_CMAKE_BOOL=	WITH_ARPACK
 ARPACK_LIB_DEPENDS=	libarpack.so:math/arpack-ng
-ARPACK_PREVENTS=	MPI # ARPACK is only used in a single-core application
+ARPACK_PREVENTS=	MPIX # ARPACK is only used in a single-core application
 
 CHIMES_DESC=		Build with ChIMES
 CHIMES_CMAKE_BOOL=	WITH_CHIMES
@@ -66,12 +65,14 @@ MBD_DESC=		Build with many-body-dispersion support
 MBD_CMAKE_BOOL=		WITH_MBD
 MBD_LIB_DEPENDS=	libmbd.so:science/libmbd
 
-MPI_CMAKE_BOOL=		WITH_MPI
-MPI_LIB_DEPENDS=	libmpich.so:net/mpich \
+MPIX_DESC=		MPI (Message Passing Interface) support # the MPI option name causes failure in MPI_USES=mpi:openmpi
+MPIX_CMAKE_BOOL=	WITH_MPI
+MPIX_USES=		mpi:openmpi
+MPIX_LIB_DEPENDS=	libmpich.so:net/mpich \
 			libmpifx.so:net/mpifx \
 			libscalapack.so:math/scalapack \
 			libscalapackfx.so:math/scalapackfx
-MPI_LDFLAGS=		${LOCALBASE}/lib/libmpich.so ${LOCALBASE}/lib/libmpifort.so ${LOCALBASE}/lib/libmpi.so
+MPIX_LDFLAGS=		${LOCALBASE}/lib/libmpich.so ${LOCALBASE}/lib/libmpifort.so ${LOCALBASE}/lib/libmpi.so
 
 PLUMED_DESC=		Do metadynamics via the PLUMED2 library
 PLUMED_CMAKE_BOOL=	WITH_PLUMED
@@ -90,7 +91,7 @@ SOCKETS_BINARY_ALIAS=	gcc=${CC}
 
 TBLITE_DESC=		Include xTB support via tblite
 TBLITE_CMAKE_BOOL=	WITH_TBLITE
-TBLITE_BROKEN=		Fails to build, see https://github.com/dftbplus/dftbplus/issues/1041
+TBLITE_BROKEN=		fails to build, see https://github.com/dftbplus/dftbplus/issues/1041
 
 TRANSPORT_DESC=		Transport via libNEGF
 TRANSPORT_CMAKE_BOOL=	WITH_TRANSPORT
