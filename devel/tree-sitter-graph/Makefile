@@ -1,6 +1,6 @@
 PORTNAME=	tree-sitter-graph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.3
+DISTVERSION=	0.10.4
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ GH_ACCOUNT=	tree-sitter
 
 CARGO_FEATURES=	cli
 CARGO_CRATES=	ahash-0.4.7 \
-		aho-corasick-1.0.1 \
+		aho-corasick-1.0.2 \
 		anyhow-1.0.71 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -41,11 +41,11 @@ CARGO_CRATES=	ahash-0.4.7 \
 		indoc-1.0.9 \
 		itoa-1.0.6 \
 		lazy_static-1.4.0 \
-		libc-0.2.144 \
+		libc-0.2.145 \
 		libloading-0.7.4 \
 		log-0.4.18 \
 		memchr-2.5.0 \
-		once_cell-1.17.2 \
+		once_cell-1.18.0 \
 		os_str_bytes-6.5.0 \
 		proc-macro2-1.0.59 \
 		quote-1.0.28 \
