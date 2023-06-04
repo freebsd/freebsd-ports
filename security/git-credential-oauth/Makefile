@@ -1,5 +1,5 @@
 PORTNAME=	git-credential-oauth
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 
