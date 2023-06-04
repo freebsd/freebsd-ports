@@ -1,6 +1,5 @@
 PORTNAME=	rpki-client
-DISTVERSION=	8.2
-PORTREVISION=	1
+DISTVERSION=	8.5
 CATEGORIES=	net
 MASTER_SITES=	https://cdn.openbsd.org/pub/OpenBSD/rpki-client/ \
 		https://cloudflare.cdn.openbsd.org/pub/OpenBSD/rpki-client/
@@ -10,9 +9,6 @@ COMMENT=	Resource Public Key Infrastructure (RPKI) implementation from OpenBSD
 WWW=		https://www.rpki-client.org/
 
 LICENSE=	ISCL
-
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	error: libcrypto with RFC3779 support required
 
 BUILD_DEPENDS=	rsync>0:net/rsync
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
