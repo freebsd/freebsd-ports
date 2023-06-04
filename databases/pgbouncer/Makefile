@@ -1,6 +1,5 @@
 PORTNAME=	pgbouncer
-PORTVERSION=	1.18.0
-PORTREVISION=	1
+PORTVERSION=	1.19.1
 CATEGORIES=	databases
 MASTER_SITES=	https://pgbouncer.github.io/downloads/files/${PORTVERSION}/ \
 		http://pgbouncer.github.io/downloads/files/${PORTVERSION}/
@@ -25,8 +24,8 @@ PORTSCOUT=	site:https://pgbouncer.github.io/downloads/
 SUB_FILES=	pkg-message
 SUB_LIST+=	PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}"
 
-USERS=		pgbouncer
-GROUPS=		pgbouncer
+USERS=		${PGBOUNCER_USER}
+GROUPS=		${PGBOUNCER_GROUP}
 
 PLIST_SUB+=	PGBOUNCER_GROUP="${GROUPS}" \
 		PGBOUNCER_LOGDIR="${PGBOUNCER_LOGDIR}" \
