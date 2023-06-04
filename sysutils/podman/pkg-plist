@@ -107,6 +107,8 @@ share/man/man1/podman-machine-init.1.gz
 share/man/man1/podman-machine-inspect.1.gz
 share/man/man1/podman-machine-list.1.gz
 share/man/man1/podman-machine-ls.1.gz
+share/man/man1/podman-machine-os-apply.1.gz
+share/man/man1/podman-machine-os.1.gz
 share/man/man1/podman-machine-rm.1.gz
 share/man/man1/podman-machine-set.1.gz
 share/man/man1/podman-machine-ssh.1.gz
@@ -132,6 +134,7 @@ share/man/man1/podman-network-ls.1.gz
 share/man/man1/podman-network-prune.1.gz
 share/man/man1/podman-network-reload.1.gz
 share/man/man1/podman-network-rm.1.gz
+share/man/man1/podman-network-update.1.gz
 share/man/man1/podman-network.1.gz
 share/man/man1/podman-pause.1.gz
 share/man/man1/podman-play-kube.1.gz
@@ -165,6 +168,7 @@ share/man/man1/podman-run.1.gz
 share/man/man1/podman-save.1.gz
 share/man/man1/podman-search.1.gz
 share/man/man1/podman-secret-create.1.gz
+share/man/man1/podman-secret-exists.1.gz
 share/man/man1/podman-secret-inspect.1.gz
 share/man/man1/podman-secret-ls.1.gz
 share/man/man1/podman-secret-rm.1.gz
@@ -210,5 +214,7 @@ share/man/man1/podman-volume-unmount.1.gz
 share/man/man1/podman-volume.1.gz
 share/man/man1/podman-wait.1.gz
 share/man/man1/podman.1.gz
+share/man/man5/quadlet.5.gz
+share/man/man5/podman-systemd.unit.5.gz
 share/zsh/site-functions/_podman
 share/zsh/site-functions/_podman-remote

@@ -2,3 +2,11 @@ The FreeBSD port of the podman container engine is experimental and should be
 used for evaluation and testing purposes only.
 
 $ sudo podman run --rm docker.io/dougrabson/hello
+
+podman can restart containers after a host is rebooted. To enable this, use:
+
+$ sudo sysrc podman_enable=YES
+
+and start the container with a restart policy:
+
+$ sudo podman run -d --restart=always myimage

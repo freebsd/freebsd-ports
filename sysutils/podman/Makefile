@@ -1,7 +1,6 @@
 PORTNAME=	podman
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.2
-PORTREVISION=	1
+DISTVERSION=	4.5.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -20,8 +19,10 @@ RUN_DEPENDS=	conmon:sysutils/conmon \
 		ocijail:sysutils/ocijail
 
 USES=		gmake go:no_targets pkgconfig python:3.7+,build shebangfix
+USE_RC_SUBR=	podman
 
 SHEBANG_FILES=	${WRKSRC}/hack/markdown-preprocess
+MAKE_ARGS=	SHELL=${LOCALBASE}/bin/bash
 
 # Parallel builds are flaky due to some kind of file race in the
 # markdown-preprocess phase of the docs build.
@@ -35,8 +36,8 @@ INSTALL_TARGET=	install install.completions
 
 # Temporary until https://github.com/containers/podman/pull/16422 lands
 do-install:
-	${GMAKE} -C ${WRKSRC} DESTDIR=${STAGEDIR} GO=${GO_CMD} install
-	${GMAKE} -C ${WRKSRC} DESTDIR=${STAGEDIR} GO=${GO_CMD} install.completions
+	${GMAKE} -C ${WRKSRC} ${MAKE_ARGS} DESTDIR=${STAGEDIR} GO=${GO_CMD} install
+	${GMAKE} -C ${WRKSRC} ${MAKE_ARGS} DESTDIR=${STAGEDIR} GO=${GO_CMD} install.completions
 	${RM} ${STAGEDIR}${PREFIX}/lib/tmpfiles.d/podman.conf
 
 .include <bsd.port.mk>
