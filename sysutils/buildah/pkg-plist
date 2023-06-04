@@ -23,6 +23,7 @@ share/man/man1/buildah-manifest-remove.1.gz
 share/man/man1/buildah-manifest-rm.1.gz
 share/man/man1/buildah-manifest.1.gz
 share/man/man1/buildah-mount.1.gz
+share/man/man1/buildah-prune.1.gz
 share/man/man1/buildah-pull.1.gz
 share/man/man1/buildah-push.1.gz
 share/man/man1/buildah-rename.1.gz
