@@ -165,6 +165,7 @@ share/gEDA/sym/veroroute_transistor/PNP_TIP32.sym
 share/gEDA/sym/veroroute_transistor/PNP_TIP42.sym
 share/icons/hicolor/72x72/apps/veroroute.png
 share/man/man1/veroroute.1.gz
+share/metainfo/veroroute.appdata.xml
 share/pixmaps/veroroute.png
 %%DATADIR%%/tutorials/tutorial_0.vrt
 %%DATADIR%%/tutorials/tutorial_1.vrt
@@ -185,6 +186,7 @@ share/pixmaps/veroroute.png
 %%DATADIR%%/tutorials/tutorial_23.vrt
 %%DATADIR%%/tutorials/tutorial_24.vrt
 %%DATADIR%%/tutorials/tutorial_25.vrt
+%%DATADIR%%/tutorials/tutorial_26.vrt
 %%DATADIR%%/tutorials/tutorial_3.vrt
 %%DATADIR%%/tutorials/tutorial_4.vrt
 %%DATADIR%%/tutorials/tutorial_5.vrt
