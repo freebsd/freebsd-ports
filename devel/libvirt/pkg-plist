@@ -204,6 +204,7 @@ share/augeas/lenses/virtvboxd.aug
 %%DATADIR%%/cpu_map/x86_Penryn.xml
 %%DATADIR%%/cpu_map/x86_SandyBridge-IBRS.xml
 %%DATADIR%%/cpu_map/x86_SandyBridge.xml
+%%DATADIR%%/cpu_map/x86_SapphireRapids.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client-noTSX-IBRS.xml
 %%DATADIR%%/cpu_map/x86_Skylake-Client.xml
