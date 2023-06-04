@@ -1,6 +1,5 @@
 PORTNAME=	pika
-DISTVERSION=	0.14.0
-PORTREVISION=	1
+DISTVERSION=	0.16.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,7 +27,7 @@ GH_ACCOUNT=	pika-org
 CMAKE_ON=	PIKA_WITH_MALLOC
 CMAKE_ON+=	PIKA_WITH_GENERIC_CONTEXT_COROUTINES # prerequisite, build breaks on aarch64, armv6 w/out it
 CMAKE_TESTING_ON=	PIKA_WITH_TESTS PIKA_WITH_TESTS_UNIT
-CMAKE_TESTING_TARGET=	tests # 3 tests are known to fail, see https://github.com/pika-org/pika/issues/463
+CMAKE_TESTING_TARGET=	tests
 
 BINARY_ALIAS=	git=false
 

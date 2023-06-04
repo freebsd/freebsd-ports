@@ -38,6 +38,7 @@ include/pika/async_combinators/when_all.hpp
 include/pika/async_combinators/when_any.hpp
 include/pika/async_combinators/when_each.hpp
 include/pika/async_combinators/when_some.hpp
+include/pika/async_rw_mutex.hpp
 include/pika/barrier.hpp
 include/pika/channel.hpp
 include/pika/chrono.hpp
@@ -205,7 +206,6 @@ include/pika/executors/execution_policy.hpp
 include/pika/executors/execution_policy_annotation.hpp
 include/pika/executors/execution_policy_fwd.hpp
 include/pika/executors/fork_join_executor.hpp
-include/pika/executors/guided_pool_executor.hpp
 include/pika/executors/limiting_executor.hpp
 include/pika/executors/parallel_executor.hpp
 include/pika/executors/restricted_thread_pool_executor.hpp
@@ -407,7 +407,6 @@ include/pika/program_options/value_semantic.hpp
 include/pika/program_options/variables_map.hpp
 include/pika/program_options/version.hpp
 include/pika/properties/config/defines.hpp
-include/pika/properties/property.hpp
 include/pika/property.hpp
 include/pika/resource_partitioner/config/defines.hpp
 include/pika/resource_partitioner/detail/create_partitioner.hpp
@@ -489,8 +488,6 @@ include/pika/synchronization/once.hpp
 include/pika/synchronization/recursive_mutex.hpp
 include/pika/synchronization/shared_mutex.hpp
 include/pika/synchronization/sliding_semaphore.hpp
-include/pika/synchronization/spinlock.hpp
-include/pika/synchronization/spinlock_pool.hpp
 include/pika/synchronization/stop_token.hpp
 include/pika/system_error.hpp
 include/pika/tag_invoke/config/defines.hpp
@@ -525,7 +522,6 @@ include/pika/threading_base/detail/reset_lco_description.hpp
 include/pika/threading_base/detail/tracy.hpp
 include/pika/threading_base/execution_agent.hpp
 include/pika/threading_base/external_timer.hpp
-include/pika/threading_base/network_background_callback.hpp
 include/pika/threading_base/print.hpp
 include/pika/threading_base/register_thread.hpp
 include/pika/threading_base/scheduler_base.hpp
@@ -677,4 +673,4 @@ lib/cmake/pika/tests/stable_inplace_merge.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.14.0
+lib/libpika.so.0.16.0
