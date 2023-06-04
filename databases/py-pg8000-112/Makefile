@@ -11,6 +11,9 @@ WWW=		https://github.com/mfenniak/pg8000
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	EOLd, use www/py-pg8000 instead
+EXPIRATION_DATE=2023-06-30
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 
 USES=		python:3.6+
