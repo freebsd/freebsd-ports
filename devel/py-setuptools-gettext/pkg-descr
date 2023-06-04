@@ -1,0 +1,2 @@
+setuptools-gettest is a plugin for setuptools to use gettext to compile
+.po files into .mo files.
