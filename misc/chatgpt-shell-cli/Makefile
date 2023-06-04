@@ -15,7 +15,12 @@ RUN_DEPENDS=	bash:shells/bash \
 		jq:textproc/jq \
 		xdg-open:devel/xdg-utils
 
-USES=		magick:run shebangfix
+FLAVORS=	x11 nox11
+FLAVOR?=	${FLAVORS:[1]}
+
+nox11_PKGNAMESUFFIX=	-nox11
+
+USES=		magick:${FLAVOR},run shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	0xacx
@@ -30,7 +35,7 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/chatgpt
 
 post-patch:
-		  ${REINPLACE_CMD} 's/open \("$${image_url}"\)/xdg-open \1/g' ${WRKSRC}/chatgpt.sh
+		${REINPLACE_CMD} 's/open \("$${image_url}"\)/xdg-open \1/g' ${WRKSRC}/chatgpt.sh
 
 do-install:
 		${INSTALL_SCRIPT} ${WRKSRC}/chatgpt.sh ${STAGEDIR}${PREFIX}/bin/chatgpt
