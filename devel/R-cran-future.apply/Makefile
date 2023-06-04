@@ -1,9 +1,9 @@
 PORTNAME=	future.apply
-PORTVERSION=	1.10.0
+DISTVERSION=	1.11.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Apply Function to Elements in Parallel using Futures
 WWW=		https://cran.r-project.org/web/packages/future.apply/
 
