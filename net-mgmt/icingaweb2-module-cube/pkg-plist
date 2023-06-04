@@ -1,6 +1,10 @@
+%%WWWDIR%%/.mailmap
+%%WWWDIR%%/AUTHORS
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
 %%WWWDIR%%/application/controllers/HostsController.php
+%%WWWDIR%%/application/controllers/IdoHostsController.php
+%%WWWDIR%%/application/controllers/IdoServicesController.php
 %%WWWDIR%%/application/controllers/IndexController.php
 %%WWWDIR%%/application/controllers/ServicesController.php
 %%WWWDIR%%/application/forms/DimensionsForm.php
@@ -9,13 +13,7 @@
 %%WWWDIR%%/configuration.php
 %%WWWDIR%%/doc/01-About.md
 %%WWWDIR%%/doc/02-Installation.md
-%%WWWDIR%%/doc/02-Installation.md.d/01-Amazon-Linux.md
-%%WWWDIR%%/doc/02-Installation.md.d/02-CentOS.md
-%%WWWDIR%%/doc/02-Installation.md.d/03-Debian.md
-%%WWWDIR%%/doc/02-Installation.md.d/04-RHEL.md
-%%WWWDIR%%/doc/02-Installation.md.d/05-SLES.md
-%%WWWDIR%%/doc/02-Installation.md.d/06-Ubuntu.md
-%%WWWDIR%%/doc/02-Installation.md.d/07-From-Source.md
+%%WWWDIR%%/doc/02-Installation.md.d/From-Source.md
 %%WWWDIR%%/doc/img/cube_action-links.png
 %%WWWDIR%%/doc/img/cube_director.png
 %%WWWDIR%%/doc/img/cube_move-up.png
