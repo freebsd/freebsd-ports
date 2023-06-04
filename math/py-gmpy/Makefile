@@ -9,6 +9,9 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python Extension that Wraps the GMP Library
 WWW=		http://code.google.com/p/gmpy/
 
+DEPRECATED=	EOLd, use math/py-gmpy2 instead
+EXPIRATION_DATE=2023-06-30
+
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		python:3.6+ zip
