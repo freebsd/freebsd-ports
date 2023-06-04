@@ -1,6 +1,6 @@
---- html/Makefile.in.orig	2016-12-07 16:31:10 UTC
-+++ html/Makefile.in
-@@ -45,11 +45,8 @@ devclean: distclean
+--- html/Makefile.in.orig	2023-06-04 10:23:17.547480000 +0200
++++ html/Makefile.in	2023-06-04 10:23:35.365789000 +0200
+@@ -45,11 +45,8 @@ install:
  
  install:
  	$(INSTALL) -m 775 $(INSTALL_OPTS) -d $(DESTDIR)$(HTMLDIR)

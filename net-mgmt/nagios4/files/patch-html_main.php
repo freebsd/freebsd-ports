@@ -1,9 +1,9 @@
---- html/main.php.orig	2023-02-19 11:46:50.234549000 +0100
-+++ html/main.php	2023-02-19 11:48:04.920758000 +0100
+--- html/main.php.orig	2023-06-04 10:27:05.620233000 +0200
++++ html/main.php	2023-06-04 10:31:49.442315000 +0200
 @@ -146,33 +146,6 @@ $this_year = '2023';
  	<div class="product">Nagios<sup><span style="font-size: small;">&reg;</span></sup> Core<sup><span style="font-size: small;">&trade;</span></sup></div>
  	<div class="version">Version <?php echo $this_version; ?></div>
- 	<div class="releasedate">January 17, 2023</div>
+ 	<div class="releasedate">June 01, 2023</div>
 -	<div class="checkforupdates"><a href="https://www.nagios.org/checkforupdates/?version=<?php echo $this_version; ?>&amp;product=nagioscore" target="_blank">Check for updates</a></div>
 -</div>
 -
