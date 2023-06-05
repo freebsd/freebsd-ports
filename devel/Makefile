@@ -1105,6 +1105,7 @@
     SUBDIR += kio-extras
     SUBDIR += kirigami-gallery
     SUBDIR += kiwix-lib
+    SUBDIR += klib
     SUBDIR += kms-cmake-utils
     SUBDIR += kodi-platform
     SUBDIR += kokkos
