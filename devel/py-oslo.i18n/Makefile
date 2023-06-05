@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Oslo i18n library
-WWW=		https://docs.openstack.org/oslo.i18n/latest/
+WWW=		https://docs.openstack.org/oslo.i18n/latest/ \
+		https://github.com/openstack/oslo.i18n
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
