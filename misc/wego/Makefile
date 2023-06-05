@@ -1,6 +1,5 @@
 PORTNAME=	wego
-DISTVERSION=	2.1
-PORTREVISION=	9
+DISTVERSION=	2.2
 CATEGORIES=	misc
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -14,12 +13,12 @@ USES=		go:modules
 USE_GITHUB=	yes
 GH_ACCOUNT=	schachmat
 GH_TUPLE=	\
-		mattn:go-colorable:v0.1.12:mattn_gocolorable/vendor/github.com/mattn/go-colorable \
-		mattn:go-runewidth:v0.0.13:mattn_gorunewidth/vendor/github.com/mattn/go-runewidth \
-		schachmat:ingo:a4bdc0729a3f:schachmat_ingo/vendor/github.com/schachmat/ingo \
-		mattn:go-isatty:v0.0.14:mattn_goisatty/vendor/github.com/mattn/go-isatty \
-		rivo:uniseg:v0.2.0:rivo_uniseg/vendor/github.com/rivo/uniseg \
-		golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys
+		golang:sys:v0.8.0:golang_sys/vendor/golang.org/x/sys \
+		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
+		mattn:go-isatty:v0.0.19:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
+		mattn:go-runewidth:v0.0.14:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
+		schachmat:ingo:a4bdc0729a3f:schachmat_ingo/vendor/github.com/schachmat/ingo
 GO_TARGET=	wego
 
 PLIST_FILES=	bin/${PORTNAME}
