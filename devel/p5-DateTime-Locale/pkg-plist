@@ -2022,6 +2022,7 @@
 %%PERL5_MAN3%%/DateTime::Locale.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::Base.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::Catalog.3.gz
+%%PERL5_MAN3%%/DateTime::Locale::Conflicts.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::Data.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::FromData.3.gz
 %%PERL5_MAN3%%/DateTime::Locale::Util.3.gz
