@@ -1,4 +1,4 @@
---- electron/spec/api-browser-window-spec.ts.orig	2023-05-22 19:19:22 UTC
+--- electron/spec/api-browser-window-spec.ts.orig	2023-05-31 15:28:22 UTC
 +++ electron/spec/api-browser-window-spec.ts
 @@ -59,7 +59,7 @@ describe('BrowserWindow module', () => {
        }).not.to.throw();
@@ -126,7 +126,7 @@
        const w = new BrowserWindow();
        const minimize = emittedOnce(w, 'minimize');
        w.minimize();
-@@ -4499,7 +4499,7 @@ describe('BrowserWindow module', () => {
+@@ -4554,7 +4554,7 @@ describe('BrowserWindow module', () => {
        });
  
        // On Linux there is no "resizable" property of a window.
@@ -135,7 +135,7 @@
          const w = new BrowserWindow({ show: false });
          expect(w.resizable).to.be.true('resizable');
  
-@@ -4591,7 +4591,7 @@ describe('BrowserWindow module', () => {
+@@ -4646,7 +4646,7 @@ describe('BrowserWindow module', () => {
      });
    });
  
@@ -144,7 +144,7 @@
      // Not implemented on Linux.
      afterEach(closeAllWindows);
  
-@@ -5655,7 +5655,7 @@ describe('BrowserWindow module', () => {
+@@ -5710,7 +5710,7 @@ describe('BrowserWindow module', () => {
    describe('"transparent" option', () => {
      afterEach(closeAllWindows);
  

@@ -1,4 +1,4 @@
---- third_party/electron_node/deps/uv/BUILD.gn.orig	2022-05-13 07:19:54 UTC
+--- third_party/electron_node/deps/uv/BUILD.gn.orig	2023-06-04 05:29:42 UTC
 +++ third_party/electron_node/deps/uv/BUILD.gn
 @@ -3,7 +3,7 @@ config("libuv_config") {
  
@@ -9,7 +9,7 @@
      defines += [ "_POSIX_C_SOURCE=200112" ]
    }
    if (!is_win) {
-@@ -155,7 +155,7 @@ static_library("uv") {
+@@ -157,7 +157,7 @@ static_library("uv") {
      libs += [ "m" ]
      ldflags += [ "-pthread" ]
    }
@@ -18,7 +18,7 @@
      sources += [ "src/unix/proctitle.c" ]
    }
    if (is_mac) {
-@@ -170,7 +170,7 @@ static_library("uv") {
+@@ -172,7 +172,7 @@ static_library("uv") {
        "_DARWIN_UNLIMITED_SELECT=1",
      ]
    }
@@ -27,7 +27,7 @@
      defines += [ "_GNU_SOURCE" ]
      sources += [
        "src/unix/epoll.c",
-@@ -191,6 +191,16 @@ static_library("uv") {
+@@ -193,6 +193,16 @@ static_library("uv") {
      sources += [
        "src/unix/bsd-ifaddrs.c",
        "src/unix/kqueue.c",
