@@ -75,6 +75,8 @@
 %%DATADIR%%/de_adv_README.txt
 %%DATADIR%%/de_geosn_NTv2_SN.tif
 %%DATADIR%%/de_geosn_README.txt
+%%DATADIR%%/de_hvbg_README.txt
+%%DATADIR%%/de_hvbg_hessen_HeTA2010.tif
 %%DATADIR%%/de_lgl_bw_BWTA2017.tif
 %%DATADIR%%/de_lgl_bw_README.txt
 %%DATADIR%%/de_lgvl_saarland_README.txt
@@ -91,6 +93,14 @@
 %%DATADIR%%/dk_sdfe_fvr09.tif
 %%DATADIR%%/dk_sdfe_gvr2000.tif
 %%DATADIR%%/dk_sdfe_gvr2016.tif
+%%DATADIR%%/dk_sdfi_README.txt
+%%DATADIR%%/dk_sdfi_gs_2022.tif
+%%DATADIR%%/dk_sdfi_gsb_2022.tif
+%%DATADIR%%/dk_sdfi_kk_2022.tif
+%%DATADIR%%/dk_sdfi_os_2022.tif
+%%DATADIR%%/dk_sdfi_s34j_2022.tif
+%%DATADIR%%/dk_sdfi_s34s_2022.tif
+%%DATADIR%%/dk_sdfi_s45b_2022.tif
 %%DATADIR%%/es_cat_icgc_100800401.tif
 %%DATADIR%%/es_cat_icgc_README.txt
 %%DATADIR%%/es_ign_README.txt
@@ -164,11 +174,13 @@
 %%DATADIR%%/jp_gsi_gsigeo2011.tif
 %%DATADIR%%/mx_inegi_README.txt
 %%DATADIR%%/mx_inegi_ggm10.tif
+%%DATADIR%%/nc_dittt_RANC15.tif
 %%DATADIR%%/nc_dittt_README.txt
 %%DATADIR%%/nc_dittt_Ranc08_Circe.tif
 %%DATADIR%%/nc_dittt_gr3dnc01b.tif
 %%DATADIR%%/nc_dittt_gr3dnc02b.tif
 %%DATADIR%%/nc_dittt_gr3dnc03a.tif
+%%DATADIR%%/nc_dittt_gr3dncI08.tif
 %%DATADIR%%/nl_nsgi_README.txt
 %%DATADIR%%/nl_nsgi_nlgeo2018.tif
 %%DATADIR%%/nl_nsgi_rdcorr2018.tif
