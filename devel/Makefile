@@ -6711,7 +6711,6 @@
     SUBDIR += rubygem-fast-stemmer
     SUBDIR += rubygem-fast_blank
     SUBDIR += rubygem-fast_gettext
-    SUBDIR += rubygem-fast_gettext1
     SUBDIR += rubygem-fast_stack
     SUBDIR += rubygem-fast_xor
     SUBDIR += rubygem-fastercsv
