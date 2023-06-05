@@ -4,5 +4,3 @@ web applications by alleviating database load.
 
 This extension uses libmemcached library to provide API for
 communicating with memcached servers.
-
-See also: https://github.com/php-memcached-dev/php-memcached

@@ -4,7 +4,8 @@ CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for interfacing with memcached via libmemcached library
-WWW=		https://pecl.php.net/package/memcached
+WWW=		https://pecl.php.net/package/memcached \
+		https://github.com/php-memcached-dev/php-memcached
 
 LICENSE=	PHP30
 LICENSE_FILE=	${WRKSRC}/LICENSE
