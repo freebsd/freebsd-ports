@@ -130,8 +130,6 @@ man/man1/suricata.1.gz
 %%DOCSDIR%%/Basic_Setup.txt
 %%DOCSDIR%%/GITGUIDE
 %%DOCSDIR%%/INSTALL
-%%DOCSDIR%%/INSTALL.PF_RING
-%%DOCSDIR%%/INSTALL.WINDOWS
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
 %%DOCSDIR%%/Setting_up_IPSinline_for_Linux.txt
