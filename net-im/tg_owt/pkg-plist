@@ -2512,32 +2512,44 @@ include/tg_owt/third_party/crc32c/src/src/crc32c_read_le.h
 include/tg_owt/third_party/crc32c/src/src/crc32c_round_up.h
 include/tg_owt/third_party/crc32c/src/src/crc32c_sse42.h
 include/tg_owt/third_party/crc32c/src/src/crc32c_sse42_check.h
+include/tg_owt/third_party/libsrtp/crypto/cipher/cipher_test_cases.h
+include/tg_owt/third_party/libsrtp/crypto/hash/auth_test_cases.h
 include/tg_owt/third_party/libsrtp/crypto/include/aes.h
-include/tg_owt/third_party/libsrtp/crypto/include/aes_gcm_ossl.h
+include/tg_owt/third_party/libsrtp/crypto/include/aes_gcm.h
 include/tg_owt/third_party/libsrtp/crypto/include/aes_icm.h
-include/tg_owt/third_party/libsrtp/crypto/include/aes_icm_ossl.h
+include/tg_owt/third_party/libsrtp/crypto/include/aes_icm_ext.h
 include/tg_owt/third_party/libsrtp/crypto/include/alloc.h
 include/tg_owt/third_party/libsrtp/crypto/include/auth.h
 include/tg_owt/third_party/libsrtp/crypto/include/cipher.h
 include/tg_owt/third_party/libsrtp/crypto/include/cipher_types.h
-include/tg_owt/third_party/libsrtp/crypto/include/config.h
+include/tg_owt/third_party/libsrtp/crypto/include/cipher_priv.h
 include/tg_owt/third_party/libsrtp/crypto/include/crypto_kernel.h
 include/tg_owt/third_party/libsrtp/crypto/include/crypto_types.h
 include/tg_owt/third_party/libsrtp/crypto/include/datatypes.h
 include/tg_owt/third_party/libsrtp/crypto/include/err.h
+include/tg_owt/third_party/libsrtp/crypto/include/hmac.h
 include/tg_owt/third_party/libsrtp/crypto/include/integers.h
 include/tg_owt/third_party/libsrtp/crypto/include/key.h
 include/tg_owt/third_party/libsrtp/crypto/include/null_auth.h
 include/tg_owt/third_party/libsrtp/crypto/include/null_cipher.h
 include/tg_owt/third_party/libsrtp/crypto/include/rdb.h
 include/tg_owt/third_party/libsrtp/crypto/include/rdbx.h
-include/tg_owt/third_party/libsrtp/crypto/include/stat.h
-include/tg_owt/third_party/libsrtp/include/config.h
-include/tg_owt/third_party/libsrtp/include/ekt.h
-include/tg_owt/third_party/libsrtp/include/getopt_s.h
+include/tg_owt/third_party/libsrtp/crypto/include/sha1.h
+include/tg_owt/third_party/libsrtp/fuzzer/fuzzer.h
+include/tg_owt/third_party/libsrtp/fuzzer/mt19937.h
+include/tg_owt/third_party/libsrtp/fuzzer/testmem.h
+include/tg_owt/third_party/libsrtp/config_in.h
+include/tg_owt/third_party/libsrtp/config_in_cmake.h
 include/tg_owt/third_party/libsrtp/include/srtp.h
 include/tg_owt/third_party/libsrtp/include/srtp_priv.h
-include/tg_owt/third_party/libsrtp/include/ut_sim.h
+include/tg_owt/third_party/libsrtp/include/stream_list_priv.h
+include/tg_owt/third_party/libsrtp/test/cutest.h
+include/tg_owt/third_party/libsrtp/test/getopt_s.h
+include/tg_owt/third_party/libsrtp/test/rtp.h
+include/tg_owt/third_party/libsrtp/test/rtp_decoder.h
+include/tg_owt/third_party/libsrtp/test/ut_sim.h
+include/tg_owt/third_party/libsrtp/test/util.h
+include/tg_owt/third_party/libsrtp_config/config.h
 include/tg_owt/third_party/libvpx/include/elf.h
 include/tg_owt/third_party/libvpx/source/config/linux/arm-neon-cpu-detect/vp8_rtcd.h
 include/tg_owt/third_party/libvpx/source/config/linux/arm-neon-cpu-detect/vp9_rtcd.h
@@ -2949,16 +2961,23 @@ lib/libtg_owt.a
 @dir include/tg_owt/third_party/crc32c/src/third_party/benchmark
 @dir include/tg_owt/third_party/crc32c/src/third_party/glog
 @dir include/tg_owt/third_party/crc32c/src/third_party/googletest
+@dir include/tg_owt/third_party/libsrtp/.github/workflows
 @dir include/tg_owt/third_party/libsrtp/crypto/cipher
 @dir include/tg_owt/third_party/libsrtp/crypto/hash
+@dir include/tg_owt/third_party/libsrtp/crypto/include
 @dir include/tg_owt/third_party/libsrtp/crypto/kernel
 @dir include/tg_owt/third_party/libsrtp/crypto/math
 @dir include/tg_owt/third_party/libsrtp/crypto/replay
 @dir include/tg_owt/third_party/libsrtp/crypto/test
+@dir include/tg_owt/third_party/libsrtp/cmake
+@dir include/tg_owt/third_party/libsrtp/doc
+@dir include/tg_owt/third_party/libsrtp/fuzzer/corpus
+@dir include/tg_owt/third_party/libsrtp/include/srtp2
 @dir include/tg_owt/third_party/libsrtp/srtp
 @dir include/tg_owt/third_party/libyuv/build_overrides
 @dir include/tg_owt/third_party/libyuv/docs
 @dir include/tg_owt/third_party/libyuv/infra/config
+@dir include/tg_owt/third_party/libyuv/riscv_script
 @dir include/tg_owt/third_party/libyuv/source
 @dir include/tg_owt/third_party/libyuv/tools_libyuv/autoroller/unittests/testdata
 @dir include/tg_owt/third_party/libyuv/tools_libyuv/msan
