@@ -1,5 +1,5 @@
 PORTNAME=	rabbitmq
-DISTVERSION=	3.11.10
+DISTVERSION=	3.11.17
 CATEGORIES=	net
 MASTER_SITES=	https://github.com/rabbitmq/rabbitmq-server/releases/download/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -11,7 +11,7 @@ WWW=		https://www.rabbitmq.com/
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE-MPL-RabbitMQ
 
-BUILD_DEPENDS=	erlang-runtime${_ERLANG_VER}>=${_ERLANG_VER}.2:lang/erlang-runtime${_ERLANG_VER} \
+BUILD_DEPENDS=	erlang-runtime${_ERLANG_VER}>=${_ERLANG_VER}:lang/erlang-runtime${_ERLANG_VER} \
 		elixir>=1.13.4:lang/elixir \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:devel/py-simplejson@${PY_FLAVOR} \
 		xmlto:textproc/xmlto \
@@ -72,7 +72,7 @@ post-install:
 	${STAGEDIR}${PREFIX}/etc/rabbitmq/advanced.config.sample
 	${INSTALL_DATA} ${WRKSRC}/deps/rabbit/docs/rabbitmq.conf.example \
 	${STAGEDIR}${PREFIX}/etc/rabbitmq/rabbitmq.conf.sample
-.for _file in rabbitmq-defaults rabbitmq-diagnostics rabbitmq-env rabbitmq-plugins rabbitmq-server rabbitmq-streams rabbitmq-upgrade rabbitmqctl
+.for _file in rabbitmq-defaults rabbitmq-diagnostics rabbitmq-env rabbitmq-plugins rabbitmq-queues rabbitmq-server rabbitmq-streams rabbitmq-tanzu rabbitmq-upgrade rabbitmqctl vmware-rabbitmq
 	${LN} -s ../lib/rabbitmq_server-${PORTVERSION}/sbin/${_file} ${STAGEDIR}${PREFIX}/sbin
 .endfor
 	${INSTALL_MAN} ${WRKSRC}/deps/rabbit/docs/*.8  ${STAGEDIR}${MAN1PREFIX}/man/man8
