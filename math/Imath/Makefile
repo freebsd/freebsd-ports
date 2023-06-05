@@ -2,6 +2,7 @@
 
 PORTNAME=	Imath
 PORTVERSION=	3.1.9
+DISTVERSIONPREFIX=	v
 PORTREVISION=	0
 CATEGORIES=	math devel graphics
 
@@ -14,7 +15,7 @@ LICENSE=	BSD3CLAUSE
 USES=		cmake compiler:c++14-lang pathfix pkgconfig
 
 USE_GITHUB=	yes
-GH_TUPLE=	AcademySoftwareFoundation:Imath:v${PORTVERSION}
+GH_ACCOUNT=	AcademySoftwareFoundation
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS+=	-DCMAKE_DEBUG_POSTFIX= \
