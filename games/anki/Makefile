@@ -1,5 +1,5 @@
 PORTNAME=	anki
-DISTVERSION=	2.1.62
+DISTVERSION=	2.1.65
 # Don't forget to update ${_MY_BUILDHASH} if DISTVERSION changes
 CATEGORIES=	games education python
 MASTER_SITES=	LOCAL/kai/:yarncache
@@ -44,8 +44,8 @@ USES=		cargo desktop-file-utils ninja nodejs:build pyqt:6 python:3.9+ \
 USE_GITHUB=	yes
 GH_ACCOUNT=	ankitects
 # Translation files
-GH_TUPLE=	ankitects:anki-core-i18n:7638cf0:ftlrslib \
-		ankitects:anki-desktop-ftl:e1abce4:ftlextra
+GH_TUPLE=	ankitects:anki-core-i18n:86ee592:ftlrslib \
+		ankitects:anki-desktop-ftl:e2d2a9e:ftlextra
 
 USE_PYQT=	pyqt6 sip:build webengine
 
@@ -63,7 +63,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		anstyle-0.3.5 \
 		anstyle-parse-0.1.1 \
 		anstyle-wincon-0.2.0 \
-		anyhow-1.0.70 \
+		anyhow-1.0.71 \
 		apple-bundles-0.17.0 \
 		arrayref-0.3.7 \
 		arrayvec-0.7.2 \
@@ -348,7 +348,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rand_core-0.5.1 \
 		rand_core-0.6.4 \
 		rand_hc-0.2.0 \
-		rand_pcg-0.2.1 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		rc2-0.8.1 \
@@ -542,7 +541,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-safe-6.0.4+zstd.1.5.4 \
 		zstd-sys-2.0.7+zstd.1.5.4 \
-		percent-encoding@git+https://github.com/ankitects/rust-url.git?rev=06a87b6c31c7e9a856a3fb058cb30b204c05b650\#06a87b6c31c7e9a856a3fb058cb30b204c05b650 \
+		percent-encoding-iri@git+https://github.com/ankitects/rust-url.git?rev=bb930b8d089f4d30d7d19c12e54e66191de47b88\#bb930b8d089f4d30d7d19c12e54e66191de47b88 \
 		csv,csv-core@git+https://github.com/ankitects/rust-csv.git?rev=1c9d3aab6f79a7d815c69f925a46a4590c115f90\#1c9d3aab6f79a7d815c69f925a46a4590c115f90 \
 		linkcheck@git+https://github.com/ankitects/linkcheck.git?rev=184b2ca50ed39ca43da13f0b830a463861adb9ca\#184b2ca50ed39ca43da13f0b830a463861adb9ca
 
@@ -583,7 +582,7 @@ MPV_RUN_DEPENDS=	mpv:multimedia/mpv
 # Should contain the most recent commit that reflects ${DISTVERSION} and must
 # be exactly 8 digits otherwise the check for newer versions won't work as
 # expected.
-_MY_BUILDHASH=	77dd1dc1
+_MY_BUILDHASH=	aa9a734f
 # Remove ${CARGO_BUILD_TARGET} from ${CARGO_ENV} to avoid problems with
 # hardcoded paths as the "runner" build system expects its components
 # in ${WRKSRC}/out/rust/debug
@@ -661,8 +660,6 @@ make-yarn-cache: patch
 	@${RM} -r ${_MY_YARNCACHE}
 	@cd ${WRKSRC} \
 		&& ${LOCALBASE}/bin/yarn --cache-folder ${_MY_YARNCACHE} install --ignore-scripts
-	@cd ${WRKSRC} \
-		&& ${LOCALBASE}/bin/yarn --cache-folder ${_MY_YARNCACHE} add patch-package
 	@cd ${WRKDIR} \
 		&& ${TAR} -czf ${PORTNAME}-yarn-cache-${DISTVERSION}${EXTRACT_SUFX} .yarn \
 		&& ${ECHO_CMD} "Please upload the file ${WRKDIR}/${PORTNAME}-yarn-cache-${DISTVERSION}${EXTRACT_SUFX}"

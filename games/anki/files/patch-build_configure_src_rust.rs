@@ -1,7 +1,7 @@
 Check for the OFFLINE_BUILD environment variable to prevent issuing the repo
 sync that requires git and an internet connection.
 
---- build/configure/src/rust.rs.orig	2023-03-31 02:32:25 UTC
+--- build/configure/src/rust.rs.orig	2023-05-31 05:19:10 UTC
 +++ build/configure/src/rust.rs
 @@ -1,6 +1,8 @@
  // Copyright: Ankitects Pty Ltd and contributors
@@ -9,18 +9,18 @@ sync that requires git and an internet connection.
  
 +use std::env;
 +
+ use ninja_gen::action::BuildAction;
+ use ninja_gen::build::FilesHandle;
  use ninja_gen::cargo::CargoBuild;
- use ninja_gen::cargo::CargoClippy;
- use ninja_gen::cargo::CargoFormat;
-@@ -8,6 +10,7 @@ use ninja_gen::git::SyncSubmodule;
+@@ -10,6 +12,7 @@ use ninja_gen::git::SyncSubmodule;
  use ninja_gen::cargo::CargoTest;
  use ninja_gen::cargo::RustOutput;
  use ninja_gen::git::SyncSubmodule;
 +use ninja_gen::git::SyncSubmoduleOffline;
  use ninja_gen::glob;
+ use ninja_gen::input::BuildInput;
  use ninja_gen::inputs;
- use ninja_gen::Build;
-@@ -24,18 +27,34 @@ fn prepare_translations(build: &mut Build) -> Result<(
+@@ -27,18 +30,34 @@ fn prepare_translations(build: &mut Build) -> Result<(
  
  fn prepare_translations(build: &mut Build) -> Result<()> {
      // ensure repos are checked out
