@@ -26,4 +26,6 @@ USE_PYTHON=	distutils autoplist
 USE_GNOME=	gtksourceview3:run glib20 gtk30 librsvg2 introspection
 PYDISTUTILS_INSTALLNOSINGLE=	nope
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
