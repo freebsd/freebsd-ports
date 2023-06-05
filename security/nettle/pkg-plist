@@ -78,11 +78,11 @@ include/nettle/yarrow.h
 lib/libhogweed.a
 lib/libhogweed.so
 lib/libhogweed.so.6
-lib/libhogweed.so.6.7
+lib/libhogweed.so.6.8
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.8
-lib/libnettle.so.8.7
+lib/libnettle.so.8.8
 libdata/pkgconfig/hogweed.pc
 libdata/pkgconfig/nettle.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
