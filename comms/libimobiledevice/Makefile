@@ -13,12 +13,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 SLAVE_PORT?=	no
 
-USES+=		cpe libtool localbase pathfix pkgconfig ssl tar:bzip2
+USES+=		cpe libtool localbase:ldflags pathfix pkgconfig ssl tar:bzip2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=openssl_CFLAGS="-I${OPENSSLINC}" \
 		openssl_LIBS="-L${OPENSSLLIB} -lssl -lcrypto"
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 .if ${SLAVE_PORT} == no
@@ -46,4 +44,10 @@ post-install:
 
 .endif # ${SLAVE_PORT} == no
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>
