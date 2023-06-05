@@ -1,5 +1,5 @@
 PORTNAME=	nokogiri
-PORTVERSION=	1.14.5
+PORTVERSION=	1.15.2
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		rubygem-mini_portile2>=2.8.0<2.9:devel/rubygem-mini_portile2 \
+		rubygem-mini_portile2>=2.8.2<2.9:devel/rubygem-mini_portile2 \
 		rubygem-pkg-config>=1.1<2:devel/rubygem-pkg-config
 # Do not add mini_portile2 to RUN_DEPENDS. Read ext/nokogiri/extconf.rb
 # and https://lists.freebsd.org/pipermail/svn-ports-all/2019-March/209423.html
