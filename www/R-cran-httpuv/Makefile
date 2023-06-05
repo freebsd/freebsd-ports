@@ -1,9 +1,9 @@
 PORTNAME=	httpuv
-PORTVERSION=	1.6.9
+DISTVERSION=	1.6.11
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	HTTP and WebSocket server library for R
 WWW=		https://cran.r-project.org/web/packages/httpuv/
 
