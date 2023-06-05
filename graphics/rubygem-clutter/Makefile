@@ -1,5 +1,5 @@
 PORTNAME=	clutter
-PORTVERSION=	4.1.6
+PORTVERSION=	4.1.7
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
