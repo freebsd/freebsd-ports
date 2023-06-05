@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2022-08-10 18:15:26 UTC
++++ CMakeLists.txt
+@@ -162,7 +162,7 @@ set(wartool_LIBS ${pudconvert_LIBS} ${PNG_LIBRARIES} $
+ 
+ if(WIN32 AND MSVC)
+ 	add_definitions(-D_CRT_SECURE_NO_WARNINGS -D_CRT_SECURE_NO_DEPRECATE=1)
+-else()
++elseif(FALSE)
+ 	include(CheckCXXSourceCompiles)
+ 	set(FS_SRC "
+ 	#include <experimental/filesystem> 
