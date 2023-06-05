@@ -1,6 +1,6 @@
 PORTNAME=	websh
 PORTVERSION=	3.6.0b5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	www tcl
 MASTER_SITES=	https://archive.apache.org/dist/tcl/${PORTNAME}/source/
 EXTRACT_SUFX=	-src.tar.gz
@@ -9,30 +9,34 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Embeds a TCL8 interpreter in the Apache server
 WWW=		https://tcl.apache.org/websh/
 
-MAKE_JOBS_UNSAFE=	yes
-
-LIBSUF=		${PORTVERSION:S/.//g}
+BROKEN_FreeBSD_14= Fails at post-build test stage
 
 USES=		apache autoreconf gmake tcl:tea
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/unix
 USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS+=--with-httpdinclude=`apxs -q includedir`
+
+MAKE_JOBS_UNSAFE=	yes
+
+CPPFLAGS+=	-I ${LOCALBASE}/include/apr-1
+.if !defined(NO_WERROR) && ${CC} == "cc" || ${CC:T:Mgcc*} != ""
+CPPFLAGS+=	-Wall -Werror
+.endif
+
 SUB_FILES=	httpd.conf pkgIndex.tcl pkg-message
 SUB_LIST+=	LIBSUF=${LIBSUF} WS_VER=${PORTVERSION}
 SUB_LIST+=	APACHEETCDIR=${APACHEETCDIR} APACHEMODDIR=${APACHEMODDIR}
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src/unix
 PLIST_SUB+=	LIBSUF=${LIBSUF}
 PLIST_SUB+=	NOMINORVERSION=${TCL_VER:C/8.[345]//:C/^..*/"@comment "/}
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
 
-CONFIGURE_ARGS+=--with-httpdinclude=`apxs -q includedir`
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-CPPFLAGS+=	-I ${LOCALBASE}/include/apr-1
-.if !defined(NO_WERROR) && ${CC} == "cc" || ${CC:T:Mgcc*} != ""
-CPPFLAGS+=	-Wall -Werror
-.endif
+LIBSUF=		${PORTVERSION:S/.//g}
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr/local/websh,${PREFIX},' \
