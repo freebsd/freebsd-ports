@@ -14,13 +14,12 @@ LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-XString>=0:textproc/p5-XString
 
 USES=		perl5
 USE_PERL5=	configure
 
 NO_ARCH=	yes
-
-CONFLICTS_INSTALL=	p5-Moo-[01]* p5-Moo-2.00[0-2]*
 
 .include <bsd.port.mk>
