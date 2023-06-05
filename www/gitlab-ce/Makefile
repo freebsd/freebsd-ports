@@ -1,6 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -121,7 +121,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-elasticsearch-api713>=7.13.3<7.13.4:textproc/rubygem-elasticsearch-api713 \
 	rubygem-aws-sdk-core3172>=3.172.0<3.173:devel/rubygem-aws-sdk-core3172 \
 	rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
-	rubygem-aws-sdk-s3>=1.122.0<1.123:devel/rubygem-aws-sdk-s3 \
+	rubygem-aws-sdk-s31122>=1.122.0<1.123:devel/rubygem-aws-sdk-s31122 \
 	rubygem-faraday_middleware-aws-sigv403>=0.3.0<0.4:devel/rubygem-faraday_middleware-aws-sigv403 \
 	rubygem-typhoeus>=1.4.0<1.5:www/rubygem-typhoeus \
 	rubygem-html-pipeline>=2.14.3<2.15:textproc/rubygem-html-pipeline \
@@ -140,11 +140,11 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-asciidoctor-kroki>=0.8.0<0.9:textproc/rubygem-asciidoctor-kroki \
 	rubygem-rouge>=4.1.0<4.2:textproc/rubygem-rouge \
 	rubygem-truncato>=0.7.11<0.8.0:textproc/rubygem-truncato \
-	rubygem-nokogiri>=1.14.3<1.15:textproc/rubygem-nokogiri \
+	rubygem-nokogiri114>=1.14.3<1.15:textproc/rubygem-nokogiri114 \
 	rubygem-icalendar>=0:devel/rubygem-icalendar \
 	rubygem-diffy>=3.4<4:textproc/rubygem-diffy \
 	rubygem-diff_match_patch>=0.1.0<0.2.0:textproc/rubygem-diff_match_patch \
-	rubygem-rack227>=2.2.7<2.3:www/rubygem-rack227 \
+	rubygem-rack22>=2.2.7,3<2.3,3:www/rubygem-rack22 \
 	rubygem-rack-timeout>=0.6.3<0.7:www/rubygem-rack-timeout \
 	rubygem-puma>=5.6.5<5.7:www/rubygem-puma \
 	rubygem-puma_worker_killer>=0.3.1:www/rubygem-puma_worker_killer \
