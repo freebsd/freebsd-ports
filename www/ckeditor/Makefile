@@ -2,7 +2,7 @@ PORTNAME=	ckeditor
 PORTVERSION=	4.21.0
 CATEGORIES=	www
 MASTER_SITES=	https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${PORTVERSION}/
-DISTNAME=	${PORTNAME}_${PORTVERSION}_full
+DISTNAME=	ckeditor_${PORTVERSION}_full
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	WYSIWYG editor to be used inside web page
@@ -17,7 +17,7 @@ USES=		cpe zip
 
 NO_ARCH=	yes
 NO_BUILD=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/ckeditor
 
 do-install:
 	cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${STAGEDIR}${WWWDIR}
