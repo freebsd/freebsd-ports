@@ -5,7 +5,7 @@
  dependencies = [
    "jupyter_ydoc>=0.2.0,<0.4.0",
 -  "ypy-websocket>=0.8.2,<0.9.0",
-+  "ypy-websocket>=0.8.2,<=0.9.0",
++  "ypy-websocket>=0.8.2,<=0.10.0",
    "jupyter_server_fileid >=0.6.0,<1"
  ]
  
