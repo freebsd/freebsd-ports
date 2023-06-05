@@ -1,3 +1,3 @@
-TIMESTAMP = 1675191697
-SHA256 (rubygem/aws-sdk-route53recoverycontrolconfig-1.13.0.gem) = 36da0480c03d624efe61df9cc57d9edab4b740f4d5e3fe3a37b67c8156e7ec3a
-SIZE (rubygem/aws-sdk-route53recoverycontrolconfig-1.13.0.gem) = 34304
+TIMESTAMP = 1685792920
+SHA256 (rubygem/aws-sdk-route53recoverycontrolconfig-1.14.0.gem) = bfc05603a5fdfc27feaa379b99c8461d7a019a1e446d7e6382240c7e1c30dbcc
+SIZE (rubygem/aws-sdk-route53recoverycontrolconfig-1.14.0.gem) = 34304
