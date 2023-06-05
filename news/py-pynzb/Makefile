@@ -14,6 +14,8 @@ LICENSE=	BSD3CLAUSE
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	LXML
 LXML_DESC=	Add support for py-lxml
 LXML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>=2.2.1:devel/py-lxml@${PY_FLAVOR}
