@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Oslo Concurrency library
-WWW=		https://docs.openstack.org/oslo.concurrency/latest/
+WWW=		https://docs.openstack.org/oslo.concurrency/latest/ \
+		https://github.com/openstack/oslo.concurrency
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
