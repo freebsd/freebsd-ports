@@ -1,4 +1,4 @@
---- Makefile.PL.orig	2022-02-01 13:38:25 UTC
+--- Makefile.PL.orig	2023-05-29 07:07:19 UTC
 +++ Makefile.PL
 @@ -22,25 +22,6 @@ my ($options,$lib_gd_path,$lib_ft_path,$lib_png_path,$
      $lib_tiff_path,$lib_webp_path,$lib_raqm_path,$lib_heif_path,$lib_avif_path,
@@ -42,7 +42,7 @@
 -Configure GD module.
 -
 - Options:
--     --options       "JPEG,GD2,FT,PNG,WEBP,GIF,XPM,ANIMGIF"   feature options, separated by commas
+-     --options       "JPEG,GD2,FT,PNG,WEBP,GIF,XPM,GIFANIM,WBMP,BMP" feature options, separated by commas
 -     --lib_gd_path   path            path to libgd (/usr/lib)
 -     --lib_ft_path   path            path to Freetype library (/usr)
 -     --lib_png_path  path            path to libpng (/usr)
