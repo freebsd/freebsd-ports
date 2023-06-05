@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Oslo Context library
-WWW=		https://docs.openstack.org/oslo.context/latest/
+WWW=		https://docs.openstack.org/oslo.context/latest/ \
+		https://github.com/openstack/oslo.context
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
