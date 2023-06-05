@@ -1,5 +1,5 @@
 PORTNAME=	will_paginate
-PORTVERSION=	3.3.1
+PORTVERSION=	4.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -11,8 +11,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe gem
-CPE_VENDOR=	mislav_marohnic
 
 NO_ARCH=	yes
+
+CPE_VENDOR=	mislav_marohnic
 
 .include <bsd.port.mk>
