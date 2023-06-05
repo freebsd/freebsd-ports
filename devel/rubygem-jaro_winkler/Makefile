@@ -1,5 +1,5 @@
 PORTNAME=	jaro_winkler
-PORTVERSION=	1.5.5
+PORTVERSION=	1.5.6
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
