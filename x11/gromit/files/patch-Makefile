@@ -1,6 +1,6 @@
---- Makefile.orig
+--- Makefile.orig	2004-10-13 22:04:27 UTC
 +++ Makefile
-@@ -7,4 +7,4 @@
+@@ -7,4 +7,4 @@ propertywatch: propertywatch.c
  	gcc -o propertywatch propertywatch.c `gtk-config --libs --cflags`
  
  gromit: gromit.c Makefile

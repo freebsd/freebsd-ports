@@ -11,13 +11,23 @@ WWW=		https://www.home.unix-ag.org/simon/gromit/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+	libfreetype.so:print/freetype2 \
+	libharfbuzz.so:print/harfbuzz
+
 USES=		gnome pkgconfig xorg
-USE_GNOME=	gtk20
+USE_GNOME=	cairo gdkpixbuf2 gtk20
 USE_XORG=	x11
 
 DOCS=		AUTHORS ChangeLog README
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/gromit ${STAGEDIR}${PREFIX}/bin
@@ -28,4 +38,4 @@ do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${DOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
