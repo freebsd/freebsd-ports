@@ -1,0 +1,10 @@
+--- nokogiri.gemspec.orig	2023-01-06 04:29:10 UTC
++++ nokogiri.gemspec
+@@ -26,7 +26,6 @@ Gem::Specification.new do |s|
+ 
+   s.specification_version = 4
+ 
+-  s.add_runtime_dependency(%q<mini_portile2>.freeze, ["~> 2.8.0"])
+   s.add_runtime_dependency(%q<racc>.freeze, ["~> 1.4"])
+   s.add_development_dependency(%q<bundler>.freeze, ["~> 2.2"])
+   s.add_development_dependency(%q<hoe-markdown>.freeze, ["~> 1.4"])
