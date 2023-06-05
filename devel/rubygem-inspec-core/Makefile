@@ -1,6 +1,5 @@
 PORTNAME=	inspec-core
-PORTVERSION=	4.56.20
-PORTREVISION=	1
+PORTVERSION=	5.22.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -13,8 +12,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-chef-telemetry>=1.0.8<2:sysutils/rubygem-chef-telemetry \
-		rubygem-faraday14>=0.9.0<1.5:www/rubygem-faraday14 \
-		rubygem-faraday_middleware>=1.0<2:www/rubygem-faraday_middleware \
+		rubygem-faraday>=1<3:www/rubygem-faraday \
+		rubygem-faraday-follow_redirects>=0.3<1:www/rubygem-faraday-follow_redirects \
 		rubygem-hashie4>=3.4<5:devel/rubygem-hashie4 \
 		rubygem-license-acceptance>=0.2.13<3.0:sysutils/rubygem-license-acceptance \
 		rubygem-method_source>=0.8<2.0:devel/rubygem-method_source \
@@ -30,7 +29,7 @@ RUN_DEPENDS=	rubygem-addressable>=2.4<3:www/rubygem-addressable \
 		rubygem-sslshake>=1.2<2:security/rubygem-sslshake \
 		rubygem-thor>=0.20<2.0:devel/rubygem-thor \
 		rubygem-tomlrb>=1.2<2.1:textproc/rubygem-tomlrb \
-		rubygem-train-core>=3.0<4:net/rubygem-train-core \
+		rubygem-train-core>=3.10<4:net/rubygem-train-core \
 		rubygem-tty-prompt>=0.17<1:devel/rubygem-tty-prompt \
 		rubygem-tty-table>=0.10<1:devel/rubygem-tty-table
 
