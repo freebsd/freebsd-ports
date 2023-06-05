@@ -1,12 +1,13 @@
 PORTNAME=	openstacksdk
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	SDK for building applications to work with OpenStack
-WWW=		https://docs.openstack.org/openstacksdk/latest/
+WWW=		https://docs.openstack.org/openstacksdk/latest/ \
+		https://github.com/openstack/openstacksdk
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
