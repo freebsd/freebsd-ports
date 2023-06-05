@@ -1,7 +1,6 @@
 PORTNAME=	criterion
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.4.1-13
-DISTVERSIONSUFFIX=	-g2f48d0f
+DISTVERSION=	2.4.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,8 @@ WWW=		https://github.com/Snaipe/Criterion
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} \
+BUILD_DEPENDS=	${LOCALBASE}/include/klib/khash.h:devel/klib \
+		${PYTHON_PKGNAMEPREFIX}protobuf>0:devel/py-protobuf@${PY_FLAVOR} \
 		nanopb>0:devel/nanopb \
 		cmake:devel/cmake-core \
 		protoc:devel/protobuf
@@ -27,10 +27,13 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	Snaipe
 GH_PROJECT=	Criterion
-GH_TUPLE=	attractivechaos:klib:cdb7e92:klib/dependencies/klib \
-		MrAnno:debugbreak:83bf7e9:debugbreak/dependencies/debugbreak
+GH_TUPLE=	MrAnno:debugbreak:83bf7e9:debugbreak
 
 SHEBANG_FILES=	src/protocol/gen-pb.py
+
+CFLAGS+=	-fPIC \
+		-I${LOCALBASE}/include/klib \
+		-I${WRKSRC_debugbreak}
 
 MESON_ARGS=	-Dtests=false -Dsamples=false
 
@@ -43,10 +46,9 @@ quick-test:
 		./a.out # test succeeds when simple::Test fails with assertion
 
 do-test:
-	@cd ${WRKSRC} && \
-		${RM} -rf _build && \
-		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS} -Dtests=true -Dsamples=false && \
+	cd ${WRKSRC} && \
+		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} --reconfigure ${CONFIGURE_ARGS} -Dtests=true && \
 	cd ${BUILD_WRKSRC} && \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} test
+		${DO_MAKE_BUILD} ${ALL_TARGET} test
 
 .include <bsd.port.mk>

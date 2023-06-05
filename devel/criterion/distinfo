@@ -1,7 +1,5 @@
-TIMESTAMP = 1678602173
-SHA256 (Snaipe-Criterion-v2.4.1-13-g2f48d0f_GH0.tar.gz) = 62a427b71fd7fce4a8fb82f72c3d2e1f6232821528c4add7aee435331ba4fefa
-SIZE (Snaipe-Criterion-v2.4.1-13-g2f48d0f_GH0.tar.gz) = 871145
-SHA256 (attractivechaos-klib-cdb7e92_GH0.tar.gz) = 659a9b920bc77a88c30e61053cfaecd673ab2120df31efadaf544c195415f390
-SIZE (attractivechaos-klib-cdb7e92_GH0.tar.gz) = 99298
+TIMESTAMP = 1685979400
+SHA256 (Snaipe-Criterion-v2.4.2_GH0.tar.gz) = 83e1a39c8c519fbef0d64057dc61c8100b3a5741595788c9f094bba2eeeef0df
+SIZE (Snaipe-Criterion-v2.4.2_GH0.tar.gz) = 874664
 SHA256 (MrAnno-debugbreak-83bf7e9_GH0.tar.gz) = 6ec24bdf3d361ec2bb7d128c56b8e870a1bb2d6b22eab3c2821eb1e15ccb8919
 SIZE (MrAnno-debugbreak-83bf7e9_GH0.tar.gz) = 7060
