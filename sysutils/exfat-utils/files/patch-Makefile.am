@@ -1,0 +1,8 @@
+--- Makefile.am.orig	2023-06-05 18:39:49 UTC
++++ Makefile.am
+@@ -20,4 +20,4 @@
+ #	51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+ #
+ 
+-SUBDIRS = libexfat attrib dump fsck fuse label mkfs
++SUBDIRS = libexfat attrib dump fsck label mkfs

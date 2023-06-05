@@ -1,0 +1,21 @@
+--- configure.ac.orig	2023-06-05 18:39:27 UTC
++++ configure.ac
+@@ -37,10 +37,6 @@ PKG_CHECK_MODULES([UBLIO], [libublio], [
+   AC_DEFINE([USE_UBLIO], [1],
+     [Define if block devices are not supported.])
+ ], [:])
+-PKG_CHECK_MODULES([FUSE3], [fuse3],
+-  [AC_DEFINE([FUSE_USE_VERSION], [30], [Required FUSE API version.])],
+-  [PKG_CHECK_MODULES([FUSE2], [fuse >= 2.6],
+-    [AC_DEFINE([FUSE_USE_VERSION], [26], [Required FUSE API version.])])])
+ case "$host_os" in
+   *-gnu)
+     AC_DEFINE([_XOPEN_SOURCE], [500], [Enable pread() and pwrite().])
+@@ -53,7 +49,6 @@ AC_CONFIG_FILES([
+ 	attrib/Makefile
+ 	dump/Makefile
+ 	fsck/Makefile
+-	fuse/Makefile
+ 	label/Makefile
+ 	mkfs/Makefile
+ 	Makefile])
