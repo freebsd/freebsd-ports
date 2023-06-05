@@ -1,5 +1,5 @@
-TIMESTAMP = 1684104360
-SHA256 (apsw-3.41.2.0.tar.gz) = 99905371d0fb423df84691371b3d1fee27efc09032f33a051b36c73b158fc34a
-SIZE (apsw-3.41.2.0.tar.gz) = 379762
-SHA256 (sqlite-autoconf-3410200.tar.gz) = e98c100dd1da4e30fa460761dab7c0b91a50b785e167f8c57acc46514fae9499
-SIZE (sqlite-autoconf-3410200.tar.gz) = 3125545
+TIMESTAMP = 1685792216
+SHA256 (apsw-3.42.0.0.tar.gz) = 8157920d1c11c072044aa14c7c0477ff6b1a36b5cd597127091a21fa10cf9208
+SIZE (apsw-3.42.0.0.tar.gz) = 371979
+SHA256 (sqlite-autoconf-3420000.tar.gz) = 7abcfd161c6e2742ca5c6c0895d1f853c940f203304a0b49da4e1eca5d088ca6
+SIZE (sqlite-autoconf-3420000.tar.gz) = 3148813
