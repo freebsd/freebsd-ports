@@ -7623,3 +7623,4 @@ editors/o|editors/orbiton|2023-06-04|Project was renamed
 databases/rubygem-pg14|databases/rubygem-pg|2023-06-05|Remove obsoleted port. Use databases/rubygem-pg instead
 databases/rubygem-redis-namespace18|databases/rubygem-redis-namespace|2023-06-05|Remove obsoleted port. Use databases/rubygem-redis-namespace instead
 devel/poetry|devel/py-poetry|2023-06-05|Remove obsoleted port. Use devel/py-poetry instead
+devel/py-dulwich020|devel/py-dulwich|2023-06-05|Remove obsoleted port. Use devel/py-dulwich instead
