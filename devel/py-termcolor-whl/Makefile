@@ -1,11 +1,13 @@
 PORTNAME=	termcolor-whl
-PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTVERSION=	1.1.3
 CATEGORIES=	devel python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
+DISTNAME=	termcolor_whl-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	ANSI Color formatting for output in terminal, successor to termcolor
+WWW=		https://github.com/matthewdeanmartin/termcolor
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -16,10 +18,5 @@ USES=		python:3.7+
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	matthewdeanmartin
-GH_PROJECT=	termcolor
-GH_TAGNAME=	4ecd396
 
 .include <bsd.port.mk>
