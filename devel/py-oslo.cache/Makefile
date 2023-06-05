@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Cache storage for OpenStack projects
-WWW=		https://docs.openstack.org/oslo.cache/latest/
+WWW=		https://docs.openstack.org/oslo.cache/latest/ \
+		https://github.com/openstack/oslo.cache
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
