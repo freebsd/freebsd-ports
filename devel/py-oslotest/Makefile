@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	kai@FreeBSD.org
 COMMENT=	Oslo test framework
-WWW=		https://docs.openstack.org/oslotest/
+WWW=		https://docs.openstack.org/oslotest/latest/ \
+		https://github.com/openstack/oslotest
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
