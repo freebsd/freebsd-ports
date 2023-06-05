@@ -1,5 +1,5 @@
---- utils.h.orig	Sun Mar 31 19:33:07 2002
-+++ utils.h	Sun Mar 31 19:33:11 2002
+--- utils.h.orig	2000-07-31 22:37:23 UTC
++++ utils.h
 @@ -7,7 +7,6 @@
  #ifndef _utils_h_
  #define _utils_h_

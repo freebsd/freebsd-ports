@@ -1,6 +1,6 @@
---- utils.c.orig	Sun Mar 31 19:32:45 2002
-+++ utils.c	Sun Mar 31 19:32:55 2002
-@@ -12,25 +12,6 @@
+--- utils.c.orig	2000-07-31 22:37:23 UTC
++++ utils.c
+@@ -12,25 +12,6 @@ static char rcsid[] = "@(#)$Id: utils.c,v 1.14 2000/07
  
  #include "os.h"
  

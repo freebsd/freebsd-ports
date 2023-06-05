@@ -1,5 +1,5 @@
---- Makefile.in.orig	2014-08-15 14:55:42.253003285 +0800
-+++ Makefile.in	2014-08-15 14:56:37.571000087 +0800
+--- Makefile.in.orig	2000-09-03 19:08:58 UTC
++++ Makefile.in
 @@ -33,17 +33,14 @@ sic	: $(OBJS)
  	$(CC) $(CFLAGS) $(OBJS) $(LDFLAGS) $(LIBS) -o sic
  
