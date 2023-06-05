@@ -1,6 +1,5 @@
 TDBC is the Tcl Database Connectivity, an abstraction layer for database
 drivers in the Tcl programming language. The interface is described in
-TIP 308 (http://www.tcl.tk/cgi-bin/tct/tip/308) with updates in TIP 350
-(http://www.tcl.tk/cgi-bin/tct/tip/350).
+TIP 308 with updates in TIP 350.
 
 Currently, drivers for MySQL, ODBC, PostgreSQL, and SQLite3 are included.
