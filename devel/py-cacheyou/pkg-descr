@@ -1,0 +1,2 @@
+CacheYou is a fork of CacheControl which is a port of the caching algorithms in
+httplib2 for use with requests session object.
