@@ -1,5 +1,5 @@
 PORTNAME=	gapic-common
-PORTVERSION=	0.18.0
+PORTVERSION=	0.19.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
