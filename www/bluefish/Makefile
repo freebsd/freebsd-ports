@@ -1,5 +1,5 @@
 PORTNAME=	bluefish
-DISTVERSION=	2.2.13
+DISTVERSION=	2.2.14
 CATEGORIES=	www editors
 MASTER_SITES=	https://www.bennewitz.com/bluefish/stable/source/ \
 		SF
@@ -20,23 +20,9 @@ USES=		desktop-file-utils gettext gmake gnome libtool localbase \
 USE_GNOME=	cairo gdkpixbuf2 intltool libxml2
 SHEBANG_FILES=	data/css_decompressor data/cssmin.py data/jsbeautify \
 		data/jsmin.py data/lorem-ipsum-generator \
-		src/plugin_zencoding/zencoding/actions/__init__.py \
-		src/plugin_zencoding/zencoding/actions/basic.py \
-		src/plugin_zencoding/zencoding/actions/token.py \
-		src/plugin_zencoding/zencoding/filters/__init__.py \
-		src/plugin_zencoding/zencoding/filters/comment.py \
-		src/plugin_zencoding/zencoding/filters/css.py \
-		src/plugin_zencoding/zencoding/filters/escape.py \
-		src/plugin_zencoding/zencoding/filters/format-css.py \
-		src/plugin_zencoding/zencoding/filters/format.py \
-		src/plugin_zencoding/zencoding/filters/haml.py \
-		src/plugin_zencoding/zencoding/filters/html.py \
-		src/plugin_zencoding/zencoding/filters/single-line.py \
-		src/plugin_zencoding/zencoding/filters/trim.py \
-		src/plugin_zencoding/zencoding/filters/xsl.py \
-		src/plugin_zencoding/zencoding/html_matcher.py \
-		src/plugin_zencoding/zencoding/resources.py \
-		src/plugin_zencoding/zencoding/utils.py
+		src/plugin_zencoding/zencoding/actions/*.py \
+		src/plugin_zencoding/zencoding/filters/*.py \
+		src/plugin_zencoding/zencoding/*.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-update-databases \
 		--with-freedesktop_org-menu=${PREFIX}/share/applications \
