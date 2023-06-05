@@ -1,4 +1,2 @@
 The oslo utils library provides support for common utility type functions, such
 as encoding, exception handling, string manipulation, and time handling.
-
-See also: https://github.com/openstack/oslo.utils
