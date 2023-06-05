@@ -1,5 +1,5 @@
 PORTNAME=	wordpress
-DISTVERSION=	6.1.1
+DISTVERSION=	6.1.3
 .ifndef WORDPRESS_LANG
 PORTEPOCH=	1
 MASTER_SITES=	https://wordpress.org/
