@@ -1,5 +1,3 @@
 The oslo.log (logging) configuration library provides standardized
 configuration for all openstack projects. It also provides custom formatters,
 handlers and support for context specific logging.
-
-See also: https://github.com/openstack/oslo.log

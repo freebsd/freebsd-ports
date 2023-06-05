@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Oslo Log library
-WWW=		https://docs.openstack.org/oslo.log/latest/
+WWW=		https://docs.openstack.org/oslo.log/latest/ \
+		https://github.com/openstack/oslo.log
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
