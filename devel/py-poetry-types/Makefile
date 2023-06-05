@@ -1,5 +1,5 @@
 PORTNAME=	poetry-types
-PORTVERSION=	0.3.6
+PORTVERSION=	0.4.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=21.3<24.0:devel/py-packaging@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}poetry>=1.2<2:devel/py-poetry@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}poetry>=1.5<2:devel/py-poetry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.11.4<0.12:textproc/py-tomlkit@${PY_FLAVOR}
 
 USES=		python:3.7+
