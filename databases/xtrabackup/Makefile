@@ -1,5 +1,5 @@
 PORTNAME=	xtrabackup
-DISTVERSION=	2.4.21
+DISTVERSION=	2.4.28
 CATEGORIES=	databases
 MASTER_SITES=	https://www.percona.com/downloads/Percona-XtraBackup-${PORTVERSION:R}/Percona-XtraBackup-${PORTVERSION}/source/tarball/:xtrabackup \
 		https://ftp.osuosl.org/pub/blfs/conglomeration/boost/:boost SF/boost/boost/1.59.0/:boost
