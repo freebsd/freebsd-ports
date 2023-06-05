@@ -2,6 +2,9 @@ bin/ebusd
 bin/ebusctl
 bin/ebusfeed
 bin/ebuspicloader
+%%MQTT%%%%ETCDIR%%/mqtt-hassio.cfg
+%%MQTT%%%%ETCDIR%%/mqtt-integration.cfg
+%%ETCDIR%%/knx.cfg
 @dir(%%USER%%,%%GROUP%%,750) %%RUNDIR%%
 @dir(%%USER%%,%%GROUP%%,750) %%LOGDIR%%
 @dir %%ETCDIR%%
