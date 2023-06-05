@@ -1,12 +1,13 @@
 PORTNAME=	cliff
-PORTVERSION=	4.2.0
+PORTVERSION=	4.3.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Command Line Interface Formulation Framework
-WWW=		https://docs.openstack.org/cliff/latest/
+WWW=		https://docs.openstack.org/cliff/latest/ \
+		https://github.com/openstack/cliff
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
