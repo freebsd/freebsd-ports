@@ -1,7 +1,7 @@
 PORTNAME=	libint2-psi4
 DISTVERSION=	0.1-${VERSION}
 CATEGORIES=	science
-MASTER_SITES=	https://github.com/loriab/libint/releases/download/v${DISTVERSION}/
+MASTER_SITES=	https://github.com/loriab/libint/releases/download/v${DISTVERSION:C/-.*//}/
 DISTFILES=	libint-${VERSION}-post1-5-4-3-6-5-4_mm4f12ob2_1.tgz
 
 MAINTAINER=	yuri@FreeBSD.org
