@@ -1,6 +1,6 @@
---- main.c.orig	Wed Apr 16 05:11:21 2003
-+++ main.c	Wed Apr 16 05:12:16 2003
-@@ -18,7 +18,7 @@
+--- main.c.orig	2002-04-26 20:36:46 UTC
++++ main.c
+@@ -18,7 +18,7 @@ extern int maxparts;
  #ifdef AFS
  #define CONFIGDIR "/var/mail2sms/"
  #else
