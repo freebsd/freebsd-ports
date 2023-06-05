@@ -1,0 +1,56 @@
+--- update-smart-drivedb.in.orig	2022-02-23 21:47:28 UTC
++++ update-smart-drivedb.in
+@@ -8,7 +8,7 @@
+ #
+ # SPDX-License-Identifier: GPL-2.0-or-later
+ #
+-# $Id: update-smart-drivedb.in 5332 2022-02-23 21:47:28Z chrfranke $
++# $Id$
+ #
+ 
+ set -e
+@@ -527,7 +527,7 @@ gpg_verify()
+   # Remove temp home dir, retry on failure
+   i=0
+   while ! out=`rm -f -r "$gnupgtmp" 2>&1`; do
+-    let ++i
++    i=$((i+1))
+     if [ $i -ge 10 ]; then
+       echo "$out" >&2; break
+     fi
+@@ -542,12 +542,14 @@ gpg_verify()
+ get_db_version()
+ {
+   local r v x
+-  x=$(sed -n '/^[ {]*"VERSION: *[^"]*"/{s,^[ {]*"VERSION: \([1-9][./0-9]* [^"]*\)".*$,\1,p;q}' "$1") \
+-  || return 1
++  x=`sed -n '/^[ {]*"VERSION: *[^"]*"/{
++       s,^[ {]*"VERSION: \([1-9][./0-9]* [^"]*\)".*$,\1,p
++       q
++     }' "$1"` || return 1
+   v=${x%% *}
+   test -n "$v" || return 0
+   if [ "${v%/*}" = "$v" ]; then # trunk: get rev from expanded SVN-Id
+-    r=$(echo "$x" | sed -n 's,^[^$]*\$''Id: drivedb\.h \([1-9][0-9]*\) .*$,\1,p')
++    r=`echo "$x" | sed -n 's,^[^$]*\$''Id: drivedb\.h \([1-9][0-9]*\) .*$,\1,p'`
+     test -n "$r" || r="?"
+     v="$v/$r"
+   fi
+@@ -860,7 +862,7 @@ if [ -z "$no_verify" ]; then
+ fi
+ 
+ # Get version
+-newver=$(get_db_version "$drivedb.new")
++newver=`get_db_version "$drivedb.new"`
+ if [ -z "$newver" ]; then
+   if [ -z "$force" ]; then
+     mv_all "$drivedb" ".new" ".error"
+@@ -905,7 +907,7 @@ if [ -n "$equal" ]; then
+ fi
+ 
+ # Check branch and file version
+-oldver=$(get_db_version "$drivedb")
++oldver=`get_db_version "$drivedb"`
+ test -n "$oldver" || oldver="?/?"
+ if    [ "${newver##*/}" = "?" ] \
+    || [ "${oldver##*/}" = "?" ] \
