@@ -1,12 +1,13 @@
 PORTNAME=	oslo.messaging
-PORTVERSION=	14.3.0
+PORTVERSION=	14.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Oslo Messaging API
-WWW=		https://docs.openstack.org/oslo.messaging/latest/
+WWW=		https://docs.openstack.org/oslo.messaging/latest/ \
+		https://github.com/openstack/oslo.messaging
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
