@@ -1,5 +1,5 @@
 PORTNAME=	ots
-PORTVERSION=	9.0.0
+PORTVERSION=	9.1.0
 CATEGORIES=	x11-fonts
 MASTER_SITES=	https://github.com/khaledhosny/ots/releases/download/v${PORTVERSION}/
 
@@ -23,7 +23,7 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 
 USES=		compiler:c++14-lang meson pkgconfig tar:xz
 
-MESON_ARGS=	--default-library=both -Ddebug=false -Dgraphite=true
+MESON_ARGS=	--default-library=both -Ddebug=false -Dgraphite=true -Dsynthesize-gvar=true
 USE_CXXSTD=	c++14
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
