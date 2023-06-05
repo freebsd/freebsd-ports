@@ -1,5 +1,6 @@
 PORTNAME=	pdk
 PORTVERSION=	2.7.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -22,7 +23,6 @@ RUN_DEPENDS=	rubygem-bundler>=1.15.0,1<3.0.0,1:sysutils/rubygem-bundler \
 		rubygem-diff-lcs>=1.4.4:textproc/rubygem-diff-lcs \
 		rubygem-facter>=2.5.1<5.0.0:sysutils/rubygem-facter \
 		rubygem-ffi>=1.9.25<2.0.0:devel/rubygem-ffi \
-		rubygem-gettext-setup0>=0.24<1:devel/rubygem-gettext-setup0 \
 		rubygem-hitimes>=2.0.0<2.0.0_99:devel/rubygem-hitimes \
 		rubygem-httpclient>=2.8.3<2.9:www/rubygem-httpclient \
 		rubygem-json_pure>=2.5.1:devel/rubygem-json_pure \
