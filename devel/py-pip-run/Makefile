@@ -1,5 +1,5 @@
 PORTNAME=	pip-run
-PORTVERSION=	10.1.1
+PORTVERSION=	11.0.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=56:devel/py-setuptools@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}autocommand>=0:devel/py-autocommand@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jaraco.context>=0:devel/py-jaraco.context@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jaraco.functools>=0:devel/py-jaraco.functools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jaraco.env>=0:devel/py-jaraco.env@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jaraco.functools>=3.7:devel/py-jaraco.functools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}jaraco.text>=0:devel/py-jaraco.text@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>=8.3:devel/py-more-itertools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR} \
