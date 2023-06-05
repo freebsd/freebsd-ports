@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Oslo Metrics API
-WWW=		https://docs.openstack.org/oslo.metrics/latest/
+WWW=		https://docs.openstack.org/oslo.metrics/latest/ \
+		https://github.com/openstack/oslo.metrics
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE

@@ -1,4 +1,2 @@
 This Oslo metrics API supports collecting metrics data from other Oslo libraries
 and exposing the metrics data to monitoring system.
-
-See also: https://github.com/openstack/oslo.metrics
