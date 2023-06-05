@@ -4123,7 +4123,6 @@
     SUBDIR += pmd
     SUBDIR += pmdk
     SUBDIR += poco
-    SUBDIR += poetry
     SUBDIR += popt
     SUBDIR += poser
     SUBDIR += poxml
