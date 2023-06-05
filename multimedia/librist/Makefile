@@ -24,8 +24,7 @@ MESON_ARGS=	-Dtest=false
 
 do-test:
 	@cd ${WRKSRC} && \
-		${RM} -r _build && \
-		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} ${CONFIGURE_ARGS} -Dtest=true && \
+		${SETENV} ${CONFIGURE_ENV} ${CONFIGURE_CMD} --reconfigure ${CONFIGURE_ARGS} -Dtest=true && \
 		cd ${BUILD_WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} test
 
