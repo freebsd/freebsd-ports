@@ -1,5 +1,6 @@
 bin/qml6
 bin/qmleasing6
+bin/qmlls6
 bin/qmlpreview6
 bin/qmlscene6
 %%QT_INCDIR%%/QtLabsAnimation/%%FULLVER%%/QtLabsAnimation/private/qqmlanimationglobal_p.h
@@ -1773,6 +1774,7 @@ lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsVersionlessTargets.cmake
 %%QT_BINDIR%%/qmleasing
 %%QT_BINDIR%%/qmlformat
 %%QT_BINDIR%%/qmllint
+%%QT_BINDIR%%/qmlls
 %%QT_BINDIR%%/qmlplugindump
 %%QT_BINDIR%%/qmlpreview
 %%QT_BINDIR%%/qmlprofiler
@@ -2598,6 +2600,7 @@ lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtTest/testlogger.js
 %%QT_QMLDIR%%/builtins.qmltypes
 %%QT_QMLDIR%%/jsroot.qmltypes
+libdata/ldconfig/qt6-declarative
 libdata/pkgconfig/Qt6LabsAnimation.pc
 libdata/pkgconfig/Qt6LabsFolderListModel.pc
 libdata/pkgconfig/Qt6LabsQmlModels.pc

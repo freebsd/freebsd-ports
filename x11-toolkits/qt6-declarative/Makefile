@@ -1,6 +1,6 @@
 PORTNAME=	declarative
 DISTVERSION=	${QT6_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	qt6-
 
@@ -26,7 +26,7 @@ USES=		cmake compiler:c++17-lang gettext-runtime gl gnome pkgconfig python:3.5+ 
 		qt-dist:6
 USE_GL=		opengl
 USE_GNOME=	glib20
-USE_QT=		base shadertools
+USE_QT=		base shadertools languageserver
 USE_XORG=	x11 xau xcb xdmcp
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
