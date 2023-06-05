@@ -1222,6 +1222,7 @@
     SUBDIR += libevdev
     SUBDIR += libevdevplus
     SUBDIR += libevent
+    SUBDIR += libevent-devel
     SUBDIR += libevt
     SUBDIR += libevtx
     SUBDIR += libewf
