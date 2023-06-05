@@ -13,8 +13,16 @@ LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		libtool
-HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+
+HAS_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.include <bsd.port.post.mk>
