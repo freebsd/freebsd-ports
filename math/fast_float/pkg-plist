@@ -1,0 +1,12 @@
+include/fast_float/ascii_number.h
+include/fast_float/bigint.h
+include/fast_float/constexpr_feature_detect.h
+include/fast_float/decimal_to_binary.h
+include/fast_float/digit_comparison.h
+include/fast_float/fast_float.h
+include/fast_float/fast_table.h
+include/fast_float/float_common.h
+include/fast_float/parse_number.h
+share/cmake/FastFloat/FastFloatConfig.cmake
+share/cmake/FastFloat/FastFloatConfigVersion.cmake
+share/cmake/FastFloat/fast_float-targets.cmake

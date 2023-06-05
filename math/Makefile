@@ -315,6 +315,7 @@
     SUBDIR += facile
     SUBDIR += faiss
     SUBDIR += fann
+    SUBDIR += fast_float
     SUBDIR += fastops
     SUBDIR += fcl
     SUBDIR += fcl05

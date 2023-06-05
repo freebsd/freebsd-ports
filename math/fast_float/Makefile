@@ -1,0 +1,25 @@
+PORTNAME=	fast_float
+PORTVERSION=	5.0.0
+DISTVERSIONPREFIX=	v
+CATEGORIES=	math
+
+MAINTAINER=	sunpoet@FreeBSD.org
+COMMENT=	Fast and exact C++ number parsing library
+WWW=		https://github.com/fastfloat/fast_float
+
+LICENSE=	APACHE20 BSL MIT
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE-APACHE
+LICENSE_FILE=	${WRKSRC}/LICENSE-BOOST
+LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
+
+USES=		cmake compiler:c++11-lang
+
+CMAKE_OFF=	FASTFLOAT_SANITIZE FASTFLOAT_TEST
+CMAKE_ON=	FASTFLOAT_INSTALL
+NO_ARCH=	yes
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	fastfloat
+
+.include <bsd.port.mk>
