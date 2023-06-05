@@ -1,3 +1,3 @@
-TIMESTAMP = 1674589862
-SHA256 (poetry_core-1.4.0.tar.gz) = 514bd33c30e0bf56b0ed44ee15e120d7e47b61ad908b2b1011da68c48a84ada9
-SIZE (poetry_core-1.4.0.tar.gz) = 529023
+TIMESTAMP = 1685792280
+SHA256 (poetry_core-1.6.0.tar.gz) = a9c7296a12d6c8e4f8aa50a66ef3c967b2b50fba634da144d358e676fad9989f
+SIZE (poetry_core-1.6.0.tar.gz) = 442129
