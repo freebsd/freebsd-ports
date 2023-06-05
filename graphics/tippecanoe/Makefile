@@ -21,6 +21,8 @@ PLIST_FILES=	bin/tile-join bin/tippecanoe bin/tippecanoe-decode \
 		bin/tippecanoe-enumerate bin/tippecanoe-json-tool \
 		man/man1/tippecanoe.1.gz
 
+.include <bsd.port.options.mk>
+
 # Suppress a clang-16 error on 32-bit arch:
 #  non-constant-expression cannot be narrowed from type 'uint64_t'
 .if ${ARCH} == i386
