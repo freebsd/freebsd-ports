@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-01-16 19:07:22 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ requires = ["setuptools>=61.2"]
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "Markups"
++name = "markups"
+ description = "A wrapper around various text markups"
+ readme = "README.rst"
+ authors = [{name = "Dmitry Shachnev", email = "mitya57@gmail.com"}]
