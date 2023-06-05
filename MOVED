@@ -7620,3 +7620,4 @@ net-mgmt/nrpe3|net-mgmt/nrpe|2023-06-03|Has expired: Fails to build with recent 
 games/spacezero||2023-06-03|Has expired: broken, abandoned upstream, depends on deprecated gtk2
 net/gnu-dico|net/dico|2023-06-03|Renamed to match upstream naming
 editors/o|editors/orbiton|2023-06-04|Project was renamed
+databases/rubygem-pg14|databases/rubygem-pg|2023-06-05|Remove obsoleted port. Use databases/rubygem-pg instead
