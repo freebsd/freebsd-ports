@@ -1,6 +1,6 @@
 PORTNAME=	OpenSP
 PORTVERSION=	1.5.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/openjade/${PORTNAME:tl}/${PORTVERSION}
 
@@ -19,6 +19,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-default-catalog=${PREFIX}/share/sgml/catalog \
 		--datadir=${PREFIX}/share/sgml/openjade \
 		--disable-doc-build
+
+CPPFLAGS+=	-Dregister=
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
