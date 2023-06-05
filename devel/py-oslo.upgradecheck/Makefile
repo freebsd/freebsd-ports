@@ -6,7 +6,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Common code for writing OpenStack upgrade checks
-WWW=		https://docs.openstack.org/oslo.upgradecheck/latest/
+WWW=		https://docs.openstack.org/oslo.upgradecheck/latest/ \
+		https://github.com/openstack/oslo.upgradecheck
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
