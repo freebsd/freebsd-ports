@@ -4,6 +4,7 @@
 %%SITE_PERL%%/Finance/Quote/ASX.pm
 %%SITE_PERL%%/Finance/Quote/AlphaVantage.pm
 %%SITE_PERL%%/Finance/Quote/BSEIndia.pm
+%%SITE_PERL%%/Finance/Quote/BVB.pm
 %%SITE_PERL%%/Finance/Quote/Bloomberg.pm
 %%SITE_PERL%%/Finance/Quote/Bourso.pm
 %%SITE_PERL%%/Finance/Quote/CSE.pm
@@ -27,10 +28,10 @@
 %%SITE_PERL%%/Finance/Quote/HU.pm
 %%SITE_PERL%%/Finance/Quote/IEXCloud.pm
 %%SITE_PERL%%/Finance/Quote/IndiaMutual.pm
-%%SITE_PERL%%/Finance/Quote/MStaruk.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarAU.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarCH.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarJP.pm
+%%SITE_PERL%%/Finance/Quote/MorningstarUK.pm
 %%SITE_PERL%%/Finance/Quote/NSEIndia.pm
 %%SITE_PERL%%/Finance/Quote/NZX.pm
 %%SITE_PERL%%/Finance/Quote/OnVista.pm
@@ -43,9 +44,9 @@
 %%SITE_PERL%%/Finance/Quote/TesouroDireto.pm
 %%SITE_PERL%%/Finance/Quote/Tiaacref.pm
 %%SITE_PERL%%/Finance/Quote/Tradegate.pm
-%%SITE_PERL%%/Finance/Quote/Tradeville.pm
 %%SITE_PERL%%/Finance/Quote/TreasuryDirect.pm
 %%SITE_PERL%%/Finance/Quote/Troweprice.pm
+%%SITE_PERL%%/Finance/Quote/TwelveData.pm
 %%SITE_PERL%%/Finance/Quote/Union.pm
 %%SITE_PERL%%/Finance/Quote/UserAgent.pm
 %%SITE_PERL%%/Finance/Quote/XETRA.pm
@@ -57,6 +58,7 @@
 %%PERL5_MAN3%%/Finance::Quote::ASX.3.gz
 %%PERL5_MAN3%%/Finance::Quote::AlphaVantage.3.gz
 %%PERL5_MAN3%%/Finance::Quote::BSEIndia.3.gz
+%%PERL5_MAN3%%/Finance::Quote::BVB.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Bloomberg.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Bourso.3.gz
 %%PERL5_MAN3%%/Finance::Quote::CSE.3.gz
@@ -80,10 +82,10 @@
 %%PERL5_MAN3%%/Finance::Quote::HU.3.gz
 %%PERL5_MAN3%%/Finance::Quote::IEXCloud.3.gz
 %%PERL5_MAN3%%/Finance::Quote::IndiaMutual.3.gz
-%%PERL5_MAN3%%/Finance::Quote::MStaruk.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarAU.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarCH.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarJP.3.gz
+%%PERL5_MAN3%%/Finance::Quote::MorningstarUK.3.gz
 %%PERL5_MAN3%%/Finance::Quote::NSEIndia.3.gz
 %%PERL5_MAN3%%/Finance::Quote::NZX.3.gz
 %%PERL5_MAN3%%/Finance::Quote::OnVista.3.gz
@@ -96,9 +98,9 @@
 %%PERL5_MAN3%%/Finance::Quote::TesouroDireto.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Tiaacref.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Tradegate.3.gz
-%%PERL5_MAN3%%/Finance::Quote::Tradeville.3.gz
 %%PERL5_MAN3%%/Finance::Quote::TreasuryDirect.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Troweprice.3.gz
+%%PERL5_MAN3%%/Finance::Quote::TwelveData.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Union.3.gz
 %%PERL5_MAN3%%/Finance::Quote::XETRA.3.gz
 %%PERL5_MAN3%%/Finance::Quote::YahooJSON.3.gz
