@@ -7629,3 +7629,4 @@ net/rubygem-u2f0|net/rubygem-u2f|2023-06-05|Remove obsoleted port. Use net/rubyg
 security/rubygem-omniauth-cas3-oauth2|security/rubygem-omniauth-cas3|2023-06-05|Remove obsoleted port. Use security/rubygem-omniauth-cas3 instead
 textproc/rubygem-loofah220|textproc/rubygem-loofah|2023-06-05|Remove obsoleted port. Use textproc/rubygem-loofah instead
 textproc/rubygem-loofah221|textproc/rubygem-loofah|2023-06-05|Remove obsoleted port. Use textproc/rubygem-loofah instead
+www/rubygem-rack227|www/rubygem-rack22|2023-06-05|Remove obsoleted port. Use www/rubygem-rack22 instead
