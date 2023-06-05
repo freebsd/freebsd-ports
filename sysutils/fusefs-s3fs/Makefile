@@ -1,6 +1,6 @@
 PORTNAME=	s3fs
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.91
+DISTVERSION=	1.92
 CATEGORIES=	sysutils
 PKGNAMEPREFIX=	fusefs-
 
@@ -21,6 +21,8 @@ GH_ACCOUNT=	s3fs-fuse
 GH_PROJECT=	s3fs-fuse
 
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ENV+=	ac_cv_prog_GITCMD=no
 
 PLIST_FILES=	bin/s3fs man/man1/s3fs.1.gz
 
