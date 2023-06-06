@@ -1,9 +1,10 @@
 PORTNAME=	eternalterminal
 DISTVERSIONPREFIX=	et-v
 DISTVERSION=	6.2.4
+PORTREVISION=	1
 CATEGORIES=	net
 
-MAINTAINER=	willtisdale@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remote shell that reconnects without interrupting session
 WWW=		https://eternalterminal.dev/
 
@@ -16,7 +17,7 @@ LIB_DEPENDS=	libgflags.so:devel/gflags \
 		libsodium.so:security/libsodium \
 		libunwind.so:devel/libunwind
 
-USES=		cmake compiler:c++11-lang ncurses
+USES=		cmake compiler:c++11-lang ncurses ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	MisterTea
 GH_PROJECT=	EternalTerminal
