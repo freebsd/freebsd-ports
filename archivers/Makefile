@@ -68,7 +68,6 @@
     SUBDIR += libmspack
     SUBDIR += libpar2
     SUBDIR += librtfcomp
-    SUBDIR += libunrar
     SUBDIR += libunrar6
     SUBDIR += libzip
     SUBDIR += libzippp
