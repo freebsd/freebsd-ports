@@ -1,6 +1,7 @@
-GeographicLib is a small set of C++ classes for performing conversions
-between geographic, UTM, UPS, MGRS, geocentric, and local cartesian
-coordinates, for gravity (e.g., EGM2008), geoid height, and geomagnetic
-field (e.g., WMM2020) calculations, and for solving geodesic problems.
+GeographicLib is a small C++ library for
 
-It is a suitable replacement for the core functionality provided by geotrans.
+* geodesic and rhumb line calculations;
+* conversions between geographic, UTM, UPS, MGRS, geocentric, and local
+  cartesian coordinates;
+* gravity (e.g., EGM2008) and geomagnetic field (e.g., WMM2020)
+  calculations.
