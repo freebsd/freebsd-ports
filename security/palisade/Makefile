@@ -48,4 +48,10 @@ OPENMP_CMAKE_BOOL=	WITH_OPENMP
 HEXL_CMAKE_BOOL=	WITH_HEXL
 HEXL_LIB_DEPENDS=	libhexl.so:security/hexl
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CXXFLAGS+=	-Wno-error=unused-but-set-variable
+.endif
+
+.include <bsd.port.post.mk>
