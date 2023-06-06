@@ -58,6 +58,11 @@ USE_QT=		base multimedia svg
 
 CONFLICTS_INSTALL=	${PORTNAME}
 
+pre-patch:	${FLAVOR}-pre-patch
+${FLAVOR}-pre-patch:
+# XXX Drop after reverting https://github.com/RPCS3/rpcs3/commit/5e6aa45658ef
+	@${REINPLACE_CMD} '/quarterly/s/^#//' ${WRKSRC}/.ci/install-freebsd.sh
+
 post-patch:	${FLAVOR}-post-patch
 ${FLAVOR}-post-patch:
 # XXX Drop after devel/qt6-base >= 6.5 update
