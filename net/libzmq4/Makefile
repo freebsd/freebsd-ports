@@ -5,6 +5,9 @@ CATEGORIES=	net
 MASTER_SITES=	https://github.com/zeromq/libzmq/releases/download/${DISTVERSIONFULL}/
 DISTNAME=	zeromq-${DISTVERSION}
 
+PATCH_SITES=	https://github.com/zeromq/libzmq/commit/
+PATCHFILES=	438d5d88392baffa6c2c5e0737d9de19d6686f0d.patch:-p1
+
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	ZeroMQ core library (Version 4)
 WWW=		https://www.zeromq.org/
