@@ -1,3 +1,31 @@
+  <vuln vid="2f38c6a2-04a4-11ee-8cb0-e41f13b9c674">
+    <topic>qpress -- directory traversal</topic>
+    <affects>
+      <package>
+	<name>qpress</name>
+	<range><lt>11.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://github.com/EvgeniyPatlan/qpress/commit/ddb312090ebd5794e81bc6fb1dfb4e79eda48761">
+	  <p>qpress before PierreLvx/qpress 20220819 and before version 11.3,
+	as used in Percona XtraBackup and other products, allows directory
+	traversal via ../ in a .qp file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-45866</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2022-45866</url>
+    </references>
+    <dates>
+      <discovery>2022-11-23</discovery>
+      <entry>2023-06-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="bfca647c-0456-11ee-bafd-b42e991fc52e">
     <topic>Kanboard -- Multiple vulnerabilities</topic>
     <affects>
