@@ -1,3 +1,43 @@
+  <vuln vid="bfca647c-0456-11ee-bafd-b42e991fc52e">
+    <topic>Kanboard -- Multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php80-kanboard</name>
+	<range><lt>1.2.30</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p></p>
+	<p>Kanboard is project management software that focuses on the Kanban
+	methodology. The last update includes 4 vulnerabilities:</p>
+	<p>security-advisories@github.com reports:</p>
+	<blockquote cite="https://github.com/kanboard/kanboard/commit/b501ef44bc28ee9cf603a4fa446ee121d66f652f">
+	  <ul>
+	    <li>Missing access control in internal task links feature</li>
+	    <li>Stored Cross site scripting in the Task External Link Functionality in Kanboard</li>
+	    <li>Missing Access Control allows User to move and duplicate tasks in Kanboard</li>
+	    <li>Parameter based Indirect Object Referencing leading to private file exposure in Kanboard</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-33970</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-33970</url>
+      <cvename>CVE-2023-33969</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-33969</url>
+      <cvename>CVE-2023-33968</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-33968</url>
+      <cvename>CVE-2023-33956</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-33956</url>
+    </references>
+    <dates>
+      <discovery>2023-06-05</discovery>
+      <entry>2023-06-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="eb9a3c57-ff9e-11ed-a0d1-84a93843eb75">
     <topic>OpenSSL -- Possible DoS translating ASN.1 identifiers</topic>
     <affects>
