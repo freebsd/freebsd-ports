@@ -486,6 +486,7 @@ SYSLOG_DESC?=		Syslog logging support
 SZIP_DESC?=		Szip compression support
 TCL_DESC?=		Tcl scripting language support
 TCLTK_DESC?=		Tcl/Tk GUI toolkit support
+TCMALLOC_DESC?=		Use google perftools memory allocator
 TELNET_DESC?=		Telnet support
 TEST_DESC?=		Build and/or run tests
 TFTP_DESC?=		TFTP support
