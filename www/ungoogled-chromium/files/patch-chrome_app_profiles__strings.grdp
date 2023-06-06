@@ -1,6 +1,6 @@
---- chrome/app/profiles_strings.grdp.orig	2022-10-01 07:40:07 UTC
+--- chrome/app/profiles_strings.grdp.orig	2023-06-05 19:39:05 UTC
 +++ chrome/app/profiles_strings.grdp
-@@ -66,7 +66,7 @@
+@@ -60,7 +60,7 @@
        Add Profile...
      </message>
    </if>

@@ -1,6 +1,6 @@
---- chrome/browser/ui/webui/management/management_ui_handler.cc.orig	2023-03-10 11:01:21 UTC
+--- chrome/browser/ui/webui/management/management_ui_handler.cc.orig	2023-06-05 19:39:05 UTC
 +++ chrome/browser/ui/webui/management/management_ui_handler.cc
-@@ -170,7 +170,7 @@ enum class ReportingType {
+@@ -171,7 +171,7 @@ enum class ReportingType {
    kUserActivity
  };
  
@@ -9,7 +9,7 @@
  const char kManagementScreenCaptureEvent[] = "managementScreenCaptureEvent";
  const char kManagementScreenCaptureData[] = "managementScreenCaptureData";
  #endif  // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
-@@ -966,7 +966,7 @@ base::Value::Dict ManagementUIHandler::GetThreatProtec
+@@ -967,7 +967,7 @@ base::Value::Dict ManagementUIHandler::GetThreatProtec
                                    &info);
    }
  

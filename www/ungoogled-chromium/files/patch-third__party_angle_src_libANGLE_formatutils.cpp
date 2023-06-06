@@ -1,6 +1,6 @@
---- third_party/angle/src/libANGLE/formatutils.cpp.orig	2023-05-05 12:12:41 UTC
+--- third_party/angle/src/libANGLE/formatutils.cpp.orig	2023-06-05 19:39:05 UTC
 +++ third_party/angle/src/libANGLE/formatutils.cpp
-@@ -1485,7 +1485,7 @@ static InternalFormatInfoMap BuildInternalFormatInfoMa
+@@ -1473,7 +1473,7 @@ static InternalFormatInfoMap BuildInternalFormatInfoMa
      AddYUVFormat(&map,  GL_G8_B8R8_2PLANE_420_UNORM_ANGLE,            true,   8,   8,  8,   0,  0,  GL_G8_B8R8_2PLANE_420_UNORM_ANGLE,    GL_UNSIGNED_BYTE, GL_UNSIGNED_NORMALIZED, false, RequireExt<&Extensions::yuvInternalFormatANGLE>,          RequireExt<&Extensions::yuvInternalFormatANGLE>,          RequireExt<&Extensions::yuvInternalFormatANGLE>,          NeverSupported, NeverSupported);
      AddYUVFormat(&map,  GL_G8_B8_R8_3PLANE_420_UNORM_ANGLE,           true,   8,   8,  8,   0,  0,  GL_G8_B8_R8_3PLANE_420_UNORM_ANGLE,   GL_UNSIGNED_BYTE, GL_UNSIGNED_NORMALIZED, false, RequireExt<&Extensions::yuvInternalFormatANGLE>,          RequireExt<&Extensions::yuvInternalFormatANGLE>,          RequireExt<&Extensions::yuvInternalFormatANGLE>,          NeverSupported, NeverSupported);
  

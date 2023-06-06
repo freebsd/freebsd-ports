@@ -1,4 +1,4 @@
---- content/browser/webui/web_ui_main_frame_observer.cc.orig	2023-03-10 11:01:21 UTC
+--- content/browser/webui/web_ui_main_frame_observer.cc.orig	2023-06-05 19:39:05 UTC
 +++ content/browser/webui/web_ui_main_frame_observer.cc
 @@ -13,7 +13,7 @@
  #include "content/public/browser/navigation_handle.h"
@@ -27,7 +27,7 @@
  void WebUIMainFrameObserver::OnDidAddMessageToConsole(
      RenderFrameHost* source_frame,
      blink::mojom::ConsoleMessageLevel log_level,
-@@ -163,7 +163,7 @@ void WebUIMainFrameObserver::ReadyToCommitNavigation(
+@@ -167,7 +167,7 @@ void WebUIMainFrameObserver::ReadyToCommitNavigation(
  
  // TODO(crbug.com/1129544) This is currently disabled due to Windows DLL
  // thunking issues. Fix & re-enable.

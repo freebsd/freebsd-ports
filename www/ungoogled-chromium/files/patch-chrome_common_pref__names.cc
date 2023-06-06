@@ -1,6 +1,6 @@
---- chrome/common/pref_names.cc.orig	2023-05-05 12:12:41 UTC
+--- chrome/common/pref_names.cc.orig	2023-06-05 19:39:05 UTC
 +++ chrome/common/pref_names.cc
-@@ -1151,7 +1151,7 @@ const char kUseAshProxy[] = "lacros.proxy.use_ash_prox
+@@ -1181,7 +1181,7 @@ const char kUseAshProxy[] = "lacros.proxy.use_ash_prox
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
  // Linux specific preference on whether we should match the system theme.
  const char kUsesSystemThemeDeprecated[] = "extensions.theme.use_system";
  const char kSystemTheme[] = "extensions.theme.system_theme";
-@@ -1255,7 +1255,7 @@ const char kShowUpdatePromotionInfoBar[] =
+@@ -1288,7 +1288,7 @@ const char kShowUpdatePromotionInfoBar[] =
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -18,7 +18,7 @@
  // Boolean that is false if we should show window manager decorations.  If
  // true, we draw a custom chrome frame (thicker title bar and blue border).
  const char kUseCustomChromeFrame[] = "browser.custom_chrome_frame";
-@@ -1759,7 +1759,7 @@ const char kDownloadDirUpgraded[] = "download.director
+@@ -1789,7 +1789,7 @@ const char kDownloadDirUpgraded[] = "download.director
  const char kDownloadLastCompleteTime[] = "download.last_complete_time";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -27,7 +27,7 @@
  const char kOpenPdfDownloadInSystemReader[] =
      "download.open_pdf_in_system_reader";
  #endif
-@@ -2179,7 +2179,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
+@@ -2220,7 +2220,7 @@ const char kAmbientAuthenticationInPrivateModesEnabled
  // requests.
  const char kBasicAuthOverHttpEnabled[] = "auth.basic_over_http_enabled";
  
@@ -36,7 +36,7 @@
  // Boolean that specifies whether OK-AS-DELEGATE flag from KDC is respected
  // along with kAuthNegotiateDelegateAllowlist.
  const char kAuthNegotiateDelegateByKdcPolicy[] =
-@@ -3209,7 +3209,7 @@ const char kFileOrDirectoryPickerWithoutGestureAllowed
+@@ -3248,7 +3248,7 @@ const char kFileOrDirectoryPickerWithoutGestureAllowed
  const char kSandboxExternalProtocolBlocked[] =
      "profile.sandbox_external_protocol_blocked";
  
@@ -45,7 +45,7 @@
  // Boolean that indicates if system notifications are allowed to be used in
  // place of Chrome notifications.
  const char kAllowSystemNotifications[] = "system_notifications.allowed";
-@@ -3262,7 +3262,7 @@ const char kCACertificateManagementAllowed[] =
+@@ -3301,7 +3301,7 @@ const char kCACertificateManagementAllowed[] =
  const char kChromeRootStoreEnabled[] = "chrome_root_store_enabled";
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -54,7 +54,7 @@
  const char kEnforceLocalAnchorConstraintsEnabled[] =
      "enforce_local_anchor_constraints_enabled";
  #endif
-@@ -3585,7 +3585,7 @@ const char kThrottleNonVisibleCrossOriginIframesAllowe
+@@ -3629,7 +3629,7 @@ const char kThrottleNonVisibleCrossOriginIframesAllowe
  const char kNewBaseUrlInheritanceBehaviorAllowed[] =
      "new_base_url_inheritance_behavior_allowed";
  

@@ -1,6 +1,6 @@
---- extensions/common/api/runtime.json.orig	2022-10-01 07:40:07 UTC
+--- extensions/common/api/runtime.json.orig	2023-06-05 19:39:05 UTC
 +++ extensions/common/api/runtime.json
-@@ -86,7 +86,8 @@
+@@ -89,7 +89,8 @@
            "cros",
            "linux",
            "openbsd",

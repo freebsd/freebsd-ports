@@ -1,11 +1,11 @@
---- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2023-05-05 12:12:41 UTC
+--- gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc.orig	2023-06-05 19:39:05 UTC
 +++ gpu/command_buffer/service/shared_image/external_vk_image_backing_factory.cc
-@@ -192,7 +192,7 @@ bool ExternalVkImageBackingFactory::IsSupported(
+@@ -201,7 +201,7 @@ bool ExternalVkImageBackingFactory::IsSupported(
+     return false;
+   }
  
-   // TODO: remove it when below formats are converted to multi plane shared
-   // image formats.
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   switch (format.resource_format()) {
-     case viz::YUV_420_BIPLANAR:
-     case viz::YUVA_420_TRIPLANAR:
+   if (format.IsLegacyMultiplanar()) {
+     // ExternalVkImageBacking doesn't work properly with external sampler
+     // multi-planar formats on Linux, see https://crbug.com/1394888.

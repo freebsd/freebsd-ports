@@ -1,6 +1,6 @@
---- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc.orig	2023-05-05 12:12:41 UTC
+--- components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc.orig	2023-06-05 19:39:05 UTC
 +++ components/viz/service/frame_sinks/root_compositor_frame_sink_impl.cc
-@@ -102,7 +102,7 @@ RootCompositorFrameSinkImpl::Create(
+@@ -103,7 +103,7 @@ RootCompositorFrameSinkImpl::Create(
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
    // For X11, we need notify client about swap completion after resizing, so the
    // client can use it for synchronize with X11 WM.
    output_surface->SetNeedsSwapSizeNotifications(true);
-@@ -607,7 +607,7 @@ void RootCompositorFrameSinkImpl::DisplayDidCompleteSw
+@@ -617,7 +617,7 @@ void RootCompositorFrameSinkImpl::DisplayDidCompleteSw
      display_client_->DidCompleteSwapWithSize(pixel_size);
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

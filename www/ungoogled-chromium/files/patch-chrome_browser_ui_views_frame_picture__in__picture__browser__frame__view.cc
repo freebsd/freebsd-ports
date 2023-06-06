@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc.orig	2023-05-05 12:12:41 UTC
+--- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc.orig	2023-06-05 19:39:05 UTC
 +++ chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.cc
-@@ -40,7 +40,7 @@
+@@ -42,7 +42,7 @@
  #include "ui/aura/window.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/ui/views/frame/browser_frame_view_paint_utils_linux.h"
  #include "chrome/browser/ui/views/frame/desktop_browser_frame_aura_linux.h"
  #endif
-@@ -61,7 +61,7 @@ constexpr int kBackToTabImageSize = 16;
+@@ -63,7 +63,7 @@ constexpr int kBackToTabImageSize = 16;
  // The height of the controls bar at the top of the window.
  constexpr int kTopControlsHeight = 30;
  
@@ -18,7 +18,7 @@
  // Frame border when window shadow is not drawn.
  constexpr int kFrameBorderThickness = 4;
  #endif
-@@ -151,7 +151,7 @@ class WindowEventObserver : public ui::EventObserver {
+@@ -153,7 +153,7 @@ class WindowEventObserver : public ui::EventObserver {
  
      gfx::Rect input_bounds = pip_browser_frame_view_->GetLocalBounds();
  
@@ -27,7 +27,7 @@
      // Calculate input bounds for Linux. This is needed because the input bounds
      // is not necessary the same as the local bounds on Linux.
      if (pip_browser_frame_view_->ShouldDrawFrameShadow()) {
-@@ -341,7 +341,7 @@ PictureInPictureBrowserFrameView::PictureInPictureBrow
+@@ -350,7 +350,7 @@ PictureInPictureBrowserFrameView::PictureInPictureBrow
    hide_close_button_animation_.set_continuous(false);
    hide_close_button_animation_.set_delegate(this);
  
@@ -36,7 +36,7 @@
    frame_background_ = std::make_unique<views::FrameBackground>();
  #endif
  
-@@ -469,7 +469,7 @@ void PictureInPictureBrowserFrameView::OnThemeChanged(
+@@ -480,7 +480,7 @@ void PictureInPictureBrowserFrameView::OnThemeChanged(
    for (ContentSettingImageView* view : content_setting_views_)
      view->SetIconColor(color_provider->GetColor(kColorPipWindowForeground));
  
@@ -45,7 +45,7 @@
    // On Linux the top bar background will be drawn in OnPaint().
    top_bar_container_view_->SetBackground(views::CreateSolidBackground(
        color_provider->GetColor(kColorPipWindowTopBarBackground)));
-@@ -514,7 +514,7 @@ void PictureInPictureBrowserFrameView::RemovedFromWidg
+@@ -525,7 +525,7 @@ void PictureInPictureBrowserFrameView::RemovedFromWidg
    BrowserNonClientFrameView::RemovedFromWidget();
  }
  
@@ -54,7 +54,7 @@
  gfx::Insets PictureInPictureBrowserFrameView::MirroredFrameBorderInsets()
      const {
    auto border = FrameBorderInsets();
-@@ -715,7 +715,7 @@ void PictureInPictureBrowserFrameView::AnimationProgre
+@@ -726,7 +726,7 @@ void PictureInPictureBrowserFrameView::AnimationProgre
  // views::View implementations:
  
  void PictureInPictureBrowserFrameView::OnPaint(gfx::Canvas* canvas) {
@@ -63,7 +63,7 @@
    // Draw the PiP window frame borders and shadows, including the top bar
    // background.
    if (window_frame_provider_) {
-@@ -838,7 +838,7 @@ void PictureInPictureBrowserFrameView::UpdateTopBarVie
+@@ -849,7 +849,7 @@ void PictureInPictureBrowserFrameView::UpdateTopBarVie
  }
  
  gfx::Insets PictureInPictureBrowserFrameView::FrameBorderInsets() const {
@@ -72,7 +72,7 @@
    if (window_frame_provider_) {
      const auto insets = window_frame_provider_->GetFrameThicknessDip();
      const auto tiled_edges = frame()->tiled_edges();
-@@ -859,7 +859,7 @@ gfx::Insets PictureInPictureBrowserFrameView::FrameBor
+@@ -870,7 +870,7 @@ gfx::Insets PictureInPictureBrowserFrameView::FrameBor
  }
  
  gfx::Insets PictureInPictureBrowserFrameView::ResizeBorderInsets() const {
@@ -81,8 +81,8 @@
    return FrameBorderInsets();
  #else
    return gfx::Insets(kResizeBorder);
-@@ -870,7 +870,7 @@ int PictureInPictureBrowserFrameView::GetTopAreaHeight
-   return FrameBorderInsets().top() + kTopControlsHeight;
+@@ -889,7 +889,7 @@ gfx::Size PictureInPictureBrowserFrameView::GetNonClie
+                    top_height + border_thickness.bottom());
  }
  
 -#if BUILDFLAG(IS_LINUX)

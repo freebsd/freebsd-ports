@@ -1,6 +1,6 @@
---- components/embedder_support/user_agent_utils_unittest.cc.orig	2023-03-10 11:01:21 UTC
+--- components/embedder_support/user_agent_utils_unittest.cc.orig	2023-06-05 19:39:05 UTC
 +++ components/embedder_support/user_agent_utils_unittest.cc
-@@ -81,7 +81,7 @@ const char kDesktop[] =
+@@ -82,7 +82,7 @@ const char kDesktop[] =
      "Safari/537.36";
  #endif  // BUILDFLAG(IS_ANDROID)
  
@@ -9,7 +9,7 @@
  std::string GetMachine() {
    struct utsname unixinfo;
    uname(&unixinfo);
-@@ -189,7 +189,7 @@ void CheckUserAgentStringOrdering(bool mobile_device) 
+@@ -190,7 +190,7 @@ void CheckUserAgentStringOrdering(bool mobile_device) 
      int value;
      ASSERT_TRUE(base::StringToInt(pieces[i], &value));
    }
