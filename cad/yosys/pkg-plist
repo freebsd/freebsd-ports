@@ -72,6 +72,7 @@ bin/yosys-witness
 %%DATADIR%%/gowin/brams_map.v
 %%DATADIR%%/gowin/cells_map.v
 %%DATADIR%%/gowin/cells_sim.v
+%%DATADIR%%/gowin/cells_xtra.v
 %%DATADIR%%/gowin/lutrams.txt
 %%DATADIR%%/gowin/lutrams_map.v
 %%DATADIR%%/greenpak4/cells_blackbox.v

@@ -1,6 +1,6 @@
 PORTNAME=	yosys
 DISTVERSIONPREFIX=	yosys-
-DISTVERSION=	0.29
+DISTVERSION=	0.30
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,7 +36,8 @@ TEST_TARGET=	test # some tests fail, see https://github.com/YosysHQ/yosys/issues
 
 OPTIONS_GROUP=		SOLVERS
 OPTIONS_GROUP_SOLVERS=	CVC5 YICES Z3
-OPTIONS_DEFAULT=	YICES # same as the default in C++ code
+OPTIONS_DEFINE=		TCMALLOC
+OPTIONS_DEFAULT=	TCMALLOC YICES # YICES: same as the default in C++ code ; TCMALLOC: should be the same default as in cad/surelog, cad/uhdm because surelog's lib is used in the yosys plugin cad/yosys-systemverilog
 
 SOLVERS_DESC=		Install SAT solvers
 CVC5_DESC=		CVC SAT Solver
@@ -46,6 +47,9 @@ Z3_DESC=		Z3 SAT Solver
 CVC5_RUN_DEPENDS=	cvc5:math/cvc5
 YICES_RUN_DEPENDS=	yices_smt2:math/yices
 Z3_RUN_DEPENDS=		z3:math/z3
+
+TCMALLOC_LDFLAGS=	`pkg-config --libs libtcmalloc`
+TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 
 post-patch:
 	${REINPLACE_CMD} -e '/^CXX =/d; s/^LD = .*/LD = $$(CXX)/' \
