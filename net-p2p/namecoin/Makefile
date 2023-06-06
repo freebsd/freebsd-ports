@@ -1,7 +1,6 @@
 PORTNAME=	namecoin
-PORTVERSION=	0.21.0.1
+DISTVERSION=	24.0
 DISTVERSIONPREFIX=	nc
-PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	net-p2p dns
 
@@ -14,7 +13,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libevent.so:devel/libevent
 
-USES=		autoreconf compiler:c++11-lib gmake libtool pkgconfig ssl
+USES=		autoreconf compiler:c++17-lang gmake libtool pkgconfig ssl
 GNU_CONFIGURE=	yes
 
 USE_GITHUB=	yes
@@ -65,19 +64,18 @@ TESTS_PLIST_FILES+=	bin/bench_namecoin
 
 UPNP_CONFIGURE_WITH=	miniupnpc
 UPNP_LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc
-UPNP_CPPFLAGS=		-I${LOCALBASE}/include
-UPNP_LIBS=		-L${LOCALBASE}/lib
+UPNP_USES=		localbase
 
 QRCODES_CONFIGURE_WITH=	qrencode
 QRCODES_LIB_DEPENDS=	libqrencode.so:graphics/libqrencode
 
 WALLET_CONFIGURE_OFF=	--disable-wallet
 WALLET_CONFIGURE_ON=	--enable-wallet \
+			--with-sqlite=no \
 			--with-incompatible-bdb \
 			BDB_CFLAGS=-I${BDB_INCLUDE_DIR} \
 			BDB_LIBS="-L${BDB_LIB_DIR} \
-				-Wl,-rpath=${BDB_LIB_DIR} \
-				-l${BDB_LIB_CXX_NAME}"
+			-Wl,-rpath=${BDB_LIB_DIR} -l${BDB_LIB_CXX_NAME}"
 WALLET_USES=		bdb:5+
 
 ZMQ_CONFIGURE_ENABLE=	zmq

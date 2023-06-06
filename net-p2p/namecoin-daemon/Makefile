@@ -1,16 +1,15 @@
 MASTERDIR=	${.CURDIR}/../namecoin
 
-PORTREVISION=	4
 PKGNAMESUFFIX=	-daemon
 
 COMMENT=	Decentralized, open DNS and more (Daemon)
 SLAVE_PORT=	yes
 
-CONFLICTS_INSTALL=	namecoin-stable namecoin-stable-daemon namecoin-stable-utils \
-		namecoin-beta namecoin-beta-daemon namecoin-beta-utils
-
 OPTIONS_DEFINE=		DEBUG HARDENING TESTS UPNP WALLET ZMQ
 OPTIONS_DEFAULT=	HARDENING UPNP WALLET
+
+USERS=          namecoin
+GROUPS=		namecoin
 
 CONFIGURE_ARGS=	--with-daemon \
 		--without-gui \
@@ -19,8 +18,12 @@ CONFIGURE_ARGS=	--with-daemon \
 		--without-utils \
 		--disable-man
 
-PLIST_FILES=	bin/namecoind
+PLIST_FILES=	bin/namecoind \
+		"@sample %%ETCDIR%%.conf.sample"
 
 USE_RC_SUBR=	namecoind
+
+post-install:
+	${INSTALL_DATA} ${FILESDIR}/namecoin.conf ${STAGEDIR}${PREFIX}/etc/namecoin.conf.sample
 
 .include "${MASTERDIR}/Makefile"

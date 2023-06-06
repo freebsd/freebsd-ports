@@ -717,7 +717,7 @@ postgrest:*:772:
 # free: 773
 # free: 774
 # free: 775
-# free: 776
+namecoin:*:776:
 openxpki:*:777:
 litecoin:*:778:
 bitcoin:*:779:
