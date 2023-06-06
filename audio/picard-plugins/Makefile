@@ -1,5 +1,5 @@
 PORTNAME=	picard-plugins
-PORTVERSION=	2.0.20221109
+PORTVERSION=	2.0.20230511
 CATEGORIES=	audio python
 
 MAINTAINER=	jhale@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		python:3.7+
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz
-GH_TAGNAME=	30648b9
+GH_TAGNAME=	c03c7f1
 
 PORTSCOUT=	limit:^2\.
 
@@ -23,8 +23,6 @@ BUILD_WRKSRC=	${WRKSRC}/build
 PLUGINSDIR=	${PYTHON_SITELIBDIR}/picard/plugins
 
 OPTIONS_DEFINE=		BPM DOCS MOODBAR REPLAYGAIN2
-OPTIONS_GROUP=		REPLAYGAIN
-OPTIONS_GROUP_REPLAYGAIN=	FLAC MP3 VORBIS WAVPACK
 OPTIONS_SUB=		yes
 
 BPM_DESC=		Beats per minute
@@ -35,12 +33,6 @@ BPM_VARS=		PKGMESSAGE+=${.CURDIR}/pkg-message.bmp
 
 MOODBAR_DESC=		Generate moodbar files
 MOODBAR_RUN_DEPENDS=	moodbar:audio/moodbar
-
-REPLAYGAIN_DESC=	ReplayGain 1.0 audio normalization (deprecated)
-FLAC_RUN_DEPENDS=	metaflac:audio/flac
-MP3_RUN_DEPENDS=	mp3gain:audio/mp3gain
-VORBIS_RUN_DEPENDS=	vorbisgain:audio/vorbisgain
-WAVPACK_RUN_DEPENDS=	wvgain:audio/wavpack
 
 REPLAYGAIN2_DESC=		ReplayGain 2.0 audio normalization
 REPLAYGAIN2_RUN_DEPENDS=	rsgain:audio/rsgain

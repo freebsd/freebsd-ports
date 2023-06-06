@@ -34,8 +34,6 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/featartistsintitles%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/fix_tracknums%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/fix_tracknums%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/happidev_lyrics%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/happidev_lyrics%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/hyphen_unicode%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/hyphen_unicode%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__pycache__/instruments%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
@@ -160,7 +158,6 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/__pycache__/ui_options_format_performer_tags%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/ui_options_format_performer_tags.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/ui_options_format_performer_tags.ui
-%%PYTHON_SITELIBDIR%%/picard/plugins/happidev_lyrics.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/hyphen_unicode.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/instruments.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/keep.py
@@ -173,6 +170,9 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.ui
 %%PYTHON_SITELIBDIR%%/picard/plugins/loadasnat.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/mod/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/mod/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/mod/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/moodbars/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/moodbars/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/moodbars/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -202,13 +202,6 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/remove_perfect_albums.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/reorder_sides.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/replace_forbidden_symbols.py
-%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__init__.py
-%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__pycache__/ui_options_replaygain%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__pycache__/ui_options_replaygain%%PYTHON_EXT_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/ui_options_replaygain.py
-%%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/ui_options_replaygain.ui
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain2/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain2/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain2/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -233,6 +226,12 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/soundtrack.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/standardise_feat.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/standardise_performers.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/submit_folksonomy_tags/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/submit_folksonomy_tags/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/submit_folksonomy_tags/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/submit_folksonomy_tags/__pycache__/ui_config%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/submit_folksonomy_tags/__pycache__/ui_config%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/submit_folksonomy_tags/ui_config.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/submit_isrc/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/submit_isrc/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/submit_isrc/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
@@ -274,5 +273,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/format_performer_tags/default_settings.jpg
 %%PORTDOCS%%%%DOCSDIR%%/musixmatch/README
 %%PORTDOCS%%%%DOCSDIR%%/search_engine_lookup/README.md
+%%PORTDOCS%%%%DOCSDIR%%/submit_folksonomy_tags/README.md
 %%PORTDOCS%%%%DOCSDIR%%/submit_isrc/README.md
 %%PORTDOCS%%%%DOCSDIR%%/tangoinfo/README.md
