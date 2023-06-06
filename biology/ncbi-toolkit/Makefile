@@ -31,6 +31,12 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/make/makedis.csh
@@ -77,4 +83,4 @@ do-install-DOCS-on:
 	@(cd ${WRKSRC}/doc && \
 		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR} '-not ( -name man -o -path ./man\/* )')
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
