@@ -1,10 +1,10 @@
 PORTNAME=	calcurse
-DISTVERSION=	4.8.0
+DISTVERSION=	4.8.1
 CATEGORIES=	deskutils
 MASTER_SITES=	https://calcurse.org/files/ \
 		https://fossies.org/linux/privat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Text-based calendar and scheduling application
 WWW=		https://calcurse.org/
 
@@ -19,9 +19,9 @@ SHEBANG_FILES=	contrib/caldav/calcurse-caldav \
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-asciidoc
 
-OPTIONS_DEFINE=	CALDAV DOCS NLS
-OPTIONS_DEFAULT=CALDAV
-OPTIONS_SUB=	yes
+OPTIONS_DEFINE=		CALDAV DOCS NLS
+OPTIONS_DEFAULT=	CALDAV
+OPTIONS_SUB=		yes
 
 CALDAV_DESC=	Support Calendaring Extensions to WebDAV
 
