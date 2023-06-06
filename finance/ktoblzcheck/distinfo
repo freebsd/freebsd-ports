@@ -1,5 +1,5 @@
-TIMESTAMP = 1662942480
+TIMESTAMP = 1686087765
 SHA256 (ktoblzcheck-1.53.tar.gz) = 18b9118556fe83240f468f770641d2578f4ff613cdcf0a209fb73079ccb70c55
 SIZE (ktoblzcheck-1.53.tar.gz) = 531459
-SHA256 (ktoblzcheck-bankdata-20220905.tar.gz) = fe890554a58c81f224854a16e8293514d2004105a7e3712ad339265623ab5e61
-SIZE (ktoblzcheck-bankdata-20220905.tar.gz) = 298346
+SHA256 (ktoblzcheck-bankdata-20230306.tar.gz) = cc9443ada993a02134604979eba776b2c96a32caf946d09317b33beb69857477
+SIZE (ktoblzcheck-bankdata-20230306.tar.gz) = 296170
