@@ -10,6 +10,9 @@ WWW=		http://mydns.bboy.net/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, last release in 2006. Consider migrating to dns/powerdns
+EXPIRATION_DATE=2023-06-30
+
 OPTIONS_DEFINE=	ALIAS OPENSSL PGSQL NLS DOCS NLS
 
 GNU_CONFIGURE=	yes
