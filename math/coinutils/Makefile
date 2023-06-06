@@ -1,6 +1,7 @@
 PORTNAME=	CoinUtils
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	2.11.9
+PORTREVISION=	1
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -24,6 +25,8 @@ CONFIGURE_ARGS=	--with-blas-lib="-lopenblas" --with-lapack-lib="-lopenblas" \
 		--with-netlib-datadir="${LOCALBASE}/share/coin/Data/Netlib"
 		# doesn't link with the optional dependency glpk: https://github.com/coin-or/CoinUtils/issues/7
 USE_LDCONFIG=	yes
+
+CPPFLAGS+=	-Dregister=
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
