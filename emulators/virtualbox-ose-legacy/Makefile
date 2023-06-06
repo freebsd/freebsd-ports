@@ -206,22 +206,16 @@ KMK_FLAGS+=	-j${MAKE_JOBS_NUMBER}
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD
-.if ${OSVERSION} >= 1400059
-BROKEN=		Fails to compile with libc++ 14.0.3
-.elif ${OSVERSION} >= 1301000 && ${OSVERSION} < 1400000
-BROKEN=		Fails to compile: error: ran out of registers during register allocation
-.endif
-.endif
-
-.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && ${OSVERSION} > 1400022
-# clang > 11 included in FreeBSD 14 fails to compile this legacy version
-# of virtualbox-ose, force clang 11 on FreeBSD 14 where a newer clang is
-# included.
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${OPSYS} == FreeBSD && \
+    (${OSVERSION} < 1302505 || (${OSVERSION} >= 1400000 && ${OSVERSION} < 1400079))
+# llvm 13 and 14 included in FreeBSD fails to compile this legacy version of
+# virtualbox-ose, force llvm 15 on all versions of the FreeBSD except lastest 13
+# and 14 where the llvm 15 is included: PR#265539.
+# Keep possibility to define different llvm via VBOX_LLVM_VER in make.conf.
 BUILD_DEPENDS+=	clang${VBOX_LLVM_VER}:devel/llvm${VBOX_LLVM_VER}
 CC=		clang${VBOX_LLVM_VER}
 CXX=		clang++${VBOX_LLVM_VER}
-VBOX_LLVM_VER?=	11
+VBOX_LLVM_VER?=	15
 .endif
 
 .if ${PYTHON_MAJOR_VER} >= 3
