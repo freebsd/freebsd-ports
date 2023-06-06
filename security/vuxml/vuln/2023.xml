@@ -5,6 +5,10 @@
 	<name>qpress</name>
 	<range><lt>11.3</lt></range>
       </package>
+      <package>
+	<name>xtrabackup8</name>
+	<range><lt>8.0.32</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
