@@ -1,17 +1,17 @@
 PORTNAME=	qpress
-PORTVERSION=	1.1
+PORTVERSION=	20230507
 CATEGORIES=	archivers
-MASTER_SITES=	http://www.quicklz.com/
-DISTNAME=	qpress-11-source
 
 MAINTAINER=	samm@FreeBSD.org
 COMMENT=	Portable file archiver using QuickLZ
-WWW=		http://www.quicklz.com/
+WWW=		https://github.com/PierreLvx/qpress
 
 LICENSE=	GPLv2
 
-USES=		dos2unix zip
-EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
+USES=		dos2unix
+USE_GITHUB=	yes
+GH_ACCOUNT=	PierreLvx
+GH_TAGNAME=	${PORTVERSION}
 
 PLIST_FILES=	bin/qpress
 
