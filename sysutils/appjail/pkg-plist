@@ -133,3 +133,4 @@ libexec/appjail/appjail-config/tok
 %%DATADIR%%/scripts/ajuser.sh
 %%DATADIR%%/scripts/runas.sh
 @sample %%ETCDIR%%/appjail.conf.sample
+%%DATADIR%%/lib/repeat
