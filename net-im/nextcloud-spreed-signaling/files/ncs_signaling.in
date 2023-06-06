@@ -16,13 +16,14 @@
 
 name=ncs_signaling
 rcvar=ncs_signaling_enable
-
+pidfile="/var/run/${name}.pid"
+procname="/usr/local/bin/ncs-signaling"
 load_rc_config $name
 : ${ncs_signaling_enable:="NO"}
 : ${ncs_signaling_config:="%%PREFIX%%/etc/ncs/server.conf"}
 
 command=/usr/sbin/daemon
 
-command_args="-u signaling -f -T ncs_signaling -S %%PREFIX%%/bin/ncs-signaling -config $ncs_signaling_config"
+command_args="-u signaling -p $pidfile -f -T ncs_signaling -S %%PREFIX%%/bin/ncs-signaling -config $ncs_signaling_config"
 
 run_rc_command "$1"
