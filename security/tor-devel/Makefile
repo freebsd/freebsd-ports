@@ -31,7 +31,6 @@ OPTIONS_GROUP_TRACING=	LTTNG USDT LOG_DEBUG
 OPTIONS_DEFAULT=MANPAGES ZSTD LZMA
 OPTIONS_SUB=	yes
 STATIC_TOR_DESC=	Build a static tor
-TCMALLOC_DESC=		Use the tcmalloc memory allocation library
 COMPRESSION_DESC=	Supported compression libraries
 TRACING_DESC=		Tracing
 

@@ -31,7 +31,6 @@ OPTIONS_DEFINE=		TCMALLOC THREADS
 OPTIONS_DEFAULT=	TCMALLOC THREADS
 OPTIONS_EXCLUDE_powerpc=	TCMALLOC
 
-TCMALLOC_DESC=		Use tcmalloc from google-perftools as memory allocator
 TCMALLOC_CMAKE_BOOL=	TCMALLOC
 TCMALLOC_LIB_DEPENDS=	libtcmalloc.so:devel/google-perftools
 
