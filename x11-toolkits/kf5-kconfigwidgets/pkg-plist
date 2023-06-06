@@ -3,6 +3,7 @@ include/KF5/KConfigWidgets/KCModule
 include/KF5/KConfigWidgets/KCodecAction
 include/KF5/KConfigWidgets/KColorScheme
 include/KF5/KConfigWidgets/KColorSchemeManager
+include/KF5/KConfigWidgets/KColorSchemeMenu
 include/KF5/KConfigWidgets/KColorSchemeModel
 include/KF5/KConfigWidgets/KCommandBar
 include/KF5/KConfigWidgets/KConfigDialog
@@ -22,6 +23,7 @@ include/KF5/KConfigWidgets/kcmodule.h
 include/KF5/KConfigWidgets/kcodecaction.h
 include/KF5/KConfigWidgets/kcolorscheme.h
 include/KF5/KConfigWidgets/kcolorschememanager.h
+include/KF5/KConfigWidgets/kcolorschememenu.h
 include/KF5/KConfigWidgets/kcolorschememodel.h
 include/KF5/KConfigWidgets/kcommandbar.h
 include/KF5/KConfigWidgets/kconfigdialog.h
