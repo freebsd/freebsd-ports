@@ -2,10 +2,10 @@ PORTNAME=	libevent
 DISTVERSION=	2.2.1
 DISTVERSIONSUFFIX=	-alpha-dev
 CATEGORIES=	devel
-MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}${DISTVERSIONSUFFIX}/
+MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/release-${DISTVERSION}-alpha/
 PKGNAMESUFFIX=	-devel
 
-MAINTAINER=	kbowling@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	API for executing callback functions on events or timeouts
 WWW=		https://libevent.org/
 
