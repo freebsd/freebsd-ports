@@ -1,13 +1,10 @@
 PORTNAME=		krb5
-PORTVERSION=		1.19.4
+PORTVERSION=		1.21
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 .if !defined(MASTERDIR)
-PKGNAMESUFFIX=		-119
+PKGNAMESUFFIX=		-121
 .endif
-
-DEPECATED=		Desupported by MIT following 1.21
-EXPIRY=			2024-06-06
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
@@ -18,15 +15,13 @@ WWW=			https://web.mit.edu/kerberos/
 
 LICENSE=		MIT
 
-CONFLICTS=		heimdal krb5 krb5-118 krb5-120
+CONFLICTS=		heimdal krb5 krb5-11* krb5-120
 CONFLICTS_BUILD=	boringssl
 
 KERBEROSV_URL=		http://web.mit.edu/kerberos/
 USES=			compiler:c++11-lang cpe gmake gettext-runtime \
 			gssapi:bootstrap,mit libtool:build localbase \
 			perl5 pkgconfig ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_ routines
 USE_CSTD=		gnu99
 USE_LDCONFIG=		yes
 USE_PERL5=		build
