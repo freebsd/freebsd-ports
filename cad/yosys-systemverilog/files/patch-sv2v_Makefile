@@ -1,0 +1,11 @@
+--- sv2v/Makefile.orig	2023-05-10 12:48:15 UTC
++++ sv2v/Makefile
+@@ -4,7 +4,7 @@ all: sv2v
+ 
+ sv2v:
+ 	mkdir -p bin
+-	stack install --install-ghc --local-bin-path bin
++	stack config set system-ghc --global true && stack build --system-ghc --no-install-ghc
+ 
+ clean:
+ 	stack clean

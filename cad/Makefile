@@ -151,6 +151,7 @@
     SUBDIR += xcircuit
     SUBDIR += xyce
     SUBDIR += yosys
+    SUBDIR += yosys-systemverilog
     SUBDIR += z88
     SUBDIR += zcad
 

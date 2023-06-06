@@ -1,0 +1,2 @@
+yosys-systemverilog is a YoSys add-on that contains all moving parts needed to
+get SystemVerilog support enabled in Yosys.
