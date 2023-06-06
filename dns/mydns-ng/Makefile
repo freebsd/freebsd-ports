@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/mydns-ng/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, last release in 2010. Consider migrating to dns/powerdns
+EXPIRATION_DATE=2023-06-30
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc
 USES=		iconv
