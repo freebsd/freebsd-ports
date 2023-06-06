@@ -1,6 +1,6 @@
---- ui/gfx/BUILD.gn.orig	2023-05-05 12:12:41 UTC
+--- ui/gfx/BUILD.gn.orig	2023-06-05 19:39:05 UTC
 +++ ui/gfx/BUILD.gn
-@@ -614,7 +614,7 @@ source_set("memory_buffer_sources") {
+@@ -621,7 +621,7 @@ source_set("memory_buffer_sources") {
      deps += [ "//build/config/linux/libdrm" ]
    }
  

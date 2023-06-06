@@ -1,4 +1,4 @@
---- base/process/process_metrics_posix.cc.orig	2022-10-01 07:40:07 UTC
+--- base/process/process_metrics_posix.cc.orig	2023-06-05 19:39:05 UTC
 +++ base/process/process_metrics_posix.cc
 @@ -20,6 +20,8 @@
  
@@ -9,7 +9,7 @@
  #else
  #include <malloc.h>
  #endif
-@@ -135,7 +137,7 @@ size_t ProcessMetrics::GetMallocUsage() {
+@@ -133,7 +135,7 @@ size_t ProcessMetrics::GetMallocUsage() {
    return stats.size_in_use;
  #elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
    return GetMallocUsageMallinfo();

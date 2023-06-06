@@ -1,4 +1,4 @@
---- third_party/blink/renderer/controller/blink_initializer.cc.orig	2023-05-05 12:12:41 UTC
+--- third_party/blink/renderer/controller/blink_initializer.cc.orig	2023-06-05 19:39:05 UTC
 +++ third_party/blink/renderer/controller/blink_initializer.cc
 @@ -78,12 +78,12 @@
  #include "third_party/blink/renderer/controller/private_memory_footprint_provider.h"
@@ -10,8 +10,8 @@
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
--    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+-    BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  #include "third_party/blink/renderer/controller/highest_pmf_reporter.h"
  #include "third_party/blink/renderer/controller/user_level_memory_pressure_signal_generator.h"
  #endif
@@ -28,8 +28,8 @@
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID) || \
--    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+    BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+-    BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN)
++    BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
    // Start reporting the highest private memory footprint after the first
    // navigation.
    HighestPmfReporter::Initialize(main_thread_task_runner);

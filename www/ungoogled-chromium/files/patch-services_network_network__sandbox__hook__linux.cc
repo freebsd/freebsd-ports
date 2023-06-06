@@ -1,36 +1,37 @@
---- services/network/network_sandbox_hook_linux.cc.orig	2023-05-05 12:12:41 UTC
+--- services/network/network_sandbox_hook_linux.cc.orig	2023-06-05 19:39:05 UTC
 +++ services/network/network_sandbox_hook_linux.cc
-@@ -8,11 +8,14 @@
- #include "base/rand_util.h"
- #include "base/system/sys_info.h"
+@@ -14,11 +14,14 @@
+ #include "sandbox/policy/features.h"
+ #include "third_party/abseil-cpp/absl/types/optional.h"
  
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  using sandbox::syscall_broker::BrokerFilePermission;
  using sandbox::syscall_broker::MakeBrokerCommandSet;
 +#endif
  
  namespace network {
  
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  sandbox::syscall_broker::BrokerCommandSet GetNetworkBrokerCommandSet() {
    return MakeBrokerCommandSet({
        sandbox::syscall_broker::COMMAND_ACCESS,
-@@ -30,8 +33,10 @@ std::vector<BrokerFilePermission> GetNetworkFilePermis
-   // TODO(tsepez): remove universal permission under filesystem root.
-   return {BrokerFilePermission::ReadWriteCreateRecursive("/")};
+@@ -102,9 +105,11 @@ void LoadNetworkLibraries() {
+   }
  }
+ #endif  // BUILDFLAG(IS_CHROMEOS)
 +#endif
  
- bool NetworkPreSandboxHook(sandbox::policy::SandboxLinux::Options options) {
-+#if !defined(OS_BSD)
-   auto* instance = sandbox::policy::SandboxLinux::GetInstance();
- 
-   instance->StartBrokerProcess(
-@@ -39,6 +44,7 @@ bool NetworkPreSandboxHook(sandbox::policy::SandboxLin
+ bool NetworkPreSandboxHook(std::vector<std::string> network_context_parent_dirs,
+                            sandbox::policy::SandboxLinux::Options options) {
++#if !BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_CHROMEOS)
+   LoadNetworkLibraries();
+ #endif
+@@ -117,6 +122,7 @@ bool NetworkPreSandboxHook(std::vector<std::string> ne
+       GetNetworkBrokerCommandSet(),
+       GetNetworkFilePermissions(std::move(network_context_parent_dirs)),
        sandbox::policy::SandboxLinux::PreSandboxHook(), options);
- 
-   instance->EngageNamespaceSandboxIfPossible();
 +#endif
+ 
    return true;
  }
- 

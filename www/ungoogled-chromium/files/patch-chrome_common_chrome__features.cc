@@ -1,4 +1,4 @@
---- chrome/common/chrome_features.cc.orig	2023-05-05 12:12:41 UTC
+--- chrome/common/chrome_features.cc.orig	2023-06-05 19:39:05 UTC
 +++ chrome/common/chrome_features.cc
 @@ -82,7 +82,7 @@ BASE_FEATURE(kAsyncDns,
  );
@@ -27,7 +27,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -308,7 +308,7 @@ BASE_FEATURE(kDesktopPWAsWebBundles,
+@@ -319,7 +319,7 @@ BASE_FEATURE(kDesktopPWAsWebBundles,
               base::FEATURE_DISABLED_BY_DEFAULT);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,7 +36,7 @@
  // Controls whether Chrome Apps are supported. See https://crbug.com/1221251.
  // If the feature is disabled, Chrome Apps continue to work. If enabled, Chrome
  // Apps will not launch and will be marked in the UI as deprecated.
-@@ -346,7 +346,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
+@@ -357,7 +357,7 @@ const base::FeatureParam<bool> kDnsOverHttpsFallbackPa
  const base::FeatureParam<bool> kDnsOverHttpsShowUiParam {
    &kDnsOverHttps, "ShowUi",
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -45,7 +45,7 @@
        true
  #else
        false
-@@ -747,7 +747,7 @@ BASE_FEATURE(kKAnonymityServiceStorage,
+@@ -761,7 +761,7 @@ BASE_FEATURE(kKAnonymityServiceStorage,
               "KAnonymityServiceStorage",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -54,7 +54,7 @@
  BASE_FEATURE(kLinuxLowMemoryMonitor,
               "LinuxLowMemoryMonitor",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -760,7 +760,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
+@@ -774,7 +774,7 @@ constexpr base::FeatureParam<int> kLinuxLowMemoryMonit
      &kLinuxLowMemoryMonitor, "critical_level", 255};
  #endif  // BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS)
  

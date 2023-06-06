@@ -1,4 +1,4 @@
---- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2023-05-05 12:12:41 UTC
+--- ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc.orig	2023-06-05 19:39:05 UTC
 +++ ui/views/widget/desktop_aura/desktop_window_tree_host_platform.cc
 @@ -43,7 +43,7 @@
  #include "ui/wm/core/window_util.h"
@@ -27,7 +27,7 @@
        std::make_unique<DesktopDragDropClientOzoneLinux>(window(), drag_handler);
  #else
        std::make_unique<DesktopDragDropClientOzone>(window(), drag_handler);
-@@ -1025,7 +1025,7 @@ display::Display DesktopWindowTreeHostPlatform::GetDis
+@@ -1033,7 +1033,7 @@ display::Display DesktopWindowTreeHostPlatform::GetDis
  // DesktopWindowTreeHost:
  
  // Linux subclasses this host and adds some Linux specific bits.

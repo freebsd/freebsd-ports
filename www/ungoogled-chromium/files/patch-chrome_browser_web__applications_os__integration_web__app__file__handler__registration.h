@@ -1,11 +1,11 @@
---- chrome/browser/web_applications/os_integration/web_app_file_handler_registration.h.orig	2022-12-02 17:56:32 UTC
+--- chrome/browser/web_applications/os_integration/web_app_file_handler_registration.h.orig	2023-06-05 19:39:05 UTC
 +++ chrome/browser/web_applications/os_integration/web_app_file_handler_registration.h
-@@ -45,7 +45,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
-                                   Profile* profile,
+@@ -43,7 +43,7 @@ void UnregisterFileHandlersWithOs(const AppId& app_id,
+                                   const base::FilePath& profile_path,
                                    ResultCallback callback);
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  // Exposed for testing purposes. Register the set of
  // MIME-type-to-file-extensions mappings corresponding to |file_handlers|. File
- // I/O and a a callout to the Linux shell are performed asynchronously.
+ // I/O and callouts to the Linux shell are performed asynchronously.

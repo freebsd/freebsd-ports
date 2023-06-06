@@ -1,4 +1,4 @@
---- v8/src/trap-handler/trap-handler.h.orig	2022-10-01 07:40:07 UTC
+--- v8/src/trap-handler/trap-handler.h.orig	2023-06-05 19:39:05 UTC
 +++ v8/src/trap-handler/trap-handler.h
 @@ -20,7 +20,7 @@ namespace trap_handler {
  // X64 on Linux, Windows, MacOS, FreeBSD.
@@ -7,5 +7,5 @@
 -     V8_OS_FREEBSD)
 +     V8_OS_FREEBSD || V8_OS_OPENBSD)
  #define V8_TRAP_HANDLER_SUPPORTED true
- // Arm64 (non-simulator) on Mac.
- #elif V8_TARGET_ARCH_ARM64 && V8_HOST_ARCH_ARM64 && V8_OS_DARWIN
+ // Arm64 (non-simulator) on Mac and Linux.
+ #elif V8_TARGET_ARCH_ARM64 && V8_HOST_ARCH_ARM64 && \

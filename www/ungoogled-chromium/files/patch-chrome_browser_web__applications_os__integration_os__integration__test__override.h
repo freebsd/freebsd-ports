@@ -1,29 +1,11 @@
---- chrome/browser/web_applications/os_integration/os_integration_test_override.h.orig	2023-05-05 12:12:41 UTC
+--- chrome/browser/web_applications/os_integration/os_integration_test_override.h.orig	2023-06-05 19:39:05 UTC
 +++ chrome/browser/web_applications/os_integration/os_integration_test_override.h
-@@ -36,7 +36,7 @@ class ShellLinkItem;
- 
- namespace web_app {
- 
--#if BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- struct LinuxFileRegistration {
-   std::string xdg_command;
-   std::string file_contents;
-@@ -201,7 +201,7 @@ class OsIntegrationTestOverride
-   }
-   void EnableOrDisablePathOnLogin(const base::FilePath& file_path,
-                                   bool enable_on_login);
+@@ -92,7 +92,7 @@ class OsIntegrationTestOverride
+   virtual const base::FilePath& chrome_apps_folder() = 0;
+   virtual void EnableOrDisablePathOnLogin(const base::FilePath& file_path,
+                                           bool enable_on_login) = 0;
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   bool DeleteDesktopDirOnLinux();
-   const base::FilePath& desktop() { return desktop_.GetPath(); }
-   const base::FilePath& startup() { return startup_.GetPath(); }
-@@ -250,7 +250,7 @@ class OsIntegrationTestOverride
-   base::ScopedTempDir chrome_apps_folder_;
-   std::map<base::FilePath, bool> startup_enabled_;
- 
--#elif BUILDFLAG(IS_LINUX)
-+#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-   base::ScopedTempDir desktop_;
-   base::ScopedTempDir startup_;
-   std::vector<LinuxFileRegistration> linux_file_registration_;
+   virtual const base::FilePath& desktop() = 0;
+   virtual const base::FilePath& startup() = 0;
+   virtual const base::FilePath& applications_dir() = 0;

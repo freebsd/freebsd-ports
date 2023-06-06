@@ -1,6 +1,6 @@
---- gpu/command_buffer/service/shared_image/external_vk_image_backing.cc.orig	2023-05-05 12:12:41 UTC
+--- gpu/command_buffer/service/shared_image/external_vk_image_backing.cc.orig	2023-06-05 19:39:05 UTC
 +++ gpu/command_buffer/service/shared_image/external_vk_image_backing.cc
-@@ -39,7 +39,7 @@
+@@ -43,7 +43,7 @@
  #include "ui/gl/gl_version_info.h"
  #include "ui/gl/scoped_binders.h"
  
@@ -9,7 +9,7 @@
  #include "gpu/command_buffer/service/shared_image/external_vk_image_dawn_representation.h"
  #endif
  
-@@ -573,7 +573,7 @@ std::unique_ptr<DawnImageRepresentation> ExternalVkIma
+@@ -592,7 +592,7 @@ std::unique_ptr<DawnImageRepresentation> ExternalVkIma
      WGPUDevice wgpuDevice,
      WGPUBackendType backend_type,
      std::vector<WGPUTextureFormat> view_formats) {

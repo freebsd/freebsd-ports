@@ -1,11 +1,11 @@
---- chrome/browser/browser_features.cc.orig	2023-03-10 11:01:21 UTC
+--- chrome/browser/browser_features.cc.orig	2023-06-05 19:39:05 UTC
 +++ chrome/browser/browser_features.cc
-@@ -24,7 +24,7 @@ BASE_FEATURE(kClosedTabCache,
- // the browser exits.
+@@ -27,7 +27,7 @@ BASE_FEATURE(kClosedTabCache,
  BASE_FEATURE(kDestroyProfileOnBrowserClose,
               "DestroyProfileOnBrowserClose",
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || \
+-    BUILDFLAG(IS_CHROMEOS_LACROS)
++    BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
               base::FEATURE_ENABLED_BY_DEFAULT);
  #else
               base::FEATURE_DISABLED_BY_DEFAULT);

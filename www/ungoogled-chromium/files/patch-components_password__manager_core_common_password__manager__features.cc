@@ -1,6 +1,6 @@
---- components/password_manager/core/common/password_manager_features.cc.orig	2023-05-05 12:12:41 UTC
+--- components/password_manager/core/common/password_manager_features.cc.orig	2023-06-05 19:39:05 UTC
 +++ components/password_manager/core/common/password_manager_features.cc
-@@ -82,7 +82,7 @@ BASE_FEATURE(kPasswordManagerLogToTerminal,
+@@ -95,7 +95,7 @@ BASE_FEATURE(kPasswordManagerLogToTerminal,
               "PasswordManagerLogToTerminal",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -9,7 +9,7 @@
  // When enabled, initial sync will be forced during startup if the password
  // store has encryption service failures.
  BASE_FEATURE(kForceInitialSyncWhenDecryptionFails,
-@@ -210,7 +210,7 @@ BASE_FEATURE(kPasswordStrengthIndicator,
+@@ -218,7 +218,7 @@ BASE_FEATURE(kPasswordStrengthIndicator,
               "PasswordStrengthIndicator",
               base::FEATURE_DISABLED_BY_DEFAULT);
  

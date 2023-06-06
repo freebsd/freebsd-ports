@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2023-05-05 12:12:41 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2023-06-05 19:39:05 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -93,7 +93,7 @@
  
@@ -27,8 +27,8 @@
    pref_change_registrar_.Add(prefs::kAuthNegotiateDelegateByKdcPolicy,
                               auth_pref_callback);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -489,7 +489,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
-           base::Unretained(this)));
+@@ -503,7 +503,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+ #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)
@@ -36,7 +36,7 @@
    pref_change_registrar_.Add(
        prefs::kEnforceLocalAnchorConstraintsEnabled,
        base::BindRepeating(&SystemNetworkContextManager::
-@@ -539,7 +539,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -553,7 +553,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kKerberosEnabled, false);
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -45,7 +45,7 @@
    registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
                                  false);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -568,7 +568,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -582,7 +582,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kChromeRootStoreEnabled, false);
  #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -54,8 +54,8 @@
    // Note that the default value is not relevant because the pref is only
    // evaluated when it is managed.
    registry->RegisterBooleanPref(prefs::kEnforceLocalAnchorConstraintsEnabled,
-@@ -959,7 +959,7 @@ void SystemNetworkContextManager::UpdateExplicitlyAllo
- }
+@@ -1004,7 +1004,7 @@ void SystemNetworkContextManager::UpdateChromeRootStor
+ #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_ANDROID)

@@ -1,6 +1,6 @@
---- components/version_info/version_info.h.orig	2023-05-05 12:12:41 UTC
+--- components/version_info/version_info.h.orig	2023-06-05 19:39:05 UTC
 +++ components/version_info/version_info.h
-@@ -7,12 +7,7 @@
+@@ -7,10 +7,6 @@
  
  #include <string>
  
@@ -9,11 +9,9 @@
 -#include "build/branding_buildflags.h"
 -#include "build/build_config.h"
  #include "components/version_info/channel.h"
--#include "components/version_info/version_info_values.h"
+ #include "components/version_info/version_info_values.h"
  
- namespace base {
- class Version;
-@@ -20,6 +15,10 @@ class Version;
+@@ -20,6 +16,10 @@ class Version;
  
  namespace version_info {
  
@@ -24,7 +22,7 @@
  // Returns the product name and reduced version information for the User-Agent
  // header, in the format: Chrome/<major_version>.0.build_version.0, where
  // `build_version` is a frozen BUILD number.
-@@ -27,21 +26,11 @@ const std::string GetProductNameAndVersionForReducedUs
+@@ -27,21 +27,11 @@ const std::string GetProductNameAndVersionForReducedUs
      const std::string& build_version);
  
  // Returns the product name, e.g. "Chromium" or "Google Chrome".
@@ -48,7 +46,7 @@
  // Returns the major component (aka the milestone) of the version as an int,
  // e.g. 6 when the version is "6.0.490.1".
  int GetMajorVersionNumberAsInt();
-@@ -53,89 +42,22 @@ std::string GetMajorVersionNumber();
+@@ -53,89 +43,22 @@ std::string GetMajorVersionNumber();
  const base::Version& GetVersion();
  
  // Returns a version control specific identifier of this release.

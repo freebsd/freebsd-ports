@@ -1,11 +1,11 @@
---- third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h.orig	2023-05-05 12:12:41 UTC
+--- third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h.orig	2023-06-05 19:39:05 UTC
 +++ third_party/vulkan-deps/vulkan-validation-layers/src/layers/external/vma/vk_mem_alloc.h
-@@ -2703,7 +2703,7 @@ static void* vma_aligned_alloc(size_t alignment, size_
+@@ -2740,7 +2740,7 @@ static void* vma_aligned_alloc(size_t alignment, size_
  
      return memalign(alignment, size);
  }
 -#elif defined(__APPLE__) || defined(__ANDROID__) || (defined(__linux__) && defined(__GLIBCXX__) && !defined(_GLIBCXX_HAVE_ALIGNED_ALLOC))
 +#elif defined(__APPLE__) || defined(__ANDROID__) || (defined(__linux__) && defined(__GLIBCXX__) && !defined(_GLIBCXX_HAVE_ALIGNED_ALLOC)) || defined(__OpenBSD__) || defined(__FreeBSD__)
- #define ALIGNED_ALLOC_WITH_POSIX_MEMALIGN
- #elif defined(__GNU_LIBRARY__)
- #  if !defined(__GLIBC_PREREQ) || !__GLIBC_PREREQ(2, 16)
+ #include <cstdlib>
+ 
+ #if defined(__APPLE__)

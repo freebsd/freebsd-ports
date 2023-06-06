@@ -1,10 +1,10 @@
---- net/proxy_resolution/proxy_config_service_linux.cc.orig	2023-01-13 08:56:02 UTC
+--- net/proxy_resolution/proxy_config_service_linux.cc.orig	2023-06-05 19:39:05 UTC
 +++ net/proxy_resolution/proxy_config_service_linux.cc
 @@ -6,7 +6,9 @@
  
  #include <errno.h>
  #include <limits.h>
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  #include <sys/inotify.h>
 +#endif
  #include <unistd.h>
@@ -14,7 +14,7 @@
  }
  #endif  // defined(USE_GIO)
  
-+#if !defined(OS_BSD)
++#if !BUILDFLAG(IS_BSD)
  // Converts |value| from a decimal string to an int. If there was a failure
  // parsing, returns |default_value|.
  int StringToIntOrDefault(base::StringPiece value, int default_value) {
@@ -26,11 +26,11 @@
  
  }  // namespace
  
-@@ -1248,9 +1252,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
-     case base::nix::DESKTOP_ENVIRONMENT_KDE3:
+@@ -1249,9 +1253,11 @@ ProxyConfigServiceLinux::Delegate::Delegate(
      case base::nix::DESKTOP_ENVIRONMENT_KDE4:
      case base::nix::DESKTOP_ENVIRONMENT_KDE5:
-+#if !defined(OS_BSD)
+     case base::nix::DESKTOP_ENVIRONMENT_KDE6:
++#if !BUILDFLAG(IS_BSD)
        setting_getter_ =
            std::make_unique<SettingGetterImplKDE>(env_var_getter_.get());
        break;

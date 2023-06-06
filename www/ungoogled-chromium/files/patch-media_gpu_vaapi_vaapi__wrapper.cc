@@ -1,8 +1,8 @@
---- media/gpu/vaapi/vaapi_wrapper.cc.orig	2023-02-11 09:11:04 UTC
+--- media/gpu/vaapi/vaapi_wrapper.cc.orig	2023-06-05 19:39:05 UTC
 +++ media/gpu/vaapi/vaapi_wrapper.cc
-@@ -755,7 +755,7 @@ VADisplayState::VADisplayState()
- bool VADisplayState::Initialize() {
-   base::AutoLock auto_lock(va_lock_);
+@@ -1609,7 +1609,7 @@ VADisplayStateHandle VADisplayStateSingleton::GetHandl
+     return {};
+   }
  
 -#if BUILDFLAG(IS_OZONE) && BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_OZONE) && (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD))

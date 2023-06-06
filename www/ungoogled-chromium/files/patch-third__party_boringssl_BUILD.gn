@@ -1,6 +1,6 @@
---- third_party/boringssl/BUILD.gn.orig	2022-10-01 07:40:07 UTC
+--- third_party/boringssl/BUILD.gn.orig	2023-06-05 19:39:05 UTC
 +++ third_party/boringssl/BUILD.gn
-@@ -92,7 +92,7 @@ if (is_win && !is_msan && current_cpu != "arm64") {
+@@ -139,7 +139,7 @@ if (is_win && !is_msan && current_cpu != "arm64") {
          public_configs = [ ":no_asm_config" ]
        }
      } else if (current_cpu == "arm64") {

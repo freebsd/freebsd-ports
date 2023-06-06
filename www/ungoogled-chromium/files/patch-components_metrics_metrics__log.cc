@@ -1,6 +1,6 @@
---- components/metrics/metrics_log.cc.orig	2023-05-05 12:12:41 UTC
+--- components/metrics/metrics_log.cc.orig	2023-06-05 19:39:05 UTC
 +++ components/metrics/metrics_log.cc
-@@ -53,7 +53,7 @@
+@@ -52,7 +52,7 @@
  #include "base/win/current_module.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "base/environment.h"
  #include "base/nix/xdg_util.h"
  #endif
-@@ -131,7 +131,7 @@ void RecordCurrentTime(
+@@ -130,7 +130,7 @@ void RecordCurrentTime(
    }
  }
  

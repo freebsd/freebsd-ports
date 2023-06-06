@@ -1,6 +1,6 @@
---- content/gpu/BUILD.gn.orig	2023-05-05 12:12:41 UTC
+--- content/gpu/BUILD.gn.orig	2023-06-05 19:39:05 UTC
 +++ content/gpu/BUILD.gn
-@@ -102,6 +102,17 @@ target(link_target_type, "gpu_sources") {
+@@ -104,6 +104,17 @@ target(link_target_type, "gpu_sources") {
      }
    }
  

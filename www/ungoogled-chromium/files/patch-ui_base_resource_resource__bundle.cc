@@ -1,4 +1,4 @@
---- ui/base/resource/resource_bundle.cc.orig	2023-02-11 09:11:04 UTC
+--- ui/base/resource/resource_bundle.cc.orig	2023-06-05 19:39:05 UTC
 +++ ui/base/resource/resource_bundle.cc
 @@ -885,7 +885,7 @@ void ResourceBundle::ReloadFonts() {
  }
@@ -8,4 +8,4 @@
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    return max_scale_factor_;
  #else
-   return GetSupportedResourceScaleFactors().back();
+   return GetMaxSupportedResourceScaleFactor();
