@@ -865,6 +865,7 @@
     SUBDIR += py-fiona
     SUBDIR += py-fotokilof
     SUBDIR += py-freeimagepy
+    SUBDIR += py-fury
     SUBDIR += py-gdal
     SUBDIR += py-geomdl
     SUBDIR += py-geopandas
