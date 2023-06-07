@@ -18,6 +18,8 @@ GH_TAGNAME=	9a063b3
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+PORTSCOUT=	ignore:1 # only invalid tags like 'spawn-final' are present
+
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/*.h ${WRKSRC}/*.c ${STAGEDIR}${PREFIX}/include/${PORTNAME}
