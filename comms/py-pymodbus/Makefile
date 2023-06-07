@@ -1,5 +1,5 @@
 PORTNAME=	pymodbus
-DISTVERSION=	3.3.0
+DISTVERSION=	3.4.1
 CATEGORIES=	comms python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,9 +21,9 @@ SERIAL_DESC=	Support serial port
 DATASTORE_REDIS_DESC=	Use Redis for server data
 DATASTORE_SQL_DESC=	Use database for server data (via SQLAlchemy)
 
-REPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8.1:www/py-aiohttp@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.8:devel/py-prompt-toolkit@${PY_FLAVOR} \
-			${PYTHON_PKGNAMEPREFIX}typer>=0.6.1:devel/py-typer@${PY_FLAVOR} \
+REPL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8.4:www/py-aiohttp@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}prompt-toolkit>=3.0.36:devel/py-prompt-toolkit@${PY_FLAVOR} \
+			${PYTHON_PKGNAMEPREFIX}typer>=0.7.0:devel/py-typer@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pygments>0:textproc/py-pygments@${PY_FLAVOR}
 REPL_EXTRA_PATCHES_OFF=	${PATCHDIR}/extra-patch-NO_REPL
 
