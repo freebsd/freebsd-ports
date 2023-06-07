@@ -1,6 +1,6 @@
---- configure.ac.in.orig	2023-02-16 14:08:39 UTC
+--- configure.ac.in.orig	2023-05-31 14:54:04 UTC
 +++ configure.ac.in
-@@ -91,56 +91,8 @@ LIBPCAP=-lpcap
+@@ -90,40 +90,8 @@ LIBPCAP=-lpcap
  MAKE=make
  BIN_PATH=/usr/bin
  LIBPCAP=-lpcap
@@ -26,7 +26,7 @@
 -   dnl> CXX=clang++ -fsanitize=address -fsanitize-address-use-after-scope
 -   OSXV=`sw_vers -productVersion`
 -   if test $SYSTEM = "Darwin"; then
--     OS="MacOSX $OSXV"
+-     OS="macOS $OSXV"
 -   else
 -     OS=`uname -or | cut -d '-' -f 1`
 -   fi
@@ -37,28 +37,12 @@
 -            CFLAGS="-fno-color-diagnostics $CFLAGS"
 -      fi
 -   fi
--dnl> else
--dnl>   if test $SYSTEM = "Linux"; then
--dnl>     if [ test -f /usr/bin/clang++ ]; then
--dnl>       CC=clang
--dnl>       CXX="clang++ -fpie -fno-color-diagnostics $CLANG_STDLIB"
--dnl>       AC_MSG_RESULT(Using clang++ compiler)
--dnl>     fi
--dnl> 
--dnl>     if [ test -f /etc/redhat-release ]; then
--dnl>       OS=`cat /etc/redhat-release`
--dnl>     else
--dnl>       if [ test -f /usr/bin/lsb_release ]; then
--dnl>         OS=`/usr/bin/lsb_release -d|cut -d ':' -f 2`
--dnl>       fi
--dnl>     fi
--dnl>   fi
 -fi
 -
  dnl> Remove spaces
  OS="${OS#"${OS%%[![:space:]]*}"}"
  
-@@ -182,15 +134,6 @@ fi
+@@ -165,15 +133,6 @@ fi
    LIBS="${LIBS} -lnetfilter_queue -lnfnetlink -lnetfilter_conntrack"
  fi
  
@@ -74,7 +58,7 @@
  if test -d /opt/local/include; then :
    CFLAGS="${CFLAGS} -I/opt/local/include"
    CPPFLAGS="${CPPFLAGS} -I/opt/local/include"
-@@ -244,15 +187,12 @@ AC_ARG_WITH(ndpi-includes,
+@@ -227,15 +186,12 @@ AC_ARG_WITH(ndpi-includes,
        NDPI_CUST_INC="-I$withval -I$withval/../lib/third_party/include"
     ])
  
@@ -96,7 +80,7 @@
        if test -d "./nDPI" ; then :
           NDPI_HOME=./nDPI
        elif test -d "../nDPI" ; then :
-@@ -277,8 +217,8 @@ AC_MSG_CHECKING(for nDPI source)
+@@ -260,8 +216,8 @@ AC_MSG_CHECKING(for nDPI source)
        else
           AC_MSG_RESULT(not found)
        fi
@@ -106,7 +90,7 @@
  if test ! -z "$NDPI_CUST_INC" ; then :
    NDPI_INC=$NDPI_CUST_INC
  fi
-@@ -295,18 +235,14 @@ dnl finish: nDPI handling
+@@ -278,18 +234,14 @@ dnl finish: nDPI handling
  fi
  dnl finish: nDPI handling
  
@@ -132,7 +116,7 @@
  fi
  
  pkg-config --exists libssl
-@@ -461,11 +397,7 @@ if test "$?" -ne 1; then
+@@ -447,11 +399,7 @@ if test "$?" -ne 1; then
  pkg-config --exists hiredis
  if test "$?" -ne 1; then
    HIREDIS_INC="`pkg-config --cflags hiredis` -I/usr/include/hiredis"
@@ -145,7 +129,7 @@
  else
    echo "Please install hiredis package prerequisite"
    exit -1
-@@ -483,14 +415,14 @@ if test "${with_nedge+set}" != set; then
+@@ -469,14 +417,14 @@ if test "${with_nedge+set}" != set; then
    fi
  
    if test $SYSTEM = "FreeBSD"; then
@@ -162,7 +146,7 @@
    AC_DEFINE_UNQUOTED(HAVE_PF_RING, 1, [Native PF_RING support])
    if test -f "${PF_RING_HOME}/userland/lib/libpfring.a"; then
       echo "${PF_RING_HOME}/userland/libpcap/libpcap.a"
-@@ -510,18 +442,18 @@ if test "${with_nedge+set}" != set; then
+@@ -496,18 +444,18 @@ if test "${with_nedge+set}" != set; then
           CPPFLAGS="${CPPFLAGS} -I/opt/pfring/include"
           echo "Using PF_RING installed in /opt/pfring"
        else
@@ -187,7 +171,7 @@
  	  echo "Please make sure you have installed your PF_RING libraries and try again"
  	  exit 1
          fi
-@@ -670,9 +602,9 @@ dnl> FreeBSD
+@@ -656,9 +604,9 @@ dnl> FreeBSD
  fi
  
  dnl> FreeBSD

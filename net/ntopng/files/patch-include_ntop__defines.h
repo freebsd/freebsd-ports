@@ -1,6 +1,6 @@
---- include/ntop_defines.h.orig	2021-08-20 09:38:15 UTC
+--- include/ntop_defines.h.orig	2023-05-31 14:54:04 UTC
 +++ include/ntop_defines.h
-@@ -523,7 +523,7 @@
+@@ -542,7 +542,7 @@
  #define CONST_SHARE_DIR              "/usr/share"
  #define CONST_SHARE_DIR_2            "/usr/local/share"
  #define CONST_ETC_DIR                "/etc"
