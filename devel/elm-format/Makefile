@@ -8,7 +8,7 @@ WWW=		https://github.com/avh4/elm-format/
 
 LICENSE=	BSD3CLAUSE
 
-BUILD_DEPENDS=	ghc-9.2.7:lang/ghc92
+BUILD_DEPENDS=	ghc-9.2.8:lang/ghc92
 
 USES=		cabal
 USE_GITHUB=	yes

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=	fails to build: src/LibBF/Mutable.hsc error: Couldn't match type `Int64' with `Int32'
 BROKEN_i386=	One of dependencies doesn't build on i386
 
-BUILD_DEPENDS=	ghc-9.2.7:lang/ghc92
+BUILD_DEPENDS=	ghc-9.2.8:lang/ghc92
 RUN_DEPENDS=	z3:math/z3
 
 USES=		cabal

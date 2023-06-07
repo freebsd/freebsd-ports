@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 ONLY_FOR_ARCHS=	amd64 i386
 
 BUILD_DEPENDS=	pg_config:databases/postgresql${PGSQL_DEFAULT}-client \
-		ghc-9.2.7:lang/ghc92
+		ghc-9.2.8:lang/ghc92
 
 USES=		cabal pgsql
 

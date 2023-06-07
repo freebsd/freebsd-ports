@@ -21,8 +21,8 @@ PKGNAMESUFFIX=	-${FLAVOR}
 BUILD_DEPENDS=	ghc-8.10.7:lang/ghc810
 GHC_VERSION=	8.10.7
 .elif ${FLAVOR:U} == ghc92
-BUILD_DEPENDS=	ghc-9.2.7:lang/ghc92
-GHC_VERSION=	9.2.7
+BUILD_DEPENDS=	ghc-9.2.8:lang/ghc92
+GHC_VERSION=	9.2.8
 .endif
 
 USES=		cabal

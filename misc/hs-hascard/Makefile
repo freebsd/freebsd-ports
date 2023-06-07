@@ -10,7 +10,7 @@ WWW=		https://github.com/Yvee1/hascard
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	ghc-9.2.7:lang/ghc92
+BUILD_DEPENDS=	ghc-9.2.8:lang/ghc92
 
 USES=		cabal
 USE_CABAL=	MonadPrompt-1.0.0.5 \

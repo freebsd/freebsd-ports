@@ -9,7 +9,7 @@ WWW=		http://darcs.net/
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	ghc-9.2.7:lang/ghc92
+BUILD_DEPENDS=	ghc-9.2.8:lang/ghc92
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cabal pkgconfig

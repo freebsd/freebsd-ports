@@ -13,7 +13,7 @@ BROKEN_aarch64=	compiler crashes
 BUILD_DEPENDS=	rsync:net/rsync \
 		git:devel/git \
 		gsha256sum:sysutils/coreutils \
-		ghc-9.2.7:lang/ghc92
+		ghc-9.2.8:lang/ghc92
 
 RUN_DEPENDS=	rsync:net/rsync \
 		git:devel/git \
