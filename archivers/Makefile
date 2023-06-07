@@ -15,6 +15,7 @@
     SUBDIR += brotli
     SUBDIR += bzip
     SUBDIR += bzip2
+    SUBDIR += bzip3
     SUBDIR += c-blosc
     SUBDIR += c-blosc2
     SUBDIR += cabextract
