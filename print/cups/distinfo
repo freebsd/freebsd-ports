@@ -1,9 +1,3 @@
-TIMESTAMP = 1682944127
-SHA256 (OpenPrinting-cups-v2.4.2_GH0.tar.gz) = 7095b2977bb728ded5566a5c802866062840d6541fd027836865949a407c3682
-SIZE (OpenPrinting-cups-v2.4.2_GH0.tar.gz) = 8173207
-SHA256 (b0f1a00a02e9.patch) = 0c3ec2efad307dbbdd45006c3d205344bcce79f53a7fce4e1bd0ed4dfe4e05f0
-SIZE (b0f1a00a02e9.patch) = 3022
-SHA256 (c114e3c9827a.patch) = 5ee80e5bf98c85c2f65b2e41ae5f32fdd0c55bb71b5cf64f9c2420e89b9ec9ba
-SIZE (c114e3c9827a.patch) = 1558
-SHA256 (ca866d8a9de2.patch) = b14ed18edd38c9f0a99f5399a19b55cb6ea229df504d88e04fe84b9d156591aa
-SIZE (ca866d8a9de2.patch) = 1229
+TIMESTAMP = 1687505666
+SHA256 (OpenPrinting-cups-v2.4.6_GH0.tar.gz) = 7d89f684aace50e17100c78812069168f1bdc06f95623117094f8c47ef867aef
+SIZE (OpenPrinting-cups-v2.4.6_GH0.tar.gz) = 8185117

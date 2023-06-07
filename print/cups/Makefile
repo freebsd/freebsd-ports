@@ -1,13 +1,7 @@
 PORTNAME=	cups
-PORTVERSION=	2.4.2
-PORTREVISION=	1
+PORTVERSION=	2.4.6
 DISTVERSIONPREFIX=v
 CATEGORIES=	print
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	b0f1a00a02e9.patch:-p1
-PATCHFILES+=	c114e3c9827a.patch:-p1
-PATCHFILES+=	ca866d8a9de2.patch:-p1
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Common UNIX Printing System
