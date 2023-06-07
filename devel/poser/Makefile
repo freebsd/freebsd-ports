@@ -1,5 +1,5 @@
 PORTNAME=		poser
-DISTVERSION=		1.0.1
+DISTVERSION=		1.1
 CATEGORIES=		devel
 MASTER_SITES=		https://github.com/Zirias/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/download/v${DISTVERSION}
