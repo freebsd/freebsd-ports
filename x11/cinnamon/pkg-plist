@@ -580,6 +580,8 @@ share/desktop-directories/cinnamon-utility.directory
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-js/cinnamon-js-ui-settings-XletSettingsBase.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-js/cinnamon-js-ui-settings-section.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-js/cinnamon-js-ui-settings.html
+%%PORTDOCS%%share/gtk-doc/html/cinnamon-js/cinnamon-js-ui-systray-SystrayManager.html
+%%PORTDOCS%%share/gtk-doc/html/cinnamon-js/cinnamon-js-ui-systray-section.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-js/cinnamon-js-ui-tooltips-PanelItemTooltip.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-js/cinnamon-js-ui-tooltips-Tooltip.html
 %%PORTDOCS%%share/gtk-doc/html/cinnamon-js/cinnamon-js-ui-tooltips-TooltipBase.html
