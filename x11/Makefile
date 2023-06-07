@@ -328,7 +328,6 @@
     SUBDIR += qt5-qev
     SUBDIR += qt5-x11extras
     SUBDIR += qterminal
-    SUBDIR += radare-cutter
     SUBDIR += remontoire
     SUBDIR += rendercheck
     SUBDIR += rgb

@@ -7634,3 +7634,4 @@ databases/rubygem-pg13|databases/rubygem-pg|2023-06-05|Remove obsoleted port. Us
 devel/rubygem-fast_gettext1|devel/rubygem-fast_gettext|2023-06-05|Remove obsoleted port. Use devel/rubygem-fast_gettext instead
 devel/rubygem-gettext-setup0|devel/rubygem-gettext-setup|2023-06-05|Remove obsoleted port. Use devel/rubygem-gettext-setup instead
 archivers/libunrar|archivers/libunrar6|2023-06-06|Remove obsoleted port. Use archivers/libunrar6 instead
+x11/radare-cutter||2023-06-07|Has expired: Cutter for radare has been discontinued as Cutter has moved to use rizin as their backend framework
