@@ -1312,6 +1312,7 @@
     SUBDIR += safe-rm
     SUBDIR += safecat
     SUBDIR += safecopy
+    SUBDIR += sake
     SUBDIR += samdruckerclientshell
     SUBDIR += samefile
     SUBDIR += samesame
