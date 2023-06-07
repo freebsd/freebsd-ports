@@ -16,7 +16,7 @@ BUILD_DEPENDS=	googletest>0:devel/googletest \
 LIB_DEPENDS=	libfmt.so:devel/libfmt \
 		libyaml-cpp.so:devel/yaml-cpp
 
-USES=		compiler:c++11-lang eigen:3 scons
+USES=		compiler:c++11-lang eigen:3 localbase scons
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
