@@ -2,6 +2,7 @@ bin/metadata-cleaner
 share/applications/fr.romainvigier.MetadataCleaner.desktop
 share/dbus-1/services/fr.romainvigier.MetadataCleaner.service
 share/help/C/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/C/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/C/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/C/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/C/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -9,6 +10,7 @@ share/help/C/fr.romainvigier.MetadataCleaner/general.page
 share/help/C/fr.romainvigier.MetadataCleaner/index.page
 share/help/C/fr.romainvigier.MetadataCleaner/usage.page
 share/help/ar/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/ar/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/ar/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/ar/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/ar/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -16,6 +18,7 @@ share/help/ar/fr.romainvigier.MetadataCleaner/general.page
 share/help/ar/fr.romainvigier.MetadataCleaner/index.page
 share/help/ar/fr.romainvigier.MetadataCleaner/usage.page
 share/help/az/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/az/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/az/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/az/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/az/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -23,6 +26,7 @@ share/help/az/fr.romainvigier.MetadataCleaner/general.page
 share/help/az/fr.romainvigier.MetadataCleaner/index.page
 share/help/az/fr.romainvigier.MetadataCleaner/usage.page
 share/help/bn/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/bn/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/bn/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/bn/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/bn/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -30,6 +34,7 @@ share/help/bn/fr.romainvigier.MetadataCleaner/general.page
 share/help/bn/fr.romainvigier.MetadataCleaner/index.page
 share/help/bn/fr.romainvigier.MetadataCleaner/usage.page
 share/help/ca/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/ca/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/ca/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/ca/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/ca/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -37,6 +42,7 @@ share/help/ca/fr.romainvigier.MetadataCleaner/general.page
 share/help/ca/fr.romainvigier.MetadataCleaner/index.page
 share/help/ca/fr.romainvigier.MetadataCleaner/usage.page
 share/help/cs/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/cs/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/cs/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/cs/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/cs/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -44,6 +50,7 @@ share/help/cs/fr.romainvigier.MetadataCleaner/general.page
 share/help/cs/fr.romainvigier.MetadataCleaner/index.page
 share/help/cs/fr.romainvigier.MetadataCleaner/usage.page
 share/help/da/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/da/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/da/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/da/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/da/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -51,6 +58,7 @@ share/help/da/fr.romainvigier.MetadataCleaner/general.page
 share/help/da/fr.romainvigier.MetadataCleaner/index.page
 share/help/da/fr.romainvigier.MetadataCleaner/usage.page
 share/help/de/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/de/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/de/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/de/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/de/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -58,6 +66,7 @@ share/help/de/fr.romainvigier.MetadataCleaner/general.page
 share/help/de/fr.romainvigier.MetadataCleaner/index.page
 share/help/de/fr.romainvigier.MetadataCleaner/usage.page
 share/help/el/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/el/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/el/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/el/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/el/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -65,6 +74,7 @@ share/help/el/fr.romainvigier.MetadataCleaner/general.page
 share/help/el/fr.romainvigier.MetadataCleaner/index.page
 share/help/el/fr.romainvigier.MetadataCleaner/usage.page
 share/help/es/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/es/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/es/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/es/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/es/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -72,6 +82,7 @@ share/help/es/fr.romainvigier.MetadataCleaner/general.page
 share/help/es/fr.romainvigier.MetadataCleaner/index.page
 share/help/es/fr.romainvigier.MetadataCleaner/usage.page
 share/help/eu/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/eu/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/eu/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/eu/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/eu/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -79,6 +90,7 @@ share/help/eu/fr.romainvigier.MetadataCleaner/general.page
 share/help/eu/fr.romainvigier.MetadataCleaner/index.page
 share/help/eu/fr.romainvigier.MetadataCleaner/usage.page
 share/help/fi/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/fi/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/fi/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/fi/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/fi/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -86,6 +98,7 @@ share/help/fi/fr.romainvigier.MetadataCleaner/general.page
 share/help/fi/fr.romainvigier.MetadataCleaner/index.page
 share/help/fi/fr.romainvigier.MetadataCleaner/usage.page
 share/help/fr/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/fr/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/fr/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/fr/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/fr/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -93,6 +106,7 @@ share/help/fr/fr.romainvigier.MetadataCleaner/general.page
 share/help/fr/fr.romainvigier.MetadataCleaner/index.page
 share/help/fr/fr.romainvigier.MetadataCleaner/usage.page
 share/help/fy/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/fy/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/fy/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/fy/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/fy/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -100,6 +114,7 @@ share/help/fy/fr.romainvigier.MetadataCleaner/general.page
 share/help/fy/fr.romainvigier.MetadataCleaner/index.page
 share/help/fy/fr.romainvigier.MetadataCleaner/usage.page
 share/help/gl/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/gl/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/gl/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/gl/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/gl/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -107,6 +122,7 @@ share/help/gl/fr.romainvigier.MetadataCleaner/general.page
 share/help/gl/fr.romainvigier.MetadataCleaner/index.page
 share/help/gl/fr.romainvigier.MetadataCleaner/usage.page
 share/help/hr/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/hr/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/hr/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/hr/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/hr/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -114,6 +130,7 @@ share/help/hr/fr.romainvigier.MetadataCleaner/general.page
 share/help/hr/fr.romainvigier.MetadataCleaner/index.page
 share/help/hr/fr.romainvigier.MetadataCleaner/usage.page
 share/help/hu/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/hu/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/hu/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/hu/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/hu/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -121,6 +138,7 @@ share/help/hu/fr.romainvigier.MetadataCleaner/general.page
 share/help/hu/fr.romainvigier.MetadataCleaner/index.page
 share/help/hu/fr.romainvigier.MetadataCleaner/usage.page
 share/help/id/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/id/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/id/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/id/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/id/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -128,6 +146,7 @@ share/help/id/fr.romainvigier.MetadataCleaner/general.page
 share/help/id/fr.romainvigier.MetadataCleaner/index.page
 share/help/id/fr.romainvigier.MetadataCleaner/usage.page
 share/help/it/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/it/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/it/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/it/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/it/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -135,6 +154,7 @@ share/help/it/fr.romainvigier.MetadataCleaner/general.page
 share/help/it/fr.romainvigier.MetadataCleaner/index.page
 share/help/it/fr.romainvigier.MetadataCleaner/usage.page
 share/help/ja/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/ja/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/ja/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/ja/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/ja/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -142,6 +162,7 @@ share/help/ja/fr.romainvigier.MetadataCleaner/general.page
 share/help/ja/fr.romainvigier.MetadataCleaner/index.page
 share/help/ja/fr.romainvigier.MetadataCleaner/usage.page
 share/help/ko/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/ko/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/ko/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/ko/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/ko/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -149,6 +170,7 @@ share/help/ko/fr.romainvigier.MetadataCleaner/general.page
 share/help/ko/fr.romainvigier.MetadataCleaner/index.page
 share/help/ko/fr.romainvigier.MetadataCleaner/usage.page
 share/help/lt/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/lt/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/lt/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/lt/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/lt/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -156,6 +178,7 @@ share/help/lt/fr.romainvigier.MetadataCleaner/general.page
 share/help/lt/fr.romainvigier.MetadataCleaner/index.page
 share/help/lt/fr.romainvigier.MetadataCleaner/usage.page
 share/help/nb_NO/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/nb_NO/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/nb_NO/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/nb_NO/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/nb_NO/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -163,6 +186,7 @@ share/help/nb_NO/fr.romainvigier.MetadataCleaner/general.page
 share/help/nb_NO/fr.romainvigier.MetadataCleaner/index.page
 share/help/nb_NO/fr.romainvigier.MetadataCleaner/usage.page
 share/help/nl/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/nl/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/nl/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/nl/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/nl/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -170,6 +194,7 @@ share/help/nl/fr.romainvigier.MetadataCleaner/general.page
 share/help/nl/fr.romainvigier.MetadataCleaner/index.page
 share/help/nl/fr.romainvigier.MetadataCleaner/usage.page
 share/help/nn/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/nn/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/nn/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/nn/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/nn/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -177,6 +202,7 @@ share/help/nn/fr.romainvigier.MetadataCleaner/general.page
 share/help/nn/fr.romainvigier.MetadataCleaner/index.page
 share/help/nn/fr.romainvigier.MetadataCleaner/usage.page
 share/help/oc/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/oc/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/oc/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/oc/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/oc/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -184,6 +210,7 @@ share/help/oc/fr.romainvigier.MetadataCleaner/general.page
 share/help/oc/fr.romainvigier.MetadataCleaner/index.page
 share/help/oc/fr.romainvigier.MetadataCleaner/usage.page
 share/help/pl/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/pl/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/pl/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/pl/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/pl/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -191,6 +218,7 @@ share/help/pl/fr.romainvigier.MetadataCleaner/general.page
 share/help/pl/fr.romainvigier.MetadataCleaner/index.page
 share/help/pl/fr.romainvigier.MetadataCleaner/usage.page
 share/help/pt/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/pt/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/pt/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/pt/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/pt/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -198,6 +226,7 @@ share/help/pt/fr.romainvigier.MetadataCleaner/general.page
 share/help/pt/fr.romainvigier.MetadataCleaner/index.page
 share/help/pt/fr.romainvigier.MetadataCleaner/usage.page
 share/help/pt_BR/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/pt_BR/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/pt_BR/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/pt_BR/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/pt_BR/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -205,6 +234,7 @@ share/help/pt_BR/fr.romainvigier.MetadataCleaner/general.page
 share/help/pt_BR/fr.romainvigier.MetadataCleaner/index.page
 share/help/pt_BR/fr.romainvigier.MetadataCleaner/usage.page
 share/help/ro/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/ro/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/ro/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/ro/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/ro/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -212,6 +242,7 @@ share/help/ro/fr.romainvigier.MetadataCleaner/general.page
 share/help/ro/fr.romainvigier.MetadataCleaner/index.page
 share/help/ro/fr.romainvigier.MetadataCleaner/usage.page
 share/help/ru/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/ru/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/ru/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/ru/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/ru/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -219,6 +250,7 @@ share/help/ru/fr.romainvigier.MetadataCleaner/general.page
 share/help/ru/fr.romainvigier.MetadataCleaner/index.page
 share/help/ru/fr.romainvigier.MetadataCleaner/usage.page
 share/help/sr/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/sr/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/sr/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/sr/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/sr/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -226,6 +258,7 @@ share/help/sr/fr.romainvigier.MetadataCleaner/general.page
 share/help/sr/fr.romainvigier.MetadataCleaner/index.page
 share/help/sr/fr.romainvigier.MetadataCleaner/usage.page
 share/help/sv/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/sv/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/sv/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/sv/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/sv/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -233,6 +266,7 @@ share/help/sv/fr.romainvigier.MetadataCleaner/general.page
 share/help/sv/fr.romainvigier.MetadataCleaner/index.page
 share/help/sv/fr.romainvigier.MetadataCleaner/usage.page
 share/help/ta/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/ta/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/ta/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/ta/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/ta/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -240,6 +274,7 @@ share/help/ta/fr.romainvigier.MetadataCleaner/general.page
 share/help/ta/fr.romainvigier.MetadataCleaner/index.page
 share/help/ta/fr.romainvigier.MetadataCleaner/usage.page
 share/help/tr/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/tr/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/tr/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/tr/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/tr/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -247,6 +282,7 @@ share/help/tr/fr.romainvigier.MetadataCleaner/general.page
 share/help/tr/fr.romainvigier.MetadataCleaner/index.page
 share/help/tr/fr.romainvigier.MetadataCleaner/usage.page
 share/help/uk/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/uk/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/uk/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/uk/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/uk/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -254,6 +290,7 @@ share/help/uk/fr.romainvigier.MetadataCleaner/general.page
 share/help/uk/fr.romainvigier.MetadataCleaner/index.page
 share/help/uk/fr.romainvigier.MetadataCleaner/usage.page
 share/help/zh_CN/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/zh_CN/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/zh_CN/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/zh_CN/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/zh_CN/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -261,6 +298,7 @@ share/help/zh_CN/fr.romainvigier.MetadataCleaner/general.page
 share/help/zh_CN/fr.romainvigier.MetadataCleaner/index.page
 share/help/zh_CN/fr.romainvigier.MetadataCleaner/usage.page
 share/help/zh_TW/fr.romainvigier.MetadataCleaner/figures/add-files-button.png
+share/help/zh_TW/fr.romainvigier.MetadataCleaner/figures/add-folders-button.png
 share/help/zh_TW/fr.romainvigier.MetadataCleaner/figures/clean-button.png
 share/help/zh_TW/fr.romainvigier.MetadataCleaner/figures/icon.svg
 share/help/zh_TW/fr.romainvigier.MetadataCleaner/figures/metadata-example.png
@@ -305,6 +343,7 @@ share/locale/sv/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/ta/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/tr/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/uk/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
+share/locale/ur/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/zh_CN/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/locale/zh_TW/LC_MESSAGES/fr.romainvigier.MetadataCleaner.mo
 share/metadata-cleaner/data/fr.romainvigier.MetadataCleaner.gresource
@@ -316,7 +355,6 @@ share/metadata-cleaner/src/metadatacleaner/modules/filestore.py
 share/metadata-cleaner/src/metadatacleaner/modules/logger.py
 share/metadata-cleaner/src/metadatacleaner/modules/metadata.py
 share/metadata-cleaner/src/metadatacleaner/ui/__init__.py
-share/metadata-cleaner/src/metadatacleaner/ui/aboutdialog.py
 share/metadata-cleaner/src/metadatacleaner/ui/addfilesbutton.py
 share/metadata-cleaner/src/metadatacleaner/ui/badge.py
 share/metadata-cleaner/src/metadatacleaner/ui/cleaningwarningdialog.py
@@ -332,7 +370,6 @@ share/metadata-cleaner/src/metadatacleaner/ui/menubutton.py
 share/metadata-cleaner/src/metadatacleaner/ui/metadatadetails.py
 share/metadata-cleaner/src/metadatacleaner/ui/metadatadetailsrow.py
 share/metadata-cleaner/src/metadatacleaner/ui/metadataview.py
-share/metadata-cleaner/src/metadatacleaner/ui/outbutton.py
 share/metadata-cleaner/src/metadatacleaner/ui/settingsbutton.py
 share/metadata-cleaner/src/metadatacleaner/ui/statusindicator.py
 share/metadata-cleaner/src/metadatacleaner/ui/window.py
