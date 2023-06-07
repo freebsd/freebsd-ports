@@ -5,13 +5,21 @@ CATEGORIES=	games
 MASTER_SITES=	XCONTRIB/../R5contrib
 DISTNAME=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Strategy game of position and movement for X Window System
 
-OPTIONS_DEFINE=	DOCS
+LICENSE=	NONE
 
 USES=		imake tar:Z xorg
 USE_XORG=	x11 xext
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -19,4 +27,4 @@ post-install:
 	(cd ${WRKSRC} && ${INSTALL_DATA} ${i} ${STAGEDIR}${DOCSDIR})
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
