@@ -21,4 +21,5 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
+.include "${.CURDIR}/../py-acme/version.mk"
 .include <bsd.port.mk>
