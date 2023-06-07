@@ -1,10 +1,10 @@
 PORTNAME=	lua
-DISTVERSION=	5.4.4
+DISTVERSION=	5.4.6
 CATEGORIES=	lang
 MASTER_SITES=	https://www.lua.org/ftp/
 PKGNAMESUFFIX=	${LUA_VER_STR}
 
-MAINTAINER=	russ.haley@gmail.com
+MAINTAINER=	andrew@tao11.riddles.org.uk
 COMMENT=	Powerful, efficient, lightweight, embeddable scripting language
 WWW=		https://www.lua.org/
 
