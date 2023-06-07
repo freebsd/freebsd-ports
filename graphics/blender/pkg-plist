@@ -743,6 +743,11 @@ share/applications/blender.desktop
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/light/spot.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/light/tree.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/light/triangle.h
+%%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/osl/closures_setup.h
+%%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/osl/closures_template.h
+%%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/osl/osl.h
+%%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/osl/services_gpu.h
+%%CYCLESOSL%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/osl/types.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/sample/lcg.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/sample/mapping.h
 %%CYCLES%%%%DATADIR%%/%%VER%%/scripts/addons/cycles/source/kernel/sample/mis.h
