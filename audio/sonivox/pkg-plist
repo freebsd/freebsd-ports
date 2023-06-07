@@ -9,6 +9,6 @@ lib/cmake/sonivox/sonivox-targets.cmake
 lib/libsonivox-static.a
 lib/libsonivox.so
 lib/libsonivox.so.3
-lib/libsonivox.so.3.6.11.0
+lib/libsonivox.so.3.6.12.0
 libdata/pkgconfig/sonivox-static.pc
 libdata/pkgconfig/sonivox.pc
