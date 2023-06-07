@@ -1,11 +1,7 @@
 PORTNAME=	votca
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2022
-PORTREVISION=	8
+DISTVERSION=	2022.1
 CATEGORIES=	science
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
-PATCHFILES=	078c6814797749cd1b92a2b19f0302265ccf6463.patch:-p1 # fix testsuite build
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	CSG and XTP: libraries for atomistic simulations
@@ -57,7 +53,7 @@ OPTIONS_SUB=		yes
 APPS_DESC=		Build applications
 APPS_CMAKE_BOOL=	BUILD_CSGAPPS
 
-do-test:
+do-test: # 2 tests fail, see https://github.com/votca/votca/issues/1073
 	@cd ${BUILD_WRKSRC} && \
 		${SETENV} ${CONFIGURE_ENV} ${CMAKE_BIN} ${CMAKE_ARGS} -DENABLE_TESTING:BOOL=ON ${CMAKE_SOURCE_PATH} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} ${ALL_TARGET} && \
