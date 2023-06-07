@@ -1,6 +1,5 @@
 PORTNAME=	unifi7
-PORTVERSION=	7.3.83
-PORTREVISION=	2
+PORTVERSION=	7.4.156
 CATEGORIES=	net-mgmt java
 MASTER_SITES=	http://dl.ubnt.com/unifi/%SUBDIR%/:unifi \
 		https://repo1.maven.org/maven2/%SUBDIR%/:jax
