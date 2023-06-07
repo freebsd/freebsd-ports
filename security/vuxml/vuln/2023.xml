@@ -1,3 +1,58 @@
+  <vuln vid="cdb5338d-04ec-11ee-9c88-001b217b3468">
+    <topic>Gitlab -- Vulnerability</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.0.0</ge><lt>16.0.2</lt></range>
+	<range><ge>15.11.0</ge><lt>15.11.7</lt></range>
+	<range><ge>15.10.0</ge><lt>15.10.8</lt></range>
+	<range><ge>1.2</ge><lt>15.9.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/06/05/security-release-gitlab-16-0-2-released/">
+	  <p>Stored-XSS with CSP-bypass in Merge requests</p>
+	  <p>ReDoS via FrontMatterFilter in any Markdown fields</p>
+	  <p>ReDoS via InlineDiffFilter in any Markdown fields</p>
+	  <p>ReDoS via DollarMathPostFilter in Markdown fields</p>
+	  <p>DoS via malicious test report artifacts</p>
+	  <p>Restricted IP addresses can clone repositories of public projects</p>
+	  <p>Reflected XSS in Report Abuse Functionality</p>
+	  <p>Privilege escalation from maintainer to owner by importing members from a project</p>
+	  <p>Bypassing tags protection in GitLab</p>
+	  <p>Denial of Service using multiple labels with arbitrarily large descriptions</p>
+	  <p>Ability to use an unverified email for public and commit emails</p>
+	  <p>Open Redirection Through HTTP Response Splitting</p>
+	  <p>Disclosure of issue notes to an unauthorized user when exporting a project</p>
+	  <p>Ambiguous branch name exploitation</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2442</cvename>
+      <cvename>CVE-2023-2199</cvename>
+      <cvename>CVE-2023-2198</cvename>
+      <cvename>CVE-2023-2132</cvename>
+      <cvename>CVE-2023-0121</cvename>
+      <cvename>CVE-2023-2589</cvename>
+      <cvename>CVE-2023-2015</cvename>
+      <cvename>CVE-2023-2485</cvename>
+      <cvename>CVE-2023-2001</cvename>
+      <cvename>CVE-2023-0921</cvename>
+      <cvename>CVE-2023-1204</cvename>
+      <cvename>CVE-2023-0508</cvename>
+      <cvename>CVE-2023-1825</cvename>
+      <cvename>CVE-2023-2013</cvename>
+      <url>https://about.gitlab.com/releases/2023/06/05/security-release-gitlab-16-0-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-06-05</discovery>
+      <entry>2023-06-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2f38c6a2-04a4-11ee-8cb0-e41f13b9c674">
     <topic>qpress -- directory traversal</topic>
     <affects>
