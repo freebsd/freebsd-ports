@@ -1,0 +1,21 @@
+- From the Debian port:
+-
+- Author: Alastair McKinstry <mckinstry@debian.org>
+- Description: Handle deprecated code from grib_api by redefining here.
+-   Note: emos to be dropped post bookworm;
+- Bug-Origin: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1033427
+- Last-Updated: 2023-03-26
+- Forwarded: not-needed
+
+--- interpolation/intf2.c
++++ interpolation/intf2.c
+@@ -13,6 +13,9 @@
+ #include "grib_api.h"
+ #include "emos.h"
+ 
++#ifndef GRIB_UTIL_SET_SPEC_FLAGS_ONLY_PACKING
++#define GRIB_UTIL_SET_SPEC_FLAGS_ONLY_PACKING (1 << 0)
++#endif
+ 
+ fortint int2_chkout();
+ fortint int2_estima();
