@@ -13,6 +13,7 @@ lib/libkioarchive.so.5.97.0
 %%QT_PLUGINDIR%%/kf5/kfileitemaction/kactivitymanagerd_fileitem_linking_plugin.so
 %%QT_PLUGINDIR%%/kf5/kio/about.so
 %%QT_PLUGINDIR%%/kf5/kio/activities.so
+%%AFC%%%%QT_PLUGINDIR%%/kf5/kio/afc.so
 %%QT_PLUGINDIR%%/kf5/kio/archive.so
 %%QT_PLUGINDIR%%/kf5/kio/bookmarks.so
 %%QT_PLUGINDIR%%/kf5/kio/filter.so
@@ -1113,6 +1114,8 @@ share/locale/zh_TW/LC_MESSAGES/kio5_thumbnail.mo
 %%SAMBA%%share/mime/packages/org.kde.kio.smb.xml
 share/qlogging-categories5/kio-extras.categories
 share/qlogging-categories5/kio-extras.renamecategories
+%%AFC%%share/remoteview/afc-network.desktop
 %%MTP%%share/remoteview/mtp-network.desktop
 %%SAMBA%%share/remoteview/smb-network.desktop
+%%AFC%%share/solid/actions/solid_afc.desktop
 %%MTP%%share/solid/actions/solid_mtp.desktop
