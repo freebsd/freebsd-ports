@@ -1,6 +1,5 @@
 PORTNAME=	tinker
-DISTVERSION=	8.10.2
-PORTREVISION=	2
+DISTVERSION=	8.10.5
 CATEGORIES=	science
 MASTER_SITES=	https://dasher.wustl.edu/tinker/downloads/
 
@@ -22,7 +21,7 @@ BUILD_WRKSRC=	${WRKSRC}/source
 INSTALL_WRKSRC=	${WRKSRC}/source
 
 MAKE_ENV=	HAVE_G2C=yes
-MAKE_ARGS=	RANLIB=ranlib BINDIR=${STAGEDIR}${PREFIX}/bin
+MAKE_ARGS=	RANLIB=ranlib BINDIR=${STAGEDIR}${PREFIX}/bin LIBS="${LOCALBASE}/lib/libfftw3.a ${LOCALBASE}/lib/libfftw3_threads.a"
 MAKEFILE=	${WRKSRC}/make/Makefile
 EXTRACT_AFTER_ARGS=--exclude fftw --exclude windows --exclude macosx
 

@@ -1,22 +1,13 @@
---- make/Makefile.orig	2022-01-13 23:40:10 UTC
+--- make/Makefile.orig	2023-03-09 06:01:09 UTC
 +++ make/Makefile
-@@ -68,7 +68,7 @@ APBS_LIBS = -lapbsmainroutines -lapbs -lmaloc -lapbsbl
- 
- F77 = gfortran
- F77FLAGS = -c
--OPTFLAGS = -Ofast -march=native -fopenmp
-+OPTFLAGS = -Ofast -fopenmp
- #OPTFLAGS = -Ofast -msse3 -fopenmp
- #OPTFLAGS = -Og -fbacktrace -fcheck=bounds -Wunused -Wmaybe-uninitialized
- LIBDIR = -L. -L$(TINKER_LIBDIR)/linux -Wl,--no-as-needed -ldl
-@@ -803,136 +803,136 @@ listing:
+@@ -818,136 +818,136 @@ listing:
  	cat *.f *.c > tinker.txt
  
  rename_bin:
 -	mv  alchemy.x    $(BINDIR)/alchemy
 -	mv  analyze.x    $(BINDIR)/analyze
 -	mv  anneal.x     $(BINDIR)/anneal
--	mv  archive.x    $(BINDIR)/archive
+-	mv  arcedit.x    $(BINDIR)/arcedit
 -	mv  bar.x        $(BINDIR)/bar
 -	mv  correlate.x  $(BINDIR)/correlate
 -	mv  critical.x   $(BINDIR)/critical
@@ -80,7 +71,7 @@
 +	${BSD_INSTALL_PROGRAM}  alchemy.x    $(BINDIR)/alchemy
 +	${BSD_INSTALL_PROGRAM}  analyze.x    $(BINDIR)/analyze
 +	${BSD_INSTALL_PROGRAM}  anneal.x     $(BINDIR)/anneal
-+	${BSD_INSTALL_PROGRAM}  archive.x    $(BINDIR)/archive
++	${BSD_INSTALL_PROGRAM}  arcedit.x    $(BINDIR)/arcedit
 +	${BSD_INSTALL_PROGRAM}  bar.x        $(BINDIR)/bar
 +	${BSD_INSTALL_PROGRAM}  correlate.x  $(BINDIR)/correlate
 +	${BSD_INSTALL_PROGRAM}  critical.x   $(BINDIR)/critical
@@ -146,7 +137,7 @@
 -	mv  alchemy.x    $(BINDIR)/alchemy.exe
 -	mv  analyze.x    $(BINDIR)/analyze.exe
 -	mv  anneal.x     $(BINDIR)/anneal.exe
--	mv  archive.x    $(BINDIR)/archive.exe
+-	mv  arcedit.x    $(BINDIR)/arcedit.exe
 -	mv  bar.x        $(BINDIR)/bar.exe
 -	mv  correlate.x  $(BINDIR)/correlate.exe
 -	mv  critical.x   $(BINDIR)/critical.exe
@@ -210,7 +201,7 @@
 +	${BSD_INSTALL_PROGRAM}  alchemy.x    $(BINDIR)/alchemy.exe
 +	${BSD_INSTALL_PROGRAM}  analyze.x    $(BINDIR)/analyze.exe
 +	${BSD_INSTALL_PROGRAM}  anneal.x     $(BINDIR)/anneal.exe
-+	${BSD_INSTALL_PROGRAM}  archive.x    $(BINDIR)/archive.exe
++	${BSD_INSTALL_PROGRAM}  arcedit.x    $(BINDIR)/arcedit.exe
 +	${BSD_INSTALL_PROGRAM}  bar.x        $(BINDIR)/bar.exe
 +	${BSD_INSTALL_PROGRAM}  correlate.x  $(BINDIR)/correlate.exe
 +	${BSD_INSTALL_PROGRAM}  critical.x   $(BINDIR)/critical.exe
