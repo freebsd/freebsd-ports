@@ -8,6 +8,7 @@ bin/sc_filterpolicy
 %%HOIHO%%bin/sc_hoiho
 bin/sc_ipiddump
 bin/sc_pinger
+bin/sc_prefixprober
 bin/sc_prefixscan
 bin/sc_radargun
 bin/sc_remoted
@@ -26,12 +27,12 @@ bin/sc_wartsdump
 bin/sc_wartsfilter
 bin/sc_wartsfix
 lib/libscamperctrl.a
-lib/libscamperctrl.so.1
-lib/libscamperctrl.so.1.0.0
+lib/libscamperctrl.so.2
+lib/libscamperctrl.so.2.0.0
 lib/libscamperctrl.so
 lib/libscamperfile.a
-lib/libscamperfile.so.4
-lib/libscamperfile.so.4.0.0
+lib/libscamperfile.so.6
+lib/libscamperfile.so.6.0.0
 lib/libscamperfile.so
 man/man1/sc_ally.1.gz
 man/man1/sc_analysis_dump.1.gz
@@ -42,6 +43,7 @@ man/man1/sc_filterpolicy.1.gz
 %%HOIHO%%man/man1/sc_hoiho.1.gz
 man/man1/sc_ipiddump.1.gz
 man/man1/sc_pinger.1.gz
+man/man1/sc_prefixprober.1.gz
 man/man1/sc_prefixscan.1.gz
 man/man1/sc_radargun.1.gz
 man/man1/sc_remoted.1.gz
