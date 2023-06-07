@@ -1,0 +1,19 @@
+angie/conf/angie.conf
+angie/conf/angie.conf.default
+angie/conf/fastcgi.conf
+angie/conf/fastcgi.conf.default
+angie/conf/fastcgi_params
+angie/conf/fastcgi_params.default
+angie/conf/koi-utf
+angie/conf/koi-win
+angie/conf/mime.types
+angie/conf/mime.types.default
+angie/conf/scgi_params
+angie/conf/scgi_params.default
+angie/conf/uwsgi_params
+angie/conf/uwsgi_params.default
+angie/conf/win-utf
+angie/html/50x.html
+angie/html/index.html
+angie/sbin/angie
+@dir angie/logs

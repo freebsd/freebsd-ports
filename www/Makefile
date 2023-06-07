@@ -26,6 +26,7 @@
     SUBDIR += amfora
     SUBDIR += amphetadesk
     SUBDIR += analog
+    SUBDIR += angie
     SUBDIR += anyremote2html
     SUBDIR += apache-mode.el
     SUBDIR += apache24
