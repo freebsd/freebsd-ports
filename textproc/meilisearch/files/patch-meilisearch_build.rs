@@ -1,15 +1,25 @@
---- meilisearch/build.rs.orig	2023-02-23 13:52:56 UTC
+--- meilisearch/build.rs.orig	2023-05-30 18:20:28 UTC
 +++ meilisearch/build.rs
-@@ -4,6 +4,8 @@ fn main() {
-     if let Err(e) = vergen(Config::default()) {
-         println!("cargo:warning=vergen: {}", e);
-     }
-+    println!("cargo:rustc-env=VERGEN_GIT_SHA=%%COMMIT_SHA%%");
-+    println!("cargo:rustc-env=VERGEN_GIT_COMMIT_TIMESTAMP=%%COMMIT_TS%%");
+@@ -1,17 +1,6 @@
+-use vergen::{vergen, Config, SemverKind};
+-
+ fn main() {
+-    // Note: any code that needs VERGEN_ environment variables should take care to define them manually in the Dockerfile and pass them
+-    // in the corresponding GitHub workflow (publish_docker.yml).
+-    // This is due to the Dockerfile building the binary outside of the git directory.
+-    let mut config = Config::default();
+-    // allow using non-annotated tags
+-    *config.git_mut().semver_kind_mut() = SemverKind::Lightweight;
++    println!("cargo:rustc-env=VERGEN_GIT_SEMVER_LIGHTWEIGHT=%%GH_TAGNAME%%");
 
+-    if let Err(e) = vergen(config) {
+-        println!("cargo:warning=vergen: {}", e);
+-    }
+-
      #[cfg(feature = "mini-dashboard")]
      mini_dashboard::setup_mini_dashboard().expect("Could not load the mini-dashboard assets");
-@@ -18,9 +20,9 @@ mod mini_dashboard {
+ }
+@@ -25,9 +14,9 @@ mod mini_dashboard {
  
      use anyhow::Context;
      use cargo_toml::Manifest;
@@ -20,11 +30,10 @@
  
      pub fn setup_mini_dashboard() -> anyhow::Result<()> {
          let cargo_manifest_dir = PathBuf::from(env::var("CARGO_MANIFEST_DIR").unwrap());
-@@ -51,12 +53,10 @@ mod mini_dashboard {
-             }
+@@ -59,11 +61,10 @@ mod mini_dashboard {
          }
  
--        let url = meta["assets-url"].as_str().unwrap();
+         let url = meta["assets-url"].as_str().unwrap();
 +        let dashboard_assets_bytes = fs::read("%%MINIDASHBOARDFILE%%")?;
  
 -        let dashboard_assets_bytes = get(url)?.bytes()?;

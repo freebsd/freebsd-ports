@@ -1,5 +1,5 @@
---- cargo-crates/lindera-ipadic-0.21.0/build.rs.orig	2006-07-24 01:21:28 UTC
-+++ cargo-crates/lindera-ipadic-0.21.0/build.rs
+--- cargo-crates/lindera-ipadic-0.23.0/build.rs.orig	2023-06-07 21:46:22 UTC
++++ cargo-crates/lindera-ipadic-0.23.0/build.rs
 @@ -26,7 +26,7 @@ fn main() -> Result<(), Box<dyn Error>> {
      let build_dir = env::var_os("OUT_DIR").unwrap(); // ex) target/debug/build/<pkg>/out
  
