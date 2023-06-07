@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pastedeploy>=1.5.0:www/py-pastedeploy@${PY
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.8.0:devel/py-zope.interface@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-#TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}WebTest>=1.1:www/py-WebTest@${PY_FLAVOR} \
+#TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webtest>=1.1:www/py-WebTest@${PY_FLAVOR} \
 #		${PYTHON_PKGNAMEPREFIX}zope.component>=3.6.0:devel/py-zope.component@${PY_FLAVOR}
 
 NO_ARCH=	yes
