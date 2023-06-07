@@ -20,6 +20,7 @@ include/tblite/tblite_api_structure.mod
 include/tblite/tblite_api_table.mod
 include/tblite/tblite_api_utils.mod
 include/tblite/tblite_api_version.mod
+include/tblite/tblite_basis.mod
 include/tblite/tblite_basis_ortho.mod
 include/tblite/tblite_basis_slater.mod
 include/tblite/tblite_basis_type.mod
@@ -34,8 +35,10 @@ include/tblite/tblite_container_list.mod
 include/tblite/tblite_container_type.mod
 include/tblite/tblite_context.mod
 include/tblite/tblite_context_logger.mod
+include/tblite/tblite_context_solver.mod
 include/tblite/tblite_context_terminal.mod
 include/tblite/tblite_context_type.mod
+include/tblite/tblite_coulomb.mod
 include/tblite/tblite_coulomb_cache.mod
 include/tblite/tblite_coulomb_charge.mod
 include/tblite/tblite_coulomb_charge_effective.mod
@@ -46,6 +49,7 @@ include/tblite/tblite_coulomb_multipole.mod
 include/tblite/tblite_coulomb_thirdorder.mod
 include/tblite/tblite_coulomb_type.mod
 include/tblite/tblite_cutoff.mod
+include/tblite/tblite_data.mod
 include/tblite/tblite_data_atomicrad.mod
 include/tblite/tblite_data_covrad.mod
 include/tblite/tblite_data_paulingen.mod
@@ -68,7 +72,11 @@ include/tblite/tblite_lapack.mod
 include/tblite/tblite_lapack_getrf.mod
 include/tblite/tblite_lapack_getri.mod
 include/tblite/tblite_lapack_getrs.mod
+include/tblite/tblite_lapack_potrf.mod
+include/tblite/tblite_lapack_solver.mod
+include/tblite/tblite_lapack_sygst.mod
 include/tblite/tblite_lapack_sygvd.mod
+include/tblite/tblite_lapack_sygvr.mod
 include/tblite/tblite_mesh_lebedev.mod
 include/tblite/tblite_ncoord.mod
 include/tblite/tblite_ncoord_exp.mod
@@ -94,9 +102,11 @@ include/tblite/tblite_repulsion_effective.mod
 include/tblite/tblite_repulsion_type.mod
 include/tblite/tblite_results.mod
 include/tblite/tblite_scf.mod
-include/tblite/tblite_scf_broyden.mod
 include/tblite/tblite_scf_info.mod
 include/tblite/tblite_scf_iterator.mod
+include/tblite/tblite_scf_mixer.mod
+include/tblite/tblite_scf_mixer_broyden.mod
+include/tblite/tblite_scf_mixer_type.mod
 include/tblite/tblite_scf_potential.mod
 include/tblite/tblite_scf_solver.mod
 include/tblite/tblite_solvation.mod
@@ -120,6 +130,7 @@ include/tblite/tblite_wavefunction_mulliken.mod
 include/tblite/tblite_wavefunction_spin.mod
 include/tblite/tblite_wavefunction_type.mod
 include/tblite/tblite_wignerseitz.mod
+include/tblite/tblite_xtb.mod
 include/tblite/tblite_xtb_calculator.mod
 include/tblite/tblite_xtb_coulomb.mod
 include/tblite/tblite_xtb_gfn1.mod
@@ -142,5 +153,5 @@ lib/cmake/tblite/tblite-targets.cmake
 lib/cmake/tblite/tblite-utils.cmake
 lib/libtblite.so
 lib/libtblite.so.0
-lib/libtblite.so.0.2.1
+lib/libtblite.so.0.3.0
 libdata/pkgconfig/tblite.pc
