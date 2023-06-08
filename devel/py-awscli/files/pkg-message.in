@@ -1,4 +1,10 @@
+[
+{ type: install
+  message: <<EOM
 To auto-complete on your shell, please add a following line:
 
 (bashrc) complete -C '%%PREFIX%%/bin/aws_completer' aws
 (zshrc)  source %%PREFIX%%/bin/aws_zsh_completer.sh
+EOM
+}
+]
