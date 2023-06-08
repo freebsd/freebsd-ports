@@ -1,6 +1,5 @@
 PORTNAME=	poedit
-PORTVERSION=	3.0.1
-PORTREVISION=	7
+PORTVERSION=	3.3.1
 CATEGORIES=	editors
 MASTER_SITES=	https://github.com/vslavik/${PORTNAME}/releases/download/v${PORTVERSION}-oss/
 
@@ -14,13 +13,16 @@ BUILD_DEPENDS=	zip:archivers/zip
 LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3 \
 		libboost_thread.so:devel/boost-libs \
 		libicui18n.so:devel/icu \
-		liblucene++.so:textproc/luceneplusplus
+		liblucene++.so:textproc/luceneplusplus \
+		libenchant-2.so:textproc/enchant2 \
+		libharfbuzz.so:print/harfbuzz
 
-USES=		bdb compiler:c++11-lib desktop-file-utils gettext gmake gnome \
+USES=		bdb compiler:c++11-lib desktop-file-utils gmake gnome \
 		pkgconfig
+WITH_BDB_HIGHEST=	yes
+USE_GNOME+=	gtk30 pango cairo gdkpixbuf2 glib20
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute
-WITH_BDB_HIGHEST=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	WXRC="${WXRC_CMD}"
 
@@ -33,10 +35,5 @@ OPTIONS_SUB=yes
 
 NLS_USES=	gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-post-patch:
-	@${REINPLACE_CMD} -e \
-		's/for version in .*;/for version in ${BDB_VER};/ ; \
-		s/-ldb-$$version/-l${BDB_LIB_NAME}/' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
