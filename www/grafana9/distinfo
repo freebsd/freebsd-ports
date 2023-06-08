@@ -1,7 +1,7 @@
-TIMESTAMP = 1682536319
-SHA256 (go/www_grafana9/grafana-grafana-v9.4.9_GH0/grafana-9.4.9.linux-amd64.tar.gz) = 100f0c265c33170aa1e84177b236982fcbd0e2d8f985b9cf7ed4fb2062e06454
-SIZE (go/www_grafana9/grafana-grafana-v9.4.9_GH0/grafana-9.4.9.linux-amd64.tar.gz) = 83943489
-SHA256 (go/www_grafana9/grafana-grafana-v9.4.9_GH0/go.mod) = c8b8fecd42596ff2fae9400b2e2c350960c14724a5bd2b919048ad2c7e48640e
-SIZE (go/www_grafana9/grafana-grafana-v9.4.9_GH0/go.mod) = 21297
-SHA256 (go/www_grafana9/grafana-grafana-v9.4.9_GH0/grafana-grafana-v9.4.9_GH0.tar.gz) = 4862e61e698eb5de44319c7ffa26f0c8042ad987f1f4400e4b180d690d81f2b7
-SIZE (go/www_grafana9/grafana-grafana-v9.4.9_GH0/grafana-grafana-v9.4.9_GH0.tar.gz) = 26286205
+TIMESTAMP = 1686126735
+SHA256 (go/www_grafana9/grafana-grafana-v9.5.3_GH0/grafana-9.5.3.linux-amd64.tar.gz) = 3df7513cc42b11a4f083dc167b2268e88f47b905fab3197525b4fd0938b19f27
+SIZE (go/www_grafana9/grafana-grafana-v9.5.3_GH0/grafana-9.5.3.linux-amd64.tar.gz) = 78499106
+SHA256 (go/www_grafana9/grafana-grafana-v9.5.3_GH0/go.mod) = 850819d04b6b5bf4cfbffc66687366c84a9556fe811a3dd16f59558d9c1247d4
+SIZE (go/www_grafana9/grafana-grafana-v9.5.3_GH0/go.mod) = 20800
+SHA256 (go/www_grafana9/grafana-grafana-v9.5.3_GH0/grafana-grafana-v9.5.3_GH0.tar.gz) = bd1ee2955591672f822829bcc746272254c632e89ae5f7ec7a4929148d09ad1e
+SIZE (go/www_grafana9/grafana-grafana-v9.5.3_GH0/grafana-grafana-v9.5.3_GH0.tar.gz) = 26420045
