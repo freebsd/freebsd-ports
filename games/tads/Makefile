@@ -4,7 +4,7 @@ CATEGORIES=	games lang
 MASTER_SITES=	LOCAL/kris
 DISTNAME=	tads23-unix
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	TADS compiler/interpreter for interactive fiction
 WWW=		https://www.tads.org/
 
@@ -13,11 +13,19 @@ LICENSE_NAME=	TADS FREEWARE SOURCE CODE LICENSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
+USES=		ncurses
+
 CONFLICTS=	frobtads-1.*
 
-USES=		ncurses
-WRKSRC=		${WRKDIR}/tads-3.0.8/tads2
 DATADIR=	${PREFIX}/share/tads2
+
+WRKSRC=		${WRKDIR}/tads-3.0.8/tads2
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/tads2
@@ -28,4 +36,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/$i ${STAGEDIR}${PREFIX}/share/tads2
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
