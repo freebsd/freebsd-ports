@@ -64,6 +64,90 @@
     </dates>
   </vuln>
 
+  <vuln vid="6c1de144-056f-11ee-8e16-6c3be5272acd">
+    <topic>Grafana -- Broken access control: viewer can send test alerts</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>8.0.0</ge><lt>8.5.26</lt></range>
+	<range><ge>9.0.0</ge><lt>9.2.19</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.15</lt></range>
+	<range><ge>9.4.0</ge><lt>9.4.12</lt></range>
+	<range><ge>9.5.0</ge><lt>9.5.3</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><ge>8.0.0</ge><lt>8.5.26</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><lt>9.2.19</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.15</lt></range>
+	<range><ge>9.4.0</ge><lt>9.4.12</lt></range>
+	<range><ge>9.5.0</ge><lt>9.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/06/06/grafana-security-release-new-grafana-versions-with-security-fixes-for-cve-2023-2183-and-cve-2023-2801/">
+	  <p>Grafana can allow an attacker in the <strong>Viewer</strong> role
+	  to send alerts by <strong>API Alert - Test</strong>. This option,
+	  however, is not available in the user panel UI for the Viewer role.
+	  </p>
+	  <p>The CVSS score for this vulnerability is 4.1 Medium
+	  (CVSS:3.1/AV:N/AC:L/PR:L/UI:R/S:C/C:L/I:N/A:N).</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2183</cvename>
+      <url>https://grafana.com/security/security-advisories/cve-2023-2183/</url>
+    </references>
+    <dates>
+      <discovery>2023-06-06</discovery>
+      <entry>2023-06-07</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="652064ef-056f-11ee-8e16-6c3be5272acd">
+    <topic>Grafana -- Grafana DS proxy race condition</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>9.4.0</ge><lt>9.4.12</lt></range>
+	<range><ge>9.5.0</ge><lt>9.5.3</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><ge>9.4.0</ge><lt>9.4.12</lt></range>
+	<range><ge>9.5.0</ge><lt>9.5.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/06/06/grafana-security-release-new-grafana-versions-with-security-fixes-for-cve-2023-2183-and-cve-2023-2801/">
+	  <p>We have discovered a vulnerability with Grafana’s data source query
+	  endpoints that could end up crashing a Grafana instance.</p>
+	  <p>If you have public dashboards (PD) enabled, we
+	  are scoring this as a CVSS 7.5 High.</p>
+	  <p>If you have disabled PD, this vulnerability is still a risk,
+	  but triggering the issue requires data source read privileges
+	  and access to the Grafana API through a developer script.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2801</cvename>
+      <url>CVE-2023-2801</url>
+    </references>
+    <dates>
+      <discovery>2023-06-06</discovery>
+      <entry>2023-06-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12741b1f-04f9-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
