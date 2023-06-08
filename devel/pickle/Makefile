@@ -38,7 +38,10 @@ BIN_SYMLINKS=	bin/n14 \
 .include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CFLAGS+=	-Wno-error=int-conversion
+USES+=		llvm:max=14
+CPP=            clang-cpp${LLVM_VERSION}
+CC=             clang${LLVM_VERSION}
+CXX=            clang++${LLVM_VERSION}
 .endif
 
 post-patch:
