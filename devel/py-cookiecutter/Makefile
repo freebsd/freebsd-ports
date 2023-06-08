@@ -25,8 +25,8 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>0:devel/py-freezegun@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		git:devel/git
 
-USES=		cpe python:3.7-3.10
-USE_PYTHON=	autoplist concurrent distutils
+USES=		cpe python:3.7+
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 CPE_VENDOR=	cookiecutter_project
 
@@ -36,12 +36,11 @@ NO_ARCH=	yes
 # ${WRKDIR} unless told not to.
 
 TEST_ENV=	HOME=${WRKDIR} \
-		LANG=en_US.UTF-8 \
-		LC_ALL=en_US.UTF-8 \
+		LANG=C.UTF-8 \
+		LC_ALL=C.UTF-8 \
 		TMPDIR=${WRKDIR}
 
-do-test:
-	@cd ${WRKSRC} && \
-	${SETENV} ${TEST_ENV} ${LOCALBASE}/bin/pytest-${PYTHON_VER} --cov=cookiecutter tests
+# Windows specific test
+PYTEST_IGNORED_TESTS= test_run_shell_hooks_win
 
 .include <bsd.port.mk>
