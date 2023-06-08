@@ -10,6 +10,11 @@ WWW=		https://github.com/jiangwenyuan/nuster
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
+DEPRECATED=	Do not support OpenSSL 3 and upstream last release was in 2020
+EXPIRATION_DATE=	2023-07-08
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Requires deprecated OpenSSL routines
+
 USES=		compiler:c++11-lang gmake
 USE_RC_SUBR=	nuster
 USE_GITHUB=	yes
