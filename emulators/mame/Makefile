@@ -104,7 +104,11 @@ WITH_DEBUG=	yes
 .endif
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} > 1400000
+.if ${ARCH:Mpowerpc*}
+USES+=		llvm:min=16,build
+.else
 USES+=		llvm:15,build
+.endif
 MAKE_ENV+=	OVERRIDE_AR="llvm-ar${LLVM_VERSION}" \
 		OVERRIDE_CC="clang${LLVM_VERSION}" \
 		OVERRIDE_CXX="clang++${LLVM_VERSION}" \
