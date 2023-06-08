@@ -1,6 +1,6 @@
-TIMESTAMP = 1685994661
-SHA256 (chipsalliance-Surelog-v1.61_GH0.tar.gz) = 06114ea5e776dbf06705f2e2884665adbf7cf42e2f638882b496c0bdd3aba638
-SIZE (chipsalliance-Surelog-v1.61_GH0.tar.gz) = 92071481
+TIMESTAMP = 1686211136
+SHA256 (chipsalliance-Surelog-v1.63_GH0.tar.gz) = 429acad4297abb6dcfb1a393189f41372d67c9b72f4241595ca1148b588fcb29
+SIZE (chipsalliance-Surelog-v1.63_GH0.tar.gz) = 92084588
 SHA256 (alainmarcel-antlr4-cae2b22_GH0.tar.gz) = f4f82c2aa5febfe4f2fd2e3691a34bdea37d4ad57c5f2511b97abad134c61a06
 SIZE (alainmarcel-antlr4-cae2b22_GH0.tar.gz) = 4313615
 SHA256 (google-googletest-cb455a7_GH0.tar.gz) = d3308c0dc010d10d4d4a13c83d784571bb2084e6c790e758167aed49dbdb18b2
