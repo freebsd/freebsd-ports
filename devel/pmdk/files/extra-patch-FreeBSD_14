@@ -1,0 +1,23 @@
+--- src/core/os_posix.c.orig	2023-06-08 22:36:04 UTC
++++ src/core/os_posix.c
+@@ -317,20 +317,6 @@ os_setenv(const char *name, const char *value, int ove
+ }
+ 
+ /*
+- * secure_getenv -- provide GNU secure_getenv for FreeBSD
+- */
+-#if defined(__FreeBSD__)
+-static char *
+-secure_getenv(const char *name)
+-{
+-	if (issetugid() != 0)
+-		return NULL;
+-
+-	return getenv(name);
+-}
+-#endif
+-
+-/*
+  * os_getenv -- getenv abstraction layer
+  */
+ char *

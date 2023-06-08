@@ -1,6 +1,6 @@
---- src/Makefile.inc.orig	2019-08-27 15:43:26 UTC
+--- src/Makefile.inc.orig	2023-05-31 11:28:01 UTC
 +++ src/Makefile.inc
-@@ -300,7 +300,7 @@ install: all
+@@ -268,7 +268,7 @@ install: all
  ifneq ($(LIBRARY_NAME),)
  	$(INSTALL) -d $(LIBS_DESTDIR)
  	$(INSTALL) -p -m 0755 $(TARGET_LIBS) $(LIBS_DESTDIR)
