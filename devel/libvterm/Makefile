@@ -1,9 +1,9 @@
 PORTNAME=	libvterm
-PORTVERSION=	0.3.1
+PORTVERSION=	0.3.2
 CATEGORIES=	devel
 MASTER_SITES=	https://www.leonerd.org.uk/code/libvterm/
 
-MAINTAINER=	aaron.kaufman@pm.me
+MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Implementation of a VT220/xterm/ECMA-48 terminal emulator
 WWW=		https://www.leonerd.org.uk/code/libvterm/
 
@@ -15,12 +15,12 @@ CPE_VENDOR=	leonerd
 PATHFIX_MAKEFILEIN=	Makefile
 USE_LDCONFIG=	yes
 USE_PERL5=	build test
-MAKE_ARGS=	PREFIX=${PREFIX}
+TEST_TARGET=	test
 
 post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/unterm
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vterm-ctrl
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vterm-dump
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvterm.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/unterm
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vterm-ctrl
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/vterm-dump
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libvterm.so
 
 .include <bsd.port.mk>
