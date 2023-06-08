@@ -47,24 +47,24 @@ OPTIONS_DEFAULT=	PMILTER DKIM SASL2 TLS
 NO_OPTIONS_SORT=yes
 OPTIONS_SUB=	yes
 
+PMILTER_DESC=	Adds policy milter support
 DKIM_DESC=	Enable DKIM signing support
 MSP_DESC=	Enable mail submision program
-PMILTER_DESC=	Adds policy milter support
-SASL2AUTHD_DESC=	Enable plaintext authentication via SASL2
 SASL2_DESC=	Adds SASL2 support
+SASL2AUTHD_DESC=	Enable plaintext authentication via SASL2
 
-DKIM_CONFIGURE_ENABLE=	DKIM
-IPV6_MAKE_ENV=	MTA_NETINET6=1
-MSP_CONFIGURE_ENABLE=	msp
-MSP_CONFLICTS=	courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-* sendmail-*
+IPV6_ENV=		MTA_NETINET6=1
 PMILTER_USES=		ssl
 PMILTER_CONFIGURE_ENABLE=	pmilter
-SASL2AUTHD_IMPLIES=	SASL2
-SASL2AUTHD_RUN_DEPENDS=	saslauthd:security/cyrus-sasl2-saslauthd
+DKIM_CONFIGURE_ENABLE=	DKIM
+MSP_CONFLICTS= courier-0.* postfix-1.* postfix-2.* smail-3.* zmailer-2.* opensmtpd-* sendmail-*
+MSP_CONFIGURE_ENABLE=	msp
 SASL2_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
+SASL2_CONFIGURE_ENABLE=	SASL
 SASL2_CONFIGURE_ON=	--with-sasl-incdir=${LOCALBASE}/include \
 			--with-sasl-libdir=${LOCALBASE}/lib
-SASL2_CONFIGURE_ENABLE=	SASL
+SASL2AUTHD_IMPLIES=	SASL2
+SASL2AUTHD_RUN_DEPENDS=	saslauthd:security/cyrus-sasl2-saslauthd
 TLS_USES=		ssl
 TLS_CONFIGURE_ENABLE=	TLS
 TLS_CPPFLAGS=		-I${LOCALBASE}/include
