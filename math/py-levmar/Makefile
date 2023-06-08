@@ -23,6 +23,12 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>0:devel/py-pytest4@${PY_FLAVOR} \
 USES=		python:3.6+
 USE_PYTHON=	distutils autoplist
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|ö|o|' ${WRKSRC}/AUTHORS # breaks because of non-ascii chars
 
@@ -32,4 +38,4 @@ post-install:
 do-test:
 	@cd ${WRKSRC}/levmar/tests && ${PYTHON_CMD} -m pytest --pyargs levmar
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
