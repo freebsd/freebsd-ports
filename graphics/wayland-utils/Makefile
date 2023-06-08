@@ -1,5 +1,5 @@
 PORTNAME=	wayland-utils
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	graphics wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -16,7 +16,7 @@ USES=		meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	wayland
-GL_COMMIT=	39ef1464cc5e706a30f317684362cbb7bb54753f
+GL_COMMIT=	43cc17bc5333c41b4d6b7b1708191426126cb21a
 PLIST_FILES=	bin/wayland-info \
 		man/man1/wayland-info.1.gz
 
