@@ -3,10 +3,12 @@ share/appdata/org.gnome.Solanum.appdata.xml
 share/applications/org.gnome.Solanum.desktop
 share/icons/hicolor/scalable/apps/org.gnome.Solanum.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Solanum-symbolic.svg
+share/locale/be/LC_MESSAGES/solanum.mo
 share/locale/ca/LC_MESSAGES/solanum.mo
 share/locale/cs/LC_MESSAGES/solanum.mo
 share/locale/da/LC_MESSAGES/solanum.mo
 share/locale/de/LC_MESSAGES/solanum.mo
+share/locale/el/LC_MESSAGES/solanum.mo
 share/locale/en_GB/LC_MESSAGES/solanum.mo
 share/locale/es/LC_MESSAGES/solanum.mo
 share/locale/eu/LC_MESSAGES/solanum.mo
