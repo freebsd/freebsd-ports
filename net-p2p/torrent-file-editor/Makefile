@@ -23,6 +23,12 @@ OPTIONS_DEFAULT=	DONATION
 DONATION_DESC=	Show donation text in the About dialog
 DONATION_CMAKE_OFF=	-DDISABLE_DONATION:BOOL=ON
 
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=unused-but-set-variable
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,const auto file,const auto \&file,' \
 		${WRKSRC}/bencodemodel.cpp ${WRKSRC}/mainwindow.cpp
@@ -30,4 +36,4 @@ post-patch:
 	@${REINPLACE_CMD} -i .c++20 '/file/s/version/&.txt/' \
 		${WRKSRC}/cmake/Dmg.cmake ${WRKSRC}/cmake/Version.cmake
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
