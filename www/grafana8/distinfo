@@ -1,12 +1,12 @@
-TIMESTAMP = 1682538075
-SHA256 (grafana-8.5.24.linux-amd64.tar.gz) = ff088012f356bcece24e5c89f924fed83a3b63736ec2cc9bc2a66341bf8fe00c
-SIZE (grafana-8.5.24.linux-amd64.tar.gz) = 79211718
+TIMESTAMP = 1686126915
+SHA256 (grafana-8.5.26.linux-amd64.tar.gz) = 1c10ed6696ab6cfdd1bf139d5c9d23651ef9640e49913366058bd36a205af76d
+SIZE (grafana-8.5.26.linux-amd64.tar.gz) = 79210437
 SHA256 (v0.3.6.tar.gz) = af49dbe70ab6b0eb31d69afd89c3260b82cb662607b66eac41b65d642faee6bb
 SIZE (v0.3.6.tar.gz) = 22747
 SHA256 (v0.7.3.tar.gz) = 9709c0e8eec3045832f9da81c7bcacf1a32774cb674efcd5662dd8b4d82f70c1
 SIZE (v0.7.3.tar.gz) = 21163
-SHA256 (grafana-grafana-v8.5.24_GH0.tar.gz) = 9332fea516f617e6f9b418f28154f4f8f162c2abb3b739cc6ae7fedac21ddc41
-SIZE (grafana-grafana-v8.5.24_GH0.tar.gz) = 18834604
+SHA256 (grafana-grafana-v8.5.26_GH0.tar.gz) = b81029a8a22ecb92c6bf9ac688d1a728e809aea20f24fb57887cc95688c5e0e1
+SIZE (grafana-grafana-v8.5.26_GH0.tar.gz) = 18873247
 SHA256 (Azure-azure-sdk-for-go-v59.3.0_GH0.tar.gz) = 219e6cdb7b26dcb4bdac35de2f06abf9caa71810fe88395e692f42729c8e55f5
 SIZE (Azure-azure-sdk-for-go-v59.3.0_GH0.tar.gz) = 46199521
 SHA256 (Azure-azure-sdk-for-go-sdk-azcore-v0.22.0_GH0.tar.gz) = 7375ac472dc4a19c5ce4eb9e646c20d97a9802e68790dc968b49c7874177b331
