@@ -1,3 +1,69 @@
+  <vuln vid="d86becfe-05a4-11ee-9d4a-080027eda32c">
+    <topic>Python -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>python37</name>
+	<range><lt>3.7.17</lt></range>
+      </package>
+      <package>
+	<name>python38</name>
+	<range><lt>3.8.17</lt></range>
+      </package>
+      <package>
+	<name>python39</name>
+	<range><lt>3.9.17</lt></range>
+      </package>
+      <package>
+	<name>python310</name>
+	<range><lt>3.10.12</lt></range>
+      </package>
+      <package>
+	<name>python311</name>
+	<range><lt>3.11.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Python reports:</p>
+	<blockquote cite="https://pythoninsider.blogspot.com/2023/06/python-3114-31012-3917-3817-3717-and.html">
+	  <p>gh-103142: The version of OpenSSL used in Windows and Mac installers has been upgraded
+	    to 1.1.1u to address CVE-2023-2650, CVE-2023-0465, CVE-2023-0466, CVE-2023-0464, as well
+	    as CVE-2023-0286, CVE-2022-4303, and CVE-2022-4303 fixed previously in 1.1.1t (gh-101727).</p>
+	  <p>gh-102153: urllib.parse.urlsplit() now strips leading C0 control and space characters
+	    following the specification for URLs defined by WHATWG in response to CVE-2023-24329.</p>
+	  <p>gh-99889: Fixed a security in flaw in uu.decode() that could allow for directory traversal
+	    based on the input if no out_file was specified.</p>
+	  <p>gh-104049: Do not expose the local on-disk location in directory indexes produced by
+	    http.client.SimpleHTTPRequestHandler.</p>
+	  <p>gh-101283: subprocess.Popen now uses a safer approach to find cmd.exe when launching with
+	    shell=True.</p>
+	  <p>gh-103935: trace.__main__ now uses io.open_code() for files to be executed instead of raw open().</p>
+	  <p>gh-102953: The extraction methods in tarfile, and shutil.unpack_archive(), have a new filter
+	    argument that allows limiting tar features than may be surprising or dangerous, such as creating
+	    files outside the destination directory. </p>
+	  <p>gh-102126: Fixed a deadlock at shutdown when clearing thread states if any finalizer tries to
+	    acquire the runtime head lock.</p>
+	  <p>gh-100892: Fixed a crash due to a race while iterating over thread states in clearing
+	    threading.local.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-4303</cvename>
+      <cvename>CVE-2023-2650</cvename>
+      <cvename>CVE-2023-0286</cvename>
+      <cvename>CVE-2023-0464</cvename>
+      <cvename>CVE-2023-0465</cvename>
+      <cvename>CVE-2023-0466</cvename>
+      <cvename>CVE-2023-24329</cvename>
+      <url>https://pythoninsider.blogspot.com/2023/06/python-3114-31012-3917-3817-3717-and.html</url>
+    </references>
+    <dates>
+      <discovery>2022-06-08</discovery>
+      <entry>2023-06-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="12741b1f-04f9-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
