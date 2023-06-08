@@ -14,6 +14,11 @@ LICENSE_COMB=		multi
 LICENSE_FILE_CC-BY-3.0=	${WRKSRC}/LOGO_LICENSE.md
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
+DEPRECATED=	Requires legacy OpenSSL 1.1.1 so use devel/godot
+EXPIRATION_DATE=	2023-07-08
+BROKEN_SSL=	openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to build with undefined symbol: ERR_load_BIO_strings
+
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
 		libmpcdec.so:audio/musepack \
