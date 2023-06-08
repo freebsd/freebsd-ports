@@ -135,7 +135,7 @@ you update your ports collection, before attempting any port upgrades.
   e.g. change sysutils_py-mqttwarn_REISPUB to sysutils_py-mqttwarn_REDISPUB
 
 20230416:
-  AFFECTS: users of databases/mongodb50 and databases/mongodb44
+  AFFECTS: users of databases/mongodb50, databases/mongodb44 and databases/mongodb60
   AUTHOR: ronald@FreeBSD.org
 
   MongoDB removed the settings 'fork' and 'pidFilePath' from the default
