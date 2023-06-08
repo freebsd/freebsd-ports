@@ -1,4 +1,4 @@
---- src/imageformats/configure.json.orig	2022-03-02 19:21:52 UTC
+--- src/imageformats/configure.json.orig	2023-01-03 22:24:44 UTC
 +++ src/imageformats/configure.json
 @@ -19,6 +19,7 @@
              "headers": "jasper/jasper.h",
@@ -8,3 +8,13 @@
                      "string.h",
                      "jasper/jasper.h"
                  ],
+@@ -41,6 +42,9 @@
+         "mng": {
+             "headers": "libmng.h",
+             "test": {
++                "head": [
++                    "#define register"
++                ],
+                 "include": [
+                     "stdio.h",
+                     "libmng.h"
