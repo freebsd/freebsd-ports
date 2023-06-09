@@ -1,51 +1,62 @@
-- workaround for https://github.com/google/filament/issues/6861
-
---- filament/backend/src/vulkan/platform/PlatformVulkanAndroidLinuxWindows.cpp.orig	2023-06-01 16:53:44 UTC
-+++ filament/backend/src/vulkan/platform/PlatformVulkanAndroidLinuxWindows.cpp
+--- filament/backend/src/vulkan/platform/VulkanPlatformAndroidLinuxWindows.cpp.orig	2023-06-09 00:40:30 UTC
++++ filament/backend/src/vulkan/platform/VulkanPlatformAndroidLinuxWindows.cpp
+@@ -26,9 +26,9 @@
+ // Platform specific includes and defines
+ #if defined(__ANDROID__)
+     #include <android/native_window.h>
+-#elif defined(__linux__) && defined(FILAMENT_SUPPORTS_GGP)
++#elif (defined(__linux__) || defined(__FreeBSD__)) && defined(FILAMENT_SUPPORTS_GGP)
+     #include <ggp_c/ggp.h>
+-#elif defined(__linux__) && defined(FILAMENT_SUPPORTS_WAYLAND)
++#elif (defined(__linux__) || defined(__FreeBSD__)) && defined(FILAMENT_SUPPORTS_WAYLAND)
+     #include <dlfcn.h>
+     namespace {
+         typedef struct _wl {
 @@ -38,7 +38,7 @@
              uint32_t height;
          } wl;
      }// anonymous namespace
 -#elif defined(__linux__) && defined(FILAMENT_SUPPORTS_X11)
 +#elif (defined(__linux__) || defined(__FreeBSD__)) && defined(FILAMENT_SUPPORTS_X11)
+     // TODO: we should allow for headless on Linux explicitly. Right now this is the headless path
+     // (with no FILAMENT_SUPPORTS_XCB or FILAMENT_SUPPORTS_XLIB).
      #include <dlfcn.h>
-     #if defined(FILAMENT_SUPPORTS_XCB)
-         #include <xcb/xcb.h>
-@@ -83,11 +83,11 @@ Driver* PlatformVulkan::createDriver(void* const share
-     static const char* requiredInstanceExtensions[] = {
+@@ -82,11 +82,11 @@ VulkanPlatform::ExtensionSet VulkanPlatform::getRequir
+     VulkanPlatform::ExtensionSet ret;
      #if defined(__ANDROID__)
-         "VK_KHR_android_surface",
+         ret.insert("VK_KHR_android_surface");
 -    #elif defined(__linux__) && defined(FILAMENT_SUPPORTS_GGP)
 +    #elif (defined(__linux__) || defined(__FreeBSD__)) && defined(FILAMENT_SUPPORTS_GGP)
-         VK_GGP_STREAM_DESCRIPTOR_SURFACE_EXTENSION_NAME,
-     #elif defined(__linux__) && defined(FILAMENT_SUPPORTS_WAYLAND)
-         "VK_KHR_wayland_surface",
+         ret.insert(VK_GGP_STREAM_DESCRIPTOR_SURFACE_EXTENSION_NAME);
+-    #elif defined(__linux__) && defined(FILAMENT_SUPPORTS_WAYLAND)
++    #elif (defined(__linux__) || defined(__FreeBSD__)) && defined(FILAMENT_SUPPORTS_WAYLAND)
+         ret.insert("VK_KHR_wayland_surface");
 -    #elif defined(__linux__) && defined(FILAMENT_SUPPORTS_X11)
 +    #elif (defined(__linux__) || defined(__FreeBSD__)) && defined(FILAMENT_SUPPORTS_X11)
          #if defined(FILAMENT_SUPPORTS_XCB)
-             "VK_KHR_xcb_surface",
+             ret.insert("VK_KHR_xcb_surface");
          #endif
-@@ -121,7 +121,7 @@ PlatformVulkan::SurfaceBundle PlatformVulkan::createVk
+@@ -117,7 +117,7 @@ VulkanPlatform::SurfaceBundle VulkanPlatform::createVk
          VkResult const result = vkCreateAndroidSurfaceKHR(instance, &createInfo, VKALLOC,
-                 (VkSurfaceKHR*) &bundle.surface);
+                 (VkSurfaceKHR*) &surface);
          ASSERT_POSTCONDITION(result == VK_SUCCESS, "vkCreateAndroidSurfaceKHR error.");
 -    #elif defined(__linux__) && defined(FILAMENT_SUPPORTS_GGP)
 +    #elif (defined(__linux__) || defined(__FreeBSD__)) && defined(FILAMENT_SUPPORTS_GGP)
          VkStreamDescriptorSurfaceCreateInfoGGP const surface_create_info = {
                  .sType = VK_STRUCTURE_TYPE_STREAM_DESCRIPTOR_SURFACE_CREATE_INFO_GGP,
                  .streamDescriptor = kGgpPrimaryStreamDescriptor,
-@@ -135,7 +135,7 @@ PlatformVulkan::SurfaceBundle PlatformVulkan::createVk
+@@ -131,7 +131,7 @@ VulkanPlatform::SurfaceBundle VulkanPlatform::createVk
          VkResult const result = fpCreateStreamDescriptorSurfaceGGP(instance, &surface_create_info,
-                 nullptr, (VkSurfaceKHR*) &bundle.surface);
+                 nullptr, (VkSurfaceKHR*) &surface);
          ASSERT_POSTCONDITION(result == VK_SUCCESS, "vkCreateStreamDescriptorSurfaceGGP error.");
 -    #elif defined(__linux__) && defined(FILAMENT_SUPPORTS_WAYLAND)
 +    #elif (defined(__linux__) || defined(__FreeBSD__)) && defined(FILAMENT_SUPPORTS_WAYLAND)
          wl* ptrval = reinterpret_cast<wl*>(nativeWindow);
-         bundle.width = ptrval->width;
-         bundle.height = ptrval->height;
-@@ -150,7 +150,7 @@ PlatformVulkan::SurfaceBundle PlatformVulkan::createVk
+         extent.width = ptrval->width;
+         extent.height = ptrval->height;
+@@ -146,7 +146,7 @@ VulkanPlatform::SurfaceBundle VulkanPlatform::createVk
          VkResult const result = vkCreateWaylandSurfaceKHR(instance, &createInfo, VKALLOC,
-                 (VkSurfaceKHR*) &bundle.surface);
+                 (VkSurfaceKHR*) &surface);
          ASSERT_POSTCONDITION(result == VK_SUCCESS, "vkCreateWaylandSurfaceKHR error.");
 -    #elif defined(__linux__) && defined(FILAMENT_SUPPORTS_X11)
 +    #elif (defined(__linux__) || defined(__FreeBSD__)) && defined(FILAMENT_SUPPORTS_X11)
