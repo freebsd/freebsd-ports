@@ -1,10 +1,6 @@
 PORTNAME=	liboqs
-DISTVERSION=	0.7.2-20220607
-PORTREVISION=	1
+DISTVERSION=	0.8.0
 CATEGORIES=	security
-
-PATCH_SITES=	https://github.com/open-quantum-safe/liboqs/pull/1267/commits/
-PATCHFILES=	676c0f53fd7d5601636cf698f04131b832f9d672.diff:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C library for quantum-resistant cryptography
