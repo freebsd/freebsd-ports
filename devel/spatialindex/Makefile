@@ -1,20 +1,19 @@
 PORTNAME=	spatialindex
-PORTVERSION=	1.8.5
+DISTVERSION=	1.9.3
 CATEGORIES=	devel
-MASTER_SITES=	https://download.osgeo.org/libspatialindex/
+MASTER_SITES=	https://github.com/libspatialindex/libspatialindex/releases/download/${DISTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	General Framework for Developing Spatial Indices
-WWW=		https://libspatialindex.github.io/
+WWW=		https://libspatialindex.org/en/latest/
 
 LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake libtool pathfix tar:bzip2
-GNU_CONFIGURE=	yes
+USES=		cmake:testing compiler:c++11-lang
 USE_LDCONFIG=	yes
 
-post-install:
-	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspatialindex*.so.*
+CMAKE_TESTING_ON=	SIDX_BUILD_TESTS
 
 .include <bsd.port.mk>
