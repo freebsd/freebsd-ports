@@ -16,7 +16,7 @@
 -#elif defined(__APPLE__)
 +#elif defined(__FreeBSD__)
    uint64_t tid;
--  pthread_threadid_np(NULL, &tid);
+-  pthread_threadid_np(nullptr, &tid);
 +  tid = pthread_getthreadid_np();
    return tid;
  #else
