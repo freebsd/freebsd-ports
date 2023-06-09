@@ -1,6 +1,5 @@
 PORTNAME=	pam_p11
-PORTVERSION=	0.3.1
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/OpenSC/pam_p11/releases/download/pam_p11-${PORTVERSION}/
 
@@ -9,9 +8,6 @@ COMMENT=	PAM module using crypto tokens for auth
 WWW=		https://github.com/OpenSC/pam_p11
 
 LICENSE=	LGPL21
-
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to build with error: 'RSA_*' is deprecated
 
 LIB_DEPENDS=	libp11.so:security/libp11
 
@@ -24,7 +20,8 @@ GNU_CONFIGURE=	yes
 NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
 NLS_PLIST_FILES=share/locale/de/LC_MESSAGES/pam_p11.mo \
-		share/locale/it/LC_MESSAGES/pam_p11.mo
+		share/locale/it/LC_MESSAGES/pam_p11.mo \
+		share/locale/ru/LC_MESSAGES/pam_p11.mo
 
 CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE}
 
