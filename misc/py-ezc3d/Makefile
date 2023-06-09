@@ -1,6 +1,6 @@
 PORTNAME=	ezc3d
 DISTVERSIONPREFIX=	Release_
-DISTVERSION=	1.5.3
+DISTVERSION=	1.5.4
 CATEGORIES=	misc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS=	${PYNUMPY}
 
 USES=		python
-USE_PYTHON=	distutils pytest # autoplist is broken due to https://github.com/pyomeca/ezc3d/issues/258 ; tests fail, see https://github.com/pyomeca/ezc3d/issues/259
+USE_PYTHON=	distutils pytest # autoplist is broken due to https://github.com/pyomeca/ezc3d/issues/258 ; 3 tests fail, see https://github.com/pyomeca/ezc3d/issues/291
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pyomeca
