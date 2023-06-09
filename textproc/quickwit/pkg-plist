@@ -1,7 +1,5 @@
 bin/quickwit
 @sample %%ETCDIR%%/quickwit.yaml.sample
-%%PORTDOCS%%%%DOCSDIR%%/about/_category_.yaml
-%%PORTDOCS%%%%DOCSDIR%%/about/release-notes.md
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/distributed-tracing-overview-dark.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/distributed-tracing-overview-light.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/integrations.png
@@ -18,6 +16,8 @@ bin/quickwit
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-overview-dark.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-overview-light.svg
 %%PORTDOCS%%%%DOCSDIR%%/assets/images/quickwit-ui.png
+%%PORTDOCS%%%%DOCSDIR%%/assets/images/screenshot-indexer-grafana-dashboard.jpeg
+%%PORTDOCS%%%%DOCSDIR%%/assets/images/screenshot-metastore-grafana-dashboard.png
 %%PORTDOCS%%%%DOCSDIR%%/assets/screenshot-ui-otel-logs.png
 %%PORTDOCS%%%%DOCSDIR%%/configuration/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/configuration/index-config.md
@@ -44,7 +44,6 @@ bin/quickwit
 %%PORTDOCS%%%%DOCSDIR%%/get-started/tutorials/tutorial-hdfs-logs-distributed-search-aws-s3.md
 %%PORTDOCS%%%%DOCSDIR%%/get-started/tutorials/tutorial-hdfs-logs.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/_category_.yaml
-%%PORTDOCS%%%%DOCSDIR%%/guides/aws-costs.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/aws-setup.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/schemaless.md
 %%PORTDOCS%%%%DOCSDIR%%/guides/storage-setup/_category_.yaml
@@ -71,6 +70,10 @@ bin/quickwit
 %%PORTDOCS%%%%DOCSDIR%%/log-management/send-logs/using-otel-collector.md
 %%PORTDOCS%%%%DOCSDIR%%/log-management/send-logs/using-vector.md
 %%PORTDOCS%%%%DOCSDIR%%/log-management/supported-agents.md
+%%PORTDOCS%%%%DOCSDIR%%/operating/_category_.yaml
+%%PORTDOCS%%%%DOCSDIR%%/operating/aws-costs.md
+%%PORTDOCS%%%%DOCSDIR%%/operating/data-directory.md
+%%PORTDOCS%%%%DOCSDIR%%/operating/monitoring.md
 %%PORTDOCS%%%%DOCSDIR%%/overview/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/overview/architecture.md
 %%PORTDOCS%%%%DOCSDIR%%/overview/concepts/_category_.yaml
@@ -82,6 +85,7 @@ bin/quickwit
 %%PORTDOCS%%%%DOCSDIR%%/reference/_category_.yaml
 %%PORTDOCS%%%%DOCSDIR%%/reference/aggregation.md
 %%PORTDOCS%%%%DOCSDIR%%/reference/cli.md
+%%PORTDOCS%%%%DOCSDIR%%/reference/es_compatible_api.md
 %%PORTDOCS%%%%DOCSDIR%%/reference/metrics.md
 %%PORTDOCS%%%%DOCSDIR%%/reference/query-language.md
 %%PORTDOCS%%%%DOCSDIR%%/reference/rest-api.md
