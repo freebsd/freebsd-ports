@@ -1,20 +1,34 @@
 PORTNAME=	gmanedit
 PORTVERSION=	0.4.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	editors gnome
 MASTER_SITES=	SF/${PORTNAME}2/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	GNOME manpages editor
 WWW=		https://sourceforge.net/projects/gmanedit2/
 
-USES=		gettext gmake gnome pathfix pkgconfig
-USE_GNOME=	gtk20
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
+	libfreetype.so:print/freetype2 \
+	libharfbuzz.so:print/harfbuzz
+
+USES=		gettext gmake gnome localbase:ldflags pathfix pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lz
+
+LDFLAGS+=	-lz
+
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e '/<argz\.h>/d' ${WRKSRC}/src/callbacks.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
