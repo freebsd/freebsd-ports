@@ -1,6 +1,6 @@
---- Makefile.PL.orig	Sat Nov 22 06:12:11 2003
-+++ Makefile.PL	Mon Dec  8 20:01:27 2003
-@@ -28,7 +28,7 @@
+--- Makefile.PL.orig	2008-01-08 05:28:47 UTC
++++ Makefile.PL
+@@ -29,7 +29,7 @@ use Test::More 0.4;
  use DBI::DBD;   # DBD creation tools
  
  my $ib_dir_prefix;
@@ -9,13 +9,13 @@
  # init stuff
  my $IB_Bin_path = '';
  my $isql_name;
-@@ -82,7 +82,12 @@
+@@ -83,7 +83,12 @@ else
      @ib_bin_dirs = (qw(/usr/interbase/bin /opt/interbase/bin /opt/firebird/bin /usr/bin /usr/local/bin));
      @ib_inc_dirs = (qw(/usr/interbase/include /opt/interbase/include /opt/firebird/include /usr/include));
  }
 -
 +=cut
-+my $IB_BASE='%%IB_BASE%%';
++my $IB_BASE='/usr/local';
 +my $IB_Bin_path = $IB_BASE.'/bin';
 +my $isql_name = 'isql';
 +my $ib_lib_dir = $IB_BASE.'/lib';
@@ -23,7 +23,7 @@
  sub locate_dbi_arch_dir {
      my $dbidir = dbd_dbi_dir();
      my @try = map { "$_/auto/DBI" } @INC;
-@@ -91,7 +96,7 @@
+@@ -92,7 +97,7 @@ sub locate_dbi_arch_dir {
      Carp::carp( "Multiple copies of Driver.xst found in: @xst") if @xst > 1;
      return $xst[0];
  }
@@ -32,7 +32,7 @@
  ################################################################################
  # sub test_files - checks if at least one of the files in the list exists
  # Paramters:
-@@ -296,13 +301,13 @@
+@@ -305,13 +310,13 @@ sub create_test_db
  
  # prompt for InterBase bin directory
  $IB_Bin_path = dir_choice("InterBase/Firebird bin directory", [@ib_bin_dirs], [qw(gfix gfix.exe)]);
@@ -48,17 +48,18 @@
  # get InterBase version
  my $IBVERSION;
  my $GFIX_PATH = $IB_Bin_path . "/" . test_files($IB_Bin_path, [qw(gfix gfix.exe)]);
-@@ -312,7 +317,7 @@
+@@ -321,8 +326,8 @@ my $is_final = $IBVERSION =~ /\.6\d+$/ ? 1 : 0;
  
  # prompt for IB include dir
  my $ib_inc = dir_choice("InterBase/Firebird include directory", [@ib_inc_dirs], [qw(gds.h ibase.h)]);
--
 +=cut
  
+-
  # we use a hash for the MakeMaker parameters
  my %MakeParams = (
-@@ -323,14 +328,14 @@
-     'CCFLAGS'       => '',
+     'NAME'          => 'DBD::InterBase',
+@@ -332,14 +337,14 @@ my %MakeParams = (
+     'CCFLAGS'       => '-Wall -fno-strict-aliasing',
      'INC'           => qq(-I"$ib_inc" -I"${\locate_dbi_arch_dir()}"),
      'OBJECT'        => "InterBase.o dbdimp.o",
 -    'LIBS'          => [''],
@@ -74,7 +75,7 @@
  # the OS specific build environment setup
  my $os = $Config::Config{'osname'};
  if ($os eq 'MSWin32')
-@@ -530,7 +535,7 @@
+@@ -545,7 +550,7 @@ else
  
  # create the test config file
  make_test_conf();
