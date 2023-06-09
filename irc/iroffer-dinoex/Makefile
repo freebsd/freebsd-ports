@@ -12,9 +12,6 @@ WWW=		https://iroffer.net/
 
 LICENSE=	GPLv2
 
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to detect crypt.h from OpenSSL 3.0.0 and later
-
 CONFLICTS=	iroffer-1* iroffer-lamm-1.*
 
 USES=		ssl
