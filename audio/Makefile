@@ -43,6 +43,7 @@
     SUBDIR += audacity
     SUBDIR += audiere
     SUBDIR += audiocd-kio
+    SUBDIR += audiowmark
     SUBDIR += aumix
     SUBDIR += autocd
     SUBDIR += autotalent
