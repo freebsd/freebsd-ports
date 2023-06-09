@@ -13,7 +13,6 @@ libexec/appjail/getservbyname/getservbyname
 libexec/appjail/ipcheck/ipcheck
 libexec/appjail/network/network
 %%DATADIR%%/cmd/cmd
-%%DATADIR%%/cmd/config
 %%DATADIR%%/cmd/cpuset
 %%DATADIR%%/cmd/disable
 %%DATADIR%%/cmd/enable
