@@ -21,7 +21,7 @@ LIB_DEPENDS=	libtiff.so:graphics/tiff \
 
 CONFLICTS=	vtk6 vtk9
 
-USES=		alias cmake compiler:c++11-lang gl jpeg localbase xorg
+USES=		alias cmake compiler:c++11-lang gl jpeg localbase perl5 xorg
 USE_LDCONFIG=	${PREFIX}/lib/vtk-${VTK_SHORT_VER}
 USE_XORG=	ice x11 xt xext sm
 
