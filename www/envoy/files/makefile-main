@@ -7,70 +7,70 @@ CPPFLAGS+=	-I. -I../include -I../api -I$(LOCALBASE)/include \
 LDFLAGS+=	-L$(LOCALBASE)/lib -lfmt
 CCACHE?=	$(shell command -v ccache)
 
-api_OBJS=	../api/envoy/admin/v2alpha/certs.pb.o \
-		../api/envoy/admin/v2alpha/clusters.pb.o \
-		../api/envoy/admin/v2alpha/config_dump.pb.o \
-		../api/envoy/admin/v2alpha/memory.pb.o \
-		../api/envoy/admin/v2alpha/metrics.pb.o \
-		../api/envoy/admin/v2alpha/mutex_stats.pb.o \
-		../api/envoy/admin/v2alpha/server_info.pb.o \
-		../api/envoy/api/v2/auth/cert.pb.o \
-		../api/envoy/api/v2/cds.pb.o \
-		../api/envoy/api/v2/cluster/circuit_breaker.pb.o \
-		../api/envoy/api/v2/cluster/outlier_detection.pb.o \
-		../api/envoy/api/v2/core/address.pb.o \
-		../api/envoy/api/v2/core/base.pb.o \
-		../api/envoy/api/v2/core/config_source.pb.o \
-		../api/envoy/api/v2/core/grpc_service.pb.o \
-		../api/envoy/api/v2/core/health_check.pb.o \
-		../api/envoy/api/v2/core/protocol.pb.o \
-		../api/envoy/api/v2/discovery.pb.o \
-		../api/envoy/api/v2/eds.pb.o \
-		../api/envoy/api/v2/endpoint/endpoint.pb.o \
-		../api/envoy/api/v2/endpoint/load_report.pb.o \
-		../api/envoy/api/v2/lds.pb.o \
-		../api/envoy/api/v2/listener/listener.pb.o \
-		../api/envoy/api/v2/ratelimit/ratelimit.pb.o \
-		../api/envoy/api/v2/rds.pb.o \
-		../api/envoy/api/v2/route/route.pb.o \
-		../api/envoy/config/accesslog/v2/als.pb.o \
-		../api/envoy/config/accesslog/v2/file.pb.o \
-		../api/envoy/config/bootstrap/v2/bootstrap.pb.o \
-		../api/envoy/config/filter/accesslog/v2/accesslog.pb.o \
-		../api/envoy/config/filter/fault/v2/fault.pb.o \
-		../api/envoy/config/filter/http/fault/v2/fault.pb.o \
-		../api/envoy/config/filter/http/transcoder/v2/transcoder.pb.o \
-		../api/envoy/config/filter/network/http_connection_manager/v2/http_connection_manager.pb.o \
-		../api/envoy/config/filter/network/redis_proxy/v2/redis_proxy.pb.o \
-		../api/envoy/config/filter/network/tcp_proxy/v2/tcp_proxy.pb.o \
-		../api/envoy/config/metrics/v2/metrics_service.pb.o \
-		../api/envoy/config/metrics/v2/stats.pb.o \
-		../api/envoy/config/overload/v2alpha/overload.pb.o \
-		../api/envoy/config/rbac/v2alpha/rbac.pb.o \
-		../api/envoy/config/trace/v2/trace.pb.o \
-		../api/envoy/data/accesslog/v2/accesslog.pb.o \
-		../api/envoy/data/cluster/v2alpha/outlier_detection_event.pb.o \
-		../api/envoy/data/core/v2alpha/health_check_event.pb.o \
-		../api/envoy/service/accesslog/v2/als.pb.o \
-		../api/envoy/service/discovery/v2/ads.pb.o \
-		../api/envoy/service/discovery/v2/hds.pb.o \
-		../api/envoy/service/discovery/v2/sds.pb.o \
-		../api/envoy/service/load_stats/v2/lrs.pb.o \
-		../api/envoy/service/metrics/v2/metrics_service.pb.o \
-		../api/envoy/service/ratelimit/v2/rls.pb.o \
-		../api/envoy/type/matcher/metadata.pb.o \
-		../api/envoy/type/matcher/number.pb.o \
-		../api/envoy/type/matcher/string.pb.o \
-		../api/envoy/type/matcher/value.pb.o \
-		../api/envoy/type/percent.pb.o \
-		../api/envoy/type/range.pb.o \
-		../api/gogoproto/gogo.pb.o \
-		../api/google/api/annotations.pb.o \
-		../api/google/api/http.pb.o \
-		../api/google/rpc/status.pb.o \
-		../api/metrics.pb.o \
-		../api/src/proto/grpc/health/v1/health.pb.o \
-		../api/validate/validate.pb.o
+api_OBJS=	envoy/admin/v2alpha/certs.pb.o \
+		envoy/admin/v2alpha/clusters.pb.o \
+		envoy/admin/v2alpha/config_dump.pb.o \
+		envoy/admin/v2alpha/memory.pb.o \
+		envoy/admin/v2alpha/metrics.pb.o \
+		envoy/admin/v2alpha/mutex_stats.pb.o \
+		envoy/admin/v2alpha/server_info.pb.o \
+		envoy/api/v2/auth/cert.pb.o \
+		envoy/api/v2/cds.pb.o \
+		envoy/api/v2/cluster/circuit_breaker.pb.o \
+		envoy/api/v2/cluster/outlier_detection.pb.o \
+		envoy/api/v2/core/address.pb.o \
+		envoy/api/v2/core/base.pb.o \
+		envoy/api/v2/core/config_source.pb.o \
+		envoy/api/v2/core/grpc_service.pb.o \
+		envoy/api/v2/core/health_check.pb.o \
+		envoy/api/v2/core/protocol.pb.o \
+		envoy/api/v2/discovery.pb.o \
+		envoy/api/v2/eds.pb.o \
+		envoy/api/v2/endpoint/endpoint.pb.o \
+		envoy/api/v2/endpoint/load_report.pb.o \
+		envoy/api/v2/lds.pb.o \
+		envoy/api/v2/listener/listener.pb.o \
+		envoy/api/v2/ratelimit/ratelimit.pb.o \
+		envoy/api/v2/rds.pb.o \
+		envoy/api/v2/route/route.pb.o \
+		envoy/config/accesslog/v2/als.pb.o \
+		envoy/config/accesslog/v2/file.pb.o \
+		envoy/config/bootstrap/v2/bootstrap.pb.o \
+		envoy/config/filter/accesslog/v2/accesslog.pb.o \
+		envoy/config/filter/fault/v2/fault.pb.o \
+		envoy/config/filter/http/fault/v2/fault.pb.o \
+		envoy/config/filter/http/transcoder/v2/transcoder.pb.o \
+		envoy/config/filter/network/http_connection_manager/v2/http_connection_manager.pb.o \
+		envoy/config/filter/network/redis_proxy/v2/redis_proxy.pb.o \
+		envoy/config/filter/network/tcp_proxy/v2/tcp_proxy.pb.o \
+		envoy/config/metrics/v2/metrics_service.pb.o \
+		envoy/config/metrics/v2/stats.pb.o \
+		envoy/config/overload/v2alpha/overload.pb.o \
+		envoy/config/rbac/v2alpha/rbac.pb.o \
+		envoy/config/trace/v2/trace.pb.o \
+		envoy/data/accesslog/v2/accesslog.pb.o \
+		envoy/data/cluster/v2alpha/outlier_detection_event.pb.o \
+		envoy/data/core/v2alpha/health_check_event.pb.o \
+		envoy/service/accesslog/v2/als.pb.o \
+		envoy/service/discovery/v2/ads.pb.o \
+		envoy/service/discovery/v2/hds.pb.o \
+		envoy/service/discovery/v2/sds.pb.o \
+		envoy/service/load_stats/v2/lrs.pb.o \
+		envoy/service/metrics/v2/metrics_service.pb.o \
+		envoy/service/ratelimit/v2/rls.pb.o \
+		envoy/type/matcher/metadata.pb.o \
+		envoy/type/matcher/number.pb.o \
+		envoy/type/matcher/string.pb.o \
+		envoy/type/matcher/value.pb.o \
+		envoy/type/percent.pb.o \
+		envoy/type/range.pb.o \
+		gogoproto/gogo.pb.o \
+		google/api/annotations.pb.o \
+		google/api/http.pb.o \
+		google/rpc/status.pb.o \
+		metrics.pb.o \
+		src/proto/grpc/health/v1/health.pb.o \
+		validate/validate.pb.o
 
 source_OBJS=	$(common_SRCS:.cc=.o) \
 		$(exe_SRCS:.cc=.o) \
@@ -162,8 +162,9 @@ LIBS=	$(LOCALBASE)/lib/libabsl_bad_optional_access.a \
 	-lgrpc++ -lhttp_parser -lnghttp2 -lprotobuf -lpthread -lssl \
 	-lxxhash -lyaml-cpp
 
-envoy: $(api_OBJS) $(source_OBJS)
-	$(CXX) $(LDFLAGS) -o $@ $^ $(LIBS)
+envoy: $(addprefix ../api/,$(api_OBJS)) $(source_OBJS)
+	$(CCACHE) $(CXX) $(LDFLAGS) -o $@ $^ $(LIBS) -Wl,-error-limit=0
+	./$@ --version
 
 all: envoy
 
