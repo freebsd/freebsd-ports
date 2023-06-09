@@ -1,3 +1,28 @@
+  <vuln vid="fdca9418-06f0-11ee-abe2-ecf4bbefc954">
+    <topic>acme.sh -- closes potential remote vuln</topic>
+    <affects>
+      <package>
+	<name>acme.sh</name>
+	<range><lt>3.0.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Neil Pang reports:</p>
+	<blockquote cite="https://github.com/acmesh-official/acme.sh/issues/4659">
+	  <p>HiCA was injecting arbitrary code/commands into the certificate obtaining process and acme.sh is running them on the client machine.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://github.com/acmesh-official/acme.sh/issues/4665</url>
+    </references>
+    <dates>
+      <discovery>2023-06-08</discovery>
+      <entry>2023-06-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d86becfe-05a4-11ee-9d4a-080027eda32c">
     <topic>Python -- multiple vulnerabilities</topic>
     <affects>
