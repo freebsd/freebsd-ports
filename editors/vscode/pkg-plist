@@ -4,6 +4,7 @@ etc/bash_completion.d/code-oss
 share/appdata/code-oss.appdata.xml
 share/applications/code-oss-url-handler.desktop
 share/applications/code-oss.desktop
+%%DATADIR%%/LICENSES.chromium.html
 %%DATADIR%%/bin/code-oss
 %%DATADIR%%/chrome_100_percent.pak
 %%DATADIR%%/chrome_200_percent.pak
@@ -306,6 +307,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/json/package.nls.json
 %%DATADIR%%/resources/app/extensions/json/syntaxes/JSON.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/json/syntaxes/JSONC.tmLanguage.json
+%%DATADIR%%/resources/app/extensions/json/syntaxes/JSONL.tmLanguage.json
 %%DATADIR%%/resources/app/extensions/julia/language-configuration.json
 %%DATADIR%%/resources/app/extensions/julia/package.json
 %%DATADIR%%/resources/app/extensions/julia/package.nls.json
@@ -361,6 +363,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/markdown-language-features/server/README.md
 %%DATADIR%%/resources/app/extensions/markdown-language-features/server/build/pipeline.yml
 %%DATADIR%%/resources/app/extensions/markdown-language-features/server/dist/node/workerMain.js
+%%DATADIR%%/resources/app/extensions/markdown-language-features/server/dist/node/workerMain.js.LICENSE.txt
 %%DATADIR%%/resources/app/extensions/markdown-language-features/server/package.json
 %%DATADIR%%/resources/app/extensions/markdown-language-features/types/previewMessaging.d.ts
 %%DATADIR%%/resources/app/extensions/markdown-math/README.md
@@ -723,13 +726,13 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/theme-defaults/fileicons/vs_minimal-icon-theme.json
 %%DATADIR%%/resources/app/extensions/theme-defaults/package.json
 %%DATADIR%%/resources/app/extensions/theme-defaults/package.nls.json
+%%DATADIR%%/resources/app/extensions/theme-defaults/themes/dark_modern.json
 %%DATADIR%%/resources/app/extensions/theme-defaults/themes/dark_plus.json
-%%DATADIR%%/resources/app/extensions/theme-defaults/themes/dark_plus_experimental.json
 %%DATADIR%%/resources/app/extensions/theme-defaults/themes/dark_vs.json
 %%DATADIR%%/resources/app/extensions/theme-defaults/themes/hc_black.json
 %%DATADIR%%/resources/app/extensions/theme-defaults/themes/hc_light.json
+%%DATADIR%%/resources/app/extensions/theme-defaults/themes/light_modern.json
 %%DATADIR%%/resources/app/extensions/theme-defaults/themes/light_plus.json
-%%DATADIR%%/resources/app/extensions/theme-defaults/themes/light_plus_experimental.json
 %%DATADIR%%/resources/app/extensions/theme-defaults/themes/light_vs.json
 %%DATADIR%%/resources/app/extensions/theme-kimbie-dark/package.json
 %%DATADIR%%/resources/app/extensions/theme-kimbie-dark/package.nls.json
@@ -895,12 +898,12 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/notebook/common/services/notebookSimpleWorker.js
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/notebook/common/services/notebookSimpleWorker.nls.js
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/output/common/outputLinkComputer.js
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/fish_xdg_data/fish/vendor_conf.d/shellIntegration.fish
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-env.zsh
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-login.zsh
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-profile.zsh
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-rc.zsh
-%%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration.fish
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/terminal/browser/media/shellIntegration.ps1
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/fake.html
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/webview/browser/pre/index-no-csp.html
