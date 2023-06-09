@@ -49,6 +49,7 @@ include/libr/r_heap_jemalloc.h
 include/libr/r_io.h
 include/libr/r_lang.h
 include/libr/r_lib.h
+include/libr/r_limits.h
 include/libr/r_list.h
 include/libr/r_magic.h
 include/libr/r_main.h
@@ -76,6 +77,7 @@ include/libr/r_util/r_ascii_table.h
 include/libr/r_util/r_asn1.h
 include/libr/r_util/r_assert.h
 include/libr/r_util/r_axml.h
+include/libr/r_util/r_base36.h
 include/libr/r_util/r_base64.h
 include/libr/r_util/r_base91.h
 include/libr/r_util/r_big.h
@@ -650,6 +652,7 @@ man/man7/esil.7.gz
 %%DATADIR%%/%%PORTVERSION%%/opcodes/riscv.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/s390.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/sh.sdb
+%%DATADIR%%/%%PORTVERSION%%/opcodes/sm5xx.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/sparc.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/tms320.sdb
 %%DATADIR%%/%%PORTVERSION%%/opcodes/tricore.sdb

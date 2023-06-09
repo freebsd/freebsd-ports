@@ -1,6 +1,6 @@
-TIMESTAMP = 1683483980
-SHA256 (radareorg-radare2-5.8.6_GH0.tar.gz) = 9758d773c8d6c533e019be59c5aca245067c4aeaf28fe5c46485ef24a0b24143
-SIZE (radareorg-radare2-5.8.6_GH0.tar.gz) = 11119704
+TIMESTAMP = 1686338667
+SHA256 (radareorg-radare2-5.8.8_GH0.tar.gz) = 4f88c33e4391f492c7d0073df9bffcc666cc1e2ca0a95d6e1035decdaa227b26
+SIZE (radareorg-radare2-5.8.8_GH0.tar.gz) = 11169182
 SHA256 (radareorg-vector35-arch-arm64-55d73c6_GH0.tar.gz) = 8bcb04fdd09c7f5b407f84f8f3a3e4a4b3ad57362c399ee282c1e5a041f2c3c8
 SIZE (radareorg-vector35-arch-arm64-55d73c6_GH0.tar.gz) = 1050474
 SHA256 (radareorg-vector35-arch-armv7-f270a6c_GH0.tar.gz) = 90f6c72c556d724e42c3d4c73c6164c6ff631ccf64be7cc72122ad3d7a6d997c
