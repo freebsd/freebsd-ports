@@ -33,4 +33,11 @@ USE_KDE=	auth codecs completion config configwidgets coreaddons dbusaddons \
 		ecm:build
 USE_XORG=	x11
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc*}
+CXX=		clang++${LLVM_VERSION}
+USES+=		llvm:min=16
+.endif
+
 .include <bsd.port.mk>
