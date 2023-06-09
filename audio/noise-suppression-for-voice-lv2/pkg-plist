@@ -1,0 +1,10 @@
+lib/ladspa/librnnoise_ladspa.so
+lib/lv2/rnnoise_mono.lv2/dsp.ttl
+lib/lv2/rnnoise_mono.lv2/librnnoise_mono.so
+lib/lv2/rnnoise_mono.lv2/manifest.ttl
+lib/lv2/rnnoise_mono.lv2/ui.ttl
+lib/lv2/rnnoise_stereo.lv2/dsp.ttl
+lib/lv2/rnnoise_stereo.lv2/librnnoise_stereo.so
+lib/lv2/rnnoise_stereo.lv2/manifest.ttl
+lib/lv2/rnnoise_stereo.lv2/ui.ttl
+lib/vst3/rnnoise.vst3/Contents/x86_64-linux/rnnoise.so

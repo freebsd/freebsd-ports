@@ -1,0 +1,20 @@
+--- CMakeLists.txt.orig	2022-07-28 08:24:44 UTC
++++ CMakeLists.txt
+@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.6)
+ include(GNUInstallDirs)
+ 
+ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
++set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+ set(CMAKE_BINARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+ 
+ set(MINGW_ADDITIONAL_LINKING_FLAGS "-static-libgcc -static-libstdc++ -Wl,-Bstatic -lstdc++ -lpthread -Wl,-Bdynamic")
+@@ -35,6 +35,7 @@ if (BUILD_VST_PLUGIN OR BUILD_VST3_PLUGIN OR BUILD_LV2
+     # For install JUCE copies all its headers, no one needs them. It also doesn't install actual libraries.
+     # On the other hand JUCE could install libraries during build process (see COPY_PLUGIN_AFTER_BUILD option).
+     # So we have to manually install plugins.
+-    add_subdirectory(external/JUCE EXCLUDE_FROM_ALL)
++    #add_subdirectory(external/JUCE EXCLUDE_FROM_ALL)
++    find_package(JUCE REQUIRED)
+     add_subdirectory(src/juce_plugin)
+ endif ()
