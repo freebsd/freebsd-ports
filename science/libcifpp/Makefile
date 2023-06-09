@@ -1,6 +1,6 @@
 PORTNAME=	libcifpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.9
+DISTVERSION=	5.1.0.1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.wwpdb.org/pub/pdb/data/monomers/:components
 DISTFILES=	components.cif.gz:components
