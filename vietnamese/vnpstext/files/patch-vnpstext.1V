@@ -1,6 +1,6 @@
---- vnpstext.1V.orig	Thu May 14 21:43:57 1992
-+++ vnpstext.1V	Sun Dec  8 02:13:22 1996
-@@ -41,7 +41,7 @@
+--- vnpstext.1V.orig	1992-05-15 04:43:57 UTC
++++ vnpstext.1V
+@@ -41,7 +41,7 @@ sizes in normal and bold faces, respectively.
  .PP
  The location of the prolog file can either be
  the current directory, or in
@@ -9,7 +9,7 @@
  The latter setting may be overridden by
  the environment variable
  .I PSLIBDIR.
-@@ -113,7 +113,7 @@
+@@ -113,7 +113,7 @@ The line length is limited to 1024 characters.
  Lines are not wrapped.  If a line is too long to
  fit across a page width, it is truncated (by the printer).
  .SH FILES
