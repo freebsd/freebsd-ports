@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230609:
+  AFFECTS: users of security/sequoia
+  AUTHOR: vishwin@FreeBSD.org
+
+  sq has been split to security/sequoia-sq; security/sequoia becomes
+  a meta-port, where security/sequoia-sq is currently the only
+  dependency. As other programs are individually ported over, they
+  will become OPTIONS in the meta-port.
+
+  Per upstream, FFI is deprecated in favour of point solutions.
+
 20230602:
   AFFECTS: users of net-mgmt/netbox
   AUTHOR: kai@FreeBSD.org
