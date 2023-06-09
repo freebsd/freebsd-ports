@@ -7,6 +7,8 @@ MAINTAINER=	jmd@FreeBSD.org
 COMMENT=	Framework for performing tensor operations
 WWW=		https://github.com/devinamatthews/tblis
 
+BROKEN_FreeBSD_14=	error: static_assert failed due to requirement
+
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
