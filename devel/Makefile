@@ -7590,6 +7590,7 @@
     SUBDIR += tcl-signal
     SUBDIR += tcl-trf
     SUBDIR += tclap
+    SUBDIR += tclap12
     SUBDIR += tclbsd
     SUBDIR += tclcheck
     SUBDIR += tcllauncher
