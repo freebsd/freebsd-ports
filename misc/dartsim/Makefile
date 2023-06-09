@@ -55,4 +55,10 @@ OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=unused-but-set-variable
+.endif
+
 .include <bsd.port.mk>
