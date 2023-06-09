@@ -1,6 +1,7 @@
 PORTNAME=	topgrade
 DISTVERSIONPREFIX=	v
 DISTVERSION=	11.0.2
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
 MAINTAINER=	freebsd@scd-systems.net

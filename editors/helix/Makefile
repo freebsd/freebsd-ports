@@ -1,5 +1,6 @@
 PORTNAME=	helix
 DISTVERSION=	23.05
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~ecmma/tree-sitter-hare/archive/:treesitterhare \
 		https://raw.githubusercontent.com/tree-sitter/tree-sitter-javascript/${TREE_SITTER_JSHIGH_REV}/queries/highlights.scm?file=/:jshigh \
