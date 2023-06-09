@@ -88,9 +88,11 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_fornex.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_freedns.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_gandi_livedns.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_gcore.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_gcloud.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_gd.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_geoscaling.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_googledomains.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_huaweicloud.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_he.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_hetzner.sh
@@ -99,6 +101,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_infoblox.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_infomaniak.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ionos.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ipv64.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_internetbs.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_inwx.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_ispconfig.sh
@@ -126,6 +129,7 @@ sbin/acme.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_namecheap.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_namecom.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_namesilo.sh
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_nanelo.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_nederhost.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_neodigit.sh
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/dnsapi/dns_netcup.sh
