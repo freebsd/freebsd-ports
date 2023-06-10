@@ -832,6 +832,7 @@
     SUBDIR += nomad
     SUBDIR += nomad-pot-driver
     SUBDIR += npadmin
+    SUBDIR += npmount
     SUBDIR += nq
     SUBDIR += nrg2iso
     SUBDIR += nss_ndb

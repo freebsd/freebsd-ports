@@ -1,0 +1,3 @@
+NPMount is a command-line tool to provide limited mount and unmount
+capabilities to non-privileged users, such as mounting and unmounting
+external media including optical discs and thumb drives.
