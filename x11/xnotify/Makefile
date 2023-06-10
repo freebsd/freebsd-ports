@@ -17,6 +17,7 @@ USES=		xorg
 USE_GITHUB=	yes
 USE_XORG=	x11 xft xinerama
 GH_ACCOUNT=	phillbush
+EXTRA_PATCHES=	${${PORTNAME:tu}_PATCHES}
 MANPREFIX=	${PREFIX}/share/man
 MAKE_ENV=	LOCALINC="${LOCALBASE}/include" \
 		LOCALLIB="${LOCALBASE}/lib" \
@@ -31,6 +32,10 @@ pre-everything::
 	@${ECHO_MSG} "To build ${PORTNAME} with your own config.h set ${PORTNAME:tu}_CONF variable"
 	@${ECHO_MSG} "either in ${.CURDIR:T}/Makefile.local, make.conf(5), environ(7) or command line e.g.,"
 	@${ECHO_MSG} "\$$ make install clean ${PORTNAME:tu}_CONF=/path/to/${PORTNAME}/config.h"
+	@${ECHO_MSG}
+	@${ECHO_MSG} "To apply your own patches set ${PORTNAME:tu}_PATCHES (like ${PORTNAME:tu}_CONF)"
+	@${ECHO_MSG} "to a list of files separated by space with optional -pX suffix e.g.,"
+	@${ECHO_MSG} "\$$ make install clean ${PORTNAME:tu}_PATCHES='/path/to/foo.patch:-p1'"
 
 post-extract:
 # .if exists(...) before bsd.port.mk ignores *_CONF in make.conf(5) and Makefile.local
