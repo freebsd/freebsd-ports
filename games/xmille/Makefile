@@ -8,13 +8,24 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X window mille bourne game
 
-WRKSRC=		${WRKDIR}/Mille
+LICENSE=	NONE
 
 USES=		imake xorg
 USE_XORG=	x11 xext
-PLIST_FILES=	bin/xmille man/man1/xmille.1.gz
+
 MAKE_JOBS_UNSAFE=	yes
+
 CFLAGS+=	-Wno-error=return-type
+
+WRKSRC=		${WRKDIR}/Mille
+
+PLIST_FILES=	bin/xmille man/man1/xmille.1.gz
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*.[ao]' -delete
