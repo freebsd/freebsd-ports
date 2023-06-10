@@ -1,8 +1,11 @@
 PORTNAME=	squeekboard
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.17.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	x11 wayland
+
+PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
+PATCHFILES+=	1ccc663c4808.patch:-p1 # sync clap with future Cargo.lock.newer
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	On-screen keyboard input method for Wayland
@@ -35,7 +38,7 @@ CARGO_TEST=	no
 TARGET_ORDER_OVERRIDE=	750:cargo-configure
 CARGO_CARGOTOML=	${BUILD_WRKSRC}/Cargo.toml
 MESON_ARGS=	-Dstrict=false
-MESON_ARGS+=	-Donline=false # XXX Cargo.lock
+MESON_ARGS+=	-Dnewer=true # XXX Cargo.lock
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/${PORTNAME}-entry \
 		bin/${PORTNAME}-test-layout \
