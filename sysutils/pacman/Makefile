@@ -5,6 +5,7 @@ MASTER_SITES=	https://sources.archlinux.org/other/${PORTNAME}/
 
 MAINTAINER=	vishwin@vishwin.info
 COMMENT=	Package manager from Arch Linux
+WWW=		https://archlinux.org/pacman/
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
