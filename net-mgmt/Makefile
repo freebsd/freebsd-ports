@@ -290,6 +290,7 @@
     SUBDIR += php80-snmp
     SUBDIR += php81-snmp
     SUBDIR += php82-snmp
+    SUBDIR += php83-snmp
     SUBDIR += phpfpm_exporter
     SUBDIR += phpipam
     SUBDIR += phpweathermap

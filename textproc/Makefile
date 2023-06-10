@@ -1267,6 +1267,15 @@
     SUBDIR += php82-xmlreader
     SUBDIR += php82-xmlwriter
     SUBDIR += php82-xsl
+    SUBDIR += php83-ctype
+    SUBDIR += php83-dom
+    SUBDIR += php83-enchant
+    SUBDIR += php83-pspell
+    SUBDIR += php83-simplexml
+    SUBDIR += php83-xml
+    SUBDIR += php83-xmlreader
+    SUBDIR += php83-xmlwriter
+    SUBDIR += php83-xsl
     SUBDIR += pict
     SUBDIR += po4a
     SUBDIR += pod2mdoc

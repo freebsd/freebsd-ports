@@ -110,7 +110,7 @@ DIST_SUBDIR=	PECL
 
 PHPBASE?=	${LOCALBASE}
 
-_ALL_PHP_VERSIONS=	80 81 82
+_ALL_PHP_VERSIONS=	80 81 82 83
 
 # Make the already installed PHP the default one.
 .  if exists(${PHPBASE}/etc/php.conf)
@@ -179,7 +179,10 @@ PHP_VER=	${FLAVOR:S/^php//}
 	(${FLAVOR:Mphp[0-9][0-9]} && ${FLAVOR} != ${FLAVORS:[1]})
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-.    if ${PHP_VER} == 82
+.    if ${PHP_VER} == 83
+PHP_EXT_DIR=   20220830
+PHP_EXT_INC=    hash json openssl pcre random spl
+.    elif ${PHP_VER} == 82
 PHP_EXT_DIR=   20220829
 PHP_EXT_INC=    hash json openssl pcre random spl
 .    elif ${PHP_VER} == 81
@@ -383,6 +386,7 @@ _USE_PHP_ALL=	bcmath bitset bz2 calendar ctype curl dba dom \
 _USE_PHP_VER80=	${_USE_PHP_ALL}
 _USE_PHP_VER81=	${_USE_PHP_ALL}
 _USE_PHP_VER82=	${_USE_PHP_ALL}
+_USE_PHP_VER83=	${_USE_PHP_ALL}
 
 bcmath_DEPENDS=	math/php${PHP_VER}-bcmath
 bitset_DEPENDS=	math/pecl-bitset@${PHP_FLAVOR}

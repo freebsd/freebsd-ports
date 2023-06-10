@@ -379,6 +379,7 @@
     SUBDIR += php80-calendar
     SUBDIR += php81-calendar
     SUBDIR += php82-calendar
+    SUBDIR += php83-calendar
     SUBDIR += pinfo
     SUBDIR += pipe
     SUBDIR += posixtestsuite

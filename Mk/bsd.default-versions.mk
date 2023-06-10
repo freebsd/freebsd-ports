@@ -118,7 +118,7 @@ PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 .  endif
 # Possible values: 11, 12, 13, 14, 15
 PGSQL_DEFAULT?=		13
-# Possible values: 8.0, 8.1, 8.2
+# Possible values: 8.0, 8.1, 8.2 8.3
 PHP_DEFAULT?=		8.1
 # Possible values: 2.7, 3.7, 3.8, 3.9, 3.10, 3.11
 PYTHON_DEFAULT?=	3.9
