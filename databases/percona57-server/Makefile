@@ -1,6 +1,6 @@
 PORTNAME?=	percona
-DISTVERSION=	5.7.41-44
-PORTREVISION?=	1
+DISTVERSION=	5.7.42-46
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/Percona-Server-5.7/Percona-Server-${DISTVERSION}/source/tarball/:percona \
 		SF/boost/boost/1.59.0:boost
