@@ -14,10 +14,18 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libnspr4.so:devel/nspr \
 		libnss3.so:security/nss
 
-GNU_CONFIGURE=	yes
 USES=		cpe pkgconfig libtool
 CPE_VENDOR=	${PORTNAME}_project
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 .include <bsd.port.mk>
