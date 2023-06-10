@@ -1,6 +1,5 @@
 PORTNAME=	hplip-plugin
-PORTVERSION=	3.22.10
-PORTREVISION=	1
+PORTVERSION=	3.23.5
 CATEGORIES=	print
 MASTER_SITES=	https://developers.hp.com/sites/default/files/
 DISTNAME=	hplip-${DISTVERSION}-plugin
@@ -16,7 +15,7 @@ LICENSE_NAME=	HPLIP Driver Plug-in License
 LICENSE_FILE=	${WRKSRC}/license.txt
 LICENSE_PERMS=	none
 
-ONLY_FOR_ARCHS=	amd64 i386 # arm
+ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 RUN_DEPENDS=	hp-plugin:print/hplip
 
@@ -34,10 +33,12 @@ PLIST_SUB+=	LINARCH="${LINARCH}"
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == "i386"
-LINARCH=	x86_32
+.if ${ARCH} == "aarch64"
+LINARCH=	arm64
 .elif ${ARCH} == "amd64"
 LINARCH=	x86_64
+.elif ${ARCH} == "i386"
+LINARCH=	x86_32
 .endif
 
 do-extract:
