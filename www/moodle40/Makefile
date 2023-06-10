@@ -1,5 +1,5 @@
 PORTNAME=	moodle
-PORTVERSION=	4.0.8
+PORTVERSION=	4.0.9
 CATEGORIES=	www education
 MASTER_SITES=	SF/moodle/Moodle/stable400/
 PKGNAMESUFFIX=	${PKGORIGIN:T:S/moodle//}${PHP_PKGNAMESUFFIX}
@@ -13,8 +13,8 @@ LICENSE=	GPLv3
 DEPRECATED=	Requires php80 which is set to expire on 2023-11-26
 EXPIRATION_DATE=	2023-06-30
 
-CONFLICTS=	moodle39-3.9.[0-9]* moodle311-3.11.[0-9]* moodle41-4.1.[0-9]* \
-		moodle42-4.2
+CONFLICTS=	moodle311-3.11.[0-9]* moodle41-4.1.[0-9]* \
+		moodle42-4.2.[0-9]*
 
 USES=		cpe php:flavors tar:tgz
 USE_PHP=	ctype curl dom exif fileinfo filter gd \
