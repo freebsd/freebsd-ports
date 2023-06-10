@@ -19,7 +19,6 @@ BROKEN_FreeBSD_13_powerpc64=	fails to link: ld: error: undefined symbol: eekboar
 BUILD_DEPENDS=	wayland-protocols>=1.12:graphics/wayland-protocols
 LIB_DEPENDS=	libfeedback-0.0.so:accessibility/feedbackd \
 		libwayland-client.so:graphics/wayland \
-		libcroco-0.6.so:textproc/libcroco \
 		libxkbcommon.so:x11/libxkbcommon
 RUN_DEPENDS=	gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
