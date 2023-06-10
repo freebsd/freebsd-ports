@@ -1,6 +1,6 @@
 PORTNAME=	thermofun
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.3
+DISTVERSION=	0.4.4
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
