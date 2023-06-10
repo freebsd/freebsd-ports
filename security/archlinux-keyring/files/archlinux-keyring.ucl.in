@@ -1,0 +1,29 @@
+path_glob: %%LOCALBASE%%/share/pacman/keyrings
+cleanup: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+function cleanup(directory)
+  for _,d in ipairs(pkg.readdir(directory)) do
+    local full_path = directory .. "/" .. d
+    local stat = pkg.stat(full_path)
+    if stat["type"] == "dir" then
+      cleanup(full_path)
+    end
+    os.remove(full_path)
+  end
+  os.remove(directory)
+end
+
+cleanup("%%LOCALBASE%%/etc/pacman.d/gnupg")
+EOS
+}
+trigger: {
+	type: lua
+	sandbox: false
+	script: <<EOS
+pkg.exec({"pacman-key", "--init"})
+pkg.exec({"pacman-key", "--populate", "archlinux"})
+pkg.exec({"pacman-key", "--updatedb"})
+EOS
+}
