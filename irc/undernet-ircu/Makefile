@@ -61,7 +61,9 @@ PEDANTIC_CONFIGURE_ENABLE=	pedantic
 POLL_CONFIGURE_ENABLE=		poll
 WARNINGS_CONFIGURE_ENABLE=	warnings
 
-.if !defined(NO_PROFILE)
+.include <bsd.port.options.mk>
+
+.if !defined(NO_PROFILE) && ( ${OPSYS} == FreeBSD && ${OSVERSION} < 1400079 )
 CONFIGURE_ARGS+=	--enable-profile
 .endif
 
