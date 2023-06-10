@@ -2,14 +2,14 @@
 
 case $2 in
 POST-DEINSTALL)
-	if find /var/lib/pacman /var/cache/pacman %%PACMAN_ROOT%% -type f 2>/dev/null | head -1 | grep -q ''; then
+	if find %%PACMAN_ROOT%% -type f 2>/dev/null | head -1 | grep -q ''; then
 		echo ""
 		echo "To completely remove the port, please remove the following"
-		echo "directories and the content manualy if its no longer needed:"
+		echo "directories and the content manually if it's no longer needed:"
 		echo ""
 		echo "    %%PACMAN_ROOT%%"
-		echo "    /var/cache/pacman"
-		echo "    /var/lib/pacman"
+		echo "    %%PACMAN_ROOT%%/var/cache/pacman"
+		echo "    %%PACMAN_ROOT%%/var/lib/pacman"
 		echo ""
 	fi
 	;;
