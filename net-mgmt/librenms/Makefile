@@ -11,7 +11,7 @@ WWW=		https://www.librenms.org
 
 LICENSE=	GPLv3
 
-IGNORE_WITH_PHP=	82
+IGNORE_WITH_PHP=	82 83
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVOR} \

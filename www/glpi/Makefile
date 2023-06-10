@@ -15,7 +15,7 @@ CPE_VENDOR=	glpi-project
 USE_PHP=	bz2 ctype curl exif fileinfo gd iconv intl mbstring \
 		mysqli opcache session simplexml sodium xml xmlrpc zip zlib \
 		dom filter
-IGNORE_WITH_PHP=	82
+IGNORE_WITH_PHP=	82 83
 
 NO_ARCH=	yes
 NO_BUILD=	yes

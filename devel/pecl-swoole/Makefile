@@ -10,6 +10,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c11 localbase:ldflags php:build,pecl ssl
+IGNORE_WITH_PHP=	83
 
 CONFIGURE_ARGS+=	--enable-mysqlnd
 

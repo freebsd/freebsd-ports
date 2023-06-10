@@ -13,7 +13,7 @@ DEPRECATED=	Requires php80 which is set to expire on 2023-11-26
 EXPIRATION_DATE=	2023-12-31
 
 USES=		compiler:c11 php:build,pecl
-IGNORE_WITH_PHP=	81 82
+IGNORE_WITH_PHP=	81 82 83
 
 CONFIGURE_ARGS=	--enable-rar
 

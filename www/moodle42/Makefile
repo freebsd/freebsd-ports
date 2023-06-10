@@ -18,7 +18,7 @@ USE_PHP=	ctype curl dom exif fileinfo filter gd \
 		iconv intl mbstring opcache \
 		session simplexml soap sodium tokenizer \
 		xml xmlreader xmlrpc zip zlib
-IGNORE_WITH_PHP=	82
+IGNORE_WITH_PHP=	82 83
 
 WRKSRC=		${WRKDIR}/moodle
 

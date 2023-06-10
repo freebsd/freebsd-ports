@@ -16,6 +16,6 @@ EXPIRATION_DATE=	2023-12-31
 LIB_DEPENDS=	libuv.so:devel/libuv
 
 USES=		php:pecl
-IGNORE_WITH_PHP=	81 82
+IGNORE_WITH_PHP=	81 82 83
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/pear/System.php:devel/pear@${PHP_FLAVOR}
 CONFLICTS=	phpbb-tw
 
 USES=		cpe tar:bzip2 php
-IGNORE_WITH_PHP=	82
+IGNORE_WITH_PHP=	82 83
 
 # The phpBB2 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.

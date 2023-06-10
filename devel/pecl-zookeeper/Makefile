@@ -15,7 +15,7 @@ LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 USES=		php:pecl
 USE_PHP=	session:build
 
-IGNORE_WITH_PHP=82
+IGNORE_WITH_PHP=82 83
 
 PORTDATA=	zookeeper-api.php
 

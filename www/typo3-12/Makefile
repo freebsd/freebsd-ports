@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 IGNORE_WITH_MYSQL=	56 57 101m 102m
-IGNORE_WITH_PHP=	80 82
+IGNORE_WITH_PHP=	80 82 83
 
 USES=		cpe php:web,flavors shebangfix
 USE_PHP=	ctype dom fileinfo filter gd intl \

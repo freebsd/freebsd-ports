@@ -19,7 +19,7 @@ PGSQL_DESC=	Install PostgreSQL (report data storing)
 USES=		tar:bzip2
 
 PHP_USES=	php
-PHP_VARS=	IGNORE_WITH_PHP=81 82
+PHP_VARS=	IGNORE_WITH_PHP=81 82 83
 
 NO_BUILD=	yes
 NO_ARCH=	yes

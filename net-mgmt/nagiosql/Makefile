@@ -9,7 +9,7 @@ WWW=		https://gitlab.com/wizonet/nagiosql
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-IGNORE_WITH_PHP=	82
+IGNORE_WITH_PHP=	82 83
 
 USES=		cpe gettext mysql php:web tar:bzip2
 USE_PHP=	filter gettext mysqli session simplexml
