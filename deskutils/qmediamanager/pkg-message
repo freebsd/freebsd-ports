@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+
+Add the following to ${PREFIX}/etc/automount.conf:
+
+FM=${PREFIX}/bin/qmediamanager
+EOM
+}
+]

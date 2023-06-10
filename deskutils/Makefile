@@ -228,6 +228,7 @@
     SUBDIR += py-vdirsyncer
     SUBDIR += py-vobject
     SUBDIR += qlipper
+    SUBDIR += qmediamanager
     SUBDIR += qownnotes
     SUBDIR += qtfeedback
     SUBDIR += recoll
