@@ -1,6 +1,5 @@
 PORTNAME=	gmm
-DISTVERSION=	1.7
-PORTREVISION=	1
+DISTVERSION=	1.8
 CATEGORIES=	finance
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -14,6 +13,6 @@ CRAN_DEPENDS=	R-cran-sandwich>0:math/R-cran-sandwich
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
-USES=	cran:auto-plist,compiles
+USES=		cran:auto-plist,compiles
 
 .include <bsd.port.mk>
