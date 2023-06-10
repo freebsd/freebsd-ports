@@ -232,10 +232,11 @@ TEST_CMAKE_BOOL=	ENABLE_TESTS
 .if ${OSVERSION} < 1400000
 CC=			clang13
 CXX=		clang++13
-BUILD_DEPENDS+=	clang++13:devel/llvm13
+USES+=	llvm:max=13,build
 .else
 CC=			clang
 CXX=		clang++
+CFLAGS+=	-Wno-error=int-conversion
 .endif
 
 .if ${OPSYS} == FreeBSD
