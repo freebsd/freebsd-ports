@@ -1,11 +1,11 @@
---- api/Cargo.toml.orig	2021-03-27 21:14:19 UTC
+--- api/Cargo.toml.orig	2023-06-10 18:09:07 UTC
 +++ api/Cargo.toml
-@@ -18,7 +18,7 @@ serde = { version = "1.0", features=["derive"] }
+@@ -11,7 +11,7 @@ repository = "https://github.com/tarkah/tickrs"
+ anyhow = "1.0"
  futures = "0.3"
- 
- http = "0.1"
--curl = { version = "0.4", default-features=false, features = ["static-ssl"] }
-+curl = { version = "0.4", default-features=false }
- isahc = "0.8"
- 
- [dev-dependencies]
+ http = "0.2"
+-isahc = { version = "1.7", features = ["static-ssl"] }
++isahc = { version = "1.7" }
+ serde = { version = "1.0", features = ["derive"] }
+ serde_json = "1.0"
+ serde_urlencoded = "0.7"
