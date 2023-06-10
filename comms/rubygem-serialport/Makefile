@@ -12,4 +12,12 @@ LICENSE=	GPLv2
 USES=		gem shebangfix
 SHEBANG_FILES=	test/set_readtimeout.rb
 
+.include <bsd.port.options.mk>
+
+post-patch:
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+	@${REINPLACE_CMD} -e 's|-DOS_\#{os.upcase}|-DOS_\#{os.upcase} -Wno-error=int-conversion|g' \
+		${WRKSRC}/ext/native/extconf.rb
+.endif
+
 .include <bsd.port.mk>
