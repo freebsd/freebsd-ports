@@ -5,7 +5,7 @@ PORTREVISION=	13
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
-COMMENT=	On-screen keyboard for Wayland
+COMMENT=	On-screen keyboard input method for Wayland
 WWW=		https://gitlab.gnome.org/World/Phosh/squeekboard
 
 LICENSE=	GPLv3
