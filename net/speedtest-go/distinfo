@@ -1,5 +1,5 @@
-TIMESTAMP = 1685550576
-SHA256 (go/net_speedtest-go/speedtest-go-v1.6.2/v1.6.2.mod) = c8e197730294ddab63dc7150d29e89868b7a7288044aef1f498feb01e8c34fda
-SIZE (go/net_speedtest-go/speedtest-go-v1.6.2/v1.6.2.mod) = 509
-SHA256 (go/net_speedtest-go/speedtest-go-v1.6.2/v1.6.2.zip) = efd5a00f696d0232defdb76d17f8e8446275128534e6dfd75c876960cd729fa5
-SIZE (go/net_speedtest-go/speedtest-go-v1.6.2/v1.6.2.zip) = 34040
+TIMESTAMP = 1686369020
+SHA256 (go/net_speedtest-go/speedtest-go-v1.6.3/v1.6.3.mod) = 612eb307d4928be9b0cdd6e178719306b05b52283d3b779656cbc003041feb4d
+SIZE (go/net_speedtest-go/speedtest-go-v1.6.3/v1.6.3.mod) = 509
+SHA256 (go/net_speedtest-go/speedtest-go-v1.6.3/v1.6.3.zip) = a7399a7969b172abdd020c766bec2a6750011750208207167029622630fa64ea
+SIZE (go/net_speedtest-go/speedtest-go-v1.6.3/v1.6.3.zip) = 35280
