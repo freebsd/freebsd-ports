@@ -1,0 +1,21 @@
+- Avoid conflict with libva-vdpau-driver
+
+--- meson.build.orig	2023-06-10 09:21:05 UTC
++++ meson.build
+@@ -71,7 +71,7 @@ shared_library(
+ nvidia_incdir = include_directories('nvidia-include')
+ 
+ shared_library(
+-    'nvidia_drv_video',
++    'nvidia-drm_drv_video',
+     name_prefix: '',
+     sources: sources,
+     dependencies: deps,
+@@ -83,6 +83,6 @@ meson.add_devenv(environment({
+ 
+ meson.add_devenv(environment({
+     'NVD_LOG': '1',
+-    'LIBVA_DRIVER_NAME': 'nvidia',
++    'LIBVA_DRIVER_NAME': 'nvidia-drm',
+     'LIBVA_DRIVERS_PATH': meson.project_build_root(),
+ }))
