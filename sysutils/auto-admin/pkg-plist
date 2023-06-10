@@ -21,6 +21,7 @@ bin/auto-pkgsrc-remote-x11
 bin/auto-pkgsrc-setup
 bin/auto-pkgsrc-wip-checkout
 bin/auto-replace-file
+bin/auto-software-manager
 bin/auto-ssh-authorize
 bin/auto-ssh-reverse-authorize
 bin/auto-update-pkgsrc
@@ -140,7 +141,6 @@ sbin/auto-set-lid-switch-mode
 sbin/auto-set-memory-limits
 sbin/auto-set-sysctl
 sbin/auto-set-umask
-sbin/auto-software-manager
 sbin/auto-sound-driver-setup
 sbin/auto-su+j-toggle
 sbin/auto-sync-pxe-root-pw
