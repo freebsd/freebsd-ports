@@ -1,5 +1,5 @@
 PORTNAME=	spot
-DISTVERSION=	2.11.4
+DISTVERSION=	2.11.5
 CATEGORIES=	math
 MASTER_SITES=	http://www.lrde.epita.fr/dload/${PORTNAME}/
 
@@ -25,12 +25,11 @@ CONFIGURE_ARGS=	--disable-static
 .endif
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	DOCS
 
 PORTDOCS=	tl.pdf
-
-TEST_TARGET=	check
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
