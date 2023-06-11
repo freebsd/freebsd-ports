@@ -11,9 +11,12 @@ COMMENT=	Encryption Plugin for the Pidgin instant messenger client
 WWW=		http://pidgin-encrypt.sf.net
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
-RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
 LIB_DEPENDS=	libpurple.so:net-im/libpurple \
 		libnss3.so:security/nss
+RUN_DEPENDS=	${LOCALBASE}/bin/pidgin:net-im/pidgin
+
+USES=		gettext gmake gnome libtool localbase pkgconfig
+USE_GNOME=	gtk20
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-static \
@@ -21,16 +24,20 @@ CONFIGURE_ARGS=	--disable-static \
 		--with-nspr-libs=${LOCALBASE}/lib	\
 		--with-nss-includes=${LOCALBASE}/include/nss \
 		--with-nss-libs=${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+
 INSTALL_TARGET=	install-strip
-USES=		gettext gmake gnome libtool pkgconfig
-USE_GNOME=	gtk20
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-NLS_CONFIGURE_ENABLE=	nls
+
 NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 post-extract:
 	@${REINPLACE_CMD} -e 's|glib/.*\.h"|glib.h"|g' ${WRKSRC}/rsa_nss.c
