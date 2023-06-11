@@ -1,7 +1,7 @@
-bin/exiftool
 %%PERL5_MAN1%%/exiftool.1.gz
 %%PERL5_MAN3%%/File::RandomAccess.3.gz
 %%PERL5_MAN3%%/Image::ExifTool.3.gz
+%%PERL5_MAN3%%/Image::ExifTool::7Z.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::AES.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::AFCP.3.gz
 %%PERL5_MAN3%%/Image::ExifTool::AIFF.3.gz
@@ -197,6 +197,7 @@ bin/exiftool
 %%SITE_PERL%%/File/RandomAccess.pod
 %%SITE_PERL%%/Image/ExifTool.pm
 %%SITE_PERL%%/Image/ExifTool.pod
+%%SITE_PERL%%/Image/ExifTool/7Z.pm
 %%SITE_PERL%%/Image/ExifTool/AES.pm
 %%SITE_PERL%%/Image/ExifTool/AFCP.pm
 %%SITE_PERL%%/Image/ExifTool/AIFF.pm
@@ -422,3 +423,4 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/ZIP.pm
 %%SITE_PERL%%/Image/ExifTool/ZISRAW.pm
 %%SITE_PERL%%/Image/ExifTool/iWork.pm
+bin/exiftool
