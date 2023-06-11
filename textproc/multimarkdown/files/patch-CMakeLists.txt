@@ -1,0 +1,19 @@
+--- CMakeLists.txt.orig	2023-06-11 01:48:25 UTC
++++ CMakeLists.txt
+@@ -565,16 +565,6 @@ else (hasParent)
+ 			endif (public_headers)
+ 		endif (DEFINED SHAREDBUILD)
+ 
+-		# Install Documentation
+-		install(FILES
+-			"${PROJECT_BINARY_DIR}/LICENSE.txt"
+-			"${PROJECT_BINARY_DIR}/README.txt"
+-			COMPONENT Docs
+-			DESTINATION share/doc/MultiMarkdown
+-		)
+-		set (CPACK_COMPONENT_DOCS_DISPLAY_NAME "Documentation")
+-		set (CPACK_COMPONENT_DOCS_DESCRIPTION "Install README and LICENSE.")
+-
+ 		# Install LaTeX support files
+ 		install (FILES ${latex}
+ 			DESTINATION share/texmf/tex/latex/mmd6
