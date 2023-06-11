@@ -1,5 +1,5 @@
 PORTNAME=	mod_http2
-DISTVERSION=	2.0.15
+DISTVERSION=	2.0.18
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/icing/mod_h2/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -25,6 +25,12 @@ PORTDOCS=	README README.md
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "i386"
+CFLAGS+=	-Wno-error=tautological-constant-out-of-range-compare
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${APACHEETCDIR}/modules.d
 	${INSTALL_DATA} ${WRKDIR}/200_mod_http2.conf \
@@ -40,4 +46,4 @@ post-install:
 		${STAGEDIR}${PREFIX}/${APACHEMODDIR}/mod_proxy_h2.so
 	${RM} ${STAGEDIR}${DOCSDIR}/LICENSE
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
