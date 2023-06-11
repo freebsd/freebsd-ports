@@ -137,7 +137,7 @@ include/proxygen/lib/http/session/HQByteEventTracker.h
 include/proxygen/lib/http/session/HQDownstreamSession.h
 include/proxygen/lib/http/session/HQSession.h
 include/proxygen/lib/http/session/HQStreamBase.h
-include/proxygen/lib/http/session/HQUnidirectionalCallbacks.h
+include/proxygen/lib/http/session/HQStreamDispatcher.h
 include/proxygen/lib/http/session/HQUpstreamSession.h
 include/proxygen/lib/http/session/HTTP2PriorityQueue.h
 include/proxygen/lib/http/session/HTTPDefaultSessionCodecFactory.h
