@@ -1,7 +1,5 @@
 PORTNAME=	webcamoid
-DISTVERSION=	9.0.0-204
-DISTVERSIONSUFFIX=	-g2b708bfb0
-PORTREVISION=	2
+DISTVERSION=	9.1.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +16,9 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libpipewire-0.3.so:multimedia/pipewire \
 		libportaudio.so:audio/portaudio \
 		libpulse.so:audio/pulseaudio \
-		libv4l2.so:multimedia/libv4l
+		libuvc.so:multimedia/libuvc \
+		libv4l2.so:multimedia/libv4l \
+		libvlc.so:multimedia/vlc
 
 USES=		cmake compiler:c++11-lang desktop-file-utils gl gnome gstreamer pkgconfig qt:5 sdl xorg
 USE_GITHUB=	yes

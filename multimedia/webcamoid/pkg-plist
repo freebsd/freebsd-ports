@@ -21,9 +21,11 @@ lib/avkys/libColorTap.so
 lib/avkys/libColorTransform.so
 lib/avkys/libContrast.so
 lib/avkys/libConvolve.so
+lib/avkys/libCrop.so
 lib/avkys/libDelayGrab.so
 lib/avkys/libDenoise.so
 lib/avkys/libDesktopCapture.so
+lib/avkys/libDesktopCapture_ffmpeg.so
 lib/avkys/libDesktopCapture_pipewire.so
 lib/avkys/libDesktopCapture_qtscreen.so
 lib/avkys/libDice.so
@@ -54,6 +56,7 @@ lib/avkys/libMultiSink_gstreamer.so
 lib/avkys/libMultiSrc.so
 lib/avkys/libMultiSrc_ffmpeg.so
 lib/avkys/libMultiSrc_gstreamer.so
+lib/avkys/libMultiSrc_vlc.so
 lib/avkys/libNervous.so
 lib/avkys/libNormalize.so
 lib/avkys/libOilPaint.so
@@ -74,6 +77,8 @@ lib/avkys/libTemperature.so
 lib/avkys/libVideoCapture.so
 lib/avkys/libVideoCapture_ffmpeg.so
 lib/avkys/libVideoCapture_gstreamer.so
+lib/avkys/libVideoCapture_libuvc.so
+lib/avkys/libVideoCapture_qtcamera.so
 lib/avkys/libVideoCapture_v4l2sys.so
 lib/avkys/libVideoCapture_v4lutils.so
 lib/avkys/libVignette.so
