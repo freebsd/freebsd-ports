@@ -1,3 +1,5 @@
-TIMESTAMP = 1677437026
-SHA256 (Singular-Singular-Release-4-3-2_GH0.tar.gz) = d74da6aa27b92ed5e099a15d2959fc9cbc325b989ddacb9096b473c6e8395278
-SIZE (Singular-Singular-Release-4-3-2_GH0.tar.gz) = 13744295
+TIMESTAMP = 1686474908
+SHA256 (singular/doc.tbz2) = 10334afd99fe3a3e91669185ef5c104a25c97f0fd0dd6c53d98b47d5243df939
+SIZE (singular/doc.tbz2) = 3976252
+SHA256 (singular/Singular-Singular-Release-4-3-2_GH0.tar.gz) = d74da6aa27b92ed5e099a15d2959fc9cbc325b989ddacb9096b473c6e8395278
+SIZE (singular/Singular-Singular-Release-4-3-2_GH0.tar.gz) = 13744295

@@ -1,6 +1,7 @@
 bin/ESingular
 bin/Singular
 bin/TSingular
+bin/libparse
 bin/libpolys-config
 bin/libsingular-config
 include/factory/cf_gmp.h
@@ -255,8 +256,8 @@ libexec/singular/MOD/customstd.a
 libexec/singular/MOD/customstd.so
 libexec/singular/MOD/freealgebra.a
 libexec/singular/MOD/freealgebra.so
-libexec/singular/MOD/gfanlib.a
-libexec/singular/MOD/gfanlib.so
+%%GFAN%%libexec/singular/MOD/gfanlib.a
+%%GFAN%%libexec/singular/MOD/gfanlib.so
 libexec/singular/MOD/gitfan.a
 libexec/singular/MOD/gitfan.so
 libexec/singular/MOD/interval.a
@@ -293,6 +294,9 @@ libexec/singular/MOD/systhreads.so
 libexec/singular/MOD/syzextra.a
 libexec/singular/MOD/syzextra.so
 libexec/singular/MOD/toric_ideal
+man/man1/ESingular.1.gz
+man/man1/Singular.1.gz
+man/man1/TSingular.1.gz
 share/applications/Singular-manual.desktop
 share/applications/Singular.desktop
 share/factory/gftables/10201
