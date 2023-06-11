@@ -727,9 +727,11 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex15_alt.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex15_alt_2.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex16_0.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex16_0_vtk.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex16_1.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex16_2.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex16_3.out
+%%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex16_3_vtk.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex16_surface_2d.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex16_surface_2d_2.out
 %%DATADIR%%/examples/src/dm/impls/plex/tests/output/ex16_surface_3d.out
@@ -5637,6 +5639,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/sys/tests/ex14.c
 %%DATADIR%%/examples/src/sys/tests/ex15.c
 %%DATADIR%%/examples/src/sys/tests/ex16.c
+%%DATADIR%%/examples/src/sys/tests/ex17.c
 %%DATADIR%%/examples/src/sys/tests/ex17f.F90
 %%DATADIR%%/examples/src/sys/tests/ex18.c
 %%DATADIR%%/examples/src/sys/tests/ex19.c
@@ -5789,6 +5792,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/sys/tests/output/ex13f_0.out
 %%DATADIR%%/examples/src/sys/tests/output/ex14_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex15_1.out
+%%DATADIR%%/examples/src/sys/tests/output/ex17_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex17f_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex18_1.out
 %%DATADIR%%/examples/src/sys/tests/output/ex19_1.out
