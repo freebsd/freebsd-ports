@@ -37,7 +37,7 @@ post-install: # move plugins to a proper place: workaround for https://github.co
 	cd ${STAGEDIR}${PREFIX} && ${STRIP_CMD} \
 		lib/lv2/rnnoise_mono.lv2/librnnoise_mono.so \
 		lib/lv2/rnnoise_stereo.lv2/librnnoise_stereo.so \
-		lib/vst3/rnnoise.vst3/Contents/x86_64-linux/rnnoise.so
+		lib/vst3/rnnoise.vst3/Contents/*/rnnoise.so
 
 # the LADSPA plugin can be used directly from PulseAudio's config file
 
