@@ -76,12 +76,13 @@ include/slepcvec.h
 include/slepcversion.h
 lib/libslepc.so
 lib/libslepc.so.3.19
-lib/libslepc.so.3.19.0
+lib/libslepc.so.3.19.1
 lib/slepc/conf/configure-hash
-lib/slepc/conf/modules/slepc/3.19.0
+lib/slepc/conf/modules/slepc/3.19.1
 lib/slepc/conf/slepc_common
 lib/slepc/conf/slepc_rules
 lib/slepc/conf/slepc_rules.doc
+lib/slepc/conf/slepc_rules.utils
 lib/slepc/conf/slepc_test
 lib/slepc/conf/slepc_variables
 lib/slepc/conf/slepcrules
