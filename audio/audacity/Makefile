@@ -1,6 +1,6 @@
 PORTNAME=	audacity
 DISTVERSIONPREFIX=	Audacity-
-DISTVERSION=	3.3.2
+DISTVERSION=	3.3.3
 CATEGORIES=	audio
 
 MAINTAINER=	xxjack12xx@gmail.com
