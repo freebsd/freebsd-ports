@@ -5,6 +5,9 @@ PORTREVISION=	9
 CATEGORIES=	x11 wayland
 PKGNAMESUFFIX=	-${FLAVOR}
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	f97d5919f3a4.patch:-p1 # https://github.com/elkowar/eww/pull/711
+
 MAINTAINER=	DtxdF@disroot.org
 COMMENT=	ElKowars wacky widgets
 WWW=		https://elkowar.github.io/eww
