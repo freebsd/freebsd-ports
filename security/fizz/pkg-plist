@@ -30,6 +30,7 @@ include/fizz/crypto/aead/AESOCB128.h
 include/fizz/crypto/aead/AEGISCipher.h
 include/fizz/crypto/aead/Aead.h
 include/fizz/crypto/aead/ChaCha20Poly1305.h
+include/fizz/crypto/aead/CryptoUtil.h
 include/fizz/crypto/aead/IOBufUtil.h
 include/fizz/crypto/aead/OpenSSLEVPCipher-inl.h
 include/fizz/crypto/aead/OpenSSLEVPCipher.h
