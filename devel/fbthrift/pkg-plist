@@ -190,7 +190,6 @@ include/thrift/lib/cpp2/FieldRefTraits.h
 include/thrift/lib/cpp2/Flags.h
 include/thrift/lib/cpp2/GeneratedCodeHelper.h
 include/thrift/lib/cpp2/PluggableFunction.h
-include/thrift/lib/cpp2/server/ResourcePoolSet.h
 include/thrift/lib/cpp2/SerializationSwitch.h
 include/thrift/lib/cpp2/Thrift.h
 include/thrift/lib/cpp2/TrustedServerException.h
@@ -425,17 +424,21 @@ include/thrift/lib/cpp2/server/RequestPileInterface.h
 include/thrift/lib/cpp2/server/RequestsRegistry.h
 include/thrift/lib/cpp2/server/ResourcePool.h
 include/thrift/lib/cpp2/server/ResourcePoolHandle.h
+include/thrift/lib/cpp2/server/ResourcePoolSet.h
 include/thrift/lib/cpp2/server/RoundRobinRequestPile.h
 include/thrift/lib/cpp2/server/ServerAttribute.h
 include/thrift/lib/cpp2/server/ServerConfigs.h
 include/thrift/lib/cpp2/server/ServerFlags.h
 include/thrift/lib/cpp2/server/ServerInstrumentation.h
 include/thrift/lib/cpp2/server/ServiceHealthPoller.h
+include/thrift/lib/cpp2/server/StandardConcurrencyController.h
 include/thrift/lib/cpp2/server/StatusServerInterface.h
+include/thrift/lib/cpp2/server/TMConcurrencyController.h
 include/thrift/lib/cpp2/server/ThreadManagerLoggingWrapper.h
 include/thrift/lib/cpp2/server/ThriftProcessor.h
 include/thrift/lib/cpp2/server/ThriftServer.h
 include/thrift/lib/cpp2/server/ThriftServerConfig.h
+include/thrift/lib/cpp2/server/TokenBucketConcurrencyController.h
 include/thrift/lib/cpp2/server/TransportRoutingHandler.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue-inl.h
 include/thrift/lib/cpp2/server/WeightedRequestPileQueue.h
@@ -480,6 +483,7 @@ include/thrift/lib/cpp2/transport/http2/common/testutil/ChannelTestFixture.h
 include/thrift/lib/cpp2/transport/http2/common/testutil/FakeProcessors.h
 include/thrift/lib/cpp2/transport/http2/common/testutil/FakeResponseHandler.h
 include/thrift/lib/cpp2/transport/http2/server/ThriftRequestHandler.h
+include/thrift/lib/cpp2/transport/rocket/Compression.h
 include/thrift/lib/cpp2/transport/rocket/FdSocketMetadata.h
 include/thrift/lib/cpp2/transport/rocket/PayloadUtils.h
 include/thrift/lib/cpp2/transport/rocket/RocketException.h
@@ -496,6 +500,9 @@ include/thrift/lib/cpp2/transport/rocket/framing/Parser-inl.h
 include/thrift/lib/cpp2/transport/rocket/framing/Parser.h
 include/thrift/lib/cpp2/transport/rocket/framing/Serializer.h
 include/thrift/lib/cpp2/transport/rocket/framing/Util.h
+include/thrift/lib/cpp2/transport/rocket/framing/parser/FrameLengthParserStrategy-inl.h
+include/thrift/lib/cpp2/transport/rocket/framing/parser/FrameLengthParserStrategy.h
+include/thrift/lib/cpp2/transport/rocket/framing/parser/ParserStrategy.h
 include/thrift/lib/cpp2/transport/rocket/framing/test/Util.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketRoutingHandler.h
 include/thrift/lib/cpp2/transport/rocket/server/RocketServerConnection.h
