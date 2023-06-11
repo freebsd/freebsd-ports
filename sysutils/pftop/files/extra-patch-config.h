@@ -12,7 +12,7 @@ $OpenBSD: patch-config_h,v 1.4 2008/12/20 04:36:11 canacar Exp $
 +
  #ifdef HAVE_PFSYNC_STATE
 +#if OS_LEVEL > 45
-+typedef struct pfsync_state_1400 pf_state_t;
++typedef struct pfsync_state_1301 pf_state_t;
 +#else
  typedef struct pfsync_state pf_state_t;
 +#endif
