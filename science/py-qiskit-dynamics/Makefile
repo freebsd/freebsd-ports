@@ -1,6 +1,5 @@
 PORTNAME=	qiskit-dynamics
-DISTVERSION=	0.4.0
-PORTREVISION=	1
+DISTVERSION=	0.4.1
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -13,9 +12,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=3.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=3.0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}multiset>=3.0.1:devel/py-multiset@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}qiskit-terra>=0.23.0:science/py-qiskit-terra@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}qiskit-terra>=0.23.0:science/py-qiskit-terra@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.4:science/py-scipy@${PY_FLAVOR}
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jax>0:math/py-jax@${PY_FLAVOR} \
