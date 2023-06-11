@@ -179,7 +179,11 @@ include/folly/detail/MemoryIdler.h
 include/folly/detail/PolyDetail.h
 include/folly/detail/RangeCommon.h
 include/folly/detail/RangeSse42.h
+include/folly/detail/SimdAnyOf.h
+include/folly/detail/SimdCharPlatform.h
 include/folly/detail/SimdForEach.h
+include/folly/detail/SimpleSimdStringUtils.h
+include/folly/detail/SimpleSimdStringUtilsImpl.h
 include/folly/detail/Singleton.h
 include/folly/detail/SlowFingerprint.h
 include/folly/detail/SocketFastOpen.h
@@ -191,6 +195,7 @@ include/folly/detail/ThreadLocalDetail.h
 include/folly/detail/TurnSequencer.h
 include/folly/detail/TypeList.h
 include/folly/detail/UniqueInstance.h
+include/folly/detail/UnrollUtils.h
 include/folly/detail/base64_detail/Base64Api.h
 include/folly/detail/base64_detail/Base64Common.h
 include/folly/detail/base64_detail/Base64Constants.h
