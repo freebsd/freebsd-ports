@@ -402,8 +402,6 @@ lib/virtualbox/VBoxManage
 lib/virtualbox/VBoxNetDHCP.so
 @(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxNetNAT
 lib/virtualbox/VBoxNetNAT.so
-%%I386%%lib/virtualbox/VBoxREM32.so
-%%I386%%lib/virtualbox/VBoxREM64.so
 lib/virtualbox/VBoxRT.so
 %%X11%%@(root,%%VBOXGROUP%%,4510) lib/virtualbox/VBoxSDL
 %%X11%%lib/virtualbox/VBoxSDL.so
