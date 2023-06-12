@@ -1,6 +1,5 @@
 PORTNAME=	rust-analyzer
-DISTVERSION=	2023-05-01
-PORTREVISION=	1
+DISTVERSION=	2023-06-12
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -94,6 +93,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		mio-0.8.5 \
 		miow-0.5.0 \
 		nix-0.26.2 \
+		nohash-hasher-0.2.0 \
 		notify-5.1.0 \
 		nu-ansi-term-0.46.0 \
 		num_cpus-1.15.0 \
@@ -117,6 +117,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pulldown-cmark-0.9.2 \
 		pulldown-cmark-to-cmark-10.0.4 \
 		quote-1.0.26 \
+		ra-ap-rustc_lexer-0.1.0 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
@@ -124,7 +125,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.29 \
 		rowan-0.15.11 \
-		rustc-ap-rustc_lexer-727.0.0 \
 		rustc-demangle-0.1.22 \
 		rustc-hash-1.1.0 \
 		ryu-1.0.13 \
@@ -150,7 +150,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		thiserror-1.0.39 \
 		thiserror-impl-1.0.39 \
 		thread_local-1.1.7 \
-		threadpool-1.8.1 \
 		tikv-jemalloc-ctl-0.5.0 \
 		tikv-jemalloc-sys-0.5.3+5.3.0-patched \
 		tikv-jemallocator-0.5.0 \
@@ -164,8 +163,14 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tracing-log-0.1.3 \
 		tracing-subscriber-0.3.16 \
 		tracing-tree-0.2.2 \
+		triomphe-0.1.8 \
 		typed-arena-2.0.2 \
 		ungrammar-1.16.1 \
+		unic-char-property-0.9.0 \
+		unic-char-range-0.9.0 \
+		unic-common-0.9.0 \
+		unic-emoji-char-0.9.0 \
+		unic-ucd-version-0.9.0 \
 		unicase-2.6.0 \
 		unicode-bidi-0.3.13 \
 		unicode-ident-1.0.8 \
