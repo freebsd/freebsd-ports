@@ -630,6 +630,7 @@ MAKE_ENV+=	V=1
 CFLAGS_armv6=	-Wno-error=int-conversion
 CFLAGS_armv7=	-Wno-error=int-conversion
 CFLAGS_i386=	-Wno-error=int-conversion
+CFLAGS_powerpc=	-Wno-error=int-conversion
 LDFLAGS_aarch64=-Wl,-z,notext
 LDFLAGS_armv6=	-Wl,-z,notext
 LDFLAGS_armv7=	-Wl,-z,notext
