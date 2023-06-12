@@ -39,7 +39,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django41>=4.1.9<4.2:www/py-django41@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}dj41-djangorestframework>=3.14.0<3.15.0:www/py-dj41-djangorestframework@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-drf-spectacular>=0.26.2<1:www/py-dj41-drf-spectacular@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-drf-spectacular-sidecar>=2023.5.1:www/py-dj41-drf-spectacular-sidecar@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj41-graphene-django>=3.0.0<4:devel/py-dj41-graphene-django@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj41-graphene-django>=3.0.0,1<3.0.0_99,1:devel/py-dj41-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=5.0.1<7:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}boto3>=1.26.138<2:www/py-boto3@${PY_FLAVOR} \
