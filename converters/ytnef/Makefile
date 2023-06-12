@@ -1,5 +1,5 @@
 PORTNAME=	ytnef
-PORTVERSION=	1.9.3
+PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=	v
 PORTEPOCH=	1
 CATEGORIES=	converters mail
@@ -14,17 +14,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
 USES=		autoreconf cpe libtool pathfix perl5 shebangfix
+CPE_VENDOR=	ytnef_project
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yeraze
 
-CPE_VENDOR=	ytnef_project
+USE_LDCONFIG=	yes
 USE_PERL5=	run
 
 SHEBANG_FILES=	ytnef/ytnefprocess
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 
 PORTDOCS=	README.md
 
