@@ -1,10 +1,7 @@
 PORTNAME=	octave-forge-cfitsio
-PORTVERSION=	0.0.4
-PORTREVISION=	3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.0.5
 CATEGORIES=	math
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=octave-cfitsio/v${PORTVERSION}
-DISTNAME=	octave-${OCTAVE_PKGNAME}-${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
@@ -16,6 +13,11 @@ LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 LIB_DEPENDS+=	libcfitsio.so:astro/cfitsio
 
 USES=		autoreconf octave
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnu-octave
+GH_PROJECT=	octave-cfitsio
+
+OCTAVE_SRC=	${GH_PROJECT}-${DISTVERSION}
 
 GNU_CONFIGURE=	yes
 

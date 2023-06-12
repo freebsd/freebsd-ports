@@ -1,3 +1,3 @@
-TIMESTAMP = 1666981649
-SHA256 (octave-forge/octave-cfitsio-0.0.4.tar.gz) = cc76307f99a3b7755a4ea72d1c4d40758329f20807e48d5df59da74e6bfee88e
-SIZE (octave-forge/octave-cfitsio-0.0.4.tar.gz) = 626713
+TIMESTAMP = 1686608279
+SHA256 (octave-forge/gnu-octave-octave-cfitsio-v0.0.5_GH0.tar.gz) = 3165828db1cbecb383f79b108010118c0f6fc414ee793288b29d40b8f1d03fc9
+SIZE (octave-forge/gnu-octave-octave-cfitsio-v0.0.5_GH0.tar.gz) = 254333
