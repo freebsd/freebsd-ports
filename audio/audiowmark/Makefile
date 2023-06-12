@@ -1,6 +1,10 @@
 PORTNAME=	audiowmark
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	audio
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	99ffa6b4a4f311c88b6b38b31e579b2102453f3a.patch:-p1 # https://github.com/swesterfeld/audiowmark/issues/36
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Audio and video watermarking tool
@@ -36,16 +40,8 @@ OPTIONS_DEFAULT=	FFMPEG
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ON=	--with-ffmpeg
 
-.include <bsd.port.pre.mk>
-
-# Fails to compile with llvm15
-# https://github.com/swesterfeld/audiowmark/issues/36
-.if ${OSVERSION} >= 1400000
-USE_GCC=	yes
-.endif
-
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.adoc ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
