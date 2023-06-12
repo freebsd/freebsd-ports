@@ -1289,7 +1289,7 @@
     SUBDIR += libixp
     SUBDIR += libjitterentropy
     SUBDIR += libk8055
-    SUBDIR += libkwix
+    SUBDIR += libkiwix
     SUBDIR += libklel
     SUBDIR += liblangtag
     SUBDIR += liblas
