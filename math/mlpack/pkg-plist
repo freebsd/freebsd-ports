@@ -517,6 +517,8 @@ include/mlpack/methods/ann/layer/elu.hpp
 include/mlpack/methods/ann/layer/elu_impl.hpp
 include/mlpack/methods/ann/layer/grouped_convolution.hpp
 include/mlpack/methods/ann/layer/grouped_convolution_impl.hpp
+include/mlpack/methods/ann/layer/hard_tanh.hpp
+include/mlpack/methods/ann/layer/hard_tanh_impl.hpp
 include/mlpack/methods/ann/layer/identity.hpp
 include/mlpack/methods/ann/layer/identity_impl.hpp
 include/mlpack/methods/ann/layer/layer.hpp
@@ -568,8 +570,6 @@ include/mlpack/methods/ann/layer/not_adapted/group_norm.hpp
 include/mlpack/methods/ann/layer/not_adapted/group_norm_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/gru.hpp
 include/mlpack/methods/ann/layer/not_adapted/gru_impl.hpp
-include/mlpack/methods/ann/layer/not_adapted/hard_tanh.hpp
-include/mlpack/methods/ann/layer/not_adapted/hard_tanh_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/hardshrink.hpp
 include/mlpack/methods/ann/layer/not_adapted/hardshrink_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/highway.hpp
@@ -596,8 +596,6 @@ include/mlpack/methods/ann/layer/not_adapted/multiply_merge.hpp
 include/mlpack/methods/ann/layer/not_adapted/multiply_merge_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/nearest_interpolation.hpp
 include/mlpack/methods/ann/layer/not_adapted/nearest_interpolation_impl.hpp
-include/mlpack/methods/ann/layer/not_adapted/parametric_relu.hpp
-include/mlpack/methods/ann/layer/not_adapted/parametric_relu_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/pixel_shuffle.hpp
 include/mlpack/methods/ann/layer/not_adapted/pixel_shuffle_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/positional_encoding.hpp
@@ -616,8 +614,6 @@ include/mlpack/methods/ann/layer/not_adapted/select.hpp
 include/mlpack/methods/ann/layer/not_adapted/select_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/sequential.hpp
 include/mlpack/methods/ann/layer/not_adapted/sequential_impl.hpp
-include/mlpack/methods/ann/layer/not_adapted/softmin.hpp
-include/mlpack/methods/ann/layer/not_adapted/softmin_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/softshrink.hpp
 include/mlpack/methods/ann/layer/not_adapted/softshrink_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/spatial_dropout.hpp
@@ -631,6 +627,8 @@ include/mlpack/methods/ann/layer/not_adapted/weight_norm.hpp
 include/mlpack/methods/ann/layer/not_adapted/weight_norm_impl.hpp
 include/mlpack/methods/ann/layer/padding.hpp
 include/mlpack/methods/ann/layer/padding_impl.hpp
+include/mlpack/methods/ann/layer/parametric_relu.hpp
+include/mlpack/methods/ann/layer/parametric_relu_impl.hpp
 include/mlpack/methods/ann/layer/radial_basis_function.hpp
 include/mlpack/methods/ann/layer/radial_basis_function_impl.hpp
 include/mlpack/methods/ann/layer/recurrent_layer.hpp
@@ -638,6 +636,8 @@ include/mlpack/methods/ann/layer/recurrent_layer_impl.hpp
 include/mlpack/methods/ann/layer/serialization.hpp
 include/mlpack/methods/ann/layer/softmax.hpp
 include/mlpack/methods/ann/layer/softmax_impl.hpp
+include/mlpack/methods/ann/layer/softmin.hpp
+include/mlpack/methods/ann/layer/softmin_impl.hpp
 include/mlpack/methods/ann/loss_functions/binary_cross_entropy_loss.hpp
 include/mlpack/methods/ann/loss_functions/binary_cross_entropy_loss_impl.hpp
 include/mlpack/methods/ann/loss_functions/cosine_embedding_loss.hpp
@@ -737,8 +737,10 @@ include/mlpack/methods/cf/cf_model.hpp
 include/mlpack/methods/cf/cf_model_impl.hpp
 include/mlpack/methods/cf/decomposition_policies/batch_svd_method.hpp
 include/mlpack/methods/cf/decomposition_policies/bias_svd_method.hpp
+include/mlpack/methods/cf/decomposition_policies/block_krylov_svd_method.hpp
 include/mlpack/methods/cf/decomposition_policies/decomposition_policies.hpp
 include/mlpack/methods/cf/decomposition_policies/nmf_method.hpp
+include/mlpack/methods/cf/decomposition_policies/quic_svd_method.hpp
 include/mlpack/methods/cf/decomposition_policies/randomized_svd_method.hpp
 include/mlpack/methods/cf/decomposition_policies/regularized_svd_method.hpp
 include/mlpack/methods/cf/decomposition_policies/svd_complete_method.hpp
@@ -1004,6 +1006,7 @@ include/mlpack/methods/perceptron/perceptron_impl.hpp
 include/mlpack/methods/perceptron/perceptron_main.cpp
 include/mlpack/methods/preprocess.hpp
 include/mlpack/methods/preprocess/image_converter_main.cpp
+include/mlpack/methods/preprocess/preprocess.hpp
 include/mlpack/methods/preprocess/preprocess_binarize_main.cpp
 include/mlpack/methods/preprocess/preprocess_describe_main.cpp
 include/mlpack/methods/preprocess/preprocess_imputer_main.cpp
