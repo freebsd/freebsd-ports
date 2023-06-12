@@ -1,3 +1,39 @@
+  <vuln vid="f7e9a1cc-0931-11ee-94b4-6cc21735f730">
+    <topic>xmltooling -- remote resource access</topic>
+    <affects>
+      <package>
+	<name>xmltooling</name>
+	<range><lt>3.2.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Shibboleth consortium reports:</p>
+	<blockquote cite="https://shibboleth.net/community/advisories/secadv_20230612.txt">
+	  <p>An updated version of the XMLTooling library that is part of the
+	  OpenSAML and Shibboleth Service Provider software is now available
+	  which corrects a server-side request forgery (SSRF) vulnerability.</p>
+	  <p>Including certain legal but "malicious in intent" content in the
+	  KeyInfo element defined by the XML Signature standard will result
+	  in attempts by the SP's shibd process to dereference untrusted
+	  URLs.</p>
+	  <p>While the content of the URL must be supplied within the message
+	  and does not include any SP internal state or dynamic content,
+	  there is at minimum a risk of denial of service, and the attack
+	  could be combined with others to create more serious vulnerabilities
+	  in the future.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://shibboleth.net/community/advisories/secadv_20230612.txt</url>
+    </references>
+    <dates>
+      <discovery>2023-06-12</discovery>
+      <entry>2023-06-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fdca9418-06f0-11ee-abe2-ecf4bbefc954">
     <topic>acme.sh -- closes potential remote vuln</topic>
     <affects>
