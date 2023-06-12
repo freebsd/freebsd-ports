@@ -1,6 +1,6 @@
---- Makefile.orig	2021-06-07 09:23:45.000000000 -0700
-+++ Makefile	2021-06-14 16:03:09.610176000 -0700
-@@ -2,7 +2,7 @@
+--- Makefile.orig	2022-10-09 00:42:32.000000000 -0400
++++ Makefile	2023-06-12 14:53:55.459124000 -0400
+@@ -3,7 +3,7 @@ DESTDIR = /
  prefix = $(HOME)
  bindir = $(prefix)/libexec/git-core
  localedir = $(prefix)/share/locale
@@ -9,7 +9,7 @@
  htmldir = $(prefix)/share/doc/git-doc
  pythondir = $(prefix)/lib64/python3.6/site-packages
  
-@@ -23,7 +23,7 @@
+@@ -24,7 +24,7 @@ fixup_locale:
  # html/git-filter-repo.html.  But let's support people installing from a git
  # clone too; for them, just cheat and snag a copy of the built docs that I
  # record in a different branch.
@@ -18,17 +18,18 @@
  
  Documentation/man1/git-filter-repo.1:
  	mkdir -p Documentation/man1
-@@ -33,11 +33,10 @@
+@@ -34,12 +34,11 @@ Documentation/html/git-filter-repo.html:
  	mkdir -p Documentation/html
  	git show origin/docs:html/git-filter-repo.html >Documentation/html/git-filter-repo.html
  
 -install: snag_docs #fixup_locale
 +install:
- 	cp -a git-filter-repo "$(bindir)/"
--	ln -sf "$(bindir)/git-filter-repo" "$(pythondir)/git_filter_repo.py"
+ 	install -Dm0755 git-filter-repo "$(DESTDIR)/$(bindir)/git-filter-repo"
+ 	install -dm0755 "$(DESTDIR)/$(pythondir)"
+-	ln -sf "$(bindir)/git-filter-repo" "$(DESTDIR)/$(pythondir)/git_filter_repo.py"
 +	( cd "$(pythondir)" && ln -sf ../../../libexec/git-core/git-filter-repo git_filter_repo.py )
- 	cp -a Documentation/man1/git-filter-repo.1 "$(mandir)/man1/git-filter-repo.1"
--	cp -a Documentation/html/git-filter-repo.html "$(htmldir)/git-filter-repo.html"
+ 	install -Dm0644 Documentation/man1/git-filter-repo.1 "$(DESTDIR)/$(mandir)/man1/git-filter-repo.1"
+-	install -Dm0644 Documentation/html/git-filter-repo.html "$(DESTDIR)/$(htmldir)/git-filter-repo.html"
+ 	if which mandb > /dev/null; then mandb; fi
  
  
- #
