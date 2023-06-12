@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LIB_DEPENDS=	libfreeimage.so:graphics/freeimage
 TEST_DEPENDS=	ispc:devel/ispc
 
-USES=		cmake:testing compiler:c++11-lang dos2unix
+USES=		cmake:testing compiler:c++11-lang
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	akb825
@@ -33,8 +33,5 @@ CMAKE_ON=	CUTTLEFISH_SHARED
 CMAKE_TESTING_ON=	CUTTLEFISH_BUILD_TESTS # many tests fail, see https://github.com/akb825/Cuttlefish/issues/19
 
 CXXFLAGS_powerpc=	-maltivec
-
-pre-test:
-	${LN} -s ${WRKSRC}/tool/test/texture.png ${TEST_WRKSRC}/ || true
 
 .include <bsd.port.mk>
