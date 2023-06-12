@@ -1,6 +1,5 @@
 PORTNAME=	abinit
-DISTVERSION=	9.6.2
-PORTREVISION=	3
+DISTVERSION=	9.8.4
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -36,7 +35,7 @@ USES=		autoreconf:build blaslapack:netlib fortran gmake gnome localbase:ldflags	
 		python:3.7+ shebangfix
 USE_GITHUB=	yes
 USE_GNOME=	libxml2
-SHEBANG_FILES=	config/scripts/* doc/tutorial/paral_gspw_assets/abinit.sub.*
+SHEBANG_FILES=	config/scripts/* doc/tutorial/paral_bandpw_assets/abinit.sub.*
 SHEBANG_GLOB=	*.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CC_LDFLAGS="${LDFLAGS}" CXX_LDFLAGS="${LDFLAGS}" FC_LDFLAGS="${LDFLAGS}"	\
@@ -51,7 +50,7 @@ CONFIGURE_ENV=	CC_LDFLAGS="${LDFLAGS}" CXX_LDFLAGS="${LDFLAGS}" FC_LDFLAGS="${LD
 CONFIGURE_ARGS=	--with-fft --with-libxc --with-libxml2 --with-netcdf	\
 		--with-netcdf-fortran --with-wannier90 --with-xmlf90
 FCFLAGS+=	-ffree-line-length-none
-TEST_TARGET=	tests_abirules tests_buildsys
+TEST_TARGET=	tests_abirules tests_buildsys # Many tests print RuntimeError, https://github.com/abinit/abinit/issues/64
 TEST_WRKSRC=	${WRKSRC}/abichecks
 PORTDOCS=	*
 
