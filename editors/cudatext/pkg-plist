@@ -5,7 +5,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/autocomplete/C++.acp
 %%DATADIR%%/data/autocomplete/C.acp
 %%DATADIR%%/data/autocomplete/Lua.acp
-%%DATADIR%%/data/autocomplete/PHP_.acp
 %%DATADIR%%/data/autocompletespec/css_colors.ini
 %%DATADIR%%/data/autocompletespec/css_list.ini
 %%DATADIR%%/data/autocompletespec/css_sel.ini
@@ -228,10 +227,6 @@ share/applications/cudatext.desktop
 %%DATADIR%%/data/lexlib/Lua.lcf
 %%DATADIR%%/data/lexlib/Markdown.cuda-lexmap
 %%DATADIR%%/data/lexlib/Markdown.lcf
-%%DATADIR%%/data/lexlib/PHP.cuda-lexmap
-%%DATADIR%%/data/lexlib/PHP.lcf
-%%DATADIR%%/data/lexlib/PHP_.cuda-lexmap
-%%DATADIR%%/data/lexlib/PHP_.lcf
 %%DATADIR%%/data/lexlib/Python.cuda-lexmap
 %%DATADIR%%/data/lexlib/Python.lcf
 %%DATADIR%%/data/lexlib/RegEx.cuda-lexmap
