@@ -1,14 +1,12 @@
 LOCALBASE?=	/usr/local
-CXXFLAGS+=	-std=c++17 -Wall -Wextra -Wno-unused-parameter \
-		-DBUILD_SCM_REVISION=\"c7e8e73\" \
+CXXFLAGS+=	-std=c++17 -Wall -Wextra -Wno-unused-parameter
+CPPFLAGS+=	-DBUILD_SCM_REVISION=\"c7e8e73\" \
 		-DBUILD_SCM_STATUS=\"Modified\" \
 		-DNDEBUG -DENVOY_SSL_VERSION=\"BoringSSL\" \
 		-DSPDLOG_FMT_EXTERNAL -DENVOY_ENABLE_QUIC \
 		-DENVOY_ADMIN_HTML \
 		-I.. -I../api -I../bazel/external/http_parser \
 		-I../../cel-cpp-11f9d66 \
-		-I../../grpc-1.49.2/src/core/ext/upb-generated \
-		-I../../grpc-1.49.2/third_party/upb \
 		-I../../quiche-37de4f7 \
 		-I../../quiche-37de4f7/quiche/common/platform/default \
 		-I../.. -I$(LOCALBASE)/include
@@ -231,38 +229,6 @@ api_OBJS=	envoy/admin/v2alpha/certs.pb.o \
 		opentelemetry/proto/common/v1/common.pb.o \
 		opentelemetry/proto/logs/v1/logs.pb.o \
 		opentelemetry/proto/resource/v1/resource.pb.o \
-		src/core/lib/channel/channel_stack.o \
-		src/core/lib/gpr/env_posix.o \
-		src/core/lib/gprpp/global_config_env.o \
-		src/core/lib/gprpp/status_helper.o \
-		src/core/lib/gprpp/time.o \
-		src/core/lib/iomgr/combiner.o \
-		src/core/lib/iomgr/error.o \
-		src/core/lib/iomgr/exec_ctx.o \
-		src/core/lib/iomgr/executor.o \
-		src/core/lib/iomgr/iomgr.o \
-		src/core/lib/iomgr/iomgr_internal.o \
-		src/core/lib/iomgr/polling_entity.o \
-		src/core/lib/iomgr/pollset.o \
-		src/core/lib/iomgr/pollset_set.o \
-		src/core/lib/iomgr/timer.o \
-		src/core/lib/iomgr/timer_manager.o \
-		src/core/lib/slice/percent_encoding.o \
-		src/core/lib/slice/slice.o \
-		src/core/lib/slice/slice_buffer.o \
-		src/core/lib/surface/api_trace.o \
-		src/core/lib/surface/byte_buffer.o \
-		src/core/lib/surface/byte_buffer_reader.o \
-		src/core/lib/surface/call.o \
-		src/core/lib/surface/completion_queue.o \
-		src/core/lib/surface/completion_queue_factory.o \
-		src/core/lib/surface/event_string.o \
-		src/core/lib/surface/validate_metadata.o \
-		src/core/lib/transport/connectivity_state.o \
-		src/core/lib/transport/error_utils.o \
-		src/core/lib/transport/metadata_batch.o \
-		src/core/lib/transport/transport.o \
-		src/core/lib/transport/transport_op_string.o \
 		udpa/annotations/migrate.pb.o \
 		udpa/annotations/security.pb.o \
 		udpa/annotations/sensitive.pb.o \

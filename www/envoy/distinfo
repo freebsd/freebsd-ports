@@ -19,5 +19,3 @@ SHA256 (open-telemetry-opentelemetry-proto-v0.19.0_GH0.tar.gz) = 464bc2b348e674a
 SIZE (open-telemetry-opentelemetry-proto-v0.19.0_GH0.tar.gz) = 26558
 SHA256 (google-cel-cpp-11f9d66_GH0.tar.gz) = 1968c7a34d3e1fd64f7309c81191f9d74a509e16cc8f91b3e986ca7309aeac40
 SIZE (google-cel-cpp-11f9d66_GH0.tar.gz) = 441644
-SHA256 (grpc-grpc-v1.49.2_GH0.tar.gz) = cdeb805385fba23242bf87073e68d590c446751e09089f26e5e0b3f655b0f089
-SIZE (grpc-grpc-v1.49.2_GH0.tar.gz) = 8357385
