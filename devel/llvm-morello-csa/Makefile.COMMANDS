@@ -1,0 +1,4 @@
+CLANG_COMMANDS=	\
+		clang \
+		clang++ \
+		clang-cpp

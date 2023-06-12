@@ -1,0 +1,3 @@
+The Clang Static analyzer is a source code analysis tool. It is a part
+of Clang/LLVM Project. This is a version of LLVM Project for Morello
+with Clang Static Analyzer support.

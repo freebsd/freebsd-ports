@@ -1,0 +1,111 @@
+#!/bin/sh
+#-
+# SPDX-License-Identifier: BSD-2-Clause
+#
+# Copyright (c) 2022 SRI International
+#
+# This software was developed by SRI International and the University of
+# Cambridge Computer Laboratory (Department of Computer Science and
+# Technology) under Defense Advanced Research Projects Agency (DARPA)
+# Contract No. HR001122C0110 ("ETC").
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions
+# are met:
+# 1. Redistributions of source code must retain the above copyright
+#    notice, this list of conditions and the following disclaimer.
+# 2. Redistributions in binary form must reproduce the above copyright
+#    notice, this list of conditions and the following disclaimer in the
+#    documentation and/or other materials provided with the distribution.
+#
+# THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+# ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+# FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+# DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+# OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+# HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+# LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+# OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+# SUCH DAMAGE.
+#
+
+LOCALBASE="%%LOCALBASE%%"
+LLVM_PREFIX=${LOCALBASE}/"llvm-morello-csa"
+
+if [ -z "$CHERIBSD_VERSION" ]; then
+	CHERIBSD_VERSION=$(awk '/^#define[[:space:]]+__CheriBSD_version/{print $3}' /usr/include/sys/param.h)
+fi
+if [ -z "$CHERIBSD_VERSION" ]; then
+	CHERIBSD_VERSION=0
+fi
+
+VERBOSE=${VERBOSE:-0}
+
+err()
+{
+	ret=$1
+	shift
+	echo >&2 "$@"
+	exit "$ret"
+}
+
+debug()
+{
+	if [ "$VERBOSE" -ne 0 ]; then
+		echo >&2 "$@"
+	fi
+}
+
+run()
+{
+	debug "Running CSA:" "$@"
+	"$@"
+}
+
+
+tool=$0
+[ -L "$tool" ] && tool=$(/bin/realpath $tool)
+tool=${tool##*/}
+
+case $tool in
+ccc-analyzer|c++-analyzer)
+	;;
+*)
+	err invalid tool $tool
+	;;
+esac
+
+realtool=${LLVM_PREFIX}/libexec/${tool}
+
+# CheriBSD: assume that if we're on a CHERI architecture we want either
+# purecap or hybrid binaries.
+arch_cflags=
+ARCH=`uname -p`
+case $ARCH in
+aarch64)
+	if [ "$CHERIBSD_VERSION" -le 20220314 ]; then
+		vararg_flags=
+	else
+		vararg_flags="-Xclang -morello-vararg=new"
+	fi
+	arch_cflags="-march=morello $vararg_flags"
+	;;
+aarch64c)
+	if [ "$CHERIBSD_VERSION" -le 20220314 ]; then
+		tls_flags="-femulated-tls"
+		vararg_flags=
+	elif [ "$CHERIBSD_VERSION" -le 20220828 ]; then
+		tls_flags=
+		vararg_flags="-Xclang -morello-vararg=new"
+	else
+		tls_flags=
+		vararg_flags="-Xclang -morello-vararg=new -Xclang -morello-bounded-memargs=caller-only"
+	fi
+
+	arch_cflags="-march=morello -mabi=purecap $tls_flags $vararg_flags"
+	;;
+esac
+
+run "$realtool" $arch_cflags "$@"
