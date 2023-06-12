@@ -56,6 +56,10 @@ NETTY_ARCH=	sparc_64
 NETTY_ARCH=	${ARCH}
 .endif
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 post-extract:
 	(cd ${WRKSRC} && \
 		${JAR} xf jar/netty-transport-native-kqueue-${PORTVERSION}.Final-sources.jar)
@@ -75,6 +79,9 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/jar/all-in-one/${PORTNAME}-all-${PORTVERSION}.Final.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}-${PORTVERSION}.jar
 	${LN} -nfs ${PORTNAME}-${PORTVERSION}.jar ${STAGEDIR}${JAVAJARDIR}/${PORTNAME}.jar
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
 .for DIR in ${DOCDIRS}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${DIR} ${STAGEDIR}${DOCSDIR}
 .endfor
