@@ -47,6 +47,7 @@ MAN_FILES=	${WRKSRC}/man/fail2ban-client.1 \
 		${WRKSRC}/man/fail2ban.1
 
 FAIL2BAN_DBDIR=	/var/db/${PORTNAME}
+PLIST_SUB=	FAIL2BAN_DBDIR=${FAIL2BAN_DBDIR}
 
 PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}
 PY2TO3_ARG=	--no-diffs --write --nobackups --fix=all
