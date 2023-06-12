@@ -1,5 +1,5 @@
 PORTNAME=	evilwm
-DISTVERSION=	1.4.1
+DISTVERSION=	1.4.2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.6809.org.uk/evilwm/
 
