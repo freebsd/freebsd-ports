@@ -1264,6 +1264,7 @@
 %%DATADIR%%/utilities/templates/builtins/badge.html
 %%DATADIR%%/utilities/templates/builtins/checkmark.html
 %%DATADIR%%/utilities/templates/builtins/customfield_value.html
+%%DATADIR%%/utilities/templates/builtins/htmx_table.html
 %%DATADIR%%/utilities/templates/builtins/tag.html
 %%DATADIR%%/utilities/templates/buttons/add.html
 %%DATADIR%%/utilities/templates/buttons/bulk_delete.html
