@@ -63,7 +63,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		azure_storage-0.6.0 \
 		azure_storage_blobs-0.6.0 \
 		backoff-0.4.0 \
-		base-x-0.2.11 \
 		base16-0.2.1 \
 		base64-0.13.1 \
 		base64-0.21.2 \
@@ -97,7 +96,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		chrono-0.4.26 \
 		chrono-tz-0.8.2 \
 		chrono-tz-build-0.1.0 \
-		chunked_transfer-1.4.1 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
@@ -117,10 +115,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		console-0.15.7 \
 		console-api-0.5.0 \
 		console-subscriber-0.1.9 \
-		const_fn-0.4.9 \
 		convert_case-0.4.0 \
-		cookie-0.14.4 \
-		cookie_store-0.12.0 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.4 \
 		cpufeatures-0.2.7 \
@@ -164,7 +159,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dirs-next-2.0.0 \
 		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
-		discard-1.0.4 \
 		dns-lookup-1.0.8 \
 		doc-comment-0.3.3 \
 		dotenv-0.15.0 \
@@ -173,7 +167,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		downcast-rs-1.2.0 \
 		duct-0.13.6 \
 		dyn-clone-1.0.11 \
-		ec2_instance_metadata-0.3.0 \
 		either-1.8.1 \
 		elasticsearch-dsl-0.4.11 \
 		ena-0.14.2 \
@@ -253,7 +246,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		iana-time-zone-0.1.56 \
 		iana-time-zone-haiku-0.1.2 \
 		ident_case-1.0.1 \
-		idna-0.2.3 \
 		idna-0.3.0 \
 		indexmap-1.9.3 \
 		indicatif-0.17.4 \
@@ -271,7 +263,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		itoa-1.0.6 \
 		jobserver-0.1.26 \
 		js-sys-0.3.63 \
-		json-0.12.4 \
 		json_comments-0.2.1 \
 		keccak-0.1.4 \
 		krb5-src-0.3.2+1.19.2 \
@@ -402,7 +393,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		proc-macro-crate-1.3.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro-hack-0.5.20+deprecated \
 		proc-macro2-1.0.59 \
 		procfs-0.14.2 \
 		prometheus-0.13.3 \
@@ -414,8 +404,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		protobuf-2.28.0 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
-		publicsuffix-1.5.6 \
-		qstring-0.7.2 \
 		quick-error-1.2.3 \
 		quote-1.0.28 \
 		quoted_printable-0.4.8 \
@@ -448,17 +436,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rkyv_derive-0.7.42 \
 		roxmltree-0.14.1 \
 		roxmltree-0.18.0 \
-		rust-embed-6.6.1 \
-		rust-embed-impl-6.5.0 \
+		rust-embed-6.7.0 \
+		rust-embed-impl-6.6.0 \
 		rust-embed-utils-7.5.0 \
 		rust-stemmers-1.2.0 \
 		rust_decimal-1.29.1 \
 		rustc-hash-1.1.0 \
-		rustc_version-0.2.3 \
 		rustc_version-0.4.0 \
 		rustix-0.36.14 \
 		rustix-0.37.19 \
-		rustls-0.19.1 \
 		rustls-0.20.8 \
 		rustls-0.21.1 \
 		rustls-native-certs-0.6.2 \
@@ -471,14 +457,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		schannel-0.1.21 \
 		scoped-tls-1.0.1 \
 		scopeguard-1.1.0 \
-		sct-0.6.1 \
 		sct-0.7.0 \
 		seahash-4.1.0 \
 		security-framework-2.9.1 \
 		security-framework-sys-2.9.0 \
-		semver-0.9.0 \
 		semver-1.0.17 \
-		semver-parser-0.7.0 \
 		serde-1.0.163 \
 		serde-value-0.7.0 \
 		serde-xml-rs-0.6.0 \
@@ -497,9 +480,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_yaml-0.8.26 \
 		serde_yaml-0.9.21 \
 		sha-1-0.10.1 \
-		sha1-0.6.1 \
 		sha1-0.10.5 \
-		sha1_smol-1.0.0 \
 		sha2-0.10.6 \
 		sha3-0.10.8 \
 		sharded-slab-0.1.4 \
@@ -523,11 +504,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		sqlx-macros-0.6.3 \
 		sqlx-rt-0.6.3 \
 		stable_deref_trait-1.2.0 \
-		standback-0.2.17 \
-		stdweb-0.4.20 \
-		stdweb-derive-0.5.3 \
-		stdweb-internal-macros-0.2.9 \
-		stdweb-internal-runtime-0.1.5 \
 		string_cache-0.8.7 \
 		stringprep-0.1.2 \
 		strip-ansi-escapes-0.1.1 \
@@ -544,7 +520,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tabled_derive-0.4.0 \
 		tantivy-fst-0.4.0 \
 		tap-1.0.1 \
-		tempfile-3.5.0 \
+		tempfile-3.6.0 \
 		term-0.7.0 \
 		termcolor-1.2.0 \
 		termtree-0.4.1 \
@@ -559,13 +535,10 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tikv-jemalloc-sys-0.5.3+5.3.0-patched \
 		tikv-jemallocator-0.5.0 \
 		time-0.1.45 \
-		time-0.2.27 \
 		time-0.3.21 \
 		time-core-0.1.1 \
 		time-fmt-0.3.8 \
-		time-macros-0.1.1 \
 		time-macros-0.2.9 \
-		time-macros-impl-0.1.2 \
 		tiny-keccak-2.0.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
@@ -617,7 +590,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		unicode_categories-0.1.1 \
 		unsafe-libyaml-0.2.8 \
 		untrusted-0.7.1 \
-		ureq-1.5.5 \
 		url-2.3.1 \
 		urlencoding-2.1.2 \
 		username-0.2.0 \
@@ -651,9 +623,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wasm-bindgen-shared-0.2.86 \
 		wasm-streams-0.2.3 \
 		web-sys-0.3.63 \
-		webpki-0.21.4 \
 		webpki-0.22.0 \
-		webpki-roots-0.21.1 \
 		webpki-roots-0.22.6 \
 		which-4.4.0 \
 		whoami-1.4.0 \
@@ -688,7 +658,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		wiremock-0.5.18 \
 		woothee-0.13.0 \
 		wyz-0.5.1 \
-		xml-rs-0.8.13 \
+		xml-rs-0.8.14 \
 		xmlparser-0.13.5 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
@@ -700,6 +670,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zstd-sys-2.0.8+zstd.1.5.5 \
 		path,value,vrl,vrl-compiler,vrl-core,vrl-diagnostic,vrl-parser,vrl-stdlib@git+https://github.com/vectordotdev/vrl?rev=v0.3.0\#113005bcee6cd7b5ea0a53a7db2fc45ba4bc4125 \
 		chitchat@git+https://github.com/quickwit-oss/chitchat?rev=bc29598\#bc295980ac2e00f389dfa7e87cf6dc7995061206 \
+		ownedbytes,tantivy,tantivy-bitpacker,tantivy-columnar,tantivy-common,tantivy-query-grammar,tantivy-sstable,tantivy-stacker,tantivy-tokenizer-api@git+https://github.com/quickwit-oss/tantivy/?rev=924fc70\#924fc70cb58f56dcd1a0547f2528c9ea86452763 \
 		pulsar@git+https://github.com/quickwit-oss/pulsar-rs.git?rev=f9eff04\#f9eff04caf184906c6466fdde8b5bb0fd3c92659 \
-		sasl2-sys@git+https://github.com/quickwit-oss/rust-sasl/?rev=daca921\#daca9216beca2f2d8c9ce5d803906918a316021a \
-		ownedbytes,tantivy,tantivy-bitpacker,tantivy-columnar,tantivy-common,tantivy-query-grammar,tantivy-sstable,tantivy-stacker,tantivy-tokenizer-api@git+https://github.com/quickwit-oss/tantivy/?rev=7ee78bd\#7ee78bda521b82ae61f1df56f67be102a90a15d0
+		sasl2-sys@git+https://github.com/quickwit-oss/rust-sasl/?rev=daca921\#daca9216beca2f2d8c9ce5d803906918a316021a
