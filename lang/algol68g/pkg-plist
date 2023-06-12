@@ -30,7 +30,6 @@ include/algol68g/a68g-postulates.h
 include/algol68g/a68g-prelude-gsl.h
 include/algol68g/a68g-prelude-mathlib.h
 include/algol68g/a68g-prelude.h
-include/algol68g/a68g-quad.h
 include/algol68g/a68g-stack.h
 include/algol68g/a68g-stddef.h
 include/algol68g/a68g-torrix.h
