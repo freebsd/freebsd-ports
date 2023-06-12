@@ -1,0 +1,7 @@
+TIMESTAMP = 1686557562
+SHA256 (rocky/a/at-spi2-atk-2.38.0-4.el9.aarch64.rpm) = 8984a36dfce1b3b54ede42b42e6bbb312085405ba260539d565663c3b3ccf501
+SIZE (rocky/a/at-spi2-atk-2.38.0-4.el9.aarch64.rpm) = 87083
+SHA256 (rocky/a/at-spi2-atk-2.38.0-4.el9.x86_64.rpm) = 1b12b3fae8815a0e310a4a9b5e9d2d68264e7d700e50a796078b389966f6c4b8
+SIZE (rocky/a/at-spi2-atk-2.38.0-4.el9.x86_64.rpm) = 87851
+SHA256 (rocky/a/at-spi2-atk-2.38.0-4.el9.src.rpm) = 8b459a6368a6c1e1181a6b556e2a7129cecd64d1f09cc4d2359f1abd1a5dcd68
+SIZE (rocky/a/at-spi2-atk-2.38.0-4.el9.src.rpm) = 109629

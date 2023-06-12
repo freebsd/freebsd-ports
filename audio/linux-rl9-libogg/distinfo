@@ -1,0 +1,7 @@
+TIMESTAMP = 1686569432
+SHA256 (rocky/l/libogg-1.3.4-6.el9.aarch64.rpm) = 5466faaaef6693d9affff8d92b093884c9f42315b514a6ef903bb0e183d3ecab
+SIZE (rocky/l/libogg-1.3.4-6.el9.aarch64.rpm) = 32850
+SHA256 (rocky/l/libogg-1.3.4-6.el9.x86_64.rpm) = b9185380df1f9787e93de2e32b0dddbd24d0017371e7b4ae2106ff0bbe8819da
+SIZE (rocky/l/libogg-1.3.4-6.el9.x86_64.rpm) = 33277
+SHA256 (rocky/l/libogg-1.3.4-6.el9.src.rpm) = 267097c950dde41f40614d77ddf7253fc43f887d4f796a2aa1fb95ae14c0db2b
+SIZE (rocky/l/libogg-1.3.4-6.el9.src.rpm) = 439705

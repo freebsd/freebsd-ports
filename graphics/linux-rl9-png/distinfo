@@ -1,0 +1,7 @@
+TIMESTAMP = 1686554845
+SHA256 (rocky/l/libpng-1.6.37-12.el9.aarch64.rpm) = d097557b926ef555cecae507ed55c113a5fae1aa095439cad9c56048c62e7045
+SIZE (rocky/l/libpng-1.6.37-12.el9.aarch64.rpm) = 116497
+SHA256 (rocky/l/libpng-1.6.37-12.el9.x86_64.rpm) = 2fb7ea5028fb07380ec2ece9716763cbe4b456a90574e14ddb93180c8c4bc14f
+SIZE (rocky/l/libpng-1.6.37-12.el9.x86_64.rpm) = 118873
+SHA256 (rocky/l/libpng-1.6.37-12.el9.src.rpm) = cd5bccf1fcb4b436a97956deca9547804c2bcd54c6dbef1d7e8dab873403d90e
+SIZE (rocky/l/libpng-1.6.37-12.el9.src.rpm) = 1525727

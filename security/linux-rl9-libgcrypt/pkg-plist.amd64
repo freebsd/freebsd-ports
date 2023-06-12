@@ -1,0 +1,8 @@
+usr/lib/.build-id/3d/6b325fb24d09990a1b32343b27d3762d9ace14
+usr/lib64/libgcrypt.so.20
+usr/lib64/libgcrypt.so.20.4.0
+%%PORTDOCS%%usr/share/doc/libgcrypt/AUTHORS
+%%PORTDOCS%%usr/share/doc/libgcrypt/NEWS
+%%PORTDOCS%%usr/share/doc/libgcrypt/THANKS
+usr/share/licenses/libgcrypt/COPYING.LIB
+@dir etc/gcrypt

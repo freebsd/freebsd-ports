@@ -1,0 +1,12 @@
+usr/lib/.build-id/0d/659ffc3c73b8931babcece4979e51b4e2b6c34
+usr/lib/.build-id/e0/4990ffc7a34e9f9ad3f5884dd94c404ee99ebb
+usr/lib64/libFLAC++.so.6
+usr/lib64/libFLAC++.so.6.3.0
+usr/lib64/libFLAC.so.8
+usr/lib64/libFLAC.so.8.3.0
+%%PORTDOCS%%usr/share/doc/flac-libs/AUTHORS
+%%PORTDOCS%%usr/share/doc/flac-libs/COPYING.FDL
+%%PORTDOCS%%usr/share/doc/flac-libs/COPYING.GPL
+%%PORTDOCS%%usr/share/doc/flac-libs/COPYING.LGPL
+%%PORTDOCS%%usr/share/doc/flac-libs/COPYING.Xiph
+%%PORTDOCS%%usr/share/doc/flac-libs/README

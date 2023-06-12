@@ -1,0 +1,7 @@
+TIMESTAMP = 1686569500
+SHA256 (rocky/f/flac-libs-1.3.3-10.el9.aarch64.rpm) = c459a13ca9829635ea01bb73e54830ba148a52e27f68f532f072547577af0497
+SIZE (rocky/f/flac-libs-1.3.3-10.el9.aarch64.rpm) = 197470
+SHA256 (rocky/f/flac-libs-1.3.3-10.el9.x86_64.rpm) = e91cebb7bd7e48b93a95aef62a4347b35a153c1a6b2cabb260760dd2701d1192
+SIZE (rocky/f/flac-libs-1.3.3-10.el9.x86_64.rpm) = 223361
+SHA256 (rocky/f/flac-1.3.3-10.el9.src.rpm) = 351ee43eac4102499c30616be17a8c80b38308a5886c14fa8cec6a6f8c242887
+SIZE (rocky/f/flac-1.3.3-10.el9.src.rpm) = 1059353

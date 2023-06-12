@@ -3,6 +3,7 @@
 # Feature:	linux:args
 # Usage:	USES=linux or USES=linux:args
 # Valid args:	c7	Depend on CentOS 7 packages (default)
+#		rl9	Depend on Rocky Linux 9 packages
 # Additional variables:
 # USE_LINUX	List of Linux packages to depend on.
 # USE_LINUX_RPM	When defined, additional variables and targets useful to Linux
@@ -26,6 +27,8 @@ _USES_POST+=		linux
 .  if empty(linux_ARGS)
 .    if exists(${LINUXBASE}/etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7)
 linux_ARGS=		c7
+.    elif exists(${LINUXBASE}/etc/pki/rpm-gpg/RPM-GPG-KEY-Rocky-9)
+linux_ARGS=		rl9
 .    else
 linux_ARGS=		${LINUX_DEFAULT}
 .    endif
@@ -33,27 +36,36 @@ linux_ARGS=		${LINUX_DEFAULT}
 
 .  if ${linux_ARGS} == c7
 LINUX_DIST_VER?=	7.9.2009
+.  elif ${linux_ARGS} == rl9
+LINUX_DIST_VER?=	9.2
 .  else
 ERROR+=			"Invalid Linux distribution: ${linux_ARGS}"
 .  endif
 
 .  ifndef ONLY_FOR_ARCHS
+.    if ${linux_ARGS} == rl9
+ONLY_FOR_ARCHS=		aarch64 amd64
+ONLY_FOR_ARCHS_REASON=	Rocky Linux compatibility is only available on aarch64 and amd64
+.    else
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
-ONLY_FOR_ARCHS_REASON=	Linux compatibility is only available on aarch64, amd64 and i386
+ONLY_FOR_ARCHS_REASON=	CentOS Linux compatibility is only available on aarch64, amd64 and i386
+.    endif
 .  endif
 
 _linux_c7_alsa-lib-devel=		linux-c7-alsa-lib-devel>0:audio/linux-c7-alsa-lib-devel
 _linux_${linux_ARGS}_alsa-plugins-oss=	linux-${linux_ARGS}-alsa-plugins-oss>0:audio/linux-${linux_ARGS}-alsa-plugins-oss
 _linux_${linux_ARGS}_alsa-plugins-pulseaudio=linux-${linux_ARGS}-alsa-plugins-pulseaudio>0:audio/linux-${linux_ARGS}-alsa-plugins-pulseaudio
 _linux_${linux_ARGS}_alsalib=		linux-${linux_ARGS}-alsa-lib>0:audio/linux-${linux_ARGS}-alsa-lib
-_linux_c7_at-spi2-atk=			linux-c7-at-spi2-atk>0:accessibility/linux-c7-at-spi2-atk
-_linux_c7_at-spi2-core=			linux-c7-at-spi2-core>0:accessibility/linux-c7-at-spi2-core
+_linux_${linux_ARGS}_at-spi2-atk=	linux-${linux_ARGS}-at-spi2-atk>0:accessibility/linux-${linux_ARGS}-at-spi2-atk
+_linux_${linux_ARGS}_at-spi2-core=	linux-${linux_ARGS}-at-spi2-core>0:accessibility/linux-${linux_ARGS}-at-spi2-core
 _linux_${linux_ARGS}_atk=		linux-${linux_ARGS}-atk>0:accessibility/linux-${linux_ARGS}-atk
 _linux_${linux_ARGS}_avahi-libs=	linux-${linux_ARGS}-avahi-libs>0:net/linux-${linux_ARGS}-avahi-libs
 _linux_c7_base=				linux_base-c7>=7.6.1810_7:emulators/linux_base-c7
-_linux_c7_ca-certificates=		linux-c7-ca-certificates>0:security/linux-c7-ca-certificates
+_linux_rl9_base=			linux_base-rl9>=9.2:emulators/linux_base-rl9
+_linux_rl9_brotli=			linux-rl9-brotli>0:archivers/linux-rl9-brotli
+_linux_${linux_ARGS}_ca-certificates=	linux-${linux_ARGS}-ca-certificates>0:security/linux-${linux_ARGS}-ca-certificates
 _linux_${linux_ARGS}_cairo=		linux-${linux_ARGS}-cairo>0:graphics/linux-${linux_ARGS}-cairo
-_linux_c7_cairo-gobject=		linux-c7-cairo-gobject>0:graphics/linux-c7-cairo-gobject
+_linux_${linux_ARGS}_cairo-gobject=	linux-${linux_ARGS}-cairo-gobject>0:graphics/linux-${linux_ARGS}-cairo-gobject
 _linux_${linux_ARGS}_cups-libs=		linux-${linux_ARGS}-cups-libs>0:print/linux-${linux_ARGS}-cups-libs
 _linux_${linux_ARGS}_curl=		linux-${linux_ARGS}-curl>0:ftp/linux-${linux_ARGS}-curl
 _linux_${linux_ARGS}_cyrus-sasl2=	linux-${linux_ARGS}-cyrus-sasl-lib>0:security/linux-${linux_ARGS}-cyrus-sasl2
@@ -62,49 +74,50 @@ _linux_${linux_ARGS}_devtools=		linux-${linux_ARGS}-devtools>0:devel/linux-${lin
 _linux_c7_dosfstools=			linux-c7-dosfstools>0:sysutils/linux-c7-dosfstools
 _linux_${linux_ARGS}_dri=		linux-${linux_ARGS}-dri>0:graphics/linux-${linux_ARGS}-dri
 _linux_${linux_ARGS}_elfutils-libelf=	linux-${linux_ARGS}-elfutils-libelf>0:devel/linux-${linux_ARGS}-elfutils-libelf
-_linux_c7_elfutils-libs=		linux-c7-elfutils-libs>0:devel/linux-c7-elfutils-libs
+_linux_${linux_ARGS}_elfutils-libs=	linux-${linux_ARGS}-elfutils-libs>0:devel/linux-${linux_ARGS}-elfutils-libs
 _linux_c7_expat-devel=			linux-c7-expat-devel>0:textproc/linux-c7-expat-devel
 _linux_${linux_ARGS}_expat=		linux-${linux_ARGS}-expat>0:textproc/linux-${linux_ARGS}-expat
-_linux_c7_flac=				linux-c7-flac-libs>0:audio/linux-c7-flac
+_linux_${linux_ARGS}_flac=		linux-${linux_ARGS}-flac-libs>0:audio/linux-${linux_ARGS}-flac
 _linux_${linux_ARGS}_fontconfig=	linux-${linux_ARGS}-fontconfig>0:x11-fonts/linux-${linux_ARGS}-fontconfig
-_linux_c7_freetype=			linux-c7-freetype>0:print/linux-c7-freetype
-_linux_c7_fribidi=			linux-c7-fribidi>0:converters/linux-c7-fribidi
+_linux_${linux_ARGS}_freetype=		linux-${linux_ARGS}-freetype>0:print/linux-${linux_ARGS}-freetype
+_linux_${linux_ARGS}_fribidi=		linux-${linux_ARGS}-fribidi>0:converters/linux-${linux_ARGS}-fribidi
 _linux_${linux_ARGS}_gdkpixbuf2=	linux-${linux_ARGS}-gdk-pixbuf2>0:graphics/linux-${linux_ARGS}-gdk-pixbuf2
 _linux_${linux_ARGS}_gnutls=		linux-${linux_ARGS}-gnutls>0:security/linux-${linux_ARGS}-gnutls
-_linux_c7_graphite2=			linux-c7-graphite2>0:graphics/linux-c7-graphite2
-_linux_c7_gsm=				linux-c7-gsm>0:audio/linux-c7-gsm
+_linux_${linux_ARGS}_graphite2=		linux-${linux_ARGS}-graphite2>0:graphics/linux-${linux_ARGS}-graphite2
+_linux_${linux_ARGS}_gsm=		linux-${linux_ARGS}-gsm>0:audio/linux-${linux_ARGS}-gsm
 _linux_${linux_ARGS}_gtk2=		linux-${linux_ARGS}-gtk2>0:x11-toolkits/linux-${linux_ARGS}-gtk2
-_linux_c7_gtk3=				linux-c7-gtk3>0:x11-toolkits/linux-c7-gtk3
-_linux_c7_harfbuzz=			linux-c7-harfbuzz>0:print/linux-c7-harfbuzz
+_linux_${linux_ARGS}_gtk3=		linux-${linux_ARGS}-gtk3>0:x11-toolkits/linux-${linux_ARGS}-gtk3
+_linux_${linux_ARGS}_harfbuzz=		linux-${linux_ARGS}-harfbuzz>0:print/linux-${linux_ARGS}-harfbuzz
 _linux_${linux_ARGS}_icu=		linux-${linux_ARGS}-icu>0:devel/linux-${linux_ARGS}-icu
 _linux_${linux_ARGS}_jasper=		linux-${linux_ARGS}-jasper-libs>0:graphics/linux-${linux_ARGS}-jasper
-_linux_c7_jbigkit=			linux-c7-jbigkit-libs>0:graphics/linux-c7-jbigkit
+_linux_${linux_ARGS}_jbigkit=		linux-${linux_ARGS}-jbigkit-libs>0:graphics/linux-${linux_ARGS}-jbigkit
 _linux_${linux_ARGS}_jpeg=		linux-${linux_ARGS}-jpeg>0:graphics/linux-${linux_ARGS}-jpeg
 _linux_c7_libaio=			linux-c7-libaio>0:devel/linux-c7-libaio
 _linux_${linux_ARGS}_libasyncns=	linux-${linux_ARGS}-libasyncns>0:dns/linux-${linux_ARGS}-libasyncns
 _linux_c7_libaudiofile=			linux-c7-audiofile>0:audio/linux-c7-audiofile
 _linux_c7_libcroco=			linux-c7-libcroco>0:textproc/linux-c7-libcroco
-_linux_c7_libdrm=			linux-c7-libdrm>0:graphics/linux-c7-libdrm
-_linux_c7_libepoxy=			linux-c7-libepoxy>0:graphics/linux-c7-libepoxy
+_linux_${linux_ARGS}_libdrm=		linux-${linux_ARGS}-libdrm>0:graphics/linux-${linux_ARGS}-libdrm
+_linux_${linux_ARGS}_libepoxy=		linux-${linux_ARGS}-libepoxy>0:graphics/linux-${linux_ARGS}-libepoxy
 _linux_${linux_ARGS}_libgcrypt=		linux-${linux_ARGS}-libgcrypt>0:security/linux-${linux_ARGS}-libgcrypt
 _linux_${linux_ARGS}_libgfortran=	linux-${linux_ARGS}-libgfortran>0:devel/linux-${linux_ARGS}-libgfortran
-_linux_c7_libglvnd=			linux-c7-libglvnd>0:graphics/linux-c7-libglvnd
+_linux_${linux_ARGS}_libglvnd=		linux-${linux_ARGS}-libglvnd>0:graphics/linux-${linux_ARGS}-libglvnd
 _linux_${linux_ARGS}_libgpg-error=	linux-${linux_ARGS}-libgpg-error>0:security/linux-${linux_ARGS}-libgpg-error
 _linux_${linux_ARGS}_libogg=		linux-${linux_ARGS}-libogg>0:audio/linux-${linux_ARGS}-libogg
 _linux_${linux_ARGS}_libpciaccess=	linux-${linux_ARGS}-libpciaccess>0:devel/linux-${linux_ARGS}-libpciaccess
-_linux_c7_librsvg2=			linux-c7-librsvg2>0:graphics/linux-c7-librsvg2
+_linux_${linux_ARGS}_librsvg2=		linux-${linux_ARGS}-librsvg2>0:graphics/linux-${linux_ARGS}-librsvg2
 _linux_${linux_ARGS}_libsndfile=	linux-${linux_ARGS}-libsndfile>0:audio/linux-${linux_ARGS}-libsndfile
 _linux_${linux_ARGS}_libssh2=		linux-${linux_ARGS}-libssh2>0:security/linux-${linux_ARGS}-libssh2
 _linux_${linux_ARGS}_libtasn1=		linux-${linux_ARGS}-libtasn1>0:security/linux-${linux_ARGS}-libtasn1
 _linux_${linux_ARGS}_libthai=		linux-${linux_ARGS}-libthai>0:devel/linux-${linux_ARGS}-libthai
 _linux_${linux_ARGS}_libtheora=		linux-${linux_ARGS}-libtheora>0:multimedia/linux-${linux_ARGS}-libtheora
+_linux_rl9_libtracker-sparql=		linux-rl9-libtracker-sparql>0:databases/linux-rl9-libtracker-sparql
 _linux_${linux_ARGS}_libunwind=		linux-${linux_ARGS}-libunwind>0:devel/linux-${linux_ARGS}-libunwind
 _linux_${linux_ARGS}_libv4l=		linux-${linux_ARGS}-libv4l>0:multimedia/linux-${linux_ARGS}-libv4l
 _linux_${linux_ARGS}_libvorbis=		linux-${linux_ARGS}-libvorbis>0:audio/linux-${linux_ARGS}-libvorbis
-_linux_c7_libxkbcommon=			linux-c7-libxkbcommon>0:x11/linux-c7-libxkbcommon
+_linux_${linux_ARGS}_libxkbcommon=	linux-${linux_ARGS}-libxkbcommon>0:x11/linux-${linux_ARGS}-libxkbcommon
 _linux_${linux_ARGS}_libxml2=		linux-${linux_ARGS}-libxml2>0:textproc/linux-${linux_ARGS}-libxml2
 _linux_${linux_ARGS}_lttng-ust=		linux-${linux_ARGS}-lttng-ust>0:sysutils/linux-${linux_ARGS}-lttng-ust
-_linux_c7_lz4=				linux-c7-lz4>0:archivers/linux-c7-lz4
+_linux_${linux_ARGS}_lz4=		linux-${linux_ARGS}-lz4>0:archivers/linux-${linux_ARGS}-lz4
 _linux_c7_make=				linux-c7-make>0:devel/linux-c7-make
 _linux_c7_nettle=			linux-c7-nettle>0:security/linux-c7-nettle
 _linux_${linux_ARGS}_nspr=		linux-${linux_ARGS}-nspr>0:devel/linux-${linux_ARGS}-nspr
@@ -115,7 +128,7 @@ _linux_${linux_ARGS}_openldap=		linux-${linux_ARGS}-openldap>0:net/linux-${linux
 _linux_c7_openmotif=			linux-c7-motif>0:x11-toolkits/linux-c7-openmotif
 _linux_c7_openssl-devel=		linux-c7-openssl-devel>0:security/linux-c7-openssl-devel
 _linux_c7_openssl=			${_linux_c7_base}
-_linux_c7_p11-kit=			linux-c7-p11-kit>0:security/linux-c7-p11-kit
+_linux_${linux_ARGS}_p11-kit=		linux-${linux_ARGS}-p11-kit>0:security/linux-${linux_ARGS}-p11-kit
 _linux_${linux_ARGS}_pango=		linux-${linux_ARGS}-pango>0:x11-toolkits/linux-${linux_ARGS}-pango
 _linux_${linux_ARGS}_pixman=		linux-${linux_ARGS}-pixman>0:x11/linux-${linux_ARGS}-pixman
 _linux_${linux_ARGS}_png=		linux-${linux_ARGS}-libpng>0:graphics/linux-${linux_ARGS}-png
@@ -128,16 +141,16 @@ _linux_${linux_ARGS}_sdlimage=		linux-${linux_ARGS}-sdl_image>0:graphics/linux-$
 _linux_${linux_ARGS}_sdlmixer=		linux-${linux_ARGS}-sdl_mixer>0:audio/linux-${linux_ARGS}-sdl_mixer
 _linux_${linux_ARGS}_sdlttf=		linux-${linux_ARGS}-sdl_ttf>0:graphics/linux-${linux_ARGS}-sdl_ttf
 _linux_${linux_ARGS}_sqlite3=		linux-${linux_ARGS}-sqlite>0:databases/linux-${linux_ARGS}-sqlite3
-_linux_c7_systemd-libs=			linux-c7-systemd-libs>0:devel/linux-c7-systemd-libs
+_linux_${linux_ARGS}_systemd-libs=	linux-${linux_ARGS}-systemd-libs>0:devel/linux-${linux_ARGS}-systemd-libs
 _linux_${linux_ARGS}_tcl85=		linux-${linux_ARGS}-tcl85>0:lang/linux-${linux_ARGS}-tcl85
 _linux_${linux_ARGS}_tcp_wrappers-libs=	linux-${linux_ARGS}-tcp_wrappers-libs>0:net/linux-${linux_ARGS}-tcp_wrappers-libs
 _linux_${linux_ARGS}_tiff=		linux-${linux_ARGS}-libtiff>0:graphics/linux-${linux_ARGS}-tiff
 _linux_${linux_ARGS}_tk85=		linux-${linux_ARGS}-tk85>0:x11-toolkits/linux-${linux_ARGS}-tk85
 _linux_c7_trousers=			linux-c7-trousers>0:security/linux-c7-trousers
 _linux_${linux_ARGS}_userspace-rcu=	linux-${linux_ARGS}-userspace-rcu>0:sysutils/linux-${linux_ARGS}-userspace-rcu
-_linux_c7_wayland=			linux-c7-wayland>0:graphics/linux-c7-wayland
+_linux_${linux_ARGS}_wayland=		linux-${linux_ARGS}-wayland>0:graphics/linux-${linux_ARGS}-wayland
 _linux_c7_xcb-util=			linux-c7-xcb-util>0:x11/linux-c7-xcb-util
-_linux_c7_xorglibs=			linux-c7-xorg-libs>=7.7_7:x11/linux-c7-xorg-libs
+_linux_${linux_ARGS}_xorglibs=		linux-${linux_ARGS}-xorg-libs>=7.7:x11/linux-${linux_ARGS}-xorg-libs
 _linux_c7_zlib-devel=			linux-c7-zlib-devel>0:devel/linux-c7-zlib-devel
 
 USE_LINUX?=		base
@@ -172,6 +185,17 @@ MASTER_SITE_SUBDIR=	altarch/${LINUX_DIST_VER}/os/aarch64/Packages/:DEFAULT,aarch
 			centos/${LINUX_DIST_VER}/updates/Source/SPackages/:SOURCE
 .      endif
 DIST_SUBDIR?=		centos
+.    elif ${linux_ARGS} == rl9
+.      ifndef MASTER_SITES
+MASTER_SITES=		${MASTER_SITE_ROCKY_LINUX}
+MASTER_SITE_SUBDIR=	${LINUX_DIST_VER}/BaseOS/aarch64/os/Packages/:DEFAULT,aarch64 \
+			${LINUX_DIST_VER}/AppStream/aarch64/os/Packages/:DEFAULT,aarch64 \
+			${LINUX_DIST_VER}/BaseOS/x86_64/os/Packages/:DEFAULT,amd64 \
+			${LINUX_DIST_VER}/AppStream/x86_64/os/Packages/:DEFAULT,amd64 \
+			${LINUX_DIST_VER}/BaseOS/source/tree/Packages/:SOURCE \
+			${LINUX_DIST_VER}/AppStream/source/tree/Packages/:SOURCE
+.      endif
+DIST_SUBDIR?=		rocky
 .    endif # ${linux_ARGS} == *
 
 PKGNAMEPREFIX?=		linux-${linux_ARGS}-
@@ -203,6 +227,17 @@ BIN_DISTNAMES?=		${DISTNAME}
 .    else
 LIB_DISTNAMES?=		${DISTNAME}
 .    endif
+.    if ${linux_ARGS} == rl9
+.      if !empty(SHARE_DISTNAMES)
+SHARE_DISTNAMES:=	${SHARE_DISTNAMES:C/^[a-z0-9]/&\/&/}
+.      endif
+.      if !empty(BIN_DISTNAMES)
+BIN_DISTNAMES:=		${BIN_DISTNAMES:C/^[a-z0-9]/&\/&/}
+.      endif
+.      if !empty(LIB_DISTNAMES)
+LIB_DISTNAMES:=		${LIB_DISTNAMES:C/^[a-z0-9]/&\/&/}
+.      endif
+.    endif
 .    if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Maarch64)) \
  && empty(NOT_FOR_ARCHS:Maarch64)
 DISTFILES_aarch64?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_aarch64}:aarch64/} \
@@ -212,12 +247,16 @@ DISTFILES_aarch64?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_aarch64}:aarch64/} \
 .    endif
 .    if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Mamd64)) \
  && empty(NOT_FOR_ARCHS:Mamd64)
-DISTFILES_amd64?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
-			${LIB_DISTNAMES_i386:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
-			${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
+.      ifndef DISTFILES_amd64
+.        if ${linux_ARGS} == c7
+DISTFILES_amd64=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
+			${LIB_DISTNAMES_i386:S/$/${EXTRACT_SUFX_i386}:amd64,i386/}
+.        endif
+DISTFILES_amd64+=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 			${LIB_DISTNAMES_amd64:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 			${BIN_DISTNAMES:S/$/${EXTRACT_SUFX_amd64}:amd64/} \
 			${SHARE_DISTNAMES:S/$/${EXTRACT_SUFX_noarch}/}
+.      endif
 .    endif
 .    if !(defined(ONLY_FOR_ARCHS) && empty(ONLY_FOR_ARCHS:Mi386)) \
  && empty(NOT_FOR_ARCHS:Mi386)
@@ -227,6 +266,9 @@ DISTFILES_i386?=	${LIB_DISTNAMES:S/$/${EXTRACT_SUFX_i386}:amd64,i386/} \
 			${SHARE_DISTNAMES:S/$/${EXTRACT_SUFX_noarch}/}
 .    endif
 SRC_DISTFILES?=		${DISTNAME}${SRC_SUFX}:SOURCE
+.    if ${linux_ARGS} == rl9
+SRC_DISTFILES:=		${SRC_DISTFILES:C/^[a-z0-9]/&\/&/}
+.    endif
 
 .    ifdef USE_LINUX_RPM_BAD_PERMS
 EXTRACT_DEPENDS+=	rpm2archive:archivers/rpm4

@@ -1,0 +1,11 @@
+TIMESTAMP = 1686578411
+SHA256 (rocky/l/lz4-1.9.3-5.el9.aarch64.rpm) = c05d506dd1159cf36a6bf32253cfe80769e12e13cd91a3d1151ba22617212ad3
+SIZE (rocky/l/lz4-1.9.3-5.el9.aarch64.rpm) = 58506
+SHA256 (rocky/l/lz4-1.9.3-5.el9.x86_64.rpm) = aff0266d25b25672c00d071676e491d4d9dedb06fcaf1a9c8432b658e514e211
+SIZE (rocky/l/lz4-1.9.3-5.el9.x86_64.rpm) = 58990
+SHA256 (rocky/l/lz4-libs-1.9.3-5.el9.aarch64.rpm) = 8640e8b3ba387e5ec9036e89903add891d7c960bbf0378797746cb43e0e2208f
+SIZE (rocky/l/lz4-libs-1.9.3-5.el9.aarch64.rpm) = 68066
+SHA256 (rocky/l/lz4-libs-1.9.3-5.el9.x86_64.rpm) = 60f82f4c3f76a543ab247acb37cb439d9de9e40c410ac2f315d6805717d6283e
+SIZE (rocky/l/lz4-libs-1.9.3-5.el9.x86_64.rpm) = 68333
+SHA256 (rocky/l/lz4-1.9.3-5.el9.src.rpm) = 7435ed18c0f9182fe60186984d21bbb2d952f55d468344e8b37c1901419798e3
+SIZE (rocky/l/lz4-1.9.3-5.el9.src.rpm) = 331738

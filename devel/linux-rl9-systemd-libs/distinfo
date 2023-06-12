@@ -1,0 +1,7 @@
+TIMESTAMP = 1686488051
+SHA256 (rocky/s/systemd-libs-252-13.el9_2.aarch64.rpm) = bc536b791b83c200baa4438666774018abab8369bb01ed7e760124dc7ea1c8c9
+SIZE (rocky/s/systemd-libs-252-13.el9_2.aarch64.rpm) = 628458
+SHA256 (rocky/s/systemd-libs-252-13.el9_2.x86_64.rpm) = 3dc724e4a0cf99726b135226efd71462ed5fe816a27a3dcb04936ef04637a15f
+SIZE (rocky/s/systemd-libs-252-13.el9_2.x86_64.rpm) = 662852
+SHA256 (rocky/s/systemd-252-13.el9_2.src.rpm) = 2099afeefdecbfe70140e2ac78a91ba904dc5627364cc60ccd49897eb4ef607c
+SIZE (rocky/s/systemd-252-13.el9_2.src.rpm) = 12096476

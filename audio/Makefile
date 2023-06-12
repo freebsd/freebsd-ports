@@ -418,6 +418,13 @@
     SUBDIR += linux-c7-pulseaudio-utils
     SUBDIR += linux-c7-sdl_mixer
     SUBDIR += linux-laudio
+    SUBDIR += linux-rl9-alsa-lib
+    SUBDIR += linux-rl9-flac
+    SUBDIR += linux-rl9-gsm
+    SUBDIR += linux-rl9-libogg
+    SUBDIR += linux-rl9-libsndfile
+    SUBDIR += linux-rl9-libvorbis
+    SUBDIR += linux-rl9-pulseaudio-libs
     SUBDIR += linuxsampler
     SUBDIR += linuxwave
     SUBDIR += liquidsfz

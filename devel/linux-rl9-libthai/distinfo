@@ -1,0 +1,7 @@
+TIMESTAMP = 1686567889
+SHA256 (rocky/l/libthai-0.1.28-8.el9.aarch64.rpm) = 83bfaa01d68a8b2196300f2a2674904bee18f22e8977c5b51416e614d6bca94e
+SIZE (rocky/l/libthai-0.1.28-8.el9.aarch64.rpm) = 211307
+SHA256 (rocky/l/libthai-0.1.28-8.el9.x86_64.rpm) = 06babaa62e1fd04f0b7bfebaa55d9d3beb215f1543356be6b25ee7d0cb0a948b
+SIZE (rocky/l/libthai-0.1.28-8.el9.x86_64.rpm) = 212655
+SHA256 (rocky/l/libthai-0.1.28-8.el9.src.rpm) = 7dbbd3786100addc8b2be4c26c6e6b7a283728724d1522a2ebdae2dd81e92e2d
+SIZE (rocky/l/libthai-0.1.28-8.el9.src.rpm) = 424595

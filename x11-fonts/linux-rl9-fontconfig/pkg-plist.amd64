@@ -1,0 +1,47 @@
+etc/fonts
+usr/bin/fc-cache
+usr/bin/fc-cache-64
+usr/bin/fc-cat
+usr/bin/fc-conflist
+usr/bin/fc-list
+usr/bin/fc-match
+usr/bin/fc-pattern
+usr/bin/fc-query
+usr/bin/fc-scan
+usr/bin/fc-validate
+usr/lib/.build-id/15/2e110664338b40a59bbf43ff554816b7dba92f
+usr/lib/.build-id/4c/e6fb2169be2060ec7c4cf610e9c2c920d5c34e
+usr/lib/.build-id/4e/72e474b0fe2b0a77a78c8dfba5da49f030d7a0
+usr/lib/.build-id/60/5b645b02edd661d8049467a2442f0b74d1e6fa
+usr/lib/.build-id/69/3f802506d1ae5c2ddd7fc0ecdc9c4224a2a13d
+usr/lib/.build-id/79/aee4393473150c0d3a7ab9072aba30e4776dd5
+usr/lib/.build-id/9f/a71b55dd52313fe02a2a1f419ef7693d11a051
+usr/lib/.build-id/a0/ec0a8154fc639b56bc9e9073c394bf255b401c
+usr/lib/.build-id/c7/0898d85470baa16b95dacdc91ce0664ce25c0a
+usr/lib/.build-id/cd/b87f9c97e862956d369a74f7dd2c25f3d222a5
+usr/lib64/libfontconfig.so.1
+usr/lib64/libfontconfig.so.1.12.0
+%%PORTDOCS%%usr/share/doc/fontconfig/AUTHORS
+%%PORTDOCS%%usr/share/doc/fontconfig/README
+%%PORTDOCS%%usr/share/doc/fontconfig/fontconfig-user.html
+%%PORTDOCS%%usr/share/doc/fontconfig/fontconfig-user.txt
+usr/share/licenses/fontconfig/COPYING
+%%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/fontconfig-conf.mo
+%%NLS%%usr/share/locale/zh_CN/LC_MESSAGES/fontconfig.mo
+usr/share/man/man1/fc-cache-64.1.gz
+usr/share/man/man1/fc-cache.1.gz
+usr/share/man/man1/fc-cat.1.gz
+usr/share/man/man1/fc-conflist.1.gz
+usr/share/man/man1/fc-list.1.gz
+usr/share/man/man1/fc-match.1.gz
+usr/share/man/man1/fc-pattern.1.gz
+usr/share/man/man1/fc-query.1.gz
+usr/share/man/man1/fc-scan.1.gz
+usr/share/man/man1/fc-validate.1.gz
+usr/share/man/man5/fonts-conf.5.gz
+usr/share/xml/fontconfig/fonts.dtd
+@rmtry var/db/fontconfig/*-le32d4.cache-7
+@rmtry var/db/fontconfig/*-le64.cache-7
+@rmtry var/db/fontconfig/CACHEDIR.TAG
+@dir var/db/fontconfig
+@postexec %D/usr/bin/fc-cache-64 -f -s

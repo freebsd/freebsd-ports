@@ -1,0 +1,7 @@
+TIMESTAMP = 1686487296
+SHA256 (rocky/l/libgpg-error-1.42-5.el9.aarch64.rpm) = e22037efb56a2856af7ee66c0e6a590a5047357e7cfe303abc6a23a53753eb28
+SIZE (rocky/l/libgpg-error-1.42-5.el9.aarch64.rpm) = 213543
+SHA256 (rocky/l/libgpg-error-1.42-5.el9.x86_64.rpm) = 7d48fb4ca1e935a491cb02a85abdd5b91b329168962c1b11ca434c2b80c079fa
+SIZE (rocky/l/libgpg-error-1.42-5.el9.x86_64.rpm) = 215938
+SHA256 (rocky/l/libgpg-error-1.42-5.el9.src.rpm) = dd6f3ee019352606e8a62c4044cf6974cdf12eb2ad1db197cc9a3b7e6f598003
+SIZE (rocky/l/libgpg-error-1.42-5.el9.src.rpm) = 991758

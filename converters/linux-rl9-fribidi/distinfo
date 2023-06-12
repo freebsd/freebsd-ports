@@ -1,0 +1,7 @@
+TIMESTAMP = 1686567760
+SHA256 (rocky/f/fribidi-1.0.10-6.el9.2.aarch64.rpm) = 824e7ffa9235e6a022deda1bb3f453e554db74a3cbfdbbbd2c2f5348b7b805cf
+SIZE (rocky/f/fribidi-1.0.10-6.el9.2.aarch64.rpm) = 84949
+SHA256 (rocky/f/fribidi-1.0.10-6.el9.2.x86_64.rpm) = da453272ba50af82b42370ab516b4de94977072a4069f657c84e5c357d572bc5
+SIZE (rocky/f/fribidi-1.0.10-6.el9.2.x86_64.rpm) = 85916
+SHA256 (rocky/f/fribidi-1.0.10-6.el9.2.src.rpm) = b3e6075ceff34ad70cf67b7831941d311c5753319cb3ec6e1494b2c9bfa50ad5
+SIZE (rocky/f/fribidi-1.0.10-6.el9.2.src.rpm) = 1174702

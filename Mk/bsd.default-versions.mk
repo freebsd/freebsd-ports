@@ -87,7 +87,7 @@ LIBRSVG2_DEFAULT?=	rust
 .  else
 LIBRSVG2_DEFAULT?=	legacy
 .  endif
-# Possible values: c7
+# Possible values: c7 rl9
 LINUX_DEFAULT?=		c7
 # Possible values: 11, 12, 13, 14, 15, 16, 17, -devel (to be used when non-base compiler is required)
 LLVM_DEFAULT?=		15

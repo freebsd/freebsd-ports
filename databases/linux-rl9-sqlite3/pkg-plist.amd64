@@ -1,0 +1,7 @@
+usr/bin/sqlite3
+usr/lib/.build-id/32/5caf8f2573ad2278b717b7d82ea12b60adeb82
+usr/lib/.build-id/83/fb80694fe624609264c6fbec5a4e25b298067d
+usr/lib64/libsqlite3.so.0
+usr/lib64/libsqlite3.so.0.8.6
+%%PORTDOCS%%usr/share/doc/sqlite-libs/README.md
+usr/share/man/man1/sqlite3.1.gz

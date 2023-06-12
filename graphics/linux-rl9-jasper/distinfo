@@ -1,0 +1,7 @@
+TIMESTAMP = 1686562610
+SHA256 (rocky/j/jasper-libs-2.0.28-3.el9.aarch64.rpm) = c933c5bd2aaa7094fd5da8c0021963ce147307c35da5e56b255b956e92170ea7
+SIZE (rocky/j/jasper-libs-2.0.28-3.el9.aarch64.rpm) = 151831
+SHA256 (rocky/j/jasper-libs-2.0.28-3.el9.x86_64.rpm) = 5eaa7bbe8f855eaa302766cd16d4222b8c54e2ae2937d8a5db506e1048bf58bb
+SIZE (rocky/j/jasper-libs-2.0.28-3.el9.x86_64.rpm) = 153786
+SHA256 (rocky/j/jasper-2.0.28-3.el9.src.rpm) = 31f906728341738d58fc04c5ec4e0de9fcf6a62f3139e7a52d38e2f131c5b115
+SIZE (rocky/j/jasper-2.0.28-3.el9.src.rpm) = 1385289

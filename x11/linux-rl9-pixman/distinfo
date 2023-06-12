@@ -1,0 +1,7 @@
+TIMESTAMP = 1686560633
+SHA256 (rocky/p/pixman-0.40.0-5.el9.aarch64.rpm) = d1000be96416a958104b880d9fbb1f3ec5548a954b891a29e6274740f8c38a2f
+SIZE (rocky/p/pixman-0.40.0-5.el9.aarch64.rpm) = 171373
+SHA256 (rocky/p/pixman-0.40.0-5.el9.x86_64.rpm) = 6d3812d5e6841c69ff695feff0ac2bbd8e04287d822e71f1ae865925e8a2a33d
+SIZE (rocky/p/pixman-0.40.0-5.el9.x86_64.rpm) = 275799
+SHA256 (rocky/p/pixman-0.40.0-5.el9.src.rpm) = 957b2afe9566227981b9ed72686800740552cdd049422dc2510111d5d2f3b6cb
+SIZE (rocky/p/pixman-0.40.0-5.el9.src.rpm) = 645284

@@ -1,0 +1,30 @@
+usr/lib/.build-id/1f/bc2ca6a2752ee69ac11e397520a9add7e2bcc4
+usr/lib/.build-id/40/79432c45f9badd5d5d7eb663157afbc2963955
+usr/lib/.build-id/64/c5f7a1831dd43cb56418968edd91559fefb817
+usr/lib/.build-id/67/8fbaf9468fcc19bd565219c35c06652085807b
+usr/lib/.build-id/70/4bb1666f69fd616debad48b3f9e7cd5ad00f55
+usr/lib/.build-id/a0/fcca7b6b71f63018097c605d2a0f881653c2da
+usr/lib/.build-id/a6/1eb49793dbdf10c1fe30eabd17d9cd814e9b8d
+@comment Handle some links with postexec so nvidia-driver can overwrite them.
+@postexec [ -e %D/usr/lib64/libEGL.so.1 ] || ln -sf libEGL.so.1.1.0 %D/usr/lib64/libEGL.so.1
+@postunexec [ -e %D/usr/lib64/libEGL.so.1 ] || rm -f %D/usr/lib64/libEGL.so.1
+usr/lib64/libEGL.so.1.1.0
+@postexec [ -e %D/usr/lib64/libGL.so.1 ] || ln -sf libGL.so.1.7.0 %D/usr/lib64/libGL.so.1
+@postunexec [ -e %D/usr/lib64/libGL.so.1 ] || rm -f %D/usr/lib64/libGL.so.1
+usr/lib64/libGL.so.1.7.0
+@postexec [ -e %D/usr/lib/libGLESv1_CM.so.1 ] || ln -sf libGLESv1_CM.so.1.2.0 %D/usr/lib/libGLESv1_CM.so.1
+@postunexec [ -e %D/usr/lib/libGLESv1_CM.so.1 ] || rm -f %D/usr/lib/libGLESv1_CM.so.1
+usr/lib64/libGLESv1_CM.so.1.2.0
+@postexec [ -e %D/usr/lib64/libGLESv2.so.2 ] || ln -sf libGLESv2.so.2.1.0 %D/usr/lib64/libGLESv2.so.2
+@postunexec [ -e %D/usr/lib64/libGLESv2.so.2 ] || rm -f %D/usr/lib64/libGLESv2.so.2
+usr/lib64/libGLESv2.so.2.1.0
+@postexec [ -e %D/usr/lib64/libGLX.so.0 ] || ln -sf libGLX.so.0.0.0 %D/usr/lib64/libGLX.so.0
+@postunexec [ -e %D/usr/lib64/libGLX.so.0 ] || rm -f %D/usr/lib64/libGLX.so.0
+usr/lib64/libGLX.so.0.0.0
+@postexec [ -e %D/usr/lib64/libGLdispatch.so.0 ] || ln -sf libGLdispatch.so.0.0.0 %D/usr/lib64/libGLdispatch.so.0
+@postunexec [ -e %D/usr/lib64/libGLdispatch.so.0 ] || rm -f %D/usr/lib64/libGLdispatch.so.0
+usr/lib64/libGLdispatch.so.0.0.0
+@postexec [ -e %D/usr/lib64/libOpenGL.so.0 ] || ln -sf libOpenGL.so.0.0.0 %D/usr/lib64/libOpenGL.so.0
+@postunexec [ -e %D/usr/lib64/libOpenGL.so.0 ] || rm -f %D/usr/lib64/libOpenGL.so.0
+usr/lib64/libOpenGL.so.0.0.0
+%%PORTDOCS%%usr/share/doc/libglvnd/README.md

@@ -1,0 +1,7 @@
+TIMESTAMP = 1686555957
+SHA256 (rocky/g/graphite2-1.3.14-9.el9.aarch64.rpm) = 8b98505b5482eef5340e1fccd985d181f4c9cb4978c23ddfee02b2506004a196
+SIZE (rocky/g/graphite2-1.3.14-9.el9.aarch64.rpm) = 92670
+SHA256 (rocky/g/graphite2-1.3.14-9.el9.x86_64.rpm) = e2429063e8b8c542b3d60040283e381ab1a51bbce6f6d0e06d2fdf703ba11fb1
+SIZE (rocky/g/graphite2-1.3.14-9.el9.x86_64.rpm) = 96094
+SHA256 (rocky/g/graphite2-1.3.14-9.el9.src.rpm) = 2976820481a87d9cf7bb067714c27bffec9312891b0f08e19bd42665b00693c1
+SIZE (rocky/g/graphite2-1.3.14-9.el9.src.rpm) = 6310894

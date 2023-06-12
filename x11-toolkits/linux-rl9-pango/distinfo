@@ -1,0 +1,7 @@
+TIMESTAMP = 1686567970
+SHA256 (rocky/p/pango-1.48.7-3.el9.aarch64.rpm) = ce9f6143ab12f2b185e3af15964347fbf0cce213b326e8c9d0283216ad791917
+SIZE (rocky/p/pango-1.48.7-3.el9.aarch64.rpm) = 298066
+SHA256 (rocky/p/pango-1.48.7-3.el9.x86_64.rpm) = 971df9bf672def3c5eefb230aec376a1f7672e11e5fb3d7cbfc936baf89d9c79
+SIZE (rocky/p/pango-1.48.7-3.el9.x86_64.rpm) = 303699
+SHA256 (rocky/p/pango-1.48.7-3.el9.src.rpm) = 548e40365f9ecc261d12d11aab74ec22c009a2f99bdd525807bfebb82c727aa2
+SIZE (rocky/p/pango-1.48.7-3.el9.src.rpm) = 2071683

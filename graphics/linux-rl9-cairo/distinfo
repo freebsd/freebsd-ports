@@ -1,0 +1,7 @@
+TIMESTAMP = 1686560847
+SHA256 (rocky/c/cairo-1.17.4-7.el9.aarch64.rpm) = 8dc09c8563bfb3bf43d664b55f91ea27c709127c1d999f541d8870afb6326c5f
+SIZE (rocky/c/cairo-1.17.4-7.el9.aarch64.rpm) = 659580
+SHA256 (rocky/c/cairo-1.17.4-7.el9.x86_64.rpm) = 9ea8622b018a10ce3d932e1675f0785138971b6564ddb721511f1aaaaf6489d7
+SIZE (rocky/c/cairo-1.17.4-7.el9.x86_64.rpm) = 674888
+SHA256 (rocky/c/cairo-1.17.4-7.el9.src.rpm) = bc425086132b27c6a85f848ccd9987beebb40c47777439e9b909d9123cf789bd
+SIZE (rocky/c/cairo-1.17.4-7.el9.src.rpm) = 41862425
