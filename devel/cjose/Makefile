@@ -24,4 +24,10 @@ GH_ACCOUNT=	cisco
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jansson=${PREFIX} --with-openssl=${OPENSSLBASE}
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=strict-prototypes
+.endif
+
 .include <bsd.port.mk>
