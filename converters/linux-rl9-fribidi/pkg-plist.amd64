@@ -1,0 +1,12 @@
+usr/bin/fribidi
+usr/lib/.build-id/21/3eb59b1e137ff74cdf30de6426277f76b9c9f3
+usr/lib/.build-id/d4/33ed79bfd8fd8d58524c2edc55382ace4f3ee7
+usr/lib64/libfribidi.so.0
+usr/lib64/libfribidi.so.0.4.0
+%%PORTDOCS%%usr/share/doc/fribidi/AUTHORS
+%%PORTDOCS%%usr/share/doc/fribidi/ChangeLog
+%%PORTDOCS%%usr/share/doc/fribidi/NEWS
+%%PORTDOCS%%usr/share/doc/fribidi/README
+%%PORTDOCS%%usr/share/doc/fribidi/THANKS
+%%PORTDOCS%%usr/share/doc/fribidi/TODO
+usr/share/licenses/fribidi/COPYING

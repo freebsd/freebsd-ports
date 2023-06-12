@@ -1,0 +1,15 @@
+TIMESTAMP = 1686571753
+SHA256 (rocky/n/nss-3.79.0-18.el9_1.aarch64.rpm) = 3732da03c2e11b9e037c97a8e4096153c60890f71681408da31c7d60c73ffc8e
+SIZE (rocky/n/nss-3.79.0-18.el9_1.aarch64.rpm) = 696328
+SHA256 (rocky/n/nss-3.79.0-18.el9_1.x86_64.rpm) = 861d1df85972ff033d3c80e51df0786a16bb7eb065597793e932c28ba9d06922
+SIZE (rocky/n/nss-3.79.0-18.el9_1.x86_64.rpm) = 720290
+SHA256 (rocky/n/nss-softokn-3.79.0-18.el9_1.aarch64.rpm) = c4d6a3cb62b90cd6ff25bf5da996d190ac826d801bacd5666ea2855fe02585a7
+SIZE (rocky/n/nss-softokn-3.79.0-18.el9_1.aarch64.rpm) = 381731
+SHA256 (rocky/n/nss-softokn-3.79.0-18.el9_1.x86_64.rpm) = eb0e6ceca59abd45058c4c6e1cc11234b2197e4883f48ea323bb0bb85268f6ba
+SIZE (rocky/n/nss-softokn-3.79.0-18.el9_1.x86_64.rpm) = 387823
+SHA256 (rocky/n/nss-util-3.79.0-18.el9_1.aarch64.rpm) = 64eada61e377c0b9f0937c4ead77a9e75c04473437a5c71af7fab5ee7aede3ff
+SIZE (rocky/n/nss-util-3.79.0-18.el9_1.aarch64.rpm) = 87028
+SHA256 (rocky/n/nss-util-3.79.0-18.el9_1.x86_64.rpm) = a593cb870784733e2e614122b36eb1c72fbfa0e8cd7a94cf692ea522d18bdb14
+SIZE (rocky/n/nss-util-3.79.0-18.el9_1.x86_64.rpm) = 90253
+SHA256 (rocky/n/nss-3.79.0-18.el9_1.src.rpm) = 68f33d82aa7cf435d15226d0d8b61b818dcdf35eaee1f98730efc465f6e9e6bb
+SIZE (rocky/n/nss-3.79.0-18.el9_1.src.rpm) = 85985693

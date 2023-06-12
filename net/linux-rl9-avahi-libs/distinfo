@@ -1,0 +1,7 @@
+TIMESTAMP = 1686488305
+SHA256 (rocky/a/avahi-libs-0.8-12.el9.aarch64.rpm) = c1a5304f29dc5d57d0480d47f81f66a781f52c75d079f57d0eb9246efac9516a
+SIZE (rocky/a/avahi-libs-0.8-12.el9.aarch64.rpm) = 66957
+SHA256 (rocky/a/avahi-libs-0.8-12.el9.x86_64.rpm) = a3d321619da06c1d9f367d6e8f48fb203174f0b387f47f8a76f43f46a3645728
+SIZE (rocky/a/avahi-libs-0.8-12.el9.x86_64.rpm) = 68278
+SHA256 (rocky/a/avahi-0.8-12.el9.src.rpm) = cc5e719e9e776aa7ccc436e4d6bd0ff835b339ec00398f4cf1c8c27fb0e26ae3
+SIZE (rocky/a/avahi-0.8-12.el9.src.rpm) = 1611618

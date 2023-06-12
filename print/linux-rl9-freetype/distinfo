@@ -1,0 +1,7 @@
+TIMESTAMP = 1686555200
+SHA256 (rocky/f/freetype-2.10.4-9.el9.aarch64.rpm) = c2d6031c5510402b53ce06a32928a552bd6022a9ca95927d4ec4e9ebbe6708a3
+SIZE (rocky/f/freetype-2.10.4-9.el9.aarch64.rpm) = 390708
+SHA256 (rocky/f/freetype-2.10.4-9.el9.x86_64.rpm) = 4a67eb2e7514b1f9a2861b2262e2da56d997d5fcaa3166ec730d2e7d87945498
+SIZE (rocky/f/freetype-2.10.4-9.el9.x86_64.rpm) = 396348
+SHA256 (rocky/f/freetype-2.10.4-9.el9.src.rpm) = d483a7160180e9a99a9b9eb206c094ed98ce76156136835d573950b8cac4c5a5
+SIZE (rocky/f/freetype-2.10.4-9.el9.src.rpm) = 4762690

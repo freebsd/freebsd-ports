@@ -1,0 +1,7 @@
+TIMESTAMP = 1686562905
+SHA256 (rocky/j/jbigkit-libs-2.1-23.el9.aarch64.rpm) = e9e27802f4dfd19d2276d0c8078043db6c8c387a4c76e883bcfccc6aa25645fd
+SIZE (rocky/j/jbigkit-libs-2.1-23.el9.aarch64.rpm) = 52946
+SHA256 (rocky/j/jbigkit-libs-2.1-23.el9.x86_64.rpm) = 2b605d8fb73df260c14dafb1bc7a742a0586fbadfecae113315230bf19979a56
+SIZE (rocky/j/jbigkit-libs-2.1-23.el9.x86_64.rpm) = 53153
+SHA256 (rocky/j/jbigkit-2.1-23.el9.src.rpm) = 9358741148675bd63e6b8ed905a7d93551ccb7abeac9d1af6d02d4c56df4bed7
+SIZE (rocky/j/jbigkit-2.1-23.el9.src.rpm) = 453810

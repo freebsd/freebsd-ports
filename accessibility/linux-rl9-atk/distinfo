@@ -1,0 +1,7 @@
+TIMESTAMP = 1686557715
+SHA256 (rocky/a/atk-2.36.0-5.el9.aarch64.rpm) = 0926c14548ff12aeffeb418c6fc4f82aa4c54e25534a2dc9cd66132c8c6392f7
+SIZE (rocky/a/atk-2.36.0-5.el9.aarch64.rpm) = 275249
+SHA256 (rocky/a/atk-2.36.0-5.el9.x86_64.rpm) = a6d2249e02a7e2b0a8e11963744b677de3573a6f127e788c677fcd7ddfd3d92c
+SIZE (rocky/a/atk-2.36.0-5.el9.x86_64.rpm) = 276849
+SHA256 (rocky/a/atk-2.36.0-5.el9.src.rpm) = 2b9e065dfbc140011a715cea8f76a08d618fa0024a8029e3b8b74f02997934aa
+SIZE (rocky/a/atk-2.36.0-5.el9.src.rpm) = 312245

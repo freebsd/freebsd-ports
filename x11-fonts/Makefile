@@ -164,6 +164,7 @@
     SUBDIR += libfontenc
     SUBDIR += linden-hill
     SUBDIR += linux-c7-fontconfig
+    SUBDIR += linux-rl9-fontconfig
     SUBDIR += linuxlibertine
     SUBDIR += linuxlibertine-g
     SUBDIR += lohit

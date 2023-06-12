@@ -1,0 +1,11 @@
+TIMESTAMP = 1714494452
+SHA256 (rocky/g/gtk3-3.24.31-2.el9.aarch64.rpm) = 4f1a1a479ff4db93012242c53921b912ce6303fff64f88d9bbc9280c3f1380fa
+SIZE (rocky/g/gtk3-3.24.31-2.el9.aarch64.rpm) = 4985138
+SHA256 (rocky/g/gtk3-3.24.31-2.el9.x86_64.rpm) = 93e0f50705292497b818bb5f49939e5f14565130ccbf4268f68f3b6980f6b976
+SIZE (rocky/g/gtk3-3.24.31-2.el9.x86_64.rpm) = 5084906
+SHA256 (rocky/l/libstemmer-0-18.585svn.el9.aarch64.rpm) = 4b10cc6e35e2dcc8d93a0f7ad765063d06b4ebe4c672f684804820bf8c3d9e67
+SIZE (rocky/l/libstemmer-0-18.585svn.el9.aarch64.rpm) = 84020
+SHA256 (rocky/l/libstemmer-0-18.585svn.el9.x86_64.rpm) = 1c100c574348ee586077add5d13aa526b47cf69f88eb51750555d86a3e7127d0
+SIZE (rocky/l/libstemmer-0-18.585svn.el9.x86_64.rpm) = 84609
+SHA256 (rocky/g/gtk3-3.24.31-2.el9.src.rpm) = 2a92238dc9eb69e92ed50f2d7973e8996a6226329aebb25a94c03f0c2e0c9cff
+SIZE (rocky/g/gtk3-3.24.31-2.el9.src.rpm) = 22481536

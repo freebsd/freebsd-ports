@@ -1,0 +1,7 @@
+TIMESTAMP = 1686557029
+SHA256 (rocky/l/libbrotli-1.0.9-6.el9.aarch64.rpm) = ce7a09cb403e78979d13513a9b5369a313b6da87612280ae8c8c0d3baafd7192
+SIZE (rocky/l/libbrotli-1.0.9-6.el9.aarch64.rpm) = 319923
+SHA256 (rocky/l/libbrotli-1.0.9-6.el9.x86_64.rpm) = a7d211e1059231df8d27fa8f340ac47bdef29b016a49d8a482b13a1f5b4f6c89
+SIZE (rocky/l/libbrotli-1.0.9-6.el9.x86_64.rpm) = 320595
+SHA256 (rocky/b/brotli-1.0.9-6.el9.src.rpm) = a9675cc4978a876331d6d8fa79da4fbcddde654201dc44a7b057141019b8d5b3
+SIZE (rocky/b/brotli-1.0.9-6.el9.src.rpm) = 497487

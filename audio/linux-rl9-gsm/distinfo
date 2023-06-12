@@ -1,0 +1,7 @@
+TIMESTAMP = 1686569639
+SHA256 (rocky/g/gsm-1.0.19-6.el9.aarch64.rpm) = 220ec2bca3688bcbdea92eac93491715830138477a166d301c176185168f1a3d
+SIZE (rocky/g/gsm-1.0.19-6.el9.aarch64.rpm) = 34446
+SHA256 (rocky/g/gsm-1.0.19-6.el9.x86_64.rpm) = a5ff96d8d96d8fb89d6febcff7b0615448984be8d2fa18960a7d05351aea69b7
+SIZE (rocky/g/gsm-1.0.19-6.el9.x86_64.rpm) = 33820
+SHA256 (rocky/g/gsm-1.0.19-6.el9.src.rpm) = ce9fd315a44f414f804efa32667e701bb242ec5e5b173403d98e5aad5cbb7ab7
+SIZE (rocky/g/gsm-1.0.19-6.el9.src.rpm) = 78660

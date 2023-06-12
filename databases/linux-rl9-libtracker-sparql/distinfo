@@ -1,0 +1,5 @@
+TIMESTAMP = 1686572801
+SHA256 (rocky/l/libtracker-sparql-3.1.2-3.el9_1.aarch64.rpm) = d5bcd68369c767be8b04a4f3d025a561820cbb6d9d04d33e27439f294ae14259
+SIZE (rocky/l/libtracker-sparql-3.1.2-3.el9_1.aarch64.rpm) = 316241
+SHA256 (rocky/l/libtracker-sparql-3.1.2-3.el9_1.x86_64.rpm) = 583a761cca669314c234f24db6a3c5d27550d16dcfbf02f5c9fd53b0da5e57a4
+SIZE (rocky/l/libtracker-sparql-3.1.2-3.el9_1.x86_64.rpm) = 323880

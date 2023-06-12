@@ -1,0 +1,7 @@
+TIMESTAMP = 1686563051
+SHA256 (rocky/g/gdk-pixbuf2-2.42.6-3.el9.aarch64.rpm) = 24f95ee0c8ff8652395799b06d8a06cbe90404b4618df040ffdaa3b31808cbf0
+SIZE (rocky/g/gdk-pixbuf2-2.42.6-3.el9.aarch64.rpm) = 475841
+SHA256 (rocky/g/gdk-pixbuf2-2.42.6-3.el9.x86_64.rpm) = 5248cba2591a98cd7510239841ef70ed27bb8b930e8f65e9defcec2cf7cd9cb2
+SIZE (rocky/g/gdk-pixbuf2-2.42.6-3.el9.x86_64.rpm) = 477508
+SHA256 (rocky/g/gdk-pixbuf2-2.42.6-3.el9.src.rpm) = 6f97ae8b9df7d62084c1b93c518338bd3940eab96ab1cdb08eabec218c588925
+SIZE (rocky/g/gdk-pixbuf2-2.42.6-3.el9.src.rpm) = 7726248

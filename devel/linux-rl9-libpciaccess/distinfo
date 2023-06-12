@@ -1,0 +1,7 @@
+TIMESTAMP = 1686559027
+SHA256 (rocky/l/libpciaccess-0.16-6.el9.aarch64.rpm) = 3ace1f67e1f9aaf1d2a55278587e12c593eb852510e08d16d6c690e079e02020
+SIZE (rocky/l/libpciaccess-0.16-6.el9.aarch64.rpm) = 26643
+SHA256 (rocky/l/libpciaccess-0.16-6.el9.x86_64.rpm) = 7d7bdd6f7a02204a1f10cf69cc71019cb408d5ed86dd8d0581aa5a226fae0865
+SIZE (rocky/l/libpciaccess-0.16-6.el9.x86_64.rpm) = 27181
+SHA256 (rocky/l/libpciaccess-0.16-6.el9.src.rpm) = 528647fc9606e70b186956041435dba1c9f679a44e3db1eeee4262cb59e15740
+SIZE (rocky/l/libpciaccess-0.16-6.el9.src.rpm) = 379303

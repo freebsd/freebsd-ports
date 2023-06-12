@@ -1,0 +1,12 @@
+usr/lib/.build-id/02/fba720320294266611d966f1e587b95b51edca
+usr/lib64/libelf-0.188.so
+usr/lib64/libelf.so.1
+usr/share/licenses/elfutils-libelf/COPYING-GPLV2
+usr/share/licenses/elfutils-libelf/COPYING-LGPLV3
+%%NLS%%usr/share/locale/de/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/en@boldquot/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/en@quot/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/es/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/ja/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/pl/LC_MESSAGES/elfutils.mo
+%%NLS%%usr/share/locale/uk/LC_MESSAGES/elfutils.mo

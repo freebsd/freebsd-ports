@@ -1,0 +1,7 @@
+TIMESTAMP = 1686569786
+SHA256 (rocky/l/libvorbis-1.3.7-5.el9.aarch64.rpm) = 8476b73e0d8173b9cf05f98d4ab6ecc08a76eb2f130ae71293e0d59573f5360d
+SIZE (rocky/l/libvorbis-1.3.7-5.el9.aarch64.rpm) = 192823
+SHA256 (rocky/l/libvorbis-1.3.7-5.el9.x86_64.rpm) = c57530fcd760d7c465826b85dd5dabc086b7922e875da914cf30744c77197dca
+SIZE (rocky/l/libvorbis-1.3.7-5.el9.x86_64.rpm) = 196907
+SHA256 (rocky/l/libvorbis-1.3.7-5.el9.src.rpm) = 1d124e09a8e97b920616c085ae1a2c65289887f475697ab241adc8f732426fb3
+SIZE (rocky/l/libvorbis-1.3.7-5.el9.src.rpm) = 1215038

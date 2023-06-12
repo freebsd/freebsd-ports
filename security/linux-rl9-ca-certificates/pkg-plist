@@ -1,0 +1,28 @@
+etc/pki/ca-trust/README
+etc/pki/ca-trust/ca-legacy.conf
+etc/pki/ca-trust/extracted/README
+etc/pki/ca-trust/extracted/edk2/README
+etc/pki/ca-trust/extracted/java/README
+etc/pki/ca-trust/extracted/openssl/README
+etc/pki/ca-trust/extracted/pem/README
+etc/pki/ca-trust/source/README
+etc/pki/java/cacerts
+etc/pki/tls/cert.pem
+etc/pki/tls/certs/ca-bundle.crt
+etc/pki/tls/certs/ca-bundle.trust.crt
+etc/ssl/cert.pem
+etc/ssl/certs
+etc/ssl/ct_log_list.cnf
+etc/ssl/openssl.cnf
+usr/bin/ca-legacy
+usr/bin/update-ca-trust
+usr/share/man/man8/ca-legacy.8.gz
+usr/share/man/man8/update-ca-trust.8.gz
+usr/share/pki/ca-trust-legacy/ca-bundle.legacy.default.crt
+usr/share/pki/ca-trust-legacy/ca-bundle.legacy.disable.crt
+usr/share/pki/ca-trust-source/README
+usr/share/pki/ca-trust-source/ca-bundle.trust.p11-kit
+@dir etc/pki/ca-trust/source/anchors
+@dir etc/pki/ca-trust/source/blocklist
+@dir usr/share/pki/ca-trust-source/anchors
+@dir usr/share/pki/ca-trust-source/blocklist

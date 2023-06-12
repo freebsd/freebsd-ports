@@ -47,6 +47,7 @@
     SUBDIR += libticonv
     SUBDIR += libutf-8
     SUBDIR += linux-c7-fribidi
+    SUBDIR += linux-rl9-fribidi
     SUBDIR += lua-iconv
     SUBDIR += lua-json
     SUBDIR += mimelib

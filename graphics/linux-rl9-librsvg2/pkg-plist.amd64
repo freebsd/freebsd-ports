@@ -1,0 +1,13 @@
+usr/lib/.build-id/60/b47d55067b192e4d1c8e8c6a0a2013294d2c2d
+usr/lib/.build-id/9c/1c97825550378aa8f0fcaf4ee87671ca07dbd5
+usr/lib64/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
+usr/lib64/girepository-1.0/Rsvg-2.0.typelib
+usr/lib64/librsvg-2.so.2
+usr/lib64/librsvg-2.so.2.47.0
+%%PORTDOCS%%usr/share/doc/librsvg2/CONTRIBUTING.md
+%%PORTDOCS%%usr/share/doc/librsvg2/README.md
+usr/share/licenses/librsvg2/COPYING.LIB
+usr/share/locale/es/LC_MESSAGES/librsvg.mo
+usr/share/thumbnailers/librsvg.thumbnailer
+@postexec %D/usr/bin/gdk-pixbuf-query-loaders-64 --update-cache
+@postunexec %D/usr/bin/gdk-pixbuf-query-loaders-64 --update-cache

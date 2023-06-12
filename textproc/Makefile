@@ -442,6 +442,8 @@
     SUBDIR += linux-c7-libcroco
     SUBDIR += linux-c7-libxml2
     SUBDIR += linux-c7-libxslt
+    SUBDIR += linux-rl9-expat
+    SUBDIR += linux-rl9-libxml2
     SUBDIR += linuxdoc
     SUBDIR += linuxdoc-tools
     SUBDIR += localize

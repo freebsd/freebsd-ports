@@ -1,0 +1,7 @@
+TIMESTAMP = 1686559121
+SHA256 (rocky/l/libdrm-2.4.114-1.el9.aarch64.rpm) = dbed745bbd6779987e7da7c48286f685bf18989c95c3f9bcc50d01af8a223b7d
+SIZE (rocky/l/libdrm-2.4.114-1.el9.aarch64.rpm) = 134183
+SHA256 (rocky/l/libdrm-2.4.114-1.el9.x86_64.rpm) = fe4f6ff2b1a1f78d45b1abc53713955877551a8c427d3fda3b27c28c23fefb88
+SIZE (rocky/l/libdrm-2.4.114-1.el9.x86_64.rpm) = 161608
+SHA256 (rocky/l/libdrm-2.4.114-1.el9.src.rpm) = 047971e587fc241a096ed4aab81efe8247cd86f476ce46b731c9bedf438d8d34
+SIZE (rocky/l/libdrm-2.4.114-1.el9.src.rpm) = 488024

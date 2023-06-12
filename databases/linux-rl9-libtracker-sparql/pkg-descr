@@ -1,0 +1,3 @@
+Tracker provides searching and indexing functionality for the GNOME desktop
+environment and beyond. This package provides the Tracker SPARQL component, a
+lightweight database library built around SQLite.

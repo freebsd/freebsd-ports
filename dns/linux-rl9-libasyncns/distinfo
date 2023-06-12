@@ -1,0 +1,7 @@
+TIMESTAMP = 1686569002
+SHA256 (rocky/l/libasyncns-0.8-22.el9.aarch64.rpm) = da01cd83ff27aaee4dd3a7d4f5401af18ca1b973fbbc27d78fe3fa5d93475a77
+SIZE (rocky/l/libasyncns-0.8-22.el9.aarch64.rpm) = 29752
+SHA256 (rocky/l/libasyncns-0.8-22.el9.x86_64.rpm) = c4e0f32330d3eba8546a9f8b92952f1cd461d09a92cd7d80751d16338acee6c7
+SIZE (rocky/l/libasyncns-0.8-22.el9.x86_64.rpm) = 30122
+SHA256 (rocky/l/libasyncns-0.8-22.el9.src.rpm) = 9b2338b8a316d1c04f6dd7525ca3be59db18a32a7cb4c5f500bcaa3accc60e1b
+SIZE (rocky/l/libasyncns-0.8-22.el9.src.rpm) = 350332

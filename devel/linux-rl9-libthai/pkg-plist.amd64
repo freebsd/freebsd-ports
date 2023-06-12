@@ -1,0 +1,8 @@
+usr/lib/.build-id/52/f685e39fcdb3b99887c5c196baa9c4bcacc670
+usr/lib64/libthai.so.0
+usr/lib64/libthai.so.0.3.1
+%%PORTDOCS%%usr/share/doc/libthai/AUTHORS
+%%PORTDOCS%%usr/share/doc/libthai/COPYING
+%%PORTDOCS%%usr/share/doc/libthai/ChangeLog
+%%PORTDOCS%%usr/share/doc/libthai/README
+%%DATADIR%%/thbrk.tri

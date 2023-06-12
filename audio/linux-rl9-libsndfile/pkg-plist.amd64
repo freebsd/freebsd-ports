@@ -1,0 +1,7 @@
+usr/lib/.build-id/ad/ccae217d9b8216da2bbf8f270ba2b3728651da
+usr/lib64/libsndfile.so.1
+usr/lib64/libsndfile.so.1.0.31
+%%PORTDOCS%%usr/share/doc/libsndfile/AUTHORS
+%%PORTDOCS%%usr/share/doc/libsndfile/NEWS
+%%PORTDOCS%%usr/share/doc/libsndfile/README
+usr/share/licenses/libsndfile/COPYING

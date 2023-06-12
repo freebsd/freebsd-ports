@@ -343,6 +343,12 @@
     SUBDIR += linux-c7-openssl-devel
     SUBDIR += linux-c7-p11-kit
     SUBDIR += linux-c7-trousers
+    SUBDIR += linux-rl9-ca-certificates
+    SUBDIR += linux-rl9-libgcrypt
+    SUBDIR += linux-rl9-libgpg-error
+    SUBDIR += linux-rl9-libtasn1
+    SUBDIR += linux-rl9-nss
+    SUBDIR += linux-rl9-p11-kit
     SUBDIR += local-php-security-checker
     SUBDIR += logcheck
     SUBDIR += lua-argon2
