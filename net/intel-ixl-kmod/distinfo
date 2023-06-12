@@ -1,5 +1,3 @@
-TIMESTAMP = 1598388399
-SHA256 (ixl-1.12.2.tar.gz) = 3903e775ce9ed2559a4dc72e4ae12a689a70155057f3a4b9a094fad0caac1f32
-SIZE (ixl-1.12.2.tar.gz) = 290888
-SHA256 (ixl_pf_main.c?view=patch&r1=358698&r2=358697&pathrev=358698) = 9d8b1b0a52304ba959af218f643a6b349efe45fce05badf220697c29cf2a67fb
-SIZE (ixl_pf_main.c?view=patch&r1=358698&r2=358697&pathrev=358698) = 1973
+TIMESTAMP = 1686578429
+SHA256 (ixl-1.12.40.tar.gz) = d2e0612777d48ca2fced02cc80a3b10ed458112482e13aadc2ea1ff9af4e6108
+SIZE (ixl-1.12.40.tar.gz) = 312012
