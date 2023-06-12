@@ -1,0 +1,3 @@
+catimg is a little program written in C with no dependencies that prints
+images in terminal. It supports JPEG, PNG and GIF formats. This program
+was originally a script that did the same by using ImageMagick convert.
