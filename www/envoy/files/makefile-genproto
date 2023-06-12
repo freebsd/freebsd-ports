@@ -164,6 +164,12 @@ API_V3_PB_HEADERS=\
 	envoy/extensions/access_loggers/wasm/v3/wasm.pb.h \
 	envoy/extensions/common/dynamic_forward_proxy/v3/dns_cache.pb.h \
 	envoy/extensions/common/ratelimit/v3/ratelimit.pb.h \
+	envoy/extensions/compression/brotli/compressor/v3/brotli.pb.h \
+	envoy/extensions/compression/brotli/decompressor/v3/brotli.pb.h \
+	envoy/extensions/compression/gzip/compressor/v3/gzip.pb.h \
+	envoy/extensions/compression/gzip/decompressor/v3/gzip.pb.h \
+	envoy/extensions/compression/zstd/compressor/v3/zstd.pb.h \
+	envoy/extensions/compression/zstd/decompressor/v3/zstd.pb.h \
 	envoy/extensions/early_data/v3/default_early_data_policy.pb.h \
 	envoy/extensions/filters/common/dependency/v3/dependency.pb.h \
 	envoy/extensions/filters/http/router/v3/router.pb.h \
@@ -279,4 +285,4 @@ MISC_PB_HEADERS=\
 
 all: $(API_V2_PB_HEADERS) $(API_V3_PB_HEADERS) $(MISC_PB_HEADERS)
 
-.phony: all
+.PHONY: all

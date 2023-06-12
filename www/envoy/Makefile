@@ -22,6 +22,7 @@ BUILD_DEPENDS=	${NONEXISTENT}:devel/grpc:patch \
 		${LOCALBASE}/include/spdlog/spdlog.h:devel/spdlog \
 		${LOCALBASE}/include/tclap/CmdLine.h:devel/tclap12
 LIB_DEPENDS=	libabsl_base.so:devel/abseil \
+		libbrotlidec.so:archivers/brotli \
 		libcares.so:dns/c-ares \
 		libcircllhist.so:devel/libcircllhist \
 		libevent.so:devel/libevent-devel \
@@ -32,7 +33,8 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libprotobuf.so:devel/protobuf \
 		libre2.so:devel/re2 \
 		libxxhash.so:devel/xxhash \
-		libyaml-cpp.so:devel/yaml-cpp
+		libyaml-cpp.so:devel/yaml-cpp \
+		libzstd.so:archivers/zstd
 
 USES=		compiler:c++17-lang cpe gmake python:build shebangfix ssl
 CPE_VENDOR=	${PORTNAME}proxy

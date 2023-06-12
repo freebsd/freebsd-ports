@@ -1,5 +1,6 @@
 LOCALBASE?=	/usr/local
-CXXFLAGS+=	-std=c++17 -Wall -Wextra -Wno-unused-parameter
+CXXFLAGS+=	-std=c++17 -Wall -Wextra -Wno-deprecated-declarations \
+		-Wno-unused-parameter
 CPPFLAGS+=	-DBUILD_SCM_REVISION=\"c7e8e73\" \
 		-DBUILD_SCM_STATUS=\"Modified\" \
 		-DNDEBUG -DENVOY_SSL_VERSION=\"BoringSSL\" \
@@ -140,6 +141,12 @@ api_OBJS=	envoy/admin/v2alpha/certs.pb.o \
 		envoy/extensions/access_loggers/open_telemetry/v3/logs_service.pb.o \
 		envoy/extensions/access_loggers/stream/v3/stream.pb.o \
 		envoy/extensions/common/ratelimit/v3/ratelimit.pb.o \
+		envoy/extensions/compression/brotli/compressor/v3/brotli.pb.o \
+		envoy/extensions/compression/brotli/decompressor/v3/brotli.pb.o \
+		envoy/extensions/compression/gzip/compressor/v3/gzip.pb.o \
+		envoy/extensions/compression/gzip/decompressor/v3/gzip.pb.o \
+		envoy/extensions/compression/zstd/compressor/v3/zstd.pb.o \
+		envoy/extensions/compression/zstd/decompressor/v3/zstd.pb.o \
 		envoy/extensions/early_data/v3/default_early_data_policy.pb.o \
 		envoy/extensions/filters/common/dependency/v3/dependency.pb.o \
 		envoy/extensions/filters/http/upstream_codec/v3/upstream_codec.pb.o \
@@ -316,6 +323,7 @@ exe_SRCS=	$(wildcard exe/*.cc) \
 
 extensions_SRCS=\
 		$(wildcard extensions/access_loggers/[^w]*/*.cc) \
+		$(wildcard extensions/compression/*/*/*.cc) \
 		extensions/early_data/default_early_data_policy.cc \
 		$(wildcard extensions/filters/common/expr/*.cc) \
 		extensions/filters/common/rbac/matchers.cc \
@@ -549,9 +557,10 @@ ABSEIL_LIBS=\
 	throw_delegate time time_zone
 
 LIBS=	$(addprefix -labsl_,$(ABSEIL_LIBS)) \
+	-lbrotlidec -lbrotlienc \
 	-lcares -lcircllhist -lcrypto -levent -levent_pthreads -lfmt \
 	-lgpr -lgrpc -lgrpc++ -licuuc -lnghttp2 -lprotobuf -lpthread \
-	-lre2 -lssl -lupb -lxxhash -lyaml-cpp -lz
+	-lre2 -lssl -lupb -lxxhash -lyaml-cpp -lz -lzstd
 
 VPATH=	../..
 
