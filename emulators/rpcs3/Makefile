@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.28-15167 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g27349c5c69
+DISTVERSION=	0.0.28-15179 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-gcedfb95f9b
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -57,11 +57,6 @@ USES:=		${USES:S/qt:5/qt:6/}
 USE_QT=		base multimedia svg
 
 CONFLICTS_INSTALL=	${PORTNAME}
-
-pre-patch:	${FLAVOR}-pre-patch
-${FLAVOR}-pre-patch:
-# XXX Drop after reverting https://github.com/RPCS3/rpcs3/commit/5e6aa45658ef
-	@${REINPLACE_CMD} '/quarterly/s/^#//' ${WRKSRC}/.ci/install-freebsd.sh
 
 post-patch:	${FLAVOR}-post-patch
 ${FLAVOR}-post-patch:
