@@ -2,10 +2,10 @@ include/distance.h
 lib/libdistance.a
 lib/libdistance.so
 lib/libdistance.so.1
-lib/libdistance_p.a
+%%PROFILE%%lib/libdistance_p.a
 lib/libdistance_wrap.a
 lib/libdistance_wrap.so
 lib/libdistance_wrap.so.1
-lib/libdistance_wrap_p.a
+%%PROFILE%%lib/libdistance_wrap_p.a
 man/man3/distance.3.gz
 tests/libdistance/test

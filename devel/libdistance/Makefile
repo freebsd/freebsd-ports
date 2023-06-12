@@ -17,15 +17,23 @@ USE_LDCONFIG=	yes
 
 MAKE_ARGS+=	INCLUDEDIR=${PREFIX}/include LIBDIR=${PREFIX}/lib
 MAKE_ARGS+=	MANDIR=${PREFIX}/man/man SWIG=swig
+MAKE_JOBS_UNSAFE=	yes
+
 CFLAGS+=	-fPIC
 
-pre-build:
-	mkdir -p ${STAGEDIR}/usr/local/tests/${PORTNAME}
+.include <bsd.port.options.mk>
+
+.if defined(NOPROFILE) || defined(NO_PROFILE) || ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400079 )
+PLIST_SUB+=	PROFILE="@comment "
+.else
+PLIST_SUB+=	PROFILE=""
+.endif
 
 post-patch:
 	${REINPLACE_CMD} 's|%%TCL_SHLIB_VER%%|${TCL_SHLIB_VER}|' \
 	    ${WRKSRC}/swig/tcl/Makefile
 
-MAKE_JOBS_UNSAFE=	yes
+pre-build:
+	${MKDIR} ${STAGEDIR}${PREFIX}/tests/${PORTNAME}
 
 .include <bsd.port.mk>
