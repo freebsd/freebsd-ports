@@ -163,6 +163,7 @@
     SUBDIR += bvm
     SUBDIR += byobu
     SUBDIR += calamares
+    SUBDIR += catatonit
     SUBDIR += catfish
     SUBDIR += catsit
     SUBDIR += cbsd
