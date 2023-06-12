@@ -1,6 +1,5 @@
-PORTNAME=	kiwix-lib
-DISTVERSION=	9.4.1
-PORTREVISION=	8
+PORTNAME=	libkiwix
+DISTVERSION=	12.0.0
 CATEGORIES=	devel
 
 MAINTAINER=	me@int19h.org
@@ -22,17 +21,18 @@ LIB_DEPENDS=	libzim.so:devel/libzim \
 		libmicrohttpd.so:www/libmicrohttpd
 
 USES=		compiler:c++11-lang meson pkgconfig python:3.6+ shebangfix
-USE_LDCONFIG=	yes
 USE_GITHUB=	yes
-
 GH_ACCOUNT=	kiwix
 GH_TUPLE=	kiwix:${PORTNAME}:${PORTVERSION}:DEFAULT \
-		kainjow:Mustache:a7eebc9:mustache
+		kainjow:Mustache:v4.1:mustache
+USE_LDCONFIG=	yes
+
+SHEBANG_FILES=	scripts/format_code.sh
+SHEBANG_REGEX=	./scripts/kiwix.*[^.].
 
 CPPFLAGS+=	-I${WRKSRC_mustache}
 CXXFLAGS+=	-I${WRKSRC_mustache}
 LDFLAGS+=	-lz
-SHEBANG_FILES=	scripts/kiwix-compile-resources
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION} PORTMAJ=${PORTVERSION:C/\..*//}
 

@@ -1104,7 +1104,6 @@
     SUBDIR += kf5-threadweaver
     SUBDIR += kio-extras
     SUBDIR += kirigami-gallery
-    SUBDIR += kiwix-lib
     SUBDIR += klib
     SUBDIR += kms-cmake-utils
     SUBDIR += kodi-platform
@@ -1290,6 +1289,7 @@
     SUBDIR += libixp
     SUBDIR += libjitterentropy
     SUBDIR += libk8055
+    SUBDIR += libkwix
     SUBDIR += libklel
     SUBDIR += liblangtag
     SUBDIR += liblas
