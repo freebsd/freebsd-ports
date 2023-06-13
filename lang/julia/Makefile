@@ -1,11 +1,10 @@
 PORTNAME=	julia
-DISTVERSION=	1.8.5
-PORTREVISION=	1
+DISTVERSION=	1.9.1
 DISTVERSIONSUFFIX=	-full
 CATEGORIES=	lang math
 MASTER_SITES=	https://github.com/JuliaLang/${PORTNAME}/releases/download/v${DISTVERSION}/
 
-MAINTAINER=	rizor.reardon@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Implementation of Julia, a language for technical computing
 WWW=		https://julialang.org/
 
@@ -109,7 +108,7 @@ post-configure:
 	)
 
 pre-install:
-	${CP} ${WRKSRC}/deps/srccache/cacert-2022-02-01.pem ${WRKSRC}/usr/share/julia/cert.pem
+	${CP} ${WRKSRC}/deps/srccache/cacert-2022-10-11.pem ${WRKSRC}/usr/share/julia/cert.pem
 
 post-install:
 	# clean up for Pkg3.jl
@@ -119,6 +118,7 @@ post-install:
 .for dir in Statistics SuiteSparse ArgTools Pkg Downloads LibCURL NetworkOptions Tar
 	${RM} -fr ${STAGEDIR}${PREFIX}/share/julia/stdlib/v${PORTVERSION:R}/${dir}/.github/
 .endfor
+	${RM} -rf ${STAGEDIR}${PREFIX}/share/julia/compiled
 
 post-install-DEBUG-off:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/julia*
@@ -126,6 +126,10 @@ post-install-DEBUG-off:
 .for bin in libccalltest.so libllvmcalltest.so libjulia-internal.so* libblastrampoline.so libdSFMT.so libuv.so* libLLVM* sys.so libjulia-codegen.so*
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/julia/${bin}
 .endfor
+.for bin in lld dsymutil
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/julia/${bin}
+.endfor
+	${FIND} ${STAGEDIR}${PREFIX}/share/julia/compiled -name "*.so" | ${XARGS} ${STRIP_CMD}
 
 post-install-DOCS-off:
 	${RM} -r ${STAGEDIR}${PREFIX}/${INSTALLDIR}/share/doc

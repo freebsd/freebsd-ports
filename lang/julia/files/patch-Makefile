@@ -1,15 +1,15 @@
---- Makefile.orig	2022-12-23 22:14:27 UTC
+--- Makefile.orig	2023-05-09 10:51:38 UTC
 +++ Makefile
-@@ -229,7 +229,7 @@ define stringreplace
+@@ -236,7 +236,7 @@ endef
  endef
  
  
 -install: $(build_depsbindir)/stringreplace $(BUILDROOT)/doc/_build/html/en/index.html
 +install: $(build_depsbindir)/stringreplace
- ifeq ($(BUNDLE_DEBUG_LIBS),1)
- 	@$(MAKE) $(QUIET_MAKE) all
- else
-@@ -317,8 +317,6 @@ endif
+ 	@$(MAKE) $(QUIET_MAKE) $(JULIA_BUILD_MODE)
+ 	@for subdir in $(bindir) $(datarootdir)/julia/stdlib/$(VERSDIR) $(docdir) $(man1dir) $(includedir)/julia $(libdir) $(private_libdir) $(sysconfdir) $(private_libexecdir); do \
+ 		mkdir -p $(DESTDIR)$$subdir; \
+@@ -339,8 +339,6 @@ endif
  	cp -R -L $(JULIAHOME)/base/* $(DESTDIR)$(datarootdir)/julia/base
  	cp -R -L $(JULIAHOME)/test/* $(DESTDIR)$(datarootdir)/julia/test
  	cp -R -L $(build_datarootdir)/julia/* $(DESTDIR)$(datarootdir)/julia
@@ -18,7 +18,7 @@
  	# Remove various files which should not be installed
  	-rm -f $(DESTDIR)$(datarootdir)/julia/base/version_git.sh
  	-rm -f $(DESTDIR)$(datarootdir)/julia/test/Makefile
-@@ -328,12 +326,6 @@ endif
+@@ -350,12 +348,6 @@ endif
  	-rm -f $(DESTDIR)$(datarootdir)/julia/stdlib/$(VERSDIR)/*/build-checked
  	# Copy in beautiful new man page
  	$(INSTALL_F) $(build_man1dir)/julia.1 $(DESTDIR)$(man1dir)/
@@ -31,7 +31,7 @@
  
  	# Update RPATH entries and JL_SYSTEM_IMAGE_PATH if $(private_libdir_rel) != $(build_private_libdir_rel)
  ifneq ($(private_libdir_rel),$(build_private_libdir_rel))
-@@ -402,26 +394,15 @@ endif
+@@ -430,26 +422,16 @@ endif
  endif
  endif
  
@@ -45,7 +45,7 @@
 -	# don't set libgfortran's RPATH, it won't be able to find its friends on systems
 -	# that don't have the exact GCC port installed used for the build.
 -	for lib in $(DESTDIR)$(private_libdir)/libgfortran*$(SHLIB_EXT)*; do \
--		$(PATCHELF) --set-rpath '$$ORIGIN' $$lib; \
+-		$(PATCHELF) $(PATCHELF_SET_RPATH_ARG) '$$ORIGIN' $$lib; \
 -	done
 -endif
 -
@@ -55,6 +55,7 @@
  ifeq ($(DARWIN_FRAMEWORK),1)
  	$(MAKE) -C $(JULIAHOME)/contrib/mac/framework frameworknoinstall
  endif
++
 +install-docs:
 +	#Copy documentation
 +	cp -R -L $(BUILDROOT)/doc/_build/html $(DESTDIR)$(docdir)/
