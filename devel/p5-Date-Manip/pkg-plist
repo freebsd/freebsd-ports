@@ -615,7 +615,6 @@ bin/dm_zdump
 %%SITE_PERL%%/Date/Manip/TZ/amwina00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amwinn00.pm
 %%SITE_PERL%%/Date/Manip/TZ/amyaku00.pm
-%%SITE_PERL%%/Date/Manip/TZ/amyell00.pm
 %%SITE_PERL%%/Date/Manip/TZ/ancase00.pm
 %%SITE_PERL%%/Date/Manip/TZ/andavi00.pm
 %%SITE_PERL%%/Date/Manip/TZ/anmacq00.pm
