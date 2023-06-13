@@ -1,7 +1,6 @@
 PORTNAME=	adguardhome
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.107.22
-PORTREVISION=	5
+DISTVERSION=	0.107.32
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -16,12 +15,12 @@ RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 USES=		cpe go:1.19,modules
 
 GO_MODULE=	github.com/AdguardTeam/AdGuardHome
-GO_BUILDFLAGS=  -ldflags="-s -w -X github.com/AdguardTeam/AdGuardHome/internal/version.version=${DISTVERSION}" # workaround for https://github.com/AdguardTeam/AdGuardHome/issues/4774
+GO_BUILDFLAGS=	-ldflags="-s -w -X github.com/AdguardTeam/AdGuardHome/internal/version.version=${DISTVERSION}" # workaround for https://github.com/AdguardTeam/AdGuardHome/issues/4774
 
 # to rebuild the deps archives:
 #   1. set DEV_UPDATE_MODE=yes
-#   2. make makesum patch build
-#   3. upload the *-html-build* archives
+#   2. make makesum build
+#   3. upload the *-html-{build,client}* archives
 #   4. set DEV_UPDATE_MODE=no
 #   5. make clean makesum
 
@@ -41,15 +40,15 @@ do-build:
 	@cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} ${MAKE_CMD} js-deps js-build && \
 		${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-build-${DISTVERSION}${EXTRACT_SUFX} build && \
-		${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-build2-${DISTVERSION}${EXTRACT_SUFX} build2 && \
-		${ECHO} "Please upload files ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-build-${DISTVERSION}${EXTRACT_SUFX} and ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-build2-${DISTVERSION}${EXTRACT_SUFX}"
+		${TAR} czf ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-client-${DISTVERSION}${EXTRACT_SUFX} client && \
+		${ECHO} "Please upload files ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-build-${DISTVERSION}${EXTRACT_SUFX} and ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}-html-client-${DISTVERSION}${EXTRACT_SUFX}"
 .else
 MASTER_SITES=	LOCAL/yuri/:deps
 DISTFILES=	${PORTNAME}-html-build-${DISTVERSION}${EXTRACT_SUFX}:deps \
-		${PORTNAME}-html-build2-${DISTVERSION}${EXTRACT_SUFX}:deps
+		${PORTNAME}-html-client-${DISTVERSION}${EXTRACT_SUFX}:deps
 
 pre-build:
-	@${CP} -r ${WRKDIR}/build ${WRKDIR}/build2 ${WRKSRC}/
+	@${CP} -r ${WRKDIR}/build ${WRKDIR}/client ${WRKSRC}/
 .endif
 
 PLIST_FILES=	bin/${PORTNAME}
