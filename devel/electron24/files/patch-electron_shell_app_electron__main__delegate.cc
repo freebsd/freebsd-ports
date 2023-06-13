@@ -1,4 +1,4 @@
---- electron/shell/app/electron_main_delegate.cc.orig	2023-04-25 11:16:51 UTC
+--- electron/shell/app/electron_main_delegate.cc.orig	2023-06-07 21:26:15 UTC
 +++ electron/shell/app/electron_main_delegate.cc
 @@ -58,13 +58,16 @@
  #include "chrome/child/v8_crashpad_support_win.h"
@@ -37,8 +37,8 @@
    // Check for --no-sandbox parameter when running as root.
    if (getuid() == 0 && IsSandboxEnabled(command_line))
      LOG(FATAL) << "Running as root without --"
-@@ -340,7 +343,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
-                                    process_type == ::switches::kZygoteProcess);
+@@ -338,7 +341,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
+       /* is_preinit = */ IsBrowserProcess() || IsZygoteProcess());
  #endif
  
 -#if !IS_MAS_BUILD()
@@ -46,7 +46,7 @@
    crash_reporter::InitializeCrashKeys();
  #endif
  
-@@ -375,7 +378,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
+@@ -373,7 +376,7 @@ void ElectronMainDelegate::PreSandboxStartup() {
    }
  #endif
  
