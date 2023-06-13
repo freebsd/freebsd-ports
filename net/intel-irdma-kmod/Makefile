@@ -11,6 +11,7 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/irdma_readme.txt
 
 BUILD_DEPENDS=	${NONEXISTENT}:net/intel-ice-kmod:extract
+RUN_DEPENDS=	${KMODDIR}/if_ice_updated.ko:net/intel-ice-kmod
 
 USES=		kmod
 
