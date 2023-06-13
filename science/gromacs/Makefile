@@ -1,6 +1,5 @@
 PORTNAME=	gromacs
-DISTVERSION=	2022.4
-PORTREVISION=	1
+DISTVERSION=	2023.1
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
