@@ -1,5 +1,5 @@
 PORTNAME=	${GH_PROJECT:tl}
-PORTVERSION=	2.21
+PORTVERSION=	2.22
 DISTVERSIONPREFIX=	v
 CATEGORIES=	deskutils
 
@@ -14,7 +14,7 @@ USE_QT=		buildtools:build core gui network widgets
 USE_GITHUB=	yes
 GH_ACCOUNT=	SverrirValgeirsson
 GH_PROJECT=	Todour
-GH_TUPLE=	gamecreature:QtAwesome:86f3bb8:gamecreature/QtAwesome \
+GH_TUPLE=	gamecreature:QtAwesome:bc69390:gamecreature/QtAwesome \
 		falceeffect:UGlobalHotkey:2edc485:falceeffect/UGlobalHotkey
 
 DESKTOP_ENTRIES="${GH_PROJECT}" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
@@ -31,7 +31,7 @@ do-install:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/Todour \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	@${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/newicon.png \
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/todour.png \
 		${STAGEDIR}${PREFIX}/share/icons/hicolor/512x512/apps/${PORTNAME}.png
 
 .include <bsd.port.mk>
