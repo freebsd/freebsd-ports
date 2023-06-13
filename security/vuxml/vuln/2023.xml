@@ -1,3 +1,30 @@
+  <vuln vid="f0250129-fdb8-41ed-aa9e-661ff5026845">
+    <topic>vscode -- VS Code Information Disclosure Vulnerability</topic>
+    <affects>
+      <package>
+	<name>vscode</name>
+	<range><lt>1.79.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>VSCode developers reports:</p>
+	<blockquote cite="https://github.com/microsoft/vscode/security/advisories/GHSA-j5wm-6crw-xvmr">
+	  <p>VS Code Information Disclosure Vulnerability</p>
+	  <p>A information disclosure vulnerability exists in VS Code 1.79.0 and earlier versions on Windows when file system operations are performed on malicious UNC paths. Examples include reading or resolving metadata of such paths. An authorised attacker must send the user a malicious file and convince the user to open it for the vulnerability to occur. Exploiting this vulnerability could allow the disclosure of NTLM hashes.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-33144</cvename>
+      <url>https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-33144</url>
+    </references>
+    <dates>
+      <discovery>2023-06-13</discovery>
+      <entry>2023-06-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1567be8c-0a15-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
