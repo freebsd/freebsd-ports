@@ -3,19 +3,26 @@ PORTVERSION=	0.003.02
 CATEGORIES=	games
 MASTER_SITES=	http://www.samiam.org/slump/old/slump/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Fork of SLIGE that is optimized for making FreeDoom maps
 WWW=		https://www.samiam.org/slump.html
 
 LICENSE=	GPLv2+
 
-OPTIONS_DEFINE=	DOCS
-
 USES=	tar:bzip2
+
 MAKE_ARGS=	FLAGS="${CFLAGS}"
 
-PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}
+PORTDOCS=	README
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 do-install:
 	(cd ${WRKSRC} && ${INSTALL_PROGRAM} ${PORTNAME} ${STAGEDIR}${PREFIX}/bin)
