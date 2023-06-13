@@ -1,7 +1,8 @@
 PORTNAME=	internetarchive
-DISTVERSION=	3.0.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	3.5.0
 CATEGORIES=	www python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,9 +19,16 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docopt>=0.6.0,<0.7.0:devel/py-docopt@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}six>=1.13.0,<2.0.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.0.0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.26.0:net/py-urllib3@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}responses>=0.20.0:devel/py-responses@${PY_FLAVOR} \
+		ruff>=0.0.261:devel/ruff
 
 USES=		python:3.6+
-USE_PYTHON=	distutils concurrent autoplist
+USE_PYTHON=	distutils concurrent autoplist pytest # 15 tests fail, https://github.com/jjjake/internetarchive/issues/596
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	jjjake
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} PATH=${STAGEDIR}${PREFIX}/bin:${PATH}
 
 NO_ARCH=	yes
 
