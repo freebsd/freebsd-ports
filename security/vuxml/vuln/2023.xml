@@ -1,3 +1,42 @@
+  <vuln vid="1567be8c-0a15-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>114.0.5735.133</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>114.0.5735.133</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/06/stable-channel-update-for-desktop_13.html">
+	 <p>This update includes 5 security fixes:</p>
+	 <ul>
+	    <li>[1450568] Critical CVE-2023-3214: Use after free in Autofill payments. Reported by Rong Jian of VRI on 2023-06-01</li>
+	    <li>[1446274] High CVE-2023-3215: Use after free in WebRTC. Reported by asnine on 2023-05-17</li>
+	    <li>[1450114] High CVE-2023-3216: Type Confusion in V8. Reported by 5n1p3r0010 from Topsec ChiXiao Lab on 2023-05-31</li>
+	    <li>[1450601] High CVE-2023-3217: Use after free in WebXR. Reported by Sergei Glazunov of Google Project Zero on 2023-06-01</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3214</cvename>
+      <cvename>CVE-2023-3215</cvename>
+      <cvename>CVE-2023-3216</cvename>
+      <cvename>CVE-2023-3217</cvename>
+      <url>https://chromereleases.googleblog.com/2023/06/stable-channel-update-for-desktop_13.html</url>
+    </references>
+    <dates>
+      <discovery>2023-06-13</discovery>
+      <entry>2023-06-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f7e9a1cc-0931-11ee-94b4-6cc21735f730">
     <topic>xmltooling -- remote resource access</topic>
     <affects>
