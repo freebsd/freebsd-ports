@@ -1,21 +1,23 @@
 @dir %%DATADIR%%/lib/jna/amd64
+@dir %%DATADIR%%/lib/native/linux-x86_64
 @dir %%DATADIR%%/lib/pty4j/linux/x86-64
+@dir %%DATADIR%%/plugins/performanceTesting-yourkit/bin
 %%DATADIR%%/bin/brokenPlugins.db
 %%DATADIR%%/bin/datagrip.png
 %%DATADIR%%/bin/datagrip.sh
 %%DATADIR%%/bin/datagrip.svg
 %%DATADIR%%/bin/datagrip64.vmoptions
 %%DATADIR%%/bin/format.sh
-%%DATADIR%%/bin/icons/icons-v2-1.0-d.db
-%%DATADIR%%/bin/icons/icons-v2-1.0.db
-%%DATADIR%%/bin/icons/icons-v2-1.25-d.db
-%%DATADIR%%/bin/icons/icons-v2-1.25.db
-%%DATADIR%%/bin/icons/icons-v2-1.5-d.db
-%%DATADIR%%/bin/icons/icons-v2-1.5.db
-%%DATADIR%%/bin/icons/icons-v2-2.0-d.db
-%%DATADIR%%/bin/icons/icons-v2-2.0.db
-%%DATADIR%%/bin/icons/icons-v2-2.5-d.db
-%%DATADIR%%/bin/icons/icons-v2-2.5.db
+%%DATADIR%%/bin/icons/icon-v4-1.0-d.db
+%%DATADIR%%/bin/icons/icon-v4-1.0.db
+%%DATADIR%%/bin/icons/icon-v4-1.25-d.db
+%%DATADIR%%/bin/icons/icon-v4-1.25.db
+%%DATADIR%%/bin/icons/icon-v4-1.5-d.db
+%%DATADIR%%/bin/icons/icon-v4-1.5.db
+%%DATADIR%%/bin/icons/icon-v4-2.0-d.db
+%%DATADIR%%/bin/icons/icon-v4-2.0.db
+%%DATADIR%%/bin/icons/icon-v4-2.5-d.db
+%%DATADIR%%/bin/icons/icon-v4-2.5.db
 %%DATADIR%%/bin/idea.properties
 %%DATADIR%%/bin/inspect.sh
 %%DATADIR%%/bin/ltedit.sh
@@ -24,13 +26,12 @@
 %%DATADIR%%/bin/restart.py
 %%DATADIR%%/build.txt
 %%DATADIR%%/Install-Linux-tar.txt
-%%DATADIR%%/lib/3rd-party-native.jar
 %%DATADIR%%/lib/3rd-party-rt.jar
 %%DATADIR%%/lib/annotations-java5.jar
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler-windows.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-DB-223.8617.3
+%%DATADIR%%/lib/build-marker-DB-231.9011.35
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -38,17 +39,18 @@
 %%DATADIR%%/lib/externalProcess-rt.jar
 %%DATADIR%%/lib/forms_rt.jar
 %%DATADIR%%/lib/groovy.jar
-%%DATADIR%%/lib/intellij-coverage-agent-1.0.682.jar
+%%DATADIR%%/lib/intellij-coverage-agent-1.0.706.jar
 %%DATADIR%%/lib/intellij-test-discovery.jar
 %%DATADIR%%/lib/jetbrains-annotations.jar
+%%DATADIR%%/lib/jna/amd64/libjnidispatch.so
 %%DATADIR%%/lib/jps-model.jar
 %%DATADIR%%/lib/jsch-agent.jar
-%%DATADIR%%/lib/platform-objectSerializer-annotations.jar
-%%DATADIR%%/lib/platform-statistics-devkit.jar
 %%DATADIR%%/lib/protobuf.jar
+%%DATADIR%%/lib/pty4j/pty4j
 %%DATADIR%%/lib/rd.jar
 %%DATADIR%%/lib/stats.jar
 %%DATADIR%%/lib/util_rt.jar
+%%DATADIR%%/lib/util-8.jar
 %%DATADIR%%/lib/util.jar
 %%DATADIR%%/license/javahelp_license.txt
 %%DATADIR%%/license/javolution_license.txt
@@ -73,15 +75,15 @@
 %%DATADIR%%/plugins/grid-core-impl/lib/grid-core.jar
 %%DATADIR%%/plugins/grid-core-impl/lib/jdbc-console-types.jar
 %%DATADIR%%/plugins/grid-impl/lib/grid.jar
+%%DATADIR%%/plugins/performanceTesting-async/lib/performanceTesting-async.jar
+%%DATADIR%%/plugins/performanceTesting-yourkit/lib/performanceTesting-yourkit.jar
+%%DATADIR%%/plugins/performanceTesting-yourkit/lib/yjp-controller-api-redist.jar
 %%DATADIR%%/plugins/performanceTesting/lib/performanceTesting.jar
-%%DATADIR%%/plugins/performanceTesting/lib/yjp-controller-api-redist.jar
 %%DATADIR%%/plugins/platform-images/lib/platform-images.jar
 %%DATADIR%%/plugins/platform-langInjection/lib/IntelliLang.jar
 %%DATADIR%%/plugins/platform-langInjection/lib/java-langInjection-jps.jar
 %%DATADIR%%/plugins/platform-langInjection/lib/platform-langInjection.jar
 %%DATADIR%%/plugins/remote-dev-server/bin/launcher.sh
-%%DATADIR%%/plugins/remote-dev-server/bin/xplat-launcher-third-party-licenses-x86_64-linux.html
-%%DATADIR%%/plugins/remote-dev-server/bin/xplat-launcher-x86_64-linux
 %%DATADIR%%/plugins/remote-dev-server/lib/remote-dev-server.jar
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/bin/xkbcomp
 %%DATADIR%%/plugins/remote-dev-server/selfcontained/bin/Xvfb
@@ -567,6 +569,7 @@
 %%DATADIR%%/plugins/textmate/lib/bundles/html/language-configuration.json
 %%DATADIR%%/plugins/textmate/lib/bundles/html/package.json
 %%DATADIR%%/plugins/textmate/lib/bundles/html/package.nls.json
+%%DATADIR%%/plugins/textmate/lib/bundles/html/snippets/html.code-snippets
 %%DATADIR%%/plugins/textmate/lib/bundles/html/syntaxes/html-derivative.tmLanguage.json
 %%DATADIR%%/plugins/textmate/lib/bundles/html/syntaxes/html.tmLanguage.json
 %%DATADIR%%/plugins/textmate/lib/bundles/ini/.vscodeignore
@@ -613,7 +616,6 @@
 %%DATADIR%%/plugins/textmate/lib/bundles/julia/package.nls.json
 %%DATADIR%%/plugins/textmate/lib/bundles/julia/syntaxes/julia.tmLanguage.json
 %%DATADIR%%/plugins/textmate/lib/bundles/kotlin/info.plist
-%%DATADIR%%/plugins/textmate/lib/bundles/kotlin/package.json
 %%DATADIR%%/plugins/textmate/lib/bundles/kotlin/snippets/class.tmSnippet
 %%DATADIR%%/plugins/textmate/lib/bundles/kotlin/snippets/println.tmSnippet
 %%DATADIR%%/plugins/textmate/lib/bundles/kotlin/syntaxes/Kotlin.tmLanguage

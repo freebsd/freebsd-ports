@@ -1,3 +1,5 @@
 #!/bin/sh
-export JAVA_HOME="${JAVA_HOME:=/usr/local/openjdk11}"
+export JAVA_HOME="${JAVA_HOME:-"%%JAVA_HOME%%"}"
+export SHELL="/bin/sh"
+
 exec "%%DATADIR%%/bin/datagrip.sh" "$@"
