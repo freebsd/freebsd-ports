@@ -68,6 +68,8 @@ PORTDOCS=	*
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/pkgconfig/s|$${LIBDIR}|&data|' ${WRKSRC}/waflib/TaskGen.py
+	@${REINPLACE_CMD} -e \
+		'/read/s|rU|r|' ${WRKSRC}/waflib/ConfigSet.py ${WRKSRC}/waflib/Context.py
 
 post-install:
 .for b in mfcc notes onset pitch quiet track
