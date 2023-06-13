@@ -1,5 +1,5 @@
 PORTNAME=	dxa
-PORTVERSION=	0.1.4
+PORTVERSION=	0.1.5
 CATEGORIES=	devel
 MASTER_SITES=	http://www.floodgap.com/retrotech/xa/dists/
 PKGNAMESUFFIX=	65
