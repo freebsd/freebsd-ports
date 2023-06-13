@@ -698,6 +698,7 @@ libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0006-bpo-41100-fix-_decimal-for-arm64-Mac-OS-GH-21228.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0007-Port-ctypes-and-system-libffi-patch-for-arm64-macOS-.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0008-bpo-36231-Support-building-on-macOS-without-usr-incl.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.10/Python-3.5.10/0009-bpo-42351-Avoid-error-when-opening-header-with-non-U.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.5.2/Python-3.5.2/venv.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.6.15/Python-3.6.15/0001-Detect-arm64-in-configure.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.6.15/Python-3.6.15/0002-bpo-36231-Support-building-on-macOS-without-usr-incl.patch
@@ -729,6 +730,9 @@ libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.16/openssl-1.1
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.16/Python-3.7.16/0001-Port-ctypes-and-system-libffi-patches-for-arm64-macO.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.16/Python-3.7.16/0002-bpo-41100-fix-_decimal-for-arm64-Mac-OS-GH-21228.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.16/Python-3.7.16/0003-bpo-42351-Avoid-error-when-opening-header-with-non-U.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.17/Python-3.7.17/0001-Port-ctypes-and-system-libffi-patches-for-arm64-macO.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.17/Python-3.7.17/0002-bpo-41100-fix-_decimal-for-arm64-Mac-OS-GH-21228.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.17/Python-3.7.17/0003-bpo-42351-Avoid-error-when-opening-header-with-non-U.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.8/Python-3.7.8/0001-bpo-45405-Prevent-internal-configure-error-when-runn.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.7.9/Python-3.7.9/0001-bpo-45405-Prevent-internal-configure-error-when-runn.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.8.10/Python-3.8.10/0001-bpo-45405-Prevent-internal-configure-error-when-runn.patch
