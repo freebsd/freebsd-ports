@@ -1,8 +1,9 @@
 PORTNAME=	libkiwix
 DISTVERSION=	12.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	me@int19h.org
+MAINTAINER=	olce.freebsd.ports@certner.fr
 COMMENT=	Common code base for all Kiwix ports
 WWW=		https://www.kiwix.org/
 

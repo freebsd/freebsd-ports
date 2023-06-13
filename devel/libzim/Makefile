@@ -1,9 +1,10 @@
 PORTNAME=	libzim
 DISTVERSION=	8.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://download.openzim.org/release/libzim/
 
-MAINTAINER=	bofh@FreeBSD.org
+MAINTAINER=	olce.freebsd.ports@certner.fr
 COMMENT=	Reference implementation of the ZIM specification
 WWW=		https://www.openzim.org/wiki/OpenZIM
 

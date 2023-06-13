@@ -1,8 +1,9 @@
 PORTNAME=	kiwix-tools
 DISTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	www
 
-MAINTAINER=	me@int19h.org
+MAINTAINER=	olce.freebsd.ports@certner.fr
 COMMENT=	Command-line Kiwix tools
 WWW=		https://www.kiwix.org/
 
