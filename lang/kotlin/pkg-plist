@@ -38,7 +38,6 @@ bin/kotlinc-jvm
 %%DATADIR%%/lib/kotlin-scripting-common.jar
 %%DATADIR%%/lib/kotlin-scripting-compiler-impl.jar
 %%DATADIR%%/lib/kotlin-scripting-compiler.jar
-%%DATADIR%%/lib/kotlin-scripting-js.jar
 %%DATADIR%%/lib/kotlin-scripting-jvm.jar
 %%DATADIR%%/lib/kotlin-stdlib-jdk7-sources.jar
 %%DATADIR%%/lib/kotlin-stdlib-jdk7.jar

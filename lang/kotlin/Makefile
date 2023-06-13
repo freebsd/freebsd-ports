@@ -1,5 +1,5 @@
 PORTNAME=	kotlin
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.22
 CATEGORIES=	lang java
 MASTER_SITES=	https://github.com/JetBrains/kotlin/releases/download/v${PORTVERSION}/
 DISTNAME=	kotlin-compiler-${PORTVERSION}
