@@ -68,7 +68,13 @@ USES=		cpe ldap python:3.7+ pgsql shebangfix
 USE_PYTHON=	distutils
 
 SHEBANG_LANG=	python
-SHEBANG_FILES=	${WRKSRC}/${PORTNAME}-bin
+SHEBANG_FILES=	${WRKSRC}/${PORTNAME}/addons/point_of_sale/tools/posbox/overwrite_before_init/etc/init.d/timesyncd \
+		${WRKSRC}/${PORTNAME}/addons/point_of_sale/tools/posbox/overwrite_before_init/etc/init.d/odoo \
+		${WRKSRC}/${PORTNAME}/addons/web/static/lib/select2/release.sh \
+		${WRKSRC}/${PORTNAME}/addons/web/tooling/*.sh \
+		${WRKSRC}/${PORTNAME}/addons/web/tooling/hooks/pre-commit \
+		${WRKSRC}/${PORTNAME}/addons/mail/static/scripts/odoo-mailgate.py \
+		${WRKSRC}/${PORTNAME}-bin
 
 USERS=		odoo
 GROUPS=		${USERS}
