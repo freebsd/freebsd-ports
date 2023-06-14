@@ -1,5 +1,5 @@
 PORTNAME=	puppetserver-ca
-PORTVERSION=	2.5.0
+PORTVERSION=	2.6.0
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
