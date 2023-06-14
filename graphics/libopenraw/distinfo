@@ -1,6 +1,6 @@
-TIMESTAMP = 1683055414
-SHA256 (libopenraw-0.3.5.tar.bz2) = 9a93d92d55066b9d88df84a58f75095654c31dddb92021b47baa0f3f482fb2e7
-SIZE (libopenraw-0.3.5.tar.bz2) = 3028558
+TIMESTAMP = 1686675747
+SHA256 (libopenraw-0.3.6.tar.bz2) = 77c944914a37c63ce881174f9825c11951fb99755d4f4b02dd8a604fca83fccd
+SIZE (libopenraw-0.3.6.tar.bz2) = 3026030
 SHA256 (rust/crates/ahash-0.7.6.crate) = fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47
 SIZE (rust/crates/ahash-0.7.6.crate) = 38030
 SHA256 (rust/crates/aho-corasick-0.7.18.crate) = 1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f

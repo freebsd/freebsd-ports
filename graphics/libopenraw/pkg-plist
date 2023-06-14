@@ -20,10 +20,10 @@ include/libopenraw-%%VER%%/libopenraw/types.h
 lib/libopenraw.a
 lib/libopenraw.so
 lib/libopenraw.so.9
-lib/libopenraw.so.9.0.5
+lib/libopenraw.so.9.0.6
 %%GNOME%%lib/libopenrawgnome.a
 %%GNOME%%lib/libopenrawgnome.so
 %%GNOME%%lib/libopenrawgnome.so.9
-%%GNOME%%lib/libopenrawgnome.so.9.0.5
+%%GNOME%%lib/libopenrawgnome.so.9.0.6
 libdata/pkgconfig/libopenraw-%%VER%%.pc
 %%GNOME%%libdata/pkgconfig/libopenraw-gnome-%%VER%%.pc

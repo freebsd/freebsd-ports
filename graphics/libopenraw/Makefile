@@ -1,6 +1,5 @@
 PORTNAME=	libopenraw
-PORTVERSION=	0.3.5
-PORTREVISION=	1
+PORTVERSION=	0.3.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://libopenraw.freedesktop.org/download/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -9,8 +8,10 @@ MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Library for camera RAW files decoding
 WWW=		https://libopenraw.freedesktop.org/
 
-LICENSE=	LGPL3+
-LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
+LICENSE=		LGPL3+ MPL20
+LICENSE_COMB=		multi
+LICENSE_FILE_LGPL3+ =	${WRKSRC}/COPYING.LESSER
+LICENSE_FILE_MPL20=	${WRKSRC}/MPL-2.0
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/variant.hpp:devel/boost-libs
 TEST_DEPENDS=	curl:ftp/curl
