@@ -1,19 +1,20 @@
---- Makefile.orig	2023-04-08 22:36:58.000000000 +0100
-+++ Makefile	2023-05-11 22:40:28.158615000 +0100
-@@ -1,11 +1,6 @@
+--- Makefile.orig	2023-04-08 21:36:58 UTC
++++ Makefile
+@@ -1,12 +1,7 @@
  # set gcc as default if CC is not set
  
 -GIT_VERSION = $(shell git describe --tags --always --dirty=-wip)
--
++VERSION = $(shell grep -E -o -m 1 "[0-9]+\.[0-9]+\.[0-9]+" Changelog)
+ 
 -# Ugly hack to get version if git isn't installed
 -ifeq ($(GIT_VERSION),)
 -  GIT_VERSION = $(shell grep -E -o -m 1 "[0-9]+\.[0-9]+\.[0-9]+" Changelog)
 -endif
-+VERSION = $(shell grep -E -o -m 1 "[0-9]+\.[0-9]+\.[0-9]+" Changelog)
- 
+-
  # Detect OS
  OS := $(shell uname)
-@@ -26,11 +21,11 @@
+ ARCH := $(shell uname -m)
+@@ -26,11 +21,11 @@ endif
  
  SRCS      = sslscan.c
  BINDIR    = $(PREFIX)/bin
@@ -27,7 +28,7 @@
  
  # for dynamic linking
  LIBS      = -lssl -lcrypto
-@@ -58,35 +53,11 @@
+@@ -58,36 +53,12 @@ endif
  CFLAGS += -std=gnu11
  
  # for static linking
@@ -52,7 +53,8 @@
 -LDFLAGS   += -L/usr/local/lib -L/usr/local/ssl/lib -L/usr/local/opt/openssl/lib -L/opt/local/lib
 -CFLAGS    += -I/usr/local/include -I/usr/local/ssl/include -I/usr/local/ssl/include/openssl -I/usr/local/opt/openssl/include -I/opt/local/include -I/opt/local/include/openssl
 -endif
--
++VERSION  := $(VERSION)-static
+ 
 -# Find the number of processors on the system (used in -j option in building OpenSSL).
 -# Uses /usr/bin/nproc if available, otherwise defaults to 1.
 -NUM_PROCS = 1
@@ -60,11 +62,11 @@
 -	NUM_PROCS = `/usr/bin/nproc --all`
 -endif
 -
-+VERSION  := $(VERSION)-static
- 
+-
  .PHONY: all sslscan clean install uninstall static opensslpull
  
-@@ -114,6 +85,9 @@
+ all: sslscan
+@@ -114,6 +85,9 @@ ifeq ($(OS), Darwin)
  	install sslscan $(DESTDIR)$(BINDIR)/sslscan;
  	install -d $(DESTDIR)$(MAN1DIR)/;
  	install sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
@@ -74,7 +76,7 @@
  else
  	install -D sslscan $(DESTDIR)$(BINDIR)/sslscan;
  	install -D sslscan.1 $(DESTDIR)$(MAN1DIR)/sslscan.1;
-@@ -126,11 +100,7 @@
+@@ -126,11 +100,7 @@ uninstall:
  .openssl.is.fresh: opensslpull
  	true
  opensslpull:
@@ -87,7 +89,12 @@
  
  # Need to build OpenSSL differently on OSX
  ifeq ($(OS), Darwin)
-@@ -148,12 +118,11 @@
+@@ -144,16 +114,15 @@ openssl/Makefile: .openssl.is.fresh
+ # Any other *NIX platform
+ else
+ openssl/Makefile: .openssl.is.fresh
+-	cd ./openssl; ./config -v -fstack-protector-all -D_FORTIFY_SOURCE=2 -fPIC no-shared enable-weak-ssl-ciphers zlib
++	cd ./openssl; ./config -v -fstack-protector-all -D_FORTIFY_SOURCE=2 -fPIC no-shared enable-weak-ssl-ciphers zlib $(OSSL_TARGET)
  endif
  
  openssl/libcrypto.a: openssl/Makefile

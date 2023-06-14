@@ -19,6 +19,16 @@ OPENSSL_VERSION=	3.1.0
 
 ALL_TARGET=	static
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64
+MAKE_ENV+=	OSSL_TARGET=BSD-ppc64
+.elif ${ARCH} == powerpc64le
+MAKE_ENV+=        OSSL_TARGET=BSD-ppc64le
+.elif ${ARCH} == riscv64
+MAKE_ENV+=        OSSL_TARGET=BSD-riscv64
+.endif
+
 post-patch:
 	$(LN) -sf "${WRKDIR}/openssl-${OPENSSL_VERSION}" "${WRKSRC}/openssl"
 
