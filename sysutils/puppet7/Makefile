@@ -1,5 +1,5 @@
 PORTNAME=	puppet
-PORTVERSION=	7.24.0
+PORTVERSION=	7.25.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	7
@@ -11,7 +11,7 @@ WWW=		https://puppet.com/docs/puppet/latest/puppet_index.html
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	rubygem-concurrent-ruby11>1.0:devel/rubygem-concurrent-ruby11 \
+RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
 		rubygem-fast_gettext>=2.1:devel/rubygem-fast_gettext \
 		rubygem-hiera>=3.2.1:sysutils/rubygem-hiera \
@@ -53,7 +53,7 @@ CFACTER_BUILD_DEPENDS=	facter>=3.0:sysutils/facter
 CFACTER_RUN_DEPENDS=	facter>=3.0:sysutils/facter
 
 # Get versions from
-# https://github.com/puppetlabs/puppet-agent/tree/main/configs/components
+# https://github.com/puppetlabs/puppet-agent/tree/7.x/configs/components
 FORGE_MODULES=	augeas_core=1.3.0 \
 		cron_core=1.2.0 \
 		host_core=1.2.0 \
