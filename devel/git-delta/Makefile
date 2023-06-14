@@ -1,6 +1,5 @@
 PORTNAME=	delta
-DISTVERSION=	0.15.1
-PORTREVISION=	6
+DISTVERSION=	0.16.5
 CATEGORIES=	devel
 PKGNAMEPREFIX=	git-
 
@@ -27,13 +26,6 @@ OPTIONS_DEFAULT=	BASH FISH ZSH
 BASH_PLIST_FILES=	etc/bash_completion.d/_${PORTNAME}.bash
 FISH_PLIST_FILES=	share/fish/vendor_functions.d/${PORTNAME}.fish
 ZSH_PLIST_FILES=	share/zsh/site-functions/_${PORTNAME}
-
-# sys-info-0.9.1 crate fix: https://github.com/FillZpp/sys-info-rs/issues/80
-post-patch:
-	@${REINPLACE_CMD} \
-		-e '/get_cpu/s|unsigned long|uint64_t|' \
-		-e '/get_proc_total/s|unsigned long|uint64_t|' \
-			${WRKSRC}/cargo-crates/sys-info-*/c/*.[ch]
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/delta
