@@ -1,6 +1,5 @@
 PORTNAME=	metronome
-DISTVERSION=	1.2.1
-PORTREVISION=	1
+DISTVERSION=	1.3.0
 CATEGORIES=	audio
 PKGNAMEPREFIX=	gnome-
 
@@ -19,7 +18,7 @@ USE_GNOME=	gtk40 libadwaita
 USE_GSTREAMER=	bad good vorbis
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
-GL_COMMIT=	1a9f4b1bebcd6a6fb76c1774714e43006de8d503
+GL_COMMIT=	cf2dd4fdf9de9dabadb44a21338f5872abd044ea
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
