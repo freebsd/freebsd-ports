@@ -1,13 +1,14 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.26.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	147e96237006.patch:-p1 # wlroots 0.17
 PATCHFILES+=	c5a7202cd9a4.patch:-p1 # wlroots 0.17
 PATCHFILES+=	10db5a4fdbb0.patch:-p1 # wlroots 0.17
+PATCHFILES+=	fbabb105c342.patch:-p1 # wlroots 0.17
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -19,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.25:graphics/wayland-protocols \
-		wlroots>=0.16.0.474<0.17.0:x11-toolkits/wlroots
+		wlroots>=0.16.0.529<0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \

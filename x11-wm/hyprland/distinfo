@@ -13,3 +13,5 @@ SHA256 (c5a7202cd9a4.patch) = bd7c9f3c4d7b5dc15a94541d8d8d3efa385eeac4dff1b3726e
 SIZE (c5a7202cd9a4.patch) = 1027
 SHA256 (10db5a4fdbb0.patch) = 41733096fd989c9f4c98d6bdb322ec11e2ba839bdca91173e89b4b03e1250206
 SIZE (10db5a4fdbb0.patch) = 896
+SHA256 (fbabb105c342.patch) = f5155dc81ddc01d4ab630b3f94b1195dcd3b10685cc9708832557f920ba6c8b0
+SIZE (fbabb105c342.patch) = 5391
