@@ -32,6 +32,7 @@
     SUBDIR += cd-hit
     SUBDIR += cdbfasta
     SUBDIR += checkm
+    SUBDIR += chip-seq
     SUBDIR += clustal-omega
     SUBDIR += clustalw
     SUBDIR += cufflinks
