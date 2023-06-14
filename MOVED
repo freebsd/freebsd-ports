@@ -4342,7 +4342,6 @@ sysutils/goss||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/gpte||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/hidesvn||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/hoz||2020-05-05|Has expired: Broken for more than 6 months
-sysutils/intel-qcu||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/iogen||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/jailctl||2020-05-05|Has expired: Broken for more than 6 months
 sysutils/jx||2020-05-05|Has expired: Broken for more than 6 months
@@ -7639,3 +7638,4 @@ security/py-sequoia||2023-06-09|Deprecated upstream, broken as based on older de
 audio/hvl2wav|audio/ocp|2023-06-10|Has expired: Abandoned upstream, use audio/ocp instead
 x11/thinglaunch|x11/thingylaunch|2023-06-10|Has expired: Abandonware, please use x11/thingylaunch instead
 sysutils/intel-nvmupdate|sysutils/intel-nvmupdate-40g|2023-06-14|Moved to sysutils/intel-nvmupdate-40g, which is 40G-generation specific port to make space for 10G and 100G generations
+sysutils/intel-qcu|sysutils/intel-epct|2023-06-14|Moved to sysutils/intel-epct
