@@ -1,10 +1,9 @@
 PORTNAME=	gonic
-PORTVERSION=	0.14.0
-PORTREVISION=	11
 DISTVERSIONPREFIX=	v
+DISTVERSION=	0.15.2
 CATEGORIES=	audio net
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tagattie@FreeBSD.org
 COMMENT=	Music streaming server / subsonic server API implementation
 WWW=		https://github.com/sentriz/gonic
 
@@ -12,16 +11,15 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libtag.so:audio/taglib
+RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg \
+		mpv:multimedia/mpv
 
-USES=		go:modules openal pkgconfig
+USES=		go:modules pkgconfig sqlite
 
 USE_RC_SUBR=	${PORTNAME}
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	sentriz
+GO_MODULE=	go.senan.xyz/gonic
 GO_TARGET=	./cmd/gonic
-
-.include "${.CURDIR}/go-mod.mk"
 
 USERS=		${PORTNAME}
 GROUPS=		${PORTNAME}
