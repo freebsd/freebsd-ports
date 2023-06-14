@@ -30,6 +30,7 @@
     SUBDIR += ksh93
     SUBDIR += mksh
     SUBDIR += modernish
+    SUBDIR += murex
     SUBDIR += nologinmsg
     SUBDIR += nsh
     SUBDIR += nushell
