@@ -5336,6 +5336,7 @@
     SUBDIR += py-pytest-relaxed
     SUBDIR += py-pytest-rerunfailures
     SUBDIR += py-pytest-runner
+    SUBDIR += py-pytest-services
     SUBDIR += py-pytest-shutil
     SUBDIR += py-pytest-subtests
     SUBDIR += py-pytest-sugar

@@ -1,0 +1,2 @@
+This Pytest plugin provides a set of fixtures and utility functions to start
+service processes for your tests with pytest.
