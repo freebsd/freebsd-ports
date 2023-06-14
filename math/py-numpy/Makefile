@@ -12,6 +12,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION:R}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
+PATCH_SITES=	https://github.com/numpy/numpy/commit/
+PATCHFILES=	8692e2478cc74cc7c08e9b2a0f731a10a1ca7118.patch:-p1
+
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	The New Numeric Extension to Python
 WWW=		https://www.numpy.org/
