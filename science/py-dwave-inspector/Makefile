@@ -1,6 +1,5 @@
 PORTNAME=	dwave-inspector
-DISTVERSION=	0.4.0
-PORTREVISION=	1
+DISTVERSION=	0.4.2
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
