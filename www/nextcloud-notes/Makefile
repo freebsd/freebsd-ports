@@ -1,5 +1,5 @@
 PORTNAME=	notes
-PORTVERSION=	4.7.2
+PORTVERSION=	4.8.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	www editors
 MASTER_SITES=	https://github.com/nextcloud/${PORTNAME}/releases/download/${DISTVERSIONPREFIX}${PORTVERSION}/
