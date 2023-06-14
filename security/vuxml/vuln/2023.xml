@@ -1,3 +1,35 @@
+  <vuln vid="b4db7d78-bb62-4f4c-9326-6e9fc2ddd400">
+    <topic>jenkins -- CSRF protection bypass vulnerability</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.400</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.401.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2023-06-14/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-3135 / CVE-2023-35141</h5>
+	  <p>CSRF protection bypass vulnerability</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-35141</cvename>
+      <url>https://www.jenkins.io/security/advisory/2023-06-14/</url>
+    </references>
+    <dates>
+      <discovery>2023-06-14</discovery>
+      <entry>2023-06-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f0250129-fdb8-41ed-aa9e-661ff5026845">
     <topic>vscode -- VS Code Information Disclosure Vulnerability</topic>
     <affects>
