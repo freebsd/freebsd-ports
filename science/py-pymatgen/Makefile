@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}uncertainties>=3.1.6:math/py-uncertainties@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybtex>0:textproc/py-pybtex@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.7+ pytest
+USES=		compiler:c++11-lang python pytest
 USE_PYTHON=	distutils cython concurrent autoplist
 
 post-install:

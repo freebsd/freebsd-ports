@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libyajl.so:devel/yajl
 
-USES=		compiler:c++11-lang pkgconfig python:3.5+
+USES=		compiler:c++11-lang pkgconfig python
 USE_PYTHON=	autoplist distutils
 
 # pydistutils problem, it uses CC for compiling C++ code

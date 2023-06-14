@@ -14,7 +14,7 @@ LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE.slice-by-8
 LICENSE_FILE_BSD3CLAUSE=	${WRKSRC}/LICENSE.google-crc32c
 LICENSE_FILE_LGPL21=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-install:

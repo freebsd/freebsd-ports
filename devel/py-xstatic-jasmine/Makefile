@@ -14,7 +14,7 @@ WWW=		https://jasmine.github.io/ \
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

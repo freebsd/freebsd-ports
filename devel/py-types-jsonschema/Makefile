@@ -10,7 +10,7 @@ WWW=            https://pypi.org/project/types-jsonschema/
 
 LICENSE=        APACHE20
 
-USES=           python:3.7+
+USES=           python
 USE_PYTHON=     autoplist distutils
 NO_ARCH=        yes
 

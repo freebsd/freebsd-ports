@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytanque>=1.0:math/py-pytanque@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang python:3.5+
+USES=		compiler:c++14-lang python
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes

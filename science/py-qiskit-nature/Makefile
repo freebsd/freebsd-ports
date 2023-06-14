@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PY_DEPENDS} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ddt>0:devel/py-ddt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}joblib>0:devel/py-joblib@${PY_FLAVOR} # also threadctl is required but it is currently broken on FreeBSD
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # several tests fail with "No module named 'threadpoolctl'", see https://reviews.freebsd.org/D35513
 
 USE_GITHUB=	yes

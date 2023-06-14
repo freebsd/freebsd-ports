@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/CJKwrap/
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/licenses/COPYING.LESSER
 
-USES=	python:3.6+
+USES=	python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 

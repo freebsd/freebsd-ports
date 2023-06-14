@@ -50,7 +50,7 @@ PLIST_FILES+=	share/site-terminfo/${PORTNAME:C,^.,&/&,}
 
 OPTIONS_DEFINE=	DOCS
 
-DOCS_USES=		python:3.4+,build
+DOCS_USES=		python:build
 DOCS_BUILD_DEPENDS=	mdbook:textproc/mdbook \
 			mdbook-linkcheck:textproc/mdbook-linkcheck \
 			mdbook-mermaid:textproc/mdbook-mermaid

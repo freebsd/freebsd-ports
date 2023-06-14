@@ -12,7 +12,7 @@ WWW=		https://freedesktop.org/wiki/Software/pyxdg/
 LICENSE=	LGPL20
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils pytest # 2 tests fail, see https://gitlab.freedesktop.org/xdg/pyxdg/-/issues/26
 
 post-patch:

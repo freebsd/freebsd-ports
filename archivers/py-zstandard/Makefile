@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.8.0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
-USES=		localbase python:3.7+
+USES=		localbase python
 USE_PYTHON=	distutils autoplist
 #PYDISTUTILS_BUILDARGS=	--system-zstd # breaks in runtime due to version mismatch, keep disabled until this is fixed: https://github.com/indygreg/python-zstandard/issues/132
 

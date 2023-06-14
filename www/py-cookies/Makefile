@@ -10,7 +10,7 @@ WWW=		https://github.com/sashahart/cookies
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes

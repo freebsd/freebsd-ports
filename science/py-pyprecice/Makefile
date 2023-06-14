@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 LIB_DEPENDS=	libprecice.so:science/precice
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		localbase pkgconfig python:3.6+
+USES=		localbase pkgconfig python
 USE_PYTHON=	distutils cython autoplist pytest
 
 USE_GITHUB=	yes

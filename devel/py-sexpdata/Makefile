@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/sexpdata/ \
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	jd-boyd
 USE_PYTHON=	autoplist distutils pytest

@@ -42,7 +42,7 @@ PATCHFILES+=		d5f4cfd3b0da.patch # https://gitlab.freedesktop.org/mesa/piglit/-/
 PATCHFILES+=		64c468c6c7e3.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
 PATCHFILES+=		681e86f53c2e.patch # https://gitlab.freedesktop.org/mesa/piglit/-/merge_requests/383
 
-USES=		cmake compiler:c11 gl pkgconfig python:3.5+ shebangfix xorg
+USES=		cmake compiler:c11 gl pkgconfig python shebangfix xorg
 USE_GL=		egl gbm gl glu
 USE_XORG=	x11 xcb xext xrender
 SHEBANG_FILES=	piglit

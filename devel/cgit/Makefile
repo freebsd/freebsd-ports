@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 TEST_DEPENDS=	msgfmt:devel/gettext-tools
 
 GIT_VERSION=	2.25.1
-USES=		compiler:c++11-lang cpe gmake iconv perl5 python:3.2+,env \
+USES=		compiler:c++11-lang cpe gmake iconv perl5 python:env \
 		shebangfix ssl tar:xz
 CPE_VENDOR=	lars_hjemli
 USE_PERL5=	test

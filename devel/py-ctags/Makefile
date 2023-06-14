@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/python-ctags/
 
 LICENSE=	LGPL20+
 
-USES=		python:3.6-3.9
+USES=		python:3.8-3.9
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>

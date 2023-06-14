@@ -11,7 +11,7 @@ WWW=		https://github.com/asweigart/pymsgbox
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

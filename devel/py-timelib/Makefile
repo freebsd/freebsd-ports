@@ -8,7 +8,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Parse English textual date descriptions
 WWW=		https://pypi.org/project/timelib/
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

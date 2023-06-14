@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC_tests}/LICENSE
 BUILD_DEPENDS=	${_MY_DEPENDS}
 RUN_DEPENDS=	${_MY_DEPENDS}
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	nodefault
 GH_TUPLE=	netsaj:python-${PORTNAME}:7cb32ab8188cbfecb91034cbf7803394ed1c25b6:tests
 USE_PYTHON=	autoplist concurrent distutils

@@ -23,7 +23,7 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils cython autoplist pytest # tests fail, see https://github.com/scikit-umfpack/scikit-umfpack/issues/77
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

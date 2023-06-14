@@ -33,7 +33,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${
 		git:devel/git \
 		svn:devel/subversion
 
-USES=		cpe python:3.7+ shebangfix
+USES=		cpe python shebangfix
 CPE_VENDOR=	pypa
 USE_PYTHON=	autoplist concurrent distutils pytest
 

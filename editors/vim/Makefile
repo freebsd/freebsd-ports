@@ -137,7 +137,7 @@ LUA_USES=		lua
 PERL_CONFIGURE_ENABLE=	perlinterp
 PERL_USES=		perl5
 
-PYTHON_USES=		python:3.6+
+PYTHON_USES=		python
 PYTHON_USES_OFF=	python:env
 PYTHON_CONFIGURE_ENABLE=	python3interp
 PYTHON_CONFIGURE_WITH=	python3-command=${PYTHON_CMD}

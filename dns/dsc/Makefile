@@ -16,7 +16,7 @@ RUN_DEPENDS=	libpcap>=1.8.1:net/libpcap \
 		p5-Proc-PID-File>=1.28:devel/p5-Proc-PID-File \
 		p5-XML-Simple>=2.24:textproc/p5-XML-Simple
 
-USES=		gmake localbase perl5 python:3.6+ shebangfix
+USES=		gmake localbase perl5 python shebangfix
 USE_RC_SUBR=	dsc
 SHEBANG_FILES=	src/dsc-psl-convert
 

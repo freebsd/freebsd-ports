@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR}
 TEST_DEPENDS=	tidy5:www/tidy-html5
 
 # Actually 2.7,3.4+
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 PYDISTUTILS_BUILDARGS=	build_ext -i

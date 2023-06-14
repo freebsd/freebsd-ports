@@ -103,7 +103,7 @@ post-install:
 PORTSCOUT=	ignore:1
 
 NO_ARCH=	yes
-USES+=		python:3.3+ shebangfix
+USES+=		python shebangfix
 SHEBANG_FILES=	src/api/python/speechd_config/spd-conf
 USE_PYTHON=	flavors
 LIB_DEPENDS+=	libspeechd.so:accessibility/speech-dispatcher

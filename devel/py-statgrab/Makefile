@@ -15,7 +15,7 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libstatgrab.so:devel/libstatgrab
 
-USES=		pkgconfig python:3.6+
+USES=		pkgconfig python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

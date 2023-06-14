@@ -12,7 +12,7 @@ WWW=		https://github.com/mrj0/jep
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils
 
 CONFIGURE_ENV=	JAVA_HOME=${JAVA_HOME}

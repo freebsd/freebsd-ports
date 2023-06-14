@@ -72,7 +72,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
 USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gnome iconv:wchar_t jpeg \
-		localbase:ldflags ninja perl5 pkgconfig python:3.7+,build qt:5 shebangfix \
+		localbase:ldflags ninja perl5 pkgconfig python:build qt:5 shebangfix \
 		tar:xz xorg
 
 CPE_VENDOR=	google

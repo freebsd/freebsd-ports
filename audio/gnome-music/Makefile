@@ -27,7 +27,7 @@ RUN_DEPENDS=	grilo-plugins>0:net/grilo-plugins
 PORTSCOUT=	limitw:1,even
 
 USES=		desktop-file-utils gettext gnome gstreamer localbase meson pkgconfig \
-		python:3.4+ shebangfix tar:xz
+		python shebangfix tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gtk40 introspection pygobject3
 USE_GSTREAMER=	mpg123 ogg

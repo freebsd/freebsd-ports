@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}texttable>=1.6.2:textproc/py-texttable@${PY_
 		${PYTHON_PKGNAMEPREFIX}cairocffi>0:graphics/py-cairocffi@${PY_FLAVOR}
 TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 
-USES=		bison gnome pkgconfig python:3.6+
+USES=		bison gnome pkgconfig python
 USE_PYTHON=	distutils concurrent autoplist
 USE_GNOME=	libxml2
 

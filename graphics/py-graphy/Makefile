@@ -12,7 +12,7 @@ WWW=		https://code.google.com/archive/p/graphy/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+,run tar:bzip2
+USES=		python:run tar:bzip2
 USE_PYTHON=	flavors
 
 PORTDOCS=	README

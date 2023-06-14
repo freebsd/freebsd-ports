@@ -14,7 +14,7 @@ RUN_DEPENDS=	lxmf>0:net-p2p/lxmf \
 		${PYTHON_PKGNAMEPREFIX}urwid>=0:devel/py-urwid@${PY_FLAVOR} \
 		reticulum>0:net-p2p/reticulum
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

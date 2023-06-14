@@ -49,7 +49,7 @@ OCTAVE_LIB_DEPENDS=	liboctave.so:math/octave
 OCTAVE_SUB_FILES=	pkg-message-octave
 OCTAVE_USES=		octave:env
 
-PYTHON_USES=		python:3.6+
+PYTHON_USES=		python
 PYTHON_USE=		PYTHON=cython
 PYTHON_MAKE_ARGS=	python_cmd=${PYTHON_CMD} python_package=full
 PYTHON_MAKE_ARGS_OFF=	python_package="none"

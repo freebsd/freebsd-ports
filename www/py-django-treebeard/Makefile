@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django32>=3.2:www/py-django32@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-django>=4.0:devel/py-pytest-django@${PY_FLAVOR}
 
-USES=		pytest python:3.8+
+USES=		pytest python
 USE_PYTHON=	autoplist concurrent distutils
 
 TEST_ENV=	DATABASE_ENGINE=sqlite

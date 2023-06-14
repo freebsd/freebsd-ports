@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ntc-templates>=2.0.0:textproc/py-ntc-templat
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.3:devel/py-yaml@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.7+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent pep517
 USE_GITHUB=	yes
 GH_ACCOUNT=	ktbyers

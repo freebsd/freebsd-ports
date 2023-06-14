@@ -32,7 +32,7 @@ LIB_DEPENDS=	libportal.so:deskutils/libportal \
 		libxml2.so:textproc/libxml2
 
 USES=		compiler:c++11-lib cpe desktop-file-utils gettext gnome gstreamer meson \
-		ninja pkgconfig python:3.4+,build shebangfix sqlite tar:xz vala:build xorg
+		ninja pkgconfig python:build shebangfix sqlite tar:xz vala:build xorg
 CPE_VENDOR=	gnome
 USE_GNOME=	cairo dconf gtk30
 USE_LDCONFIG=	yes

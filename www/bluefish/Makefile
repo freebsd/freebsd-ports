@@ -16,7 +16,7 @@ LIB_DEPENDS=	libenchant-2.so:textproc/enchant2 \
 		libpcre2-8.so:devel/pcre2
 
 USES=		desktop-file-utils gettext gmake gnome libtool localbase \
-		pkgconfig python:3.0-3.9 shared-mime-info shebangfix tar:bzip2
+		pkgconfig python:3.8-3.9 shared-mime-info shebangfix tar:bzip2
 USE_GNOME=	cairo gdkpixbuf2 intltool libxml2
 SHEBANG_FILES=	data/css_decompressor data/cssmin.py data/jsbeautify \
 		data/jsmin.py data/lorem-ipsum-generator \

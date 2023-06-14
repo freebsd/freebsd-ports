@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 LIB_DEPENDS=	libipopt.so:math/ipopt
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		compiler:c++17-lang pkgconfig python:3.6+
+USES=		compiler:c++17-lang pkgconfig python
 USE_PYTHON=	distutils autoplist pytest
 
 CXXFLAGS+=	$(pkg-config --cflags ipopt)

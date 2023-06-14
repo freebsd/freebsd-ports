@@ -13,7 +13,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	rocky
 GH_PROJECT=	shell-term-background
 
-USES=		python:3.7+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils
 SHEBANG_FILES=	term-background.*
 

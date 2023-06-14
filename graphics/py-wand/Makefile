@@ -12,7 +12,7 @@ WWW=		https://github.com/emcconville/wand
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		magick python:3.6+
+USES=		magick python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

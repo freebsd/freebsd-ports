@@ -13,7 +13,7 @@ LICENSE=	MIT
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	zhuyifei1999
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	cython distutils
 
 .if ! defined(WITH_DEBUG)

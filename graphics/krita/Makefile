@@ -43,7 +43,7 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 # Disable ninja generator for now (with gmake), until the duplicate test targets are resolved upstream.
 USES=		cmake compiler:c++11-lib desktop-file-utils \
 		eigen:3 gettext jpeg kde:5 localbase:ldflags pkgconfig \
-		python:3.7+ qt:5 shared-mime-info tar:xz xorg
+		python qt:5 shared-mime-info tar:xz xorg
 USE_KDE=	archive completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews kio service widgetsaddons windowsystem
 USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \

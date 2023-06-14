@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	dfir-iris
 GH_TAGNAME=	39744a0396483015347f2d8066219ab773f5c581
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

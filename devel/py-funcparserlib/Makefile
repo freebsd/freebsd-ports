@@ -10,7 +10,7 @@ WWW=		https://funcparserlib.pirx.ru/
 
 LICENSE=	MIT
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

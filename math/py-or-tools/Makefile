@@ -41,7 +41,7 @@ LIB_DEPENDS=	libabsl_base.so:devel/abseil \
 		libre2.so:devel/re2
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		blaslapack cmake:insource compiler:c++17-lang eigen:3 pkgconfig python:3.6+
+USES=		blaslapack cmake:insource compiler:c++17-lang eigen:3 pkgconfig python
 USE_PYTHON=	flavors pytest # tests fail, see https://github.com/google/or-tools/issues/3464
 
 USE_GITHUB=	yes

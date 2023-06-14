@@ -9,7 +9,7 @@ WWW=		https://picard.musicbrainz.org/plugins/
 LICENSE=	GPLv2+ GPLv3+ MIT WTFPL
 LICENSE_COMB=	multi
 
-USES=		python:3.7+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	metabrainz

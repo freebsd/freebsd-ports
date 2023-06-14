@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ta-lib>0:finance/py-ta-lib@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/twopirllc/pandas-ta/issues/631
 
 USE_GITHUB=	yes

@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libva.so:multimedia/libva
 
 USES=		bison compiler:c11 gettext-runtime gl gnome gstreamer libtool \
-		meson ninja pkgconfig python:3.8+,build tar:xz xorg
+		meson ninja pkgconfig python:build tar:xz xorg
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20
 USE_GSTREAMER=	bad

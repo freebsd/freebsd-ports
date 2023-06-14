@@ -12,7 +12,7 @@ WWW=		https://bitbucket.org/marcusva/py-dynrules
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/doc/copying.rst
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

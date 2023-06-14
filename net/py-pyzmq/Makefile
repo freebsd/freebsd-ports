@@ -16,7 +16,7 @@ LICENSE_FILE_LGPL3=		${WRKSRC}/LICENSE.LESSER
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR}
 LIB_DEPENDS=	libzmq.so:net/libzmq4
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist cython pytest # 3 tests fail, see https://github.com/zeromq/pyzmq/issues/1802
 
 PYDISTUTILS_CONFIGUREARGS=	--zmq=${LOCALBASE}

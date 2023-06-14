@@ -11,7 +11,7 @@ WWW=		https://github.com/mrapacz/disjoint-set
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes

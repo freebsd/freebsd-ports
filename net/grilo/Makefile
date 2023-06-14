@@ -15,7 +15,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 		libtotem-plparser.so:multimedia/totem-pl-parser
 
 USES=		cpe gettext gnome localbase meson pathfix pkgconfig \
-		python:3.7+,build tar:xz vala:build
+		python:build tar:xz vala:build
 CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
 USE_GNOME=	glib20 introspection:build libxml2

@@ -22,7 +22,7 @@ LIB_DEPENDS=	libarb.so:math/arb \
 		libsymengine.so:math/symengine
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR} # see https://github.com/symengine/symengine.py/issues/416
 
-USES=		cmake compiler:c++11-lang python:3.7+
+USES=		cmake compiler:c++11-lang python
 USE_PYTHON=	cython flavors pytest
 
 USE_GITHUB=	yes

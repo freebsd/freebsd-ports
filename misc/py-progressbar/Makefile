@@ -14,7 +14,7 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist concurrent distutils
-USES=		python:3.6+
+USES=		python
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}progressbar231
 

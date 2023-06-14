@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boost-histogram>=1.0:misc/py-boost-histogram@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang python:3.8+
+USES=		compiler:c++14-lang python
 USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes

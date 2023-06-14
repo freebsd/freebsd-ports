@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	haiwen
 GH_TAGNAME=	54145b0
 
-USES=		autoreconf gettext libtool pathfix pkgconfig python:3.6+ shebangfix
+USES=		autoreconf gettext libtool pathfix pkgconfig python shebangfix
 SHEBANG_FILES=	lib/searpc-codegen.py
 USE_LDCONFIG=	yes
 

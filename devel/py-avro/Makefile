@@ -11,7 +11,7 @@ WWW=		https://avro.apache.org/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/avro/LICENSE
 
-USES=		cpe python:3.6+
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

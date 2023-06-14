@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyee>=9.0.0:devel/py-pyee@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pylibsrtp>=0.5.6:devel/py-pylibsrtp@${PY_FLAVOR}
 
-USES=		localbase python:3.5+
+USES=		localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

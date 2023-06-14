@@ -16,7 +16,7 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libfreetype.so:print/freetype2 \
 		libfontconfig.so:x11-fonts/fontconfig
 
-USES=		autoreconf compiler:c11 cpe pkgconfig python:3.7+ readline xorg
+USES=		autoreconf compiler:c11 cpe pkgconfig python readline xorg
 USE_XORG=	ice sm x11 xext xft xrandr xrender xt
 
 CONFLICTS_INSTALL=	fvwm

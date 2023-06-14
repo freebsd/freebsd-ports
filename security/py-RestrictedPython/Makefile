@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/RestrictedPython/
 
 LICENSE=	ZPL21
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BROKEN_SSL=	openssl30 openssl31
 BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 libcrypt.so
 
-USES=		python:3.7+ ssl
+USES=		python ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 GH_ACCOUNT=	nabla-c0d3

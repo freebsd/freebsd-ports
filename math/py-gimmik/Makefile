@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
 
-USES=		python:3.3+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

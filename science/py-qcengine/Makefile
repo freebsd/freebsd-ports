@@ -31,7 +31,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}geometric>0:science/py-geometric@${PY_FLAVOR}
 		# last dependencies above are for specific quantum chemistry packages to test with TODO torchani,openmm,psi4,torsiondrive,mdi
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils concurrent autoplist pytest # 1 test fails, see https://github.com/MolSSI/QCEngine/issues/377, psi4 test hangs, see https://github.com/MolSSI/QCEngine/issues/390
 
 NO_ARCH=	yes

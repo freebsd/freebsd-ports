@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/widgetsnbextension/
 BUILD_DEPENDS=	npm>=0:www/npm \
 		${PYTHON_PKGNAMEPREFIX}jupyter-packaging>0:devel/py-jupyter-packaging@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

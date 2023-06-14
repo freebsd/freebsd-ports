@@ -10,7 +10,7 @@ WWW=		https://bitbucket.org/bodhisnarkva/cbor
 
 LICENSE=	APACHE20
 
-USES=		compiler python:3.6+
+USES=		compiler python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

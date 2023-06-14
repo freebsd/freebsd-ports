@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}clang>0:devel/py-clang@${PY_FLAVOR} \
 		llvm${LLVMVER}>0:devel/llvm${LLVMVER} \
 		pybind11>=2.6:devel/pybind11
 
-USES=		python:3.6+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	CadQuery

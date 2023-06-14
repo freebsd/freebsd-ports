@@ -65,8 +65,8 @@ MANPAGES_CONFIGURE_WITH=	sphinx
 
 OPENMP_CONFIGURE_ON=	--with-openmp
 
-PYTHON_USES=		python:3.6+
-PYTHON_USES_OFF=	python:3.6+,build
+PYTHON_USES=		python
+PYTHON_USES_OFF=	python:build
 PYTHON_CONFIGURE_ON=	--with-python-versions=${PYTHON_VER}
 PYTHON_CONFIGURE_OFF=	--no-install-python-module
 

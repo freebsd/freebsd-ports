@@ -15,7 +15,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	yt-dlp:www/yt-dlp
 RUN_DEPENDS=	yt-dlp:www/yt-dlp
 
-USES=	python:3.6+
+USES=	python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-patch:

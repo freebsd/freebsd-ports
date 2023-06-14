@@ -24,7 +24,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 # compiler:c++11-lang is needed for powerpc64
 USES=		cmake compiler:c++11-lang gnome localbase:ldflags \
-		pkgconfig python:3.5+,build xorg
+		pkgconfig python:build xorg
 
 USE_GNOME=	cairo
 USE_XORG=	xcb

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sysctl>0:devel/py-sysctl@${PY_FLAVOR}
 
-USES=		python:3.7+,run shebangfix
+USES=		python:run shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jimsalterjrs

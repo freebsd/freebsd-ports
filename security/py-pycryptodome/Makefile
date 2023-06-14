@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodome-test-vectors>=0:security/py-pycryptodome-test-vectors@${PY_FLAVOR}
 
 # Officially: 2.7, 3.5-3.10
-USES=		cpe python:3.7+
+USES=		cpe python
 CPE_VENDOR=	python
 USE_PYTHON=	autoplist distutils
 

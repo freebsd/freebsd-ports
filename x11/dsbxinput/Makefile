@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	xinput:x11/xinput
 
-USES=		pyqt:5 python:3.8+ qt:5
+USES=		pyqt:5 python qt:5
 USE_QT=		linguisttools:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	mrclksr

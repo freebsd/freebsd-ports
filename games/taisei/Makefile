@@ -25,7 +25,7 @@ GH_ACCOUNT=	taisei-project
 GH_TUPLE=	taisei-project:SDL_GameControllerDB:74e31d7:gamecontrollerdb/external/gamecontrollerdb
 
 USES=		compiler:c11 desktop-file-utils meson pkgconfig \
-		python:3.6+,build sdl ssl shebangfix shared-mime-info
+		python:build sdl ssl shebangfix shared-mime-info
 SHEBANG_FILES=	scripts/*.py
 MESON_ARGS=	-Dversion_fallback=${PORTVERSION} -Db_lto=false
 MESON_ARGS+=	--wrap-mode=nofallback

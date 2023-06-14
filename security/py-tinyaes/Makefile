@@ -11,7 +11,7 @@ WWW=		https://github.com/naufraghi/tinyaes-py
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 post-install:

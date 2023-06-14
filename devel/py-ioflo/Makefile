@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE-2.0.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-git>=1.1:devel/py-setuptools-git@${PY_FLAVOR}
 
-USES=		python:3.7+ shebangfix
+USES=		python shebangfix
 
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes

@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>0:devel/py-deprecated@${PY_FLAVOR
 		vtk${VTK_VER:R}>0:math/vtk${VTK_VER:R} \
 		bash:shells/bash
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils concurrent autoplist
 
 SHEBANG_GLOB=	*.sh

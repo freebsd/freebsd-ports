@@ -17,7 +17,7 @@ BUILD_DEPENDS=	llvm15>=15.0:devel/llvm15 \
 		spirv-llvm-translator-llvm15>0:devel/spirv-llvm-translator@llvm15 \
 		libedit>=0:devel/libedit
 
-USES=		cmake compiler:c++11-lib python:3.6+,build tar:xz
+USES=		cmake compiler:c++11-lib python:build tar:xz
 USE_LDCONFIG=	yes
 
 BINARY_ALIAS=	python=${PYTHON_CMD}

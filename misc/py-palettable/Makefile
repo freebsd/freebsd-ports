@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes

@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYNUMPY}
 LIB_DEPENDS=	libgsl.so:math/gsl
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++11-lang localbase python:3.6+ pytest
+USES=		compiler:c++11-lang localbase python pytest
 USE_PYTHON=	distutils autoplist
 
 pre-test:

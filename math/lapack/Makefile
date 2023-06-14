@@ -72,7 +72,7 @@ PLIST_SUB+=		BLAS="@comment " CBLAS="@comment " LAPACK="@comment " XLAPACK="" LA
 # BUILD_TESTING to get tmglib.
 LIB_DEPENDS+=		libblas.so:math/blas
 . if defined(MAINTAINER_MODE)
-USES+=			python:3.6+,build,test
+USES+=			python:build,test
 . endif
 CMAKE_ON+=		USE_OPTIMIZED_BLAS BUILD_TESTING
 CMAKE_ARGS+=		-DBLAS_LIBRARIES="${LOCALBASE}/lib/libblas.so"

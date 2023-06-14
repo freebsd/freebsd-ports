@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}easyprocess>0:devel/py-easyprocess@${PY_FLAVOR} \
 		${PY_PILLOW}
 
-USES=		magick:6,run python:3.6+
+USES=		magick:6,run python
 
 NO_ARCH=	yes
 USE_PYTHON=	autoplist distutils

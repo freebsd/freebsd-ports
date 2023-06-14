@@ -11,7 +11,7 @@ WWW=		https://github.com/michael-lazar/mailcap_fix
 LICENSE=	UNLICENSE
 LICENSE_FILE=	${WRKSRC}/UNLICENSE
 
-USES=		python:3.6+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	michael-lazar

@@ -23,7 +23,7 @@ OPTIONS_SUB=	yes
 OPTIONS_EXCLUDE=	WX
 .endif
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils py3kplist
 NO_ARCH=	yes
 

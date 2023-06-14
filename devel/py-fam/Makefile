@@ -13,7 +13,7 @@ WWW=		http://python-fam.sourceforge.net/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+ fam
+USES=		python fam
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.options.mk>

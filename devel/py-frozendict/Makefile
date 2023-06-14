@@ -12,7 +12,7 @@ WWW=		https://github.com/Marco-Sulla/python-frozendict
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ARGS=	custom_arg=c

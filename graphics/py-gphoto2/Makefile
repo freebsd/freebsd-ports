@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	libgphoto2.so:graphics/libgphoto2
 
-USES=		pkgconfig python:3.6+ shebangfix
+USES=		pkgconfig python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	examples/*.py
 

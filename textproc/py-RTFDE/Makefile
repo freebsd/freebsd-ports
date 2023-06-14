@@ -13,7 +13,7 @@ LICENSE=	LGPL3
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lark>=0.11:devel/py-lark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}oletools>=0.56:devel/py-oletools@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

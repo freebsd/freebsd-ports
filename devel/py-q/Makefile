@@ -10,7 +10,7 @@ WWW=		https://github.com/zestyping/q
 
 LICENSE=	APACHE20
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist concurrent
 
 NO_ARCH=	yes

@@ -13,7 +13,7 @@ LIB_DEPENDS=	libftdi1.so:devel/libftdi1 \
 		libboost_python${PYTHON_SUFFIX}.so:devel/boost-python-libs
 BUILD_DEPENDS=	gsed:textproc/gsed
 
-USES=		compiler:c++11-lang gmake pkgconfig python:3.3+ shebangfix
+USES=		compiler:c++11-lang gmake pkgconfig python shebangfix
 
 SHEBANG_FILES=	${WRKSRC}/icebox/*.py \
 		${WRKSRC}/icebox/Makefile

@@ -46,7 +46,7 @@ LIB_DEPENDS_powerpc=	libluajit-5.1.so:lang/luajit
 LIB_DEPENDS_powerpc64=	libluajit-5.1.so:lang/luajit-openresty
 LIB_DEPENDS_powerpc64le=	libluajit-5.1.so:lang/luajit-openresty
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl gnome lua pkgconfig python:3.4+ \
+USES=		cmake compiler:c++17-lang desktop-file-utils gl gnome lua pkgconfig python \
 		qt:6 xorg
 USE_QT=		base svg tools:build
 USE_GNOME=	glib20

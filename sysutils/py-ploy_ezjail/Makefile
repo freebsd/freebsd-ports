@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lazy>0:devel/py-lazy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ploy>=2.0.0:sysutils/py-ploy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
 
-USES=		pytest python:3.6+
+USES=		pytest python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

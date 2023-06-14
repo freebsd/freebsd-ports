@@ -23,7 +23,7 @@ LIB_DEPENDS=	libcint.so:science/libcint \
 		libxcfun.so:science/xcfun
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		fortran blaslapack:openblas compiler:c++11-lang python:3.6+
+USES=		fortran blaslapack:openblas compiler:c++11-lang python
 USE_PYTHON=	distutils autoplist pytest # 3818 warnings, 57 errors in tests, see https://github.com/pyscf/pyscf/issues/1536
 USE_GITHUB=	yes
 

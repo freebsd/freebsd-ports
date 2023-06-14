@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>0:devel/py-pyasn1@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyasn1-modules>0:devel/py-pyasn1-modules@${PY_FLAVOR}
 
-USES=		ldap python:3.6+
+USES=		ldap python
 USE_PYTHON=	autoplist distutils
 
 post-patch:

@@ -15,7 +15,7 @@ RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss \
 		${PYTHON_PKGNAMEPREFIX}pycryptodomex>0:security/py-pycryptodomex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		cpe python:3.5+ shebangfix
+USES=		cpe python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	Tautulli
 GH_PROJECT=	Tautulli

@@ -20,7 +20,7 @@ LIB_DEPENDS=	libmpich.so:net/mpich \
 		libslepc.so:math/slepc
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		fortran python:3.6+
+USES=		fortran python
 USE_PYTHON=	distutils cython autoplist pytest
 
 MAKE_ENV=	PETSC_DIR=${LOCALBASE} SLEPC_DIR=${LOCALBASE}

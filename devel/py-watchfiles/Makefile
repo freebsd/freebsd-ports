@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.13<0.15:devel/py-maturin@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyio>=3.0.0:devel/py-anyio@${PY_FLAVOR}
 
-USES=		cargo dos2unix python:3.7+
+USES=		cargo dos2unix python
 USE_PYTHON=	autoplist concurrent pep517
 
 CARGO_BUILD=	no

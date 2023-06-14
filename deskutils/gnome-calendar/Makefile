@@ -26,7 +26,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gettext gnome \
-		localbase:ldflags meson pkgconfig python:3.4+,build tar:xz
+		localbase:ldflags meson pkgconfig python:build tar:xz
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo evolutiondataserver3 gtksourceview3 libadwaita
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

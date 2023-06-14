@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}acme>=${ACME_VERSION},1:security/py-acme@${P
 		${PYTHON_PKGNAMEPREFIX}dnslib>=0.9.0:dns/py-dnslib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>5.0.0:devel/py-mock@${PY_FLAVOR} \
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

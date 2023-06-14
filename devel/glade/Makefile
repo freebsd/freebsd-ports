@@ -36,7 +36,7 @@ GJS_MESON_ENABLED=	gjs
 GJS_LIB_DEPENDS=	libgjs.so:lang/gjs
 
 PYTHON_MESON_ENABLED=	python
-PYTHON_USES=		python:3.4+
+PYTHON_USES=		python
 PYTHON_USE=		GNOME=pygobject3
 
 WEBKIT_DESC=		Webkit glade support

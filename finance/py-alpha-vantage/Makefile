@@ -17,7 +17,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/RomelTorres/alpha_vantage/issues/340
 
 USE_GITHUB=	yes

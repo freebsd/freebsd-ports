@@ -43,7 +43,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libjansson.so:devel/jansson
 
 USES=		autoreconf:build compiler:c11 gmake iconv libtool:build \
-		localbase:ldflags ninja:build pkgconfig python:3.6+,build
+		localbase:ldflags ninja:build pkgconfig python:build
 
 CONTRIB_FILES=	SVT-AV1-v1.4.1.tar.gz \
 		fdk-aac-2.0.2.tar.gz \

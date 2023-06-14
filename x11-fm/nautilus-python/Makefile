@@ -11,7 +11,7 @@ WWW=		https://wiki.gnome.org/Projects/NautilusPython
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake gnome libtool localbase pathfix pkgconfig python:3.6+ \
+USES=		gmake gnome libtool localbase pathfix pkgconfig python \
 		tar:xz
 USE_GNOME=	cairo gdkpixbuf2 nautilus3 pygobject3
 USE_LDCONFIG=	yes

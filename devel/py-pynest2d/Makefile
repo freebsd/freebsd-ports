@@ -19,7 +19,7 @@ LIB_DEPENDS=	libpolyclipping.so:graphics/polyclipping \
 		libboost_system.so:devel/boost-libs \
 		libnlopt.so:math/nlopt
 
-USES=		python:3.6+ cmake compiler:c++11-lang pyqt:5 pkgconfig
+USES=		python cmake compiler:c++11-lang pyqt:5 pkgconfig
 USE_PYTHON=	flavors
 
 USE_GITHUB=	yes

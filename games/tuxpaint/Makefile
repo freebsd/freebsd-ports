@@ -22,7 +22,7 @@ RUN_DEPENDS=	anytopnm:graphics/netpbm \
 		bash:shells/bash
 
 USES=		gettext gmake gnome gperf magick:7,build pkgconfig \
-		python:3.7+ sdl shebangfix
+		python sdl shebangfix
 SHEBANG_FILES=	src/tuxpaint-import.sh \
 		fonts/locale/zh_tw_docs/maketuxfont.py
 

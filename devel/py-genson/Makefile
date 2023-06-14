@@ -14,7 +14,7 @@ LICENSE=	MIT
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.1:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.4+ shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	bin/genson.py
 USE_PYTHON=	autoplist concurrent distutils
 

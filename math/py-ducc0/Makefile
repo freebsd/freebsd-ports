@@ -17,7 +17,7 @@ BROKEN_i386=	non-constant-expression cannot be narrowed from type 'long long' to
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++17-lang python:3.6+
+USES=		compiler:c++17-lang python
 
 USE_PYTHON=	distutils autoplist pytest
 

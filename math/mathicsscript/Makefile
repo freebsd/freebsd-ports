@@ -33,7 +33,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	Mathics3
 
-USES=		python:3.8+ readline shebangfix
+USES=		python readline shebangfix
 USE_PYTHON=	distutils noflavors
 SHEBANG_GLOB=	*.py
 

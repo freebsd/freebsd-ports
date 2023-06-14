@@ -20,7 +20,7 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 		libunistring.so:devel/libunistring
 
 USES=		gettext gnome iconv:wchar_t localbase:ldflags meson pkgconfig \
-		python:3.6+,build tar:xz
+		python:build tar:xz
 USE_GNOME=	gtk40 introspection
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xcffib>=0.5.0:x11/py-xcffib@${PY_FLAVOR} \
 
 USE_GNOME=	pygobject3
 
-USES=		gnome python:3.7+ localbase
+USES=		gnome python localbase
 USE_PYTHON=	distutils autoplist noflavors
 NO_ARCH=	yes
 

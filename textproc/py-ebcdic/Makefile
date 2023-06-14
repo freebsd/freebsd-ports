@@ -11,7 +11,7 @@ WWW=		https://github.com/roskakori/CodecMapper
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.8+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	roskakori
 GH_PROJECT=	CodecMapper

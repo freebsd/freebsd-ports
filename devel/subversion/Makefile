@@ -33,7 +33,7 @@ TOOLS_DESC=		Install several tools
 
 SVNSERVE_WRAPPER_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-svnserve-wrapper
 
-USES+=			shebangfix python:3.5+,env
+USES+=			shebangfix python:env
 python_OLD_CMD+=	"/bin/env python"
 SHEBANG_REGEX=		./tools/.*
 

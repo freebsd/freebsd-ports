@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}skyfield>0:astro/py-skyfield@${PY_FLAVOR}\
 #GH_ACCOUNT=	Kosmorro
 #GH_PROJECT=	lib
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	pep517
 
 PLIST_SUB=	VE=${PORTVERSION}

@@ -11,7 +11,7 @@ WWW=		https://gpsd.gitlab.io/gpsd/index.html
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe pathfix pkgconfig python:3.6+ scons
+USES=		cpe pathfix pkgconfig python scons
 CPE_VENDOR=	gpsd_project
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	gpsd

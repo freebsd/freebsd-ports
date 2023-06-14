@@ -48,7 +48,7 @@ LUA_USES=		lua
 LUA_CMAKE_BOOL=		WITH_LUA
 LUA_PLIST_FILES=	lib/texworks/libTWLuaPlugin.so
 
-PYTHON_USES=		python:3.4+
+PYTHON_USES=		python
 PYTHON_CMAKE_BOOL=	WITH_PYTHON
 PYTHON_PLIST_FILES=	lib/texworks/libTWPythonPlugin.so
 

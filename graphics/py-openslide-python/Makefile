@@ -13,7 +13,7 @@ LICENSE=	LGPL21
 RUN_DEPENDS=	openslide>0:graphics/openslide \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 post-install:

@@ -18,7 +18,7 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome localbase meson pkgconfig python:3.8+ tar:bz2
+USES=		gettext gnome localbase meson pkgconfig python tar:bz2
 USE_GNOME=	glib20 gtksourceview5 introspection:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dca_certificates=true \

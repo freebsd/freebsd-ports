@@ -18,6 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paver>0:devel/py-paver@${PY_FLAVOR} \
 
 NO_ARCH=	YES
 USE_PYTHON=	autoplist distutils
-USES=		python:3.6+
+USES=		python
 
 .include <bsd.port.mk>

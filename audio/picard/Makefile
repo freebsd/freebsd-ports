@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}discid>=1.0:audio/py-discid@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.2:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=2.0:www/py-pyjwt@${PY_FLAVOR}
 
-USES=		gettext pyqt:5 python:3.7+ desktop-file-utils
+USES=		gettext pyqt:5 python desktop-file-utils
 USE_LOCALE=	en_US.UTF-8
 USE_PYQT=	pyqt5:run sip
 USE_PYTHON=	autoplist distutils noflavors

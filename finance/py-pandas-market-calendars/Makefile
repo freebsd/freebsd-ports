@@ -21,7 +21,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
 USE_GITHUB=	yes

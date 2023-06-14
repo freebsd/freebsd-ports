@@ -18,7 +18,7 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome gstreamer localbase meson pkgconfig python:3.4+ tar:xz
+USES=		gettext gnome gstreamer localbase meson pkgconfig python tar:xz
 USE_GNOME=	gtk40 intlhack introspection
 USE_GSTREAMER=	bad flac ogg pulse
 USE_LDCONFIG=	yes

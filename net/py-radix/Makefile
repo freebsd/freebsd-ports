@@ -12,7 +12,7 @@ WWW=		https://github.com/mjschultz/py-radix
 LICENSE=	ISCL BSD4CLAUSE
 LICENSE_COMB=	dual
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 post-install:

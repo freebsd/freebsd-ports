@@ -17,7 +17,7 @@ RUN_DEPENDS=	protobuf>=3.21.8,1:devel/protobuf \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=4.21.8,1:devel/py-protobuf@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-protobuf>=3.20.4:devel/py-types-protobuf@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

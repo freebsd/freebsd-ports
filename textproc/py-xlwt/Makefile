@@ -10,7 +10,7 @@ WWW=		https://www.python-excel.org/
 
 LICENSE=	BSD4CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libzim.so:devel/libzim \
 		libcurl.so:ftp/curl \
 		libmicrohttpd.so:www/libmicrohttpd
 
-USES=		compiler:c++11-lang meson pkgconfig python:3.6+ shebangfix
+USES=		compiler:c++11-lang meson pkgconfig python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	kiwix
 GH_TUPLE=	kiwix:${PORTNAME}:${PORTVERSION}:DEFAULT \

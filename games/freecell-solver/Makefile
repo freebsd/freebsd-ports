@@ -31,7 +31,7 @@ LIB_DEPENDS_powerpc=	libgmp.so:math/gmp
 OPTIONS_DEFINE=	DOCS TCMALLOC
 TCMALLOC_DESC=	Use Google's TCMalloc
 
-USES=		cmake compiler:c11 localbase perl5 python:3.4+ shebangfix tar:xz
+USES=		cmake compiler:c11 localbase perl5 python shebangfix tar:xz
 USE_PERL5=	build
 SHEBANG_FILES=	board_gen/make_pysol_freecell_board.py \
 		board_gen/transpose-freecell-board.py \

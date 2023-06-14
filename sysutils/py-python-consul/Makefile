@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/consul:sysutils/consul \
 				${PYTHON_PKGNAMEPREFIX}six>=1.4:devel/py-six@${PY_FLAVOR}
 
 # 2.7 or 3.6+, but it cannot be expressed right now.
-USES=	python:3.6+
+USES=	python
 
 USE_PYTHON=	distutils autoplist
 

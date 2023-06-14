@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 
-USES=		cpe php:flavors python:3.8+
+USES=		cpe php:flavors python
 USE_GITHUB=	yes
 USE_PHP=	ctype curl dom filter gd iconv mbstring mcrypt \
 		pdo session simplexml xml zlib

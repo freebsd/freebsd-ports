@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}gym>0:math/py-gym@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang gl localbase python:3.6+
+USES=		compiler:c++11-lang gl localbase python
 USE_PYTHON=	distutils autoplist
 USE_GL=		gl glew
 

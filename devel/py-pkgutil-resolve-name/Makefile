@@ -12,7 +12,7 @@ WWW=		https://github.com/graingert/pkgutil-resolve-name
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7-3.8
+USES=		python:3.8
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

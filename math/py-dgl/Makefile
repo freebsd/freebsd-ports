@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2.2:math/py-networkx@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}tqdm>0:misc/py-tqdm@${PY_FLAVOR} \
 		${BACKEND_DEPENDS}
 
-USES=		python:3.7+ localbase
+USES=		python localbase
 USE_PYTHON=	distutils cython autoplist
 
 WRKSRC_SUBDIR=	python

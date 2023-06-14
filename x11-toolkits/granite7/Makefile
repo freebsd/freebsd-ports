@@ -16,7 +16,7 @@ RUN_DEPENDS=	contractor:sysutils/contractor \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas \
 		xdg-desktop-portal>0:deskutils/xdg-desktop-portal
 
-USES=		gettext gnome meson pkgconfig python:3.7+,build tar:xz vala:build
+USES=		gettext gnome meson pkgconfig python:build tar:xz vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	cairo glib20 gtk40 gdkpixbuf2 introspection:build

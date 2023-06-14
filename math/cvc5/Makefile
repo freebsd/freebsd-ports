@@ -23,7 +23,7 @@ LIB_DEPENDS=	libantlr3c.so:devel/libantlr3c \
 		libboost_system.so:devel/boost-libs
 
 USES=		cmake:testing ncurses compiler:c++17-lang \
-		localbase:ldflags pkgconfig python:3.5+,build
+		localbase:ldflags pkgconfig python:build
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 

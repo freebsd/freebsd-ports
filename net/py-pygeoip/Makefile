@@ -11,7 +11,7 @@ WWW=		https://github.com/appliedsec/pygeoip
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes

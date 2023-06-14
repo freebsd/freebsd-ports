@@ -10,7 +10,7 @@ WWW=		https://github.com/pydicom/pydicom
 
 LICENSE=	MIT
 
-USES=		python:3.7+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

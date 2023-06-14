@@ -21,7 +21,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libstrophe.so:net-im/libstrophe \
 		libqrencode.so:graphics/libqrencode
 
-USES=		cpe gnome libtool ncurses pkgconfig python:3.8+ \
+USES=		cpe gnome libtool ncurses pkgconfig python \
 		readline sqlite:3 tar:xz
 CPE_VENDOR=	${PORTNAME}_project
 GNU_CONFIGURE=	yes

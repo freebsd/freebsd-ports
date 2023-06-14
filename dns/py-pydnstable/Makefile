@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libmtbl.so:devel/mtbl \
 		libdnstable.so:dns/dnstable
 
-USES=		pkgconfig python:3.6+
+USES=		pkgconfig python
 USE_PYTHON=	autoplist cython distutils
 
 post-install:

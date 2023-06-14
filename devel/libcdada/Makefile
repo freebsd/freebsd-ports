@@ -9,7 +9,7 @@ WWW=		https://github.com/msune/libcdada
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		autoreconf libtool pkgconfig python:3.8+ shebangfix
+USES=		autoreconf libtool pkgconfig python shebangfix
 SHEBANG_FILES=	tools/cdada-gen
 USE_GITHUB=	yes
 GNU_CONFIGURE=	yes

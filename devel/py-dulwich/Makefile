@@ -12,7 +12,7 @@ LICENSE=	APACHE20 GPLv2+
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe python:3.7+
+USES=		cpe python
 
 PORTDOCS=	AUTHORS NEWS README.rst TODO conclusion.txt encoding.txt \
 		file-format.txt index.txt introduction.txt object-store.txt \

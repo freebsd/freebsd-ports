@@ -31,7 +31,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>0:net/py-eventlet@${PY_FLAVOR} \
 
 NO_ARCH=	yes
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes

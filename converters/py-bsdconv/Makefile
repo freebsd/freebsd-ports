@@ -15,7 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	buganini
 GH_PROJECT=	python-${PORTNAME}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils
 
 PLIST_SUB=	PYTHON_SITELIBDIR=${PYTHON_SITELIBDIR:S|^${LOCALBASE}/||g}

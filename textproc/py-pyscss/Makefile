@@ -17,7 +17,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Kronuz
 GH_PROJECT=	pyScss
 
-USES=		python:3.6+ localbase:ldflags pytest:4
+USES=		python localbase:ldflags pytest:4
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

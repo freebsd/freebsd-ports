@@ -10,7 +10,7 @@ WWW=		https://github.com/Oslandia/pglite
 
 LICENSE=	LGPL20+
 
-USES=		python:3.6+ pgsql
+USES=		python pgsql
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 WANT_PGSQL=	server

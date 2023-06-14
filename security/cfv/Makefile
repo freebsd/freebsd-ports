@@ -14,7 +14,7 @@ LICENSE=	GPLv2+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	cfv-project

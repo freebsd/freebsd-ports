@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>0:devel/py-importlib-meta
 		${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR} \
 		git>0:devel/git
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist pep517
 
 post-patch:

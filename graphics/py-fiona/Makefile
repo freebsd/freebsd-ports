@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cligj>=0.4:devel/py-cligj@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=18.2:devel/py-attrs@${PY_FLAVOR}
 LIB_DEPENDS+=	libgdal.so:graphics/gdal
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	autoplist distutils cython
 
 CONFLICTS_INSTALL=	fio

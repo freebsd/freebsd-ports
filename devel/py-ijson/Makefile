@@ -11,7 +11,7 @@ WWW=		https://github.com/ICRAR/ijson
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 OPTIONS_DEFINE=	YAJL

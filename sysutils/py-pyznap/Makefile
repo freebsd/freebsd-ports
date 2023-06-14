@@ -20,7 +20,7 @@ RUN_DEPENDS=	lzop:archivers/lzop \
 #		${PYTHON_PKGNAMEPREFIX}pytest-runner>0:devel/py-pytest-runner@${PY_FLAVOR} \
 #		faketime:devel/faketime
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

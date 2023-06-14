@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hidapi>0:comms/py-hidapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}uhid-freebsd>0:devel/py-uhid-freebsd@${PY_FLAVOR} \
 		u2f-host:security/libu2f-host
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 SUB_FILES=	pkg-message

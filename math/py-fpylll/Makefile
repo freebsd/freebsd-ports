@@ -29,7 +29,7 @@ TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 USE_GITHUB=	yes
 GH_ACCOUNT=	fplll
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s

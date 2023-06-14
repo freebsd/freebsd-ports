@@ -28,7 +28,7 @@ OPTIONS_SUB=	yes
 NLS_USES=	gettext gnome
 NLS_USE=	GNOME=intltool
 NLS_CONFIGURE_ENABLE=	nls
-PYTHON_USES=			python:3.7+,build
+PYTHON_USES=			python:build
 PYTHON_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR}
 PYTHON_CONFIGURE_ENABLE=	python-bindings
 PYTHON_CONFIGURE_ON=		--with-python-binary=${PYTHON_CMD}

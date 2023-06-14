@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}python-poppler-qt5>=0:graphics/py-python-poppler-qt5@${PY_FLAVOR}
 
-USES=		pyqt:5 python:3.6+ qt:5
+USES=		pyqt:5 python qt:5
 USE_GITHUB=	yes
 GH_ACCOUNT=	frescobaldi
 USE_PYQT=	pyqt5

@@ -10,7 +10,7 @@ WWW=		https://public.readthedocs.io/
 
 LICENSE=	APACHE20
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 MAKE_ENV=	ATPUBLIC_BUILD_EXTENSION=1

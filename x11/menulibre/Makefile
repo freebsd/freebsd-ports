@@ -17,7 +17,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		pkexec:sysutils/polkit \
 		${PYTHON_PKGNAMEPREFIX}psutil>=2.0:sysutils/py-psutil@${PY_FLAVOR}
 
-USES=		desktop-file-utils gettext gnome python:3.4+
+USES=		desktop-file-utils gettext gnome python
 USE_GNOME=	intltool pygobject3
 USE_PYTHON=	distutils
 

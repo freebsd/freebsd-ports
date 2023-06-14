@@ -26,7 +26,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	whikernel
 GH_TAGNAME=	12bfda6cdd83ae392df9303d0140a2eaa936a62f
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	liblrcalc.so:math/lrcalc
 
-USES=		localbase python:3.6+
+USES=		localbase python
 
 USE_PYTHON=	cython distutils
 

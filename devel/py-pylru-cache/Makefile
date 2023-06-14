@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/py_lru_cache/
 LICENSE=	BSD3CLAUSE GPLv3
 LICENSE_COMB=	dual
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

@@ -12,7 +12,7 @@ WWW=		https://github.com/pganssle/zoneinfo
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 # We already have Python 3.7 as minimal supported release, force positive checks
 CFLAGS+=	-DATLEAST_37

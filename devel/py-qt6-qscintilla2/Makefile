@@ -16,7 +16,7 @@ LIB_DEPENDS=	libqscintilla2_qt6.so:devel/qscintilla2-qt6
 DISTINFO_FILE=	${.CURDIR:H}/qscintilla2-qt6/distinfo
 DESTDIRNAME=	INSTALL_ROOT
 
-USES=		python:3.5+ pyqt:6 gl qt:6
+USES=		python pyqt:6 gl qt:6
 USE_GL=		gl
 USE_PYQT=	pyqt6 sip:build qtbuilder
 USE_PYTHON=	concurrent flavors py3kplist

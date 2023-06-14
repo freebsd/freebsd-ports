@@ -12,7 +12,7 @@ LICENSE=	EPL MIT
 LICENSE_COMB=	dual
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE
 
-USES=		dos2unix python:3.7+ zip
+USES=		dos2unix python zip
 USE_PYTHON=	autoplist concurrent cython distutils
 
 post-install:

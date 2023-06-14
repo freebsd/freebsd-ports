@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lark>=0.11.1:devel/py-lark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-retry>=0.9.9:devel/py-types-retry@${PY_FLAVOR} \
 		quilc:lang/quilc
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes

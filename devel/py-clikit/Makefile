@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}crashtest>=0.3.0:devel/py-crashtest@${PY_FLA
 		${PYTHON_PKGNAMEPREFIX}pastel>=0.2.0:devel/py-pastel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pylev>=1.3<2.0:devel/py-pylev@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

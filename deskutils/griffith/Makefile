@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}reportlab>=3.4:print/py-reportlab@${PY_FLAVOR}
 
-USES=		gettext-runtime gmake gnome python:3.4+ shebangfix
+USES=		gettext-runtime gmake gnome python shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	Strit

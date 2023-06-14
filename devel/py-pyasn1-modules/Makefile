@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.4.1:devel/py-pyasn1@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	tools/*.py
 USE_PYTHON=	autoplist concurrent distutils
 

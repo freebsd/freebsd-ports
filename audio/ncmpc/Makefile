@@ -39,7 +39,7 @@ MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0,1:textproc/py-sphinx@${
 MANPAGES_MAKE_ENV=	PYTHON=${PYTHON_CMD} \
 			SPHINX=sphinx-build-${PYTHON_VER}
 MANPAGES_MESON_TRUE=	manual
-MANPAGES_USES=		python:build,3.6+
+MANPAGES_USES=		python:build
 
 NLS_LDFLAGS=		-lintl
 NLS_MESON_ENABLED=	nls

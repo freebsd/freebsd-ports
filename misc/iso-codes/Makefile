@@ -8,7 +8,7 @@ WWW=		https://salsa.debian.org/iso-codes-team/iso-codes
 
 LICENSE=	LGPL21
 
-USES=		gettext-tools gmake pathfix python:3.4+,build tar:xz
+USES=		gettext-tools gmake pathfix python:build tar:xz
 
 GNU_CONFIGURE=	yes
 NO_ARCH=	yes

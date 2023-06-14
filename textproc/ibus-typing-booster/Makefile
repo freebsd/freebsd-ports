@@ -36,7 +36,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	mike-fabian
 
 USES=		autoreconf gettext gmake gnome iconv pathfix pkgconfig	\
-		python:3.7+ shebangfix
+		python shebangfix
 SHEBANG_FILES=	engine/emoji-picker.in engine/ibus-engine-typing-booster.in	\
 		setup/ibus-setup-typing-booster.in
 SHEBANG_LANG=	sh

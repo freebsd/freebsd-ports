@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.4.0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.4.0:devel/py-cffi@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist distutils
 MAKE_ENV=	LIBGIT2=${LOCALBASE}
 PYDISTUTILS_TEST_TARGET?=	test

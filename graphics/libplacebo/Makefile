@@ -10,7 +10,7 @@ WWW=		https://code.videolan.org/videolan/libplacebo
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c11 localbase:ldflags meson pkgconfig python:3.6+,build
+USES=		compiler:c11 localbase:ldflags meson pkgconfig python:build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	haasn

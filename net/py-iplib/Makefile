@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/iplib/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils flavors
 
 .include <bsd.port.mk>

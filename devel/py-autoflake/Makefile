@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=1.1.0:devel/py-pyflakes@${PY_FLAVOR}
 
-USES=		pytest python:3.6+ shebangfix
+USES=		pytest python shebangfix
 USE_PYTHON=	autoplist pep517
 
 SHEBANG_FILES=	autoflake.py test_autoflake.py

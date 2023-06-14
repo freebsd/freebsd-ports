@@ -10,7 +10,7 @@ WWW=		https://pysimdjson.tkte.ch/
 
 LICENSE=	MIT
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	cython distutils
 
 CFLAGS_powerpc64=	-mpower8-vector

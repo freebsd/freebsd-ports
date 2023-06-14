@@ -4,7 +4,7 @@ UNIT_MODNAME=	python${PYTHON_SUFFIX}
 
 COMMENT=	Python module for NGINX Unit
 
-USES=		python:3.7-3.11 gettext-runtime
+USES=		python:3.8-3.11 gettext-runtime
 USE_PYTHON=	flavors
 
 PLIST_FILES=	libexec/unit/modules/${UNIT_MODNAME}.unit.so

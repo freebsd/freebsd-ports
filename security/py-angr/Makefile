@@ -40,7 +40,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ailment>=${ANGR_VERSION}:security/py-ailment
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}keystone-engine>=0:devel/py-keystone-engine@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
-USES=		angr:binaries gmake localbase:ldflags python:3.6+
+USES=		angr:binaries gmake localbase:ldflags python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 

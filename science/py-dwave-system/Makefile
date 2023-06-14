@@ -24,7 +24,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dimod>=0.12.0:science/py-dimod@${PY_FLAVOR} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils unittest # 1 test fails because the closed source dwave.drivers optional dependency is missing
 
 USE_GITHUB=	yes

@@ -22,7 +22,7 @@ PLIST=		${.CURDIR}/pkg-plist
 AVAHI_SLAVE=	python
 
 USE_GNOME=	pygobject3 gtk30
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	flavors py3kplist
 MANPAGES=	avahi-bookmarks.1
 

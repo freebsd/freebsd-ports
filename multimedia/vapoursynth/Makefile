@@ -56,7 +56,7 @@ CORE_LIB_DEPENDS=		libzimg.so:graphics/sekrit-twc-zimg
 CORE_USES=			compiler:c++11-lib
 CORE_CONFIGURE_ENABLE=		core
 
-PYTHON_USES=			python:3.3+
+PYTHON_USES=			python
 PYTHON_USE=			python=cython
 PYTHON_VARS=			BINARY_ALIAS=cython=cython-${PYTHON_VER}
 PYTHON_CONFIGURE_ENABLE=	python-module
@@ -68,7 +68,7 @@ VSPIPE_CONFIGURE_ENABLE=	vspipe
 VSPIPE_IMPLIES=			VSSCRIPT
 
 VSSCRIPT_DESC=			Scripting library
-VSSCRIPT_USES=			compiler:c++11-lib python:3.3+
+VSSCRIPT_USES=			compiler:c++11-lib python
 VSSCRIPT_CONFIGURE_ENABLE=	vsscript
 
 # PLUGINS group

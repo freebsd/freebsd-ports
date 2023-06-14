@@ -23,7 +23,7 @@ LIB_DEPENDS=	libtiledb.so:databases/tiledb
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.23.2,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=0:devel/py-packaging@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang localbase python:3.7+
+USES=		compiler:c++17-lang localbase python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 MAKE_ENV=	TILEDB_PATH=${LOCALBASE}

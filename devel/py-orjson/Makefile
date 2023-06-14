@@ -17,7 +17,7 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.8.3:devel/py-maturin@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pip>=20.2.3:devel/py-pip@${PY_FLAVOR}
 
-USES=		cargo python:3.7+
+USES=		cargo python
 USE_PYTHON=	autoplist concurrent cython distutils
 USE_GITHUB=	yes
 GH_ACCOUNT=	ijl

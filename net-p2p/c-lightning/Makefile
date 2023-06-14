@@ -27,7 +27,7 @@ USES=		autoreconf:build \
 		gettext \
 		gmake \
 		libtool \
-		python:3.5+,build \
+		python:build \
 		shebangfix
 CPE_VENDOR=	elementsproject
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}

@@ -6,7 +6,7 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Greenbone vulnerability management (metaport)
 WWW=		https://www.openvas.org/
 
-USES=		metaport python:3.7+
+USES=		metaport python
 
 # Install GVM libraries
 RUN_DEPENDS+=	${LOCALBASE}/lib/libgvm_base.so:security/gvm-libs

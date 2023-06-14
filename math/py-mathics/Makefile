@@ -67,7 +67,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	${PORTNAME:tl}
 
-USES=		python:3.8+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	cython distutils noflavors
 MAKE_ENV+=	USE_CYTHON=yes
 SHEBANG_GLOB=	*.py

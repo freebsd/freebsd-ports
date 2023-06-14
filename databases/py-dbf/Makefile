@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/dbf/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		dos2unix python:3.6+
+USES=		dos2unix python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

@@ -10,7 +10,7 @@ WWW=		https://github.com/pybind/pybind11
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils concurrent autoplist
 
 NO_ARCH=	yes

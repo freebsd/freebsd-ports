@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	libdiscid.so:audio/libdiscid
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils unittest
 
 NO_ARCH=	yes

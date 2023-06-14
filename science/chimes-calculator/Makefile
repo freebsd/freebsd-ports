@@ -11,7 +11,7 @@ WWW=		https://github.com/rk-lindsey/chimes_calculator
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing fortran shebangfix python:3.7+,test
+USES=		cmake:testing fortran shebangfix python:test
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

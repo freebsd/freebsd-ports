@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyside2>=0:devel/pyside2@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=0:devel/py-hypothesis@${PY_FLAVOR}
 
-USES=		gl python:3.7+ pyqt:5 pytest shebangfix
+USES=		gl python pyqt:5 pytest shebangfix
 USE_GL=		gl
 USE_PYQT=	pyqt5
 USE_PYTHON=	autoplist distutils

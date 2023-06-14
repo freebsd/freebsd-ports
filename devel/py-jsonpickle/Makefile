@@ -25,7 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}ujson>0:devel/py-ujson@${PY_FLAVOR}
 		# ${PYTHON_PKGNAMEPREFIX}yajl>0:devel/py-yajl@${PY_FLAVOR} # is also needed for tests, but isnt't yet ported
 
-USES=		cpe python:3.8+
+USES=		cpe python
 USE_PYTHON=	distutils autoplist pytest # 1 fail, 1 error in tests, see https://github.com/jsonpickle/jsonpickle/issues/429
 
 CPE_VENDOR=	${PORTNAME}_project

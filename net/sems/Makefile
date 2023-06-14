@@ -20,7 +20,7 @@ LIB_DEPENDS=	libopus.so:audio/opus \
 		libspeex.so:audio/speex \
 		libspandsp.so:comms/spandsp
 
-USES=		cmake compiler:c++11-lang python:3.4+,run shebangfix ssl
+USES=		cmake compiler:c++11-lang python:run shebangfix ssl
 SHEBANG_GLOB=	sems-*
 
 PY2TO3_CMD=	${LOCALBASE}/bin/2to3-${PYTHON_VER}

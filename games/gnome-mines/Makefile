@@ -18,7 +18,7 @@ LIB_DEPENDS=	libgnome-games-support-1.so:games/libgnome-games-support \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome localbase meson pkgconfig python:3.6+,build tar:xz vala:build
+USES=		gettext gnome localbase meson pkgconfig python:build tar:xz vala:build
 USE_GNOME=	gtk30 librsvg2
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

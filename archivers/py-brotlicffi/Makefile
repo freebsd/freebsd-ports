@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR}
 LIB_DEPENDS=	libbrotlienc.so:archivers/brotli
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0:devel/py-cffi@${PY_FLAVOR}
 
-USES=		localbase python:3.6+
+USES=		localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ENV=	USE_SHARED_BROTLI=1

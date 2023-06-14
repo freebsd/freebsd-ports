@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	brotli:archivers/brotli
 
-USES=		python:3.6+,build
+USES=		python:build
 
 OPTIONS_DEFAULT=	YUICOMPRESSOR
 

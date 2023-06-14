@@ -13,7 +13,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}rstr>=0:devel/py-rstr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sre-yield>=0:devel/py-sre-yield@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

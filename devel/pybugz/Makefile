@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
 
-USES=		python:3.3+
+USES=		python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 

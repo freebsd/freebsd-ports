@@ -18,7 +18,7 @@ RUN_DEPENDS=	conmon:sysutils/conmon \
 		containers-common>=0:sysutils/containers-common \
 		ocijail:sysutils/ocijail
 
-USES=		gmake go:no_targets pkgconfig python:3.7+,build shebangfix
+USES=		gmake go:no_targets pkgconfig python:build shebangfix
 USE_RC_SUBR=	podman
 
 SHEBANG_FILES=	${WRKSRC}/hack/markdown-preprocess

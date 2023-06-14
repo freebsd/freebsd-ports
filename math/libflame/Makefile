@@ -14,7 +14,7 @@ ONLY_FOR_ARCHS_REASON=	make system does not support other architectures yet
 BUILD_DEPENDS=	bash:shells/bash
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c11 gmake python:3.7
+USES=		compiler:c11 gmake prthon:3.8
 USE_CSTD=	c99
 USE_LDCONFIG=	yes
 

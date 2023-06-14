@@ -11,7 +11,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}aiohttp>=2.3.5:www/py-aiohttp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}aiofiles>=0:devel/py-aiofiles@${PY_FLAVOR}
 
-USES=		dos2unix python:3.7+
+USES=		dos2unix python
 DOS2UNIX_FILES=	${WRKSRC}/setup.py
 USE_PYTHON=	autoplist concurrent distutils
 

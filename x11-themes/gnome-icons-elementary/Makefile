@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xcursorgen:x11/xcursorgen
 
-USES=		gettext gnome meson python:3.7+,build
+USES=		gettext gnome meson python:build
 
 USE_GITHUB=	yes
 GH_PROJECT=	icons

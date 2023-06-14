@@ -91,7 +91,7 @@ SQLCIPHER_CMAKE_BOOL=	ENABLE_SQLCIPHER
 WOOB_DESC=		Online banking via Web Outside Of Browsers
 WOOB_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob-qt>0:www/py-woob-qt@${PY_FLAVOR}
 WOOB_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}woob-qt>0:www/py-woob-qt@${PY_FLAVOR}
-WOOB_USES=		python:3.7+
+WOOB_USES=		python
 WOOB_USE=		qt=concurrent
 WOOB_CMAKE_BOOL=	ENABLE_WOOB
 

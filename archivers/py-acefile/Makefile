@@ -11,7 +11,7 @@ WWW=		https://www.roe.ch/acefile
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -13,7 +13,7 @@ WWW=		https://www.mems-exchange.org/software/durus/
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	DOCS

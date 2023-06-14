@@ -23,7 +23,7 @@ TEST_DEPENDS=	gmake:devel/gmake	\
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	Mathics3
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils noflavors
 
 NO_ARCH=	yes

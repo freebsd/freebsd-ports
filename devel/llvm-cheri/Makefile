@@ -130,7 +130,7 @@ USES+=		gnome
 .if ${PORT_OPTIONS:MLIT}
 MAN1SRCS+=	${LIT_MAN1SRCS}
 # lit requires python, but don't install it by default.  Users can install.
-#_USES_PYTHON=	python:3.7+
+#_USES_PYTHON=	python
 .endif
 
 .if ${PORT_OPTIONS:MLLD}
@@ -142,14 +142,14 @@ COMMANDS+=	${LLD_COMMANDS}
 LLVM_ENABLE_PROJECTS+=	lldb
 COMMANDS+=	${LLDB_COMMANDS}
 MAN1SRCS+=	${LLDB_MAN1SRCS}
-_USES_PYTHON=	python:3.7+
+_USES_PYTHON=	python
 .endif
 
 .if defined(LLVM_ENABLE_PROJECTS)
 CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
 .endif
 
-_USES_PYTHON?=	python:3.7+,build
+_USES_PYTHON?=	python:build
 USES+=		${_USES_PYTHON}
 
 .include <bsd.port.pre.mk>

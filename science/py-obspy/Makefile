@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy10>=0:databases/py-sqlalchemy10@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		fortran python:3.8+ shebangfix
+USES=		fortran python shebangfix
 SHEBANG_FILES=	obspy/taup/tests/data/TauP_test_data/gendata.sh
 USE_LDCONFIG=	yes
 LDFLAGS+=	-shared

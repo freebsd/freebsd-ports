@@ -11,7 +11,7 @@ LICENSE=	GPLv2+
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	hartwork
 USE_PYTHON=	autoplist concurrent distutils

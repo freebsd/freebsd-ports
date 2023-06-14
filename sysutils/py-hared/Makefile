@@ -10,7 +10,7 @@ WWW=		https://github.com/jpmens/hared-hare
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 ETCDIR=		${PREFIX}/etc

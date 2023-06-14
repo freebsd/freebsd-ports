@@ -19,7 +19,7 @@ TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	sagemath
 
-USES=		compiler:c11 python:3.6+
+USES=		compiler:c11 python
 USE_PYTHON=	cython distutils
 
 .if !defined(WITH_DEBUG)

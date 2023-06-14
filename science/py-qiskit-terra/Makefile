@@ -27,7 +27,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>0:devel/py-setuptools-rust
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ddt>0:devel/py-ddt@${PY_FLAVOR} # no test requirements are listed in setup.py, see https://github.com/Qiskit/qiskit-terra/issues/8498
 
-USES=		cargo python:3.8+
+USES=		cargo python
 USE_PYTHON=	distutils autoplist pytest # tests fail to run through pytest, see https://github.com/Qiskit/qiskit-terra/issues/8500
 
 USE_GITHUB=	yes

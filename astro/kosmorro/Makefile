@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>0:devel/py-babel@${PY_FLAVOR}\
 
 #USE_GITHUB=	yes
 
-USES=		gettext-runtime:run python:3.8+ shebangfix
+USES=		gettext-runtime:run python shebangfix
 USE_PYTHON=	noflavors pep517
 SHEBANG_FILES=	${PORTNAME}
 

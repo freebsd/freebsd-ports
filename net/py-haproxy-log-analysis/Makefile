@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/haproxy_log_analysis/
 
 LICENSE=	GPLv3
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

@@ -24,7 +24,7 @@ LIB_DEPENDS=	libgoa-1.0.so:net/gnome-online-accounts \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
-		python:3.4+,build shebangfix tar:xz
+		python:build shebangfix tar:xz
 USE_GNOME=	cairo evolutiondataserver3 gnomedesktop3 gtk40 introspection \
 		libadwaita
 USE_LDCONFIG=	yes

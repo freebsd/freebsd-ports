@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/python-gettext/
 LICENSE=	BSD2CLAUSE
 
 NO_ARCH=	yes
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

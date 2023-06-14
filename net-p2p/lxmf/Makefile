@@ -11,7 +11,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	reticulum>0:net-p2p/reticulum
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cangjie/_core.so:chinese/pycangjie \
 		${PYTHON_SITELIBDIR}/pycanberra/pycanberra.py:devel/pycanberra@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		autoreconf gmake gnome libtool pkgconfig python:3.4+
+USES=		autoreconf gmake gnome libtool pkgconfig python
 USE_GNOME=	introspection:run pygobject3 intltool
 GLIB_SCHEMAS=	org.cangjians.ibus.cangjie.gschema.xml \
 		org.cangjians.ibus.quick.gschema.xml

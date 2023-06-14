@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}speg>=0.3:devel/py-speg@${PY_FLAVOR}
 TEST_DEPENDS=	${PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}speg>=0.3:devel/py-speg@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

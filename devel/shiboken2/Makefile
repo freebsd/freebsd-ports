@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 		git>0:devel/git
 LIB_DEPENDS=	libxslt.so:textproc/libxslt
 
-USES=		cmake compiler:c++11-lang gnome llvm:lib python:3.5-3.9 qt:5 shebangfix tar:xz
+USES=		cmake compiler:c++11-lang gnome llvm:lib python:3.8-3.9 qt:5 shebangfix tar:xz
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
@@ -33,12 +33,6 @@ CMAKE_ARGS+=	"-DCMAKE_CXX_FLAGS=-lexecinfo" \
 		"-DCMAKE_CXX_STANDARD_LIBRARIES=-lexecinfo" \
 		"-DUSE_PYTHON_VERSION=${PYTHON_VER}" \
 		"-DLLVM_CONFIG=${LLVM_CONFIG}"
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-BROKEN=		does not build (plist issues)
-.endif
 
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 PLIST_SUB+=	PYVERSTR=.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}
@@ -54,5 +48,4 @@ post-install:
 		-f -d ${PYTHONPREFIX_SITELIBDIR} \
 		${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -49,7 +49,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 		kf5-breeze-icons>0:x11-themes/kf5-breeze-icons
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gettext-runtime gnome libtool localbase:ldflags \
-		meson pkgconfig python:3.5+,build shared-mime-info shebangfix xorg
+		meson pkgconfig python:build shared-mime-info shebangfix xorg
 USE_GITHUB=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 libxml2 pango
 USE_XORG=	x11

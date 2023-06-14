@@ -10,7 +10,7 @@ WWW=		https://github.com/pynetwork/pypcap
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 # PR 239725: workaround to avoid using /usr/lib32 over /usr/lib

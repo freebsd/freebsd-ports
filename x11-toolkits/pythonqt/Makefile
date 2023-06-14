@@ -10,7 +10,7 @@ WWW=		https://mevislab.github.io/pythonqt/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext-runtime gl python:3.6+ qmake qt:5
+USES=		gettext-runtime gl python qmake qt:5
 USE_QT=		core declarative gui multimedia network opengl printsupport sql svg webkit widgets xml xmlpatterns \
 		buildtools:build
 USE_GL=		gl

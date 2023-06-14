@@ -40,7 +40,7 @@ OPTIONS_DEFINE=	DOCS
 DOCS_DESC=	Build documentation (needs textproc/py-sphinx)
 DOCS_CMAKE_ON=	-DENABLE_DOCS=ON
 DOCS_CMAKE_OFF=	-DENABLE_DOCS=OFF
-DOCS_USES=	python:3.6+
+DOCS_USES=	python
 DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=0:textproc/py-sphinx@${PY_FLAVOR}
 
 .include <bsd.port.options.mk>

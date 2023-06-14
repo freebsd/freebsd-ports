@@ -17,7 +17,7 @@ LIB_DEPENDS=	libumfpack.so:math/suitesparse-umfpack	\
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		fortran python:3.6+
+USES=		fortran python
 USE_PYTHON=	distutils cython autoplist
 
 CFLAGS+=	-I${LOCALBASE}/include/suitesparse

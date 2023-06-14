@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cairo>0:graphics/py-cairo@${PY_FLAVOR} \
 		${LOCALBASE}/libexec/notification-daemon:deskutils/notification-daemon
 LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
 
-USES=		desktop-file-utils gettext gnome gstreamer python:3.6+ shebangfix
+USES=		desktop-file-utils gettext gnome gstreamer python shebangfix
 SHEBANG_FILES=	exfalso.py operon.py quodlibet.py
 USE_PYTHON=	distutils autoplist
 USE_GNOME=	gtk30 pygobject3

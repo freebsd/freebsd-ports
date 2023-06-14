@@ -16,7 +16,7 @@ RUN_DEPENDS=	flac:audio/flac \
 		${PYTHON_PKGNAMEPREFIX}pyaudio>=0.2.11:audio/py-pyaudio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.26.0:www/py-requests@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

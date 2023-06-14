@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	sip:devel/py-sip4
 LIB_DEPENDS=	libpugixml.so:textproc/pugixml
 
-USES=		cmake compiler:c++11-lang python:3.5+ pyqt:5 gettext-runtime
+USES=		cmake compiler:c++11-lang python pyqt:5 gettext-runtime
 USE_GITHUB=	yes
 GH_ACCOUNT=	Ultimaker
 USE_LDCONFIG=	yes

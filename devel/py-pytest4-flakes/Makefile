@@ -16,7 +16,7 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest-flakes
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>=2.8.0:devel/py-pytest4@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 PYDISTUTILS_PKGNAME=	${PORTNAME:C/4//}

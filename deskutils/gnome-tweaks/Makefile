@@ -18,7 +18,7 @@ LIB_DEPENDS=	libhandy-1.so:x11-toolkits/libhandy
 RUN_DEPENDS=	gnome-shell>=3.28:x11/gnome-shell \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
-USES=		gettext gnome localbase meson pkgconfig python:3.4+ shebangfix \
+USES=		gettext gnome localbase meson pkgconfig python shebangfix \
 		tar:xz
 USE_GNOME=	gtk30 nautilus3 pygobject3
 GLIB_SCHEMAS=	org.gnome.tweaks.gschema.xml

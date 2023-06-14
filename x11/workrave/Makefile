@@ -59,7 +59,7 @@ DISTRIBUTION_DESC=	Build with networking support
 
 DBUS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
 			boost-libs>0:devel/boost-libs
-DBUS_USES=		python:3.5+,build
+DBUS_USES=		python:build
 DBUS_CONFIGURE_ENABLE=	dbus
 
 DISTRIBUTION_CONFIGURE_ENABLE=	distribution

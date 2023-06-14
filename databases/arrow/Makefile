@@ -142,7 +142,7 @@ BUILD_UTILITIES_CMAKE_BOOL=	ARROW_BUILD_UTILITIES
 
 PYTHON_DESC=			Build python extension support
 PYTHON_CMAKE_BOOL=		ARROW_PYTHON
-PYTHON_USES=			python:3.7+
+PYTHON_USES=			python
 PYTHON_BUILD_DEPENDS=		${PYNUMPY} # see https://issues.apache.org/jira/browse/ARROW-16820
 PYTHON_CMAKE_ON=		-DPython3_EXECUTABLE=${PYTHON_CMD}
 PYTHON_LIB_DEPENDS=		libutf8proc.so:textproc/utf8proc

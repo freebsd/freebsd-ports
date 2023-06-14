@@ -11,7 +11,7 @@ WWW=		https://github.com/christgau/wsdd
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.5+,run shebangfix
+USES=		python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	christgau
 SHEBANG_FILES=	src/${PORTNAME}.py

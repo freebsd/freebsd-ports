@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/pyglet/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		display:test gl python:3.8+ zip
+USES=		display:test gl python zip
 USE_GL=		gl glu
 USE_PYTHON=	autoplist distutils pytest
 NO_ARCH=	yes

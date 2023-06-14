@@ -26,7 +26,7 @@ RUN_DEPENDS=	hicolor-icon-theme>=0:misc/hicolor-icon-theme \
 		adwaita-icon-theme>=0:x11-themes/adwaita-icon-theme
 
 USES=		compiler:c11 cpe gettext gnome jpeg localbase meson \
-		ninja pathfix perl5 python:3.7+ pkgconfig tar:xz
+		ninja pathfix perl5 python pkgconfig tar:xz
 CPE_VENDOR=	gnome
 USE_LDCONFIG=	yes
 USE_PERL5=	build

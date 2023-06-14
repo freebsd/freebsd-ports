@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/docs/source/license-and-credits.rst
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=3.2.0:sysutils/py-psutil@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	powerline
 GH_PROJECT=	powerline

@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lark>=0:devel/py-lark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}untangle>=1.2.1:textproc/py-untangle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}xlrd2>=0:textproc/py-xlrd2@${PY_FLAVOR}
 
-USES=		dos2unix python:3.7+
+USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

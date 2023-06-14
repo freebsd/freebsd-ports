@@ -18,7 +18,7 @@ GH_SUBDIR=	yara-python:yp yara-python/yara:yp2
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}yara
 
-USES=		python:3.7+ ssl
+USES=		python ssl
 USE_PYTHON=	distutils
 
 .if !defined(WITH_DEBUG)

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 RUN_DEPENDS=	${PY_DEPENDS} \
 		llvm${LLVM_VER}>0:devel/llvm${LLVM_VER}
 
-USES=		cmake compiler:c++14-lang gettext-runtime python:3.7+ shebangfix
+USES=		cmake compiler:c++14-lang gettext-runtime python shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes

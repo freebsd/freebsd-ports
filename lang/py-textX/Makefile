@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arpeggio>=2.0.0:devel/py-arpeggio@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}click>=7.0:devel/py-click@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}memory-profiler>0:devel/py-memory-profiler@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist concurrent pytest # 25 tests fails, see https://github.com/textX/textX/issues/394
 
 NO_ARCH=	yes

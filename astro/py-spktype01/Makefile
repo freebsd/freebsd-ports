@@ -18,7 +18,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	whiskie14142
 GH_TAGNAME=	964cc70
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils
 
 WRKSRC_SUBDIR=	package/${PORTNAME}

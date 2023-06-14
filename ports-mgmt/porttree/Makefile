@@ -13,7 +13,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}networkx>=2.0:math/py-networkx@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}configargparse>0:devel/py-configargparse@${PY_FLAVOR}
 
-USES=		python:3.6+ tar:bzip2 shebangfix
+USES=		python tar:bzip2 shebangfix
 #USE_PYTHON=	concurrent
 
 SVN_REV=	114

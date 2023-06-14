@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	exiftool:graphics/p5-Image-ExifTool
 
-USES=		magick:6,run python:3.6+
+USES=		magick:6,run python
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist concurrent distutils
 

@@ -11,7 +11,7 @@ WWW=		https://www.antlr.org/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

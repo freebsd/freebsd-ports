@@ -24,7 +24,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}nbconvert>=5.3.1:devel/py-nbconvert@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}nbformat>=4.4.0:devel/py-nbformat@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # one test fails, see https://github.com/Qiskit/qiskit-ibm-provider/issues/378
 
 USE_GITHUB=	yes

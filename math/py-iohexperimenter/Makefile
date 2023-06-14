@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang dos2unix python:3.7+
+USES=		compiler:c++14-lang dos2unix python
 USE_PYTHON=	autoplist concurrent distutils unittest
 
 USE_CXXSTD=	c++14

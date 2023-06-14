@@ -12,7 +12,7 @@ WWW=		https://github.com/simplejson/simplejson
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		cpe python:3.6+
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils unittest
 
 CPE_VENDOR=	simplejson_project

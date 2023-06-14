@@ -11,7 +11,7 @@ WWW=		https://github.com/aio-libs/frozenlist
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gettext-runtime python:3.7+
+USES=		gettext-runtime python
 USE_PYTHON=	autoplist cython distutils
 
 post-install:

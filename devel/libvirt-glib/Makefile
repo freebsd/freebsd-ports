@@ -13,7 +13,7 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 
 USES=		gettext gmake gnome libtool meson pathfix pkgconfig \
-		python:3.6+ tar:xz
+		python tar:xz
 
 OPTIONS_DEFINE=	DOCS VAPI
 OPTIONS_DEFAULT=	DOCS VAPI

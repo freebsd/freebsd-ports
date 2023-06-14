@@ -20,7 +20,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libuuid.so:misc/e2fsprogs-libuuid
 
 USES=		autoreconf:build compiler:c11 cpe gettext-runtime gmake gnome \
-		libtool pathfix pkgconfig python:3.5+,build shebangfix ssl
+		libtool pathfix pkgconfig python:build shebangfix ssl
 
 CPE_VENDOR=	oneidentity
 
@@ -148,7 +148,7 @@ JAVA_MOD_PLIST_FILES=		lib/syslog-ng/java-modules/log4j-api-2.17.2.jar \
 				lib/syslog-ng/java-modules/syslog-ng-common.jar
 
 PYTHON_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
-PYTHON_USES=			python:3.5+
+PYTHON_USES=			python
 PYTHON_CONFIGURE_ON=		--enable-python
 PYTHON_CONFIGURE_OFF=		--disable-python
 PYTHON_PLIST_FILES=		lib/syslog-ng/libmod-python.so \

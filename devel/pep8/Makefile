@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/pep8/
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 do-test:

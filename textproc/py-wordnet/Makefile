@@ -13,7 +13,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Interface to WordNet
 WWW=		http://osteele.com/projects/pywordnet/
 
-USES=		dos2unix python:3.6+
+USES=		dos2unix python
 USE_PYTHON=	distutils autoplist
 
 WRKSRC=		${WRKDIR}/py${PORTNAME}-${PORTVERSION}

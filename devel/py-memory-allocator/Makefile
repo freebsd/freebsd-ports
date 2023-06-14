@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/memory-allocator/
 
 LICENSE=	GPLv3
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	cython distutils
 
 .include <bsd.port.mk>

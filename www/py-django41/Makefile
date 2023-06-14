@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}backports.zoneinfo>0:devel/py-backports.zone
 		${PYTHON_PKGNAMEPREFIX}sqlparse>=0.2.2:databases/py-sqlparse@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tblib>0:devel/py-tblib@${PY_FLAVOR}
 
-USES=		cpe python:3.8+ shebangfix
+USES=		cpe python shebangfix
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

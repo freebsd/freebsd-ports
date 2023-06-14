@@ -11,7 +11,7 @@ WWW=		https://github.com/theskumar/python-dotenv
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	rubygem-dotenv # bin/dotenv

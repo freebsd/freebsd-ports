@@ -19,7 +19,7 @@ GH_ACCOUNT=	saffsd
 GH_PROJECT=	${PORTNAME}.py
 GH_TAGNAME=	4153583
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils
 SHEBANG_GLOB=	*.py
 

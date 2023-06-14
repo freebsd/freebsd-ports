@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	cmake:devel/cmake-core
 
-USES=		python:3.7+ ssl
+USES=		python ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 MAKE_ENV=	AWS_CRT_BUILD_USE_SYSTEM_LIBCRYPTO=1

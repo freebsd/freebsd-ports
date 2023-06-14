@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	xmlto:textproc/xmlto
 
-USES=		bison:alias cpe gmake iconv meson perl5 pkgconfig python:3.7+ ssl
+USES=		bison:alias cpe gmake iconv meson perl5 pkgconfig python ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	rkd77
 

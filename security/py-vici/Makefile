@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-pycodestyle>0:devel/py-pytest-pycodestyle@${PY_FLAVOR}
 
-USES=		python:3.6+ pytest
+USES=		python pytest
 USE_PYTHON=	autoplist concurrent distutils
 PYTEST_ARGS=	--pycodestyle
 

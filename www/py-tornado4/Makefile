@@ -11,7 +11,7 @@ WWW=		https://www.tornadoweb.org/
 
 LICENSE=	APACHE20
 
-USES=		cpe python:3.6+
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}tornado \

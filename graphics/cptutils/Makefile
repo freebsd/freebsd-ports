@@ -16,7 +16,7 @@ BUILD_DEPENDS=	gengetopt:devel/gengetopt \
 LIB_DEPENDS=	libjansson.so:devel/jansson \
 		libpng.so:graphics/png
 
-USES=		autoreconf bison gmake gnome iconv localbase python:3.7+ shebangfix
+USES=		autoreconf bison gmake gnome iconv localbase python shebangfix
 SHEBANG_FILES=	src/gradient-convert/gradient-convert.py
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	${ICONV_CONFIGURE_ARG}

@@ -23,7 +23,7 @@ SUB_FILES=	pkg-message
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 OPTIONS_SUB=	yes
-DOCS_USES+=	python:3.5+,build
+DOCS_USES+=	python:build
 DOCS_CMAKE_BOOL+=	WITH_DOCUMENTATION
 
 DOCS_VARS=	binary_alias=python3=${PYTHON_CMD}

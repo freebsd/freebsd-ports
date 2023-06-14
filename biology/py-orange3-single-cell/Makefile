@@ -22,7 +22,7 @@ RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYNUMPY}
 
 # Supports 3.4+ but loompy 3.6+ only.
-USES=		python:3.7+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	biolab
 USE_PYTHON=	distutils autoplist

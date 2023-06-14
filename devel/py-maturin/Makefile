@@ -22,7 +22,7 @@ NOT_FOR_ARCHS_REASON=	the creation of 32-bit Python wheels is not supported for 
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-rust>=1.4.0:devel/py-setuptools-rust@${PY_FLAVOR}
 
-USES=		cargo python:3.7+
+USES=		cargo python
 USE_GITHUB=	yes
 GH_ACCOUNT=	PyO3
 USE_PYTHON=	autoplist concurrent distutils

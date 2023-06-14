@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libspot.so:math/spot
 
-USES=		compiler:c++17-lang gmake libtool python:3.4+
+USES=		compiler:c++17-lang gmake libtool python
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-python --disable-static

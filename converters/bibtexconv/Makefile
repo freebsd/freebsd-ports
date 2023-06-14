@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		bison cmake ssl python:3.4+ shebangfix tar:xz
+USES=		bison cmake ssl python shebangfix tar:xz
 
 SHEBANG_FILES=	src/ietf2bibtex
 

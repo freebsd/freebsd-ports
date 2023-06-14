@@ -36,7 +36,7 @@ PORTSCOUT=	limitw:1,even
 USE_XORG=	x11 xext xi xtst
 USE_GNOME=	cairo gnomedesktop3 gtk30
 USES=		gettext gnome localbase:ldflags meson perl5 pkgconfig \
-		python:3.6+,build tar:xz xorg
+		python:build tar:xz xorg
 USE_PERL5=	build
 #		-Dnssdb_dir=${LOCALBASE}/share/certs/ca-root-nss.crt
 MESON_ARGS=	-Dalsa=false \

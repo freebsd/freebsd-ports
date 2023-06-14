@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix tar:xz
+USES=		python shebangfix tar:xz
 USE_PYTHON=	distutils noflavors autoplist
 SHEBANG_FILES=	data/themes/clearlooks/convert_imgs.sh
 NO_ARCH=	yes

@@ -30,7 +30,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=2.0:devel/py-argcomplete@${PY_F
 		${PYTHON_PKGNAMEPREFIX}msrestazure>=0.6.4:net-mgmt/py-msrestazure@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.9:devel/py-packaging@${PY_FLAVOR}
 
-USES=		azurepy python:3.7+
+USES=		azurepy python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -17,7 +17,7 @@ TEST_DEPENDS=	bash:shells/bash
 TEST_LIB_DEPENDS=	libgtest.so:devel/googletest
 
 USES=		cmake compiler:c++11-lang cpe dos2unix gettext-tools pathfix \
-		python:3.6+,test localbase:ldflags
+		python:test localbase:ldflags
 USE_LDCONFIG=	yes
 DOS2UNIX_FILES=	cmake/compilerFlags.cmake
 

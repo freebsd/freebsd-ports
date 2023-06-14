@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.7.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}smart-open>=1.8.1:net/py-smart-open@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.8+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils cython autoplist
 
 post-install:

@@ -24,7 +24,7 @@ LIB_DEPENDS=	libcgns.so:science/cgnslib \
 		libsz.so:science/libaec \
 		libTKV3d.so:cad/opencascade
 
-USES=		cmake gl gnome jpeg python:3.6+ tar:tgz xorg
+USES=		cmake gl gnome jpeg python tar:tgz xorg
 USE_PYTHON=	flavors
 USE_GNOME=	cairo
 USE_GL=		gl glu

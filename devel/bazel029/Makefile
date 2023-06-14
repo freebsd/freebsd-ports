@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:shells/bash \
 
 CONFLICTS_INSTALL=	bazel[0-9]*
 
-USES=		cpe python:3.3+ shebangfix zip:infozip
+USES=		cpe python shebangfix zip:infozip
 
 # In bazel, a release is always code-wise identical to the final release candidate.
 # Hence we can also download that one and so have a simple way to also test earlier release

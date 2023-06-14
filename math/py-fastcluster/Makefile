@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.txt
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.9,1:math/py-numpy@${PY_FLAVOR}
 
-USES=		compiler python:3.7+
+USES=		compiler python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>

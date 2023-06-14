@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/darts.util.lru/
 LICENSE=	MIT
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

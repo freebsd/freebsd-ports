@@ -11,7 +11,7 @@ WWW=		https://github.com/pymodbus-dev/pymodbus/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_DEFINE=	REPL SERIAL DATASTORE_REDIS DATASTORE_SQL

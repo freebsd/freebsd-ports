@@ -8,7 +8,7 @@ MAINTAINER=	loic.blot@unix-experience.fr
 COMMENT=	Python library to enable psycopg2 to work with coroutine libraries
 WWW=		https://bitbucket.org/dvarrazzo/psycogreen
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

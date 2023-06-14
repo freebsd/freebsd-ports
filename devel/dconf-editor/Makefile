@@ -21,7 +21,7 @@ LIB_DEPENDS=	libdconf.so:devel/dconf
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gnome localbase meson \
-		pkgconfig python:3.6+,build tar:xz vala:build
+		pkgconfig python:build tar:xz vala:build
 USE_GNOME=	gtk30
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

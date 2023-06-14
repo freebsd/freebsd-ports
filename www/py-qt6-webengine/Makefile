@@ -14,7 +14,7 @@ WWW=		https://riverbankcomputing.com/software/pyqt
 
 LICENSE=	GPLv3
 
-USES=		gl python:3.8+ pyqt:6 qt:6
+USES=		gl python pyqt:6 qt:6
 USE_GL=		gl
 USE_PYQT=	sip:build pyqt6
 USE_PYTHON=	concurrent flavors py3kplist

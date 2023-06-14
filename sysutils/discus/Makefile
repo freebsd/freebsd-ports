@@ -8,7 +8,7 @@ WWW=		https://github.com/ncarrier/discus
 
 LICENSE=	GPLv2
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	ncarrier
 

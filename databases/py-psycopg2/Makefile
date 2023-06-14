@@ -12,7 +12,7 @@ WWW=		http://initd.org/psycopg/ \
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/doc/COPYING.LESSER
 
-USES=		pgsql python:3.6+
+USES=		pgsql python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

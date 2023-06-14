@@ -97,7 +97,7 @@ PLIST_FILES=		include/ldb_version.h \
 USES+=			python:build,test
 CONFIGURE_ARGS+=	--disable-python
 .else
-USES+=			gettext-runtime python:3.6+
+USES+=			gettext-runtime python
 
 PLIST_FILES+=		include/pyldb.h \
 			lib/libpyldb-util${PYTHON_EXT_SUFFIX}.so \

@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 NO_ARCH=	yes
-USES=		cpe python:3.6+
+USES=		cpe python
 CPE_VENDOR=	travis_shirk
 USE_PYTHON=	autoplist distutils
 

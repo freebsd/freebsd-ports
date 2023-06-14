@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libcangjie.so:chinese/libcangjie
 
-USES=		autoreconf gmake libtool pkgconfig sqlite python:3.4+
+USES=		autoreconf gmake libtool pkgconfig sqlite python
 USE_PYTHON=	cython
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CYTHON=${LOCALBASE}/bin/cython-${PYTHON_VER}

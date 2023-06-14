@@ -20,7 +20,7 @@ LIB_DEPENDS=	libxkbcommon.so:x11/libxkbcommon \
 		libfontconfig.so:x11-fonts/fontconfig
 RUN_DEPENDS=	retroarch-assets<=0:games/retroarch-assets
 
-USES=		compiler:c++11-lib cpe gmake pkgconfig python:3.6+ shebangfix ssl
+USES=		compiler:c++11-lib cpe gmake pkgconfig python shebangfix ssl
 CPE_VENDOR=	libretro
 USE_GITHUB=	yes
 GH_ACCOUNT=	libretro

@@ -22,7 +22,7 @@ RUN_DEPENDS=	binutils>=2:devel/binutils \
 		${PYTHON_PKGNAMEPREFIX}pefile>=0:devel/py-pefile@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyelftools>=0:devel/py-pyelftools@${PY_FLAVOR}
 
-USES=		python:3.4+ shebangfix
+USES=		python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	plasma-disassembler

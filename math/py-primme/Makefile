@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=0:devel/py-nose@${PY_FLAVOR}
 
-USES=		fortran gmake localbase:ldflags python:3.6+ shebangfix
+USES=		fortran gmake localbase:ldflags python shebangfix
 USE_PYTHON=	distutils cython autoplist
 
 TEST_TARGET=	test

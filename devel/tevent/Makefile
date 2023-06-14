@@ -42,7 +42,7 @@ DEBUG_CFLAGS=			-g -ggdb3 -O0
 DEBUG_CONFIGURE_ON=		--verbose --enable-debug
 DEBUG_MAKE_ARGS=		--verbose
 
-PYTHON_USES=			gettext-runtime python:3.6+
+PYTHON_USES=			gettext-runtime python
 PYTHON_USE=			python=py3kplist
 PYTHON_USES_OFF=		python:build,test
 PYTHON_CONFIGURE_OFF=		--disable-python

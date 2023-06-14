@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/raven/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python:3.6+
+USES=		python
 # either PYPI or github, whatever is newer
 USE_GITHUB=	yes
 GH_ACCOUNT=	getsentry

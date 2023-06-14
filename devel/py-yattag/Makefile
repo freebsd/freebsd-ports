@@ -12,7 +12,7 @@ WWW=		https://www.yattag.org/ \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/license/lgpl-2.1.txt
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils pytest
 NO_ARCH=	yes
 

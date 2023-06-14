@@ -27,7 +27,7 @@ CONFLICTS_INSTALL=	libeio
 
 USES=		compiler:c++14-lang gettext-tools gnome iconv \
 		jpeg libtool localbase:ldflags meson ninja ssl pathfix pkgconfig \
-		python:3.5+ shared-mime-info shebangfix tar:xz xorg
+		python shared-mime-info shebangfix tar:xz xorg
 SHEBANG_FILES=	src/tests/elementary/spec/generator.py \
 		src/bin/exactness/exactness_play.in \
 		src/bin/exactness/exactness_record.in

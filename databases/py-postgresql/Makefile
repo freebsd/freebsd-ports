@@ -12,7 +12,7 @@ WWW=		https://github.com/python-postgres/fe
 
 LICENSE=	BSD3CLAUSE
 
-USES=		pgsql python:3.3+
+USES=		pgsql python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.pre.mk>

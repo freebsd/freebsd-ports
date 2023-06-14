@@ -83,7 +83,7 @@ PLIST=		${PKGDIR}/pkg-plist-tools
 BUILD_DEPENDS+=	pybind11>0:devel/pybind11
 LIB_DEPENDS+=	libOpenColorIO.so:graphics/opencolorio
 # textproc/py-sphinx_press_theme doesn't support py3.6
-USES+=		python:3.7+
+USES+=		python
 LDFLAGS+=	-lOpenColorIO
 CMAKE_ON+=	OCIO_BUILD_PYTHON
 CMAKE_OFF+=	OCIO_BUILD_APPS BUILD_SHARED_LIBS OCIO_BUILD_DOCS \

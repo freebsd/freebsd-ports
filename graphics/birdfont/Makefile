@@ -22,7 +22,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libxmlbird.so:textproc/libxmlbird
 
 USES=		compiler:c++11-lang desktop-file-utils gettext-tools gnome \
-		pkgconfig python:3.7+,build shared-mime-info shebangfix \
+		pkgconfig python:build shared-mime-info shebangfix \
 		sqlite:3 tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 glib20 gtk30
 USE_LDCONFIG=	yes

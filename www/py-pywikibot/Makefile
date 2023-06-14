@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mwparserfromhell>=0.6.3:textproc/py-mwparserfromhell@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.21.0:www/py-requests@${PY_FLAVOR}
 
-USES=		dos2unix python:3.5+
+USES=		dos2unix python
 DOS2UNIX_FILES=	setup.py
 USE_PYTHON=	autoplist distutils
 

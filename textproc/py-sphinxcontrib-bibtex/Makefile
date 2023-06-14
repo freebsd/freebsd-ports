@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}docutils>=0.8,1:textproc/py-docutils@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}pybtex-docutils>=1.0.0:textproc/py-pybtex-docutils@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=2.1,1:textproc/py-sphinx@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

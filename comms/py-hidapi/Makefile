@@ -12,7 +12,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libhidapi.so:comms/hidapi
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist cython distutils
 
 MAKE_ENV+=	DISTUTILS_DEBUG=1

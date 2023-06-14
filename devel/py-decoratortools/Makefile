@@ -13,7 +13,7 @@ WWW=		https://pypi.org/project/DecoratorTools/
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	dual
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

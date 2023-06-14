@@ -10,7 +10,7 @@ WWW=		https://fribidi.org/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cpe meson python:3.8+,test shebangfix tar:xz
+USES=		cpe meson python:test shebangfix tar:xz
 CPE_VENDOR=	gnu
 SHEBANG_FILES=	test/test-runner.py
 USE_LDCONFIG=	yes

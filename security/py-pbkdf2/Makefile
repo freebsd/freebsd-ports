@@ -9,7 +9,7 @@ COMMENT=	PKCS5 v2.0 PBKDF2 Module
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

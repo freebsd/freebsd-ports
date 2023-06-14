@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 LIB_DEPENDS=	libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
 		libpyside2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/pyside2@${PY_FLAVOR}
 
-USES=		cmake gl python:3.5+ qt:5 shebangfix tar:xz xorg
+USES=		cmake gl python qt:5 shebangfix tar:xz xorg
 USE_GL=		gl
 USE_PYTHON=	flavors
 USE_QT=		3d buildtools charts core datavis3d declarative \

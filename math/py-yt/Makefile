@@ -32,7 +32,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}tqdm>=3.4.0:misc/py-tqdm@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unyt>=2.8.0:math/py-unyt@${PY_FLAVOR}
 
-USES=		dos2unix localbase python:3.8+
+USES=		dos2unix localbase python
 USE_PYTHON=	distutils cython autoplist concurrent
 
 post-patch:

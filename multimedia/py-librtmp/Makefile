@@ -16,7 +16,7 @@ LIB_DEPENDS=	librtmp.so:multimedia/librtmp
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=0:devel/py-cffi@${PY_FLAVOR}
 
-USES=		python:3.6+ localbase:ldflags
+USES=		python localbase:ldflags
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.options.mk>

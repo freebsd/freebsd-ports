@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyproj>0:graphics/py-pyproj@${PY_FLAVOR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	Komzpa
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils py3kplist optsuffix
 NO_ARCH=	yes
 

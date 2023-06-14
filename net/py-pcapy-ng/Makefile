@@ -11,7 +11,7 @@ WWW=		http://www.coresecurity.com/corelabs-research/open-source-tools/pcapy
 LICENSE=	APACHE11
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 CONFLICTS_INSTALL=	pcapy

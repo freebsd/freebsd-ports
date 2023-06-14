@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		cpe python:3.6+,patch,run shebangfix
+USES=		cpe python:patch,run shebangfix
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_BUILDARGS+=	--without-tests

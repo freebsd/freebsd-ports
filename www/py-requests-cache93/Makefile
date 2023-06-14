@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}appdirs>=1.4.4<2.0.0:devel/py-appdirs@${PY_F
 		${PYTHON_PKGNAMEPREFIX}url-normalize>=1.4<2.0:net/py-url-normalize@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}urllib3>=1.25.5,1<2.0.0,1:net/py-urllib3@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

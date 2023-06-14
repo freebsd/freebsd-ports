@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 BUILD_DEPENDS=	flatc:devel/flatbuffers
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 
-USES=		cmake:testing compiler:c++14-lang python:3.6+,build
+USES=		cmake:testing compiler:c++14-lang python:build
 
 CMAKE_ON=	BUILD_SHARED_LIBS MSL_SHARED
 CMAKE_OFF=	SPIRV_TOOLS_BUILD_STATIC

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgtop-2.0.so:devel/libgtop \
 	libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-runtime gmake gnome libtool pathfix \
-		pkgconfig python:3.6+,build vala:build xorg
+		pkgconfig python:build vala:build xorg
 USE_GNOME=	gtk30 glib20 introspection:build libwnck3 cairo gdkpixbuf2
 USE_XORG=	x11
 

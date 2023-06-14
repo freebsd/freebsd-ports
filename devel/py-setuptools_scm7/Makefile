@@ -26,7 +26,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=0:devel/py-virtualenv@${PY_FLAV
 		${PY_MERCURIAL}	\
 		gpg:security/gnupg
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}-${PORTNAME}

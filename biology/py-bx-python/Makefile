@@ -16,7 +16,7 @@ PY_DEPENDS=	${PYNUMPY}
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		compiler python:3.6+
+USES=		compiler python
 USE_PYTHON=	autoplist cython distutils
 
 post-install:

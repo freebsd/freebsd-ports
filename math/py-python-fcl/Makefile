@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfcl05.so:math/fcl05 \
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++11-lang eigen:3 python:3.6+
+USES=		compiler:c++11-lang eigen:3 python
 
 USE_PYTHON=	distutils autoplist concurrent cython
 

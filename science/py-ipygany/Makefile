@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVOR
 		${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ipydatawidgets>0:devel/py-ipydatawidgets@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils concurrent autoplist pytest
 
 NO_ARCH=	yes

@@ -9,7 +9,7 @@ MAINTAINER=	roland@micite.net
 COMMENT=	iCalendar and vCard module for python
 WWW=		https://pypi.org/project/pycalendar/2.0/
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

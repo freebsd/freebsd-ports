@@ -8,7 +8,7 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	Complete yet simple CSS parser for Python
 WWW=		https://pypi.org/project/tinycss/
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

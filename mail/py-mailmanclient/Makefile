@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>3.0:devel/py-flake8@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mailman>0:mail/mailman3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}falcon>0:www/py-falcon@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

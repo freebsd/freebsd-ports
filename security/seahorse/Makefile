@@ -23,7 +23,7 @@ LIB_DEPENDS=	libgcr-base-3.so:security/gcr \
 RUN_DEPENDS=	gnupg>=2.1.4:security/gnupg
 
 USES=		cpe gettext gnome localbase:ldflags meson pkgconfig \
-		python:3.5+,build tar:xz vala:build xorg
+		python:build tar:xz vala:build xorg
 USE_CSTD=	c99
 USE_GNOME=	gtk30
 GLIB_SCHEMAS=	org.gnome.seahorse.gschema.xml \

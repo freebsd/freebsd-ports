@@ -12,7 +12,7 @@ WWW=		http://www.pygresql.org/
 
 LICENSE=	PSFL
 
-USES=		pgsql python:3.6+
+USES=		pgsql python
 USE_PYTHON=	autoplist distutils
 
 PORTDOCS=	*

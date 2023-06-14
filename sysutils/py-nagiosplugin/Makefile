@@ -11,7 +11,7 @@ WWW=		https://bitbucket.org/flyingcircus/nagiosplugin
 LICENSE=	ZPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

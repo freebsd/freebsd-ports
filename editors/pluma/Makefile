@@ -21,7 +21,7 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:misc/iso-codes
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gmake gnome libtool localbase \
-		pathfix pkgconfig python:3.3+ shebangfix tar:xz xorg
+		pathfix pkgconfig python shebangfix tar:xz xorg
 USE_XORG=	ice sm x11
 USE_GNOME=	cairo gdkpixbuf2 gnomeprefix gtk30 gtksourceview4 \
 		gvfs intltool introspection libxml2

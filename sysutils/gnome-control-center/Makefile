@@ -43,7 +43,7 @@ RUN_DEPENDS=	cantarell-fonts>=0:x11-fonts/cantarell-fonts \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lib gettext gnome gstreamer localbase:ldflags meson \
-		pkgconfig python:3.6+,build samba:lib tar:xz xorg
+		pkgconfig python:build samba:lib tar:xz xorg
 USE_GNOME=	cairo gnomedesktop3 gsound libxml2
 USE_XORG=	x11 xi
 USE_LDCONFIG=	yes

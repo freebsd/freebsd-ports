@@ -11,7 +11,7 @@ WWW=		https://treeline.bellz.org
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-USES=		python:3.7+ pyqt:5 shebangfix
+USES=		python pyqt:5 shebangfix
 USE_PYQT=	pyqt5 sip
 
 SHEBANG_FILES=	source/treeline.py

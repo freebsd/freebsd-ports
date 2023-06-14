@@ -16,7 +16,7 @@ BROKEN_riscv64=	fails to compile: btree_test.c:462:49: result of comparison of c
 BUILD_DEPENDS=	ksh93:shells/ksh93
 RUN_DEPENDS=	openzfs-kmod>=0:sysutils/openzfs-kmod
 
-USES+=		autoreconf:build cpe libtool gmake gettext-runtime python:3.3+,build shebangfix
+USES+=		autoreconf:build cpe libtool gmake gettext-runtime python:build shebangfix
 SHEBANG_GLOB=	*.ksh *.ksh.in *.kshlib *.py.in
 SHEBANG_FILES=	tests/zfs-tests/tests/functional/trim/trim.cfg \
 		cmd/arcstat.in \

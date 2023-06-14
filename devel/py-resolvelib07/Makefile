@@ -11,7 +11,7 @@ WWW=		https://github.com/sarugaku/resolvelib
 
 LICENSE=	ISCL
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}-${PORTNAME} ${PYTHON_PKGNAMEPREFIX}-${PORTNAME}05

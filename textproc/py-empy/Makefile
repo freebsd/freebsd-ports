@@ -10,7 +10,7 @@ WWW=		http://www.alcyone.com/software/empy/
 
 LICENSE=	LGPL21
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

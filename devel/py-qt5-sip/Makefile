@@ -17,7 +17,7 @@ LICENSE_NAME_SIP=	SIP License
 LICENSE_FILE_SIP=	${FILESDIR}/LICENSE
 LICENSE_PERMS_SIP=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-USES=		python:3.5+ pyqt:sip
+USES=		python pyqt:sip
 USE_PYTHON=	autoplist concurrent distutils flavors py3kplist
 USE_PYQT=	#
 

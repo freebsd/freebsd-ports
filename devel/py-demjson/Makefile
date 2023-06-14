@@ -13,7 +13,7 @@ WWW=		http://deron.meranda.us/python/demjson/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.7+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes
 

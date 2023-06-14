@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libmarkdown.so:textproc/discount
 
 USES=		desktop-file-utils gettext gnome libarchive localbase:ldflags \
-		meson pkgconfig python:3.5+,build shared-mime-info shebangfix vala:build
+		meson pkgconfig python:build shared-mime-info shebangfix vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	phase1geo
 GH_PROJECT=	Minder

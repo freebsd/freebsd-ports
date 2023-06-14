@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PY_PILLOW}
 
 NO_BUILD=	yes
 
-USES=		python:run,3.6+ shebangfix tar:tgz
+USES=		python:run shebangfix tar:tgz
 SHEBANG_FILES=	xs.py
 
 PLIST_FILES=	bin/xs

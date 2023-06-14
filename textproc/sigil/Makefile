@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dulwich>=0.15.0:devel/py-dulwich@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR}
 
 USES=		cmake cpe desktop-file-utils \
-		minizip pkgconfig python:3.4+ qt:5 shebangfix
+		minizip pkgconfig python qt:5 shebangfix
 CPE_VENDOR=	${PORTNAME}-ebook
 
 USE_GITHUB=	yes

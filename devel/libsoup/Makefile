@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 RUN_DEPENDS=	glib-networking>=2.29.18:net/glib-networking
 
 USES=		cpe gettext gnome localbase meson \
-		pkgconfig python:3.6+,build sqlite ssl tar:xz
+		pkgconfig python:build sqlite ssl tar:xz
 USE_GNOME=	glib20 intlhack introspection:build \
 		libxml2
 USE_LDCONFIG=	yes

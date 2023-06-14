@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libkeybinder-3.0.so:x11/keybinder-gtk3 \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
-USES=		gnome python:3.5+ shebangfix gettext
+USES=		gnome python shebangfix gettext
 USE_GNOME=	intltool pygobject3 vte3
 USE_PYTHON=	autoplist distutils noflavors
 

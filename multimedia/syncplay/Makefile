@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}service_identity>=0:security/py-service_identity@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=0:dns/py-idna@${PY_FLAVOR}
 
-USES=		desktop-file-utils gmake python:3.4+ shebangfix
+USES=		desktop-file-utils gmake python shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	Syncplay
 

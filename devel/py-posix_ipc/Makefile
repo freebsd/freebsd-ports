@@ -11,7 +11,7 @@ WWW=		https://semanchuk.com/philip/posix_ipc/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 post-install:

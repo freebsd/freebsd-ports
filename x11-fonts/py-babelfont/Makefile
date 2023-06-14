@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cu2qu>=1.6.7<2.0.0:x11-fonts/py-cu2qu@${PY_F
 		${PYTHON_PKGNAMEPREFIX}orjson>=3.5.1<4.0.0:devel/py-orjson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ufolib2>=0.11.1:print/py-ufolib2@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

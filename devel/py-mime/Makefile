@@ -13,7 +13,7 @@ LICENSE_FILE=	${FILESDIR}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}future>0:devel/py-future@${PY_FLAVOR}
 
-USES=		python:3.6+,run
+USES=		python:run
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

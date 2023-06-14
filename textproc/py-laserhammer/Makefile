@@ -10,7 +10,7 @@ WWW=		https://github.com/trasz/laserhammer
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -22,7 +22,7 @@ LIB_DEPENDS=	libmuparserx.so:math/muparserx \
 RUN_DEPENDS=	${PYNUMPY}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fixtures>0:devel/py-fixtures@${PY_FLAVOR}
 
-USES=		python:3.7+ localbase:ldflags
+USES=		python localbase:ldflags
 USE_PYTHON=	distutils pytest # all tests fail, see https://github.com/Qiskit/qiskit-aer/issues/1577
 
 USE_GITHUB=	yes

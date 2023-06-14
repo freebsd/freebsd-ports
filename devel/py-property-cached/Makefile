@@ -11,7 +11,7 @@ WWW=		https://github.com/althonos/property-cached/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.5+ zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist pytest # 1 test fails, see https://github.com/pydanny/cached-property/pull/294
 
 NO_ARCH=	yes

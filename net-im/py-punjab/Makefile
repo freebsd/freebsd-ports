@@ -11,7 +11,7 @@ WWW=		https://github.com/twonds/punjab
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=0:devel/py-twisted@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	punjab
 

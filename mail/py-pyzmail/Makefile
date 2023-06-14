@@ -11,7 +11,7 @@ WWW=		https://www.magiksys.net/pyzmail
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		dos2unix python:3.6+
+USES=		dos2unix python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

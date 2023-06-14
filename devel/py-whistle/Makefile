@@ -10,7 +10,7 @@ WWW=		https://python-whistle.github.io/
 
 LICENSE=	APACHE20
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

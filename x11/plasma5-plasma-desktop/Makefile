@@ -29,7 +29,7 @@ BUILD_DEPENDS=	xf86-input-evdev>0:x11-drivers/xf86-input-evdev \
 		wayland-protocols>=1.18:graphics/wayland-protocols
 
 USES=		cmake compiler:c++11-lib cpe desktop-file-utils gettext gnome \
-		kde:5 pkgconfig python:3.5+,run qt:5 shebangfix tar:xz xorg
+		kde:5 pkgconfig python:run qt:5 shebangfix tar:xz xorg
 USE_GNOME=	glib20
 USE_KDE=	activities activities-stats archive attica auth baloo \
 		bookmarks codecs completion config configwidgets coreaddons \

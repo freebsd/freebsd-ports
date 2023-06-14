@@ -25,7 +25,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libOsi.so:math/osi
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils cython autoplist pytest
 
 USE_GITHUB=	yes

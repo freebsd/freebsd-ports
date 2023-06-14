@@ -39,7 +39,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}XlsxWriter>0:textproc/py-xlsxwriter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python:3.7+ pyqt:5
+USES=		python pyqt:5
 USE_PYTHON=	distutils cython autoplist noflavors
 USE_PYQT=	pyqt5:run webengine:run
 

@@ -17,7 +17,7 @@ LIB_DEPENDS=	libanthy.so:japanese/anthy \
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 CONFIGURE_ARGS+=--with-layout=default
-USES=		gettext gmake gnome libtool pkgconfig python:3.6+
+USES=		gettext gmake gnome libtool pkgconfig python
 USE_GNOME=	pygobject3
 GLIB_SCHEMAS=	org.freedesktop.ibus.engine.anthy.gschema.xml
 

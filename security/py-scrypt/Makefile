@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/scrypt/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python:3.6+ ssl
+USES=		python ssl
 USE_PYTHON=	autoplist distutils
 
 post-install:

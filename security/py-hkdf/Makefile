@@ -8,7 +8,7 @@ MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	HMAC-based Extract-and-Expand Key Derivation Function (HKDF)
 WWW=		https://github.com/casebeer/python-hkdf
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

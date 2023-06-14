@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msrest>=0.6.21:net-mgmt/py-msrest@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}azure-common>=1.1:www/py-azure-common@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-core>=1.3.0<2.0.0:devel/py-azure-mgmt-core@${PY_FLAVOR}
 
-USES=		azurepy python:3.6+ zip
+USES=		azurepy python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zxcvbn>0:security/py-zxcvbn@${PY_FLAVOR} \
 		password-store>=1.7.3_1:sysutils/password-store
 
-USES=		python:3.4+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils
 
 NO_ARCH=	yes

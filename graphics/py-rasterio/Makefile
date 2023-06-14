@@ -23,7 +23,7 @@ RUN_DEPENDS=	gdal>=3.1:graphics/gdal \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.18,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}snuggs>=1.4.1:math/py-snuggs@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.7+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	autoplist concurrent cython distutils
 
 OPTIONS_DEFINE=	PLOT S3

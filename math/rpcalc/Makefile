@@ -11,7 +11,7 @@ WWW=		https://rpcalc.bellz.org/index.html
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-USES=		pyqt:5 python:3.4+ shebangfix
+USES=		pyqt:5 python shebangfix
 USE_PYQT=	pyqt5 sip
 
 SHEBANG_FILES=	source/rpcalc.py

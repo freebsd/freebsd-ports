@@ -36,7 +36,7 @@ PSLIB_USES=		localbase
 PSLIB_CONFIGURE_ENV_OFF=	ac_cv_lib_ps_PS_open_file=no
 
 PYTHON_BUILD_DEPENDS=	swig:devel/swig
-PYTHON_USES=		gettext-runtime python:3.6+ shebangfix
+PYTHON_USES=		gettext-runtime python shebangfix
 PYTHON_CONFIGURE_OFF=	--disable-python
 PYTHON_PORTEXAMPLES=	load_dwg.py
 PYTHON_VARS=		SHEBANG_FILES+=examples/load_dwg.py

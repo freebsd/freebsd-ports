@@ -17,7 +17,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libssh2.so:security/libssh2
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig \
-		python:3.5+,build vala:build
+		python:build vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	Alecaddd
 USE_GNOME=	cairo glib20 gtk30 gtksourceview3 libgda5

@@ -9,7 +9,7 @@ WWW=		https://github.com/RussellLuo/jsonsir
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes

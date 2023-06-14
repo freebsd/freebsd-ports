@@ -16,7 +16,7 @@ LIB_DEPENDS=	libicui18n.so:devel/icu \
 		libxapian.so:databases/xapian-core \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c++14-lang meson pkgconfig python:3.6+ tar:xz
+USES=		compiler:c++14-lang meson pkgconfig python tar:xz
 USE_LDCONFIG=	yes
 
 MESON_ARGS=	-Dcpp_std=c++14

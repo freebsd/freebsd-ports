@@ -16,7 +16,7 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
 USES=		cmake compiler:c11 gnome iconv localbase openal:al,alut \
-		python:3.6+ sdl shebangfix
+		python sdl shebangfix
 SHEBANG_FILES=	admin/extend2da.py
 USE_SDL=	sdl2
 USE_LDCONFIG=	yes

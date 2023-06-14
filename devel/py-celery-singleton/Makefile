@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}redis>0:databases/py-redis@${PY_FLAVOR}
 
-USES=		python:3.6+,run
+USES=		python:run
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

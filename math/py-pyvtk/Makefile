@@ -11,7 +11,7 @@ WWW=		https://github.com/pearu/pyvtk
 
 LICENSE=	GPLv2
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

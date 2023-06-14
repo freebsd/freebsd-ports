@@ -17,7 +17,7 @@ BUILD_DEPENDS=	liblz4>=1.7.5:archivers/liblz4 \
 LIB_DEPENDS=	liblz4.so:archivers/liblz4
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR}
 
-USES=		localbase python:3.7+
+USES=		localbase python
 USE_PYTHON=	distutils pytest
 
 CONFIGURE_ENV=	PYLZ4_USE_SYSTEM_LZ4=1

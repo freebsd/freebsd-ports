@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 RUN_DEPENDS=	indiserver:devel/indi \
 		${PYTHON_PKGNAMEPREFIX}indiweb>0:astro/py-indiweb@${PY_FLAVOR}
 
-USES=		cmake iconv gettext kde:5 ninja qt:5 pkgconfig python:3.7+ xorg
+USES=		cmake iconv gettext kde:5 ninja qt:5 pkgconfig python xorg
 USE_KDE=	auth bookmarks codecs completion config configwidgets \
 		coreaddons doctools i18n kio itemviews jobwidgets service \
 		solid widgetsaddons windowsystem xmlgui

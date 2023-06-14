@@ -25,7 +25,7 @@ RUN_DEPENDS=	bsdisks>0:sysutils/bsdisks \
 PORTSCOUT=	limitw:1,even
 
 USES=		cpe gettext gnome libarchive localbase meson \
-		pkgconfig python:3.5+,build shebangfix tar:xz
+		pkgconfig python:build shebangfix tar:xz
 USE_GNOME=	glib20 libxml2 libxslt:build
 SHEBANG_FILES=	meson_post_install.py
 MESON_ARGS=	-Dsystemduserunitdir=no \

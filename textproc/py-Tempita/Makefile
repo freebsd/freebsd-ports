@@ -11,7 +11,7 @@ WWW=		https://pythonpaste.org/tempita/
 LICENSE=	MIT
 #LICENSE_FILE=	No license in PyPI sdist or repository
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

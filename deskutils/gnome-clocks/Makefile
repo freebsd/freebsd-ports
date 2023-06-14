@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgeoclue-2.so:net/geoclue \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
-		python:3.4+,build shebangfix tar:xz vala:build
+		python:build shebangfix tar:xz vala:build
 USE_LDCONFIG=	yes
 USE_GNOME=	cairo gnomedesktop3 gsound
 SHEBANG_FILES=	build-aux/post-install.py

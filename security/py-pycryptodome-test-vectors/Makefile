@@ -13,7 +13,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 # Officially: 2.7, 3-5-3.10 (same as security/py-cryptodome)
-USES=		cpe python:3.7+ zip
+USES=		cpe python zip
 CPE_VENDOR=	python
 USE_PYTHON=	autoplist distutils
 

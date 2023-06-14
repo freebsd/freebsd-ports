@@ -458,7 +458,7 @@ SAMBA4_MODULES+=		auth_skel pdb_test gpext_security gpext_registry \
 USES+=				python:build,test
 CONFIGURE_ARGS+=		--disable-python
 .else
-USES+=				python:3.6+
+USES+=				python
 PLIST+=				${PKGDIR}/pkg-plist.python
 # Don't cache Python modules
 CONFIGURE_ARGS+=		--nopycache

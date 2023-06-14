@@ -20,7 +20,7 @@ LIB_DEPENDS=	libffi.so:devel/libffi \
 # iconv:wchar_t - our iconv in base doesn't support utf-8 -> wchar_t (boooo)
 # (wchar_t is used by glibmm, rawtherapee triggered this)
 USES=		compiler:c11 cpe gettext gnome iconv:wchar_t localbase:ldflags \
-		meson perl5 pkgconfig python:3.7+ tar:xz trigger
+		meson perl5 pkgconfig python tar:xz trigger
 TRIGGERS=	gio-modules glib-schemas
 USE_LDCONFIG=	yes
 USE_PERL5=	build

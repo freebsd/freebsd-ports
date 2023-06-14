@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfftw3.so:math/fftw3 \
 		libasound.so:audio/alsa-lib \
 		libpulse.so:audio/pulseaudio
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils noflavors
 USE_WX=		3.2
 

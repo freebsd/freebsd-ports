@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS+=	${PY_MERCURIAL}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

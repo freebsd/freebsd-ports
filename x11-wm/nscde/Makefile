@@ -52,7 +52,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psutil>=5.7.0:sysutils/py-psutil@${PY_FLAVOR
 		xterm:x11/xterm
 
 USES=		desktop-file-utils gettext magick pkgconfig:build pyqt:5 \
-		python:3.7+ shebangfix xorg
+		python shebangfix xorg
 USE_PYQT=	pyqt5
 USE_XORG=	x11 xext xpm
 

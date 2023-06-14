@@ -19,7 +19,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/bc:math/gnubc \
 		calc:math/calc
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		gmake python:test,3.5+ readline
+USES=		gmake python:test readline
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	jarun

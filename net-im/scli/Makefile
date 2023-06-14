@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urwid-readline>=0:devel/py-urwid-readline@${
 		dbus>=0:devel/dbus \
 		signal-cli>=0.8.4.1:net-im/signal-cli
 
-USES=		python:run,3.7+ shebangfix
+USES=		python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	isamert
 SHEBANG_FILES=	${PORTNAME}

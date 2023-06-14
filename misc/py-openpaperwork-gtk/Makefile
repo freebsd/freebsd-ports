@@ -18,7 +18,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}openpaperwork-core>0:misc/py-openpaperwork-co
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

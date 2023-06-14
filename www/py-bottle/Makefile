@@ -11,7 +11,7 @@ WWW=		https://bottlepy.org/
 
 LICENSE=	MIT
 
-USES=		cpe python:3.6+
+USES=		cpe python
 
 CPE_VENDOR=	bottlepy
 USE_PYTHON=	autoplist concurrent distutils

@@ -25,7 +25,7 @@ LIB_DEPENDS?=	libcurl.so:ftp/curl \
 		libyaml.so:textproc/libyaml
 
 USES+=		gettext gnome localbase:ldflags meson pkgconfig \
-		python:3.6+,build tar:xz vala:build
+		python:build tar:xz vala:build
 
 USE_GNOME+=	glib20 introspection:build libxml2 libxslt
 USE_LDCONFIG=	yes

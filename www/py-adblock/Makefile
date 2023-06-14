@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}maturin>=0.8.3:devel/py-maturin@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pip>=20.2.3:devel/py-pip@${PY_FLAVOR} \
 		public_suffix_list>0:dns/public_suffix_list
 
-USES=		cargo python:3.6+
+USES=		cargo python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	ArniDagur

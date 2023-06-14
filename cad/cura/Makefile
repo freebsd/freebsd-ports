@@ -33,7 +33,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zeroconf>0:net/py-zeroconf@${PY_FLAVOR} \
 LIB_DEPENDS=	libArcus.so:net/libarcus \
 		libSavitar.so:devel/libsavitar
 
-USES=		cmake gettext shebangfix python:3.5+ pyqt:5 \
+USES=		cmake gettext shebangfix python pyqt:5 \
 		desktop-file-utils shared-mime-info
 USE_PYQT=	pyqt5
 CMAKE_ARGS+=	-DURANIUM_SCRIPTS_DIR:STRING="${LOCALBASE}/share/uranium/scripts" \

@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pydata-sphinx-theme>=0.13.3:textproc/py-pydata-sphinx-theme@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=4,1<7,1:textproc/py-sphinx@${PY_FLAVOR} \
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

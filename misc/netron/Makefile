@@ -12,7 +12,7 @@ WWW=		https://github.com/lutzroeder/netron
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	lutzroeder
 USE_PYTHON=	distutils noflavors

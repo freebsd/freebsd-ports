@@ -27,7 +27,7 @@ OPTIONS_DEFAULT=	PYTHON
 OPTIONS_SUB=		yes
 
 PYTHON_CONFIGURE_ON=	--with-python=${PYTHON_VER:R}
-PYTHON_USES=	python:3.6+
+PYTHON_USES=	python
 
 pre-build: # ignore failure of the first run of the build command that always fails first, see https://github.com/INCF/libneurosim/issues/21
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} || ${TRUE}

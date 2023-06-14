@@ -27,7 +27,7 @@ OPTIONS_DEFINE=		EXAMPLES MANPAGES
 OPTIONS_DEFAULT=	MANPAGES
 
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=1.8.5,1:textproc/py-sphinx@${PY_FLAVOR}
-MANPAGES_USES=		gmake python:build,3.6+
+MANPAGES_USES=		gmake python:build
 MANPAGES_PLIST_FILES=	man/man1/zrepl.1.gz
 
 pre-patch:

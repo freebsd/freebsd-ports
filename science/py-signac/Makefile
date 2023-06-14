@@ -21,7 +21,7 @@ BUILD_DEPENDS=	${PY_DEPENDS} \
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zarr>0:devel/py-zarr@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	pep517 autoplist pytest # some tests fail because of https://github.com/zarr-developers/zarr-python/issues/1407
 
 USE_GITHUB=	yes

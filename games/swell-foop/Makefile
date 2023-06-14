@@ -19,7 +19,7 @@ LIB_DEPENDS=	libclutter-1.0.so:graphics/clutter \
 
 PORTSCOUT=	limitw:1,even
 
-USES=		gettext gnome localbase meson pkgconfig python:3.6+,build \
+USES=		gettext gnome localbase meson pkgconfig python:build \
 		tar:xz vala:build
 USE_GNOME=	gtk30
 GLIB_SCHEMAS=	org.gnome.SwellFoop.gschema.xml

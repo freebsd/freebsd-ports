@@ -15,7 +15,7 @@ LICENSE_COMB=	multi
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING-LGPL-2.1
 LICENSE_FILE_MPL11=	${WRKSRC}/COPYING-MPL-1.1
 
-USES=		compiler:c11 gnome meson pkgconfig python:3.7+
+USES=		compiler:c11 gnome meson pkgconfig python
 USE_PYTHON=	flavors py3kplist
 USE_GNOME=	cairo
 MESON_ARGS+=	-Dpython=${PYTHON_VERSION}

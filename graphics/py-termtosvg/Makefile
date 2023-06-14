@@ -14,7 +14,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}svgwrite>=0:graphics/py-svgwrite@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyte>=0:devel/py-pyte@${PY_FLAVOR}
 
-USES=		python:3.3+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

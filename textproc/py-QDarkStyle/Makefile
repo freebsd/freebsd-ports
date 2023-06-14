@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}helpdev>=0.6.10:devel/py-helpdev@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}QtPy>=1.9:devel/py-QtPy@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

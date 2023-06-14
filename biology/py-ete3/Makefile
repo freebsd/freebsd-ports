@@ -17,7 +17,7 @@ PY_DEPENDS=	${PYNUMPY} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.5+ pyqt:5 shebangfix
+USES=		python pyqt:5 shebangfix
 USE_PYTHON=	distutils concurrent autoplist pytest # some tests fail, see https://github.com/etetoolkit/ete/issues/643
 USE_PYQT=	pyqt5
 

@@ -8,7 +8,7 @@ MAINTAINER=	whitejv81@gmail.com
 COMMENT=	RFC-compliant FQDN validation and manipulation for Python
 WWW=		https://github.com/ypcrts/fqdn
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

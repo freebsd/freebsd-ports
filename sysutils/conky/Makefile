@@ -85,7 +85,7 @@ METAR_IMPLIES=		CURL
 MANPAGES_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 			pandoc:textproc/hs-pandoc
-MANPAGES_USES=		python:3.7+,build
+MANPAGES_USES=		python:build
 MANPAGES_CMAKE_BOOL=	BUILD_DOCS
 MANPAGES_PLIST_FILES=	man/man1/conky.1.gz
 

@@ -20,7 +20,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}mistune0>=0.8.4:textproc/py-mistune0@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.7.2:textproc/py-pygments@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist distutils flavors
 
 NO_ARCH=	yes

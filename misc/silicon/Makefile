@@ -17,7 +17,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libharfbuzz.so:print/harfbuzz \
 		libonig.so:devel/oniguruma
 
-USES=		cargo python:3.6+ xorg
+USES=		cargo python xorg
 USE_XORG=	xcb
 
 USE_GITHUB=	yes

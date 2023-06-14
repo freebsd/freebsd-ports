@@ -20,7 +20,7 @@ BUILD_DEPENDS=	itstool:textproc/itstool
 PORTSCOUT=	limitw:1,even
 
 USES=		gettext gmake gnome localbase meson pathfix pkgconfig \
-		python:3.7+ tar:xz vala:build
+		python tar:xz vala:build
 USE_GNOME=	cairo gtk30 intlhack librsvg2 libxml2:build
 
 BINARY_ALIAS=	python3=${PYTHON_VERSION}

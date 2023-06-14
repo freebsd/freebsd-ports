@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR}
 LIB_DEPENDS=	libkim-api.so:science/kim-api
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++20-lang pkgconfig python:3.6+
+USES=		compiler:c++20-lang pkgconfig python
 USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/openkim/kimpy/issues/16
 
 post-install:

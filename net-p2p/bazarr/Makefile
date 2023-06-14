@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		ffprobe:multimedia/ffmpeg \
 		unrar:archivers/unrar
 
-USES=		python:3.7+ zip
+USES=		python zip
 
 USE_RC_SUBR=	bazarr
 

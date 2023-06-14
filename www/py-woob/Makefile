@@ -43,7 +43,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}unidecode>=0:converters/py-unidecode@${PY_FL
 		gpg2:security/gnupg \
 		yt-dlp:www/yt-dlp
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist pep517
 
 NO_ARCH=	yes

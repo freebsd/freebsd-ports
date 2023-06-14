@@ -86,7 +86,7 @@ OFX_CMAKE_BOOL=		WITH_OFX
 OFX_LIB_DEPENDS=	libofx.so:finance/libofx
 OFX_VARS=		GLIB_SCHEMAS+=org.gnucash.GnuCash.dialogs.import.ofx.gschema.xml
 PYTHON_CMAKE_BOOL=	WITH_PYTHON
-PYTHON_USES=		python:3.6+
+PYTHON_USES=		python
 
 post-install-PYTHON-on:
 	@(cd ${STAGEDIR}${PREFIX} \

@@ -21,7 +21,7 @@ LIB_DEPENDS=	libarb.so:math/arb		\
 		libboost_thread.so:devel/boost-libs
 
 USES=		autoreconf compiler:c++11-lang gmake libtool localbase	\
-		python:3.7+
+		python
 
 USE_GITHUB=	yes
 ANTIC_TAG=	f4e8a60

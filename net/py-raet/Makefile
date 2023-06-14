@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools-git>=1.1:devel/py-setuptools-git@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes

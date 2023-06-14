@@ -33,7 +33,7 @@ PGSQL_CONFIGURE_WITH=	postgresql
 MYSQL_USES=	mysql
 MYSQL_CONFIGURE_WITH=	mysql
 MYSQL_VARS=	IGNORE_WITH_MYSQL=80
-PYTHON_USES=	python:3.7
+PYTHON_USES=	python:3.8
 PYTHON_CONFIGURE_WITH=	python3
 RUBY_USES=	ruby
 RUBY_CONFIGURE_WITH=	ruby
@@ -44,6 +44,10 @@ JAVA_CONFIGURE_WITH=	java
 INSTALL_TARGET=install-strip
 
 .include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MPYTHON}
+BROKEN=	fails to build
+.endif
 
 .if ${ARCH} != amd64 && ${ARCH} != i386
 CXXFLAGS+=	-DENABLE_BOOST_ATOMIC_COUNT

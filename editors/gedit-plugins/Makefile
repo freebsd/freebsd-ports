@@ -25,7 +25,7 @@ RUN_DEPENDS=	gedit>=0:editors/gedit \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig \
-		python:3.4+ shebangfix tar:xz vala:build
+		python shebangfix tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30 gtksourceview4 intlhack introspection \
 		vte3
 USE_CSTD=	c11

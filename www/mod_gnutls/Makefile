@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}yaml>=3.13:devel/py-yaml@${PY_FLAVOR}
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
 GNU_CONFIGURE=	yes
-USES=		apache compiler:c++11-lang cpe libtool pkgconfig python:3.7+ tar:bzip2
+USES=		apache compiler:c++11-lang cpe libtool pkgconfig python tar:bzip2
 CPE_VENDOR=	${PORTNAME}_project
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}

@@ -18,7 +18,7 @@ RUN_DEPENDS=	jackit>0:audio/jack \
 		jack_capture:audio/jack-capture
 
 USES=		compiler:c++11-lang desktop-file-utils gmake localbase pkgconfig \
-		python:3.4+ pyqt:5 qt:5 shebangfix tar:bz2
+		python pyqt:5 qt:5 shebangfix tar:bz2
 SHEBANG_FILES=	src/*.py
 USE_QT=		core gui widgets buildtools:build
 USE_PYQT=	pyqt5 sip

@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}google-api-core>=1.14.0:www/py-google-api-co
 		${PYTHON_PKGNAMEPREFIX}proto-plus>=1.20.0:devel/py-proto-plus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=3.13.0:devel/py-protobuf@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes

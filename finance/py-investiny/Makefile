@@ -16,7 +16,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httpx>=0.15.0:www/py-httpx@${PY_FLAVOR} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

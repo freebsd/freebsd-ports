@@ -11,7 +11,7 @@ WWW=		https://convertall.bellz.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 
-USES=		pyqt:5 python:3.5+ shebangfix
+USES=		pyqt:5 python shebangfix
 USE_PYQT=	pyqt5 sip
 
 SHEBANG_FILES=	source/convertall.py

@@ -9,7 +9,7 @@ WWW=		https://github.com/GNS3/gns3-converter
 
 LICENSE=	GPLv3
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	distutils autoplist optsuffix
 
 .include <bsd.port.mk>

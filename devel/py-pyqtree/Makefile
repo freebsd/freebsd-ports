@@ -13,7 +13,7 @@ LICENSE=	MIT
 
 NO_ARCH=	yes
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

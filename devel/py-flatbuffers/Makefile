@@ -11,7 +11,7 @@ WWW=		https://google.github.io/flatbuffers/ \
 
 LICENSE=	APACHE20
 
-USES=		cpe python:3.7+
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

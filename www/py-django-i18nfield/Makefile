@@ -10,7 +10,7 @@ WWW=		https://github.com/raphaelm/django-i18nfield
 
 LICENSE=	APACHE20
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

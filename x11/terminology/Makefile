@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libefl.so:devel/efl
 
-USES=		compiler:c11 cpe meson pkgconfig tar:xz python:3.4+
+USES=		compiler:c11 cpe meson pkgconfig tar:xz python
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 CPE_VENDOR=	enlightenment
 

@@ -30,7 +30,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.4.0:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tqdm>=4.43.0:misc/py-tqdm@${PY_FLAVOR}
 
-USES=		compiler:c++11-lang python:3.7+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils cython autoplist
 
 .if !defined(WITH_DEBUG)

@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}py-cpuinfo>=0:sysutils/py-py-cpuinfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rich>=0:textproc/py-rich@${PY_FLAVOR}
 
-USES=		pkgconfig python:3.8+
+USES=		pkgconfig python
 USE_PYTHON=	autoplist concurrent cython pep517
 
 MAKE_ENV=	CMAKE_ARGS=-DUSE_SYSTEM_BLOSC2=ON

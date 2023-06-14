@@ -9,7 +9,7 @@ WWW=		https://github.com/altjx/ipwn/tree/master/iSMTP
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/iSMTP/LICENSE.md
 
-USES=		python:3.0+ shebangfix
+USES=		python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	altjx

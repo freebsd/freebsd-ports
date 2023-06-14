@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/azure-common/
 
 LICENSE=	MIT
 
-USES=		azurepy python:3.6+ zip
+USES=		azurepy python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/../../LICENSE
 
 DISTINFO_FILE=	${PORTSDIR}/devel/thrift/distinfo
 
-USES=		cpe python:3.6+
+USES=		cpe python
 CPE_VENDOR=	apache
 USE_PYTHON=	distutils autoplist
 

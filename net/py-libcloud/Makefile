@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.5.0:www/py-requests@${PY_FLAVOR}
 
 NO_ARCH=	yes
 
-USES=		cpe python:3.6+ tar:bzip2
+USES=		cpe python tar:bzip2
 USE_PYTHON=	distutils autoplist
 CPE_VENDOR=	apache
 

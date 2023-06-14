@@ -9,7 +9,7 @@ WWW=		https://github.com/truenas/py-sysctl
 
 LICENSE=	BSD2CLAUSE
 
-USES=		compiler:c11 python:3.6+
+USES=		compiler:c11 python
 USE_CSTD=	c99
 USE_PYTHON=	distutils autoplist
 

@@ -10,7 +10,7 @@ WWW=		https://github.com/deadpixi/contracts
 
 LICENSE=	LGPL3+
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

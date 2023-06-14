@@ -16,7 +16,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.3.0<2.0.0:devel/py-poetry-core
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	pep517 concurrent autoplist pytest
 
 NO_ARCH=	yes

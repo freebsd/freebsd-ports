@@ -13,7 +13,7 @@ LICENSE=	APACHE20
 
 LIB_DEPENDS=	libLerc.so:graphics/lerc
 
-USES=		dos2unix python:3.6+
+USES=		dos2unix python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-patch:

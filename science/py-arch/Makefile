@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	pep517 cython autoplist pytest # tests fail to run, see https://github.com/bashtage/arch/issues/668
 
 TEST_WRKSRC=	${WRKSRC}/arch/tests

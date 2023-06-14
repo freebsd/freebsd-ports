@@ -10,7 +10,7 @@ WWW=		https://github.com/iamgyz/gydict
 
 LICENSE=	MIT
 
-USES=		python:3.4+,run shebangfix
+USES=		python:run shebangfix
 SHEBANG_FILES=	gydict.py
 
 USE_GITHUB=	yes

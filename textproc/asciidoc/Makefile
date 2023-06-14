@@ -17,7 +17,7 @@ LICENSE=	GPLv2+
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	docbook-xsl>=0:textproc/docbook-xsl
 
-USES=		gnome python:3.5+ shebangfix
+USES=		gnome python shebangfix
 USE_GNOME=	libxml2 libxslt
 USE_PYTHON=	autoplist distutils noflavors
 

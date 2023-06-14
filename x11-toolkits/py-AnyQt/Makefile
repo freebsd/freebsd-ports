@@ -11,7 +11,7 @@ WWW=		https://github.com/ales-erjavec/anyqt
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_BUILD=	yes

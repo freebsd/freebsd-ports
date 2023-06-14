@@ -21,7 +21,7 @@ TEST_DEPENDS=	${PY_NUMPY} \
 		jpegtopnm:graphics/netpbm \
 		pdftocairo:graphics/poppler-utils
 
-USES=		python:3.5+ shebangfix magick:6,test
+USES=		python shebangfix magick:6,test
 USE_PYTHON=	autoplist concurrent distutils pytest
 # Some tests fail, see following link for more info:
 # https://gitlab.mister-muffin.de/josch/img2pdf/issues/152

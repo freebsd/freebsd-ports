@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}click>=8.0.0<9.0.0:devel/py-click@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}rich-rst>=1.1.7<2.0.0:textproc/py-rich-rst@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}textual>=0.1.18<0.2.0:textproc/py-textual@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>0:devel/py-setuptools_scm_git_archive@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_PILLOW}
 
-USES=		gmake python:3.4+
+USES=		gmake python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

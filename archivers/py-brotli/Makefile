@@ -12,7 +12,7 @@ WWW=		https://github.com/google/brotli
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++0x cpe python:3.6+ shebangfix zip
+USES=		compiler:c++0x cpe python shebangfix zip
 USE_PYTHON=	autoplist concurrent distutils
 
 CPE_VENDOR=	google

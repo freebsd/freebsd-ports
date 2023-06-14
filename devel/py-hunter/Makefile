@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAV
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aspectlib>0:devel/py-aspectlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}process-tests>0:devel/py-process-tests@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	pep517 cython autoplist pytest # tests depend on a non-existent module, see https://github.com/ionelmc/python-hunter/issues/116
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

@@ -15,7 +15,7 @@ WWW=		https://rogerbinns.github.io/apsw/ \
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		localbase python:3.7+
+USES=		localbase python
 USE_PYTHON=	autoplist concurrent distutils unittest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}

@@ -28,7 +28,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
 GH_PROJECT=	${PORTNAME}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils
 
 NO_ARCH=	yes

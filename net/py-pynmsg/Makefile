@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	libnmsg.so:net/nmsg
 
-USES=		pkgconfig python:3.6+ shebangfix uniquefiles:dirs
+USES=		pkgconfig python shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist cython distutils
 
 SHEBANG_FILES=	examples/*.py

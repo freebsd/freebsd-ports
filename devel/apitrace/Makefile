@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libpng.so:graphics/png
 
-USES=		cmake compiler:c++11-lang pkgconfig python:3.5+ shebangfix xorg
+USES=		cmake compiler:c++11-lang pkgconfig python shebangfix xorg
 USE_GITHUB=	yes
 USE_XORG=	x11
 

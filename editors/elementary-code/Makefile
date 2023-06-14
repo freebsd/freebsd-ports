@@ -27,7 +27,7 @@ RUN_DEPENDS=	droid-fonts-ttf>0:x11-fonts/droid-fonts-ttf \
 		pkcheck:sysutils/polkit
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome meson \
-		ninja pkgconfig python:3.7+,build vala:lib xorg
+		ninja pkgconfig python:build vala:lib xorg
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 GH_PROJECT=	code

@@ -25,7 +25,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cirq-core>=0.15.0:science/py-cirq-core@${PY_F
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes

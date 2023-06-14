@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 BUILD_DEPENDS=	gmake:devel/gmake
 TEST_DEPENDS=	pytest:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils autoplist
 
 SHEBANG_FILES=	src/pynauty/tests/test_minimal.py

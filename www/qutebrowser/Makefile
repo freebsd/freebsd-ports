@@ -18,7 +18,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sip>=0:devel/py-sip@${PY_FLAVOR}
 
-USES=		cpe desktop-file-utils python:3.6+ pyqt:5 qt:5
+USES=		cpe desktop-file-utils python pyqt:5 qt:5
 USE_PYQT=	pyqt5 webengine
 USE_PYTHON=	distutils autoplist noflavors
 USE_QT=		sql-sqlite3

@@ -15,7 +15,7 @@ WWW=		https://riverbankcomputing.com/software/pyqt
 BUILD_DEPENDS=	qmake-qt5:devel/qt5-qmake
 LIB_DEPENDS=	libqscintilla2_qt5.so:devel/qscintilla2-qt5
 
-USES=		gl pyqt:5 python:3.8+ qt:5
+USES=		gl pyqt:5 python qt:5
 USE_GL=		gl
 USE_PYQT=	sip:build pyqt5
 USE_PYTHON=	concurrent flavors py3kplist

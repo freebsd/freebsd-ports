@@ -12,7 +12,7 @@ WWW=		https://github.com/pyserial/pyserial
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	examples/*.py
 
 USE_PYTHON=	distutils autoplist concurrent

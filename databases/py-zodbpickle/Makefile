@@ -11,7 +11,7 @@ WWW=		https://github.com/zopefoundation/zodbpickle
 LICENSE=	PSFL ZPL21
 LICENSE_COMB=	multi
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

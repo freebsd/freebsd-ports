@@ -17,7 +17,7 @@ CONFLICTS_INSTALL=	${PYTHON_PKGNAMEPREFIX}pytest-cov
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=4.4:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest4>=3.6:devel/py-pytest4@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 PYDISTUTILS_PKGNAME=	${PORTNAME:C/4//}
 

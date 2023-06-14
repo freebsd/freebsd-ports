@@ -16,7 +16,7 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyaudio>0:audio/py-pyaudio@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		localbase python:3.3+
+USES=		localbase python
 USE_PYTHON=	distutils autoplist pytest
 
 USE_GITHUB=	yes

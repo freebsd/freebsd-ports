@@ -22,7 +22,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nltk>=3.6:textproc/py-nltk@${PY_FLAVOR} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

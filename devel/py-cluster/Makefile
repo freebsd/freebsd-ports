@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/cluster/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	exhuma

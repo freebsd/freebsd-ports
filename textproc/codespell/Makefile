@@ -10,7 +10,7 @@ WWW=		https://github.com/codespell-project/codespell
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.7+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils noflavors
 
 NO_ARCH=	yes

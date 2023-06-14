@@ -12,7 +12,7 @@ LICENSE=	BSD2CLAUSE
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flexmock>=0.10.5:devel/py-flexmock@${PY_FLAVOR}
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 do-test:

@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgraphqlparser.so:devel/libgraphqlparser
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.0.0<2.0.0:devel/py-cffi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lark>=0.12.0:devel/py-lark@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-patch:

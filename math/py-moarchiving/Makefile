@@ -10,7 +10,7 @@ WWW=		https://github.com/CMA-ES/moarchiving
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

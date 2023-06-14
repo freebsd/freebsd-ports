@@ -11,7 +11,7 @@ WWW=		https://freedesktop.org/wiki/Software/XKeyboardConfig/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake gnome localbase pathfix perl5 python:3.6+,build \
+USES=		gmake gnome localbase pathfix perl5 python:build \
 		shebangfix xorg-cat:data
 
 NO_ARCH=	yes

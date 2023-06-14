@@ -15,7 +15,7 @@ LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libharfbuzz.so:print/harfbuzz \
 		libfreetype.so:print/freetype2
 
-USES=		meson pkgconfig python:3.7+,test tar:xz
+USES=		meson pkgconfig python:test tar:xz
 
 USE_LDCONFIG=	yes
 

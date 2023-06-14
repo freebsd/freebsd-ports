@@ -21,7 +21,7 @@ TEST_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}build>=0.7:devel/py-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}path.py>=11.5.0:devel/py-path.py@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	pep517 autoplist pytest # 1 tests fail, 4 errors, see https://github.com/scikit-build/scikit-build/issues/791
 
 NO_ARCH=	yes

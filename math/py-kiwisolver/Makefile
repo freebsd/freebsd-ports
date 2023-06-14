@@ -17,7 +17,7 @@ BUILD_DEPENDS=  ${PYTHON_PKGNAMEPREFIX}cppy>=1.1.0:devel/py-cppy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 
-USES=		compiler:c++11-lang python:3.7+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

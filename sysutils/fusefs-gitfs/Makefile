@@ -24,7 +24,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	PressLabs
 
 NO_ARCH=	yes
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist distutils concurrent optsuffix
 
 post-patch:

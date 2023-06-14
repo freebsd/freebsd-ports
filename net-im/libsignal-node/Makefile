@@ -20,7 +20,7 @@ BUILD_DEPENDS=	llvm-config${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT} \
 		protoc:devel/protobuf \
 		yarn:www/yarn-node16
 
-USES=		cargo gmake python:3.7+,build
+USES=		cargo gmake python:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	signalapp
 GH_TUPLE=	google:boringssl:f1c75347daa2ea81a941e953f2263e0a4d970c8d:boringssl \

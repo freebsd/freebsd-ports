@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libmpich.so:net/mpich
 
-USES=		blaslapack fortran gmake python:3.7+ shebangfix xorg
+USES=		blaslapack fortran gmake python shebangfix xorg
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-shared-libraries=1 \
 		--with-mpi-dir=${LOCALBASE} \

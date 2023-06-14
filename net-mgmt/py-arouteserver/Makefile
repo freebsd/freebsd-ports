@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aggregate6>=1.0.12:net-mgmt/py-aggregate6@${
 		ca_root_nss>0:security/ca_root_nss
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>=1.3.7:devel/py-nose@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 
 SHEBANG_FILES=	pierky/arouteserver/config.d/rtt_getter.sh

@@ -9,7 +9,7 @@ MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Smart replacement for plain tuple used in __version__
 WWW=		https://pypi.org/project/versiontools/
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

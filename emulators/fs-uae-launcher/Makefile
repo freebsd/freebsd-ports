@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-lhafile>0:archivers/py-python-lhafile@${PY_FLAVOR}
 
-USES=		gettext gmake gnome pathfix pyqt:5 python:3.4+
+USES=		gettext gmake gnome pathfix pyqt:5 python
 USE_PYTHON=	distutils autoplist noflavors
 USE_PYQT=	pyqt5 sip
 

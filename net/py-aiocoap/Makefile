@@ -10,7 +10,7 @@ WWW=		https://github.com/chrysn/aiocoap
 
 LICENSE=	MIT
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

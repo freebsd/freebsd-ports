@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}blinker>=1.4:devel/py-blinker@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wsproto>0.14:net/py-wsproto@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zstandard>=0.14.1:archivers/py-zstandard@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libspeexdsp.so:audio/speexdsp
 
-USES=		cmake pathfix pkgconfig python:3.6+ shebangfix tar:xz
+USES=		cmake pathfix pkgconfig python shebangfix tar:xz
 
 GH_ACCOUNT=	drowe67
 GH_PROJECT=	codec2

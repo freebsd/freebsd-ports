@@ -10,7 +10,7 @@ WWW=		https://www.jefftk.com/icdiff
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils noflavors
 
 USE_GITHUB=	yes

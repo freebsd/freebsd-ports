@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.md
 
 LIB_DEPENDS=	libjack.so:audio/jack
 
-USES=		localbase python:3.6+
+USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
 USE_GITHUB=	yes

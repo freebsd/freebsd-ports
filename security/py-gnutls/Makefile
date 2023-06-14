@@ -13,7 +13,7 @@ LICENSE=	LGPL20
 
 LIB_DEPENDS=	libgnutls.so:security/gnutls
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist distutils
 PYDISTUTILS_PKGNAME=	python_gnutls
 NO_ARCH=	yes

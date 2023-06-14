@@ -15,7 +15,7 @@ LIB_DEPENDS=	libboost_context.so:devel/boost-libs \
 		libcgraph.so:graphics/graphviz \
 		${LIB_DEPENDS_${ARCH}}
 
-USES=		cmake:testing compiler:c++14-lang perl5 python:3.6+ shebangfix
+USES=		cmake:testing compiler:c++14-lang perl5 python shebangfix
 SHEBANG_FILES=	tools/simgrid_convert_TI_traces.py
 USE_LDCONFIG=	yes
 

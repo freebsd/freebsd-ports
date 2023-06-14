@@ -8,7 +8,7 @@ WWW=		https://github.com/commanderx16
 
 BUILD_DEPENDS=	cc65:devel/cc65
 
-USES=		gmake python:3.7+,build
+USES=		gmake python:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	commanderx16

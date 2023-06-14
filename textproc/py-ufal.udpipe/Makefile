@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 NOT_FOR_ARCHS=		mips mips64 powerpc powerpc64 powerpcspe sparc64
 NOT_FOR_ARCHS_REASON=	Only little endian systems are supported!
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

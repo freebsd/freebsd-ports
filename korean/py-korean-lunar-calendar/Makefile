@@ -12,7 +12,7 @@ WWW=		https://github.com/usingsky/korean_lunar_calendar_py
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest
 
 NO_ARCH=	yes

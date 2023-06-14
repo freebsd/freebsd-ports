@@ -11,7 +11,7 @@ WWW=		https://github.com/MISP/PyMISP
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.8+ shebangfix
+USES=		python shebangfix
 
 SHEBANG_FILES=	pymisp/data/misp-objects/validate_all.sh \
 		pymisp/data/misp-objects/jq_all_the_things.sh \

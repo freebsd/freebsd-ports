@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR
 		docbook-xml>0:textproc/docbook-xml \
 		${LOCALBASE}/share/xsl/docbook/xhtml/chunk.xsl:textproc/docbook-xsl
 
-USES=		gettext-tools gnome meson python:3.6+ pkgconfig tar:xz
+USES=		gettext-tools gnome meson python pkgconfig tar:xz
 USE_GNOME=	libxml2 libxslt
 
 MESON_ARGS=	-Dtests=false

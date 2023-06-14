@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY}	\
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	amueller
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils
 
 PLIST_SUB+=	VER=${PORTVERSION}

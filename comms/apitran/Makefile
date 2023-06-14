@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR} \
 		sox:audio/sox
 
-USES=		magick:6,run python:3.6+,run shebangfix
+USES=		magick:6,run python:run shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	rsj56
 GH_TAGNAME=	d209347

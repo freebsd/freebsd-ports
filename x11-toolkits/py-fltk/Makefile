@@ -16,7 +16,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 
 CFLAGS+=	-DFL_LIBRARY
 MAKE_ENV=	FLTK_HOME=${LOCALBASE}/bin
-USES=		python:3.6+ xorg
+USES=		python xorg
 USE_PYTHON=	autoplist distutils
 USE_XORG=	x11
 

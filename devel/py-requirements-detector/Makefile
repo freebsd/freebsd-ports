@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}astroid>=2.0<3:devel/py-astroid@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}semver>=3.0.0<4:devel/py-semver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0.10.2<0.11:textproc/py-toml@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

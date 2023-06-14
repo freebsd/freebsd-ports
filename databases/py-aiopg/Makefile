@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}psycopg2>=2.7.0:databases/py-psycopg2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}async_timeout>=3.0.0:devel/py-async_timeout@${PY_FLAVOR}
 
-USES=		pgsql:11+ python:3.4+
+USES=		pgsql:11+ python
 USE_PYTHON=	autoplist concurrent distutils
 NO_ARCH=	yes
 

@@ -11,7 +11,7 @@ WWW=		https://github.com/tgalal/python-axolotl-curve25519
 
 LICENSE=	GPLv3
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>

@@ -11,7 +11,7 @@ WWW=		https://github.com/Iotic-Labs/py-ubjson
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

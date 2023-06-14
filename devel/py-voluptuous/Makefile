@@ -11,7 +11,7 @@ WWW=		https://github.com/alecthomas/voluptuous
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils nose
 
 NO_ARCH=	yes

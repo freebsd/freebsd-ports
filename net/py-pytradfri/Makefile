@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiocoap>=0:net/py-aiocoap@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}DTLSSocket>=0:net/py-DTLSSocket@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

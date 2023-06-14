@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libhttp_parser.so:www/http-parser
 
-USES=		localbase python:3.5+
+USES=		localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-patch:

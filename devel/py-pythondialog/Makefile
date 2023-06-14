@@ -12,7 +12,7 @@ LICENSE=	LGPL21+
 
 RUN_DEPENDS=	cdialog:devel/cdialog
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTEXAMPLES=	*

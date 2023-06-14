@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		itstool:textproc/itstool \
 		yelp-xsl>=0:textproc/yelp-xsl
 
-USES=		gettext gnome localbase meson pathfix pkgconfig python:3.7+ \
+USES=		gettext gnome localbase meson pathfix pkgconfig python \
 		shebangfix tar:xz
 USE_GNOME=	libxml2 libxslt
 SHEBANG_FILES=	tools/yelp-build.in tools/yelp-check.in tools/yelp-new.in

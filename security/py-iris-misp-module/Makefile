@@ -20,7 +20,7 @@ GH_ACCOUNT=	dfir-iris
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	a7654c086bb163a97987698bae012c6bc05fd300
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

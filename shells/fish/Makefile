@@ -14,7 +14,7 @@ LIB_DEPENDS=	libpcre2-32.so:devel/pcre2
 
 # The python dependency is only needed by shebangfix.  At runtime python is
 # only needed by some optional scripts that aren't in PATH.
-USES=		cmake compiler:c++11-lang cpe localbase ncurses python:3.6+,env \
+USES=		cmake compiler:c++11-lang cpe localbase ncurses python:env \
 		shebangfix tar:xz
 CPE_VENDOR=	fishshell
 SHEBANG_FILES=	share/tools/*.py share/tools/web_config/webconfig.py

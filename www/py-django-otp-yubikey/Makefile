@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-otp>=1.0.0:www/py-django-otp@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}YubiOTP>=0.2.2:security/py-YubiOTP@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

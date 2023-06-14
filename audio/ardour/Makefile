@@ -46,7 +46,7 @@ LIB_DEPENDS=	libserd-0.so:devel/serd \
 		libwebsockets.so:net/libwebsockets
 
 USES=		compiler:c++11-lang desktop-file-utils gettext gnome \
-		libarchive pkgconfig python:3.7+,build readline tar:bzip2 \
+		libarchive pkgconfig python:build readline tar:bzip2 \
 		waf xorg shared-mime-info
 USE_CXXSTD=	c++11
 USE_GNOME=	atk cairo cairomm gdkpixbuf2 glib20 glibmm gtk20 gtkmm24 pango

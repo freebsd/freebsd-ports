@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}prawcore>=2.1:www/py-prawcore@${PY_FLAVOR} \
 #		betamax-matchers >=0.3.0, <0.5
 #		betamax-serializers >=0.2, <0.3
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes # missing test data files
 USE_PYTHON=	autoplist concurrent distutils pytest
 

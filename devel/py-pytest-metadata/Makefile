@@ -19,7 +19,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>=22.1.0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>=3.24.5:devel/py-tox@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pre-commit>=2.17.0:devel/py-pre-commit@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist pep517 pytest
 
 TEST_ENV=	TMPDIR=${WRKDIR}/ PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

@@ -14,7 +14,7 @@ LICENSE=	MIT
 #GH_ACCOUNT=	brandon-rhodes
 #GH_PROJECT=	python-sgp4
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s

@@ -13,7 +13,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}applicationinsights>=0.11.1<0.12:devel/py-applicationinsights@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}portalocker>=1.6<3:devel/py-portalocker@${PY_FLAVOR}
 
-USES=		azurepy python:3.6+
+USES=		azurepy python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

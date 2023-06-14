@@ -12,7 +12,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_ARCH=	yes
-USES=		python:3.6-3.9
+USES=		python:3.8-3.9
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>

@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	xapian-core>=${PORTVERSION}:databases/xapian-core
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 
-USES=		compiler:c++11-lang libtool python:3.6+ tar:xz
+USES=		compiler:c++11-lang libtool python tar:xz
 USE_PYTHON=	flavors
 
 CONFIGURE_ARGS=	--datarootdir=${DATADIR} \

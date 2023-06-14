@@ -12,7 +12,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}libplist>=2.2.0:devel/py-libplist@${PY_FLAVO
 
 PORTSCOUT=	ignore:1
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	flavors cython
 BINARY_ALIAS=	cython=cython-${PYTHON_VER}
 CONFIGURE_ENV=	PYTHON_LDFLAGS="`pkg-config --libs python-${PYTHON_VER}`"

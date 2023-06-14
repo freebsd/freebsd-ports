@@ -30,7 +30,7 @@ BUILD_DEPENDS=	${FLAVOR:S/_/-/g}-freebsd-sysroot>=a2021.09.14:devel/freebsd-sysr
 FLAVORS=	aarch64 amd64 armv7 i386 powerpc powerpc64 powerpc64le riscv64
 FLAVOR?=	${FLAVORS:[1]}
 
-USES=		cpe ninja:build perl5 python:3.6+,build tar:xz
+USES=		cpe ninja:build perl5 python:build tar:xz
 CPE_VENDOR=	${PORTNAME}-lang
 # for openssl-src crate
 USE_PERL5=	build

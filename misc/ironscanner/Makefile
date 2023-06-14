@@ -13,7 +13,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}pyinsane2>0:graphics/py-pyinsane2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 
-USES=		python:3.4+
+USES=		python
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org/World
 GL_ACCOUNT=	OpenPaperwork

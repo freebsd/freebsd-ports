@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYNUMPY}
 
-USES=		fortran python:3.6+
+USES=		fortran python
 USE_PYTHON=	distutils autoplist
 USE_GITHUB=	nodefault
 GH_TUPLE=	PySCeS:pysces:0.9.8:fortran

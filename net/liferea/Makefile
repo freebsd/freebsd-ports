@@ -21,7 +21,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas \
 
 USES=		compiler:c++11-lang cpe desktop-file-utils gettext \
 		gmake gnome libtool localbase \
-		pathfix pkgconfig python:3.4+ sqlite tar:bzip2
+		pathfix pkgconfig python sqlite tar:bzip2
 USE_GNOME=	cairo dconf:run gtk30 gdkpixbuf2 intltool introspection \
 		libxslt libxml2
 

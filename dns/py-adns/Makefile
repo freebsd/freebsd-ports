@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/GPL
 
 LIB_DEPENDS=	libadns.so:dns/adns
 
-USES=		localbase python:3.4+
+USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
 post-patch:

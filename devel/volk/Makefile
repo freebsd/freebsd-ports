@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mako/__init__.py:textproc/py-mako@${PY_FLAVO
 LIB_DEPENDS=	liborc-0.4.so:devel/orc \
 		libcpu_features.so:devel/cpu_features
 
-USES=		cmake:testing compiler:c++17-lang python:3.7+
+USES=		cmake:testing compiler:c++17-lang python
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	nodefault

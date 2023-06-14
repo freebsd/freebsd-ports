@@ -15,7 +15,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/texmf-dist/tex/generic/iftex/ifxetex.sty:print
 RUN_DEPENDS=	docbook-xml>0:textproc/docbook-xml \
 		xsltproc:textproc/libxslt
 
-USES=		python:3.5+ tar:bzip2 tex
+USES=		python tar:bzip2 tex
 USE_PYTHON=	autoplist distutils noflavors
 PYDISTUTILS_INSTALLARGS+=	--catalogs=${LOCALBASE}/share/xml/catalog.ports \
 				--prefix=${PREFIX}

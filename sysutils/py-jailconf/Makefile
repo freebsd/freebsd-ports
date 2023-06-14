@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=3.9:devel/py-ply@${PY_FLAVOR}
 
-USES=		python:3.3+
+USES=		python
 USE_GITHUB=	yes # tests nnot packaged in PyPI sdist
 GH_ACCOUNT=	leforestier
 USE_PYTHON=	autoplist distutils

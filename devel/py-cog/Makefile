@@ -12,7 +12,7 @@ WWW=		https://www.nedbatchelder.com/code/cog/index.html
 LICENSE=	MIT
 
 # Python3 ready
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

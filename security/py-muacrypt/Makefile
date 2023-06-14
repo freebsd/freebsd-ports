@@ -20,7 +20,7 @@ RUN_DEPENDS=	gpg2:security/gnupg	\
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tox>=0:devel/py-tox@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

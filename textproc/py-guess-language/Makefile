@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/guess-language/
 
 LICENSE=	LGPL21+
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

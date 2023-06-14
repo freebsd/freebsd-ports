@@ -26,7 +26,7 @@ TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}fury>0:graphics/py-fury@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} # "viz" extra dependencies, see dipy/info.py
 TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cvxpy>0:math/py-cvxpy@${PY_FLAVOR} # "doc" extra dependencies, see dipy/info.py
 
-USES=		python:3.7+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils cython concurrent autoplist pytest # pkg-plist also exists and contains files missing from the python-generated plist
 
 SHEBANG_GLOB=	*.sh

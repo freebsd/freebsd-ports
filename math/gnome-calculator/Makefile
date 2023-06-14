@@ -23,7 +23,7 @@ LIB_DEPENDS=	libadwaita-1.so:x11-toolkits/libadwaita \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 gettext gnome localbase:ldflags meson pkgconfig \
-		python:3.6+,build tar:xz vala:build
+		python:build tar:xz vala:build
 USE_GNOME=	gtk40 gtksourceview5 introspection libxml2
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 

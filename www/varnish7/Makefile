@@ -16,7 +16,7 @@ BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR} \
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		cpe libedit libtool localbase ncurses pathfix \
-		pkgconfig python:3.6+,build shebangfix tar:tgz
+		pkgconfig python:build shebangfix tar:tgz
 CPE_VENDOR=	varnish-cache
 CPE_PRODUCT=	varnish_cache
 GNU_CONFIGURE=	yes

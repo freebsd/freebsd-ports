@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	a2x:textproc/asciidoc
 
-USES=		gmake go python:3.5+,build
+USES=		gmake go python:build
 USE_GITLAB=	yes
 GL_ACCOUNT=	esr
 GL_COMMIT=	dc8279ab2e49ba60db121a47c15dc4ef8b543352

@@ -10,7 +10,7 @@ WWW=		https://github.com/kusumi/fileobj
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	kusumi
 USE_PYTHON=	autoplist concurrent distutils optsuffix

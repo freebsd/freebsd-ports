@@ -9,7 +9,7 @@ WWW=		https://ctags.io/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		autoreconf gmake pkgconfig python:3.5+,test
+USES=		autoreconf gmake pkgconfig python:test
 USE_GITHUB=	yes
 GH_PROJECT=	ctags
 

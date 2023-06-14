@@ -27,7 +27,7 @@ BUILD_DEPENDS+=	${COMPILER}:devel/${COMPILER}
 BUILD_DEPENDS+=	e2fsprogs-libuuid>=0:misc/e2fsprogs-libuuid \
 		gnutls>=0:security/gnutls
 
-USES=		bison gmake python:3.7+,build pkgconfig shebangfix tar:bz2
+USES=		bison gmake python:build pkgconfig shebangfix tar:bz2
 BINARY_ALIAS=	bison=${LOCALBASE}/bin/bison dtc=${LOCALBASE}/bin/dtc sed=gsed python3=${PYTHON_CMD}
 
 SHEBANG_FILES=	tools/binman/binman arch/arm/mach-rockchip/make_fit_atf.py

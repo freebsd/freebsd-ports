@@ -17,7 +17,7 @@ LIB_DEPENDS=	libofx.so:finance/libofx \
 		libsqlcipher.so:databases/sqlcipher
 
 USES=		cmake compiler:c++11-lib desktop-file-utils gettext grantlee:5 \
-		kde:5 pkgconfig python:3.4+ qca qt:5 shared-mime-info \
+		kde:5 pkgconfig python qca qt:5 shared-mime-info \
 		shebangfix sqlite:3 tar:xz xorg
 USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
 		config configwidgets coreaddons crash dbusaddons emoticons \

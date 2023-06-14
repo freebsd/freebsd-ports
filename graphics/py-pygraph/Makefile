@@ -13,7 +13,7 @@ WWW=		https://github.com/jciskey/pygraph
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	jciskey
 USE_PYTHON=	autoplist distutils

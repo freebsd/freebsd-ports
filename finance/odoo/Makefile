@@ -64,7 +64,7 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}idna>0:dns/py-idna@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}stdnum>0:devel/py-stdnum@${PY_FLAVOR}
 
-USES=		cpe ldap python:3.7+ pgsql shebangfix
+USES=		cpe ldap python pgsql shebangfix
 USE_PYTHON=	distutils
 
 SHEBANG_LANG=	python

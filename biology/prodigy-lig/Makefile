@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}biopython>0:biology/py-biopython@${PY_FLAVOR}
 
-USES=		gmake python:3.6+
+USES=		gmake python
 USE_PYTHON=	distutils noflavors autoplist
 
 USE_GITHUB=	yes

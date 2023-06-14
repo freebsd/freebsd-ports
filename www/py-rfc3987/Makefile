@@ -11,7 +11,7 @@ WWW=		https://github.com/dgerber/rfc3987
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
-USES=		python:3.2+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

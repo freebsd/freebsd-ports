@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest4>=2.4.2:devel/py-pytest4@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}pytest4-cache>=0:devel/py-pytest4-cache@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pep8>=1.3:devel/pep8@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 TEST_ENV=	PYTHONPATH=${WRKSRC}/src

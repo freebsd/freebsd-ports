@@ -46,7 +46,7 @@ LIB_DEPENDS=	libass.so:multimedia/libass \
 
 USES=		autoreconf:build cmake:noninja compiler:c++17-lang cpe \
 		desktop-file-utils gettext gmake gnome iconv jpeg libtool \
-		pkgconfig python:3.7+ sqlite ssl
+		pkgconfig python sqlite ssl
 
 KODI_CODENAME=		Nexus
 LIBDVDCSS_VERSION=	1.4.3-Next-Nexus-Alpha2-2

@@ -16,7 +16,7 @@ xRUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=2.6<40,1:security/py-cryptogr
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist pep517 unittest
 
 NO_ARCH=	yes

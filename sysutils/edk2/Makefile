@@ -19,7 +19,7 @@ ONLY_FOR_ARCHS_REASON=	only provides firmware for aarch64 and amd64
 PKGNAMESUFFIX=	-${FLAVOR:C/_/-/g}
 FLAVORS=	macchiatobin fvp rpi3 rpi4 xen_x64 bhyve qemu_x64 qemu_i386
 
-USES=	cpe gmake python:3.7+,build
+USES=	cpe gmake python:build
 CPE_VENDOR=	tianocore
 USE_GCC=	yes:build
 

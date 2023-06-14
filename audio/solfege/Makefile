@@ -17,7 +17,7 @@ BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		autoreconf gettext gmake gnome makeinfo pathfix pkgconfig \
-		python:3.7+ shebangfix
+		python shebangfix
 USE_GNOME=	pygobject3
 
 SHEBANG_FILES=	exercises/standard/lesson-files/bin/csound-play-harmonic-interval.sh

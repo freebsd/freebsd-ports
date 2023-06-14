@@ -21,7 +21,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c++11-lang gettext gmake gnome meson \
-		python:3.7+ pkgconfig tar:xz vala:build
+		python pkgconfig tar:xz vala:build
 USE_GNOME=	cairo gtk30
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}

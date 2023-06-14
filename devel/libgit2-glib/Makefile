@@ -16,7 +16,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgit2.so:devel/libgit2
 
 USES=		compiler:c11 gnome localbase \
-		meson pkgconfig python:3.4+,build tar:xz vala:build
+		meson pkgconfig python:build tar:xz vala:build
 USE_GNOME=	glib20 introspection
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dpython=false

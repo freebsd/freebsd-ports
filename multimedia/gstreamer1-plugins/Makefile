@@ -37,7 +37,7 @@ UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		base
 
-USES+=		meson cpe gettext gnome gstreamer libtool pathfix pkgconfig python:3.8+,build tar:xz
+USES+=		meson cpe gettext gnome gstreamer libtool pathfix pkgconfig python:build tar:xz
 USE_GNOME+=	glib20 introspection:build libxml2
 GST_PLUGIN?=	base
 USE_LDCONFIG=	yes

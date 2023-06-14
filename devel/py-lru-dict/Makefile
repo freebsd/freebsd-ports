@@ -11,7 +11,7 @@ WWW=		https://github.com/amitdev/lru-dict
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 .include <bsd.port.mk>

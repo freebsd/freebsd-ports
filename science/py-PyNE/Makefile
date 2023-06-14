@@ -36,7 +36,7 @@ LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/libaec
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		compiler:c++17-lang fortran python:3.7+
+USES=		compiler:c++17-lang fortran python
 USE_PYTHON=	distutils cython flavors
 
 USE_GITHUB=	yes

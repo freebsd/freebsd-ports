@@ -13,7 +13,7 @@ LICENSE_COMB=	dual
 
 LIB_DEPENDS=	libcups.so:print/cups
 
-USES=		iconv localbase python:3.5+
+USES=		iconv localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.pre.mk>

@@ -9,7 +9,7 @@ WWW=		http://cxxtest.sourceforge.net/
 
 LICENSE=	LGPL3+
 
-USES=		gmake python:3.6+,run
+USES=		gmake python:run
 
 USE_PYTHON=	autoplist distutils noflavors
 NO_ARCH=	yes

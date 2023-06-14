@@ -11,7 +11,7 @@ WWW=		https://github.com/Lucretiel/autocommand
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.3+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

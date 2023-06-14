@@ -10,7 +10,7 @@ WWW=		https://github.com/gronke/py-freebsd_sysctl
 LICENSE=		BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=			python:3.6+
+USES=			python
 
 USE_GITHUB=		yes
 GH_ACCOUNT=		gronke

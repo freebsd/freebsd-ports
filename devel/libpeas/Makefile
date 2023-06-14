@@ -52,7 +52,7 @@ pre-build:
 LIB_DEPENDS+=	libpeas-1.0.so:devel/libpeas
 PORTSCOUT=	limitw:1,even
 
-USES+=		python:3.6+
+USES+=		python
 USE_PYTHON=	flavors
 USE_GNOME+=	pygobject3
 MESON_ARGS+=	-Dpython3=true \

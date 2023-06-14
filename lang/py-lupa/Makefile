@@ -11,7 +11,7 @@ WWW=		https://github.com/scoder/lupa
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		lua pkgconfig python:3.6+
+USES=		lua pkgconfig python
 USE_PYTHON=	autoplist concurrent cython distutils unittest
 
 MAKE_ARGS=	--no-bundle --with-cython --with-lua-checks

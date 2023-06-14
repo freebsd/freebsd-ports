@@ -17,7 +17,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}	\
 
 USE_GITHUB=	yes
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils noflavors
 
 NO_ARCH=	yes

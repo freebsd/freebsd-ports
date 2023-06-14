@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aniso8601>=8<10:devel/py-aniso8601@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}graphql-core>=3.1<3.3:devel/py-graphql-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}graphql-relay>=3.1<3.3:devel/py-graphql-relay@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

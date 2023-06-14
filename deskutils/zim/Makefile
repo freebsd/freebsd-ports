@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>0:devel/py-xdg@${PY_FLAVOR} \
 		xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
-USES=		cpe desktop-file-utils gettext gnome python:3.6+ shared-mime-info
+USES=		cpe desktop-file-utils gettext gnome python shared-mime-info
 CPE_VENDOR=	zim-wiki
 USE_GNOME=	gtk30 pygobject3
 USE_PYTHON=	autoplist distutils noflavors

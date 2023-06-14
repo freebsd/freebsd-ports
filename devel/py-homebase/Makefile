@@ -10,7 +10,7 @@ WWW=		https://github.com/dwavesystems/homebase
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils cython autoplist unittest # many tests fail, see https://github.com/dwavesystems/homebase/issues/35
 
 USE_GITHUB=	yes

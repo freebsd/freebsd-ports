@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		coreutils>=8.23:sysutils/coreutils \
 		yelp>=3.14.1:x11/yelp
 
-USES=		desktop-file-utils gettext-tools gnome magick:6,run python:3.5+ shebangfix
+USES=		desktop-file-utils gettext-tools gnome magick:6,run python shebangfix
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	varietywalls

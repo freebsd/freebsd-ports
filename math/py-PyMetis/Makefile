@@ -17,7 +17,7 @@ LIB_DEPENDS=	libmetis.so:math/metis
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	pytest:devel/py-pytest@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang localbase python:3.6+
+USES=		compiler:c++14-lang localbase python
 USE_PYTHON=	distutils autoplist
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}

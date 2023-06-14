@@ -26,7 +26,7 @@ RUN_DEPENDS=	redis-server:databases/redis \
 		nmap:security/nmap \
 		${PYTHON_PKGNAMEPREFIX}impacket>=0:net/py-impacket@${PY_FLAVOR}
 
-USES=		bison cmake gnome pkgconfig python:3.5+ ssl
+USES=		bison cmake gnome pkgconfig python ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	greenbone
 GH_PROJECT=	${PORTNAME}-scanner

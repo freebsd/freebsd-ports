@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=2020.6.20:security/py-certifi@${PY_
 
 # Upstream doesn't have exact version currently only able to test up to 3.9 since
 # imaplib2 is 3.6-3.9.
-USES=		pytest python:3.7-3.9
+USES=		pytest python:3.8-3.9
 
 # Project is currently not publishing to pypi sdist.  pypi/naming status:
 # https://github.com/OfflineIMAP/offlineimap3/issues/111

@@ -17,7 +17,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=0,1:devel/py-pytest@${PY_FLAVOR}
 
-USES=		cpe localbase python:3.7+
+USES=		cpe localbase python
 USE_PYTHON=	autoplist concurrent distutils
 
 CPE_VENDOR=	python

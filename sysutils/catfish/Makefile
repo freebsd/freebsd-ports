@@ -20,7 +20,7 @@ BUILD_DEPENDS=	\
 	${PYTHON_PKGNAMEPREFIX}python-distutils-extra>0:devel/py-python-distutils-extra@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}pexpect>0:misc/py-pexpect@${PY_FLAVOR}
 
-USES=		cpe desktop-file-utils gettext-tools gnome python:3.4+ tar:bz2
+USES=		cpe desktop-file-utils gettext-tools gnome python tar:bz2
 USE_PYTHON=	distutils noflavors
 USE_GNOME=	gtk30 intltool pygobject3
 

@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYNUMPY} \
 		${LOCALBASE}/include/boost/config.hpp:devel/boost-libs
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		compiler:c++11-lang localbase python:3.6+
+USES=		compiler:c++11-lang localbase python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

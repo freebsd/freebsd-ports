@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/PyExecJS/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 OPTIONS_GROUP=		RUNTIME

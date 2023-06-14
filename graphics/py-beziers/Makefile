@@ -10,7 +10,7 @@ WWW=		https://github.com/simoncozens/beziers.py
 
 LICENSE=	MIT
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

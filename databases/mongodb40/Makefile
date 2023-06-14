@@ -30,7 +30,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libcurl.so:ftp/curl \
 		libsnappy.so:archivers/snappy
 
-USES=		compiler:c++14-lang cpe python:3.7+,build scons shebangfix
+USES=		compiler:c++14-lang cpe python:build scons shebangfix
 USE_RC_SUBR=	mongod
 
 CONFLICTS_INSTALL=	mongodb[0-9][0-9] # etc/mongodb.conf.sample

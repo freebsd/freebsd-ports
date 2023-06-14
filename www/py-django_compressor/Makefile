@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django-appconf>=1.0.2:www/py-django-appconf@
 		${PYTHON_PKGNAMEPREFIX}rcssmin>=1.1.0:archivers/py-rcssmin@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}rjsmin>=1.2.0:archivers/py-rjsmin@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

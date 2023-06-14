@@ -19,7 +19,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib gettext gnome localbase:ldflags meson \
-		pkgconfig python:3.6+,build sqlite tar:xz vala:build
+		pkgconfig python:build sqlite tar:xz vala:build
 USE_GNOME=	glib20 libxml2 introspection:build
 USE_LDCONFIG=	yes
 

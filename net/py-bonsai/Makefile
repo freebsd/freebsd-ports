@@ -15,7 +15,7 @@ MY_DEPENDS=	openldap26-client>=0:net/openldap26-client
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
 
-USES=		localbase python:3.7+
+USES=		localbase python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 OPTIONS_DEFINE=	GEVENT TORNADO TRIO

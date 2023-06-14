@@ -17,7 +17,7 @@ BUILD_DEPENDS=	objdump:devel/binutils
 LIB_DEPENDS=	libelf.so:devel/elfutils \
 		libjansson.so:devel/jansson
 
-USES=		kmod meson pkgconfig:both python:3.5+ shebangfix tar:xz
+USES=		kmod meson pkgconfig:both python shebangfix tar:xz
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	examples/ipsec-secgw/test/pkttest.py \
 		examples/ipsec-secgw/test/pkttest.sh \

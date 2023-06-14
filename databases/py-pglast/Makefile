@@ -14,7 +14,7 @@ BROKEN_riscv64=		fails to build: PostgreSQL does not have native spinlock suppor
 NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	port/atomics/arch-<arch>.h: No such file or directory
 
-USES=		gmake python:3.4+
+USES=		gmake python
 USE_PYTHON=	autoplist distutils
 
 post-patch:

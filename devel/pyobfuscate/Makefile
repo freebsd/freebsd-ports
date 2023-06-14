@@ -14,7 +14,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	astrand
 GH_TAGNAME=	47cc6e49bf65649c9fc53fbf4ae7d6e23b565550
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	distutils autoplist concurrent optsuffix
 NO_ARCH=	yes
 SHEBANG_FILES=	*.py pyobfuscate pyobfuscate-install

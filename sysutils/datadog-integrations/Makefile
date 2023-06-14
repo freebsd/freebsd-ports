@@ -26,7 +26,7 @@ RUN_DEPENDS=	datadog-agent>=7.24.1:sysutils/datadog-agent \
 		${PYTHON_PKGNAMEPREFIX}uptime>0:sysutils/py-uptime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	DataDog
 GH_PROJECT=	integrations-core

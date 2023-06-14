@@ -22,7 +22,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	fogleman
 GH_TAGNAME=	cee1dac	# No release yet
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils
 
 OPTIONS_DEFINE=	EXAMPLES

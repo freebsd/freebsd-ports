@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.BSD
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	jwfh
 USE_PYTHON=	autoplist concurrent distutils

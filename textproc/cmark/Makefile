@@ -9,7 +9,7 @@ WWW=		https://github.com/commonmark/cmark
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake python:3.4+,test
+USES=		cmake python:test
 USE_GITHUB=	yes
 GH_ACCOUNT=	commonmark
 USE_LDCONFIG=	yes

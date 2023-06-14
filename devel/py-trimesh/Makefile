@@ -36,7 +36,7 @@ NEEDED_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 BUILD_DEPENDS=	${NEEDED_DEPENDS}
 RUN_DEPENDS=	${NEEDED_DEPENDS}
 
-USES=		compiler:c++11-lang python:3.5+
+USES=		compiler:c++11-lang python
 
 USE_PYTHON=	distutils autoplist concurrent
 

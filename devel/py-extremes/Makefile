@@ -9,7 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Production-quality 'Min' and 'Max' objects (adapted from PEP 326)
 WWW=		https://pypi.org/project/Extremes/
 
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

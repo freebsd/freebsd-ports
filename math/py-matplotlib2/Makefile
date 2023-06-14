@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}tornado>0:www/py-tornado@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}kiwisolver>=1.0.0:math/py-kiwisolver@${PY_FLAVOR}
 
-USES=		compiler:c++11-lib gettext gnome pkgconfig python:3.6+ shebangfix uniquefiles:dirs
+USES=		compiler:c++11-lib gettext gnome pkgconfig python shebangfix uniquefiles:dirs
 USE_PYTHON=	autoplist distutils
 
 CFLAGS+=	-I${LOCALBASE}/include

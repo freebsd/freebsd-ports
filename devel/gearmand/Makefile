@@ -20,7 +20,7 @@ CONFLICTS=	p5-Gearman-Server-1.* gearmand-1.1.*
 USERS=		gearmand
 GROUPS=		gearmand
 
-USES=		compiler:c++11-lang pathfix gmake perl5 python:build,3.6+ libtool
+USES=		compiler:c++11-lang pathfix gmake perl5 python:build libtool
 USE_PERL5=	build
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

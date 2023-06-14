@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>=0:graphics/py-PyOpenGL@${PY_FLAVOR} \
 		${LOCALBASE}/share/${PORTNAME}/default.ttf:games/fretsonfire-data
 
-USES=		dos2unix python:3.6+
+USES=		dos2unix python
 DOS2UNIX_FILES=	*.txt
 NO_BUILD=	yes
 NO_ARCH=	yes

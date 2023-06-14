@@ -19,7 +19,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ffn>=0.3.5:finance/py-ffn@${PY_FLAVOR} \
 BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # tests require nose which is currently broken
 
 USE_GITHUB=	yes

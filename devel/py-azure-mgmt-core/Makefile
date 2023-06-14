@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.24.0<2.0.0:devel/py-azure-core@${PY_FLAVOR}
 
-USES=		azurepy python:3.6+ zip
+USES=		azurepy python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

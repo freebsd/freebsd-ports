@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>=3.8.1<4:www/py-aiohttp@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0.2<5:devel/py-async_timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yarl>=1.5.1<2:www/py-yarl@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

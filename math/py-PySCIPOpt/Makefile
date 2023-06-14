@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libscip.so:math/SCIP
 
-USES=		localbase python:3.6+
+USES=		localbase python
 USE_PYTHON=	distutils cython autoplist pytest
 
 USE_GITHUB=	yes

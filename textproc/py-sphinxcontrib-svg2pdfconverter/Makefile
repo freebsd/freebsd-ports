@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>0:textproc/py-sphinx@${PY_FLAVOR}
 
-USES=		gnome python:3.8+
+USES=		gnome python
 USE_GNOME=	librsvg2
 USE_PYTHON=	autoplist concurrent distutils flavors
 

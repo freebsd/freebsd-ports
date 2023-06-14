@@ -10,7 +10,7 @@ LICENSE=	BSD3CLAUSE
 
 BUILD_DEPENDS=	xmlto:textproc/xmlto
 
-USES=		python:3.2+,run
+USES=		python:run
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	esr

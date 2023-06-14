@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/kitchen/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	fedora-infra
 USE_PYTHON=	distutils autoplist

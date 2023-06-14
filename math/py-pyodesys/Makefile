@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.5:math/py-matplotlib@${PY_FL
 TEST_DEPENDS=	${LOCALBASE}/include/boost/numeric/ublas/matrix.hpp:devel/boost-libs \
 		${LOCALBASE}/include/gsl/gsl_errno.h:math/gsl
 
-USES=		display:test localbase:ldflags python:3.7+ shebangfix
+USES=		display:test localbase:ldflags python shebangfix
 USE_PYTHON=	distutils autoplist pytest
 
 SHEBANG_GLOB=	*.py

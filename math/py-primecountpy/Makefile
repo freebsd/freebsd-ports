@@ -17,7 +17,7 @@ LIB_DEPENDS=	libpari.so:math/pari			\
 		libprimesieve.so:math/primesieve
 RUN_DEPENDS=	${PYDEPS}
 
-USES=		localbase python:3.7+
+USES=		localbase python
 USE_PYTHON=	cython distutils
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s

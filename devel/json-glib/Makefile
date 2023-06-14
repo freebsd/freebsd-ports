@@ -10,7 +10,7 @@ WWW=		https://live.gnome.org/JsonGlib
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gettext gnome localbase meson python:3.7+ pkgconfig tar:xz
+USES=		gettext gnome localbase meson python pkgconfig tar:xz
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 

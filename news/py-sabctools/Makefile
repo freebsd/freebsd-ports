@@ -11,7 +11,7 @@ WWW=		https://github.com/sabnzbd/sabctools
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

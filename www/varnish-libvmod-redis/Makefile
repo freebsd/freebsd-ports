@@ -15,7 +15,7 @@ LIB_DEPENDS=	libev.so:devel/libev \
 BUILD_DEPENDS=	rst2man:textproc/py-docutils@${PY_FLAVOR}
 
 USES=		autoreconf compiler:c11 gmake libtool pkgconfig \
-		python:3.5+,build varnish:7
+		python:build varnish:7
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes

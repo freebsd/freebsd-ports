@@ -12,7 +12,7 @@ WWW=		https://github.com/stephenmcd/grappelli-safe
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		gettext python:3.6+
+USES=		gettext python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

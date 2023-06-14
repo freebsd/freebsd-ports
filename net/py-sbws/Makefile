@@ -29,7 +29,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=0:devel/py-coverage@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}tox>=0:devel/py-tox@${PY_FLAVOR} \
 		bash:shells/bash
 
-USES=		cpe python:3.6+ shebangfix
+USES=		cpe python shebangfix
 USE_GITLAB=	yes
 USE_PYTHON=	autoplist distutils concurrent flavors
 

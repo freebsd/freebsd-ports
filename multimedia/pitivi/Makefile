@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gstreamer1>=1.14.0:multimedia/py-gstreamer1@
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYNUMPY}
 
-USES=		cpe desktop-file-utils gettext gnome gstreamer meson pkgconfig python:3.7+ \
+USES=		cpe desktop-file-utils gettext gnome gstreamer meson pkgconfig python \
 		shared-mime-info shebangfix tar:xz
 SHEBANG_FILES=	bin/pitivi.in \
 		getenvvar.py \

@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}networkx>0:math/py-networkx@${PY_FLAVOR}
 
-USES=		cmake compiler:c++17-lang python:3.7+
+USES=		cmake compiler:c++17-lang python
 USE_PYTHON=	flavors
 
 USE_GITHUB=	yes

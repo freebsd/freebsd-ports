@@ -75,7 +75,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gmake gnome \
 		iconv:wchar_t jpeg localbase:ldflags ninja perl5 pkgconfig \
-		python:3.7+,build qt:5 shebangfix tar:xz xorg
+		python:build qt:5 shebangfix tar:xz xorg
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome

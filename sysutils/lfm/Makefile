@@ -11,7 +11,7 @@ WWW=		https://inigo.katxi.org/devel/lfm/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		python:3.4+
+USES=		python
 USE_PYTHON=	autoplist distutils noflavors
 
 NO_ARCH=	yes

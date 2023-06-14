@@ -13,7 +13,7 @@ LICENSE=	ISCL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}decorator>0:devel/py-decorator@${PY_FLAVOR}
 
 # Officially: 3.7-3.11
-USES=	python:3.7-3.11
+USES=	python:3.8-3.11
 USE_PYTHON=	autoplist cython distutils
 
 OPTIONS_RADIO=	GSSAPI

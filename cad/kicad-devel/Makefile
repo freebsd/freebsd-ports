@@ -37,7 +37,7 @@ PLIST_SUB=	OPSYS=${OPSYS}	\
 		DESKTOPDIR=${DESKTOPDIR:S|^${PREFIX}/||}
 
 USES=		cmake:noninja compiler:c++11-lib desktop-file-utils gl \
-		gettext gnome pkgconfig python:3.5+ shared-mime-info shebangfix ssl \
+		gettext gnome pkgconfig python shared-mime-info shebangfix ssl \
 		tar:bzip2 xorg 
 USE_GITLAB=	yes
 GL_ACCOUNT=	kicad/code

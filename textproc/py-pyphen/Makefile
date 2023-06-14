@@ -17,7 +17,7 @@ LICENSE_FILE_MPL11=	${WRKSRC}/COPYING.MPL
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flit>=3.2<4:devel/py-flit@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes

@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=21.3<24.0:devel/py-packaging@${PY
 		${PYTHON_PKGNAMEPREFIX}poetry>=1.5<2:devel/py-poetry@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tomlkit>=0.11.4<0.12:textproc/py-tomlkit@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

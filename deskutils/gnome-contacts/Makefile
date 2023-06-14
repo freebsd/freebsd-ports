@@ -37,7 +37,7 @@ USE_GNOME=	cairo evolutiondataserver3 gdkpixbuf2 gnomedesktop3 gtk30 \
 		intlhack introspection:build
 USE_XORG=	x11 xcomposite xdamage xext xfixes xi xrandr
 USES=		compiler:c11 gettext gl gnome localbase meson perl5 pkgconfig \
-		python:3.4+,build sqlite tar:xz vala:build xorg
+		python:build sqlite tar:xz vala:build xorg
 
 GLIB_SCHEMAS=	org.gnome.Contacts.gschema.xml
 

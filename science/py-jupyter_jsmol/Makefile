@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pygments>=0:textproc/py-pygments@${PY_FLAVOR
 		${PYTHON_PKGNAMEPREFIX}ipywidgets>0:devel/py-ipywidgets@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>=7.0.0:devel/ipython@${PY_FLAVOR}
 
-USES=		python:3.7+ pytest
+USES=		python pytest
 USE_PYTHON=	distutils
 PYDISTUTILS_CONFIGUREARGS=	--skip-npm
 PYDISTUTILS_BUILDARGS=		--skip-npm

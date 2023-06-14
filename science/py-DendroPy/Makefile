@@ -10,7 +10,7 @@ WWW=		http://packages.python.org/DendroPy/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

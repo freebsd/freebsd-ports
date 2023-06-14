@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BUILD_DEPENDS=	cmake:devel/cmake-core
 
-USES=		compiler:c11 gl localbase meson pkgconfig python:3.5+,build
+USES=		compiler:c11 gl localbase meson pkgconfig python:build
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa

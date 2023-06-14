@@ -15,7 +15,7 @@ LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
 		libmpv.so:multimedia/mpv
 
 USES=		compiler:c11 desktop-file-utils gettext-tools gnome \
-		meson pkgconfig python:3.5+,build shebangfix tar:xz
+		meson pkgconfig python:build shebangfix tar:xz
 USE_GITHUB=	yes
 USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
 GH_ACCOUNT=	${PORTNAME}-player

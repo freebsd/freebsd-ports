@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/spylls/
 
 LICENSE=	MPL20
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist distutils concurrent
 
 NO_ARCH=	yes

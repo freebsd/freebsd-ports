@@ -11,7 +11,7 @@ WWW=		https://github.com/pycontribs/tendo
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

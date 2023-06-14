@@ -50,7 +50,7 @@ RUN_DEPENDS=	\
 		${PYTHON_PKGNAMEPREFIX}three-merge>=0.1.1:textproc/py-three-merge@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}watchdog>=0.10.3:devel/py-watchdog@${PY_FLAVOR}
 
-USES=		desktop-file-utils python:3.7+ pyqt:5
+USES=		desktop-file-utils python pyqt:5
 USE_PYTHON=	distutils autoplist noflavors
 USE_PYQT=	pyqt5 sip
 

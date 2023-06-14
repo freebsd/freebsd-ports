@@ -23,7 +23,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 		${PYTHON_PKGNAMEPREFIX}sphinx-autodoc-typehints>0:textproc/py-sphinx-autodoc-typehints@${PY_FLAVOR} \
 		${RUN_DEPENDS}
 
-USES=		python:3.7+ gmake
+USES=		python gmake
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

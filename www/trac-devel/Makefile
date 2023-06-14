@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=2.3.4:devel/py-babel@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.10:devel/py-Jinja2@${PY_FLAVOR}
 
 # some tests are failing with 3.8
-USES=		cpe python:3.7+
+USES=		cpe python
 CPE_VENDOR=	edgewall
 
 CONFLICTS_INSTALL=	trac

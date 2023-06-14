@@ -17,7 +17,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>0:devel/py-dbus@${PY_FLAVOR}
 
-USES=		gmake libtool:build localbase shebangfix python:3.6+ sqlite
+USES=		gmake libtool:build localbase shebangfix python sqlite
 
 SHEBANG_FILES=	apps/dbus/presage_dbus_python_demo \
 		apps/dbus/presage_dbus_python_demo.in \

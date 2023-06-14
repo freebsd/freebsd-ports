@@ -15,7 +15,7 @@ LIB_DEPENDS=	libBLT25.so:x11-toolkits/blt \
 		libfreetype.so:print/freetype2
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake gnome gl localbase:ldflags python:3.6+,build shebangfix tk:tea tar:tgz xorg
+USES=		gmake gnome gl localbase:ldflags python:build shebangfix tk:tea tar:tgz xorg
 USE_GNOME=	cairo
 USE_XORG=	ice x11 xext xi xmu
 USE_GL=		gl glu

@@ -10,7 +10,7 @@ WWW=		https://github.com/piranha/opster/
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/piranha/opster/issues/62
 
 USE_GITHUB=	yes

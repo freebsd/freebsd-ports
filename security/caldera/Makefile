@@ -65,7 +65,7 @@ GH_TUPLE=	mitre:access:0e67776:access/plugins/access \
 		mitre:stockpile:960f9ad:stockpile/plugins/stockpile \
 		mitre:training:b058b67:training/plugins/training
 
-USES=		dos2unix go:run python:3.8+
+USES=		dos2unix go:run python
 
 NO_ARCH=	yes
 NO_BUILD=	yes

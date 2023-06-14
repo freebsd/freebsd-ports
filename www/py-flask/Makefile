@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}werkzeug>=2.3.2:www/py-werkzeug@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}blinker>=0:devel/py-blinker@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		cpe python:3.8+
+USES=		cpe python
 CPE_VENDOR=	palletsprojects
 USE_PYTHON=	pep517 concurrent autoplist
 

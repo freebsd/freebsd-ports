@@ -16,7 +16,7 @@ LIB_DEPENDS=	libexif.so:graphics/libexif \
 
 PORTEXAMPLES=	*
 
-USES=		gettext-runtime python:3.6+ shebangfix
+USES=		gettext-runtime python shebangfix
 USE_PYTHON=	flavors
 
 # Only enable python swig binding, and disable everything else

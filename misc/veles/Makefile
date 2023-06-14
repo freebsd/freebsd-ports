@@ -24,7 +24,7 @@ BUILD_DEPENDS=	msgpack-c>0:devel/msgpack-c \
 		${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 
-USES=		cmake compiler python:3.6+ qt:5 shebangfix
+USES=		cmake compiler python qt:5 shebangfix
 SHEBANG_GLOB=	*.py
 SHEBANG_FILES=	python/plugin python/proxy resources/install/postinst python/test_dis
 USE_GITHUB=	yes

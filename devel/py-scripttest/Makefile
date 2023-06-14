@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/docs/license.rst
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	pypa
 USE_PYTHON=	autoplist distutils

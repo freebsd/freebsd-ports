@@ -30,7 +30,7 @@ RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>=2.1.9:devel/py-codecov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}coverage>=4.5.1:devel/py-coverage@${PY_FLAVOR}
 
-USES=		eigen:3 python:3.8+
+USES=		eigen:3 python
 USE_PYTHON=	distutils cython autoplist unittest
 
 USE_GITHUB=	yes

@@ -13,7 +13,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scipy>=0.7.1:science/py-scipy@${PY_FLAVOR}
 
 USE_GITHUB=	yes
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils concurrent optsuffix
 
 .include <bsd.port.mk>

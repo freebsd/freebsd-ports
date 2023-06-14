@@ -25,7 +25,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}covdefaults>=2.2.2:devel/py-covdefaults@${P
 		${PYTHON_PKGNAMEPREFIX}pytest-timeout>=2.1.0:devel/py-pytest-timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}time-machine>=2.10.0:devel/py-time-machine@${PY_FLAVOR}
 
-USES=		cpe python:3.7+
+USES=		cpe python
 USE_GITHUB=	yes
 GH_ACCOUNT=	pypa
 USE_PYTHON=	autoplist concurrent pep517 pytest
@@ -72,11 +72,4 @@ post-install-DOCS-on:
 	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b html -n ${WRKSRC}/docs ${STAGEDIR}${DOCSDIR}
 	${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} -b man -n ${WRKSRC}/docs ${STAGEDIR}${MANPREFIX}/man/man1
 
-.include <bsd.port.pre.mk>
-
-.if "${PYTHON_VER}" == "3.7"
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.8.1:devel/py-importlib-metadata@${PY_FLAVOR}
-
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

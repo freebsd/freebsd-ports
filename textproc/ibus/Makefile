@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.0:devel/py-dbus@${PY_FLAVOR} \
 		setxkbmap:x11/setxkbmap
 
 USES=		autoreconf compiler cpe gmake gnome libtool localbase \
-		pathfix pkgconfig python:3.5+ shebangfix
+		pathfix pkgconfig python shebangfix
 CPE_VENDOR=	ibus_project
 USE_GITHUB=	yes
 USE_GNOME=	glib20 intltool librsvg2 pygobject3

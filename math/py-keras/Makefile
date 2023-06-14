@@ -28,7 +28,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		bazel:devel/bazel5 \
 		bash:shells/bash
 
-USES=		python:3.7+
+USES=		python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	keras-team

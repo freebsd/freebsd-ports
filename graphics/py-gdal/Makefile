@@ -14,7 +14,7 @@ LICENSE=	MIT
 
 LIB_DEPENDS=	libgdal.so:graphics/gdal
 
-USES=		compiler:c++11-lang cpe python:3.8+
+USES=		compiler:c++11-lang cpe python
 USE_PYTHON=	autoplist concurrent distutils
 
 CPE_VENDOR=	osgeo

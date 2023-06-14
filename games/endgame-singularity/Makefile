@@ -32,7 +32,7 @@ RUN_DEPENDS=	${PYGAME} \
 		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}polib>=0:devel/py-polib@${PY_FLAVOR}
 
-USES=		python:3.5+ sdl shebangfix
+USES=		python sdl shebangfix
 USE_PYTHON=	autoplist distutils
 USE_SDL=	image mixer
 PORTDOCS=	AUTHORS.txt Changelog.txt README.txt TODO

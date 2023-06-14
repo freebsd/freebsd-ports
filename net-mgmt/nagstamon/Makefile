@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.2.1:www/py-beautifulsoup@${
 		${PYTHON_PKGNAMEPREFIX}requests-gssapi>0:www/py-requests-gssapi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-kerberos>0:security/py-requests-kerberos@${PY_FLAVOR}
 
-USES=		cpe pyqt:5 python:3.6+
+USES=		cpe pyqt:5 python
 CPE_VENDOR=	henri_wahl
 USE_GITHUB=	yes
 GH_ACCOUNT=	HenriWahl

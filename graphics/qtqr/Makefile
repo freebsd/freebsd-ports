@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pillow>0:graphics/py-pillow@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zbar-py>=1.0.4:graphics/py-zbar-py@${PY_FLAVOR}
 
-USES=		desktop-file-utils pyqt:5 python:3.6+ shebangfix
+USES=		desktop-file-utils pyqt:5 python shebangfix
 USE_PYQT=	pyqt5:run
 USE_PYTHON=	autoplist distutils
 

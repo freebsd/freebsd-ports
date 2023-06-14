@@ -14,7 +14,7 @@ LICENSE_COMB=	multi
 LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate \
 		libsysinfo.so:devel/libsysinfo
 
-USES=		compiler:c11 pkgconfig python:3.4+ shebangfix waf
+USES=		compiler:c11 pkgconfig python shebangfix waf
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	jackd
 

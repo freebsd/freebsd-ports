@@ -66,10 +66,10 @@ PYSITEDIR=		${PREFIX}${PYTHON_SITELIBDIR:S|^${LOCALBASE}||}
 PYSITEDIR=		${PYTHON_SITELIBDIR}
 .endif
 
-.if defined(PYTHON_VER) && (${PYTHON_VER} == "2.7" || ${PYTHON_VER} == "3.4")
-PLIST_SUB+=		PYTHONGT34="@comment "
+.if defined(PYTHON_VER) && ${PYTHON_VER} == "2.7"
+PLIST_SUB+=		PYTHONGT27="@comment "
 .else
-PLIST_SUB+=		PYTHONGT34=""
+PLIST_SUB+=		PYTHONGT27=""
 .endif
 
 post-patch:

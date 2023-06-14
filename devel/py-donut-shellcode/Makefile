@@ -11,7 +11,7 @@ WWW=		https://github.com/TheWover/donut
 
 LICENSE=	BSD3CLAUSE
 
-USES=		dos2unix python:3.6+
+USES=		dos2unix python
 USE_PYTHON=	distutils autoplist
 
 DOS2UNIX_GLOB=	*.py

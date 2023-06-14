@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pdm-pep517>=1.0.0:devel/py-pdm-pep517@${PY
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=2.2:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlalchemy14>=1.4.18:databases/py-sqlalchemy14@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes

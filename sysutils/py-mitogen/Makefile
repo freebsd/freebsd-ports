@@ -14,7 +14,7 @@ WWW=		https://mitogen.networkgenomics.com/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe python:3.6+
+USES=		cpe python
 CPE_VENDOR=	networkgenomics
 USE_PYTHON=	distutils autoplist concurrent
 

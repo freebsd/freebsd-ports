@@ -9,7 +9,7 @@ WWW=		https://pypi.org/project/unrpa/
 
 LICENSE=	GPLv3+
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

@@ -21,7 +21,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dill>=0.3.6:devel/py-dill@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pathos>=0.3.0:devel/py-pathos@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pox>=0.3.2:devel/py-pox@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
 
 NO_ARCH=	yes

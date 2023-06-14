@@ -9,7 +9,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MathML to SVG Converter in Python
 WWW=		http://svgmath.sf.net
 
-USES=		dos2unix python:3.6+
+USES=		dos2unix python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

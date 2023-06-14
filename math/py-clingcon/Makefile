@@ -17,7 +17,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 		${PYTHON_PKGNAMEPREFIX}clingo>0:math/py-clingo@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}clingo>0:math/py-clingo@${PY_FLAVOR}
 
-USES=		compiler:c++17-lang python:3.6+
+USES=		compiler:c++17-lang python
 USE_PYTHON=	distutils autoplist
 
 post-install:

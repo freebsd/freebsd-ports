@@ -16,7 +16,7 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/LICENSE.BSD
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyparsing>=2.0.2:devel/py-pyparsing@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

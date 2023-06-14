@@ -29,7 +29,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>=6.0.0:devel/py-hypothesis@${PY_
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=2.2.0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=2.0.1:textproc/py-python-xmp-toolkit@${PY_FLAVOR}
 
-USES=		ghostscript:run python:3.8+ shebangfix
+USES=		ghostscript:run python shebangfix
 USE_PYTHON=	autoplist concurrent pep517 pytest
 # Skip some checks as they yield wrong results if run with the root account
 PYTEST_IGNORED_TESTS=	test_chmod \

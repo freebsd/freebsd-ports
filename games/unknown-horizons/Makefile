@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fife>0:games/py-fife@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
-USES=		gettext-tools gnome python:3.5+ shebangfix
+USES=		gettext-tools gnome python shebangfix
 USE_GITHUB=	yes
 USE_GNOME=	intltool
 USE_PYTHON=	autoplist distutils noflavors

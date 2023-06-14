@@ -16,7 +16,7 @@ WWW=		https://wiki.znc.in/ZNC
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler:c++11-lib cpe cmake:run iconv pathfix pkgconfig python:3.5+
+USES=		compiler:c++11-lib cpe cmake:run iconv pathfix pkgconfig python
 
 USE_RC_SUBR=	znc
 

@@ -31,7 +31,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=20.2.0:devel/py-attrs@${PY_FLAVOR} \
 		${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}python-xmp-toolkit>=2.0.1:textproc/py-python-xmp-toolkit@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang cpe localbase python:3.6+
+USES=		compiler:c++14-lang cpe localbase python
 USE_PYTHON=	distutils autoplist
 
 CPE_VENDOR=	pikepdf_project

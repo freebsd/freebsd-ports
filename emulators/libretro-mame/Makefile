@@ -10,7 +10,7 @@ WWW=		https://github.com/libretro/mame
 LICENSE=	BSD2CLAUSE GPLv2
 LICENSE_COMB=	multi
 
-USES=	compiler:c++11-lib gl gmake pkgconfig python:3.7,build
+USES=	compiler:c++11-lib gl gmake pkgconfig python:3.8,build
 USE_LDCONFIG=	yes
 
 USE_GL=	gl

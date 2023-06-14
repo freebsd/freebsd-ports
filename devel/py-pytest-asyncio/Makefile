@@ -19,7 +19,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>=3.5.0:devel/py-flaky@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-trio>=0.7.0:devel/py-pytest-trio@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist distutils pytest
 
 .include <bsd.port.pre.mk>

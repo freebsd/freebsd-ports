@@ -16,7 +16,7 @@ RUN_DEPENDS+=	redis>0:databases/redis \
 		${PYTHON_PKGNAMEPREFIX}celery>0:devel/py-celery@${PY_FLAVOR} \
 		websocat>0:www/websocat
 
-USES=		python:3.6+,run
+USES=		python:run
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

@@ -12,7 +12,7 @@ WWW=		https://barryp.org/software/py-smbpasswd
 LICENSE=	GPLv2
 
 # Python3 ready
-USES=		python:3.6+ tar:tgz
+USES=		python tar:tgz
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.pre.mk>

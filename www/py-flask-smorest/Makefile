@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apispec>=6.0.0:devel/py-apispec@${PY_FLAVOR}
 		${PYTHON_PKGNAMEPREFIX}webargs>=8.0.0:www/py-webargs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=2.0.1:www/py-werkzeug@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes

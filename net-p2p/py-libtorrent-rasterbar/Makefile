@@ -17,7 +17,7 @@ BUILD_DEPENDS=	b2:devel/boost_build
 LIB_DEPENDS=	libtorrent-rasterbar.so:net-p2p/libtorrent-rasterbar \
 		${PY_BOOST}
 
-USES=		compiler:c11 iconv localbase:ldflags python:3.6+
+USES=		compiler:c11 iconv localbase:ldflags python
 USE_GITHUB=	yes
 GH_ACCOUNT=	arvidn
 GH_PROJECT=	libtorrent

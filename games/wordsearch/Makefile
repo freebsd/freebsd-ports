@@ -10,7 +10,7 @@ WWW=		https://github.com/jensenpat/wordsearch
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.8+ shebangfix
+USES=		python shebangfix
 SHEBANG_FILES=	wordsearch
 NO_ARCH=	yes
 NO_BUILD=	yes

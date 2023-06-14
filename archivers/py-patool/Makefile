@@ -14,7 +14,7 @@ GH_ACCOUNT=	wummel
 GH_PROJECT=	${PORTNAME}
 GH_TAGNAME=	4928f3fc5083248ec83bbf6b02b5d9089c309100
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

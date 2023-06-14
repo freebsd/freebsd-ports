@@ -25,7 +25,7 @@ PORTSCOUT=	limitw:1,even
 
 USE_GNOME=	cairo gtk30 intlhack introspection:build
 USES=		desktop-file-utils gettext gmake gnome libtool meson pathfix \
-		pkgconfig python:3.6+ shared-mime-info tar:xz vala:build
+		pkgconfig python shared-mime-info tar:xz vala:build
 USE_LDCONFIG=	yes
 BINARY_ALIAS=	python3=${PYTHON_VERSION}
 INSTALL_TARGET=	install-strip

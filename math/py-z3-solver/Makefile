@@ -16,7 +16,7 @@ BROKEN_riscv64=	fails to configure, see https://github.com/Z3Prover/z3/issues/61
 
 BUILD_DEPENDS=	cmake:devel/cmake-core
 
-USES=		compiler:c++11-lang python:3.6+
+USES=		compiler:c++11-lang python
 USE_PYTHON=	distutils autoplist
 
 USE_GITHUB=	yes

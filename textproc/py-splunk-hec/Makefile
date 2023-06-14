@@ -16,7 +16,7 @@ GH_ACCOUNT=	georgestarcher
 GH_PROJECT=	Splunk-Class-httpevent
 GH_TAGNAME=	b1b7aae37bc73ea6e89c4a4667c4d8d227804546
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

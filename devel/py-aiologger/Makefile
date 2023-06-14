@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/aiologger
 
 LICENSE=	MIT
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

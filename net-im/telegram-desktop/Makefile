@@ -51,7 +51,7 @@ qt5_CONFLICTS_INSTALL=	${PORTNAME}-qt6
 qt6_CONFLICTS_INSTALL=	${PORTNAME}
 
 USES=		cmake desktop-file-utils gl gnome jpeg localbase \
-		minizip openal pkgconfig python:3.7+,build ssl xorg
+		minizip openal pkgconfig python:build ssl xorg
 
 USE_CXXSTD=	c++17
 USE_GITHUB=	nodefault

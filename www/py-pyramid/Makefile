@@ -26,7 +26,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 #		${PYTHON_PKGNAMEPREFIX}zope.component>=3.6.0:devel/py-zope.component@${PY_FLAVOR}
 
 NO_ARCH=	yes
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

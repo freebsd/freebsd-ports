@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinx>=2.0,1:textproc/py-sphinx@${PY_FLAVOR}
 
-USES=		python:3.5+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	autoplist concurrent distutils
 SHEBANG_FILES=	src/hieroglyph/themes/slides2/static/scripts/md/render.py
 

@@ -11,7 +11,7 @@ WWW=		https://pypi.org/project/vecrec
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		python:3.5+
+USES=		python
 USE_PYTHON=	autoplist distutils
 NO_ARCH=	yes
 

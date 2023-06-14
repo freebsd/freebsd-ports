@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=1.0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}qcengine>=0.20.0:science/py-qcengine@${PY_FLAVOR}
 TEST_DEPENDS=	dftd3:science/dftd3
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # some tests fail
 
 USE_GITHUB=	yes

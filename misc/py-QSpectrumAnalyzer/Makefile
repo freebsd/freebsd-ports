@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pyqtgraph>=0.10.0:graphics/py-pyqtgraph@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}soapy_power>=1.5.0:misc/py-soapy_power@${PY_FLAVOR}
 
-USES=		fortran python:3.8+ pyqt:5
+USES=		fortran python pyqt:5
 USE_PYQT=	pyqt5
 USE_PYTHON=	distutils concurrent autoplist
 

@@ -10,7 +10,7 @@ MAINTAINER=	philip@FreeBSD.org
 COMMENT=	Plugin for reCAPTCHA and reCAPTCHA Mailhide
 WWW=		https://pypi.org/project/recaptcha-client/
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

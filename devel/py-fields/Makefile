@@ -11,7 +11,7 @@ WWW=		https://github.com/ionelmc/python-fields
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/ionelmc/python-fields/issues/9
 
 NO_ARCH=	yes

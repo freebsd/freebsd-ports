@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}paramiko>=1.14.0:security/py-paramiko@${PY_F
 		${PYTHON_PKGNAMEPREFIX}netifaces>=0.10.3:net/py-netifaces@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tabulate>=0.7.2:devel/py-tabulate@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 PLIST_FILES=	man/man8/jadm.8.gz
 

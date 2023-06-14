@@ -16,7 +16,7 @@ BUILD_DEPENDS=		cmake:devel/cmake-core
 LIB_DEPENDS=		${PY_BOOST} \
 			libpng.so:graphics/png
 
-USES=			compiler:c++11-lang pkgconfig python:3.7-3.10 shebangfix \
+USES=			compiler:c++11-lang pkgconfig python:3.8-3.10 shebangfix \
 			tar:bzip2
 USE_PYTHON=		autoplist distutils
 SHEBANG_FILES=		python_examples/*.py

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	proj>=9.0.0,1:graphics/proj \
 LIB_DEPENDS=	libproj.so:graphics/proj
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
 
 MAKE_ENV=	PROJ_DIR=${LOCALBASE}

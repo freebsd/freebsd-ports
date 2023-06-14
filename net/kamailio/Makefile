@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/bin/bash:shells/bash
 
-USES=		compiler:c11 cpe gmake ncurses pkgconfig python:3.5+ readline \
+USES=		compiler:c11 cpe gmake ncurses pkgconfig python readline \
 		shebangfix
 
 USE_LDCONFIG=	yes

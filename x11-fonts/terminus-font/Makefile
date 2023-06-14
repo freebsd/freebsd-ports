@@ -11,7 +11,7 @@ LICENSE=	OFL11
 
 BUILD_DEPENDS=	bdftopcf:x11-fonts/bdftopcf
 
-USES=		gmake fonts python:build,3.5+ shebangfix
+USES=		gmake fonts python:build shebangfix
 NO_ARCH=	yes
 
 SHEBANG_FILES=	bin/*.py

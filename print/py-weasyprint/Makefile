@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}brotli>=1.0.9:archivers/py-brotli@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pyphen>=0.9.1:textproc/py-pyphen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tinycss2>=1.0.0:textproc/py-tinycss2@${PY_FLAVOR}
 
-USES=		gnome python:3.8+
+USES=		gnome python
 USE_PYTHON=	autoplist pep517
 USE_GNOME=	gdkpixbuf2 pango
 

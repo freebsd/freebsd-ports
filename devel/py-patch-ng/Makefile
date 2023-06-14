@@ -10,7 +10,7 @@ WWW=		https://github.com/conan-io/python-patch-ng
 
 LICENSE=	MIT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

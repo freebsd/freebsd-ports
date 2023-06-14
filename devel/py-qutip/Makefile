@@ -23,7 +23,7 @@ RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 # the optional graphics/py-mayavi dependency is omitted because it is python-2.7 -only
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	pep517 cython cython_run autoplist
 
 xpost-patch: # https://github.com/qutip/qutip/issues/1059

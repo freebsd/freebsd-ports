@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pygmo2>0:science/py-pygmo2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
 
-USES=		cmake compiler:c++11-lang python:3.7+
+USES=		cmake compiler:c++11-lang python
 USE_PYTHON=	flavors
 
 CMAKE_OFF=	PYKEP_BUILD_KEP_TOOLBOX PYKEP_BUILD_TESTS

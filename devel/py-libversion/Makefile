@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libversion.so:devel/libversion
 
-USES=		python:3.6+ pkgconfig
+USES=		python pkgconfig
 USE_PYTHON=	autoplist distutils
 
 do-test:

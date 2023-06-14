@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pillow>=5.2.0:graphics/py-pillow@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USES=		desktop-file-utils gnome python:3.8+
+USES=		desktop-file-utils gnome python
 USE_GNOME=	gtk30 pygobject3
 
 USE_PYTHON=	autoplist distutils

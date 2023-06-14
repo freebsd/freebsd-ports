@@ -20,7 +20,7 @@ TEST_DEPENDS=	${RUN_DEPENDS} \
 		${PYTHON_PKGNAMEPREFIX}tox>0:devel/py-tox@${PY_FLAVOR}
 		# if py-tox cannot detect py-filelock, be sure to have version 3.4.2_1 of the latter
 
-USES=		localbase python:3.7+
+USES=		localbase python
 USE_GITHUB=	yes
 GH_ACCOUNT=	madmaze
 USE_PYTHON=	autoplist concurrent distutils

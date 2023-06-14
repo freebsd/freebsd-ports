@@ -29,7 +29,7 @@ RUN_DEPENDS=	tor:security/tor \
 		obfs4proxy:security/obfs4proxy-tor
 
 USES=		compiler:c++11-lib libtool \
-		perl5 pkgconfig python:3.7+ shebangfix localbase:ldflags tar:xz
+		perl5 pkgconfig python shebangfix localbase:ldflags tar:xz
 USE_GECKO=	gecko
 
 SSP_UNSAFE=	yes

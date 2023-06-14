@@ -10,7 +10,7 @@ COMMENT=	Python interface to FreeBSD-specific system libraries
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils unittest
 
 USE_GITHUB=	yes

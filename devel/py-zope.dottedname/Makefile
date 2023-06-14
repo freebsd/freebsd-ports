@@ -12,7 +12,7 @@ WWW=		https://pypi.org/project/zope.dottedname/
 
 LICENSE=	ZPL21
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

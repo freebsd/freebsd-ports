@@ -13,7 +13,7 @@ WWW=		https://github.com/matze/pkgconfig
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		pkgconfig:run python:3.3+
+USES=		pkgconfig:run python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

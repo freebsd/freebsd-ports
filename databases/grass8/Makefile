@@ -40,7 +40,7 @@ RUN_DEPENDS=	${PY_NUMPY} \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>0:databases/py-sqlite3@${PY_FLAVOR}
 
 USES=		blaslapack compiler:c11 gl gmake gnome iconv \
-		jpeg perl5 pkgconfig python:3.6+ readline shebangfix sqlite xorg
+		jpeg perl5 pkgconfig python readline shebangfix sqlite xorg
 SHEBANG_GLOB=	*.py
 SHEBANG_LANG=	nviz
 nviz_OLD_CMD=	nviz

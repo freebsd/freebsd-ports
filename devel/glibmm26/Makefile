@@ -12,7 +12,7 @@ WWW=		https://www.gtkmm.org/
 LICENSE=	LGPL21
 
 USES=		compiler:c++11-lang gettext gnome meson pathfix perl5 \
-		pkgconfig python:3.7+,build shebangfix tar:xz
+		pkgconfig python:build shebangfix tar:xz
 USE_GNOME=	glib20 libsigc++30
 USE_LDCONFIG=	yes
 

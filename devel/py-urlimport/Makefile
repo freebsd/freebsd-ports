@@ -12,7 +12,7 @@ WWW=		https://urlimport.codeshift.net/
 
 NO_WRKSUBDIR=	yes
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 do-extract:

@@ -11,7 +11,7 @@ WWW=		https://github.com/whitequark/python-itanium_demangler
 LICENSE=	BSD0CLAUSE
 LICENSE_FILE=	${WRKSRC}/README.md
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

@@ -13,7 +13,7 @@ LICENSE=	PSFL
 
 PORTSCOUT=	ignore:1
 
-USES=		python:3.6+ shebangfix tar:xz
+USES=		python shebangfix tar:xz
 USE_PYTHON=	flavors concurrent
 NO_BUILD=	yes
 NO_ARCH=	yes

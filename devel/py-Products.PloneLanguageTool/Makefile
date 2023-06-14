@@ -13,7 +13,7 @@ WWW=		https://pypi.org/project/Products.PloneLanguageTool/
 LICENSE=	GPLv2
 
 NO_ARCH=	yes
-USES=		python:3.6+ zip
+USES=		python zip
 USE_PYTHON=	autoplist distutils
 
 post-patch:

@@ -14,7 +14,7 @@ WWW=		https://github.com/openstack/xstatic-jquery.tablesorter \
 LICENSE=	GPLv2 MIT
 LICENSE_COMB=	dual
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

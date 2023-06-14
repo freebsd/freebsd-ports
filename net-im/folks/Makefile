@@ -22,7 +22,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee \
 		libdbus-glib-1.so:devel/dbus-glib \
 		libdbus-1.so:devel/dbus
 
-USES=		gettext gnome localbase meson python:3.5+,build pkgconfig \
+USES=		gettext gnome localbase meson python:build pkgconfig \
 		readline sqlite tar:xz vala:build
 USE_GNOME=	evolutiondataserver3 intlhack introspection:build
 USE_LDCONFIG=	yes

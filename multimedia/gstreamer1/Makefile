@@ -11,7 +11,7 @@ WWW=		https://gstreamer.freedesktop.org/
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		bison libtool gnome meson ninja pkgconfig python:3.8+,build shebangfix tar:xz
+USES=		bison libtool gnome meson ninja pkgconfig python:build shebangfix tar:xz
 USE_GNOME=     glib20 introspection:build
 
 LIB_DEPENDS=	libdw.so:devel/elfutils \

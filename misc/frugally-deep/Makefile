@@ -18,7 +18,7 @@ RUN_DEPENDS=	${HPP_DEPENDS}
 TEST_DEPENDS=	doctest>0:devel/doctest \
 		${PYTHON_PKGNAMEPREFIX}keras>0:math/py-keras@${PY_FLAVOR}
 
-USES=		cmake compiler:c++14-lang eigen:3,build,run python:3.6+,test
+USES=		cmake compiler:c++14-lang eigen:3,build,run python:test
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Dobiasd

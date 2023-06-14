@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 PATCH_DEPENDS=	public_suffix_list>=0:dns/public_suffix_list
 
 NO_ARCH=	yes
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 post-patch:

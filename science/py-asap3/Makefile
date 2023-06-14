@@ -17,7 +17,7 @@ LIB_DEPENDS=	libmpich.so:net/mpich # not sure if this is used
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}ase>0:science/py-ase@${PY_FLAVOR}
 
-USES=		localbase python:3.7+
+USES=		localbase python
 USE_PYTHON=	distutils concurrent autoplist pytest
 
 post-install:

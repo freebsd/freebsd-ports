@@ -12,7 +12,7 @@ WWW=		https://github.com/python-poetry/poetry-core
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 BINARY_ALIAS=	git=false

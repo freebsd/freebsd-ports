@@ -14,7 +14,7 @@ WWW=		http://ktoblzcheck.sourceforge.net/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		cmake pathfix python:3.7+,build
+USES=		cmake pathfix python:build
 USE_LDCONFIG=	yes
 
 CMAKE_ON=	INSTALL_RAW_BANKDATA_FILE

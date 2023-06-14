@@ -45,7 +45,7 @@ RUN_DEPENDS+=	${SHELL_INSTALL_ASTER}:shells/${SHIADEP}	\
 		${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 
-USES=		bison blaslapack:openblas fortran gettext python:3.6+ qt:5 tk
+USES=		bison blaslapack:openblas fortran gettext python qt:5 tk
 USE_BINUTILS=	yes
 USE_QT=		linguisttools:build
 

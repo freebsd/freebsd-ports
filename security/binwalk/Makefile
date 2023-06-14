@@ -12,7 +12,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	7zz:archivers/7-zip \
 		cabextract:archivers/cabextract
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	ReFirmLabs
 USE_PYTHON=	autoplist distutils optsuffix concurrent

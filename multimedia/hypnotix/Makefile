@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>0:devel/py-gobject3@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}unidecode>0:converters/py-unidecode@${PY_FLAVOR}
 
-USES=		python:3.6+ shebangfix gnome
+USES=		python shebangfix gnome
 USE_GNOME=	gtk30 glib20 gdkpixbuf2 pango
 GLIB_SCHEMAS=	org.x.hypnotix.gschema.xml
 

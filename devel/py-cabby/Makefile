@@ -11,7 +11,7 @@ WWW=		https://github.com/EclecticIQ/cabby/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}furl>0:devel/py-furl@${PY_FLAVOR}

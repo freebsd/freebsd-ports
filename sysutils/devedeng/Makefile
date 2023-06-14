@@ -19,7 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}urllib3>0:net/py-urllib3@${PY_FLAVOR} \
 		vcdimager:multimedia/vcdimager \
 		mkisofs:sysutils/cdrtools
 
-USES=		python:3.6+ gettext-tools gnome
+USES=		python gettext-tools gnome
 USE_GITLAB=	yes
 GL_ACCOUNT=	rastersoft
 GL_COMMIT=	b003c2bfe61a1001ea708501f8d36239782975ce

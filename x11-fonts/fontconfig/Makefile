@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libexpat.so:textproc/expat2
 
-USES=		cpe gperf meson pkgconfig python:3.6+,build shebangfix tar:xz \
+USES=		cpe gperf meson pkgconfig python:build shebangfix tar:xz \
 		trigger
 CPE_VENDOR=	fontconfig_project
 USE_LDCONFIG=	yes

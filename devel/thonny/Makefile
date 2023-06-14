@@ -21,7 +21,7 @@ RUN_DEPENDS=	pylint:devel/pylint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}asttokens>=2.0:devel/py-asttokens@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tkinter>0:x11-toolkits/py-tkinter@${PY_FLAVOR}
 
-USES=		python:3.8+
+USES=		python
 USE_PYTHON=	autoplist distutils
 
 .include <bsd.port.mk>

@@ -11,7 +11,7 @@ WWW=		https://github.com/xflr6/csv23
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		dos2unix python:3.7+ zip
+USES=		dos2unix python zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

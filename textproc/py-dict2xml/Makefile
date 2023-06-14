@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVO
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}noseofyeti>0:devel/py-noseofyeti@${PY_FLAVOR}
 
-USES=		python:3.5+
+USES=		python
 #doesnt ship tests in sdist
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist pep517

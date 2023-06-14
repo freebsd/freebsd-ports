@@ -9,7 +9,7 @@ WWW=		https://www.savvycan.com/
 
 LICENSE=	MIT
 
-USES=		compiler:c++11-lang gmake python:build,3.6+ qmake qt:5
+USES=		compiler:c++11-lang gmake python:build qmake qt:5
 USE_QT=		core gui help network opengl printsupport serialbus serialport \
 		websockets-qml widgets buildtools:build
 

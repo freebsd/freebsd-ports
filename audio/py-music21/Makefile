@@ -24,7 +24,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		mscore:audio/musescore \
 		xdg-open:devel/xdg-utils
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 NO_ARCH=	yes

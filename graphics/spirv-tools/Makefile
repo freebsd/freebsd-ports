@@ -14,7 +14,7 @@ WWW=		https://github.com/KhronosGroup/SPIRV-Tools
 
 LICENSE=	APACHE20
 
-USES=		cmake compiler:c++11-lib python:3.4+,build shebangfix
+USES=		cmake compiler:c++11-lib python:build shebangfix
 USE_LDCONFIG=	yes
 SHEBANG_FILES=	tools/lesspipe/spirv-lesspipe.sh
 

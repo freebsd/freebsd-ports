@@ -16,7 +16,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}pylsqpack>=0.3.3<0.4.0:www/py-pylsqpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}openssl>=20:security/py-openssl@${PY_FLAVOR}
 
-USES=		python:3.7+ ssl
+USES=		python ssl
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

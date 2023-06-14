@@ -24,7 +24,7 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 		taskflow>=0:devel/taskflow
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jarowinkler>=1.0.3:textproc/py-jarowinkler@${PY_FLAVOR}
 
-USES=		compiler:c++14-lang python:3.6+
+USES=		compiler:c++14-lang python
 USE_PYTHON=	autoplist concurrent distutils
 
 PORTSCOUT=	limit:^2\.

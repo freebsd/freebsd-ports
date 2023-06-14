@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=	aarch64 amd64 powerpc64 powerpc64le
 
-USES=		python:3.5+ zip
+USES=		python zip
 USE_JAVA=	yes
 USE_RC_SUBR=	nzbhydra2
 

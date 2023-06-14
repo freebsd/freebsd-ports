@@ -11,7 +11,7 @@ LICENSE=	GPLv2
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}protobuf>=3.11.0:devel/py-protobuf@${PY_FLAVOR}
 
-USES=		python:3.6+
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	mysql
 USE_PYTHON=	autoplist distutils

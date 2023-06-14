@@ -32,7 +32,7 @@ LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup \
 PORTSCOUT=	limitw:1,even
 
 USES=		bdb:5 cmake compiler:c++11-lib cpe gettext gnome gperf \
-		iconv:wchar_t localbase pathfix pkgconfig python:3.6+,build\
+		iconv:wchar_t localbase pathfix pkgconfig python:build\
 		sqlite tar:xz xorg
 USE_CXXSTD=	gnu++11
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool introspection:build libxml2

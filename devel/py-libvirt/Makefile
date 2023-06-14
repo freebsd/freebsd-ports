@@ -14,7 +14,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libvirt.so:devel/libvirt
 
-USES=		cpe pkgconfig python:3.6+ shebangfix
+USES=		cpe pkgconfig python shebangfix
 CPE_VENDOR=	redhat
 SHEBANG_FILES=	generator.py setup.py
 USE_PYTHON=	distutils autoplist

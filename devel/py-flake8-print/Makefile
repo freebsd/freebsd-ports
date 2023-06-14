@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=3.0:devel/py-flake8@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pycodestyle>=0:devel/py-pycodestyle@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

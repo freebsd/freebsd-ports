@@ -10,7 +10,7 @@ WWW=		https://github.com/kanazux/xml-default-dict
 
 LICENSE=	BSD2CLAUSE
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

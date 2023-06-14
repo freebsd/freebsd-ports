@@ -12,7 +12,7 @@ WWW=		https://code.google.com/p/wsgi-xmlrpc/
 
 LICENSE=	APACHE20
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist
 
 .include <bsd.port.mk>

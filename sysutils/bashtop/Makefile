@@ -14,7 +14,7 @@ RUN_DEPENDS=	coreutils>0:sysutils/coreutils \
 		gsed:textproc/gsed \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR}
 
-USES=	python:3.5+,run
+USES=	python:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	aristocratos

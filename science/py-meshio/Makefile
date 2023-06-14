@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYNUMPY}	\
 		${PYTHON_PKGNAMEPREFIX}rich>0:textproc/py-rich@${PY_FLAVOR}\
 		${PYTHON_PKGNAMEPREFIX}netCDF4>0:science/py-netCDF4@${PY_FLAVOR}
 
-USES=		pytest python:3.7+
+USES=		pytest python
 USE_PYTHON=	distutils
 
 NO_ARCH=	yes

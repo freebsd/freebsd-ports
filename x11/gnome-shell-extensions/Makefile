@@ -19,7 +19,7 @@ RUN_DEPENDS=	gnome-shell>=42.0:x11/gnome-shell
 PORTSCOUT=	limitw:1,even
 
 NO_ARCH=	yes
-USES=		gettext gnome meson pkgconfig python:3.8+ tar:xz
+USES=		gettext gnome meson pkgconfig python tar:xz
 USE_GNOME=	glib20 gnomedesktop3
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dextension_set=all \

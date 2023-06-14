@@ -15,7 +15,7 @@ LIB_DEPENDS=	libmuparser.so:math/muparser \
 		libqalculate.so:math/libqalculate
 RUN_DEPENDS=	play:audio/sox
 
-USES=	cmake compiler:c++20-lang gl localbase:ldflags pkgconfig python:3.7+ qt:6 xorg
+USES=	cmake compiler:c++20-lang gl localbase:ldflags pkgconfig python qt:6 xorg
 
 USE_GL=	gl opengl
 USE_QT=	base declarative scxml svg

@@ -31,7 +31,7 @@ CONFLICTS=	gitg0
 PORTSCOUT=	limitw:1,even
 
 USES=		compiler:c11 desktop-file-utils gettext gnome localbase \
-		meson pathfix pkgconfig python:3.4+,build tar:xz vala:build
+		meson pathfix pkgconfig python:build tar:xz vala:build
 USE_GNOME=	cairo gtk30 gtksourceview3 intltool introspection
 
 USE_LDCONFIG=	yes
@@ -41,7 +41,7 @@ BINARY_ALIAS=	python3=${PYTHON_VERSION}
 OPTIONS_DEFINE=	PYTHON
 OPTIONS_SUB=	yes
 
-PYTHON_USES=	python:3.2+
+PYTHON_USES=	python
 PYTHON_MESON_TRUE=	python
 PYTHON_USE=	GNOME=pygobject3
 

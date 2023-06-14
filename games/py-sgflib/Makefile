@@ -14,7 +14,7 @@ WWW=		http://gotools.sourceforge.net/sgflib/
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/lgpl.txt
 
-USES=		python:3.6+ shebangfix
+USES=		python shebangfix
 USE_PYTHON=	flavors
 NO_BUILD=	yes
 NO_ARCH=	yes

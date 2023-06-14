@@ -10,7 +10,7 @@ WWW=		https://hyper.rtfd.org/
 
 LICENSE=	MIT
 
-USES?=		cpe python:3.6+
+USES?=		cpe python
 CPE_VENDOR=	python
 USE_PYTHON=	distutils autoplist
 NO_ARCH=	yes

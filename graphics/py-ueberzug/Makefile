@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-xlib>=0:x11-toolkits/py-python-xlib@${PY_FLAVOR}
 
-USES=		localbase python:3.6+ shebangfix xorg
+USES=		localbase python shebangfix xorg
 USE_CSTD=	c99
 USE_GITHUB=	yes
 GH_ACCOUNT=	seebye

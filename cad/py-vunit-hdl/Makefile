@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@$
 RUN_DEPENDS=	ghdl:cad/ghdl
 TEST_DEPENDS=	pylint:devel/pylint@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	pep517 autoplist pytest # 42 tests fail, see https://github.com/VUnit/vunit/issues/941
 
 USE_GITHUB=	yes

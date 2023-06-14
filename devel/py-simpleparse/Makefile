@@ -10,7 +10,7 @@ COMMENT=	Python EBNF parser generator (with mx.TextTools derivative)
 WWW=		http://simpleparse.sourceforge.net/ \
 		https://github.com/mcfletch/simpleparse
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist concurrent distutils
 
 post-install:

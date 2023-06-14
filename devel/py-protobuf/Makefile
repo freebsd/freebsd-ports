@@ -13,7 +13,7 @@ WWW=		https://protobuf.dev/ \
 
 LICENSE=	BSD3CLAUSE
 
-USES=		cpe python:3.7+
+USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils
 
 CPE_VENDOR=	google

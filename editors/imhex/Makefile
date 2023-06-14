@@ -39,7 +39,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libmbedtls.so:security/mbedtls \
 		libtre.so:textproc/libtre
 
-USES=		cmake desktop-file-utils gl gnome llvm:min=16,build pkgconfig python:3.8+ xorg
+USES=		cmake desktop-file-utils gl gnome llvm:min=16,build pkgconfig python xorg
 USE_GL=		gl glu
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 USE_XORG=	x11 xcb xau xdmcp

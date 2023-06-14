@@ -14,7 +14,7 @@ LICENSE=	BSD3CLAUSE
 BUILD_DEPENDS=	${PYNUMPY}
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # tests fail to run, see https://github.com/spglib/spglib/issues/192
 USE_GITHUB=	yes
 

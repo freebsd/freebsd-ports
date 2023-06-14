@@ -10,7 +10,7 @@ WWW=		https://github.com/pallets-eco/cachelib/
 
 LICENSE=	BSD3CLAUSE
 
-USES=		localbase python:3.6+
+USES=		localbase python
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

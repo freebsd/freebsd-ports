@@ -55,7 +55,7 @@ PGSQL_CONFIGURE_OFF=	--without-pgsql
 PGSQL_SUB_LIST=		REQ_PGSQL=postgresql
 PGSQL_SUB_LIST_OFF=	REQ_PGSQL=""
 SHELL_DESC=	Install kea-shell(8) (Python)
-SHELL_USES=	python:3.5+
+SHELL_USES=	python
 SHELL_CONFIGURE_ON=	--enable-shell
 
 .include <bsd.port.mk>

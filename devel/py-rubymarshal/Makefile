@@ -17,7 +17,7 @@ USE_GITHUB=	yes  # tests are missing from PyPI distribution
 GH_ACCOUNT=	d9pouces
 GH_PROJECT=	RubyMarshal
 
-USES=		python:3.6+
+USES=		python
 USE_PYTHON=	autoplist distutils pytest
 NO_ARCH=	yes
 

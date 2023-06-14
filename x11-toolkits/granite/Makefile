@@ -14,7 +14,7 @@ LIB_DEPENDS=	libgee-0.8.so:devel/libgee
 RUN_DEPENDS=	contractor:sysutils/contractor \
 		gsettings-desktop-schemas>0:devel/gsettings-desktop-schemas
 
-USES=		gettext gnome meson pkgconfig python:3.6+,build tar:xz vala:build
+USES=		gettext gnome meson pkgconfig python:build tar:xz vala:build
 USE_GITHUB=	yes
 GH_ACCOUNT=	elementary
 USE_GNOME=	cairo glib20 gtk30 gdkpixbuf2 introspection:build

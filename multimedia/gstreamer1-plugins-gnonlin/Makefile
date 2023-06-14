@@ -9,7 +9,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	GStreamer library for writing non-linear audio and video
 WWW=		http://gstreamer.net
 
-USES=		gettext-runtime gnome gstreamer libtool pkgconfig python:3.4+,build tar:xz
+USES=		gettext-runtime gnome gstreamer libtool pkgconfig python:build tar:xz
 USE_GNOME=	glib20
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	good

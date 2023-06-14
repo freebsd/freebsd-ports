@@ -24,7 +24,7 @@ RUN_DEPENDS=	gsettings-desktop-schemas>=0:devel/gsettings-desktop-schemas
 
 PORTSCOUT=	limitw:1,even
 
-USES=		cpe gettext gnome localbase meson pathfix pkgconfig python:3.7+ \
+USES=		cpe gettext gnome localbase meson pathfix pkgconfig python \
 		tar:bz2 vala:build xorg
 USE_GNOME=	cairo dconf gdkpixbuf2 gtk30 intltool vte3
 USE_XORG=	x11

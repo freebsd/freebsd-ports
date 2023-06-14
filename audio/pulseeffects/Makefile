@@ -47,7 +47,7 @@ BROKEN=		error: use of undeclared identifier 'ofs'
 
 USES=		compiler:c++17-lang desktop-file-utils libtool \
 		localbase:ldflags gettext gnome gstreamer meson ninja pathfix pkgconfig \
-		python:3.6+ shebangfix
+		python shebangfix
 USE_GNOME=	cairo gtkmm30 libsigc++20 pygobject3
 USE_GSTREAMER=	bad bs2b good ladspa lv2 pulse webrtcdsp
 USE_LDCONFIG=	yes

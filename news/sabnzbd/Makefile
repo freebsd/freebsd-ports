@@ -26,7 +26,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheetah3>=0:devel/py-cheetah3@${PY_FLAVOR} \
 		par2repair:archivers/par2cmdline \
 		unrar:archivers/unrar
 
-USES=		python:3.8+ shebangfix gettext
+USES=		python shebangfix gettext
 USE_RC_SUBR=	sabnzbd
 
 SHEBANG_FILES=	SABnzbd.py tools/msgfmt.py

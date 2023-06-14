@@ -16,7 +16,7 @@ WWW=		https://pypi.org/project/setuptools/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cpe python:3.7+
+USES=		cpe python
 USE_PYTHON=	allflavors autoplist concurrent distutils
 
 CPE_VENDOR=	python

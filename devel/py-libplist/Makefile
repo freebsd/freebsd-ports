@@ -9,7 +9,7 @@ LIB_DEPENDS=	libplist-2.0.so:${MASTER_PORT}
 
 PORTSCOUT=	ignore:1
 
-USES=		cpe python:3.6+
+USES=		cpe python
 CPE_VENDOR=	libimobiledevice
 USE_PYTHON=	flavors cython
 BINARY_ALIAS=	cython=cython-${PYTHON_VER}
