@@ -1,6 +1,6 @@
---- ./Doc/library/fcntl.rst.orig	2014-07-03 21:53:41.473098625 +1000
-+++ ./Doc/library/fcntl.rst	2014-07-03 21:54:04.342833056 +1000
-@@ -50,7 +50,6 @@ The module defines the following functio
+--- Doc/library/fcntl.rst.orig	2023-02-04 10:09:53 UTC
++++ Doc/library/fcntl.rst
+@@ -52,7 +52,6 @@ The module defines the following functions:
     operations are typically defined in the library module :mod:`termios` and the
     argument handling is even more complicated.
  

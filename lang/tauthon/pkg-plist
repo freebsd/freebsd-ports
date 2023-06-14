@@ -98,6 +98,7 @@ include/tauthon%%VERSION_NOMICRO%%/ucnhash.h
 include/tauthon%%VERSION_NOMICRO%%/unicodeobject.h
 include/tauthon%%VERSION_NOMICRO%%/warnings.h
 include/tauthon%%VERSION_NOMICRO%%/weakrefobject.h
+lib/libtauthon%%VERSION_NOMICRO%%.a
 lib/libtauthon%%VERSION_NOMICRO%%.so
 lib/libtauthon%%VERSION_NOMICRO%%.so.1
 lib/libtauthon%%VERSION_NOMICRO%%.so.1-gdb.py
@@ -421,7 +422,6 @@ lib/tauthon%%VERSION_NOMICRO%%/config/Setup.local
 lib/tauthon%%VERSION_NOMICRO%%/config/config.c
 lib/tauthon%%VERSION_NOMICRO%%/config/config.c.in
 lib/tauthon%%VERSION_NOMICRO%%/config/install-sh
-lib/tauthon%%VERSION_NOMICRO%%/config/libtauthon%%VERSION_NOMICRO%%.a
 lib/tauthon%%VERSION_NOMICRO%%/config/makesetup
 lib/tauthon%%VERSION_NOMICRO%%/config/python.o
 lib/tauthon%%VERSION_NOMICRO%%/contextlib.py
@@ -662,6 +662,9 @@ lib/tauthon%%VERSION_NOMICRO%%/distutils/README
 lib/tauthon%%VERSION_NOMICRO%%/distutils/__init__.py
 lib/tauthon%%VERSION_NOMICRO%%/distutils/__init__.pyc
 lib/tauthon%%VERSION_NOMICRO%%/distutils/__init__.pyo
+lib/tauthon%%VERSION_NOMICRO%%/distutils/_msvccompiler.py
+lib/tauthon%%VERSION_NOMICRO%%/distutils/_msvccompiler.pyc
+lib/tauthon%%VERSION_NOMICRO%%/distutils/_msvccompiler.pyo
 lib/tauthon%%VERSION_NOMICRO%%/distutils/archive_util.py
 lib/tauthon%%VERSION_NOMICRO%%/distutils/archive_util.pyc
 lib/tauthon%%VERSION_NOMICRO%%/distutils/archive_util.pyo
@@ -744,6 +747,10 @@ lib/tauthon%%VERSION_NOMICRO%%/distutils/command/sdist.pyo
 lib/tauthon%%VERSION_NOMICRO%%/distutils/command/upload.py
 lib/tauthon%%VERSION_NOMICRO%%/distutils/command/upload.pyc
 lib/tauthon%%VERSION_NOMICRO%%/distutils/command/upload.pyo
+lib/tauthon%%VERSION_NOMICRO%%/distutils/command/wininst-10.0-amd64.exe
+lib/tauthon%%VERSION_NOMICRO%%/distutils/command/wininst-10.0.exe
+lib/tauthon%%VERSION_NOMICRO%%/distutils/command/wininst-14.0-amd64.exe
+lib/tauthon%%VERSION_NOMICRO%%/distutils/command/wininst-14.0.exe
 lib/tauthon%%VERSION_NOMICRO%%/distutils/command/wininst-6.0.exe
 lib/tauthon%%VERSION_NOMICRO%%/distutils/command/wininst-7.1.exe
 lib/tauthon%%VERSION_NOMICRO%%/distutils/command/wininst-8.0.exe
@@ -904,6 +911,9 @@ lib/tauthon%%VERSION_NOMICRO%%/distutils/tests/test_install_scripts.pyo
 lib/tauthon%%VERSION_NOMICRO%%/distutils/tests/test_msvc9compiler.py
 lib/tauthon%%VERSION_NOMICRO%%/distutils/tests/test_msvc9compiler.pyc
 lib/tauthon%%VERSION_NOMICRO%%/distutils/tests/test_msvc9compiler.pyo
+lib/tauthon%%VERSION_NOMICRO%%/distutils/tests/test_msvccompiler.py
+lib/tauthon%%VERSION_NOMICRO%%/distutils/tests/test_msvccompiler.pyc
+lib/tauthon%%VERSION_NOMICRO%%/distutils/tests/test_msvccompiler.pyo
 lib/tauthon%%VERSION_NOMICRO%%/distutils/tests/test_register.py
 lib/tauthon%%VERSION_NOMICRO%%/distutils/tests/test_register.pyc
 lib/tauthon%%VERSION_NOMICRO%%/distutils/tests/test_register.pyo
@@ -1940,7 +1950,7 @@ lib/tauthon%%VERSION_NOMICRO%%/json/tool.pyo
 lib/tauthon%%VERSION_NOMICRO%%/keyword.py
 lib/tauthon%%VERSION_NOMICRO%%/keyword.pyc
 lib/tauthon%%VERSION_NOMICRO%%/keyword.pyo
-lib/tauthon%%VERSION_NOMICRO%%/lib-dynload/Python-%%DISTVERSION%%-py%%VERSION_NOMICRO%%.egg-info
+lib/tauthon%%VERSION_NOMICRO%%/lib-dynload/Python-%%TAUTHON_VERSION%%-py%%VERSION_NOMICRO%%.egg-info
 lib/tauthon%%VERSION_NOMICRO%%/lib-dynload/_bisect.so
 lib/tauthon%%VERSION_NOMICRO%%/lib-dynload/_codecs_cn.so
 lib/tauthon%%VERSION_NOMICRO%%/lib-dynload/_codecs_hk.so
@@ -2016,9 +2026,6 @@ lib/tauthon%%VERSION_NOMICRO%%/lib-tk/Dialog.pyo
 lib/tauthon%%VERSION_NOMICRO%%/lib-tk/FileDialog.py
 lib/tauthon%%VERSION_NOMICRO%%/lib-tk/FileDialog.pyc
 lib/tauthon%%VERSION_NOMICRO%%/lib-tk/FileDialog.pyo
-lib/tauthon%%VERSION_NOMICRO%%/lib-tk/FixTk.py
-lib/tauthon%%VERSION_NOMICRO%%/lib-tk/FixTk.pyc
-lib/tauthon%%VERSION_NOMICRO%%/lib-tk/FixTk.pyo
 lib/tauthon%%VERSION_NOMICRO%%/lib-tk/ScrolledText.py
 lib/tauthon%%VERSION_NOMICRO%%/lib-tk/ScrolledText.pyc
 lib/tauthon%%VERSION_NOMICRO%%/lib-tk/ScrolledText.pyo

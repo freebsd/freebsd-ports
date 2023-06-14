@@ -2,12 +2,12 @@
 # Description: Link scripts in the same way Python3 does
 # Submitted by: mva
 
---- Makefile.pre.in.orig	2014-06-30 04:05:39.000000000 +0200
-+++ Makefile.pre.in	2014-07-26 11:09:46.000000000 +0200 
-@@ -900,6 +900,12 @@ bininstall:	altbininstall
-	(cd $(DESTDIR)$(LIBPC); $(LN) -s tauthon-$(VERSION).pc tauthon2.pc)
-	-rm -f $(DESTDIR)$(LIBPC)/tauthon.pc
-	(cd $(DESTDIR)$(LIBPC); $(LN) -s tauthon2.pc tauthon.pc)
+--- Makefile.pre.in.orig	2023-05-26 13:41:44 UTC
++++ Makefile.pre.in
+@@ -1003,6 +1003,12 @@ bininstall:	altbininstall
+ 	(cd $(DESTDIR)$(LIBPC); $(LN) -s tauthon-$(VERSION).pc tauthon2.pc)
+ 	-rm -f $(DESTDIR)$(LIBPC)/tauthon.pc
+ 	(cd $(DESTDIR)$(LIBPC); $(LN) -s tauthon2.pc tauthon.pc)
 +	-rm -f $(DESTDIR)$(BINDIR)/idle
 +	(cd $(DESTDIR)$(BINDIR); $(LN) -s idle$(VERSION) idle2)
 +	-rm -f $(DESTDIR)$(BINDIR)/pydoc
