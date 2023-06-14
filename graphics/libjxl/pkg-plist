@@ -25,12 +25,12 @@ include/jxl/version.h
 lib/libjxl.a
 lib/libjxl.so
 lib/libjxl.so.0.8
-lib/libjxl.so.0.8.1
+lib/libjxl.so.0.8.2
 lib/libjxl_dec.a
 lib/libjxl_threads.a
 lib/libjxl_threads.so
 lib/libjxl_threads.so.0.8
-lib/libjxl_threads.so.0.8.1
+lib/libjxl_threads.so.0.8.2
 libdata/pkgconfig/libjxl.pc
 libdata/pkgconfig/libjxl_threads.pc
 %%MANPAGES%%share/man/man1/cjxl.1.gz
