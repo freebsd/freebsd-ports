@@ -25,6 +25,7 @@ bin/spa-inspect
 bin/spa-json-dump
 bin/spa-monitor
 bin/spa-resample
+%%MEDIASESSION%%%%ETCDIR%%/pipewire.conf.d/10-alsa-default.conf
 include/pipewire-0.3/pipewire/array.h
 include/pipewire-0.3/pipewire/buffers.h
 include/pipewire-0.3/pipewire/client.h

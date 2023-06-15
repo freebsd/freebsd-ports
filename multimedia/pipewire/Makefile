@@ -1,6 +1,6 @@
 PORTNAME=	pipewire
 DISTVERSION=	0.3.62
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gitlab.freedesktop.org/pipewire/media-session/-/archive/${MEDIA_SESSION_VERSION}/:media_session
 DISTFILES=	media-session-${MEDIA_SESSION_VERSION}${EXTRACT_SUFX}:media_session
@@ -13,8 +13,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	v4l_compat>0:multimedia/v4l_compat
-LIB_DEPENDS=	libasound.so:audio/alsa-lib \
-		libdbus-1.so:devel/dbus \
+LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libinotify.so:devel/libinotify \
 		libepoll-shim.so:devel/libepoll-shim \
 		libsndfile.so:audio/libsndfile \
@@ -43,9 +42,12 @@ MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_ENABLED=	man
 
 MEDIASESSION_DESC=		Session manager support
+MEDIASESSION_LIB_DEPENDS=	libasound.so:audio/alsa-lib
+MEDIASESSION_RUN_DEPENDS=	alsa-plugins>0:audio/alsa-plugins
 MEDIASESSION_MESON_ENABLED=	alsa pipewire-alsa
 MEDIASESSION_MESON_ON=		-Dsession-managers=media-session
 MEDIASESSION_MESON_OFF=		-Dsession-managers=''
+MEDIASESSION_SUB_FILES=		10-alsa-default.conf
 
 PULSEAUDIO_MESON_ENABLED=	avahi libpulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio \
@@ -96,5 +98,10 @@ post-patch-MEDIASESSION-on:
 # start media session by default
 	@${REINPLACE_CMD} '/manager_args/ s/@sm_comment@//g' \
 		${WRKSRC}/src/daemon/pipewire.conf.in
+
+post-install-MEDIASESSION-on:
+	@${MKDIR} ${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.d
+	${INSTALL_DATA} ${WRKDIR}/10-alsa-default.conf \
+		${STAGEDIR}${ETCDIR}/${PORTNAME}.conf.d
 
 .include <bsd.port.mk>
