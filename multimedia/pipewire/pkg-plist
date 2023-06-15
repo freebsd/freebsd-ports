@@ -463,3 +463,4 @@ share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 %%DATADIR%%/pipewire.conf
 %%DATADIR%%/pipewire.conf.avail/10-rates.conf
 %%DATADIR%%/pipewire.conf.avail/20-upmix.conf
+%%ALSA%%%%DATADIR%%/pipewire.conf.d/10-alsa-default.conf
