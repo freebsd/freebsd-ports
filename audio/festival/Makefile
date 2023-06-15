@@ -24,12 +24,14 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Multi-lingual speech synthesis system
 WWW=		https://www.cstr.ed.ac.uk/projects/festival/
 
+USES=		gmake
+USE_CXXSTD=	gnu++11
+
 OPTIONS_DEFINE=	NAS
 OPTIONS_DEFAULT=NAS
 
 CXXFLAGS+=	-DFTLIBDIR=${LOCALBASE}/share/festival/lib -fno-delete-null-pointer-checks
 CONFIGURE_WRKSRC=${WRKDIR}/festival
-USES=		gmake
 SPEECHTOOLS=	${WRKSRC}/speech_tools
 FESTIVAL=	${WRKSRC}/festival
 MAKE_ARGS+=	CC="${CCACHE_BIN} ${CC}" GCC="${CCACHE_BIN} ${CC}" \
