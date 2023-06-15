@@ -1,5 +1,4 @@
 bin/shiboken6
-bin/shiboken_tool.py
 include/shiboken6/autodecref.h
 include/shiboken6/basewrapper.h
 include/shiboken6/basewrapper_p.h

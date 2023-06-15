@@ -1,5 +1,4 @@
 bin/shiboken2
-bin/shiboken_tool.py
 include/shiboken2/autodecref.h
 include/shiboken2/basewrapper.h
 include/shiboken2/bindingmanager.h
