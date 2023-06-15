@@ -1,49 +1,53 @@
 PORTNAME=	podofo
-PORTVERSION=	0.9.8
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	graphics print
-MASTER_SITES=	SF
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PDF manipulation library and tools
 WWW=		https://podofo.sourceforge.net/ \
 		https://github.com/podofo/podofo
 
-LICENSE=	GPLv2 LGPL21
-LICENSE_COMB=	multi
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	fast_float>=0:math/fast_float \
+		hhdate>=0:devel/hhdate \
+		libfmt>=0:devel/libfmt \
+		utf8cpp>=0:devel/utf8cpp
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libidn.so:dns/libidn
 
-USES=		cmake compiler:c++11-lang cpe dos2unix pkgconfig ssl
+USES=		cmake compiler:c++17-lang cpe gnome localbase:ldflags pkgconfig ssl
+USE_GNOME=	libxml2
 
+CFLAGS+=	-I${LOCALBASE}/include/fast_float
 CMAKE_ARGS=	-DFONTCONFIG_LIBRARIES=${LOCALBASE}/lib/libfontconfig.so \
 		-DOPENSSL_INCLUDE_DIR=${OPENSSLINC} \
 		-DOPENSSL_LIBRARIES=${OPENSSLDIR}
-CMAKE_ON=	PODOFO_BUILD_SHARED PODOFO_BUILD_STATIC
+CMAKE_OFF=	PODOFO_BUILD_EXAMPLES PODOFO_BUILD_LIB_ONLY PODOFO_BUILD_STATIC PODOFO_BUILD_TEST PODOFO_BUILD_TOOLS
+CMAKE_TESTING_ON=	PODOFO_BUILD_TEST
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	yes
 
 CPE_VENDOR=	podofo_project
 
-DOS2UNIX_FILES=	cmake/modules/FindFREETYPE.cmake
+OPTIONS_DEFINE=	JPEG PNG TIFF
+OPTIONS_DEFAULT=JPEG PNG TIFF
 
-OPTIONS_DEFINE=	IMPOSE JPEG PNG TIFF UNISTRING
-OPTIONS_DEFAULT=JPEG PNG TIFF UNISTRING
-IMPOSE_DESC=	Build impose tool (Lua required)
-UNISTRING_DESC=	Use libunistring for conversion
-
-IMPOSE_CMAKE_BOOL=	WANT_LUA
-IMPOSE_CXXFLAGS=	-I${LUA_INCDIR}
-IMPOSE_LDFLAGS=		-L${LUA_LIBDIR}
-IMPOSE_USES=		lua
 JPEG_CMAKE_BOOL=	WANT_LIBJPEG
 JPEG_USES=		jpeg
 PNG_CMAKE_BOOL=		WANT_PNG
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 TIFF_CMAKE_BOOL=	WANT_TIFF
 TIFF_LIB_DEPENDS=	libtiff.so:graphics/tiff
-UNISTRING_CMAKE_BOOL=	WANT_UNISTRING
-UNISTRING_LIB_DEPENDS=	libunistring.so:devel/libunistring
+
+post-patch:
+# Clean up bundled libraries
+	@${RM} ${WRKSRC}/3rdparty/fast_float.h
+	@${RM} -r ${WRKSRC}/3rdparty/date/
+	@${RM} -r ${WRKSRC}/3rdparty/fmt/
+	@${RM} -r ${WRKSRC}/3rdparty/utfcpp/
 
 .include <bsd.port.mk>

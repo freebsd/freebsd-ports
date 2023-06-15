@@ -1,0 +1,69 @@
+--- src/podofo/CMakeLists.txt.orig	2020-03-27 16:13:28 UTC
++++ src/podofo/CMakeLists.txt
+@@ -241,19 +241,19 @@ INSTALL(FILES ${PODOFO_HEADERS}
+ SOURCE_GROUP("Header Files" FILES ${PODOFO_HEADER_FILES})
+ 
+ INSTALL(FILES ${PODOFO_HEADERS}
+-  DESTINATION "include/podofo"
++  DESTINATION "include/podofo09"
+   )
+ 
+ INSTALL(FILES ${PODOFO_BASE_HEADERS}
+-    DESTINATION "include/podofo/base"
++    DESTINATION "include/podofo09/base"
+     )
+ 
+ INSTALL(FILES ${PODOFO_BASE_HEADERS2}
+-    DESTINATION "include/podofo/base/util"
++    DESTINATION "include/podofo09/base/util"
+     )
+ 
+ INSTALL(FILES ${PODOFO_DOC_HEADERS}
+-    DESTINATION "include/podofo/doc"
++    DESTINATION "include/podofo09/doc"
+     )
+ 
+ IF(NOT PODOFO_BUILD_SHARED AND NOT PODOFO_BUILD_STATIC)
+@@ -265,10 +265,10 @@ IF(PODOFO_BUILD_STATIC)
+     ADD_LIBRARY(podofo_static STATIC ${PODOFO_BASE_SOURCES} ${PODOFO_DOC_SOURCES} ${PODOFO_HEADER_FILES})
+     TARGET_LINK_LIBRARIES(podofo_static ${PODOFO_LIB_DEPENDS})
+     SET_TARGET_PROPERTIES(podofo_static PROPERTIES
+-        VERSION "${PODOFO_LIBVERSION}"
+-        SOVERSION "${PODOFO_SOVERSION}"
++        VERSION "0"
++        SOVERSION "0"
+         CLEAN_DIRECT_OUTPUT 1
+-        OUTPUT_NAME "podofo"
++        OUTPUT_NAME "podofo09"
+         COMPILE_FLAGS "-DBUILDING_PODOFO"
+         )
+     SET(PODOFO_DEPEND_TARGET podofo_static
+@@ -289,10 +289,10 @@ IF(PODOFO_BUILD_SHARED)
+     # Visual Studio, since it produces invalid warnings about STL
+     # use.
+     SET_TARGET_PROPERTIES(podofo_shared PROPERTIES
+-        VERSION "${PODOFO_LIBVERSION}"
+-        SOVERSION "${PODOFO_SOVERSION}"
++        VERSION "0"
++        SOVERSION "0"
+         CLEAN_DIRECT_OUTPUT 1
+-        OUTPUT_NAME "podofo"
++        OUTPUT_NAME "podofo09"
+         COMPILE_FLAGS "-DBUILDING_PODOFO"
+         )
+     # Since we're building a shared podofo, prefer to depend on this one for
+@@ -316,11 +316,11 @@ IF(PODOFO_BUILD_SHARED)
+         MESSAGE("Pkg-config found, creating a pkg-config file for linking against shared library.")
+         CONFIGURE_FILE(
+           "libpodofo.pc.in"
+-          "${PoDoFo_BINARY_DIR}/libpodofo.pc"
++          "${PoDoFo_BINARY_DIR}/libpodofo09.pc"
+           @ONLY)
+         INSTALL(
+-          FILES "${PoDoFo_BINARY_DIR}/libpodofo.pc"
+-          DESTINATION "${LIBDIRNAME}/pkgconfig")
++          FILES "${PoDoFo_BINARY_DIR}/libpodofo09.pc"
++          DESTINATION "${CMAKE_INSTALL_PREFIX}/libdata/pkgconfig")
+       ELSE(PKG_CONFIG_FOUND)
+         MESSAGE("Pkg-config not found. No pkg-config file will be created.")
+       ENDIF(PKG_CONFIG_FOUND)

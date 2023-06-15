@@ -1,0 +1,15 @@
+--- src/podofo/libpodofo.pc.in.orig	2019-04-04 21:22:16 UTC
++++ src/podofo/libpodofo.pc.in
+@@ -1,10 +1,10 @@ libdir=${exec_prefix}/@LIBDIRNAME@
+ prefix=@CMAKE_INSTALL_PREFIX@
+ exec_prefix=${prefix}
+ libdir=${exec_prefix}/@LIBDIRNAME@
+-includedir=${prefix}/include/podofo
++includedir=${prefix}/include/podofo09
+ 
+ Name: @CMAKE_PROJECT_NAME@
+ Description: A C++ library to work with the PDF file format
+ Version: @PODOFO_VERSION@
+-Libs: -L${libdir} -lpodofo
++Libs: -L${libdir} -lpodofo09
+ Cflags: -I${includedir}

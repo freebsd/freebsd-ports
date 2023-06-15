@@ -1,0 +1,26 @@
+--- Makefile.orig	2022-10-15 16:47:51 UTC
++++ Makefile
+@@ -1071,9 +1071,10 @@ $(BUILDDIR)/gen/help_texts.hpp: scripts/make_help.py s
+ 	$(ECHO) " $@"
+ 	$(QUIET)python3 scripts/make_help.py h src/help_texts.txt > $@
+ 
++# Force linking to podofo09 library provided by the graphics/podofo09 port
+ $(BUILDDIR)/horizon-imp: $(OBJ_COMMON) $(OBJ_ROUTER) $(OBJ_OCE) $(OBJ_IMP)
+ 	$(ECHO) " $@"
+-	$(QUIET)$(CXX) $^ $(LDFLAGS) $(LDFLAGS_GUI) $(LDFLAGS_OCE) $(shell $(PKG_CONFIG) --libs $(LIBS_COMMON) gtkmm-3.0 epoxy cairomm-pdf-1.0 librsvg-2.0 libzmq libcurl libpng libarchive) -lpodofo -lTKHLR -lTKGeomBase $(EXTRA_LIBS) -o $@
++	$(QUIET)$(CXX) $^ $(LDFLAGS) $(LDFLAGS_GUI) $(LDFLAGS_OCE) $(shell $(PKG_CONFIG) --libs $(LIBS_COMMON) gtkmm-3.0 epoxy cairomm-pdf-1.0 librsvg-2.0 libzmq libcurl libpng libarchive) -lpodofo09 -lTKHLR -lTKGeomBase $(EXTRA_LIBS) -o $@
+ 
+ $(BUILDDIR)/horizon-pool: $(OBJ_COMMON) $(OBJ_POOL_UTIL)
+ 	$(ECHO) " $@"
+@@ -1103,9 +1104,10 @@ $(BUILDDIR)/horizon-pr-review: $(OBJ_COMMON) $(OBJ_PR_
+ 	$(ECHO) " $@"
+ 	$(QUIET)$(CXX) $^ $(LDFLAGS) $(INC) $(CXXFLAGS) $(shell $(PKG_CONFIG) --libs $(LIBS_COMMON) glibmm-2.4 giomm-2.4 cairomm-1.0 libgit2 libpng) -lOSMesa $(LDFLAGS_OCE) -o $@
+ 
++# Force linking to podofo09 library provided by the graphics/podofo09 port
+ $(BUILDDIR)/horizon.so: $(OBJ_PYTHON) $(OBJ_SHARED) $(OBJ_SHARED_OCE)
+ 	$(ECHO) " $@"
+-	$(QUIET)$(CXX) $^ $(LDFLAGS) $(INC) $(CXXFLAGS) $(shell $(PKG_CONFIG) --libs $(LIBS_COMMON) python3 glibmm-2.4 giomm-2.4 cairomm-1.0 py3cairo libpng libarchive) -lpodofo  $(OCE_LIBDIRS) -lTKXDESTEP -lOSMesa -shared -o $@
++	$(QUIET)$(CXX) $^ $(LDFLAGS) $(INC) $(CXXFLAGS) $(shell $(PKG_CONFIG) --libs $(LIBS_COMMON) python3 glibmm-2.4 giomm-2.4 cairomm-1.0 py3cairo libpng libarchive) -lpodofo09  $(OCE_LIBDIRS) -lTKXDESTEP -lOSMesa -shared -o $@
+ 
+ $(OBJDIR)/%.o: %.c
+ 	$(QUIET)$(MKDIR) $(dir $@)
