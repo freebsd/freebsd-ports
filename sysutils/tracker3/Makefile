@@ -1,6 +1,5 @@
 PORTNAME=	tracker
-PORTVERSION=	3.1.2
-PORTREVISION=	8
+PORTVERSION=	3.5.3
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	3
@@ -33,8 +32,6 @@ DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 PORTSCOUT=	limitw:1,even
 
-PLIST_SUB=	LIBVER=0.304.0
-
 OPTIONS_DEFINE=		DOCS MAN
 OPTIONS_SUB=		yes
 DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
@@ -43,14 +40,8 @@ MAN_BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 MAN_MESON_TRUE=		man
 MAN_DESC=		Install manual pages
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == clang
-CFLAGS+=	-Wno-incompatible-function-pointer-types
-.endif
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/asciidoc|${PYTHONPREFIX_SITELIBDIR}/asciidoc/resources|' \
 		${WRKSRC}/docs/manpages/meson.build
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
