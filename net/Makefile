@@ -276,6 +276,7 @@
     SUBDIR += imapproxy
     SUBDIR += incidenceeditor
     SUBDIR += intel-em-kmod
+    SUBDIR += intel-iavf-kmod
     SUBDIR += intel-ice-kmod
     SUBDIR += intel-igb-kmod
     SUBDIR += intel-irdma-kmod
