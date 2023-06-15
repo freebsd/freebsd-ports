@@ -1,5 +1,5 @@
 PORTNAME=	rich
-PORTVERSION=	13.4.1
+PORTVERSION=	13.4.2
 DISTVERSIONPREFIX=	v
 CATEGORIES=	textproc python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-it-py>=2.1.0<3.0.0:textproc/py-markdown-it-py@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}markdown-it-py>=2.2.0:textproc/py-markdown-it-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.13.0<3.0.0:textproc/py-pygments@${PY_FLAVOR}
 
 NO_ARCH=	yes
