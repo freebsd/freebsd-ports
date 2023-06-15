@@ -40,6 +40,8 @@
 %%DATADIR%%/lib/ant-imageio.pom
 %%DATADIR%%/lib/ant-jai.jar
 %%DATADIR%%/lib/ant-jai.pom
+%%DATADIR%%/lib/ant-jakartamail.jar
+%%DATADIR%%/lib/ant-jakartamail.pom
 %%DATADIR%%/lib/ant-javamail.jar
 %%DATADIR%%/lib/ant-javamail.pom
 %%DATADIR%%/lib/ant-jdepend.jar
