@@ -1,3 +1,171 @@
+  <vuln vid="aae2ab45-2d21-4cd5-a53b-07ec933400ac">
+    <topic>electron24 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron24</name>
+	<range><lt>24.5.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v24.5.1">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-3079.</li>
+	    <li>Security: backported fix for CVE-2023-2933.</li>
+	    <li>Security: backported fix for CVE-2023-2932.</li>
+	    <li>Security: backported fix for CVE-2023-2931.</li>
+	    <li>Security: backported fix for CVE-2023-2936.</li>
+	    <li>Security: backported fix for CVE-2023-2935.</li>
+	    <li>Security: backported fix for CVE-2023-2934.</li>
+	    <li>Security: backported fix for CVE-2023-2930.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3079</cvename>
+      <url>https://github.com/advisories/GHSA-8mwf-hvfp-6xfg</url>
+      <cvename>CVE-2023-2933</cvename>
+      <url>https://github.com/advisories/GHSA-qrc7-3p69-2jpf</url>
+      <cvename>CVE-2023-2932</cvename>
+      <url>https://github.com/advisories/GHSA-7g49-wq8x-r6rh</url>
+      <cvename>CVE-2023-2931</cvename>
+      <url>https://github.com/advisories/GHSA-w3xh-m877-x3c2</url>
+      <cvename>CVE-2023-2936</cvename>
+      <url>https://github.com/advisories/GHSA-x723-3x32-qg44</url>
+      <cvename>CVE-2023-2935</cvename>
+      <url>https://github.com/advisories/GHSA-5ccq-3h49-vjp2</url>
+      <cvename>CVE-2023-2934</cvename>
+      <url>https://github.com/advisories/GHSA-mqff-qm67-cr66</url>
+      <cvename>CVE-2023-2930</cvename>
+      <url>https://github.com/advisories/GHSA-44xq-533g-gj79</url>
+    </references>
+    <dates>
+      <discovery>2023-06-14</discovery>
+      <entry>2023-06-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3bf6795c-d44c-4033-9b37-ed2e30f34fca">
+    <topic>electron23 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron23</name>
+	<range><lt>23.3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v23.3.7">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-2724.</li>
+	    <li>Security: backported fix for CVE-2023-2725.</li>
+	    <li>Security: backported fix for CVE-2023-2721.</li>
+	    <li>Security: backported fix for CVE-2023-3079.</li>
+	    <li>Security: backported fix for CVE-2023-2933.</li>
+	    <li>Security: backported fix for CVE-2023-2932.</li>
+	    <li>Security: backported fix for CVE-2023-2931.</li>
+	    <li>Security: backported fix for CVE-2023-2936.</li>
+	    <li>Security: backported fix for CVE-2023-2935.</li>
+	    <li>Security: backported fix for CVE-2023-2934.</li>
+	    <li>Security: backported fix for CVE-2023-2930.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2724</cvename>
+      <url>https://github.com/advisories/GHSA-j5rv-3m5p-q6rc</url>
+      <cvename>CVE-2023-2725</cvename>
+      <url>https://github.com/advisories/GHSA-c4fp-wmv9-q4cr</url>
+      <cvename>CVE-2023-2721</cvename>
+      <url>https://github.com/advisories/GHSA-5cww-gpqh-ggqj</url>
+      <cvename>CVE-2023-3079</cvename>
+      <url>https://github.com/advisories/GHSA-8mwf-hvfp-6xfg</url>
+      <cvename>CVE-2023-2933</cvename>
+      <url>https://github.com/advisories/GHSA-qrc7-3p69-2jpf</url>
+      <cvename>CVE-2023-2932</cvename>
+      <url>https://github.com/advisories/GHSA-7g49-wq8x-r6rh</url>
+      <cvename>CVE-2023-2931</cvename>
+      <url>https://github.com/advisories/GHSA-w3xh-m877-x3c2</url>
+      <cvename>CVE-2023-2936</cvename>
+      <url>https://github.com/advisories/GHSA-x723-3x32-qg44</url>
+      <cvename>CVE-2023-2935</cvename>
+      <url>https://github.com/advisories/GHSA-5ccq-3h49-vjp2</url>
+      <cvename>CVE-2023-2934</cvename>
+      <url>https://github.com/advisories/GHSA-mqff-qm67-cr66</url>
+      <cvename>CVE-2023-2930</cvename>
+      <url>https://github.com/advisories/GHSA-44xq-533g-gj79</url>
+    </references>
+    <dates>
+      <discovery>2023-06-14</discovery>
+      <entry>2023-06-16</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="3c3d3dcb-bef7-4d20-9580-b4216b5ff6a2">
+    <topic>electron22 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron22</name>
+	<range><lt>22.3.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v22.3.13">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-2724.</li>
+	    <li>Security: backported fix for CVE-2023-2723.</li>
+	    <li>Security: backported fix for CVE-2023-2725.</li>
+	    <li>Security: backported fix for CVE-2023-2721.</li>
+	    <li>Security: backported fix for CVE-2023-3079.</li>
+	    <li>Security: backported fix for CVE-2023-2933.</li>
+	    <li>Security: backported fix for CVE-2023-2932.</li>
+	    <li>Security: backported fix for CVE-2023-2931.</li>
+	    <li>Security: backported fix for CVE-2023-2936.</li>
+	    <li>Security: backported fix for CVE-2023-2935.</li>
+	    <li>Security: backported fix for CVE-2023-2930.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2724</cvename>
+      <url>https://github.com/advisories/GHSA-j5rv-3m5p-q6rc</url>
+      <cvename>CVE-2023-2723</cvename>
+      <url>https://github.com/advisories/GHSA-7797-6fvm-v8xw</url>
+      <cvename>CVE-2023-2725</cvename>
+      <url>https://github.com/advisories/GHSA-c4fp-wmv9-q4cr</url>
+      <cvename>CVE-2023-2721</cvename>
+      <url>https://github.com/advisories/GHSA-5cww-gpqh-ggqj</url>
+      <cvename>CVE-2023-3079</cvename>
+      <url>https://github.com/advisories/GHSA-8mwf-hvfp-6xfg</url>
+      <cvename>CVE-2023-2933</cvename>
+      <url>https://github.com/advisories/GHSA-qrc7-3p69-2jpf</url>
+      <cvename>CVE-2023-2932</cvename>
+      <url>https://github.com/advisories/GHSA-7g49-wq8x-r6rh</url>
+      <cvename>CVE-2023-2931</cvename>
+      <url>https://github.com/advisories/GHSA-w3xh-m877-x3c2</url>
+      <cvename>CVE-2023-2936</cvename>
+      <url>https://github.com/advisories/GHSA-x723-3x32-qg44</url>
+      <cvename>CVE-2023-2935</cvename>
+      <url>https://github.com/advisories/GHSA-5ccq-3h49-vjp2</url>
+      <cvename>CVE-2023-2930</cvename>
+      <url>https://github.com/advisories/GHSA-44xq-533g-gj79</url>
+    </references>
+    <dates>
+      <discovery>2023-06-14</discovery>
+      <entry>2023-06-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b4db7d78-bb62-4f4c-9326-6e9fc2ddd400">
     <topic>jenkins -- CSRF protection bypass vulnerability</topic>
     <affects>
