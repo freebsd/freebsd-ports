@@ -7,8 +7,7 @@
 # make USE_PACKAGE_DEPENDS_ONLY=yes install clean
 
 PORTNAME=	obsidian
-PORTVERSION=	1.1.16
-PORTREVISION=	2
+PORTVERSION=	1.3.5
 CATEGORIES=	textproc
 # Icon is taken from the Nix build recipe
 # https://github.com/NixOS/nixpkgs/blob/de5448dab588ad41aef40f8c7c0c230981656698/pkgs/applications/misc/obsidian/default.nix#L31-L34
@@ -67,7 +66,7 @@ SUB_FILES=	obsidian
 NO_BUILD=	yes
 STRIP=
 
-ELECTRON_VERSION=	21
+ELECTRON_VERSION=	24
 ELECTRON_FILES=		chromedriver \
 			libEGL.so \
 			libGLESv2.so \
