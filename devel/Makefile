@@ -4553,6 +4553,7 @@
     SUBDIR += py-devtools
     SUBDIR += py-dexml2
     SUBDIR += py-diazo
+    SUBDIR += py-diff-cover
     SUBDIR += py-dill
     SUBDIR += py-dirspec
     SUBDIR += py-diskcache
