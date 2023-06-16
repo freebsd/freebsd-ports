@@ -1,0 +1,13 @@
+- see https://github.com/ERGO-Code/HiGHS/issues/1329
+
+--- highs-config.cmake.in.orig	2023-06-16 07:34:37 UTC
++++ highs-config.cmake.in
+@@ -13,7 +13,7 @@ else()
+     include("${CMAKE_CURRENT_LIST_DIR}/highs-targets.cmake")
+   endif()
+ 
+-  set(HIGHS_LIBRARIES libhighs)
++  set(HIGHS_LIBRARIES highs)
+ endif() 
+ 
+ set(HIGHS_INCLUDE_DIRS "@CONF_INCLUDE_DIRS@")
