@@ -1,9 +1,10 @@
 PORTNAME=	qtractor
-DISTVERSION=	0.9.34
+DISTVERSIONPREFIX=	${PORTNAME}_
+DISTVERSION=	0_9_34
 CATEGORIES=	audio
 MASTER_SITES=	https://download.steinberg.net/sdk_downloads/:vst3sdk
 DISTFILES=	${VST3_SDK_ARCHIVE}:vst3sdk
-EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${DISTVERSION}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}
+EXTRACT_ONLY=	${GH_ACCOUNT}-${GH_PROJECT}-${GH_TAGNAME}_GH0${EXTRACT_SUFX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Audio/MIDI multi-track sequencer
@@ -44,7 +45,6 @@ USE_QT=		core gui svg widgets x11extras xml buildtools:build linguisttools:build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rncbc
-GH_TAGNAME=	${PORTNAME}_${DISTVERSION:S/./_/g}
 
 CMAKE_OFF=	CONFIG_CLAP # for audio/clap, but it doesn't install anything
 CMAKE_OFF+=	CONFIG_QT6 # breaks with Qt6: Gtk-ERROR **: 21:10:56.939: GTK+ 2.x symbols detected. Using GTK+ 2.x and GTK+ 3 in the same process is not supported

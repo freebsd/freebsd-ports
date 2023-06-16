@@ -11,7 +11,6 @@ LICENSE=	GPLv2
 USES=		dos2unix
 USE_GITHUB=	yes
 GH_ACCOUNT=	PierreLvx
-GH_TAGNAME=	${PORTVERSION}
 
 PLIST_FILES=	bin/qpress
 
