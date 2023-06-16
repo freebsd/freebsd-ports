@@ -1,5 +1,5 @@
-TIMESTAMP = 1644610437
-SHA256 (go/devel_influx-pkg-config/pkg-config-v0.2.12/v0.2.12.mod) = cb101f1b8f52a9d96c246dd29d91110d4fe712b2ad9e15bcbe127af5ba64c63f
-SIZE (go/devel_influx-pkg-config/pkg-config-v0.2.12/v0.2.12.mod) = 277
-SHA256 (go/devel_influx-pkg-config/pkg-config-v0.2.12/v0.2.12.zip) = f0105d21be94a7071052aef5ecabaf78915df3f26da5317ea56d05ff5acc14d7
-SIZE (go/devel_influx-pkg-config/pkg-config-v0.2.12/v0.2.12.zip) = 51427
+TIMESTAMP = 1686952491
+SHA256 (go/devel_influx-pkg-config/pkg-config-v0.2.13/v0.2.13.mod) = cb101f1b8f52a9d96c246dd29d91110d4fe712b2ad9e15bcbe127af5ba64c63f
+SIZE (go/devel_influx-pkg-config/pkg-config-v0.2.13/v0.2.13.mod) = 277
+SHA256 (go/devel_influx-pkg-config/pkg-config-v0.2.13/v0.2.13.zip) = fd76267d6e6d57e202add7acf2e24f668157e42cb0d6c614b5f3a5babed01149
+SIZE (go/devel_influx-pkg-config/pkg-config-v0.2.13/v0.2.13.zip) = 51625
