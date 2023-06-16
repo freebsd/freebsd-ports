@@ -54,8 +54,6 @@ bin/garage
 %%DOCSDIR%%/logo/garage.png
 %%DOCSDIR%%/logo/garage.svg
 %%DOCSDIR%%/logo/garage_hires.png
-%%DOCSDIR%%/sticker/Garage.pdf
-%%DOCSDIR%%/sticker/Garage.png
 %%DOCSDIR%%/sticker/Garage.svg
 %%DOCSDIR%%/talks/2020-12-02_wide-team/.gitignore
 %%DOCSDIR%%/talks/2020-12-02_wide-team/Makefile
