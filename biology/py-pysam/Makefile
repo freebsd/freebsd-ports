@@ -1,6 +1,5 @@
 PORTNAME=	pysam
-DISTVERSION=	0.20.0
-PORTREVISION=	1
+DISTVERSION=	0.21.0
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libhts.so:biology/htslib
 
 USES=		gmake python:3.6-3.9
-USE_PYTHON=	autoplist distutils cython cython_run pytest
+USE_PYTHON=	distutils autoplist cython cython_run
 
 BINARY_ALIAS=	make=${GMAKE}
 MAKE_ENV=	HTSLIB_MODE=external \
