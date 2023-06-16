@@ -1,11 +1,10 @@
 PORTNAME=	suyimazu
-DISTVERSION=	2023
-PORTREVISION=	1
-CATEGORIES=	games
+DISTVERSION=	2023.06
+CATEGORIES=	games emulators 
 MASTER_SITES=	https://codeberg.org/Alexander88207/Suyimazu/archive/${PORTVERSION}${EXTRACT_SUFX}?dummy=/
 
 MAINTAINER=	Alexander88207@protonmail.com
-COMMENT=	Wine-based Game Launcher for FreeBSD
+COMMENT=	Wine-based Application Launcher for FreeBSD
 WWW=		https://codeberg.org/Alexander88207/Suyimazu
 
 LICENSE=	BSD2CLAUSE
@@ -39,11 +38,11 @@ MESA-DEMOS_RUN_DEPENDS=	glxinfo:graphics/mesa-demos
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/Suyimazu \
-		share/Suyimazu/Data/Framework
+		share/Suyimazu/Tools/Framework
 
 do-install:
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/Suyimazu/Data
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/Suyimazu/Tools
 	${INSTALL_SCRIPT} ${WRKSRC}/Suyimazu ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/Data/Framework ${STAGEDIR}${PREFIX}/share/Suyimazu/Data
+	${INSTALL_SCRIPT} ${WRKSRC}/Tools/Framework ${STAGEDIR}${PREFIX}/share/Suyimazu/Tools
 
 .include <bsd.port.mk>
