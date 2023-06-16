@@ -11,7 +11,6 @@ WWW=		https://www.envoyproxy.io/
 
 LICENSE=	APACHE20
 
-BROKEN_i386=	makes a lot of 64-bit assumptions (patches welcome)
 BROKEN_SSL=	base openssl libressl libressl-devel
 BROKEN_SSL_REASON=	requires BoringSSL
 

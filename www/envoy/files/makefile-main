@@ -724,8 +724,11 @@ server/admin/html/admin_html_gen.h:
 %.o: %.cc
 	$(CCACHE) $(CXX) $(CXXFLAGS) $(CPPFLAGS) -o $(<:.cc=.o) -c $<
 
+maybe_city = $(if $(shell nm -C common/access_log/access_log_impl.o \
+	| grep ::hash_internal::CityHash),city)
+
 ABSEIL_LIBS=\
-	base cord cordz_functions cordz_info flags_commandlineflag \
+	base $(maybe_city) cord cordz_functions cordz_info flags_commandlineflag \
 	flags_internal flags_marshalling flags_parse flags_reflection \
 	hash raw_hash_set spinlock_wait stacktrace status statusor \
 	str_format_internal strings symbolize synchronization \
