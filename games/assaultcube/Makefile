@@ -18,7 +18,7 @@ LICENSE_PERMS_ACUBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_CUBE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_PERMS_OTHER=	dist-mirror pkg-mirror auto-accept
 
-USES=		gmake tar:bzip2
+USES=		compiler:c++11-lang gmake tar:bzip2
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	assaultcube
@@ -41,7 +41,7 @@ DEDICATED_DESC=	Build dedicated server
 
 CLIENT_LIB_DEPENDS=	libvorbisfile.so:audio/libvorbis \
 			libcurl.so:ftp/curl
-CLIENT_USES=		compiler:c++11-lang desktop-file-utils gettext-runtime gl openal:al sdl \
+CLIENT_USES=		desktop-file-utils gettext-runtime gl openal:al sdl \
 			xorg
 CLIENT_USE=		GL=gl SDL=sdl2,image2 XORG=x11
 CLIENT_ALL_TARGET=	client
@@ -56,6 +56,12 @@ DEDICATED_PLIST_FILES=	bin/${PORTNAME}_server libexec/${PORTNAME}_server
 #MASTER_DESC=	Build master server
 #MASTER_ALL_TARGET=	master
 #MASTER_PLIST_FILES=	bin/${PORTNAME}_master libexec/${PORTNAME}_master
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == "clang" && ${COMPILER_VERSION} >= 150
+LDFLAGS_i386+=--no-check-dynamic-relocations
+.endif
 
 post-patch: .SILENT
 	${REINPLACE_CMD} -e '/^CXXFLAGS=/d ; /^CXX=/d ; /^CLIENT_PCH/d ; \
@@ -81,4 +87,4 @@ post-install-${f:S|server|DEDICATED|:tu}-on:
 		${STAGEDIR}${PREFIX}/libexec/${PORTNAME}_${f}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
