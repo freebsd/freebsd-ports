@@ -1,4 +1,4 @@
-TIMESTAMP = 1686420236
+TIMESTAMP = 1686971462
 SHA256 (rust/crates/ahash-0.7.6.crate) = fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47
 SIZE (rust/crates/ahash-0.7.6.crate) = 38030
 SHA256 (rust/crates/aho-corasick-0.7.20.crate) = cc936419f96fa211c1b9166887b38e5e40b19958e5b895be7c1f93adec7071ac
@@ -245,5 +245,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.48.0.crate) = 1a515f5799fe4961cb532f98
 SIZE (rust/crates/windows_x86_64_msvc-0.48.0.crate) = 671422
 SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba868cbd44a99cb7cdc5892335e1c85
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
-SHA256 (sigoden-argc-v1.4.0_GH0.tar.gz) = 19a84c8e8624e955db94e52bc1e01c6603268ca948960be29cd707ba121ffdc6
-SIZE (sigoden-argc-v1.4.0_GH0.tar.gz) = 56547
+SHA256 (sigoden-argc-v1.5.0_GH0.tar.gz) = f36ade7156baad5507ddc3b9a75616622820e0abf76d8e0cd9837fb07cded9f3
+SIZE (sigoden-argc-v1.5.0_GH0.tar.gz) = 59334
