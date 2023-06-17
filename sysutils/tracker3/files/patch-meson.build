@@ -1,0 +1,19 @@
+--- meson.build.orig	2023-05-31 21:18:27 UTC
++++ meson.build
+@@ -210,14 +210,14 @@ result = cc.run('''
+ 
+   int main (int argc, char *argv[]) {
+     char *modifiers[] = { "%Y", "%C%y", "%4Y", "%2C%y", NULL };
+-    time_t timestamp = -58979923200; /* 0101-01-01T01:01:01Z */
++    time_t timestamp = 0; /* 1970-01-01T00:00:00Z */
+     char *buf[100];
+     struct tm tm;
+     int i;
+     gmtime_r (&timestamp, &tm);
+     for (i = 0; modifiers[i]; i++) {
+       strftime (&buf, sizeof buf, modifiers[i], &tm);
+-      if (strcmp (&buf, "0101") == 0) {
++      if (strcmp (&buf, "1970") == 0) {
+         printf ("%s", modifiers[i]);
+ 	return 0;
+       }
