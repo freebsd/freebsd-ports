@@ -1,5 +1,5 @@
 PORTNAME=	puppet
-PORTVERSION=	8.0.1
+PORTVERSION=	8.1.0
 CATEGORIES=	sysutils
 MASTER_SITES=   https://forge.puppet.com/v3/files/:forge
 PKGNAMESUFFIX=	8
@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN_RUBY30=	yes
 
-RUN_DEPENDS=	rubygem-concurrent-ruby11>1.0:devel/rubygem-concurrent-ruby11 \
+RUN_DEPENDS=	rubygem-concurrent-ruby>1.0:devel/rubygem-concurrent-ruby \
 		rubygem-deep_merge>1.0:devel/rubygem-deep_merge \
 		rubygem-facter>=4.0:sysutils/rubygem-facter \
 		rubygem-fast_gettext>=2.1:devel/rubygem-fast_gettext \
