@@ -1,5 +1,6 @@
 PORTNAME=	c-icap
 PORTVERSION=	0.5.10
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.5.x/
@@ -67,10 +68,6 @@ BDB_CONFIGURE_ON=	--with-bdb=yes
 BDB_CONFIGURE_OFF=	--with-bdb=no
 
 .include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-CFLAGS+=	-Wno-error=int-conversion
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} \

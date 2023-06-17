@@ -1,4 +1,4 @@
---- c-icap.conf.in.orig	2018-09-12 13:40:37 UTC
+--- c-icap.conf.in.orig	2020-09-14 14:17:26 UTC
 +++ c-icap.conf.in
 @@ -132,7 +132,7 @@ MaxRequestsPerChild  0
  #	Port [::1]:1346
@@ -9,3 +9,28 @@
  
  # TAG: TlsPort
  # Format: TlsPort [address:]port [tls-method=method] [cert=path_to_pem_cert] [key=path_to_pem_key] [client_ca=path_to_pem_file] [ciphers=ciph1:ciph2...] [tls_options=[!]Opt1|[!]Opt2|...]
+@@ -602,8 +602,8 @@ RemoteProxyUserHeaderEncoded on
+ #	store debugging information, errors and other
+ #	information about the c-icap server.
+ # Default:
+-#	ServerLog @prefix@/var/log/server.log
+-ServerLog @prefix@/var/log/server.log
++#	ServerLog /var/log/c-icap/server.log
++ServerLog /var/log/c-icap/server.log
+ 
+ # TAG: AccessLog
+ # Format: AccessLog LogFile [LogFormat] [[!]acl1] [[!]acl2] [...]
+@@ -615,10 +615,10 @@ ServerLog @prefix@/var/log/server.log
+ #	This directive can be used more than once to specify more than
+ #	one access log files
+ # Default:
+-#	AccessLog @prefix@/var/log/access.log
++#	AccessLog /var/log/c-icap/access.log
+ # Example:
+-#	AccessLog @prefix@/var/log/access.log MyFormat all
+-AccessLog @prefix@/var/log/access.log
++#	AccessLog /var/log/c-icap/access.log MyFormat all
++AccessLog /var/log/c-icap/access.log
+ 
+ # TAG: Logger
+ # Format: Logger LoggerName
