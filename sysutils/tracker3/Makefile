@@ -15,7 +15,6 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libicutu.so:devel/icu \
 		libjson-glib-1.0.so:devel/json-glib \
-		libsoup-2.4.so:devel/libsoup \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=0:devel/py-gobject3@${PY_FLAVOR}
 
@@ -36,14 +35,38 @@ PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=		DOCS MAN
 OPTIONS_SUB=		yes
+
+OPTIONS_MULTI=		SOUP
+OPTIONS_MULTI_SOUP=	SOUP2 SOUP3
+
+OPTIONS_DEFAULT=	SOUP2
+
+SOUP2_DESC=		libsoup 2 backend (from devel/libsoup)
+SOUP3_DESC=		libsoup 3 backend (from devel/libsoup3)
+
 DOCS_BUILD_DEPENDS=	gtk-doc>0:textproc/gtk-doc
 DOCS_MESON_TRUE=	docs
 MAN_BUILD_DEPENDS=	asciidoc:textproc/asciidoc
 MAN_MESON_TRUE=		man
 MAN_DESC=		Install manual pages
 
+SOUP2_LIB_DEPENDS=	libsoup-2.4.so:devel/libsoup
+SOUP3_LIB_DEPENDS=	libsoup-3.0.so:devel/libsoup3
+
+.include <bsd.port.options.mk>
+
+.if ${PORT_OPTIONS:MSOUP2} && ${PORT_OPTIONS:MSOUP3}
+MESON_ARGS+=		-Dsoup=soup2,soup3
+.elif ${PORT_OPTIONS:MSOUP2}
+MESON_ARGS+=		-Dsoup=soup2
+.else # SOUP3
+MESON_ARGS+=		-Dsoup=soup3
+.endif
+
+.include <bsd.port.pre.mk>
+
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/asciidoc|${PYTHONPREFIX_SITELIBDIR}/asciidoc/resources|' \
 		${WRKSRC}/docs/manpages/meson.build
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

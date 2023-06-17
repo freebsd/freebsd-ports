@@ -22,7 +22,8 @@ lib/girepository-1.0/Tracker-3.0.typelib
 lib/libtracker-sparql-3.0.so
 lib/libtracker-sparql-3.0.so.0
 lib/libtracker-sparql-3.0.so.0.503.0
-lib/tracker-3.0/libtracker-http-soup2.so
+%%SOUP2%%lib/tracker-3.0/libtracker-http-soup2.so
+%%SOUP3%%lib/tracker-3.0/libtracker-http-soup3.so
 lib/tracker-3.0/libtracker-parser-libicu.so
 lib/tracker-3.0/trackertestutils/__init__.py
 lib/tracker-3.0/trackertestutils/__main__.py
