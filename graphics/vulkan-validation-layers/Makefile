@@ -39,4 +39,7 @@ XLIB_USES=		xorg
 XLIB_USE=		XORG=x11,xrandr
 XLIB_CMAKE_BOOL=	BUILD_WSI_XLIB_SUPPORT
 
+post-install:
+	@${RMDIR} ${STAGEDIR}${PREFIX}/include/vulkan/external/vma
+
 .include <bsd.port.mk>
