@@ -91,7 +91,7 @@ lib/avkys/libWave.so
 lib/avkys/libZoom.so
 lib/libavkys.so
 lib/libavkys.so.9
-lib/libavkys.so.9.1.0
+lib/libavkys.so.9.1.1
 share/applications/webcamoid.desktop
 share/icons/hicolor/128x128/apps/webcamoid.png
 share/icons/hicolor/16x16/apps/webcamoid.png

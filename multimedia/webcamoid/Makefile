@@ -1,5 +1,5 @@
 PORTNAME=	webcamoid
-DISTVERSION=	9.1.0
+DISTVERSION=	9.1.1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
