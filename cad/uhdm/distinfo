@@ -1,6 +1,6 @@
-TIMESTAMP = 1686503564
-SHA256 (chipsalliance-UHDM-v1.64_GH0.tar.gz) = 76aeb3713c208ea9aaab64b332264964c735bcf203423ef99fa4f94bf471a2be
-SIZE (chipsalliance-UHDM-v1.64_GH0.tar.gz) = 1761040
+TIMESTAMP = 1686981365
+SHA256 (chipsalliance-UHDM-v1.66_GH0.tar.gz) = 677ed2601841442d33a8d8a701459b6d926fcac9726f6b600c4029ecd545ea49
+SIZE (chipsalliance-UHDM-v1.66_GH0.tar.gz) = 1762385
 SHA256 (capnproto-capnproto-14f24a4_GH0.tar.gz) = 1130e78658e8b1ceb3a69a6b3a964913f22505532ab217299e5600f371922877
 SIZE (capnproto-capnproto-14f24a4_GH0.tar.gz) = 2121570
 SHA256 (google-googletest-58d77fa_GH0.tar.gz) = a55ceaae12e0ea65fee295b8d807bab5c06a719e98d9ac15af7f7c42a8d5000e
