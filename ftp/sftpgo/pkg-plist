@@ -11,7 +11,9 @@ bin/sftpgo
 %%MANPAGES%%man/man1/sftpgo-gen-man.1.gz
 %%MANPAGES%%man/man1/sftpgo-gen.1.gz
 %%MANPAGES%%man/man1/sftpgo-initprovider.1.gz
+%%MANPAGES%%man/man1/sftpgo-ping.1.gz
 %%MANPAGES%%man/man1/sftpgo-portable.1.gz
+%%MANPAGES%%man/man1/sftpgo-resetpwd.1.gz
 %%MANPAGES%%man/man1/sftpgo-resetprovider.1.gz
 %%MANPAGES%%man/man1/sftpgo-revertprovider.1.gz
 %%MANPAGES%%man/man1/sftpgo-serve.1.gz
