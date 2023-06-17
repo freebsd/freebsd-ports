@@ -1,9 +1,9 @@
 PORTNAME=	terraform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.6
+DISTVERSION=	1.5.0
 CATEGORIES=	sysutils
 
-MAINTAINER=	0xdutra@gmail.com
+MAINTAINER=	nulldutra@proton.me
 COMMENT=	Provides a common configuration to launch infrastructure
 WWW=		https://terraform.io/
 
