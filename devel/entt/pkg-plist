@@ -26,6 +26,7 @@ include/entt/entity/fwd.hpp
 include/entt/entity/group.hpp
 include/entt/entity/handle.hpp
 include/entt/entity/helper.hpp
+include/entt/entity/mixin.hpp
 include/entt/entity/observer.hpp
 include/entt/entity/organizer.hpp
 include/entt/entity/registry.hpp
@@ -33,7 +34,6 @@ include/entt/entity/runtime_view.hpp
 include/entt/entity/snapshot.hpp
 include/entt/entity/sparse_set.hpp
 include/entt/entity/storage.hpp
-include/entt/entity/storage_mixin.hpp
 include/entt/entity/view.hpp
 include/entt/entt.hpp
 include/entt/fwd.hpp
