@@ -1,5 +1,5 @@
 PORTNAME=	fcppt
-DISTVERSION=	4.3.0
+DISTVERSION=	4.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,7 +9,8 @@ WWW=		https://fcppt.org/
 LICENSE=	BSL
 LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:devel/boost-libs
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:devel/boost-libs \
+		catch2>0:devel/catch2
 TEST_DEPENDS=	catch2>0:devel/catch2
 
 USES=		cmake:testing compiler:c++20-lang
