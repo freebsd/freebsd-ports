@@ -1,7 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	6.0.8
-PORTREVISION=	1
+DISTVERSION=	6.0.9
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +22,6 @@ CARGO_CRATES=	anes-0.1.6 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.0 \
 		anyhow-1.0.71 \
-		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		bumpalo-3.12.0 \
@@ -34,38 +32,34 @@ CARGO_CRATES=	anes-0.1.6 \
 		ciborium-0.2.0 \
 		ciborium-io-0.2.0 \
 		ciborium-ll-0.2.0 \
-		clap-3.2.23 \
-		clap-4.2.7 \
-		clap_builder-4.2.7 \
-		clap_derive-4.2.0 \
-		clap_lex-0.2.4 \
-		clap_lex-0.4.1 \
+		clap-4.3.3 \
+		clap_builder-4.3.3 \
+		clap_derive-4.3.2 \
+		clap_lex-0.5.0 \
 		colorchoice-1.0.0 \
-		colored_json-3.1.0 \
-		criterion-0.4.0 \
+		colored_json-3.2.0 \
+		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
 		crossbeam-epoch-0.9.13 \
 		crossbeam-utils-0.8.14 \
 		either-1.8.1 \
-		errno-0.2.8 \
+		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		half-1.8.2 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
-		hermit-abi-0.1.19 \
 		hermit-abi-0.2.6 \
 		hermit-abi-0.3.1 \
 		indexmap-1.9.2 \
 		io-lifetimes-1.0.4 \
-		is-terminal-0.4.5 \
+		is-terminal-0.4.7 \
 		itertools-0.10.5 \
 		itoa-1.0.5 \
 		js-sys-0.3.60 \
-		lazy_static-1.4.0 \
-		libc-0.2.139 \
-		linux-raw-sys-0.1.4 \
+		libc-0.2.146 \
+		linux-raw-sys-0.3.8 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		memoffset-0.7.1 \
@@ -75,7 +69,6 @@ CARGO_CRATES=	anes-0.1.6 \
 		num_cpus-1.15.0 \
 		once_cell-1.17.0 \
 		oorandom-11.1.3 \
-		os_str_bytes-6.4.1 \
 		pin-project-lite-0.2.9 \
 		plotters-0.3.4 \
 		plotters-backend-0.3.4 \
@@ -87,23 +80,22 @@ CARGO_CRATES=	anes-0.1.6 \
 		rayon-core-1.11.0 \
 		regex-1.7.1 \
 		regex-syntax-0.6.28 \
-		rustix-0.36.7 \
+		rustix-0.37.7 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		serde-1.0.163 \
-		serde_derive-1.0.163 \
+		serde-1.0.164 \
+		serde_derive-1.0.164 \
 		serde_json-1.0.96 \
 		serde_stacker-0.1.8 \
 		stacker-0.1.15 \
 		strsim-0.10.0 \
 		syn-1.0.107 \
 		syn-2.0.10 \
-		textwrap-0.16.0 \
 		thiserror-1.0.40 \
 		thiserror-impl-1.0.40 \
 		tinytemplate-1.2.1 \
-		tokio-1.28.1 \
+		tokio-1.28.2 \
 		tokio-macros-2.1.0 \
 		unicode-ident-1.0.6 \
 		utf8parse-0.2.1 \
