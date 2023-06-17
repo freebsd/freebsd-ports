@@ -29,6 +29,7 @@ include/duckdb/catalog/catalog_entry_map.hpp
 include/duckdb/catalog/catalog_search_path.hpp
 include/duckdb/catalog/catalog_set.hpp
 include/duckdb/catalog/catalog_transaction.hpp
+include/duckdb/catalog/default/builtin_types/types.hpp
 include/duckdb/catalog/default/default_functions.hpp
 include/duckdb/catalog/default/default_generator.hpp
 include/duckdb/catalog/default/default_schemas.hpp
@@ -406,6 +407,7 @@ include/duckdb/execution/reservoir_sample.hpp
 include/duckdb/execution/window_segment_tree.hpp
 include/duckdb/function/aggregate/distributive_functions.hpp
 include/duckdb/function/aggregate_function.hpp
+include/duckdb/function/aggregate_state.hpp
 include/duckdb/function/built_in_functions.hpp
 include/duckdb/function/cast/bound_cast_data.hpp
 include/duckdb/function/cast/cast_function_set.hpp
@@ -607,7 +609,6 @@ include/duckdb/parser/parsed_data/copy_info.hpp
 include/duckdb/parser/parsed_data/create_aggregate_function_info.hpp
 include/duckdb/parser/parsed_data/create_collation_info.hpp
 include/duckdb/parser/parsed_data/create_copy_function_info.hpp
-include/duckdb/parser/parsed_data/create_database_info.hpp
 include/duckdb/parser/parsed_data/create_function_info.hpp
 include/duckdb/parser/parsed_data/create_index_info.hpp
 include/duckdb/parser/parsed_data/create_info.hpp
