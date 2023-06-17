@@ -29,7 +29,7 @@ CONFIGURE_ENV+=	CCASFLAGS="${CFLAGS} -B${LOCALBASE}/bin -no-integrated-as"
 LLD_UNSAFE=	yes
 .elif ${ARCH} == "aarch64"
 CONFIGURE_ARGS+=	--disable-arm-a64-neon
-.elif ${ARCH} == "powerpc"
+.elif (defined(MACHINE_CPU) && !${MACHINE_CPU:Maltivec}) || (${ARCH} == powerpc && !defined(MACHINE_CPU))
 CONFIGURE_ARGS+=	--disable-vmx
 .endif
 
