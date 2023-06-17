@@ -1,5 +1,5 @@
 PORTNAME=	libX11
-DISTVERSION=	1.7.2
+DISTVERSION=	1.8.6
 PORTEPOCH=	1
 CATEGORIES=	x11
 
@@ -9,7 +9,7 @@ WWW=		https://www.freedesktop.org/Software/xlibs
 
 LICENSE=	MIT
 
-USES=		cpe xorg xorg-cat:lib
+USES=		cpe tar:xz xorg xorg-cat:lib
 USE_XORG=	xcb xtrans xorgproto
 CPE_VENDOR=	x
 
