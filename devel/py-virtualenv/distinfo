@@ -1,3 +1,3 @@
-TIMESTAMP = 1682760541
-SHA256 (pypa-virtualenv-20.23.0_GH0.tar.gz) = 2b03ab3e7c6f973505e286d01634bac2392530018e7fe385bed84a9c2073aa6b
-SIZE (pypa-virtualenv-20.23.0_GH0.tar.gz) = 6666092
+TIMESTAMP = 1686945125
+SHA256 (pypa-virtualenv-20.23.1_GH0.tar.gz) = e07d5c5bbd07900844b48518f72a880c0a7be27e3bf8dff5a64803f4e4417063
+SIZE (pypa-virtualenv-20.23.1_GH0.tar.gz) = 6666893
