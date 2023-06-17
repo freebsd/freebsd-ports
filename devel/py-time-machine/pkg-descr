@@ -1,0 +1,7 @@
+time-machine is intended to combine the advantages of freezegun and libfaketime
+Python modules. It works without LD_PRELOAD but still mocks the standard
+library functions everywhere they may be referenced. It does so by modifying
+the built-in functions at the C level, to point them through wrappers that
+return different values when mocking. Normally in Python, built-in functions
+are immutable, but time-machine overcomes this by using C code to replace their
+function pointers.
