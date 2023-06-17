@@ -1,11 +1,11 @@
 PORTNAME=	annoy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.1
+DISTVERSION=	1.17.3
 CATEGORIES=	math
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Approximate Nearest Neighbors in C++
+COMMENT=	Approximate Nearest Neighbors algorithm
 WWW=		https://github.com/spotify/annoy
 
 LICENSE=	APACHE20

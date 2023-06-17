@@ -1,6 +1,6 @@
 PORTNAME=	annoy
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.17.1
+DISTVERSION=	1.17.3
 CATEGORIES=	math
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,11 +17,9 @@ GH_ACCOUNT=	spotify
 
 PLIST_FILES=	include/annoy/annoylib.h \
 		include/annoy/kissrandom.h \
-		include/annoy/mman.h
+		include/annoy/mman.h \
+		lib/cmake/annoy/AnnoyConfig.cmake
 
 NO_ARCH=	yes
-
-do-install:
-	cd ${WRKSRC}/include && ${COPYTREE_SHARE} annoy ${STAGEDIR}${PREFIX}/include
 
 .include <bsd.port.mk>
