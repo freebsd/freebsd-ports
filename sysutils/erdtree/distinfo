@@ -1,4 +1,4 @@
-TIMESTAMP = 1685427032
+TIMESTAMP = 1686979368
 SHA256 (rust/crates/aho-corasick-0.7.20.crate) = cc936419f96fa211c1b9166887b38e5e40b19958e5b895be7c1f93adec7071ac
 SIZE (rust/crates/aho-corasick-0.7.20.crate) = 111440
 SHA256 (rust/crates/android_system_properties-0.1.5.crate) = 819e7219dbd41043ac279b19830f2efc897156490d7fd6ea916720117ee66311
@@ -255,5 +255,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.42.2.crate) = 9aec5da331524158c6d1a4ac
 SIZE (rust/crates/windows_x86_64_msvc-0.42.2.crate) = 666936
 SHA256 (rust/crates/windows_x86_64_msvc-0.48.0.crate) = 1a515f5799fe4961cb532f983ce2b23082366b898e52ffbce459c86f67c8378a
 SIZE (rust/crates/windows_x86_64_msvc-0.48.0.crate) = 671422
-SHA256 (solidiquis-erdtree-v3.0.1_GH0.tar.gz) = 4bd3a24e34cacd595d80e04adce8786c2491850749aed2f534e07a2387573669
-SIZE (solidiquis-erdtree-v3.0.1_GH0.tar.gz) = 5061864
+SHA256 (solidiquis-erdtree-v3.0.2_GH0.tar.gz) = 888d492c137e4c6a48a402860f4378d8a6eed3601a7c2c2b4e698ea97beb0d72
+SIZE (solidiquis-erdtree-v3.0.2_GH0.tar.gz) = 5061730
