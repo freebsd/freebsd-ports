@@ -1,10 +1,10 @@
 PORTNAME=	XML-Generator
-DISTVERSION=	1.11
+DISTVERSION=	1.13
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simple Perl module for generating XML documents
 WWW=		https://metacpan.org/release/XML-Generator
 
