@@ -1,6 +1,6 @@
 PORTNAME=	fftw3
 DISTVERSION=	3.3.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	http://www.fftw.org/ \
 		ftp://ftp.fftw.org/pub/fftw/
@@ -99,7 +99,7 @@ CONFIGURE_ARGS+=--enable-avx2 --enable-fma
 .    if !empty(MACHINE_CPU:Msse)
 CONFIGURE_ARGS+=--enable-sse2
 .    endif
-.    if !empty(ARCH:Mpowerpc64*)
+.    if !empty(MACHINE_CPU:Maltivec) || !empty(ARCH:Mpowerpc64*)
 CONFIGURE_ARGS+=--enable-altivec
 .    endif
 .    if ${ARCH} == "aarch64"
