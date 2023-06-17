@@ -1,6 +1,6 @@
 PORTNAME=	jacktrip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.9.0
+DISTVERSION=	1.10.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,9 @@ USE_QT=		core declarative gui network networkauth quickcontrols2 svg websockets 
 USE_GL=		gl
 
 USE_GITHUB=	yes
-GH_TUPLE=	x42:weakjack:cddbeec:weakjack/externals/weakjack
+GH_TUPLE=	jacktrip:Simple-FFT:06f237780364879337750d1ac9f3b000b4b7a160:jacktrip_Simple_FFT/externals/Simple-FFT \
+		x42:weakjack:cddbeec0953d68048d164c472c9b30a5d96778db:x42_weakjack/externals/weakjack
+
 
 #CXXFLAGS+=	`pkg-config --cflags rtaudio`
 #LDFLAGS+=	`pkg-config --libs rtaudio`
