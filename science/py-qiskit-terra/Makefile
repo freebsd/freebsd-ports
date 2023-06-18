@@ -1,6 +1,5 @@
 PORTNAME=	qiskit-terra
-DISTVERSION=	0.23.3
-PORTREVISION=	3
+DISTVERSION=	0.24.1
 CATEGORIES=	science python # quantum-computing
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -35,7 +34,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	Qiskit
 
 CARGO_CRATES=	ahash-0.7.6 \
-		ahash-0.8.0 \
+		ahash-0.8.3 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
 		cfg-if-1.0.0 \
@@ -47,9 +46,10 @@ CARGO_CRATES=	ahash-0.7.6 \
 		fixedbitset-0.4.2 \
 		getrandom-0.2.8 \
 		hashbrown-0.11.2 \
-		hashbrown-0.12.3 \
+		hashbrown-0.12.0 \
+		hashbrown-0.13.2 \
 		hermit-abi-0.1.19 \
-		indexmap-1.7.0 \
+		indexmap-1.9.0 \
 		indoc-1.0.7 \
 		libc-0.2.137 \
 		libm-0.2.5 \
@@ -71,11 +71,11 @@ CARGO_CRATES=	ahash-0.7.6 \
 		ppv-lite86-0.2.16 \
 		priority-queue-1.2.0 \
 		proc-macro2-1.0.47 \
-		pyo3-0.18.1 \
-		pyo3-build-config-0.18.1 \
-		pyo3-ffi-0.18.1 \
-		pyo3-macros-0.18.1 \
-		pyo3-macros-backend-0.18.1 \
+		pyo3-0.18.3 \
+		pyo3-build-config-0.18.3 \
+		pyo3-ffi-0.18.3 \
+		pyo3-macros-0.18.3 \
+		pyo3-macros-backend-0.18.3 \
 		quote-1.0.21 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -83,8 +83,8 @@ CARGO_CRATES=	ahash-0.7.6 \
 		rand_distr-0.4.3 \
 		rand_pcg-0.3.1 \
 		rawpointer-0.2.1 \
-		rayon-1.6.0 \
-		rayon-core-1.10.1 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
 		rustc-hash-1.1.0 \
 		rustworkx-core-0.12.1 \
@@ -111,7 +111,8 @@ CARGO_TARGET_DIR=	${WRKSRC}/target
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
-PLIST_FILES=	${PYTHON_SITELIBDIR}/qiskit/_accelerate${PYTHON_EXT_SUFFIX}.so
+PLIST_FILES=	${PYTHON_SITELIBDIR}/qiskit/_accelerate${PYTHON_EXT_SUFFIX}.so \
+		${PYTHON_SITELIBDIR}/qiskit/_qasm2%%PYTHON_EXT_SUFFIX%%.so
 
 post-patch: # project was renamed, see https://github.com/Qiskit/rustworkx/issues/656
 	@${FIND} ${WRKSRC} -name "*.py" | ${XARGS} ${REINPLACE_CMD} -i '' -e 's|retworkx|rustworkx|'
