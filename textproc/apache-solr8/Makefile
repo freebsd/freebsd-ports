@@ -1,10 +1,11 @@
 PORTNAME=	apache-solr
-PORTVERSION=	9.2.0
+PORTVERSION=	8.11.2
 PORTREVISION=	0
+PORTEPOCH=	1
 CATEGORIES=	textproc java
-MASTER_SITES=	https://archive.apache.org/dist/solr/solr/${PORTVERSION}/
+MASTER_SITES=	https://archive.apache.org/dist/lucene/solr/${PORTVERSION}/
 DISTNAME=	solr-${PORTVERSION}
-PKGNAMESUFFIX=	9
+PKGNAMESUFFIX=	8
 
 MAINTAINER=	mfechner@FreeBSD.org
 COMMENT=	High performance search server built using Lucene Java
@@ -15,22 +16,19 @@ LICENSE=	APACHE20
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		cpe tar:tgz
-CPE_VENDOR=	apache
-CPE_PRODUCT=	solr
 USE_JAVA=	yes
 JAVA_VERSION=	11+
 JAVA_RUN=	yes
-USE_RC_SUBR=	solr
-
-NO_ARCH=	yes
 NO_BUILD=	yes
-
+NO_ARCH=	yes
+PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 SUB_FILES=	pkg-message
-
+USE_RC_SUBR=	solr
 USERS=		solr
 GROUPS=		${USERS}
 
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+CPE_PRODUCT=	solr
+CPE_VENDOR=	apache
 
 OPTIONS_DEFINE=	JTS
 OPTIONS_SUB=	yes
@@ -41,6 +39,7 @@ JTS_RUN_DEPENDS=	jts>0:math/jts
 do-install:
 	${FIND} ${WRKSRC} -name '*.orig' -delete
 	cd ${WRKSRC} && ${COPYTREE_SHARE} . ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/oom_solr.sh ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/post ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/postlogs ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/solr ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin

@@ -7646,3 +7646,4 @@ x11/deforaos-panel||2023-06-18|Has expired: Broken on all supported versions
 x11/deforaos-desktop||2023-06-18|Removed, needs expired x11/deforaos-panel
 x11/deforaos-locker||2023-06-18|Removed, needs expired x11/deforaos-panel
 comms/deforaos-phone||2023-06-18|Removed, needs expired x11/deforaos-panel
+textproc/apache-solr9|textproc/apache-solr|2023-06-18|New stable release

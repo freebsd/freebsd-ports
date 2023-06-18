@@ -42,6 +42,19 @@ you update your ports collection, before attempting any port upgrades.
   Another variable is introduced in rc.d script, soft_serve_data_path,
   indicating the path to data directory used by soft-serve.
 
+20230618:
+  AFFECTS: textproc/apache-solr*
+  AUTHOR: mfechner@FreeBSD.org
+
+  Apache solr is upgraded to version 9.
+  Data migration is required, examples for dovecot data can be found here:
+  https://dovecot.org/pipermail/dovecot/2022-May/124701.html
+  https://dovecot.org/pipermail/dovecot/2022-May/124711.html
+
+  If you like to stay on version8:
+  # pkg delete apache-solr
+  # pkg install apache-solr8
+
 20230609:
   AFFECTS: users of security/sequoia
   AUTHOR: vishwin@FreeBSD.org
