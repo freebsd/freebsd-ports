@@ -1,6 +1,5 @@
 PORTNAME=	rustc-demangle
-DISTVERSION=	0.1.22
-PORTREVISION=	2
+DISTVERSION=	0.1.23
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,11 +21,11 @@ WRKSRC_SUBDIR=	crates/capi
 
 CARGO_CRATES=	arbitrary-1.3.0 \
 		cc-1.0.79 \
-		compiler_builtins-0.1.89 \
+		compiler_builtins-0.1.93 \
 		jobserver-0.1.26 \
-		libc-0.2.140 \
+		libc-0.2.146 \
 		libfuzzer-sys-0.4.6 \
-		once_cell-1.17.1 \
+		once_cell-1.18.0 \
 		rustc-std-workspace-core-1.0.0
 
 PLIST_FILES=	include/rustc_demangle.h \
