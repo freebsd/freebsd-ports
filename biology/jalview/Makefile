@@ -13,7 +13,7 @@ WWW=		https://www.jalview.org
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	gradle:devel/gradle
+BUILD_DEPENDS=	gradle761:devel/gradle761
 
 USE_JAVA=	yes
 JAVA_VERSION=	11
@@ -58,7 +58,7 @@ PLIST_FILES=	bin/jalview \
 		${DATADIR}/jalview.jar
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle \
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} gradle761 \
 		--gradle-user-home ${DEPS_CACHE_DIR}/gradle-${PORTNAME} --project-cache-dir ${DEPS_CACHE_DIR}/gradle-${PORTNAME} \
 		${GRADLE_ARGS} --build-cache shadowJar
 
