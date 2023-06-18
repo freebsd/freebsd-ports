@@ -1,5 +1,5 @@
 PORTNAME=	yosys-systemverilog
-DISTVERSION=	2023-06-05
+DISTVERSION=	2023-06-14
 CATEGORIES=	cad
 PKGNAMEPREFIX=
 
@@ -34,7 +34,7 @@ SKIP_CABAL_PLIST=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	antmicro
-GH_TAGNAME=	00c9bce-${DISTVERSION}
+GH_TAGNAME=	49069fb-${DISTVERSION}
 GH_TUPLE=	chipsalliance:yosys-f4pga-plugins:56f957c:yosys_f4pga_plugins/yosys-f4pga-plugins \
 		zachjs:sv2v:6c4ee8f:sv2v/sv2v \
 		YosysHQ:yosys:c5e4eec:yosys/yosys
