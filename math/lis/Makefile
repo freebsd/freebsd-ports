@@ -1,5 +1,5 @@
 PORTNAME=	lis
-DISTVERSION=	2.0.30
+DISTVERSION=	2.1.3
 CATEGORIES=	math
 MASTER_SITES=	https://www.ssisc.org/lis/dl/
 
@@ -16,6 +16,7 @@ CONFIGURE_ARGS=	--enable-shared --disable-static
 USE_LDCONFIG=	yes
 
 INSTALL_TARGET=	install-strip
+TEST_TARGET=	check
 
 OPTIONS_DEFINE=	EXAMPLES MPI OPENMPI
 
