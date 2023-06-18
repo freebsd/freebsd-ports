@@ -1,6 +1,5 @@
 PORTNAME=	qiskit-nature
-DISTVERSION=	0.4.5
-PORTREVISION=	1
+DISTVERSION=	0.6.2
 CATEGORIES=	science python # quantum-computing, quantum-chemistry
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
