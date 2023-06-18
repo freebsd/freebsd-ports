@@ -1,11 +1,6 @@
 PORTNAME=	musikcube
-DISTVERSION=	0.99.8
-PORTREVISION=	5
+DISTVERSION=	3.0.1
 CATEGORIES=	multimedia audio
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	2ee397091946.patch:-p1 # https://github.com/clangen/musikcube/pull/614
-PATCHFILES+=	a9b08fab3be3.patch:-p1 # https://github.com/clangen/musikcube/pull/614
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal-based music player, audio engine, metadata indexer, server
