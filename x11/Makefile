@@ -50,11 +50,8 @@
     SUBDIR += controllermap
     SUBDIR += cool-retro-term
     SUBDIR += coreterminal
-    SUBDIR += deforaos-desktop
     SUBDIR += deforaos-keyboard
     SUBDIR += deforaos-libdesktop
-    SUBDIR += deforaos-locker
-    SUBDIR += deforaos-panel
     SUBDIR += deskmenu
     SUBDIR += disman
     SUBDIR += dmenu

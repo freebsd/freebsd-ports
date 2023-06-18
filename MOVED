@@ -7642,3 +7642,7 @@ sysutils/intel-qcu|sysutils/intel-epct|2023-06-14|Moved to sysutils/intel-epct
 multimedia/obs-qtwebkit||2023-06-16|Has expired: OBS ships with their own browser plugin from version 25 onwards
 games/tuxmath||2023-06-16|Has expired: Upstream last release was in 2011
 emulators/skyeye||2023-06-17|Has expired: Upstream last release was in 2014
+x11/deforaos-panel||2023-06-18|Has expired: Broken on all supported versions
+x11/deforaos-desktop||2023-06-18|Removed, needs expired x11/deforaos-panel
+x11/deforaos-locker||2023-06-18|Removed, needs expired x11/deforaos-panel
+comms/deforaos-phone||2023-06-18|Removed, needs expired x11/deforaos-panel
