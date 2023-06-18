@@ -47,6 +47,9 @@ post-patch:
 		${WRKSRC}/test/setup_transfer.cpp
 
 post-install:
+	# py-bindings seems to link this exact name after v1.2.14
+	# TODO: figure out how to make symlinks in Jamfile
+	/bin/ln -s libtorrent-rasterbar.so.${DISTVERSION} ${STAGEDIR}${PREFIX}/lib/libtorrent-rasterbar.so.10.0.0
 	@${RM} ${STAGEDIR}${PREFIX}/include/libtorrent/Makefile*
 
 post-install-DOCS-on:
