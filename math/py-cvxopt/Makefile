@@ -1,7 +1,7 @@
 PORTNAME=	cvxopt
-DISTVERSION=	1.3.0
-PORTREVISION=	3
+DISTVERSION=	1.3.1
 CATEGORIES=	math python
+MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +11,9 @@ WWW=		https://github.com/cvxopt/cvxopt
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=45:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=6.2:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 		libblas.so:math/blas \
 		libcholmod.so:math/suitesparse-cholmod \
@@ -21,8 +24,8 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
 USES=		python:3.6+ localbase:ldflags cpe
-USE_GITHUB=	yes
-USE_PYTHON=	distutils autoplist
+#USE_GITHUB=	yes
+USE_PYTHON=	pep517 autoplist
 
 CPE_VENDOR=	cvxopt_project
 
