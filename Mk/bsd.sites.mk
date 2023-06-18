@@ -109,7 +109,6 @@ MASTER_SITE_CRAN+= \
 	http://camoruco.ing.uc.edu.ve/cran/%SUBDIR%/ \
 	https://mirror.las.iastate.edu/CRAN/%SUBDIR%/ \
 	https://cran.ma.imperial.ac.uk/%SUBDIR%/ \
-	https://cran.gis-lab.info/%SUBDIR%/ \
 	https://cran.ism.ac.jp/%SUBDIR%/
 .endif
 
