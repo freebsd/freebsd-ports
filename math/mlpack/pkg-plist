@@ -435,6 +435,7 @@ include/mlpack/methods/ann/activation_functions/gaussian_function.hpp
 include/mlpack/methods/ann/activation_functions/gelu_function.hpp
 include/mlpack/methods/ann/activation_functions/hard_sigmoid_function.hpp
 include/mlpack/methods/ann/activation_functions/hard_swish_function.hpp
+include/mlpack/methods/ann/activation_functions/hyper_sinh_function.hpp
 include/mlpack/methods/ann/activation_functions/identity_function.hpp
 include/mlpack/methods/ann/activation_functions/inverse_quadratic_function.hpp
 include/mlpack/methods/ann/activation_functions/lisht_function.hpp
@@ -501,6 +502,8 @@ include/mlpack/methods/ann/layer/alpha_dropout_impl.hpp
 include/mlpack/methods/ann/layer/base_layer.hpp
 include/mlpack/methods/ann/layer/batch_norm.hpp
 include/mlpack/methods/ann/layer/batch_norm_impl.hpp
+include/mlpack/methods/ann/layer/c_relu.hpp
+include/mlpack/methods/ann/layer/c_relu_impl.hpp
 include/mlpack/methods/ann/layer/celu.hpp
 include/mlpack/methods/ann/layer/celu_impl.hpp
 include/mlpack/methods/ann/layer/concat.hpp
@@ -515,6 +518,10 @@ include/mlpack/methods/ann/layer/dropout.hpp
 include/mlpack/methods/ann/layer/dropout_impl.hpp
 include/mlpack/methods/ann/layer/elu.hpp
 include/mlpack/methods/ann/layer/elu_impl.hpp
+include/mlpack/methods/ann/layer/flexible_relu.hpp
+include/mlpack/methods/ann/layer/flexible_relu_impl.hpp
+include/mlpack/methods/ann/layer/ftswish.hpp
+include/mlpack/methods/ann/layer/ftswish_impl.hpp
 include/mlpack/methods/ann/layer/grouped_convolution.hpp
 include/mlpack/methods/ann/layer/grouped_convolution_impl.hpp
 include/mlpack/methods/ann/layer/hard_tanh.hpp
@@ -550,8 +557,6 @@ include/mlpack/methods/ann/layer/not_adapted/bicubic_interpolation.hpp
 include/mlpack/methods/ann/layer/not_adapted/bicubic_interpolation_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/bilinear_interpolation.hpp
 include/mlpack/methods/ann/layer/not_adapted/bilinear_interpolation_impl.hpp
-include/mlpack/methods/ann/layer/not_adapted/c_relu.hpp
-include/mlpack/methods/ann/layer/not_adapted/c_relu_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/channel_shuffle.hpp
 include/mlpack/methods/ann/layer/not_adapted/channel_shuffle_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/concat_performance.hpp
@@ -562,8 +567,6 @@ include/mlpack/methods/ann/layer/not_adapted/fast_lstm.hpp
 include/mlpack/methods/ann/layer/not_adapted/fast_lstm_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/flatten_t_swish.hpp
 include/mlpack/methods/ann/layer/not_adapted/flatten_t_swish_impl.hpp
-include/mlpack/methods/ann/layer/not_adapted/flexible_relu.hpp
-include/mlpack/methods/ann/layer/not_adapted/flexible_relu_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/glimpse.hpp
 include/mlpack/methods/ann/layer/not_adapted/glimpse_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/group_norm.hpp
@@ -606,8 +609,6 @@ include/mlpack/methods/ann/layer/not_adapted/recurrent_attention_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/recurrent_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/reinforce_normal.hpp
 include/mlpack/methods/ann/layer/not_adapted/reinforce_normal_impl.hpp
-include/mlpack/methods/ann/layer/not_adapted/relu6.hpp
-include/mlpack/methods/ann/layer/not_adapted/relu6_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/reparametrization.hpp
 include/mlpack/methods/ann/layer/not_adapted/reparametrization_impl.hpp
 include/mlpack/methods/ann/layer/not_adapted/select.hpp
@@ -633,6 +634,8 @@ include/mlpack/methods/ann/layer/radial_basis_function.hpp
 include/mlpack/methods/ann/layer/radial_basis_function_impl.hpp
 include/mlpack/methods/ann/layer/recurrent_layer.hpp
 include/mlpack/methods/ann/layer/recurrent_layer_impl.hpp
+include/mlpack/methods/ann/layer/relu6.hpp
+include/mlpack/methods/ann/layer/relu6_impl.hpp
 include/mlpack/methods/ann/layer/serialization.hpp
 include/mlpack/methods/ann/layer/softmax.hpp
 include/mlpack/methods/ann/layer/softmax_impl.hpp
