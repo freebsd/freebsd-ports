@@ -4229,6 +4229,7 @@
     SUBDIR += py-asgi-lifespan
     SUBDIR += py-asn1
     SUBDIR += py-asn1crypto
+    SUBDIR += py-aspectlib
     SUBDIR += py-aspy.yaml
     SUBDIR += py-ast-decompiler
     SUBDIR += py-asteval
