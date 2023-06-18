@@ -1,5 +1,5 @@
 PORTNAME=	orc
-PORTVERSION=	0.4.32
+DISTVERSION=	0.4.34
 CATEGORIES=	devel
 MASTER_SITES=	http://gstreamer.freedesktop.org/data/src/orc/
 
@@ -15,7 +15,7 @@ USES=		gmake meson pkgconfig tar:xz
 
 USE_LDCONFIG=	yes
 
-PLIST_SUB+=	LIBMINORVER=${PORTVERSION:E}
+PLIST_SUB+=	LIBMINORVER=${DISTVERSION:E}
 
 OPTIONS_DEFINE=	DOCS
 
