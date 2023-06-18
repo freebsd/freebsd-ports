@@ -1,5 +1,5 @@
 PORTNAME=	hunter
-DISTVERSION=	3.6.0
+DISTVERSION=	3.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python:3.6+
-USE_PYTHON=	pep517 cython autoplist pytest # tests fail to run, see https://github.com/ionelmc/python-hunter/issues/114
+USE_PYTHON=	pep517 cython autoplist pytest # tests depend on a non-existent module, see https://github.com/ionelmc/python-hunter/issues/116
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
