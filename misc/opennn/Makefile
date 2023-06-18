@@ -1,7 +1,6 @@
 PORTNAME=	opennn
 DISTVERSIONPREFIX=	v
-DISTVERSION=	5.0.5
-PORTREVISION=	1
+DISTVERSION=	6.0.4
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,6 +18,7 @@ GH_ACCOUNT=	Artelnics
 
 DOS2UNIX_FILES=	opennn/CMakeLists.txt
 
+CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	OpenNN_BUILD_EXAMPLES OpenNN_BUILD_TESTS
 CMAKE_TESTING_ON=	OpenNN_BUILD_TESTS # some tests fail, see https://github.com/Artelnics/opennn/issues/229
 CMAKE_TESTING_TARGET=	tests
