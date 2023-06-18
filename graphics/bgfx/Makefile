@@ -1,6 +1,6 @@
 PORTNAME=	bgfx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.118.8467-427
+DISTVERSION=	1.118.8493-445
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +24,7 @@ GH_TUPLE=	bkaradzic:bgfx:e7e75e4:bgfx/bgfx \
 CMAKE_OFF=	BGFX_BUILD_EXAMPLES BGFX_INSTALL_EXAMPLES \
 		BGFX_CUSTOM_TARGETS
 CMAKE_ARGS=	-DBGFX_LIBRARY_TYPE=SHARED
-CMAKE_TESTING_ON=	BGFX_BUILD_TESTS # 1 test fails, see https://github.com/bkaradzic/bgfx/issues/3036; tests fail to compile, see https://github.com/bkaradzic/bgfx/issues/3108
+CMAKE_TESTING_ON=	BGFX_BUILD_TESTS # 1 test fails, see https://github.com/bkaradzic/bgfx/issues/3036; tests fail to compile, see https://github.com/bkaradzic/bgfx/issues/3111
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/share/licences
