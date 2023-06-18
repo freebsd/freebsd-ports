@@ -1,11 +1,10 @@
 PORTNAME=	tarpaulin
-DISTVERSION=	0.25.2
-PORTREVISION=	2
+DISTVERSION=	0.26.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Code coverage tool for Rust projects
-WWW=		https://crates.io/crates/cargo-tarpaulin
+WWW=		https://github.com/xd009642/tarpaulin
 
 LICENSE=	APACHE20 MIT
 LICENSE_COMB=	dual
@@ -22,7 +21,8 @@ GH_ACCOUNT=	xd009642
 
 CARGO_CRATES=	adler-1.0.2 \
 		adler32-1.2.0 \
-		aho-corasick-0.7.18 \
+		aho-corasick-1.0.1 \
+		android-tzdata-0.1.1 \
 		android_system_properties-0.1.4 \
 		ansi_term-0.12.1 \
 		anyhow-1.0.65 \
@@ -33,10 +33,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		byteorder-1.4.3 \
 		camino-1.1.1 \
 		cargo-platform-0.1.2 \
-		cargo_metadata-0.15.3 \
+		cargo_metadata-0.15.4 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		chrono-0.4.24 \
+		chrono-0.4.26 \
 		clap-2.34.0 \
 		core-foundation-sys-0.8.3 \
 		coveralls-api-0.5.0 \
@@ -47,12 +47,13 @@ CARGO_CRATES=	adler-1.0.2 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		fallible-iterator-0.2.0 \
+		fallible-iterator-0.3.0 \
 		fastrand-1.8.0 \
 		flate2-1.0.24 \
 		fnv-1.0.7 \
 		form_urlencoded-1.0.1 \
-		gimli-0.27.2 \
-		git2-0.17.0 \
+		gimli-0.27.3 \
+		git2-0.17.2 \
 		glob-0.3.1 \
 		gzip-header-0.3.0 \
 		hashbrown-0.11.2 \
@@ -73,7 +74,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		lcov-0.8.1 \
 		leb128-0.2.5 \
 		libc-0.2.137 \
-		libgit2-sys-0.15.0+1.6.3 \
+		libgit2-sys-0.15.2+1.6.4 \
 		libssh2-sys-0.3.0 \
 		libz-sys-1.1.8 \
 		linux-raw-sys-0.1.3 \
@@ -87,11 +88,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		miniz_oxide-0.5.3 \
 		nix-0.26.2 \
 		nom-7.1.1 \
-		num-integer-0.1.45 \
 		num-traits-0.2.15 \
 		num_cpus-1.15.0 \
 		object-0.26.2 \
-		object-0.30.3 \
+		object-0.31.1 \
 		once_cell-1.13.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-111.25.0+1.1.1t \
@@ -99,27 +99,29 @@ CARGO_CRATES=	adler-1.0.2 \
 		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.9 \
 		pkg-config-0.3.25 \
-		proc-macro2-1.0.56 \
+		proc-macro2-1.0.60 \
 		procfs-0.15.1 \
 		quick-error-1.2.3 \
-		quick-xml-0.28.1 \
-		quote-1.0.26 \
+		quick-xml-0.29.0 \
+		quote-1.0.28 \
 		redox_syscall-0.2.16 \
-		regex-1.7.3 \
+		regex-1.8.4 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.29 \
+		regex-syntax-0.7.2 \
 		remove_dir_all-0.5.3 \
-		rustc-demangle-0.1.22 \
+		rustc-demangle-0.1.23 \
 		rustc_version-0.4.0 \
 		rustix-0.36.4 \
 		rusty-fork-0.3.0 \
+		ruzstd-0.3.1 \
 		ryu-1.0.11 \
 		same-file-1.0.6 \
 		schannel-0.1.20 \
 		semver-1.0.13 \
-		serde-1.0.159 \
-		serde_derive-1.0.159 \
-		serde_json-1.0.95 \
+		serde-1.0.164 \
+		serde_derive-1.0.164 \
+		serde_json-1.0.96 \
 		sharded-slab-0.1.4 \
 		smallvec-1.9.0 \
 		socket2-0.4.4 \
@@ -137,11 +139,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
 		toml-0.5.11 \
-		tracing-0.1.37 \
-		tracing-attributes-0.1.23 \
+		tracing-0.1.38 \
+		tracing-attributes-0.1.24 \
 		tracing-core-0.1.30 \
 		tracing-log-0.1.3 \
 		tracing-subscriber-0.2.25 \
+		twox-hash-1.6.3 \
 		unicode-bidi-0.3.8 \
 		unicode-ident-1.0.3 \
 		unicode-normalization-0.1.21 \
