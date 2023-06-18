@@ -13,6 +13,9 @@ WWW=		https://ccache.samba.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/GPL-3.0.txt
 
+DEPRECATED=	Unmaintained fork that targets a very old version of ccache
+EXPIRATION_DATE=2023-06-30
+
 USE_GITHUB=	yes
 GH_TAGNAME=	f7712082106bef085515f86ae47e7dbbd2a48b57
 
