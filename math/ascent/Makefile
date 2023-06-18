@@ -1,6 +1,6 @@
 PORTNAME=	ascent
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	math
 PKGNAMESUFFIX=	-simulation-engine
 
@@ -11,12 +11,13 @@ WWW=		https://github.com/AnyarInc/Ascent
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++17-lang
+USES=		cmake:testing compiler:c++17-lang
 USE_GITHUB=	yes
 GH_ACCOUNT=	AnyarInc
 GH_PROJECT=	Ascent
 
-CMAKE_OFF=	BUILD_UNIT_TESTS BUILD_EXAMPLES
+CMAKE_OFF=	BUILD_TESTING BUILD_EXAMPLES
+CMAKE_TESTING_ON=	BUILD_TESTING # tests fail to configure, see https://github.com/AnyarInc/Ascent/issues/29
 
 NO_BUILD=	yes
 NO_ARCH=	yes
