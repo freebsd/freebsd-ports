@@ -1,6 +1,5 @@
 PORTNAME=	qiskit-ibmq-provider # is being split into qiskit-ibm-provider, qiskit-ibm-runtime, qiskit-ibm-experiment
-DISTVERSION=	0.19.2
-PORTREVISION=	2
+DISTVERSION=	0.20.2
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
