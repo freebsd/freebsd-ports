@@ -1,5 +1,5 @@
 PORTNAME=	yudit
-PORTVERSION=	3.0.9
+PORTVERSION=	3.1.0
 CATEGORIES=	editors converters print
 MASTER_SITES=	http://yudit.org/download/ \
 		SUNSITE/apps/editors/X
