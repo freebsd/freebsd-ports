@@ -1,7 +1,6 @@
 PORTNAME=	soft-serve
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.4.7
-PORTREVISION=	1
+DISTVERSION=	0.5.4
 CATEGORIES=	devel
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -19,16 +18,19 @@ GH_ACCOUNT=	charmbracelet
 GO_MODULE=	github.com/charmbracelet/soft-serve
 GO_TARGET=	./cmd/soft
 USE_RC_SUBR=	soft-serve
+SUB_FILES=	pkg-message
 SUB_LIST+=	CHOWN="${CHOWN}" \
 		CUT="${CUT}" \
 		DEFAULTHOST=0.0.0.0 \
 		DEFAULTKEY=.ssh/soft_serve_server_ed25519 \
 		DEFAULTPORT=23231 \
 		DEFAULTREPO=.repos \
+		DEFAULTDATA=data \
 		DIRNAME="${DIRNAME}" \
 		GITUSER="${USERS}" \
 		MKDIR="${MKDIR}" \
 		PW="${PW}" \
+		SU="${SU_CMD:[1]}" \
 		SETENV="${SETENV}"
 USERS=		git
 GROUPS=		git

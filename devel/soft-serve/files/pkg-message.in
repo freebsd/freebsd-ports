@@ -1,0 +1,39 @@
+[
+{ type: upgrade
+  maximum_version: 0.5.0
+  message: <<EOM
+  soft-serve no longer uses config repository for configuration. To migrate
+  configuration from 0.4.x to 0.5.x, please review the upgrade documentation at:
+
+      https://github.com/charmbracelet/soft-serve/releases/tag/v0.5.0
+
+  The migration process has been incorporated in rc.d script's migrate command,
+  and can be performed using following instructions:
+
+  0. Please make sure to backup repository data
+
+  1. Stop existing process:
+
+      # %%PREFIX%%/etc/rc.d/soft-serve stop
+
+  2. Run the rc.d script to migrate, e.g.
+
+      # %%PREFIX%%/etc/rc.d/soft-serve migrate
+      INFO Setting SSH listen address...
+      INFO Copying SSH host key...
+      INFO Reading config repository...
+      INFO Setting server settings...
+      INFO Copying repos...
+      INFO   Copying repo ports
+      INFO   Copying readme from "config" to ".soft-serve"
+      INFO Setting repos metadata & collabs...
+      INFO Creating users & collabs...
+      INFO Creating user "ashish"
+      INFO Writing config...
+      INFO Done!
+
+  Another variable is introduced in rc.d script, soft_serve_data_path,
+  indicating the path to data directory used by soft-serve.
+EOM
+}
+]

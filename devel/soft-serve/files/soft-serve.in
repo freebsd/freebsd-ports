@@ -18,8 +18,10 @@
 #                               Set to %%DEFAULTHOST%% by default.
 # soft_serve_key_path (path):	Path to host key.
 #                               Set to ~%%GITUSER%%/%%DEFAULTKEY%% by default.
-# soft_serve_repo_path (path):	Path to repositories root.
+# soft_serve_repo_path (path):	Path to repositories root (old)
 #                               Set to ~%%GITUSER%%/%%DEFAULTREPO%% by default.
+# soft_serve_data_path (path):	Path to repositories data.
+#                               Set to ~%%GITUSER%%/%%DEFAULTDATA%% by default.
 # soft_serve_initial_admin_key (ssh public key): SSH public key for initial
 #                                                access to repositories (required)
 
@@ -36,6 +38,7 @@ load_rc_config $name
 : ${soft_serve_host:="%%DEFAULTHOST%%"}
 : ${soft_serve_key_path:="%%DEFAULTKEY%%"}
 : ${soft_serve_repo_path:="%%DEFAULTREPO%%"}
+: ${soft_serve_data_path:="%%DEFAULTDATA%%"}
 : ${soft_serve_initial_admin_key:=""}
 
 command="%%PREFIX%%/bin/soft-serve"
@@ -44,7 +47,27 @@ githome="$(%%PW%% user show -n ${soft_serve_user} | %%CUT%% -d: -f9)"
 
 pidfile="/var/run/${name}.pid"
 
+extra_commands="migrate"
 start_cmd="${name}_start"
+migrate_cmd="${name}_migrate"
+
+soft_serve_migrate() {
+	if echo ${soft_serve_key_path} | grep -q ^/; then
+		SOFT_SERVE_KEY_PATH=${soft_serve_key_path}
+	else
+		SOFT_SERVE_KEY_PATH=$githome/${soft_serve_key_path}
+	fi
+	if echo ${soft_serve_repo_path} | grep -q ^/; then
+		SOFT_SERVE_REPO_PATH=${soft_serve_repo_path}
+	else
+		SOFT_SERVE_REPO_PATH=$githome/${soft_serve_repo_path}
+	fi
+	%%SU%% -l ${soft_serve_user} -c "\
+		%%SETENV%% \
+		\"SOFT_SERVE_KEY_PATH=${SOFT_SERVE_KEY_PATH}\" \
+		\"SOFT_SERVE_REPO_PATH=${SOFT_SERVE_REPO_PATH}\" \
+		$command migrate-config"
+}
 
 soft_serve_start() {
         if [ -z "${soft_serve_initial_admin_key}" ]; then
@@ -68,23 +91,22 @@ soft_serve_start() {
 	  fi
 	fi
 
-	if [ "${soft_serve_repo_path}" = "%%DEFAULTREPO%%" ]; then
-	  soft_serve_repo_path=${githome}/${soft_serve_repo_path}
-	  if ! [ -d $(%%DIRNAME%% $soft_serve_repo_path) ]; then
-	    echo Creating repositories directory...
-	    %%MKDIR%% $soft_serve_repo_path
-	    %%CHOWN%% $soft_serve_user $soft_serve_repo_path
+	if [ "${soft_serve_data_path}" = "%%DEFAULTDATA%%" ]; then
+	  soft_serve_data_path=${githome}/${soft_serve_data_path}
+	  if ! [ -d $soft_serve_data_path ]; then
+	    echo Creating data directory...
+	    %%MKDIR%% $soft_serve_data_path
+	    %%CHOWN%% $soft_serve_user $soft_serve_data_path
 	  fi
 	fi
 
 	/usr/sbin/daemon -f \
 		-u ${soft_serve_user} -p ${pidfile} \
 		%%SETENV%% -i \
-		"SOFT_SERVE_PORT=${soft_serve_port}" \
-		"SOFT_SERVE_HOST=${soft_serve_host}" \
-		"SOFT_SERVE_KEY_PATH=${soft_serve_key_path}" \
-		"SOFT_SERVE_REPO_PATH=${soft_serve_repo_path}" \
-		"SOFT_SERVE_INITIAL_ADMIN_KEY=${soft_serve_initial_admin_key}" \
+		"SOFT_SERVE_SSH_PUBLIC_URL=ssh://${soft_serve_host}:${soft_serve_port}" \
+		"SOFT_SERVE_SSH_KEY_PATH=${soft_serve_key_path}" \
+		"SOFT_SERVE_DATA_PATH=${soft_serve_data_path}" \
+		"SOFT_SERVE_INITIAL_ADMIN_KEYS=${soft_serve_initial_admin_key}" \
 		"PATH=%%LOCALBASE%%/bin:${PATH}" \
 		"USER=${soft_serve_user}" \
 		$command serve
