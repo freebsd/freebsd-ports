@@ -21,6 +21,7 @@ lib/ff++/%%VER%%/idp/MPIGMRESmacro.idp
 lib/ff++/%%VER%%/idp/MPIplot.idp
 lib/ff++/%%VER%%/idp/MeshSurface.idp
 lib/ff++/%%VER%%/idp/ball-buildlayer.idp
+lib/ff++/%%VER%%/idp/buildmeshS.idp
 lib/ff++/%%VER%%/idp/cobrameshcavity.idp
 lib/ff++/%%VER%%/idp/cube.idp
 lib/ff++/%%VER%%/idp/ffddm.idp
@@ -111,6 +112,7 @@ lib/ff++/%%VER%%/include/array_tlp.hpp
 lib/ff++/%%VER%%/include/assertion.hpp
 lib/ff++/%%VER%%/include/bmo.hpp
 lib/ff++/%%VER%%/include/clapack.h
+lib/ff++/%%VER%%/include/compositeFESpace.hpp
 lib/ff++/%%VER%%/include/config.h
 lib/ff++/%%VER%%/include/defs.hpp
 lib/ff++/%%VER%%/include/eigenv.h
@@ -171,6 +173,7 @@ lib/ff++/%%VER%%/lib/Element_P3.so
 lib/ff++/%%VER%%/lib/Element_P3dc.so
 lib/ff++/%%VER%%/lib/Element_P3nc.so
 lib/ff++/%%VER%%/lib/Element_P3pnc.so
+lib/ff++/%%VER%%/lib/Element_P3pnc_3d.so
 lib/ff++/%%VER%%/lib/Element_P4.so
 lib/ff++/%%VER%%/lib/Element_P4dc.so
 lib/ff++/%%VER%%/lib/Element_PkEdge.so

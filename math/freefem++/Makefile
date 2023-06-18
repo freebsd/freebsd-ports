@@ -1,7 +1,6 @@
 PORTNAME=	freefem++
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.12
-PORTREVISION=	1
+DISTVERSION=	4.13
 CATEGORIES=	math science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -64,7 +63,7 @@ PORTEXAMPLES=	*
 PLIST_SUB=	VER=${PORTVERSION}
 DATADIR=	${PREFIX}/share/FreeFEM/${PORTVERSION}
 
-TEST_TARGET=	check
+TEST_TARGET=	check # 1 test fails, see https://github.com/FreeFem/FreeFem-sources/issues/281
 
 pre-configure:
 	@${REINPLACE_CMD} -e 's|-llapack|${LAPACKLIB}|' ${WRKSRC}/configure.ac
