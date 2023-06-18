@@ -17,6 +17,7 @@ include/dftd4/dftd4_data_zeff.mod
 include/dftd4/dftd4_disp.mod
 include/dftd4/dftd4_model.mod
 include/dftd4/dftd4_ncoord.mod
+include/dftd4/dftd4_numdiff.mod
 include/dftd4/dftd4_output.mod
 include/dftd4/dftd4_param.mod
 include/dftd4/dftd4_reference.mod
@@ -33,5 +34,5 @@ lib/cmake/dftd4/dftd4-targets.cmake
 lib/cmake/dftd4/dftd4-utils.cmake
 lib/libdftd4.so
 lib/libdftd4.so.3
-lib/libdftd4.so.3.4.0
+lib/libdftd4.so.3.5.0
 libdata/pkgconfig/dftd4.pc
