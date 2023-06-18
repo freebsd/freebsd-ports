@@ -1,9 +1,9 @@
-%%ETCDIR%%/scripts/action.script
-%%ETCDIR%%/scripts/example.script
-%%ETCDIR%%/scripts/insert.script
-%%ETCDIR%%/scripts/scanadf.script
-%%ETCDIR%%/scripts/test.script
-%%ETCDIR%%/scanbd.conf
+%%EXAMPLESDIR%%/scripts/action.script
+%%EXAMPLESDIR%%/scripts/example.script
+%%EXAMPLESDIR%%/scripts/insert.script
+%%EXAMPLESDIR%%/scripts/scanadf.script
+%%EXAMPLESDIR%%/scripts/test.script
+@sample %%ETCDIR%%/scanbd.conf.sample
 %%ETCDIR%%/scanner.d/avision.conf
 %%ETCDIR%%/scanner.d/canon.conf
 %%ETCDIR%%/scanner.d/fujitsu.conf

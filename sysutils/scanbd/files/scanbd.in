@@ -1,16 +1,30 @@
 #!/bin/sh
 # PROVIDE: scanbd
-# REQUIRE: DAEMON FILESYSTEMS dbus
-# KEYWORD:
+# REQUIRE: DAEMON FILESYSTEMS LOGIN dbus
+# KEYWORD: shutdown
+#
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable the service
+# scanbd_enable (bool):     Set to NO by default.
+#                           Set to YES to enable scanbd.
+# scanbd_config (path):     set to %%PREFIX%%/etc/scanbd/scanbd.conf
+#                           by default
+
 
 . /etc/rc.subr
 
 name=scanbd
-# scanbd_user=saned  # Fix this
+desc="Scanbd: Scan button Daemon"
 rcvar=scanbd_enable
-command_args=""
-command="%%PREFIX%%/sbin/${name}"
 
 load_rc_config $name
+
+: ${scanbd_enable:=NO}
+: ${scanbd_config="%%PREFIX%%/etc/scanbd/scanbd.conf"}
+
+command_args="-c $scanbd_config"
+command="%%PREFIX%%/sbin/${name}" 
+
+
 run_rc_command "$1"
 
