@@ -742,11 +742,11 @@ MASTER_SITE_NVIDIA+= \
 .if !defined(IGNORE_MASTER_SITE_OPENBSD)
 MASTER_SITE_OPENBSD+= \
 	https://cdn.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
+	https://cloudflare.cdn.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
 	https://ftp.OpenBSD.org/pub/OpenBSD/%SUBDIR%/ \
 	https://ftp.eu.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
-	https://ftp3.usa.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
+	https://ftp.usa.openbsd.org/pub/OpenBSD/%SUBDIR%/ \
 	https://mirror.leaseweb.com/pub/OpenBSD/%SUBDIR%/ \
-	https://openbsd.hk/pub/OpenBSD/%SUBDIR%/ \
 	https://mirror.aarnet.edu.au/pub/OpenBSD/%SUBDIR%/
 .endif
 
