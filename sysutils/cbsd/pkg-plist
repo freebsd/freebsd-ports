@@ -287,7 +287,6 @@ cbsd/etc/defaults/vm-linux-cloud-Parrot-5-amd64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-8-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-Rocky-9-x86_64.conf
 cbsd/etc/defaults/vm-linux-cloud-firestarter-debian-11.conf
-cbsd/etc/defaults/vm-linux-cloud-kubernetes-26.conf
 cbsd/etc/defaults/vm-linux-cloud-kubernetes-27.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntudesktop-amd64-22.04.conf
 cbsd/etc/defaults/vm-linux-cloud-ubuntuserver-amd64-20.04.conf
