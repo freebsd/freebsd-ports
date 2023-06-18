@@ -6,6 +6,6 @@ COMMENT=	Frei0r ${SLAVE_PORT} plugins
 MASTERDIR=	${.CURDIR}/../frei0r
 PLIST=		${.CURDIR}/pkg-plist
 
-SLAVE_PORT=	OpenCV
+SLAVE_PORT=	cairo
 
 .include "${MASTERDIR}/Makefile"

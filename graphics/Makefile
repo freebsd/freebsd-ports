@@ -225,6 +225,7 @@
     SUBDIR += freetype-gl
     SUBDIR += frei0r
     SUBDIR += frei0r-plugins
+    SUBDIR += frei0r-plugins-cairo
     SUBDIR += frei0r-plugins-gavl
     SUBDIR += frei0r-plugins-opencv
     SUBDIR += frogr

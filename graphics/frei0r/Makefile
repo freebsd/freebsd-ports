@@ -1,68 +1,50 @@
 PORTNAME=	frei0r
-PORTVERSION=	1.8.0
-DISTVERSIONPREFIX=	plugins-
-PORTREVISION?=	1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	${FREI0R_VERSION}
+PORTREVISION?=	0
 CATEGORIES=	graphics
-MASTER_SITES?=	https://files.dyne.org/frei0r/releases/
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT?=	Minimalistic plugin API for video effects
 WWW=		https://frei0r.dyne.org/
 
-.if !defined(BUILDING_FREI0R_METAPORT)
-
 LICENSE=	GPLv2+
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cmake compiler:c++11-lang pkgconfig
+USE_GITHUB=	yes
+GH_ACCOUNT=	dyne
 
-.if defined(BUILDING_FREI0R_OPENCV) && defined(BUILDING_FREI0R_GAVL)
-IGNORE=		cannot build OpenCV and gavl plugins simultaneously
-.endif
-
-.if defined(BUILDING_FREI0R_OPENCV) || defined(BUILDING_FREI0R_GAVL)
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-frei0r-plugins
-
-USES+=		localbase
-.endif
-
-.if defined(BUILDING_FREI0R_OPENCV)
-PORTREVISION=	0
-COMMENT=	Frei0r OpenCV plugins
-PKGNAMESUFFIX=	-plugins-opencv
-LIB_DEPENDS+=	libopencv_core.so:graphics/opencv \
-		libopencv_video.so:graphics/opencv
-FREI0R_PLUGINS=	facebl0r facedetect
-
-CMAKE_ARGS+=	-DWITHOUT_OPENCV:BOOL=OFF \
-		-DWITHOUT_GAVL:BOOL=ON
-.elif defined(BUILDING_FREI0R_GAVL)
-PORTREVISION=	0
-COMMENT=	Frei0r gavl plugins
-PKGNAMESUFFIX=	-plugins-gavl
-LIB_DEPENDS+=	libgavl.so:multimedia/gavl
-FREI0R_PLUGINS=	rgbparade scale0tilt vectorscope
-
-CMAKE_ARGS+=	-DWITHOUT_OPENCV:BOOL=ON \
-		-DWITHOUT_GAVL:BOOL=OFF
-.else
-EXTRA_PATCHES=	${PATCHDIR}/extra-patch-CMakeLists.txt
-
+.if defined(SLAVE_PORT)
+RUN_DEPENDS=	frei0r>=${FREI0R_VERSION}:graphics/frei0r
+.  if ${SLAVE_PORT:tl} == "cairo"
 USES+=		gnome
-USE_GNOME=	cairo
+USE_GNOME+=	cairo
 
-CMAKE_ARGS+=	-DWITHOUT_OPENCV:BOOL=ON \
-		-DWITHOUT_GAVL:BOOL=ON
+CMAKE_ON=	WITHOUT_GAVL \
+		WITHOUT_OPENCV
+CMAKE_OFF=	WITHOUT_CAIRO
+.  elif ${SLAVE_PORT:tl} == "gavl"
+LIB_DEPENDS+=	libgavl.so:multimedia/gavl
 
-.endif # !defined(BUILDING_FREI0R_OPENCV) && !defined(BUILDING_FREI0R_GAVL)
+CMAKE_ON=	WITHOUT_CAIRO \
+		WITHOUT_OPENCV
+CMAKE_OFF=	WITHOUT_GAVL
+.  elif ${SLAVE_PORT:tl} == "opencv"
+LIB_DEPENDS+=	libopencv_core.so:graphics/opencv
 
-.if defined(FREI0R_PLUGINS)
-PLIST=		${WRKSRC}/PLIST
-. for FILE in ${FREI0R_PLUGINS}
-PLIST_FILES+=	lib/frei0r-1/${FILE}.so
-. endfor
+CMAKE_ON=	WITHOUT_CAIRO \
+		WITHOUT_GAVL
+CMAKE_OFF=	WITHOUT_OPENCV
+.  endif
+.else
+CMAKE_ON=	WITHOUT_CAIRO \
+		WITHOUT_GAVL \
+		WITHOUT_OPENCV
+CMAKE_OFF=	BUILD_EXTRA_PLUGINS
 .endif
 
+.include "version.mk"
 .include <bsd.port.pre.mk>
 
 .if ${CHOSEN_COMPILER_TYPE} == gcc
@@ -73,5 +55,3 @@ CXXFLAGS+=	-Wno-error
 .endif
 
 .include <bsd.port.post.mk>
-
-.endif # !defined(BUILDING_FREI0R_METAPORT)
