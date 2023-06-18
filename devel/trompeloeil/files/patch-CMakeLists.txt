@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2022-10-26 09:57:07 UTC
+--- CMakeLists.txt.orig	2023-06-18 08:43:43 UTC
 +++ CMakeLists.txt
 @@ -37,7 +37,7 @@ endif()
  option(TROMPELOEIL_INSTALL_TARGETS "Sets whether trompeloeil should be installed" ${MASTER_PROJECT})
@@ -6,15 +6,6 @@
  
 -if (MASTER_PROJECT AND CMAKE_BUILD_TYPE MATCHES Debug)
 +if (BUILD_TESTING)
+   add_subdirectory(test)
  
-   if (${CXX_STANDARD})
-     set(CMAKE_CXX_STANDARD ${CXX_STANDARD})
-@@ -47,7 +47,7 @@ if (MASTER_PROJECT AND CMAKE_BUILD_TYPE MATCHES Debug)
-   set(CMAKE_CXX_STANDARD_REQUIRED YES)
-   set(CMAKE_CXX_EXTENSIONS OFF)
- 
--  set(CATCH_DIR ${CMAKE_CURRENT_BINARY_DIR}/catch)
-+  set(CATCH_DIR ${CMAKE_INSTALL_PREFIX}/include/catch2)
-   if(NOT EXISTS ${CATCH_DIR}/catch.hpp)
-     if (NOT EXISTS ${CATCH_DIR})
-       make_directory(${CATCH_DIR})
+ endif() # MASTER_PROJECT AND CMAKE_BUILD_TYPE MATCHES Debug
