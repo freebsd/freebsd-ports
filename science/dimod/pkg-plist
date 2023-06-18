@@ -3,6 +3,7 @@ include/dimod/binary_quadratic_model.h
 include/dimod/constrained_quadratic_model.h
 include/dimod/constraint.h
 include/dimod/expression.h
+include/dimod/iterators.h
 include/dimod/lp.h
 include/dimod/quadratic_model.h
 include/dimod/utils.h
