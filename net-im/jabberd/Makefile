@@ -75,7 +75,6 @@ SQLITE_LIB_DEPENDS=	libsqlite3.so:databases/sqlite3
 
 MYSQL_USES=		mysql
 MYSQL_CONFIGURE_ENABLE=	mysql
-MYSQL_VARS=	IGNORE_WITH_MYSQL=80
 
 BDB_USES=		bdb
 BDB_CONFIGURE_ENABLE=	db
@@ -129,11 +128,17 @@ SUB_LIST+=	REQUIRE="LOGIN"
 .endif
 REQUIRES_DESC=	Add backend requires to startup script
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 .for FILE in c2s.xml jabberd.cfg router-filter.xml router-users.xml \
 	router.xml s2s.xml sm.xml templates/roster.xml
 	@${MV} ${WRKSRC}/etc/${FILE}.dist.in ${WRKSRC}/etc/${FILE}.sample.in
 .endfor
+.if ${PORT_OPTIONS:MMYSQL} && ${MYSQL_VER:U} == 80
+	cd ${WRKSRC}/storage && \
+	${REINPLACE_CMD} 's/my_bool/_Bool/g' authreg_mysql.c storage_mysql.c
+.endif
 
 post-install:
 .for DIR in db logs pid
