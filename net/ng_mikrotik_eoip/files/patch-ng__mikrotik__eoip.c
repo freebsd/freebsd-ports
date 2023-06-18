@@ -25,7 +25,7 @@
 +#if __FreeBSD_version >= 1400057
 +	id = data->id;
 +#else
-+	id = *((unsigned int *)id;
++	id = *((unsigned int *)arg);
 +#endif
 +	if (info != NULL && info->id == id) {
 +#if __FreeBSD_version >= 1400057

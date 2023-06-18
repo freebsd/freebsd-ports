@@ -10,8 +10,6 @@ WWW=		http://imax.in.ua/ng_mikrotik_eoip/
 
 LICENSE=	BSD2CLAUSE
 
-BROKEN=		compilation fails due to a C error: id = *((unsigned int *)id; error: cast to 'unsigned int *' from smaller integer type 'uint16_t'
-
 USES=		kmod uidfix
 
 OPTIONS_DEFINE=	PTABLE
