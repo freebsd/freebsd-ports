@@ -1,5 +1,5 @@
 PORTNAME=	pipe-viewer
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	multimedia perl5
 
 MAINTAINER?=	DtxdF@disroot.org
