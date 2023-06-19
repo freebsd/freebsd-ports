@@ -1,6 +1,6 @@
 PORTNAME=	sway
-DISTVERSION?=	1.8.1-158 # git rev-list --count 1.8.1..
-DISTVERSIONSUFFIX?=	-gc0876290
+DISTVERSION?=	1.8.1-161 # git rev-list --count 1.8.1..
+DISTVERSIONSUFFIX?=	-g5411ed4e
 CATEGORIES=	x11-wm wayland
 PKGNAMESUFFIX?=	-devel
 
@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.24:graphics/wayland-protocols \
-		wlroots>=0.16.0.529<0.17.0:x11-toolkits/wlroots
+		wlroots>=0.16.0.556<0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libevdev.so:devel/libevdev \
 		libudev.so:devel/libudev-devd \
@@ -27,9 +27,8 @@ LIB_DEPENDS=	libjson-c.so:devel/json-c \
 		libinput.so:x11/libinput \
 		libxkbcommon.so:x11/libxkbcommon
 
-USES=		compiler:c11 gl gnome meson pkgconfig xorg
+USES=		compiler:c11 gnome meson pkgconfig xorg
 USE_GITHUB=	yes
-USE_GL+=	glesv2
 USE_GNOME=	cairo pango
 USE_XORG=	pixman
 GH_ACCOUNT?=	swaywm
