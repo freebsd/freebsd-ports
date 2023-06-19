@@ -60,7 +60,7 @@ MULTILIB_CONFIGURE_ENABLE=	multilib
 CONFIGURE_ARGS+=	--disable-multilib
 .endif
 
-.if ${CPUTYPE:Mg[3-5]}
+.if defined(CPUTYPE) && ${CPUTYPE:Mg[3-5]}
 CFLAGS:=	${CFLAGS:S/mcpu=g/mcpu=G/}
 CXXFLAGS:=	${CFLAGS:S/mcpu=g/mcpu=G/}
 .endif
