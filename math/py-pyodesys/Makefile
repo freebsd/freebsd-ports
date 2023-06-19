@@ -1,6 +1,5 @@
 PORTNAME=	pyodesys
-DISTVERSION=	0.14.1
-PORTREVISION=	1
+DISTVERSION=	0.14.2
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,8 +11,8 @@ WWW=		https://github.com/bjodah/pyodesys
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.5:math/py-matplotlib@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}matplotlib>=2.2.5:math/py-matplotlib@${PY_FLAVOR} \
+		${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}notebook>=5.7.8:www/py-notebook@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.2.3:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sym>=0.3.4:math/py-sym@${PY_FLAVOR} \
@@ -21,10 +20,12 @@ RUN_DEPENDS=	${PYNUMPY} \
 TEST_DEPENDS=	${LOCALBASE}/include/boost/numeric/ublas/matrix.hpp:devel/boost-libs \
 		${LOCALBASE}/include/gsl/gsl_errno.h:math/gsl
 
-USES=		display:test localbase:ldflags python:3.7+ shebangfix pytest
-USE_PYTHON=	distutils autoplist
+USES=		display:test localbase:ldflags python:3.7+ shebangfix
+USE_PYTHON=	distutils autoplist pytest
 
 SHEBANG_GLOB=	*.py
+
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
 NO_ARCH=	yes
 
