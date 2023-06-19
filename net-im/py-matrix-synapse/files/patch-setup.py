@@ -1,6 +1,6 @@
---- setup.py.orig	2023-04-21 21:41:33 UTC
+--- setup.py.orig	1970-01-01 00:00:00 UTC
 +++ setup.py
-@@ -170,7 +170,6 @@ install_requires = \
+@@ -169,7 +169,6 @@ install_requires = \
   'pydantic>=1.7.4',
   'pymacaroons>=0.13.0',
   'service-identity>=18.1.0',
