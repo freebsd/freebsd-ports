@@ -1,6 +1,5 @@
 PORTNAME=	touchegg
-DISTVERSION=	2.0.15
-PORTREVISION=	1
+DISTVERSION=	2.0.16
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -34,5 +33,6 @@ post-install:
 	@${MV} \
 		${STAGEDIR}${ETCDIR}/touchegg.conf \
 		${STAGEDIR}${ETCDIR}/touchegg.conf.sample
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/touchegg
 
 .include <bsd.port.mk>
