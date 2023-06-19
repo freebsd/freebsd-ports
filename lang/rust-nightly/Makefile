@@ -1,5 +1,5 @@
 # Run update.sh to update to the latest nightly
-PORTVERSION=	1.69.0.${NIGHTLY_DATE:C,-,,g}
+PORTVERSION=	1.72.0.${NIGHTLY_DATE:C,-,,g}
 # Always set PORTREVISION explicitly as otherwise it is inherited from lang/rust
 PORTREVISION=	0
 PKGNAMESUFFIX=	-nightly
@@ -14,8 +14,8 @@ MASTERDIR=	${.CURDIR}/../rust
 PATCHDIR=	${.CURDIR}/files
 DISTINFO_FILE=	${.CURDIR}/distinfo
 
-NIGHTLY_DATE=		2023-02-08
-BOOTSTRAPS_DATE=	2023-01-25
+NIGHTLY_DATE=		2023-06-12
+BOOTSTRAPS_DATE=	2023-05-30
 RUST_BOOTSTRAP_VERSION=	beta
 
 .include "${MASTERDIR}/Makefile"
