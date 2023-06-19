@@ -1,5 +1,6 @@
 PORTNAME=	dooble
 DISTVERSION=	2023.05.31
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -25,7 +26,7 @@ USE_QT=		concurrent core declarative gui location network printsupport \
 		sql webchannel webengine widgets xml sql-sqlite3:run \
 		buildtools:build qmake:build
 . elif ${FLAVOR} == qt6
-USE_QT=		base charts webchannel webengine
+USE_QT=		base charts sqldriver-sqlite webchannel webengine
 .endif
 USE_XORG=	xcb
 
