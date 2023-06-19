@@ -28,8 +28,8 @@ load_rc_config $name
 : ${cpupdate_flags:="-w -u"}
 : ${cpupdate_ibrs_enable:="YES"}
 : ${cpupdate_fetch:=%%FETCH_CMD%%}
-: ${cpupdate_sites:=%%MASTER_SITES%%}
-: ${cpupdate_distfiles:=%%DISTFILES%%}
+: ${cpupdate_sites:=%%CPUPDATE_SITES%%}
+: ${cpupdate_distfiles:=%%CPUPDATE_DISTFILES%%}
 
 command=%%PREFIX%%/sbin/${name}
 download_cmd="cpupdate_download"
