@@ -1,5 +1,5 @@
 PORTNAME=	joomla
-DISTVERSION=	3-10-8
+DISTVERSION=	3-10-11
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.joomla.org/cms/joomla3/${DISTVERSION}/
 PKGNAMESUFFIX=	3
@@ -14,6 +14,9 @@ LICENSE=	GPLv2
 USES=		cpe php:web tar:bz2 shebangfix
 CPE_VENDOR=	${PORTNAME}
 CPE_PRODUCT=	${PORTNAME}\!
+
+DEPRECATED=	EOL upstream
+EXPIRATION_DATE=	2023-08-30
 
 CONFLICTS_INSTALL=	joomla
 
@@ -37,12 +40,6 @@ MYSQL_USE=	PHP=mysqli
 PGSQL_USE=	PHP=pgsql
 
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PORTVERSION:R:R}
-
-.include <bsd.port.options.mk>
-
-.if ${FLAVOR} != php80 && !defined(PACKAGE_BUILDING)
-USE_PHP+=	pdf
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${WWWDIR}
