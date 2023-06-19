@@ -1,7 +1,6 @@
 PORTNAME=	fastnetmon
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
 CATEGORIES=	net-mgmt security
 
 MAINTAINER=	farrokhi@FreeBSD.org
@@ -58,7 +57,7 @@ post-patch:
 		s|"/etc/|"${PREFIX}/etc/|g; s|/root/fastnetmon|${DATADIR}|g' \
 		${WRKSRC}/src/fastnetmon.conf ${WRKSRC}/src/fastnetmon.cpp
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/src/man/fastnetmon.8 ${WRKSRC}/src/fast_platform.h.template
+		${WRKSRC}/src/man/fastnetmon.8
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/${PORTNAME}.conf \
