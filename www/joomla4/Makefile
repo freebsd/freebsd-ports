@@ -1,5 +1,5 @@
 PORTNAME=	joomla
-DISTVERSION=	4-1-3
+DISTVERSION=	4-3-2
 CATEGORIES=	www
 MASTER_SITES=	https://downloads.joomla.org/cms/joomla4/${DISTVERSION}/
 PKGNAMESUFFIX=	4
@@ -36,12 +36,6 @@ PGSQL_USE=	PHP=pgsql
 
 PLIST=		${WRKDIR}/plist
 JOOMLADIR=	www/joomla4
-
-.include <bsd.port.options.mk>
-
-.if ${FLAVOR} != php80 && !defined(PACKAGE_BUILDING)
-USE_PHP+=	pdf
-.endif
 
 pre-install:
 	@${ECHO_CMD} "@owner ${WWWOWN}" >> ${PLIST}
