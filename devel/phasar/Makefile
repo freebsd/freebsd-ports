@@ -14,7 +14,7 @@ LIB_DEPENDS=	libboost_graph.so:devel/boost-libs \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		cmake:testing compiler:c++17-lang llvm:lib,min=14,max=14 localbase:ldflags python shebangfix sqlite
+USES=		cmake:testing llvm:lib,min=14,max=14 localbase:ldflags python shebangfix sqlite # compiler:c++17-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -26,6 +26,10 @@ GH_TUPLE=	google:googletest:e2239ee:googletest/external/googletest \
 SHEBANG_GLOB=	*.py *.sh
 
 CMAKE_OFF=	PHASAR_BUILD_UNITTESTS
+
+CC=		${LLVM_PREFIX}/bin/clang
+CPP=		${LLVM_PREFIX}/bin/clang-cpp
+CXX=		${LLVM_PREFIX}/bin/clang++
 
 post-patch: # workaround for https://github.com/secure-software-engineering/phasar/issues/564
 	# fix up the config directory location
