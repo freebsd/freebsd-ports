@@ -1,6 +1,5 @@
 PORTNAME=	exchange-calendars
-DISTVERSION=	4.2.5
-PORTREVISION=	1
+DISTVERSION=	4.2.8
 CATEGORIES=	finance python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,11 +19,13 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>0:devel/py-dateutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyluach>0:hebrew/py-pyluach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytz>0:devel/py-pytz@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toolz>0:devel/py-toolz@${PY_FLAVOR}
-BUILD_DEPENDS=	${PY_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PY_DEPENDS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.8+
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
 
