@@ -124,6 +124,7 @@
     SUBDIR += qflow
     SUBDIR += qmls
     SUBDIR += qrouter
+    SUBDIR += qspeakers
     SUBDIR += qucs-s
     SUBDIR += qucsator
     SUBDIR += repsnapper

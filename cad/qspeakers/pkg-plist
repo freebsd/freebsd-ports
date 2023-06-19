@@ -1,0 +1,15 @@
+bin/qspeakers
+share/applications/qspeakers.desktop
+share/icons/hicolor/scalable/apps/qspeakers.svg
+share/man/man1/qspeakers.1.gz
+share/metainfo/fr.free.brouits.qspeakers.metainfo.xml
+share/mime/packages/application-x-qspeakers.xml
+%%DATADIR%%/bandpassbox_cutting_template.scad
+%%DATADIR%%/bandpassbox_template.scad
+%%DATADIR%%/locale/qspeakers_en.qm
+%%DATADIR%%/locale/qspeakers_fr.qm
+%%DATADIR%%/portedbox_cutting_template.scad
+%%DATADIR%%/portedbox_template.scad
+%%DATADIR%%/qspeakers_db.xml
+%%DATADIR%%/sealedbox_cutting_template.scad
+%%DATADIR%%/sealedbox_template.scad

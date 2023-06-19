@@ -1,0 +1,4 @@
+QSpeakers is an open source DIY speakers enclosure design software written
+in C++ with Qt for the UI. This program simulates common acoustical
+enclosures behaviour in the mean to help users to design their own
+loudspeaker systems.
