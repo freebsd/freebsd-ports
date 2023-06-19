@@ -1,5 +1,6 @@
 PORTNAME=	mpg123
 DISTVERSION=	1.31.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF \
 		https://www.mpg123.de/download/
@@ -44,6 +45,8 @@ OPTCPU_CONFIGURE_OFF=	--with-cpu=generic_fpu
 
 .if ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--with-cpu=x86-64
+.elif defined(MACHINE_CPU) && ${MACHINE_CPU:Maltivec}
+CONFIGURE_ARGS+=	--with-cpu=altivec
 .endif
 
 .include <bsd.port.post.mk>
