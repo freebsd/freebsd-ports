@@ -1,7 +1,6 @@
 PORTNAME=	bemenu
-DISTVERSION=	0.6.14
+DISTVERSION=	0.6.15
 CATEGORIES=	x11
-MASTER_SITES=	https://github.com/Cloudef/bemenu/releases/download/${DISTVERSION}/
 
 MAINTAINER=	uzsolt@uzsolt.hu
 COMMENT=	Dynamic menu library and client program inspired by dmenu
@@ -15,6 +14,8 @@ LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSE-LIB
 BUILD_DEPENDS=	scdoc:textproc/scdoc
 
 USES=		gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	Cloudef
 USE_LDCONFIG=	yes
 LIB_DEPENDS+=	libharfbuzz.so:print/harfbuzz
 MAKEFILE=	GNUmakefile
