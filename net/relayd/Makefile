@@ -1,57 +1,54 @@
 PORTNAME=	relayd
-PORTVERSION=	5.5.20140810
-PORTREVISION=	8
+DISTVERSION=	7.3.2023.05.09-p2
 CATEGORIES=	net
+MASTER_SITES=	https://github.com/KlaraSystems/freebsd-relayd/releases/download/${DISTVERSION}/
 
-MAINTAINER=	koue@chaosophia.net
+MAINTAINER=	0mp@FreeBSD.org
 COMMENT=	OpenBSD relay daemon
-WWW=		https://github.com/mmatuska/relayd
+WWW=		https://github.com/KlaraSystems/freebsd-relayd
 
 LICENSE=	ISCL
 
-BROKEN=		fails to build
-
 USES=		ssl uidfix
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to build with OpenSSL 3.0.0 and later
-USE_GITHUB=	yes
-GH_ACCOUNT=	mmatuska
-
 USE_RC_SUBR=	relayd
-MAKE_ARGS+=	BINDIR=${PREFIX}/sbin \
-		MANDIR=${PREFIX}/man/man
 
-CFLAGS+=	-Wall
-
-WRKSRC_SUBDIR=	src/usr.sbin
+HAS_CONFIGURE=	yes
 
 USERS=		_relayd
 GROUPS=		_relayd
 
-post-install:
-	${INSTALL_DATA} ${WRKSRC}/../etc/relayd.conf \
-		${STAGEDIR}${PREFIX}/etc/relayd.conf.sample
-
 .include <bsd.port.pre.mk>
 
-.if ! ${SSL_DEFAULT:Mlibressl*}
+.if !${SSL_DEFAULT:Mlibressl*}
+_LIBRESSL_ORIGIN=	security/libressl
 . ifnmake describe
-STAGEDIR_libressl!=	${MAKE} -V STAGEDIR -C ${PORTSDIR}/security/libressl
+STAGEDIR_libressl!=	${MAKE} -V STAGEDIR -C ${PORTSDIR}/${_LIBRESSL_ORIGIN}
 . endif
-BUILD_DEPENDS+=	${NONEXISTENT}:security/libressl:stage
+BUILD_DEPENDS+=		${NONEXISTENT}:${_LIBRESSL_ORIGIN}:stage
 .endif # SSL_DEFAULT
 
-CFLAGS+=	-I${STAGEDIR_libressl}${LOCALBASE}/include
+MAKE_ENV=	LIBCRYPTO=${STAGEDIR_libressl}${LOCALBASE}/lib/libcrypto.a \
+		LIBSSL=${STAGEDIR_libressl}${LOCALBASE}/lib/libssl.a \
+		LIBTLS=${STAGEDIR_libressl}${LOCALBASE}/lib/libtls.a \
+		OPENSSLINCDIR=${STAGEDIR_libressl}${LOCALBASE}/include
 
-post-configure:
+post-patch:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/relayd/relay.c \
-		${WRKSRC}/relayd/relayd.h \
-		${WRKSRC}/relayd/relayd.conf.5 \
-		${WRKSRC}/relayd/relayd.8
-	${REINPLACE_CMD} 's|-lssl|${STAGEDIR_libressl}${LOCALBASE}/lib/libssl.a|g' \
-		 ${WRKSRC}/relayd/Makefile
-	${REINPLACE_CMD} 's|-lcrypto|${STAGEDIR_libressl}${LOCALBASE}/lib/libcrypto.a|g' \
-		${WRKSRC}/relayd/Makefile
+		${WRKSRC}/usr.sbin/relayd/relayd.conf.5 \
+		${WRKSRC}/usr.sbin/relayd/relayd.8
+
+do-install:
+	${INSTALL_DATA} ${WRKSRC}/etc/examples/relayd.conf \
+		${STAGEDIR}${PREFIX}/etc/relayd.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/usr.sbin/relayctl/relayctl.8 \
+		${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/usr.sbin/relayd/relayd.8 \
+		${STAGEDIR}${MANPREFIX}/man/man8/
+	${INSTALL_MAN} ${WRKSRC}/usr.sbin/relayd/relayd.conf.5 \
+		${STAGEDIR}${MANPREFIX}/man/man5/
+	${INSTALL_PROGRAM} ${WRKSRC}/usr.sbin/relayctl/relayctl \
+		${STAGEDIR}${PREFIX}/sbin/
+	${INSTALL_PROGRAM} ${WRKSRC}/usr.sbin/relayd/relayd \
+		${STAGEDIR}${PREFIX}/sbin/
 
 .include <bsd.port.post.mk>
