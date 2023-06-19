@@ -1,7 +1,7 @@
 PORTNAME=	ppsspp
 DISTVERSIONPREFIX=	v
 DISTVERSION?=	1.15.4
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	emulators
 # XXX Get from Debian once #697821 lands
 MASTER_SITES=	https://bazaar.launchpad.net/~sergio-br2/${PORTNAME}/debian-sdl/download/5/${PORTNAME}.1-20140802045408-dd26dik367ztj5xg-8/:manpage
@@ -41,7 +41,7 @@ USES=		cmake compiler:c++11-lib gl localbase:ldflags pkgconfig shared-mime-info
 EXCLUDE=	libzip zlib
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
 USE_GL=		glew opengl
-CMAKE_ON=	${FFMPEG LIBZIP SNAPPY ZSTD:L:S/^/USE_SYSTEM_/} USE_WAYLAND_WSI
+CMAKE_ON=	${FFMPEG LIBZIP SNAPPY ZSTD:L:S/^/USE_SYSTEM_/} USE_WAYLAND_WSI USE_VULKAN_DISPLAY_KHR
 CMAKE_OFF=	USE_DISCORD
 SUB_FILES=	pkg-message
 PORTDATA=	assets
