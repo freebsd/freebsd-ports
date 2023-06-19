@@ -1,12 +1,6 @@
 PORTNAME=	obs-studio
-DISTVERSION=	29.0.2
-PORTREVISION=	2
+DISTVERSION=	29.1.3
 CATEGORIES=	multimedia
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	e98c9fbd65aa4e3d91da081b6020962c7b3e68ee.patch:-p1 \
-		0a257a71e83225d1e6b503a5cc2dc0eea99c1e13.patch:-p1 \
-		2e79d4c902abf3e6bb4ad1b5bf779c0cc22a6fd0.patch:-p1
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Open source streaming/recording software
@@ -42,6 +36,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libxcb-render-util.so:x11/xcb-util-renderutil \
 		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \
+		libuuid.so:misc/e2fsprogs-libuuid \
 		libva.so:multimedia/libva \
 		${LIB_DEPENDS_${ARCH}}
 LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
