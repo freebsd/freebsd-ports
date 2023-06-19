@@ -1,6 +1,6 @@
 PORTNAME=	apache-solr
 PORTVERSION=	9.2.1
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	https://archive.apache.org/dist/solr/solr/${PORTVERSION}/
@@ -30,6 +30,9 @@ SUB_FILES=	pkg-message
 USERS=		solr
 GROUPS=		${USERS}
 
+CPE_PRODUCT=	solr
+CPE_VENDOR=	apache
+
 PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	JTS
@@ -45,6 +48,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/postlogs ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/solr ${STAGEDIR}${PREFIX}/${CPE_PRODUCT}/bin
 	${INSTALL_DATA} ${WRKSRC}/bin/solr.in.sh ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
+	${ECHO} '' >> ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
 	${ECHO} 'SOLR_HOME="/var/db/solr"' >> ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
 	${ECHO} '# LOG4J_PROPS="/var/db/solr/log4j2.xml"' >> ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
 	${ECHO} 'SOLR_LOGS_DIR="/var/log/solr"' >> ${STAGEDIR}${PREFIX}/etc/solr.in.sh.sample
