@@ -364,7 +364,9 @@ post-patch:
 	    -e 's|lit\.|${LIT_MOD_NAME}.|g' \
 	    ${WRKSRC}/llvm/utils/lit/lit.py \
 	    ${WRKSRC}/llvm/utils/lit/lit/*.py \
+	    ${WRKSRC}/llvm/utils/lit/lit/builtin_commands/*.py
 	    ${WRKSRC}/llvm/utils/lit/lit/formats/*.py
+	    ${WRKSRC}/llvm/utils/lit/lit/llcm/*.py
 
 post-patch-CLANG-on:
 	${REINPLACE_CMD} -e 's|%%LLVM_PREFIX%%|${LLVM_PREFIX}|' \
@@ -439,14 +441,17 @@ post-install-LIT-on:
 	${LN} -fs ../${LLVM_DIR}/bin/llvm-lit \
 	    ${STAGEDIR}${PREFIX}/bin/llvm-lit${LLVM_SUFFIX}
 	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/builtin_commands
-	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/formats
 	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/*.py \
 	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/builtin_commands
 	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/builtin_commands/*.py \
 	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/builtin_commands/
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/formats
 	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/formats/*.py \
 	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/formats/
+	${MKDIR} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/llvm
+	${INSTALL_DATA} ${WRKSRC}/llvm/utils/lit/lit/llvm/*.py \
+	    ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/${LIT_MOD_NAME}/llvm/
 	${INSTALL_PROGRAM} ${WRKDIR}/.build/bin/FileCheck \
 	    ${STAGEDIR}${LLVM_PREFIX}/bin/
 	${LN} -fs ../${LLVM_DIR}/bin/FileCheck \

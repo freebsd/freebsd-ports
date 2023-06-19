@@ -435,6 +435,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UndelegatedConstructorCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UnhandledExceptionAtNewCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UnhandledSelfAssignmentCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UniquePtrArrayMismatchCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UnsafeFunctionsCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UnusedRaiiCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/bugprone/UnusedReturnValueCheck.h
@@ -527,6 +528,7 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/misc/ConfusableIdentifierCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/misc/ConstCorrectnessCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/misc/DefinitionsInHeadersCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/misc/IncludeCleanerCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/misc/MisleadingBidirectional.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/misc/MisleadingIdentifier.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/misc/MisplacedConstCheck.h
@@ -603,7 +605,9 @@ llvm-devel/bin/verify-uselistorder
 %%EXTRAS%%llvm-devel/include/clang-tidy/performance/MoveConstructorInitCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/performance/NoAutomaticMoveCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/performance/NoIntToPtrCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/performance/NoexceptDestructorCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/performance/NoexceptMoveConstructorCheck.h
+%%EXTRAS%%llvm-devel/include/clang-tidy/performance/NoexceptSwapCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/performance/TriviallyDestructibleCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/performance/TypePromotionInMathFnCheck.h
 %%EXTRAS%%llvm-devel/include/clang-tidy/performance/UnnecessaryCopyInitialization.h
@@ -900,6 +904,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Basic/AttrList.inc
 %%CLANG%%llvm-devel/include/clang/Basic/AttrSubMatchRulesList.inc
 %%CLANG%%llvm-devel/include/clang/Basic/AttrSubjectMatchRules.h
+%%CLANG%%llvm-devel/include/clang/Basic/AttrTokenKinds.inc
 %%CLANG%%llvm-devel/include/clang/Basic/AttributeCommonInfo.h
 %%CLANG%%llvm-devel/include/clang/Basic/Attributes.h
 %%CLANG%%llvm-devel/include/clang/Basic/BitmaskEnum.h
@@ -922,6 +927,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsPPC.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsRISCV.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsRISCVVector.def
+%%CLANG%%llvm-devel/include/clang/Basic/BuiltinsSME.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsSVE.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsSystemZ.def
 %%CLANG%%llvm-devel/include/clang/Basic/BuiltinsVE.def
@@ -1051,6 +1057,9 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/Basic/arm_mve_builtin_sema.inc
 %%CLANG%%llvm-devel/include/clang/Basic/arm_mve_builtins.inc
 %%CLANG%%llvm-devel/include/clang/Basic/arm_neon.inc
+%%CLANG%%llvm-devel/include/clang/Basic/arm_sme_builtin_cg.inc
+%%CLANG%%llvm-devel/include/clang/Basic/arm_sme_builtins.inc
+%%CLANG%%llvm-devel/include/clang/Basic/arm_sme_sema_rangechecks.inc
 %%CLANG%%llvm-devel/include/clang/Basic/arm_sve_builtin_cg.inc
 %%CLANG%%llvm-devel/include/clang/Basic/arm_sve_builtins.inc
 %%CLANG%%llvm-devel/include/clang/Basic/arm_sve_sema_rangechecks.inc
@@ -1151,6 +1160,7 @@ llvm-devel/bin/verify-uselistorder
 %%CLANG%%llvm-devel/include/clang/IndexSerialization/SerializablePathCollection.h
 %%CLANG%%llvm-devel/include/clang/Interpreter/Interpreter.h
 %%CLANG%%llvm-devel/include/clang/Interpreter/PartialTranslationUnit.h
+%%CLANG%%llvm-devel/include/clang/Interpreter/Value.h
 %%CLANG%%llvm-devel/include/clang/Lex/CodeCompletionHandler.h
 %%CLANG%%llvm-devel/include/clang/Lex/DependencyDirectivesScanner.h
 %%CLANG%%llvm-devel/include/clang/Lex/DirectoryLookup.h
@@ -1394,6 +1404,8 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Common/Fortran.h
 %%FLANG%%llvm-devel/include/flang/Common/MathOptionsBase.def
 %%FLANG%%llvm-devel/include/flang/Common/MathOptionsBase.h
+%%FLANG%%llvm-devel/include/flang/Common/OpenMP-features.h
+%%FLANG%%llvm-devel/include/flang/Common/Version.h
 %%FLANG%%llvm-devel/include/flang/Common/bit-population-count.h
 %%FLANG%%llvm-devel/include/flang/Common/constexpr-bitset.h
 %%FLANG%%llvm-devel/include/flang/Common/default-kinds.h
@@ -1520,7 +1532,9 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Ragged.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Reduction.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Stop.h
+%%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/TemporaryStack.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Runtime/Transformational.h
+%%FLANG%%llvm-devel/include/flang/Optimizer/Builder/TemporaryStorage.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/Builder/Todo.h
 %%FLANG%%llvm-devel/include/flang/Optimizer/CodeGen/CGOps.cpp.inc
 %%FLANG%%llvm-devel/include/flang/Optimizer/CodeGen/CGOps.h.inc
@@ -1644,14 +1658,18 @@ llvm-devel/bin/verify-uselistorder
 %%FLANG%%llvm-devel/include/flang/Tools/CrossToolHelpers.h
 %%FLANG%%llvm-devel/include/flang/Tools/PointerModels.h
 %%FLANG%%llvm-devel/include/flang/Version.inc
+%%FLANG%%llvm-devel/include/flang/__cuda_builtins.f18.mod
+%%FLANG%%llvm-devel/include/flang/__cuda_builtins.mod
 %%FLANG%%llvm-devel/include/flang/__fortran_builtins.f18.mod
 %%FLANG%%llvm-devel/include/flang/__fortran_builtins.mod
 %%FLANG%%llvm-devel/include/flang/__fortran_ieee_exceptions.f18.mod
 %%FLANG%%llvm-devel/include/flang/__fortran_ieee_exceptions.mod
-%%FLANG%%llvm-devel/include/flang/__fortran_ppc_intrinsics.f18.mod
-%%FLANG%%llvm-devel/include/flang/__fortran_ppc_intrinsics.mod
 %%FLANG%%llvm-devel/include/flang/__fortran_type_info.f18.mod
 %%FLANG%%llvm-devel/include/flang/__fortran_type_info.mod
+%%FLANG%%llvm-devel/include/flang/__ppc_intrinsics.f18.mod
+%%FLANG%%llvm-devel/include/flang/__ppc_intrinsics.mod
+%%FLANG%%llvm-devel/include/flang/__ppc_types.f18.mod
+%%FLANG%%llvm-devel/include/flang/__ppc_types.mod
 %%FLANG%%llvm-devel/include/flang/ieee_arithmetic.f18.mod
 %%FLANG%%llvm-devel/include/flang/ieee_arithmetic.mod
 %%FLANG%%llvm-devel/include/flang/ieee_exceptions.f18.mod
@@ -2272,8 +2290,6 @@ llvm-devel/include/llvm/ADT/IntervalMap.h
 llvm-devel/include/llvm/ADT/IntervalTree.h
 llvm-devel/include/llvm/ADT/IntrusiveRefCntPtr.h
 llvm-devel/include/llvm/ADT/MapVector.h
-llvm-devel/include/llvm/ADT/None.h
-llvm-devel/include/llvm/ADT/Optional.h
 llvm-devel/include/llvm/ADT/PackedVector.h
 llvm-devel/include/llvm/ADT/PointerEmbeddedInt.h
 llvm-devel/include/llvm/ADT/PointerIntPair.h
@@ -2729,6 +2745,7 @@ llvm-devel/include/llvm/CodeGen/VLIWMachineScheduler.h
 llvm-devel/include/llvm/CodeGen/ValueTypes.h
 llvm-devel/include/llvm/CodeGen/ValueTypes.td
 llvm-devel/include/llvm/CodeGen/VirtRegMap.h
+llvm-devel/include/llvm/CodeGen/WasmAddressSpaces.h
 llvm-devel/include/llvm/CodeGen/WasmEHFuncInfo.h
 llvm-devel/include/llvm/CodeGen/WinEHFuncInfo.h
 llvm-devel/include/llvm/Config/AsmParsers.def
@@ -2744,6 +2761,7 @@ llvm-devel/include/llvm/DWARFLinker/DWARFLinkerCompileUnit.h
 llvm-devel/include/llvm/DWARFLinker/DWARFLinkerDeclContext.h
 llvm-devel/include/llvm/DWARFLinker/DWARFStreamer.h
 llvm-devel/include/llvm/DWARFLinkerParallel/AddressesMap.h
+llvm-devel/include/llvm/DWARFLinkerParallel/DWARFFile.h
 llvm-devel/include/llvm/DWARFLinkerParallel/DWARFLinker.h
 llvm-devel/include/llvm/DWARFLinkerParallel/StringPool.h
 llvm-devel/include/llvm/DWARFLinkerParallel/StringTable.h
@@ -3025,7 +3043,6 @@ llvm-devel/include/llvm/Demangle/ItaniumDemangle.h
 llvm-devel/include/llvm/Demangle/ItaniumNodes.def
 llvm-devel/include/llvm/Demangle/MicrosoftDemangle.h
 llvm-devel/include/llvm/Demangle/MicrosoftDemangleNodes.h
-llvm-devel/include/llvm/Demangle/StringView.h
 llvm-devel/include/llvm/Demangle/StringViewExtras.h
 llvm-devel/include/llvm/Demangle/Utility.h
 llvm-devel/include/llvm/ExecutionEngine/ExecutionEngine.h
@@ -3568,6 +3585,7 @@ llvm-devel/include/llvm/Support/AutoConvert.h
 llvm-devel/include/llvm/Support/Automaton.h
 llvm-devel/include/llvm/Support/BCD.h
 llvm-devel/include/llvm/Support/BLAKE3.h
+llvm-devel/include/llvm/Support/BalancedPartitioning.h
 llvm-devel/include/llvm/Support/Base64.h
 llvm-devel/include/llvm/Support/BinaryByteStream.h
 llvm-devel/include/llvm/Support/BinaryItemStream.h
@@ -3712,7 +3730,6 @@ llvm-devel/include/llvm/Support/SystemUtils.h
 llvm-devel/include/llvm/Support/TarWriter.h
 llvm-devel/include/llvm/Support/TargetOpcodes.def
 llvm-devel/include/llvm/Support/TargetSelect.h
-llvm-devel/include/llvm/Support/TaskQueue.h
 llvm-devel/include/llvm/Support/ThreadPool.h
 llvm-devel/include/llvm/Support/Threading.h
 llvm-devel/include/llvm/Support/TimeProfiler.h
@@ -4128,6 +4145,10 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Bindings/Python/Attributes.td
 %%MLIR%%llvm-devel/include/mlir/Bindings/Python/PybindAdaptors.h
 %%MLIR%%llvm-devel/include/mlir/Bytecode/BytecodeImplementation.h
+%%MLIR%%llvm-devel/include/mlir/Bytecode/BytecodeOpInterface.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Bytecode/BytecodeOpInterface.h
+%%MLIR%%llvm-devel/include/mlir/Bytecode/BytecodeOpInterface.h.inc
+%%MLIR%%llvm-devel/include/mlir/Bytecode/BytecodeOpInterface.td
 %%MLIR%%llvm-devel/include/mlir/Bytecode/BytecodeReader.h
 %%MLIR%%llvm-devel/include/mlir/Bytecode/BytecodeWriter.h
 %%MLIR%%llvm-devel/include/mlir/Bytecode/Encoding.h
@@ -4143,6 +4164,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Support.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Utils.h
 %%MLIR%%llvm-devel/include/mlir/CAPI/Wrap.h
+%%MLIR%%llvm-devel/include/mlir/Config/mlir-config.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/AMDGPUToROCDL/AMDGPUToROCDL.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/AffineToStandard/AffineToStandard.h
 %%MLIR%%llvm-devel/include/mlir/Conversion/ArithCommon/AttrToLLVMConverter.h
@@ -4319,6 +4341,9 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/ArmNeon/ArmNeonDialect.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/ArmNeon/ArmNeonTypes.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/ArmNeon/ArmNeonTypes.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/ArmSME/Transforms/Passes.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/ArmSME/Transforms/Passes.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/ArmSME/Transforms/Passes.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/ArmSVE/ArmSVE.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/ArmSVE/ArmSVE.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/ArmSVE/ArmSVE.td
@@ -4426,6 +4451,8 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/EmitC/IR/EmitCTypes.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/EmitC/IR/EmitCTypes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/EmitC/IR/EmitCTypes.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/Func/Extensions/AllExtensions.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Func/Extensions/InlinerExtension.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Func/IR/FuncOps.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Func/IR/FuncOps.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Func/IR/FuncOps.h.inc
@@ -4651,6 +4678,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Math/Transforms/Passes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/IR/MemRef.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/IR/MemRefBase.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/IR/MemRefMemorySlot.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/IR/MemRefOps.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/IR/MemRefOps.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/MemRef/IR/MemRefOps.td
@@ -4743,6 +4771,8 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/PDLInterp/IR/PDLInterpOpsTypes.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/PDLInterp/IR/PDLInterpOpsTypes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Quant/FakeQuantSupport.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Quant/QuantDialectBytecode.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/Quant/QuantDialectBytecode.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/Quant/QuantOps.cpp.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Quant/QuantOps.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Quant/QuantOps.h.inc
@@ -4962,6 +4992,11 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/IR/TransformTypes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/IR/TransformTypes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/IR/TransformTypes.td
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/PDLExtension/PDLExtension.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/PDLExtension/PDLExtensionOps.cpp.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/PDLExtension/PDLExtensionOps.h
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/PDLExtension/PDLExtensionOps.h.inc
+%%MLIR%%llvm-devel/include/mlir/Dialect/Transform/PDLExtension/PDLExtensionOps.td
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/Transforms/Passes.h
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/Transforms/Passes.h.inc
 %%MLIR%%llvm-devel/include/mlir/Dialect/Transform/Transforms/Passes.td
@@ -5142,6 +5177,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%MLIR%%llvm-devel/include/mlir/IR/Verifier.h
 %%MLIR%%llvm-devel/include/mlir/IR/Visitors.h
 %%MLIR%%llvm-devel/include/mlir/InitAllDialects.h
+%%MLIR%%llvm-devel/include/mlir/InitAllExtensions.h
 %%MLIR%%llvm-devel/include/mlir/InitAllPasses.h
 %%MLIR%%llvm-devel/include/mlir/InitAllTranslations.h
 %%MLIR%%llvm-devel/include/mlir/Interfaces/CallInterfaces.cpp.inc
@@ -5386,6 +5422,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_mve.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_neon.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_neon_sve_bridge.h
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_sme_draft_spec_subject_to_change.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/arm_sve.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/armintr.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/avx2intrin.h
@@ -5435,10 +5472,10 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/cpuid.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/crc32intrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/cuda_wrappers/algorithm
+%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/cuda_wrappers/bits/shared_ptr_base.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/cuda_wrappers/cmath
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/cuda_wrappers/complex
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/cuda_wrappers/new
-%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/cuda_wrappers/shared_ptr_base.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/emmintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/enqcmdintrin.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/f16cintrin.h
@@ -5862,6 +5899,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArmNeon2dToIntr.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArmNeonDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArmNeonToLLVMIRTranslation.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArmSMETransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArmSVEDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArmSVEToLLVMIRTranslation.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRArmSVETransforms.a
@@ -5875,6 +5913,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRBufferizationTransformOps.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRBufferizationTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRBuiltinToLLVMIRTranslation.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRBytecodeOpInterface.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRBytecodeReader.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRBytecodeWriter.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRCAPIAsync.a
@@ -5923,7 +5962,9 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRExecutionEngine.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRExecutionEngineUtils.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFromLLVMIRTranslationRegistration.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncAllExtensions.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncDialect.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncInlinerExtension.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncTestPasses.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncToLLVM.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRFuncToSPIRV.a
@@ -6090,6 +6131,7 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTransformDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTransformDialectTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTransformDialectUtils.a
+%%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTransformPDLExtension.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTransformUtils.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTransforms.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRTranslateLib.a
@@ -6108,6 +6150,8 @@ llvm-devel/lib/libLTO.so.%%LLVM_MAJOR%%git
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRX86VectorDialect.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRX86VectorToLLVMIRTranslation.a
 %%STATIC_LIBS%%%%MLIR%%llvm-devel/lib/libMLIRX86VectorTransforms.a
+%%STATIC_LIBS%%llvm-devel/lib/libMyExtensionCh2.a
+%%STATIC_LIBS%%llvm-devel/lib/libMyExtensionCh3.a
 llvm-devel/lib/libRemarks.so
 llvm-devel/lib/libRemarks.so.%%LLVM_MAJOR%%git
 %%OPENMP%%llvm-devel/lib/libarcher.so
@@ -6331,6 +6375,9 @@ llvm-devel/share/opt-viewer/style.css
 %%LIT%%%%PYTHON_SITELIBDIR%%/%%LIT_MOD_NAME%%/formats/base.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/%%LIT_MOD_NAME%%/formats/googletest.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/%%LIT_MOD_NAME%%/formats/shtest.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/%%LIT_MOD_NAME%%/llvm/__init__.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/%%LIT_MOD_NAME%%/llvm/config.py
+%%LIT%%%%PYTHON_SITELIBDIR%%/%%LIT_MOD_NAME%%/llvm/subst.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/%%LIT_MOD_NAME%%/main.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/%%LIT_MOD_NAME%%/reports.py
 %%LIT%%%%PYTHON_SITELIBDIR%%/%%LIT_MOD_NAME%%/run.py
