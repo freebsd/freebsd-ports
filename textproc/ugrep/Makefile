@@ -1,6 +1,6 @@
 PORTNAME=	ugrep
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.11.2
+DISTVERSION=	3.12.1
 CATEGORIES=	textproc
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -10,7 +10,7 @@ WWW=		https://github.com/Genivia/ugrep
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-USES=		compiler:c++11-lang gmake
+USES=		compiler:c++11-lang gmake shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	Genivia
 
@@ -23,6 +23,9 @@ OPTIONS_DEFAULT_amd64=	AVX SSE2
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost-regex
+
+SHEBANG_FILES=	bin/ug+ bin/ugrep+
+bash_CMD=	${SH}
 
 PCRE2_DESC=			Use Perl Compatible Regular Expressions v2
 PCRE2_CONFIGURE_WITH=		pcre2=${LOCALBASE}
