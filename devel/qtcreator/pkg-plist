@@ -145,6 +145,9 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/changelog/changes-1.2.1
 %%DATADIR%%/changelog/changes-1.3.0
 %%DATADIR%%/changelog/changes-1.3.1
+%%DATADIR%%/changelog/changes-10.0.0.md
+%%DATADIR%%/changelog/changes-10.0.1.md
+%%DATADIR%%/changelog/changes-10.0.2.md
 %%DATADIR%%/changelog/changes-2.0.0
 %%DATADIR%%/changelog/changes-2.0.1
 %%DATADIR%%/changelog/changes-2.1.0
@@ -242,7 +245,6 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/changelog/changes-9.0.0.md
 %%DATADIR%%/changelog/changes-9.0.1.md
 %%DATADIR%%/changelog/changes-9.0.2.md
-%%DATADIR%%/changelog/changes-10.0.0.md
 %%DATADIR%%/cplusplus/examples/CMakeLists.txt
 %%DATADIR%%/cplusplus/examples/clazy_example.cpp
 %%DATADIR%%/cplusplus/examples/examples.pro
@@ -1191,6 +1193,17 @@ share/metainfo/org.qt-project.qtcreator.appdata.xml
 %%DATADIR%%/templates/wizards/projects/qtquickapplication/qtquickcontrols2.conf
 %%DATADIR%%/templates/wizards/projects/qtquickapplication/tmpl.qbs
 %%DATADIR%%/templates/wizards/projects/qtquickapplication/wizard.json
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/CMakeLists.6.x.txt
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/CMakeLists.txt
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/app.pro
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/app.qbs
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/empty/icon.png
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/empty/icon@2x.png
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/empty/main.qml.tpl
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/empty/qml.qrc
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/empty/wizard.json
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/main.cpp
+%%DATADIR%%/templates/wizards/projects/qtquickapplication_compat/qtquickcontrols2.conf
 %%DATADIR%%/templates/wizards/projects/qtquickuiprototype/app.qmlproject
 %%DATADIR%%/templates/wizards/projects/qtquickuiprototype/qtquickuiprototype.png
 %%DATADIR%%/templates/wizards/projects/qtquickuiprototype/qtquickuiprototype@2x.png
