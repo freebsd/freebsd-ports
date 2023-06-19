@@ -607,6 +607,7 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/intl/unidata/ignored.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/intl/unidata/mapped.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/intl/unidata/virama.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/jwt.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/l10n.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/log.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/snappymail/pgp/backup.php
