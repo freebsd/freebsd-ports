@@ -15,6 +15,7 @@ man/man1/nickle.1.gz
 %%DATADIR%%/abort.5c
 %%DATADIR%%/arc4.5c
 %%DATADIR%%/builtin.5c
+%%DATADIR%%/cha-cha.5c
 %%DATADIR%%/command.5c
 %%DATADIR%%/ctype.5c
 %%DATADIR%%/factorial.5c
@@ -37,6 +38,7 @@ man/man1/nickle.1.gz
 %%DATADIR%%/string.5c
 %%DATADIR%%/svg.5c
 %%DATADIR%%/test/arraytest.5c
+%%DATADIR%%/test/chacha_test.5c
 %%DATADIR%%/test/datetest.5c
 %%DATADIR%%/test/factorial.5c
 %%DATADIR%%/test/gcdtest.5c
