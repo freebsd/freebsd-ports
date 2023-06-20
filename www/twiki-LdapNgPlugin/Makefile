@@ -1,7 +1,6 @@
 PORTNAME=	LdapNgPlugin
 SVNREV=		15577
-MASTER_SITES=	http://protey.ru/freebsd/distfiles/ \
-		LOCAL/skv
+MASTER_SITES=	LOCAL/skv
 
 COMMENT=	Query and display data from an LDAP directory
 WWW=		https://twiki.org/cgi-bin/view/Plugins/LdapNgPlugin
