@@ -1,0 +1,7 @@
+Archspec aims at providing a standard set of human-understandable labels for
+various aspects of a system architecture like CPU, network fabrics, etc.
+and APIs to detect, query and compare them.
+
+This project grew out of Spack and is currently under active development. At
+present it supports APIs to detect and model compatibility relationships among
+different CPU microarchitectures.

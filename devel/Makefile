@@ -4219,6 +4219,7 @@
     SUBDIR += py-apptools
     SUBDIR += py-apscheduler
     SUBDIR += py-archinfo
+    SUBDIR += py-archspec
     SUBDIR += py-argcomplete
     SUBDIR += py-argh
     SUBDIR += py-argparse
