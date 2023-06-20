@@ -110,6 +110,7 @@ include/rdkit/GraphMol/Descriptors/MolData3Ddescriptors.h
 include/rdkit/GraphMol/Descriptors/MolDescriptors.h
 include/rdkit/GraphMol/Descriptors/MolDescriptors3D.h
 include/rdkit/GraphMol/Descriptors/MolSurf.h
+include/rdkit/GraphMol/Descriptors/OxidationNumbers.h
 include/rdkit/GraphMol/Descriptors/PBF.h
 include/rdkit/GraphMol/Descriptors/PMI.h
 include/rdkit/GraphMol/Descriptors/Property.h
@@ -121,6 +122,7 @@ include/rdkit/GraphMol/DistGeomHelpers/BoundsMatrixBuilder.h
 include/rdkit/GraphMol/DistGeomHelpers/Embedder.h
 include/rdkit/GraphMol/FMCS/FMCS.h
 include/rdkit/GraphMol/FMCS/Graph.h
+include/rdkit/GraphMol/FileParsers/CDXMLParser.h
 include/rdkit/GraphMol/FileParsers/FileParserUtils.h
 include/rdkit/GraphMol/FileParsers/FileParsers.h
 include/rdkit/GraphMol/FileParsers/GeneralFileReader.h
@@ -220,6 +222,7 @@ include/rdkit/GraphMol/QueryOps.h
 include/rdkit/GraphMol/RDKitBase.h
 include/rdkit/GraphMol/RDKitQueries.h
 include/rdkit/GraphMol/RGroupDecomposition/RGroupDecomp.h
+include/rdkit/GraphMol/RGroupDecomposition/RGroupDecompParams.h
 include/rdkit/GraphMol/ROMol.h
 include/rdkit/GraphMol/RWMol.h
 include/rdkit/GraphMol/ReducedGraphs/ReducedGraphs.h
@@ -489,6 +492,7 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%LITTLE_ENDIAN%%lib/libRDKithc.so
 %%LITTLE_ENDIAN%%lib/libRDKithc.so.1
 %%LITTLE_ENDIAN%%lib/libRDKithc.so.1.%%SHLIB_VER%%
+%%PGSQL%%lib/postgresql/rdkit.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Avalon/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/AllChem.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/AtomPairs/Pairs.py
@@ -582,6 +586,7 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/MolStandardize/validate.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/MolStandardize/validations.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/MolSurf.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/PandasPatcher.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/PandasTools.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Pharm2D/Generate.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Pharm2D/Gobbi_Pharm2D.py
@@ -600,6 +605,7 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Randomize.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Recap.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/ReducedGraphs.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/RegistrationHash.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/SATIS.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/SaltRemover.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rdkit/Chem/Scaffolds/MurckoScaffold.py
@@ -1115,6 +1121,8 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%DATADIR%%/Data/Fonts/OFL.txt
 %%DATADIR%%/Data/Fonts/Telex-Regular.ttf
 %%DATADIR%%/Data/Fonts/amadeus_font_license.txt
+%%DATADIR%%/Data/Fonts/font_dumper.py
+%%DATADIR%%/Data/Fonts/roboto_regular_license.txt
 %%DATADIR%%/Data/Fonts/telex_font_license.txt
 %%DATADIR%%/Data/FragmentDescriptors.csv
 %%DATADIR%%/Data/FunctionalGroups.txt
@@ -1157,3 +1165,11 @@ lib/libRDKitga.so.1.%%SHLIB_VER%%
 %%PYTHON%%%%DATADIR%%/Scripts/create_deb_packages.sh
 %%PYTHON%%%%DATADIR%%/Scripts/test.sh
 %%DATADIR%%/license.txt
+%%PGSQL%%share/postgresql/extension/rdkit--3.8--4.0.sql
+%%PGSQL%%share/postgresql/extension/rdkit--4.0--4.0.1.sql
+%%PGSQL%%share/postgresql/extension/rdkit--4.0.1--4.1.sql
+%%PGSQL%%share/postgresql/extension/rdkit--4.1--4.1.1.sql
+%%PGSQL%%share/postgresql/extension/rdkit--4.1.1--4.2.sql
+%%PGSQL%%share/postgresql/extension/rdkit--4.2--4.3.0.sql
+%%PGSQL%%share/postgresql/extension/rdkit--4.3.0.sql
+%%PGSQL%%share/postgresql/extension/rdkit.control
