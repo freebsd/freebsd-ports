@@ -1,6 +1,4 @@
 bin/screengrab
-lib/screengrab/libextedit.so
-lib/screengrab/libextedit.so.1.0.0
 share/applications/screengrab.desktop
 %%DOCSDIR%%/html/default.css
 %%DOCSDIR%%/html/en/index.html
@@ -9,6 +7,7 @@ share/applications/screengrab.desktop
 share/icons/hicolor/scalable/apps/screengrab.svg
 share/metainfo/screengrab.metainfo.xml
 %%DATADIR%%/screengrab.conf
+%%DATADIR%%/translations/screengrab_ar.qm
 %%DATADIR%%/translations/screengrab_arn.qm
 %%DATADIR%%/translations/screengrab_ast.qm
 %%DATADIR%%/translations/screengrab_bg.qm

@@ -97,8 +97,8 @@ include/libfm-qt/utilities.h
 include/libfm-qt/utilities_p.h
 include/libfm-qt/xdndworkaround.h
 lib/libfm-qt.so
-lib/libfm-qt.so.12
-lib/libfm-qt.so.12.0.0
+lib/libfm-qt.so.13
+lib/libfm-qt.so.13.0.0
 libdata/pkgconfig/libfm-qt.pc
 share/cmake/fm-qt/fm-qt-config-version.cmake
 share/cmake/fm-qt/fm-qt-config.cmake

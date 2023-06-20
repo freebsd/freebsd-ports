@@ -1,11 +1,11 @@
 PORTNAME=	lxqt-config
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.0
 CATEGORIES=	sysutils
 MASTER_SITES=	LXQT
 DIST_SUBDIR=	lxqt
 
-PATCH_SITES=	https://github.com/lxqt/lxqt-config/commit/
-PATCHFILES=	6add4e4f0040693e7c4242fbae48c9d32007686c.patch:-p1
+#PATCH_SITES=	https://github.com/lxqt/lxqt-config/commit/
+#PATCHFILES=	6add4e4f0040693e7c4242fbae48c9d32007686c.patch:-p1
 
 MAINTAINER=	jsm@FreeBSD.org
 COMMENT=	LXQt system settings center

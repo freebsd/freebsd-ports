@@ -1,6 +1,6 @@
 bin/lximage-qt
 share/applications/lximage-qt.desktop
-share/icons/hicolor/48x48/apps/lximage-qt.png
+share/icons/hicolor/48x48/apps/lximage-qt.svg
 %%DATADIR%%/translations/lximage-qt_ar.qm
 %%DATADIR%%/translations/lximage-qt_arn.qm
 %%DATADIR%%/translations/lximage-qt_ast.qm
