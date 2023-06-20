@@ -1,6 +1,6 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-468
+DISTVERSION=	21.0.99.1-475
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
@@ -23,7 +23,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		${LOCALBASE}/include/GL/internal/dri_interface.h:graphics/mesa-dri \
-		wayland-protocols>=1.28:graphics/wayland-protocols
+		wayland-protocols>=1.30:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy \
 		libwayland-client.so:graphics/wayland \
@@ -40,8 +40,8 @@ USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	xorg
 GL_PROJECT=	xserver
-GL_COMMIT=	13e513d2f04019424761b728340ec716de0c0d29
-GL_TUPLE=	xorg/proto:xorgproto:824001c947cb1962209c6a8f2c63c2637877220d:xorgproto/subprojects/xorgproto
+GL_COMMIT=	9f3559d5c041913dbcf8030a28155e8ef8466c09
+GL_TUPLE=	xorg/proto:xorgproto:766967322209f2dcb72e6a8edea0c651f586201d:xorgproto/subprojects/xorgproto
 MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
 		-Dxnest=false \
