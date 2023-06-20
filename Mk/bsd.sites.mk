@@ -695,7 +695,6 @@ MASTER_SITE_MOZILLA+= \
 
 .if !defined(IGNORE_MASTER_SITE_MOZILLA_ADDONS)
 MASTER_SITE_MOZILLA_ADDONS+= \
-	https://addons.cdn.mozilla.net/user-media/%SUBDIR%/ \
 	http://kyoto-mz-dl.sinet.ad.jp/pub/mozilla.org/%SUBDIR%/
 .endif
 
