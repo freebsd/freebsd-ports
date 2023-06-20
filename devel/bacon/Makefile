@@ -1,7 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.8.1
-PORTREVISION=	1
+DISTVERSION=	2.9.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -143,7 +142,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		memchr-2.5.0 \
 		memmap2-0.5.8 \
 		memoffset-0.7.1 \
-		minimad-0.10.0 \
+		minimad-0.12.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.6.2 \
 		mio-0.8.5 \
@@ -164,11 +163,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		pin-project-lite-0.2.9 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.49 \
+		proc-macro2-1.0.60 \
 		proc-status-0.1.1 \
 		prodash-23.0.0 \
 		quick-error-2.0.1 \
-		quote-1.0.23 \
+		quote-1.0.28 \
 		rayon-1.6.1 \
 		rayon-core-1.10.1 \
 		redox_syscall-0.2.16 \
@@ -183,21 +182,23 @@ CARGO_CRATES=	adler-1.0.2 \
 		scopeguard-1.1.0 \
 		scratch-1.0.3 \
 		semver-1.0.16 \
-		serde-1.0.152 \
-		serde_derive-1.0.152 \
+		serde-1.0.164 \
+		serde_derive-1.0.164 \
 		serde_json-1.0.91 \
+		serde_spanned-0.6.2 \
 		sha1_smol-1.0.0 \
 		signal-hook-0.3.14 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.0 \
 		smallvec-1.10.0 \
-		socket2-0.4.7 \
+		socket2-0.4.9 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.107 \
+		syn-2.0.18 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
-		termimad-0.21.0 \
+		termimad-0.23.1 \
 		textwrap-0.16.0 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
@@ -207,9 +208,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		time-macros-0.2.6 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.24.1 \
-		tokio-macros-1.8.2 \
-		toml-0.5.10 \
+		tokio-1.28.2 \
+		tokio-macros-2.1.0 \
+		toml-0.7.4 \
+		toml_datetime-0.6.2 \
+		toml_edit-0.19.10 \
 		uluru-3.0.0 \
 		unicode-bidi-0.3.8 \
 		unicode-bom-1.1.4 \
@@ -235,13 +238,23 @@ CARGO_CRATES=	adler-1.0.2 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.43.0 \
 		windows-sys-0.42.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.0 \
 		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_gnullvm-0.48.0 \
 		windows_aarch64_msvc-0.42.0 \
+		windows_aarch64_msvc-0.48.0 \
 		windows_i686_gnu-0.42.0 \
+		windows_i686_gnu-0.48.0 \
 		windows_i686_msvc-0.42.0 \
+		windows_i686_msvc-0.48.0 \
 		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnu-0.48.0 \
 		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.42.0
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.42.0 \
+		windows_x86_64_msvc-0.48.0 \
+		winnow-0.4.7
 
 PLIST_FILES=	bin/${PORTNAME}
 
