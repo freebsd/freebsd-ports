@@ -1,5 +1,5 @@
 PORTNAME=	please
-PORTVERSION=	2.8
+PORTVERSION=	3.0
 CATEGORIES=	security
 
 MAINTAINER=	bofh@FreeBSD.org
