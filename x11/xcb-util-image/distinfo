@@ -1,2 +1,3 @@
-SHA256 (xorg/lib/xcb-util-image-0.4.0.tar.bz2) = 2db96a37d78831d643538dd1b595d7d712e04bdccf8896a5e18ce0f398ea2ffc
-SIZE (xorg/lib/xcb-util-image-0.4.0.tar.bz2) = 327891
+TIMESTAMP = 1687265281
+SHA256 (xorg/lib/xcb-util-image-0.4.1.tar.xz) = ccad8ee5dadb1271fd4727ad14d9bd77a64e505608766c4e98267d9aede40d3d
+SIZE (xorg/lib/xcb-util-image-0.4.1.tar.xz) = 289016
