@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk
-PORTVERSION=	3.232.3
+PORTVERSION=	3.273.3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/aws/${PORTNAME}-php/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
@@ -15,9 +15,10 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		php:flavors zip
 USE_PHP=	filter mbstring simplexml
+
+NO_ARCH=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
-NO_ARCH=	yes
 
 do-install:
 	${MKDIR} ${STAGEDIR}${WWWDIR}
