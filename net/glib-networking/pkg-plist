@@ -1,8 +1,10 @@
+%%NO_PROXY%%lib/gio/modules/libgioenvironmentproxy.so
 lib/gio/modules/libgiognomeproxy.so
-lib/gio/modules/libgiognutls.so
-lib/gio/modules/libgiolibproxy.so
-libexec/glib-pacrunner
-share/dbus-1/services/org.gtk.GLib.PACRunner.service
+%%GNUTLS%%lib/gio/modules/libgiognutls.so
+%%PROXY%%lib/gio/modules/libgiolibproxy.so
+%%NO_GNUTLS%%lib/gio/modules/libgioopenssl.so
+%%PROXY%%libexec/glib-pacrunner
+%%PROXY%%share/dbus-1/services/org.gtk.GLib.PACRunner.service
 share/locale/ab/LC_MESSAGES/glib-networking.mo
 share/locale/an/LC_MESSAGES/glib-networking.mo
 share/locale/ar/LC_MESSAGES/glib-networking.mo
