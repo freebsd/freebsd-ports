@@ -2600,7 +2600,6 @@ lib/cmake/Qt6QuickWidgets/Qt6QuickWidgetsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtTest/testlogger.js
 %%QT_QMLDIR%%/builtins.qmltypes
 %%QT_QMLDIR%%/jsroot.qmltypes
-libdata/ldconfig/qt6-declarative
 libdata/pkgconfig/Qt6LabsAnimation.pc
 libdata/pkgconfig/Qt6LabsFolderListModel.pc
 libdata/pkgconfig/Qt6LabsQmlModels.pc
