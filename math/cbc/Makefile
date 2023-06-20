@@ -1,7 +1,7 @@
 PORTNAME=	cbc
 DISTVERSIONPREFIX=	releases/
 DISTVERSION=	2.10.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 PKGNAMEPREFIX=	coin-or-
 
@@ -25,6 +25,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libOsi.so:math/osi
 
 USES=		compiler:c++11-lang fortran gmake libtool localbase pkgconfig
+USE_CXXSTD=	gnu++11
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
