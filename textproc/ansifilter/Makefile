@@ -1,5 +1,5 @@
 PORTNAME=	ansifilter
-PORTVERSION=	2.19
+PORTVERSION=	2.20
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.andre-simon.de/zip/
 
