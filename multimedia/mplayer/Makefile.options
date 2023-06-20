@@ -51,6 +51,10 @@ BUILD_DEPENDS+=	as:devel/binutils@native
 CFLAGS+=	-no-integrated-as
 .endif
 
+.if defined(MACHINE_CPU) && ${MACHINE_CPU:Maltivec}
+CONFIGURE_ARGS+=	--enable-altivec
+.endif
+
 LDFLAGS_i386+=	-Wl,-z,notext
 
 # Extra build options for debugging
