@@ -1,5 +1,5 @@
 PORTNAME=	cxx
-PORTVERSION=	7.1.7
+PORTVERSION=	7.1.8
 CATEGORIES=	devel python
 MASTER_SITES=	SF/${PORTNAME}/CXX/PyCXX%20V${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	pycxx-${PORTVERSION}
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Make it easier to extend Python with C++
-WWW=		http://cxx.sourceforge.net/
+WWW=		https://cxx.sourceforge.net
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
