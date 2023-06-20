@@ -30,7 +30,7 @@ ONLY_FOR_ARCHS_REASON?=	requires prebuilt bootstrap compiler
 BUILD_DEPENDS=	cmake:devel/cmake-core
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
-USES=		cpe ninja:build pkgconfig python:3.7+,build shebangfix ssl tar:xz
+USES=		cpe ninja:build pkgconfig python:3.7+,build ssl tar:xz
 
 CPE_VENDOR=	rust-lang
 
@@ -93,11 +93,6 @@ _COMPONENTS+=		cargo-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rustfmt-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rust-analysis-${_PACKAGE_VERS}-${_RUST_TARGET} \
 			rust-std-${_PACKAGE_VERS}-${_RUST_TARGET}
-
-# https://github.com/bjorn3/rustc_codegen_cranelift/commit/83d470d91c15d0cb5890705291e6ee9e5be8a842
-# https://github.com/rust-lang/rustc_codegen_gcc/pull/160
-SHEBANG_FILES=		compiler/rustc_codegen_cranelift/scripts/* \
-			compiler/rustc_codegen_gcc/*.sh compiler/rustc_codegen_gcc/build_sysroot/*.sh
 
 .include <bsd.port.pre.mk>
 
