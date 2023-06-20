@@ -25,9 +25,6 @@ USES=		gl gmake fortran motif xorg
 USE_GL=		gl
 USE_XORG=	x11 xt
 
-#SHEBANG_GLOB=	*.sh
-#SHEBANG_FILES=	init/Multiwfn.01
-
 #USE_GITHUB=	yes
 #GH_ACCOUNT=	stecue
 #GH_PROJECT=	gMultiwfn
@@ -35,7 +32,7 @@ USE_XORG=	x11 xt
 WRKSRC=		${WRKDIR}/Multiwfn_${DISTVERSION}_dev_src_Linux
 
 FCFLAGS+=	-ffree-line-length-none
-LDFLAGS+=	-lblas -llapack -lc
+LDFLAGS+=	-lblas -llapack
 
 ALL_TARGET=	default
 
