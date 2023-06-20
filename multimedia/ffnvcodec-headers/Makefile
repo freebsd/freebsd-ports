@@ -15,6 +15,7 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	FFmpeg
 GH_PROJECT=	nv-codec-headers
 
+MAKE_ARGS+=	PREFIX="${PREFIX}"
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
