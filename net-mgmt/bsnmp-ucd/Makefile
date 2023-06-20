@@ -4,7 +4,7 @@ CATEGORIES=	net-mgmt
 
 MAINTAINER=	trociny@FreeBSD.org
 COMMENT=	bsnmpd module that implements parts of UCD-SNMP-MIB
-WWW=		http://bsnmp-ucd.googlecode.com/
+WWW=		https://github.com/trociny/bsnmp-ucd
 
 LICENSE=	BSD2CLAUSE
 
