@@ -364,8 +364,8 @@ post-patch:
 	    -e 's|lit\.|${LIT_MOD_NAME}.|g' \
 	    ${WRKSRC}/llvm/utils/lit/lit.py \
 	    ${WRKSRC}/llvm/utils/lit/lit/*.py \
-	    ${WRKSRC}/llvm/utils/lit/lit/builtin_commands/*.py
-	    ${WRKSRC}/llvm/utils/lit/lit/formats/*.py
+	    ${WRKSRC}/llvm/utils/lit/lit/builtin_commands/*.py \
+	    ${WRKSRC}/llvm/utils/lit/lit/formats/*.py \
 	    ${WRKSRC}/llvm/utils/lit/lit/llcm/*.py
 
 post-patch-CLANG-on:
