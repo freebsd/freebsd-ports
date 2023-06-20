@@ -1,6 +1,6 @@
 PORTNAME=	rust
 PORTVERSION?=	1.70.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	lang
 MASTER_SITES=	https://static.rust-lang.org/dist/:src \
 		https://dev-static.rust-lang.org/dist/:src \
@@ -50,15 +50,14 @@ TMPDIR?=	${WRKDIR}
 
 OPTIONS_DEFINE=		DOCS GDB SOURCES WASM
 OPTIONS_DEFAULT=	SOURCES WASM
-.if !defined(NIGHTLY_DATE)
-OPTIONS_EXCLUDE=	DOCS # https://github.com/rust-lang/rust/issues/76526
-.endif
 
 GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
 SOURCES_DESC=	Install source files
 WASM_DESC=	Build the WebAssembly target (wasm32-unknown-unknown)
 
-DOCS_VARS=		_RUST_BUILD_DOCS=true
+DOCS_VARS=		_RUST_BUILD_DOCS=true \
+			_COMPONENTS+="rust-docs-${_PACKAGE_VERS}-${_RUST_TARGET} rust-docs-json-${_PACKAGE_VERS}-${_RUST_TARGET}" \
+			_RUST_TOOLS+=rustdoc
 DOCS_VARS_OFF=		_RUST_BUILD_DOCS=false
 GDB_RUN_DEPENDS=	${LOCALBASE}/bin/gdb:devel/gdb
 SOURCES_VARS=		_COMPONENTS+=rust-src-${_PACKAGE_VERS} \
@@ -118,6 +117,10 @@ _COMPONENTS+=	rls-${_PACKAGE_VERS}-${_RUST_TARGET}
 # rustc-dev is only usefull on nightly
 .if defined(NIGHTLY_DATE)
 _COMPONENTS+=	rustc-dev-${_PACKAGE_VERS}-${_RUST_TARGET}
+.endif
+
+.if ${PORT_OPTIONS:MWASM} && ${PORT_OPTIONS:MDOCS}
+_COMPONENTS+=	rust-docs-${_PACKAGE_VERS}-wasm32-unknown-unknown rust-docs-json-${_PACKAGE_VERS}-wasm32-unknown-unknown
 .endif
 
 # If the kernel does not return sane kern.proc.pathname values
