@@ -322,10 +322,10 @@ lib/OpenFHE/OpenFHETargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/OpenFHE/OpenFHETargets.cmake
 lib/libOPENFHEbinfhe.so
 lib/libOPENFHEbinfhe.so.1
-lib/libOPENFHEbinfhe.so.1.0.3
+lib/libOPENFHEbinfhe.so.1.0.4
 lib/libOPENFHEcore.so
 lib/libOPENFHEcore.so.1
-lib/libOPENFHEcore.so.1.0.3
+lib/libOPENFHEcore.so.1.0.4
 lib/libOPENFHEpke.so
 lib/libOPENFHEpke.so.1
-lib/libOPENFHEpke.so.1.0.3
+lib/libOPENFHEpke.so.1.0.4
