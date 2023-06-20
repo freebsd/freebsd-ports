@@ -775,7 +775,6 @@
     SUBDIR += pipewalker
     SUBDIR += pmars
     SUBDIR += pmars-sdl
-    SUBDIR += poker-eval
     SUBDIR += pokerth
     SUBDIR += polyglot
     SUBDIR += pongix
