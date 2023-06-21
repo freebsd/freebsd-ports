@@ -1,5 +1,5 @@
 PORTNAME=	wazuh
-DISTVERSION=	4.4.3
+DISTVERSION=	4.4.4
 DISTVERSIONPREFIX=	v
 CATEGORIES=	security
 MASTER_SITES=	https://packages.wazuh.com/deps/20/libraries/sources/:wazuh_sources \
@@ -234,7 +234,7 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/integrations/pagerduty ${STAGEDIR}${WAZUHPREFIX}/integrations/pagerduty
 	${INSTALL_SCRIPT} ${WRKSRC}/integrations/slack ${STAGEDIR}${WAZUHPREFIX}/integrations/slack.py
 	${INSTALL_SCRIPT} ${WRKSRC}/integrations/shuffle.py ${STAGEDIR}${WAZUHPREFIX}/integrations/shuffle.py
-	${INSTALL_SCRIPT} ${WRKSRC}/integrations/virustotal ${STAGEDIR}${WAZUHPREFIX}/integrations/virustotal.py
+	${INSTALL_SCRIPT} ${WRKSRC}/integrations/virustotal.py ${STAGEDIR}${WAZUHPREFIX}/integrations/virustotal.py
 
 	${MKDIR} ${STAGEDIR}${WAZUHPREFIX}/queue/vulnerabilities/dictionaries
 	${INSTALL_DATA} ${WRKSRC}/src/wazuh_modules/vulnerability_detector/cpe_helper.json ${STAGEDIR}${WAZUHPREFIX}/queue/vulnerabilities/dictionaries

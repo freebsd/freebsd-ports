@@ -1,0 +1,11 @@
+--- src/external/cpython/configure	2023-06-17 10:52:31.789714000 -0500
++++ src/external/cpython/configure	2023-06-17 10:52:50.027151000 -0500
+@@ -6566,7 +6566,7 @@
+ 
+ if test "$Py_LTO" = 'true' ; then
+   case $CC in
+-    *clang*)
++    *clang*|cc)
+ 
+       if test -n "$ac_tool_prefix"; then
+   # Extract the first word of "${ac_tool_prefix}llvm-ar", so it can be a program name with args.
