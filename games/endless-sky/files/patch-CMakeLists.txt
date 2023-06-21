@@ -1,0 +1,53 @@
+--- CMakeLists.txt.orig	2023-06-18 21:53:14 UTC
++++ CMakeLists.txt
+@@ -257,19 +257,21 @@ elseif(WIN32)
+ 	install(FILES changelog DESTINATION .)
+ 	install(FILES license.txt DESTINATION .)
+ elseif(UNIX)
++	include(GNUInstallDirs)
++
+ 	# Install the binary.
+-	install(TARGETS EndlessSky CONFIGURATIONS Release RUNTIME DESTINATION games)
++	install(TARGETS EndlessSky CONFIGURATIONS Release RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+ 
+ 	# Install the desktop file.
+-	install(FILES endless-sky.desktop DESTINATION share/applications)
++	install(FILES endless-sky.desktop DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/applications)
+ 
+ 	# Install app center metadata.
+-	install(FILES io.github.endless_sky.endless_sky.appdata.xml DESTINATION share/metainfo)
++	install(FILES io.github.endless_sky.endless_sky.appdata.xml DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/metainfo)
+ 
+ 	# Install icons, keeping track of all the paths.
+ 	# Most Ubuntu apps supply 16, 22, 24, 32, 48, and 256, and sometimes others.
+ 	foreach(size "16x16" "22x22" "24x24" "32x32" "48x48" "128x128" "256x256" "512x512")
+-		install(FILES "icons/icon_${size}.png" DESTINATION "share/icons/hicolor/${size}/apps"
++		install(FILES "icons/icon_${size}.png" DESTINATION "${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${size}/apps"
+ 			RENAME endless-sky.png)
+ 	endforeach()
+ 
+@@ -281,15 +283,15 @@ elseif(UNIX)
+ 		WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+ 		VERBATIM)
+ 	target_sources(EndlessSky PRIVATE endless-sky.6.gz)
+-	install(FILES ${CMAKE_CURRENT_BINARY_DIR}/endless-sky.6.gz DESTINATION share/man/man6)
++	install(FILES ${CMAKE_CURRENT_BINARY_DIR}/endless-sky.6.gz DESTINATION ${CMAKE_INSTALL_MANDIR}/man6)
+ 
+ 	# Install the resource files.
+-	install(DIRECTORY data DESTINATION share/games/endless-sky)
+-	install(DIRECTORY images DESTINATION share/games/endless-sky)
+-	install(DIRECTORY sounds DESTINATION share/games/endless-sky)
+-	install(FILES credits.txt DESTINATION share/games/endless-sky)
+-	install(FILES keys.txt DESTINATION share/games/endless-sky)
+-	install(FILES copyright DESTINATION share/doc/endless-sky)
+-	install(FILES changelog DESTINATION share/doc/endless-sky)
+-	install(FILES license.txt DESTINATION share/doc/endless-sky)
++	install(DIRECTORY data DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
++	install(DIRECTORY images DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
++	install(DIRECTORY sounds DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
++	install(FILES credits.txt DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
++	install(FILES keys.txt DESTINATION ${CMAKE_INSTALL_DATADIR}/endless-sky)
++	#install(FILES copyright DESTINATION ${CMAKE_INSTALL_DOCDIR}/endless-sky)
++	install(FILES changelog DESTINATION ${CMAKE_INSTALL_DOCDIR}/endless-sky)
++	#install(FILES license.txt DESTINATION ${CMAKE_INSTALL_DOCDIR}/endless-sky)
+ endif()
