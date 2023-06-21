@@ -1,6 +1,7 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.34.3
+PORTREVISION=	1
 CATEGORIES=	www
 
 PATCH_SITES=	https://github.com/denoland/${PORTNAME}/commit/
