@@ -1024,6 +1024,7 @@
     SUBDIR += py-pystan
     SUBDIR += py-pysym
     SUBDIR += py-pytanque
+    SUBDIR += py-pytensor
     SUBDIR += py-python-fcl
     SUBDIR += py-python-louvain
     SUBDIR += py-python-picard
