@@ -4950,6 +4950,7 @@
     SUBDIR += py-microversion-parse
     SUBDIR += py-milc
     SUBDIR += py-mime
+    SUBDIR += py-miniKanren
     SUBDIR += py-minidump
     SUBDIR += py-minimongo
     SUBDIR += py-minio
