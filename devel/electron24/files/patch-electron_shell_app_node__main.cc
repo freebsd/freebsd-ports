@@ -1,4 +1,4 @@
---- electron/shell/app/node_main.cc.orig	2023-04-03 22:25:21 UTC
+--- electron/shell/app/node_main.cc.orig	2023-06-13 21:28:30 UTC
 +++ electron/shell/app/node_main.cc
 @@ -42,7 +42,7 @@
  #include "content/public/common/content_descriptors.h"
@@ -9,7 +9,7 @@
  #include "components/crash/core/app/crashpad.h"  // nogncheck
  #include "shell/app/electron_crash_reporter_client.h"
  #include "shell/common/crash_keys.h"
-@@ -94,7 +94,7 @@ int SetNodeCliFlags() {
+@@ -98,7 +98,7 @@ int SetNodeCliFlags() {
                             node::kDisallowedInEnvironment);
  }
  
@@ -18,7 +18,7 @@
  void SetCrashKeyStub(const std::string& key, const std::string& value) {}
  void ClearCrashKeyStub(const std::string& key) {}
  #endif
-@@ -105,7 +105,7 @@ namespace electron {
+@@ -109,7 +109,7 @@ namespace electron {
  
  v8::Local<v8::Value> GetParameters(v8::Isolate* isolate) {
    std::map<std::string, std::string> keys;
@@ -27,7 +27,7 @@
    electron::crash_keys::GetCrashKeys(&keys);
  #endif
    return gin::ConvertToV8(isolate, keys);
-@@ -239,7 +239,7 @@ int NodeMain(int argc, char* argv[]) {
+@@ -243,7 +243,7 @@ int NodeMain(int argc, char* argv[]) {
        // Setup process.crashReporter in child node processes
        gin_helper::Dictionary reporter = gin::Dictionary::CreateEmpty(isolate);
        reporter.SetMethod("getParameters", &GetParameters);
