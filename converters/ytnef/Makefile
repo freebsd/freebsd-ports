@@ -1,10 +1,10 @@
 PORTNAME=	ytnef
-PORTVERSION=	2.1.1
 DISTVERSIONPREFIX=	v
+DISTVERSION=	2.1.2
 PORTEPOCH=	1
 CATEGORIES=	converters mail
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Unpack data in MS Outlook TNEF format
 WWW=		https://github.com/Yeraze/ytnef
 
@@ -15,10 +15,8 @@ RUN_DEPENDS=	p5-MIME-Tools>=0:mail/p5-MIME-Tools
 
 USES=		autoreconf cpe libtool pathfix perl5 shebangfix
 CPE_VENDOR=	ytnef_project
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yeraze
-
 USE_LDCONFIG=	yes
 USE_PERL5=	run
 
