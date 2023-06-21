@@ -1,0 +1,8 @@
+--- doc/en/CMakeLists.txt.orig	2023-06-21 07:55:31 UTC
++++ doc/en/CMakeLists.txt
+@@ -1,4 +1,4 @@
+ ########### install files ###############
+ #
+ 
+-kdoctools_create_handbook(index.docbook INSTALL_DESTINATION ${HTML_INSTALL_DIR}/en SUBDIR k4dirstat)
++kdoctools_create_handbook(index.docbook INSTALL_DESTINATION %%PREFIX%%/share/doc SUBDIR k4dirstat)
