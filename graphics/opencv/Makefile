@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libhdf5.so:science/hdf5
 
-USES=		cmake compiler:c++14-lang cpe localbase:ldflags pkgconfig
+USES=		cmake cpe localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	WeChatCV:wechat
 GH_PROJECT=	opencv_contrib:contrib \
@@ -213,6 +213,15 @@ OPENJPEG_LIB_DEPENDS=	libopenjp2.so:graphics/openjpeg
 
 _IPPICV_i386=		ippicv/ippicv_2020_lnx_ia32_20191018_general.tgz
 _IPPICV_amd64=		ippicv/ippicv_2020_lnx_intel64_20191018_general.tgz
+
+.include <bsd.port.options.mk>
+
+.if ${ARCH} == powerpc64le && defined(MACHINE_CPU) && ${MACHINE_CPU:Mvsx3}
+CMAKE_ARGS+=		-DCPU_BASELINE:STRING="VSX;VSX3;"
+USES+=			compiler:gcc-c++11-lib
+.else
+USES+=			compiler:c++14-lang
+.endif
 
 post-extract:
 	# Handle contrib
