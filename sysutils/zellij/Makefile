@@ -1,6 +1,6 @@
 PORTNAME=	zellij
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.37.1
+DISTVERSION=	0.37.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	riggs@FreeBSD.org
@@ -161,6 +161,8 @@ CARGO_CRATES=	addr2line-0.17.0 \
 		ident_case-1.0.1 \
 		idna-0.2.3 \
 		ignore-0.4.20 \
+		include_dir-0.7.3 \
+		include_dir_macros-0.7.3 \
 		indexmap-1.8.2 \
 		inotify-0.9.6 \
 		inotify-sys-0.1.5 \
