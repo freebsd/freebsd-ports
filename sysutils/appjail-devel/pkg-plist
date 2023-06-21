@@ -22,6 +22,7 @@ libexec/appjail/network/network
 %%DATADIR%%/cmd/fstab
 %%DATADIR%%/cmd/healthcheck
 %%DATADIR%%/cmd/help
+%%DATADIR%%/cmd/image
 %%DATADIR%%/cmd/jail
 %%DATADIR%%/cmd/limits
 %%DATADIR%%/cmd/login
@@ -97,6 +98,7 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/cmd/all/USER
 %%DATADIR%%/makejail/cmd/all/VAR
 %%DATADIR%%/makejail/cmd/all/WORKDIR
+%%DATADIR%%/makejail/cmd/build/FROM
 %%DATADIR%%/makejail/cmd/build/LOGIN
 %%DATADIR%%/makejail/cmd/build/OPTION
 %%DATADIR%%/makejail/cmd/build/RESTART
@@ -119,6 +121,7 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/write/all/UMOUNT
 %%DATADIR%%/makejail/write/all/VAR
 %%DATADIR%%/makejail/write/all/WORKDIR
+%%DATADIR%%/makejail/write/build/FROM
 %%DATADIR%%/makejail/write/build/LOGIN
 %%DATADIR%%/makejail/write/build/OPTION
 %%DATADIR%%/makejail/write/build/RESTART
