@@ -64,6 +64,7 @@ RUN_DEPENDS=	p5-DBD-Pg>=0:databases/p5-DBD-Pg \
 		p5-Plack-Middleware-Debug>=0:www/p5-Plack-Middleware-Debug \
 		p5-Plack-Middleware-Expires>=0.03:www/p5-Plack-Middleware-Expires \
 		p5-Plack-Middleware-ReverseProxy>=0.15:www/p5-Plack-Middleware-ReverseProxy \
+		p5-Plack-Middleware-Headers>=0:www/p5-Plack-Middleware-Headers \
 		p5-Regexp-Common>=0:textproc/p5-Regexp-Common \
 		p5-Role-Tiny>=1.002005:devel/p5-Role-Tiny \
 		p5-Sereal>=0:converters/p5-Sereal \
