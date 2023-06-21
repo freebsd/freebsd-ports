@@ -9,7 +9,7 @@ DISTNAME=	${PORTNAME}-community-latest
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Autodiscovering PHP/MySQL/SNMP based network monitoring
 WWW=		https://observium.org
 
