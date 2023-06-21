@@ -4596,6 +4596,7 @@
     SUBDIR += py-epdb
     SUBDIR += py-epsilon
     SUBDIR += py-etils
+    SUBDIR += py-etuples
     SUBDIR += py-evdev
     SUBDIR += py-eventlib
     SUBDIR += py-ewah-bool-utils
