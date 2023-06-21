@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.phar
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	cmcdonald@netgate.com
+MAINTAINER=	rcm@rcm.sh
 COMMENT=	Zephir is a transpiled language used for creating C-extensions for PHP
 WWW=		https://github.com/zephir-lang/zephir
 
