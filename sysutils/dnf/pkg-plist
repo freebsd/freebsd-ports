@@ -8,6 +8,7 @@ etc/bash_completion.d/dnf
 %%ETCDIR%%/dnf-strict.conf
 %%ETCDIR%%/dnf.conf
 %%ETCDIR%%/protected.d/dnf.conf
+%%ETCDIR%%/protected.d/python3-dnf.conf
 %%ETCDIR%%/protected.d/yum.conf
 %%PYTHON_SITELIBDIR%%/dnf/__init__.py
 %%PYTHON_SITELIBDIR%%/dnf/automatic/__init__.py
