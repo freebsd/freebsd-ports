@@ -4480,6 +4480,7 @@
     SUBDIR += py-confusable_homoglyphs
     SUBDIR += py-confuse
     SUBDIR += py-connection_pool
+    SUBDIR += py-cons
     SUBDIR += py-constantly
     SUBDIR += py-construct
     SUBDIR += py-construct-classes

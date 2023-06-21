@@ -1,0 +1,6 @@
+The cons package attempts to emulate the semantics of Lisp/Scheme's cons as
+closely as possible while incorporating all the built-in Python sequence types.
+
+In computer programming, cons is a fundamental function in most dialects of the
+Lisp programming language. cons constructs memory objects which hold two values
+or pointers to two values.
