@@ -1,5 +1,6 @@
 PORTNAME=	doublecmd
 PORTVERSION=	1.0.11
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11-fm
 PKGNAMESUFFIX=	${LAZARUS_PKGNAMESUFFIX}
@@ -80,7 +81,7 @@ WFX_SAMBA_DESC=	SMB protocol support
 WLX_DESC=		Internal viewer plugins
 WLX_MPLAYER_DESC=	Use MPlayer for multimedia files
 
-WCX_UNRAR_LIB_DEPENDS=		libunrar.so.6:archivers/libunrar6
+WCX_UNRAR_LIB_DEPENDS=		libunrar.so:archivers/libunrar
 WFX_SAMBA_USES=			samba:lib
 WLX_MPLAYER_RUN_DEPENDS=	mplayer:multimedia/mplayer
 

@@ -1,5 +1,6 @@
 PORTNAME=	mcomix
 PORTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/MComix-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,6 +24,6 @@ OPTIONS_DEFINE=	RAR
 OPTIONS_DEFAULT=RAR
 
 RAR_DESC=	RAR (.cbr) comic book archives support
-RAR_RUN_DEPENDS=${LOCALBASE}/lib/libunrar.so.6:archivers/libunrar6
+RAR_RUN_DEPENDS=${LOCALBASE}/lib/libunrar.so:archivers/libunrar
 
 .include <bsd.port.mk>

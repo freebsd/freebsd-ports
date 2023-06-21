@@ -69,7 +69,7 @@
     SUBDIR += libmspack
     SUBDIR += libpar2
     SUBDIR += librtfcomp
-    SUBDIR += libunrar6
+    SUBDIR += libunrar
     SUBDIR += libzip
     SUBDIR += libzippp
     SUBDIR += linux-c7-lz4
