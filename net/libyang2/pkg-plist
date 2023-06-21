@@ -3,6 +3,7 @@ bin/yangre
 include/libyang/config.h
 include/libyang/context.h
 include/libyang/dict.h
+include/libyang/hash_table.h
 include/libyang/in.h
 include/libyang/libyang.h
 include/libyang/log.h
@@ -23,7 +24,7 @@ include/libyang/tree_schema.h
 include/libyang/version.h
 lib/libyang.so
 lib/libyang.so.2
-lib/libyang.so.2.33.3
+lib/libyang.so.2.36.1
 libdata/pkgconfig/libyang.pc
 share/man/man1/yanglint.1.gz
 share/man/man1/yangre.1.gz
