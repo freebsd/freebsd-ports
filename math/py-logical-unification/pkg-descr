@@ -1,0 +1,4 @@
+Logical unification in Python, extensible via dispatch.
+
+In logic and computer science, unification is an algorithmic process of solving
+equations between symbolic expressions.
