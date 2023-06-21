@@ -470,8 +470,8 @@
 %%WWWDIR%%/mod/discussions/languages/ro_ro.php
 %%WWWDIR%%/mod/discussions/languages/ru.php
 %%WWWDIR%%/mod/discussions/languages/sv.php
-%%WWWDIR%%/mod/discussions/tests/integration/Elgg/Discussions/GroupToolContainerLogicIntegrationTest.php
-%%WWWDIR%%/mod/discussions/tests/integration/Elgg/Discussions/RouteResponseTest.php
+%%WWWDIR%%/mod/discussions/tests/phpunit/integration/Elgg/Discussions/GroupToolContainerLogicIntegrationTest.php
+%%WWWDIR%%/mod/discussions/tests/phpunit/integration/Elgg/Discussions/RouteResponseTest.php
 %%WWWDIR%%/mod/discussions/tests/phpunit/unit/Elgg/Discussions/ComposerTest.php
 %%WWWDIR%%/mod/discussions/tests/phpunit/unit/Elgg/Discussions/StaticConfigTest.php
 %%WWWDIR%%/mod/discussions/tests/phpunit/unit/Elgg/Discussions/TranslatorUnitTest.php
@@ -4928,6 +4928,8 @@
 %%WWWDIR%%/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/Deprecation.php
 %%WWWDIR%%/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/VerifyDeprecations.php
 %%WWWDIR%%/vendor/doctrine/deprecations/phpcs.xml
+%%WWWDIR%%/vendor/doctrine/deprecations/phpstan.neon
+%%WWWDIR%%/vendor/doctrine/deprecations/psalm.xml
 %%WWWDIR%%/vendor/doctrine/event-manager/LICENSE
 %%WWWDIR%%/vendor/doctrine/event-manager/README.md
 %%WWWDIR%%/vendor/doctrine/event-manager/UPGRADE.md
@@ -6866,8 +6868,8 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/languages/ro_ro.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/languages/ru.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/languages/sv.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/integration/Elgg/Discussions/GroupToolContainerLogicIntegrationTest.php
-%%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/integration/Elgg/Discussions/RouteResponseTest.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/phpunit/integration/Elgg/Discussions/GroupToolContainerLogicIntegrationTest.php
+%%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/phpunit/integration/Elgg/Discussions/RouteResponseTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/phpunit/unit/Elgg/Discussions/ComposerTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/phpunit/unit/Elgg/Discussions/StaticConfigTest.php
 %%WWWDIR%%/vendor/elgg/elgg/mod/discussions/tests/phpunit/unit/Elgg/Discussions/TranslatorUnitTest.php
