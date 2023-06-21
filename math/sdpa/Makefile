@@ -1,11 +1,10 @@
 PORTNAME=	sdpa
-PORTVERSION=	7.3.8
-PORTREVISION=	10
+DISTVERSION=	7.3.17
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		DEBIAN/pool/main/m/mumps:mumps
 DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX} \
-		mumps_4.10.0.dfsg.orig.tar.gz:mumps
+		mumps_${MUMPS_VERSION}.orig.tar.gz:mumps
 DIST_SUBDIR=	sdpa
 EXTRACT_ONLY=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX}
 
@@ -38,6 +37,8 @@ REFERENCE_USES=		blaslapack
 
 MANUALFILE=		sdpa.7.1.1.manual.20080618.pdf
 
+MUMPS_VERSION=		5.5.1
+
 .include <bsd.port.pre.mk>
 
 .if ${GCC_DEFAULT} >= 10
@@ -47,7 +48,7 @@ CONFIGURE_ARGS+=	FCFLAGS=-fallow-argument-mismatch
 
 post-extract:
 	@(cd ${DISTDIR}/${DIST_SUBDIR} && ${PAX} -rw \
-		mumps_4.10.0.dfsg.orig.tar.gz ${WRKSRC}/mumps)
+		mumps_${MUMPS_VERSION}.orig.tar.gz ${WRKSRC}/mumps)
 
 post-patch:
 # Register missing target dependency to unbreak parallel builds
