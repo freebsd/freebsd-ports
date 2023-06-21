@@ -1,6 +1,5 @@
 PORTNAME=	caldera
-DISTVERSION=	4.1.0
-PORTREVISION=	2
+DISTVERSION=	4.2.0
 CATEGORIES=	security python
 
 MAINTAINER=	acm@FreeBSD.org
@@ -50,28 +49,28 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
 USE_GITHUB=	yes
 GH_ACCOUNT=	mitre
 GH_PROJECT=	${PORTNAME}
-GH_TUPLE=	mitre:access:fff4c20:access/plugins/access \
+GH_TUPLE=	mitre:access:0e67776:access/plugins/access \
 		mitre:atomic:9e2c958:atomic/plugins/atomic \
-		mitre:builder:1aca019:builder/plugins/builder \
+		mitre:builder:f2ce67c:builder/plugins/builder \
 		mitre:compass:fb88e02:compass/plugins/compass \
-		mitre:debrief:d815b60:debrief/plugins/debrief \
-		mitre:emu:5dbff82:emu/plugins/emu \
-		mitre:fieldmanual:510d0b9:fieldmanual/plugins/fieldmanual \
+		mitre:debrief:e4d4f9e:debrief/plugins/debrief \
+		mitre:emu:02a0f3e:emu/plugins/emu \
+		mitre:fieldmanual:c286e77:fieldmanual/plugins/fieldmanual \
 		mitre:gameboard:3d98c32:gameboard/plugins/gameboard \
 		mitre:human:4368dea:human/plugins/human \
 		mitre:manx:e7205ea:manx/plugins/manx \
-		mitre:mock:4ea3337:mock/plugins/mock \
 		mitre:response:889213a:response/plugins/response \
-		mitre:sandcat:de3405f:sandcat/plugins/sandcat \
+		mitre:sandcat:7c326bd:sandcat/plugins/sandcat \
 		mitre:ssl:ac5bfcb:ssl/plugins/ssl \
-		mitre:stockpile:9662f27:stockpile/plugins/stockpile \
-		mitre:training:e309b0f:training/plugins/training
+		mitre:stockpile:960f9ad:stockpile/plugins/stockpile \
+		mitre:training:b058b67:training/plugins/training
 
-USES=		go:run python:3.8+
+USES=		dos2unix go:run python:3.8+
 
 NO_ARCH=	yes
 NO_BUILD=	yes
 
+DOS2UNIX_REGEX= .*\.([yml])
 CALDERA_USER=	caldera
 CALDERA_GROUP=	caldera
 USERS=		${CALDERA_USER}

@@ -1,6 +1,7 @@
 @mode 640
 @owner caldera
 @group caldera
+%%WWWDIR%%/CITATION.cff
 %%WWWDIR%%/CONTRIBUTING.md
 %%WWWDIR%%/LICENSE
 %%WWWDIR%%/README.md
@@ -42,6 +43,7 @@
 %%WWWDIR%%/app/api/v2/schemas/config_schemas.py
 %%WWWDIR%%/app/api/v2/schemas/deploy_command_schemas.py
 %%WWWDIR%%/app/api/v2/schemas/error_schemas.py
+%%WWWDIR%%/app/api/v2/schemas/link_result_schema.py
 %%WWWDIR%%/app/api/v2/security.py
 %%WWWDIR%%/app/api/v2/validation.py
 %%WWWDIR%%/app/contacts/contact_dns.py
@@ -84,6 +86,7 @@
 %%WWWDIR%%/app/objects/secondclass/c_rule.py
 %%WWWDIR%%/app/objects/secondclass/c_variation.py
 %%WWWDIR%%/app/objects/secondclass/c_visibility.py
+%%WWWDIR%%/app/planners/atomic.py
 %%WWWDIR%%/app/service/app_svc.py
 %%WWWDIR%%/app/service/auth_svc.py
 %%WWWDIR%%/app/service/contact_svc.py
@@ -128,6 +131,7 @@
 %%WWWDIR%%/data/backup/.gitkeep
 %%WWWDIR%%/data/objectives/.gitkeep
 %%WWWDIR%%/data/payloads/.gitkeep
+%%WWWDIR%%/data/planners/aaa7c857-37a0-4c4a-85f7-4e9f7f30e31a.yml
 %%WWWDIR%%/data/results/.gitkeep
 %%WWWDIR%%/data/sources/.gitkeep
 %%WWWDIR%%/docker-compose.yml
@@ -145,7 +149,7 @@
 %%WWWDIR%%/plugins/access/data/abilities/build-capabilities/bed8f28e-c0ed-463e-9e31-d5607e5473df.yml
 %%WWWDIR%%/plugins/access/data/abilities/technical-information-gathering/567eaaba-94cc-4a27-83f8-768e5638f4e1.yml
 %%WWWDIR%%/plugins/access/data/payload/90ef8eaa-01b7-4e98-9070-105eca3bac39.yml
-%%WWWDIR%%/plugins/access/data/payloads/msf_extract.rc
+%%WWWDIR%%/plugins/access/data/payloads/msf_extract.rb
 %%WWWDIR%%/plugins/access/data/payloads/scanner.sh
 %%WWWDIR%%/plugins/access/hook.py
 %%WWWDIR%%/plugins/access/static/.gitkeep
@@ -228,7 +232,7 @@
 %%WWWDIR%%/plugins/debrief/docs/debrief1.png
 %%WWWDIR%%/plugins/debrief/docs/debrief2.png
 %%WWWDIR%%/plugins/debrief/docs/debrief3.png
-%%WWWDIR%%/plugins/debrief/docs/debrief_2020-09-14_16-03-43.pdf
+%%WWWDIR%%/plugins/debrief/docs/debrief_2023-02-24_17-08-14.pdf
 %%WWWDIR%%/plugins/debrief/downloads/.gitkeep
 %%WWWDIR%%/plugins/debrief/hook.py
 %%WWWDIR%%/plugins/debrief/requirements.txt
@@ -278,10 +282,12 @@
 %%WWWDIR%%/plugins/emu/app/emu_svc.py
 %%WWWDIR%%/plugins/emu/app/group_filtered_planner.py
 %%WWWDIR%%/plugins/emu/app/parsers/vssadmin_shadow.py
+%%WWWDIR%%/plugins/emu/conf/default.yml
 %%WWWDIR%%/plugins/emu/data/.gitkeep
 %%WWWDIR%%/plugins/emu/download_payloads.sh
 %%WWWDIR%%/plugins/emu/hook.py
 %%WWWDIR%%/plugins/emu/payloads/.gitkeep
+%%WWWDIR%%/plugins/emu/requirements.txt
 %%WWWDIR%%/plugins/emu/templates/emu.html
 %%WWWDIR%%/plugins/emu/tests/.gitkeep
 %%WWWDIR%%/plugins/emu/tests/test_emu_svc.py
@@ -323,6 +329,7 @@
 %%WWWDIR%%/plugins/fieldmanual/sphinx-docs/Uninstalling-CALDERA.md
 %%WWWDIR%%/plugins/fieldmanual/sphinx-docs/_static/lm_guide.mp4
 %%WWWDIR%%/plugins/fieldmanual/sphinx-docs/conf.py
+%%WWWDIR%%/plugins/fieldmanual/sphinx-docs/img/caldera-logo.png
 %%WWWDIR%%/plugins/fieldmanual/sphinx-docs/img/debrief_attack_path.png
 %%WWWDIR%%/plugins/fieldmanual/sphinx-docs/img/fact_relationships.png
 %%WWWDIR%%/plugins/fieldmanual/sphinx-docs/img/privileged_persistence_state_machine.png
@@ -420,23 +427,6 @@
 %%WWWDIR%%/plugins/manx/static/js/xterm.js
 %%WWWDIR%%/plugins/manx/templates/manx.html
 %%WWWDIR%%/plugins/manx/update-shells.sh
-%%WWWDIR%%/plugins/mock/.flake8
-%%WWWDIR%%/plugins/mock/.github/ISSUE_TEMPLATE/bug_report.md
-%%WWWDIR%%/plugins/mock/.github/ISSUE_TEMPLATE/config.yml
-%%WWWDIR%%/plugins/mock/.github/ISSUE_TEMPLATE/feature_request.md
-%%WWWDIR%%/plugins/mock/.github/ISSUE_TEMPLATE/question.md
-%%WWWDIR%%/plugins/mock/.github/pull_request_template.md
-%%WWWDIR%%/plugins/mock/.gitignore
-%%WWWDIR%%/plugins/mock/README.md
-%%WWWDIR%%/plugins/mock/VERSION.txt
-%%WWWDIR%%/plugins/mock/app/mock_gui_api.py
-%%WWWDIR%%/plugins/mock/app/result_generator.py
-%%WWWDIR%%/plugins/mock/app/simulation_svc.py
-%%WWWDIR%%/plugins/mock/conf/agents.yml
-%%WWWDIR%%/plugins/mock/conf/scenarios/alice.yml
-%%WWWDIR%%/plugins/mock/conf/scenarios/hypervisor.yml
-%%WWWDIR%%/plugins/mock/hook.py
-%%WWWDIR%%/plugins/mock/templates/mock.html
 %%WWWDIR%%/plugins/response/.github/ISSUE_TEMPLATE/bug_report.md
 %%WWWDIR%%/plugins/response/.github/ISSUE_TEMPLATE/config.yml
 %%WWWDIR%%/plugins/response/.github/ISSUE_TEMPLATE/feature_request.md
@@ -640,12 +630,7 @@
 %%WWWDIR%%/plugins/stockpile/LICENSE
 %%WWWDIR%%/plugins/stockpile/README.md
 %%WWWDIR%%/plugins/stockpile/VERSION.txt
-%%WWWDIR%%/plugins/stockpile/app/atomic.py
-%%WWWDIR%%/plugins/stockpile/app/batch.py
-%%WWWDIR%%/plugins/stockpile/app/buckets.py
 %%WWWDIR%%/plugins/stockpile/app/donut.py
-%%WWWDIR%%/plugins/stockpile/app/guided.py
-%%WWWDIR%%/plugins/stockpile/app/look_ahead.py
 %%WWWDIR%%/plugins/stockpile/app/obfuscators/base64_basic.py
 %%WWWDIR%%/plugins/stockpile/app/obfuscators/base64_jumble.py
 %%WWWDIR%%/plugins/stockpile/app/obfuscators/base64_no_padding.py
@@ -676,13 +661,20 @@
 %%WWWDIR%%/plugins/stockpile/app/parsers/share_mounted.py
 %%WWWDIR%%/plugins/stockpile/app/parsers/ssh.py
 %%WWWDIR%%/plugins/stockpile/app/parsers/wifipref.py
+%%WWWDIR%%/plugins/stockpile/app/planners/batch.py
+%%WWWDIR%%/plugins/stockpile/app/planners/buckets.py
+%%WWWDIR%%/plugins/stockpile/app/planners/guided.py
+%%WWWDIR%%/plugins/stockpile/app/planners/look_ahead.py
+%%WWWDIR%%/plugins/stockpile/app/planners/naive_bayes.py
 %%WWWDIR%%/plugins/stockpile/app/requirements/base_requirement.py
 %%WWWDIR%%/plugins/stockpile/app/requirements/basic.py
+%%WWWDIR%%/plugins/stockpile/app/requirements/existential.py
 %%WWWDIR%%/plugins/stockpile/app/requirements/no_backwards_movement.py
 %%WWWDIR%%/plugins/stockpile/app/requirements/not_exists.py
 %%WWWDIR%%/plugins/stockpile/app/requirements/paw_provenance.py
 %%WWWDIR%%/plugins/stockpile/app/requirements/reachable.py
 %%WWWDIR%%/plugins/stockpile/app/requirements/req_like.py
+%%WWWDIR%%/plugins/stockpile/app/requirements/universal.py
 %%WWWDIR%%/plugins/stockpile/app/stockpile_svc.py
 %%WWWDIR%%/plugins/stockpile/conf/default.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/collection/02de522f-7e0a-4544-8afc-0c195f400f5f.yml
@@ -763,6 +755,7 @@
 %%WWWDIR%%/plugins/stockpile/data/abilities/discovery/6c91884e-11ec-422f-a6ed-e76774b0daac.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/discovery/6d90e6fa-9324-4eb5-93be-9f737245bd7z.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/discovery/6e1a53c0-7352-4899-be35-fa7f364d5722.yml
+%%WWWDIR%%/plugins/stockpile/data/abilities/discovery/74d1b640-7f1e-4b36-beba-23a8228f39e0.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/discovery/7c42a30c-c8c7-44c5-80a8-862d364ac1e4.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/discovery/830bb6ed-9594-4817-b1a1-c298c0f9f425.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/discovery/85341c8c-4ecb-4579-8f53-43e3e91d7617.yml
@@ -826,12 +819,14 @@
 %%WWWDIR%%/plugins/stockpile/data/abilities/impact/68235976-2404-42a8-9105-68230cfef562.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/impact/78524da1-f347-4fbb-9295-209f1f408330.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/lateral-movement/10a9d979-e342-418a-a9b0-002c483e0fa6.yml
+%%WWWDIR%%/plugins/stockpile/data/abilities/lateral-movement/22881b9d-0efa-4ef4-9704-df0f11170cc3.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/lateral-movement/3734aa1e-c536-42b3-8912-4c91b8bdce90.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/lateral-movement/40161ad0-75bd-11e9-b475-0800200c9a66.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/lateral-movement/41bb2b7a-75af-49fd-bd15-6c827df25921.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/lateral-movement/4908fdc4-74fc-4d7c-8935-26d11ad26a8d.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/lateral-movement/620b674a-7655-436c-b645-bc3e8ea51abd.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/lateral-movement/65048ec1-f7ca-49d3-9410-10813e472b30.yml
+%%WWWDIR%%/plugins/stockpile/data/abilities/lateral-movement/96d3c175-5e58-424c-8350-d7514b28a075.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/lateral-movement/aa6ec4dd-db09-4925-b9b9-43adeb154686.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/persistence/52771610-2322-44cf-816b-a7df42b4c086.yml
 %%WWWDIR%%/plugins/stockpile/data/abilities/privilege-escalation/10681f2f-be03-44af-858d-f2b0812df185.yml
@@ -844,10 +839,12 @@
 %%WWWDIR%%/plugins/stockpile/data/adversaries/01d77744-2515-401a-a497-d9f7241aac3c.yml
 %%WWWDIR%%/plugins/stockpile/data/adversaries/09ad625e-6cba-490f-afe3-5417e7edb9c6.yml
 %%WWWDIR%%/plugins/stockpile/data/adversaries/0b73bf34-fc5b-48f7-9194-dce993b915b1.yml
+%%WWWDIR%%/plugins/stockpile/data/adversaries/1bac97ca-77fc-4c9a-835e-4de1b1b7f639.yml
 %%WWWDIR%%/plugins/stockpile/data/adversaries/50855e29-3b4e-4562-aa55-b3d7f93c26b8.yml
 %%WWWDIR%%/plugins/stockpile/data/adversaries/564ae20d-778d-4965-93dc-b523be2e2ab4.yml
 %%WWWDIR%%/plugins/stockpile/data/adversaries/78e7504d-968f-477d-8806-4d6c04b94431.yml
 %%WWWDIR%%/plugins/stockpile/data/adversaries/bcdbf6b9-14c5-495c-be84-37bce32c312b.yml
+%%WWWDIR%%/plugins/stockpile/data/adversaries/c220a8e6-609c-4d5b-9e1c-068ca01c2eec.yml
 %%WWWDIR%%/plugins/stockpile/data/adversaries/c724545d-a4cc-492e-8075-2ab9a699c847.yml
 %%WWWDIR%%/plugins/stockpile/data/adversaries/d6ea4c1e-7959-4eb1-a292-b6fd2b06c73e.yml
 %%WWWDIR%%/plugins/stockpile/data/adversaries/dbd49a4a-ba2d-40d0-9348-2db24fc4b0b6.yml
@@ -866,9 +863,9 @@
 %%WWWDIR%%/plugins/stockpile/data/adversaries/packs/f98193a0-8b5b-4b5e-a5aa-e8c3adfcd4e6.yml
 %%WWWDIR%%/plugins/stockpile/data/payloads/70632d81-bb39-40dd-bfba-cfd1f8196eb6.yml
 %%WWWDIR%%/plugins/stockpile/data/planners/254c7035-de7d-4d76-a888-2c09ba594eca.yml
+%%WWWDIR%%/plugins/stockpile/data/planners/48e1a882-1606-4910-8f2d-2352eb80cba2.yml
 %%WWWDIR%%/plugins/stockpile/data/planners/5bdec528-07ce-44cc-8997-09fe41aa2007.yml
 %%WWWDIR%%/plugins/stockpile/data/planners/788107d5-dc1e-4204-9269-38df0186d3e7.yml
-%%WWWDIR%%/plugins/stockpile/data/planners/aaa7c857-37a0-4c4a-85f7-4e9f7f30e31a.yml
 %%WWWDIR%%/plugins/stockpile/data/planners/f36c34f5-9439-4417-9640-fe83f4b7b12d.yml
 %%WWWDIR%%/plugins/stockpile/data/sources/2ccb822c-088a-4664-8976-91be8879bc1d.yml
 %%WWWDIR%%/plugins/stockpile/data/sources/4f3325d7-e6f2-4413-892a-60066052189d.yml
@@ -986,7 +983,6 @@
 %%WWWDIR%%/plugins/training/app/flags/plugins/compass/flag_0.py
 %%WWWDIR%%/plugins/training/app/flags/plugins/manx/flag_0.py
 %%WWWDIR%%/plugins/training/app/flags/plugins/manx/flag_1.py
-%%WWWDIR%%/plugins/training/app/flags/plugins/mock/flag_0.py
 %%WWWDIR%%/plugins/training/app/flags/plugins/response/flag_0.py
 %%WWWDIR%%/plugins/training/app/flags/plugins/response/flag_1.py
 %%WWWDIR%%/plugins/training/app/training_api.py
@@ -1028,7 +1024,6 @@
 %%WWWDIR%%/plugins/training/solution_guides/OperationsFlag3.md
 %%WWWDIR%%/plugins/training/solution_guides/PluginsManxFlag0.md
 %%WWWDIR%%/plugins/training/solution_guides/PluginsManxFlag1.md
-%%WWWDIR%%/plugins/training/solution_guides/PluginsMockFlag0.md
 %%WWWDIR%%/plugins/training/solution_guides/PluginsResponseFlag0.md
 %%WWWDIR%%/plugins/training/solution_guides/PluginsResponseFlag1.md
 %%WWWDIR%%/plugins/training/static/css/markdown.css
@@ -1091,6 +1086,7 @@
 %%WWWDIR%%/static/img/back-blue.png
 %%WWWDIR%%/static/img/back-grey.jpg
 %%WWWDIR%%/static/img/back-red.png
+%%WWWDIR%%/static/img/caldera-banner.png
 %%WWWDIR%%/static/img/caldera-logo.png
 %%WWWDIR%%/static/img/compass.png
 %%WWWDIR%%/static/img/contact.png
@@ -1254,6 +1250,8 @@
 %%WWWDIR%%/tests/objects/test_operation.py
 %%WWWDIR%%/tests/parsers/__init__.py
 %%WWWDIR%%/tests/parsers/test_parsers.py
+%%WWWDIR%%/tests/planners/__init__.py
+%%WWWDIR%%/tests/planners/test_atomic.py
 %%WWWDIR%%/tests/services/__init__.py
 %%WWWDIR%%/tests/services/test_app_svc.py
 %%WWWDIR%%/tests/services/test_contact_svc.py
