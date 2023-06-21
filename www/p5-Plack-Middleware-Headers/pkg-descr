@@ -1,0 +1,5 @@
+This Plack::Middleware simplifies creation (set or append), deletion (unset),
+and modification (set) of PSGI response headers. The modification can be
+enabled based on response code (code) or existing response headers(when).
+Use Plack::Middleware::Conditional to enable the middleware based in
+request headers.
