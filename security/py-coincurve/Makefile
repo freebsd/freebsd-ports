@@ -1,5 +1,5 @@
 PORTNAME=	coincurve
-DISTVERSION=	17.0.0
+DISTVERSION=	18.0.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.3.0:devel/py-cffi@${PY_FLAVOR} \
 		gmake:devel/gmake \
 		libtool:devel/libtool
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1crypto>0:devel/py-asn1crypto@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cffi>0:devel/py-cffi@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}cffi>=1.3.0:devel/py-cffi@${PY_FLAVOR}
 
 USES=		pkgconfig python:3.6+
 USE_PYTHON=	distutils autoplist
