@@ -1,6 +1,6 @@
 PORTNAME=	wsdd
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.7.0
+DISTVERSION=	0.7.1
 CATEGORIES=	net python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -23,7 +23,7 @@ GROUPS=		_wsdd
 
 PLIST_FILES=	bin/${PORTNAME} \
 		etc/rc.d/${PORTNAME} \
-		man/man1/${PORTNAME}.1.gz
+		man/man8/${PORTNAME}.8.gz
 
 post-patch:
 	${REINPLACE_CMD} 's|PYTHON|${PYTHON_CMD}|' ${WRKSRC}/etc/rc.d/${PORTNAME}
@@ -34,7 +34,7 @@ do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKSRC}/etc/rc.d/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/etc/rc.d/${PORTNAME}
-	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/man/${PORTNAME}.8 \
+		${STAGEDIR}${MANPREFIX}/man/man8/
 
 .include <bsd.port.mk>
