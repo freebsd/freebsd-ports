@@ -16,7 +16,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}versioneer>=0:devel/py-versioneer@${PY_FLA
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}logical-unification>=0.4.0:math/py-logical-unification@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	distutils autoplist pytest
+USE_PYTHON=	distutils autoplist pytest # tests fail intermittently, see https://github.com/pythological/python-cons/issues/15
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pythological
