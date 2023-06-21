@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230620:
+  AFFECTS: users of lang/elixir-devel
+  AUTHOR: dch@FreeBSD.org
+
+	Note that Elixir now *requires* OTP25+ or better at runtime.
+	For the -devel flavour you are still free to choose OTP25 or
+	OTP26, but the default OTP24 from lang/erlang will *not* work.
+
 20230618:
   AFFECTS: users of devel/soft-serve
   AUTHOR: ashish@FreeBSD.org
