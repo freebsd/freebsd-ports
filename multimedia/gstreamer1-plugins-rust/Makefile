@@ -1,5 +1,5 @@
 PORTNAME=	gstreamer1-plugins-rust
-DISTVERSION=	0.10.8
+DISTVERSION=	0.10.9
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -20,7 +20,7 @@ USE_GSTREAMER=	bad gl # webrtc
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	gstreamer
 GL_PROJECT=	gst-plugins-rs
-GL_COMMIT=	47a213b3222eb689182f680ff8b4d616ae9886c3
+GL_COMMIT=	f4324fd30e3bae4cb81ef6debe0e17270604cb54
 SHEBANG_FILES=	dependencies.py
 MESON_ARGS=	-Ddoc=disabled
 MAKE_ENV=	${CARGO_ENV}
