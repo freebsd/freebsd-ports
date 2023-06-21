@@ -1,11 +1,11 @@
-PORTNAME=	3d-ascii-viewer-c
-PORTVERSION=	1.2.0
+PORTNAME=	3d-ascii-viewer
+PORTVERSION=	1.3.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	graphics
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Viewer of 3D models in ASCII
-WWW=		https://github.com/autopawn/3d-ascii-viewer-c
+WWW=		https://github.com/autopawn/3d-ascii-viewer
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
