@@ -1,5 +1,5 @@
---- cargo-crates/libffi-sys-2.1.0/build/not_msvc.rs.orig	2022-03-07 08:06:36 UTC
-+++ cargo-crates/libffi-sys-2.1.0/build/not_msvc.rs
+--- cargo-crates/libffi-sys-2.2.1/build/not_msvc.rs.orig	2022-03-07 08:06:36 UTC
++++ cargo-crates/libffi-sys-2.2.1/build/not_msvc.rs
 @@ -50,7 +50,8 @@ pub fn configure_libffi(prefix: PathBuf, build_dir: &P
          .arg("configure")
          .arg("--with-pic")
