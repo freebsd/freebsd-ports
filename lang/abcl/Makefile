@@ -1,5 +1,5 @@
 PORTNAME=	abcl
-PORTVERSION=	1.9.1
+PORTVERSION=	1.9.2
 CATEGORIES=	lang lisp java
 MASTER_SITES=	http://abcl.org/releases/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
