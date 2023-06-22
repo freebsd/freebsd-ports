@@ -2,6 +2,7 @@ PORTNAME=	net-http
 PORTVERSION=	0.1.1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
+PKGNAMESUFFIX=	011
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	HTTP client api for Ruby
