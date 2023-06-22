@@ -1,8 +1,11 @@
 PORTNAME=	immudb
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
+DISTVERSION=	1.5.0
 CATEGORIES=	databases net
 PKGNAMESUFFIX=	${DISTVERSION:R:S/.//}
+
+PATCH_SITES=	https://github.com/codenotary/immudb/commit/
+PATCHFILES=	0df15e08d84e89509499a84d1b5266b5612c0301.patch:-p1
 
 MAINTAINER=	ronald@FreeBSD.org
 COMMENT=	Database with built-in cryptographic proof and verification

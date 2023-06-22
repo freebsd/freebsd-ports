@@ -1,5 +1,7 @@
-TIMESTAMP = 1685050165
-SHA256 (go/databases_immudb/immudb-v1.4.1/v1.4.1.mod) = cba588a430551addda983e4864a96d48d0b9205f9da1b92c3641af9c86b39b4e
-SIZE (go/databases_immudb/immudb-v1.4.1/v1.4.1.mod) = 2388
-SHA256 (go/databases_immudb/immudb-v1.4.1/v1.4.1.zip) = d8aca5ed02f6080c845c9d60e679fa4432d300084cd3e6108a9be82b10167378
-SIZE (go/databases_immudb/immudb-v1.4.1/v1.4.1.zip) = 3019202
+TIMESTAMP = 1687460511
+SHA256 (go/databases_immudb/immudb-v1.5.0/v1.5.0.mod) = 0b625efa9ff12cf898d6aca289132418011fa0d582bec3e6cba8ce8bb3072ea0
+SIZE (go/databases_immudb/immudb-v1.5.0/v1.5.0.mod) = 5067
+SHA256 (go/databases_immudb/immudb-v1.5.0/v1.5.0.zip) = 57d030659fdf5b6554990445d0630afa79d8e4fb985315d362d6db56192428e8
+SIZE (go/databases_immudb/immudb-v1.5.0/v1.5.0.zip) = 3146310
+SHA256 (go/databases_immudb/immudb-v1.5.0/0df15e08d84e89509499a84d1b5266b5612c0301.patch) = 0703b8f09b7077c3621650cae53655e9c8a03013420f42662c50aeaa5aac8a6e
+SIZE (go/databases_immudb/immudb-v1.5.0/0df15e08d84e89509499a84d1b5266b5612c0301.patch) = 947
