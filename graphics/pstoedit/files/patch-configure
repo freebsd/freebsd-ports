@@ -1,54 +1,46 @@
---- configure.orig	2023-04-21 16:38:20 UTC
+--- configure.orig	2023-06-22 08:13:13 UTC
 +++ configure
-@@ -8517,6 +8517,7 @@ else
-   cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- #include <stdlib.h>
-+#include <unistd.h>
- #include <stdarg.h>
- #include <string.h>
- #include <float.h>
-@@ -17994,12 +17995,12 @@ if test -n "$LIBMAGICK_CFLAGS"; then
+@@ -19097,12 +19097,12 @@ if test -n "$LIBMAGICK_CFLAGS"; then
      pkg_cv_LIBMAGICK_CFLAGS="$LIBMAGICK_CFLAGS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"ImageMagick++\""; } >&5
+-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"ImageMagick++\""; } >&5
 -  ($PKG_CONFIG --exists --print-errors "ImageMagick++") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"Magick++\""; } >&5
++    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"Magick++\""; } >&5
 +  ($PKG_CONFIG --exists --print-errors "Magick++") 2>&5
    ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_LIBMAGICK_CFLAGS=`$PKG_CONFIG --cflags "ImageMagick++" 2>/dev/null`
 +  pkg_cv_LIBMAGICK_CFLAGS=`$PKG_CONFIG --cflags "Magick++" 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -18011,12 +18012,12 @@ if test -n "$LIBMAGICK_LIBS"; then
+@@ -19114,12 +19114,12 @@ if test -n "$LIBMAGICK_LIBS"; then
      pkg_cv_LIBMAGICK_LIBS="$LIBMAGICK_LIBS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
--    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"ImageMagick++\""; } >&5
+-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"ImageMagick++\""; } >&5
 -  ($PKG_CONFIG --exists --print-errors "ImageMagick++") 2>&5
-+    { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"Magick++\""; } >&5
++    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"Magick++\""; } >&5
 +  ($PKG_CONFIG --exists --print-errors "Magick++") 2>&5
    ac_status=$?
-   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
 -  pkg_cv_LIBMAGICK_LIBS=`$PKG_CONFIG --libs "ImageMagick++" 2>/dev/null`
 +  pkg_cv_LIBMAGICK_LIBS=`$PKG_CONFIG --libs "Magick++" 2>/dev/null`
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -18037,9 +18038,9 @@ else
+@@ -19140,9 +19140,9 @@ else
          _pkg_short_errors_supported=no
  fi
          if test $_pkg_short_errors_supported = yes; then
--	        LIBMAGICK_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "ImageMagick++" 2>&1`
-+	        LIBMAGICK_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "Magick++" 2>&1`
+-                LIBMAGICK_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "ImageMagick++" 2>&1`
++                LIBMAGICK_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors --cflags --libs "Magick++" 2>&1`
          else
--	        LIBMAGICK_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "ImageMagick++" 2>&1`
-+	        LIBMAGICK_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "Magick++" 2>&1`
+-                LIBMAGICK_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "ImageMagick++" 2>&1`
++                LIBMAGICK_PKG_ERRORS=`$PKG_CONFIG --print-errors --cflags --libs "Magick++" 2>&1`
          fi
- 	# Put the nasty error message in config.log where it belongs
- 	echo "$LIBMAGICK_PKG_ERRORS" >&5
+         # Put the nasty error message in config.log where it belongs
+         echo "$LIBMAGICK_PKG_ERRORS" >&5
