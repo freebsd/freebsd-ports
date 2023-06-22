@@ -121,6 +121,7 @@
 %%DATADIR%%/symbols/MCU_RaspberryPi.kicad_sym
 %%DATADIR%%/symbols/MCU_Renesas_Synergy_S1.kicad_sym
 %%DATADIR%%/symbols/MCU_STC.kicad_sym
+%%DATADIR%%/symbols/MCU_ST_STM32C0.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32F0.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32F1.kicad_sym
 %%DATADIR%%/symbols/MCU_ST_STM32F2.kicad_sym
@@ -198,6 +199,7 @@
 %%DATADIR%%/symbols/Sensor_Touch.kicad_sym
 %%DATADIR%%/symbols/Sensor_Voltage.kicad_sym
 %%DATADIR%%/symbols/Simulation_SPICE.kicad_sym
+%%DATADIR%%/symbols/Simulation_SPICE.sp
 %%DATADIR%%/symbols/Switch.kicad_sym
 %%DATADIR%%/symbols/Timer.kicad_sym
 %%DATADIR%%/symbols/Timer_PLL.kicad_sym
@@ -212,5 +214,4 @@
 %%DATADIR%%/symbols/Valve.kicad_sym
 %%DATADIR%%/symbols/Video.kicad_sym
 %%DATADIR%%/symbols/power.kicad_sym
-%%DATADIR%%/symbols/pspice.kicad_sym
 %%DATADIR%%/template/sym-lib-table
