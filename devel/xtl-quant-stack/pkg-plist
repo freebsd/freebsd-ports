@@ -2,6 +2,7 @@ include/xtl/xany.hpp
 include/xtl/xbase64.hpp
 include/xtl/xbasic_fixed_string.hpp
 include/xtl/xclosure.hpp
+include/xtl/xcompare.hpp
 include/xtl/xcomplex.hpp
 include/xtl/xcomplex_sequence.hpp
 include/xtl/xdynamic_bitset.hpp
