@@ -1,5 +1,5 @@
 PORTNAME=	udev-gothic
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 PORTREVISION=	0
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	https://github.com/yuru7/udev-gothic/releases/download/v${PORTVERSION}/
