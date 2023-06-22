@@ -170,6 +170,7 @@
     SUBDIR += pslib
     SUBDIR += pstotext
     SUBDIR += psutils
+    SUBDIR += py-PyMuPDF
     SUBDIR += py-collidoscope
     SUBDIR += py-dehinter
     SUBDIR += py-font-v

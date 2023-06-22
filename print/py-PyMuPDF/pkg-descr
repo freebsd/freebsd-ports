@@ -1,0 +1,11 @@
+PyMuPDF adds Python bindings and abstractions to MuPDF, a lightweight
+PDF, XPS, and eBook viewer, renderer, and toolkit. Both PyMuPDF and
+MuPDF are maintained and developed by Artifex Software, Inc.
+
+MuPDF can access files in PDF, XPS, OpenXPS, CBZ, EPUB and FB2 (eBooks)
+formats, and it is known for its top performance and exceptional rendering
+quality.
+
+With PyMuPDF you can access files with extensions like .pdf, .xps, .oxps,
+.cbz, .fb2 or .epub. In addition, about 10 popular image formats can also
+be handled like documents: .png, .jpg, .bmp, .tiff, etc.
