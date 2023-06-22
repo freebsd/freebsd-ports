@@ -7649,3 +7649,4 @@ textproc/apache-solr9|textproc/apache-solr|2023-06-18|New stable release
 games/poker-eval||2023-06-20|Upstream vanished
 graphics/3d-ascii-viewer-c|graphics/3d-ascii-viewer|2023-06-21|Project was renamed
 archivers/libunrar6|archivers/libunrar|2023-06-21|Moved to unversioned origin. Use archivers/libunrar instead
+japanese/font-plemoljp-nfj||2023-06-22|Removed by upsteam

@@ -100,7 +100,6 @@
     SUBDIR += font-plemoljp
     SUBDIR += font-plemoljp-hs
     SUBDIR += font-plemoljp-nf
-    SUBDIR += font-plemoljp-nfj
     SUBDIR += font-ricty
     SUBDIR += font-ricty-discord
     SUBDIR += font-rounded-mgenplus
