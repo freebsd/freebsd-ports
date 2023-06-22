@@ -6,6 +6,8 @@ CATEGORIES=	games
 MAINTAINER=	sbruno@FreeBSD.org
 COMMENT=	Virtual tabletop client and server for multiplayer card games
 WWW=		http://www.woogerworks.com
+DEPRECATED=	Upstream releases haven't occured for multiple years and will require a new portbuild.
+EXPIRATION_DATE=2023-07-31
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
