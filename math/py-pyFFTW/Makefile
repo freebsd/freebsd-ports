@@ -1,6 +1,5 @@
 PORTNAME=	pyFFTW
-DISTVERSION=	0.13.0
-PORTREVISION=	1
+DISTVERSION=	0.13.1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,5 +21,8 @@ RUN_DEPENDS=	${PY_DEPENDS}
 
 USES=		python:3.8+ localbase:ldflags
 USE_PYTHON=	distutils cython autoplist
+
+post-install:
+	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/pyfftw/pyfftw${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>
