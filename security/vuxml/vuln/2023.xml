@@ -2833,7 +2833,7 @@
     <affects>
       <package>
     <name>py39-setuptools</name>
-    <range><lt>65.5.1</lt></range>
+    <range><lt>63.1.0_1</lt></range>
       </package>
     </affects>
     <description>
@@ -2842,7 +2842,7 @@
     <blockquote cite="https://osv.dev/vulnerability/GHSA-r9hx-vwmv-q579">
       <p>Python Packaging Authority (PyPA)'s setuptools is a library designed to facilitate packaging Python projects.</p>
       <p>Setuptools version 65.5.0 and earlier could allow remote attackers to cause a denial of service by fetching malicious HTML from a PyPI package or custom PackageIndex page due to a vulnerable Regular Expression in `package_index`.</p>
-      <p>This has been patched in version 65.5.1.</p>
+      <p>This has been patched in version 65.5.1. The patch backported to the revision 63.1.0_1.</p>
     </blockquote>
       </body>
     </description>
