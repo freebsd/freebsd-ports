@@ -1138,6 +1138,7 @@
     SUBDIR += rubygem-omniauth-saml
     SUBDIR += rubygem-omniauth-saml1
     SUBDIR += rubygem-omniauth-shibboleth
+    SUBDIR += rubygem-omniauth-shibboleth-redux
     SUBDIR += rubygem-omniauth1
     SUBDIR += rubygem-openssl
     SUBDIR += rubygem-openssl-ccm

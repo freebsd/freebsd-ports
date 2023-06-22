@@ -2069,6 +2069,7 @@
     SUBDIR += rubygem-nanoc-deploying
     SUBDIR += rubygem-nested_form
     SUBDIR += rubygem-net-http
+    SUBDIR += rubygem-net-http011
     SUBDIR += rubygem-net-http-digest_auth
     SUBDIR += rubygem-net-http-persistent
     SUBDIR += rubygem-net-http-persistent2
