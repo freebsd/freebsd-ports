@@ -64,9 +64,7 @@ share/icons/hicolor/48x48/apps/sublime-merge.png
 %%DATADIR%%/Packages/XML.sublime-package
 %%DATADIR%%/Packages/YAML.sublime-package
 %%DATADIR%%/changelog.txt
-%%DATADIR%%/crash_reporter
-%%DATADIR%%/git-credential-sublime
-%%DATADIR%%/ssh-askpass-sublime
+@(,,555) %%DATADIR%%/crash_reporter
+@(,,555) %%DATADIR%%/git-credential-sublime
+@(,,555) %%DATADIR%%/ssh-askpass-sublime
 @(,,555) %%DATADIR%%/sublime_merge
-%%DATADIR%%/sublime_merge.desktop
-%%DATADIR%%/sublime_merge.desktop.orig
