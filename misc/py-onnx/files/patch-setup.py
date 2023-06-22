@@ -1,6 +1,6 @@
---- setup.py.orig	2023-02-22 16:34:50 UTC
+--- setup.py.orig	2023-04-12 23:29:42 UTC
 +++ setup.py
-@@ -56,11 +56,12 @@ COVERAGE = bool(os.getenv("COVERAGE", "0") == "1")
+@@ -59,11 +59,12 @@ COVERAGE = bool(os.getenv("COVERAGE", "0") == "1")
  ################################################################################
  
  try:
