@@ -2833,6 +2833,8 @@
     <affects>
       <package>
     <name>py39-setuptools</name>
+    <range><lt>44.1.1</lt></range>
+    <range><ge>57.0.0</ge><lt>58.5.3_3</lt></range>
     <range><lt>63.1.0_1</lt></range>
       </package>
     </affects>
