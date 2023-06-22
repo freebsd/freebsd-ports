@@ -1,11 +1,11 @@
 PORTNAME=	terminus-font
-PORTVERSION=	4.48
+PORTVERSION=	4.49.1
 CATEGORIES=	x11-fonts
-MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:tl}/${PORTNAME}-${PORTVERSION:R}
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Terminus Font - a clean fixed width font
-WWW=		http://terminus-font.sourceforge.net
+WWW=		https://terminus-font.sourceforge.net
 
 LICENSE=	OFL11
 
