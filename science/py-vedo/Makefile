@@ -1,5 +1,5 @@
 PORTNAME=	vedo
-DISTVERSION=	2023.4.5
+DISTVERSION=	2023.4.6
 CATEGORIES=	science graphics python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>0:devel/py-deprecated@${PY_FLAVOR
 		bash:shells/bash
 
 USES=		python:3.6+ shebangfix
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils concurrent autoplist
 
 SHEBANG_GLOB=	*.sh
 
