@@ -735,6 +735,7 @@
     SUBDIR += sidplay
     SUBDIR += sidplay2
     SUBDIR += sidplayer
+    SUBDIR += sidplayfp
     SUBDIR += simplemod
     SUBDIR += siren
     SUBDIR += snack
