@@ -197,6 +197,7 @@ share/icons/hicolor/scalable/mimetypes/application-x-kicad-schematic.svg
 %%DATADIR%%/demos/simulation/laser_driver/laser_driver.kicad_sch
 %%DATADIR%%/demos/simulation/laser_driver/laser_driver_schlib.kicad_sym
 %%DATADIR%%/demos/simulation/laser_driver/sym-lib-table
+%%DATADIR%%/demos/simulation/pspice/2n2222.model
 %%DATADIR%%/demos/simulation/pspice/pspice.kicad_pro
 %%DATADIR%%/demos/simulation/pspice/pspice.kicad_sch
 %%DATADIR%%/demos/simulation/pspice/schematic_libspice.kicad_sym
