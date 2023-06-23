@@ -1,6 +1,6 @@
 PORTNAME=	c-lightning
 # To build from an arbitrary git commit comment PORTVERSION and PORTREVISION (if present)
-PORTVERSION=	0.11.2
+PORTVERSION=	23.05.1
 DISTVERSIONPREFIX=	v
 # and uncomment the following two lines (use for example -git-HEAD or -git-f8d8348c)
 #PORTVERSION=	0
@@ -14,20 +14,29 @@ WWW=		https://github.com/ElementsProject/lightning
 LICENSE=	MIT
 
 BUILD_DEPENDS=	bash:shells/bash \
+		lowdown:textproc/lowdown \
 		${PYTHON_PKGNAMEPREFIX}mako>=1.0.14:textproc/py-mako@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mrkd>=0.2.0_1:devel/py-mrkd@${PY_FLAVOR}
 LIB_DEPENDS=	libgmp.so:math/gmp \
-		libsodium.so:security/libsodium \
-		libsqlite3.so:databases/sqlite3
+		libsodium.so:security/libsodium
 RUN_DEPENDS=	bitcoin-cli:net-p2p/bitcoin-utils
 
-USES=		autoreconf:build compiler:c11 cpe gettext gmake libtool \
-		python:3.5+,build
+USES=		autoreconf:build \
+		compiler:c11 \
+		cpe \
+		gettext \
+		gmake \
+		libtool \
+		python:3.5+,build \
+		shebangfix
 CPE_VENDOR=	elementsproject
 BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 ALL_TARGET=	default
+SHEBANG_FILES=	tools/reckless
 
 OPTIONS_DEFINE=		COMPATIBILITY DEVELOPER EXPERIMENTAL
+OPTIONS_MULTI=		STORAGE
+OPTIONS_MULTI_STORAGE=	POSTGRESQL SQLITE
 OPTIONS_RADIO=		TESTING
 OPTIONS_RADIO_TESTING=	ASAN VALGRIND
 
@@ -37,12 +46,17 @@ DEVELOPER_CONFIGURE_ENABLE=	developer
 DEVELOPER_DESC=			Developer mode, good for testing
 EXPERIMENTAL_CONFIGURE_ENABLE=	experimental-features
 EXPERIMENTAL_DESC=		Enable experimental features
+POSTGRESQL_DESC=		Use PostgreSQL for storage
+POSTGRESQL_USES=		pgsql
+WANT_PGSQL=			client
+SQLITE_DESC=			Use SQLite for storage
+SQLITE_USES=			sqlite:3
 ASAN_CONFIGURE_ENABLE=		address-sanitizer
 ASAN_DESC=			Compile with address-sanitizer
 VALGRIND_CONFIGURE_ENABLE=	valgrind
 VALGRIND_DESC=			Run tests with Valgrind
 
-OPTIONS_DEFAULT=COMPATIBILITY
+OPTIONS_DEFAULT=COMPATIBILITY SQLITE
 
 HAS_CONFIGURE=	yes
 
@@ -53,8 +67,8 @@ GIT_COMMIT=	${PKGNAMESUFFIX:C/-git-//}
 GIT_COMMIT=	${DISTVERSIONPREFIX}${PORTVERSION}
 .endif
 GH_TUPLE=	ElementsProject:lightning:${GIT_COMMIT} \
-		ElementsProject:libwally-core:f7c0824e56a06:ext1/external/libwally-core \
-		ElementsProject:secp256k1-zkp:6c0aecf72b1f4:ext2/external/libwally-core/src/secp256k1 \
+		ElementsProject:libwally-core:9f2f42df357f5:ext1/external/libwally-core \
+		ElementsProject:secp256k1-zkp:6ec1ff6040164:ext2/external/libwally-core/src/secp256k1 \
 		ianlancetaylor:libbacktrace:2446c66076480ce:ext3/external/libbacktrace \
 		zserge:jsmn:18e9fe42cbfe21d65076f5c77ae2be3:ext4/external/jsmn \
 		valyala:gheap:67fc83bc953324f4759e52951921d:ext5/external/gheap
@@ -75,6 +89,32 @@ CPPFLAGS+=       -Wno-error=unused-but-set-variable
 .endif
 
 post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lightning-cli
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lightning-hsmtool
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/lightningd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/lightning_channeld
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/lightning_closingd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/lightning_connectd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/lightning_dualopend
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/lightning_gossipd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/lightning_hsmd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/lightning_onchaind
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/lightning_openingd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/lightning_websocketd
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/autoclean
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/bcli
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/bookkeeper
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/chanbackup
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/commando
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/fetchinvoice
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/funder
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/keysend
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/offers
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/pay
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/spenderp
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/sql
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/topology
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/c-lightning/plugins/txprepare
 	${INSTALL_DATA} \
 		${WRKDIR}/lightningd-bitcoin.conf.sample \
 		${STAGEDIR}${PREFIX}/etc/lightningd-bitcoin.conf.sample

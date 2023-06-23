@@ -1,6 +1,18 @@
---- Makefile.orig	2020-02-17 08:37:09 UTC
+--- Makefile.orig	2023-06-06 02:31:42 UTC
 +++ Makefile
-@@ -457,7 +458,7 @@ pkglibexecdir = $(libexecdir)/$(PKGNAME)
+@@ -260,9 +260,9 @@ ifeq ($(STATIC),1)
+ # For MacOS, Jacob Rapoport <jacob@rumblemonkey.com> changed this to:
+ #  -L/usr/local/lib -Wl,-lgmp -lsqlite3 -lz -Wl,-lm -lpthread -ldl $(COVFLAGS)
+ # But that doesn't static link.
+-LDLIBS = -L$(CPATH) -Wl,-dn -lgmp $(SQLITE3_LDLIBS) -lz -Wl,-dy -lm -lpthread -ldl $(COVFLAGS)
++LDLIBS = -L$(LIBRARY_PATH) -Wl,-dn -lgmp $(SQLITE3_LDLIBS) -lz -Wl,-dy -lm -lpthread -ldl $(COVFLAGS)
+ else
+-LDLIBS = -L$(CPATH) -lm -lgmp $(SQLITE3_LDLIBS) -lz $(COVFLAGS)
++LDLIBS = -L$(LIBRARY_PATH) -lm -lgmp $(SQLITE3_LDLIBS) -lz $(COVFLAGS)
+ endif
+ 
+ # If we have the postgres client library we need to link against it as well
+@@ -750,7 +750,7 @@ docdir = $(datadir)/doc/$(PKGNAME)
  plugindir = $(pkglibexecdir)/plugins
  datadir = $(PREFIX)/share
  docdir = $(datadir)/doc/$(PKGNAME)
@@ -9,15 +21,3 @@
  man1dir = $(mandir)/man1
  man5dir = $(mandir)/man5
  man7dir = $(mandir)/man7
-@@ -466,7 +467,11 @@ man8dir = $(mandir)/man8
- # Commands
- MKDIR_P = mkdir -p
- INSTALL = install
-+ifeq ($(DEVELOPER),1)
- INSTALL_PROGRAM = $(INSTALL)
-+else
-+INSTALL_PROGRAM = $(INSTALL) -s
-+endif
- INSTALL_DATA = $(INSTALL) -m 644
- 
- # Tags needed by some package systems.
