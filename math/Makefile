@@ -1035,6 +1035,7 @@
     SUBDIR += py-random2
     SUBDIR += py-reals
     SUBDIR += py-rectangle-packer
+    SUBDIR += py-resample
     SUBDIR += py-roman
     SUBDIR += py-rpy2
     SUBDIR += py-rustworkx
