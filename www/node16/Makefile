@@ -108,6 +108,10 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tools_v8__gypfiles_v8.gyp
 CONFIGURE_ARGS+=	--openssl-no-asm
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/tools/v8_gypfiles/v8.gyp
