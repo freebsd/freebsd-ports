@@ -21,6 +21,8 @@ include/vulkan/generated/vk_validation_error_messages.h
 include/vulkan/utils/cast_utils.h
 include/vulkan/utils/hash_util.h
 include/vulkan/utils/hash_vk_types.h
+include/vulkan/utils/ray_tracing_utils.cpp
+include/vulkan/utils/ray_tracing_utils.h
 include/vulkan/utils/vk_layer_extension_utils.cpp
 include/vulkan/utils/vk_layer_extension_utils.h
 include/vulkan/utils/vk_layer_utils.cpp
