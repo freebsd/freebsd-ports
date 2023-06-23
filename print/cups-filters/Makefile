@@ -133,6 +133,12 @@ PSPOPPLER_RUN_DEPENDS=		pdftops:graphics/poppler-utils
 PSPOPPLER_CONFIGURE_ON=		--with-pdftops=pdftops
 PSPOPPLER_DESC=			Poppler pdftops(1)
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=dynamic-exception-spec
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
 		-e 's|/etc|${PREFIX}&|' \
