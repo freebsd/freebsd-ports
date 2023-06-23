@@ -12,8 +12,10 @@
 %%DATADIR%%/bin/kafka-delegation-tokens.sh
 %%DATADIR%%/bin/kafka-delete-records.sh
 %%DATADIR%%/bin/kafka-dump-log.sh
+%%DATADIR%%/bin/kafka-e2e-latency.sh
 %%DATADIR%%/bin/kafka-features.sh
 %%DATADIR%%/bin/kafka-get-offsets.sh
+%%DATADIR%%/bin/kafka-jmx.sh
 %%DATADIR%%/bin/kafka-leader-election.sh
 %%DATADIR%%/bin/kafka-log-dirs.sh
 %%DATADIR%%/bin/kafka-metadata-quorum.sh
@@ -106,6 +108,7 @@
 %%DATADIR%%/libs/kafka-streams-scala_2.13-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-streams-test-utils-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/kafka-tools-%%PORTVERSION%%.jar
+%%DATADIR%%/libs/kafka-tools-api-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/lz4-java-1.8.0.jar
 %%DATADIR%%/libs/maven-artifact-3.8.4.jar
 %%DATADIR%%/libs/metrics-core-2.2.0.jar
@@ -132,12 +135,12 @@
 %%DATADIR%%/libs/scala-reflect-2.13.10.jar
 %%DATADIR%%/libs/slf4j-api-1.7.36.jar
 %%DATADIR%%/libs/slf4j-reload4j-1.7.36.jar
-%%DATADIR%%/libs/snappy-java-1.1.8.4.jar
-%%DATADIR%%/libs/swagger-annotations-2.2.0.jar
+%%DATADIR%%/libs/snappy-java-1.1.10.0.jar
+%%DATADIR%%/libs/swagger-annotations-2.2.8.jar
 %%DATADIR%%/libs/trogdor-%%PORTVERSION%%.jar
 %%DATADIR%%/libs/zookeeper-3.6.4.jar
 %%DATADIR%%/libs/zookeeper-jute-3.6.4.jar
-%%DATADIR%%/libs/zstd-jni-1.5.2-1.jar
+%%DATADIR%%/libs/zstd-jni-1.5.5-1.jar
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/api.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/configuration.html
 %%PORTDOCS%%%%DOCSDIR%%/site-docs/connect.html

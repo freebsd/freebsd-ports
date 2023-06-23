@@ -1,5 +1,5 @@
 PORTNAME=	kafka
-DISTVERSION=	3.4.1
+DISTVERSION=	3.5.0
 CATEGORIES=	net java
 MASTER_SITES=	APACHE/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}_2.13-${PORTVERSION}
@@ -51,7 +51,8 @@ KAFKA_BINS=	connect-distributed.sh connect-mirror-maker.sh \
 		kafka-console-consumer.sh kafka-console-producer.sh \
 		kafka-consumer-groups.sh kafka-consumer-perf-test.sh \
 		kafka-delegation-tokens.sh kafka-delete-records.sh \
-		kafka-dump-log.sh kafka-features.sh kafka-get-offsets.sh \
+		kafka-dump-log.sh kafka-e2e-latency.sh kafka-features.sh \
+		kafka-get-offsets.sh kafka-jmx.sh \
 		kafka-leader-election.sh kafka-log-dirs.sh \
 		kafka-metadata-quorum.sh kafka-metadata-shell.sh \
 		kafka-mirror-maker.sh kafka-producer-perf-test.sh \
