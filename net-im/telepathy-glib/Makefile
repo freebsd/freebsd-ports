@@ -23,4 +23,10 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-vala-bindings
 INSTALL_TARGET=	install-strip
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.mk>
