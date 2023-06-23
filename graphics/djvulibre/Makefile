@@ -38,6 +38,12 @@ DESKTOPFILES_DESC=	Install icons and mime types
 DESKTOPFILES_CONFIGURE_ENABLE=	desktopfiles
 DESKTOPFILES_USES=	gnome
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
+.endif
+
 post-patch:
 # Remove custom optimization compiler flags
 	@${REINPLACE_CMD} -e '/-[Og]\*)/d ; \
