@@ -1,0 +1,2 @@
+jacobi package for fast numerical derivatives for analytic functions with
+arbitrary round-off error and error propagation.
