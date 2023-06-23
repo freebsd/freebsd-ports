@@ -1,6 +1,6 @@
 PORTNAME=	tesseract
 PORTVERSION=	5.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -20,7 +20,7 @@ LIB_DEPENDS=	liblept.so:graphics/leptonica \
 
 RUN_DEPENDS=	tesseract-data>=0:graphics/tesseract-data
 
-USES=		autoreconf compiler:c++11-lang cpe gnome libarchive libtool \
+USES=		autoreconf compiler:c++20-lang cpe gnome libarchive libtool \
 		localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 
@@ -49,6 +49,7 @@ TOOLS_USE=	GNOME=cairo,glib20,pango
 
 .if exists(/usr/include/omp.h)
 CMAKE_ON=	OPENMP_BUILD
+LDFLAGS+=	-lomp
 .endif
 
 post-install-DOCS-on:
