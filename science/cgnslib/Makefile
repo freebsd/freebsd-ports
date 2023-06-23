@@ -52,6 +52,12 @@ TOOLS_CMAKE_BOOL=	CGNS_BUILD_CGNSTOOLS
 TOOLS_CMAKE_ON=		-DTCL_INCLUDE_PATH:STRING="${TCL_INCLUDEDIR}" \
 			-DTK_INCLUDE_PATH:STRING="${TK_INCLUDEDIR}"
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-install:
 	${RLN} ${STAGEDIR}${PREFIX}/lib/libcgns.so.${PORTVERSION:R} \
 		${STAGEDIR}${PREFIX}/lib/libcgns.so.${PORTVERSION:R:R}
