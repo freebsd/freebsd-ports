@@ -85,5 +85,3 @@ share/icons/hicolor/48x48/apps/sublime-text.png
 @(,,555) %%DATADIR%%/plugin_host-3.3
 @(,,555) %%DATADIR%%/plugin_host-3.8
 @(,,555) %%DATADIR%%/sublime_text
-%%DATADIR%%/sublime_text.desktop
-%%DATADIR%%/sublime_text.desktop.orig
