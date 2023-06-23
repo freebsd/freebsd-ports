@@ -1,0 +1,16 @@
+numba-stats provides numba-accelerated implementations of statistical functions
+for common probability distributions.
+
+* Uniform
+* (Truncated) Normal
+* Log-normal
+* Poisson
+* (Truncated) Exponential
+* Student's t
+* Voigtian
+* Crystal Ball
+* Generalised double-sided Crystal Ball
+* Tsallis-Hagedorn, a model for the minimum bias pT distribution
+* Q-Gaussian
+* Bernstein density
+* Cruijff density

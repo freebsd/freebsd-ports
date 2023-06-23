@@ -978,6 +978,7 @@
     SUBDIR += py-networkx
     SUBDIR += py-nevergrad
     SUBDIR += py-nlopt
+    SUBDIR += py-numba-stats
     SUBDIR += py-numdifftools
     SUBDIR += py-numexpr
     SUBDIR += py-numpoly
