@@ -1,16 +1,28 @@
---- Engine/Makefile-defs.linux.orig	2019-02-12 12:39:10 UTC
+--- Engine/Makefile-defs.linux.orig	2023-06-04 18:08:48 UTC
 +++ Engine/Makefile-defs.linux
-@@ -1,6 +1,6 @@
- INCDIR = ../Engine ../Common ../Common/libinclude ../Plugins
+@@ -6,14 +6,14 @@ LIBDIR =
+ INCDIR = ../Engine ../Common ../Common/libinclude ../Common/libsrc/alfont-2.0.9 ../Engine/libsrc/apeg-1.2.1/ ../libsrc/mojoAL ../Plugins ../Engine/libsrc/glad/include ../libsrc/glm $(ALLEGRO_SRCDIR)/include
  LIBDIR =
--CFLAGS := -O2 -g -fsigned-char -Wfatal-errors -DNDEBUG -DALLEGRO_NO_FIX_ALIASES -DAGS_RUNTIME_PATCH_ALLEGRO -DAGS_HAS_CD_AUDIO -DAGS_CASE_SENSITIVE_FILESYSTEM -DALLEGRO_STATICLINK -DLINUX_VERSION -DDISABLE_MPEG_AUDIO -DBUILTIN_PLUGINS -DRTLD_NEXT $(shell pkg-config --cflags freetype2) $(CFLAGS)
-+CFLAGS := -O2 -fsigned-char -Wfatal-errors -DNDEBUG -DALLEGRO_NO_FIX_ALIASES -DAGS_RUNTIME_PATCH_ALLEGRO -DAGS_CASE_SENSITIVE_FILESYSTEM -DALLEGRO_STATICLINK -DLINUX_VERSION -DDISABLE_MPEG_AUDIO -DBUILTIN_PLUGINS -DRTLD_NEXT $(shell pkg-config --cflags freetype2) $(CFLAGS)
- CXXFLAGS := -fno-rtti -Wno-write-strings $(CXXFLAGS)
- LIBS := -rdynamic -laldmb -ldumb -Wl,-Bdynamic
- LIBS += $(shell pkg-config --libs allegro)
-@@ -44,4 +44,4 @@ platform/linux/acpllnx.cpp \
- platform/util/pe.c \
+ 
+-CFLAGS := -O2 -g \
++CFLAGS := \
+     -fsigned-char -fno-strict-aliasing -fwrapv \
+     -Wunused-result \
+     -Wno-unused-value  \
+     -Werror=write-strings -Werror=format -Werror=format-security \
+     -DNDEBUG \
+     -DALLEGRO_STATICLINK \
+-    -DLINUX_VERSION -DBUILTIN_PLUGINS -DHAVE_FSEEKO -DDISABLE_MPEG_AUDIO -DAGS_CASE_SENSITIVE_FILESYSTEM -DAGS_HAS_CD_AUDIO \
++    -DLINUX_VERSION -DBUILTIN_PLUGINS -DHAVE_FSEEKO -DDISABLE_MPEG_AUDIO -DAGS_CASE_SENSITIVE_FILESYSTEM \
+     -D_FILE_OFFSET_BITS=64 -DRTLD_NEXT \
+     $(FT_CFLAGS) $(CFLAGS)
+ 
+@@ -58,7 +58,7 @@ BASE_PLATFORM = \
+ endif
+ 
+ BASE_PLATFORM = \
+-platform/linux/acpllnx.cpp \
++platform/bsd/acplbsd.cpp \
  platform/util/libc.c
  
--CDA = libsrc/libcda-0.5/linux.c
-+# CDA = libsrc/libcda-0.5/linux.c
+ CDA := libsrc/libcda-0.5/linux.c
