@@ -686,7 +686,6 @@
     SUBDIR += p5-OpenCA-CRL
     SUBDIR += p5-OpenCA-CRR
     SUBDIR += p5-OpenCA-OpenSSL
-    SUBDIR += p5-OpenCA-PKCS7
     SUBDIR += p5-OpenCA-REQ
     SUBDIR += p5-OpenCA-X509
     SUBDIR += p5-PBKDF2-Tiny
