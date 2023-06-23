@@ -1,6 +1,0 @@
-%%PERL5_MAN3%%/OpenCA::OpenSSL.3.gz
-%%SITE_ARCH%%/OpenCA/OpenSSL.pm
-%%SITE_ARCH%%/OpenCA/OpenSSL.pod
-%%SITE_ARCH%%/OpenCA/OpenSSL/SMIME.pm
-%%SITE_ARCH%%/auto/OpenCA/OpenSSL/OpenSSL.so
-%%SITE_ARCH%%/auto/OpenCA/OpenSSL/autosplit.ix
