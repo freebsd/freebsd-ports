@@ -5,7 +5,6 @@
     SUBDIR += Coin
     SUBDIR += GraphicsMagick
     SUBDIR += Hermes
-    SUBDIR += IPA
     SUBDIR += ImageMagick6
     SUBDIR += ImageMagick7
     SUBDIR += O2-tools

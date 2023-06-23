@@ -7652,3 +7652,4 @@ graphics/3d-ascii-viewer-c|graphics/3d-ascii-viewer|2023-06-21|Project was renam
 archivers/libunrar6|archivers/libunrar|2023-06-21|Moved to unversioned origin. Use archivers/libunrar instead
 japanese/font-plemoljp-nfj||2023-06-22|Removed by upstream
 graphics/fotofix||2023-06-23|Has expired: Depends on expired graphics/IPA
+graphics/IPA||2023-06-23|Has expired: Broken since 2021
