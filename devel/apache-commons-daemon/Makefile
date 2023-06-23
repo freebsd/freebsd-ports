@@ -27,6 +27,12 @@ PLIST_FILES=	bin/jsvc %%JAVAJARDIR%%/${PORTNAME}.jar
 
 PORTDOCS=	*
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/jsvc ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_DATA} ${WRKBIN}/${DISTNAME}.jar \
