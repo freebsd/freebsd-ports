@@ -201,7 +201,6 @@
     SUBDIR += flphoto
     SUBDIR += fly
     SUBDIR += fortytwo
-    SUBDIR += fotofix
     SUBDIR += fotoxx
     SUBDIR += founts
     SUBDIR += fpc-cairo
