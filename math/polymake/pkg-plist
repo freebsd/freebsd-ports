@@ -372,13 +372,13 @@ include/polymake/type_utils.h
 include/polymake/vector
 lib/libpolymake-apps-rt.so
 lib/libpolymake-apps-rt.so.4
-lib/libpolymake-apps-rt.so.4.9
+lib/libpolymake-apps-rt.so.4.10
 lib/libpolymake-apps.so
 lib/libpolymake-apps.so.4
-lib/libpolymake-apps.so.4.9
+lib/libpolymake-apps.so.4.10
 lib/libpolymake.so
 lib/libpolymake.so.4
-lib/libpolymake.so.4.9
+lib/libpolymake.so.4.10
 libexec/polymake/config.ninja
 libexec/polymake/lib/common.so
 libexec/polymake/lib/fan.so
@@ -388,10 +388,10 @@ libexec/polymake/lib/group.so
 libexec/polymake/lib/ideal.so
 libexec/polymake/lib/libpolymake-apps-rt.so
 libexec/polymake/lib/libpolymake-apps-rt.so.4
-libexec/polymake/lib/libpolymake-apps-rt.so.4.9
+libexec/polymake/lib/libpolymake-apps-rt.so.4.10
 libexec/polymake/lib/libpolymake-apps.so
 libexec/polymake/lib/libpolymake-apps.so.4
-libexec/polymake/lib/libpolymake-apps.so.4.9
+libexec/polymake/lib/libpolymake-apps.so.4.10
 libexec/polymake/lib/matroid.so
 libexec/polymake/lib/polytope.so
 libexec/polymake/lib/topaz.so
@@ -613,6 +613,7 @@ libexec/polymake/shared
 %%DATADIR%%/apps/group/rules/main.rules
 %%DATADIR%%/apps/group/rules/permlib.rules
 %%DATADIR%%/apps/group/rules/switch_table.rules
+%%DATADIR%%/apps/group/src/action_functions.cc
 %%DATADIR%%/apps/group/src/col_to_row_action.cc
 %%DATADIR%%/apps/group/src/conjugacy_classes.cc
 %%DATADIR%%/apps/group/src/group_tools.cc
@@ -1536,6 +1537,7 @@ libexec/polymake/shared
 %%DATADIR%%/upgrades/big_objects-4.6.1
 %%DATADIR%%/upgrades/big_objects-4.7.1
 %%DATADIR%%/upgrades/big_objects-4.8.1
+%%DATADIR%%/upgrades/big_objects-4.9.1
 @dir libexec/polymake/bundled/atint
 %%BLISS%%@dir libexec/polymake/bundled/bliss
 @dir libexec/polymake/bundled/cdd
