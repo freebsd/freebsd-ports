@@ -24,4 +24,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 CONFIGURE_ARGS_i386=	--enable-optendian --enable-optfixpoint
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
+.endif
+
 .include <bsd.port.mk>
