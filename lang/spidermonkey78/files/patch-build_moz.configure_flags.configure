@@ -1,0 +1,11 @@
+--- build/moz.configure/flags.configure.orig	2023-06-24 10:37:11 UTC
++++ build/moz.configure/flags.configure
+@@ -56,7 +56,7 @@ def new_pass_manager_flags(enabled, compiler, host, ta
+         # Temporary until https://bugs.llvm.org/show_bug.cgi?id=45835 gets a
+         # real fix: clang 10 hangs with some ubsan-inserted code constructs.
+         return None
+-    if enabled and compiler.version >= '9.0.0':
++    if enabled and compiler.version >= '9.0.0' and compiler.version < '16.0.0':
+         if compiler.type == 'clang':
+             return ['-fexperimental-new-pass-manager']
+         elif compiler.type == 'clang-cl':

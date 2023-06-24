@@ -1,4 +1,4 @@
---- python/mozbuild/mozbuild/util.py.orig	2021-03-15 15:52:38 UTC
+--- python/mozbuild/mozbuild/util.py.orig	2021-09-28 10:04:57 UTC
 +++ python/mozbuild/mozbuild/util.py
 @@ -27,6 +27,11 @@ from collections import (
  )
@@ -12,6 +12,15 @@
  import six
  
  if sys.platform == 'win32':
+@@ -220,7 +225,7 @@ class FileAvoidWrite(BytesIO):
+     still occur, as well as diff capture if requested.
+     """
+ 
+-    def __init__(self, filename, capture_diff=False, dry_run=False, readmode='rU'):
++    def __init__(self, filename, capture_diff=False, dry_run=False, readmode='r'):
+         BytesIO.__init__(self)
+         self.name = filename
+         assert type(capture_diff) == bool
 @@ -782,7 +787,7 @@ class HierarchicalStringList(object):
          self._strings = StrictOrderingOnAppendList()
          self._children = {}
