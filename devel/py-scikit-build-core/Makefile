@@ -22,10 +22,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatch-fancy-pypi-readme>=0:devel/py-hatch-
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=20.9:devel/py-packaging@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}build>=0.1:devel/py-build@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cattrs>=0:devel/py-cattrs@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pybind11>=0:devel/py-pybind11@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-subprocess>0:devel/py-pytest-subprocess@${PY_FLAVOR}
 
 USES=		python:3.7+
-USE_PYTHON=	pep517 autoplist pytest # 16 tests fail, see https://github.com/scikit-build/scikit-build-core/issues/398
+USE_PYTHON=	pep517 autoplist pytest
 
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 
