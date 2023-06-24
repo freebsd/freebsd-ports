@@ -1,6 +1,6 @@
 PORTNAME=	exim
 PORTVERSION?=	${EXIM_VERSION}
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	mail
 MASTER_SITES=	EXIM:exim
 MASTER_SITE_SUBDIR=	/exim4/:exim \
@@ -406,6 +406,10 @@ SEDLIST+=	-e 's,^\# (AUTH_SPA=),\1,'
 .if ${PORT_OPTIONS:MAUTH_SASL}
 SEDLIST+=	-e 's,^\# (AUTH_CYRUS_SASL=),\1,' \
 		-e 's,^\# (AUTH_LIBS=.*-lsasl2),\1,'
+.endif
+
+.if ${PORT_OPTIONS:MAUTH_TLS}
+SEDLIST+=	-e 's,^\# (AUTH_TLS=),\1,'
 .endif
 
 .if ${PORT_OPTIONS:MAUTH_RADIUS}
