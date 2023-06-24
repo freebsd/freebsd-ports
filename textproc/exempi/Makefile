@@ -8,7 +8,7 @@ COMMENT=	Port of Adobe XMP SDK to work on UNIX
 WWW=		http://libopenraw.freedesktop.org/wiki/Exempi
 
 LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	boost-libs>=0:devel/boost-libs
 LIB_DEPENDS=	libexpat.so:textproc/expat2
