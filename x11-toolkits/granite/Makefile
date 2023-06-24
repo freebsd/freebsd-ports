@@ -24,4 +24,10 @@ BINARY_ALIAS=	python3=${PYTHON_CMD}
 PORTSCOUT=	limit:^6
 PLIST_SUB=	DISTVERSION=${DISTVERSION}
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.mk>
