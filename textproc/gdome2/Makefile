@@ -1,26 +1,40 @@
 PORTNAME=	gdome2
 PORTVERSION=	0.8.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	textproc
 MASTER_SITES=	http://gdome2.cs.unibo.it/tarball/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Gnome DOM Engine
 WWW=		http://gdome2.cs.unibo.it/
 
-USES=		gnome libtool pathfix pkgconfig
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	dual
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
+
+USES=		gnome libtool localbase pathfix pkgconfig
 USE_GNOME=	glib20 libxml2
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	GLIB_CONFIG="${LOCALBASE}/bin/pkg-config glib-2.0"
-CFLAGS+=	-fcommon
-CPPFLAGS+=	-I${LOCALBASE}/include
-DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
-USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
+
+CFLAGS+=	-fcommon
+
+DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
+
+PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
-PORTDOCS=	*
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	@${FIND} ${WRKSRC} -type f -and \
