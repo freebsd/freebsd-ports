@@ -59,6 +59,10 @@ XMMS_CONFIGURE_ENABLE=		xmms
 CFLAGS+=	-Wno-error=int-conversion
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 do-install:
 	${CP} -fv ${WRKSRC}/run/hx ${STAGEDIR}${PREFIX}/bin/
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/examples/${PORTNAME}
