@@ -101,7 +101,7 @@ NINJA_DEFAULT?=		ninja
 NODEJS_DEFAULT?=	lts
 # Possible value: 24, 25, 26
 OPENLDAP_DEFAULT?=	26
-# Possible values: 5.32, 5.34, 5.36, devel
+# Possible values: 5.32, 5.34, 5.36, 5.38, devel
 .  if !exists(${LOCALBASE}/bin/perl) || (!defined(_PORTS_ENV_CHECK) && \
     defined(PACKAGE_BUILDING))
 PERL5_DEFAULT?=		5.32

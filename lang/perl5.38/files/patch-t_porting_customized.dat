@@ -1,0 +1,19 @@
+Fix tests for modified files.
+
+--- t/porting/customized.dat.orig	2023-06-12 12:33:35 UTC
++++ t/porting/customized.dat
+@@ -9,12 +9,13 @@ Digest::MD5 cpan/Digest-MD5/MD5.pm cf2fd9d327f3e314e9e
+ Digest::MD5 cpan/Digest-MD5/MD5.xs dc40839d25ba5e2d6f42fc9b81b409f1d0dbfb0e
+ ExtUtils::Constant cpan/ExtUtils-Constant/lib/ExtUtils/Constant/Base.pm 7560e1018f806db5689dee78728ccb8374aea741
+ ExtUtils::Constant cpan/ExtUtils-Constant/t/Constant.t 165e9c7132b003fd192d32a737b0f51f9ba4999e
++ExtUtils::MakeMaker cpan/ExtUtils-MakeMaker/lib/ExtUtils/MM_Any.pm ac29a8dc1c7d6f0aca4abff0730c05bde1dab3ad
+ Filter::Util::Call pod/perlfilter.pod d1e217d0bc6083755b9017050b8724472c58275a
+ IO::Socket::IP cpan/IO-Socket-IP/lib/IO/Socket/IP.pm a3390d0b3b617a0b810c75941bfc6e6d0be5b785
+ Locale::Maketext::Simple cpan/Locale-Maketext-Simple/lib/Locale/Maketext/Simple.pm 57ed38905791a17c150210cd6f42ead22a7707b6
+ MIME::Base64 cpan/MIME-Base64/Base64.xs ad617fe2d01932c35b92defa26d40aba601a95a8
+ MIME::Base64 cpan/MIME-Base64/lib/MIME/Base64.pm 18e38d197c7c83f96b24f48bef514e93908e6a82
+-Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 582be34c077c9ff44d99914724a0cc2140bcd48c
++Pod::Perldoc cpan/Pod-Perldoc/lib/Pod/Perldoc.pm 8b35c5a137791b0cfedcffd2937cb3b5fb984cac
+ Test::Harness cpan/Test-Harness/t/harness.t 38b13cfc479d37d91c104b97dd364a74dfde0f2f
+ Time::Piece cpan/Time-Piece/Piece.pm 8cec8b66183ceddb9bf2b6af35dcdd345bc9adfa
+ Time::Piece cpan/Time-Piece/Piece.xs 543152540ee17788a638b2c5746b86c3d04401d1
