@@ -36,4 +36,10 @@ CONFIGURE_ARGS=	--enable-gtk2-module=no
 GLIB_SCHEMAS=	org.gnome.caribou.gschema.xml \
 		org.gnome.antler.gschema.xml
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.mk>
