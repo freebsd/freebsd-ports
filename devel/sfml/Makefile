@@ -58,6 +58,14 @@ DOXYGEN_IMPLIES=	DOCS
 
 EXAMPLES_CMAKE_BOOL=	SFML_BUILD_EXAMPLES
 
+.include <bsd.port.options.mk>
+
+post-patch:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|auto_ptr|unique_ptr|' \
+		${WRKSRC}/src/SFML/Audio/AudioDevice.cpp
+.endif
+
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/*.pc
 
