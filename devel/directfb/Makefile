@@ -64,6 +64,10 @@ X11_CONFIGURE_ENABLE=	x11
 CFLAGS+=	-Wno-error=int-conversion
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
+.endif
+
 # assembly files use old split syntax which clang doesn't like
 .if ${ARCH:Marmv?} && ${COMPILER_TYPE} == "clang"
 BUILD_DEPENDS+=	as:devel/binutils
