@@ -13,7 +13,7 @@ LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
 USES=		cmake compiler:c++11-lang dos2unix tar:xz
-SHEBANG_FILES=	${PORTDOCS}
+DOS2UNIX_FILES=	${PORTDOCS}
 USE_LDCONFIG=	yes
 
 PORTDOCS=	changes.txt design.txt gme.txt readme.txt
