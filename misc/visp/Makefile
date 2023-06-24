@@ -1,6 +1,6 @@
 PORTNAME=	visp
 DISTVERSION=	3.5.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc
 MASTER_SITES=	https://visp-doc.inria.fr/download/releases/
 
