@@ -28,6 +28,12 @@ regression-test: install
 	${PYTHON_CMD} ${INSTALL_WRKSRC}/test.py
 .endif
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	${REINPLACE_CMD} 's|%%CYTHON%%|cython-${PYTHON_VER}|g' \
 		${WRKSRC}/python/Makefile.am

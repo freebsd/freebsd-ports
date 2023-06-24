@@ -11,9 +11,9 @@ but as of libdnet-1.13 it is not used at all inside libdnet's code.
 
 FreeBSD PR: https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=238523
 Origin: rea@FreeBSD.org
---- configure.ac.old	2019-06-30 21:36:25.906488000 +0300
-+++ configure.ac	2019-06-30 21:39:21.116185000 +0300
-@@ -203,7 +203,6 @@
+--- configure.ac.orig	2019-03-19 17:55:02 UTC
++++ configure.ac
+@@ -203,7 +203,6 @@ AC_CHECK_FUNCS([gethostbyname gettimeofday memmove mem
  AC_REPLACE_FUNCS(err strlcat strlcpy strsep)
  
  dnl Checks for other system-specific jonks.
@@ -21,7 +21,7 @@ Origin: rea@FreeBSD.org
  AC_DNET_RAWIP_HOST_OFFLEN
  
  dnl Check for arp interface.
-@@ -219,18 +218,7 @@
+@@ -219,18 +218,7 @@ else
  	(exit 1); exit 1;
  fi
  
