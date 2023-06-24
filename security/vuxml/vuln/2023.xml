@@ -1,3 +1,54 @@
+  <vuln vid="fdbe9aec-118b-11ee-908a-6c3be5272acd">
+    <topic>Grafana -- Account takeover / authentication bypass</topic>
+    <affects>
+      <package>
+	<name>grafana</name>
+	<range><ge>6.7.0</ge><lt>8.5.27</lt></range>
+	<range><ge>9.0.0</ge><lt>9.2.20</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.16</lt></range>
+	<range><ge>9.4.0</ge><lt>9.4.13</lt></range>
+	<range><ge>9.5.0</ge><lt>9.5.5</lt></range>
+	<range><ge>10.0.0</ge><lt>10.0.1</lt></range>
+      </package>
+      <package>
+	<name>grafana8</name>
+	<range><lt>8.5.27</lt></range>
+      </package>
+      <package>
+	<name>grafana9</name>
+	<range><lt>9.2.20</lt></range>
+	<range><ge>9.3.0</ge><lt>9.3.16</lt></range>
+	<range><ge>9.4.0</ge><lt>9.4.13</lt></range>
+	<range><ge>9.5.0</ge><lt>9.5.5</lt></range>
+      </package>
+      <package>
+	<name>grafana10</name>
+	<range><lt>10.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Grafana Labs reports:</p>
+	<blockquote cite="https://grafana.com/blog/2023/06/22/grafana-security-release-for-cve-2023-3128/">
+	  <p>Grafana validates Azure Active Directory accounts based on the email claim.
+	  On Azure AD, the profile email field is not unique across Azure AD tenants.
+	  This can enable a Grafana account takeover and authentication bypass when
+	  Azure AD OAuth is configured with a multi-tenant Azure AD OAuth application.
+	  </p>
+	  <p>The CVSS score for this vulnerability is 9.4 Critical.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3128</cvename>
+      <url>https://grafana.com/security/security-advisories/cve-2023-3128</url>
+    </references>
+    <dates>
+      <discovery>2023-06-22</discovery>
+      <entry>2023-06-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="a03b2d9e-b3f2-428c-8f66-21092ed2ba94">
     <topic>electron{23,24} -- multiple vulnerabilities</topic>
     <affects>
