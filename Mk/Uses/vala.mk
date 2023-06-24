@@ -23,4 +23,7 @@ BUILD_DEPENDS+=		${_VALA_BINARY}:${_VALA_PORT}
 .    endif
 .  endif
 
+# remove after https://gitlab.gnome.org/GNOME/vala/-/issues/1408 is fixed
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+
 .endif
