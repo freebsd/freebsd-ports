@@ -206,6 +206,10 @@ PLIST_SUB+=		MP3="@comment "
 PLIST_SUB+=		MP3=""
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
+.endif
+
 post-patch:
 # Do not link to libsupc++ which may be PIC-unsafe (breaks 64-bit arches)
 	@${REINPLACE_CMD} -e 's, -lsupc++,,' \
