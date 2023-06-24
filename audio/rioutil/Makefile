@@ -8,6 +8,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program to interface with the Rio600, Rio800, and psa[play devices
 WWW=		http://rioutil.sourceforge.net/
 
+DEPRECATED=	Obsolete, supported hardware ia about 20 years old
+EXPIRATION_DATE=2023-09-30  
+
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
