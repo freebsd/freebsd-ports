@@ -1,29 +1,34 @@
 PORTNAME=	flac123
-PORTVERSION=	0.0.12
-DISTVERSIONSUFFIX=	-release
-PORTREVISION=	2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.1.0
 CATEGORIES=	audio
-MASTER_SITES=	SF/flac-tools/${PORTNAME}/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Command-line player for flac audio files
-WWW=		http://flac-tools.sf.net
+WWW=		https://github.com/flac123/flac123
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libFLAC.so:audio/flac \
 		libao.so:audio/libao \
-		libpopt.so:devel/popt
+		libpopt.so:devel/popt \
+		libogg.so:audio/libogg
+
+USES=		autoreconf cpe
+USE_GITHUB=	yes
+
+GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	DOCS
 
-GNU_CONFIGURE=	yes
-USES=		autoreconf cpe gmake
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
 PORTDOCS=	README.remote
-PLIST_FILES=	bin/flac123
+
+PLIST_FILES=	bin/flac123 \
+		man/man1/flac123.1.gz
 
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
