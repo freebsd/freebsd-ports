@@ -83,6 +83,11 @@ INFO+=		libquadmath
 .endif
 INSTALL_TARGET=	install-strip
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Wno-error=increment-bool \
+			-Dregister=
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e "s,# include <sys/sysctl.h>,," \
 		${SRCDIR}/libiberty/physmem.c
