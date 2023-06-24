@@ -37,10 +37,14 @@ OPTIONS_DEFINE=	DOCS
 
 ORIGWRKSRC=	${WRKDIR}/${DISTNAME}/src
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CPPFLAGS+=       -Wno-error=int-conversion
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 pre-install:
@@ -52,8 +56,10 @@ do-install:
 	${SED} 's,^#!.*$$,#!${AWK} -f,' ${ORIGWRKSRC}/tla/=gpg-check.awk \
 		> ${WRKDIR}/tla-gpg-check
 	${INSTALL_SCRIPT} ${WRKDIR}/tla-gpg-check ${STAGEDIR}${PREFIX}/bin
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${ORIGWRKSRC}/docs-tla && ${FIND} . -name '*.html' | \
 		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
