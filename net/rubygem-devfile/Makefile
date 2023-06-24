@@ -1,5 +1,5 @@
 PORTNAME=	devfile
-DISTVERSION=	0.0.17.pre.alpha1
+DISTVERSION=	0.0.19.pre.alpha1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
