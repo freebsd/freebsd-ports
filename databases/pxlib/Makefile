@@ -28,6 +28,12 @@ NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=	gettext
 INSTALL_TARGET=	install-strip
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 pre-build-MANPAGES-off:
 	${REINPLACE_CMD} -e 's/^DOCDIR =.*/DOCDIR =/' ${WRKSRC}/Makefile
 
