@@ -20,4 +20,10 @@ USE_LDCONFIG=	yes
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
 		-DENABLE_STATIC=NO
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.mk>
