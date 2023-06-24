@@ -1,3 +1,3 @@
-TIMESTAMP = 1676991721
-SHA256 (rubygem/gitaly-15.9.0.pre.rc3.gem) = 6ac64320a70417131a4b97f5dd45d4e203d60703cc3cba156561e7f8c50a4abe
-SIZE (rubygem/gitaly-15.9.0.pre.rc3.gem) = 31232
+TIMESTAMP = 1687446684
+SHA256 (rubygem/gitaly-16.1.0.gem) = 0c484c212bb4fa8a3621a69a0024fd4b0711ea613b87a752f7d003c9d2439932
+SIZE (rubygem/gitaly-16.1.0.gem) = 40960
