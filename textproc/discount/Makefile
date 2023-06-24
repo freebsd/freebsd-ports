@@ -38,6 +38,12 @@ EXTRA_CONFIGURE_ON=	--with-dl=both --with-fenced-code --with-github-tags --with-
 SAMPLES_INSTALL_TARGET=	install.samples
 TAB8_CONFIGURE_ON=	--with-tabstops=8
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/libmarkdown.a ${STAGEDIR}${PREFIX}/lib/libmarkdown.a
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libmarkdown.so
