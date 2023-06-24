@@ -25,6 +25,10 @@ PLIST_FILES=	bin/play man/ja/man1/play.1.gz
 CFLAGS+=	-Wno-error=int-conversion
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 .for file in play_audio.c mixer_ctl.c encode_sun.c speed.c
 	@${REINPLACE_CMD} '/soundcard\.h/s,machine,sys,' ${WRKSRC}/${file}
