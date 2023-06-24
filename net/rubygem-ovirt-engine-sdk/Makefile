@@ -17,4 +17,10 @@ RUN_DEPENDS=	rubygem-json>=1<3:devel/rubygem-json
 USES=		gem gnome
 USE_GNOME=	libxml2
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
+.endif
+
 .include <bsd.port.mk>
