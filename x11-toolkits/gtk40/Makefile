@@ -32,7 +32,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 USE_GNOME=	atk cairo gdkpixbuf2 introspection:build pango \
 		librsvg2:run
-MESON_ARGS=	-Dbuild-testsuite=false
+MESON_ARGS=	-Dbuild-testsuite=false -Dmedia-ffmpeg=disabled
 LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
@@ -46,8 +46,7 @@ GLIB_SCHEMAS=	org.gtk.Demo4.gschema.xml \
 		org.gtk.gtk4.Settings.EmojiChooser.gschema.xml \
 		org.gtk.gtk4.Settings.FileChooser.gschema.xml
 
-OPTIONS_DEFINE=	CUPS COLORD DEBUG BROADWAY FFMPEG \
-		GSTREAMER VULKAN WAYLAND X11
+OPTIONS_DEFINE=	CUPS COLORD DEBUG BROADWAY GSTREAMER VULKAN WAYLAND X11
 OPTIONS_DEFAULT=CUPS COLORD BROADWAY GSTREAMER VULKAN WAYLAND X11
 OPTIONS_SUB=	yes
 
@@ -60,11 +59,6 @@ COLORD_MESON_ENABLED=	colord
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_MESON_ENABLED=	print-cups
-
-FFMPEG_DESC=		FFmpeg multimedia backend
-FFMPEG_MESON_ENABLED=	media-ffmpeg
-FFMPEG_RUN_DEPENDS=	ffmpeg>0:multimedia/ffmpeg
-FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 
 GSTREAMER_DESC=		GStreamer multimedia backend
 GSTREAMER_MESON_ENABLED=media-gstreamer

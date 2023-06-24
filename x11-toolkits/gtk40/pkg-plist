@@ -389,7 +389,6 @@ lib/girepository-1.0/Gdk-4.0.typelib
 %%X11%%lib/girepository-1.0/GdkX11-4.0.typelib
 lib/girepository-1.0/Gsk-4.0.typelib
 lib/girepository-1.0/Gtk-4.0.typelib
-%%FFMPEG%%lib/gtk-4.0/4.0.0/media/libmedia-ffmpeg.so
 %%GSTREAMER%%lib/gtk-4.0/4.0.0/media/libmedia-gstreamer.so
 %%CUPS%%lib/gtk-4.0/4.0.0/printbackends/libprintbackend-cups.so
 lib/gtk-4.0/4.0.0/printbackends/libprintbackend-file.so
