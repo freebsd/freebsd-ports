@@ -52,4 +52,8 @@ SDL_MIXER_CFLAGS=	-DOGG_SUPPORT
 CFLAGS+=	-Wno-error=int-conversion
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.post.mk>
