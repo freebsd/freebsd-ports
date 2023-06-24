@@ -19,4 +19,10 @@ OPTIONS_DEFAULT?=	LIB WNN
 MANLANG?=		ja
 
 .include "${.CURDIR}/../../japanese/FreeWnn-lib/Makefile.common"
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.mk>
