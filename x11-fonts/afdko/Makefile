@@ -14,4 +14,10 @@ USE_GNOME=	libxml2
 
 CMAKE_OFF=	SKBUILD
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.mk>
