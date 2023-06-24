@@ -1,5 +1,5 @@
 PORTNAME=	gstreamer
-DISTVERSION=	1.20.5
+DISTVERSION=	1.22.4
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://gstreamer.freedesktop.org/src/gst-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}

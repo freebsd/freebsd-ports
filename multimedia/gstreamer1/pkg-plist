@@ -164,7 +164,7 @@ share/aclocal/gst-element-check-%%VERSION%%.m4
 %%BASH%%share/bash-completion/completions/gst-inspect-%%VERSION%%
 %%BASH%%share/bash-completion/completions/gst-launch-%%VERSION%%
 %%BASH%%share/bash-completion/helpers/gst
-share/gdb/auto-load/usr/local/lib/libgstreamer-%%VERSION%%.so.%%SOVERSION%%-gdb.py
+share/gdb/auto-load%%RESETPREFIX%%/lib/libgstreamer-%%VERSION%%.so.%%SOVERSION%%-gdb.py
 %%DATADIR%%-%%VERSION%%/gdb/glib_gobject_helper.py
 %%DATADIR%%-%%VERSION%%/gdb/gst_gdb.py
 share/gir-%%VERSION%%/Gst-%%VERSION%%.gir

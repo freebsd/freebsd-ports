@@ -1,5 +1,5 @@
 PORTNAME=	gstreamer
-PORTVERSION=	1.22.2
+PORTVERSION=	1.22.4
 CATEGORIES=	multimedia
 MASTER_SITES=	https://gstreamer.freedesktop.org/src/gstreamer/
 PKGNAMESUFFIX=	1
@@ -22,7 +22,7 @@ CONFIGURE_ARGS=	-D tests=disabled \
 	-D dbghelp=disabled \
 	-D doc=disabled
 PLIST_SUB=	VERSION=${GST10_VERSION} \
-		SOVERSION=0.2202.0
+		SOVERSION=0.2204.0
 
 USE_LDCONFIG=	yes
 GST10_VERSION=	1.0

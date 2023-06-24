@@ -33,7 +33,7 @@ _GST_VER=	${_GST_VER_DEFAULT}
 
 #== Component setup
 
-_GST1_VERSION=		1.22.2
+_GST1_VERSION=		1.22.4
 _GST1_LIB_VER=		1.0
 
 _GST1_CATEGORIES=	audio comms devel ftp graphics multimedia net security \

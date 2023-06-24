@@ -1,6 +1,5 @@
 PORTNAME=	gstreamer1-plugins-core
-PORTVERSION=	1.20.5
-PORTREVISION=	1
+PORTVERSION=	${_GST_VERSION}
 CATEGORIES=	multimedia audio
 MASTER_SITES=	# empty
 DISTFILES=	# empty
