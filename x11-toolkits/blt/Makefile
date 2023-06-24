@@ -46,4 +46,8 @@ post-install:
 CFLAGS+=	-DUSE_INTERP_RESULT -DUSE_INTERP_ERRORLINE
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.post.mk>
