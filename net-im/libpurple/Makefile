@@ -88,6 +88,10 @@ CONFIGURE_ARGS+=--disable-doxygen
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .if ${PORT_OPTIONS:MTCLTK}
 USES+=			tk
 CFLAGS+=		-I${TK_INCLUDEDIR} -I${TCL_INCLUDEDIR}
