@@ -357,6 +357,8 @@ share/devhelp/books/vala-%%VALA_LIB_VERSION%%/vala-%%VALA_LIB_VERSION%%.devhelp2
 %%DATADIR%%-%%VALA_LIB_VERSION%%/vapi/webkitgtk-6.0.vapi
 %%DATADIR%%-%%VALA_LIB_VERSION%%/vapi/webkitgtk-web-extension-6.0.deps
 %%DATADIR%%-%%VALA_LIB_VERSION%%/vapi/webkitgtk-web-extension-6.0.vapi
+%%DATADIR%%-%%VALA_LIB_VERSION%%/vapi/webkitgtk-web-process-extension-6.0.deps
+%%DATADIR%%-%%VALA_LIB_VERSION%%/vapi/webkitgtk-web-process-extension-6.0.vapi
 %%DATADIR%%-%%VALA_LIB_VERSION%%/vapi/x11.vapi
 %%DATADIR%%-%%VALA_LIB_VERSION%%/vapi/xcb-icccm.deps
 %%DATADIR%%-%%VALA_LIB_VERSION%%/vapi/xcb-icccm.vapi
