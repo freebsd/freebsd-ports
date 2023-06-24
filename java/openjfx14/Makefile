@@ -89,6 +89,12 @@ _GRADLE_RUN=	${SETENV} ${_GRADLE_ENV} gradle62 --no-daemon
 
 _INSTALLDIR=	${PREFIX}/${PKGBASE}
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-extract:
 	${MKDIR} ${WRKDIR}/jars
 .for f in core grouping queries queryparser sandbox
