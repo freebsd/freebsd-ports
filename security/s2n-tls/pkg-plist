@@ -18,6 +18,9 @@ lib/s2n/cmake/shared/s2n-targets.cmake
 %%PORTDOCS%%%%DOCSDIR%%/STATE-MACHINE.md
 %%PORTDOCS%%%%DOCSDIR%%/USAGE-GUIDE.md
 %%PORTDOCS%%%%DOCSDIR%%/doxygen/Doxyfile
+%%PORTDOCS%%%%DOCSDIR%%/examples/s2n_negotiate.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/s2n_recv.c
+%%PORTDOCS%%%%DOCSDIR%%/examples/s2n_send.c
 %%PORTDOCS%%%%DOCSDIR%%/images/s2n-logo-final.pdf
 %%PORTDOCS%%%%DOCSDIR%%/images/s2n-logo-final.svg
 %%PORTDOCS%%%%DOCSDIR%%/images/s2n-logo-github.svg
