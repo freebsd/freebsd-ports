@@ -12,8 +12,15 @@ LICENSE=	LGPL21
 
 LIB_DEPENDS=	libaugeas.so:textproc/augeas
 
-CONFIGURE_ARGS=	--with-opt-include="${LOCALBASE}/include/libxml2"
-USE_GNOME=	libxml2
 USES=		gem gnome pkgconfig
+USE_GNOME=	libxml2
+
+CONFIGURE_ARGS=	--with-opt-include="${LOCALBASE}/include/libxml2"
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
+.endif
 
 .include <bsd.port.mk>
