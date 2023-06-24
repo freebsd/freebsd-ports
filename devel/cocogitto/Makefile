@@ -1,6 +1,5 @@
 PORTNAME=	cocogitto
-DISTVERSION=	5.3.1
-PORTREVISION=	4
+DISTVERSION=	5.4.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,6 +14,11 @@ USE_GITHUB=	yes
 
 CARGO_CRATES=	aho-corasick-0.7.20 \
 		android_system_properties-0.1.5 \
+		anstream-0.3.2 \
+		anstyle-1.0.0 \
+		anstyle-parse-0.2.0 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
 		anyhow-1.0.68 \
 		assert_cmd-1.0.8 \
 		async-trait-0.1.63 \
@@ -28,17 +32,19 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
-		chrono-tz-0.6.3 \
-		chrono-tz-build-0.0.3 \
-		clap-4.1.1 \
+		chrono-tz-0.6.1 \
+		chrono-tz-build-0.0.2 \
+		clap-4.2.5 \
+		clap_builder-4.2.5 \
 		clap_complete-4.1.0 \
 		clap_complete_nushell-0.1.8 \
-		clap_derive-4.1.0 \
-		clap_lex-0.3.1 \
+		clap_derive-4.2.0 \
+		clap_lex-0.4.1 \
 		clap_mangen-0.2.7 \
 		cmd_lib-1.3.0 \
 		cmd_lib_macros-1.3.0 \
 		codespan-reporting-0.11.1 \
+		colorchoice-1.0.0 \
 		colored-2.0.0 \
 		config-0.12.0 \
 		conventional_commit_parser-0.9.4 \
@@ -58,7 +64,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		doc-comment-0.3.3 \
 		edit-0.1.4 \
 		either-1.8.0 \
-		errno-0.2.8 \
+		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		faccess-0.2.4 \
 		fastrand-1.8.0 \
@@ -74,8 +80,8 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		globwalk-0.8.1 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.2.6 \
-		humansize-1.1.1 \
+		hermit-abi-0.3.1 \
+		humansize-2.1.3 \
 		iana-time-zone-0.1.53 \
 		iana-time-zone-haiku-0.1.1 \
 		idna-0.3.0 \
@@ -83,7 +89,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		indoc-1.0.8 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.4 \
-		is-terminal-0.4.2 \
+		is-terminal-0.4.7 \
 		itertools-0.10.5 \
 		itoa-1.0.5 \
 		jobserver-0.1.25 \
@@ -91,9 +97,10 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		lazy_static-1.4.0 \
 		libc-0.2.139 \
 		libgit2-sys-0.14.2+1.5.1 \
+		libm-0.2.7 \
 		libz-sys-1.1.8 \
 		link-cplusplus-1.0.8 \
-		linux-raw-sys-0.1.4 \
+		linux-raw-sys-0.3.6 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		minimal-lexical-0.2.1 \
@@ -108,19 +115,18 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		num-traits-0.2.15 \
 		once_cell-1.17.0 \
 		os_pipe-0.9.2 \
-		os_str_bytes-6.4.1 \
 		output_vt100-0.1.3 \
 		parse-zoneinfo-0.3.0 \
 		pathdiff-0.2.1 \
 		percent-encoding-2.2.0 \
-		pest-2.5.3 \
-		pest_derive-2.5.3 \
-		pest_generator-2.5.3 \
-		pest_meta-2.5.3 \
-		phf-0.11.1 \
-		phf_codegen-0.11.1 \
-		phf_generator-0.11.1 \
-		phf_shared-0.11.1 \
+		pest-2.6.0 \
+		pest_derive-2.6.0 \
+		pest_generator-2.6.0 \
+		pest_meta-2.6.0 \
+		phf-0.10.1 \
+		phf_codegen-0.10.0 \
+		phf_generator-0.10.0 \
+		phf_shared-0.10.0 \
 		pkg-config-0.3.26 \
 		ppv-lite86-0.2.17 \
 		predicates-1.0.8 \
@@ -130,9 +136,9 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		pretty_assertions-1.3.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.50 \
+		proc-macro2-1.0.56 \
 		quick-error-1.2.3 \
-		quote-1.0.23 \
+		quote-1.0.26 \
 		rand-0.7.3 \
 		rand-0.8.5 \
 		rand_chacha-0.2.2 \
@@ -146,7 +152,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		regex-syntax-0.6.28 \
 		remove_dir_all-0.5.3 \
 		roff-0.2.1 \
-		rustix-0.36.7 \
+		rustix-0.37.3 \
 		rusty-forkfork-0.4.0 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
@@ -165,8 +171,9 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		stderrlog-0.5.4 \
 		strsim-0.10.0 \
 		syn-1.0.107 \
+		syn-2.0.15 \
 		tempfile-3.3.0 \
-		tera-1.17.1 \
+		tera-1.18.1 \
 		termcolor-1.1.3 \
 		termtree-0.4.0 \
 		thiserror-1.0.38 \
@@ -190,6 +197,7 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
 		url-2.3.1 \
+		utf8parse-0.2.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
@@ -208,13 +216,24 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.1 \
+		windows-targets-0.48.0 \
 		windows_aarch64_gnullvm-0.42.1 \
+		windows_aarch64_gnullvm-0.48.0 \
 		windows_aarch64_msvc-0.42.1 \
+		windows_aarch64_msvc-0.48.0 \
 		windows_i686_gnu-0.42.1 \
+		windows_i686_gnu-0.48.0 \
 		windows_i686_msvc-0.42.1 \
+		windows_i686_msvc-0.48.0 \
 		windows_x86_64_gnu-0.42.1 \
+		windows_x86_64_gnu-0.48.0 \
 		windows_x86_64_gnullvm-0.42.1 \
+		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.42.1 \
+		windows_x86_64_msvc-0.48.0 \
 		yansi-0.5.1
 
 PLIST_FILES=	bin/cog
