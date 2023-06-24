@@ -19,4 +19,10 @@ PORTSCOUT=	limitw:1,even
 USES=		gettext gnome meson pkgconfig tar:xz vala:build
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.mk>
