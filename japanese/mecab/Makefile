@@ -14,19 +14,24 @@ LICENSE_COMB=	multi
 BROKEN_mips=		fails to link: Nonrepresentable section on output
 BROKEN_mips64=		fails to link: Nonrepresentable section on output
 
+USES=		gettext-tools iconv libtool localbase perl5
+USE_LDCONFIG=	yes
+USE_PERL5=	build
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_lib_stdcpp_main=no
-INSTALL_TARGET=	install-strip
-USES=		gettext-tools iconv libtool perl5
-USE_PERL5=	build
-USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	AUTHORS README *.html
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} '/^libmecab_la_LIBADD =/s/$$/ $$(LTLIBICONV)/' \
@@ -35,6 +40,10 @@ post-patch:
 		-e '/CFLAGS/s|-O3|${CFLAGS}|' \
 		-e '/CXXFLAGS/s|-O3|${CXXFLAGS}|' \
 		${WRKSRC}/configure
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
+		${WRKSRC}/src/dictionary.cpp
+.endif
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
