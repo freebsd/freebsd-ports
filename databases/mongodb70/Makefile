@@ -86,6 +86,8 @@ SASL_MAKE_ARGS=		--use-sasl-client
 SSL_USES=	ssl
 SSL_MAKE_ARGS=	--ssl
 
+CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
+
 .include <bsd.port.pre.mk>
 
 ALL_TARGET=	install-core
