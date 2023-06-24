@@ -23,6 +23,12 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --with-zlib --with-ssl=${OPENSSLBASE}
 CPE_VENDOR=	w3c
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/*.so
 
