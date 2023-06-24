@@ -16,15 +16,14 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
-USES=		compiler:features gl jpeg libtool pathfix xorg
+USES=		compiler:features gl jpeg libtool localbase:ldflags pathfix xorg
 USE_GL=		gl glu
 USE_XORG=	x11 xext xfixes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl --with-x --with-xim
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include -fPIC
-LDFLAGS+=	-L${LOCALBASE}/lib
+CPPFLAGS+=	-fPIC
 
 PLIST_SUB=	MAJORVER="${MAJORVER}"
 
@@ -82,6 +81,10 @@ CXXFLAGS+=	-fomit-frame-pointer
 .  if ${COMPILER_TYPE} == "gcc"
 CXXFLAGS+=	-fexpensive-optimizations -finline-functions
 .  endif
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
 .endif
 
 post-patch:
