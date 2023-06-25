@@ -29,6 +29,7 @@ LICENSE_FILE_LGPL3+ =	${WRKSRC}/LICENSES/LGPL-3.0-or-later.txt
 LICENSE_FILE_MPL11  =	${WRKSRC}/LICENSES/MPL-1.1.txt
 
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
+		libenchant-2.so:textproc/enchant2 \
 		libpopt.so:devel/popt \
 		libgc.so:devel/boehm-gc \
 		libgdl-3.so:x11-toolkits/gdl \
@@ -123,6 +124,8 @@ GSPELL_DESC=		Support for spell checking through gspell
 GSPELL_CMAKE_BOOL= 	WITH_GSPELL
 GSPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell
 
+.include <bsd.port.options.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|COMMAND python3|COMMAND ${PYTHON_VERSION}|g' \
 		${WRKSRC}/share/*/CMakeLists.txt
@@ -130,5 +133,13 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|"python3"|"${PYTHON_VERSION}"|g' \
 		${WRKSRC}/src/extension/implementation/script.cpp
 	@${TOUCH} ${WRKSRC}/share/extensions/gcodetools_check_for_updates.inx.h
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function| ; s|std::binary_function|std::__binary_function|' \
+		${WRKSRC}/src/device-manager.cpp \
+		${WRKSRC}/src/libnrtype/FontFactory.h \
+		${WRKSRC}/src/ui/dialog/undo-history.h \
+		${WRKSRC}/src/ui/tool/multi-path-manipulator.cpp \
+		${WRKSRC}/src/util/units.h
+.endif
 
 .include <bsd.port.mk>
