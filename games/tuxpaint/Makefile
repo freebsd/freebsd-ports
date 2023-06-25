@@ -53,6 +53,12 @@ PORTDATA=	*
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-extract:
 	@${RM} -r ${WRKSRC}/fonts/locale/vi_docs
 
