@@ -1,0 +1,3 @@
+ZLint is a X.509 certificate linter written in Go that checks for consistency
+with standards (e.g. RFC 5280) and other relevant PKI requirements
+(e.g. CA/Browser Forum Baseline Requirements).
