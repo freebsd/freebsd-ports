@@ -1,6 +1,6 @@
 PORTNAME=	ticcutils
 DISTVERSION=	0.32
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -12,8 +12,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
-		libicui18n.so:devel/icu \
-		libtar.so:devel/libtar
+		libicui18n.so:devel/icu
 
 USES=		compiler:c++11-lib gmake gnome libtool localbase:ldflags \
 		pathfix pkgconfig
