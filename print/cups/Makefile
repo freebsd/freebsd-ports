@@ -1,7 +1,8 @@
 PORTNAME=	cups
-PORTVERSION=	2.4.6
-DISTVERSIONPREFIX=v
+DISTVERSION=	2.4.6
 CATEGORIES=	print
+MASTER_SITES=	https://github.com/OpenPrinting/cups/releases/download/v${DISTVERSION}/
+EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	tijl@FreeBSD.org
 COMMENT=	Common UNIX Printing System
@@ -12,9 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		compiler:c++11-lang cpe gmake iconv localbase pkgconfig
 CPE_VENDOR=	linuxfoundation
-
-USE_GITHUB=	yes
-GH_ACCOUNT=	OpenPrinting
 
 CONFLICTS=	LPRng
 
