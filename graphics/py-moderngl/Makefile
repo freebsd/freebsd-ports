@@ -1,6 +1,5 @@
 PORTNAME=	moderngl
-DISTVERSION=	5.8.1
-PORTREVISION=	1
+DISTVERSION=	5.8.2
 CATEGORIES=	graphics
 #MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +18,7 @@ TEST_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.2.1:science/py-scipy@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # testsuite SEGVs, see https://github.com/moderngl/moderngl/issues/547, https://github.com/moderngl/moderngl/issues/571
+USE_PYTHON=	pep517 autoplist pytest # testsuite SEGVs, see https://github.com/moderngl/moderngl/issues/547, https://github.com/pytest-dev/pytest/issues/11142
 
 USE_GITHUB=	yes
 
