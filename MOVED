@@ -7655,3 +7655,4 @@ graphics/fotofix||2023-06-23|Has expired: Depends on expired graphics/IPA
 graphics/IPA||2023-06-23|Has expired: Broken since 2021
 security/p5-OpenCA-PKCS7||2023-06-23|Has expired: Depends on expired security/p5-OpenCA-OpenSSL
 security/p5-OpenCA-OpenSSL||2023-06-23|Has expired: Broken since 2021
+security/krb5-118|security/krb5|2023-06-25|Has expired: EOL one year after the release of krb5 1.19
