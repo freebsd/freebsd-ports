@@ -19,6 +19,7 @@ GH_ACCOUNT=	grimfang4
 GH_PROJECT=	sdl-gpu
 
 CMAKE_ON=	USE_SYSTEM_GLEW DYNAMIC_GLES_3
+CFLAGS+=	-Wno-incompatible-function-pointer-types
 
 OPTIONS_DEFINE=	DOCS
 DOCS_CMAKE_BOOL=	BUILD_DOCS
