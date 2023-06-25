@@ -1,10 +1,10 @@
 PORTNAME=	plow
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.3.1
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	benchmarks
 
-MAINTAINER=	0xdutra@gmail.com
+MAINTAINER=	nulldutra@proton.me
 COMMENT=	HTTP benchmarking tool with real-time web UI and terminal displaying
 WWW=		https://github.com/six-ddc/plow
 

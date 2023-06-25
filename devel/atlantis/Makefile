@@ -1,9 +1,10 @@
 PORTNAME=	atlantis
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.23.5
+PORTREVISION=	1
 CATEGORIES=	devel
 
-MAINTAINER=	0xdutra@gmail.com
+MAINTAINER=	nulldutra@proton.me
 COMMENT=	Terraform Pull Requests Automation
 WWW=		https://www.runatlantis.io
 

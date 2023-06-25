@@ -1,10 +1,10 @@
 PORTNAME=	ipinfo
 DISTVERSIONPREFIX=	ipinfo-
 DISTVERSION=	2.10.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 
-MAINTAINER=	0xdutra@gmail.com
+MAINTAINER=	nulldutra@proton.me
 COMMENT=	Official Command Line Interface for the IPinfo API
 WWW=		https://github.com/ipinfo/cli
 

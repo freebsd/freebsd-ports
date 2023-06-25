@@ -1,8 +1,9 @@
 PORTNAME=	fx
 DISTVERSION=	24.1.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	0xdutra@gmail.com
+MAINTAINER=	nulldutra@proton.me
 COMMENT=	Terminal JSON viewer
 WWW=		https://github.com/antonmedv/fx
 

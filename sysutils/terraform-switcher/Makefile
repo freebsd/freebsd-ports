@@ -1,9 +1,9 @@
 PORTNAME=	terraform-switcher
 DISTVERSION=	0.13.1308
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 
-MAINTAINER=	0xdutra@gmail.com
+MAINTAINER=	nulldutra@proton.me
 COMMENT=	Tool to switch between different versions of terraform
 WWW=		https://tfswitch.warrensbox.com/
 

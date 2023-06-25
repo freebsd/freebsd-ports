@@ -1,9 +1,10 @@
 PORTNAME=	chaoskube
 PORTVERSION=	0.28.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	sysutils
 
-MAINTAINER=	0xdutra@gmail.com
+MAINTAINER=	nulldutra@proton.me
 COMMENT=	Chaoskube periodically kills random pods in your Kubernetes cluster
 WWW=		https://github.com/linki/chaoskube
 

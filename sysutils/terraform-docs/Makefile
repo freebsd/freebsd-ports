@@ -1,10 +1,10 @@
 PORTNAME=	terraform-docs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.0
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	sysutils textproc
 
-MAINTAINER=	0xdutra@gmail.com
+MAINTAINER=	nulldutra@proton.me
 COMMENT=	Generate documentation from Terraform modules
 WWW=		https://github.com/terraform-docs/terraform-docs
 

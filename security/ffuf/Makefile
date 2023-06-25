@@ -1,10 +1,10 @@
 PORTNAME=	ffuf
 DISTVERSIONPREFIX=v
 DISTVERSION=	2.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security www
 
-MAINTAINER=	0xdutra@gmail.com
+MAINTAINER=	nulldutra@proton.me
 COMMENT=	Fast web fuzzer written in Go
 WWW=		https://github.com/ffuf/ffuf
 
