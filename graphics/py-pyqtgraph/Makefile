@@ -1,12 +1,8 @@
 PORTNAME=	pyqtgraph
-DISTVERSION=	0.13.1
-PORTREVISION=	3
+DISTVERSION=	0.13.3
 CATEGORIES=	graphics science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-
-PATCH_SITES=	https://github.com/pyqtgraph/pyqtgraph/commit/
-PATCHFILES=	935914143d87f28575ea9d60bd9efada57b3bdd6.patch:-p1 # Fix renderView to not use mremap on FreeBSD, see https://github.com/pyqtgraph/pyqtgraph/pull/2445/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Scientific graphics and GUI library for Python
@@ -17,10 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}colorcet>0:graphics/py-colorcet@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}h5py>0:science/py-h5py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>0:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}PyOpenGL>0:graphics/py-PyOpenGL@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}qt5-pyqt>0:devel/py-qt5-pyqt@${PY_FLAVOR} # PyQtGraph requires one of PyQt5, PyQt6, PySide2 or PySide6
+		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} # dependencies are in tox.ini
+RUN_DEPENDS+=	{PYTHON_PKGNAMEPREFIX}qt5-pyqt>0:devel/py-qt5-pyqt@${PY_FLAVOR} # PyQtGraph requires one of PyQt5, PyQt6, PySide2 or PySide6
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR}
 
 USES=		python:3.8+
 USE_PYTHON=	distutils autoplist pytest
