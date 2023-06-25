@@ -116,6 +116,23 @@ post-patch:
 		${WRKSRC}/scripts/Util.py
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|g;' \
 		${WRKSRC}/scripts/Glacier2Util.py
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|binary_function|__binary_function|g ; s|unary_function|__unary_function|g' \
+		${WRKSRC}/cpp/include/Ice/Proxy.h \
+		${WRKSRC}/cpp/include/IceUtil/Functional.h \
+		${WRKSRC}/cpp/src/IceGrid/AdapterCache.cpp \
+		${WRKSRC}/cpp/src/IceGrid/AllocatableObjectCache.cpp \
+		${WRKSRC}/cpp/src/IceGrid/Database.cpp \
+		${WRKSRC}/cpp/src/IceGrid/DescriptorHelper.cpp \
+		${WRKSRC}/cpp/src/IceGrid/NodeCache.cpp \
+		${WRKSRC}/cpp/src/IceGrid/ObjectCache.cpp \
+		${WRKSRC}/cpp/src/IceGrid/ServerCache.cpp \
+		${WRKSRC}/cpp/src/IceGrid/ServerI.cpp \
+		${WRKSRC}/cpp/src/IceGrid/Util.h \
+		${WRKSRC}/cpp/src/IcePatch2/Calc.cpp \
+		${WRKSRC}/cpp/src/IcePatch2Lib/Util.h \
+		${WRKSRC}/cpp/src/Slice/Parser.h
+.endif
 
 IS_JAILED_CMD=		${SYSCTL} -n security.jail.jailed
 JAILED_FILTER=		--rfilter=IceDiscovery \
