@@ -5,6 +5,7 @@ share/applications/com.github.huluti.Curtail.desktop
 %%DATADIR%%/curtail/compressor.py
 %%DATADIR%%/curtail/main.py
 %%DATADIR%%/curtail/preferences.py
+%%DATADIR%%/curtail/resultitem.py
 %%DATADIR%%/curtail/tools.py
 %%DATADIR%%/curtail/window.py
 share/icons/hicolor/scalable/apps/com.github.huluti.Curtail.svg
