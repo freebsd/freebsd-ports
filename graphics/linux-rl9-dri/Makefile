@@ -8,7 +8,7 @@ COMMENT=	Mesa libGL runtime libraries (Rocky Linux ${LINUX_DIST_VER})
 
 USES=		linux:rl9
 USE_LDCONFIG=	yes
-USE_LINUX=	elfutils-libelf expat libdrm libglvnd wayland xorglibs
+USE_LINUX=	elfutils-libelf expat libdrm libglvnd llvm wayland xorglibs
 USE_LINUX_RPM=	yes
 
 LIB_DISTNAMES=	freeglut-3.2.1-9.el9 \

@@ -1,0 +1,7 @@
+TIMESTAMP = 1687461743
+SHA256 (rocky/l/libtheora-1.1.1-31.el9.aarch64.rpm) = 1ac920f8311482907c2549fb88161f96a28a94988bc1dffe29fb14f3099cda6b
+SIZE (rocky/l/libtheora-1.1.1-31.el9.aarch64.rpm) = 158374
+SHA256 (rocky/l/libtheora-1.1.1-31.el9.x86_64.rpm) = d3b85db64000a3b859d7bde0076a28a52c7be5fa40636cc64d695b10372684ea
+SIZE (rocky/l/libtheora-1.1.1-31.el9.x86_64.rpm) = 166899
+SHA256 (rocky/l/libtheora-1.1.1-31.el9.src.rpm) = 51d687912d82f9adb5e7a13deac2ce6d11e179c69a2a0e0496ccccb76c547819
+SIZE (rocky/l/libtheora-1.1.1-31.el9.src.rpm) = 1449500

@@ -1,0 +1,7 @@
+TIMESTAMP = 1687941076
+SHA256 (rocky/g/gstreamer1-libav-1.18.4-1.el9.aarch64.rpm) = 20f3b26f8c1ad1f2006ff5e22a11b62ef3a64a676cc0655c35e26acabd5f282d
+SIZE (rocky/g/gstreamer1-libav-1.18.4-1.el9.aarch64.rpm) = 293545
+SHA256 (rocky/g/gstreamer1-libav-1.18.4-1.el9.x86_64.rpm) = 211ac0bb3d5c278113e047eb808e24d55803884e991423b129d106cce87314c5
+SIZE (rocky/g/gstreamer1-libav-1.18.4-1.el9.x86_64.rpm) = 301203
+SHA256 (rocky/g/gstreamer1-libav-1.18.4-1.el9.src.rpm) = d8e5f32a02665c57458556d0cde19bd0055567376033bb1f2d45d086ed0131bf
+SIZE (rocky/g/gstreamer1-libav-1.18.4-1.el9.src.rpm) = 297356

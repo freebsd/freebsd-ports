@@ -1507,6 +1507,7 @@
     SUBDIR += linux-rl9-elfutils-libs
     SUBDIR += linux-rl9-libpciaccess
     SUBDIR += linux-rl9-libthai
+    SUBDIR += linux-rl9-llvm
     SUBDIR += linux-rl9-nspr
     SUBDIR += linux-rl9-systemd-libs
     SUBDIR += linux-sublime-merge

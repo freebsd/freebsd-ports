@@ -15,7 +15,7 @@ CPE_VENDOR=	gnome
 CPE_PRODUCT=	gtk
 USE_LDCONFIG=	yes
 USE_LINUX=	at-spi2-atk atk cairo-gobject fontconfig freetype gdkpixbuf2 \
-		libepoxy librsvg2 libtracker-sparql libxkbcommon \
+		gnutls libepoxy libproxy librsvg2 libtracker-sparql libxkbcommon \
 		pango wayland xorglibs
 USE_LINUX_RPM=	yes
 

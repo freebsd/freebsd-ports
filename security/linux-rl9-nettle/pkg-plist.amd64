@@ -1,0 +1,16 @@
+usr/lib/.build-id/97/ce01a5c43483f58a364086c521ec45dc1d3a3a
+usr/lib/.build-id/a5/e63d290dbce2f78dfdfde45b9865adbf312515
+usr/lib64/.libhogweed.so.6.5.hmac
+usr/lib64/.libhogweed.so.6.hmac
+usr/lib64/.libnettle.so.8.5.hmac
+usr/lib64/.libnettle.so.8.hmac
+usr/lib64/libhogweed.so.6
+usr/lib64/libhogweed.so.6.5
+usr/lib64/libnettle.so.8
+usr/lib64/libnettle.so.8.5
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/info/nettle.info.gz
+usr/share/licenses/nettle/COPYING.LESSERv3
+usr/share/licenses/nettle/COPYINGv2
