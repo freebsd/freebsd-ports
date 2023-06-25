@@ -1,5 +1,6 @@
 PORTNAME=	mame
 DISTVERSION=	0.255
+PORTREVISION=	1
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
@@ -66,6 +67,8 @@ MAKE_ENV=	LDOPTS="${LDFLAGS}" \
 		USE_SYSTEM_LIB_UV=1 \
 		USE_SYSTEM_LIB_ZLIB=1 \
 		USE_TAPTUN=1
+
+CFLAGS_aarch64=	-march=armv8-a+crc+crypto
 
 SUB_FILES=	pkg-message mame.ini plugin.ini ui.ini
 
