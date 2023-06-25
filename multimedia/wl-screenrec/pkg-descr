@@ -1,0 +1,14 @@
+High performance screen recorder for wlroots Wayland.
+
+Uses dma-buf transfers to get surface, and uses the GPU to do both the
+pixel format conversion and the encoding, meaning the raw video data
+never touches the CPU, leaving it free to run your applications.
+
+System Requirements:
+* Wayland compositor supporting the following protocols:
+  * wlr-output-management-unstable-v1 (missing in hikari, cage, gamescope, kwinft)
+  * wlr-screencopy-unstable-v1 (missing in gamescope and kwinft)
+  Known working examples: sway, hyprland, wayfire, labwc.
+* VA-API encoding:
+  * Intel iGPUs: libva-intel-media-driver or libva-intel-driver
+  * AMD/ATI GPUs: mesa-gallium-va
