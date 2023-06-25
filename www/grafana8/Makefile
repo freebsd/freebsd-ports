@@ -1,6 +1,6 @@
 PORTNAME=	grafana
 DISTVERSIONPREFIX=	v
-DISTVERSION=	8.5.26
+DISTVERSION=	8.5.27
 CATEGORIES=	www
 MASTER_SITES=	https://dl.grafana.com/oss/release/:public
 PKGNAMESUFFIX=	${DISTVERSION:C/([0-9]).*/\1/1}
@@ -14,6 +14,9 @@ WWW=		https://github.com/grafana/grafana
 LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	EOLed upstream
+EXPIRATION_DATE=	2023-09-30
+
 ONLY_FOR_ARCHS=	aarch64 amd64 armv7 i386 riscv64
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
@@ -23,7 +26,7 @@ USES=		cpe go:modules
 USE_GITHUB=	yes
 
 USE_RC_SUBR=	grafana
-TAG=		e4fd9da
+TAG=		5f9e0ac
 
 GO_TARGET=	./pkg/cmd/grafana-server \
 		./pkg/cmd/grafana-cli
