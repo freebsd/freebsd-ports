@@ -33,6 +33,12 @@ OPTIONS_DEFINE=	DEBUG EXAMPLES
 
 DEBUG_MAKE_ENV_OFF=	NDEBUG=1
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
+.endif
+
 post-extract:
 .for bundled in bzip2 jpeglib libpng zlib
 	@${RM} -r ${WRKSRC}/source/Irrlicht/${bundled}
