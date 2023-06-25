@@ -16,6 +16,12 @@ BUILD_DEPENDS=	p5-Module-Build-XSUtil>0:devel/p5-Module-Build-XSUtil
 USES=		perl5
 USE_PERL5=	modbuild
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=  -Dregister=
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Compiler/Lexer/Lexer.so
 
