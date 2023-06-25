@@ -1,6 +1,7 @@
 PORTNAME=	faustlive
-DISTVERSION=	2.5.13-75
-DISTVERSIONSUFFIX=	-g15ddcbc
+DISTVERSION=	2.5.15-20230512
+#MASTER_SITES=	https://github.com/grame-cncm/faustlive/releases/download/${DISTVERSION}/
+#DISTFILES=	FaustLive-${DISTVERSION}${EXTRACT_SUFX} 
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,6 +27,9 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
 GH_TUPLE=	grame-cncm:faustlibraries:b91fdeb:grame_cncm_faustlibraries/Resources/Libs
+GH_TAGNAME=	15ddcbc
+
+#WRKSRC=		${WRKDIR}/FaustLive-${DISTVERSION}
 
 SHEBANG_GLOB=	build install makelibs
 
