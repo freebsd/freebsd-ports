@@ -70,6 +70,12 @@ GLIB_SCHEMAS=	20_buddiesofbudgie.budgie-desktop.notifications.gschema.override \
 		org.buddiesofbudgie.budgie-desktop.screenshot.gschema.xml \
 		25_org.buddiesofbudgie-default-settings.gschema.override
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-extract:
 	${CP} ${FILESDIR}/25_org.buddiesofbudgie-default-settings.gschema.override \
 		${WRKSRC}/data
