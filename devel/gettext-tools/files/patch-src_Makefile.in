@@ -1,0 +1,11 @@
+--- src/Makefile.in.orig	2023-06-17 11:54:44 UTC
++++ src/Makefile.in
+@@ -696,7 +696,7 @@ am_msginit_OBJECTS = msginit-msginit.$(OBJEXT) \
+ msggrep_OBJECTS = $(am_msggrep_OBJECTS)
+ am_msginit_OBJECTS = msginit-msginit.$(OBJEXT) \
+ 	msginit-lang-table.$(OBJEXT) msginit-plural-count.$(OBJEXT) \
+-	../../gettext-runtime/intl/msginit-localealias.$(OBJEXT)
++
+ msginit_OBJECTS = $(am_msginit_OBJECTS)
+ msginit_LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \

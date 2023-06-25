@@ -1,8 +1,8 @@
---- intl/threadlib.c.orig	2013-03-07 08:44:37 UTC
-+++ intl/threadlib.c
-@@ -29,11 +29,10 @@
+--- intl/gnulib-lib/glthread/threadlib.c.orig	2023-02-03 13:19:38 UTC
++++ intl/gnulib-lib/glthread/threadlib.c
+@@ -62,11 +62,10 @@ glthread_in_use (void)
  
- # if PTHREAD_IN_USE_DETECTION_HARD
+ /* Test using pthread_create.  */
  
 -/* The function to be executed by a dummy thread.  */
 -static void *
@@ -15,7 +15,7 @@
  }
  
  int
-@@ -44,19 +43,10 @@ glthread_in_use (void)
+@@ -77,19 +76,10 @@ glthread_in_use (void)
  
    if (!tested)
      {

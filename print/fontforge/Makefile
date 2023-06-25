@@ -1,6 +1,6 @@
 PORTNAME=	fontforge
 DISTVERSION=	20220308
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/
 
@@ -97,14 +97,6 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 X11_RUN_DEPENDS=	${LOCALBASE}/share/fonts/gnu-unifont/unifont.pcf.gz:x11-fonts/gnu-unifont
 X11_CMAKE_BOOL=	ENABLE_X11
 
-post-patch-FREETYPE-on:
-	@${LN} -s $$(${MAKE} -C ${PORTSDIR}/print/freetype2 -V WRKSRC) \
-		${WRKSRC}/freetype
-
-post-stage-DOCS-on:
-	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo \
-		${STAGEDIR}${DOCSDIR}/.nojekyll
-
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MGTK3} || ${PORT_OPTIONS:MX11}
@@ -112,5 +104,22 @@ CMAKE_ARGS+=	-DENABLE_GUI:BOOL=true
 .else
 CMAKE_ARGS+=	-DENABLE_GUI:BOOL=false
 .endif
+
+post-patch:
+# https://github.com/fontforge/fontforge/issues/5251
+	@${REINPLACE_CMD} 's/\(%[^%[:space:]]*\)hs/\1s/g' \
+		${WRKSRC}/fontforgeexe/searchview.c \
+		${WRKSRC}/po/de.po ${WRKSRC}/po/ca.po ${WRKSRC}/po/hr.po \
+		${WRKSRC}/po/it.po ${WRKSRC}/po/pl.po ${WRKSRC}/po/uk.po \
+		${WRKSRC}/po/en_GB.po ${WRKSRC}/po/fr.po ${WRKSRC}/po/vi.po \
+		${WRKSRC}/po/ko.po ${WRKSRC}/po/ja.po
+
+post-patch-FREETYPE-on:
+	@${LN} -s $$(${MAKE} -C ${PORTSDIR}/print/freetype2 -V WRKSRC) \
+		${WRKSRC}/freetype
+
+post-stage-DOCS-on:
+	@${RM} ${STAGEDIR}${DOCSDIR}/.buildinfo \
+		${STAGEDIR}${DOCSDIR}/.nojekyll
 
 .include <bsd.port.mk>

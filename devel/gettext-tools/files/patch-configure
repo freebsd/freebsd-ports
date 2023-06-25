@@ -1,20 +1,19 @@
---- configure.orig	2022-10-09 21:32:05 UTC
+--- configure.orig	2023-06-17 11:54:38 UTC
 +++ configure
-@@ -24756,7 +24756,7 @@ then :
-              # On Solaris 10 or newer, this test is no longer needed, because
-              # libc contains the fully functional pthread functions.
-              case "$host_os" in
--               solaris | solaris2.1-9 | solaris2.1-9.* | hpux*)
-+               solaris | solaris2.1-9 | solaris2.1-9.* | hpux* | freebsd*)
- 
- printf "%s\n" "#define PTHREAD_IN_USE_DETECTION_HARD 1" >>confdefs.h
- 
-@@ -29661,7 +29661,7 @@ printf "%s\n" "$ac_res" >&6; }
+@@ -26130,7 +26130,6 @@ printf "%s\n" "$ac_res" >&6; }
                                          if { eval "gt_val=\$$gt_func_gnugettext_libc"; test "$gt_val" = "yes"; } \
             || { { eval "gt_val=\$$gt_func_gnugettext_libintl"; test "$gt_val" = "yes"; } \
                  && test "$PACKAGE" != gettext-runtime \
--                && test "$PACKAGE" != gettext-tools; }; then
-+                ; }; then
+-                && test "$PACKAGE" != gettext-tools \
+                 && test "$PACKAGE" != libintl; }; then
            gt_use_preinstalled_gnugettext=yes
          else
-                     LIBINTL=
+@@ -35320,7 +35319,7 @@ then :
+              # On Solaris 10 or newer, this test is no longer needed, because
+              # libc contains the fully functional pthread functions.
+              case "$host_os" in
+-               solaris | solaris2.[1-9] | solaris2.[1-9].* | hpux*)
++               solaris | solaris2.[1-9] | solaris2.[1-9].* | hpux* | freebsd*)
+ 
+ printf "%s\n" "#define PTHREAD_IN_USE_DETECTION_HARD 1" >>confdefs.h
+ 

@@ -1,0 +1,11 @@
+--- po/pt.po.orig	2009-03-06 06:49:55 UTC
++++ po/pt.po
+@@ -13,7 +13,7 @@ msgstr ""
+ "Last-Translator: Tiago Baptista <Aeroplane@gmx.net>\n"
+ "Language-Team: LANGUAGE <LL@li.org>\n"
+ "MIME-Version: 1.0\n"
+-"Content-Type: text/plain; charset=CHARSET\n"
++"Content-Type: text/plain; charset=ISO-8859-1\n"
+ "Content-Transfer-Encoding: 8bit\n"
+ 
+ #: draw.c:100

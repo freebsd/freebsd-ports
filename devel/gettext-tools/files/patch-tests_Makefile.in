@@ -1,0 +1,11 @@
+--- tests/Makefile.in.orig	2023-06-25 16:45:40 UTC
++++ tests/Makefile.in
+@@ -3788,7 +3788,7 @@ LDADD_yes = ../../gettext-runtime/intl/libintl.la @LTL
+ # but libtool doesn't put -Wl,-framework options into .la files.
+ LDADD = $(LDADD_@USE_INCLUDED_LIBINTL@) @INTL_MACOSX_LIBS@
+ LDADD_yes = ../../gettext-runtime/intl/libintl.la @LTLIBTHREAD@
+-LDADD_no = ../../gettext-runtime/intl/libgnuintl.la @LTLIBTHREAD@ @LTLIBINTL@
++LDADD_no = @LTLIBTHREAD@ @LTLIBINTL@
+ tstgettext_SOURCES = \
+   tstgettext.c ../../gettext-runtime/src/escapes.h \
+   setlocale.c

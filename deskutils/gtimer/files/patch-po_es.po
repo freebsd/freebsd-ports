@@ -1,0 +1,11 @@
+--- po/es.po.orig	2010-03-26 23:07:46 UTC
++++ po/es.po
+@@ -2,7 +2,7 @@ msgstr ""
+ msgstr ""
+ "Date: 1999-03-18 17:50:49-0500\n"
+ "Last-Translator: Carlos Fernandez <c_fern@yahoo.com>\n"
+-"Content-Type: text/plain; charset=\n"
++"Content-Type: text/plain; charset=ISO-8859-1\n"
+ "Xgettext-Options: \n"
+ "Files: annotate.c config.c confirm.c edit.c main.c report.c task.c unhide.c xextras.c\n"
+ 

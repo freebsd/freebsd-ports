@@ -25,7 +25,8 @@ CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-csharp --disable-java --with-included-glib \
 		--with-included-libcroco --with-included-libunistring \
-		--with-included-libxml --with-xz --without-emacs \
+		--with-included-libxml --with-installed-libtextstyle \
+		--with-xz --without-emacs \
 		ac_cv_lib_rt_sched_yield=no
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
@@ -42,21 +43,5 @@ OPTIONS_DEFAULT=THREADS
 OPTIONS_EXCLUDE_DragonFly=	THREADS
 
 THREADS_CONFIGURE_ENABLE=	threads
-
-post-patch:
-# Do not patch system float.h.
-	@${REINPLACE_CMD} 's/FLOAT_H=float\.h//' \
-		${WRKSRC}/configure
-# Use libintl installed by gettext-runtime.
-	@${REINPLACE_CMD} '/^LDADD_no =/s,\.\./intl/libgnuintl.la,,' \
-		${WRKSRC}/tests/Makefile.in
-# Use libasprintf installed by gettext-runtime.
-	@${REINPLACE_CMD} 's,[^ ]*libasprintf.la,-lasprintf,' \
-		${WRKSRC}/tests/lang-c++
-# Use system libtextstyle.
-	@${REINPLACE_CMD} \
-		-e '/:/!s,[[:<:]]textstyle[^[:space:]]*\.h,,g' \
-		-e 's,\.\./\.\./libtextstyle/lib/libtextstyle\.la,-ltextstyle,' \
-		${WRKSRC}/src/Makefile.in
 
 .include <bsd.port.mk>

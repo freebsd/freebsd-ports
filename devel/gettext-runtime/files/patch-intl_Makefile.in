@@ -1,0 +1,11 @@
+--- intl/Makefile.in.orig	2023-06-17 11:53:53 UTC
++++ intl/Makefile.in
+@@ -1692,7 +1692,7 @@ AM_CPPFLAGS = -Ignulib-lib -I$(srcdir)/gnulib-lib \
+ AM_CPPFLAGS = -Ignulib-lib -I$(srcdir)/gnulib-lib \
+ 	-DLOCALEDIR=$(localedir_c_make) \
+ 	-DLOCALE_ALIAS_PATH=\"$(aliaspath)\" -DLIBDIR=\"$(libdir)\" \
+-	-DBUILDING_LIBINTL $(am__append_1)
++	-DBUILDING_LIBINTL -DBUILDING_DLL $(am__append_1)
+ 
+ # Enable more warning options in this directory.
+ 

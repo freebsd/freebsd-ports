@@ -1,0 +1,11 @@
+--- libmate-panel-applet/Makefile.in.orig	2023-06-30 15:20:38 UTC
++++ libmate-panel-applet/Makefile.in
+@@ -1030,7 +1030,7 @@ $(noinst_DATA): $(applet_in_files)
+ 			--eprod "GType @enum_name@_get_type (void);\n" \
+ 		$(mate_panel_applet_enum_headers) > $@
+ $(noinst_DATA): $(applet_in_files)
+-	$(AM_V_GEN) $(MSGFMT) --desktop --keyword Name --keyword Description --template $< -d $(top_srcdir)/po -o $@
++	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
+ 
+ ###############################
+ # Introspection generation
