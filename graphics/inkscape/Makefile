@@ -1,10 +1,16 @@
 PORTNAME=	inkscape
 DISTVERSION=	1.2.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics gnome
 MASTER_SITES=	https://media.inkscape.org/dl/resources/file/
 
 PATCH_SITES=	https://gitlab.com/${PORTNAME}/${PORTNAME}/-/commit/
+# https://gitlab.com/inkscape/inkscape/-/merge_requests/4463
+PATCHFILES+=	c5fc06a7c29d6be9e2fb18b841e973a193428332.patch:-p1 \
+		40c4147ec66319f42129ab253d0483f91329419c.patch:-p1 \
+		57c85eec491e07949497fa67edc7c76eafde7471.patch:-p1
+#		362f987096833dd1dfa223be82fc6a97c3795f6c.patch:-p1
+PATCHFILES+=	fdc7329ba5036ef5cde7bb5e61ed52a69850f5d8.patch:-p1 # https://gitlab.com/inkscape/inkscape/-/merge_requests/4483
 PATCHFILES+=	781e29cd3538.patch:-p1 # https://gitlab.com/inkscape/inkscape/-/merge_requests/5111
 
 MAINTAINER=	gnome@FreeBSD.org
