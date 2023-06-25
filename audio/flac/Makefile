@@ -1,5 +1,6 @@
 PORTNAME=	flac
 PORTVERSION=	1.4.2
+PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://downloads.xiph.org/releases/flac/
 
