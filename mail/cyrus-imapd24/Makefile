@@ -201,4 +201,4 @@ post-install-EXAMPLES-on:
 	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
