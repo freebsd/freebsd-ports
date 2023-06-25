@@ -1,5 +1,5 @@
 PORTNAME=	cardano-node
-PORTVERSION=	8.0.0
+PORTVERSION=	8.1.1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
 
@@ -21,11 +21,9 @@ USES=		autoreconf:build cabal gmake libtool pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	input-output-hk
 
-#GH_TUPLE=	denisshevchenko:threepenny-gui:4ec92ded05ccf59ba4a874be4b404ac1b6d666b6:threepenny_gui/dist-newstyle/src/threepenn_-a39f3242b2cf0a10
-
 GH_TUPLE+=	input-output-hk:libsodium:${LIBSODIUM_HASH}:sodium
 
-CARDANO_NODE_HASH=	69a117b7be3db0f4ce6d9fc5cd4c16a2a409dcb8
+CARDANO_NODE_HASH=	6f79e5c3ea109a70cd01910368e011635767305a
 LIBSODIUM_HASH=		dbb48cce5429cb6585c9034f002568964f1ce567
 
 USE_RC_SUBR=		cardano_node
@@ -35,7 +33,8 @@ BINARY_ALIAS=		git=true
 USERS=		cardano
 GROUPS=		cardano
 
-USE_CABAL=	FailT-0.1.2.0 \
+USE_CABAL=	Diff-0.4.1 \
+		FailT-0.1.2.0 \
 		Glob-0.10.2_3 \
 		HUnit-1.6.2.0 \
 		Histogram-0.1.0.2 \
@@ -92,6 +91,7 @@ USE_CABAL=	FailT-0.1.2.0 \
 		blaze-html-0.9.1.2_2 \
 		blaze-markup-0.8.2.8_4 \
 		boring-0.2.1 \
+		brick-0.73 \
 		bsb-http-chunked-0.0.0.4_3 \
 		byron-spec-chain-1.0.0.0:chap \
 		byron-spec-ledger-1.0.0.0:chap \
@@ -100,35 +100,36 @@ USE_CABAL=	FailT-0.1.2.0 \
 		cabal-doctest-1.0.9_3 \
 		call-stack-0.4.0 \
 		canonical-json-0.6.0.1 \
+		cardano-api-8.2.0.0:chap \
 		cardano-binary-1.7.0.1:chap \
-		cardano-crypto-1.1.1:chap \
+		cardano-crypto-1.1.2:chap \
 		cardano-crypto-class-2.1.1.0:chap \
 		cardano-crypto-praos-2.1.2.0:chap \
 		cardano-crypto-test-1.5.0.0:chap \
 		cardano-crypto-tests-2.1.1.0:chap \
 		cardano-crypto-wrapper-1.5.1.0:chap \
-		cardano-data-1.0.1.0:chap \
-		cardano-ledger-allegra-1.1.0.0:chap \
-		cardano-ledger-alonzo-1.1.1.0:chap \
-		cardano-ledger-alonzo-test-1.1.0.0:chap \
-		cardano-ledger-api-1.1.0.0:chap \
-		cardano-ledger-babbage-1.1.0.1:chap \
-		cardano-ledger-babbage-test-1.1.0.0:chap \
-		cardano-ledger-binary-1.1.0.1:chap \
+		cardano-data-1.1.0.0:chap \
+		cardano-ledger-allegra-1.1.1.0:chap \
+		cardano-ledger-alonzo-1.2.1.0:chap \
+		cardano-ledger-alonzo-test-1.1.1.0:chap \
+		cardano-ledger-api-1.2.0.0:chap \
+		cardano-ledger-babbage-1.2.1.0:chap \
+		cardano-ledger-babbage-test-1.1.1.0:chap \
+		cardano-ledger-binary-1.1.1.0:chap \
 		cardano-ledger-byron-1.0.0.0:chap \
 		cardano-ledger-byron-test-1.5.0.0:chap \
-		cardano-ledger-conway-1.1.0.0:chap \
-		cardano-ledger-conway-test-1.1.0.0:chap \
-		cardano-ledger-core-1.1.0.1:chap \
-		cardano-ledger-mary-1.1.0.0:chap \
-		cardano-ledger-pretty-1.1.0.0:chap \
-		cardano-ledger-shelley-1.1.1.1:chap \
-		cardano-ledger-shelley-ma-test-1.1.0.0:chap \
-		cardano-ledger-shelley-test-1.1.0.0:chap \
+		cardano-ledger-conway-1.2.0.0:chap \
+		cardano-ledger-conway-test-1.1.1.0:chap \
+		cardano-ledger-core-1.2.0.0:chap \
+		cardano-ledger-mary-1.2.0.0:chap \
+		cardano-ledger-pretty-1.1.1.0:chap \
+		cardano-ledger-shelley-1.2.0.0:chap \
+		cardano-ledger-shelley-ma-test-1.2.0.0:chap \
+		cardano-ledger-shelley-test-1.1.1.0:chap \
 		cardano-ping-0.1.0.1:chap \
 		cardano-prelude-0.1.0.2:chap \
 		cardano-prelude-test-0.1.0.2:chap \
-		cardano-protocol-tpraos-1.0.2.0:chap \
+		cardano-protocol-tpraos-1.0.3.0:chap \
 		cardano-slotting-0.1.1.1:chap \
 		cardano-strict-containers-0.1.2.1:chap \
 		case-insensitive-1.2.1.0 \
@@ -144,10 +145,12 @@ USE_CABAL=	FailT-0.1.2.0 \
 		composition-prelude-3.0.0.2 \
 		concurrent-output-1.10.17 \
 		conduit-1.3.4.3_1 \
-		connection-0.3.1_1 \
+		conduit-extra-1.3.6 \
+		config-ini-0.2.5.0_1 \
+		connection-0.3.1_2 \
 		constraints-0.13.4 \
 		constraints-extras-0.4.0.0_1 \
-		contra-tracer-0.1.0.1:chap \
+		contra-tracer-0.1.0.2:chap \
 		contravariant-1.5.5 \
 		cookie-0.4.6 \
 		criterion-1.6.0.0_1 \
@@ -156,6 +159,7 @@ USE_CABAL=	FailT-0.1.2.0 \
 		data-accessor-0.2.3.1 \
 		data-accessor-transformers-0.2.1.8 \
 		data-array-byte-0.1.0.1_1 \
+		data-clist-0.2 \
 		data-default-0.7.1.1 \
 		data-default-class-0.1.2.0 \
 		data-default-instances-containers-0.0.1 \
@@ -179,12 +183,12 @@ USE_CABAL=	FailT-0.1.2.0 \
 		doctest-0.21.1 \
 		dom-lt-0.2.3 \
 		double-conversion-2.0.4.2_2 \
-		easy-file-0.2.4 \
+		easy-file-0.2.5 \
 		ede-0.3.3.0 \
 		either-5.0.2_1 \
 		ekg-0.4.0.15.0.0.0.0.1_1:chap \
 		ekg-core-0.1.1.7_2 \
-		ekg-forward-0.3.0.1:chap \
+		ekg-forward-0.3.0.4:chap \
 		ekg-json-0.1.0.7.0.0.0.0.1_1:chap \
 		entropy-0.4.1.10_1 \
 		erf-2.0.0.0 \
@@ -195,17 +199,17 @@ USE_CABAL=	FailT-0.1.2.0 \
 		filelock-0.1.1.6 \
 		fin-0.3_1 \
 		fingertree-0.1.5.0 \
-		flat-0.6 \
+		flat-0.4.4.0.0.0.0.2:chap \
 		fmlist-0.9.4 \
 		foldable1-classes-compat-0.1_2 \
 		foldl-1.4.14_2 \
 		formatting-7.1.3_2 \
-		foundation-0.0.29 \
+		foundation-0.0.29.0.0.0.0.2:chap \
 		free-5.2_1 \
-		fs-api-0.1.0.1_1:chap \
-		fs-sim-0.1.0.1_1:chap \
+		fs-api-0.1.0.3:chap \
+		fs-sim-0.2.0.0:chap \
 		generic-data-1.1.0.0 \
-		generic-deriving-1.14.3 \
+		generic-deriving-1.14.4 \
 		generic-monoid-0.1.0.1_2 \
 		generic-random-1.5.0.1 \
 		generically-0.1.1_1 \
@@ -221,8 +225,8 @@ USE_CABAL=	FailT-0.1.2.0 \
 		haskell-lexer-1.1.1 \
 		heapwords-0.1.0.2:chap \
 		hedgehog-1.2.0.0.0.0.1_1:chap \
-		hedgehog-extras-0.4.2.0 \
-		hedgehog-quickcheck-0.1.1_4 \
+		hedgehog-extras-0.4.5.1 \
+		hedgehog-quickcheck-0.1.1_5 \
 		hostname-1.0 \
 		hourglass-0.2.12 \
 		hsc2hs-0.68.9 \
@@ -233,6 +237,7 @@ USE_CABAL=	FailT-0.1.2.0 \
 		http-api-data-0.5_1 \
 		http-client-0.7.13.1_1 \
 		http-client-tls-0.3.6.1 \
+		http-conduit-2.3.8 \
 		http-date-0.0.11 \
 		http-media-0.8.0.0_8 \
 		http-types-0.12.3 \
@@ -248,7 +253,7 @@ USE_CABAL=	FailT-0.1.2.0 \
 		io-sim-1.1.0.0 \
 		io-streams-1.5.2.2_1 \
 		io-streams-haproxy-1.0.1.0_7 \
-		iohk-monitoring-0.1.11.1:chap \
+		iohk-monitoring-0.1.11.3:chap \
 		iproute-1.7.12 \
 		isomorphism-class-0.1.0.9 \
 		js-chart-2.9.4.1 \
@@ -274,7 +279,8 @@ USE_CABAL=	FailT-0.1.2.0 \
 		megaparsec-9.2.1_1 \
 		memory-0.18.0 \
 		microlens-0.4.13.1 \
-		microlens-th-0.4.3.12 \
+		microlens-mtl-0.2.0.3 \
+		microlens-th-0.4.3.13 \
 		microstache-1.0.2.3_1 \
 		mime-mail-0.5.1 \
 		mime-types-0.1.1.0 \
@@ -286,7 +292,7 @@ USE_CABAL=	FailT-0.1.2.0 \
 		mtl-compat-0.2.2 \
 		multiset-0.3.4.3 \
 		mwc-random-0.15.0.2_1 \
-		network-3.1.2.8_1 \
+		network-3.1.2.9 \
 		network-bsd-2.8.1.0_4 \
 		network-byte-order-0.1.6_1 \
 		network-mux-0.4.0.0:chap \
@@ -299,17 +305,17 @@ USE_CABAL=	FailT-0.1.2.0 \
 		old-time-1.1.0.3_2 \
 		openssl-streams-1.2.3.0_1 \
 		optparse-applicative-0.17.0.0 \
-		optparse-applicative-fork-0.16.1.0:chap \
-		optparse-generic-1.4.9 \
-		ouroboros-consensus-0.6.0.0:chap \
-		ouroboros-consensus-cardano-0.5.0.1:chap \
-		ouroboros-consensus-diffusion-0.5.1.0:chap \
-		ouroboros-consensus-protocol-0.5.0.1:chap \
-		ouroboros-network-0.6.0.0:chap \
-		ouroboros-network-api-0.3.0.0:chap \
-		ouroboros-network-framework-0.5.0.0:chap \
+		optparse-applicative-fork-0.16.2.0:chap \
+		optparse-generic-1.5.0 \
+		ouroboros-consensus-0.7.0.0:chap \
+		ouroboros-consensus-cardano-0.6.0.0:chap \
+		ouroboros-consensus-diffusion-0.6.0.0_2:chap \
+		ouroboros-consensus-protocol-0.5.0.2:chap \
+		ouroboros-network-0.8.1.1:chap \
+		ouroboros-network-api-0.5.0.0:chap \
+		ouroboros-network-framework-0.6.0.1:chap \
 		ouroboros-network-mock-0.1.0.1:chap \
-		ouroboros-network-protocols-0.5.0.0:chap \
+		ouroboros-network-protocols-0.5.0.3:chap \
 		ouroboros-network-testing-0.3.0.0:chap \
 		parallel-3.2.2.0_6 \
 		parser-combinators-1.3.0 \
@@ -317,10 +323,9 @@ USE_CABAL=	FailT-0.1.2.0 \
 		partial-order-0.2.0.0 \
 		pem-0.2.4 \
 		pipes-4.3.16_6 \
-		plutus-core-1.1.1.0_2:chap \
-		plutus-ledger-api-1.1.1.0:chap \
-		plutus-tx-1.1.1.0:chap \
-		plutus-tx-plugin-1.1.0.0:chap \
+		plutus-core-1.5.0.1:chap \
+		plutus-ledger-api-1.5.0.0:chap \
+		plutus-tx-1.5.0.0:chap \
 		polyparse-1.13_6 \
 		pretty-show-1.10 \
 		prettyprinter-1.7.1 \
@@ -330,7 +335,7 @@ USE_CABAL=	FailT-0.1.2.0 \
 		process-extras-0.7.4 \
 		profunctors-5.6.2_3 \
 		prometheus-2.2.3 \
-		protolude-0.3.3 \
+		protolude-0.3.3.0.0.0.0.1:chap \
 		psqueues-0.2.7.3 \
 		quickcheck-instances-0.3.29.1_2 \
 		quickcheck-io-0.2.0 \
@@ -358,7 +363,7 @@ USE_CABAL=	FailT-0.1.2.0 \
 		serialise-0.2.6.0_3 \
 		servant-0.19.1_1 \
 		servant-server-0.19.2.0.0.0.0.1_1:chap \
-		set-algebra-1.0.0.0:chap \
+		set-algebra-1.1.0.0:chap \
 		show-combinators-0.2.0.0_2 \
 		si-timers-1.1.0.0 \
 		signal-0.1.0.4 \
@@ -378,7 +383,7 @@ USE_CABAL=	FailT-0.1.2.0 \
 		splitmix-0.1.0.4_2 \
 		statistics-0.16.2.0 \
 		statistics-linreg-0.3 \
-		streaming-0.2.3.1 \
+		streaming-0.2.3.1.0.0.0.0.1:chap \
 		streaming-binary-0.2.2.0 \
 		streaming-bytestring-0.3.0 \
 		streaming-commons-0.2.2.6 \
@@ -391,10 +396,11 @@ USE_CABAL=	FailT-0.1.2.0 \
 		syb-0.7.2.3 \
 		system-filepath-0.4.14_1 \
 		tagged-0.8.7 \
+		tar-0.5.1.1_6 \
 		tasty-1.4.3 \
 		tasty-expected-failure-0.12.3 \
 		tasty-golden-2.3.5 \
-		tasty-hedgehog-1.4.0.1 \
+		tasty-hedgehog-1.4.0.1_1 \
 		tasty-hunit-0.10.0.3 \
 		tasty-quickcheck-0.10.2 \
 		tdigest-0.3 \
@@ -405,11 +411,12 @@ USE_CABAL=	FailT-0.1.2.0 \
 		text-builder-dev-0.3.3.2 \
 		text-manipulate-0.3.1.0 \
 		text-short-0.1.5_2 \
+		text-zipper-0.13 \
 		tf-random-0.5 \
-		th-abstraction-0.4.5.0_1 \
+		th-abstraction-0.5.0.0 \
 		th-compat-0.1.4_2 \
 		th-expand-syns-0.4.11.0_1 \
-		th-extras-0.0.0.6 \
+		th-extras-0.0.0.6.0.0.0.0.1:chap \
 		th-lift-0.8.3 \
 		th-lift-instances-0.1.20 \
 		th-orphans-0.13.14_1 \
@@ -421,7 +428,7 @@ USE_CABAL=	FailT-0.1.2.0 \
 		time-manager-0.0.0_1 \
 		time-units-1.0.0 \
 		tls-1.6.0 \
-		tracer-transformers-0.1.0.2:chap \
+		tracer-transformers-0.1.0.4:chap \
 		transformers-base-0.4.6 \
 		transformers-compat-0.6.6_1 \
 		transformers-except-0.1.3 \
@@ -429,9 +436,9 @@ USE_CABAL=	FailT-0.1.2.0 \
 		trifecta-2.1.2_2 \
 		type-equality-1_5 \
 		typed-process-0.2.11.0 \
-		typed-protocols-0.1.0.4_1:chap \
-		typed-protocols-cborg-0.1.0.2:chap \
-		typed-protocols-examples-0.2.0.0:chap \
+		typed-protocols-0.1.0.6:chap \
+		typed-protocols-cborg-0.1.0.4:chap \
+		typed-protocols-examples-0.2.0.2:chap \
 		unagi-chan-0.4.1.4 \
 		unbounded-delays-0.1.1.1 \
 		universe-base-1.1.3.1 \
@@ -444,15 +451,16 @@ USE_CABAL=	FailT-0.1.2.0 \
 		utf8-string-1.0.2 \
 		utility-ht-0.0.17 \
 		uuid-types-1.0.5_4 \
-		validation-selective-0.2.0.0 \
+		validation-selective-0.2.0.0.0.0.0.0.1:chap \
 		validity-0.12.0.1 \
 		vault-0.3.1.5_3 \
 		vector-0.12.3.1_4 \
 		vector-algorithms-0.9.0.1.0.0.0.0.1_1:chap \
-		vector-binary-instances-0.2.5.2_3 \
+		vector-binary-instances-0.2.5.2_4 \
 		vector-map-1.0.1.0:chap \
 		vector-th-unbox-0.2.2_4 \
 		void-0.7.3 \
+		vty-5.38 \
 		wai-3.2.3 \
 		wai-app-static-3.1.7.4 \
 		wai-extra-3.1.13.0_1 \
@@ -463,13 +471,13 @@ USE_CABAL=	FailT-0.1.2.0 \
 		witherable-0.4.2_4 \
 		wl-pprint-annotated-0.1.0.1_1 \
 		wl-pprint-text-1.2.0.2 \
-		word-array-1.1.0.0:chap \
+		word-wrap-0.5 \
 		word8-0.1.3 \
 		x509-1.7.7 \
 		x509-store-1.6.9 \
 		x509-system-1.6.7 \
 		x509-validation-1.6.12 \
-		yaml-0.11.11.0 \
+		yaml-0.11.11.0_1 \
 		zlib-0.6.3.0_1 \
 		zlib-bindings-0.1.1.5_2
 
