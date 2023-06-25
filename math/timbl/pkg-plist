@@ -2,6 +2,7 @@ bin/timbl
 include/timbl/BestArray.h
 include/timbl/Choppers.h
 include/timbl/Common.h
+include/timbl/Features.h
 include/timbl/GetOptClass.h
 include/timbl/IBtree.h
 include/timbl/Instance.h
@@ -12,13 +13,14 @@ include/timbl/MsgClass.h
 include/timbl/Options.h
 include/timbl/Statistics.h
 include/timbl/StringOps.h
+include/timbl/Targets.h
 include/timbl/Testers.h
 include/timbl/TimblAPI.h
 include/timbl/TimblExperiment.h
 include/timbl/Types.h
 include/timbl/neighborSet.h
 lib/libtimbl.so
-lib/libtimbl.so.6
-lib/libtimbl.so.6.0.0
+lib/libtimbl.so.7
+lib/libtimbl.so.7.0.0
 libdata/pkgconfig/timbl.pc
 man/man1/timbl.1.gz
