@@ -36,6 +36,7 @@ MAKE_ARGS+=	cc="${CC}"	\
 		cxx="${CXX}"	\
 		ccflags="${CCFLAGS}"	\
 		cxxflags="${CXXFLAGS}"	\
+		cxxstd="c++17"	\
 		libpath="/lib"	\
 		sharedlib=1	\
 		prefix="${STAGEDIR}${PREFIX}"	\
@@ -50,16 +51,6 @@ PLIST_SUB=	VER=${LIBVER}
 
 TEST_WRKSRC=	${WRKSRC}/tests
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${TEST_ARGS}
-
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_VERSION} >= 160
-# See https://github.com/CauldronDevelopmentLLC/cbang/issues/119
-BUILD_DEPENDS+=	clang15:devel/llvm15
-CPP=		clang-cpp15
-CC=		clang15
-CXX=		clang++15
-.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|'	\
@@ -82,4 +73,4 @@ post-install:
 do-test:
 	(cd ${TEST_WRKSRC} && ${DO_MAKE_TEST} && ./testHarness)
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
