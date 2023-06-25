@@ -36,6 +36,12 @@ IGNORE=		needs SRC_BASE to compile. Install base system sources and try again
 MAKE_ARGS+=	ON_GNU_OPTIMIZER_FLAGS="-g -fPIC"
 .endif
 
+post-patch:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|D_GNU_SOURCE -I|D_GNU_SOURCE -Dregister= -I|g' \
+		${WRKSRC}/makefile
+.endif
+
 pre-build:
 	@${RM} -r ${WRKSRC}/zlib
 	${CP} -R ${LIBZ} ${WRKSRC}/zlib
