@@ -1,6 +1,6 @@
 PORTNAME=	faustlive
-DISTVERSION=	2.5.13
-PORTREVISION=	1
+DISTVERSION=	2.5.13-75
+DISTVERSIONSUFFIX=	-g15ddcbc
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,7 +25,7 @@ USE_GL=		gl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	grame-cncm
-GH_TUPLE=	grame-cncm:faustlibraries:7e30d76:grame_cncm_faustlibraries/Resources/Libs
+GH_TUPLE=	grame-cncm:faustlibraries:b91fdeb:grame_cncm_faustlibraries/Resources/Libs
 
 SHEBANG_GLOB=	build install makelibs
 
