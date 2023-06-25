@@ -19,6 +19,12 @@ ALL_TARGET=	build
 
 PROGS=	bin/wmic bin/winexe
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 do-install:
 .for x in ${PROGS}
 	${INSTALL_PROGRAM} ${WRKSRC}/Samba/source/${x} ${STAGEDIR}${PREFIX}/${x}
