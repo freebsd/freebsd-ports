@@ -1,0 +1,8 @@
+usr/lib/.build-id/c7/8b941c6cb4b6790887e430352b82a0c045e6a4
+usr/lib64/libproxy.so.1
+usr/lib64/libproxy.so.1.0.0
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/README
+usr/share/licenses/libproxy/COPYING
+usr/share/licenses/libproxy/Copyright.txt
+@dir usr/lib64/libproxy/0.4.15/modules

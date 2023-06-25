@@ -1,0 +1,7 @@
+TIMESTAMP = 1687438732
+SHA256 (rocky/c/cyrus-sasl-lib-2.1.27-21.el9.aarch64.rpm) = f413dd81e101695270414c32ed757d11f58b4ac6876f2edbe5c7f7c11b84e41c
+SIZE (rocky/c/cyrus-sasl-lib-2.1.27-21.el9.aarch64.rpm) = 769904
+SHA256 (rocky/c/cyrus-sasl-lib-2.1.27-21.el9.x86_64.rpm) = 997880c9126e9eceba7cbab49dfd0b85cacab30af214637ae5d3ad728d26d921
+SIZE (rocky/c/cyrus-sasl-lib-2.1.27-21.el9.x86_64.rpm) = 782005
+SHA256 (rocky/c/cyrus-sasl-2.1.27-21.el9.src.rpm) = 602abac0586c6c30a6f1108f5fdc17e2fbd9fb53af565c0a5cb24d2b81f97b4d
+SIZE (rocky/c/cyrus-sasl-2.1.27-21.el9.src.rpm) = 4023552

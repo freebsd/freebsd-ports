@@ -74,7 +74,7 @@ LIB_DISTNAMES=	bzip2-libs-1.0.8-8.el9 \
 
 SHARE_DISTNAMES=basesystem-11-13.el9 \
 		ncurses-base-6.2-8.20210508.el9 \
-		rocky-release-9.2-1.5.el9 \
+		rocky-release-9.2-1.6.el9 \
 		setup-2.13.7-9.el9
 SRC_DISTFILES=	acl-2.3.1-3.el9${SRC_SUFX}:SOURCE \
 		attr-2.5.1-3.el9${SRC_SUFX}:SOURCE \
@@ -109,7 +109,7 @@ SRC_DISTFILES=	acl-2.3.1-3.el9${SRC_SUFX}:SOURCE \
 		pcre2-10.40-2.el9${SRC_SUFX}:SOURCE \
 		popt-1.18-8.el9${SRC_SUFX}:SOURCE \
 		readline-8.1-4.el9${SRC_SUFX}:SOURCE \
-		rocky-release-9.2-1.5.el9${SRC_SUFX}:SOURCE \
+		rocky-release-9.2-1.6.el9${SRC_SUFX}:SOURCE \
 		sed-4.8-9.el9${SRC_SUFX}:SOURCE \
 		setserial-2.17-54.el9${SRC_SUFX}:SOURCE \
 		setup-2.13.7-9.el9${SRC_SUFX}:SOURCE \

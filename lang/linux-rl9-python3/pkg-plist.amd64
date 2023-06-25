@@ -1,0 +1,11 @@
+usr/bin/pydoc
+usr/bin/pydoc3
+usr/bin/pydoc3.9
+usr/bin/python3
+usr/bin/python3.9
+usr/lib/.build-id/5f/e947e5999d2bd9deb9dafc75b2a3e67d074e44
+usr/libexec/platform-python
+usr/libexec/platform-python3.9
+%%PORTDOCS%%%%DOCSDIR%%/README.rst
+usr/share/man/man1/python3.1.gz
+usr/share/man/man1/python3.9.1.gz

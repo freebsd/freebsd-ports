@@ -1,0 +1,25 @@
+PORTNAME=	python3
+PORTVERSION=	3.9.16
+DISTVERSIONSUFFIX=	-1.el9_2.1
+CATEGORIES=	lang linux
+PKGNAMESUFFIX=	9
+
+MAINTAINER=	emulation@FreeBSD.org
+COMMENT=	Python Language (Rocky Linux ${LINUX_DIST_VER})
+WWW=		https://www.python.org/
+
+LICENSE=	PSFL
+
+USES=		cpe linux:rl9
+USE_LDCONFIG=	yes
+USE_LINUX_RPM=	yes
+
+SRC_DISTFILES=	${PORTNAME}.${PKGNAMESUFFIX}-${DISTVERSIONFULL}${SRC_SUFX}:SOURCE
+
+CONFLICTS=	linux-c7-${PORTNAME}${PKGNAMESUFFIX}
+DESCR=		${.CURDIR}/../${PORTNAME}${PKGNAMESUFFIX}/pkg-descr
+DOCSDIR=	${PREFIX}/usr/share/doc/${PORTNAME}
+
+OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.mk>

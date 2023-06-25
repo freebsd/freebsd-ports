@@ -445,6 +445,8 @@
     SUBDIR += linux-c7-openldap
     SUBDIR += linux-c7-tcp_wrappers-libs
     SUBDIR += linux-rl9-avahi-libs
+    SUBDIR += linux-rl9-libproxy
+    SUBDIR += linux-rl9-openldap
     SUBDIR += liveMedia
     SUBDIR += lla
     SUBDIR += lualdap

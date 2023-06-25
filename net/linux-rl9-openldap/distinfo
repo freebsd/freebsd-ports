@@ -1,0 +1,15 @@
+TIMESTAMP = 1687438549
+SHA256 (rocky/o/openldap-2.6.2-3.el9.aarch64.rpm) = 59c2ec3b5e5ef3ab8823c1558d34e4ea72dd161584b68d346035f0873ba3e7dd
+SIZE (rocky/o/openldap-2.6.2-3.el9.aarch64.rpm) = 255330
+SHA256 (rocky/o/openldap-2.6.2-3.el9.x86_64.rpm) = 68c7793744fdd3b743fde89e31adeae7679a49bb0d28dba1c65508bbe77d222c
+SIZE (rocky/o/openldap-2.6.2-3.el9.x86_64.rpm) = 260383
+SHA256 (rocky/o/openldap-clients-2.6.2-3.el9.aarch64.rpm) = 72695871f8b131aaccd098931c62e339b1dfa053a4bcf21d14c3c119409810e1
+SIZE (rocky/o/openldap-clients-2.6.2-3.el9.aarch64.rpm) = 172443
+SHA256 (rocky/o/openldap-clients-2.6.2-3.el9.x86_64.rpm) = f2a55e0ca9dad989d637d700150bd9e8890f018d60f5ab8977067bb6657d2784
+SIZE (rocky/o/openldap-clients-2.6.2-3.el9.x86_64.rpm) = 177763
+SHA256 (rocky/o/openldap-compat-2.6.2-3.el9.aarch64.rpm) = a18d779e61a404d61794169d2389670632a5f1f6f1e8c3a09589c8ead348dbc1
+SIZE (rocky/o/openldap-compat-2.6.2-3.el9.aarch64.rpm) = 17182
+SHA256 (rocky/o/openldap-compat-2.6.2-3.el9.x86_64.rpm) = d2d5b93915432c22eca0b29a7ad1264bbccf5b186dcff1c11aaabcdc1ac6cc05
+SIZE (rocky/o/openldap-compat-2.6.2-3.el9.x86_64.rpm) = 17073
+SHA256 (rocky/o/openldap-2.6.2-3.el9.src.rpm) = d37468cdef92d21cea291a51e34a77855a1c4af47fc53c78ecae62e99d7036db
+SIZE (rocky/o/openldap-2.6.2-3.el9.src.rpm) = 6475166

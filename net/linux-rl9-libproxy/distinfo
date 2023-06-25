@@ -1,0 +1,7 @@
+TIMESTAMP = 1687508198
+SHA256 (rocky/l/libproxy-0.4.15-35.el9.aarch64.rpm) = 31daa01dfa6eb8e0ae100cbdc20f0d73320598a934f0eabad830b0060027f2d2
+SIZE (rocky/l/libproxy-0.4.15-35.el9.aarch64.rpm) = 71753
+SHA256 (rocky/l/libproxy-0.4.15-35.el9.x86_64.rpm) = b5723d56327d929d31efc63d2d746b61a1205269c6dae21d55881bc729a422ec
+SIZE (rocky/l/libproxy-0.4.15-35.el9.x86_64.rpm) = 74998
+SHA256 (rocky/l/libproxy-0.4.15-35.el9.src.rpm) = 9ce7f7bf42973bea5fd91e556e554a3ad3b76f63a301b1a280d4af6d45284cd2
+SIZE (rocky/l/libproxy-0.4.15-35.el9.src.rpm) = 120129

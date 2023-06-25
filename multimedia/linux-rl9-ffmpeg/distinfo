@@ -1,0 +1,7 @@
+TIMESTAMP = 1687940593
+SHA256 (rocky/f/ffmpeg-libs-5.1.3-1.el9.aarch64.rpm) = 53205b12597bd13a3403c8ead0ae3c031624fcf078bcc949a1d5c6738a8db837
+SIZE (rocky/f/ffmpeg-libs-5.1.3-1.el9.aarch64.rpm) = 7683563
+SHA256 (rocky/f/ffmpeg-libs-5.1.3-1.el9.x86_64.rpm) = 1c22c18784b1fc82f3cd71624b12049feefba3a41d7e42b4156b8fcc772a5b5a
+SIZE (rocky/f/ffmpeg-libs-5.1.3-1.el9.x86_64.rpm) = 8159178
+SHA256 (rocky/f/ffmpeg-5.1.3-1.el9.src.rpm) = acd9d2b6186ca91a6a73cd091afbee548f50e6b6ee1f599293b6d17f31cbd702
+SIZE (rocky/f/ffmpeg-5.1.3-1.el9.src.rpm) = 10042256

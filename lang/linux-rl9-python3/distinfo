@@ -1,0 +1,7 @@
+TIMESTAMP = 1687942013
+SHA256 (rocky/p/python3-3.9.16-1.el9_2.1.aarch64.rpm) = 7e60ef4ecbb02cdc80990010c5480976f59472e838399654beb461b732a11ad1
+SIZE (rocky/p/python3-3.9.16-1.el9_2.1.aarch64.rpm) = 26752
+SHA256 (rocky/p/python3-3.9.16-1.el9_2.1.x86_64.rpm) = 42818a3358c5d2a1e5f15c1cdbfa0557564224a8767a6cbc217660747db1e113
+SIZE (rocky/p/python3-3.9.16-1.el9_2.1.x86_64.rpm) = 26811
+SHA256 (rocky/p/python3.9-3.9.16-1.el9_2.1.src.rpm) = 48d409bf4b04e19e98eff1dc1fa6bb8e4941c29359778fbb99f95edcef64d04a
+SIZE (rocky/p/python3.9-3.9.16-1.el9_2.1.src.rpm) = 20358133
