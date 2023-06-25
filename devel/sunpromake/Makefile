@@ -11,6 +11,8 @@ CONFLICTS=	dmake
 MASTERDIR=	${.CURDIR}/../../devel/schilybase
 COMPONENTS=	sunpro
 
+CXXFLAGS+=	-Wno-register
+
 # these libraries are installed by the sunpro component
 # but are internal to the program.  The author recommends
 # not shipping them, so we don't.
