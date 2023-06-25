@@ -23,7 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl --with-x --with-xim
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-fPIC
+CPPFLAGS+=	-fPIC -Dregister=
 
 PLIST_SUB=	MAJORVER="${MAJORVER}"
 
@@ -81,10 +81,6 @@ CXXFLAGS+=	-fomit-frame-pointer
 .  if ${COMPILER_TYPE} == "gcc"
 CXXFLAGS+=	-fexpensive-optimizations -finline-functions
 .  endif
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-CPPFLAGS+=  -Dregister=
 .endif
 
 post-patch:
