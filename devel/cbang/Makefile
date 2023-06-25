@@ -25,6 +25,7 @@ GH_ACCOUNT=	CauldronDevelopmentLLC
 
 USES=		compiler:c++17-lang localbase mysql:client python:test scons	\
 		sqlite ssl
+USE_CXXSTD=	gnu++17
 USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=		DEBUG DOCS
@@ -33,7 +34,6 @@ DEBUG_LIB_DEPENDS=	libbfd.so:devel/libbfd
 
 MAKE_ARGS+=	cc="${CC}"	\
 		cxx="${CXX}"	\
-		cxxstd="c++17"	\
 		ccflags="${CCFLAGS}"	\
 		cxxflags="${CXXFLAGS}"	\
 		libpath="/lib"	\
@@ -50,6 +50,16 @@ PLIST_SUB=	VER=${LIBVER}
 
 TEST_WRKSRC=	${WRKSRC}/tests
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} ${TEST_ARGS}
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_VERSION} >= 160
+# See https://github.com/CauldronDevelopmentLLC/cbang/issues/119
+BUILD_DEPENDS+=	clang15:devel/llvm15
+CPP=		clang-cpp15
+CC=		clang15
+CXX=		clang++15
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PYTHON_CMD%%|${PYTHON_CMD}|'	\
@@ -72,4 +82,4 @@ post-install:
 do-test:
 	(cd ${TEST_WRKSRC} && ${DO_MAKE_TEST} && ./testHarness)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
