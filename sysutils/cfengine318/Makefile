@@ -11,6 +11,7 @@ DEPRECATED=		Expire one year after cfengine 3.19.0 released
 EXPIRATION_DATE=	2023-07-02
 IGNORE_SSL=	openssl30 openssl31
 IGNORE_SSL_REASON=	error: unknown type name 'RSA' which were deprecated in OpenSSL 3.0.0 and later
+BROKEN_FreeBSD_14=	Does not support openssl30
 
 LICENSE=	GPLv3
 
