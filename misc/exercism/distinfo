@@ -1,4 +1,4 @@
-TIMESTAMP = 1681496721
+TIMESTAMP = 1687703350
 SHA256 (exercism-cli-v3.1.0_GH0.tar.gz) = 34653a6a45d49daef10db05672c9b4e36c3c30e09d57c3c0f737034d071ae4f6
 SIZE (exercism-cli-v3.1.0_GH0.tar.gz) = 58673
 SHA256 (blang-semver-v3.5.1_GH0.tar.gz) = 3d9da53f4c2d3169bfa9b25f2f36f301a37556a47259c870881524c643c69c57
@@ -11,8 +11,8 @@ SHA256 (go-yaml-yaml-25c4ec802a7d_GH0.tar.gz) = 6e9fd02dd8759b001eaf4773d3f1b0c3
 SIZE (go-yaml-yaml-25c4ec802a7d_GH0.tar.gz) = 61325
 SHA256 (golang-net-f5079bd7f6f7_GH0.tar.gz) = fc0a10643591640e4c78d22ea6db8036d3f1734943dc0109162819d2ae833c09
 SIZE (golang-net-f5079bd7f6f7_GH0.tar.gz) = 912547
-SHA256 (golang-sys-d8f5ea21b929_GH0.tar.gz) = 19d64f169ee80a957a801816798f16b6b29ed187cfd978e6c8751f367b7e7479
-SIZE (golang-sys-d8f5ea21b929_GH0.tar.gz) = 733296
+SHA256 (golang-sys-v0.9.0_GH0.tar.gz) = c729ead5fa2667cff07132a153ae965ba315c97d8ea39eaa4f9bf91f73a50eac
+SIZE (golang-sys-v0.9.0_GH0.tar.gz) = 1439449
 SHA256 (golang-text-3bd178b88a81_GH0.tar.gz) = faa6d12a74b3765323a85e21785b5b1ff7ad17ff29708ae97df6c7ccdd52aead
 SIZE (golang-text-3bd178b88a81_GH0.tar.gz) = 4595134
 SHA256 (hashicorp-hcl-392dba7d905e_GH0.tar.gz) = 11198e365257a8f3455023aa4db78b01b4f44408e8e21ca04aab171453bdfd69
