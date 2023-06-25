@@ -323,6 +323,7 @@
     SUBDIR += lychee
     SUBDIR += lynx
     SUBDIR += lynx-current
+    SUBDIR += lzr
     SUBDIR += madsonic
     SUBDIR += man2web
     SUBDIR += mathjax
