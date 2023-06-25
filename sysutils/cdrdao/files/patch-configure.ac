@@ -1,0 +1,48 @@
+Remove redundant check for libao which causes it to always be required even if
+mp3 and ogg support are disabled.
+
+Temporarily support either mad.pc or libmad.pc to prevent breakage with future
+versions of libmad. After libmad 0.16.3, new upstream renamed the pkgconfig
+file to mad.pc [1], assumingly to conform to what we and most of the Linux
+packagers decided upon almost 9 years ago [2], as the original libmad never
+had a pkgconfig file.
+
+[1] https://codeberg.org/tenacityteam/libmad/commit/486e615d4d8aab5b426d8b82b7dfa9867f0b2146
+[2] https://cgit.freebsd.org/ports/commit/audio/libmad?id=d52971d56c7520e7b8af206bc70e05cceed295a5
+
+--- configure.ac.orig	2023-02-03 14:46:06 UTC
++++ configure.ac
+@@ -314,8 +314,10 @@ dnl Check for libao
+ esac
+ 
+ dnl Check for libao
++if test "$with_mp3_support" = yes || test "$with_ogg_support" = yes || test "$en_gcdmaster" = yes; then
+ PKG_CHECK_MODULES(AO, ao >= 0.8, [AC_DEFINE(HAVE_AO,1,"")],
+         [echo "gcdmaster, MP3 and Ogg support disabled"; en_gcdmaster=no; with_ogg_support=no; with_mp3_support=no])
++fi
+ 
+ dnl Check for OGG support
+ if test "$with_ogg_support" = yes; then
+@@ -326,7 +328,8 @@ if test "$with_mp3_support" = yes; then
+ dnl Check for MP3 support
+ if test "$with_mp3_support" = yes; then
+         PKG_CHECK_MODULES(MAD, mad >= 0.10, [],
+-	[echo "libMAD detection via pkg-config failed"; with_mp3_support=no])
++        [PKG_CHECK_MODULES(MAD, libmad >= 0.10, [],
++	[echo "libMAD detection via pkg-config failed"; with_mp3_support=no])])
+ 	if test "$with_mp3_support" = no; then
+ 		AC_CHECK_LIB(mad, mad_stream_init, [AC_CHECK_HEADER([mad.h])])
+ 		if test "$ac_cv_lib_mad_mad_stream_init" = yes; then
+@@ -339,12 +342,6 @@ if test "$with_mp3_support" = yes; then
+ 	                echo "MP3 support disabled"; with_mp3_support=no
+ 		fi
+ 	fi
+-fi
+-
+-dnl Check for libao support
+-if test "$with_mp3_support" = yes || test "$with_ogg_support" = yes || test "$en_gcdmaster" = yes; then
+-PKG_CHECK_MODULES(AO, ao >= 0.8, [AC_DEFINE(HAVE_AO,1,"")],
+-        [echo "Building of gcdmaster disabled"; en_gcdmaster=no])
+ fi
+ 
+ if test "$with_ogg_support" = yes; then
