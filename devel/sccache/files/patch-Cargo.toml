@@ -1,0 +1,13 @@
+--- Cargo.toml.orig	2023-06-25 14:18:00 UTC
++++ Cargo.toml
+@@ -126,10 +126,6 @@ redis = ["url", "opendal/services-redis"]
+ memcached = ["opendal/services-memcached"]
+ native-zlib = []
+ redis = ["url", "opendal/services-redis"]
+-# Enable features that will build a vendored version of openssl and
+-# statically linked with it, instead of linking against the system-wide openssl
+-# dynamically or statically.
+-vendored-openssl = ["openssl?/vendored"]
+ # Enable features that require unstable features of Nightly Rust.
+ unstable = []
+ # Enables distributed support in the sccache client
