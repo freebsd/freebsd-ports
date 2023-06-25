@@ -1,5 +1,5 @@
 PORTNAME=	pam_ocra
-DISTVERSION=	1.5
+DISTVERSION=	1.6
 CATEGORIES=	security
 
 MAINTAINER=	sg2342@googlemail.com
@@ -10,8 +10,6 @@ LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		ssl uidfix
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated HMAC_ routines
 USE_GITHUB=	yes
 GH_ACCOUNT=	sg2342
 
