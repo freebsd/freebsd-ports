@@ -13,16 +13,21 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		gmake libtool xorg	# parallel builds are broken with bmake(1)
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi
+USES=		gmake libtool localbase:ldflags xorg	# parallel builds are broken with bmake(1)
 USE_LDCONFIG=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-libplotter --enable-libxmi
+
 TEST_TARGET=	check
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 INFO=		libxmi plotutils
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
+.endif
 
 .include <bsd.port.mk>
