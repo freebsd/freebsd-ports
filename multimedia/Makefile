@@ -396,6 +396,7 @@
     SUBDIR += webcamoid
     SUBDIR += wf-recorder
     SUBDIR += winff
+    SUBDIR += wl-screenrec
     SUBDIR += wlrobs
     SUBDIR += x264
     SUBDIR += x265
