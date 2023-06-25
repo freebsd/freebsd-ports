@@ -853,6 +853,7 @@
     SUBDIR += py-cairocffi
     SUBDIR += py-cairosvg
     SUBDIR += py-cartopy
+    SUBDIR += py-chart-studio
     SUBDIR += py-cogdumper
     SUBDIR += py-colorcet
     SUBDIR += py-colorthief
