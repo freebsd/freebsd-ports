@@ -1,7 +1,7 @@
 PORTNAME=	qmc2
 PORTVERSION=	0.243
 DISTVERSIONPREFIX=	v
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
@@ -52,6 +52,7 @@ MAKE_ARGS=	ARCH="${OPSYS}" \
 		SYSCONFDIR="${PREFIX}/etc"
 
 ALL_TARGET=	all arcade tools
+CFLAGS_aarch64=	-march=armv8-a+crc+crypto
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_DESC=	Comprehensive qmc2 documentaion
