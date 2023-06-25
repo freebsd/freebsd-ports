@@ -1,6 +1,6 @@
---- Makefile.orig	2020-07-15 09:59:04 UTC
+--- Makefile.orig	2023-06-15 19:13:02 UTC
 +++ Makefile
-@@ -572,20 +572,17 @@ VERSION_NUMBER = 4.5.1
+@@ -522,20 +522,17 @@ VERSION_NUMBER = 4.7
  # The dependency on .git/HEAD tracks switching between branches,
  # the dependency on .git/index tracks new commits.
  
