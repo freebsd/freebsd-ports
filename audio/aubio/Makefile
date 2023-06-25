@@ -7,6 +7,7 @@ MASTER_SITES=	https://aubio.org/pub/
 PATCH_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/commit/
 PATCHFILES+=	cdfe9cef2dcc3edf7d05ca2e9c2dbbf8dea21f1c.patch:-p1 #FFmpeg 6.x compat
 PATCHFILES+=	8a05420e5dd8c7b8b2447f82dc919765876511b3.patch:-p1 #FFmpeg 6.x compat
+PATCHFILES+=	95ff046c698156f21e2ca0d1d8a02c23ab76969f.patch:-p1 #Add const qualifiers for NumPy >= 1.19.0
 
 MAINTAINER?=	jhale@FreeBSD.org
 COMMENT?=	Library for audio labelling
