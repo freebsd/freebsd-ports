@@ -7,7 +7,7 @@ PKGNAMESUFFIX=		-119
 .endif
 
 DEPECATED=		Desupported by MIT following 1.21
-EXPIRY=			2024-06-06
+EXPIRATION_DATE=	2024-06-06
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 PATCH_DIST_STRIP=	-p2
