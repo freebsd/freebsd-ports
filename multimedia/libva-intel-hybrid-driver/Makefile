@@ -25,6 +25,7 @@ LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm \
 		libva.so:multimedia/libva
 
 USES=		autoreconf compiler:c11 gmake libtool pkgconfig
+USE_CXXSTD=	gnu++98
 USE_GITHUB=	yes
 GH_ACCOUNT=	intel
 GNU_CONFIGURE=	yes
