@@ -32,6 +32,12 @@ GLPK_DESC=		Build with GLPK solver
 GLPK_CMAKE_BOOL=	LEMON_ENABLE_GLPK
 GLPK_LIB_DEPENDS=	libglpk.so:math/glpk
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CXXFLAGS+=  -Dregister=
+.endif
+
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}-0.x-to-1.x.sh
 
