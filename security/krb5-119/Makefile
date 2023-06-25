@@ -27,6 +27,7 @@ USES=			compiler:c++11-lang cpe gmake gettext-runtime \
 			perl5 pkgconfig ssl
 BROKEN_SSL=	openssl30 openssl31
 BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_ routines
+BROKEN_FreeBSD_14=	Incompatible with OpenSSL 3.0 in 14-CURRENT
 USE_CSTD=		gnu99
 USE_LDCONFIG=		yes
 USE_PERL5=		build
