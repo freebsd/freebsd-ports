@@ -35,8 +35,16 @@ PORTDOCS=	ANTLRException.gif closure.gif cpp-runtime.html \
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
 post-extract:
 	(cd ${WRKSRC} && ${CP} antlr.jar antlrall.jar)
+
+post-patch:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|binary_function|__binary_function|' \
+		${WRKSRC}/lib/cpp/antlr/CharScanner.hpp
+.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}
