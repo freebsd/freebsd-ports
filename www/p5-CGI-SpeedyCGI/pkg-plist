@@ -4,5 +4,5 @@ bin/speedy_dump
 bin/speedy_suidperl
 %%SITE_PERL%%/CGI/SpeedyCGI.pm
 %%APACHE%%%%APACHEMODDIR%%/mod_speedycgi.so
-%%APACHE%%@exec %D/sbin/apxs -e -a -n speedycgi %D/%F
-%%APACHE%%@unexec %D/sbin/apxs -e -A -n speedycgi %D/%F
+%%APACHE%%@postexec %D/sbin/apxs -e -a -n speedycgi %D/%F
+%%APACHE%%@postunexec %D/sbin/apxs -e -A -n speedycgi %D/%F

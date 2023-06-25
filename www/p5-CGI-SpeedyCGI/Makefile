@@ -23,6 +23,12 @@ OPTIONS_SUB=	yes
 APACHE_USES=	apache
 APACHE_CONFIGURE_ENV_OFF=	WITHOUT_APACHE=yes
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/__inline__//g' \
 		${WRKSRC}/src/speedy_inc.h
