@@ -19,7 +19,7 @@ CONFLICTS_INSTALL=	cyrus-imapd2? cyrus-imapd3? cyrus-imapd3?-http
 
 USE_RC_SUBR=	imapd
 
-USES=		cpe perl5 ssl
+USES=		compiler cpe perl5 ssl
 GNU_CONFIGURE=	yes
 CYRUS_PREFIX=	${PREFIX}/cyrus
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
@@ -132,6 +132,12 @@ BDB_LIB_NAME=	no
 CONFIGURE_ARGS+=--disable-gssapi
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+IGNORE=		does not build with llvm 16
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s|/etc/|${PREFIX}/etc/|" \
 			  -e "s|%%CYRUS_USER%%|${CYRUS_USER}|g" \
@@ -182,4 +188,4 @@ post-install-EXAMPLES-on:
 	@${ECHO_CMD} ${EXAMPLESDIR:S,^${PREFIX}/,,}/${f} >>${TMPPLIST}
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
