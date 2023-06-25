@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.chasen.org/~taku/software/darts/src/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	C++ template library that implements Double-Array
 WWW=		http://www.chasen.org/~taku/software/darts/
 
@@ -14,16 +14,22 @@ LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/BSD
 LICENSE_FILE_LGPL21+ =	${WRKSRC}/LGPL
 
 USES=		autoreconf
+
 GNU_CONFIGURE=	yes
-
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
-PORTEXAMPLES=	darts.cpp mkdarts.cpp
-PORTDOCS=	AUTHORS ChangeLog README doc
 
 PLIST_FILES=	include/darts.h \
 		libexec/darts/darts \
 		libexec/darts/mkdarts
+PORTDOCS=	AUTHORS ChangeLog README doc
+PORTEXAMPLES=	darts.cpp mkdarts.cpp
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
+.endif
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
