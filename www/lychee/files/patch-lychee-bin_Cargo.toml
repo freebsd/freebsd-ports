@@ -1,9 +1,10 @@
---- lychee-bin/Cargo.toml.orig	2021-04-16 10:05:44 UTC
+--- lychee-bin/Cargo.toml.orig	2023-06-25 16:13:10 UTC
 +++ lychee-bin/Cargo.toml
-@@ -46,6 +46,3 @@ pretty_assertions = "0.7.1"
- tempfile = "3.2.0"
- uuid = { version = "0.8.2", features = ["v4"] }
- wiremock = "0.5.2"
--
--[features]
+@@ -76,7 +76,6 @@ tracing-subscriber = { version = "0.3.17", default-fea
+ 
+ [features]
+ #tokio-console = ["console-subscriber", "tracing-subscriber/registry"]
 -vendored-openssl = ["openssl-sys/vendored"]
+ check_example_domains = ["lychee-lib/check_example_domains"]
+ 
+ # Unfortunately, it's not possible to automatically enable features
