@@ -1,6 +1,6 @@
---- Makefile.in.orig	2022-02-23 07:42:31 UTC
+--- Makefile.in.orig	2023-06-02 08:11:21 UTC
 +++ Makefile.in
-@@ -96,8 +96,7 @@ DIST_COMMON = $(am__configure_deps) \
+@@ -113,8 +113,7 @@ DIST_COMMON = $(am__configure_deps) \
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_TRUE@am__append_5 = io/hpmud/musb_libusb01.c 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_TRUE@am__append_6 = -lusb
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@LIBUSB01_BUILD_FALSE@am__append_7 = io/hpmud/musb.c 
@@ -10,7 +10,7 @@
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_10 = -Iprotocol/discovery
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_11 = -l$(SNMPLIB) -lcrypto
  
-@@ -125,7 +124,6 @@ DIST_COMMON = $(am__configure_deps) \
+@@ -142,7 +141,6 @@ DIST_COMMON = $(am__configure_deps) \
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@am__append_17 = libhpipp.la
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_18 = libhpdiscovery.la
  @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@NETWORK_BUILD_TRUE@am__append_19 = -Iprotocol/discovery
@@ -18,7 +18,15 @@
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@am__append_21 = ui/colorcalform2_base.ui ui/settingsdialog_base.ui ui/aligntype6form1_base.ui \
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@	ui/aboutdlg_base.ui ui/imagepropertiesdlg_base.ui ui/paperedgealignform_base.ui ui/aligntype6form2_base.ui \
  @FULL_BUILD_TRUE@@GUI_BUILD_TRUE@@HPLIP_BUILD_TRUE@@QT3_INSTALL_TRUE@	ui/nodevicesform_base.ui ui/cleaningform_base.ui ui/colorcalform_base.ui ui/devmgr4_base.ui ui/loadpaperform_base.ui \
-@@ -4645,7 +4643,7 @@ dist_unrel_DATA = 
+@@ -453,7 +451,6 @@ scanext_la_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAG
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@am_scanext_la_rpath = -rpath \
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(scanextdir)
+ @FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@am__EXEEXT_1 = ptest$(EXEEXT)
+-@FULL_BUILD_TRUE@@HPLIP_BUILD_TRUE@am__EXEEXT_2 = hppgsz$(EXEEXT)
+ PROGRAMS = $(bin_PROGRAMS) $(dat2drv_PROGRAMS) $(hp_PROGRAMS) \
+ 	$(hpcdmfax_PROGRAMS) $(hpcups_PROGRAMS) $(hpcupsfax_PROGRAMS) \
+ 	$(hpps_PROGRAMS) $(locatedriver_PROGRAMS) $(noinst_PROGRAMS)
+@@ -4837,7 +4834,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@@SCAN_BUILD_TRUE@	$(am__append_2)
  #libhpdiscovery_la_SOURCES = protocol/discovery/mdns.c protocol/discovery/mdns.h
  @HPLIP_BUILD_TRUE@@NETWORK_BUILD_TRUE@libhpdiscovery_la_SOURCES = protocol/discovery/avahiDiscovery.c protocol/discovery/avahiDiscovery.h
@@ -27,7 +35,7 @@
  @HPLIP_BUILD_TRUE@@NETWORK_BUILD_TRUE@libhpdiscovery_la_LDFLAGS = -version-info 0:1:0 -L$(libdir)
  @HPLIP_BUILD_TRUE@@NETWORK_BUILD_TRUE@libhpdiscovery_la_LIBADD = -l$(SNMPLIB) -lcrypto -lavahi-client -lavahi-core -lavahi-common $(DBUS_LIBS)
  
-@@ -4705,7 +4703,7 @@ dist_unrel_DATA = 
+@@ -4897,7 +4894,7 @@ dist_unrel_DATA = 
  @HPLIP_BUILD_TRUE@dist_halpre_DATA = data/rules/20-hplip-devices.fdi
  
  # hplip.conf
@@ -36,7 +44,15 @@
  @HPLIP_BUILD_TRUE@hplip_conf_DATA = hplip.conf
  
  #pstotiff filter
-@@ -5027,7 +5025,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
+@@ -5128,7 +5125,6 @@ dist_unrel_DATA = 
+ @RIP_INSTALL_TRUE@dist_rip_SCRIPTS = prnt/hpijs/foomatic-rip-hplip
+ 
+ # apdk
+-noinst_LTLIBRARIES = libapdk.la
+ libapdk_la_SOURCES = prnt/hpijs/models.cpp prnt/hpijs/breaks_open.cpp \
+ 	prnt/hpijs/dj9xxvip.cpp prnt/hpijs/dj9xx.cpp prnt/hpijs/capture.cpp prnt/hpijs/colormatch.cpp prnt/hpijs/colormatcher_open.cpp \
+ 	prnt/hpijs/compression.cpp prnt/hpijs/context2.cpp prnt/hpijs/create_so.cpp prnt/hpijs/creator.cpp \
+@@ -5219,7 +5215,7 @@ libapdk_la_CFLAGS = $(libapdk_la_CXXFLAGS) -Iprnt/hpij
  @HPCUPS_INSTALL_TRUE@	prnt/hpcups/ImageProcessor.h
  
  @HPCUPS_INSTALL_TRUE@hpcups_CXXFLAGS = $(APDK_ENDIAN_FLAG) $(DBUS_CFLAGS)
@@ -45,7 +61,7 @@
  #else
  #hpcupsdir = $(cupsfilterdir)
  #hpcups_PROGRAMS = hpcups
-@@ -9562,7 +9560,7 @@ install-data-am: install-apparmor_abstractionDATA \
+@@ -9951,7 +9947,7 @@ install-data-am: install-apparmor_abstractionDATA \
  	install-dist_basepexpectDATA install-dist_cmdSCRIPTS \
  	install-dist_copierDATA install-dist_faxDATA \
  	install-dist_fax_filtersDATA install-dist_filterDATA \
@@ -54,7 +70,7 @@
  	install-dist_homeDATA install-dist_hpcupsfaxppdDATA \
  	install-dist_hpfaxSCRIPTS install-dist_hpijsfaxppdDATA \
  	install-dist_hplipSCRIPTS install-dist_hplip_stateDATA \
-@@ -9580,7 +9578,6 @@ install-data-am: install-apparmor_abstractionDATA \
+@@ -9969,7 +9965,6 @@ install-data-am: install-apparmor_abstractionDATA \
  	install-dist_policykit_policyDATA install-dist_postscriptDATA \
  	install-dist_ppdDATA install-dist_printpluginsDATA \
  	install-dist_prntDATA install-dist_ripSCRIPTS \
@@ -62,7 +78,7 @@
  	install-dist_scanDATA install-dist_selinuxDATA \
  	install-dist_ui4DATA install-dist_ui5DATA install-dist_uiDATA \
  	install-dist_unrelDATA install-dist_www0DATA \
-@@ -9814,14 +9811,8 @@ install-data-hook:
+@@ -10207,14 +10202,8 @@ install-data-hook:
  @HPLIP_BUILD_TRUE@	fi
  #	   If scanner build, add hpaio entry to sane dll.conf.
  @HPLIP_BUILD_TRUE@@HPLIP_CLASS_DRIVER_FALSE@	if [ "$(scan_build)" = "yes" ]; then \

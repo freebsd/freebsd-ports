@@ -1,6 +1,22 @@
---- scan/sane/orblite.c.orig	2022-03-07 20:11:09 UTC
+--- scan/sane/orblite.c.orig	2023-06-25 13:07:58 UTC
 +++ scan/sane/orblite.c
-@@ -315,7 +315,7 @@ orblite_open (SANE_String_Const devicename, SANE_Handl
+@@ -19,6 +19,7 @@
+ #undef NDEBUG
+ #include "orblitei.h"
+ #include "orblite.h"//Added New
++#include <dlfcn.h>
+ #include <math.h>
+ #include "utils.h"
+ #include "io.h"
+@@ -195,7 +196,6 @@ static int bb_unload(SANE_THandle ps)
+ 
+ static int bb_unload(SANE_THandle ps)
+ {
+-   _DBG("Calling orblite bb_unload: \n");
+    if (ps->bb_handle)
+    {
+       dlclose(ps->bb_handle);
+@@ -315,7 +315,7 @@ orblite_close (SANE_Handle handle)
  void
  orblite_close (SANE_Handle handle)
  {
@@ -17,7 +33,7 @@
  }
  
  
-@@ -372,7 +373,7 @@ orblite_read (SANE_Handle handle, SANE_Byte * data, SA
+@@ -372,7 +373,7 @@ orblite_cancel (SANE_Handle handle)
  void
  orblite_cancel (SANE_Handle handle)
  {
