@@ -1,0 +1,13 @@
+--- configure.orig	2022-10-27 15:10:23 UTC
++++ configure
+@@ -21455,8 +21455,8 @@ fi
+ if test "x${ax_enable_debug}" = "xno"
+ then :
+ 
+-	CFLAGS="-O3 -funroll-loops $CFLAGS"
+-	CXXFLAGS="-O3 $CXXFLAGS"
++	#CFLAGS="-O3 -funroll-loops $CFLAGS"
++	#CXXFLAGS="-O3 $CXXFLAGS"
+ 
+ fi
+ 
