@@ -14,6 +14,9 @@ WWW=		http://www.fox-toolkit.org/fox.html
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=		Obsolete leaf port, use x11-toolkits/fox(16|17) instead
+EXPIRATION_DATE=	2023-07-26
+
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
@@ -27,6 +30,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-opengl=yes \
 		--bindir=${PREFIX}/bin/${PORTNAME}-${MAJORVER} \
 		--enable-threadsafe
+CXXFLAGS+=	-Dregister=
 USE_LDCONFIG=	yes
 PORTDOCS=	*
 
