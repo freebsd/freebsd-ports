@@ -1,0 +1,13 @@
+--- wzdftpd/Makefile.am.orig	2023-06-26 15:25:11 UTC
++++ wzdftpd/Makefile.am
+@@ -22,10 +22,8 @@ dist_sysconf_DATA = wzd.cfg.sample wzd.pem \
+ 	users.sample
+ 
+ install-data-hook:
+-	${INSTALL_PROGRAM} -m 775 -d $(localstatedir)/log/wzdftpd || true
+ 
+ uninstall-hook:
+-	rmdir --ignore-fail-on-non-empty $(localstatedir)/log/wzdftpd || true
+ 
+ EXTRA_DIST = KNOWN_BUGS TODO wzd.cfg.sample.in
+ 

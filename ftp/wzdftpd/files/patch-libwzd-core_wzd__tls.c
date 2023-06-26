@@ -9,14 +9,20 @@
    }
  
    SSL_CTX_set_session_cache_mode(tls_ctx, SSL_SESS_CACHE_CLIENT);
-@@ -779,7 +779,6 @@ void * ssl_get_obj(wzd_context_t * context)
+@@ -777,12 +777,11 @@ void * ssl_get_obj(wzd_context_t * context)
+ 
+ #include <stdlib.h>
  #include <stdio.h>
++#include <string.h>
  
  #include <gnutls/gnutls.h>
 -#include <gcrypt.h>
  #include <errno.h>
  #include <pthread.h>
- GCRY_THREAD_OPTION_PTHREAD_IMPL;
+-GCRY_THREAD_OPTION_PTHREAD_IMPL;
+ 
+ #include <fcntl.h>
+ 
 @@ -892,7 +891,6 @@ int tls_init(void)
  
    /* The order matters.
