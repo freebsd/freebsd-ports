@@ -1,7 +1,8 @@
 PORTNAME=	python-libsbml
-DISTVERSION=	5.19.0
+DISTVERSION=	5.20.1
 CATEGORIES=	biology python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI # no tarballs on PYPI
+MASTER_SITES=	https://github.com/sbmlteam/python-libsbml/releases/download/v${DISTVERSION}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
