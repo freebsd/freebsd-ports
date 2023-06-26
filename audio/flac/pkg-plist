@@ -17,11 +17,11 @@ include/FLAC/stream_encoder.h
 lib/libFLAC++.a
 lib/libFLAC++.so
 lib/libFLAC++.so.10
-lib/libFLAC++.so.10.0.0
+lib/libFLAC++.so.10.0.1
 lib/libFLAC.a
 lib/libFLAC.so
 lib/libFLAC.so.12
-lib/libFLAC.so.12.0.0
+lib/libFLAC.so.12.1.0
 libdata/pkgconfig/flac++.pc
 libdata/pkgconfig/flac.pc
 man/man1/flac.1.gz
