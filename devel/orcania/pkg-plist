@@ -1,6 +1,10 @@
 bin/base64url
 include/orcania-cfg.h
 include/orcania.h
+lib/cmake/Orcania/OrcaniaConfig.cmake
+lib/cmake/Orcania/OrcaniaConfigVersion.cmake
+lib/cmake/Orcania/OrcaniaTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Orcania/OrcaniaTargets.cmake
 lib/liborcania.so
 lib/liborcania.so.2.3
 lib/liborcania.so.%%PORTVERSION%%
