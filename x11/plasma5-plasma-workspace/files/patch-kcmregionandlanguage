@@ -1,0 +1,312 @@
+https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/3010
+
+From 27e0302155b788fe4e7440bf0db09de9ae596ee5 Mon Sep 17 00:00:00 2001
+From: Joshua Goins <josh@redstrate.com>
+Date: Mon, 22 May 2023 16:13:49 -0400
+Subject: [PATCH 1/6] kcms/region_language: Read the LANGUAGE environment
+ variable for the default language value
+
+This has the same meaning in the kcfg, so we might as well read it
+from the environment variable like we're already doing with LANG.
+
+(cherry picked from commit 2e2f6b1469898383b6840d2c8e4c3733b13156d4)
+---
+ kcms/region_language/regionandlangsettingsbase.kcfg | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/kcms/region_language/regionandlangsettingsbase.kcfg ./kcms/region_language/regionandlangsettingsbase.kcfg
+index 3a4867ba49..17ac78291a 100644
+--- a/kcms/region_language/regionandlangsettingsbase.kcfg
++++ ./kcms/region_language/regionandlangsettingsbase.kcfg
+@@ -44,6 +44,10 @@
+    </group>
+    <group name="Translations">
+     <entry key="LANGUAGE" name="language" type="String">
++        <code>
++            QString language = QString::fromLocal8Bit(qgetenv("LANGUAGE"));
++        </code>
++        <default code="true">language</default>
+     </entry>
+   </group>
+ </kcfg>
+-- 
+GitLab
+
+
+From 95920c1e67c660eb8db4efa059c8b062ad297b8b Mon Sep 17 00:00:00 2001
+From: Joshua Goins <josh@redstrate.com>
+Date: Mon, 22 May 2023 16:18:11 -0400
+Subject: [PATCH 2/6] kcms/region_language: Simplify the language settings read
+
+Now that we load both LANG and LANGUAGE from the environment variable,
+there's no reason to handle it on the C++ side because the branch should
+never get hit. Still detect whether it's an implicit language
+ though.
+
+(cherry picked from commit e0171490533e95618f5fd5455041aa78af4af626)
+---
+ kcms/region_language/languagelistmodel.cpp | 33 ++++------------------
+ kcms/region_language/languagelistmodel.h   |  2 --
+ 2 files changed, 6 insertions(+), 29 deletions(-)
+
+diff --git a/kcms/region_language/languagelistmodel.cpp ./kcms/region_language/languagelistmodel.cpp
+index a9e3ca00a1..1f11522d0a 100644
+--- a/kcms/region_language/languagelistmodel.cpp
++++ ./kcms/region_language/languagelistmodel.cpp
+@@ -205,30 +205,19 @@ void SelectedLanguageModel::setRegionAndLangSettings(RegionAndLangSettings *sett
+     m_kcm = kcm;
+ 
+     beginResetModel();
+-    if (m_settings->language().isEmpty() && m_settings->isDefaultSetting(SettingType::Lang)) {
++    if (m_settings->language().isEmpty()) {
+         // no language but have lang
+         m_selectedLanguages = {m_settings->lang()};
+-        m_selectedLanguages.first().remove(QStringLiteral(".UTF-8"));
+-    } else if (!m_settings->language().isEmpty()) {
++    } else {
+         // have language, ignore lang
+         m_selectedLanguages = m_settings->language().split(QLatin1Char(':'));
+-    } else {
+-        // have nothing, figure out from env
+-        QString lang = envLang();
+-        QString language = envLanguage();
+-        if (!language.isEmpty()) {
+-            QStringList langlist = language.split(QLatin1Char(':'));
+-            for (QString &lang : langlist) {
+-                lang = lang.split(QLatin1Char('.'))[0];
+-            }
+-            m_selectedLanguages = langlist;
+-        } else if (!lang.isEmpty()) {
+-            lang.remove(QStringLiteral(".UTF-8"));
+-            m_selectedLanguages = {lang};
+-        }
++    }
++
++    if (m_settings->isDefaultSetting(SettingType::Lang)) {
+         m_hasImplicitLang = true;
+         Q_EMIT hasImplicitLangChanged();
+     }
++
+     endResetModel();
+ 
+     // check for invalid lang
+@@ -404,13 +393,3 @@ const QString &SelectedLanguageModel::unsupportedLanguage() const
+ {
+     return m_unsupportedLanguage;
+ }
+-
+-QString SelectedLanguageModel::envLang() const
+-{
+-    return qEnvironmentVariable("LANG");
+-}
+-
+-QString SelectedLanguageModel::envLanguage() const
+-{
+-    return qEnvironmentVariable("LANGUAGE");
+-}
+diff --git a/kcms/region_language/languagelistmodel.h ./kcms/region_language/languagelistmodel.h
+index 6c0866a55e..b3c6020dd4 100644
+--- a/kcms/region_language/languagelistmodel.h
++++ ./kcms/region_language/languagelistmodel.h
+@@ -97,8 +97,6 @@ Q_SIGNALS:
+     void unsupportedLanguageChanged();
+ 
+ private:
+-    QString envLang() const;
+-    QString envLanguage() const;
+     void saveLanguages();
+     RegionAndLangSettings *m_settings = nullptr;
+     QList<QString> m_selectedLanguages;
+-- 
+GitLab
+
+
+From af41a355d76d2a801796958219be79a004e38e48 Mon Sep 17 00:00:00 2001
+From: Joshua Goins <josh@redstrate.com>
+Date: Fri, 26 May 2023 13:36:43 -0400
+Subject: [PATCH 3/6] kcms/region_language: Check if the language setting is
+ default as well
+
+(cherry picked from commit 514cefdbb6adaf9b8cab94963b37b27837d0a2c8)
+---
+ kcms/region_language/languagelistmodel.cpp     | 2 +-
+ kcms/region_language/localelistmodel.cpp       | 1 +
+ kcms/region_language/regionandlangsettings.cpp | 3 +++
+ kcms/region_language/settingtype.h             | 2 +-
+ 4 files changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/kcms/region_language/languagelistmodel.cpp ./kcms/region_language/languagelistmodel.cpp
+index 1f11522d0a..434ec98869 100644
+--- a/kcms/region_language/languagelistmodel.cpp
++++ ./kcms/region_language/languagelistmodel.cpp
+@@ -213,7 +213,7 @@ void SelectedLanguageModel::setRegionAndLangSettings(RegionAndLangSettings *sett
+         m_selectedLanguages = m_settings->language().split(QLatin1Char(':'));
+     }
+ 
+-    if (m_settings->isDefaultSetting(SettingType::Lang)) {
++    if (m_settings->isDefaultSetting(SettingType::Lang) && m_settings->isDefaultSetting(SettingType::Language)) {
+         m_hasImplicitLang = true;
+         Q_EMIT hasImplicitLangChanged();
+     }
+diff --git a/kcms/region_language/localelistmodel.cpp ./kcms/region_language/localelistmodel.cpp
+index f3ea2af32c..fedfafb6cd 100644
+--- a/kcms/region_language/localelistmodel.cpp
++++ ./kcms/region_language/localelistmodel.cpp
+@@ -92,6 +92,7 @@ QVariant LocaleListModel::data(const QModelIndex &index, int role) const
+     case Example: {
+         switch (m_configType) {
+         case Lang:
++        case Language:
+             return {};
+         case Numeric:
+             return Utility::numericExample(data.locale);
+diff --git a/kcms/region_language/regionandlangsettings.cpp ./kcms/region_language/regionandlangsettings.cpp
+index 9146e1d1c9..53343b45c2 100644
+--- a/kcms/region_language/regionandlangsettings.cpp
++++ ./kcms/region_language/regionandlangsettings.cpp
+@@ -16,6 +16,8 @@ bool RegionAndLangSettings::isDefaultSetting(SettingType setting) const
+     switch (setting) {
+     case SettingType::Lang:
+         return lang() == defaultLangValue();
++    case SettingType::Language:
++        return language() == defaultLanguageValue();
+     case SettingType::Numeric:
+         return numeric() == defaultNumericValue();
+     case SettingType::Time:
+@@ -73,6 +75,7 @@ QString RegionAndLangSettings::LC_LocaleWithLang(SettingType setting) const
+     case SettingType::PhoneNumbers:
+         return phoneNumbers();
+     case SettingType::Lang:
++    case SettingType::Language:
+         Q_UNREACHABLE();
+     }
+ 
+diff --git a/kcms/region_language/settingtype.h ./kcms/region_language/settingtype.h
+index 07ce4cffc2..4865f341c6 100644
+--- a/kcms/region_language/settingtype.h
++++ ./kcms/region_language/settingtype.h
+@@ -12,6 +12,6 @@
+ namespace KCM_RegionAndLang
+ {
+ Q_NAMESPACE_EXPORT()
+-enum SettingType { Lang, Numeric, Time, Currency, Measurement, PaperSize, Address, NameStyle, PhoneNumbers };
++enum SettingType { Lang, Numeric, Time, Currency, Measurement, PaperSize, Address, NameStyle, PhoneNumbers, Language };
+ Q_ENUM_NS(SettingType)
+ } // namespace KCM_RegionAndLang
+-- 
+GitLab
+
+
+From c51b59a77e4c36161cf2d74e5ce26af83b44e335 Mon Sep 17 00:00:00 2001
+From: Joshua Goins <josh@redstrate.com>
+Date: Fri, 26 May 2023 14:17:30 -0400
+Subject: [PATCH 4/6] kcms/region_language: Chop off the UTF-8 codepoint again
+
+(cherry picked from commit 54af86fd470d1f37bea00867959f8f8f0b7cdcf7)
+---
+ kcms/region_language/languagelistmodel.cpp | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/kcms/region_language/languagelistmodel.cpp ./kcms/region_language/languagelistmodel.cpp
+index 434ec98869..6798286f2d 100644
+--- a/kcms/region_language/languagelistmodel.cpp
++++ ./kcms/region_language/languagelistmodel.cpp
+@@ -213,6 +213,11 @@ void SelectedLanguageModel::setRegionAndLangSettings(RegionAndLangSettings *sett
+         m_selectedLanguages = m_settings->language().split(QLatin1Char(':'));
+     }
+ 
++    // Chop off the UTF-8 codepoint
++    for (auto &language : m_selectedLanguages) {
++        language.remove(QStringLiteral(".UTF-8"));
++    }
++
+     if (m_settings->isDefaultSetting(SettingType::Lang) && m_settings->isDefaultSetting(SettingType::Language)) {
+         m_hasImplicitLang = true;
+         Q_EMIT hasImplicitLangChanged();
+-- 
+GitLab
+
+
+From a5915bc59975080acb5e6b867ebb061a0b9adf3b Mon Sep 17 00:00:00 2001
+From: Joshua Goins <josh@redstrate.com>
+Date: Fri, 26 May 2023 14:37:11 -0400
+Subject: [PATCH 5/6] kcms/region_language: Improve isSupportedLanguage
+ detection
+
+This prevents it considering languages with a territory attached as
+non-supported (like fr_FR) and checks it without a territory as a
+fallback.
+
+(cherry picked from commit 8d1f7d385cda8afcfc24ae61666f5f7ba1c869c7)
+---
+ kcms/region_language/languagelistmodel.cpp | 14 +++++++++++++-
+ 1 file changed, 13 insertions(+), 1 deletion(-)
+
+diff --git a/kcms/region_language/languagelistmodel.cpp ./kcms/region_language/languagelistmodel.cpp
+index 6798286f2d..d9846226da 100644
+--- a/kcms/region_language/languagelistmodel.cpp
++++ ./kcms/region_language/languagelistmodel.cpp
+@@ -95,7 +95,19 @@ QString LanguageListModel::languageCodeToName(const QString &languageCode)
+ 
+ bool LanguageListModel::isSupportedLanguage(const QString &language) const
+ {
+-    return m_availableLanguages.contains(language);
++    // If the available language list contains the full language string outright, e.g. en_US
++    if (m_availableLanguages.contains(language)) {
++        return true;
++    }
++
++    // If the language string passed has a territory attached (like fr_FR) then chop it off,
++    // and try searching for just the language.
++    if (language.contains('_')) {
++        const QString languageName{language.left(language.indexOf('_'))};
++        return m_availableLanguages.contains(languageName);
++    }
++
++    return false;
+ }
+ 
+ int LanguageListModel::currentIndex() const
+-- 
+GitLab
+
+
+From 0a00ee7639eb17a0159efba01de6e6cec34911f3 Mon Sep 17 00:00:00 2001
+From: Joshua Goins <josh@redstrate.com>
+Date: Wed, 7 Jun 2023 20:42:33 -0400
+Subject: [PATCH 6/6] kcms/region_language: Read from $LANGUAGE in options
+ model
+
+(cherry picked from commit b5c675324c33c8a6f5e5817fc95217994f2188be)
+---
+ kcms/region_language/optionsmodel.cpp | 11 ++++++++++-
+ 1 file changed, 10 insertions(+), 1 deletion(-)
+
+diff --git a/kcms/region_language/optionsmodel.cpp ./kcms/region_language/optionsmodel.cpp
+index 339577332a..0c3bec97ea 100644
+--- a/kcms/region_language/optionsmodel.cpp
++++ ./kcms/region_language/optionsmodel.cpp
+@@ -112,10 +112,19 @@ QVariant OptionsModel::data(const QModelIndex &index, int role) const
+             if (m_settings->defaultLangValue().isEmpty() && m_settings->isDefaultSetting(SettingType::Lang)) {
+                 // no Lang configured, no $LANG in env
+                 return i18nc("@info:title, the current setting is system default", "System Default");
+-            } else if (!m_settings->lang().isEmpty()) {
++            } else if (!m_settings->lang().isEmpty() && m_settings->lang() != m_settings->defaultLangValue()) {
+                 // Lang configured and not empty
+                 return getNativeName(m_settings->lang());
+             } else {
++                // Lang configured but empty, try to read from $LANGUAGE first.
++                if (const QString languages = m_settings->defaultLanguageValue(); !languages.isEmpty()) {
++                    // If the first language is invalid, just fall through to $LANG
++                    const QStringList languageList = languages.split(QLatin1Char(':'));
++                    if (const QString firstLanguage = getNativeName(languageList[0]); !firstLanguage.isEmpty()) {
++                        return firstLanguage;
++                    }
++                }
++
+                 // Lang configured but empty, try to read from $LANG, shouldn't happen on a valid config file
+                 return getNativeName(m_settings->defaultLangValue());
+             }
+-- 
+GitLab
+
