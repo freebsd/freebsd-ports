@@ -29,6 +29,12 @@ OPTIONS_SUB=	yes
 
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CXXFLAGS+=  -Dregister=
+.endif
+
 post-build-DOXYGEN-on:
 	cd ${WRKSRC}/doc && doxygen
 
