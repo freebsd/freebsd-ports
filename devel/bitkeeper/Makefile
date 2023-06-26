@@ -11,6 +11,7 @@ WWW=		https://www.bitkeeper.org/
 
 LICENSE=	APACHE20
 
+BROKEN_FreeBSD_14=	tcl/tk bindings break under LLVM16
 BROKEN_aarch64=		ld: error: undefined symbol: fpsetround
 BROKEN_riscv64=		fails to compile: src/gui/tcltk/tcl/unix/tclUnixInit.c:401:16: error: use of undeclared identifier 'FP_RN'
 
