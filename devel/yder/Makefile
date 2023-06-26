@@ -1,30 +1,34 @@
 PORTNAME=	yder
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.18
+DISTVERSION=	1.4.19
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Logging library for C applications
 WWW=		https://github.com/babelouest/yder
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+BUILD_DEPENDS=	orcania>=2.3.2:devel/orcania
+LIB_DEPENDS=	liborcania.so:devel/orcania
+RUN_DEPENDS=	jansson>=2.4:devel/jansson
 
+USES=		cmake
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
 
-LIB_DEPENDS=	libjansson.so:devel/jansson \
-		liborcania.so:devel/orcania
-
-BUILD_DEPENDS=	orcania>=2.3.0:devel/orcania
-
-RUN_DEPENDS=	jansson>=2.4:devel/jansson
-
-CMAKE_ARGS=	-DWITH_JOURNALD=off \
-		-DDOWNLOAD_DEPENDENCIES=off
+CMAKE_OFF=	DOWNLOAD_DEPENDENCIES WITH_JOURNALD
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+
+PORTEXAMPLES=	Makefile log_callback.c log_combined.c log_console.c log_file.c \
+		log_journald.c log_newline.c log_syslog.c
+
+OPTIONS_DEFINE=	EXAMPLES
+
+post-install-EXAMPLES-on:
+	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
+	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} "${PORTEXAMPLES}" ${STAGEDIR}${EXAMPLESDIR})
 
 .include <bsd.port.mk>
