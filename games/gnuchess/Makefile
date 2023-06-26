@@ -5,24 +5,29 @@ MASTER_SITES=	GNU/chess
 # The DISTFILES here is explicitly needed because it can be extended later.
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Classic Gnu Chess
 WWW=		https://savannah.gnu.org/projects/chess
 
 LICENSE=	GPLv3+
 
+USES=		cpe shebangfix
+CPE_VENDOR=	gnu
+CPE_PRODUCT=	chess
+
+SHEBANG_FILES=	doc/quotes.rb
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MKDIR_P="${MKDIR}"
+
 INFO=		gnuchess
-USES=		cpe shebangfix
-SHEBANG_FILES=	doc/quotes.rb
-CPE_PRODUCT=	chess
-CPE_VENDOR=	gnu
 
 OPTIONS_DEFINE=		OPENING_BOOK DOCS NLS
 OPTIONS_DEFAULT=	OPENING_BOOK
 OPTIONS_SUB=		yes
+
 OPENING_BOOK_DESC=	Install opening book (25 MB download)
+
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
@@ -31,6 +36,10 @@ NLS_CONFIGURE_ENABLE=	nls
 .if ${PORT_OPTIONS:MOPENING_BOOK}
 DISTFILES+=	book_1.02.pgn.gz
 EXTRACT_ONLY+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
 .endif
 
 post-build:
