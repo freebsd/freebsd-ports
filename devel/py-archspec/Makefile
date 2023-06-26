@@ -13,13 +13,13 @@ LICENSE_COMB=	dual
 LICENSE_FILE_APACHE20=	${WRKSRC}/LICENSE-APACHE
 LICENSE_FILE_MIT=	${WRKSRC}/LICENSE-MIT
 
-BROKEN=		build fails to build it, see https://github.com/pypa/build/issues/628
-
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry>0:devel/py-poetry@${PY_FLAVOR}
 
 USES=		python:3.7+
 USE_PYTHON=	pep517 autoplist pytest
 
 NO_ARCH=	yes
+
+MAKE_ENV=	GIT_DIR=${WRKDIR} # workaround for https://github.com/python-poetry/poetry/issues/5547
 
 .include <bsd.port.mk>
