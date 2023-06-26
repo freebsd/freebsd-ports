@@ -1,9 +1,12 @@
 PORTNAME=	liblastfm
 DISTVERSION=	1.0.9-5
-PORTREVISION=	3
 DISTVERSIONSUFFIX=	-g4433165
+PORTREVISION=	3
 CATEGORIES=	audio
 PKGNAMESUFFIX=	-qt5
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/commit/
+PATCHFILES+=	d51ad3e759331d7d79c6675c5d22541280bf9a70.patch:-p1 #Remove dynamic exception specs
 
 MAINTAINER=	jhale@FreeBSD.org
 COMMENT=	Qt C++ library for the Last.fm webservices
