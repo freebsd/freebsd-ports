@@ -56,6 +56,7 @@ MAKE_ARGS+=	PERL=${PERL} "LOCAL_LDFLAGS=${LDFLAGS}"
 MAKE_JOBS_UNSAFE=yes
 MAKE_ENV=	MALLOC_CONF=junk:false
 SUB_FILES=	pkg-message
+CFLAGS+=	-Wno-register -Wno-incompatible-function-pointer-types
 LDFLAGS+=	-z muldefs #--allow-multiple-definition
 
 pre-configure:
