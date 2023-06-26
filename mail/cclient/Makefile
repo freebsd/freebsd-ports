@@ -32,6 +32,10 @@ SSL_USES=		ssl
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .if ${PORT_OPTIONS:MSSL}
 PKGMESSAGE=	pkg-message-ssl
 .endif
