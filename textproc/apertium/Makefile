@@ -44,4 +44,12 @@ INSTALL_TARGET=	install-strip
 
 CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 
+.include <bsd.port.options.mk>
+
+post-patch:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
+		${WRKSRC}/apertium/perceptron_spec.h
+.endif
+
 .include <bsd.port.mk>
