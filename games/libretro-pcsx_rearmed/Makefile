@@ -22,8 +22,14 @@ PLIST_FILES=	lib/libretro/pcsx_rearmed_libretro.so
 
 MAKEFILE=	Makefile.libretro
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 do-install:
 	${MKDIR} ${STAGEDIR}/${PREFIX}/lib/libretro;
 	${INSTALL_LIB} ${WRKSRC}/pcsx_rearmed_libretro.so ${STAGEDIR}/${PREFIX}/lib/libretro;
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
