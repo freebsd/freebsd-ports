@@ -40,6 +40,12 @@ TEST_BUILD_DEPENDS=	${LOCALBASE}/lib/libglut.so:graphics/freeglut \
 			${LOCALBASE}/lib/libXmu.so:x11-toolkits/libXmu
 TEST_TEST_TARGET=	check
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
