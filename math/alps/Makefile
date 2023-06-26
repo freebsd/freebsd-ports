@@ -26,6 +26,14 @@ GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
 
+.include <bsd.port.options.mk>
+
+post-patch:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
+		${WRKSRC}/Alps/src/AlpsHelperFunctions.h
+.endif
+
 post-install:
 	${RM} -r ${STAGEDIR}${PREFIX}/share
 
