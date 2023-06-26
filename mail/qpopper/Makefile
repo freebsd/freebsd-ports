@@ -125,8 +125,12 @@ CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}
 # openssl-1.1.1 no longer has SSLv2 support
 .if ${OPSYS} == FreeBSD
 CFLAGS+=		-DOPENSSL_NO_SSL2
-CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}"
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CFLAGS+=		-Wno-incompatible-function-pointer-types
 .endif
+.endif
+
+CONFIGURE_ENV+=		CFLAGS="${CFLAGS}"
 
 post-patch:
 .if ${COMPILER_TYPE} == clang
