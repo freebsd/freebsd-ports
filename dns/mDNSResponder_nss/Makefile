@@ -1,38 +1,33 @@
-PORTNAME=	mDNSResponder
-PORTVERSION=	1310.40.42
 CATEGORIES=	dns net
-MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
+# Always set PORTREVISION explicitly as otherwise it is inherited from net/mDNSResponder
+PORTREVISION=	0
 PKGNAMESUFFIX=	_nss
 
 MAINTAINER=	mazhe@alkumuna.eu
 COMMENT=	Apple mDNS responder - FreeBSD nsswitch module
 WWW=		https://opensource.apple.com/tarballs/mDNSResponder/
 
-LICENSE=	APACHE20 BSD3CLAUSE
-LICENSE_COMB=	dual
-
 LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
-
-USES=		cpe
-
-CPE_VENDOR=	apple
 
 CONFLICTS_INSTALL=	nss_mdns
 
-WRKSRC=		${WRKDIR}/${PORTNAME:S/_nss//}-${PORTVERSION}
+MASTERDIR=	${.CURDIR}/../../net/mDNSResponder
+EXTRA_PATCHES=	${.CURDIR}/files/patch-mDNSPosix__nss_mdns.c
+PLIST=		${.CURDIR}/pkg-plist
+PKGMESSAGE=	${.CURDIR}/pkg-message
+DESCR=		${.CURDIR}/pkg-descr
 
-.include <bsd.port.pre.mk>
-
-LD=${CC}
+# Disable some master port targets
+TARGET_ORDER_OVERRIDE=	-1:post-install -1:install-rc-script
 
 post-extract:
-	@${CP} ${FILESDIR}/nss_mdns_freebsd.c ${WRKSRC}/mDNSPosix
+	@${CP} ${.CURDIR}/files/nss_mdns_freebsd.c ${WRKSRC}/mDNSPosix
 
 do-build:
 	(cd ${WRKSRC}/mDNSPosix && ${CC} ${CFLAGS} -c -std=c99 -Wall -fPIC \
 		-I. -I${PREFIX}/include -DPREFIX=\"${PREFIX}\" \
 		nss_mdns.c nss_mdns_freebsd.c)
-	(cd ${WRKSRC}/mDNSPosix && ${LD} -shared -Wl,-soname=nss_mdns.so.1 nss_mdns.o nss_mdns_freebsd.o \
+	(cd ${WRKSRC}/mDNSPosix && ${CC} -shared -Wl,-soname=nss_mdns.so.1 nss_mdns.o nss_mdns_freebsd.o \
 		-o nss_mdns.so.1 -L${PREFIX}/lib -R${PREFIX}/lib -ldns_sd)
 
 post-build:
@@ -52,4 +47,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/mDNSPosix/nss_mdns.conf \
 		${STAGEDIR}${PREFIX}/etc/nss_mdns.conf.sample
 
-.include <bsd.port.post.mk>
+.include "${MASTERDIR}/Makefile"
