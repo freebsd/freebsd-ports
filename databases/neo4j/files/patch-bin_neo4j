@@ -1,6 +1,6 @@
---- bin/neo4j.orig	2022-05-19 10:56:30 UTC
+--- bin/neo4j.orig	2023-06-26 13:12:30 UTC
 +++ bin/neo4j
-@@ -33,7 +33,7 @@ while [ -h "$PRG" ]; do
+@@ -33,7 +33,7 @@ PRGDIR=`dirname "$PRG"`
  done
  
  PRGDIR=`dirname "$PRG"`
@@ -9,7 +9,7 @@
  
  # Reset the REPO variable. If you need to influence this use the environment setup file.
  REPO=
-@@ -116,6 +116,9 @@ if $cygwin; then
+@@ -116,6 +116,9 @@ fi
    [ -n "$BASEDIR" ] && BASEDIR=`cygpath --path --windows "$BASEDIR"`
    [ -n "$REPO" ] && REPO=`cygpath --path --windows "$REPO"`
  fi
@@ -22,7 +22,7 @@
 @@ -125,4 +128,4 @@ exec "$JAVACMD" -Xmx128m \
    -Dapp.home="$BASEDIR" \
    -Dbasedir="$BASEDIR" \
-   org.neo4j.server.startup.Neo4jCommand \
+   org.neo4j.server.startup.Neo4jBoot \
 -  "$@"
 \ No newline at end of file
 +  "$@"
