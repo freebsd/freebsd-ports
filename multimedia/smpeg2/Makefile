@@ -29,6 +29,12 @@ CONFIGURE_ARGS=	--enable-mmx
 PLAYMPEG_CONFLICTS_INSTALL=	smpeg
 PLAYMPEG_VARS=	LICENSE+=GPLv2+
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
+.endif
+
 post-patch-PLAYMPEG-off:
 	@${REINPLACE_CMD} -e '/^bin_PROGRAMS =/s/plaympeg$$(EXEEXT)// ; \
 		/^man_MANS =/s/plaympeg\.1//' ${WRKSRC}/Makefile.in
