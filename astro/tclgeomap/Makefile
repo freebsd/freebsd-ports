@@ -9,6 +9,9 @@ WWW=		https://web.archive.org/web/20130807000308/http://www.tkgeomap.org/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	abandoned
+EXPIRATION_DATE=2023-08-31
+
 USES+=		tcl:tea
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 USE_LDCONFIG=	yes
