@@ -16,7 +16,13 @@ LICENSE_PERMS_GPLR=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libfixbuf.so:net/libfixbuf
 
-USES=		pkgconfig python:3.6+
+USES=		compiler pkgconfig python
 USE_PYTHON=	distutils autoplist
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
+.include <bsd.port.post.mk>
