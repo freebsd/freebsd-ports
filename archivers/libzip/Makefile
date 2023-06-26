@@ -1,5 +1,5 @@
 PORTNAME=	libzip
-PORTVERSION=	1.9.2
+DISTVERSION=	1.10.0
 CATEGORIES=	archivers devel
 MASTER_SITES=	https://github.com/nih-at/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://libzip.org/download/
@@ -13,13 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libzstd.so:archivers/zstd
 
-USES=		cmake cpe perl5 ssl tar:xz
+USES=		cmake cpe pathfix ssl tar:xz
 CPE_VENDOR=	nih
 USE_LDCONFIG=	yes
-USE_PERL5=	test
 
-TEST_TARGET=	test
-
-CMAKE_OFF=	ENABLE_COMMONCRYPTO ENABLE_GNUTLS ENABLE_MBEDTLS
+CMAKE_OFF=	BUILD_REGRESS ENABLE_COMMONCRYPTO ENABLE_GNUTLS ENABLE_MBEDTLS
+CMAKE_ON=	CMAKE_SKIP_RPATH
 
 .include <bsd.port.mk>
