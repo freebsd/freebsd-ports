@@ -45,6 +45,12 @@ MDOCFILES=	ja.eucJP doc-common doc-syms
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=  -Dregister=
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -E -e 's|^@setfilename +groff|&.info|g;' \
 	    ${WRKSRC}/doc/groff.texinfo
