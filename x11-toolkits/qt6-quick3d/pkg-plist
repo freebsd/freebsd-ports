@@ -261,10 +261,8 @@
 %%QT_INCDIR%%/QtQuick3DUtils/QtQuick3DUtils
 %%QT_INCDIR%%/QtQuick3DUtils/QtQuick3DUtilsDepends
 %%QT_INCDIR%%/QtQuick3DUtils/QtQuick3DUtilsVersion
-%%QT_INCDIR%%/QtQuick3DUtils/meshoptimizer.h
 %%QT_INCDIR%%/QtQuick3DUtils/qtquick3dutilsexports.h
 %%QT_INCDIR%%/QtQuick3DUtils/qtquick3dutilsversion.h
-%%QT_INCDIR%%/QtQuick3DUtils/xatlas.h
 lib/cmake/Qt6/FindWrapQuick3DAssimp.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtQuick3DTestsConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qquick3dpluginAdditionalTargetInfo.cmake
@@ -519,7 +517,6 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_quick3dutils_private.pri
 %%QT_PLUGINDIR%%/assetimporters/libassimp.so
 %%QT_PLUGINDIR%%/qmltooling/libqmldbg_quick3dprofiler.so
-%%QT_QMLDIR%%/QtQuick3D/AssetUtils/designer/IdComboBox.qml
 %%QT_QMLDIR%%/QtQuick3D/AssetUtils/designer/NodeSection.qml
 %%QT_QMLDIR%%/QtQuick3D/AssetUtils/designer/RuntimeLoaderSection.qml
 %%QT_QMLDIR%%/QtQuick3D/AssetUtils/designer/RuntimeLoaderSpecifics.qml
@@ -587,7 +584,6 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Effects/designer/GaussianBlurSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Effects/designer/HDRBloomTonemapSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Effects/designer/HDRBloomTonemapSpecifics.qml
-%%QT_QMLDIR%%/QtQuick3D/Effects/designer/IdComboBox.qml
 %%QT_QMLDIR%%/QtQuick3D/Effects/designer/MotionBlurSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Effects/designer/MotionBlurSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Effects/designer/SCurveTonemapSection.qml
@@ -620,7 +616,6 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/GridGeometrySpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/HeightFieldGeometrySection.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/HeightFieldGeometrySpecifics.qml
-%%QT_QMLDIR%%/QtQuick3D/Helpers/designer/IdComboBox.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/InfiniteGridSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/InfiniteGridSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Helpers/designer/InstanceModelSection.qml
@@ -704,7 +699,6 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/MaterialEditor/main.qml
 %%QT_QMLDIR%%/QtQuick3D/MaterialEditor/plugins.qmltypes
 %%QT_QMLDIR%%/QtQuick3D/MaterialEditor/qmldir
-%%QT_QMLDIR%%/QtQuick3D/MaterialEditor/qtquickcontrols2.conf
 %%QT_QMLDIR%%/QtQuick3D/ParticleEffects/Quick3DParticleEffects.qmltypes
 %%QT_QMLDIR%%/QtQuick3D/ParticleEffects/designer/images/color_table.png
 %%QT_QMLDIR%%/QtQuick3D/ParticleEffects/designer/images/color_table2.png
@@ -744,7 +738,6 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/EmitBurst3DSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/Gravity3DSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/Gravity3DSpecifics.qml
-%%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/IdComboBox.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/LineParticle3DSection.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/LineParticle3DSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/Particles3D/designer/ModelBlendParticle3DSection.qml
@@ -883,7 +876,6 @@ lib/cmake/Qt6Quick3DUtils/Qt6Quick3DUtilsVersionlessTargets.cmake
 %%QT_QMLDIR%%/QtQuick3D/designer/FogSpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/designer/FrustumCameraSection.qml
 %%QT_QMLDIR%%/QtQuick3D/designer/FrustumCameraSpecifics.qml
-%%QT_QMLDIR%%/QtQuick3D/designer/IdComboBox.qml
 %%QT_QMLDIR%%/QtQuick3D/designer/InstanceListEntrySection.qml
 %%QT_QMLDIR%%/QtQuick3D/designer/InstanceListEntrySpecifics.qml
 %%QT_QMLDIR%%/QtQuick3D/designer/InstanceListSection.qml

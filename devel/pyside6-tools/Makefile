@@ -1,9 +1,9 @@
 PORTNAME=	pyside6-tools
-DISTVERSION=	${QT6_VERSION}
+DISTVERSION=	${PYSIDE6_VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken6/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyside-setup-opensource-src-${DISTVERSION}
+DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Pyside6 development tools
@@ -34,7 +34,7 @@ PLIST_FILES=	bin/pyside_tool.py
 
 .include <bsd.port.pre.mk>
 
-WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION}/sources/pyside-tools
+WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${QT6_VERSION}/sources/pyside-tools
 
 #.if ${ARCH} == amd64 || ${ARCH} == i386
 #USE_QT+=	webengine

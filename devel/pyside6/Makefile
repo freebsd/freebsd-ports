@@ -1,9 +1,9 @@
 PORTNAME=	pyside6
-DISTVERSION=	${QT6_VERSION}
+DISTVERSION=	${PYSIDE6_VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/shiboken6/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyside-setup-opensource-src-${DISTVERSION}
+DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python Qt bindings for Qt 6
@@ -29,13 +29,12 @@ USE_QT=		3d 5compat base declarative doc imageformats positioning \
 
 CMAKE_ARGS+=	-DPYTHON_EXECUTABLE=${PYTHON_CMD}
 
-
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	PYVERSTR=.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 
-WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION}/sources/pyside6
+WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${QT6_VERSION}/sources/pyside6
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
 PLIST_SUB+=	WEBENGINE=""

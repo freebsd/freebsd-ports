@@ -1,9 +1,9 @@
 PORTNAME=	shiboken6
-DISTVERSION=	${QT6_VERSION}
+DISTVERSION=	${PYSIDE6_VERSION}
 CATEGORIES=	devel
 MASTER_SITES=	QT/official_releases/QtForPython/${PORTNAME}/PySide6-${DISTVERSION}-src
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	pyside-setup-opensource-src-${DISTVERSION}
+DISTNAME=	pyside-setup-everywhere-src-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python binding generator for C++ libraries
@@ -35,12 +35,11 @@ CMAKE_ARGS+=	-DClang_DIR:PATH="${LOCALBASE}/llvm${LLVM_DEFAULT}/lib/cmake/clang"
 		-DCMAKE_CXX_STANDARD_LIBRARIES=-lexecinfo \
 		-DUSE_PYTHON_VERSION=${PYTHON_VER}
 
-
 .include <bsd.port.pre.mk>
 
 PLIST_SUB+=	DISTVERSION=${DISTVERSION}
 PLIST_SUB+=	PYVERSTR=.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}
-WRKSRC=		${WRKDIR}/pyside-setup-opensource-src-${DISTVERSION}/sources/shiboken6
+WRKSRC=		${WRKDIR}/pyside-setup-everywhere-src-${QT6_VERSION}/sources/shiboken6
 
 post-install:
 	${RM} ${STAGEDIR}${PREFIX}/bin/shiboken_tool.py

@@ -3,6 +3,10 @@
 @dir lib/cmake/Qt6/macos
 bin/androiddeployqt6
 bin/qmake6
+%%QT_INCDIR%%/QtExampleIcons/QtExampleIcons
+%%QT_INCDIR%%/QtExampleIcons/QtExampleIconsDepends
+%%QT_INCDIR%%/QtExampleIcons/QtExampleIconsVersion
+%%QT_INCDIR%%/QtExampleIcons/qtexampleiconsversion.h
 %%QT_INCDIR%%/QtConcurrent/QtConcurrent
 %%QT_INCDIR%%/QtConcurrent/QtConcurrentDepends
 %%QT_INCDIR%%/QtConcurrent/QtConcurrentFilter
@@ -572,7 +576,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtCore/QtTypes
 %%QT_INCDIR%%/QtCore/QtVersion
 %%QT_INCDIR%%/QtCore/QtVersionChecks
-%%QT_INCDIR%%/QtCore/forkfd.h
 %%QT_INCDIR%%/QtCore/q20algorithm.h
 %%QT_INCDIR%%/QtCore/q20functional.h
 %%QT_INCDIR%%/QtCore/q20iterator.h
@@ -1364,7 +1367,6 @@ bin/qmake6
 %%QT_INCDIR%%/QtGui/bus_interface.h
 %%QT_INCDIR%%/QtGui/cache_adaptor.h
 %%QT_INCDIR%%/QtGui/deviceeventcontroller_adaptor.h
-%%QT_INCDIR%%/QtGui/md4c.h
 %%QT_INCDIR%%/QtGui/qabstractfileiconprovider.h
 %%QT_INCDIR%%/QtGui/qabstracttextdocumentlayout.h
 %%QT_INCDIR%%/QtGui/qaccessible.h
@@ -2670,6 +2672,13 @@ lib/cmake/Qt6DeviceDiscoverySupportPrivate/Qt6DeviceDiscoverySupportPrivateDepen
 lib/cmake/Qt6DeviceDiscoverySupportPrivate/Qt6DeviceDiscoverySupportPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/Qt6DeviceDiscoverySupportPrivate/Qt6DeviceDiscoverySupportPrivateTargets.cmake
 lib/cmake/Qt6DeviceDiscoverySupportPrivate/Qt6DeviceDiscoverySupportPrivateVersionlessTargets.cmake
+lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateAdditionalTargetInfo.cmake
+lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateConfig.cmake
+lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateConfigVersion.cmake
+lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateTargets.cmake
+lib/cmake/Qt6ExampleIconsPrivate/Qt6ExampleIconsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateConfig.cmake
 lib/cmake/Qt6FbSupportPrivate/Qt6FbSupportPrivateConfigVersion.cmake
@@ -2964,6 +2973,8 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_LIBDIR%%/libQt6DBus.so.%%FULLVER%%
 %%QT_LIBDIR%%/libQt6DeviceDiscoverySupport.a
 %%QT_LIBDIR%%/libQt6DeviceDiscoverySupport.prl
+%%QT_LIBDIR%%/libQt6ExampleIcons.a
+%%QT_LIBDIR%%/libQt6ExampleIcons.prl
 %%QT_LIBDIR%%/libQt6FbSupport.a
 %%QT_LIBDIR%%/libQt6FbSupport.prl
 %%QT_LIBDIR%%/libQt6Gui.prl
@@ -3014,6 +3025,7 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6core_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6dbus_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6devicediscoverysupportprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/metatypes/qt6exampleiconsprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6fbsupportprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6gui_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6inputsupportprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
@@ -3027,6 +3039,7 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_LIBDIR%%/metatypes/qt6widgets_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%X11%%%%QT_LIBDIR%%/metatypes/qt6xcbqpaprivate_%%CMAKE_BUILD_TYPE%%_metatypes.json
 %%QT_LIBDIR%%/metatypes/qt6xml_%%CMAKE_BUILD_TYPE%%_metatypes.json
+%%QT_LIBDIR%%/objects-Release/ExampleIconsPrivate_resources_1/.rcc/qrc_example_icons.cpp.o
 %%QT_MKSPECDIR%%/aix-g++-64/qmake.conf
 %%QT_MKSPECDIR%%/aix-g++-64/qplatformdefs.h
 %%QT_MKSPECDIR%%/aix-g++/qmake.conf
@@ -3412,6 +3425,7 @@ lib/cmake/Qt6Xml/Qt6XmlVersionlessTargets.cmake
 %%QT_MKSPECDIR%%/modules/qt_lib_dbus.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_dbus_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_devicediscovery_support_private.pri
+%%QT_MKSPECDIR%%/modules/qt_lib_example_icons_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_fb_support_private.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_gui.pri
 %%QT_MKSPECDIR%%/modules/qt_lib_gui_private.pri
@@ -3687,6 +3701,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DATADIR%%/modules/Core.json
 %%QT_DATADIR%%/modules/DBus.json
 %%QT_DATADIR%%/modules/DeviceDiscoverySupportPrivate.json
+%%QT_DATADIR%%/modules/ExampleIconsPrivate.json
 %%QT_DATADIR%%/modules/FbSupportPrivate.json
 %%QT_DATADIR%%/modules/Gui.json
 %%QT_DATADIR%%/modules/InputSupportPrivate.json

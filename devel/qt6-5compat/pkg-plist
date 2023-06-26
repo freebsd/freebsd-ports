@@ -2,6 +2,7 @@
 %%QT_INCDIR%%/QtCore5Compat/%%FULLVER%%/QtCore5Compat/private/qbinaryjsonarray_p.h
 %%QT_INCDIR%%/QtCore5Compat/%%FULLVER%%/QtCore5Compat/private/qbinaryjsonobject_p.h
 %%QT_INCDIR%%/QtCore5Compat/%%FULLVER%%/QtCore5Compat/private/qbinaryjsonvalue_p.h
+%%QT_INCDIR%%/QtCore5Compat/%%FULLVER%%/QtCore5Compat/private/qcodecmacros_p.h
 %%QT_INCDIR%%/QtCore5Compat/%%FULLVER%%/QtCore5Compat/private/qicucodec_p.h
 %%QT_INCDIR%%/QtCore5Compat/%%FULLVER%%/QtCore5Compat/private/qisciicodec_p.h
 %%QT_INCDIR%%/QtCore5Compat/%%FULLVER%%/QtCore5Compat/private/qlatincodec_p.h
