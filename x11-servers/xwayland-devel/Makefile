@@ -1,6 +1,6 @@
 PORTNAME=	xwayland
 DISTVERSIONPREFIX=	xorg-server-
-DISTVERSION=	21.0.99.1-475
+DISTVERSION=	21.0.99.1-478
 DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
 CATEGORIES=	x11-servers
 PKGNAMESUFFIX=	-devel
@@ -40,7 +40,7 @@ USE_XORG=	pixman xau xdmcp xfont2 xkbfile xshmfence xtrans
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	xorg
 GL_PROJECT=	xserver
-GL_COMMIT=	9f3559d5c041913dbcf8030a28155e8ef8466c09
+GL_COMMIT=	befef003d4690f236771d79abeccd5b8c7f8d7dc
 GL_TUPLE=	xorg/proto:xorgproto:766967322209f2dcb72e6a8edea0c651f586201d:xorgproto/subprojects/xorgproto
 MESON_ARGS=	-D${PORTNAME}=true \
 		-Dxorg=false \
@@ -69,12 +69,16 @@ DEFAULT_FONTPATH_LIST= \
 	${FONTPATH_ROOT}/75dpi/ \
 	catalogue:${FONTPATHD}
 
-OPTIONS_DEFINE=	CSD NVIDIA
-OPTIONS_DEFAULT=CSD
+OPTIONS_DEFINE=	CSD EI NVIDIA
+OPTIONS_DEFAULT=CSD EI
 
 CSD_DESC=		Client-side decorations via libdecor
 CSD_LIB_DEPENDS=	libdecor-0.so:x11-toolkits/libdecor
 CSD_MESON_TRUE=		libdecor
+
+EI_DESC=		Emulated input via libei
+EI_LIB_DEPENDS=		libei.so:x11/libei
+EI_MESON_OFF=		-Dxwayland_ei=false
 
 NVIDIA_DESC=		EGLStream support for glamor on Xwayland
 NVIDIA_BUILD_DEPENDS=	egl-wayland>0:graphics/egl-wayland
