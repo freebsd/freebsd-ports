@@ -1,6 +1,5 @@
 bin/certificates
 bin/crashcollect
-bin/inspector
 bin/metric-receiver
 bin/multinode
 bin/satellite
