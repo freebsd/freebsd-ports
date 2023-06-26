@@ -1,3 +1,5 @@
+bin/caf-run
+bin/caf-vec
 include/caf/abstract_actor.hpp
 include/caf/abstract_channel.hpp
 include/caf/abstract_group.hpp
@@ -51,6 +53,7 @@ include/caf/caf_main.hpp
 include/caf/callback.hpp
 include/caf/catch_all.hpp
 include/caf/check_typed_input.hpp
+include/caf/chrono.hpp
 include/caf/composed_type.hpp
 include/caf/config.hpp
 include/caf/config_option.hpp
@@ -152,6 +155,7 @@ include/caf/detail/parser/read_number_or_timespan.hpp
 include/caf/detail/parser/read_signed_integer.hpp
 include/caf/detail/parser/read_string.hpp
 include/caf/detail/parser/read_timespan.hpp
+include/caf/detail/parser/read_timestamp.hpp
 include/caf/detail/parser/read_unsigned_integer.hpp
 include/caf/detail/parser/read_uri.hpp
 include/caf/detail/parser/sub_ascii.hpp
@@ -342,7 +346,6 @@ include/caf/io/network/stream_manager.hpp
 include/caf/io/network/test_multiplexer.hpp
 include/caf/io/open.hpp
 include/caf/io/publish.hpp
-include/caf/io/publish_local_groups.hpp
 include/caf/io/receive_policy.hpp
 include/caf/io/remote_actor.hpp
 include/caf/io/remote_group.hpp
@@ -604,13 +607,13 @@ lib/cmake/CAF/CAFConfigVersion.cmake
 lib/cmake/CAF/CAFTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/CAF/CAFTargets.cmake
 lib/libcaf_core.so
-lib/libcaf_core.so.0.19.0
+lib/libcaf_core.so.0.19.2
 lib/libcaf_io.so
-lib/libcaf_io.so.0.19.0
+lib/libcaf_io.so.0.19.2
 lib/libcaf_net.so
-lib/libcaf_net.so.0.19.0
+lib/libcaf_net.so.0.19.2
 lib/libcaf_openssl.so
-lib/libcaf_openssl.so.0.19.0
+lib/libcaf_openssl.so.0.19.2
 share/caf/examples/aout.cpp
 share/caf/examples/config/read-json.cpp
 share/caf/examples/custom_type/custom_types_1.cpp
@@ -644,5 +647,3 @@ share/caf/examples/web_socket/echo.cpp
 share/caf/examples/web_socket/hello-client.cpp
 share/caf/examples/web_socket/quote-server.cpp
 share/caf/examples/web_socket/stock-ticker.cpp
-share/caf/tools/caf-run
-share/caf/tools/caf-vec

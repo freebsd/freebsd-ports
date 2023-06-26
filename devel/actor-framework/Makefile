@@ -1,5 +1,5 @@
 PORTNAME=	actor-framework
-DISTVERSION=	0.19.0
+DISTVERSION=	0.19.2
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 
 CMAKE_OFF=	CAF_ENABLE_TESTING
-CMAKE_TESTING_ON=	CAF_ENABLE_TESTING
+CMAKE_TESTING_ON=	CAF_ENABLE_TESTING # the decorator.sequencer testcase fails intermittently, see https://github.com/actor-framework/actor-framework/issues/1456
 
 OPTIONS_DEFINE=	DEBUG
 OPTIONS_RADIO=	LOG_LEVEL
