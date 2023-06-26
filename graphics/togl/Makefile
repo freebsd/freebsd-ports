@@ -14,18 +14,24 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		gl gmake tk:86,tea xorg
-USE_XORG=	x11 xt xmu
 USE_GL=		gl
 USE_LDCONFIG=	${PREFIX}/lib/Togl2.0
+USE_XORG=	x11 xt xmu
 
 WRKSRC=		${WRKDIR}/Togl2.0
 
-TOGL_INSTDIR=	${PREFIX}/lib/${DISTNAME}
+PORTDOCS=	*
+PORTEXAMPLES=	*
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
+TOGL_INSTDIR=	${PREFIX}/lib/${DISTNAME}
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|wish |${WISH:T} |' ${WRKSRC}/*.tcl
