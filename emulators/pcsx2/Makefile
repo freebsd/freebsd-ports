@@ -1,7 +1,7 @@
 PORTNAME=	pcsx2
 PORTVERSION=	1.7.4097
 DISTVERSIONPREFIX=	v
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 
 MAINTAINER=	martymac@FreeBSD.org
@@ -16,7 +16,6 @@ ONLY_FOR_ARCHS=	amd64
 # Notes on dependencies (see cmake/SearchForStuff.cmake):
 # - rapidyaml (and c4core) come from 3rdparty/ (0.4.0 is needed)
 # - glad comes from 3rdparty/ (conflicts with libglvnd)
-# - zstd comes from 3rdparty/ (not detected yet)
 # - zydis comes from 3rdparty/
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libavcodec.so:multimedia/ffmpeg \
@@ -30,10 +29,10 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libcurl.so:ftp/curl \
 		libpulse.so:audio/pulseaudio \
 		libjack.so:audio/jack \
-		libsndio.so:audio/sndio
+		libsndio.so:audio/sndio \
+		libzstd.so:archivers/zstd
 #		libryml.so:devel/rapidyaml \
 #		libglad.so:graphics/glad \
-#		libzstd.so:archivers/zstd
 
 USES=		cmake desktop-file-utils gl pkgconfig qt:6 sdl xorg
 
@@ -45,6 +44,16 @@ USE_GL=		egl
 USE_SDL=	sdl2
 USE_XORG=	ice x11 xcb xext xpm xrandr
 USE_QT=		base tools
+
+# SSE 4.1 instructions are a hard requirement, if CPUTYPE is defined
+# use whatever is set and let the build fail if it falls below
+# baseline requirements. If it's undefined set penryn as target
+# as it's the oldest CPU arch that supports SSE 4.1
+.if defined(CPUTYPE)
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-no-march-native
+.else
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-no-march-minimum-req
+.endif
 
 # See: cmake/BuildParameters.cmake
 CMAKE_ARGS+=	\
