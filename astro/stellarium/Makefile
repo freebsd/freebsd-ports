@@ -1,6 +1,5 @@
 PORTNAME=	stellarium
-PORTVERSION=	1.2
-PORTREVISION=	1
+PORTVERSION=	23.1
 CATEGORIES=	astro
 MASTER_SITES=	https://github.com/Stellarium/stellarium/releases/download/v${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -93,6 +92,7 @@ post-extract-DOCS-on:
 		${WRKSRC}
 
 post-install:
+	@${RM} -r ${STAGEDIR}${DATADIR}/guide
 	@${RMDIR} ${STAGEDIR}${DATADIR}/skycultures/greek_almagest/almstars
 
 post-install-MORE_STARS-on:
