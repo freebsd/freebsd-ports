@@ -1,7 +1,6 @@
 PORTNAME=	tree-sitter-graph
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.4
-PORTREVISION=	1
+DISTVERSION=	0.10.5
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -33,35 +32,38 @@ CARGO_CRATES=	ahash-0.4.7 \
 		dirs-3.0.2 \
 		dirs-sys-0.3.7 \
 		env_logger-0.9.3 \
-		getrandom-0.2.9 \
+		equivalent-1.0.0 \
+		getrandom-0.2.10 \
 		hashbrown-0.9.1 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.0 \
 		hermit-abi-0.1.19 \
 		humantime-2.1.0 \
 		indexmap-1.9.3 \
+		indexmap-2.0.0 \
 		indoc-1.0.9 \
 		itoa-1.0.6 \
 		lazy_static-1.4.0 \
-		libc-0.2.145 \
+		libc-0.2.147 \
 		libloading-0.7.4 \
-		log-0.4.18 \
+		log-0.4.19 \
 		memchr-2.5.0 \
 		once_cell-1.18.0 \
-		os_str_bytes-6.5.0 \
-		proc-macro2-1.0.59 \
+		os_str_bytes-6.5.1 \
+		proc-macro2-1.0.63 \
 		quote-1.0.28 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.8.3 \
+		regex-1.8.4 \
 		regex-syntax-0.7.2 \
 		ryu-1.0.13 \
-		serde-1.0.163 \
-		serde_derive-1.0.163 \
-		serde_json-1.0.96 \
+		serde-1.0.164 \
+		serde_derive-1.0.164 \
+		serde_json-1.0.99 \
 		smallvec-1.10.0 \
 		string-interner-0.12.2 \
 		strsim-0.10.0 \
-		syn-2.0.18 \
+		syn-2.0.22 \
 		termcolor-1.2.0 \
 		textwrap-0.16.0 \
 		thiserror-1.0.40 \
