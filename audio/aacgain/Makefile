@@ -12,7 +12,7 @@ LICENSE=	GPLv2
 
 BROKEN=		Unfetchable
 DEPRECATED=	Obsolete way of handling volume adjustment, consider using audio/rsgain
-EXPIRATION_DATE=2022-09-30
+EXPIRATION_DATE=2023-09-30
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool tar:bzip2
