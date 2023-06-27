@@ -218,7 +218,7 @@
 #			  without dots, e.g. 20706, 30801, ...
 #
 # PYTHON_SUFFIX		- The major-minor release number of the chosen Python
-#			  interpreter without dots, e.g. 27, 37, ...
+#			  interpreter without dots, e.g. 27, 38, ...
 #			  Used for prefixes and suffixes.
 #
 # PYTHON_MAJOR_VER	- The major release version of the chosen Python
@@ -535,9 +535,6 @@ PYTHON_CMD?=		${_PYTHON_BASECMD}${_PYTHON_VERSION}
 .  if ${PYTHON_MAJOR_VER} > 2
 .    if exists(${PYTHON_CMD}-config)
 PYTHON_ABIVER!=		${PYTHON_CMD}-config --abiflags
-.    elif ${PYTHON_REL} < 30800
-# Default ABI flags for lang/python37 port
-PYTHON_ABIVER=		m
 .    endif
 .  endif
 
