@@ -6,7 +6,8 @@ CATEGORIES=	games
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open source Touhou clone
-WWW=		https://taisei-project.org/
+WWW=		https://taisei-project.org/ \
+		https://github.com/taisei-project/taisei
 
 LICENSE=	MIT CC0-1.0 PD
 LICENSE_COMB=	multi
