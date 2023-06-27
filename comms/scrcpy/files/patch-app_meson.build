@@ -1,6 +1,6 @@
---- app/meson.build.orig	2023-03-12 01:05:37 UTC
+--- app/meson.build.orig	2023-06-21 23:15:44 UTC
 +++ app/meson.build
-@@ -54,8 +54,8 @@ src = [
+@@ -56,8 +56,8 @@ src = [
  
  conf = configuration_data()
  
@@ -11,7 +11,7 @@
  conf.set('_GNU_SOURCE', true)
  
  if host_machine.system() == 'windows'
-@@ -236,10 +236,10 @@ install_data('data/icon.png',
+@@ -238,10 +238,10 @@ install_data('data/icon.png',
  install_data('data/zsh-completion/_scrcpy',
               install_dir: join_paths(datadir, 'zsh/site-functions'))
  install_data('data/bash-completion/scrcpy',
