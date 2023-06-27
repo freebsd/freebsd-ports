@@ -1,6 +1,5 @@
 PORTNAME=	gifsicle
-PORTVERSION=	1.93
-PORTREVISION=	2
+PORTVERSION=	1.94
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.lcdf.org/gifsicle/
 
@@ -30,7 +29,7 @@ PLIST_FILES=	bin/gifdiff bin/gifsicle \
 
 .if ${FLAVOR} == x11
 USES+=			xorg
-USE_XORG=		x11
+USE_XORG=		ice sm x11
 CONFIGURE_ARGS=		--enable-gifview \
 			--with-x
 PLIST_FILES+=		bin/gifview \
