@@ -1,6 +1,6 @@
 PORTNAME=	purple-hangouts
 PORTVERSION=	20210630
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 
 MAINTAINER=	ports@FreeBSD.org
@@ -9,6 +9,9 @@ WWW=		https://github.com/EionRobb/purple-hangouts
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/gpl3.txt
+
+DEPRECATED=	Google Hangouts discontinued 2022-11-01, data deleted 2023-01-01
+EXPIRATION_DATE=	2023-06-30
 
 LIB_DEPENDS=	libpurple.so:net-im/libpurple \
 		libjson-glib-1.0.so:devel/json-glib \
