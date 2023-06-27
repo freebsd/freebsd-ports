@@ -78,7 +78,6 @@
     SUBDIR += obpager
     SUBDIR += openbox
     SUBDIR += oroborus
-    SUBDIR += pager
     SUBDIR += peksystray
     SUBDIR += pekwm
     SUBDIR += phluid
@@ -95,6 +94,7 @@
     SUBDIR += rubygem-uh-layout
     SUBDIR += rubygem-uh-wm
     SUBDIR += sawfish
+    SUBDIR += sawfish-pager
     SUBDIR += sdorfehs
     SUBDIR += selectwm
     SUBDIR += skippy-xd
