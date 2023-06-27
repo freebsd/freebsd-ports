@@ -373,4 +373,23 @@ EOD
        - "/api/redoc/" is now "/api/schema/redoc/"
 EOD
 }
+{ type: upgrade
+  maximum_version: 3.5.4
+  message: <<EOD
+If a separate configuration file is used that does not have an ".py" extension,
+the following message may appear when the netbox rc script is started:
+
+!!!
+!!! WARNING: configuration file should have a valid Python extension.
+!!!
+
+In this case, the existing configuration file should be provided with a ".py"
+extension and if set, the rc variable "netbox_config" should also point to the
+configuration file with the new file extension.
+
+The netbox sample rc script, which is provided via the EXAMPLES option, has
+been adjusted accordingly.  This also includes a fix for the default path of
+the configuration if the rc variable "netbox_config" is not set.
+EOD
+}
 ]

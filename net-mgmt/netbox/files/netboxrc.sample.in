@@ -19,7 +19,7 @@
 # netbox_use_config (bool):		Set to NO by default.
 #					If set, read the configuration parameter from file defined in
 #					"netbox_config" instead using rc variables.
-# netbox_config (str):			Default to "/usr/local/etc/${name}.conf}"
+# netbox_config (str):			Default to "%%LOCALBASE%%/etc/${name}.conf.py}"
 #					Config file for gunicorn's netbox config file
 # netbox_command (str):			Default to "%%LOCALBASE%%/bin/gunicorn"
 #					Path to gunicorn to run netbox
@@ -56,7 +56,7 @@ netbox_chdir=${netbox_path}
 pidfile=${netbox_pidfile:-/var/run/${name}/${name}.pid}
 netbox_user=${netbox_user:-%%WWWOWN%%}
 netbox_use_config=${netbox_use_config:-no}
-netbox_config=${netbox_config:-/${name}.conf}
+netbox_config=${netbox_config:-%%LOCALBASE%%/etc/${name}.conf.py}
 netbox_bind=${netbox_bind:-localhost:8001}
 netbox_workers=${netbox_workers:-5}
 netbox_threads=${netbox_threads:-3}
