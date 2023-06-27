@@ -1,3 +1,39 @@
+  <vuln vid="06428d91-152e-11ee-8b14-dbdd62da85fb">
+    <topic>OpenEXR -- heap buffer overflow in internal_huf_decompress</topic>
+    <affects>
+      <package>
+	<name>openexr</name>
+	<range><lt>3.1.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>oss-fuzz reports:</p>
+	<blockquote cite="https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59382">
+	  <p>heap buffer overflow in internal_huf_decompress.</p>
+	</blockquote>
+	<p>Cary Phillips reports:</p>
+	<blockquote cite="https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.1.9">
+	  <p>v3.1.9 - Patch release that addresses [...] also OSS-fuzz 59382 Heap-buffer-overflow in internal_huf_decompress</p>
+	</blockquote>
+	<p>Kimball Thurston reports:</p>
+	<blockquote cite="https://github.com/AcademySoftwareFoundation/openexr/pull/1439">
+	  <p>Fix scenario where malformed dwa file could read past end of buffer - fixes OSS-Fuzz 59382</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=59382</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/releases/tag/v3.1.9</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/commit/e431f7e189d0785bb84a5bfb83391e9e58590c49</url>
+      <url>https://github.com/AcademySoftwareFoundation/openexr/pull/1439</url>
+    </references>
+    <dates>
+      <discovery>2023-05-28</discovery>
+      <entry>2023-06-27</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ad05a737-14bd-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
