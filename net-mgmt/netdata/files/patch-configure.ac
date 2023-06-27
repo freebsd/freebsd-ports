@@ -1,4 +1,4 @@
---- configure.ac.orig	2022-12-28 00:24:19 UTC
+--- configure.ac.orig	2023-06-14 15:07:47 UTC
 +++ configure.ac
 @@ -5,11 +5,11 @@
  AC_PREREQ(2.60)
@@ -16,7 +16,40 @@
  
  AM_MAINTAINER_MODE([disable])
  if test x"$USE_MAINTAINER_MODE" = xyes; then
-@@ -1571,14 +1571,14 @@ AC_SUBST([OPTIONAL_DL_LIBS])
+@@ -1261,14 +1261,14 @@ if test "${enable_ml}" = "yes" -a "${have_uuid}" != "y
+ fi
+
+ # Check if submodules have not been fetched. Fail if ML was explicitly requested.
+-AC_MSG_CHECKING([if git submodules are present for machine learning functionality])
+-if test -f "ml/dlib/dlib/all/source.cpp"; then
+-    AC_MSG_RESULT([yes])
++# AC_MSG_CHECKING([if git submodules are present for machine learning functionality])
++# if test -f "ml/dlib/dlib/all/source.cpp"; then
++#    AC_MSG_RESULT([yes])
+     have_ml_submodules="yes"
+-else
+-    AC_MSG_RESULT([no])
+-    have_ml_submodules="no"
+-fi
++# else
++#    AC_MSG_RESULT([no])
++#    have_ml_submodules="no"
++# fi
+
+ if test "${enable_ml}" = "yes" -a "${have_ml_submodules}" = "no"; then
+     AC_MSG_ERROR([You have explicitly requested --enable-ml functionality but it cannot be built because the required git submodules are missing.])
+@@ -1288,8 +1288,8 @@ fi
+ AM_CONDITIONAL([ENABLE_ML], [test "${build_ml}" = "yes"])
+ if test "${build_ml}" = "yes"; then
+     AC_DEFINE([ENABLE_ML], [1], [anomaly detection usability])
+-    OPTIONAL_ML_CFLAGS="-DDLIB_NO_GUI_SUPPORT -I \$(abs_top_srcdir)/ml/dlib"
+-    OPTIONAL_ML_LIBS=""
++#    OPTIONAL_ML_CFLAGS="-DDLIB_NO_GUI_SUPPORT -I \$(abs_top_srcdir)/ml/dlib"
++#    OPTIONAL_ML_LIBS=""
+ fi
+
+
+@@ -1694,14 +1694,14 @@ AC_SUBST([OPTIONAL_DL_LIBS])
  
  AC_DEFINE_UNQUOTED([NETDATA_USER], ["${with_user}"], [use this user to drop privileged])
  

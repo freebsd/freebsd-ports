@@ -47,7 +47,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/disks.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dns_query.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dnsmasq_dhcp.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/dockerd.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/docker.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/elasticsearch.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/entropy.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/exporting.conf.sample
@@ -77,6 +77,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/nvme.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/pihole.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/ping.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/plugin.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/portcheck.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/postgres.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/processes.conf.sample
@@ -104,7 +105,7 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/vsphere.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/web_log.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/whoisquery.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/wmi.conf.sample
+@sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/windows.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/x509check.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health.d/zfs.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/health_alarm_notify.conf.sample
@@ -136,15 +137,12 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/memcached.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/monit.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nsd.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/ntpd.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/nvidia_smi.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/openldap.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/oracledb.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/pandas.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/postfix.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/proxysql.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/puppet.conf.sample
-@sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/rabbitmq.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/rethinkdbs.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/retroshare.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/python.d/riakkv.conf.sample
@@ -164,17 +162,21 @@
 @sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/example.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/statsd.d/k6.conf.sample
 @sample(netdata,netdata,0640) lib/netdata/conf.d/stream.conf.sample
-lib/netdata/system/netdata-freebsd
-lib/netdata/system/netdata-init-d
-lib/netdata/system/netdata-lsb
-lib/netdata/system/netdata-openrc
-lib/netdata/system/netdata-updater.service
-lib/netdata/system/netdata-updater.timer
-lib/netdata/system/netdata.crontab
-lib/netdata/system/netdata.logrotate
-lib/netdata/system/netdata.plist
-lib/netdata/system/netdata.service
-lib/netdata/system/netdata.service.v235
+@sample(netdata,netdata,0640) lib/netdata/conf.d/vnodes/vnodes.conf.sample
+lib/netdata/system/cron/netdata-updater-daily
+lib/netdata/system/freebsd/rc.d/netdata
+lib/netdata/system/initd/init.d/netdata
+lib/netdata/system/launchd/netdata.plist
+lib/netdata/system/logrotate/netdata
+lib/netdata/system/lsb/init.d/netdata
+lib/netdata/system/openrc/conf.d/netdata
+lib/netdata/system/openrc/init.d/netdata
+lib/netdata/system/runit/run
+lib/netdata/system/systemd/50-netdata.preset
+lib/netdata/system/systemd/netdata-updater.service
+lib/netdata/system/systemd/netdata-updater.timer
+lib/netdata/system/systemd/netdata.service
+lib/netdata/system/systemd/netdata.service.v235
 libexec/netdata/charts.d/ap.chart.sh
 libexec/netdata/charts.d/apcupsd.chart.sh
 libexec/netdata/charts.d/example.chart.sh
@@ -230,13 +232,11 @@ libexec/netdata/python.d/megacli.chart.py
 libexec/netdata/python.d/memcached.chart.py
 libexec/netdata/python.d/monit.chart.py
 libexec/netdata/python.d/nsd.chart.py
-libexec/netdata/python.d/ntpd.chart.py
 libexec/netdata/python.d/nvidia_smi.chart.py
 libexec/netdata/python.d/openldap.chart.py
 libexec/netdata/python.d/oracledb.chart.py
 libexec/netdata/python.d/pandas.chart.py
 libexec/netdata/python.d/postfix.chart.py
-libexec/netdata/python.d/proxysql.chart.py
 libexec/netdata/python.d/puppet.chart.py
 libexec/netdata/python.d/python_modules/__init__.py
 libexec/netdata/python.d/python_modules/bases/FrameworkServices/ExecutableService.py
@@ -258,7 +258,6 @@ libexec/netdata/python.d/python_modules/third_party/lm_sensors.py
 libexec/netdata/python.d/python_modules/third_party/mcrcon.py
 libexec/netdata/python.d/python_modules/third_party/monotonic.py
 libexec/netdata/python.d/python_modules/third_party/ordereddict.py
-libexec/netdata/python.d/rabbitmq.chart.py
 libexec/netdata/python.d/rethinkdbs.chart.py
 libexec/netdata/python.d/retroshare.chart.py
 libexec/netdata/python.d/riakkv.chart.py
@@ -387,7 +386,7 @@ sbin/netdatacli
 %%DATADIR%%/web/netdata-swagger.json
 %%DATADIR%%/web/netdata-swagger.yaml
 %%DATADIR%%/web/old/index.html
-%%DATADIR%%/web/precache-manifest.5fec6109084644adf7bf854243e1a044.js
+%%DATADIR%%/web/precache-manifest.21dcd7c609bff6504512face054c360f.js
 %%DATADIR%%/web/refresh-badges.js
 %%DATADIR%%/web/robots.txt
 %%DATADIR%%/web/service-worker.js
@@ -401,9 +400,9 @@ sbin/netdatacli
 %%DATADIR%%/web/static/img/netdata-logomark.svg
 %%DATADIR%%/web/static/js/10.a5cd7d0e.chunk.js
 %%DATADIR%%/web/static/js/10.a5cd7d0e.chunk.js.map
-%%DATADIR%%/web/static/js/2.92ca8446.chunk.js
-%%DATADIR%%/web/static/js/2.92ca8446.chunk.js.LICENSE
-%%DATADIR%%/web/static/js/2.92ca8446.chunk.js.map
+%%DATADIR%%/web/static/js/2.ae48988e.chunk.js
+%%DATADIR%%/web/static/js/2.ae48988e.chunk.js.LICENSE
+%%DATADIR%%/web/static/js/2.ae48988e.chunk.js.map
 %%DATADIR%%/web/static/js/3.f137faca.chunk.js
 %%DATADIR%%/web/static/js/3.f137faca.chunk.js.map
 %%DATADIR%%/web/static/js/4.2dbcd906.chunk.js
@@ -419,9 +418,9 @@ sbin/netdatacli
 %%DATADIR%%/web/static/js/8.b4161ea2.chunk.js.map
 %%DATADIR%%/web/static/js/9.a4363968.chunk.js
 %%DATADIR%%/web/static/js/9.a4363968.chunk.js.map
-%%DATADIR%%/web/static/js/main.7d1bdca1.chunk.js
-%%DATADIR%%/web/static/js/main.7d1bdca1.chunk.js.LICENSE
-%%DATADIR%%/web/static/js/main.7d1bdca1.chunk.js.map
+%%DATADIR%%/web/static/js/main.76dfe4de.chunk.js
+%%DATADIR%%/web/static/js/main.76dfe4de.chunk.js.LICENSE
+%%DATADIR%%/web/static/js/main.76dfe4de.chunk.js.map
 %%DATADIR%%/web/static/js/runtime-main.08abed8f.js
 %%DATADIR%%/web/static/js/runtime-main.08abed8f.js.map
 %%DATADIR%%/web/static/media/ibm-plex-sans-latin-100.245539db.woff2
