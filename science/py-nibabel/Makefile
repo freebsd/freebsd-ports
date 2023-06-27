@@ -17,7 +17,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=17:devel/py-packaging@${PY_FLAVOR}
 
 USES=		python:3.9+
-USE_PYTHON=	pep517 concurrent autoplist pytest
+USE_PYTHON=	pep517 concurrent autoplist pytest # 3 tests fail, see https://github.com/nipy/nibabel/issues/1235
 
 NO_ARCH=	yes
 
