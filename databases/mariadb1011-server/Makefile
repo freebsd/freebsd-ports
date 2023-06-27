@@ -1,5 +1,5 @@
 PORTNAME?=	mariadb
-PORTVERSION=	10.11.3
+PORTVERSION=	10.11.4
 PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	https://mirror.nodesdirect.com/${SITESDIR}/ \
