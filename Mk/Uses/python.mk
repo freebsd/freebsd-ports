@@ -17,19 +17,19 @@
 #		Examples:
 #
 #			USES=python:2.7		# Supports Python 2.7 Only
-#			USES=python:3.7+	# Supports Python 3.7 or later
-#			USES=python:3.7-3.9	# Supports Python 3.7 to 3.9
+#			USES=python:3.8+	# Supports Python 3.8 or later
+#			USES=python:3.8-3.10	# Supports Python 3.8 to 3.10
 #			USES=python:-3.8	# Supports Python up to 3.8
-#			USES=python		# Supports 3.7+
+#			USES=python		# Supports 3.8+
 #
 # NOTE:	<version-spec> should be as specific as possible, matching the versions
 #	upstream declares support for, without being incorrect. In particular,
-#	USES=python *without* a <version-spec> means 3.7+,
+#	USES=python *without* a <version-spec> means 3.8+,
 #	including unreleased versions, which is probably incorrect.
 #
 #	Not specifying a <version-spec> should only be used when a more specific
 #	<version-spec> cannot be specified due to syntax limitations, for
-#	example: 2.7,3.7-3.8, but even in this case, X.Y+ (2.7+), or -X.Y (-3.7)
+#	example: 2.7,3.8-3.9, but even in this case, X.Y+ (2.7+), or -X.Y (-3.8)
 #	is preferred and likely more correct.
 #
 # patch		Python is needed at patch time. Adds dependency to PATCH_DEPENDS.
@@ -50,7 +50,7 @@
 # Exported variables:
 #
 # PYTHON_VERSION	- The chosen Python interpreter including the version,
-#			  e.g. python2.7, python3.7, etc.
+#			  e.g. python2.7, python3.8, etc.
 #
 # Variables, which can be set by the port:
 #
@@ -142,11 +142,9 @@
 #
 # PEP517_BUILD_CMD	- Command sequence for a PEP-517 build frontend that builds a wheel.
 #			  default: ${PYTHON_CMD} -m build --no-isolation --wheel ${PEP517_BUILD_CONFIG_SETTING}
-#			  Python 3.7: gpep517-${PYTHON_VER} build-wheel --output-fd 1 --wheel-dir ${BUILD_WRKSRC}/dist
 #
 # PEP517_BUILD_DEPEND	- Port needed to execute ${PEP517_BUILD_CMD}.
 #			  default: ${PYTHON_PKGNAMEPREFIX}build>=0:devel/py-build@${PY_FLAVOR}
-#			  Python 3.7: ${PYTHON_PKGNAMEPREFIX}gpep517>=0:devel/py-gpep517@${PY_FLAVOR}
 #
 # PEP517_BUILD_CONFIG_SETTING
 #			- Options for the build backend. Must include -C or --config-setting per option.
@@ -217,7 +215,7 @@
 # PYTHON_PORTSDIR	- The port directory of the chosen Python interpreter
 #
 # PYTHON_REL		- The release number of the chosen Python interpreter
-#			  without dots, e.g. 20706, 30701, ...
+#			  without dots, e.g. 20706, 30801, ...
 #
 # PYTHON_SUFFIX		- The major-minor release number of the chosen Python
 #			  interpreter without dots, e.g. 27, 37, ...
@@ -227,7 +225,7 @@
 #			  interpreter, e.g. 2, 3, ...
 #
 # PYTHON_VER		- The major-minor release version of the chosen Python
-#			  interpreter, e.g. 2.7, 3.7, ...
+#			  interpreter, e.g. 2.7, 3.8, ...
 #
 # PYTHON_ABIVER		- Additional ABI flags set by the chosen Python
 #			  interpreter, e.g. md
@@ -310,7 +308,7 @@ _INCLUDE_USES_PYTHON_MK=	yes
 # What Python version and what Python interpreters are currently supported?
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_PYTHON_VERSIONS=		3.9 3.8 3.7 3.10 3.11 2.7 # preferred first
+_PYTHON_VERSIONS=		3.9 3.8 3.10 3.11 2.7 # preferred first
 _PYTHON_PORTBRANCH=		3.9		# ${_PYTHON_VERSIONS:[1]}
 _PYTHON_BASECMD=		${LOCALBASE}/bin/python
 _PYTHON_RELPORTDIR=		lang/python
@@ -399,13 +397,13 @@ DEV_WARNING+=		"lang/python27 reached End of Life and will be removed somewhere 
 .  elif ${_PYTHON_ARGS} == 2
 DEV_ERROR+=		"USES=python:2 is no longer supported, use USES=python:2.7"
 .  elif ${_PYTHON_ARGS} == 3
-DEV_ERROR+=		"USES=python:3 is no longer supported, use USES=python:3.7+ or an appropriate version range"
+DEV_ERROR+=		"USES=python:3 is no longer supported, use USES=python:3.8+ or an appropriate version range"
 .  endif  # ${_PYTHON_ARGS} == 2.7
 
 _PYTHON_VERSION:=	${PYTHON_DEFAULT}
 
 .  if empty(_PYTHON_ARGS)
-_PYTHON_ARGS=	3.7+
+_PYTHON_ARGS=	3.8+
 .  endif
 
 # Validate Python version whether it meets the version restriction.
@@ -507,7 +505,7 @@ PKGNAMESUFFIX=	${PYTHON_PKGNAMESUFFIX}
 # To avoid having dependencies with @ and empty flavor:
 # _PYTHON_VERSION is either set by (first that matches):
 # - If using Python flavors, from the current Python flavor
-# - If using a version restriction (USES=python:3.7+), from the first
+# - If using a version restriction (USES=python:3.8+), from the first
 #   acceptable default Python version.
 # - From PYTHON_DEFAULT
 PY_FLAVOR=	py${_PYTHON_VERSION:S/.//}
@@ -798,8 +796,7 @@ PY_SETUPTOOLS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAV
 .  endif
 
 # Common Python modules that can be needed but only for some versions of Python.
-.  if ${PYTHON_REL} < 30500
-.  else
+.  if ${PYTHON_REL} >= 30000
 PY_PILLOW=	${PYTHON_PKGNAMEPREFIX}pillow>=7.0.0:graphics/py-pillow@${PY_FLAVOR}
 .  endif
 
