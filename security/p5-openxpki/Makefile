@@ -1,6 +1,6 @@
 PORTNAME=	openxpki
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.24.1
+DISTVERSION=	3.24.2
 CATEGORIES=	security perl5
 PKGNAMEPREFIX=	p5-
 
@@ -10,9 +10,6 @@ WWW=		https://www.openxpki.org/
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
 
 MY_DEPENDS=	bash:shells/bash \
 		p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
@@ -42,6 +39,7 @@ MY_DEPENDS=	bash:shells/bash \
 		p5-Data-UUID>=0:devel/p5-Data-UUID \
 		p5-DateTime-Format-DateParse>=0.04:devel/p5-DateTime-Format-DateParse \
 		p5-DBD-Mock>=1.45:databases/p5-DBD-Mock \
+		p5-DBD-SQLite>=1.52:databases/p5-DBD-SQLite \
 		p5-DBIx-Handler>=0.14:databases/p5-DBIx-Handler \
 		p5-Devel-NYTProf>=0:devel/p5-Devel-NYTProf \
 		p5-Feature-Compat-Try>=0.05:devel/p5-Feature-Compat-Try \
@@ -78,6 +76,8 @@ MY_DEPENDS=	bash:shells/bash \
 		p5-Switch>=0:lang/p5-Switch \
 		p5-Sys-SigAction>=0.06:devel/p5-Sys-SigAction \
 		p5-Template-Toolkit>=2.15:www/p5-Template-Toolkit \
+		p5-Test-Pod-Coverage>=1.00:devel/p5-Test-Pod-Coverage \
+		p5-Test-Pod>=1.00:devel/p5-Test-Pod \
 		p5-Text-CSV_XS>=0.23:textproc/p5-Text-CSV_XS \
 		p5-TimeDate>=0:devel/p5-TimeDate \
 		p5-Workflow>=1.60:devel/p5-Workflow \
@@ -86,10 +86,7 @@ MY_DEPENDS=	bash:shells/bash \
 		p5-XML-Validator-Schema>=0:textproc/p5-XML-Validator-Schema
 BUILD_DEPENDS=	${MY_DEPENDS}
 RUN_DEPENDS=	${MY_DEPENDS}
-TEST_DEPENDS=	p5-DBD-SQLite>=1.52:databases/p5-DBD-SQLite \
-		p5-Test-Pod-Coverage>=1.00:devel/p5-Test-Pod-Coverage \
-		p5-Test-Pod>=1.00:devel/p5-Test-Pod \
-		p5-Test-Prereq>=0:devel/p5-Test-Prereq
+TEST_DEPENDS=	p5-Test-Prereq>=0:devel/p5-Test-Prereq
 
 USES=		gmake perl5 shebangfix ssl
 USE_GITHUB=	yes
@@ -99,12 +96,10 @@ _conf_VERSION=	${DISTVERSION:R}
 
 USE_PERL5=	configure
 USE_RC_SUBR=	openxpki
-SHEBANG_FILES=	bin/*
-SHEBANG_GLOB=	*.fcgi *.pl *.pm *.t*
+SHEBANG_FILES=	../../*
 
 NO_ARCH=	yes
-# stay with stable versions only:
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limitw:1,even # stay with stable versions only
 SUB_FILES=	pkg-message
 
 WRKSRC_SUBDIR=	core/server/
@@ -112,8 +107,6 @@ WRKSRC_SUBDIR=	core/server/
 USERS=		openxpki
 GROUPS=		openxpki
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
 OPTIONS_DEFINE=	DOCS EXAMPLES GRAPHVIZ
 
 GRAPHVIZ_DESC=		With graphical visualization of workflows?
@@ -121,28 +114,36 @@ GRAPHVIZ_RUN_DEPENDS=	dot:graphics/graphviz \
 			imgsize:graphics/p5-Image-Size
 
 post-extract:
-	@${MV} ${WRKSRC_conf}/* ${WRKSRC}/../../config/
+	@${MKDIR} ${WRKSRC}/config
+	@${MV} ${WRKSRC_conf}/* ${WRKSRC}/config/
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|..ENV{PERL} .vergen --format version.|"${PORTVERSION}"|g' ${WRKSRC}/Makefile.PL
 	@${REINPLACE_CMD} -e 's|..vergen --format version.|"${PORTVERSION}"|g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|OPENSSLINC|${OPENSSLINC}|g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|OPENSSLLIB|${OPENSSLLIB}|g' ${WRKSRC}/Makefile.PL
+	@${REINPLACE_CMD} -e 's|OPENSSLBINARY|${OPENSSLBASE}/bin/openssl|g' ${WRKSRC}/Makefile.PL
 	@( \
 	cd ${WRKSRC}/../..; \
 	${ECHO} "Patching dir names..."; \
-	${GREP} -RIFl -e "/etc/openxpki" config core/server doc qatest tools >filelist; \
+	${GREP} -RIFl -e "/etc/openxpki" core/server doc qatest tools >filelist; \
 	${CAT} filelist | ${XARGS} -I % ${REINPLACE_CMD} -e 's|/etc/openxpki|${PREFIX}/etc/openxpki|g' "%"; \
 	${CAT} filelist | ${XARGS} -I % ${RM} "%.bak"; \
-	${GREP} -RIFl -e "/run/openxpkid.pid" config core/server doc qatest tools >filelist; \
-	${CAT} filelist | ${XARGS} -I % ${REINPLACE_CMD} -e 's|/var/run/openxpkid.pid|/var/openxpki/openxpkid.pid|g' "%"; \
+	${GREP} -RIFl -e "/run/openxpkid.pid" core/server doc qatest tools >filelist; \
+	${CAT} filelist | ${XARGS} -I % ${REINPLACE_CMD} -e 's|/run/openxpkid.pid|/var/openxpki/openxpkid.pid|g' "%"; \
+	${CAT} filelist | ${XARGS} -I % ${RM} "%.bak"; \
+	${GREP} -RIFl -e "www-data" core/server doc qatest tools >filelist; \
+	${CAT} filelist | ${XARGS} -I % ${REINPLACE_CMD} -e 's|www-data|www|g' "%"; \
 	${CAT} filelist | ${XARGS} -I % ${RM} "%.bak"; \
 	${RM} filelist; \
 	)
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
 	@${MKDIR} ${WRKSRC}/t/var/log/openxpki
 
 post-install:
 	@${MKDIR} ${STAGEDIR}/var/openxpki/session
 	@${MKDIR} ${STAGEDIR}/var/log/openxpki
-	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openxpki
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/openxpki/local/keys
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
@@ -150,7 +151,6 @@ post-install-DOCS-on:
 
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	(cd ${WRKSRC}/../.. && ${COPYTREE_SHARE} config ${STAGEDIR}${EXAMPLESDIR})
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "htdocs cgi-bin" ${STAGEDIR}${EXAMPLESDIR})
+	(cd ${WRKSRC} && ${COPYTREE_SHARE} "config htdocs cgi-bin" ${STAGEDIR}${EXAMPLESDIR} "! -name *\.orig")
 
 .include <bsd.port.mk>

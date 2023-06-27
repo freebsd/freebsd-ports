@@ -2,13 +2,21 @@
 { type: install
   message: <<EOM
 - Universal server building block (OpenXPKI) for arbitrary PKI: installed.
-- SCEP prerequisite binary and i18n tools for UI: installed.
+- i18n tools for UI: installed.
 - Enable utf8 locale (e.g. en_US.utf8) for the translation staff to operate
   (translation is needed even for English language).
-- Install your favorite database (enable utf8 support),
-  e.g. databases/mysql56-server
-- Install perl interface for your favorite database,
-  e.g. databases/p5-DBD-mysql
+- Using database
+  = Install your favorite database (enable utf8 support), e.g.
+    databases/postgresql15-server 
+    and perl interface for it, e.g. databases/p5-DBD-Pg
+  = Examples, demos and tutorials of OpenXPKI traditionally use MariaDB 
+    database. But its use with OpenXPKI on FreeBSD is a bit tricky:
+      - Install e.g. databases/mariadb106-server
+      - Add value mysql to file /etc/make.conf like this:
+        DEFAULT_VERSIONS+= mysql=10.6m
+      - cd /usr/ports/databases/p5-DBD-mysql && make reinstall
+        Note that installing of databases/p5-DBD-MariaDB here may hinder
+        operation of your OpeXPKI setup. 
 - Install your favorite web server.
   Copy FastCGI scripts from %%EXAMPLESDIR%%/cgi-bin to the location
   where your web server can use them. Set executable permissions for them.
@@ -18,13 +26,17 @@
 - If you want your server to act just as the simplest CA,
   then the basic deployment procedure is all you need:
   copy sample configuration for this case with
-    cp -R %%EXAMPLESDIR%%/config/openxpki/* %%PREFIX%%/etc/openxpki/
+    cp -pR %%EXAMPLESDIR%%/config/* %%PREFIX%%/etc/openxpki/
   and follow advice at:
   https://openxpki.readthedocs.org/en/latest/quickstart.html
   Without this deployment procedure OpenXPKI server would not start.
 - If you want more complex role for your server inside the PKI infrastructure,
-  then you need to perform further deployment procedure for your server atop
+  then perform further deployment procedure for your server atop
   the basic deployment.
+- Oversimplified example scripts and configs are provided herewith for 
+  illustration only, and not for production use. All features of OpenXPI in 
+  production should be acquired by setting up an appropriate server with 
+  needed deployment procedure.  
 - This port has created user:group as openxpki:openxpki, which owns
   the OpenXPKI server.
 - After first fresh installation, create empty log files as follows
@@ -38,9 +50,9 @@ install -m 660 -o www -g www /dev/null /var/log/openxpki/soap.log
 - It is essential that www and openpki are two different users in your system.
 
 - Start daemons in this order:
-    database server,
-    OpenXPKI server (%%PREFIX%%/etc/rc.d/openxpki start),
-    web server.
+    1) database server,
+    2) OpenXPKI server (%%PREFIX%%/etc/rc.d/openxpki start),
+    3) web server.
 - Docs installed (if you opted so) into %%DOCSDIR%%
 - Mind FreeBSD specific file structure:
     %%PREFIX%%/etc/openxpki: server configuration, logs configuration.
@@ -48,10 +60,23 @@ install -m 660 -o www -g www /dev/null /var/log/openxpki/soap.log
     /var/openxpki/session: session files.
     /var/log/openxpki: server log files.
     /var/tmp: temporary directory.
-- OpenXPKI has not been fully tested with LibreSSL,
-  report your LibreSSL story to the list
-  https://sourceforge.net/p/openxpki/mailman/
-  or use OpenSSL instead.
+- Use of openssl/libressl
+  = This package comes (from FreeBSD build cluster) bound with 
+  openssl from base system, cf: /usr/ports/Mk/Uses/ssl.mk
+  If you want to use openssl or libressl from ports instead, then:
+    1) add the name of respective port 
+       (openssl, openssl30, openssl31, libressl, libressl-devel...)
+       to /etc/make.conf file e.g. like this:
+       DEFAULT_VERSIONS+= ssl=openssl31
+    2) install security/openssl31
+    3) cd /usr/ports/security/p5-openxpki && make reinstall
+       you do not need to rebuild dependencies, installed from packages.
+  = Using versions OpenSSL 1.0 or less can restrict features of the OpenXPI.
+  = OpenXPKI builds just fine with any available versions of OpenSSL or 
+    LibreSSL. But its operation with LibreSSL, or with OpenSSL 3+ has not
+    been fully tested. Report your respective story to the list
+      https://sourceforge.net/p/openxpki/mailman/
+    or use OpenSSL 1.1.1 instead.
 EOM
 }
 { type: upgrade
