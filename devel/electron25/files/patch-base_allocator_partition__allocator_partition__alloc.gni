@@ -1,0 +1,11 @@
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2023-05-25 00:41:37 UTC
++++ base/allocator/partition_allocator/partition_alloc.gni
+@@ -305,7 +305,7 @@ assert(!use_asan_backup_ref_ptr || use_hookable_raw_pt
+        "AsanBackupRefPtr requires RawPtrHookableImpl")
+ 
+ declare_args() {
+-  enable_pkeys = is_linux && target_cpu == "x64"
++  enable_pkeys = (is_linux && !is_bsd) && target_cpu == "x64"
+ }
+ assert(!enable_pkeys || (is_linux && target_cpu == "x64"),
+        "Pkeys are only supported on x64 linux")
