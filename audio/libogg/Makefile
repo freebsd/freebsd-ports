@@ -1,8 +1,9 @@
 PORTNAME=	libogg
-PORTVERSION=	1.3.5
+DISTVERSION=	1.3.5
 PORTEPOCH=	4
 CATEGORIES=	audio
-MASTER_SITES=	https://downloads.xiph.org/releases/ogg/
+MASTER_SITES=	https://downloads.xiph.org/releases/ogg/ \
+		https://github.com/xiph/ogg/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	naddy@FreeBSD.org
 COMMENT=	Ogg bitstream library
