@@ -1,7 +1,7 @@
 PORTNAME=	dvbcut
 PORTVERSION=	0.7.4
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 
 MAINTAINER=	se@FreeBSD.org
@@ -26,6 +26,7 @@ USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	bernhardu
 GH_PROJECT=	dvbcut-deb
+GH_TAGNAME=	d7c8fad
 
 CXXFLAGS+=	-I${LOCALBASE}/include \
 		-I${LOCALBASE}/include/libavcodec \
