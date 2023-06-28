@@ -1,6 +1,5 @@
 PORTNAME=	nim
-DISTVERSION=	1.6.12
-PORTREVISION=	2
+DISTVERSION=	1.6.14
 CATEGORIES=	lang
 MASTER_SITES=	https://nim-lang.org/download/
 
@@ -14,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/copying.txt
 BROKEN_sparc64=	fails to build: build.sh: clang: not found
 
 LIB_DEPENDS=	libpcre.so:devel/pcre
-TEST_DEPENDS=	node>=0:www/node
+TEST_DEPENDS=	node18>=0:www/node
 
 USES=		compiler:c11 cpe tar:xz
 
