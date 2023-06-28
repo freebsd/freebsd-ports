@@ -1,5 +1,5 @@
 PORTNAME=	sjasmplus
-DISTVERSION=	1.20.2
+DISTVERSION=	1.20.3
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/z00m128/sjasmplus/releases/download/v${DISTVERSION}/
 EXTRACT_SUFX=	.tar.xz

@@ -1,48 +1,15 @@
---- Makefile.orig	2023-02-16 20:39:21 UTC
+--- Makefile.orig	2023-06-27 23:25:44 UTC
 +++ Makefile
-@@ -54,7 +54,8 @@ MEMCHECK?=valgrind --leak-check=yes
- EXE_BASE_NAME=sjasmplus
+@@ -67,7 +67,7 @@ LUA_VER?=5.4
  BUILD_DIR=build
  
--LUA_VER=5.4
-+LUA_VER?=5.4
-+LUA_LIBNAME=lua-$(LUA_VER)
+ LUA_VER?=5.4
+-LUA_LIBNAME?=lua$(LUA_VER)
++LUA_LIBNAME?=lua-$(LUA_VER)
  
  SUBDIR_BASE=sjasm
  SUBDIR_LUA=lua$(LUA_VER)
-@@ -63,15 +64,16 @@ SUBDIR_CRC32C=crc32c
- SUBDIR_DOCS=docs
- SUBDIR_COV=coverage
- 
--INCDIR_LUA=/usr/include/lua$(LUA_VER)
-+INCDIR_LUA?=/usr/include/lua$(LUA_VER)
- 
- ifeq ($(USE_LUA), 1)
--_LUA_CPPFLAGS=-I$(SUBDIR_LUA)
--endif
--
- ifeq ($(USE_BUNDLED_LUA), 0)
- _LUA_CPPFLAGS=-I$(INCDIR_LUA)
-+LDFLAGS+=-l$(LUA_LIBNAME)
-+else
-+_LUA_CPPFLAGS=-I$(SUBDIR_LUA)
- endif
-+endif
- 
- # TODO too many lua5.4 warnings: -pedantic removed
- CPPFLAGS+=-Wall -DMAX_PATH=PATH_MAX -I$(SUBDIR_CRC32C)
-@@ -85,10 +87,6 @@ ifeq ($(USE_LUA), 1)
- LDFLAGS+=-ldl
- endif
- 
--ifeq ($(USE_BUNDLED_LUA), 0)
--LDFLAGS+=-llua$(LUA_VER)
--endif
--
- ifdef DEBUG
- BUILD_DIR:=$(BUILD_DIR)/debug
- CFLAGS+=-g -O0
-@@ -258,7 +256,7 @@ $(SUBDIR_DOCS)/documentation.html: Makefile $(wildcard
+@@ -259,7 +259,7 @@ $(SUBDIR_DOCS)/documentation.html: Makefile $(wildcard
  		--stringparam html.stylesheet docbook.css \
  		--stringparam generate.toc "book toc" \
  		-o $(SUBDIR_DOCS)/documentation.html \
