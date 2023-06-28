@@ -29,6 +29,7 @@ include/gnucash/cell-factory.h
 include/gnucash/cellblock.h
 include/gnucash/checkboxcell.h
 include/gnucash/combocell.h
+include/gnucash/completioncell.h
 include/gnucash/datecell.h
 include/gnucash/dialog-account.h
 include/gnucash/dialog-book-close.h
@@ -56,11 +57,7 @@ include/gnucash/gnc-addr-quickfill.h
 include/gnucash/gnc-amount-edit.h
 include/gnucash/gnc-aqbanking-templates.h
 include/gnucash/gnc-autoclear.h
-include/gnucash/gnc-basic-gobject.h
 include/gnucash/gnc-budget.h
-include/gnucash/gnc-cell-renderer-date.h
-include/gnucash/gnc-cell-renderer-popup-entry.h
-include/gnucash/gnc-cell-renderer-popup.h
 include/gnucash/gnc-cell-renderer-text-flag.h
 include/gnucash/gnc-cell-renderer-text-view.h
 include/gnucash/gnc-cell-view.h
@@ -69,7 +66,6 @@ include/gnucash/gnc-commodity.h
 include/gnucash/gnc-commodity.hpp
 include/gnucash/gnc-component-manager.h
 include/gnucash/gnc-currency-edit.h
-include/gnucash/gnc-date-delta.h
 include/gnucash/gnc-date-edit.h
 include/gnucash/gnc-date-format.h
 include/gnucash/gnc-date.h
@@ -1013,7 +1009,6 @@ share/metainfo/gnucash.appdata.xml
 %%DATADIR%%/tip_of_the_day.list
 %%DATADIR%%/ui/accelerator-map
 %%DATADIR%%/ui/accelerator-map-osx
-%%DATADIR%%/ui/osx_accel_map
 share/guile/site/2.2/gnucash/app-utils.scm
 share/guile/site/2.2/gnucash/app-utils/c-interface.scm
 share/guile/site/2.2/gnucash/app-utils/date-utilities.scm
