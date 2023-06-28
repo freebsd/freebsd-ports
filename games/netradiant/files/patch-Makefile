@@ -5,7 +5,7 @@
  endif
  
 -CFLAGS_COMMON = -MMD -W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter -fno-strict-aliasing
-+CFLAGS_COMMON = -MMD -W -Wall -Wcast-align -Wcast-qual -Wno-unused-parameter -fcommon
++CFLAGS_COMMON = -MMD -W -Wall -Wcast-align -Wcast-qual -Wno-implicit-function-declaration -Wno-unused-parameter -fcommon
  CPPFLAGS_COMMON =
  LDFLAGS_COMMON =
  LIBS_COMMON =
