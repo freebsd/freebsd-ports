@@ -1,0 +1,17 @@
+--- libraries/source/spidermonkey/FixFreeBSDClang16.diff.orig	2023-06-28 15:31:44 UTC
++++ libraries/source/spidermonkey/FixFreeBSDClang16.diff
+@@ -0,0 +1,14 @@
++diff -ruN a/build/moz.configure/flags.configure b/build/moz.configure/flags.configure
++--- a/build/moz.configure/flags.configure	2020-11-28 17:33:01.000000000 +0100
+++++ b/build/moz.configure/flags.configure
++@@ -56,10 +56,5 @@
++         # Temporary until https://bugs.llvm.org/show_bug.cgi?id=45835 gets a
++         # real fix: clang 10 hangs with some ubsan-inserted code constructs.
++         return None
++-    if enabled and compiler.version >= '9.0.0':
++-        if compiler.type == 'clang':
++-            return ['-fexperimental-new-pass-manager']
++-        elif compiler.type == 'clang-cl':
++-            return ['-Xclang', '-fexperimental-new-pass-manager']
++ 
++ set_config('MOZ_NEW_PASS_MANAGER_FLAGS', new_pass_manager_flags)
