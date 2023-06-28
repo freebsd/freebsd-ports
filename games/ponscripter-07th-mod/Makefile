@@ -25,6 +25,7 @@ GH_ACCOUNT=	07th-mod
 GH_PROJECT=	${PORTNAME}-fork
 
 USES=		compiler:c++11-lang gmake pkgconfig sdl shebangfix
+USE_CXXSTD=	gnu++98
 USE_SDL=	image2 mixer2
 EXTRACT_AFTER_ARGS=--exclude src/extlib
 SHEBANG_FILES=	util/xml-template
