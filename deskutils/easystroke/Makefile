@@ -23,7 +23,6 @@ USES=		compiler:c++11-lang gettext-tools gmake gnome pkgconfig xorg
 USE_GNOME=	gtkmm30 intltool
 USE_XORG=	x11 xext xfixes xi xtst
 USE_CXXSTD=	c++11
-CFLAGS=		-Wno-error=incompatible-function-pointer-types
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	thjaeger
