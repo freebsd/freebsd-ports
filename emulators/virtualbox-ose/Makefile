@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.44
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}
@@ -13,22 +13,22 @@ WWW=		https://www.virtualbox.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	yasm:devel/yasm \
-		xsltproc:textproc/libxslt \
+ONLY_FOR_ARCHS=	amd64
+
+BUILD_DEPENDS=	gtar:archivers/gtar \
 		kmk:devel/kBuild \
-		gtar:archivers/gtar
+		libIDL-config-2:devel/libIDL \
+		yasm:devel/yasm \
+		xsltproc:textproc/libxslt
 LIB_DEPENDS=	libpng.so:graphics/png \
-		libxslt.so:textproc/libxslt \
 		libcurl.so:ftp/curl
 RUN_DEPENDS=	${LOCALBASE}/etc/rc.d/vboxnet:emulators/virtualbox-ose-kmod
 
+USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
+USE_GNOME=	libxml2
+
 CPE_VENDOR=	oracle
 CPE_PRODUCT=	vm_virtualbox
-
-WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
-ONLY_FOR_ARCHS=	amd64
-USES=		compiler:c++14-lang cpe gnome iconv pkgconfig ssl tar:bzip2
-USE_GNOME=	libidl libxml2
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-java --passive-mesa
@@ -38,6 +38,8 @@ CONFLICTS_INSTALL=	virtualbox-ose-additions-* \
 			virtualbox-ose-devel \
 			virtualbox-ose-legacy \
 			virtualbox-ose-lite
+
+WRKSRC=		${WRKDIR}/VirtualBox-${PORTVERSION}
 
 VBOXUSER?=	vboxusers
 VBOXWSUSER?=	vboxusers
@@ -55,25 +57,25 @@ VBOX_UTILS=	VBoxExtPackHelperApp VBoxNetAdpCtl VBoxNetDHCP VBoxNetNAT \
 
 SUB_FILES=	pkg-message
 
-OPTIONS_DEFINE=	AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS OPUS PULSEAUDIO \
-		PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
+OPTIONS_DEFINE=		AIO ALSA DBUS DEBUG DOCS GUESTADDITIONS NLS OPUS PULSEAUDIO \
+			PYTHON QT5 R0LOGGING UDPTUNNEL VDE VNC WEBSERVICE VPX X11
 OPTIONS_DEFAULT=	AIO DBUS QT5 UDPTUNNEL VNC WEBSERVICE X11
 # Since version 6.1.24 pulseaudio is broken at runtime, preventing
 # virtual machines from starting if configured to use it.
 OPTIONS_EXCLUDE+=	PULSEAUDIO
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
-AIO_DESC=	Enable Asyncronous IO support (check pkg-message)
-DEBUG_DESC=	Debug symbols, additional logs and assertions
+AIO_DESC=		Enable Asyncronous IO support (check pkg-message)
+DEBUG_DESC=		Debug symbols, additional logs and assertions
 GUESTADDITIONS_DESC=	Build with Guest Additions
-NLS_DESC=	Native language support (requires QT5)
-OPUS_DESC=	Use libvpx for audio recording (requires VPX)
-QT5_DESC=	Build with QT5 frontend (requires X11)
-R0LOGGING_DESC=	Enable R0 logging (requires DEBUG)
-UDPTUNNEL_DESC=	Build with UDP tunnel support
-VDE_DESC=	Build with VDE support
-VNC_DESC=	Build with VNC support
-VPX_DESC=	Use libvpx for video recording
+NLS_DESC=		Native language support (requires QT5)
+OPUS_DESC=		Use libvpx for audio recording (requires VPX)
+QT5_DESC=		Build with QT5 frontend (requires X11)
+R0LOGGING_DESC=		Enable R0 logging (requires DEBUG)
+UDPTUNNEL_DESC=		Build with UDP tunnel support
+VDE_DESC=		Build with VDE support
+VNC_DESC=		Build with VNC support
+VPX_DESC=		Use libvpx for video recording
 WEBSERVICE_DESC=	Build Webservice
 
 ALSA_CONFIGURE_OFF=	--disable-alsa
@@ -81,15 +83,28 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 DBUS_CONFIGURE_OFF=	--disable-dbus
 DBUS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
 DEBUG_CONFIGURE_ON=	--build-debug
+DOCS_USES=		tex
+DOCS_USE=		TEX=dvipsk:build,formats:build
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.4/docbookx.dtd:textproc/docbook-xml
 DOCS_CONFIGURE_OFF=	--disable-docs
+DOCS_VARS=		dbkxmldir=${LOCALBASE}/share/xml/docbook/4.4 \
+			dbkxsldir=${LOCALBASE}/share/xsl/docbook
 NLS_IMPLIES=		QT5
 OPUS_CONFIGURE_OFF=	--disable-libopus
 OPUS_LIB_DEPENDS=	libopus.so:audio/opus
 OPUS_IMPLIES=		VPX
 PULSEAUDIO_CONFIGURE_OFF=	--disable-pulse
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PYTHON_USES=		python
+PYTHON_USES_OFF=	python:build
+PYTHON_USE=		PYTHON=distutils,noegginfo,noflavors
 PYTHON_CONFIGURE_OFF=	--disable-python
+PYTHON_VARS=		pydistutils_pkgname=vboxapi pydistutils_pkgversion=1.0
+QT5_USES=		gl qmake:no_env qt:5 xorg
+QT5_USE=		QT=buildtools:build,core,dbus,gui,linguisttools:build,opengl \
+			QT=printsupport,widgets,x11extras XORG=xcb GL=gl
+QT5_CONFIGURE_ON=	--enable-qt5
+QT5_CONFIGURE_OFF=	--disable-qt
 QT5_IMPLIES=		X11
 R0LOGGING_IMPLIES=	DEBUG
 UDPTUNNEL_CONFIGURE_OFF=	--disable-udptunnel
@@ -99,6 +114,9 @@ VNC_CONFIGURE_ON=	--enable-vnc
 VNC_LIB_DEPENDS=	libvncserver.so:net/libvncserver
 VPX_CONFIGURE_OFF=	--disable-libvpx
 VPX_LIB_DEPENDS=	libvpx.so:multimedia/libvpx
+WEBSERVICE_BUILD_DEPENDS=	soapcpp2:devel/gsoap
+X11_USES=		sdl xorg
+X11_USE=		SDL=sdl XORG=x11,xcursor,xext,xinerama,xmu,xorgproto,xt
 X11_CONFIGURE_OFF=	--build-headless
 
 ENV=
@@ -140,49 +158,22 @@ LICENSE_PERMS_Additions=	auto-accept
 LICENSE_DISTFILES_Additions=	${GUESTADDITIONS}
 .endif
 
-.if ${PORT_OPTIONS:MDOCS}
-DBKXMLDIR=	${LOCALBASE}/share/xml/docbook/4.4
-DBKXSLDIR=	${LOCALBASE}/share/xsl/docbook
-USES+=		tex
-USE_TEX=	dvipsk:build formats:build
-.endif
-
-.if ${PORT_OPTIONS:MPYTHON}
-USES+=		python
-USE_PYTHON=	distutils noegginfo noflavors
-PYDISTUTILS_PKGNAME=	vboxapi
-PYDISTUTILS_PKGVERSION=	1.0
-.else
-USES+=		python:build
-.endif
-
 .if ${PORT_OPTIONS:MQT5}
-CONFIGURE_ARGS+=	--enable-qt5
 PLIST_SUB+=	QT=""
-USES+=		gl qmake:no_env qt:5 xorg
-USE_GL=		gl glu
-USE_QT=		buildtools:build core dbus gui linguisttools:build opengl
-USE_QT+=	printsupport widgets x11extras
-USE_XORG=	xcb
 VBOX_PROGS+=	VirtualBox VirtualBoxVM
 VBOX_UTILS+=	VBoxTestOGL
 VBOX_WITH_QT=	1
 .else
-CONFIGURE_ARGS+=	--disable-qt
 PLIST_SUB+=	QT="@comment "
 .endif
 
 .if ${PORT_OPTIONS:MWEBSERVICE}
-BUILD_DEPENDS+=	soapcpp2:devel/gsoap
 USE_RC_SUBR+=	vboxwebsrv
 VBOX_LINKS+=	vboxwebsrv
 VBOX_UTILS+=	vboxwebsrv webtest
 .endif
 
 .if ${PORT_OPTIONS:MX11}
-USES+=		sdl xorg
-USE_SDL=	sdl
-USE_XORG+=	xorgproto x11 xcursor xext xinerama xmu xt
 VBOX_PROGS+=	VBoxSDL
 .endif
 

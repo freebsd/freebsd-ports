@@ -53,19 +53,43 @@ NS_ERROR_FACTORY_NOT_REGISTERED. In this case delete /tmp/.vbox-*-ipc file.
 If you experience "Network: write Failed: Cannot allocate memory" errors
 try to increase net.graph.maxdata in /boot/loader.conf
 
-If you are using AIO, then increase these limits (PR#168298):
+If you are using AIO, then increase these limits (https://bugs.freebsd.org/168298):
 vfs.aio.max_buf_aio=8192
 vfs.aio.max_aio_queue_per_proc=65536
 vfs.aio.max_aio_per_proc=8192
 vfs.aio.max_aio_queue=65536
 To check if AIO is used use: kldstat -v | grep aio
 
+If you are experiencing VMs freezes with an error in VBox.log such as:
+"
+00:01:29.590192 AssertLogRel /usr/ports/emulators/virtualbox-ose/work/VirtualBox-6.1.44
+/src/VBox/VMM/VMMR3/PGMPhys.cpp(5148) int PGMR3PhysAllocateHandyPages(PVM): RT_SUCCESS(rc)
+00:01:29.590221 87/128: idPage=0x3d400 HCPhysGCPhys=000000027eaed000 rc=VERR_NO_MEMORY
+00:01:29.590247 Changing the VM state from 'RUNNING' to 'GURU_MEDITATION'
+00:01:29.590261 Console: Machine state changed to 'GuruMeditation'
+00:01:29.590695 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+00:01:29.590696 !!
+00:01:29.590697 !!         VCPU0: Guru Meditation -8 (VERR_NO_MEMORY)
+"
+and see a lot of free RAM, then increase sysctl vm.max_user_wired
+(https://bugs.freebsd.org/252227).
+For dedicated VM servers, a good start is:
+("RAM in GB" - max(1, "RAM in GB" / 32)) * 1024*1024*1024 / PAGE_SIZE
+PAGE_SIZE on x86 is 4096.
+Examples with different RAM sizes in GB:
+ 16: ( 16-max(1, 16/32)*1024*1024*1024/4096 = 3932160  =>  15GB
+ 32: ( 32-max(1, 32/32)*1024*1024*1024/4096 = 8126464  =>  31GB
+ 48: ( 48-max(1, 48/32)*1024*1024*1024/4096 = 12189696 =>  46.5GB
+ 64: ( 64-max(1, 64/32)*1024*1024*1024/4096 = 16252928 =>  62GB
+128: (128-max(1,128/32)*1024*1024*1024/4096 = 32505856 => 124GB
+256: (256-max(1,256/32)*1024*1024*1024/4096 = 65011712 => 248GB
+
 When assigning IP addresses in host-only mode from ranges outside
 of VirtualBox's defaults, the respective ranges need to be listed
-in %%VBOX_ETC%%/networks.conf (PR#259399).
+in %%VBOX_ETC%%/networks.conf (https://bugs.freebsd.org/259399).
 
-Check wiki page for known issues and troubleshooting:
-http://wiki.freebsd.org/VirtualBox
+Check the wiki page for known issues and troubleshooting:
+https://wiki.freebsd.org/VirtualBox
 
 Please report any problems to emulation@. Thanks!
 EOM
