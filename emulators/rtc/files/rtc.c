@@ -66,8 +66,8 @@ struct rtc_softc {
 	struct {
 	 int	freq;
 	 struct {
-		int	opened:1;
-		int 	enabled:1;
+		unsigned int	opened:1;
+		unsigned int 	enabled:1;
 	 } flags;
 	struct callout rtc_handle;
 	struct timespec lasttime;
