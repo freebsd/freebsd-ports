@@ -1,7 +1,7 @@
 PORTNAME=	xen
 PKGNAMESUFFIX=	-tools
 PORTVERSION=	4.17.0
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	sysutils emulators
 MASTER_SITES=	http://downloads.xenproject.org/release/xen/${PORTVERSION}/
 
@@ -63,7 +63,8 @@ DOCS_INSTALL_TARGET=	install-docs
 
 # clang build fixes
 EXTRA_PATCHES+=	${PATCHDIR}/0001-xen-x86-Remove-the-use-of-K-R-functions.patch:-p1 \
-		${PATCHDIR}/0001-tools-Remove-the-use-of-K-R-functions.patch:-p1
+		${PATCHDIR}/0001-tools-Remove-the-use-of-K-R-functions.patch:-p1 \
+		${PATCHDIR}/0001-tools-convert-bitfields-to-unsigned-type.patch:-p1
 
 .include <bsd.port.options.mk>
 

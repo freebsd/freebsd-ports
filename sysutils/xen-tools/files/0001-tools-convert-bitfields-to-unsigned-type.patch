@@ -1,0 +1,71 @@
+From 99ab02f63ea813f2e467a39a7736bf460a3f3495 Mon Sep 17 00:00:00 2001
+From: Olaf Hering <olaf@aepfle.de>
+Date: Mon, 8 May 2023 16:46:18 +0000
+Subject: [PATCH] tools: convert bitfields to unsigned type
+
+clang complains about the signed type:
+
+implicit truncation from 'int' to a one-bit wide bit-field changes value from 1 to -1 [-Wsingle-bit-bitfield-constant-conversion]
+
+The potential ABI change in libxenvchan is covered by the Xen version based SONAME.
+
+Signed-off-by: Olaf Hering <olaf@aepfle.de>
+Reviewed-by: Juergen Gross <jgross@suse.com>
+Acked-by: Anthony PERARD <anthony.perard@citrix.com>
+---
+ tools/include/libxenvchan.h | 6 +++---
+ tools/xentrace/xenalyze.c   | 8 ++++----
+ 2 files changed, 7 insertions(+), 7 deletions(-)
+
+diff --git a/tools/include/libxenvchan.h b/tools/include/libxenvchan.h
+index 30cc73cf97e3..3d3b8aa8dd79 100644
+--- a/tools/include/libxenvchan.h
++++ b/tools/include/libxenvchan.h
+@@ -79,11 +79,11 @@ struct libxenvchan {
+ 	xenevtchn_handle *event;
+ 	uint32_t event_port;
+ 	/* informative flags: are we acting as server? */
+-	int is_server:1;
++	unsigned int is_server:1;
+ 	/* true if server remains active when client closes (allows reconnection) */
+-	int server_persist:1;
++	unsigned int server_persist:1;
+ 	/* true if operations should block instead of returning 0 */
+-	int blocking:1;
++	unsigned int blocking:1;
+ 	/* communication rings */
+ 	struct libxenvchan_ring read, write;
+ 	/**
+diff --git a/tools/xentrace/xenalyze.c b/tools/xentrace/xenalyze.c
+index 12dcca964645..a50538e9a8c8 100644
+--- a/tools/xentrace/xenalyze.c
++++ b/tools/xentrace/xenalyze.c
+@@ -1377,7 +1377,7 @@ struct hvm_data {
+     tsc_t exit_tsc, arc_cycles, entry_tsc;
+     unsigned long long rip;
+     unsigned exit_reason, event_handler;
+-    int short_summary_done:1, prealloc_unpin:1, wrmap_bf:1;
++    unsigned int short_summary_done:1, prealloc_unpin:1, wrmap_bf:1;
+ 
+     /* Immediate processing */
+     void *d;
+@@ -8235,13 +8235,13 @@ void mem_set_p2m_entry_process(struct pcpu_info *p)
+ 
+     struct {
+         uint64_t gfn, mfn;
+-        int p2mt;
+-        int d:16,order:16;
++        uint32_t p2mt;
++        uint16_t d, order;
+     } *r = (typeof(r))ri->d;
+ 
+     if ( opt.dump_all )
+     {
+-        printf(" %s set_p2m_entry d%d o%d t %d g %llx m %llx\n",
++        printf(" %s set_p2m_entry d%u o%u t %u g %llx m %llx\n",
+                ri->dump_header,
+                r->d, r->order,
+                r->p2mt,
+-- 
+2.41.0
+
