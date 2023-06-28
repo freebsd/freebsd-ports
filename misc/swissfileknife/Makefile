@@ -26,6 +26,7 @@ post-patch:
 		|| defined(__FreeBSD__),' \
 			${WRKSRC}/sfk.cpp ${WRKSRC}/sfkext.cpp
 	@${REINPLACE_CMD} -e '/_STDINT_H/,+6d' ${WRKSRC}/sfkmatch.hpp
+	@${REINPLACE_CMD} -e 's,^ *register,   ,' ${WRKSRC}/sfkpack.cpp
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
