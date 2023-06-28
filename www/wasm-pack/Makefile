@@ -1,6 +1,6 @@
 PORTNAME=	wasm-pack
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.12.0
+DISTVERSION=	0.12.1
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,13 +24,13 @@ GH_ACCOUNT=	rustwasm
 
 CARGO_CRATES=	addr2line-0.19.0 \
 		adler-1.0.2 \
-		aes-0.8.2 \
+		aes-0.8.3 \
 		aho-corasick-1.0.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		anstream-0.3.2 \
-		anstyle-1.0.0 \
-		anstyle-parse-0.2.0 \
+		anstyle-1.0.1 \
+		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.1 \
 		anyhow-1.0.71 \
@@ -55,8 +55,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
 		cipher-0.4.4 \
-		clap-4.3.4 \
-		clap_builder-4.3.4 \
+		clap-4.3.8 \
+		clap_builder-4.3.8 \
 		clap_derive-4.3.2 \
 		clap_lex-0.5.0 \
 		colorchoice-1.0.0 \
@@ -77,6 +77,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		either-1.8.1 \
 		encode_unicode-0.3.6 \
 		env_logger-0.10.0 \
+		equivalent-1.0.0 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		fastrand-1.9.0 \
@@ -98,6 +99,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		gimli-0.27.3 \
 		glob-0.3.1 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.0 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.1 \
@@ -107,7 +109,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		iana-time-zone-0.1.57 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.4.0 \
-		indexmap-1.9.3 \
+		indexmap-2.0.0 \
 		inout-0.1.3 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.11 \
@@ -118,7 +120,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		jobserver-0.1.26 \
 		js-sys-0.3.64 \
 		lazy_static-1.4.0 \
-		libc-0.2.146 \
+		libc-0.2.147 \
 		linux-raw-sys-0.3.8 \
 		lock_api-0.4.10 \
 		log-0.4.19 \
@@ -141,7 +143,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		predicates-3.0.3 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
-		proc-macro2-1.0.60 \
+		proc-macro2-1.0.63 \
 		quote-1.0.28 \
 		rand_core-0.6.4 \
 		redox_syscall-0.2.16 \
@@ -163,8 +165,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		serde-1.0.164 \
 		serde_derive-1.0.164 \
 		serde_ignored-0.1.7 \
-		serde_json-1.0.93 \
-		serde_spanned-0.6.2 \
+		serde_json-1.0.99 \
+		serde_spanned-0.6.3 \
 		serial_test-2.0.0 \
 		serial_test_derive-2.0.0 \
 		sha1-0.10.5 \
@@ -176,7 +178,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		spin-0.5.2 \
 		strsim-0.10.0 \
 		subtle-2.5.0 \
-		syn-2.0.18 \
+		syn-2.0.22 \
 		tar-0.4.38 \
 		tempfile-3.6.0 \
 		termtree-0.4.1 \
@@ -187,19 +189,19 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		time-core-0.1.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		toml-0.7.4 \
-		toml_datetime-0.6.2 \
-		toml_edit-0.19.10 \
+		toml-0.7.5 \
+		toml_datetime-0.6.3 \
+		toml_edit-0.19.11 \
 		typenum-1.16.0 \
 		unicode-bidi-0.3.13 \
 		unicode-ident-1.0.9 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
 		untrusted-0.7.1 \
-		ureq-2.7.0 \
+		ureq-2.7.1 \
 		url-2.4.0 \
 		utf8parse-0.2.1 \
-		uuid-1.3.4 \
+		uuid-1.4.0 \
 		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.3 \
