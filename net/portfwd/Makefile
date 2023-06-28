@@ -22,6 +22,8 @@ post-patch:
 		${WRKSRC}/src/Makefile.am
 	@${REINPLACE_CMD} -e "s|-Wall -g -O3|${CFLAGS}|g" \
 		${WRKSRC}/tools/Makefile.am
+	@${REINPLACE_CMD} -e "s|register ||g" \
+		${WRKSRC}/src/lexconf.c ${WRKSRC}/src/yconf.c
 	@${TOUCH} ${WRKSRC}/* ${WRKSRC}/*/*
 
 post-install:
