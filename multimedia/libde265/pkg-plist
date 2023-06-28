@@ -3,5 +3,5 @@ include/libde265/de265-version.h
 include/libde265/de265.h
 lib/libde265.so
 lib/libde265.so.0
-lib/libde265.so.0.1.4
+lib/libde265.so.0.1.5
 libdata/pkgconfig/libde265.pc

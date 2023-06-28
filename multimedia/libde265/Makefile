@@ -1,12 +1,7 @@
 PORTNAME=	libde265
-DISTVERSION=	1.0.11
+DISTVERSION=	1.0.12
 CATEGORIES=	multimedia
 MASTER_SITES=	https://github.com/strukturag/${PORTNAME}/releases/download/v${DISTVERSION}/
-
-PATCH_SITES=	https://github.com/strukturag/${PORTNAME}/commit/
-PATCHFILES=	97dd15303085eae2695a511717bf3239e209df96.patch:-p1 \
-		36391cda3d4e4fb3269a2ce310e6e0f634729f0b.patch:-p1 \
-		51f07f132f29832e025a8b913b61cbd20257c5fc.patch:-p1
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Open source h.265 video codec
@@ -32,7 +27,7 @@ LLD_UNSAFE=	yes
 .endif
 
 post-install:
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libde265.so.0.1.4
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libde265.so.0.1.5
 	${MV} ${STAGEDIR}${PREFIX}/bin/dec265 \
 		${STAGEDIR}${PREFIX}/bin/libde265-dec265
 
