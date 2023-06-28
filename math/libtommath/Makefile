@@ -1,6 +1,6 @@
 PORTNAME=	libtommath
 DISTVERSION=	1.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/libtom/libtommath/releases/download/v${DISTVERSION}/
 DISTNAME=	ltm-${DISTVERSION}
