@@ -1,6 +1,6 @@
-TIMESTAMP = 1686663295
-SHA256 (lmorg-murex-v4.1.7300_GH0.tar.gz) = a04e01a2b0d7c70e8dd5e671dccd5009646d0a4276556fca790add3d7d7853ec
-SIZE (lmorg-murex-v4.1.7300_GH0.tar.gz) = 1032413
+TIMESTAMP = 1687972391
+SHA256 (lmorg-murex-v4.2.5110_GH0.tar.gz) = ece33932747ddd9a4295bd0c887193a2c178ef870c503780336819d2bf575b2f
+SIZE (lmorg-murex-v4.2.5110_GH0.tar.gz) = 1041139
 SHA256 (Knetic-govaluate-v3.0.0_GH0.tar.gz) = 3800c76ba83d7e5cff279ca5981d06a2c449b102644aa57861eb5958c8e0ae0c
 SIZE (Knetic-govaluate-v3.0.0_GH0.tar.gz) = 39399
 SHA256 (abesto-sexp-v0.0.1_GH0.tar.gz) = 3d059e3063862756688a2b458c74ee30843bee23d37bd7725f851672bd6d1b78
