@@ -1,1 +1,2 @@
-concurrentqueue is an industrial-strength lock-free queue for C++.
+concurrentqueue is an industrial-strength lock-free fast multi-producer,
+multi-consumer concurrent queue for C++11 queue for C++.
