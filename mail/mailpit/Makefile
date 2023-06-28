@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.21
+DISTVERSION=	1.6.22
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -36,22 +36,22 @@ GH_TUPLE=	\
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gogs:chardet:b7413eaefb8f:gogs_chardet/vendor/github.com/gogs/chardet \
-		golang:crypto:v0.9.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:image:v0.7.0:golang_image/vendor/golang.org/x/image \
-		golang:mod:v0.10.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.10.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.8.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.9.0:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.9.3:golang_tools/vendor/golang.org/x/tools \
+		golang:crypto:v0.10.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:image:v0.8.0:golang_image/vendor/golang.org/x/image \
+		golang:mod:v0.11.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.11.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.9.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.10.0:golang_text/vendor/golang.org/x/text \
+		golang:tools:v0.10.0:golang_tools/vendor/golang.org/x/tools \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.5.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
 		jaytaylor:html2text:74c2419ad056:jaytaylor_html2text/vendor/github.com/jaytaylor/html2text \
-		jhillyerd:enmime:v0.11.1:jhillyerd_enmime/vendor/github.com/jhillyerd/enmime \
+		jhillyerd:enmime:v1.0.0:jhillyerd_enmime/vendor/github.com/jhillyerd/enmime \
 		k3a:html2text:v1.2.1:k3a_html2text/vendor/github.com/k3a/html2text \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		klauspost:compress:v1.16.5:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.16.6:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		leporo:sqlf:v1.4.0:leporo_sqlf/vendor/github.com/leporo/sqlf \
 		lukechampine:uint128:v1.3.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
@@ -66,7 +66,7 @@ GH_TUPLE=	\
 		remyoudompheng:bigfft:24d4a6f8daec:remyoudompheng_bigfft/vendor/github.com/remyoudompheng/bigfft \
 		rivo:uniseg:v0.4.4:rivo_uniseg/vendor/github.com/rivo/uniseg \
 		satori:go.uuid:v1.2.0:satori_go_uuid/vendor/github.com/satori/go.uuid \
-		sirupsen:logrus:v1.9.2:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		spf13:cobra:v1.7.0:spf13_cobra/vendor/github.com/spf13/cobra \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		ssor:bom:6386211fdfcf:ssor_bom/vendor/github.com/ssor/bom \
@@ -75,13 +75,13 @@ GH_TUPLE=	\
 
 USE_GITLAB=	nodefault
 GL_TUPLE=	\
-		cznic:cc:03159e8e41eec8d08c1e502bfc46868b9a03aa57:cznic_cc/vendor/modernc.org/cc/v3 \
-		cznic:ccgo:0641811a3b4e1b829e42b48fa6cf751b3a681ed5:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
-		cznic:libc:9e5c74c2cd4807563b0cfc61b4d637d0aa54d218:cznic_libc/vendor/modernc.org/libc \
+		cznic:cc:473a39888db348dde70ba9a01d27d3be2da0a93d:cznic_cc/vendor/modernc.org/cc/v3 \
+		cznic:ccgo:270db78f08da175d432624b3c54fc166da03357c:cznic_ccgo/vendor/modernc.org/ccgo/v3 \
+		cznic:libc:8014ff305ac880ad7b60918a18992e59405eb7f3:cznic_libc/vendor/modernc.org/libc \
 		cznic:mathutil:b13e5b5643328f15fd2fcedc85f647f0d8f9180f:cznic_mathutil/vendor/modernc.org/mathutil \
-		cznic:memory:93bf078bc8d6adb7f31db2b81355b62eb168b17f:cznic_memory/vendor/modernc.org/memory \
+		cznic:memory:2014ace98d6392882e3d171baf4b76b21a0e7813:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
-		cznic:sqlite:4cc292533194c70435f23c44cbf064da8235c0de:cznic_sqlite/vendor/modernc.org/sqlite \
+		cznic:sqlite:91c2fe30158adc48d9d4b7b176b85d99ad1f1924:cznic_sqlite/vendor/modernc.org/sqlite \
 		cznic:strutil:bba0c72b66bb9ced2dfd2ee521b7f16b2cbb39fa:cznic_strutil/vendor/modernc.org/strutil \
 		cznic:token:24e30cd78ee0f2d5d4516917d9cc1101e3ccc1ab:cznic_token/vendor/modernc.org/token
 
