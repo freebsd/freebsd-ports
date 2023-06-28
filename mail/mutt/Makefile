@@ -1,18 +1,11 @@
 PORTNAME=	mutt
 DISTVERSION=	2.2.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES+=	mail
 MASTER_SITES=	ftp://ftp.mutt.org/pub/mutt/ \
-		https://bitbucket.org/mutt/mutt/downloads/ \
-		http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv
+		https://bitbucket.org/mutt/mutt/downloads/
 DIST_SUBDIR=	mutt
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
-
-PATCH_SITES+=	http://www.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://www2.mutt.org.ua/download/mutt-${VVV_PATCH_VERSION}/:vvv \
-		http://vc.org.ua/mutt/:vc
-PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	dereks@lifeofadishwasher.com
 COMMENT=	Small but powerful text based program for read/writing e-mail
@@ -47,16 +40,11 @@ CONFLICTS=	ja-mutt ja-mutt-devel mutt-1.4* mutt-devel-lite mutt-lite \
 
 INFO=		${PORTNAME}
 
-OPTIONS_DEFINE=		AUTOCRYPT DEBUG_LOGS DOCS EXAMPLES FLOCK GPGME \
-			GREETING_PATCH HTML ICONV IDN IFDEF_PATCH \
-			INITIALS_PATCH LOCALES_FIX MAILBOX_MANPAGES \
-			MAILDIR_MTIME_PATCH NLS REVERSE_REPLY_PATCH SMART_DATE \
-			SMIME SMTP URLVIEW
+OPTIONS_DEFINE=		AUTOCRYPT DEBUG_LOGS DOCS EXAMPLES FLOCK GPGME HTML \
+			ICONV IDN LOCALES_FIX MAILBOX_MANPAGES NLS SMTP URLVIEW
 OPTIONS_DEFAULT=	AUTOCRYPT DEBUG_LOGS GPGME GSSAPI_NONE HCACHE_LMDB HTML \
-			ICONV IDN IFDEF_PATCH INITIALS_PATCH LOCALES_FIX \
-			MAILBOX_MANPAGES MAILDIR_MTIME_PATCH NCURSES NLS \
-			REVERSE_REPLY_PATCH SASL_CYRUS SMART_DATE SMIME SMTP \
-			URLVIEW
+			ICONV IDN LOCALES_FIX MAILBOX_MANPAGES NCURSES NLS \
+			SASL_CYRUS SMTP URLVIEW
 
 OPTIONS_SINGLE=		GSSAPI HCACHE SASL SCREEN
 OPTIONS_SINGLE_GSSAPI=	GSSAPI_BASE GSSAPI_HEIMDAL GSSAPI_MIT GSSAPI_NONE
@@ -70,7 +58,6 @@ AUTOCRYPT_DESC=			Convenient End-to-End Encryption
 DEBUG_LOGS_DESC=		Debugging capabilities
 FLOCK_DESC=			flock() usage
 GPGME_DESC=			Gpgme interface
-GREETING_PATCH_DESC=		Greeting support
 HCACHE_BDB_DESC=		Use Berkeley DB (BDB) (AGPLv3)
 HCACHE_DESC=			Header Cache support
 HCACHE_GDBM_DESC=		Use GDBM
@@ -81,20 +68,14 @@ HCACHE_QDBM_DESC=		Use QDBM
 HCACHE_TOKYOCABINET_DESC=	Use Tokyo Cabinet
 HTML_DESC=			HTML documentation
 IDN_DESC=			International Domain Names (implies ICONV)
-IFDEF_PATCH_DESC=		ifdef feature
-INITIALS_PATCH_DESC=		Adds exando '%I' initials of author
 LOCALES_FIX_DESC=		Locales fix
 MAILBOX_MANPAGES_DESC=		Install mbox.5/mmdf.5 manpages
-MAILDIR_MTIME_PATCH_DESC=	Maildir mtime patch
 NCURSES_DESC=			Ncurses support
 NLS_DESC=			Native language support (implies ICONV)
-REVERSE_REPLY_PATCH_DESC=	Reverse_reply
 SASL_CYRUS_DESC=		Cyrus SASL Authentication
 SASL_GSASL_DESC=		GNU SASL Authentication
 SASL_NONE_DESC=			Disable SASL Authentication
 SLANG_DESC=			SLANG support
-SMART_DATE_DESC=		Dynamic date formatting with "%@"
-SMIME_DESC=			SMIME email check option patch
 SMTP_DESC=			SMTP relay support
 URLVIEW_DESC=			Use urlview for the URL selector menu
 
@@ -119,8 +100,6 @@ GPGME_LIB_DEPENDS+=	libassuan.so:security/libassuan \
 			libgpgme.so:security/gpgme
 
 GPGME_CONFIGURE_ENABLE=	gpgme
-
-GREETING_PATCH_PATCHFILES=	mutt-${GREETING_PATCH_VERSION}.vc.greeting:vc
 
 # Handle GSSAPI from various places
 GSSAPI_BASE_USES=		gssapi
@@ -161,21 +140,13 @@ IDN_LIB_DEPENDS=	libidn2.so:dns/libidn2 \
 			libunistring.so:devel/libunistring
 IDN_CONFIGURE_WITH=	idn2=${LOCALBASE}
 
-IFDEF_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ifdef
-
-INITIALS_PATCH_PATCHFILES=	patch-${VVV_PATCH_VERSION}.vvv.initials.xz:vvv
-
 LOCALES_FIX_CONFIGURE_ON=	--enable-locales-fix
-
-MAILDIR_MTIME_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-maildir-mtime
 
 NCURSES_USES=	ncurses
 
 NLS_IMPLIES=		ICONV
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
-
-REVERSE_REPLY_PATCH_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-reverse_reply
 
 SASL_CYRUS_LIB_DEPENDS=		libsasl2.so:security/cyrus-sasl2
 SASL_CYRUS_CONFIGURE_WITH=	sasl=${LOCALBASE}
@@ -189,25 +160,11 @@ SLANG_LIB_DEPENDS=	libslang.so:devel/libslang2
 SLANG_CONFIGURE_ON=	--with-slang=${LOCALBASE}
 SLANG_VARS=		PKGMESSAGE+=${FILESDIR}/pkg-message.slang
 
-SMART_DATE_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-smartdate
-
-SMIME_EXTRA_PATCHES=	${PATCHDIR}/extra-smime-sender
-
 SMTP_CONFIGURE_ENABLE=	smtp
 
 URLVIEW_RUN_DEPENDS=	urlview:textproc/urlview
 
-.ifnmake portclippy
-.ifmake makesum # for optional distfiles patchfiles
-OPTIONS_OVERRIDE=	${OPTIONS_DEFAULT} ${OPTIONS_DEFINE}
-.MAKEOVERRIDES+=	OPTIONS_OVERRIDE
-.endif
-.endif
-
 .include <bsd.port.options.mk>
-
-VVV_PATCH_VERSION=	1.13.0
-GREETING_PATCH_VERSION=	2.2.0
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/mailcap.5 ${STAGEDIR}${MANPREFIX}/man/man5
@@ -221,7 +178,7 @@ pre-configure::
 	@${REINPLACE_CMD} -e 's,?eimdal\*),?eimdal*|\"FreeBSD heimdal\"*),' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 # Install contrib samples to ${EXAMPLESDIR}
-	@${REINPLACE_CMD} -e 's#$$(docdir)/samples#${EXAMPLESDIR}#g' \
+	@${REINPLACE_CMD} -e 's,$$(docdir)/samples,${EXAMPLESDIR},g' \
 		${WRKSRC}/contrib/Makefile.in
 
 # Undo some dist. installed files
