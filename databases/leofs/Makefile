@@ -1,6 +1,6 @@
 PORTNAME=	leofs
 DISTVERSION=	1.4.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 DIST_SUBDIR=	${PORTNAME}
 
@@ -55,6 +55,7 @@ SUB_LIST+=	LEOFS_USER=${LEOFS_USER} \
 SUB_FILES+=	${LEOFS_SBIN_FILES:S/^/sbin-/}
 
 USES=		dos2unix gmake pkgconfig ssl
+USE_CXXSTD=	gnu++11
 USE_RC_SUBR=	${PORTNAME}
 
 DOS2UNIX_FILES=	apps/leo_*/snmp/snmpa_*/leo_*_snmp.config
