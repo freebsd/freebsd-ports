@@ -1,6 +1,6 @@
 PORTNAME=	directfb
 PORTVERSION=	1.4.17
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	http://sources.buildroot.net/
 DISTNAME=	DirectFB-${PORTVERSION}
@@ -10,6 +10,9 @@ COMMENT=	Graphic development lightweight API
 WWW=		https://www.directfb.org/
 
 LICENSE=	LGPL21
+
+DEPRECATED=		Last upstream release was in 2015
+EXPIRATION_DATE=	2023-09-30
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
