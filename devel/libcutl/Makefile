@@ -17,6 +17,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
 
 USES=		compiler:c++11-lib libtool
+USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
 
