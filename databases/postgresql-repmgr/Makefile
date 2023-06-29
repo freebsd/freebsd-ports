@@ -1,5 +1,5 @@
 PORTNAME=	postgresql-repmgr
-PORTVERSION=	5.3.3
+PORTVERSION=	5.4.0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.repmgr.org/download/
 DISTNAME=	repmgr-${PORTVERSION}
@@ -10,6 +10,8 @@ WWW=		https://repmgr.org/
 
 LICENSE=	GPLv3
 
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+	libjson-c.so:devel/json-c
 RUN_DEPENDS=	rsync:net/rsync
 
 USES=		gettext gmake pgsql

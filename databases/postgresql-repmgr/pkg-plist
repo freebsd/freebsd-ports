@@ -18,6 +18,8 @@ share/postgresql/extension/repmgr--5.1--5.2.sql
 share/postgresql/extension/repmgr--5.2.sql
 share/postgresql/extension/repmgr--5.2--5.3.sql
 share/postgresql/extension/repmgr--5.3.sql
+share/postgresql/extension/repmgr--5.3--5.4.sql
+share/postgresql/extension/repmgr--5.4.sql
 share/postgresql/extension/repmgr--unpackaged--4.0.sql
 share/postgresql/extension/repmgr--unpackaged--5.1.sql
 share/postgresql/extension/repmgr--unpackaged--5.2.sql
