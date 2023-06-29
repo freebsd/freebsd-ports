@@ -1,6 +1,5 @@
 PORTNAME=	marble
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	2
 CATEGORIES=	astro education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

@@ -1,6 +1,5 @@
 PORTNAME=	kiten
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	japanese education kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org

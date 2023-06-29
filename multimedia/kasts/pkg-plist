@@ -6,7 +6,7 @@ lib/libKastsSolidExtras.so
 %%QT_QMLDIR%%/org/kde/kmediasession/libkmediasession-qmlplugin.so
 %%QT_QMLDIR%%/org/kde/kmediasession/qmldir
 share/applications/org.kde.kasts.desktop
-share/icons/hicolor/scalable/actions/media-playback-start-cloud.svg
+share/icons/hicolor/scalable/actions/media-playback-cloud.svg
 share/icons/hicolor/scalable/apps/kasts-tray-dark.svg
 share/icons/hicolor/scalable/apps/kasts-tray-light.svg
 share/icons/hicolor/scalable/apps/kasts.svg
@@ -28,6 +28,7 @@ share/locale/pa/LC_MESSAGES/kasts.mo
 share/locale/pl/LC_MESSAGES/kasts.mo
 share/locale/pt/LC_MESSAGES/kasts.mo
 share/locale/pt_BR/LC_MESSAGES/kasts.mo
+share/locale/ru/LC_MESSAGES/kasts.mo
 share/locale/sk/LC_MESSAGES/kasts.mo
 share/locale/sl/LC_MESSAGES/kasts.mo
 share/locale/sv/LC_MESSAGES/kasts.mo

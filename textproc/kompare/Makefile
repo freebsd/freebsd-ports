@@ -1,6 +1,5 @@
 PORTNAME=	kompare
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
 CATEGORIES=	textproc kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
