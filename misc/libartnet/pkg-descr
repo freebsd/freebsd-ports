@@ -1,0 +1,4 @@
+libartnet is an implementation of the ArtNet protocol.
+ArtNet enables DMX512 and RDM data to be sent over IPv4 Networks.
+ArtNet was first developed in 2002 and is widely supported by networked
+devices in the entertainment industry.
