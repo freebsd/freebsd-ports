@@ -1,5 +1,5 @@
 PORTNAME=	dar
-PORTVERSION=	2.7.9
+PORTVERSION=	2.7.10
 CATEGORIES=	sysutils archivers
 MASTER_SITES=	SF
 
@@ -64,6 +64,12 @@ ZLIB_CONFIGURE_OFF=	--disable-libz-linking
 ZSTD_LIB_DEPENDS=	libzstd.so:archivers/zstd
 ZSTD_CONFIGURE_OFF=	--disable-libzstd-linking
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+USE_CXXSTD=	c++14
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|(char \*\*) \(\&inptr,\)|\1| ; \
@@ -72,4 +78,4 @@ post-patch:
 		${REINPLACE_CMD} -e \
 		's|$$(pkgdatadir)|$$(docdir)|g'
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
