@@ -2478,6 +2478,7 @@ share/locale/gl/LC_MESSAGES/libkicker.mo
 share/locale/gl/LC_MESSAGES/libkworkspace.mo
 share/locale/gl/LC_MESSAGES/libnotificationmanager.mo
 share/locale/gl/LC_MESSAGES/phonon_kde_plugin.mo
+share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
@@ -2487,6 +2488,7 @@ share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.digitalclock.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.icon.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.lock_logout.mo
+share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.manageinputmethod.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.mediacontroller.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.notifications.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.panelspacer.mo

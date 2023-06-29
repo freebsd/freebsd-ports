@@ -159,7 +159,13 @@ share/locale/fr/LC_MESSAGES/kcm_mediacenter_wifi.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.mycroft.bigscreen.homescreen.mo
 share/locale/fr/LC_MESSAGES/plasma_lookandfeel_org.kde.plasma.mycroft.bigscreen.mo
 share/locale/fr/LC_MESSAGES/plasma_shell_org.kde.plasma.mycroft.bigscreen.mo
+share/locale/gl/LC_MESSAGES/kcm_audiodevice.mo
+share/locale/gl/LC_MESSAGES/kcm_mediacenter_bigscreen_settings.mo
 share/locale/gl/LC_MESSAGES/kcm_mediacenter_kdeconnect.mo
+share/locale/gl/LC_MESSAGES/kcm_mediacenter_wifi.mo
+share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.mycroft.bigscreen.homescreen.mo
+share/locale/gl/LC_MESSAGES/plasma_lookandfeel_org.kde.plasma.mycroft.bigscreen.mo
+share/locale/gl/LC_MESSAGES/plasma_shell_org.kde.plasma.mycroft.bigscreen.mo
 share/locale/hu/LC_MESSAGES/kcm_audiodevice.mo
 share/locale/hu/LC_MESSAGES/kcm_mediacenter_bigscreen_settings.mo
 share/locale/hu/LC_MESSAGES/kcm_mediacenter_kdeconnect.mo

@@ -955,6 +955,7 @@ share/locale/gl/LC_MESSAGES/kcm_kwindecoration.mo
 share/locale/gl/LC_MESSAGES/kcm_kwinrules.mo
 share/locale/gl/LC_MESSAGES/kcm_kwintabbox.mo
 share/locale/gl/LC_MESSAGES/kcm_kwinxwayland.mo
+share/locale/gl/LC_MESSAGES/kcm_virtualkeyboard.mo
 share/locale/gl/LC_MESSAGES/kcmkwincommon.mo
 share/locale/gl/LC_MESSAGES/kcmkwincompositing.mo
 share/locale/gl/LC_MESSAGES/kcmkwinscreenedges.mo

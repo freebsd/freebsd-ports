@@ -1708,6 +1708,7 @@ share/locale/gl/LC_MESSAGES/kcm_smserver.mo
 share/locale/gl/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/gl/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/gl/LC_MESSAGES/kcm_touchpad.mo
+share/locale/gl/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/gl/LC_MESSAGES/kcm_workspace.mo
 share/locale/gl/LC_MESSAGES/kcmkclock.mo
 share/locale/gl/LC_MESSAGES/kcmkeyboard.mo
@@ -1716,6 +1717,7 @@ share/locale/gl/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/gl/LC_MESSAGES/knetattach5.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.panel.mo
+share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.kicker.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.kickoff.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.plasma.kimpanel.mo
