@@ -1,6 +1,6 @@
 PORTNAME=	libdaq
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.11
+DISTVERSION=	3.0.12
 CATEGORIES=	net
 
 PATCH_SITES=	https://github.com/glebius/${PORTNAME}/commit/
@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libpcap.so:net/libpcap	# avoid base libpcap
 
-USES=		autoreconf compiler:c++11-lang libtool pkgconfig
+USES=		autoreconf compiler:c++11-lang libtool localbase pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	snort3
 USE_LDCONFIG=	yes
@@ -23,9 +23,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
 INSTALL_TARGET=	install-strip
-
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 
 CONFLICTS=	daq-2*
 
