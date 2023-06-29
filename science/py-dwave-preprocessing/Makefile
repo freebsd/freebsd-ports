@@ -1,6 +1,5 @@
 PORTNAME=	dwave-preprocessing
-DISTVERSION=	0.5.4
-PORTREVISION=	1
+DISTVERSION=	0.6.0
 CATEGORIES=	science python # quantum-computing
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
