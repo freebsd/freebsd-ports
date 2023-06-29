@@ -21,6 +21,7 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 
 USES=		bison:build cmake compiler:c++11-lang gnome kde:5 \
 		pkgconfig python:build qt:5 tar:xz
+USE_CXXSTD=	c++11
 USE_GNOME=	glib20 libxml2
 USE_KDE=	ecm
 USE_QT=		core buildtools:build dbus network qmake:build xml
