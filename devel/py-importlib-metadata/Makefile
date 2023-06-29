@@ -1,5 +1,5 @@
 PORTNAME=	importlib-metadata
-DISTVERSION=	6.6.0
+DISTVERSION=	6.7.0
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,16 +22,10 @@ USE_PYTHON=	autoplist distutils pytest
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.6.4:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
 pre-configure: # importlib-metadata introduces circular dependency when built with USE_PYTHON=pep517, see bug#269363
 	@( \
 		${ECHO} "from setuptools import setup" && \
 		${ECHO} "setup()" \
 	) > ${WRKSRC}/setup.py
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
