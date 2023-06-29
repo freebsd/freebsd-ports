@@ -18,14 +18,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=56:devel/py-setuptools@${PY_FL
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zipp>=0.5:devel/py-zipp@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist distutils pytest
+USE_PYTHON=	autoplist pep517 pytest
 
 NO_ARCH=	yes
-
-pre-configure: # importlib-metadata introduces circular dependency when built with USE_PYTHON=pep517, see bug#269363
-	@( \
-		${ECHO} "from setuptools import setup" && \
-		${ECHO} "setup()" \
-	) > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
