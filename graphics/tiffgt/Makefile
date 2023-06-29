@@ -1,5 +1,5 @@
 PORTNAME=	tiffgt
-DISTVERSION=	4.5.0
+DISTVERSION=	4.5.1
 CATEGORIES=	graphics
 MASTER_SITES=	https://download.osgeo.org/libtiff/
 DISTNAME=	tiff-${DISTVERSION}
@@ -16,7 +16,6 @@ LIB_DEPENDS=	libjbig.so:graphics/jbigkit \
 		libzstd.so:archivers/zstd
 
 USES=		cpe gl jpeg libtool pathfix xorg
-
 CPE_PRODUCT=	libtiff
 CPE_VERSION=	${DISTVERSION:C/[a-z]+//}
 CPE_UPDATE=	${DISTVERSION:C/[0-9.]+//}
