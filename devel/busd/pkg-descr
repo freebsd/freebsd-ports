@@ -1,0 +1,9 @@
+A D-Bus daemon/broker, that aims to be a drop-in replacement for the
+reference implementation of D-Bus, dbus-daemon and dbus-broker. Being
+written in pure Rust, it's much easier to build for multiple platforms
+(Linux, Mac and Windows being the primary targets) than other D-Bus
+brokers.
+
+## Status
+Alpha. It's not ready for production use yet. Only the essentials are
+in place.
