@@ -1,6 +1,6 @@
 PORTNAME=	binaryen
 DISTVERSIONPREFIX=	version_
-DISTVERSION=	113
+DISTVERSION=	114
 CATEGORIES=	devel
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -21,5 +21,8 @@ OPTIONS_SUB=	yes
 
 TEST_CMAKE_BOOL=	BUILD_TESTS
 TEST_GH_TUPLE=		google:googletest:e2239ee:googletest/third_party/googletest
+
+do-test-TEST-on:
+	binaryen-unittests
 
 .include <bsd.port.mk>
