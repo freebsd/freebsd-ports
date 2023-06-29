@@ -1,6 +1,6 @@
 PORTNAME=	ticcutils
 DISTVERSION=	0.32
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel textproc
 MASTER_SITES=	https://github.com/LanguageMachines/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -11,8 +11,7 @@ WWW=		https://github.com/LanguageMachines/ticcutils
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
-		libicui18n.so:devel/icu
+LIB_DEPENDS=	libicui18n.so:devel/icu
 
 USES=		compiler:c++11-lib gmake gnome libtool localbase:ldflags \
 		pathfix pkgconfig
@@ -25,10 +24,6 @@ CONFIGURE_ARGS=	--disable-static
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check # 1 test fails, see https://github.com/LanguageMachines/ticcutils/issues/26
 TEST_ENV=	LD_LIBRARY_PATH=${STAGEDIR}${PREFIX}/lib
-
-# Workaround for https://github.com/LanguageMachines/ticcutils/issues/18 (also see the patch files/patch-configure.ac)
-CXXFLAGS+=	-DHAVE_BOOST_REGEX
-LDFLAGS+=	-lboost_regex
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-O3||g' \
