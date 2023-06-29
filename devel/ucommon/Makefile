@@ -17,7 +17,13 @@ CMAKE_ARGS=	-DBUILD_TESTING:BOOL=ON \
 USE_LDCONFIG=	yes
 TEST_TARGET=	test
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+USE_CXXSTD=	c++11
+.endif
+
 post-install:
 	${INSTALL_DATA} ${BUILD_WRKSRC}/ucommon-config.h ${STAGEDIR}${PREFIX}/include/ucommon
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
