@@ -12,4 +12,6 @@ USES=		libtool pathfix pkgconfig compiler:c++11-lib
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
+CXXFLAGS+=	-Dregister=
+
 .include <bsd.port.mk>
