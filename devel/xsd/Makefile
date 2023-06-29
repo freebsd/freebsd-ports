@@ -23,6 +23,7 @@ LIB_DEPENDS=	libcutl.so:devel/libcutl \
 		libxerces-c.so:textproc/xerces-c3
 
 USES=		compiler:c++11-lang ghostscript:build gmake localbase:ldflags tar:bzip2
+USE_CXXSTD=	c++11
 
 MAKEFILE=	makefile
 MAKE_ARGS=	EXTERNAL_LIBCUTL=y \
