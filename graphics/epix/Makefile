@@ -1,6 +1,6 @@
 PORTNAME=	epix
 DISTVERSION=	1.2.22
-PORTEREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/${PORTNAME}/
 
