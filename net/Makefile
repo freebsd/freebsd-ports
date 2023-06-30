@@ -565,7 +565,6 @@
     SUBDIR += onionprobe
     SUBDIR += ooni-mini
     SUBDIR += ooni-probe-cli
-    SUBDIR += opal
     SUBDIR += open-isns
     SUBDIR += openbgpd
     SUBDIR += openbgpd6
