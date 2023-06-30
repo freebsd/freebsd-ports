@@ -1572,6 +1572,7 @@
     SUBDIR += mcpp
     SUBDIR += mdb
     SUBDIR += mdds
+    SUBDIR += mdspan
     SUBDIR += menhir
     SUBDIR += mercator
     SUBDIR += mercurial
