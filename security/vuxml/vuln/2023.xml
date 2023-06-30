@@ -1,3 +1,50 @@
+  <vuln vid="3117e6cd-1772-11ee-9cd6-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.1.0</ge><lt>16.1.1</lt></range>
+	<range><ge>16.0.0</ge><lt>16.0.6</lt></range>
+	<range><ge>15.11.0</ge><lt>15.11.10</lt></range>
+	<range><ge>7.14.0</ge><lt>15.10.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/06/29/security-release-gitlab-16-1-1-released/">
+	  <p>ReDoS via EpicReferenceFilter in any Markdown fields</p>
+	  <p>New commits to private projects visible in forks created while project was public</p>
+	  <p>New commits to private projects visible in forks created while project was public</p>
+	  <p>Maintainer can leak masked webhook secrets by manipulating URL masking</p>
+	  <p>Information disclosure of project import errors</p>
+	  <p>Sensitive information disclosure via value stream analytics controller</p>
+	  <p>Bypassing Code Owners branch protection rule in GitLab</p>
+	  <p>HTML injection in email address</p>
+	  <p>Webhook token leaked in Sidekiq logs if log format is 'default'</p>
+	  <p>Private email address of service desk issue creator disclosed via issues API</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3424</cvename>
+      <cvename>CVE-2023-2190</cvename>
+      <cvename>CVE-2023-3444</cvename>
+      <cvename>CVE-2023-2620</cvename>
+      <cvename>CVE-2023-3362</cvename>
+      <cvename>CVE-2023-3102</cvename>
+      <cvename>CVE-2023-2576</cvename>
+      <cvename>CVE-2023-2200</cvename>
+      <cvename>CVE-2023-3363</cvename>
+      <cvename>CVE-2023-1936</cvename>
+      <url>https://about.gitlab.com/releases/2023/06/29/security-release-gitlab-16-1-1-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-06-29</discovery>
+      <entry>2023-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d821956f-1753-11ee-ad66-1c61b4739ac9">
     <topic>SoftEtherVPN -- multiple vulnerabilities</topic>
     <affects>
