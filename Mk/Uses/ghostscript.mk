@@ -4,12 +4,12 @@
 # Usage:	USES=ghostscript or USES=ghostscript:args
 # Valid ARGS:	<version>, build, run, test, x11
 #
-# version 	The chooseable versions are 8, 9 and agpl. If no version is
+# version 	The chooseable versions are 9 and agpl. If no version is
 #		specified version agpl is selected.
 #
-#		USES=ghostscript:8	# Use Ghostscript 8
+#		USES=ghostscript:9	# Use Ghostscript 9
 #		USES=ghostscript:run	# Use the set default Ghostscript as a run dependency
-#		USES=ghostscript:8,build # Use ghostscript 8 as a build dependency.
+#		USES=ghostscript:9,build # Use ghostscript 9 as a build dependency.
 #
 # x11		Indicate that X11 support is required.
 # build		Indicates that Ghostscript is needed at build time and adds
@@ -30,15 +30,15 @@ _INCLUDE_USES_GHOSTSCRIPT_MK=	yes
 # allowed versions
 # When adding a version, please keep the comment in
 # Mk/bsd.default-versions.mk in sync.
-_GS_VERSION=	8 9 agpl
+_GS_VERSION=	9 agpl
 
 _GS_ARGS=		${ghostscript_ARGS}
 
-.  if ${_GS_ARGS:N[89]:Nagpl:Nx11:Nbuild:Nrun:Ntest}
+.  if ${_GS_ARGS:N[9]:Nagpl:Nx11:Nbuild:Nrun:Ntest}
 IGNORE?=	Unknown ghostscript argument ${_GS_ARGS}
 .  endif
 
-.  if ${GHOSTSCRIPT_DEFAULT:N[789]:Nagpl}
+.  if ${GHOSTSCRIPT_DEFAULT:N[9]:Nagpl}
 IGNORE?=	Invalid GHOSTSCRIPT_DEFAULT value: ${GHOSTSCRIPT_DEFAULT}, please select one of ${_GS_VERSION}
 .  endif
 
@@ -71,8 +71,6 @@ _V=${V}
 _GS_SELECTED?=		9
 .    elif ${_V:Magpl}
 _GS_SELECTED?=		9-agpl
-.    elif ${_V:M8}
-_GS_SELECTED?=		8
 .    endif
 .  endfor
 
@@ -81,8 +79,6 @@ _GS_SELECTED?=		8
 _GS_VERSION_MINOR=	9.16_2
 .  elif !empty(_GS_SELECTED:M9)
 _GS_VERSION_MINOR=	9.06_11
-.  elif !empty(_GS_SELECTED:M8)
-_GS_VERSION_MINOR=	8.71_19
 .  endif
 
 # dependencies
