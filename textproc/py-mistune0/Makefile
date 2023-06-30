@@ -1,5 +1,6 @@
 PORTNAME=	mistune
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -22,6 +23,9 @@ NO_ARCH=	yes
 CPE_VENDOR=	mistune_project
 
 PORTSCOUT=	limit:^0\.
+
+post-patch:
+	@${MV} ${WRKSRC}/mistune.py ${WRKSRC}/mistune0.py
 
 do-test:
 	cd ${WRKSRC} && ${PYTHON_CMD} -m nose -v
