@@ -1,6 +1,14 @@
 bin/uwsc
 include/ulfius-cfg.h
 include/ulfius.h
+lib/cmake/Ulfius/FindGnuTLS.cmake
+lib/cmake/Ulfius/FindJansson.cmake
+lib/cmake/Ulfius/FindMHD.cmake
+lib/cmake/Ulfius/UlfiusConfig.cmake
+lib/cmake/Ulfius/UlfiusConfigVersion.cmake
+lib/cmake/Ulfius/UlfiusTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/Ulfius/UlfiusTargets.cmake
+lib/libulfius.a
 lib/libulfius.so
 lib/libulfius.so.2.7
 lib/libulfius.so.%%PORTVERSION%%
