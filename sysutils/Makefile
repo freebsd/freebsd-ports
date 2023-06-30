@@ -83,6 +83,7 @@
     SUBDIR += b2sum
     SUBDIR += b3sum
     SUBDIR += b43-fwcutter
+    SUBDIR += backdown
     SUBDIR += backuppc
     SUBDIR += backuppc-devel
     SUBDIR += backuppc4
