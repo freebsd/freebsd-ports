@@ -38,6 +38,12 @@ USE_XORG=	x11
 .if ${ARCH:Mpowerpc*}
 CXX=		clang++${LLVM_VERSION}
 USES+=		llvm:min=16
+.else
+# Work around compiler bug, see pr: 272285
+USES+=		llvm
+CC=		${LLVM_PREFIX}/bin/clang
+CPP=		${LLVM_PREFIX}/bin/clang-cpp
+CXX=		${LLVM_PREFIX}/bin/clang++
 .endif
 
 .include <bsd.port.mk>
