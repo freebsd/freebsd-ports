@@ -485,6 +485,7 @@
     SUBDIR += pytorch
     SUBDIR += qbrew
     SUBDIR += qlas
+    SUBDIR += qlcplus
     SUBDIR += qt5-doc
     SUBDIR += qt5-examples
     SUBDIR += qt5-l10n
