@@ -16,7 +16,6 @@ GH_ACCOUNT=	ivanceras
 
 WRKSRC_SUBDIR=	packages/svgbob_cli
 
-CARGO_ARGS=	-p svgbob
 CARGO_CRATES=	ansi_term-0.12.1 \
 		approx-0.5.1 \
 		arrayvec-0.7.2 \
