@@ -14,6 +14,8 @@ USES=		cmake pathfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
 
+PIE_UNSAFE=	yes
+
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
