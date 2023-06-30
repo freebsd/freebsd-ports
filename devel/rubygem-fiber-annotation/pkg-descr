@@ -1,0 +1,2 @@
+Fiber::Annotation provides a simple way to annotate what a fiber is currently
+doing, useful for debugging, logging and tracing.
