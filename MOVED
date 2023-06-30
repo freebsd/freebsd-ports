@@ -7734,3 +7734,4 @@ multimedia/vdr-plugin-streamdev||2023-06-30|Has expired: Depends on abandoned fo
 www/vdr-plugin-live||2023-06-30|Has expired: Depends on abandoned fork of VDR
 multimedia/vdr-plugin-skinenigmang||2023-06-30|Has expired: Depends on abandoned fork of VDR
 multimedia/vdr-plugin-ttxtsubs||2023-06-30|Has expired: Depends on abandoned fork of VDR
+audio/pulseeffects||2023-06-30|Has expired: Broken for almost a year and abandoned upstream
