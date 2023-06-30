@@ -20,8 +20,7 @@ LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 		libLLVM.so:devel/llvm${LLVM_DEFAULT} \
 		libxslt.so:textproc/libxslt
 
-USES=		cmake compiler:c++17-lang gnome localbase python:3.5+ \
-		shebangfix tar:xz qt:6
+USES=		cmake compiler:c++17-lang gnome localbase python shebangfix tar:xz qt:6
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
