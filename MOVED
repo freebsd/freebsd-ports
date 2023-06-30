@@ -7664,3 +7664,4 @@ databases/ateam_mysql_ldap_auth||2023-06-30|Has expired: Requires upstream EOL M
 databases/mysqlwsrep56-server||2023-06-30|Has expired: Requires upstream EOL MySQL 5.6
 databases/mysql56-server||2023-06-30|Has expired: Upstream support ended in February 2021
 databases/mysql56-client||2023-06-30|Has expired: Upstream support ended in February 2021
+databases/mysac||2023-06-30|Has expired: Requires upstream EOL MySQL 5.6

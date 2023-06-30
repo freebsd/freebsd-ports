@@ -1,4 +1,0 @@
-MySAC (Simple Asynchronous Client) is a library that provides mechanisms for
-making asynchronous requests to MySQL database.  It uses the official MySQL
-client library for authentication and network functions.  Memory allocation
-must be done in user code, so any memory manager can be used.
