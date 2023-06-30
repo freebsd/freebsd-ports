@@ -17,10 +17,4 @@ RUN_DEPENDS=	rubygem-atk>=${PORTVERSION}<${PORTVERSION}_99:accessibility/rubygem
 USES=		gem gnome
 USE_GNOME=	gtk30
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
-.endif
-
 .include <bsd.port.mk>
