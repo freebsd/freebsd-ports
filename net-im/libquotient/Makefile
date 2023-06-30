@@ -23,6 +23,13 @@ GH_PROJECT=	libQuotient
 
 CMAKE_ARGS=	-DQuotient_INSTALL_TESTS=OFF
 
+# Work around compiler bug, see pr: 272285
+USES+=		llvm
+CC=		${LLVM_PREFIX}/bin/clang
+CPP=		${LLVM_PREFIX}/bin/clang-cpp
+CXX=		${LLVM_PREFIX}/bin/clang++
+
+
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ${OSVERSION} < 1301507
