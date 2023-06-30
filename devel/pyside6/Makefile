@@ -7,7 +7,7 @@ DISTNAME=	pyside-setup-opensource-src-${DISTVERSION}
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Python Qt bindings for Qt 6
-WWW:		https://wiki.qt.io/Qt_for_Python
+WWW=		https://wiki.qt.io/Qt_for_Python
 
 LICENSE=	LGPL3
 
