@@ -7700,3 +7700,4 @@ sysutils/mnrpes||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective||2023-06-30|Has expired: Broken with all supported Ruby versions
 databases/mariadb104-server||2023-06-30|Has expired: Use databases/mariadb106-server
 databases/mariadb104-client||2023-06-30|Has expired: Use databases/mariadb106-client
+dns/mydns-ng||2023-06-30|Has expired: Abandonware, last release in 2010. Consider migrating to dns/powerdns

@@ -108,7 +108,6 @@
     SUBDIR += maradns
     SUBDIR += mdnsd
     SUBDIR += mydns
-    SUBDIR += mydns-ng
     SUBDIR += namesilo_ddns
     SUBDIR += nextdns
     SUBDIR += noip
