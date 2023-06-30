@@ -1,0 +1,12 @@
+Have you ever shipped broken sdists with missing files or possibly dirty sdists
+with files that shouldn't have been there? Have you noticed that standards
+compliant tools aren't making the same sdist that flit build is? Is hatchling
+adding .DSStore files when you ship from your macOS? No matter what
+build-backend you use, check-sdist can help!
+
+Check-sdist builds an sdist and compares the contents with your Git repository
+contents. It can even temporarily inject common junk files (like pycache files
+or OS specific files) and help verify that those aren't getting bundled into
+your sdist. If you are getting files you didn't expect or missing files you did
+expect, consult your build backend's docs to see how to include or exclude
+files.

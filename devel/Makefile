@@ -4433,6 +4433,7 @@
     SUBDIR += py-characteristic
     SUBDIR += py-check-jsonschema
     SUBDIR += py-check-manifest
+    SUBDIR += py-check-sdist
     SUBDIR += py-cheetah3
     SUBDIR += py-circuitbreaker
     SUBDIR += py-circuits
