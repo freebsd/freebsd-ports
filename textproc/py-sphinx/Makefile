@@ -48,10 +48,6 @@ EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 30800
-TEST_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typed-ast>=0:devel/py-typed-ast@${PY_FLAVOR}
-.endif
-
 .if ${PYTHON_REL} < 31000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.8:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
