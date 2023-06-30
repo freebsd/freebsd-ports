@@ -7703,3 +7703,4 @@ databases/mariadb104-client||2023-06-30|Has expired: Use databases/mariadb106-cl
 dns/mydns-ng||2023-06-30|Has expired: Abandonware, last release in 2010. Consider migrating to dns/powerdns
 dns/mydns||2023-06-30|Has expired: Abandonware, last release in 2006. Consider migrating to dns/powerdns
 net/opal||2023-06-30|Has expired: Very outdated, current version in tree was released back in 2013 and upstream is still active
+math/R-cran-RHmm||2023-06-30|Has expired: Fails to build with R 4.3.0+ and abandoned upstream
