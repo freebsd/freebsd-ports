@@ -1,3 +1,3 @@
-TIMESTAMP = 1685792262
-SHA256 (localstack-client-2.1.tar.gz) = 10cb5a5aba5bbe2e56f3373476523346cb7c3c6ea46373ffb4709a839e3bac6c
-SIZE (localstack-client-2.1.tar.gz) = 10579
+TIMESTAMP = 1686496752
+SHA256 (localstack-client-2.2.tar.gz) = 3af9ab57d7744f64deb1912c1145b453db0233d8caaf6f71bd97380b5c4e45bb
+SIZE (localstack-client-2.2.tar.gz) = 10605
