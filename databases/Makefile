@@ -15,7 +15,6 @@
     SUBDIR += arrow
     SUBDIR += arrow-glib
     SUBDIR += ateam_mysql57_ldap_auth
-    SUBDIR += ateam_mysql_ldap_auth
     SUBDIR += autobackupmysql
     SUBDIR += automysqlbackup
     SUBDIR += bbdb
