@@ -1,5 +1,6 @@
 PORTNAME=	ini2toml
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,10 +12,13 @@ WWW=		https://github.com/abravalheri/ini2toml
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=46.1.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools_scm>=5:devel/py-setuptools_scm@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=20.7:devel/py-packaging@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
@@ -27,10 +31,4 @@ FULL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configupdater>=3.0.1<4:devel/py-configu
 			${PYTHON_PKGNAMEPREFIX}tomlkit>=0.10.0<2:textproc/py-tomlkit@${PY_FLAVOR}
 LITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tomli-w>=0.4.0<2:textproc/py-tomli-w@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800 && (${PORT_OPTIONS:MFULL} || ${PORT_OPTIONS:MLITE})
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
