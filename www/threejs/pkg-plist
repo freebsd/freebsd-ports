@@ -193,6 +193,8 @@
 %%WWWDIR%%/renderers/WebGLRenderTarget.js
 %%WWWDIR%%/renderers/WebGLRenderer.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/alphahash_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/alphahash_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/alphamap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/alphamap_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/alphatest_fragment.glsl.js
@@ -214,6 +216,8 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/color_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/color_pars_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/color_vertex.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/colorspace_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/colorspace_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/common.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/cube_uv_reflection_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/default_fragment.glsl.js
@@ -225,8 +229,6 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/dithering_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/emissivemap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/emissivemap_pars_fragment.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/encodings_fragment.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/encodings_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/envmap_common_pars_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/envmap_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/envmap_pars_fragment.glsl.js
@@ -274,7 +276,7 @@
 %%WWWDIR%%/renderers/shaders/ShaderChunk/normal_pars_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/normal_vertex.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/normalmap_pars_fragment.glsl.js
-%%WWWDIR%%/renderers/shaders/ShaderChunk/output_fragment.glsl.js
+%%WWWDIR%%/renderers/shaders/ShaderChunk/opaque_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/packing.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/premultiplied_alpha_fragment.glsl.js
 %%WWWDIR%%/renderers/shaders/ShaderChunk/project_vertex.glsl.js
