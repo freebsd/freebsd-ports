@@ -19,7 +19,7 @@ LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader \
 		libLLVM.so:devel/llvm${LLVM_DEFAULT} \
 		libshiboken6.abi${PYTHON_MAJOR_VER}.so:devel/shiboken6@${PY_FLAVOR}
 
-USES=		cmake gl python:3.5+ qt:6 tar:xz
+USES=		cmake gl python qt:6 tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	yes
 USE_PYTHON=	flavors
