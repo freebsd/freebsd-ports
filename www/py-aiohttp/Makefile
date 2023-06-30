@@ -1,5 +1,6 @@
 PORTNAME=	aiohttp
 PORTVERSION=	3.8.4
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,6 +12,8 @@ WWW=		https://github.com/aio-libs/aiohttp
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=46.4.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosignal>=1.1.2:devel/py-aiosignal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0.0<5.0:devel/py-async_timeout@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}attrs>=17.3.0:devel/py-attrs@${PY_FLAVOR} \
@@ -25,16 +28,9 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiodns>=1.1:dns/py-aiodns@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}re-assert>=0:devel/py-re-assert@${PY_FLAVOR}
 
 USES=		cpe python
-USE_PYTHON=	autoplist concurrent cython distutils pytest
+USE_PYTHON=	autoplist concurrent cython pep517 pytest
 
 CPE_VENDOR=	aiohttp_project
-
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}asynctest>=0.13.0:devel/py-asynctest@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
 
 pre-configure:
 .for file in _helpers _http_parser _http_writer _websocket
@@ -44,4 +40,4 @@ pre-configure:
 post-install:
 	${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
