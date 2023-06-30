@@ -7688,3 +7688,4 @@ sysutils/mcollective-puppet-client||2023-06-30|Has expired: Depends on broken sy
 sysutils/mcollective-nettest-client||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective-nettest-agent||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective-service-agent||2023-06-30|Has expired: Depends on broken sysutils/mcollective
+sysutils/mcollective-service-client||2023-06-30|Has expired: Depends on broken sysutils/mcollective

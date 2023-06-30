@@ -736,7 +736,6 @@
     SUBDIR += mcollective-nrpe-agent
     SUBDIR += mcollective-nrpe-common
     SUBDIR += mcollective-puppet-common
-    SUBDIR += mcollective-service-client
     SUBDIR += mcollective-service-common
     SUBDIR += mcollective-shell-agent
     SUBDIR += mcollective-shell-client
