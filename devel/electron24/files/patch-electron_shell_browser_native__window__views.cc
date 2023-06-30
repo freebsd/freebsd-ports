@@ -1,6 +1,6 @@
---- electron/shell/browser/native_window_views.cc.orig	2023-06-13 21:28:30 UTC
+--- electron/shell/browser/native_window_views.cc.orig	2023-06-27 15:34:12 UTC
 +++ electron/shell/browser/native_window_views.cc
-@@ -42,7 +42,7 @@
+@@ -43,7 +43,7 @@
  #include "ui/wm/core/shadow_types.h"
  #include "ui/wm/core/window_util.h"
  
@@ -9,7 +9,7 @@
  #include "base/strings/string_util.h"
  #include "shell/browser/browser.h"
  #include "shell/browser/linux/unity_service.h"
-@@ -276,7 +276,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
+@@ -277,7 +277,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
      params.parent = parent->GetNativeWindow();
  
    params.native_widget = new ElectronDesktopNativeWidgetAura(this);
@@ -18,7 +18,7 @@
    std::string name = Browser::Get()->GetName();
    // Set WM_WINDOW_ROLE.
    params.wm_role_name = "browser-window";
-@@ -301,7 +301,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
+@@ -302,7 +302,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
    std::string window_type;
    options.Get(options::kType, &window_type);
  
@@ -27,7 +27,7 @@
    // Set _GTK_THEME_VARIANT to dark if we have "dark-theme" option set.
    bool use_dark_theme = false;
    if (options.Get(options::kDarkTheme, &use_dark_theme) && use_dark_theme) {
-@@ -403,7 +403,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
+@@ -404,7 +404,7 @@ NativeWindowViews::NativeWindowViews(const gin_helper:
    if (window)
      window->AddPreTargetHandler(this);
  
@@ -36,7 +36,7 @@
    // On linux after the widget is initialized we might have to force set the
    // bounds if the bounds are smaller than the current display
    SetBounds(gfx::Rect(GetPosition(), bounds.size()), false);
-@@ -563,7 +563,7 @@ bool NativeWindowViews::IsVisible() {
+@@ -564,7 +564,7 @@ bool NativeWindowViews::IsVisible() {
  bool NativeWindowViews::IsEnabled() {
  #if BUILDFLAG(IS_WIN)
    return ::IsWindowEnabled(GetAcceleratedWidget());
@@ -45,7 +45,7 @@
  #if defined(USE_OZONE_PLATFORM_X11)
    if (IsX11())
      return !event_disabler_.get();
-@@ -621,7 +621,7 @@ void NativeWindowViews::SetEnabledInternal(bool enable
+@@ -622,7 +622,7 @@ void NativeWindowViews::SetEnabledInternal(bool enable
  #endif
  }
  
@@ -54,7 +54,7 @@
  void NativeWindowViews::Maximize() {
    if (IsVisible()) {
      widget()->Maximize();
-@@ -752,7 +752,7 @@ void NativeWindowViews::SetBounds(const gfx::Rect& bou
+@@ -753,7 +753,7 @@ void NativeWindowViews::SetBounds(const gfx::Rect& bou
    }
  #endif
  
@@ -63,7 +63,7 @@
    // On Linux and Windows the minimum and maximum size should be updated with
    // window size when window is not resizable.
    if (!resizable_) {
-@@ -988,7 +988,7 @@ bool NativeWindowViews::IsClosable() {
+@@ -989,7 +989,7 @@ bool NativeWindowViews::IsClosable() {
      return false;
    }
    return !(info.fState & MFS_DISABLED);
@@ -72,7 +72,7 @@
    return true;
  #endif
  }
-@@ -1376,7 +1376,7 @@ void NativeWindowViews::SetProgressBar(double progress
+@@ -1377,7 +1377,7 @@ void NativeWindowViews::SetProgressBar(double progress
                                         NativeWindow::ProgressState state) {
  #if BUILDFLAG(IS_WIN)
    taskbar_host_.SetProgressBar(GetAcceleratedWidget(), progress, state);
