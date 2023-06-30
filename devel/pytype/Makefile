@@ -31,16 +31,10 @@ USE_PYTHON=	autoplist concurrent pep517 pytest
 
 TEST_ENV=	PYTHONPATH=${STAGEDIR}${PYTHON_SITELIBDIR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typed-ast>=1.5.0:devel/py-typed-ast@${PY_FLAVOR}
-.endif
-
 post-patch:
 	@${RM} ${WRKSRC}/pytype/tools/merge_pyi/test_data/parse_error.py
 
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
