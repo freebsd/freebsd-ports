@@ -60,6 +60,9 @@ MAKE_ENV+=		NOTESTS=yes
 
 .if ${SLAVE_PORT} == "no"
 MAKE_ENV+=		LD_LIBRARY_PATH=${WRKSRC}/cpp/lib:$$LD_LIBRARY_PATH
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+USE_CXXSTD=	c++11
+.endif
 .endif
 
 .include <bsd.port.pre.mk>
