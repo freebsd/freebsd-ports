@@ -733,7 +733,6 @@
     SUBDIR += mcfly
     SUBDIR += mcollective
     SUBDIR += mcollective-nettest-common
-    SUBDIR += mcollective-puppet-common
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdf2iso
