@@ -201,8 +201,6 @@ USE_CABAL=	Glob-0.10.2_3 \
 		zip-archive-0.4.3 \
 		zlib-0.6.3.0_1
 
-CABAL_PROJECT=	remove
-
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == aarch64
