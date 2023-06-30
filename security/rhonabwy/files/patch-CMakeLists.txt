@@ -1,6 +1,11 @@
---- CMakeLists.txt.orig	2022-07-08 18:38:40 UTC
+--- CMakeLists.txt.orig	2023-02-08 14:06:47 UTC
 +++ CMakeLists.txt
-@@ -171,7 +171,7 @@ set_target_properties(rhonabwy PROPERTIES
+@@ -167,11 +167,11 @@ endif ()
+ 
+ add_library(rhonabwy SHARED ${LIB_SRC})
+ set_target_properties(rhonabwy PROPERTIES
+-        COMPILE_OPTIONS "-Wextra;-Wconversion"
++        COMPILE_OPTIONS "-Wextra;-Wconversion;-Wno-sign-conversion;-Wno-unknown-warning-option"
          PUBLIC_HEADER "${INC_DIR}/rhonabwy.h;${PROJECT_BINARY_DIR}/rhonabwy-cfg.h"
          VERSION "${LIBRARY_VERSION}"
          SOVERSION "${LIBRARY_SOVERSION}")

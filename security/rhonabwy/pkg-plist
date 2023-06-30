@@ -1,8 +1,9 @@
 bin/rnbyc
 include/rhonabwy-cfg.h
 include/rhonabwy.h
+lib/librhonabwy.a
 lib/librhonabwy.so
 lib/librhonabwy.so.1.1
-lib/librhonabwy.so.%%DISTVERSION%%
+lib/librhonabwy.so.%%PORTVERSION%%
 libdata/pkgconfig/librhonabwy.pc
 share/man/man1/rnbyc.1.gz
