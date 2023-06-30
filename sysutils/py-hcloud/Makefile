@@ -1,5 +1,5 @@
 PORTNAME=	hcloud
-DISTVERSION=	1.22.0
+DISTVERSION=	1.23.0
 CATEGORIES=	sysutils python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dateutil>=2.7.5,<3:devel/py-dateutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=2.20,<3:www/py-requests@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.20,<3:www/py-requests@${PY_FLAVOR}
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pre-commit>=0:devel/py-pre-commit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyupgrade>=3.6.0:devel/py-pyupgrade@${PY_FLAVOR} \
