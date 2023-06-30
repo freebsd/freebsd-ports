@@ -1,9 +1,9 @@
 PORTNAME=	openbabel
-DISTVERSION=	3.1.1
-PORTREVISION=	8
-DISTVERSIONSUFFIX=	-source
+DISTVERSION=	3-1-1-178
+#DISTVERSIONSUFFIX=	-source
+DISTVERSIONSUFFIX=	-g2b211d6ac
 CATEGORIES=	science
-MASTER_SITES=	https://github.com/openbabel/openbabel/releases/download/openbabel-${PORTVERSION:C/\./-/g}/
+#MASTER_SITES=	https://github.com/openbabel/openbabel/releases/download/openbabel-${PORTVERSION:C/\./-/g}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Chemical toolbox designed to speak the many languages of chemical data
@@ -18,15 +18,19 @@ LIB_DEPENDS=	libmaeparser.so:science/maeparser	\
 
 CONFLICTS_INSTALL=	babel
 
-USES=		cmake compiler:c++11-lang eigen:3 gnome pkgconfig tar:bz2
+USES=		cmake:testing compiler:c++11-lang eigen:3 gnome pkgconfig tar:bz2
 USE_CXXSTD=	gnu++98
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+USE_GITHUB=	yes # temporary
 
 CMAKE_ON=	WITH_COORDGEN WITH_JSON OPENBABEL_USE_SYSTEM_RAPIDJSON WITH_MAEPARSER
-CMAKE_OFF=	PYTHON_BINDINGS
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-PLIST_SUB=	VERSION=3.1.0	# To be replaced by ${PORTVERSION} nexttime!
+CMAKE_OFF=	ENABLE_TESTS PYTHON_BINDINGS
+CMAKE_TESTING_ON=	ENABLE_TESTS
+
+#WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+PLIST_SUB=	VERSION=${PORTVERSION:R}
 
 OPTIONS_DEFINE=		CAIRO GUI
 OPTIONS_DEFAULT=	CAIRO GUI
@@ -59,5 +63,7 @@ post-install-PYTHON-on:
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
+
+# 2 tests fail, see https://github.com/openbabel/openbabel/issues/2604
 
 .include <bsd.port.post.mk>
