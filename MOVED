@@ -7658,3 +7658,4 @@ security/p5-OpenCA-OpenSSL||2023-06-23|Has expired: Broken since 2021
 security/krb5-118|security/krb5|2023-06-25|Has expired: EOL one year after the release of krb5 1.19
 x11-wm/pager|x11-wm/sawfish-pager|2023-06-27|Renamed to match upstream naming
 lang/python37|lang/python38|2023-06-27|Has expired: Upgrade to a newer Python version. 3.7 is in maintenance status and gets security fixes only. End-of-Life: 2023-06-27. See https://devguide.python.org/versions/
+databases/mysql-q4m||2023-06-30|Has expired: Requires upstream EOL MySQL 5.6
