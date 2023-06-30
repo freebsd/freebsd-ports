@@ -1,5 +1,6 @@
 include/hoel-cfg.h
 include/hoel.h
+lib/libhoel.a
 lib/libhoel.so
 lib/libhoel.so.1.4
 lib/libhoel.so.%%PORTVERSION%%

@@ -1,47 +1,45 @@
 PORTNAME=	hoel
+PORTVERSION=	1.4.27
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.26
 CATEGORIES=	devel
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Database abstraction library written in C
-WWW=		https://github.com/babelouest/hoel
+WWW=		https://babelouest.github.io/hoel/ \
+		https://github.com/babelouest/hoel
 
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake
+USES=		cmake pathfix
+
+BUILD_DEPENDS=	jansson>=2.4:devel/jansson \
+		orcania>=2.3.2:devel/orcania \
+		yder>=1.4.19:devel/yder
+LIB_DEPENDS=	libjansson.so:devel/jansson \
+		liborcania.so:devel/orcania \
+		libyder.so:devel/yder
+
+CMAKE_OFF=	BUILD_HOEL_DOCUMENTATION BUILD_HOEL_TESTING BUILD_RPM DOWNLOAD_DEPENDENCIES
+CMAKE_ON=	BUILD_STATIC INSTALL_HEADER SEARCH_ORCANIA_H SEARCH_YDER
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	babelouest
 
-LIB_DEPENDS=	libjansson.so:devel/jansson \
-		liborcania.so:devel/orcania
-
-BUILD_DEPENDS=	orcania>0:devel/orcania \
-		yder>0:devel/yder
-
-RUN_DEPENDS=	jansson>0:devel/jansson \
-		yder>0:devel/yder
-
-OPTIONS_DEFINE=	MARIADB PGSQL SQLITE3
-OPTIONS_DEFAULT=	PGSQL
-
+OPTIONS_SINGLE=	DB
+OPTIONS_SINGLE_DB=	MARIADB PGSQL SQLITE3
+OPTIONS_DEFAULT=PGSQL
 PGSQL_DESC=	Use PostgreSQL as backend
 SQLITE3_DESC=	Use SQLite 3 as backend
 MARIADB_DESC=	Use MariaDB as backend
 
-MARIADB_USES=	mariadb
-PGSQL_USES=	pgsql
-SQLITE3_USES=	sqlite
-
 MARIADB_CMAKE_BOOL=	WITH_MARIADB
+MARIADB_USES=		mysql
 PGSQL_CMAKE_BOOL=	WITH_PGSQL
+PGSQL_USES=		pgsql
 SQLITE3_CMAKE_BOOL=	WITH_SQLITE3
-
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
-
-CMAKE_ARGS=	-DWITH_JOURNALD=off \
-		-DDOWNLOAD_DEPENDENCIES=off
+SQLITE3_USES=		sqlite
 
 .include <bsd.port.mk>
