@@ -20,13 +20,7 @@ GNU_CONFIGURE=	yes
 
 SHEBANG_FILES=	tools/*
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ((${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000) || ${OSVERSION} >= 1400079)
-CFLAGS+=       -Wno-error=deprecated-non-prototype
-.endif
-
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/*
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
