@@ -312,7 +312,6 @@
     SUBDIR += py-mat2
     SUBDIR += py-metadata-cleaner
     SUBDIR += py-mido
-    SUBDIR += py-mlt6
     SUBDIR += py-moviepy
     SUBDIR += py-opentimelineio
     SUBDIR += py-periscope
