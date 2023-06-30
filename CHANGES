@@ -10,6 +10,16 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20230712:
+AUTHOR: 0mp@FreeBSD.org
+
+  Two new targets are now available: fetch-url-recursive-list
+  and fetch-urlall-recursive-list. They are the recursive variants
+  of the well-established targets fetch-url-list and fetch-urlall-list,
+  which allow for listing the complete URLs of DISTFILES and PATCHFILES
+  of a port. The recursive variants add the URLs of the port's dependencies
+  to the output.
+
 20230430:
 AUTHOR: zirias@FreeBSD.org
 

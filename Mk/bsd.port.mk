@@ -567,9 +567,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # fetch-url-list
 #				- Show list of URLS to retrieve missing ${DISTFILES} and
 #				  ${PATCHFILES} for this port.
+# fetch-url-recursive-list
+#				- Show list of URLS to retrieve missing ${DISTFILES} and
+#				  ${PATCHFILES} for this port and dependencies.
 # fetch-urlall-list
 #				- Show list of URLS to retrieve ${DISTFILES} and
 #				  ${PATCHFILES} for this port.
+# fetch-urlall-recursive-list
+#				- Show list of URLS to retrieve ${DISTFILES} and
+#				  ${PATCHFILES} for this port and dependencies.
 #
 # all-depends-list
 #				- Show all directories which are dependencies
@@ -3143,11 +3149,25 @@ fetch-url-list-int:
 .      endif
 .    endif
 
+.    if !target(fetch-url-recursive-list-int)
+fetch-url-recursive-list-int: fetch-url-list-int
+	@recursive_cmd="fetch-url-list-int"; \
+	    recursive_dirs="$$(${ALL-DEPENDS-FLAVORS-LIST})"; \
+		${_FLAVOR_RECURSIVE_SH}
+.    endif
+
 # Prints out all the URL for all the DISTFILES and PATCHFILES.
 
 .    if !target(fetch-urlall-list)
 fetch-urlall-list:
 	@cd ${.CURDIR} && ${SETENV} FORCE_FETCH_ALL=yes ${MAKE} fetch-url-list-int
+.    endif
+
+.    if !target(fetch-urlall-recursive-list)
+fetch-urlall-recursive-list: fetch-urlall-list
+	@recursive_cmd="fetch-urlall-list"; \
+	    recursive_dirs="$$(${ALL-DEPENDS-FLAVORS-LIST})"; \
+		${_FLAVOR_RECURSIVE_SH}
 .    endif
 
 # Prints the URL for all the DISTFILES and PATCHFILES that are not here
@@ -3156,6 +3176,12 @@ fetch-urlall-list:
 fetch-url-list: fetch-url-list-int
 .    endif
 
+.    if !target(fetch-url-recursive-list)
+fetch-url-recursive-list: fetch-url-list
+	@recursive_cmd="fetch-url-list"; \
+	    recursive_dirs="$$(${ALL-DEPENDS-FLAVORS-LIST})"; \
+		${_FLAVOR_RECURSIVE_SH}
+.    endif
 
 # Extract
 
