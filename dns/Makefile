@@ -4,7 +4,6 @@
     SUBDIR += adns
     SUBDIR += adsuck
     SUBDIR += amass
-    SUBDIR += ares
     SUBDIR += axfr2acl
     SUBDIR += bind-tools
     SUBDIR += bind9-devel
