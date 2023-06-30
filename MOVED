@@ -7743,3 +7743,4 @@ devel/electron19||2023-06-30|Has expired: EOLed upstream, switch to newer versio
 devel/electron21||2023-06-30|Has expired: EOLed upstream, switch to newer version
 devel/ccache-memcached||2023-06-30|Has expired: Unmaintained fork that targets a very old version of ccache
 devel/ccache-memcached-static||2023-06-30|Has expired: Unmaintained fork that targets a very old version of ccache
+devel/libdlna||2023-06-30|Has expired: Abandonware, development discontinued

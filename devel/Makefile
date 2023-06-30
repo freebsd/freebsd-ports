@@ -1199,7 +1199,6 @@
     SUBDIR += libdispatch
     SUBDIR += libdistance
     SUBDIR += libdlmalloc
-    SUBDIR += libdlna
     SUBDIR += libdnsres
     SUBDIR += libdombey
     SUBDIR += libdparse
