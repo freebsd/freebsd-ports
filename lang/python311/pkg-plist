@@ -2987,10 +2987,10 @@ lib/python%%XYDOT%%/lib-dynload/unicodedata.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/xxlimited.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/xxlimited_35.cpython-%%XY%%%%ABI%%.so
 lib/python%%XYDOT%%/lib-dynload/zlib.cpython-%%XY%%%%ABI%%.so
-lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.final.0.pickle
 lib/python%%XYDOT%%/lib2to3/Grammar.txt
-lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.final.0.pickle
+lib/python%%XYDOT%%/lib2to3/Grammar%%XYZDOT%%.final.0.pickle
 lib/python%%XYDOT%%/lib2to3/PatternGrammar.txt
+lib/python%%XYDOT%%/lib2to3/PatternGrammar%%XYZDOT%%.final.0.pickle
 lib/python%%XYDOT%%/lib2to3/__init__.py
 lib/python%%XYDOT%%/lib2to3/__main__.py
 lib/python%%XYDOT%%/lib2to3/__pycache__/__init__.cpython-%%XY%%.opt-1.pyc
