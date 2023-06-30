@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	guile-lib>=0:devel/guile-lib
 
+NO_ARCH=	yes
 NO_BUILD=	yes
 
 INFO=		sdom
