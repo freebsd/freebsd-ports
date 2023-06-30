@@ -7745,3 +7745,4 @@ devel/ccache-memcached||2023-06-30|Has expired: Unmaintained fork that targets a
 devel/ccache-memcached-static||2023-06-30|Has expired: Unmaintained fork that targets a very old version of ccache
 devel/libdlna||2023-06-30|Has expired: Abandonware, development discontinued
 textproc/rubygem-ferret||2023-06-30|Has expired: Broken with all supported Ruby versions
+databases/py-pg8000-112|databases/py-pg8000|2023-06-30|Has expired: EOLd, use www/py-pg8000 instead
