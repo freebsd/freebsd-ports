@@ -190,7 +190,6 @@
     SUBDIR += metabase
     SUBDIR += mongodb-tools
     SUBDIR += mongodb40
-    SUBDIR += mongodb40-tools
     SUBDIR += mongodb42
     SUBDIR += mongodb42-tools
     SUBDIR += mongodb44
