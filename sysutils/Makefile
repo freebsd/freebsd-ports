@@ -732,7 +732,6 @@
     SUBDIR += mcelog
     SUBDIR += mcfly
     SUBDIR += mcollective
-    SUBDIR += mcollective-nettest-agent
     SUBDIR += mcollective-nettest-common
     SUBDIR += mcollective-nrpe-agent
     SUBDIR += mcollective-nrpe-common

@@ -7686,3 +7686,4 @@ sysutils/mcollective-nrpe-client||2023-06-30|Has expired: Depends on broken sysu
 sysutils/mcollective-puppet-agent||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective-puppet-client||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective-nettest-client||2023-06-30|Has expired: Depends on broken sysutils/mcollective
+sysutils/mcollective-nettest-agent||2023-06-30|Has expired: Depends on broken sysutils/mcollective
