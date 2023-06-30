@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cons>=0.4.0:devel/py-cons@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>0:devel/py-typing-extensions@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sympy>0:math/py-sympy@${PY_FLAVOR}
 
-USES=		python:3.7+
+USES=		python
 USE_PYTHON=	distutils autoplist pytest # tests fail due to etuples problems
 
 USE_GITHUB=	yes
