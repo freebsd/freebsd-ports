@@ -1,0 +1,9 @@
+--- pyproject.toml.orig	2022-12-22 14:58:28 UTC
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [project]
+-name = "PyVISA"
++name = "pyvisa"
+ description = "Python VISA bindings for GPIB, RS232, TCPIP and USB instruments"
+ readme = "README.rst"
+ requires-python = ">=3.8"
