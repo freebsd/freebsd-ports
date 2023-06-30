@@ -1,6 +1,6 @@
 PORTNAME=	kanshi
 DISTVERSIONPREFIX=	v
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~emersion/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
@@ -27,6 +27,6 @@ MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz \
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
-		${WRKSRC}/${PORTNAME}.5.scd
+		${WRKSRC}/doc/${PORTNAME}.5.scd
 
 .include <bsd.port.mk>
