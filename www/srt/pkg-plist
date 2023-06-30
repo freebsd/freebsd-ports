@@ -11,6 +11,6 @@ include/srt/version.h
 lib/libsrt.a
 lib/libsrt.so
 lib/libsrt.so.1.5
-lib/libsrt.so.1.5.1
+lib/libsrt.so.1.5.2
 libdata/pkgconfig/haisrt.pc
 libdata/pkgconfig/srt.pc

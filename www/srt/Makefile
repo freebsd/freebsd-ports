@@ -1,6 +1,6 @@
 PORTNAME=	srt
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.5.1
+DISTVERSION=	1.5.2
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,8 +44,10 @@ MBEDTLS_LIB_DEPENDS=		libmbedtls.so:security/mbedtls
 
 post-install-OPENSSL-on:
 	# fix .pc files
-	@${REINPLACE_CMD} -e 's|Requires.private: openssl libcrypto|Requires.private:|; s|Libs.private:.*|& -lssl -lcrypto|' \
+	@${REINPLACE_CMD} -i '' -e 's|Requires.private: openssl libcrypto|Requires.private:|; s|Libs.private:.*|& -lssl -lcrypto|' \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/srt.pc \
 		${STAGEDIR}${PREFIX}/libdata/pkgconfig/haisrt.pc
+
+# tests fail to compile, see https://github.com/Haivision/srt/issues/2758
 
 .include <bsd.port.mk>
