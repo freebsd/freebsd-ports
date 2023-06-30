@@ -7685,3 +7685,4 @@ sysutils/mcollective-actionpolicy-auth||2023-06-30|Has expired: Depends on broke
 sysutils/mcollective-nrpe-client||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective-puppet-agent||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective-puppet-client||2023-06-30|Has expired: Depends on broken sysutils/mcollective
+sysutils/mcollective-nettest-client||2023-06-30|Has expired: Depends on broken sysutils/mcollective
