@@ -1,9 +1,0 @@
-The Transifex Command-line Client is a command line tool that enables you
-to easily manage your translations within a project without the need of an
-elaborate UI system.
-
-You can use the command line client to easily create new resources, map
-locale files to translations and synchronize your Transifex project with
-your local repository and vice verca. Translators and localization managers
-can also use it to handle large volumes of translation files easily and
-without much hassle.

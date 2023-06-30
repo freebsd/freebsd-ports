@@ -1594,7 +1594,6 @@
     SUBDIR += py-toronado
     SUBDIR += py-towncrier
     SUBDIR += py-trans
-    SUBDIR += py-transifex-client
     SUBDIR += py-translationstring
     SUBDIR += py-transpopy
     SUBDIR += py-ttp

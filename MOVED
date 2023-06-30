@@ -7754,3 +7754,4 @@ print/ghostscript7-x11||2023-06-30|Has expired: Obsolete and unsupported upstrea
 print/ghostscript7-jpnfont||2023-06-30|Has expired: Obsolete and unsupported upstream
 print/ghostscript8-base||2023-06-30|Has expired: Obsolete and unsupported upstream, consider using a more recent version
 print/ghostscript8-x11||2023-06-30|Has expired: Obsolete and unsupported upstream
+textproc/py-transifex-client|textproc/go-transifex-client|2023-06-30|Has expired: Upstream switched to go based api client (textproc/go-transifex-client)
