@@ -30,10 +30,6 @@ ALL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packaging>=20.4:devel/py-packaging@${PY_
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
 .if ${PORT_OPTIONS:MALL} && ${PYTHON_REL} < 31100
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=1.2.1:textproc/py-tomli@${PY_FLAVOR}
 .endif
