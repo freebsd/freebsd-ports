@@ -57,8 +57,6 @@
     SUBDIR += freetype2
     SUBDIR += ft2demos
     SUBDIR += ghostscript10
-    SUBDIR += ghostscript8-base
-    SUBDIR += ghostscript8-x11
     SUBDIR += ghostscript9-agpl-base
     SUBDIR += ghostscript9-agpl-x11
     SUBDIR += gimp-gutenprint

@@ -7752,3 +7752,5 @@ print/ghostscript7-commfont||2023-06-30|Has expired: Obsolete and unsupported up
 print/ghostscript7-korfont||2023-06-30|Has expired: Obsolete and unsupported upstream
 print/ghostscript7-x11||2023-06-30|Has expired: Obsolete and unsupported upstream
 print/ghostscript7-jpnfont||2023-06-30|Has expired: Obsolete and unsupported upstream
+print/ghostscript8-base||2023-06-30|Has expired: Obsolete and unsupported upstream, consider using a more recent version
+print/ghostscript8-x11||2023-06-30|Has expired: Obsolete and unsupported upstream
