@@ -1,0 +1,20 @@
+--- ddtrace/vendor/psutil/arch/freebsd/sys_socks.c.orig	2023-06-01 14:26:07 UTC
++++ ddtrace/vendor/psutil/arch/freebsd/sys_socks.c
+@@ -175,7 +175,7 @@ int psutil_gather_inet(int proto, PyObject *py_retlist
+ 
+         char lip[200], rip[200];
+ 
+-        xf = psutil_get_file_from_sock(so->xso_so);
++        xf = psutil_get_file_from_sock((void *) so->xso_so);
+         if (xf == NULL)
+             continue;
+         lport = ntohs(inp->inp_lport);
+@@ -295,7 +295,7 @@ int psutil_gather_unix(int proto, PyObject *py_retlist
+         if (xup->xu_len != sizeof *xup)
+             goto error;
+ 
+-        xf = psutil_get_file_from_sock(xup->xu_socket.xso_so);
++        xf = psutil_get_file_from_sock((void *) xup->xu_socket.xso_so);
+         if (xf == NULL)
+             continue;
+ 
