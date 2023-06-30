@@ -424,6 +424,7 @@
     SUBDIR += linux-rl9-libogg
     SUBDIR += linux-rl9-libsndfile
     SUBDIR += linux-rl9-libvorbis
+    SUBDIR += linux-rl9-opus
     SUBDIR += linux-rl9-pulseaudio-libs
     SUBDIR += linuxsampler
     SUBDIR += linuxwave

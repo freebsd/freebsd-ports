@@ -133,6 +133,7 @@ _linux_${linux_ARGS}_openldap=		linux-${linux_ARGS}-openldap>0:net/linux-${linux
 _linux_c7_openmotif=			linux-c7-motif>0:x11-toolkits/linux-c7-openmotif
 _linux_c7_openssl-devel=		linux-c7-openssl-devel>0:security/linux-c7-openssl-devel
 _linux_c7_openssl=			${_linux_c7_base}
+_linux_rl9_opus=			linux-rl9-opus>0:audio/linux-rl9-opus
 _linux_${linux_ARGS}_p11-kit=		linux-${linux_ARGS}-p11-kit>0:security/linux-${linux_ARGS}-p11-kit
 _linux_${linux_ARGS}_pango=		linux-${linux_ARGS}-pango>0:x11-toolkits/linux-${linux_ARGS}-pango
 _linux_${linux_ARGS}_pixman=		linux-${linux_ARGS}-pixman>0:x11/linux-${linux_ARGS}-pixman
