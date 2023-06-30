@@ -1,6 +1,6 @@
 PORTNAME=	libtexluajit
 PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}
 PKGNAMEPREFIX=	tex-
@@ -19,7 +19,7 @@ BROKEN_powerpc64=	Does not build: uninitialized constant Config (NameError)
 BROKEN_riscv64=	Does not configure: error: Sorry, cannot preprocess lj_arch.h
 BROKEN_sparc64=	Does not configure: error: Sorry, cannot preprocess lj_arch.h
 
-USES=		libtool pathfix pkgconfig tar:xz tex
+USES=		compiler libtool pathfix pkgconfig tar:xz tex
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -30,10 +30,11 @@ EXTRACT_AFTER_ARGS=	${EXTRACT_FILES:S,^,${DISTNAME}/,}
 EXTRACT_FILES=	build-aux libs/luajit
 WRKSRC=		${WRKDIR}/${DISTNAME}/libs/luajit
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${ARCH} == powerpc
-USES+=		compiler:gcc-c++11-lib
+.if ${ARCH:Mpowerpc*} && ${COMPILER_VERSION} < 140
+BUILD_DEPENDS+= as:devel/binutils
+CFLAGS+=        -fno-integrated-as
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
