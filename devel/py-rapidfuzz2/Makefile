@@ -27,6 +27,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jarowinkler>=1.0.3:textproc/py-jarowinkler@$
 USES=		compiler:c++14-lang python
 USE_PYTHON=	autoplist concurrent distutils
 
+NO_ARCH=	yes
+
 PORTSCOUT=	limit:^2\.
 
 post-install:
