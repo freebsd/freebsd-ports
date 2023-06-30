@@ -7674,3 +7674,4 @@ emulators/qemu6||2023-06-30|Has expired: Version 8 is on the horizon while versi
 audio/gbemol||2023-06-30|Has expired: Unmaintained for years and depends on deprecated GTK2
 audio/glurp||2023-06-30|Has expired: Unmaintained for years and depends on deprecated GTK2
 finance/R-cran-ccgarch||2023-06-30|Has expired: Fails to build with R 4.3.0+ and abandoned upstream
+www/redmine42||2023-06-30|Has expired: Broken with all supported Ruby versions

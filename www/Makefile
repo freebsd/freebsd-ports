@@ -1846,7 +1846,6 @@
     SUBDIR += radicale
     SUBDIR += rearx
     SUBDIR += reddsaver
-    SUBDIR += redmine42
     SUBDIR += redmine50
     SUBDIR += rejik
     SUBDIR += remark42
