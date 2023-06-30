@@ -7737,3 +7737,4 @@ multimedia/vdr-plugin-ttxtsubs||2023-06-30|Has expired: Depends on abandoned for
 audio/pulseeffects||2023-06-30|Has expired: Broken for almost a year and abandoned upstream
 audio/libgroove||2023-06-30|Has expired: Fails to build with FFmpeg 6 and very little activity upstream
 multimedia/py-mlt6||2023-06-30|Has expired: Deprecated and unsupported upstream, please consider using multimedia/mlt7 instead
+multimedia/mlt6-qt5|multimedia/mlt7-qt|2023-06-30|Has expired: Deprecated and unsupported upstream, please consider using multimedia/mlt7 instead
