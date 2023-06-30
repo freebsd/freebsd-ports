@@ -27,11 +27,12 @@ LIB_DEPENDS=	libaudio.so:audio/nas \
 		libdbus-1.so:devel/dbus \
 		libffi.so:devel/libffi \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libasound.so:audio/alsa-lib \
 		libpulse-simple.so:audio/pulseaudio \
 		libv4l2.so:multimedia/libv4l
 
-USES=		gl gnome iconv pkgconfig xorg
+USES=		gl gnome iconv:wchar_t pkgconfig xorg
 USE_GL=		gl
 USE_GNOME=	cairo pango
 USE_XORG=	ice sm x11 xext xrender
@@ -62,10 +63,14 @@ IMAGES=		Squeak${IMAGE_FULL_VERSION}.image \
 		Squeak${IMAGE_FULL_VERSION}.changes \
 		${SQUEAK_SRC}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=int-conversion
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:
@@ -87,4 +92,4 @@ post-install:
 	${INSTALL_DATA} ${IMAGES:S,^,${WRKDIR}/,} \
 		${STAGEDIR}${PREFIX}/lib/squeak
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
