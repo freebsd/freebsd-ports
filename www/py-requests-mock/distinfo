@@ -1,3 +1,3 @@
-TIMESTAMP = 1662212198
-SHA256 (requests-mock-1.10.0.tar.gz) = 59c9c32419a9fb1ae83ec242d98e889c45bd7d7a65d48375cc243ec08441658b
-SIZE (requests-mock-1.10.0.tar.gz) = 72627
+TIMESTAMP = 1686496790
+SHA256 (requests-mock-1.11.0.tar.gz) = ef10b572b489a5f28e09b708697208c4a3b2b89ef80a9f01584340ea357ec3c4
+SIZE (requests-mock-1.11.0.tar.gz) = 74377
