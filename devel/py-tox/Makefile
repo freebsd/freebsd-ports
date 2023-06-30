@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}filelock>=3.0.0<4:sysutils/py-filelock@${PY_
 		${PYTHON_PKGNAMEPREFIX}py>=1.4.17<2:devel/py-py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.14.0<2:devel/py-six@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}toml>=0.9.4:textproc/py-toml@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}virtualenv>=16.0.0:devel/py-virtualenv@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flaky>=3.4.0:devel/py-flaky@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}freezegun>=0.3.11:devel/py-freezegun@${PY_FLAVOR} \
@@ -30,17 +31,8 @@ USE_PYTHON=	autoplist concurrent distutils pytest4
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30000
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0.12:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
-.if ${PYTHON_REL} >= 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>0:textproc/py-tomli@${PY_FLAVOR}
-.endif
 # tox.ini clobbers our pytest arguments
 post-extract:
 	${RM} ${WRKSRC}/tox.ini
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
