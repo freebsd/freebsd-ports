@@ -57,11 +57,6 @@
     SUBDIR += freetype2
     SUBDIR += ft2demos
     SUBDIR += ghostscript10
-    SUBDIR += ghostscript7-base
-    SUBDIR += ghostscript7-commfont
-    SUBDIR += ghostscript7-jpnfont
-    SUBDIR += ghostscript7-korfont
-    SUBDIR += ghostscript7-x11
     SUBDIR += ghostscript8-base
     SUBDIR += ghostscript8-x11
     SUBDIR += ghostscript9-agpl-base
