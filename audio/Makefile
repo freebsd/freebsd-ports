@@ -392,6 +392,7 @@
     SUBDIR += libopenshot-audio
     SUBDIR += libopenspc
     SUBDIR += libopusenc
+    SUBDIR += libremidi
     SUBDIR += libsamplerate
     SUBDIR += libshairport
     SUBDIR += libshout

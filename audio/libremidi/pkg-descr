@@ -1,0 +1,6 @@
+libremidi is a cross-platform C++17 library for real-time and MIDI file
+input and output.
+
+This is a fork based on two libraries:
+* RtMidi
+* ModernMIDI
