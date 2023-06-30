@@ -1,29 +1,36 @@
 PORTNAME=	envisage
-PORTVERSION=	4.9.0
-PORTREVISION=	1
+PORTVERSION=	7.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Enthought extensible application framework
-WWW=		http://code.enthought.com/projects/envisage
+WWW=		https://docs.enthought.com/envisage/ \
+		https://github.com/enthought/envisage
 
-LICENSE=	BSD3CLAUSE PSFL LGPL20
+LICENSE=	BSD3CLAUSE CC-BY-SA-1.0 CC-BY-SA-2.0 CC-BY-SA-2.5 CC-BY-SA-3.0 LGPL20 PSFL 
 LICENSE_COMB=	multi
-# See image_LICENSE.txt files for per file license information
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.txt
+LICENSE_FILE_LGPL20=	${WRKSRC}/image_LICENSE_CP.txt
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apptools>0:devel/py-apptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}traits>=4.5.0:devel/py-traits@${PY_FLAVOR}
-# Above requirements are defined in setup.py
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}apptools>=0:devel/py-apptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pyface>=0:devel/py-pyface@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traits>=6.2:devel/py-traits@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitsui>=0:graphics/py-traitsui@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517 unittest
 
 NO_ARCH=	yes
 
-do-test:
-	${PYTHON_CMD} -m unittest discover -v envisage
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+.if ${PYTHON_REL} < 30900
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.1.0:devel/py-importlib-resources@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
