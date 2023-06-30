@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-05-16 23:38:03 UTC
++++ pyproject.toml
+@@ -3,7 +3,7 @@ requires = ["setuptools>=42", "wheel", "setuptools_scm
+ build-backend = "setuptools.build_meta"
+ 
+ [project]
+-name = "MetPy"
++name = "metpy"
+ description = "Collection of tools for reading, visualizing and performing calculations with weather data."
+ readme = "README.md"
+ dynamic = ["version"]
