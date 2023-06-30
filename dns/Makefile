@@ -22,7 +22,6 @@
     SUBDIR += denominator
     SUBDIR += dhisd
     SUBDIR += djbdns
-    SUBDIR += djbdns-tools
     SUBDIR += dlint
     SUBDIR += dnrd
     SUBDIR += dns-ui
