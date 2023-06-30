@@ -22,7 +22,7 @@ USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 
-OPTION_DEFINE=	CRT
+OPTIONS_DEFINE=	CRT
 CRT_DESC=	Common runtime support
 
 CRT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}awscrt>=0.16.9:devel/py-awscrt@${PY_FLAVOR}
