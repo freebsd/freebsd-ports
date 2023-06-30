@@ -33,10 +33,4 @@ STANDARD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}httptools>=0.5.0:www/py-httptools@$
 			${PYTHON_PKGNAMEPREFIX}watchfiles>=0.13:devel/py-watchfiles@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}websockets>=10.4:devel/py-websockets@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
