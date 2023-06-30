@@ -1,0 +1,32 @@
+--- lookatme/parser.py.orig	2022-12-30 04:38:38 UTC
++++ lookatme/parser.py
+@@ -7,7 +7,7 @@ import re
+ from collections import defaultdict
+ from typing import AnyStr, Callable, Dict, List, Tuple
+ 
+-import mistune
++import mistune0 as mistune
+ 
+ from lookatme.schemas import MetaSchema
+ from lookatme.slide import Slide
+--- lookatme/render/markdown_block.py.orig	2022-12-30 04:38:38 UTC
++++ lookatme/render/markdown_block.py
+@@ -4,7 +4,7 @@ representations
+ """
+ 
+ 
+-import mistune
++import mistune0 as mistune
+ import pygments
+ import pygments.styles
+ import urwid
+--- requirements.txt.orig	2022-12-30 04:38:38 UTC
++++ requirements.txt
+@@ -1,6 +1,6 @@
+ marshmallow>=3.17.0,<4
+ Click>=7,<9
+ PyYAML>=5,<6
+-mistune>=0.8,<1
++mistune0>=0.8,<1
+ urwid>=2,<3
+ Pygments>=2,<3
