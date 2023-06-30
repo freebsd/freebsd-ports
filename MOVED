@@ -7708,3 +7708,4 @@ databases/py-caterva||2023-06-30|Has expired: Use archivers/py-blosc2 instead. A
 net-im/purple-hangouts||2023-06-30|Has expired: Google Hangouts discontinued 2022-11-01, data deleted 2023-01-01
 dns/ares||2023-06-30|Has expired: Deprecated upstream as of March 12, 2023
 security/rubygem-omniauth-cas3||2023-06-30|Has expired: Deprecated by upstream. The repository has been archived by the owner on Aug 23, 2022
+www/py-WebTest|www/py-webtest|2023-06-08|Use lowercase PORTNAME and path

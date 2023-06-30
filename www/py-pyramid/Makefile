@@ -1,5 +1,6 @@
 PORTNAME=	pyramid
 PORTVERSION=	1.7.3
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +22,7 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pastedeploy>=1.5.0:www/py-pastedeploy@${PY
 		${PYTHON_PKGNAMEPREFIX}zope.deprecation>=3.5.0:devel/py-zope.deprecation@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}zope.interface>=3.8.0:devel/py-zope.interface@${PY_FLAVOR}
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-#TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webtest>=1.1:www/py-WebTest@${PY_FLAVOR} \
+#TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}webtest>=1.1:www/py-webtest@${PY_FLAVOR} \
 #		${PYTHON_PKGNAMEPREFIX}zope.component>=3.6.0:devel/py-zope.component@${PY_FLAVOR}
 
 NO_ARCH=	yes

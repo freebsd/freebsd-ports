@@ -1,5 +1,6 @@
 PORTNAME=	WsgiDAV
 DISTVERSION=	3.1.0
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -26,7 +27,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=6.0:www/py-cheroot@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-html>=1.8:devel/py-pytest-html@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tox>=2.0:devel/py-tox@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}webtest>=2.0:www/py-WebTest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}webtest>=2.0:www/py-webtest@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	distutils autoplist
