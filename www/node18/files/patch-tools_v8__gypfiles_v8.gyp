@@ -1,4 +1,4 @@
---- tools/v8_gypfiles/v8.gyp.orig	2022-05-17 11:37:47 UTC
+--- tools/v8_gypfiles/v8.gyp.orig	2023-04-12 04:09:21 UTC
 +++ tools/v8_gypfiles/v8.gyp
 @@ -977,7 +977,7 @@
          }],

@@ -1,4 +1,4 @@
---- src/crypto/crypto_util.cc.orig	2023-06-06 21:00:49 UTC
+--- src/crypto/crypto_util.cc.orig	2023-04-12 04:09:19 UTC
 +++ src/crypto/crypto_util.cc
 @@ -195,10 +195,12 @@ void InitCryptoOnce() {
    // No-op with OPENSSL_NO_COMP builds of OpenSSL.
