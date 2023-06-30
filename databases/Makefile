@@ -209,8 +209,6 @@
     SUBDIR += mysql-connector-odbc-80
     SUBDIR += mysql-udf
     SUBDIR += mysql2pgsql
-    SUBDIR += mysql56-client
-    SUBDIR += mysql56-server
     SUBDIR += mysql57-client
     SUBDIR += mysql57-server
     SUBDIR += mysql80-client

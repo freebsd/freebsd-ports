@@ -10,7 +10,7 @@ WWW=		https://github.com/ateamsystems/ateam_mysql_ldap_auth
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-IGNORE_WITH_MYSQL=	56 80 101m 102m 103m
+IGNORE_WITH_MYSQL=	80 101m 102m 103m
 
 LIB_DEPENDS=	libconfig.so:devel/libconfig
 
