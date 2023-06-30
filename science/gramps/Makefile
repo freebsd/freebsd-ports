@@ -1,10 +1,9 @@
 PORTNAME=	gramps
-PORTVERSION=	5.1.5
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
+DISTVERSION=	5.1.6
 CATEGORIES=	science gnome python
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	GTK3-based genealogy program
 WWW=		https://gramps-project.org/
 
@@ -24,8 +23,6 @@ GH_ACCOUNT=	gramps-project
 USE_GNOME=	cairo gtk30 intltool librsvg2 pango pygobject3
 USE_PYTHON=	autoplist distutils noflavors
 
-CONFIGURE_ARGS=	--disable-mime-install
-
 NO_ARCH=	yes
 
 OPTIONS_DEFINE=		GEXIV GTKSPELL PIL RCS TTFFREEFONT
@@ -36,11 +33,11 @@ PIL_DESC=		Crop/convert images with Python Imaging Library (Pillow)
 RCS_DESC=		Manage revisions of family trees with with GNU RCS
 TTFFREEFONT_DESC=	More font support in reports
 
-GEXIV_LIB_DEPENDS=	libgexiv2.so:graphics/gexiv2
-GTKSPELL_LIB_DEPENDS=	libgtkspell3-3.so:textproc/gtkspell3
-PIL_RUN_DEPENDS=	${PY_PILLOW}
-RCS_RUN_DEPENDS=	rcsdiff:devel/rcs
-TTFFREEFONT_RUN_DEPENDS=${LOCALBASE}/share/fonts/freefont-ttf/FreeMono.ttf:x11-fonts/freefont-ttf
+GEXIV_LIB_DEPENDS=		libgexiv2.so:graphics/gexiv2
+GTKSPELL_LIB_DEPENDS=		libgtkspell3-3.so:textproc/gtkspell3
+PIL_RUN_DEPENDS=		${PY_PILLOW}
+RCS_RUN_DEPENDS=		rcsdiff:devel/rcs
+TTFFREEFONT_RUN_DEPENDS=	${LOCALBASE}/share/fonts/freefont-ttf/FreeMono.ttf:x11-fonts/freefont-ttf
 
 post-install:
 	${ECHO_CMD} -n ${PREFIX}/share > ${STAGEDIR}${PYTHON_SITELIBDIR}/gramps/gen/utils/resource-path
