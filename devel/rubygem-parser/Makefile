@@ -1,5 +1,5 @@
 PORTNAME=	parser
-PORTVERSION=	3.2.2.1
+PORTVERSION=	3.2.2.3
 CATEGORIES=	devel ruby
 MASTER_SITES=	RG
 
@@ -10,7 +10,8 @@ WWW=		https://github.com/whitequark/parser
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-RUN_DEPENDS=	rubygem-ast>=2.4.1<2.5:devel/rubygem-ast
+RUN_DEPENDS=	rubygem-ast>=2.4.1<2.5:devel/rubygem-ast \
+		rubygem-racc>=0:devel/rubygem-racc
 
 USES=		gem
 
