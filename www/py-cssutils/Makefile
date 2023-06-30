@@ -1,6 +1,5 @@
 PORTNAME=	cssutils
-PORTVERSION=	2.6.0
-PORTREVISION=	2
+PORTVERSION=	2.7.0
 PORTEPOCH=	1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
@@ -26,14 +25,8 @@ NO_ARCH=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=0:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKSRC}/examples/* ${STAGEDIR}${EXAMPLESDIR}/
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

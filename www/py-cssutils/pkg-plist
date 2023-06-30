@@ -1,3 +1,4 @@
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/build.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codec.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cssencodings.py
