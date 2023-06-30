@@ -464,7 +464,6 @@
     SUBDIR += npm
     SUBDIR += npm-node16
     SUBDIR += npm-node18
-    SUBDIR += npm-node19
     SUBDIR += npm-node20
     SUBDIR += oauth2-proxy
     SUBDIR += obhttpd

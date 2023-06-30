@@ -7668,3 +7668,4 @@ databases/mysac||2023-06-30|Has expired: Requires upstream EOL MySQL 5.6
 www/moodle311||2023-06-30|Has expired: Requires php80 which is set to expire on 2023-11-26
 www/moodle40||2023-06-30|Has expired: Requires php80 which is set to expire on 2023-11-26
 www/yarn-node19||2023-06-30|Has expired: This port depends on deprecated www/node19. Migrate to www/yarn-node18 or www/yarn-node20 instead
+www/npm-node19||2023-06-30|Has expired: This port depends on deprecated www/node19. Migrate to www/npm-node18 or www/npm-node20 instead
