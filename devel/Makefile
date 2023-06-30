@@ -1618,6 +1618,7 @@
     SUBDIR += mutagen
     SUBDIR += myrepos
     SUBDIR += nana
+    SUBDIR += nano-signal-slot
     SUBDIR += nanopb
     SUBDIR += nant
     SUBDIR += nasm
