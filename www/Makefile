@@ -415,7 +415,6 @@
     SUBDIR += mongoose
     SUBDIR += mongrel2
     SUBDIR += monolith
-    SUBDIR += moodle40
     SUBDIR += moodle41
     SUBDIR += moodle42
     SUBDIR += morty
