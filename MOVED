@@ -7675,3 +7675,4 @@ audio/gbemol||2023-06-30|Has expired: Unmaintained for years and depends on depr
 audio/glurp||2023-06-30|Has expired: Unmaintained for years and depends on deprecated GTK2
 finance/R-cran-ccgarch||2023-06-30|Has expired: Fails to build with R 4.3.0+ and abandoned upstream
 www/redmine42||2023-06-30|Has expired: Broken with all supported Ruby versions
+www/tomcat10||2023-06-30|Has expired: EOLd, potential security issues (https://tomcat.apache.org/tomcat-10.0-eol.html), use www/tomcat101 instead

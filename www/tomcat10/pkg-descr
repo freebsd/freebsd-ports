@@ -1,5 +1,0 @@
-Apache Tomcat is a web server written in 100% Pure Java.
-
-Apache Tomcat 10.0.x builds on Tomcat 9.0.x and implements the Servlet 5.0,
-JSP 3.0, EL 4.0, WebSocket 2.0 and Authentication 2.0 specifications
-(the versions required by Jakarta EE 9 platform).
