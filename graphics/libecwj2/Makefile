@@ -17,6 +17,7 @@ LICENSE_TEXT=	Registration required to download sources,\
 LICENSE_PERMS=	auto-accept
 
 USES=		gmake libtool zip
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
