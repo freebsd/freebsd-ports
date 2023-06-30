@@ -1,6 +1,10 @@
 PORTNAME=	cpu_rec_rs
+DISTVERSIONPREFIX=	release-
 DISTVERSION=	1.0.0
 CATEGORIES=	devel
+
+PATCH_SITES=	https://github.com/trou/${PORTNAME}/commit/
+PATCHFILES=	2b0cf547ce1eaa4b153c812f51bb9ab6928784cd.patch:-p1
 
 MAINTAINER=	se@FreeBSD.org
 COMMENT=	Determine which CPU architecture is used in a binary file
@@ -12,7 +16,6 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	trou
-GH_TAGNAME=	2b0cf54
 
 OPTIONS_DEFINE=	DOCS
 

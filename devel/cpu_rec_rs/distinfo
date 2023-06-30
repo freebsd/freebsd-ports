@@ -1,4 +1,4 @@
-TIMESTAMP = 1687951246
+TIMESTAMP = 1687970343
 SHA256 (rust/crates/anstream-0.3.2.crate) = 0ca84f3628370c59db74ee214b3263d58f9aadd9b4fe7e711fd87dc452b7f163
 SIZE (rust/crates/anstream-0.3.2.crate) = 19504
 SHA256 (rust/crates/anstyle-1.0.1.crate) = 3a30da5c5f2d5e72842e00bcb57657162cdabef0931f40e2deb9b4140440cecd
@@ -163,5 +163,7 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.42.2.crate) = 9aec5da331524158c6d1a4ac
 SIZE (rust/crates/windows_x86_64_msvc-0.42.2.crate) = 666936
 SHA256 (rust/crates/windows_x86_64_msvc-0.48.0.crate) = 1a515f5799fe4961cb532f983ce2b23082366b898e52ffbce459c86f67c8378a
 SIZE (rust/crates/windows_x86_64_msvc-0.48.0.crate) = 671422
-SHA256 (trou-cpu_rec_rs-1.0.0-2b0cf54_GH0.tar.gz) = a897ca3f53986577a3700654e5191bb09219e2439b3068f6ddf802f1f53eab15
-SIZE (trou-cpu_rec_rs-1.0.0-2b0cf54_GH0.tar.gz) = 10789793
+SHA256 (trou-cpu_rec_rs-release-1.0.0_GH0.tar.gz) = a10a8cdf469e42fa9f17c0a99bac17d4a565e47208b31439225347b61e377939
+SIZE (trou-cpu_rec_rs-release-1.0.0_GH0.tar.gz) = 10791028
+SHA256 (2b0cf547ce1eaa4b153c812f51bb9ab6928784cd.patch) = 87bb6dab96ba41cd1fbaaeacdf264b84bb569137c9cb4d0bc424c2f56e47235e
+SIZE (2b0cf547ce1eaa4b153c812f51bb9ab6928784cd.patch) = 1267
