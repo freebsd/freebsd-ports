@@ -7698,3 +7698,5 @@ sysutils/mcollective-puppet-common||2023-06-30|Has expired: Depends on broken sy
 sysutils/mcollective-nettest-common||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mnrpes||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective||2023-06-30|Has expired: Broken with all supported Ruby versions
+databases/mariadb104-server||2023-06-30|Has expired: Use databases/mariadb106-server
+databases/mariadb104-client||2023-06-30|Has expired: Use databases/mariadb106-client
