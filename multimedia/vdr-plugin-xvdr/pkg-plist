@@ -1,2 +1,0 @@
-lib/vdr/libvdr-xvdr.so.%%APIVERSION%%
-@sample etc/vdr/plugins/xvdr/allowed_hosts.conf.sample

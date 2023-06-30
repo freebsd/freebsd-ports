@@ -7710,3 +7710,27 @@ net-im/purple-hangouts||2023-06-30|Has expired: Google Hangouts discontinued 202
 dns/ares||2023-06-30|Has expired: Deprecated upstream as of March 12, 2023
 security/rubygem-omniauth-cas3||2023-06-30|Has expired: Deprecated by upstream. The repository has been archived by the owner on Aug 23, 2022
 graphics/ikona||2023-06-30|Has expired: abandoned upstream, broken
+multimedia/vdr-plugin-osdteletext||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-wirbelscan||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-control||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-markad||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-iptv||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-femon||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-sleeptimer||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-remote||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-infosatepg||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-reelchannelscan||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-extrecmenu||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-vdrmanager||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-vnsiserver||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-xvdr||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugins||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-eepg||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-xineliboutput||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr||2023-06-30|Has expired: Abandoned "work in progress" fork in 2015
+multimedia/vdr-plugin-osdpip||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-epgsearch||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-streamdev||2023-06-30|Has expired: Depends on abandoned fork of VDR
+www/vdr-plugin-live||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-skinenigmang||2023-06-30|Has expired: Depends on abandoned fork of VDR
+multimedia/vdr-plugin-ttxtsubs||2023-06-30|Has expired: Depends on abandoned fork of VDR

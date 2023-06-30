@@ -1,2 +1,0 @@
-lib/vdr/libvdr-vdrmanager.so.%%APIVERSION%%
-etc/vdr/plugins/plugin.vdrmanager.conf.sample
