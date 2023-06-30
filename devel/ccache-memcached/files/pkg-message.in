@@ -1,9 +1,0 @@
-[
-{ type: install
-  message: <<EOM
-NOTE:
-Please read %%DOCSDIR%%/%%HOWTO%% for
-information on using ccache with FreeBSD ports and src.
-EOM
-}
-]

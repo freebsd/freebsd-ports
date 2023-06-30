@@ -7741,3 +7741,5 @@ multimedia/mlt6-qt5|multimedia/mlt7-qt|2023-06-30|Has expired: Deprecated and un
 multimedia/mlt6|multimedia/mlt7|2023-06-30|Has expired: Deprecated and unsupported upstream, please consider using multimedia/mlt7 instead
 devel/electron19||2023-06-30|Has expired: EOLed upstream, switch to newer version
 devel/electron21||2023-06-30|Has expired: EOLed upstream, switch to newer version
+devel/ccache-memcached||2023-06-30|Has expired: Unmaintained fork that targets a very old version of ccache
+devel/ccache-memcached-static||2023-06-30|Has expired: Unmaintained fork that targets a very old version of ccache

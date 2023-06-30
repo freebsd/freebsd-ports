@@ -1,9 +1,0 @@
-bin/ccache
-bin/ccache-update-links
-@comment manpage requires extra dependencies
-%%DOCS%%man/man1/ccache.1.gz
-%%CCLINKDIR%%/world/ccache
-%%TINDERBOX%%%%DATADIR%%/ccache.tar
-@postexec echo "Create compiler links..."
-@postexec %D/bin/ccache-update-links -v
-@preunexec find %D/%%CCLINKDIR%% -type l -exec rm -f {} \;
