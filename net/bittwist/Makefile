@@ -1,5 +1,5 @@
 PORTNAME=	bittwist
-PORTVERSION=	3.1
+PORTVERSION=	3.2
 DISTVERSIONPREFIX=	bsd-
 CATEGORIES=	net
 MASTER_SITES=	SF/bittwist/BSD/Bit-Twist%20${PORTVERSION}
@@ -23,7 +23,7 @@ PLIST_FILES=	bin/bittwist \
 DOS2UNIX_FILES=	COPYING
 
 do-build:
-	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/src/bittwist.c -o ${WRKSRC}/src/bittwist
+	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/src/bittwist.c ${WRKSRC}/src/token_bucket.c -o ${WRKSRC}/src/bittwist
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/src/bittwiste.c -o ${WRKSRC}/src/bittwiste
 
 do-install:
