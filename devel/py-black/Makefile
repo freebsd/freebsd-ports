@@ -48,10 +48,6 @@ UVLOOP_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}uvloop>=0.15.2:devel/py-uvloop@${PY_F
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typed-ast>=1.4.2:devel/py-typed-ast@${PY_FLAVOR}
-.endif
-
 .if ${PYTHON_REL} < 31000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10.0.0:devel/py-typing-extensions@${PY_FLAVOR}
 .endif
