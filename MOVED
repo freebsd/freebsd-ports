@@ -7672,3 +7672,4 @@ www/npm-node19||2023-06-30|Has expired: This port depends on deprecated www/node
 www/node19||2023-06-30|Has expired: Nodejs 19.* will reach its EoL on 2023-06-01. Use Node.js 18.* (www/node18) or 20.* (www/node20) instead
 emulators/qemu6||2023-06-30|Has expired: Version 8 is on the horizon while version 7 is stable
 audio/gbemol||2023-06-30|Has expired: Unmaintained for years and depends on deprecated GTK2
+audio/glurp||2023-06-30|Has expired: Unmaintained for years and depends on deprecated GTK2
