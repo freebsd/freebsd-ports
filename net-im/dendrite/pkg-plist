@@ -11,9 +11,4 @@
 %%DOCSDIR%%/FAQ.md
 %%DOCSDIR%%/INSTALL.md
 %%DOCSDIR%%/README.md
-%%DOCSDIR%%/hiawatha/monolith-sample.conf
-%%DOCSDIR%%/hiawatha/polylith-sample.conf
 %%DOCSDIR%%/images/details-button-location.jpg
-%%DOCSDIR%%/nginx/monolith-sample.conf
-%%DOCSDIR%%/nginx/polylith-sample.conf
-%%DOCSDIR%%/systemd/monolith-example.service

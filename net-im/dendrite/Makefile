@@ -1,6 +1,6 @@
 PORTNAME=	dendrite
-DISTVERSIONPREFIX=	helm-dendrite-
-DISTVERSION=	0.12.3
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.13.0
 CATEGORIES=	net-im
 
 MAINTAINER=	ashish@FreeBSD.org
@@ -59,7 +59,7 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		codeclysm:extract:v2.2.0:codeclysm_extract/vendor/github.com/codeclysm/extract \
 		davecgh:go-spew:v1.1.1:davecgh_go_spew/vendor/github.com/davecgh/go-spew \
 		dgraph-io:ristretto:v0.1.1:dgraph_io_ristretto/vendor/github.com/dgraph-io/ristretto \
-		docker:distribution:v2.8.1:docker_distribution/vendor/github.com/docker/distribution \
+		docker:distribution:v2.8.2:docker_distribution/vendor/github.com/docker/distribution \
 		docker:go-connections:v0.4.0:docker_go_connections/vendor/github.com/docker/go-connections \
 		docker:go-units:v0.5.0:docker_go_units/vendor/github.com/docker/go-units \
 		dustin:go-humanize:v1.0.0:dustin_go_humanize/vendor/github.com/dustin/go-humanize \
@@ -70,7 +70,7 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		go-yaml:yaml:v2.4.0:go_yaml_yaml/vendor/gopkg.in/yaml.v2 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml_1/vendor/gopkg.in/yaml.v3 \
 		gogo:protobuf:v1.3.2:gogo_protobuf/vendor/github.com/gogo/protobuf \
-		golang:crypto:v0.8.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:crypto:v0.10.0:golang_crypto/vendor/golang.org/x/crypto \
 		golang:exp:47842c84f3db:golang_exp/vendor/golang.org/x/exp \
 		golang:geo:740aa86cb551:golang_geo/vendor/github.com/golang/geo \
 		golang:glog:v1.0.0:golang_glog/vendor/github.com/golang/glog \
@@ -78,12 +78,13 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		golang:mobile:b36e6246172e:golang_mobile/vendor/golang.org/x/mobile \
 		golang:mock:v1.6.0:golang_mock/vendor/github.com/golang/mock \
 		golang:mod:v0.8.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.9.0:golang_net/vendor/golang.org/x/net \
+		golang:net:v0.10.0:golang_net/vendor/golang.org/x/net \
 		golang:protobuf:v1.5.2:golang_protobuf/vendor/github.com/golang/protobuf \
 		golang:snappy:v0.0.4:golang_snappy/vendor/github.com/golang/snappy \
-		golang:sys:v0.7.0:golang_sys/vendor/golang.org/x/sys \
-		golang:term:v0.7.0:golang_term/vendor/golang.org/x/term \
-		golang:text:v0.9.0:golang_text/vendor/golang.org/x/text \
+		golang:sync:v0.1.0:golang_sync/vendor/golang.org/x/sync \
+		golang:sys:v0.9.0:golang_sys/vendor/golang.org/x/sys \
+		golang:term:v0.9.0:golang_term/vendor/golang.org/x/term \
+		golang:text:v0.10.0:golang_text/vendor/golang.org/x/text \
 		golang:time:v0.3.0:golang_time/vendor/golang.org/x/time \
 		golang:tools:v0.6.0:golang_tools/vendor/golang.org/x/tools \
 		gologme:log:v1.3.0:gologme_log/vendor/github.com/gologme/log \
@@ -106,7 +107,7 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		matrix-org:dugong:66e6b1c67e2e:matrix_org_dugong/vendor/github.com/matrix-org/dugong \
 		matrix-org:go-sqlite3-js:28aa791a1c91:matrix_org_go_sqlite3_js/vendor/github.com/matrix-org/go-sqlite3-js \
 		matrix-org:gomatrix:ceba4d9f7530:matrix_org_gomatrix/vendor/github.com/matrix-org/gomatrix \
-		matrix-org:gomatrixserverlib:ad26780a085c:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
+		matrix-org:gomatrixserverlib:f6e3c7f7b093:matrix_org_gomatrixserverlib/vendor/github.com/matrix-org/gomatrixserverlib \
 		matrix-org:pinecone:8c3b24f2649a:matrix_org_pinecone/vendor/github.com/matrix-org/pinecone \
 		matrix-org:util:399730281e66:matrix_org_util/vendor/github.com/matrix-org/util \
 		mattn:go-colorable:v0.1.13:mattn_go_colorable/vendor/github.com/mattn/go-colorable \
@@ -148,7 +149,7 @@ GH_TUPLE=	Arceliar:ironwood:45b4281814c2:arceliar_ironwood/vendor/github.com/Arc
 		quic-go:quic-go:v0.32.0:quic_go_quic_go/vendor/github.com/quic-go/quic-go \
 		remyoudompheng:bigfft:ef77025ab5aa:remyoudompheng_bigfft/vendor/github.com/remyoudompheng/bigfft \
 		rs:zerolog:v1.29.1:rs_zerolog/vendor/github.com/rs/zerolog \
-		sirupsen:logrus:v1.9.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
+		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus \
 		stretchr:testify:v1.8.2:stretchr_testify/vendor/github.com/stretchr/testify \
 		tidwall:gjson:v1.14.4:tidwall_gjson/vendor/github.com/tidwall/gjson \
 		tidwall:match:v1.1.1:tidwall_match/vendor/github.com/tidwall/match \
