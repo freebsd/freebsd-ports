@@ -10,6 +10,9 @@ WWW=		https://www.mpmath.org/
 
 LICENSE=	BSD3CLAUSE
 
+DEPRECATED=	Depends on expired math/py-gmpy
+EXPIRATION_DATE=2023-09-30
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy>=0:math/py-gmpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}setuptools_scm>0:devel/py-setuptools_scm@${PY_FLAVOR}
 
