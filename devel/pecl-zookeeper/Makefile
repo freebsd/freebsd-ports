@@ -1,10 +1,11 @@
 PORTNAME=	zookeeper
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.1
 CATEGORIES=	devel
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	PHP extension for interfacing with Apache ZooKeeper
-WWW=		https://pecl.php.net/package/zookeeper
+WWW=		https://pecl.php.net/package/zookeeper \
+		https://github.com/php-zookeeper/php-zookeeper
 
 LICENSE=	PHP301
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -14,8 +15,6 @@ LIB_DEPENDS=	libzookeeper_mt.so:devel/libzookeeper
 
 USES=		php:pecl
 USE_PHP=	session:build
-
-IGNORE_WITH_PHP=82 83
 
 PORTDATA=	zookeeper-api.php
 
