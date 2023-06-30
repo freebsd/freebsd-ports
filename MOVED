@@ -7665,3 +7665,4 @@ databases/mysqlwsrep56-server||2023-06-30|Has expired: Requires upstream EOL MyS
 databases/mysql56-server||2023-06-30|Has expired: Upstream support ended in February 2021
 databases/mysql56-client||2023-06-30|Has expired: Upstream support ended in February 2021
 databases/mysac||2023-06-30|Has expired: Requires upstream EOL MySQL 5.6
+www/moodle311||2023-06-30|Has expired: Requires php80 which is set to expire on 2023-11-26
