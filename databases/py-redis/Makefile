@@ -28,11 +28,6 @@ HIREDIS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hiredis>=1.0.0:databases/py-hiredis@
 
 .include <bsd.port.pre.mk>
 
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.0:devel/py-importlib-metadata@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typing-extensions>=0:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
 .if ${PYTHON_REL} <= 31102
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}async_timeout>=4.0.2:devel/py-async_timeout@${PY_FLAVOR}
 .endif
