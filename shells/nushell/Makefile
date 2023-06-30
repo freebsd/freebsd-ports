@@ -1,6 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.81.0
-PORTREVISION=	1
+DISTVERSION=	0.82.0
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +24,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		android_system_properties-0.1.5 \
 		anes-0.1.6 \
 		ansi-str-0.7.2 \
+		ansi-str-0.8.0 \
 		ansitok-0.2.0 \
 		anstyle-1.0.0 \
 		argminmax-0.6.1 \
@@ -32,7 +32,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.2 \
 		arrow-format-0.8.1 \
-		arrow2-0.17.1 \
+		arrow2-0.17.2 \
 		assert-json-diff-2.0.2 \
 		assert_cmd-2.0.11 \
 		async-stream-0.3.5 \
@@ -79,12 +79,15 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
 		clang-sys-1.6.1 \
-		clap-3.2.25 \
-		clap_lex-0.2.4 \
+		clap-4.3.2 \
+		clap_builder-4.3.1 \
+		clap_lex-0.5.0 \
 		codepage-0.1.1 \
 		colored-2.0.0 \
 		comfy-table-6.1.4 \
 		console-0.15.7 \
+		const-random-0.1.15 \
+		const-random-macro-0.1.15 \
 		const_format-0.2.30 \
 		const_format_proc_macros-0.2.29 \
 		convert_case-0.4.0 \
@@ -92,7 +95,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		core-foundation-sys-0.8.4 \
 		cpufeatures-0.2.7 \
 		crc32fast-1.3.2 \
-		criterion-0.4.0 \
+		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
 		critical-section-1.1.1 \
 		crossbeam-channel-0.5.8 \
@@ -102,13 +105,14 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		crossterm-0.25.0 \
 		crossterm-0.26.1 \
 		crossterm_winapi-0.9.0 \
+		crunchy-0.2.2 \
 		crypto-common-0.1.6 \
 		cssparser-0.29.6 \
 		cssparser-macros-0.6.0 \
 		csv-1.2.1 \
 		csv-core-0.1.10 \
 		ctor-0.1.26 \
-		ctrlc-3.3.1 \
+		ctrlc-3.4.0 \
 		dashmap-5.4.0 \
 		derive_more-0.99.17 \
 		dialoguer-0.10.4 \
@@ -117,11 +121,11 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		digest-0.10.7 \
 		dirs-next-2.0.0 \
 		dirs-sys-next-0.1.2 \
-		dlv-list-0.3.0 \
+		dlv-list-0.5.0 \
 		doc-comment-0.3.3 \
 		dtoa-0.4.8 \
 		dtoa-short-0.3.3 \
-		dtparse-1.4.0 \
+		dtparse-1.5.0 \
 		dyn-clone-1.0.11 \
 		ego-tree-0.6.2 \
 		either-1.8.1 \
@@ -223,7 +227,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		jobserver-0.1.26 \
 		joinery-2.1.0 \
 		js-sys-0.3.63 \
-		json-deserializer-0.4.4 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
@@ -238,6 +241,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		libgit2-sys-0.15.1+1.6.4 \
 		libloading-0.7.4 \
 		libm-0.2.7 \
+		libmimalloc-sys-0.1.33 \
 		libproc-0.13.0 \
 		libsqlite3-sys-0.26.0 \
 		libssh2-sys-0.3.0 \
@@ -262,6 +266,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		memoffset-0.8.0 \
 		miette-5.9.0 \
 		miette-derive-5.9.0 \
+		mimalloc-0.1.37 \
 		mime-0.3.17 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
@@ -270,7 +275,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		mio-0.8.6 \
 		mio-extras-2.0.6 \
 		miow-0.2.2 \
-		mockito-1.0.2 \
+		mockito-1.1.0 \
 		multiversion-0.7.2 \
 		multiversion-macros-0.7.2 \
 		native-tls-0.2.11 \
@@ -301,17 +306,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		number_prefix-0.4.0 \
 		objc-0.2.7 \
 		omnipath-0.1.6 \
-		once_cell-1.17.1 \
+		once_cell-1.18.0 \
 		oorandom-11.1.3 \
 		open-4.1.0 \
-		openssl-0.10.52 \
+		openssl-0.10.55 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-111.25.3+1.1.1t \
-		openssl-sys-0.9.87 \
-		ordered-multimap-0.4.3 \
+		openssl-sys-0.9.90 \
+		ordered-multimap-0.6.0 \
 		os_pipe-1.1.4 \
-		os_str_bytes-6.5.0 \
 		output_vt100-0.1.3 \
 		owo-colors-3.5.0 \
 		papergrid-0.9.0 \
@@ -325,7 +329,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		paste-1.0.12 \
 		pathdiff-0.2.1 \
 		peeking_take_while-0.1.2 \
-		percent-encoding-2.2.0 \
+		percent-encoding-2.3.0 \
 		peresil-0.3.0 \
 		phf-0.8.0 \
 		phf-0.10.1 \
@@ -347,19 +351,20 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		plotters-0.3.4 \
 		plotters-backend-0.3.4 \
 		plotters-svg-0.3.3 \
-		polars-0.29.0 \
-		polars-arrow-0.29.0 \
-		polars-core-0.29.0 \
-		polars-error-0.29.0 \
-		polars-io-0.29.0 \
-		polars-lazy-0.29.0 \
-		polars-ops-0.29.0 \
-		polars-pipe-0.29.0 \
-		polars-plan-0.29.0 \
-		polars-row-0.29.0 \
-		polars-sql-0.29.0 \
-		polars-time-0.29.0 \
-		polars-utils-0.29.0 \
+		polars-0.30.0 \
+		polars-arrow-0.30.0 \
+		polars-core-0.30.0 \
+		polars-error-0.30.0 \
+		polars-io-0.30.0 \
+		polars-json-0.30.0 \
+		polars-lazy-0.30.0 \
+		polars-ops-0.30.0 \
+		polars-pipe-0.30.0 \
+		polars-plan-0.30.0 \
+		polars-row-0.30.0 \
+		polars-sql-0.30.0 \
+		polars-time-0.30.0 \
+		polars-utils-0.30.0 \
 		pori-0.0.0 \
 		portable-atomic-0.3.20 \
 		portable-atomic-1.3.2 \
@@ -380,7 +385,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		pwd-1.4.0 \
 		quick-error-1.2.3 \
 		quick-xml-0.25.0 \
-		quick-xml-0.28.2 \
+		quick-xml-0.29.0 \
 		quickcheck-1.0.3 \
 		quickcheck_macros-1.0.0 \
 		quote-1.0.28 \
@@ -399,7 +404,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		reedline-0.20.0 \
+		reedline-0.21.0 \
 		regex-1.8.3 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.29 \
@@ -413,7 +418,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rust-embed-6.6.1 \
 		rust-embed-impl-6.5.0 \
 		rust-embed-utils-7.5.0 \
-		rust-ini-0.18.0 \
+		rust-ini-0.19.0 \
 		rust_decimal-1.29.1 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
@@ -436,17 +441,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_spanned-0.6.2 \
 		serde_urlencoded-0.7.1 \
 		serde_yaml-0.9.21 \
-		serial_test-1.0.0 \
-		serial_test_derive-1.0.0 \
+		serial_test-2.0.0 \
+		serial_test_derive-2.0.0 \
 		servo_arc-0.2.0 \
 		sha2-0.10.6 \
-		shadow-rs-0.22.0 \
+		shadow-rs-0.23.0 \
 		shell-words-1.1.0 \
 		shlex-1.1.0 \
 		signal-hook-0.3.15 \
 		signal-hook-mio-0.2.3 \
 		signal-hook-registry-1.4.1 \
-		simd-json-0.9.2 \
+		simd-json-0.10.3 \
 		simdutf8-0.1.4 \
 		similar-2.2.1 \
 		simplelog-0.12.1 \
@@ -458,8 +463,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		snap-1.1.0 \
 		socket2-0.4.9 \
 		spin-0.9.8 \
-		sqlparser-0.30.0 \
 		sqlparser-0.33.0 \
+		sqlparser-0.34.0 \
 		stable_deref_trait-1.2.0 \
 		static_assertions-1.1.0 \
 		streaming-decompression-0.1.2 \
@@ -478,10 +483,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		syn-1.0.109 \
 		syn-2.0.17 \
 		sys-locale-0.3.0 \
-		sysinfo-0.28.4 \
 		sysinfo-0.29.0 \
-		tabled-0.12.0 \
-		tabled_derive-0.6.0 \
+		tabled-0.12.2 \
 		target-features-0.1.4 \
 		tempfile-3.5.0 \
 		tendril-0.4.3 \
@@ -490,7 +493,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		terminal_size-0.2.6 \
 		termtree-0.4.1 \
 		textwrap-0.15.2 \
-		textwrap-0.16.0 \
 		thiserror-1.0.40 \
 		thiserror-impl-1.0.40 \
 		thread_local-1.1.7 \
@@ -498,6 +500,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		time-0.3.21 \
 		time-core-0.1.1 \
 		time-macros-0.2.9 \
+		tiny-keccak-2.0.2 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
