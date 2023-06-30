@@ -658,6 +658,7 @@
     SUBDIR += openfst
     SUBDIR += openlibm
     SUBDIR += openmesh
+    SUBDIR += openscop
     SUBDIR += opensolaris-libm
     SUBDIR += openturns
     SUBDIR += optpp
