@@ -7679,3 +7679,4 @@ www/tomcat10||2023-06-30|Has expired: EOLd, potential security issues (https://t
 databases/mongodb40-tools||2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
 databases/mongodb40||2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
 dns/djbdns-tools||2023-06-30|Has expired: No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
+dns/djbdns||2023-06-30|Has expired: No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
