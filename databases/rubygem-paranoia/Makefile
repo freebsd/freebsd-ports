@@ -1,5 +1,5 @@
 PORTNAME=	paranoia
-PORTVERSION=	2.6.1
+PORTVERSION=	2.6.2
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
