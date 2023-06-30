@@ -280,6 +280,7 @@
     SUBDIR += nsf
     SUBDIR += numchar
     SUBDIR += nut
+    SUBDIR += ola
     SUBDIR += ompl
     SUBDIR += ondir
     SUBDIR += onnx
