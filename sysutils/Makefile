@@ -732,7 +732,6 @@
     SUBDIR += mcelog
     SUBDIR += mcfly
     SUBDIR += mcollective
-    SUBDIR += mcollective-nettest-common
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdf2iso
