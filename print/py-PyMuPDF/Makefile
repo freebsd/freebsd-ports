@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	bash:shells/bash \
 		swig:devel/swig
 
-USES=		gmake python:3.7+
+USES=		gmake python
 USE_PYTHON=	autoplist concurrent distutils
 
 .include <bsd.port.mk>
