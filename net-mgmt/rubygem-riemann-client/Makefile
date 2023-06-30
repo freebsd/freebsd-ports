@@ -1,5 +1,5 @@
 PORTNAME=	riemann-client
-DISTVERSION=	1.1.0
+DISTVERSION=	1.2.0
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 

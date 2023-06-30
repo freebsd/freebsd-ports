@@ -1,3 +1,3 @@
-TIMESTAMP = 1677544007
-SHA256 (rubygem/riemann-client-1.1.0.gem) = d32146238a047dcc1fa30fa16d46818341016e5165146e7cf63843b821b0a596
-SIZE (rubygem/riemann-client-1.1.0.gem) = 23040
+TIMESTAMP = 1688160300
+SHA256 (rubygem/riemann-client-1.2.0.gem) = d623b4abd12058044b5ac335dc74384db81d64dd9e380d26029aa681d64998da
+SIZE (rubygem/riemann-client-1.2.0.gem) = 23040
