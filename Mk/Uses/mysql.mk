@@ -129,7 +129,7 @@ _MYSQL_SHLIB=	libmysqlclient
 .  if (${MYSQL_VER:C/[0-9]*//} == "m")
 _MYSQL_SERVER_FLAVOUR=	mariadb
 _MYSQL_CLIENT_FLAVOUR=	mariadb
-.    if ${MYSQL_VER:C/m//} >= 102
+.    if ${MYSQL_VER:C/m//} >= 103
 _MYSQL_SHLIB=	libmariadb
 .    endif
 .  elif (${MYSQL_VER:C/[0-9]*//} == "p")

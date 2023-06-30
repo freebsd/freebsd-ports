@@ -13,7 +13,7 @@ WWW=		https://typo3.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_WITH_MYSQL=	57 102m
+IGNORE_WITH_MYSQL=	57
 IGNORE_WITH_PHP=	80 82 83
 
 USES=		cpe php:web,flavors shebangfix
