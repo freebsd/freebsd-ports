@@ -34,7 +34,7 @@ LICENSE_FILE=		${WRKSRC}/LICENSE
 LICENSE_PERMS=		dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 DEPRECATED=		No longer supported by upstream.  Please use a newer version of OpenLDAP instead
-EXPIRATION_DATE=	2023-06-30
+EXPIRATION_DATE=	2023-09-30
 
 .if defined(CLIENT_ONLY)
 CONFLICTS_INSTALL=	${PORTNAME}2[0-3][5-9]-client ${PORTNAME}2[0-35-9]-client ${PORTNAME}-client
