@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python module for Ming which allows you to create Flash 4/5 movies
-WWW=		http://www.libming.org/
+WWW=		https://github.com/libming/libming
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
@@ -35,12 +35,6 @@ GH_PROJECT=	libming
 
 PORTSCOUT=	limit:^ming-
 
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ((${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000) || ${OSVERSION} >= 1400079)
-CFLAGS+=	-Wno-error=int-conversion
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local/|${LOCALBASE}/|g' ${WRKSRC}/py_ext/setup.py.in
 	@${LN} -fs ${LOCALBASE}/include/ming ${WRKSRC}/src
@@ -48,4 +42,4 @@ post-patch:
 post-install:
 	${FIND} ${STAGEDIR}${PYTHON_SITELIBDIR} -name '*.so' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
