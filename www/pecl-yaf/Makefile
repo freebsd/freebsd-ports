@@ -14,6 +14,6 @@ LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		localbase php:pecl
 
-IGNORE_WITH_PHP=83
+CFLAGS+=	-DZEND_HOT=
 
 .include <bsd.port.mk>
