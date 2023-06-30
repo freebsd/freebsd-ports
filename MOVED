@@ -7739,3 +7739,4 @@ audio/libgroove||2023-06-30|Has expired: Fails to build with FFmpeg 6 and very l
 multimedia/py-mlt6||2023-06-30|Has expired: Deprecated and unsupported upstream, please consider using multimedia/mlt7 instead
 multimedia/mlt6-qt5|multimedia/mlt7-qt|2023-06-30|Has expired: Deprecated and unsupported upstream, please consider using multimedia/mlt7 instead
 multimedia/mlt6|multimedia/mlt7|2023-06-30|Has expired: Deprecated and unsupported upstream, please consider using multimedia/mlt7 instead
+devel/electron19||2023-06-30|Has expired: EOLed upstream, switch to newer version
