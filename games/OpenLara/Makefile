@@ -1,5 +1,5 @@
 PORTNAME=	OpenLara
-DISTVERSION=	g20220827
+DISTVERSION=	g20230628
 CATEGORIES=	games
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -13,7 +13,7 @@ USES=		compiler:c++11-lang gl sdl
 USE_GL=		gl
 USE_GITHUB=	yes
 GH_ACCOUNT=	XProger
-GH_TAGNAME=	39c9be9
+GH_TAGNAME=	d2e363d
 USE_SDL=	sdl2
 
 PLIST_FILES=	bin/${PORTNAME}
