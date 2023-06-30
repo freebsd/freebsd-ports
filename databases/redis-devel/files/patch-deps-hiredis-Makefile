@@ -1,6 +1,6 @@
---- deps/hiredis/Makefile.orig	2021-01-12 14:21:03 UTC
+--- deps/hiredis/Makefile.orig	2023-06-29 16:32:01 UTC
 +++ deps/hiredis/Makefile
-@@ -21,7 +21,7 @@
+@@ -15,7 +15,7 @@ HIREDIS_PATCH=$(shell grep HIREDIS_PATCH hiredis.h | a
  HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
  
  # Installation related variables and target
@@ -9,21 +9,21 @@
  INCLUDE_PATH?=include/hiredis
  LIBRARY_PATH?=lib
  PKGCONF_PATH?=pkgconfig
-@@ -44,10 +44,8 @@
+@@ -38,10 +38,8 @@ export REDIS_TEST_CONFIG
  # Fallback to gcc when $CC is not in $PATH.
  CC:=$(shell sh -c 'type $${CC%% *} >/dev/null 2>/dev/null && echo $(CC) || echo gcc')
  CXX:=$(shell sh -c 'type $${CXX%% *} >/dev/null 2>/dev/null && echo $(CXX) || echo g++')
 -OPTIMIZATION?=-O3
  WARNINGS=-Wall -W -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers
 -DEBUG_FLAGS?= -g -ggdb
--REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CPPFLAGS) $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS)
-+REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS)
+-REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CPPFLAGS) $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(PLATFORM_FLAGS)
++REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(PLATFORM_FLAGS)
  REAL_LDFLAGS=$(LDFLAGS)
  
  DYLIBSUFFIX=so
-@@ -83,7 +81,16 @@
-   CFLAGS+=-I$(OPENSSL_PREFIX)/include
-   SSL_LDFLAGS+=-L$(OPENSSL_PREFIX)/lib -lssl -lcrypto
+@@ -122,7 +120,16 @@ ifeq ($(uname_S),FreeBSD)
+ else
+   REAL_CFLAGS+=-pedantic
  endif
 -
 +ifeq ($(uname_S),FreeBSD)
