@@ -96,7 +96,6 @@
     SUBDIR += libasr
     SUBDIR += libasr-devel
     SUBDIR += libbind
-    SUBDIR += libdjbdns
     SUBDIR += libidn
     SUBDIR += libidn2
     SUBDIR += libmicrodns
