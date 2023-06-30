@@ -7691,3 +7691,4 @@ sysutils/mcollective-service-agent||2023-06-30|Has expired: Depends on broken sy
 sysutils/mcollective-service-client||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective-shell-client||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective-shell-agent||2023-06-30|Has expired: Depends on broken sysutils/mcollective
+sysutils/mcollective-nrpe-agent||2023-06-30|Has expired: Depends on broken sysutils/mcollective

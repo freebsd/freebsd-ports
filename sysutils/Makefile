@@ -733,7 +733,6 @@
     SUBDIR += mcfly
     SUBDIR += mcollective
     SUBDIR += mcollective-nettest-common
-    SUBDIR += mcollective-nrpe-agent
     SUBDIR += mcollective-nrpe-common
     SUBDIR += mcollective-puppet-common
     SUBDIR += mcollective-service-common
