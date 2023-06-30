@@ -6,7 +6,7 @@ MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-
 PKGNAMESUFFIX=		-119
 .endif
 
-DEPECATED=		Desupported by MIT following 1.21
+DEPRECATED=		Desupported by MIT following 1.21
 EXPIRATION_DATE=	2024-06-06
 
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
