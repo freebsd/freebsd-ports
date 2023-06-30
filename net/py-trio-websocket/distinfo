@@ -1,3 +1,3 @@
-TIMESTAMP = 1684104292
-SHA256 (trio-websocket-0.10.2.tar.gz) = af13e9393f9051111300287947ec595d601758ce3d165328e7d36325135a8d62
-SIZE (trio-websocket-0.10.2.tar.gz) = 26079
+TIMESTAMP = 1686496774
+SHA256 (trio-websocket-0.10.3.tar.gz) = 1a748604ad906a7dcab9a43c6eb5681e37de4793ba0847ef0bc9486933ed027b
+SIZE (trio-websocket-0.10.3.tar.gz) = 26119
