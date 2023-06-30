@@ -5912,6 +5912,7 @@
     SUBDIR += qtcreator
     SUBDIR += quantum
     SUBDIR += quickcheck++
+    SUBDIR += quickcpplib
     SUBDIR += quilt
     SUBDIR += qxlsx
     SUBDIR += rabs
