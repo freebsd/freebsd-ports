@@ -737,7 +737,6 @@
     SUBDIR += mcollective-nrpe-common
     SUBDIR += mcollective-puppet-common
     SUBDIR += mcollective-service-common
-    SUBDIR += mcollective-shell-agent
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdf2iso
