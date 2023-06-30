@@ -1,0 +1,5 @@
+bin/delta
+bin/multidelta
+bin/topformflat
+%%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/README_using_delta.md

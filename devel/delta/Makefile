@@ -1,26 +1,31 @@
 PORTNAME=	delta
-PORTVERSION=	2006.08.03
-PORTREVISION=	1
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	2020-06-22
 CATEGORIES=	devel
-MASTER_SITES=	LOCAL/eadler/delta
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Heuristically minimizes interesting files
-WWW=		http://delta.tigris.org/
+WWW=		https://github.com/dsw/delta/
 
 LICENSE=	BSD2CLAUSE
 
-PLIST_FILES=	bin/delta bin/multidelta bin/topformflat
-
 USES=		gmake perl5 shebangfix
+USE_GITHUB=	yes
+GH_ACCOUNT=	dsw
 USE_PERL5=	run
-SHEBANG_FILES=	delta multidelta
+SHEBANG_FILES=	delta multidelta test0_delta/hello.test test*_multidelta/testit
+
+TEST_TARGET=	check
 
 CONFLICTS_INSTALL=	git-delta
+
+OPTIONS_DEFINE=	DOCS
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/delta ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/multidelta ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/topformflat ${STAGEDIR}${PREFIX}/bin
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/*.md ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
