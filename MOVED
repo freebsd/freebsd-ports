@@ -7673,3 +7673,4 @@ www/node19||2023-06-30|Has expired: Nodejs 19.* will reach its EoL on 2023-06-01
 emulators/qemu6||2023-06-30|Has expired: Version 8 is on the horizon while version 7 is stable
 audio/gbemol||2023-06-30|Has expired: Unmaintained for years and depends on deprecated GTK2
 audio/glurp||2023-06-30|Has expired: Unmaintained for years and depends on deprecated GTK2
+finance/R-cran-ccgarch||2023-06-30|Has expired: Fails to build with R 4.3.0+ and abandoned upstream

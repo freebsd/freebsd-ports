@@ -4,7 +4,6 @@
     SUBDIR += R-cran-PerformanceAnalytics
     SUBDIR += R-cran-RFinanceYJ
     SUBDIR += R-cran-TTR
-    SUBDIR += R-cran-ccgarch
     SUBDIR += R-cran-fBasics
     SUBDIR += R-cran-fGarch
     SUBDIR += R-cran-gmm
