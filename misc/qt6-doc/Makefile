@@ -17,5 +17,6 @@ USE_QT=		base declarative tools \
 
 ALL_TARGET=	docs
 INSTALL_TARGET=	install_docs
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
