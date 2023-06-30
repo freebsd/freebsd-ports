@@ -1,5 +1,5 @@
 PORTNAME=	rufus-scheduler
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
