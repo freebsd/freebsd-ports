@@ -1,12 +1,23 @@
-Handles the OAuth2 and OpenID Connect authentication process flow from the
-client side.
+Iddawc is a C library used to implement OAuth2/OIDC clients according to the
+OAuth2 RFC and the OpenID Connect Specs.
 
-* Generates requests based on input parameters
-* Parses response
-* Validates response values
+It's based on Ulfius library for the HTTP requests and response management and
+Rhonabwy library for the JOSE management.
 
-Supported response_types: code, token, id_token, password, client_credentials,
-refresh_token, device_code
-
-Supported client authentication methods: client_secret_basic,
-client_secret_post, client_secret_jwt, private_key_jwt
+Iddawc supports the following features:
+- Loading openid-configuration endpoints and parsing the results
+- Making auth requests using the given parameters (client_id, client_secret,
+  redirect_uri, etc.) and parsing the result
+- Making token requests using the given parameters (code, client_id,
+  client_secret, redirect_uri, etc.) and parsing the result
+- Making userinfo, token introspection, token revocation requests
+- Parse responses, validate id_token
+- Registering new clients using the register endpoint if any
+- Sending signed and or encrypted requests in the auth and token endpoints
+- Client TLS Authentication available
+- Making Pushed Auth Requests
+- Making Rich Auth Requests
+- Adding claims to requests
+- Sending DPoP proofs
+- JWT Secured Authorization Response Mode
+- End session and single-logout functionalities

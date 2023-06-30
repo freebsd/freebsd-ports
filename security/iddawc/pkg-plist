@@ -1,9 +1,10 @@
 bin/idwcc
 include/iddawc-cfg.h
 include/iddawc.h
+lib/libiddawc.a
 lib/libiddawc.so
 lib/libiddawc.so.1.1
-lib/libiddawc.so.%%DISTVERSION%%
+lib/libiddawc.so.%%PORTVERSION%%
 libdata/pkgconfig/libiddawc.pc
 share/idwcc/webapp/callback.html
 share/idwcc/webapp/css/bootstrap.css
