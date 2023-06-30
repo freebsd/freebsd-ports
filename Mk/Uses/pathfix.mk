@@ -27,7 +27,8 @@ pathfix:
 .  if ${USES:Mcmake*}
 .    for file in ${PATHFIX_CMAKELISTSTXT}
 	@${FIND} ${PATHFIX_WRKSRC} -name "${file}" -type f | ${XARGS} ${FRAMEWORK_REINPLACE_CMD} -e \
-		's|[{]CMAKE_INSTALL_LIBDIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
+		's|[{]CMAKE_INSTALL_FULL_LIBDIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
+		s|[{]CMAKE_INSTALL_LIBDIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
 		s|[{]CMAKE_INSTALL_DATAROOTDIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
 		s|[{]INSTALL_LIB_DIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
 		s|[{]INSTALL_LIBDIR[}]/pkgconfig|{CMAKE_INSTALL_PREFIX}/libdata/pkgconfig|g ; \
