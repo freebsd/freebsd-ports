@@ -1,3 +1,48 @@
+  <vuln vid="d821956f-1753-11ee-ad66-1c61b4739ac9">
+    <topic>SoftEtherVPN -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>softether</name>
+	<range><lt>4.42.9798</lt></range>
+      </package>
+      <package>
+	<name>softether-devel</name>
+	<range><lt>4.42.9798</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Daiyuu Nobori reports:</p>
+	<blockquote cite="https://www.softether.org/9-about/News/904-SEVPN202301">
+	  <p>The SoftEther VPN project received a high level code review and technical assistance from Cisco Systems, Inc. of the United States from April to June 2023 to fix several vulnerabilities in the SoftEther VPN code.</p>
+	  <p>The risk of exploitation of any of the fixed vulnerabilities is low under normal usage and environment, and actual attacks are very difficult. However, SoftEther VPN is now an open source VPN software used by 7.4 million unique users worldwide, and is used daily by many users to defend against the risk of blocking attacks by national censorship firewalls and attempts to eavesdrop on communications. Therefore, as long as the slightest attack possibility exists, there is great value in preventing vulnerabilities as much as possible in anticipation of the most sophisticated cyber attackers in the world, such as malicious ISPs and man-in-the-middle attackers on national Internet communication channels. These fixes are important and useful patches for users who use SoftEther VPN and the Internet for secure communications to prevent advanced attacks that can theoretically be triggered by malicious ISPs and man-in-the-middle attackers on national Internet communication pathways.</p>
+	  <p>The fixed vulnerabilities are CVE-2023-27395, CVE-2023-22325, CVE-2023-32275, CVE-2023-27516, CVE-2023-32634, and CVE-2023-31192. All of these were discovered in an outstanding code review of SoftEther VPN by Cisco Systems, Inc.</p>
+	  <ol>
+	    <li>CVE-2023-27395: Heap overflow in SoftEther VPN DDNS client functionality at risk of crashing and theoretically arbitrary code execution caused by a malicious man-in-the-middle attacker such like ISP-level or on national Internet communication channels</li>
+	    <li>CVE-2023-22325: Integer overflow in the SoftEther VPN DDNS client functionality could result in crashing caused by a malicious man-in-the-middle attacker such like ISP-level or on national Internet communication channels</li>
+	    <li>CVE-2023-32275: Vulnerability that allows the administrator himself of a 32-bit version of VPN Client or VPN Server to see the 32-bit value heap address of each of trusted CA's certificates in the VPN process</li>
+	    <li>CVE-2023-27516: If the user forget to set the administrator password of SoftEther VPN Client and enable remote administration with blank password, the administrator password of VPN Client can be changed remotely or VPN client can be used remotely by anonymouse third person</li>
+	    <li>CVE-2023-32634: If an attacker succeeds in launching a TCP relay program on the same port as the VPN Client on a local computer running the SoftEther VPN Client before the VPN Client process is launched, the TCP relay program can conduct a man-in-the-middle attack on communication between the administrator and the VPN Client process</li>
+	    <li>CVE-2023-31192: When SoftEther VPN Client connects to an untrusted VPN Server, an invalid redirection response for the clustering (load balancing) feature causes 20 bytes of uninitialized stack space to be read</li>
+	  </ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-27395</cvename>
+      <cvename>CVE-2023-22325</cvename>
+      <cvename>CVE-2023-32275</cvename>
+      <cvename>CVE-2023-27516</cvename>
+      <cvename>CVE-2023-32634</cvename>
+      <cvename>CVE-2023-31192</cvename>
+      <url>https://www.softether.org/9-about/News/904-SEVPN202301</url>
+    </references>
+    <dates>
+      <discovery>2023-06-30</discovery>
+      <entry>2023-06-30</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="06428d91-152e-11ee-8b14-dbdd62da85fb">
     <topic>OpenEXR -- heap buffer overflow in internal_huf_decompress</topic>
     <affects>
