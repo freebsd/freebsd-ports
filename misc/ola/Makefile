@@ -1,5 +1,6 @@
 PORTNAME=	ola
 DISTVERSION=	0.10.9
+PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	https://github.com/OpenLightingProject/ola/releases/download/${DISTVERSION}/
 
@@ -10,6 +11,7 @@ WWW=		https://www.openlighting.org/ola/
 LICENSE=	GPLv2+
 
 LIB_DEPENDS=	libavahi-common.so:net/avahi-app \
+		libftdi1.so:devel/libftdi1 \
 		libmicrohttpd.so:www/libmicrohttpd \
 		libprotobuf.so:devel/protobuf \
 		libuuid.so:misc/e2fsprogs-libuuid
