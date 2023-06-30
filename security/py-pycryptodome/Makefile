@@ -1,5 +1,5 @@
 PORTNAME=	pycryptodome
-DISTVERSION=	3.16.0
+DISTVERSION=	3.18.0
 CATEGORIES=	security python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pycryptodome-test-vectors>=0:security/py-pycryptodome-test-vectors@${PY_FLAVOR}
 
-# Officially: 2.7, 3.5-3.10
+# Officially: 2.7, 3.5-3.11
 USES=		cpe python
 CPE_VENDOR=	python
 USE_PYTHON=	autoplist distutils
