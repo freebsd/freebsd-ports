@@ -213,7 +213,6 @@
     SUBDIR += funktrackergold
     SUBDIR += furnace
     SUBDIR += ganv
-    SUBDIR += gbemol
     SUBDIR += gbsplay
     SUBDIR += geonkick-lv2
     SUBDIR += ggwave
