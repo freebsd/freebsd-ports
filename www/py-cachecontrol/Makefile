@@ -7,7 +7,7 @@ DISTNAME=	CacheControl-${PORTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Caching algorithms in httplib2 for use with requests session object
-WWW=		https://github.com/ionrock/cachecontrol
+WWW=		https://github.com/psf/cachecontrol
 
 LICENSE=	APACHE20
 
@@ -19,7 +19,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cherrypy>0:www/py-cherrypy@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils pytest
 NO_ARCH=	yes
-REINPLACE_ARGS=	-i ''
 
 CONFLICTS_INSTALL=	py*-cachecontrol # bin/doesitcache
 
