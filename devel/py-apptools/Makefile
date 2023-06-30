@@ -1,5 +1,6 @@
 PORTNAME=	apptools
 DISTVERSION=	5.2.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -8,17 +9,16 @@ MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Enthought application tools
 WWW=		https://docs.enthought.com/apptools
 
-LICENSE=	BSD3CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-# See ${WRKSRC}/image_LICENSE.txt for information that other
-# files *LICENSE* are not used
+LICENSE=	BSD3CLAUSE LGPL20
+LICENSE_COMB=	multi
+LICENSE_FILE_BSD3CLAUSE=${WRKSRC}/LICENSE.txt
+LICENSE_FILE_LGPL20=	${WRKSRC}/image_LICENSE_CP.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.0.1:devel/py-setuptools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}wheel>=0.40.0:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}traitsui>=0:graphics/py-traitsui@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}configobj>=5.0.:devel/py-configobj@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
-# The requirements are defined in apptools/__init__.py
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=0:devel/py-configobj@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traits>=6.2.0:devel/py-traits@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}traitsui>=0:graphics/py-traitsui@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist pep517
