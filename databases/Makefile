@@ -217,7 +217,6 @@
     SUBDIR += mysql80-client
     SUBDIR += mysql80-server
     SUBDIR += mysqlbackup
-    SUBDIR += mysqlbigram
     SUBDIR += mysqldump-secure
     SUBDIR += mysqlreport
     SUBDIR += mysqlsla
