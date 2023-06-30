@@ -7683,3 +7683,4 @@ dns/djbdns||2023-06-30|Has expired: No longer compliant with current DNS standar
 dns/libdjbdns||2023-06-30|Has expired: No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
 sysutils/mcollective-actionpolicy-auth||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective-nrpe-client||2023-06-30|Has expired: Depends on broken sysutils/mcollective
+sysutils/mcollective-puppet-agent||2023-06-30|Has expired: Depends on broken sysutils/mcollective
