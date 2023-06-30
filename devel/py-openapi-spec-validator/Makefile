@@ -28,7 +28,7 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
-OPTION_DEIFNE=	REQUESTS
+OPTIONS_DEFINE=	REQUESTS
 REQUESTS_DESC=	Requests support
 
 REQUESTS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR}
