@@ -1,11 +1,11 @@
 bin/netron
 %%PYTHON_SITELIBDIR%%/netron/__init__.py
-%%PYTHON_SITELIBDIR%%/netron/__pycache__/__init__.%%PYTHON_CPYTHON%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/netron/__pycache__/__init__.%%PYTHON_CPYTHON%%.pyc
-%%PYTHON_SITELIBDIR%%/netron/__pycache__/__version__.%%PYTHON_CPYTHON%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/netron/__pycache__/__version__.%%PYTHON_CPYTHON%%.pyc
-%%PYTHON_SITELIBDIR%%/netron/__pycache__/server.%%PYTHON_CPYTHON%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/netron/__pycache__/server.%%PYTHON_CPYTHON%%.pyc
+%%PYTHON_SITELIBDIR%%/netron/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/netron/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/netron/__pycache__/__version__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/netron/__pycache__/__version__.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/netron/__pycache__/server.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/netron/__pycache__/server.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/netron/__version__.py
 %%PYTHON_SITELIBDIR%%/netron/armnn-metadata.json
 %%PYTHON_SITELIBDIR%%/netron/armnn-schema.js

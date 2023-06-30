@@ -19,8 +19,6 @@ USE_PYTHON=	distutils noflavors
 
 NO_ARCH=	yes
 
-PLIST_SUB=	PYTHON_CPYTHON=cpython-${PYTHON_VER:S/.//}
-
 post-extract:
 	@${RLN} ${WRKDIR}/node_modules ${WRKSRC}/node_modules
 
