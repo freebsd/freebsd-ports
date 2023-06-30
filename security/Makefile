@@ -1262,6 +1262,7 @@
     SUBDIR += sslscan
     SUBDIR += sslsplit
     SUBDIR += sssd
+    SUBDIR += sssd-devel
     SUBDIR += ssss
     SUBDIR += sst
     SUBDIR += starttls

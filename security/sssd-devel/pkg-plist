@@ -1,0 +1,170 @@
+bin/sss_ssh_authorizedkeys
+bin/sss_ssh_knownhostsproxy
+etc/pam.d/sssd-shadowutils
+%%ETCDIR%%/sssd.conf.sample
+include/ipa_hbac.h
+include/sss_certmap.h
+include/sss_idmap.h
+include/sss_nss_idmap.h
+lib/krb5/plugins/authdata/sssd_pac_plugin.so
+lib/krb5/plugins/libkrb5/sssd_krb5_locator_plugin.so
+lib/libipa_hbac.so
+lib/libipa_hbac.so.0
+lib/libipa_hbac.so.0.1.0
+lib/libnss_sss.so.2
+lib/libsss_certmap.so
+lib/libsss_certmap.so.0
+lib/libsss_certmap.so.0.2.0
+lib/libsss_idmap.so
+lib/libsss_idmap.so.0
+lib/libsss_idmap.so.0.5.1
+lib/libsss_nss_idmap.so
+lib/libsss_nss_idmap.so.0
+lib/libsss_nss_idmap.so.0.6.0
+lib/libsss_sudo.so
+lib/nss_sss.so.1
+lib/pam_sss.so
+lib/pam_sss_gss.so
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.0-py%%PYTHON_VER%%.egg-info/PKG-INFO
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.0-py%%PYTHON_VER%%.egg-info/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.0-py%%PYTHON_VER%%.egg-info/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig-2.9.0-py%%PYTHON_VER%%.egg-info/top_level.txt
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/sssdoptions%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/SSSDConfig/ipachangeconf.py
+%%PYTHON_SITELIBDIR%%/SSSDConfig/sssdoptions.py
+%%PYTHON_SITELIBDIR%%/pyhbac.so
+%%PYTHON_SITELIBDIR%%/pysss.so
+%%PYTHON_SITELIBDIR%%/pysss_murmur.so
+%%PYTHON_SITELIBDIR%%/pysss_nss_idmap.so
+%%PYTHON_SITELIBDIR%%/sssd/__init__.py
+%%PYTHON_SITELIBDIR%%/sssd/modules/__init__.py
+%%PYTHON_SITELIBDIR%%/sssd/modules/request.py
+%%PYTHON_SITELIBDIR%%/sssd/parser.py
+%%PYTHON_SITELIBDIR%%/sssd/source_files.py
+%%PYTHON_SITELIBDIR%%/sssd/source_journald.py
+%%PYTHON_SITELIBDIR%%/sssd/source_reader.py
+%%PYTHON_SITELIBDIR%%/sssd/sss_analyze.py
+lib/samba4/modules/idmap/sss.so
+lib/shared-modules/ldb/memberof.so
+lib/sssd/conf/sssd.conf
+lib/sssd/libifp_iface.so
+lib/sssd/libifp_iface_sync.so
+lib/sssd/libsss_ad.so
+lib/sssd/libsss_cert.so
+lib/sssd/libsss_child.so
+lib/sssd/libsss_crypt.so
+lib/sssd/libsss_debug.so
+lib/sssd/libsss_files.so
+lib/sssd/libsss_iface.so
+lib/sssd/libsss_iface_sync.so
+lib/sssd/libsss_ipa.so
+lib/sssd/libsss_krb5.so
+lib/sssd/libsss_krb5_common.so
+lib/sssd/libsss_ldap.so
+lib/sssd/libsss_ldap_common.so
+lib/sssd/libsss_proxy.so
+lib/sssd/libsss_sbus.so
+lib/sssd/libsss_sbus_sync.so
+lib/sssd/libsss_semanage.so
+lib/sssd/libsss_simple.so
+lib/sssd/libsss_util.so
+lib/sssd/modules/sssd_krb5_idp_plugin.so
+lib/sssd/modules/sssd_krb5_localauth_plugin.so
+lib/sssd/modules/sssd_krb5_passkey_plugin.so
+libdata/pkgconfig/ipa_hbac.pc
+libdata/pkgconfig/sss_certmap.pc
+libdata/pkgconfig/sss_idmap.pc
+libdata/pkgconfig/sss_nss_idmap.pc
+libexec/sssd/gpo_child
+libexec/sssd/krb5_child
+libexec/sssd/ldap_child
+libexec/sssd/oidc_child
+libexec/sssd/p11_child
+libexec/sssd/passkey_child
+libexec/sssd/proxy_child
+libexec/sssd/sss_analyze
+libexec/sssd/sss_signal
+libexec/sssd/sssd_be
+libexec/sssd/sssd_ifp
+libexec/sssd/sssd_kcm
+libexec/sssd/sssd_nss
+libexec/sssd/sssd_pac
+libexec/sssd/sssd_pam
+libexec/sssd/sssd_ssh
+libexec/sssd/sssd_sudo
+man/man1/sss_ssh_authorizedkeys.1.gz
+man/man1/sss_ssh_knownhostsproxy.1.gz
+man/man5/sss-certmap.5.gz
+man/man5/sssd-ad.5.gz
+man/man5/sssd-files.5.gz
+man/man5/sssd-ifp.5.gz
+man/man5/sssd-ipa.5.gz
+man/man5/sssd-krb5.5.gz
+man/man5/sssd-ldap-attributes.5.gz
+man/man5/sssd-ldap.5.gz
+man/man5/sssd-session-recording.5.gz
+man/man5/sssd-simple.5.gz
+man/man5/sssd-sudo.5.gz
+man/man5/sssd.conf.5.gz
+man/man8/idmap_sss.8.gz
+man/man8/pam_sss.8.gz
+man/man8/pam_sss_gss.8.gz
+man/man8/sss_cache.8.gz
+man/man8/sss_debuglevel.8.gz
+man/man8/sss_obfuscate.8.gz
+man/man8/sss_override.8.gz
+man/man8/sss_seed.8.gz
+man/man8/sssctl.8.gz
+man/man8/sssd-kcm.8.gz
+man/man8/sssd.8.gz
+man/man8/sssd_krb5_localauth_plugin.8.gz
+man/man8/sssd_krb5_locator_plugin.8.gz
+sbin/sss_cache
+sbin/sss_debuglevel
+sbin/sss_obfuscate
+sbin/sss_override
+sbin/sss_seed
+sbin/sssctl
+sbin/sssd
+share/dbus-1/system-services/org.freedesktop.sssd.infopipe.service
+share/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
+%%DATADIR%%/dbus-1/system-services/org.freedesktop.sssd.infopipe.service
+%%DATADIR%%/dbus-1/system.d/org.freedesktop.sssd.infopipe.conf
+%%DATADIR%%/sssd-kcm/kcm_default_ccache
+%%DATADIR%%/sssd/cfg_rules.ini
+%%DATADIR%%/sssd/krb5-snippets/enable_sssd_conf_dir
+%%DATADIR%%/sssd/krb5-snippets/sssd_enable_idp
+%%DATADIR%%/sssd/krb5-snippets/sssd_enable_passkey
+%%DATADIR%%/sssd/sssd.api.conf
+%%DATADIR%%/sssd/sssd.api.d/sssd-ad.conf
+%%DATADIR%%/sssd/sssd.api.d/sssd-files.conf
+%%DATADIR%%/sssd/sssd.api.d/sssd-ipa.conf
+%%DATADIR%%/sssd/sssd.api.d/sssd-krb5.conf
+%%DATADIR%%/sssd/sssd.api.d/sssd-ldap.conf
+%%DATADIR%%/sssd/sssd.api.d/sssd-proxy.conf
+%%DATADIR%%/sssd/sssd.api.d/sssd-simple.conf
+@dir %%ETCDIR%%/conf.d
+@dir %%ETCDIR%%/pki
+@dir lib/ldb
+@dir %%DOCSDIR%%/doc
+@dir %%DOCSDIR%%/hbac_doc
+@dir %%DOCSDIR%%/idmap_doc
+@dir %%DOCSDIR%%/nss_idmap_doc
+@dir /var/db/sss/db
+@dir /var/db/sss/deskprofile
+@dir /var/db/sss/gpo_cache
+@dir /var/db/sss/keytabs
+@dir /var/db/sss/mc
+@dir /var/db/sss/pubconf/krb5.include.d
+@dir /var/db/sss/pubconf
+@dir /var/db/sss
+@dir /var/lib/sss/secrets
+@dir /var/lib/sss
+@dir /var/lib
+@dir /var/log/sssd
+@dir /var/run/sss/pipes/private
+@dir /var/run/sss/pipes
+@dir /var/run/sss

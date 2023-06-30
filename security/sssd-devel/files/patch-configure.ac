@@ -1,0 +1,51 @@
+--- configure.ac.orig	2023-05-05 08:11:07 UTC
++++ configure.ac
+@@ -46,8 +46,6 @@ AC_CONFIG_HEADER(config.h)
+ AC_CHECK_HEADERS([stdatomic.h],,AC_MSG_ERROR([C11 atomic types are not supported]))
+ AC_CONFIG_HEADER(config.h)
+ 
+-AC_CHECK_TYPES([errno_t], [], [], [[#include <errno.h>]])
+-
+ m4_include([src/build_macros.m4])
+ BUILD_WITH_SHARED_BUILD_DIR
+ 
+@@ -67,7 +65,20 @@ AM_CONDITIONAL([HAVE_PTHREAD], [test x"$HAVE_PTHREAD" 
+ LIBS=$SAVE_LIBS
+ AM_CONDITIONAL([HAVE_PTHREAD], [test x"$HAVE_PTHREAD" != "x"])
+ 
++saved_CFLAGS="$CFLAGS"
++CFLAGS="-Werror"
++AC_COMPILE_IFELSE(
++    [AC_LANG_PROGRAM([[#include <string.h>]],
++        [[(void)mempcpy(NULL, NULL, 0);]])],
++    [AC_DEFINE([HAVE_MEMPCPY], [1], [mempcpy() available])
++     HAVE_MEMPCPY=1
++    ],
++    [AC_MSG_WARN([mempcpy() not found, will use private implementation])])
+ 
++CFLAGS="$saved_CFLAGS"
++
++AM_CONDITIONAL([HAVE_MEMPCPY], [test x"$HAVE_MEMPCPY" != "x"])
++
+ SAVE_LIBS=$LIBS
+ LIBS=
+ AC_LINK_IFELSE(
+@@ -223,7 +234,6 @@ m4_include([src/external/libkeyutils.m4])
+ m4_include([src/external/crypto.m4])
+ m4_include([src/external/nsupdate.m4])
+ m4_include([src/external/libkeyutils.m4])
+-m4_include([src/external/libkrad.m4])
+ m4_include([src/external/libnl.m4])
+ m4_include([src/external/systemd.m4])
+ m4_include([src/external/pac_responder.m4])
+@@ -390,8 +400,8 @@ them please use argument --without-python3-bindings wh
+     AM_CHECK_PYTHON_HEADERS([],
+                             AC_MSG_ERROR([Could not find python3 headers]))
+ 
+-    AC_SUBST([py3execdir], [$pyexecdir])
+-    AC_SUBST([python3dir], [$pythondir])
++    AC_SUBST([py3execdir], [$(eval echo $pyexecdir)])
++    AC_SUBST([python3dir], [$(eval echo $pythondir)])
+     AC_SUBST([PYTHON3_CFLAGS], [$PYTHON_CFLAGS])
+     AC_SUBST([PYTHON3_LIBS], [$PYTHON_LIBS])
+     AC_SUBST([PYTHON3_INCLUDES], [$PYTHON_INCLUDES])
