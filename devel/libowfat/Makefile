@@ -1,10 +1,9 @@
 PORTNAME=	libowfat
-PORTVERSION=	0.32
-PORTREVISION=	1
+PORTVERSION=	0.33
 CATEGORIES=	devel
 MASTER_SITES=	https://www.fefe.de/libowfat/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	General purpose library based on code by D. J. Bernstein
 WWW=		https://www.fefe.de/libowfat/
 
@@ -12,32 +11,23 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake tar:xz
+
+#ALL_TARGET=	headers
+#ALL_TARGET=	havealloca.h iopause.h headers all
+#CFLAGS+=	-fPIC
+#MAKE_ENV=	DIET=
 MAKEFILE=	GNUmakefile
-ALL_TARGET=	dep all
+#MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	OPTIMIZED_CFLAGS
-OPTIONS_DEFAULT=	OPTIMIZED_CFLAGS
+OPTIONS_DEFAULT=OPTIMIZED_CFLAGS
 
-.include <bsd.port.pre.mk>
+OPTIMIZED_CFLAGS_CFLAGS=	-O2 -fomit-frame-pointer
 
-MAKE_ENV+=	INSTALL="${INSTALL}"
+pre-build:
+	@cd ${WRKSRC} && ${DO_MAKE_BUILD} headers
 
-.include "${FILESDIR}/manpages"
+post-install:
+	cd ${STAGEDIR}${PREFIX}/share/man/man3 && ${FIND} * -name '*.3' -exec ${MV} {} libowfat_{} \;
 
-.if ${PORT_OPTIONS:MOPTIMIZED_CFLAGS}
-CFLAGS+=	-O2 -fomit-frame-pointer
-.endif
-
-post-extract:
-	@${MKDIR} ${WRKSRC}/man
-# Manual pages clash with other programs; prepend libowfat_ to them.
-.for i in ${MANPAGES}
-	@${MV} ${WRKSRC}/*/${i:S/libowfat_//} ${WRKSRC}/man/${i}
-.endfor
-
-post-patch:
-# Clang cries when void functions return a value
-	${REINPLACE_CMD} -e '56s|return ||' ${WRKSRC}/CAS.h
-	${REINPLACE_CMD} -e "s|STAGEDIR|${STAGEDIR}|g" ${WRKSRC}/GNUmakefile
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
