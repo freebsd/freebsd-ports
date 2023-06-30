@@ -1,6 +1,6 @@
 --- CMakeLists.txt.orig	2023-03-25 11:01:27 UTC
 +++ CMakeLists.txt
-@@ -21,7 +21,7 @@ set(PODOFO_VERSION_PATCH "0" CACHE STRING "Patchlevel 
+@@ -21,7 +21,7 @@ endif()
  set(PODOFO_VERSION_MAJOR "0" CACHE STRING "Major part of podofo version number")
  set(PODOFO_VERSION_MINOR "10" CACHE STRING "Minor part of podofo version number")
  set(PODOFO_VERSION_PATCH "0" CACHE STRING "Patchlevel part of podofo version number")
@@ -9,7 +9,7 @@
  set(PODOFO_SOVERSION "1")
  
  #
-@@ -149,6 +149,7 @@ endif()
+@@ -149,6 +149,7 @@ else()
      message("Libidn not found. AES-256 Encryption support will be disabled")
  endif()
  
@@ -17,7 +17,7 @@
  find_package(JPEG)
  
  if(JPEG_FOUND)
-@@ -157,7 +158,9 @@ endif()
+@@ -157,7 +158,9 @@ if(JPEG_FOUND)
  else()
      message("Libjpeg not found. JPEG support will be disabled")
  endif()
@@ -27,7 +27,7 @@
  find_package(TIFF)
  
  if(TIFF_FOUND)
-@@ -166,7 +169,9 @@ endif()
+@@ -166,7 +169,9 @@ if(TIFF_FOUND)
  else()
      message("Libtiff not found. TIFF support will be disabled")
  endif()
@@ -37,7 +37,7 @@
  find_package(PNG)
  
  if(PNG_FOUND)
-@@ -175,6 +180,7 @@ else()
+@@ -175,6 +180,7 @@ if(PNG_FOUND)
  else()
      message("LibPng not found. PNG support will be disabled")
      set(PNG_LIBRARIES "")

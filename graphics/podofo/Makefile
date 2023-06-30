@@ -21,7 +21,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		cmake compiler:c++17-lang cpe gnome localbase:ldflags pkgconfig ssl
 USE_GNOME=	libxml2
 
-CFLAGS+=	-I${LOCALBASE}/include/fast_float
+CFLAGS+=	-I${LOCALBASE}/include/fast_float -I${WRKSRC}
 CMAKE_ARGS=	-DFONTCONFIG_LIBRARIES=${LOCALBASE}/lib/libfontconfig.so \
 		-DOPENSSL_INCLUDE_DIR=${OPENSSLINC} \
 		-DOPENSSL_LIBRARIES=${OPENSSLDIR}
@@ -49,5 +49,6 @@ post-patch:
 	@${RM} -r ${WRKSRC}/3rdparty/date/
 	@${RM} -r ${WRKSRC}/3rdparty/fmt/
 	@${RM} -r ${WRKSRC}/3rdparty/utfcpp/
+	@${LN} -s ${LOCALBASE}/include/utf8cpp ${WRKSRC}/3rdparty/utfcpp
 
 .include <bsd.port.mk>
