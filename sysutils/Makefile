@@ -731,7 +731,6 @@
     SUBDIR += mbgtools
     SUBDIR += mcelog
     SUBDIR += mcfly
-    SUBDIR += mcollective
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdf2iso

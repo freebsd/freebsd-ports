@@ -7697,3 +7697,4 @@ sysutils/mcollective-service-common||2023-06-30|Has expired: Depends on broken s
 sysutils/mcollective-puppet-common||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mcollective-nettest-common||2023-06-30|Has expired: Depends on broken sysutils/mcollective
 sysutils/mnrpes||2023-06-30|Has expired: Depends on broken sysutils/mcollective
+sysutils/mcollective||2023-06-30|Has expired: Broken with all supported Ruby versions
