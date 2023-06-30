@@ -7735,3 +7735,4 @@ www/vdr-plugin-live||2023-06-30|Has expired: Depends on abandoned fork of VDR
 multimedia/vdr-plugin-skinenigmang||2023-06-30|Has expired: Depends on abandoned fork of VDR
 multimedia/vdr-plugin-ttxtsubs||2023-06-30|Has expired: Depends on abandoned fork of VDR
 audio/pulseeffects||2023-06-30|Has expired: Broken for almost a year and abandoned upstream
+audio/libgroove||2023-06-30|Has expired: Fails to build with FFmpeg 6 and very little activity upstream
