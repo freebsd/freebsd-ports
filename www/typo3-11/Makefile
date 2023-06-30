@@ -13,8 +13,6 @@ WWW=		https://typo3.org/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-IGNORE_WITH_MYSQL=	101m
-
 USES=		cpe php:web,flavors shebangfix
 USE_PHP=	ctype dom fileinfo filter intl session simplexml \
 		tokenizer xml zip
