@@ -1,5 +1,5 @@
-The "orafce" is a module of PostgreSQL. It implements of some functions from
-the Oracle database. The functionality was verified on Oracle 10g, and the
-module is useful for production work. This module contains some useful function
-which can help with porting Oracle application to PostgreSQL or can be useful
-generally.
+Orafce provides the functions and operators that emulate a subset of functions
+and packages from the Oracle RDBMS.
+
+The Orafce is supported in AWS Aurora with PostgreSQL Compatibility and also in
+Azure Database for PostgreSQL.
