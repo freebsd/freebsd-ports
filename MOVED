@@ -7634,6 +7634,7 @@ databases/rubygem-pg13|databases/rubygem-pg|2023-06-05|Remove obsoleted port. Us
 devel/rubygem-fast_gettext1|devel/rubygem-fast_gettext|2023-06-05|Remove obsoleted port. Use devel/rubygem-fast_gettext instead
 devel/rubygem-gettext-setup0|devel/rubygem-gettext-setup|2023-06-05|Remove obsoleted port. Use devel/rubygem-gettext-setup instead
 x11/radare-cutter||2023-06-07|Has expired: Cutter for radare has been discontinued as Cutter has moved to use rizin as their backend framework
+www/py-WebTest|www/py-webtest|2023-06-08|Use lowercase PORTNAME and path
 security/py-sequoia||2023-06-09|Deprecated upstream, broken as based on older dependency
 audio/hvl2wav|audio/ocp|2023-06-10|Has expired: Abandoned upstream, use audio/ocp instead
 x11/thinglaunch|x11/thingylaunch|2023-06-10|Has expired: Abandonware, please use x11/thingylaunch instead
@@ -7708,4 +7709,4 @@ databases/py-caterva||2023-06-30|Has expired: Use archivers/py-blosc2 instead. A
 net-im/purple-hangouts||2023-06-30|Has expired: Google Hangouts discontinued 2022-11-01, data deleted 2023-01-01
 dns/ares||2023-06-30|Has expired: Deprecated upstream as of March 12, 2023
 security/rubygem-omniauth-cas3||2023-06-30|Has expired: Deprecated by upstream. The repository has been archived by the owner on Aug 23, 2022
-www/py-WebTest|www/py-webtest|2023-06-08|Use lowercase PORTNAME and path
+graphics/ikona||2023-06-30|Has expired: abandoned upstream, broken

@@ -361,7 +361,6 @@
     SUBDIR += iec16022
     SUBDIR += igt-gpu-tools
     SUBDIR += iiview
-    SUBDIR += ikona
     SUBDIR += imageindex
     SUBDIR += imageviewer
     SUBDIR += imageworsener
