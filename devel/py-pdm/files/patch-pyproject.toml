@@ -1,0 +1,11 @@
+--- pyproject.toml.orig	2023-06-06 03:56:08 UTC
++++ pyproject.toml
+@@ -22,7 +22,7 @@ dependencies = [
+     "python-dotenv>=0.15",
+     "resolvelib>=1.0.1",
+     "installer<0.8,>=0.7",
+-    "cachecontrol[filecache]>=0.13.0",
++    "cachecontrol[filecache]>=0.12.0",
+     "tomli>=1.1.0; python_version < \"3.11\"",
+     "importlib-metadata>=3.6; python_version < \"3.10\"",
+ ]
