@@ -756,7 +756,6 @@
     SUBDIR += mkntpwd
     SUBDIR += mmc-utils
     SUBDIR += mmve
-    SUBDIR += mnrpes
     SUBDIR += modman
     SUBDIR += modules
     SUBDIR += mog
