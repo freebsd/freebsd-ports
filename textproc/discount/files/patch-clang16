@@ -1,0 +1,11 @@
+--- main.c.orig	2022-03-30 19:34:50 UTC
++++ main.c
+@@ -308,7 +308,7 @@ main(int argc, char **argv)
+ 	if ( squash )
+ 	    mkd_e_anchor(doc, (mkd_callback_t) anchor_format);
+ 	if ( use_e_codefmt )
+-	    mkd_e_code_format(doc, external_codefmt);
++	    mkd_e_code_format(doc, (mkd_callback_t) external_codefmt);
+ 
+ 	if ( use_e_codefmt || squash )
+ 	    mkd_e_free(doc, free_it);
