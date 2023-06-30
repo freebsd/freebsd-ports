@@ -567,9 +567,9 @@
     SUBDIR += inotify-tools
     SUBDIR += installwatch
     SUBDIR += intel-epct
+    SUBDIR += intel-nvmupdate-100g
     SUBDIR += intel-nvmupdate-10g
     SUBDIR += intel-nvmupdate-40g
-    SUBDIR += intel-nvmupdate-100g
     SUBDIR += intel-pcm
     SUBDIR += intel-undervolt
     SUBDIR += inxi
