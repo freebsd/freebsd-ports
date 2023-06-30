@@ -27,7 +27,6 @@ OPTIONS_SUB=		yes
 BOT_DESC=		Bot support
 CAPSICUM_DESC=		Capsicum support
 OTR_DESC=		OTR (off-the-record) support
-TRUECOLOR_DESC=		True color support
 UTF8PROC_DESC=		utf8proc support
 
 BOT_MESON_YES=		with-bot
