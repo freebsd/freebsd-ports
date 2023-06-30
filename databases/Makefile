@@ -747,7 +747,6 @@
     SUBDIR += py-berkeleydb
     SUBDIR += py-carbon
     SUBDIR += py-cassandra-driver
-    SUBDIR += py-caterva
     SUBDIR += py-couchdb
     SUBDIR += py-databases
     SUBDIR += py-dbf
