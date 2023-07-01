@@ -1,6 +1,6 @@
 PORTNAME=	iroffer
-PORTVERSION=	3.32
-PORTREVISION=	5
+PORTVERSION=	3.33
+PORTREVISION=	0
 CATEGORIES=	irc
 MASTER_SITES=	https://iroffer.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -39,7 +39,7 @@ IROFFER_EXAMPLES=	iroffer.cron \
 		sample.config beispiel.config exemple.config \
 		header.html footer.html ruby-sample.rb
 IROFFER_HTDOCS=	iroffer-state.css robots.txt \
-		info.txt.rb json.txt.rb md5.txt.rb sfv.txt.rb
+		info.txt.rb list.json.rb md5.txt.rb sfv.txt.rb
 
 OPTIONS_DEFINE=	CURL RUBY UPNP GEOIP DOCS EXAMPLES
 OPTIONS_DEFAULT=CURL RUBY UPNP GEOIP
