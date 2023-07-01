@@ -895,7 +895,6 @@
     SUBDIR += golangci-lint
     SUBDIR += golint
     SUBDIR += google-cloud-cpp
-    SUBDIR += google-cloud-cpp117
     SUBDIR += google-perftools
     SUBDIR += google-styleguide
     SUBDIR += googletest
