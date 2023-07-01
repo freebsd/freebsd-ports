@@ -1,9 +1,0 @@
---- Cargo.toml.orig	2021-12-05 21:04:00 UTC
-+++ Cargo.toml
-@@ -29,3 +29,6 @@ termimad = "0.19"
- [patch.crates-io]
- #minimad = { path = "../minimad" }
- #termimad = { path = "../termimad" }
-+
-+[profile.release]
-+strip = true

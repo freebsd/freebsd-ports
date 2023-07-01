@@ -5,16 +5,17 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		argh_derive-0.1.5 \
 		argh_shared-0.1.5 \
 		arrayref-0.3.6 \
-		arrayvec-0.5.2 \
+		arrayvec-0.7.4 \
 		autocfg-1.0.1 \
 		bitflags-1.2.1 \
-		blake3-0.3.8 \
+		blake3-1.4.0 \
+		block-buffer-0.10.4 \
 		cc-1.0.69 \
 		cfg-if-0.1.10 \
 		cfg-if-1.0.0 \
 		chrono-0.4.19 \
 		cli-log-2.0.0 \
-		constant_time_eq-0.1.5 \
+		constant_time_eq-0.2.6 \
 		coolor-0.3.0 \
 		crossbeam-0.7.3 \
 		crossbeam-0.8.1 \
@@ -30,13 +31,12 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		crossbeam-utils-0.8.5 \
 		crossterm-0.21.0 \
 		crossterm_winapi-0.8.0 \
-		crypto-mac-0.8.0 \
-		digest-0.9.0 \
+		crypto-common-0.1.6 \
+		digest-0.10.7 \
 		either-1.6.1 \
 		file-size-1.0.3 \
 		fnv-1.0.7 \
 		generic-array-0.14.4 \
-		getrandom-0.1.16 \
 		heck-0.3.3 \
 		hermit-abi-0.1.19 \
 		instant-0.1.10 \
@@ -61,20 +61,15 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		once_cell-1.8.0 \
 		parking_lot-0.11.1 \
 		parking_lot_core-0.8.3 \
-		phf-0.8.0 \
-		phf_generator-0.8.0 \
-		phf_macros-0.8.0 \
-		phf_shared-0.8.0 \
-		ppv-lite86-0.2.10 \
-		proc-macro-hack-0.5.19 \
-		proc-macro2-1.0.27 \
+		phf-0.11.2 \
+		phf_generator-0.11.2 \
+		phf_macros-0.11.2 \
+		phf_shared-0.11.2 \
+		proc-macro2-1.0.63 \
 		proc-status-0.1.1 \
-		quote-1.0.9 \
-		rand-0.7.3 \
-		rand_chacha-0.2.2 \
-		rand_core-0.5.1 \
-		rand_hc-0.2.0 \
-		rand_pcg-0.2.1 \
+		quote-1.0.29 \
+		rand-0.8.5 \
+		rand_core-0.6.4 \
 		rayon-1.5.1 \
 		rayon-core-1.9.1 \
 		redox_syscall-0.2.9 \
@@ -91,16 +86,17 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		smallvec-1.6.1 \
 		subtle-2.4.1 \
 		syn-1.0.73 \
+		syn-2.0.22 \
 		termimad-0.19.0 \
 		thiserror-1.0.26 \
 		thiserror-impl-1.0.26 \
 		time-0.1.44 \
-		typenum-1.13.0 \
+		typenum-1.16.0 \
+		unicode-ident-1.0.9 \
 		unicode-segmentation-1.8.0 \
 		unicode-width-0.1.8 \
 		unicode-xid-0.2.2 \
 		version_check-0.9.3 \
-		wasi-0.9.0+wasi-snapshot-preview1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
