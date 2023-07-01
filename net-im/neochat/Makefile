@@ -19,7 +19,7 @@ BUILD_DEPENDS=	libquotient>=0.6.11:net-im/libquotient \
 RUN_DEPENDS=	kquickimageeditor>=0.2.0:graphics/kquickimageeditor \
 		kirigami-addons>=0.6.1:x11-toolkits/kirigami-addons
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl kde:5 pkgconfig qt:5 tar:xz
+USES=		cmake desktop-file-utils gl kde:5 pkgconfig qt:5 tar:xz
 USE_GL=		gl
 USE_QT=		concurrent core dbus declarative graphicaleffects gui imageformats \
 		multimedia network quickcontrols quickcontrols2 \
