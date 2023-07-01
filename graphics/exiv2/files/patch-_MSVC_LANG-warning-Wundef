@@ -1,0 +1,84 @@
+From aaa876159ada768ba0fb2d44b4eaaf23b3b2ed98 Mon Sep 17 00:00:00 2001
+From: Matthias Andree <matthias.andree@gmx.de>
+Date: Mon, 3 Jul 2023 11:16:44 +0200
+Subject: [PATCH] Fix preprocessor warnings about undefined _MSVC_LANG
+
+Stricter compiler/settings, such as found during a build
+on FreeBSD with clang 14, issue warnings of the kind below.
+
+/usr/local/include/exiv2/value.hpp:1272:31: warning: '_MSVC_LANG' is not defined, evaluates to 0 [-Wundef]
+fixed-width font helps here-- ^
+
+Fix: Guard use of _MSVC_LANG by a check.
+
+Personally, I found that MSVC has several feature-specific
+checks in predefined macros which might allow for one
+standards-based check that matches GCC/clang/MSVC rather than the
+split check for C++ standard and MSVC language version settings.
+
+See https://en.cppreference.com/w/cpp/feature_test
+
+I am not building Exiv2 on MSVC, so I cannot test/suggest
+anything here.
+--- include/exiv2/slice.hpp.orig	2023-05-08 16:01:13 UTC
++++ include/exiv2/slice.hpp
+@@ -255,7 +255,7 @@ struct ContainerStorage {
+   using iterator = typename container::iterator;
+   using const_iterator = typename container::const_iterator;
+ 
+-#if __cplusplus >= 201402L || _MSVC_LANG >= 201402L
++#if __cplusplus >= 201402L || (defined(_MSVC_LANG) && (_MSVC_LANG >= 201402L))
+   using value_type = std::remove_cv_t<typename container::value_type>;
+ #else
+   using value_type = typename std::remove_cv<typename container::value_type>::type;
+@@ -320,7 +320,7 @@ struct ContainerStorage {
+  */
+ template <typename storage_type>
+ struct PtrSliceStorage {
+-#if __cplusplus >= 201402L || _MSVC_LANG >= 201402L
++#if __cplusplus >= 201402L || (defined(_MSVC_LANG) && (_MSVC_LANG >= 201402L))
+   using value_type = std::remove_cv_t<std::remove_pointer_t<storage_type>>;
+ #else
+   using value_type = typename std::remove_cv<typename std::remove_pointer<storage_type>::type>::type;
+@@ -423,7 +423,7 @@ struct Slice : public Internal::MutableSliceBase<Inter
+   using iterator = typename container::iterator;
+   using const_iterator = typename container::const_iterator;
+ 
+-#if __cplusplus >= 201402L || _MSVC_LANG >= 201402L
++#if __cplusplus >= 201402L || (defined(_MSVC_LANG) && (_MSVC_LANG >= 201402L))
+   using value_type = std::remove_cv_t<typename container::value_type>;
+ #else
+   using value_type = typename std::remove_cv<typename container::value_type>::type;
+@@ -460,7 +460,7 @@ struct Slice<const container> : public Internal::Const
+   using iterator = typename container::iterator;
+   using const_iterator = typename container::const_iterator;
+ 
+-#if __cplusplus >= 201402L || _MSVC_LANG >= 201402L
++#if __cplusplus >= 201402L || (defined(_MSVC_LANG) && (_MSVC_LANG >= 201402L))
+   using value_type = std::remove_cv_t<typename container::value_type>;
+ #else
+   using value_type = typename std::remove_cv<typename container::value_type>::type;
+ include/exiv2/slice.hpp | 8 ++++----
+ include/exiv2/value.hpp | 4 ++--
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+--- include/exiv2/value.hpp.orig	2023-05-08 16:01:13 UTC
++++ include/exiv2/value.hpp
+@@ -1254,7 +1254,7 @@ class ValueType : public Value {
+     } else if (std::is_signed<I>::value) {
+ #endif
+       // conversion is from unsigned to signed
+-#if __cplusplus >= 201402L || _MSVC_LANG >= 201402L
++#if __cplusplus >= 201402L || (defined(_MSVC_LANG) && (_MSVC_LANG >= 201402L))
+       const auto imax = static_cast<std::make_unsigned_t<I>>(std::numeric_limits<I>::max());
+ #else
+       const auto imax = static_cast<typename std::make_unsigned<I>::type>(std::numeric_limits<I>::max());
+@@ -1269,7 +1269,7 @@ class ValueType : public Value {
+         return 0;
+       }
+       // Inputs are not negative so convert them to unsigned.
+-#if __cplusplus >= 201402L || _MSVC_LANG >= 201402L
++#if __cplusplus >= 201402L || (defined(_MSVC_LANG) && (_MSVC_LANG >= 201402L))
+       const auto a_u = static_cast<std::make_unsigned_t<decltype(a)>>(a);
+       const auto b_u = static_cast<std::make_unsigned_t<decltype(b)>>(b);
+ #else

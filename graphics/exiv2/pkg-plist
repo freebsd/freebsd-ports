@@ -4,7 +4,6 @@
 %%SAMPLE%%bin/exifprint
 %%SAMPLE%%bin/exifvalue
 bin/exiv2
-%%SAMPLE%%bin/exiv2json
 %%SAMPLE%%bin/geotag
 %%SAMPLE%%bin/iptceasy
 %%SAMPLE%%bin/iptcprint
@@ -35,7 +34,7 @@ include/exiv2/futils.hpp
 include/exiv2/gifimage.hpp
 include/exiv2/http.hpp
 include/exiv2/image.hpp
-include/exiv2/ini.hpp
+include/exiv2/image_types.hpp
 include/exiv2/iptc.hpp
 include/exiv2/jp2image.hpp
 include/exiv2/jpgimage.hpp
@@ -44,6 +43,7 @@ include/exiv2/metadatum.hpp
 include/exiv2/mrwimage.hpp
 include/exiv2/orfimage.hpp
 include/exiv2/pgfimage.hpp
+include/exiv2/photoshop.hpp
 include/exiv2/pngimage.hpp
 include/exiv2/preview.hpp
 include/exiv2/properties.hpp
@@ -52,14 +52,11 @@ include/exiv2/quicktimevideo.hpp
 include/exiv2/rafimage.hpp
 include/exiv2/riffvideo.hpp
 include/exiv2/rw2image.hpp
-include/exiv2/rwlock.hpp
 include/exiv2/slice.hpp
-include/exiv2/ssh.hpp
 include/exiv2/tags.hpp
 include/exiv2/tgaimage.hpp
 include/exiv2/tiffimage.hpp
 include/exiv2/types.hpp
-include/exiv2/utilsvideo.hpp
 include/exiv2/value.hpp
 include/exiv2/version.hpp
 include/exiv2/webpimage.hpp
@@ -69,9 +66,8 @@ lib/cmake/exiv2/exiv2Config-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/exiv2/exiv2Config.cmake
 lib/cmake/exiv2/exiv2ConfigVersion.cmake
 lib/libexiv2.so
-lib/libexiv2.so.0.27.6
-lib/libexiv2.so.27
-lib/libexiv2-xmp.a
+lib/libexiv2.so.0.28.0
+lib/libexiv2.so.28
 libdata/pkgconfig/exiv2.pc
 share/man/man1/exiv2.1.gz
 %%NLS%%share/locale/bs/LC_MESSAGES/exiv2.mo
