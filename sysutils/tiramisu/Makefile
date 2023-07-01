@@ -13,6 +13,7 @@ USES=		gmake gnome pkgconfig vala:build
 USE_GITHUB=	yes
 USE_GNOME=	glib20
 GH_ACCOUNT=	Sweets
+MAKE_ARGS=	CC="${CC} ${CFLAGS}"
 PLIST_FILES=	bin/${PORTNAME}
 
 post-install:
