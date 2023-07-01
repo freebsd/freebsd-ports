@@ -406,9 +406,9 @@
 %%WWWDIR%%/app/views/js/monitoring.host.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.latest.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.map.view.js.php
+%%WWWDIR%%/app/views/js/monitoring.navtreeitem.edit.js.php
 %%WWWDIR%%/app/views/js/monitoring.problem.view.js.php
 %%WWWDIR%%/app/views/js/monitoring.web.view.js.php
-%%WWWDIR%%/app/views/js/monitoring.widget.navtreeitem.edit.js.php
 %%WWWDIR%%/app/views/js/popup.acknowledge.edit.js.php
 %%WWWDIR%%/app/views/js/popup.dashboard.share.edit.js.php
 %%WWWDIR%%/app/views/js/popup.discovery.check.js.php
@@ -1042,13 +1042,13 @@
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMsItemPrototype.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMsService.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMsSla.php
+%%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMsSysmap.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldNavTree.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldNumericBox.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldRadioButtonList.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldRangeControl.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldReference.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldSelect.php
-%%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldSelectResource.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldSeverities.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldTags.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldTextArea.php
