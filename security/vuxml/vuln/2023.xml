@@ -1,3 +1,42 @@
+  <vuln vid="95dad123-180e-11ee-86ba-080027eda32c">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki135</name>
+	<range><lt>1.35.11</lt></range>
+      </package>
+      <package>
+	<name>mediawiki138</name>
+	<range><lt>1.38.7</lt></range>
+      </package>
+      <package>
+	<name>mediawiki139</name>
+	<range><lt>1.39.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawiki reports:</p>
+	<blockquote cite="https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/HVT3U3XYY35PSCIQPHMY4VQNF3Q6MHUO/">
+	  <p>(T335203, CVE-2023-29197) Upgrade guzzlehttp/psr7 to >= 1.9.1/2.4.5.</p>
+	  <p>(T335612, CVE-2023-36674) Manualthumb bypasses badFile lookup.</p>
+	  <p>(T332889, CVE-2023-36675) XSS in BlockLogFormatter due to unsafe message
+	    use.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-29197</cvename>
+      <cvename>CVE-2023-36674</cvename>
+      <cvename>CVE-2023-36675</cvename>
+      <url>https://lists.wikimedia.org/hyperkitty/list/mediawiki-announce@lists.wikimedia.org/message/HVT3U3XYY35PSCIQPHMY4VQNF3Q6MHUO/</url>
+    </references>
+    <dates>
+      <discovery>2023-04-21</discovery>
+      <entry>2023-07-01</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3117e6cd-1772-11ee-9cd6-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
