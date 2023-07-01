@@ -19,7 +19,7 @@ LICENSE_PERMS_KEL11=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		linux
-USE_LINUX=	alsalib dbusglib gtk2 jpeg xorglibs
+USE_LINUX=	alsalib dbuslibs gtk2 jpeg xorglibs
 
 DESKTOP_ENTRIES="Komodo Edit" \
 		"Free multi-platform editor that makes it easy to write quality code." \

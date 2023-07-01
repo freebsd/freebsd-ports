@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	amd64
 RUN_DEPENDS=	bash:shells/bash
 
 USES=		desktop-file-utils linux tar:bz2
-USE_LINUX=	dbusglib gtk3
+USE_LINUX=	dbuslibs gtk3
 
 NO_BUILD=	yes
 
