@@ -35,10 +35,9 @@ STACKPROTECTOR_DESC=	Build with stack-protector
 
 .if ${PORT_OPTIONS:MVSFTPD_SSL} && !defined(WITHOUT_SSL)
 USES+=		ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated EC_* routines
 SSL_SUFFIX=	-ssl
 CFLAGS+=	-I${OPENSSLINC}
+CFLAGS+=	-Wno-deprecated-declarations
 LDFLAGS+=	-L${OPENSSLLIB}
 .endif
 

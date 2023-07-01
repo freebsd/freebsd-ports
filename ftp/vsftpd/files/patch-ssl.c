@@ -26,7 +26,23 @@
      SSL_CTX_set_options(p_ctx, options);
      if (tunable_rsa_cert_file)
      {
-@@ -683,7 +685,7 @@ ssl_cert_digest(SSL* p_ssl, struct vsf_session* p_sess
+@@ -139,6 +141,7 @@ ssl_init(struct vsf_session* p_sess)
+     {
+       die("SSL: RNG is not seeded");
+     }
++#if OPENSSL_VERSION_NUMBER < 0x10200000L
+     {
+       EC_KEY* key = EC_KEY_new_by_curve_name(NID_X9_62_prime256v1);
+       if (key == NULL)
+@@ -148,6 +151,7 @@ ssl_init(struct vsf_session* p_sess)
+       SSL_CTX_set_tmp_ecdh(p_ctx, key);
+       EC_KEY_free(key);
+     }
++#endif
+     if (tunable_ssl_request_cert)
+     {
+       verify_option |= SSL_VERIFY_PEER;
+@@ -683,7 +687,7 @@ ssl_cert_digest(SSL* p_ssl, struct vsf_session* p_sess
  }
  
  static char*
