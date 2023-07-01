@@ -11,6 +11,10 @@ WWW=		http://wcm.linderdaum.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		Unfetchable and fails to build
+DEPRECATED=	Abandoned upstream
+EXPIRATION_DATE=2023-07-31
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	corporateshark
 GH_PROJECT=	WCMCommander
