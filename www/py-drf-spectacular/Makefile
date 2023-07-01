@@ -31,10 +31,4 @@ OPTIONS_DEFAULT=	SIDECAR
 SIDECAR_DESC=	Enable self-contained Swagger/Redoc UI installation
 SIDECAR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}drf-spectacular-sidecar>0:www/py-drf-spectacular-sidecar@${PY_FLAVOR}
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extension>0:devel/py-typing-extensions@${PY_FLAVOR}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
