@@ -17,6 +17,8 @@ BROKEN=		fails to build es locale help files
 BROKEN_mips64=		fails to build: ./config/imake/imake: No such file or directory
 BROKEN_powerpc64=	fails to build: ./config/imake/imake: No such file or directory
 BROKEN_i386=		cannot bind to a temporary of type va_list
+DEPRECATED=		Desupported by upstream
+EXPIRATION_DATE=	2023-08-01
 
 BUILD_DEPENDS=	ksh93:shells/ksh93			\
 		bdftopcf:x11-fonts/bdftopcf		\
