@@ -1,6 +1,5 @@
 PORTNAME=	jwt-cli
-PORTVERSION=	5.0.3
-PORTREVISION=	12
+PORTVERSION=	6.0.0
 CATEGORIES=	www
 
 MAINTAINER=	osa@FreeBSD.org
@@ -14,76 +13,131 @@ USES=	cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	mike-engel
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
+CARGO_CRATES=	aho-corasick-0.7.19 \
+		android-tzdata-0.1.1 \
+		android_system_properties-0.1.5 \
+		anstream-0.3.0 \
+		anstyle-1.0.0 \
+		anstyle-parse-0.2.0 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.0 \
 		atty-0.2.14 \
-		autocfg-1.0.1 \
-		base64-0.12.3 \
-		base64-0.13.0 \
+		autocfg-1.1.0 \
+		base64-0.13.1 \
+		base64-0.21.2 \
 		bitflags-1.3.2 \
-		bumpalo-3.9.1 \
-		bunt-0.2.6 \
-		bunt-macros-0.2.5 \
-		cc-1.0.72 \
+		bumpalo-3.11.1 \
+		bunt-0.2.8 \
+		bunt-macros-0.2.8 \
+		cc-1.0.73 \
 		cfg-if-1.0.0 \
-		chrono-0.4.19 \
-		clap-3.1.12 \
-		clap_derive-3.1.7 \
-		clap_lex-0.1.1 \
-		hashbrown-0.11.2 \
+		chrono-0.4.26 \
+		clap-4.3.4 \
+		clap_builder-4.3.4 \
+		clap_derive-4.3.2 \
+		clap_lex-0.5.0 \
+		codespan-reporting-0.11.1 \
+		colorchoice-1.0.0 \
+		core-foundation-sys-0.8.3 \
+		cxx-1.0.80 \
+		cxx-build-1.0.80 \
+		cxxbridge-flags-1.0.80 \
+		cxxbridge-macro-1.0.80 \
+		errno-0.3.0 \
+		errno-dragonfly-0.1.2 \
+		fuchsia-cprng-0.1.1 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
-		indexmap-1.8.0 \
-		itoa-1.0.1 \
-		js-sys-0.3.56 \
-		jsonwebtoken-7.2.0 \
+		hermit-abi-0.3.1 \
+		iana-time-zone-0.1.51 \
+		iana-time-zone-haiku-0.1.1 \
+		io-lifetimes-1.0.2 \
+		is-terminal-0.4.6 \
+		itoa-1.0.4 \
+		js-sys-0.3.60 \
+		jsonwebtoken-8.3.0 \
 		lazy_static-1.4.0 \
-		libc-0.2.113 \
+		libc-0.2.140 \
+		link-cplusplus-1.0.7 \
+		linux-raw-sys-0.3.1 \
 		litrs-0.2.3 \
-		log-0.4.14 \
-		memchr-2.4.1 \
+		log-0.4.17 \
+		memchr-2.5.0 \
 		num-0.2.1 \
 		num-bigint-0.2.6 \
+		num-bigint-0.4.3 \
 		num-complex-0.2.4 \
-		num-integer-0.1.44 \
-		num-iter-0.1.42 \
+		num-integer-0.1.45 \
+		num-iter-0.1.43 \
 		num-rational-0.2.4 \
-		num-traits-0.2.14 \
-		once_cell-1.9.0 \
-		os_str_bytes-6.0.0 \
+		num-traits-0.2.15 \
+		once_cell-1.15.0 \
 		parse_duration-2.1.1 \
-		pem-0.8.3 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.36 \
-		quote-1.0.14 \
-		regex-1.5.4 \
-		regex-syntax-0.6.25 \
+		pem-1.1.0 \
+		proc-macro2-1.0.54 \
+		quote-1.0.26 \
+		rand-0.4.6 \
+		rand_core-0.3.1 \
+		rand_core-0.4.2 \
+		rdrand-0.4.0 \
+		regex-1.6.0 \
+		regex-syntax-0.6.27 \
+		remove_dir_all-0.5.3 \
 		ring-0.16.20 \
-		ryu-1.0.9 \
-		serde-1.0.133 \
-		serde_derive-1.0.133 \
-		serde_json-1.0.79 \
-		simple_asn1-0.4.1 \
+		rustix-0.37.6 \
+		ryu-1.0.11 \
+		scratch-1.0.2 \
+		serde-1.0.147 \
+		serde_derive-1.0.147 \
+		serde_json-1.0.97 \
+		simple_asn1-0.6.2 \
 		spin-0.5.2 \
 		strsim-0.10.0 \
-		syn-1.0.86 \
-		termcolor-1.1.2 \
-		textwrap-0.15.0 \
+		syn-1.0.103 \
+		syn-2.0.10 \
+		tempdir-0.3.7 \
+		termcolor-1.1.3 \
+		thiserror-1.0.37 \
+		thiserror-impl-1.0.37 \
 		time-0.1.44 \
-		unicode-xid-0.2.2 \
+		time-0.3.17 \
+		time-core-0.1.0 \
+		time-macros-0.2.6 \
+		unicode-ident-1.0.5 \
+		unicode-width-0.1.10 \
+		unicode-xid-0.2.4 \
 		untrusted-0.7.1 \
-		version_check-0.9.4 \
+		utf8parse-0.2.1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.79 \
-		wasm-bindgen-backend-0.2.79 \
-		wasm-bindgen-macro-0.2.79 \
-		wasm-bindgen-macro-support-0.2.79 \
-		wasm-bindgen-shared-0.2.79 \
-		web-sys-0.3.56 \
+		wasm-bindgen-0.2.83 \
+		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-macro-0.2.83 \
+		wasm-bindgen-macro-support-0.2.83 \
+		wasm-bindgen-shared-0.2.83 \
+		web-sys-0.3.60 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0
+		winapi-x86_64-pc-windows-gnu-0.4.0 \
+		windows-sys-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.0 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0
 
 PLIST_FILES=	bin/jwt
 
