@@ -3,5 +3,5 @@ lib/cmake/SuiteSparse/FindCOLAMD.cmake
 lib/libcolamd.a
 lib/libcolamd.so
 lib/libcolamd.so.3
-lib/libcolamd.so.3.0.3
+lib/libcolamd.so.3.0.4
 %%PORTDOCS%%%%DOCSDIR%%/COLAMD_README.txt

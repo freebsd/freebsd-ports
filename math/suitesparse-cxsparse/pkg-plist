@@ -3,5 +3,5 @@ lib/cmake/SuiteSparse/FindCXSparse.cmake
 lib/libcxsparse.a
 lib/libcxsparse.so
 lib/libcxsparse.so.4
-lib/libcxsparse.so.4.0.3
+lib/libcxsparse.so.4.0.4
 %%PORTDOCS%%%%DOCSDIR%%/CXSparse_README.txt

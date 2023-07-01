@@ -3,6 +3,6 @@ lib/cmake/SuiteSparse/FindAMD.cmake
 lib/libamd.a
 lib/libamd.so
 lib/libamd.so.3
-lib/libamd.so.3.0.3
+lib/libamd.so.3.0.4
 %%PORTDOCS%%%%DOCSDIR%%/AMD_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/AMD_UserGuide.pdf

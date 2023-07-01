@@ -5,10 +5,10 @@ lib/cmake/SuiteSparse/FindKLU.cmake
 lib/libklu_cholmod.a
 lib/libklu_cholmod.so
 lib/libklu_cholmod.so.2
-lib/libklu_cholmod.so.2.0.3
+lib/libklu_cholmod.so.2.0.4
 lib/libklu.a
 lib/libklu.so
 lib/libklu.so.2
-lib/libklu.so.2.0.3
+lib/libklu.so.2.0.4
 %%PORTDOCS%%%%DOCSDIR%%/KLU_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/KLU_UserGuide.pdf

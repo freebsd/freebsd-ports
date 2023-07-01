@@ -3,6 +3,6 @@ lib/cmake/SuiteSparse/FindLDL.cmake
 lib/libldl.a
 lib/libldl.so
 lib/libldl.so.3
-lib/libldl.so.3.0.3
+lib/libldl.so.3.0.4
 %%PORTDOCS%%%%DOCSDIR%%/LDL_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/ldl_userguide.pdf

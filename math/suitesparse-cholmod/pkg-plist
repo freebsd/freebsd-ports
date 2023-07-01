@@ -4,10 +4,10 @@ lib/cmake/SuiteSparse/FindCHOLMOD_CUDA.cmake
 lib/libcholmod_cuda.a
 lib/libcholmod_cuda.so
 lib/libcholmod_cuda.so.4
-lib/libcholmod_cuda.so.4.0.3
+lib/libcholmod_cuda.so.4.0.4
 lib/libcholmod.a
 lib/libcholmod.so
 lib/libcholmod.so.4
-lib/libcholmod.so.4.0.3
+lib/libcholmod.so.4.0.4
 %%PORTDOCS%%%%DOCSDIR%%/CHOLMOD_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/CHOLMOD_UserGuide.pdf

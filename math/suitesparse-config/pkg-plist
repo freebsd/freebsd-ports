@@ -10,6 +10,6 @@ lib/cmake/SuiteSparse/SuiteSparse_ssize_t.cmake
 lib/libsuitesparseconfig.a
 lib/libsuitesparseconfig.so
 lib/libsuitesparseconfig.so.7
-lib/libsuitesparseconfig.so.7.0.1
+lib/libsuitesparseconfig.so.7.1.0
 %%PORTDOCS%%%%DOCSDIR%%/SuiteSparse_README.md
 %%PORTDOCS%%%%DOCSDIR%%/config_README.txt

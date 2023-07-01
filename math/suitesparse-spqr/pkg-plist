@@ -5,11 +5,11 @@ lib/cmake/SuiteSparse/FindSPQR.cmake
 lib/cmake/SuiteSparse/FindSPQR_CUDA.cmake
 lib/libspqr_cuda.so
 lib/libspqr_cuda.so.3
-lib/libspqr_cuda.so.3.0.3
+lib/libspqr_cuda.so.3.0.4
 lib/libspqr_cuda.a
 lib/libspqr.a
 lib/libspqr.so
 lib/libspqr.so.3
-lib/libspqr.so.3.0.3
+lib/libspqr.so.3.0.4
 %%PORTDOCS%%%%DOCSDIR%%/SPQR_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/spqr_user_guide.pdf

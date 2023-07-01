@@ -3,6 +3,6 @@ lib/cmake/SuiteSparse/FindSPEX.cmake
 lib/libspex.a
 lib/libspex.so
 lib/libspex.so.2
-lib/libspex.so.2.0.3
+lib/libspex.so.2.0.4
 %%PORTDOCS%%%%DOCSDIR%%/SPEX_README.md
 %%PORTDOCS%%%%DOCSDIR%%/SPEX_UserGuide.pdf

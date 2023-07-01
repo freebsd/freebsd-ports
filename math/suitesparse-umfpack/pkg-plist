@@ -3,7 +3,7 @@ lib/cmake/SuiteSparse/FindUMFPACK.cmake
 lib/libumfpack.a
 lib/libumfpack.so
 lib/libumfpack.so.6
-lib/libumfpack.so.6.1.0
+lib/libumfpack.so.6.1.1
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_QuickStart.pdf
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_README.txt
 %%PORTDOCS%%%%DOCSDIR%%/UMFPACK_UserGuide.pdf
