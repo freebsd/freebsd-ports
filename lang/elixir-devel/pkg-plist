@@ -99,8 +99,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_items-6F601D23.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-3926EC1A.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_items-3A4DE5EB.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-BFF4A33C.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/DynamicSupervisor.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Enum.EmptyError.html
@@ -228,7 +228,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_items-D407478E.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_items-A49344CE.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-0B2EBC7C.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.AssertionError.html
@@ -280,7 +280,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_items-198B4EC6.js
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/search_items-655FC471.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/sidebar_items-2DA67A2F.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/IEx.Helpers.html
