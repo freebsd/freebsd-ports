@@ -1,13 +1,7 @@
 PORTNAME=	pdf2djvu
-DISTVERSION=	0.9.18.2
-PORTREVISION=	14
+DISTVERSION=	0.9.19
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/jwilk/${PORTNAME}/releases/download/${PORTVERSION}/
-
-PATCH_SITES=	https://github.com/jwilk/pdf2djvu/commit/
-PATCHFILES=	e170ad557d5f13daeeac047dfaa79347bbe5062f.diff:-p1 \
-		956fedc7e0831126b9006efedad5519c14201c52.diff:-p1 \
-		dca43e8182174bc04e107eaefcafcfdfdf9bcd61.diff:-p1
 
 MAINTAINER=	samy.mahmoudi@gmail.com
 COMMENT=	Creates DjVu files from PDF files
@@ -32,32 +26,25 @@ OPTIONS_SUB=	yes
 
 COLOR_QUANTIZATION_DESC=Color quantization via GraphicsMagick++
 DOCS_DESC=		Generate the man page
-NLS_DESC=		Native Language Support via gettext utilities
 MULTITHREADING_DESC=	Multithreading support via OpenMP
+NLS_DESC=		Native Language Support via gettext utilities
 XMP_DESC=		XMP metadata support via Exiv2
 
-COLOR_QUANTIZATION_CONFIGURE_WITH=graphicsmagick
 COLOR_QUANTIZATION_LIB_DEPENDS=	\
 		libGraphicsMagick++.so:graphics/GraphicsMagick \
 		libGraphicsMagick.so:graphics/GraphicsMagick
+COLOR_QUANTIZATION_CONFIGURE_WITH=graphicsmagick
 
 DOCS_BUILD_DEPENDS=	docbook-xsl>0:textproc/docbook-xsl \
 			xsltproc:textproc/libxslt
 
-NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=		gettext-runtime
-
 MULTITHREADING_CONFIGURE_ENABLE=openmp
 
-XMP_CONFIGURE_ENABLE=	xmp
-XMP_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
-XMP_BROKEN=		graphics/exiv2 and graphics/poppler disagree about usable C++ standard
+NLS_USES=		gettext-runtime
+NLS_CONFIGURE_ENABLE=	nls
 
-pre-configure:
-	@cd ${WRKSRC} && ${SH} ${FILESDIR}/bootstrap
-	# Poppler 20.12 no longer installs the pc file for this private backend.
-	# https://github.com/jwilk/pdf2djvu/issues/144
-	${REINPLACE_CMD} -e 's|poppler-splash|poppler|g' ${WRKSRC}/configure
+XMP_LIB_DEPENDS=	libexiv2.so:graphics/exiv2
+XMP_CONFIGURE_ENABLE=	xmp
 
 post-build-DOCS-on:
 	@cd ${WRKSRC}/doc && ${GMAKE}
