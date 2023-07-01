@@ -13,7 +13,7 @@ WWW=		https://www.haskell.org/ghc/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-ONLY_FOR_ARCHS=		aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=		aarch64 amd64 i386
 
 USES=			autoreconf compiler:c11 gmake \
 			ncurses perl5 python:build shebangfix \
@@ -201,15 +201,6 @@ post-patch:
 	${SED} -e 's|%%DYNAMIC%%|${HADRIAN_SETTING_DYNAMIC}|' \
 		-e 's|%%PROFILE%%|${HADRIAN_SETTING_PROFILE}|' \
 		${PATCHDIR}/UserSettings.hs > ${WRKSRC}/hadrian/src/UserSettings.hs
-.endif
-
-.if ${BOOT_GHC_VERSION:C/\..*//g} < 9
-# TODO: remove this after rerolling all bootstraps
-post-patch-BOOT-off:
-	@${REINPLACE_CMD} -e '/^mandir/d' ${BOOT_DIR}/mk/build.mk
-	@${REINPLACE_CMD} -e '/^infodir/d' ${BOOT_DIR}/mk/build.mk
-	@${REINPLACE_CMD} -e '/^docdir/d' ${BOOT_DIR}/mk/build.mk
-	@${REINPLACE_CMD} -e '/^htmldir/d' ${BOOT_DIR}/mk/build.mk
 .endif
 
 pre-configure:
