@@ -7756,3 +7756,4 @@ print/ghostscript8-base||2023-06-30|Has expired: Obsolete and unsupported upstre
 print/ghostscript8-x11||2023-06-30|Has expired: Obsolete and unsupported upstream
 textproc/py-transifex-client|textproc/go-transifex-client|2023-06-30|Has expired: Upstream switched to go based api client (textproc/go-transifex-client)
 devel/google-cloud-cpp117|devel/google-cloud-cpp|2023-07-01|Has expired: Newer version is in the tree
+math/py-gmpy|math/py-gmpy2|2023-07-01|Has expired: EOLd, use math/py-gmpy2 instead
