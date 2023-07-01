@@ -318,6 +318,7 @@
     SUBDIR += py-pysubs2
     SUBDIR += py-soco
     SUBDIR += py-subliminal
+    SUBDIR += py-tartube
     SUBDIR += py-tvnamer
     SUBDIR += qmmp-plugin-pack-qt5
     SUBDIR += qmmp-plugin-pack-qt6
