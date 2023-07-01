@@ -1,11 +1,6 @@
 PORTNAME=	wdisplays
-DISTVERSION=	1.1
-PORTREVISION=	3
+DISTVERSION=	1.1.1
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	f4cf935e490b.patch:-p1 # https://github.com/artizirk/wdisplays/pull/1
-PATCHFILES+=	59edbbd15500.patch:-p1 # https://github.com/artizirk/wdisplays/pull/2
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	GUI display configurator for wlroots compositors
