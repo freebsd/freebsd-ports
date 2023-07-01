@@ -490,7 +490,7 @@ include/thrift/lib/cpp2/transport/http2/common/testutil/FakeProcessors.h
 include/thrift/lib/cpp2/transport/http2/common/testutil/FakeResponseHandler.h
 include/thrift/lib/cpp2/transport/http2/server/ThriftRequestHandler.h
 include/thrift/lib/cpp2/transport/rocket/Compression.h
-include/thrift/lib/cpp2/transport/rocket/FdSocketMetadata.h
+include/thrift/lib/cpp2/transport/rocket/FdSocket.h
 include/thrift/lib/cpp2/transport/rocket/PayloadUtils.h
 include/thrift/lib/cpp2/transport/rocket/RocketException.h
 include/thrift/lib/cpp2/transport/rocket/Types.h
@@ -525,6 +525,7 @@ include/thrift/lib/cpp2/transport/rocket/test/fuzz/FuzzUtil.h
 include/thrift/lib/cpp2/transport/rocket/test/network/ClientServerTestUtil.h
 include/thrift/lib/cpp2/transport/rocket/test/network/Mocks.h
 include/thrift/lib/cpp2/transport/rocket/test/network/Util.h
+include/thrift/lib/cpp2/transport/rocket/test/util/FdUtils.h
 include/thrift/lib/cpp2/transport/rocket/test/util/TestServiceMock.h
 include/thrift/lib/cpp2/transport/rocket/test/util/TestUtil.h
 include/thrift/lib/cpp2/transport/rocket/test/util/VersionServicesMock.h
