@@ -1,5 +1,6 @@
 PORTNAME=	rust-analyzer
 DISTVERSION=	2023-06-12
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	rust@FreeBSD.org
@@ -202,6 +203,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		zip-0.6.4
 
 CARGO_INSTALL_PATH=	crates/rust-analyzer
+
+LTO_UNSAFE=	yes
 
 # attempts to install rustup toolchains
 NO_TEST=	yes
