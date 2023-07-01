@@ -1,5 +1,5 @@
 PORTNAME=	weechat
-DISTVERSION=	3.8
+DISTVERSION=	4.0.1
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -16,7 +16,7 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libgpg-error.so:security/libgpg-error \
 		libzstd.so:archivers/zstd
 
-USES=		cmake cpe ncurses libtool pkgconfig tar:xz
+USES=		cmake cpe libtool ncurses pkgconfig tar:xz
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DLIBDATADIR=${LOCALBASE}/libdata
@@ -24,7 +24,7 @@ CMAKE_ARGS=	-DLIBDATADIR=${LOCALBASE}/libdata
 OPTIONS_DEFINE=		BACKTRACE DOCS CA_BUNDLE HEADLESS ICON ICONV \
 			MANPAGES NLS
 OPTIONS_DEFAULT=	ASPELL BACKTRACE CA_BUNDLE CHARSET HEADLESS \
-			ICON LUA MANPAGES PERL PYTHON RUBY TCL TYPING
+			ICON LUA MANPAGES NLS PERL PYTHON RUBY TCL TYPING
 OPTIONS_SUB=		yes
 
 OPTIONS_GROUP=		PLUGINS
@@ -51,7 +51,7 @@ ASPELL_CMAKE_BOOL=	ENABLE_SPELL
 ASPELL_LIB_DEPENDS=	libaspell.so:textproc/aspell
 CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
 CHARSET_IMPLIES=	ICONV
-DOCS_CMAKE_BOOL=	ENABLE_DOC
+DOCS_CMAKE_BOOL=	ENABLE_DOC ENABLE_DOC_INCOMPLETE
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
 GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
 ICONV_USES=		iconv
@@ -60,6 +60,7 @@ LUA_USES=		lua pkgconfig
 MANPAGES_CMAKE_BOOL=	ENABLE_MAN
 MANPAGES_CMAKE_ON=	-DMANDIR=${MANPREFIX}/man
 MANPAGES_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
+NLS_BROKEN_OFF=		NLS option error: "ld: error: undefined symbol: libintl_bindtextdomain"
 NLS_USES=		gettext
 PERL_USES=		perl5
 PHP_USES=		php:build,embed
