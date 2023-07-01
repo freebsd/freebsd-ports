@@ -143,6 +143,7 @@ include/nest/iaf_cond_alpha_mc.h
 include/nest/iaf_cond_beta.h
 include/nest/iaf_cond_exp.h
 include/nest/iaf_cond_exp_sfa_rr.h
+include/nest/iaf_propagator.h
 include/nest/iaf_psc_alpha.h
 include/nest/iaf_psc_alpha_multisynapse.h
 include/nest/iaf_psc_alpha_ps.h
@@ -226,11 +227,9 @@ include/nest/poisson_generator.h
 include/nest/poisson_generator_ps.h
 include/nest/position.h
 include/nest/pp_cond_exp_mc_urbanczik.h
-include/nest/pp_pop_psc_delta.h
 include/nest/pp_psc_delta.h
 include/nest/ppd_sup_generator.h
 include/nest/processes.h
-include/nest/propagator_stability.h
 include/nest/proxynode.h
 include/nest/pseudo_recording_device.h
 include/nest/pulsepacket_generator.h
@@ -257,6 +256,7 @@ include/nest/regula_falsi.h
 include/nest/ring_buffer.h
 include/nest/ring_buffer_impl.h
 include/nest/scanner.h
+include/nest/secondary_event.h
 include/nest/send_buffer_position.h
 include/nest/sharedptrdatum.h
 include/nest/siegert_neuron.h
@@ -355,11 +355,23 @@ include/nest/vp_manager.h
 include/nest/vp_manager_impl.h
 include/nest/weight_recorder.h
 lib/nest/libmodels.so
+lib/nest/libmodels.so.3
+lib/nest/libmodels.so.3.4
 lib/nest/libnest.so
+lib/nest/libnest.so.3
+lib/nest/libnest.so.3.4
 lib/nest/libnestkernel.so
+lib/nest/libnestkernel.so.3
+lib/nest/libnestkernel.so.3.4
 lib/nest/libnestutil.so
+lib/nest/libnestutil.so.3
+lib/nest/libnestutil.so.3.4
 lib/nest/libsli.so
+lib/nest/libsli.so.3
+lib/nest/libsli.so.3.4
 lib/nest/libsli_readline.so
+lib/nest/libsli_readline.so.3
+lib/nest/libsli_readline.so.3.4
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/nest/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/nest/lib/README.md
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/nest/lib/__init__.py
@@ -446,6 +458,7 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/mpitests/CMakeLists.txt
 %%DATADIR%%/testsuite/mpitests/README
 %%DATADIR%%/testsuite/mpitests/issue-1957.sli
+%%DATADIR%%/testsuite/mpitests/issue-1974.sli
 %%DATADIR%%/testsuite/mpitests/issue-2119.sli
 %%DATADIR%%/testsuite/mpitests/issue-281.sli
 %%DATADIR%%/testsuite/mpitests/issue-600.sli
@@ -519,8 +532,14 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/musictests/test_event_proxies_issue-696_sender.sli
 %%DATADIR%%/testsuite/musictests/test_event_proxies_receiver.sli
 %%DATADIR%%/testsuite/musictests/test_event_proxies_sender.sli
+%%DATADIR%%/testsuite/musictests/test_message.music
+%%DATADIR%%/testsuite/musictests/test_message0.dat
+%%DATADIR%%/testsuite/musictests/test_message_receiver.sli
 %%DATADIR%%/testsuite/musictests/test_music_failure1.music
 %%DATADIR%%/testsuite/musictests/test_music_failure2.music
+%%DATADIR%%/testsuite/musictests/test_rate_proxy.music
+%%DATADIR%%/testsuite/musictests/test_rate_proxy_receiver.sli
+%%DATADIR%%/testsuite/musictests/test_rate_proxy_sender.sli
 %%DATADIR%%/testsuite/pytests/connect_test_base.py
 %%DATADIR%%/testsuite/pytests/mpi/2/connect_test_base.py
 %%DATADIR%%/testsuite/pytests/mpi/2/test_connect_all_to_all.py
@@ -555,6 +574,7 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/pytests/test_connect_one_to_one.py
 %%DATADIR%%/testsuite/pytests/test_connect_pairwise_bernoulli.py
 %%DATADIR%%/testsuite/pytests/test_connect_symmetric_pairwise_bernoulli.py
+%%DATADIR%%/testsuite/pytests/test_copy_model.py
 %%DATADIR%%/testsuite/pytests/test_create.py
 %%DATADIR%%/testsuite/pytests/test_current_recording_generators.py
 %%DATADIR%%/testsuite/pytests/test_erfc_neuron.py
@@ -567,6 +587,7 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/pytests/test_glif_cond.py
 %%DATADIR%%/testsuite/pytests/test_glif_psc.py
 %%DATADIR%%/testsuite/pytests/test_helper_functions.py
+%%DATADIR%%/testsuite/pytests/test_iaf_singularity.py
 %%DATADIR%%/testsuite/pytests/test_jonke_synapse.py
 %%DATADIR%%/testsuite/pytests/test_json.py
 %%DATADIR%%/testsuite/pytests/test_labeled_synapses.py
@@ -595,6 +616,7 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/pytests/test_regression_issue-1409.py
 %%DATADIR%%/testsuite/pytests/test_regression_issue-2069.py
 %%DATADIR%%/testsuite/pytests/test_regression_issue-2125.py
+%%DATADIR%%/testsuite/pytests/test_regression_issue-2480.py
 %%DATADIR%%/testsuite/pytests/test_siegert_neuron.py
 %%DATADIR%%/testsuite/pytests/test_sp/test_conn_builder.py
 %%DATADIR%%/testsuite/pytests/test_sp/test_disconnect.py
@@ -646,7 +668,9 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/regressiontests/issue-1610.sli
 %%DATADIR%%/testsuite/regressiontests/issue-1640.sli
 %%DATADIR%%/testsuite/regressiontests/issue-1703.py
+%%DATADIR%%/testsuite/regressiontests/issue-2052.sli
 %%DATADIR%%/testsuite/regressiontests/issue-211.sli
+%%DATADIR%%/testsuite/regressiontests/issue-2282.sli
 %%DATADIR%%/testsuite/regressiontests/issue-264.sli
 %%DATADIR%%/testsuite/regressiontests/issue-311.sli
 %%DATADIR%%/testsuite/regressiontests/issue-327.sli
@@ -722,7 +746,6 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/regressiontests/ticket-903.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-921.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-926.sli
-%%DATADIR%%/testsuite/regressiontests/ticket-933.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-941.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-949.sli
 %%DATADIR%%/testsuite/regressiontests/ticket-959.sli
@@ -864,7 +887,6 @@ lib/nest/libsli_readline.so
 %%DATADIR%%/testsuite/unittests/test_poisson_generator_ps.sli
 %%DATADIR%%/testsuite/unittests/test_poisson_ps_intervals.sli
 %%DATADIR%%/testsuite/unittests/test_poisson_ps_min_interval.sli
-%%DATADIR%%/testsuite/unittests/test_pp_pop_psc_delta.sli
 %%DATADIR%%/testsuite/unittests/test_pp_psc_delta.sli
 %%DATADIR%%/testsuite/unittests/test_ppd_sup_generator.sli
 %%DATADIR%%/testsuite/unittests/test_psp_amplitude_consistency.sli
