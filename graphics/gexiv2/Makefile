@@ -4,6 +4,9 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNOME
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/gexiv2/-/commit/
+PATCHFILES=	06adc8fb70cb8c77c0cd364195d8251811106ef8.patch:-p1
+
 MAINTAINER=	cmt@FreeBSD.org
 COMMENT=	GObject-based wrapper around Exiv2 library
 WWW=		https://wiki.gnome.org/Projects/gexiv2
@@ -22,8 +25,7 @@ USE_LDCONFIG=	yes
 BINARY_WRAPPERS=	gm4
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-# https://gitlab.gnome.org/GNOME/gexiv2/-/issues/73
-USE_CXXSTD=	c++17 -D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR
+USE_CXXSTD=	c++17
 
 OPTIONS_DEFINE=		DOCS
 OPTIONS_SUB=		yes
