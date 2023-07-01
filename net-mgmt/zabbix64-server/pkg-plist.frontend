@@ -354,6 +354,7 @@
 %%WWWDIR%%/app/views/administration.miscconfig.edit.php
 %%WWWDIR%%/app/views/administration.module.edit.php
 %%WWWDIR%%/app/views/administration.module.list.php
+%%WWWDIR%%/app/views/administration.proxy.list.php
 %%WWWDIR%%/app/views/administration.queue.details.php
 %%WWWDIR%%/app/views/administration.queue.overview.php
 %%WWWDIR%%/app/views/administration.queue.overview.proxy.php
@@ -407,6 +408,7 @@
 %%WWWDIR%%/app/views/js/administration.mediatype.edit.js.php
 %%WWWDIR%%/app/views/js/administration.mediatype.list.js.php
 %%WWWDIR%%/app/views/js/administration.miscconfig.edit.js.php
+%%WWWDIR%%/app/views/js/administration.proxy.list.js.php
 %%WWWDIR%%/app/views/js/administration.regex.edit.js.php
 %%WWWDIR%%/app/views/js/administration.script.edit.js.php
 %%WWWDIR%%/app/views/js/administration.script.list.js.php
@@ -481,7 +483,6 @@
 %%WWWDIR%%/app/views/js/popup.triggerexpr.js.php
 %%WWWDIR%%/app/views/js/popup.usergroupmapping.edit.js.php
 %%WWWDIR%%/app/views/js/popup.valuemap.edit.js.php
-%%WWWDIR%%/app/views/js/proxy.list.js.php
 %%WWWDIR%%/app/views/js/reports.actionlog.list.js.php
 %%WWWDIR%%/app/views/js/reports.auditlog.list.js.php
 %%WWWDIR%%/app/views/js/reports.scheduledreport.edit.js.php
@@ -561,7 +562,6 @@
 %%WWWDIR%%/app/views/popup.usergroupmapping.edit.php
 %%WWWDIR%%/app/views/popup.valuemap.edit.php
 %%WWWDIR%%/app/views/popup.view.php
-%%WWWDIR%%/app/views/proxy.list.php
 %%WWWDIR%%/app/views/report.status.php
 %%WWWDIR%%/app/views/reports.actionlog.list.csv.php
 %%WWWDIR%%/app/views/reports.actionlog.list.php
@@ -935,6 +935,7 @@
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldMultiSelectItemPrototypeView.php
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldMultiSelectItemView.php
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldMultiSelectMediaTypeView.php
+%%WWWDIR%%/include/classes/html/widgets/CWidgetFieldMultiSelectMapView.php
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldMultiSelectServiceView.php
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldMultiSelectSlaView.php
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldMultiSelectUserView.php
@@ -942,7 +943,6 @@
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldNumericBoxView.php
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldRadioButtonListView.php
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldRangeControlView.php
-%%WWWDIR%%/include/classes/html/widgets/CWidgetFieldSelectResourceView.php
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldSelectView.php
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldSeveritiesView.php
 %%WWWDIR%%/include/classes/html/widgets/CWidgetFieldTagsView.php
@@ -1154,6 +1154,7 @@
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMultiSelectHost.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMultiSelectItem.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMultiSelectItemPrototype.php
+%%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMultiSelectMap.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMultiSelectMediaType.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMultiSelectService.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldMultiSelectSla.php
@@ -1164,7 +1165,6 @@
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldRangeControl.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldReference.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldSelect.php
-%%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldSelectResource.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldSeverities.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldTags.php
 %%WWWDIR%%/include/classes/widgets/fields/CWidgetFieldTextArea.php

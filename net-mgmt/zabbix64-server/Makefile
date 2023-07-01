@@ -1,5 +1,5 @@
 PORTNAME=	zabbix64
-DISTVERSION=	6.4.3
+DISTVERSION=	6.4.4
 PORTREVISION?=	0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://cdn.zabbix.com/zabbix/sources/stable/${DISTVERSION:R}/
