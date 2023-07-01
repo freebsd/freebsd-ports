@@ -1,4 +1,4 @@
-TIMESTAMP = 1683641416
+TIMESTAMP = 1688195770
 SHA256 (rust/crates/ansi_term-0.11.0.crate) = ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b
 SIZE (rust/crates/ansi_term-0.11.0.crate) = 17087
 SHA256 (rust/crates/atty-0.2.14.crate) = d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8
@@ -63,9 +63,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
 SHA256 (rust/crates/x11-dl-2.18.5.crate) = 2bf981e3a5b3301209754218f962052d4d9ee97e478f4d26d4a6eced34c1fef8
 SIZE (rust/crates/x11-dl-2.18.5.crate) = 62951
-SHA256 (PonasKovas-rlaunch-1.3.13_GH0.tar.gz) = 2f0679dda503bf63b399bda8cde17f8ed1bd114b51f9476ba25f529a3a020e3c
-SIZE (PonasKovas-rlaunch-1.3.13_GH0.tar.gz) = 12417
-SHA256 (2f73499553d4a14840ed4e092a0c93fe1e928c64.patch) = 13355f37e92b13b8d1b712882ba1969adc3b30511dec8006a3cdcca46ef664f3
-SIZE (2f73499553d4a14840ed4e092a0c93fe1e928c64.patch) = 998
-SHA256 (8e3d22fa4e536cce10b02366b0ba9b47c9b00b81.patch) = a886c8d9d0d3429ed947daf4789814a2922f009e6808c4ec3480732e6fdcf293
-SIZE (8e3d22fa4e536cce10b02366b0ba9b47c9b00b81.patch) = 1570
+SHA256 (PonasKovas-rlaunch-1.3.14_GH0.tar.gz) = 1be389fa3fcaeeebcf7e0435b50fb91f96ec1e81a69fd2773ff2380d2e462f84
+SIZE (PonasKovas-rlaunch-1.3.14_GH0.tar.gz) = 12473
