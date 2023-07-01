@@ -19,13 +19,7 @@ USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.pre.mk>
-
-.if ${PYTHON_REL} < 30800
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=1.5.0:devel/py-importlib-metadata@${PY_FLAVOR}
-.endif
-
 do-test:
 	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} manage.py test -v3 --noinput
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
