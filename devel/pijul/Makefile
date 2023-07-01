@@ -1,6 +1,5 @@
 PORTNAME=	pijul
-PORTVERSION=	1.0.0.b5
-PORTREVISION=	1
+PORTVERSION=	1.0.0.b6
 CATEGORIES=	devel
 
 MAINTAINER=	cs@FreeBSD.org
@@ -14,7 +13,7 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 
 USES=		cargo ssl
 CARGO_INSTALL=	no
-CARGO_CRATES=	${PORTNAME}-1.0.0-beta.5 \
+CARGO_CRATES=	${PORTNAME}-1.0.0-beta.6 \
 		addr2line-0.19.0 \
 		adler-1.0.2 \
 		adler32-1.2.0 \
@@ -32,15 +31,12 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.5 \
 		arrayref-0.3.7 \
 		arrayvec-0.7.2 \
 		async-broadcast-0.5.1 \
-		async-channel-1.8.0 \
 		async-executor-1.5.1 \
-		async-fs-1.6.0 \
 		async-io-1.13.0 \
 		async-lock-2.7.0 \
 		async-recursion-1.0.4 \
 		async-task-4.4.0 \
 		async-trait-0.1.68 \
-		atomic-waker-1.1.1 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
@@ -55,7 +51,6 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.5 \
 		block-buffer-0.10.4 \
 		block-modes-0.8.1 \
 		block-padding-0.2.1 \
-		blocking-1.3.1 \
 		blowfish-0.8.0 \
 		bs58-0.4.0 \
 		bstr-1.5.0 \
@@ -96,6 +91,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.5 \
 		digest-0.9.0 \
 		digest-0.10.7 \
 		dirs-3.0.2 \
+		dirs-4.0.0 \
 		dirs-next-2.0.0 \
 		dirs-sys-0.3.7 \
 		dirs-sys-next-0.1.2 \
@@ -173,7 +169,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.5 \
 		lazy_static-1.4.0 \
 		libc-0.2.144 \
 		libgit2-sys-0.12.26+1.3.0 \
-		libpijul-1.0.0-beta.5 \
+		libpijul-1.0.0-beta.6 \
 		libsodium-sys-0.2.7 \
 		libssh2-sys-0.2.23 \
 		libz-sys-1.1.9 \
@@ -188,7 +184,6 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.5 \
 		memchr-2.5.0 \
 		memmap-0.7.0 \
 		memoffset-0.6.5 \
-		memoffset-0.7.1 \
 		memoffset-0.8.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
@@ -197,7 +192,7 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.5 \
 		mio-0.8.6 \
 		native-tls-0.2.11 \
 		nix-0.22.3 \
-		nix-0.26.2 \
+		nix-0.25.1 \
 		nom-7.1.3 \
 		num-0.4.0 \
 		num-bigint-0.4.3 \
@@ -373,22 +368,21 @@ CARGO_CRATES=	${PORTNAME}-1.0.0-beta.5 \
 		winnow-0.4.6 \
 		winreg-0.10.1 \
 		xattr-0.2.3 \
-		xdg-home-1.0.0 \
 		yasna-0.4.0 \
-		zbus-3.12.0 \
-		zbus_macros-3.12.0 \
+		zbus-3.10.0 \
+		zbus_macros-3.10.0 \
 		zbus_names-2.5.1 \
 		zeroize-1.3.0 \
 		zeroize_derive-1.4.2 \
 		zstd-seekable-0.1.22 \
-		zvariant-3.13.0 \
-		zvariant_derive-3.13.0 \
-		zvariant_utils-1.0.0
+		zvariant-3.15.0 \
+		zvariant_derive-3.15.0 \
+		zvariant_utils-1.0.1
 
 PLIST_FILES=	bin/pijul
 
 post-patch:
-	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-beta.5/* ${WRKSRC}/
+	${MV} ${WRKSRC}/cargo-crates/pijul-1.0.0-beta.6/* ${WRKSRC}/
 
 do-install:
 	${INSTALL_SCRIPT} ${CARGO_TARGET_DIR}/${CARGO_BUILD_TARGET}/*/pijul ${STAGEDIR}${PREFIX}/bin/pijul
