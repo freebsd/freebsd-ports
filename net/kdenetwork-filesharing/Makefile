@@ -17,4 +17,11 @@ USE_XORG=	x11
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${ARCH:Mpowerpc*} && ${OSVERSION} < 1400092
+CXX=		clang++${LLVM_VERSION}
+USES+=		llvm:min=16
+.endif
+
 .include <bsd.port.mk>
