@@ -1,5 +1,5 @@
 PORTNAME=	gitlab-ce
-PORTVERSION=	16.0.4
+PORTVERSION=	16.0.6
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 # mail/rubygem-net-pop is required as ruby 3.1 removed it
 MY_DEPENDS=	git>=2.39.2:devel/git \
 	gitaly>=${PORTVERSION}:devel/gitaly \
-	gitlab-elasticsearch-indexer>=4.3.1:textproc/gitlab-elasticsearch-indexer \
+	gitlab-elasticsearch-indexer>=4.3.4:textproc/gitlab-elasticsearch-indexer \
 	gitlab-agent>=16.0.1:net/gitlab-agent \
 	gitlab-metrics-exporter>0:devel/gitlab-metrics-exporter \
 	gitlab-pages>=${PORTVERSION}:www/gitlab-pages \
@@ -290,7 +290,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	de651c726de048960cc8c281f8659f03fad69f92
+GL_COMMIT=	d118b4fe1cb0f0c771ec3f69384fb3ae9977c69f
 
 USERS=	git
 GROUPS=	git
