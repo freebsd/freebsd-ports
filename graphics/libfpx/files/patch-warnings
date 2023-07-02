@@ -28,3 +28,55 @@ together object files compiled after #include-ing the ejpeg.h header.
 -
 -JPEGEXPORT
 -int No_JPEG_Header_Flag;
+
+padP and padWid are not used. That they are being assigned a value
+-- multiple times -- is why earlier compilers didn't warn about it.
+But modern clang raises a "set but not used" warning...
+--- fpx/filter.cpp	2013-09-02 11:45:00.000000000 -0400
++++ fpx/filter.cpp	2023-07-01 23:41:19.701483000 -0400
+@@ -354,10 +354,8 @@
+       goto RETURN;
+ 
+-    unsigned char *padP, *tmpP, *dstP;
+-    long      x, y,
+-            padWid = (width + (2 * pad));     // Width of padded line in Pixels
++    unsigned char *tmpP, *dstP;
++    long      x, y;
+ 
+     for (y = 0; y < height; y++) {
+-      padP = srcComp[k]  +(((y + pad) * padWid) * sizeof( Pixel)) + (pad * sizeof( Pixel));
+       tmpP = tempcomp[k] + ((y * width)         * sizeof( Pixel));
+       dstP = dstComp[k]  + ((y * width)         * sizeof( Pixel));
+@@ -367,5 +365,4 @@
+         sum = pixVal + (long)(beta*(double)(pixVal - (long)*dstP) + 0.5);
+         *dstP = (unsigned char)CLAMP(sum, 0, 255);
+-        padP += sizeof( Pixel);
+         tmpP += sizeof( Pixel);
+         dstP += sizeof( Pixel);
+
+More set, but unused variables:
+--- ri_image/pr_level.cpp	2013-09-02 11:45:00.000000000 -0400
++++ ri_image/pr_level.cpp	2023-07-01 23:48:29.094528000 -0400
+@@ -1518,5 +1518,4 @@
+   // Declare and init some variables before the main loop...
+   int heightOfBuffer, widthOfBuffer;   // Width and height to be written for each bloc
+-  int yBloc = 0;             // Top coordinate in the resolution level
+   int topInBuffer = 0;         // Top coordinate in the buffer
+   PTile* tile = tiles;          // Pointer to the current bloc of the resolution level
+@@ -1525,5 +1524,4 @@
+   for (short hBloc = 0; hBloc < nbTilesH; ++hBloc) {
+   
+-    int xBloc = 0;     // Left coordinate in the resolution level
+     int leftInBuffer = 0;  // Left coordinate in the buffer
+ 
+@@ -1607,10 +1605,8 @@
+       }
+       
+-      xBloc += tile->width;       // Increment left coordinate in the resolution level
+       leftInBuffer += widthOfBuffer;    // Increment left coordinate in the buffer
+       ++tile;               // Next tile
+     }
+     
+-    yBloc += tile->height;      // Increment top coordinate in the resolution level
+     topInBuffer += heightOfBuffer;  // Increment top coordinate in the buffer
+   }
