@@ -1,4 +1,4 @@
---- Cargo.toml.orig	2023-06-11 07:21:08 UTC
+--- Cargo.toml.orig	2023-06-30 14:21:57 UTC
 +++ Cargo.toml
 @@ -52,7 +52,7 @@ subsetter = "0.1.1"
  serde = { version = "1", features = ["derive"] }
@@ -7,5 +7,5 @@
 -svg2pdf = { git = "https://github.com/typst/svg2pdf" }
 +svg2pdf = "0.5.0"
  tiny-skia = "0.9.0"
+ toml = { version = "0.7.3", default-features = false, features = ["parse"] }
  tracing = "0.1.37"
- ttf-parser = "0.18.1"

@@ -124,10 +124,9 @@ CARGO_CRATES=	\
 	itoa-1.0.6 \
 	jpeg-decoder-0.2.6 \
 	jpeg-decoder-0.3.0 \
-	js-sys-0.3.61 \
+	js-sys-0.3.63 \
 	kqueue-1.0.7 \
 	kqueue-sys-1.0.3 \
-	kurbo-0.8.0 \
 	kurbo-0.9.5 \
 	lazy_static-1.4.0 \
 	libc-0.2.142 \
@@ -206,7 +205,8 @@ CARGO_CRATES=	\
 	rustc-hash-1.1.0 \
 	rustc_version-0.4.0 \
 	rustix-0.37.14 \
-	rustls-0.20.8 \
+	rustls-0.21.2 \
+	rustls-webpki-0.100.1 \
 	rustversion-1.0.12 \
 	rustybuzz-0.7.0 \
 	ryu-1.0.13 \
@@ -219,7 +219,7 @@ CARGO_CRATES=	\
 	serde-1.0.160 \
 	serde_derive-1.0.160 \
 	serde_json-1.0.96 \
-	serde_spanned-0.6.1 \
+	serde_spanned-0.6.2 \
 	serde_yaml-0.8.26 \
 	sharded-slab-0.1.4 \
 	simd-adler32-0.3.5 \
@@ -245,6 +245,7 @@ CARGO_CRATES=	\
 	synstructure-0.12.6 \
 	syntect-5.0.0 \
 	tap-1.0.1 \
+	tar-0.4.38 \
 	tempfile-3.5.0 \
 	termcolor-1.1.3 \
 	textwrap-0.16.0 \
@@ -259,12 +260,12 @@ CARGO_CRATES=	\
 	tinystr-0.7.1 \
 	tinyvec-1.6.0 \
 	tinyvec_macros-0.1.1 \
-	toml-0.7.3 \
-	toml_datetime-0.6.1 \
-	toml_edit-0.19.8 \
+	toml-0.7.4 \
+	toml_datetime-0.6.2 \
+	toml_edit-0.19.9 \
 	tracing-0.1.38 \
 	tracing-attributes-0.1.24 \
-	tracing-core-0.1.30 \
+	tracing-core-0.1.31 \
 	tracing-error-0.2.0 \
 	tracing-flame-0.2.0 \
 	tracing-log-0.1.3 \
@@ -291,7 +292,7 @@ CARGO_CRATES=	\
 	unicode_names2-0.6.0 \
 	unscanny-0.1.0 \
 	untrusted-0.7.1 \
-	ureq-2.6.2 \
+	ureq-2.7.1 \
 	url-2.3.1 \
 	usvg-0.32.0 \
 	usvg-parser-0.32.0 \
@@ -303,14 +304,13 @@ CARGO_CRATES=	\
 	version_check-0.9.4 \
 	walkdir-2.3.3 \
 	wasi-0.11.0+wasi-snapshot-preview1\
-	wasm-bindgen-0.2.84 \
-	wasm-bindgen-backend-0.2.84 \
-	wasm-bindgen-macro-0.2.84 \
-	wasm-bindgen-macro-support-0.2.84 \
-	wasm-bindgen-shared-0.2.84 \
-	web-sys-0.3.61 \
-	webpki-0.22.0 \
-	webpki-roots-0.22.6 \
+	wasm-bindgen-0.2.86 \
+	wasm-bindgen-backend-0.2.86 \
+	wasm-bindgen-macro-0.2.86 \
+	wasm-bindgen-macro-support-0.2.86 \
+	wasm-bindgen-shared-0.2.86 \
+	web-sys-0.3.63 \
+	webpki-roots-0.23.1 \
 	weezl-0.1.7 \
 	wild-2.1.0 \
 	winapi-0.3.9 \
@@ -337,9 +337,10 @@ CARGO_CRATES=	\
 	windows_x86_64_gnullvm-0.48.0 \
 	windows_x86_64_msvc-0.42.2 \
 	windows_x86_64_msvc-0.48.0 \
-	winnow-0.4.1 \
+	winnow-0.4.6 \
 	writeable-0.5.2 \
 	wyz-0.5.1 \
+	xattr-0.2.3 \
 	xi-unicode-0.3.0 \
 	xmlparser-0.13.5 \
 	xmp-writer-0.1.0 \
