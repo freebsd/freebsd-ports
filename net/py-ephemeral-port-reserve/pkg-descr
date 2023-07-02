@@ -1,0 +1,4 @@
+ephemeral-port-reserve handles the situation when you need a networked program
+to bind to a port that can't be hard-coded. Generally this is when you want to
+run several of them in parallel; if they all bind to port 8080, only one of
+them can succeed.
