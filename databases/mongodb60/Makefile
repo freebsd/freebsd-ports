@@ -47,6 +47,8 @@ GH_PROJECT=	mongo spidermonkey:mozjs
 GH_TAGNAME=	${MOZJS_TAG}:mozjs
 USE_RC_SUBR=	mongod
 
+CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
+
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
 
