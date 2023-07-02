@@ -1,6 +1,6 @@
 PORTNAME=	gtk4-layer-shell
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	x11-toolkits
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,6 +19,7 @@ USE_GNOME=	gtk40 introspection:build
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
 GH_ACCOUNT=	wmww
+MESON_ARGS=	-Dsmoke-tests=false # Need luajit flavor of devel/lua-lgi
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
