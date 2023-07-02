@@ -1,0 +1,33 @@
+https://github.com/letoram/xarcan/commit/c6173b4f6682
+
+../hw/kdrive/arcan/arcan.c:1523:21: error: incompatible function pointer types initializing 'present_abort_vblank_ptr' (aka 'void (*)(struct _rrCrtc *, unsigned long, unsigned long)') with an expression of type 'void (void *)' [-Wincompatible-function-pointer-types]
+    .abort_vblank = arcanPresentAbortVblank,
+                    ^~~~~~~~~~~~~~~~~~~~~~~
+../hw/kdrive/arcan/arcan.c:1704:25: warning: incompatible pointer types passing 'miPointerSpriteFuncRec *' (aka 'struct _miPointerSpriteFuncRec *') to parameter of type 'miPointerScreenFuncPtr' (aka 'struct _miPointerScreenFuncRec *') [-Wincompatible-pointer-types]
+                        &ArcanPointerSpriteFuncs, FALSE);
+                        ^~~~~~~~~~~~~~~~~~~~~~~~
+
+--- hw/kdrive/arcan/arcan.c.orig	2020-11-29 15:29:55 UTC
++++ hw/kdrive/arcan/arcan.c
+@@ -1458,11 +1458,9 @@ static int arcanPresentGetUstMsc(RRCrtcPtr crtc, CARD6
+     return 0;
+ }
+ 
+-static void arcanPresentAbortVblank(void *data)
++static void arcanPresentAbortVblank(RRCrtcPtr crtc, uint64_t evid, uint64_t msc)
+ {
+-    struct ms_present_vblank_event *event = data;
+     trace("present:vblank abort");
+-    free(event);
+ }
+ 
+ static int arcanPresentQueueVblank(RRCrtcPtr crtc, uint64_t evid, uint64_t msc)
+@@ -1701,7 +1699,7 @@ arcanCursorInit(ScreenPtr screen)
+ 
+     miPointerInitialize(screen,
+                         &ArcanPointerSpriteFuncs,
+-                        &ArcanPointerSpriteFuncs, FALSE);
++                        &ArcanPointerScreenFuncs, FALSE);
+ 
+     return TRUE;
+ }
