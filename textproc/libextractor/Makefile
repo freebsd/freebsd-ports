@@ -8,6 +8,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for keyword extraction
 WWW=		https://www.gnu.org/software/libextractor/
 
+BROKEN=		does not compile with exiv2 0.28
+DEPRECATED=	does not compile with exiv2 0.28, and no ports tree users
+EXPIRATION_DATE=2023-09-30
+
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
