@@ -53,7 +53,7 @@ GCC_DEFAULT?=		8
 .  else
 GCC_DEFAULT?=		12
 .  endif
-# Possible values: 9, agpl
+# Possible values: 9, agpl, 10
 GHOSTSCRIPT_DEFAULT?=	agpl
 # Possible values: mesa-libs, mesa-devel
 GL_DEFAULT?=		mesa-libs
