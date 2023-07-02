@@ -1,6 +1,5 @@
 PORTNAME=	luv
-DISTVERSION=	1.44.2-1
-PORTREVISION=	1
+DISTVERSION=	1.45.0-0
 CATEGORIES=	devel
 
 MAINTAINER=	adamw@FreeBSD.org
@@ -30,7 +29,7 @@ CMAKE_ARGS=	-DLUA_BUILD_TYPE=System \
 
 PLIST_FILES=	lib/libluv.so \
 		lib/libluv.so.1 \
-		lib/libluv.so.1.44.2 \
+		lib/libluv.so.1.45.0 \
 		libdata/pkgconfig/libluv.pc \
 		include/luv/util.h \
 		include/luv/luv.h \
