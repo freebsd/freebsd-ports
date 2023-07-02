@@ -1,7 +1,6 @@
 PORTNAME=	bombardier
-PORTVERSION=	1.2.5
+PORTVERSION=	1.2.6
 DISTVERSIONPREFIX=	v
-PORTREVISION=	12
 CATEGORIES=	benchmarks
 
 MAINTAINER=	danilo@FreeBSD.org
@@ -10,12 +9,9 @@ WWW=		https://github.com/codesenberg/bombardier
 
 LICENSE=	MIT
 
-USES=		go
+USES=		go:modules
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	codesenberg
-
-GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
+GO_MODULE=	github.com/codesenberg/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags "-X main.version=${PORTVERSION}"
 
 PLIST_FILES=	bin/${PORTNAME}
