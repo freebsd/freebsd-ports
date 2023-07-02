@@ -34,6 +34,8 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		compiler:c++17-lang cpe python:build scons shebangfix
 USE_RC_SUBR=	mongod
 
+CFLAGS+=	-DBOOST_NO_CXX98_FUNCTION_BASE
+
 SHEBANG_FILES=	buildscripts/scons.py
 python_OLD_CMD=	@python_interpreter@
 
