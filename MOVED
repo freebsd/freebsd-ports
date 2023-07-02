@@ -7759,3 +7759,4 @@ devel/google-cloud-cpp117|devel/google-cloud-cpp|2023-07-01|Has expired: Newer v
 math/py-gmpy|math/py-gmpy2|2023-07-01|Has expired: EOLd, use math/py-gmpy2 instead
 security/openssl_tpm_engine||2023-07-02|Has expired: Requires older openssl and upstream unmaintained since 2017
 www/kristall||2023-07-02|Has expired: Requires older openssl
+sysutils/cfengine-masterfiles318||2023-07-02|Has expired: Expire one year after cfengine-masterfiles 3.19.0 released
