@@ -1,7 +1,6 @@
 PORTNAME=	bulk_extractor
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.3
 DISTVERSIONPREFIX=	v
-PORTREVISION=	4
 CATEGORIES=	sysutils
 
 MAINTAINER=	nobutaka@FreeBSD.org
@@ -36,6 +35,8 @@ GNU_CONFIGURE=	yes
 CXXFLAGS_powerpc=	-DBIG_ENDIAN
 CXXFLAGS_powerpcspe=	-DBIG_ENDIAN
 CONFIGURE_ARGS=	--enable-exiv2=true
+
+TEST_TARGET=	check
 
 PLIST_FILES=	bin/bulk_extractor bin/test_be man/man1/bulk_extractor.1.gz
 
