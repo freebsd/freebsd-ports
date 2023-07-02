@@ -417,7 +417,6 @@
     SUBDIR += openssl-unsafe
     SUBDIR += openssl30
     SUBDIR += openssl31
-    SUBDIR += openssl_tpm_engine
     SUBDIR += openvas
     SUBDIR += openvpn
     SUBDIR += openvpn-admin
