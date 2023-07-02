@@ -29,7 +29,7 @@ USE_PYTHON=	distutils autoplist pytest
 USE_GITHUB=	yes
 GH_ACCOUNT=	Yelp
 
-TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR} PATH=${STAGEDIR}${PREFIX}/bin:${PATH}
+TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/tests # tests hang, see https://github.com/Yelp/bravado-core/issues/396
 
 NO_ARCH=	yes
