@@ -1,5 +1,5 @@
 PORTNAME=	routino
-PORTVERSION=	3.4
+PORTVERSION=	3.4.1
 CATEGORIES=	astro
 MASTER_SITES=	http://www.routino.org/download/
 
