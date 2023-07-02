@@ -333,8 +333,6 @@ BINARY_ALIAS=	sed=gsed
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD && ( \
-    (${OSVERSION} >= 1300525 && ${OSVERSION} < 1301000) || \
-    (${OSVERSION} >= 1301500 && ${OSVERSION} < 1301502) || \
     (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
 BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility
 .endif

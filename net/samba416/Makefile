@@ -12,6 +12,8 @@ WWW=				https://gitlab.com/samba-freebsd/
 LICENSE=			GPLv3+
 LICENSE_FILE=			${WRKSRC}/COPYING
 
+IGNORE_FreeBSD_12=		only runs on FreeBSD 13.1 and above due use of O_EMPTY_PATH
+
 USES=				cpe
 
 CONFLICTS_INSTALL?=		samba4*
@@ -409,10 +411,6 @@ UTMP_CONFIGURE_WITH=		utmp
 ##############################################################################
 .include <bsd.port.options.mk>
 ##############################################################################
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300076
-IGNORE=runs only on FreeBSD 13.1 and above due use of O_EMPTY_PATH
-.endif
-
 .if !defined(WANT_EXP_MODULES) || empty(WANT_EXP_MODULES)
 WANT_EXP_MODULES=		vfs_cacheprime
 .endif

@@ -7,7 +7,7 @@
 -     version (FreeBSD_13) enum __FreeBSD_version = 1300000;
 -else version (FreeBSD_12) enum __FreeBSD_version = 1202000;
 +     version (FreeBSD_14) enum __FreeBSD_version = 1400000;
-+else version (FreeBSD_13) enum __FreeBSD_version = 1301000;
++else version (FreeBSD_13) enum __FreeBSD_version = 1302000;
 +else version (FreeBSD_12) enum __FreeBSD_version = 1204000;
  else version (FreeBSD_11) enum __FreeBSD_version = 1104000;
  else version (FreeBSD_10) enum __FreeBSD_version = 1004000;
