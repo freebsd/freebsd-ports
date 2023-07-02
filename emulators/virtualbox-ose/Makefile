@@ -202,8 +202,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-src_VBox_Devices_PC_DevFwCommon.cpp
 # 2) llvm15 in FreeBSD miscompiles virtualbox 6.1 causing errors: PR#270189.
 # Force llvm from ports.
 .if ${OPSYS} == FreeBSD && \
-    (${OSVERSION} < 1203502 || ${OSVERSION} >= 1300000 && ${OSVERSION} < 1300109 || \
-    ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 || ${OSVERSION} >= 1400079)
+    (${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 || ${OSVERSION} >= 1400079)
 # USES must be before .include <bsd.port.pre.mk>, but CHOSEN_COMPILER_TYPE must be after.
 # This is a workaround with possibility to define different llvm via VBOX_LLVM_VER in make.conf.
 #USES+=		llvm:min=11,max=14

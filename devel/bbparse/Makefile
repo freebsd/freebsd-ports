@@ -10,6 +10,7 @@ WWW=		https://github.com/Netflix/bbparse
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+IGNORE_FreeBSD_12=does not build
 ONLY_FOR_ARCHS=	amd64 powerpc64 powerpc64le
 
 USE_GITHUB=	yes
@@ -26,12 +27,6 @@ MANPAGE_LINKS=	bbr_get_next bbr_get_stackname bbr_get_tlh bbr_init_fd bbr_init_f
 .for l in ${MANPAGE_LINKS}
 PLIST_FILES+=	man/man3/${l}.3.gz
 .endfor
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1300076
-IGNORE=	builds only on FreeBSD 13-head with minimum revision 356414
-.endif
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib
