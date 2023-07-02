@@ -64,6 +64,7 @@ INSTALL_WRKSRC=	${WRKSRC}/gui/${SLAVEPORT}
 LIB_DEPENDS+=	libFOX-1.6.so:x11-toolkits/fox16
 CONFIGURE_ARGS+=--with-fox-includes=${LOCALBASE}/include/fox-1.6 \
 		--with-fox-libs=${LOCALBASE}/lib
+CXXFLAGS+=	-Dregister=
 .  elif ${SLAVEPORT}=="gtk2"
 LIB_DEPENDS+=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
