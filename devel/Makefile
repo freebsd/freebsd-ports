@@ -6139,6 +6139,7 @@
     SUBDIR += rubygem-aws-sdk-core
     SUBDIR += rubygem-aws-sdk-core2
     SUBDIR += rubygem-aws-sdk-core3172
+    SUBDIR += rubygem-aws-sdk-core3175
     SUBDIR += rubygem-aws-sdk-costandusagereportservice
     SUBDIR += rubygem-aws-sdk-costexplorer
     SUBDIR += rubygem-aws-sdk-customerprofiles
@@ -6343,6 +6344,7 @@
     SUBDIR += rubygem-aws-sdk-s3
     SUBDIR += rubygem-aws-sdk-s31121
     SUBDIR += rubygem-aws-sdk-s31122
+    SUBDIR += rubygem-aws-sdk-s31126
     SUBDIR += rubygem-aws-sdk-s3control
     SUBDIR += rubygem-aws-sdk-s3outposts
     SUBDIR += rubygem-aws-sdk-sagemaker
@@ -6860,6 +6862,7 @@
     SUBDIR += rubygem-google-iam-v1
     SUBDIR += rubygem-google-protobuf
     SUBDIR += rubygem-google-protobuf322
+    SUBDIR += rubygem-google-protobuf323
     SUBDIR += rubygem-googleapis-common-protos
     SUBDIR += rubygem-googleapis-common-protos-types
     SUBDIR += rubygem-graf
