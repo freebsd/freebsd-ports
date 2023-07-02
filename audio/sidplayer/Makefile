@@ -21,6 +21,12 @@ OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes
 SUB_FILES=	pkg-message
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=	-Dregister=
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
