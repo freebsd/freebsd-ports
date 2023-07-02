@@ -1,7 +1,7 @@
 PORTNAME=	photoqt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	graphics
 
 MAINTAINER=	melanhit@gmail.com
@@ -34,5 +34,10 @@ RAW_LIB_DEPENDS=	libraw.so:graphics/libraw
 GM_CMAKE_BOOL=		GM
 GM_DESC=		GraphicsMagick image processing
 GM_LIB_DEPENDS=		libGraphicsMagick.so:graphics/GraphicsMagick
+
+post-patch:
+		${REINPLACE_CMD} -e 's,Exiv2::Image::AutoPtr,Exiv2::Image::UniquePtr,g' \
+			${WRKSRC}/cplusplus/scripts/getanddostuff/manipulation.cpp \
+			${WRKSRC}/cplusplus/scripts/getmetadata.cpp
 
 .include <bsd.port.mk>
