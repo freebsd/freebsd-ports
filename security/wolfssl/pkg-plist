@@ -238,7 +238,7 @@ include/wolfssl/wolfio.h
 lib/libwolfssl.a
 lib/libwolfssl.so
 lib/libwolfssl.so.35
-lib/libwolfssl.so.35.4.0
+lib/libwolfssl.so.35.5.1
 libdata/pkgconfig/wolfssl.pc
 %%PORTDOCS%%%%DOCSDIR%%/QUIC.md
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
