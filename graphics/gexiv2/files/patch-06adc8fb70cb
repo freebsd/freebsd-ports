@@ -1,0 +1,1296 @@
+commit 06adc8fb70cb8c77c0cd364195d8251811106ef8
+Author: Jens Georg <mail@jensge.org>
+Date:   Sat May 6 10:47:32 2023 +0000
+
+    Fix compatibility with exiv2 main branch
+
+diff --git .gitlab-ci.yml .gitlab-ci.yml
+index 8684b48..427e5ea 100644
+--- .gitlab-ci.yml
++++ .gitlab-ci.yml
+@@ -3,10 +3,11 @@
+     - flatpak
+   variables:
+       MANIFEST_PATH: "build-aux/org.gnome.GExiv2.json"
+-  image: registry.gitlab.gnome.org/gnome/gnome-runtime-images/gnome:44
++  image: quay.io/gnome_infrastructure/gnome-runtime-images:gnome-44
+   stage: build
+   only:
+     - schedules
++    - merge_requests
+   script:
+     - flatpak-builder build-dir ${MANIFEST_PATH} --stop-at=gexiv2 --user --disable-rofiles-fuse
+     - flatpak build build-dir meson _build -Dtests=true
+diff --git gexiv2/gexiv2-metadata-exif.cpp gexiv2/gexiv2-metadata-exif.cpp
+index 1e62292..15237f9 100644
+--- gexiv2/gexiv2-metadata-exif.cpp
++++ gexiv2/gexiv2-metadata-exif.cpp
+@@ -8,6 +8,8 @@
+  * SPDX-License-Identifier: GPL-2.0-or-later
+  */
+ 
++#include <config.h>
++
+ #include "gexiv2-metadata.h"
+ #include "gexiv2-metadata-private.h"
+ #include <string>
+@@ -116,7 +118,7 @@ gchar* gexiv2_metadata_get_exif_tag_string (GExiv2Metadata *self, const gchar* t
+         if (it != exif_data.end())
+             return g_strdup (it->toString ().c_str ());
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return nullptr;
+@@ -146,7 +148,7 @@ gchar** gexiv2_metadata_get_exif_tag_multiple(GExiv2Metadata* self, const gchar*
+             return array;
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     array = g_new(gchar*, 1);
+@@ -187,7 +189,7 @@ gboolean gexiv2_metadata_set_exif_tag_multiple(GExiv2Metadata* self,
+         }
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return FALSE;
+@@ -214,7 +216,7 @@ gchar* gexiv2_metadata_get_exif_tag_interpreted_string (GExiv2Metadata *self, co
+             return g_strdup (os.str ().c_str ());
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return nullptr;
+@@ -232,7 +234,7 @@ gboolean gexiv2_metadata_set_exif_tag_string (GExiv2Metadata *self, const gchar*
+         
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return FALSE;
+@@ -251,11 +253,15 @@ glong gexiv2_metadata_get_exif_tag_long (GExiv2Metadata *self, const gchar* tag,
+         Exiv2::ExifData::iterator it = exif_data.findKey(Exiv2::ExifKey(tag));
+         while (it != exif_data.end() && it->count() == 0)
+             it++;
+-        
++#ifdef EXIV2_EXIFDATUM_HAS_TO_LONG
+         if (it != exif_data.end())
+             return it->toLong ();
++#else
++        if (it != exif_data.end())
++            return static_cast<glong>(it->toInt64());
++#endif
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return 0;
+@@ -272,7 +278,7 @@ gboolean gexiv2_metadata_set_exif_tag_long (GExiv2Metadata *self, const gchar* t
+         
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return FALSE;
+@@ -303,7 +309,7 @@ gboolean gexiv2_metadata_try_get_exif_tag_rational (GExiv2Metadata *self, const
+             return TRUE;
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return FALSE;
+@@ -324,7 +330,7 @@ gboolean gexiv2_metadata_try_set_exif_tag_rational (GExiv2Metadata *self, const
+         
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return FALSE;
+@@ -413,7 +419,7 @@ const gchar* gexiv2_metadata_get_exif_tag_label (const gchar* tag, GError **erro
+         Exiv2::ExifKey key(tag);
+         return g_intern_string(key.tagLabel().c_str());
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return NULL;
+@@ -427,7 +433,7 @@ const gchar* gexiv2_metadata_get_exif_tag_description (const gchar* tag, GError
+         Exiv2::ExifKey key(tag);
+         return g_intern_string(key.tagDesc().c_str());
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return NULL;
+@@ -441,7 +447,7 @@ const gchar* gexiv2_metadata_get_exif_tag_type (const gchar* tag, GError **error
+         Exiv2::ExifKey key(tag);
+         return Exiv2::TypeInfo::typeName(key.defaultTypeId());
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return NULL;
+@@ -455,7 +461,7 @@ gboolean gexiv2_metadata_exif_tag_supports_multiple_values (const gchar* tag, GE
+     	// Exif does not support multiple values, but still check if @tag is valid
+         const Exiv2::ExifKey key(tag);
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return FALSE;
+@@ -484,7 +490,7 @@ GBytes* gexiv2_metadata_get_exif_tag_raw (GExiv2Metadata *self, const gchar* tag
+             }
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string ("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return nullptr;
+@@ -522,7 +528,7 @@ GBytes * gexiv2_metadata_get_exif_data (GExiv2Metadata *self,
+ 
+         return g_bytes_new_take (data, blob.size());
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return nullptr;
+diff --git gexiv2/gexiv2-metadata-gps.cpp gexiv2/gexiv2-metadata-gps.cpp
+index 815eb96..7cd7c6c 100644
+--- gexiv2/gexiv2-metadata-gps.cpp
++++ gexiv2/gexiv2-metadata-gps.cpp
+@@ -90,7 +90,7 @@ gboolean gexiv2_metadata_try_get_gps_longitude (GExiv2Metadata *self, gdouble *l
+ 
+         return TRUE;
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     } catch (std::invalid_argument &e) {
+         g_set_error_literal(error, g_quark_from_string("GExiv2"), 0, e.what());
+     }
+@@ -141,7 +141,7 @@ gboolean gexiv2_metadata_try_get_gps_latitude (GExiv2Metadata *self, gdouble *la
+ 
+         return TRUE;
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     } catch (std::invalid_argument &e) {
+         g_set_error_literal(error, g_quark_from_string("GExiv2"), 0, e.what());
+     }
+@@ -181,7 +181,7 @@ gboolean gexiv2_metadata_try_get_gps_altitude (GExiv2Metadata *self, gdouble *al
+ 
+         return TRUE;
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     } catch (std::invalid_argument &e) {
+         g_set_error_literal(error, g_quark_from_string("GExiv2"), 0, e.what());
+     }
+@@ -300,7 +300,7 @@ gboolean gexiv2_metadata_try_set_gps_info (GExiv2Metadata *self, gdouble longitu
+ 
+         return gexiv2_metadata_try_update_gps_info (self, longitude, latitude, altitude, error);
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return FALSE;
+@@ -393,7 +393,7 @@ gboolean gexiv2_metadata_try_update_gps_info (GExiv2Metadata *self, gdouble long
+         
+         return TRUE;
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return FALSE;
+@@ -434,7 +434,7 @@ void gexiv2_metadata_try_delete_gps_info (GExiv2Metadata *self, GError **error)
+                 ++exif_it;
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     /* FIXME: two blocks shall ensure to erase in xmp data, if erasing in exif
+@@ -454,7 +454,7 @@ void gexiv2_metadata_try_delete_gps_info (GExiv2Metadata *self, GError **error)
+         
+     } catch (Exiv2::Error& e) {
+         if (error && *error == nullptr)
+-            g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++            g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ }
+ 
+diff --git gexiv2/gexiv2-metadata-iptc.cpp gexiv2/gexiv2-metadata-iptc.cpp
+index ab675ae..7f34cb4 100644
+--- gexiv2/gexiv2-metadata-iptc.cpp
++++ gexiv2/gexiv2-metadata-iptc.cpp
+@@ -140,7 +140,7 @@ gchar* gexiv2_metadata_get_iptc_tag_string (GExiv2Metadata *self, const gchar* t
+             return g_strdup (os.str().c_str());
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return nullptr;
+@@ -186,7 +186,7 @@ gchar* gexiv2_metadata_get_iptc_tag_interpreted_string (GExiv2Metadata *self, co
+             return g_strdup (os.str().c_str());
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return nullptr;
+@@ -234,7 +234,7 @@ gboolean gexiv2_metadata_set_iptc_tag_string (GExiv2Metadata *self, const gchar*
+ 
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return FALSE;
+@@ -271,7 +271,7 @@ gchar** gexiv2_metadata_get_iptc_tag_multiple (GExiv2Metadata *self, const gchar
+         
+         return values;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     g_slist_free_full (list, g_free);
+@@ -347,7 +347,7 @@ gboolean gexiv2_metadata_set_iptc_tag_multiple (GExiv2Metadata *self, const gcha
+ 
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return FALSE;
+@@ -361,7 +361,7 @@ const gchar* gexiv2_metadata_get_iptc_tag_label (const gchar* tag, GError **erro
+         Exiv2::IptcKey key (tag);
+         return Exiv2::IptcDataSets::dataSetTitle (key.tag (), key.record ());
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return NULL;
+@@ -375,7 +375,7 @@ const gchar* gexiv2_metadata_get_iptc_tag_description (const gchar* tag, GError
+         Exiv2::IptcKey key (tag);
+         return Exiv2::IptcDataSets::dataSetDesc (key.tag (), key.record ());
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return NULL;
+@@ -389,7 +389,7 @@ const gchar* gexiv2_metadata_get_iptc_tag_type (const gchar* tag, GError **error
+         Exiv2::IptcKey key (tag);
+         return Exiv2::TypeInfo::typeName(Exiv2::IptcDataSets::dataSetType(key.tag(), key.record()));
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return NULL;
+@@ -403,7 +403,7 @@ gboolean gexiv2_metadata_iptc_tag_supports_multiple_values(const gchar* tag, GEr
+         const Exiv2::IptcKey key(tag); // Check to see if @tag is valid
+         return (Exiv2::IptcDataSets::dataSetRepeatable(key.tag(), key.record()) ? TRUE : FALSE);
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return FALSE;
+@@ -464,7 +464,7 @@ GBytes* gexiv2_metadata_get_iptc_tag_raw (GExiv2Metadata *self, const gchar* tag
+             return g_byte_array_free_to_bytes(concatenated_raw_arrays);
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return nullptr;
+diff --git gexiv2/gexiv2-metadata-xmp.cpp gexiv2/gexiv2-metadata-xmp.cpp
+index 88c7e2c..6abb61d 100644
+--- gexiv2/gexiv2-metadata-xmp.cpp
++++ gexiv2/gexiv2-metadata-xmp.cpp
+@@ -8,6 +8,8 @@
+  * SPDX-License-Identifier: GPL-2.0-or-later
+  */
+ 
++#include <config.h>
++
+ #include "gexiv2-metadata-private.h"
+ #include "gexiv2-metadata.h"
+ 
+@@ -48,7 +50,7 @@ gchar *gexiv2_metadata_try_generate_xmp_packet(GExiv2Metadata *self,
+             return g_strdup(packet.c_str());
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return nullptr;
+@@ -79,7 +81,7 @@ gchar *gexiv2_metadata_try_get_xmp_packet(GExiv2Metadata *self, GError **error)
+     try {
+         return g_strdup(self->priv->image->xmpPacket().c_str());
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return NULL;
+@@ -187,7 +189,7 @@ gchar* gexiv2_metadata_get_xmp_tag_string (GExiv2Metadata *self, const gchar* ta
+         if (it != xmp_data.end())
+             return g_strdup (it->toString ().c_str ());
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return nullptr;
+@@ -214,7 +216,7 @@ gchar* gexiv2_metadata_get_xmp_tag_interpreted_string (GExiv2Metadata *self, con
+             return g_strdup (os.str ().c_str ());
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return nullptr;
+@@ -257,7 +259,7 @@ gboolean gexiv2_metadata_try_set_xmp_tag_struct (GExiv2Metadata *self, const gch
+         xmp_data.add(Exiv2::XmpKey(tag), &tv);
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return FALSE;
+@@ -294,7 +296,7 @@ gboolean gexiv2_metadata_set_xmp_tag_string (GExiv2Metadata *self, const gchar*
+         
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return FALSE;
+@@ -313,11 +315,16 @@ glong gexiv2_metadata_get_xmp_tag_long (GExiv2Metadata *self, const gchar* tag,
+         Exiv2::XmpData::iterator it = xmp_data.findKey(Exiv2::XmpKey(tag));
+         while (it != xmp_data.end() && it->count() == 0)
+             it++;
+-        
++
++#ifdef EXIV2_XMPDATUM_HAS_TO_LONG
+         if (it != xmp_data.end())
+             return it->toLong ();
++#else
++        if (it != xmp_data.end())
++            return static_cast<glong>(it->toInt64());
++#endif
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return 0;
+@@ -334,7 +341,7 @@ gboolean gexiv2_metadata_set_xmp_tag_long (GExiv2Metadata *self, const gchar* ta
+         
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return FALSE;
+@@ -414,7 +421,7 @@ gchar** gexiv2_metadata_get_xmp_tag_multiple(GExiv2Metadata* self, const gchar*
+         if (array) {
+             g_strfreev(array);
+         }
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     array = g_new(gchar*, 1);
+@@ -450,7 +457,7 @@ gchar** gexiv2_metadata_get_xmp_tag_multiple_deprecated (GExiv2Metadata *self, c
+             return array;
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     gchar **array = g_new (gchar*, 1);
+@@ -488,7 +495,7 @@ gboolean gexiv2_metadata_set_xmp_tag_multiple (GExiv2Metadata *self, const gchar
+ 
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return FALSE;
+@@ -501,7 +508,7 @@ const gchar* gexiv2_metadata_get_xmp_tag_label (const gchar* tag, GError **error
+     try {
+         return Exiv2::XmpProperties::propertyTitle(Exiv2::XmpKey(tag));
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return NULL;
+@@ -514,7 +521,7 @@ const gchar* gexiv2_metadata_get_xmp_tag_description (const gchar* tag, GError *
+     try {
+         return Exiv2::XmpProperties::propertyDesc(Exiv2::XmpKey(tag));
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return NULL;
+@@ -527,7 +534,7 @@ const gchar* gexiv2_metadata_get_xmp_tag_type (const gchar* tag, GError **error)
+     try {
+         return Exiv2::TypeInfo::typeName(Exiv2::XmpProperties::propertyType(Exiv2::XmpKey(tag)));
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     
+     return NULL;
+@@ -569,7 +576,7 @@ gboolean gexiv2_metadata_xmp_tag_supports_multiple_values(GExiv2Metadata* self,
+             return TRUE;
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     return FALSE;
+ }
+@@ -597,7 +604,7 @@ GBytes* gexiv2_metadata_get_xmp_tag_raw (GExiv2Metadata *self, const gchar* tag,
+             }
+         }
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return nullptr;
+@@ -622,15 +629,21 @@ gboolean gexiv2_metadata_try_register_xmp_namespace(const gchar* name, const gch
+     g_return_val_if_fail(prefix != nullptr, FALSE);
+     g_return_val_if_fail(error == nullptr || *error == nullptr, FALSE);
+ 
++#if defined(EXIV2_HAS_ANY_ERROR)
++    using Exiv2ErrorProxy = Exiv2::AnyError;
++#else
++    using Exiv2ErrorProxy = Exiv2::Error;
++#endif
++
+     try {
+         Exiv2::XmpProperties::ns(prefix);
+-    } catch (Exiv2::AnyError& e1) {
++    } catch (Exiv2ErrorProxy& e1) {
+         // No namespace, OK to register
+         try {
+             Exiv2::XmpProperties::registerNs(name, prefix);
+             return TRUE;
+-        } catch (Exiv2::AnyError& e2) {
+-            g_set_error_literal(error, g_quark_from_string("GExiv2"), e2.code(), e2.what());
++        } catch (Exiv2ErrorProxy& e2) {
++            g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e2.code()), e2.what());
+         }
+     }
+ 
+@@ -670,7 +683,7 @@ gboolean gexiv2_metadata_try_unregister_xmp_namespace(const gchar* name, GError*
+             }
+         }
+     } catch (Exiv2::Error& e2) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e2.code(), e2.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e2.code()), e2.what());
+     }
+     return FALSE;
+ }
+@@ -692,7 +705,7 @@ void gexiv2_metadata_try_unregister_all_xmp_namespaces(GError** error) {
+     try {
+         Exiv2::XmpProperties::unregisterNs();
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ }
+ 
+@@ -739,7 +752,7 @@ char* gexiv2_metadata_try_get_xmp_namespace_for_tag(const char* tag, GError** er
+ 
+         result = g_strdup(info.c_str());
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     g_clear_pointer(&list, g_strfreev);
+diff --git gexiv2/gexiv2-metadata.cpp gexiv2/gexiv2-metadata.cpp
+index 928b07b..c67529e 100644
+--- gexiv2/gexiv2-metadata.cpp
++++ gexiv2/gexiv2-metadata.cpp
+@@ -9,19 +9,22 @@
+  */
+ 
+ #include "gexiv2-metadata.h"
+-#include "gexiv2-metadata-private.h"
+-#include "gexiv2-stream-io.h"
++
++#include "gexiv2-log-private.h"
++#include "gexiv2-log.h"
+ #include "gexiv2-managed-stream.h"
+-#include "gexiv2-preview-properties.h"
+-#include "gexiv2-preview-properties-private.h"
+-#include "gexiv2-preview-image.h"
++#include "gexiv2-metadata-private.h"
+ #include "gexiv2-preview-image-private.h"
+-#include "gexiv2-log.h"
+-#include "gexiv2-log-private.h"
+-#include <string>
++#include "gexiv2-preview-image.h"
++#include "gexiv2-preview-properties-private.h"
++#include "gexiv2-preview-properties.h"
++#include "gexiv2-stream-io.h"
++
+ #include <cmath>
+-#include <glib-object.h>
++#include <config.h>
+ #include <gio/gio.h>
++#include <glib-object.h>
++#include <string>
+ 
+ #ifdef G_OS_WIN32
+ #include <glib/gwin32.h>
+@@ -46,7 +49,7 @@ public:
+         , _eof{false}
+         {}
+ #if EXIV2_TEST_VERSION(0,27,99)
+-    using size_type = long;
++    using size_type = size_t;
+ #else
+     using size_type = long;
+ #endif
+@@ -66,6 +69,9 @@ public:
+     using ptr_type = Exiv2::BasicIo::AutoPtr;
+ #endif
+ 
++#if EXIV2_TEST_VERSION(0, 27, 99)
++    void populateFakeData() override{};
++#endif
+     int open() override {
+         if (_seekable == nullptr)
+             return 0;
+@@ -91,9 +97,17 @@ public:
+     Exiv2::DataBuf read(size_type rcount) override {
+         Exiv2::DataBuf b{rcount};
+ 
++#ifdef EXIV2_DATABUF_HAS_PRIVATE_PDATA
++        auto bytes_read = this->read(b.data(), rcount);
++#else
+         auto bytes_read = this->read(b.pData_, rcount);
++#endif
+         if (bytes_read > 0 && bytes_read != rcount) {
++#ifdef EXIV2_DATABUF_HAS_PRIVATE_PDATA
++            b = Exiv2::DataBuf{b};
++#else
+             b.reset({b.pData_, bytes_read});
++#endif
+         }
+ 
+         return b;
+@@ -188,7 +202,7 @@ public:
+ 
+     int munmap() override { return 0; }
+ 
+-    long tell() const override {
++    size_type tell() const override {
+         if (_seekable != nullptr && g_seekable_can_seek (_seekable)) {
+             return static_cast<long>(g_seekable_tell (_seekable));
+         } else {
+@@ -204,10 +218,21 @@ public:
+ 
+     bool eof() const override { return _eof; }
+ 
++#if EXIV2_TEST_VERSION(0, 27, 99)
++    const std::string& path() const noexcept override {
++        static std::string info{"GIO Wrapper"};
++        return info;
++    }
++#else
+     std::string path() const override { return "GIO Wrapper"; }
++#endif
+ 
+ #ifdef EXV_UNICODE_PATH
++#ifdef EXIV2_TEST_VERSION(0, 27, 99)
++    const std::wstring& wpath() const noexcept override {
++#else
+     std::wstring wpath() const override {
++#endif
+         std::string p = path();
+         std::wstring w(p.length(), L' ');
+         std::copy(p.begin(), p.end(), w.begin());
+@@ -395,7 +420,7 @@ static void gexiv2_metadata_init_internal(GExiv2Metadata* self, GError** error)
+         if (priv->preview_manager)
+             delete priv->preview_manager;
+ 
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ }
+ 
+@@ -416,7 +441,7 @@ static gboolean gexiv2_metadata_open_internal (GExiv2Metadata* self, GError** er
+ 
+         return !(error && *error);
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return FALSE;
+@@ -476,11 +501,11 @@ gboolean gexiv2_metadata_open_path(GExiv2Metadata* self, const gchar* path, GErr
+ 
+         return gexiv2_metadata_open_internal (self, error);
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal (error, g_quark_from_string ("GExiv2"), static_cast<int>(e.code()), e.what ());
+     }
+ #ifdef EXV_UNICODE_PATH
+     catch (Exiv2::WError &e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal (error, g_quark_from_string ("GExiv2"), static_cast<int>(e.code()), e.what ());
+     }
+ #endif
+ 
+@@ -503,7 +528,7 @@ gboolean gexiv2_metadata_open_buf(GExiv2Metadata* self, const guint8* data, glon
+ 
+ gboolean gexiv2_metadata_open_stream (GExiv2Metadata *self, ManagedStreamCallbacks* cb, GError **error) {
+     g_return_val_if_fail (GEXIV2_IS_METADATA (self), FALSE);
+-    
++
+     try {
+         StreamIo::ptr_type stream_ptr{new StreamIo (cb)};
+ #if EXIV2_TEST_VERSION(0,27,99)
+@@ -514,7 +539,7 @@ gboolean gexiv2_metadata_open_stream (GExiv2Metadata *self, ManagedStreamCallbac
+         
+         return gexiv2_metadata_open_internal (self, error);
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal (error, g_quark_from_string ("GExiv2"), static_cast<int>(e.code()), e.what ());
+     }
+     
+     return FALSE;
+@@ -533,7 +558,7 @@ gboolean gexiv2_metadata_from_stream(GExiv2Metadata *self, GInputStream *stream,
+ 
+         return gexiv2_metadata_open_internal (self, error);
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ 
+     return FALSE;
+@@ -584,7 +609,7 @@ gboolean gexiv2_metadata_from_app1_segment(GExiv2Metadata* self, const guint8* d
+         return TRUE;
+     } catch (Exiv2::Error &e) {
+         delete self->priv->image.release();
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     return FALSE;
+ }
+@@ -653,7 +678,7 @@ static gboolean gexiv2_metadata_save_internal (GExiv2Metadata *self, image_ptr i
+ 
+         return TRUE;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     return FALSE;
+ }
+@@ -675,11 +700,11 @@ gboolean gexiv2_metadata_save_external (GExiv2Metadata *self, const gchar *path,
+                                              Exiv2::ImageFactory::create(Exiv2::ImageType::xmp, local_path),
+                                              error);
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal (error, g_quark_from_string ("GExiv2"), static_cast<int>(e.code()), e.what ());
+     }
+ #ifdef EXV_UNICODE_PATH
+     catch (Exiv2::WError &e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal (error, g_quark_from_string ("GExiv2"), static_cast<int>(e.code()), e.what ());
+     }
+ #endif
+ 
+@@ -701,11 +726,11 @@ gboolean gexiv2_metadata_save_file (GExiv2Metadata *self, const gchar *path, GEr
+ 
+         return gexiv2_metadata_save_internal(self, Exiv2::ImageFactory::open(local_path), error);
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal (error, g_quark_from_string ("GExiv2"), static_cast<int>(e.code()), e.what ());
+     }
+ #ifdef EXV_UNICODE_PATH
+     catch (Exiv2::WError &e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal (error, g_quark_from_string ("GExiv2"), static_cast<int>(e.code()), e.what ());
+     }
+ #endif
+     
+@@ -713,8 +738,8 @@ gboolean gexiv2_metadata_save_file (GExiv2Metadata *self, const gchar *path, GEr
+ }
+ 
+ gboolean gexiv2_metadata_save_stream (GExiv2Metadata *self, ManagedStreamCallbacks* cb, GError **error) {
+-    g_return_val_if_fail (GEXIV2_IS_METADATA (self), FALSE);
+-    
++    g_return_val_if_fail(GEXIV2_IS_METADATA(self), FALSE);
++
+     try {
+         StreamIo::ptr_type stream_ptr{new StreamIo (cb)};
+         
+@@ -724,7 +749,7 @@ gboolean gexiv2_metadata_save_stream (GExiv2Metadata *self, ManagedStreamCallbac
+         return gexiv2_metadata_save_internal (self, Exiv2::ImageFactory::open (stream_ptr), error);
+ #endif
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal (error, g_quark_from_string ("GExiv2"), static_cast<int>(e.code()), e.what ());
+     }
+     
+     return FALSE;
+@@ -761,7 +786,7 @@ gboolean gexiv2_metadata_try_has_tag(GExiv2Metadata* self, const gchar* tag, GEr
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return FALSE;
+ }
+@@ -797,7 +822,7 @@ gboolean gexiv2_metadata_try_clear_tag(GExiv2Metadata* self, const gchar* tag, G
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return FALSE;
+ }
+@@ -954,7 +979,7 @@ void gexiv2_metadata_try_set_orientation(GExiv2Metadata* self, GExiv2Orientation
+         gexiv2_metadata_clear_exif_tag(self, "Exif.MinoltaCs7D.Rotation");
+         gexiv2_metadata_clear_exif_tag(self, "Exif.MinoltaCs5D.Rotation");
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ }
+ 
+@@ -1075,7 +1100,7 @@ void gexiv2_metadata_try_set_metadata_pixel_width(GExiv2Metadata* self, gint wid
+         xmp_data["Xmp.tiff.ImageWidth"] = static_cast<uint32_t>(width);
+         xmp_data["Xmp.exif.PixelXDimension"] = static_cast<uint32_t>(width);
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ }
+ 
+@@ -1104,7 +1129,7 @@ void gexiv2_metadata_try_set_metadata_pixel_height(GExiv2Metadata* self, gint he
+         xmp_data["Xmp.tiff.ImageLength"] = static_cast<uint32_t>(height);
+         xmp_data["Xmp.exif.PixelYDimension"] = static_cast<uint32_t>(height);
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ }
+ 
+@@ -1226,7 +1251,7 @@ void gexiv2_metadata_try_set_comment(GExiv2Metadata* self, const gchar* comment,
+         /* Do not need to write to acdsee properties, just read from them */
+         // xmp_data ["Xmp.acdsee.notes"] = comment;
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ }
+ 
+@@ -1273,7 +1298,7 @@ gchar* gexiv2_metadata_try_get_tag_string (GExiv2Metadata *self, const gchar* ta
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return nullptr;
+ }
+@@ -1295,7 +1320,7 @@ gboolean gexiv2_metadata_try_set_tag_string (GExiv2Metadata *self, const gchar*
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return FALSE;
+ }
+@@ -1353,7 +1378,7 @@ gchar* gexiv2_metadata_try_get_tag_interpreted_string (GExiv2Metadata *self, con
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return nullptr;
+ }
+@@ -1393,7 +1418,7 @@ gchar** gexiv2_metadata_try_get_tag_multiple(GExiv2Metadata *self, const gchar*
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return nullptr;
+ }
+@@ -1416,7 +1441,7 @@ gboolean gexiv2_metadata_try_set_tag_multiple(GExiv2Metadata *self, const gchar*
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return FALSE;
+ }
+@@ -1459,7 +1484,7 @@ gchar** gexiv2_metadata_get_tag_multiple(GExiv2Metadata* self, const gchar* tag)
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(&error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(&error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     g_warning("%s", error->message);
+     g_clear_error(&error);
+ 
+@@ -1499,7 +1524,7 @@ glong gexiv2_metadata_try_get_tag_long(GExiv2Metadata *self, const gchar* tag, G
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return 0;
+ }
+@@ -1536,7 +1561,7 @@ gboolean gexiv2_metadata_try_set_tag_long(GExiv2Metadata *self, const gchar* tag
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return FALSE;
+ }
+@@ -1691,6 +1716,12 @@ gboolean gexiv2_metadata_get_exif_thumbnail (GExiv2Metadata *self, guint8** buff
+     g_return_val_if_fail(self->priv->image.get() != nullptr, FALSE);
+ 
+     Exiv2::ExifThumb thumb = Exiv2::ExifThumb(self->priv->image->exifData());
++#ifdef EXIV2_DATABUF_HAS_PRIVATE_PDATA
++    auto buf = thumb.copy();
++    *buffer = reinterpret_cast<guint8*>(g_malloc(buf.size()));
++    std::copy(buf.begin(), buf.end(), *buffer);
++    *size = buf.size();
++#else
+     Exiv2::DataBuf data = thumb.copy();
+     if (data.pData_ == nullptr)
+         return FALSE;
+@@ -1698,6 +1729,7 @@ gboolean gexiv2_metadata_get_exif_thumbnail (GExiv2Metadata *self, guint8** buff
+     *buffer = (guint8*) g_malloc(data.size_);
+     memcpy(*buffer, data.pData_, data.size_);
+     *size = data.size_;
++#endif
+ 
+     return TRUE;
+ }
+@@ -1713,7 +1745,7 @@ gboolean gexiv2_metadata_set_exif_thumbnail_from_file(GExiv2Metadata* self, cons
+         
+         return TRUE;
+     } catch (Exiv2::Error &e) {
+-        g_set_error_literal (error, g_quark_from_string ("GExiv2"), e.code (), e.what ());
++        g_set_error_literal (error, g_quark_from_string ("GExiv2"), static_cast<int>(e.code()), e.what ());
+     }
+     
+     return FALSE;
+@@ -1745,7 +1777,7 @@ void gexiv2_metadata_try_set_exif_thumbnail_from_buffer(GExiv2Metadata* self,
+         Exiv2::ExifThumb thumb = Exiv2::ExifThumb(self->priv->image->exifData());
+         thumb.setJpegThumbnail(buffer, size);
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ }
+ 
+@@ -1769,7 +1801,7 @@ void gexiv2_metadata_try_erase_exif_thumbnail(GExiv2Metadata* self, GError** err
+         Exiv2::ExifThumb thumb = Exiv2::ExifThumb(self->priv->image->exifData());
+         thumb.erase();
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+ }
+ 
+@@ -1788,7 +1820,7 @@ const gchar* gexiv2_metadata_try_get_tag_label (const gchar *tag, GError **error
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return nullptr;
+ }
+@@ -1824,7 +1856,7 @@ const gchar* gexiv2_metadata_try_get_tag_description (const gchar *tag, GError *
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return nullptr;
+ }
+@@ -1860,7 +1892,7 @@ const gchar* gexiv2_metadata_try_get_tag_type (const gchar *tag, GError **error)
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return nullptr;
+ }
+@@ -1899,7 +1931,7 @@ gboolean gexiv2_metadata_try_tag_supports_multiple_values(GExiv2Metadata* self,
+ 
+     // Invalid tag (Family name)
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return FALSE;
+ }
+@@ -1921,7 +1953,7 @@ GBytes* gexiv2_metadata_try_get_tag_raw(GExiv2Metadata *self, const gchar* tag,
+ 
+     // Invalid "familyName"
+     Exiv2::Error e(Exiv2::ErrorCode::kerInvalidKey, tag);
+-    g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++    g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+ 
+     return nullptr;
+ }
+diff --git gexiv2/gexiv2-preview-image.cpp gexiv2/gexiv2-preview-image.cpp
+index 8f0cdf7..f31bbe4 100644
+--- gexiv2/gexiv2-preview-image.cpp
++++ gexiv2/gexiv2-preview-image.cpp
+@@ -66,7 +66,7 @@ GExiv2PreviewImage* gexiv2_preview_image_new(Exiv2::PreviewManager* manager,
+ 
+         g_object_unref(self);
+ 
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     return nullptr;
+ }
+@@ -141,7 +141,7 @@ glong gexiv2_preview_image_try_write_file(GExiv2PreviewImage* self, const gchar*
+     try {
+         return self->priv->image->writeFile(path);
+     } catch (Exiv2::Error& e) {
+-        g_set_error_literal(error, g_quark_from_string("GExiv2"), e.code(), e.what());
++        g_set_error_literal(error, g_quark_from_string("GExiv2"), static_cast<int>(e.code()), e.what());
+     }
+     return -1;
+ }
+diff --git gexiv2/gexiv2-stream-io.cpp gexiv2/gexiv2-stream-io.cpp
+index 5c755c3..9749edb 100644
+--- gexiv2/gexiv2-stream-io.cpp
++++ gexiv2/gexiv2-stream-io.cpp
+@@ -11,15 +11,16 @@
+  */
+ 
+ #include "gexiv2-stream-io.h"
++
+ #include "gexiv2-managed-stream.h"
+ 
++#include <config.h>
++#include <exception>
+ #include <exiv2/exiv2.hpp>
+ #include <gio/gio.h>
+ #include <glib.h>
+ #include <stdio.h>
+ 
+-#include <exception>
+-
+ StreamIo::StreamIo (ManagedStreamCallbacks* callbacks)
+     : cb (callbacks), memio(nullptr), is_open (FALSE), can_write(FALSE) {
+     /* at least reading and seeking must be possible to read metatada */
+@@ -138,7 +139,7 @@ int StreamIo::seek (long offset, Position position) {
+     return 0;
+ }
+ 
+-long StreamIo::tell () const {
++StreamIo::size_type StreamIo::tell() const {
+     return cb->Position (cb->handle);
+ }
+ 
+@@ -165,11 +166,14 @@ int StreamIo::close () {
+ 
+ Exiv2::DataBuf StreamIo::read (size_type read_count) {
+     Exiv2::DataBuf buffer (read_count);
+-    
++#ifdef EXIV2_DATABUF_HAS_PRIVATE_PDATA
++    long read_bytes = read(buffer.data(), read_count);
++    buffer.resize(read_bytes);
++#else
+     long read_bytes = read (buffer.pData_, buffer.size_);
+-
+     buffer.size_ = read_bytes;
+-    
++#endif
++
+     return buffer;
+ }
+ 
+@@ -209,12 +213,22 @@ bool StreamIo::eof () const {
+     return (cb->Length (cb->handle) == cb->Position (cb->handle));
+ }
+ 
++#if EXIV2_TEST_VERSION(0, 27, 99)
++const std::string& StreamIo::path() const noexcept {
++#else
+ std::string StreamIo::path () const {
+-    return "managed stream";
++#endif
++    static std::string info{"managed stream"};
++
++    return info;
+ }
+ 
+ #ifdef EXV_UNICODE_PATH
++#if EXIV2_TEST_VERSION(0, 27, 99)
++const std::wstring& StreamIo::wpath() const noexcept {
++#else
+ std::wstring StreamIo::wpath() const {
++#endif
+     std::string p = path();
+     std::wstring w(p.length(), L' ');
+     std::copy(p.begin(), p.end(), w.begin());
+diff --git gexiv2/gexiv2-stream-io.h gexiv2/gexiv2-stream-io.h
+index 02f265f..56a03e5 100644
+--- gexiv2/gexiv2-stream-io.h
++++ gexiv2/gexiv2-stream-io.h
+@@ -24,10 +24,14 @@ class StreamIo : public Exiv2::BasicIo {
+ public:
+ #if EXIV2_TEST_VERSION(0,27,99)
+     using ptr_type = Exiv2::BasicIo::UniquePtr;
+-    using size_type = long;
++    using size_type = size_t;
++    using path_type = const std::string&;
++    using wpath_type = const std::wstring&;
+ #else
+     using ptr_type = Exiv2::BasicIo::AutoPtr;
+     using size_type = long;
++    using path_type = std::string;
++    using wpath_type = std::wstring;
+ #endif
+ 
+ 	StreamIo (ManagedStreamCallbacks* cb);
+@@ -45,14 +49,25 @@ public:
+ 	int seek (long offset, Position pos) override;
+ 	Exiv2::byte* mmap (bool isWriteable = false) override;
+ 	int munmap () override;
+-	long tell () const override;
+-	size_t size () const override;
++    size_type tell() const override;
++    size_t size () const override;
+ 	bool isopen () const override;
+ 	int error () const override;
+ 	bool eof () const override;
+-	std::string path () const override;
++#if EXIV2_TEST_VERSION(0, 27, 99)
++    void populateFakeData() override{};
++#endif
++#if EXIV2_TEST_VERSION(0, 27, 99)
++    const std::string& path() const noexcept override;
++#else
++    std::string path () const override;
++#endif
+ #ifdef EXV_UNICODE_PATH
+-	std::wstring wpath () const override;
++#if EXIV2_TEST_VERSION(0, 27, 99)
++    const std::wstring& wpath() const noexcept override;
++#else
++    std::wstring wpath() const override;
++#endif
+ #endif
+ 	ptr_type temporary () const;
+ 
+diff --git gexiv2/meson.build gexiv2/meson.build
+index ed7c046..ad383ee 100644
+--- gexiv2/meson.build
++++ gexiv2/meson.build
+@@ -61,7 +61,7 @@ gexiv2 = library('gexiv2',
+                   'gexiv2-preview-properties-private.h',
+                   'gexiv2-preview-image-private.h'] +
+                  gexiv2_headers +
+-                 [version_header] +
++                 [version_header, config_h] +
+                  enum_sources,
+                  include_directories : include_directories('..'),
+                  version: libversion,
+diff --git meson.build meson.build
+index 270d37e..23fab6d 100644
+--- meson.build
++++ meson.build
+@@ -32,6 +32,58 @@ bmff_test = '''#include <exiv2/exiv2.hpp>
+ 
+ bmff_available = cpp.compiles(bmff_test, name : 'BMFF support in exiv2', dependencies : [exiv2])
+ 
++private_pdata_test = '''#include <exiv2/exiv2.hpp>
++#include <iostream>
++int main(void) {
++  Exiv2::DataBuf buf;
++  std::cout << buf.c_data() << std::endl;
++
++  return 0;
++}'''
++private_pdata = cpp.compiles(private_pdata_test, name : 'DataBuf is sealead in exiv2', dependencies : [exiv2])
++
++has_any_error_test = '''#include <exiv2/exiv2.hpp>
++#include <iostream>
++int main(void) {
++  Exiv2::AnyError *e;
++
++  return 0;
++}'''
++has_any_error = cpp.compiles(has_any_error_test, name : 'AnyError exists in exiv2', dependencies : [exiv2])
++
++xmpdatum_has_to_long_test = '''#include <exiv2/exiv2.hpp>
++#include <iostream>
++int main(void) {
++  Exiv2::XmpKey k{"Xmp.audio.Compressor"};
++  Exiv2::Xmpdatum d{k, nullptr};
++  d.toLong();
++
++  return 0;
++}'''
++xmpdatum_has_to_long = cpp.compiles(xmpdatum_has_to_long_test, name: 'Xmpdatum has toLong() in exiv2', dependencies : [exiv2])
++
++exifdatum_has_to_long_test = '''#include <exiv2/exiv2.hpp>
++#include <iostream>
++int main(void) {
++  Exiv2::ExifKey k{"Exif.Image.OECF"};
++  Exiv2::Exifdatum d{k, nullptr};
++  d.toLong();
++
++  return 0;
++}'''
++exifdatum_has_to_long = cpp.compiles(exifdatum_has_to_long_test, name: 'Exifdatum has toLong() in exiv2', dependencies : [exiv2])
++
++build_config = configuration_data ()
++build_config.set('EXIV2_DATABUF_HAS_PRIVATE_PDATA', private_pdata)
++build_config.set('EXIV2_HAS_ANY_ERROR', has_any_error)
++build_config.set('EXIV2_XMPDATUM_HAS_TO_LONG', xmpdatum_has_to_long)
++build_config.set('EXIV2_EXIFDATUM_HAS_TO_LONG', exifdatum_has_to_long)
++config_h = configure_file(
++  output: 'config.h',
++  configuration: build_config
++)
++
++
+ find_program('g-ir-scanner', required: get_option('introspection'))
+ 
+ if get_option('vapi')
+diff --git test/python/test_metadata.py test/python/test_metadata.py
+index 217551a..04d7a40 100644
+--- test/python/test_metadata.py
++++ test/python/test_metadata.py
+@@ -323,18 +323,15 @@ class TestMetadata(unittest.TestCase):
+             buf = fd.read()
+         metadata = GExiv2.Metadata()
+         metadata.open_buf(buf)
+-        self.assertEqual(len(metadata.get_exif_tags()), 111)
++        self.assertGreaterEqual(len(metadata.get_exif_tags()), 111)
+ 
+     def test_open_path(self):
+         metadata = GExiv2.Metadata()
+         metadata.open_path(self.get_input_file())
+-        self.assertEqual(len(metadata.get_exif_tags()), 111)
++        self.assertGreaterEqual(len(metadata.get_exif_tags()), 111)
+ 
+     def test_get_tag_string(self):
+-        self.assertEqual(
+-            [(tag, self.metadata.get_tag_string(tag))
+-             for tag in self.metadata.get_exif_tags()
+-             if len(self.metadata.get_tag_string(tag)) < 100],
++        reference_data = dict(
+             [('Exif.Image.DateTime', '2012:11:02 09:04:27'),
+              ('Exif.Image.ExifTag', '234'),
+              ('Exif.Image.ImageDescription', '          '),
+@@ -440,12 +437,20 @@ class TestMetadata(unittest.TestCase):
+              ('Exif.Thumbnail.XResolution', '300/1'),
+              ('Exif.Thumbnail.YResolution', '300/1'),
+              ])
++        
++        data = dict([(tag, self.metadata.get_tag_string(tag))
++             for tag in self.metadata.get_exif_tags()
++             if len(self.metadata.get_tag_string(tag)) < 100])
++        
++        self.assertEqual(data, data | reference_data)
++
+ 
+     def test_get_tag_interpreted_string(self):
+-        self.assertEqual(
++        data = dict(
+             [(tag, self.metadata.get_tag_interpreted_string(tag))
+              for tag in self.metadata.get_exif_tags()
+-             if len(self.metadata.get_tag_interpreted_string(tag)) < 100],
++             if len(self.metadata.get_tag_interpreted_string(tag)) < 100]);
++        reference_data = dict(
+             [('Exif.Image.DateTime', '2012:11:02 09:04:27'),
+              ('Exif.Image.ExifTag', '234'),
+              ('Exif.Image.ImageDescription', '          '),
+@@ -551,6 +556,7 @@ class TestMetadata(unittest.TestCase):
+              ('Exif.Thumbnail.XResolution', '300'),
+              ('Exif.Thumbnail.YResolution', '300'),
+              ])
++        self.assertEqual(data, data | reference_data)
+ 
+     def test_has_tag(self):
+         self.assertTrue(self.metadata.has_tag('Exif.Image.DateTime'))
+@@ -564,7 +570,7 @@ class TestMetadata(unittest.TestCase):
+         self.assertFalse(self.metadata.has_tag('Exif.Image.DateTime'))
+ 
+     def test_clear(self):
+-        self.assertEqual(len(self.metadata.get_exif_tags()), 111)
++        self.assertGreaterEqual(len(self.metadata.get_exif_tags()), 111)
+         self.assertTrue(self.metadata.has_tag('Exif.Image.DateTime'))
+         self.assertIsNone(self.metadata.clear())
+         self.assertFalse(self.metadata.has_tag('Exif.Image.DateTime'))
