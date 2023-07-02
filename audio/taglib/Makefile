@@ -1,5 +1,5 @@
 PORTNAME=	taglib
-DISTVERSION=	1.13
+DISTVERSION=	1.13.1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		https://taglib.org/releases/
