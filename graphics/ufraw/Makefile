@@ -1,6 +1,6 @@
 PORTNAME=	ufraw
 PORTVERSION=	0.22.20210424
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
 		libjasper.so:graphics/jasper \
 		liblcms2.so:graphics/lcms2 \
 		libpng.so:graphics/png \
@@ -18,7 +19,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 
 USES=		autoreconf compiler:c++11-lang desktop-file-utils gettext \
 		gmake gnome jpeg pkgconfig
-USE_CXXSTD=	gnu++98
+USE_CXXSTD=	gnu++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	sergiomb2
 GH_TAGNAME=	f34669b
@@ -30,6 +31,7 @@ CONFIGURE_ARGS=	--enable-extras \
 		--disable-mime
 
 CPPFLAGS+=	-I${LOCALBASE}/include
+#CXXFLAGS+=	-D_NOEXCEPT=noexcept
 LDFLAGS+=	-lpthread -L${LOCALBASE}/lib
 
 CONFLICTS_INSTALL=	dcraw
