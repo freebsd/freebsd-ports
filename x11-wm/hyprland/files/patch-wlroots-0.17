@@ -1,0 +1,120 @@
+Apply https://github.com/swaywm/sway/commit/6f1a3b6652b9
+
+../src/Compositor.cpp:461:5: error: use of undeclared identifier 'wlr_xcursor_manager_set_cursor_image'; did you mean 'wlr_xcursor_manager_get_xcursor'?
+    wlr_xcursor_manager_set_cursor_image(m_sWLRXCursorMgr, "left_ptr", m_sWLRCursor);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/render/Renderer.cpp:1898:17: error: use of undeclared identifier 'wlr_xcursor_manager_set_cursor_image'; did you mean 'wlr_xcursor_manager_get_xcursor'?
+                wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "left_ptr", g_pCompositor->m_sWLRCursor);
+                ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/managers/input/InputManager.cpp:295:21: error: use of undeclared identifier 'wlr_xcursor_manager_set_cursor_image'; did you mean 'wlr_xcursor_manager_get_xcursor'?
+                    wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "crosshair", g_pCompositor->m_sWLRCursor);
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/managers/input/InputManager.cpp:297:21: error: use of undeclared identifier 'wlr_xcursor_manager_set_cursor_image'; did you mean 'wlr_xcursor_manager_get_xcursor'?
+                    wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "left_ptr", g_pCompositor->m_sWLRCursor);
+                    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/managers/input/InputManager.cpp:470:9: error: use of undeclared identifier 'wlr_xcursor_manager_set_cursor_image'; did you mean 'wlr_xcursor_manager_get_xcursor'?
+        wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "crosshair", g_pCompositor->m_sWLRCursor);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/managers/input/InputManager.cpp:496:13: error: use of undeclared identifier 'wlr_xcursor_manager_set_cursor_image'; did you mean 'wlr_xcursor_manager_get_xcursor'?
+            wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "left_ptr", g_pCompositor->m_sWLRCursor);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/managers/input/InputManager.cpp:508:13: error: use of undeclared identifier 'wlr_xcursor_manager_set_cursor_image'; did you mean 'wlr_xcursor_manager_get_xcursor'?
+            wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "crosshair", g_pCompositor->m_sWLRCursor);
+            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/managers/input/InputManager.cpp:1431:5: error: use of undeclared identifier 'wlr_xcursor_manager_set_cursor_image'; did you mean 'wlr_xcursor_manager_get_xcursor'?
+    wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, name.c_str(), g_pCompositor->m_sWLRCursor);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/managers/input/InputManager.cpp:1441:9: error: use of undeclared identifier 'wlr_xcursor_manager_set_cursor_image'; did you mean 'wlr_xcursor_manager_get_xcursor'?
+        wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "left_ptr", g_pCompositor->m_sWLRCursor);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+--- src/Compositor.cpp.orig	2023-07-11 02:50:09 UTC
++++ src/Compositor.cpp
+@@ -458,7 +458,7 @@ void CCompositor::startCompositor() {
+         throw std::runtime_error("The backend could not start!");
+     }
+ 
+-    wlr_xcursor_manager_set_cursor_image(m_sWLRXCursorMgr, "left_ptr", m_sWLRCursor);
++    wlr_cursor_set_xcursor(m_sWLRCursor, m_sWLRXCursorMgr, "left_ptr");
+ 
+ #ifdef USES_SYSTEMD
+     if (sd_booted() > 0)
+--- src/managers/input/InputManager.cpp.orig	2023-05-29 17:17:38 UTC
++++ src/managers/input/InputManager.cpp
+@@ -292,9 +292,9 @@ void CInputManager::mouseMoveUnified(uint32_t time, bo
+             if (g_pHyprRenderer->m_bHasARenderedCursor) {
+                 // TODO: maybe wrap?
+                 if (m_ecbClickBehavior == CLICKMODE_KILL)
+-                    wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "crosshair", g_pCompositor->m_sWLRCursor);
++                    wlr_cursor_set_xcursor(g_pCompositor->m_sWLRCursor, g_pCompositor->m_sWLRXCursorMgr, "crosshair");
+                 else
+-                    wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "left_ptr", g_pCompositor->m_sWLRCursor);
++                    wlr_cursor_set_xcursor(g_pCompositor->m_sWLRCursor, g_pCompositor->m_sWLRXCursorMgr, "left_ptr");
+             }
+ 
+             m_bEmptyFocusCursorSet = true;
+@@ -361,7 +361,7 @@ void CInputManager::mouseMoveUnified(uint32_t time, bo
+         // if (!m_bCursorImageOverridden) {
+         //     if (!VECINRECT(m_vLastCursorPosFloored, pFoundWindow->m_vRealPosition.vec().x, pFoundWindow->m_vRealPosition.vec().y,
+         //                    pFoundWindow->m_vRealPosition.vec().x + pFoundWindow->m_vRealSize.vec().x, pFoundWindow->m_vRealPosition.vec().y + pFoundWindow->m_vRealSize.vec().y)) {
+-        //         wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "left_ptr", g_pCompositor->m_sWLRCursor);
++        //         wlr_cursor_set_xcursor(g_pCompositor->m_sWLRCursor, g_pCompositor->m_sWLRXCursorMgr, "left_ptr");
+         //         cursorSurfaceInfo.bUsed = false;
+         //     } else if (!cursorSurfaceInfo.bUsed) {
+         //         cursorSurfaceInfo.bUsed = true;
+@@ -467,7 +467,7 @@ void CInputManager::processMouseRequest(wlr_seat_point
+     }
+ 
+     if (m_ecbClickBehavior == CLICKMODE_KILL) {
+-        wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "crosshair", g_pCompositor->m_sWLRCursor);
++        wlr_cursor_set_xcursor(g_pCompositor->m_sWLRCursor, g_pCompositor->m_sWLRXCursorMgr, "crosshair");
+         return;
+     }
+ 
+@@ -493,7 +493,7 @@ void CInputManager::setClickMode(eClickBehaviorMode mo
+         case CLICKMODE_DEFAULT:
+             Debug::log(LOG, "SetClickMode: DEFAULT");
+             m_ecbClickBehavior = CLICKMODE_DEFAULT;
+-            wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "left_ptr", g_pCompositor->m_sWLRCursor);
++            wlr_cursor_set_xcursor(g_pCompositor->m_sWLRCursor, g_pCompositor->m_sWLRXCursorMgr, "left_ptr");
+             break;
+ 
+         case CLICKMODE_KILL:
+@@ -505,7 +505,7 @@ void CInputManager::setClickMode(eClickBehaviorMode mo
+             refocus();
+ 
+             // set cursor
+-            wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "crosshair", g_pCompositor->m_sWLRCursor);
++            wlr_cursor_set_xcursor(g_pCompositor->m_sWLRCursor, g_pCompositor->m_sWLRXCursorMgr, "crosshair");
+             break;
+         default: break;
+     }
+@@ -1428,7 +1428,7 @@ void CInputManager::setCursorImageUntilUnset(std::stri
+ }
+ 
+ void CInputManager::setCursorImageUntilUnset(std::string name) {
+-    wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, name.c_str(), g_pCompositor->m_sWLRCursor);
++    wlr_cursor_set_xcursor(g_pCompositor->m_sWLRCursor, g_pCompositor->m_sWLRXCursorMgr, name.c_str());
+     m_bCursorImageOverridden = true;
+ }
+ 
+@@ -1438,7 +1438,7 @@ void CInputManager::unsetCursorImage() {
+ 
+     m_bCursorImageOverridden = false;
+     if (!g_pHyprRenderer->m_bWindowRequestedCursorHide)
+-        wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "left_ptr", g_pCompositor->m_sWLRCursor);
++        wlr_cursor_set_xcursor(g_pCompositor->m_sWLRCursor, g_pCompositor->m_sWLRXCursorMgr, "left_ptr");
+ }
+ 
+ std::string CInputManager::deviceNameToInternalString(std::string in) {
+--- src/render/Renderer.cpp.orig	2023-07-11 02:50:09 UTC
++++ src/render/Renderer.cpp
+@@ -1895,7 +1895,7 @@ void CHyprRenderer::ensureCursorRenderingMode() {
+             m_bHasARenderedCursor = true;
+ 
+             if (!m_bWindowRequestedCursorHide)
+-                wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "left_ptr", g_pCompositor->m_sWLRCursor);
++                wlr_cursor_set_xcursor(g_pCompositor->m_sWLRCursor, g_pCompositor->m_sWLRXCursorMgr, "left_ptr");
+ 
+             Debug::log(LOG, "Showing the cursor (timeout)");
+ 
