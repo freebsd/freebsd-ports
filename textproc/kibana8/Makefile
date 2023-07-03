@@ -1,7 +1,6 @@
 PORTNAME=	kibana
-DISTVERSION=	8.7.0
+DISTVERSION=	8.8.2
 DISTVERSIONSUFFIX=	-darwin-x86_64
-PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
@@ -48,7 +47,7 @@ BINS=		kibana-encryption-keys kibana-keystore kibana-plugin \
 # Set node-nan version here
 _NODE_NAN_VER=	2.17.0
 # Set node-re version here
-_NODE_RE2_VER=	1.18.0
+_NODE_RE2_VER=	1.19.1
 #######################################################################
 
 _NODECMD=	${LOCALBASE}/bin/node --version
@@ -59,11 +58,16 @@ _RE2DIR=	${WRKDIR}/node-re2-${_NODE_RE2_VER}
 # Extra patch files must be updated whenever node-re2 changes
 _RE2PATCHES=	${PATCHDIR}/extra-node-re2-binding-gyp.patch
 
+# Directory to prune
+_DIR2DEL=	node_modules packages src/plugins x-pack/packages
+
 post-patch:
-	${FIND} -s ${WRKSRC}/node_modules -type d -empty -delete
+.for _dirdel in ${_DIR2DEL}
+	${FIND} -s ${WRKSRC}/${_dirdel} -type d -empty -delete
+.endfor
 	cd ${_RE2DIR} && ${PATCH} -p0 < ${_RE2PATCHES}
 	${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
-	-e "s|%%DEVDIR%%|${_DEVDIR}|g" ${_RE2DIR}/binding.gyp \
+	-e "s|%%DEVDIR%%|${_DEVDIR}|g" ${_RE2DIR}/binding.gyp
 
 pre-configure:
 	( \
@@ -80,14 +84,15 @@ do-configure:
 		"! ( -name \.* -or -path *\/test\/* -or -name test )")
 	(cd ${_RE2DIR} && \
 		${SETENV} HOME=${WRKDIR} \
-		${LOCALBASE}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp configure \
+		${LOCALBASE}/lib/node_modules/npm/node_modules/.bin/node-gyp configure \
 		--python=${PYTHON_CMD} \
+		--nodedir=${LOCALBASE} \
 		--devdir=${_DEVDIR})
 
 do-build:
 	(cd ${_RE2DIR} && \
 		${SETENV} HOME=${WRKDIR} \
-		${LOCALBASE}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp build \
+		${LOCALBASE}/lib/node_modules/npm/node_modules/.bin/node-gyp build \
 		--devdir=${_DEVDIR})
 
 do-install:
