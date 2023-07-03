@@ -1,5 +1,6 @@
 PORTNAME=	cde
 PORTVERSION=	${COMMIT_DATE}
+PORTREVISION=	1
 CATEGORIES=	x11
 .if !defined(MASTERDIR)
 PKGNAMESUFFIX=	-devel
@@ -49,7 +50,8 @@ RUN_DEPENDS=	ksh93:shells/ksh			\
 USES=		autoreconf:build iconv:wchar_t gmake jpeg libtool motif perl5 \
 		shebangfix tcl:86 xorg
 SHEBANG_LANG=	pl
-SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate
+SHEBANG_FILES=	programs/dtinfo/tools/bin/ccdate \
+		programs/dtdocbook/tcl/docbook.tcl
 DT_PREFIX=	${PREFIX}/dt${DT_ID}
 USE_LDCONFIG=	${DT_PREFIX}/lib
 USE_RC_SUBR=	dtcms${DT_ID} dtlogin${DT_ID}
