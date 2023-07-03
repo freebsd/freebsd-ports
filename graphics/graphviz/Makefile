@@ -112,7 +112,7 @@ GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 			libgc-threaded.so:devel/boehm-gc-threaded
 PHP_LIB_DEPENDS=	libpcre.so:devel/pcre \
 			libargon2.so:security/libargon2
-GHOSTSCRIPT_LIB_DEPENDS=	libgs.so:print/${_GS_PORT}
+GHOSTSCRIPT_LIB_DEPENDS=	libgs.so:${_GS_PORT}
 
 XPM_CONFIGURE_WITH=		x
 XPM_CONFIGURE_ENV=		ac_cv_header_sys_inotify_h=no
