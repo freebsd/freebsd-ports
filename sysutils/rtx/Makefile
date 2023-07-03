@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.32.1
+DISTVERSION=	1.32.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,7 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	jdxcode
 
-CARGO_CRATES=	addr2line-0.19.0 \
+CARGO_CRATES=	addr2line-0.20.0 \
 		adler-1.0.2 \
 		aho-corasick-0.7.20 \
 		aho-corasick-1.0.2 \
@@ -27,9 +27,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.1 \
 		autocfg-1.1.0 \
-		backtrace-0.3.67 \
+		backtrace-0.3.68 \
 		base64-0.21.2 \
 		bitflags-1.3.2 \
+		bitflags-2.3.3 \
 		block-buffer-0.10.4 \
 		bstr-1.5.0 \
 		built-0.6.1 \
@@ -40,8 +41,8 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
-		clap-4.3.8 \
-		clap_builder-4.3.8 \
+		clap-4.3.10 \
+		clap_builder-4.3.10 \
 		clap_complete-4.3.1 \
 		clap_derive-4.3.2 \
 		clap_lex-0.5.0 \
@@ -61,7 +62,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		crossbeam-utils-0.8.16 \
 		crypto-common-0.1.6 \
 		ctor-0.1.26 \
-		ctor-0.2.2 \
+		ctor-0.2.3 \
 		ctrlc-3.4.0 \
 		dialoguer-0.10.4 \
 		diff-0.1.13 \
@@ -101,7 +102,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		hashbrown-0.12.3 \
 		hashbrown-0.14.0 \
 		heck-0.4.1 \
-		hermit-abi-0.2.6 \
 		hermit-abi-0.3.1 \
 		http-0.2.9 \
 		http-body-0.4.5 \
@@ -123,7 +123,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.11 \
 		ipnet-2.8.0 \
-		is-terminal-0.4.7 \
+		is-terminal-0.4.8 \
 		itertools-0.10.5 \
 		itertools-0.11.0 \
 		itoa-1.0.6 \
@@ -135,21 +135,21 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		libz-sys-1.1.9 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.3 \
 		log-0.4.19 \
 		memchr-2.5.0 \
 		memoffset-0.9.0 \
 		mime-0.3.17 \
 		minimal-lexical-0.2.1 \
-		miniz_oxide-0.6.2 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.8 \
 		nix-0.26.2 \
 		nom-7.1.3 \
 		num-traits-0.2.15 \
-		num_cpus-1.15.0 \
+		num_cpus-1.16.0 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
-		object-0.30.4 \
+		object-0.31.1 \
 		once_cell-1.18.0 \
 		os_pipe-1.1.4 \
 		output_vt100-0.1.3 \
@@ -167,7 +167,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pretty_assertions-1.3.0 \
 		proc-macro2-1.0.63 \
 		quick-xml-0.23.1 \
-		quote-1.0.28 \
+		quote-1.0.29 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
 		redox_syscall-0.2.16 \
@@ -181,9 +181,10 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		rmp-serde-1.1.1 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.23 \
-		rustix-0.37.20 \
+		rustix-0.37.21 \
+		rustix-0.38.1 \
 		rustls-0.21.2 \
-		rustls-pemfile-1.0.2 \
+		rustls-pemfile-1.0.3 \
 		rustls-webpki-0.100.1 \
 		ryu-1.0.13 \
 		same-file-1.0.6 \
@@ -222,7 +223,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		time-macros-0.2.9 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.28.2 \
+		tokio-1.29.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.8 \
 		toml-0.7.5 \
@@ -275,7 +276,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
-		windows-targets-0.48.0 \
+		windows-targets-0.48.1 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.0 \
 		windows_aarch64_msvc-0.42.2 \
