@@ -1,7 +1,7 @@
 bin/gost12sum
 bin/gostsum
 %%EDIR%%/libgost.so
-%%EDIRV%%/libgost.so.1.1
+%%EDIR%%/libgost.so.1.1
 %%PORTDOCS%%share/man/man1/gost12sum.1.gz
 %%PORTDOCS%%share/man/man1/gostsum.1.gz
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md

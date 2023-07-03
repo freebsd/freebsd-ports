@@ -1,7 +1,6 @@
 bin/gost12sum
 bin/gostsum
 %%EDIR%%/gost.so
-%%EDIRV%%/libgost.so.1.1
 lib/libgost.so
 lib/libgostprov.so
 lib/ossl-modules/gostprov.so
@@ -14,3 +13,4 @@ share/cmake/GostProvider/GostProviderConfig.cmake
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.md
 %%PORTDOCS%%%%DOCSDIR%%/README.gost
 %%PORTDOCS%%%%DOCSDIR%%/README.md
+%%PORTDOCS%%%%DOCSDIR%%/openssl.cnf.diff
