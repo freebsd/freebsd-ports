@@ -1,5 +1,5 @@
 PORTNAME=	blisp
-DISTVERSION=	g20230317
+DISTVERSION=	g20230703
 CATEGORIES=	sysutils
 
 MAINTAINER=	porsolic@gmail.com
@@ -15,7 +15,7 @@ USES=		cmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	pine64
-GH_TAGNAME=	6f508d3
+GH_TAGNAME=	048a724
 GH_TUPLE=	argtable:argtable3:6f0e40b:group_argtable/vendor/argtable3
 
 PLIST_FILES=	bin/blisp \
