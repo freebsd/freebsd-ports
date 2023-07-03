@@ -1,11 +1,7 @@
 PORTNAME=	podcasts
-DISTVERSION=	0.5.1
-PORTREVISION=	17
+DISTVERSION=	0.6.0
 CATEGORIES=	audio
 PKGNAMEPREFIX=	gnome-
-
-PATCH_SITES=	${GL_SITE}/${GL_ACCOUNT}/${GL_PROJECT}/-/commit/
-PATCHFILES+=	6614bb62ecbe.patch:-p1 # https://gitlab.gnome.org/World/podcasts/-/merge_requests/213
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Podcast app for GNOME
@@ -18,14 +14,13 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libhandy-1.so:x11-toolkits/libhandy
 
-USES=		cargo gettext gnome gstreamer meson pkgconfig python:build shebangfix sqlite ssl
+USES=		cargo gettext gnome gstreamer meson pkgconfig sqlite ssl
 USE_GITLAB=	yes
-USE_GNOME=	gdkpixbuf2 gtk30
+USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
 USE_GSTREAMER=	bad good libav
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
-GL_COMMIT=	c86f7bfdef7692bbf20f315a90450321f6ca9ce7
-SHEBANG_FILES=	scripts/cargo.sh scripts/compile-gschema.py
+GL_COMMIT=	a0fc748a83f94b02c443022c30aa8dbbae3241f3
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
@@ -40,9 +35,12 @@ LTO_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/dependency.*openssl/d' \
+		-e '/update_desktop_database/d' \
 		${WRKSRC}/meson.build
 # Make each cargo subcommand very verbose
-	@${REINPLACE_CMD} -e "/ARGS=/s/()/('--verbose' '--verbose')/" \
-		${WRKSRC}/scripts/cargo.sh
+# Add explicit <triple> subdir for --target from USES=cargo
+	@${REINPLACE_CMD} -e "/cargo_options =/s/ '--/&verbose', &verbose', &/" \
+		-e "/cp/s,'${PORTNAME}-gtk' / 'src',& / '${CARGO_BUILD_TARGET}'," \
+		${WRKSRC}/${PORTNAME}-gtk/src/meson.build
 
 .include <bsd.port.mk>
