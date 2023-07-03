@@ -413,6 +413,7 @@
     SUBDIR += virtualgl
     SUBDIR += wallutils
     SUBDIR += wapanel
+    SUBDIR += watershot
     SUBDIR += way-displays
     SUBDIR += waybar
     SUBDIR += wayidle
