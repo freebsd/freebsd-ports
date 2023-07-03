@@ -1,6 +1,6 @@
 PORTNAME=	lms
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.39.0
+DISTVERSION=	3.40.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg \
 		libwthttp.so:www/wt
 RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
 
-USES=		cmake compiler:c++17-lang cpe pkgconfig
+USES=		cmake compiler:c++17-lang cpe libarchive pkgconfig
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	epoupon
