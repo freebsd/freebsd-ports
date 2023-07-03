@@ -2,8 +2,7 @@ PORTNAME=	pkgconf
 PORTVERSION=	1.8.1
 PORTEPOCH=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://distfiles.dereferenced.org/pkgconf/ \
-		http://files.etoilebsd.net/pkgconf/
+MASTER_SITES=	https://distfiles.ariadne.space/${PORTNAME}/
 
 # NOTE: before committing to this port, contact portmgr to arrange for an
 # experimental ports run.  Untested commits may be backed out at portmgr's
