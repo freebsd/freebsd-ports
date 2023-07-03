@@ -19,7 +19,7 @@ LICENSE_FILE_LGPL20=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		gmake localbase readline
+USES=		compiler:features gmake localbase readline
 PORTSCOUT=	limit:^6\.2\.
 
 OPTIONS_DEFINE=		DOCS BUILDDOCS
@@ -45,7 +45,12 @@ post-build-DOCS-off:
 	# prevent the instalation of three docs files
 	${REINPLACE_CMD} -e '559,562d' ${WRKSRC}/Makefile
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CFLAGS+=	-Wno-incompatible-function-pointer-types
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS}"
+.endif
 
 .if ${ARCH:Mpowerpc*}
 USES+=		compiler:gcc-c++11-lib
@@ -57,4 +62,4 @@ MASTER_SITES+=	http://www.grosbein.net/freebsd/distfiles/:docs \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DOCS_PACKAGE}${EXTRACT_SUFX}:docs
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
