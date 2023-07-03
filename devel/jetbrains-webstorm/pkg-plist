@@ -30,7 +30,7 @@ share/applications/webstorm.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler-windows.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-WS-231.9011.35
+%%DATADIR%%/lib/build-marker-WS-231.9161.29
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -159,8 +159,8 @@ share/applications/webstorm.desktop
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/node_modules/vitest-intellij-reporter-safe.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-reporter.js
 %%DATADIR%%/plugins/javascript-impl/helpers/vitest-intellij/vitest-intellij-util.js
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-e95fd0b84d23.ijx
-%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-e95fd0b84d23.txt
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-35bf29dd0b10.ijx
+%%DATADIR%%/plugins/javascript-impl/js/js-predefined-1d06a55b98c1-35bf29dd0b10.txt
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/browser.d.ts
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/cancellationToken.js
 %%DATADIR%%/plugins/javascript-impl/jsLanguageServicesImpl/external/es2019decorators.d.ts
