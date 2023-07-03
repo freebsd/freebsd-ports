@@ -1,5 +1,6 @@
 %%SERVER%%bin/admin.sld
 bin/qgis
+bin/qgis_bench
 %%SERVER%%bin/qgis_mapserv.fcgi
 %%SERVER%%bin/qgis_mapserver
 bin/qgis_process
