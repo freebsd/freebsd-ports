@@ -94,6 +94,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		colorchoice-1.0.0 \
 		combine-4.6.6 \
 		concurrent-queue-2.2.0 \
+		const_fn-0.4.9 \
 		constant_time_eq-0.1.5 \
 		copy_dir-0.1.2 \
 		copyless-0.1.5 \
@@ -112,12 +113,14 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		cpal-0.13.5 \
 		cpal-0.14.2 \
 		cpufeatures-0.2.7 \
-		cranelift-bforest-0.82.3 \
-		cranelift-codegen-0.82.3 \
-		cranelift-codegen-meta-0.82.3 \
-		cranelift-codegen-shared-0.82.3 \
-		cranelift-entity-0.82.3 \
-		cranelift-frontend-0.82.3 \
+		cranelift-bforest-0.91.1 \
+		cranelift-codegen-0.91.1 \
+		cranelift-codegen-meta-0.91.1 \
+		cranelift-codegen-shared-0.91.1 \
+		cranelift-egraph-0.91.1 \
+		cranelift-entity-0.91.1 \
+		cranelift-frontend-0.91.1 \
+		cranelift-isle-0.91.1 \
 		crc32fast-1.3.2 \
 		criterion-0.3.4 \
 		criterion-plot-0.4.5 \
@@ -155,7 +158,9 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		darling_macro-0.10.2 \
 		darling_macro-0.13.4 \
 		darling_macro-0.20.1 \
+		dashmap-5.4.0 \
 		deflate-1.0.0 \
+		derivative-2.2.0 \
 		deunicode-1.3.3 \
 		digest-0.10.6 \
 		directories-next-2.0.0 \
@@ -250,11 +255,11 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		half-1.8.2 \
 		hash32-0.2.1 \
 		hashbrown-0.9.1 \
-		hashbrown-0.11.2 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
 		hashlink-0.8.1 \
 		heapless-0.7.16 \
+		heck-0.3.3 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.2.6 \
@@ -271,6 +276,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		hyper-rustls-0.22.1 \
 		iana-time-zone-0.1.56 \
 		iana-time-zone-haiku-0.1.1 \
+		id-arena-2.2.1 \
 		ident_case-1.0.1 \
 		idna-0.3.0 \
 		image-0.24.6 \
@@ -320,8 +326,6 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		loom-0.5.6 \
-		loupe-0.1.3 \
-		loupe-derive-0.1.3 \
 		lz-fear-0.1.1 \
 		mach-0.3.2 \
 		mach2-0.4.1 \
@@ -389,7 +393,6 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		objc-foundation-0.1.1 \
 		objc_exception-0.1.2 \
 		objc_id-0.1.1 \
-		object-0.28.4 \
 		object-0.30.3 \
 		oboe-0.4.6 \
 		oboe-sys-0.4.5 \
@@ -450,6 +453,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		psm-0.1.21 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
+		pulldown-cmark-0.8.0 \
 		quick-xml-0.28.2 \
 		quinn-0.8.5 \
 		quinn-proto-0.8.4 \
@@ -480,7 +484,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		refinery-0.8.8 \
 		refinery-core-0.8.8 \
 		refinery-macros-0.8.8 \
-		regalloc-0.0.34 \
+		regalloc2-0.5.1 \
 		regex-1.8.1 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.6.29 \
@@ -537,7 +541,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		semver-1.0.17 \
 		semver-parser-0.7.0 \
 		serde-1.0.160 \
-		serde_bytes-0.11.9 \
+		serde-wasm-bindgen-0.4.5 \
 		serde_cbor-0.11.2 \
 		serde_derive-1.0.160 \
 		serde_json-1.0.96 \
@@ -563,6 +567,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		simdutf8-0.1.4 \
 		siphasher-0.3.10 \
 		slab-0.4.8 \
+		slice-group-by-0.3.1 \
 		slotmap-0.4.3 \
 		slotmap-1.0.6 \
 		smallvec-1.10.0 \
@@ -580,6 +585,7 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		spirv_headers-1.5.0 \
 		stable_deref_trait-1.2.0 \
 		stacker-0.1.15 \
+		standback-0.2.17 \
 		static_assertions-1.1.0 \
 		stb_truetype-0.3.1 \
 		stdweb-0.1.3 \
@@ -608,9 +614,12 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		thiserror-impl-1.0.40 \
 		thread_local-1.1.7 \
 		thunderdome-0.4.2 \
+		time-0.2.27 \
 		time-0.3.20 \
 		time-core-0.1.0 \
+		time-macros-0.1.1 \
 		time-macros-0.2.8 \
+		time-macros-impl-0.1.2 \
 		timer-queue-0.1.0 \
 		tinystr-0.7.1 \
 		tinytemplate-1.2.1 \
@@ -646,12 +655,14 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		typenum-1.16.0 \
 		unic-langid-0.9.1 \
 		unic-langid-impl-0.9.1 \
+		unicase-2.6.0 \
 		unicode-bidi-0.3.13 \
 		unicode-ident-1.0.8 \
 		unicode-normalization-0.1.22 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
 		unicode-xid-0.1.0 \
+		unicode-xid-0.2.4 \
 		untrusted-0.7.1 \
 		url-2.3.1 \
 		utf8parse-0.2.1 \
@@ -663,6 +674,12 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		vek-0.14.1 \
 		version-compare-0.1.1 \
 		version_check-0.9.4 \
+		wai-bindgen-gen-core-0.2.3 \
+		wai-bindgen-gen-rust-0.2.3 \
+		wai-bindgen-gen-rust-wasm-0.2.3 \
+		wai-bindgen-rust-0.2.3 \
+		wai-bindgen-rust-impl-0.2.3 \
+		wai-parser-0.2.3 \
 		walkdir-0.1.8 \
 		walkdir-2.3.3 \
 		want-0.3.0 \
@@ -670,24 +687,21 @@ CARGO_CRATES=	ab_glyph-0.2.21 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.84 \
 		wasm-bindgen-backend-0.2.84 \
+		wasm-bindgen-downcast-0.1.1 \
+		wasm-bindgen-downcast-macros-0.1.1 \
 		wasm-bindgen-futures-0.4.34 \
 		wasm-bindgen-macro-0.2.84 \
 		wasm-bindgen-macro-support-0.2.84 \
 		wasm-bindgen-shared-0.2.84 \
 		wasm-encoder-0.26.0 \
-		wasmer-2.3.0 \
-		wasmer-artifact-2.3.0 \
-		wasmer-compiler-2.3.0 \
-		wasmer-compiler-cranelift-2.3.0 \
-		wasmer-derive-2.3.0 \
-		wasmer-engine-2.3.0 \
-		wasmer-engine-dylib-2.3.0 \
-		wasmer-engine-universal-2.3.0 \
-		wasmer-engine-universal-artifact-2.3.0 \
-		wasmer-object-2.3.0 \
-		wasmer-types-2.3.0 \
-		wasmer-vm-2.3.0 \
-		wasmparser-0.83.0 \
+		wasmer-4.0.0 \
+		wasmer-compiler-4.0.0 \
+		wasmer-compiler-cranelift-4.0.0 \
+		wasmer-derive-4.0.0 \
+		wasmer-types-4.0.0 \
+		wasmer-vm-4.0.0 \
+		wasmer-wasix-types-0.9.0 \
+		wasmparser-0.95.0 \
 		wast-57.0.0 \
 		wat-1.0.63 \
 		wavefront-0.2.3 \
