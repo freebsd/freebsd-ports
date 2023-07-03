@@ -329,6 +329,7 @@
     SUBDIR += remontoire
     SUBDIR += rendercheck
     SUBDIR += rgb
+    SUBDIR += rio
     SUBDIR += rlaunch
     SUBDIR += rofi
     SUBDIR += rofi-calc
