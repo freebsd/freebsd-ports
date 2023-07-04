@@ -90,12 +90,6 @@ CONFIGURE_TARGET=	x86_64-unknown-${OPSYS:tl}${OSREL}
 CONFIGURE_TARGET=	${ARCH}-unknown-${OPSYS:tl}${OSREL}
 .endif
 
-.if ${TARGETARCH:Marm*} || ${TARGETARCH} == "aarch64"
-. if ${CHOSEN_COMPILER_TYPE} == clang
-MAKE_ARGS+=CXXFLAGS=-fbracket-depth=512
-. endif
-.endif
-
 .if ${TARGETARCH} == "amd64" || ${TARGETARCH} == "powerpc64"
 CONFIGURE_ARGS+=--enable-multilib
 .endif
