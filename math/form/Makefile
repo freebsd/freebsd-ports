@@ -35,6 +35,12 @@ OPENMPI_CONFIGURE_ENABLE=	parform
 OPENMPI_CONFIGURE_ENV+=		MPICC="${MPICC}" \
 				MPICXX="${MPICXX}"
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-build-DOXYGEN-on:
 	(cd ${WRKSRC}/doc/manual; ${MAKE_CMD} html pdf)
 
