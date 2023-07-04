@@ -224,7 +224,6 @@ share/kconf_update/tellico-1-3-update.pl
 share/kconf_update/tellico-3-4-update.pl
 share/kconf_update/tellico-rename.upd
 share/kconf_update/tellico.upd
-share/knsrcfiles/tellico-script.knsrc
 share/knsrcfiles/tellico-template.knsrc
 share/kxmlgui5/tellico/tellicoui.rc
 share/locale/bg/LC_MESSAGES/tellico.mo
@@ -276,6 +275,7 @@ share/mime/packages/tellico.xml
 %%DATADIR%%/MARC21slimUtils.xsl
 %%DATADIR%%/UNIMARC2MODS3.xsl
 %%DATADIR%%/arxiv2tellico.xsl
+%%DATADIR%%/atom2tellico.xsl
 %%DATADIR%%/biblioshare2tellico.xsl
 %%DATADIR%%/bibtex-translation.xml
 %%DATADIR%%/bibtexml2tellico.xsl
@@ -290,6 +290,7 @@ share/mime/packages/tellico.xml
 %%DATADIR%%/data-sources/dark_horse_comics.py.spec
 %%DATADIR%%/data-sources/fr.allocine.py
 %%DATADIR%%/data-sources/fr.allocine.py.spec
+%%DATADIR%%/datacrow2tellico.xsl
 %%DATADIR%%/dbc2tellico.xsl
 %%DATADIR%%/dblp2tellico.xsl
 %%DATADIR%%/delicious2tellico.xsl
@@ -322,6 +323,7 @@ share/mime/packages/tellico.xml
 %%DATADIR%%/pics/coin.png
 %%DATADIR%%/pics/collectorz.png
 %%DATADIR%%/pics/comic.png
+%%DATADIR%%/pics/datacrow.png
 %%DATADIR%%/pics/deliciouslibrary.png
 %%DATADIR%%/pics/file.png
 %%DATADIR%%/pics/game.png
@@ -367,6 +369,7 @@ share/mime/packages/tellico.xml
 %%DATADIR%%/report-templates/Column_View.xsl
 %%DATADIR%%/report-templates/Group_Summary.xsl
 %%DATADIR%%/report-templates/Group_View.xsl
+%%DATADIR%%/report-templates/Image_Grid.xsl
 %%DATADIR%%/report-templates/Image_List.xsl
 %%DATADIR%%/report-templates/Loan_View.xsl
 %%DATADIR%%/report-templates/Title_Listing_(Horizontal).xsl
