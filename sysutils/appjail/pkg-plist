@@ -6,7 +6,6 @@ libexec/appjail/getservbyname/getservbyname
 libexec/appjail/ipcheck/ipcheck
 libexec/appjail/network/network
 %%DATADIR%%/cmd/cmd
-%%DATADIR%%/cmd/config
 %%DATADIR%%/cmd/cpuset
 %%DATADIR%%/cmd/disable
 %%DATADIR%%/cmd/enable
@@ -134,3 +133,7 @@ libexec/appjail/appjail-config/tok
 %%DATADIR%%/scripts/runas.sh
 @sample %%ETCDIR%%/appjail.conf.sample
 %%DATADIR%%/lib/repeat
+%%DATADIR%%/cmd/image
+%%DATADIR%%/makejail/cmd/build/FROM
+%%DATADIR%%/makejail/write/build/FROM
+%%DATADIR%%/scripts/kill_child.sh
