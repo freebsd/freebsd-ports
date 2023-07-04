@@ -1,6 +1,6 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.0
+DISTVERSION=	1.7.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,6 +25,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		assert_cmd-2.0.11 \
 		assert_fs-1.0.13 \
 		autocfg-1.1.0 \
+		base64-0.21.2 \
 		bitflags-1.3.2 \
 		bstr-1.5.0 \
 		cc-1.0.79 \
@@ -33,9 +34,12 @@ CARGO_CRATES=	ahash-0.7.6 \
 		convert_case-0.6.0 \
 		ctrlc-3.4.0 \
 		difflib-0.4.0 \
+		dirs-5.0.1 \
+		dirs-sys-0.4.1 \
 		doc-comment-0.3.3 \
 		either-1.8.1 \
 		encode_unicode-0.3.6 \
+		equivalent-1.0.0 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		fastrand-1.9.0 \
@@ -55,16 +59,17 @@ CARGO_CRATES=	ahash-0.7.6 \
 		globset-0.4.10 \
 		globwalk-0.8.1 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.0 \
 		hermit-abi-0.3.1 \
 		ignore-0.4.20 \
-		indexmap-1.9.3 \
+		indexmap-2.0.0 \
 		insta-1.30.0 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.11 \
 		itertools-0.10.5 \
-		itoa-1.0.6 \
+		itoa-1.0.7 \
 		lazy_static-1.4.0 \
-		libc-0.2.146 \
+		libc-0.2.147 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \
 		log-0.4.19 \
@@ -74,40 +79,46 @@ CARGO_CRATES=	ahash-0.7.6 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
 		num-traits-0.2.15 \
+		num_cpus-1.16.0 \
 		once_cell-1.18.0 \
-		pin-project-lite-0.2.9 \
+		option-ext-0.2.0 \
+		pin-project-lite-0.2.10 \
 		pin-utils-0.1.0 \
-		predicates-2.1.5 \
 		predicates-3.0.3 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
-		proc-macro2-1.0.60 \
-		quote-1.0.28 \
+		proc-macro2-1.0.63 \
+		quote-1.0.29 \
+		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
+		redox_users-0.4.3 \
 		regex-1.8.4 \
 		regex-automata-0.1.10 \
 		regex-syntax-0.7.2 \
-		rstest-0.15.0 \
-		rstest_macros-0.14.0 \
+		rstest-0.17.0 \
+		rstest_macros-0.17.0 \
 		rustc_version-0.4.0 \
-		rustix-0.37.20 \
+		rustix-0.37.22 \
 		ryu-1.0.13 \
 		same-file-1.0.6 \
 		semver-1.0.17 \
-		serde-1.0.164 \
-		serde_derive-1.0.164 \
-		serde_json-1.0.97 \
+		serde-1.0.165 \
+		serde_derive-1.0.165 \
+		serde_json-1.0.99 \
 		shell-words-1.1.0 \
 		similar-2.2.1 \
 		slab-0.4.8 \
 		smawk-0.3.1 \
 		static_assertions-1.1.0 \
 		syn-1.0.109 \
-		syn-2.0.18 \
+		syn-2.0.23 \
 		tempfile-3.6.0 \
 		termtree-0.4.1 \
 		textwrap-0.16.0 \
+		thiserror-1.0.40 \
+		thiserror-impl-1.0.40 \
 		thread_local-1.1.7 \
+		threadpool-1.8.1 \
 		unicode-ident-1.0.9 \
 		unicode-linebreak-0.1.4 \
 		unicode-segmentation-1.10.1 \
@@ -124,7 +135,7 @@ CARGO_CRATES=	ahash-0.7.6 \
 		windows-sys-0.45.0 \
 		windows-sys-0.48.0 \
 		windows-targets-0.42.2 \
-		windows-targets-0.48.0 \
+		windows-targets-0.48.1 \
 		windows_aarch64_gnullvm-0.42.2 \
 		windows_aarch64_gnullvm-0.48.0 \
 		windows_aarch64_msvc-0.42.2 \
