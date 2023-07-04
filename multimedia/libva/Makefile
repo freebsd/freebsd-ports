@@ -1,5 +1,5 @@
 PORTNAME=	libva
-DISTVERSION=	2.18.0
+DISTVERSION=	2.19.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
