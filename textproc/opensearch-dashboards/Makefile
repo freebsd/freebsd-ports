@@ -1,6 +1,7 @@
 PORTNAME=	opensearch-dashboards
 DISTVERSION=	2.8.0
 DISTVERSIONSUFFIX=	-linux-x64
+PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.opensearch.org/releases/bundle/${PORTNAME}/${DISTVERSION}/
 
@@ -42,7 +43,7 @@ post-patch:
 do-configure:
 	(cd ${WRKSRC}/node_modules/re2 && \
 		${SETENV} HOME=${WRKDIR} PYTHONDONTWRITEBYTECODE=1 \
-		${LOCALBASE}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp configure \
+		${LOCALBASE}/lib/node_modules/npm/node_modules/.bin/node-gyp configure \
 		--python=${PYTHON_CMD} \
 		--nodedir ${LOCALBASE} \
 		--devdir=${_DEVDIR})
@@ -50,7 +51,7 @@ do-configure:
 do-build:
 	(cd ${WRKSRC}/node_modules/re2 && \
 		${SETENV} HOME=${WRKDIR} PYTHONDONTWRITEBYTECODE=1 \
-		${LOCALBASE}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp build \
+		${LOCALBASE}/lib/node_modules/npm/node_modules/.bin/node-gyp build \
 		--devdir=${_DEVDIR})
 	${RM} -r ${WRKSRC}/node_modules/re2/build/Release/.deps \
 		${WRKSRC}/node_modules/re2/build/Release/obj.target
