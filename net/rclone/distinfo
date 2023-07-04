@@ -1,5 +1,5 @@
-TIMESTAMP = 1680288263
-SHA256 (go/net_rclone/rclone-v1.62.2/v1.62.2.mod) = 5e22f168307e45a514757e6597e5b643626a2855df5bb8b959585aa3d0fa7ee4
-SIZE (go/net_rclone/rclone-v1.62.2/v1.62.2.mod) = 6761
-SHA256 (go/net_rclone/rclone-v1.62.2/v1.62.2.zip) = fdb3b4b281d82be5388f7e0b8e923bdff466098a84925e164e0947e25b504326
-SIZE (go/net_rclone/rclone-v1.62.2/v1.62.2.zip) = 17017035
+TIMESTAMP = 1688312524
+SHA256 (go/net_rclone/rclone-v1.63.0/v1.63.0.mod) = ffad6af0f48b201d9ef7c9cf3265af106d5c0289f88fc2ff12c387af0db6e1d7
+SIZE (go/net_rclone/rclone-v1.63.0/v1.63.0.mod) = 6871
+SHA256 (go/net_rclone/rclone-v1.63.0/v1.63.0.zip) = 02e1f71d5f71f110aee14ad4b32d27d18296957fdba1a45e1aa19f1c83a57dcf
+SIZE (go/net_rclone/rclone-v1.63.0/v1.63.0.zip) = 17147111
