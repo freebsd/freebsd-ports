@@ -1,13 +1,14 @@
 PORTNAME=	xonotic
-PORTVERSION=	0.8.5
-PORTREVISION=	2
+PORTVERSION=	0.8.6
 CATEGORIES=	games
-MASTER_SITES=	http://nl.dl.xonotic.org/ \
-		http://mirror.bitmissile.com/xonotic/releases/
+MASTER_SITES=	https://dl.xonotic.org/ \
+		https://download.evil-ant-colony.org/xonotic/ \
+		https://xonotic.antzucaro.com/ \
+		https://ocv.xonotic.au/downloads/
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Fast-paced, chaotic, and intense multiplayer first person shooter
-WWW=		https://www.xonotic.org/
+WWW=		https://xonotic.org/
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
