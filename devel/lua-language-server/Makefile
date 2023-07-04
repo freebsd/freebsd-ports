@@ -10,6 +10,9 @@ WWW=		https://github.com/luals/lua-language-server
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Versions after 3.6.9 dump core (and do not compile)
+EXPIRATION_DATE=2023-08-15
+
 LIB_DEPENDS=	libinotify.so:devel/libinotify
 
 USES=		compiler:features dos2unix lua:build ninja:make
