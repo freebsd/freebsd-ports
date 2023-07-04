@@ -1,8 +1,7 @@
 PORTNAME=	octave-forge-stk
-PORTVERSION=	2.8.0
-PORTREVISION=	2
+PORTVERSION=	2.8.1
 CATEGORIES=	math
-MASTER_SITES=	https://github.com/stk-kriging/stk/releases/download/2.8.0/
+MASTER_SITES=	https://github.com/stk-kriging/stk/releases/download/${PORTVERSION}/
 DISTNAME=	${OCTAVE_PKGNAME}-${DISTVERSIONFULL}-octpkg
 
 MAINTAINER=	stephen@FreeBSD.org
