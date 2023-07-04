@@ -1,5 +1,6 @@
 PORTNAME=	wordpress
 DISTVERSION=	6.2.2
+PORTREVISION?=	1
 .ifndef WORDPRESS_LANG
 PORTEPOCH=	1
 MASTER_SITES=	https://wordpress.org/
@@ -17,7 +18,7 @@ WWW=		${MASTER_SITES}
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-RUN_DEPENDS=	${IMAGEMAGICK_DEPENDS}
+RUN_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
 
 USES=		cpe php:web
 .if ${DISTVERSION:N*.*.*}
@@ -40,14 +41,6 @@ PORTDOCS=	readme.html
 OPTIONS_DEFINE=	DOCS
 
 .include <bsd.port.options.mk>
-
-.if !empty(IMAGEMAGICK_DEFAULT:M6) || !empty(IMAGEMAGICK_DEFAULT:M6-*)
-IMAGEMAGICK_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick>=2.2.2:graphics/pecl-imagick@${PHP_FLAVOR}
-.elif !empty(IMAGEMAGICK_DEFAULT:M7) || !empty(IMAGEMAGICK_DEFAULT:M7-*)
-IMAGEMAGICK_DEPENDS=	${PECL_PKGNAMEPREFIX}imagick-im7>=2.2.2:graphics/pecl-imagick-im7@${PHP_FLAVOR}
-.else
-# notreached
-.endif
 
 pre-everything::
 	@${ECHO_CMD} "If you want to upgrade, you must read upgrade document."
