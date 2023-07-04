@@ -406,11 +406,14 @@ include/folly/experimental/io/IoUringBackend.h
 include/folly/experimental/io/IoUringEvent.h
 include/folly/experimental/io/IoUringEventBaseLocal.h
 include/folly/experimental/io/SimpleAsyncIO.h
+include/folly/experimental/observer/CoreCachedObserver.h
+include/folly/experimental/observer/HazptrObserver.h
 include/folly/experimental/observer/Observable-inl.h
 include/folly/experimental/observer/Observable.h
 include/folly/experimental/observer/Observer-inl.h
 include/folly/experimental/observer/Observer-pre.h
 include/folly/experimental/observer/Observer.h
+include/folly/experimental/observer/ReadMostlyTLObserver.h
 include/folly/experimental/observer/SimpleObservable-inl.h
 include/folly/experimental/observer/SimpleObservable.h
 include/folly/experimental/observer/WithJitter-inl.h
@@ -582,8 +585,11 @@ include/folly/io/async/TerminateCancellationToken.h
 include/folly/io/async/TimeoutManager.h
 include/folly/io/async/VirtualEventBase.h
 include/folly/io/async/WriteChainAsyncTransportWrapper.h
+include/folly/io/async/WriteFlags.h
 include/folly/io/async/fdsock/AsyncFdSocket.h
 include/folly/io/async/fdsock/SocketFds.h
+include/folly/io/async/observer/AsyncSocketObserverContainer.h
+include/folly/io/async/observer/AsyncSocketObserverInterface.h
 include/folly/io/async/ssl/BasicTransportCertificate.h
 include/folly/io/async/ssl/OpenSSLTransportCertificate.h
 include/folly/io/async/ssl/OpenSSLUtils.h

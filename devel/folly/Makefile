@@ -1,10 +1,7 @@
 PORTNAME=	folly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.06.26.00
+DISTVERSION=	2023.07.03.00
 CATEGORIES=	devel
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	e74fe5c99dd9d96b80b17f8396ce2568f2becb45.diff:-p1 # fix https://github.com/facebook/folly/issues/2019
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	C++ library developed and used at Facebook
