@@ -7775,3 +7775,4 @@ japanese/kterm||2023-07-12|Has expired: Last upstream release was in 2011
 graphics/gmic-qt@krita|graphics/krita-gmic-plugin|2023-07-14|Forked to a seperate project
 devel/capstone5|devel/capstone|2023-07-15|Keep the latest version without any pkgnamesufix
 games/naev-data||2023-07-15|Remove obsoleted port. Now games/naev installs data files
+graphics/pecl-imagick-im7|graphics/pecl-imagick|2023-07-19|Merged into master port
