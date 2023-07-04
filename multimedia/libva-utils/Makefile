@@ -1,5 +1,5 @@
 PORTNAME=	libva-utils
-PORTVERSION=	2.18.1
+PORTVERSION=	2.19.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	jbeich@FreeBSD.org
