@@ -4,6 +4,10 @@ CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${DISTVERSION}
 
+PATCH_SITES=	https://gitweb.gentoo.org/repo/gentoo.git/plain/games-fps/darkplaces/files/:gentoo \
+		https://raw.githubusercontent.com/gentoo/gentoo/master/games-fps/darkplaces/files/:gentoo
+PATCHFILES=	darkplaces-20140513-gcc-11.patch:-p1:gentoo
+
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake engine modification
 WWW=		https://icculus.org/twilight/darkplaces/
