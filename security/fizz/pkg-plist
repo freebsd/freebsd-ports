@@ -169,12 +169,10 @@ include/fizz/test/LocalTransport.h
 include/fizz/third-party/libsodium-aegis/aegis.h
 include/fizz/third-party/libsodium-aegis/aegis128l/aead_aegis128l.h
 include/fizz/third-party/libsodium-aegis/aegis128l/aesni/aead_aegis128l_aesni.h
-include/fizz/third-party/libsodium-aegis/aegis128l/armcrypto/aead_aegis128l_armcrypto.h
 include/fizz/third-party/libsodium-aegis/aegis128l/crypto_aead_aegis128l.h
 include/fizz/third-party/libsodium-aegis/aegis128l/soft/aead_aegis128l_soft.h
 include/fizz/third-party/libsodium-aegis/aegis256/aead_aegis256.h
 include/fizz/third-party/libsodium-aegis/aegis256/aesni/aead_aegis256_aesni.h
-include/fizz/third-party/libsodium-aegis/aegis256/armcrypto/aead_aegis256_armcrypto.h
 include/fizz/third-party/libsodium-aegis/aegis256/crypto_aead_aegis256.h
 include/fizz/third-party/libsodium-aegis/aegis256/soft/aead_aegis256_soft.h
 include/fizz/third-party/libsodium-aegis/private/common.h
