@@ -1,3 +1,5 @@
 TIMESTAMP = 1680540762
 SHA256 (foot-1.14.0.tar.gz) = 9a306951bc6bdce150364bccb0fb4b67720f50e98e9ac1de89792c1c1aa30690
 SIZE (foot-1.14.0.tar.gz) = 509863
+SHA256 (72bc0acfbd4b.patch) = 8dc31bcfec644385a8433f2a048b95f09e46f9be1fe66784b04b36f53a4347b9
+SIZE (72bc0acfbd4b.patch) = 2812
