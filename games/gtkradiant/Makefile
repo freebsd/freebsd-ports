@@ -19,7 +19,7 @@ LIB_DEPENDS=	libgtkglext-x11-1.0.so:x11-toolkits/gtkglext \
 		libpng.so:graphics/png
 
 USES=		compiler:c++11-lang gnome pkgconfig python:build scons zip
-USE_GNOME=	gtk20 libxml2
+USE_GNOME=	gdkpixbuf2 gtk20 libxml2
 MAKE_ARGS=	${MAKE_ENV} BUILD=release
 SSP_UNSAFE=	yes
 
@@ -44,7 +44,13 @@ post-patch:
 		${WRKSRC}/radiant/patch.cpp \
 		${WRKSRC}/radiant/watchbsp.cpp \
 		${WRKSRC}/tools/quake3/common/inout.c
-# Fix the build against Clang
+# Fix the build against Clang and possibly other modern compilers
+	@${REINPLACE_CMD} -e 's,register ,,g' \
+		${WRKSRC}/libs/container/hashfunc.h \
+		${WRKSRC}/libs/jpeg6/jdcolor.cpp \
+		${WRKSRC}/libs/jpeg6/jdhuff.* \
+		${WRKSRC}/libs/jpeg6/jdsample.cpp \
+		${WRKSRC}/libs/jpeg6/jutils.cpp
 	@${REINPLACE_CMD} -e '/#include "generic\/reference\.h"/x ; 318G' \
 		${WRKSRC}/libs/scenelib.h
 	@${REINPLACE_CMD} -e '/#include "generic\/referencecounted\.h/ { \
