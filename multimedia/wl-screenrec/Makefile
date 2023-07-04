@@ -1,5 +1,5 @@
 PORTNAME=	wl-screenrec
-PORTVERSION=	s20230625
+PORTVERSION=	s20230703
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -13,7 +13,7 @@ LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
 USES=		cargo llvm
 USE_GITHUB=	yes
 GH_ACCOUNT=	russelltg
-GH_TAGNAME=	7ceafa9
+GH_TAGNAME=	1240033
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
