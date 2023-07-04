@@ -88,6 +88,12 @@ X11_PLIST_SUB_OFF=	DESKTOP='@comment ' \
 
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ocp
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocp/*.so
