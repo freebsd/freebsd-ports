@@ -27,8 +27,8 @@ In file included from /usr/include/c++/v1/__functional/bind_front.h:14:
 
 [1] https://pkg-status.freebsd.org/beefy2/data/124amd64-quarterly/8898bf465b47/logs/neochat-23.04.2.log
 
---- lib/qt_connection_util.h
-+++ lib/qt_connection_util.h
+--- Quotient/qt_connection_util.h
++++ Quotient/qt_connection_util.h
 @@ -3,6 +3,8 @@
  
  #pragma once

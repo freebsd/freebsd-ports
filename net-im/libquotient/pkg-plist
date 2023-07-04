@@ -3,8 +3,10 @@ include/Quotient/application-service/definitions/location.h
 include/Quotient/application-service/definitions/protocol.h
 include/Quotient/application-service/definitions/user.h
 include/Quotient/avatar.h
+include/Quotient/connection_p.h
 include/Quotient/connection.h
 include/Quotient/connectiondata.h
+include/Quotient/connectionencryptiondata_p.h
 include/Quotient/converters.h
 include/Quotient/csapi/account-data.h
 include/Quotient/csapi/admin.h
@@ -47,6 +49,7 @@ include/Quotient/csapi/knocking.h
 include/Quotient/csapi/leaving.h
 include/Quotient/csapi/list_joined_rooms.h
 include/Quotient/csapi/list_public_rooms.h
+include/Quotient/csapi/login_token.h
 include/Quotient/csapi/login.h
 include/Quotient/csapi/logout.h
 include/Quotient/csapi/message_pagination.h
@@ -65,6 +68,7 @@ include/Quotient/csapi/registration.h
 include/Quotient/csapi/registration_tokens.h
 include/Quotient/csapi/relations.h
 include/Quotient/csapi/report_content.h
+include/Quotient/csapi/room_event_by_timestamp.h
 include/Quotient/csapi/room_send.h
 include/Quotient/csapi/room_state.h
 include/Quotient/csapi/room_upgrades.h
@@ -131,7 +135,7 @@ include/Quotient/jobs/mediathumbnailjob.h
 include/Quotient/jobs/requestdata.h
 include/Quotient/jobs/syncjob.h
 include/Quotient/keyverificationsession.h
-include/Quotient/logging.h
+include/Quotient/logging_categories_p.h
 include/Quotient/mxcreply.h
 include/Quotient/networkaccessmanager.h
 include/Quotient/networksettings.h
