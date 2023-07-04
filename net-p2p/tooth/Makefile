@@ -26,6 +26,12 @@ GH_PROJECT=	Tooth
 GH_TAGNAME=	ea4f976
 USE_GNOME=	gdkpixbuf2 glib20 gtk40 libxml2 pango
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-install:
 	@${RLN} ${STAGEDIR}${PREFIX}/bin/dev.geopjr.tooth \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
