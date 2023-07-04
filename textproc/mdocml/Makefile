@@ -5,7 +5,7 @@ MASTER_SITES=	http://mdocml.bsd.lv/snapshots/ \
 		LOCAL/uqs
 DISTNAME=	mandoc-${DISTVERSION}
 
-MAINTAINER=	uqs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	mdoc macro compiler
 WWW=		https://mdocml.bsd.lv/
 

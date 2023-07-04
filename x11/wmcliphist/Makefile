@@ -5,7 +5,7 @@ CATEGORIES=	x11 windowmaker
 MASTER_SITES=	http://linux.nawebu.cz/wmcliphist/ \
 		LOCAL/uqs
 
-MAINTAINER=	uqs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clipboard history management dockapp for Window Maker
 WWW=		http://linux.nawebu.cz/wmcliphist/
 

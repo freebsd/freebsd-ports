@@ -4,7 +4,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	https://wpd.home.xs4all.nl/symon/philes/ \
 		LOCAL/uqs
 
-MAINTAINER=	uqs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Performance and information monitoring tool
 WWW=		https://wpd.home.xs4all.nl/symon/
 

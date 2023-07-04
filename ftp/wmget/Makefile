@@ -6,7 +6,7 @@ MASTER_SITES=	http://amtrickey.net/download/ \
 		LOCAL/uqs
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	uqs@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dock app for Window Maker providing wget functionality
 WWW=		https://web.archive.org/web/20160322141200/http://amtrickey.net/wmget/
 
