@@ -1,3 +1,31 @@
+  <vuln vid="d8972bcd-1b64-11ee-9cd6-001b217b3468">
+    <topic>Gitlab -- Vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>gitlab-ce</name>
+	<range><ge>16.1.0</ge><lt>16.1.2</lt></range>
+	<range><ge>16.0.0</ge><lt>16.0.7</lt></range>
+	<range><ge>15.11.0</ge><lt>15.11.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Gitlab reports:</p>
+	<blockquote cite="https://about.gitlab.com/releases/2023/07/05/security-release-gitlab-16-1-2-released/">
+	  <p>A user can change the name and path of some public GitLab groups</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3484</cvename>
+      <url>https://about.gitlab.com/releases/2023/07/05/security-release-gitlab-16-1-2-released/</url>
+    </references>
+    <dates>
+      <discovery>2023-07-05</discovery>
+      <entry>2023-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="01eeea33-1afa-11ee-8a9b-b42e991fc52e">
     <topic>phpldapadmin -- XSS vulnerability</topic>
     <affects>
