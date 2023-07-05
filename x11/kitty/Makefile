@@ -1,8 +1,12 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.28.1
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
+
+PATCH_SITES=	https://github.com/kovidgoyal/${PORTNAME}/commit/
+PATCHFILES+=	95d15648fa37.patch:-p1 # https://github.com/kovidgoyal/kitty/issues/6422
+PATCHFILES+=	7d2dc252f149.patch:-p1 # https://github.com/kovidgoyal/kitty/issues/6422
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Cross-platform, fast, featureful, GPU-based terminal emulator
