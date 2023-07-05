@@ -87,7 +87,7 @@ lib/%%ARDOUR_MAJOR%%/panners/libpanbalance.so
 lib/%%ARDOUR_MAJOR%%/panners/libpanvbap.so
 lib/%%ARDOUR_MAJOR%%/sanityCheck
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_cc121.so
-lib/%%ARDOUR_MAJOR%%/surfaces/libardour_contourdesign.so
+lib/%%ARDOUR_MAJOR%%/surfaces/libardour_console1.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport16.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_faderport2.so
@@ -96,7 +96,6 @@ lib/%%ARDOUR_MAJOR%%/surfaces/libardour_generic_midi.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_launch_control_xl.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_mcp.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_osc.so
-lib/%%ARDOUR_MAJOR%%/surfaces/libardour_push2.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_us2400.so
 lib/%%ARDOUR_MAJOR%%/surfaces/libardour_websockets.so
 lib/%%ARDOUR_MAJOR%%/utils/ardour-util.sh
@@ -149,6 +148,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/icons/close.png
 %%DATADIR%%/icons/computer_keyboard.png
 %%DATADIR%%/icons/computer_keyboard_active.png
+%%DATADIR%%/icons/console1.png
 %%DATADIR%%/icons/eighthnote.png
 %%DATADIR%%/icons/expand_left_right_cursor.png
 %%DATADIR%%/icons/expand_up_down_cursor.png
@@ -701,6 +701,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/patchfiles/Roland_SH_32.midnam
 %%DATADIR%%/patchfiles/Roland_Session_Expansion.midnam
 %%DATADIR%%/patchfiles/Roland_Sirius.midnam
+%%DATADIR%%/patchfiles/Roland_SonicCell.midnam
 %%DATADIR%%/patchfiles/Roland_Special_FX_Expansion.midnam
 %%DATADIR%%/patchfiles/Roland_Studio_Exp.midnam
 %%DATADIR%%/patchfiles/Roland_Studio_Expansion.midnam
@@ -797,6 +798,7 @@ share/applications/%%ARDOUR_MAJOR%%.desktop
 %%DATADIR%%/resources/Ardour-splash.png
 %%DATADIR%%/scripts/HiAndLowPass.lua
 %%DATADIR%%/scripts/a-noise.lua
+%%DATADIR%%/scripts/a_dtmf_phone.lua
 %%DATADIR%%/scripts/a_mute.lua
 %%DATADIR%%/scripts/a_slow_mute.lua
 %%DATADIR%%/scripts/ab_switch.lua

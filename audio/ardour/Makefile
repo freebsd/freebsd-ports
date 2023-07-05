@@ -1,11 +1,11 @@
 PORTNAME=	ardour
-DISTVERSION=	7.4.0
+DISTVERSION=	7.5.0
 CATEGORIES=	audio
 # Official source download is tailored to browsers, downloads from github are
 # deliberately made empty. Put the badly named distfile into a subdirectory.
 MASTER_SITES=	https://community.ardour.org/download/release/
 DISTNAME=	Ardour-${DISTVERSION}
-DISTFILES=	528
+DISTFILES=	534
 DIST_SUBDIR=	${DISTNAME}
 
 MAINTAINER=	dev@submerge.ch
