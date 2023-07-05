@@ -3,3 +3,7 @@ SHA256 (go/x11_kitty/kitty-v0.28.1/v0.28.1.mod) = 0b13cb16daa2d5096cf82ccb083e36
 SIZE (go/x11_kitty/kitty-v0.28.1/v0.28.1.mod) = 1048
 SHA256 (go/x11_kitty/kitty-v0.28.1/v0.28.1.zip) = 9557eca1fe041935f6f7b7fa08c5b81a89c85f53fed7fd3c31f4c90823fcfd77
 SIZE (go/x11_kitty/kitty-v0.28.1/v0.28.1.zip) = 8285949
+SHA256 (go/x11_kitty/kitty-v0.28.1/95d15648fa37.patch) = c51a27a65e9fa6e481ce7da48bd722d4d75bf863c4ba770fa5ae852aa321f27c
+SIZE (go/x11_kitty/kitty-v0.28.1/95d15648fa37.patch) = 1189
+SHA256 (go/x11_kitty/kitty-v0.28.1/7d2dc252f149.patch) = 9d5d3274945d6eb589ab3e4118df8bf8585acac65f3fcfd06873337f56546125
+SIZE (go/x11_kitty/kitty-v0.28.1/7d2dc252f149.patch) = 737
