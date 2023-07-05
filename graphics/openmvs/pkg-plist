@@ -15,6 +15,8 @@ include/OpenMVS/Common/Filters.h
 include/OpenMVS/Common/HTMLDoc.h
 include/OpenMVS/Common/HalfFloat.h
 include/OpenMVS/Common/Hash.h
+include/OpenMVS/Common/Line.h
+include/OpenMVS/Common/Line.inl
 include/OpenMVS/Common/LinkLib.h
 include/OpenMVS/Common/List.h
 include/OpenMVS/Common/Log.h
