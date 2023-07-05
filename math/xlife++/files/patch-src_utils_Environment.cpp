@@ -1,11 +1,11 @@
---- src/utils/Environment.cpp.orig	2018-05-13 04:01:14 UTC
+--- src/utils/Environment.cpp.orig	2022-04-22 18:54:13 UTC
 +++ src/utils/Environment.cpp
-@@ -121,7 +121,7 @@ void Environment::processor()
- void Environment::setMsgFilePath()
- {
+@@ -122,7 +122,7 @@ void Environment::setMsgFilePath()
+   string_t lang="en";
+   if (theLanguage_ != 0) lang=languageString();
  #ifdef OS_IS_UNIX
--  thePathToMessageFiles_ = installPath() + "/etc/messages/" + languageString() + "/";
-+  thePathToMessageFiles_ = installPath() + "/share/xlife++/messages/" + languageString() + "/";
+-  thePathToMessageFiles_ = installPath() + "/etc/messages/" + lang + "/";
++  thePathToMessageFiles_ = installPath() + "/share/xlife++/messages/" + lang + "/";
  #elif defined(OS_IS_WIN)
-   thePathToMessageFiles_ = installPath() + "\\etc\\messages\\" + languageString() + "\\";
+   thePathToMessageFiles_ = installPath() + "\\etc\\messages\\" + lang + "\\";
  #endif

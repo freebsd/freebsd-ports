@@ -1,11 +1,11 @@
---- CMakeLists.txt.orig	2018-05-13 03:55:31 UTC
+--- CMakeLists.txt.orig	2022-04-22 18:54:13 UTC
 +++ CMakeLists.txt
-@@ -235,7 +235,7 @@ endif()
+@@ -334,7 +334,7 @@ endif()
  set(XLIFEPP_LIBS "")
  foreach (lib ${libs})
    file(GLOB_RECURSE libsrcs src/${lib}/*.cpp)
 -  add_library(xlifepp_${lib} STATIC ${libsrcs})
 +  add_library(xlifepp_${lib} SHARED ${libsrcs})
+   target_compile_features(xlifepp_${lib} PUBLIC cxx_std_11)
    list(APPEND XLIFEPP_LIBS xlifepp_${lib})
  endforeach()
- 

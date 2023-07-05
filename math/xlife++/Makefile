@@ -1,9 +1,8 @@
 PORTNAME=	xlife++
-DISTVERSION=	2.0.1
-PORTREVISION=	7
+DISTVERSION=	2.3
 CATEGORIES=	math
-MASTER_SITES=	https://uma.ensta-paristech.fr/soft/XLiFE++/var/files/src/
-DISTNAME=	xlifepp-sources-v${DISTVERSION}-2018-05-09
+MASTER_SITES=	https://uma.ensta-paristech.fr/soft/XLiFE++/downloads/binaries/
+DISTNAME=	xlifepp-sources-v${DISTVERSION}-2022-04-22
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	XLiFE++: eXtended Library of Finite Elements in C++
