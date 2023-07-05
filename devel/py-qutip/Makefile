@@ -1,6 +1,5 @@
 PORTNAME=	qutip
-DISTVERSION=	4.7.1
-PORTREVISION=	2
+DISTVERSION=	4.7.2
 CATEGORIES=	devel
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -25,9 +24,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}nose>0:devel/py-nose@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	pep517 cython cython_run autoplist
-
-xpost-patch: # https://github.com/qutip/qutip/issues/1059
-	@${FIND} ${WRKSRC} -name "*.pyx" -o -name "*.pxd" | ${XARGS} ${REINPLACE_CMD} 's|^#!python|#!${PYTHON_CMD}|'
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/qutip/*/*${PYTHON_EXT_SUFFIX}.so
