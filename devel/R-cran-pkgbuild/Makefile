@@ -1,6 +1,5 @@
 PORTNAME=	pkgbuild
-DISTVERSION=	1.4.0
-PORTREVISION=	1
+DISTVERSION=	1.4.2
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -18,7 +17,6 @@ RUN_DEPENDS=	R-cran-R6>0:devel/R-cran-R6 \
 		R-cran-desc>0:devel/R-cran-desc \
 		R-cran-prettyunits>0:devel/R-cran-prettyunits \
 		R-cran-rprojroot>0:devel/R-cran-rprojroot \
-		R-cran-withr>=2.3.0:devel/R-cran-withr \
 		R-cran-processx>0:sysutils/R-cran-processx
 TEST_DEPENDS=	R-cran-covr>0:devel/R-cran-covr
 
