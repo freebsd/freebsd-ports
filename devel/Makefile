@@ -5909,6 +5909,7 @@
     SUBDIR += qt6-tools
     SUBDIR += qt6-translations
     SUBDIR += qtcreator
+    SUBDIR += qtutilities
     SUBDIR += quantum
     SUBDIR += quickcheck++
     SUBDIR += quickcpplib
