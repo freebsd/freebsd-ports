@@ -1,5 +1,6 @@
 PORTNAME=	opam
 DISTVERSION=	2.1.5
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ocaml/opam/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-

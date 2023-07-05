@@ -1,6 +1,6 @@
---- byterun/caml/stack.h.orig	2017-07-13 08:56:44 UTC
-+++ byterun/caml/stack.h
-@@ -40,10 +40,10 @@
+--- runtime/caml/stack.h.orig	2019-08-05 17:32:44 UTC
++++ runtime/caml/stack.h
+@@ -35,10 +35,10 @@
  #if defined(MODEL_ppc)
  #define Saved_return_address(sp) *((intnat *)((sp) - 4))
  #define Callback_link(sp) ((struct caml_context *)((sp) + 16))

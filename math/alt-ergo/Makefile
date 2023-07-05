@@ -1,6 +1,6 @@
 PORTNAME=	alt-ergo
 PORTVERSION=	0.95.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	http://alt-ergo.ocamlpro.com/http/alt-ergo-${PORTVERSION}/
 

@@ -1,5 +1,6 @@
 PORTNAME=	res
 PORTVERSION=	5.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -26,7 +27,7 @@ do-build:
 
 do-install:
 	cd ${INSTALL_WRKSRC} && dune install --destdir=${STAGEDIR} \
-		--libdir=${OCAML_SITELIBDIR}
+		--libdir=${PREFIX}/${OCAML_SITELIBDIR}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

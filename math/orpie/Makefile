@@ -1,6 +1,6 @@
 PORTNAME=	orpie
 PORTVERSION=	1.5.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES+=	math
 MASTER_SITES=	https://github.com/pelzlpj/orpie/releases/download/release-${PORTVERSION}/
 

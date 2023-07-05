@@ -1,5 +1,6 @@
 PORTNAME=	jsonm
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	converters
 MASTER_SITES=	https://erratique.ch/software/jsonm/releases/
 PKGNAMEPREFIX=	ocaml-

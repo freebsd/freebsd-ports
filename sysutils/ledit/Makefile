@@ -1,5 +1,6 @@
 PORTNAME=	ledit
 PORTVERSION=	2.04
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cristal.inria.fr/%SUBDIR%/ \
 		http://pauillac.inria.fr/%SUBDIR%/

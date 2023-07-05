@@ -1,5 +1,6 @@
 PORTNAME=	autoconf
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://forge.ocamlcore.org/frs/download.php/181/
 PKGNAMEPREFIX=	ocaml-

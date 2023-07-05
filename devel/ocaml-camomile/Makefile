@@ -1,5 +1,6 @@
 PORTNAME=	camomile
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -9,7 +10,7 @@ WWW=		http://camomile.sourceforge.net/
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	jbuilder:devel/ocaml-dune
+BUILD_DEPENDS=	dune:devel/ocaml-dune
 
 USES=		gmake
 USE_GITHUB=	yes
@@ -17,7 +18,7 @@ GH_ACCOUNT=	yoriyuki
 GH_PROJECT=	Camomile
 USE_OCAML=	yes
 
-MAKE_ENV=	LIBDIR="${OCAML_SITELIBDIR}"
+MAKE_ENV=	LIBDIR="${PREFIX}/${OCAML_SITELIBDIR}"
 DOCSDIR=	${OCAML_DOCSDIR}/${PORTNAME}
 
 PORTDOCS=	CHANGES.md LICENSE.md README.md

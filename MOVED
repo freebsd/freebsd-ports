@@ -7762,3 +7762,4 @@ www/kristall||2023-07-02|Has expired: Requires older openssl
 sysutils/cfengine-masterfiles318||2023-07-02|Has expired: Expire one year after cfengine-masterfiles 3.19.0 released
 sysutils/cfengine318||2023-07-02|Has expired: Expire one year after cfengine 3.19.0 released
 devel/linux-c7-dbus-glib||2023-07-02|Merged into devel/linux-c7-dbus-libs
+devel/ocaml-sexplib|devel/ocaml-sexplib0|2023-07-05|Project renamed

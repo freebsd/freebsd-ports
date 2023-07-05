@@ -1,5 +1,5 @@
---- byterun/backtrace.c.orig	2020-08-22 14:46:44 UTC
-+++ byterun/backtrace.c
+--- runtime/backtrace.c.orig	2019-08-05 17:32:44 UTC
++++ runtime/backtrace.c
 @@ -27,9 +27,6 @@
  #include "caml/backtrace_prim.h"
  #include "caml/fail.h"

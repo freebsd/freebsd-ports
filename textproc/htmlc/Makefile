@@ -1,5 +1,6 @@
 PORTNAME=	htmlc
 PORTVERSION=	2.21.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://htmlc.inria.fr/ \
 		http://caml.inria.fr/distrib/bazar-ocaml/htmlc/

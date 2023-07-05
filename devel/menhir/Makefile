@@ -1,5 +1,6 @@
 PORTNAME=	menhir
 PORTVERSION=	20170712
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~fpottier/menhir/
 

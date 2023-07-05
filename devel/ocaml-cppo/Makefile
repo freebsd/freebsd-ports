@@ -1,6 +1,7 @@
 PORTNAME=	cppo
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6.9
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -22,6 +23,6 @@ OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/cppo
-	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/site-lib:${PREFIX}/lib/ocaml/cppo_ocamlbuild/cppo_ocamlbuild.cmxs
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocaml/cppo_ocamlbuild/cppo_ocamlbuild.cmxs
 
 .include <bsd.port.mk>

@@ -1,6 +1,6 @@
---- asmrun/startup.c.orig	2017-07-13 08:56:44 UTC
-+++ asmrun/startup.c
-@@ -44,7 +44,6 @@
+--- runtime/startup_nat.c.orig	2019-08-05 17:32:44 UTC
++++ runtime/startup_nat.c
+@@ -44,7 +44,6 @@ extern int caml_parser_trace;
  #endif
  
  extern int caml_parser_trace;

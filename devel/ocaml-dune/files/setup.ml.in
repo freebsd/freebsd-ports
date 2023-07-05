@@ -1,0 +1,12 @@
+let library_path = ["%%OCAML_LIBDIR%%"; "%%OCAML_SITELIBDIR%%"]
+
+let roots : string option Install.Section.Paths.Roots.t =
+  { lib_root = Some "%%OCAML_LIBDIR%%"
+  ; man = Some "%%MANPREFIX%%/man"
+  ; doc_root = Some "%%OCAML_DOCSDIR%%"
+  ; etc_root = Some "%%PREFIX%%/etc"
+  ; share_root = Some "%%PREFIX%%/share"
+  ; bin = Some "%%PREFIX%%/bin"
+  ; sbin = Some "%%PREFIX%%/sbin"
+  ; libexec_root = Some "%%OCAML_LIBDIR%%"
+  }

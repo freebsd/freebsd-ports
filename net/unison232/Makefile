@@ -15,6 +15,8 @@ WWW=		https://www.cis.upenn.edu/~bcpierce/unison/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BROKEN=		fails to build with ocaml 4.08
+
 FLAVORS=	x11 nox11
 FLAVOR?=	${FLAVORS:[1]}
 

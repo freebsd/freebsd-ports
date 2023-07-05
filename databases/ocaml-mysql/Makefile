@@ -1,5 +1,6 @@
 PORTNAME=	mysql
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://ygrek.org.ua/p/release/ocaml-mysql/
 PKGNAMEPREFIX=	ocaml-

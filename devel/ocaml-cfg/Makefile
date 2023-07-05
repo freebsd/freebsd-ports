@@ -1,5 +1,6 @@
 PORTNAME=	cfg
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMEPREFIX=	ocaml-
 
@@ -26,7 +27,7 @@ do-build:
 
 do-install:
 	cd ${INSTALL_WRKSRC} && dune install --destdir=${STAGEDIR} \
-		--prefix=${PREFIX} --libdir=${OCAML_SITELIBDIR}
+		--libdir=${PREFIX}/${OCAML_SITELIBDIR}
 
 post-install-EXAMPLES-on:
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR})

@@ -1,5 +1,6 @@
 PORTNAME=	extlib
 DISTVERSION=	1.7.9
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/ygrek/ocaml-extlib/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	ocaml-

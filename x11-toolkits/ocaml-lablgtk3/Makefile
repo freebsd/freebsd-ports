@@ -1,6 +1,6 @@
 PORTNAME=	lablgtk3
 PORTVERSION=	3.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 PKGNAMEPREFIX=	ocaml-
 
@@ -56,7 +56,7 @@ do-build:
 
 do-install:
 	cd ${INSTALL_WRKSRC} && dune install --destdir=${STAGEDIR} \
-		--libdir=${OCAML_SITELIBDIR} ${TARGETS}
+		--libdir=${PREFIX}/${OCAML_SITELIBDIR} ${TARGETS}
 
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}

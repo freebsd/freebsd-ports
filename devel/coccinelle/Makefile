@@ -1,8 +1,6 @@
 PORTNAME=	coccinelle
-PORTVERSION=	1.0.7
-PORTREVISION=	1
+PORTVERSION=	1.1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://coccinelle.lip6.fr/distrib/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program matching and transformation engine
@@ -26,6 +24,8 @@ USE_PERL5=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	PYTHON="${PYTHON_CMD}" PYVER="${PYTHON_VER}"
 MAKE_ARGS=	PYTHON_VERSION="${PYTHON_VER}"
+
+USE_GITHUB=	yes
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/spatch

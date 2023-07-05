@@ -1,5 +1,5 @@
 PORTNAME=	findlib
-PORTVERSION=	1.8.1
+PORTVERSION=	1.9.6
 CATEGORIES=	devel
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
