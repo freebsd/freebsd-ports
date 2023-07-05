@@ -1,3 +1,31 @@
+  <vuln vid="8ea24413-1b15-11ee-9331-570525adb7f1">
+    <topic>gitea -- avoid open HTTP redirects</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.19.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/25143">
+	  <p>If redirect_to parameter has set value starting with
+	    \\example.com redirect will be created with header Location:
+	    /\\example.com that will redirect to example.com domain.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.io/2023/07/gitea-1.19.4-is-released/</url>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.19.4</url>
+    </references>
+    <dates>
+      <discovery>2023-06-08</discovery>
+      <entry>2023-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d1681df3-421e-4a63-95b4-a3d6e29d395d">
     <topic>electron{23,24} -- multiple vulnerabilities</topic>
     <affects>
