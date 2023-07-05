@@ -1,12 +1,13 @@
 [
 { type: install
   message: <<EOM
-diff-so-fancy is normally used to format git's diff output.
-
 In order to configure git to use diff-so-fancy automatically, you can run:
     $ git config --global core.pager "diff-so-fancy | less -R"
 
-See %%DOCSDIR%%/readme.md for more information.
+diff-so-fancy can also be used with diff(1) directly as well as tools like
+hg(1).
+
+See %%DOCSDIR%%/README.md for more information.
 EOM
 }
 ]
