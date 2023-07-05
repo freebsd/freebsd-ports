@@ -1,0 +1,24 @@
+--- src/meson.build.orig	2023-07-05 17:42:24 UTC
++++ src/meson.build
+@@ -21,14 +21,6 @@ desktop_view_deps = [
+ 
+ c_flags = []
+ 
+-optimization_level = get_option('optimization')
+-
+-if optimization_level == '0'
+-	warning('We recommend setting an optimization level')
+-else
+-	c_flags += '-O'+optimization_level
+-endif
+-
+ executable(
+ 	'org.buddiesofbudgie.budgie-desktop-view',
+ 	desktop_view_sources,
+@@ -42,4 +34,4 @@ executable(
+ 	install: true,
+ 	install_dir: join_paths(get_option('prefix'), get_option('bindir')),
+ 	c_args: c_flags,
+-)
+\ No newline at end of file
++)

@@ -1,6 +1,17 @@
---- meson.build.orig	2022-03-06 16:37:45 UTC
+--- meson.build.orig	2023-01-29 14:42:17 UTC
 +++ meson.build
-@@ -75,7 +75,7 @@ if xdg_appdir == ''
+@@ -4,10 +4,8 @@ project(
+ 	version: '1.2.1',
+ 	license: [ 'Apache-2.0' ],
+ 	default_options: [
+-		'b_lto=false',
+ 		'c_std=c11',
+ 		'buildtype=release',
+-		'optimization=3',
+ 		'werror=true',
+ 		'warning_level=3',
+ 	],
+@@ -75,7 +73,7 @@ if xdg_appdir == ''
  	if with_stateless == true
  		xdg_appdir = join_paths(datadir, 'xdg', 'autostart')
  	else
