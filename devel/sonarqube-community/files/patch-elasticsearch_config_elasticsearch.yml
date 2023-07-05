@@ -1,12 +1,9 @@
---- elasticsearch/config/elasticsearch.yml.orig	2022-11-17 18:55:38 UTC
-+++ elasticsearch/config/elasticsearch.yml
-@@ -80,6 +82,9 @@
- # Enable an unauthenticated TCP readiness endpoint on localhost
+--- elasticsearch/config/elasticsearch.yml.orig	2023-03-27 16:30:24.000000000 +0200
++++ elasticsearch/config/elasticsearch.yml	2023-07-05 20:36:37.154402000 +0200
+@@ -80,3 +80,6 @@
+ # Allow wildcard deletion of indices:
  #
- #readiness.port: 9399
+ #action.destructive_requires_name: false
 +
 +# ml is not supported on FreeBSD
 +xpack.ml.enabled: false
- #
- # ---------------------------------- Various -----------------------------------
- #
