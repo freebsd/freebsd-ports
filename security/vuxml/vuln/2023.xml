@@ -1,3 +1,32 @@
+  <vuln vid="01eeea33-1afa-11ee-8a9b-b42e991fc52e">
+    <topic>phpldapadmin -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>phpldapadmin-php80</name>
+	<name>phpldapadmin-php81</name>
+	<range><lt>1.2.6.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>cve@mitre.org reports:</p>
+	<blockquote cite="https://bugs.launchpad.net/ubuntu/+source/phpldapadmin/+bug/1906474">
+	  <p>An XSS issue has been discovered in phpLDAPadmin before 1.2.6.2
+	that allows users to store malicious values that may be executed
+	by other users at a later time via get_request in lib/function.php.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2020-35132</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2020-35132</url>
+    </references>
+    <dates>
+      <discovery>2020-12-11</discovery>
+      <entry>2023-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ee7fa77-19a6-11ee-8a05-080027eda32c">
     <topic>Django -- multiple vulnerabilities</topic>
     <affects>
