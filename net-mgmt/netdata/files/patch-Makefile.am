@@ -1,0 +1,29 @@
+--- Makefile.am.orig	2023-06-17 06:42:31 UTC
++++ Makefile.am
+@@ -39,7 +39,6 @@ EXTRA_DIST = \
+     build/m4/ax_c__generic.m4 \
+     build/m4/ax_compiler_vendor.m4 \
+     build/m4/ax_cxx_compile_stdcxx.m4 \
+-    ml/dlib \
+     README.md \
+     LICENSE \
+     REDISTRIBUTED.md \
+@@ -256,16 +255,15 @@ ML_FILES += \
+     ml/ad_charts.h \
+     ml/ad_charts.cc \
+     ml/Config.cc \
+-    ml/dlib/dlib/all/source.cpp \
+     ml/ml-private.h \
+     ml/ml.cc \
+     $(NULL)
+ 
+ # Disable warnings from dlib library
+-ml/dlib/dlib/all/source.$(OBJEXT) : CXXFLAGS += -Wno-sign-compare -Wno-type-limits -Wno-aggressive-loop-optimizations -Wno-stringop-overflow -Wno-psabi
++# ml/dlib/dlib/all/source.$(OBJEXT) : CXXFLAGS += -Wno-sign-compare -Wno-type-limits -Wno-aggressive-loop-optimizations -Wno-stringop-overflow -Wno-psabi
+ 
+ # Disable ml warnings
+-ml/ml.$(OBJEXT) : CXXFLAGS += -Wno-psabi
++# ml/ml.$(OBJEXT) : CXXFLAGS += -Wno-psabi
+ 
+ endif
+ 
