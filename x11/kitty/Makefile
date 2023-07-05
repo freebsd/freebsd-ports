@@ -93,9 +93,10 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kitty_data-types.h
 .endif
 
 # For librsync, we need to set header and library path
+# --ignore-compiler-warnings is for https://github.com/kovidgoyal/kitty/issues/6422
 do-build:
 	(cd ${WRKSRC} && \
-	        ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py linux-package --update-check-interval 0 --extra-include-dirs ${LOCALBASE}/include/ --extra-library-dirs ${LOCALBASE}/lib)
+	        ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py linux-package --ignore-compiler-warnings --update-check-interval 0 --extra-include-dirs ${LOCALBASE}/include/ --extra-library-dirs ${LOCALBASE}/lib)
 	${FIND} ${INSTALL_WRKSRC} -name __pycache__ -type d -exec ${RM} -r -- {} +
 
 do-install:
