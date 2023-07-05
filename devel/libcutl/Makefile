@@ -17,6 +17,8 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libexpat.so:textproc/expat2
 
 USES=		compiler:c++11-lib libtool
+# libcutl 1.10.0 is not compatible with C++17, which is the default since clang
+# 16. This means ports depending on it also need to use at most C++14.
 USE_CXXSTD=	c++11
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
