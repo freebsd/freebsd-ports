@@ -6,6 +6,7 @@ include/libplacebo/dispatch.h
 include/libplacebo/dither.h
 include/libplacebo/dummy.h
 include/libplacebo/filters.h
+include/libplacebo/gamut_mapping.h
 include/libplacebo/gpu.h
 include/libplacebo/log.h
 include/libplacebo/opengl.h
@@ -30,5 +31,5 @@ include/libplacebo/utils/libav_internal.h
 include/libplacebo/utils/upload.h
 include/libplacebo/vulkan.h
 lib/libplacebo.so
-lib/libplacebo.so.264
+lib/libplacebo.so.292
 libdata/pkgconfig/libplacebo.pc
