@@ -1,12 +1,11 @@
 PORTNAME=	webshot
-DISTVERSION=	0.5.4
-PORTREVISION=	1
+DISTVERSION=	0.5.5
 CATEGORIES=	www
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	ygy@FreeBSD.org
 COMMENT=	Take Screenshots of Web Pages
-WWW=		http://wch.github.io/webshot/
+WWW=		https://wch.github.io/webshot/
 
 LICENSE=	GPLv2
 
