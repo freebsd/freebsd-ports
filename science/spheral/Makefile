@@ -1,6 +1,6 @@
 PORTNAME=	spheral
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2023.03.1
+DISTVERSION=	2023.03.2
 CATEGORIES=	science # physics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -44,9 +44,11 @@ CMAKE_ARGS=	-Daneos_DIR=${LOCALBASE} \
 		-Dsilo_DIR=${LOCALBASE} \
 		-Dzlib_DIR=/usr
 CMAKE_OFF=	ENABLE_TESTS ENABLE_DOCS \
-		ENABLE_ANEOS
+		ENABLE_ANEOS \
+		ENABLE_CUDA
 CMAKE_ON=	ENABLE_CXXONLY # disable Python support which is still for Python-2.7, see https://github.com/LLNL/spheral/issues/183
-CMAKE_TESTING_ON=	ENABLE_TESTS # tests fail to configure, see https://github.com/LLNL/spheral/issues/207
+CMAKE_ON+=	ENABLE_OPENMP
+CMAKE_TESTING_ON=	ENABLE_TESTS # tests fail to build, see https://github.com/LLNL/spheral/issues/230
 
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 
