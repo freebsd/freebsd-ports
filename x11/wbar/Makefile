@@ -6,33 +6,32 @@ MASTER_SITES=	https://storage.googleapis.com/google-code-archive-downloads/v2/co
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Simple and highly customizable quick launch bar
-WWW=		http://wbar.googlecode.com/
+WWW=		https://code.google.com/archive/p/wbar/
 
 LICENSE=	GPLv3
 
 BUILD_DEPENDS=	intltool-update:textproc/intltool
 LIB_DEPENDS=	libImlib2.so:graphics/imlib2
 
-CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
-
 USES=		compiler:c++11-lang gettext gmake gnome pkgconfig tar:tgz
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-OPTIONS_DEFINE=	NLS WBARCONFIG
+PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
+
+OPTIONS_DEFINE=		NLS WBARCONFIG
 OPTIONS_DEFAULT=	WBARCONFIG
-OPTIONS_SUB=	yes
+OPTIONS_SUB=		yes
 
 WBARCONFIG_DESC=	Build the GTK+ configuration interface
 
 NLS_CONFIGURE_ENABLE=	nls
-NLS_LIBS=	-lintl
+NLS_LIBS=		-lintl
 
+WBARCONFIG_USE=			GNOME=libglade2
 WBARCONFIG_CONFIGURE_ENABLE=	wbar-config
-WBARCONFIG_USE=		GNOME=libglade2
-
-PLIST_SUB+=	DESKTOPDIR=${DESKTOPDIR:S,${PREFIX}/,,}
 
 post-install:
 	${MV} ${STAGEDIR}${PREFIX}/etc/wbar.d/wbar.desktop ${STAGEDIR}${DESKTOPDIR}/wbar.desktop
