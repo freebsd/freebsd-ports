@@ -1,10 +1,3 @@
-===>  License APACHE20 accepted by the user
-===>   cpu_rec_rs-1.0.0 depends on file: /usr/local/sbin/pkg - found
-===> Fetching all distfiles required by cpu_rec_rs-1.0.0 for building
-===>  Extracting for cpu_rec_rs-1.0.0
-=> SHA256 Checksum OK for trou-cpu_rec_rs-1.0.0-2b0cf54_GH0.tar.gz.
-===>  Moving crates to /usr/work/usr/git/ports/sysutils/cpu_rec_rs/work/cpu_rec_rs-2b0cf54/cargo-crates
-===> /usr/work/usr/git/ports/sysutils/cpu_rec_rs/work/cpu_rec_rs-2b0cf54/Cargo.lock not found.  Trying to generate it...
 CARGO_CRATES=	anstream-0.3.2 \
 		anstyle-1.0.1 \
 		anstyle-parse-0.2.1 \
