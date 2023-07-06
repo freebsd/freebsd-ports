@@ -4,9 +4,9 @@ CATEGORIES=	deskutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Prevent system from becoming idle
-WWW=		https://github.com/moses-palmer/pynput
+WWW=		https://github.com/carrot69/keep-presence
 
-LICENSE=	GPLv3
+LICENSE=	CC0-1.0
 LICENSE_FILE=	${WRKSRC}/../LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pynput>0:x11/py-pynput@${PY_FLAVOR}
