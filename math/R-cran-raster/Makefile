@@ -1,5 +1,5 @@
 PORTNAME=	raster
-DISTVERSION=	3.6-20
+DISTVERSION=	3.6-23
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -11,7 +11,7 @@ LICENSE=	GPLv3
 
 CRAN_DEPENDS=	R-cran-Rcpp>0:devel/R-cran-Rcpp \
 		R-cran-sp>=1.4.5:math/R-cran-sp \
-		R-cran-terra>=1.6.41:math/R-cran-terra
+		R-cran-terra>=1.7.29:math/R-cran-terra
 BUILD_DEPENDS=	${CRAN_DEPENDS}
 RUN_DEPENDS=	${CRAN_DEPENDS}
 
