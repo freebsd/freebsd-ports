@@ -7,6 +7,9 @@ MAINTAINER=	freebsd@intel.com
 COMMENT=	RDMA FreeBSD* driver for Intel® Ethernet Controller E810
 WWW=		https://www.intel.com/content/www/us/en/download/19762/irdma-rdma-freebsd-driver-for-intel-ethernet-controller-e810.html
 
+NOT_FOR_ARCHS=	armv6 armv7 i386 powerpc
+NOT_FOR_ARCHS_REASON=	Not supported on 32-bits
+
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/doc/irdma_readme.txt
 
