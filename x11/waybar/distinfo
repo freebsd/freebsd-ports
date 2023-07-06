@@ -3,3 +3,5 @@ SHA256 (Alexays-Waybar-0.9.19_GH0.tar.gz) = 09695c9d6ae4cf33d8e8a2c3e4ba216e5d29
 SIZE (Alexays-Waybar-0.9.19_GH0.tar.gz) = 249917
 SHA256 (1fb2b8efd5a1.patch) = 98bd3b424d673f154782bd9c795428a01cba7bf8c8a1a2c46167b5a541024c8b
 SIZE (1fb2b8efd5a1.patch) = 2236
+SHA256 (e2bfa5e019f6.patch) = 008c16eb342165f50e16432b15e7ed86411de393d862d3d84c73afbce8d6e2e5
+SIZE (e2bfa5e019f6.patch) = 1121
