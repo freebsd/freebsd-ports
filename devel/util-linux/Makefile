@@ -1,8 +1,7 @@
 PORTNAME=	util-linux
-DISTVERSION=	2.36
-PORTREVISION=	2
+DISTVERSION=	2.39.1
 CATEGORIES=	devel
-MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${DISTVERSION}/
+MASTER_SITES=	KERNEL_ORG/linux/utils/util-linux/v${DISTVERSION:R}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Random collection of Linux utilities
@@ -11,6 +10,7 @@ WWW=		https://github.com/karelzak/util-linux
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libuuid.so:misc/e2fsprogs-libuuid
 RUN_DEPENDS=	bash:shells/bash
@@ -20,7 +20,11 @@ USES=		autoreconf gettext-tools gmake libtool ncurses pkgconfig \
 
 USE_LDCONFIG=	yes
 
-SHEBANG_FILES=	misc-utils/getopt-parse.bash
+SHEBANG_FILES=	misc-utils/getopt-example.bash \
+		tools/*.sh \
+		tools/git-tp-sync \
+		tools/git-tp-sync-man \
+		tests/run.sh
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls --disable-ipcrm --disable-ipcs \
