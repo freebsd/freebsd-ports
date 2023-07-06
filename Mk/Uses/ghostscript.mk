@@ -2,7 +2,7 @@
 #
 # Feature:	ghostscript
 # Usage:	USES=ghostscript or USES=ghostscript:args
-# Valid ARGS:	<version>, build, run, test, x11
+# Valid ARGS:	<version>, build, run, test, x11, lib
 #
 # version 	The chooseable versions are 9, agpl and 10. If no version is
 #		specified version agpl is selected. 9 and agpl are synonymous.
@@ -18,6 +18,8 @@
 #		it as RUN_DEPENDS.
 # test		Indicates that Ghostscript is needed at test time and adds
 #		it as TEST_DEPENDS.
+# lib		Indicates that Ghostscript is needed at link time and adds
+#		it as LIB_DEPENDS.
 #
 # If build and run are omitted, Ghostscript will be added as BUILD_DEPENDS and
 # RUN_DEPENDS.
@@ -34,7 +36,7 @@ _GS_VERSION=	9 agpl 10
 
 _GS_ARGS=	${ghostscript_ARGS}
 
-.  if ${_GS_ARGS:N9:N10:Nagpl:Nx11:Nbuild:Nrun:Ntest}
+.  if ${_GS_ARGS:N9:N10:Nagpl:Nx11:Nbuild:Nrun:Ntest:Nlib}
 IGNORE?=	Unknown ghostscript argument ${_GS_ARGS}
 .  endif
 
@@ -47,6 +49,7 @@ IGNORE?=	Invalid GHOSTSCRIPT_DEFAULT value: ${GHOSTSCRIPT_DEFAULT}, please selec
 .undef _GS_BUILD_DEP
 .undef _GS_RUN_DEP
 .undef _GS_TEST_DEP
+.undef _GS_LIB_DEP
 .  if ${_GS_ARGS:Mbuild}
 _GS_BUILD_DEP=	yes
 .  endif
@@ -56,10 +59,13 @@ _GS_RUN_DEP=	yes
 .  if ${_GS_ARGS:Mtest}
 _GS_TEST_DEP=	yes
 .  endif
+.  if ${_GS_ARGS:Mlib}
+_GS_LIB_DEP=	yes
+.  endif
 
-# The port does not specify a build, run, or test dependency, assume that
+# The port does not specify a build, run, test, or lib dependency, assume that
 # a build and run dependency is required.
-.  if !defined(_GS_BUILD_DEP) && !defined(_GS_RUN_DEP) && !defined(_GS_TEST_DEP)
+.  if !defined(_GS_BUILD_DEP) && !defined(_GS_RUN_DEP) && !defined(_GS_TEST_DEP) && !defined(_GS_LIB_DEP)
 _GS_BUILD_DEP=	yes
 _GS_RUN_DEP=	yes
 .  endif
@@ -89,18 +95,27 @@ _GS_VERSION_MINOR=	9.56.1
 .  endif
 
 # dependencies
+_GS_LIB=	libgs.so
 _GS_PKGNAME=	ghostscript${_GS_SELECTED}${_GS_FLAVORED:?:-base}
 _GS_X11_PKGNAME=ghostscript${_GS_SELECTED}-x11
 _GS_PORT=	print/ghostscript${_GS_SELECTED}${_GS_FLAVORED:?:-base}
 _GS_X11_PORT=	print/ghostscript${_GS_SELECTED}${_GS_FLAVORED:?@:-}x11
 
-.  for type in BUILD RUN TEST
+.  for type in BUILD RUN TEST LIB
 .    if defined(_GS_${type}_DEP)
-.      if defined(_GS_FLAVORED) || !${_GS_ARGS:Mx11}
+.      if !defined(_GS_FLAVORED) || !${_GS_ARGS:Mx11}
+.        if ${type:MLIB}
+${type}_DEPENDS+=	${_GS_LIB}:${_GS_PORT}
+.        else
 ${type}_DEPENDS+=	${_GS_PKGNAME}>=${_GS_VERSION_MINOR}:${_GS_PORT}
+.        endif
 .      endif
 .      if ${_GS_ARGS:Mx11}
+.        if ${type:MLIB}
+${type}_DEPENDS+=	${_GS_LIB}:${_GS_X11_PORT}
+.        else
 ${type}_DEPENDS+=	${_GS_X11_PKGNAME}>=${_GS_VERSION_MINOR}:${_GS_X11_PORT}
+.        endif
 .      endif
 .    endif
 .  endfor
