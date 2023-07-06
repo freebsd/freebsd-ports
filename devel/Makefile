@@ -38,6 +38,7 @@
     SUBDIR += R-cran-crayon
     SUBDIR += R-cran-cyclocomp
     SUBDIR += R-cran-data.table
+    SUBDIR += R-cran-decor
     SUBDIR += R-cran-desc
     SUBDIR += R-cran-devtools
     SUBDIR += R-cran-diffobj
