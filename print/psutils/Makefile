@@ -4,7 +4,8 @@ PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/ \
 		ftp://ftp.knackered.org/pub/psutils/ \
-		TEX_CTAN/support/psutils
+		TEX_CTAN/support/psutils \
+		https://ftp.osuosl.org/pub/blfs/conglomeration/psutils/
 DISTNAME=	psutils-p17
 
 MAINTAINER=	hrs@FreeBSD.org
