@@ -16,6 +16,7 @@
 %%PYTHON_SITELIBDIR%%/recordclass/__pycache__/utils.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/__pycache__/utils.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/recordclass/_dataobject%%PYTHON_EXT_SUFFIX%%.so
+%%PYTHON_SITELIBDIR%%/recordclass/_linkedlist%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/recordclass/_litelist%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/recordclass/_litetuple%%PYTHON_EXT_SUFFIX%%.so
 %%PYTHON_SITELIBDIR%%/recordclass/adapter.py

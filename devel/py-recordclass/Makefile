@@ -1,5 +1,5 @@
 PORTNAME=	recordclass
-PORTVERSION=	0.18.4
+PORTVERSION=	0.19
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -10,7 +10,7 @@ WWW=		https://pypi.org/project/recordclass/
 
 LICENSE=	MIT
 
-USES=		python:3.9+
+USES=		python:3.9+ zip
 USE_PYTHON=	distutils
 
 .if ! defined(WITH_DEBUG)
