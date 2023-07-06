@@ -1,6 +1,5 @@
 PORTNAME=	scipy
-DISTVERSION=	1.10.1
-PORTREVISION=	1
+DISTVERSION=	1.11.1
 CATEGORIES=	science python
 MASTER_SITES=	https://docs.scipy.org/doc/${PORTNAME}-${DISTVERSION}/:doc \
 		PYPI:source \
