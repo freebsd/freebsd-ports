@@ -1,9 +1,9 @@
 PORTNAME=	gmp
-DISTVERSION=	0.7-1
+DISTVERSION=	0.7-2
 CATEGORIES=	math
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Multiple Precision Arithmetic
 WWW=		https://cran.r-project.org/web/packages/gmp/
 
