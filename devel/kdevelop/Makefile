@@ -65,6 +65,7 @@ zsh_CMD=	${LOCALBASE}/bin/zsh
 .include <bsd.port.pre.mk>
 
 .if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+# Reported upstream: https://bugs.kde.org/show_bug.cgi?id=471995
 CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
 .endif
 
