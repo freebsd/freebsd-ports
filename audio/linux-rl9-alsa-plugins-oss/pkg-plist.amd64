@@ -1,0 +1,9 @@
+etc/alsa/conf.d/50-oss.conf
+usr/lib/.build-id/04/444e7ed34492487dec130e095d94b1c59dde66
+usr/lib/.build-id/d5/0f65148fff2d59a3def3b641a6e223f550c633
+usr/lib64/alsa-lib/libasound_module_ctl_oss.so
+usr/lib64/alsa-lib/libasound_module_pcm_oss.so
+usr/share/alsa/alsa.conf.d/50-oss.conf
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.GPL
+%%PORTDOCS%%%%DOCSDIR%%/README-pcm-oss

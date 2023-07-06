@@ -419,6 +419,9 @@
     SUBDIR += linux-c7-sdl_mixer
     SUBDIR += linux-laudio
     SUBDIR += linux-rl9-alsa-lib
+    SUBDIR += linux-rl9-alsa-lib-devel
+    SUBDIR += linux-rl9-alsa-plugins-oss
+    SUBDIR += linux-rl9-alsa-plugins-pulseaudio
     SUBDIR += linux-rl9-flac
     SUBDIR += linux-rl9-gsm
     SUBDIR += linux-rl9-libogg
