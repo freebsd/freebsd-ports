@@ -52,11 +52,10 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}cachecontrol>0:www/py-cachecontrol@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cssselect>0:www/py-cssselect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
-		ps2pdf:print/ghostscript9-agpl-base \
 		fig2dev:print/fig2dev
 
-USES=		compiler:c++17-lang cmake cpe desktop-file-utils gnome \
-		iconv:wchar_t jpeg pathfix pkgconfig python \
+USES=		compiler:c++17-lang cmake cpe desktop-file-utils ghostscript:run \
+		gnome iconv:wchar_t jpeg pathfix pkgconfig python \
 		readline shebangfix tar:xz xorg
 USE_GNOME=	gdkpixbuf2 gtkmm30 libxml2 libxslt
 USE_XORG=	sm ice x11 xext
