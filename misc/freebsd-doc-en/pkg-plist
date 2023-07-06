@@ -96,6 +96,7 @@
 %%HTML%%%%DOCBASE%%/books/fdp-primer/tools/index.html
 %%HTML%%%%DOCBASE%%/books/fdp-primer/trademarks/index.html
 %%HTML%%%%DOCBASE%%/books/fdp-primer/translations/index.html
+%%HTML%%%%DOCBASE%%/books/fdp-primer/weblate/index.html
 %%HTML%%%%DOCBASE%%/books/fdp-primer/working-copy/index.html
 %%HTML%%%%DOCBASE%%/books/fdp-primer/writing-style/index.html
 %%HTML%%%%DOCBASE%%/books/handbook/advanced-networking/index.html
@@ -224,6 +225,17 @@
 %%HTML%%%%DOCBASE%%/images/books/developers-handbook/serv.png
 %%HTML%%%%DOCBASE%%/images/books/developers-handbook/serv2.png
 %%HTML%%%%DOCBASE%%/images/books/developers-handbook/slayers.png
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate-commit.webp
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate-documents.webp
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate-languages.webp
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate-login.webp
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate-offline.webp
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate-revision1.webp
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate-revision2.webp
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate-translate.webp
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate_automatic_suggestion_01.webp
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate_automatic_suggestion_02.webp
+%%HTML%%%%DOCBASE%%/images/books/fdp-primer/weblate_automatic_suggestion_03.webp
 %%HTML%%%%DOCBASE%%/images/books/handbook/advanced-networking/isdn-bus.png
 %%HTML%%%%DOCBASE%%/images/books/handbook/advanced-networking/isdn-twisted-pair.png
 %%HTML%%%%DOCBASE%%/images/books/handbook/advanced-networking/natd.png
