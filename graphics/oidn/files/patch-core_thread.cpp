@@ -1,4 +1,4 @@
---- core/thread.cpp.orig	2023-05-24 17:03:47 UTC
+--- core/thread.cpp.orig	2023-06-24 12:06:59 UTC
 +++ core/thread.cpp
 @@ -1,6 +1,8 @@
  // Copyright 2009 Intel Corporation
@@ -10,7 +10,7 @@
    #pragma warning (disable : 4146) // unary minus operator applied to unsigned type, result still unsigned
  #endif
 @@ -120,7 +122,7 @@ OIDN_NAMESPACE_BEGIN
-       OIDN_WARNING("SetThreadGroupAffinity failed");
+       printWarning("SetThreadGroupAffinity failed");
    }
  
 -#elif defined(__linux__)
@@ -34,7 +34,7 @@
 -    if (pthread_getaffinity_np(thread, sizeof(cpu_set_t), &oldAffinities[threadIndex]) != 0)
 +    if (pthread_getaffinity_np(thread, sizeof(cpuset_t), &oldAffinities[threadIndex]) != 0)
      {
-       OIDN_WARNING("pthread_getaffinity_np failed");
+       printWarning("pthread_getaffinity_np failed");
        oldAffinities[threadIndex] = affinities[threadIndex];
 @@ -190,7 +192,7 @@ OIDN_NAMESPACE_BEGIN
      }
@@ -42,7 +42,7 @@
      // Set the new affinity
 -    if (pthread_setaffinity_np(thread, sizeof(cpu_set_t), &affinities[threadIndex]) != 0)
 +    if (pthread_setaffinity_np(thread, sizeof(cpuset_t), &affinities[threadIndex]) != 0)
-       OIDN_WARNING("pthread_setaffinity_np failed");
+       printWarning("pthread_setaffinity_np failed");
    }
  
 @@ -202,7 +204,7 @@ OIDN_NAMESPACE_BEGIN
@@ -51,6 +51,6 @@
      // Restore the original affinity
 -    if (pthread_setaffinity_np(thread, sizeof(cpu_set_t), &oldAffinities[threadIndex]) != 0)
 +    if (pthread_setaffinity_np(thread, sizeof(cpuset_t), &oldAffinities[threadIndex]) != 0)
-       OIDN_WARNING("pthread_setaffinity_np failed");
+       printWarning("pthread_setaffinity_np failed");
    }
  
