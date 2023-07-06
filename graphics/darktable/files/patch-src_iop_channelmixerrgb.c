@@ -1,8 +1,8 @@
---- src/iop/channelmixerrgb.c.orig	2023-01-27 09:33:55 UTC
+--- src/iop/channelmixerrgb.c.orig	2023-07-06 21:20:42 UTC
 +++ src/iop/channelmixerrgb.c
-@@ -49,23 +49,6 @@ DT_MODULE_INTROSPECTION(3, dt_iop_channelmixer_rgb_par
- 
- DT_MODULE_INTROSPECTION(3, dt_iop_channelmixer_rgb_params_t)
+@@ -16,23 +16,6 @@
+   along with darktable.  If not, see <http://www.gnu.org/licenses/>.
+ */
  
 -/** Note :
 - * we use finite-math-only and fast-math because divisions by zero are manually avoided in the code
@@ -21,6 +21,6 @@
 -                      "tree-vectorize", "no-math-errno")
 -#endif
 -
- 
- #define CHANNEL_SIZE 4
- #define INVERSE_SQRT_3 0.5773502691896258f
+ #ifdef HAVE_CONFIG_H
+ #include "config.h"
+ #endif

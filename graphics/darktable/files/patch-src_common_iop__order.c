@@ -1,11 +1,11 @@
---- src/common/iop_order.c.orig	2023-01-26 22:08:42 UTC
+--- src/common/iop_order.c.orig	2023-07-06 21:18:18 UTC
 +++ src/common/iop_order.c
-@@ -36,23 +36,6 @@ static void _ioppr_reset_iop_order(GList *iop_order_li
+@@ -37,23 +37,6 @@ static void _ioppr_reset_iop_order(GList *iop_order_li
  
  static void _ioppr_reset_iop_order(GList *iop_order_list);
  
--/** Note :
-- * we do not use finite-math-only and fast-math because divisions by zero are not manually avoided in the code
+-/** Note : we do not use finite-math-only and fast-math because
+- * divisions by zero are not manually avoided in the code
 - * fp-contract=fast enables hardware-accelerated Fused Multiply-Add
 - * the rest is loop reorganization and vectorization optimization
 - **/
