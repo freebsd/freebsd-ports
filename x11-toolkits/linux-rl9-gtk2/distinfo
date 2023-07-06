@@ -1,0 +1,11 @@
+TIMESTAMP = 1688557818
+SHA256 (rocky/g/gtk2-2.24.33-8.el9.aarch64.rpm) = 1f632dd5f7362bcf77cdb0e2b5e7da7a1020203cc33ddf2cfb260b60fc0fb861
+SIZE (rocky/g/gtk2-2.24.33-8.el9.aarch64.rpm) = 3535675
+SHA256 (rocky/g/gtk2-2.24.33-8.el9.x86_64.rpm) = 0959b86debe67eff4dae440b2b11bb91fb52ffa66764efc0544dfefa639de933
+SIZE (rocky/g/gtk2-2.24.33-8.el9.x86_64.rpm) = 3635380
+SHA256 (rocky/g/gtk2-immodules-2.24.33-8.el9.aarch64.rpm) = ca8501334edd3dd23a0e95bbd9604863119b1fc3ed2e1c0e9261b65fcf26f1b6
+SIZE (rocky/g/gtk2-immodules-2.24.33-8.el9.aarch64.rpm) = 38051
+SHA256 (rocky/g/gtk2-immodules-2.24.33-8.el9.x86_64.rpm) = e1e657002568fa01129d41bda60c289e6206f67cb4339efa7a48f3bdcc04a61e
+SIZE (rocky/g/gtk2-immodules-2.24.33-8.el9.x86_64.rpm) = 38117
+SHA256 (rocky/g/gtk2-2.24.33-8.el9.src.rpm) = 37a4c48dfb2f6bcc46ece4b87b0bc4f5060fab00f3dd57a99201c91349249fe4
+SIZE (rocky/g/gtk2-2.24.33-8.el9.src.rpm) = 12699922

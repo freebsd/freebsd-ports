@@ -1,0 +1,12 @@
+etc/alsa/conf.d/50-pulseaudio.conf
+etc/alsa/conf.d/99-pulseaudio-default.conf
+usr/lib/.build-id/3d/9f82cf7065db42f7fd9f18304faa1cf1f4e111
+usr/lib/.build-id/bb/3f6cb56de35dfede221f2d47a3feaa46f4ff4b
+usr/lib/.build-id/ee/0c0421f41a679ae1463103671d793009a9f416
+usr/lib64/alsa-lib/libasound_module_conf_pulse.so
+usr/lib64/alsa-lib/libasound_module_ctl_pulse.so
+usr/lib64/alsa-lib/libasound_module_pcm_pulse.so
+usr/share/alsa/alsa.conf.d/50-pulseaudio.conf
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/COPYING.GPL
+%%PORTDOCS%%%%DOCSDIR%%/README-pulse

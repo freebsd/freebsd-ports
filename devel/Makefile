@@ -1503,8 +1503,10 @@
     SUBDIR += linux-c7-zlib-devel
     SUBDIR += linux-ltp
     SUBDIR += linux-rl9-dbus-libs
+    SUBDIR += linux-rl9-devtools
     SUBDIR += linux-rl9-elfutils-libelf
     SUBDIR += linux-rl9-elfutils-libs
+    SUBDIR += linux-rl9-libgfortran
     SUBDIR += linux-rl9-libpciaccess
     SUBDIR += linux-rl9-libthai
     SUBDIR += linux-rl9-llvm

@@ -1,0 +1,7 @@
+TIMESTAMP = 1688626772
+SHA256 (rocky/a/alsa-plugins-oss-1.2.7.1-1.el9.aarch64.rpm) = 6b18364defc46e5f6c81f45b2d268b5eb9f25390ca9b73887740edda03026ec8
+SIZE (rocky/a/alsa-plugins-oss-1.2.7.1-1.el9.aarch64.rpm) = 33318
+SHA256 (rocky/a/alsa-plugins-oss-1.2.7.1-1.el9.x86_64.rpm) = 8558a98367322574df923366f69607c5ff9b98d4133855dab56a8a284cac55c6
+SIZE (rocky/a/alsa-plugins-oss-1.2.7.1-1.el9.x86_64.rpm) = 33450
+SHA256 (rocky/a/alsa-plugins-1.2.7.1-1.el9.src.rpm) = d88148378a8fe1245643d995187581cc301099bdb78528cd087576fd947fe545
+SIZE (rocky/a/alsa-plugins-1.2.7.1-1.el9.src.rpm) = 422385
