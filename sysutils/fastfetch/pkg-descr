@@ -1,0 +1,4 @@
+Fastfetch is a neofetch-like tool for fetching system information and
+displaying them in a pretty way. It is written mainly in C, with performance
+and customizability in mind. Currently, Linux, Android, FreeBSD, MacOS and
+Windows 7+ are supported.
