@@ -90,7 +90,6 @@ GTK2_USES=	gnome xorg
 GTK2_USE=	XORG=sm,ice,xext,xinerama,xi,xrandr,xcursor,xfixes GNOME=gtk20
 SMYRNA_USES=	gnome gl
 SMYRNA_USE=	GNOME=libglade2,pangox-compat,gdkpixbuf2 GL=glut,glu,gl
-GHOSTSCRIPT_USES=ghostscript
 PERL_USES=	perl5
 PHP_USES=	php:build gnome
 PHP_USE=	GNOME=libxml2
@@ -100,7 +99,7 @@ RUBY_USES=	ruby
 LUA_USES=	lua
 TK_USES=	tk:build
 GO_USES=	go:no_targets
-DOCS_USES=	ghostscript:build groff
+DOCS_USES=	groff
 
 POPPLER_LIB_DEPENDS=	libpoppler-glib.so:graphics/poppler-glib
 ANN_LIB_DEPENDS=	libann.so:math/ann
@@ -112,7 +111,6 @@ GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
 			libgc-threaded.so:devel/boehm-gc-threaded
 PHP_LIB_DEPENDS=	libpcre.so:devel/pcre \
 			libargon2.so:security/libargon2
-GHOSTSCRIPT_LIB_DEPENDS=	libgs.so:print/${_GS_PORT}
 
 XPM_CONFIGURE_WITH=		x
 XPM_CONFIGURE_ENV=		ac_cv_header_sys_inotify_h=no
@@ -223,6 +221,18 @@ CONFIGURE_ENV+=		SWIG="${LOCALBASE}/bin/swig"
 .else
 CONFIGURE_ARGS+=	--disable-swig
 CONFIGURE_ENV+=		SWIG="/nonexistent"
+.endif
+
+.if ${PORT_OPTIONS:MGHOSTSCRIPT}
+USES_GHOSTSCRIPT_ARGS+=	lib
+.endif
+
+.if ${PORT_OPTIONS:MDOCS}
+USES_GHOSTSCRIPT_ARGS+=	build
+.endif
+
+.if defined(USES_GHOSTSCRIPT_ARGS)
+USES+=	ghostscript:${USES_GHOSTSCRIPT_ARGS:ts,}
 .endif
 
 .include <bsd.port.pre.mk>
