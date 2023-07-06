@@ -1,5 +1,5 @@
 PORTNAME=	upower
-DISTVERSION=	1.90.0
+DISTVERSION=	1.90.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -14,7 +14,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org/
-GL_COMMIT=	d4259c009b3ca1169dfd19231a040c233fc3b58d
+GL_COMMIT=	96c34a3bb9167a204afc7b9d00086325169a7586
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dgtk-doc=false \
