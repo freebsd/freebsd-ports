@@ -39,7 +39,6 @@ include/vulkan/vulkan_xlib.h
 include/vulkan/vulkan_xlib_xrandr.h
 share/cmake/VulkanHeaders/VulkanHeadersConfig.cmake
 share/cmake/VulkanHeaders/VulkanHeadersConfigVersion.cmake
-share/cmake/VulkanHeaders/VulkanHeadersTargets.cmake
 share/vulkan/registry/apiconventions.py
 share/vulkan/registry/cgenerator.py
 share/vulkan/registry/generator.py
