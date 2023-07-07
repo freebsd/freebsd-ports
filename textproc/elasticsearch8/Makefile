@@ -1,5 +1,5 @@
 PORTNAME=	elasticsearch
-PORTVERSION=	8.7.0
+PORTVERSION=	8.8.2
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/
 PKGNAMESUFFIX=	8
