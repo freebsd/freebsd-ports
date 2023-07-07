@@ -86,6 +86,7 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/cmd/all/ENTRYPOINT
 %%DATADIR%%/makejail/cmd/all/ENV
 %%DATADIR%%/makejail/cmd/all/EXEC
+%%DATADIR%%/makejail/cmd/all/GLOBAL
 %%DATADIR%%/makejail/cmd/all/MOUNT
 %%DATADIR%%/makejail/cmd/all/PKG
 %%DATADIR%%/makejail/cmd/all/RAW
@@ -110,6 +111,7 @@ libexec/appjail/network/network
 %%DATADIR%%/makejail/write/all/COPY
 %%DATADIR%%/makejail/write/all/DESTROY
 %%DATADIR%%/makejail/write/all/EXEC
+%%DATADIR%%/makejail/write/all/GLOBAL
 %%DATADIR%%/makejail/write/all/MOUNT
 %%DATADIR%%/makejail/write/all/PKG
 %%DATADIR%%/makejail/write/all/RAW
