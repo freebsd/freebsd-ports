@@ -1,0 +1,10 @@
+[
+{ type: install
+  message: <<EOM
+
+You must restart the devd service to load the devd-mount configuration.
+
+    service devd restart
+EOM
+}
+]
