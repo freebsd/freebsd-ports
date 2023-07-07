@@ -1,9 +1,12 @@
 PORTNAME=	alsa-plugins
 PORTVERSION=	1.2.2
-PORTREVISION=	10
+PORTREVISION=	11
 DISTVERSIONPREFIX=	v
 CATEGORIES=	audio
 MASTER_SITES=	GH
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	8a3c0d795fbe.patch:-p1 # rate-lav: Convert to libswresample
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	alsa-project
@@ -41,7 +44,6 @@ VERBOSE_CFLAGS=		-DALSA_OSS_DEBUG_VERBOSE
 
 FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENABLE=	libav
-FFMPEG_BROKEN=		fails to build with ffmpeg >= 5
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ENABLE=	jack
