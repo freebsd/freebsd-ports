@@ -1,5 +1,5 @@
 PORTNAME=	qmediamanager
-DISTVERSION=	0.1.0
+DISTVERSION=	0.1.1
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -9,10 +9,11 @@ WWW=		https://github.com/outpaddling/qmediamanager
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	libxtend>=0.1.8:devel/libxtend
 LIB_DEPENDS=	libxtend.so:devel/libxtend
 RUN_DEPENDS=	npmount>0:sysutils/npmount \
-		automount>0:sysutils/automount \
-		auto-admin>=0.7.16:sysutils/auto-admin \
+		devd-mount>0:sysutils/devd-mount \
+		auto-admin>=0.7.18:sysutils/auto-admin \
 		rxvt-unicode>0:x11/rxvt-unicode
 
 USES=		gl qmake qt:6
