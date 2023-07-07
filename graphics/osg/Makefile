@@ -26,9 +26,9 @@ USES=		alias cmake compiler:c11 jpeg gl pkgconfig xorg
 USE_GL=		gl
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++11
 
 CFLAGS+=	-I${LOCALBASE}/include/Imath -DInt64=uint64_t
-CXXFLAGS+=	-std=c++11
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
 		OSG_SHLIBVER=161 \
