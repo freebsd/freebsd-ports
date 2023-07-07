@@ -39,10 +39,9 @@ BLKCNT_P2_CFLAGS=	-DFREEBSD_OSS_BLKCNT_P2
 BUFSZ_P2_CFLAGS=	-DFREEBSD_OSS_BUFSZ_P2
 VERBOSE_CFLAGS=		-DALSA_OSS_DEBUG_VERBOSE
 
-FFMPEG_LIB_DEPENDS=		libavcodec.so.58:multimedia/ffmpeg4
+FFMPEG_LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg
 FFMPEG_CONFIGURE_ENABLE=	libav
-FFMPEG_CONFIGURE_ENV+=		PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
-FFMPEG_MAKE_ENV+=		PKG_CONFIG_PATH="${LOCALBASE}/ffmpeg4/libdata/pkgconfig"
+FFMPEG_BROKEN=		fails to build with ffmpeg >= 5
 
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 JACK_CONFIGURE_ENABLE=	jack
