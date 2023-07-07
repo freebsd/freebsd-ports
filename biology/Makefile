@@ -15,6 +15,7 @@
     SUBDIR += bcftools
     SUBDIR += bedtools
     SUBDIR += bfc
+    SUBDIR += bifrost
     SUBDIR += bio-mocha
     SUBDIR += bioawk
     SUBDIR += biococoa
