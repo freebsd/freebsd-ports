@@ -1,6 +1,5 @@
 PORTNAME=	numpy
-PORTVERSION=	1.24.1
-PORTREVISION=	5
+PORTVERSION=	1.25.0
 PORTEPOCH=	1
 CATEGORIES=	math python
 MASTER_SITES=	PYPI \
@@ -12,9 +11,6 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION:R}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-PATCH_SITES=	https://github.com/numpy/numpy/commit/
-PATCHFILES=	8692e2478cc74cc7c08e9b2a0f731a10a1ca7118.patch:-p1
-
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	The New Numeric Extension to Python
 WWW=		https://www.numpy.org/
@@ -25,7 +21,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>=6.2.5:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}hypothesis>=6.24.1:devel/py-hypothesis@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.2.0:devel/py-typing-extensions@${PY_FLAVOR}
-USES=		compiler:c11 cpe fortran python
+USES=		compiler:c11 cpe fortran python:3.9-3.11
 USE_PYTHON=	allflavors autoplist concurrent cython distutils
 
 GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
