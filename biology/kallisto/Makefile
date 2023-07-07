@@ -1,7 +1,6 @@
 PORTNAME=		kallisto
 DISTVERSIONPREFIX=	v
-DISTVERSION=		0.48.0
-PORTREVISION=	3
+DISTVERSION=		0.50.0
 PORTEPOCH=		1
 CATEGORIES=		biology
 
@@ -12,7 +11,6 @@ WWW=		https://pachterlab.github.io/kallisto/about.html
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/license.txt
 
-BUILD_DEPENDS=	autoconf>=0:devel/autoconf
 LIB_DEPENDS=	libhdf5.so:science/hdf5 \
 		libsz.so:science/libaec \
 		libhts.so:biology/htslib
