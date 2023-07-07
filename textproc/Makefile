@@ -37,6 +37,7 @@
     SUBDIR += UCD
     SUBDIR += add-css-links
     SUBDIR += addts
+    SUBDIR += adoc-mode.el
     SUBDIR += af-aspell
     SUBDIR += aft
     SUBDIR += agrep
