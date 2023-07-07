@@ -1,9 +1,9 @@
-TIMESTAMP = 1687075117
-SHA256 (bkaradzic-bgfx.cmake-v1.118.8493-445_GH0.tar.gz) = 00a9251b1f745c839e6029bee10609cfafc4340f6881efaf07d3dcfbacf2ba79
-SIZE (bkaradzic-bgfx.cmake-v1.118.8493-445_GH0.tar.gz) = 32447
-SHA256 (bkaradzic-bgfx-e7e75e4_GH0.tar.gz) = 5166372115b0cdb906eb34dbac46298a6f6444e8d575ac19242820e35f269468
-SIZE (bkaradzic-bgfx-e7e75e4_GH0.tar.gz) = 103035165
+TIMESTAMP = 1688709889
+SHA256 (bkaradzic-bgfx.cmake-v1.121.8534-449_GH0.tar.gz) = e1bd083a2b393e1de4d216d852491bf459f41afb8c54ae7ada88a7f220cc53f4
+SIZE (bkaradzic-bgfx.cmake-v1.121.8534-449_GH0.tar.gz) = 32517
+SHA256 (bkaradzic-bgfx-e2c5b1d_GH0.tar.gz) = 269fe39ee6b269533c197dd17349d140f1c1bca205ea722b073d617cc4ebfea1
+SIZE (bkaradzic-bgfx-e2c5b1d_GH0.tar.gz) = 103039558
 SHA256 (bkaradzic-bimg-ec02df8_GH0.tar.gz) = 0828e01e22129caf877afeed060308a58c39a49d7d242e2f921fc10910e97315
 SIZE (bkaradzic-bimg-ec02df8_GH0.tar.gz) = 760301
-SHA256 (bkaradzic-bx-7ac95d5_GH0.tar.gz) = 3c109b0cbf1e934d9c72c43efa59e687d83662e0b0135ce9cc21ad4c3ea4b064
-SIZE (bkaradzic-bx-7ac95d5_GH0.tar.gz) = 1591646
+SHA256 (bkaradzic-bx-96748d9_GH0.tar.gz) = 399670505f594042f074b780db784664e14d705ccfdca064fffa3961326bb83d
+SIZE (bkaradzic-bx-96748d9_GH0.tar.gz) = 1591803
