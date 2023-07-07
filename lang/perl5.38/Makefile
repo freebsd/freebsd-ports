@@ -1,6 +1,6 @@
 PORTNAME=	perl
-DISTVERSION=	${PERL_VERSION}-RC2	# TODO: set EXPIRATION_DATE when .0 is released and remove .r from version.mk
-PORTREVISION=	2
+DISTVERSION=	${PERL_VERSION}
+PORTREVISION=	0
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN/../../src/5.0
 DIST_SUBDIR=	perl
@@ -16,7 +16,7 @@ LICENSE_FILE_GPLv1+ =	${WRKSRC}/Copying
 
 # Uncomment when the default Perl is switched to 5.40
 #DEPRECATED=	Support end three years after .0 release, please upgrade to a more recent version of Perl
-#EXPIRATION_DATE=<Release date of .0 + 3 years>
+#EXPIRATION_DATE=	2026-07-03
 
 USES=		cpe tar:xz
 
