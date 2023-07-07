@@ -1,0 +1,11 @@
+[
+{ type: install
+  message: <<EOM
+Sample scripts that scanbd can use are included in
+%%PREFIX%%/etc/scanbd/scripts as <script>.sample. Copy and modify
+these to suit your needs (or start from scratch). For details, see
+%%PREFIX%%/etc/scanbd/scanbd.conf
+
+EOM
+}
+]

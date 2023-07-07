@@ -1,6 +1,6 @@
 PORTNAME=	scanbd
 DISTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 
 MAINTAINER=	trueos@norwegianrockcat.com
@@ -31,15 +31,19 @@ SHEBANG_GLOB=	*.script
 
 USE_RC_SUBR=	scanbd
 
-SUB_FILES=	scanbd
+SUB_FILES=	pkg-message \
+		scanbd
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/conf/scanbd.conf
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/conf/scanbd.conf
 
 post-install:
 	${MV} ${STAGEDIR}${ETCDIR}/scanbd.conf ${STAGEDIR}${ETCDIR}/scanbd.conf.sample
-	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
-	${MV} ${STAGEDIR}${ETCDIR}/scripts ${STAGEDIR}${EXAMPLESDIR}
+	${MV} ${STAGEDIR}${ETCDIR}/scripts/action.script ${STAGEDIR}${ETCDIR}/scripts/action.script.sample
+	${MV} ${STAGEDIR}${ETCDIR}/scripts/example.script ${STAGEDIR}${ETCDIR}/scripts/example.script.sample
+	${MV} ${STAGEDIR}${ETCDIR}/scripts/insert.script ${STAGEDIR}${ETCDIR}/scripts/insert.script.sample
+	${MV} ${STAGEDIR}${ETCDIR}/scripts/scanadf.script ${STAGEDIR}${ETCDIR}/scripts/scanadf.script.sample
+	${MV} ${STAGEDIR}${ETCDIR}/scripts/test.script ${STAGEDIR}${ETCDIR}/scripts/test.script.sample
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/rc.d
 	${INSTALL_SCRIPT} ${WRKDIR}/scanbd ${STAGEDIR}${PREFIX}/etc/rc.d/scanbd
 
