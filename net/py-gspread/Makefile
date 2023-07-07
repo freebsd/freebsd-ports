@@ -1,6 +1,7 @@
 PORTNAME=	gspread
 PORTVERSION=	5.10.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>2.2.1:www/py-requests@${PY_FLAVOR} 
 		${PYTHON_PKGNAMEPREFIX}google-auth-oauthlib>0.4.1:security/py-google-auth-oauthlib@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	pep517 autoplist
 
 NO_ARCH=	yes
 
