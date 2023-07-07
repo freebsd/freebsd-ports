@@ -1,6 +1,6 @@
 PORTNAME=	curtail
 DISTVERSION=	1.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics print
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -15,7 +15,9 @@ RUN_DEPENDS=	cwebp:graphics/webp \
 		jpegoptim:graphics/jpegoptim \
 		libadwaita>0:x11-toolkits/libadwaita \
 		optipng:graphics/optipng \
-		pngquant:graphics/pngquant
+		oxipng:graphics/oxipng \
+		pngquant:graphics/pngquant \
+		scour:textproc/py-scour@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext gnome meson pkgconfig python
 USE_GNOME=	glib20 gtk30
