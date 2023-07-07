@@ -1,6 +1,6 @@
 PORTNAME=	libecwj2
 PORTVERSION=	3.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics
 MASTER_SITES=	http://glebi.us/tmp/403/
 DISTFILES=	ecw_jpeg_2000_sdk_3_3_source.zip
@@ -17,7 +17,6 @@ LICENSE_TEXT=	Registration required to download sources,\
 LICENSE_PERMS=	auto-accept
 
 USES=		gmake libtool zip
-USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip

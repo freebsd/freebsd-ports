@@ -1,0 +1,36 @@
+--- Source/include/NCSJPCNode.h.orig	2023-06-26 20:16:29.710073000 -0700
++++ Source/include/NCSJPCNode.h	2023-06-27 06:42:55.697501000 -0700
+@@ -136,17 +136,7 @@
+ 	CNCSError GetError(ContextID nCtx);
+ 
+ protected:
+-	class ContextAutoPtr: public std::auto_ptr<Context> {
+-	public:
+-		ContextAutoPtr() {};
+-		ContextAutoPtr(Context *s): std::auto_ptr<Context>(s) {};
+-		ContextAutoPtr(const ContextAutoPtr &s) { 
+-			ContextAutoPtr P(s.get());
+-			*this = P;
+-		};
+-		~ContextAutoPtr() {};
+-	};
+-	std::map<ContextID, ContextAutoPtr> *m_pContext;/*std::auto_ptr<Context>*/
++	std::map<ContextID, std::unique_ptr<Context>> *m_pContext;
+ 
+ 		/**
+ 		 * Get the context for the given ContextID
+--- Source/C/NCSEcw/NCSJP2/NCSJPCNode.cpp.orig	2023-06-26 20:32:03.064056000 -0700
++++ Source/C/NCSEcw/NCSJP2/NCSJPCNode.cpp	2023-06-26 20:59:13.970978000 -0700
+@@ -209,10 +209,9 @@
+ void CNCSJPCNode::SetContext(ContextID nCtx, Context *pCtx)
+ { 
+ 	if(!m_pContext) {
+-		m_pContext = new std::map<ContextID, ContextAutoPtr>;
++		m_pContext = new std::map<ContextID, std::unique_ptr<Context>>;
+ 	}
+-	ContextAutoPtr P(pCtx);  
+-	(*m_pContext)[nCtx] = P; 
++	(*m_pContext)[nCtx] = std::unique_ptr<Context>(pCtx); 
+ };
+ 
+ CNCSJPCNode::Context::Context() 

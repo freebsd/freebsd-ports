@@ -1,0 +1,76 @@
+--- Source/C/NCSEcw/NCSJP2/NCSJP2FileView.cpp.orig	2023-06-26 20:13:13.572938000 -0700
++++ Source/C/NCSEcw/NCSJP2/NCSJP2FileView.cpp	2023-06-26 20:13:28.835768000 -0700
+@@ -2863,9 +2863,9 @@
+ 			IEEE4 *NCS_RESTRICT pB = ppInputLines[2];
+ 			
+ 			for(i = 0; i < nInOutSizeX; i++) {
+-				register IEEE4 fRed = *(pR++);
+-				register IEEE4 fGreen = *(pG++);
+-				register IEEE4 fBlue = *(pB++);
++				IEEE4 fRed = *(pR++);
++				IEEE4 fGreen = *(pG++);
++				IEEE4 fBlue = *(pB++);
+ 				
+ 				*(pY++) = ((0.299f * fRed) + (0.587f * fGreen) + (0.114f * fBlue));
+ 				*(pU++) = ((-0.1687f * fRed) + (-0.3313f * fGreen) + (0.5f * fBlue));
+@@ -2877,9 +2877,9 @@
+ 			UINT8 *NCS_RESTRICT pB = (UINT8*)ppInputLines[2];
+ 			
+ 			for(i = 0; i < nInOutSizeX; i++) {
+-				register IEEE4 fRed = *(pR++);
+-				register IEEE4 fGreen = *(pG++);
+-				register IEEE4 fBlue = *(pB++);
++				IEEE4 fRed = *(pR++);
++				IEEE4 fGreen = *(pG++);
++				IEEE4 fBlue = *(pB++);
+ 				
+ 				*(pY++) = ((0.299f * fRed) + (0.587f * fGreen) + (0.114f * fBlue));
+ 				*(pU++) = ((-0.1687f * fRed) + (-0.3313f * fGreen) + (0.5f * fBlue));
+--- Source/C/NCSEcw/NCSEcw/NCSHuffmanCoder.cpp.orig	2023-06-26 20:29:32.610922000 -0700
++++ Source/C/NCSEcw/NCSEcw/NCSHuffmanCoder.cpp	2023-06-26 20:29:50.210010000 -0700
+@@ -275,7 +275,7 @@
+ 								 UINT32 nRawLength)
+ {
+ 	UINT8 *pOutput = pPacked;
+-	register UINT32	nWordCount = nRawLength / 2;
++	UINT32	nWordCount = nRawLength / 2;
+ 
+ 	m_pTree = new CTree();
+ 	m_pTree->Pack(&pOutput, pUnPacked, nWordCount);
+@@ -311,9 +311,9 @@
+ 								   INT16 *pUnPacked,
+ 								   UINT32 nRawLength)
+ {
+-	register UINT32	nWordCount = nRawLength / 2;
+-	register INT16 *pOutput = (INT16*)pUnPacked;
+-	register UINT32 nBitsUsed = 0;
++	UINT32	nWordCount = nRawLength / 2;
++	INT16 *pOutput = (INT16*)pUnPacked;
++	UINT32 nBitsUsed = 0;
+ 
+ 	m_pTree = new CTree(&pPacked);
+ 
+@@ -330,8 +330,8 @@
+ 		}
+ 				 
+ 		if(pNode->m_Symbol.bZeroRun) {
+-			register UINT16 nZero;
+-			register UINT16	nZeroRun = pNode->m_Symbol.nValue;
++			UINT16 nZero;
++			UINT16	nZeroRun = pNode->m_Symbol.nValue;
+ 			
+ 			if( nZeroRun >= nWordCount ) {
+ 				nZero = (UINT16)nWordCount + 1;	
+@@ -378,9 +378,9 @@
+ extern "C" NCSHuffmanSymbol *unpack_huffman_symbol(UINT8 **ppPacked,
+ 												   NCSHuffmanState *pState)
+ {
+-	register UINT32 nBitsUsed = pState->nBitsUsed;
+-	register CNCSHuffmanCoder::CCodeNode *pNode = ((CNCSHuffmanCoder::CTree*)pState->pTree)->m_pRoot;
+-	register UINT8 *pEncoded = *ppPacked;
++	UINT32 nBitsUsed = pState->nBitsUsed;
++	CNCSHuffmanCoder::CCodeNode *pNode = ((CNCSHuffmanCoder::CTree*)pState->pTree)->m_pRoot;
++	UINT8 *pEncoded = *ppPacked;
+ 
+ 	while (pNode->m_Children.m_P.m_p0Child != 0) {
+ 		pNode = pNode->m_Children.m_Children[(pEncoded[nBitsUsed >> 3] >> (nBitsUsed & 0x7)) & 0x1];
