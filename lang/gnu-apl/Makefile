@@ -49,6 +49,9 @@ SQLITE_CONFIGURE_WITH=	sqlite3=${LOCALBASE}
 post-patch:
 	@${REINPLACE_CMD} -e '25s,^,#include <sys/socket.h>,' \
 		${WRKSRC}/src/Common.hh
+	@${REINPLACE_CMD} -e 's,auto_ptr,unique_ptr,' \
+		${WRKSRC}/src/emacs_mode/network.cc \
+		${WRKSRC}/src/sql/apl-sqlite.cc
 	@${REINPLACE_CMD} -e 's,bind(,::&,' \
 		${WRKSRC}/src/emacs_mode/TcpListener.cc \
 		${WRKSRC}/src/emacs_mode/UnixSocketListener.cc
