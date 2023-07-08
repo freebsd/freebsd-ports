@@ -436,6 +436,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug-companion/resources/logo.png
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/LICENSE.txt
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/README.md
+%%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/ThirdPartyNotices.txt
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/package.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/package.nls.json
 %%DATADIR%%/resources/app/extensions/ms-vscode.js-debug/resources/dark/configure.svg
@@ -860,6 +861,12 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/editor/common/services/editorSimpleWorker.nls.js
 %%DATADIR%%/resources/app/out/vs/loader.js
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/break.mp3
+%%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/chatRequestSent.mp3
+%%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/chatResponsePending.mp3
+%%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/chatResponseReceived1.mp3
+%%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/chatResponseReceived2.mp3
+%%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/chatResponseReceived3.mp3
+%%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/chatResponseReceived4.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/diffLineDeleted.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/diffLineInserted.mp3
 %%DATADIR%%/resources/app/out/vs/platform/audioCues/browser/media/diffLineModified.mp3
@@ -926,6 +933,7 @@ share/applications/code-oss.desktop
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/notebookThemes/default.png
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/notebookThemes/jupyter.png
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/openFolder.svg
+%%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/profiles.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/runTask.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/search.svg
 %%DATADIR%%/resources/app/out/vs/workbench/contrib/welcomeGettingStarted/common/media/settings.svg
