@@ -889,7 +889,6 @@
     SUBDIR += godot
     SUBDIR += godot-tools
     SUBDIR += godot2
-    SUBDIR += godot2-tools
     SUBDIR += godot35
     SUBDIR += godot35-tools
     SUBDIR += goffice
