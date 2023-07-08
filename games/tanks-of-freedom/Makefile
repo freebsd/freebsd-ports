@@ -10,6 +10,9 @@ WWW=		https://tof.p1x.in/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
+DEPRECATED=	Depends on expired devel/godot2 (use devel/godot instead)
+EXPIRATION_DATE=2023-10-08
+
 RUN_DEPENDS=	godot2:devel/godot2
 
 USE_GITHUB=	yes
