@@ -9,6 +9,8 @@ WWW=		https://github.com/ned14/quickcpplib
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/Licence.txt
 
+BROKEN_i386=	complation fails: __int128 is not supported on this target
+
 USES=		cmake:testing
 
 USE_GITHUB=	yes
