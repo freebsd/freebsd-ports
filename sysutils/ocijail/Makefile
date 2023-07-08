@@ -1,5 +1,6 @@
 PORTNAME=	ocijail
-PORTVERSION=	0.1
+DISTVERSIONPREFIX=	v
+PORTVERSION=	0.1.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	dfr@FreeBSD.org
@@ -14,7 +15,6 @@ BUILD_DEPENDS=	bazel:devel/bazel5 bash:shells/bash
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	dfr
-GH_TAGNAME=	v0.1
 
 PLIST_FILES=	bin/ocijail
 
