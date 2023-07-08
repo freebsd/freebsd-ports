@@ -1,4 +1,4 @@
---- Makefile.orig	2021-04-10 18:44:40 UTC
+--- Makefile.orig	2023-07-08 14:22:22 UTC
 +++ Makefile
 @@ -1,10 +1,10 @@
  .POSIX:
@@ -8,8 +8,8 @@
 +PREFIX?=/usr/local
  BINDIR=$(PREFIX)/bin
  MANDIR=$(PREFIX)/share/man
--ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wpedantic -Wno-unused-parameter
-+ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wno-unused-parameter
+-ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wshadow -Wmissing-prototypes -Wpedantic -Wno-unused-parameter
++ALL_CFLAGS=$(CFLAGS) -std=c99 -Wall -Wextra -Wshadow -Wmissing-prototypes -Wno-unused-parameter
  OBJ=\
  	build.o\
  	deps.o\
