@@ -4,6 +4,9 @@ DISTVERSION=	2.10.0
 PORTREVISION=	5
 CATEGORIES=	audio
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	7d3116962bd8.patch:-p1 # https://github.com/cmus/cmus/pull/1221
+
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Console-based music player with really cool features
 WWW=		https://cmus.github.io/
