@@ -1,5 +1,16 @@
+- the first part is fixing the configure failure, see https://github.com/Cantera/cantera/issues/1536
+
 --- SConstruct.orig	2022-05-01 15:31:54 UTC
 +++ SConstruct
+@@ -191,7 +191,7 @@ config_options = [
+         {
+             "cl": "/EHsc",
+             "Cygwin": "-std=gnu++11", # See http://stackoverflow.com/questions/18784112
+-            "default": "-std=c++11"
++            "default": "-std=c++14"
+         }),
+     Option(
+         "CC",
 @@ -805,6 +805,9 @@ elif "icx" in env.subst("$CC"):
  elif "clang" in env.subst("$CC"):
      config.select("clang")
