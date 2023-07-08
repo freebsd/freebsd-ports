@@ -552,7 +552,6 @@
     SUBDIR += ntpsec
     SUBDIR += ntraceroute
     SUBDIR += nusoap
-    SUBDIR += nuster
     SUBDIR += nxproxy
     SUBDIR += nyancat
     SUBDIR += nylon
