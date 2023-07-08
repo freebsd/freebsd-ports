@@ -11,6 +11,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced OpenGL-only Quake II engine
 
+LICENSE=	GPLv2+
+
 USES=		gmake tar:bzip2
 MAKE_ENV=	WITH_DATADIR=YES WITH_LIBDIR=YES WITH_XMMS=NO \
 		DATADIR="${Q2DIR}" LIBDIR="${LIBDIR}" BUILD_ARTS_SND=NO
@@ -168,11 +170,6 @@ MAKE_ENV+=	WITH_X86_ASM=YES
 .else
 MAKE_ENV+=	WITH_X86_ASM=NO
 .endif
-
-post-patch:
-# Resolve name collision with jpeg-8
-	@${REINPLACE_CMD} -e 's|jpeg_mem_src|local_jpeg_mem_src|' \
-		${WRKSRC}/src/ref_gl/gl_image.c
 
 post-build:
 .for bin in ${Q2BIN}
