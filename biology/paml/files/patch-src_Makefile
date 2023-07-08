@@ -1,0 +1,10 @@
+--- src/Makefile.orig	2023-07-08 03:40:50 UTC
++++ src/Makefile
+@@ -1,6 +1,6 @@ CC = cc # cc, gcc, cl
+ PRGS =  baseml codeml basemlg mcmctree pamp evolver yn00 chi2
+ CC = cc # cc, gcc, cl
+-CFLAGS = -O3 -Wall -Wno-unused-result -Wmemset-elt-size
++CFLAGS = -O3 -Wall -Wno-unused-result
+ #CC = icc
+ #CFLAGS = -fast -Wall
+ 
