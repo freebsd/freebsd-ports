@@ -25,6 +25,7 @@ LIB_DEPENDS=	libbonmin.so:math/bonmin \
 
 USES=		blaslapack:netlib fortran gmake libtool pkgconfig
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++11 # fix compilation failure: error: ISO C++17 does not allow 'register' storage class specifier, see https://github.com/coin-or/Couenne/issues/75
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	coin-or
