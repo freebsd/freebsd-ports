@@ -1,6 +1,5 @@
 PORTNAME=	rstudioapi
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.15.0
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
@@ -10,6 +9,6 @@ WWW=		https://cran.r-project.org/web/packages/rstudioapi/
 
 LICENSE=	MIT
 
-USES=	cran:auto-plist
+USES=		cran:auto-plist
 
 .include <bsd.port.mk>
