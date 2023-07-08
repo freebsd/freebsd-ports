@@ -1,5 +1,5 @@
 PORTNAME=	treesheets
-DISTVERSION=	1.0.20230514
+DISTVERSION=	1.0.20230707
 CATEGORIES=	deskutils
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -9,11 +9,11 @@ WWW=		https://strlen.com/treesheets/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/ZLIB_LICENSE.txt
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gettext gnome \
+USES=		cmake compiler:c++17-lang desktop-file-utils gnome \
 		shared-mime-info
 USE_GITHUB=	yes
 GH_ACCOUNT=	aardappel
-GH_TAGNAME=	4969521204
+GH_TAGNAME=	5488366253
 USE_WX=		3.2
 
 PORTSCOUT=	ignore:1 # upstream uses CI run ids as releases
@@ -22,9 +22,12 @@ PORTDATA=	images scripts
 PORTDOCS=	docs readme.html
 PORTEXAMPLES=	examples
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
+OPTIONS_DEFINE=	DOCS EXAMPLES NLS
+OPTIONS_SUB=	yes
 
-post-patch:
+NLS_USES=	gettext
+
+pre-build:
 	@${REINPLACE_CMD} -e 's|%%EXAMPLESDIR%%|${EXAMPLESDIR}|' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
