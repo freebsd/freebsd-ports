@@ -12,6 +12,8 @@ WWW=		https://numcodecs.readthedocs.io/en/stable/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	compilation fails: error: SSE2 is not supported by the target architecture/platform ..., see https://github.com/zarr-developers/numcodecs/issues/444
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-cpuinfo>0:sysutils/py-py-cpuinfo@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}entrypoints>0:devel/py-entrypoints@${PY_FLAVOR} \
 		${PYNUMPY}
