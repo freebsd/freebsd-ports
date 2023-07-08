@@ -1,9 +1,9 @@
 PORTNAME=	barrage
-PORTVERSION=	1.0.6
+PORTVERSION=	1.0.7
 CATEGORIES=	games
 MASTER_SITES=	SF/lgames/${PORTNAME}/
 
-MAINTAINER=	Clockwork6400@protonmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Destroy as many targets as possible
 WWW=		http://lgames.sourceforge.net/index.php?project=Barrage
 
