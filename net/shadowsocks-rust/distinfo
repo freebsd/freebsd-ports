@@ -1,4 +1,4 @@
-TIMESTAMP = 1678757037
+TIMESTAMP = 1688791441
 SHA256 (rust/crates/aead-0.5.1.crate) = 5c192eb8f11fc081b0fe4259ba5af04217d4e0faddd02417310a927911abd7c8
 SIZE (rust/crates/aead-0.5.1.crate) = 15474
 SHA256 (rust/crates/aes-0.8.2.crate) = 433cfd6710c9986c576a25ca913c39d66a6474107b406f34f91d4a8923395241
@@ -649,5 +649,5 @@ SHA256 (rust/crates/yaml-rust-0.4.5.crate) = 56c1936c4cc7a1c9ab21a1ebb602eb942ba
 SIZE (rust/crates/yaml-rust-0.4.5.crate) = 47783
 SHA256 (rust/crates/zeroize-1.5.7.crate) = c394b5bd0c6f669e7275d9c20aa90ae064cb22e75a1cad54e1b34088034b149f
 SIZE (rust/crates/zeroize-1.5.7.crate) = 18861
-SHA256 (shadowsocks-shadowsocks-rust-v1.15.3_GH0.tar.gz) = 13b877b0961402310f45b814b1f4cefec141d0a2ff8be37d57f1ee966c41c497
-SIZE (shadowsocks-shadowsocks-rust-v1.15.3_GH0.tar.gz) = 289035
+SHA256 (shadowsocks-shadowsocks-rust-v1.15.4_GH0.tar.gz) = d3077af7d292ff2a0d36e9debb2104e37ad998deac4dd6eb0674b8fe7d41cf20
+SIZE (shadowsocks-shadowsocks-rust-v1.15.4_GH0.tar.gz) = 289091
