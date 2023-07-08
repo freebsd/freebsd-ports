@@ -1,6 +1,5 @@
 PORTNAME=	qgis
-DISTVERSION=	3.30.3
-PORTREVISION=	1
+DISTVERSION=	3.32.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://qgis.org/downloads/
 
@@ -104,6 +103,8 @@ RUN_DEPENDS=	astyle:devel/astyle \
 USES=		bison cmake compiler:features desktop-file-utils \
 		fortran gl gmake gnome pgsql pyqt:5 python qca qt:5 \
 		shebangfix sqlite:3 tar:bz2
+# math/pdal fails in pdal_wrench() with "undefined reference to symbol 'pthread_create@@FBSD_1.0'"
+CXXFLAGS+=	-pthread
 USE_GL=		gl
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
@@ -126,7 +127,7 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE:STRING=Release \
 		-DQGIS_MANUAL_SUBDIR:PATH=share/man
 CMAKE_ON=	USE_OPENCL WITH_3D WITH_ASTYLE WITH_BINDINGS \
 		WITH_COPC WITH_CUSTOM_WIDGETS WITH_EPT  WITH_INTERNAL_LAZPERF \
-		WITH_POSTGRESQL WITH_PDAL
+		WITH_POSTGRESQL
 CMAKE_OFF=	ENABLE_TESTING WITH_INTERNAL_MDAL WITH_QWTPOLAR
 
 CONFLICTS_INSTALL=	qgis-ltr
@@ -161,6 +162,7 @@ CMAKE_ARGS+=	-DFLEX_EXECUTABLE:FILEPATH=${LOCALBASE}/bin/flex
 .endif
 
 pre-patch:
+	# Only PostgreSQL Client headers, not Server
 	@${REINPLACE_CMD} -e 's|set(POSTGRES_INCLUDE_DIR \$${PostgreSQL_INCLUDE_DIRS})|set(POSTGRES_INCLUDE ${LOCALBASE}/include)|g' \
 		${WRKSRC}/cmake/FindPostgres.cmake
 
