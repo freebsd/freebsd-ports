@@ -394,11 +394,13 @@ libdata/pkgconfig/shumate-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%-1.0/vfunc.MapSource.fill_tile_finish.html
 share/gir-1.0/Shumate-1.0.gir
 share/locale/ab/LC_MESSAGES/shumate1.mo
+share/locale/be/LC_MESSAGES/shumate1.mo
 share/locale/bg/LC_MESSAGES/shumate1.mo
 share/locale/ca/LC_MESSAGES/shumate1.mo
 share/locale/cs/LC_MESSAGES/shumate1.mo
 share/locale/da/LC_MESSAGES/shumate1.mo
 share/locale/de/LC_MESSAGES/shumate1.mo
+share/locale/el/LC_MESSAGES/shumate1.mo
 share/locale/es/LC_MESSAGES/shumate1.mo
 share/locale/eu/LC_MESSAGES/shumate1.mo
 share/locale/fa/LC_MESSAGES/shumate1.mo
@@ -423,6 +425,7 @@ share/locale/pl/LC_MESSAGES/shumate1.mo
 share/locale/pt/LC_MESSAGES/shumate1.mo
 share/locale/pt_BR/LC_MESSAGES/shumate1.mo
 share/locale/ru/LC_MESSAGES/shumate1.mo
+share/locale/sk/LC_MESSAGES/shumate1.mo
 share/locale/sl/LC_MESSAGES/shumate1.mo
 share/locale/sr/LC_MESSAGES/shumate1.mo
 share/locale/sv/LC_MESSAGES/shumate1.mo
