@@ -17,8 +17,10 @@ share/aclocal/mfmod.m4
 %%NLS%%share/locale/vi/LC_MESSAGES/mailfromd.mo
 %%DATADIR%%/%%VERSION%%/_register.mfl
 %%DATADIR%%/%%VERSION%%/callout.mfl
+%%DATADIR%%/%%VERSION%%/cdb.mfl
 %%DATADIR%%/%%VERSION%%/dkim.mfl
 %%DATADIR%%/%%VERSION%%/dns.mfl
+%%DATADIR%%/%%VERSION%%/email.mfl
 %%DATADIR%%/%%VERSION%%/gettext.mfl
 %%DATADIR%%/%%VERSION%%/header_rename.mfl
 %%DATADIR%%/%%VERSION%%/heloarg_test.mfl
@@ -28,6 +30,7 @@ share/aclocal/mfmod.m4
 %%DATADIR%%/%%VERSION%%/match_cidr.mfl
 %%DATADIR%%/%%VERSION%%/match_dnsbl.mfl
 %%DATADIR%%/%%VERSION%%/match_rhsbl.mfl
+%%DATADIR%%/%%VERSION%%/milter.mfl
 %%DATADIR%%/%%VERSION%%/mime.mfl
 %%DATADIR%%/%%VERSION%%/poll.mfl
 %%DATADIR%%/%%VERSION%%/portprobe.mfl
