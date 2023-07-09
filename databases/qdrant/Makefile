@@ -11,6 +11,8 @@ WWW=		https://qdrant.tech
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	compilation breaks with fatal warning: implicit conversion from 'std::numeric_limits<unsigned long long>::type' (aka 'unsigned long long') to 'size_t' (aka 'unsigned int') changes value from 18446744073709551615 to 4294967295
+
 BUILD_DEPENDS=	gmake:devel/gmake \
 		protoc:devel/protobuf
 
