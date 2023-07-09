@@ -103,7 +103,6 @@ include/podofo/main/PdfOperatorUtils.h
 include/podofo/main/PdfOutlines.h
 include/podofo/main/PdfPage.h
 include/podofo/main/PdfPageCollection.h
-include/podofo/main/PdfPageTreeCache.h
 include/podofo/main/PdfPainter.h
 include/podofo/main/PdfPainterPath.h
 include/podofo/main/PdfPainterTextObject.h
@@ -144,6 +143,8 @@ include/podofo/staging/PdfPainterExtensions.h
 include/podofo/staging/PdfShadingPattern.h
 include/podofo/staging/PdfTilingPattern.h
 lib/libpodofo.so
-lib/libpodofo.so.1
-lib/libpodofo.so.1.0.10.0
+lib/libpodofo.so.2
+lib/libpodofo.so.2.%%PORTVERSION%%
 libdata/pkgconfig/libpodofo.pc
+%%DATADIR%%/podofo-config-%%CMAKE_BUILD_TYPE%%.cmake
+%%DATADIR%%/podofo-config.cmake

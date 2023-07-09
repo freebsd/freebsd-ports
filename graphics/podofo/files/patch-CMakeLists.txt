@@ -1,14 +1,15 @@
---- CMakeLists.txt.orig	2023-03-25 11:01:27 UTC
+--- CMakeLists.txt.orig	2023-06-29 08:54:06 UTC
 +++ CMakeLists.txt
-@@ -21,7 +21,7 @@ endif()
+@@ -21,8 +21,8 @@ endif()
  set(PODOFO_VERSION_MAJOR "0" CACHE STRING "Major part of podofo version number")
  set(PODOFO_VERSION_MINOR "10" CACHE STRING "Minor part of podofo version number")
- set(PODOFO_VERSION_PATCH "0" CACHE STRING "Patchlevel part of podofo version number")
--set(PODOFO_LIBVERSION "${PODOFO_VERSION_MAJOR}.${PODOFO_VERSION_MINOR}.${PODOFO_VERSION_PATCH}")
-+set(PODOFO_LIBVERSION "1.${PODOFO_VERSION_MAJOR}.${PODOFO_VERSION_MINOR}.${PODOFO_VERSION_PATCH}")
- set(PODOFO_SOVERSION "1")
+ set(PODOFO_VERSION_PATCH "1" CACHE STRING "Patchlevel part of podofo version number")
+-set(PODOFO_VERSION "${PODOFO_VERSION_MAJOR}.${PODOFO_VERSION_MINOR}.${PODOFO_VERSION_PATCH}")
+ set(PODOFO_SOVERSION "2")
++set(PODOFO_VERSION "${PODOFO_SOVERSION}.${PODOFO_VERSION_MAJOR}.${PODOFO_VERSION_MINOR}.${PODOFO_VERSION_PATCH}")
  
  #
+ # Main includes
 @@ -149,6 +149,7 @@ else()
      message("Libidn not found. AES-256 Encryption support will be disabled")
  endif()

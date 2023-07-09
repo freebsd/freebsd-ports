@@ -1,5 +1,5 @@
 PORTNAME=	podofo
-PORTVERSION=	0.10.0
+PORTVERSION=	0.10.1
 CATEGORIES=	graphics print
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -21,13 +21,15 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		cmake compiler:c++17-lang cpe gnome localbase:ldflags pkgconfig ssl
 USE_GNOME=	libxml2
 
-CFLAGS+=	-I${LOCALBASE}/include/fast_float -I${WRKSRC}
+CFLAGS+=	-I${LOCALBASE}/include/fast_float
 CMAKE_ARGS=	-DFONTCONFIG_LIBRARIES=${LOCALBASE}/lib/libfontconfig.so \
 		-DOPENSSL_INCLUDE_DIR=${OPENSSLINC} \
 		-DOPENSSL_LIBRARIES=${OPENSSLDIR}
 CMAKE_OFF=	PODOFO_BUILD_EXAMPLES PODOFO_BUILD_LIB_ONLY PODOFO_BUILD_STATIC PODOFO_BUILD_TEST PODOFO_BUILD_TOOLS
 CMAKE_TESTING_ON=	PODOFO_BUILD_TEST
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USE_GITHUB=	yes
 
@@ -48,7 +50,6 @@ post-patch:
 	@${RM} ${WRKSRC}/3rdparty/fast_float.h
 	@${RM} -r ${WRKSRC}/3rdparty/date/
 	@${RM} -r ${WRKSRC}/3rdparty/fmt/
-	@${RM} -r ${WRKSRC}/3rdparty/utfcpp/
-	@${LN} -s ${LOCALBASE}/include/utf8cpp ${WRKSRC}/3rdparty/utfcpp
+	@${RM} -r ${WRKSRC}/3rdparty/utf8cpp/
 
 .include <bsd.port.mk>
