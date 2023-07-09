@@ -1,0 +1,17 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -33,11 +33,11 @@ classifiers = [
+   "Programming Language :: Python :: 3 :: Only",
+ ]
+ dependencies = [
+-  "httpx~=0.23",
++  "httpx>=0.23",
+   "anyio~=3.0",
+   "msgpack~=1.0",
+-  "fasteners>=0.16.3,<0.18.0",
+-  "attrs>=21.4,<23.0",
++  "fasteners>=0.16.3",
++  "attrs>=21.4",
+   "aiorwlock~=1.2"
+ ]
+ 
