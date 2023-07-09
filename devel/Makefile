@@ -4197,6 +4197,7 @@
     SUBDIR += py-aiologger
     SUBDIR += py-aiorpcX
     SUBDIR += py-aiortc
+    SUBDIR += py-aiorwlock
     SUBDIR += py-aiosignal
     SUBDIR += py-airtable-python-wrapper
     SUBDIR += py-amalgamate
