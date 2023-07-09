@@ -7767,3 +7767,4 @@ net/nuster||2023-07-08|Has expired: Does not support OpenSSL 3 and upstream last
 devel/godot2-tools|devel/godot-tools|2023-07-08|Has expired: Requires legacy OpenSSL 1.1.1 so use devel/godot
 devel/rubygem-aws-sdk-core3172|devel/rubygem-aws-sdk-core|2023-07-09|Remove obsoleted port. Use devel/rubygem-aws-sdk-core instead
 devel/rubygem-aws-sdk-s31122|devel/rubygem-aws-sdk-s3|2023-07-09|Remove obsoleted port. Use devel/rubygem-aws-sdk-s3 instead
+devel/rubygem-google-protobuf322|devel/rubygem-google-protobuf|2023-07-09|Remove obsoleted port. Use devel/rubygem-google-protobuf instead
