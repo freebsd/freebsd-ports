@@ -1,5 +1,5 @@
 PORTNAME=	ipv6calc
-PORTVERSION=	4.0.2
+PORTVERSION=	4.1.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://www.bieringer.de/ftp/pub/linux/IPv6/ipv6calc/ \
 		https://www.deepspace6.net/ftp/pub/ds6/sources/ipv6calc/
