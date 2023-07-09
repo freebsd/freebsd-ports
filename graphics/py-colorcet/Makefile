@@ -18,4 +18,6 @@ RUN_DEPENDS=	${PY_DEPENDS}
 USES=		python
 USE_PYTHON=	distutils concurrent autoplist pytest
 
+NO_ARCH=	yes
+
 .include <bsd.port.mk>
