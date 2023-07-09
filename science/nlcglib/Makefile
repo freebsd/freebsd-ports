@@ -1,8 +1,7 @@
 PORTNAME=	nlcglib
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.9-148
-PORTREVISION=	2
-DISTVERSIONSUFFIX=	-g9a1bca6
+DISTVERSION=	1.0b-20230622
+DISTVERSIONSUFFIX=	-gac293eb
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,7 +22,7 @@ USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	simonpintarelli
 
-CMAKE_TESTING_ON=	BUILD_TESTS # tests fail to compile, see https://github.com/simonpintarelli/nlcglib/issues/14
+CMAKE_TESTING_ON=	BUILD_TESTS # tests fail to compile, see https://github.com/simonpintarelli/nlcglib/issues/19
 
 OPTIONS_DEFINE=		OPENMP
 OPTIONS_SINGLE=		MPI
