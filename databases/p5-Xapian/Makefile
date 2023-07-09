@@ -1,5 +1,5 @@
 PORTNAME=	Xapian
-PORTVERSION=	1.4.22.0
+PORTVERSION=	1.4.23.0
 CATEGORIES=	databases perl5
 MASTER_SITES=	https://oligarchy.co.uk/xapian/${PORTVERSION:R}/ \
 		LOCAL/sunpoet
@@ -40,9 +40,6 @@ USE_CXXSTD=	c++11
 PORTSCOUT=	limitw:1,even
 
 OPTIONS_DEFINE=	DOCS
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lstdc++||g' ${WRKSRC}/configure
 
 post-patch-DOCS-off:
 	@${REINPLACE_CMD} -e 's| install-dist_exampledataDATA install-docdataDATA||' ${WRKSRC}/perl/Makefile.in
