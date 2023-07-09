@@ -122,6 +122,7 @@
     SUBDIR += p5-Gtk3-SimpleList
     SUBDIR += p5-Pango
     SUBDIR += p5-Prima
+    SUBDIR += p5-Test-Tk
     SUBDIR += p5-Tk
     SUBDIR += p5-Tk-Action
     SUBDIR += p5-Tk-Autoscroll
