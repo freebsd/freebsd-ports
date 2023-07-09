@@ -1,5 +1,5 @@
 PORTNAME=	logstash
-PORTVERSION=	7.17.9
+PORTVERSION=	7.17.11
 DISTVERSIONSUFFIX=	-darwin-x86_64
 CATEGORIES=	sysutils java
 MASTER_SITES=	https://artifacts.elastic.co/downloads/logstash/
@@ -28,6 +28,9 @@ SHEBANG_FILES=	bin/*
 CONFLICTS=	logstash6
 
 NO_BUILD=	yes
+
+PORTSCOUT=	limit:^7
+
 SUB_LIST=	JAVA_HOME=${JAVA_HOME} \
 		LOGSTASH_HOME=${LOGSTASH_HOME}
 
