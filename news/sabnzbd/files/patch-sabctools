@@ -1,0 +1,115 @@
+Obtained from:	https://github.com/sabnzbd/sabnzbd/commit/a179f2a895259e49f3679405ad59cac06e0bf2d9
+
+--- requirements.txt.orig	2023-06-07 19:24:42 UTC
++++ requirements.txt
+@@ -1,6 +1,6 @@
+ # Main requirements
+ # Note that not all sub-dependencies are listed, but only ones we know could cause trouble
+-sabctools==7.0.2
++sabctools==7.1.0
+ cheetah3==3.2.6.post1
+ cffi==1.15.1
+ pycparser==2.21
+--- sabnzbd/assembler.py.orig	2023-06-07 19:24:42 UTC
++++ sabnzbd/assembler.py
+@@ -27,6 +27,7 @@ from threading import Thread
+ import ctypes
+ from typing import Tuple, Optional, List
+ 
++import sabctools
+ import sabnzbd
+ from sabnzbd.misc import get_all_passwords, match_str
+ from sabnzbd.filesystem import (
+@@ -160,13 +161,21 @@ class Assembler(Thread):
+ 
+     @staticmethod
+     def assemble(nzo: NzbObject, nzf: NzbFile, file_done: bool):
+-        """Assemble a NZF from its table of articles
+-        1) Partial write: write what we have
+-        2) Nothing written before: write all
+-        """
++        """Assemble a NZF from its table of articles"""
+ 
++        # When a file exists, we cannot use "w+b"
++        if os.path.exists(nzf.filepath):
++            open_mode = "r+b"
++            file_sparse = True
++        else:
++            open_mode = "w+b"
++            file_sparse = False
++
+         # We write large article-sized chunks, so we can safely skip the buffering of Python
+-        with open(nzf.filepath, "ab", buffering=0) as fout:
++        with open(nzf.filepath, open_mode, buffering=0) as fout:
++            # Track position, so we can prevent a seek if writing continuous
++            file_position = 0
++
+             for article in nzf.decodetable:
+                 # Break if deleted during writing
+                 if nzo.status is Status.DELETED:
+@@ -178,9 +187,25 @@ class Assembler(Thread):
+ 
+                 # Write all decoded articles
+                 if article.decoded:
++                    # On first write try to make the file sparse
++                    if not file_sparse and article.file_size is not None and article.file_size > 0:
++                        file_sparse = True
++                        try:
++                            sabctools.sparse(fout, article.file_size)
++                        except:
++                            logging.debug("Failed to make %s sparse with length %d", nzf.filepath, article.file_size)
++                            logging.debug("Traceback: ", exc_info=True)
++
+                     data = sabnzbd.ArticleCache.load_article(article)
+                     # Could be empty in case nzo was deleted
+                     if data:
++                        if article.data_begin is not None:
++                            # Seek ahead if needed
++                            if article.data_begin != file_position:
++                                fout.seek(article.data_begin)
++                            file_position = article.data_begin + len(data)
++                        else:
++                            fout.seek(0, os.SEEK_END)
+                         fout.write(data)
+                         nzf.update_crc32(article.crc32, len(data))
+                         article.on_disk = True
+--- sabnzbd/constants.py.orig	2023-06-07 19:24:42 UTC
++++ sabnzbd/constants.py
+@@ -49,7 +49,7 @@ RENAMES_FILE = "__renames__"
+ ATTRIB_FILE = "SABnzbd_attrib"
+ REPAIR_REQUEST = "repair-all.sab"
+ 
+-SABCTOOLS_VERSION_REQUIRED = "7.0.2"
++SABCTOOLS_VERSION_REQUIRED = "7.1.0"
+ 
+ DB_HISTORY_VERSION = 1
+ DB_HISTORY_NAME = "history%s.db" % DB_HISTORY_VERSION
+--- sabnzbd/decoder.py.orig	2023-06-07 19:24:42 UTC
++++ sabnzbd/decoder.py
+@@ -172,7 +172,7 @@ def decode(article: Article, raw_data: bytearray):
+ 
+ def decode_yenc(article: Article, data: bytearray) -> bytearray:
+     # Let SABCTools do all the heavy lifting
+-    yenc_filename, article.data_begin, article.data_size, crc_correct = sabctools.yenc_decode(data)
++    yenc_filename, article.file_size, article.data_begin, article.data_size, crc_correct = sabctools.yenc_decode(data)
+ 
+     nzf = article.nzf
+     # Assume it is yenc
+--- sabnzbd/nzbstuff.py.orig	2023-06-07 19:24:42 UTC
++++ sabnzbd/nzbstuff.py
+@@ -163,6 +163,7 @@ ArticleSaver = (
+     "bytes",
+     "lowest_partnum",
+     "decoded",
++    "file_size",
+     "data_begin",
+     "data_size",
+     "on_disk",
+@@ -187,6 +188,7 @@ class Article(TryList):
+         self.fetcher_priority: int = 0
+         self.tries: int = 0  # Try count
+         self.decoded: bool = False
++        self.file_size: Optional[int] = None
+         self.data_begin: Optional[int] = None
+         self.data_size: Optional[int] = None
+         self.on_disk: bool = False
