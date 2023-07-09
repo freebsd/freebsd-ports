@@ -17,7 +17,7 @@
 -    "pygments-markdown-lexer==0.1.0.dev39",  # sytax coloring to debug md
 -    "dulwich==0.20.31",  # python implementation of git
 -    "deepmerge==1.0.1",
-+    "webtest>=2.0.32",
++    "webtest>=3.0.0",
 +    "setuptools>=60.5.0",
 +    "flask>=2.0.2",
 +    "requests>=2.27.1",

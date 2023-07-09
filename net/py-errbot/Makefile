@@ -1,6 +1,6 @@
 PORTNAME=	errbot
 PORTVERSION=	6.1.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,9 +21,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansi>=0.2.0:devel/py-ansi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}markdown>=3.3.6:textproc/py-markdown@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.11.2:textproc/py-pygments@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openssl>=21.0.0:security/py-openssl@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openssl>=21.0.0,1:security/py-openssl@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>=2.27.1:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}webtest>=2.0.32:www/py-webtest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}webtest>=3.0.0:www/py-webtest@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent distutils
