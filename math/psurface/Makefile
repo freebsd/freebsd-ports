@@ -13,6 +13,7 @@ LICENSE=	GPLv3+
 LIB_DEPENDS=	libhdf5.so:science/hdf5
 
 USES=		autoreconf libtool localbase
+USE_CXXSTD=	c++14 # fix compilation failure on 14 due to use of std::auto_ptr that was deprecated in C++17
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
