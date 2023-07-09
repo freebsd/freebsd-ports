@@ -5131,6 +5131,7 @@
     SUBDIR += py-pint-pandas
     SUBDIR += py-pip
     SUBDIR += py-pip-api
+    SUBDIR += py-pip-audit
     SUBDIR += py-pip-licenses
     SUBDIR += py-pip-run
     SUBDIR += py-pip-shims
