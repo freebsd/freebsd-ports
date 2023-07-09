@@ -35,15 +35,20 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sphinxcontrib-applehelp>=0:textproc/py-sphin
 		${PYTHON_PKGNAMEPREFIX}requests>=2.5.0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=21.0:devel/py-packaging@${PY_FLAVOR} \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root_nss
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0:www/py-html5lib@${PY_FLAVOR} \
-		cython-${PYTHON_VER}:lang/cython@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}html5lib>=0:www/py-html5lib@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent pep517 pytest
+USE_PYTHON=	autoplist concurrent cython_test pep517 pytest
 
 NO_ARCH=	yes
+PYTEST_BROKEN_TESTS=	test_anchors_ignored \
+			test_defaults \
+			test_defaults_json \
+			test_ext_imgconverter \
+			test_latex_images
 
 # Upstream archive contains files with UTF-8 names (#246618)
+# https://github.com/sphinx-doc/sphinx/issues/2395
 EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 
 .include <bsd.port.pre.mk>
@@ -51,11 +56,5 @@ EXTRACT_CMD=	${SETENV} LC_ALL=en_US.UTF-8 /usr/bin/bsdtar
 .if ${PYTHON_REL} < 31000
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=4.8:devel/py-importlib-metadata@${PY_FLAVOR}
 .endif
-
-PYTEST_BROKEN_TESTS=	test_latex_images \
-			test_ext_imgconverter \
-			test_defaults \
-			test_defaults_json \
-			test_anchors_ignored
 
 .include <bsd.port.post.mk>
