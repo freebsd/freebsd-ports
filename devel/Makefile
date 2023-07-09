@@ -6974,6 +6974,7 @@
     SUBDIR += rubygem-kafo_wizards
     SUBDIR += rubygem-kgio
     SUBDIR += rubygem-kt-paperclip-rails61
+    SUBDIR += rubygem-language_server-protocol
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-lazy_priority_queue
     SUBDIR += rubygem-libdatadog
