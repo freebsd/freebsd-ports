@@ -7770,3 +7770,4 @@ devel/rubygem-aws-sdk-s31122|devel/rubygem-aws-sdk-s3|2023-07-09|Remove obsolete
 devel/rubygem-google-protobuf322|devel/rubygem-google-protobuf|2023-07-09|Remove obsoleted port. Use devel/rubygem-google-protobuf instead
 devel/rubygem-grape15|devel/rubygem-grape|2023-07-09|Remove obsoleted port. Use devel/rubygem-grape instead
 net/rubygem-net-ldap017|net/rubygem-net-ldap|2023-07-09|Remove obsoleted port. Use net/rubygem-net-ldap instead
+textproc/rubygem-nokogiri114|textproc/rubygem-nokogiri|2023-07-09|Remove obsoleted port. Use textproc/rubygem-nokogiri instead
