@@ -479,8 +479,8 @@ include/fxt/ds/array2d.h
 include/fxt/ds/array3d.h
 include/fxt/ds/bitarray.h
 include/fxt/ds/bitarray2d.h
+include/fxt/ds/bounding-box-2d.h
 include/fxt/ds/bounding-box-3d.h
-include/fxt/ds/bounding-box.h
 include/fxt/ds/centered-array2d.h
 include/fxt/ds/centered-array3d.h
 include/fxt/ds/deque.h
@@ -1459,6 +1459,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/young-tab-rgs-subset-lex-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/zzztest-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/zzztest-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/attic/dichotomy-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/attic/dichotomy-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/bitarray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/bitarray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ds/bitarray2d-demo.cc
