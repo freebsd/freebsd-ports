@@ -10,6 +10,8 @@ WWW=		https://www.hhi.fraunhofer.de/en/departments/vca/technologies-and-solution
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BROKEN_i386=	compilation fails: error: use of undeclared identifier 'read_x86_extension_flags'
+
 USES=		cmake:testing # some tests fail, see https://github.com/fraunhoferhhi/vvenc/issues/262
 USE_LDCONFIG=	yes
 
