@@ -89,6 +89,7 @@ share/locale/gl/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/gl/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/gl/LC_MESSAGES/fileviewhgplugin.mo
 share/locale/gl/LC_MESSAGES/fileviewsvnplugin.mo
+share/locale/gl/LC_MESSAGES/mountisoaction.mo
 share/locale/hu/LC_MESSAGES/fileviewbazaarplugin.mo
 share/locale/hu/LC_MESSAGES/fileviewgitplugin.mo
 share/locale/hu/LC_MESSAGES/fileviewhgplugin.mo

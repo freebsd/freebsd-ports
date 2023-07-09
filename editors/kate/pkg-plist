@@ -541,9 +541,11 @@ share/locale/gl/LC_MESSAGES/kate.mo
 share/locale/gl/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/gl/LC_MESSAGES/katebuild-plugin.mo
 share/locale/gl/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/gl/LC_MESSAGES/katecolorpickerplugin.mo
 share/locale/gl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/gl/LC_MESSAGES/katefiletree.mo
 share/locale/gl/LC_MESSAGES/kategdbplugin.mo
+share/locale/gl/LC_MESSAGES/kategitblameplugin.mo
 share/locale/gl/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/gl/LC_MESSAGES/kateproject.mo
 share/locale/gl/LC_MESSAGES/katesearch.mo

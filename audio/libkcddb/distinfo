@@ -1,3 +1,3 @@
-TIMESTAMP = 1687284293
-SHA256 (KDE/release-service/23.04.2/libkcddb-23.04.2.tar.xz) = 519d321b6cf079f8ac514cf37ac338577ac1fc6fb305c85fa8868bd93427f384
-SIZE (KDE/release-service/23.04.2/libkcddb-23.04.2.tar.xz) = 458604
+TIMESTAMP = 1688809824
+SHA256 (KDE/release-service/23.04.3/libkcddb-23.04.3.tar.xz) = a2fcb5b2062503150a7dc7ba3e04ccfa7719ca065adcddff23010e66aa7920e8
+SIZE (KDE/release-service/23.04.3/libkcddb-23.04.3.tar.xz) = 458584

@@ -15,7 +15,7 @@ lib/cmake/LibKompareDiff2/LibKompareDiff2Targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/LibKompareDiff2/LibKompareDiff2Targets.cmake
 lib/libkomparediff2.so
 lib/libkomparediff2.so.5
-lib/libkomparediff2.so.5.3
+lib/libkomparediff2.so.5.3.0
 share/locale/af/LC_MESSAGES/libkomparediff2.mo
 share/locale/ar/LC_MESSAGES/libkomparediff2.mo
 share/locale/be/LC_MESSAGES/libkomparediff2.mo
