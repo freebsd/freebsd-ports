@@ -1,0 +1,9 @@
+Python bindings to the Rust rpds crate.
+
+What's here is quite minimal (in transparency, it was written initially to
+support replacing pyrsistent in the referencing library). If you see something
+missing (which is very likely), a PR is definitely welcome to add it.
+
+Methods in general are named similarly to their rpds counterparts (rather than
+pyrsistent's conventions, though probably a full drop-in pyrsistent-compatible
+wrapper module is a good addition at some point).

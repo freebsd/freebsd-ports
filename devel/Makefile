@@ -5491,6 +5491,7 @@
     SUBDIR += py-rope
     SUBDIR += py-rose
     SUBDIR += py-rpcq
+    SUBDIR += py-rpds-py
     SUBDIR += py-rply
     SUBDIR += py-rq
     SUBDIR += py-rq-scheduler
