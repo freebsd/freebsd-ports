@@ -11,18 +11,14 @@ Reference:	https://github.com/pypa/setuptools_scm/commit/b45e19f9f275a31873fd5e0
 
 --- src/platformdirs/__init__.py.orig	2020-02-02 00:00:00 UTC
 +++ src/platformdirs/__init__.py
-@@ -14,8 +14,12 @@ else:  # pragma: no cover (py38+)
-     from typing_extensions import Literal
+@@ -9,8 +9,8 @@ import sys
+ from typing import TYPE_CHECKING
  
  from .api import PlatformDirsABC
 -from .version import __version__
 -from .version import __version_tuple__ as __version_info__
-+try:
-+    from .version import __version__
-+    from .version import __version_tuple__ as __version_info__
-+except:
-+    from .version import version
-+    from .version import version_tuple as __version_info__
++from .version import version
++from .version import version_tuple as __version_info__
  
- 
- def _set_platform_dir_class() -> type[PlatformDirsABC]:
+ if TYPE_CHECKING:
+     from pathlib import Path
