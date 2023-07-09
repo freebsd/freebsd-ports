@@ -1,5 +1,5 @@
 PORTNAME=	mbuffer
-PORTVERSION=	20220418
+PORTVERSION=	20230301
 CATEGORIES=	misc
 MASTER_SITES=	http://www.maier-komor.de/software/mbuffer/
 
