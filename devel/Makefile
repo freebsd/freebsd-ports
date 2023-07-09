@@ -6079,6 +6079,7 @@
     SUBDIR += rubygem-aws-sdk-apigatewayv2
     SUBDIR += rubygem-aws-sdk-appconfig
     SUBDIR += rubygem-aws-sdk-appconfigdata
+    SUBDIR += rubygem-aws-sdk-appfabric
     SUBDIR += rubygem-aws-sdk-appflow
     SUBDIR += rubygem-aws-sdk-appintegrationsservice
     SUBDIR += rubygem-aws-sdk-applicationautoscaling
