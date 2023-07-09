@@ -1,3 +1,4 @@
+bin/vns
 %%SITE_PERL%%/Venus.pm
 %%SITE_PERL%%/Venus/Args.pm
 %%SITE_PERL%%/Venus/Array.pm
@@ -72,11 +73,13 @@
 %%SITE_PERL%%/Venus/Role/Unacceptable.pm
 %%SITE_PERL%%/Venus/Role/Unpackable.pm
 %%SITE_PERL%%/Venus/Role/Valuable.pm
+%%SITE_PERL%%/Venus/Run.pm
 %%SITE_PERL%%/Venus/Scalar.pm
 %%SITE_PERL%%/Venus/Schema.pm
 %%SITE_PERL%%/Venus/Search.pm
 %%SITE_PERL%%/Venus/Space.pm
 %%SITE_PERL%%/Venus/String.pm
+%%SITE_PERL%%/Venus/Task.pm
 %%SITE_PERL%%/Venus/Template.pm
 %%SITE_PERL%%/Venus/Test.pm
 %%SITE_PERL%%/Venus/Throw.pm
@@ -87,6 +90,7 @@
 %%SITE_PERL%%/Venus/Unpack.pm
 %%SITE_PERL%%/Venus/Vars.pm
 %%SITE_PERL%%/Venus/Yaml.pm
+%%PERL5_MAN1%%/vns.1.gz
 %%PERL5_MAN3%%/Venus.3.gz
 %%PERL5_MAN3%%/Venus::Args.3.gz
 %%PERL5_MAN3%%/Venus::Array.3.gz
@@ -161,11 +165,13 @@
 %%PERL5_MAN3%%/Venus::Role::Unacceptable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Unpackable.3.gz
 %%PERL5_MAN3%%/Venus::Role::Valuable.3.gz
+%%PERL5_MAN3%%/Venus::Run.3.gz
 %%PERL5_MAN3%%/Venus::Scalar.3.gz
 %%PERL5_MAN3%%/Venus::Schema.3.gz
 %%PERL5_MAN3%%/Venus::Search.3.gz
 %%PERL5_MAN3%%/Venus::Space.3.gz
 %%PERL5_MAN3%%/Venus::String.3.gz
+%%PERL5_MAN3%%/Venus::Task.3.gz
 %%PERL5_MAN3%%/Venus::Template.3.gz
 %%PERL5_MAN3%%/Venus::Test.3.gz
 %%PERL5_MAN3%%/Venus::Throw.3.gz
