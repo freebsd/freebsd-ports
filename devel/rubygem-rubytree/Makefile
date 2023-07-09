@@ -1,5 +1,5 @@
 PORTNAME=	rubytree
-PORTVERSION=	2.0.1
+PORTVERSION=	2.0.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -8,7 +8,7 @@ COMMENT=	Implementation of the Tree data structure for the Ruby
 WWW=		http://rubytree.anupamsg.me/
 
 LICENSE=	BSD2CLAUSE
-#LICENSE_FILE=	${WRKSRC}/LICENSE.md
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 RUN_DEPENDS=	rubygem-json>=2.3.1<3:devel/rubygem-json
 
