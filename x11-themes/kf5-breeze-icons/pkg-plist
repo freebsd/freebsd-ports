@@ -1,6 +1,8 @@
 @dir share/icons/breeze-dark/animations/24
 @dir share/icons/breeze/animations/24
 @dir share/icons/breeze/emotes/24
+lib/cmake/KF5BreezeIcons/KF5BreezeIconsConfig.cmake
+lib/cmake/KF5BreezeIcons/KF5BreezeIconsConfigVersion.cmake
 share/icons/breeze-dark/actions/12/object-fill.svg
 share/icons/breeze-dark/actions/12/object-stroke-style.svg
 share/icons/breeze-dark/actions/12/object-stroke.svg
