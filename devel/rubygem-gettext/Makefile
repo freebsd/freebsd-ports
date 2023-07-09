@@ -1,5 +1,5 @@
 PORTNAME=	gettext
-PORTVERSION=	3.4.3
+PORTVERSION=	3.4.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -15,6 +15,7 @@ LICENSE_FILE_RUBY=	${WRKSRC}/doc/text/ruby-license.txt
 RUN_DEPENDS=	rubygem-erubi>=0:www/rubygem-erubi \
 		rubygem-locale>=2.0.5:devel/rubygem-locale \
 		rubygem-prime>=0:math/rubygem-prime \
+		rubygem-racc>=0:devel/rubygem-racc \
 		rubygem-text>=1.3.0:textproc/rubygem-text
 
 USES=		gem shebangfix
