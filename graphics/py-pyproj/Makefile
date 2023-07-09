@@ -1,6 +1,5 @@
 PORTNAME=	pyproj
-PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTVERSION=	3.6.0
 CATEGORIES=	graphics geography python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +17,7 @@ BUILD_DEPENDS=	proj>=9.0.0,1:graphics/proj \
 LIB_DEPENDS=	libproj.so:graphics/proj
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}certifi>=0:security/py-certifi@${PY_FLAVOR}
 
-USES=		python
+USES=		python:3.9+
 USE_PYTHON=	autoplist concurrent cython pep517
 
 MAKE_ENV=	PROJ_DIR=${LOCALBASE}
