@@ -1,11 +1,11 @@
---- lib/external/pattern_language/lib/CMakeLists.txt.orig	2023-04-08 15:28:11 UTC
+--- lib/external/pattern_language/lib/CMakeLists.txt.orig	2023-06-20 14:11:25 UTC
 +++ lib/external/pattern_language/lib/CMakeLists.txt
-@@ -34,7 +34,7 @@ add_library(libpl ${LIBRARY_TYPE}
-         source/pl/lib/std/random.cpp
+@@ -69,7 +69,7 @@ add_library(libpl ${LIBRARY_TYPE}
  )
  
--target_compile_options(libpl PRIVATE -Wall -Wextra -Werror -Wpedantic -Wno-unknown-pragmas)
-+target_compile_options(libpl PRIVATE -Wall -Wextra -Werror -Wpedantic -Wno-unknown-pragmas -Wno-error=deprecated-declarations)
- 
- target_include_directories(libpl PUBLIC include)
- target_link_libraries(libpl PRIVATE fmt::fmt-header-only)
+ if(CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
+-    target_compile_options(libpl PRIVATE -Wall -Wextra -Werror -Wpedantic -Wno-unknown-pragmas -Wno-array-bounds)
++    target_compile_options(libpl PRIVATE -Wall -Wextra -Werror -Wpedantic -Wno-unknown-pragmas -Wno-array-bounds -Wno-error=deprecated-declarations)
+     if(CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+         target_compile_options(libpl PRIVATE -Wno-stringop-overflow)
+     endif()

@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2023-04-04 10:04:22 UTC
+--- CMakeLists.txt.orig	2023-06-24 10:07:39 UTC
 +++ CMakeLists.txt
 @@ -29,8 +29,6 @@ project(imhex
  

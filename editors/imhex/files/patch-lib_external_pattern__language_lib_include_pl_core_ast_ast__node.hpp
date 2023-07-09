@@ -1,17 +1,15 @@
---- lib/external/pattern_language/lib/include/pl/core/ast/ast_node.hpp.orig	2023-04-08 15:28:11 UTC
+--- lib/external/pattern_language/lib/include/pl/core/ast/ast_node.hpp.orig	2023-06-20 14:11:25 UTC
 +++ lib/external/pattern_language/lib/include/pl/core/ast/ast_node.hpp
-@@ -16,11 +16,11 @@ namespace pl::core::ast {
- 
-     class ASTNode : public Cloneable<ASTNode> {
+@@ -18,9 +18,9 @@ namespace pl::core::ast {
      public:
+         using FunctionResult = std::optional<Token::Literal>;
+ 
 -        constexpr ASTNode() = default;
-+        ASTNode() = default;
- 
 -        constexpr virtual ~ASTNode() = default;
-+        virtual ~ASTNode() = default;
- 
 -        constexpr ASTNode(const ASTNode &) = default;
++        ASTNode() = default;
++        virtual ~ASTNode() = default;
 +        ASTNode(const ASTNode &) = default;
  
-         [[nodiscard]] constexpr u32 getLine() const { return this->m_line; }
-         [[nodiscard]] constexpr u32 getColumn() const { return this->m_column; }
+         [[nodiscard]] u32 getLine() const;
+         [[nodiscard]] u32 getColumn() const;

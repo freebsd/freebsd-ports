@@ -1,6 +1,6 @@
---- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2023-04-08 15:28:11 UTC
+--- lib/external/pattern_language/lib/include/pl/core/token.hpp.orig	2023-06-24 11:43:14 UTC
 +++ lib/external/pattern_language/lib/include/pl/core/token.hpp
-@@ -157,7 +157,7 @@ namespace pl::core {
+@@ -161,7 +161,7 @@ namespace pl::core {
              bool global;
              std::string comment;
  
@@ -8,8 +8,8 @@
 +            bool operator==(const DocComment &) const = default;
          };
  
-         struct Literal : public std::variant<char, bool, u128, i128, double, std::string, ptrn::Pattern *> {
-@@ -185,7 +185,7 @@ namespace pl::core {
+         struct Literal : public std::variant<char, bool, u128, i128, double, std::string, std::shared_ptr<ptrn::Pattern>> {
+@@ -189,7 +189,7 @@ namespace pl::core {
  
          using ValueTypes = std::variant<Keyword, Identifier, Operator, Literal, ValueType, Separator, DocComment>;
  

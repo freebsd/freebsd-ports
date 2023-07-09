@@ -1,6 +1,6 @@
---- plugins/builtin/source/content/views/view_find.cpp.orig	2023-04-04 10:04:22 UTC
+--- plugins/builtin/source/content/views/view_find.cpp.orig	2023-06-24 10:07:39 UTC
 +++ plugins/builtin/source/content/views/view_find.cpp
-@@ -314,7 +314,7 @@ namespace hex::plugin::builtin {
+@@ -265,7 +265,7 @@ namespace hex::plugin::builtin {
          while (true) {
              task.update(progress);
  
@@ -9,12 +9,12 @@
              if (occurrence == reader.end())
                  break;
  
-@@ -423,7 +423,7 @@ namespace hex::plugin::builtin {
+@@ -391,7 +391,7 @@ namespace hex::plugin::builtin {
+         for (u64 address = searchRegion.getStartAddress(); address < searchRegion.getEndAddress(); address += advance) {
+             task.update(address);
  
-                 task.update(address);
+-            auto result = std::visit([&](auto tag) {
++            auto result = std::visit([&, min=min, max=max](auto tag) {
+                 using T = std::remove_cvref_t<std::decay_t<decltype(tag)>>;
  
--                auto result = std::visit([&](auto tag) {
-+                auto result = std::visit([&, min=min, max=max](auto tag) {
-                     using T = std::remove_cvref_t<std::decay_t<decltype(tag)>>;
- 
-                     auto minValue = std::get<T>(min);
+                 auto minValue = std::get<T>(min);

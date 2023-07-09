@@ -1,7 +1,6 @@
 bin/imhex
-lib/libimhex.so.1.28.0
+lib/libimhex.so.1.30.1
 share/applications/imhex.desktop
-%%DATADIR%%/constants/_schema.json
 %%DATADIR%%/constants/crc16.json
 %%DATADIR%%/constants/crc32.json
 %%DATADIR%%/constants/http_status.json
@@ -65,6 +64,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/includes/std/sys.pat
 %%DATADIR%%/includes/std/time.pat
 %%DATADIR%%/includes/type/base.pat
+%%DATADIR%%/includes/type/base64.pat
 %%DATADIR%%/includes/type/bcd.pat
 %%DATADIR%%/includes/type/byte.pat
 %%DATADIR%%/includes/type/color.pat
@@ -84,6 +84,8 @@ share/applications/imhex.desktop
 %%DATADIR%%/includes/type/types/win32.pat
 %%DATADIR%%/magic/nintendo_switch_magic
 %%DATADIR%%/magic/portable_executable_magic
+%%DATADIR%%/patterns/7z.hexpat
+%%DATADIR%%/patterns/Crashlvl.hexpat
 %%DATADIR%%/patterns/afe2.hexpat
 %%DATADIR%%/patterns/ar.hexpat
 %%DATADIR%%/patterns/arm_cm_vtor.hexpat
@@ -94,6 +96,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/cchva.hexpat
 %%DATADIR%%/patterns/ccpal.hexpat
 %%DATADIR%%/patterns/ccvxl.hexpat
+%%DATADIR%%/patterns/cda.hexpat
 %%DATADIR%%/patterns/chm.hexpat
 %%DATADIR%%/patterns/coff.hexpat
 %%DATADIR%%/patterns/cpio.pat
@@ -106,6 +109,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/fdt.pat
 %%DATADIR%%/patterns/flac.hexpat
 %%DATADIR%%/patterns/fs.hexpat
+%%DATADIR%%/patterns/gb.hexpat
 %%DATADIR%%/patterns/gif.hexpat
 %%DATADIR%%/patterns/gzip.hexpat
 %%DATADIR%%/patterns/ico.hexpat
@@ -118,8 +122,10 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/lnk.hexpat
 %%DATADIR%%/patterns/lua54.hexpat
 %%DATADIR%%/patterns/macho.hexpat
+%%DATADIR%%/patterns/max_v104.hexpat
 %%DATADIR%%/patterns/midi.hexpat
 %%DATADIR%%/patterns/minidump.hexpat
+%%DATADIR%%/patterns/mp4.hexpat
 %%DATADIR%%/patterns/msgpack.hexpat
 %%DATADIR%%/patterns/nacp.hexpat
 %%DATADIR%%/patterns/nbt.hexpat
@@ -143,6 +149,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/stl.hexpat
 %%DATADIR%%/patterns/tar.hexpat
 %%DATADIR%%/patterns/tga.hexpat
+%%DATADIR%%/patterns/tiff.hexpat
 %%DATADIR%%/patterns/uefi.hexpat
 %%DATADIR%%/patterns/uf2.hexpat
 %%DATADIR%%/patterns/usb.hexpat
@@ -154,6 +161,7 @@ share/applications/imhex.desktop
 %%DATADIR%%/patterns/xci.hexpat
 %%DATADIR%%/patterns/xilinx_bit.hexpat
 %%DATADIR%%/patterns/zip.hexpat
+%%DATADIR%%/patterns/zlib.hexpat
 %%DATADIR%%/patterns/zstd.hexpat
 %%DATADIR%%/plugins/builtin.hexplug
 share/metainfo/net.werwolv.imhex.appdata.xml

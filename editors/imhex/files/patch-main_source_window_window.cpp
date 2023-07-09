@@ -1,6 +1,6 @@
---- main/source/window/window.cpp.orig	2023-04-09 06:24:47 UTC
+--- main/source/window/window.cpp.orig	2023-06-24 10:07:39 UTC
 +++ main/source/window/window.cpp
-@@ -272,7 +272,7 @@ namespace hex {
+@@ -220,7 +220,7 @@ namespace hex {
          }
      }
  

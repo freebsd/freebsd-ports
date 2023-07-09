@@ -1,6 +1,6 @@
---- plugins/builtin/source/content/views/view_hex_editor.cpp.orig	2023-04-04 10:04:22 UTC
+--- plugins/builtin/source/content/views/view_hex_editor.cpp.orig	2023-06-24 10:07:39 UTC
 +++ plugins/builtin/source/content/views/view_hex_editor.cpp
-@@ -298,7 +298,7 @@ namespace hex::plugin::builtin {
+@@ -300,7 +300,7 @@ namespace hex::plugin::builtin {
              reader.seek(this->m_searchPosition.value_or(provider->getBaseAddress()));
  
              constexpr static auto searchFunction = [](const auto &haystackBegin, const auto &haystackEnd, const auto &needleBegin, const auto &needleEnd) {

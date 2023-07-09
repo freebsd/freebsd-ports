@@ -1,6 +1,6 @@
---- plugins/builtin/include/content/views/view_pattern_editor.hpp.orig	2023-04-04 10:04:22 UTC
+--- plugins/builtin/include/content/views/view_pattern_editor.hpp.orig	2023-06-24 14:40:57 UTC
 +++ plugins/builtin/include/content/views/view_pattern_editor.hpp
-@@ -16,6 +16,7 @@
+@@ -19,6 +19,7 @@
  #include <thread>
  #include <vector>
  #include <functional>
@@ -8,7 +8,7 @@
  
  #include <TextEditor.h>
  
-@@ -65,7 +66,7 @@ namespace hex::plugin::builtin {
+@@ -151,7 +152,7 @@ namespace hex::plugin::builtin {
          bool m_syncPatternSourceCode = false;
          bool m_autoLoadPatterns = true;
  

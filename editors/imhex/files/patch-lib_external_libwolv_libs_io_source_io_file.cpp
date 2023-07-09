@@ -1,6 +1,6 @@
---- lib/external/libwolv/libs/io/source/io/file.cpp.orig	2023-04-08 15:55:46 UTC
+--- lib/external/libwolv/libs/io/source/io/file.cpp.orig	2023-07-09 11:32:49 UTC
 +++ lib/external/libwolv/libs/io/source/io/file.cpp
-@@ -21,12 +21,12 @@ namespace wolv::io {
+@@ -39,12 +39,12 @@ namespace wolv::io {
          #else
  
              if (mode == File::Mode::Read)
@@ -15,8 +15,8 @@
 +                this->m_file = fopen(util::toUTF8String(path).c_str(), "w+b");
  
          #endif
-     }
-@@ -63,7 +63,7 @@ namespace wolv::io {
+ 
+@@ -82,7 +82,7 @@ namespace wolv::io {
      }
  
      void File::seek(u64 offset) {
@@ -25,9 +25,28 @@
      }
  
      void File::close() {
-@@ -148,10 +148,10 @@ namespace wolv::io {
-     size_t File::getSize() const {
-         if (!isValid()) return 0;
+@@ -114,8 +114,7 @@ namespace wolv::io {
+             auto fd = fileno(this->m_file);
+             auto size = getSize();
+ 
+-            this->m_map = reinterpret_cast<u8*>(mmap(nullptr, size, this->m_mode == Mode::Read ? PROT_READ : PROT_WRITE, MAP_SHARED, fd, 0));
+-
++            this->m_map = reinterpret_cast<u8*>(mmap(nullptr, size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0));
+         #endif
+     }
+ 
+@@ -214,7 +213,7 @@ namespace wolv::io {
+     void File::setSize(u64 size) {
+         if (!isValid()) return;
+ 
+-        auto result = ftruncate64(fileno(this->m_file), size);
++        auto result = ftruncate(fileno(this->m_file), size);
+         util::unused(result);
+         this->updateSize();
+     }
+@@ -225,10 +224,10 @@ namespace wolv::io {
+             return;
+         }
  
 -        auto startPos = ftello64(this->m_file);
 -        fseeko64(this->m_file, 0, SEEK_END);
@@ -38,14 +57,5 @@
 +        auto size = ftello(this->m_file);
 +        fseeko(this->m_file, startPos, SEEK_SET);
  
-         if (size < 0)
-             return 0;
-@@ -162,7 +162,7 @@ namespace wolv::io {
-     void File::setSize(u64 size) {
-         if (!isValid()) return;
- 
--        auto result = ftruncate64(fileno(this->m_file), size);
-+        auto result = ftruncate(fileno(this->m_file), size);
-         util::unused(result);
-     }
- 
+         if (this->m_map != nullptr && size != this->m_fileSize) {
+             this->unmap();

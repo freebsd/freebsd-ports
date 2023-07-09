@@ -1,5 +1,5 @@
 PORTNAME=	imhex
-PORTVERSION=	1.28.0
+PORTVERSION=	1.30.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~danyspin97/xdgpp/blob/f01f810714443d0f10c333d4d1d9c0383be41375/:xdg
@@ -36,6 +36,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libglfw.so:graphics/glfw \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
+		libinotify.so:devel/libinotify \
 		libmbedtls.so:security/mbedtls \
 		libtre.so:textproc/libtre
 
@@ -60,16 +61,22 @@ GH_TUPLE=	btzy:nativefiledialog-extended:${GH_TAG_NATIVEFILEDIALOG}:nativefiledi
 
 GH_TAG_CAPSTONE=	d5141c0
 GH_TAG_CLI11=	faea921
-GH_TAG_FMT=	a337011
-GH_TAG_IMHEX_PATTERNS=	2ffa4e0
+GH_TAG_FMT=	a0b8a92
+GH_TAG_IMHEX_PATTERNS=	759708d
 GH_TAG_JTHREAD=	0fa8d39
-GH_TAG_LIBROMFS=	40cd303
-GH_TAG_LIBWOLV=	bcd987c
+GH_TAG_LIBROMFS=	80b9ade
+GH_TAG_LIBWOLV=	128bed6
 GH_TAG_NATIVEFILEDIALOG=	7909f55
-GH_TAG_PATTERN_LANGUAGE=	68210bd
+GH_TAG_PATTERN_LANGUAGE=	57dc02b
 GH_TAG_YARA=	96790e5
 
-CXX=	${LOCALBASE}/bin/clang++${LLVM_VERSION}
+CC=	${LOCALBASE}/bin/clang16
+CXX=	${LOCALBASE}/bin/clang++16
+CFLAGS+=	-I${LOCALBASE}/include
+CXXFLAGS+=	-I${LOCALBASE}/include \
+		-I${WRKSRC}/lib/external/pattern_language/generators/include \
+		-Wno-error=deprecated-declarations \
+		-Wno-error=literal-conversion
 
 CMAKE_ARGS=	-DUSE_SYSTEM_CURL=ON -DUSE_SYSTEM_NLOHMANN_JSON=ON \
 		-DIMHEX_STRIP_RELEASE=OFF -DIMHEX_PLUGINS_IN_SHARE=ON \
@@ -87,6 +94,7 @@ post-extract:
 	${CP} -R ${WRKSRC_jthread}/source/*.hpp ${WRKSRC}/lib/libimhex/include
 	${CP} -R ${WRKSRC_libromfs}/* ${WRKSRC}/lib/external/libromfs
 	${CP} -R ${WRKSRC_libwolv}/* ${WRKSRC}/lib/external/libwolv
+	${CP} -R ${WRKSRC_jthread}/source/*.hpp ${WRKSRC}/lib/external/libwolv/libs/io/include/wolv/io
 	${CP} -R ${WRKSRC_nativefiledialog}/* ${WRKSRC}/lib/external/nativefiledialog
 	${CP} -R ${WRKSRC_pattern_language}/* ${WRKSRC}/lib/external/pattern_language
 	${CP} -R ${WRKSRC_cli11}/* ${WRKSRC}/lib/external/pattern_language/external/cli11

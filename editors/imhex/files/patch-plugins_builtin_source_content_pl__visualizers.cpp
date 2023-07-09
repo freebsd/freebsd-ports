@@ -1,6 +1,6 @@
---- plugins/builtin/source/content/pl_visualizers.cpp.orig	2023-04-08 16:59:02 UTC
+--- plugins/builtin/source/content/pl_visualizers.cpp.orig	2023-06-24 10:07:39 UTC
 +++ plugins/builtin/source/content/pl_visualizers.cpp
-@@ -303,11 +303,11 @@ namespace hex::plugin::builtin {
+@@ -307,11 +307,11 @@ namespace hex::plugin::builtin {
  
                  ImGui::TableNextColumn();
                  ImGui::TextUnformatted("hex.builtin.pl_visualizer.3d.rotation"_lang);
@@ -15,7 +15,7 @@
  
                  ImGui::TableNextRow();
                  ImGui::TableNextColumn();
-@@ -319,10 +319,10 @@ namespace hex::plugin::builtin {
+@@ -323,10 +323,10 @@ namespace hex::plugin::builtin {
                  ImGui::PopItemWidth();
  
                  for (u8 i = 0; i < 3; i++) {
