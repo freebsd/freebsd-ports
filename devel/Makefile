@@ -5133,6 +5133,7 @@
     SUBDIR += py-pip-api
     SUBDIR += py-pip-audit
     SUBDIR += py-pip-licenses
+    SUBDIR += py-pip-requirements-parser
     SUBDIR += py-pip-run
     SUBDIR += py-pip-shims
     SUBDIR += py-pip-tools
