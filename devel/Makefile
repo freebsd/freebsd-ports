@@ -5204,6 +5204,7 @@
     SUBDIR += py-purl
     SUBDIR += py-py
     SUBDIR += py-py-partiql-parser
+    SUBDIR += py-py-serializable
     SUBDIR += py-py-ubjson
     SUBDIR += py-py3nvml
     SUBDIR += py-pyTooling
