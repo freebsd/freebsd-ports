@@ -1,5 +1,5 @@
 PORTNAME=	googleauth
-PORTVERSION=	1.5.2
+PORTVERSION=	1.6.0
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
