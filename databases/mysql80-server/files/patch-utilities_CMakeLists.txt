@@ -1,8 +1,8 @@
---- utilities/CMakeLists.txt.orig	2020-09-23 12:37:48 UTC
-+++ utilities/CMakeLists.txt
-@@ -23,13 +23,19 @@
- ADD_WSHADOW_WARNING()
+--- utilities/CMakeLists.txt.orig	2023-06-14 08:24:40.103026000 +0200
++++ utilities/CMakeLists.txt	2023-06-22 20:43:33.353592000 +0200
+@@ -24,13 +24,19 @@ MSVC_CPPCHECK_DISABLE()
  DISABLE_MISSING_PROFILE_WARNING()
+ MSVC_CPPCHECK_DISABLE()
  
 -IF(NOT CMAKE_CROSSCOMPILING)
 +IF(WITHOUT_CLIENTLIBS)
@@ -22,7 +22,7 @@
  
  MYSQL_ADD_EXECUTABLE(comp_client_err
    comp_client_err.cc
-@@ -112,10 +118,30 @@ MYSQL_ADD_EXECUTABLE(static_thread_local_test
+@@ -113,10 +119,30 @@ MYSQL_ADD_EXECUTABLE(static_thread_local_test
    EXCLUDE_FROM_ALL
    )
  
@@ -53,8 +53,8 @@
    )
  MYSQL_ADD_EXECUTABLE(perror
    perror.cc
-@@ -130,12 +156,23 @@ IF(BUILD_BUNDLED_LZ4)
-     LINK_LIBRARIES ${LZ4_LIBRARY} mysys
+@@ -131,12 +157,23 @@ ENDIF()
+     LINK_LIBRARIES ext::lz4 mysys
      )
  ENDIF()
 +ENDIF(WITHOUT_CLIENTLIBS)
@@ -63,7 +63,7 @@
  MYSQL_ADD_EXECUTABLE(zlib_decompress
    zlib_decompress.cc
    COMPONENT Server
-   LINK_LIBRARIES ${ZLIB_LIBRARY} mysys
+   LINK_LIBRARIES ext::zlib mysys
 +    SKIP_INSTALL )
 +ELSE(WITHOUT_CLIENTLIBS)
 +IF(BUILD_BUNDLED_ZLIB OR NOT OPENSSL_EXECUTABLE_HAS_ZLIB)

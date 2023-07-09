@@ -87,9 +87,11 @@ lib/mysql/plugin/component_test_mysql_command_services.so
 lib/mysql/plugin/component_test_mysql_current_thread_reader.so
 lib/mysql/plugin/component_test_mysql_runtime_error.so
 lib/mysql/plugin/component_test_mysql_system_variable_set.so
+lib/mysql/plugin/component_test_mysql_thd_store_service.so
 lib/mysql/plugin/component_test_pfs_notification.so
 lib/mysql/plugin/component_test_pfs_resource_group.so
 lib/mysql/plugin/component_test_sensitive_system_variables.so
+lib/mysql/plugin/component_test_server_telemetry_traces.so
 lib/mysql/plugin/component_test_status_var_reader.so
 lib/mysql/plugin/component_test_status_var_service.so
 lib/mysql/plugin/component_test_status_var_service_int.so
@@ -179,25 +181,25 @@ lib/mysql/private/libprotobuf-lite.so.3.19.4
 lib/mysql/private/libprotobuf.so.3.19.4
 lib/mysql/libprotobuf-lite.so.3.19.4
 libexec/mysqld
-share/man/man1/ibd2sdi.1.gz
-share/man/man1/innochecksum.1.gz
-share/man/man1/my_print_defaults.1.gz
-share/man/man1/myisam_ftdump.1.gz
-share/man/man1/myisamchk.1.gz
-share/man/man1/myisamlog.1.gz
-share/man/man1/myisampack.1.gz
-share/man/man1/mysql_secure_installation.1.gz
-share/man/man1/mysql_ssl_rsa_setup.1.gz
-share/man/man1/mysql_tzinfo_to_sql.1.gz
-share/man/man1/mysql_upgrade.1.gz
-share/man/man1/mysql.server.1.gz
-share/man/man1/mysqld_multi.1.gz
-share/man/man1/mysqld_safe.1.gz
-share/man/man1/mysqldumpslow.1.gz
-share/man/man1/mysqlrouter_passwd.1.gz
-share/man/man1/mysqlrouter_plugin_info.1.gz
-share/man/man1/mysqlrouter.1.gz
-share/man/man8/mysqld.8.gz
+@comment share/man/man1/ibd2sdi.1.gz
+@comment share/man/man1/innochecksum.1.gz
+@comment share/man/man1/my_print_defaults.1.gz
+@comment share/man/man1/myisam_ftdump.1.gz
+@comment share/man/man1/myisamchk.1.gz
+@comment share/man/man1/myisamlog.1.gz
+@comment share/man/man1/myisampack.1.gz
+@comment share/man/man1/mysql_secure_installation.1.gz
+@comment share/man/man1/mysql_ssl_rsa_setup.1.gz
+@comment share/man/man1/mysql_tzinfo_to_sql.1.gz
+@comment share/man/man1/mysql_upgrade.1.gz
+@comment share/man/man1/mysql.server.1.gz
+@comment share/man/man1/mysqld_multi.1.gz
+@comment share/man/man1/mysqld_safe.1.gz
+@comment share/man/man1/mysqldumpslow.1.gz
+@comment share/man/man1/mysqlrouter_passwd.1.gz
+@comment share/man/man1/mysqlrouter_plugin_info.1.gz
+@comment share/man/man1/mysqlrouter.1.gz
+@comment share/man/man8/mysqld.8.gz
 %%DATADIR%%/bulgarian/errmsg.sys
 %%DATADIR%%/charsets/Index.xml
 %%DATADIR%%/charsets/README

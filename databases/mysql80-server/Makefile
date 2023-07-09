@@ -1,6 +1,6 @@
 PORTNAME?=		mysql
-PORTVERSION=		8.0.32
-PORTREVISION?=		3
+PORTVERSION=		8.0.33
+PORTREVISION?=		0
 CATEGORIES=		databases
 MASTER_SITES=		MYSQL/MySQL-8.0
 PKGNAMESUFFIX?=		80-server
@@ -31,7 +31,6 @@ LIB_DEPENDS+=	libcurl.so:ftp/curl \
 		libevent.so:devel/libevent \
 		libicutu.so:devel/icu \
 		liblz4.so:archivers/liblz4 \
-		libzstd.so:archivers/zstd \
 		libfido2.so:security/libfido2 \
 		libhidapi.so:comms/hidapi \
 		${LIB_DEPENDS_${ARCH}}
@@ -85,7 +84,7 @@ CMAKE_ARGS+=	-DINSTALL_LAYOUT=FREEBSD \
 		-DWITH_LZ4=system \
 		-DWITH_ICU=system \
 		-DWITH_CURL=system \
-		-DWITH_ZSTD=system \
+		-DWITH_ZSTD=bundled \
 		-DWITH_PROTOBUF=bundled \
 		-DWITH_SSL=system \
 		-DWITH_AUTHENTICATION_FIDO=1 \
