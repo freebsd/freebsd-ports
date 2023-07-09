@@ -1,0 +1,14 @@
+--- pyproject.toml.orig	2023-06-28 15:26:06 UTC
++++ pyproject.toml
+@@ -48,9 +48,9 @@ keywords = [
+ # ATTENTION: keep `deps.lowest.r` file in sync
+ python = "^3.7"
+ importlib-metadata = { version = "^3.4.0", python = "<3.8" }
+-packageurl-python = ">= 0.11"
++packageurl-python = ">= 0.9"
+ py-serializable = "^0.11.1"
+-sortedcontainers = "^2.4.0"
++sortedcontainers = "^2.3.0"
+ 
+ [tool.poetry.dev-dependencies]
+ ddt = "^1.6.0"

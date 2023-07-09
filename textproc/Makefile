@@ -1323,6 +1323,7 @@
     SUBDIR += py-cssselect2
     SUBDIR += py-csvkit
     SUBDIR += py-custom_inherit
+    SUBDIR += py-cyclonedx-python-lib
     SUBDIR += py-dbfread
     SUBDIR += py-dialect
     SUBDIR += py-dict2xml
