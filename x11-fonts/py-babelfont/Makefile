@@ -1,6 +1,5 @@
 PORTNAME=	babelfont
-PORTVERSION=	3.0.0
-PORTREVISION=	2
+PORTVERSION=	3.0.1
 CATEGORIES=	x11-fonts python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -9,7 +8,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Abstract interface to font source files based on fontParts
 WWW=		https://github.com/simoncozens/babelfont
 
-LICENSE=	BSD3CLAUSE
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
