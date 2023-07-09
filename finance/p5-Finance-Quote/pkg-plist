@@ -25,9 +25,11 @@
 %%SITE_PERL%%/Finance/Quote/Fool.pm
 %%SITE_PERL%%/Finance/Quote/Fundata.pm
 %%SITE_PERL%%/Finance/Quote/GoldMoney.pm
+%%SITE_PERL%%/Finance/Quote/GoogleWeb.pm
 %%SITE_PERL%%/Finance/Quote/HU.pm
 %%SITE_PERL%%/Finance/Quote/IEXCloud.pm
 %%SITE_PERL%%/Finance/Quote/IndiaMutual.pm
+%%SITE_PERL%%/Finance/Quote/MarketWatch.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarAU.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarCH.pm
 %%SITE_PERL%%/Finance/Quote/MorningstarJP.pm
@@ -51,6 +53,7 @@
 %%SITE_PERL%%/Finance/Quote/UserAgent.pm
 %%SITE_PERL%%/Finance/Quote/XETRA.pm
 %%SITE_PERL%%/Finance/Quote/YahooJSON.pm
+%%SITE_PERL%%/Finance/Quote/YahooWeb.pm
 %%SITE_PERL%%/Finance/Quote/ZA.pm
 %%PERL5_MAN3%%/Finance::Quote.3.gz
 %%PERL5_MAN3%%/Finance::Quote::AEX.3.gz
@@ -79,9 +82,11 @@
 %%PERL5_MAN3%%/Finance::Quote::Fool.3.gz
 %%PERL5_MAN3%%/Finance::Quote::Fundata.3.gz
 %%PERL5_MAN3%%/Finance::Quote::GoldMoney.3.gz
+%%PERL5_MAN3%%/Finance::Quote::GoogleWeb.3.gz
 %%PERL5_MAN3%%/Finance::Quote::HU.3.gz
 %%PERL5_MAN3%%/Finance::Quote::IEXCloud.3.gz
 %%PERL5_MAN3%%/Finance::Quote::IndiaMutual.3.gz
+%%PERL5_MAN3%%/Finance::Quote::MarketWatch.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarAU.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarCH.3.gz
 %%PERL5_MAN3%%/Finance::Quote::MorningstarJP.3.gz
@@ -104,4 +109,5 @@
 %%PERL5_MAN3%%/Finance::Quote::Union.3.gz
 %%PERL5_MAN3%%/Finance::Quote::XETRA.3.gz
 %%PERL5_MAN3%%/Finance::Quote::YahooJSON.3.gz
+%%PERL5_MAN3%%/Finance::Quote::YahooWeb.3.gz
 %%PERL5_MAN3%%/Finance::Quote::ZA.3.gz
