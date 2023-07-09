@@ -1,0 +1,9 @@
+--- Cargo.toml.orig	2023-07-09 21:00:15 UTC
++++ Cargo.toml
+@@ -6,6 +6,3 @@ resolver = "2"
+     "benches",
+ ]
+ resolver = "2"
+-
+-[profile.release]
+-debug = true
