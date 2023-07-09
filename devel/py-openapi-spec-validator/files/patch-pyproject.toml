@@ -1,11 +1,11 @@
---- pyproject.toml.orig	2023-03-17 08:40:24 UTC
+--- pyproject.toml.orig	2023-06-11 23:13:13 UTC
 +++ pyproject.toml
-@@ -52,7 +52,7 @@ jsonschema = ">=4.0.0,<4.18.0"
+@@ -51,7 +51,7 @@ include = [
+ jsonschema = ">=4.0.0,<4.18.0"
  openapi-schema-validator = "^0.4.2"
  python = "^3.7.0"
- requests = {version = "*", optional = true}
 -importlib-resources = {version = "^5.8.0", python = "<3.9" }
 +importlib-resources = {version = "^5.4.0", python = "<3.9" }
+ typing-extensions = {version = "^4.5.0", python = "<3.8" }
  jsonschema-spec = "^0.1.1"
  lazy-object-proxy = "^1.7.1"
- sphinx = {version = "^5.3.0", optional = true}
