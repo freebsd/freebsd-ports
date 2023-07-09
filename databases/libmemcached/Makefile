@@ -1,5 +1,6 @@
 PORTNAME=	libmemcached
 PORTVERSION=	1.1.4
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	sunpoet@FreeBSD.org
@@ -44,4 +45,11 @@ MURMUR_CMAKE_BOOL=	ENABLE_HASH_MURMUR
 SASL_CMAKE_BOOL=	ENABLE_SASL
 SASL_LIB_DEPENDS=	libsasl2.so:security/cyrus-sasl2
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# Skip libcrypto.pc while using OpenSSL from base system on older FreeBSD versions which does not skip this file
+.if ${SSL_DEFAULT} == base && !exists(/usr/libdata/pkgconfig/libcrypto.pc)
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-openssl
+.endif
+
+.include <bsd.port.post.mk>
