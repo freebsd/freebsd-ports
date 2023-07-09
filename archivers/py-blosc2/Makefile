@@ -1,5 +1,5 @@
 PORTNAME=	blosc2
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	archivers python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,8 +21,7 @@ LIB_DEPENDS=	libblosc2.so:archivers/c-blosc2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ndindex>=1.4:math/py-ndindex@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numpy>=1.20.3,1:math/py-numpy@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-cpuinfo>=0:sysutils/py-py-cpuinfo@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}rich>=0:textproc/py-rich@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}py-cpuinfo>=0:sysutils/py-py-cpuinfo@${PY_FLAVOR}
 
 USES=		pkgconfig python
 USE_PYTHON=	autoplist concurrent cython pep517
