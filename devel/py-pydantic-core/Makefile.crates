@@ -28,12 +28,12 @@ CARGO_CRATES=	ahash-0.8.3 \
 		parking_lot_core-0.9.7 \
 		percent-encoding-2.2.0 \
 		proc-macro2-1.0.60 \
-		pyo3-0.19.0 \
-		pyo3-build-config-0.19.0 \
-		pyo3-ffi-0.19.0 \
-		pyo3-macros-0.19.0 \
-		pyo3-macros-backend-0.19.0 \
-		python3-dll-a-0.2.6 \
+		pyo3-0.19.1 \
+		pyo3-build-config-0.19.1 \
+		pyo3-ffi-0.19.1 \
+		pyo3-macros-0.19.1 \
+		pyo3-macros-backend-0.19.1 \
+		python3-dll-a-0.2.9 \
 		quote-1.0.28 \
 		redox_syscall-0.2.16 \
 		regex-1.7.3 \
