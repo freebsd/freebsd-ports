@@ -1,0 +1,12 @@
+Reference:	https://github.com/mesonbuild/meson/commit/6f4973abad9eec9fcc915117f1c3d1a93ccc948c
+
+--- subprojects/gssdp-1.6.wrap.orig	2022-12-16 18:59:32 UTC
++++ subprojects/gssdp-1.6.wrap
+@@ -3,6 +3,6 @@ url = https://gitlab.gnome.org/GNOME/gssdp.git
+ revision = master
+ depth = 1
+  
+-[provides]
++[provide]
+ dependency_name = gssdp-1.6
+ 
