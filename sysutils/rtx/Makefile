@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.32.5
+DISTVERSION=	1.33.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -154,6 +154,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		os_pipe-1.1.4 \
 		owo-colors-3.5.0 \
 		paste-1.0.13 \
+		path-absolutize-3.1.0 \
+		path-dedot-3.1.0 \
 		percent-encoding-2.3.0 \
 		pest-2.7.0 \
 		pest_derive-2.7.0 \
@@ -173,7 +175,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
 		regex-1.9.1 \
-		regex-automata-0.3.1 \
+		regex-automata-0.3.2 \
 		regex-syntax-0.7.3 \
 		reqwest-0.11.18 \
 		ring-0.16.20 \
@@ -192,8 +194,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		sct-0.7.0 \
 		self_update-0.37.0 \
 		semver-1.0.17 \
-		serde-1.0.167 \
-		serde_derive-1.0.167 \
+		serde-1.0.168 \
+		serde_derive-1.0.168 \
 		serde_json-1.0.100 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
@@ -291,7 +293,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.0 \
-		winnow-0.4.8 \
+		winnow-0.4.9 \
 		winreg-0.10.1 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
