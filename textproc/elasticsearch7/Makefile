@@ -1,5 +1,5 @@
 PORTNAME=	elasticsearch
-PORTVERSION=	7.17.9
+PORTVERSION=	7.17.11
 CATEGORIES=	textproc java devel
 MASTER_SITES=	https://artifacts.elastic.co/downloads/${PORTNAME}/
 PKGNAMESUFFIX=	7
@@ -35,6 +35,8 @@ CONFLICTS=	elasticsearch6
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+PORTSCOUT=	limit:^7
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS
