@@ -12,6 +12,7 @@
 %%SITE_PERL%%/Tickit/Widget/Frame.pm
 %%SITE_PERL%%/Tickit/Widget/GridBox.pm
 %%SITE_PERL%%/Tickit/Widget/HBox.pm
+%%SITE_PERL%%/Tickit/Widget/HLine.pm
 %%SITE_PERL%%/Tickit/Widget/HSplit.pm
 %%SITE_PERL%%/Tickit/Widget/LinearBox.pm
 %%SITE_PERL%%/Tickit/Widget/LinearSplit.pm
@@ -20,6 +21,7 @@
 %%SITE_PERL%%/Tickit/Widget/Spinner.pm
 %%SITE_PERL%%/Tickit/Widget/Static.pm
 %%SITE_PERL%%/Tickit/Widget/VBox.pm
+%%SITE_PERL%%/Tickit/Widget/VLine.pm
 %%SITE_PERL%%/Tickit/Widget/VSplit.pm
 %%SITE_PERL%%/Tickit/WidgetRole.pm
 %%SITE_PERL%%/Tickit/WidgetRole/Alignable.pm
@@ -38,6 +40,7 @@
 %%PERL5_MAN3%%/Tickit::Widget::Frame.3.gz
 %%PERL5_MAN3%%/Tickit::Widget::GridBox.3.gz
 %%PERL5_MAN3%%/Tickit::Widget::HBox.3.gz
+%%PERL5_MAN3%%/Tickit::Widget::HLine.3.gz
 %%PERL5_MAN3%%/Tickit::Widget::HSplit.3.gz
 %%PERL5_MAN3%%/Tickit::Widget::LinearBox.3.gz
 %%PERL5_MAN3%%/Tickit::Widget::Placegrid.3.gz
@@ -45,6 +48,7 @@
 %%PERL5_MAN3%%/Tickit::Widget::Spinner.3.gz
 %%PERL5_MAN3%%/Tickit::Widget::Static.3.gz
 %%PERL5_MAN3%%/Tickit::Widget::VBox.3.gz
+%%PERL5_MAN3%%/Tickit::Widget::VLine.3.gz
 %%PERL5_MAN3%%/Tickit::Widget::VSplit.3.gz
 %%PERL5_MAN3%%/Tickit::WidgetRole::Alignable.3.gz
 %%PERL5_MAN3%%/Tickit::WidgetRole::SingleChildContainer.3.gz
