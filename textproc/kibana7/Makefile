@@ -1,7 +1,6 @@
 PORTNAME=	kibana
-PORTVERSION=	7.17.9
+PORTVERSION=	7.17.11
 DISTVERSIONSUFFIX=	-darwin-x86_64
-PORTREVISION=	1
 CATEGORIES=	textproc www
 MASTER_SITES=	https://artifacts.elastic.co/downloads/kibana/ \
 		http://artifacts.elastic.co/downloads/kibana/
@@ -14,9 +13,10 @@ WWW=		https://www.elastic.co/products/kibana
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	npm-node16>0:www/npm-node16
+BUILD_DEPENDS=	npm-node16>=9.7.2:www/npm-node16
 LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
+RUN_DEPENDS=	${LOCALBASE}/bin/node:www/node16
 
 USES=		compiler:c++14-lang cpe nodejs:16,build,run python:build
 CPE_VENDOR=	elastic
@@ -29,6 +29,8 @@ USE_RC_SUBR=	${PORTNAME}
 
 WWWDIR=		${PREFIX}/www/${PORTNAME}${PKGNAMESUFFIX}
 
+PORTSCOUT=	limit:^7
+
 SUB_FILES=	pkg-deinstall
 SUB_LIST+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 		PORTNAME=${PORTNAME}
@@ -37,7 +39,7 @@ SUB_LIST+=	PKGNAMESUFFIX=${PKGNAMESUFFIX} \
 # Set node-nan version here
 _NODE_NAN_VER=	2.17.0
 # Set node-re version here
-_NODE_RE2_VER=	1.18.0
+_NODE_RE2_VER=	1.19.1
 #######################################################################
 
 _NODECMD=	${LOCALBASE}/bin/node --version
@@ -72,14 +74,15 @@ do-configure:
 		"! ( -name \.* -or -path *\/test\/* -or -name test )")
 	(cd ${_RE2DIR} && \
 		${SETENV} HOME=${WRKDIR} \
-		${LOCALBASE}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp configure \
+		${LOCALBASE}/lib/node_modules/npm/node_modules/.bin/node-gyp configure \
 		--python=${PYTHON_CMD} \
+		--nodedir=${LOCALBASE} \
 		--devdir=${_DEVDIR})
 
 do-build:
 	(cd ${_RE2DIR} && \
 		${SETENV} HOME=${WRKDIR} \
-		${LOCALBASE}/lib/node_modules/npm/bin/node-gyp-bin/node-gyp build \
+		${LOCALBASE}/lib/node_modules/npm/node_modules/.bin/node-gyp build \
 		--devdir=${_DEVDIR})
 
 do-install:
