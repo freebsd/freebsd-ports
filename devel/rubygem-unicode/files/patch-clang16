@@ -1,0 +1,35 @@
+--- ext/unicode/unicode.c.orig	2023-07-03 15:50:18 UTC
++++ ext/unicode/unicode.c
+@@ -1036,8 +1036,8 @@ unicode_get_categories(VALUE obj, VALUE str)
+ #endif
+   WStr_allocWithUTF8L(&wstr, RSTRING_PTR(str), RSTRING_LEN(str));
+ 
+-  return rb_ensure(get_categories_internal, (VALUE)&param,
+-                   get_categories_ensure, (VALUE)&wstr);
++  return rb_ensure((VALUE (*)(VALUE)) get_categories_internal, (VALUE)&param,
++                   (VALUE (*)(VALUE)) get_categories_ensure, (VALUE)&wstr);
+   /* wstr will be freed in get_text_elements_ensure() */
+ }
+ 
+@@ -1054,8 +1054,8 @@ unicode_get_abbr_categories(VALUE obj, VALUE str)
+ #endif
+   WStr_allocWithUTF8L(&wstr, RSTRING_PTR(str), RSTRING_LEN(str));
+ 
+-  return rb_ensure(get_categories_internal, (VALUE)&param,
+-                   get_categories_ensure, (VALUE)&wstr);
++  return rb_ensure((VALUE (*)(VALUE)) get_categories_internal, (VALUE)&param,
++                   (VALUE (*)(VALUE)) get_categories_ensure, (VALUE)&wstr);
+   /* wstr will be freed in get_text_elements_ensure() */
+ }
+ 
+@@ -1224,8 +1224,8 @@ unicode_get_text_elements(VALUE obj, VALUE str)
+ #endif
+   WStr_allocWithUTF8L(&wstr, RSTRING_PTR(str), RSTRING_LEN(str));
+ 
+-  return rb_ensure(get_text_elements_internal, (VALUE)&param,
+-                   get_text_elements_ensure, (VALUE)&wstr);
++  return rb_ensure((VALUE (*)(VALUE)) get_text_elements_internal, (VALUE)&param,
++                   (VALUE (*)(VALUE)) get_text_elements_ensure, (VALUE)&wstr);
+   /* wstr will be freed in get_text_elements_ensure() */
+ }
+ 
