@@ -2905,7 +2905,7 @@
     <name>py39-suds</name>
     <name>py310-suds</name>
     <name>py311-suds</name>
-    <range><le>1.1.2</le></range>
+    <range><lt>1.0.0</lt></range>
       </package>
     </affects>
     <description>
@@ -2923,6 +2923,7 @@
     <dates>
       <discovery>2013-09-23</discovery>
       <entry>2023-04-09</entry>
+      <modified>2023-07-08</modified>
     </dates>
   </vuln>
 
