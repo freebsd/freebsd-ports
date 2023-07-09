@@ -1,5 +1,5 @@
 PORTNAME=	GD
-PORTVERSION=	2.77
+PORTVERSION=	2.78
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -13,6 +13,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-ExtUtils-PkgConfig>=0:devel/p5-ExtUtils-PkgConfig
 LIB_DEPENDS=	libgd.so:graphics/gd
+TEST_DEPENDS=	p5-Test-NoWarnings>=1.00:devel/p5-Test-NoWarnings
 
 USES=		perl5
 USE_PERL5=	configure
