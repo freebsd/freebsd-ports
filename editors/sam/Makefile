@@ -1,5 +1,6 @@
 PORTNAME=	sam
 DISTVERSION=	g20230103
+PORTREVISION=	1
 CATEGORIES=	editors
 
 MAINTAINER=	flo@purplekraken.com
