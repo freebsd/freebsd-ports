@@ -1187,6 +1187,7 @@
     SUBDIR += the-algorithms-c++
     SUBDIR += timbl
     SUBDIR += tiny-bignum-c
+    SUBDIR += tinymt
     SUBDIR += tlapack
     SUBDIR += tmv
     SUBDIR += tomsfastmath
