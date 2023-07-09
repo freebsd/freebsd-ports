@@ -5,7 +5,6 @@ include/blosc2/blosc2-export.h
 include/blosc2/blosc2-stdio.h
 include/blosc2/codecs-registry.h
 include/blosc2/filters-registry.h
-include/blosc2/plugins-utils.h
 include/blosc2/tuners-registry.h
 lib/libblosc2.a
 lib/libblosc2.so
