@@ -31,7 +31,6 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=18.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-forked>=1.3.0<2.0.0:devel/py-pytest-forked@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=1.34.0,1:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}typed-ast>=1.5.4<2:devel/py-typed-ast@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}types-typed-ast>=1.5.8.5<1.6.0:devel/py-types-typed-ast@${PY_FLAVOR}
 
 USES=		python
