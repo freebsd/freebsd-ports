@@ -1,5 +1,6 @@
 PORTNAME=	deal.II
 DISTVERSION=	9.5.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	https://github.com/dealii/dealii/releases/download/v${DISTVERSION}/
 DISTNAME=	dealii-${DISTVERSION}
@@ -22,7 +23,6 @@ LIB_DEPENDS=	libboost_serialization.so:devel/boost-libs \
 #		libkokkoscore.so:devel/kokkos TMP commented out for bundled kokkos, tests fail for non-bundled kokkos, see https://github.com/dealii/dealii/issues/15692
 
 USES=		blaslapack cmake:testing compiler:c++17-lang localbase:ldflags xorg
-USE_XORG=	x11 # is this legit? see https://github.com/dealii/dealii/issues/15693
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	DEAL_II_ALLOW_BUNDLED DEAL_II_COMPONENT_EXAMPLES \
@@ -31,7 +31,7 @@ CMAKE_OFF=	DEAL_II_ALLOW_BUNDLED DEAL_II_COMPONENT_EXAMPLES \
 		DEAL_II_WITH_HDF5
 CMAKE_ON=	DEAL_II_FORCE_BUNDLED_TBB # instead of LIB_DEPENDS+=libtbb.so:devel/onetbb, pending https://github.com/dealii/dealii/issues/11561
 CMAKE_ON+=	FORCE_BUNDLED_KOKKOS # TMP turn on bundled kokkos
-CMAKE_TESTING_ON=	FREEBSD_ENABLE_TESTS # several tests fail, see https://github.com/dealii/dealii/issues/15692
+CMAKE_TESTING_ON=	FREEBSD_ENABLE_TESTS
 
 LDFLAGS+=	-lomp
 LDFLAGS+=	-lexecinfo # TMP for bundled kokkos
@@ -74,6 +74,8 @@ OPENCASCADE_CMAKE_ON=	-DOPENCASCADE_INCLUDE_DIR:STRING=${LOCALBASE}/include/Open
 OPENCASCADE_LIB_DEPENDS=	libTKernel.so:cad/opencascade
 
 PETSC_DESC=		Compile with Petsc (only with MPI)
+PETSC_USES=		xorg
+PETSC_USE=		XORG=x11 # PETSc adds x11 through interface libraries
 PETSC_CMAKE_BOOL=	DEAL_II_WITH_PETSC DEAL_II_WITH_64BIT_INDICES
 PETSC_LIB_DEPENDS=	libpetsc.so:science/PETSc
 PETSC_IMPLIES=		MPI # has to use the same MPI as PETSc uses
@@ -84,6 +86,8 @@ SCALAPACK_IMPLIES=	MPI LAPACK
 SCALAPACK_LIB_DEPENDS=	libscalapack.so:math/scalapack
 
 SLEPC_DESC=		Compile with Slepc (only with MPI)
+SLEPC_USES=		xorg
+SLEPC_USE=		XORG=x11 # SLEPc adds x11 through interface libraries
 SLEPC_CMAKE_BOOL=	DEAL_II_WITH_SLEPC
 SLEPC_LIB_DEPENDS=	libslepc.so:math/slepc
 SLEPC_IMPLIES=		MPI # has to use the same MPI as PETSc uses
