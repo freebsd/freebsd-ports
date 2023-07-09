@@ -25,6 +25,7 @@ USE_GNOME=	cairo glib20
 USE_GL=		gl
 USE_XORG=	x11
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++14 # fix compilation failure on 14: error: ISO C++17 does not allow 'register' storage class specifier [-Wregister]
 
 SHEBANG_FILES=	tools/sminstbuilder.in
 
