@@ -1,0 +1,3 @@
+JSON support files from the JSON Schema Specifications (metaschemas,
+vocabularies, etc.), packaged for runtime access from Python as a
+referencing-based Schema Registry.
