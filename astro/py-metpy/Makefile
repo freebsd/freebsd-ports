@@ -1,6 +1,6 @@
 PORTNAME=	metpy
 PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	astro python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -31,10 +31,15 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+PLIST_FILES=	${PYTHON_SITELIBDIR}/metpy/static-data-manifest.txt
+
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} < 30900
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.3.0:devel/py-importlib-resources@${PY_FLAVOR}
 .endif
+
+post-install:
+	${INSTALL_DATA} ${WRKSRC}/src/metpy/static-data-manifest.txt ${STAGEDIR}${PYTHON_SITELIBDIR}/metpy/static-data-manifest.txt
 
 .include <bsd.port.post.mk>
