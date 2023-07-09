@@ -26,4 +26,9 @@ USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
 
+OPTIONS_DEFINE=	LINKIFY
+LINKIFY_DESC=	Linkify extension
+
+LINKIFY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}linkify-it-py>=2.0<3:textproc/py-linkify-it-py@${PY_FLAVOR}
+
 .include <bsd.port.mk>
