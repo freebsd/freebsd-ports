@@ -1,3 +1,3 @@
-TIMESTAMP = 1685792980
-SHA256 (rubygem/aws-sdk-snowdevicemanagement-1.10.0.gem) = f5d53e25d0791e33e089422a2e78e84f2b6c5b7bf0990774f0fc58c2f61612b5
-SIZE (rubygem/aws-sdk-snowdevicemanagement-1.10.0.gem) = 28672
+TIMESTAMP = 1688167000
+SHA256 (rubygem/aws-sdk-snowdevicemanagement-1.12.0.gem) = e715ed090146db6c93edd568ff6e2380ca31e22b2a911f1462b002f73c9a2866
+SIZE (rubygem/aws-sdk-snowdevicemanagement-1.12.0.gem) = 29184
