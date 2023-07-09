@@ -1,5 +1,5 @@
 PORTNAME=	gettext_i18n_rails
-PORTVERSION=	1.11.0
+PORTVERSION=	1.12.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
