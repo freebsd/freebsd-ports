@@ -1,0 +1,2 @@
+uc.micro-py is a Python port of uc.micro. It provides micro subset of Unicode
+data files ONLY for linkify-it-py projects needs.

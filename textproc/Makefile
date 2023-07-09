@@ -1603,6 +1603,7 @@
     SUBDIR += py-ttp
     SUBDIR += py-ttp-templates
     SUBDIR += py-typogrify
+    SUBDIR += py-uc-micro-py
     SUBDIR += py-ucl
     SUBDIR += py-ufal.udpipe
     SUBDIR += py-unicodeitplus
