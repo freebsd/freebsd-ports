@@ -1,6 +1,6 @@
 PORTNAME=	haplohseq
 DISTVERSION=	0.1.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	biology
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	MIT
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs
 RUN_DEPENDS=	R-cran-optparse>0:devel/R-cran-optparse
 
-USES=		compiler:c++11-lang gmake localbase:ldflags python
+USES=		compiler:c++14-lang gmake localbase:ldflags python
 USE_GITHUB=	yes
 
 GH_ACCOUNT=	outpaddling
@@ -20,6 +20,7 @@ GH_ACCOUNT=	outpaddling
 OPTIONS_DEFINE=	EXAMPLES
 
 MAKEFILE=	makefile
+CXXFLAGS+=	-std=c++14
 LDFLAGS+=	-lpthread
 MAKE_ENV=	STRIP=${STRIP}
 
