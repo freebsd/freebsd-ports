@@ -1042,6 +1042,7 @@
     SUBDIR += py-rpy2
     SUBDIR += py-rustworkx
     SUBDIR += py-rvlib
+    SUBDIR += py-scikit-fem
     SUBDIR += py-scikit-umfpack
     SUBDIR += py-scs
     SUBDIR += py-seaborn
