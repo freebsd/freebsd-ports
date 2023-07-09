@@ -1,12 +1,12 @@
 PORTNAME=	google-cloud-appengine-logging
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python Client for Google Cloud Appengine Logging
-WWW=		https://github.com/googleapis/python-appengine-logging
+WWW=		https://github.com/googleapis/google-cloud-python
 
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
