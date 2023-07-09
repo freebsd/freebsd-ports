@@ -107,7 +107,7 @@ libexec/pyenv-plugins/python-build/share/python-build/3.11.2
 libexec/pyenv-plugins/python-build/share/python-build/3.11.3
 libexec/pyenv-plugins/python-build/share/python-build/3.11.4
 libexec/pyenv-plugins/python-build/share/python-build/3.12-dev
-libexec/pyenv-plugins/python-build/share/python-build/3.12.0b2
+libexec/pyenv-plugins/python-build/share/python-build/3.12.0b3
 libexec/pyenv-plugins/python-build/share/python-build/3.13-dev
 libexec/pyenv-plugins/python-build/share/python-build/3.2.0
 libexec/pyenv-plugins/python-build/share/python-build/3.2.1
@@ -295,6 +295,7 @@ libexec/pyenv-plugins/python-build/share/python-build/anaconda3-5.1.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-5.2.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-5.3.0
 libexec/pyenv-plugins/python-build/share/python-build/anaconda3-5.3.1
+libexec/pyenv-plugins/python-build/share/python-build/cinder-3.10-dev
 libexec/pyenv-plugins/python-build/share/python-build/cinder-3.8-dev
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-22.3.0
 libexec/pyenv-plugins/python-build/share/python-build/graalpy-23.0.0
@@ -756,6 +757,8 @@ libexec/pyenv-plugins/python-build/share/python-build/patches/3.9.4/Python-3.9.4
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.9.5/Python-3.9.5/0001-bpo-45405-Prevent-internal-configure-error-when-runn.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.9.6/Python-3.9.6/0001-bpo-45405-Prevent-internal-configure-error-when-runn.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/3.9.7/Python-3.9.7/0001-bpo-45405-Prevent-internal-configure-error-when-runn.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/cinder-3.10-dev/Cinder-3.10-dev/001-disable-werror.patch
+libexec/pyenv-plugins/python-build/share/python-build/patches/cinder-3.8-dev/Cinder-3.8-dev/001-disable-werror.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/stackless-3.2.2/stackless-322-export/002_readline63.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/stackless-3.2.2/stackless-322-export/010_ssl_no_ssl3.patch
 libexec/pyenv-plugins/python-build/share/python-build/patches/stackless-3.2.5/stackless-325-export/002_readline63.patch
