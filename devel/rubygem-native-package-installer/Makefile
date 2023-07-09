@@ -1,5 +1,5 @@
 PORTNAME=	native-package-installer
-PORTVERSION=	1.1.5
+PORTVERSION=	1.1.8
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
