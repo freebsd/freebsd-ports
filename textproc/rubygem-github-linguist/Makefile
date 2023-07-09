@@ -1,11 +1,11 @@
 PORTNAME=	github-linguist
-PORTVERSION=	7.25.0
+PORTVERSION=	7.26.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	GitHub Language detection
-WWW=		https://github.com/github/linguist
+WWW=		https://github.com/github-linguist/linguist
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
