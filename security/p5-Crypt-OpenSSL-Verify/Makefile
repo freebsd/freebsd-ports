@@ -1,5 +1,5 @@
 PORTNAME=	Crypt-OpenSSL-Verify
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -10,6 +10,8 @@ WWW=		https://metacpan.org/dist/Crypt-OpenSSL-Verify
 
 LICENSE=	OpenSSL
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	p5-Crypt-OpenSSL-Guess>=0:security/p5-Crypt-OpenSSL-Guess
 
 USES=		perl5 ssl
 USE_PERL5=	configure
