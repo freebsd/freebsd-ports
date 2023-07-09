@@ -1400,6 +1400,7 @@
     SUBDIR += py-libxml2
     SUBDIR += py-license-expression
     SUBDIR += py-line-protocol-parser
+    SUBDIR += py-linkify-it-py
     SUBDIR += py-m2r
     SUBDIR += py-mako
     SUBDIR += py-markdown
