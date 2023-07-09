@@ -2,7 +2,7 @@
 #
 # Feature:	ghostscript
 # Usage:	USES=ghostscript or USES=ghostscript:args
-# Valid ARGS:	<version>, build, run, test, x11, lib
+# Valid ARGS:	<version>, build, lib, run, test, x11
 #
 # version 	The chooseable versions are 9, agpl and 10. If no version is
 #		specified version agpl is selected. 9 and agpl are synonymous.
@@ -11,15 +11,12 @@
 #		USES=ghostscript:run	# Use the set default Ghostscript as a run dependency
 #		USES=ghostscript:9,build # Use ghostscript 9 as a build dependency.
 #
+# build		Ghostscript is used as BUILD_DEPENDS
+# lib		Ghostscript is used as LIB_DEPENDS
+# run		Ghostscript is used as RUN_DEPENDS
+# test		Ghostscript is used as TEST_DEPENDS
+#
 # x11		Indicate that X11 support is required.
-# build		Indicates that Ghostscript is needed at build time and adds
-#		it as BUILD_DEPENDS.
-# run		Indicates that Ghostscript is needed at run time and adds
-#		it as RUN_DEPENDS.
-# test		Indicates that Ghostscript is needed at test time and adds
-#		it as TEST_DEPENDS.
-# lib		Indicates that Ghostscript is needed at link time and adds
-#		it as LIB_DEPENDS.
 #
 # If build and run are omitted, Ghostscript will be added as BUILD_DEPENDS and
 # RUN_DEPENDS.
@@ -36,7 +33,7 @@ _GS_VERSION=	9 agpl 10
 
 _GS_ARGS=	${ghostscript_ARGS}
 
-.  if ${_GS_ARGS:N9:N10:Nagpl:Nx11:Nbuild:Nrun:Ntest:Nlib}
+.  if ${_GS_ARGS:N9:N10:Nagpl:Nbuild:Nlib:Nrun:Ntest:Nx11}
 IGNORE?=	Unknown ghostscript argument ${_GS_ARGS}
 .  endif
 
@@ -47,11 +44,14 @@ IGNORE?=	Invalid GHOSTSCRIPT_DEFAULT value: ${GHOSTSCRIPT_DEFAULT}, please selec
 # Make sure that no dependency or some other environment variable
 # pollutes the build/run dependency detection
 .undef _GS_BUILD_DEP
+.undef _GS_LIB_DEP
 .undef _GS_RUN_DEP
 .undef _GS_TEST_DEP
-.undef _GS_LIB_DEP
 .  if ${_GS_ARGS:Mbuild}
 _GS_BUILD_DEP=	yes
+.  endif
+.  if ${_GS_ARGS:Mlib}
+_GS_LIB_DEP=	yes
 .  endif
 .  if ${_GS_ARGS:Mrun}
 _GS_RUN_DEP=	yes
@@ -59,13 +59,10 @@ _GS_RUN_DEP=	yes
 .  if ${_GS_ARGS:Mtest}
 _GS_TEST_DEP=	yes
 .  endif
-.  if ${_GS_ARGS:Mlib}
-_GS_LIB_DEP=	yes
-.  endif
 
-# The port does not specify a build, run, test, or lib dependency, assume that
+# The port does not specify a build, lib, run or test dependency, assume that
 # a build and run dependency is required.
-.  if !defined(_GS_BUILD_DEP) && !defined(_GS_RUN_DEP) && !defined(_GS_TEST_DEP) && !defined(_GS_LIB_DEP)
+.  if !defined(_GS_BUILD_DEP) && !defined(_GS_LIB_DEP) && !defined(_GS_RUN_DEP) && !defined(_GS_TEST_DEP)
 _GS_BUILD_DEP=	yes
 _GS_RUN_DEP=	yes
 .  endif
@@ -101,7 +98,7 @@ _GS_X11_PKGNAME=ghostscript${_GS_SELECTED}-x11
 _GS_PORT=	print/ghostscript${_GS_SELECTED}${_GS_FLAVORED:?:-base}
 _GS_X11_PORT=	print/ghostscript${_GS_SELECTED}${_GS_FLAVORED:?@:-}x11
 
-.  for type in BUILD RUN TEST LIB
+.  for type in BUILD LIB RUN TEST
 .    if defined(_GS_${type}_DEP)
 .      if !defined(_GS_FLAVORED) || !${_GS_ARGS:Mx11}
 .        if ${type:MLIB}
