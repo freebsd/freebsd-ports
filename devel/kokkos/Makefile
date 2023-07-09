@@ -1,5 +1,5 @@
 PORTNAME=	kokkos
-DISTVERSION=	3.7.01
+DISTVERSION=	4.1.00
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -19,7 +19,7 @@ USE_LDCONFIG=	yes
 SHEBANG_FILES=	bin/nvcc_wrapper bin/kokkos_launch_compiler
 
 CMAKE_ON=	BUILD_SHARED_LIBS
-CMAKE_TESTING_ON=	Kokkos_ENABLE_TESTS # 5 tests fail, see https://github.com/kokkos/kokkos/issues/5400
+CMAKE_TESTING_ON=	Kokkos_ENABLE_TESTS # 1 test fails, see https://github.com/kokkos/kokkos/issues/5400
 
 LDFLAGS+=	-lexecinfo
 
