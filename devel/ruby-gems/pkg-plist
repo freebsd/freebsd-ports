@@ -171,6 +171,7 @@ bin/gem
 %%RUBY_SITELIBDIR%%/rubygems/security/signer.rb
 %%RUBY_SITELIBDIR%%/rubygems/security/trust_dir.rb
 %%RUBY_SITELIBDIR%%/rubygems/security_option.rb
+%%RUBY_SITELIBDIR%%/rubygems/shellwords.rb
 %%RUBY_SITELIBDIR%%/rubygems/source.rb
 %%RUBY_SITELIBDIR%%/rubygems/source/git.rb
 %%RUBY_SITELIBDIR%%/rubygems/source/installed.rb
