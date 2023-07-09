@@ -1,4 +1,5 @@
-pydantic-core provides the core functionality for pydantic. The package is
-currently a work in progress and subject to significant change. There is, as
-yet, no integration with pydantic, so schemas can only be defined via
-dictionaries.
+Pydantic-core provides the core functionality for pydantic validation and
+serialization.
+
+Pydantic-core is currently around 17x faster than pydantic v1. See
+tests/benchmarks/ for details.
