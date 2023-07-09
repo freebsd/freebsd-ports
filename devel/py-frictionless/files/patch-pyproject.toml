@@ -1,0 +1,20 @@
+--- pyproject.toml.orig	2020-02-02 00:00:00 UTC
++++ pyproject.toml
+@@ -43,7 +43,7 @@ dependencies = [
+     "chardet>=3.0",
+     "requests>=2.10",
+     "humanize>=4.2",
+-    "tabulate>=0.8.10",
++    "tabulate>=0.8.9",
+     "jsonschema>=2.5",
+     "simpleeval>=0.9.11",
+     "stringcase>=1.2",
+@@ -92,7 +92,7 @@ mysql = ["sqlalchemy>=1.4", "pymysql>=1.0"]
+ ods = ["ezodf>=0.3", "lxml>=4.0"]
+ pandas = ["pandas>=1.0"]
+ parquet = ["fastparquet>=0.8"]
+-postgresql = ["sqlalchemy>=1.4", "psycopg>=3.0", "psycopg2>=2.9"]
++postgresql = ["sqlalchemy>=1.4", "psycopg>=3.0"]
+ spss = ["savReaderWriter>=3.0"]
+ sql = ["sqlalchemy>=1.4"]
+ visidata = ["visidata>=2.10"]
