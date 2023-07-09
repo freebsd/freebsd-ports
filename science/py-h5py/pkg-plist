@@ -23,6 +23,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/strings.rst
 %%PORTDOCS%%%%DOCSDIR%%/swmr.rst
 %%PORTDOCS%%%%DOCSDIR%%/vds.rst
+%%PORTDOCS%%%%DOCSDIR%%/whatsnew/%%PYTHON_VER%%.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.0.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.1.rst
 %%PORTDOCS%%%%DOCSDIR%%/whatsnew/2.10.rst

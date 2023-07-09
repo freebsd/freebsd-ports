@@ -1,6 +1,5 @@
 PORTNAME=	h5py
-PORTVERSION=	3.8.0
-PORTREVISION=	1
+PORTVERSION=	3.9.0
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +11,11 @@ WWW=		https://www.h5py.org/
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/licenses/license.txt
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pkgconfig>=0,1:devel/py-pkgconfig@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cython>=0.29.31<1:lang/cython@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pkgconfig>=0,1:devel/py-pkgconfig@${PY_FLAVOR} \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	libhdf5.so:science/hdf5
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.14.5,1:math/py-numpy@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}numpy>=1.17.3,1:math/py-numpy@${PY_FLAVOR}
 
 USES=		localbase pkgconfig python
 USE_PYTHON=	autoplist concurrent cython distutils pytest
