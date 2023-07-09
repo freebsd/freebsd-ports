@@ -5512,6 +5512,7 @@
     SUBDIR += py-scheduler
     SUBDIR += py-schema
     SUBDIR += py-schematics-patched
+    SUBDIR += py-scikit-base
     SUBDIR += py-scikit-build
     SUBDIR += py-scikit-build-core
     SUBDIR += py-scooby
