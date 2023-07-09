@@ -4,7 +4,7 @@
      cmdclass={
          "test": Tox,
          "build_ext": BuildExtCommand,
--        "build_py": LibDDWaf_Download,
+-        "build_py": LibraryDownloader,
          "clean": CleanLibraries,
      },
      entry_points={
