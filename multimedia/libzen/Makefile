@@ -1,5 +1,5 @@
 PORTNAME=	libzen
-PORTVERSION=	23.04
+PORTVERSION=	23.06
 PORTEPOCH=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	https://mediaarea.net/download/binary/mediainfo/${PORTVERSION}/ \
