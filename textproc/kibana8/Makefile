@@ -13,7 +13,7 @@ WWW=		https://www.elastic.co/products/kibana
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/npm:www/npm-node16
+BUILD_DEPENDS=	npm-node16>=9.7.2:www/npm-node16
 LIB_DEPENDS=	libre2.so:devel/re2 \
 		libuv.so:devel/libuv
 RUN_DEPENDS=	${LOCALBASE}/bin/node:www/node16
