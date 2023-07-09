@@ -1,3 +1,3 @@
-TIMESTAMP = 1688166950
-SHA256 (rubygem/aws-sdk-s3outposts-1.20.0.gem) = 427f0cc536ccba1b85193c55bb469f96f239fdb0b242d6a4653d8b27bbbc12c4
-SIZE (rubygem/aws-sdk-s3outposts-1.20.0.gem) = 22528
+TIMESTAMP = 1688902793
+SHA256 (rubygem/aws-sdk-s3outposts-1.21.0.gem) = b3efe0b71e3c6f6037ff79acb1e781b9d84546ff8fd17380f49b296e25ed68da
+SIZE (rubygem/aws-sdk-s3outposts-1.21.0.gem) = 23040
