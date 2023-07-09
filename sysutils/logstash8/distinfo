@@ -1,3 +1,3 @@
-TIMESTAMP = 1682975857
-SHA256 (logstash-8.7.0-darwin-x86_64.tar.gz) = ef47db5805a4529f7101749b4b718a766fb4f6600509819f42c82ea1f45c4918
-SIZE (logstash-8.7.0-darwin-x86_64.tar.gz) = 321866017
+TIMESTAMP = 1688849024
+SHA256 (logstash-8.8.2-darwin-x86_64.tar.gz) = c40a6ab0eaf037c88e953472109f85345b5652d2a55f2302efe8942d3a8aad3b
+SIZE (logstash-8.8.2-darwin-x86_64.tar.gz) = 340643992
