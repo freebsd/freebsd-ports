@@ -5,3 +5,14 @@ normally reroute all your network traffic through the VPN, this one tries to
 minimize your contact with an intrusive VPN. This is also known as a
 split-tunnel VPN, since it splits your traffic between the VPN tunnel and your
 normal network interfaces.
+
+vpn-slice makes it easy to set up a split-tunnel VPN:
+- By default, it only routes traffic for specific hosts or subnets through the
+  VPN.
+- It automatically looks up named hosts, using the VPN's DNS servers, and adds
+  entries for them to your /etc/hosts (which it cleans up after VPN
+  disconnection), however it does not otherwise alter your /etc/resolv.conf at
+  all.
+- It has many additional options to customize routing and lookup (for example,
+  --route-splits to additionally route traffic for specific subnets requested by
+  the server). Run vpn-slice --help to see them all.
