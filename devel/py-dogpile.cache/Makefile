@@ -1,5 +1,5 @@
 PORTNAME=	dogpile.cache
-PORTVERSION=	1.2.1
+PORTVERSION=	1.2.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -20,4 +20,10 @@ USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 31100
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.0.1:devel/py-typing-extensions@${PY_FLAVOR}
+.endif
+
+.include <bsd.port.post.mk>
