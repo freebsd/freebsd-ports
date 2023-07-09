@@ -12,8 +12,8 @@
 -charset-normalizer==3.1.0   # chardet
 +charset-normalizer>=3.1.0   # chardet
  # Tmserver backend
--cheroot==9.0.0       # tmserver
-+cheroot>=9.0.0       # tmserver
+-cheroot==10.0.0       # tmserver
++cheroot>=10.0.0       # tmserver
  # Format support
 -fluent.syntax==0.19.0 # Fluent
 +fluent.syntax>=0.19.0 # Fluent
@@ -34,8 +34,8 @@
  # Faster matching in e.g. pot2po
  python-Levenshtein>=0.12    # Levenshtein
  # Format support
--ruamel.yaml==0.17.26 # YAML
-+ruamel.yaml>=0.17.26 # YAML
+-ruamel.yaml==0.17.31 # YAML
++ruamel.yaml>=0.17.31 # YAML
  # Format support
 -vobject==0.9.6.1     # iCal
 +vobject>=0.9.6.1     # iCal

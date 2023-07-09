@@ -1,5 +1,5 @@
 PORTNAME=	translate-toolkit
-PORTVERSION=	3.9.0
+PORTVERSION=	3.9.1
 CATEGORIES=	textproc
 MASTER_SITES=	PYPI
 
@@ -65,9 +65,9 @@ RC_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}pyparsing>=3.0.7:devel/py-pyparsing@${PY
 RC_VARS=		MANPAGES+="po2rc rc2po"
 SPELLCHECK_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}enchant>=3.2.2:textproc/py-enchant@${PY_FLAVOR}
 SUBTITLES_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aeidon>=1.12:textproc/py-aeidon@${PY_FLAVOR}
-TMSERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=9.0.0:www/py-cheroot@${PY_FLAVOR}
+TMSERVER_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cheroot>=10.0.0:www/py-cheroot@${PY_FLAVOR}
 TRADOS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=4.3:www/py-beautifulsoup@${PY_FLAVOR}
-YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.26:devel/py-ruamel.yaml@${PY_FLAVOR}
+YAML_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ruamel.yaml>=0.17.31:devel/py-ruamel.yaml@${PY_FLAVOR}
 YAML_VARS=		MANPAGES+="po2yaml yaml2po"
 
 .include <bsd.port.options.mk>
