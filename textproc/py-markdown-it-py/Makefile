@@ -1,12 +1,13 @@
 PORTNAME=	markdown-it-py
-PORTVERSION=	2.2.0
+PORTVERSION=	3.0.0
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Python port of markdown-it
-WWW=		https://github.com/executablebooks/markdown-it-py
+WWW=		https://markdown-it-py.readthedocs.io/en/latest/ \
+		https://github.com/executablebooks/markdown-it-py
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
