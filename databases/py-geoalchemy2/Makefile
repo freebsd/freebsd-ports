@@ -1,6 +1,5 @@
 PORTNAME=	geoalchemy2
-PORTVERSION=	0.13.3
-PORTREVISION=	1
+PORTVERSION=	0.14.0
 CATEGORIES=	databases geography python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,5 +22,10 @@ USES=		python
 USE_PYTHON=	autoplist concurrent pep517
 
 NO_ARCH=	yes
+
+OPTIONS_DEFINE=	SHAPELY
+SHAPELY_DESC=	Shapely integration
+
+SHAPELY_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}shapely>=1.7:devel/py-shapely@${PY_FLAVOR}
 
 .include <bsd.port.mk>
