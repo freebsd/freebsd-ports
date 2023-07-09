@@ -1,12 +1,13 @@
 PORTNAME=	bittwist
-PORTVERSION=	3.2
+PORTVERSION=	3.7
 DISTVERSIONPREFIX=	bsd-
 CATEGORIES=	net
 MASTER_SITES=	SF/bittwist/BSD/Bit-Twist%20${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Libpcap-based Ethernet packet generator, with PCAP editor
-WWW=		https://bittwist.sourceforge.io/
+WWW=		https://bittwist.sourceforge.io/ \
+		https://github.com/ayeowch/bittwist
 
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -24,7 +25,7 @@ DOS2UNIX_FILES=	COPYING
 
 do-build:
 	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/src/bittwist.c ${WRKSRC}/src/token_bucket.c -o ${WRKSRC}/src/bittwist
-	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/src/bittwiste.c -o ${WRKSRC}/src/bittwiste
+	${CC} ${CFLAGS} ${LDFLAGS} ${WRKSRC}/src/bittwiste.c ${WRKSRC}/src/tinymt/tinymt64.c ${WRKSRC}/src/template_pcap.c -I${WRKSRC}/src/tinymt -o ${WRKSRC}/src/bittwiste
 
 do-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/bin/ ${STAGEDIR}${PREFIX}/share/man/man1/
