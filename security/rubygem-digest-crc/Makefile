@@ -1,5 +1,5 @@
 PORTNAME=	digest-crc
-PORTVERSION=	0.6.4
+PORTVERSION=	0.6.5
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
