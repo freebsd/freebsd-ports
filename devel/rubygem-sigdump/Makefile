@@ -1,16 +1,17 @@
 PORTNAME=	sigdump
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.5
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Setup signal handler which dumps backtrace of running threads
-WWW=		https://github.com/frsyuki/sigdump
+WWW=		https://github.com/fluent/sigdump
 
-LICENSE=	MIT
+LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-NO_ARCH=	yes
 USES=		gem
+
+NO_ARCH=	yes
 
 .include <bsd.port.mk>
