@@ -1,6 +1,6 @@
 PORTNAME=	vulkan-validation-layers
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.3.256
+DISTVERSION=	1.3.257
 CATEGORIES=	graphics
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -22,11 +22,6 @@ GH_TUPLE=	KhronosGroup:SPIRV-Headers:1.5.4.raytracing.fixed-284-g3469b16:headers
 CMAKE_OFF=	BUILD_TESTS
 CMAKE_ON=	BUILD_LAYER_SUPPORT_FILES
 CMAKE_ARGS=	-DSPIRV_HEADERS_INSTALL_DIR:PATH="${WRKSRC_headers}"
-
-.if ${DISTVERSION:E} < 257
-GH_TUPLE+=	KhronosGroup:Vulkan-Headers:v1.3.256:vkheaders/Vulkan-Headers
-CFLAGS+=	-I${WRKSRC_vkheaders}/include
-.endif
 
 OPTIONS_DEFINE=	WAYLAND XCB XLIB
 OPTIONS_DEFAULT=WAYLAND XCB XLIB
