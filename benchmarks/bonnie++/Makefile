@@ -10,6 +10,7 @@ WWW=		https://www.coker.com.au/bonnie++/
 LICENSE=	GPLv2
 
 USES=	shebangfix tar:tgz
+USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
 SHEBANG_FILES=	bon_csv2txt.in
