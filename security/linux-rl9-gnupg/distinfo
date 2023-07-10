@@ -1,0 +1,11 @@
+TIMESTAMP = 1688982135
+SHA256 (rocky/g/gnupg2-2.3.3-2.el9_0.aarch64.rpm) = dcc5af6d27b9fa868480416f06e4006f0980b592f133a9a6cff164d3d150dc8d
+SIZE (rocky/g/gnupg2-2.3.3-2.el9_0.aarch64.rpm) = 2570075
+SHA256 (rocky/g/gnupg2-2.3.3-2.el9_0.x86_64.rpm) = ac9e8c035ce0b851d1cf9d959c74d80460d82610d5705e8e9c4496cc7578a093
+SIZE (rocky/g/gnupg2-2.3.3-2.el9_0.x86_64.rpm) = 2599359
+SHA256 (rocky/g/gnupg2-smime-2.3.3-2.el9_0.aarch64.rpm) = 0d7e91bd4bb35e8ccd577a2ad02237419776da054828bc9b2b68cdc20f624ee1
+SIZE (rocky/g/gnupg2-smime-2.3.3-2.el9_0.aarch64.rpm) = 240571
+SHA256 (rocky/g/gnupg2-smime-2.3.3-2.el9_0.x86_64.rpm) = 6c2ad44232aff2fd30ac354ee071d5b4f6a0c2b1c307d6f7531d5cf60b59488d
+SIZE (rocky/g/gnupg2-smime-2.3.3-2.el9_0.x86_64.rpm) = 247635
+SHA256 (rocky/g/gnupg2-2.3.3-2.el9_0.src.rpm) = 53ae897c6bcaec8daa40cd77049b674897f427dfdc6cf8667d1dbdfa731314b1
+SIZE (rocky/g/gnupg2-2.3.3-2.el9_0.src.rpm) = 7614343

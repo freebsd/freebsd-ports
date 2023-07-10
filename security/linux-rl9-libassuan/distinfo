@@ -1,0 +1,7 @@
+TIMESTAMP = 1688984808
+SHA256 (rocky/l/libassuan-2.5.5-3.el9.aarch64.rpm) = 895d6b549753d70000e5bdcbe39b24b794b6cdbb39a0eefc1c521a14096cdbf3
+SIZE (rocky/l/libassuan-2.5.5-3.el9.aarch64.rpm) = 67159
+SHA256 (rocky/l/libassuan-2.5.5-3.el9.x86_64.rpm) = 5d5e555c9c4dfbd293acdc0ae739b41e635a2239a2c41ce11aafedd1d1ed54f4
+SIZE (rocky/l/libassuan-2.5.5-3.el9.x86_64.rpm) = 68714
+SHA256 (rocky/l/libassuan-2.5.5-3.el9.src.rpm) = 9f2f27146feea71dfd0e6d809446271acf0843b89541ea505b1d266ecf93f2af
+SIZE (rocky/l/libassuan-2.5.5-3.el9.src.rpm) = 584211
