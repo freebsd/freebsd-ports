@@ -1,12 +1,14 @@
 PORTNAME=	xroach
 PORTVERSION=	4.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	https://cyber.dabamos.de/pub/distfiles/
 DISTNAME=	${PORTNAME}
 
 MAINTAINER=	kidon@posteo.de
 COMMENT=	Cockroaches hide under your windows
+
+LICENSE=	BSD2CLAUSE
 
 DPADD+=		${LOCALBASE}/lib/libX11.a ${LIBM}
 CFLAGS+=	-I${LOCALBASE}/include
