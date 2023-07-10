@@ -1,6 +1,5 @@
 PORTNAME=	flowgger
-DISTVERSION=	0.2.10
-PORTREVISION=	26
+DISTVERSION=	0.3.1
 CATEGORIES=	sysutils
 MASTER_SITES=	CRATESIO
 DISTFILES=	${CARGO_DIST_SUBDIR}/${DISTNAME}${CARGO_CRATE_EXT}
@@ -15,168 +14,189 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	capnp:devel/capnproto
 
 USES=		cargo ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Cannot detect OpenSSL 3.0.0 and later
-CARGO_CRATES=	adler32-1.0.4 \
-		ansi_term-0.11.0 \
-		ascii-0.9.3 \
-		atty-0.2.13 \
-		autocfg-0.1.6 \
-		autocfg-1.0.0 \
-		backtrace-0.3.38 \
-		backtrace-sys-0.1.31 \
-		bitflags-1.2.0 \
-		build_const-0.2.1 \
+#BROKEN_SSL=	openssl30 openssl31
+#BROKEN_SSL_REASON=	Cannot detect OpenSSL 3.0.0 and later
+CARGO_CRATES=	addr2line-0.19.0 \
+		adler-1.0.2 \
+		async-trait-0.1.60 \
+		atty-0.2.14 \
+		autocfg-1.1.0 \
+		backtrace-0.3.67 \
+		bitflags-1.3.2 \
+		build_const-0.2.2 \
 		byteorder-0.5.3 \
-		byteorder-1.3.2 \
-		bytes-0.4.12 \
-		c2-chacha-0.2.2 \
+		byteorder-1.4.3 \
+		bytes-1.3.0 \
 		capnp-0.10.3 \
+		capnp-0.14.11 \
 		capnpc-0.10.2 \
-		cc-1.0.45 \
+		cc-1.0.78 \
 		cfg-if-0.1.10 \
-		chrono-0.4.9 \
-		chrono-tz-0.5.1 \
-		clap-2.33.0 \
-		cloudabi-0.0.3 \
-		combine-3.8.1 \
+		cfg-if-1.0.0 \
+		clap-3.2.23 \
+		clap_lex-0.2.4 \
+		combine-4.6.6 \
+		core_affinity-0.7.6 \
 		crc-1.8.1 \
-		crc32fast-1.2.0 \
-		crossbeam-0.7.3 \
-		crossbeam-channel-0.4.2 \
-		crossbeam-deque-0.7.3 \
-		crossbeam-epoch-0.8.2 \
-		crossbeam-queue-0.2.1 \
-		crossbeam-utils-0.6.6 \
-		crossbeam-utils-0.7.2 \
+		crc32fast-1.3.2 \
+		crossbeam-0.8.2 \
+		crossbeam-channel-0.5.6 \
+		crossbeam-deque-0.8.2 \
+		crossbeam-epoch-0.9.13 \
+		crossbeam-queue-0.3.8 \
+		crossbeam-utils-0.8.14 \
 		dtoa-0.2.2 \
-		either-1.5.3 \
 		error-chain-0.10.0 \
-		filetime-0.2.7 \
+		filetime-0.2.19 \
 		flate2-0.2.20 \
-		flate2-1.0.11 \
-		fnv-1.0.6 \
+		flate2-1.0.25 \
+		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
+		form_urlencoded-1.1.0 \
 		fsevent-0.4.0 \
 		fsevent-sys-2.0.1 \
 		fuchsia-cprng-0.1.1 \
 		fuchsia-zircon-0.3.3 \
 		fuchsia-zircon-sys-0.3.3 \
-		futures-0.1.29 \
-		generator-0.6.20 \
-		getrandom-0.1.12 \
+		generator-0.7.2 \
+		getrandom-0.2.8 \
+		gimli-0.27.0 \
 		glob-0.3.0 \
-		idna-0.1.5 \
-		inotify-0.6.1 \
-		inotify-sys-0.1.3 \
-		iovec-0.1.2 \
+		hashbrown-0.12.3 \
+		hermit-abi-0.1.19 \
+		hermit-abi-0.2.6 \
+		idna-0.3.0 \
+		indexmap-1.9.2 \
+		inotify-0.7.1 \
+		inotify-sys-0.1.5 \
+		iovec-0.1.4 \
 		itoa-0.1.1 \
+		itoa-1.0.5 \
 		kafka-0.8.0 \
 		kernel32-sys-0.2.2 \
 		lazy_static-1.4.0 \
-		lazycell-1.2.1 \
-		libc-0.2.62 \
-		lock_api-0.1.5 \
+		lazycell-1.3.0 \
+		libc-0.2.139 \
+		lock_api-0.4.9 \
 		log-0.3.9 \
-		log-0.4.8 \
-		matches-0.1.8 \
-		may-0.3.17 \
-		may_queue-0.1.7 \
-		maybe-uninit-2.0.0 \
-		memchr-2.2.1 \
-		memoffset-0.5.4 \
+		log-0.4.17 \
+		may-0.3.31 \
+		may_queue-0.1.10 \
+		memchr-2.5.0 \
+		memoffset-0.7.1 \
 		miniz-sys-0.1.12 \
-		miniz_oxide-0.3.2 \
-		mio-0.6.19 \
-		mio-extras-2.0.5 \
-		miow-0.2.1 \
-		miow-0.3.3 \
-		net2-0.2.33 \
-		nix-0.17.0 \
-		notify-4.0.13 \
-		num-integer-0.1.41 \
+		miniz_oxide-0.6.2 \
+		mio-0.6.23 \
+		mio-extras-2.0.6 \
+		miow-0.2.2 \
+		miow-0.5.0 \
+		net2-0.2.38 \
+		nix-0.26.1 \
+		notify-4.0.17 \
 		num-traits-0.1.43 \
-		num-traits-0.2.8 \
-		num_cpus-1.10.1 \
-		openssl-0.10.28 \
-		openssl-sys-0.9.54 \
-		owning_ref-0.4.0 \
-		parking_lot-0.7.1 \
-		parking_lot_core-0.4.0 \
-		parse-zoneinfo-0.2.1 \
-		percent-encoding-1.0.1 \
-		pkg-config-0.3.16 \
-		ppv-lite86-0.2.5 \
+		num-traits-0.2.15 \
+		num_cpus-1.15.0 \
+		num_threads-0.1.6 \
+		object-0.30.0 \
+		once_cell-1.17.0 \
+		openssl-0.10.45 \
+		openssl-macros-0.1.0 \
+		openssl-sys-0.9.80 \
+		os_str_bytes-6.4.1 \
+		parking_lot-0.12.1 \
+		parking_lot_core-0.9.5 \
+		parse-zoneinfo-0.3.0 \
+		percent-encoding-2.2.0 \
+		phf-0.10.1 \
+		phf_codegen-0.10.0 \
+		phf_generator-0.10.0 \
+		phf_shared-0.10.0 \
+		pin-utils-0.1.0 \
+		pkg-config-0.3.26 \
+		ppv-lite86-0.2.17 \
+		proc-macro2-1.0.49 \
+		quote-1.0.23 \
 		rand-0.4.6 \
-		rand-0.5.6 \
-		rand-0.6.5 \
-		rand-0.7.2 \
-		rand_chacha-0.1.1 \
-		rand_chacha-0.2.1 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
 		rand_core-0.3.1 \
 		rand_core-0.4.2 \
-		rand_core-0.5.1 \
-		rand_hc-0.1.0 \
-		rand_hc-0.2.0 \
-		rand_isaac-0.1.1 \
-		rand_jitter-0.1.4 \
-		rand_os-0.1.3 \
-		rand_pcg-0.1.2 \
-		rand_xorshift-0.1.1 \
+		rand_core-0.6.4 \
 		rdrand-0.4.0 \
-		redis-0.10.0 \
-		redox_syscall-0.1.56 \
-		ref_slice-1.2.0 \
-		regex-1.3.6 \
-		regex-syntax-0.6.17 \
-		remove_dir_all-0.5.2 \
-		rustc-demangle-0.1.16 \
-		rustc_version-0.2.3 \
-		same-file-1.0.5 \
-		scopeguard-0.3.3 \
+		redis-0.21.7 \
+		redox_syscall-0.2.16 \
+		ref_slice-1.2.1 \
+		regex-1.7.0 \
+		regex-syntax-0.6.28 \
+		remove_dir_all-0.5.3 \
+		rustc-demangle-0.1.21 \
+		rustversion-1.0.11 \
+		ryu-1.0.12 \
+		same-file-1.0.6 \
 		scopeguard-1.1.0 \
-		semver-0.9.0 \
-		semver-parser-0.7.0 \
 		serde-0.8.23 \
-		serde-1.0.101 \
+		serde-1.0.152 \
+		serde-xml-rs-0.5.1 \
+		serde_derive-1.0.152 \
 		serde_json-0.8.6 \
-		sha1-0.6.0 \
-		slab-0.4.2 \
-		smallvec-0.6.10 \
-		smallvec-1.2.0 \
+		sha1-0.6.1 \
+		sha1_smol-1.0.0 \
+		siphasher-0.3.10 \
+		slab-0.4.7 \
+		smallvec-1.10.0 \
 		snap-0.2.5 \
-		socket2-0.3.11 \
-		stable_deref_trait-1.1.1 \
-		strsim-0.8.0 \
+		socket2-0.4.7 \
+		static_assertions-1.1.0 \
+		strsim-0.10.0 \
+		syn-1.0.107 \
 		tempdir-0.3.7 \
-		textwrap-0.11.0 \
-		time-0.1.42 \
-		tokio-codec-0.1.1 \
-		tokio-executor-0.1.8 \
-		tokio-io-0.1.12 \
-		tokio-reactor-0.1.9 \
-		tokio-sync-0.1.6 \
-		tokio-tcp-0.1.3 \
-		toml-0.5.3 \
-		twox-hash-1.5.0 \
-		unicode-bidi-0.3.4 \
-		unicode-normalization-0.1.8 \
-		unicode-width-0.1.6 \
-		unreachable-1.0.0 \
-		url-1.7.2 \
-		vcpkg-0.2.7 \
-		vec_map-0.8.1 \
-		void-1.0.2 \
-		walkdir-2.2.9 \
-		wasi-0.7.0 \
+		termcolor-1.1.3 \
+		textwrap-0.16.0 \
+		thiserror-1.0.38 \
+		thiserror-impl-1.0.38 \
+		time-0.3.15 \
+		time-macros-0.2.4 \
+		time-tz-0.3.1 \
+		tinyvec-1.6.0 \
+		tinyvec_macros-0.1.0 \
+		toml-0.5.10 \
+		twox-hash-1.6.3 \
+		unicode-bidi-0.3.8 \
+		unicode-ident-1.0.6 \
+		unicode-normalization-0.1.22 \
+		url-2.3.1 \
+		vcpkg-0.2.15 \
+		walkdir-2.3.2 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
 		winapi-0.2.8 \
-		winapi-0.3.8 \
+		winapi-0.3.9 \
 		winapi-build-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.2 \
+		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		ws2_32-sys-0.2.1
+		windows-0.39.0 \
+		windows-sys-0.32.0 \
+		windows-sys-0.42.0 \
+		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_msvc-0.32.0 \
+		windows_aarch64_msvc-0.39.0 \
+		windows_aarch64_msvc-0.42.0 \
+		windows_i686_gnu-0.32.0 \
+		windows_i686_gnu-0.39.0 \
+		windows_i686_gnu-0.42.0 \
+		windows_i686_msvc-0.32.0 \
+		windows_i686_msvc-0.39.0 \
+		windows_i686_msvc-0.42.0 \
+		windows_x86_64_gnu-0.32.0 \
+		windows_x86_64_gnu-0.39.0 \
+		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_msvc-0.32.0 \
+		windows_x86_64_msvc-0.39.0 \
+		windows_x86_64_msvc-0.42.0 \
+		ws2_32-sys-0.2.1 \
+		xml-rs-0.8.4
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/flowgger
