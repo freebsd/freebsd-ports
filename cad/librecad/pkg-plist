@@ -1386,7 +1386,6 @@ share/applications/librecad.desktop
 %%DATADIR%%/plugins/libasciifile.so
 %%DATADIR%%/plugins/libdivide.so
 %%DATADIR%%/plugins/libgear.so
-%%DATADIR%%/plugins/libimportshp.so
 %%DATADIR%%/plugins/liblist.so
 %%DATADIR%%/plugins/libpicfile.so
 %%DATADIR%%/plugins/libplotequation.so
