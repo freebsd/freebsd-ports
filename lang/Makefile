@@ -282,6 +282,7 @@
     SUBDIR += pocl
     SUBDIR += polyml
     SUBDIR += pomsky
+    SUBDIR += prql
     SUBDIR += ptoc
     SUBDIR += purescript
     SUBDIR += py-hy
