@@ -1,6 +1,6 @@
 PORTNAME=	hedgedoc
 DISTVERSION=	1.9.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www editors
 MASTER_SITES=	https://github.com/${PORTNAME}/${PORTNAME}/releases/download/${DISTVERSION}/ \
 		https://nodejs.org/download/release/v${NODEJS_HEADERS}/:node \
@@ -45,6 +45,7 @@ _YARN_CACHE=	${_YARN_HOME}/.cache
 _YARN_CMD=	${SETENV} ${_YARN_ENV} ${_YARN_BIN} ${_YARN_FLAGS}
 _YARN_CWD=	${WRKSRC}
 _YARN_ENV=	HOME=${_YARN_HOME} NODE_ENV=production \
+		PATH=${PATH}:/usr/local/lib/node_modules/npm/node_modules/.bin/ \
 		NPM_CONFIG_TARBALL=${DISTDIR}/node-v${NODEJS_HEADERS}-headers.tar.gz \
 		PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true PYTHON=${PYTHON_CMD}
 _YARN_FLAGS=	--skip-integrity-check --noninteractive --no-node-version-check \
