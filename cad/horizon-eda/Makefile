@@ -24,8 +24,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libzip.so:archivers/libzip \
 		libzmq.so:net/libzmq4
 
-USES=		gmake gnome libarchive localbase pkgconfig python:build sqlite # compiler:c++17-lang
+USES=		desktop-file-utils gmake gnome libarchive localbase pkgconfig python:build sqlite # compiler:c++17-lang
 USE_GNOME=	atkmm gdkpixbuf2 gtkmm30 librsvg2
+USE_CXXSTD=	c++14 # fix build failure on 14 due to the use of deprecated std::binary_function C++ feature, see https://github.com/horizon-eda/horizon/issues/727
 
 USE_GITHUB=	yes
 GH_PROJECT=	horizon
