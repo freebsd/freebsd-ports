@@ -1,0 +1,66 @@
+From ede1cf4ad6f945349060db9446c489e3fd34dec4 Mon Sep 17 00:00:00 2001
+From: Igor Kushnir <igorkuo@gmail.com>
+Date: Fri, 7 Jul 2023 09:50:30 +0300
+Subject: [PATCH] Don't cast out-of-enum-range -1 to CommonIntegralTypes
+
+This fixes the following Clang 16 compilation error:
+kdevelop/plugins/clang/duchain/cursorkindtraits.h:217:7: error: integer value -1 is outside the valid range of values [0, 255] for the enumeration type 'CommonIntegralTypes' [-Wenum-constexpr-conversion]
+    : static_cast<IntegralType::CommonIntegralTypes>(-1);
+
+Quote from https://github.com/llvm/llvm-project/issues/59036 :
+    The -Wenum-constexpr-conversion warning was created to account for
+    the fact that casting integers to enums outside of the valid range
+    of the enum is UB in C++17. Constant expressions invoking UB lead to
+    an ill-formed program.
+
+BUG: 471995
+FIXED-IN: 5.12.230800
+---
+ kdevplatform/language/duchain/types/integraltype.h | 3 ++-
+ plugins/clang/duchain/builder.cpp                  | 2 +-
+ plugins/clang/duchain/cursorkindtraits.h           | 2 +-
+ 3 files changed, 4 insertions(+), 3 deletions(-)
+
+diff --git a/kdevplatform/language/duchain/types/integraltype.h b/kdevplatform/language/duchain/types/integraltype.h
+index 32b9b0084c..75516111c7 100644
+--- kdevplatform/language/duchain/types/integraltype.h
++++ kdevplatform/language/duchain/types/integraltype.h
+@@ -50,7 +50,8 @@ public:
+         TypeChar16_t,
+         TypeChar32_t,
+         TypeHalf,
+-        TypeLanguageSpecific = 200
++        TypeLanguageSpecific = 200,
++        TypeNotIntegralType = 255
+     };
+ 
+     /// Default constructor
+diff --git a/plugins/clang/duchain/builder.cpp b/plugins/clang/duchain/builder.cpp
+index a75020d02d..76b301468e 100644
+--- plugins/clang/duchain/builder.cpp
++++ plugins/clang/duchain/builder.cpp
+@@ -508,7 +508,7 @@ struct Visitor
+         return context;
+     }
+ 
+-    template<CXTypeKind TK, EnableIf<CursorKindTraits::integralType(TK) != -1> = dummy>
++    template<CXTypeKind TK, EnableIf<CursorKindTraits::integralType(TK) != IntegralType::TypeNotIntegralType> = dummy>
+     AbstractType *createType(CXType, CXCursor)
+     {
+         // TODO: would be nice to instantiate a ConstantIntegralType here and set a value if possible
+diff --git a/plugins/clang/duchain/cursorkindtraits.h b/plugins/clang/duchain/cursorkindtraits.h
+index 2bd4c83c4f..0e0c6bcdc0 100644
+--- plugins/clang/duchain/cursorkindtraits.h
++++ plugins/clang/duchain/cursorkindtraits.h
+@@ -214,7 +214,7 @@ constexpr IntegralType::CommonIntegralTypes integralType(CXTypeKind TK)
+       ||TK == CXType_Char_S
+       ||TK == CXType_UChar
+       ||TK == CXType_SChar)     ?  IntegralType::TypeChar
+-    : static_cast<IntegralType::CommonIntegralTypes>(-1);
++    : IntegralType::TypeNotIntegralType;
+ }
+ 
+ constexpr bool isArrayType(CXTypeKind TK)
+-- 
+GitLab
+
