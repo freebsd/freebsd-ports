@@ -116,6 +116,7 @@ _linux_${linux_ARGS}_libtasn1=		linux-${linux_ARGS}-libtasn1>0:security/linux-${
 _linux_${linux_ARGS}_libthai=		linux-${linux_ARGS}-libthai>0:devel/linux-${linux_ARGS}-libthai
 _linux_${linux_ARGS}_libtheora=		linux-${linux_ARGS}-libtheora>0:multimedia/linux-${linux_ARGS}-libtheora
 _linux_rl9_libtracker-sparql=		linux-rl9-libtracker-sparql>0:databases/linux-rl9-libtracker-sparql
+_linux_rl9_libunistring=		linux-rl9-libunistring>0:devel/linux-rl9-libunistring
 _linux_${linux_ARGS}_libunwind=		linux-${linux_ARGS}-libunwind>0:devel/linux-${linux_ARGS}-libunwind
 _linux_${linux_ARGS}_libv4l=		linux-${linux_ARGS}-libv4l>0:multimedia/linux-${linux_ARGS}-libv4l
 _linux_${linux_ARGS}_libvorbis=		linux-${linux_ARGS}-libvorbis>0:audio/linux-${linux_ARGS}-libvorbis

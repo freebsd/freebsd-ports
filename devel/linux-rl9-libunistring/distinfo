@@ -1,0 +1,7 @@
+TIMESTAMP = 1688992113
+SHA256 (rocky/l/libunistring-0.9.10-15.el9.aarch64.rpm) = 640263402602c1f5a77a2ecde6b73cfd71e6bb574619f6ead58fdf61c0f4f63e
+SIZE (rocky/l/libunistring-0.9.10-15.el9.aarch64.rpm) = 498368
+SHA256 (rocky/l/libunistring-0.9.10-15.el9.x86_64.rpm) = 7e8b90a282ec310de6766619056296bdf666f3040f22cff211cd52710b39ece5
+SIZE (rocky/l/libunistring-0.9.10-15.el9.x86_64.rpm) = 506614
+SHA256 (rocky/l/libunistring-0.9.10-15.el9.src.rpm) = 36875af891173348e6a925f2503ceed9bde3d53d7ce71cf7d95d45b6d052ee37
+SIZE (rocky/l/libunistring-0.9.10-15.el9.src.rpm) = 2064099
