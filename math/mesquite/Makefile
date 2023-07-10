@@ -1,7 +1,7 @@
 PORTNAME=	mesquite
 DISTVERSION=	2.3.0
 CATEGORIES=	math
-MASTER_SITES=	https://software.sandia.gov/mesquite/
+MASTER_SITES=	https://github.com/sandialabs/mesquite/raw/main/mesquite/
 PKGNAMESUFFIX=	-mesh-toolkit
 
 MAINTAINER=	yuri@FreeBSD.org
