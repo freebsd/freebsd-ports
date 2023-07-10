@@ -16,10 +16,11 @@ BUILD_DEPENDS=	openjpeg>0:graphics/openjpeg \
 		sdl-config:devel/sdl12
 RUN_DEPENDS=	bash:shells/bash
 
-USES=		gmake perl5 pkgconfig gl localbase:ldflags sdl shebangfix xorg
+USES=		desktop-file-utils gmake perl5 pkgconfig gl localbase:ldflags sdl shebangfix xorg
 USE_GL=		gl
 USE_SDL=	sdl2 image2
 USE_XORG=	x11
+USE_CXXSTD=	c++14 # work around error: ISO C++17 does not allow 'register' storage class specifier, see https://github.com/aranym/aranym/issues/106
 
 SHEBANG_FILES=	tools/arabridge
 
