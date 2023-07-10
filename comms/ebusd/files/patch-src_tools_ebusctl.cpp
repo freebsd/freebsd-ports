@@ -1,6 +1,6 @@
---- src/tools/ebusctl.cpp.orig	2022-07-12 13:01:34 UTC
+--- src/tools/ebusctl.cpp.orig	2023-07-08 13:54:20 UTC
 +++ src/tools/ebusctl.cpp
-@@ -147,7 +147,13 @@ string fetchData(ebusd::TCPSocket* socket, bool &liste
+@@ -153,7 +153,13 @@ string fetchData(ebusd::TCPSocket* socket, bool &liste
    time_t now;
    time(&now);
    time_t endTime = now + timeout;

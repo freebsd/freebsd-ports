@@ -1,8 +1,8 @@
---- src/ebusd/main.cpp.orig	2022-07-12 12:56:35 UTC
+--- src/ebusd/main.cpp.orig	2023-07-08 13:54:20 UTC
 +++ src/ebusd/main.cpp
-@@ -34,6 +34,9 @@
- #include "lib/utils/log.h"
+@@ -36,6 +36,9 @@
  #include "lib/utils/httpclient.h"
+ #include "ebusd/scan.h"
  
 +#ifdef __FreeBSD__
 +extern char **environ;
