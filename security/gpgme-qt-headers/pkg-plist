@@ -98,8 +98,3 @@ include/qgpgme/verifyopaquejob.h
 include/qgpgme/wkdlookupjob.h
 include/qgpgme/wkdlookupresult.h
 include/qgpgme/wkspublishjob.h
-lib/cmake/QGpgmeQt6/QGpgmeQt6Config.cmake
-lib/cmake/QGpgmeQt6/QGpgmeQt6ConfigVersion.cmake
-lib/libqgpgmeqt6.so
-lib/libqgpgmeqt6.so.15
-lib/libqgpgmeqt6.so.15.2.1
