@@ -1,6 +1,5 @@
 PORTNAME=	kid3
-PORTVERSION=	3.9.3
-PORTREVISION=	4
+PORTVERSION=	3.9.4
 CATEGORIES=	audio kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
 PKGNAMESUFFIX=	-${FLAVOR}
@@ -39,7 +38,7 @@ PLIST_SUB+=	SHLIB_VER=${PORTVERSION}
 USES+=		qt:5
 USE_QT=		core dbus gui multimedia network xml widgets \
 		buildtools:build linguisttools:build qmake:build
-CMAKE_ON+=	WITH_QT5
+CMAKE_OFF+=	BUILD_WITH_QT6
 PLIST_SUB+=	KF5="@comment " \
 		QT="" \
 		QT_SUFX="-qt"
@@ -48,7 +47,7 @@ KID3_APPS+=	QT
 USES+=		gl qt:6
 USE_GL=		opengl
 USE_QT=		base multimedia tools:build
-CMAKE_OFF+=	WITH_QT5
+CMAKE_ON+=	BUILD_WITH_QT6
 PLIST_SUB+=	KF5="@comment " \
 		QT="" \
 		QT_SUFX="-qt"
@@ -59,7 +58,7 @@ USE_KDE=	auth codecs config configwidgets coreaddons kio \
 		service widgetsaddons xmlgui doctools:build ecm:build
 USE_QT=		concurrent core dbus gui multimedia network xml widgets \
 		buildtools:build linguisttools:build qmake:build
-CMAKE_ON+=	WITH_QT5
+CMAKE_OFF+=	BUILD_WITH_QT6
 PLIST_SUB+=	KF5="" \
 		QT="@comment " \
 		QT_SUFX=""
