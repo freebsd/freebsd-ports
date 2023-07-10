@@ -1,3 +1,83 @@
+  <vuln vid="6fae2d6c-1f38-11ee-a475-080027f5fec9">
+    <topic>redis -- heap overflow in COMMAND GETKEYS and ACL evaluation</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>7.0.12</lt></range>
+      </package>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>7.0.12.20230710</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redis core team reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/JDjKS0GubsQ">
+	  <p>
+	    Extracting key names from a command and a list of
+	    arguments may, in some cases, trigger a heap overflow and
+	    result in reading random heap memory, heap corruption and
+	    potentially remote code execution. Specifically: using
+	    COMMAND GETKEYS* and validation of key names in ACL rules.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-36824</cvename>
+      <url>https://groups.google.com/g/redis-db/c/JDjKS0GubsQ</url>
+      <url>https://github.com/redis/redis/security/advisories/GHSA-4cfx-h9gq-xpx3</url>
+    </references>
+    <dates>
+      <discovery>2023-07-10</discovery>
+      <entry>2023-07-10</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="0e254b4a-1f37-11ee-a475-080027f5fec9">
+    <topic>redis -- Heap overflow in the cjson and cmsgpack libraries</topic>
+    <affects>
+      <package>
+	<name>redis</name>
+	<range><lt>7.0.12</lt></range>
+      </package>
+      <package>
+	<name>redis-devel</name>
+	<range><lt>7.0.12.20230710</lt></range>
+      </package>
+      <package>
+	<name>redis62</name>
+	<range><lt>6.2.13</lt></range>
+      </package>
+      <package>
+	<name>redis60</name>
+	<range><lt>6.0.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Redis core team reports:</p>
+	<blockquote cite="https://groups.google.com/g/redis-db/c/JDjKS0GubsQ">
+	  <p>
+	     A specially crafted Lua script executing in Redis can
+	     trigger a heap overflow in the cjson and cmsgpack
+	     libraries, and result in heap corruption and potentially
+	     remote code execution.
+	  </p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2022-24834</cvename>
+      <url>https://groups.google.com/g/redis-db/c/JDjKS0GubsQ</url>
+    </references>
+    <dates>
+      <discovery>2023-07-10</discovery>
+      <entry>2023-07-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="8ea24413-1b15-11ee-9331-570525adb7f1">
     <topic>gitea -- avoid open HTTP redirects</topic>
     <affects>
