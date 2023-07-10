@@ -406,7 +406,6 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Actions/UserAuth.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/ActionsAdmin.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Api.php
-%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Common/PdoAbstract.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Config/AbstractConfig.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Config/Application.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Config/Plugin.php
@@ -424,6 +423,8 @@
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Model/Identity.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Model/MainAccount.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Notifications.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Pdo/Base.php
+%%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Pdo/Settings.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Plugins/AbstractPlugin.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Plugins/Helper.php
 %%WWWDIR%%/snappymail/v/%%VER%%/app/libraries/RainLoop/Plugins/Manager.php
