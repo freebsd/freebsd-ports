@@ -14,6 +14,10 @@
 #         min=number:     use specified min if ${LLVM_DEFAULT} is lower
 #         max=number:     use specified max if ${LLVM_DEFAULT} is higher
 #
+# * environment
+#         export:         do export CC, CXX,... variables [default]
+#         noexport:       do not export CC,CXX,... variables
+#
 # An example usage might be:
 #         USES=   llvm
 #   or
@@ -35,6 +39,7 @@ _INCLUDE_USES_LLVM_MK=	YES
 _LLVM_MK_VALID_VERSIONS=	10 11 12 13 14 15 16
 _LLVM_MK_VALID_CONSTRAINTS=	min max
 _LLVM_MK_VALID_MODES=		build run lib
+_LLVM_MK_VALID_EXPORTS=		export noexport
 
 # === parse mode arguments ===
 _LLVM_MK_MODES=	# empty
@@ -64,6 +69,21 @@ _LLVM_MK_VERSION=	${LLVM_DEFAULT:S/0$//}
 .    else
 _LLVM_MK_VERSION=	${LLVM_DEFAULT}
 .    endif
+.  endif
+
+# === parse environment arguments ===
+_LLVM_MK_EXPORT=	# empty
+.  for _export in ${_LLVM_MK_VALID_EXPORTS}
+.    if ${llvm_ARGS:M${_export}}
+.      if !empty(_LLVM_MK_EXPORT)
+BROKEN=		USES=llvm:${llvm_ARGS} contains multiple export definitions
+.      else
+_LLVM_MK_EXPORT=	${_export}
+.      endif
+.    endif
+.  endfor
+.  if empty(_LLVM_MK_EXPORT)
+_LLVM_MK_EXPORT=	export
 .  endif
 
 # === handle constraints ===
@@ -114,5 +134,11 @@ LLVM_CONFIG=		${_LLVM_MK_PATH}
 LLVM_LIBLLVM=		${_LLVM_MK_LIBLLVM}
 LLVM_VERSION=		${_LLVM_MK_VERSION}
 LLVM_PREFIX=		${_LLVM_MK_PREFIX}
+
+.  if empty(_LLVM_MK_EXPORT:Mnoexport)
+CC=			${LLVM_PREFIX}/bin/clang
+CXX=			${LLVM_PREFIX}/bin/clang++
+CPP=			${LLVM_PREFIX}/bin/clang-cpp
+.  endif
 
 .endif
