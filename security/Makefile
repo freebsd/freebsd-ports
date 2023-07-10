@@ -345,7 +345,9 @@
     SUBDIR += linux-c7-trousers
     SUBDIR += linux-rl9-ca-certificates
     SUBDIR += linux-rl9-cyrus-sasl2
+    SUBDIR += linux-rl9-gnupg
     SUBDIR += linux-rl9-gnutls
+    SUBDIR += linux-rl9-libassuan
     SUBDIR += linux-rl9-libgcrypt
     SUBDIR += linux-rl9-libgpg-error
     SUBDIR += linux-rl9-libtasn1
