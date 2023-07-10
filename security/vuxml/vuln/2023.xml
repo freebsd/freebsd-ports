@@ -1,3 +1,30 @@
+  <vuln vid="b67d768c-1f53-11ee-82ed-4ccc6adda413">
+    <topic>librecad -- out-of-bounds read in importshp plugin</topic>
+    <affects>
+      <package>
+	<name>librecad</name>
+	<range><lt>2.2.0.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Albin Eldstål-Ahrens reports:</p>
+	<blockquote cite="https://github.com/LibreCAD/LibreCAD/issues/1481">
+	  <p>An out-of-bounds read on a heap buffer in the importshp plugin may
+      allow an attacker to read sensitive data via a crafted DBF file.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-30259</cvename>
+      <url>https://github.com/LibreCAD/LibreCAD/issues/1481</url>
+    </references>
+    <dates>
+      <discovery>2021-12-28</discovery>
+      <entry>2023-07-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6fae2d6c-1f38-11ee-a475-080027f5fec9">
     <topic>redis -- heap overflow in COMMAND GETKEYS and ACL evaluation</topic>
     <affects>
