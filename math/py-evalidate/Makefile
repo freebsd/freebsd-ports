@@ -1,7 +1,8 @@
 PORTNAME=	evalidate
-DISTVERSION=	2.0.1
+DISTVERSIONPREFIX=	v
+DISTVERSION=	2.0.2
 CATEGORIES=	math python
-MASTER_SITES=	PYPI
+#MASTER_SITES=	PYPI # no tests
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +12,10 @@ WWW=		https://github.com/yaroslaff/evalidate
 LICENSE=	MIT
 
 USES=		python:3.9+
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest # the test tests/test_jailbreak.py::TestJailbreak::test_mul_overflow runs in  a very high memory - 12+GB, see https://github.com/yaroslaff/evalidate/issues/8
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	yaroslaff
 
 NO_ARCH=	yes
 
