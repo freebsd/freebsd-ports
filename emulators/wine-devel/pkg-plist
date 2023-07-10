@@ -716,7 +716,6 @@ include/wine/windows/ntddvdeo.h
 include/wine/windows/ntdef.h
 include/wine/windows/ntdsapi.h
 include/wine/windows/ntgdi.h
-%%STAGING%%include/wine/windows/ntifs.h
 include/wine/windows/ntlsa.h
 include/wine/windows/ntquery.h
 include/wine/windows/ntsecapi.h
@@ -888,7 +887,6 @@ include/wine/windows/sqlucode.h
 include/wine/windows/srcrst.idl
 include/wine/windows/srrestoreptapi.h
 include/wine/windows/sspi.h
-%%STAGING%%include/wine/windows/stdole32.idl
 include/wine/windows/stgprop.h
 include/wine/windows/sti.h
 include/wine/windows/storage.h
@@ -1042,10 +1040,6 @@ include/wine/windows/windows.media.speechrecognition.h
 include/wine/windows/windows.media.speechrecognition.idl
 include/wine/windows/windows.media.speechsynthesis.h
 include/wine/windows/windows.media.speechsynthesis.idl
-%%STAGING%%include/wine/windows/windows.networking.connectivity.h
-%%STAGING%%include/wine/windows/windows.networking.connectivity.idl
-%%STAGING%%include/wine/windows/windows.networking.h
-%%STAGING%%include/wine/windows/windows.networking.idl
 include/wine/windows/windows.security.cryptography.h
 include/wine/windows/windows.security.cryptography.idl
 include/wine/windows/windows.storage.streams.h
@@ -1284,7 +1278,6 @@ lib/wine/%%WINEARCH%%-unix/libdxguid.a
 lib/wine/%%WINEARCH%%-unix/libdxva2.a
 lib/wine/%%WINEARCH%%-unix/libevr.a
 lib/wine/%%WINEARCH%%-unix/libfaultrep.a
-%%STAGING%%lib/wine/%%WINEARCH%%-unix/libfltmgr.a
 lib/wine/%%WINEARCH%%-unix/libgdi32.a
 lib/wine/%%WINEARCH%%-unix/libgdiplus.a
 lib/wine/%%WINEARCH%%-unix/libglu32.a
@@ -1440,7 +1433,6 @@ lib/wine/%%WINEARCH%%-unix/libwsdapi.a
 lib/wine/%%WINEARCH%%-unix/libwsnmp32.a
 lib/wine/%%WINEARCH%%-unix/libwsock32.a
 lib/wine/%%WINEARCH%%-unix/libwtsapi32.a
-%%STAGING%%lib/wine/%%WINEARCH%%-unix/libx3daudio1_7.a
 lib/wine/%%WINEARCH%%-unix/libxinput.a
 lib/wine/%%WINEARCH%%-unix/libxmllite.a
 lib/wine/%%WINEARCH%%-unix/mountmgr.so
@@ -1650,8 +1642,6 @@ lib/wine/%%WINEARCH%%-windows/dx8vb.dll
 lib/wine/%%WINEARCH%%-windows/dxdiag.exe
 lib/wine/%%WINEARCH%%-windows/dxdiagn.dll
 lib/wine/%%WINEARCH%%-windows/dxgi.dll
-%%STAGING%%lib/wine/%%WINEARCH%%-windows/dxgkrnl.sys
-%%STAGING%%lib/wine/%%WINEARCH%%-windows/dxgmms1.sys
 lib/wine/%%WINEARCH%%-windows/dxtrans.dll
 lib/wine/%%WINEARCH%%-windows/dxva2.dll
 lib/wine/%%WINEARCH%%-windows/eject.exe
@@ -1804,7 +1794,6 @@ lib/wine/%%WINEARCH%%-windows/libdxguid.a
 lib/wine/%%WINEARCH%%-windows/libdxva2.a
 lib/wine/%%WINEARCH%%-windows/libevr.a
 lib/wine/%%WINEARCH%%-windows/libfaultrep.a
-%%STAGING%%lib/wine/%%WINEARCH%%-windows/libfltmgr.a
 lib/wine/%%WINEARCH%%-windows/libgdi32.a
 lib/wine/%%WINEARCH%%-windows/libgdiplus.a
 lib/wine/%%WINEARCH%%-windows/libglu32.a
@@ -1958,7 +1947,6 @@ lib/wine/%%WINEARCH%%-windows/libwsdapi.a
 lib/wine/%%WINEARCH%%-windows/libwsnmp32.a
 lib/wine/%%WINEARCH%%-windows/libwsock32.a
 lib/wine/%%WINEARCH%%-windows/libwtsapi32.a
-%%STAGING%%lib/wine/%%WINEARCH%%-windows/libx3daudio1_7.a
 lib/wine/%%WINEARCH%%-windows/libxinput.a
 lib/wine/%%WINEARCH%%-windows/libxmllite.a
 lib/wine/%%WINEARCH%%-windows/light.msstyles
@@ -2307,7 +2295,6 @@ lib/wine/%%WINEARCH%%-windows/where.exe
 lib/wine/%%WINEARCH%%-windows/whoami.exe
 lib/wine/%%WINEARCH%%-windows/wiaservc.dll
 lib/wine/%%WINEARCH%%-windows/wimgapi.dll
-%%STAGING%%%%WINE32%%lib/wine/%%WINEARCH%%-windows/win32k.sys
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/win32s16.dll16
 lib/wine/%%WINEARCH%%-windows/win32u.dll
 %%WINE32%%lib/wine/%%WINEARCH%%-windows/win87em.dll16
@@ -2320,7 +2307,6 @@ lib/wine/%%WINEARCH%%-windows/windows.globalization.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
-%%STAGING%%lib/wine/%%WINEARCH%%-windows/windows.networking.connectivity
 lib/wine/%%WINEARCH%%-windows/windows.networking.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecs.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecsext.dll
@@ -2558,11 +2544,9 @@ share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
-%%STAGING%%%%X11%%%%DATADIR%%/fonts/arial.ttf
 %%X11%%%%DATADIR%%/fonts/coue1255.fon
 %%X11%%%%DATADIR%%/fonts/coue1256.fon
 %%X11%%%%DATADIR%%/fonts/coue1257.fon
-%%STAGING%%%%X11%%%%DATADIR%%/fonts/cour.ttf
 %%X11%%%%DATADIR%%/fonts/coure.fon
 %%X11%%%%DATADIR%%/fonts/couree.fon
 %%X11%%%%DATADIR%%/fonts/coureg.fon
@@ -2574,7 +2558,6 @@ share/applications/wine.desktop
 %%X11%%%%DATADIR%%/fonts/jvgafix.fon
 %%X11%%%%DATADIR%%/fonts/jvgasys.fon
 %%X11%%%%DATADIR%%/fonts/marlett.ttf
-%%STAGING%%%%X11%%%%DATADIR%%/fonts/msyh.ttf
 %%X11%%%%DATADIR%%/fonts/smae1255.fon
 %%X11%%%%DATADIR%%/fonts/smae1256.fon
 %%X11%%%%DATADIR%%/fonts/smae1257.fon
@@ -2605,7 +2588,6 @@ share/applications/wine.desktop
 %%X11%%%%DATADIR%%/fonts/symbol.ttf
 %%X11%%%%DATADIR%%/fonts/tahoma.ttf
 %%X11%%%%DATADIR%%/fonts/tahomabd.ttf
-%%STAGING%%%%X11%%%%DATADIR%%/fonts/times.ttf
 %%X11%%%%DATADIR%%/fonts/vgafix.fon
 %%X11%%%%DATADIR%%/fonts/vgas1255.fon
 %%X11%%%%DATADIR%%/fonts/vgas1256.fon

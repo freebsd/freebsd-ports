@@ -68,14 +68,13 @@ SUB_FILES=	pkg-message
 
 PORTDATA=	wine.inf
 
-OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS STAGING V4L WINEMAKER X11 GECKO MONO
+OPTIONS_DEFINE=	CUPS DOCS DOSBOX GNUTLS V4L WINEMAKER X11 GECKO MONO
 OPTIONS_DEFAULT=GNUTLS OSS X11
 OPTIONS_RADIO=	AUDIO
 OPTIONS_RADIO_AUDIO=	ALSA OSS
 OPTIONS_SUB=	yes
 
 DOSBOX_DESC=	Use DOSBox to run MS-DOS programs
-STAGING_DESC=	Include Wine Staging patchset (experimental&unsupported)
 WINEMAKER_DESC=	Fully support winemaker (requires Perl)
 GECKO_DESC=	Bundle Gecko MSI package for Wine
 MONO_DESC=	Bundle Mono MSI package for Wine
@@ -97,15 +96,6 @@ MONO_RUN_DEPENDS=	wine-mono-devel>0:emulators/wine-mono-devel
 
 OSS_CONFIGURE_ON=	--without-alsa --with-oss
 
-STAGING_MASTER_SITES=	https://github.com/wine-staging/wine-staging/archive/:staging
-STAGING_DIST=		v${DISTVERSION}.tar.gz
-STAGING_DISTFILES=	${STAGING_DIST}:staging
-STAGING_EXTRACT_DEPENDS=	bash:shells/bash \
-				git:devel/git \
-				autoconf>0:devel/autoconf \
-				gawk:lang/gawk
-STAGING_LIB_DEPENDS=	libtxc_dxtn.so:graphics/s2tc
-
 V4L_CONFIGURE_WITH=	v4l2
 V4L_BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:multimedia/v4l_compat
 V4L_LIB_DEPENDS=	libv4l2.so:multimedia/libv4l
@@ -120,10 +110,6 @@ X11_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 			libvulkan.so:graphics/vulkan-loader
 
 .include <bsd.port.pre.mk>
-
-.if ${PORT_OPTIONS:MSTAGING} && ${OSVERSION} < 1300000
-BROKEN=		build failure
-.endif
 
 .if (${LLVM_DEFAULT} == 10 || ${LLVM_DEFAULT} == 11)
 _LLVM_VERSION=	12
@@ -153,13 +139,6 @@ post-patch:
 PLIST_SUB+=		WINE32="" WINE64="@comment " WINEARCH="i386"
 .endif
 
-post-extract-STAGING-on: fix-shebang
-	@${LN} -s ${WRKDIR}/${PORTNAME}-staging-${DISTVERSION}/patches ${WRKSRC}/patches
-
-post-patch-STAGING-on:
-	cd ${WRKSRC} && ${PATCH} -p0 < ${PATCHDIR}/extra-gitapply
-	cd ${WRKSRC} && bash ./patches/patchinstall.sh --backend=patch DESTDIR=${WRKSRC} --all
-
 pre-build:
 	cd ${WRKSRC} && ${MAKE_CMD} depend
 
@@ -183,13 +162,5 @@ post-install:
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/programs/winedbg/README ${STAGEDIR}${DOCSDIR}/README.winedbg
 	${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${STAGEDIR}${DOCSDIR}/README.winedump
-
-check-wine-devel-vs-staging:
-	@${GREP} %%STAGING%% pkg-plist | while read f; do \
-	  f=`echo $$f | ${SED} -e 's:%%STAGING%%::' -e "s:%%DATADIR%%:${DATADIR}:"`; \
-	  if [ -f "$$STAGEDIR/$$PREFIX/$$f" ] || [ -f "$$STAGEDIR/$$f" ]; then \
-	    ${PRINTF} "%s no longer contingent on %%STAGING%%?\n" "$$f"; \
-	  fi \
-	done
 
 .include <bsd.port.post.mk>
