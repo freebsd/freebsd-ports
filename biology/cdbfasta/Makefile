@@ -1,17 +1,17 @@
 PORTNAME=	cdbfasta
-PORTVERSION=	2010.07.22
+PORTVERSION=	2018.10.05
 CATEGORIES=	biology
-MASTER_SITES=	http://acadix.biz/Ports/distfiles/
 
 MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Fast indexing and retrieval of FASTA records from flat file databases
 WWW=		https://sourceforge.net/projects/cdbfasta/
 
-# LICENSE=	unspecified
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+LICENSE=	ART20
 
 USES=		gmake
+USE_GITHUB=	yes
+GH_ACCOUNT=	gpertea
+GH_TAGNAME=	014498c
 
 PLIST_FILES=	bin/cdbfasta bin/cdbyank
 
