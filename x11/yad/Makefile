@@ -1,6 +1,5 @@
 PORTNAME=	yad
-PORTVERSION=	7.3
-PORTREVISION=	2
+PORTVERSION=	13.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11 gnome
 
@@ -25,12 +24,12 @@ GLIB_SCHEMAS=	yad.gschema.xml
 USE_GITHUB=	yes
 GH_ACCOUNT=	v1cont
 
-OPTIONS_DEFINE=	HTML ICONBROWSER NLS PFD GTKSOURCEVIEW SPELL
+OPTIONS_DEFINE=	HTML ICONBROWSER NLS GTKSOURCEVIEW SPELL TOOLS
 HTML_DESC=		Build with HTML widget
 ICONBROWSER_DESC=	Build YAD icon browser
-PFD_DESC=		Build PFD fontnames transformation utility
 GTKSOURCEVIEW_DESC=	Build with GtkSourceView support
 SPELL_DESC=		Build with Spell check support
+TOOLS_DESC=		Build with yad-tools utility
 OPTIONS_DEFAULT=	SPELL
 OPTIONS_SUB=	yes
 
@@ -41,13 +40,13 @@ HTML_LIB_DEPENDS=	libwebkit2gtk-4.0.so:www/webkit2-gtk3 \
 
 ICONBROWSER_CONFIGURE_ENABLE=	icon-browser
 
-PFD_CONFIGURE_ENABLE=	pfd
-
 GTKSOURCEVIEW_CONFIGURE_ENABLE=	sourceview
 GTKSOURCEVIEW_USE=	GNOME=gtksourceview3
 
 SPELL_CONFIGURE_ENABLE=	spell
 SPELL_LIB_DEPENDS=	libgspell-1.so:textproc/gspell \
 			libenchant-2.so:textproc/enchant2
+
+TOOLS_CONFIGURE_ENABLE=	tools
 
 .include <bsd.port.mk>
