@@ -1,0 +1,7 @@
+hyper.deal is an efficient, matrix-free finite-element library for solving
+partial differential equations in two to six dimensions with high-order
+discontinuous Galerkin methods. It builds upon the low-dimensional
+finite-element library deal.II to create low-dimensional meshes and to
+operate on them individually. We combine these meshes via a tensor product
+on the fly and provide new special-purpose highly optimized matrix-free
+functions.
