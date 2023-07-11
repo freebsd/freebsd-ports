@@ -17,60 +17,58 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libfontconfig.so:x11-fonts/fontconfig
 
 USES=		autoreconf compiler:c11 cpe pkgconfig python readline xorg
-USE_XORG=	ice sm x11 xext xft xrandr xrender xt
-
-CONFLICTS_INSTALL=	fvwm
-
 CPE_VENDOR=	fvwm
 CPE_PRODUCT=	fvwm
-
-PLIST_SUB=	DISTVERSION=${DISTVERSION}
+USE_XORG=	ice sm x11 xext xft xrandr xrender xt
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_path_PYTHON=${PYTHON_CMD}
 
-OPTIONS_DEFINE=	FRIBIDI GO ICONS ICONV MANPAGES NLS PERL PNG SVG \
-		XCURSOR XPM
-OPTIONS_DEFAULT=	FRIBIDI GO ICONV MANPAGES PERL PNG XCURSOR
-OPTIONS_SUB=	yes
+CONFLICTS_INSTALL=	fvwm
+PLIST_SUB=		DISTVERSION=${DISTVERSION}
 
-FRIBIDI_LIB_DEPENDS=	libfribidi.so:converters/fribidi
+OPTIONS_DEFINE=		FRIBIDI GO ICONS ICONV MANPAGES NLS PERL PNG SVG \
+			XCURSOR XPM
+OPTIONS_DEFAULT=	FRIBIDI GO ICONV MANPAGES PERL PNG XCURSOR
+OPTIONS_SUB=		yes
+GO_DESC=		Build and install modules written in Go
+
+FRIBIDI_LIB_DEPENDS=		libfribidi.so:converters/fribidi
 FRIBIDI_CONFIGURE_ENABLE=	bidi
 
-GO_DESC=	Build and install modules written in Go
-GO_USES=	go:no_targets
+GO_USES=		go:no_targets
 GO_CONFIGURE_ENABLE=	golang
 
-FVWM_ICONS=	fvwm_icons-20070101
+FVWM_ICONS=		fvwm_icons-20070101
+ICONS_IMPLIES=		XPM
 ICONS_DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${FVWM_ICONS}.tar.bz2:icons
-ICONS_IMPLIES=	XPM
 
-ICONV_USES=	iconv:translit
+ICONV_USES=		iconv:translit
 ICONV_CONFIGURE_ENABLE=	iconv
 
-MANPAGES_BUILD_DEPENDS=	rubygem-asciidoctor>0:textproc/rubygem-asciidoctor
-MANPAGES_USES=	gmake
-MANPAGES_CONFIGURE_ENABLE=	mandoc
 MANPAGES_IMPLIES=	PERL
+MANPAGES_BUILD_DEPENDS=	rubygem-asciidoctor>0:textproc/rubygem-asciidoctor
+MANPAGES_USES=		gmake
+MANPAGES_CONFIGURE_ENABLE=	mandoc
 
+NLS_USES=		gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-NLS_USES=	gettext-runtime
 
-PERL_USES=	perl5
+PERL_USES=		perl5
 PERL_CONFIGURE_ENABLE=	perllib
 
 PNG_LIB_DEPENDS=	libpng.so:graphics/png
 PNG_CONFIGURE_ENABLE=	png
 
 SVG_LIB_DEPENDS=	librsvg-2.so:graphics/librsvg2-rust
-SVG_USES=	gnome
-SVG_USE=	gnome=cairo,glib20,gdkpixbuf2
+SVG_USES=		gnome
+SVG_USE=		gnome=cairo,glib20,gdkpixbuf2
 SVG_CONFIGURE_ENABLE=	rsvg
 
-XCURSOR_USE=	xorg=xcursor
+XCURSOR_USE=			xorg=xcursor
 XCURSOR_CONFIGURE_ENABLE=	xcursor
 
-XPM_USE=	xorg=xpm
+XPM_USE=		xorg=xpm
 XPM_CONFIGURE_OFF=	--with-xpm-library=no
 
 post-patch:
