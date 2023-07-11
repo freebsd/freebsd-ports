@@ -1,0 +1,11 @@
+MashMap implements a fast and approximate algorithm for computing local
+alignment boundaries between long DNA sequences. It can be useful for mapping
+genome assembly or long reads (PacBio/ONT) to reference genome(s). Given a
+minimum alignment length and an identity threshold for the desired local
+alignments, Mashmap computes alignment boundaries and identity estimates using
+k-mers. It does not compute the alignments explicitly, but rather estimates an
+unbiased k-mer based Jaccard similarity using a combination of minmers (a novel
+winnowing scheme) and MinHash. This is then converted to an estimate of sequence
+identity using the Mash distance. An appropriate k-mer sampling rate is
+automatically determined using the given minimum local alignment length and
+identity thresholds.

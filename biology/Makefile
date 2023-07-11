@@ -97,6 +97,7 @@
     SUBDIR += linux-foldingathome
     SUBDIR += mafft
     SUBDIR += mapm3
+    SUBDIR += mashmap
     SUBDIR += megahit
     SUBDIR += metaeuk
     SUBDIR += migrate
