@@ -178,6 +178,8 @@ include/fizz/third-party/libsodium-aegis/aegis256/soft/aead_aegis256_soft.h
 include/fizz/third-party/libsodium-aegis/private/common.h
 include/fizz/third-party/libsodium-aegis/private/config.h
 include/fizz/third-party/libsodium-aegis/private/softaes.h
+include/fizz/third-party/libsodium-aegis/private/sse2_64_32.h
+include/fizz/third-party/libsodium-aegis/private/state.h
 include/fizz/tool/CertificateVerifiers.h
 include/fizz/tool/Commands.h
 include/fizz/tool/FizzCommandCommon.h
