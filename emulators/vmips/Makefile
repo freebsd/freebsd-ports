@@ -1,6 +1,6 @@
 PORTNAME=	vmips
 PORTVERSION=	1.5.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF \
 		http://www.dgate.org/vmips/releases/${DISTNAME}/
@@ -14,6 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		gmake
 GNU_CONFIGURE=	yes
+USE_CSTD=	gnu99
+USE_CXXSTD=	gnu++98
 
 INFO=		vmips
 
