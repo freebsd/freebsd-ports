@@ -27,6 +27,11 @@ CARGO_BUILD=	no
 CARGO_INSTALL=	no
 CARGO_TEST=	no
 
+.if ${MACHINE_ARCH} == i386
+# Fixes error "Rust cannot catch foreign exceptions"
+LTO_UNSAFE=	yes
+.endif
+
 OPTIONS_DEFINE=	ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM WEBP
 OPTIONS_DEFAULT=ASM CAIRO CSOUND DAV1D GTK4 PANGO SODIUM WEBP
 OPTIONS_EXCLUDE_aarch64=	CSOUND # https://github.com/neithanmo/csound-rs/commit/8962b89d7bda
