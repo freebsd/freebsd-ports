@@ -26,6 +26,11 @@ PLIST_FILES=	bin/${PORTNAME}
 PLIST_FILES+=	"@comment bin/core" # not packaged in vendor binaries
 PORTDATA=	*
 
+.if ${MACHINE_ARCH} == i386
+# https://github.com/rust-lang/rust/issues/85598
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-patch:
 # Search assets under PREFIX instead of current directory
 	@${REINPLACE_CMD} 's,assets",../${DATADIR_REL}/&,' \
