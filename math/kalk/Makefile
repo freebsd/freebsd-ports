@@ -1,8 +1,6 @@
 PORTNAME=	kalk
-DISTVERSION=	23.01.0
-PORTREVISION=	1
-CATEGORIES=	math kde
-MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}/
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	math kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kalk is a convergent calculator for Plasma
