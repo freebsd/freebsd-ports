@@ -1,0 +1,33 @@
+commit 3450272fc281979388bb845a9fffb59b42cc2e7e
+Author: Jessica Clarke <jrtc27@jrtc27.com>
+Date:   Mon Jul 10 01:40:58 2023 +0100
+
+    [Driver][FreeBSD] Generalise lib32 handling to support arm
+    
+    The current code maintains its own list of 32-bit architectures for
+    which there is a 64-bit FreeBSD architecture that supports it for lib32.
+    This is unnecessary (if it's not supported, the directory just won't
+    exist), and means that, when FreeBSD gains lib32 support for a new
+    architecture, you need an updated toolchain that knows about it.
+    Instead we can check for any 32-bit architecture and have forwards
+    compatibility.
+    
+    This is motivated by FreeBSD adding support for building arm lib32
+    libraries on aarch64.
+    
+    Co-authored-by: Mike Karels <karels@FreeBSD.org>
+
+diff --git clang/lib/Driver/ToolChains/FreeBSD.cpp clang/lib/Driver/ToolChains/FreeBSD.cpp
+index ac336598a78c..84e257741702 100644
+--- clang/lib/Driver/ToolChains/FreeBSD.cpp
++++ clang/lib/Driver/ToolChains/FreeBSD.cpp
+@@ -376,8 +376,7 @@ FreeBSD::FreeBSD(const Driver &D, const llvm::Triple &Triple,
+ 
+   // When targeting 32-bit platforms, look for '/usr/lib32/crt1.o' and fall
+   // back to '/usr/lib' if it doesn't exist.
+-  if ((Triple.getArch() == llvm::Triple::x86 || Triple.isMIPS32() ||
+-       Triple.isPPC32()) &&
++  if (Triple.isArch32Bit() &&
+       D.getVFS().exists(concat(getDriver().SysRoot, "/usr/lib32/crt1.o")))
+     getFilePaths().push_back(concat(getDriver().SysRoot, "/usr/lib32"));
+   else
