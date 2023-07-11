@@ -1,6 +1,6 @@
 PORTNAME=	vvdec
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	multimedia python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 ONLY_FOR_ARCHS=		amd64 powerpc powerpc64 powerpc64le riscv64
 
-USES=		cmake:testing compiler:c++14-lang
+USES=		cmake:noninja,testing compiler:c++14-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
