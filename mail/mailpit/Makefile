@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
+DISTVERSION=	1.7.1
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -36,13 +36,13 @@ GH_TUPLE=	\
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gogs:chardet:b7413eaefb8f:gogs_chardet/vendor/github.com/gogs/chardet \
-		golang:crypto:v0.10.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:image:v0.8.0:golang_image/vendor/golang.org/x/image \
-		golang:mod:v0.11.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.11.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.9.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.10.0:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.10.0:golang_tools/vendor/golang.org/x/tools \
+		golang:crypto:v0.11.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:image:v0.9.0:golang_image/vendor/golang.org/x/image \
+		golang:mod:v0.12.0:golang_mod/vendor/golang.org/x/mod \
+		golang:net:v0.12.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.10.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.11.0:golang_text/vendor/golang.org/x/text \
+		golang:tools:v0.11.0:golang_tools/vendor/golang.org/x/tools \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.5.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
@@ -51,7 +51,7 @@ GH_TUPLE=	\
 		jhillyerd:enmime:v1.0.0:jhillyerd_enmime/vendor/github.com/jhillyerd/enmime \
 		k3a:html2text:v1.2.1:k3a_html2text/vendor/github.com/k3a/html2text \
 		kballard:go-shellquote:95032a82bc51:kballard_go_shellquote/vendor/github.com/kballard/go-shellquote \
-		klauspost:compress:v1.16.6:klauspost_compress/vendor/github.com/klauspost/compress \
+		klauspost:compress:v1.16.7:klauspost_compress/vendor/github.com/klauspost/compress \
 		kr:pretty:v0.3.0:kr_pretty/vendor/github.com/kr/pretty \
 		leporo:sqlf:v1.4.0:leporo_sqlf/vendor/github.com/leporo/sqlf \
 		lukechampine:uint128:v1.3.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
