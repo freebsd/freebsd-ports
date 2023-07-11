@@ -1,6 +1,6 @@
 PORTNAME=	cxxplot
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.2
+DISTVERSION=	0.4.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,7 +20,7 @@ GH_ACCOUNT=	USNavalResearchLaboratory
 CMAKE_ON=		BUILD_SHARED_LIBS
 CMAKE_TESTING_TARGET=
 
-post-test: # 'make test' opens a lot of windows
+post-test: # 'make test' opens a lot of windows; 1 test fails, see https://github.com/USNavalResearchLaboratory/cxxplot/issues/10
 .for name in 01_test 02_test 03_test 04_test 05_test 06_test_csv 07_test_image
 	@${ECHO} "==> Running the test ${name}"
 	@${TEST_WRKSRC}/tests/${name}/libcxxplot_${name:C/test_.*/test/}
