@@ -1,10 +1,9 @@
 PORTNAME=	zxing-cpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.0.0
+DISTVERSION=	2.1.0
 CATEGORIES=	textproc
 
 PATCH_SITES=	https://github.com/zxing-cpp/zxing-cpp/commit/
-PATCHFILES=	23c19c5f98602a4d69d1667fff99678308b28b5b.diff:-p1
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	ZXing C++ Library for QR code recognition

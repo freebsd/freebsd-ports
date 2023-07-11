@@ -28,6 +28,6 @@ lib/cmake/ZXing/ZXingConfigVersion.cmake
 lib/cmake/ZXing/ZXingTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/ZXing/ZXingTargets.cmake
 lib/libZXing.so
-lib/libZXing.so.2.0.0
+lib/libZXing.so.2.1.0
 lib/libZXing.so.3
 libdata/pkgconfig/zxing.pc
