@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 PORTVERSION=	${LLVM_MAJOR}.0.d${SNAPDATE}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel lang
 PKGNAMESUFFIX=	${LLVM_SUFFIX}
 
@@ -90,13 +90,14 @@ OPTIONS_EXCLUDE_armv6=	COMPILER_RT
 OPTIONS_EXCLUDE_armv7=	COMPILER_RT
 OPTIONS_SUB=	yes
 .if !${FLAVOR:Mlite}
-OPTIONS_DEFINE+=	EXTRAS FLANG LIT LLDB MLIR OPENMP
+OPTIONS_DEFINE+=	EXTRAS FLANG LIT LLDB MLIR OPENMP POLLY
 OPTIONS_DEFINE_amd64=	GOLD
 OPTIONS_DEFINE_powerpc=	GOLD
 OPTIONS_DEFINE_powerpc64=	GOLD
 OPTIONS_DEFINE_powerpc64le=	GOLD
 
-OPTIONS_DEFAULT+=	COMPILER_RT EXTRAS FLANG LIT LLDB MLIR OPENMP STATIC_LIBS
+OPTIONS_DEFAULT+=	COMPILER_RT EXTRAS FLANG LIT LLDB MLIR OPENMP POLLY \
+			STATIC_LIBS
 OPTIONS_DEFAULT_amd64=	GOLD
 OPTIONS_DEFAULT_powerpc=	GOLD
 OPTIONS_DEFAULT_powerpc64=	GOLD
@@ -113,7 +114,7 @@ OPTIONS_EXCLUDE_FreeBSD_12=	OPENMP
 .endif
 
 _ALL_OPTIONS=	CLANG COMPILER_RT DOCS EXTRAS FLANG GOLD LIT LLD LLDB MLIR \
-		OPENMP STATIC_LIBS
+		OPENMP POLLY STATIC_LIBS
 
 CLANG_DESC=	Build clang
 CLANG_CMAKE_ON=		-DCLANG_DEFAULT_OPENMP_RUNTIME=libomp
@@ -168,8 +169,8 @@ MLIR_DESC=		Multi-Level Intermediate Representation
 OPENMP_DESC=		Install libomp, the LLVM OpenMP runtime library
 OPENMP_CMAKE_ON=	-DLIBOMPTARGET_BUILD_DEVICERTL_BCLIB=OFF
 OPENMP_PORTDOCS=	openmp
-STATIC_LIBS_DESC=	Install static libraries (does not effect sanitizers)
-
+POLLY_DESC=		Polyhedral loop and data-locality optimizer
+POLLY_PORTDOCS=	polly
 CONFLICTS_INSTALL=	${PORTNAME}${LLVM_SUFFIX} ${PORTNAME}${LLVM_SUFFIX}-lite
 
 PLIST_SUB+=	LLVM_MAJOR=${LLVM_MAJOR} \
@@ -290,6 +291,12 @@ MAN1SRCS+=	${OPENMP_MAN1SRCS}
 COMMANDS+=	${OPENMP_COMMANDS}
 .endif
 OPENMP_PATTERN=	${OPENMP_COMMANDS:tW:C/  */|/g}|cmake\/openmp|libarcher|lib[ig]*omp|omp.h|ompt.h|ompt-multiplex.h|omp-tools.h
+
+.if ${PORT_OPTIONS:MPOLLY}
+LLVM_ENABLE_PROJECTS+=	polly
+MAN1SRCS+=	${POLLY_MAN1SRCS}
+.endif
+POLLY_PATTERN=	include\/polly|cmake\/polly|LLVMPolly.so|libPolly
 
 .if defined(LLVM_ENABLE_PROJECTS)
 CMAKE_ARGS+=	-DLLVM_ENABLE_PROJECTS="${LLVM_ENABLE_PROJECTS:ts;}"
@@ -512,6 +519,7 @@ build-plist:
 	    if ($$0 ~ /(argdumper|lldb|six.py)/) {printf "%%%%LLDB%%%%"} \
 	    if ($$0 ~ /(${MLIR_PATTERN})/) {printf "%%%%MLIR%%%%"} \
 	    if ($$0 ~ /(${OPENMP_PATTERN})/) {printf "%%%%OPENMP%%%%"} \
+	    if ($$0 ~ /(${POLLY_PATTERN})/) {printf "%%%%POLLY%%%%"} \
 	    if ($$0 !~ /(lib[a-z]*_rt|LLVMgold)/) {print} \
 	}' ${PLIST}.tmp >> ${PLIST}
 	${ECHO_CMD} '@postexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi' >> ${PLIST}

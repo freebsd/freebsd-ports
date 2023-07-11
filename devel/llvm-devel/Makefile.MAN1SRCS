@@ -68,3 +68,6 @@ LIT_MAN1SRCS= \
 
 OPENMP_MAN1SRCS= \
 	llvmopenmp.1
+
+POLLY_MAN1SRCS= \
+	polly.1
