@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_armv6=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
 BROKEN_armv7=		fails to package: pkg-static: mca_patcher_overwrite.la: No such file or directory
 BROKEN_sparc64=		fails to compile on sparc64
+DEPRECATED=		OpenMPI 3 is not maintained by the upstream project anymore and will be removed
+EXPIRATION_DATE=	2023-10-11
 
 LIB_DEPENDS=	libltdl.so:devel/libltdl \
 		libevent.so:devel/libevent \
