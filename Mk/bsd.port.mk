@@ -1283,6 +1283,23 @@ _PORTDIRNAME=	${.CURDIR:T}
 PORTDIRNAME?=	${_PORTDIRNAME}
 PKGORIGIN?=		${PKGCATEGORY}/${PORTDIRNAME}
 
+# Now that PKGORIGIN is set, look for origin-specific variables.
+# These are typically set in a make.conf, in the form:
+#
+# category_portname_VARS= varname=value othervar+=value novar@
+#
+# e.g.  devel_llvm10_VARS= MAKE_JOBS_NUMBER=2
+
+.    for var in ${${PKGORIGIN:S/\//_/}_VARS:C/=.*//:O:u}
+.      if ${var:M*@}
+.  undef ${var:C/.$//}
+.      elif ${var:M*+}
+${var:C/.$//}+=	${${PKGORIGIN:S/\//_/}_VARS:M${var}=*:C/[^+]*\+=//:C/^"(.*)"$$/\1/}
+.      else
+${var}=			${${PKGORIGIN:S/\//_/}_VARS:M${var}=*:C/[^=]*=//:C/^"(.*)"$$/\1/}
+.      endif
+.    endfor
+
 # where 'make config' records user configuration options
 PORT_DBDIR?=	/var/db/ports
 
