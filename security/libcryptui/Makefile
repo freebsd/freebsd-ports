@@ -1,6 +1,6 @@
 PORTNAME=	libcryptui
 PORTVERSION=	3.12.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -39,7 +39,7 @@ CONFIGURE_ARGS+=--disable-libnotify
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|"1.2 1.4 2.0"|"1.2 1.4 2.0 2.1 2.2 2.3"|g' \
+	@${REINPLACE_CMD} -e 's|"1.2 1.4 2.0"|"1.2 1.4 2.0 2.1 2.2 2.3 2.4"|g' \
 		${WRKSRC}/configure
 
 .include <bsd.port.mk>
