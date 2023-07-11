@@ -1,6 +1,6 @@
 PORTNAME=	stockfish
 DISTVERSIONPREFIX=	sf_
-DISTVERSION=	15.1
+DISTVERSION=	16
 CATEGORIES=	games
 MASTER_SITES=	https://tests.stockfishchess.org/api/nn/:nnue
 DISTFILES=	nn-${_NNUE_VER}.nnue:nnue
@@ -25,7 +25,7 @@ MAKE_ARGS=	ARCH=${MYARCH} \
 		PREFIX=${PREFIX}
 ALL_TARGET=	build
 
-_NNUE_VER=	ad9b42354671
+_NNUE_VER=	5af11540bbfe
 
 BINARY_ALIAS=	wget=true
 
