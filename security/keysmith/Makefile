@@ -1,8 +1,6 @@
 PORTNAME=	keysmith
-DISTVERSION=	23.01.0
-PORTREVISION=	1
-CATEGORIES=	security kde
-MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}/
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	security kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Application to generate two-factor authentication tokens
