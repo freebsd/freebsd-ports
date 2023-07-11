@@ -1,8 +1,6 @@
 PORTNAME=	alligator
-DISTVERSION=	23.01.0
-PORTREVISION=	1
-CATEGORIES=	net kde
-MASTER_SITES=	KDE/stable/plasma-mobile/${DISTVERSION}/
+DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+CATEGORIES=	net kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Kirigami-based RSS reader
