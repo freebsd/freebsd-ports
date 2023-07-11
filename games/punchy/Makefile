@@ -1,7 +1,7 @@
 PORTNAME=	punchy
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	games wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -24,11 +24,10 @@ PORTDATA=	*
 
 # Bundled v8
 BUILD_DEPENDS+=	gn:devel/gn
-USES+=		compiler ninja:build python:build
+USES+=		ninja:build python:build
 BINARY_ALIAS+=	python=${PYTHON_CMD}
 CARGO_ENV+=	V8_FROM_SOURCE=1 CLANG_BASE_PATH="/usr" GN_ARGS='${GN_ARGS}'
 GN_ARGS+=	use_custom_libcxx=false
-CXXFLAGS+=	${${ARCH} == aarch64 && ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160:?-Wno-enum-constexpr-conversion:}
 
 post-patch:
 # Search assets under PREFIX instead of current directory
