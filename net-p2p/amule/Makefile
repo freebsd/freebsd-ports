@@ -16,10 +16,6 @@ LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
 USES=		bison compiler:c++11-lang cpe desktop-file-utils gmake \
 		localbase:ldflags perl5 pkgconfig shebangfix tar:xz
-# amule 2.3.3 does not work with C++17 which is the default since
-# clang 16. This can be removed once that port starts working with C++17 and
-# has its own USE_CXXSTD removed.
-USE_CXXSTD=	c++11
 USE_PERL5=	build
 USE_WX=		3.0
 WX_CONF_ARGS=	absolute
@@ -122,4 +118,13 @@ post-patch-DOCS-off:
 post-install-FILEVIEW-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/utils/fileview/mulefileview ${STAGEDIR}${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# amule 2.3.3 does not work with C++17 which is the default since clang
+# 16. Change the defaults and allow the `register' keyword to be used without
+# triggering a compiler error to allow the build to work.
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CXXFLAGS+=	-Wno-register
+.endif
+
+.include <bsd.port.post.mk>
