@@ -24,13 +24,4 @@ CMAKE_ARGS+=	-DCMAKE_INSTALL_LIBDIR=${LOCALBASE}/lib
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_OFF=	BUILD_TESTING
 
-.include <bsd.port.pre.mk>
-
-# clang is crashing on CURRENT due an assertion
-# see https://bugs.freebsd.org/bugzilla/show_bug.cgi?id=234232
-# and https://bugs.llvm.org/show_bug.cgi?id=40985
-.if ${OSVERSION} >= 1400000
-USE_GCC=	yes
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
