@@ -2,7 +2,7 @@ PORTNAME=	lumina-calculator
 DISTVERSION=	1.6.2
 CATEGORIES=	deskutils
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Scientific calculator from the Lumina Desktop
 WWW=		https://lumina-desktop.org/
 

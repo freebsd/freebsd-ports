@@ -4,7 +4,7 @@ PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	x11
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lumina Desktop Environment (meta-port)
 WWW=		https://lumina-desktop.org/
 
