@@ -186,6 +186,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/rcc/traffic.rcc
 %%DATADIR%%/rcc/watercycle.rcc
 %%DATADIR%%/rcc/wordsgame.rcc
+%%DATADIR%%/translations/gcompris_ar.qm
 %%DATADIR%%/translations/gcompris_az.qm
 %%DATADIR%%/translations/gcompris_be.qm
 %%DATADIR%%/translations/gcompris_br.qm
@@ -196,6 +197,7 @@ share/applications/org.kde.gcompris.desktop
 %%DATADIR%%/translations/gcompris_el.qm
 %%DATADIR%%/translations/gcompris_en.qm
 %%DATADIR%%/translations/gcompris_en_GB.qm
+%%DATADIR%%/translations/gcompris_eo.qm
 %%DATADIR%%/translations/gcompris_es.qm
 %%DATADIR%%/translations/gcompris_et.qm
 %%DATADIR%%/translations/gcompris_eu.qm
