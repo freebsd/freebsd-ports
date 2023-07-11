@@ -3,6 +3,9 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	2.5.0
 CATEGORIES=	cad
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES=	1efad3028a1953af2cf62b518a54ffeb309977bc.patch:-p1 # https://github.com/horizon-eda/horizon/issues/727
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	EDA package for printed circuit board design
 WWW=		https://horizon-eda.org/
@@ -26,7 +29,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		desktop-file-utils gmake gnome libarchive localbase pkgconfig python:build sqlite # compiler:c++17-lang
 USE_GNOME=	atkmm gdkpixbuf2 gtkmm30 librsvg2
-USE_CXXSTD=	c++14 # fix build failure on 14 due to the use of deprecated std::binary_function C++ feature, see https://github.com/horizon-eda/horizon/issues/727
 
 USE_GITHUB=	yes
 GH_PROJECT=	horizon
