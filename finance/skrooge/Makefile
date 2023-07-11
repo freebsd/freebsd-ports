@@ -1,6 +1,5 @@
 PORTNAME=	skrooge
-DISTVERSION=	2.29.0
-PORTREVISION=	1
+DISTVERSION=	2.30.0
 CATEGORIES=	finance kde
 MASTER_SITES=	KDE/stable/${PORTNAME}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -30,7 +29,7 @@ USE_KDE=	activities archive attica5 auth bookmarks codecs completion \
 # skrooge checks for it at build-time.
 USE_KDE+=	designerplugin:build
 USE_QT=		concurrent core dbus declarative designer gui network \
-		printsupport script sql svg webkit widgets xml xmlpatterns \
+		printsupport script sql svg webengine webenginewidgets widgets xml xmlpatterns \
 		buildtools:build designer:build qmake:build testlib:build
 USE_XORG=	x11
 SHEBANG_FILES=	plugins/import/skrooge_import_backend/skrooge-sabb.py \
