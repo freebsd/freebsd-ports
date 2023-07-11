@@ -183,6 +183,8 @@ lib/emscripten/src/compiler.js
 lib/emscripten/src/cpuprofiler.js
 lib/emscripten/src/deterministic.js
 lib/emscripten/src/embind/embind.js
+lib/emscripten/src/embind/embind_shared.js
+lib/emscripten/src/embind/embind_ts.js
 lib/emscripten/src/embind/emval.js
 lib/emscripten/src/emrun_postjs.js
 lib/emscripten/src/emrun_prejs.js
@@ -1099,6 +1101,7 @@ lib/emscripten/system/lib/gl/webgl1.c
 lib/emscripten/system/lib/gl/webgl2.c
 lib/emscripten/system/lib/gl/webgl_internal.h
 lib/emscripten/system/lib/html5/dom_pk_codes.c
+lib/emscripten/system/lib/html5/emscripten_wget.c
 lib/emscripten/system/lib/html5/key_codes.c
 lib/emscripten/system/lib/jsmath.c
 lib/emscripten/system/lib/libc/README.md
