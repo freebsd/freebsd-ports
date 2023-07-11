@@ -40,6 +40,7 @@ include/spdlog/fmt/compile.h
 include/spdlog/fmt/fmt.h
 include/spdlog/fmt/ostr.h
 include/spdlog/fmt/ranges.h
+include/spdlog/fmt/std.h
 include/spdlog/fmt/xchar.h
 include/spdlog/formatter.h
 include/spdlog/fwd.h
@@ -54,10 +55,12 @@ include/spdlog/sinks/base_sink-inl.h
 include/spdlog/sinks/base_sink.h
 include/spdlog/sinks/basic_file_sink-inl.h
 include/spdlog/sinks/basic_file_sink.h
+include/spdlog/sinks/callback_sink.h
 include/spdlog/sinks/daily_file_sink.h
 include/spdlog/sinks/dist_sink.h
 include/spdlog/sinks/dup_filter_sink.h
 include/spdlog/sinks/hourly_file_sink.h
+include/spdlog/sinks/kafka_sink.h
 include/spdlog/sinks/mongo_sink.h
 include/spdlog/sinks/msvc_sink.h
 include/spdlog/sinks/null_sink.h
@@ -89,6 +92,6 @@ lib/cmake/spdlog/spdlogConfigTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/spdlog/spdlogConfigTargets.cmake
 lib/cmake/spdlog/spdlogConfigVersion.cmake
 lib/libspdlog.so
-lib/libspdlog.so.1.11
+lib/libspdlog.so.1.12
 lib/libspdlog.so.%%SOVERSION%%
 libdata/pkgconfig/spdlog.pc
