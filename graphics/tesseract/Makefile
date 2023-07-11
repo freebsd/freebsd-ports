@@ -1,6 +1,5 @@
 PORTNAME=	tesseract
-PORTVERSION=	5.3.1
-PORTREVISION=	2
+PORTVERSION=	5.3.2
 CATEGORIES=	graphics
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -32,7 +31,6 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	${PORTNAME}-ocr
 
 DATADIR=	${PREFIX}/share/tessdata
-LDFLAGS+=	-pthread
 PORTDATA=	*
 PORTDOCS=	AUTHORS ChangeLog README.md
 INSTALL_TARGET=	install-strip
