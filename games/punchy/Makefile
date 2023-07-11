@@ -29,6 +29,12 @@ BINARY_ALIAS+=	python=${PYTHON_CMD}
 CARGO_ENV+=	V8_FROM_SOURCE=1 CLANG_BASE_PATH="/usr" GN_ARGS='${GN_ARGS}'
 GN_ARGS+=	use_custom_libcxx=false
 
+.if ${MACHINE_ARCH} == i386
+# https://github.com/rust-lang/rust/issues/85598
+LTO_UNSAFE=	yes
+CARGO_ENV+=	CARGO_PROFILE_RELEASE_LTO=false
+.endif
+
 post-patch:
 # Search assets under PREFIX instead of current directory
 	@${REINPLACE_CMD} 's,assets",../${DATADIR_REL}/&,' \
