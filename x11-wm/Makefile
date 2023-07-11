@@ -33,6 +33,7 @@
     SUBDIR += e16-docs
     SUBDIR += echinus
     SUBDIR += emerald
+    SUBDIR += emwm
     SUBDIR += enlightenment
     SUBDIR += epplets
     SUBDIR += euclid-wm

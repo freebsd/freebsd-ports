@@ -1,0 +1,6 @@
+EMWM is a fork of the Motif Window Manager with fixes and enhancements. It
+provides compatibility with current xorg extensions and applications, without
+changing the way the window manager looks and behaves. This includes support for
+multi-monitor setups trough Xinerama/Xrandr, UFT-8 support with Xft fonts, and
+overall better compatibility with software that requires Extended Window Manager
+Hints.
