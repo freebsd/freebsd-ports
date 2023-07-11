@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.33.0
+DISTVERSION=	1.34.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -166,7 +166,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		pkg-config-0.3.27 \
 		portable-atomic-1.3.3 \
 		pretty_assertions-1.4.0 \
-		proc-macro2-1.0.63 \
+		proc-macro2-1.0.64 \
 		quick-xml-0.23.1 \
 		quote-1.0.29 \
 		rayon-1.7.0 \
@@ -194,8 +194,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		sct-0.7.0 \
 		self_update-0.37.0 \
 		semver-1.0.17 \
-		serde-1.0.168 \
-		serde_derive-1.0.168 \
+		serde-1.0.171 \
+		serde_derive-1.0.171 \
 		serde_json-1.0.100 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
@@ -212,7 +212,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.23 \
+		syn-2.0.25 \
+		tar-0.4.38 \
 		tempfile-3.6.0 \
 		tera-1.19.0 \
 		termcolor-1.1.3 \
@@ -220,9 +221,9 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		thiserror-1.0.43 \
 		thiserror-impl-1.0.43 \
 		thread_local-1.1.4 \
-		time-0.3.22 \
+		time-0.3.23 \
 		time-core-0.1.1 \
-		time-macros-0.2.9 \
+		time-macros-0.2.10 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.29.1 \
@@ -295,6 +296,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		windows_x86_64_msvc-0.48.0 \
 		winnow-0.4.9 \
 		winreg-0.10.1 \
+		xattr-0.2.3 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
 		zeroize-1.6.0
