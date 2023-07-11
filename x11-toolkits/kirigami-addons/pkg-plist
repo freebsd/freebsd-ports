@@ -32,6 +32,7 @@ lib/cmake/KF5KirigamiAddons/KF5KirigamiAddonsConfigVersion.cmake
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormComboBoxDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormDelegateBackground.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormDelegateSeparator.qml
+%%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormGridContainer.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormRadioDelegate.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormSectionText.qml
 %%QT_QMLDIR%%/org/kde/kirigamiaddons/labs/mobileform/FormSpinBoxDelegate.qml
@@ -68,6 +69,7 @@ share/locale/es/LC_MESSAGES/kirigami-addons.mo
 share/locale/eu/LC_MESSAGES/kirigami-addons.mo
 share/locale/fi/LC_MESSAGES/kirigami-addons.mo
 share/locale/fr/LC_MESSAGES/kirigami-addons.mo
+share/locale/gl/LC_MESSAGES/kirigami-addons.mo
 share/locale/hi/LC_MESSAGES/kirigami-addons.mo
 share/locale/hu/LC_MESSAGES/kirigami-addons.mo
 share/locale/it/LC_MESSAGES/kirigami-addons.mo
