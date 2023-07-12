@@ -1,4 +1,4 @@
-TIMESTAMP = 1688493287
+TIMESTAMP = 1689136760
 SHA256 (rust/crates/ahash-0.7.6.crate) = fcb51a0695d8f838b1ee009b3fbf66bda078cd64590202a864a8f3e8c4315c47
 SIZE (rust/crates/ahash-0.7.6.crate) = 38030
 SHA256 (rust/crates/ahash-0.8.3.crate) = 2c99f64d1e06488f620f932677e24bc6e2897582980441ae90a671415bd7ec2f
@@ -593,5 +593,5 @@ SHA256 (rust/crates/zeroize-1.6.0.crate) = 2a0956f1ba7c7909bfb66c2e9e4124ab6f648
 SIZE (rust/crates/zeroize-1.6.0.crate) = 19049
 SHA256 (rust/crates/zeroize_derive-1.3.2.crate) = 3f8f187641dad4f680d25c4bfc4225b418165984179f26ca76ec4fb6441d3a17
 SIZE (rust/crates/zeroize_derive-1.3.2.crate) = 10299
-SHA256 (starkware-libs-cairo-v2.0.1_GH0.tar.gz) = 7c33403c40344e9cf0eb0f781fbef3ab2c2827813b7ec9339c824d8e33f4a8d4
-SIZE (starkware-libs-cairo-v2.0.1_GH0.tar.gz) = 1709436
+SHA256 (starkware-libs-cairo-v2.0.2_GH0.tar.gz) = ba41f91fb0ca5efede4a333f7a3a486a306c31d39f6710cc4aa3466918856a05
+SIZE (starkware-libs-cairo-v2.0.2_GH0.tar.gz) = 1709623
