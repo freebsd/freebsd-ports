@@ -2334,7 +2334,7 @@ www/rubygem-responders-rails50|www/rubygem-responders|2019-06-30|Has expired: Us
 emulators/xen-kernel47|emulators/xen-kernel|2019-07-01|Has expired: This port is about to be removed, please update to a newer Xen version
 sysutils/xen-tools47|sysutils/xen-tools|2019-07-01|Has expired: This port is about to be removed, please update to a newer Xen version
 www/seamonkey||2019-07-03|2.49.* is not maintained upstream and full of security holes
-www/tomcat8||2019-07-06|Has expired: EoL since 2018-06-30
+www/tomcat8|www/tomcat85|2019-07-06|Has expired: EoL since 2018-06-30
 devel/libevent-hiphop||2019-07-10|Has expired: Obsoleted with removal of lang/hiphop-php
 textproc/apache-solr3|textproc/apache-solr|2019-07-12|Obsolete
 misc/tcb||2019-07-13|Has expired: Abandonware that uses sys/dir.h
@@ -6611,7 +6611,7 @@ www/jspwiki||2022-03-31|Has expired: Depends on expired www/tomcat7
 graphics/deegree-wcs||2022-03-31|Has expired: Depends on expired www/tomcat7
 graphics/deegree-csw||2022-03-31|Has expired: Depends on expired www/tomcat7
 graphics/deegree-wms||2022-03-31|Has expired: Depends on expired www/tomcat7
-www/tomcat7||2022-03-31|Has expired: Tomcat 7 is EOL on 2021-03-31. Please upgrade to a later version
+www/tomcat7|www/tomcat85|2022-03-31|Has expired: Tomcat 7 is EOL on 2021-03-31. Please upgrade to a later version
 devel/gitblit||2022-03-31|Has expired: Depends on expired www/tomcat7
 graphics/barbecue||2022-03-31|Has expired: Depends on expired www/tomcat7
 graphics/deegree-wfs||2022-03-31|Has expired: Depends on expired www/tomcat7
@@ -7676,7 +7676,7 @@ audio/gbemol||2023-06-30|Has expired: Unmaintained for years and depends on depr
 audio/glurp||2023-06-30|Has expired: Unmaintained for years and depends on deprecated GTK2
 finance/R-cran-ccgarch||2023-06-30|Has expired: Fails to build with R 4.3.0+ and abandoned upstream
 www/redmine42||2023-06-30|Has expired: Broken with all supported Ruby versions
-www/tomcat10||2023-06-30|Has expired: EOLd, potential security issues (https://tomcat.apache.org/tomcat-10.0-eol.html), use www/tomcat101 instead
+www/tomcat10|www/tomcat101|2023-06-30|Has expired: EOLd, potential security issues (https://tomcat.apache.org/tomcat-10.0-eol.html), use www/tomcat101 instead
 databases/mongodb40-tools||2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
 databases/mongodb40||2023-06-30|Has expired: Upstream EOL reached on 2022-04-30
 dns/djbdns-tools||2023-06-30|Has expired: No longer compliant with current DNS standards and source code hasn't been centrally managed for over 20 years
