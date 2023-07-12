@@ -15,6 +15,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 ONLY_FOR_ARCHS=		aarch64 amd64 i386
 
+BUILD_DEPENDS=		${LOCALBASE}/lib/libgmp.so:math/gmp
+
 USES=			autoreconf compiler:c11 gmake \
 			ncurses perl5 python:build shebangfix \
 			tar:xz
