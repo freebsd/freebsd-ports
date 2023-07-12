@@ -1263,6 +1263,7 @@
 %%DATADIR%%/utilities/tables.py
 %%DATADIR%%/utilities/templates/builtins/badge.html
 %%DATADIR%%/utilities/templates/builtins/checkmark.html
+%%DATADIR%%/utilities/templates/builtins/copy_content.html
 %%DATADIR%%/utilities/templates/builtins/customfield_value.html
 %%DATADIR%%/utilities/templates/builtins/htmx_table.html
 %%DATADIR%%/utilities/templates/builtins/tag.html
