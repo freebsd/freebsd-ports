@@ -1,6 +1,5 @@
 PORTNAME=	ttk
-DISTVERSION=	1.1.0
-PORTREVISION=	3
+DISTVERSION=	1.2.0
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,6 +36,8 @@ USE_XORG=	x11
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	topology-tool-kit
+
+CMAKE_ARGS=	-DPython3_EXECUTABLE=${PYTHON_CMD}
 
 post-stage:
 	${RM} ${STAGEDIR}${PREFIX}/include/Python.h
