@@ -41,7 +41,6 @@ USE_QT=		qmake:build buildtools:build core dbus declarative gui \
 		multimedia:run quickcontrols2:run widgets x11extras
 USE_XORG=	pixman x11 xcb xi
 SHEBANG_FILES=	effect/effects/*.py kconf_update/*.py kconf_update/*.pl
-GL_TAGNAME=	6d47e3aebd58ea1e7556c67e0f7870e874922f7c
 PLIST_SUB=	VERSION=${PORTVERSION}
 LDFLAGS+=	-Wl,--as-needed # GL, ICE/SM/Xext, glib, intl, Qt5*, KF5*
 
