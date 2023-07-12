@@ -1,5 +1,5 @@
---- /var/ports/root/devel/sonarqube-community/work/sonarqube-10.1.0.73491/elasticsearch/config/elasticsearch.yml.orig	2023-03-27 16:30:24.000000000 +0200
-+++ /var/ports/root/devel/sonarqube-community/work/sonarqube-10.1.0.73491/elasticsearch/config/elasticsearch.yml	2023-07-05 20:36:37.154402000 +0200
+--- elasticsearch/config/elasticsearch.yml.orig	2023-03-27 14:30:24 UTC
++++ elasticsearch/config/elasticsearch.yml
 @@ -80,3 +80,6 @@
  # Allow wildcard deletion of indices:
  #
