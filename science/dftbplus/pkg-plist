@@ -24,6 +24,7 @@ include/dftbplus/modfiles/dftbp_common_atomicrad.mod
 %%MPIX%%include/dftbplus/modfiles/dftbp_common_blacsenv.mod
 include/dftbplus/modfiles/dftbp_common_coherence.mod
 include/dftbplus/modfiles/dftbp_common_constants.mod
+include/dftbplus/modfiles/dftbp_common_envcheck.mod
 include/dftbplus/modfiles/dftbp_common_environment.mod
 include/dftbplus/modfiles/dftbp_common_file.mod
 include/dftbplus/modfiles/dftbp_common_filesystem.mod
@@ -113,6 +114,7 @@ include/dftbplus/modfiles/dftbp_dftbplus_elstattypes.mod
 include/dftbplus/modfiles/dftbp_dftbplus_forcetypes.mod
 include/dftbplus/modfiles/dftbp_dftbplus_hsdhelpers.mod
 include/dftbplus/modfiles/dftbp_dftbplus_initprogram.mod
+include/dftbplus/modfiles/dftbp_dftbplus_input_fileaccess.mod
 include/dftbplus/modfiles/dftbp_dftbplus_input_geoopt.mod
 include/dftbplus/modfiles/dftbp_dftbplus_inputconversion.mod
 include/dftbplus/modfiles/dftbp_dftbplus_inputdata.mod
@@ -150,6 +152,7 @@ include/dftbplus/modfiles/dftbp_extlibs_sdftd3.mod
 include/dftbplus/modfiles/dftbp_extlibs_tblite.mod
 include/dftbplus/modfiles/dftbp_extlibs_xmlf90.mod
 include/dftbplus/modfiles/dftbp_geoopt_conjgrad.mod
+include/dftbplus/modfiles/dftbp_geoopt_deprecated_steepdesc.mod
 include/dftbplus/modfiles/dftbp_geoopt_filter.mod
 include/dftbplus/modfiles/dftbp_geoopt_fire.mod
 include/dftbplus/modfiles/dftbp_geoopt_gdiis.mod
@@ -263,6 +266,8 @@ include/dftbplus/modfiles/dftbp_type_dynneighlist.mod
 include/dftbplus/modfiles/dftbp_type_integral.mod
 include/dftbplus/modfiles/dftbp_type_latpointiter.mod
 include/dftbplus/modfiles/dftbp_type_linkedlist.mod
+include/dftbplus/modfiles/dftbp_type_linkedlistc0.mod
+include/dftbplus/modfiles/dftbp_type_linkedlistc1.mod
 include/dftbplus/modfiles/dftbp_type_linkedlisti0.mod
 include/dftbplus/modfiles/dftbp_type_linkedlisti1.mod
 include/dftbplus/modfiles/dftbp_type_linkedlistlc0.mod

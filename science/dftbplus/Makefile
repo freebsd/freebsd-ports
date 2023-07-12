@@ -1,5 +1,5 @@
 PORTNAME=	dftbplus
-DISTVERSION=	22.2
+DISTVERSION=	23.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,8 +29,7 @@ USE_GITHUB=	yes
 GH_TUPLE=	\
 		aradi:fytest:94e05ac:aradi_fytest/external/fytest/origin \
 		dftbplus:testparams:cd7536f:testparams/external/slakos/origin \
-		dftd4:dftd4:1189af7:dftd4_dftd4/external/dftd4/origin \
-		grimme-lab:gbsa-parameters:6836c4d:grimme_lab_gbsa/external/gbsa/origin
+		dftd4:dftd4:056491b:dftd4_dftd4/external/dftd4/origin
 
 TEST_TARGET=	test
 
@@ -67,7 +66,7 @@ MBD_LIB_DEPENDS=	libmbd.so:science/libmbd
 
 MPIX_DESC=		MPI (Message Passing Interface) support # the MPI option name causes failure in MPI_USES=mpi:openmpi
 MPIX_CMAKE_BOOL=	WITH_MPI
-MPIX_USES=		mpi:openmpi
+MPIX_USES=		mpi:mpich
 MPIX_LIB_DEPENDS=	libmpich.so:net/mpich \
 			libmpifx.so:net/mpifx \
 			libscalapack.so:math/scalapack \
