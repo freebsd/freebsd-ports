@@ -593,5 +593,5 @@ SHA256 (rust/crates/winreg-0.6.2.crate) = b2986deb581c4fe11b621998a5e53361efe6b4
 SIZE (rust/crates/winreg-0.6.2.crate) = 19338
 SHA256 (rust/crates/ws2_32-sys-0.2.1.crate) = d59cefebd0c892fa2dd6de581e937301d8552cb44489cdff035c6187cb63fa5e
 SIZE (rust/crates/ws2_32-sys-0.2.1.crate) = 4697
-SHA256 (World-Shortwave-6fb4acd47a4eae422270f9543bce2d5f0037504c_GL0.tar.gz) = f59c38b254f6d8df156e49d3e4238cd460ff3122050d19aba45eb372edfb49f5
-SIZE (World-Shortwave-6fb4acd47a4eae422270f9543bce2d5f0037504c_GL0.tar.gz) = 936701
+SHA256 (Shortwave-3.2.0.tar.bz2) = bc1d4199a1c7eca26820df4a29a13a04c8a7235f9016341cf259ebbe0499f2ca
+SIZE (Shortwave-3.2.0.tar.bz2) = 905129

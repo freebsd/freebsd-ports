@@ -20,7 +20,6 @@ USE_GSTREAMER=	good libav soup vorbis
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Shortwave
-GL_TAGNAME=	6fb4acd47a4eae422270f9543bce2d5f0037504c
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
