@@ -927,5 +927,5 @@ SHA256 (rust-av-ffv1-2afb025a327173ce891954c052e804d0f880368a_GH0.tar.gz) = 082d
 SIZE (rust-av-ffv1-2afb025a327173ce891954c052e804d0f880368a_GH0.tar.gz) = 21831345
 SHA256 (gtk-rs-gtk-rs-core-6b109fb807237b5d07aff9a541ca68e9c2191abd_GH0.tar.gz) = 34ecad91157e0b1657ff041b01f31759f6b536bce502fe104e72e5b1e3f3b801
 SIZE (gtk-rs-gtk-rs-core-6b109fb807237b5d07aff9a541ca68e9c2191abd_GH0.tar.gz) = 901837
-SHA256 (gstreamer-gst-plugins-rs-a291a2f0982b2d410aec25e007e16ff83a0d5c54_GL0.tar.gz) = af3a6ce6865933f6bbe3af5f1e7d70927a35197eeba5ce23082d922c5b576607
-SIZE (gstreamer-gst-plugins-rs-a291a2f0982b2d410aec25e007e16ff83a0d5c54_GL0.tar.gz) = 1907346
+SHA256 (gst-plugins-rs-0.10.10.tar.bz2) = 9c297326ce51e0a2a746153727368f4503e298216238372469417fe97180a078
+SIZE (gst-plugins-rs-0.10.10.tar.bz2) = 1461566
