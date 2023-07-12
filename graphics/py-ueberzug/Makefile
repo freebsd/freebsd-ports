@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw images on terminals with X11 child windows
 WWW=		https://github.com/seebye/ueberzug
 
