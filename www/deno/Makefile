@@ -1,11 +1,7 @@
 PORTNAME=	deno
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.34.3
-PORTREVISION=	1
+DISTVERSION=	1.35.0
 CATEGORIES=	www
-
-PATCH_SITES=	https://github.com/denoland/${PORTNAME}/commit/
-PATCHFILES+=	c8dc6b14ec5c1.patch:-p1 # https://github.com/denoland/deno/pull/19537
 
 MAINTAINER=	mikael@FreeBSD.org
 COMMENT=	Secure JavaScript and TypeScript runtime
@@ -27,7 +23,7 @@ GH_ACCOUNT=	denoland
 
 USE_GNOME=	glib20
 
-V8_VERS=	0.73.0
+V8_VERS=	0.74.1
 
 CARGO_ENV+=	CLANG_BASE_PATH=/usr \
 		GN=${PREFIX}/bin/gn \
@@ -75,7 +71,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		base64-0.21.0 \
 		base64-simd-0.8.0 \
 		base64ct-1.6.0 \
-		basic-toml-0.1.2 \
 		bencher-0.1.5 \
 		better_scoped_tls-0.1.0 \
 		bit-set-0.5.3 \
@@ -124,14 +119,18 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		dashmap-5.4.0 \
 		data-encoding-2.3.3 \
 		data-url-0.2.0 \
+		deno-proc-macro-rules-0.3.2 \
+		deno-proc-macro-rules-macros-0.3.2 \
 		deno_ast-0.27.0 \
+		deno_core-0.194.0 \
 		deno_doc-0.63.1 \
 		deno_emit-0.24.0 \
 		deno_graph-0.49.0 \
-		deno_lint-0.47.0 \
+		deno_lint-0.49.0 \
 		deno_lockfile-0.14.1 \
 		deno_media_type-0.1.0 \
-		deno_npm-0.8.1 \
+		deno_npm-0.9.1 \
+		deno_ops-0.72.0 \
 		deno_semver-0.2.2 \
 		deno_task_shell-0.12.0 \
 		der-0.6.1 \
@@ -170,7 +169,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		errno-dragonfly-0.1.2 \
 		error-code-2.3.1 \
 		escape8259-0.5.2 \
-		eszip-0.44.0 \
+		eszip-0.45.0 \
 		fallible-iterator-0.2.0 \
 		fallible-streaming-iterator-0.1.9 \
 		fancy-regex-0.10.0 \
@@ -265,7 +264,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lexical-write-integer-0.8.5 \
 		libc-0.2.140 \
 		libffi-3.2.0 \
-		libffi-sys-2.2.1 \
+		libffi-sys-2.3.0 \
 		libloading-0.7.4 \
 		libm-0.2.6 \
 		libsqlite3-sys-0.25.2 \
@@ -347,20 +346,19 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ppv-lite86-0.2.17 \
 		precomputed-hash-0.1.1 \
 		pretty_assertions-1.3.0 \
-		prettyplease-0.1.25 \
 		primeorder-0.13.1 \
 		proc-macro-crate-1.3.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
 		proc-macro2-0.4.30 \
-		proc-macro2-1.0.56 \
+		proc-macro2-1.0.60 \
 		psm-0.1.21 \
 		pty2-0.1.0 \
 		pulldown-cmark-0.9.3 \
 		quick-error-1.2.3 \
 		quote-0.6.13 \
-		quote-1.0.26 \
+		quote-1.0.28 \
 		radix_fmt-1.0.0 \
 		radix_trie-0.2.1 \
 		rand-0.8.5 \
@@ -415,6 +413,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		serde_json-1.0.94 \
 		serde_repr-0.1.9 \
 		serde_urlencoded-0.7.1 \
+		serde_v8-0.105.0 \
 		sha-1-0.10.0 \
 		sha1-0.10.5 \
 		sha2-0.10.6 \
@@ -441,6 +440,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		string_cache_codegen-0.5.2 \
 		string_enum-0.4.0 \
 		strsim-0.10.0 \
+		strum-0.24.1 \
+		strum_macros-0.24.3 \
 		subtle-2.4.1 \
 		swc_atoms-0.5.6 \
 		swc_bundler-0.214.25 \
@@ -470,13 +471,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		swc_visit_macros-0.5.7 \
 		syn-0.15.44 \
 		syn-1.0.109 \
-		syn-2.0.13 \
+		syn-2.0.18 \
 		synstructure-0.12.6 \
 		sysinfo-0.27.8 \
 		tar-0.4.38 \
 		tempfile-3.4.0 \
 		termcolor-1.2.0 \
-		testing_macros-0.2.8 \
 		text-size-1.1.0 \
 		text_lines-0.6.0 \
 		thiserror-1.0.40 \
@@ -510,7 +510,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		trust-dns-resolver-0.22.0 \
 		trust-dns-server-0.22.0 \
 		try-lock-0.2.4 \
-		trybuild-1.0.79 \
 		twox-hash-1.6.3 \
 		typed-arena-2.0.1 \
 		typenum-1.16.0 \
@@ -535,7 +534,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.1 \
 		uuid-1.3.0 \
-		v8-0.73.0 \
+		v8-0.74.1 \
 		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		vsimd-0.8.0 \
