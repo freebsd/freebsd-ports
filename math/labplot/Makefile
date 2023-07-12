@@ -1,8 +1,7 @@
 PORTNAME=	labplot
-DISTVERSION=	2.9.0
-PORTREVISION=	10
+DISTVERSION=	2.10.1
 CATEGORIES=	math kde
-MASTER_SITES=	KDE/stable/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Data plotting and function analysis tool by KDE
