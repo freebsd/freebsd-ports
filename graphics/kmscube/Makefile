@@ -16,7 +16,7 @@ USE_GITLAB=	yes
 USE_GL=		egl gbm glesv2
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
-GL_TAGNAME=	cf4ec7f35521eb54d72ce0c92ce65b2249171cbd
+GL_TAGNAME=	cf4ec7f
 PLIST_FILES=	bin/${PORTNAME} \
 		bin/texturator \
 		${NULL}
