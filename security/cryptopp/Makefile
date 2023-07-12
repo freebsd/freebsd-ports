@@ -1,5 +1,5 @@
 PORTNAME=	cryptopp
-PORTVERSION=	8.7.0
+PORTVERSION=	8.8.0
 CATEGORIES=	security
 MASTER_SITES=	https://github.com/weidai11/${PORTNAME}/releases/download/CRYPTOPP_${PORTVERSION:S/./_/g}/ \
 		http://www.cryptopp.com/
@@ -20,7 +20,7 @@ CPE_VENDOR=	cryptopp
 EXTRACT_BEFORE_ARGS=	-aq
 NO_WRKSUBDIR=		yes
 
-CXXFLAGS+=	-Wno-deprecated-declarations -fPIC
+CXXFLAGS+=	-fPIC
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	static shared libcryptopp.pc
 

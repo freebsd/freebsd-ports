@@ -1,6 +1,6 @@
 PORTNAME=	urbackup-client
 DISTVERSION=	2.5.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	archivers
 MASTER_SITES=	https://hndl.urbackup.org/Client/${DISTVERSION:R}/
 
