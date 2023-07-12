@@ -1,6 +1,6 @@
 PORTNAME=	netbox
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.5.4
+DISTVERSION=	3.5.6
 CATEGORIES=	net-mgmt python
 
 MAINTAINER=	kai@FreeBSD.org
@@ -23,22 +23,22 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 # - www/py-dj41-django-tables2
 # - www/py-dj41-djangorestframework
 #
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django41>=4.1.9<4.2:www/py-django41@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django41>=4.1.10<4.2:www/py-django41@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-cors-headers>=4.1.0<5:www/py-dj41-django-cors-headers@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-debug-toolbar>=4.1.0<5:www/py-dj41-django-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-filter>=23.2<24:www/py-dj41-django-filter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-graphiql-debug-toolbar>=0.2.0<1:www/py-dj41-django-graphiql-debug-toolbar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-mptt>=0.14.0<0.15:www/py-dj41-django-mptt@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-prometheus>=2.3.1<2.4:www/py-dj41-django-prometheus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj41-django-redis>=5.2.0<6:www/py-dj41-django-redis@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj41-django-rich>=1.6.0<2:www/py-dj41-django-rich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj41-django-redis>=5.3.0<6:www/py-dj41-django-redis@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj41-django-rich>=1.7.0<2:www/py-dj41-django-rich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-rq>=2.8.1<2.9:devel/py-dj41-django-rq@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj41-django-tables2>=2.5.3<2.6:www/py-dj41-django-tables2@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj41-django-tables2>=2.6<2.7:www/py-dj41-django-tables2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-taggit>=4.0.0<5:www/py-dj41-django-taggit@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-django-timezone-field>=5.1<6:www/py-dj41-django-timezone-field@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-djangorestframework>=3.14.0<3.15.0:www/py-dj41-djangorestframework@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj41-drf-spectacular>=0.26.2<1:www/py-dj41-drf-spectacular@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}dj41-drf-spectacular-sidecar>=2023.6.1:www/py-dj41-drf-spectacular-sidecar@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj41-drf-spectacular>=0.26.3<1:www/py-dj41-drf-spectacular@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}dj41-drf-spectacular-sidecar>=2023.7.1:www/py-dj41-drf-spectacular-sidecar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dj41-graphene-django>=3.0.0,1<3.0.0_99,1:devel/py-dj41-graphene-django@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}django-pglocks>=1.0.4<1.1:www/py-django-pglocks@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=5.0.1<7:www/py-bleach@${PY_FLAVOR} \
