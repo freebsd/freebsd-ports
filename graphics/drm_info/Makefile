@@ -17,7 +17,6 @@ USES=		compiler:c11 meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	emersion
-GL_TAGNAME=	f819ac496d1d9aa5dc5e50bb3bd60dfbd0030ae6
 PLIST_FILES=	bin/${PORTNAME}
 
 OPTIONS_DEFINE=	MANPAGES PCI
