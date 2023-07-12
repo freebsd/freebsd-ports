@@ -16,7 +16,6 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 USES=		cargo
 USE_GITLAB=	yes
 GL_ACCOUNT=	snakedye
-GL_TAGNAME=	bb53391bac0c379dffdddb3cb35b423a8738a962
 PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>

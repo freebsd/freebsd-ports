@@ -463,5 +463,5 @@ SHA256 (snakedye-snui-adwaita-957429b19920ab443aaeca721d381c4cd2115252_GL0.tar.g
 SIZE (snakedye-snui-adwaita-957429b19920ab443aaeca721d381c4cd2115252_GL0.tar.gz) = 45992
 SHA256 (snakedye-snui-8bad73755f4a1eb8ab4a2cbe077dc70270293cad_GL0.tar.gz) = 4381ef2b4d4f635f3e3236b314e6b59af56e30359936c8f169eff923d8f282e4
 SIZE (snakedye-snui-8bad73755f4a1eb8ab4a2cbe077dc70270293cad_GL0.tar.gz) = 85084
-SHA256 (snakedye-salut-bb53391bac0c379dffdddb3cb35b423a8738a962_GL0.tar.gz) = f6d940d70eabaf2e29964cc24c395de9fe37024f68e797b05dc9b7aa8ec91d93
-SIZE (snakedye-salut-bb53391bac0c379dffdddb3cb35b423a8738a962_GL0.tar.gz) = 64302
+SHA256 (salut-v0.3.1.tar.bz2) = f431682738c92aa12f9f4aecdba425524372e2073b57d27928a0224b81990410
+SIZE (salut-v0.3.1.tar.bz2) = 61159
