@@ -1,5 +1,6 @@
 PORTNAME=	redis
 PORTVERSION=	5.3.7
+PORTREVISION=	1
 CATEGORIES=	databases
 
 MAINTAINER=	daniel@blodan.se
