@@ -6,7 +6,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Draw images on terminals with X11 child windows
-WWW=		https://github.com/seebye/ueberzug
+WWW=		https://github.com/ueber-devel/ueberzug
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -20,7 +20,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 USES=		localbase python shebangfix xorg
 USE_CSTD=	c99
 USE_GITHUB=	yes
-GH_ACCOUNT=	seebye
+GH_ACCOUNT=	ueber-devel
 USE_PYTHON=	autoplist concurrent distutils
 USE_XORG=	x11 xext
 SHEBANG_GLOB=	*.py *.sh
