@@ -1,6 +1,5 @@
 PORTNAME=	mpifx
-DISTVERSION=	1.3.1
-PORTREVISION=	1
+DISTVERSION=	1.4
 CATEGORIES=	net devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -32,6 +31,6 @@ post-test: # run test programs # at least one test crashes, see https://github.c
 FFLAGS+=	-fallow-argument-mismatch
 .endif
 
-# tests fail to build: https://github.com/dftbplus/mpifx/issues/43
+# tests fail to run: https://github.com/dftbplus/mpifx/issues/49
 
 .include <bsd.port.post.mk>
