@@ -1,6 +1,5 @@
 PORTNAME=	wlroots
 DISTVERSION=	0.15.1
-DISTVERSIONSUFFIX=	-g${GL_TAGNAME:C/(.{12}).*/\1/}
 PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	015
@@ -36,7 +35,6 @@ USE_GL=		gbm
 USE_XORG=	pixman
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_TAGNAME=	29938b74251e826f3778f6bf9c54974a30488cc1
 MESON_ARGS=	-Dexamples=false -Dbackends=${BACKENDS:ts,} -Drenderers=${RENDERERS:ts,}
 
 .ifdef PKGNAMESUFFIX
