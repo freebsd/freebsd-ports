@@ -15,6 +15,10 @@ WWW=		https://www.blender.org/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/doc/license/GPL3-license.txt
 
+BROKEN=		Fails to compile, ld: error: unable to find library -lOpenImageIO_Util
+DEPRECATED=	Deprecated upstream
+EXPIRATION_DATE=2023-07-31
+
 NOT_FOR_ARCHS=	i386
 NOT_FOR_ARCHS_REASON=	uses 64bit atomic functions
 
