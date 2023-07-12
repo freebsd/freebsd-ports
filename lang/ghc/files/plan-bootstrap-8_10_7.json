@@ -67,7 +67,7 @@
       "revision": 0,
       "src_sha256": "8061823a4ac521b53912edcba36b956f3159cb885b07ec119af295a6568ca7c4",
       "flags": [
-        "-integer-gmp"
+        "integer-gmp"
       ],
       "package": "hashable",
       "version": "1.3.1.0"
@@ -172,8 +172,8 @@
       "version": "0.6.1"
     },
     {
-      "package": "integer-simple",
-      "version": "0.1.2.0"
+      "package": "integer-gmp",
+      "version": "1.0.3.0"
     },
     {
       "package": "base",
