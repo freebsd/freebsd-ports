@@ -205,5 +205,5 @@ SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
 SHA256 (rust/crates/winnow-0.4.1.crate) = ae8970b36c66498d8ff1d66685dc86b91b29db0c7739899012f63a63814b4b28
 SIZE (rust/crates/winnow-0.4.1.crate) = 138177
-SHA256 (World-Solanum-33c01f8a2da39cba0bc1744e405de2be833876cd_GL0.tar.gz) = c85c09a5f7d86b7617b55d0ef339fb54980d539d440b719f71ba8c2b72fd0cb0
-SIZE (World-Solanum-33c01f8a2da39cba0bc1744e405de2be833876cd_GL0.tar.gz) = 130565
+SHA256 (Solanum-4.0.0.tar.bz2) = 44a69bec6574f93f82bebc5d816076f6bcd5b7a4d6c284e078bfc33349c9a0ef
+SIZE (Solanum-4.0.0.tar.bz2) = 129033
