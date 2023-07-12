@@ -1,9 +1,8 @@
-PORTNAME=	gmake
-PORTVERSION=	4.3
-PORTREVISION=	3
+PORTNAME=	make
+DISTVERSION=	4.4.1
 CATEGORIES=	devel
-MASTER_SITES=	GNU/make
-DISTNAME=	make-${PORTVERSION}
+MASTER_SITES=	GNU
+PKGNAMEPREFIX=	g
 
 # note: before committing to this port, contact portmgr to arrange for an
 # experimental ports run.  Untested commits may be backed out at portmgr's
@@ -15,21 +14,20 @@ WWW=		https://www.gnu.org/software/make/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		cpe tar:lz
+CPE_VENDOR=	gnu
+
 GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 CONFIGURE_ARGS=	--program-prefix=g \
 		--without-guile
 
-USES=		cpe tar:lz
-CPE_VENDOR=	gnu
-CPE_PRODUCT=	make
+INFO=		make
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
 
 NLS_USES=	gettext-runtime
 NLS_CONFIGURE_ENABLE=	nls
-
-INFO=		make
 
 .include <bsd.port.mk>

@@ -23,6 +23,7 @@ SUB_FILES=	pkg-message
 ADMIN?=		admin@example.com
 
 CFLAGS+=	-x c++ -std=gnu++98
+MAKE_JOBS_UNSAFE=yes
 
 PLIST_FILES=	sbin/delegated etc/rc.d/delegated.sh-dist
 PORTDOCS=	CHANGES COPYRIGHT HowToDG.html IPv6NOTE.txt \

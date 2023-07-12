@@ -1,0 +1,17 @@
+--- jfbuild/Makefile.shared.orig	2021-12-09 08:50:13 UTC
++++ jfbuild/Makefile.shared
+@@ -3,8 +3,12 @@ EDITORLIB=src/libbuild.a
+ ENGINELIB=src/libengine.a
+ EDITORLIB=src/libbuild.a
+ 
+-SDL2CONFIG?=$(shell which sdl2-config || which false)
+-PKGCONFIG?=$(shell which pkg-config || which false)
++ifndef SDL2CONFIG
++SDL2CONFIG!=which sdl2-config || which false
++endif
++ifndef PKGCONFIG
++PKGCONFIG!=which pkg-config || which false
++endif
+ export SDL2CONFIG PKGCONFIG
+ 
+ # Path to the included libsquish

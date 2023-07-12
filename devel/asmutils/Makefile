@@ -17,6 +17,7 @@ BUILD_DEPENDS=	nasm:devel/nasm
 USES=		gmake
 USE_GCC=	yes
 MAKE_ARGS=	OS="${OPSYS:tu}" KERNEL="${OSREL:S/.//g}" CC="${CC}" LD="${LD}"
+MAKE_JOBS_UNSAFE=yes
 
 # This will play merry hell with portlint(1)
 BINARIES=	bonus/asmutils basename cal cat chmod chown chroot cmp cp \

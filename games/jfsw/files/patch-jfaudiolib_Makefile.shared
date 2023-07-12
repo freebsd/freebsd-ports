@@ -1,0 +1,17 @@
+--- jfaudiolib/Makefile.shared.orig	2021-12-25 07:53:32 UTC
++++ jfaudiolib/Makefile.shared
+@@ -7,8 +7,12 @@ JFAUDIOLIB_LDFLAGS=
+ JFAUDIOLIB=libjfaudiolib.a
+ JFAUDIOLIB_LDFLAGS=
+ 
+-SDL2CONFIG?=$(shell which sdl2-config || which false)
+-PKGCONFIG?=$(shell which pkg-config || which false)
++ifndef SDL2CONFIG
++SDL2CONFIG!=which sdl2-config || which false
++endif
++ifndef PKGCONFIG
++PKGCONFIG!=which pkg-config || which false
++endif
+ 
+ machine=$(strip $(shell $(CC) -dumpmachine))
+ 

@@ -1,6 +1,15 @@
 --- main/Makefile.orig	2017-10-21 14:01:07 UTC
 +++ main/Makefile
-@@ -133,15 +133,15 @@ $(BINDIR)/flite_${VOICE}: flite_main.o flite_lang_list
+@@ -49,7 +49,7 @@ ALL = shared_libs \
+       $(BINDIR)/flite$(EXEEXT) \
+       $(BINDIR)/t2p$(EXEEXT) $(BINDIR)/compile_regexes$(EXEEXT) \
+       $(BINDIR)/flitevox_info$(EXEEXT) \
+-      flite_voice_list.c each $(EXTRABINS)
++      each $(EXTRABINS)
+ 
+ VOICES=$(VOXES)
+ VOICELIBS=$(VOICES:%=flite_%)
+@@ -133,15 +133,15 @@ install:
  
  install:
  #       The basic binaries

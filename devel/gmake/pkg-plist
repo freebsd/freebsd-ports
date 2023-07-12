@@ -21,6 +21,7 @@ include/gnumake.h
 %%NLS%%share/locale/pl/LC_MESSAGES/make.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/make.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/make.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/make.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/make.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/make.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/make.mo

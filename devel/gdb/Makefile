@@ -141,8 +141,8 @@ do-install:
 		${STAGEDIR}${PREFIX}/bin/gdb${VER}
 	${INSTALL_MAN} ${WRKSRC}/gdb/doc/gdb.1 \
 		${STAGEDIR}${PREFIX}/share/man/man1/gdb${VER}.1
-	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls )
+	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; ${SETENVI} ${WRK_ENV} \
+		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-syscalls )
 
 do-install-KGDB-on:
 	${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/gdb/kgdb \
@@ -162,18 +162,18 @@ do-install-GDB_LINK-on:
 .endif
 
 do-install-PYTHON-on:
-	(cd ${INSTALL_WRKSRC}/gdb ; \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
-	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
+	(cd ${INSTALL_WRKSRC}/gdb ; ${SETENVI} ${WRK_ENV} \
+		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
+	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; ${SETENVI} ${WRK_ENV} \
+		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-python )
 	@(cd ${STAGEDIR}${PREFIX}/share/gdb/python && \
 		${PYTHON_CMD} -m compileall .)
 . for f in gdb gdb/command gdb/function gdb/printer
 	@(cd ${STAGEDIR}${PREFIX}/share/gdb/python/${f} ; ${CHMOD} 644 *.py* )
 . endfor
 .if exists(/usr/lib/libc++.so.1) || exists(/lib/libc++.so.1)
-	@(cd ${WRKSRC_libcxx} ; \
-		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} \
+	@(cd ${WRKSRC_libcxx} ; ${SETENVI} ${WRK_ENV} \
+		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} \
 		    LIBCXX_DIR="${LIBCXX_DIR}" install )
 	@(cd ${STAGEDIR}${PREFIX}/share/gdb/auto-load/${LIBCXX_DIR} && \
 		${PYTHON_CMD} -m compileall .)
@@ -187,9 +187,9 @@ do-install-PYTHON-on:
 # breakage at run time.
 
 do-install-GUILE-on:
-	(cd ${INSTALL_WRKSRC}/gdb ; \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-guile )
-	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; \
-		${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-guile )
+	(cd ${INSTALL_WRKSRC}/gdb ; ${SETENVI} ${WRK_ENV} \
+		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-guile )
+	(cd ${INSTALL_WRKSRC}/gdb/data-directory ; ${SETENVI} ${WRK_ENV} \
+		${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} install-guile )
 
 .include <bsd.port.post.mk>

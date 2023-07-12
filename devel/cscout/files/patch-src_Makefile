@@ -1,6 +1,24 @@
 --- src/Makefile.orig	2019-11-04 16:42:35 UTC
 +++ src/Makefile
-@@ -207,12 +207,13 @@ mkerr:
+@@ -153,7 +153,7 @@ build/%.o: %.cpp
+ 
+ # Dependency generation rules
+ # See https://www.gnu.org/software/make/manual/html_node/Automatic-Prerequisites.html
+-dep/%.d: %.cpp
++dep/%.d: %.cpp parse.tab.h
+ 	@set -e; rm -f $@; \
+ 	mkdir -p dep ; \
+ 	$(CXX) -MM $(CPPFLAGS) $< > $@.$$$$; \
+@@ -167,6 +167,8 @@ dep/%.d: %.c
+ 	sed 's,\($*\)\.o[ :]*,build/\1.o $@ : ,g' < $@.$$$$ > $@; \
+ 	rm -f $@.$$$$
+ 
++dep/html.d: css.c
++
+ # Serialize execution order to ensure the dependencies are built before
+ # compiling the object files in make -j invocations
+ all:
+@@ -207,12 +209,13 @@ mkerr:
  
  # This ensures that the version.cpp is regenerated iff its SHA doesn't
  # match the current one.
@@ -17,7 +35,7 @@
  
  
  test:
-@@ -264,6 +265,7 @@ obfuscation:
+@@ -264,6 +267,7 @@ install: build/cscout
  	)
  
  install: build/cscout
