@@ -18,7 +18,6 @@ USE_XORG=	x11
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
 GL_PROJECT=	demos
-GL_TAGNAME=	661681767bfb4e8f136aac1fd7934e6b0fa46d29
 WRKSRC_SUBDIR=	src/xdemos
 CFLAGS+=	-ffunction-sections -fdata-sections
 LDFLAGS+=	-Wl,--gc-sections
