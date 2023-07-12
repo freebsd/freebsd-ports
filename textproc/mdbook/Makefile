@@ -4,7 +4,7 @@ DISTVERSION=	0.4.21
 PORTREVISION=	8
 CATEGORIES=	textproc
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create book from Markdown files (like GitBook but implemented in Rust)
 WWW=		https://rust-lang.github.io/mdBook/
 
