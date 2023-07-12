@@ -1,5 +1,3 @@
-TIMESTAMP = 1687891241
+TIMESTAMP = 1689139986
 SHA256 (cryptopp880.zip) = ace1c7b010a409eba5e86c4fd5a8845c43a6ac39bb6110e64ca5d7fea08583f4
 SIZE (cryptopp880.zip) = 9279806
-SHA256 (abdes-cryptopp-cmake-CRYPTOPP_8_8_0_GH0.tar.gz) = a10068ab47fb46785dfe43ebe45369008855b03f6711ac7d1af6f45aa9238290
-SIZE (abdes-cryptopp-cmake-CRYPTOPP_8_8_0_GH0.tar.gz) = 46384
