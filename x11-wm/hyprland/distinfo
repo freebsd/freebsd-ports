@@ -1,13 +1,9 @@
 TIMESTAMP = 1689160271
-SHA256 (hyprwm-Hyprland-v0.27.0_GH0.tar.gz) = f3dcaa4ab24d1b412308f209e7f1f7e799bdc4960349af4c66e572eb8e78d9a5
-SIZE (hyprwm-Hyprland-v0.27.0_GH0.tar.gz) = 780714
+SHA256 (hyprwm-Hyprland-v0.27.1_GH0.tar.gz) = 92e7d9c0287d8a37993de03c01b076bcb6c27aa27af1476a0be72885373c04ad
+SIZE (hyprwm-Hyprland-v0.27.1_GH0.tar.gz) = 4233316
 SHA256 (hyprwm-hyprland-protocols-4d29e48_GH0.tar.gz) = 1384ccdbb0149cdc40d74fbe21fba97d706db08b718c7df9481076381d852c74
 SIZE (hyprwm-hyprland-protocols-4d29e48_GH0.tar.gz) = 6340
 SHA256 (canihavesomecoffee-udis86-1.7.2-186-g5336633_GH0.tar.gz) = 69aff959179ff6247b375b92e797221dbd8e078eabbf1366280b0532617e7fb8
 SIZE (canihavesomecoffee-udis86-1.7.2-186-g5336633_GH0.tar.gz) = 116938
 SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271
 SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803
-SHA256 (8c9e2e1ff1d2.patch) = 4352f3db32c1155da937fdccd10493919b8f5bc5347050c3a60bf84f3a8d043b
-SIZE (8c9e2e1ff1d2.patch) = 9958
-SHA256 (2e323a56716e.patch) = b06846bfca32bf376cca21e6cf6daf1eedf83b73600d4f96602632650e4b5322
-SIZE (2e323a56716e.patch) = 981
