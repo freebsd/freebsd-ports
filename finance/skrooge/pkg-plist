@@ -58,7 +58,6 @@ lib/libskgbasemodeler.so.%%SHLIB_VER%%
 share/applications/org.kde.skrooge.desktop
 share/config.kcfg/skgbasegui_settings.kcfg
 share/config.kcfg/skgbookmark_settings.kcfg
-share/config.kcfg/skgdashboard_settings.kcfg
 share/config.kcfg/skgfile_settings.kcfg
 share/config.kcfg/skgimportexport_settings.kcfg
 share/config.kcfg/skgoperation_settings.kcfg
@@ -453,6 +452,7 @@ share/locale/en_GB/LC_MESSAGES/skrooge.mo
 share/locale/eo/LC_MESSAGES/skrooge.mo
 share/locale/es/LC_MESSAGES/skrooge.mo
 share/locale/et/LC_MESSAGES/skrooge.mo
+share/locale/eu/LC_MESSAGES/skrooge.mo
 share/locale/fi/LC_MESSAGES/skrooge.mo
 share/locale/fr/LC_MESSAGES/skrooge.mo
 share/locale/ga/LC_MESSAGES/skrooge.mo
@@ -460,6 +460,7 @@ share/locale/gl/LC_MESSAGES/skrooge.mo
 share/locale/hu/LC_MESSAGES/skrooge.mo
 share/locale/ia/LC_MESSAGES/skrooge.mo
 share/locale/it/LC_MESSAGES/skrooge.mo
+share/locale/ja/LC_MESSAGES/skrooge.mo
 share/locale/ka/LC_MESSAGES/skrooge.mo
 share/locale/ko/LC_MESSAGES/skrooge.mo
 share/locale/lt/LC_MESSAGES/skrooge.mo
@@ -713,6 +714,7 @@ share/mime/packages/x-skg.xml
 %%DATADIR%%/html/default/SKGValue.qml
 %%DATADIR%%/html/default/account_table.html
 %%DATADIR%%/html/default/account_table.qml
+%%DATADIR%%/html/default/account_table_light.qml
 %%DATADIR%%/html/default/advices_table.html
 %%DATADIR%%/html/default/alarm.html
 %%DATADIR%%/html/default/alarm.qml
