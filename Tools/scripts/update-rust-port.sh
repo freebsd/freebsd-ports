@@ -2,12 +2,25 @@
 #
 # MAINTAINER: yuri@FreeBSD.org
 
+# CAVEAT: ports with Makefile.crates are not yet supported
+
 ## args
 
 VERSION="$1"
 
+## set strict mode
+
+STRICT="set -euo pipefail"
+$STRICT
+
 ## checks
 
+for dep in portedit rustc; do
+	if ! which -s $dep; then
+		echo "error: $dep dependency is missing, $0 requires lang/rust and ports-mgmt/portfmt to be installed" >&2
+		exit 1
+	fi
+done
 if [ -z "$VERSION" ]; then
 	echo "Usage: $0 <new-version>"
 	exit 1
@@ -22,8 +35,13 @@ fi
 # copy Makefile
 cp Makefile Makefile.new
 
-# substitute version
-sed -i '' -E "s/(VERSION=[\t ]*)[0-9.]+/\1${VERSION}/" Makefile.new
+# substitute version tag PORTVERSION or DISTVERSION
+sed -i '' -E "s/^(PORT|DIST)(VERSION=[\t ]*)[0-9.-]+/\1\2${VERSION}/" Makefile.new
+
+# reset PORTREVISION if present
+if grep -q "PORTREVISION=" Makefile; then
+	echo PORTREVISION=0 | portedit merge -i Makefile.new
+fi
 
 # replace CARGO_CRATES with a placeholder
 /usr/bin/awk '
