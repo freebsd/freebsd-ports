@@ -743,5 +743,5 @@ SHA256 (rust/crates/zvariant_derive-3.12.0.crate) = 34c20260af4b28b3275d6676c7e2
 SIZE (rust/crates/zvariant_derive-3.12.0.crate) = 10828
 SHA256 (rust/crates/zvariant_utils-1.0.0.crate) = 53b22993dbc4d128a17a3b6c92f1c63872dd67198537ee728d8b5d7c40640a8b
 SIZE (rust/crates/zvariant_utils-1.0.0.crate) = 6230
-SHA256 (World-Authenticator-77963b4714065939a86b329fe611d57d182a573e_GL0.tar.gz) = ce25715869cb7a0b4a63c6a3831a38211ae77a317453f28762f92e47488be62f
-SIZE (World-Authenticator-77963b4714065939a86b329fe611d57d182a573e_GL0.tar.gz) = 600700
+SHA256 (Authenticator-4.3.1.tar.bz2) = 5b195bc53c7e7190bb7980ba64f5935ba46b0e6103a2952976aa0e578cf6b7e8
+SIZE (Authenticator-4.3.1.tar.bz2) = 500822
