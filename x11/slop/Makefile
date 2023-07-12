@@ -4,7 +4,7 @@ DISTVERSION=	7.6
 PORTREVISION=	4
 CATEGORIES=	x11
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Make a screen selection and print the selection coordinates to stdout
 WWW=		https://github.com/naelstrof/slop
 
