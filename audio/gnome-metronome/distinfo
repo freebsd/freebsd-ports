@@ -213,5 +213,5 @@ SHA256 (rust/crates/winapi-util-0.1.5.crate) = 70ec6ce85bb158151cae5e5c87f95a8e9
 SIZE (rust/crates/winapi-util-0.1.5.crate) = 10164
 SHA256 (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f
 SIZE (rust/crates/winapi-x86_64-pc-windows-gnu-0.4.0.crate) = 2947998
-SHA256 (World-metronome-cf2dd4fdf9de9dabadb44a21338f5872abd044ea_GL0.tar.gz) = a68873ce6d357da76d4dffbf6521f55151a7bff68858f0a8d2a8c7564dcc22a7
-SIZE (World-metronome-cf2dd4fdf9de9dabadb44a21338f5872abd044ea_GL0.tar.gz) = 118463
+SHA256 (metronome-1.3.0.tar.bz2) = a40f7f105024b385d8536de30ce25aedd89a43ca01334b0c25b5f535055b2eff
+SIZE (metronome-1.3.0.tar.bz2) = 119545

@@ -18,7 +18,6 @@ USE_GNOME=	gtk40 libadwaita
 USE_GSTREAMER=	bad good vorbis
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
-GL_TAGNAME=	cf2dd4fdf9de9dabadb44a21338f5872abd044ea
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
