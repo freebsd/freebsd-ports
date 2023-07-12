@@ -7,7 +7,7 @@ MAINTAINER=	gmarco@giovannelli.it
 COMMENT=	Hexdump and reverse hexdump utility from vim distribution
 WWW=		${VIM_WWW}
 
-CONFLICTS_INSTALL=	vim-[0-9]* vim-gtk2 vim-gtk3 vim-motif vim-x11
+CONFLICTS_INSTALL=	vim-[0-9]* vim-console vim-gtk2 vim-gtk3 vim-motif vim-x11
 
 DISTINFO_FILE=	${VIM_PORT}/distinfo
 ALL_TARGET=	${PORTNAME}
