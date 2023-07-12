@@ -1,8 +1,8 @@
---- crypto/CMakeLists.txt.orig	2023-04-26 21:06:18 UTC
+--- crypto/CMakeLists.txt.orig	2023-07-12 16:40:43 UTC
 +++ crypto/CMakeLists.txt
-@@ -426,3 +426,5 @@ add_executable(
- )
- target_link_libraries(crypto_test test_support_lib boringssl_gtest_main crypto)
- add_dependencies(all_tests crypto_test)
+@@ -345,3 +345,5 @@ endif()
+ if(USE_CUSTOM_LIBCXX)
+   target_link_libraries(crypto libcxx)
+ endif()
 +
 +SET_TARGET_PROPERTIES(crypto PROPERTIES SOVERSION 1)
