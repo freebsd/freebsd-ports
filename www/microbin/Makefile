@@ -1,7 +1,6 @@
 PORTNAME=	microbin
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.2.1
-PORTREVISION=	2
+DISTVERSION=	2.0.4
 CATEGORIES=	www
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,9 +10,12 @@ WWW=		https://microbin.eu
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BUILD_DEPENDS=	bash:shells/bash \
+		gmake:devel/gmake
 LIB_DEPENDS=	libonig.so:devel/oniguruma
 
-USES=		cargo
+USES=		cargo perl5
+USE_PERL5=	build
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	szabodanika
@@ -32,10 +34,13 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		actix-web-codegen-4.1.0 \
 		actix-web-httpauth-0.6.0 \
 		adler-1.0.2 \
+		aes-0.7.5 \
 		ahash-0.7.6 \
+		ahash-0.8.3 \
 		aho-corasick-0.7.19 \
 		alloc-no-stdlib-2.0.4 \
 		alloc-stdlib-0.2.2 \
+		allocator-api2-0.2.15 \
 		android_system_properties-0.1.5 \
 		arrayvec-0.5.2 \
 		askama-0.10.5 \
@@ -48,11 +53,16 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		base64-0.13.1 \
+		base64-0.21.2 \
 		bincode-1.3.3 \
 		bit_field-0.10.1 \
 		bitflags-1.3.2 \
+		bitflags-2.3.2 \
 		bitvec-0.19.6 \
+		block-buffer-0.9.0 \
 		block-buffer-0.10.3 \
+		block-modes-0.8.1 \
+		block-padding-0.2.1 \
 		brotli-3.3.4 \
 		brotli-decompressor-2.3.2 \
 		bumpalo-3.11.1 \
@@ -64,6 +74,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		cc-1.0.73 \
 		cfg-if-1.0.0 \
 		chrono-0.4.22 \
+		cipher-0.3.0 \
 		clap-3.2.23 \
 		clap_derive-3.2.18 \
 		clap_lex-0.2.4 \
@@ -71,8 +82,10 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		color_quant-1.1.0 \
 		convert_case-0.4.0 \
 		cookie-0.16.1 \
+		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.3 \
 		cpufeatures-0.2.5 \
+		crc-any-2.4.3 \
 		crc32fast-1.3.2 \
 		crossbeam-channel-0.5.6 \
 		crossbeam-deque-0.8.2 \
@@ -84,15 +97,25 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		cxx-build-1.0.80 \
 		cxxbridge-flags-1.0.80 \
 		cxxbridge-macro-1.0.80 \
+		debug-helper-0.3.13 \
 		derive_more-0.99.17 \
+		des-0.7.0 \
+		digest-0.9.0 \
 		digest-0.10.5 \
 		either-1.8.0 \
 		encoding_rs-0.8.31 \
-		env_logger-0.9.1 \
+		env_logger-0.9.3 \
+		errno-0.3.1 \
+		errno-dragonfly-0.1.2 \
 		exr-1.5.2 \
+		fallible-iterator-0.2.0 \
+		fallible-streaming-iterator-0.1.9 \
+		fastrand-1.9.0 \
 		flate2-1.0.24 \
 		flume-0.10.14 \
 		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.1.0 \
 		funty-1.1.0 \
 		futures-0.3.25 \
@@ -111,20 +134,29 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		half-2.1.0 \
 		harsh-0.2.2 \
 		hashbrown-0.12.3 \
+		hashbrown-0.14.0 \
+		hashlink-0.8.3 \
 		heck-0.4.0 \
 		hermit-abi-0.1.19 \
+		hermit-abi-0.3.2 \
 		html-escape-0.2.13 \
 		http-0.2.8 \
+		http-body-0.4.5 \
 		http-range-0.1.5 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
 		humansize-1.1.1 \
 		humantime-2.1.0 \
+		hyper-0.14.25 \
+		hyper-tls-0.5.0 \
 		iana-time-zone-0.1.51 \
 		iana-time-zone-haiku-0.1.1 \
 		idna-0.3.0 \
 		image-0.24.4 \
 		indexmap-1.9.1 \
+		instant-0.1.12 \
+		io-lifetimes-1.0.11 \
+		ipnet-2.8.0 \
 		itoa-1.0.4 \
 		jobserver-0.1.25 \
 		jpeg-decoder-0.2.6 \
@@ -133,15 +165,19 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		lazy_static-1.4.0 \
 		lebe-0.5.2 \
 		lexical-core-0.7.6 \
-		libc-0.2.137 \
+		libc-0.2.142 \
+		libsqlite3-sys-0.26.0 \
 		line-wrap-0.1.1 \
 		link-cplusplus-1.0.7 \
 		linked-hash-map-0.5.6 \
 		linkify-0.8.1 \
+		linux-raw-sys-0.3.8 \
 		local-channel-0.1.3 \
 		local-waker-0.1.3 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
+		magic-crypt-3.1.12 \
+		md-5-0.9.1 \
 		memchr-2.5.0 \
 		memoffset-0.6.5 \
 		mime-0.3.16 \
@@ -150,6 +186,7 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		miniz_oxide-0.6.2 \
 		mio-0.8.5 \
 		nanorand-0.7.0 \
+		native-tls-0.2.11 \
 		nom-6.1.2 \
 		num-integer-0.1.45 \
 		num-rational-0.4.1 \
@@ -159,7 +196,13 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		once_cell-1.15.0 \
 		onig-6.4.0 \
 		onig_sys-69.8.1 \
-		os_str_bytes-6.3.0 \
+		opaque-debug-0.3.0 \
+		openssl-0.10.55 \
+		openssl-macros-0.1.1 \
+		openssl-probe-0.1.5 \
+		openssl-src-111.25.0+1.1.1t \
+		openssl-sys-0.9.90 \
+		os_str_bytes-6.5.0 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.4 \
 		paste-1.0.9 \
@@ -174,10 +217,10 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		ppv-lite86-0.2.16 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.47 \
+		proc-macro2-1.0.56 \
 		qrcode-generator-4.1.6 \
 		qrcodegen-1.8.0 \
-		quote-1.0.21 \
+		quote-1.0.26 \
 		radium-0.5.3 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
@@ -185,53 +228,67 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		rayon-1.5.3 \
 		rayon-core-1.9.3 \
 		redox_syscall-0.2.16 \
+		redox_syscall-0.3.5 \
 		regex-1.6.0 \
 		regex-syntax-0.6.27 \
+		reqwest-0.11.18 \
+		rusqlite-0.29.0 \
 		rust-embed-6.4.2 \
 		rust-embed-impl-6.3.1 \
 		rust-embed-utils-7.3.0 \
 		rustc_version-0.4.0 \
+		rustix-0.37.19 \
 		ryu-1.0.11 \
 		safemem-0.3.3 \
 		same-file-1.0.6 \
 		sanitize-filename-0.3.0 \
+		schannel-0.1.22 \
 		scoped_threadpool-0.1.9 \
 		scopeguard-1.1.0 \
 		scratch-1.0.2 \
+		security-framework-2.9.1 \
+		security-framework-sys-2.9.0 \
 		semver-1.0.14 \
 		serde-1.0.147 \
 		serde_derive-1.0.147 \
 		serde_json-1.0.87 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.5 \
+		sha2-0.9.9 \
 		sha2-0.10.6 \
 		signal-hook-registry-1.4.0 \
 		slab-0.4.7 \
 		smallvec-1.10.0 \
-		socket2-0.4.7 \
+		socket2-0.4.9 \
 		spin-0.9.4 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.103 \
+		syn-2.0.16 \
 		syntect-5.0.0 \
 		tap-1.0.1 \
+		tempfile-3.6.0 \
 		termcolor-1.1.3 \
 		textwrap-0.16.0 \
 		thiserror-1.0.37 \
 		thiserror-impl-1.0.37 \
 		threadpool-1.8.1 \
 		tiff-0.7.3 \
+		tiger-0.1.0 \
 		time-0.1.44 \
 		time-0.3.16 \
 		time-core-0.1.0 \
 		time-macros-0.2.5 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		tokio-1.21.2 \
+		tokio-1.27.0 \
+		tokio-native-tls-0.3.1 \
 		tokio-util-0.7.4 \
 		toml-0.5.9 \
+		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-core-0.1.30 \
+		try-lock-0.2.4 \
 		twoway-0.2.2 \
 		typenum-1.15.0 \
 		unchecked-index-0.2.2 \
@@ -242,28 +299,44 @@ CARGO_CRATES=	actix-codec-0.5.0 \
 		unicode-width-0.1.10 \
 		url-2.3.1 \
 		utf8-width-0.1.6 \
+		vcpkg-0.2.15 \
 		version_check-0.9.4 \
 		walkdir-2.3.2 \
+		want-0.3.1 \
 		wasi-0.10.0+wasi-snapshot-preview1 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
 		wasm-bindgen-0.2.83 \
 		wasm-bindgen-backend-0.2.83 \
+		wasm-bindgen-futures-0.4.33 \
 		wasm-bindgen-macro-0.2.83 \
 		wasm-bindgen-macro-support-0.2.83 \
 		wasm-bindgen-shared-0.2.83 \
+		web-sys-0.3.60 \
 		weezl-0.1.7 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.0 \
-		windows_aarch64_msvc-0.42.0 \
-		windows_i686_gnu-0.42.0 \
-		windows_i686_msvc-0.42.0 \
-		windows_x86_64_gnu-0.42.0 \
-		windows_x86_64_gnullvm-0.42.0 \
-		windows_x86_64_msvc-0.42.0 \
+		windows-sys-0.45.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.42.2 \
+		windows-targets-0.48.1 \
+		windows_aarch64_gnullvm-0.42.2 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.42.2 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.42.2 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.42.2 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.42.2 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.42.2 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.42.2 \
+		windows_x86_64_msvc-0.48.0 \
+		winreg-0.10.1 \
 		wyz-0.2.0 \
 		xml-rs-0.8.4 \
 		yaml-rust-0.4.5 \
