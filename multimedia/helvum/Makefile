@@ -18,7 +18,6 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo gtk40
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	ryuukyu
-GL_TAGNAME=	69257ffa09e9ac844d22d85e288b97ac98b37665
 MAKE_ENV=	${CARGO_ENV}
 PLIST_FILES=	bin/${PORTNAME}
 

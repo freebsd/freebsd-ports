@@ -209,5 +209,5 @@ SHA256 (rust/crates/windows_x86_64_gnullvm-0.42.1.crate) = 628bfdf232daa22b0d64f
 SIZE (rust/crates/windows_x86_64_gnullvm-0.42.1.crate) = 362788
 SHA256 (rust/crates/windows_x86_64_msvc-0.42.1.crate) = 447660ad36a13288b1db4d4248e857b510e8c3a225c822ba4fb748c0aafecffd
 SIZE (rust/crates/windows_x86_64_msvc-0.42.1.crate) = 664606
-SHA256 (ryuukyu-helvum-69257ffa09e9ac844d22d85e288b97ac98b37665_GL0.tar.gz) = d74ce4fee9fa9514558c57cda2476cdd2cf2a64aa47bfde29ccf0f40dfa7d52c
-SIZE (ryuukyu-helvum-69257ffa09e9ac844d22d85e288b97ac98b37665_GL0.tar.gz) = 134580
+SHA256 (helvum-0.4.0.tar.bz2) = f01478aa50c986292ad4f42efe191e9b44fe0d25d28ded3ef63dd31ca071d380
+SIZE (helvum-0.4.0.tar.bz2) = 130052
