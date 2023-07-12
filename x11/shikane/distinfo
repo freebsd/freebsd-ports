@@ -173,5 +173,5 @@ SHA256 (rust/crates/windows_x86_64_msvc-0.42.1.crate) = 447660ad36a13288b1db4d42
 SIZE (rust/crates/windows_x86_64_msvc-0.42.1.crate) = 664606
 SHA256 (rust/crates/xdg-2.4.1.crate) = 0c4583db5cbd4c4c0303df2d15af80f0539db703fa1c68802d4cbbd2dd0f88f6
 SIZE (rust/crates/xdg-2.4.1.crate) = 14034
-SHA256 (w0lff-shikane-5a25f501b9ba13c4379ecf6ed14dae4c8801d78f_GL0.tar.gz) = b4d38141170c60f2b95811d739903a1b26e4cb31045c125885005c7187c21a7c
-SIZE (w0lff-shikane-5a25f501b9ba13c4379ecf6ed14dae4c8801d78f_GL0.tar.gz) = 23177
+SHA256 (shikane-v0.2.0.tar.bz2) = c8c3f6a70f40970acd51da519e9bda85434bb930ceb850cfd68bfa37d8be7bef
+SIZE (shikane-v0.2.0.tar.bz2) = 21063
