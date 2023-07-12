@@ -1,19 +1,13 @@
---- auto/make.orig	2023-05-11 23:24:57 UTC
+--- auto/make.orig	2023-07-11 23:27:41 UTC
 +++ auto/make
-@@ -320,11 +320,11 @@ cat << END >> $NJS_MAKEFILE
+@@ -320,9 +320,7 @@ cat << END >> $NJS_MAKEFILE
  pc: $NJS_BUILD_DIR/njs.pc
  
  $NJS_BUILD_DIR/njs.pc: $NJS_BUILD_DIR/njs_auto_config.h
--	sed -e "s,@PREFIX@,$(pwd)/$NJS_BUILD_DIR," \\
--		-e "s,@LIBDIR@,$(pwd)/$NJS_BUILD_DIR," \\
--		-e "s,@CFLAGS@,-I$(pwd)/$NJS_BUILD_DIR -I$(pwd)/src," \\
--		-e "s,@VERSION@,\$(NJS_VER)," \\
--		-e "s,@EXTRA_LIBS@,-lm $NJS_LIBS $NJS_LIB_AUX_LIBS," \\
-+	sed -e "s|@PREFIX@|$(pwd)/$NJS_BUILD_DIR|" \\
-+		-e "s|@LIBDIR@|$(pwd)/$NJS_BUILD_DIR|" \\
-+		-e "s|@CFLAGS@|-I$(pwd)/$NJS_BUILD_DIR -I$(pwd)/src|" \\
-+		-e "s|@VERSION@|\$(NJS_VER)|" \\
-+		-e "s|@EXTRA_LIBS@|-lm $NJS_LIBS $NJS_LIB_AUX_LIBS|" \\
+-	sed -e "s#@PREFIX@#$(pwd)/$NJS_BUILD_DIR#" \\
+-		-e "s#@LIBDIR@#$(pwd)/$NJS_BUILD_DIR#" \\
+-		-e "s#@CFLAGS@#-I$(pwd)/$NJS_BUILD_DIR -I$(pwd)/src#" \\
++	sed -e "s#@PREFIX@#%%LOCALBASE%%#" \\
+ 		-e "s#@VERSION@#\$(NJS_VER)#" \\
+ 		-e "s#@EXTRA_LIBS@#-lm $NJS_LIBS $NJS_LIB_AUX_LIBS#" \\
  		src/njs.pc.in > \$@
- END
- 
