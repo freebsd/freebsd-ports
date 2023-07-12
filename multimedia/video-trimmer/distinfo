@@ -395,5 +395,5 @@ SHA256 (rust/crates/zvariant_derive-3.12.0.crate) = 34c20260af4b28b3275d6676c7e2
 SIZE (rust/crates/zvariant_derive-3.12.0.crate) = 10828
 SHA256 (rust/crates/zvariant_utils-1.0.0.crate) = 53b22993dbc4d128a17a3b6c92f1c63872dd67198537ee728d8b5d7c40640a8b
 SIZE (rust/crates/zvariant_utils-1.0.0.crate) = 6230
-SHA256 (YaLTeR-video-trimmer-0232139f9b68be808c9091abf6d3189fdb2ace36_GL0.tar.gz) = 1923536980a310b5e19e1bc76a7bff49c2150e024a818eda14d74823f9318326
-SIZE (YaLTeR-video-trimmer-0232139f9b68be808c9091abf6d3189fdb2ace36_GL0.tar.gz) = 160201
+SHA256 (video-trimmer-v0.8.1.tar.bz2) = ac5164f8f6437c6b93c9d3e0c560ec1b0603a6ccdd4679cf0ba0ffd02aeeeba6
+SIZE (video-trimmer-v0.8.1.tar.bz2) = 144877
