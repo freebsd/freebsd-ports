@@ -22,7 +22,7 @@ RUN_DEPENDS=	llvm${LLVM_DEFAULT}>0:devel/llvm${LLVM_DEFAULT} \
 USES=		cmake compiler:c++14-lang desktop-file-utils gnome pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	cppit
-GL_COMMIT=	692f3de1f0aad00051096579975e515bccc3802a
+GL_TAGNAME=	692f3de1f0aad00051096579975e515bccc3802a
 GL_TUPLE=	cppit:libclangmm:9704b9b6de0982a588fa41741157d5640afedf30:libclangmm/lib/libclangmm \
 		eidheim:tiny-process-library:839ff806dc447ff49af80f9a9eaa7949f770f8e5:tinyprocesslibrary/lib/tiny-process-library
 USE_GNOME=	gdkpixbuf2 gtkmm30 gtksourceviewmm3

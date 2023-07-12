@@ -24,7 +24,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 USES=		cmake:noninja,testing fortran python shebangfix
 
 #USE_GITLAB=	yes
-#GL_COMMIT=	37b755410d9fdcd9b5e7bba6e43ceb7d5c7b9dae
+#GL_TAGNAME=	37b755410d9fdcd9b5e7bba6e43ceb7d5c7b9dae
 
 SHEBANG_FILES=	pam.in \
 		utils/process_schema.py \

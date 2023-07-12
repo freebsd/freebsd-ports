@@ -22,7 +22,7 @@ USES=		cpe pgsql php:flavors shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	davical-project
-GL_COMMIT=	4301a795ac7a7636846bcc15348d96c68a1830fd
+GL_TAGNAME=	4301a795ac7a7636846bcc15348d96c68a1830fd
 
 USE_PHP=	calendar curl gettext iconv pdo \
 		pdo_pgsql pgsql session xml

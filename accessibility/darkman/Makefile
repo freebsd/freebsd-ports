@@ -22,7 +22,7 @@ GH_TUPLE=	adrg:xdg:v0.3.3:adrg_xdg/vendor/github.com/adrg/xdg \
 		kr:pretty:v0.2.0:kr_pretty/vendor/github.com/kr/pretty \
 		sj14:astral:v0.1.2:sj14_astral/vendor/github.com/sj14/astral
 GL_ACCOUNT=	WhyNotHugo
-GL_COMMIT=	ec68820495fcb7137310c166052dab86b0d940c4
+GL_TAGNAME=	ec68820495fcb7137310c166052dab86b0d940c4
 GO_TARGET=	./cmd/${PORTNAME}
 PLIST_FILES=	bin/${PORTNAME} \
 		share/dbus-1/services/nl.whynothugo.darkman.service \

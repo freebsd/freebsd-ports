@@ -15,7 +15,7 @@ USES=		cargo
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.redox-os.org
 GL_ACCOUNT=	redox-os
-GL_COMMIT=	a8872014dbce730ccd00aaa722397dc394a52bf4
+GL_TAGNAME=	a8872014dbce730ccd00aaa722397dc394a52bf4
 
 CARGO_CRATES=	adler32-1.0.3 \
 		aho-corasick-0.7.4 \
@@ -263,7 +263,7 @@ post-patch:
 		${WRKSRC_crate_calculate}/Cargo.toml
 
 post-configure:
-	${ECHO_CMD} ${GL_COMMIT} > ${WRKSRC}/git_revision.txt
+	${ECHO_CMD} ${GL_TAGNAME} > ${WRKSRC}/git_revision.txt
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ion

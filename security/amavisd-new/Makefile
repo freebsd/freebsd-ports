@@ -24,7 +24,7 @@ USE_GITLAB=	yes
 USE_PERL5=	run
 GL_ACCOUNT=	amavis
 GL_PROJECT=	amavis
-GL_COMMIT=	38f86957cfc161c23d12637ce206f5ae7ec3d0a8
+GL_TAGNAME=	38f86957cfc161c23d12637ce206f5ae7ec3d0a8
 
 SHEBANG_FILES=	amavisd-agent amavisd-nanny amavisd-release p0f-analyzer.pl \
 		amavisd-snmp-subagent amavisd

@@ -25,7 +25,7 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 USES=		cargo localbase:ldflags python:build ssl xorg
 USE_GITLAB=	yes
 GL_ACCOUNT=	timvisee
-GL_COMMIT=	ccd489ce2e75b91c0f17fbf13dbd91fe84f5ad98
+GL_TAGNAME=	ccd489ce2e75b91c0f17fbf13dbd91fe84f5ad98
 USE_XORG=	xcb
 
 CARGO_CRATES=	addr2line-0.16.0 \

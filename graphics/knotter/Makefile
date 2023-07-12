@@ -17,7 +17,7 @@ USE_GL=		gl
 USE_GITLAB=	yes
 GL_ACCOUNT=	mattbas
 GL_PROJECT=	Knotter
-GL_COMMIT=	9ce77e3e0507343a3b400c6806ab79b52b1ad596
+GL_TAGNAME=	9ce77e3e0507343a3b400c6806ab79b52b1ad596
 
 GL_TUPLE=	mattbas:CMake-Lib:6dd5afe4059899b47dbe0a7e2b940b1af41a59f6:mattbas_CMake_Lib/cmake \
 		mattbas:Qt-Color-Widgets:450e54570a6f96b2d90960c3c62f7111bbc147e9:mattbas_Qt_Color_Widgets/src/widgets/color \

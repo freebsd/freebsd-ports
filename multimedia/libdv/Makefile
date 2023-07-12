@@ -18,7 +18,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org/gstreamer
 GL_ACCOUNT=	meson-ports
 GL_PROJECT=	libdv
-GL_COMMIT=	24218c36bed3b0a3bd5a57d5790ac12ade44e88d
+GL_TAGNAME=	24218c36bed3b0a3bd5a57d5790ac12ade44e88d
 
 USE_LDCONFIG=	yes
 

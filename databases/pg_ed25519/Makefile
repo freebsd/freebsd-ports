@@ -14,7 +14,7 @@ WANT_PGSQL=	server
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	dwagin
-GL_COMMIT=	203944dbd3444257490eb30d2f6363e391a23a6b
+GL_TAGNAME=	203944dbd3444257490eb30d2f6363e391a23a6b
 
 PLIST_FILES=	lib/postgresql/pg_ed25519.so \
 		share/postgresql/extension/pg_ed25519--${PORTVERSION}.sql \

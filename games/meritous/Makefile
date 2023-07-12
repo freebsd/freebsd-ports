@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USES=		gettext gmake gnome sdl
 USE_GNOME=	intltool
 USE_GITLAB=	yes
-GL_COMMIT=	a754f33ae35f47b98cc1aa7fe8de43ed24662d11
+GL_TAGNAME=	a754f33ae35f47b98cc1aa7fe8de43ed24662d11
 USE_SDL=	sdl mixer image
 
 LDFLAGS+=	${LOCALBASE}/lib/libintl.so

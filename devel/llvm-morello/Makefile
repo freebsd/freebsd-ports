@@ -13,7 +13,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://git.morello-project.org
 GL_ACCOUNT=	morello
 GL_PROJECT=	llvm-project
-GL_COMMIT=	${LLVM_COMMIT}
+GL_TAGNAME=	${LLVM_COMMIT}
 
 # Regularly tested targets as part of Android development
 LLVM_TARGETS=	AArch64;ARM;BPF;X86

@@ -21,7 +21,7 @@ USES=		python shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	saltstack/pop
-GL_COMMIT=	7b2e30f7fc1bd9f2560789736c7d0e612b3ddaa0
+GL_TAGNAME=	7b2e30f7fc1bd9f2560789736c7d0e612b3ddaa0
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

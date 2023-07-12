@@ -24,6 +24,6 @@ PLIST_FILES=	bin/lemonbar \
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	protesilaos
-GL_COMMIT=	0042efd2ec1477ab96eb044ebba72a10aefff21f
+GL_TAGNAME=	0042efd2ec1477ab96eb044ebba72a10aefff21f
 
 .include <bsd.port.mk>

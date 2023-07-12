@@ -31,7 +31,7 @@ USE_PYTHON=	distutils noflavors
 USE_XORG=	pixman
 
 GL_ACCOUNT=	qemu-project
-GL_COMMIT=	a9fe9e191b4305b88c356a1ed9ac3baf89eb18aa
+GL_TAGNAME=	a9fe9e191b4305b88c356a1ed9ac3baf89eb18aa
 GL_TUPLE=	qemu-project:keycodemapdb:d21009b1c9f94b740ea66be8e48a1d8ad8124023:keycodemapdb/ui/keycodemapdb \
 		qemu-project:dtc:b6910bec11614980a21e46fbccc35934b671bd81:dtc/dtc \
 		qemu-project:meson:3a9b285a55b91b53b2acda987192274352ecb5be:meson/meson \

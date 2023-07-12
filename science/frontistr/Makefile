@@ -19,7 +19,7 @@ TEST_DEPENDS=	bash:shells/bash	\
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	${PORTNAME}-Commons
-GL_COMMIT=	c66bdc397de319ca59a0565b3f3b1a3b33f0c50c
+GL_TAGNAME=	c66bdc397de319ca59a0565b3f3b1a3b33f0c50c
 
 USES=		blaslapack:openblas cmake:testing fortran mpi shebangfix
 SHEBANG_GLOB=	*.sh

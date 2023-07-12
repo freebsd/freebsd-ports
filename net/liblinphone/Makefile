@@ -30,7 +30,7 @@ USES=		cmake compiler:c++17-lang gnome iconv pkgconfig python:build sqlite
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_COMMIT=	f8c1a652c2e014d1bdec9fc8d2a1996571970a9d
+GL_TAGNAME=	f8c1a652c2e014d1bdec9fc8d2a1996571970a9d
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

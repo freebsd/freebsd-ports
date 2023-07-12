@@ -17,7 +17,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	smart-pattern
-GL_COMMIT=	9429be3e0d467a75eab1f2fd3791ba29d9d1bb9d
+GL_TAGNAME=	9429be3e0d467a75eab1f2fd3791ba29d9d1bb9d
 
 DOS2UNIX_FILES=	src/libs/vgeometry/vellipticalarc.cpp
 

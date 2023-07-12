@@ -20,7 +20,7 @@ USES=		compiler:c++17-lang gettext gmake lua:52 magick:build \
 		pkgconfig sdl
 USE_GITLAB=	yes
 GL_PROJECT=	domino-chain.gitlab.io
-GL_COMMIT=	3969eaa66f753e873eca4ef33b263ca1307be2df
+GL_TAGNAME=	3969eaa66f753e873eca4ef33b263ca1307be2df
 USE_SDL=	sdl2 mixer2 ttf2 image2
 
 LIBS+=		${LOCALBASE}/lib/libintl.so

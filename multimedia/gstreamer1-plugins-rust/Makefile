@@ -20,7 +20,7 @@ USE_GSTREAMER=	bad gl # webrtc
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	gstreamer
 GL_PROJECT=	gst-plugins-rs
-GL_COMMIT=	a291a2f0982b2d410aec25e007e16ff83a0d5c54
+GL_TAGNAME=	a291a2f0982b2d410aec25e007e16ff83a0d5c54
 SHEBANG_FILES=	dependencies.py
 MESON_ARGS=	-Ddoc=disabled
 MAKE_ENV=	${CARGO_ENV}

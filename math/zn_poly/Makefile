@@ -16,7 +16,7 @@ LIB_DEPENDS=	libgmp.so:math/gmp
 USES=		gmake python:build tar:bz2
 USE_GITLAB=	yes
 GL_ACCOUNT=	sagemath
-GL_COMMIT=	f421e4788914e1625488d9b7d5aaab877eb1a940
+GL_TAGNAME=	f421e4788914e1625488d9b7d5aaab877eb1a940
 
 OPTIONS_DEFINE=	DOCS
 

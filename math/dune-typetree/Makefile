@@ -23,7 +23,7 @@ USE_GITLAB=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	staging
-GL_COMMIT=	cf6b5b4d3abe5dfa748815a69f6a8bda02af36f0
+GL_TAGNAME=	cf6b5b4d3abe5dfa748815a69f6a8bda02af36f0
 
 NO_ARCH=	yes
 

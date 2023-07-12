@@ -13,7 +13,7 @@ USES=		kmod
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
 GL_PROJECT=	sysctlinfo
-GL_COMMIT=	be57d5a892d0a908172664f87afeed0627e9ddf2
+GL_TAGNAME=	be57d5a892d0a908172664f87afeed0627e9ddf2
 
 PLIST_FILES=	${KMODDIR}/sysctlinfo.ko \
 		include/sysctlinfo.h \

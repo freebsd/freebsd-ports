@@ -40,7 +40,7 @@ USE_GNOME=	cairo gtk30 gdkpixbuf2 intltool introspection
 USE_GL=		gl glu
 USE_GITLAB=	yes
 GL_ACCOUNT=	l_sim
-GL_COMMIT=	9dc8e5a0b2f4e7237ac50a922b87d234ff56a6e5
+GL_TAGNAME=	9dc8e5a0b2f4e7237ac50a922b87d234ff56a6e5
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SHELL=${LOCALBASE}/bin/bash

@@ -21,7 +21,7 @@ USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	bitseater
-GL_COMMIT=	6bd48892ec86d7208cb4ad1dd8baf74ba72df68f
+GL_TAGNAME=	6bd48892ec86d7208cb4ad1dd8baf74ba72df68f
 
 USE_GNOME=	gtk30
 

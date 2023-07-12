@@ -18,7 +18,7 @@ USES=		compiler:c11 meson pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	OpenMusicKontrollers
 GL_PROJECT=	${PORTNAME}.lv2
-GL_COMMIT=	8df30bc1ecf55be98ccf9a8b1ffc63d09dfa6895
+GL_TAGNAME=	8df30bc1ecf55be98ccf9a8b1ffc63d09dfa6895
 
 PLIST_FILES=	lib/lv2/espressivo.lv2/espressivo.so \
 		lib/lv2/espressivo.lv2/espressivo.ttl \

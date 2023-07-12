@@ -20,6 +20,6 @@ USE_XORG=	x11
 # gitlab variables
 USE_GITLAB=	yes
 GL_ACCOUNT=	jstest-gtk
-GL_COMMIT=	62f6e2d7d44620e503149510c428df9e004c9f3b
+GL_TAGNAME=	62f6e2d7d44620e503149510c428df9e004c9f3b
 
 .include <bsd.port.mk>

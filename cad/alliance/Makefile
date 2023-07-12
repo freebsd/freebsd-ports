@@ -19,7 +19,7 @@ BUILD_DEPENDS=	fig2dev:print/fig2dev
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.lip6.fr
 GL_ACCOUNT=	vlsi-eda
-GL_COMMIT=	ebece102e15c110fc79f1da50524c68fd9523f0c
+GL_TAGNAME=	ebece102e15c110fc79f1da50524c68fd9523f0c
 
 USES=		autoreconf:build gmake libtool magick:build motif tar:bz2 tex xorg
 USE_GCC=	yes

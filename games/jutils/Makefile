@@ -15,7 +15,7 @@ BUILD_DEPENDS=	mvn:devel/maven
 # Using a fork because of maven dependencies
 USE_GITLAB=	yes
 GL_ACCOUNT=	voidanix
-GL_COMMIT=	f950e23e42081308b4be3b0fc4b57d4dbab70dac
+GL_TAGNAME=	f950e23e42081308b4be3b0fc4b57d4dbab70dac
 
 USE_JAVA=	8+
 

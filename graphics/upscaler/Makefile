@@ -19,7 +19,7 @@ USE_GNOME=	gtk40 libadwaita pygobject3
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
 GL_PROJECT=	Upscaler
-GL_COMMIT=	5aaab9ccaf56b3c7a0eb7d1dbba372d8ff970d69
+GL_TAGNAME=	5aaab9ccaf56b3c7a0eb7d1dbba372d8ff970d69
 GLIB_SCHEMAS=	io.gitlab.theevilskeleton.Upscaler.gschema.xml
 
 post-patch:

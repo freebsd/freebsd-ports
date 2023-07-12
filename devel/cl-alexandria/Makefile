@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENCE
 USE_ASDF=	yes
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.common-lisp.net
-GL_COMMIT=	f35e232ceb2ada8d10e7fdf27ccac07f781eea0e
+GL_TAGNAME=	f35e232ceb2ada8d10e7fdf27ccac07f781eea0e
 
 OPTIONS_DEFINE=	DOCS
 

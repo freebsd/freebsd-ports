@@ -20,7 +20,7 @@ USE_PYTHON=	autoplist distutils
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	doctormo
-GL_COMMIT=	ba23056ddf1a00ecfd14b0a31c2e0cdad132f8d0
+GL_TAGNAME=	ba23056ddf1a00ecfd14b0a31c2e0cdad132f8d0
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test

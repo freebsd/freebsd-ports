@@ -22,7 +22,7 @@ USE_QT=		buildtools:build core qmake:build testlib xml
 USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
 GL_PROJECT=	libaccounts-qt
-GL_COMMIT=	525ec684cfa8d234f797d7e49e21c476eea04d8e
+GL_TAGNAME=	525ec684cfa8d234f797d7e49e21c476eea04d8e
 
 OPTIONS_DEFINE=	DOCS
 OPTIONS_SUB=	yes

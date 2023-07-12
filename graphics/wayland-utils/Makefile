@@ -16,7 +16,7 @@ USES=		meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	wayland
-GL_COMMIT=	43cc17bc5333c41b4d6b7b1708191426126cb21a
+GL_TAGNAME=	43cc17bc5333c41b4d6b7b1708191426126cb21a
 PLIST_FILES=	bin/wayland-info \
 		man/man1/wayland-info.1.gz
 

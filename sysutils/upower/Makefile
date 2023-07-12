@@ -14,7 +14,7 @@ LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 USES=		compiler:c11 gettext gnome localbase meson pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org/
-GL_COMMIT=	8dcf54440d7eb58b75d7982bc1c29ee35dccf0c2
+GL_TAGNAME=	8dcf54440d7eb58b75d7982bc1c29ee35dccf0c2
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
 MESON_ARGS=	-Dgtk-doc=false \

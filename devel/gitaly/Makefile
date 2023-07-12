@@ -33,7 +33,7 @@ MAKE_ENV+=	${GO_ENV}
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find this here: https://gitlab.com/gitlab-org/gitaly/-/tags
-GL_COMMIT=	84a9837993a7eafbdfe56a88f1c5efbd73e2da16
+GL_TAGNAME=	84a9837993a7eafbdfe56a88f1c5efbd73e2da16
 
 # for go dependencies
 # Gitlab hosts there dependencies on their own platform and not on go-proxy

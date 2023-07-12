@@ -15,7 +15,7 @@ USES=		cmake compiler:c++11-lang
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	ecodis
-GL_COMMIT=	cfbcd5b7cc488d84fb01fa9699586d89c8c4b320
+GL_TAGNAME=	cfbcd5b7cc488d84fb01fa9699586d89c8c4b320
 
 USE_LDCONFIG=	yes
 

@@ -13,7 +13,7 @@ USES=		fonts
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	rigoletto
-GL_COMMIT=	c88223abc6fcb4c5970d8ed6c3887ed8a1ab0817
+GL_TAGNAME=	c88223abc6fcb4c5970d8ed6c3887ed8a1ab0817
 
 FONTS=		ohsnap ohsnapu ohsnap.icons
 NO_BUILD=	yes

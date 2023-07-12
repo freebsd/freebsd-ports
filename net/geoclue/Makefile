@@ -20,7 +20,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_COMMIT=	3bb60dd600a8b247fd6049e7e5b1c73c2c5fc0e8
+GL_TAGNAME=	3bb60dd600a8b247fd6049e7e5b1c73c2c5fc0e8
 
 MESON_ARGS=	-D3g-source=false \
 		-Dcdma-source=false \

@@ -26,7 +26,7 @@ USES=		cmake compiler:c11 desktop-file-utils gettext gnome localbase:ldflags pat
 USE_GITLAB=	yes
 GL_ACCOUNT=	Remmina
 GL_PROJECT=	Remmina
-GL_COMMIT=	61ea9b6681104cadf0a3f8c25bd3e5685ee6691a
+GL_TAGNAME=	61ea9b6681104cadf0a3f8c25bd3e5685ee6691a
 
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 pango
 

@@ -30,7 +30,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	mesa
 GL_PROJECT=	piglit
-GL_COMMIT=	136a7f5fa0703603be1ffb338abe4865e76a8058
+GL_TAGNAME=	136a7f5fa0703603be1ffb338abe4865e76a8058
 
 PATCH_SITES=		https://gitlab.freedesktop.org/mesa/piglit/-/commit/
 PATCH_DIST_STRIP=	-p1

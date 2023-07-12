@@ -21,7 +21,7 @@ USES=		gmake gnome jpeg localbase:ldflags pkgconfig
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.com/sane-project
 GL_ACCOUNT=	frontend
-GL_COMMIT=	d01b4089ce6778e76fa86a0410d4e80cf6eb819e
+GL_TAGNAME=	d01b4089ce6778e76fa86a0410d4e80cf6eb819e
 USE_GNOME=	gtk20 gdkpixbuf2
 GNU_CONFIGURE=	yes
 

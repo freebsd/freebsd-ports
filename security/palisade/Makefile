@@ -18,7 +18,7 @@ USES=		cmake:noninja,testing localbase # compiler:c++11-lang
 USE_GITLAB=	yes
 USE_GITHUB=	nodefault
 GL_PROJECT=	palisade-release # there's also palisade-development
-GL_COMMIT=	0860127401ab794591f931fa2c61426c7b56ee2d
+GL_TAGNAME=	0860127401ab794591f931fa2c61426c7b56ee2d
 GH_TUPLE=	\
 		JerryRyan:cereal:a384b101:cereal/third-party/cereal \
 		google:benchmark:e451e50e:benchmark/third-party/google-benchmark \

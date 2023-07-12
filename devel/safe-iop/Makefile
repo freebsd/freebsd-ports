@@ -25,7 +25,7 @@ PLIST_FILES=	include/safe_iop.h \
 USE_GITLAB=	yes
 GL_ACCOUNT=	ports1
 GL_PROJECT=	safe-iop
-GL_COMMIT=	2b20d77fb9f22b1ec9e2b3d2eb53c532596d3203
+GL_TAGNAME=	2b20d77fb9f22b1ec9e2b3d2eb53c532596d3203
 
 do-install:
 	${INSTALL_LIB} ${WRKSRC}/libsafe_iop.so.0 ${STAGEDIR}${PREFIX}/lib

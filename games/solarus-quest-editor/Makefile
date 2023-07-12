@@ -22,7 +22,7 @@ USES=		cmake compiler:c++11-lib openal qt:5 sdl
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	solarus-games
-GL_COMMIT=	c8d0835c3a62a0e60cdb32d26be8b75485a23a96
+GL_TAGNAME=	c8d0835c3a62a0e60cdb32d26be8b75485a23a96
 
 USE_SDL=	sdl2 ttf2 image2
 USE_QT=		buildtools:build concurrent core gui linguist qmake:build widgets

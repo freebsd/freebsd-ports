@@ -18,7 +18,7 @@ USES=		gettext-runtime gmake gnome python shebangfix
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	Strit
-GL_COMMIT=	a593201179695efe93829d9c9a70962ef29dd109
+GL_TAGNAME=	a593201179695efe93829d9c9a70962ef29dd109
 
 SHEBANG_FILES=	griffith
 USE_GNOME=	pygobject3

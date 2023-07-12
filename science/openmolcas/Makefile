@@ -25,7 +25,7 @@ USE_GCC=	yes # see https://gitlab.com/Molcas/OpenMolcas/-/issues/351
 USE_GITLAB=	yes
 GL_ACCOUNT=	Molcas
 GL_PROJECT=	OpenMolcas
-GL_COMMIT=	17238da5c339c41ddf14ceb88f139d57143d7a14
+GL_TAGNAME=	17238da5c339c41ddf14ceb88f139d57143d7a14
 
 USE_GITHUB=	nodefault
 GH_TUPLE=	Reference-LAPACK:lapack:aa631b4b:lapack/External/lapack \

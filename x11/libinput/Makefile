@@ -21,7 +21,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
-GL_COMMIT=	0b005eb64b12603e65a620a77c67ec62fd03f413
+GL_TAGNAME=	0b005eb64b12603e65a620a77c67ec62fd03f413
 
 CPE_VENDOR=	freedesktop
 

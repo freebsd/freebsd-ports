@@ -13,7 +13,7 @@ USES=		cabal
 USE_GITLAB=	yes
 GL_SITE=	https://foss.heptapod.net
 GL_ACCOUNT=	bsdutils
-GL_COMMIT=	7adf07b805d83040e7b164c69636c9b67a6a5fc6
+GL_TAGNAME=	7adf07b805d83040e7b164c69636c9b67a6a5fc6
 
 # Version of the 'hashable' package should be the same as in devel/hs-cabal-install
 USE_CABAL=	hashable-1.4.2.0

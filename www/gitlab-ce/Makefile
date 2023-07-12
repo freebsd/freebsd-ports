@@ -292,7 +292,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
 # Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_COMMIT=	e60fc11f2d3d2a3d4fe6e1c9001e29091bd4ccd5
+GL_TAGNAME=	e60fc11f2d3d2a3d4fe6e1c9001e29091bd4ccd5
 
 USERS=	git
 GROUPS=	git

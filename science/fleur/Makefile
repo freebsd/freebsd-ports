@@ -22,7 +22,7 @@ USE_GNOME=	libxml2
 
 USE_GITLAB=	yes
 GL_SITE=	https://iffgit.fz-juelich.de
-GL_COMMIT=	a2934446e0eb1fcbf7a69d4d652c969cef0c8c8d
+GL_TAGNAME=	a2934446e0eb1fcbf7a69d4d652c969cef0c8c8d
 
 FFLAGS=		-I${LOCALBASE}/include
 LDFLAGS+=	-llapack -lopenblas -lxml2 # to fix missing symbols, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/670

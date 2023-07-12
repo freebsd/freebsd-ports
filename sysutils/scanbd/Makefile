@@ -21,7 +21,7 @@ USES=	gettext-runtime gmake pkgconfig shebangfix
 USE_GITLAB=	yes
 GL_ACCOUNT=	sane-project/frontend
 GL_PROJECT=	scanbd
-GL_COMMIT=	4503640d202c06510f21848a684e221f613f324b
+GL_TAGNAME=	4503640d202c06510f21848a684e221f613f324b
 
 GNU_CONFIGURE=	yes
 

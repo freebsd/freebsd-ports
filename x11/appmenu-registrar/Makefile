@@ -30,6 +30,6 @@ USE_GNOME=	gtk30 glib20 gdkpixbuf2
 USE_GITLAB=	yes
 GL_ACCOUNT=	vala-panel-project
 GL_PROJECT=	vala-panel-appmenu
-GL_COMMIT=	4e362c22ab3a23c98f13fb379c782786ee057cf6
+GL_TAGNAME=	4e362c22ab3a23c98f13fb379c782786ee057cf6
 
 .include <bsd.port.mk>

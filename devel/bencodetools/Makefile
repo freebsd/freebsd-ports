@@ -14,7 +14,7 @@ BUILD_DEPENDS=	bash:shells/bash
 USES=		shebangfix
 USE_GITLAB=	yes
 GL_ACCOUNT=	heikkiorsila
-GL_COMMIT=	f08cb85806d5b188f3af04cd21393dd8eb51b287
+GL_TAGNAME=	f08cb85806d5b188f3af04cd21393dd8eb51b287
 USE_LDCONFIG=	yes
 
 SHEBANG_FILES=	configure

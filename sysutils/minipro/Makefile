@@ -15,7 +15,7 @@ USES=		compiler:c11 gmake pkgconfig shebangfix
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	DavidGriffith
-GL_COMMIT=	8be592c954264afdc3a2cb596ee45517cc5dc621
+GL_TAGNAME=	8be592c954264afdc3a2cb596ee45517cc5dc621
 GL_PROJECT=	${PORTNAME}
 BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 SHEBANG_FILES=	miniprohex

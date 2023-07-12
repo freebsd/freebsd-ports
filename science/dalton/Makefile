@@ -19,7 +19,7 @@ USES=		cmake:noninja fortran python:build shebangfix
 SHEBANG_FILES=	dalton.in
 
 USE_GITLAB=	yes
-GL_COMMIT=	66052b3af5ea7225e31178bf9a8b031913c72190
+GL_TAGNAME=	66052b3af5ea7225e31178bf9a8b031913c72190
 GL_TUPLE=	bingao:gen1int:1e4148ecd676761b3399801acba443925a1fee6b:gen1int/external/gen1int \
 		pe-software:pelib-public:cf49a6e04fdca09af6245fb68a36d20b68552ace:pelib/external/pelib
 

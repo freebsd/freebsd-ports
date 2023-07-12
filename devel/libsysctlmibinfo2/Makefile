@@ -18,7 +18,7 @@ USE_GITLAB=	yes
 
 GL_ACCOUNT=	alfix
 GL_PROJECT=	sysctlmibinfo2
-GL_COMMIT=	de427a99fc515c22a057998a29c92221e2581592\
+GL_TAGNAME=	de427a99fc515c22a057998a29c92221e2581592\
 
 PLIST_FILES=	include/sysctlmibinfo2.h \
 		lib/libsysctlmibinfo2.a \

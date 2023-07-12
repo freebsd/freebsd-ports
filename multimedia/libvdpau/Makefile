@@ -15,7 +15,7 @@ USE_XORG=	x11 xext xorgproto
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	vdpau
-GL_COMMIT=	79f1506a3307d3275b0fdfb2e110c173f68e6f78
+GL_TAGNAME=	79f1506a3307d3275b0fdfb2e110c173f68e6f78
 MESON_ARGS=	-Ddocumentation=false
 
 post-patch:	.SILENT

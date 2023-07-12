@@ -17,7 +17,7 @@ BUILD_DEPENDS=	gimp:graphics/gimp-app \
 USES=		gmake magick:build sdl pkgconfig
 USE_GITLAB=	yes
 GL_ACCOUNT=	roever
-GL_COMMIT=	5e3e581bb7b58098f54df9b634c7bd4a23ba66b5
+GL_TAGNAME=	5e3e581bb7b58098f54df9b634c7bd4a23ba66b5
 USE_SDL=	sdl2 image2 mixer2
 
 PORTDOCS=	*

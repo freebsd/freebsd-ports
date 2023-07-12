@@ -21,6 +21,6 @@ MESON_ARGS=	-Dtests=false \
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org/
 GL_ACCOUNT=	GNOME
-GL_COMMIT=	7a193d7692c9c76a1a94f17c4d30b585f77d177c
+GL_TAGNAME=	7a193d7692c9c76a1a94f17c4d30b585f77d177c
 
 .include <bsd.port.mk>

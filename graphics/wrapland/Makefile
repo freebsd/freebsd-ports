@@ -22,7 +22,7 @@ USE_KDE=	ecm:build
 USE_LDCONFIG=	yes
 USE_QT=		qmake:build buildtools:build concurrent core gui
 GL_ACCOUNT=	kwinft
-GL_COMMIT=	de7685a95cabeac60b65b17cf5389aed254321c0
+GL_TAGNAME=	de7685a95cabeac60b65b17cf5389aed254321c0
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	DOXYGEN

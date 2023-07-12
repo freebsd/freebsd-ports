@@ -21,7 +21,7 @@ BINARY_ALIAS=	install=ginstall
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.archlinux.org
 GL_ACCOUNT=	archlinux
-GL_COMMIT=	f7749fd39c019922d504a43b7e94ceef6ae9e0ff
+GL_TAGNAME=	f7749fd39c019922d504a43b7e94ceef6ae9e0ff
 
 NO_ARCH=	yes
 

@@ -21,7 +21,7 @@ MESON_ARGS=	-Dfreetype2:harfbuzz=disabled
 USE_GITLAB=	yes
 GL_PROJECT=	freetype-demos
 GL_ACCOUNT=	freetype
-GL_COMMIT=	07027905d9a47664251b3ee362c5cfad1cddf86f
+GL_TAGNAME=	07027905d9a47664251b3ee362c5cfad1cddf86f
 
 PLIST_FILES=	${FT_PROGRAMS:S,^,bin/,}
 
@@ -30,7 +30,7 @@ FT_PROGRAMS=	ftbench ftchkwd ftdiff ftdump ftgamma ftgrid ftlint ftmemchk \
 
 post-extract:
 	${LN} -sf `${MAKE} -C ${.CURDIR}/../../print/freetype2 -V WRKSRC` \
-	${WRKDIR}/${GL_PROJECT}-${GL_COMMIT}/subprojects/freetype2
+	${WRKDIR}/${GL_PROJECT}-${GL_TAGNAME}/subprojects/freetype2
 
 do-install:
 	@(cd ${WRKSRC}/_build && \

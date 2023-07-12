@@ -20,7 +20,7 @@ USE_GL=		gl
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.cs.fau.de
 GL_ACCOUNT=	Qui_Sum
-GL_COMMIT=	99735bc0b15b57d689b6c982d43b85ed1b40ef45
+GL_TAGNAME=	99735bc0b15b57d689b6c982d43b85ed1b40ef45
 
 PLIST_FILES=	bin/katarakt \
 		man/man1/katarakt.1.gz

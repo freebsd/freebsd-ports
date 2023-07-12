@@ -26,7 +26,7 @@ _BUILD_DATE=	$$(date -u +%Y-%m-%dT%H:%M:%S%z)
 GO_BUILDFLAGS= -ldflags=" \
 		-X gitlab.com/gitlab-org/gitlab-runner/commands.ROOTCONFIGDIR=${ETCDIR} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.VERSION=${PORTVERSION} \
-		-X gitlab.com/gitlab-org/gitlab-runner/common.REVISION=${GL_COMMIT:C/^(........).*/\1/} \
+		-X gitlab.com/gitlab-org/gitlab-runner/common.REVISION=${GL_TAGNAME:C/^(........).*/\1/} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BUILT=${_BUILD_DATE} \
 		-X gitlab.com/gitlab-org/gitlab-runner/common.BRANCH=${GITBRANCH} \
 		-s -w"
@@ -34,7 +34,7 @@ USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 # Find tags here:
 # https://gitlab.com/gitlab-org/gitlab-runner/-/tags
-GL_COMMIT=	79704081c9fe038e6054066d7d7462c712d7345e
+GL_TAGNAME=	79704081c9fe038e6054066d7d7462c712d7345e
 GITBRANCH=	16-0-stable
 
 # for go dependencies

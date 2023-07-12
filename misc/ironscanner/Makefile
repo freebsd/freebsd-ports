@@ -17,7 +17,7 @@ USES=		python
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.gnome.org/World
 GL_ACCOUNT=	OpenPaperwork
-GL_COMMIT=	e73528c5602088eb75f99b78a498dec622b5c97e
+GL_TAGNAME=	e73528c5602088eb75f99b78a498dec622b5c97e
 USE_PYTHON=	distutils autoplist noflavors
 NO_ARCH=	yes
 

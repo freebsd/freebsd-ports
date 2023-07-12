@@ -19,7 +19,7 @@ USE_GL=		gl
 USE_GITLAB=	yes
 GL_SITE=	https://salsa.debian.org
 GL_ACCOUNT=	georgesk
-GL_COMMIT=	a3f74c34eb09fa72ee16848ec6901049ca5309d5
+GL_TAGNAME=	a3f74c34eb09fa72ee16848ec6901049ca5309d5
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|'	\

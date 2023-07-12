@@ -15,7 +15,7 @@ USES=		compiler gmake
 USE_GITLAB=	yes
 
 GL_ACCOUNT=	acfbuerger
-GL_COMMIT=	77a24df7a2b1bea8a8a7e73690487a9e80a15d48
+GL_TAGNAME=	77a24df7a2b1bea8a8a7e73690487a9e80a15d48
 
 PLIST_FILES=	bin/fig2sxd man/man1/fig2sxd.1.gz
 

@@ -22,7 +22,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public public/external:webrtc
 GL_PROJECT=	webrtc:webrtc
-GL_COMMIT=	80b8e33b11516870b887b80279b9da4de8b26ebe \
+GL_TAGNAME=	80b8e33b11516870b887b80279b9da4de8b26ebe \
 			583acd27665cfadef8ab03eb85a768d308bd29dd:webrtc
 GL_SUBDIR=	webrtc:webrtc
 

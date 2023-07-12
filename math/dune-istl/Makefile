@@ -22,7 +22,7 @@ USE_GITLAB=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	core
-GL_COMMIT=	fffb544a61d2c65a0d2fc7c751f36909f06be8f5
+GL_TAGNAME=	fffb544a61d2c65a0d2fc7c751f36909f06be8f5
 
 NO_ARCH=	yes
 

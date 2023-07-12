@@ -2,9 +2,9 @@ PORTNAME=	kicad
 DISTVERSION=	r${GIT_SYM_DATE}
 PORTREVISION=	2
 CATEGORIES=	cad
-MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-symbols/-/archive/${GL_COMMIT}/
+MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-symbols/-/archive/${GL_TAGNAME}/
 PKGNAMESUFFIX=	-library-symbols-devel
-DISTNAME=	${PORTNAME}-symbols-${GL_COMMIT}
+DISTNAME=	${PORTNAME}-symbols-${GL_TAGNAME}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Official KiCad schematic symbol libraries for the future Kicad 5 release
@@ -19,7 +19,7 @@ CONFLICTS_INSTALL=	kicad-library-symbols # share/kicad/symbols/4xxx.kicad_sym
 USE_GITLAB=	nodefault
 GL_ACCOUNT=	kicad
 GL_PROJECT=	kicad/symbols
-GL_COMMIT=	${GIT_SYM_HASH}
+GL_TAGNAME=	${GIT_SYM_HASH}
 
 USES=		cmake
 

@@ -22,7 +22,7 @@ USES=		bison gnome meson pkgconfig python shebangfix xorg
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	drm
-GL_COMMIT=	9338ab3ec085292817ab1e74d1f2fb90b6a98332
+GL_TAGNAME=	9338ab3ec085292817ab1e74d1f2fb90b6a98332
 
 USE_GNOME=	cairo glib20
 

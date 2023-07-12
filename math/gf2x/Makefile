@@ -14,7 +14,7 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 USES=		autoreconf libtool
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.inria.fr/
-GL_COMMIT=	27ba588f03bf6e1e74763903bab25e6e8bb6d0f0
+GL_TAGNAME=	27ba588f03bf6e1e74763903bab25e6e8bb6d0f0
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

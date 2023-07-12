@@ -20,7 +20,7 @@ USES=			gettext-tools gmake gnome libtool pkgconfig xfce \
 USE_GITLAB=		yes
 GL_SITE=		https://gitlab.xfce.org
 GL_ACCOUNT=		panel-plugins
-GL_COMMIT=		e6831250e5ca792f31ef4b493b1a92020fe1ab6b
+GL_TAGNAME=		e6831250e5ca792f31ef4b493b1a92020fe1ab6b
 
 GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	autogen.sh

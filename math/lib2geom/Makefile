@@ -16,7 +16,7 @@ USE_GITLAB=	yes
 USE_GNOME=	cairo glib20
 
 GL_ACCOUNT=	inkscape
-GL_COMMIT=	a84a73ebdae50cc729f57d1ffb788aeaef0f746c
+GL_TAGNAME=	a84a73ebdae50cc729f57d1ffb788aeaef0f746c
 
 CMAKE_ON=	2GEOM_BUILD_SHARED
 

@@ -2,9 +2,9 @@ PORTNAME=	kicad
 DISTVERSION=	r${GIT_TMPL_DATE}
 PORTREVISION=	2
 CATEGORIES=	cad
-MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-templates/-/archive/${GL_COMMIT}/
+MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-templates/-/archive/${GL_TAGNAME}/
 PKGNAMESUFFIX=	-library-tmpl-devel
-DISTNAME=	${PORTNAME}-templates-${GL_COMMIT}
+DISTNAME=	${PORTNAME}-templates-${GL_TAGNAME}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Official KiCad project templates
@@ -19,7 +19,7 @@ CONFLICTS_INSTALL=	kicad-library-tmpl # share/kicad/template/A2_ISO5457-1999_ISO
 USE_GITLAB=	nodefault
 GL_ACCOUNT=	kicad
 GL_PROJECT=	kicad/libraries
-GL_COMMIT=	${GIT_TMPL_HASH}
+GL_TAGNAME=	${GIT_TMPL_HASH}
 
 USES=		cmake
 

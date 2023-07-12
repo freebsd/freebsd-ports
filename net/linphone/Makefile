@@ -21,7 +21,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
 GL_PROJECT=	linphone-desktop
-GL_COMMIT=	02e025324143c8479dc7634e74d3f5b5107e3b9a
+GL_TAGNAME=	02e025324143c8479dc7634e74d3f5b5107e3b9a
 USE_QT=		concurrent core dbus declarative gui linguisttools network \
 		quickcontrols2 speech svg testlib widgets buildtools:build \
 		qmake:build graphicaleffects:run quickcontrols:run

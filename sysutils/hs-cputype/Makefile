@@ -14,7 +14,7 @@ USES=		cabal
 USE_GITLAB=	yes
 GL_SITE=	https://foss.heptapod.net
 GL_ACCOUNT=	bsdutils
-GL_COMMIT=	ae3a01cc39547e6e014e40bd7c2cc0f6810ec616
+GL_TAGNAME=	ae3a01cc39547e6e014e40bd7c2cc0f6810ec616
 
 USE_CABAL=	ansi-terminal-1.0 \
 		ansi-terminal-types-0.11.5_1 \

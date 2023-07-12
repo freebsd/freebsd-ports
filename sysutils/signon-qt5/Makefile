@@ -22,7 +22,7 @@ USE_QT=		core dbus gui network sql testlib xml \
 USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
 GL_PROJECT=	signond
-GL_COMMIT=	07d45498ad374d9e8e4ff6a886f4b4bb850c0cb5
+GL_TAGNAME=	07d45498ad374d9e8e4ff6a886f4b4bb850c0cb5
 
 OPTIONS_DEFINE=	DOCS
 

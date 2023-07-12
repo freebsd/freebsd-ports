@@ -14,7 +14,7 @@ USES=		localbase:ldflags
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
-GL_COMMIT=	a19a1ff5cbd2dbfa18bb5402b936fdefb515a06d
+GL_TAGNAME=	a19a1ff5cbd2dbfa18bb5402b936fdefb515a06d
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz

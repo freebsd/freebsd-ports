@@ -34,7 +34,7 @@ LIB_DEPENDS?=	libx264.so:multimedia/libx264
 
 X264_BUILD=	164
 X264_REV=	3095
-X264_GITVER=	${GL_COMMIT:C/^(.{7}).*/\1/}
+X264_GITVER=	${GL_TAGNAME:C/^(.{7}).*/\1/}
 
 USES?=		pkgconfig
 USES+=		compiler:c11 gmake localbase shebangfix
@@ -42,7 +42,7 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://code.videolan.org
 GL_ACCOUNT=	videolan
-GL_COMMIT=	baee400fa9ced6f5481a728138fed6e867b0ff7f
+GL_TAGNAME=	baee400fa9ced6f5481a728138fed6e867b0ff7f
 HAS_CONFIGURE=	yes
 SHEBANG_FILES=	configure
 PLIST_FILES?=	bin/x264

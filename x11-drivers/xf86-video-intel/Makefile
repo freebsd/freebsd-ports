@@ -1,6 +1,6 @@
 PORTNAME=	xf86-video-intel
 DISTVERSION=	2.99.917-923
-DISTVERSIONSUFFIX=	-g${GL_COMMIT:C/(.{12}).*/\1/}
+DISTVERSIONSUFFIX=	-g${GL_TAGNAME:C/(.{12}).*/\1/}
 PORTEPOCH=	1
 CATEGORIES=	x11-drivers
 
@@ -19,7 +19,7 @@ LIB_DEPENDS=	libdrm_intel.so:graphics/libdrm
 USES=		cpe localbase xorg xorg-cat:driver
 CPE_VENDOR=	x
 USE_GITLAB=	yes
-GL_COMMIT=	b74b67f0f321875492968f7097b9d6e82a66d7df
+GL_TAGNAME=	b74b67f0f321875492968f7097b9d6e82a66d7df
 USE_XORG=	pciaccess pixman
 CONFIGURE_ENV=	ac_cv_header_sys_sysinfo_h=no # XXX ports/242236
 CONFIGURE_ARGS=	--with-builderstring="${DISTVERSIONFULL}"

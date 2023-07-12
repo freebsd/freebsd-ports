@@ -28,7 +28,7 @@ USE_LDCONFIG=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	extensions
-GL_COMMIT=	ffd6cd15dc7092593c3d5827c2a2b43b81d7a32f
+GL_TAGNAME=	ffd6cd15dc7092593c3d5827c2a2b43b81d7a32f
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 

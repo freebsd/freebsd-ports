@@ -81,7 +81,7 @@ LIB_DEPENDS=	libsignal_jni.so:net-im/libsignal-client \
 USES=		gmake shebangfix
 USE_GITLAB=	yes
 GL_ACCOUNT=	signald
-GL_COMMIT=	65cf5e8a1cf2b81fd1f5c3936e0164d53c5a9b29
+GL_TAGNAME=	65cf5e8a1cf2b81fd1f5c3936e0164d53c5a9b29
 
 USE_JAVA=	yes
 JAVA_VERSION=	11+

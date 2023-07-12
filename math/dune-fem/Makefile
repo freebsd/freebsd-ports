@@ -49,7 +49,7 @@ USE_LDCONFIG=	yes
 
 GL_SITE=	https://gitlab.dune-project.org
 GL_ACCOUNT=	dune-fem
-GL_COMMIT=	30e278aa744c908fbf4bbd8b237eb26c0475d16e
+GL_TAGNAME=	30e278aa744c908fbf4bbd8b237eb26c0475d16e
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 

@@ -24,7 +24,7 @@ USE_LDCONFIG=	yes
 USE_QT=		qmake:build buildtools:build core dbus declarative gui \
 		sensors widgets
 GL_ACCOUNT=	kwinft
-GL_COMMIT=	9a4e585dfa1324310ee9b96ea58173e84a815843
+GL_TAGNAME=	9a4e585dfa1324310ee9b96ea58173e84a815843
 PLIST_SUB=	VERSION=${PORTVERSION}
 LDFLAGS+=	-Wl,--as-needed # Qt5*, KF5*
 

@@ -2,9 +2,9 @@ PORTNAME=	kicad
 DISTVERSION=	r${GIT_P3D_DATE}
 PORTREVISION=	2
 CATEGORIES=	cad
-MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-packages3D/-/archive/${GL_COMMIT}/
+MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-packages3D/-/archive/${GL_TAGNAME}/
 PKGNAMESUFFIX=	-library-packages3d-devel
-DISTNAME=	${PORTNAME}-packages3D-${GL_COMMIT}
+DISTNAME=	${PORTNAME}-packages3D-${GL_TAGNAME}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Official KiCad 3D model libraries for rendering and MCAD integration
@@ -19,7 +19,7 @@ CONFLICTS_INSTALL=	kicad-library-packages3d # share/kicad/3dmodels/Battery.3dsha
 USE_GITLAB=	nodefault
 GL_ACCOUNT=	kicad
 GL_PROJECT=	kicad/packages3D
-GL_COMMIT=	${GIT_P3D_HASH}
+GL_TAGNAME=	${GIT_P3D_HASH}
 
 USES=		cmake
 

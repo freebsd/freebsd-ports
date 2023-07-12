@@ -18,7 +18,7 @@ USE_QT=		core gui network widgets buildtools:build qmake:build
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	rncbc
-GL_COMMIT=	71edb283e7b5d4429d5ef9951de6b740afb07790
+GL_TAGNAME=	71edb283e7b5d4429d5ef9951de6b740afb07790
 
 PLIST_FILES=	bin/qpwgraph
 

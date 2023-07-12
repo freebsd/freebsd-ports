@@ -16,7 +16,7 @@ USES=		compiler:c11 meson pkgconfig python:build shebangfix
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	emersion
-GL_COMMIT=	92b031749c0fe84ef5cdf895067b84a829920e25
+GL_TAGNAME=	92b031749c0fe84ef5cdf895067b84a829920e25
 SHEBANG_FILES=	tool/*.py
 
 pre-test:

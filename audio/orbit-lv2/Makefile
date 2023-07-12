@@ -22,7 +22,7 @@ PLIST_FILES=	lib/lv2/orbit.lv2/manifest.ttl \
 USE_GITLAB=	yes
 GL_ACCOUNT=	OpenMusicKontrollers
 GL_PROJECT=	${PORTNAME}.lv2
-GL_COMMIT=	f4aa620fc8d77418856581a6a955192af15b3860
+GL_TAGNAME=	f4aa620fc8d77418856581a6a955192af15b3860
 
 .include <bsd.port.pre.mk>
 

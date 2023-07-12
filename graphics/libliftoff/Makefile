@@ -17,6 +17,6 @@ USE_GITLAB=	yes
 USE_LDCONFIG=	yes
 GL_SITE=	https://gitlab.freedesktop.org
 GL_ACCOUNT=	emersion
-GL_COMMIT=	e045589f37835d66e3ffe8130a597bb4eb9ee08f
+GL_TAGNAME=	e045589f37835d66e3ffe8130a597bb4eb9ee08f
 
 .include <bsd.port.mk>

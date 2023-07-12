@@ -14,7 +14,7 @@ USES=		cargo sqlite
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	zetok
-GL_COMMIT=	aca63183274038487cecb6be17d7f65e92178b8c
+GL_TAGNAME=	aca63183274038487cecb6be17d7f65e92178b8c
 
 CARGO_CRATES=	adler32-1.2.0 \
 		ahash-0.4.6 \

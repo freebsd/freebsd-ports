@@ -13,7 +13,7 @@ USES=		kmod
 USE_GITLAB=	yes
 GL_ACCOUNT=	alfix
 GL_PROJECT=	sysctlbyname-improved
-GL_COMMIT=	22bdff50867ff927edd098091608e871503291b6
+GL_TAGNAME=	22bdff50867ff927edd098091608e871503291b6
 
 PLIST_FILES=	${KMODDIR}/sysctlbyname_improved.ko
 

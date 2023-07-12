@@ -29,7 +29,7 @@ GH_TUPLE=	FiloSottile:edwards25519:v1.0.0:filosottile_edwards25519/vendor/filipp
 USE_GITLAB=	yes
 GL_ACCOUNT=	yawning
 GL_PROJECT=	obfs4
-GL_COMMIT=	336a71d6e4cfd2d33e9c57797828007ad74975e9
+GL_TAGNAME=	336a71d6e4cfd2d33e9c57797828007ad74975e9
 GL_TUPLE=	yawning:bsaes:0a714cd429ec754482b4001e918db30cd2094405:yawning_bsaes/vendor/gitlab.com/yawning/bsaes.git \
 		yawning:edwards25519-extra:def713fd18e464864613d2b55ef41a21df2c9493:yawning_edwards25519extra/vendor/gitlab.com/yawning/edwards25519-extra.git \
 		yawning:utls:f1bcf4b40e4596d0ccd1dbf8f3a9f4922f9759ca:yawning_utls/vendor/gitlab.com/yawning/utls.git

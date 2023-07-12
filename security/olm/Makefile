@@ -14,7 +14,7 @@ CPE_VENDOR=	matrix
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.matrix.org/
 GL_ACCOUNT=	matrix-org
-GL_COMMIT=	6d767aaf29bdf15571c2ef4d3f8f9e953de03733
+GL_TAGNAME=	6d767aaf29bdf15571c2ef4d3f8f9e953de03733
 
 PLIST_SUB=	SOVER=${DISTVERSION}
 

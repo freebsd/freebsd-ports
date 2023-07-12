@@ -2,9 +2,9 @@ PORTNAME=	kicad
 DISTVERSION=	r${GIT_FP_DATE}
 PORTREVISION=	2
 CATEGORIES=	cad
-MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-footprints/-/archive/${GL_COMMIT}/
+MASTER_SITES=	https://gitlab.com/kicad/libraries/${PORTNAME}-footprints/-/archive/${GL_TAGNAME}/
 PKGNAMESUFFIX=	-library-footprints-devel
-DISTNAME=	${PORTNAME}-footprints-${GL_COMMIT}
+DISTNAME=	${PORTNAME}-footprints-${GL_TAGNAME}
 
 MAINTAINER=	mr@FreeBSD.org
 COMMENT=	Official KiCad Footprint Libraries for the future Kicad version 5
@@ -19,8 +19,8 @@ CONFLICTS_INSTALL=	kicad-library-footprints # share/kicad/footprints/Audio_Modul
 USE_GITLAB=	nodefault
 GL_ACCOUNT=	kicad
 GL_PROJECT=	kicad/libraries
-GL_COMMIT=	${GIT_FP_HASH}
-# WRKSRC=	${WRKDIR}/${PORTNAME}-${GL_COMMIT}-${GL_COMMIT}
+GL_TAGNAME=	${GIT_FP_HASH}
+# WRKSRC=	${WRKDIR}/${PORTNAME}-${GL_TAGNAME}-${GL_TAGNAME}
 
 USES=		cmake
 

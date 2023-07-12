@@ -56,7 +56,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.isc.org
 GL_ACCOUNT=	isc-projects
 GL_PROJECT=	bind9
-GL_COMMIT=	84854b3f22b885ba4cfbf34697de4fbed1cad0a2
+GL_TAGNAME=	84854b3f22b885ba4cfbf34697de4fbed1cad0a2
 
 CPE_VENDOR=	isc
 CPE_VERSION=	${ISCVERSION:C/-.*//}
@@ -201,7 +201,7 @@ SUB_LIST+=	ENGINES=${LOCALBASE}/lib/engines
 
 # XXX: Remove first REINPLACE_CMD
 post-patch:
-	@${REINPLACE_CMD} -e '/^m4_define(\[bind_SRCID/s/\[m4.*\]/${GL_COMMIT}/' \
+	@${REINPLACE_CMD} -e '/^m4_define(\[bind_SRCID/s/\[m4.*\]/${GL_TAGNAME}/' \
 		${WRKSRC}/configure.ac
 .for FILE in check/named-checkconf.rst named/named.rst nsupdate/nsupdate.rst \
 	rndc/rndc.rst

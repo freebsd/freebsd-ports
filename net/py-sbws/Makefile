@@ -39,7 +39,7 @@ CPE_VENDOR=	torproject
 GL_SITE=	https://gitlab.torproject.org/tpo
 GL_ACCOUNT=	network-health
 GL_PROJECT=	sbws
-GL_COMMIT=	25aa5b232ca26729e1bf30a7c5a54fd22f5c3eeb
+GL_TAGNAME=	25aa5b232ca26729e1bf30a7c5a54fd22f5c3eeb
 
 SHEBANG_FILES=	setup.py \
 		scripts/tools/get-per-relay-budget.py \

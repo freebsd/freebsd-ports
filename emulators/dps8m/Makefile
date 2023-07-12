@@ -19,7 +19,7 @@ LIB_DEPENDS=	libuv.so:devel/libuv
 USES=		gmake
 
 USE_GITLAB=	yes
-GL_COMMIT=	572f79bb4f0f84a8b16c3892c894c2b9ed64b458
+GL_TAGNAME=	572f79bb4f0f84a8b16c3892c894c2b9ed64b458
 
 CFLAGS_powerpc64=	-Datomic_testandset_64=atomic_testandset_long
 CFLAGS_powerpc64le=	-Datomic_testandset_64=atomic_testandset_long

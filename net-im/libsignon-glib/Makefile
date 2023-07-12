@@ -20,7 +20,7 @@ USE_PYTHON=	py3kplist
 # gitlab variables
 USE_GITLAB=	yes
 GL_ACCOUNT=	accounts-sso
-GL_COMMIT=	7f9f10a2e7533b74eaf027b26de48818326a1dcf
+GL_TAGNAME=	7f9f10a2e7533b74eaf027b26de48818326a1dcf
 CFLAGS+=	-Wno-error
 
 CONFIGURE_ARGS=	-Dtests=false

@@ -23,7 +23,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://framagit.org/
 GL_ACCOUNT=	simgrid
 GL_PROJECT=	simgrid
-GL_COMMIT=	93ba9586352a457e9795a66ccd6f45f8525cb03f
+GL_TAGNAME=	93ba9586352a457e9795a66ccd6f45f8525cb03f
 
 CMAKE_OFF=	enable_python
 

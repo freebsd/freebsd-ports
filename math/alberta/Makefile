@@ -24,7 +24,7 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.mathematik.uni-stuttgart.de/ians-nmh
 GL_ACCOUNT=	alberta
 GL_PROJECT=	alberta3
-GL_COMMIT=	920315ae1bbfd1b1fb6672d916619ac37a411e95
+GL_TAGNAME=	920315ae1bbfd1b1fb6672d916619ac37a411e95
 
 GNU_CONFIGURE=	yes
 

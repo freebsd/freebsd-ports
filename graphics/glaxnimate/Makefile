@@ -36,7 +36,7 @@ CMAKE_OFF=	${_CMAKE_OFF_${FLAVOR}}
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	mattbas
-GL_COMMIT=	3090870e9172dfd587e89753c2d4d19e9c083f70
+GL_TAGNAME=	3090870e9172dfd587e89753c2d4d19e9c083f70
 
 GL_TUPLE=	mattbas:CMake-Lib:3b445d91fd4620542162f35ccc6bf14533a76321:mattbas_CMake_Lib/cmake \
 		mattbas:Qt-Color-Widgets:621a1a3c336aedc451c1597e66449e239d0aed5e:mattbas_Qt_Color_Widgets/external/Qt-Color-Widgets \

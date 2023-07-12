@@ -21,7 +21,7 @@ USE_PYTHON=	autoplist distutils
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	woob
-GL_COMMIT=	958a79c2e5de4698afe34f960fc1698cf2de8ca5
+GL_TAGNAME=	958a79c2e5de4698afe34f960fc1698cf2de8ca5
 
 BINARY_ALIAS=	pyuic5=pyuic5-${PYTHON_VER}
 

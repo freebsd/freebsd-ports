@@ -15,7 +15,7 @@ RUN_DEPENDS=	xrandr>0:x11/xrandr
 
 USES=		gettext gnome python
 USE_GITLAB=	yes
-GL_COMMIT=	43faec00c0feca3f00b0acbae048de14f02c6d21
+GL_TAGNAME=	43faec00c0feca3f00b0acbae048de14f02c6d21
 USE_GNOME=	gtk30 pygobject3
 USE_PYTHON=	distutils noflavors py3kplist
 

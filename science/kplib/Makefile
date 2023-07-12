@@ -14,7 +14,7 @@ USE_LDCONFIG=	yes
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	muellergroup
-GL_COMMIT=	7ad807da6753b4677927ad8efd485bee13d6f761
+GL_TAGNAME=	7ad807da6753b4677927ad8efd485bee13d6f761
 
 PLIST_FILES=	include/kPointLattice.h \
 		include/kPointLatticeGenerator.h \

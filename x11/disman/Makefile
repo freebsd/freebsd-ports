@@ -18,7 +18,7 @@ USE_KDE=	ecm:build coreaddons
 USE_LDCONFIG=	yes
 USE_QT=		qmake:build buildtools:build core dbus gui
 GL_ACCOUNT=	kwinft
-GL_COMMIT=	f38bb9d31ae5b7fe518ff3f20c2873bf680abf9f
+GL_TAGNAME=	f38bb9d31ae5b7fe518ff3f20c2873bf680abf9f
 PLIST_SUB=	VERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	WAYLAND X11

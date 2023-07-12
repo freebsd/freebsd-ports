@@ -23,7 +23,7 @@ USES=		gmake gl qmake qt:5
 USE_GITLAB=	yes
 GL_ACCOUNT=	CalcProgrammer1
 GL_PROJECT=	OpenRGB
-GL_COMMIT=	fb88964b8e514cdf4eb22da314e13f8db06a3636
+GL_TAGNAME=	fb88964b8e514cdf4eb22da314e13f8db06a3636
 
 USE_GL=		gl
 USE_QT=		buildtools core gui linguisttools widgets
