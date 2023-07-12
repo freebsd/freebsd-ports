@@ -467,5 +467,5 @@ SHA256 (rust/crates/zvariant-3.11.0.crate) = 903169c05b9ab948ee93fefc9127d08930d
 SIZE (rust/crates/zvariant-3.11.0.crate) = 71214
 SHA256 (rust/crates/zvariant_derive-3.11.0.crate) = cce76636e8fab7911be67211cf378c252b115ee7f2bae14b18b84821b39260b5
 SIZE (rust/crates/zvariant_derive-3.11.0.crate) = 12364
-SHA256 (World-amberol-31137155adb25a2e3a80de83b09e723dc2d78f4a_GL0.tar.gz) = fa04cbf8d4b08fe220dbf4ffcebab4bd568b847e2d1286e12149ddbcf64c78bf
-SIZE (World-amberol-31137155adb25a2e3a80de83b09e723dc2d78f4a_GL0.tar.gz) = 1145074
+SHA256 (amberol-0.10.3.tar.bz2) = 897af5be79ec1e85c417a13ee464b5ac38ebf379a7b5a22182858699f28ced78
+SIZE (amberol-0.10.3.tar.bz2) = 1143135

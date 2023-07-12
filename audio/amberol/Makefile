@@ -22,7 +22,6 @@ USE_GNOME=	gdkpixbuf2 gtk40 libadwaita
 USE_GSTREAMER=	bad good libav
 GL_SITE=	https://gitlab.gnome.org
 GL_ACCOUNT=	World
-GL_TAGNAME=	31137155adb25a2e3a80de83b09e723dc2d78f4a
 MAKE_ENV=	${CARGO_ENV}
 CARGO_BUILD=	no
 CARGO_INSTALL=	no
