@@ -1,6 +1,6 @@
 PORTNAME=	llvm
 DISTVERSION=	13.0.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	devel lang
 MASTER_SITES=	https://github.com/llvm/llvm-project/releases/download/llvmorg-${DISTVERSION:S/rc/-rc/}/ \
 		https://${PRE_}releases.llvm.org/${LLVM_RELEASE}/${RCDIR}
@@ -321,7 +321,7 @@ FREEBSD_BACKENDS=	${_FREEBSD_BACKENDS}
 .if ${ARCH} == amd64
 _NATIVE_BACKENDS=	X86
 .elif ${ARCH} == aarch64
-_NATIVE_BACKENDS=	AArch64
+_NATIVE_BACKENDS=	AArch64 ARM
 .elif ${ARCH:Marmv*}
 _NATIVE_BACKENDS=	ARM
 .elif ${ARCH} == i386
