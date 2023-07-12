@@ -1,6 +1,6 @@
 PORTNAME=	fnm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.34.0
+DISTVERSION=	1.35.0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,9 +25,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		alloc-stdlib-0.2.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
+		anstream-0.3.2 \
+		anstyle-1.0.1 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
 		anyhow-1.0.71 \
 		async-compression-0.4.0 \
-		atty-0.2.14 \
 		autocfg-1.1.0 \
 		backtrace-0.3.67 \
 		base64-0.21.2 \
@@ -46,11 +50,13 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
 		cipher-0.4.4 \
-		clap-3.2.25 \
-		clap_complete-3.2.5 \
-		clap_derive-3.2.25 \
-		clap_lex-0.2.4 \
-		colored-2.0.0 \
+		clap-4.3.10 \
+		clap_builder-4.3.10 \
+		clap_complete-4.3.1 \
+		clap_derive-4.3.2 \
+		clap_lex-0.5.0 \
+		colorchoice-1.0.0 \
+		colored-2.0.4 \
 		constant_time_eq-0.1.5 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.4 \
@@ -93,7 +99,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		h2-0.3.20 \
 		hashbrown-0.12.3 \
 		heck-0.4.1 \
-		hermit-abi-0.1.19 \
 		hermit-abi-0.3.1 \
 		hmac-0.12.1 \
 		http-0.2.9 \
@@ -107,7 +112,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.4.0 \
 		indexmap-1.9.3 \
-		indoc-2.0.1 \
+		indoc-2.0.2 \
 		inout-0.1.3 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.11 \
@@ -141,7 +146,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		openssl-probe-0.1.5 \
 		option-ext-0.2.0 \
 		os_pipe-1.1.4 \
-		os_str_bytes-6.5.1 \
 		output_vt100-0.1.3 \
 		password-hash-0.4.2 \
 		pbkdf2-0.11.0 \
@@ -150,8 +154,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
 		pretty_assertions-1.3.0 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.63 \
 		quote-1.0.29 \
 		rand_core-0.6.4 \
@@ -178,9 +180,9 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		security-framework-2.9.1 \
 		security-framework-sys-2.9.0 \
 		semver-1.0.17 \
-		serde-1.0.164 \
-		serde_derive-1.0.164 \
-		serde_json-1.0.99 \
+		serde-1.0.166 \
+		serde_derive-1.0.166 \
+		serde_json-1.0.100 \
 		serde_urlencoded-0.7.1 \
 		sha1-0.10.5 \
 		sha2-0.10.7 \
@@ -197,7 +199,6 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		tempfile-3.6.0 \
 		termcolor-1.2.0 \
 		test-log-0.2.12 \
-		textwrap-0.16.0 \
 		thiserror-1.0.40 \
 		thiserror-impl-1.0.40 \
 		time-0.1.45 \
@@ -220,6 +221,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		unicode-width-0.1.10 \
 		untrusted-0.7.1 \
 		url-2.4.0 \
+		utf8parse-0.2.1 \
 		version_check-0.9.4 \
 		vswhom-0.1.0 \
 		vswhom-sys-0.1.2 \
