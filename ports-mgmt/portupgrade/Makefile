@@ -1,6 +1,6 @@
 PORTNAME=	portupgrade
 PORTVERSION=	2.4.16
-PORTREVISION=	0
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	LOCAL/bdrewery/${PORTNAME}/ \
@@ -38,13 +38,8 @@ INSTALL_TARGET=		install
 INSTALL_TARGET+=	install-doc
 .endif
 
-.if ${RUBY_VER} >= 3.2
-# databases/ruby-bdb is BROKEN with Ruby 3.2
-RUN_DEPENDS+=	rubygem-dbm>0:databases/rubygem-dbm
-.else
 # For PKG_DBDRIVER={bdb_btree,bdb_hash}
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:databases/ruby-bdb
-.endif
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/compat/pkg
