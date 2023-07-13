@@ -1,6 +1,6 @@
 PORTNAME=	nginx
 PORTVERSION=	1.24.0
-PORTREVISION?=	7
+PORTREVISION?=	8
 PORTEPOCH=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
@@ -252,7 +252,8 @@ CONFIGURE_ARGS+=	--with-ld-opt="-L ${LOCALBASE}/lib -lpcre"
 LIB_DEPENDS+=		libpcre.so:devel/pcre
 .endif
 
-.if empty(PORT_OPTIONS:MNJS_XML)
+.if ${PORT_OPTIONS:MNJS} && empty(PORT_OPTIONS:MNJS_XML)
+CONFIGURE_ENV+=		NJS_LIBXSLT=NO
 NJS_CONFIGURE_ARGS=	--no-libxml2
 .endif
 
