@@ -242,10 +242,11 @@ MODSECURITY3_LIB_DEPENDS=	libmodsecurity.so:security/modsecurity3
 MODSECURITY3_GH_TUPLE=		SpiderLabs:ModSecurity-nginx:v1.0.3:modsecurity3
 MODSECURITY3_VARS=		DSO_EXTMODS+=modsecurity3
 
-NAXSI_NGINX_VER=	29793dc
-NAXSI_GH_TUPLE=		nbs-system:naxsi:${NAXSI_NGINX_VER}:naxsi
+NAXSI_NGINX_VER=	1.4
+NAXSI_MASTER_SITES=	https://www.github.com/wargio/naxsi/releases/download/1.4/:naxsi
+NAXSI_DISTFILES=	naxsi-${NAXSI_NGINX_VER}-src-with-deps.tar.gz:naxsi
 NAXSI_VARS=		DSO_EXTMODS+=naxsi NAXSI_SUBDIR=/naxsi_src
-NAXSI_EXTRA_PATCHES=	${PATCHDIR}/extra-patch-naxsi_runtime.c
+WRKSRC_naxsi=		${WRKDIR}/naxsi-${NAXSI_NGINX_VER}
 
 NJS_GH_TUPLE=		nginx:njs:0.7.12:njs
 NJS_VARS=		DSO_EXTMODS+=njs NJS_SUBDIR=/nginx
