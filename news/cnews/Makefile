@@ -1,6 +1,6 @@
 PORTNAME=	cnews
 PORTVERSION=	cr.g
-PORTREVISION=	19
+PORTREVISION=	20
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.cs.toronto.edu/pub/c-news/ \
 		ftp://ftp.funet.fi/pub/unix/news/cnews/ \
@@ -23,7 +23,7 @@ PATCHFILES=	c-news-patch-fileart.c c-news-patch-namelen \
 		c-news-patch-y2k-2 \
 		c-news-patch-inews-path \
 		c-news-patch-gawk3 \
-		c-news-patch-ansi2
+		c-news-patch-ansi3
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	News server
