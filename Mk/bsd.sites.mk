@@ -406,8 +406,12 @@ WWW?=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/
 .endif # !defined(IGNORE_MASTER_SITE_GITHUB)
 
 # Keep this before USE_GITLAB
-.if !empty(MASTER_SITES:M*//*/*/*/-/archive/${DISTVERSIONFULL}/)
+# first try to detect when fetch was called by makesum, which passes
+# MASTER_SITES and would cause a bogus warning here.
+.if !(make(fetch) && !empty(NO_CHECKSUM) && !empty(DISABLE_SIZE))
+.  if !empty(MASTER_SITES:M*//*/*/*/-/archive/${DISTVERSIONFULL}/)
 DEV_WARNING+=	"MASTER_SITES contains ${MASTER_SITES:M*//*/*/*/-/archive/${DISTVERSIONFULL}/}, please use USE_GITLAB instead."
+.  endif
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GITLAB)
