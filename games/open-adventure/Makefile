@@ -1,5 +1,5 @@
 PORTNAME=	open-adventure
-PORTVERSION=	1.11
+PORTVERSION=	1.16
 CATEGORIES=	games
 
 MAINTAINER=	se@FreeBSD.org
@@ -14,7 +14,7 @@ BUILD_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/yaml/__init__.py:devel/py-yaml@${PY_FL
 USES=		gmake libedit pkgconfig python:build
 USE_GITLAB=	yes
 GL_ACCOUNT=	esr
-GL_TAGNAME=	b6c0f5bff08303bba30bd278e7a8e1673663b7b3
+GL_TAGNAME=	${PORTVERSION}
 
 MAKE_ENV=	CCFLAGS="${CFLAGS}"
 ALL_TARGET=	advent
