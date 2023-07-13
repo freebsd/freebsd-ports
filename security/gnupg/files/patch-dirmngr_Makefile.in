@@ -1,0 +1,12 @@
+--- dirmngr/Makefile.in.orig	2023-07-04 14:09:03 UTC
++++ dirmngr/Makefile.in
+@@ -719,8 +719,8 @@ dirmngr_LDADD = $(libcommonpth) $(DNSLIBS) $(LIBASSUAN
+ @USE_LDAP_FALSE@ldaplibs = 
+ @USE_LDAP_TRUE@ldaplibs = $(LDAPLIBS)
+ dirmngr_LDADD = $(libcommonpth) $(DNSLIBS) $(LIBASSUAN_LIBS) \
+-	$(KSBA_LIBS) $(NPTH_LIBS) $(NTBTLS_LIBS) $(LIBGNUTLS_LIBS) \
+ 	$(LIBGCRYPT_LIBS) $(GPG_ERROR_LIBS) $(LIBINTL) $(LIBICONV) \
++	$(KSBA_LIBS) $(NPTH_LIBS) $(NTBTLS_LIBS) $(LIBGNUTLS_LIBS) \
+ 	$(NETLIBS) $(dirmngr_rc_objs) $(am__append_11)
+ dirmngr_LDFLAGS = 
+ dirmngr_DEPENDENCIES = $(dirmngr_rc_objs)
