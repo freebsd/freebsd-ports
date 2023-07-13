@@ -4,7 +4,7 @@ DISTVERSION=	0.2.3
 PORTREVISION=	14
 CATEGORIES=	security
 
-MAINTAINER=	0mp@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Semantic search tool for C and C++ codebases
 WWW=		https://github.com/googleprojectzero/weggli
 
