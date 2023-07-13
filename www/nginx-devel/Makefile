@@ -1,6 +1,6 @@
 PORTNAME?=	nginx
 PORTVERSION=	1.25.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	https://nginx.org/download/ \
 		LOCAL/osa
@@ -160,6 +160,7 @@ HTTP_SSL_CONFIGURE_ON=		--with-http_ssl_module
 HTTP_SSL_USES=			ssl
 HTTP_STATUS_CONFIGURE_ON=	--with-http_stub_status_module
 HTTP_SUB_CONFIGURE_ON=		--with-http_sub_module
+HTTP_XSLT_CONFIGURE_ON=		--with-http_xslt_module
 HTTP_XSLT_LIB_DEPENDS=		libxml2.so:textproc/libxml2 \
 				libxslt.so:textproc/libxslt
 HTTP_XSLT_VARS=			DSO_BASEMODS+=http_xslt_module
