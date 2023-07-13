@@ -10,6 +10,8 @@ WWW=		https://github.com/OpenSYCL/OpenSYCL
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN_i386=	fails to compile: error: static_assert failed due to requirement 'sizeof(hipsycl::glue::unique_id) == 2 * sizeof(void *)'
+
 BUILD_DEPENDS=	boost-libs>0:devel/boost-libs
 
 USES=		cmake compiler:c++11-lang llvm:15 python shebangfix
