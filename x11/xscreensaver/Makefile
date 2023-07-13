@@ -1,6 +1,6 @@
 PORTNAME=	xscreensaver
 DISTVERSION=	6.06
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/
 
@@ -86,8 +86,7 @@ XSNOW_DESC=		Add extra port x11/xsnow
 XSNOW_RUN_DEPENDS=	xsnow:x11/xsnow
 
 SUB_FILES=	xscreensaver-blank.desktop xscreensaver-lock.desktop \
-		xscreensaver-start.desktop xscreensaver-stop.desktop \
-		xscreensaver.pam
+		xscreensaver-start.desktop xscreensaver-stop.desktop
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' \
@@ -104,7 +103,8 @@ post-patch-NSFW-off:
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/x*.xml ${STAGEDIR}${DATADIR}/config/
 	${INSTALL_DATA} ${WRKDIR}/*.desktop ${STAGEDIR}${PREFIX}/share/applications/
-	${RM} ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver.pam
-	${INSTALL_DATA} ${WRKDIR}/xscreensaver.pam ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver
+	${RM} ${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver
+	${LN} -s ${LOCALBASE}/etc/pam.d/unix-selfauth \
+		${STAGEDIR}${PREFIX}/etc/pam.d/xscreensaver
 
 .include <bsd.port.mk>
