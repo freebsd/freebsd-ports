@@ -1,5 +1,5 @@
 PORTNAME=	gromacs
-DISTVERSION=	2023.1
+DISTVERSION=	2023.2
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
 
@@ -97,5 +97,7 @@ post-patch:
 		 s|LDLIB}/pkgconfig|LDLIB}/../libdata/pkgconfig|'
 	@${REINPLACE_CMD} -e '/CMAKE_REQUIRED_LIBRARIES/d' \
 		${WRKSRC}/cmake/gmxTestdlopen.cmake
+
+# tests fail to compile, see https://gitlab.com/gromacs/gromacs/-/issues/4825
 
 .include <bsd.port.mk>
