@@ -1,17 +1,17 @@
 PORTNAME=	nntp
 PORTVERSION=	1.5.12.2
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	news
 MASTER_SITES=	ftp://ftp.dinoex.org/pub/c-news/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 PATCH_SITES=	ftp://ftp.dinoex.org/pub/c-news/
-PATCHFILES=	nntp-patch-ansi2
+PATCHFILES=	nntp-patch-ansi3
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	NNTP with NOV support
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libcnews.a:news/cnews
+BUILD_DEPENDS=	${LOCALBASE}/lib/libcnews.a:${CNEWS_PORT}
 
 NO_WRKSUBDIR=	yes
 USE_CSTD=	gnu89
@@ -22,6 +22,7 @@ PLIST_SUB+=	NEWSCTL=${NEWSCTL:S=^${VARBASE}/==}
 DOCSFILES1=	AUTHORIZE CHANGES README README-conf.h SYSLOG doc/rfc977
 DOCSFILES2=	server support xfer xmit
 
+CNEWS_PORT?=	news/cnews
 VARBASE?=	/var
 NEWSBIN?=	${PREFIX}/libexec/cnews
 NEWSCTL?=	${VARBASE}/lib/news
