@@ -1,5 +1,5 @@
 PORTNAME=	fusefs-libs3
-DISTVERSION=	3.14.1
+DISTVERSION=	3.15.1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/libfuse/libfuse/releases/download/fuse-${DISTVERSION}/
 DISTNAME=	fuse-${DISTVERSION}
@@ -12,7 +12,7 @@ LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		compiler iconv meson ninja tar:xz
+USES=		compiler iconv meson ninja
 USE_LDCONFIG=	yes
 
 LDFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
