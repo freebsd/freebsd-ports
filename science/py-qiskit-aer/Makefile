@@ -1,5 +1,5 @@
 PORTNAME=	qiskit-aer
-DISTVERSION=	0.12.1
+DISTVERSION=	0.12.2
 CATEGORIES=	science python # quantum-computing
 #MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,8 +18,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_
 		${PYTHON_PKGNAMEPREFIX}pybind11>0:devel/py-pybind11@${PY_FLAVOR} \
 		${PYNUMPY}
 LIB_DEPENDS=	libmuparserx.so:math/muparserx \
+		libopenblas.so:math/openblas \
 		libspdlog.so:devel/spdlog # binaries aren't linked with these for some reason
-RUN_DEPENDS=	${PYNUMPY}
+RUN_DEPENDS=	${PYNUMPY} \
+		${PYTHON_PKGNAMEPREFIX}qiskit-terra>=0.21.0:science/py-qiskit-terra@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}scipy>=1.0:science/py-scipy@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}fixtures>0:devel/py-fixtures@${PY_FLAVOR}
 
 USES=		python localbase:ldflags
@@ -43,5 +46,9 @@ post-install:
 		pyproject.toml \
 		qiskit \
 		src
+	# strip binaries
+	@${STRIP_CMD} \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/qiskit_aer/*/*${PYTHON_EXT_SUFFIX}.so \
+		${STAGEDIR}${PYTHON_SITELIBDIR}/qiskit_aer/*/*/*${PYTHON_EXT_SUFFIX}.so
 
 .include <bsd.port.mk>
