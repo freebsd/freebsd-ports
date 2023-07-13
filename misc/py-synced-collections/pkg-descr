@@ -1,0 +1,7 @@
+The synced_collections package provides Pythonic abstractions over various
+underlying data stores, presenting APIs that behave like standard built-in
+Python collections like dicts. synced_collections form the backbone of
+signac's data and metadata storage, but may be used just as easily outside
+of signac. For instance, users wishing to access a JSON file on disk like a
+dictionary and automatically persist all changes could use the
+synced_collections.JSONDict.

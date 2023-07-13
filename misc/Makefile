@@ -467,6 +467,7 @@
     SUBDIR += py-spdx-lookup
     SUBDIR += py-spdx-tools
     SUBDIR += py-spinners
+    SUBDIR += py-synced-collections
     SUBDIR += py-tes
     SUBDIR += py-tflearn
     SUBDIR += py-tflite
