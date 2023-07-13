@@ -34,10 +34,6 @@ lib/nss_sss.so.2
 lib/nss_sss.so.2.0.0
 lib/pam_sss.so
 %%NO_SMB%%%%PYTHON_SITELIBDIR%%/SSSDConfig-1.16.5-py%%PYTHON_VER%%.egg-info
-%%SMB%%%%PYTHON_SITELIBDIR%%/SSSDConfig-1.16.5-py%%PYTHON_VER%%.egg-info/PKG-INFO
-%%SMB%%%%PYTHON_SITELIBDIR%%/SSSDConfig-1.16.5-py%%PYTHON_VER%%.egg-info/SOURCES.txt
-%%SMB%%%%PYTHON_SITELIBDIR%%/SSSDConfig-1.16.5-py%%PYTHON_VER%%.egg-info/dependency_links.txt
-%%SMB%%%%PYTHON_SITELIBDIR%%/SSSDConfig-1.16.5-py%%PYTHON_VER%%.egg-info/top_level.txt
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__init__.py
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/SSSDConfig/__pycache__/ipachangeconf.cpython-%%PYTHON_SUFFIX%%.pyc
