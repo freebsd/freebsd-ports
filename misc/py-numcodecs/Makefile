@@ -21,6 +21,8 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}msgpack>0:devel/py-msgpack@${PY_FLAVOR} \
 USES=		python
 USE_PYTHON=	distutils cython autoplist pytest # tests fail to find the library in the staged directory for some reason
 
+CXXFLAGS_i386=	-msse2 # otherwise it fails to compile: #error SSE2 is not supported by the target architecture/platform and/or this compiler.
+
 TEST_ENV=	${MAKE_ENV} PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}
 TEST_WRKSRC=	${WRKSRC}/numcodecs/tests
 
