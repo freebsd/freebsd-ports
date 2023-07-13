@@ -1,6 +1,6 @@
 PORTNAME=	nwg-look
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.2.2
+DISTVERSION=	0.2.3
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -17,13 +17,14 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GH_ACCOUNT=	nwg-piotr
 GH_TUPLE=	golang:sys:v0.6.0:golang_sys/vendor/golang.org/x/sys \
-		gotk3:gotk3:v0.6.1:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
-		sirupsen:logrus:v1.9.0:sirupsen_logrus/vendor/github.com/sirupsen/logrus
+		gotk3:gotk3:v0.6.2:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \
+		sirupsen:logrus:v1.9.3:sirupsen_logrus/vendor/github.com/sirupsen/logrus
 CGO_LDFLAGS+=	-Wl,--as-needed # harfbuzz, freetype2
 PLIST_FILES=	bin/${PORTNAME} \
 		${DATADIR}/langs/en_US.json \
 		${DATADIR}/langs/pl_PL.json \
 		${DATADIR}/langs/ru_RU.json \
+		${DATADIR}/langs/zh_CN.json \
 		${DATADIR}/main.glade \
 		share/applications/${PORTNAME}.desktop \
 		share/pixmaps/${PORTNAME}.svg
