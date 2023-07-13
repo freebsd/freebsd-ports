@@ -1,10 +1,9 @@
 PORTNAME=	madsonic
-PORTVERSION=	6.2.9040
-PORTREVISION=	4
+PORTVERSION=	6.2.9092
 CATEGORIES=	www java
-MASTER_SITES=	http://madsonic.org/download/6.2/
+MASTER_SITES=	https://madsonic.org/download/6.2/
 DISTFILES=	${DISTDATE}_${DISTNAME}-war-tomcat.zip \
-	${DISTDATE}_${DISTNAME}-war-jspc.zip
+		${DISTDATE}_${DISTNAME}-war-jspc.zip
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Madsonic streaming media server
@@ -12,88 +11,81 @@ WWW=		https://www.madsonic.org
 
 LICENSE=	GPLv3
 
-OPTIONS_SINGLE=	APPSERVER
-APPSERVER_DESC=	Java Application Server
-OPTIONS_SINGLE_APPSERVER=	JETTY TOMCAT7 RESIN3
-TOMCAT7_DESC=	Use Tomcat 7.x
-JETTY_DESC=	Use Jetty
-RESIN3_DESC=	Use Resin 3
-
-OPTIONS_GROUP=	TRANSCODING
-TRANSCODING_DESC=	Transcoding support
-OPTIONS_GROUP_TRANSCODING=	FFMPEG FLAC LAME VORBIS FAAC FAAD XMP MPC APE
-FFMPEG_DESC=	Depend on FFmpeg for audio and video transcoding
-FLAC_DESC=	Depend on FLAC for transcoding
-LAME_DESC=	Depend on LAME for MP3 transcoding
-VORBIS_DESC=	Depend on oggenc/oggdec for Vorbis transcoding
-FAAC_DESC=	Depend on FAAD for AAC/M4A transcoding
-FAAD_DESC=	Depend on FAAC for AAC/M4A transcoding
-XMP_DESC=	Depend on XMP for module file transcoding
-MPC_DESC=	Depend on mpcdec for MPC transcoding
-APE_DESC=	Depend on mac for Monkey's Audio transcoding #'
-
-OPTIONS_DEFAULT=	FFMPEG JETTY
-OPTIONS_SUB=	yes
-
 RUN_DEPENDS+=	${JAVALIBDIR}/servlet-api.jar:www/servlet-api \
-	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
-TOMCAT7_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat7
-TOMCAT7_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat7
-JETTY_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/start.jar:www/jetty8
-JETTY_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/start.jar:www/jetty8
-RESIN3_BUILD_DEPENDS=	${LOCALBASE}/${SERVERDIR}/lib/resin.jar:www/resin3
-RESIN3_RUN_DEPENDS=	${LOCALBASE}/${SERVERDIR}/lib/resin.jar:www/resin3
-FFMPEG_RUN_DEPENDS=	ffmpeg:multimedia/ffmpeg
-FLAC_RUN_DEPENDS=	flac:audio/flac
-LAME_RUN_DEPENDS=	lame:audio/lame
-VORBIS_RUN_DEPENDS=	oggenc:audio/vorbis-tools
-FAAC_RUN_DEPENDS=	faac:audio/faac
-FAAD_RUN_DEPENDS=	faad:audio/faad
-XMP_RUN_DEPENDS=	xmp:audio/xmp
-MPC_RUN_DEPENDS=	mpcdec:audio/musepack
-APE_RUN_DEPENDS=	mac:audio/mac
+		${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/alsa-plugins
+
+USES=		zip
+USE_JAVA=	yes
+JAVA_VERSION=	8
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
+NO_ARCH=	yes
+NO_BUILD=	yes
+PLIST=		${WRKDIR}/plist
+PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_SUB+=	MADSONIC_HOME="${MADSONIC_HOME}" \
+		WEBAPPS=${WEBAPPDIR:S|^${PREFIX}/||}
+SUB_FILES=	message-common message-transcoding
+SUB_LIST=	MADSONIC_HOME="${MADSONIC_HOME}"
+
+OPTIONS_SINGLE=			APPSERVER
+OPTIONS_SINGLE_APPSERVER=	JETTY8 TOMCAT85
+OPTIONS_GROUP=			TRANSCODING
+OPTIONS_GROUP_TRANSCODING=	APE FAAC FAAD FFMPEG FLAC LAME MPC VORBIS XMP
+OPTIONS_DEFAULT=		FFMPEG JETTY8
+OPTIONS_SUB=			yes
+
+APE_DESC=			Depend on mac for Monkey's Audio transcoding #'
+APPSERVER_DESC=			Java Application Server
+FAAC_DESC=			Depend on FAAD for AAC/M4A transcoding
+FAAD_DESC=			Depend on FAAC for AAC/M4A transcoding
+FFMPEG_DESC=			Depend on FFmpeg for audio and video transcoding
+FLAC_DESC=			Depend on FLAC for transcoding
+JETTY8_DESC=			Use Jetty 8.x
+LAME_DESC=			Depend on LAME for MP3 transcoding
+MPC_DESC=			Depend on mpcdec for MPC transcoding
+TOMCAT85_DESC=			Use Tomcat 8.5.x
+TRANSCODING_DESC=		Transcoding support
+VORBIS_DESC=			Depend on oggenc/oggdec for Vorbis transcoding
+XMP_DESC=			Depend on XMP for module file transcoding
+
+APE_RUN_DEPENDS=		mac:audio/mac
+FAAC_RUN_DEPENDS=		faac:audio/faac
+FAAD_RUN_DEPENDS=		faad:audio/faad
+FFMPEG_RUN_DEPENDS=		ffmpeg:multimedia/ffmpeg
+FLAC_RUN_DEPENDS=		flac:audio/flac
+JETTY8_BUILD_DEPENDS=		${LOCALBASE}/${SERVERDIR}/start.jar:www/jetty8
+JETTY8_RUN_DEPENDS=		${LOCALBASE}/${SERVERDIR}/start.jar:www/jetty8
+LAME_RUN_DEPENDS=		lame:audio/lame
+MPC_RUN_DEPENDS=		mpcdec:audio/musepack
+TOMCAT85_BUILD_DEPENDS=		${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat85
+TOMCAT85_RUN_DEPENDS=		${LOCALBASE}/${SERVERDIR}/bin/bootstrap.jar:www/tomcat85
+VORBIS_RUN_DEPENDS=		oggenc:audio/vorbis-tools
+XMP_RUN_DEPENDS=		xmp:audio/xmp
+
+DISTDATE=	20220126
+USER=		www
+GROUP=		www
+MADSONIC_HOME=	/var/madsonic
 
 .include <bsd.port.options.mk>
 
-NO_BUILD=	yes
-DISTDATE=	20161208
-USE_JAVA=	yes
-USES=	zip
-USER=	www
-GROUP=	www
-MADSONIC_HOME=	/var/madsonic
-WRKSRC=	${WRKDIR}/${PORTNAME}
 WEBAPPDIR=	${PREFIX}/${SERVERDIR}/webapps
-PKGMESSAGE=	${WRKDIR}/pkg-message
-PLIST=	${WRKDIR}/plist
-PLIST_SUB+=	MADSONIC_HOME="${MADSONIC_HOME}" \
-	WEBAPPS=${WEBAPPDIR:S|^${PREFIX}/||}
-SUB_FILES=	message-common\
-	message-transcoding
-SUB_LIST=	MADSONIC_HOME="${MADSONIC_HOME}"
 
-.if ${PORT_OPTIONS:MTOMCAT7}
+.if ${PORT_OPTIONS:MTOMCAT85}
 APPPKGMESSAGE=	pkg-message-tomcat
 DISTVER=	tomcat
-PKGNAMESUFFIX=	-tomcat7
-SERVERDIR=	apache-tomcat-7.0
-SUB_LIST+=	CONTAINERFLAGS="tomcat7_java_opts"
+PKGNAMESUFFIX=	-tomcat85
+SERVERDIR=	apache-tomcat-8.5
+SUB_LIST+=	CONTAINERFLAGS="tomcat85_java_opts"
 .endif
 
-.if ${PORT_OPTIONS:MJETTY}
+.if ${PORT_OPTIONS:MJETTY8}
 APPPKGMESSAGE=	pkg-message-jetty
 DISTVER=	jspc
 PKGNAMESUFFIX=	-jetty
 SERVERDIR=	jetty
 SUB_LIST+=	CONTAINERFLAGS="jetty_flags"
-.endif
-
-.if ${PORT_OPTIONS:MRESIN3}
-APPPKGMESSAGE=	pkg-message-resin3
-DISTVER=	tomcat
-PKGNAMESUFFIX=	-resin3
-SERVERDIR=	resin3
-SUB_LIST+=	CONTAINERFLAGS="resin3_flags"
 .endif
 
 do-extract:
