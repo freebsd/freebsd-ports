@@ -13,8 +13,8 @@ WWW=		https://sourceforge.net/p/cdesktopenv/wiki/Home/
 USE_GITHUB=	yes
 GH_ACCOUNT=	cschuber
 GH_PROJECT=	cdesktopenv-code
-GH_TAGNAME=	ece21debb
-COMMIT_DATE=	2023.04.01
+GH_TAGNAME=	b57754681
+COMMIT_DATE=	2023.06.12
 
 LICENSE=	LGPL21
 
