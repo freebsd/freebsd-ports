@@ -10,6 +10,33 @@
      flags = 0;
      if (rb_scan_args(argc, argv, "01", &a) == 1) {
          flags = NUM2INT(a);
+@@ -205,7 +207,7 @@ bdb_txn_unlock(VALUE txnv)
+ }
+ 
+ static VALUE
+-bdb_catch(VALUE val, VALUE args, VALUE self)
++bdb_catch(VALUE val, VALUE args, int _argc, const VALUE *_argv, VALUE _blockarg)
+ {
+     rb_yield(args);
+     return Qtrue;
+@@ -260,7 +262,7 @@ struct dbtxnopt {
+ };
+ 
+ static VALUE
+-bdb_txn_i_options(VALUE obj, VALUE dbstobj)
++bdb_txn_i_options(VALUE obj, VALUE dbstobj, int _argc, const VALUE *_argv, VALUE _blockarg)
+ {
+     struct dbtxnopt *opt = (struct dbtxnopt *)dbstobj;
+     VALUE key, value;
+@@ -329,7 +331,7 @@ bdb_env_rslbl_begin(VALUE origin, int argc, VALUE *arg
+     if (argc > 0 && TYPE(argv[argc - 1]) == T_HASH) {
+ 	options = argv[argc - 1];
+ 	argc--;
+-	rb_iterate(rb_each, options, bdb_txn_i_options, (VALUE)&opt);
++	rb_block_call(options, rb_intern("each"), 0, NULL, bdb_txn_i_options, (VALUE)&opt);
+ 	flags = opt.flags;
+ 	if (flags & BDB_TXN_COMMIT) {
+ 	    commit = 1;
 @@ -552,7 +554,9 @@ bdb_env_recover(VALUE obj)
      if (!rb_block_given_p()) {
          rb_raise(bdb_eFatal, "call out of an iterator");

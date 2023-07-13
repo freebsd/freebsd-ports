@@ -1,6 +1,6 @@
 PORTNAME=	bdb
 PORTVERSION=	0.6.6
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	databases ruby
 MASTER_SITES=	ftp://ftp.idaemons.org/pub/distfiles/ruby/ \
 		http://idaemons.org/distfiles/ruby/ \
@@ -13,9 +13,6 @@ COMMENT=	Ruby interface to Oracle Berkeley DB revision 2 or later
 WWW=		https://github.com/knu/ruby-bdb
 
 LICENSE=	RUBY
-
-BROKEN_RUBY32=	yes
-BROKEN_RUBY33=	yes
 
 BUILD_DEPENDS=	rubygem-rdoc>=0.a:devel/rubygem-rdoc
 

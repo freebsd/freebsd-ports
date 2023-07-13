@@ -109,3 +109,12 @@
  	}
  
  	xb_eFatal = rb_const_get(xb_mDb, rb_intern("Fatal"));
+@@ -2477,7 +2491,7 @@ extern "C" {
+ 	rb_define_method(xb_cUpd, "<<", RMF(xb_upd_add), 1);
+ 	rb_define_method(xb_cUpd, "delete", RMF(xb_upd_delete), -1);
+ 	rb_define_method(xb_cUpd, "update", RMF(xb_upd_update), -1);
+-	xb_cTmp = rb_define_class_under(xb_mXML, "Tmp", rb_cData);
++	xb_cTmp = rb_define_class_under(xb_mXML, "Tmp", rb_cObject);
+ 	rb_undef_method(CLASS_OF(xb_cTmp), "allocate");
+ 	rb_undef_method(CLASS_OF(xb_cTmp), "new");
+ 	rb_define_method(xb_cTmp, "[]", RMF(xb_cxt_name_get), 1);
