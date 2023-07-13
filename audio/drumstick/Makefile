@@ -1,6 +1,5 @@
 PORTNAME=	drumstick
-DISTVERSION=	2.7.2
-PORTREVISION=	1
+DISTVERSION=	2.8.0
 CATEGORIES=	audio multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -49,6 +48,6 @@ SONIVOX_LIB_DEPENDS=	libpulse.so:audio/pulseaudio \
 post-patch:
 	# instead of default.sf2 use FluidR3_GM.sf2 installed by fluid-soundfont
 	@${REINPLACE_CMD} -e 's|"default.sf2"|"${LOCALBASE}/share/sounds/sf2/FluidR3_GM.sf2"|' \
-		${WRKSRC}/library/widgets/fluidsettingsdialog.cpp
+		${WRKSRC}/library/rt-backends/fluidsynth/fluidsynthengine.cpp
 
 .include <bsd.port.mk>
