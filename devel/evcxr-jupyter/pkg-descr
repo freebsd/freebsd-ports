@@ -1,0 +1,5 @@
+evcxr is an evaluation context for Rust.
+This project consists of several related crates (parts):
+* evcxr_jupyter: Axia Jupyter Kernel
+* evcxr_repl: a Rust REPL
+* etc

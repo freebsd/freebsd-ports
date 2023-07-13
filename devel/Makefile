@@ -634,6 +634,7 @@
     SUBDIR += etcd33
     SUBDIR += etcd34
     SUBDIR += etl
+    SUBDIR += evcxr-jupyter
     SUBDIR += evdev-proto
     SUBDIR += evemu
     SUBDIR += eventxx
