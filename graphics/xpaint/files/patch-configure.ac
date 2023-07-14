@@ -1,0 +1,24 @@
+Do not build with -ldl.
+Fix path to freetype2.
+
+
+--- configure.ac.orig	2021-08-16 08:58:14 UTC
++++ configure.ac
+@@ -36,7 +36,7 @@ if test x"$have_x11" = xyes; then
+ dnl check X11
+ AC_CHECK_LIB([X11], [XOpenDisplay], have_x11="yes")
+ if test x"$have_x11" = xyes; then
+-  AC_SUBST([X_LIBS], ["-lXmu -lXt -lSM -lICE -lXext -lX11 -lXpm -ldl -rdynamic"])
++  AC_SUBST([X_LIBS], ["-lXmu -lXt -lSM -lICE -lXext -lX11 -lXpm -rdynamic"])
+   AC_SUBST([X_CFLAGS], ["-I/usr/include/X11"])
+ else
+   echo "X11 libraries not installed !"
+@@ -317,7 +317,7 @@ AC_PREPROC_IFELSE(
+ 
+ AC_MSG_CHECKING([location of freetype2 headers])
+ AC_PREPROC_IFELSE(
+-  [AC_LANG_PROGRAM([[#include <freetype2/config/ftheader.h>]])],
++  [AC_LANG_PROGRAM([[#include <freetype2/freetype/config/ftheader.h>]])],
+   [AC_MSG_RESULT([already in path])],
+   [AC_PREPROC_IFELSE(
+     [AC_LANG_PROGRAM([[#include </usr/include/freetype2/freetype/config/ftheader.h>]])],

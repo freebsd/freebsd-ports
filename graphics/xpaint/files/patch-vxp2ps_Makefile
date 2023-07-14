@@ -1,0 +1,25 @@
+Respect compiler and fix DESTDIR path.
+
+--- vxp2ps/Makefile.orig	2021-01-19 08:35:54 UTC
++++ vxp2ps/Makefile
+@@ -3,16 +3,16 @@ vxp2ps: vxp2ps.c
+ all: vxp2ps vxp2tex vxp2dkw
+ 
+ vxp2ps: vxp2ps.c
+-	gcc vxp2ps.c -o vxp2ps -lm $(CFLAGSEXTRA)
++	$(CC) $(CFLAGS) vxp2ps.c -o vxp2ps -lm $(CFLAGSEXTRA)
+ 
+ vxp2tex: vxp2tex.c
+-	gcc vxp2tex.c -o vxp2tex -lm
++	$(CC) $(CFLAGS) vxp2tex.c -o vxp2tex -lm
+ 
+ vxp2dkw: vxp2dkw.c
+-	gcc vxp2dkw.c -o vxp2dkw -lm
++	$(CC) $(CFLAGS) vxp2dkw.c -o vxp2dkw -lm
+ 
+ install: all
+-	install -c -s vxp2ps vxp2tex vxp2dkw "$(DESTDIR)"/usr/bin
++	install -c -s vxp2ps vxp2tex vxp2dkw $(DESTDIR)$(PREFIX)/bin
+ 
+ clean:
+ 	rm -f core *~ vxp2ps vxp2tex vxp2dkw

@@ -1,0 +1,23 @@
+Fix app-defaults install path.
+Fix link to libxaw3dxft path.
+
+--- Makefile.am.orig	2021-01-07 14:18:14 UTC
++++ Makefile.am
+@@ -3,7 +3,7 @@ SHAREDIR = $(prefix)/share/xpaint
+ ## Local Configuration arguments
+ BINDIR = $(prefix)/bin
+ SHAREDIR = $(prefix)/share/xpaint
+-XAPPLOADDIR = /etc/X11/app-defaults
++XAPPLOADDIR = $(prefix)/share/X11/app-defaults
+ 
+ ## Enable/disable PRINTCAP (for older BSD style printing configuration)
+ ## PRINTCAP = -DPRINTCAP
+@@ -85,7 +85,7 @@ version.h:
+ .PHONY:
+ 
+ version.h:
+-	rm -f xaw_incdir ; ln -s /usr/include/X11/Xaw3dxft xaw_incdir
++	rm -f xaw_incdir ; ln -s ${LOCALBASE}/include/X11/Xaw3dxft xaw_incdir
+ 	echo "#define XPAINT_VERSION \"$(PACKAGE_VERSION)\"" > version.h
+ 
+ substads: substads.c
