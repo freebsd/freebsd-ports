@@ -1,10 +1,7 @@
 PORTNAME=	fnott
-DISTVERSION=	1.4.0
+DISTVERSION=	1.4.1
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://codeberg.org/dnkl/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
-
-PATCH_SITES=	https://codeberg.org/dnkl/${PORTNAME}/commit/
-PATCHFILES+=	cee8e61a02cc.patch:-p1 # https://codeberg.org/dnkl/fnott/issues/96
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Keyboard-driven notification daemon for wlroots-based compositors
