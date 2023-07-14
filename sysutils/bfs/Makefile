@@ -1,5 +1,5 @@
 PORTNAME=	bfs
-DISTVERSION=	2.6.3
+DISTVERSION=	3.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	driesm@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	bash:shells/bash
 TEST_DEPENDS=	bash:shells/bash
 
-USES=		compiler:c11 gmake shebangfix
+USES=		compiler:c++17-lang gmake shebangfix
 USE_GITHUB=	yes
 GH_ACCOUNT=	tavianator
 
