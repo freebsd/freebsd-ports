@@ -1,12 +1,8 @@
 PORTNAME=	sirius
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.3.2
-PORTREVISION=	4
+DISTVERSION=	7.4.3
 CATEGORIES=	science
 PKGNAMESUFFIX=	-quantum-chemistry # other software also has the name "sirius"
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	c45ef15637958885b1b299c09ec1bf9376e50ecc.patch:-p1 # https://github.com/electronic-structure/SIRIUS/pull/757
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Domain specific library for electronic structure calculations
