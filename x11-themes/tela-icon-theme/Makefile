@@ -1,5 +1,5 @@
 PORTNAME=	tela-icon-theme
-DISTVERSION=	2023-02-03
+DISTVERSION=	2023-06-25
 CATEGORIES=	x11-themes
 
 MAINTAINER=	duchateau.olivier@gmail.com
@@ -35,7 +35,7 @@ do-install:
 		${STAGEDIR}${ICONSDIR}/${THEME_NAME}
 
 post-install:
-.for d in 16 22 24 32 scalable 
+.for d in 16 22 24 32 scalable
 	${RLN} ${STAGEDIR}${ICONSDIR}/${THEME_NAME}/${d} \
 		"${STAGEDIR}${ICONSDIR}/${THEME_NAME}/${d}@2x"
 .endfor
