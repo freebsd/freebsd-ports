@@ -69,7 +69,8 @@ PACKAGE_ENV=	SIGNAL_ENV=production
 MAKE_ENV+=	ELECTRON_OVERRIDE_DIST_PATH=${LOCALBASE}/share/electron${ELECTRON_VER_MAJOR} \
 		HOME=${WRKDIR} \
 		USE_SYSTEM_APP_BUILDER=true \
-		SOURCE_DATE_EPOCH=${_BUILD_DATE}
+		SOURCE_DATE_EPOCH=${_BUILD_DATE} \
+		PATH=${WRKSRC}/node_modules/.bin:${LOCALBASE}/bin:${PATH}
 
 # Don't download electron binary distribution on electron node_modules installation
 MAKE_ENV+=	ELECTRON_SKIP_BINARY_DOWNLOAD=1
