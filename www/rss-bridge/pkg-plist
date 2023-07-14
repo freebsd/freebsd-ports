@@ -336,6 +336,7 @@
 %%WWWDIR%%/bridges/SteamAppNewsBridge.php
 %%WWWDIR%%/bridges/SteamBridge.php
 %%WWWDIR%%/bridges/SteamCommunityBridge.php
+%%WWWDIR%%/bridges/SteamGroupAnnouncementsBridge.php
 %%WWWDIR%%/bridges/StockFilingsBridge.php
 %%WWWDIR%%/bridges/StreamCzBridge.php
 %%WWWDIR%%/bridges/StripeAPIChangeLogBridge.php
