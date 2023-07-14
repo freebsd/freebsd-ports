@@ -1,5 +1,6 @@
 Fix app-defaults install path.
 Fix link to libxaw3dxft path.
+Fix race condition (See also: https://lists.freebsd.org/archives/freebsd-ports/2023-July/004114.html)
 
 --- Makefile.am.orig	2021-01-07 14:18:14 UTC
 +++ Makefile.am
@@ -21,3 +22,12 @@ Fix link to libxaw3dxft path.
  	echo "#define XPAINT_VERSION \"$(PACKAGE_VERSION)\"" > version.h
  
  substads: substads.c
+@@ -100,7 +100,7 @@ messages.h: preproc
+ messages.h: preproc
+ 	./preproc > messages.h
+ 
+-XPaint.ad: app-defaults
++XPaint.ad: substads app-defaults
+ 	$(CC) $(CFLAGS) substads.c -o substads
+ 	cd app-defaults ; \
+ 	../substads -appdefs \
