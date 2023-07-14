@@ -1,6 +1,6 @@
 PORTNAME=	psi4
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8
+DISTVERSION=	1.8.1
 CATEGORIES=	science # quantum-chemistry
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
@@ -72,29 +72,7 @@ do-install: # project fails to install itself into a stage directory due to a co
 
 	# psi4 sometimes fails to print its version: https://github.com/psi4/psi4/issues/2831
 
-do-test: # tests are generally broken, but virtually all individual tests pass separately
-	# based on https://psicode.org/psi4manual/master/build_planning.html#faq-minutetests
-	#@cd ${WRKSRC}/tests && ${SETENV} ${TEST_ENV} pytest # pytest-based tests fail, see https://github.com/psi4/psi4/issues/2802 https://github.com/psi4/psi4/issues/2830
-
-	# samples as tests, this also fails down the line: https://github.com/psi4/psi4/issues/2803
-	#@cd ${WRKSRC} && ( \
-	#	for f in $$(${FIND} samples/cc24 -name test.in | ${XARGS} dirname); do \
-	#		echo "===> runing test in $$f"; \
-	#		(cd $$f && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/psi4 test.in) \
-	#	done \
-	#)
-
-	# api tests
+do-test:
 	@cd ${WRKSRC}/tests/pytests && ${SETENV} ${TEST_ENV} pytest
-
-	# cli tests
-	#@cd ${WRKSRC}/tests && ( \
-	#	for f in $$(${FIND} . -name input.dat | ${XARGS} dirname); do \
-	#		echo "===> runing input.dat $$f"; \
-	#		(cd $$f && ${SETENV} ${TEST_ENV} ${STAGEDIR}${PREFIX}/bin/psi4 input.dat) \
-	#	done \
-	#)
-
-# QCEngine fails while running some psi4 tests: https://github.com/MolSSI/QCEngine/issues/404
 
 .include <bsd.port.mk>
