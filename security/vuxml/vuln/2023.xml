@@ -1,3 +1,38 @@
+  <vuln vid="3446e45d-a51b-486f-9b0e-e4402d91fed6">
+    <topic>electron22 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron22</name>
+	<range><lt>22.3.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v22.3.17">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-3422.</li>
+	    <li>Security: backported fix for CVE-2023-3421.</li>
+	    <li>Security: backported fix for CVE-2023-3420.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3422</cvename>
+      <url>https://github.com/advisories/GHSA-gqjh-f545-vcx3</url>
+      <cvename>CVE-2023-3421</cvename>
+      <url>https://github.com/advisories/GHSA-943x-93ff-jr62</url>
+      <cvename>CVE-2023-3420</cvename>
+      <url>https://github.com/advisories/GHSA-4297-fx5c-x987</url>
+    </references>
+    <dates>
+      <discovery>2023-07-12</discovery>
+      <entry>2023-07-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b67d768c-1f53-11ee-82ed-4ccc6adda413">
     <topic>librecad -- out-of-bounds read in importshp plugin</topic>
     <affects>
