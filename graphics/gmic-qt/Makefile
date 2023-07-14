@@ -1,31 +1,32 @@
 PORTNAME=	gmic-qt
 DISTVERSIONPREFIX=	v.
-DISTVERSION=	2.9.8
+DISTVERSION=	3.2.6
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	http://gmic.eu/:stdlib \
 		LOCAL/tcberner/${PORTNAME}/${PORTVERSION}:stdlib
-DISTFILES=	gmic_stdlib${DISTVERSION:S/.//g}.h:stdlib
+DISTFILES=	gmic_stdlib_community${DISTVERSION:S/.//g}.h:stdlib
 DIST_SUBDIR=	KDE/${PORTNAME}/${PORTVERSION}
 EXTRACT_ONLY=	${DISTNAME}.tar.gz ${DISTFILE_gmic} ${DISTFILE_cimg}
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	Versatile Qt front-end to GMIC
+COMMENT=	Versatile Qt front-end to G'MIC
 WWW=		https://github.com/c-koi/gmic-qt
 
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	bash:shells/bash \
+		gmake:devel/gmake
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libfftw3.so:math/fftw3 \
 		libpng.so:graphics/png
 
-FLAVORS=	none krita gimp # reflect the value of GMIC_QT_HOST for simplicity
+FLAVORS=	none gimp # reflect the value of GMIC_QT_HOST for simplicity
 FLAVOR?=	${FLAVORS:[1]}
-krita_PKGNAMESUFFIX=	-krita
 gimp_PKGNAMESUFFIX=	-gimp
 
-USES=		cmake pkgconfig qt:5 xorg
+USES=		cmake pkgconfig qt:5 shebangfix xorg
 .if !exists(/usr/include/omp.h)
 USES+=		compiler:gcc-c++11-lib
 .else
@@ -37,15 +38,18 @@ USE_XORG=	ice sm x11 xext
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	c-koi
-GH_TUPLE=	dtschump:gmic:${DISTVERSIONFULL}:gmic/gmic \
-		dtschump:CImg:${DISTVERSIONFULL}:cimg
+GH_TUPLE=	GreycLab:gmic:${DISTVERSIONFULL}:gmic/gmic \
+		GreycLab:CImg:${DISTVERSIONFULL}:cimg
+
+SHEBANG_FILES=	translations/lrelease.sh \
+		translations/filters/csv2ts.sh \
+		translations/filters/ts2csv.sh
 
 # Use the extracted cimg/gmic & Co, as we do not want to depend on graphics/gimp
 # which would get pulled in by graphics/cimg.
 CMAKE_ARGS=	-DGMIC_QT_HOST:STRING="${FLAVOR}" \
 		-DGMIC_PATH:STRING="${WRKSRC_gmic}/src"
-
-PLIST_FILES=	bin/gmic_${FLAVOR:S/$/_/:S/none_//}qt
+CMAKE_OFF=	ENABLE_SYSTEM_GMIC
 
 PORTSCOUT=	limit:[0-9]\..*
 
@@ -56,14 +60,16 @@ LIB_DEPENDS+=	libbabl-0.1.so:x11/babl \
 		libjson-glib-1.0.so:devel/json-glib
 USES+=		gettext-runtime gnome
 USE_GNOME=	cairo gdkpixbuf2 glib20
+PLUGINS_DIR=	libexec/gimp/2.2/plug-ins/gmic_gimp_qt
+.else
+PLUGINS_DIR=	bin
 .endif
+
+PLIST_FILES=	${PLUGINS_DIR}/gmic_${FLAVOR:S/$/_/:S/none_//}qt
 
 pre-configure:
 # Copy the necessary files
 	${CP} ${WRKSRC_cimg}/CImg.h ${WRKSRC_gmic}/src
-	${CP} ${DISTDIR}/${DIST_SUBDIR}/gmic_stdlib${DISTVERSION:S/.//g}.h ${WRKSRC_gmic}/src/gmic_stdlib.h
-
-do-install:
-	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/gmic_${FLAVOR:S/$/_/:S/none_//}qt ${STAGEDIR}${PREFIX}/bin
+	${CP} ${DISTDIR}/${DIST_SUBDIR}/gmic_stdlib_community${DISTVERSION:S/.//g}.h ${WRKSRC_gmic}/src/gmic_stdlib_community.h
 
 .include <bsd.port.mk>

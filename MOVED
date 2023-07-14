@@ -7772,3 +7772,4 @@ devel/rubygem-grape15|devel/rubygem-grape|2023-07-09|Remove obsoleted port. Use 
 net/rubygem-net-ldap017|net/rubygem-net-ldap|2023-07-09|Remove obsoleted port. Use net/rubygem-net-ldap instead
 textproc/rubygem-nokogiri114|textproc/rubygem-nokogiri|2023-07-09|Remove obsoleted port. Use textproc/rubygem-nokogiri instead
 japanese/kterm||2023-07-12|Has expired: Last upstream release was in 2011
+graphics/gmic-qt@krita|graphics/krita-gmic-plugin|2023-07-14|Forked to a seperate project

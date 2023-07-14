@@ -1,15 +1,22 @@
---- CMakeLists.txt.orig	2021-07-21 06:15:34 UTC
+--- CMakeLists.txt.orig	2023-06-22 09:41:32 UTC
 +++ CMakeLists.txt
-@@ -233,6 +233,12 @@ if(ENABLE_CURL)
+@@ -309,6 +309,7 @@ if (UNIX)
+         set(gmic_qt_LIBRARIES
+             ${gmic_qt_LIBRARIES}
+             ${X11_LIBRARIES} # XXX: Search for X11: Wayland is coming!
++            Threads::Threads
+         )
      endif()
  endif()
+@@ -622,9 +623,9 @@ message("Producing translation .qm files")
+ endif(ENABLE_DYNAMIC_LINKING)
  
-+find_package(Threads)
-+set(gmic_qt_LIBRARIES
-+    ${gmic_qt_LIBRARIES}
-+    Threads::Threads
-+)
-+
- add_definitions(-Dgmic_build)
- add_definitions(-Dcimg_use_abort)
- add_definitions(-Dgmic_is_parallel)
+ message("Producing translation .qm files")
+-execute_process(COMMAND make WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/translations OUTPUT_QUIET)
++execute_process(COMMAND gmake WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/translations OUTPUT_QUIET)
+ message("Producing filter translation .qm files")
+-execute_process(COMMAND make WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/translations/filters OUTPUT_QUIET)
++execute_process(COMMAND gmake WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/translations/filters OUTPUT_QUIET)
+ 
+ set(gmic_qt_QRC
+     gmic_qt.qrc

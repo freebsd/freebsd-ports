@@ -426,6 +426,7 @@
     SUBDIR += kqtquickcharts
     SUBDIR += kquickimageeditor
     SUBDIR += krita
+    SUBDIR += krita-gmic-plugin
     SUBDIR += ksanecore
     SUBDIR += kseexpr
     SUBDIR += ksnip

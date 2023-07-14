@@ -1,6 +1,6 @@
 PORTNAME=	krita
 DISTVERSION=	5.1.5
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -53,12 +53,9 @@ USE_XORG=	ice sm xcb xext xi
 
 CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5:BOOL=true
 
-OPTIONS_DEFINE=		GMIC OPENEXR
+OPTIONS_DEFINE=		OPENEXR
 OPTIONS_DEFAULT=	OPENEXR
 OPTIONS_SUB=		yes
-
-GMIC_DESC=		Depend on the G'Mic plugin #'
-GMIC_RUN_DEPENDS=	gmic_krita_qt:graphics/gmic-qt@krita
 
 OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
 			libKSeExpr.so:graphics/kseexpr
