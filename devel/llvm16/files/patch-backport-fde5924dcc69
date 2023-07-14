@@ -1,0 +1,45 @@
+commit fde5924dcc69fe814085482df259b8cfee236f2c
+Author: Serge Pavlov <sepavloff@gmail.com>
+Date:   Thu Jul 13 11:49:00 2023 +0700
+
+    [clang] Reset FP options before template instantiation
+    
+    AST nodes that may depend on FP options keep them as a difference
+    relative to the options outside the AST node. At the moment of
+    instantiation the FP options may be different from the default values,
+    defined by command-line option. In such case FP attributes would have
+    unexpected values. For example, the code:
+    
+        template <class C> void func_01(int last, C) {
+          func_01(last, int());
+        }
+        void func_02() { func_01(0, 1); }
+        #pragma STDC FENV_ACCESS ON
+    
+    caused compiler crash, because template instantiation takes place at the
+    end of translation unit, where pragma STDC FENV_ACCESS is in effect. As
+    a result, code in the template instantiation would use constrained
+    intrinsics while the function does not have StrictFP attribute.
+    
+    To solve this problem, FP attributes in Sema must be set to default
+    values, defined by command line options.
+    
+    This change resolves https://github.com/llvm/llvm-project/issues/63542.
+    
+    Differential Revision: https://reviews.llvm.org/D154359
+
+diff --git clang/lib/Sema/SemaTemplateInstantiateDecl.cpp clang/lib/Sema/SemaTemplateInstantiateDecl.cpp
+index 492fe8ba1b14..9e5f85b0f916 100644
+--- clang/lib/Sema/SemaTemplateInstantiateDecl.cpp
++++ clang/lib/Sema/SemaTemplateInstantiateDecl.cpp
+@@ -5087,6 +5087,10 @@ void Sema::InstantiateFunctionDefinition(SourceLocation PointOfInstantiation,
+     // PushDeclContext because we don't have a scope.
+     Sema::ContextRAII savedContext(*this, Function);
+ 
++    FPFeaturesStateRAII SavedFPFeatures(*this);
++    CurFPFeatures = FPOptions(getLangOpts());
++    FpPragmaStack.CurrentValue = FPOptionsOverride();
++
+     if (addInstantiatedParametersToScope(Function, PatternDecl, Scope,
+                                          TemplateArgs))
+       return;
