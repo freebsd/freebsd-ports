@@ -669,6 +669,7 @@ lib/calibre/calibre/gui2/actions/embed.py
 lib/calibre/calibre/gui2/actions/fetch_news.py
 lib/calibre/calibre/gui2/actions/fts.py
 lib/calibre/calibre/gui2/actions/help.py
+lib/calibre/calibre/gui2/actions/layout_actions.py
 lib/calibre/calibre/gui2/actions/manage_categories.py
 lib/calibre/calibre/gui2/actions/mark_books.py
 lib/calibre/calibre/gui2/actions/match_books.py
@@ -1682,6 +1683,7 @@ lib/calibre/tinycss/version.py
 %%DATADIR%%/images/insert-link.png
 %%DATADIR%%/images/jobs.png
 %%DATADIR%%/images/keyboard-prefs.png
+%%DATADIR%%/images/layout.png
 %%DATADIR%%/images/languages.png
 %%DATADIR%%/images/library.png
 %%DATADIR%%/images/list_remove.png

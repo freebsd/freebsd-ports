@@ -1,6 +1,5 @@
 PORTNAME=	calibre
-PORTVERSION=	6.22.0
-PORTREVISION=	1
+PORTVERSION=	6.23.0
 CATEGORIES=	deskutils python
 MASTER_SITES=	http://download.calibre-ebook.com/${PORTVERSION}/ \
 		https://curl.haxx.se/ca/:cacert
@@ -43,7 +42,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:databases/py-sqlite3@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pyicu>0:devel/py-pyicu@${PY_FLAVOR} \
 		${LOCALBASE}/bin/cmake:devel/cmake-core \
 		liberation-fonts-ttf>=2.1.3:x11-fonts/liberation-fonts-ttf \
-		MathJax3>0:www/mathjax3
+		MathJax3>0:www/mathjax3 \
+		${NONEXISTENT}:misc/iso-codes:extract
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${PYTHON_PKGNAMEPREFIX}css-parser>=1.0.4:www/py-css-parser@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dnspython>=0:dns/py-dnspython@${PY_FLAVOR} \
@@ -82,8 +82,8 @@ USE_GNOME=	glib20
 USE_XORG=	xrender xext x11
 
 USE_GITHUB=	nodefault
-GH_TUPLE=	kovidgoyal:calibre-translations:d911cab:translations \
-		LibreOffice:dictionaries:8b6fc85:hypenation
+GH_TUPLE=	kovidgoyal:calibre-translations:41c9da0:translations \
+		LibreOffice:dictionaries:d1ddba9:hypenation
 
 SHEBANG_GLOB=	*.sh *.py *.recipe
 python_OLD_CMD=	"/usr/bin/env  python" ${LOCALBASE}/bin/python3
@@ -103,6 +103,10 @@ MAKE_ENV+=	FC_INC_DIR="${LOCALBASE}/include/fontconfig" \
 		SIP_DIR=${PYQT_SIPDIR} \
 		PYTHONDONTWRITEBYTECODE=true
 
+.include <bsd.port.pre.mk>
+
+ISOCODESWRKSRC!=		${BSDMAKE} -C ${.CURDIR}/../../misc/iso-codes -V WRKSRC
+
 post-extract:
 	@${MV} ${WRKSRC_translations} ${WRKSRC}/src/translations
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/cacert.pem ${WRKSRC}/resources/mozilla-ca-certs.pem
@@ -114,6 +118,8 @@ post-patch:
 		${WRKSRC}/setup/install.py \
 		${WRKSRC}/src/calibre/gui2/dialogs/custom_recipes.py \
 		${WRKSRC}/src/calibre/gui2/preferences/tweaks.py
+	@${REINPLACE_CMD} -e "s|%%ISOCODESWRKSRC%%|${ISOCODESWRKSRC}|" \
+		${WRKSRC}/setup/iso_codes.py
 
 do-configure:
 	# do nothing
@@ -151,4 +157,4 @@ update-recent-uas: patch
 		${PYSETUP} recent_uas)
 	${CP} ${BUILD_WRKSRC}/resources/user-agent-data.json ${FILESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
