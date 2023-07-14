@@ -171,6 +171,8 @@ OPENMP_CMAKE_ON=	-DLIBOMPTARGET_BUILD_DEVICERTL_BCLIB=OFF
 OPENMP_PORTDOCS=	openmp
 POLLY_DESC=		Polyhedral loop and data-locality optimizer
 POLLY_PORTDOCS=	polly
+STATIC_LIBS_DESC= Install static libraries (does not effect sanitizers)
+
 CONFLICTS_INSTALL=	${PORTNAME}${LLVM_SUFFIX} ${PORTNAME}${LLVM_SUFFIX}-lite
 
 PLIST_SUB+=	LLVM_MAJOR=${LLVM_MAJOR} \
