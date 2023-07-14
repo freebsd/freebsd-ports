@@ -25,7 +25,7 @@ RUN_DEPENDS=	${PY_DEPENDS} \
 		libint2-psi4>0:science/libint2-psi4
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		blaslapack:openblas cmake compiler:c++17-lang eigen:3 fortran localbase:ldflags python
+USES=		blaslapack:openblas cmake compiler:c++17-lang eigen:3 fortran localbase:ldflags pytest python
 USE_GITHUB=	yes
 
 CMAKE_ARGS=	-DLibxc_DIR=${LOCALBASE} \
@@ -40,6 +40,7 @@ TEST_ENV=	${MAKE_ENV} \
 		PYTHONPATH=${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}:${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/psi4/tests \
 		PSIDATADIR=${STAGEDIR}${DATADIR} \
 		PSIPATH=${STAGEDIR}${DATADIR}/basis
+TEST_WRKSRC=	${WRKSRC}/tests/pytests
 
 BINARY_ALIAS=	python=${PYTHON_CMD} # only for tests
 
@@ -72,7 +73,7 @@ do-install: # project fails to install itself into a stage directory due to a co
 
 	# psi4 sometimes fails to print its version: https://github.com/psi4/psi4/issues/2831
 
-do-test:
-	@cd ${WRKSRC}/tests/pytests && ${SETENV} ${TEST_ENV} pytest
+do-test: # 2 tests fail, see https://github.com/psi4/psi4/issues/3014
+	@cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} pytest # tests can run without this target too, but this way tests output is more concise and it looks more appealing
 
 .include <bsd.port.mk>
