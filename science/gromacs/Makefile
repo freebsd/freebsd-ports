@@ -2,6 +2,7 @@ PORTNAME=	gromacs
 DISTVERSION=	2023.2
 CATEGORIES=	science
 MASTER_SITES=	ftp://ftp.gromacs.org/pub/gromacs/
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} # only for googletest
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Compute molecular dynamics
@@ -14,11 +15,13 @@ BROKEN_i386=	undefined reference to `__atomic_load' and `__atomic_compare_exchan
 
 BUILD_DEPENDS=	boost-libs>=1.44:devel/boost-libs
 LIB_DEPENDS=	libhwloc.so:devel/hwloc2
-TEST_DEPENDS=	googletest>0:devel/googletest
 
-USES=		cmake compiler:c++17-lang fortran gnome perl5 pkgconfig python:build shebangfix xorg
+USES=		cmake compiler:c++17-lang gnome perl5 pkgconfig python:build shebangfix xorg
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
+USE_GITHUB=	nodefault
+GH_TUPLE=	google:googletest:v1.13.0:googletest
 
 SHEBANG_FILES=	admin/*.sh scripts/*.pl scripts/*.sh src/gromacs/selection/*.sh
 bash_CMD=	${SH}
@@ -32,7 +35,7 @@ TEST_TARGET=	check
 OPTIONS_DEFINE=		ATLAS FLOAT LEGACY OPENCL OPENMP SIMD X11
 OPTIONS_SINGLE=		MP
 OPTIONS_SINGLE_MP=	NOMP MPICH OPENMPI THREAD_MPI
-OPTIONS_DEFAULT=	LEGACY OPENMP THREAD_MPI X11 # FLOAT should not a default because science/votca needs double precision. This is likely the same for many other uses.
+OPTIONS_DEFAULT=	LEGACY OPENMP THREAD_MPI X11 # FLOAT should not be a default because science/votca needs double precision. This is likely the same for many other uses.
 OPTIONS_SUB=		yes
 
 ATLAS_DESC=		Use ATLAS for BLAS and LAPACK
@@ -87,6 +90,10 @@ OPENMPI_PLIST_SUB=	SUFFIX_MPI="_mpi"
 THREAD_MPI_DESC=	Build a thread-MPI-based multithreaded version of GROMACS
 THREAD_MPI_CMAKE_BOOL=	GMX_THREAD_MPI
 THREAD_MPI_PLIST_SUB=	SUFFIX_MPI=""
+
+post-extract: # replace outdated bundled googletest with a newer version to fix tests build, see https://gitlab.com/gromacs/gromacs/-/issues/4825
+	@${RM} -r ${WRKSRC}/src/external/googletest
+	@${RLN} ${WRKSRC_googletest} ${WRKSRC}/src/external/googletest
 
 post-patch:
 	@${FIND} ${WRKSRC} -name "GMXRC.*" | ${XARGS} ${REINPLACE_CMD} -e \
