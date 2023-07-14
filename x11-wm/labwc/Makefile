@@ -1,5 +1,5 @@
 PORTNAME=	labwc
-DISTVERSION=	0.6.3
+DISTVERSION=	0.6.4
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
