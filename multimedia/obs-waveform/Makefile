@@ -1,7 +1,6 @@
 PORTNAME=	obs-waveform
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.6.1
-PORTREVISION=	1
+DISTVERSION=	1.7.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -29,6 +28,8 @@ LDFLAGS+=	-lcpu_features
 PLIST_FILES=	lib/obs-plugins/waveform.so \
 		share/obs/obs-plugins/waveform/gradient.effect \
 		share/obs/obs-plugins/waveform/locale/en-US.ini \
-		share/obs/obs-plugins/waveform/locale/zh-CN.ini
+		share/obs/obs-plugins/waveform/locale/it-IT.ini \
+		share/obs/obs-plugins/waveform/locale/zh-CN.ini \
+		share/obs/obs-plugins/waveform/locale/zh-TW.ini
 
 .include <bsd.port.mk>
