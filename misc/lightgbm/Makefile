@@ -1,7 +1,6 @@
 PORTNAME=	lightgbm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.3.5
-PORTREVISION=	1
+DISTVERSION=	4.0.0
 CATEGORIES=	misc # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -28,6 +27,8 @@ CMAKE_TESTING_TARGET=
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3
 
 post-test:
-	${WRKSRC}/testlightgbm
+	@${WRKSRC}/testlightgbm
+
+# tests fail to compile, see https://github.com/microsoft/LightGBM/issues/5976
 
 .include <bsd.port.mk>
