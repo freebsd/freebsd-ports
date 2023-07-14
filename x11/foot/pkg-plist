@@ -15,7 +15,9 @@ share/bash-completion/completions/footclient
 %%PORTDOCS%%%%DOCSDIR%%/README.md
 share/fish/vendor_completions.d/foot.fish
 share/fish/vendor_completions.d/footclient.fish
+%%DATADIR%%/themes/aeroroot
 %%DATADIR%%/themes/apprentice
+%%DATADIR%%/themes/ayu-mirage
 %%DATADIR%%/themes/catppuccin
 %%DATADIR%%/themes/derp
 %%DATADIR%%/themes/deus
@@ -46,6 +48,8 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/solarized-dark
 %%DATADIR%%/themes/solarized-dark-normal-brights
 %%DATADIR%%/themes/solarized-light
+%%DATADIR%%/themes/srcery
+%%DATADIR%%/themes/starlight
 %%DATADIR%%/themes/tango
 %%DATADIR%%/themes/tempus-autumn
 %%DATADIR%%/themes/tempus-classic
