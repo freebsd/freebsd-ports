@@ -1,5 +1,6 @@
 include/gpds/archiver.hpp
 include/gpds/archiver_xml.hpp
+include/gpds/archiver_yaml.hpp
 include/gpds/attributes.hpp
 include/gpds/container.hpp
 include/gpds/serialize.hpp
@@ -12,4 +13,4 @@ lib/cmake/gpds/gpds-targets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/gpds/gpds-targets.cmake
 lib/libgpds.a
 lib/libgpds.so
-lib/libgpds.so.1.5.1
+lib/libgpds.so.%%SOVERSION%%
