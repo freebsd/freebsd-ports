@@ -1,6 +1,6 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.0
+DISTVERSION=	2.11.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,7 @@ GH_ACCOUNT=	Canop
 
 CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.8.2 \
-		aho-corasick-0.7.20 \
+		aho-corasick-1.0.2 \
 		android_system_properties-0.1.5 \
 		anyhow-1.0.68 \
 		arc-swap-1.6.0 \
@@ -133,8 +133,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		jwalk-0.8.1 \
 		kqueue-1.0.7 \
 		kqueue-sys-1.0.3 \
-		lazy-regex-2.5.0 \
-		lazy-regex-proc_macros-2.4.1 \
+		lazy-regex-3.0.0 \
+		lazy-regex-proc_macros-3.0.0 \
 		libc-0.2.139 \
 		link-cplusplus-1.0.8 \
 		lock_api-0.4.9 \
@@ -172,9 +172,10 @@ CARGO_CRATES=	adler-1.0.2 \
 		rayon-core-1.10.1 \
 		redox_syscall-0.2.16 \
 		redox_users-0.4.3 \
-		regex-1.7.1 \
+		regex-1.9.1 \
 		regex-automata-0.1.10 \
-		regex-syntax-0.6.28 \
+		regex-automata-0.3.1 \
+		regex-syntax-0.7.3 \
 		remove_dir_all-0.5.3 \
 		rustversion-1.0.11 \
 		ryu-1.0.12 \
