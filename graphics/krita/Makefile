@@ -1,6 +1,6 @@
 PORTNAME=	krita
 DISTVERSION=	5.1.5
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	graphics kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/${PORTNAME}
@@ -41,25 +41,32 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libxcb-util.so:x11/xcb-util
 
 # Disable ninja generator for now (with gmake), until the duplicate test targets are resolved upstream.
-USES=		cmake compiler:c++11-lib desktop-file-utils \
-		eigen:3 gettext jpeg kde:5 localbase:ldflags pkgconfig \
-		python qt:5 shared-mime-info tar:xz xorg
+USES=		cmake compiler:c++11-lib desktop-file-utils eigen:3 gettext \
+		jpeg kde:5 localbase:ldflags pkgconfig python qt:5 \
+		shared-mime-info tar:xz xorg
 USE_KDE=	archive completion config coreaddons crash guiaddons i18n \
 		itemmodels itemviews kio service widgetsaddons windowsystem
-USE_QT=		concurrent core dbus declarative gui multimedia network printsupport \
-		sql svg testlib widgets x11extras xml sql-sqlite3:run \
-		buildtools:build qmake:build
+USE_QT=		concurrent core dbus declarative gui multimedia network \
+		printsupport sql svg testlib widgets x11extras xml \
+		buildtools:build qmake:build \
+		sql-sqlite3:run
 USE_XORG=	ice sm xcb xext xi
 
-CMAKE_ARGS=	-DCMAKE_DISABLE_FIND_PACKAGE_PyQt5:BOOL=true
+# Make Cmake use the python we installed dependencies for.
+CMAKE_ARGS=	-DPython_EXECUTABLE:STRING=${PYTHON_CMD}
 
-OPTIONS_DEFINE=		OPENEXR
-OPTIONS_DEFAULT=	OPENEXR
+OPTIONS_DEFINE=		PYTHON OPENEXR
+OPTIONS_DEFAULT=	PYTHON OPENEXR
 OPTIONS_SUB=		yes
 
 OPENEXR_LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
 			libKSeExpr.so:graphics/kseexpr
 OPENEXR_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_OpenEXR
+
+PYTHON_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR}
+PYTHON_CMAKE_BOOL_OFF=	CMAKE_DISABLE_FIND_PACKAGE_PyQt5
+PYTHON_USES=		pyqt:5
+PYTHON_USE=		PYQT=pyqt5,sip,pysip
 
 PLIST_SUB=	SHLIB_VER=18.0.0 \
 		SHLIB_SHVER=18
