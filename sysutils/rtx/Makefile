@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.34.0
+DISTVERSION=	1.34.1
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,7 +17,6 @@ GH_ACCOUNT=	jdxcode
 
 CARGO_CRATES=	addr2line-0.20.0 \
 		adler-1.0.2 \
-		aho-corasick-0.7.20 \
 		aho-corasick-1.0.2 \
 		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
@@ -41,10 +40,10 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
-		clap-4.3.11 \
-		clap_builder-4.3.11 \
+		clap-4.3.12 \
+		clap_builder-4.3.12 \
 		clap_complete-4.3.2 \
-		clap_derive-4.3.2 \
+		clap_derive-4.3.12 \
 		clap_lex-0.5.0 \
 		clap_mangen-0.2.12 \
 		color-eyre-0.6.2 \
@@ -61,7 +60,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		crossbeam-epoch-0.9.15 \
 		crossbeam-utils-0.8.16 \
 		crypto-common-0.1.6 \
-		ctor-0.2.3 \
+		ctor-0.2.4 \
 		ctrlc-3.4.0 \
 		dialoguer-0.10.4 \
 		diff-0.1.13 \
@@ -73,7 +72,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		either-1.8.1 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.32 \
-		equivalent-1.0.0 \
+		equivalent-1.0.1 \
 		errno-0.2.8 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
@@ -96,7 +95,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		getrandom-0.2.10 \
 		gimli-0.27.3 \
 		git2-0.17.2 \
-		globset-0.4.10 \
+		globset-0.4.11 \
 		globwalk-0.8.1 \
 		h2-0.3.20 \
 		hashbrown-0.12.3 \
@@ -164,7 +163,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		pin-project-lite-0.2.10 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
-		portable-atomic-1.3.3 \
+		portable-atomic-1.4.0 \
 		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.64 \
 		quick-xml-0.23.1 \
@@ -175,8 +174,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
 		regex-1.9.1 \
-		regex-automata-0.3.2 \
-		regex-syntax-0.7.3 \
+		regex-automata-0.3.3 \
+		regex-syntax-0.7.4 \
 		reqwest-0.11.18 \
 		ring-0.16.20 \
 		rmp-0.8.11 \
@@ -184,8 +183,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		roff-0.2.1 \
 		rustc-demangle-0.1.23 \
 		rustix-0.37.23 \
-		rustix-0.38.3 \
-		rustls-0.21.3 \
+		rustix-0.38.4 \
+		rustls-0.21.5 \
 		rustls-pemfile-1.0.3 \
 		rustls-webpki-0.101.1 \
 		ryu-1.0.14 \
@@ -196,7 +195,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		semver-1.0.17 \
 		serde-1.0.171 \
 		serde_derive-1.0.171 \
-		serde_json-1.0.100 \
+		serde_json-1.0.102 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
 		sha2-0.10.7 \
@@ -213,7 +212,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
 		syn-2.0.25 \
-		tar-0.4.38 \
+		tar-0.4.39 \
 		tempfile-3.6.0 \
 		tera-1.19.0 \
 		termcolor-1.1.3 \
@@ -231,7 +230,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		tokio-util-0.7.8 \
 		toml-0.7.6 \
 		toml_datetime-0.6.3 \
-		toml_edit-0.19.12 \
+		toml_edit-0.19.13 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-core-0.1.31 \
@@ -294,7 +293,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.0 \
-		winnow-0.4.9 \
+		winnow-0.5.0 \
 		winreg-0.10.1 \
 		xattr-0.2.3 \
 		yaml-rust-0.4.5 \
