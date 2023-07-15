@@ -1,5 +1,5 @@
 PORTNAME=	qemu
-PORTVERSION=	8.0.2
+PORTVERSION=	8.0.3
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.qemu.org/
 DIST_SUBDIR=	qemu/${PORTVERSION}
@@ -23,6 +23,9 @@ LIB_DEPENDS+=	libfdt.so:sysutils/dtc \
 .endif
 .if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools && ${FLAVOR:U} != guestagent)
 LIB_DEPENDS+=	libepoxy.so:graphics/libepoxy
+.endif
+.if (${FLAVOR:U} != nox11 && ${FLAVOR:U} != tools && ${FLAVOR:U} != default)
+PKGMESSAGE=	${.CURDIR}/pkg-message.guest-agent
 .endif
 
 FLAVORS=			default nox11 tools guestagent
