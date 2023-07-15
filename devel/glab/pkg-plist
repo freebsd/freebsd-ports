@@ -29,6 +29,7 @@
 %%MANPAGES%%man/man1/glab-incident-close.1.gz
 %%MANPAGES%%man/man1/glab-incident-list.1.gz
 %%MANPAGES%%man/man1/glab-incident-reopen.1.gz
+%%MANPAGES%%man/man1/glab-incident-subscribe.1.gz
 %%MANPAGES%%man/man1/glab-incident-unsubscribe.1.gz
 %%MANPAGES%%man/man1/glab-incident-view.1.gz
 %%MANPAGES%%man/man1/glab-incident.1.gz
@@ -88,6 +89,8 @@
 %%MANPAGES%%man/man1/glab-repo-transfer.1.gz
 %%MANPAGES%%man/man1/glab-repo-view.1.gz
 %%MANPAGES%%man/man1/glab-repo.1.gz
+%%MANPAGES%%man/man1/glab-schedule-create.1.gz
+%%MANPAGES%%man/man1/glab-schedule-delete.1.gz
 %%MANPAGES%%man/man1/glab-schedule-list.1.gz
 %%MANPAGES%%man/man1/glab-schedule-run.1.gz
 %%MANPAGES%%man/man1/glab-schedule.1.gz
