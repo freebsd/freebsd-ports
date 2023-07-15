@@ -1,7 +1,7 @@
 PORTNAME=	bloaty
 PORTVERSION=	1.1
 DISTVERSIONPREFIX=	v
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libre2.so:devel/re2 \
-		libcapstone.so:devel/capstone4 \
+		libcapstone.so:devel/capstone \
 		libprotobuf.so:devel/protobuf
 
 USES=		cmake compiler:c++11-lang pkgconfig
