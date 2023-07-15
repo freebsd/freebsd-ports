@@ -1,7 +1,6 @@
 PORTNAME=	capstone
-DISTVERSION=	5.0-rc2
+DISTVERSION=	5.0-post1
 CATEGORIES=	devel
-PKGNAMESUFFIX=	5
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Multi-platform, multi-architecture disassembly framework

@@ -330,9 +330,9 @@
     SUBDIR += caliper
     SUBDIR += capnproto
     SUBDIR += capnproto080
+    SUBDIR += capstone
     SUBDIR += capstone3
     SUBDIR += capstone4
-    SUBDIR += capstone5
     SUBDIR += cargo-bloat
     SUBDIR += cargo-c
     SUBDIR += cargo-generate
