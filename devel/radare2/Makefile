@@ -1,5 +1,6 @@
 PORTNAME=	radare2
 DISTVERSION=	5.8.8
+PORTEVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -12,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 NOT_FOR_ARCHS=	armv6 armv7 mips mips64 powerpcspe sparc64
 NOT_FOR_ARCHS_REASON=	does not build: Unsupported BSD architecture
 
-LIB_DEPENDS=	libcapstone.so:devel/capstone4
+LIB_DEPENDS=	libcapstone.so:devel/capstone
 
 USES=		cpe gmake localbase pathfix pkgconfig
 CPE_VENDOR=	radare
