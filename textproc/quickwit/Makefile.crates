@@ -1,5 +1,5 @@
-CARGO_CRATES=	Inflector-0.11.4 \
-		RustyXML-0.3.0 \
+CARGO_CRATES=	RustyXML-0.3.0 \
+		addr2line-0.19.0 \
 		adler-1.0.2 \
 		advapi32-sys-0.2.0 \
 		aes-0.8.2 \
@@ -63,6 +63,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		azure_storage-0.6.0 \
 		azure_storage_blobs-0.6.0 \
 		backoff-0.4.0 \
+		backtrace-0.3.67 \
 		base16-0.2.1 \
 		base64-0.13.1 \
 		base64-0.21.2 \
@@ -168,7 +169,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		duct-0.13.6 \
 		dyn-clone-1.0.11 \
 		either-1.8.1 \
-		elasticsearch-dsl-0.4.11 \
+		elasticsearch-dsl-0.4.14 \
 		ena-0.14.2 \
 		encode_unicode-0.3.6 \
 		encoding_rs-0.8.29 \
@@ -211,6 +212,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		getrandom-0.1.16 \
 		getrandom-0.2.9 \
 		ghost-0.1.9 \
+		gimli-0.27.3 \
 		glob-0.3.1 \
 		h2-0.3.19 \
 		half-1.8.2 \
@@ -223,7 +225,6 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		heck-0.3.3 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.2.6 \
 		hermit-abi-0.3.1 \
 		hex-0.4.3 \
 		hkdf-0.12.3 \
@@ -270,7 +271,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lalrpop-util-0.19.12 \
 		lazy_static-1.4.0 \
 		levenshtein_automata-0.2.1 \
-		libc-0.2.144 \
+		libc-0.2.147 \
 		libm-0.2.7 \
 		libz-sys-1.1.9 \
 		linked-hash-map-0.5.6 \
@@ -282,7 +283,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		lru-0.10.0 \
 		lz4-1.24.0 \
 		lz4-sys-1.9.4 \
-		lz4_flex-0.10.0 \
+		lz4_flex-0.11.1 \
 		match_cfg-0.1.0 \
 		matchers-0.1.0 \
 		matches-0.1.10 \
@@ -291,16 +292,17 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		md5-0.7.0 \
 		measure_time-0.8.2 \
 		memchr-2.5.0 \
-		memmap2-0.6.2 \
+		memmap2-0.7.1 \
 		memoffset-0.8.0 \
 		mime-0.3.17 \
 		mime_guess-2.0.4 \
 		minimal-lexical-0.2.1 \
+		miniz_oxide-0.6.2 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.8 \
 		mockall-0.11.4 \
 		mockall_derive-0.11.4 \
-		mrecordlog-0.3.0 \
+		mrecordlog-0.4.0 \
 		multer-2.1.0 \
 		multimap-0.8.3 \
 		murmurhash32-0.3.0 \
@@ -316,22 +318,23 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		num-bigint-0.4.3 \
 		num-integer-0.1.45 \
 		num-traits-0.2.15 \
-		num_cpus-1.15.0 \
+		num_cpus-1.16.0 \
 		num_enum-0.5.11 \
 		num_enum_derive-0.5.11 \
 		num_threads-0.1.6 \
 		number_prefix-0.4.0 \
 		oauth2-4.4.0 \
+		object-0.30.4 \
 		ofb-0.6.1 \
 		once_cell-1.18.0 \
 		oneshot-0.1.5 \
 		oorandom-11.1.3 \
 		openidconnect-2.5.1 \
-		openssl-0.10.54 \
+		openssl-0.10.55 \
 		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-src-111.26.0+1.1.1u \
-		openssl-sys-0.9.88 \
+		openssl-sys-0.9.90 \
 		opentelemetry-0.19.0 \
 		opentelemetry-jaeger-0.18.0 \
 		opentelemetry-otlp-0.12.0 \
@@ -342,8 +345,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		ordered-float-2.10.0 \
 		ordered-float-3.7.0 \
 		os_pipe-1.1.4 \
-		ouroboros-0.15.6 \
-		ouroboros_macro-0.15.6 \
+		ouroboros-0.17.0 \
+		ouroboros_macro-0.17.0 \
 		output_vt100-0.1.3 \
 		outref-0.5.1 \
 		overload-0.1.1 \
@@ -419,15 +422,16 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rand_xorshift-0.3.0 \
 		rayon-1.7.0 \
 		rayon-core-1.11.0 \
-		rdkafka-0.28.0 \
-		rdkafka-sys-4.4.0+1.9.2 \
+		rdkafka-0.32.2 \
+		rdkafka-sys-4.5.0+1.9.2 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regex-1.8.3 \
+		regex-1.9.1 \
 		regex-automata-0.1.10 \
+		regex-automata-0.3.1 \
 		regex-syntax-0.6.29 \
-		regex-syntax-0.7.2 \
+		regex-syntax-0.7.3 \
 		rend-0.4.0 \
 		reqwest-0.11.18 \
 		retain_mut-0.1.9 \
@@ -436,11 +440,12 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		rkyv_derive-0.7.42 \
 		roxmltree-0.14.1 \
 		roxmltree-0.18.0 \
-		rust-embed-6.7.0 \
-		rust-embed-impl-6.6.0 \
-		rust-embed-utils-7.5.0 \
+		rust-embed-6.8.1 \
+		rust-embed-impl-6.8.1 \
+		rust-embed-utils-7.8.1 \
 		rust-stemmers-1.2.0 \
 		rust_decimal-1.29.1 \
+		rustc-demangle-0.1.23 \
 		rustc-hash-1.1.0 \
 		rustc_version-0.4.0 \
 		rustix-0.36.14 \
@@ -504,6 +509,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		sqlx-macros-0.6.3 \
 		sqlx-rt-0.6.3 \
 		stable_deref_trait-1.2.0 \
+		static_assertions-1.1.0 \
 		string_cache-0.8.7 \
 		stringprep-0.1.2 \
 		strip-ansi-escapes-0.1.1 \
@@ -543,7 +549,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tinytemplate-1.2.1 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.28.2 \
+		tokio-1.29.0 \
 		tokio-io-timeout-1.2.0 \
 		tokio-macros-2.1.0 \
 		tokio-native-tls-0.3.1 \
@@ -599,7 +605,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		utf8parse-0.2.1 \
 		utoipa-3.3.0 \
 		utoipa-gen-3.3.0 \
-		uuid-1.3.3 \
+		uuid-1.4.0 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
 		vec_map-0.8.2 \
@@ -668,8 +674,8 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		zstd-safe-5.0.2+zstd.1.5.2 \
 		zstd-safe-6.0.5+zstd.1.5.4 \
 		zstd-sys-2.0.8+zstd.1.5.5 \
+		ownedbytes,tantivy,tantivy-bitpacker,tantivy-columnar,tantivy-common,tantivy-query-grammar,tantivy-sstable,tantivy-stacker,tantivy-tokenizer-api@git+https://github.com/quickwit-oss/tantivy/?rev=3c30066\#3c300666ad448386136d2595b613b3236b123ff9 \
 		path,value,vrl,vrl-compiler,vrl-core,vrl-diagnostic,vrl-parser,vrl-stdlib@git+https://github.com/vectordotdev/vrl?rev=v0.3.0\#113005bcee6cd7b5ea0a53a7db2fc45ba4bc4125 \
 		chitchat@git+https://github.com/quickwit-oss/chitchat?rev=bc29598\#bc295980ac2e00f389dfa7e87cf6dc7995061206 \
-		ownedbytes,tantivy,tantivy-bitpacker,tantivy-columnar,tantivy-common,tantivy-query-grammar,tantivy-sstable,tantivy-stacker,tantivy-tokenizer-api@git+https://github.com/quickwit-oss/tantivy/?rev=924fc70\#924fc70cb58f56dcd1a0547f2528c9ea86452763 \
 		pulsar@git+https://github.com/quickwit-oss/pulsar-rs.git?rev=f9eff04\#f9eff04caf184906c6466fdde8b5bb0fd3c92659 \
 		sasl2-sys@git+https://github.com/quickwit-oss/rust-sasl/?rev=daca921\#daca9216beca2f2d8c9ce5d803906918a316021a
