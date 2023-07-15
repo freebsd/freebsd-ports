@@ -4,7 +4,7 @@ CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
 COMMENT=	Cross-platform Rust rewrite of the GNU coreutils
-WWW=		https://github.com/uutils/coreutils
+WWW=		https://crates.io/crates/coreutils
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
