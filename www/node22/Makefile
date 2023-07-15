@@ -27,7 +27,8 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 		libnghttp2.so:www/libnghttp2 \
 		libuv.so:devel/libuv
 
-USES=		compiler:c++11-lib gmake localbase pkgconfig python:build shebangfix tar:xz
+USES=		compiler:c++11-lib elfctl gmake localbase pkgconfig proccontrol \
+		python:build shebangfix tar:xz
 
 CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-brotli \
@@ -36,6 +37,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX:S|^${DESTDIR}||} \
 		--shared-nghttp2 \
 		--shared-zlib \
 		--without-npm
+ELF_FEATURES=	+noprotmax,wxneeded:bin/${PORTNAME}
 HAS_CONFIGURE=	yes
 MAKE_ENV=	CC.host="${CCACHE_BIN} ${CC}" \
 		CFLAGS.host="${CFLAGS}" \
@@ -43,6 +45,7 @@ MAKE_ENV=	CC.host="${CCACHE_BIN} ${CC}" \
 		CXXFLAGS.host="${CXXFLAGS}" \
 		LDFLAGS.host="${LDFLAGS}" \
 		LINK.host="${CXX}"
+PROCCONTROL_MODE=protmax:disable wxmap:enable
 REINPLACE_ARGS=	-i ''
 
 CONFLICTS_INSTALL=	node[0-9][0-9]
