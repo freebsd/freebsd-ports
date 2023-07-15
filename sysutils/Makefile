@@ -1299,6 +1299,7 @@
     SUBDIR += runwhen
     SUBDIR += rush
     SUBDIR += rust-coreutils
+    SUBDIR += rust-findutils
     SUBDIR += rw
     SUBDIR += s-tui
     SUBDIR += s6
