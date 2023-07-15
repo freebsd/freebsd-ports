@@ -1,7 +1,7 @@
 PORTNAME=	metaeuk
 DISTVERSION=	6
-PORTREVISION=	1
 DISTVERSIONSUFFIX=	-a5d39d9
+PORTREVISION=	2
 CATEGORIES=	biology
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,14 +26,15 @@ SHEBANG_GLOB=	*.sh
 
 PLIST_FILES=	bin/metaeuk
 
-CMAKE_OFF=	NATIVE_ARCH
+OPTIONS_DEFINE=		NATIVE
+
+NATIVE_CMAKE_BOOL=	NATIVE_ARCH
 
 .if !exists(/usr/include/omp.h)
 CMAKE_ARGS+=	-DREQUIRE_OPENMP:BOOL=OFF
 
 post-patch: # workaround for https://github.com/soedinglab/metaeuk/issues/55
 	@${REINPLACE_CMD} -e 's|set(REQUIRE_OPENMP 1 |set(REQUIRE_OPENMP 0 |' ${WRKSRC}/lib/mmseqs/src/CMakeLists.txt
-	
 .endif
 
 do-test:
