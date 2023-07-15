@@ -1,11 +1,11 @@
 PORTNAME=	lux
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.18.0
+DISTVERSION=	0.19.0
 CATEGORIES=	www
 
 MAINTAINER=	lcook@FreeBSD.org
 COMMENT=	Fast, simple and clean video downloader
-WWW=		https://github.com/iawia002/annie
+WWW=		https://github.com/iawia002/lux
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
