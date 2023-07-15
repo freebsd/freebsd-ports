@@ -263,6 +263,7 @@ include/snort/utils/infractions.h
 include/snort/utils/kmap.h
 include/snort/utils/memcap_allocator.h
 include/snort/utils/util_ber.h
+include/snort/utils/util_numa.h
 include/snort/utils/primed_allocator.h
 include/snort/utils/safec.h
 include/snort/utils/sflsq.h
