@@ -1,12 +1,8 @@
 PORTNAME=	kitty
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.28.1
-PORTREVISION=	1
+DISTVERSION=	0.29.0
+PORTREVISION=	0
 CATEGORIES=	x11 wayland
-
-PATCH_SITES=	https://github.com/kovidgoyal/${PORTNAME}/commit/
-PATCHFILES+=	95d15648fa37.patch:-p1 # https://github.com/kovidgoyal/kitty/issues/6422
-PATCHFILES+=	7d2dc252f149.patch:-p1 # https://github.com/kovidgoyal/kitty/issues/6422
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Cross-platform, fast, featureful, GPU-based terminal emulator
@@ -22,7 +18,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}furo>0:textproc/py-furo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinxext-opengraph>0:textproc/py-sphinxext-opengraph@${PY_FLAVOR} \
 		sphinx-build:textproc/py-sphinx@${PY_FLAVOR} \
 		wayland-protocols>=0:graphics/wayland-protocols
-LIB_DEPENDS=	libdbus-1.so:devel/dbus \
+LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
+		libdbus-1.so:devel/dbus \
 		libepoll-shim-interpose.so:devel/libepoll-shim \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
@@ -35,8 +32,8 @@ LIB_DEPENDS=	libdbus-1.so:devel/dbus \
 		libxkbcommon.so:x11/libxkbcommon
 
 USES=		compiler:c11 cpe desktop-file-utils gettext-runtime gl gmake \
-		go:modules pkgconfig python shebangfix ssl tar:xz terminfo \
-		xorg
+		go:modules magick pkgconfig python shebangfix ssl tar:xz \
+		terminfo xorg
 CPE_VENDOR=	kitty_project
 GH_TUPLE=	ALTree:bigfloat:38c8b72a9924:altree_bigfloat/vendor/github.com/ALTree/bigfloat \
 		disintegration:imaging:v1.6.2:disintegration_imaging/vendor/github.com/disintegration/imaging \
@@ -66,17 +63,22 @@ LDFLAGS+=	`pkg-config --libs epoll-shim-interpose`
 
 BINARY_ALIAS=	python3=${PYTHON_CMD} python=${PYTHON_CMD}
 
+BUILD_DIR=	${WRKSRC}/${OPSYS:tl}-package
+
 INSTALL_WRKSRC=	${WRKSRC}/linux-package
 
-_STRIP_TARGETS=	lib/kitty/kitty/fast_data_types.so lib/kitty/kitty/glfw-x11.so \
-		lib/kitty/kitty/glfw-wayland.so bin/kitten bin/kitty \
-		lib/kitty/kittens/transfer/rsync.so
+_STRIP_TARGETS=	kitty/fast_data_types.so kitty/glfw-x11.so \
+		kitty/glfw-wayland.so kittens/transfer/rsync.so
 
 _EMPTY_DIRS=	kittens/choose kittens/diff kittens/unicode_input kittens kitty
 
+OPTIONS_DEFINE=	DOCS
+DOCS_MAKE_ENV=	BUILD_DOCS=yes
+
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${OPSYS} == FreeBSD && (${OSVERSION} >= 1400079 || (${OSVERSION} >= 1302505 && \
+	${OSVERSION} < 1400000))
 CFLAGS+=	-Wno-error=invalid-utf8 -Winvalid-utf8
 .endif
 
@@ -96,16 +98,35 @@ USES+=		ncurses
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kitty_data-types.h
 .endif
 
+post-patch:                                                                     
+    ${REINPLACE_CMD} -i.bak -e "s:'go':'${GO_CMD:T}':1" ${WRKSRC}/setup.py
+
 # For librsync, we need to set header and library path
 do-build:
 	(cd ${WRKSRC} && \
-	        ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py linux-package --update-check-interval 0 --extra-include-dirs ${LOCALBASE}/include/ --extra-library-dirs ${LOCALBASE}/lib)
-	${FIND} ${INSTALL_WRKSRC} -name __pycache__ -type d -exec ${RM} -r -- {} +
+	        ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py \
+			--extra-include-dirs ${LOCALBASE}/include \
+			--extra-library-dirs ${LOCALBASE}/lib \
+			--libdir-name share \
+			--prefix ${BUILD_DIR:T} \
+			--update-check-interval 0 \
+			linux-package)
 
 do-install:
-	${CP} -a ${INSTALL_WRKSRC}/ ${STAGEDIR}${PREFIX}
-	${STRIP_CMD} ${_STRIP_TARGETS:S|^|${STAGEDIR}${PREFIX}/|}
+	cd ${BUILD_DIR} && \
+		${INSTALL_PROGRAM} bin/kitty bin/kitten ${STAGEDIR}${PREFIX}/bin && \
+		${INSTALL_DATA} share/applications/* ${STAGEDIR}${DESKTOPDIR} && \
+		${INSTALL_DATA} -d share/icons/hicolor ${STAGEDIR}${PREFIX}/share/icons/highcolor
+	cd ${BUILD_DIR}/share/kitty && \
+	       	${COPYTREE_SHARE} . ${STAGEDIR}${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/terminfo/kitty.terminfo \
 		${STAGEDIR}${PREFIX}/share/misc/
+	${INSTALL_MAN} ${BUILD_DIR}/share/man/man1/kitty.1 ${STAGEDIR}${MANPREFIX}/share/man/man1
+	${INSTALL_MAN} ${BUILD_DIR}/share/man/man5/kitty.conf.5 ${STAGEDIR}${MANPREFIX}/share/man/man5
+	${STRIP_CMD} ${_STRIP_TARGETS:S|^|${STAGEDIR}${DATADIR}/|}
+
+do-install-DOCS-on:
+	cd ${BUILD_DIR}/share/doc/kitty/html && \
+		${COPYTREE_SHARE} . ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
