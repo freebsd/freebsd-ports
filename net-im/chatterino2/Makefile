@@ -1,6 +1,5 @@
 PORTNAME=	chatterino2
-PORTVERSION=	2.3.4
-PORTREVISION=	5
+PORTVERSION=	2.3.5
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -28,10 +27,10 @@ PLIST_FILES=	bin/chatterino \
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	chatterino
-GH_TUPLE=	Chatterino:libcommuni:c613600e:communi/lib/libcommuni \
+GH_TUPLE=	Chatterino:libcommuni:a7b32cd:communi/lib/libcommuni \
 		pajlada:serialize:7d37cbf:serialize/lib/serialize \
-		pajlada:settings:7cf8431d:settings/lib/settings \
-		pajlada:signals:baf5bb0:signals/lib/signals
+		pajlada:settings:04792d8:settings/lib/settings \
+		pajlada:signals:25e4ec3:signals/lib/signals
 
 QMAKE_ENV=	GIT_COMMIT=${COMMIT_ID} \
 		GIT_RELEASE=${DISTVERSIONPREFIX}${PORTVERSION}
