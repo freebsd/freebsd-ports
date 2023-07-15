@@ -1,5 +1,5 @@
 PORTNAME=	pyradio
-DISTVERSION=	0.9.2.12
+DISTVERSION=	0.9.2.13
 PORTREVISION=	0
 CATEGORIES=	audio python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,7 +27,7 @@ RUN_DEPENDS=	${PKGNAMEPREFIX}dateutil>=2.8.2:devel/py-dateutil@${PY_FLAVOR} \
 		${PKGNAMEPREFIX}wheel>=0.38.4:devel/py-wheel@${PY_FLAVOR} \
 		bash:shells/bash
 
-USES=		desktop-file-utils python
+USES=		python
 USE_GITHUB=	yes
 GH_ACCOUNT=	coderholic
 USE_PYTHON=	autoplist distutils
