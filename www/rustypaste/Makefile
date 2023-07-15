@@ -1,11 +1,11 @@
 PORTNAME=	rustypaste
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.1
+DISTVERSION=	0.11.1
 CATEGORIES=	www
 
 MAINTAINER=	DtxdF@disroot.org
 COMMENT=	Minimal file upload/pastebin service
-WWW=		https://github.com/orhun/rustypaste/
+WWW=		https://blog.orhun.dev/blazingly-fast-file-sharing/
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
