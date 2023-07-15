@@ -1,5 +1,5 @@
 PORTNAME=	molecule
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -11,11 +11,13 @@ WWW=		https://molecule.readthedocs.io/en/latest/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=1.0:devel/py-setuptools_scm_git_archive@${PY_FLAVOR}
-# click-help-colors >= 0.9
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.1.0:sysutils/py-ansible-compat@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=19.3.1:devel/py-pip@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=1.1:devel/py-setuptools_scm_git_archive@${PY_FLAVOR} \
+	${PYTHON_PKGNAMEPREFIX}wheel>=0.33.6:devel/py-wheel@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.2.0:sysutils/py-ansible-compat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Cerberus>=1.3.1:devel/py-cerberus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0:devel/py-click@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}click-help-colors>=0.9:devel/py-click-help-colors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cookiecutter>=1.7.3:devel/py-cookiecutter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enrich>=1.2.7:textproc/py-enrich@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.11.3:devel/py-Jinja2@${PY_FLAVOR} \
@@ -25,20 +27,18 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.1.0:sysutils/py-ansible-co
 		${PYTHON_PKGNAMEPREFIX}yaml>=5.1:devel/py-yaml@${PY_FLAVOR}
 # ansi2html >= 1.6.0
 # pytest-cov >= 2.10.1
-# pytest-mock >= 3.3.1
 # pytest-testinfra >= 6.1.0
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}coverage>=6.2:devel/py-coverage@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filelock>0:sysutils/py-filelock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pexpect>=4.8.0:misc/py-pexpect@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>=2.9.0:devel/py-pytest-cov@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-html>=3.0.0:devel/py-pytest-html@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-mock>=1.10.4:devel/py-pytest-mock@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pytest-mock>=3.3.1:devel/py-pytest-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-plus>=0.2:devel/py-pytest-plus@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=2.1.0:devel/py-pytest-xdist@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>=6.1.2:devel/py-pytest@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-xdist>=2.1.0:devel/py-pytest-xdist@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517 pytest
 
 # Note: we're only running the unit tests here.  Upstream acknowledges
 # that functional tests are still a work in progress.
@@ -63,12 +63,8 @@ DOCS_BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=2.11.3:devel/py-Jinja2@${PY_F
 			${PYTHON_PKGNAMEPREFIX}ansible-core>=2.12.0:sysutils/py-ansible-core@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}simplejson>=3.17.2:devel/py-simplejson@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}sphinx>=5.0.0:textproc/py-sphinx@${PY_FLAVOR}
-# lint =
 LINT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}flake8>=3.8.4:devel/py-flake8@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}pre-commit>=2.10.1:devel/py-pre-commit@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}yamllint>0:devel/py-yamllint@${PY_FLAVOR}
-
-do-test:
-	@(cd ${TEST_WRKSRC} && ${SETENV} ${TEST_ENV} ${PYTHON_CMD} -m pytest)
 
 .include <bsd.port.mk>
