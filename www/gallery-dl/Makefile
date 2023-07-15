@@ -1,6 +1,6 @@
 PORTNAME=	gallery-dl
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.25.7
+DISTVERSION=	1.25.8
 CATEGORIES=	www
 
 # Implicit approval to commit trivial version updates.
