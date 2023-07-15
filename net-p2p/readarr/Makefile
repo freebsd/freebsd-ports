@@ -1,5 +1,5 @@
 PORTNAME=	readarr
-DISTVERSION=	0.2.1.1915
+DISTVERSION=	0.2.2.1943
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/Readarr/Readarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Readarr.develop.${DISTVERSION}.freebsd-core-x64
@@ -9,6 +9,7 @@ COMMENT=	Book Manager and Automation (Sonarr for Ebooks)
 WWW=		https://readarr.com
 
 LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 ONLY_FOR_ARCHS=	amd64
 
