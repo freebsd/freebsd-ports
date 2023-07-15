@@ -1,3 +1,3 @@
-TIMESTAMP = 1636169064
-SHA256 (importlib_resources-5.4.0.tar.gz) = d756e2f85dd4de2ba89be0b21dba2a3bbec2e871a42a3a16719258a11f87506b
-SIZE (importlib_resources-5.4.0.tar.gz) = 30554
+TIMESTAMP = 1689445714
+SHA256 (importlib_resources-6.0.0.tar.gz) = 4cf94875a8368bd89531a756df9a9ebe1f150e0f885030b461237bc7f2d905f2
+SIZE (importlib_resources-6.0.0.tar.gz) = 35570
