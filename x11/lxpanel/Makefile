@@ -4,9 +4,9 @@ PORTREVISION=	4
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION:R}.x/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Lightweight X11 desktop panel
-WWW=		https://wiki.lxde.org/en/LXPanel
+WWW=		https://github.com/lxde/lxpanel
 
 LICENSE=	GPLv2+ MIT
 LICENSE_COMB=	multi
