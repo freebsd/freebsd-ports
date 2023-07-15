@@ -1,6 +1,5 @@
 PORTNAME=	ergo
-DISTVERSION=	3.8
-PORTREVISION=	1
+DISTVERSION=	3.8.1
 CATEGORIES=	science
 MASTER_SITES=	http://www.ergoscf.org/source/tarfiles/
 
@@ -16,6 +15,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 TEST_DEPENDS=	bash:shells/bash
 
 USES=		compiler:c++11-lang gmake localbase shebangfix
+USE_CXXSTD=	c++14 # fix build broken by deprecated feature std::random_shuffle, reported to info to ergoscf.org
 
 SHEBANG_FILES=	test/check_eigenvectors.sh test/compare_homo_lumo.sh
 
@@ -31,5 +31,7 @@ OPTIONS_DEFAULT_amd64=	SSE
 OPTIONS_DEFAULT_i386=	SSE
 
 SSE_CONFIGURE_ENABLE=	sse-intrinsics
+
+# the lapack_test test fails, reported to the upstream's e-mail
 
 .include <bsd.port.mk>
