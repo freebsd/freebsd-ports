@@ -1,5 +1,5 @@
 PORTNAME=	lagrange
-DISTVERSION=	1.15.9
+DISTVERSION=	1.16.5
 CATEGORIES=	www
 MASTER_SITES=	https://git.skyjake.fi/gemini/${PORTNAME}/releases/download/v${DISTVERSION}/
 
@@ -10,23 +10,21 @@ WWW=		https://gmi.skyjake.fi/lagrange/
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
-BROKEN_SSL=	libressl openssl30 openssl31
-BROKEN_SSL_REASON_libressl=	needs features only available in OpenSSL
-BROKEN_SSL_REASON_openssl30=	Fails to build with undefined symbol: ERR_load_BIO_strings
-BROKEN_SSL_REASON_openssl31=	Fails to build with undefined symbol: ERR_load_BIO_strings
-
 BUILD_DEPENDS=	zip>0:archivers/zip
 LIB_DEPENDS=	libfribidi.so:converters/fribidi \
 		libharfbuzz.so:print/harfbuzz \
 		libmpg123.so:audio/mpg123 \
 		libpcre2-8.so:devel/pcre2 \
-		libunistring.so:devel/libunistring
+		libunistring.so:devel/libunistring \
+		libwebp.so:graphics/webp
 
 USES=		cmake compiler:c11 desktop-file-utils pkgconfig sdl ssl xorg
-USE_SDL=	sdl2
-USE_XORG=	x11 xext
 
-LDFLAGS+=	-lssl -lcrypto
+BROKEN_SSL=	libressl
+BROKEN_SSL_REASON_libressl=	needs features only available in OpenSSL
+
+USE_SDL=	sdl2
+USE_XORG=	ice sm x11 xext
 
 OPTIONS_DEFINE=	SSE41
 
