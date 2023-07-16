@@ -1,5 +1,6 @@
 PORTNAME=	libquotient
 DISTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	net-im
 
 MAINTAINER=	adridg@FreeBSD.org
@@ -29,11 +30,4 @@ CC=		${LLVM_PREFIX}/bin/clang
 CPP=		${LLVM_PREFIX}/bin/clang-cpp
 CXX=		${LLVM_PREFIX}/bin/clang++
 
-
-.include <bsd.port.pre.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} < 1301507
-CMAKE_ARGS+=	-DBUILD_TESTING=OFF
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
