@@ -1,6 +1,5 @@
 PORTNAME=	nscde
-DISTVERSION=	2.2
-PORTREVISION=	5
+DISTVERSION=	2.3
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/NsCDE/NsCDE/releases/download/${DISTVERSION}/
 
