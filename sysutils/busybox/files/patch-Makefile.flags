@@ -1,0 +1,11 @@
+--- Makefile.flags.orig	2023-07-16 18:11:37 UTC
++++ Makefile.flags
+@@ -188,7 +188,7 @@ ifneq (,$(findstring linux,$(shell $(CC) $(CFLAGS) -du
+ LDLIBS += resolv
+ endif
+ ifneq (,$(findstring gnu,$(shell $(CC) $(CFLAGS) -dumpmachine)))
+-LDLIBS += resolv
++#LDLIBS += resolv
+ endif
+ endif
+ 
