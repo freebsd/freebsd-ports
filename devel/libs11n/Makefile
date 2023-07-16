@@ -12,6 +12,7 @@ WWW=		http://s11n.net/
 LICENSE=	PD
 
 USES=		uidfix zip
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 PORTSCOUT=	limitw:1,even
@@ -28,6 +29,14 @@ PLIST_SUB+=	PROFILE=""
 
 post-extract:
 	@${CP} ${PATCHDIR}/Makefile.bsd ${WRKSRC}/Makefile
+
+post-patch:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|auto_ptr|unique_ptr|' \
+		${WRKSRC}/../include/s11n.net/s11n/algo.tpp \
+		${WRKSRC}/../include/s11n.net/s11n/io/data_node_format.hpp \
+		${WRKSRC}/../include/s11n.net/s11n/io/data_node_io.hpp
+.endif
 
 pre-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/include/s11n.net
