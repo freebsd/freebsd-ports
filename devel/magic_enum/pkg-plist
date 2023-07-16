@@ -1,0 +1,13 @@
+include/magic_enum.hpp
+include/magic_enum_all.hpp
+include/magic_enum_containers.hpp
+include/magic_enum_flags.hpp
+include/magic_enum_format.hpp
+include/magic_enum_fuse.hpp
+include/magic_enum_iostream.hpp
+include/magic_enum_switch.hpp
+include/magic_enum_utility.hpp
+lib/cmake/magic_enum/magic_enumConfig.cmake
+lib/cmake/magic_enum/magic_enumConfigVersion.cmake
+libdata/pkgconfig/magic_enum.pc
+%%DATADIR%%/package.xml

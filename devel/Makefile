@@ -1553,6 +1553,7 @@
     SUBDIR += m17n-lib
     SUBDIR += m4
     SUBDIR += mage
+    SUBDIR += magic_enum
     SUBDIR += magit
     SUBDIR += magit-devel
     SUBDIR += make++
