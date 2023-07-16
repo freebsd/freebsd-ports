@@ -10,6 +10,9 @@ COMMENT=	Minimal secure web server. Fast and efficient, no cgi-bin support
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Abandonware, last release in 15+ years ago. Consider using www/darkhttpd, www/obhttpd or www/miniserve
+EXPIRATION_DATE=2023-09-30
+
 USES=		cpe
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-1.02-4
