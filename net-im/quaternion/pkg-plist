@@ -1,5 +1,6 @@
 bin/quaternion
 share/Quotient/quaternion/translations/quaternion_de.qm
+share/Quotient/quaternion/translations/quaternion_en.qm
 share/Quotient/quaternion/translations/quaternion_en_GB.qm
 share/Quotient/quaternion/translations/quaternion_es.qm
 share/Quotient/quaternion/translations/quaternion_pl.qm
@@ -11,5 +12,5 @@ share/icons/hicolor/22x22/apps/quaternion.png
 share/icons/hicolor/32x32/apps/quaternion.png
 share/icons/hicolor/48x48/apps/quaternion.png
 share/icons/hicolor/64x64/apps/quaternion.png
-share/icons/hicolor/scalable/apps/quaternion.svgz
+share/icons/hicolor/scalable/apps/quaternion.svg
 share/metainfo/com.github.quaternion.appdata.xml
