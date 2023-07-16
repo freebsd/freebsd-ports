@@ -98,8 +98,8 @@ USES+=		ncurses
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kitty_data-types.h
 .endif
 
-post-patch:                                                                     
-    ${REINPLACE_CMD} -i.bak -e "s:'go':'${GO_CMD:T}':1" ${WRKSRC}/setup.py
+post-patch:
+	${REINPLACE_CMD} -i.bak -e "s: 'go':'${GO_CMD:T}':1" ${WRKSRC}/setup.py
 
 # For librsync, we need to set header and library path
 do-build:
