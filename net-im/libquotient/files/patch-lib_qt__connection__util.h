@@ -44,7 +44,7 @@ In file included from /usr/include/c++/v1/__functional/bind_front.h:14:
          auto&& boundSlot =
 -#    if __cpp_lib_bind_front // Needs Apple Clang 13 (other platforms are fine)
 +#    if __cpp_lib_bind_front && \
-+	  !defined(__FreeBSD_version) || __FreeBSD_version >= 1301504
++	  (!defined(__FreeBSD_version) || __FreeBSD_version >= 1301504)
 +            // This requires LLVM >= 14, this only works with libc++ commit
 +            // https://reviews.llvm.org/D107199.
              std::bind_front(slot, context);
