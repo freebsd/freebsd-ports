@@ -1,3 +1,35 @@
+  <vuln vid="41c60e16-2405-11ee-a0d1-84a93843eb75">
+    <topic>OpenSSL -- AES-SIV implementation ignores empty associated data entries</topic>
+    <affects>
+      <package>
+	<name>openssl30</name>
+	<range><lt>3.0.9_1</lt></range>
+      </package>
+      <package>
+	<name>openssl31</name>
+	<range><lt>3.1.1_1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The OpenSSL project reports:</p>
+	<blockquote cite="https://www.openssl.org/news/secadv/20230714.txt">
+	  <p>The AES-SIV cipher implementation contains a bug that causes
+	    it to ignore empty associated data entries which are unauthenticated as
+	    a consequence.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-2975</cvename>
+      <url>https://www.openssl.org/news/secadv/20230714.txt</url>
+    </references>
+    <dates>
+      <discovery>2023-07-14</discovery>
+      <entry>2023-07-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3446e45d-a51b-486f-9b0e-e4402d91fed6">
     <topic>electron22 -- multiple vulnerabilities</topic>
     <affects>
