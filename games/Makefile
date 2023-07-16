@@ -648,7 +648,6 @@
     SUBDIR += mvdsv
     SUBDIR += nInvaders
     SUBDIR += naev
-    SUBDIR += naev-data
     SUBDIR += narcissu2
     SUBDIR += nazghul
     SUBDIR += nbsdgames
