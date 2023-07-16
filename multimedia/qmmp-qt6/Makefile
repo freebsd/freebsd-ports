@@ -96,7 +96,6 @@ HISTORY_DESC=	Information about listened tracks
 HISTORY_USE=	QT=base
 HISTORY_CMAKE_BOOL=	USE_HISTORY
 
-PIPEWIRE_DESC=		Audio out via PipeWire
 PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
 PIPEWIRE_CMAKE_BOOL=	USE_PIPEWIRE
 
