@@ -1,30 +1,28 @@
 PORTNAME=	svmlight
 PORTVERSION=	6.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science
-MASTER_SITES=	http://osmot.cs.cornell.edu/svm_light/v${PORTVERSION}/
+MASTER_SITES=	https://osmot.cs.cornell.edu/svm_light/v${PORTVERSION}/
 DISTNAME=	svm_light
 
-PATCH_SITES=	http://cpansearch.perl.org/src/KWILLIAMS/Algorithm-SVMLight-0.09/
-PATCHFILES=	SVMLight.patch
-PATCH_DIST_STRIP=-p1
+MAINTAINER=	bofh@FreeBSD.org
+COMMENT=	Implementation of Support Vector Machines (SVMs) in C
+WWW=		https://svmlight.joachims.org/
 
 LICENSE=	SVM-Light
 LICENSE_NAME=	SVM-Light license
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	# none
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Implementation of Support Vector Machines (SVMs) in C
-WWW=		https://svmlight.joachims.org/
-
-CFLAGS+=	-fPIC -fcommon
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LFLAGS="${CFLAGS}"
-NO_WRKSUBDIR=	yes
 USES=		gmake
 USE_LDCONFIG=	yes
 
-OPTIONS_DEFINE=	DOCS
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" LD="${CC}" LFLAGS="${CFLAGS}"
+ALL_TARGET=	all libsvmlight_hideo
+
+CFLAGS+=	-fPIC -fcommon
+
+NO_WRKSUBDIR=	yes
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${PREFIX}/include/svmlight
@@ -32,8 +30,6 @@ do-install:
 .for file in svm_classify svm_learn
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/bin
 .endfor
-	${INSTALL_DATA} ${WRKSRC}/libsvmlight.a ${STAGEDIR}${PREFIX}/lib/
-	${INSTALL_LIB}  ${WRKSRC}/libsvmlight.so ${STAGEDIR}${PREFIX}/lib/libsvmlight.so.1
-	${LN} -s libsvmlight.so.1 ${STAGEDIR}${PREFIX}/lib/libsvmlight.so
+	${INSTALL_LIB}  ${WRKSRC}/libsvmlight.so ${STAGEDIR}${PREFIX}/lib/libsvmlight.so
 
 .include <bsd.port.mk>
