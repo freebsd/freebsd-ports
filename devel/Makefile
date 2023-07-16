@@ -1451,6 +1451,7 @@
     SUBDIR += libzookeeper
     SUBDIR += libzvbi
     SUBDIR += lightning
+    SUBDIR += linenoise
     SUBDIR += linenoise-ng
     SUBDIR += linux-c7-dbus-libs
     SUBDIR += linux-c7-devtools
