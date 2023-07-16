@@ -48,7 +48,7 @@ CONFLICTS_INSTALL?=	rust-nightly
 # ?= to allow users to still overwrite it in make.conf.
 TMPDIR?=	${WRKDIR}
 
-OPTIONS_DEFINE=		DOCS GDB SOURCES WASM
+OPTIONS_DEFINE=		DOCS GDB LTO SOURCES WASM
 OPTIONS_DEFAULT=	SOURCES WASM
 
 GDB_DESC=	Install ports gdb (necessary for debugging rust programs)
@@ -191,7 +191,13 @@ do-configure:
 	@${ECHO_CMD} 'deny-warnings=false' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'verbose-tests=true' >> ${WRKSRC}/config.toml
 	@${ECHO_CMD} 'lld=${_RUST_BUILD_WASM}' >> ${WRKSRC}/config.toml
+.if ${PORT_OPTIONS:MLTO}
+	@${ECHO_CMD} 'lto="thin"' >> ${WRKSRC}/config.toml
+.endif
 	@${ECHO_CMD} '[llvm]' >> ${WRKSRC}/config.toml
+.if ${PORT_OPTIONS:MLTO}
+	@${ECHO_CMD} 'thin-lto=true' >> ${WRKSRC}/config.toml
+.endif
 .if defined(WITH_CCACHE_BUILD) && !defined(NO_CCACHE)
 	@${ECHO_CMD} 'ccache="${CCACHE_BIN}"' >> ${WRKSRC}/config.toml
 .else
