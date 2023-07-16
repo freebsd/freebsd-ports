@@ -11,6 +11,9 @@ WWW=		http://www.stedee.id.au/awffull
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, last release in 14+ years ago. Consider using www/awstats
+EXPIRATION_DATE=2023-09-30
+
 BUILD_DEPENDS=	${LOCALBASE}/share/fonts/bitstream-vera/Vera.ttf:x11-fonts/bitstream-vera
 LIB_DEPENDS=	libgd.so:graphics/gd \
 		libpng.so:graphics/png \
