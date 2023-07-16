@@ -35,9 +35,9 @@ lib/libsaga_api.so.%%PORTVERSION%%
 lib/libsaga_gdi.so
 lib/libsaga_gdi.so.9
 lib/libsaga_gdi.so.%%PORTVERSION%%
-%%PYTHON_SITELIBDIR%%/_saga_api.so
-%%PYTHON_SITELIBDIR%%/saga.py
-%%PYTHON_SITELIBDIR%%/saga_api.py
+%%PYTHON_SITELIBDIR%%/PySAGA/__init__.py
+%%PYTHON_SITELIBDIR%%/PySAGA/_saga_api.so
+%%PYTHON_SITELIBDIR%%/PySAGA/saga_api.py
 lib/saga/libclimate_tools.so
 lib/saga/libcontrib_perego.so
 lib/saga/libdb_odbc.so
@@ -137,9 +137,6 @@ share/pixmaps/saga.png
 %%DATADIR%%/docs/saga_on_mac_build.sh
 %%DATADIR%%/docs/saga_toolchains_cheat_sheet.xml
 %%DATADIR%%/docs/saga_toolchains_manual.odt
-@mode 0777
-@dir %%DATADIR%%
-@mode 0666
 %%DATADIR%%/helper/convert2utf-8.bat
 %%DATADIR%%/helper/convert2utf-8.py
 %%DATADIR%%/helper/doxygen_saga_api_chm
@@ -154,18 +151,16 @@ share/pixmaps/saga.png
 %%DATADIR%%/helper/make_saga_snapshot.bat
 %%DATADIR%%/helper/make_tools_interface.bat
 %%DATADIR%%/helper/make_translation_files.bat
-@mode 0755
 %%DATADIR%%/helper/saga_python_version_tester.bat
 %%DATADIR%%/helper/saga_python_version_tester.py
+%%DATADIR%%/python/__init__.py
 %%DATADIR%%/python/helpers/print_version.py
 %%DATADIR%%/python/helpers/saga_cmd_param_interface/environment.py
 %%DATADIR%%/python/helpers/saga_cmd_param_interface/param_interface.py
 %%DATADIR%%/python/helpers/saga_cmd_param_interface/tools.py
-@mode 0666
-%%DATADIR%%/python/saga.py
-%%DATADIR%%/python/saga_python_api.txt
+%%DATADIR%%/python/saga_python_example.bat
 %%DATADIR%%/python/saga_python_example.py
-%%DATADIR%%/python/saga_python_runner.bat
+%%DATADIR%%/python/saga_python_readme.txt
 %%DATADIR%%/python/test_data/test.mgrd
 %%DATADIR%%/python/test_data/test.sdat
 %%DATADIR%%/python/test_data/test.sgrd
@@ -206,7 +201,7 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/gridding.xml
 %%DATADIR%%/toolchains/group_files.xml
 %%DATADIR%%/toolchains/imagery.xml
-%%DATADIR%%/toolchains/imagery_fmask_clouds.xml
+%%DATADIR%%/toolchains/imagery_classify_majority.xml
 %%DATADIR%%/toolchains/imagery_lczc.xml
 %%DATADIR%%/toolchains/import_text_tables.xml
 %%DATADIR%%/toolchains/obia.xml
@@ -226,4 +221,3 @@ share/pixmaps/saga.png
 %%DATADIR%%/toolchains/tta_tools.xml
 %%DATADIR%%/toolchains/twi.xml
 %%DATADIR%%/toolchains/upslope_height.xml
-@mode
