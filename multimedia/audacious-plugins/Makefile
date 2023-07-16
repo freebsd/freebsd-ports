@@ -94,7 +94,6 @@ FILEWRITER_DESC=	File writer
 MPRIS_DESC=		NPRIS plugin
 NEON_DESC=		Neon plugin
 OPENMPT_DESC=		OpenMPT plugin
-PIPEWIRE_DESC=		Pipewire output plugin
 SCROBBLER_DESC=		Scrobbler decoder
 SID_DESC=		Sound chip emulator of Commodore
 SPEEDPITCH_DESC=	Speed and Pitch plugin

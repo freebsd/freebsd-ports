@@ -65,7 +65,6 @@ ISO9660_DESC=	Direct support for ISO 9660 images
 PROXYDB_DESC=	Proxy database support via libmpdclient
 LAME_DESC=	Support for MP3 Icecast Streams
 OPENMPT_DESC=	Support for OpenMPT playback
-PIPEWIRE_DESC=	PipeWire support
 PLAYLISTS_DESC=	Enable extra playlist support (wma, RSS)
 QOBUZ_DESC=	Streaming service support: Qobuz
 SIDPLAY_DESC=	Sidplay support (C64 mono and stereo files)

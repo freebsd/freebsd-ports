@@ -408,6 +408,7 @@ PGSQL_DESC?=		PostgreSQL database support
 PGSQL_JDBC_DESC?=	JDBC connection to PostgreSQL databases
 PHONON_DESC?=		Multimedia support via Phonon
 PHP_DESC?=		PHP bindings or support
+PIPEWIRE_DESC?=		PipeWire multimedia server support
 PIXBUF_DESC?=		GDK-PixBuf library support
 PLUGINS_DESC?=		Build and/or install plugins
 PNG_DESC?=		PNG image format support
