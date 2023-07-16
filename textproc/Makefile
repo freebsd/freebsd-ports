@@ -2000,6 +2000,7 @@
     SUBDIR += tn-aspell
     SUBDIR += tn-hunspell
     SUBDIR += tnef2txt
+    SUBDIR += tokay
     SUBDIR += tokyodystopia
     SUBDIR += toml-f
     SUBDIR += tr-aspell
