@@ -28,6 +28,15 @@ Apply https://github.com/swaywm/sway/commit/6f1a3b6652b9
         wlr_xcursor_manager_set_cursor_image(g_pCompositor->m_sWLRXCursorMgr, "left_ptr", g_pCompositor->m_sWLRCursor);
         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Apply https://github.com/swaywm/sway/commit/91079079690c
+
+../src/render/Renderer.cpp:60:9: error: use of undeclared identifier 'wlr_presentation_surface_sampled_on_output'; did you mean 'wlr_presentation_surface_textured_on_output'?
+        wlr_presentation_surface_sampled_on_output(g_pCompositor->m_sWLRPresentation, surface, RDATA->pMonitor->output);
+        ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+../src/render/Renderer.cpp:780:5: error: use of undeclared identifier 'wlr_presentation_surface_sampled_on_output'; did you mean 'wlr_presentation_surface_textured_on_output'?
+    wlr_presentation_surface_sampled_on_output(g_pCompositor->m_sWLRPresentation, PSURFACE, pMonitor->output);
+    ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 --- src/Compositor.cpp.orig	2023-07-11 02:50:09 UTC
 +++ src/Compositor.cpp
 @@ -458,7 +458,7 @@ void CCompositor::startCompositor() {
@@ -109,7 +118,25 @@ Apply https://github.com/swaywm/sway/commit/6f1a3b6652b9
  std::string CInputManager::deviceNameToInternalString(std::string in) {
 --- src/render/Renderer.cpp.orig	2023-07-11 02:50:09 UTC
 +++ src/render/Renderer.cpp
-@@ -1895,7 +1895,7 @@ void CHyprRenderer::ensureCursorRenderingMode() {
+@@ -57,7 +57,7 @@ void renderSurface(struct wlr_surface* surface, int x,
+ 
+     if (!g_pHyprRenderer->m_bBlockSurfaceFeedback) {
+         wlr_surface_send_frame_done(surface, RDATA->when);
+-        wlr_presentation_surface_sampled_on_output(g_pCompositor->m_sWLRPresentation, surface, RDATA->pMonitor->output);
++        wlr_presentation_surface_scanned_out_on_output(g_pCompositor->m_sWLRPresentation, surface, RDATA->pMonitor->output);
+     }
+ 
+     // reset the UV, we might've set it above
+@@ -777,7 +777,7 @@ bool CHyprRenderer::attemptDirectScanout(CMonitor* pMo
+     timespec now;
+     clock_gettime(CLOCK_MONOTONIC, &now);
+     wlr_surface_send_frame_done(PSURFACE, &now);
+-    wlr_presentation_surface_sampled_on_output(g_pCompositor->m_sWLRPresentation, PSURFACE, pMonitor->output);
++    wlr_presentation_surface_scanned_out_on_output(g_pCompositor->m_sWLRPresentation, PSURFACE, pMonitor->output);
+ 
+     if (wlr_output_commit(pMonitor->output)) {
+         if (!m_pLastScanout) {
+@@ -1916,7 +1916,7 @@ void CHyprRenderer::ensureCursorRenderingMode() {
              m_bHasARenderedCursor = true;
  
              if (!m_bWindowRequestedCursorHide)
