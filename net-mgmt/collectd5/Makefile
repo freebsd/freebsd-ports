@@ -1,6 +1,6 @@
 PORTNAME=	collectd
 PORTVERSION=	5.12.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-mgmt
 MASTER_SITES=	https://storage.googleapis.com/collectd-tarballs/
 PKGNAMESUFFIX=	5
@@ -130,8 +130,7 @@ DBI_CFLAGS=		-Wno-deprecated-declarations
 
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt \
 			libgpg-error.so:security/libgpg-error
-GCRYPT_CONFIGURE_WITH=	libgcrypt=${LOCALBASE}
-GCRYPT_LIBS=		-lgcrypt
+GCRYPT_CONFIGURE_WITH=	libgcrypt=${LOCALBASE}/bin/libgcrypt-config
 
 INFLUXDB_CONFIGURE_ENABLE=	write_influxdb_udp
 
