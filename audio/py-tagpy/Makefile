@@ -1,6 +1,6 @@
 PORTNAME=	tagpy
-PORTVERSION=	2013.1
-PORTREVISION=	22
+PORTVERSION=	2022.1
+PORTREVISION=	0
 CATEGORIES=	audio python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,14 +15,16 @@ LIB_DEPENDS=	${PY_BOOST} \
 		libtag.so:audio/taglib
 
 USES=		compiler:c++11-lang python shebangfix
-HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	configure.py
-CONFIGURE_ARGS=	--taglib-inc-dir="${LOCALBASE}/include/taglib" \
-		--taglib-lib-dir="${LOCALBASE}/lib" \
-		--boost-inc-dir="${PYTHON_INCLUDEDIR},${LOCALBASE}/include" \
-		--boost-lib-dir="${PYTHON_LIBDIR},${LOCALBASE}/lib" \
-		--boost-python-libname="${PY_BOOST_LIB}"
-SHEBANG_FILES=	configure.py
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	autoplist distutils
+
+PYDISTUTILS_BUILD_TARGET=	build_ext
+PYDISTUTILS_BUILDARGS=	--include-dirs="${LOCALBASE}/include/taglib" \
+			--include-dirs="${LOCALBASE}/include" \
+			--library-dirs="${LOCALBASE}/lib"
+
+CPPFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/_tagpy.cpython-${PYTHON_SUFFIX}.so
 
 .include <bsd.port.mk>
