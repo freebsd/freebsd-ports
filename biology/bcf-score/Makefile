@@ -1,5 +1,6 @@
 PORTNAME=	bcf-score
 DISTVERSION=	1.16
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://software.broadinstitute.org/software/score/
 DISTFILES+=	score_${DISTVERSION}-20221221.tar.gz
