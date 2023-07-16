@@ -11,6 +11,7 @@ WWW=		https://www.gnu.org/software/cgicc/
 LICENSE=	LGPL3+
 
 USES=		autoreconf:build compiler:gcc-c++11-lib libtool pathfix
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
