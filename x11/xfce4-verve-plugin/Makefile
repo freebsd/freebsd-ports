@@ -1,6 +1,5 @@
 PORTNAME=	verve-plugin
-PORTVERSION=	2.0.1
-PORTREVISION=	2
+PORTVERSION=	2.0.3
 CATEGORIES=	x11 xfce
 MASTER_SITES=	XFCE/panel-plugins
 PKGNAMEPREFIX=	xfce4-
@@ -13,7 +12,8 @@ WWW=		https://goodies.xfce.org/projects/panel-plugins/xfce4-verve-plugin
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
+		libharfbuzz.so:print/harfbuzz
 
 USES=		compiler:c11 gettext-tools gmake gnome libtool pkgconfig \
 		tar:bzip2 xfce
