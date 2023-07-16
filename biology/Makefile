@@ -95,6 +95,7 @@
     SUBDIR += libsbml
     SUBDIR += libsedml
     SUBDIR += linux-foldingathome
+    SUBDIR += locarna
     SUBDIR += mafft
     SUBDIR += mapm3
     SUBDIR += mashmap
