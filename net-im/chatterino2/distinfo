@@ -1,8 +1,10 @@
-TIMESTAMP = 1689446136
-SHA256 (chatterino-chatterino2-v2.3.5_GH0.tar.gz) = f1fff3523f5a3f633430d44f7ca6c6c718a515258d50004a855e69e4aa989b4e
-SIZE (chatterino-chatterino2-v2.3.5_GH0.tar.gz) = 1753250
+TIMESTAMP = 1689505428
+SHA256 (chatterino-chatterino2-v2.4.0_GH0.tar.gz) = bdd52c380b1c8278d647407b25811c649b4b6edf66b21529cd50a9863859fb45
+SIZE (chatterino-chatterino2-v2.4.0_GH0.tar.gz) = 1987436
 SHA256 (Chatterino-libcommuni-a7b32cd_GH0.tar.gz) = 5441bf53c224f4782efdb58a5045a014d65b8906c1621c417828063e5753b74b
 SIZE (Chatterino-libcommuni-a7b32cd_GH0.tar.gz) = 477616
+SHA256 (arsenm-sanitizers-cmake-c3dc841_GH0.tar.gz) = bc5cddf6451c3edecc75bf605e7976cb47208d31021db6f5bf99c579efc01f5a
+SIZE (arsenm-sanitizers-cmake-c3dc841_GH0.tar.gz) = 7436
 SHA256 (pajlada-serialize-7d37cbf_GH0.tar.gz) = 2699d20509117209fd2995f4c3091f614f8f8f8996f8bc40f5620461b4e0f097
 SIZE (pajlada-serialize-7d37cbf_GH0.tar.gz) = 9039
 SHA256 (pajlada-settings-04792d8_GH0.tar.gz) = 9b39d1f6006e1e0e951a96c7bce19f4b264f8c02114c7f77d2789454033ab37f

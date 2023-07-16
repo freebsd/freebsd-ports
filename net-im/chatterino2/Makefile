@@ -1,5 +1,5 @@
 PORTNAME=	chatterino2
-PORTVERSION=	2.3.5
+PORTVERSION=	2.4.0
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -10,33 +10,28 @@ WWW=		https://chatterino.com/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	rapidjson>0:devel/rapidjson \
+BUILD_DEPENDS=	${LOCALBASE}/include/magic_enum.hpp:devel/magic_enum \
+		rapidjson>0:devel/rapidjson \
 		websocketpp>=0:devel/websocketpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libqt5keychain.so:security/qtkeychain@qt5
 
-USES=		compiler:c++17-lang gl pkgconfig qmake qt:5 ssl
-USE_QT=		concurrent core gui multimedia network svg widgets \
-		buildtools:build qmake:build
-USE_GL=		gl
-
-PLIST_FILES=	bin/chatterino \
-		share/appdata/com.chatterino.chatterino.appdata.xml \
-		share/applications/com.chatterino.chatterino.desktop \
-		share/icons/hicolor/256x256/apps/chatterino.png
-
+USES=		cmake compiler:c++17-lang gl pkgconfig qt:5 ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	chatterino
 GH_TUPLE=	Chatterino:libcommuni:a7b32cd:communi/lib/libcommuni \
+		arsenm:sanitizers-cmake:c3dc841:sanitizers/cmake/sanitizers-cmake \
 		pajlada:serialize:7d37cbf:serialize/lib/serialize \
 		pajlada:settings:04792d8:settings/lib/settings \
 		pajlada:signals:25e4ec3:signals/lib/signals
+USE_GL=	gl
+USE_QT=	concurrent core dbus gui multimedia network svg widgets \
+		buildtools:build qmake:build
 
-QMAKE_ENV=	GIT_COMMIT=${COMMIT_ID} \
-		GIT_RELEASE=${DISTVERSIONPREFIX}${PORTVERSION}
-QMAKE_ARGS=	INCLUDEPATH+=${LOCALBASE}/include/qt5keychain \
-		LIBS+=-lqt5keychain \
-		WEBSOCKETPP_SYSTEM=1 \
-		RAPIDJSON_SYSTEM=1
+CMAKE_ARGS=	-DUSE_SYSTEM_QTKEYCHAIN=on
+
+PLIST_FILES=	bin/chatterino \
+		share/applications/com.chatterino.chatterino.desktop \
+		share/icons/hicolor/256x256/apps/com.chatterino.chatterino.png
 
 .include <bsd.port.mk>
