@@ -51,4 +51,4 @@ lib/cmake/concurrencppTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/concurrencppTargets.cmake
 lib/libconcurrencpp.so
 lib/libconcurrencpp.so.0
-lib/libconcurrencpp.so.0.1.6
+lib/libconcurrencpp.so.0.1.7
