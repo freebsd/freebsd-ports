@@ -1,5 +1,6 @@
 PORTNAME=	naev
 PORTVERSION=	0.10.6
+PORTREVISION=	1
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/naev/naev/releases/download/v${PORTVERSION}/
@@ -46,5 +47,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MESON_ARGS=	-Ddocs_c=disabled -Ddocs_lua=disabled
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+post-patch:
+	${REINPLACE_CMD} 's|python3|${PYTHON_VERSION}|g' ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
