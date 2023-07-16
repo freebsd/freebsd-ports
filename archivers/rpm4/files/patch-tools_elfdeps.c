@@ -1,5 +1,5 @@
---- tools/elfdeps.c.orig	2023-01-16 16:44:45.666870000 -0500
-+++ tools/elfdeps.c	2023-01-16 16:44:57.548011000 -0500
+--- tools/elfdeps.c.orig	2023-01-16 16:44:45 UTC
++++ tools/elfdeps.c
 @@ -84,7 +84,7 @@
      if (ehdr->e_ident[EI_CLASS] == ELFCLASS64) {
  	switch (ehdr->e_machine) {

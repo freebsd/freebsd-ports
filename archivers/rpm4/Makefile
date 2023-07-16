@@ -1,5 +1,5 @@
 PORTNAME=	rpm
-PORTVERSION=	4.18.0
+PORTVERSION=	4.18.1
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.rpm.org/releases/rpm-${PORTVERSION:R}.x/
 PKGNAMESUFFIX=	4
@@ -12,7 +12,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gsed:textproc/gsed \
-		${LOCALBASE}/lib/libelf.so:devel/elfutils
+		${LOCALBASE}/lib/libelf.so:devel/elfutils \
+		pandoc:textproc/hs-pandoc
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libnss3.so:security/nss \
 		libzstd.so:archivers/zstd \
@@ -26,13 +27,12 @@ USES=		alias bdb sqlite cpe gmake iconv libarchive libtool \
 		lua pathfix pkgconfig shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 
-GNU_CONFIGURE=	yes
-BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 SHEBANG_FILES=	scripts/check-prereqs \
 		scripts/check-rpaths-worker scripts/pkgconfigdeps.sh \
 		scripts/fontconfig.prov scripts/perl.prov scripts/perl.req \
 		scripts/find-lang.sh scripts/ocamldeps.sh \
 		scripts/rpm_macros_provides.sh
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-sqlite=yes\
 		--with-popt-prefix="${LOCALBASE}" \
 		--sysconfdir=${PREFIX}/etc \
@@ -51,6 +51,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib -L${LOCALBASE}/lib/nss \
 
 CONFLICTS_INSTALL=	rpm2cpio # bin/rpm2cpio
 
+BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
+
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		OPSYS=${OPSYS:tl}
 
@@ -60,15 +62,14 @@ OPTIONS_DEFINE=	PYTHON PLUGINS NLS DOCS
 OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 
-PYTHON_CONFIGURE_ENABLE=python
-PYTHON_USES=		python
-
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=		gettext
+NLS_CONFIGURE_ENABLE=	nls
 NLS_LIBS=		-lintl
 
-PLUGINS_CONFIGURE_ENABLE=plugins
 PLUGINS_LIB_DEPENDS=	libdbus-1.so:devel/dbus
+PLUGINS_CONFIGURE_ENABLE=plugins
+PYTHON_USES=		python
+PYTHON_CONFIGURE_ENABLE=python
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
@@ -79,9 +80,5 @@ post-patch:
 		${WRKSRC}/scripts/check-buildroot \
 		${WRKSRC}/scripts/check-rpaths \
 		${WRKSRC}/scripts/vpkg-provides.sh
-
-post-install-DOCS-on:
-	@${MKDIR} ${STAGEDIR}${DOCSDIR}
-	cd ${WRKSRC}/docs && ${COPYTREE_SHARE} librpm/html ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
