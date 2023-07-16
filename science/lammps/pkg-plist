@@ -6,12 +6,15 @@ include/lammps/atom.h
 include/lammps/bond.h
 include/lammps/citeme.h
 include/lammps/comm.h
+include/lammps/command.h
 include/lammps/compute.h
 include/lammps/dihedral.h
 include/lammps/domain.h
 include/lammps/error.h
 %%EXCEPTIONS%%include/lammps/exceptions.h
 include/lammps/fix.h
+include/lammps/fmt/core.h
+include/lammps/fmt/format.h
 include/lammps/force.h
 include/lammps/group.h
 include/lammps/improper.h
@@ -30,6 +33,7 @@ include/lammps/neigh_list.h
 include/lammps/neighbor.h
 include/lammps/output.h
 include/lammps/pair.h
+include/lammps/platform.h
 include/lammps/pointers.h
 include/lammps/region.h
 include/lammps/timer.h
@@ -44,7 +48,6 @@ lib/cmake/LAMMPS/LAMMPS_Targets.cmake
 lib/liblammps.so
 lib/liblammps.so.0
 libdata/pkgconfig/liblammps.pc
-share/man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Ag_u3.eam
 %%DATADIR%%/potentials/AlCu.adp
 %%DATADIR%%/potentials/AlCu.bop.table
@@ -67,6 +70,7 @@ share/man/man1/lmp.1.gz
 %%DATADIR%%/potentials/BNCH.ILP
 %%DATADIR%%/potentials/BNC_MBD_bulk.ILP
 %%DATADIR%%/potentials/BNC_TS_bulk.ILP
+%%DATADIR%%/potentials/Bi.meam
 %%DATADIR%%/potentials/C.drip
 %%DATADIR%%/potentials/C.lcbop
 %%DATADIR%%/potentials/CC.KC
@@ -79,6 +83,10 @@ share/man/man1/lmp.1.gz
 %%DATADIR%%/potentials/CH.rebo
 %%DATADIR%%/potentials/CHAu.ILP
 %%DATADIR%%/potentials/CH_taper.KC
+%%DATADIR%%/potentials/COH.DMC.aip.water.2dm
+%%DATADIR%%/potentials/COH.aip.water.2dm
+%%DATADIR%%/potentials/C_SNAP_2021.10.15.quadratic.snapcoeff
+%%DATADIR%%/potentials/C_SNAP_2021.10.15.quadratic.snapparam
 %%DATADIR%%/potentials/CdTe.bop.table
 %%DATADIR%%/potentials/CdTe.sw
 %%DATADIR%%/potentials/CdTeSe.bop.table
@@ -126,6 +134,7 @@ share/man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Ge_Zuo_JPCA2020.snap
 %%DATADIR%%/potentials/Ge_Zuo_JPCA2020.snapcoeff
 %%DATADIR%%/potentials/Ge_Zuo_JPCA2020.snapparam
+%%DATADIR%%/potentials/HGa.msmeam
 %%DATADIR%%/potentials/He_He_JW2013.table
 %%DATADIR%%/potentials/InP.vashishta
 %%DATADIR%%/potentials/InP_JCPA2020.mliap
@@ -224,6 +233,8 @@ share/man/man1/lmp.1.gz
 %%DATADIR%%/potentials/Ta6.8x.mgpt.README
 %%DATADIR%%/potentials/Ta6.8x.mgpt.parmin
 %%DATADIR%%/potentials/Ta6.8x.mgpt.potin
+%%DATADIR%%/potentials/Ta_coeff.pod
+%%DATADIR%%/potentials/Ta_param.pod
 %%DATADIR%%/potentials/Ti.meam.spline
 %%DATADIR%%/potentials/Ti.meam.sw.spline
 %%DATADIR%%/potentials/Ti.rann
@@ -277,4 +288,6 @@ share/man/man1/lmp.1.gz
 %%DATADIR%%/potentials/ffield.smtbq.TiO2
 %%DATADIR%%/potentials/lib.comb3
 %%DATADIR%%/potentials/library.meam
+%%DATADIR%%/potentials/library.msmeam
 %%DATADIR%%/potentials/tmd.sw.mod
+share/man/man1/lmp.1.gz
