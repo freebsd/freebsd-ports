@@ -37,17 +37,10 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libxcb-util.so:x11/xcb-util \
 		libxkbcommon.so:x11/libxkbcommon \
 		libuuid.so:misc/e2fsprogs-libuuid \
-		libva.so:multimedia/libva \
-		${LIB_DEPENDS_${ARCH}}
-LIB_DEPENDS_amd64=	libluajit-5.1.so:lang/luajit
-LIB_DEPENDS_armv7=	libluajit-5.1.so:lang/luajit
-LIB_DEPENDS_i386=	libluajit-5.1.so:lang/luajit
-LIB_DEPENDS_powerpc=	libluajit-5.1.so:lang/luajit
-LIB_DEPENDS_powerpc64=	libluajit-5.1.so:lang/luajit-openresty
-LIB_DEPENDS_powerpc64le=	libluajit-5.1.so:lang/luajit-openresty
+		libva.so:multimedia/libva
 
-USES=		cmake compiler:c++17-lang desktop-file-utils gl gnome lua pkgconfig python \
-		qt:6 xorg
+USES=		cmake compiler:c++17-lang desktop-file-utils gl gnome lua luajit \
+		pkgconfig python qt:6 xorg
 USE_QT=		base svg tools:build
 USE_GNOME=	glib20
 USE_GL=		gl
