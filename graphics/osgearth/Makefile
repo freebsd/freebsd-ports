@@ -1,10 +1,9 @@
 PORTNAME=	osgearth
-PORTVERSION=	3.2
+PORTVERSION=	3.4
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	7
 CATEGORIES=	graphics geography
 
-MAINTAINER=	lbartoletti@FreeBSD.org
+MAINTAINER=	zirias@FreeBSD.org
 COMMENT=	C++ terrain rendering toolkit for OpenSceneGraph
 WWW=		http://osgearth.org/
 
@@ -21,7 +20,9 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 USES=		cmake gl pkgconfig sqlite
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	gwaldron
+GH_ACCOUNT=	gwaldron ocornut:imgui Esri:lerc Tencent:rapidjson
+GH_PROJECT=	imgui:imgui lerc:lerc rapidjson:rapidjson
+GH_TAGNAME=	9e8e5ac:imgui 19542a0:lerc f54b0e4:rapidjson
 
 USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
@@ -33,6 +34,11 @@ CMAKE_ARGS+=	-DCMAKE_INCLUDE_PATH:PATH=${LOCALBASE}/include \
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
+post-extract:
+.for sm in imgui lerc rapidjson
+	@${MV} ${WRKSRC_${sm}}/* ${WRKSRC}/src/third_party/${sm}/
+.endfor
+
 .include <bsd.port.options.mk>
 
 .if ${ARCH:Mpowerpc64*}
@@ -42,10 +48,8 @@ USES+=		compiler:gcc-c++11-lib
 USES+=		compiler:c++11-lang
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if ${ARCH} == i386
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-i386
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

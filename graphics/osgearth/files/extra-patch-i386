@@ -1,4 +1,4 @@
---- src/osgEarthDrivers/fastdxt/CMakeLists.txt.orig	2018-11-12 18:17:36 UTC
+--- src/osgEarthDrivers/fastdxt/CMakeLists.txt.orig	2023-05-16 14:53:59 UTC
 +++ src/osgEarthDrivers/fastdxt/CMakeLists.txt
 @@ -30,7 +30,6 @@ SET(TARGET_SRC
      dxt.cpp
@@ -8,11 +8,11 @@
  )
  
  SETUP_PLUGIN(fastdxt)
---- src/osgEarthDrivers/fastdxt/dxt.cpp.orig	2018-11-12 18:17:36 UTC
+--- src/osgEarthDrivers/fastdxt/dxt.cpp.orig	2023-05-16 14:53:59 UTC
 +++ src/osgEarthDrivers/fastdxt/dxt.cpp
-@@ -7,7 +7,7 @@
+@@ -6,7 +6,7 @@
+ #include "dxt.h"
  #include "util.h"
- 
  
 -#define DXT_INTR 1
 +#define DXT_INTR 0
