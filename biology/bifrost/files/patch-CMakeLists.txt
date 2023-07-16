@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2023-07-16 13:25:06 UTC
++++ CMakeLists.txt
+@@ -20,8 +20,6 @@ if(COMPILATION_ARCH MATCHES "OFF")
+ 	message("Disabling native architecture compilation (including AVX2)")
+ else(COMPILATION_ARCH MATCHES "OFF")
+ 	message("Compilation architecture: ${COMPILATION_ARCH}")
+-	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -march=${COMPILATION_ARCH}")
+-	set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=${COMPILATION_ARCH}")
+ endif(COMPILATION_ARCH MATCHES "OFF")
+ 
+ if(ENABLE_AVX2 MATCHES "OFF")
