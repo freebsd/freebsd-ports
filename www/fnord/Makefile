@@ -9,6 +9,9 @@ WWW=		https://www.fefe.de/fnord/
 
 LICENSE=	GPLv2
 
+DEPRECATED=	Deprecated upstream, consider using www/apache24, www/lighttpd or www/nginx
+EXPIRATION_DATE=2023-09-30
+
 USES=		gmake tar:bzip2
 
 PLIST_FILES=	bin/fnord \
