@@ -6,7 +6,7 @@ MASTER_SITES=	http://mod-tidy.sourceforge.net/src/
 DIST_SUBDIR=	apache2
 
 MAINTAINER=	apache@FreeBSD.org
-COMMENT=	Validates the HTML output of your apache2 webserver
+COMMENT=	Validates the HTML output of your apache2 web server
 WWW=		http://mod-tidy.sourceforge.net/
 
 LICENSE=	APACHE20 MIT

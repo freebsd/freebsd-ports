@@ -6,7 +6,7 @@ PKGNAMESUFFIX=	${PHP_PKGNAMESUFFIX}
 DISTNAME=	monitor-${PORTVERSION}
 
 MAINTAINER=	christopher.petrik@usm.edu
-COMMENT=	Monitoring tool for the Hiawatha webserver
+COMMENT=	Monitoring tool for the Hiawatha web server
 WWW=		https://www.hiawatha-webserver.org/monitor
 
 LICENSE=	GPLv3

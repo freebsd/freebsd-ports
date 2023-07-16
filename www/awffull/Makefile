@@ -5,7 +5,7 @@ CATEGORIES?=	www
 MASTER_SITES=	https://launchpadlibrarian.net/20395993/
 
 MAINTAINER?=	ports@FreeBSD.org
-COMMENT=	Webserver log analysis tool forked from Webalizer
+COMMENT=	Web server log analysis tool forked from Webalizer
 WWW=		http://www.stedee.id.au/awffull
 
 LICENSE=	GPLv3

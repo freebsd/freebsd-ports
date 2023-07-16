@@ -4,7 +4,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.fefe.de/fnord/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Small and fast webserver with CGI-capability
+COMMENT=	Small and fast web server with CGI-capability
 WWW=		https://www.fefe.de/fnord/
 
 LICENSE=	GPLv2

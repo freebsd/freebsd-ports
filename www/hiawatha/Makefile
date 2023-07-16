@@ -5,7 +5,7 @@ CATEGORIES=	www
 MASTER_SITES=	https://www.hiawatha-webserver.org/files/
 
 MAINTAINER=	johntdarrah@gmail.com
-COMMENT=	Advanced and secure webserver for Unix
+COMMENT=	Advanced and secure web server for Unix
 WWW=		https://www.hiawatha-webserver.org/
 
 LICENSE=	GPLv2

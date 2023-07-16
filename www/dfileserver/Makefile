@@ -6,7 +6,7 @@ MASTER_SITES=	http://rodrigo.osorio.free.fr/freebsd/distfiles/ \
 		http://harpy.soarwitheagles.net/~dashy/
 
 MAINTAINER=	rodrigo@FreeBSD.org
-COMMENT=	Compact webserver designed to make sharing files easy
+COMMENT=	Compact web server designed to make sharing files easy
 WWW=		http://www.bebik.net/doku.php?id=software:dfileserver
 
 LICENSE=	BSD3CLAUSE

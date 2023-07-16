@@ -6,7 +6,7 @@ MASTER_SITES=	RG
 PKGNAMESUFFIX=	22
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Rack, a Ruby Webserver Interface
+COMMENT=	Rack, a Ruby Web server Interface
 WWW=		https://github.com/rack/rack
 
 LICENSE=	MIT
