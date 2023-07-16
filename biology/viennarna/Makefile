@@ -1,5 +1,6 @@
 PORTNAME=	viennarna
 DISTVERSION=	2.6.2
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	https://www.tbi.univie.ac.at/RNA/download/sourcecode/2_6_x/
 DISTNAME=	ViennaRNA-${DISTVERSION}
@@ -42,5 +43,8 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
+
+post-configure: # remove -lstdc++ from .pc file
+	@${REINPLACE_CMD} -e 's| -lstdc++||' ${WRKSRC}/RNAlib2.pc
 
 .include <bsd.port.mk>

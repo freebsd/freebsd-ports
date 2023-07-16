@@ -1,6 +1,6 @@
---- RNA-Tutorial/Makefile.am.orig	2019-06-24 18:48:09 UTC
+--- RNA-Tutorial/Makefile.am.orig	2020-11-23 22:41:05 UTC
 +++ RNA-Tutorial/Makefile.am
-@@ -95,7 +95,7 @@ vrna_htmltutorial_uninst:
+@@ -90,7 +90,7 @@ vrna_htmltutorial_uninst:
  
  if WITH_TUTORIAL_PDF
  
