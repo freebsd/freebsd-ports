@@ -1,7 +1,7 @@
 PORTNAME=	osgearth
 PORTVERSION=	3.2
 DISTVERSIONPREFIX=	${PORTNAME}-
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics geography
 
 MAINTAINER=	lbartoletti@FreeBSD.org
@@ -11,13 +11,12 @@ WWW=		http://osgearth.org/
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
-LIB_DEPENDS=	libosg.so:graphics/osg \
+LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libgdal.so:graphics/gdal \
-		libcurl.so:ftp/curl \
 		libgeos.so:graphics/geos \
-		libleveldb.so:databases/leveldb \
-		libPocoUtil.so:devel/poco \
-		libprotoc.so:devel/protobuf
+		libosg.so:graphics/osg \
+		libprotoc.so:devel/protobuf \
+		libwebp.so:graphics/webp
 
 USES=		cmake gl pkgconfig sqlite
 
