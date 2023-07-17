@@ -1,5 +1,5 @@
 PORTNAME=	abipy
-DISTVERSION=	0.9.1
+DISTVERSION=	0.9.2
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -31,10 +31,13 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.11:devel/py-yaml@${PY_FLAVOR}
 
 USES=		python shebangfix
+USE_PYTHON=	distutils concurrent autoplist
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	abinit
+
 SHEBANG_GLOB=	*.py
-USE_PYTHON=	distutils concurrent autoplist
+
 NO_ARCH=	yes
 
 .include <bsd.port.mk>
