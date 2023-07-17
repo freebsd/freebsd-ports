@@ -1,5 +1,5 @@
 PORTNAME=	librenms
-PORTVERSION=	23.5.0
+PORTVERSION=	23.7.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	LOCAL/dvl:vendor
@@ -11,7 +11,7 @@ WWW=		https://www.librenms.org
 
 LICENSE=	GPLv3
 
-IGNORE_WITH_PHP=	82 83
+IGNORE_WITH_PHP=	82
 
 # perhaps we also need python-memcache python-mysqldb
 RUN_DEPENDS+=	${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVOR} \
@@ -26,8 +26,8 @@ RUN_DEPENDS+=	${LOCALBASE}/share/pear/Net/IPv4.php:net/pear-Net_IPv4@${PHP_FLAVO
 
 USES=		cpe php python shebangfix
 USE_GITHUB=	yes
-USE_PHP=	ctype curl dom fileinfo filter gd ldap mbstring \
-		mysqli pdo pdo_mysql phar posix readline session simplexml snmp \
+USE_PHP=	ctype curl dom fileinfo filter gd hash json ldap mbstring \
+		mysqli openssl pdo pdo_mysql phar posix session simplexml snmp \
 		sockets tokenizer xml xmlwriter zip
 USE_RC_SUBR=	librenms
 
@@ -48,7 +48,7 @@ SHEBANG_FILES=	../${PORTNAME}-vendor-${PORTVERSION}/tecnickcom/tcpdf/tools/tcpdf
 NO_ARCH=	yes
 NO_BUILD=	yes
 
-SUB_FILES+=	librenms.cron pkg-message
+SUB_FILES+=	pkg-message
 SUB_LIST+=	GROUP="${WWWGRP}" \
 		PHP="${PHPBASE}/bin/php" \
 		PYTHON=${PYTHON_CMD} \
@@ -97,7 +97,7 @@ _SCRIPT_FILES=		daily.sh lnms
 # _RELEASE_TIMESTAMP is used for a patch inside the vendor code
 # it represents the release date via: git show --pretty='%H|%ct' -s 1.42.01
 # It sits here so you remember to update it with each release
-_RELEASE_TIMESTAMP=	1684510339
+_RELEASE_TIMESTAMP=	1689568961
 _ROOT_DIRS=		LibreNMS app bootstrap config database doc html \
 			includes licenses mibs misc resources routes scripts \
 			sql-schema tests
@@ -111,10 +111,9 @@ _STORAGE_DIRS=	app app/public debugbar framework framework/cache \
 # these are directories which require a generic @DIR entry in pkg-plist
 _OTHER_DIRS=	database/seeders/config html/plugins html/js/lang \
 		resources/views/overview/custom tests/Browser/console \
-		tests/Browser/screenshots \
+		tests/Browser/source tests/Browser/screenshots \
 		vendor/librenms/laravel-vue-i18n-generator/tests/output \
 		vendor/symfony/string/Resources/bin
-
 
 post-patch:
 	${REINPLACE_CMD}    's|%%LOCALBASE%%|${LOCALBASE}|g'                  ${WRKSRC}/LibreNMS/Validations/Php.php
@@ -128,7 +127,7 @@ post-patch:
 	${RM} -rf ${WRKSRC}/logs
 
 do-install:
-	${MKDIR} ${STAGEDIR}/${WWWDIR} ${STAGEDIR}/${PREFIX}/etc/cron.d
+	${MKDIR} ${STAGEDIR}/${WWWDIR}
 .for dir in ${_ROOT_DIRS}
 	${MKDIR} ${STAGEDIR}/${WWWDIR}/${dir}
 	(cd ${WRKSRC}/${dir} && ${COPYTREE_SHARE} . ${STAGEDIR}/${WWWDIR}/${dir})
@@ -185,18 +184,17 @@ post-install:
 	${FIND} -s ${STAGEDIR}${WWWDIR} -type f '(' -name '*.orig' -or -name '*.bak' -or -name '.gitignore' ')' -delete
 	${FIND} -s ${STAGEDIR}${WWWDIR} -not -type d | ${SORT} | \
 		${SED} -e 's#^${STAGEDIR}${PREFIX}/##' >> ${TMPPLIST}
-	${INSTALL_DATA}	${WRKDIR}/librenms.cron ${STAGEDIR}/${PREFIX}/etc/cron.d/librenms
 
 # we do this file separately because it needs a different chmod/chown
 # it will eventually contains secrets
 	${INSTALL_DATA} ${WRKSRC}/.env.example ${STAGEDIR}/${WWWDIR}
-	${ECHO_CMD} "@dir(www,www,0775) ${DBDIR}/storage"     >> ${TMPPLIST}
-	${ECHO_CMD} "@dir(www,www,0775) ${DBDIR}"             >> ${TMPPLIST}
+	${ECHO_CMD} "@dir(www,www,0775) ${DBDIR}/storage" >> ${TMPPLIST}
+	${ECHO_CMD} "@dir(www,www,0775) ${DBDIR}" >> ${TMPPLIST}
 	${ECHO_CMD} "@dir(www,www,0775) /var/log/${PORTNAME}" >> ${TMPPLIST}
 	${ECHO_CMD} "@(root,www,0750) ${WWWDIR}/.env.example" >> ${TMPPLIST}
 
 	${ECHO_CMD} "@dir(www,www,0775) ${WWWDIR}/bootstrap/cache" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir(www,www,0775) /var/run/${PORTNAME}"      >> ${TMPPLIST}
+	${ECHO_CMD} "@dir(www,www,0775) /var/run/${PORTNAME}" >> ${TMPPLIST}
 .for f in ${_STORAGE_DIRS}
 	${MKDIR} ${STAGEDIR}/${DBDIR}/storage/${f}
 	${ECHO_CMD} "@dir(root,www,0775) ${DBDIR}/storage/${f}" >> ${TMPPLIST}
@@ -208,9 +206,6 @@ post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/etc/newsyslog.conf.d
 	${INSTALL_DATA} ${FILESDIR}/newsyslog.conf.sample ${STAGEDIR}/${PREFIX}/etc/newsyslog.conf.d/librenms.conf.sample
 	${ECHO_CMD} "@dir etc/newsyslog.conf.d" >> ${TMPPLIST}
-	${ECHO_CMD} "@dir etc/cron.d"           >> ${TMPPLIST}
-	${ECHO_CMD} "etc/cron.d/librenms"       >> ${TMPPLIST}
-
 	${ECHO_CMD} "@sample etc/newsyslog.conf.d/librenms.conf.sample" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
