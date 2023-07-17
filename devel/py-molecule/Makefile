@@ -1,5 +1,5 @@
 PORTNAME=	molecule
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,11 +15,11 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=19.3.1:devel/py-pip@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=1.1:devel/py-setuptools_scm_git_archive@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}wheel>=0.33.6:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.2.0:sysutils/py-ansible-compat@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}Cerberus>=1.3.1:devel/py-cerberus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-help-colors>=0.9:devel/py-click-help-colors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cookiecutter>=1.7.3:devel/py-cookiecutter@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}enrich>=1.2.7:textproc/py-enrich@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.9.1:devel/py-jsonschema@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=2.11.3:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>0:devel/py-packaging@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pluggy>=0.7.1:devel/py-pluggy@${PY_FLAVOR} \
