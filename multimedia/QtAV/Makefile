@@ -15,6 +15,8 @@ WWW=		https://github.com/wang-bin/QtAV
 LICENSE=		LGPL21+
 LICENSE_FILE=		${WRKSRC}/lgpl-2.1.txt
 
+DEPRECATED=		Abandoned project and broken with FFmpeg 6
+EXPIRATION_DATE=	2023-08-17
 BROKEN=			fails to build with FFmpeg 6 (PR 270213)
 
 LIB_DEPENDS=		libass.so:multimedia/libass \
