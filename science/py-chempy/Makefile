@@ -1,6 +1,5 @@
 PORTNAME=	chempy
-DISTVERSION=	0.8.2
-PORTREVISION=	2
+DISTVERSION=	0.8.3
 CATEGORIES=	science python # chemistry
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -27,10 +26,11 @@ BUILD_DEPENDS=	${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}black>0:devel/py-black@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest-cov>0:devel/py-pytest-cov@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest-flakes>0:devel/py-pytest-flakes@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}pytest-flakes>0:devel/py-pytest-flakes@${PY_FLAVOR} \
+		gsl>0:math/gsl
 
-USES=		python
-USE_PYTHON=	distutils autoplist pytest
+USES=		localbase:ldflags python # localbase and math/gsl are only for tests
+USE_PYTHON=	distutils autoplist pytest # 5 tests fail, see https://github.com/bjodah/chempy/issues/222
 
 NO_ARCH=	yes
 
