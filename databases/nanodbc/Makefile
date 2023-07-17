@@ -14,6 +14,7 @@ LIB_DEPENDS=	libodbc.so:databases/unixODBC
 
 USES=		cmake:testing compiler:c++14-lang localbase:ldflags # pkgconfig python:build
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++14 # fix build broken by deprecated feature std::char_traits, see https://github.com/nanodbc/nanodbc/issues/387
 
 USE_GITHUB=	yes
 
