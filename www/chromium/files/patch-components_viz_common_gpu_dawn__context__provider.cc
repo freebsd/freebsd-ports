@@ -1,9 +1,9 @@
---- components/viz/common/gpu/dawn_context_provider.cc.orig	2023-05-31 08:12:17 UTC
+--- components/viz/common/gpu/dawn_context_provider.cc.orig	2023-07-16 15:47:57 UTC
 +++ components/viz/common/gpu/dawn_context_provider.cc
-@@ -23,7 +23,7 @@ namespace {
+@@ -38,7 +38,7 @@ void LogFatal(WGPUDeviceLostReason reason,
  wgpu::BackendType GetDefaultBackendType() {
  #if BUILDFLAG(IS_WIN)
-   return wgpu::BackendType::D3D12;
+   return wgpu::BackendType::D3D11;
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    return wgpu::BackendType::Vulkan;

@@ -1,7 +1,7 @@
---- chrome/browser/ui/browser_command_controller.cc.orig	2023-05-31 08:12:17 UTC
+--- chrome/browser/ui/browser_command_controller.cc.orig	2023-07-16 15:47:57 UTC
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -110,7 +110,7 @@
- #include "components/user_manager/user_manager.h"
+@@ -119,7 +119,7 @@
+ #define ENABLED_VLOG_LEVEL 1
  #endif
  
 -#if BUILDFLAG(IS_LINUX)
@@ -9,7 +9,7 @@
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -298,7 +298,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
+@@ -310,7 +310,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
  #endif
    }
  
@@ -18,7 +18,7 @@
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    auto* linux_ui = ui::LinuxUi::instance();
-@@ -550,7 +550,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+@@ -561,7 +561,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -27,7 +27,16 @@
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -1151,7 +1151,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -573,7 +573,7 @@ bool BrowserCommandController::ExecuteCommandWithDispo
+       break;
+ #endif
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+     case IDC_USE_SYSTEM_TITLE_BAR: {
+       PrefService* prefs = profile()->GetPrefs();
+       prefs->SetBoolean(prefs::kUseCustomChromeFrame,
+@@ -1175,12 +1175,12 @@ void BrowserCommandController::InitCommandState() {
  #endif
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -36,3 +45,9 @@
    command_updater_.UpdateCommandEnabled(IDC_MINIMIZE_WINDOW, true);
    command_updater_.UpdateCommandEnabled(IDC_MAXIMIZE_WINDOW, true);
    command_updater_.UpdateCommandEnabled(IDC_RESTORE_WINDOW, true);
+ #endif
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   bool use_system_title_bar = true;
+ #if BUILDFLAG(IS_OZONE)
+   use_system_title_bar = ui::OzonePlatform::GetInstance()

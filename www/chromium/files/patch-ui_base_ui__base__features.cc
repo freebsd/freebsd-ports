@@ -1,6 +1,6 @@
---- ui/base/ui_base_features.cc.orig	2023-05-31 08:12:17 UTC
+--- ui/base/ui_base_features.cc.orig	2023-07-16 15:47:57 UTC
 +++ ui/base/ui_base_features.cc
-@@ -199,7 +199,7 @@ BASE_FEATURE(kExperimentalFlingAnimation,
+@@ -206,7 +206,7 @@ BASE_FEATURE(kExperimentalFlingAnimation,
               "ExperimentalFlingAnimation",
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,7 +9,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_ASH) && \
       !BUILDFLAG(IS_CHROMEOS_LACROS))
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -306,7 +306,7 @@ bool IsForcedColorsEnabled() {
+@@ -313,7 +313,7 @@ bool IsForcedColorsEnabled() {
  // milestones.
  BASE_FEATURE(kEyeDropper,
               "EyeDropper",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -486,7 +486,7 @@ ChromeRefresh2023Level GetChromeRefresh2023Level() {
+@@ -500,7 +500,7 @@ ChromeRefresh2023Level GetChromeRefresh2023Level() {
    return level;
  }
  
@@ -26,4 +26,4 @@
 +#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_BSD)
  BASE_FEATURE(kWebUiSystemFont,
               "WebUiSystemFont",
-              base::FEATURE_DISABLED_BY_DEFAULT);
+              base::FEATURE_ENABLED_BY_DEFAULT);

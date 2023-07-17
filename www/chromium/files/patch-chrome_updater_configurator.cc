@@ -1,6 +1,6 @@
---- chrome/updater/configurator.cc.orig	2023-04-28 17:01:32 UTC
+--- chrome/updater/configurator.cc.orig	2023-07-16 15:47:57 UTC
 +++ chrome/updater/configurator.cc
-@@ -64,7 +64,7 @@ Configurator::Configurator(scoped_refptr<UpdaterPrefs>
+@@ -63,7 +63,7 @@ Configurator::Configurator(scoped_refptr<UpdaterPrefs>
          return absl::nullopt;
  #endif
        }()) {

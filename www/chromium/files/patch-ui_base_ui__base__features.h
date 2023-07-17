@@ -1,6 +1,6 @@
---- ui/base/ui_base_features.h.orig	2023-05-31 08:12:17 UTC
+--- ui/base/ui_base_features.h.orig	2023-07-16 15:47:57 UTC
 +++ ui/base/ui_base_features.h
-@@ -238,7 +238,7 @@ enum class ChromeRefresh2023Level {
+@@ -242,7 +242,7 @@ enum class ChromeRefresh2023Level {
  COMPONENT_EXPORT(UI_BASE_FEATURES)
  ChromeRefresh2023Level GetChromeRefresh2023Level();
  

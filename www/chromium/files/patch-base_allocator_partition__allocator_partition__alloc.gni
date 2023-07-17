@@ -1,11 +1,11 @@
---- base/allocator/partition_allocator/partition_alloc.gni.orig	2023-05-31 08:12:17 UTC
+--- base/allocator/partition_allocator/partition_alloc.gni.orig	2023-07-16 15:47:57 UTC
 +++ base/allocator/partition_allocator/partition_alloc.gni
-@@ -305,7 +305,7 @@ assert(!use_asan_backup_ref_ptr || use_hookable_raw_pt
-        "AsanBackupRefPtr requires RawPtrHookableImpl")
- 
- declare_args() {
--  enable_pkeys = is_linux && target_cpu == "x64"
-+  enable_pkeys = (is_linux && !is_bsd) && target_cpu == "x64"
+@@ -291,7 +291,7 @@ declare_args() {
+   # pkeys support is explicitly disabled in all Cronet builds, as some test dependencies that
+   # use partition_allocator are compiled in AOSP against a version of glibc that does not
+   # include pkeys syscall numbers.
+-  enable_pkeys = is_linux && target_cpu == "x64" && !is_cronet_build
++  enable_pkeys = (is_linux && !is_bsd) && target_cpu == "x64" && !is_cronet_build
  }
  assert(!enable_pkeys || (is_linux && target_cpu == "x64"),
         "Pkeys are only supported on x64 linux")

@@ -1,4 +1,4 @@
---- services/video_capture/video_capture_service_impl.cc.orig	2023-05-31 08:12:17 UTC
+--- services/video_capture/video_capture_service_impl.cc.orig	2023-07-16 15:47:57 UTC
 +++ services/video_capture/video_capture_service_impl.cc
 @@ -43,7 +43,7 @@
  #include "services/video_capture/lacros/device_factory_adapter_lacros.h"
@@ -27,7 +27,7 @@
    if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled()) {
      if (!viz_gpu_context_provider_) {
        viz_gpu_context_provider_ =
-@@ -344,7 +344,7 @@ void VideoCaptureServiceImpl::OnGpuInfoUpdate(const CH
+@@ -345,7 +345,7 @@ void VideoCaptureServiceImpl::OnGpuInfoUpdate(const CH
  }
  #endif
  
