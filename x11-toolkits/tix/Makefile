@@ -9,9 +9,10 @@ MAINTAINER=	doconnor@gsoft.com.au
 COMMENT=	Extension to the Tk toolkit
 WWW=		http://tix.sourceforge.net/
 
-WRKSRC=		${WRKDIR}/Tix${DISTVERSION}
-USE_LDCONFIG=	yes
 USES=		tk:tea
+USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/Tix${DISTVERSION}
 
 TIX_LIB=	libTix${PORTVERSION}.so
 TIX_LIB_FILE=	${TIX_LIB}.0
@@ -45,4 +46,10 @@ post-install:
 	${LN} -sf ${PREFIX}/include/tix/generic/tix.h ${STAGEDIR}${PREFIX}/include/tix.h
 	${RMDIR} ${STAGEDIR}${PREFIX}/lib/Tix${PORTVERSION}/html
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
+.include <bsd.port.post.mk>
