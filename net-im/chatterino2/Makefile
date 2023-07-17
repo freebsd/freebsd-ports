@@ -1,5 +1,5 @@
 PORTNAME=	chatterino2
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	net-im
 
@@ -11,6 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${LOCALBASE}/include/magic_enum.hpp:devel/magic_enum \
+		miniaudio>0:audio/miniaudio \
 		rapidjson>0:devel/rapidjson \
 		websocketpp>=0:devel/websocketpp
 LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
@@ -27,6 +28,8 @@ GH_TUPLE=	Chatterino:libcommuni:a7b32cd:communi/lib/libcommuni \
 USE_GL=	gl
 USE_QT=	concurrent core dbus gui multimedia network svg widgets \
 		buildtools:build qmake:build
+
+CXXFLAGS+=      -I${LOCALBASE}/include/miniaudio
 
 CMAKE_ARGS=	-DUSE_SYSTEM_QTKEYCHAIN=on
 

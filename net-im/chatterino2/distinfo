@@ -1,6 +1,6 @@
-TIMESTAMP = 1689505428
-SHA256 (chatterino-chatterino2-v2.4.0_GH0.tar.gz) = bdd52c380b1c8278d647407b25811c649b4b6edf66b21529cd50a9863859fb45
-SIZE (chatterino-chatterino2-v2.4.0_GH0.tar.gz) = 1987436
+TIMESTAMP = 1689582823
+SHA256 (chatterino-chatterino2-v2.4.1_GH0.tar.gz) = 0f36df1367cdd601960db9df56b9da18035dbebd7b5903c2c7f881612d65dacb
+SIZE (chatterino-chatterino2-v2.4.1_GH0.tar.gz) = 2041564
 SHA256 (Chatterino-libcommuni-a7b32cd_GH0.tar.gz) = 5441bf53c224f4782efdb58a5045a014d65b8906c1621c417828063e5753b74b
 SIZE (Chatterino-libcommuni-a7b32cd_GH0.tar.gz) = 477616
 SHA256 (arsenm-sanitizers-cmake-c3dc841_GH0.tar.gz) = bc5cddf6451c3edecc75bf605e7976cb47208d31021db6f5bf99c579efc01f5a
