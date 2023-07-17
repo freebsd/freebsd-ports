@@ -1,3 +1,36 @@
+  <vuln vid="b3f77aae-241c-11ee-9684-c11c23f7b0f9">
+    <topic>gitea -- multiple issues</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.20.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/22759">
+	  <p>Test if container blob is accessible before mounting.</p>
+	</blockquote>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/22175">
+	  <p>Set type="password" on all auth_token fields</p>
+	  <p>Seen when migrating from other hosting platforms.</p>
+	  <p>Prevents exposing the token to screen capture/cameras/eyeballs.</p>
+	  <p>Prevents the browser from saving the value in its autocomplete
+	    dictionary, which often is not secure.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.com/release-of-1.20.0</url>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.20.0</url>
+    </references>
+    <dates>
+      <discovery>2023-06-08</discovery>
+      <entry>2023-07-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="41c60e16-2405-11ee-a0d1-84a93843eb75">
     <topic>OpenSSL -- AES-SIV implementation ignores empty associated data entries</topic>
     <affects>
