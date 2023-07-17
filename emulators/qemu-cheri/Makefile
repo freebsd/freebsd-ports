@@ -62,6 +62,12 @@ EXTRA_CFLAGS=	-DCHERI_UNALIGNED
 PLIST_FILES=	bin/qemu-system-morello \
 		bin/qemu-system-riscv64cheri
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=int-conversion
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/build/qemu-system-morello \
 	    ${WRKSRC}/build/qemu-system-riscv64cheri \
