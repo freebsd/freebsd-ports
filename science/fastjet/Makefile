@@ -1,6 +1,5 @@
 PORTNAME=	fastjet
-DISTVERSION=	3.4.0
-PORTREVISION=	3
+DISTVERSION=	3.4.1
 CATEGORIES=	science
 MASTER_SITES=	https://fastjet.fr/repo/
 
@@ -15,6 +14,7 @@ RUN_DEPENDS=	bash:shells/bash
 
 USES=		fortran gmake libtool shebangfix
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++14 # fix build broken by deprecated feature std::auto_ptr, reported to fastjet@projects.hepforge.org on 2023-07-16
 
 SHEBANG_FILES=	fastjet-config.in
 
