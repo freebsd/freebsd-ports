@@ -1851,6 +1851,8 @@ share/applications/emacsclient-mail.desktop
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-netsplit.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-networks.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-networks.elc
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-nicks.el.gz
+%%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-nicks.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-notify.el.gz
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-notify.elc
 %%DATADIR%%/%%EMACS_VER%%/lisp/erc/erc-page.el.gz
