@@ -1,0 +1,15 @@
+Monocypher is an easy to use crypto library. It is:
+
+- Small. Sloccount counts about 1700 lines of code, small enough to
+allow audits. The binaries are under 65KB.
+
+- Easy to deploy. Just add monocypher.c and monocypher.h to your
+project. They compile as C99 or C++, have no dependency, and
+are dedicated to the public domain.
+
+- Easy to use. The API is small, consistent, and cannot fail
+on correct input.
+
+- Fast. The primitives are fast to begin with, and performance
+wasn't needlessly sacrificed. Monocypher holds up pretty well
+against Libsodium, despite being closer in size to TweetNaCl.

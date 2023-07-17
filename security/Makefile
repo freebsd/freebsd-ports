@@ -366,6 +366,7 @@
     SUBDIR += modsecurity3
     SUBDIR += modsecurity3-nginx
     SUBDIR += monkeysphere
+    SUBDIR += monocypher
     SUBDIR += munge
     SUBDIR += n2n
     SUBDIR += ncrack
