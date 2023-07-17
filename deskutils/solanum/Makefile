@@ -1,5 +1,6 @@
 PORTNAME=	solanum
 DISTVERSION=	4.0.0
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	jbeich@FreeBSD.org

@@ -1,6 +1,7 @@
 PORTNAME=	cargo-c
 DISTVERSION=	0.9.21
 DISTVERSIONSUFFIX=	+cargo-0.71
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CRATESIO
 # XXX Teach USES=cargo to have proper default
