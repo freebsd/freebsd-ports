@@ -102,7 +102,7 @@ WARNING=	"!!! If you have a threaded Apache, you must build ${PHP_PORT} with ZTS
 .include <bsd.port.options.mk>
 
 .if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-IGNORE_SSL=	openssl30 openssl31
+IGNORE_SSL=	base openssl30 openssl31
 IGNORE_SSL_REASON=	Missing upstream support for OpenSSL 3.0.0 and later
 .endif
 
