@@ -1,33 +1,25 @@
---- core/CMakeLists.txt.orig	2023-03-12 13:19:01 UTC
+core/cmake/modules/FindLQR-1.cmake fails to find LQR in the linking test
+because the path to the library is not passed to the linker. This could
+be addressed by running what pkg_check_modules() finds through find_library()
+first or rewriting the module to avoid using pkgconf all together.
+
+The local workaround is to set USES+=localbase:ldflags to avoid extra patches.
+
+--- core/CMakeLists.txt.orig	2023-07-14 21:16:22 UTC
 +++ core/CMakeLists.txt
-@@ -10,6 +10,7 @@ APPLY_COMMON_POLICIES()
- 
- # ==============================================================================
- 
-+cmake_policy(SET CMP0063 OLD) # Suppress visibility warnings
- message(STATUS "----------------------------------------------------------------------------------")
- message(STATUS "Check dependencies for ${PROJECT_NAME} version ${DIGIKAM_VERSION_STRING}")
- message(STATUS "")
-@@ -132,6 +133,7 @@ if(ENABLE_AKONADICONTACTSUPPORT)
- 
-     find_package(KF5 ${AKONADI_MIN_VERSION} QUIET
-                  OPTIONAL_COMPONENTS
-+                 Akonadi                # We need to search for Akonadi explicitly so that the KF5::AkonadiCore target is defined after KDE PIM 23.04
-                  AkonadiContact         # For KDE Mail Contacts support.
-                  Contacts               # API for contacts/address book data.
-     )
-@@ -379,8 +381,13 @@ endif()
+@@ -142,13 +142,13 @@ find_package(Doxygen)
  
  find_package(Doxygen)
  
 -if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
 +#if(NOT CMAKE_SYSTEM_NAME STREQUAL FreeBSD)
-     find_package(Lqr-1)
+ 
+     # Lqr-1 packaging and detection under FreeBSD is problematic since a very long time and break the Gitlab CI
+ 
+     find_package(LQR-1)
+ 
+-endif()
 +#endif()
-+if(LQR-1_FOUND)
-+    include_directories(${LQR-1_INCLUDE_DIRS})
-+    set(liblqr_LIBS ${LQR-1_LIBRARIES})
-+    link_directories(${LQR-1_LIBDIR})
- endif()
  
  if(BUILD_WITH_CCACHE)
+ 

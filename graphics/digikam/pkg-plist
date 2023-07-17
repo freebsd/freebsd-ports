@@ -4,6 +4,7 @@ bin/digitaglinktree
 bin/showfoto
 include/digikam/batchtool.h
 include/digikam/bcgcontainer.h
+include/digikam/captionvalues.h
 include/digikam/coredbaccess.h
 include/digikam/coredbalbuminfo.h
 include/digikam/coredbconstants.h
@@ -32,7 +33,9 @@ include/digikam/digikam_gui_export.h
 include/digikam/digikam_version.h
 include/digikam/dimg.h
 include/digikam/dimgbuiltinfilter.h
+include/digikam/dimgloader.h
 include/digikam/dimgloaderobserver.h
+include/digikam/dimgloadersettings.h
 include/digikam/dimgpreviewitem.h
 include/digikam/dimgthreadedanalyser.h
 include/digikam/dimgthreadedfilter.h
@@ -46,6 +49,7 @@ include/digikam/dpluginaction.h
 include/digikam/dpluginauthor.h
 include/digikam/dpluginbqm.h
 include/digikam/dplugindialog.h
+include/digikam/dplugindimg.h
 include/digikam/dplugineditor.h
 include/digikam/dplugingeneric.h
 include/digikam/dpluginloader.h
@@ -83,6 +87,7 @@ include/digikam/iteminfolist.h
 include/digikam/loadingdescription.h
 include/digikam/loadsavethread.h
 include/digikam/managedloadsavethread.h
+include/digikam/metadatainfo.h
 include/digikam/metaengine.h
 include/digikam/metaengine_data.h
 include/digikam/photoinfocontainer.h
@@ -118,7 +123,9 @@ lib/libdigikamdatabase.so.%%SHLIB_VER%%
 lib/libdigikamgui.so
 lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_AntiVignetting_Plugin.so
+%%QT_PLUGINDIR%%/digikam/bqm/Bqm_AssignLabels_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_AssignTemplate_Plugin.so
+%%QT_PLUGINDIR%%/digikam/bqm/Bqm_Assigncaptions_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_AutoCorrection_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_BWconvert_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_BcgCorrection_Plugin.so
@@ -129,13 +136,16 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_ColorFX_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Convert16To8_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Convert8To16_Plugin.so
+%%QT_PLUGINDIR%%/digikam/bqm/Bqm_ConvertToAVIF_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_ConvertToDNG_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_ConvertToHEIF_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_ConvertToJP2lugin_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_ConvertToJPEG_Plugin.so
+%%QT_PLUGINDIR%%/digikam/bqm/Bqm_ConvertToJXL_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_ConvertToPGF_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_ConvertToPNG_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_ConvertToTIFF_Plugin.so
+%%QT_PLUGINDIR%%/digikam/bqm/Bqm_ConvertToWEBP_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Crop_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_CurvesAdjust_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_FilmGrain_Plugin.so
@@ -147,6 +157,7 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_LensAutoFix_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_LocalContrast_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_NoiseReduction_Plugin.so
+%%QT_PLUGINDIR%%/digikam/bqm/Bqm_QualitySort_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_RedEyeCorrection_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_RemoveMetadata_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Resize_Plugin.so
@@ -155,6 +166,7 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Sharpen_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_Texture_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_TimeAdjust_Plugin.so
+%%QT_PLUGINDIR%%/digikam/bqm/Bqm_Translate_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_UserScript_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_WaterMark_Plugin.so
 %%QT_PLUGINDIR%%/digikam/bqm/Bqm_WhiteBalance_Plugin.so
@@ -241,13 +253,13 @@ lib/libdigikamgui.so.%%SHLIB_VER%%
 %%QT_PLUGINDIR%%/digikam/generic/Generic_SendByMail_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_SlideShow_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_SmugMug_Plugin.so
+%%QT_PLUGINDIR%%/digikam/generic/Generic_TextConverter_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_TimeAdjust_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_Twitter_Plugin.so
-%%KVKONTAKTE%%%%QT_PLUGINDIR%%/digikam/generic/Generic_VKontakte_Plugin.so
 %%MEDIAPLAYER%%%%QT_PLUGINDIR%%/digikam/generic/Generic_VideoSlideShow_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_Wallpaper_Plugin.so
-%%QT_PLUGINDIR%%/digikam/generic/Generic_YandexFotki_Plugin.so
 %%QT_PLUGINDIR%%/digikam/generic/Generic_iNaturalist_Plugin.so
+%%QT_PLUGINDIR%%/digikam/rawimport/RawImport_ART_Plugin.so
 %%QT_PLUGINDIR%%/digikam/rawimport/RawImport_DarkTable_Plugin.so
 %%QT_PLUGINDIR%%/digikam/rawimport/RawImport_Native_Plugin.so
 %%QT_PLUGINDIR%%/digikam/rawimport/RawImport_RawTherapee_Plugin.so
@@ -358,6 +370,13 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/data/wood-pattern.png
 %%DATADIR%%/database/dbconfig.xml
 %%DATADIR%%/database/mysql-global.conf
+%%FACEDETECT%%%%DATADIR%%/facesengine/deploy.prototxt
+%%FACEDETECT%%%%DATADIR%%/facesengine/openface_nn4.small2.v1.t7
+%%FACEDETECT%%%%DATADIR%%/facesengine/res10_300x300_ssd_iter_140000_fp16.caffemodel
+%%FACEDETECT%%%%DATADIR%%/facesengine/shapepredictor.dat
+%%FACEDETECT%%%%DATADIR%%/facesengine/weights_inceptionv3_299.pb
+%%FACEDETECT%%%%DATADIR%%/facesengine/yolov3-face.cfg
+%%FACEDETECT%%%%DATADIR%%/facesengine/yolov3-wider_16000.weights
 %%DATADIR%%/geoiface/backend-googlemaps-js.js
 %%DATADIR%%/geoiface/backend-googlemaps.html
 %%DATADIR%%/geoiface/cluster-circle-00ff00-selected.png
@@ -394,6 +413,8 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/geolocationedit/bookmarks-marker.png
 %%DATADIR%%/geolocationedit/searchmarker-normal.png
 %%DATADIR%%/geolocationedit/searchmarker-selected.png
+%%DATADIR%%/metadata/darktable.dkamp
+%%DATADIR%%/metadata/digikam.dkamp
 %%DATADIR%%/metadata/topicset.iptc-subjectcode.xml
 %%DATADIR%%/profiles/compatibleWithAdobeRGB1998.icc
 %%DATADIR%%/profiles/prophoto.icm
@@ -402,13 +423,17 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/templates/1_photo_10.5x14.8cm.desktop
 %%DATADIR%%/templates/1_photo_10x15cm.desktop
 %%DATADIR%%/templates/1_photo_20x25cm.desktop
+%%DATADIR%%/templates/1_photo_4x6_2_photos_2x3.desktop
+%%DATADIR%%/templates/1_photo_5x7_corner.desktop
 %%DATADIR%%/templates/1_photo_8x10.desktop
 %%DATADIR%%/templates/1_photo_9x13cm.desktop
 %%DATADIR%%/templates/2_photos_13x18cm.desktop
+%%DATADIR%%/templates/2_photos_4x6.desktop
 %%DATADIR%%/templates/2_photos_5x7.desktop
 %%DATADIR%%/templates/3_photos_10x15cm.desktop
 %%DATADIR%%/templates/3_photos_4x6.desktop
 %%DATADIR%%/templates/4_photos_10x13.33cm.desktop
+%%DATADIR%%/templates/4_photos_2.5x3.5.desktop
 %%DATADIR%%/templates/4_photos_3.5x5.desktop
 %%DATADIR%%/templates/4_photos_4.5x5cm.desktop
 %%DATADIR%%/templates/4_photos_9x13cm.desktop
@@ -634,10 +659,12 @@ share/applications/org.kde.showfoto.desktop
 %%DATADIR%%/themes/vanilla/template.xsl
 %%DATADIR%%/themes/vanilla/vanilla.desktop
 %%DATADIR%%/utils/digikam-camera
+share/icons/hicolor/128x128/apps/avplayer.png
 share/icons/hicolor/128x128/apps/digikam.png
 share/icons/hicolor/128x128/apps/expoblending.png
 share/icons/hicolor/128x128/apps/panorama.png
 share/icons/hicolor/128x128/apps/showfoto.png
+share/icons/hicolor/16x16/apps/avplayer.png
 share/icons/hicolor/16x16/apps/digikam.png
 share/icons/hicolor/16x16/apps/dk-box.png
 share/icons/hicolor/16x16/apps/dk-dropbox.png
@@ -656,6 +683,7 @@ share/icons/hicolor/16x16/apps/dk-smugmug.png
 share/icons/hicolor/16x16/apps/expoblending.png
 share/icons/hicolor/16x16/apps/panorama.png
 share/icons/hicolor/16x16/apps/showfoto.png
+share/icons/hicolor/22x22/apps/avplayer.png
 share/icons/hicolor/22x22/apps/digikam.png
 share/icons/hicolor/22x22/apps/dk-box.png
 share/icons/hicolor/22x22/apps/dk-dropbox.png
@@ -674,6 +702,7 @@ share/icons/hicolor/22x22/apps/dk-smugmug.png
 share/icons/hicolor/22x22/apps/expoblending.png
 share/icons/hicolor/22x22/apps/panorama.png
 share/icons/hicolor/22x22/apps/showfoto.png
+share/icons/hicolor/256x256/apps/avplayer.png
 share/icons/hicolor/256x256/apps/digikam.png
 share/icons/hicolor/256x256/apps/showfoto.png
 share/icons/hicolor/32x32/actions/albumfolder-importdir.png
@@ -694,6 +723,7 @@ share/icons/hicolor/32x32/actions/tag-recents.png
 share/icons/hicolor/32x32/actions/tag-reset.png
 share/icons/hicolor/32x32/actions/tag.png
 share/icons/hicolor/32x32/actions/underexposure.png
+share/icons/hicolor/32x32/apps/avplayer.png
 share/icons/hicolor/32x32/apps/digikam.png
 share/icons/hicolor/32x32/apps/dk-box.png
 share/icons/hicolor/32x32/apps/dk-dropbox.png
@@ -712,6 +742,7 @@ share/icons/hicolor/32x32/apps/dk-smugmug.png
 share/icons/hicolor/32x32/apps/expoblending.png
 share/icons/hicolor/32x32/apps/panorama.png
 share/icons/hicolor/32x32/apps/showfoto.png
+share/icons/hicolor/48x48/apps/avplayer.png
 share/icons/hicolor/48x48/apps/digikam.png
 share/icons/hicolor/48x48/apps/dk-box.png
 share/icons/hicolor/48x48/apps/dk-dropbox.png
@@ -730,10 +761,12 @@ share/icons/hicolor/48x48/apps/dk-smugmug.png
 share/icons/hicolor/48x48/apps/expoblending.png
 share/icons/hicolor/48x48/apps/panorama.png
 share/icons/hicolor/48x48/apps/showfoto.png
+share/icons/hicolor/64x64/apps/avplayer.png
 share/icons/hicolor/64x64/apps/digikam.png
 share/icons/hicolor/64x64/apps/showfoto.png
 share/icons/hicolor/96x96/apps/expoblending.png
 share/icons/hicolor/96x96/apps/panorama.png
+share/icons/hicolor/scalable/apps/avplayer.svgz
 share/icons/hicolor/scalable/apps/digikam.svgz
 share/icons/hicolor/scalable/apps/dk-flickr.svgz
 share/icons/hicolor/scalable/apps/dk-googlephoto.svgz
@@ -772,6 +805,7 @@ share/kxmlgui5/showfoto/showfotoui5.rc
 %%NLS%%share/locale/gl/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/he/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/hi/LC_MESSAGES/digikam.mo
+%%NLS%%share/locale/hne/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/id/LC_MESSAGES/digikam.mo
@@ -783,6 +817,8 @@ share/kxmlgui5/showfoto/showfotoui5.rc
 %%NLS%%share/locale/ko/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/digikam.mo
+%%NLS%%share/locale/mai/LC_MESSAGES/digikam.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/nb/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/nds/LC_MESSAGES/digikam.mo
@@ -803,6 +839,7 @@ share/kxmlgui5/showfoto/showfotoui5.rc
 %%NLS%%share/locale/sv/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/th/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/digikam.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/digikam.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/digikam.mo
