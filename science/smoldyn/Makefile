@@ -19,6 +19,7 @@ USES=		cmake:testing compiler:c++11-lang gl localbase:ldflags python:test tar:tg
 USE_GL=		gl glu glut
 USE_XORG=	xi xmu
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++14 # fix build broken by deprecated feature std::unary_function use, see https://github.com/ssandrews/Smoldyn/issues/135
 
 SHEBANG_GLOB=	*.py.in
 
