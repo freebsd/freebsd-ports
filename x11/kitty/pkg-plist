@@ -215,6 +215,8 @@ share/applications/kitty.desktop
 %%PORTDOCS%%%%DOCSDIR%%/support.html
 %%PORTDOCS%%%%DOCSDIR%%/underlines.html
 %%PORTDOCS%%%%DOCSDIR%%/unscroll.html
+share/icons/hicolor/256x256/apps/kitty.png
+share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/__main__.py
 %%DATADIR%%/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%DATADIR%%/__pycache__/__main__%%PYTHON_EXT_SUFFIX%%.opt-2.pyc
@@ -886,4 +888,3 @@ share/applications/kitty.desktop
 share/man/man1/kitty.1.gz
 share/man/man5/kitty.conf.5.gz
 share/misc/kitty.terminfo
-@dir share/icons/highcolor
