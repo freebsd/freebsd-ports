@@ -24,6 +24,7 @@ XSLT_CONFIGURE_ENABLE=	xslt
 
 USES=		compiler:c++11-lang gnome libtool localbase:ldflags pathfix \
 		pkgconfig
+USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
