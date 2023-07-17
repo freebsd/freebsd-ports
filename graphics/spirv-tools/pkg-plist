@@ -4,6 +4,7 @@ bin/spirv-dis
 bin/spirv-lesspipe.sh
 bin/spirv-link
 bin/spirv-lint
+bin/spirv-objdump
 bin/spirv-opt
 bin/spirv-reduce
 bin/spirv-val
