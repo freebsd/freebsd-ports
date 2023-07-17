@@ -17,6 +17,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		autoreconf desktop-file-utils gl gmake gnome jpeg sdl
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++14
 USE_SDL=	image mixer sdl
 USE_GL=		gl glu
 USE_GNOME=	libxml2
