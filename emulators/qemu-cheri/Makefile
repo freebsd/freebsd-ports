@@ -1,5 +1,6 @@
 PORTNAME=	qemu
 PORTVERSION=	0.d${SNAPDATE}
+PORTREVISION=	1
 CATEGORIES=	emulators devel
 PKGNAMESUFFIX=	-cheri
 
@@ -10,7 +11,7 @@ WWW=		https://github.com/CTSRD-CHERI/qemu
 # XXX: disabling gnutls doesn't work so depend on it to avoid breakage.
 BUILD_DEPENDS=	bash:shells/bash \
 		meson>=0.57.1_1:devel/meson
-LIB_DEPENDS=	libcapstone.so:devel/capstone3 \
+LIB_DEPENDS=	libcapstone.so:devel/capstone \
 		libdrm.so:graphics/libdrm \
 		libepoxy.so:graphics/libepoxy \
 		libgnutls.so:security/gnutls \
