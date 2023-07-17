@@ -1,15 +1,15 @@
---- components/feature_engagement/public/feature_list.cc.orig	2023-05-31 08:12:17 UTC
+--- components/feature_engagement/public/feature_list.cc.orig	2023-07-16 15:47:57 UTC
 +++ components/feature_engagement/public/feature_list.cc
-@@ -134,7 +134,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kIPHiOSPromoDefaultBrowserFeature,
+@@ -138,7 +138,7 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHiOSDefaultBrowserVideoPromoTriggerFeature,
  #endif  // BUILDFLAG(IS_IOS)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \
 -    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
 +    BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_BSD)
      &kIPHAutofillFeedbackNewBadgeFeature,
      &kIPHBatterySaverModeFeature,
-     &kIPHDesktopTabGroupsNewGroupFeature,
-@@ -173,7 +173,8 @@ const base::Feature* const kAllFeatures[] = {
+     &kIPHCompanionSidePanelFeature,
+@@ -179,7 +179,8 @@ const base::Feature* const kAllFeatures[] = {
          // BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_LINUX) || \

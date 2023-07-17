@@ -1,4 +1,4 @@
---- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h.orig	2023-05-31 08:12:17 UTC
+--- chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h.orig	2023-07-16 15:47:57 UTC
 +++ chrome/browser/ui/views/frame/picture_in_picture_browser_frame_view.h
 @@ -20,7 +20,7 @@
  #include "ui/views/controls/image_view.h"
@@ -18,7 +18,7 @@
    gfx::Insets MirroredFrameBorderInsets() const override;
    gfx::Insets GetInputInsets() const override;
    SkRRect GetRestoredClipRegion() const override;
-@@ -163,7 +163,7 @@ class PictureInPictureBrowserFrameView
+@@ -164,7 +164,7 @@ class PictureInPictureBrowserFrameView
    // Called when mouse entered or exited the pip window.
    void OnMouseEnteredOrExitedWindow(bool entered);
  
@@ -27,7 +27,7 @@
    // Sets the window frame provider so that it will be used for drawing.
    void SetWindowFrameProvider(ui::WindowFrameProvider* window_frame_provider);
  
-@@ -227,7 +227,7 @@ class PictureInPictureBrowserFrameView
+@@ -239,7 +239,7 @@ class PictureInPictureBrowserFrameView
    gfx::MultiAnimation show_close_button_animation_;
    gfx::MultiAnimation hide_close_button_animation_;
  

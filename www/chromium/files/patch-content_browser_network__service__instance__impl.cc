@@ -1,4 +1,4 @@
---- content/browser/network_service_instance_impl.cc.orig	2023-05-31 08:12:17 UTC
+--- content/browser/network_service_instance_impl.cc.orig	2023-07-16 15:47:57 UTC
 +++ content/browser/network_service_instance_impl.cc
 @@ -78,7 +78,7 @@
  #include "content/browser/network/network_service_process_tracker_win.h"
@@ -9,7 +9,7 @@
  #include "content/browser/system_dns_resolution/system_dns_resolver.h"
  #include "services/network/public/mojom/system_dns_resolution.mojom-forward.h"
  #endif
-@@ -422,7 +422,7 @@ network::mojom::NetworkServiceParamsPtr CreateNetworkS
+@@ -458,7 +458,7 @@ network::mojom::NetworkServiceParamsPtr CreateNetworkS
    }
  #endif  // BUILDFLAG(IS_POSIX)
  

@@ -1,6 +1,15 @@
---- media/capture/video/linux/v4l2_capture_delegate.h.orig	2023-05-17 10:17:13 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.h.orig	2023-07-16 15:47:57 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.h
-@@ -87,10 +87,10 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
+@@ -81,7 +81,7 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
+   static bool IsBlockedControl(int control_id);
+   static bool IsControllableControl(
+       int control_id,
+-      const base::RepeatingCallback<int(int, void*)>& do_ioctl);
++      const base::RepeatingCallback<int(unsigned int, void*)>& do_ioctl);
+ 
+  private:
+   friend class V4L2CaptureDelegateTest;
+@@ -92,10 +92,10 @@ class CAPTURE_EXPORT V4L2CaptureDelegate final {
    // device file descriptor or (re)starting streaming, can fail but works after
    // retrying (https://crbug.com/670262). Returns false if the |request| ioctl
    // fails too many times.

@@ -1,6 +1,6 @@
---- chrome/browser/chrome_browser_interface_binders.cc.orig	2023-05-31 08:12:17 UTC
+--- chrome/browser/chrome_browser_interface_binders.cc.orig	2023-07-16 15:47:57 UTC
 +++ chrome/browser/chrome_browser_interface_binders.cc
-@@ -117,13 +117,13 @@
+@@ -119,13 +119,13 @@
  #endif  // BUILDFLAG(FULL_SAFE_BROWSING)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -16,7 +16,7 @@
  #include "chrome/browser/ui/webui/app_settings/web_app_settings_ui.h"
  #include "ui/webui/resources/cr_components/app_management/app_management.mojom.h"
  #endif
-@@ -197,7 +197,7 @@
+@@ -199,7 +199,7 @@
  #endif  // BUILDFLAG(IS_ANDROID)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -25,7 +25,7 @@
  #include "chrome/browser/ui/webui/discards/discards.mojom.h"
  #include "chrome/browser/ui/webui/discards/discards_ui.h"
  #include "chrome/browser/ui/webui/discards/site_data.mojom.h"
-@@ -881,7 +881,7 @@ void PopulateChromeFrameBinders(
+@@ -886,7 +886,7 @@ void PopulateChromeFrameBinders(
  #endif  // BUILDFLAG(ENABLE_SPEECH_SERVICE)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -34,7 +34,7 @@
    if (!render_frame_host->GetParent()) {
      map->Add<chrome::mojom::DraggableRegions>(
          base::BindRepeating(&DraggableRegionsHostImpl::CreateIfAllowed));
-@@ -889,7 +889,7 @@ void PopulateChromeFrameBinders(
+@@ -894,7 +894,7 @@ void PopulateChromeFrameBinders(
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || \
@@ -43,7 +43,7 @@
    if (base::FeatureList::IsEnabled(blink::features::kDesktopPWAsSubApps) &&
        !render_frame_host->GetParentOrOuterDocument()) {
      // The service binder will reject non-primary main frames, but we still need
-@@ -958,14 +958,14 @@ void PopulateChromeWebUIFrameBinders(
+@@ -963,14 +963,14 @@ void PopulateChromeWebUIFrameBinders(
        commerce::CommerceInternalsUI>(map);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -60,7 +60,7 @@
    RegisterWebUIControllerInterfaceBinder<
        app_management::mojom::PageHandlerFactory, WebAppSettingsUI>(map);
  #endif
-@@ -1420,7 +1420,7 @@ void PopulateChromeWebUIFrameBinders(
+@@ -1428,7 +1428,7 @@ void PopulateChromeWebUIFrameBinders(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

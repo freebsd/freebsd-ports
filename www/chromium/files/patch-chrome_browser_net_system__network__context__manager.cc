@@ -1,4 +1,4 @@
---- chrome/browser/net/system_network_context_manager.cc.orig	2023-05-31 08:12:17 UTC
+--- chrome/browser/net/system_network_context_manager.cc.orig	2023-07-16 15:47:57 UTC
 +++ chrome/browser/net/system_network_context_manager.cc
 @@ -93,7 +93,7 @@
  
@@ -18,7 +18,7 @@
    auth_dynamic_params->delegate_by_kdc_policy =
        local_state->GetBoolean(prefs::kAuthNegotiateDelegateByKdcPolicy);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -456,7 +456,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -445,7 +445,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
    pref_change_registrar_.Add(prefs::kAllHttpAuthSchemesAllowedForOrigins,
                               auth_pref_callback);
  
@@ -27,7 +27,7 @@
    pref_change_registrar_.Add(prefs::kAuthNegotiateDelegateByKdcPolicy,
                               auth_pref_callback);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -503,7 +503,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
+@@ -492,7 +492,7 @@ SystemNetworkContextManager::SystemNetworkContextManag
  #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -36,7 +36,7 @@
    pref_change_registrar_.Add(
        prefs::kEnforceLocalAnchorConstraintsEnabled,
        base::BindRepeating(&SystemNetworkContextManager::
-@@ -553,7 +553,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -541,7 +541,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kKerberosEnabled, false);
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
  
@@ -45,7 +45,7 @@
    registry->RegisterBooleanPref(prefs::kAuthNegotiateDelegateByKdcPolicy,
                                  false);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
-@@ -582,7 +582,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
+@@ -570,7 +570,7 @@ void SystemNetworkContextManager::RegisterPrefs(PrefRe
    registry->RegisterBooleanPref(prefs::kChromeRootStoreEnabled, false);
  #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -54,7 +54,7 @@
    // Note that the default value is not relevant because the pref is only
    // evaluated when it is managed.
    registry->RegisterBooleanPref(prefs::kEnforceLocalAnchorConstraintsEnabled,
-@@ -1004,7 +1004,7 @@ void SystemNetworkContextManager::UpdateChromeRootStor
+@@ -992,7 +992,7 @@ void SystemNetworkContextManager::UpdateChromeRootStor
  #endif  // BUILDFLAG(CHROME_ROOT_STORE_POLICY_SUPPORTED)
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

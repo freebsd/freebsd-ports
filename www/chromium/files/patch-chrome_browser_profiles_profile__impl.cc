@@ -1,6 +1,6 @@
---- chrome/browser/profiles/profile_impl.cc.orig	2023-05-31 08:12:17 UTC
+--- chrome/browser/profiles/profile_impl.cc.orig	2023-07-16 15:47:57 UTC
 +++ chrome/browser/profiles/profile_impl.cc
-@@ -263,6 +263,10 @@
+@@ -262,6 +262,10 @@
  #include "chrome/browser/spellchecker/spellcheck_service.h"
  #endif
  
@@ -11,7 +11,7 @@
  using bookmarks::BookmarkModel;
  using content::BrowserThread;
  using content::DownloadManagerDelegate;
-@@ -611,7 +615,7 @@ void ProfileImpl::LoadPrefsForNormalStartup(bool async
+@@ -606,7 +610,7 @@ void ProfileImpl::LoadPrefsForNormalStartup(bool async
  #else
    {
  #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
@@ -20,7 +20,7 @@
      ProfileManager* profile_manager = g_browser_process->profile_manager();
      ProfileAttributesEntry* entry =
          profile_manager->GetProfileAttributesStorage()
-@@ -886,7 +890,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -881,7 +885,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {
