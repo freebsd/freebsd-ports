@@ -11,6 +11,8 @@ WWW=		https://github.com/ktosiek/pytest-freezegun
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+DEPRECATED=	Use devel/py-pytest-freezer as upstream is unmaintained
+EXPIRATION_DATE=	2023-08-16
 # unless the upstream fixes the problem, this port should be probably deprecated, see https://github.com/ktosiek/pytest-freezegun/issues/43
 BROKEN=		causes INTERNALERROR failures in PyTest in many python-based ports, based on the assessment in this comment: https://github.com/pytest-dev/pytest/issues/10846#issuecomment-1487971534
 
