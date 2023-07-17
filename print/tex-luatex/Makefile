@@ -1,7 +1,8 @@
 PORTNAME=	luatex
 PORTVERSION=	1.16.0
+PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	ftp://tug.org/historic/systems/texlive/2015/
+MASTER_SITES=	TEX_CTAN/systems/texlive/${TEXLIVE_YEAR}/
 PKGNAMEPREFIX=	tex-
 DISTNAME=	texlive-${TEXLIVE_VERSION}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -12,8 +13,13 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	tex@FreeBSD.org
 COMMENT=	Extended version of pdfTeX using Lua
 
-LIB_DEPENDS=	libmpfr.so:math/mpfr \
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libgmp.so:math/gmp \
+		libgraphite2.so:graphics/graphite2 \
+		libharfbuzz.so:print/harfbuzz \
+		libmpfr.so:math/mpfr \
 		libpng.so:graphics/png \
+		libTECkit.so:textproc/teckit \
 		libzzip.so:devel/zziplib
 
 USES=		gnome libtool localbase pkgconfig tar:xz tex xorg
@@ -26,11 +32,13 @@ GNU_CONFIGURE=		yes
 CONFIGURE_ARGS+=	${EXCLUDE_ENGINES:S/^/--disable-/} \
 			--enable-luajittex \
 			--enable-luatex \
+			--enable-luahbtex \
+			--enable-luajithbtex \
 			--with-system-zlib \
 			--with-system-zziplib \
 			CC="${CC}" \
 			CXX="${CXX}"
-.for L in cairo gmp kpathsea libpng mpfr pixman ptexenc
+.for L in cairo freetype2 gmp graphite2 harfbuzz kpathsea libpng mpfr pixman ptexenc teckit
 CONFIGURE_ARGS+=	--with-$L-include=${LOCALBASE}/include \
 			--with-$L-libdir=${LOCALBASE}/lib \
 			--with-system-$L
@@ -60,8 +68,7 @@ EXTRACT_FILES_TEXMF=		texmf-dist/doc/lualatex texmf-dist/doc/luatex \
 WRKSRC=				${WRKDIR}/${DISTNAME}/texk/web2c
 EXCLUDE_ENGINES=		aleph etex pdftex mf mf-nowin ptex eptex uptex \
 				euptex otangle mp pmp upmp web2c web-progs \
-				xetex tex synctex mflua mfluajit luahbtex \
-				luajithbtex
+				xetex tex synctex mflua mfluajit
 TEX_FORMATS=			luatex
 
 TEXHASHDIRS=	${TEXMFDISTDIR} ${TEXMFVARDIR}

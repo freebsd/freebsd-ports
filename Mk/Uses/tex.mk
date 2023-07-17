@@ -386,7 +386,7 @@ TEX_FORMAT_LUATEX?= \
 	"luatex luatex language.def,language.dat.lua luatex.ini" \
 	"dviluatex luatex language.def,language.dat.lua dviluatex.ini" \
 	"dvilualatex luatex language.dat,language.dat.lua dvilualatex.ini" \
-	"lualatex luatex language.dat,language.dat.lua lualatex.ini" \
+	"lualatex luahbtex language.dat,language.dat.lua lualatex.ini" \
 	"luajittex luajittex language.def,language.dat.lua luatex.ini" \
 	"pdfcsplain luatex - -etex csplain.ini" \
 	"lollipop luatex - lollipop.ini"
@@ -397,15 +397,16 @@ TEX_FORMAT_LUATEX_FILES= \
 	${TEXMFVARDIR}/web2c/luatex/dvilualatex.fmt \
 	${TEXMFVARDIR}/web2c/luatex/luatex.log \
 	${TEXMFVARDIR}/web2c/luatex/luatex.fmt \
-	${TEXMFVARDIR}/web2c/luatex/lualatex.log \
-	${TEXMFVARDIR}/web2c/luatex/lualatex.fmt \
 	${TEXMFVARDIR}/web2c/luatex/pdfcsplain.log \
 	${TEXMFVARDIR}/web2c/luatex/pdfcsplain.fmt \
+	${TEXMFVARDIR}/web2c/luahbtex/lualatex.fmt \
+	${TEXMFVARDIR}/web2c/luahbtex/lualatex.log \
 	${TEXMFVARDIR}/web2c/luajittex/luajittex.log \
 	${TEXMFVARDIR}/web2c/luajittex/luajittex.fmt
 TEX_FORMAT_LUATEX_BIN= \
 	bin/dviluatex \
 	bin/dvilualatex \
+	bin/luahbtex \
 	bin/luajittex \
 	bin/lualatex \
 	bin/lualollipop \
@@ -418,9 +419,9 @@ TEX_FORMAT_LUATEX_DIRS=	\
 	${TEXMFVARDIR}/web2c/luatex \
 	${TEXMFVARDIR}/web2c/luajittex
 post-install-luatex:
+	${LN} -sf luahbtex ${STAGEDIR}${PREFIX}/bin/lualatex
 	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/dviluatex
 	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/dvilualatex
-	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/lualatex
 	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/lualollipop
 	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/texlua
 	${LN} -sf luatex ${STAGEDIR}${PREFIX}/bin/texluac
