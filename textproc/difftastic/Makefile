@@ -1,6 +1,5 @@
 PORTNAME=	difftastic
-DISTVERSION=	0.47.0
-PORTREVISION=	2
+DISTVERSION=	0.48.0
 CATEGORIES=	textproc
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -17,7 +16,8 @@ GH_ACCOUNT=	Wilfred
 
 PLIST_FILES=	bin/difft
 
-CARGO_CRATES=	aho-corasick-0.7.20 \
+CARGO_CRATES=	ahash-0.7.6 \
+		aho-corasick-0.7.20 \
 		assert_cmd-2.0.5 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
@@ -46,8 +46,10 @@ CARGO_CRATES=	aho-corasick-0.7.20 \
 		fixedbitset-0.4.1 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
+		getrandom-0.2.9 \
 		glob-0.3.1 \
 		hashbrown-0.11.2 \
+		hashbrown-0.12.3 \
 		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		humantime-1.3.0 \
