@@ -13,10 +13,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	${PY_BOOST}
 
-USES=		compiler:c++11-lang lua:51 python:env
+USES=		compiler:c++11-lang localbase lua:51 python:env
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
-CPPFLAGS+=	-I.. -I${LUA_INCDIR} -I${LOCALBASE}/include
+CPPFLAGS+=	-I.. -I${LUA_INCDIR}
 LDFLAGS+=	-L${LUA_LIBDIR}
 CXXFLAGS+=	-fPIC
 
