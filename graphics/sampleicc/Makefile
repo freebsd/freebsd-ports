@@ -16,10 +16,13 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
-GNU_CONFIGURE=	yes
 USES=	libtool pathfix
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
-INSTALL_TARGET=	install-strip
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-tifflib=${LOCALBASE}
+
+INSTALL_TARGET=	install-strip
 
 .include <bsd.port.mk>
