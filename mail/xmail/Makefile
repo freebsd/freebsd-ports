@@ -5,7 +5,7 @@ CATEGORIES=	mail
 MASTER_SITES=	XCONTRIB/applications
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	sjroz@verizon.net
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	X-based interface to the Berkeley mail program
 
 LICENSE=	MIT
