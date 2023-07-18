@@ -14,6 +14,17 @@ SHEBANG_FILES=	util/harfbuzz/update-harfbuzz \
 		mkspecs/features/data/mac/objc_namespace.sh \
 		mkspecs/features/uikit/devices.py \
 		mkspecs/features/uikit/device_destinations.sh
+SHEBANG_FILES+=	bin/fixqt4headers.pl \
+		bin/syncqt.pl \
+		config_help.txt \
+		mkspecs/features/data/unix/findclasslist.pl \
+		mkspecs/features/qt_functions.prf \
+		src/3rdparty/harfbuzz-ng/src/hb-blob.cc \
+		src/corelib/mimetypes/mime/generate.pl \
+		src/corelib/mimetypes/mime/packages/freedesktop.org.xml \
+		util/includemocs/includemocs.pl \
+		util/x86simdgen/generate.pl
+
 USE_PERL5=	extract pkg64
 
 REINPLACE_ARGS=	-i ""
