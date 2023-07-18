@@ -1,6 +1,5 @@
 PORTNAME=	cm
-DISTVERSION=	0.4.0
-PORTREVISION=	2
+DISTVERSION=	0.4.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.multiprecision.org/downloads/
 
@@ -11,7 +10,8 @@ WWW=		https://www.multiprecision.org/cm/home.html
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libgmp.so:math/gmp \
+LIB_DEPENDS=	libflint.so:math/flint2 \
+		libgmp.so:math/gmp \
 		libmpc.so:math/mpc \
 		libmpfr.so:math/mpfr \
 		libmpfrcx.so:math/mpfrcx \
