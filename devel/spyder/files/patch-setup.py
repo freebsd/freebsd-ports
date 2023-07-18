@@ -17,16 +17,3 @@
  )
  
  
-@@ -232,10 +231,10 @@ install_requires = [
-     'python-lsp-server[all]>=1.7.2,<1.8.0',
-     'pyxdg>=0.26;platform_system=="Linux"',
-     'pyzmq>=22.1.0',
--    'qdarkstyle>=3.0.2,<3.2.0',
-+    'qdarkstyle>0',
-     'qstylizer>=0.2.2',
-     'qtawesome>=1.2.1',
--    'qtconsole>=5.4.2,<5.5.0',
-+    'qtconsole>0',
-     'qtpy>=2.1.0',
-     'rtree>=0.9.7',
-     'setuptools>=49.6.0',
