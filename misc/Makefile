@@ -451,6 +451,7 @@
     SUBDIR += py-pyct
     SUBDIR += py-pyfiglet
     SUBDIR += py-pykml
+    SUBDIR += py-pymatreader
     SUBDIR += py-pypatent
     SUBDIR += py-pyprind
     SUBDIR += py-pyqir
