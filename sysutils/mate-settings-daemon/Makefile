@@ -72,4 +72,10 @@ OPTIONS_SUB=	yes
 PULSEAUDIO_CONFIGURE_ENABLE=	pulse
 PULSEAUDIO_LIB_DEPENDS=		libpulse.so:audio/pulseaudio
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.mk>
