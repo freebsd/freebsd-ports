@@ -27,7 +27,8 @@ IGNORE=	Incorrect 'USES+= meson:${meson_ARGS}'. meson takes no arguments
 .  if defined(MESON_CMD)
 BUILD_DEPENDS+=		${MESON_CMD}:/nonexistent
 .  else
-BUILD_DEPENDS+=		${LOCALBASE64}/bin/meson:devel/meson
+MESON_CMD=		${LOCALBASE64}/bin/meson
+BUILD_DEPENDS+=		${MESON_CMD}:devel/meson
 .  endif
 
 # meson uses ninja
@@ -57,7 +58,7 @@ CONFIGURE_ARGS+=	--buildtype release \
 .  endif
 
 HAS_CONFIGURE=		yes
-CONFIGURE_CMD=		meson
+CONFIGURE_CMD=		${MESON_CMD}
 # Pull in manual set settings and from options
 CONFIGURE_ARGS+=	${MESON_ARGS}
 
