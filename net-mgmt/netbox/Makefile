@@ -60,7 +60,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django41>=4.1.10<4.2:www/py-django41@${PY_FL
 		${PYTHON_PKGNAMEPREFIX}tablib>=3.5.0<4:textproc/py-tablib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tzdata>=2023.3:devel/py-tzdata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=6.0<7:devel/py-yaml@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gunicorn>=20.1.0<21:www/py-gunicorn@${PY_FLAVOR}
+		${PYTHON_PKGNAMEPREFIX}gunicorn>=20.1.0<22:www/py-gunicorn@${PY_FLAVOR}
 
 USES=		cpe pgsql:11+ python
 CPE_VENDOR=	netbox_project
