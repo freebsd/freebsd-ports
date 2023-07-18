@@ -88,7 +88,9 @@ EXTRA_PATCHES+=	${PATCHDIR}/5da8c280b7451335c915d9be0a25d0d3a8055d3e.patch:-p1
 
 .include <bsd.port.pre.mk>
 
-BUILD_DEPENDS+= ${PYTHON_PKGNAMEPREFIX}mako>0:textproc/py-mako@${PY_FLAVOR}
+# Depend on mako from PYTHON_SITELIBDIR to allow to use a pre-installed hybrid
+# ABI version.
+BUILD_DEPENDS+= ${PYTHON_SITELIBDIR}/mako:textproc/py-mako@${PY_FLAVOR}
 BINARY_ALIAS+=	python3=${PYTHON_VERSION}
 
 .if !${ABI:Mpurecap}
