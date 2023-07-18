@@ -1,5 +1,6 @@
 PORTNAME=	tinker
 DISTVERSION=	8.10.5
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://dasher.wustl.edu/tinker/downloads/
 
@@ -29,16 +30,15 @@ SUB_FILES=	pkg-message
 
 BINARY_ALIAS=	gfortran=gfortran${GCC_DEFAULT}
 
-OPTIONS_DEFINE=	OPTIMIZED_FFLAGS DOCS EXAMPLES
+OPTIONS_DEFINE=		NATIVE OPTIMIZED_FFLAGS DOCS EXAMPLES
+OPTIONS_DEFINE_amd64=	SIMD
+OPTIONS_DEFINE_i386=	SIMD
 
-OPTIONS_DEFINE_amd64=	SSE
-OPTIONS_DEFINE_i386=	SSE
-OPTIONS_DEFAULT_amd64=	SSE
-OPTIONS_DEFAULT_i386=	SSE
+NATIVE_MAKE_ARGS=	PORT_SIMD_FLAGS+="-march=native"
 
-SSE_MAKE_ARGS=	PORT_SIMD_FLAGS="-msse -msse2 -mfpmath=sse"
+OPTIMIZED_FFLAGS_DESC=	Fortran compilation optimizations
 
-OPTIMIZED_FFLAGS_DESC=	compilation optimizations
+SIMD_MAKE_ARGS=		PORT_SIMD_FLAGS+="-msse -msse2 -mssse3"
 
 PORTDOCS=	*
 PORTEXAMPLES=	*
@@ -50,7 +50,7 @@ FFLAGS+=	-O3 -ffast-math -finline-functions -fomit-frame-pointer -funroll-loops 
 .if (${ARCH} == "i386")
 FFLAGS+=	-mfancy-math-387 -malign-double
 .endif # i386
-.endif
+.endif # OPTIMIZED_FFLAGS
 
 post-extract:
 	@${RM} ${BUILD_WRKSRC}/*.c
