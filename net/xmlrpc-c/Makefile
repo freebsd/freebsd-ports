@@ -10,6 +10,7 @@ WWW=		http://xmlrpc-c.sourceforge.net/
 LICENSE=	BSD3CLAUSE
 
 USES=		gmake pkgconfig tar:tgz
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 
