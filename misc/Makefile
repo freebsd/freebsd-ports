@@ -474,6 +474,7 @@
     SUBDIR += py-tflearn
     SUBDIR += py-tflite
     SUBDIR += py-tflite-support
+    SUBDIR += py-thermocouples_reference
     SUBDIR += py-toil
     SUBDIR += py-torch-geometric
     SUBDIR += py-torchmetrics
