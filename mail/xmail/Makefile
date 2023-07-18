@@ -14,6 +14,9 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xbitmaps xext xmu xpm xt
 
+DEPRECATED=	Fails to build on 14-CURRENT, unmaintained since 2007
+EXPIRATION_DATE=        2023-09-30
+
 post-patch:
 # Fix the build with -fno-common (for Clang 11 and GCC 10)
 	@${REINPLACE_CMD} -e '/In_Bogus_Mail_File;/d' ${WRKSRC}/xmail.c
