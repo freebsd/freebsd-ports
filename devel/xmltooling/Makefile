@@ -20,6 +20,7 @@ USES=		cpe gmake libtool pkgconfig tar:bzip2 ssl autoreconf
 CPE_VENDOR=	${PORTNAME}_project
 USE_LDCONFIG=	yes
 CONFIGURE_ENV+=	openssl_LIBS="-L${OPENSSLLIB} -lcrypto"  openssl_CFLAGS=-I${OPENSSLBASE}
+USE_CXXSTD=	c++14
 
 PORTDOCS=	*
 
