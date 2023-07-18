@@ -2,8 +2,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/eex/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/handlebars.templates-NBND3S2D.js
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-elixir-JUCHUGAD.css
-%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-WC6MMJK3.js
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-CGDDOCMI.js
+%%PORTDOCS%%%%DOCSDIR%%/eex/dist/html-elixir-P5GXSCHE.css
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/eex/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -74,8 +74,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Dict.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/handlebars.templates-NBND3S2D.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-elixir-JUCHUGAD.css
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-WC6MMJK3.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-CGDDOCMI.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/html-elixir-P5GXSCHE.css
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -99,8 +99,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 %%PORTDOCS%%%%DOCSDIR%%/elixir/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-23F5F633.js
-%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-7D1FAFD7.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/search_data-FADDAFC1.js
+%%PORTDOCS%%%%DOCSDIR%%/elixir/dist/sidebar_items-B136466B.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/elixir/DynamicSupervisor.html
 %%PORTDOCS%%%%DOCSDIR%%/elixir/Enum.EmptyError.html
@@ -203,8 +203,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/handlebars.templates-NBND3S2D.js
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-elixir-JUCHUGAD.css
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-WC6MMJK3.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-CGDDOCMI.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/html-elixir-P5GXSCHE.css
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -228,7 +228,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/merriweather-vietnamese-300-italic-EHHNZPUO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/merriweather-vietnamese-300-normal-U376L4Z4.woff2
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/remixicon-NKANDIL5.woff2
-%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-7B9417FF.js
+%%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/search_data-9177C058.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/dist/sidebar_items-BEA153EB.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/docs_config.js
 %%PORTDOCS%%%%DOCSDIR%%/ex_unit/ExUnit.AssertionError.html
@@ -255,8 +255,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/iex/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/handlebars.templates-NBND3S2D.js
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-elixir-JUCHUGAD.css
-%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-WC6MMJK3.js
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-CGDDOCMI.js
+%%PORTDOCS%%%%DOCSDIR%%/iex/dist/html-elixir-P5GXSCHE.css
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/iex/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -294,8 +294,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/logger/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/handlebars.templates-NBND3S2D.js
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-elixir-JUCHUGAD.css
-%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-WC6MMJK3.js
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-CGDDOCMI.js
+%%PORTDOCS%%%%DOCSDIR%%/logger/dist/html-elixir-P5GXSCHE.css
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/logger/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
@@ -332,8 +332,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/mix/api-reference.html
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/handlebars.runtime-NWIB6V2M.js
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/handlebars.templates-NBND3S2D.js
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-elixir-JUCHUGAD.css
-%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-WC6MMJK3.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-CGDDOCMI.js
+%%PORTDOCS%%%%DOCSDIR%%/mix/dist/html-elixir-P5GXSCHE.css
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-400-normal-RGKDDNDD.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-700-normal-DTS2D7TO.woff2
 %%PORTDOCS%%%%DOCSDIR%%/mix/dist/inconsolata-latin-ext-400-normal-K7HVGTP7.woff2
