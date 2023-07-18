@@ -453,6 +453,7 @@
     SUBDIR += py-pykml
     SUBDIR += py-pypatent
     SUBDIR += py-pyprind
+    SUBDIR += py-pyqir
     SUBDIR += py-python-geohash
     SUBDIR += py-python-utils
     SUBDIR += py-pytorch
