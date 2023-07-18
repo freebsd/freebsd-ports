@@ -168,6 +168,7 @@ include/ctk-0.1/ctkTreeComboBox.h
 include/ctk-0.1/ctkTreeComboBoxEventPlayer.h
 include/ctk-0.1/ctkTreeComboBoxEventTranslator.h
 include/ctk-0.1/ctkUtils.h
+include/ctk-0.1/ctkUtils.tpp
 include/ctk-0.1/ctkValueProxy.h
 include/ctk-0.1/ctkWidgetsExport.h
 include/ctk-0.1/ctkWidgetsPythonQtDecorators.h
