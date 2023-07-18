@@ -15,8 +15,10 @@ BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python
-USE_PYTHON=	pep517 autoplist pytest # 3 tests fail, see https://github.com/pypa/distlib/issues/205
+USE_PYTHON=	pep517 autoplist pytest # few tests fail intermittently, see https://github.com/pypa/distlib/issues/205
 
 NO_ARCH=	yes
+
+TEST_ENV=	PYTHONHASHSEED=0 # needed for tests to succeed
 
 .include <bsd.port.mk>
