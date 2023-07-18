@@ -70,6 +70,10 @@ SVG_USE=	GNOME=librsvg2
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .if ${PORT_OPTIONS:MDBUS} && ${PORT_OPTIONS:MGTK2}
 CONFIGURE_ARGS+=	--enable-dbus-glib
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/dbus-glib-1.pc:devel/dbus-glib
