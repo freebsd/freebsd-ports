@@ -19,6 +19,7 @@ PLIST=			${WRKDIR}/pkg-plist
 
 .if ${PKGNAMESUFFIX} == "-video-rice"
 LIB_DEPENDS+=		libpng.so:graphics/png
+USE_CXXSTD=	c++14
 .endif
 
 .if ${PKGNAMESUFFIX} == "-video-glide64mk"
