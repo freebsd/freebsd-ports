@@ -1,6 +1,5 @@
 PORTNAME=	eql5
-PORTVERSION=	g20220217
-PORTREVISION=	1
+PORTVERSION=	g20220228
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,11 +17,12 @@ USE_QT=		core declarative gui help location multimedia network \
 		buildtools:build uitools:build
 USE_GL=		gl
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++14 # fix build breakage with clang-16 due to ECL using the deprecated 'register' feature
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	eql
 GL_PROJECT=	${PORTNAME:tu}
-GL_TAGNAME=	0bf4fbaf2e231a30a0173640c3bd478e6ea6ad7a
+GL_COMMIT=	440ac762a8345038c8fceb9ef0751b4b4d472342
 
 WRKSRC_SUBDIR=	src
 
