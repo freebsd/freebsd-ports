@@ -1,22 +1,22 @@
 PORTNAME=	distlib
-DISTVERSION=	0.3.6
+DISTVERSION=	0.3.7
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Low-level components of distutils2 and higher-level APIs
-WWW=		https://bitbucket.org/pypa/distlib
+WWW=		https://github.com/pypa/distlib
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
+
 USES=		python
-USE_PYTHON=	autoplist distutils
+USE_PYTHON=	pep517 autoplist pytest # 3 tests fail, see https://github.com/pypa/distlib/issues/205
 
 NO_ARCH=	yes
-
-post-patch:
-	${ECHO} "from setuptools import setup ; setup()" > ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
