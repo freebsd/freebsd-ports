@@ -20,6 +20,7 @@ LIB_DEPENDS=	libavcodec.so.58:multimedia/ffmpeg4 \
 		libignition-math6.so:math/ignition-math
 
 USES=		cmake compiler:c++17-lang gnome localbase pkgconfig
+USE_CXXSTD=	c++14
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
