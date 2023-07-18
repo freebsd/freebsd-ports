@@ -12,11 +12,11 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gmake:devel/gmake
 
-USES=		gettext localbase meson pathfix pkgconfig python:build shebangfix \
+USES=		gettext gnome localbase meson pathfix pkgconfig python:build shebangfix \
 		tar:xz trigger
 CONFIGURE_ARGS=	-Dupdate-mimedb=false \
 		-Dxdgmime-path=${WRKSRC}/src/xdgmime
-USE_GNOME=	glib20 libxml2
+USE_GNOME=	libxml2
 USE_GITLAB=	YES
 GL_SITE=	https://gitlab.freedesktop.org/
 GL_ACCOUNT=	xdg
@@ -51,7 +51,7 @@ CONFIGURE_ARGS+=	-Dbuild-tools=false
 .endif
 
 .if !${ABI:Mpurecap}
-USES+=	gnome
+USE_GNOME+=	glib20
 .endif
 
 post-patch:
