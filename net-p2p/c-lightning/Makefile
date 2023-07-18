@@ -34,6 +34,10 @@ BINARY_ALIAS=	python=${PYTHON_CMD} python3=${PYTHON_CMD}
 ALL_TARGET=	default
 SHEBANG_FILES=	tools/reckless
 
+EXTRA_PATCHES_arm64=	${FILESDIR}/extra-patch-ccan_ccan_base64_base64.c \
+			${FILESDIR}/extra-patch-external_libwally-core_src_ccan_ccan_base64_base64.c
+EXTRA_PATCHES=	${EXTRA_PATCHES_${ARCH}}
+
 OPTIONS_DEFINE=		COMPATIBILITY DEVELOPER EXPERIMENTAL
 OPTIONS_MULTI=		STORAGE
 OPTIONS_MULTI_STORAGE=	POSTGRESQL SQLITE
