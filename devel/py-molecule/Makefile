@@ -1,5 +1,5 @@
 PORTNAME=	molecule
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.3
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>=19.3.1:devel/py-pip@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}setuptools_scm_git_archive>=1.1:devel/py-setuptools_scm_git_archive@${PY_FLAVOR} \
 	${PYTHON_PKGNAMEPREFIX}wheel>=0.33.6:devel/py-wheel@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.2.0:sysutils/py-ansible-compat@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ansible-compat>=2.2.1:sysutils/py-ansible-compat@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=8.0:devel/py-click@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click-help-colors>=0.9:devel/py-click-help-colors@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}cookiecutter>=1.7.3:devel/py-cookiecutter@${PY_FLAVOR} \
