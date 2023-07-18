@@ -223,6 +223,7 @@
     SUBDIR += chryzodus
     SUBDIR += chuffed
     SUBDIR += cimod
+    SUBDIR += clad
     SUBDIR += clasp
     SUBDIR += clblas
     SUBDIR += clblast
