@@ -20,4 +20,7 @@ post-patch:
 # Fix the build with -fno-common (for Clang 11 and GCC 10)
 	@${REINPLACE_CMD} -e '/In_Bogus_Mail_File;/d' ${WRKSRC}/xmail.c
 
+pre-install:
+	@${ELFCTL} -e +noaslr ${WRKSRC}/xmail
+
 .include <bsd.port.mk>
