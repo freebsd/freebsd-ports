@@ -18,6 +18,6 @@ GL_SITE=	https://salsa.debian.org
 GL_ACCOUNT=	iso-codes-team
 GL_COMMIT=	59767ed869f3952575f7d0f639a290a4c4b315e5
 
-BINARY_ALIAS=	python3=${PYTHON_VERSION}
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 .include <bsd.port.mk>
