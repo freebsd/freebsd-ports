@@ -17,10 +17,10 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libpo6.pc:devel/libpo6
 GNU_CONFIGURE=	yes
 
 USES=		autoreconf gmake libtool pathfix pkgconfig
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
-USE_LDCONFIG=	yes
-
 GH_ACCOUNT=	rescrv
 GH_PROJECT=	e
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
