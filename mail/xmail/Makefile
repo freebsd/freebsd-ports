@@ -14,7 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 USES=		imake xorg
 USE_XORG=	ice sm x11 xaw xbitmaps xext xmu xpm xt
 
-CFLAGS+=	-Wno-incompatible-function-pointer-types
+CFLAGS+=	-Wno-incompatible-function-pointer-types -lutil
 
 post-patch:
 # Fix the build with -fno-common (for Clang 11 and GCC 10)

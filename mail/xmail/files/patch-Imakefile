@@ -1,5 +1,5 @@
---- Imakefile.orig	Mon Jan 30 22:41:47 1995
-+++ Imakefile	Wed Oct 15 09:52:37 2003
+--- Imakefile.orig	1995-01-30 13:41:47.000000000 -0800
++++ Imakefile	2023-07-18 07:06:05.053673000 -0700
 @@ -1,63 +1,62 @@
 -/* */#
 -/* */# @(#)Imakefile - for xmail version 1 patchlevel 5
@@ -103,7 +103,7 @@
  
          DEPLIBS = $(DEPXAWLIB) $(DEPXMULIB) $(DEPXTOOLLIB) $(DEPXLIB)
 -LOCAL_LIBRARIES = $(LIBXPM) $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) $(COMPFACE) $(LPT)
-+LOCAL_LIBRARIES = $(LIBXPM) $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) $(COMPFACE) $(LPT) -lcompat
++LOCAL_LIBRARIES = $(LIBXPM) $(XAWLIB) $(XMULIB) $(XTOOLLIB) $(XLIB) $(COMPFACE) $(LPT) -lcompat -lutil
  
             SRCS = Mailwatch.c HelpText.c actions.c callMail.c callbacks.c \
  		  confirm.c directory.c environs.c handler.c mail.c parser.c \
