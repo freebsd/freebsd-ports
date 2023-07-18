@@ -1,3 +1,30 @@
+  <vuln vid="c70c3dc3-258c-11ee-b37b-901b0e9408dc">
+    <topic>element-web -- Cross site scripting in Export Chat feature</topic>
+    <affects>
+      <package>
+	<name>element-web</name>
+	<range><lt>1.11.36</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matrix Developers reports:</p>
+	<blockquote cite="https://github.com/matrix-org/matrix-react-sdk/security/advisories/GHSA-c9vx-2g7w-rp65">
+	  <p>The Export Chat feature includes certain attacker-controlled elements in the
+	  generated document without sufficient escaping, leading to stored XSS.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-37259</cvename>
+      <url>https://nvd.nist.gov/vuln/detail/CVE-2023-37259</url>
+    </references>
+    <dates>
+      <discovery>2023-07-18</discovery>
+      <entry>2023-07-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b3f77aae-241c-11ee-9684-c11c23f7b0f9">
     <topic>gitea -- multiple issues</topic>
     <affects>
