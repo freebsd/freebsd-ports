@@ -1,5 +1,6 @@
 PORTNAME=	capstone
 PORTVERSION=	3.0.5
+PORTREVISION=	1
 CATEGORIES=	devel
 PKGNAMESUFFIX=	3
 
@@ -9,6 +10,9 @@ WWW=		http://capstone-engine.org/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.TXT
+
+DEPRECATED=	Use more recent upstream version from devel/capstone
+EXPIRATION_DATE=	2023-09-30
 
 USES=		cpe gmake
 CPE_VENDOR=	${PORTNAME}-engine
