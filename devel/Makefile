@@ -1718,6 +1718,7 @@
     SUBDIR += ossp-val
     SUBDIR += ossp-var
     SUBDIR += ossp-xds
+    SUBDIR += outcome
     SUBDIR += p4
     SUBDIR += p4.el
     SUBDIR += p4api
