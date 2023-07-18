@@ -1,5 +1,6 @@
 PORTNAME=	ktp-accounts-kcm
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
+PORTREVISION=	1
 CATEGORIES=	net-im kde kde-applications
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,6 +9,9 @@ WWW=		https://community.kde.org/KTp
 
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	Will not be part of KDE Gear 23.08 in August
+EXPIRATION_DATE=	2023-09-30
 
 LIB_DEPENDS=	libaccounts-qt5.so:net-im/libaccounts-qt5 \
 		libkaccounts.so:net-im/kaccounts-integration \

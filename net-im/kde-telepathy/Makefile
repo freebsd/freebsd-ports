@@ -1,11 +1,14 @@
 PORTNAME=	kde-telepathy
 DISTVERSION=	${KDE_APPLICATIONS_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im kde
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE integrated instant messaging framework
 WWW=		https://community.kde.org/KTp
+
+DEPRECATED=	Will not be part of KDE Gear 23.08 in August
+EXPIRATION_DATE=	2023-09-30
 
 RUN_DEPENDS=	ktp-accounts-kcm>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-accounts-kcm \
 		ktp-approver>=${KDE_APPLICATIONS_VERSION}:net-im/ktp-approver \
