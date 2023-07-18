@@ -1,0 +1,9 @@
+npTDMS is a cross-platform Python package for reading and writing TDMS files
+as produced by LabVIEW, and is built on top of the numpy package. Data is read
+from TDMS files as numpy arrays, and npTDMS also allows writing numpy arrays
+to TDMS files.
+
+TDMS files are structured in a hierarchy of groups and channels. A TDMS file can
+contain multiple groups, which may each contain multiple channels. A file, group
+and channel may all have properties associated with them, but only channels have
+array data.
