@@ -222,10 +222,13 @@ man/man1/sigviewer.1.gz
 %%DATADIR%%/matlab/t330_StimFit/simul001.m
 %%DATADIR%%/matlab/t330_StimFit/simul002.m
 %%DATADIR%%/matlab/t340_MachineLearningOptimalDetection/README.md
+%%DATADIR%%/matlab/t340_MachineLearningOptimalDetection/apply_general_classifier.m
 %%DATADIR%%/matlab/t340_MachineLearningOptimalDetection/demo_mod.m
 %%DATADIR%%/matlab/t340_MachineLearningOptimalDetection/demo_modx.m
+%%DATADIR%%/matlab/t340_MachineLearningOptimalDetection/demo_mody.m
 %%DATADIR%%/matlab/t340_MachineLearningOptimalDetection/minidet2gdf.m
 %%DATADIR%%/matlab/t340_MachineLearningOptimalDetection/mod_optimal_detection_filter.m
+%%DATADIR%%/matlab/t340_MachineLearningOptimalDetection/sload4mod.m
 %%DATADIR%%/matlab/t400_Classification/Contents.m
 %%DATADIR%%/matlab/t400_Classification/classify.m
 %%DATADIR%%/matlab/t400_Classification/covm.m
