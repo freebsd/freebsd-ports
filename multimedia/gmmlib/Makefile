@@ -8,6 +8,7 @@ PATCHFILES+=	f17dd87c7f57.patch:-p1 # https://github.com/intel/gmmlib/pull/67
 PATCHFILES+=	4356a33c787c.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	a75809957583.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	978f7d56f88a.patch:-p1 # https://github.com/intel/gmmlib/pull/68
+PATCHFILES+=	8ebe65625f71.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	072810163a05.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	ab150305017a.patch:-p1 # https://github.com/intel/gmmlib/pull/68
 PATCHFILES+=	0d45ab8163e7.patch:-p1 # https://github.com/intel/gmmlib/pull/68
