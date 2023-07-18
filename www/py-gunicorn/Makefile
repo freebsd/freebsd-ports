@@ -1,6 +1,5 @@
 PORTNAME=	gunicorn
-PORTVERSION=	20.1.0
-PORTREVISION=	1
+PORTVERSION=	21.0.1
 CATEGORIES=	www python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MASTER_SITES=	PYPI
@@ -12,14 +11,10 @@ WWW=		https://gunicorn.org/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-PATCH_SITES=	https://github.com/benoitc/${PORTNAME}/commit/
-PATCHFILES=	1299ea9e967a61ae2edebe191082fd169b864c64.patch:-p1
-
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiohttp>0:www/py-aiohttp@${PY_FLAVOR}
 
 USES=		cpe python
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent distutils pytest
 
 NO_ARCH=	yes
 
@@ -34,11 +29,8 @@ PROCTITLE_DESC=	Custom process titles with setproctitle(3)
 TORNADO_DESC=	Tornado async worker
 
 EVENTLET_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}eventlet>=0.24.1:net/py-eventlet@${PY_FLAVOR}
-GEVENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>1.4.0:devel/py-gevent@${PY_FLAVOR}
+GEVENT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gevent>=1.4.0:devel/py-gevent@${PY_FLAVOR}
 PROCTITLE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setproctitle>0:devel/py-setproctitle@${PY_FLAVOR}
 TORNADO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}tornado>=0.2:www/py-tornado@${PY_FLAVOR}
-
-do-test:
-	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYDISTUTILS_SETUP} test
 
 .include <bsd.port.mk>
