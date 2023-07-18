@@ -293,6 +293,7 @@
     SUBDIR += blame
     SUBDIR += blitz
     SUBDIR += bloaty
+    SUBDIR += bloomberg-bde
     SUBDIR += blueprint-compiler
     SUBDIR += bmake
     SUBDIR += bmkdep
