@@ -1,7 +1,6 @@
 PORTNAME=	jql
 DISTVERSIONPREFIX=	jql-v
-DISTVERSION=	7.0.1
-PORTREVISION=	1
+DISTVERSION=	7.0.2
 CATEGORIES=	textproc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -24,7 +23,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.1 \
-		anyhow-1.0.71 \
+		anyhow-1.0.72 \
 		autocfg-1.1.0 \
 		backtrace-0.3.68 \
 		bitflags-2.3.3 \
@@ -36,9 +35,9 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		ciborium-0.2.1 \
 		ciborium-io-0.2.1 \
 		ciborium-ll-0.2.1 \
-		clap-4.3.11 \
-		clap_builder-4.3.11 \
-		clap_derive-4.3.2 \
+		clap-4.3.16 \
+		clap_builder-4.3.16 \
+		clap_derive-4.3.12 \
 		clap_lex-0.5.0 \
 		colorchoice-1.0.0 \
 		colored_json-3.2.0 \
@@ -94,7 +93,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		serde-1.0.171 \
 		serde_derive-1.0.171 \
 		serde_json-1.0.102 \
-		serde_stacker-0.1.9 \
+		serde_stacker-0.1.10 \
 		stacker-0.1.15 \
 		strsim-0.10.0 \
 		syn-2.0.25 \
