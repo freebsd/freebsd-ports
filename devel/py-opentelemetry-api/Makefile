@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}deprecated>=1.2.6:devel/py-deprecated@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-metadata>=6.0.0<7:devel/py-importlib-metadata@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=16.0:devel/py-setuptools@${PY_FLAVOR}
+		${PY_SETUPTOOLS}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent pep517

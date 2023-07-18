@@ -12,7 +12,7 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/gpl-2.0.txt
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cffi>=1.10.0:devel/py-cffi@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=61:devel/py-setuptools@${PY_FLAVOR} \
+		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 LIB_DEPENDS=	libR.so:math/R \
 		libicui18n.so:devel/icu \

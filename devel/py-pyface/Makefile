@@ -15,7 +15,7 @@ LICENSE_FILE_LGPL21=	${WRKSRC}/image_LICENSE_Nuvola.txt
 LICENSE_FILE_LGPL3=	${WRKSRC}/image_LICENSE_OOo.txt
 #See file ${WRKSRC}/image_LICENSE.txt for files with non BSD3CLAUSE licenses
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}importlib-metadata>=3.6.0:devel/py-importlib-metadata@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}importlib-resources>=1.1.0:devel/py-importlib-resources@${PY_FLAVOR} \

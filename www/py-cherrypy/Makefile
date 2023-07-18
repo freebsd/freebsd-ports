@@ -30,7 +30,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}codecov>=2.1.13:devel/py-codecov@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pytest-sugar>=0.9.7:devel/py-pytest-sugar@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}python-memcached>=1.59:databases/py-python-memcached@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests-toolbelt>0:www/py-requests-toolbelt@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+		${PY_SETUPTOOLS}
 
 USES=		cpe python
 USE_PYTHON=	autoplist concurrent distutils pytest

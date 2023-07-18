@@ -11,7 +11,7 @@ WWW=		https://www.lesbonscomptes.com/recoll/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 LIB_DEPENDS=	libxapian.so:databases/xapian-core
 RUN_DEPENDS=	antiword:textproc/antiword \
 		catdoc:textproc/catdoc \

@@ -62,7 +62,7 @@ PERL_PORTEXAMPLES=		4charts.pl bigtops.pl minmax.pl perftest.pl \
 				piped-demo.pl rrdcached/rrdcached-size.pl \
 				rrdcached/RRDCached.pm shared-demo.pl \
 				stripes.pl
-PYTHON_BUILD_DEPENDS=		${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR}
+PYTHON_BUILD_DEPENDS=		${PY_SETUPTOOLS}
 PYTHON_USES=			python
 PYTHON_USE=			PYTHON=flavors,optsuffix
 PYTHON_CONFIGURE_ENABLE=	python

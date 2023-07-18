@@ -12,7 +12,7 @@ WWW=		https://github.com/sarugaku/resolvelib
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=36.2.2:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0.28.0:devel/py-wheel@${PY_FLAVOR}
 
 USES=		python

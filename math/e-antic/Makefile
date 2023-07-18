@@ -11,7 +11,7 @@ WWW=		https://github.com/flatsurf/e-antic
 LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	dual
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+BUILD_DEPENDS=	${PY_SETUPTOOLS}
 LIB_DEPENDS=	libarb.so:math/arb		\
 		libgmp.so:math/gmp		\
 		libmpfr.so:math/mpfr		\

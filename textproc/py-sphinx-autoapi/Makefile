@@ -11,7 +11,7 @@ WWW=		https://sphinx-autoapi.readthedocs.io/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.rst
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>46.4:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}anyascii>0:textproc/py-anyascii@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}astroid>=2.7:devel/py-astroid@${PY_FLAVOR} \

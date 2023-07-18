@@ -16,7 +16,7 @@ BUILD_DEPENDS=	c-blosc2>=2.10.0:archivers/c-blosc2 \
 		ninja:devel/ninja \
 		${PYTHON_PKGNAMEPREFIX}numpy>=0,1:math/py-numpy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scikit-build>=0:devel/py-scikit-build@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=0:devel/py-setuptools@${PY_FLAVOR}
+		${PY_SETUPTOOLS}
 LIB_DEPENDS=	libblosc2.so:archivers/c-blosc2
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}msgpack>=0:devel/py-msgpack@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ndindex>=1.4:math/py-ndindex@${PY_FLAVOR} \

@@ -103,8 +103,8 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen \
 
 .  if ${SLAVEPORT} == "python"
 BUILD_DEPENDS+=	swig:devel/swig \
-		${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+		${PY_SETUPTOOLS}
+RUN_DEPENDS+=	${PY_SETUPTOOLS}
 USES+=		python
 USE_PYTHON=	flavors
 CONFIGURE_ARGS+=--enable-languages="python"

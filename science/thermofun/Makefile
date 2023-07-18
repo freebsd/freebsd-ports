@@ -35,7 +35,7 @@ PYTHON_USE=		PYTHON=pytest
 PYTHON_CMAKE_BOOL=	TFUN_BUILD_PYTHON
 PYTHON_CMAKE_ON=	-DFREEBSD_STAGEDIR=${STAGEDIR} -DFREEBSD_PREFIX=${PREFIX}
 PYTHON_BUILD_DEPENDS=	pybind11>0:devel/pybind11 \
-			${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR}
+			${PY_SETUPTOOLS}
 
 post-install-PYTHON-on:
 	# remove wrong *.pyc, see related bug https://bitbucket.org/gems4/chemicalfun/issues/1/please-support-stagedir

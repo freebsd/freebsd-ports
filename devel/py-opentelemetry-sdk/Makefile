@@ -15,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}opentelemetry-api>=${PORTVERSION}<${PORTVERSION}_99:devel/py-opentelemetry-api@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}opentelemetry-semantic-conventions>=0.39b0<0.39b0_99:devel/py-opentelemetry-semantic-conventions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=16.0:devel/py-setuptools@${PY_FLAVOR} \
+		${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.7.4:devel/py-typing-extensions@${PY_FLAVOR}
 
 USES=		python

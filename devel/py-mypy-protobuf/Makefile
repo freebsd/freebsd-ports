@@ -11,7 +11,7 @@ WWW=		https://github.com/nipunn1313/mypy-protobuf
 
 LICENSE=	APACHE20
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=42:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>=0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	protobuf>=3.21.8,1:devel/protobuf \
 		${PYTHON_PKGNAMEPREFIX}protobuf>=4.21.8,1:devel/py-protobuf@${PY_FLAVOR} \

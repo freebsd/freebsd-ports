@@ -11,7 +11,7 @@ WWW=		https://github.com/kxepal/setuptools-pkg
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=18.2:devel/py-setuptools@${PY_FLAVOR}
+RUN_DEPENDS=	${PY_SETUPTOOLS}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=2.0.0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 

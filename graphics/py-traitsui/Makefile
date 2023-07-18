@@ -15,7 +15,7 @@ LICENSE_FILE_EPL=	${WRKSRC}/image_LICENSE_Eclipse.txt
 LICENSE_FILE_LGPL21=	${WRKSRC}/image_LICENSE_Nuvola.txt
 # See ${WRKSRC}/image_LICENSE.txt for per file license information
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyface>=8.0.0:devel/py-pyface@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}traits>=6.2.0:devel/py-traits@${PY_FLAVOR}

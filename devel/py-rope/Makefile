@@ -12,7 +12,7 @@ WWW=		https://github.com/python-rope/rope
 LICENSE=	LGPL3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=63.1.0:devel/py-setuptools@${PY_FLAVOR} \
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
 		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytoolconfig>=0:devel/py-pytoolconfig@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sphinx>=4.5.0:textproc/py-sphinx@${PY_FLAVOR} \
