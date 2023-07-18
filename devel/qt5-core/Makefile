@@ -12,10 +12,20 @@ LIB_DEPENDS=	libdouble-conversion.so:devel/double-conversion \
 		libpcre2-posix.so:devel/pcre2 \
 		libzstd.so:archivers/zstd
 
-USES=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base
+USES=		compiler:c++11-lang perl5 qmake:no_env qt-dist:5,base shebangfix
+SHEBANG_FILES=	bin/fixqt4headers.pl \
+		bin/syncqt.pl \
+		config_help.txt \
+		mkspecs/features/data/unix/findclasslist.pl \
+		mkspecs/features/qt_functions.prf \
+		src/3rdparty/harfbuzz-ng/src/hb-blob.cc \
+		src/corelib/mimetypes/mime/generate.pl \
+		src/corelib/mimetypes/mime/packages/freedesktop.org.xml \
+		util/includemocs/includemocs.pl \
+		util/x86simdgen/generate.pl
 
 USE_GNOME=	glib20
-USE_PERL5=	extract
+USE_PERL5=	extract pkg64
 USE_QT=		qmake:build buildtools:build
 HAS_CONFIGURE=	yes
 # Disable (almost) everything to install minimal qconfig.h.
