@@ -1,0 +1,25 @@
+From ae6056615db2fa943551acdcadfd54bfebe3c114 Mon Sep 17 00:00:00 2001
+From: Tobias Fella <fella@posteo.de>
+Date: Thu, 18 May 2023 00:03:07 +0200
+Subject: [PATCH] Add missing capture
+
+---
+ src/controller.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/controller.cpp b/src/controller.cpp
+index 3d1c3ffd4..dd38ede9b 100644
+--- src/controller.cpp
++++ src/controller.cpp
+@@ -116,7 +116,7 @@ Controller::Controller(QObject *parent)
+     connect(&AccountRegistry::instance(), &AccountRegistry::accountCountChanged, this, [this]() {
+         if (AccountRegistry::instance().size() > oldAccountCount) {
+             auto connection = AccountRegistry::instance().accounts()[AccountRegistry::instance().size() - 1];
+-            connect(connection, &Connection::syncDone, this, [this]() {
++            connect(connection, &Connection::syncDone, this, [this, connection]() {
+                 handleNotifications(connection);
+             });
+         }
+-- 
+GitLab
+
