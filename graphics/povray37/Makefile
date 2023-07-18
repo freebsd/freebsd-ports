@@ -97,6 +97,10 @@ post-patch:
 	${REINPLACE_CMD} -e 's|@@EXAMPLESDIR@@|${EXAMPLESDIR}|' \
 		-e 's|@@ETCDIR@@|${ETCDIR}|' \
 		${WRKSRC}/unix/povray.conf
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|auto_ptr|unique_ptr|' \
+		${WRKSRC}/source/backend/render/trace.cpp
+.endif
 
 pre-configure:
 	cd ${WRKSRC}/unix && ./prebuild.sh
