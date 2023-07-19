@@ -11,6 +11,9 @@ WWW=		https://sourceforge.net/projects/pserv/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+DEPRECATED=	Abandonware, last release in 2005. Consider migrating to www/apache24 , www/lighttpd or www/nginx
+EXPIRATION_DATE=2023-09-30
+
 GNU_CONFIGURE=	yes
 
 CONFLICTS=	popular
