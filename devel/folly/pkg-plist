@@ -176,6 +176,7 @@ include/folly/detail/IPAddressSource.h
 include/folly/detail/Iterators.h
 include/folly/detail/MPMCPipelineDetail.h
 include/folly/detail/MemoryIdler.h
+include/folly/detail/PerfScoped.h
 include/folly/detail/PolyDetail.h
 include/folly/detail/RangeCommon.h
 include/folly/detail/RangeSse42.h
