@@ -1,6 +1,6 @@
 PORTNAME=	naev
 PORTVERSION=	0.10.6
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/naev/naev/releases/download/v${PORTVERSION}/
@@ -35,10 +35,12 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
 USES=		desktop-file-utils gettext gl gnome luajit:luajit-openresty \
-		meson openal pkgconfig python sdl tar:xz
+		meson openal pkgconfig python sdl shebangfix tar:xz
 USE_GL=		gl glu
 USE_GNOME=	intltool libxml2
 USE_SDL=	sdl2 image2
+SHEBANG_LANG=	python
+SHEBANG_GLOB=	*.py
 
 # work around meson not looking for headers/libs in /usr/local
 CFLAGS+=	-I${LOCALBASE}/include
