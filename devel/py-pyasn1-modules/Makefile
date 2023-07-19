@@ -1,22 +1,25 @@
 PORTNAME=	pyasn1-modules
-DISTVERSION=	0.2.8
+DISTVERSION=	0.3.0
+DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	rm@FreeBSD.org
 COMMENT=	Collection of ASN.1 data structures for py-pyasn1
-WWW=		https://github.com/etingof/pyasn1-modules
+WWW=		https://github.com/pyasn1/pyasn1-modules
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}wheel>0:devel/py-wheel@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyasn1>=0.4.1:devel/py-pyasn1@${PY_FLAVOR}
 
 NO_ARCH=	yes
 USES=		python shebangfix
 SHEBANG_FILES=	tools/*.py
-USE_PYTHON=	autoplist concurrent distutils
+USE_PYTHON=	autoplist concurrent pep517
 
 OPTIONS_DEFINE=	DOCS
 
