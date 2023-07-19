@@ -3,6 +3,9 @@ bin/fluent-bit
 @sample %%ETCDIR%%/parsers.conf.sample
 %%ETCDIR%%/plugins.conf
 include/fluent-bit.h
+include/fluent-bit/config_format/flb_cf.h
+include/fluent-bit/config_format/flb_cf_fluentbit.h
+include/fluent-bit/config_format/flb_cf_yaml.h
 include/fluent-bit/flb_api.h
 include/fluent-bit/flb_avro.h
 include/fluent-bit/flb_aws_credentials.h
