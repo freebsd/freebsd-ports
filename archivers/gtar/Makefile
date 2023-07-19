@@ -1,6 +1,5 @@
 PORTNAME=	tar
-PORTVERSION=	1.34
-PORTREVISION=	1
+DISTVERSION=	1.35
 CATEGORIES=	archivers sysutils
 MASTER_SITES=	GNU
 PKGNAMEPREFIX=	g
@@ -22,8 +21,9 @@ CONFIGURE_ENV=	DEFAULT_RMT_COMMAND=/etc/rmt
 # supply result to skip a test that will abort configure if run as root
 CONFIGURE_ENV+=	gl_cv_func_mknod_works=yes
 
-TEST_DEPENDS=	autom4te:devel/autoconf
-TEST_TARGET=	check
+# 1.35 has too many problems in the testsuite:
+# missing .at source files, bashisms, brittle xz tests
+#TEST_TARGET=	check
 
 OPTIONS_DEFINE=	NLS STATIC
 OPTIONS_SUB=	yes
