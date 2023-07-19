@@ -12,28 +12,28 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=	${WRKSRC}/LICENSE
 LICENSE_FILE_GPLv2=	${WRKSRC}/LICENSE
 
-USES=		autoreconf libtool gmake pkgconfig
-
-OPTIONS_DEFINE=	FWMANAGER ADAB STATIC
-OPTIONS_SUB=	yes
-
-.if defined(LITE)
-OPTIONS_SLAVE=	FWMANAGER ADAB STATIC
-.endif
-
-FWMANAGER_DESC=	Build with mstfwmanager and mstarchive
-ADAB_DESC=	Build with mstreg and mstlink
-STATIC_DESC=	Static binary (disable curl support)
-STATIC_CONFIGURE_ON=	--enable-all-static --disable-dc \
-			--disable-openssl --disable-inband
-
-LDFLAGS+=	-L${LOCALBASE}/lib
-CPPFLAGS+=	-I${LOCALBASE}/include
+USES=		autoreconf gmake libtool localbase:ldflags pkgconfig
+USE_CXXSTD=	c++14
+USE_GITHUB=	yes
+GH_ACCOUNT=	Mellanox
 
 GNU_CONFIGURE=	yes
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	Mellanox
+OPTIONS_DEFINE=	FWMANAGER ADAB STATIC
+.if defined(LITE)
+OPTIONS_SLAVE=	FWMANAGER ADAB STATIC
+.endif
+OPTIONS_SUB=	yes
+
+ADAB_DESC=	Build with mstreg and mstlink
+FWMANAGER_DESC=	Build with mstfwmanager and mstarchive
+STATIC_DESC=	Static binary (disable curl support)
+
+ADAB_CONFIGURE_ON=	--enable-adb-generic-tools
+FWMANAGER_CONFIGURE_ON=	--enable-fw-mgr
+STATIC_USES_OFF=	ssl
+STATIC_CONFIGURE_ON=	--enable-all-static --disable-dc \
+			--disable-openssl --disable-inband
 
 .include <bsd.port.options.mk>
 
@@ -41,13 +41,7 @@ pre-patch:
 	@${ECHO} '#define TOOLS_GIT_SHA "N/A"' >  ${WRKSRC}/common/gitversion.h
 	@${MKDIR} ${WRKSRC}/config
 
-.if ${PORT_OPTIONS:MSTATIC}
-.else
-USES+=	ssl
-.endif
-
 .if ${PORT_OPTIONS:MADAB}
-CONFIGURE_ARGS+=	--enable-adb-generic-tools
 .if ${PORT_OPTIONS:MSTATIC}
 BROKEN=		does not link: expat2 no longer provides static library by default
 BUILD_DEPENDS+=	xmlwf:textproc/expat2 \
@@ -59,7 +53,6 @@ LIB_DEPENDS+=	libexpat.so:textproc/expat2 \
 .endif
 
 .if ${PORT_OPTIONS:MFWMANAGER}
-CONFIGURE_ARGS+=	--enable-fw-mgr
 .if ${PORT_OPTIONS:MSTATIC}
 BUILD_DEPENDS+=	xmllint:textproc/libxml2 \
 		${LOCALBASE}/include/boost/algorithm/string/detail/formatter_regex.hpp:devel/boost-libs
