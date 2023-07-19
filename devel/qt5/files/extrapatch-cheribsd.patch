@@ -216,10 +216,10 @@ index 7777e615bd..b57005dee5 100644
              error("Operating system not supported.")
          }
 diff --git mkspecs/features/qt_module.prf mkspecs/features/qt_module.prf
-index 7e9903d663..83c9d574f4 100644
+index a9c3572676..407c9159c1 100644
 --- mkspecs/features/qt_module.prf
 +++ mkspecs/features/qt_module.prf
-@@ -251,7 +251,7 @@
+@@ -250,7 +250,7 @@ android: CONFIG += qt_android_deps no_linker_version_script
          verscriptprocess.CONFIG += no_link target_predeps
          verscriptprocess.depends = $$private_api_headers
          verscriptprocess.output = $$verscript
@@ -227,7 +227,7 @@ index 7e9903d663..83c9d574f4 100644
 +        verscriptprocess.commands = /usr/local64/bin/perl $${PWD}/data/unix/findclasslist.pl < ${QMAKE_FILE_IN} > $@
          silent:verscriptprocess.commands = @echo creating linker version script ${QMAKE_FILE_BASE} && $$verscriptprocess.commands
          QMAKE_EXTRA_COMPILERS += verscriptprocess
-
+ 
 diff --git mkspecs/features/testcase.prf mkspecs/features/testcase.prf
 index 7e9903d663..83c9d574f4 100644
 --- mkspecs/features/testcase.prf
