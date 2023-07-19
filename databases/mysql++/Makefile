@@ -10,6 +10,7 @@ WWW=		https://tangentsoft.com/mysqlpp
 LICENSE=	LGPL21
 
 USES=		gmake mysql
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
