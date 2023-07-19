@@ -1,6 +1,5 @@
 PORTNAME=	semantik
-DISTVERSION=	1.2.8
-PORTREVISION=	1
+DISTVERSION=	1.2.10
 CATEGORIES=	deskutils kde
 MASTER_SITES=	https://waf.io/
 
@@ -11,8 +10,8 @@ WWW=		https://waf.io/semantik.html
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		kde:5 pkgconfig python qt:5 shebangfix tar:bzip2 waf \
-		desktop-file-utils gettext shared-mime-info
+USES=		desktop-file-utils gettext kde:5 pkgconfig python qt:5 \
+		shared-mime-info shebangfix tar:bzip2 waf
 USE_KDE=	auth config configwidgets coreaddons i18n iconthemes \
 		kdelibs4support kio sonnet widgetsaddons xmlgui
 USE_LDCONFIG=	yes
@@ -31,46 +30,14 @@ SHEBANG_FILES=	src/templates/beamer/wscript \
 		waf \
 		wscript
 
-CONFIGURE_ENV=	PATH="${KDE_PREFIX}/bin:$$PATH" \
-		WAF_HOME="${WRKSRC}"
-MAKE_ENV=	DESTDIR="${STAGEDIR}"
-CFLAGS+=	-I${LOCALBASE}/include
-CPPFLAGS+=	-I${LOCALBASE}/include
-# Help WAF a bit more by simply adding the locations to the KF5
-# headers ourselves...
-CXXFLAGS+=	-I${LOCALBASE}/include/KF5/KAuthCore \
-		-I${LOCALBASE}/include/KF5/KConfigCore \
-		-I${LOCALBASE}/include/KF5/KConfigGui \
-		-I${LOCALBASE}/include/KF5/KConfigWidgets \
-		-I${LOCALBASE}/include/KF5/KCoreAddons \
-		-I${LOCALBASE}/include/KF5/KDELibs4Support \
-		-I${LOCALBASE}/include/KF5/KI18n \
-		-I${LOCALBASE}/include/KF5/KIOCore \
-		-I${LOCALBASE}/include/KF5/KIOWidgets \
-		-I${LOCALBASE}/include/KF5/KWidgetsAddons \
-		-I${LOCALBASE}/include/KF5/KXmlGui \
-		-I${LOCALBASE}/include/KF5/SonnetUi \
-
+# Let the ports system handle gtk-update-icon-cache and shared-mime-info
+MAKE_ARGS=	--nogtkicons \
+		--nomimes
 
 PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 OPTIONS_DEFINE=	NLS
 OPTIONS_SUB=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's+@@LOCALBASE@@+${LOCALBASE}+' \
-		${WRKSRC}/wscript
-
-post-patch-NLS-off:
-	@${REINPLACE_CMD} -e '/langs/ d' \
-		${WRKSRC}/wscript
-
-post-configure:
-	# Waf injects some bizzarre 3- and 4-level ../ stacks into the include
-	# paths, which don't match how KDE includes are organized, and in a
-	# poudriere build don't necessarily reach /usr/local/include either.
-	@${REINPLACE_CMD} -e "s+..PWD............/include+${LOCALBASE}/include+g" \
-		${WRKSRC}/build/c4che/_cache.py
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/${PORTNAME} \
