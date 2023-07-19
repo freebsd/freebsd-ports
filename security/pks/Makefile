@@ -23,13 +23,19 @@ CONFIGURE_ARGS=	--datadir=${DATADIR} \
 		--with-db --with-ipv6 --with-libwrap \
 		--with-openssl=${OPENSSLBASE}
 CONFIGURE_ENV=	DBLIB="-L${BDB_LIB_DIR} -l${BDB_LIB_NAME}" \
-		DBINC=-I${BDB_INCLUDE_DIR} DBHDR=db.h
+		DBINC=-I${BDB_INCLUDE_DIR} DBHDR=db.h cflags="${CFLAGS}"
 
 SUB_FILES=	pkg-message
 SUB_LIST=	PORTNAME="${PORTNAME}"
 
 OPTIONS_DEFINE=	DOCS
 PORTDOCS=	pks_help.* README EMAIL
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-extract:
 	@${CP} -a ${FILESDIR}/EMAIL ${WRKSRC}
