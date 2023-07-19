@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2023-02-17 22:57:22.561039000 +0100
-+++ CMakeLists.txt	2023-02-17 22:57:22.566611000 +0100
-@@ -48,3 +48,5 @@
+--- CMakeLists.txt.orig	2023-07-18 11:39:33 UTC
++++ CMakeLists.txt
+@@ -48,3 +48,5 @@ set(CMAKE_MODULE_PATH
  #
  include(G4CMakeMain)
  
