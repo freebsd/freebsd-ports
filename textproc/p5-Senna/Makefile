@@ -15,9 +15,14 @@ LICENSE=	LGPL21
 BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	senna-cfg:textproc/senna
 
-USES=		perl5
+USES=		perl5 localbase
 USE_PERL5=	modbuild
 CONFIGURE_ARGS+=</dev/null
-CFLAGS+=	-I${LOCALBASE}/include
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 .include <bsd.port.mk>
