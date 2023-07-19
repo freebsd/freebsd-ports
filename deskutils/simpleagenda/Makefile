@@ -5,21 +5,25 @@ CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://coyote.octets.fr/pub/gnustep/
 DISTNAME=	SimpleAgenda-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Simple calendar and agenda application
 WWW=		http://wiki.gnustep.org/index.php/SimpleAgenda.app
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS+=	libical.so:devel/libical \
 		libuuid.so:misc/e2fsprogs-libuuid
 
-LICENSE=	GPLv2
-
-USES=		gnustep
+USES=		gnustep localbase
 USE_GNUSTEP=	back build
+
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-CFLAGS+=	-I${LOCALBASE}/include
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|SimpleAgenda|SimpleAgenda.m|' ${WRKSRC}/configure
