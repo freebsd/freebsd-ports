@@ -10,6 +10,9 @@ WWW=		https://repo.or.cz/w/libtar.git
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
+DEPRECATED=	Abandonware since 2013 and multiple CVEs over the years
+EXPIRATION_DATE=2023-09-30
+
 USES=		autoreconf cpe gmake libtool
 USE_LDCONFIG=	yes
 
