@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 RUN_DEPENDS=	checkpassword-pam:security/checkpassword-pam \
 		tcpserver:sysutils/ucspi-tcp
 
+USE_CXXSTD=	c++14
 USE_RC_SUBR=	bincimapd
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${ETCDIR}
