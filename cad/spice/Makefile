@@ -1,6 +1,6 @@
 PORTNAME=	spice
 PORTVERSION=	3f5.2
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	cad
 MASTER_SITES=	https://ptolemy.berkeley.edu/projects/embedded/pubs/downloads/spice/:srcs \
 		http://home.hiroshima-u.ac.jp/usdl/HiSIM2/:hisim2 \
@@ -22,8 +22,6 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 BROKEN_aarch64=	Fails to link: missing sbrk
 BROKEN_riscv64=	Fails to link: missing sbrk
-
-EXTRACT_DEPENDS=	${LOCALBASE}/bin/unzip:archivers/unzip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAKEFILE=	${FILESDIR}/Makefile
@@ -56,6 +54,10 @@ DEV_HISIM2_DESC=	HiSIM2 IGFET Model Support
 DEV_HISIM2_LICENSE=	HISIML
 
 .include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=int-conversion
+.endif
 
 # Configuration parameters.
 CC_OPT=		${CFLAGS}
@@ -91,10 +93,10 @@ post-extract-DEV_BSIM3-on:
 	    -C ${WRKSRC}/src/lib/dev/bsim3
 post-extract-DEV_BSIM4-on:
 	@${MKDIR} ${WRKSRC}/src/lib/dev/bsim4
-	${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/BSIM480_Code.zip \
+	${UNZIP_MNATIVE_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/BSIM480_Code.zip \
 	    -d ${WRKSRC}/src/lib/dev/bsim4
 post-extract-DEV_HISIM2-on:
-	${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/HiSIM_2.8.0_Release_20140605.zip \
+	${UNZIP_MNATIVE_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/HiSIM_2.8.0_Release_20140605.zip \
 	    -d ${WRKDIR}
 	${MV} ${WRKDIR}/HiSIM_2.8.0_Release_20140605/HiSIM_2.8.0_C-Code/hisim2 \
 	    ${WRKSRC}/src/lib/dev
