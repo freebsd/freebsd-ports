@@ -1,9 +1,9 @@
 PORTNAME=	hare
-PORTVERSION=	g20230205
+PORTVERSION=	g20230719
 CATEGORIES=	devel
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/
 PKGNAMESUFFIX=	-lang
-DISTNAME=	274b8b72
+DISTNAME=	0919412b
 DIST_SUBDIR=	hare
 
 MAINTAINER=	se@FreeBSD.org
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	harec:lang/harec \
 		scdoc:textproc/scdoc
 RUN_DEPENDS=	harec:lang/harec
 
-MAKE_ARGS=	ARCH=${ARCH:S/^amd64$/x86_64/}
+MAKE_ARGS=	ARCH=${ARCH:S/^amd64$/x86_64/} PREFIX=${PREFIX}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTNAME}
 
@@ -34,7 +34,7 @@ BROKEN=		pre-FreeBSD-13 assembler is not compatible with generated files
 .endif
 
 do-build:
-		${CP} ${FILESDIR}/config.mk ${WRKSRC}
+		${CP} ${WRKSRC}/config.example.mk ${WRKSRC}/config.mk
 		cd ${WRKSRC} && ${MAKE} ${MAKE_ARGS}
 
 post-stage:
