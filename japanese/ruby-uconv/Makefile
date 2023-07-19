@@ -25,6 +25,12 @@ OPTIONS_DEFINE=	DOCS
 
 PKGNAMEPREFIX:=	${PKGNAMEPREFIX}${RUBY_PKGNAMEPREFIX}
 
+post-patch:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|fdeclspec|fdeclspec -Wno-error=incompatible-function-pointer-types|g' \
+				${WRKSRC}/extconf.rb
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${RUBY_MODDOCDIR}/ja
 	${INSTALL_DATA} ${WRKSRC}/README ${STAGEDIR}${RUBY_MODDOCDIR}/
