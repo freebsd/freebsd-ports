@@ -1,6 +1,5 @@
 PORTNAME=	mvfst
-DISTVERSION=	g20230119
-PORTREVISION=	2
+DISTVERSION=	g20230718
 CATEGORIES=	net
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,12 +25,12 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libbzip2.so:misc/vxl \
 		libzstd.so:archivers/zstd
 
-USES=		cmake:testing compiler:c++17-lang cpe
+USES=		cmake:testing compiler:c++17-lang cpe ssl
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	facebookincubator
-GH_TAGNAME=	1d933fd
+GH_TAGNAME=	8ce29ec
 
 CPE_VENDOR=	facebook
 
