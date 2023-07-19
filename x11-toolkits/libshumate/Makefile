@@ -1,5 +1,5 @@
 PORTNAME=	libshumate
-DISTVERSION=	1.0.4
+DISTVERSION=	1.0.5
 CATEGORIES=	x11-toolkits geography
 MASTER_SITES=	GNOME
 
