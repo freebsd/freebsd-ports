@@ -1,5 +1,5 @@
 PORTNAME=	netxms
-PORTVERSION=	3.4.313
+PORTVERSION=	3.5.152
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/releases/${PORTVERSION:R}/
 
@@ -21,6 +21,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libmosquitto.so:net/mosquitto
 
 USES=		gmake iconv libtool localbase perl5 ssl
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
@@ -56,7 +57,7 @@ SERVER_CONFIGURE_ON=	--with-server
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CONFIGURE_OFF=	--disable-ssh
 
-SONUM=	34
+SONUM=	35
 
 .include <bsd.port.options.mk>
 
