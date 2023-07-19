@@ -1,6 +1,5 @@
 PORTNAME=	hurl
-DISTVERSION=	2.0.1
-PORTREVISION=	4
+DISTVERSION=	4.0.0
 CATEGORIES=	www
 
 MAINTAINER=	rodrigo@FreeBSD.org
@@ -10,162 +9,13 @@ WWW=		https://hurl.dev/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LIB_DEPENDS=	libcurl.so:ftp/curl
+
 USES=		cargo ssl gnome
 USE_GITHUB=	yes
 GH_ACCOUNT=	Orange-OpenSource
 USE_GNOME=	libxml2
 
-CARGO_CRATES=	adler32-1.2.0 \
-		aho-corasick-0.7.20 \
-		alloc-no-stdlib-2.0.4 \
-		alloc-stdlib-0.2.2 \
-		android_system_properties-0.1.5 \
-		atty-0.2.14 \
-		autocfg-1.1.0 \
-		base64-0.21.0 \
-		bit-set-0.5.3 \
-		bit-vec-0.6.3 \
-		bitflags-1.3.2 \
-		block-buffer-0.10.3 \
-		brotli-3.3.4 \
-		brotli-decompressor-2.3.4 \
-		bumpalo-3.12.0 \
-		byteorder-1.4.3 \
-		cc-1.0.79 \
-		cfg-if-1.0.0 \
-		chrono-0.4.23 \
-		clap-4.1.4 \
-		clap_lex-0.3.1 \
-		codespan-reporting-0.11.1 \
-		colored-2.0.0 \
-		core-foundation-sys-0.8.3 \
-		cpufeatures-0.2.5 \
-		crc32fast-1.3.2 \
-		crypto-common-0.1.6 \
-		curl-0.4.44 \
-		curl-sys-0.4.59+curl-7.86.0 \
-		cxx-1.0.88 \
-		cxx-build-1.0.88 \
-		cxxbridge-flags-1.0.88 \
-		cxxbridge-macro-1.0.88 \
-		digest-0.10.6 \
-		encoding-0.2.33 \
-		encoding-index-japanese-1.20141219.5 \
-		encoding-index-korean-1.20141219.5 \
-		encoding-index-simpchinese-1.20141219.5 \
-		encoding-index-singlebyte-1.20141219.5 \
-		encoding-index-tradchinese-1.20141219.5 \
-		encoding_index_tests-0.1.4 \
-		errno-0.2.8 \
-		errno-dragonfly-0.1.2 \
-		fastrand-1.8.0 \
-		float-cmp-0.9.0 \
-		fnv-1.0.7 \
-		form_urlencoded-1.1.0 \
-		generic-array-0.14.6 \
-		getrandom-0.2.8 \
-		glob-0.3.1 \
-		hashbrown-0.12.3 \
-		hermit-abi-0.1.19 \
-		hermit-abi-0.2.6 \
-		hex-0.4.3 \
-		hex-literal-0.3.4 \
-		iana-time-zone-0.1.53 \
-		iana-time-zone-haiku-0.1.1 \
-		idna-0.3.0 \
-		indexmap-1.9.2 \
-		instant-0.1.12 \
-		io-lifetimes-1.0.4 \
-		is-terminal-0.4.2 \
-		itoa-1.0.5 \
-		js-sys-0.3.60 \
-		lazy_static-1.4.0 \
-		libc-0.2.139 \
-		libflate-1.2.0 \
-		libflate_lz77-1.1.0 \
-		libxml-0.3.1 \
-		libz-sys-1.1.8 \
-		link-cplusplus-1.0.8 \
-		linux-raw-sys-0.1.4 \
-		log-0.4.17 \
-		md5-0.7.0 \
-		memchr-2.5.0 \
-		num-integer-0.1.45 \
-		num-traits-0.2.15 \
-		numtoa-0.1.0 \
-		once_cell-1.17.0 \
-		openssl-probe-0.1.5 \
-		openssl-sys-0.9.80 \
-		os_str_bytes-6.4.1 \
-		percent-encoding-2.2.0 \
-		peresil-0.3.0 \
-		pkg-config-0.3.26 \
-		ppv-lite86-0.2.17 \
-		proc-macro2-1.0.50 \
-		proptest-1.0.0 \
-		quick-error-1.2.3 \
-		quick-error-2.0.1 \
-		quote-1.0.23 \
-		rand-0.8.5 \
-		rand_chacha-0.3.1 \
-		rand_core-0.6.4 \
-		rand_xorshift-0.3.0 \
-		redox_syscall-0.2.16 \
-		redox_termios-0.1.2 \
-		regex-1.7.1 \
-		regex-syntax-0.6.28 \
-		remove_dir_all-0.5.3 \
-		rle-decode-fast-1.0.3 \
-		rustix-0.36.7 \
-		rusty-fork-0.3.0 \
-		ryu-1.0.12 \
-		schannel-0.1.21 \
-		scratch-1.0.3 \
-		serde-1.0.152 \
-		serde_json-1.0.91 \
-		sha2-0.10.6 \
-		socket2-0.4.7 \
-		strsim-0.10.0 \
-		sxd-document-0.3.2 \
-		syn-1.0.107 \
-		tempfile-3.3.0 \
-		termcolor-1.2.0 \
-		terminal_size-0.2.3 \
-		termion-2.0.1 \
-		tinyvec-1.6.0 \
-		tinyvec_macros-0.1.0 \
-		toml-0.5.11 \
-		typed-arena-1.7.0 \
-		typenum-1.16.0 \
-		unicode-bidi-0.3.10 \
-		unicode-ident-1.0.6 \
-		unicode-normalization-0.1.22 \
-		unicode-width-0.1.10 \
-		url-2.3.1 \
-		vcpkg-0.2.15 \
-		version_check-0.9.4 \
-		wait-timeout-0.2.0 \
-		wasi-0.11.0+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.83 \
-		wasm-bindgen-backend-0.2.83 \
-		wasm-bindgen-macro-0.2.83 \
-		wasm-bindgen-macro-support-0.2.83 \
-		wasm-bindgen-shared-0.2.83 \
-		winapi-0.3.9 \
-		winapi-i686-pc-windows-gnu-0.4.0 \
-		winapi-util-0.1.5 \
-		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.42.0 \
-		windows_aarch64_gnullvm-0.42.1 \
-		windows_aarch64_msvc-0.42.1 \
-		windows_i686_gnu-0.42.1 \
-		windows_i686_msvc-0.42.1 \
-		windows_x86_64_gnu-0.42.1 \
-		windows_x86_64_gnullvm-0.42.1 \
-		windows_x86_64_msvc-0.42.1 \
-		winres-0.1.12 \
-		xml-rs-0.8.4 \
-		xmltree-0.10.3
 CARGO_INSTALL_PATH=	packages/hurl packages/hurlfmt
 
 PLIST_FILES=	bin/hurl \
