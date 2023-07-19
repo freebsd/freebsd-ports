@@ -2,9 +2,9 @@ Try unsynchronized userptr if regular one fails.
 https://github.com/FreeBSDDesktop/kms-drm/issues/197
 https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/13162
 
---- src/gallium/drivers/crocus/crocus_bufmgr.c.orig	2021-06-30 22:34:42 UTC
+--- src/gallium/drivers/crocus/crocus_bufmgr.c.orig	2023-07-19 23:28:31 UTC
 +++ src/gallium/drivers/crocus/crocus_bufmgr.c
-@@ -493,8 +493,20 @@ crocus_bo_create_userptr(struct crocus_bufmgr *bufmgr,
+@@ -487,8 +487,20 @@ crocus_bo_create_userptr(struct crocus_bufmgr *bufmgr,
        .user_ptr = (uintptr_t)ptr,
        .user_size = size,
     };
@@ -26,11 +26,11 @@ https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/13162
     bo->gem_handle = arg.handle;
  
     /* Check the buffer for validity before we try and use it in a batch */
---- src/gallium/drivers/iris/iris_bufmgr.c.orig	2021-03-10 22:23:51 UTC
+--- src/gallium/drivers/iris/iris_bufmgr.c.orig	2023-07-19 23:28:31 UTC
 +++ src/gallium/drivers/iris/iris_bufmgr.c
-@@ -624,8 +624,20 @@ iris_bo_create_userptr(struct iris_bufmgr *bufmgr, con
-       .user_ptr = (uintptr_t)ptr,
+@@ -1314,8 +1314,20 @@ iris_bo_create_userptr(struct iris_bufmgr *bufmgr, con
        .user_size = size,
+       .flags = bufmgr->devinfo.has_userptr_probe ? I915_USERPTR_PROBE : 0,
     };
 -   if (intel_ioctl(bufmgr->fd, DRM_IOCTL_I915_GEM_USERPTR, &arg))
 +
@@ -49,12 +49,12 @@ https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/13162
 +   }
     bo->gem_handle = arg.handle;
  
-    /* Check the buffer for validity before we try and use it in a batch */
---- src/intel/vulkan/anv_gem.c.orig	2021-03-10 22:23:51 UTC
-+++ src/intel/vulkan/anv_gem.c
-@@ -146,9 +146,19 @@ anv_gem_userptr(struct anv_device *device, void *mem, 
-       .flags = 0,
-    };
+    if (!bufmgr->devinfo.has_userptr_probe) {
+--- src/intel/vulkan_hasvk/anv_gem.c.orig	2023-07-19 23:28:31 UTC
++++ src/intel/vulkan_hasvk/anv_gem.c
+@@ -150,9 +150,19 @@ anv_gem_userptr(struct anv_device *device, void *mem, 
+    if (device->physical->info.has_userptr_probe)
+       userptr.flags |= I915_USERPTR_PROBE;
  
 -   int ret = intel_ioctl(device->fd, DRM_IOCTL_I915_GEM_USERPTR, &userptr);
 -   if (ret == -1)
@@ -74,10 +74,10 @@ https://gitlab.freedesktop.org/mesa/mesa/-/merge_requests/13162
  
     return userptr.handle;
  }
---- src/intel/vulkan_hasvk/anv_gem.c.orig	2022-09-03 20:27:51 UTC
-+++ src/intel/vulkan_hasvk/anv_gem.c
-@@ -179,9 +179,19 @@ anv_gem_userptr(struct anv_device *device, void *mem, 
-    if (device->physical->has_userptr_probe)
+--- src/intel/vulkan/i915/anv_kmd_backend.c.orig	2023-07-19 23:28:31 UTC
++++ src/intel/vulkan/i915/anv_kmd_backend.c
+@@ -191,9 +191,19 @@ i915_gem_create_userptr(struct anv_device *device, voi
+    if (device->physical->info.has_userptr_probe)
        userptr.flags |= I915_USERPTR_PROBE;
  
 -   int ret = intel_ioctl(device->fd, DRM_IOCTL_I915_GEM_USERPTR, &userptr);
