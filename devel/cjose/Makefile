@@ -13,8 +13,6 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libjansson.so:devel/jansson
 
 USES=		compiler:c++11-lang libtool pathfix pkgconfig ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated RSA_ routines
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
@@ -24,10 +22,15 @@ GH_ACCOUNT=	cisco
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-jansson=${PREFIX} --with-openssl=${OPENSSLBASE}
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 CFLAGS+=	-Wno-error=strict-prototypes
 .endif
 
-.include <bsd.port.mk>
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CFLAGS+=	-Wno-error=deprecated-declarations
+.endif
+
+
+.include <bsd.port.post.mk>
