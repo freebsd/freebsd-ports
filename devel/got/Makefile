@@ -1,5 +1,5 @@
 PORTNAME=	got
-DISTVERSION=	0.90
+DISTVERSION=	0.91
 CATEGORIES=	devel
 MASTER_SITES=	https://gameoftrees.org/releases/
 
@@ -28,7 +28,8 @@ post-extract:
 #  installed got
 #  installed git
 #  ssh to 127.0.0.1
-regress:
-	@(cd ${WRKSRC}/regress && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} regress)
+### Disabled due to unportable shell constructs in 0.91
+#regress:
+#	@(cd ${WRKSRC}/regress && ${SETENV} ${MAKE_ENV} ${MAKE_CMD} regress)
 
 .include <bsd.port.mk>
