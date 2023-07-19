@@ -1,6 +1,7 @@
 PORTNAME=	open-vm-tools
 PORTVERSION=	12.2.5
 DISTVERSIONPREFIX=	stable-
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	emulators
 
@@ -13,8 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
-LIB_DEPENDS=	libdnet.so:net/libdnet \
-		libmspack.so:archivers/libmspack
+LIB_DEPENDS=	libdnet.so:net/libdnet
 
 FLAVORS=			default nox11
 default_CONFLICTS_INSTALL=	open-vm-tools-nox11
@@ -34,6 +34,7 @@ USE_RC_SUBR=	vmware-guestd vmware-kmod
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-vgauth \
 		--enable-containerinfo=no \
+		--enable-deploypkg \
 		--sysconfdir=${PREFIX}/etc \
 		--without-icu
 CONFIGURE_ENV+=	SYSDIR=${SRC_BASE}/sys
@@ -47,15 +48,18 @@ WRKSRC_SUBDIR=	open-vm-tools
 
 PORTDOCS=	*
 
-OPTIONS_DEFINE=	DOCS FUSE LIBNOTIFY OPENSSL X11
+OPTIONS_DEFINE=	DOCS DEPLOYPKG FUSE LIBNOTIFY OPENSSL X11
 OPTIONS_DEFAULT=DOCS FUSE LIBNOTIFY OPENSSL X11
 .if ${FLAVOR:U} == nox11
 OPTIONS_EXCLUDE:=	LIBNOTIFY X11
 .endif
 OPTIONS_SUB=
 
+DEPLOYPKG_DESC=		DeployPkg plugin
 LIBNOTIFY_DESC=		Desktop notification support
 
+DEPLOYPKG_LIB_DEPENDS=	libmspack.so:archivers/libmspack
+DEPLOYPKG_CONFIGURE_ENABLE=	deploypkg
 DOCS_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOCS_CONFIGURE_ENABLE=	docs
 FUSE_USES=		fuse
