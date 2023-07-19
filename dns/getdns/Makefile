@@ -49,6 +49,12 @@ STUBBY_LIB_DEPENDS=	libyaml.so:textproc/libyaml
 STUBBY_CONFIGURE_WITH=	stubby
 STUBBY_VARS=		USE_RC_SUBR="stubby"
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -Ee 's,^(sharedoc = ).*,\1${WRKDIR}/doc,' \
 		-e '/echo .\*\*\*/d' ${WRKSRC}/Makefile.in
@@ -64,4 +70,4 @@ post-stage-STUBBY-on:
 post-install-STUBBY-on:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/stubby
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
