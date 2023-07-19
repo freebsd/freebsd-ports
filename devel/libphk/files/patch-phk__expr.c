@@ -1,6 +1,6 @@
---- phk_expr.c~	2008-04-29 18:50:56.000000000 +0000
-+++ phk_expr.c	2008-09-08 09:17:19.205920000 +0000
-@@ -52,8 +52,8 @@
+--- phk_expr.c.orig	2008-04-29 18:50:56 UTC
++++ phk_expr.c
+@@ -52,8 +52,8 @@ dbg(struct e *e, const char *w)
  {
  	if (1)
  		return;
@@ -11,7 +11,7 @@
  }
  
  /*
-@@ -289,7 +289,7 @@
+@@ -289,7 +289,7 @@ phk_expr(const char *p, char **errs)
  	if (e->err != NULL) {
  		if (errs != NULL)
  			asprintf(errs, "Expression error:\n%s\n%*.*s^ %s\n",

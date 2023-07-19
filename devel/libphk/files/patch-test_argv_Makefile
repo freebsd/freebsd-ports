@@ -1,6 +1,6 @@
---- test/argv/Makefile.orig
+--- test/argv/Makefile.orig	2006-09-09 11:49:52 UTC
 +++ test/argv/Makefile
-@@ -4,7 +4,7 @@
+@@ -4,7 +4,7 @@ PROG	+=	test_argv
  CFLAGS	+=	-I${.CURDIR}/../..
  LDADD	+=	 -L../.. -lphk
  
