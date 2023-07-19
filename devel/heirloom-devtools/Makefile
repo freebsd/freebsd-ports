@@ -10,6 +10,7 @@ WWW=		https://heirloom.sourceforge.net/devtools.html
 LICENSE=	CDDL
 
 USES=		tar:bzip2
+USE_CXXSTD=	c++14
 
 ALL_TARGET=	#empty
 MAKE_ARGS+=	INSTALL="${INSTALL}" \
