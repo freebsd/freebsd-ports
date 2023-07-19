@@ -24,6 +24,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	fails to build
+BROKEN=		fails to build after dd041756883ee07e3e67e8e2704d93b59efd90e7
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		boost-libs>0:devel/boost-libs \
