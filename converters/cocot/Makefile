@@ -24,6 +24,12 @@ LDFLAGS+=	-L${ICONV_PREFIX}/lib
 DOCS_EN=	COPYING ChangeLog
 DOCS_JA=	ChangeLog.ja README.ja
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-install:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}/ja
 .for f in ${DOCS_EN}
