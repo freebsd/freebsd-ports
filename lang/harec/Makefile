@@ -1,8 +1,8 @@
 PORTNAME=	harec
-PORTVERSION=	g20230205
+PORTVERSION=	g20230719
 CATEGORIES=	lang
 MASTER_SITES=	https://git.sr.ht/~sircmpwn/${PORTNAME}/archive/
-DISTNAME=	6cc3ee5c
+DISTNAME=	f16e9792
 DIST_SUBDIR=	hare
 
 MAINTAINER=	se@FreeBSD.org
@@ -14,10 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 ONLY_FOR_ARCHS=	amd64 # aarch64 riscv64
 
-BUILD_DEPENDS=	qbe:devel/qbe \
-		as:devel/binutils
-RUN_DEPENDS=	qbe:devel/qbe \
-		as:devel/binutils
+BUILD_DEPENDS=	as:devel/binutils \
+		qbe:devel/qbe
+RUN_DEPENDS=	as:devel/binutils \
+		qbe:devel/qbe
 
 USES=		compiler:c11
 
