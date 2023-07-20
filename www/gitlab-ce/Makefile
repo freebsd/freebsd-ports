@@ -1,5 +1,7 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.1.2
+DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org
@@ -119,7 +121,7 @@ MY_DEPENDS=	git>=2.39.2:devel/git \
 	rubygem-elasticsearch-model713>=7.2<8:textproc/rubygem-elasticsearch-model713 \
 	rubygem-elasticsearch-rails>=7.2<8:textproc/rubygem-elasticsearch-rails \
 	rubygem-elasticsearch-api713>=7.13.3<7.13.4:textproc/rubygem-elasticsearch-api713 \
-	rubygem-aws-sdk-core3175>=3.175.0<3.176:devel/rubygem-aws-sdk-core3175 \
+	rubygem-aws-sdk-core>=3.175.0<4.176:devel/rubygem-aws-sdk-core \
 	rubygem-aws-sdk-cloudformation>=1<2:devel/rubygem-aws-sdk-cloudformation \
 	rubygem-aws-sdk-s31126>=1.126.0<1.127:devel/rubygem-aws-sdk-s31126 \
 	rubygem-faraday_middleware-aws-sigv403>=0.3.0<0.4:devel/rubygem-faraday_middleware-aws-sigv403 \
@@ -291,8 +293,6 @@ USE_RC_SUBR=	gitlab
 USE_GITLAB=	yes
 GL_ACCOUNT=	gitlab-org
 GL_PROJECT=	gitlab-foss
-# Find the here: https://gitlab.com/gitlab-org/gitlab-foss/-/tags
-GL_TAGNAME=	e60fc11f2d3d2a3d4fe6e1c9001e29091bd4ccd5
 
 USERS=	git
 GROUPS=	git
