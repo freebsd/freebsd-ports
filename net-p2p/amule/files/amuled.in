@@ -21,7 +21,7 @@ rcvar=amuled_enable
 load_rc_config $name
 
 : ${amuled_enable="NO"}
-: ${amuled_user:="amule"}
+: ${amuled_user:="aMule"}
 : ${amuled_config:="/home/${amuled_user}/.aMule"}
 
 pidfile="${amuled_config}/amuled.pid"
