@@ -19,7 +19,7 @@ LIB_DEPENDS=	libmaeparser.so:science/maeparser	\
 CONFLICTS_INSTALL=	babel
 
 USES=		cmake:testing compiler:c++11-lang eigen:3 gnome pkgconfig tar:bz2
-USE_CXXSTD=	gnu++98
+USE_CXXSTD=	c++11
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_GITHUB=	yes # temporary
