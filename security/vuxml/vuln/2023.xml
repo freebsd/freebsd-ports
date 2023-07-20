@@ -1,3 +1,56 @@
+  <vuln vid="2f22927f-26ea-11ee-8290-a8a1599412c6">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>115.0.5790.98</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>115.0.5790.98</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/07/stable-channel-update-for-desktop.html">
+	 <p>This update includes 20 security fixes:</p>
+	 <ul>
+	    <li>[1454086] High CVE-2023-3727: Use after free in WebRTC. Reported by Cassidy Kim(@cassidy6564) on 2023-06-12</li>
+	    <li>[1457421] High CVE-2023-3728: Use after free in WebRTC. Reported by Zhenghang Xiao (@Kipreyyy) on 2023-06-23</li>
+	    <li>[1453465] High CVE-2023-3730: Use after free in Tab Groups. Reported by @ginggilBesel on 2023-06-09</li>
+	    <li>[1450899] High CVE-2023-3732: Out of bounds memory access in Mojo. Reported by Mark Brand of Google Project Zero on 2023-06-02</li>
+	    <li>[1450203] Medium CVE-2023-3733: Inappropriate implementation in WebApp Installs. Reported by Ahmed ElMasry on 2023-05-31</li>
+	    <li>[1450376] Medium CVE-2023-3734: Inappropriate implementation in Picture In Picture. Reported by Thomas Orlita on 2023-06-01</li>
+	    <li>[1394410] Medium CVE-2023-3735: Inappropriate implementation in Web API Permission Prompts. Reported by Ahmed ElMasry on 2022-11-29</li>
+	    <li>[1434438] Medium CVE-2023-3736: Inappropriate implementation in Custom Tabs. Reported by Philipp Beer (TU Wien) on 2023-04-19</li>
+	    <li>[1446754] Medium CVE-2023-3737: Inappropriate implementation in Notifications. Reported by Narendra Bhati of Suma Soft Pvt. Ltd. Pune (India) on 2023-05-19</li>
+	    <li>[1434330] Medium CVE-2023-3738: Inappropriate implementation in Autofill. Reported by Hafiizh on 2023-04-18</li>
+	    <li>[1405223] Low CVE-2023-3740: Insufficient validation of untrusted input in Themes. Reported by Fardeen Siddiqui on 2023-01-06</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3727</cvename>
+      <cvename>CVE-2023-3728</cvename>
+      <cvename>CVE-2023-3730</cvename>
+      <cvename>CVE-2023-3732</cvename>
+      <cvename>CVE-2023-3733</cvename>
+      <cvename>CVE-2023-3734</cvename>
+      <cvename>CVE-2023-3735</cvename>
+      <cvename>CVE-2023-3736</cvename>
+      <cvename>CVE-2023-3737</cvename>
+      <cvename>CVE-2023-3738</cvename>
+      <cvename>CVE-2023-3740</cvename>
+      <url>https://chromereleases.googleblog.com/2023/07/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2023-07-19</discovery>
+      <entry>2023-07-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f32b1fbd-264d-11ee-a468-80fa5b29d485">
     <topic>virtualbox-ose -- multiple vulnerabilities</topic>
     <affects>
