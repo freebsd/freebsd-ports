@@ -17,6 +17,7 @@ WWW=		https://calligra.org/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	pstoedit:graphics/pstoedit
 LIB_DEPENDS=	libImath.so:math/Imath \
 		libKPropertyCore3.so:x11-toolkits/kproperty \
 		libKReport3.so:textproc/kreport \
@@ -37,13 +38,12 @@ LIB_DEPENDS=	libImath.so:math/Imath \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwpg-0.3.so:graphics/libwpg03 \
 		libwps-0.4.so:textproc/libwps
-
-BUILD_DEPENDS=	pstoedit:graphics/pstoedit
 RUN_DEPENDS=	pstoedit:graphics/pstoedit
 
 USES=		cmake cpe compiler:c++17-lang desktop-file-utils eigen:3 \
 		gettext iconv:translit jpeg kde:5 localbase:ldflags perl5 \
 		pkgconfig qca qt:5 shared-mime-info sqlite tar:xz xorg
+USE_LDCONFIG=	yes
 USE_KDE=	akonadicontacts activities archive auth bookmarks codecs completion \
 		config configwidgets contacts coreaddons crash dbusaddons doctools ecm \
 		emoticons guiaddons holidays i18n iconthemes init itemmodels itemviews \
@@ -56,7 +56,6 @@ USE_QT=		buildtools:build concurrent core dbus declarative gui network opengl \
 		phonon4 printsupport qmake:build \
 		script sql svg testlib webkit widgets x11extras xml
 USE_XORG=	ice sm x11 xext
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	OPENEXR
 OPTIONS_DEFAULT=	OPENEXR
@@ -74,4 +73,14 @@ CMAKE_ARGS+=	-DCMAKE_CXX_FLAGS="-DKDE_NO_DEBUG_OUTPUT"
 
 PLIST_SUB+=	SHLIB_VER=17.0.0
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|g' \
+		${WRKSRC}/filters/words/msword-odf/wv2/src/word97_helper.cpp
+	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
+		${WRKSRC}/filters/words/msword-odf/wv2/src/utilities.h
+.endif
+
+.include <bsd.port.post.mk>
