@@ -1,6 +1,6 @@
 PORTNAME=		canu
 DISTVERSION=		2.2
-PORTREVISION=	2
+PORTREVISION=		3
 CATEGORIES=		biology java perl5
 # Github auto-generated tarballs lack submodules
 MASTER_SITES=		https://github.com/marbl/canu/releases/download/v${DISTVERSION}/
@@ -28,6 +28,7 @@ WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
+CXXFLAGS+=	-std=c++14
 
 .include <bsd.port.pre.mk>
 
@@ -38,6 +39,8 @@ post-extract:
 	${CP} ${FILESDIR}/cpuid_arm.c ${WRKSRC}/utility/src/parasail/cpuid.c
 .elif ${ARCH} == "powerpc64" || ${ARCH} == "powerpc64le"
 	${CP} ${FILESDIR}/cpuid_ppc.c ${WRKSRC}/utility/src/parasail/cpuid.c
+.elif ${ARCH} != "amd64"
+	${CP} ${FILESDIR}/cpuid_any.c ${WRKSRC}/utility/src/parasail/cpuid.c
 .endif
 
 pre-configure:
