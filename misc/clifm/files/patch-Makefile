@@ -1,0 +1,11 @@
+--- Makefile.orig	2023-07-18 12:44:17 UTC
++++ Makefile
+@@ -46,7 +46,7 @@ clean:
+ 
+ install: $(BIN)
+ 	$(INSTALL) -m 0755 -d $(DESTDIR)$(BINDIR)
+-	$(INSTALL) -m 0755 $(BIN) $(DESTDIR)$(BINDIR)
++	$(BSD_INSTALL_PROGRAM) $(BIN) $(DESTDIR)$(BINDIR)
+ 	$(INSTALL) -m 0755 -d $(DESTDIR)$(PROG_DATADIR)
+ 	$(INSTALL) -m 0755 -d $(DESTDIR)$(MANDIR)/man1
+ 	$(INSTALL) -m 0755 -d $(DESTDIR)$(DATADIR)/bash-completion/completions
