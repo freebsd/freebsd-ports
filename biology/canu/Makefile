@@ -19,16 +19,15 @@ LIB_DEPENDS=	libboost_regex.so:devel/boost-libs
 RUN_DEPENDS=	gnuplot:math/gnuplot
 
 USES=		compiler:c++11-lang gmake localbase perl5 tar:xz
-USE_JAVA=	yes
-
+USE_CXXSTD=	c++14
+USE_JAVA=	8+
 JAVA_RUN=	yes
-JAVA_VERSION=	8+
 
-WRKSRC_SUBDIR=	src
 # Upstream Makefile compiles directly into ${DESTDIR}${PREFIX} rather than
 # using a separate install target.
 MAKE_ENV=	DESTDIR=${WRKSRC} CANU_BUILD_ENV=ports
-CXXFLAGS+=	-std=c++14
+
+WRKSRC_SUBDIR=	src
 
 .include <bsd.port.pre.mk>
 
