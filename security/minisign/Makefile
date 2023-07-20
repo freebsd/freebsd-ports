@@ -2,7 +2,7 @@ PORTNAME=	minisign
 PORTVERSION=	0.9
 CATEGORIES=	security
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple tool to sign files and verify signatures
 WWW=		https://github.com/jedisct1/minisign
 

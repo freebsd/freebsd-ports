@@ -3,7 +3,7 @@ PORTVERSION=	1.3.3
 PORTREVISION=	6
 CATEGORIES=	audio net
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Server component of Mumble
 WWW=		http://mumble.sourceforge.net/
 

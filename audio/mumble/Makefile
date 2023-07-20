@@ -3,7 +3,7 @@ PORTVERSION=	1.3.3
 PORTREVISION=	10
 CATEGORIES=	audio
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voice chat software primarily intended for use while gaming
 WWW=		http://mumble.sourceforge.net/
 

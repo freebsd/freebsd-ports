@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	https://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitoring daemon for mpt RAID controllers
 WWW=		https://www.freebsd.org/
 

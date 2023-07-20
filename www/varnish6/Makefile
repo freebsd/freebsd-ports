@@ -5,7 +5,7 @@ PORTREVISION=	0
 CATEGORIES=	www
 PKGNAMESUFFIX=	6
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-performance HTTP accelerator
 WWW=		https://www.varnish-cache.org/
 

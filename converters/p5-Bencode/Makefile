@@ -6,7 +6,7 @@ MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:ARISTOTLE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent bencode serialisation format
 WWW=		https://metacpan.org/release/Bencode
 

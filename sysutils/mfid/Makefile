@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LOCAL/feld
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Monitoring daemon for mfi RAID controllers
 WWW=		https://www.freebsd.org/
 
