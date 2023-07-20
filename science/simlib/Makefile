@@ -10,16 +10,17 @@ WWW=		https://www.fit.vutbr.cz/~peringer/SIMLIB/index.html.en
 
 LICENSE=	LGPL20
 
-USES=		gmake
-USE_LDCONFIG=	yes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-CXXFLAGS+=	-fPIC
-
 BROKEN_riscv64=		fails to compile: process.cc:53:3: module process.cc is not ported to this processor architecture
 NOT_FOR_ARCHS=		aarch64 armv6 armv7 mips mips64 powerpc powerpc64 sparc64
 NOT_FOR_ARCHS_REASON=	contains not working ${ARCH}-dependent assembly code
+
+USES=		gmake
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
+
+CXXFLAGS+=	-fPIC
+
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
