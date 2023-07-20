@@ -1,5 +1,5 @@
 PORTNAME=	tzdiff
-PORTVERSION=	1.1.1
+PORTVERSION=	1.2
 CATEGORIES=	misc
 
 MAINTAINER=	naito.yuichiro@gmail.com
