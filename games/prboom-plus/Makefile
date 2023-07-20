@@ -33,6 +33,12 @@ OPENGL_USES=	gl
 OPENGL_USE=	GL=glu
 OPENGL_CONFIGURE_ENABLE=	gl
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} ${REINPLACE_CMD} \
 		-e '/^gamesdir/s|/games|/bin|' \
