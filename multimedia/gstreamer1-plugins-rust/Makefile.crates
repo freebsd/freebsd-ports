@@ -13,14 +13,14 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		anstyle-parse-0.2.1 \
 		anstyle-query-1.0.0 \
 		anstyle-wincon-1.0.1 \
-		anyhow-1.0.71 \
+		anyhow-1.0.72 \
 		arbitrary-0.4.7 \
 		arg_enum_proc_macro-0.3.2 \
 		arrayvec-0.7.4 \
-		async-compression-0.4.0 \
+		async-compression-0.4.1 \
 		async-recursion-1.0.4 \
 		async-task-4.4.0 \
-		async-trait-0.1.70 \
+		async-trait-0.1.71 \
 		async-tungstenite-0.22.2 \
 		atomic_refcell-0.1.10 \
 		atty-0.2.14 \
@@ -56,7 +56,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		bincode-1.3.3 \
 		bitflags-1.3.2 \
 		bitflags-2.3.3 \
-		bitstream-io-1.6.0 \
+		bitstream-io-1.7.0 \
 		block-buffer-0.9.0 \
 		block-buffer-0.10.4 \
 		build_const-0.2.2 \
@@ -75,9 +75,9 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
 		cipher-0.2.5 \
-		clap-4.3.10 \
-		clap_builder-4.3.10 \
-		clap_derive-4.3.2 \
+		clap-4.3.16 \
+		clap_builder-4.3.16 \
+		clap_derive-4.3.12 \
 		clap_lex-0.5.0 \
 		claxon-0.4.3 \
 		color-name-1.1.0 \
@@ -89,7 +89,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		cookie_store-0.16.2 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.4 \
-		cpufeatures-0.2.8 \
+		cpufeatures-0.2.9 \
 		crc-1.8.1 \
 		crc-3.0.1 \
 		crc-catalog-2.2.0 \
@@ -103,12 +103,11 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		crypto-mac-0.11.1 \
 		csound-0.1.8 \
 		csound-sys-0.1.2 \
-		ctor-0.1.26 \
 		ctr-0.6.0 \
 		dasp_frame-0.11.0 \
 		dasp_sample-0.11.0 \
 		data-encoding-2.4.0 \
-		dav1d-0.9.3 \
+		dav1d-0.9.4 \
 		dav1d-sys-0.7.1 \
 		diff-0.1.13 \
 		digest-0.9.0 \
@@ -120,7 +119,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		encoding_rs-0.8.32 \
 		env_logger-0.9.3 \
 		env_logger-0.10.0 \
-		equivalent-1.0.0 \
+		equivalent-1.0.1 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
 		fastrand-1.9.0 \
@@ -190,10 +189,10 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		interpolate_name-0.2.3 \
 		io-lifetimes-1.0.11 \
 		ipnet-2.8.0 \
-		is-terminal-0.4.8 \
+		is-terminal-0.4.9 \
 		itertools-0.10.5 \
 		itertools-0.11.0 \
-		itoa-1.0.8 \
+		itoa-1.0.9 \
 		jobserver-0.1.26 \
 		js-sys-0.3.64 \
 		khronos-egl-4.1.0 \
@@ -246,6 +245,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		num-bigint-0.4.3 \
 		num-complex-0.4.3 \
 		num-derive-0.3.3 \
+		num-derive-0.4.0 \
 		num-integer-0.1.45 \
 		num-rational-0.4.1 \
 		num-traits-0.2.15 \
@@ -259,13 +259,12 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.90 \
 		option-operations-0.5.0 \
-		output_vt100-0.1.3 \
 		outref-0.5.1 \
 		overload-0.1.1 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.8 \
 		parse_link_header-0.3.3 \
-		paste-1.0.13 \
+		paste-1.0.14 \
 		pbkdf2-0.8.0 \
 		percent-encoding-2.3.0 \
 		petgraph-0.6.3 \
@@ -279,19 +278,19 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		polling-2.8.0 \
 		ppv-lite86-0.2.17 \
 		pretty-hex-0.3.0 \
-		pretty_assertions-1.3.0 \
+		pretty_assertions-1.4.0 \
 		primal-check-0.3.3 \
 		priority-queue-1.3.2 \
 		proc-macro-crate-1.3.1 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.63 \
+		proc-macro2-1.0.66 \
 		protobuf-2.28.0 \
 		protobuf-codegen-2.28.0 \
 		protobuf-codegen-pure-2.28.0 \
 		psl-types-2.0.11 \
 		publicsuffix-2.2.3 \
-		quote-1.0.29 \
+		quote-1.0.31 \
 		rand-0.8.5 \
 		rand_chacha-0.3.1 \
 		rand_core-0.6.4 \
@@ -303,10 +302,11 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		realfft-2.0.1 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
-		regex-1.8.4 \
+		regex-1.9.1 \
 		regex-automata-0.1.10 \
+		regex-automata-0.3.3 \
 		regex-syntax-0.6.29 \
-		regex-syntax-0.7.2 \
+		regex-syntax-0.7.4 \
 		reqwest-0.11.18 \
 		rgb-0.8.36 \
 		ring-0.16.20 \
@@ -319,23 +319,23 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		rustc_version-0.4.0 \
 		rustdct-0.7.1 \
 		rustfft-6.1.0 \
-		rustix-0.37.22 \
-		rustix-0.38.2 \
+		rustix-0.37.23 \
+		rustix-0.38.4 \
 		rustls-0.20.8 \
 		rustls-native-certs-0.6.3 \
 		rustls-pemfile-1.0.3 \
-		ryu-1.0.14 \
+		ryu-1.0.15 \
 		same-file-1.0.6 \
 		schannel-0.1.22 \
-		scopeguard-1.1.0 \
+		scopeguard-1.2.0 \
 		sct-0.7.0 \
 		security-framework-2.9.1 \
 		security-framework-sys-2.9.0 \
-		semver-1.0.17 \
-		serde-1.0.166 \
-		serde_bytes-0.11.10 \
-		serde_derive-1.0.166 \
-		serde_json-1.0.100 \
+		semver-1.0.18 \
+		serde-1.0.171 \
+		serde_bytes-0.11.12 \
+		serde_derive-1.0.171 \
+		serde_json-1.0.103 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
 		sha-1-0.9.8 \
@@ -344,13 +344,13 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		shannon-0.2.0 \
 		sharded-slab-0.1.4 \
 		shell-words-1.1.0 \
-		signal-hook-0.3.15 \
+		signal-hook-0.3.17 \
 		signal-hook-registry-1.4.1 \
 		signature-1.6.4 \
 		simd-adler32-0.3.5 \
 		simd_helpers-0.1.0 \
 		slab-0.4.8 \
-		smallvec-1.10.0 \
+		smallvec-1.11.0 \
 		smawk-0.3.1 \
 		socket2-0.4.9 \
 		socket2-0.5.3 \
@@ -361,16 +361,16 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		strsim-0.10.0 \
 		subtle-2.4.1 \
 		syn-1.0.109 \
-		syn-2.0.23 \
+		syn-2.0.26 \
 		system-deps-6.1.1 \
-		target-lexicon-0.12.8 \
+		target-lexicon-0.12.10 \
 		tempfile-3.6.0 \
 		termcolor-1.2.0 \
 		test-log-0.2.12 \
 		test-with-0.9.7 \
 		textwrap-0.16.0 \
-		thiserror-1.0.41 \
-		thiserror-impl-1.0.41 \
+		thiserror-1.0.43 \
+		thiserror-impl-1.0.43 \
 		thread-id-4.1.0 \
 		thread_local-1.1.7 \
 		time-0.1.45 \
@@ -386,9 +386,9 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		tokio-stream-0.1.14 \
 		tokio-util-0.7.8 \
 		toml-0.5.11 \
-		toml-0.7.5 \
+		toml-0.7.6 \
 		toml_datetime-0.6.3 \
-		toml_edit-0.19.11 \
+		toml_edit-0.19.14 \
 		tower-0.4.13 \
 		tower-layer-0.3.2 \
 		tower-service-0.3.2 \
@@ -402,7 +402,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		tungstenite-0.19.0 \
 		typenum-1.16.0 \
 		unicode-bidi-0.3.13 \
-		unicode-ident-1.0.10 \
+		unicode-ident-1.0.11 \
 		unicode-linebreak-0.1.4 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
@@ -411,8 +411,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		urlencoding-2.1.2 \
 		utf-8-0.7.6 \
 		utf8parse-0.2.1 \
-		uuid-1.4.0 \
-		v_frame-0.3.4 \
+		uuid-1.4.1 \
+		v_frame-0.3.5 \
 		va_list-0.1.4 \
 		valuable-0.1.0 \
 		vcpkg-0.2.15 \
@@ -448,7 +448,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		windows_x86_64_gnu-0.48.0 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.48.0 \
-		winnow-0.4.7 \
+		winnow-0.5.0 \
 		winreg-0.10.1 \
 		xml-rs-0.8.15 \
 		xmlparser-0.13.5 \
