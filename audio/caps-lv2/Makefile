@@ -12,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BUILD_DEPENDS=	lv2>0:audio/lv2
 
 USES=		gmake localbase
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	moddevices
 GH_TAGNAME=	5d52a0c
