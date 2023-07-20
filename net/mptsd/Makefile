@@ -18,6 +18,12 @@ GH_PROJECT=	mptsd
 GH_TUPLE=       gfto:libfuncs:0dc8d87080badd7a276316ad7ae6e6f1aed2331b:libfuncs/libfuncs \
 	gfto:libtsfuncs:45e7e999a17c1954915295bd13b242bbd937cf28:libtsfuncs/libtsfuncs
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${STAGEDIR}${PREFIX}/bin
 	@${MKDIR} ${STAGEDIR}${ETCDIR}
