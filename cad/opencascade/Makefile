@@ -1,6 +1,6 @@
 PORTNAME=	opencascade
 DISTVERSION=	7.7.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	cad science
 MASTER_SITES=	LOCAL/thierry
 
@@ -166,8 +166,7 @@ post-build-DOXYGEN-on:
 
 post-install:
 	${MV} ${STAGEDIR}${OCCROOT}/bin/DRAWEXE-${DISTVERSION:C/-beta//} ${STAGEDIR}${PREFIX}/bin/DRAWEXE
-	(cd ${STAGEDIR}${PREFIX}/bin &&							\
-	${LN} -sf DRAWEXE ${STAGEDIR}${OCCROOT}/bin/DRAWEXE)
+	${RLN} ${STAGEDIR}${PREFIX}/bin/DRAWEXE ${STAGEDIR}${OCCROOT}/bin
 
 post-install-DOXYGEN-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
