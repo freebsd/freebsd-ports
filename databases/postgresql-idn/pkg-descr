@@ -1,0 +1,6 @@
+At a fundamental level, this extension grants access to a number of
+functions provided by the libidn and libidn2 libraries. Not all of the
+functions provided by these libraries are exposed.
+
+Whenever possible, the code will transform the encoding of the data in
+the database to UTF-8 before further processing.
