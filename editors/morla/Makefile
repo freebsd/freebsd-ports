@@ -1,6 +1,6 @@
 PORTNAME=	morla
 PORTVERSION=	0.16.1
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	editors textproc
 MASTER_SITES=	http://www.morlardf.net/src/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/${PORTVERSION}/
@@ -9,23 +9,26 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	RDF editor
 WWW=		http://www.morlardf.net/
 
-LIB_DEPENDS=	libnxml.so:textproc/libnxml \
-		librdf.so:textproc/redland \
-		libraptor2.so:textproc/raptor2 \
-		libcurl.so:ftp/curl
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	dot:graphics/graphviz
+LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libfontconfig.so:x11-fonts/fontconfig \
+		libfreetype.so:print/freetype2 \
+		libharfbuzz.so:print/harfbuzz \
+		libnxml.so:textproc/libnxml \
+		libraptor2.so:textproc/raptor2 \
+		librasqal.so:textproc/rasqal \
+		librdf.so:textproc/redland
 RUN_DEPENDS=	dot:graphics/graphviz
 
-OPTIONS_DEFINE=	XULRUNNER
-XULRUNNER_DESC=	Xulrunner as JavaScript engine
+USES=		gettext gnome libtool localbase:ldflags pkgconfig
+USE_GNOME=	cairo gdkpixbuf2 gtk20 libxslt
+USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--with-gconf=none --with-gtkhtml=none
-USES=		gettext gnome libtool pkgconfig
-USE_GNOME=	libxslt gtk20
-USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 
 DESKTOP_ENTRIES="morla" \
 		"Edit RDF documents" \
@@ -34,12 +37,18 @@ DESKTOP_ENTRIES="morla" \
 		"WebDevelopment;" \
 		true
 
+OPTIONS_DEFINE=	XULRUNNER
+
+XULRUNNER_DESC=	Xulrunner as JavaScript engine
+
 XULRUNNER_BROKEN=	www/libxul is gone, consider using lang/spidermonkey*
 XULRUNNER_CONFIGURE_ON=	--with-javascript=xulrunner
 XULRUNNER_CONFIGURE_OFF=	--with-javascript=none
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/configure
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 .include <bsd.port.mk>
