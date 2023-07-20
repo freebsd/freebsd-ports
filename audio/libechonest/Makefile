@@ -13,18 +13,19 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libqjson-qt5.so:devel/qjson
 
 USES=		cmake compiler:c++11-lang pkgconfig qt:5
-USE_LDCONFIG=	yes
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
+USE_LDCONFIG=	yes
 GH_ACCOUNT=	lfranchi
 
-USE_QT=		core buildtools:build qmake:build network xml
+USE_QT=		core network xml buildtools:build qmake:build
 CMAKE_OFF+=	BUILD_WITH_QT4
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	TEST
 
-TEST_USE=	QT=testlib:build
-TEST_CMAKE_BOOL=ECHONEST_BUILD_TESTS
+TEST_USE=		QT=testlib:build
+TEST_CMAKE_BOOL=	ECHONEST_BUILD_TESTS
 
 .include <bsd.port.mk>
