@@ -1,4 +1,4 @@
---- electron/shell/browser/api/electron_api_web_contents.cc.orig	2023-06-27 15:34:12 UTC
+--- electron/shell/browser/api/electron_api_web_contents.cc.orig	2023-07-11 13:17:52 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.cc
 @@ -152,11 +152,11 @@
  #include "ui/base/cocoa/defaults_utils.h"
@@ -32,7 +32,7 @@
    // Update font settings.
    static const gfx::FontRenderParams params(
        gfx::GetFontRenderParams(gfx::FontRenderParamsQuery(), nullptr));
-@@ -2497,7 +2497,7 @@ void WebContents::ForcefullyCrashRenderer() {
+@@ -2499,7 +2499,7 @@ void WebContents::ForcefullyCrashRenderer() {
  
    content::RenderProcessHost* rph = rwh->GetProcess();
    if (rph) {
@@ -41,7 +41,7 @@
      // A generic |CrashDumpHungChildProcess()| is not implemented for Linux.
      // Instead we send an explicit IPC to crash on the renderer's IO thread.
      rph->ForceCrash();
-@@ -3140,7 +3140,7 @@ void WebContents::CopyImageAt(int x, int y) {
+@@ -3142,7 +3142,7 @@ void WebContents::CopyImageAt(int x, int y) {
  void WebContents::Focus() {
    // Focusing on WebContents does not automatically focus the window on macOS
    // and Linux, do it manually to match the behavior on Windows.
@@ -50,7 +50,7 @@
    if (owner_window())
      owner_window()->Focus(true);
  #endif
-@@ -3946,7 +3946,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
+@@ -3948,7 +3948,7 @@ ui::ImageModel WebContents::GetDevToolsWindowIcon() {
  }
  #endif
  
