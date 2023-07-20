@@ -10,29 +10,30 @@ WWW=		https://sourceforge.net/projects/afpfs-ng/
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		autoreconf gmake iconv libtool readline tar:bzip2
+USES=		autoreconf gmake iconv libtool localbase readline shebangfix tar:bzip2
 USE_LDCONFIG=	yes
 
+SHEBANG_FILES=	fuse/afpfs
+
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
+
 CFLAGS+=	-Wno-return-type
-CPPFLAGS+=	-D_FILE_OFFSET_BITS=64 -I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+CPPFLAGS+=	-D_FILE_OFFSET_BITS=64
 
 OPTIONS_DEFINE=	FUSE GCRYPT
+OPTIONS_SUB=	yes
 
 FUSE_LIB_DEPENDS=	libfuse.so:sysutils/fusefs-libs
 FUSE_CONFIGURE_ENABLE=	fuse
-
 GCRYPT_LIB_DEPENDS=	libgcrypt.so:security/libgcrypt
 GCRYPT_CONFIGURE_ENABLE=gcrypt
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MFUSE}
-PLIST_FILES+=	bin/afp_client bin/afpfs bin/afpfsd bin/mount_afp \
-		man/man1/afp_client.1.gz man/man1/afpfsd.1.gz \
-		man/man1/mount_afp.1.gz
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-configure:
