@@ -1,5 +1,5 @@
 PORTNAME=	virtualbox-ose
-PORTVERSION=	6.1.44
+PORTVERSION=	6.1.46
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 PKGNAMESUFFIX=	-kmod
