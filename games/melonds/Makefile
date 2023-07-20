@@ -1,6 +1,5 @@
 PORTNAME=	melonds
 PORTVERSION=	0.9.5
-PORTREVISION=	0
 CATEGORIES=	games
 PKGNAMESUFFIX=	-${FLAVOR}
 
@@ -19,9 +18,10 @@ FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
 
 USES=		cmake compiler:c++17-lang desktop-file-utils gnome \
-		iconv libarchive pkgconfig qt:${FLAVOR:S/qt//} sdl
+		iconv libarchive pkgconfig qt:${FLAVOR:S/qt//} sdl kde:5
 USE_GNOME=	glib20
 USE_SDL=	sdl2
+USE_KDE=	ecm:build
 
 .if ${FLAVOR} == qt5
 CMAKE_OFF=	USE_QT6
