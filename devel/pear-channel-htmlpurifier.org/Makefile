@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	devel www pear
 MASTER_SITES=	#
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
 WWW=		http://htmlpurifier.org/
 

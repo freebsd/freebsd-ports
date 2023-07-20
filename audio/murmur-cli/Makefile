@@ -3,7 +3,7 @@ PORTVERSION=	0.0.0.20200528
 PORTREVISION=	13
 CATEGORIES=	audio
 
-MAINTAINER=	feld@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GRPC client for Murmur server
 WWW=		https://github.com/layeh/murmur-cli
 
