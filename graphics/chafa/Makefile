@@ -1,6 +1,6 @@
 PORTNAME=	chafa
 PORTVERSION=	1.12.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://hpjansson.org/chafa/releases/ \
 		https://github.com/hpjansson/chafa/releases/download/${PORTVERSION}/
@@ -24,6 +24,9 @@ USE_GNOME=	cairo gdkpixbuf2 glib20 librsvg2
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${DOCSDIR}/html
+
+# https://github.com/hpjansson/chafa/issues/152
+CONFIGURE_ENV+=	WEBP_CFLAGS='-lwebp'
 
 INSTALL_TARGET=	install-strip
 
