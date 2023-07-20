@@ -1,9 +1,9 @@
 PORTNAME=	php83
-DISTVERSION=	8.3.0alpha3
+DISTVERSION=	8.3.0beta1
 PORTREVISION?=	0
 CATEGORIES?=	lang devel www
-MASTER_SITES=	https://downloads.php.net/~jakub/
-#MASTER_SITES=	https://downloads.php.net/~eric/
+MASTER_SITES=	https://downloads.php.net/~jakub/ \
+	https://downloads.php.net/~eric/
 DISTNAME=	php-${DISTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org

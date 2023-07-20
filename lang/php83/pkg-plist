@@ -61,6 +61,7 @@ include/php/Zend/zend_globals.h
 include/php/Zend/zend_globals_macros.h
 include/php/Zend/zend_hash.h
 include/php/Zend/zend_highlight.h
+include/php/Zend/zend_hrtime.h
 include/php/Zend/zend_inheritance.h
 include/php/Zend/zend_ini.h
 include/php/Zend/zend_ini_parser.h
@@ -207,7 +208,6 @@ include/php/ext/standard/file_arginfo.h
 include/php/ext/standard/flock_compat.h
 include/php/ext/standard/fsock.h
 include/php/ext/standard/head.h
-include/php/ext/standard/hrtime.h
 include/php/ext/standard/html.h
 include/php/ext/standard/html_tables.h
 include/php/ext/standard/info.h
