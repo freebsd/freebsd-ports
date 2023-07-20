@@ -22,6 +22,12 @@ PORTDOCS=	CHANGELOG README TODO z80-asm.html z80-mon.html
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-extract:
 	@${TOUCH} ${WRKSRC}/hardware/bus_masters
 
