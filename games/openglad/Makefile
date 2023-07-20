@@ -11,16 +11,15 @@ WWW=		http://snowstorm.sourceforge.net
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USES=		gmake sdl
+NOT_FOR_ARCHS=	sparc64
+
+USES=		gmake localbase:ldflags sdl
+USE_CXXSTD=	c++14
 USE_SDL=	sdl mixer
+
 GNU_CONFIGURE=	yes
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 DESKTOP_ENTRIES="OpenGlad" "" "" "${PORTNAME}" "" ""
-
-NOT_FOR_ARCHS=	sparc64
 
 OPTIONS_DEFINE=	DOCS
 
