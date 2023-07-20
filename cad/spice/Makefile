@@ -93,10 +93,10 @@ post-extract-DEV_BSIM3-on:
 	    -C ${WRKSRC}/src/lib/dev/bsim3
 post-extract-DEV_BSIM4-on:
 	@${MKDIR} ${WRKSRC}/src/lib/dev/bsim4
-	${UNZIP_MNATIVE_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/BSIM480_Code.zip \
+	${UNZIP_NATIVE_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/BSIM480_Code.zip \
 	    -d ${WRKSRC}/src/lib/dev/bsim4
 post-extract-DEV_HISIM2-on:
-	${UNZIP_MNATIVE_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/HiSIM_2.8.0_Release_20140605.zip \
+	${UNZIP_NATIVE_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/HiSIM_2.8.0_Release_20140605.zip \
 	    -d ${WRKDIR}
 	${MV} ${WRKDIR}/HiSIM_2.8.0_Release_20140605/HiSIM_2.8.0_C-Code/hisim2 \
 	    ${WRKSRC}/src/lib/dev
