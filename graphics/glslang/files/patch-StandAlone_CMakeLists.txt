@@ -1,9 +1,9 @@
---- StandAlone/CMakeLists.txt.orig	2023-07-19 18:57:07 UTC
+--- StandAlone/CMakeLists.txt.orig	2023-07-20 20:53:51 UTC
 +++ StandAlone/CMakeLists.txt
-@@ -117,7 +117,7 @@ if(ENABLE_GLSLANG_INSTALL)
+@@ -121,7 +121,7 @@ if(ENABLE_GLSLANG_INSTALL)
      # Create the same symlink at install time
      install(CODE "execute_process( \
-                       COMMAND ${CMAKE_COMMAND} -E create_symlink $<TARGET_FILE_NAME:glslang-standalone> ${legacy_glslang_name} \
+                       COMMAND ${CMAKE_COMMAND} -E ${link_method} $<TARGET_FILE_NAME:glslang-standalone> ${legacy_glslang_name} \
 -                      WORKING_DIRECTORY ${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR})")
 +                      WORKING_DIRECTORY \$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_BINDIR})")
  
