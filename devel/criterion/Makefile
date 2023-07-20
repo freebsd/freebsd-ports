@@ -37,6 +37,12 @@ CFLAGS+=	-fPIC \
 
 MESON_ARGS=	-Dtests=false -Dsamples=false
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 quick-test:
 	@cd ${TEST_WRKSRC} && \
 		${CC} ${CFLAGS} ${LDFLAGS} -I${STAGEDIR}${PREFIX}/include \
