@@ -1,0 +1,23 @@
+--- external/pufferfish/CMakeLists.txt.orig	2023-06-26 19:34:50 UTC
++++ external/pufferfish/CMakeLists.txt
+@@ -135,7 +135,7 @@ set(WARN_ALL_THINGS "-fdiagnostics-color=always;-Wall;
+ 
+ 
+ set(OPT_FLAGS "-DHAVE_SIMDE;-D__STDC_FORMAT_MACROS;-DSTX_NO_STD_STRING_VIEW;-O3;-fPIC;-DNDEBUG;-funroll-loops;-ftree-vectorize;-fno-strict-aliasing")
+-set(DEBUG_FLAGS "-DHAVE_SIMDE;-D__STDC_FORMAT_MACROS;-DSTX_NO_STD_STRING_VIEW;-pg;-g;-gstabs")
++set(DEBUG_FLAGS "-DHAVE_SIMDE;-D__STDC_FORMAT_MACROS;-DSTX_NO_STD_STRING_VIEW;-g")
+ 
+ ##
+ # OSX is strange (some might say, stupid in this regard).  Deal with it's quirkines here.
+@@ -188,11 +188,6 @@ endif()
+ ##
+ set(SHASUM ${CMAKE_CURRENT_SOURCE_DIR}/scripts/check_shasum.sh)
+ 
+-
+-find_package(Jemalloc)
+-if(JEMALLOC_FOUND)
+-  include_directories(SYSTEM ${JEMALLOC_INCLUDE_DIRS})
+-endif()
+ 
+ if(DO_QUIET_MAKE)
+   set(QUIET_MAKE "--silent")

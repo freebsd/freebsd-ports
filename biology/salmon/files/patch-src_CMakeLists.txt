@@ -1,0 +1,18 @@
+--- src/CMakeLists.txt.orig	2021-11-23 02:42:29 UTC
++++ src/CMakeLists.txt
+@@ -266,14 +266,7 @@ endif()
+ 
+ add_dependencies(salmon unitTests)
+ 
+-##
+-# External dependencies of salmon_core and salmon
+-##
+-if (${FETCHED_JEMALLOC})
+-   add_dependencies(alevin_core libjemalloc)
+-   add_dependencies(salmon_core libjemalloc)
+-   add_dependencies(salmon libjemalloc)
+-endif()
++# jemalloc is default on FreeBSD
+ 
+ if (${FETCHED_BOOST})
+ ## PUFF_INTEGRATION
