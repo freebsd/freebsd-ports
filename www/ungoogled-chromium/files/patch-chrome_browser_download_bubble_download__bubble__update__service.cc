@@ -1,18 +1,18 @@
---- chrome/browser/download/bubble/download_bubble_update_service.cc.orig	2023-05-05 12:12:41 UTC
+--- chrome/browser/download/bubble/download_bubble_update_service.cc.orig	2023-07-21 09:49:17 UTC
 +++ chrome/browser/download/bubble/download_bubble_update_service.cc
-@@ -87,7 +87,11 @@ ItemSortKey GetSortKey(const Item& item) {
+@@ -91,7 +91,11 @@ ItemSortKey GetSortKey(const Item& item) {
  // Helper to get an iterator to the last element in the cache. The cache
  // must not be empty.
  template <typename Item>
 +#if defined(__clang__) && (__clang_major__ >= 16)
- SortedItems<Item>::iterator GetLastIter(SortedItems<Item>& cache) {
+ SortedItems<Item>::const_iterator GetLastIter(const SortedItems<Item>& cache) {
 +#else
-+typename SortedItems<Item>::iterator GetLastIter(SortedItems<Item>& cache) {
++typename SortedItems<Item>::const_iterator GetLastIter(const SortedItems<Item>& cache) {
 +#endif
    CHECK(!cache.empty());
    auto it = cache.end();
    return std::prev(it);
-@@ -789,9 +793,17 @@ bool DownloadBubbleUpdateService::RemoveItemFromCacheI
+@@ -967,9 +971,17 @@ bool DownloadBubbleUpdateService::CacheManager::Remove
  }
  
  template <typename Id, typename Item>
@@ -21,7 +21,7 @@
 +#else
 +typename SortedItems<Item>::iterator
 +#endif
- DownloadBubbleUpdateService::RemoveItemFromCacheByIter(
+ DownloadBubbleUpdateService::CacheManager::RemoveItemFromCacheByIter(
 +#if defined(__clang__) && (__clang_major__ >= 16)
      SortedItems<Item>::iterator iter,
 +#else

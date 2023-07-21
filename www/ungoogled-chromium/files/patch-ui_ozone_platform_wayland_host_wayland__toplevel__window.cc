@@ -1,6 +1,6 @@
---- ui/ozone/platform/wayland/host/wayland_toplevel_window.cc.orig	2023-06-05 19:39:05 UTC
+--- ui/ozone/platform/wayland/host/wayland_toplevel_window.cc.orig	2023-07-21 09:49:17 UTC
 +++ ui/ozone/platform/wayland/host/wayland_toplevel_window.cc
-@@ -452,7 +452,7 @@ void WaylandToplevelWindow::HandleAuraToplevelConfigur
+@@ -516,7 +516,7 @@ void WaylandToplevelWindow::HandleAuraToplevelConfigur
    const bool did_active_change = is_active_ != window_states.is_activated;
    is_active_ = window_states.is_activated;
  

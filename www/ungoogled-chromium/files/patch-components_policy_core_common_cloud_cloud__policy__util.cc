@@ -1,4 +1,4 @@
---- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2022-10-01 07:40:07 UTC
+--- components/policy/core/common/cloud/cloud_policy_util.cc.orig	2023-07-21 09:49:17 UTC
 +++ components/policy/core/common/cloud/cloud_policy_util.cc
 @@ -20,7 +20,7 @@
  #endif
@@ -23,9 +23,9 @@
 +#define HOST_NAME_MAX MAXHOSTNAMELEN
 +#endif
 +
+ #include <algorithm>
  #include <utility>
  
- #include "base/check.h"
 @@ -82,7 +87,7 @@ namespace em = enterprise_management;
  
  std::string GetMachineName() {

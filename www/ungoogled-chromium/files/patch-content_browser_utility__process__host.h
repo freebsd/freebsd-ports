@@ -1,4 +1,4 @@
---- content/browser/utility_process_host.h.orig	2023-06-05 19:39:05 UTC
+--- content/browser/utility_process_host.h.orig	2023-07-21 09:49:17 UTC
 +++ content/browser/utility_process_host.h
 @@ -39,7 +39,7 @@ namespace base {
  class Thread;
@@ -9,7 +9,7 @@
  namespace viz {
  class GpuClient;
  }  // namespace viz
-@@ -210,7 +210,7 @@ class CONTENT_EXPORT UtilityProcessHost
+@@ -225,7 +225,7 @@ class CONTENT_EXPORT UtilityProcessHost
    std::vector<RunServiceDeprecatedCallback> pending_run_service_callbacks_;
  #endif
  

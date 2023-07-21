@@ -1,4 +1,4 @@
---- content/browser/gpu/gpu_process_host.cc.orig	2023-05-05 12:12:41 UTC
+--- content/browser/gpu/gpu_process_host.cc.orig	2023-07-21 09:49:17 UTC
 +++ content/browser/gpu/gpu_process_host.cc
 @@ -252,6 +252,7 @@ static const char* const kSwitchNames[] = {
      switches::kEnableBackgroundThreadPool,
@@ -8,7 +8,7 @@
      switches::kDoubleBufferCompositing,
      switches::kHeadless,
      switches::kLoggingLevel,
-@@ -285,7 +286,7 @@ static const char* const kSwitchNames[] = {
+@@ -284,7 +285,7 @@ static const char* const kSwitchNames[] = {
      switches::kOzoneDumpFile,
      switches::kDisableBufferBWCompression,
  #endif

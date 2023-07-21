@@ -1,9 +1,9 @@
---- chrome/browser/download/download_prefs.cc.orig	2023-06-05 19:39:05 UTC
+--- chrome/browser/download/download_prefs.cc.orig	2023-07-21 09:49:17 UTC
 +++ chrome/browser/download/download_prefs.cc
 @@ -11,6 +11,7 @@
+ #include <vector>
  
  #include "base/check.h"
- #include "base/cxx17_backports.h"
 +#include "base/command_line.h"
  #include "base/feature_list.h"
  #include "base/files/file_util.h"
