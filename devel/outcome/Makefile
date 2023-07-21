@@ -26,6 +26,8 @@ CMAKE_ARGS=	-Dquickcpplib_DIR=${LOCALBASE}/lib/cmake/quickcpplib
 NO_BUILD=	yes
 NO_ARCH=	yes
 
+PORTSCOUT=	limit:^.*[0-9]\.[0-9].*
+
 post-patch: # remove the test folter until the problems are fixed by the upstream
 	# tests have problems:
 	# - they are unconditionally built, see https://github.com/ned14/outcome/issues/285
