@@ -28,6 +28,7 @@
     SUBDIR += bolt-lmm
     SUBDIR += bowtie
     SUBDIR += bowtie2
+    SUBDIR += btllib
     SUBDIR += bwa
     SUBDIR += canu
     SUBDIR += cd-hit

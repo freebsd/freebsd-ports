@@ -1,0 +1,54 @@
+--- meson.build.orig	2023-07-06 15:52:18 UTC
++++ meson.build
+@@ -1,7 +1,7 @@
+ project('btllib', 'cpp',
+         version : '1.6.2',
+         license : 'GPL3',
+-        default_options : [ 'cpp_std=c++17', 'warning_level=3', 'werror=true', 'b_coverage=true' ],
++        default_options : [ 'cpp_std=c++17', 'warning_level=3', 'b_coverage=true' ],
+         meson_version : '>= 0.60.0')
+ 
+ # Configuration
+@@ -48,22 +48,28 @@ threads_dep = dependency('threads')
+ openmp_dep = dependency('openmp', required : false)
+ 
+ cmake_options = cmake.subproject_options()
+-cmake_options.set_override_option('werror', 'false')
++#cmake_options.set_override_option('werror', 'false')
+ cmake_options.set_install(false)
+ 
+ cpptoml_subproject = cmake.subproject('cpptoml', options : cmake_options)
+ cpptomp_dep = cpptoml_subproject.dependency('cpptoml')
+ 
+-run_command(meson.project_source_root() + '/scripts/prepare-sdsl')
++#run_command(meson.project_source_root() + '/scripts/prepare-sdsl')
+ 
+-sdsl_subproject = cmake.subproject('sdsl-lite', options : cmake_options)
+-sdsl_dep = sdsl_subproject.dependency('sdsl', include_type: 'system')
++#sdsl_subproject = cmake.subproject('sdsl-lite', options : cmake_options)
+ 
++#sdsl_dep = sdsl_subproject.dependency('sdsl', include_type: 'system')
++
++pkg = import('pkgconfig')
++sdsl_dep = dependency('sdsl-lite')
++#lib = library('foo', dependencies : [bar])
++#pkg.generate(lib)
++
+ deps = [ threads_dep, openmp_dep, cpptomp_dep, sdsl_dep ]
+ 
+ # These are unfortunate hacks. Currently, neither cpptoml nor sdsl-lite install their headers (even when set_install(true) is called), and so we need to do it manually
+ meson.add_install_script('scripts/install-cpptoml')
+-meson.add_install_script('scripts/install-sdsl-lite')
++#meson.add_install_script('scripts/install-sdsl-lite')
+ 
+ argparse_subproject = cmake.subproject('argparse', options : cmake_options)
+ argparse_dep = argparse_subproject.dependency('argparse')
+@@ -126,7 +132,7 @@ run_target('test-wrappers', command: join_paths(rootpa
+ btllib_include = [ include_directories('include'), include_directories('.') ]
+ btllib_sources = run_command('scripts/get-files', 'src').stdout().strip().split()
+ 
+-btllib_lib = static_library('btllib',
++btllib_lib = shared_library('btllib',
+                            btllib_sources,
+                            include_directories : btllib_include,
+                            dependencies : deps,
