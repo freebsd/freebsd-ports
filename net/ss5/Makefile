@@ -11,8 +11,6 @@ WWW=		http://ss5.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/License
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]+//}
-
 USES=		ldap ssl
 USE_RC_SUBR=	${PORTNAME}
 
@@ -22,11 +20,20 @@ CONFIGURE_ARGS=	--with-binpathbase=${PREFIX}/sbin \
 		--with-confpathbase=${PREFIX}/etc \
 		--with-libpath=${PREFIX}/lib
 
-MAKE_ENV=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
 MAKE_ARGS+=	CC="${CC}"
+MAKE_ENV=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
+
 CFLAGS+=	-fcommon
 
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-[0-9]+//}
+
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/usr/local/etc/opt/ss5,${PREFIX}/etc/ss5,' \
