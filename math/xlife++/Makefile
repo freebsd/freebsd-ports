@@ -12,16 +12,17 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USES=		cmake compiler:c++11-lang eigen:3 fortran tar:tbz
+USE_CXXSTD=	c++11
 USE_LDCONFIG=	yes
 
 CMAKE_OFF=	XLIFEPP_ENABLE_ARPACK # should be ON, but it fails to build. Reported to their bugs ML.
 
 CXXFLAGS+=	-I${LOCALBASE}/include/eigen3/Eigen -I${LOCALBASE}/include/ARPACK++
 
-OPTIONS_DEFINE=	DOCS EXAMPLES
-
 PORTDOCS=	*
 PORTEXAMPLES=	*
+
+OPTIONS_DEFINE=	DOCS EXAMPLES
 
 post-extract: # delete bundled packages
 	@${RM} -r ${WRKSRC}/ext/Eigen ${WRKSRC}/ext/ARPACK ${WRKSRC}/ext/ARPACK++
