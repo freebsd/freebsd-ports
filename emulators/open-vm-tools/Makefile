@@ -1,7 +1,7 @@
 PORTNAME=	open-vm-tools
 PORTVERSION=	12.2.5
 DISTVERSIONPREFIX=	stable-
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	emulators
 
@@ -34,7 +34,6 @@ USE_RC_SUBR=	vmware-guestd vmware-kmod
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-vgauth \
 		--enable-containerinfo=no \
-		--enable-deploypkg \
 		--sysconfdir=${PREFIX}/etc \
 		--without-icu
 CONFIGURE_ENV+=	SYSDIR=${SRC_BASE}/sys
