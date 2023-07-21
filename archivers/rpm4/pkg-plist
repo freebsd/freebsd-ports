@@ -64,7 +64,7 @@ lib/librpmsign.so.9.4.0
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/__init__.py
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/_rpm.so
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm/transaction.py
-%%PYTHON_SITELIBDIR%%/rpm-%%VERSION%%-py%%PYTHON_VER%%.egg-info
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/rpm-%%VERSION%%-py%%PYTHON_VER%%.egg-info
 %%PLUGINS%%lib/rpm-plugins/dbus_announce.so
 %%PLUGINS%%lib/rpm-plugins/prioreset.so
 %%PLUGINS%%lib/rpm-plugins/syslog.so

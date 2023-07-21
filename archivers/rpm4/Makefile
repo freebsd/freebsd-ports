@@ -1,5 +1,6 @@
 PORTNAME=	rpm
 PORTVERSION=	4.18.1
+PORTREVISION=	1
 CATEGORIES=	archivers
 MASTER_SITES=	http://ftp.rpm.org/releases/rpm-${PORTVERSION:R}.x/
 PKGNAMESUFFIX=	4
@@ -12,8 +13,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	gsed:textproc/gsed \
-		${LOCALBASE}/lib/libelf.so:devel/elfutils \
-		pandoc:textproc/hs-pandoc
+		${LOCALBASE}/lib/libelf.so:devel/elfutils
 LIB_DEPENDS=	libpopt.so:devel/popt \
 		libnss3.so:security/nss \
 		libzstd.so:archivers/zstd \
@@ -56,9 +56,7 @@ BINARY_ALIAS=	sed=${LOCALBASE}/bin/gsed
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		OPSYS=${OPSYS:tl}
 
-PORTDOCS=	*
-
-OPTIONS_DEFINE=	PYTHON PLUGINS NLS DOCS
+OPTIONS_DEFINE=	PYTHON PLUGINS NLS
 OPTIONS_DEFAULT=PYTHON
 OPTIONS_SUB=	yes
 
