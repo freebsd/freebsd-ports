@@ -1,6 +1,7 @@
 PORTNAME=	fricas
 DISTVERSION=	1.3.9
 DISTVERSIONSUFFIX=	-full
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -14,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/license/LICENSE.AXIOM
 BROKEN_i386=	build fails, reported to ML
 
 BUILD_DEPENDS=	sbcl:lang/sbcl
+RUN_DEPENDS=	rlwrap:devel/rlwrap
 
 USES=		autoreconf gmake tar:bz2 xorg
 USE_XORG=	ice sm x11 xpm
