@@ -1,6 +1,6 @@
---- libevmasm/Assembly.cpp.orig	2022-03-24 17:16:26 UTC
+--- libevmasm/Assembly.cpp.orig	2023-07-19 09:24:46 UTC
 +++ libevmasm/Assembly.cpp
-@@ -48,6 +48,8 @@ using namespace solidity::evmasm;
+@@ -47,6 +47,8 @@ using namespace solidity::evmasm;
  using namespace solidity::langutil;
  using namespace solidity::util;
  
