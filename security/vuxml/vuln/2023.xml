@@ -1,3 +1,144 @@
+  <vuln vid="441e1e1a-27a5-11ee-a156-080027f5fec9">
+    <topic>samba -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba416</name>
+	<range><lt>4.16.11</lt></range>
+      </package>
+      <package>
+	<name>samba413</name>
+	<range><lt>4.13.18</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba Team reports:</p>
+	<blockquote cite="https://www.samba.org/samba/latest_news.html#4.18.5">
+	  <dl>
+	    <dt>CVE-2023-34967: Samba Spotlight mdssvc RPC Request Type Confusion Denial-of-Service Vulnerability</dt>
+	    <dd>
+	      When parsing Spotlight mdssvc RPC packets, one encoded
+	      data structure is a key-value style dictionary where the
+	      keys are character strings and the values can be any of
+	      the supported types in the mdssvc protocol. Due to a
+	      lack of type checking in callers of the function
+	      dalloc_value_for_key(), which returns the object
+	      associated with a key, a caller may trigger a crash in
+	      talloc_get_size() when talloc detects that the passed in
+	      pointer is not a valid talloc pointer.
+
+	      As RPC worker processes are shared among multiple client
+	      connections, a malicious client can crash the worker
+	      process affecting all other clients that are also served
+	      by this worker.
+	    </dd>
+	    <dt>CVE-2022-2127: Out-Of-Bounds read in winbind AUTH_CRAP</dt>
+	    <dd>
+	      When doing NTLM authentication, the client sends replies
+	      to cryptographic challenges back to the server. These
+	      replies have variable length. Winbind did not properly
+	      bounds-check the lan manager response length, which
+	      despite the lan manager version no longer being used is
+	      still part of the protocol.
+
+	      If the system is running Samba's ntlm_auth as
+	      authentication backend for services like Squid (or a
+	      very unusual configuration with FreeRADIUS), the
+	      vulnarebility is remotely exploitable
+
+	      If not so configured, or to exploit this vulnerability
+	      locally, the user must have access to the privileged
+	      winbindd UNIX domain socket (a subdirectory with name
+	      'winbindd_privileged' under "state directory", as set in
+	      the smb.conf).
+
+	      This access is normally only given so special system
+	      services like Squid or FreeRADIUS, that use this
+	      feature.
+	    </dd>
+	    <dt>CVE-2023-34968: Spotlight server-side Share Path Disclosure</dt>
+	    <dd>
+	      As part of the Spotlight protocol, the initial request
+	      returns a path associated with the sharename targeted by
+	      the RPC request. Samba returns the real server-side
+	      share path at this point, as well as returning the
+	      absolute server-side path of results in search queries
+	      by clients.
+
+	      Known server side paths could be used to mount
+	      subsequent more serious security attacks or could
+	      disclose confidential information that is part of the
+	      path.
+
+	      To mitigate the issue, Samba will replace the real
+	      server-side path with a fake path constructed from the
+	      sharename.
+	    </dd>
+	    <dt>CVE-2023-34966: Samba Spotlight mdssvc RPC Request Infinite Loop Denial-of-Service Vulnerability</dt>
+	    <dd>
+	      When parsing Spotlight mdssvc RPC packets sent by the
+	      client, the core unmarshalling function sl_unpack_loop()
+	      did not validate a field in the network packet that
+	      contains the count of elements in an array-like
+	      structure. By passing 0 as the count value, the attacked
+	      function will run in an endless loop consuming 100% CPU.
+
+	      This bug only affects servers where Spotlight is
+	      explicitly enabled globally or on individual shares with
+	      "spotlight = yes".
+	    </dd>
+	    <dt>CVE-2023-3347: SMB2 packet signing not enforced</dt>
+	    <dd>
+	      SMB2 packet signing is not enforced if an admin
+	      configured "server signing = required" or for SMB2
+	      connections to Domain Controllers where SMB2 packet
+	      signing is mandatory.
+
+	      SMB2 packet signing is a mechanism that ensures the
+	      integrity and authenticity of data exchanged between a
+	      client and a server using the SMB2 protocol.
+
+	      It provides protection against certain types of attacks,
+	      such as man-in-the-middle attacks, where an attacker
+	      intercepts network traffic and modifies the SMB2
+	      messages.
+
+	      Both client and server of an SMB2 connection can require
+	      that signing is being used. The server-side setting in
+	      Samba to configure signing to be required is "server
+	      signing = required". Note that on an Samba AD DCs this
+	      is also the default for all SMB2 connections.
+
+	      Unless the client requires signing which would result in
+	      signing being used on the SMB2 connection, sensitive
+	      data might have been modified by an attacker.
+
+	      Clients connecting to IPC$ on an AD DC will require
+	      signed connections being used, so the integrity of these
+	      connections was not affected.
+	    </dd>
+	  </dl>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-34967</cvename>
+      <cvename>CVE-2022-2127</cvename>
+      <cvename>CVE-2023-34968</cvename>
+      <cvename>CVE-2023-34966</cvename>
+      <cvename>CVE-2023-3347</cvename>
+      <url>https://www.samba.org/samba/security/CVE-2023-34967.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2022-2127.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2023-34968.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2023-34966.html</url>
+      <url>https://www.samba.org/samba/security/CVE-2023-3347.html</url>
+    </references>
+    <dates>
+      <discovery>2023-07-19</discovery>
+      <entry>2023-08-05</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="6e4e8e87-9fb8-4e32-9f8e-9b4303f4bfd5">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
