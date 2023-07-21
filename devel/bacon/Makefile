@@ -1,7 +1,7 @@
 PORTNAME=	bacon
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.11.1
-PORTREVISION=	1
+DISTVERSION=	2.12.0
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,14 +20,19 @@ CARGO_CRATES=	adler-1.0.2 \
 		ahash-0.8.2 \
 		aho-corasick-1.0.2 \
 		android_system_properties-0.1.5 \
+		anstream-0.3.2 \
+		anstyle-1.0.1 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
 		anyhow-1.0.68 \
 		arc-swap-1.6.0 \
 		arrayvec-0.5.2 \
 		arrayvec-0.7.2 \
 		atoi-2.0.0 \
-		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bitflags-1.3.2 \
+		bitflags-2.3.3 \
 		bstr-1.3.0 \
 		btoi-0.4.2 \
 		bumpalo-3.11.1 \
@@ -40,12 +45,15 @@ CARGO_CRATES=	adler-1.0.2 \
 		cc-1.0.78 \
 		cfg-if-1.0.0 \
 		chrono-0.4.23 \
-		clap-3.2.23 \
-		clap_derive-3.2.18 \
-		clap_lex-0.2.4 \
+		clap-4.3.15 \
+		clap-help-0.5.0 \
+		clap_builder-4.3.15 \
+		clap_derive-4.3.12 \
+		clap_lex-0.5.0 \
 		cli-log-2.0.0 \
 		clru-0.6.1 \
 		codespan-reporting-0.11.1 \
+		colorchoice-1.0.0 \
 		compact_str-0.6.1 \
 		coolor-0.5.0 \
 		core-foundation-sys-0.8.3 \
@@ -71,6 +79,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		dirs-sys-next-0.1.2 \
 		dunce-1.0.3 \
 		either-1.8.0 \
+		errno-0.3.1 \
+		errno-dragonfly-0.1.2 \
 		fastrand-1.8.0 \
 		file-size-1.0.3 \
 		filetime-0.2.19 \
@@ -115,8 +125,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		hashbrown-0.12.3 \
 		hashbrown-0.13.2 \
 		heck-0.4.0 \
-		hermit-abi-0.1.19 \
 		hermit-abi-0.2.6 \
+		hermit-abi-0.3.2 \
 		hex-0.4.3 \
 		home-0.5.4 \
 		human_format-1.0.3 \
@@ -129,6 +139,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		inotify-sys-0.1.5 \
 		instant-0.1.12 \
 		io-close-0.3.7 \
+		is-terminal-0.4.9 \
 		itoa-1.0.5 \
 		js-sys-0.3.60 \
 		jwalk-0.8.1 \
@@ -136,17 +147,20 @@ CARGO_CRATES=	adler-1.0.2 \
 		kqueue-sys-1.0.3 \
 		lazy-regex-3.0.0 \
 		lazy-regex-proc_macros-3.0.0 \
-		libc-0.2.139 \
+		libc-0.2.147 \
 		link-cplusplus-1.0.8 \
+		linux-raw-sys-0.4.3 \
 		lock_api-0.4.9 \
 		log-0.4.17 \
 		memchr-2.5.0 \
 		memmap2-0.5.8 \
+		memoffset-0.6.5 \
 		memoffset-0.7.1 \
 		minimad-0.12.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.6.2 \
 		mio-0.8.5 \
+		nix-0.22.3 \
 		nix-0.26.1 \
 		nom-7.1.2 \
 		notify-5.0.0 \
@@ -155,15 +169,12 @@ CARGO_CRATES=	adler-1.0.2 \
 		num_cpus-1.15.0 \
 		num_threads-0.1.6 \
 		once_cell-1.17.0 \
-		os_str_bytes-6.4.1 \
 		parking_lot-0.11.2 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.8.6 \
 		parking_lot_core-0.9.6 \
 		percent-encoding-2.2.0 \
 		pin-project-lite-0.2.9 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
 		proc-macro2-1.0.60 \
 		proc-status-0.1.1 \
 		prodash-23.0.0 \
@@ -178,6 +189,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		regex-automata-0.3.1 \
 		regex-syntax-0.7.3 \
 		remove_dir_all-0.5.3 \
+		rustix-0.38.4 \
 		rustversion-1.0.11 \
 		ryu-1.0.12 \
 		same-file-1.0.6 \
@@ -201,7 +213,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		tempfile-3.3.0 \
 		termcolor-1.1.3 \
 		termimad-0.23.1 \
-		textwrap-0.16.0 \
+		terminal-light-1.1.1 \
 		thiserror-1.0.38 \
 		thiserror-impl-1.0.38 \
 		time-0.1.45 \
@@ -222,7 +234,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		unicode-normalization-0.1.22 \
 		unicode-width-0.1.10 \
 		url-2.3.1 \
-		utf8parse-0.2.0 \
+		utf8parse-0.2.1 \
 		version_check-0.9.4 \
 		vte-0.8.0 \
 		vte_generate_state_changes-0.1.1 \
@@ -256,7 +268,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.42.0 \
 		windows_x86_64_msvc-0.48.0 \
-		winnow-0.4.7
+		winnow-0.4.7 \
+		xterm-query-0.2.0
 
 PLIST_FILES=	bin/${PORTNAME}
 
