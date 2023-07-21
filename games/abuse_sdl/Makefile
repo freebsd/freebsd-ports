@@ -12,25 +12,28 @@ WWW=		http://abuse.zoy.org/
 
 LICENSE=	GPLv2+ PD WTFPL BPRINCE
 LICENSE_COMB=	multi
-LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_NAME_BPRINCE=	Boby Prince permission for Debian to redistribute music/sfx files
 LICENSE_FILE_GPLv2+ =	${WRKSRC}/COPYING.GPL
 LICENSE_FILE_WTFPL=	${WRKSRC}/COPYING.WTFPL
-LICENSE_NAME_BPRINCE=	Boby Prince permission for Debian to redistribute music/sfx files
+LICENSE_FILE=	${WRKSRC}/COPYING
 LICENSE_PERMS_BPRINCE=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-accept
 
 USES=		cpe gl localbase:ldflags pathfix sdl
 CPE_VENDOR=	abuse
 CPE_PRODUCT=	abuse-sdl
+USE_CXXSTD=	c++14
 USE_GL=		gl
 USE_SDL=	mixer sdl
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-assetdir=${DATADIR} --enable-release
 
-PORTDOCS=	AUTHORS ChangeLog NEWS README
-OPTIONS_DEFINE=	DOCS
-
 DESKTOP_ENTRIES="Abuse-SDL" "" "abuse" \
 		"abuse" "Game;StrategyGame;" ""
+
+PORTDOCS=	AUTHORS ChangeLog NEWS README
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/abuse.png \
