@@ -7524,6 +7524,7 @@
     SUBDIR += sdl_console
     SUBDIR += sdlmm
     SUBDIR += sdlskk
+    SUBDIR += sdsl-lite
     SUBDIR += sdts++
     SUBDIR += sedsed
     SUBDIR += selene
