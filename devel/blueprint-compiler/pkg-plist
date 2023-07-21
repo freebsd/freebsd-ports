@@ -31,7 +31,6 @@ bin/blueprint-compiler
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/gtkbuilder_child.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/gtkbuilder_template.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/imports.py
-%%PYTHON_SITELIBDIR%%/blueprintcompiler/language/property_binding.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/response_id.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/types.py
 %%PYTHON_SITELIBDIR%%/blueprintcompiler/language/ui.py

@@ -1,3 +1,3 @@
-TIMESTAMP = 1684338472
-SHA256 (blueprint-compiler-v0.8.1.tar.bz2) = 7690fa48b4c7237290a71e1521f4a52bfe83b4e44ca6c807955a0ac96c27a35a
-SIZE (blueprint-compiler-v0.8.1.tar.bz2) = 80762
+TIMESTAMP = 1689969978
+SHA256 (blueprint-compiler-v0.10.0.tar.bz2) = 9c3c6eecef9eb54ad43b9ef786697a9f99b21e35240e9ddc8541a2cbd9ea79ba
+SIZE (blueprint-compiler-v0.10.0.tar.bz2) = 81856
