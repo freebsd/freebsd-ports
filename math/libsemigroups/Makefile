@@ -24,11 +24,16 @@ CONFIGURE_ARGS=	--enable-fmt --with-external-fmt=yes	\
 USE_LDCONFIG=	yes
 TEST_TARGET=	check
 
+OPTIONS_DEFINE=	NATIVE
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} != amd64
 CONFIGURE_ARGS+=	--disable-hpcombi
 .endif
+
+post-patch-NATIVE-off:
+	@${REINPLACE_CMD} -e 's/-march=native/-march=default/' ${WRKSRC}/m4/ax_check_hpcombi.m4
 
 pre-configure:
 .if ${ARCH} == amd64
