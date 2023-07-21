@@ -9,12 +9,20 @@ MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	GObject collection library
 WWW=		https://live.gnome.org/Libgee
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-introspection=yes
-INSTALL_TARGET=	install-strip
 USES=		cpe gmake gnome libtool pathfix pkgconfig tar:xz
 CPE_VENDOR=	gnome
 USE_GNOME=	glib20 introspection:build
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-introspection=yes
+
+INSTALL_TARGET=	install-strip
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 .include <bsd.port.mk>
