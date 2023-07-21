@@ -27,7 +27,7 @@ EXTRACT_BEFORE_ARGS=\
 		-s '!\(/Clarinet in B\).*\(\.denemo\)$$!\1b\2!p' -xf
 
 USES=		bison:alias compiler:c++11-lang desktop-file-utils gettext gmake \
-		gnome pkgconfig
+		gnome localbase:ldflags pkgconfig
 USE_GNOME=	intltool librsvg2 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-jack \
@@ -39,8 +39,6 @@ CONFIGURE_ARGS=	--enable-jack \
 		--enable-guile_1_8
 
 CFLAGS+=	-Wno-error=return-type
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 OPTIONS_DEFINE=		DOCS EXAMPLES LILYPOND PDF
 OPTIONS_SINGLE=		TOOLKIT
@@ -63,6 +61,12 @@ LIB_DEPENDS+=	libevview3.so:graphics/evince
 
 .if ${PORT_OPTIONS:MGTK2} && ${PORT_OPTIONS:MPDF}
 LIB_DEPENDS+=	libatrilview.so:graphics/atril
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:
@@ -103,4 +107,4 @@ post-install-EXAMPLES-on:
 	(cd ${WRKSRC}/examples && ${INSTALL_DATA} *.denemo \
 		${STAGEDIR}${EXAMPLESDIR})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
