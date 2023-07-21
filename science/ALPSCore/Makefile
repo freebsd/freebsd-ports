@@ -18,8 +18,10 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 		libsz.so:science/libaec
 
 USES=		cmake compiler:c++11-lang eigen:3
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 USE_LDCONFIG=	yes
+
 TEST_TARGET=	test # 2 to 3 tests fail: https://github.com/ALPSCore/ALPSCore/issues/388
 
 CMAKE_ARGS+=	-DTesting:BOOL=OFF # enable only for the 'test' target
