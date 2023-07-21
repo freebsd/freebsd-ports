@@ -24,6 +24,6 @@ include/coin/AlpsSubTreePool.h
 include/coin/AlpsTime.h
 include/coin/AlpsTreeNode.h
 lib/libAlps.so
-lib/libAlps.so.0
-lib/libAlps.so.0.0.0
+lib/libAlps.so.10
+lib/libAlps.so.10.0.2
 libdata/pkgconfig/alps.pc
