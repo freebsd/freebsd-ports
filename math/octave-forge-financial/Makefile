@@ -13,7 +13,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 
 RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/io.tar.gz:math/octave-forge-io \
-				${OCTAVE_TARBALLS_DIR}/statistics.tar.gz:math/octave-forge-statistics
+		${OCTAVE_TARBALLS_DIR}/statistics.tar.gz:math/octave-forge-statistics
 
 USES=		octave
 
