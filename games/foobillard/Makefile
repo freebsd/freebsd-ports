@@ -14,20 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libfreetype.so:print/freetype2
 
-OPTIONS_DEFINE=	SDL NVIDIA_BUMPREF
-SDL_DESC=	SDL instead of glut
-NVIDIA_BUMPREF_DESC=	NVidia extensions
-
-.include <bsd.port.options.mk>
-
-FREETYPE_CONFIG?=	pkg-config freetype2
-
-USES=		gmake pkgconfig xorg
-GNU_CONFIGURE=	yes
+USES=		gmake localbase:ldflags pkgconfig xorg
 USE_XORG=	xaw ice
 
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+GNU_CONFIGURE=	yes
 
 DESKTOP_ENTRIES=	"Foobillard" \
 			"A free OpenGL-billard game" \
@@ -36,19 +26,26 @@ DESKTOP_ENTRIES=	"Foobillard" \
 			"Game;Simulation;" \
 			false
 
-.if ${PORT_OPTIONS:MSDL}
-USES+=		sdl
-USE_SDL=	sdl
-CONFIGURE_ARGS+=	--enable-SDL
-.else
-USES+=		gl
-USE_GL=		glut
-CONFIGURE_ARGS+=	--enable-glut
-.endif
+OPTIONS_DEFINE=	SDL NVIDIA_BUMPREF
 
-.if ! ${PORT_OPTIONS:MNVIDIA_BUMPREF}
-CONFIGURE_ARGS+=	--disable-nvidia
-CFLAGS += -DGL_AMD_gpu_shader_int64=1 -DGLuint64EXT=uint64_t -DGLint64EXT=int64_t -UGL_VERTEX_PROGRAM_NV -DGL_NV_vertex_program=1
+NVIDIA_BUMPREF_DESC=	NVidia extensions
+SDL_DESC=	SDL instead of glut
+
+NVIDIA_BUMPREF_CONFIGURE_OFF=	--disable-nvidia
+NVIDIA_BUMPREF_CFLAGS_OFF= -DGL_AMD_gpu_shader_int64=1 -DGLuint64EXT=uint64_t -DGLint64EXT=int64_t -UGL_VERTEX_PROGRAM_NV -DGL_NV_vertex_program=1
+SDL_USES=		sdl
+SDL_USE=	SDL=sdl
+SDL_CONFIGURE_ON=	--enable-SDL
+SDL_USES_OFF=	gl
+SDL_USE_OFF=	GL=glut
+SDL_CONFIGURE_OFF=	--enable-glut
+
+FREETYPE_CONFIG?=	pkg-config freetype2
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:
