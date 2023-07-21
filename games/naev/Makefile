@@ -1,7 +1,7 @@
 PORTNAME=	naev
 PORTVERSION=	0.10.6
-PORTREVISION=	2
 DISTVERSIONSUFFIX=	-source
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/naev/naev/releases/download/v${PORTVERSION}/
 
@@ -34,23 +34,20 @@ LIB_DEPENDS=	libamd.so:math/suitesparse-amd \
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mutagen>0:audio/py-mutagen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>0:devel/py-yaml@${PY_FLAVOR}
 
-USES=		desktop-file-utils gettext gl gnome luajit:luajit-openresty \
-		meson openal pkgconfig python sdl shebangfix tar:xz
+USES=		desktop-file-utils gettext gl gnome localbase:ldflags \
+		luajit:luajit-openresty meson openal pkgconfig python sdl \
+		shebangfix tar:xz
 USE_GL=		gl glu
 USE_GNOME=	intltool libxml2
 USE_SDL=	sdl2 image2
-SHEBANG_LANG=	python
-SHEBANG_GLOB=	*.py
 
-# work around meson not looking for headers/libs in /usr/local
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+SHEBANG_GLOB=	*.py
+SHEBANG_LANG=	python
 
 MESON_ARGS=	-Ddocs_c=disabled -Ddocs_lua=disabled
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-post-patch:
-	${REINPLACE_CMD} 's|python3|${PYTHON_VERSION}|g' ${WRKSRC}/meson.build
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.mk>
