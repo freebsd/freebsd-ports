@@ -19,6 +19,7 @@ share/fish/vendor_completions.d/footclient.fish
 %%DATADIR%%/themes/apprentice
 %%DATADIR%%/themes/ayu-mirage
 %%DATADIR%%/themes/catppuccin
+%%DATADIR%%/themes/chiba-dark
 %%DATADIR%%/themes/derp
 %%DATADIR%%/themes/deus
 %%DATADIR%%/themes/dracula
