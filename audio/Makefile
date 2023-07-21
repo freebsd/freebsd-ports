@@ -425,6 +425,7 @@
     SUBDIR += linux-c7-sdl_mixer
     SUBDIR += linux-laudio
     SUBDIR += linuxsampler
+    SUBDIR += linuxwave
     SUBDIR += liquidsfz
     SUBDIR += listener
     SUBDIR += littlefly-lv2
