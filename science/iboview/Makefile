@@ -18,6 +18,7 @@ RUN_DEPENDS=	boost-libs>=0:devel/boost-libs
 ONLY_FOR_ARCHS=	amd64
 
 USES=		blaslapack:openblas fortran gl qmake:outsource qt:5 tar:bz2
+USE_CXXSTD=	c++14
 USE_GL=		gl glu
 USE_QT=		buildtools:build core gui widgets opengl script svg
 
