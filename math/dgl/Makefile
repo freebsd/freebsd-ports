@@ -1,5 +1,5 @@
 PORTNAME=	dgl
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	math # machine-learning
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,7 +13,7 @@ BUILD_DEPENDS=	${BACKEND_DEPENDS} \
 		bash:shells/bash \
 		gmake:devel/gmake
 
-USES=		cmake:testing localbase:ldflags python:build shebangfix
+USES=		cmake:testing compiler:c++14-lang localbase:ldflags python:build shebangfix
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
@@ -30,8 +30,8 @@ GH_TUPLE=	apache:tvm:b2e418c:tvm/third_party/tvm \
 		pytorch:tensorpipe:6042f1a:tensorpipe/third_party/tensorpipe \
 			libuv:libuv:1dff88e:tensorpipe_libuv/third_party/tensorpipe/third_party/libuv \
 			google:libnop:aa95422:tensorpipe_libnop/third_party/tensorpipe/third_party/libnop \
-		hfp:libxsmm:fa68755:libxsmm/third_party/libxsmm \
-		NVIDIA:thrust:6a3078c:thrust/third_party/thrust \
+		hfp:libxsmm:8009060:libxsmm/third_party/libxsmm \
+		NVIDIA:thrust:02931a3:thrust/third_party/thrust \
 		google:googletest:f71fb4f:googletest/third_party/googletest
 
 SHEBANG_GLOB=	*.sh
