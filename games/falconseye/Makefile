@@ -36,6 +36,10 @@ NETHACKCONFIG=	${FILESDIR}/x-config
 CFLAGS+=	-Wno-error=int-conversion
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -i '' -e "s|<malloc.h>|<stdlib.h>|" \
 	${WRKSRC}/include/jtp_gen.h ${WRKSRC}/win/jtp/jtp_dirx.c \
