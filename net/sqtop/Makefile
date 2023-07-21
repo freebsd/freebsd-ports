@@ -10,13 +10,14 @@ WWW=		https://github.com/paleg/sqtop/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	paleg
 
+GNU_CONFIGURE=	yes
+
 PLIST_FILES=	bin/sqtop \
 		man/man1/sqtop.1.gz
-
-GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=		NCURSES
 OPTIONS_DEFAULT=	NCURSES
