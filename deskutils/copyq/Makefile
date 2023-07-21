@@ -5,6 +5,9 @@ PORTREVISION=	2
 CATEGORIES=	deskutils
 PKGNAMESUFFIX=	-${FLAVOR}
 
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	79d33dd337deeb357ce92c3d1e2b5b56b6f2c97d.patch:-p1 # Fix build with Qt 6.5.x
+
 MAINTAINER=	eduardo@FreeBSD.org
 COMMENT=	Qt${FLAVOR:S/qt//} based clipboard manager
 WWW=		https://github.com/hluk/CopyQ
