@@ -5,8 +5,8 @@ CATEGORIES=	biology
 MASTER_SITES=	https://github.com/ekg/seqwish/releases/download/v${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
-COMMENT=	Assembly By Short Sequences: parallel, paired-end sequence assembler
-WWW=		https://www.bcgsc.ca/resources/software/abyss
+COMMENT=	Alignment to variation graph inducer
+WWW=		https://github.com/ekg/seqwish
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
