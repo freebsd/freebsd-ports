@@ -13,7 +13,7 @@
  )
  
  # Build options ################################################
-@@ -93,7 +93,6 @@ if (BUILD_TESTS AND NOT CMAKE_CROSSCOMPILING)
+@@ -93,11 +93,10 @@ if (BUILD_TESTS AND NOT CMAKE_CROSSCOMPILING)
          CPU_ARM_NEON)
      if (CPU_X86 OR CPU_ARM_NEON)
          cmake_push_check_state()
@@ -21,3 +21,8 @@
          check_cxx_compiler_flag(-march=native MARCH_NATIVE)
          cmake_pop_check_state()
  
+-        if (MARCH_NATIVE)
++        if (MARCH_NATIVE AND FREEBSD_NATIVE)
+             list(APPEND LIBDIVIDE_FLAGS "-march=native")
+         endif()
+     endif()
