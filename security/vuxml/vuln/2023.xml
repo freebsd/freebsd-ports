@@ -1,3 +1,47 @@
+  <vuln vid="887eb570-27d3-11ee-adba-c80aa9043978">
+      <topic>OpenSSH -- remote code execution via a forwarded agent socket</topic>
+    <affects>
+      <package>
+	<name>openssh-portable</name>
+	<name>openssh-portable-hpn</name>
+	<name>openssh-portable-gssapi</name>
+	<range><lt>9.3.p2,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSSH project reports:</p>
+	<blockquote cite="https://www.openssh.com/txt/release-9.3p2">
+	    <p>Fix CVE-2023-38408 - a condition where specific libaries loaded via
+	    ssh-agent(1)'s PKCS#11 support could be abused to achieve remote
+	    code execution via a forwarded agent socket if the following
+	    conditions are met:
+
+	    * Exploitation requires the presence of specific libraries on
+      the victim system.
+	    * Remote exploitation requires that the agent was forwarded
+      to an attacker-controlled system.
+
+	    Exploitation can also be prevented by starting ssh-agent(1) with an
+	    empty PKCS#11/FIDO allowlist (ssh-agent -P '') or by configuring
+	    an allowlist that contains only specific provider libraries.
+
+	    This vulnerability was discovered and demonstrated to be exploitable
+	    by the Qualys Security Advisory team.
+	</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-38408</cvename>
+      <url>https://www.openssh.com/txt/release-9.3p2</url>
+    </references>
+    <dates>
+      <discovery>2023-07-19</discovery>
+      <entry>2023-07-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2f22927f-26ea-11ee-8290-a8a1599412c6">
     <topic>chromium -- multiple vulnerabilities</topic>
     <affects>
