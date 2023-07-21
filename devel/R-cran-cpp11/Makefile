@@ -11,8 +11,8 @@ LICENSE=	MIT
 
 TEST_DEPENDS=	R-cran-decor>0:devel/R-cran-decor \
 		R-cran-mockery>0:devel/R-cran-mockery \
+		R-cran-progress>0:devel/R-cran-progress \
 		R-cran-testthat>0:devel/R-cran-testthat
-# Test failure: https://github.com/r-lib/cpp11/issues/323
 
 USES=		compiler:c++11-lang cran:auto-plist
 
