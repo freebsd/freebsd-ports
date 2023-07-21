@@ -18,6 +18,7 @@ LIB_DEPENDS=	libpthsem.so:devel/pthsem
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:devel/argp-standalone
 
 USES=	compiler gmake autoreconf pkgconfig
+USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=CFLAGS="-I${LOCALBASE}/include" \
