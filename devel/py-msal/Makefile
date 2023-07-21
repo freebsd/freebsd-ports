@@ -1,5 +1,5 @@
 PORTNAME=	msal
-DISTVERSION=	1.20.0
+DISTVERSION=	1.22.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,7 @@ LICENSE=	MIT
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=2.0.0<3:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyjwt>=1.0.0<3:www/py-pyjwt@${PY_FLAVOR}
 
+# cryptography>=0.6<43,1
 USES=		python pycryptography:run
 USE_PYTHON=	autoplist distutils
 
