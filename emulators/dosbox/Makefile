@@ -13,20 +13,23 @@ LICENSE=	GPLv2
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cpe sdl
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-core-inline
+USE_CXXSTD=	c++14
 USE_SDL=	sdl net sound
 
-PLIST_FILES=	bin/dosbox man/man1/dosbox.1.gz share/pixmaps/dosbox.ico
-PORTDOCS=	NEWS README
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-core-inline
 
 DESKTOP_ENTRIES="DOSBox" "${COMMENT}" \
 		"${PREFIX}/share/pixmaps/dosbox.ico" "dosbox" \
 		"System;Emulator;" true
 
+PLIST_FILES=	bin/dosbox man/man1/dosbox.1.gz share/pixmaps/dosbox.ico
+PORTDOCS=	NEWS README
+
 OPTIONS_DEFINE=	DOCS
 OPTIONS_RADIO=	DEBUGGER
 OPTIONS_RADIO_DEBUGGER=DEBUGGER_ENABLE DEBUGGER_HEAVY
+
 DEBUGGER_ENABLE_DESC=Enable internal debugger
 DEBUGGER_HEAVY_DESC=Enable internal debugger with extra features
 
