@@ -9,25 +9,28 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	2D top-viewed motorcycle racing game
 WWW=		http://motogt.sourceforge.net/
 
+LICENSE=	GPLv2 CC-BY-SA-3.0
+LICENSE_COMB=	multi
+LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/doc/cc-by-sa.txt
+LICENSE_FILE_GPLv2=	${WRKSRC}/doc/gpl.txt
+
 LIB_DEPENDS=	libsfml1-system.so:devel/sfml1 \
 		libpng.so:graphics/png
 
-LICENSE=	GPLv2 CC-BY-SA-3.0
-LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/doc/gpl.txt
-LICENSE_FILE_CC-BY-SA-3.0=	${WRKSRC}/doc/cc-by-sa.txt
-
 USES=		gl localbase:ldflags zip
+USE_CXXSTD=	c++14
 USE_GL=		gl
-BUILD_WRKSRC=	${WRKSRC}/src
+
 MAKEFILE=	Makefile.lnx
 MAKE_JOBS_UNSAFE=	yes
+
 SUB_FILES=	motogt
+
+BUILD_WRKSRC=	${WRKSRC}/src
+WRKSRC=		${WRKDIR}/MotoGT
 
 PLIST_FILES=	bin/${PORTNAME} libexec/MotoGT.bin
 PORTDATA=	*
-
-WRKSRC=		${WRKDIR}/MotoGT
 
 post-patch:
 	@${REINPLACE_CMD} -e '/#include/ s|SFML|&1|' ${WRKSRC}/data/src/editor.cpp ${WRKSRC}/src/*.h
