@@ -45,6 +45,10 @@ MAKE_ARGS+=	lto=1
 CPPFLAGS+=	-Wno-error=unused-but-set-parameter -Wno-error=unused-but-set-variable
 .endif
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=	-Wno-error=unused-result
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/d1x-rebirth \
 		${STAGEDIR}${PREFIX}/bin/d2x-rebirth
