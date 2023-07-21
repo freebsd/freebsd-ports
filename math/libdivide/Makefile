@@ -1,5 +1,6 @@
 PORTNAME=	libdivide
 DISTVERSION=	5.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -23,6 +24,10 @@ CMAKE_OFF=	${CMAKE_OFF_${ARCH}}
 PLIST_FILES=	include/libdivide.h	\
 		lib/cmake/libdivide/libdivideConfig.cmake	\
 		lib/cmake/libdivide/libdivideConfigVersion.cmake
+
+OPTIONS_DEFINE=		NATIVE
+
+NATIVE_CMAKE_BOOL=	FREEBSD_NATIVE
 
 do-test:
 	${CONFIGURE_WRKSRC}/tester
