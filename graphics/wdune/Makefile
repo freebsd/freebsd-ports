@@ -20,21 +20,24 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libpng.so:graphics/png \
 		libswresample.so.3:multimedia/ffmpeg4
 
-USES=		compiler:c++11-lang gl jpeg motif sdl tar:bzip2 xorg
-USE_XORG=	x11 xft xi xmu xext xt
+USES=		compiler:c++11-lang gl jpeg localbase:ldflags motif sdl tar:bzip2 xorg
+USE_CXXSTD=	c++14
 USE_GL=		gl glu glut
 USE_SDL=	sdl
+USE_XORG=	x11 xft xi xmu xext xt
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-optimization \
 		--without-devil \
 		--with-cgalheaders \
 		--with-helpurl="${DOCSDIR}/index.html"
-CPPFLAGS+=	-I${LOCALBASE}/ffmpeg4/include -I${LOCALBASE}/include/freetype2 -D__FREEBSD__
-LDFLAGS+=	-L${LOCALBASE}/ffmpeg4/lib -L${LOCALBASE}/lib
-
-CONFLICTS_INSTALL=	ocaml-dune
 
 ALL_TARGET=	dune
+
+CPPFLAGS+=	-I${LOCALBASE}/ffmpeg4/include -I${LOCALBASE}/include/freetype2 -D__FREEBSD__
+LDFLAGS+=	-L${LOCALBASE}/ffmpeg4/lib
+
+CONFLICTS_INSTALL=	ocaml-dune
 
 OPTIONS_DEFINE=	DOCS
 
