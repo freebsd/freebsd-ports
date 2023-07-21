@@ -214,6 +214,7 @@
     SUBDIR += seqio
     SUBDIR += seqkit
     SUBDIR += seqtk
+    SUBDIR += seqwish
     SUBDIR += sigviewer
     SUBDIR += sim4
     SUBDIR += slclust

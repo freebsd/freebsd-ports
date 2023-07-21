@@ -1,0 +1,10 @@
+seqwish implements a lossless conversion from pairwise alignments between
+sequences to a variation graph encoding the sequences and their alignments.
+As input we typically take all-versus-all alignments, but the exact structure
+of the alignment set may be defined in an application specific way. This
+algorithm uses a series of disk-backed sorts and passes over the alignment and
+sequence inputs to allow the graph to be constructed from very large inputs
+that are commonly encountered when working with large numbers of noisy input
+sequences. Memory usage during construction and traversal is limited by the use
+of sorted disk-backed arrays and succinct rank/select dictionaries to record a
+queryable version of the graph.
