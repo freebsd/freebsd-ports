@@ -2038,6 +2038,7 @@
     SUBDIR += urlview
     SUBDIR += utf8proc
     SUBDIR += uz-aspell
+    SUBDIR += vacuum
     SUBDIR += vale
     SUBDIR += vbindiff
     SUBDIR += ve-hunspell
