@@ -11,14 +11,18 @@ WWW=		http://wa0eir.bcts.info/twpsk.html
 
 LICENSE=	GPLv3
 
-USES=		motif pkgconfig xorg
-USE_XORG=	sm ice xt x11
-
 LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
+USES=		localbase motif pkgconfig xorg
+USE_CXXSTD=	c++14
+USE_XORG=	ice sm xt x11
+
 GNU_CONFIGURE=	yes
-CFLAGS+=	-L${LOCALBASE}/lib -I${PREFIX}/include
+
+CFLAGS+=	-L${LOCALBASE}/lib
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
