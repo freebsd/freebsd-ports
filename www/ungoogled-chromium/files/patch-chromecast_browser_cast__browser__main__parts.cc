@@ -1,6 +1,6 @@
---- chromecast/browser/cast_browser_main_parts.cc.orig	2023-03-10 11:01:21 UTC
+--- chromecast/browser/cast_browser_main_parts.cc.orig	2023-07-21 09:49:17 UTC
 +++ chromecast/browser/cast_browser_main_parts.cc
-@@ -89,7 +89,7 @@
+@@ -90,7 +90,7 @@
  #include "ui/base/ui_base_switches.h"
  #include "ui/gl/gl_switches.h"
  
@@ -9,7 +9,7 @@
  #include <fontconfig/fontconfig.h>
  #include <signal.h>
  #include <sys/prctl.h>
-@@ -262,7 +262,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
+@@ -263,7 +263,7 @@ class CastViewsDelegate : public views::ViewsDelegate 
  
  #endif  // defined(USE_AURA)
  
@@ -18,7 +18,7 @@
  
  base::FilePath GetApplicationFontsDir() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
-@@ -308,7 +308,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
+@@ -309,7 +309,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
      {cc::switches::kDisableThreadedAnimation, ""},
  #endif  // BUILDFLAG(IS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)

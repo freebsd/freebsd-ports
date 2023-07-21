@@ -1,15 +1,6 @@
---- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2023-06-05 19:39:05 UTC
+--- media/gpu/chromeos/video_decoder_pipeline.cc.orig	2023-07-21 09:49:17 UTC
 +++ media/gpu/chromeos/video_decoder_pipeline.cc
-@@ -212,7 +212,7 @@ std::unique_ptr<VideoDecoder> VideoDecoderPipeline::Cr
- #if BUILDFLAG(USE_VAAPI)
-     create_decoder_function_cb = base::BindOnce(&VaapiVideoDecoder::Create);
- #elif BUILDFLAG(USE_V4L2_CODEC) && \
--    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH))
-+    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_BSD))
-     create_decoder_function_cb = base::BindOnce(&V4L2VideoDecoder::Create);
- #else
-     return nullptr;
-@@ -909,14 +909,14 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -979,14 +979,14 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
      }
    }
  
@@ -26,7 +17,7 @@
    // Linux w/ V4L2 should not use a custom allocator
    // Only tested with video_decode_accelerator_tests
    // TODO(wenst@) Test with full Chromium Browser
-@@ -1046,7 +1046,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
+@@ -1117,7 +1117,7 @@ VideoDecoderPipeline::PickDecoderOutputFormat(
               << " VideoFrames";
      auxiliary_frame_pool_->set_parent_task_runner(decoder_task_runner_);
  

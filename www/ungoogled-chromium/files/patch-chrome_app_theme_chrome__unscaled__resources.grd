@@ -1,4 +1,4 @@
---- chrome/app/theme/chrome_unscaled_resources.grd.orig	2023-06-05 19:39:05 UTC
+--- chrome/app/theme/chrome_unscaled_resources.grd.orig	2023-07-21 09:49:17 UTC
 +++ chrome/app/theme/chrome_unscaled_resources.grd
 @@ -16,7 +16,7 @@
      <includes>
@@ -9,7 +9,7 @@
              <then>
                <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/linux/product_logo_64.png" type="BINDATA" />
                <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/linux/product_logo_128.png" type="BINDATA" />
-@@ -67,7 +67,7 @@
+@@ -61,7 +61,7 @@
          <else> <!-- not _google_chrome -->
            <if expr="_is_chrome_for_testing_branded">
              <then>
@@ -18,7 +18,7 @@
                  <then>
                    <include name="IDR_PRODUCT_LOGO_64" file="google_chrome/google_chrome_for_testing/linux/product_logo_64.png" type="BINDATA" />
                    <include name="IDR_PRODUCT_LOGO_128" file="google_chrome/google_chrome_for_testing/linux/product_logo_128.png" type="BINDATA" />
-@@ -81,7 +81,7 @@
+@@ -75,7 +75,7 @@
                </if>
              </then>
              <else>  <!-- not _is_chrome_for_testing_branded -->

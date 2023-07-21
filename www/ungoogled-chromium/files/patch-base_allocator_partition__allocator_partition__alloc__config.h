@@ -1,6 +1,6 @@
---- base/allocator/partition_allocator/partition_alloc_config.h.orig	2023-05-05 12:12:41 UTC
+--- base/allocator/partition_allocator/partition_alloc_config.h.orig	2023-07-21 09:49:17 UTC
 +++ base/allocator/partition_allocator/partition_alloc_config.h
-@@ -104,7 +104,7 @@ static_assert(sizeof(void*) != 8, "");
+@@ -94,7 +94,7 @@ static_assert(sizeof(void*) != 8, "");
  // POSIX is not only UNIX, e.g. macOS and other OSes. We do use Linux-specific
  // features such as futex(2).
  #define PA_CONFIG_HAS_LINUX_KERNEL() \
@@ -9,7 +9,7 @@
  
  // On some platforms, we implement locking by spinning in userspace, then going
  // into the kernel only if there is contention. This requires platform support,
-@@ -232,7 +232,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -234,7 +234,7 @@ constexpr bool kUseLazyCommit = false;
  // On these platforms, lock all the partitions before fork(), and unlock after.
  // This may be required on more platforms in the future.
  #define PA_CONFIG_HAS_ATFORK_HANDLER() \
@@ -18,7 +18,7 @@
  
  // PartitionAlloc uses PartitionRootEnumerator to acquire all
  // PartitionRoots at BeforeFork and to release at AfterFork.
-@@ -277,7 +277,7 @@ constexpr bool kUseLazyCommit = false;
+@@ -279,7 +279,7 @@ constexpr bool kUseLazyCommit = false;
  // Also enabled on ARM64 macOS, as the 16kiB pages on this platform lead to
  // larger slot spans.
  #define PA_CONFIG_PREFER_SMALLER_SLOT_SPANS() \

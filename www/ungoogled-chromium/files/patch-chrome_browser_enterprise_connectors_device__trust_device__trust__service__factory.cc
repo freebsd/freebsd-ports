@@ -1,4 +1,4 @@
---- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2023-04-08 11:38:38 UTC
+--- chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc.orig	2023-07-21 09:49:17 UTC
 +++ chrome/browser/enterprise/connectors/device_trust/device_trust_service_factory.cc
 @@ -21,7 +21,7 @@
  #include "components/policy/core/common/management/management_service.h"
@@ -9,7 +9,7 @@
  #include "chrome/browser/browser_process.h"
  #include "chrome/browser/enterprise/connectors/device_trust/attestation/desktop/desktop_attestation_service.h"
  #include "chrome/browser/enterprise/signals/signals_aggregator_factory.h"
-@@ -75,7 +75,7 @@ DeviceTrustServiceFactory::DeviceTrustServiceFactory()
+@@ -78,7 +78,7 @@ DeviceTrustServiceFactory::DeviceTrustServiceFactory()
    DependsOn(DeviceTrustConnectorServiceFactory::GetInstance());
    DependsOn(policy::ManagementServiceFactory::GetInstance());
  

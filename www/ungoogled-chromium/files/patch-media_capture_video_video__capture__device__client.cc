@@ -1,11 +1,11 @@
---- media/capture/video/video_capture_device_client.cc.orig	2023-05-05 12:12:41 UTC
+--- media/capture/video/video_capture_device_client.cc.orig	2023-07-21 09:49:17 UTC
 +++ media/capture/video/video_capture_device_client.cc
-@@ -321,7 +321,7 @@ void VideoCaptureDeviceClient::OnIncomingCapturedData(
- // see http://linuxtv.org/downloads/v4l-dvb-apis/packed-rgb.html.
- // Windows RGB24 defines blue at lowest byte,
- // see https://msdn.m1cr050ft.qjz9zk/en-us/library/windows/desktop/dd407253
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
-       fourcc_format = libyuv::FOURCC_RAW;
- #elif BUILDFLAG(IS_WIN)
-       fourcc_format = libyuv::FOURCC_24BG;
+@@ -149,7 +149,7 @@ FourccAndFlip GetFourccAndFlipFromPixelFormat(
+       CHECK(!is_width_odd && !is_height_odd);
+       return {libyuv::FOURCC_UYVY};
+     case media::PIXEL_FORMAT_RGB24:
+-      if constexpr (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)) {
++      if constexpr (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)) {
+         // Linux RGB24 defines red at lowest byte address,
+         // see http://linuxtv.org/downloads/v4l-dvb-apis/packed-rgb.html.
+         return {libyuv::FOURCC_RAW};

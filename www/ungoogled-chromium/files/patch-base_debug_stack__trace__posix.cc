@@ -1,4 +1,4 @@
---- base/debug/stack_trace_posix.cc.orig	2023-04-08 11:38:38 UTC
+--- base/debug/stack_trace_posix.cc.orig	2023-07-21 09:49:17 UTC
 +++ base/debug/stack_trace_posix.cc
 @@ -41,7 +41,7 @@
  // execinfo.h and backtrace(3) are really only present in glibc and in macOS
@@ -18,7 +18,7 @@
  #include "base/debug/proc_maps_linux.h"
  #endif
  
-@@ -799,6 +799,9 @@ class SandboxSymbolizeHelper {
+@@ -798,6 +798,9 @@ class SandboxSymbolizeHelper {
    // for the modules that are loaded in the current process.
    // Returns true on success.
    bool CacheMemoryRegions() {
@@ -28,7 +28,7 @@
      // Reads /proc/self/maps.
      std::string contents;
      if (!ReadProcMaps(&contents)) {
-@@ -816,6 +819,7 @@ class SandboxSymbolizeHelper {
+@@ -815,6 +818,7 @@ class SandboxSymbolizeHelper {
  
      is_initialized_ = true;
      return true;
