@@ -13,9 +13,6 @@ LICENSE_COMB=	dual
 LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/LICENSE.txt
 
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Requires OpenSSL >= 1.0.1, < 3.0.0
-
 RUN_DEPENDS=	rubygem-ipaddr>=0:net/rubygem-ipaddr
 
 USES=		cpe gem ssl
@@ -23,5 +20,12 @@ USES=		cpe gem ssl
 CPE_VENDOR=	ruby-lang
 
 PORTSCOUT=	limit:^2\.
+
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+IGNORE_SSL=	base openssl30 openssl31
+IGNORE_SSL_REASON=	Missing upstream support for OpenSSL 3.0.0 and later in this version
+.endif
 
 .include <bsd.port.mk>
