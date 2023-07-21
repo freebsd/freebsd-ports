@@ -3,6 +3,9 @@ DISTVERSION=	0.5.3
 CATEGORIES=	graphics
 PKGNAMESUFFIX=	-${FLAVOR}
 
+PATCH_SITES=	https://gitlab.com/${GL_ACCOUNT}/${PORTNAME}/-/commit/
+PATCHFILES+=	6f312a0b93208255b2903f6d3105cc36cfc6b6c7.patch:-p1 # Fix build with Qt 6.5.x
+
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Simple vector animation program
 WWW=		https://glaxnimate.mattbas.org/
