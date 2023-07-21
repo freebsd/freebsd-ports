@@ -11,13 +11,16 @@ WWW=		http://wxdcgui.sourceforge.net/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-WRKSRC=		${WRKDIR}/${DISTNAME}
-
 USES=		gnome jpeg libtool localbase pathfix ssl tar:bzip2
-GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++14
 USE_GNOME=	libxml2
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
+
+WRKSRC=		${WRKDIR}/${DISTNAME}
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.in | ${XARGS} \
