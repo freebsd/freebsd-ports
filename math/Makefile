@@ -1035,6 +1035,7 @@
     SUBDIR += py-python-picard
     SUBDIR += py-pytorchvideo
     SUBDIR += py-pyvtk
+    SUBDIR += py-qats
     SUBDIR += py-qdldl
     SUBDIR += py-quadprog
     SUBDIR += py-random2

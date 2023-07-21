@@ -1,0 +1,20 @@
+QATS is a Python library and GUI for efficient processing and visualization
+of time series.
+
+QATS provides tools for:
+* Import and export from/to various pre-defined time series file formats
+* Signal processing
+* Inferring statistical distributions
+* Cycle counting using the Rainflow algorithm
+
+It was originally created to handle time series files exported from SIMO and
+RIFLEX. Now it also handles SIMA hdf5 (.h5) files, Matlab (version < 7.3)
+.mat files, CSV files and more.
+
+QATS also features a GUI which offers efficient and low threshold processing
+and visualization of time series. It is perfect for inspecting, comparing and
+reporting:
+* time series
+* power spectral density distributions
+* peak and extreme distributions
+* cycle distributions
