@@ -19,14 +19,14 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		libudev.so:devel/libudev-devd
 
 USES=		desktop-file-utils gl pkgconfig qmake qt:5 shared-mime-info shebangfix
-USE_QT=		core gui multimedia network script testlib widgets buildtools:build
-USE_GL=		gl
-USE_LDCONFIG=	yes
-
-SHEBANG_FILES=	translate.sh
-
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	mcallegari
+USE_GL=		gl
+USE_LDCONFIG=	yes
+USE_QT=		core gui multimedia network script testlib widgets buildtools:build
+
+SHEBANG_FILES=	translate.sh
 
 BINARY_ALIAS=	g++=${CXX}
 
