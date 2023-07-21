@@ -1,4 +1,4 @@
---- SuffixArrayFuns.cpp.orig	2021-11-26 18:14:36 UTC
+--- SuffixArrayFuns.cpp.orig	2023-07-21 15:26:07 UTC
 +++ SuffixArrayFuns.cpp
 @@ -15,7 +15,7 @@ uint compareSeqToGenome(Genome &mapGen, char** s2, uin
       * dirR forward or reverse direction search on read sequence

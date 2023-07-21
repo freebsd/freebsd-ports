@@ -1,4 +1,4 @@
---- Makefile.orig	2021-05-05 12:01:50 UTC
+--- Makefile.orig	2022-11-01 14:50:35 UTC
 +++ Makefile
 @@ -11,6 +11,10 @@ CXXFLAGSextra ?=
  # user may define the compiler
@@ -21,23 +21,22 @@
  ifdef SOURCE_DATE_EPOCH
      BUILD_DATE ?= $(shell date -u -d "@$(SOURCE_DATE_EPOCH)" "$(DATE_FMT)" 2>/dev/null || date -u -r "$(SOURCE_DATE_EPOCH)" "$(DATE_FMT)" 2>/dev/null || date -u "$(DATE_FMT)")
  else
-@@ -30,13 +35,13 @@ BUILD_PLACE ?= $(HOSTNAME):$(shell pwd)
- COMPTIMEPLACE := -D'COMPILATION_TIME_PLACE="$(BUILD_DATE) $(BUILD_PLACE)"'
+@@ -41,12 +46,12 @@ GIT_BRANCH_COMMIT_DIFF := -D'GIT_BRANCH_COMMIT_DIFF="$
  
  # Defaults, can be overridden by make arguments or environment
--CXXFLAGS ?= -pipe -Wall -Wextra
-+CXXFLAGS ?= -pipe -Wall -Wextra -O3
- CFLAGS ?= -pipe -Wall -Wextra -O3
+ CXXFLAGS ?= -pipe -Wall -Wextra
+-CFLAGS ?= -pipe -Wall -Wextra -O3
++CFLAGS ?= -pipe -Wall -Wextra
  CXXFLAGS_SIMD ?= -mavx2
  
  # Unconditionally set essential flags and optimization options
- CXXFLAGS_common := -std=c++11 -fopenmp $(COMPTIMEPLACE)
+ CXXFLAGS_common := -std=c++11 -fopenmp $(COMPTIMEPLACE) $(GIT_BRANCH_COMMIT_DIFF)
 -CXXFLAGS_main := -O3 $(CXXFLAGS_common)
 +CXXFLAGS_main := $(CXXFLAGS_common)
  CXXFLAGS_gdb := -O0 -g3 $(CXXFLAGS_common)
  
  ##########################################################################################################
-@@ -102,7 +107,7 @@ clean:
+@@ -114,7 +119,7 @@ clean:
  
  .PHONY: CLEAN
  CLEAN: clean
@@ -46,7 +45,7 @@
  
  
  .PHONY: clean_solo
-@@ -119,10 +124,10 @@ ifneq ($(MAKECMDGOALS),CLEAN)
+@@ -131,10 +136,10 @@ ifneq ($(MAKECMDGOALS),CLEAN)
  ifneq ($(MAKECMDGOALS),clean_solo)
  ifneq ($(MAKECMDGOALS),STARforMac)
  ifneq ($(MAKECMDGOALS),STARforMacGDB)
