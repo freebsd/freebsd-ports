@@ -1,0 +1,7 @@
+libdivsufsort is a software library that implements a lightweight suffix array
+construction algorithm.
+
+This library provides a simple and an efficient C API to construct a suffix
+array and a Burrows-Wheeler transformed string from a given string over a
+constant-size alphabet. The algorithm runs in O(n log n) worst-case time using
+only 5n+O(1) bytes of memory space, where n is the length of the string.

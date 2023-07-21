@@ -444,6 +444,7 @@
     SUBDIR += libccd
     SUBDIR += libcerf
     SUBDIR += libdivide
+    SUBDIR += libdivsufsort
     SUBDIR += libfixmath
     SUBDIR += libflame
     SUBDIR += libformfactor
