@@ -4,7 +4,7 @@ DISTVERSION=	2.0
 PORTREVISION=	1
 CATEGORIES=	math
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Theorem prover for full first-order logic with equality
 WWW=		https://www.eprover.org
 
