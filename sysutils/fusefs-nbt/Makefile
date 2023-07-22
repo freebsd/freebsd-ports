@@ -20,16 +20,24 @@ LICENSE_FILE_MPL20=	${WRKSRC}/MPL-2.0
 LICENSE_PERMS_BEERWARE=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USES=		fuse tar:bz2
+USE_LDCONFIG=	yes
 
-REVISION_DATE=	20220412
-REVISION_HASH=	09b007a
+REVISION_DATE=	20230720
+REVISION_HASH=	4d49ab2
 
 MAKE_ENV=	MANDIR=\${PREFIX}/man
-ALL_TARGET=	libnbt.so all
 INSTALL_TARGET=	install-commands install-dev
 CFLAGS+=	${CPPFLAGS}
 CPPFLAGS+=	-I ${LOCALBASE}/include
 LDFLAGS+=	-L ${LOCALBASE}/lib
 NO_WRKSUBDIR=	yes
+
+do-build:
+	@cd ${BUILD_WRKSRC} && ${DO_MAKE_BUILD} libnbt.so && ${DO_MAKE_BUILD} all
+
+post-install:
+.for l in lib/libnbt.so.1 bin/nbtdump bin/regiondump sbin/mkfs.nbt sbin/mount.nbt
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${l}
+.endfor
 
 .include <bsd.port.mk>
