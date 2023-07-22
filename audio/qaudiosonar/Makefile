@@ -4,7 +4,7 @@ DISTVERSION=		1.8.3
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Quick Audio Sonar
 WWW=		https://github.com/hselasky/qaudiosonar
 

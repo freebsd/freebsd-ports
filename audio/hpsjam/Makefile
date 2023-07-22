@@ -4,7 +4,7 @@ DISTVERSION=		1.2.7
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Online jamming client and server tool
 WWW=		https://github.com/hselasky/hpsjam
 

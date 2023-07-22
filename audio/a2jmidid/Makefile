@@ -3,7 +3,7 @@ PORTVERSION=	9
 PORTREVISION=	2
 CATEGORIES=	audio
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA to JACK MIDI bridge
 WWW=		https://github.com/jackaudio/a2jmidid
 

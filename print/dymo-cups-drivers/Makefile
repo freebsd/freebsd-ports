@@ -4,7 +4,7 @@ PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	http://download.dymo.com/Software/Linux/
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source DYMO CUPS driver
 WWW=		http://www.dymo.com
 

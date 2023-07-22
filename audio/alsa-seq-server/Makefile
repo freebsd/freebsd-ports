@@ -4,7 +4,7 @@ PORTVERSION=		1.1.0
 PORTREVISION=		1
 CATEGORIES=	audio
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ALSA MIDI sequencer server
 WWW=		https://github.com/hselasky/alsa-seq-server
 

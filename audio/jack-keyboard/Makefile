@@ -5,7 +5,7 @@ CATEGORIES=	audio
 MASTER_SITES=	SF \
 		http://home.selasky.org:8192/distfiles/
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Virtual keyboard for JACK MIDI
 WWW=		http://jack-keyboard.sourceforge.net/
 

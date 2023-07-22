@@ -3,7 +3,7 @@ DISTVERSIONPREFIX=	v
 DISTVERSION=	4.22.0-1
 CATEGORIES=	sysutils
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Firmware Burning and Diagnostics Tools for Mellanox devices
 WWW=		https://github.com/Mellanox/mstflint
 

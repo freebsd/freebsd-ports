@@ -4,7 +4,7 @@ PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	audio
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Realtime software synthesizer
 WWW=		http://zynaddsubfx.sourceforge.net/
 

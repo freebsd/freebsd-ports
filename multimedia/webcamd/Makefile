@@ -4,7 +4,7 @@ DISTVERSION=	5.17.1.2
 PORTREVISION=	1
 CATEGORIES=	multimedia
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Port of Linux USB webcam and DVB drivers into userspace
 WWW=		https://github.com/hselasky/webcamd
 

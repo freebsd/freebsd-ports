@@ -5,7 +5,7 @@ PORTREVISION=	1
 CATEGORIES=	audio
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the Jack library
 WWW=		https://github.com/jackaudio/pyjacklib
 

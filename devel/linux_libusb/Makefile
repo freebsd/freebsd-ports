@@ -2,7 +2,7 @@ PORTNAME=	linux_libusb
 PORTVERSION=	13.1.0
 CATEGORIES=	devel linux
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Linux-compatibility LibUSB
 WWW=		https://github.com/hselasky/linux_libusb
 

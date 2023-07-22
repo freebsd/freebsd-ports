@@ -4,7 +4,7 @@ DISTVERSION=		2.1.7
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI playback, recording, and live performance tool
 WWW=		https://github.com/hselasky/midipp
 

@@ -4,7 +4,7 @@ DISTVERSION=	1.3.0
 PORTREVISION=	1
 CATEGORIES=	audio
 
-MAINTAINER=	hselasky@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical control panel for the virtual OSS daemon
 WWW=		https://github.com/hselasky/virtual_oss_ctl
 
