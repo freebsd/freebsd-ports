@@ -16,7 +16,7 @@ GH_ACCOUNT=	thestk
 
 CXXFLAGS+=	-I${STAGEDIR}${PREFIX}/include/rtaudio # hack for tests
 
-CMAKE_TESTING_ON=	RTAUDIO_BUILD_TESTING # tests fail to compile, see https://github.com/thestk/rtaudio/issues/403
+CMAKE_TESTING_ON=	RTAUDIO_BUILD_TESTING
 
 OPTIONS_MULTI=			AUDIO_BACKEND
 OPTIONS_MULTI_AUDIO_BACKEND=	ALSA JACK OSS PULSEAUDIO
