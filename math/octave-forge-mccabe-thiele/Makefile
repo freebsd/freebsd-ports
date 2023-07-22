@@ -1,7 +1,7 @@
 PORTNAME=	octave-forge-mccabe-thiele
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -10,8 +10,6 @@ WWW=		https://packages.octave.org/
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
-
-RUN_DEPENDS=	${OCTAVE_TARBALLS_DIR}/sockets.tar.gz:math/octave-forge-sockets
 
 USES=		octave
 USE_GITHUB=	yes
