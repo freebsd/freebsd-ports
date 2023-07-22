@@ -478,6 +478,7 @@ man/man1/calc.1.gz
 %%FULL%%%%DATADIR%%/smallfactors.cal
 %%FULL%%%%DATADIR%%/solve.cal
 %%FULL%%%%DATADIR%%/specialfunctions.cal
+%%FULL%%%%DATADIR%%/splitbits.cal
 %%FULL%%%%DATADIR%%/statistics.cal
 %%FULL%%%%DATADIR%%/strings.cal
 %%FULL%%%%DATADIR%%/sumsq.cal
