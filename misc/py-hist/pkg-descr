@@ -1,0 +1,4 @@
+Hist is a powerful Histogramming tool for analysis based on boost-histogram
+(the Python binding of the Histogram library in Boost). It is a friendly
+analysis-focused project that uses boost-histogram as a backend to do the
+work, but provides plotting tools, shortcuts, and new ideas.
