@@ -1,3 +1,5 @@
-TIMESTAMP = 1567682856
-SHA256 (cxxtest-4.4.tar.gz) = 1c154fef91c65dbf1cd4519af7ade70a61d85a923b6e0c0b007dc7f4895cf7d8
-SIZE (cxxtest-4.4.tar.gz) = 330076
+TIMESTAMP = 1690034322
+SHA256 (cxxtest/cxxtest-4.4.tar.gz) = 1c154fef91c65dbf1cd4519af7ade70a61d85a923b6e0c0b007dc7f4895cf7d8
+SIZE (cxxtest/cxxtest-4.4.tar.gz) = 330076
+SHA256 (cxxtest/guide.pdf) = 05d4afa4ca48113a2d2d6c6efc9cf88297986204a74aad4caa70a8211bdd1cf8
+SIZE (cxxtest/guide.pdf) = 270989
