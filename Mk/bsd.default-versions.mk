@@ -20,7 +20,7 @@ LOCALBASE?=	/usr/local
 .  for lang in APACHE BDB COROSYNC EMACS FIREBIRD FORTRAN FPC GCC \
 	GHOSTSCRIPT GL GO IMAGEMAGICK JAVA LAZARUS LIBRSVG2 LINUX LLVM \
 	LUA LUAJIT MONO MYSQL NINJA NODEJS OPENLDAP PERL5 PGSQL PHP PYTHON \
-	PYTHON2 PYTHON3 RUBY RUST SAMBA SSL TCLTK VARNISH
+	PYTHON2 PYTHON3 PYCRYPTOGRAPHY RUBY RUST SAMBA SSL TCLTK VARNISH
 .    if defined(${lang}_DEFAULT)
 ERROR+=	"The variable ${lang}_DEFAULT is set and it should only be defined through DEFAULT_VERSIONS+=${lang:tl}=${${lang}_DEFAULT} in /etc/make.conf"
 .    endif
@@ -126,6 +126,12 @@ PYTHON_DEFAULT?=	3.9
 PYTHON2_DEFAULT?=	2.7
 # Possible values: 3.8, 3.9, 3.10, 3.11
 PYTHON3_DEFAULT?=	3.9
+# Possible values: rust, legacy
+.  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
+PYCRYPTOGRAPHY_DEFAULT?=	rust
+.  else
+PYCRYPTOGRAPHY_DEFAULT?=	legacy
+.  endif
 # Possible values: 3.0, 3.1, 3.2, 3.3
 RUBY_DEFAULT?=		3.1
 # Possible values: rust, rust-nightly

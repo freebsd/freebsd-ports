@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230723:
+  AFFECTS: users of security/py-cryptography
+  AUTHOR: tcberner@FreeBSD.org
+
+  Modern py-cryptography uses rust. In order to still support the Tier-2
+  architectures without rust support, a new default-version was added:
+     PYCRYPTOGRAPHY
+  it allows for the values 'rust' and 'legacy'.
+  The default is 'rust' on all platforms supporting this.
+  Note: users that are relying on the 'legacy' version will also take care
+  of using a non-base OpenSSL in the future.
+
 20230620:
   AFFECTS: users of lang/elixir-devel
   AUTHOR: dch@FreeBSD.org
