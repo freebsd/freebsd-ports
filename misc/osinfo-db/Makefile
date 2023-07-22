@@ -1,5 +1,5 @@
 PORTNAME=	osinfo-db
-PORTVERSION=	20230518
+PORTVERSION=	20230719
 CATEGORIES=	misc
 MASTER_SITES=	https://releases.pagure.org/libosinfo/
 

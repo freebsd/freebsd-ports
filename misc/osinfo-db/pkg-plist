@@ -388,6 +388,7 @@ share/osinfo/os/freebsd.org/freebsd-9.1.xml
 share/osinfo/os/freebsd.org/freebsd-9.2.xml
 share/osinfo/os/freebsd.org/freebsd-9.3.xml
 share/osinfo/os/freedos.org/freedos-1.2.xml
+share/osinfo/os/freedos.org/freedos-1.3.xml
 share/osinfo/os/freenix.net/freenix-14.2.xml
 share/osinfo/os/gentoo.org/gentoo-rolling.xml
 share/osinfo/os/gnome.org/gnome-3.6.xml
@@ -527,6 +528,7 @@ share/osinfo/os/nixos.org/nixos-21.05.xml
 share/osinfo/os/nixos.org/nixos-21.11.xml
 share/osinfo/os/nixos.org/nixos-22.05.xml
 share/osinfo/os/nixos.org/nixos-22.11.xml
+share/osinfo/os/nixos.org/nixos-23.05.xml
 share/osinfo/os/nixos.org/nixos-unknown.xml
 share/osinfo/os/nixos.org/nixos-unstable.xml
 share/osinfo/os/novell.com/netware-4.xml
@@ -562,6 +564,7 @@ share/osinfo/os/openbsd.org/openbsd-6.9.xml
 share/osinfo/os/openbsd.org/openbsd-7.0.xml
 share/osinfo/os/openbsd.org/openbsd-7.1.xml
 share/osinfo/os/openbsd.org/openbsd-7.2.xml
+share/osinfo/os/openbsd.org/openbsd-7.3.xml
 share/osinfo/os/openindiana.org/hipster-rolling.xml
 share/osinfo/os/opensuse.org/opensuse-10.2.xml
 share/osinfo/os/opensuse.org/opensuse-10.3.xml
@@ -580,6 +583,7 @@ share/osinfo/os/opensuse.org/opensuse-15.1.xml
 share/osinfo/os/opensuse.org/opensuse-15.2.xml
 share/osinfo/os/opensuse.org/opensuse-15.3.xml
 share/osinfo/os/opensuse.org/opensuse-15.4.xml
+share/osinfo/os/opensuse.org/opensuse-15.5.xml
 share/osinfo/os/opensuse.org/opensuse-42.1.xml
 share/osinfo/os/opensuse.org/opensuse-42.2.xml
 share/osinfo/os/opensuse.org/opensuse-42.3.xml
@@ -795,6 +799,7 @@ share/osinfo/os/suse.com/sle-15.1.xml
 share/osinfo/os/suse.com/sle-15.2.xml
 share/osinfo/os/suse.com/sle-15.3.xml
 share/osinfo/os/suse.com/sle-15.4.xml
+share/osinfo/os/suse.com/sle-15.5.xml
 share/osinfo/os/suse.com/sle-15.xml
 share/osinfo/os/suse.com/sle-unknown.xml
 share/osinfo/os/suse.com/sled-10.1.xml
@@ -818,6 +823,8 @@ share/osinfo/os/suse.com/sled-9.xml
 share/osinfo/os/suse.com/slem-5.0.xml
 share/osinfo/os/suse.com/slem-5.1.xml
 share/osinfo/os/suse.com/slem-5.2.xml
+share/osinfo/os/suse.com/slem-5.3.xml
+share/osinfo/os/suse.com/slem-5.4.xml
 share/osinfo/os/suse.com/sles-10.1.xml
 share/osinfo/os/suse.com/sles-10.2.xml
 share/osinfo/os/suse.com/sles-10.3.xml
@@ -843,6 +850,8 @@ share/osinfo/os/system76.com/popos-19.04.xml
 share/osinfo/os/system76.com/popos-19.10.xml
 share/osinfo/os/system76.com/popos-20.04.xml
 share/osinfo/os/system76.com/popos-20.10.xml
+share/osinfo/os/trisquel.info/trisquel-10.xml
+share/osinfo/os/trisquel.info/trisquel-11.xml
 share/osinfo/os/trisquel.info/trisquel-9.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.04.xml
 share/osinfo/os/ubuntu.com/ubuntu-10.10.xml
