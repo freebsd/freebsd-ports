@@ -1,5 +1,5 @@
 PORTNAME=	openresty
-PORTVERSION=	1.21.4.1
+PORTVERSION=	1.21.4.2
 CATEGORIES=	www
 MASTER_SITES=	https://openresty.org/download/
 
