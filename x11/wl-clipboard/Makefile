@@ -1,7 +1,6 @@
 PORTNAME=	wl-clipboard
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.1.0
-PORTREVISION=	1
+DISTVERSION=	2.2.0
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -37,6 +36,7 @@ post-patch:
 		-e '/local/!s,/etc,${LOCALBASE}&,' \
 		${WRKSRC}/completions/bash/wl-copy \
 		${WRKSRC}/completions/zsh/_wl-copy \
+		${WRKSRC}/data/${PORTNAME}.1 \
 		${WRKSRC}/src/util/files.c
 
 .include <bsd.port.mk>
