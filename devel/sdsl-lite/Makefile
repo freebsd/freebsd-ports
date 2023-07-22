@@ -23,6 +23,8 @@ CMAKE_ON=	BUILD_SHARED_LIBS
 
 CONFLICTS_INSTALL=	libdivsufsort
 
+PORTSCOUT=	limit:.*[0-9]\.[0-9].* # prevent tags like c++11v1
+
 post-install: # remove bundled gtest, see https://github.com/simongog/sdsl-lite/issues/458
 	${RM} -r \
 		${STAGEDIR}${PREFIX}/include/gtest \
