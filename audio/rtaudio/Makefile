@@ -1,6 +1,5 @@
 PORTNAME=	rtaudio
-DISTVERSION=	5.2.0
-PORTREVISION=	2
+DISTVERSION=	6.0.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -9,11 +8,15 @@ WWW=		https://github.com/thestk/rtaudio
 
 LICENSE=	MIT
 
-USES=		cmake compiler:c++11-lang libtool pkgconfig
+USES=		cmake:testing compiler:c++11-lang libtool pkgconfig
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	thestk
+
+CXXFLAGS+=	-I${STAGEDIR}${PREFIX}/include/rtaudio # hack for tests
+
+CMAKE_TESTING_ON=	RTAUDIO_BUILD_TESTING # tests fail to compile, see https://github.com/thestk/rtaudio/issues/403
 
 OPTIONS_MULTI=			AUDIO_BACKEND
 OPTIONS_MULTI_AUDIO_BACKEND=	ALSA JACK OSS PULSEAUDIO
