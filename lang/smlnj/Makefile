@@ -21,16 +21,19 @@ ONLY_FOR_ARCHS=	amd64 i386
 
 USES=		compiler
 
-NO_WRKSUBDIR=	yes
-
 SUB_FILES=	pkg-install
 SUB_LIST=	EXEBINDIR=${MLBINRELATIVE} EXENAMES="${MLEXE}"
+
+NO_WRKSUBDIR=	yes
+
 PKGDEINSTALL=	${PKGINSTALL}
 
 OPTIONS_DEFINE=		EVERYTHING RECOMPILE
-RECOMPILE_IMPLIES=	EVERYTHING
+
 EVERYTHING_DESC=	install everything from the SML/NJ distribution
 RECOMPILE_DESC=		recompile the SML compiler - implies EVERYTHING
+
+RECOMPILE_IMPLIES=	EVERYTHING
 
 .include <bsd.port.pre.mk>
 
@@ -41,6 +44,10 @@ PLIST_SUB+=	RUNTIME_SO="@comment "
 .else
 RUNTIME_SO=	"${STAGEDIR}${MLBIN}/.run/run.$${ARCH}-$${OPSYS}.so"
 PLIST_SUB+=	RUNTIME_SO=
+.endif
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 .if (${ARCH} == "i386")
