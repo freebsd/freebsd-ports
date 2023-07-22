@@ -4,10 +4,13 @@ bin/firefox-passwords
 bin/setup-for-firefox-marionette-build.sh
 bin/ssh-auth-cmd-marionette
 %%SITE_PERL%%/Firefox/Marionette.pm
+%%SITE_PERL%%/Firefox/Marionette/Bookmark.pm
 %%SITE_PERL%%/Firefox/Marionette/Buttons.pm
+%%SITE_PERL%%/Firefox/Marionette/Cache.pm
 %%SITE_PERL%%/Firefox/Marionette/Capabilities.pm
 %%SITE_PERL%%/Firefox/Marionette/Certificate.pm
 %%SITE_PERL%%/Firefox/Marionette/Cookie.pm
+%%SITE_PERL%%/Firefox/Marionette/Display.pm
 %%SITE_PERL%%/Firefox/Marionette/Element.pm
 %%SITE_PERL%%/Firefox/Marionette/Element/Rect.pm
 %%SITE_PERL%%/Firefox/Marionette/Exception.pm
@@ -35,10 +38,13 @@ bin/ssh-auth-cmd-marionette
 %%PERL5_MAN1%%/firefox-passwords.1.gz
 %%PERL5_MAN1%%/ssh-auth-cmd-marionette.1.gz
 %%PERL5_MAN3%%/Firefox::Marionette.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::Bookmark.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Buttons.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::Cache.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Capabilities.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Certificate.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Cookie.3.gz
+%%PERL5_MAN3%%/Firefox::Marionette::Display.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Element.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Element::Rect.3.gz
 %%PERL5_MAN3%%/Firefox::Marionette::Exception.3.gz
