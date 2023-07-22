@@ -1,6 +1,6 @@
 PORTNAME=	mpatrol
 PORTVERSION=	1.4.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -8,6 +8,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic memory debugging and profiling library
 WWW=		http://mpatrol.sourceforge.net/
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../../COPYING
 
 ONLY_FOR_ARCHS=	amd64 i386
 .if ${/usr/bin/ld:L:tA} == /usr/bin/ld.lld
@@ -40,6 +43,10 @@ OPTIONS_DEFINE=	DOCS
 
 .if ${ARCH} == "amd64"
 CFLAGS+=	-DENVIRON=\"ENVIRON_64\" -DMP_INIT_SUPPORT=0
+.endif
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=dynamic-exception-spec
 .endif
 
 do-install:
