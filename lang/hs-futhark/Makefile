@@ -1,6 +1,6 @@
 PORTNAME=	futhark
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.25.1
+DISTVERSION=	0.25.2
 CATEGORIES=	lang haskell
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,18 +13,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USES=		cabal
 
 USE_CABAL=      Diff-0.4.1 \
-		ListLike-4.7.8_1 \
+		ListLike-4.7.8.1 \
 		OneTuple-0.4.1.1 \
 		QuickCheck-2.14.3 \
 		StateVar-1.2.2 \
 		adjunctions-4.4.2_1 \
 		aeson-2.1.2.1_3 \
-		alex-3.3.0.0 \
+		alex-3.4.0.0 \
 		ansi-terminal-1.0 \
 		ansi-terminal-types-0.11.5_1 \
 		assoc-1.1 \
 		async-2.2.4_3 \
-		attoparsec-0.14.4_3 \
+		attoparsec-0.14.4_4 \
 		base-compat-0.13.0 \
 		base-compat-batteries-0.13.0 \
 		base-orphans-0.9.0 \
@@ -32,8 +32,8 @@ USE_CABAL=      Diff-0.4.1 \
 		bifunctors-5.6.1 \
 		bitvec-1.1.4.0 \
 		blaze-builder-0.4.2.2_1 \
-		blaze-html-0.9.1.2_2 \
-		blaze-markup-0.8.2.8_4 \
+		blaze-html-0.9.1.2_3 \
+		blaze-markup-0.8.2.8_5 \
 		bmp-1.2.6.3_1 \
 		bytestring-to-vector-0.3.0.1 \
 		call-stack-0.4.0 \
@@ -74,26 +74,26 @@ USE_CABAL=      Diff-0.4.1 \
 		generic-lens-2.2.2.0 \
 		generic-lens-core-2.2.1.0_1 \
 		generically-0.1.1_1 \
-		githash-0.1.6.3 \
+		githash-0.1.7.0 \
 		half-0.3.1 \
 		happy-1.20.1.1 \
 		hashable-1.4.2.0_1 \
 		haskell-src-exts-1.23.1 \
 		haskell-src-meta-0.8.12 \
 		hsc2hs-0.68.9 \
-		indexed-profunctors-0.1.1 \
+		indexed-profunctors-0.1.1.1 \
 		indexed-traversable-0.1.2.1 \
 		indexed-traversable-instances-0.1.1.2_1 \
 		integer-logarithms-1.0.3.1_4 \
 		invariant-0.6.1 \
 		kan-extensions-5.2.5_1 \
 		language-c-quote-0.13.0.1 \
-		lens-5.2.2 \
-		lsp-2.0.0.0 \
-		lsp-types-2.0.0.1 \
+		lens-5.2.2_1 \
+		lsp-2.1.0.0 \
+		lsp-types-2.0.1.0 \
 		mainland-pretty-0.7.1_2 \
 		math-functions-0.3.4.2 \
-		megaparsec-9.4.0 \
+		megaparsec-9.4.1 \
 		mod-0.2.0.1 \
 		mwc-random-0.15.0.2_1 \
 		neat-interpolation-0.5.1.3 \
@@ -111,7 +111,7 @@ USE_CABAL=      Diff-0.4.1 \
 		reflection-2.1.7 \
 		regex-1.1.0.2 \
 		regex-base-0.94.0.2_2 \
-		regex-pcre-builtin-0.95.2.3.8.44_3 \
+		regex-pcre-builtin-0.95.2.3.8.44_4 \
 		regex-tdfa-1.3.2.1_1 \
 		row-types-1.0.1.2_1 \
 		safe-0.3.19 \
