@@ -1,6 +1,6 @@
 PORTNAME=	trompeloeil
 DISTVERSIONPREFIX=	v
-DISTVERSION=	44
+DISTVERSION=	45
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,10 +13,12 @@ LICENSE_FILE=	${WRKSRC}/LICENSE_1_0.txt
 TEST_DEPENDS=	${LOCALBASE}/include/catch2/catch.hpp:devel/catch \
 		criterion>0:devel/criterion
 
-USES=		cmake:testing # unclear how to run tests, see https://github.com/rollbear/trompeloeil/issues/287
+USES=		cmake:testing
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	rollbear
+
+CMAKE_TESTING_TARGET=	self_test thread_terror custom_recursive_mutex # see the README
 
 NO_BUILD=	yes
 NO_ARCH=	yes
@@ -30,5 +32,11 @@ post-install:
 		${RM} LICENSE_1_0.txt && \
 		${MV} docs/* . && \
 		${RMDIR} docs
+
+post-test: # run tests
+.for exe in ${CMAKE_TESTING_TARGET}
+	${ECHO} "==> Running tests executable ${exe}"
+	@cd ${TEST_WRKSRC} && test/${exe}
+.endfor
 
 .include <bsd.port.mk>
