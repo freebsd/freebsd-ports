@@ -10,8 +10,8 @@ WWW=		https://github.com/alexdobin/STAR
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKDIR}/STAR-${DISTVERSION}/LICENSE
 
-NOT_FOR_ARCHS=	i386 powerpc
-NOT_FOR_ARCHS_REASON=Needs 16+ GiB RAM for typical eukaryotic genome
+NOT_FOR_ARCHS=		armv6 armv7 i386 mips powerpc powerpcspe
+NOT_FOR_ARCHS_REASON=	Requires 64-bit processor
 .if !exists(/usr/include/omp.h)
 BROKEN=		requires OpenMP support that is missing on this architecture
 .endif
