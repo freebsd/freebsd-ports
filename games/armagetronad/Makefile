@@ -16,21 +16,22 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		autoreconf desktop-file-utils gl gmake gnome jpeg sdl
-GNU_CONFIGURE=	yes
 USE_CXXSTD=	c++14
-USE_SDL=	image mixer sdl
 USE_GL=		gl glu
 USE_GNOME=	libxml2
+USE_SDL=	image mixer sdl
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-etc --disable-games --enable-music
+CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS}"
 
 BINARY_ALIAS=	sdl11-config=sdl-config
 
-OPTIONS_DEFINE=	DOCS
+WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MV} ${STAGEDIR}${DATADIR}/desktop/${PORTNAME}.desktop ${STAGEDIR}${DESKTOPDIR}/${PORTNAME}.desktop
