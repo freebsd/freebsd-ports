@@ -11,11 +11,10 @@ WWW=		https://github.com/crossbario/autobahn-python
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=3.4.6:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}hyperlink>=21.0.0:www/py-hyperlink@${PY_FLAVOR} \
+RUN_DEPENDS=	 ${PYTHON_PKGNAMEPREFIX}hyperlink>=21.0.0:www/py-hyperlink@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}txaio>=21.2.1:devel/py-txaio@${PY_FLAVOR}
 
-USES=		cpe python
+USES=		cpe python pycryptography:run
 CPE_VENDOR=	crossbar
 USE_GITHUB=	yes
 GH_ACCOUNT=	crossbario

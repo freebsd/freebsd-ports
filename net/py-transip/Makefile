@@ -11,11 +11,10 @@ WWW=		https://github.com/benkonrath/transip-api
 
 LICENSE=	MIT
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}requests>=0:www/py-requests@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}suds>=0:net/py-suds@${PY_FLAVOR}
 
-USES=		python
+USES=		python pycryptography:run
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

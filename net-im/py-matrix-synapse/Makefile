@@ -40,7 +40,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}jsonschema>=3.0.0:devel/py-jsonschema@${PY_F
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0.0:devel/py-Jinja2@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}bleach>=1.4.3:www/py-bleach@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}typing-extensions>=3.10.0.1:devel/py-typing-extensions@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=3.4.7:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ijson>=3.1.4:devel/py-ijson@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}matrix-common>=1.3.0<2.0.0:devel/py-matrix-common@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=16.1:devel/py-packaging@${PY_FLAVOR} \
@@ -55,7 +54,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}virtualenv>=15.0:devel/py-virtualenv@${PY_F
 		${PYTHON_PKGNAMEPREFIX}authlib>=0.15.1:security/py-authlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}idna>=2.5:dns/py-idna@${PY_FLAVOR}
 
-USES=		python cargo
+USES=		python pycryptography:run cargo
 USE_PYTHON=	autoplist distutils
 USE_RC_SUBR=	synapse
 WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}-${DISTVERSION}

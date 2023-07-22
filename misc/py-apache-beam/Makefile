@@ -35,8 +35,7 @@ PY_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cloudpickle>=2.2.0:devel/py-cloudpickle@${PY_
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pip>0:devel/py-pip@${PY_FLAVOR} \
 		${PY_DEPENDS}
 RUN_DEPENDS=	${PY_DEPENDS}
-TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=36.0.0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}freezegun>=0.3.12:devel/py-freezegun@${PY_FLAVOR} \
+TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}freezegun>=0.3.12:devel/py-freezegun@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}joblib>=0.3.12:devel/py-joblib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}mock>=1.0.1:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
@@ -52,7 +51,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=36.0.0:security/py-cryptograp
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.12:devel/py-yaml@${PY_FLAVOR}
 		# testcontainers[mysql]>=3.0.3 is also required
 
-USES=		python zip
+USES=		python pycryptography:test zip
 USE_PYTHON=	distutils cython concurrent autoplist pytest # 5 tests fail, depending on pyarrow, MySqlContainer, threadpoolctl
 
 post-install:

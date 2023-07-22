@@ -26,11 +26,10 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}argcomplete>=2.0:devel/py-argcomplete@${PY_F
 		${PYTHON_PKGNAMEPREFIX}pkginfo>=1.5.0.1:sysutils/py-pkginfo@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-mgmt-core>=1.2.0<2.0.0:devel/py-azure-mgmt-core@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}psutil>=5.9:sysutils/py-psutil@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msrestazure>=0.6.4:net-mgmt/py-msrestazure@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.9:devel/py-packaging@${PY_FLAVOR}
 
-USES=		azurepy python
+USES=		azurepy python pycryptography:run
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

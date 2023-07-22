@@ -11,10 +11,9 @@ WWW=		https://github.com/pdfminer/pdfminer.six
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}chardet>=0:textproc/py-chardet@${PY_FLAVOR}
 
-USES=		python
+USES=		python pycryptography:run
 USE_PYTHON=	distutils concurrent autoplist
 
 CONFLICTS_INSTALL=	py??-pdfminer py??-pdfminer3k

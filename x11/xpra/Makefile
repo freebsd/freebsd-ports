@@ -17,7 +17,6 @@ LIB_DEPENDS=	libbrotlidec.so:archivers/brotli \
 RUN_DEPENDS=	${PY_PILLOW} \
 		${PYTHON_PKGNAMEPREFIX}bencode.py>1:converters/py-bencode.py@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}brotli>1:archivers/py-brotli@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>1:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}lz4>=0.7.0_1:archivers/py-lz4@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}netifaces>0:net/py-netifaces@${PY_FLAVOR} \
@@ -34,7 +33,7 @@ RUN_DEPENDS=	${PY_PILLOW} \
 		Xvfb:x11-servers/xorg-server@xvfb
 
 USES=		desktop-file-utils gettext-runtime gnome localbase pkgconfig \
-		python shared-mime-info shebangfix tar:xz xorg
+		python pycryptography:run shared-mime-info shebangfix tar:xz xorg
 
 USE_GNOME=	cairo gdkpixbuf2 gtk30 pygobject3
 USE_PYTHON=	cython distutils noflavors

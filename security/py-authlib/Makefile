@@ -13,9 +13,7 @@ WWW=		https://authlib.org/ \
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=3.2:security/py-cryptography@${PY_FLAVOR}
-
-USES=		python
+USES=		python pycryptography:run
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

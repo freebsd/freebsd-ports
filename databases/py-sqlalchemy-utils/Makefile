@@ -34,7 +34,7 @@ URL_DESC=	URL type support
 ARROW_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}arrow>=0.3.4:devel/py-arrow@${PY_FLAVOR}
 BABEL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Babel>=1.3:devel/py-babel@${PY_FLAVOR}
 COLOR_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}colour>=0.0.4:graphics/py-colour@${PY_FLAVOR}
-ENCRYPTED_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0.6,1:security/py-cryptography@${PY_FLAVOR}
+ENCRYPTED_USES=		pycryptography:run
 INTERVALS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}intervals>=0.7.1:net/py-intervals@${PY_FLAVOR}
 PASSWORD_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}passlib>=1.6<2.0:security/py-passlib@${PY_FLAVOR}
 PENDULUM_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pendulum>=2.0.5:devel/py-pendulum@${PY_FLAVOR}

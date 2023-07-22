@@ -11,10 +11,9 @@ WWW=		https://github.com/ojarva/python-sshpubkeys
 
 LICENSE=	BSD3CLAUSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=2.1.4:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}ecdsa>=0.13:security/py-ecdsa@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ecdsa>=0.13:security/py-ecdsa@${PY_FLAVOR}
 
-USES=		python
+USES=		python pycryptography:run
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

@@ -12,10 +12,9 @@ WWW=		https://github.com/badkeys/badkeys
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gmpy2>0:math/py-gmpy2@${PY_FLAVOR}
 
-USES=		python
+USES=		python pycryptography:run
 USE_PYTHON=	autoplist distutils
 
 NO_ARCH=	yes

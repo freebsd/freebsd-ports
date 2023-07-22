@@ -31,7 +31,7 @@ DOQ_DESC=		DNS over QUIC Support
 IDNA_DESC=		Internationalizede Domain Names in Application Support
 TRIO_DESC=		TRIO Support
 
-DNSSEC_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=2.6:security/py-cryptography@${PY_FLAVOR}
+DNSSEC_USES=		pycryptography:run
 DOH_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}h2>=4.0.0:www/py-h2@${PY_FLAVOR} \
 			${PYTHON_PKGNAMEPREFIX}httpx>=0.24.1:www/py-httpx@${PY_FLAVOR}
 DOQ_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aioquic>0:www/py-aioquic@${PY_FLAVOR}

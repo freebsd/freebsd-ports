@@ -16,6 +16,7 @@ xRUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=2.6<40,1:security/py-cryptogr
 		${PYTHON_PKGNAMEPREFIX}six>=0:devel/py-six@${PY_FLAVOR}
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>0:devel/py-mock@${PY_FLAVOR}
 
+# assuming xRUN_DEPENDS is a typo, add: pycryptography:run
 USES=		python
 USE_PYTHON=	autoplist pep517 unittest
 

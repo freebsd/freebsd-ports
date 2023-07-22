@@ -18,7 +18,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.2.10<3.5:www/py-asgiref@${PY_FLAV
 		${PYTHON_PKGNAMEPREFIX}brotli>=1.0<1.1:archivers/py-brotli@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}certifi>=2019.9.11:security/py-certifi@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}click>=7.0<8.1:devel/py-click@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=3.3<3.5,1:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Flask>=1.1.1<2.1:www/py-flask@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h11>=0.11<0.13:net/py-h11@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}h2>=4.0<5:www/py-h2@${PY_FLAVOR} \
@@ -48,7 +47,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVO
 		${PYTHON_PKGNAMEPREFIX}pytest-xdist>0:devel/py-pytest-xdist@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR}
 
-USES=		cpe python
+USES=		cpe python pycryptography:run
 USE_GITHUB=	yes
 USE_PYTHON=	autoplist distutils noflavors
 

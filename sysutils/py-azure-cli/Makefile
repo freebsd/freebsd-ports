@@ -97,7 +97,6 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}azure-synapse-managedprivateendpoints>=0.4.0:devel/py-azure-synapse-managedprivateendpoints@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}azure-synapse-spark>=0.2.0:devel/py-azure-synapse-spark@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}colorama>=0.4.4:devel/py-colorama@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=2.3.1:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}fabric>=2.4:devel/py-fabric@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}paramiko>=2.0.8:security/py-paramiko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygments>=2.4:textproc/py-pygments@${PY_FLAVOR} \
@@ -116,7 +115,7 @@ RUN_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}semver>=2.13.0:devel/py-semver@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pygithub>=1.55:devel/py-pygithub@${PY_FLAVOR}
 
-USES=		azurepy python
+USES=		azurepy python pycryptography:run
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

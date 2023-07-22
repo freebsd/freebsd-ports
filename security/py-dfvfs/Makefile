@@ -34,7 +34,6 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 		libvsgpt>=e:devel/libvsgpt \
 		libvshadow>=0:devel/libvshadow \
 		libvslvm>=e:devel/libvslvm \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dfdatetime>=0:security/py-dfdatetime@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}dtfabric>=0:devel/py-dtfabric@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytsk>=0:sysutils/py-pytsk@${PY_FLAVOR} \
@@ -42,7 +41,7 @@ RUN_DEPENDS=	libbde>=a:devel/libbde \
 		${PYTHON_PKGNAMEPREFIX}xattr>=0:devel/py-xattr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}yaml>=3.10:devel/py-yaml@${PY_FLAVOR}
 
-USES=		python
+USES=		python pycryptography:run
 USE_LOCALE=	en_US.UTF-8
 USE_PYTHON=	distutils autoplist concurrent
 DO_MAKE_TEST=	${SETENV} ${TEST_ENV} ${PYTHON_CMD}

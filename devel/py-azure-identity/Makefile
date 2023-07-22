@@ -11,12 +11,11 @@ WWW=		https://pypi.org/project/azure-identity/
 LICENSE=	MIT
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}azure-core>=1.0.0<2.0.0:devel/py-azure-core@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}cryptography>=2.1.4:security/py-cryptography@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msal>=1.7.0<2.0.0:devel/py-msal@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}msal-extensions>=0.3.0:devel/py-msal-extensions@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>=1.12.0:devel/py-six@${PY_FLAVOR}
 
-USES=		azurepy python zip
+USES=		azurepy python pycryptography:run zip
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes

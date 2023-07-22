@@ -57,7 +57,7 @@ DBUS_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0:devel/py-dbus@${PY_FLAVOR}
 NOTIFY2_IMPLIES=	DBUS
 NOTIFY2_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}notify2>=0:devel/py-notify2@${PY_FLAVOR}
 PYGOBJECT_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}gobject3>=3.10.2:devel/py-gobject3@${PY_FLAVOR}
-SSL_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>=0:security/py-cryptography@${PY_FLAVOR}
+SSL_USES=		pycryptography:run
 
 post-patch:
 	@${REINPLACE_CMD} -e "s:%%DATADIR%%:'${DATADIR}':g" \

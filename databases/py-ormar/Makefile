@@ -33,8 +33,7 @@ OPTIONS_DEFAULT=		SQLITE
 DATABASES_DESC=			Database Support
 
 CRYPTO_DESC=	Support for password encryption
-
-CRYPTO_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cryptography>0:security/py-cryptography@${PY_FLAVOR}
+CRYPTO_USES=	 	pycryptography:run
 SQLITE_USES=		sqlite
 SQLITE_RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}aiosqlite>0:databases/py-aiosqlite@${PY_FLAVOR}
 MYSQL_USES=		mysql
