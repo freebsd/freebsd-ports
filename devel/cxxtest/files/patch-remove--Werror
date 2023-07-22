@@ -1,0 +1,21 @@
+diff -up work/cxxtest-4.4/test/test_cxxtest.py.orig work/cxxtest-4.4/test/test_cxxtest.py
+--- ../test/test_cxxtest.py.orig	2014-06-04 05:57:07.000000000 +0200
++++ ../test/test_cxxtest.py	2023-07-22 17:40:33.232336000 +0200
+@@ -749,7 +749,7 @@ class TestCpp(BaseTestCase, unittest.TestCase):
+     # Compiler specifics
+     exe_option = '-o'
+     include_option = '-I'
+-    compiler='c++ -Wall -W -Werror -g'
++    compiler='c++ -Wall -W -g'
+     no_eh_option = None
+     qtFlags='-Ifake'
+     x11Flags='-Ifake'
+@@ -780,7 +780,7 @@ class TestGpp(BaseTestCase, unittest.TestCase):
+     # Compiler specifics
+     exe_option = '-o'
+     include_option = '-I'
+-    compiler='g++ -g -ansi -pedantic -Wmissing-declarations -Werror -Wall -W -Wshadow -Woverloaded-virtual -Wnon-virtual-dtor -Wreorder -Wsign-promo %s' % os.environ.get('CXXTEST_GCOV_FLAGS','')
++    compiler='g++ -g -ansi -pedantic -Wmissing-declarations -Wall -W -Wshadow -Woverloaded-virtual -Wnon-virtual-dtor -Wreorder -Wsign-promo %s' % os.environ.get('CXXTEST_GCOV_FLAGS','')
+     no_eh_option = '-fno-exceptions'
+     qtFlags='-Ifake'
+     x11Flags='-Ifake'

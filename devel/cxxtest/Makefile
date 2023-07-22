@@ -1,6 +1,6 @@
 PORTNAME=	cxxtest
 PORTVERSION=	4.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF:DEFAULT \
 		https://github.com/CxxTest/cxxtest.github.com/raw/8505a9c37bdf17d9167f0b946c82ccb032d3cd4c/:docs
@@ -16,9 +16,13 @@ WWW=		https://github.com/CxxTest/cxxtest
 
 LICENSE=	LGPL3+
 
-USES=		gmake python:run
+USES=		gmake python
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}ply>=0:devel/py-ply@${PY_FLAVOR}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_PYTHON=	autoplist distutils noflavors
+BINARY_ALIAS=	c++=${CXX} cl=${FALSE} clang++=${FALSE} g++=${FALSE}
 NO_ARCH=	yes
 
 WRKSRC_SUBDIR=		python
@@ -43,5 +47,15 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	( cd ${WRKSRC}/../sample/ && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR} )
+
+do-test:
+	( set -x \
+		&& cd ${WRKSRC}/../test \
+		&& ${RM} -R test_cxxtest \
+		&& ${PYTHON_CMD} -m venv test_cxxtest --system-site-packages --without-pip \
+		&& . test_cxxtest/bin/activate \
+		&& ( cd ../python && ${PYTHON_CMD} setup.py install --prefix "$$VIRTUAL_ENV" ) \
+		&& ${SETENV} "PATH=${PATH}" ${PYTHON_CMD} test_cxxtest.py --verbose \
+	)
 
 .include <bsd.port.mk>
