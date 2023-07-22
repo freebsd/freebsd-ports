@@ -10,6 +10,26 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20230722:
+AUTHOR: tcberner@FreeBSD.org
+
+  A new uses 'pycryptography' has been added to transparently depend on the
+  proper variant of 'rust' or 'legacy' depending on the default version set
+  by the user.
+
+  Supported arguments: <none>,build,run
+  Passing no arguments (<none>) is equivalent to passing both build and run.
+
+  Usage:
+	USES=pycryptography:build
+		-> adds a BUILD_DEPENDS only
+	USES=pycryptography:run
+		-> adds a RUN_DEPENDS only
+	USES=pycryptography:test
+		-> adds a TEST_DEPENDS only
+	USES=pycryptography:build,run   or   USES=pycryptography
+		-> adds a BUILD_ and RUN_DEPENDS
+
 20230712:
 AUTHOR: zirias@FreeBSD.org
 
