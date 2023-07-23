@@ -27,6 +27,8 @@ TEST_DEPENDS=	py.test:devel/py-pytest@${PY_FLAVOR}
 USES=		compiler:c++11-lang localbase python
 USE_PYTHON=	cython distutils
 
+CFLAGS+=	-std=c++14
+
 .if !defined(WITH_DEBUG)
 LDFLAGS+=	-s
 .endif
