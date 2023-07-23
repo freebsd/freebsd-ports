@@ -1,6 +1,5 @@
 PORTNAME=	baycomp
-DISTVERSION=	1.0.2
-PORTREVISION=	2
+DISTVERSION=	1.0.3
 CATEGORIES=	math python # statistics
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}matplotlib>=2.1.2:math/py-matplotlib@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=0.19.1:science/py-scipy@${PY_FLAVOR}
+#RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}pystan>=3.4.0:math/py-pystan@${PY_FLAVOR}
 
 USES=		localbase:ldflags python
 USE_PYTHON=	distutils autoplist
