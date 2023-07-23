@@ -34,6 +34,7 @@
     SUBDIR += cde
     SUBDIR += cde-25
     SUBDIR += cde-devel
+    SUBDIR += chayang
     SUBDIR += cinnamon
     SUBDIR += cinnamon-desktop
     SUBDIR += cinnamon-menus
