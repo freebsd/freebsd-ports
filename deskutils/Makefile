@@ -270,6 +270,7 @@
     SUBDIR += ultralist
     SUBDIR += virt-manager
     SUBDIR += vit
+    SUBDIR += vym
     SUBDIR += walld
     SUBDIR += when
     SUBDIR += wmpinboard
