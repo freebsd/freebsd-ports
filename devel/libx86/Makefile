@@ -12,12 +12,21 @@ WWW=		http://www.codon.org.uk/~mjg59/libx86/
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
-ALL_TARGET=	default
-MAKE_ARGS=	BACKEND=x86emu
 ONLY_FOR_ARCHS=	amd64 i386
-PLIST_FILES=	include/libx86.h lib/libx86.a lib/libx86.so lib/libx86.so.1
-USE_LDCONFIG=	yes
+
 USES=		gmake
+USE_LDCONFIG=	yes
+
+MAKE_ARGS=	BACKEND=x86emu
+ALL_TARGET=	default
+
+PLIST_FILES=	include/libx86.h lib/libx86.a lib/libx86.so lib/libx86.so.1
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/lrmi.h ${STAGEDIR}${PREFIX}/include/libx86.h
