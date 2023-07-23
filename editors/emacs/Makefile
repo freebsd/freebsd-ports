@@ -1,20 +1,12 @@
 PORTNAME=	emacs
-DISTVERSION=	28.2
-PORTREVISION=	7
+DISTVERSION=	29.1
 PORTEPOCH=	3
 CATEGORIES=	editors
 MASTER_SITES=	GNU
 
-PATCH_SITES=	https://github.com/emacs-mirror/emacs/commit/:github
-PATCHFILES=	d48bb4874bc6cd3e69c7a15fc3c91cc141025c51.patch:-p1:github \
-		01a4035c869b91c153af9a9132c87adb7669ea1c.patch:-p1:github \
-		9a3b08061feea14d6f37685ca1ab8801758bfd1c.patch:-p1:github \
-		1b4dc4691c1f87fc970fbe568b43869a15ad0d4c.patch:-p1:github \
-		ed1a24b4b2e39498e4c4448365e1d5f0149e5fc6.patch:-p1:github
-
 .if ${FLAVOR:U} == canna
-PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs28canna/:canna
-PATCHFILES+=	emacs28.1-canna-20220406b.diff.gz:-p1:canna
+PATCH_SITES+=	https://www.gentei.org/~yuuji/software/emacs29canna/:canna
+PATCHFILES+=	emacs29.1-canna-20230730.diff.xz:-p1:canna
 .endif
 
 MAINTAINER=	emacs@FreeBSD.org
@@ -39,10 +31,6 @@ nox_CONFLICTS_INSTALL=		emacs emacs-canna
 
 USES=		cpe gmake localbase:ldflags makeinfo ncurses pkgconfig tar:xz
 CPE_VENDOR=	gnu
-.if ${FLAVOR:U} != nox
-USES+=		desktop-file-utils gnome xorg
-USE_XORG=	ice sm x11 xcb xext xfixes xinerama xmu xrandr xt
-.endif
 
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--disable-build-details \
@@ -58,6 +46,7 @@ CONFIGURE_ARGS+=	--with-sound=no \
 			--with-x-toolkit=no \
 			--without-cairo \
 			--without-dbus \
+			--without-gconf \
 			--without-gif \
 			--without-gsettings \
 			--without-imagemagick \
@@ -65,10 +54,12 @@ CONFIGURE_ARGS+=	--with-sound=no \
 			--without-lcms2 \
 			--without-libotf \
 			--without-m17n-flt \
+			--without-pgtk \
 			--without-png \
 			--without-rsvg \
 			--without-tiff \
 			--without-toolkit-scroll-bars \
+			--without-webp \
 			--without-x \
 			--without-xim \
 			--without-xpm \
@@ -85,13 +76,13 @@ SUB_FILES=	sources.el
 SUB_LIST=	EMACS_VER=${DISTVERSION}
 
 INFO=		auth autotype bovine calc ccmode cl dbus dired-x ebrowse ede \
-		ediff edt efaq eieio eintr elisp emacs emacs-gnutls emacs-mime \
-		epa erc ert eshell eudc eww flymake forms gnus htmlfontify \
-		idlwave ido info mairix-el message mh-e modus-themes newsticker \
-		nxml-mode octave-mode org pcl-cvs pgg rcirc reftex remember \
-		sasl sc semantic ses sieve smtpmail speedbar srecode todo-mode \
-		tramp transient url vhdl-mode vip viper widget wisent woman
-
+		ediff edt efaq eglot eieio eintr elisp emacs emacs-gnutls \
+		emacs-mime epa erc ert eshell eudc eww flymake forms gnus \
+		htmlfontify idlwave ido info mairix-el message mh-e \
+		modus-themes newsticker nxml-mode octave-mode org pcl-cvs pgg \
+		rcirc reftex remember sasl sc semantic ses sieve smtpmail \
+		speedbar srecode todo-mode tramp transient url use-package \
+		vhdl-mode vip viper vtable widget wisent woman
 INFO_PATH=	${DATADIR_REL}/info
 .if ${FLAVOR:U} == canna
 PLIST_FILES+=	${DATADIR}/${DISTVERSION}/lisp/canna.el.gz \
@@ -103,14 +94,15 @@ PLIST_SUB=	EMACS_VER=${DISTVERSION} \
 		GNU_HOST=${CONFIGURE_TARGET}
 
 OPTIONS_DEFINE=			ACL DBUS GNUTLS GSETTINGS HARFBUZZ JSON LCMS2 \
-				M17N MAILUTILS MODULES NATIVECOMP OTF \
-				SCROLLBARS SOURCES THREADS XFT XIM XML XWIDGETS
+				M17N MAILUTILS MODULES NATIVECOMP OTF PGTK \
+				SCROLLBARS SOURCES SQLITE3 THREADS TREESITTER \
+				XFT XIM XML XWIDGETS
 OPTIONS_DEFAULT=		ACL CAIRO DBUS GIF GNUTLS GSETTINGS GTK3 \
-				HARFBUZZ JPEG JSON KQUEUE LCMS2 M17N MAILUTILS \
-				MODULES OSS OTF PNG SCROLLBARS SOURCES SVG \
-				THREADS TIFF XFT XIM XML XPM
+				HARFBUZZ JPEG JSON KQUEUE LCMS2 MAILUTILS \
+				MODULES OSS SCROLLBARS SOURCES SQLITE3 SVG \
+				THREADS TIFF TREESITTER WEBP XML
 OPTIONS_GROUP=			GRAPHICS
-OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF XPM
+OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF WEBP XPM
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
 OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
 OPTIONS_RADIO_SOUND=		ALSA OSS
@@ -118,13 +110,13 @@ OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
 .if ${FLAVOR:U} == nox
 OPTIONS_EXCLUDE=		ALSA CAIRO DBUS GFILE GIF GSETTINGS GTK2 GTK3 \
 				HARFBUZZ JPEG LCMS2 M17N MAGICK MOTIF OSS OTF \
-				PNG SCROLLBARS SVG TIFF XAW XAW3D XFT XIM XPM \
-				XWIDGETS
+				PGTK PNG SCROLLBARS SVG TIFF WEBP XAW XAW3D XFT \
+				XIM XPM XWIDGETS
 .endif
 OPTIONS_SUB=			YES
 
 ACL_DESC=		Access control list support
-CAIRO_DESC=		Cairo graphics library support [implies PNG, XFT]
+CAIRO_DESC=		Cairo graphics library support [implies PNG, prevents XFT]
 FILENOTIFY_DESC=	File notification support
 GFILE_DESC=		File notification via gfile
 GRAPHICS_DESC=		Graphics support
@@ -135,11 +127,13 @@ M17N_DESC=		M17N support for text-shaping [implies XFT]
 MAGICK_DESC=		ImageMagick image processing support (deprecated)
 MAILUTILS_DESC=		Mail framework via GNU Mailutils
 MODULES_DESC=		Dynamic modules support
-NATIVECOMP_DESC=	Emacs Lisp native compiler support (experimental)
-OTF_DESC=		Opentype fonts [implies XFT]
+NATIVECOMP_DESC=	Emacs Lisp native compiler support
+OTF_DESC=		Opentype fonts
+PGTK_DESC=		Pure GTK GUI [implies CAIRO, GTK3]
 SCROLLBARS_DESC=	Toolkit scroll-bars
 SOURCES_DESC=		Install sources
 SVG_DESC=		Scalable vector graphics support [implies PNG]
+TREESITTER_DESC=	tree-sitter support
 X11TOOLKIT_DESC=	X11 toolkit
 XAW3D_DESC=		Athena3D widgets
 XAW_DESC=		Athena widgets
@@ -149,7 +143,10 @@ XWIDGETS_DESC=		Experimental GTK widgets [implies GTK3]
 ACL_CONFIGURE_ENABLE=		acl
 ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ON=		--with-sound=alsa
-CAIRO_IMPLIES=			PNG XFT
+CAIRO_IMPLIES=			PNG
+CAIRO_PREVENTS=			XFT
+CAIRO_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
+				libfreetype.so:print/freetype2
 CAIRO_USE=			GNOME=cairo
 CAIRO_CONFIGURE_WITH=		cairo
 DBUS_LIB_DEPENDS=		libdbus-1.so:devel/dbus
@@ -166,6 +163,8 @@ GTK2_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
 				libfreetype.so:print/freetype2
 GTK2_USE=			GNOME=cairo,gtk20
 GTK2_CONFIGURE_ON=		--with-x-toolkit=gtk2
+GTK3_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
+				libfreetype.so:print/freetype2
 GTK3_USE=			GNOME=cairo,gtk30
 GTK3_CONFIGURE_ON=		--with-x-toolkit=gtk3
 HARFBUZZ_LIB_DEPENDS=		libharfbuzz.so:print/harfbuzz
@@ -191,24 +190,33 @@ MODULES_CONFIGURE_WITH=		modules
 MOTIF_USES=			motif
 MOTIF_CONFIGURE_ON=		--with-x-toolkit=motif
 NATIVECOMP_USE=			GCC=yes
-NATIVECOMP_CONFIGURE_WITH=	native-compilation
-NATIVECOMP_MAKE_ARGS=		NATIVE_FULL_AOT=1
+NATIVECOMP_CONFIGURE_WITH=	native-compilation=aot
 OSS_CONFIGURE_ON=		--with-sound=oss
-OTF_IMPLIES=			XFT
 OTF_LIB_DEPENDS=		libotf.so:print/libotf
 OTF_CONFIGURE_WITH=		libotf
+PGTK_IMPLIES=			CAIRO GTK3 SCROLLBARS
+PGTK_PREVENTS=			M17N XFT XPM
+PGTK_CATEGORIES=		wayland
+PGTK_CONFIGURE_WITH=		pgtk
 PNG_LIB_DEPENDS=		libpng.so:graphics/png
 PNG_CONFIGURE_WITH=		png
 SCROLLBARS_CONFIGURE_WITH=	toolkit-scroll-bars
 .if ${FLAVOR:U} == canna
 SOURCES_PLIST_FILES=		${DATADIR}/${DISTVERSION}/src/canna.c
 .endif
+SQLITE3_USES=			sqlite:3
+SQLITE3_CONFIGURE_WITH=		sqlite3
 SVG_IMPLIES=			PNG
 SVG_USE=			GNOME=cairo,librsvg2
 SVG_CONFIGURE_WITH=		rsvg
 THREADS_CONFIGURE_WITH=		threads
 TIFF_LIB_DEPENDS=		libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=		tiff
+TREESITTER_IMPLIES=		MODULES
+TREESITTER_LIB_DEPENDS=		libtree-sitter.so:devel/tree-sitter
+TREESITTER_CONFIGURE_WITH=	tree-sitter
+WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
+WEBP_CONFIGURE_WITH=		webp
 XAW3D_LIB_DEPENDS=		libXaw3d.so:x11-toolkits/Xaw3d
 XAW3D_CONFIGURE_ON=		--with-x-toolkit=athena
 XAW_USE=			XORG=xaw
@@ -233,9 +241,28 @@ XWIDGETS_CONFIGURE_WITH=	xwidgets
 
 .include <bsd.port.options.mk>
 
+.if ${ARCH:Mpowerpc64*}
+USE_GCC=	yes
+.endif
+
+.if ${FLAVOR:U} != nox
+USES+=		desktop-file-utils gnome
+.if !${PORT_OPTIONS:MPGTK}
+USES+=		xorg
+USE_XORG+=	ice sm x11 xcb xcomposite xext xfixes xi xinerama xmu xrandr \
+		xrender xt
+.endif
+.endif
+
 .if !${PORT_OPTIONS:MGTK2} && !${PORT_OPTIONS:MGTK3} && !${PORT_OPTIONS:MMOTIF} && \
 	!${PORT_OPTIONS:MXAW} && !${PORT_OPTIONS:MXAW3D}
 CONFIGURE_ARGS+=	--with-x-toolkit=no
+.endif
+
+# Schema generation is dependent on both PGTK, and GSETTINGS options
+# as per https://git.savannah.gnu.org/cgit/emacs.git/commit/?id=183936ee8e5
+.if ${PORT_OPTIONS:MGSETTINGS} && ${PORT_OPTIONS:MPGTK}
+GLIB_SCHEMAS+=	org.gnu.emacs.defaults.gschema.xml
 .endif
 
 .if ${FLAVOR} == nox
@@ -248,6 +275,7 @@ post-patch:
 
 post-install:
 	@${RM} -r ${STAGEDIR}${PREFIX}/lib/systemd
+	@(cd ${STAGEDIR}${PREFIX} && ${FIND} libexec/emacs/${DISTVERSION}/${CONFIGURE_TARGET}/ -name emacs-*.pdmp >> ${TMPPLIST})
 
 post-install-MAILUTILS-on:
 	${LN} -sf ${PREFIX}/bin/movemail \
@@ -257,7 +285,7 @@ post-install-MAILUTILS-on:
 # these files to the plist after the build.
 post-install-NATIVECOMP-on:
 	@(cd ${WRKSRC} && ${FIND} native-lisp -type f | ${SED} -e 's,^,lib/emacs/${DISTVERSION}/,') >> ${TMPPLIST}
-#	@${FIND} ${STAGEDIR}${PREFIX}/lib/emacs/${DISTVERSION:R}/native-lisp/ -name '*.eln*' -exec ${STRIP_CMD} {} +
+	@${FIND} ${STAGEDIR}${PREFIX}/lib/emacs/${DISTVERSION}/native-lisp/ -name '*.eln*' -exec ${STRIP_CMD} {} +
 
 post-install-SOURCES-on:
 	@${MKDIR} ${STAGEDIR}${DATADIR}/${DISTVERSION}/src
