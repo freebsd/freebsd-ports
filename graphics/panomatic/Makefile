@@ -12,9 +12,11 @@ WWW=		http://aorlinsk2.free.fr/panomatic/
 BUILD_DEPENDS=	bjam:devel/boost-jam \
 		${LOCALBASE}/include/boost/format.hpp:devel/boost-libs
 
+USES=		dos2unix gmake tar:bzip2
+USE_CXXSTD=	c++14
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
-USES=		dos2unix gmake tar:bzip2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
