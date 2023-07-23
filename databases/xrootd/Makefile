@@ -17,8 +17,6 @@ BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libcurl.so:ftp/curl
 
 USES=		cmake cpe gnome localbase:ldflags pkgconfig readline shebangfix ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to build with OpenSSL 3.0.0 and later
 SHEBANG_GLOB=	*.sh
 SHEBANG_FILES=	utils/cms_monPerf
 USE_GNOME=	libxml2
@@ -40,7 +38,13 @@ KERBEROS5_CMAKE_BOOL=	ENABLE_KRB5
 KERBEROS5_BROKEN=	build picks base kerberos, but needs the port one (problem only exists in poudriere builds for some reason)
 KERBEROS5_LIB_DEPENDS=	libkrb5.so:security/krb5
 
+.include <bsd.port.pre.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L"
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|  dl|  $${CMAKE_DL_LIBS}| ; s|-ldl|$${CMAKE_DL_LIBS}|' ${WRKSRC}/src/*.cmake ${WRKSRC}/src/*/CMakeLists.txt
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
