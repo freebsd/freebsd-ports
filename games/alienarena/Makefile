@@ -2,8 +2,7 @@ PORTNAME=	alienarena
 PORTVERSION=	2013.766
 PORTREVISION=	12
 CATEGORIES=	games
-MASTER_SITES=	SF/alienarena.mirror/Alien%20Arena%207.66/ \
-		http://icculus.org/alienarena/Files/ \
+MASTER_SITES=	http://icculus.org/alienarena/Files/ \
 		http://red.planetarena.org/files/ \
 		GENTOO
 DISTNAME=	${PORTNAME}-7.66-linux20130827
@@ -12,67 +11,60 @@ MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Alien Arena (native version)
 WWW=		http://red.planetarena.org/
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/../COPYING
+
 RUN_DEPENDS=	${LOCALBASE}/${DATADIR_REL}/data1/default.cfg:games/alienarena-data
 
-USES=		compiler:c++11-lib dos2unix gmake
+USES=		compiler:c++11-lib dos2unix gmake localbase
 USE_CXXSTD=	c++11
+
 GNU_CONFIGURE=	yes
-CONFIGURE_WRKSRC=${WRKDIR}/${PORTNAME}-7.66/
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=--with-xf86vm \
 		--with-xf86dga \
 		--with-system-libode
+
+MAKE_ENV=	WITH_DATADIR=yes WITH_LIBDIR=yes \
+		DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"
 
 # Fix build with clang11
 CFLAGS+=	-fcommon
 
 EXTRACT_AFTER_ARGS=	--exclude "data1"
-
-MAKE_ENV=	WITH_DATADIR=yes WITH_LIBDIR=yes \
-		DATADIR="${DATADIR}" LIBDIR="${LIBDIR}"
-WRKSRC=		${WRKDIR}/${PORTNAME}-7.66/source
-
 SUB_FILES=	pkg-message
 
+CONFIGURE_WRKSRC=${WRKDIR}/${PORTNAME}-7.66/
+WRKSRC=		${WRKDIR}/${PORTNAME}-7.66/source
+
+PLIST_SUB+=	LIBDIR=${LIBDIR:S|^${PREFIX}/||}
+
+OPTIONS_DEFAULT=	CLIENT DEDICATED
 OPTIONS_MULTI=	FLAVOR
 OPTIONS_MULTI_FLAVOR=	CLIENT DEDICATED
+OPTIONS_SUB=	yes
+
 CLIENT_DESC=	Build client
 DEDICATED_DESC=	Build dedicated server
 
-OPTIONS_DEFAULT=	CLIENT DEDICATED
-
-PLIST_SUB=	LIBDIR=${LIBDIR:S/${PREFIX}\///}
+CLIENT_LIB_DEPENDS=	libcurl.so:ftp/curl \
+		libfreetype.so:print/freetype2 \
+		libogg.so:audio/libogg \
+		libpng.so:graphics/png \
+		libvorbis.so:audio/libvorbis \
+		libode.so:devel/ode
+CLIENT_USES=		gl jpeg openal:soft,alut pkgconfig xorg
+CLIENT_USE=		GL=glu XORG=x11,xxf86dga,xxf86vm
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCLIENT}
-USES+=		gl jpeg openal:soft,alut pkgconfig xorg
-LIB_DEPENDS+=	libcurl.so:ftp/curl \
-		libfreetype.so:print/freetype2 \
-		libpng.so:graphics/png \
-		libvorbis.so:audio/libvorbis \
-		libode.so:devel/ode
-USE_GL=		yes
-USE_XORG=	xxf86dga xxf86vm
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 .if ! ${PORT_OPTIONS:MCLIENT} && ${PORT_OPTIONS:MDEDICATED}
 CONFIGURE_ARGS+=--disable-client
-.endif
-
-.if ${PORT_OPTIONS:MCLIENT}
-PLIST_SUB+=	CLIENT=""
-.else
-PLIST_SUB+=	CLIENT="@comment "
-.endif
-
-.if ${PORT_OPTIONS:MDEDICATED}
-PLIST_SUB+=	DEDICATED=""
-.else
-PLIST_SUB+=	DEDICATED="@comment "
 .endif
 
 post-patch:
@@ -90,18 +82,13 @@ do-install:
 	${LN} -s ${DATADIR}/arena/* ${STAGEDIR}${LIBDIR}/arena
 	${LN} -s ${DATADIR}/botinfo ${STAGEDIR}${LIBDIR}
 	${LN} -s ${DATADIR}/data1/* ${STAGEDIR}${LIBDIR}/data1
-.if ${PORT_OPTIONS:MCLIENT}
+
+do-install-CLIENT-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}
-.endif
-.if ${PORT_OPTIONS:MDEDICATED}
+
+do-install-DEDICATED-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-ded \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-ded
-.endif
-
-post-install:
-	@${ECHO_CMD}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_CMD}
 
 .include <bsd.port.mk>
