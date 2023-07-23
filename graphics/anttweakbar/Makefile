@@ -12,25 +12,32 @@ WWW=		http://anttweakbar.sourceforge.net/doc/
 LICENSE=	ZLIB
 LICENSE_FILE=	${WRKSRC}/../License.txt
 
-USES=		dos2unix gl xorg zip
+USES=		dos2unix gl localbase:ldflags xorg zip
+DOS2UNIX_FILES=	Makefile LoadOGLCore.h TwPrecomp.h
 USE_GL=		gl glu
-USE_XORG=	x11
 USE_LDCONFIG=	yes
+USE_XORG=	x11
+
+LDFLAGS+=	-lX11
+
+BINARY_ALIAS=	gcc=${CC}
 
 WRKSRC=		${WRKDIR}/AntTweakBar
 WRKSRC_SUBDIR=	src
-
-DOS2UNIX_FILES=	Makefile LoadOGLCore.h TwPrecomp.h
-
-LDFLAGS+=	-L${LOCALBASE}/lib -lX11
-
-BINARY_ALIAS=	gcc=${CC}
 
 PLIST_FILES=	include/AntTweakBar.h \
 		lib/libAntTweakBar.a \
 		lib/libAntTweakBar.so \
 		lib/libAntTweakBar.so.${DISTVERSION:R} \
 		lib/libAntTweakBar.so.${DISTVERSION}
+
+.include <bsd.port.options.mk>
+
+post-patch:
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+	@${REINPLACE_CMD} -e 's|public binary_function|public __binary_function|' \
+		${WRKSRC}/TwMgr.cpp
+.endif
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/../include/AntTweakBar.h ${STAGEDIR}${PREFIX}/include
