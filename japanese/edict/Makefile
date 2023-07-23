@@ -4,22 +4,17 @@ PORTREVISION=	5
 CATEGORIES=	japanese
 MASTER_SITES=	\
 		http://japanology.arts.kuleuven.ac.be/mirrors/monash/ \
-		http://www.bcit-broadcast.com/monash/ \
-		ftp://ftp.mirrorservice.org/sites/ftp.cc.monash.edu.au/pub/nihongo/ \
-		ftp://ftp.edrdg.org/pub/Nihongo/ \
-		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/ \
-		ftp://ftp.funet.fi/pub/culture/japan/mirrors/monash/pub/nihongo/ \
-		ftp://ftp.uni-duisburg.de/Mirrors/ftp.monash.edu.au/pub/nihongo/ \
-		ftp://ftp.monash.edu.au/pub/nihongo/
-EXTRACT_SUFX=	# empty
+		http://ftp.edrdg.org/pub/Nihongo/
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
+DIST_SUBDIR=	edict
 EXTRACT_ONLY=	${SRCFILES}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese-English dictionaries with access and maintenance utilities
 WWW=		http://ftp.monash.edu.au/pub/nihongo/00INDEX.html
 
-DIST_SUBDIR=	edict
+# Fix build with clang11
+CFLAGS+=	-fcommon
 
 DICTFILES=	edict.gz edicth enamdict.gz compdic.gz \
 		j_places.gz ediclsd3.zip \
@@ -45,10 +40,13 @@ DOCSDIR=	${PREFIX}/share/doc/xjdic
 
 NO_WRKSUBDIR=	yes
 
-# Fix build with clang11
-CFLAGS+=	-fcommon
-
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-patch:
 	@${GREP} -l '^main' ${WRKSRC}/*.c | ${XARGS} ${REINPLACE_CMD} \
@@ -72,7 +70,7 @@ do-install:
 		${dict:R} ${dict:R}.xjdx)
 .endfor
 	${RM} ${STAGEDIR}${PREFIX}/bin/xjdic
-	${LN} -s ${PREFIX}/bin/xjdic_sa ${STAGEDIR}${PREFIX}/bin/xjdic
+	(cd ${STAGEDIR}${PREFIX}/bin && ${LN} -s xjdic_sa xjdic)
 	(cd ${WRKSRC} && ${INSTALL_DATA} radicals.tm radkfile kanjstroke \
 		romkana.cnv vconj ${STAGEDIR}${DATADIR})
 	#
@@ -95,6 +93,8 @@ do-install:
 	# @${ECHO_CMD} dicfile lingdic >> ${DATADIR}/.xjdicrc
 	@${CHMOD} ${SHAREMODE} ${STAGEDIR}${DATADIR}/.xjdicrc
 	${INSTALL_MAN} ${WRKSRC}/xjdic.1 ${STAGEDIR}${PREFIX}/man/man1
+
+do-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/xjdic23.inf ${STAGEDIR}${DOCSDIR}
 	(cd ${_DISTDIR} && ${INSTALL_DATA} ${DOCFILES} ${STAGEDIR}${DOCSDIR})
