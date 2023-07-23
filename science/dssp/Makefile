@@ -1,6 +1,6 @@
 PORTNAME=	dssp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	4.4.0
+DISTVERSION=	4.4.1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -23,5 +23,7 @@ GH_ACCOUNT=	PDB-REDO
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	ENABLE_TESTING
+
+# 1 test fails, see https://github.com/PDB-REDO/dssp/issues/65
 
 .include <bsd.port.mk>

@@ -6,7 +6,7 @@ lib/cmake/dssp/dsspTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/dssp/dsspTargets.cmake
 lib/libdssp.so
 lib/libdssp.so.4
-lib/libdssp.so.4.4.0
+lib/libdssp.so.4.4.1
 libdata/pkgconfig/libdssp.pc
 share/libcifpp/dssp-extension.dic
 share/man/man1/mkdssp.1.gz
