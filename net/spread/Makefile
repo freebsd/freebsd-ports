@@ -14,38 +14,45 @@ LICENSE_NAME=	Spread Open-Source License
 LICENSE_FILE=	files/LICENSE
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-MAKE_JOBS_UNSAFE=	yes
-
-GNU_CONFIGURE=	yes
 USES=		groff perl5 tar:xz
+USE_LDCONFIG=	yes
 USE_PERL5=	build run
 USE_RC_SUBR=	spread
-USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+# The configure script fails to find nroff in LOCALBASE, but works fine if
+# 'groff' is used directly
+CONFIGURE_ENV+=	ac_cv_path_NROFF=groff
+
+MAKE_ARGS+=	PTHREAD_LIBS="-lpthread"
+MAKE_JOBS_UNSAFE=	yes
+
+TARGET_ORDER_OVERRIDE=	710:fix-perl-things
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
 USERS=		spread
 GROUPS=		spread
-RUNDIR=		/var/run/spread
-
-PLIST_SUB+=	USERS=${USERS} GROUPS=${GROUPS} RUNDIR=${RUNDIR}
-
-MAKE_ARGS+=	PTHREAD_LIBS="-lpthread"
-WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}
 
 PKGMESSAGE=	${WRKSRC}/license.txt
+PLIST_SUB+=	USERS=${USERS} GROUPS=${GROUPS} RUNDIR=${RUNDIR}
 PORTDOCS=	Readme.txt LICENSE
+
+RUNDIR=		/var/run/spread
+
 HEADERFILES=	sp_func.h sp_func.h sp_events.h
 
 OPTIONS_DEFINE=	DOCS
 
-# The configure script fails to find nroff in LOCALBASE, but works fine if
-# 'groff' is used directly
-
-CONFIGURE_ENV+=	ac_cv_path_NROFF=groff
 # bsd.port.mk doesn't allow us to use GNU_CONFIGURE and PERL_CONFIGURE together.
 PERL_CONFIGURE_ARGS=	CC="${CC}" CCFLAGS="${CFLAGS}" PREFIX="${PREFIX}" \
 			INSTALLPRIVLIB="${PREFIX}/lib" INSTALLARCHLIB="${PREFIX}/lib"
 
-TARGET_ORDER_OVERRIDE=	710:fix-perl-things
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
@@ -69,12 +76,14 @@ post-install:
 	(cd ${WRKSRC}/perl/Spread && ${MAKE} PREFIX=${STAGEDIR}${PREFIX} install)
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/perl/Spread/test.pl ${STAGEDIR}${EXAMPLESDIR}
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${STAGEDIR}${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}/LICENSE
 	${INSTALL} -m 750 -d ${STAGEDIR}${RUNDIR}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libspread.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/libtspread.so.1
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Spread/Spread.so
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/Readme.txt ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${STAGEDIR}${DOCSDIR}/LICENSE
 
 .include <bsd.port.mk>
