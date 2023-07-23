@@ -1,5 +1,5 @@
 PORTNAME=	webtrees
-PORTVERSION=	2.1.16
+PORTVERSION=	2.1.17
 CATEGORIES=	www
 MASTER_SITES=	https://github.com/fisharebest/${PORTNAME}/releases/download/${PORTVERSION}/
 PKGNAMESUFFIX=	21
