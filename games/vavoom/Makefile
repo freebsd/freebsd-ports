@@ -14,6 +14,7 @@ LIB_DEPENDS=	libpng.so:graphics/png
 
 USES=		cmake:noninja cpe dos2unix jpeg tar:bzip2
 DOS2UNIX_REGEX=	((.*\.(c|cpp|h|s|asm|inc|vc|ls|acs|cfg|txt|vs|mak|mgw"))$$|\/(makefile\..*|makefile|Makefile)$$)
+USE_CXXSTD=	c++14
 
 # The `-fno-strict-aliasing' flag (default on FreeBSD 6.0+) produces
 # non-working code for `vcc', so we remove it here if present.
@@ -51,16 +52,16 @@ OPENAL_USES=				openal:al
 OPENAL_CMAKE_ON=			-DWITH_OPENAL:BOOL=ON
 OPENAL_CMAKE_OFF=			-DWITH_OPENAL:BOOL=OFF
 
+OPTIMIZED_CFLAGS_CFLAGS=	-O3 -ffast-math -fomit-frame-pointer
+
 SDL_USES=				gl sdl
-SDL_USE=				GL=glu SDL=mixer,sdl
+SDL_USE=				GL=gl,glu SDL=mixer,sdl
 SDL_CMAKE_ON=				-DWITH_SDL:BOOL=ON -DWITH_OPENGL:BOOL=ON
 SDL_CMAKE_OFF=				-DWITH_SDL:BOOL=OFF -DWITH_OPENGL:BOOL=OFF
 
 VORBIS_LIB_DEPENDS=			libvorbis.so:audio/libvorbis
 VORBIS_CMAKE_ON=			-DWITH_VORBIS:BOOL=ON
 VORBIS_CMAKE_OFF=			-DWITH_VORBIS:BOOL=OFF
-
-OPTIMIZED_CFLAGS_CFLAGS=	-O3 -ffast-math -fomit-frame-pointer
 
 .include <bsd.port.options.mk>
 
