@@ -1,3 +1,30 @@
+  <vuln vid="ab0bab3c-2927-11ee-8608-07b8d3947721">
+    <topic>gitea -- Disallow dangerous URL schemes</topic>
+    <affects>
+      <package>
+	<name>gitea</name>
+	<range><lt>1.20.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Gitea team reports:</p>
+	<blockquote cite="https://github.com/go-gitea/gitea/pull/25960">
+	  <p>Disallow javascript, vbscript and data (data uri images still
+	    work) url schemes even if all other schemes are allowed</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://blog.gitea.com/release-of-1.20.1</url>
+      <url>https://github.com/go-gitea/gitea/releases/tag/v1.20.1</url>
+    </references>
+    <dates>
+      <discovery>2023-06-18</discovery>
+      <entry>2023-07-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="887eb570-27d3-11ee-adba-c80aa9043978">
       <topic>OpenSSH -- remote code execution via a forwarded agent socket</topic>
     <affects>
