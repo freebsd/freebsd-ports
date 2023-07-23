@@ -2,7 +2,7 @@ PORTNAME=	onyx
 PORTVERSION=	5.1.2
 PORTREVISION=	6
 CATEGORIES=	lang
-MASTER_SITES=	LOCAL/bofh
+MASTER_SITES=	LOCAL/bofh/${PORTNAME}
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Embeddable stack-based threaded interpreted language
