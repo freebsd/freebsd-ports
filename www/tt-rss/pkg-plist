@@ -1986,7 +1986,6 @@
 %%WWWDIR%%/plugins/af_comics/init.php
 %%WWWDIR%%/plugins/af_psql_trgm/init.js
 %%WWWDIR%%/plugins/af_psql_trgm/init.php
-%%WWWDIR%%/plugins/af_redditimgur/init.php
 %%WWWDIR%%/plugins/af_youtube_embed/init.php
 %%WWWDIR%%/plugins/af_zz_vidmute/init.js
 %%WWWDIR%%/plugins/af_zz_vidmute/init.php
