@@ -17,6 +17,12 @@ USE_GNUSTEP=	gui base back build
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e 's|^GNUSTEP_INSTALLATION_DOMAIN|#GNUSTEP_INSTALLATION_DOMAIN|' \
 		${WRKSRC}/GNUmakefile
