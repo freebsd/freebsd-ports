@@ -7,4 +7,5 @@ share/icons/hicolor/scalable/apps/yoshimi.svg
 share/icons/hicolor/scalable/apps/yoshimi_alt.svg
 share/man/man1/yoshimi.1.gz
 share/metainfo/yoshimi.appdata.xml
+share/metainfo/yoshimi.metainfo.xml
 share/pixmaps/yoshimi.png
