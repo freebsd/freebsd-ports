@@ -17,30 +17,32 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LIB_DEPENDS=	libpng.so:graphics/png \
 		libtiff.so:graphics/tiff
 
+USES=		alias cmake compiler:c++11-lang gl jpeg localbase pkgconfig xorg
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	openscenegraph
 GH_PROJECT=	OpenSceneGraph
+USE_GL=		gl glu
+USE_LDCONFIG=	yes
+USE_XORG=	x11
+
+# needed to ensure build on gcc-based archs; harmless otherwise
+CXXFLAGS+=	-Wno-narrowing -I${LOCALBASE}/include/Imath -DInt64=uint64_t
 
 CONFLICTS_INSTALL=osg
 
-USES=		alias cmake compiler:c++11-lang gl jpeg localbase pkgconfig xorg
-USE_GL=		gl glu
-USE_XORG=	x11
-USE_LDCONFIG=	yes
-# needed to ensure build on gcc-based archs; harmless otherwise
-CXXFLAGS+=	-Wno-narrowing -I${LOCALBASE}/include/Imath -DInt64=uint64_t
+PORTSCOUT=	limitw:1,even
 
 PLIST_SUB=	OSG_VERSION=${PORTVERSION} \
 		OSG_SHLIBVER=131 \
 		OPENTHREADS_VERSION=3.3.0 \
 		OPENTHREADS_SHLIBVER=20
 
-PORTSCOUT=	limitw:1,even
-
 OPTIONS_DEFINE=	CURL FFMPEG FREETYPE GDAL GIF GSTREAMER GTA \
 		JASPER LIBLAS LUA NVTT OPENEXR PDF QT5 SDL \
 		SVG VNC XINE XRANDR
 OPTIONS_DEFAULT=FFMPEG FREETYPE GIF XRANDR
+OPTIONS_SUB=	yes
 
 GDAL_DESC=	GDAL support
 GTA_DESC=	GTA file format support
@@ -48,8 +50,6 @@ LIBLAS_DESC=	liblas support
 NVTT_DESC=	Use NVidia texture tools
 SDL_DESC=	Use SDL (joystick support in present3d)
 VNC_DESC=	LibVNCServer support
-
-OPTIONS_SUB=	yes
 
 CURL_LIB_DEPENDS=	libcurl.so:ftp/curl
 CURL_VARS=		FORCE_REQUIRE+=CURL
@@ -112,9 +112,9 @@ VNC_VARS_OFF=		FORCE_IGNORE+=LibVNCServer
 XINE_LIB_DEPENDS=	libxine.so:multimedia/libxine
 XINE_VARS=		FORCE_REQUIRE+=Xine
 XINE_VARS_OFF=		FORCE_IGNORE+=Xine
+XRANDR_USE=		xorg=xrandr
 XRANDR_CMAKE_ON=	-DOSGVIEWER_USE_XRANDR:BOOL=ON
 XRANDR_CMAKE_OFF=	-DOSGVIEWER_USE_XRANDR:BOOL=OFF
-XRANDR_USE=		xorg=xrandr
 
 # GUI toolkits are only needed for building examples, which are not even installed
 FORCE_IGNORE=	FLTK GLUT FOX Qt3 wxWidgets OpenAL GtkGl SDL2	# only for examples
