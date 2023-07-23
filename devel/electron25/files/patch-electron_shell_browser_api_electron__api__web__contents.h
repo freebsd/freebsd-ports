@@ -1,6 +1,6 @@
---- electron/shell/browser/api/electron_api_web_contents.h.orig	2023-05-31 14:28:29 UTC
+--- electron/shell/browser/api/electron_api_web_contents.h.orig	2023-07-19 13:20:24 UTC
 +++ electron/shell/browser/api/electron_api_web_contents.h
-@@ -727,7 +727,7 @@ class WebContents : public ExclusiveAccessContext,
+@@ -731,7 +731,7 @@ class WebContents : public ExclusiveAccessContext,
  #if defined(TOOLKIT_VIEWS) && !BUILDFLAG(IS_MAC)
    ui::ImageModel GetDevToolsWindowIcon() override;
  #endif
