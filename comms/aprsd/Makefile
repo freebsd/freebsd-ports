@@ -13,21 +13,21 @@ LICENSE=	GPLv2
 
 BROKEN_FreeBSD_12_powerpc64=	fails to link on powerpc64 elfv1: httpserver.o:(.text+0x1074): undefined reference to `convertUpTime(int)'
 
-GNU_CONFIGURE=	yes
-SUB_FILES=	pkg-message
+USE_CXXSTD=	c++14
 USE_RC_SUBR=	aprsd
+
+GNU_CONFIGURE=	yes
+
+SUB_FILES=	pkg-message
+SUB_LIST=	APRSD_RC_USER=${APRSD_RC_USER} \
+		APRSD_RC_GROUP=${APRSD_RC_GROUP}
 
 USERS=	aprsd tnc
 GROUPS=	aprsd dialer tnc
 APRSD_RC_USER=	aprsd
 APRSD_RC_GROUP=	aprsd
 
-SUB_LIST=	APRSD_RC_USER=${APRSD_RC_USER} \
-		APRSD_RC_GROUP=${APRSD_RC_GROUP}
-
 OPTIONS_DEFINE=	DOCS EXAMPLES
-
-.include <bsd.port.pre.mk>
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%CONFPATH%%|${PREFIX}/etc/aprsd/|' \
@@ -45,11 +45,15 @@ post-install:
 .for	f in INIT.TNC RESTORE.TNC aprsd.conf welcome.txt user.deny
 	${INSTALL_DATA} ${WRKSRC}/admin/$f ${STAGEDIR}${PREFIX}/etc/aprsd/$f.samp
 .endfor
+
+post-install-DOCS-on:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${CP} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
+
+post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for	f in chkaprsd udp_example
 	${INSTALL_DATA} ${WRKSRC}/admin/$f ${STAGEDIR}${EXAMPLESDIR}
 .endfor
-	${MKDIR} ${STAGEDIR}${DOCSDIR}
-	${CP} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
