@@ -567,6 +567,7 @@
     SUBDIR += imgurbash2
     SUBDIR += immortal
     SUBDIR += incron
+    SUBDIR += initool
     SUBDIR += inotify-tools
     SUBDIR += installwatch
     SUBDIR += intel-epct
