@@ -68,6 +68,12 @@ CXXFLAGS+=	-malign-double
 
 KEEP_EXTRA=	lz4 robin-hood-hashing zlib
 
+post-patch:
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
+		${WRKSRC}/../boost_1_77_0/boost/container_hash/hash.hpp
+.endif
+
 pre-configure:
 .for dir in ${KEEP_EXTRA}
 	@${MV} ${WRKSRC}/extra/${dir} ${WRKDIR}
