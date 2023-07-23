@@ -20,4 +20,10 @@ USE_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
 DEFAULT_LIBVERSION=	1.1.0
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 .include <bsd.port.mk>
