@@ -1,6 +1,5 @@
 PORTNAME=	wl-screenrec
-PORTVERSION=	s20230716
-PORTREVISION=	1
+PORTVERSION=	s20230723
 CATEGORIES=	multimedia wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -9,12 +8,13 @@ WWW=		https://github.com/russelltg/wl-screenrec
 
 LICENSE=	APACHE20
 
-LIB_DEPENDS=	libavformat.so:multimedia/ffmpeg
+LIB_DEPENDS=	libdrm.so:graphics/libdrm \
+		libavformat.so:multimedia/ffmpeg
 
 USES=		cargo llvm
 USE_GITHUB=	yes
 GH_ACCOUNT=	russelltg
-GH_TAGNAME=	20c6da9
+GH_TAGNAME=	666fc69
 PLIST_FILES=	bin/${PORTNAME}
 
 post-patch:
