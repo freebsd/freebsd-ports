@@ -11,16 +11,19 @@ WWW=		http://log4cplus.sourceforge.net/
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-OPTIONS_DEFINE=	DOCS
-
 USES=		compiler:c++11-lang libtool pathfix tar:xz
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-threads=yes
-INSTALL_TARGET=	install-strip
+
 MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
 
 PORTDOCS=	*
+
+OPTIONS_DEFINE=	DOCS
 
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
