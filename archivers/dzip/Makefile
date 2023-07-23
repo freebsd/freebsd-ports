@@ -24,6 +24,12 @@ PORTDOCS=	Readme
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-extract: .SILENT
 	${REINPLACE_CMD} -e 's/ifdef BIG_ENDIAN/if BYTE_ORDER == BIG_ENDIAN/' \
 		-e 's/ifndef BIG_ENDIAN/if BYTE_ORDER == LITTLE_ENDIAN/' \
