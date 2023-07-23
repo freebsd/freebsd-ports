@@ -15,4 +15,10 @@ GH_ACCOUNT=	GhostBSD
 
 PLIST_FILES=	bin/mate_pam_helper
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=unused-but-set-variable
+.endif
+
 .include <bsd.port.mk>
