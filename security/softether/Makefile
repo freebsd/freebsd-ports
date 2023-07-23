@@ -42,6 +42,10 @@ ALL_TARGET=	build
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	# SoftEther scatters logs, config files and PID files in PREFIX/libexec
 	# directory. To write them in the right place, replace it.
