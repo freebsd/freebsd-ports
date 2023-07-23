@@ -1,20 +1,11 @@
---- ./Makefile.in.orig	2005-06-27 07:11:34.000000000 +0200
-+++ ./Makefile.in	2011-08-17 13:19:00.000000000 +0200
-@@ -15,7 +15,7 @@
- #
- #  You should have received a copy of the GNU General Public License
- #  along with this program; if not, write to the Free Software
--#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, 
-+#  Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,
- #  USA.
- #
- 
-@@ -48,7 +48,7 @@
- 			 $(SRCDIR)knock.c \
- 			 $(SRCDIR)list.c
- 
--all: knockd knock man
-+all: knockd knock
- 
- knockd: $(OBJDIR)knockd.o $(OBJDIR)list.o
- 	$(CXX) $(OBJDIR)knockd.o $(OBJDIR)list.o -o $@ $(LDFLAGS) -lpcap
+--- Makefile.in.orig	2023-07-23 19:53:46 UTC
++++ Makefile.in
+@@ -864,7 +864,7 @@ distcleancheck: distclean
+ 	       exit 1; } >&2
+ check-am: all-am
+ check: check-am
+-all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(MANS) $(DATA) config.h
++all-am: Makefile $(PROGRAMS) $(SCRIPTS) $(DATA) config.h
+ installdirs:
+ 	for dir in "$(DESTDIR)$(bindir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(sbindir)" "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(docdir)" "$(DESTDIR)$(sysconfdir)"; do \
+ 	  test -z "$$dir" || $(MKDIR_P) "$$dir"; \

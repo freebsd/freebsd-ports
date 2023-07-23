@@ -1,14 +1,12 @@
 PORTNAME=	knock
-PORTVERSION=	0.5
-PORTREVISION=	1
-PORTEPOCH=	1
+DISTVERSION=	0.8
 CATEGORIES=	security
-MASTER_SITES=	http://www.zeroflux.org/proj/knock/files/ \
+MASTER_SITES=	https://github.com/jvinet/${PORTNAME}/releases/download/v${DISTVERSION}/ \
 		LOCAL/sbz
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Flexible port-knocking server and client
-WWW=		http://www.zeroflux.org/projects/knock
+WWW=		https://github.com/jvinet/knock
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
