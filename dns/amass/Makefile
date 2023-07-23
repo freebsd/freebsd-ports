@@ -1,6 +1,6 @@
 PORTNAME=	amass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.23.3
+DISTVERSION=	4.0.2
 CATEGORIES=	dns
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		go:modules
 
-GO_MODULE=	github.com/OWASP/Amass/v3
+GO_MODULE=	github.com/OWASP/Amass/v4
 GO_TARGET=	./cmd/${PORTNAME}
 
 PLIST_FILES=	${GO_TARGET:C/.\/cmd/bin/}
