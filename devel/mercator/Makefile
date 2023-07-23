@@ -14,8 +14,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libwfmath-1.0.so:math/wfmath
 
 USES=		libtool pathfix pkgconfig compiler:c++11-lib
-GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 
 CXXFLAGS+=	-include wchar.h
 
