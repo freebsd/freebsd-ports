@@ -113,6 +113,7 @@
 %%DATADIR%%/bin/gugaci.exe
 %%DATADIR%%/bin/gugadrt.exe
 %%DATADIR%%/bin/last_energy.exe
+%%DATADIR%%/bin/level.exe
 %%DATADIR%%/bin/localisation.exe
 %%DATADIR%%/bin/loprop.exe
 %%DATADIR%%/bin/mbpt2.exe
@@ -175,6 +176,7 @@
 %%DATADIR%%/data/keyword.xml
 %%DATADIR%%/data/landing.txt
 %%DATADIR%%/data/last_energy.prgm
+%%DATADIR%%/data/level.prgm
 %%DATADIR%%/data/localisation.prgm
 %%DATADIR%%/data/loprop.prgm
 %%DATADIR%%/data/mbpt2.prgm
