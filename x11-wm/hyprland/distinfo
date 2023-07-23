@@ -7,3 +7,5 @@ SHA256 (canihavesomecoffee-udis86-1.7.2-186-g5336633_GH0.tar.gz) = 69aff959179ff
 SIZE (canihavesomecoffee-udis86-1.7.2-186-g5336633_GH0.tar.gz) = 116938
 SHA256 (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = b5a9ff1793b1e2d388a3819bf35797002b1d2e40bb35a10c65605e0ea1435271
 SIZE (llvm-llvm-project-llvmorg-16.0.1_GH0.tar.gz) = 179289803
+SHA256 (9fc5f4c48b20.patch) = f8125b6acb6c36082cb42b745b4726b5d73b15ebd27b8ac5136f287fbe196f09
+SIZE (9fc5f4c48b20.patch) = 2721
