@@ -12,7 +12,9 @@ LICENSE=	GPLv2
 
 USES=		gmake libtool pathfix pkgconfig
 USE_CSTD=	gnu89
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--without-gtk
 
