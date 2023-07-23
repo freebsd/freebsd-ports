@@ -14,26 +14,28 @@ LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 LIB_DEPENDS=	libfreetype.so:print/freetype2
 RUN_DEPENDS=	t1asm:print/t1utils
 
-USES=		pkgconfig shebangfix perl5 uidfix tar:tgz
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LIBS="${LIBS}" \
-		INSTDIR="${STAGEDIR}${PREFIX}" LIBXDIR="${STAGEDIR}${PREFIX}/bin" \
-		OWNER=${BINOWN} GROUP=${BINGRP}
-SHEBANG_FILES=	app/TeX/sfd2map \
-		app/TeX/cjk-latex-config \
-		other/showdf \
-		other/showg \
-		other/*.pl \
-		scripts/forceiso \
-		scripts/frommap \
-		scripts/inst_dir \
-		scripts/html2man \
-		scripts/t1fdir \
-		scripts/trans
+USES=		localbase perl5 pkgconfig shebangfix tar:tgz uidfix
 
-CPPFLAGS+=	`pkg-config --cflags freetype2` \
-		-I${LOCALBASE}/include -DUSE_FREETYPE
-LIBS+=		`pkg-config --libs freetype2` \
-		-L${LOCALBASE}/lib -lm
+SHEBANG_FILES=	app/TeX/cjk-latex-config app/TeX/sfd2map other/*.pl \
+		other/showdf other/showg scripts/forceiso scripts/frommap \
+		scripts/html2man scripts/inst_dir scripts/t1fdir scripts/trans
+
+MAKE_ARGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS} ${CPPFLAGS}" \
+		GROUP=${BINGRP} \
+		INSTDIR="${STAGEDIR}${PREFIX}" \
+		LIBS="${LIBS}" \
+		LIBXDIR="${STAGEDIR}${PREFIX}/bin" \
+		OWNER=${BINOWN}
+
+CPPFLAGS+=	`pkg-config --cflags freetype2` -DUSE_FREETYPE
+LIBS+=		`pkg-config --libs freetype2` -lm
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/ttf2pt1
