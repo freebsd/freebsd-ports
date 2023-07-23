@@ -2,7 +2,7 @@ PORTNAME=	jstrack
 PORTVERSION=	3.4.0
 CATEGORIES=	science
 MASTER_SITES=	https://jstrack.org/${PORTNAME}/downloads/ \
-		LOCAL/bofh
+		LOCAL/bofh/${PORTNAME}
 DISTNAME=	JStrack-${PORTVERSION}
 
 MAINTAINER=	bofh@FreeBSD.org
