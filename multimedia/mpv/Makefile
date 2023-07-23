@@ -1,15 +1,11 @@
 PORTNAME=	mpv
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.35.1
-PORTREVISION=	5
+DISTVERSION=	0.36.0
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES+=	b95111dda879.patch:-p1 # https://github.com/mpv-player/mpv/pull/10871
-PATCHFILES+=	94c189dae76b.patch:-p1 # https://github.com/mpv-player/mpv/pull/11398
-PATCHFILES+=	362256edbc4f.patch:-p1 # https://github.com/mpv-player/mpv/pull/11398
-PATCHFILES+=	3a2f8d42ab20.patch:-p1 # https://github.com/mpv-player/mpv/pull/11447
+PATCHFILES+=	9c97f6ebccaa.patch:-p1 # https://github.com/mpv-player/mpv/pull/10871
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Free and open-source general-purpose video player
@@ -35,7 +31,7 @@ MESON_ARGS=	--auto-features=auto \
 		-Dshaderc=disabled \
 		-Dlibmpv=true
 
-OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 MANPAGES MUJS RUBBERBAND TEST UCHARDET EXAMPLES ZIMG
+OPTIONS_DEFINE=		ARCHIVE DOCS LCMS2 MANPAGES MUJS RUBBERBAND UCHARDET EXAMPLES ZIMG
 OPTIONS_DEFAULT=	ARCHIVE DVDNAV LCMS2 LUAJIT MANPAGES NVDEC OPENGL UCHARDET \
 			V4L VAAPI VDPAU VULKAN WAYLAND X11 YTDLP
 OPTIONS_GROUP=		IN VO AO
@@ -138,8 +134,6 @@ SIXEL_MESON_ENABLED=		sixel
 SNDIO_LIB_DEPENDS=		libsndio.so:audio/sndio
 SNDIO_MESON_ENABLED=		sndio
 
-TEST_MESON_TRUE=		tests
-
 UCHARDET_LIB_DEPENDS=		libuchardet.so:textproc/uchardet
 UCHARDET_MESON_ENABLED=		uchardet
 
@@ -195,8 +189,11 @@ post-patch-MANPAGES-on:
 	@${FIND} ${WRKSRC}/DOCS/man -name '*.rst' | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/usr/local|${PREFIX}|g'
 
-pre-install-TEST-on:
-	@(cd ${WRKSRC} && ${SETENV} ${TEST_ENV} \
-		${MESON_BUILD_DIR}/${PORTNAME} --unittest=all-simple)
+pre-test:
+	@if [ ! -e ${WRKDIR}/.meson_build_tests ]; then \
+		${RM} ${CONFIGURE_COOKIE} ${BUILD_COOKIE}; \
+		${MAKE} -C${.CURDIR} build MESON_ARGS="${MESON_ARGS} --reconfigure -Dtests=true"; \
+		${TOUCH} ${WRKDIR}/.meson_build_tests; \
+	fi
 
 .include <bsd.port.mk>
