@@ -1,6 +1,5 @@
 PORTNAME=	opentimer
-PORTVERSION=	g20210726
-PORTREVISION=	1
+PORTVERSION=	g20221116
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,18 +9,18 @@ WWW=		https://github.com/OpenTimer/OpenTimer
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN_i386=	undefined reference to `__atomic_compare_exchange_8'
-BROKEN_powerpc=	undefined reference to `__atomic_compare_exchange_8'
+BROKEN_i386=	undefined reference to `__atomic_compare_exchange_8' #'`
+BROKEN_powerpc=	undefined reference to `__atomic_compare_exchange_8' #'`
 
 USES=		cmake compiler:c++17-lang python:test shebangfix tcl
-USE_GCC=	yes # fails to build with clang-11: https://github.com/OpenTimer/OpenTimer/issues/48
+#USE_GCC=	yes # fails to build with clang-11: https://github.com/OpenTimer/OpenTimer/issues/48
 
 SHEBANG_FILES=	inttest/*.py
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	OpenTimer
 GH_PROJECT=	OpenTimer
-GH_TAGNAME=	18d28ff
+GH_TAGNAME=	a57d03b
 
 TEST_TARGET=	test
 
