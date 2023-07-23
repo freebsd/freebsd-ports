@@ -1,8 +1,7 @@
 PORTNAME=	xmlf90
-DISTVERSION=	1.5.5
-PORTREVISION=	1
+DISTVERSION=	1.5.6
 CATEGORIES=	textproc
-MASTER_SITES=	https://gitlab.com/siesta-project/libraries/xmlf90/-/archive/1.5.5/
+MASTER_SITES=	https://gitlab.com/siesta-project/libraries/xmlf90/-/archive/${DISTVERSION}/
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Suite of light-weight libraries to work with XML in Fortran
