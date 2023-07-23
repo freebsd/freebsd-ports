@@ -12,10 +12,11 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LGPL_V2
 
 USES=		bison:alias iconv libtool localbase:ldflags pathfix
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
-USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|' ${WRKSRC}/configure
