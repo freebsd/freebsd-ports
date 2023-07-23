@@ -305,8 +305,8 @@ lib/cmake/UHDM/UHDMTargets-%%CMAKE_BUILD_TYPE%%.cmake
 lib/cmake/UHDM/UHDMTargets.cmake
 lib/uhdm/UHDM.capnp
 lib/uhdm/libcapnp.so
-lib/uhdm/libcapnp.so.0.8.0
+lib/uhdm/libcapnp.so.0.11-dev
 lib/uhdm/libkj.so
-lib/uhdm/libkj.so.0.8.0
+lib/uhdm/libkj.so.0.11-dev
 lib/uhdm/libuhdm.so
 libdata/pkgconfig/UHDM.pc

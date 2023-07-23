@@ -1,6 +1,6 @@
 PORTNAME=	uhdm
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.66
+DISTVERSION=	1.70
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,7 +18,7 @@ USE_LDCONFIG=	${PREFIX}/lib/uhdm
 USE_GITHUB=	yes
 GH_ACCOUNT=	chipsalliance
 GH_PROJECT=	${PORTNAME:tu}
-GH_TUPLE=	capnproto:capnproto:14f24a4:capnproto/third_party/capnproto \
+GH_TUPLE=	capnproto:capnproto:48e4889:capnproto/third_party/capnproto \
 		google:googletest:58d77fa:googletest/third_party/googletest
 
 CMAKE_ON=	BUILD_SHARED_LIBS
