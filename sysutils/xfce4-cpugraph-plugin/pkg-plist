@@ -9,6 +9,7 @@ lib/xfce4/panel/plugins/libcpugraph.so
 %%NLS%%share/locale/de/LC_MESSAGES/xfce4-cpugraph-plugin.mo
 %%NLS%%share/locale/el/LC_MESSAGES/xfce4-cpugraph-plugin.mo
 %%NLS%%share/locale/en_AU/LC_MESSAGES/xfce4-cpugraph-plugin.mo
+%%NLS%%share/locale/en_CA/LC_MESSAGES/xfce4-cpugraph-plugin.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-cpugraph-plugin.mo
 %%NLS%%share/locale/es/LC_MESSAGES/xfce4-cpugraph-plugin.mo
 %%NLS%%share/locale/et/LC_MESSAGES/xfce4-cpugraph-plugin.mo
@@ -57,5 +58,6 @@ lib/xfce4/panel/plugins/libcpugraph.so
 share/xfce4/panel/plugins/cpugraph.desktop
 share/icons/hicolor/128x128/apps/org.xfce.panel.cpugraph.png
 share/icons/hicolor/16x16/apps/org.xfce.panel.cpugraph.png
+share/icons/hicolor/24x24/apps/org.xfce.panel.cpugraph.png
 share/icons/hicolor/32x32/apps/org.xfce.panel.cpugraph.png
 share/icons/hicolor/scalable/apps/org.xfce.panel.cpugraph.svg
