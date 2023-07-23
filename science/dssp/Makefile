@@ -24,6 +24,4 @@ GH_ACCOUNT=	PDB-REDO
 CMAKE_ON=	BUILD_SHARED_LIBS
 CMAKE_TESTING_ON=	ENABLE_TESTING
 
-# 1 test fails, see https://github.com/PDB-REDO/dssp/issues/65
-
 .include <bsd.port.mk>
