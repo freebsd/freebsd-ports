@@ -36,6 +36,11 @@ DEBUGGER_HEAVY_DESC=Enable internal debugger with extra features
 DEBUGGER_ENABLE_CONFIGURE_ON=	--enable-debug=yes
 DEBUGGER_HEAVY_CONFIGURE_ON=	--enable-debug=heavy
 
+.include <bsd.port.options.mk>
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CPPFLAGS+=	-Dregister=
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's#\/usr\/share\/doc\/dosbox#${DOCSDIR}#g' \
 		${WRKSRC}/docs/dosbox.1
