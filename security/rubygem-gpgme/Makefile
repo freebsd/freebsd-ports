@@ -17,9 +17,14 @@ LIB_DEPENDS=	libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme
 
 USES=		gem pkgconfig shebangfix
+SHEBANG_FILES=	test/pinentry
 
 CONFIGURE_ARGS=	--use-system-libraries
 
-SHEBANG_FILES=	test/pinentry
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
+.endif
 
 .include <bsd.port.mk>
