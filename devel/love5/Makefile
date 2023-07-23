@@ -9,26 +9,33 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Open-source 2D game engine
 WWW=		https://www.love2d.org/
 
-LIB_DEPENDS=	libIL.so:graphics/devil \
-		libphysfs.so:devel/physfs \
-		libfreetype.so:print/freetype2
-BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+LICENSE=	BSD3CLAUSE
+LICENSE_FILE=	${WRKSRC}/license.txt
 
-USES=		tar:bzip2 gmake gl dos2unix lua:51 sdl
-USE_SDL=	sdl mixer
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:devel/boost-libs
+LIB_DEPENDS=	libfreetype.so:print/freetype2 \
+		libIL.so:graphics/devil \
+		libphysfs.so:devel/physfs
+
+USES=		dos2unix gl gmake localbase:ldflags lua:51 sdl tar:bzip2
+DOS2UNIX_FILES=	src/system/love_system.cpp
+USE_CXXSTD=	c++14
 USE_GL=		gl glu
+USE_SDL=	mixer sdl
+
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2 \
+CONFIGURE_ARGS=	--bindir=${PREFIX}/bin \
+		--libdir=${PREFIX}/lib \
+		--program-suffix=5
+
+CPPFLAGS+=	-I${LOCALBASE}/include/freetype2 \
 		-I${LUA_INCDIR} `${SDL_CONFIG} --cflags`
 CXXFLAGS+=	-fsigned-char
-LDFLAGS+=	-L${LOCALBASE}/lib -L${LUA_LIBDIR}
-CONFIGURE_ARGS=	--bindir=${PREFIX}/bin --libdir=${PREFIX}/lib \
-		--program-suffix=5
-DOS2UNIX_FILES=	src/system/love_system.cpp
-
-PLIST_FILES=	bin/love5
+LDFLAGS+=	-L${LUA_LIBDIR}
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+
+PLIST_FILES=	bin/love5
 PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
