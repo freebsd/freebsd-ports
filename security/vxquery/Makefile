@@ -9,6 +9,8 @@ COMMENT=	VuXML Query Tool
 LICENSE=	BSD2CLAUSE
 
 USES=	tar:bzip2
+USE_CXXSTD=	c++14
+
 GNU_CONFIGURE=	yes
 
 do-install:
