@@ -18,19 +18,19 @@ LIB_DEPENDS=	libIL.so:graphics/devil \
 		libogg.so:audio/libogg
 
 USES=		cmake gl sdl openal perl5
-USE_GL=		gl glew glu
-USE_SDL=	sdl2
-USE_PERL5=	build
-
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	shamazmazum
 GH_PROJECT=	AmnesiaTheDarkDescent
+USE_GL=		gl glew glu
+USE_PERL5=	build
+USE_SDL=	sdl2
+
+CMAKE_ARGS=	-DSYSTEMWIDE_RESOURCES_LOCATION=${PREFIX}/share/${PORTNAME}
+CMAKE_ON=	SYSTEMWIDE_RESOURCES
+CMAKE_SOURCE_PATH=	${WRKSRC}/amnesia/src
 
 SUB_FILES=	pkg-message
-
-CMAKE_ON=	SYSTEMWIDE_RESOURCES
-CMAKE_ARGS=	-DSYSTEMWIDE_RESOURCES_LOCATION=${PREFIX}/share/${PORTNAME}
-CMAKE_SOURCE_PATH=	${WRKSRC}/amnesia/src
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/${PORTNAME}
