@@ -1,6 +1,31 @@
 --- CMakeLists.txt.orig	2023-06-27 10:45:00 UTC
 +++ CMakeLists.txt
-@@ -56,42 +56,16 @@ ENDIF(LINK MATCHES static)
+@@ -33,10 +33,11 @@ if(${CMAKE_VERSION} VERSION_LESS 3.1)
+     # remove this block once CMake >=3.1 has fixated in the ecosystem
+     add_compile_options(-std=c++11)
+ else()
++    # Use c++11 to silence warnings
+     include(CheckCXXCompilerFlag)
+-    check_cxx_compiler_flag(-std=c++17 COMPILER_SUPPORTS_CXX17)
++    check_cxx_compiler_flag(-std=c++11 COMPILER_SUPPORTS_CXX17)
+     if(COMPILER_SUPPORTS_CXX17)
+-    set(CMAKE_CXX_STANDARD 17)
++    set(CMAKE_CXX_STANDARD 11)
+     else()
+     set(CMAKE_CXX_STANDARD 11)
+     endif()
+@@ -44,9 +45,7 @@ else()
+     set(CMAKE_CXX_EXTENSIONS OFF)
+ endif()
+ 
+-#add_compile_options(-Wall -Wno-unused-function)
+-add_compile_options(-Wno-subobject-linkage) # Suppress bifrost warning
+-set(PROJECT_BIFROST_CMAKE_CXX_FLAGS "-Wno-subobject-linkage -Wno-return-type") # Suppress bifrost warning
++set(PROJECT_BIFROST_CMAKE_CXX_FLAGS "-Wno-return-type") # Suppress bifrost warning
+ 
+ if(LINK MATCHES static)
+     message("static build")
+@@ -56,42 +55,16 @@ ENDIF(LINK MATCHES static)
  
  
  include(ExternalProject)
