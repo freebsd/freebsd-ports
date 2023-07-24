@@ -1,6 +1,8 @@
---- python/mozbuild/mozbuild/gn_processor.py.orig	2022-11-03 22:19:40.000000000 +0100
-+++ python/mozbuild/mozbuild/gn_processor.py	2022-11-07 21:11:42.596355000 +0100
-@@ -166,6 +166,7 @@
+diff --git python/mozbuild/mozbuild/gn_processor.py python/mozbuild/mozbuild/gn_processor.py
+index a1b8367fc11b..fe1087270fc0 100644
+--- python/mozbuild/mozbuild/gn_processor.py
++++ python/mozbuild/mozbuild/gn_processor.py
+@@ -183,6 +183,7 @@ def filter_gn_config(path, gn_result, sandbox_vars, input_vars, gn_target):
      }
      oses = {
          "android": "Android",
@@ -8,7 +10,7 @@
          "linux": "Linux",
          "mac": "Darwin",
          "openbsd": "OpenBSD",
-@@ -662,15 +663,15 @@
+@@ -733,16 +734,16 @@ def main():
  
      vars_set = []
      for is_debug in (True, False):
@@ -24,11 +26,13 @@
 +            if target_os in ("android", "freebsd", "linux", "win"):
                  target_cpus.append("x86")
 -            if target_os == "linux":
+-                target_cpus.extend(["ppc64", "riscv64"])
 +            if target_os in ("freebsd", "linux"):
-                 target_cpus.append("ppc64")
++                target_cpus.append("ppc64")
              for target_cpu in target_cpus:
                  vars = {
-@@ -679,7 +680,7 @@
+                     "host_cpu": "x64",
+@@ -750,7 +751,7 @@ def main():
                      "target_cpu": target_cpu,
                      "target_os": target_os,
                  }
