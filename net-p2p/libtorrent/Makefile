@@ -11,15 +11,17 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf compiler:c++11-lang cpe libtool localbase:ldflags pathfix pkgconfig ssl
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
 CONFIGURE_ENV=	OPENSSL_LIBS="-L${OPENSSLLIB} -lcrypto" OPENSSL_CFLAGS="-I\
 								${OPENSSLINC}"
-USE_LDCONFIG=	yes
 
 OPTIONS_DEFINE=	KQUEUE
 OPTIONS_DEFAULT=KQUEUE
+
 KQUEUE_DESC=	Use kqueue(2) support
 
 # This makes sure that /usr/local/lib appears before /usr/lib when
