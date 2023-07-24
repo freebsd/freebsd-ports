@@ -1,6 +1,6 @@
 bin/uctags
-bin/ureadtags
 bin/uoptscript
+bin/ureadtags
 %%MANPAGES%%man/man1/uctags.1.gz
 %%MANPAGES%%man/man1/ureadtags.1.gz
 %%MANPAGES%%man/man5/uctags-json-output.5.gz
@@ -9,6 +9,7 @@ bin/uoptscript
 %%MANPAGES%%man/man7/uctags-faq.7.gz
 %%MANPAGES%%man/man7/uctags-incompatibilities.7.gz
 %%MANPAGES%%man/man7/uctags-lang-asm.7.gz
+%%MANPAGES%%man/man7/uctags-lang-autoit.7.gz
 %%MANPAGES%%man/man7/uctags-lang-elm.7.gz
 %%MANPAGES%%man/man7/uctags-lang-fortran.7.gz
 %%MANPAGES%%man/man7/uctags-lang-gdscript.7.gz
@@ -17,6 +18,7 @@ bin/uoptscript
 %%MANPAGES%%man/man7/uctags-lang-javascript.7.gz
 %%MANPAGES%%man/man7/uctags-lang-julia.7.gz
 %%MANPAGES%%man/man7/uctags-lang-kconfig.7.gz
+%%MANPAGES%%man/man7/uctags-lang-markdown.7.gz
 %%MANPAGES%%man/man7/uctags-lang-python.7.gz
 %%MANPAGES%%man/man7/uctags-lang-r.7.gz
 %%MANPAGES%%man/man7/uctags-lang-rmarkdown.7.gz
