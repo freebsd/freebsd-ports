@@ -1,7 +1,7 @@
 PORTNAME=	kalc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.0
-PORTREVISION=	1
+DISTVERSION=	0.8.1
+PORTREVISION=	0
 CATEGORIES=	math
 PKGNAMESUFFIX=	-calculator
 
@@ -24,7 +24,7 @@ CARGO_CRATES=	az-1.2.1 \
 		console-0.15.7 \
 		encode_unicode-0.3.6 \
 		gmp-mpfr-sys-1.5.3 \
-		gnuplot-0.0.38 \
+		gnuplot-0.0.39 \
 		lazy_static-1.4.0 \
 		libc-0.2.147 \
 		rug-1.19.2 \
