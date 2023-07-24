@@ -8,11 +8,11 @@
 # to enable this service:
 #
 # rustdesk_hbbs_enable (bool):            Set to NO by default.
-#               Set it to YES to enable nfs-exporter.
+#               Set it to YES to enable rustdesk_hbbs.
 # rustdesk_hbbs_ip (string):              Set server IP address
 #               Default is "127.0.0.1".
-# rustdesk_hbbs_args (string):            Set extra arguments to pass to nfs-exporter
-#               Default is "".
+# rustdesk_hbbs_args (string):            Set extra arguments to pass to rustdesk_hbbs
+#               Default is "-r ${rustdesk_hbbs_ip} -k _".
 # rustdesk_hbbs_user (string):            Set user that rustdesk_hbbs will run under
 #               Default is "rustdesk".
 # rustdesk_hbbs_group (string):           Set group that rustdesk_hbbs will run under
@@ -35,7 +35,7 @@ load_rc_config $name
 pidfile=/var/run/rustdesk_hbbs.pid
 command=/usr/sbin/daemon
 procname=%%PREFIX%%/bin/hbbs
-rustdesk_hbbs_chdir=/var/run/rustdesk-server
+rustdesk_hbbs_chdir=/var/db/rustdesk-server
 command_args="-p ${pidfile} -T ${name} ${procname} ${rustdesk_hbbs_args}"
 # Command to log directly to file
 #command_args="-P ${pidfile} -H -o /var/log/rustdesk-hbbs.log ${procname} ${rustdesk_hbbs_args}"

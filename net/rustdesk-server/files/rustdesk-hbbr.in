@@ -8,9 +8,9 @@
 # to enable this service:
 #
 # rustdesk_hbbr_enable (bool):            Set to NO by default.
-#               Set it to YES to enable nfs-exporter.
-# rustdesk_hbbr_args (string):            Set extra arguments to pass to nfs-exporter
-#               Default is "".
+#               Set it to YES to enable rustdesk_hbbr.
+# rustdesk_hbbr_args (string):            Set extra arguments to pass to rustdesk_hbbr
+#               Default is "-k _".
 # rustdesk_hbbr_user (string):            Set user that rustdesk_hbbr will run under
 #               Default is "rustdesk".
 # rustdesk_hbbr_group (string):           Set group that rustdesk_hbbr will run under
@@ -32,7 +32,7 @@ load_rc_config $name
 pidfile=/var/run/rustdesk_hbbr.pid
 command=/usr/sbin/daemon
 procname=%%PREFIX%%/bin/hbbr
-rustdesk_hbbr_chdir=/var/run/rustdesk-server
+rustdesk_hbbr_chdir=/var/db/rustdesk-server
 command_args="-p ${pidfile} -T ${name} ${procname} ${rustdesk_hbbr_args}"
 # Command to log directly to file
 #command_args="-P ${pidfile} -H -o /var/log/rustdesk-hbbr.log ${procname} ${rustdesk_hbbr_args}"
