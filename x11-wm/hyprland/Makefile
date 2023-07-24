@@ -1,12 +1,13 @@
 PORTNAME=	hyprland
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.27.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	9fc5f4c48b20.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/2690
 PATCHFILES+=	f6b340cc19d2.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/2799
+PATCHFILES+=	f5913135c638.patch:-p1 # cursor-shape-v1
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -18,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	cmake:devel/cmake-core \
 		evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.25:graphics/wayland-protocols \
-		wlroots>=0.16.0.654<0.17.0:x11-toolkits/wlroots
+		wlroots>=0.16.0.668<0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
 		libinput.so:x11/libinput \
