@@ -7770,6 +7770,7 @@
     SUBDIR += wasi-libc
     SUBDIR += wasi-libcxx
     SUBDIR += wasm3
+    SUBDIR += wasmer
     SUBDIR += websocketpp
     SUBDIR += websvn
     SUBDIR += wf-config
