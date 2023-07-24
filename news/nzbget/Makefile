@@ -14,8 +14,6 @@ LIB_DEPENDS=	libxml2.so:textproc/libxml2
 
 USES=		autoreconf compiler:c++14-lang cpe gmake localbase ncurses \
 		pkgconfig python:build shebangfix ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Requires FIPS_mode_set routine which has been removed from OpenSSL 3.0.0 and later
 USE_GITHUB=	yes
 USE_RC_SUBR=	nzbget
 
@@ -40,6 +38,10 @@ OPTIMIZED_FLAGS_EXTRA_PATCHES_OFF=	${FILESDIR}/extra-disable-optimized-flags.pat
 
 .if (${ARCH} == "i386")
 CONFIGURE_ARGS+=	--disable-sigchld-handler
+.endif
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L"
 .endif
 
 post-install:
