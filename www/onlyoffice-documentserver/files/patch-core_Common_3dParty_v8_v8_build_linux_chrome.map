@@ -1,5 +1,5 @@
---- core/Common/3dParty/v8/v8/build/linux/chrome.map.orig	2022-04-04 20:12:27 UTC
-+++ core/Common/3dParty/v8/v8/build/linux/chrome.map
+--- core/Common/3dParty/v8_89/v8/build/linux/chrome.map.orig	2022-04-04 20:12:27 UTC
++++ core/Common/3dParty/v8_89/v8/build/linux/chrome.map
 @@ -1,4 +1,7 @@
  {
 +local:

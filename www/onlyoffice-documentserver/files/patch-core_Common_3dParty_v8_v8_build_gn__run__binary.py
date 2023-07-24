@@ -1,5 +1,5 @@
---- core/Common/3dParty/v8/v8/build/gn_run_binary.py.orig	2019-07-24 18:58:02 UTC
-+++ core/Common/3dParty/v8/v8/build/gn_run_binary.py
+--- core/Common/3dParty/v8_89/v8/build/gn_run_binary.py.orig	2019-07-24 18:58:02 UTC
++++ core/Common/3dParty/v8_89/v8/build/gn_run_binary.py
 @@ -24,7 +24,7 @@ if not os.path.isabs(path):
  # The rest of the arguments are passed directly to the executable.
  args = [path] + sys.argv[2:]

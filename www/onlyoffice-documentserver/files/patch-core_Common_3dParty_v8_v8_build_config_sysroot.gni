@@ -1,5 +1,5 @@
---- core/Common/3dParty/v8/v8/build/config/sysroot.gni.orig	2020-05-13 18:39:36 UTC
-+++ core/Common/3dParty/v8/v8/build/config/sysroot.gni
+--- core/Common/3dParty/v8_89/v8/build/config/sysroot.gni.orig	2020-05-13 18:39:36 UTC
++++ core/Common/3dParty/v8_89/v8/build/config/sysroot.gni
 @@ -21,9 +21,9 @@ declare_args() {
  
    # Controls default is_linux sysroot. If set to true, and sysroot

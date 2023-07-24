@@ -62,7 +62,10 @@ files = %%ETCDIR%%/documentserver/supervisor/*.conf
 6. Follow the following doc If you want to use Onlyoffice with Nextcloud:
   - https://api.onlyoffice.com/editors/nextcloud
 
-7. Enjoy.
+7. Install OnlyOffice plugins (you'll need internet):
+  # /usr/local/bin/documentserver-pluginsmanager.sh --update=/usr/local/www/onlyoffice/documentserver/sdkjs-plugins/plugin-list-default.json
+
+8. Enjoy.
 EOM
 }
 { type: upgrade

@@ -1,7 +1,6 @@
 PORTNAME=	onlyoffice-documentserver
 DISTVERSIONPREFIX=	v
-DISTVERSION=	7.3.3.49
-PORTREVISION=	4
+DISTVERSION=	7.4.0.163
 CATEGORIES=	www
 MASTER_SITES+=	LOCAL/mikael/v8/:source1 \
 		LOCAL/mikael/onlyoffice/:source2 \
@@ -27,7 +26,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Jinja2>=0:devel/py-Jinja2@${PY_FLAVOR} \
 		gn:devel/gn \
 		java:java/openjdk11 \
 		ninja:devel/ninja \
-		npm:www/npm-node16
+		npm:www/npm-node16 \
+		${LOCALBASE}/lib/libcrypto.a:security/openssl30
 LIB_DEPENDS=	libboost_regex.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libharfbuzz.so:print/harfbuzz \
@@ -59,7 +59,7 @@ GH_TUPLE=	ONLYOFFICE:core:v${DISTVERSION}:core/core \
 		ONLYOFFICE:DocumentBuilder:626d1e44db3d06ceb8298215a67ef0475912d89a:document_builder/DocumentBuilder \
 		ONLYOFFICE:onlyoffice.github.io:b26d001664d771df4f663d2d3ba7dd4a188b6cab:sdkjs_plugins_v1/onlyoffice.github.io \
 		ONLYOFFICE:document-server-package:v${DISTVERSION}:dsp/document-server-package \
-		hackers-painters:katana-parser:499118d3:hackers_painters_katana/core/Common/3dParty/html/katana-parser \
+		jasenhuang:katana-parser:be6df45:jasenhuang_katana/core/Common/3dParty/html/katana-parser \
 		google:gumbo-parser:aa91b27:google_gumbo/core/Common/3dParty/html/gumbo-parser
 
 OPTIONS_SINGLE=		DB
@@ -107,7 +107,7 @@ DOS2UNIX_FILES=	document-server-package/common/documentserver/nginx/includes/htt
 CONFLICTS_BUILD=devel/googletest
 
 post-extract:
-	@${MV} ${WRKDIR}/v8 ${WRKSRC}/core/Common/3dParty/v8
+	@${MV} ${WRKDIR}/v8 ${WRKSRC}/core/Common/3dParty/v8_89
 
 	@${MKDIR} ${WRKDIR}/.pkg-cache/node
 	@${CP} ${DISTDIR}/node-v${NODE_VERSION_PKGFETCH}.tar.gz ${WRKDIR}/.pkg-cache/node
@@ -127,13 +127,23 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%LOCALBASE%%|${LOCALBASE}|' \
+		${WRKSRC}/build_tools/tools/freebsd/automate.py \
+		${WRKSRC}/core/Common/3dParty/boost/boost.pri \
 		${WRKSRC}/core/Common/3dParty/icu/icu.pri \
-		${WRKSRC}/core/Common/3dParty/v8/v8/build/toolchain/gcc_toolchain.gni \
-		${WRKSRC}/core/Common/3dParty/v8/v8/buildtools/third_party/libc++/BUILD.gn \
+		${WRKSRC}/core/Common/3dParty/openssl/openssl.pri \
+		${WRKSRC}/core/Common/3dParty/v8_89/v8/build/toolchain/gcc_toolchain.gni \
+		${WRKSRC}/core/Common/3dParty/v8_89/v8/buildtools/third_party/libc++/BUILD.gn \
 		${WRKSRC}/core/DesktopEditor/fontengine/ApplicationFonts.cpp \
-		${WRKSRC}/build_tools/tools/freebsd/automate.py
+		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-generate-allfonts.sh.m4 \
+		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-jwt-status.sh.m4 \
+		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-pluginsmanager.sh.m4 \
+		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4 \
+		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4 \
+		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-converter.conf \
+		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-docservice.conf \
+		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-metrics.conf
 	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|' -e 's|%%CXX%%|${CXX}|' \
-		${WRKSRC}/core/Common/3dParty/v8/v8/build/toolchain/gcc_toolchain.gni \
+		${WRKSRC}/core/Common/3dParty/v8_89/v8/build/toolchain/gcc_toolchain.gni \
 		${WRKSRC}/core/Common/base.pri
 	@${REINPLACE_CMD} 's|%%WRKDIR%%|${WRKDIR}|' \
 		${WRKSRC}/document-server-package/Makefile
@@ -141,40 +151,20 @@ post-patch:
 		${WRKSRC}/build_tools/scripts/build_js.py \
 		${WRKSRC}/build_tools/scripts/build_server.py \
 		${WRKSRC}/document-server-package/Makefile
-	@${REINPLACE_CMD} -e 's|linux|freebsd|' -e 's|/etc|${LOCALBASE}/etc|' \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-docservice.conf \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-converter.conf \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-jwt-status.sh.m4
-	@${REINPLACE_CMD} 's|/var/www|${LOCALBASE}/www|' \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-generate-allfonts.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-converter.conf \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-docservice.conf \
-		${WRKSRC}/document-server-package/common/documentserver/supervisor/ds-metrics.conf \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-jwt-status.sh.m4
 	@${REINPLACE_CMD} -e 's|/var/lib|/var/db|' -e 's|/var/www|${LOCALBASE}/www|' \
 			  -e 's|/usr/share|${LOCALBASE}/share|' -e 's|/etc|${LOCALBASE}/etc|' \
 		${WRKSRC}/server/Common/config/production-freebsd.json \
 		${WRKSRC}/server/Common/config/development-freebsd.json
-	@${REINPLACE_CMD} -e 's|bash|sh|' -e 's|sed|gsed|' \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-static-gzip.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4 \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-jwt-status.sh.m4
 	@${REINPLACE_CMD} 's|%%DISTDIR%%|${DISTDIR}|' \
 		${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' -e 's|%%ETCDIR%%|${ETCDIR}|' \
 		${WRKSRC}/document-server-package/Makefile
-	@${REINPLACE_CMD} 's#ds:ds#${DS_USERNAME}:${DS_GROUPNAME}#' \
-		${WRKSRC}/document-server-package/common/documentserver/bin/documentserver-update-securelink.sh.m4
 	@${RM} ${WRKSRC}/web-apps/build/patches/optipng-bin+5.1.0.patch.orig
 
 	@${FIND} ${WRKSRC}/server -type f -name npm-shrinkwrap.json -delete
 
-	@${ECHO} "# Generated from 'DEPS'" > ${WRKSRC}/core/Common/3dParty/v8/v8/build/config/gclient_args.gni
-	@${ECHO} "checkout_google_benchmark = false" >> ${WRKSRC}/core/Common/3dParty/v8/v8/build/config/gclient_args.gni
+	@${ECHO} "# Generated from 'DEPS'" > ${WRKSRC}/core/Common/3dParty/v8_89/v8/build/config/gclient_args.gni
+	@${ECHO} "checkout_google_benchmark = false" >> ${WRKSRC}/core/Common/3dParty/v8_89/v8/build/config/gclient_args.gni
 
 do-build:
 	${INSTALL_SCRIPT} ${FILESDIR}/npm ${BINARY_LINKDIR}/npm
@@ -204,6 +194,7 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/document-server-package/common/documentserver/home/server/tools/all* ${STAGEDIR}${WWWDIR}/documentserver/server/tools
 	${INSTALL_PROGRAM} ${WRKSRC}/document-server-package/common/documentserver/home/server/FileConverter/bin/x2t ${STAGEDIR}${WWWDIR}/documentserver/server/FileConverter/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/document-server-package/common/documentserver/home/server/FileConverter/bin/docbuilder ${STAGEDIR}${WWWDIR}/documentserver/server/FileConverter/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/document-server-package/common/documentserver/home/server/tools/pluginsmanager ${STAGEDIR}${WWWDIR}/documentserver/server/tools
 	${INSTALL_DATA} ${WRKSRC}/document-server-package/common/documentserver/home/npm/json ${STAGEDIR}${WWWDIR}/documentserver/npm
 	${INSTALL_LIB} ${WRKSRC}/document-server-package/common/documentserver/home/server/FileConverter/bin/*.so ${STAGEDIR}${PREFIX}/lib
 	${RM} ${STAGEDIR}${PREFIX}/bin/documentserver-letsencrypt.sh
@@ -236,7 +227,7 @@ do-install:
 
 create-caches-tarball:
 	# do some cleanup first
-	${RM} -r  ${WRKDIR}/.npm/_logs ${WRKDIR}/.npm/_update-notifier-last-checked ${WRKDIR}/.cache/yarn/v6/.tmp
+	${RM} -r  ${WRKDIR}/.npm/_logs ${WRKDIR}/.npm/_update-notifier-last-checked ${WRKDIR}/.cache/yarn/v6/.tmp ${WRKDIR}/.cache/node-gyp
 	${FIND} ${WRKDIR}/.cache -type f -perm 755 -exec file {} \; | ${EGREP} "ELF|PE32+|Mach-O" | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${RM}
 	${FIND} ${WRKDIR}/.pkg-cache -type f -perm 755 -exec file {} \; | ${EGREP} "ELF|PE32+|Mach-O" | ${AWK} -F ':' '{print $$1}' | ${XARGS} ${RM}
 

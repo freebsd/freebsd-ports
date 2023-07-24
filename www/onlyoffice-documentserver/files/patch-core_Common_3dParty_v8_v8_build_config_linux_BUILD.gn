@@ -1,5 +1,5 @@
---- core/Common/3dParty/v8/v8/build/config/linux/BUILD.gn.orig	2022-04-04 20:12:27 UTC
-+++ core/Common/3dParty/v8/v8/build/config/linux/BUILD.gn
+--- core/Common/3dParty/v8_89/v8/build/config/linux/BUILD.gn.orig	2022-04-04 20:12:27 UTC
++++ core/Common/3dParty/v8_89/v8/build/config/linux/BUILD.gn
 @@ -42,7 +42,7 @@ config("runtime_library") {
  
    if ((!(is_chromeos_ash || is_chromeos_lacros) ||
