@@ -1,0 +1,13 @@
+[
+{ type: upgrade
+  maximum_version: "1.1.8_3"
+  message: <<EOM
+Default location for runtime data files has been changed from
+/var/run/rustdesk-server to /var/db/rustedesk-server.
+
+If you want to preserve the old data, please move it over.
+
+The old /var/run/rustdesk-server should be removed afterwards.
+EOM
+}
+]
