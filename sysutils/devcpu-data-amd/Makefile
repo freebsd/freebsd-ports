@@ -1,5 +1,5 @@
 PORTNAME=	data
-PORTVERSION=	20230424
+PORTVERSION=	20230724
 CATEGORIES=	sysutils
 MASTER_SITES=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/plain/amd-ucode/
 PKGNAMEPREFIX=	devcpu-
@@ -31,7 +31,7 @@ DATADIR=	${PREFIX}/share/cpucontrol
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	${DISTFILES:S/^/${DATADIR}\//g:C/\?.*//}
 
-_REV=		69143e8eca62a80b9791b8d358d1cc4c90e373c9
+_REV=		0bc3126c9cfa0b8c761483215c25382f831a7c6f
 
 do-install:
 	${MKDIR} ${STAGEDIR}${DATADIR}/
