@@ -15,48 +15,40 @@ BROKEN_riscv64=		Fails to configure: Endianess not declared
 
 BUILD_DEPENDS=	jikes:java/jikes
 
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
-USES=		gmake libtool pkgconfig xorg
+USES=		gmake libtool localbase pkgconfig xorg
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 USE_XORG=	x11 ice xtst sm
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa --disable-dssi
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
+
+INSTALL_TARGET=	install-strip
+
+PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
 OPTIONS_DEFINE=	CAIRO GTK2 ZIP
 OPTIONS_DEFAULT=GTK2 ZIP
+OPTIONS_SUB=	yes
+
 CAIRO_DESC=	Use Cairo based Graphics2D
 GTK2_DESC=	Enable Gtk+ AWT peer
 ZIP_DESC=	Compress class library
 
+CAIRO_IMPLIES=	GTK2
+CAIRO_CONFIGURE_ON=	--enable-gtk-cairo
+GTK2_USES=			gnome
+GTK2_USE=	GNOME=gtk20
+GTK2_CONFIGURE_OFF=	--disable-gtk-peer
+ZIP_BUILD_DEPENDS=		zip:archivers/zip
+ZIP_CONFIGURE_ON=	--with-compressed-classes=zip
+ZIP_CONFIGURE_OFF=	--with-compressed-classes=no
+ZIP_PLIST_SUB=		WITHOUT_ZIP="@comment " WITH_ZIP=""
+ZIP_PLIST_SUB_OFF=		WITHOUT_ZIP="" WITH_ZIP="@comment "
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGTK2}
-USES+=			gnome
-USE_GNOME+=		gtk20
-PLIST_SUB+=		GTK2=""
-.if ${PORT_OPTIONS:MCAIRO}
-CONFIGURE_ARGS+=	--enable-gtk-cairo
-.endif
-.else
-CONFIGURE_ARGS+=	--disable-gtk-peer
-PLIST_SUB+=		GTK2="@comment "
-.if ${PORT_OPTIONS:MCAIRO}
-IGNORE=you need to enable the Gtk+ AWT peer in order to use Cairo based Graphics2D.
-.endif
-.endif
-
-.if ${PORT_OPTIONS:MZIP}
-CONFIGURE_ARGS+=	--with-compressed-classes=zip
-BUILD_DEPENDS+=		zip:archivers/zip
-PLIST_SUB+=		WITHOUT_ZIP="@comment " WITH_ZIP=""
-.else
-CONFIGURE_ARGS+=	--with-compressed-classes=no
-PLIST_SUB+=		WITHOUT_ZIP="" WITH_ZIP="@comment "
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:
