@@ -1,3 +1,5 @@
-TIMESTAMP = 1681652343
+TIMESTAMP = 1690175854
 SHA256 (tightvnc-1.3.10_unixsrc.tar.bz2) = f48c70fea08d03744ae18df6b1499976362f16934eda3275cead87baad585c0d
 SIZE (tightvnc-1.3.10_unixsrc.tar.bz2) = 1780510
+SHA256 (tightvnc-patch-ansi) = c3efc5c0995881939ff280649efdb4f31addbeb33dd6b27b805106b409d9a159
+SIZE (tightvnc-patch-ansi) = 245794
