@@ -27,6 +27,7 @@ serial_PKGNAMESUFFIX=	-serial
 
 USES=		cmake:noninja compiler:c11 fortran pkgconfig
 USE_LDCONFIG=	yes
+USE_CXXSTD=	c++14 # fix build with clang16 due to use of deprecated feature std::random_shuffle
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	susilehtola
