@@ -17,7 +17,9 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libvorbis.so:audio/libvorbis
 
 USES=		gettext gmake localbase pkgconfig python sdl
+USE_CXXSTD=	c++14
 USE_SDL=	mixer2 ttf2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-py-debug \
 		--disable-pyc \
