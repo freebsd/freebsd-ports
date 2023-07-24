@@ -1,6 +1,5 @@
 PORTNAME=	rust-findutils
-DISTVERSION=	0.4.1
-PORTREVISION=	1
+DISTVERSION=	0.4.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -18,29 +17,48 @@ GH_ACCOUNT=	uutils
 GH_PROJECT=	findutils
 
 CARGO_CRATES=	aho-corasick-0.7.18 \
+		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
 		ansi_term-0.12.1 \
-		anstyle-0.3.5 \
+		anstream-0.3.2 \
 		anstyle-1.0.0 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
+		arrayref-0.3.7 \
+		arrayvec-0.7.4 \
 		assert_cmd-2.0.11 \
 		atty-0.2.14 \
 		autocfg-1.1.0 \
 		bindgen-0.59.2 \
 		bitflags-1.3.2 \
+		bitflags-2.3.3 \
+		blake2b_simd-1.0.1 \
+		blake3-1.4.1 \
+		block-buffer-0.10.4 \
 		bstr-1.0.1 \
 		bumpalo-3.12.0 \
 		byteorder-1.4.2 \
 		cc-1.0.72 \
 		cexpr-0.6.0 \
 		cfg-if-1.0.0 \
-		chrono-0.4.24 \
+		chrono-0.4.26 \
 		clang-sys-1.3.0 \
 		clap-2.34.0 \
+		clap-4.3.19 \
+		clap_builder-4.3.19 \
+		clap_lex-0.5.0 \
+		colorchoice-1.0.0 \
+		constant_time_eq-0.2.6 \
+		constant_time_eq-0.3.0 \
 		core-foundation-sys-0.8.3 \
+		cpufeatures-0.2.9 \
+		crypto-common-0.1.6 \
 		dashmap-5.3.4 \
 		difflib-0.4.0 \
+		digest-0.10.7 \
 		doc-comment-0.3.3 \
-		dunce-1.0.2 \
+		dunce-1.0.4 \
 		either-1.6.1 \
 		env_logger-0.9.0 \
 		errno-0.3.1 \
@@ -57,80 +75,98 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		futures-sink-0.3.21 \
 		futures-task-0.3.21 \
 		futures-util-0.3.21 \
-		glob-0.3.0 \
+		generic-array-0.14.7 \
+		glob-0.3.1 \
 		hashbrown-0.12.3 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.1 \
+		hex-0.4.3 \
 		humantime-2.1.0 \
 		iana-time-zone-0.1.47 \
 		instant-0.1.9 \
 		io-lifetimes-1.0.11 \
+		is-terminal-0.4.9 \
 		itertools-0.10.1 \
+		itoa-1.0.9 \
 		js-sys-0.3.59 \
+		keccak-0.1.4 \
 		lazy_static-1.4.0 \
 		lazycell-1.3.0 \
-		libc-0.2.146 \
+		libc-0.2.147 \
 		libloading-0.7.2 \
 		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.3 \
 		lock_api-0.4.7 \
 		log-0.4.14 \
+		md-5-0.10.5 \
 		memchr-2.4.0 \
-		memoffset-0.6.5 \
 		memoffset-0.7.1 \
 		minimal-lexical-0.2.1 \
-		nix-0.23.1 \
 		nix-0.26.2 \
 		nom-7.1.1 \
 		normalize-line-endings-0.3.0 \
-		num-integer-0.1.44 \
 		num-traits-0.2.14 \
-		numtoa-0.1.0 \
-		once_cell-1.17.1 \
+		num_threads-0.1.6 \
+		once_cell-1.18.0 \
 		onig-6.4.0 \
 		onig_sys-69.8.1 \
-		os_display-0.1.2 \
+		os_display-0.1.3 \
 		parking_lot-0.12.1 \
 		parking_lot_core-0.9.3 \
 		peeking_take_while-0.1.2 \
 		pin-project-lite-0.2.9 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.24 \
-		predicates-3.0.2 \
+		predicates-3.0.3 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.1 \
 		proc-macro2-1.0.60 \
 		quote-1.0.28 \
 		redox_syscall-0.2.10 \
 		redox_syscall-0.3.5 \
-		redox_termios-0.1.2 \
 		regex-1.7.3 \
 		regex-automata-0.1.9 \
 		regex-syntax-0.6.29 \
 		rustc-hash-1.1.0 \
 		rustix-0.37.20 \
+		rustix-0.38.4 \
 		same-file-1.0.4 \
 		scopeguard-1.1.0 \
 		serde-1.0.147 \
 		serial_test-2.0.0 \
 		serial_test_derive-2.0.0 \
+		sha1-0.10.5 \
+		sha2-0.10.7 \
+		sha3-0.10.8 \
 		shlex-1.1.0 \
 		slab-0.4.6 \
+		sm3-0.4.2 \
 		smallvec-1.8.0 \
 		static_assertions-1.1.0 \
 		strsim-0.8.0 \
+		strsim-0.10.0 \
+		subtle-2.5.0 \
 		syn-1.0.94 \
 		syn-2.0.18 \
 		tempfile-3.6.0 \
 		termcolor-1.0.5 \
-		termion-1.5.6 \
+		terminal_size-0.2.6 \
 		textwrap-0.11.0 \
 		time-0.1.43 \
+		time-0.3.23 \
+		time-core-0.1.1 \
+		time-macros-0.2.10 \
 		treeline-0.1.0 \
+		typenum-1.16.0 \
 		unicode-ident-1.0.9 \
 		unicode-width-0.1.9 \
 		unicode-xid-0.2.1 \
-		uucore-0.0.12 \
+		utf8parse-0.2.1 \
+		uucore-0.0.20 \
+		uucore_procs-0.0.20 \
+		uuhelp_parser-0.0.20 \
 		vec_map-0.8.2 \
+		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.3 \
 		wasm-bindgen-0.2.82 \
@@ -139,7 +175,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		wasm-bindgen-macro-support-0.2.82 \
 		wasm-bindgen-shared-0.2.82 \
 		which-4.2.5 \
-		wild-2.0.4 \
+		wild-2.1.0 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
