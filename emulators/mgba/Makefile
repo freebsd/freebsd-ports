@@ -1,6 +1,6 @@
 PORTNAME=	mgba
 DISTVERSION=	0.10.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	emulators
 
 MAINTAINER=	pkubaj@FreeBSD.org
@@ -14,6 +14,7 @@ LICENSE_FILE_LGPL21+ =	${WRKSRC}/src/third-party/blip_buf/license.txt
 LICENSE_FILE_MPL20=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
+		libelf.so:devel/elfutils \
 		libpng.so:graphics/png
 
 USES=		cmake compiler:c++14-lang gl gnome localbase:ldflags lua \
@@ -29,6 +30,7 @@ USE_LDCONFIG=	yes
 USE_SDL=	sdl2
 
 CMAKE_ARGS=	-DCMAKE_INSTALL_DOCDIR:STRING="${DOCSDIR}" \
+		-DUSE_ELF:BOOL=ON \
 		-DUSE_MINIZIP:BOOL=OFF \
 		-DUSE_LIBZIP:BOOL=OFF \
 		-DUSE_ZLIB:BOOL=ON \
@@ -59,7 +61,7 @@ LIBRETRO_CMAKE_BOOL=	BUILD_LIBRETRO
 LIBRETRO_CMAKE_ON=	-DLIBRETRO_LIBDIR:PATH="${PREFIX}/lib/libretro"
 LIBRETRO_CONFLICTS_INSTALL=	libretro-mgba
 
-MAGICK_USES=		magick:6
+MAGICK_USES=		magick
 MAGICK_CMAKE_BOOL=	USE_MAGICK
 
 QT5_USES=	desktop-file-utils qt:5
