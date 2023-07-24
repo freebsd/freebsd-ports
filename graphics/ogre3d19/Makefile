@@ -1,3 +1,5 @@
+PORTNAME=	ogre3d
+PORTVERSION=	1.9.0
 PORTREVISION=	21
 CATEGORIES=	graphics devel
 MASTER_SITES=	https://bitbucket.org/sinbad/ogre/get/
