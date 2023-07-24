@@ -45,11 +45,10 @@ post-extract:
 CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
 USES+=		compiler:gcc-c++11-lib
 .else
+.  if ${ARCH} != amd64
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-no-ia32-sse
+.  endif
 USES+=		compiler:c++11-lang
-.endif
-
-.if ${ARCH} == i386
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-i386
 .endif
 
 .include <bsd.port.mk>
