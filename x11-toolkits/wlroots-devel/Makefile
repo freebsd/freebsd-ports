@@ -1,6 +1,6 @@
 PORTNAME=	wlroots
-DISTVERSION=	0.16.0-665
-DISTVERSIONSUFFIX=	-g63f5851b6f
+DISTVERSION=	0.16.0-669
+DISTVERSIONSUFFIX=	-ge8d545a977
 CATEGORIES=	x11-toolkits
 PKGNAMESUFFIX=	-devel
 
@@ -16,7 +16,7 @@ WWW=		https://gitlab.freedesktop.org/wlroots/wlroots
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	wayland-protocols>=1.31:graphics/wayland-protocols
+BUILD_DEPENDS=	wayland-protocols>=1.32:graphics/wayland-protocols
 LIB_DEPENDS=	libdrm.so:graphics/libdrm \
 		libwayland-server.so:graphics/wayland \
 		libxkbcommon.so:x11/libxkbcommon
