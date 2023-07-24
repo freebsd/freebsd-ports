@@ -3075,6 +3075,7 @@ share/metainfo/org.qgis.qgis.appdata.xml
 %%GRASS%%%%DATADIR%%/grass/scripts/v.class.mlpy.qgis.py
 %%GRASS%%%%DATADIR%%/grass/scripts/v.out.ogr.pg.py
 %%DATADIR%%/i18n/qgis_ar.qm
+%%DATADIR%%/i18n/qgis_az.qm
 %%DATADIR%%/i18n/qgis_bg.qm
 %%DATADIR%%/i18n/qgis_bs.qm
 %%DATADIR%%/i18n/qgis_ca.qm
