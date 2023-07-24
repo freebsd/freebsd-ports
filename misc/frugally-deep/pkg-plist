@@ -8,6 +8,7 @@ include/fdeep/filter.hpp
 include/fdeep/import_model.hpp
 include/fdeep/layers/activation_layer.hpp
 include/fdeep/layers/add_layer.hpp
+include/fdeep/layers/attention_layer.hpp
 include/fdeep/layers/average_layer.hpp
 include/fdeep/layers/average_pooling_3d_layer.hpp
 include/fdeep/layers/batch_normalization_layer.hpp
