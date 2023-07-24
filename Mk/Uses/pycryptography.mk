@@ -1,6 +1,6 @@
-# Handle dependency on security/py-cryptogrpaphy[-legacy]
+# Handle dependency on security/py-cryptography[-legacy]
 #
-# Feature:	pycrptography
+# Feature:	pycryptography
 # Usage:	USES=pycryptography
 # Valid ARGS:	<none>, build, run
 # 		<none>:   default same as build,run
@@ -28,13 +28,13 @@ _PYCRYPTOGRAPHY_MK_PORT=	security/py-cryptography${_PYCRYPTOGRAPHY_MK_SUFFIX}
 _PYCRYPTOGRAPHY_MK_DEPENDENCY=	${_PYCRYPTOGRAPHY_MK_PKG}>0:${_PYCRYPTOGRAPHY_MK_PORT}@${PY_FLAVOR}
 
 # === parse version arguments ===
-_PYGRYPTOGRAPHY_MK_MODES=	# empty
+_PYCRYPTOGRAPHY_MK_MODES=	# empty
 .  for _mode in ${_PYCRYPTOGRAPHY_MK_VALID_MODES}
 .    if ${pycryptography_ARGS:M${_mode}}
 _PYCRYPTOGRAPHY_MK_MODES+=	${_mode}
 .    endif
 .  endfor
-.  if empty(_PYGRYPTOGRAPHY_MK_MODES)
+.  if empty(_PYCRYPTOGRAPHY_MK_MODES)
 _PYCRYPTOGRAPHY_MK_MODES=	build run
 .  endif
 
