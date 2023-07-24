@@ -1,6 +1,5 @@
 PORTNAME=	meteo
-PORTVERSION=	0.9.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.9.2
 CATEGORIES=	deskutils
 
 MAINTAINER=	tagattie@FreeBSD.org
@@ -16,12 +15,11 @@ LIB_DEPENDS=	libappindicator3.so:devel/libappindicator \
 		libsoup-2.4.so:devel/libsoup \
 		libwebkit2gtk-4.0.so:www/webkit2-gtk3
 
-USES=		compiler:c11 desktop-file-utils gettext gnome meson pkgconfig \
-		python:build shebangfix vala:build
+USES=		compiler:c11 gettext gnome meson pkgconfig python:build \
+		shebangfix vala:build
 
 USE_GITLAB=	yes
 GL_ACCOUNT=	bitseater
-GL_TAGNAME=	6bd48892ec86d7208cb4ad1dd8baf74ba72df68f
 
 USE_GNOME=	gtk30
 
