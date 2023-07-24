@@ -1,5 +1,5 @@
 PORTNAME=	minikube
-PORTVERSION=	1.30.1
+PORTVERSION=	1.31.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	sysutils
 
@@ -18,7 +18,7 @@ GO_MODULE=	github.com/kubernetes/${PORTNAME}
 
 GO_TARGET=	./cmd/${PORTNAME}
 GO_BUILDFLAGS=	-ldflags="-X k8s.io/minikube/pkg/version.version=v${PORTVERSION} \
-		-X k8s.io/minikube/pkg/version.isoVersion=v1.30.1 \
+		-X k8s.io/minikube/pkg/version.isoVersion=v1.31.0 \
 		-X k8s.io/minikube/pkg/version.storageProvisionerVersion=v5 \
 		-X k8s.io/minikube/pkg/version.isoPath=minikube/iso"
 
