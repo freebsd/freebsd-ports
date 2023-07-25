@@ -98,4 +98,10 @@ post-configure:
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/node
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160 && ${ARCH} == aarch64
+CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
+.endif
+
+.include <bsd.port.post.mk>
