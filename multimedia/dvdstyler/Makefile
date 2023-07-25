@@ -36,6 +36,7 @@ RUN_DEPENDS=	zip:archivers/zip \
 
 USES=		autoreconf compiler:c++11-lib gettext gmake jpeg \
 		localbase:ldflags pkgconfig tar:bzip2
+USE_CXXSTD=	c++14
 USE_WX=		3.2+
 WX_CONF_ARGS=	absolute
 
