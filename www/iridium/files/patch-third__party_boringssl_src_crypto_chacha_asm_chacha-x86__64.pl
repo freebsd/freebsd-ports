@@ -1,18 +1,10 @@
---- third_party/boringssl/src/crypto/chacha/asm/chacha-x86_64.pl.orig	2023-03-13 07:33:08 UTC
+--- third_party/boringssl/src/crypto/chacha/asm/chacha-x86_64.pl.orig	2023-07-24 14:27:53 UTC
 +++ third_party/boringssl/src/crypto/chacha/asm/chacha-x86_64.pl
-@@ -78,6 +78,7 @@ $code.=<<___;
- 
- .extern OPENSSL_ia32cap_P
- 
-+.rodata
+@@ -231,6 +231,7 @@ $code.=<<___;
  .align	64
- .Lzero:
- .long	0,0,0,0
-@@ -107,6 +108,7 @@ $code.=<<___;
- .Lsixteen:
- .long	16,16,16,16,16,16,16,16,16,16,16,16,16,16,16,16
- .asciz	"ChaCha20 for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
-+.previous
- ___
- 
- sub AUTOLOAD()          # thunk [simplified] 32-bit style perlasm
+ ChaCha20_ctr32:
+ .cfi_startproc
++	_CET_ENDBR
+ 	cmp	\$0,$len
+ 	je	.Lno_data
+ 	mov	OPENSSL_ia32cap_P+4(%rip),%r10

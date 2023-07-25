@@ -1,6 +1,6 @@
---- components/device_signals/test/signals_contract.cc.orig	2023-01-17 19:19:00 UTC
+--- components/device_signals/test/signals_contract.cc.orig	2023-07-24 14:27:53 UTC
 +++ components/device_signals/test/signals_contract.cc
-@@ -190,7 +190,7 @@ GetSignalsContract() {
+@@ -186,7 +186,7 @@ GetSignalsContract() {
        base::BindRepeating(VerifyUnset, names::kCrowdStrike);
  #endif
  

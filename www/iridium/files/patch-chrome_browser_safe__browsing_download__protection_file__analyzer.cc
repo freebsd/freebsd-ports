@@ -1,6 +1,6 @@
---- chrome/browser/safe_browsing/download_protection/file_analyzer.cc.orig	2023-04-22 17:45:15 UTC
+--- chrome/browser/safe_browsing/download_protection/file_analyzer.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/safe_browsing/download_protection/file_analyzer.cc
-@@ -20,7 +20,7 @@
+@@ -21,7 +21,7 @@
  #include "content/public/browser/browser_thread.h"
  #include "url/gurl.h"
  
@@ -9,7 +9,7 @@
  #include "chrome/browser/safe_browsing/download_protection/document_analysis_service.h"
  #endif
  
-@@ -100,7 +100,7 @@ void FileAnalyzer::Start(const base::FilePath& target_
+@@ -81,7 +81,7 @@ void FileAnalyzer::Start(const base::FilePath& target_
    } else if (inspection_type == DownloadFileType::DMG) {
      StartExtractDmgFeatures();
  #endif
@@ -18,7 +18,7 @@
    } else if (inspection_type == DownloadFileType::OFFICE_DOCUMENT) {
      StartExtractDocumentFeatures();
  #endif
-@@ -325,7 +325,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
+@@ -306,7 +306,7 @@ void FileAnalyzer::OnDmgAnalysisFinished(
  }
  #endif  // BUILDFLAG(IS_MAC)
  

@@ -1,6 +1,6 @@
---- ui/gfx/switches.h.orig	2023-04-22 17:45:15 UTC
+--- ui/gfx/switches.h.orig	2023-07-24 14:27:53 UTC
 +++ ui/gfx/switches.h
-@@ -19,7 +19,7 @@ GFX_SWITCHES_EXPORT extern const char kEnableNativeGpu
+@@ -18,7 +18,7 @@ GFX_SWITCHES_EXPORT extern const char kEnableNativeGpu
  GFX_SWITCHES_EXPORT extern const char kForcePrefersReducedMotion[];
  GFX_SWITCHES_EXPORT extern const char kHeadless[];
  

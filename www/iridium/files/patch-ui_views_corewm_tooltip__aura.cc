@@ -1,6 +1,6 @@
---- ui/views/corewm/tooltip_aura.cc.orig	2023-03-13 07:33:08 UTC
+--- ui/views/corewm/tooltip_aura.cc.orig	2023-07-24 14:27:53 UTC
 +++ ui/views/corewm/tooltip_aura.cc
-@@ -51,7 +51,7 @@ constexpr int kVerticalPaddingBottom = 5;
+@@ -38,7 +38,7 @@ namespace {
  bool CanUseTranslucentTooltipWidget() {
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

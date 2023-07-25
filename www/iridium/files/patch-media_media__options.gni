@@ -1,6 +1,6 @@
---- media/media_options.gni.orig	2023-04-22 17:45:15 UTC
+--- media/media_options.gni.orig	2023-07-24 14:27:53 UTC
 +++ media/media_options.gni
-@@ -188,12 +188,15 @@ declare_args() {
+@@ -177,12 +177,15 @@ declare_args() {
    # Enables runtime selection of ALSA library for audio.
    use_alsa = false
  
@@ -17,7 +17,7 @@
        (!is_castos || (target_cpu == "x86" || target_cpu == "x64") ||
         is_cast_audio_only)) {
      use_alsa = true
-@@ -209,6 +212,10 @@ declare_args() {
+@@ -198,6 +201,10 @@ declare_args() {
      if (!use_cras && !is_castos && !is_asan && !is_tsan) {
        use_pulseaudio = true
      }

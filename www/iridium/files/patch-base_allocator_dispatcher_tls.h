@@ -1,6 +1,6 @@
---- base/allocator/dispatcher/tls.h.orig	2023-03-13 07:33:08 UTC
+--- base/allocator/dispatcher/tls.h.orig	2023-07-24 14:27:53 UTC
 +++ base/allocator/dispatcher/tls.h
-@@ -51,7 +51,7 @@ struct BASE_EXPORT MMapAllocator {
+@@ -50,7 +50,7 @@ struct BASE_EXPORT MMapAllocator {
        partition_alloc::PartitionPageSize();
  #elif BUILDFLAG(IS_APPLE)
    constexpr static size_t AllocationChunkSize = 16384;

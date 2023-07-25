@@ -1,18 +1,18 @@
---- third_party/boringssl/src/crypto/fipsmodule/modes/asm/ghash-ssse3-x86_64.pl.orig	2023-04-22 17:45:15 UTC
+--- third_party/boringssl/src/crypto/fipsmodule/modes/asm/ghash-ssse3-x86_64.pl.orig	2023-07-24 14:27:53 UTC
 +++ third_party/boringssl/src/crypto/fipsmodule/modes/asm/ghash-ssse3-x86_64.pl
-@@ -331,6 +331,7 @@ $code .= <<____;
- .seh_endproc
- .size	gcm_ghash_ssse3,.-gcm_ghash_ssse3
- 
-+.rodata
- .align	16
- # .Lreverse_bytes is a permutation which, if applied with pshufb, reverses the
- # bytes in an XMM register.
-@@ -339,6 +340,7 @@ $code .= <<____;
- # .Llow4_mask is an XMM mask which selects the low four bits of each byte.
- .Llow4_mask:
- .quad	0x0f0f0f0f0f0f0f0f, 0x0f0f0f0f0f0f0f0f
-+.previous
+@@ -104,6 +104,7 @@ my $code = <<____;
+ gcm_gmult_ssse3:
+ .cfi_startproc
+ .seh_startproc
++	_CET_ENDBR
  ____
- 
- print $code;
+ $code .= <<____ if ($win64);
+ 	subq	\$40, %rsp
+@@ -246,6 +247,7 @@ $code .= <<____;
+ gcm_ghash_ssse3:
+ .cfi_startproc
+ .seh_startproc
++	_CET_ENDBR
+ ____
+ $code .= <<____ if ($win64);
+ 	subq	\$56, %rsp

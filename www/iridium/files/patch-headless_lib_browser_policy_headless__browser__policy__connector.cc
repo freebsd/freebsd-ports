@@ -1,6 +1,6 @@
---- headless/lib/browser/policy/headless_browser_policy_connector.cc.orig	2022-10-05 07:34:01 UTC
+--- headless/lib/browser/policy/headless_browser_policy_connector.cc.orig	2023-07-24 14:27:53 UTC
 +++ headless/lib/browser/policy/headless_browser_policy_connector.cc
-@@ -150,8 +150,10 @@ HeadlessBrowserPolicyConnector::CreatePlatformProvider
+@@ -155,8 +155,10 @@ HeadlessBrowserPolicyConnector::CreatePlatformProvider
    // chrome/common/chrome_paths.cc
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
    base::FilePath config_dir_path(FILE_PATH_LITERAL("/etc/opt/chrome/policies"));

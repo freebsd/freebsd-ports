@@ -1,4 +1,4 @@
---- gpu/ipc/common/gpu_memory_buffer_support.cc.orig	2023-01-17 19:19:00 UTC
+--- gpu/ipc/common/gpu_memory_buffer_support.cc.orig	2023-07-24 14:27:53 UTC
 +++ gpu/ipc/common/gpu_memory_buffer_support.cc
 @@ -21,7 +21,7 @@
  #include "ui/ozone/public/ozone_platform.h"
@@ -9,7 +9,7 @@
  #include "gpu/ipc/common/gpu_memory_buffer_impl_native_pixmap.h"
  #endif
  
-@@ -50,7 +50,7 @@ GpuMemoryBufferSupport::GetNativeGpuMemoryBufferType()
+@@ -51,7 +51,7 @@ GpuMemoryBufferSupport::GetNativeGpuMemoryBufferType()
    return gfx::IO_SURFACE_BUFFER;
  #elif BUILDFLAG(IS_ANDROID)
    return gfx::ANDROID_HARDWARE_BUFFER;

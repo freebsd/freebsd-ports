@@ -1,6 +1,6 @@
---- chrome/browser/printing/printer_query.cc.orig	2023-03-13 07:33:08 UTC
+--- chrome/browser/printing/printer_query.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/printing/printer_query.cc
-@@ -284,7 +284,7 @@ void PrinterQuery::UpdatePrintSettings(base::Value::Di
+@@ -341,7 +341,7 @@ void PrinterQuery::UpdatePrintSettings(base::Value::Di
      crash_key = std::make_unique<crash_keys::ScopedPrinterInfo>(
          print_backend->GetPrinterDriverInfo(printer_name));
  

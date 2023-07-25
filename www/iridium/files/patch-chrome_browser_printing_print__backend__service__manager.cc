@@ -1,6 +1,6 @@
---- chrome/browser/printing/print_backend_service_manager.cc.orig	2023-04-22 17:45:15 UTC
+--- chrome/browser/printing/print_backend_service_manager.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/printing/print_backend_service_manager.cc
-@@ -547,7 +547,7 @@ PrintBackendServiceManager::RegisterClient(
+@@ -687,7 +687,7 @@ PrintBackendServiceManager::RegisterClient(
        query_clients_.insert(client_id);
        break;
      case ClientType::kQueryWithUi:
@@ -9,7 +9,7 @@
        if (!query_with_ui_clients_.empty())
          return absl::nullopt;
  #endif
-@@ -813,7 +813,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
+@@ -960,7 +960,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
        break;
  
      case ClientType::kQueryWithUi:
@@ -18,7 +18,7 @@
        // No need to update if there were other query with UI clients.
        if (query_with_ui_clients_.size() > 1)
          return absl::nullopt;
-@@ -870,7 +870,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
+@@ -1017,7 +1017,7 @@ PrintBackendServiceManager::DetermineIdleTimeoutUpdate
        return kNoClientsRegisteredResetOnIdleTimeout;
  
      case ClientType::kQueryWithUi:

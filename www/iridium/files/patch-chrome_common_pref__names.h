@@ -1,6 +1,6 @@
---- chrome/common/pref_names.h.orig	2023-04-22 17:45:15 UTC
+--- chrome/common/pref_names.h.orig	2023-07-24 14:27:53 UTC
 +++ chrome/common/pref_names.h
-@@ -388,7 +388,7 @@ extern const char kUseAshProxy[];
+@@ -378,7 +378,7 @@ extern const char kUseAshProxy[];
  #endif  //  BUILDFLAG(IS_CHROMEOS_LACROS)
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -9,16 +9,16 @@
  // TODO(https://crbug.com/1317782): Remove in M110.
  extern const char kUsesSystemThemeDeprecated[];
  extern const char kSystemTheme[];
-@@ -409,7 +409,7 @@ extern const char kShowUpdatePromotionInfoBar[];
+@@ -398,7 +398,7 @@ extern const char kDefaultBrowserSettingEnabled[];
+ #if BUILDFLAG(IS_MAC)
+ extern const char kShowUpdatePromotionInfoBar[];
  #endif
- // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
- // of lacros-chrome is complete.
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  extern const char kUseCustomChromeFrame[];
  #endif
  extern const char kPartitionDefaultZoomLevel[];
-@@ -599,7 +599,7 @@ extern const char kDownloadAllowedURLsForOpenByPolicy[
+@@ -586,7 +586,7 @@ extern const char kDownloadAllowedURLsForOpenByPolicy[
  extern const char kDownloadDirUpgraded[];
  extern const char kDownloadLastCompleteTime[];
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -27,7 +27,7 @@
  extern const char kOpenPdfDownloadInSystemReader[];
  #endif
  #if BUILDFLAG(IS_ANDROID)
-@@ -716,7 +716,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
+@@ -709,7 +709,7 @@ extern const char kWebAppsUninstalledDefaultChromeApps
  extern const char kWebAppsPreferences[];
  extern const char kWebAppsIsolationState[];
  
@@ -36,7 +36,7 @@
      (BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS_LACROS))
  extern const char kWebAppsUrlHandlerInfo[];
  #endif
-@@ -845,7 +845,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
+@@ -836,7 +836,7 @@ extern const char kGloballyScopeHTTPAuthCacheEnabled[]
  extern const char kAmbientAuthenticationInPrivateModesEnabled[];
  extern const char kBasicAuthOverHttpEnabled[];
  
@@ -45,7 +45,7 @@
  extern const char kAuthNegotiateDelegateByKdcPolicy[];
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_CHROMEOS)
  
-@@ -1124,7 +1124,7 @@ extern const char kBlockAutoplayEnabled[];
+@@ -1110,7 +1110,7 @@ extern const char kFileOrDirectoryPickerWithoutGesture
  #endif
  extern const char kSandboxExternalProtocolBlocked[];
  
@@ -54,7 +54,7 @@
  extern const char kAllowSystemNotifications[];
  #endif
  
-@@ -1150,7 +1150,7 @@ extern const char kCACertificateManagementAllowed[];
+@@ -1136,7 +1136,7 @@ extern const char kCACertificateManagementAllowed[];
  extern const char kChromeRootStoreEnabled[];
  #endif
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -63,7 +63,7 @@
  // TODO(https://crbug.com/1406103): delete this after a few milestones.
  extern const char kEnforceLocalAnchorConstraintsEnabled[];
  #endif
-@@ -1299,7 +1299,7 @@ extern const char kDIPSTimerLastUpdate[];
+@@ -1287,7 +1287,7 @@ extern const char kDIPSTimerLastUpdate[];
  extern const char kThrottleNonVisibleCrossOriginIframesAllowed[];
  extern const char kNewBaseUrlInheritanceBehaviorAllowed[];
  
