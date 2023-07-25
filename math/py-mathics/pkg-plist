@@ -107,8 +107,8 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/physchemdata.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/procedural.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/procedural.cpython-%%PYTHON_SUFFIX%%.pyc
-%%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/quantities-try.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
-%%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/quantities-try.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/_quantities-try.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/_quantities-try.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/quantities.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/quantities.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics/builtin/__pycache__/recurrence.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -474,7 +474,7 @@ bin/mathics
 %%PYTHON_SITELIBDIR%%/mathics/builtin/pympler/__pycache__/asizeof.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/mathics/builtin/pympler/__pycache__/asizeof.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/mathics/builtin/pympler/asizeof.py
-%%PYTHON_SITELIBDIR%%/mathics/builtin/quantities-try.py
+%%PYTHON_SITELIBDIR%%/mathics/builtin/_quantities-try.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/quantities.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/quantum_mechanics/__init__.py
 %%PYTHON_SITELIBDIR%%/mathics/builtin/quantum_mechanics/__pycache__/__init__.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
