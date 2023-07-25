@@ -1,7 +1,7 @@
 PORTNAME=	nfdump
 PORTVERSION=	1.6.20
-PORTREVISION=	1
 DISTVERSIONPREFIX=v
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 
 MAINTAINER=	pi@FreeBSD.org
@@ -12,49 +12,15 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/BSD-license.txt
 
 USES=		autoreconf compiler:c11 cpe libtool pkgconfig
+CPE_VENDOR=	nfdump_project
 USE_CSTD=	gnu89
-USE_LDCONFIG=	yes
 USE_GITHUB=	yes
 GH_ACCOUNT=	phaag
-CPE_VENDOR=	nfdump_project
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
+
 MAKE_JOBS_UNSAFE=	yes
-
-#flow-tools support
-OPTIONS_DEFINE=		DOCS FT2NFDUMP NFPROFILE FIXTIMEBUG READPCAP NFTRACK \
-			SFLOW NFPCAPD NFDUMP15 NSEL INFLUXDB
-OPTIONS_DEFAULT=	NFPROFILE
-
-FT2NFDUMP_DESC=		With Flow-tools to nfdump converter
-NFPROFILE_DESC=		With nfprofile (nfsen requires it)
-FIXTIMEBUG_DESC=	With fixing swap time bug of some v5
-READPCAP_DESC=		With pcap support
-NFTRACK_DESC=		With PortTracker support
-SFLOW_DESC=		Build sflow collector daemon also
-NFPCAPD_DESC=		Build nfpcapd collector daemon also
-NFDUMP15_DESC=		Enable compatibility with version 1.5
-NSEL_DESC=		Read and process ASA/NSEL/NEL event data
-INFLUXDB_DESC=		Enable stats to InfluxDB
-
-post-patch:
-	${REINPLACE_CMD} 's|-ggdb||' ${WRKSRC}/bin/Makefile.am
-
-.include <bsd.port.options.mk>
-
-#for compatibility
-#
-.if ${PORT_OPTIONS:MNFDUMP15}
-CONFIGURE_ARGS+=	--enable-compat15
-.else
-CONFIGURE_ARGS+=	--disable-compat15
-.endif
-
-.if ${PORT_OPTIONS:MNSEL}
-CONFIGURE_ARGS+=	--enable-nsel
-.else
-CONFIGURE_ARGS+=	--disable-nsel
-.endif
 
 PLIST_FILES=	bin/nfanon bin/nfcapd bin/nfdump bin/nfexpire bin/nfreplay \
 		lib/libnfdump-${PORTVERSION}.so \
@@ -62,24 +28,44 @@ PLIST_FILES=	bin/nfanon bin/nfcapd bin/nfdump bin/nfexpire bin/nfreplay \
 		man/man1/nfexpire.1.gz man/man1/nfreplay.1.gz
 PORTDOCS=	AUTHORS ChangeLog INSTALL NEWS README
 
-.if ${PORT_OPTIONS:MFIXTIMEBUG}
-CONFIGURE_ARGS+=	--enable-fixtimebug
-.else
-CONFIGURE_ARGS+=	--disable-fixtimebug
-.endif
+#flow-tools support
+OPTIONS_DEFINE=		DOCS FT2NFDUMP NFPROFILE FIXTIMEBUG READPCAP NFTRACK \
+			SFLOW NFPCAPD NSEL INFLUXDB
+OPTIONS_DEFAULT=	NFPROFILE
 
-.if ${PORT_OPTIONS:MNFPROFILE}
-CONFIGURE_ARGS+=	--enable-nfprofile
-PLIST_FILES+=	bin/nfprofile man/man1/nfprofile.1.gz
-.else
-CONFIGURE_ARGS+=	--disable-nfprofile
-.endif
+FIXTIMEBUG_DESC=	With fixing swap time bug of some v5
+FT2NFDUMP_DESC=		With Flow-tools to nfdump converter
+INFLUXDB_DESC=		Enable stats to InfluxDB
+NFPCAPD_DESC=		Build nfpcapd collector daemon also
+NFPROFILE_DESC=		With nfprofile (nfsen requires it)
+NFTRACK_DESC=		With PortTracker support
+NSEL_DESC=		Read and process ASA/NSEL/NEL event data
+READPCAP_DESC=		With pcap support
+SFLOW_DESC=		Build sflow collector daemon also
 
-.if ${PORT_OPTIONS:MNFTRACK}
-CONFIGURE_ARGS+=	--enable-nftrack
-PLIST_FILES+=	bin/nftrack
-.else
-CONFIGURE_ARGS+=	--disable-nftrack
+FIXTIMEBUG_CONFIGURE_ENABLE=	fixtimebug
+FT2NFDUMP_BUILD_DEPENDS=		flow-cat:net-mgmt/flow-tools
+FT2NFDUMP_LIB_DEPENDS=		libft.so:net-mgmt/flow-tools
+FT2NFDUMP_CONFIGURE_ON=	--enable-ftconv --with-ftpath=${LOCALBASE}
+FT2NFDUMP_PLIST_FILES=	bin/ft2nfdump man/man1/ft2nfdump.1.gz
+INFLUXDB_LIB_DEPENDS=		libcurl.so:ftp/curl
+INFLUXDB_CONFIGURE_ENABLE=	influxdb
+NFPCAPD_CONFIGURE_ENABLE=	nfpcapd
+NFPCAPD_PLIST_FILES=	bin/nfpcapd man/man1/nfpcapd.1.gz
+NFPROFILE_CONFIGURE_ENABLE=	nfprofile
+NFPROFILE_PLIST_FILES=	bin/nfprofile man/man1/nfprofile.1.gz
+NFTRACK_CONFIGURE_ENABLE=	nftrack
+NFTRACK_PLIST_FILES=	bin/nftrack
+NSEL_CONFIGURE_ENABLE=	nsel
+READPCAP_LIB_DEPENDS=		libpcap.so:net/libpcap
+READPCAP_CONFIGURE_ENABLE=	readpcap
+SFLOW_CONFIGURE_ENABLE=	sflow
+SFLOW_PLIST_FILES=	bin/sfcapd man/man1/sfcapd.1.gz
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 .if ${PORT_OPTIONS:MNFPROFILE} || ${PORT_OPTIONS:MNFTRACK}
@@ -88,81 +74,37 @@ BUILD_DEPENDS+=	rrdtool:databases/rrdtool
 RUN_DEPENDS+=	rrdtool:databases/rrdtool
 .endif
 
-#flow-tools support
-.if ${PORT_OPTIONS:MFT2NFDUMP}
-BUILD_DEPENDS+=		flow-cat:net-mgmt/flow-tools
-LIB_DEPENDS+=		libft.so:net-mgmt/flow-tools
-CONFIGURE_ARGS+=	--enable-ftconv --with-ftpath=${LOCALBASE}
-PLIST_FILES+=	bin/ft2nfdump man/man1/ft2nfdump.1.gz
-.endif
-
-.if ${PORT_OPTIONS:MREADPCAP}
-CONFIGURE_ARGS+=	--enable-readpcap
-LIB_DEPENDS+=		libpcap.so:net/libpcap
-.else
-CONFIGURE_ARGS+=	--disable-readpcap
-.endif
-
-#sflow capture support
-.if ${PORT_OPTIONS:MSFLOW}
-CONFIGURE_ARGS+=	--enable-sflow
-PLIST_FILES+=	bin/sfcapd man/man1/sfcapd.1.gz
-.else
-CONFIGURE_ARGS+=	--disable-sflow
-.endif
-
-#nfpcapd capture support
-.if ${PORT_OPTIONS:MNFPCAPD}
-CONFIGURE_ARGS+=	--enable-nfpcapd
-PLIST_FILES+=	bin/nfpcapd man/man1/nfpcapd.1.gz
-.else
-CONFIGURE_ARGS+=	--disable-nfpcapd
-.endif
-
-#influxdb support
-.if ${PORT_OPTIONS:MINFLUXDB}
-CONFIGURE_ARGS+=	--enable-influxdb
-LIB_DEPENDS+=		libcurl.so:ftp/curl
-.else
-CONFIGURE_ARGS+=	--disable-influxdb
-.endif
+post-patch:
+	${REINPLACE_CMD} 's|-ggdb||' ${WRKSRC}/bin/Makefile.am
 
 do-install:
 .for binary in nfanon nfcapd nfdump nfexpire nfreplay
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/${binary} ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/man/${binary}.1 ${STAGEDIR}${PREFIX}/man/man1
 .endfor
 	${INSTALL_LIB} ${WRKSRC}/bin/.libs/libnfdump-${PORTVERSION}.so ${STAGEDIR}${PREFIX}/lib
 
-.if ${PORT_OPTIONS:MNFPROFILE}
+do-install-NFPROFILE-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/nfprofile ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN}	${WRKSRC}/man/nfprofile.1 ${STAGEDIR}${PREFIX}/man/man1
-.endif
 
-.if ${PORT_OPTIONS:MNFTRACK}
+do-install-NFTRACK-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/nftrack ${STAGEDIR}${PREFIX}/bin
-.endif
 
-.if ${PORT_OPTIONS:MFT2NFDUMP}
+do-install-FT2NFDUMP-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/ft2nfdump ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN}	${WRKSRC}/man/ft2nfdump.1 ${STAGEDIR}${PREFIX}/man/man1
-.endif
 
-.if ${PORT_OPTIONS:MSFLOW}
+do-install-SFLOW-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/sfcapd ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN}	${WRKSRC}/man/sfcapd.1	${STAGEDIR}${PREFIX}/man/man1
-.endif
 
-.if ${PORT_OPTIONS:MNFPCAPD}
+do-install-NFPCAPD-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/.libs/nfpcapd ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN}	${WRKSRC}/man/nfpcapd.1	${STAGEDIR}${PREFIX}/man/man1
-.endif
-
-.for filename in nfanon nfdump nfcapd nfexpire nfreplay
-	${INSTALL_MAN} ${WRKSRC}/man/${filename}.1 ${STAGEDIR}${PREFIX}/man/man1
-.endfor
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
