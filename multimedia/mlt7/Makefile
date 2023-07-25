@@ -116,6 +116,7 @@ RESAMPLE_LIB_DEPENDS=	libsamplerate.so:audio/libsamplerate
 RESAMPLE_CMAKE_BOOL=	MOD_RESAMPLE
 
 RTAUDIO_DESC=		Enable RtAudio module
+RTAUDIO_BROKEN=		fails to build with RtAudio 6.0.0, see https://github.com/mltframework/mlt/issues/930
 RTAUDIO_LIB_DEPENDS=	librtaudio.so:audio/rtaudio \
 			libpulse-simple.so:audio/pulseaudio
 RTAUDIO_CMAKE_BOOL=	MOD_RTAUDIO
