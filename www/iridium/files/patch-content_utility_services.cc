@@ -1,6 +1,6 @@
---- content/utility/services.cc.orig	2023-04-22 17:45:15 UTC
+--- content/utility/services.cc.orig	2023-07-24 14:27:53 UTC
 +++ content/utility/services.cc
-@@ -64,7 +64,7 @@
+@@ -65,7 +65,7 @@
  extern sandbox::TargetServices* g_utility_target_services;
  #endif  // BUILDFLAG(IS_WIN)
  
@@ -9,7 +9,7 @@
  #include "media/mojo/services/mojo_video_encode_accelerator_provider_factory.h"
  #include "sandbox/linux/services/libc_interceptor.h"
  #include "sandbox/policy/mojom/sandbox.mojom.h"
-@@ -87,7 +87,7 @@ extern sandbox::TargetServices* g_utility_target_servi
+@@ -88,7 +88,7 @@ extern sandbox::TargetServices* g_utility_target_servi
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -18,7 +18,16 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  #include "media/mojo/services/stable_video_decoder_factory_process_service.h"  // nogncheck
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
-@@ -215,7 +215,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
+@@ -110,7 +110,7 @@ extern sandbox::TargetServices* g_utility_target_servi
+ #include "ui/accessibility/accessibility_features.h"
+ #endif  // BUILDFLAG(ENABLE_ACCESSIBILITY_SERVICE)
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "media/capture/capture_switches.h"
+ #include "services/viz/public/cpp/gpu/gpu.h"
+ #endif  // BUILDFLAG(IS_LINUX)
+@@ -227,7 +227,7 @@ auto RunAudio(mojo::PendingReceiver<audio::mojom::Audi
        << "task_policy_set TASK_QOS_POLICY";
  #endif
  
@@ -27,7 +36,16 @@
    auto* command_line = base::CommandLine::ForCurrentProcess();
    if (sandbox::policy::SandboxTypeFromCommandLine(*command_line) ==
        sandbox::mojom::Sandbox::kNoSandbox) {
-@@ -319,7 +319,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
+@@ -311,7 +311,7 @@ auto RunVideoCapture(
+     mojo::PendingReceiver<video_capture::mojom::VideoCaptureService> receiver) {
+   auto service = std::make_unique<UtilityThreadVideoCaptureServiceImpl>(
+       std::move(receiver), base::SingleThreadTaskRunner::GetCurrentDefault());
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   if (switches::IsVideoCaptureUseGpuMemoryBufferEnabled()) {
+     mojo::PendingRemote<viz::mojom::Gpu> remote_gpu;
+     content::UtilityThread::Get()->BindHostReceiver(
+@@ -343,7 +343,7 @@ auto RunOOPArcVideoAcceleratorFactoryService(
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  
@@ -36,7 +54,7 @@
      (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  auto RunStableVideoDecoderFactoryProcessService(
      mojo::PendingReceiver<
-@@ -330,7 +330,7 @@ auto RunStableVideoDecoderFactoryProcessService(
+@@ -354,7 +354,7 @@ auto RunStableVideoDecoderFactoryProcessService(
  #endif  // (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_ASH)) &&
          // (BUILDFLAG(USE_VAAPI) || BUILDFLAG(USE_V4L2_CODEC))
  
@@ -45,7 +63,7 @@
  auto RunVideoEncodeAcceleratorProviderFactory(
      mojo::PendingReceiver<media::mojom::VideoEncodeAcceleratorProviderFactory>
          receiver) {
-@@ -388,13 +388,13 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
+@@ -419,13 +419,13 @@ void RegisterMainThreadServices(mojo::ServiceFactory& 
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH) && (BUILDFLAG(USE_VAAPI) ||
          // BUILDFLAG(USE_V4L2_CODEC))
  

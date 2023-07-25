@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2023-04-22 17:45:15 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.cc
-@@ -61,8 +61,10 @@
+@@ -67,8 +67,10 @@
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -12,16 +12,25 @@
  
  #include "base/linux_util.h"
  #include "base/strings/string_split.h"
-@@ -92,7 +94,7 @@
- #include "chromeos/crosapi/cpp/crosapi_constants.h"
- #endif  // BUILDFLAG(IS_CHROMEOS_LACROS)
+@@ -102,7 +104,7 @@
+ #include "chromeos/startup/startup_switches.h"
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "chrome/browser/metrics/pressure/pressure_metrics_reporter.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -495,7 +497,7 @@ void RecordStartupMetrics() {
+@@ -111,7 +113,7 @@
+ #include "components/user_manager/user_manager.h"
+ #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ #include "components/power_metrics/system_power_monitor.h"
+ #endif
+ 
+@@ -533,7 +535,7 @@ void RecordStartupMetrics() {
  
    // Record whether Chrome is the default browser or not.
    // Disabled on Linux due to hanging browser tests, see crbug.com/1216328.
@@ -30,7 +39,7 @@
    shell_integration::DefaultWebClientState default_state =
        shell_integration::GetDefaultBrowser();
    base::UmaHistogramEnumeration("DefaultBrowser.State", default_state,
-@@ -685,7 +687,7 @@ void ChromeBrowserMainExtraPartsMetrics::PostBrowserSt
+@@ -742,11 +744,11 @@ void ChromeBrowserMainExtraPartsMetrics::PostBrowserSt
    }
  #endif  // !BUILDFLAG(IS_ANDROID)
  
@@ -38,4 +47,9 @@
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    pressure_metrics_reporter_ = std::make_unique<PressureMetricsReporter>();
  #endif  // BUILDFLAG(IS_LINUX)
- }
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+   base::trace_event::TraceLog::GetInstance()->AddEnabledStateObserver(
+       power_metrics::SystemPowerMonitor::GetInstance());
+ #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX)

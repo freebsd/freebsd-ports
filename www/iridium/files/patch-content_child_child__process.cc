@@ -1,11 +1,11 @@
---- content/child/child_process.cc.orig	2022-10-05 07:34:01 UTC
+--- content/child/child_process.cc.orig	2023-07-24 14:27:53 UTC
 +++ content/child/child_process.cc
-@@ -68,7 +68,7 @@ ChildProcess::ChildProcess(base::ThreadType io_thread_
-   DCHECK(!g_lazy_child_process_tls.Pointer()->Get());
-   g_lazy_child_process_tls.Pointer()->Set(this);
- 
--#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
-+#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
+@@ -67,7 +67,7 @@ ChildProcess::ChildProcess(base::ThreadType io_thread_
+       io_thread_(std::make_unique<ChildIOThread>()) {
    const base::CommandLine& command_line =
        *base::CommandLine::ForCurrentProcess();
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    const bool is_embedded_in_browser_process =
+       !command_line.HasSwitch(switches::kProcessType);
+   if (IsMojoCoreSharedLibraryEnabled() && !is_embedded_in_browser_process) {

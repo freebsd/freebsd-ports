@@ -1,6 +1,6 @@
---- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.h.orig	2023-04-22 17:45:15 UTC
+--- chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.h.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/metrics/chrome_browser_main_extra_parts_metrics.h
-@@ -22,7 +22,7 @@ class PowerMetricsReporter;
+@@ -32,7 +32,7 @@ class PowerMetricsReporter;
  class ProcessMonitor;
  #endif
  
@@ -9,7 +9,7 @@
  class PressureMetricsReporter;
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -88,7 +88,7 @@ class ChromeBrowserMainExtraPartsMetrics : public Chro
+@@ -133,7 +133,7 @@ class ChromeBrowserMainExtraPartsMetrics : public Chro
    std::unique_ptr<BatteryDischargeReporter> battery_discharge_reporter_;
  #endif  // !BUILDFLAG(IS_ANDROID)
  

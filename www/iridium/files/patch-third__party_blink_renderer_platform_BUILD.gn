@@ -1,6 +1,6 @@
---- third_party/blink/renderer/platform/BUILD.gn.orig	2023-04-22 17:45:15 UTC
+--- third_party/blink/renderer/platform/BUILD.gn.orig	2023-07-24 14:27:53 UTC
 +++ third_party/blink/renderer/platform/BUILD.gn
-@@ -1932,7 +1932,7 @@ static_library("test_support") {
+@@ -1928,7 +1928,7 @@ static_library("test_support") {
    ]
  
    # fuzzed_data_provider may not work with a custom toolchain.

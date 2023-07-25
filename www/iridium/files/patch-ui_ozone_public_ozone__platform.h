@@ -1,6 +1,6 @@
---- ui/ozone/public/ozone_platform.h.orig	2022-12-06 08:09:13 UTC
+--- ui/ozone/public/ozone_platform.h.orig	2023-07-24 14:27:53 UTC
 +++ ui/ozone/public/ozone_platform.h
-@@ -144,7 +144,7 @@ class COMPONENT_EXPORT(OZONE) OzonePlatform {
+@@ -140,7 +140,7 @@ class COMPONENT_EXPORT(OZONE) OzonePlatform {
      // back via gpu extra info.
      bool fetch_buffer_formats_for_gmb_on_gpu = false;
  

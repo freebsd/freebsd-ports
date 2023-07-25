@@ -1,6 +1,6 @@
---- services/cert_verifier/cert_verifier_creation.cc.orig	2023-04-22 17:45:15 UTC
+--- services/cert_verifier/cert_verifier_creation.cc.orig	2023-07-24 14:27:53 UTC
 +++ services/cert_verifier/cert_verifier_creation.cc
-@@ -12,7 +12,7 @@
+@@ -14,7 +14,7 @@
  #include "net/cert_net/cert_net_fetcher_url_request.h"
  #include "net/net_buildflags.h"
  
@@ -9,16 +9,16 @@
  #include "net/cert/cert_verify_proc_builtin.h"
  #include "net/cert/internal/system_trust_store.h"
  #endif
-@@ -89,7 +89,7 @@ class OldDefaultCertVerifyProcFactory : public net::Ce
+@@ -113,7 +113,7 @@ class CertVerifyProcFactoryImpl : public net::CertVeri
              user_slot_restriction_ ? crypto::ScopedPK11Slot(PK11_ReferenceSlot(
                                           user_slot_restriction_.get()))
                                     : nullptr));
 -#elif BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_FUCHSIA) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
-     verify_proc = net::CreateCertVerifyProcBuiltin(
-         std::move(cert_net_fetcher), net::CreateSslSystemTrustStore());
- #else
-@@ -226,6 +226,7 @@ std::unique_ptr<net::CertVerifierWithUpdatableProc> Cr
+     return net::CreateCertVerifyProcBuiltin(std::move(cert_net_fetcher),
+                                             std::move(crl_set),
+                                             net::CreateSslSystemTrustStore());
+@@ -213,6 +213,7 @@ std::unique_ptr<net::CertVerifierWithUpdatableProc> Cr
  bool IsUsingCertNetFetcher() {
  #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_FUCHSIA) ||      \
      BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) ||       \

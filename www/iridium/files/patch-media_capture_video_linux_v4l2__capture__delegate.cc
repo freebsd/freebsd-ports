@@ -1,4 +1,4 @@
---- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2023-05-20 17:39:08 UTC
+--- media/capture/video/linux/v4l2_capture_delegate.cc.orig	2023-07-24 14:27:53 UTC
 +++ media/capture/video/linux/v4l2_capture_delegate.cc
 @@ -4,8 +4,10 @@
  
@@ -11,7 +11,7 @@
  #include <poll.h>
  #include <sys/fcntl.h>
  #include <sys/ioctl.h>
-@@ -29,10 +31,12 @@
+@@ -28,10 +30,12 @@
  
  using media::mojom::MeteringMode;
  
@@ -24,7 +24,16 @@
  
  // TODO(aleksandar.stojiljkovic): Wrap this with kernel version check once the
  // format is introduced to kernel.
-@@ -728,7 +732,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
+@@ -255,7 +259,7 @@ bool V4L2CaptureDelegate::IsBlockedControl(int control
+ // static
+ bool V4L2CaptureDelegate::IsControllableControl(
+     int control_id,
+-    const base::RepeatingCallback<int(int, void*)>& do_ioctl) {
++    const base::RepeatingCallback<int(unsigned int, void*)>& do_ioctl) {
+   const int special_control_id = GetControllingSpecialControl(control_id);
+   if (!special_control_id) {
+     // The control is not controlled by a special control thus the control is
+@@ -772,7 +776,7 @@ base::WeakPtr<V4L2CaptureDelegate> V4L2CaptureDelegate
  
  V4L2CaptureDelegate::~V4L2CaptureDelegate() = default;
  
@@ -33,7 +42,7 @@
    int num_retries = 0;
    for (; DoIoctl(request, argp) < 0 && num_retries < kMaxIOCtrlRetries;
         ++num_retries) {
-@@ -738,7 +742,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
+@@ -782,7 +786,7 @@ bool V4L2CaptureDelegate::RunIoctl(int request, void* 
    return num_retries != kMaxIOCtrlRetries;
  }
  
@@ -42,7 +51,7 @@
    return HANDLE_EINTR(v4l2_->ioctl(device_fd_.get(), request, argp));
  }
  
-@@ -778,6 +782,7 @@ bool V4L2CaptureDelegate::IsControllableControl(int co
+@@ -793,6 +797,7 @@ bool V4L2CaptureDelegate::IsControllableControl(int co
  }
  
  void V4L2CaptureDelegate::ReplaceControlEventSubscriptions() {
@@ -50,7 +59,7 @@
    constexpr uint32_t kControlIds[] = {V4L2_CID_AUTO_EXPOSURE_BIAS,
                                        V4L2_CID_AUTO_WHITE_BALANCE,
                                        V4L2_CID_BRIGHTNESS,
-@@ -805,6 +810,7 @@ void V4L2CaptureDelegate::ReplaceControlEventSubscript
+@@ -820,6 +825,7 @@ void V4L2CaptureDelegate::ReplaceControlEventSubscript
                    << ", {type = V4L2_EVENT_CTRL, id = " << control_id << "}";
      }
    }
@@ -58,7 +67,7 @@
  }
  
  mojom::RangePtr V4L2CaptureDelegate::RetrieveUserControlRange(int control_id) {
-@@ -985,7 +991,11 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1000,7 +1006,11 @@ void V4L2CaptureDelegate::DoCapture() {
  
    pollfd device_pfd = {};
    device_pfd.fd = device_fd_.get();
@@ -70,7 +79,7 @@
  
    const int result =
        HANDLE_EINTR(v4l2_->poll(&device_pfd, 1, kCaptureTimeoutMs));
-@@ -1023,6 +1033,7 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1038,6 +1048,7 @@ void V4L2CaptureDelegate::DoCapture() {
      timeout_count_ = 0;
    }
  
@@ -78,7 +87,7 @@
    // Dequeue events if the driver has filled in some.
    if (device_pfd.revents & POLLPRI) {
      bool controls_changed = false;
-@@ -1057,6 +1068,7 @@ void V4L2CaptureDelegate::DoCapture() {
+@@ -1072,6 +1083,7 @@ void V4L2CaptureDelegate::DoCapture() {
        client_->OnCaptureConfigurationChanged();
      }
    }

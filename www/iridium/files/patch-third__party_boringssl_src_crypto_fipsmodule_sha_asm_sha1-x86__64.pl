@@ -1,18 +1,10 @@
---- third_party/boringssl/src/crypto/fipsmodule/sha/asm/sha1-x86_64.pl.orig	2023-03-13 07:33:08 UTC
+--- third_party/boringssl/src/crypto/fipsmodule/sha/asm/sha1-x86_64.pl.orig	2023-07-24 14:27:53 UTC
 +++ third_party/boringssl/src/crypto/fipsmodule/sha/asm/sha1-x86_64.pl
-@@ -1815,6 +1815,7 @@ ___
- }
- }
- $code.=<<___;
-+.rodata
- .align	64
- K_XX_XX:
- .long	0x5a827999,0x5a827999,0x5a827999,0x5a827999	# K_00_19
-@@ -1833,6 +1834,7 @@ ___
- $code.=<<___;
- .asciz	"SHA1 block transform for x86_64, CRYPTOGAMS by <appro\@openssl.org>"
- .align	64
-+.previous
- ___
- 
- # EXCEPTION_DISPOSITION handler (EXCEPTION_RECORD *rec,ULONG64 frame,
+@@ -244,6 +244,7 @@ $code.=<<___;
+ .align	16
+ sha1_block_data_order:
+ .cfi_startproc
++	_CET_ENDBR
+ 	leaq	OPENSSL_ia32cap_P(%rip),%r10
+ 	mov	0(%r10),%r9d
+ 	mov	4(%r10),%r8d

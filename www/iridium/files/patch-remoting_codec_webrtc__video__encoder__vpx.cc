@@ -1,6 +1,6 @@
---- remoting/codec/webrtc_video_encoder_vpx.cc.orig	2022-10-05 07:34:01 UTC
+--- remoting/codec/webrtc_video_encoder_vpx.cc.orig	2023-07-24 14:27:53 UTC
 +++ remoting/codec/webrtc_video_encoder_vpx.cc
-@@ -89,7 +89,7 @@ void SetVp8CodecParameters(vpx_codec_enc_cfg_t* config
+@@ -88,7 +88,7 @@ void SetVp8CodecParameters(vpx_codec_enc_cfg_t* config
                             const webrtc::DesktopSize& size) {
    SetCommonCodecParameters(config, size);
  

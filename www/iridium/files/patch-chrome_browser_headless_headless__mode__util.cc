@@ -1,4 +1,4 @@
---- chrome/browser/headless/headless_mode_util.cc.orig	2023-04-22 17:45:15 UTC
+--- chrome/browser/headless/headless_mode_util.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/headless/headless_mode_util.cc
 @@ -10,12 +10,12 @@
  // New headless mode is available on Linux, Windows and Mac platforms.
@@ -15,10 +15,10 @@
  #include "ui/gl/gl_switches.h"               // nogncheck
  #include "ui/ozone/public/ozone_switches.h"  // nogncheck
  #endif  // BUILDFLAG(IS_LINUX)
-@@ -72,7 +72,7 @@ void SetUpCommandLine(const base::CommandLine* command
-     base::CommandLine::ForCurrentProcess()->AppendSwitch(
-         ::switches::kNoErrorDialogs);
-   }
+@@ -78,7 +78,7 @@ void SetUpCommandLine(const base::CommandLine* command
+   base::CommandLine::ForCurrentProcess()->AppendSwitch(
+       switches::kDisableLazyLoading);
+ 
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Headless mode on Linux relies on ozone/headless platform.

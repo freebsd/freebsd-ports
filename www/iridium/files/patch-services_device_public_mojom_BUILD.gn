@@ -1,7 +1,7 @@
---- services/device/public/mojom/BUILD.gn.orig	2023-04-22 17:45:15 UTC
+--- services/device/public/mojom/BUILD.gn.orig	2023-07-24 14:27:53 UTC
 +++ services/device/public/mojom/BUILD.gn
-@@ -90,7 +90,7 @@ mojom("device_service") {
-   cpp_only = true
+@@ -94,7 +94,7 @@ mojom("device_service") {
+   enable_js_fuzzing = false
  
    enabled_features = []
 -  if ((is_linux || is_chromeos) && use_udev) {

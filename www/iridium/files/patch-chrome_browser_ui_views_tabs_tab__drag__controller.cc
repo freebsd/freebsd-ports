@@ -1,6 +1,6 @@
---- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2023-04-22 17:45:15 UTC
+--- chrome/browser/ui/views/tabs/tab_drag_controller.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/ui/views/tabs/tab_drag_controller.cc
-@@ -82,7 +82,7 @@
+@@ -81,7 +81,7 @@
  #include "components/remote_cocoa/browser/window.h"
  #endif
  
@@ -9,7 +9,7 @@
  #include "ui/aura/client/drag_drop_client.h"
  #endif
  
-@@ -260,7 +260,7 @@ bool IsWindowDragUsingSystemDragDropAllowed() {
+@@ -189,7 +189,7 @@ bool IsWindowDragUsingSystemDragDropAllowed() {
  
  void UpdateSystemDnDDragImage(TabDragContext* attached_context,
                                const gfx::ImageSkia& image) {
@@ -18,7 +18,7 @@
    aura::Window* root_window =
        attached_context->GetWidget()->GetNativeWindow()->GetRootWindow();
    if (aura::client::GetDragDropClient(root_window)) {
-@@ -512,7 +512,7 @@ void TabDragController::Init(TabDragContext* source_co
+@@ -363,7 +363,7 @@ void TabDragController::Init(TabDragContext* source_co
    //     synchronous on desktop Linux, so use that.
    // - ChromeOS Ash
    //     Releasing capture on Ash cancels gestures so avoid it.
@@ -27,7 +27,7 @@
    can_release_capture_ = false;
  #endif
    start_point_in_screen_ = gfx::Point(source_view_offset, mouse_offset.y());
-@@ -1151,7 +1151,7 @@ TabDragController::DragBrowserToNewTabStrip(TabDragCon
+@@ -952,7 +952,7 @@ TabDragController::DragBrowserToNewTabStrip(TabDragCon
  
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.
@@ -36,7 +36,7 @@
      // EndMoveLoop is going to snap the window back to its original location.
      // Hide it so users don't see this. Hiding a window in Linux aura causes
      // it to lose capture so skip it.
-@@ -2202,7 +2202,7 @@ void TabDragController::CompleteDrag() {
+@@ -1978,7 +1978,7 @@ void TabDragController::CompleteDrag() {
        }
  
        // If source window was maximized - maximize the new window as well.
@@ -45,7 +45,7 @@
        // Keeping maximized state breaks snap to Grid on Windows when dragging
        // tabs from maximized windows. TODO:(crbug.com/727051) Explore doing this
        // for other desktop OS's. kMaximizedStateRetainedOnTabDrag in
-@@ -2596,7 +2596,7 @@ TabDragController::Liveness TabDragController::GetLoca
+@@ -2361,7 +2361,7 @@ TabDragController::Liveness TabDragController::GetLoca
    }
  // TODO(crbug.com/1052397): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

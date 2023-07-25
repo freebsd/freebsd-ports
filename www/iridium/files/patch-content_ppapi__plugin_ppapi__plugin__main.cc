@@ -1,11 +1,11 @@
---- content/ppapi_plugin/ppapi_plugin_main.cc.orig	2023-03-13 07:33:08 UTC
+--- content/ppapi_plugin/ppapi_plugin_main.cc.orig	2023-07-24 14:27:53 UTC
 +++ content/ppapi_plugin/ppapi_plugin_main.cc
 @@ -54,6 +54,11 @@
  #include "gin/v8_initializer.h"
  #endif
  
-+#if BUILDFLAG(IS_OPENBSD)
-+#include "sandbox/policy/openbsd/sandbox_openbsd.h"
++#if BUILDFLAG(IS_BSD)
++#include "sandbox/policy/sandbox.h"
 +#include "sandbox/policy/sandbox_type.h"
 +#endif
 +

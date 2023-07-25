@@ -1,20 +1,20 @@
---- chrome/browser/media/webrtc/capture_policy_utils.cc.orig	2023-03-13 07:33:08 UTC
+--- chrome/browser/media/webrtc/capture_policy_utils.cc.orig	2023-07-24 14:27:53 UTC
 +++ chrome/browser/media/webrtc/capture_policy_utils.cc
-@@ -118,7 +118,7 @@ AllowedScreenCaptureLevel GetAllowedCaptureLevel(const
+@@ -124,7 +124,7 @@ AllowedScreenCaptureLevel GetAllowedCaptureLevel(const
+ }
  
- bool IsGetDisplayMediaSetSelectAllScreensAllowedForAnySite(
-     content::BrowserContext* context) {
+ bool IsGetAllScreensMediaAllowedForAnySite(content::BrowserContext* context) {
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    Profile* profile = Profile::FromBrowserContext(context);
    if (!profile) {
      return false;
-@@ -145,7 +145,7 @@ bool IsGetDisplayMediaSetSelectAllScreensAllowedForAny
- bool IsGetDisplayMediaSetSelectAllScreensAllowed(
-     content::BrowserContext* context,
-     const GURL& url) {
+@@ -160,7 +160,7 @@ bool IsGetAllScreensMediaAllowedForAnySite(content::Br
+ 
+ bool IsGetAllScreensMediaAllowed(content::BrowserContext* context,
+                                  const GURL& url) {
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    Profile* profile = Profile::FromBrowserContext(context);
-   if (!profile)
+   if (!profile) {
      return false;

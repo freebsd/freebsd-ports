@@ -1,6 +1,5 @@
 PORTNAME=	iridium
-PORTVERSION=	2023.04.112.2
-PORTREVISION=	2
+PORTVERSION=	2023.07.115.1
 CATEGORIES=	www wayland
 MASTER_SITES=	https://downloads.iridiumbrowser.de/source/
 PKGNAMESUFFIX=	-browser
@@ -16,7 +15,7 @@ LICENSE_COMB=	multi
 ONLY_FOR_ARCHS=	aarch64 amd64 i386
 
 PATCH_SITES=	https://nerd.hu/distfiles/
-PATCHFILES+=	disable-privacy-sandbox-ce036275d9d21a8408ef48ee9839b3c21b8448ca.patch:-p1
+PATCHFILES+=	disable-privacy-sandbox-891b80bbfcdb15e8292143efd1715fa3f30662c4.patch:-p1
 
 BUILD_DEPENDS=	bash:shells/bash \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>0:devel/py-Jinja2@${PY_FLAVOR} \
@@ -55,6 +54,7 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 		libexif.so:graphics/libexif \
 		libpng.so:graphics/png \
 		libwebp.so:graphics/webp \
+		libdav1d.so:multimedia/dav1d \
 		libopenh264.so:multimedia/openh264 \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
@@ -71,9 +71,9 @@ LIB_DEPENDS=	libatk-bridge-2.0.so:accessibility/at-spi2-core \
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		noto-basic>0:x11-fonts/noto-basic
 
-USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gnome iconv:wchar_t jpeg \
-		localbase:ldflags ninja perl5 pkgconfig python:build qt:5 shebangfix \
-		tar:xz xorg
+USES=		bison compiler:c++17-lang cpe desktop-file-utils gl gmake gnome \
+		iconv:wchar_t jpeg localbase:ldflags ninja perl5 pkgconfig \
+		python:build qt:5 shebangfix tar:xz xorg
 
 CPE_VENDOR=	google
 CPE_PRODUCT=	chrome
@@ -104,6 +104,7 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		enable_hangout_services_extension=true \
 		enable_nacl=false \
 		enable_remoting=false \
+		enable_rust=false \
 		fatal_linker_warnings=false \
 		icu_use_data_file=false \
 		is_clang=true \
@@ -123,7 +124,8 @@ GN_ARGS+=	clang_use_chrome_plugins=false \
 		use_system_libjpeg=true \
 		use_udev=false \
 		extra_cxxflags="${CXXFLAGS}" \
-		extra_ldflags="${LDFLAGS}"
+		extra_ldflags="${LDFLAGS}" \
+		ffmpeg_branding="${FFMPEG_BRAND}"
 
 # TODO: investigate building with these options:
 # use_system_minigbm
@@ -151,10 +153,10 @@ ALSA_RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:audio/al
 ALSA_VARS=		GN_ARGS+=use_alsa=true
 ALSA_VARS_OFF=		GN_ARGS+=use_alsa=false
 
-CODECS_VARS=		GN_ARGS+=ffmpeg_branding="Chrome" \
-			GN_ARGS+=proprietary_codecs=true
-CODECS_VARS_OFF=	GN_ARGS+=ffmpeg_branding="Chromium" \
-			GN_ARGS+=proprietary_codecs=false
+CODECS_VARS=		GN_ARGS+=proprietary_codecs=true \
+			FFMPEG_BRAND="Chrome"
+CODECS_VARS_OFF=	GN_ARGS+=proprietary_codecs=false \
+			FFMPEG_BRAND="Chromium"
 
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 CUPS_VARS=		GN_ARGS+=use_cups=true
@@ -202,8 +204,8 @@ SNDIO_VARS_OFF=		GN_ARGS+=use_sndio=false
 IGNORE=		you have selected HEIMDAL_BASE but do not have Heimdal installed in base
 .endif
 
-.if ${COMPILER_VERSION} < 150
-LLVM_DEFAULT=		15
+.if ${COMPILER_VERSION} < 160
+LLVM_DEFAULT=		16
 BUILD_DEPENDS+=		clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
 BINARY_ALIAS+=		cpp=${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT} \
 			cc=${LOCALBASE}/bin/clang${LLVM_DEFAULT} \
@@ -216,12 +218,23 @@ BINARY_ALIAS+=		ar=/usr/bin/llvm-ar \
 			nm=/usr/bin/llvm-nm
 .endif
 
-# swiftshader/lib/{libEGL.so,libGLESv2.so} is x86 only
+# - swiftshader/lib/{libEGL.so,libGLESv2.so} is x86 only
+# - map ffmpeg target to ${ARCH}
 .if ${ARCH} == aarch64
 PLIST_SUB+=	NOT_AARCH64="@comment "
-.else
+FFMPEG_TARGET=	arm64
+.elif ${ARCH} == amd64
+BUILD_DEPENDS+=	nasm:devel/nasm
 PLIST_SUB+=	NOT_AARCH64=""
+FFMPEG_TARGET=	x64
+.elif ${ARCH} == i386
+BUILD_DEPENDS+=	nasm:devel/nasm
+PLIST_SUB+=	NOT_AARCH64=""
+FFMPEG_TARGET=	ia32
 .endif
+
+FFMPEG_BDIR=	${WRKSRC}/third_party/ffmpeg/build.${FFMPEG_TARGET}.freebsd/${FFMPEG_BRAND}
+FFMPEG_CDIR=	${WRKSRC}/third_party/ffmpeg/chromium/config/${FFMPEG_BRAND}/freebsd/${FFMPEG_TARGET}
 
 # Allow relocations against read-only segments (override lld default)
 LDFLAGS_i386=	-Wl,-znotext
@@ -244,13 +257,16 @@ pre-configure:
 	#./build/linux/unbundle/remove_bundled_libraries.py [list of preserved]
 	cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${PYTHON_CMD} \
 		./build/linux/unbundle/replace_gn_files.py --system-libraries \
-		flac fontconfig freetype harfbuzz-ng icu libdrm libevent libpng \
-		libusb libwebp libxml libxslt openh264 opus snappy || ${FALSE}
+		dav1d flac fontconfig freetype harfbuzz-ng icu libdrm libevent libpng \
+		libwebp libxml libxslt openh264 opus snappy || ${FALSE}
 	# Iridium uses an unreleased version of FFmpeg, so configure it
-.for brand in Chrome Chromium
-	${CP} -R \
-		${WRKSRC}/third_party/ffmpeg/chromium/config/${brand}/linux/ \
-		${WRKSRC}/third_party/ffmpeg/chromium/config/${brand}/freebsd
+	cd ${WRKSRC}/third_party/ffmpeg && \
+		${PYTHON_CMD} chromium/scripts/build_ffmpeg.py freebsd ${FFMPEG_TARGET} \
+		--config-only --branding=${FFMPEG_BRAND}
+	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
+	${MKDIR} ${FFMPEG_CDIR}
+.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
+	-${CP} -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
 .endfor
 
 do-configure:
