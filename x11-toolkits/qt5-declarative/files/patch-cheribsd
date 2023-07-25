@@ -1342,7 +1342,7 @@ index da149a67c4..71319f1d97 100644
  }
  
 diff --git src/qml/memory/qv4mmdefs_p.h src/qml/memory/qv4mmdefs_p.h
-index 117e8f4360..08be887f0c 100644
+index 117e8f4360..c83a146ef1 100644
 --- src/qml/memory/qv4mmdefs_p.h
 +++ src/qml/memory/qv4mmdefs_p.h
 @@ -90,28 +90,31 @@ typedef void(*ClassDestroyStatsCallback)(const char *);
@@ -1497,7 +1497,7 @@ index 117e8f4360..08be887f0c 100644
 +#ifndef __CHERI_PURE_CAPABILITY__
  Q_STATIC_ASSERT(QT_POINTER_SIZE*8 == Chunk::Bits);
 +#else
-+Q_STATIC_ASSERT(sizeof(vaddr_t)*8 == Chunk::Bits);
++Q_STATIC_ASSERT(sizeof(ptraddr_t)*8 == Chunk::Bits);
 +#endif
  Q_STATIC_ASSERT((1 << Chunk::BitShift) == Chunk::Bits);
  
