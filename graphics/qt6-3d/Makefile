@@ -38,4 +38,10 @@ USE_GNOME=	glib20
 USE_QT=		base declarative shadertools
 USE_LDCONFIG=	${PREFIX}/${QT_LIBDIR_REL}
 
+# Disable pkg-plist for i386
+.if ${ARCH} == "i386"
+PLIST_SUB+=	I386="@comment "
+.else
+PLIST_SUB+=	I386=""
+.endif
 .include <bsd.port.mk>
