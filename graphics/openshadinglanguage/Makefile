@@ -1,7 +1,11 @@
 PORTNAME=	openshadinglanguage
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.12.12.0
-PORTREVISION=	2
+DISTVERSION=	1.12.13.0
+# PORTREVISION must be set with ?= so as not to stomp over
+# py-openimageio's PORTREVISION.
+# Also, just to be on the safe side, when resetting,
+# best keep PORTREVISION?=	0.
+PORTREVISION?=	0
 CATEGORIES?=	graphics devel
 
 MAINTAINER=	FreeBSD@Shaneware.biz
