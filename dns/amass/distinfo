@@ -1,5 +1,5 @@
-TIMESTAMP = 1690092624
-SHA256 (go/dns_amass/amass-v4.0.2/v4.0.2.mod) = 9186164004d0f9626b805d98bcd9a688ffc3bf6cb5905a9605a06b7767337819
-SIZE (go/dns_amass/amass-v4.0.2/v4.0.2.mod) = 4117
-SHA256 (go/dns_amass/amass-v4.0.2/v4.0.2.zip) = e24c5b9eab5d108bc0e1afc9c2a940959472d75107cc6dfe160fd4917cb8917e
-SIZE (go/dns_amass/amass-v4.0.2/v4.0.2.zip) = 20516125
+TIMESTAMP = 1690250900
+SHA256 (go/dns_amass/amass-v4.0.3/v4.0.3.mod) = 9186164004d0f9626b805d98bcd9a688ffc3bf6cb5905a9605a06b7767337819
+SIZE (go/dns_amass/amass-v4.0.3/v4.0.3.mod) = 4117
+SHA256 (go/dns_amass/amass-v4.0.3/v4.0.3.zip) = da090e5f6593bf18cacfd50ae8a45b89ba7ee51da52ef2234ad11830befe485f
+SIZE (go/dns_amass/amass-v4.0.3/v4.0.3.zip) = 20517138
