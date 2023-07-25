@@ -22,13 +22,15 @@ RUN_DEPENDS=	lrs:math/lrslib \
 
 USES=		autoreconf:2.69 compiler:c++11-lang gmake libtool \
 		localbase:ldflags
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-static \
-		--with-topcom=${LOCALBASE} --with-4ti2=${LOCALBASE} --with-cddlib=${LOCALBASE} --with-gmp=${LOCALBASE} --with-ntl=${LOCALBASE}
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	latte-int
 GH_PROJECT=	latte
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--disable-static \
+		--with-topcom=${LOCALBASE} --with-4ti2=${LOCALBASE} --with-cddlib=${LOCALBASE} --with-gmp=${LOCALBASE} --with-ntl=${LOCALBASE}
 
 CONFLICTS_INSTALL=	latte p5-Math-SigFigs schilyutils # bin/count
 
