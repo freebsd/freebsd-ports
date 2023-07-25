@@ -1,10 +1,7 @@
 PORTNAME=	octave-forge-mqtt
-PORTVERSION=	0.0.3
-PORTREVISION=	3
+DISTVERSIONPREFIX=	release-
+DISTVERSION=	0.0.4
 CATEGORIES=	math
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=octave-mqtt/v${PORTVERSION}
-DISTNAME=	octave-${OCTAVE_PKGNAME}-${PORTVERSION}
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
@@ -16,6 +13,11 @@ LICENSE_FILE=	${WRKDIR}/${OCTAVE_SRC}/COPYING
 LIB_DEPENDS+=	libpaho-mqtt3a.so:net/libpaho-mqtt3
 
 USES=		autoreconf localbase octave
+USE_GITHUB=	yes
+GH_ACCOUNT=	gnu-octave
+GH_PROJECT=	octave-mqtt
+
+OCTAVE_SRC=	${GH_PROJECT}-release-${DISTVERSION}
 
 GNU_CONFIGURE=	yes
 
