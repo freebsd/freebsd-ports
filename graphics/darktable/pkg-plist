@@ -427,6 +427,7 @@ share/icons/hicolor/scalable/apps/darktable.svg
 %%NLS%%share/locale/ru/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/sq/LC_MESSAGES/darktable.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/darktable.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/darktable.mo
