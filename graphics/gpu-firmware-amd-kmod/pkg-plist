@@ -238,6 +238,7 @@
 %%POLARIS11%%/%%KMODDIR%%/amdgpu_polaris11_smc_sk_bin.ko
 %%POLARIS11%%/%%KMODDIR%%/amdgpu_polaris11_uvd_bin.ko
 %%POLARIS11%%/%%KMODDIR%%/amdgpu_polaris11_vce_bin.ko
+%%POLARIS12%%/%%KMODDIR%%/amdgpu_polaris12_32_mc_bin.ko
 %%POLARIS12%%/%%KMODDIR%%/amdgpu_polaris12_ce_2_bin.ko
 %%POLARIS12%%/%%KMODDIR%%/amdgpu_polaris12_ce_bin.ko
 %%POLARIS12%%/%%KMODDIR%%/amdgpu_polaris12_k_mc_bin.ko
@@ -454,18 +455,6 @@
 %%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_dmcub_bin.ko
 %%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_mec_bin.ko
 %%VANGOGH%%/%%KMODDIR%%/amdgpu_vangogh_sdma_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_ce_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_dmcub_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_me_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_mec2_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_mec_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_pfp_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_rlc_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_sdma_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_smc_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_sos_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_ta_bin.ko
-%%BEIGE_GOBY%%/%%KMODDIR%%/amdgpu_beige_goby_vcn_bin.ko
 %%YELLOW_CARP%%/%%KMODDIR%%/amdgpu_yellow_carp_asd_bin.ko
 %%YELLOW_CARP%%/%%KMODDIR%%/amdgpu_yellow_carp_ce_bin.ko
 %%YELLOW_CARP%%/%%KMODDIR%%/amdgpu_yellow_carp_dmcub_bin.ko

@@ -1,5 +1,6 @@
 PORTNAME=	gpu-firmware-amd-kmod
 PORTVERSION=	20230210
+PORTREVISION=	1
 CATEGORIES=	graphics
 
 MAINTAINER=	x11@FreeBSD.org
