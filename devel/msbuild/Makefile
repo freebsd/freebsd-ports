@@ -5,7 +5,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://github.com/mono/msbuild/releases/download/0.06/:bootstrap
 DISTFILES=	mono_msbuild_xplat-master-3c930fa8.zip:bootstrap
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Build platform for .NET and Visual Studio
 WWW=		https://github.com/Microsoft/msbuild
 

@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=v
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mono interface to the D-BUS messaging system
 WWW=		http://mono.github.com/dbus-sharp/
 

@@ -5,7 +5,7 @@ DISTVERSIONPREFIX=	v
 PORTREVISION=	1
 CATEGORIES=	editors
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	High-quality, full-featured hexadecimal editor
 WWW=		https://github.com/afrantzis/bless
 

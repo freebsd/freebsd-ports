@@ -4,7 +4,7 @@ PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GIO bindings not available in gtk-sharp
 WWW=		https://github.com/mono/gio-sharp
 

@@ -4,7 +4,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://download.mono-project.com/sources/${PORTNAME}/ \
 		http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	VisualBasic.NET support for Mono
 WWW=		http://www.mono-project.com/VisualBasic.NET
 

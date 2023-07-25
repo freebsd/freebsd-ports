@@ -4,7 +4,7 @@ PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://smuxi.im/jaws/data/files/
 
-MAINTAINER=	mono@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-layered IRC library
 WWW=		http://smartirc4net.meebey.net/jaws/
 
