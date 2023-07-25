@@ -1,6 +1,7 @@
 PORTNAME=	gum
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.11.0
+PORTREVISION=	1
 CATEGORIES=	devel
 
 MAINTAINER=	dave@bitboss.ca
@@ -14,20 +15,27 @@ USES=		go:modules
 GO_MODULE=	github.com/charmbracelet/gum
 
 PLIST_FILES=	bin/gum \
-		etc/bash_completion.d/gum \
-		man/man1/gum.1.gz \
+		etc/bash_completion.d/gum.bash \
+		share/fish/completions/gum.fish \
+		share/man/man1/gum.1.gz \
 		share/zsh/site-functions/_gum
 
 post-build:
-	${MKDIR} ${WRKDIR}/manpages
-	${WRKDIR}/bin/gum man > ${WRKDIR}/manpages/gum.1
+	${GO_WRKDIR_BIN}/${PORTNAME} man > ${WRKSRC}/${PORTNAME}.1
+.for SHELL in bash fish zsh
+	${GO_WRKDIR_BIN}/${PORTNAME} completion ${SHELL} > ${WRKSRC}/${SHELL}
+.endfor
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKDIR}/bin/gum ${STAGEDIR}${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKDIR}/manpages/gum.1 ${STAGEDIR}${PREFIX}/man/man1/
-	${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
-	${WRKDIR}/bin/gum completion bash > ${STAGEDIR}${PREFIX}/etc/bash_completion.d/gum
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
-	${WRKDIR}/bin/gum completion zsh > ${STAGEDIR}${PREFIX}/share/zsh/site-functions/_gum
+post-install:
+	@${MKDIR} ${STAGEDIR}${PREFIX}/etc/bash_completion.d
+	${INSTALL_DATA} ${WRKSRC}/bash \
+		${STAGEDIR}${PREFIX}/etc/bash_completion.d/${PORTNAME}.bash
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/fish/completions
+	${INSTALL_DATA} ${WRKSRC}/fish \
+		${STAGEDIR}${PREFIX}/share/fish/completions/${PORTNAME}.fish
+	@${MKDIR} ${STAGEDIR}${PREFIX}/share/zsh/site-functions
+	${INSTALL_DATA} ${WRKSRC}/zsh \
+		${STAGEDIR}${PREFIX}/share/zsh/site-functions/_${PORTNAME}
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${STAGEDIR}${PREFIX}/share/man/man1
 
 .include <bsd.port.mk>
