@@ -1,5 +1,6 @@
 PORTNAME=	abipy
-DISTVERSION=	0.9.2
+DISTVERSIONPREFIX=	v
+DISTVERSION=	0.9.3
 CATEGORIES=	science python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -20,7 +21,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plotly>0:graphics/py-plotly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pydispatcher>=2.0.5:devel/py-pydispatcher@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pymatgen>=2022.0.4:science/py-pymatgen@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pymatgen>=2022.0.14:science/py-pymatgen@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}seaborn>0:math/py-seaborn@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR} \
