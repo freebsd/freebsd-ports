@@ -10,6 +10,9 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music tracker for the Yamaha YM2608 (OPNA) sound chip
 WWW=		https://github.com/rerrahkr/BambooTracker
 
+# https://github.com/BambooTracker/BambooTracker/issues/492
+BROKEN=		incompatible with rtaudio 6.x
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
