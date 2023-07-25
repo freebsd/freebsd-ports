@@ -2299,6 +2299,7 @@ lib/wine/%%WINEARCH%%-unix/windows.media.devices.dll.so
 lib/wine/%%WINEARCH%%-unix/windows.media.speech.dll.so
 lib/wine/%%WINEARCH%%-unix/windowscodecs.dll.so
 lib/wine/%%WINEARCH%%-unix/windowscodecsext.dll.so
+%%ALSA%%lib/wine/%%WINEARCH%%-unix/winealsa.drv.so
 lib/wine/%%WINEARCH%%-unix/wineboot.exe.so
 lib/wine/%%WINEARCH%%-unix/winebrowser.exe.so
 lib/wine/%%WINEARCH%%-unix/winebus.so
@@ -3327,6 +3328,7 @@ lib/wine/%%WINEARCH%%-windows/windows.media.devices.dll
 lib/wine/%%WINEARCH%%-windows/windows.media.speech.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecs.dll
 lib/wine/%%WINEARCH%%-windows/windowscodecsext.dll
+%%ALSA%%lib/wine/%%WINEARCH%%-windows/winealsa.drv
 lib/wine/%%WINEARCH%%-windows/wineboot.exe
 lib/wine/%%WINEARCH%%-windows/winebrowser.exe
 lib/wine/%%WINEARCH%%-windows/winebus.sys
