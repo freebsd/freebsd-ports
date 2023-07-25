@@ -1,5 +1,6 @@
 PORTNAME=	lxqt-config
 PORTVERSION=	1.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	LXQT
 DIST_SUBDIR=	lxqt
@@ -17,8 +18,8 @@ LICENSE_COMB=	multi
 BUILD_DEPENDS=	${LOCALBASE}/lib/xorg/modules/input/libinput_drv.so:x11-drivers/xf86-input-libinput
 LIB_DEPENDS=	libudev.so:devel/libudev-devd
 
-USES=	cmake compiler:c++17-lang kde:5 localbase:ldflags lxqt qt:5 \
-	pkgconfig tar:xz xorg gnome
+USES=	cmake compiler:c++17-lang desktop-file-utils kde:5 localbase:ldflags \
+	lxqt qt:5 pkgconfig tar:xz xorg gnome
 USE_QT=	buildtools:build qmake:build concurrent core dbus \
 	gui linguisttools svg widgets x11extras xml
 USE_KDE=	libkscreen windowsystem
