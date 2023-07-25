@@ -1,5 +1,5 @@
 PORTNAME=	pydantic
-DISTVERSION=	1.10.11
+DISTVERSION=	1.10.12
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +15,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}typing-extensions>=4.2.0:devel/py-typing-ext
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hypothesis>0:devel/py-hypothesis@${PY_FLAVOR}
 
 USES=		cpe python
-USE_PYTHON=	distutils cython autoplist pytest # tests fail to run, see https://github.com/pydantic/pydantic/issues/4535
+USE_PYTHON=	distutils cython autoplist pytest # tests fail to run, see https://github.com/pydantic/pydantic/issues/4535, https://github.com/HypothesisWorks/hypothesis/issues/3703
 
 CPE_VENDOR=	pydantic_project
 
