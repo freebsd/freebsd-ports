@@ -37,6 +37,12 @@ GUI_USES=		qt:5
 GUI_USE=		QT=core,gui,network,widgets,buildtools:build,qmake:build
 GUI_CMAKE_BOOL=		BARRIER_BUILD_GUI
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-src_lib_net_SecureUtils.cpp
+.endif
+
 post-extract:
 	@${CP} -a ${WRKSRC_gulrak}/include ${WRKSRC}/ext/gulrak-filesystem/
 
