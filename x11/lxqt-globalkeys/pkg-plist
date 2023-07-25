@@ -59,6 +59,7 @@ share/cmake/lxqt-globalkeys/lxqt-globalkeys-targets.cmake
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_lv.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_nb_NO.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_nl.qm
+%%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_oc.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_pl.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_pt.qm
 %%LXQT_TRANSLATIONS%%/lxqt-config-globalkeyshortcuts/lxqt-config-globalkeyshortcuts_pt_BR.qm
