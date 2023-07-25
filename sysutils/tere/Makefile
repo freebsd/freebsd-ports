@@ -1,14 +1,16 @@
 PORTNAME=	tere
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.0
-PORTREVISION=	5
+DISTVERSION=	1.5.0
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Terminal file explorer
 WWW=		https://github.com/mgunyho/tere
 
-#LICENSE=	EUPL
+LICENSE=	EUPLv12
+LICENSE_NAME=	EUROPEAN UNION PUBLIC LICENCE v. 1.2
+LICENSE_PERMS=	auto-accept dist-mirror dist-sell pkg-mirror pkg-sell
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cargo
 
@@ -30,13 +32,19 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		dirs-4.0.0 \
 		dirs-sys-0.3.6 \
 		errno-0.2.8 \
+		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
+		fastrand-1.9.0 \
 		getrandom-0.2.4 \
 		heck-0.4.0 \
+		hermit-abi-0.3.1 \
+		instant-0.1.12 \
 		io-lifetimes-0.7.5 \
+		io-lifetimes-1.0.11 \
 		itoa-1.0.1 \
-		libc-0.2.126 \
+		libc-0.2.146 \
 		linux-raw-sys-0.0.46 \
+		linux-raw-sys-0.3.8 \
 		lock_api-0.4.7 \
 		log-0.4.14 \
 		memchr-2.4.1 \
@@ -50,10 +58,12 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		proc-macro2-1.0.43 \
 		quote-1.0.21 \
 		redox_syscall-0.2.10 \
+		redox_syscall-0.3.5 \
 		redox_users-0.4.0 \
 		regex-1.6.0 \
 		regex-syntax-0.6.27 \
 		rustix-0.35.9 \
+		rustix-0.37.20 \
 		rustversion-1.0.9 \
 		ryu-1.0.9 \
 		scopeguard-1.1.0 \
@@ -69,6 +79,7 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		strum-0.24.1 \
 		strum_macros-0.24.3 \
 		syn-1.0.99 \
+		tempfile-3.6.0 \
 		terminal_size-0.2.2 \
 		textwrap-0.15.0 \
 		unicode-ident-1.0.3 \
@@ -83,18 +94,27 @@ CARGO_CRATES=	aho-corasick-0.7.18 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-sys-0.36.1 \
 		windows-sys-0.42.0 \
+		windows-sys-0.48.0 \
+		windows-targets-0.48.0 \
 		windows_aarch64_gnullvm-0.42.0 \
+		windows_aarch64_gnullvm-0.48.0 \
 		windows_aarch64_msvc-0.36.1 \
 		windows_aarch64_msvc-0.42.0 \
+		windows_aarch64_msvc-0.48.0 \
 		windows_i686_gnu-0.36.1 \
 		windows_i686_gnu-0.42.0 \
+		windows_i686_gnu-0.48.0 \
 		windows_i686_msvc-0.36.1 \
 		windows_i686_msvc-0.42.0 \
+		windows_i686_msvc-0.48.0 \
 		windows_x86_64_gnu-0.36.1 \
 		windows_x86_64_gnu-0.42.0 \
+		windows_x86_64_gnu-0.48.0 \
 		windows_x86_64_gnullvm-0.42.0 \
+		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.36.1 \
-		windows_x86_64_msvc-0.42.0
+		windows_x86_64_msvc-0.42.0 \
+		windows_x86_64_msvc-0.48.0
 PLIST_FILES=	bin/${PORTNAME}
 
 post-install:
