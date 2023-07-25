@@ -4,7 +4,7 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.10.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	mail
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -88,7 +88,7 @@ SHEBANG_FILES=	src/tools/dspam_logrotate \
 		webui/cgi-bin/templates/*/strings.pl \
 		webui/cgi-bin/templates/strings.pl \
 		webui/cgi-bin/*.cgi \
-		webui/cgi-bin/*.pl
+		webui/cgi-bin/*.pl*
 
 .ifdef(GDBS)
 CFLAGS+=	-g -DDEBUG
