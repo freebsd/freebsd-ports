@@ -11,6 +11,7 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 
 USES=		cmake compiler:c++11-lang
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
