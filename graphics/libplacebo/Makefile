@@ -58,7 +58,8 @@ post-patch:
 	@${REINPLACE_CMD} "s,static:,dirs: '${LOCALBASE}/lib'\, &," \
 		${WRKSRC}/src/glsl/meson.build
 # Extract (snapshot) version from port version instead of meson.build
-	@${REINPLACE_CMD} "s/version_pretty/'${DISTVERSIONFULL}'/" \
+	@${REINPLACE_CMD} -e "s/'git'/'${FALSE}'/" \
+		-e "s/version_pretty/'${DISTVERSIONFULL}'/" \
 		${WRKSRC}/src/meson.build
 
 pre-install-TEST-on:	do-test
