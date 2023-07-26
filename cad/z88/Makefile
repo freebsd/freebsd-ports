@@ -35,6 +35,12 @@ Z88_DATA=	51.txt z88.dyn z88.fcd z88elp.txt z88i1.txt z88i2.txt z88i5.txt z88int
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	for x in ${BUILD_WRKSRC}/*; do ${REINPLACE_CMD} 's,z88v15os,Z88OS-15, ; s,gcc,${CC}, ; s,CFLAGS =,CFLAGS+=, ; s,-O2,, ; s,LDLIBSOX,LDFLAGS, ; s,LDFLAGS =,LDFLAGS+=, ; s,--copy-dt-needed-entries,,' $$x; done
 
