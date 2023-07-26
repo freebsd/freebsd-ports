@@ -1,6 +1,5 @@
 PORTNAME=	trafficserver
-PORTVERSION=	9.1.3
-PORTREVISION=	2
+PORTVERSION=	9.2.1
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
 
@@ -20,7 +19,6 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 
 USES=		compiler:c++17-lang cpe gmake libtool localbase luajit \
 		ncurses pathfix perl5 pkgconfig sqlite ssl tar:bzip2 tcl
-
 CPE_VENDOR=	apache
 CPE_PRODUCT=	traffic_server
 USE_PERL5=	build run
@@ -76,10 +74,6 @@ post-patch:
 	@${REINPLACE_CMD} -e 's/#ifdef HAVE_EVENTFD/#if defined(HAVE_EVENTFD) \&\& TS_USE_EPOLL == 1/' \
 		${WRKSRC}/src/tscore/EventNotify.cc \
 		${WRKSRC}/include/tscore/EventNotify.h
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
-	@${REINPLACE_CMD} -e 's/std::nullptr_t/nullptr_t/g' \
-		${WRKSRC}/include/tscore/Ptr.h
-.endif
 
 post-install:
 	${RMDIR} ${STAGEDIR}${DATADIR}
