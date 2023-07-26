@@ -1,4 +1,4 @@
-TIMESTAMP = 1684537014
+TIMESTAMP = 1690361789
 SHA256 (bc26a6a949f2e0d98b7bfc437d459b250900a165.tar.gz) = 24d37cf7daceff3db2fccf6ac940f9ec4bfe2f6b50ccbc2ba77c93373194a47f
 SIZE (bc26a6a949f2e0d98b7bfc437d459b250900a165.tar.gz) = 202696
 SHA256 (4a95461c4761c624f2263725aca79eeaefd36cad-js-highlights.scm) = e95592de492967123553f06eada2b4dc674263ac2c69351bb9797596a0cab203
@@ -773,3 +773,5 @@ SHA256 (Philipp-M-tree-sitter-yuck-e3d91a3c_GH0.tar.gz) = 0d89ea6a514ebe476913e8
 SIZE (Philipp-M-tree-sitter-yuck-e3d91a3c_GH0.tar.gz) = 42224
 SHA256 (maxxnino-tree-sitter-zig-8d3224c3_GH0.tar.gz) = 97476d4689d2abcec259bc5f85faca32fbd7b032f6804211255f6644a163c69c
 SIZE (maxxnino-tree-sitter-zig-8d3224c3_GH0.tar.gz) = 731628
+SHA256 (de0ef8af15945fb7f761503c615a2d6213d2fd82.patch) = 298e7daa1c7e35488e4a9c341b8952d4644935bfc4e6ff9adb563398d126e0e1
+SIZE (de0ef8af15945fb7f761503c615a2d6213d2fd82.patch) = 2385
