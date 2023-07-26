@@ -17,6 +17,12 @@ LIB_DEPENDS=	libRSSKit.so:www/rsskit
 USES=		gnustep
 USE_GNUSTEP=	back build
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Grr.app/Grr \
 		${STAGEDIR}${PREFIX}/GNUstep/System/Applications/Grr.app/Resources/ArticleOperations.grrc/ArticleOperations \
