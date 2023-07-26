@@ -195,8 +195,7 @@ CXX=            clang++${LLVM_VERSION}
 .endif
 
 .if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-IGNORE_SSL=	base openssl30 openssl31
-IGNORE_SSL_REASON=	Missing upstream support for OpenSSL 3.0.0 and later in this version
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
 .endif
 
 .include <bsd.port.pre.mk>
