@@ -1,4 +1,3 @@
-bin/mongoc-stat
 include/libmongoc-1.0/mongoc.h
 include/libmongoc-1.0/mongoc/mongoc-apm.h
 include/libmongoc-1.0/mongoc/mongoc-bulk-operation.h
@@ -95,9 +94,9 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/authentication.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/basic-troubleshooting.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/bulk.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/client-side-field-level-encryption.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/configuring_tls.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/connection-pooling.html
-%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/create-indexes.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/cursors.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/debugging.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/distinct-mapreduce.html
@@ -105,12 +104,13 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/full_index.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/gridfs.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/guides.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/in-use-encryption.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/index.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/init-cleanup.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/installing.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/lifecycle.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/logging.html
-%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/matcher.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/manage-collection-indexes.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc-common-task-examples.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_callbacks_destroy.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_callbacks_new.html
@@ -124,6 +124,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_failed_get_reply.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_failed_get_request_id.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_failed_get_server_connection_id.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_failed_get_server_connection_id_int64.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_failed_get_server_id.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_failed_get_service_id.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_failed_t.html
@@ -135,6 +136,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_started_get_operation_id.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_started_get_request_id.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_started_get_server_connection_id.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_started_get_server_connection_id_int64.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_started_get_server_id.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_started_get_service_id.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_started_t.html
@@ -146,6 +148,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_succeeded_get_reply.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_succeeded_get_request_id.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_succeeded_get_server_connection_id.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_succeeded_get_server_connection_id_int64.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_succeeded_get_server_id.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_succeeded_get_service_id.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_apm_command_succeeded_t.html
@@ -255,6 +258,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_enable_auto_encryption.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_add_key_alt_name.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_create_datakey.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_create_encrypted_collection.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_datakey_opts_destroy.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_datakey_opts_new.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_datakey_opts_set_keyaltnames.html
@@ -265,6 +269,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_delete_key.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_destroy.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_expression.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_opts_destroy.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_opts_new.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_opts_set_algorithm.html
@@ -272,7 +277,15 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_opts_set_keyaltname.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_opts_set_keyid.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_opts_set_query_type.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_opts_set_range_opts.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_opts_t.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_range_opts_destroy.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_range_opts_new.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_range_opts_set_max.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_range_opts_set_min.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_range_opts_set_precision.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_range_opts_set_sparsity.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_encrypt_range_opts_t.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_get_crypt_shared_version.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_get_key.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_encryption_get_key_by_alt_name.html
@@ -302,8 +315,6 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_get_default_database.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_get_gridfs.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_get_handshake_description.html
-%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_get_max_bson_size.html
-%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_get_max_message_size.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_get_read_concern.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_get_read_prefs.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_client_get_server_description.html
@@ -377,6 +388,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_collection_create_bulk_operation_with_opts.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_collection_create_index.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_collection_create_index_with_opts.html
+%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_collection_create_indexes_with_opts.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_collection_delete.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_collection_delete_many.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_collection_delete_one.html
@@ -563,10 +575,6 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_init.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_insert_flags_t.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_iovec_t.html
-%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_matcher_destroy.html
-%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_matcher_match.html
-%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_matcher_new.html
-%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_matcher_t.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_optional_copy.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_optional_init.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/mongoc_optional_is_set.html
@@ -779,7 +787,6 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/search.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/searchindex.js
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/tutorial.html
-%%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/using_client_side_encryption.html
 %%PORTDOCS%%%%DOCSDIR%%/mongo-c-driver/html/visual-studio-guide.html
 %%PORTDOCS%%share/man/man3/mongoc_advanced_connections.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_aggregate.3.gz
@@ -795,6 +802,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_failed_get_reply.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_failed_get_request_id.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_failed_get_server_connection_id.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_apm_command_failed_get_server_connection_id_int64.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_failed_get_server_id.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_failed_get_service_id.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_failed_t.3.gz
@@ -806,6 +814,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_started_get_operation_id.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_started_get_request_id.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_started_get_server_connection_id.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_apm_command_started_get_server_connection_id_int64.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_started_get_server_id.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_started_get_service_id.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_started_t.3.gz
@@ -817,6 +826,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_succeeded_get_reply.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_succeeded_get_request_id.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_succeeded_get_server_connection_id.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_apm_command_succeeded_get_server_connection_id_int64.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_succeeded_get_server_id.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_succeeded_get_service_id.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_apm_command_succeeded_t.3.gz
@@ -931,6 +941,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_client_enable_auto_encryption.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_add_key_alt_name.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_create_datakey.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_client_encryption_create_encrypted_collection.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_datakey_opts_destroy.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_datakey_opts_new.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_datakey_opts_set_keyaltnames.3.gz
@@ -940,6 +951,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_delete_key.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_destroy.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_expression.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_opts_destroy.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_opts_new.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_opts_set_algorithm.3.gz
@@ -947,7 +959,15 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_opts_set_keyaltname.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_opts_set_keyid.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_opts_set_query_type.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_opts_set_range_opts.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_opts_t.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_range_opts_destroy.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_range_opts_new.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_range_opts_set_max.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_range_opts_set_min.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_range_opts_set_precision.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_range_opts_set_sparsity.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_client_encryption_encrypt_range_opts_t.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_get_crypt_shared_version.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_get_key.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_encryption_get_key_by_alt_name.3.gz
@@ -977,8 +997,6 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_client_get_default_database.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_get_gridfs.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_get_handshake_description.3.gz
-%%PORTDOCS%%share/man/man3/mongoc_client_get_max_bson_size.3.gz
-%%PORTDOCS%%share/man/man3/mongoc_client_get_max_message_size.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_get_read_concern.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_get_read_prefs.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_client_get_server_description.3.gz
@@ -1052,6 +1070,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_collection_create_bulk_operation_with_opts.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_collection_create_index.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_collection_create_index_with_opts.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_collection_create_indexes_with_opts.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_collection_delete.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_collection_delete_many.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_collection_delete_one.3.gz
@@ -1099,7 +1118,6 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_common_task_examples.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_configuring_tls.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_connection_pooling.3.gz
-%%PORTDOCS%%share/man/man3/mongoc_create_indexes.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_cursor_clone.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_cursor_current.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_cursor_destroy.3.gz
@@ -1250,11 +1268,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_installing.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_iovec_t.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_logging.3.gz
-%%PORTDOCS%%share/man/man3/mongoc_matcher.3.gz
-%%PORTDOCS%%share/man/man3/mongoc_matcher_destroy.3.gz
-%%PORTDOCS%%share/man/man3/mongoc_matcher_match.3.gz
-%%PORTDOCS%%share/man/man3/mongoc_matcher_new.3.gz
-%%PORTDOCS%%share/man/man3/mongoc_matcher_t.3.gz
+%%PORTDOCS%%share/man/man3/mongoc_manage_collection_indexes.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_optional_copy.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_optional_init.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_optional_is_set.3.gz
@@ -1464,3 +1478,7 @@ libdata/pkgconfig/libmongoc-static-1.0.pc
 %%PORTDOCS%%share/man/man3/mongoc_write_concern_set_wtimeout.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_write_concern_set_wtimeout_int64.3.gz
 %%PORTDOCS%%share/man/man3/mongoc_write_concern_t.3.gz
+%%DATADIR%%/COPYING
+%%DATADIR%%/NEWS
+%%DATADIR%%/README.rst
+%%DATADIR%%/THIRD_PARTY_NOTICES
