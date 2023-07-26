@@ -1,12 +1,12 @@
 PORTNAME=	suricata
 DISTVERSION=	6.0.13
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	https://www.openinfosecfoundation.org/download/
 
 MAINTAINER=	franco@opnsense.org
 COMMENT=	High Performance Network IDS, IPS and Security Monitoring engine
-WWW=		https://suricata-ids.org
+WWW=		https://suricata.io
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
