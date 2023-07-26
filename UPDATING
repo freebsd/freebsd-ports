@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20230726:
+  AFFECTS: users of misc/openhab
+  AUTHOR: netchild@FreeBSD.org
+
+  The update to openhab 4.0.0 may require changes to the running 3.x setup.
+  Read the release notes at
+    https://github.com/openhab/openhab-distro/releases/tag/4.0.0
+  and the blog entry at
+    https://www.openhab.org/blog/2023-07-23-openhab-4-0-release.html
+  for manual changes which are required before updating the port.
+
+  After the update the pkg-message provides some more info about manual
+  changes which are required to perform before the first start of 4.0.0.
+
+  Note, this includes a switch from java 11 to java 17. You can deinstall
+  openjdk11 afterwards, if it is not needed for something else.
+
 20230723:
   AFFECTS: users of security/py-cryptography
   AUTHOR: tcberner@FreeBSD.org
