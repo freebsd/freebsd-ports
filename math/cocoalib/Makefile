@@ -16,7 +16,8 @@ LICENSE_FILE_GFDL=		${WRKSRC}/doc/COPYING
 BUILD_DEPENDS=	bash:shells/bash
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		compiler:c++11-lang shebangfix tar:tgz
+USES=		compiler:c++11-lang localbase:ldflag shebangfix tar:tgz
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 SHEBANG_GLOB=	*.sh
@@ -25,11 +26,10 @@ CXXFLAGS+=	-I${WRKSRC}/include \
 		-I${WRKSRC}/src/AlgebraicCore/TmpFactorDir \
 		-I${WRKSRC}/src/AlgebraicCore/TmpFactorDir/multivariate \
 		-I${WRKSRC}/src/AlgebraicCore/TmpFactorDir/linalg \
-		-I${LOCALBASE}/include \
 		-DCoCoA_ULONG2LONG=1 \
 		-DCoCoA_ULONGLONG2LONGLONG=1 \
 		-fPIC
-LDFLAGS+=	-L${LOCALBASE}/lib -L${BUILD_WRKSRC} -lcocoa -lgmp
+LDFLAGS+=	-L${BUILD_WRKSRC} -lcocoa -lgmp
 
 BUILD_WRKSRC=	${WRKSRC}/src/AlgebraicCore
 
