@@ -1,7 +1,7 @@
 PORTNAME=	argc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.0
-PORTREVISION=	1
+DISTVERSION=	1.8.0
+PORTREVISION=	0
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -18,17 +18,16 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	sigoden
 
-CARGO_CRATES=	ahash-0.7.6 \
-		aho-corasick-0.7.20 \
-		aho-corasick-1.0.2 \
+CARGO_CRATES=	aho-corasick-1.0.2 \
 		anstyle-1.0.1 \
-		anyhow-1.0.71 \
-		assert_cmd-2.0.11 \
+		anyhow-1.0.72 \
+		assert_cmd-2.0.12 \
 		assert_fs-1.0.13 \
 		autocfg-1.1.0 \
 		base64-0.21.2 \
 		bitflags-1.3.2 \
-		bstr-1.5.0 \
+		bitflags-2.3.3 \
+		bstr-1.6.0 \
 		cc-1.0.79 \
 		cfg-if-1.0.0 \
 		console-0.15.7 \
@@ -38,12 +37,12 @@ CARGO_CRATES=	ahash-0.7.6 \
 		dirs-5.0.1 \
 		dirs-sys-0.4.1 \
 		doc-comment-0.3.3 \
-		either-1.8.1 \
+		either-1.9.0 \
 		encode_unicode-0.3.6 \
-		equivalent-1.0.0 \
+		equivalent-1.0.1 \
 		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
-		fastrand-1.9.0 \
+		fastrand-2.0.0 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
 		futures-0.3.28 \
@@ -57,29 +56,28 @@ CARGO_CRATES=	ahash-0.7.6 \
 		futures-timer-3.0.2 \
 		futures-util-0.3.28 \
 		getrandom-0.2.10 \
-		globset-0.4.10 \
+		glob-0.3.1 \
+		globset-0.4.11 \
 		globwalk-0.8.1 \
-		hashbrown-0.12.3 \
 		hashbrown-0.14.0 \
-		hermit-abi-0.3.1 \
+		hermit-abi-0.3.2 \
 		ignore-0.4.20 \
 		indexmap-2.0.0 \
-		insta-1.30.0 \
-		instant-0.1.12 \
-		io-lifetimes-1.0.11 \
+		insta-1.31.0 \
 		itertools-0.10.5 \
-		itoa-1.0.7 \
+		itoa-1.0.9 \
 		lazy_static-1.4.0 \
 		libc-0.2.147 \
 		linked-hash-map-0.5.6 \
-		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.3 \
 		log-0.4.19 \
 		memchr-2.5.0 \
 		minimal-lexical-0.2.1 \
+		natord-1.0.9 \
 		nix-0.26.2 \
 		nom-7.1.3 \
 		normalize-line-endings-0.3.0 \
-		num-traits-0.2.15 \
+		num-traits-0.2.16 \
 		num_cpus-1.16.0 \
 		once_cell-1.18.0 \
 		option-ext-0.2.0 \
@@ -88,43 +86,42 @@ CARGO_CRATES=	ahash-0.7.6 \
 		predicates-3.0.3 \
 		predicates-core-1.0.6 \
 		predicates-tree-1.0.9 \
-		proc-macro2-1.0.63 \
-		quote-1.0.29 \
+		proc-macro2-1.0.66 \
+		quote-1.0.32 \
 		redox_syscall-0.2.16 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
-		regex-1.8.4 \
-		regex-automata-0.1.10 \
-		regex-syntax-0.7.2 \
-		rstest-0.17.0 \
-		rstest_macros-0.17.0 \
+		regex-1.9.1 \
+		regex-automata-0.3.3 \
+		regex-syntax-0.7.4 \
+		relative-path-1.8.0 \
+		rstest-0.18.1 \
+		rstest_macros-0.18.1 \
 		rustc_version-0.4.0 \
-		rustix-0.37.22 \
-		ryu-1.0.13 \
+		rustix-0.38.4 \
+		ryu-1.0.15 \
 		same-file-1.0.6 \
-		semver-1.0.17 \
-		serde-1.0.165 \
-		serde_derive-1.0.165 \
-		serde_json-1.0.99 \
+		semver-1.0.18 \
+		serde-1.0.175 \
+		serde_derive-1.0.175 \
+		serde_json-1.0.103 \
 		shell-words-1.1.0 \
 		similar-2.2.1 \
 		slab-0.4.8 \
 		smawk-0.3.1 \
 		static_assertions-1.1.0 \
-		syn-1.0.109 \
-		syn-2.0.23 \
-		tempfile-3.6.0 \
+		syn-2.0.27 \
+		tempfile-3.7.0 \
 		termtree-0.4.1 \
 		textwrap-0.16.0 \
-		thiserror-1.0.40 \
-		thiserror-impl-1.0.40 \
+		thiserror-1.0.44 \
+		thiserror-impl-1.0.44 \
 		thread_local-1.1.7 \
 		threadpool-1.8.1 \
-		unicode-ident-1.0.9 \
-		unicode-linebreak-0.1.4 \
+		unicode-ident-1.0.11 \
+		unicode-linebreak-0.1.5 \
 		unicode-segmentation-1.10.1 \
 		unicode-width-0.1.10 \
-		version_check-0.9.4 \
 		wait-timeout-0.2.0 \
 		walkdir-2.3.3 \
 		wasi-0.11.0+wasi-snapshot-preview1 \
