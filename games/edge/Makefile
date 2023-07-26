@@ -23,7 +23,7 @@ USE_GL=		glew
 USE_SDL=	sdl
 MAKEFILE=	Makefile.linux
 
-CFLAGS+=	-ffast-math
+CFLAGS+=	-ffast-math --std=c++14
 WRKSRC=		${WRKDIR}/Edge-${PORTVERSION}-source
 
 PLIST_FILES=	bin/edge %%DMDIR%%/edge.wad
