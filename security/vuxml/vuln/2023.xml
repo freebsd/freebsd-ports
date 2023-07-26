@@ -1,3 +1,35 @@
+  <vuln vid="a0321b74-031d-485c-bb76-edd75256a6f0">
+    <topic>jenkins -- Stored XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>jenkins</name>
+	<range><lt>2.416</lt></range>
+      </package>
+      <package>
+	<name>jenkins-lts</name>
+	<range><lt>2.401.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Jenkins Security Advisory:</p>
+	<blockquote cite="https://www.jenkins.io/security/advisory/2023-07-26/">
+	  <h1>Description</h1>
+	  <h5>(High) SECURITY-3188 / CVE-2023-39151</h5>
+	  <p>Stored XSS vulnerability</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-39151</cvename>
+      <url>https://www.jenkins.io/security/advisory/2023-07-26/</url>
+    </references>
+    <dates>
+      <discovery>2023-07-26</discovery>
+      <entry>2023-07-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="ab0bab3c-2927-11ee-8608-07b8d3947721">
     <topic>gitea -- Disallow dangerous URL schemes</topic>
     <affects>
