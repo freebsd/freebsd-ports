@@ -15,8 +15,8 @@ WWW=		https://github.com/ValveSoftware/gamescope
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	glslangValidator:graphics/glslang \
-		evdev-proto>0:devel/evdev-proto \
+BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
+		glslangValidator:graphics/glslang \
 		libliftoff>=0.4.0<0.5.0:graphics/libliftoff \
 		vulkan-headers>0:graphics/vulkan-headers \
 		wayland-protocols>=1.17:graphics/wayland-protocols \
@@ -38,10 +38,10 @@ USE_XORG=	x11 xcomposite xdamage xext xfixes xrender xres xtst xxf86vm
 GH_ACCOUNT=	ValveSoftware
 GH_TUPLE=	nothings:stb:af1a5bc:stb/subprojects/stb \
 		Joshua-Ashton:vkroots:e6b8949:vkroots/subprojects/vkroots
+MESON_ARGS=	--force-fallback-for= # allow system wlroots + libliftoff
 PLIST_FILES=	bin/${PORTNAME} \
 		lib/libVkLayer_FROG_${PORTNAME}_wsi.so \
 		share/vulkan/implicit_layer.d/VkLayer_FROG_${PORTNAME}_wsi.json
-MESON_ARGS=	--force-fallback-for= # allow system wlroots + libliftoff
 
 OPTIONS_DEFINE=	PIPEWIRE
 OPTIONS_DEFAULT=PIPEWIRE
