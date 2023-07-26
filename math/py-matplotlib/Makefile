@@ -39,6 +39,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}packaging>=20.0:devel/py-packaging@${PY_FLAVOR}
 
 USES=		compiler:c++11-lib gettext gnome localbase pkgconfig python shebangfix uniquefiles:dirs
+USE_CXXSTD=	c++14
 USE_PYTHON=	distutils
 
 PLIST_SUB=	VER=${PORTVERSION}
