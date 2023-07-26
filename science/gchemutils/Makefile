@@ -24,6 +24,7 @@ PORTSCOUT=	limitw:1,even
 USES=		compiler:c++11-lang desktop-file-utils gettext gl gmake gnome \
 		libtool:keepla localbase:ldflags pathfix pkgconfig \
 		shared-mime-info tar:xz xorg
+USE_CXXSTD=	c++14
 USE_XORG=	x11
 USE_GNOME=	cairo gtk30 intlhack libgsf libxml2
 USE_GL=		gl
