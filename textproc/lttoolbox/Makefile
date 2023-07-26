@@ -25,10 +25,10 @@ INSTALL_TARGET=	install-strip
 CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 LDFLAGS+=	-lpthread
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-llvm16
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

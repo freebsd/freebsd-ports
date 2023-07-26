@@ -94,7 +94,7 @@ NLS_CONFIGURE_ON=	--with-intl=system-icu
 
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if (defined(PPC_ABI) && ${PPC_ABI} == ELFv2) || ${ARCH} == powerpc64le
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-common.gypi
@@ -108,7 +108,7 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tools_v8__gypfiles_v8.gyp
 CONFIGURE_ARGS+=	--openssl-no-asm
 .endif
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
 .endif
 
@@ -134,4 +134,4 @@ post-install-DTRACE-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/lib/dtrace
 	${INSTALL_DATA} ${WRKSRC}/out/Release/node.d ${STAGEDIR}${PREFIX}/lib/dtrace
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

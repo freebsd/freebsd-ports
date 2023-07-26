@@ -129,10 +129,10 @@ pre-build:
 	@(${RM} ${WRKSRC}/x264_config.h)
 .endif
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

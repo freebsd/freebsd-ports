@@ -35,22 +35,21 @@ MAKE_ARGS=	ignore_unknown_variables=1 sdl2=1
 PLIST_FILES=	bin/d1x-rebirth \
 		bin/d2x-rebirth
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} != powerpc64 && ${ARCH} != riscv64
 MAKE_ARGS+=	lto=1
 .endif
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 150
 CPPFLAGS+=	-Wno-error=unused-but-set-parameter -Wno-error=unused-but-set-variable
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${COMPILER_VERSION} >= 160
 CPPFLAGS+=	-Wno-error=unused-result
+.endif
 .endif
 
 post-install:
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/d1x-rebirth \
 		${STAGEDIR}${PREFIX}/bin/d2x-rebirth
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

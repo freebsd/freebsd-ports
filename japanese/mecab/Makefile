@@ -15,6 +15,7 @@ BROKEN_mips=		fails to link: Nonrepresentable section on output
 BROKEN_mips64=		fails to link: Nonrepresentable section on output
 
 USES=		gettext-tools iconv libtool localbase perl5
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 USE_PERL5=	build
 
@@ -27,12 +28,6 @@ PORTDOCS=	AUTHORS README *.html
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-CPPFLAGS+=  -Dregister=
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} '/^libmecab_la_LIBADD =/s/$$/ $$(LTLIBICONV)/' \
 		${WRKSRC}/src/Makefile.in
@@ -40,16 +35,14 @@ post-patch:
 		-e '/CFLAGS/s|-O3|${CFLAGS}|' \
 		-e '/CXXFLAGS/s|-O3|${CXXFLAGS}|' \
 		${WRKSRC}/configure
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
-		${WRKSRC}/src/dictionary.cpp
-.endif
 
 post-install:
+	${MV} ${STAGEDIR}${PREFIX}/etc/mecabrc \
+		${STAGEDIR}${PREFIX}/etc/mecabrc.sample
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:N*.html:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${STAGEDIR}${DOCSDIR}
-	${MV} ${STAGEDIR}${PREFIX}/etc/mecabrc \
-		${STAGEDIR}${PREFIX}/etc/mecabrc.sample
 
 .include <bsd.port.mk>

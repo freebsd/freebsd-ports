@@ -12,6 +12,7 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		cpe gl gmake localbase:ldflags xorg
+USE_CXXSTD=	c++14
 CPE_VENDOR=	${PORTNAME}_project
 USE_GL=		glu
 USE_XORG=	xt xi xmu xext x11
@@ -22,12 +23,6 @@ CXXFLAGS+=	-fPIC
 LDFLAGS+=	-lpthread
 
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-src-js-jsBSD.cxx
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-CPPFLAGS+=  -Dregister=
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread||g ; \

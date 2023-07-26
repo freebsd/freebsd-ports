@@ -37,8 +37,8 @@ MAKE_ARGS+=	ON_GNU_OPTIMIZER_FLAGS="-g -fPIC"
 .endif
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-	@${REINPLACE_CMD} -e 's|D_GNU_SOURCE -I|D_GNU_SOURCE -Dregister= -I|g' \
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+	@${REINPLACE_CMD} -e 's|D_GNU_SOURCE -I|D_GNU_SOURCE --std=c++14 -I|g' \
 		${WRKSRC}/makefile
 .endif
 

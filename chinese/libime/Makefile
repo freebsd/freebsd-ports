@@ -36,10 +36,10 @@ OPENGRAM_LM_TAR=	lm_sc.arpa-20220810.tar.xz
 OPENGRAM_DICT_TAR=	dict-20220810.tar.xz
 TABLE_DICT_TAR=		table.tar.gz
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
 		${WRKSRC}/src/libime/core/kenlm/lm/trie_sort.hh \
 		${WRKSRC}/src/libime/core/kenlm/util/joint_sort.hh \
@@ -52,4 +52,4 @@ post-extract:
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${OPENGRAM_DICT_TAR} ${WRKSRC}/data
 	${CP} ${DISTDIR}/${DIST_SUBDIR}/${TABLE_DICT_TAR} ${WRKSRC}/data
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

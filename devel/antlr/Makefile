@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 CONFLICTS=	pccts
 
 USES=		compiler:c++11-lang gmake
+USE_CXXSTD=	c++14
 USE_JAVA=	yes
 
 HAS_CONFIGURE=	yes
@@ -35,16 +36,8 @@ PORTDOCS=	ANTLRException.gif closure.gif cpp-runtime.html \
 
 OPTIONS_DEFINE=	DOCS
 
-.include <bsd.port.options.mk>
-
 post-extract:
 	(cd ${WRKSRC} && ${CP} antlr.jar antlrall.jar)
-
-post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-	@${REINPLACE_CMD} -e 's|binary_function|__binary_function|' \
-		${WRKSRC}/lib/cpp/antlr/CharScanner.hpp
-.endif
 
 do-install:
 	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}

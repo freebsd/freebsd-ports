@@ -16,6 +16,7 @@ LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libpng.so:graphics/png
 
 USES=		gnome jpeg localbase:ldflags pkgconfig waf xorg
+USE_CXXSTD=	c++14
 USE_GNOME=	cairo
 USE_XORG=	x11 xft
 USE_LDCONFIG=	yes
@@ -23,12 +24,6 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_SUB=	SHLIB_VER=${PORTVERSION:R}
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-CPPFLAGS+=  -Dregister=
-.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e " \

@@ -15,6 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		autoreconf:build compiler:c11 gmake
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	POV-Ray
 
@@ -97,10 +98,6 @@ post-patch:
 	${REINPLACE_CMD} -e 's|@@EXAMPLESDIR@@|${EXAMPLESDIR}|' \
 		-e 's|@@ETCDIR@@|${ETCDIR}|' \
 		${WRKSRC}/unix/povray.conf
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-	@${REINPLACE_CMD} -e 's|auto_ptr|unique_ptr|' \
-		${WRKSRC}/source/backend/render/trace.cpp
-.endif
 
 pre-configure:
 	cd ${WRKSRC}/unix && ./prebuild.sh

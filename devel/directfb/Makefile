@@ -21,6 +21,7 @@ USE_LDCONFIG=	yes
 USE_PERL5=	build
 
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++14
 CONFIGURE_ARGS=	--disable-osx --disable-extra-warnings --disable-profiling \
 		--disable-debug --enable-debug-support --disable-trace \
 		--enable-text --enable-gettid --enable-network \
@@ -63,12 +64,8 @@ X11_CONFIGURE_ENABLE=	x11
 
 .include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 150
 CFLAGS+=	-Wno-error=int-conversion
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-CPPFLAGS+=  -Dregister=
 .endif
 
 # assembly files use old split syntax which clang doesn't like

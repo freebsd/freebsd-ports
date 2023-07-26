@@ -11,6 +11,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		makeinfo tar:xz
+USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
 
@@ -30,14 +31,6 @@ DOC_EXAMPLES=	README.example cmdline1.c cmdline1.h cmdline2.c cmdline2.h \
 		main1.cc main2.c multiple_example.c sample1.ggo sample2.ggo
 TESTS_EXAMPLES=	test_manual_help.c test_manual_help_cmd.c \
 		test_manual_help_cmd.ggo test_manual_help_cmd.h
-
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
-		${WRKSRC}/src/gm_utils.h
-.endif
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 \

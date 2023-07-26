@@ -88,9 +88,9 @@ X11_PLIST_SUB_OFF=	DESKTOP='@comment ' \
 
 TIMIDITY_CFG=	${LOCALBASE}/share/timidity/timidity.cfg
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
@@ -99,4 +99,4 @@ post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocp/*.so
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/ocp/autoload/*.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

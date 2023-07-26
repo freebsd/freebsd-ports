@@ -57,9 +57,9 @@ CLIENT_USE=		GL=glu XORG=x11,xxf86dga,xxf86vm
 
 LIBDIR=		${PREFIX}/lib/${PORTNAME}
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
@@ -91,4 +91,4 @@ do-install-DEDICATED-on:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME}-ded \
 		${STAGEDIR}${PREFIX}/bin/${PORTNAME}-ded
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

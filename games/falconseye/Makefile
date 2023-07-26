@@ -34,10 +34,9 @@ NETHACKCONFIG=	${FILESDIR}/x-config
 
 .if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400079 || ( ${OSVERSION} >= 1302505 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=int-conversion
-.endif
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 )
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 .endif
 
 post-patch:

@@ -14,6 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libtiff.so:graphics/tiff
 
 USES=		cpe gmake iconv jpeg libtool
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	djvulibre_project
@@ -37,12 +38,6 @@ ANY2DJVU_RUN_DEPENDS=	curl:ftp/curl
 DESKTOPFILES_DESC=	Install icons and mime types
 DESKTOPFILES_CONFIGURE_ENABLE=	desktopfiles
 DESKTOPFILES_USES=	gnome
-
-.include <bsd.port.options.mk>
-
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-CPPFLAGS+=  -Dregister=
-.endif
 
 post-patch:
 # Remove custom optimization compiler flags

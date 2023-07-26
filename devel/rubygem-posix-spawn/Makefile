@@ -16,7 +16,7 @@ PLIST_FILES=	bin/posix-spawn-benchmark
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 CONFIGURE_ARGS+=	--with-cflags="-Wno-error=incompatible-function-pointer-types"
 .endif
 

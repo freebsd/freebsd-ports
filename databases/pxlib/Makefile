@@ -11,26 +11,25 @@ LICENSE=	GPLv2
 
 BUILD_DEPENDS=	p5-XML-Parser>=0:textproc/p5-XML-Parser
 
-USES=		gmake gnome iconv libtool pathfix perl5 pkgconfig
+USES=		gmake gnome iconv libtool localbase:ldflags pathfix perl5 pkgconfig
 USE_GNOME=	intltool
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	MANPAGES NLS
 OPTIONS_SUB=	yes
 
 MANPAGES_BUILD_DEPENDS=	docbook-to-man:textproc/docbook-to-man \
 			docbook2man:textproc/docbook-utils
-NLS_CONFIGURE_OFF=	--disable-nls
 NLS_USES=	gettext
-INSTALL_TARGET=	install-strip
+NLS_CONFIGURE_OFF=	--disable-nls
 
 .include <bsd.port.options.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 

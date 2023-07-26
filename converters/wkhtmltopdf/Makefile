@@ -78,11 +78,9 @@ post-patch:
 	${ECHO} 'LIBS+= -lcrypto' >>${WRKSRC}/src/pdf/pdf.pro
 	${MKDIR} ${WRKSRC}/build/app ${WRKSRC}/build/qt \
 		${WRKSRC}/build/wkhtmltox
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-	${REINPLACE_CMD} -e "s|register int|int|g" \
-		${PATCH_WRKSRC}/src/corelib/kernel/qcore_unix_p.h
-	${REINPLACE_CMD} -e "s|register UWORD32|UWORD32|g" \
-		${PATCH_WRKSRC}/../qt-5db36ec/src/3rdparty/md5/md5.cpp
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+	@${FIND} ${PATCH_WRKSRC}/../qt-5db36ec -name "*.cpp" -o -name "*.h" | \
+		${XARGS} ${REINPLACE_CMD} -e 's|register ||g'
 .endif
 
 

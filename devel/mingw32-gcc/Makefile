@@ -83,7 +83,7 @@ INFO+=		libquadmath
 .endif
 INSTALL_TARGET=	install-strip
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 CPPFLAGS+=  -Wno-error=increment-bool \
 			-Dregister=
 .endif

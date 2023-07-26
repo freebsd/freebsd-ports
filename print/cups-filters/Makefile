@@ -133,9 +133,10 @@ PSPOPPLER_RUN_DEPENDS=		pdftops:graphics/poppler-utils
 PSPOPPLER_CONFIGURE_ON=		--with-pdftops=pdftops
 PSPOPPLER_DESC=			Poppler pdftops(1)
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+#.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
 CFLAGS+=	-Wno-error=dynamic-exception-spec
 .endif
 
@@ -151,4 +152,4 @@ post-install:
 	@${MV} ${STAGEDIR}${PREFIX}/etc/cups/cups-browsed.conf \
 		${STAGEDIR}${PREFIX}/etc/cups/cups-browsed.conf.sample
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

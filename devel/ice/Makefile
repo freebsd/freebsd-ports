@@ -19,6 +19,7 @@ MAKE_JOBS_UNSAFE=	yes
 LIB_DEPENDS=		libexpat.so:textproc/expat2 \
 			libmcpp.so:devel/mcpp
 USES+=			compiler:c++11-lang ssl
+USE_CXXSTD=	c++11
 .else
 LIB_VRS=		${PORTVERSION:R:S|.||g}
 LIB_DEPENDS+=		libIce.so.${LIB_VRS}:devel/ice
@@ -60,9 +61,6 @@ MAKE_ENV+=		NOTESTS=yes
 
 .if ${SLAVE_PORT} == "no"
 MAKE_ENV+=		LD_LIBRARY_PATH=${WRKSRC}/cpp/lib:$$LD_LIBRARY_PATH
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-USE_CXXSTD=	c++11
-.endif
 .endif
 
 .include <bsd.port.pre.mk>

@@ -15,6 +15,7 @@ GH_ACCOUNT=	SFML
 GH_PROJECT=	SFML
 
 USES=		cmake compiler:c++11-lang
+USE_CXXSTD=	c++14
 CMAKE_ARGS=	-DSFML_INSTALL_PKGCONFIG_FILES=ON \
 		-DSFML_USE_SYSTEM_DEPS=ON
 USE_LDCONFIG=	yes
@@ -57,14 +58,6 @@ DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
 DOXYGEN_IMPLIES=	DOCS
 
 EXAMPLES_CMAKE_BOOL=	SFML_BUILD_EXAMPLES
-
-.include <bsd.port.options.mk>
-
-post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
-	@${REINPLACE_CMD} -e 's|auto_ptr|unique_ptr|' \
-		${WRKSRC}/src/SFML/Audio/AudioDevice.cpp
-.endif
 
 post-install:
 	@${RM} ${STAGEDIR}${PREFIX}/*.pc

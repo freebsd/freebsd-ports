@@ -47,7 +47,7 @@ CFLAGS+=	-I${LOCALBASE}/include/utf8cpp
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
 		${WRKSRC}/apertium/perceptron_spec.h
 .endif

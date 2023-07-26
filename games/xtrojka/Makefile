@@ -19,7 +19,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 .include <bsd.port.options.mk>
 
 post-patch:
-.if ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400091
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
 	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS=-Wno-error=incompatible-function-pointer-types |g' \
 		${WRKSRC}/Makefile
 .endif
