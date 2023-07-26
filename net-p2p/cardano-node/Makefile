@@ -1,5 +1,5 @@
 PORTNAME=	cardano-node
-PORTVERSION=	8.1.1
+PORTVERSION=	8.1.2
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://input-output-hk.github.io/cardano-haskell-packages/package/:chap
 
@@ -23,7 +23,7 @@ GH_ACCOUNT=	input-output-hk
 
 GH_TUPLE+=	input-output-hk:libsodium:${LIBSODIUM_HASH}:sodium
 
-CARDANO_NODE_HASH=	6f79e5c3ea109a70cd01910368e011635767305a
+CARDANO_NODE_HASH=	d2d90b48c5577b4412d5c9c9968b55f8ab4b9767
 LIBSODIUM_HASH=		dbb48cce5429cb6585c9034f002568964f1ce567
 
 USE_RC_SUBR=		cardano_node
@@ -39,7 +39,7 @@ USE_CABAL=	Diff-0.4.1 \
 		HUnit-1.6.2.0 \
 		Histogram-0.1.0.2 \
 		HsOpenSSL-0.11.7.5 \
-		ListLike-4.7.8 \
+		ListLike-4.7.8_1 \
 		MonadRandom-0.6_3 \
 		OneTuple-0.3.1_3 \
 		Only-0.1_1 \
@@ -68,7 +68,7 @@ USE_CABAL=	Diff-0.4.1 \
 		async-extras-0.1.3.2 \
 		async-timer-0.1.4.1 \
 		atomic-primops-0.8.4 \
-		attoparsec-0.14.4_3 \
+		attoparsec-0.14.4_4 \
 		attoparsec-iso8601-1.1.0.0_1 \
 		auto-update-0.1.6 \
 		barbies-2.0.4.0 \
@@ -78,8 +78,8 @@ USE_CABAL=	Diff-0.4.1 \
 		base-orphans-0.9.0 \
 		base16-bytestring-1.0.2.0 \
 		base58-bytestring-0.1.0 \
-		base64-bytestring-1.2.1.0 \
-		base64-bytestring-type-1.0.1_17 \
+		base64-bytestring-1.2.1.0_1 \
+		base64-bytestring-type-1.0.1_18 \
 		basement-0.0.15 \
 		bech32-1.1.2 \
 		bifunctors-5.5.15 \
@@ -88,8 +88,8 @@ USE_CABAL=	Diff-0.4.1 \
 		binary-orphans-1.0.4.1_2 \
 		bitvec-1.1.4.0 \
 		blaze-builder-0.4.2.2_1 \
-		blaze-html-0.9.1.2_2 \
-		blaze-markup-0.8.2.8_4 \
+		blaze-html-0.9.1.2_3 \
+		blaze-markup-0.8.2.8_5 \
 		boring-0.2.1 \
 		brick-0.73 \
 		bsb-http-chunked-0.0.0.4_3 \
@@ -133,7 +133,7 @@ USE_CABAL=	Diff-0.4.1 \
 		cardano-slotting-0.1.1.1:chap \
 		cardano-strict-containers-0.1.2.1:chap \
 		case-insensitive-1.2.1.0 \
-		cassava-0.5.3.0_1 \
+		cassava-0.5.3.0_2 \
 		cborg-0.2.8.0_3 \
 		cereal-0.5.8.3 \
 		charset-0.3.9 \
@@ -237,7 +237,7 @@ USE_CABAL=	Diff-0.4.1 \
 		http-api-data-0.5_1 \
 		http-client-0.7.13.1_1 \
 		http-client-tls-0.3.6.1 \
-		http-conduit-2.3.8 \
+		http-conduit-2.3.8_1 \
 		http-date-0.0.11 \
 		http-media-0.8.0.0_8 \
 		http-types-0.12.3 \
@@ -251,8 +251,8 @@ USE_CABAL=	Diff-0.4.1 \
 		io-classes-1.1.0.0 \
 		io-classes-mtl-0.1.0.1_1 \
 		io-sim-1.1.0.0 \
-		io-streams-1.5.2.2_1 \
-		io-streams-haproxy-1.0.1.0_7 \
+		io-streams-1.5.2.2_2 \
+		io-streams-haproxy-1.0.1.0_8 \
 		iohk-monitoring-0.1.11.3:chap \
 		iproute-1.7.12 \
 		isomorphism-class-0.1.0.9 \
@@ -261,7 +261,7 @@ USE_CABAL=	Diff-0.4.1 \
 		katip-0.8.7.4 \
 		lazy-search-0.1.3.0 \
 		lazysmallcheck-0.6 \
-		lens-5.2.2 \
+		lens-5.2.2_1 \
 		libyaml-0.1.2_1 \
 		lifted-async-0.10.2.4 \
 		lifted-base-0.2.3.12 \
@@ -281,7 +281,7 @@ USE_CABAL=	Diff-0.4.1 \
 		microlens-0.4.13.1 \
 		microlens-mtl-0.2.0.3 \
 		microlens-th-0.4.3.13 \
-		microstache-1.0.2.3_1 \
+		microstache-1.0.2.3_2 \
 		mime-mail-0.5.1 \
 		mime-types-0.1.1.0 \
 		mmorph-1.2.0_3 \
@@ -306,7 +306,7 @@ USE_CABAL=	Diff-0.4.1 \
 		openssl-streams-1.2.3.0_1 \
 		optparse-applicative-0.17.0.0 \
 		optparse-applicative-fork-0.16.2.0:chap \
-		optparse-generic-1.5.0 \
+		optparse-generic-1.5.0_1 \
 		ouroboros-consensus-0.7.0.0:chap \
 		ouroboros-consensus-cardano-0.6.0.0:chap \
 		ouroboros-consensus-diffusion-0.6.0.0_2:chap \
@@ -324,9 +324,9 @@ USE_CABAL=	Diff-0.4.1 \
 		pem-0.2.4 \
 		pipes-4.3.16_6 \
 		plutus-core-1.5.0.1:chap \
-		plutus-ledger-api-1.5.0.0:chap \
+		plutus-ledger-api-1.5.0.1:chap \
 		plutus-tx-1.5.0.0:chap \
-		polyparse-1.13_6 \
+		polyparse-1.13_7 \
 		pretty-show-1.10 \
 		prettyprinter-1.7.1 \
 		prettyprinter-ansi-terminal-1.1.3 \
@@ -348,10 +348,10 @@ USE_CABAL=	Diff-0.4.1 \
 		readable-0.3.1_1 \
 		recursion-schemes-5.2.2.4_2 \
 		recv-0.1.0 \
-		reducers-3.12.4_3 \
+		reducers-3.12.4_4 \
 		reflection-2.1.7 \
-		regex-base-0.94.0.2_1 \
-		regex-posix-0.96.0.1_1 \
+		regex-base-0.94.0.2_2 \
+		regex-posix-0.96.0.1_2 \
 		resourcet-1.3.0 \
 		safe-0.3.19 \
 		safe-exceptions-0.1.7.3 \
@@ -361,7 +361,7 @@ USE_CABAL=	Diff-0.4.1 \
 		semigroupoids-5.3.7_1 \
 		semigroups-0.20 \
 		serialise-0.2.6.0_3 \
-		servant-0.19.1_1 \
+		servant-0.19.1_2 \
 		servant-server-0.19.2.0.0.0.0.1_1:chap \
 		set-algebra-1.1.0.0:chap \
 		show-combinators-0.2.0.0_2 \
@@ -374,8 +374,8 @@ USE_CABAL=	Diff-0.4.1 \
 		small-steps-test-1.0.0.0:chap \
 		smtp-mail-0.3.0.0 \
 		snap-blaze-0.2.1.5 \
-		snap-core-1.0.5.1_1 \
-		snap-server-1.1.2.1_1 \
+		snap-core-1.0.5.1_2 \
+		snap-server-1.1.2.1_2 \
 		socks-0.6.1 \
 		some-1.0.4.1 \
 		sop-core-0.5.0.2_2 \
@@ -423,7 +423,7 @@ USE_CABAL=	Diff-0.4.1 \
 		th-reify-many-0.1.10 \
 		th-utilities-0.2.5.0 \
 		these-1.1.1.1_6 \
-		threepenny-gui-0.9.4.0_1 \
+		threepenny-gui-0.9.4.0_2 \
 		time-compat-1.9.6.1_5 \
 		time-manager-0.0.0_1 \
 		time-units-1.0.0 \
@@ -432,8 +432,8 @@ USE_CABAL=	Diff-0.4.1 \
 		transformers-base-0.4.6 \
 		transformers-compat-0.6.6_1 \
 		transformers-except-0.1.3 \
-		tree-diff-0.3.0.1_2 \
-		trifecta-2.1.2_2 \
+		tree-diff-0.3.0.1_3 \
+		trifecta-2.1.2_3 \
 		type-equality-1_5 \
 		typed-process-0.2.11.0 \
 		typed-protocols-0.1.0.6:chap \
@@ -456,7 +456,7 @@ USE_CABAL=	Diff-0.4.1 \
 		vault-0.3.1.5_3 \
 		vector-0.12.3.1_4 \
 		vector-algorithms-0.9.0.1.0.0.0.0.1_1:chap \
-		vector-binary-instances-0.2.5.2_4 \
+		vector-binary-instances-0.2.5.2_5 \
 		vector-map-1.0.1.0:chap \
 		vector-th-unbox-0.2.2_4 \
 		void-0.7.3 \
@@ -477,10 +477,10 @@ USE_CABAL=	Diff-0.4.1 \
 		x509-store-1.6.9 \
 		x509-system-1.6.7 \
 		x509-validation-1.6.12 \
-		yaml-0.11.11.0_1 \
-		zlib-0.6.3.0_1 \
+		yaml-0.11.11.0_2 \
+		zlib-0.6.3.0_2 \
 		zlib-bindings-0.1.1.5_2
-
+		
 CABAL_PROJECT=		append
 CABAL_EXECUTABLES=	cardano-node cardano-cli cardano-submit-api cardano-tracer
 CABAL_REPOSITORIES=	chap

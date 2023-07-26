@@ -98,7 +98,7 @@ rcvar="${name}_enable"
 command=%%PREFIX%%/bin/cardano-node
 
 cardano_deployment_url="https://raw.githubusercontent.com/cardano-bsd-alliance/freebsd-ports-cardano-artifacts/master/cardano-node"
-cardano_config_files="config byron-genesis shelley-genesis alonzo-genesis topology submit-api-config"
+cardano_config_files="config byron-genesis shelley-genesis alonzo-genesis conway-genesis topology submit-api-config"
 cardano_networks="mainnet preview preprod"
 
 start_cmd="cardano_node_start"
