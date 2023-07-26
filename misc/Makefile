@@ -396,6 +396,7 @@
     SUBDIR += py-SimpleSoapy
     SUBDIR += py-SoapySDR
     SUBDIR += py-alive-progress
+    SUBDIR += py-anndata
     SUBDIR += py-apache-beam
     SUBDIR += py-ascii-magic
     SUBDIR += py-boost-histogram
