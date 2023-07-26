@@ -1,6 +1,6 @@
 PORTNAME=	helix
 DISTVERSION=	23.05
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	https://git.sr.ht/~ecmma/tree-sitter-hare/archive/:treesitterhare \
 		https://raw.githubusercontent.com/tree-sitter/tree-sitter-javascript/${TREE_SITTER_JSHIGH_REV}/queries/highlights.scm?file=/:jshigh \
@@ -9,6 +9,10 @@ DISTFILES=	${TREE_SITTER_HARE_REV}.tar.gz:treesitterhare \
 		${TREE_SITTER_JSHIGH_REV}-js-highlights.scm:jshigh \
 		${TREE_SITTER_TSHIGH_REV}-ts-highlights.scm:tshigh
 EXTRACT_ONLY=	${DISTFILES:N*\:*high:C/:[^:]+$//}
+
+PATCHFILES=	de0ef8af15945fb7f761503c615a2d6213d2fd82.patch
+PATCH_DIST_STRIP=	-p1
+PATCH_SITES=	https://github.com/helix-editor/helix/commit/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Post-modern modal text editor
