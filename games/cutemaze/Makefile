@@ -1,5 +1,6 @@
 PORTNAME=	cutemaze
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/${PORTNAME}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	ghostwriter
 DISTVERSION=	2.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors kde
 
 MAINTAINER=	madpilot@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	qmediamanager
 DISTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 
 MAINTAINER=	jwb@FreeBSD.org

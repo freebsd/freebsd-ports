@@ -1,5 +1,6 @@
 PORTNAME=	obs-streamfx
 DISTVERSION=	0.12.0b299
+PORTREVISION=	1
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	connectagram
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/connectagram/
 

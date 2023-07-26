@@ -1,5 +1,6 @@
 PORTNAME=	vtk
 DISTVERSION=	9.2.6
+PORTREVISION=	1
 CATEGORIES=	math graphics
 MASTER_SITES=	https://vtk.org/files/release/${VTK_SHORT_VER}/
 PKGNAMESUFFIX=	9
