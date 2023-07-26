@@ -19,7 +19,7 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libhdf5.so:science/hdf5
 
-USES=		cmake cpe localbase:ldflags pkgconfig
+USES=		cmake compiler:c++14-lang cpe localbase:ldflags pkgconfig
 USE_GITHUB=	yes
 GH_ACCOUNT=	WeChatCV:wechat
 GH_PROJECT=	opencv_contrib:contrib \
@@ -218,9 +218,6 @@ _IPPICV_amd64=		ippicv/ippicv_2020_lnx_intel64_20191018_general.tgz
 
 .if ${ARCH} == powerpc64le && defined(MACHINE_CPU) && ${MACHINE_CPU:Mvsx3}
 CMAKE_ARGS+=		-DCPU_BASELINE:STRING="VSX;VSX3;"
-USES+=			compiler:gcc-c++11-lib
-.else
-USES+=			compiler:c++14-lang
 .endif
 
 post-extract:
