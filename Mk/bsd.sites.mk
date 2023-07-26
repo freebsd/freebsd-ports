@@ -585,9 +585,6 @@ MASTER_SITE_GNOME+= \
 .if !defined(IGNORE_MASTER_SITE_GIMP)
 MASTER_SITE_GIMP+= \
 	http://gimp.mirrors.hoobly.com/pub/%SUBDIR%/ \
-	http://gimper.net/downloads/pub/%SUBDIR%/ \
-	http://mirror.hessmo.com/gimp/pub/%SUBDIR%/ \
-	http://de-mirror.gimper.net/pub/%SUBDIR%/ \
 	http://gimp.afri.cc/pub/%SUBDIR%/ \
 	https://download.gimp.org/pub/%SUBDIR%/
 .endif
