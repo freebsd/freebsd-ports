@@ -10,9 +10,6 @@ WWW=		https://www.archiveopteryx.org/
 
 LICENSE=	MIT
 
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	error: 'SSL_CTX_use_RSAPrivateKey_file' is deprecated
-
 BUILD_DEPENDS=	jam:devel/jam
 
 USES=		compiler perl5 ssl tar:bzip2
@@ -44,6 +41,10 @@ OPTIONS_DEFINE=	DOCS
 .if ${CHOSEN_COMPILER_TYPE} == clang
 JAMARG+=	"-sCLANG=1"
 .endif
+.endif
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L"
 .endif
 
 post-patch:
