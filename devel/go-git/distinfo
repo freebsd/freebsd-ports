@@ -1,5 +1,5 @@
-TIMESTAMP = 1689965775
-SHA256 (go/devel_go-git/go-git-v5.8.0/v5.8.0.mod) = 862417866cd254282cf04a155bcaca1cf57a83282954efe18c44e283753babdd
-SIZE (go/devel_go-git/go-git-v5.8.0/v5.8.0.mod) = 1458
-SHA256 (go/devel_go-git/go-git-v5.8.0/v5.8.0.zip) = cefb1f73397a7b936c1e256b3da23731656a766bedb1d8ce8c09aa293d19b983
-SIZE (go/devel_go-git/go-git-v5.8.0/v5.8.0.zip) = 689817
+TIMESTAMP = 1690369110
+SHA256 (go/devel_go-git/go-git-v5.8.1/v5.8.1.mod) = eecd79536d21650102cf48aa58660ea6e099f0be17f2b565a9e0ee293474bc35
+SIZE (go/devel_go-git/go-git-v5.8.1/v5.8.1.mod) = 1579
+SHA256 (go/devel_go-git/go-git-v5.8.1/v5.8.1.zip) = c990c1a2c8a5f176218f31ec44525972a89440025b4012fd78c9469fea37bd9b
+SIZE (go/devel_go-git/go-git-v5.8.1/v5.8.1.zip) = 692631
