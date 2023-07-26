@@ -1,5 +1,5 @@
 PORTNAME=	PySCeS
-DISTVERSION=	1.1.0
+DISTVERSION=	1.1.1
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,7 @@ DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
 
 MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Python Simulator for Cellular Systems
-WWW=		http://pysces.sourceforge.net/
+WWW=		https://pysces.sourceforge.net/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENCE.txt
@@ -19,10 +19,11 @@ PY_EXTRA=	${PYTHON_PKGNAMEPREFIX}python-libsbml>0:biology/py-python-libsbml@${PY
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}scikit-build>0:devel/py-scikit-build@${PY_FLAVOR} \
 		cmake:devel/cmake-core \
 		${PY_DEPENDS}
-RUN_DEPENDS=	${PY_DEPENDS} ${PY_EXTRA}
+RUN_DEPENDS=	${PY_DEPENDS} \
+		${PY_EXTRA}
 
 USES=		fortran python
-USE_PYTHON=	distutils autoplist
+USE_PYTHON=	distutils autoplist pytest
 
 LDFLAGS+=	-lpython${PYTHON_VER} -shared # see https://github.com/PySCeS/pysces/issues/29
 
