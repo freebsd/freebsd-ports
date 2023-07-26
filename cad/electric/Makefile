@@ -14,7 +14,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 
-USES=		motif
+USES=		motif xorg
+USE_XORG=	ice sm x11 xext xmu xt
 
 FEATURES=	MOTIF
 
@@ -27,6 +28,12 @@ T1LIB_VARS=	FEATURES+=T1LIB
 NLS_USES=	gettext
 NLS_VARS=	FEATURES+=INT
 OPTIMIZED_CFLAGS_VARS=	FEATURES+=OPT
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types -Dregister=
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/share/electric/lib/|${DATADIR}/lib/|; \
