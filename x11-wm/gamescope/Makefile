@@ -1,6 +1,6 @@
 PORTNAME=	gamescope
 DISTVERSION=	3.12.0
-CATEGORIES=	x11-wm # wayland: depends on https://github.com/ValveSoftware/gamescope/issues/543
+CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/ValveSoftware/gamescope/issues/120
