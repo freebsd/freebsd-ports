@@ -74,6 +74,7 @@ man/man1/calc.1.gz
 %%FULL%%%%DATADIR%%/ellip.cal
 %%FULL%%%%DATADIR%%/factorial.cal
 %%FULL%%%%DATADIR%%/factorial2.cal
+%%FULL%%%%DATADIR%%/fnv_tool.cal
 %%FULL%%%%DATADIR%%/gvec.cal
 %%FULL%%%%DATADIR%%/hello.cal
 %%HELP%%%%DATADIR%%/help/COPYING
