@@ -14,14 +14,13 @@ LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		compiler motif xorg
+USES=		compiler motif localbase:ldflags xorg
+USE_CXXSTD=	c++14
 USE_XORG=	xpm
 ALL_TARGET=	${PORTNAME}
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 
 DESKTOP_ENTRIES="XMineHunter" "" "${PREFIX}/share/pixmaps/${PORTNAME}.xpm" \
 		"${PORTNAME}" "" ""
