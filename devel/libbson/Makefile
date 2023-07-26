@@ -1,6 +1,5 @@
 PORTNAME=	libbson
-DISTVERSION=	1.23.2
-PORTREVISION=	2
+DISTVERSION=	1.24.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/mongodb/mongo-c-driver/releases/download/${DISTVERSION}/
 DISTNAME=	mongo-c-driver-${DISTVERSION}
@@ -16,7 +15,6 @@ USES=		cmake cpe pathfix python:env pkgconfig
 CPE_VENDOR=	mongodb
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-D__BSD_VISIBLE=1
 DOCSDIR=	${PREFIX}/share/doc/mongo-c-driver
 
 CMAKE_OFF=	BUILD_TESTING \

@@ -7,6 +7,7 @@ include/libbson-1.0/bson/bson-compat.h
 include/libbson-1.0/bson/bson-config.h
 include/libbson-1.0/bson/bson-context.h
 include/libbson-1.0/bson/bson-decimal128.h
+include/libbson-1.0/bson/bson-dsl.h
 include/libbson-1.0/bson/bson-endian.h
 include/libbson-1.0/bson/bson-error.h
 include/libbson-1.0/bson/bson-iter.h
@@ -90,7 +91,9 @@ libdata/pkgconfig/libbson-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_append_undefined.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_append_utf8.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_append_value.html
+%%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_array_as_canonical_extended_json.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_array_as_json.html
+%%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_array_as_relaxed_extended_json.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_as_canonical_extended_json.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_as_json.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_as_json_with_opts.html
@@ -184,6 +187,7 @@ libdata/pkgconfig/libbson-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_json_mode_t.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_json_opts_destroy.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_json_opts_new.html
+%%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_json_opts_set_outermost_array.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_json_opts_t.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_json_reader_destroy.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_json_reader_new.html
@@ -193,10 +197,6 @@ libdata/pkgconfig/libbson-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_json_reader_t.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_malloc.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_malloc0.html
-%%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_md5_append.html
-%%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_md5_finish.html
-%%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_md5_init.html
-%%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_md5_t.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_mem_restore_vtable.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_mem_set_vtable.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/bson_memory.html
@@ -299,7 +299,6 @@ libdata/pkgconfig/libbson-static-1.0.pc
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/threading.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/utf8.html
-%%PORTDOCS%%%%DOCSDIR%%/libbson/html/valgrind.html
 %%PORTDOCS%%%%DOCSDIR%%/libbson/html/version.html
 %%PORTDOCS%%share/man/man3/bson_aligned_alloc.3.gz
 %%PORTDOCS%%share/man/man3/bson_aligned_alloc0.3.gz
@@ -334,7 +333,9 @@ libdata/pkgconfig/libbson-static-1.0.pc
 %%PORTDOCS%%share/man/man3/bson_append_undefined.3.gz
 %%PORTDOCS%%share/man/man3/bson_append_utf8.3.gz
 %%PORTDOCS%%share/man/man3/bson_append_value.3.gz
+%%PORTDOCS%%share/man/man3/bson_array_as_canonical_extended_json.3.gz
 %%PORTDOCS%%share/man/man3/bson_array_as_json.3.gz
+%%PORTDOCS%%share/man/man3/bson_array_as_relaxed_extended_json.3.gz
 %%PORTDOCS%%share/man/man3/bson_as_canonical_extended_json.3.gz
 %%PORTDOCS%%share/man/man3/bson_as_json.3.gz
 %%PORTDOCS%%share/man/man3/bson_as_json_with_opts.3.gz
@@ -436,6 +437,7 @@ libdata/pkgconfig/libbson-static-1.0.pc
 %%PORTDOCS%%share/man/man3/bson_json_mode_t.3.gz
 %%PORTDOCS%%share/man/man3/bson_json_opts_destroy.3.gz
 %%PORTDOCS%%share/man/man3/bson_json_opts_new.3.gz
+%%PORTDOCS%%share/man/man3/bson_json_opts_set_outermost_array.3.gz
 %%PORTDOCS%%share/man/man3/bson_json_opts_t.3.gz
 %%PORTDOCS%%share/man/man3/bson_json_reader_destroy.3.gz
 %%PORTDOCS%%share/man/man3/bson_json_reader_new.3.gz
@@ -445,10 +447,6 @@ libdata/pkgconfig/libbson-static-1.0.pc
 %%PORTDOCS%%share/man/man3/bson_json_reader_t.3.gz
 %%PORTDOCS%%share/man/man3/bson_malloc.3.gz
 %%PORTDOCS%%share/man/man3/bson_malloc0.3.gz
-%%PORTDOCS%%share/man/man3/bson_md5_append.3.gz
-%%PORTDOCS%%share/man/man3/bson_md5_finish.3.gz
-%%PORTDOCS%%share/man/man3/bson_md5_init.3.gz
-%%PORTDOCS%%share/man/man3/bson_md5_t.3.gz
 %%PORTDOCS%%share/man/man3/bson_mem_restore_vtable.3.gz
 %%PORTDOCS%%share/man/man3/bson_mem_set_vtable.3.gz
 %%PORTDOCS%%share/man/man3/bson_memory.3.gz
@@ -524,7 +522,6 @@ libdata/pkgconfig/libbson-static-1.0.pc
 %%PORTDOCS%%share/man/man3/bson_utf8_get_char.3.gz
 %%PORTDOCS%%share/man/man3/bson_utf8_next_char.3.gz
 %%PORTDOCS%%share/man/man3/bson_utf8_validate.3.gz
-%%PORTDOCS%%share/man/man3/bson_valgrind.3.gz
 %%PORTDOCS%%share/man/man3/bson_validate.3.gz
 %%PORTDOCS%%share/man/man3/bson_validate_with_error.3.gz
 %%PORTDOCS%%share/man/man3/bson_value_copy.3.gz
