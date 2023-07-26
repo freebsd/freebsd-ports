@@ -4,6 +4,7 @@ CATEGORIES=	x11-wm wayland
 
 PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
 PATCHFILES+=	a618ea074660.patch:-p1 # https://github.com/ValveSoftware/gamescope/issues/120
+PATCHFILES+=	e0c9e75e7f86.patch:-p1 # https://github.com/ValveSoftware/gamescope/pull/918
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	SteamOS session compositing window manager
@@ -11,8 +12,6 @@ WWW=		https://github.com/ValveSoftware/gamescope
 
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
-
-BROKEN_i386=	https://github.com/ValveSoftware/gamescope/issues/917
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		glslangValidator:graphics/glslang \

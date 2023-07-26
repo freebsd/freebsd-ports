@@ -7,3 +7,5 @@ SHA256 (Joshua-Ashton-vkroots-2675710_GH0.tar.gz) = 15b0338bc93fe3df8fbf28b5db76
 SIZE (Joshua-Ashton-vkroots-2675710_GH0.tar.gz) = 306247
 SHA256 (a618ea074660.patch) = c79b4b7a231d9c6e34912b8f4a301c6c60b921b6be5fb9c132d999e9a6930424
 SIZE (a618ea074660.patch) = 2589
+SHA256 (e0c9e75e7f86.patch) = 0621b603e1b801084fcd7f9b6683427f822872b94a2a62b0bb1e0ba47c6ce24f
+SIZE (e0c9e75e7f86.patch) = 1730
