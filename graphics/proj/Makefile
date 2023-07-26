@@ -1,5 +1,5 @@
 PORTNAME=	proj
-PORTVERSION=	9.2.0
+PORTVERSION=	9.2.1
 PORTEPOCH=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	https://download.osgeo.org/proj/
