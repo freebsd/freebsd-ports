@@ -1,7 +1,6 @@
 PORTNAME=	qmidiarp
 DISTVERSIONPREFIX=	qmidiarp-
-DISTVERSION=	0.6.5
-PORTREVISION=	6
+DISTVERSION=	0.7.0
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,7 +10,8 @@ WWW=		http://qmidiarp.sourceforge.net/
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	lv2>0:audio/lv2
+BUILD_DEPENDS=	gsed:textproc/gsed \
+		lv2>0:audio/lv2
 LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 		liblo.so:audio/liblo \
 		libjack.so:audio/jack
@@ -19,16 +19,20 @@ LIB_DEPENDS=	libasound.so:audio/alsa-lib \
 PORTSCOUT=	limit:^qmidiarp
 
 USES=		autoreconf compiler:c++11-lib desktop-file-utils \
-		gmake gnome localbase libtool pkgconfig qt:5
-USE_GITHUB=	yes
-GH_ACCOUNT=	emuse
+		gmake gnome localbase:ldflags libtool pkgconfig qt:5
 USE_QT=		core gui network widgets buildtools:build \
 		linguisttools:build
 USE_CXXSTD=	c++11
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	emuse
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-qt5 --enable-translations=yes
 
 CXXFLAGS+=	-Duint=uint32_t # workaround for https://sourceforge.net/p/qmidiarp/bugs/27/
+
+BINARY_ALIAS=	sed=gsed
 
 OPTIONS_DEFINE=	NLS LV2
 OPTIONS_DEFAULT=LV2
