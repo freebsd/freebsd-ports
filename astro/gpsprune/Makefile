@@ -1,5 +1,5 @@
 PORTNAME=	gpsprune
-PORTVERSION=	22.2
+PORTVERSION=	23.1
 CATEGORIES=	astro java
 MASTER_SITES=	https://activityworkshop.net/software/${PORTNAME}/
 DISTNAME=	${PORTNAME}_${PORTVERSION}.jar
