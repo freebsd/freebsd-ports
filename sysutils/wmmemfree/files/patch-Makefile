@@ -18,7 +18,7 @@
  INST=install
  MANUAL=$(PROG).1
 -LIBS=-L/usr/X11R6/lib -lX11 -lXext -lXpm
-+LIBS+=-lX11 -lXext -lXpm -lkvm
++LIBS+=-lX11 -lXext -lXpm
  
  all: $(PROG)
  
