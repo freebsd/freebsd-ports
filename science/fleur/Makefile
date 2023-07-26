@@ -1,6 +1,5 @@
 PORTNAME=	fleur
-DISTVERSION=	6.0-20220715
-PORTREVISION=	2
+DISTVERSION=	6.2
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -13,6 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BROKEN_aarch64=	Fatal Error: Cannot find an intrinsic module named 'ieee_arithmetic' at (1)
 
 LIB_DEPENDS=	libfftw3.so:math/fftw3 \
+		libhdf5.so:science/hdf5 \
 		liblapack.so:math/lapack \
 		libopenblas.so:math/openblas
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
@@ -22,7 +22,7 @@ USE_GNOME=	libxml2
 
 USE_GITLAB=	yes
 GL_SITE=	https://iffgit.fz-juelich.de
-GL_TAGNAME=	a2934446e0eb1fcbf7a69d4d652c969cef0c8c8d
+GL_TAGNAME=	a9f84b504efcb04c6d5bd2f59b6b1a0f9eb6e831
 
 FFLAGS=		-I${LOCALBASE}/include
 LDFLAGS+=	-llapack -lopenblas -lxml2 # to fix missing symbols, see https://iffgit.fz-juelich.de/fleur/fleur/-/issues/670
