@@ -7724,6 +7724,7 @@
     SUBDIR += undead
     SUBDIR += unibilium
     SUBDIR += universal-ctags
+    SUBDIR += unordered-dense
     SUBDIR += upnp
     SUBDIR += upp
     SUBDIR += upslug
