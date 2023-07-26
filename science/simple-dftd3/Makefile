@@ -1,7 +1,6 @@
 PORTNAME=	simple-dftd3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.0
-PORTREVISION=	2
+DISTVERSION=	1.0.0
 CATEGORIES=	science # chemistry
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -22,7 +21,7 @@ USES=		cmake:testing fortran
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
-GH_ACCOUNT=	awvwgk
+GH_ACCOUNT=	dftd3
 
 CMAKE_ON=	BUILD_SHARED_LIBS
 
