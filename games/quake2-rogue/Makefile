@@ -10,6 +10,7 @@ MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II: Ground Zero (Rogue) official mission pack
 WWW=		http://www.idsoftware.com/games/quake/quake2-grndzero/
 
+MAKEFILE=	${FILESDIR}/Makefile
 NO_WRKSUBDIR=	yes
 SUB_FILES=	pkg-message
 
@@ -20,11 +21,9 @@ do-extract:
 	@cd ${WRKSRC} && uncompress -c ${DISTDIR}/${DISTFILES} | \
 		${TAIL} +454 | ${SH}
 
-post-extract:
-	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
-
 post-patch:
 	@${REINPLACE_CMD} -e '/#include <nan\.h>/d' ${WRKSRC}/g_local.h
+	@${REINPLACE_CMD} -e '/extern SP_monster_makron/d' ${WRKSRC}/m_boss31.c
 	@${REINPLACE_CMD} -e 's/__linux__/__unix__/' ${WRKSRC}/q_shared.[ch]
 
 do-install:

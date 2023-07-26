@@ -64,9 +64,7 @@ SRCS=		dm_ball.c \
 		p_weapon.c \
 		q_shared.c
 
-CFLAGS+=	-Dstricmp=strcasecmp -ffast-math -funroll-loops \
-		-fomit-frame-pointer -fexpensive-optimizations
-
-LDFLAGS+=	-L/lib -L/usr/lib -lm
+CFLAGS+=	-Dstricmp=strcasecmp -ffast-math \
+		-Wno-incompatible-function-pointer-types
 
 .include <bsd.lib.mk>
