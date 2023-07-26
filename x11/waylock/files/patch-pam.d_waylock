@@ -5,7 +5,6 @@ so try authenticating via setuid helper first.
 
 --- pam.d/waylock.orig	2023-01-08 18:59:32 UTC
 +++ pam.d/waylock
-@@ -1 +1,2 @@
+@@ -1 +1 @@
 -auth include system-auth
-+auth sufficient pam_exec.so return_prog_exit_status expose_authtok /usr/local/libexec/unix-selfauth-helper
-+auth include system
++auth include unix-selfauth
