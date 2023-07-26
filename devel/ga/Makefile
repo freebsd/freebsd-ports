@@ -1,6 +1,5 @@
 PORTNAME=	ga
-DISTVERSION=	5.8.1
-PORTREVISION=	1
+DISTVERSION=	5.8.2
 CATEGORIES=	devel
 MASTER_SITES=	https://github.com/GlobalArrays/ga/releases/download/v${DISTVERSION}/
 
@@ -8,22 +7,22 @@ MAINTAINER=	yuri@FreeBSD.org
 COMMENT=	Partitioned Global Address Space (PGAS) library for distributed arrays
 WWW=		https://hpc.pnl.gov//globalarrays/
 
-LICENSE=	BMIL
-LICENSE_NAME=	Battelle Memorial Institute License
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE=	BSD3CLAUSE
 
 LIB_DEPENDS=	libblas.so:math/blas \
 		liblapack.so:math/lapack \
 		libscalapack.so:math/scalapack
 
 USES=		autoreconf fortran gmake libtool localbase
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-peigs --enable-shared --disable-static --with-blas4 --with-scalapack
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-peigs --enable-shared --disable-static --with-blas4 --with-scalapack
+
 LDFLAGS+=	-lscalapack
+
+INSTALL_TARGET=	install-strip
+TEST_TARGET=	check # test asserts, see https://github.com/GlobalArrays/ga/issues/312
 
 OPTIONS_RADIO=		MPI
 OPTIONS_RADIO_MPI=	MPICH OPENMPI
