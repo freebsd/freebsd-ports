@@ -16,7 +16,8 @@ BUILD_DEPENDS=	cmake:devel/cmake-core \
 
 USES=		python:3.8-3.9
 USE_PYTHON=	autoplist distutils # autoplist produces incomplete plist, missing files are in pkg-plist. Reported to the upstream author fbergman@caltech.edu on 2021-08-17
-MAKE_ENV=	FREEBSD_MAKE_JOBS=${_MAKE_JOBS}
+
+MAKE_ENV=	CMAKE_BUILD_PARALLEL_LEVEL=${MAKE_JOBS_NUMBER}
 
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/libsbml/_libsbml*.so
