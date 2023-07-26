@@ -11,8 +11,6 @@ WWW=		https://www.lavinmq.com/
 
 LICENSE=	APACHE20
 
-BROKEN_FreeBSD_14=	Incompatible with OpenSSL 3.0 in 14-CURRENT
-
 BUILD_DEPENDS=	crystal:lang/crystal \
 		help2man:misc/help2man \
 		shards:devel/shards
@@ -39,6 +37,12 @@ OPTIONS_DEFINE=	DOCS
 
 SHARDS_ENV=	--time --verbose --production --release --no-color --stats \
 		--static
+
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
+.endif
 
 post-extract:
 # force shards to use local paths, not git repos, for dependencies
