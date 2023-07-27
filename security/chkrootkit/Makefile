@@ -1,7 +1,7 @@
 PORTNAME=	chkrootkit
 PORTVERSION=	0.55
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.pangeia.com.br/pub/seg/pac/
+MASTER_SITES=	ftp://ftp.chkrootkit.org/pub/seg/pac/
 
 MAINTAINER=	lacey.leanne@gmail.com
 COMMENT=	Tool to locally check for signs of a rootkit
