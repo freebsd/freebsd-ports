@@ -10,8 +10,8 @@ WWW=		https://libmodbus.org/
 LICENSE=	LGPL21+
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-BUILD_DEPENDS=	a2x:textproc/asciidoc \
-		xmlto:textproc/xmlto
+DOCS_BUILD_DEPENDS=	a2x:textproc/asciidoc \
+			xmlto:textproc/xmlto
 
 USES=		cpe gmake libtool pathfix
 USE_LDCONFIG=	yes
