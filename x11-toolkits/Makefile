@@ -10,7 +10,6 @@
     SUBDIR += copperspice
     SUBDIR += ctk
     SUBDIR += fltk
-    SUBDIR += fox14
     SUBDIR += fox16
     SUBDIR += fox17
     SUBDIR += fpc-gtk2
