@@ -1,14 +1,5 @@
 --- runtime/ops/os/sys_info.rs.orig	2022-11-13 21:31:36 UTC
 +++ runtime/ops/os/sys_info.rs
-@@ -56,7 +56,7 @@ pub fn os_release() -> String {
-       _ => String::from(""),
-     }
-   }
--  #[cfg(target_vendor = "apple")]
-+  #[cfg(any(target_vendor = "apple", target_os = "freebsd"))]
-   {
-     let mut s = [0u8; 256];
-     let mut mib = [libc::CTL_KERN, libc::KERN_OSRELEASE];
 @@ -296,6 +296,20 @@ pub fn mem_info() -> Option<MemInfo> {
          mem_info.swap_free = mem_info.swap_total;
        }
