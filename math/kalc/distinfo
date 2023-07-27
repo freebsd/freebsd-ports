@@ -1,4 +1,4 @@
-TIMESTAMP = 1690184895
+TIMESTAMP = 1690431747
 SHA256 (rust/crates/az-1.2.1.crate) = 7b7e4c2464d97fe331d41de9d5db0def0a96f4d823b8b32a2efd503578988973
 SIZE (rust/crates/az-1.2.1.crate) = 27842
 SHA256 (rust/crates/byteorder-1.4.3.crate) = 14c189c53d098945499cdfa7ecc63567cf3886b3332b312a5b4585d8d3a6a610
@@ -45,5 +45,5 @@ SHA256 (rust/crates/windows_x86_64_gnullvm-0.42.2.crate) = 26d41b46a36d453748aed
 SIZE (rust/crates/windows_x86_64_gnullvm-0.42.2.crate) = 364068
 SHA256 (rust/crates/windows_x86_64_msvc-0.42.2.crate) = 9aec5da331524158c6d1a4ac0ab1541149c0b9505fde06423b02f5ef0106b9f0
 SIZE (rust/crates/windows_x86_64_msvc-0.42.2.crate) = 666936
-SHA256 (bgkillas-kalc-v0.8.1_GH0.tar.gz) = ce8e7f44a54afa1d6cb40b5d24657c262fa8f49e864250bb0004d890c014b631
-SIZE (bgkillas-kalc-v0.8.1_GH0.tar.gz) = 50324
+SHA256 (bgkillas-kalc-v0.8.2_GH0.tar.gz) = 9302d204d67fa65cdaacb13aebe52a7d190aa4fab2422ce5897ed744596f3a9a
+SIZE (bgkillas-kalc-v0.8.2_GH0.tar.gz) = 54224
