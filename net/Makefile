@@ -1614,6 +1614,7 @@
     SUBDIR += wlvncc
     SUBDIR += wmnd
     SUBDIR += wmnet
+    SUBDIR += wmnetload
     SUBDIR += wmping
     SUBDIR += wmwave
     SUBDIR += wmwifi
