@@ -34,6 +34,7 @@
     SUBDIR += echinus
     SUBDIR += emerald
     SUBDIR += emwm
+    SUBDIR += emwm-utils
     SUBDIR += enlightenment
     SUBDIR += epplets
     SUBDIR += euclid-wm
