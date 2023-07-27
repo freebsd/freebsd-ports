@@ -29,6 +29,7 @@ include/tvm/ir/memory_pools.h
 include/tvm/ir/module.h
 include/tvm/ir/name_supply.h
 include/tvm/ir/op.h
+include/tvm/ir/si_builder.h
 include/tvm/ir/source_map.h
 include/tvm/ir/tensor_type.h
 include/tvm/ir/transform.h
@@ -183,6 +184,8 @@ include/tvm/te/schedule_pass.h
 include/tvm/te/tensor.h
 include/tvm/te/tensor_intrin.h
 include/tvm/tir/analysis.h
+include/tvm/tir/block_dependence_info.h
+include/tvm/tir/block_scope.h
 include/tvm/tir/buffer.h
 include/tvm/tir/builtin.h
 include/tvm/tir/data_layout.h
@@ -193,7 +196,6 @@ include/tvm/tir/function.h
 include/tvm/tir/index_map.h
 include/tvm/tir/op.h
 include/tvm/tir/op_attr_types.h
-include/tvm/tir/schedule/block_scope.h
 include/tvm/tir/schedule/instruction.h
 include/tvm/tir/schedule/schedule.h
 include/tvm/tir/schedule/state.h
@@ -206,6 +208,7 @@ include/tvm/tir/usmp/algorithms.h
 include/tvm/tir/usmp/analysis.h
 include/tvm/tir/usmp/transform.h
 include/tvm/tir/usmp/utils.h
+include/tvm/tir/utils.h
 include/tvm/tir/var.h
 include/tvm/topi/broadcast.h
 include/tvm/topi/contrib/cublas.h
