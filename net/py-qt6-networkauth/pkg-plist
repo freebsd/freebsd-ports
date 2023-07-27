@@ -10,6 +10,6 @@
 %%PYQT_SIPDIR%%/QtNetworkAuth/qoauthoobreplyhandler.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/QtNetworkAuth.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetworkAuth/QtNetworkAuth.toml
-%%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-6.4.0.dist-info/INSTALLER
-%%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-6.4.0.dist-info/METADATA
-%%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-6.4.0.dist-info/RECORD
+%%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/INSTALLER
+%%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/METADATA
+%%PYTHON_SITELIBDIR%%/PyQt6_NetworkAuth-%%PYQTNETWORKAUTH_VERSION%%.dist-info/RECORD

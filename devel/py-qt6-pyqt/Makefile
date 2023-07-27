@@ -1,6 +1,5 @@
 PORTNAME=	pyqt
 PORTVERSION=	${PYQT_VERSION}
-PORTREVISION=	2
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITES_PYQT}
 PKGNAMEPREFIX=	${PYQT_PY_RELNAME}-
@@ -19,14 +18,24 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}dbus>1:devel/py-dbus@${PY_FLAVOR}
 
 USES=		gl pkgconfig python pyqt:6 qt:6
 USE_GL+=	gl opengl
-USE_PYTHON=	concurrent flavors py3kplist
+USE_LOCALE=	C.UTF-8
+USE_PYTHON=	concurrent flavors
 USE_PYQT=	qtbuilder sip pysip
 USE_QT=		5compat base declarative imageformats languageserver lottie \
 		multimedia positioning quick3d remoteobjects sensors \
-		serialport shadertools svg tools translations webchannel \
-		websockets
+		serialport speech shadertools svg tools translations \
+		webchannel websockets
 
 PORTSCOUT?=	limit:^${_QT_VERSION:R}
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == amd64 || ${ARCH} == i386
+PLIST_SUB+=	WEBENGINE=""
+USE_QT+=	webengine
+.else
+PLIST_SUB+=	WEBENGINE="@comment "
+.endif
 
 post-extract:
 	${RM} -r ${WRKSRC}/pyuic/uic/port_v2
@@ -41,4 +50,4 @@ post-install:
 	@${FIND} ${STAGEDIR}${PYTHONPREFIX_SITELIBDIR}/PyQt6 \
 		-name '*.so*' -exec ${STRIP_CMD} {} +
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

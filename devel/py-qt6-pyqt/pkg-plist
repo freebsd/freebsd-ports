@@ -16,6 +16,8 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/QtNetwork.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtOpenGL.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtOpenGLWidgets.abi%%PYTHON_MAJOR_VER%%.so
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/QtPdf.abi%%PYTHON_MAJOR_VER%%.so
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/QtPdfWidgets.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtPositioning.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtPrintSupport.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtQml.abi%%PYTHON_MAJOR_VER%%.so
@@ -25,10 +27,12 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/QtRemoteObjects.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtSensors.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtSerialPort.abi%%PYTHON_MAJOR_VER%%.so
+%%PYTHON_SITELIBDIR%%/PyQt6/QtSpatialAudio.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtSql.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtSvg.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtSvgWidgets.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtTest.abi%%PYTHON_MAJOR_VER%%.so
+%%PYTHON_SITELIBDIR%%/PyQt6/QtTextToSpeech.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtWebChannel.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtWebSockets.abi%%PYTHON_MAJOR_VER%%.so
 %%PYTHON_SITELIBDIR%%/PyQt6/QtWidgets.abi%%PYTHON_MAJOR_VER%%.so
@@ -113,6 +117,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qoperatingsystemversion.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qparallelanimationgroup.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpauseanimation.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpermissions.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpluginloader.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qpoint.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qprocess.sip
@@ -150,6 +155,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qsystemsemaphore.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtemporarydir.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtemporaryfile.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtenvironmentvariables.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtextboundaryfinder.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtextstream.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qthread.sip
@@ -159,6 +165,8 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtimezone.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtranslator.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtransposeproxymodel.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtversion.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qtypes.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qurl.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/qurlquery.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtCore/quuid.sip
@@ -297,6 +305,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qtransform.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qundogroup.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qundostack.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qutimimeconverter.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qvalidator.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qvectornd.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtGui/qwindow.sip
@@ -337,6 +346,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qmediarecorder.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qmediatimerange.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qpymultimedia_qlist.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qscreencapture.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qsoundeffect.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qvideoframe.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtMultimedia/qvideoframeformat.sip
@@ -354,6 +364,7 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhostaddress.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhostinfo.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhstspolicy.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhttp1configuration.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhttp2configuration.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qhttpmultipart.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtNetwork/qlocalserver.sip
@@ -413,6 +424,19 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtOpenGLWidgets/QtOpenGLWidgets.toml
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtOpenGLWidgets/QtOpenGLWidgetsmod.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtOpenGLWidgets/qopenglwidget.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdf/QtPdf.toml
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdf/QtPdfmod.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdf/qpdfbookmarkmodel.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdf/qpdfdocument.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdf/qpdfdocumentrenderoptions.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdf/qpdflink.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdf/qpdfpagenavigator.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdf/qpdfpagerenderer.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdf/qpdfsearchmodel.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdf/qpdfselection.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdfWidgets/QtPdfWidgets.toml
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdfWidgets/QtPdfWidgetsmod.sip
+%%WEBENGINE%%%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPdfWidgets/qpdfview.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPositioning/QtPositioning.toml
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPositioning/QtPositioningmod.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtPositioning/qgeoaddress.sip
@@ -541,6 +565,13 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSerialPort/QtSerialPortmod.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSerialPort/qserialport.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSerialPort/qserialportinfo.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSpatialAudio/QtSpatialAudio.toml
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSpatialAudio/QtSpatialAudiomod.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSpatialAudio/qambientsound.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSpatialAudio/qaudioengine.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSpatialAudio/qaudiolistener.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSpatialAudio/qaudioroom.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSpatialAudio/qspatialsound.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSql/QtSql.toml
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSql/QtSqlmod.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtSql/qsqldatabase.sip
@@ -571,6 +602,10 @@ bin/pyuic6
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtTest/qtestkeyboard.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtTest/qtestmouse.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtTest/qtestsystem.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtTextToSpeech/QtTextToSpeech.toml
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtTextToSpeech/QtTextToSpeechmod.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtTextToSpeech/qtexttospeech.sip
+%%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtTextToSpeech/qvoice.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWebChannel/QtWebChannel.toml
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWebChannel/QtWebChannelmod.sip
 %%PYTHON_SITELIBDIR%%/PyQt6/bindings/QtWebChannel/qwebchannel.sip

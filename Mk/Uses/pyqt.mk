@@ -81,20 +81,20 @@ MASTER_SITES_QSCI2=	RIVERBANK/QScintilla/${PORTVERSION} \
 #
 # Where noted, the ports are epoched and the py-${comp}-PATH variables,
 # below, should have a suitable epoch appended to the version.
-SIP_VERSION=		6.7.7	# ,1
+SIP_VERSION=		6.7.9	# ,1
 SIP4_VERSION=		4.19.25
-QSCI2_VERSION=		2.13.3
+QSCI2_VERSION=		2.14.1
 PYQT5_VERSION=		5.15.9
-PYQT6_VERSION=		6.4.2
+PYQT6_VERSION=		6.5.2
 PYQT5CHART_VERSION=	5.15.6
-PYQT6CHART_VERSION=	6.4.0
+PYQT6CHART_VERSION=	6.5.0
 PYQT5NETWORKAUTH_VERSION=5.15.5
-PYQT6NETWORKAUTH_VERSION=6.4.0
+PYQT6NETWORKAUTH_VERSION=6.5.0
 PYQT5WEBENGINE_VERSION=	5.15.6
-PYQT6WEBENGINE_VERSION=	6.4.0
+PYQT6WEBENGINE_VERSION=	6.5.0
 PYQT5SIP_VERSION=	12.11.1
-PYQT6SIP_VERSION=	13.4.1
-PYQTBUILDER_VERSION=	1.14.1
+PYQT6SIP_VERSION=	13.5.2
+PYQTBUILDER_VERSION=	1.15.2
 
 SIP_DISTNAME=		sip-${SIP_VERSION}
 SIP4_DISTNAME=		sip-${SIP4_VERSION}
@@ -190,11 +190,12 @@ PLIST_SUB+=	PYQT_APIDIR=${_APIDIR_REL} \
 
 .  if defined(PYQT_DIST)
 
+LICENSE?=	${PYQT_LICENSE}
+
 PLIST_SUB+=	PYTHON_MAJOR_VER="${PYTHON_MAJOR_VER}"
 
 SIP_ARGS=	--qmake ${QMAKE} \
 		--verbose \
-		--no-make \
 		--build-dir build \
 		--protected-is-public \
 		--api-dir ${PYQT_APIDIR}
@@ -212,13 +213,13 @@ post-patch:
 
 .    if !target(do-build)
 do-build:
-	(cd ${WRKSRC}; ${SIP} ${SIP_ARGS}; ${MAKE} ${_MAKE_JOBS} -C ./build)
+	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${SIP} ${SIP_ARGS}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} -C ./build)
 
 .    endif  # !target(do-build)
 
 .    if !target(do-install)
 do-install:
-	(cd ${WRKSRC} ; ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )
+	(cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} ${MAKE} -C ./build install INSTALL_ROOT=${STAGEDIR} )
 .    endif  # !target(do-install)
 
 .  endif  # defined(PYQT_DIST)
