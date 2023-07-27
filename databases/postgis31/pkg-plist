@@ -182,6 +182,7 @@ share/postgresql/contrib/postgis-%%VER%%/uninstall_rtpostgis.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.0.6--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.0.7--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.0.8--%%PORTVERSION%%.sql
+%%ADDRSTD%%share/postgresql/extension/address_standardizer--3.0.9--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.1.0--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.1.1--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.1.2--%%PORTVERSION%%.sql
@@ -190,6 +191,7 @@ share/postgresql/contrib/postgis-%%VER%%/uninstall_rtpostgis.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.1.5--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.1.6--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--3.1.7--%%PORTVERSION%%.sql
+%%ADDRSTD%%share/postgresql/extension/address_standardizer--3.1.8--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--%%PORTVERSION%%.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%ADDRSTD%%share/postgresql/extension/address_standardizer--%%PORTVERSION%%next--%%PORTVERSION%%.sql
@@ -270,6 +272,7 @@ share/postgresql/extension/postgis--3.0.5--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--3.0.6--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--3.0.7--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--3.0.8--%%PORTVERSION%%.sql
+share/postgresql/extension/postgis--3.0.9--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--3.1.0--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--3.1.1--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--3.1.2--%%PORTVERSION%%.sql
@@ -278,6 +281,7 @@ share/postgresql/extension/postgis--3.1.4--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--3.1.5--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--3.1.6--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--3.1.7--%%PORTVERSION%%.sql
+share/postgresql/extension/postgis--3.1.8--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 share/postgresql/extension/postgis--%%PORTVERSION%%next--%%PORTVERSION%%.sql
@@ -354,6 +358,7 @@ share/postgresql/extension/postgis.control
 %%RASTER%%share/postgresql/extension/postgis_raster--3.0.6--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--3.0.7--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--3.0.8--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_raster--3.0.9--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--3.1.0--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--3.1.1--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--3.1.2--%%PORTVERSION%%.sql
@@ -362,6 +367,7 @@ share/postgresql/extension/postgis.control
 %%RASTER%%share/postgresql/extension/postgis_raster--3.1.5--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--3.1.6--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--3.1.7--%%PORTVERSION%%.sql
+%%RASTER%%share/postgresql/extension/postgis_raster--3.1.8--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--%%PORTVERSION%%.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%RASTER%%share/postgresql/extension/postgis_raster--%%PORTVERSION%%next--%%PORTVERSION%%.sql
@@ -438,6 +444,7 @@ share/postgresql/extension/postgis.control
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.0.6--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.0.7--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.0.8--%%PORTVERSION%%.sql
+%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.0.9--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.1.0--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.1.1--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.1.2--%%PORTVERSION%%.sql
@@ -446,6 +453,7 @@ share/postgresql/extension/postgis.control
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.1.5--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.1.6--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.1.7--%%PORTVERSION%%.sql
+%%SFCGAL%%share/postgresql/extension/postgis_sfcgal--3.1.8--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%SFCGAL%%share/postgresql/extension/postgis_sfcgal--%%PORTVERSION%%next--%%PORTVERSION%%.sql
@@ -522,6 +530,7 @@ share/postgresql/extension/postgis_tiger_geocoder--3.0.5--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.0.6--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.0.7--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.0.8--%%PORTVERSION%%.sql
+share/postgresql/extension/postgis_tiger_geocoder--3.0.9--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.1.0--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.1.1--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.1.2--%%PORTVERSION%%.sql
@@ -530,6 +539,7 @@ share/postgresql/extension/postgis_tiger_geocoder--3.1.4--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.1.5--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.1.6--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--3.1.7--%%PORTVERSION%%.sql
+share/postgresql/extension/postgis_tiger_geocoder--3.1.8--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%.sql
 share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 share/postgresql/extension/postgis_tiger_geocoder--%%PORTVERSION%%next--%%PORTVERSION%%.sql
@@ -605,6 +615,7 @@ share/postgresql/extension/postgis_tiger_geocoder.control
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.0.6--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.0.7--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.0.8--%%PORTVERSION%%.sql
+%%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.0.9--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.1.0--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.1.1--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.1.2--%%PORTVERSION%%.sql
@@ -613,6 +624,7 @@ share/postgresql/extension/postgis_tiger_geocoder.control
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.1.5--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.1.6--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.1.7--%%PORTVERSION%%.sql
+%%TOPOLOGY%%share/postgresql/extension/postgis_topology--3.1.8--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%--%%PORTVERSION%%next.sql
 %%TOPOLOGY%%share/postgresql/extension/postgis_topology--%%PORTVERSION%%next--%%PORTVERSION%%.sql
