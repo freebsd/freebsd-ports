@@ -89,6 +89,13 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/acousticbrainz/ui_options_acousticbrainz_tags.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/acousticbrainz/ui_options_acousticbrainz_tags.ui
 %%PYTHON_SITELIBDIR%%/picard/plugins/acousticbrainz_tonal-rhythm.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/additional_artists_details/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/additional_artists_details/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/additional_artists_details/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/additional_artists_details/__pycache__/ui_options_additional_artists_details%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/additional_artists_details/__pycache__/ui_options_additional_artists_details%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/additional_artists_details/options_additional_artists_details.ui
+%%PYTHON_SITELIBDIR%%/picard/plugins/additional_artists_details/ui_options_additional_artists_details.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/additional_artists_variables.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/albumartist_website.py
@@ -158,6 +165,13 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/__pycache__/ui_options_format_performer_tags%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/ui_options_format_performer_tags.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/format_performer_tags/ui_options_format_performer_tags.ui
+%%PYTHON_SITELIBDIR%%/picard/plugins/genre_mapper/__init__.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/genre_mapper/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/genre_mapper/__pycache__/__init__%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/genre_mapper/__pycache__/ui_options_genre_mapper%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/genre_mapper/__pycache__/ui_options_genre_mapper%%PYTHON_EXT_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/genre_mapper/options_genre_mapper.ui
+%%PYTHON_SITELIBDIR%%/picard/plugins/genre_mapper/ui_options_genre_mapper.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/hyphen_unicode.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/instruments.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/keep.py
@@ -267,6 +281,8 @@
 %%PYTHON_SITELIBDIR%%/picard/plugins/workandmovement/__pycache__/roman%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/workandmovement/__pycache__/roman%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/workandmovement/roman.py
+%%PORTDOCS%%%%DOCSDIR%%/additional_artists_details/README.md
+%%PORTDOCS%%%%DOCSDIR%%/additional_artists_details/option_settings.png
 %%PORTDOCS%%%%DOCSDIR%%/classical_extras/Readme.md
 %%PORTDOCS%%%%DOCSDIR%%/format_performer_tags/HISTORY.md
 %%PORTDOCS%%%%DOCSDIR%%/format_performer_tags/README.md
