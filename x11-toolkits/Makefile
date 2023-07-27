@@ -161,6 +161,7 @@
     SUBDIR += py-python-xlib
     SUBDIR += py-qt5-chart
     SUBDIR += py-qt6-chart
+    SUBDIR += py-qt6-datavis3d
     SUBDIR += py-tkinter
     SUBDIR += py-tktreectrl
     SUBDIR += py-wxPython4
