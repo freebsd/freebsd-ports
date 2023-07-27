@@ -3,7 +3,7 @@
 %%ALSA%%%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qalsaaudiosink_p.h
 %%ALSA%%%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qalsaaudiosource_p.h
 %%ALSA%%%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qalsamediadevices_p.h
-%%ALSA%%%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiodevice_p.h
+%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiodevice_p.h
 %%PULSEAUDIO%%%%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudioengine_pulse_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiohelpers_p.h
 %%QT_INCDIR%%/QtMultimedia/%%FULLVER%%/QtMultimedia/private/qaudiosystem_p.h
