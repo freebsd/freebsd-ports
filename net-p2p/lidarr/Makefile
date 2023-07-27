@@ -1,5 +1,6 @@
 PORTNAME=	lidarr
 DISTVERSION=	1.2.6.3313
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	https://github.com/lidarr/Lidarr/releases/download/v${PORTVERSION}/
 DISTNAME=	Lidarr.master.${DISTVERSION}.freebsd-core-x64
@@ -19,10 +20,9 @@ RUN_DEPENDS=	ca_root_nss>0:security/ca_root_nss \
 		libiconv>0:converters/libiconv \
 		libinotify>0:devel/libinotify \
 		libunwind>0:devel/libunwind \
-		chromaprint>0:audio/chromaprint \
-		sqlite3>0:databases/sqlite3
+		chromaprint>0:audio/chromaprint
 
-USES=		ssl:run
+USES=		ssl:run sqlite:3
 
 USE_RC_SUBR=	${PORTNAME}
 

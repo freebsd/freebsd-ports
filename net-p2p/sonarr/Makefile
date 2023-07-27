@@ -1,5 +1,6 @@
 PORTNAME=	sonarr
 PORTVERSION=	3.0.10.1567
+PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://download.sonarr.tv/v3/main/${PORTVERSION}/
 DISTNAME=	Sonarr.main.${PORTVERSION}.linux
@@ -12,9 +13,9 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	libcurl.so:ftp/curl
 RUN_DEPENDS=	mediainfo>0:multimedia/mediainfo \
-		sqlite3>0:databases/sqlite3 \
 		mono6.8>0:lang/mono6.8
 
+USES=	sqlite:3
 USE_RC_SUBR=	sonarr
 
 NO_ARCH=	YES
