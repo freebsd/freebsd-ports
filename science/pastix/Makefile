@@ -1,8 +1,7 @@
 PORTNAME=	pastix
-PORTVERSION=	6.2.2
-PORTREVISION=	1
-DISTVERSIONPREFIX=	v
+PORTVERSION=	6.3.0
 CATEGORIES=	science
+MASTER_SITES=	https://gitlab.inria.fr/solverstack/pastix/uploads/${GL_TAG}/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	PaStiX: a sparse direct solver
@@ -22,14 +21,15 @@ RUN_DEPENDS=	bash:shells/bash	\
 
 USES=		cmake blaslapack:openblas fortran pkgconfig python
 
-USE_GITLAB=	yes
-GL_SITE=	https://gitlab.inria.fr/
-GL_ACCOUNT=	solverstack
-GL_PROJECT=	pastix spm:s morse_cmake:m
-GL_TAGNAME=	6e35c2ba179013b058f5d4e1afd4b451953149c6	\
-		14e36c1586c9ba13f938b1a89f51c080d6551392:s	\
-		31cd2bbb0d76f2b9fd83011d8f079d97540b0ba8:m
-GL_SUBDIR=	spm:s cmake_modules/morse_cmake:m
+#USE_GITLAB=	yes
+#GL_SITE=	https://gitlab.inria.fr/
+#GL_ACCOUNT=	solverstack
+#GL_PROJECT=	pastix spm:s morse_cmake:m
+#GL_TAGNAME=	6e35c2ba179013b058f5d4e1afd4b451953149c6	\
+#		14e36c1586c9ba13f938b1a89f51c080d6551392:s	\
+#		31cd2bbb0d76f2b9fd83011d8f079d97540b0ba8:m
+#GL_SUBDIR=	spm:s cmake_modules/morse_cmake:m
+GL_TAG=		87c0b910dce3d81667e760c720e706d1	# tarball with submodules
 
 CMAKE_ARGS=	-DBUILD_SHARED_LIBS:BOOL=ON	\
 		-DPASTIX_ORDERING_METIS:BOOL=ON
