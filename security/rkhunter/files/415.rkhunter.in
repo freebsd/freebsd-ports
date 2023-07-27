@@ -2,10 +2,12 @@
 
 # This is a maintenance shell script for the rkhunter security tool.
 # You can enable this script in /etc/periodic.conf file by putting these lines into it:
-#	daily_rkhunter_update_enable="YES"
-#	daily_rkhunter_update_flags="--update --nocolors"
-#	daily_rkhunter_check_enable="YES"
-#	daily_rkhunter_check_flags="--checkall --nocolors --skip-keypress"
+#	security_rkhunter_update_enable="YES"
+#	security_rkhunter_update_period="daily"
+#	security_rkhunter_update_flags="--update --nocolors"
+#	security_rkhunter_check_enable="YES"
+#	security_rkhunter_check_period="daily"
+#	security_rkhunter_check_flags="--checkall --nocolors --skip-keypress"
 #
 # Written by: Gabor Kovesdan <gabor@FreeBSD.org>
 
@@ -14,40 +16,37 @@ if [ -r /etc/defaults/periodic.conf ]; then
    source_periodic_confs
 fi
 
-SLEEP=/bin/sleep
-JOT=/usr/bin/jot
+# compatibility with pre-stable/12 style variables
+for type in update check
+do
+	for mode in enable flags
+	do
+		eval old=\"\$daily_rkhunter_${type}_${mode}\"
+		if test -n "$old"
+		then
+			echo "Warning: Variable \$daily_rkhunter_${type}_${mode} is deprecated, use \$security_rkhunter_${type}_${mode} instead." >&2
+			eval : \${security_rkhunter_${type}_${mode}:="\$daily_rkhunter_${type}_${mode}"}
+		fi
+	done
+done
 
-random() {
-	${JOT} -r 1 0 900
-}
+# defaults
+: ${security_rkhunter_update_period:="daily"}
+: ${security_rkhunter_check_period:="daily"}
+: ${security_rkhunter_update_flags:="--update --nocolors"}
+: ${security_rkhunter_check_flags:="--checkall --nocolors --skip-keypress"}
 
-: ${daily_rkhunter_update_flags="--update --nocolors"}
-: ${daily_rkhunter_check_flags="--checkall --nocolors --skip-keypress"}
-
-case "$daily_rkhunter_update_enable" in
-  [Yy][Ee][Ss])
-
+if check_yesno_period security_rkhunter_update_enable
+then
 	echo ""
 	echo "Updating the rkhunter database..."
-	# When non-interactive, sleep to reduce congestion on rkhunter site
-	if [ "$1" != -nodelay ]; then
-		# In FreeBSD 12.0 the anticongestion function should be used
-		# instead of a hard-coded sleep
-		if [ -n "$anticongestion_sleeptime" ]; then
-			anticongestion
-		else
-			${SLEEP} $(random)
-		fi
-	fi
-	%%PREFIX%%/bin/rkhunter ${daily_rkhunter_update_flags}
-	;;
-esac
+	anticongestion
+	%%PREFIX%%/bin/rkhunter ${security_rkhunter_update_flags}
+fi
 
-case "$daily_rkhunter_check_enable" in
-  [Yy][Ee][Ss])
-
+if check_yesno_period security_rkhunter_check_enable
+then
 	echo ""
 	echo "Running rkhunter..."
-	%%PREFIX%%/bin/rkhunter ${daily_rkhunter_check_flags}
-	;;
-esac
+	%%PREFIX%%/bin/rkhunter ${security_rkhunter_check_flags}
+fi

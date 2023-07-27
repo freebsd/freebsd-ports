@@ -4,14 +4,16 @@
 You should keep your rkhunter database up-to-date.
 This can be done automatically by putting this line to periodic.conf(5) files:
 
-daily_rkhunter_update_enable="YES"
-daily_rkhunter_update_flags="--update --nocolors"
+security_rkhunter_update_enable="YES"
+security_rkhunter_update_period="daily"
+security_rkhunter_update_flags="--update --nocolors"
 
 Also, you can run rkhunter as a part of the daily security check by
 putting this line to periodic.conf(5) files:
 
-daily_rkhunter_check_enable="YES"
-daily_rkhunter_check_flags="--checkall --nocolors --skip-keypress"
+security_rkhunter_check_enable="YES"
+security_rkhunter_check_period="daily"
+security_rkhunter_check_flags="--checkall --nocolors --skip-keypress"
 EOM
 }
 ]
