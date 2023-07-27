@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2022-09-06 07:09:19 UTC
+--- CMakeLists.txt.orig	2023-06-19 12:07:14 UTC
 +++ CMakeLists.txt
-@@ -4,6 +4,7 @@ project(PrusaSlicer)
+@@ -4,6 +4,7 @@ include(CMakeDependentOption)
  include("version.inc")
  include(GNUInstallDirs)
  include(CMakeDependentOption)
@@ -8,7 +8,7 @@
  
  set(SLIC3R_RESOURCES_DIR "${CMAKE_CURRENT_SOURCE_DIR}/resources")
  file(TO_NATIVE_PATH "${SLIC3R_RESOURCES_DIR}" SLIC3R_RESOURCES_DIR_WIN)
-@@ -197,7 +198,7 @@ if (APPLE)
+@@ -207,7 +208,7 @@ endif ()
      endif ()
  endif ()
  
@@ -17,7 +17,16 @@
      find_package(PkgConfig REQUIRED)
  
      if (CMAKE_VERSION VERSION_LESS "3.1")
-@@ -597,8 +598,8 @@ elseif (SLIC3R_FHS)
+@@ -446,7 +447,7 @@ find_package(EXPAT REQUIRED)
+ # no matter what.
+ find_package(EXPAT REQUIRED)
+ 
+-add_library(libexpat INTERFACE)
++# add_library(libexpat INTERFACE)
+ 
+ if (TARGET EXPAT::EXPAT )
+     target_link_libraries(libexpat INTERFACE EXPAT::EXPAT)
+@@ -627,8 +628,8 @@ elseif (SLIC3R_FHS)
      install(DIRECTORY ${SLIC3R_RESOURCES_DIR}/ DESTINATION ${SLIC3R_FHS_RESOURCES}
          PATTERN "*/udev" EXCLUDE
      )
@@ -28,7 +37,7 @@
      foreach(SIZE 32 128 192)
          install(FILES ${SLIC3R_RESOURCES_DIR}/icons/PrusaSlicer_${SIZE}px.png
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer.png
-@@ -607,7 +608,8 @@ elseif (SLIC3R_FHS)
+@@ -637,7 +638,8 @@ elseif (SLIC3R_FHS)
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer-gcodeviewer.png
          )
      endforeach()

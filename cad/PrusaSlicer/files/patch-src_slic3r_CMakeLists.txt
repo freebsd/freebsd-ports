@@ -1,11 +1,21 @@
---- src/slic3r/CMakeLists.txt.orig	2022-09-06 07:09:19 UTC
+--- src/slic3r/CMakeLists.txt.orig	2023-06-19 12:07:14 UTC
 +++ src/slic3r/CMakeLists.txt
-@@ -260,11 +260,11 @@ add_library(libslic3r_gui STATIC ${SLIC3R_GUI_SOURCES}
+@@ -293,7 +293,7 @@ set(SLIC3R_GUI_SOURCES
+     Utils/WxFontUtils.hpp
+ )
+ 
+-find_package(NanoSVG REQUIRED)
++# find_package(NanoSVG REQUIRED)
+ 
+ if (APPLE)
+     list(APPEND SLIC3R_GUI_SOURCES
+@@ -319,11 +319,12 @@ encoding_check(libslic3r_gui)
  
  encoding_check(libslic3r_gui)
  
--target_link_libraries(libslic3r_gui libslic3r avrdude cereal imgui GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES})
-+target_link_libraries(libslic3r_gui libslic3r avrdude imgui GLEW::GLEW OpenGL::GL OpenGL::GLU hidapi libcurl ${wxWidgets_LIBRARIES})
+-target_link_libraries(libslic3r_gui libslic3r avrdude libcereal imgui GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES} NanoSVG::nanosvg NanoSVG::nanosvgrast)
++# target_link_libraries(libslic3r_gui libslic3r avrdude imgui GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES} NanoSVG::nanosvg NanoSVG::nanosvgrast)
++target_link_libraries(libslic3r_gui libslic3r avrdude imgui GLEW::GLEW OpenGL::GL hidapi libcurl ${wxWidgets_LIBRARIES})
  
  if (MSVC)
      target_link_libraries(libslic3r_gui Setupapi.lib)

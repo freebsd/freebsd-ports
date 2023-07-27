@@ -1,10 +1,19 @@
---- src/CMakeLists.txt.orig	2022-09-06 07:09:19 UTC
+--- src/CMakeLists.txt.orig	2023-06-19 12:07:14 UTC
 +++ src/CMakeLists.txt
-@@ -127,7 +127,7 @@ if (NOT WIN32 AND NOT APPLE)
+@@ -78,7 +78,7 @@ if (SLIC3R_GUI)
+ 
+     find_package(JPEG QUIET)
+     find_package(TIFF QUIET)
+-    find_package(NanoSVG REQUIRED)
++    # find_package(NanoSVG REQUIRED)
+ 
+     string(REGEX MATCH "wxpng" WX_PNG_BUILTIN ${wxWidgets_LIBRARIES})
+     if (PNG_FOUND AND NOT WX_PNG_BUILTIN)
+@@ -147,7 +147,7 @@ endif ()
      set_target_properties(PrusaSlicer PROPERTIES OUTPUT_NAME "prusa-slicer")
  endif ()
  
--target_link_libraries(PrusaSlicer libslic3r cereal)
+-target_link_libraries(PrusaSlicer libslic3r libcereal)
 +target_link_libraries(PrusaSlicer libslic3r)
  
  if (APPLE)

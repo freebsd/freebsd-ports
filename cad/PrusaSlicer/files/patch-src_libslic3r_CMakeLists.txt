@@ -1,10 +1,10 @@
---- src/libslic3r/CMakeLists.txt.orig	2022-09-06 07:09:19 UTC
+--- src/libslic3r/CMakeLists.txt.orig	2023-06-19 12:07:14 UTC
 +++ src/libslic3r/CMakeLists.txt
-@@ -395,7 +395,6 @@ find_package(JPEG REQUIRED)
+@@ -490,7 +490,6 @@ target_link_libraries(libslic3r
  target_link_libraries(libslic3r
      libnest2d
      admesh
--    cereal
+-    libcereal
      libigl
      miniz
      boost_libs

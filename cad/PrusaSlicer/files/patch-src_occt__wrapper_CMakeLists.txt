@@ -1,6 +1,6 @@
---- src/occt_wrapper/CMakeLists.txt.orig	2022-09-06 07:09:19 UTC
+--- src/occt_wrapper/CMakeLists.txt.orig	2023-06-19 12:07:14 UTC
 +++ src/occt_wrapper/CMakeLists.txt
-@@ -19,9 +19,11 @@ include(GenerateExportHeader)
+@@ -19,9 +19,11 @@ generate_export_header(OCCTWrapper)
  
  generate_export_header(OCCTWrapper)
  
@@ -13,7 +13,7 @@
      TKXDESTEP
      TKSTEP
      TKSTEP209
-@@ -56,5 +58,5 @@ target_link_libraries(OCCTWrapper ${OCCT_LIBS})
+@@ -58,5 +60,5 @@ include(GNUInstallDirs)
  
  include(GNUInstallDirs)
  
