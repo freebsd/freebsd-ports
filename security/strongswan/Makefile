@@ -1,11 +1,8 @@
 PORTNAME=	strongswan
-DISTVERSION=	5.9.10
-PORTREVISION=	1
+DISTVERSION=	5.9.11
 CATEGORIES=	security net-vpn
 MASTER_SITES=	https://download.strongswan.org/ \
 		https://download2.strongswan.org/
-PATCH_SITES=	https://github.com/strongswan/strongswan/commit/
-PATCHFILES=	3d0d3f5d028a0c630f89cb4fec5b2cd5364f568b.patch:-p1
 
 MAINTAINER=	strongswan@nanoteq.com
 COMMENT=	Open Source IKEv2 IPsec-based VPN solution
@@ -45,7 +42,7 @@ TEST_TARGET=	check
 OPTIONS_DEFINE=			CTR CURL EAPAKA3GPP2 EAPDYNAMIC EAPRADIUS \
 				EAPSIMFILE FARP GCM IKEV1 IPSECKEY KDF \
 				KERNELLIBIPSEC LDAP LOADTESTER MEDIATION MYSQL \
-				PKCS11 PKI PYTHON SCEP SMP SQLITE SWANCTL \
+				PKCS11 PKI PYTHON SMP SQLITE SWANCTL \
 				TESTVECTOR TPM TSS2 UNBOUND UNITY VICI XAUTH
 OPTIONS_DEFINE_i386=	VIA
 OPTIONS_DEFAULT=		BUILTIN CURL GCM IKEV1 KDF PKI SWANCTL VICI
@@ -73,7 +70,6 @@ MEDIATION_DESC=		Enable IKEv2 Mediation Extension
 PKCS11_DESC=		Enable PKCS11 token support
 PKI_DESC=		Enable PKI tools
 PYTHON_DESC=		Python VICI protocol plugin
-SCEP_DESC=		Enable Simple Certificate Enrollment Protocol
 SMP_DESC=		Enable XML-based management protocol (DEPRECATED)
 SWANCTL_DESC=		Install swanctl (requires VICI)
 TESTVECTOR_DESC=	Enable crypto test vectors
@@ -116,7 +112,6 @@ PKI_CONFIGURE_OFF=		--disable-pki
 PYTHON_IMPLIES=			VICI
 PYTHON_RUN_DEPENDS=		${PYTHON_PKGNAMEPREFIX}vici>0:security/py-vici@${PY_FLAVOR}
 PYTHON_USES=			python
-SCEP_CONFIGURE_OFF=		--disable-scepclient
 SMP_LIB_DEPENDS=		libxml2.so:textproc/libxml2
 SMP_CONFIGURE_ON=		--enable-smp
 SQLITE_LIB_DEPENDS=		libsqlite3.so:databases/sqlite3

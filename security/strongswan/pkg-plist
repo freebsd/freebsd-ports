@@ -83,7 +83,6 @@
 @sample %%ETCDIR%%.d/charon/xcbc.conf.sample
 %%PKI%%@sample %%ETCDIR%%.d/pki.conf.sample
 %%SQL%%@sample %%ETCDIR%%.d/pool.conf.sample
-%%SCEP%%@sample %%ETCDIR%%.d/scepclient.conf.sample
 @sample %%ETCDIR%%.d/starter.conf.sample
 %%SWANCTL%%@sample %%ETCDIR%%.d/swanctl.conf.sample
 %%SWANCTL%%@sample etc/swanctl/swanctl.conf.sample
@@ -276,7 +275,6 @@ libexec/ipsec/_updown
 libexec/ipsec/charon
 %%LOADTESTER%%libexec/ipsec/load-tester
 %%SQL%%libexec/ipsec/pool
-%%SCEP%%libexec/ipsec/scepclient
 libexec/ipsec/starter
 libexec/ipsec/stroke
 libexec/ipsec/whitelist
@@ -303,7 +301,6 @@ man/man5/strongswan.conf.5.gz
 %%SWANCTL%%man/man5/swanctl.conf.5.gz
 man/man8/charon-cmd.8.gz
 man/man8/ipsec.8.gz
-%%SCEP%%man/man8/scepclient.8.gz
 %%SWANCTL%%man/man8/swanctl.8.gz
 sbin/charon-cmd
 sbin/ipsec
@@ -389,7 +386,6 @@ sbin/ipsec
 %%DATADIR%%/templates/config/strongswan.d/charon.conf
 %%PKI%%%%DATADIR%%/templates/config/strongswan.d/pki.conf
 %%SQL%%%%DATADIR%%/templates/config/strongswan.d/pool.conf
-%%SCEP%%%%DATADIR%%/templates/config/strongswan.d/scepclient.conf
 %%DATADIR%%/templates/config/strongswan.d/starter.conf
 %%SWANCTL%%%%DATADIR%%/templates/config/strongswan.d/swanctl.conf
 %%SQL%%%%DATADIR%%/templates/database/sql/mysql.sql
