@@ -852,7 +852,6 @@ share/icons/hicolor/scalable/apps/kitty.svg
 %%DATADIR%%/kitty/shell_integration.py
 %%DATADIR%%/kitty/shm.py
 %%DATADIR%%/kitty/short_uuid.py
-%%DATADIR%%/kitty/srgb_gamma.glsl
 %%DATADIR%%/kitty/tab_bar.py
 %%DATADIR%%/kitty/tabs.py
 %%DATADIR%%/kitty/terminfo.py
