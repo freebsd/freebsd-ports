@@ -1,0 +1,5 @@
+PyQt6-3D is a set of Python bindings for The Qt Company's Qt 3D
+framework. The bindings sit on top of PyQt6 and are implemented as six
+separate modules corresponding to the different libraries that make up
+the framework.
+
