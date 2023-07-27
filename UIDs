@@ -269,7 +269,7 @@ teleirc:*:320:320::0:0:Telegram and IRC bridge:/nonexistent:/usr/sbin/nologin
 caldera:*:321:321::0:0:Caldera Mitre user:/nonexistent:/usr/sbin/nologin
 tlsc:*:322:322::0:0:TLS connect daemon:/nonexistent:/usr/sbin/nologin
 soju:*:323:323::0:0:soju:/nonexistent:/usr/sbin/nologin
-# free: 324
+dkimpy-milter:*:324:324::0:0:Dkimpy Milter:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin
 smfs:*:326:326::0:0:SMFSAV Owner:/nonexistent:/usr/sbin/nologin
 _reticulum:*:327:327::0:0:Reticulum Daemon:/nonexistent:/usr/sbin/nologin

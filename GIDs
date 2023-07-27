@@ -264,7 +264,7 @@ teleirc:*:320:
 caldera:*:321:
 tlsc:*:322:
 soju:*:323:
-# free: 324
+dkimpy-milter:*:324:
 dkfilter:*:325:
 smfs:*:326:
 _reticulum:*:327:
