@@ -1803,8 +1803,8 @@ bin/qmake6
 %%QT_INCDIR%%/QtOpenGLWidgets/qtopenglwidgetsglobal.h
 %%QT_INCDIR%%/QtOpenGLWidgets/qtopenglwidgetsversion.h
 %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qabstractprintdialog_p.h
-%%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qcups_p.h
-%%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qcupsjobwidget_p.h
+%%CUPS%%%%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qcups_p.h
+%%CUPS%%%%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qcupsjobwidget_p.h
 %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qpagesetupdialog_p.h
 %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qpagesetupdialog_unix_p.h
 %%QT_INCDIR%%/QtPrintSupport/%%FULLVER%%/QtPrintSupport/private/qpaintengine_alpha_p.h
