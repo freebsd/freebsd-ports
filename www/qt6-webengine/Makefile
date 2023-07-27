@@ -37,6 +37,7 @@ LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libnspr4.so:devel/nspr \
 		libnss3.so:security/nss \
 		libopenh264.so:multimedia/openh264 \
+		libopenjp2.so:graphics/openjpeg \
 		libopus.so:audio/opus \
 		libpci.so:devel/libpci \
 		libpng.so:graphics/png \
@@ -77,10 +78,10 @@ MAKE_ENV+=	CC="${CC}" CXX="${CXX}"			\
 # real number of make jobs via MAKE_JOBS_NUMBER to ninja(1) to CONFIGURE_ENV.
 DO_MAKE_BUILD=	${SETENV} ${MAKE_ENV} ${MAKE_CMD} ${MAKE_FLAGS} ${MAKEFILE} -j1 ${MAKE_ARGS:N${DESTDIRNAME}=*}
 
-BINARY_ALIAS=	python=${PYTHON_CMD}
+BINARY_ALIAS=	python3=${PYTHON_CMD}
 
 DISTINFO_FILE=	${.CURDIR}/distinfo
-QT6_VERSION=	6.5.0
+QT6_VERSION=	6.5.2
 
 OPTIONS_DEFAULT=	ALSA
 OPTIONS_SINGLE=		AUDIO

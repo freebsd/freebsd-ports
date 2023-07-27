@@ -1841,6 +1841,7 @@
     SUBDIR += qt5-websockets
     SUBDIR += qt5-websockets-qml
     SUBDIR += qt5-webview
+    SUBDIR += qt6-httpserver
     SUBDIR += qt6-webchannel
     SUBDIR += qt6-webengine
     SUBDIR += qt6-websockets

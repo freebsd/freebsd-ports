@@ -1,6 +1,6 @@
---- src/core/api/qt_cmdline.cmake.orig	2022-06-08 06:40:31 UTC
+--- src/core/api/qt_cmdline.cmake.orig	2023-07-07 17:40:32 UTC
 +++ src/core/api/qt_cmdline.cmake
-@@ -25,7 +25,7 @@ set(systemLibs alsa ffmpeg freetype harfbuzz icu lcms2
+@@ -28,7 +28,7 @@ set(systemLibs alsa ffmpeg freetype harfbuzz icu lcms2
  endfunction()
  
  set(systemLibs alsa ffmpeg freetype harfbuzz icu lcms2 libevent libjpeg

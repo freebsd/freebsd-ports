@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/mojo/core/BUILD.gn.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/mojo/core/BUILD.gn.orig	2023-07-07 17:40:32 UTC
 +++ src/3rdparty/chromium/mojo/core/BUILD.gn
-@@ -128,7 +128,7 @@ template("core_impl_source_set") {
+@@ -163,7 +163,7 @@ template("core_impl_source_set") {
          ]
        }
  

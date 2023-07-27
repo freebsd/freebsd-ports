@@ -1,6 +1,6 @@
---- src/3rdparty/chromium/mojo/public/tools/bindings/mojom.gni.orig	2022-09-26 10:05:50 UTC
+--- src/3rdparty/chromium/mojo/public/tools/bindings/mojom.gni.orig	2023-07-07 17:40:32 UTC
 +++ src/3rdparty/chromium/mojo/public/tools/bindings/mojom.gni
-@@ -688,6 +688,16 @@ template("mojom") {
+@@ -693,6 +693,16 @@ template("mojom") {
        enabled_features += [ "is_win" ]
      }
  

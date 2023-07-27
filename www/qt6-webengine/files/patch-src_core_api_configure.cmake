@@ -1,6 +1,6 @@
---- src/core/api/configure.cmake.orig	2022-09-26 10:05:50 UTC
+--- src/core/api/configure.cmake.orig	2023-07-07 17:40:32 UTC
 +++ src/core/api/configure.cmake
-@@ -7,6 +7,7 @@ if(NOT QT_CONFIGURE_RUNNING)
+@@ -10,6 +10,7 @@ if(NOT QT_CONFIGURE_RUNNING)
      if(PkgConfig_FOUND)
          pkg_check_modules(ALSA alsa IMPORTED_TARGET)
          pkg_check_modules(PULSEAUDIO libpulse>=0.9.10 libpulse-mainloop-glib)
@@ -8,7 +8,7 @@
          pkg_check_modules(XDAMAGE xdamage)
          pkg_check_modules(POPPLER_CPP poppler-cpp IMPORTED_TARGET)
          if(NOT GIO_FOUND)
-@@ -79,6 +80,11 @@ qt_feature("webengine-printing-and-pdf" PRIVATE
+@@ -78,6 +79,11 @@ qt_feature("webengine-printing-and-pdf" PRIVATE
      CONDITION TARGET Qt::PrintSupport AND QT_FEATURE_printer AND
      (CUPS_FOUND OR WIN32)
  )
@@ -20,7 +20,7 @@
  qt_feature("webengine-pepper-plugins" PRIVATE
      LABEL "Pepper Plugins"
      PURPOSE "Enables use of Pepper plugins."
-@@ -184,6 +190,10 @@ qt_configure_add_summary_entry(
+@@ -189,6 +195,10 @@ qt_configure_add_summary_entry(
  )
  qt_configure_add_summary_entry(
      ARGS "webengine-system-pulseaudio"

@@ -21,14 +21,15 @@ qmake_ARGS?=	# empty
 .include "${USESDIR}/qmake.mk"
 
 # Supported distribution arguments
-_COMMON_DISTS=		3d base charts datavis3d declarative imageformats multimedia \
+_COMMON_DISTS=		3d base charts datavis3d declarative imageformats location multimedia \
 			networkauth quick3d quicktimeline remoteobjects scxml sensors \
 			serialbus serialport speech svg tools translations virtualkeyboard \
 			wayland webchannel webengine websockets
-_QT5_DISTS=		connectivity gamepad graphicaleffects location quickcontrols \
+_QT5_DISTS=		connectivity gamepad graphicaleffects quickcontrols \
 			quickcontrols2 script webglplugin webview \
 			x11extras xmlpatterns
-_QT6_DISTS=		5compat doc languageserver lottie positioning shadertools
+_QT6_DISTS=		5compat doc httpserver languageserver lottie positioning \
+			quickeffectmaker shadertools
 
 _QT_DISTS=		${_COMMON_DISTS} \
 			${_QT${_QT_VER}_DISTS}
@@ -459,9 +460,9 @@ _sub_need_clean=	\#\#
 .    endif
 # The Qt modules have an install- and deinstall-step for wrangling
 # the qconfig-modules.h header, but qmake does not.
-.  if ${PORTNAME} != "qmake"
+.    if ${PORTNAME} != "qmake"
 post-install: qt-post-install
-.  endif # PORTNAME != qmake
+.    endif # PORTNAME != qmake
 qt-post-install:
 # We can't use SUB_FILES with the shared pkg-change.in.
 # We need it to be a script instead of a group of @unexecs.

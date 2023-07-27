@@ -1,15 +1,15 @@
---- cmake/Functions.cmake.orig	2022-11-08 21:18:48 UTC
+--- cmake/Functions.cmake.orig	2023-07-07 17:40:32 UTC
 +++ cmake/Functions.cmake
-@@ -429,7 +429,7 @@ function(add_linker_options target buildDir completeSt
+@@ -449,7 +449,7 @@ function(add_linker_options target buildDir completeSt
      set(archives_rsp "${buildDir}/${ninjaTarget}_archives.rsp")
      set(libs_rsp "${buildDir}/${ninjaTarget}_libs.rsp")
      set_target_properties(${cmakeTarget} PROPERTIES STATIC_LIBRARY_OPTIONS "@${objects_rsp}")
--    if(LINUX)
-+    if(LINUX OR FREEBSD)
+-    if(LINUX OR ANDROID)
++    if(LINUX OR ANDROID OR FREEBSD)
           get_gn_arch(cpu ${TEST_architecture_arch})
           if(CMAKE_CROSSCOMPILING AND cpu STREQUAL "arm" AND ${config} STREQUAL "Debug")
               target_link_options(${cmakeTarget} PRIVATE "LINKER:--long-plt")
-@@ -667,6 +667,8 @@ function(get_gn_os result)
+@@ -715,6 +715,8 @@ function(get_gn_os result)
          set(${result} "mac" PARENT_SCOPE)
      elseif(IOS)
          set(${result} "ios" PARENT_SCOPE)
@@ -18,7 +18,7 @@
      else()
          message(DEBUG "Unrecognized OS")
      endif()
-@@ -854,7 +856,7 @@ macro(append_build_type_setup)
+@@ -904,7 +906,7 @@ macro(append_build_type_setup)
  
      extend_gn_list(gnArgArg
          ARGS enable_precompiled_headers
@@ -27,7 +27,7 @@
      )
      extend_gn_list(gnArgArg
          ARGS dcheck_always_on
-@@ -902,7 +904,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -952,7 +954,7 @@ macro(append_compiler_linker_sdk_setup)
                  use_libcxx=true
              )
          endif()
@@ -36,7 +36,7 @@
              extend_gn_list(gnArgArg ARGS use_libcxx
                  CONDITION QT_FEATURE_stdlib_libcpp
              )
-@@ -930,7 +932,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -988,7 +990,7 @@ macro(append_compiler_linker_sdk_setup)
          )
      endif()
      get_gn_arch(cpu ${TEST_architecture_arch})
@@ -45,7 +45,7 @@
  
          extend_gn_list_cflag(gnArgArg
              ARG arm_tune
-@@ -997,7 +999,7 @@ macro(append_toolchain_setup)
+@@ -1055,7 +1057,7 @@ macro(append_toolchain_setup)
  endmacro()
  
  macro(append_toolchain_setup)
@@ -54,7 +54,7 @@
          list(APPEND gnArgArg
              custom_toolchain="${buildDir}/target_toolchain:target"
              host_toolchain="${buildDir}/host_toolchain:host"
-@@ -1024,7 +1026,7 @@ macro(append_pkg_config_setup)
+@@ -1087,7 +1089,7 @@ macro(append_pkg_config_setup)
  
  
  macro(append_pkg_config_setup)
@@ -63,7 +63,7 @@
          list(APPEND gnArgArg
              pkg_config="${PKG_CONFIG_EXECUTABLE}"
              host_pkg_config="${PKG_CONFIG_HOST_EXECUTABLE}"
-@@ -1100,6 +1102,20 @@ function(add_gn_build_aritfacts_to_target cmakeTarget 
+@@ -1165,6 +1167,20 @@ function(add_gn_build_aritfacts_to_target cmakeTarget 
              set_target_properties(${cmakeTarget} PROPERTIES
                  LINK_DEPENDS ${buildDir}/${config}/${arch}/${ninjaTarget}.stamp
              )
@@ -84,7 +84,7 @@
              if(QT_IS_MACOS_UNIVERSAL)
                  add_intermediate_archive(${target} ${buildDir}/${config}/${arch} ${completeStatic})
              elseif(IOS)
-@@ -1222,7 +1238,7 @@ function(check_for_ulimit)
+@@ -1291,7 +1307,7 @@ function(check_for_ulimit)
  
  function(check_for_ulimit)
      message("-- Checking 'ulimit -n'")
@@ -93,7 +93,7 @@
          OUTPUT_VARIABLE ulimitOutput
      )
      string(REGEX MATCHALL "[0-9]+" limit "${ulimitOutput}")
-@@ -1231,7 +1247,7 @@ function(check_for_ulimit)
+@@ -1300,7 +1316,7 @@ function(check_for_ulimit)
          if(NOT ${CMAKE_VERSION} VERSION_LESS "3.21.0")
              message(" -- Creating linker launcher")
              file(GENERATE OUTPUT ${PROJECT_BINARY_DIR}/linker_ulimit.sh

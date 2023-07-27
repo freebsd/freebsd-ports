@@ -1,4 +1,4 @@
---- src/3rdparty/chromium/content/public/common/content_features.cc.orig	2023-03-28 19:45:02 UTC
+--- src/3rdparty/chromium/content/public/common/content_features.cc.orig	2023-07-07 17:40:32 UTC
 +++ src/3rdparty/chromium/content/public/common/content_features.cc
 @@ -46,7 +46,7 @@ CONSTINIT const base::Feature kAudioServiceOutOfProces
               "AudioServiceOutOfProcess",
@@ -18,7 +18,7 @@
               base::FEATURE_ENABLED_BY_DEFAULT
  #else
               base::FEATURE_DISABLED_BY_DEFAULT
-@@ -1236,7 +1236,7 @@ BASE_FEATURE(kWebAssemblyCodeProtection,
+@@ -1242,7 +1242,7 @@ BASE_FEATURE(kWebAssemblyCodeProtection,
               "WebAssemblyCodeProtection",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
@@ -27,7 +27,7 @@
  // Use memory protection keys in userspace (PKU) (if available) to protect code
  // JITed for WebAssembly. Fall back to traditional memory protection if
  // WebAssemblyCodeProtection is also enabled.
-@@ -1278,7 +1278,7 @@ CONSTINIT const base::Feature kWebAssemblyTrapHandler(
+@@ -1284,7 +1284,7 @@ CONSTINIT const base::Feature kWebAssemblyTrapHandler(
  CONSTINIT const base::Feature kWebAssemblyTrapHandler(
               "WebAssemblyTrapHandler",
  #if ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_WIN) || \
@@ -36,7 +36,7 @@
       defined(ARCH_CPU_X86_64)) ||                                           \
      (BUILDFLAG(IS_MAC) && defined(ARCH_CPU_ARM64))
               base::FEATURE_ENABLED_BY_DEFAULT
-@@ -1353,7 +1353,11 @@ BASE_FEATURE(kWebUIReportOnlyTrustedTypes,
+@@ -1359,7 +1359,11 @@ BASE_FEATURE(kWebUIReportOnlyTrustedTypes,
  
  // Controls whether the WebUSB API is enabled:
  // https://wicg.github.io/webusb

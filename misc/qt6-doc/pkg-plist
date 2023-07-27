@@ -188,7 +188,6 @@
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-calqlatr.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-clocks-small.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-photosurface-small.png
-%%QT_DOCDIR%%/qtdoc/images/qtquick-demo-photoviewer-small.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-rssnews-small.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick-demo-stocqt.png
 %%QT_DOCDIR%%/qtdoc/images/qtquick3D.png
@@ -303,7 +302,6 @@
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-documentviewer-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-hangman-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-photosurface-example.html
-%%QT_DOCDIR%%/qtdoc/qtdoc-demos-photoviewer-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-rssnews-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-demos-stocqt-example.html
 %%QT_DOCDIR%%/qtdoc/qtdoc-tutorials-alarms-example.html
