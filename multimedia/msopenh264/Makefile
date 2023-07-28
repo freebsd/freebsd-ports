@@ -1,6 +1,6 @@
 PORTNAME=	msopenh264
 DISTVERSION=	5.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -19,7 +19,6 @@ USES=		cmake
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_TAGNAME=	5c7a9522478f5eedc9a3e1600fdd705da1e00d23
 
 CMAKE_ARGS=	-DENABLE_STATIC=NO
 PLIST_FILES=	lib/mediastreamer/plugins/libmsopenh264.so
