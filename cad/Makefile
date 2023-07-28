@@ -103,6 +103,7 @@
     SUBDIR += pcb
     SUBDIR += pcb-rnd
     SUBDIR += pdnmesh
+    SUBDIR += py-amaranth
     SUBDIR += py-cadquery
     SUBDIR += py-cocotb
     SUBDIR += py-cq-editor
