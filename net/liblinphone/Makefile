@@ -1,6 +1,5 @@
 PORTNAME=	liblinphone
-DISTVERSION=	5.2.37
-PORTREVISION=	1
+DISTVERSION=	5.2.94
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -30,7 +29,6 @@ USES=		cmake compiler:c++17-lang gnome iconv pkgconfig python:build sqlite
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_TAGNAME=	f8c1a652c2e014d1bdec9fc8d2a1996571970a9d
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

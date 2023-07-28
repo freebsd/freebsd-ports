@@ -1,4 +1,4 @@
---- console/linphonec.c.orig	2023-03-18 23:42:17 UTC
+--- console/linphonec.c.orig	2023-07-28 13:53:32 UTC
 +++ console/linphonec.c
 @@ -4,7 +4,7 @@
   * Copyright (C) 2002  Florian Winterstein <flox@gmx.net>
@@ -18,7 +18,7 @@
  {
  	LinphoneCore *opm=linphonec;
  
-@@ -1271,7 +1271,7 @@ static int
+@@ -1272,7 +1272,7 @@ static int
   *	-1 on error
   */
  static int
