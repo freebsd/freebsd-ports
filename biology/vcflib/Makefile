@@ -9,6 +9,9 @@ WWW=		https://github.com/vcflib/vcflib
 
 LICENSE=	MIT
 
+NOT_FOR_ARCHS=	armv6 armv7
+NOT_FOR_ARCHS_REASON=	requires OpenMP which is not supported
+
 BUILD_DEPENDS=	pybind11>0:devel/pybind11
 LIB_DEPENDS=	libhts.so:biology/htslib \
 		libcurl.so:ftp/curl \
