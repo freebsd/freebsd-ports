@@ -171,6 +171,7 @@
     SUBDIR += py-goatools
     SUBDIR += py-gtfparse
     SUBDIR += py-hits
+    SUBDIR += py-htseq
     SUBDIR += py-libnuml
     SUBDIR += py-libsedml
     SUBDIR += py-loompy
