@@ -50,6 +50,7 @@ CMAKE_ARGS+=	-DINPUT_qt3d_simd=no
 .  endif
 .else
 CMAKE_ARGS+=	-DINPUT_qt3d_simd=no
+PLIST_SUB+=	SIMD="@comment "
 .endif
 
 .include <bsd.port.mk>
