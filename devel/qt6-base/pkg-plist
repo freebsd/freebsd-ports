@@ -3589,6 +3589,7 @@ libdata/pkgconfig/Qt6Xml.pc
 %%QT_DOCDIR%%/config/exampleurl-qtmacextras.qdocconf
 %%QT_DOCDIR%%/config/exampleurl-qtmultimedia.qdocconf
 %%QT_DOCDIR%%/config/exampleurl-qtnetworkauth.qdocconf
+%%QT_DOCDIR%%/config/exampleurl-qtpositioning.qdocconf
 %%QT_DOCDIR%%/config/exampleurl-qtpurchasing.qdocconf
 %%QT_DOCDIR%%/config/exampleurl-qtquickcontrols.qdocconf
 %%QT_DOCDIR%%/config/exampleurl-qtquickcontrols2.qdocconf
