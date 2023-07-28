@@ -1,6 +1,5 @@
 PORTNAME=	oxidized
-PORTVERSION=	0.28.0
-PORTREVISION=	1
+PORTVERSION=	0.29.1
 CATEGORIES=	net-mgmt rubygems
 MASTER_SITES=	RG
 
@@ -10,13 +9,14 @@ WWW=		https://github.com/ytti/oxidized
 
 LICENSE=	APACHE20
 
-RUN_DEPENDS=	rubygem-asetus>=0.1<1:devel/rubygem-asetus \
+RUN_DEPENDS=	rubygem-asetus>=0.4<1:devel/rubygem-asetus \
 		rubygem-bcrypt_pbkdf>=1.0<2:security/rubygem-bcrypt_pbkdf \
 		rubygem-ed25519>=1.2<2:security/rubygem-ed25519 \
-		rubygem-net-ssh5>=5<6,2:security/rubygem-net-ssh5 \
+		rubygem-net-ssh>=7.1,2<8,2:security/rubygem-net-ssh \
 		rubygem-net-telnet>=0.2<1:security/rubygem-net-telnet \
-		rubygem-rugged>=1.0:devel/rubygem-rugged \
-		rubygem-slop>=4.6<5:devel/rubygem-slop
+		rubygem-psych3>=3.3<4:textproc/rubygem-psych3 \
+		rubygem-rugged>=1.5<2:devel/rubygem-rugged \
+		rubygem-slop>=4.10<5:devel/rubygem-slop
 
 USES=		gem shebangfix
 
