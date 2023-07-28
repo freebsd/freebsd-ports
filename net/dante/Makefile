@@ -11,14 +11,12 @@ WWW=		https://www.inet.no/dante/
 LICENSE=	BSD4CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to configure
-
 LIB_DEPENDS=	libminiupnpc.so:net/miniupnpc \
 		libsasl2.so:security/cyrus-sasl2
 
 CONFLICTS=	socks5
 
-USES=		libtool localbase
+USES=		autoreconf libtool localbase
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-socks-conf=${PREFIX}/etc/socks.conf \
 		--with-sockd-conf=${PREFIX}/etc/sockd.conf
