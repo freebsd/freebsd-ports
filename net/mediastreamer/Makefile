@@ -1,6 +1,5 @@
 PORTNAME=	mediastreamer
-DISTVERSION=	5.2.37
-PORTREVISION=	2
+DISTVERSION=	5.2.94
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -21,7 +20,6 @@ USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
 GL_PROJECT=	${PORTNAME}2
-GL_TAGNAME=	bd8ef7b1e5377c8c9598f8d53cac942deae6befc
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 

@@ -68,7 +68,6 @@ include/mediastreamer2/msvideoout.h
 include/mediastreamer2/msvideopresets.h
 include/mediastreamer2/msvideoqualitycontroller.h
 include/mediastreamer2/msvideorouter.h
-include/mediastreamer2/msvideoswitcher.h
 include/mediastreamer2/msvolume.h
 include/mediastreamer2/mswebcam.h
 include/mediastreamer2/qualityindicator.h

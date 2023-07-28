@@ -1,6 +1,6 @@
---- src/audiofilters/oss.c.orig	2017-04-06 09:27:56 UTC
+--- src/audiofilters/oss.c.orig	2023-07-27 14:00:34 UTC
 +++ src/audiofilters/oss.c
-@@ -37,95 +37,65 @@ MSFilter *ms_oss_read_new(MSSndCard *card);
+@@ -38,95 +38,65 @@ MSFilter *ms_oss_write_new(MSSndCard *card);
  MSFilter *ms_oss_write_new(MSSndCard *card);
  
  
@@ -129,7 +129,7 @@
  
  	/* start recording !!! Alex */
  	{
-@@ -135,7 +105,8 @@ static int configure_fd(int fd, int bits,int stereo, i
+@@ -136,7 +106,8 @@ static int configure_fd(int fd, int bits,int stereo, i
  		res=ioctl(fd, SNDCTL_DSP_SETTRIGGER, &fl);
  		if (res<0) ms_warning("OSS_TRIGGER: %s",strerror(errno));
  	}
@@ -139,7 +139,7 @@
  	return fd;
  }
  
-@@ -156,23 +127,23 @@ typedef struct OssData{
+@@ -157,23 +128,23 @@ typedef struct OssData{
  	bool_t stereo;
  } OssData;
  
@@ -167,7 +167,7 @@
  	} else {
  		ms_error("Cannot open fd in wr mode for [%s]",d->pcmdev);
  	}
-@@ -327,61 +298,78 @@ static void * oss_thread(void *p){
+@@ -328,61 +299,78 @@ static void * oss_thread(void *p){
  	MSSndCard *card=(MSSndCard*)p;
  	OssData *d=(OssData*)card->data;
  	int bsize=0;
@@ -278,7 +278,7 @@
  	}
  	if (d->pcmfd_read==d->pcmfd_write && d->pcmfd_read>=0 ) {
  		close(d->pcmfd_read);
-@@ -509,10 +497,10 @@ static int set_nchannels(MSFilter *f, void *arg){
+@@ -510,10 +498,10 @@ static MSFilterMethod oss_methods[]={
  }
  
  static MSFilterMethod oss_methods[]={
