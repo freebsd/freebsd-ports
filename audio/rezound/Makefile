@@ -28,12 +28,15 @@ CDRDAO_DESC=	Burning audio files to CD support
 
 LARGEFILE_CONFIGURE_ON=	--enable-largefile
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
+JACK_CONFIGURE_OFF=	--disable-jack
 AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
+PORTAUDIO_CONFIGURE_OFF=--disable-portaudio
 OGG_LIB_DEPENDS=	libogg.so:audio/libogg
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
-FFTW_LIB_DEPENDS=	libfftw.so:math/fftw
+FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
+FFTW_CONFIGURE_OFF=	--disable-fftw3
 SOUNDTOUCH_LIB_DEPENDS=	libSoundTouch.so:audio/soundtouch
 LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/amp.so:audio/ladspa
 LADSPA_CONFIGURE_OFF=	--disable-ladspa
@@ -55,7 +58,7 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E '/atoll|round|nearbyint/d' \
 		${WRKSRC}/config/platform/bsd.h
 	${REINPLACE_CMD} -E 's,(_nl_expand_alias \()\),\1...), ; \
-		/^C(XX)?FLAGS=/d ; /CXXFLAGS="\$$CXXFLAGS -[gW]/d ; \
+		/^C(XX)?FLAGS=/d ; /CXXFLAGS="\$$CXXFLAGS -[gsW]/d ; \
 		/^return /s,\(int\)( n?gettext),(long)\1, ; \
 		/boost header not found/d' \
 			${WRKSRC}/configure
@@ -75,6 +78,22 @@ post-patch: .SILENT
 		${WRKSRC}/src/backend/Remaster/Makefile.in \
 		${WRKSRC}/src/backend/LADSPA/Makefile.in \
 		${WRKSRC}/src/frontend_fox/Makefile.in
+	${REINPLACE_CMD} -e '/^#include/s,soundtouch/,,' \
+		${WRKSRC}/src/backend/DSP/T*Changer.h
+	${REINPLACE_CMD} -e 's,auto_ptr,unique_ptr,' \
+		${WRKSRC}/src/backend/AAction.* \
+		${WRKSRC}/src/backend/Effects/CFlangeEffect.cpp \
+		${WRKSRC}/src/backend/Effects/CVariedRepeatEffect.cpp
+	${REINPLACE_CMD} -e '/unsigned/s,register ,,' \
+		${WRKSRC}/src/backend/CSound.h
+	${REINPLACE_CMD} -e '/size_t/s,register ,,' \
+		${WRKSRC}/src/backend/CSoundPlayerChannel.cpp
+	${REINPLACE_CMD} -e '/const/s,register ,,' \
+		${WRKSRC}/src/backend/CSound_defs.h \
+		${WRKSRC}/src/backend/Filters/CBiquadResFilter.cpp \
+		${WRKSRC}/src/backend/Filters/CSinglePoleFilter.cpp
+	${REINPLACE_CMD} -e '/int/s,register ,,' \
+		${WRKSRC}/src/misc/endian_util.h
 .if ${PORT_OPTIONS:MDOCS}
 	${REINPLACE_CMD} -e '/AUTHORS/d; /COPYING/d' ${WRKSRC}/Makefile.in
 .else
