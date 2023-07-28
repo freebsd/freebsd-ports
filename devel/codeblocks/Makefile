@@ -21,6 +21,7 @@ LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
 USES=		autoreconf compiler:c++11-lang desktop-file-utils \
 		fam:gamin gettext-runtime gnome libtool localbase \
 		pathfix pkgconfig shared-mime-info tar:xz xorg
+USE_CXXSTD=	c++11
 USE_WX=		3.0+
 USE_GNOME=	gtk30 cairo
 USE_XORG=	x11
