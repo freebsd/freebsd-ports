@@ -1,70 +1,36 @@
-PORTNAME=	guile
-PORTVERSION=	3.0.9
-PORTREVISION=	2
+PORTNAME=	guile-meta
+PORTVERSION=	4
 CATEGORIES=	lang scheme
-MASTER_SITES=	GNU
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
 
-MAINTAINER=	bofh@FreeBSD.org
-COMMENT=	GNU Ubiquitous Intelligent Language for Extension
-WWW=		https://www.gnu.org/software/guile/
+MAINTAINER=	andrew@tao11.riddles.org.uk
+COMMENT=	Meta-port for the Guile interpreter
+WWW=		http://www.gnu.org/software/guile/
 
-LICENSE=	GPLv3 LGPL3
-LICENSE_COMB=	multi
+LICENSE=	NA
+LICENSE_COMB=	single
+LICENSE_NAME=	Non applicable
+LICENSE_TEXT=	No licenses are applicable to metaports
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
-# Currently has linker error in i386. Feel free to add other ARCHS in
-# case of failure
-NOT_FOR_ARCHS=	i386
+# no flavors and no version specified, so that we get the default
+# version as specified in DEFAULT_VERSIONS.
+USES=		guile:run
 
-LIB_DEPENDS=	libffi.so:devel/libffi \
-		libgmp.so:math/gmp \
-		libltdl.so:devel/libltdl \
-		libunistring.so:devel/libunistring
+NO_ARCH=	yes
+NO_BUILD=	yes
 
-USES=		charsetfix compiler:c11 cpe gmake iconv libtool \
-		makeinfo pathfix pkgconfig readline tar:lz
-CPE_VENDOR=	gnu
-USE_LDCONFIG=	yes
+# We don't provide a pkgconf or similar - this is purely a user
+# convenience, and building should always be done against a specific
+# version.
+PLIST_FILES=	bin/guile bin/guild
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-lto=${WITHOUT_LTO:Dno:U${WITH_LTO:Dyes:Uno}}
-
-#MAKE_JOBS_UNSAFE=	yes
-INSTALL_TARGET=	install-strip
-
-CONFLICTS_INSTALL=	guile1 guile2
-
-INFO=		guile r5rs
-
-PLIST_SUB=	GUILE_VER=${PORTVERSION:R}
-
-OPTIONS_DEFINE=		NLS THREADS
-OPTIONS_DEFAULT=	NLS THREADS
-OPTIONS_SUB=		yes
-
-NLS_USES=		gettext
-NLS_CONFIGURE_ENABLE=	nls
-
-THREADS_LIB_DEPENDS=		libgc-threaded.so:devel/boehm-gc-threaded
-THREADS_LIB_DEPENDS_OFF=	libgc.so:devel/boehm-gc
-THREADS_CONFIGURE_WITH=		threads
-
-.include <bsd.port.options.mk>
-
-.if ${ARCH} == powerpc
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-bootstrap_Makefile.in
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-i -e|-i.bak -e|' \
-		${WRKSRC}/libguile/Makefile.in
-	@${RM} -r ${WRKSRC}/prebuilt/32-bit-big-endian
-
-post-patch-THREADS-on:
-	@${REINPLACE_CMD} -e 's|bdw-gc|bdw-gc-threaded|g' ${WRKSRC}/configure
-
-# Currently guile fails to run if libs are stripped. Will need to debug
-# the case.
-#post-install:
-#	@${FIND} ${STAGEDIR}${PREFIX}/lib -name "*.go" | ${XARGS} ${STRIP_CMD}
+do-install:
+	for prog in guile guild; do \
+		${LN} -sf $${prog}-${GUILE_VER} \
+			${STAGEDIR}${PREFIX}/bin/$${prog}; \
+	done
 
 .include <bsd.port.mk>

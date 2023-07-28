@@ -1,0 +1,20 @@
+--- libguile/Makefile.in.orig	2023-05-19 23:42:28 UTC
++++ libguile/Makefile.in
+@@ -2239,7 +2239,7 @@ EXTRA_libguile_@GUILE_EFFECTIVE_VERSION@_la_SOURCES = 
+     locale-categories.h
+ 
+ INSTANTIATE = \
+-  $(SED) -i -e 's,[@]pkgdatadir[@],$(pkgdatadir),g'				\
++  $(SED) -i.bak -e 's,[@]pkgdatadir[@],$(pkgdatadir),g'				\
+             -e 's,[@]pkglibdir[@],$(pkglibdir),g'				\
+             -e 's,[@]GUILE_EFFECTIVE_VERSION[@],$(GUILE_EFFECTIVE_VERSION),g'
+ 
+@@ -4256,7 +4256,7 @@ libpath.h: $(srcdir)/Makefile.in  $(top_builddir)/conf
+ 	@echo '	{ "LIBS",	   "@GUILE_LIBS@" }, \' >> libpath.tmp
+ 	@echo '	{ "CFLAGS",	   "@GUILE_CFLAGS@" }, \' >> libpath.tmp
+ 	@BUILD_DATE="$${SOURCE_DATE_EPOCH:-`date '+%s'`}" ; \
+-	 echo '	{ "buildstamp",    "'`date -u +'%Y-%m-%d %T' -d @$$BUILD_DATE`'" }, \' >> libpath.tmp
++	 echo '	{ "buildstamp",    "'`date -j -u -f %s $$BUILD_DATE +'%Y-%m-%d %T'`'" }, \' >> libpath.tmp
+ 	@echo '}' >> libpath.tmp
+ 	$(AM_V_GEN)mv libpath.tmp libpath.h
+ 

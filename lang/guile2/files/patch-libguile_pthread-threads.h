@@ -1,4 +1,4 @@
---- libguile/pthread-threads.h.orig	2012-07-02 09:28:13 UTC
+--- libguile/pthread-threads.h.orig	2011-11-22 10:55:14 UTC
 +++ libguile/pthread-threads.h
 @@ -27,6 +27,9 @@
  */
@@ -9,4 +9,4 @@
 +#endif
  #include <sched.h>
  
- /* `libgc' defines wrapper procedures for pthread calls.  */
+ /* Threads 

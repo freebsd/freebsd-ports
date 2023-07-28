@@ -1,0 +1,20 @@
+--- libguile/Makefile.in.orig	2023-05-16 18:13:33 UTC
++++ libguile/Makefile.in
+@@ -2535,7 +2535,7 @@ EXTRA_libguile_@GUILE_EFFECTIVE_VERSION@_la_SOURCES = 
+     mini-gmp.h
+ 
+ INSTANTIATE = \
+-  $(SED) -i -e 's,[@]pkgdatadir[@],$(pkgdatadir),g'				\
++  $(SED) -i '' -e 's,[@]pkgdatadir[@],$(pkgdatadir),g'				\
+             -e 's,[@]pkglibdir[@],$(pkglibdir),g'				\
+             -e 's,[@]GUILE_EFFECTIVE_VERSION[@],$(GUILE_EFFECTIVE_VERSION),g'
+ 
+@@ -4633,7 +4633,7 @@ uninstall-hook:
+ @MINGW_LIBPATH_FALSE@	@echo '	{ "LIBS",	   "@GUILE_LIBS@" }, \' >> libpath.tmp
+ @MINGW_LIBPATH_FALSE@	@echo '	{ "CFLAGS",	   "@GUILE_CFLAGS@" }, \' >> libpath.tmp
+ @MINGW_LIBPATH_FALSE@	@BUILD_DATE="$${SOURCE_DATE_EPOCH:-`date '+%s'`}" ; \
+-@MINGW_LIBPATH_FALSE@	 echo '	{ "buildstamp",    "'`date -u +'%Y-%m-%d %T' -d @$$BUILD_DATE`'" }, \' >> libpath.tmp
++@MINGW_LIBPATH_FALSE@	 echo '	{ "buildstamp",    "'`date -j -u -f %s $$BUILD_DATE +'%Y-%m-%d %T'`'" }, \' >> libpath.tmp
+ @MINGW_LIBPATH_FALSE@	@echo '}' >> libpath.tmp
+ @MINGW_LIBPATH_FALSE@	$(AM_V_GEN)mv libpath.tmp libpath.h
+ 

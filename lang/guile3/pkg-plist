@@ -1,8 +1,13 @@
-bin/guild
-bin/guile
-bin/guile-config
-bin/guile-snarf
-bin/guile-tools
+bin/guild%%GUILE_SFX%%
+bin/guile-config%%GUILE_SFX%%
+bin/guile-snarf%%GUILE_SFX%%
+bin/guile-tools%%GUILE_SFX%%
+bin/guile%%GUILE_SFX%%
+bin/guild-%%GUILE_VER%%
+bin/guile-config-%%GUILE_VER%%
+bin/guile-snarf-%%GUILE_VER%%
+bin/guile-tools-%%GUILE_VER%%
+bin/guile-%%GUILE_VER%%
 include/guile/%%GUILE_VER%%/libguile.h
 include/guile/%%GUILE_VER%%/libguile/__scm.h
 include/guile/%%GUILE_VER%%/libguile/alist.h
@@ -130,7 +135,6 @@ include/guile/%%GUILE_VER%%/libguile/weak-set.h
 include/guile/%%GUILE_VER%%/libguile/weak-table.h
 include/guile/%%GUILE_VER%%/libguile/weak-vector.h
 include/guile/%%GUILE_VER%%/readline.h
-@comment lib/charset.alias
 lib/guile/%%GUILE_VER%%/ccache/ice-9/and-let-star.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/arrays.go
 lib/guile/%%GUILE_VER%%/ccache/ice-9/atomic.go
@@ -341,15 +345,12 @@ lib/guile/%%GUILE_VER%%/ccache/scheme/read.go
 lib/guile/%%GUILE_VER%%/ccache/scheme/repl.go
 lib/guile/%%GUILE_VER%%/ccache/scheme/time.go
 lib/guile/%%GUILE_VER%%/ccache/scheme/write.go
-lib/guile/%%GUILE_VER%%/ccache/system/base/optimize.go
-lib/guile/%%GUILE_VER%%/ccache/system/base/types/internal.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/api-diff.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/autofrisk.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/compile.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/disassemble.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/display-commentary.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/doc-snarf.go
-lib/guile/%%GUILE_VER%%/ccache/system/foreign-library.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/frisk.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/generate-autoload.go
 lib/guile/%%GUILE_VER%%/ccache/scripts/help.go
@@ -418,10 +419,13 @@ lib/guile/%%GUILE_VER%%/ccache/system/base/compile.go
 lib/guile/%%GUILE_VER%%/ccache/system/base/lalr.go
 lib/guile/%%GUILE_VER%%/ccache/system/base/language.go
 lib/guile/%%GUILE_VER%%/ccache/system/base/message.go
+lib/guile/%%GUILE_VER%%/ccache/system/base/optimize.go
 lib/guile/%%GUILE_VER%%/ccache/system/base/pmatch.go
 lib/guile/%%GUILE_VER%%/ccache/system/base/syntax.go
 lib/guile/%%GUILE_VER%%/ccache/system/base/target.go
 lib/guile/%%GUILE_VER%%/ccache/system/base/types.go
+lib/guile/%%GUILE_VER%%/ccache/system/base/types/internal.go
+lib/guile/%%GUILE_VER%%/ccache/system/foreign-library.go
 lib/guile/%%GUILE_VER%%/ccache/system/foreign-object.go
 lib/guile/%%GUILE_VER%%/ccache/system/foreign.go
 lib/guile/%%GUILE_VER%%/ccache/system/repl/command.go
@@ -473,8 +477,8 @@ lib/libguile-%%GUILE_VER%%.so.1
 lib/libguile-%%GUILE_VER%%.so.1.6.0
 lib/libguile-%%GUILE_VER%%.so.1.6.0-gdb.scm
 libdata/pkgconfig/guile-%%GUILE_VER%%.pc
-man/man1/guile.1.gz
-share/aclocal/guile.m4
+man/man1/guile%%GUILE_SFX%%.1.gz
+@comment share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/guile-procedures.txt
 %%DATADIR%%/%%GUILE_VER%%/ice-9/and-let-star.scm
 %%DATADIR%%/%%GUILE_VER%%/ice-9/arrays.scm
@@ -692,8 +696,6 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/scheme/repl.scm
 %%DATADIR%%/%%GUILE_VER%%/scheme/time.scm
 %%DATADIR%%/%%GUILE_VER%%/scheme/write.scm
-%%DATADIR%%/%%GUILE_VER%%/system/base/optimize.scm
-%%DATADIR%%/%%GUILE_VER%%/system/base/types/internal.scm
 %%DATADIR%%/%%GUILE_VER%%/scripts/api-diff.scm
 %%DATADIR%%/%%GUILE_VER%%/scripts/autofrisk.scm
 %%DATADIR%%/%%GUILE_VER%%/scripts/compile.scm
@@ -778,10 +780,12 @@ share/aclocal/guile.m4
 %%DATADIR%%/%%GUILE_VER%%/system/base/lalr.upstream.scm
 %%DATADIR%%/%%GUILE_VER%%/system/base/language.scm
 %%DATADIR%%/%%GUILE_VER%%/system/base/message.scm
+%%DATADIR%%/%%GUILE_VER%%/system/base/optimize.scm
 %%DATADIR%%/%%GUILE_VER%%/system/base/pmatch.scm
 %%DATADIR%%/%%GUILE_VER%%/system/base/syntax.scm
 %%DATADIR%%/%%GUILE_VER%%/system/base/target.scm
 %%DATADIR%%/%%GUILE_VER%%/system/base/types.scm
+%%DATADIR%%/%%GUILE_VER%%/system/base/types/internal.scm
 %%DATADIR%%/%%GUILE_VER%%/system/foreign-library.scm
 %%DATADIR%%/%%GUILE_VER%%/system/foreign-object.scm
 %%DATADIR%%/%%GUILE_VER%%/system/foreign.scm

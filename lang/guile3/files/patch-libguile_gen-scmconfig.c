@@ -1,14 +1,6 @@
---- libguile/gen-scmconfig.c.orig	2016-06-17 09:37:10 UTC
+--- libguile/gen-scmconfig.c.orig	2021-03-09 19:24:59 UTC
 +++ libguile/gen-scmconfig.c
-@@ -138,6 +138,7 @@
- 
- #include <libguile/gen-scmconfig.h>
- 
-+#define _ANSI_SOURCE
- #include <stdio.h>
- #include <string.h>
- 
-@@ -382,6 +383,10 @@ main (int argc, char *argv[])
+@@ -343,6 +343,10 @@ main (int argc, char *argv[])
    pf ("typedef int scm_t_off;\n");
    pf ("#define SCM_T_OFF_MAX INT_MAX\n");
    pf ("#define SCM_T_OFF_MIN INT_MIN\n");

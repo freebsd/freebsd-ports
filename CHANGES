@@ -10,6 +10,15 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20230728:
+AUTHOR: andrew@tao11.riddles.org.uk, fuz@FreeBSD.org
+
+  A new uses 'guile' has been added to transparently depend on the
+  proper variant of guile depending on the default version set by the
+  user and the demands of the port.
+
+  See Mk/Uses/guile.mk for in-depth documentation.
+
 20230722:
 AUTHOR: tcberner@FreeBSD.org
 

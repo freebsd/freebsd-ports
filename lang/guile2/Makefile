@@ -1,6 +1,6 @@
 PORTNAME=	guile
-PORTVERSION=	2.2.7
-PORTREVISION=	3
+DISTVERSION=	2.2.7
+PORTREVISION=	4
 CATEGORIES=	lang scheme
 MASTER_SITES=	GNU
 PKGNAMESUFFIX=	2
@@ -16,51 +16,52 @@ LIB_DEPENDS=	libgmp.so:math/gmp \
 		libltdl.so:devel/libltdl \
 		libunistring.so:devel/libunistring \
 		libffi.so:devel/libffi
+RUN_DEPENDS=	guile-aclocal>=3:lang/guile-aclocal
 
-USES=		charsetfix compiler:c11 cpe gmake iconv libtool makeinfo ncurses pathfix \
-		pkgconfig readline tar:lz
+USES=		guile:${PORTVERSION:R},env \
+		charsetfix compiler:c11 cpe gmake iconv libtool localbase \
+		makeinfo ncurses pathfix pkgconfig readline tar:lz
+CPE_VENDOR=	gnu
 USE_LDCONFIG=	yes
 
-CPE_VENDOR=	gnu
-
-CONFLICTS_INSTALL=	guile guile1 # bin/guild bin/guile bin/guile-config bin/guile-snarf bin/guile-tools
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--program-suffix=-${GUILE_VER}
+# eliminate some pointless configure warnings/errors
+CONFIGURE_ENV+= gl_cv_func_working_mktime=yes \
+		ac_cv_header_sys_timeb_h=0
 
 MAKE_JOBS_UNSAFE=	yes
-
-GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
-LIBS+=		-L${LOCALBASE}/lib
 INSTALL_TARGET=	install-strip
 
 INFO=		guile r5rs
-
-PLIST_SUB=	GUILE_VER=${PORTVERSION:R}
+INFO_PATH=	${GUILE_INFO_PATH}
 
 OPTIONS_DEFINE=	NLS THREADS
 OPTIONS_DEFAULT=THREADS
 OPTIONS_SUB=	yes
 
-NLS_CONFIGURE_ENABLE=	nls
 NLS_USES=	gettext
+NLS_CONFIGURE_ENABLE=	nls
 
-THREADS_CONFIGURE_WITH=	threads
 THREADS_LIB_DEPENDS=	libgc-threaded.so:devel/boehm-gc-threaded
-THREADS_LIB_DEPENDS_OFF=	libgc.so:devel/boehm-gc
-
-REINPLACE_FILES=	libguile/smob.c libguile/filesys.c libguile/gc.c \
-			libguile/mallocs.c libguile/eval.c \
-			libguile/gc-malloc.c libguile/ports.c
+THREADS_LIB_DEPENDS_OFF=libgc.so:devel/boehm-gc
+THREADS_CONFIGURE_ON=	--with-bdw-gc=bdw-gc-threaded
+THREADS_CONFIGURE_OFF=	--with-bdw-gc=bdw-gc
+THREADS_CONFIGURE_WITH=	threads
 
 post-patch:
-	@cd ${WRKSRC} ; \
-	  ${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${REINPLACE_FILES}
-	@${REINPLACE_CMD} -e 's|sys/time.h sys/timeb.h|sys/time.h |g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-i -e|-i.bak -e|' \
-		${WRKSRC}/libguile/Makefile.in
 	@${RM} -r ${WRKSRC}/prebuilt/32-bit-big-endian
 
-post-patch-THREADS-on:
-	@${REINPLACE_CMD} -e 's|bdw-gc|bdw-gc-threaded|g' ${WRKSRC}/configure
+# DO NOT try and add rules here to strip .go files, no matter how loudly
+# testport / stage-qa shouts at you about it, because .go files (which are
+# compiled bytecode) are not intended to be stripped and doing so causes
+# breakage at run time.
+
+post-install:
+	for p in guile guild guile-tools guile-config guile-snarf; do \
+	  ${LN} -s $${p}-${GUILE_VER} ${STAGEDIR}${PREFIX}/bin/$${p}${GUILE_SFX}; \
+	done
+	${MV} ${STAGEDIR}${PREFIX}/man/man1/guile-${GUILE_VER}.1 \
+	      ${STAGEDIR}${PREFIX}/man/man1/guile${GUILE_SFX}.1
 
 .include <bsd.port.mk>

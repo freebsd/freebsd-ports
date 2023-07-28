@@ -1,0 +1,12 @@
+--- scripts/Makefile.am.orig	2023-05-22 16:38:21 UTC
++++ scripts/Makefile.am
+@@ -21,6 +21,9 @@
+ 
+ AUTOMAKE_OPTIONS = gnu
+ 
++# prevent program-suffix being used in this dir
++transform=
++
+ # These should be installed and distributed.
+ scripts_sources =				\
+ 	PROGRAM					\
