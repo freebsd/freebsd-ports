@@ -1,0 +1,2 @@
+ntpd-rs is an NTP implementation written in Rust, with a focus on security and
+stability. It includes client and server functionality and supports NTS.
