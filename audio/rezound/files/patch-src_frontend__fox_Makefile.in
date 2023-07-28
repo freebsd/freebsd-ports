@@ -1,0 +1,20 @@
+--- src/frontend_fox/Makefile.in.orig	2013-12-29 20:48:20 UTC
++++ src/frontend_fox/Makefile.in
+@@ -331,7 +331,7 @@ INCLUDES = \
+ 
+ 
+ # doc directory
+-pkgdocdir = $(prefix)/doc/@PACKAGE@
++pkgdocdir = $(datadir)/doc/@PACKAGE@
+ noinst_LTLIBRARIES = libfrontend.la
+ libfrontend_la_SOURCES = \
+ 			CFOXIcons.cpp \
+@@ -405,7 +405,7 @@ _rezound_LDADD = libfrontend.la\
+ 
+ rezound_LDADD = $(_rezound_LDADD) @FOX_LIBS@
+ rezound_DEPENDENCIES = $(_rezound_LDADD)
+-AM_CXXFLAGS = @FOX_CFLAGS@
++AM_CXXFLAGS = @FOX_CFLAGS@ @audiofile_CFLAGS@ @fftw3_CFLAGS@
+ noinst_HEADERS = \
+ 	CFOXIcons.h \
+ 	fox_compat.h \

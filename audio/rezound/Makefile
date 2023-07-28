@@ -15,10 +15,9 @@ LIB_DEPENDS=	libFOX-1.6.so:x11-toolkits/fox16
 USES=		bison compiler:c++11-lang pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa
-MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS_DEFINE=	LARGEFILE JACK AUDIOFILE PORTAUDIO OGG VORBIS FLAC FFTW \
-		SOUNDTOUCH LADSPA LAME CDRDAO DOCS NLS
+		SOUNDTOUCH PULSEAUDIO LADSPA LAME CDRDAO DOCS NLS
 OPTIONS_DEFAULT=	AUDIOFILE PORTAUDIO OGG VORBIS FLAC SOUNDTOUCH \
 		LADSPA LAME
 
@@ -33,11 +32,16 @@ AUDIOFILE_LIB_DEPENDS=	libaudiofile.so:audio/libaudiofile
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 PORTAUDIO_CONFIGURE_OFF=--disable-portaudio
 OGG_LIB_DEPENDS=	libogg.so:audio/libogg
+VORBIS_IMPLIES=		OGG
 VORBIS_LIB_DEPENDS=	libvorbis.so:audio/libvorbis
+FLAC_IMPLIES=		OGG
 FLAC_LIB_DEPENDS=	libFLAC.so:audio/flac
 FFTW_LIB_DEPENDS=	libfftw3.so:math/fftw3
 FFTW_CONFIGURE_OFF=	--disable-fftw3
 SOUNDTOUCH_LIB_DEPENDS=	libSoundTouch.so:audio/soundtouch
+PULSEAUDIO_IMPLIES=	FLAC VORBIS
+PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
+PULSEAUDIO_CONFIGURE_OFF=--disable-pulse
 LADSPA_RUN_DEPENDS=	${LOCALBASE}/lib/ladspa/amp.so:audio/ladspa
 LADSPA_CONFIGURE_OFF=	--disable-ladspa
 LAME_RUN_DEPENDS=	lame:audio/lame
@@ -68,16 +72,12 @@ post-patch: .SILENT
 		${WRKSRC}/src/misc/CNestedDataFile/Makefile.in \
 		${WRKSRC}/src/PoolFile/Makefile.in \
 		${WRKSRC}/src/backend/DSP/Makefile.in \
-		${WRKSRC}/src/backend/Makefile.in \
 		${WRKSRC}/src/backend/File/Makefile.in \
 		${WRKSRC}/src/backend/Edits/Makefile.in \
-		${WRKSRC}/src/backend/Effects/Makefile.in \
-		${WRKSRC}/src/backend/Filters/Makefile.in \
 		${WRKSRC}/src/backend/Looping/Makefile.in \
 		${WRKSRC}/src/backend/Generate/Makefile.in \
 		${WRKSRC}/src/backend/Remaster/Makefile.in \
-		${WRKSRC}/src/backend/LADSPA/Makefile.in \
-		${WRKSRC}/src/frontend_fox/Makefile.in
+		${WRKSRC}/src/backend/LADSPA/Makefile.in
 	${REINPLACE_CMD} -e '/^#include/s,soundtouch/,,' \
 		${WRKSRC}/src/backend/DSP/T*Changer.h
 	${REINPLACE_CMD} -e 's,auto_ptr,unique_ptr,' \

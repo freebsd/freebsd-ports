@@ -1,0 +1,20 @@
+--- src/backend/Filters/Makefile.in.orig	2013-12-29 20:48:20 UTC
++++ src/backend/Filters/Makefile.in
+@@ -292,7 +292,7 @@ INCLUDES = \
+ 
+ 
+ # doc directory
+-pkgdocdir = $(prefix)/doc/@PACKAGE@
++pkgdocdir = $(datadir)/doc/@PACKAGE@
+ noinst_HEADERS = \
+ 		CConvolutionFilter.h \
+ 		CArbitraryFIRFilter.h \
+@@ -309,6 +309,8 @@ libFilters_la_SOURCES = \
+ 			CMorphingArbitraryFIRFilter.cpp \
+ 			CSinglePoleFilter.cpp \
+ 			CBiquadResFilter.cpp 
++
++AM_CXXFLAGS = @fftw3_CFLAGS@
+ 
+ all: all-am
+ 

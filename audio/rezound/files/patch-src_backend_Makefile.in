@@ -1,0 +1,20 @@
+--- src/backend/Makefile.in.orig	2013-12-29 20:48:20 UTC
++++ src/backend/Makefile.in
+@@ -345,7 +345,7 @@ INCLUDES = \
+ 
+ 
+ # doc directory
+-pkgdocdir = $(prefix)/doc/@PACKAGE@
++pkgdocdir = $(datadir)/doc/@PACKAGE@
+ SUBDIRS = \
+ 	DSP  \
+ 	File  \
+@@ -469,7 +469,7 @@ libbackend_la_SOURCES = \
+ 
+ 
+ # soundtouch_CFLAGS is in Remaster/Makefile.am
+-AM_CXXFLAGS = @audiofile_CFLAGS@ @ALSA_CFLAGS@ @JACK_CFLAGS@ @PULSE_CFLAGS@ @ogg_CFLAGS@ @vorbis_CFLAGS@ @flacpp_CFLAGS@ @flac_CFLAGS@ @fftw3_CFLAGS@
++AM_CXXFLAGS = @audiofile_CFLAGS@ @ALSA_CFLAGS@ @JACK_CFLAGS@ @PORTAUDIO_19_CFLAGS@ @PULSE_CFLAGS@ @ogg_CFLAGS@ @vorbis_CFLAGS@ @flacpp_CFLAGS@ @flac_CFLAGS@ @fftw3_CFLAGS@
+ 
+ # soundtouch_LIBS is in Remaster/Makefile.am
+ libbackend_la_LIBADD = @LTLIBINTL@ @audiofile_LIBS@ @ALSA_LIBS@ @JACK_LIBS@ @PULSE_LIBS@ @ogg_LIBS@ @vorbisfile_LIBS@ @vorbisenc_LIBS@ @vorbis_LIBS@ @flacpp_LIBS@ @flac_LIBS@ @fftw3_LIBS@
