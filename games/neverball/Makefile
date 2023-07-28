@@ -1,6 +1,6 @@
 PORTNAME=	neverball
 PORTVERSION=	1.6.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	https://icculus.org/neverball/ \
 		https://mirror.amdmi3.ru/distfiles/

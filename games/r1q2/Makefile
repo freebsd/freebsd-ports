@@ -1,6 +1,6 @@
 PORTNAME=	r1q2
 PORTVERSION=	8012
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ LOCAL/danfe \
 		http://old.r1ch.net/stuff/r1q2/src/

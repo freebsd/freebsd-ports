@@ -1,6 +1,6 @@
 PORTNAME=	libwraster
 PORTVERSION=	0.95.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-wm windowmaker
 MASTER_SITES=	http://windowmaker.org/pub/source/release/
 DISTNAME=	WindowMaker-${PORTVERSION}

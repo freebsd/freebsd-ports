@@ -1,6 +1,6 @@
 PORTNAME=	xwallpaper
 DISTVERSION=	0.7.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	https://github.com/stoeckmann/xwallpaper/releases/download/v${DISTVERSION}/
 

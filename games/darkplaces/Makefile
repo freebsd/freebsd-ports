@@ -1,5 +1,6 @@
 PORTNAME=	darkplaces
 DISTVERSION=	20180412beta1
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://icculus.org/twilight/darkplaces/files/
 DISTNAME=	${PORTNAME}engine${DISTVERSION}

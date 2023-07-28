@@ -1,6 +1,6 @@
 PORTNAME=	xrick
 PORTVERSION=	021212
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	games
 MASTER_SITES=	http://www.bigorno.net/xrick/
 

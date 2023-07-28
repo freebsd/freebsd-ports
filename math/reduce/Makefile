@@ -1,5 +1,6 @@
 PORTNAME=	reduce
 PORTVERSION=	${SFSUBDIR:S/snapshot_//:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	math lang
 MASTER_SITES=	SF/${PORTNAME}-algebra/${SFSUBDIR}/
 DISTNAME=	Reduce-svn6339-src

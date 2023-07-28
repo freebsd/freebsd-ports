@@ -1,6 +1,6 @@
 PORTNAME=	qudos
 PORTVERSION=	0.40.1
-PORTREVISION=	20
+PORTREVISION=	21
 CATEGORIES=	games
 MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ LOCAL/danfe
 DISTNAME=	QuDos-${PORTVERSION}-src

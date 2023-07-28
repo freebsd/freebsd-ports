@@ -1,5 +1,6 @@
 PORTNAME=	ctwm
 DISTVERSION=	4.1.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://www.ctwm.org/dist/ \

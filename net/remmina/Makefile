@@ -1,5 +1,6 @@
 PORTNAME=	remmina
 DISTVERSION=	1.4.30
+PORTREVISION=	1
 CATEGORIES=	net gnome
 
 MAINTAINER=	fernape@FreeBSD.org

@@ -1,5 +1,6 @@
 PORTNAME=	cvsgraph
 DISTVERSION=	1.7.2
+PORTREVISION=	1
 CATEGORIES=	devel graphics
 MASTER_SITES=	https://www.vagrearg.org/cvsgraph/release/
 

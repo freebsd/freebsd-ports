@@ -1,5 +1,6 @@
 PORTNAME=	agar
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://stable.hypertriton.com/agar/
 

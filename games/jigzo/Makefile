@@ -1,6 +1,6 @@
 PORTNAME=	jigzo
 PORTVERSION=	0.6.1
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	games
 MASTER_SITES=	https://mirror.amdmi3.ru/distfiles/
 

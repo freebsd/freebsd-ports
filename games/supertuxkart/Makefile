@@ -1,5 +1,6 @@
 PORTNAME=	supertuxkart
 DISTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/supertuxkart/stk-code/releases/download/${DISTVERSION}/
 DISTNAME=	SuperTuxKart-${DISTVERSION}-src

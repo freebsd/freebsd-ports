@@ -1,5 +1,6 @@
 PORTNAME=	testdisk
 DISTVERSION=	7.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 

@@ -1,6 +1,6 @@
 PORTNAME=	libgfx
 DISTVERSION=	1.1.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	graphics
 MASTER_SITES=	http://mgarland.org/files/dist/
 

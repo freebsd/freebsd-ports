@@ -1,5 +1,6 @@
 PORTNAME=	xonotic
 PORTVERSION=	0.8.6
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	https://dl.xonotic.org/ \
 		https://download.evil-ant-colony.org/xonotic/ \

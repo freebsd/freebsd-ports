@@ -1,6 +1,6 @@
 PORTNAME=	ezquake
 DISTVERSION=	3.2.3
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	2
 CATEGORIES=	games
 MASTER_SITES=	https://github.com/ezQuake/ezquake-source/archive/ \

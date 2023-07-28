@@ -1,5 +1,6 @@
 PORTNAME=	largetifftools
 PORTVERSION=	1.4.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	https://www.imnc.in2p3.fr/pagesperso/deroulers/software/largetifftools/download/${PORTNAME}-${PORTVERSION}/
 

@@ -1,5 +1,5 @@
 CELESTIA_UI=	gtk
-PORTREVISION=	1
+PORTREVISION=	2
 MASTERDIR=	${.CURDIR}/../celestia
 
 .include "${MASTERDIR}/Makefile"

@@ -1,6 +1,6 @@
 PORTNAME=	lcms2
 PORTVERSION=	2.15
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	https://github.com/mm2/Little-CMS/releases/download/lcms${PORTVERSION}/
 

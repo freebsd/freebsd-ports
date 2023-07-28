@@ -1,5 +1,6 @@
 PORTNAME=	azpainterb
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://azsky2.html.xdomain.jp/arc/
 

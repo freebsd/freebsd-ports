@@ -1,5 +1,6 @@
 PORTNAME=	wkhtmltopdf
 PORTVERSION=	0.12.6
+PORTREVISION=	1
 CATEGORIES=	converters
 
 MAINTAINER=	pi@FreeBSD.org

@@ -10,7 +10,7 @@
 
 PORTNAME=	libyuv
 DISTVERSION=	0.0.1789
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	LOCAL/mikael/libyuv/:libyuv \
 		LOCAL/tcberner/libyuv/:libyuv

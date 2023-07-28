@@ -1,6 +1,6 @@
 PORTNAME=	rawtherapee
 PORTVERSION=	5.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	https://rawtherapee.com/shared/source/ \
 		LOCAL/mandree/
