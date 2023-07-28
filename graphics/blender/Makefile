@@ -127,11 +127,11 @@ OPENAL_CMAKE_BOOL=		WITH_OPENAL
 OPENAL_USES=			openal:al,alut
 OPENCOLORIO_CMAKE_BOOL=		WITH_OPENCOLORIO
 OPENCOLORIO_LIB_DEPENDS=	libOpenColorIO.so:graphics/opencolorio \
-				libminizip-ng.so:archivers/minizip-ng \
 				libyaml-cpp.so:devel/yaml-cpp \
 				libtinyxml.so:textproc/tinyxml \
 				libexpat.so:textproc/expat2 \
 				libpystring.so:devel/pystring
+OPENCOLORIO_USES=		minizip:ng
 OPENEXR_CMAKE_BOOL=		WITH_IMAGE_OPENEXR
 OPENEXR_CFLAGS=			-I${LOCALBASE}/include/Imath
 OPENEXR_LIB_DEPENDS=		libImath.so:math/Imath \
