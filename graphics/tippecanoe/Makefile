@@ -25,7 +25,7 @@ PLIST_FILES=	bin/tile-join bin/tippecanoe bin/tippecanoe-decode \
 
 # Suppress a clang-16 error on 32-bit arch:
 #  non-constant-expression cannot be narrowed from type 'uint64_t'
-.if ${ARCH} == i386
+.if ${ARCH} == i386 || ${ARCH:Marmv?} != ""
 CXXFLAGS+=	-Wno-narrowing
 .endif
 
