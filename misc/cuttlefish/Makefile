@@ -32,6 +32,7 @@ CMAKE_OFF=	CUTTLEFISH_BUILD_DOCS CUTTLEFISH_BUILD_TESTS
 CMAKE_ON=	CUTTLEFISH_SHARED
 CMAKE_TESTING_ON=	CUTTLEFISH_BUILD_TESTS # many tests fail, see https://github.com/akb825/Cuttlefish/issues/19
 
+CXXFLAGS_armv7=	-mfpu=neon-fp16
 CXXFLAGS_powerpc=	-maltivec
 
 .include <bsd.port.mk>
