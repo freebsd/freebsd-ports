@@ -39,6 +39,7 @@
 %%WWWDIR%%/core/Layers.js
 %%WWWDIR%%/core/Object3D.js
 %%WWWDIR%%/core/Raycaster.js
+%%WWWDIR%%/core/RenderTarget.js
 %%WWWDIR%%/core/Uniform.js
 %%WWWDIR%%/core/UniformsGroup.js
 %%WWWDIR%%/extras/DataUtils.js
@@ -358,6 +359,7 @@
 %%WWWDIR%%/scenes/Scene.js
 %%WWWDIR%%/textures/CanvasTexture.js
 %%WWWDIR%%/textures/CompressedArrayTexture.js
+%%WWWDIR%%/textures/CompressedCubeTexture.js
 %%WWWDIR%%/textures/CompressedTexture.js
 %%WWWDIR%%/textures/CubeTexture.js
 %%WWWDIR%%/textures/Data3DTexture.js
