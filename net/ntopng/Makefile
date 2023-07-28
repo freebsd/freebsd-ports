@@ -1,5 +1,6 @@
 PORTNAME=	ntopng
 PORTVERSION=	5.6.d20230531
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -27,7 +28,7 @@ BUILD_DEPENDS=	bash:shells/bash
 USES=		autoreconf compiler:c++11-lang cpe gmake ldap libtool localbase \
 		lua:54 mysql pathfix pkgconfig shebangfix sqlite ssl
 
-SUB_FILES=	ntopng-geoip2update.sh pkg-deinstall
+SUB_FILES=	ntopng-geoip2update.sh pkg-deinstall pkg-message
 SHEBANG_FILES=	httpdocs/misc/ntopng-add-user.sh \
 		httpdocs/misc/ntopng-utils-manage-config.in
 GNU_CONFIGURE=	yes

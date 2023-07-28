@@ -25,11 +25,14 @@ _fetchextract() {
 	return 0
 }
 
+# Get the license key from the GeoIP.conf file
+LICENSE_KEY=$(awk -F ' ' '/^#/ {next} $1=="LicenseKey" {print $2}' %%LOCALBASE%%/etc/GeoIP.conf)
+
 echo Fetching GeoLite2-City
-_fetchextract 'https://geolite.maxmind.com/download/geoip/database/GeoLite2-City.tar.gz' 
+_fetchextract "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City&license_key=${LICENSE_KEY}&suffix=tar.gz"
 
 echo Fetching GeoLite2-ASN
-_fetchextract 'https://geolite.maxmind.com/download/geoip/database/GeoLite2-ASN.tar.gz'
+_fetchextract "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-ASN&license_key=${LICENSE_KEY}&suffix=tar.gz"
 
 mv GeoLite2-*/*.mmdb %%DATADIR%%/httpdocs/geoip
 
