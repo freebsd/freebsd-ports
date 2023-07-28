@@ -1440,6 +1440,7 @@ lib/ocaml/libcamlrund.a
 lib/ocaml/libcamlruni.a
 lib/ocaml/libcamlstr.a
 %%X11%%lib/ocaml/libgraphics.a
+%%RAWSPACETIMELIB%%lib/ocaml/libraw_spacetime_lib.a
 %%THREADS%%lib/ocaml/libthreads.a
 %%THREADS%%lib/ocaml/libthreadsnat.a
 lib/ocaml/libunix.a
@@ -1581,6 +1582,14 @@ lib/ocaml/queue.ml
 lib/ocaml/queue.mli
 lib/ocaml/random.ml
 lib/ocaml/random.mli
+%%RAWSPACETIMELIB%%lib/ocaml/raw_spacetime_lib.a
+%%RAWSPACETIMELIB%%lib/ocaml/raw_spacetime_lib.cma
+%%RAWSPACETIMELIB%%lib/ocaml/raw_spacetime_lib.cmi
+%%RAWSPACETIMELIB%%lib/ocaml/raw_spacetime_lib.cmti
+%%RAWSPACETIMELIB%%lib/ocaml/raw_spacetime_lib.cmx
+%%RAWSPACETIMELIB%%lib/ocaml/raw_spacetime_lib.cmxa
+%%RAWSPACETIMELIB%%lib/ocaml/raw_spacetime_lib.cmxs
+%%RAWSPACETIMELIB%%lib/ocaml/raw_spacetime_lib.mli
 lib/ocaml/result.ml
 lib/ocaml/result.mli
 lib/ocaml/scanf.ml
@@ -1957,6 +1966,7 @@ lib/ocaml/stringLabels.ml
 lib/ocaml/stringLabels.mli
 lib/ocaml/stublibs/dllcamlstr.so
 %%X11%%lib/ocaml/stublibs/dllgraphics.so
+%%RAWSPACETIMELIB%%lib/ocaml/stublibs/dllraw_spacetime_lib.so
 %%THREADS%%lib/ocaml/stublibs/dllthreads.so
 lib/ocaml/stublibs/dllunix.so
 lib/ocaml/stublibs/dllvmthreads.so

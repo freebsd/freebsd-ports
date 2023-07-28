@@ -48,7 +48,7 @@ CONFIGURE_ARGS= --prefix="${PREFIX}"
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
 		ASPP="${CC} -c" \
 		PARTIALLD="${LD} -r"
-MAKE_ENV=	SYSTEM_ARCH="${ARCH:C/powerpc.*/power/}"
+MAKE_ENV=	SYSTEM_ARCH="${ARCH:C/aarch64/arm64/:C/powerpc.*/power/}"
 
 OPTIONS_DEFINE=	X11 THREADS DOCS EXAMPLES
 OPTIONS_DEFAULT=X11 THREADS
@@ -73,6 +73,12 @@ DOCS_DISTFILES=	${DISTNAME:R}-refman-html.tar.gz:docs \
 		${DISTNAME:R}-refman.pdf:docs
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == aarch64
+PLIST_SUB+=	RAWSPACETIMELIB=" "
+.else
+PLIST_SUB+=	RAWSPACETIMELIB="@comment "
+.endif
 
 .if ${ARCH} == armv6 || ${ARCH} == armv7
 CONFIGURE_ENV+=		AS="${AS} ${ASFLAGS} -meabi=5" \
