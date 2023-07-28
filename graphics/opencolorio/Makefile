@@ -19,10 +19,9 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libImath.so:math/Imath \
 		libpystring.so:devel/pystring \
 		libyaml-cpp.so:devel/yaml-cpp \
-		libminizip-ng.so:archivers/minizip-ng \
 		libzstd.so:archivers/zstd
 USES=		alias cmake compiler:c++14-lang localbase:ldflags \
-		pkgconfig
+		pkgconfig minizip:ng
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	AcademySoftwareFoundation
