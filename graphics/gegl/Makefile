@@ -3,6 +3,9 @@ PORTVERSION=	0.4.46
 CATEGORIES=	graphics
 MASTER_SITES=	GIMP
 
+PATCH_SITES=	https://gitlab.gnome.org/GNOME/gegl/-/commit/
+PATCHFILES+=	a99a93e5c9013bd4101f5058cdee7d0cf30234fe.patch:-p1
+
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Graph based image processing framework
 WWW=		https://gegl.org/
