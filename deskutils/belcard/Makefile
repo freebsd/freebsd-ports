@@ -1,5 +1,5 @@
 PORTNAME=	belcard
-DISTVERSION=	5.2.37
+DISTVERSION=	5.2.94
 CATEGORIES=	deskutils
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -16,7 +16,6 @@ USES=		cmake compiler:c++17-lang
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_TAGNAME=	f50f203d6a44b6ec3bfd897d8057a94dfefa3e57
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DCMAKE_PREFIX_PATH=${LOCALBASE} \
