@@ -1,3 +1,4 @@
+bin/ortp_tester
 include/ortp/b64.h
 include/ortp/event.h
 include/ortp/fecstream.h
