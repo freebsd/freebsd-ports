@@ -1,8 +1,10 @@
 PORTNAME=	png
-DISTVERSION=	1.6.39
+DISTVERSION=	1.6.40
 CATEGORIES=	graphics
 MASTER_SITES=	SF/lib${PORTNAME}/lib${PORTNAME}16/${DISTVERSION}/
-PATCH_SITES=	SF/lib${PORTNAME}-apng/lib${PORTNAME}16/${DISTVERSION}/
+#PATCH_SITES=	SF/lib${PORTNAME}-apng/lib${PORTNAME}16/${DISTVERSION}/
+# Keep this because you normally need to keep patch version in sync with release 
+PATCH_SITES=	SF/lib${PORTNAME}-apng/lib${PORTNAME}16/1.6.39/
 DISTNAME=	lib${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	desktop@FreeBSD.org
@@ -45,11 +47,13 @@ CFLAGS+=	-maltivec -mvsx
 .endif
 
 .if ${PORT_OPTIONS:MAPNG} || make(makesum)
-PATCHFILES=	${DISTNAME}-apng.patch.gz:-p1
+#PATCHFILES=	${DISTNAME}-apng.patch.gz:-p1
+# Keep this because you normally need to keep patch version in sync with release
+PATCHFILES=	lib${PORTNAME}-1.6.39-apng.patch.gz:-p1
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|CMAKE_DEBUG_POSTFIX "d"|CMAKE_DEBUG_POSTFIX ""|g' \
+	@${REINPLACE_CMD} -e 's|PNG_DEBUG_POSTFIX "d"|PNG_DEBUG_POSTFIX ""|g' \
 		${PATCH_WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>
