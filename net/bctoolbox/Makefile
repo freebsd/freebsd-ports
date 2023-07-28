@@ -1,5 +1,5 @@
 PORTNAME=	bctoolbox
-DISTVERSION=	5.2.37
+DISTVERSION=	5.2.94
 CATEGORIES=	net
 
 MAINTAINER=	bofh@FreeBSD.org
@@ -17,7 +17,6 @@ USES=		cmake compiler:c++17-lang
 USE_GITLAB=	yes
 GL_SITE=	https://gitlab.linphone.org/BC
 GL_ACCOUNT=	public
-GL_TAGNAME=	02c84d3563ee054a977f5f2d8357d94d095145a5
 USE_LDCONFIG=	yes
 
 CMAKE_ARGS=	-DENABLE_STATIC=NO -DENABLE_STRICT=NO \

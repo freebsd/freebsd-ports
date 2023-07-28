@@ -1,3 +1,4 @@
+bin/bctoolbox_tester
 include/bctoolbox/charconv.h
 include/bctoolbox/compiler.h
 include/bctoolbox/crypto.h
