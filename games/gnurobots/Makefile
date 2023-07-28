@@ -1,6 +1,6 @@
 PORTNAME=	gnurobots
 PORTVERSION=	1.2.0
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	games
 MASTER_SITES=	GNU
 
@@ -11,9 +11,7 @@ WWW=		https://www.gnu.org/software/gnurobots/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libguile.so:lang/guile1
-
-USES=		autoreconf gnome localbase:ldflags pkgconfig readline
+USES=		gnome guile:1.8 localbase:ldflags pkgconfig readline
 USE_GNOME=	vte
 GNU_CONFIGURE=	yes
 

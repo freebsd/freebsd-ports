@@ -1,5 +1,6 @@
 PORTNAME=	mailutils
 PORTVERSION=	3.16
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	GNU GNU_ALPHA
 
@@ -50,8 +51,7 @@ GSSAPI_RUN_DEPENDS=	cyrus-sasl-gssapi>0:security/cyrus-sasl2-gssapi
 GSSAPI_USES=		ssl
 GSSAPI_CONFIGURE_WITH=	gssapi
 
-GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2 libgmp.so:math/gmp
-GUILE_USES=		makeinfo pkgconfig
+GUILE_USES=		guile:2.2,alias makeinfo pkgconfig
 GUILE_CONFIGURE_WITH=	guile
 
 MH_CONFIGURE_ENV=	ac_cv_prog_EMACS=no

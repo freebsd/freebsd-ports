@@ -1,6 +1,6 @@
 PORTNAME=	lepton-eda
 PORTVERSION=	1.9.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	cad
 MASTER_SITES=	https://github.com/lepton-eda/lepton-eda/releases/download/${PORTVERSION}-20220529/
 
@@ -15,12 +15,10 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
 		libfribidi.so:converters/fribidi \
-		libgc-threaded.so:devel/boehm-gc-threaded \
 		libGLdispatch.so:graphics/libglvnd \
 		libgmp.so:math/gmp \
 		libgraphite2.so:graphics/graphite2 \
 		libgtkextra-x11-3.0.so:x11-toolkits/gtkextra \
-		libguile-2.2.so:lang/guile2 \
 		libharfbuzz.so:print/harfbuzz \
 		libltdl.so:devel/libltdl \
 		libpcre.so:devel/pcre \
@@ -29,8 +27,9 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libunistring.so:devel/libunistring
 
 USES=		desktop-file-utils gettext-tools gnome groff:build \
-		iconv:wchar_t libtool localbase makeinfo pathfix perl5 \
-		pkgconfig shared-mime-info shebangfix xorg
+		guile:2.2,3.0,conflicts iconv:wchar_t libtool localbase \
+		makeinfo pathfix perl5 pkgconfig shared-mime-info shebangfix \
+		xorg
 USE_XORG=	pixman x11 xau xcb xcomposite xcursor xdamage xdmcp xext xfixes \
 		xi xinerama xrandr xrender
 USE_GNOME=	cairo gdkpixbuf2 gtk20

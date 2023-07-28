@@ -1,8 +1,0 @@
-#!/bin/sh
-
-case "$2" in
-"POST-DEINSTALL")
-	rm -f %%LOCALBASE%%/share/guile/2.2/slib
-	rm -f %%LOCALBASE%%/share/guile/2.2/slibcat
-	;;
-esac

@@ -1,6 +1,6 @@
 PORTNAME=	gnu-radius
 PORTVERSION=	1.6.1
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	net
 MASTER_SITES=	GNU/radius
 DISTNAME=	radius-${PORTVERSION}
@@ -44,7 +44,7 @@ EMACS_DESC=	Install Emacs dotfiles
 
 SNMP_CONFIGURE_ENABLE=		snmp
 CLIENT_CONFIGURE_ENABLE=	client
-CLIENT_LIB_DEPENDS=		libguile.so:lang/guile1
+CLIENT_USES=			guile:1.8,alias
 CLIENT_CONFIGURE_OFF=		--without-guile
 MYSQL_USES=			mysql
 MYSQL_CONFIGURE_WITH=		mysql

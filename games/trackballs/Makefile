@@ -11,10 +11,8 @@ WWW=		https://trackballs.github.io/
 LICENSE=	GPLv2+ ETHYMONICS
 LICENSE_COMB=	multi
 
-LIB_DEPENDS=	libguile-2.2.so:lang/guile2 \
-		libgc.so:devel/boehm-gc
-
-USES=		cmake desktop-file-utils gettext-runtime gl gnome pkgconfig sdl
+USES=		cmake desktop-file-utils gettext-runtime gl gnome \
+		guile:2.2,conflicts pkgconfig sdl
 USE_GL=		gl
 USE_SDL=	image2 mixer2 sdl2 ttf2
 

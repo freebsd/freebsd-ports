@@ -1,6 +1,6 @@
 PORTNAME=	guile-gnome-platform
 DISTVERSION=	2.16.5
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNU/guile-gnome/${PORTNAME}
 
@@ -10,10 +10,7 @@ WWW=		https://www.gnu.org/software/guile-gnome/
 
 LICENSE=	GPLv2+
 
-BUILD_DEPENDS=	guile2>=2.2:lang/guile2
-LIB_DEPENDS=	libguile-2.2.so:lang/guile2				\
-		libgc-threaded.so:devel/boehm-gc-threaded		\
-		libgwrap-guile-runtime.so:devel/g-wrap			\
+LIB_DEPENDS=	libgwrap-guile-runtime.so:devel/g-wrap \
 		libffi.so:devel/libffi
 
 FLAVORS=	lite full
@@ -25,7 +22,8 @@ lite_CONFLICTS_INSTALL=${PORTNAME}-full
 
 # We don't actually need gettext, but for some incomprehensible reason it
 # is the package that installs some basic gnulib autoconf functionality.
-USES=		autoreconf gettext-tools gmake gnome libtool pkgconfig
+USES=		autoreconf gettext-tools gmake gnome guile:2.2,alias \
+		libtool pkgconfig
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 
@@ -58,7 +56,8 @@ ATK_CONFIGURE_WITH=	atk
 ATK_INFO=		guile-gnome-atk
 
 # Cairo support depends on a separate module.
-CAIRO_LIB_DEPENDS=	libguile-cairo.so:graphics/guile-cairo
+CAIRO_BUILD_DEPENDS=	${LOCALBASE}/lib/guile/${GUILE_VER}/extensions/libguile-cairo.so:graphics/guile-cairo@${GUILE_FLAVOR}
+CAIRO_RUN_DEPENDS=	${LOCALBASE}/lib/guile/${GUILE_VER}/extensions/libguile-cairo.so:graphics/guile-cairo@${GUILE_FLAVOR}
 CAIRO_USE=		gnome=cairo
 CAIRO_CONFIGURE_WITH=	cairo
 
@@ -76,11 +75,13 @@ GTK2_IMPLIES=		CAIRO
 # These dependencies are brought in from gtk2's pkgconf, but
 # not accounted for by Uses/gnome
 GTK2_LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig	\
-			libfreetype.so:print/freetype2
+			libfreetype.so:print/freetype2 \
+			libharfbuzz.so:print/harfbuzz
 GTK2_USE=		gnome=gtk20,gdkpixbuf2
 GTK2_CONFIGURE_WITH=	gtk pixbuf
 GTK2_INFO=		guile-gnome-gtk guile-gnome-gdk
 
+PANGO_LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz
 PANGO_USE=		gnome=pango
 PANGO_CONFIGURE_WITH=	pango
 PANGO_INFO=		guile-gnome-pango
@@ -144,6 +145,11 @@ post-patch:
 # pacify check-plist by removing any .info files for deselected
 # components. This doesn't affect the packaging but makes QA testing
 # of the options much easier.
+
+# DO NOT try and add rules here to strip .go files, no matter how loudly
+# testport / stage-qa shouts at you about it, because .go files (which are
+# compiled bytecode) are not intended to be stripped and doing so causes
+# breakage at run time.
 
 post-install:
 	for f in ${INFO_UNUSED}; do \

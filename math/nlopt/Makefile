@@ -1,7 +1,7 @@
 PORTNAME=	nlopt
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	rhurlin@FreeBSD.org
@@ -17,11 +17,10 @@ BROKEN_armv7=	fails to package: Unable to access file site-packages/_nlopt.a:No 
 
 BUILD_DEPENDS=	swig:devel/swig \
 		${PYNUMPY}
-LIB_DEPENDS=	libgmp.so:math/gmp \
-		libguile-2.2.so:lang/guile2
 RUN_DEPENDS=	${PYNUMPY}
 
-USES=		cmake:testing compiler:features localbase pathfix pkgconfig python
+USES=		cmake:testing compiler:features guile:2.2,alias,conflicts \
+		localbase pathfix pkgconfig python
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	stevengj

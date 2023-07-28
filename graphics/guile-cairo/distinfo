@@ -1,3 +1,3 @@
-TIMESTAMP = 1590012837
-SHA256 (guile-cairo-1.11.1.tar.gz) = f4f6337eb5c90fc2f5fd2043de6f237ef336da6285ae042b8452379bb22086bd
-SIZE (guile-cairo-1.11.1.tar.gz) = 672079
+TIMESTAMP = 1605967018
+SHA256 (guile-cairo-1.11.2.tar.gz) = 6232d4dc2c5bd9d331139b3b01f4343c3e1fb9ca7898361a699206730941a07b
+SIZE (guile-cairo-1.11.2.tar.gz) = 674992

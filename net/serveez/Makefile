@@ -1,6 +1,6 @@
 PORTNAME=	serveez
 PORTVERSION=	0.2.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net devel
 MASTER_SITES=	GNU
 
@@ -14,9 +14,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 BROKEN_FreeBSD_13=	ld: error: duplicate symbol: guile_global_error
 BROKEN_FreeBSD_14=	ld: error: duplicate symbol: guile_global_error
 
-LIB_DEPENDS=	libguile.so:lang/guile1
-
-USES=		cpe tar:xz libtool
+USES=		cpe guile:1.8 tar:xz libtool
 CPE_VENDOR=	gnu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-libserveez-install

@@ -1,6 +1,6 @@
 PORTNAME=	gdb
 DISTVERSION=	13.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 
@@ -67,8 +67,8 @@ XXHASH_DESC=		Use xxHash for hashing (faster)
 OPTIONS_SUB=	yes
 
 BUNDLED_READLINE_CONFIGURE_OFF=	--with-system-readline
-GUILE_CONFIGURE_WITH=	guile
-GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
+GUILE_CONFIGURE_WITH=	guile=guile-${GUILE_VER}
+GUILE_USES=		guile:2.2,3.0
 NLS_USES=	gettext-runtime
 PORT_READLINE_USES=	readline
 PORT_ICONV_USES=	iconv:wchar_t
@@ -175,6 +175,11 @@ do-install-PYTHON-on:
 	@(cd ${STAGEDIR}${PREFIX}/share/libcxx-gdbpy/libcxx && \
 		${PYTHON_CMD} -m compileall .)
 .endif
+
+# DO NOT try and add rules here to strip .go files, no matter how loudly
+# testport / stage-qa shouts at you about it, because .go files (which are
+# compiled bytecode) are not intended to be stripped and doing so causes
+# breakage at run time.
 
 do-install-GUILE-on:
 	(cd ${INSTALL_WRKSRC}/gdb ; \

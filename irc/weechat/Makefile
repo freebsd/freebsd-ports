@@ -1,5 +1,6 @@
 PORTNAME=	weechat
 DISTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	https://weechat.org/files/src/
 
@@ -53,7 +54,7 @@ CA_BUNDLE_RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:security/ca_root
 CHARSET_IMPLIES=	ICONV
 DOCS_CMAKE_BOOL=	ENABLE_DOC ENABLE_DOC_INCOMPLETE
 DOCS_BUILD_DEPENDS=	${LOCALBASE}/bin/asciidoctor:textproc/rubygem-asciidoctor
-GUILE_LIB_DEPENDS=	libguile-2.2.so:lang/guile2
+GUILE_USES=		guile:2.2,conflicts
 ICONV_USES=		iconv
 JAVASCRIPT_LIB_DEPENDS=	libv8.so:lang/v8
 LUA_USES=		lua pkgconfig

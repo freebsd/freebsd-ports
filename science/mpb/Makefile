@@ -1,6 +1,6 @@
 PORTNAME=	mpb
 DISTVERSION=	1.11.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	https://github.com/NanoComp/mpb/releases/download/v${DISTVERSION}/
 
@@ -14,12 +14,10 @@ BUILD_DEPENDS=	bash:shells/bash
 # NLOPT should be enabled in science/libctl
 LIB_DEPENDS=	libctl.so:science/libctl \
 		libfftw3.so:math/fftw3 \
-		libgc-threaded.so:devel/boehm-gc-threaded \
-		libguile-2.2.so:lang/guile2 \
 		libhdf5.so:science/hdf5 \
 		libnlopt.so:math/nlopt
 
-USES=		fortran libtool pkgconfig readline
+USES=		fortran guile:2.2,alias libtool pkgconfig readline
 USE_GCC=	yes
 USE_LDCONFIG=	yes
 # Do not use --with-mpi, because it is not guaranted

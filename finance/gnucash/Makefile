@@ -1,5 +1,6 @@
 PORTNAME=	gnucash
 PORTVERSION=	5.3
+PORTREVISION=	1
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -18,8 +19,6 @@ LIB_DEPENDS=	libgnome-keyring.so:security/libgnome-keyring \
 		libfreetype.so:print/freetype2 \
 		libsecret-1.so:security/libsecret \
 		libsoup-2.4.so:devel/libsoup \
-		libguile-2.2.so:lang/guile2 \
-		libgc-threaded.so:devel/boehm-gc-threaded \
 		libboost_date_time.so:devel/boost-libs \
 		libicudata.so:devel/icu\
 		libharfbuzz.so:print/harfbuzz
@@ -29,8 +28,8 @@ RUN_DEPENDS=	p5-libwww>=0:www/p5-libwww \
 		p5-LWP-Protocol-https>=0:www/p5-LWP-Protocol-https
 
 USES=		cmake:insource compiler:c++11-lib cpe desktop-file-utils \
-		gettext-tools gnome libtool localbase perl5 pkgconfig \
-		shebangfix tar:bzip2 xorg
+		gettext-tools gnome guile:2.2,3.0,conflicts libtool localbase \
+		perl5 pkgconfig shebangfix tar:bzip2 xorg
 USE_XORG=	x11
 USE_CXXSTD=	c++11
 USE_GNOME=	cairo gdkpixbuf2 gtk30 intltool libxml2 libxslt

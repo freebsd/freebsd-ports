@@ -1,6 +1,6 @@
 PORTNAME=	anubis
 PORTVERSION=	4.2
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	mail
 MASTER_SITES=	GNU
 
@@ -60,9 +60,7 @@ GSASL_DESC=		GSASL support (required for databases)
 GSASL_LIB_DEPENDS=	libgsasl.so:security/libgsasl
 GSASL_CONFIGURE_WITH=	gsasl
 
-GUILE_LIB_DEPENDS=	libltdl.so:devel/libltdl \
-			libguile.so:lang/guile1 \
-			libgmp.so:math/gmp
+GUILE_USES=		guile:1.8,alias
 GUILE_CONFIGURE_WITH=	guile
 GUILE_PORTEXAMPLES=	anubis.scm anubisrc.guile
 

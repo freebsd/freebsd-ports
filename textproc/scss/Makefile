@@ -12,7 +12,7 @@ WWW=		https://www.nongnu.org/scss/
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	guile:lang/guile
+USES=		guile:run
 
 NO_BUILD=	yes
 NO_ARCH=	yes

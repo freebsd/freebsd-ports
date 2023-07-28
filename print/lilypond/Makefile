@@ -1,5 +1,6 @@
 PORTNAME=	lilypond
 DISTVERSION=	2.24.1
+PORTREVISION=	1
 CATEGORIES=	print audio
 MASTER_SITES=	http://lilypond.org/download/source/v${DISTVERSION:R}/
 
@@ -21,16 +22,12 @@ BUILD_DEPENDS=	bash:shells/bash \
 		zip:archivers/zip
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \
 		libfreetype.so:print/freetype2 \
-		libgc-threaded.so:devel/boehm-gc-threaded \
-		libgmp.so:math/gmp \
-		libguile-2.2.so:lang/guile2 \
-		libharfbuzz.so:print/harfbuzz \
-		libltdl.so:devel/libltdl
+		libharfbuzz.so:print/harfbuzz
 RUN_DEPENDS=	${LOCALBASE}/share/fonts/dejavu/DejaVuSans-Bold.ttf:x11-fonts/dejavu \
 		mftrace:print/mftrace
 
 USES=		bison:build compiler:c++11-lib cpe ghostscript gmake gnome \
-		magick:7,build perl5 pkgconfig python
+		guile:2.2 magick:7,build perl5 pkgconfig python
 USE_CXXSTD=	c++14
 USE_GNOME=	pango
 USE_PERL5=	build
@@ -38,9 +35,9 @@ USE_PERL5=	build
 GNU_CONFIGURE=		yes
 CONFIGURE_ENV+=		ac_cv_prog_MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 			FLEX=${FLEX} \
-			GUILE_FLAVOR=guile-2.2 \
 			HOME=${WRKDIR} \
-			YACC=${YACC}
+			YACC=${YACC} \
+			GUILE_FLAVOR=guile-${GUILE_VER}
 
 MAKEFILE=	GNUmakefile
 ALL_TARGET=	all

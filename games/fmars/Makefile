@@ -1,6 +1,6 @@
 PORTNAME=	fmars
 PORTVERSION=	0.0.207
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
 MASTER_SITES=	http://corewar.co.uk/janeczek/
 
@@ -10,9 +10,7 @@ WWW=		https://corewar.co.uk/janeczek/
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	guile:lang/guile1
-
-USES=		gmake tar:bzip2
+USES=		gmake guile:1.8,build,alias tar:bzip2
 ALL_TARGET=	x${PORTNAME}
 
 OPTIONS_DEFINE=		DOCS OPTIMIZED_CFLAGS

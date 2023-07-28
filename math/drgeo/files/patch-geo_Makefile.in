@@ -1,0 +1,12 @@
+--- geo/Makefile.in.orig	2023-05-25 10:21:18 UTC
++++ geo/Makefile.in
+@@ -192,7 +192,8 @@ INCLUDES = \
+ 	-DDRGEO_GLADEDIR=\""$(gladedir)"\"		\
+ 	-DDRGEO_ENCODEDIR=\""$(encodedir)"\"		\
+ 	-I$(includedir) 				\
+-	$(DRGEO_CFLAGS)				
++	$(DRGEO_CFLAGS)					\
++	$(GUILE_CFLAGS)
+ 
+ 
+ noinst_LIBRARIES = libgeo.a
