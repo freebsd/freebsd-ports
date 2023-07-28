@@ -28,4 +28,20 @@ RUN_DEPENDS+=	${_PKGCONFIG_DEPENDS}
 IGNORE=	USES=pkgconfig - invalid args: [${pkgconfig_ARGS}] specified
 .  endif
 
+_USES_POST+= pkgconfig
+.endif
+
+.if defined(_POSTMKINCLUDED) && !defined(_INCLUDE_USES_PKGCONFIG_POST_MK)
+_INCLUDE_USES_PKGCONFIG_POST_MK=yes
+
+# Provide a cooperative mechanism for managing PKG_CONFIG_PATH.
+.  if defined(PKGCONFIG_PATHS)
+.    if !${CONFIGURE_ENV:MPKG_CONFIG_PATH=*} && !${MAKE_ENV:MPKG_CONFIG_PATH=*}
+CONFIGURE_ENV+=	PKG_CONFIG_PATH=${PKGCONFIG_PATHS:ts:}
+MAKE_ENV+=	PKG_CONFIG_PATH=${PKGCONFIG_PATHS:ts:}
+.    else
+DEV_WARNING+=	"PKGCONFIG_PATHS was ignored due to conflict with CONFIGURE_ENV or MAKE_ENV"
+.    endif
+.  endif
+
 .endif
