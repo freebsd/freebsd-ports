@@ -45,7 +45,7 @@ rcvar="cardano_db_sync_enable"
 command=%%PREFIX%%/bin/cardano-db-sync
 
 cardano_deployment_url="https://raw.githubusercontent.com/cardano-bsd-alliance/freebsd-ports-cardano-artifacts/master/cardano-db-sync"
-cardano_config_files="config db-sync-config byron-genesis shelley-genesis alonzo-genesis"
+cardano_config_files="config db-sync-config byron-genesis shelley-genesis alonzo-genesis conway-genesis"
 cardano_networks="mainnet preview preprod"
 
 start_cmd="cardano_db_sync_start"
