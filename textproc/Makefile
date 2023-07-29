@@ -1549,6 +1549,7 @@
     SUBDIR += py-sphinx-issues
     SUBDIR += py-sphinx-markdown-tables
     SUBDIR += py-sphinx-me
+    SUBDIR += py-sphinx-sitemap
     SUBDIR += py-sphinx-tabs
     SUBDIR += py-sphinx-theme-builder
     SUBDIR += py-sphinx_press_theme
