@@ -1,6 +1,6 @@
 PORTNAME=	vvenc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
+DISTVERSION=	1.9.0
 CATEGORIES=	multimedia
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 BROKEN_i386=	compilation fails: error: use of undeclared identifier 'read_x86_extension_flags'
 
-USES=		cmake:testing # some tests fail, see https://github.com/fraunhoferhhi/vvenc/issues/262
+USES=		cmake:testing compiler:c++14-lang
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
