@@ -1,6 +1,5 @@
 PORTNAME=	tarpaulin
-DISTVERSION=	0.26.0
-PORTREVISION=	1
+DISTVERSION=	0.26.1
 CATEGORIES=	devel
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -45,6 +44,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		curl-0.4.44 \
 		curl-sys-0.4.56+curl-7.83.1 \
 		deflate-0.8.6 \
+		equivalent-1.0.0 \
 		errno-0.2.8 \
 		errno-dragonfly-0.1.2 \
 		fallible-iterator-0.2.0 \
@@ -58,14 +58,16 @@ CARGO_CRATES=	adler-1.0.2 \
 		glob-0.3.1 \
 		gzip-header-0.3.0 \
 		hashbrown-0.11.2 \
+		hashbrown-0.14.0 \
 		hermit-abi-0.1.19 \
-		hermit-abi-0.2.6 \
+		hermit-abi-0.3.1 \
 		hex-0.4.3 \
 		humantime-2.1.0 \
 		humantime-serde-1.1.1 \
 		iana-time-zone-0.1.46 \
 		idna-0.2.3 \
 		indexmap-1.8.2 \
+		indexmap-2.0.0 \
 		instant-0.1.12 \
 		io-lifetimes-1.0.3 \
 		itoa-1.0.3 \
@@ -90,7 +92,7 @@ CARGO_CRATES=	adler-1.0.2 \
 		nix-0.26.2 \
 		nom-7.1.1 \
 		num-traits-0.2.15 \
-		num_cpus-1.15.0 \
+		num_cpus-1.16.0 \
 		object-0.26.2 \
 		object-0.31.1 \
 		once_cell-1.13.1 \
@@ -100,11 +102,11 @@ CARGO_CRATES=	adler-1.0.2 \
 		percent-encoding-2.1.0 \
 		pin-project-lite-0.2.9 \
 		pkg-config-0.3.25 \
-		proc-macro2-1.0.60 \
+		proc-macro2-1.0.63 \
 		procfs-0.15.1 \
 		quick-error-1.2.3 \
 		quick-xml-0.29.0 \
-		quote-1.0.28 \
+		quote-1.0.29 \
 		redox_syscall-0.2.16 \
 		regex-1.8.4 \
 		regex-automata-0.1.10 \
@@ -122,7 +124,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		semver-1.0.13 \
 		serde-1.0.164 \
 		serde_derive-1.0.164 \
-		serde_json-1.0.96 \
+		serde_json-1.0.99 \
+		serde_spanned-0.6.3 \
 		sharded-slab-0.1.4 \
 		smallvec-1.9.0 \
 		socket2-0.4.4 \
@@ -139,7 +142,9 @@ CARGO_CRATES=	adler-1.0.2 \
 		time-0.1.44 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.0 \
-		toml-0.5.11 \
+		toml-0.7.5 \
+		toml_datetime-0.6.3 \
+		toml_edit-0.19.11 \
 		tracing-0.1.38 \
 		tracing-attributes-0.1.24 \
 		tracing-core-0.1.30 \
@@ -179,7 +184,8 @@ CARGO_CRATES=	adler-1.0.2 \
 		windows_x86_64_gnu-0.42.0 \
 		windows_x86_64_gnullvm-0.42.0 \
 		windows_x86_64_msvc-0.36.1 \
-		windows_x86_64_msvc-0.42.0
+		windows_x86_64_msvc-0.42.0 \
+		winnow-0.4.7
 
 OPENSSLINC=	/usr/include
 OPENSSLLIB=	/usr/lib
