@@ -1,6 +1,5 @@
 PORTNAME=	ncmpc
-PORTVERSION=	0.41
-PORTREVISION=	2
+PORTVERSION=	0.48
 CATEGORIES=	audio
 MASTER_SITES=	https://www.musicpd.org/download/ncmpc/0/
 
@@ -11,13 +10,13 @@ WWW=		https://www.musicpd.org/clients/ncmpc/
 LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
-		libmpdclient.so:audio/libmpdclient \
-		libpcre.so:devel/pcre
+LIB_DEPENDS=	libmpdclient.so:audio/libmpdclient \
+		libpcre2-8.so:devel/pcre2
 
 USES=		compiler:c++17-lang cpe iconv localbase:ldflags meson ncurses \
-		pkgconfig tar:xz
+		pkgconfig tar:xz shebangfix
 MESON_ARGS=	-Dlirc=disabled
+SHEBANG_GLOB=	*.py
 
 CPE_VENDOR=	ncmpc_project
 
