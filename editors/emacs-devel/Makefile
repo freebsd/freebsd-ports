@@ -12,7 +12,6 @@ COMMENT_nox=	(No X flavor)
 LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-BUILD_DEPENDS=	texinfo>=6.5,1:print/texinfo
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 FLAVORS=		full nox
@@ -20,7 +19,8 @@ full_CONFLICTS_INSTALL=	emacs-devel-nox
 nox_PKGNAMESUFFIX=	-devel-nox
 nox_CONFLICTS_INSTALL=	emacs-devel
 
-USES=		autoreconf:build cpe gmake localbase:ldflags ncurses pkgconfig
+USES=		autoreconf:build cpe gmake localbase:ldflags makeinfo ncurses \
+		pkgconfig
 CPE_VENDOR=	gnu
 USE_GITHUB=	yes
 GH_ACCOUNT=	emacs-mirror
@@ -94,17 +94,17 @@ OPTIONS_GROUP_GRAPHICS=		CAIRO GIF JPEG MAGICK PNG SVG TIFF WEBP XPM
 OPTIONS_RADIO=			FILENOTIFY SOUND X11TOOLKIT
 OPTIONS_RADIO_FILENOTIFY=	GFILE KQUEUE
 OPTIONS_RADIO_SOUND=		ALSA OSS
-OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 XAW XAW3D
+OPTIONS_RADIO_X11TOOLKIT=	GTK2 GTK3 MOTIF XAW XAW3D
 .if ${FLAVOR:U} == nox
 OPTIONS_EXCLUDE=		ALSA CAIRO DBUS GFILE GIF GSETTINGS GTK2 GTK3 \
-				HARFBUZZ JPEG LCMS2 M17N MAGICK OSS OTF PGTK \
-				PNG SCROLLBARS SVG TIFF WEBP XAW XAW3D XFT XIM \
-				XPM XWIDGETS
+				HARFBUZZ JPEG LCMS2 M17N MAGICK MOTIF OSS OTF \
+				PGTK PNG SCROLLBARS SVG TIFF WEBP XAW XAW3D XFT \
+				XIM XPM XWIDGETS
 .endif
 OPTIONS_SUB=			YES
 
 ACL_DESC=		Access control list support
-CAIRO_DESC=		Cairo graphics library support [implies PNG]
+CAIRO_DESC=		Cairo graphics library support [implies PNG, prevents XFT]
 FILENOTIFY_DESC=	File notification support
 GFILE_DESC=		File notification via gfile
 GRAPHICS_DESC=		Graphics support
@@ -116,7 +116,7 @@ MAGICK_DESC=		ImageMagick image processing support (deprecated)
 MAILUTILS_DESC=		Mail framework via GNU Mailutils
 MODULES_DESC=		Dynamic modules support
 NATIVECOMP_DESC=	Emacs Lisp native compiler support
-OTF_DESC=		Opentype fonts [implies XFT]
+OTF_DESC=		Opentype fonts
 PGTK_DESC=		Pure GTK GUI [implies CAIRO, GTK3]
 SCROLLBARS_DESC=	Toolkit scroll-bars
 SOURCES_DESC=		Install sources
@@ -133,9 +133,9 @@ ALSA_LIB_DEPENDS=		libasound.so:audio/alsa-lib
 ALSA_CONFIGURE_ON=		--with-sound=alsa
 CAIRO_IMPLIES=			PNG
 CAIRO_PREVENTS=			XFT
+CAIRO_LIB_DEPENDS=		libfontconfig.so:x11-fonts/fontconfig \
+				libfreetype.so:print/freetype2
 CAIRO_USE=			GNOME=cairo
-CAIRO_LIB_DEPENDS=		libfreetype.so:print/freetype2 \
-				libfontconfig.so:x11-fonts/fontconfig
 CAIRO_CONFIGURE_WITH=		cairo
 DBUS_LIB_DEPENDS=		libdbus-1.so:devel/dbus
 DBUS_CONFIGURE_WITH=		dbus
@@ -175,12 +175,14 @@ MAILUTILS_CONFIGURE_WITH=	mailutils
 MAILUTILS_CONFIGURE_ENV_OFF=	ac_cv_lib_lockfile_maillock=no \
 				ac_cv_prog_liblockfile=no
 MODULES_CONFIGURE_WITH=		modules
+MOTIF_USES=			motif
+MOTIF_CONFIGURE_ON=		--with-x-toolkit=motif
 NATIVECOMP_USE=			GCC=yes
 NATIVECOMP_CONFIGURE_WITH=	native-compilation=aot
 OSS_CONFIGURE_ON=		--with-sound=oss
 OTF_LIB_DEPENDS=		libotf.so:print/libotf
 OTF_CONFIGURE_WITH=		libotf
-PGTK_IMPLIES=			CAIRO GTK3
+PGTK_IMPLIES=			CAIRO GTK3 SCROLLBARS
 PGTK_PREVENTS=			M17N XFT XPM
 PGTK_CATEGORIES=		wayland
 PGTK_CONFIGURE_WITH=		pgtk
@@ -195,6 +197,7 @@ SVG_CONFIGURE_WITH=		rsvg
 THREADS_CONFIGURE_WITH=		threads
 TIFF_LIB_DEPENDS=		libtiff.so:graphics/tiff
 TIFF_CONFIGURE_WITH=		tiff
+TREESITTER_IMPLIES=		MODULES
 TREESITTER_LIB_DEPENDS=		libtree-sitter.so:devel/tree-sitter
 TREESITTER_CONFIGURE_WITH=	tree-sitter
 WEBP_LIB_DEPENDS=		libwebp.so:graphics/webp
