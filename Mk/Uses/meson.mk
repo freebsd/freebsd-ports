@@ -40,6 +40,9 @@ CONFIGURE_ARGS+=	--prefix ${PREFIX} \
 # expose those as port OPTIONS_* or explicitly pass -D<option>=disabled
 CONFIGURE_ARGS+=	--auto-features=enabled
 
+# Temporarily disable bytecode due to embedding STAGEDIR
+CONFIGURE_ARGS+=	-Dpython.bytecompile=-1
+
 # Disable color output.  Meson forces it on by default, Ninja
 # strips it before it goes to the log, but Samurai does not, so we
 # might end up with ANSI escape sequences in the logs.
