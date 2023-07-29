@@ -1,6 +1,6 @@
 PORTNAME=	nvc
 DISTVERSIONPREFIX=	r
-DISTVERSION=	1.10.0
+DISTVERSION=	1.10.1
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -37,6 +37,8 @@ GNU_CONFIGURE=	yes
 LDFLAGS+=	-lexecinfo
 
 CONFIGURE_ARGS=	--with-llvm=${LOCALBASE}/bin/llvm-config${LLVM_VERSION}
+
+MAKE_JOBS_UNSAFE=	yes # workaround for https://github.com/nickg/nvc/issues/746
 
 TEST_TARGET=	check
 TEST_WRKSRC=	${WRKSRC}/.build
