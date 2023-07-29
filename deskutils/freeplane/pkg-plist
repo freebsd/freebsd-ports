@@ -22,7 +22,7 @@ share/applications/freeplane.desktop
 %%DATADIR%%/core/org.freeplane.core/lib/jgoodies-forms-1.9.0.jar
 %%DATADIR%%/core/org.freeplane.core/lib/jortho-%%PORTVERSION%%.jar
 %%DATADIR%%/core/org.freeplane.core/lib/kitfox-svg-salamander-1.1.1-p1.jar
-%%DATADIR%%/core/org.freeplane.core/lib/simplyhtml-0.18.12.jar
+%%DATADIR%%/core/org.freeplane.core/lib/simplyhtml-0.19.4.jar
 %%DATADIR%%/core/org.freeplane.core/lib/twemoji-12.1.4.jar
 %%DATADIR%%/doc/Freeplane_LaTeX.mm
 %%DATADIR%%/doc/Images/Preferences_Joining nodes.png
@@ -274,8 +274,8 @@ share/applications/freeplane.desktop
 %%DATADIR%%/plugins/org.freeplane.plugin.latex/lib/jlatexmath-font-greek-1.0.7.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.latex/lib/plugin-%%PORTVERSION%%.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.markdown/META-INF/MANIFEST.MF
-%%DATADIR%%/plugins/org.freeplane.plugin.markdown/lib/jsoup-1.15.3.jar
-%%DATADIR%%/plugins/org.freeplane.plugin.markdown/lib/markedj-1.0.17.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.markdown/lib/jsoup-1.16.1.jar
+%%DATADIR%%/plugins/org.freeplane.plugin.markdown/lib/markedj-1.0.18.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.markdown/lib/plugin-%%PORTVERSION%%.jar
 %%DATADIR%%/plugins/org.freeplane.plugin.openmaps/META-INF/MANIFEST.MF
 %%DATADIR%%/plugins/org.freeplane.plugin.openmaps/lib/jmapviewer-2.16.jar
