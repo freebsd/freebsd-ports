@@ -7512,6 +7512,7 @@
     SUBDIR += sbt
     SUBDIR += scalatest
     SUBDIR += scandoc
+    SUBDIR += scc
     SUBDIR += sccache
     SUBDIR += sccs
     SUBDIR += schilybase
