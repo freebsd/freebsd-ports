@@ -1,113 +1,136 @@
 PORTNAME=	mumble
-PORTVERSION=	1.3.3
-PORTREVISION=	10
+DISTVERSION=	1.5.517
 CATEGORIES=	audio
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	vvd@FreeBSD.org
 COMMENT=	Voice chat software primarily intended for use while gaming
-WWW=		http://mumble.sourceforge.net/
+WWW=		https://www.mumble.info/
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-LIB_DEPENDS+=	libspeex.so:audio/speex \
+BUILD_DEPENDS=	boost-libs>0:devel/boost-libs \
+		${LOCALBASE}/include/nlohmann/json.hpp:devel/nlohmann-json
+LIB_DEPENDS=	libsndfile.so:audio/libsndfile \
+		libopus.so:audio/opus \
 		libspeexdsp.so:audio/speexdsp \
-		libsndfile.so:audio/libsndfile \
-		libboost_iostreams.so:devel/boost-libs \
-		libprotoc.so:devel/protobuf \
-		libopus.so:audio/opus
+		libpcre2-8.so:devel/pcre2 \
+		libPocoXML.so:devel/poco \
+		libPocoZip.so:devel/poco \
+		libprotobuf.so:devel/protobuf \
+		libexpat.so:textproc/expat2
 
-USES=		compiler:c++11-lang cpe desktop-file-utils gl gmake gnome pkgconfig python:build qmake qt:5 ssl xorg
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Requires OpenSSL 3.0.0 deprecated CRYPTO_MEM_CHECK_ON
+USES=		cmake compiler:c++14-lang cpe desktop-file-utils gl \
+		pkgconfig python:build qmake qt:5 ssl xorg
 
-PATCHVERSION=	${PORTVERSION}
-MINORVERSION=	${PORTVERSION:R}
-MAJORVERSION=	${PORTVERSION:R:R}
+PATCHVERSION=	${DISTVERSION}
+MINORVERSION=	${DISTVERSION:R}
+MAJORVERSION=	${DISTVERSION:R:R}
 
 PLIST_SUB+=	PATCHVERSION="${PATCHVERSION}"
 PLIST_SUB+=	MINORVERSION="${MINORVERSION}"
 PLIST_SUB+=	MAJORVERSION="${MAJORVERSION}"
 
-USE_CXXSTD=	c++11
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
-GH_TUPLE=	mumble-voip:mumble:${DISTVERSION} \
-		mumble-voip:celt-0.7.0:5a16cda:mumble_celt_0_7/3rdparty/celt-0.7.0-src \
-		mumble-voip:celt-0.11.0:e18de77:mumble_celt_0_11/3rdparty/celt-0.11.0-src \
+GH_TUPLE=	mumble-voip:mumble:v${DISTVERSION} \
+		Krzmbrzl:FindPythonInterpreter:bb4d3ea:mumble_FindPythonInterpreter/3rdparty/FindPythonInterpreter \
+		microsoft:GSL:0f6dbc9:mumble_gsl/3rdparty/gsl \
 		mumble-voip:mach_override:919148f:mumble_mach_override/3rdparty/mach-override-src \
-		mumble-voip:minhook:5e338f8:mumble_minhook/3rdparty/minhook-src \
-		mumble-voip:rnnoise:b30f2bb:mumble_rnnoise/3rdparty/rnnoise-src \
-		mumble-voip:sbcelt:045493d:mumble_sbcelt/3rdparty/sbcelt-src \
-		mumble-voip:mumble-theme:9467fe8:mumble_theme/themes/Mumble
+		mumble-voip:minhook:5e338f8:mumble_minhook/3rdparty/minhook \
+		mumble-voip:speexdsp:6e4634f:mumble_speexdsp/3rdparty/speexdsp \
+		wolfpld:tracy:1a4f369:mumble_tracy/3rdparty/tracy
 
-USE_QT=		buildtools:build core gui l10n linguist:build network opengl sql sql-sqlite3:run svg widgets xml
+USE_QT=		buildtools:build concurrent core gui l10n linguist:build network \
+		sql sql-sqlite3:run svg widgets xml
 USE_LDCONFIG=	yes
 
-USE_XORG=	ice xi x11
+USE_XORG=	x11 xext xi
 USE_GL=		gl
 
-CONFIG=		bundled-celt bundled-rnnoise no-bundled-opus no-bundled-speex no-bundled-speexdsp \
-		no-embed-qt-translations no-g15 no-server no-update
+CMAKE_ON=	bundled-gsl client oss overlay overlay-xcompile plugins \
+		translations xinput2
+CMAKE_OFF=	bundled-json bundle-qt-translations bundled-speex crash-report \
+		g15 server tracy update
 
-QMAKE_ARGS=	"CONFIG+=${CONFIG}"
+OPTIONS_DEFINE=		ALSA AVAHI DBUS JACK LTO PIPEWIRE PORTAUDIO PULSEAUDIO RNNOISE
+OPTIONS_DEFAULT=	DBUS LTO
+OPTIONS_RADIO=		SPEECH
+OPTIONS_RADIO_SPEECH=	QTSPEECH SPEECHD
 
-OPTIONS_DEFINE=	ALSA DBUS BONJOUR JACK PORTAUDIO PULSEAUDIO SPEECHD
-OPTIONS_DEFAULT=	DBUS
+QTSPEECH_DESC=		Use Qt's text-to-speech system
+RNNOISE_DESC=		Use RNNoise for machine learning noise reduction
+SPEECH_DESC=		Support text-to-speech
+SPEECHD_DESC=		Support for Speech Dispatcher
 
-ALSA_VARS_OFF=		CONFIG+=no-alsa
+ALSA_CMAKE_BOOL=	alsa
 ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 
-DBUS_VARS_OFF=		CONFIG+=no-dbus
+AVAHI_CMAKE_BOOL=	zeroconf
+AVAHI_LIB_DEPENDS=	libdns_sd.so:net/avahi-libdns
+
 DBUS_USE=		QT=dbus
+DBUS_CMAKE_BOOL=	dbus
 
-BONJOUR_DESC=		Bonjour support
-BONJOUR_VARS_OFF=	CONFIG+=no-bonjour
-BONJOUR_LIB_DEPENDS=	libdns_sd.so:net/mDNSResponder
-
-JACK_VARS_OFF=		CONFIG+=no-jackaudio
+JACK_CMAKE_BOOL=	jackaudio
 JACK_LIB_DEPENDS=	libjack.so:audio/jack
 
-PORTAUDIO_VARS_OFF=	CONFIG+=no-portaudio
+LTO_CMAKE_BOOL=		lto
+
+PIPEWIRE_CMAKE_BOOL=	pipewire
+PIPEWIRE_LIB_DEPENDS=	libpipewire-0.3.so:multimedia/pipewire
+
+PORTAUDIO_CMAKE_BOOL=	portaudio
 PORTAUDIO_LIB_DEPENDS=	libportaudio.so:audio/portaudio
 
-PULSEAUDIO_VARS_OFF=	CONFIG+=no-pulseaudio
+PULSEAUDIO_CMAKE_BOOL=	pulseaudio
 PULSEAUDIO_LIB_DEPENDS=	libpulse.so:audio/pulseaudio
 
-SPEECHD_DESC=		Support for Speech Dispatcher
-SPEECHD_VARS_OFF=	CONFIG+=no-speechd
+QTSPEECH_USES=		qt:5
+QTSPEECH_USE=		QT=speech
+QTSPEECH_CMAKE_BOOL=	qtspeech
+
+RNNOISE_CMAKE_BOOL=	rnnoise
+RNNOISE_CMAKE_ON=	-Dbundled-rnnoise:BOOL=off
+RNNOISE_LIB_DEPENDS=	librnnoise.so:audio/rnnoise
+
+SPEECHD_USES=		gettext-runtime gnome
+SPEECHD_USE=		GNOME=glib20
+SPEECHD_CMAKE_BOOL=	speechd
 SPEECHD_LIB_DEPENDS=	libspeechd.so:accessibility/speech-dispatcher
 
-CONFIGURE_ENV+=	MUMBLE_PYTHON=${PYTHON_CMD}
+CONFIGURE_ENV+=		MUMBLE_PYTHON=${PYTHON_CMD}
 
 .include <bsd.port.pre.mk>
 
-# PCH is broken on GCC
-.if ${CHOSEN_COMPILER_TYPE} == gcc
-CONFIG+=	no-pch
-.endif
-
-MAKE_JOBS_UNSAFE=yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-ldl||' ${WRKSRC}/overlay_gl/overlay_gl.pro
-	@${REINPLACE_CMD} -e 's|--no-add-needed|--no-copy-dt-needed-entries|' ${WRKSRC}/qmake/compiler.pri
-	@${RM} ${WRKSRC}/plugins/manual/.qmake.cache
-
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/release/mumble ${STAGEDIR}${PREFIX}/bin
-	${INSTALL_LIB} ${WRKSRC}/release/libcelt0.so.0.7.0 ${STAGEDIR}${PREFIX}/lib/libcelt-mumble.so.0.7.0
-	${INSTALL_LIB} ${WRKSRC}/release/libcelt0.so.0.11.0 ${STAGEDIR}${PREFIX}/lib/libcelt-mumble.so.0.11.0
-	${INSTALL_LIB} ${WRKSRC}/release/libmumble.so.${PATCHVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${PATCHVERSION}
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${PATCHVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${PATCHVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${MAJORVERSION}
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${PATCHVERSION} ${STAGEDIR}${PREFIX}/lib/libmumble.so.${MINORVERSION}
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/services
-	${INSTALL_DATA} ${WRKSRC}/scripts/mumble.protocol ${STAGEDIR}${PREFIX}/share/services
-	${INSTALL_DATA} ${WRKSRC}/scripts/mumble.desktop ${STAGEDIR}${PREFIX}/share/applications
+	${INSTALL_PROGRAM} ${WRKDIR}/.build/mumble ${STAGEDIR}${PREFIX}/bin
+	${INSTALL_LIB} ${WRKDIR}/.build/libmumbleoverlay.x86_64.so.${MINORVERSION}.0 \
+		${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86_64.so.${PATCHVERSION}
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86_64.so.${PATCHVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86_64.so
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86_64.so.${PATCHVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86_64.so.${MAJORVERSION}
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86_64.so.${PATCHVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86_64.so.${MINORVERSION}
+	${INSTALL_LIB} ${WRKDIR}/.build/libmumbleoverlay.x86.so.${MINORVERSION}.0 \
+		${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86.so.${PATCHVERSION}
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86.so.${PATCHVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86.so
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86.so.${PATCHVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86.so.${MAJORVERSION}
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86.so.${PATCHVERSION} \
+		${STAGEDIR}${PREFIX}/lib/libmumbleoverlay.x86.so.${MINORVERSION}
+	${INSTALL_DATA} ${WRKDIR}/.build/auxiliary_files/info.mumble.Mumble.desktop \
+			${STAGEDIR}${PREFIX}/share/applications/mumble.desktop
 	${INSTALL_DATA} ${WRKSRC}/icons/mumble.xpm ${STAGEDIR}${PREFIX}/share/pixmaps
-	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_DATA} ${WRKSRC}/icons/mumble.osx.installer.png ${STAGEDIR}${PREFIX}/share/icons/hicolor/128x128/apps/mumble.png
-	${INSTALL_DATA} ${WRKSRC}/icons/mumble.svg ${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
-	${INSTALL_MAN} ${WRKSRC}/man/mumble.1 ${STAGEDIR}${MANPREFIX}/man/man1/mumble.1
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps \
+		${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/icons/mumble.svg \
+			${STAGEDIR}${PREFIX}/share/icons/hicolor/scalable/apps
+	${INSTALL_DATA} ${WRKSRC}/icons/mumble_256x256.png \
+			${STAGEDIR}${PREFIX}/share/icons/hicolor/256x256/apps/mumble.png
+	${INSTALL_MAN} ${WRKSRC}/auxiliary_files/man_files/mumble.1 \
+			${STAGEDIR}${MANPREFIX}/share/man/man1/mumble.1
 
 .include <bsd.port.post.mk>
