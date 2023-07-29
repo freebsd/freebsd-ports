@@ -10,6 +10,8 @@ WWW=		https://github.com/antmicro/yosys-systemverilog
 LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		incompatible yet with the latest cad/uhdm, see https://github.com/antmicro/yosys-systemverilog/issues/1845
+
 BUILD_DEPENDS=	bash:shells/bash \
 		yosys>0:cad/yosys
 LIB_DEPENDS=	libcapnp.so:devel/capnproto \
