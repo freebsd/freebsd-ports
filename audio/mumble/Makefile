@@ -69,6 +69,7 @@ ALSA_LIB_DEPENDS=	libasound.so:audio/alsa-lib
 AVAHI_CMAKE_BOOL=	zeroconf
 AVAHI_LIB_DEPENDS=	libdns_sd.so:net/avahi-libdns
 
+DBUS_USES=		qt:5
 DBUS_USE=		QT=dbus
 DBUS_CMAKE_BOOL=	dbus
 
