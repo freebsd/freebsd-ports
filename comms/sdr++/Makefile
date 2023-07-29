@@ -1,6 +1,6 @@
 PORTNAME=	sdr++
 DISTVERSION=	1.0.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -31,7 +31,7 @@ GH_PROJECT=	SDRPlusPlus
 
 OPTIONS_MULTI=			AUDIO_BACKEND
 OPTIONS_MULTI_AUDIO_BACKEND=	PORTAUDIO RTAUDIO
-OPTIONS_DEFAULT=		RTAUDIO
+OPTIONS_DEFAULT=		PORTAUDIO # RTAUDIO
 OPTIONS_SUB=			yes
 
 AUDIO_BACKEND_DESC=		Audio backend
@@ -42,6 +42,7 @@ PORTAUDIO_LIB_DEPENDS=		libportaudio.so:audio/portaudio
 RTAUDIO_DESC=			RtAudio support
 RTAUDIO_CMAKE_BOOL=		OPT_BUILD_AUDIO_SINK
 RTAUDIO_LIB_DEPENDS=		librtaudio.so:audio/rtaudio
+RTAUDIO_BROKEN=			see https://github.com/AlexandreRouma/SDRPlusPlus/issues/1149
 
 .include <bsd.port.pre.mk>
 
