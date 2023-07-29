@@ -1,10 +1,10 @@
 bin/poudriere
-@sample etc/poudriere.conf.sample
+etc/poudriere.conf.sample
 %%ETCDIR%%/hooks/bulk.sh.sample
 %%ETCDIR%%/hooks/pkgbuild.sh.sample
-@sample(0,0,0) etc/poudriered.conf.sample
+etc/poudriered.conf.sample
 etc/rc.d/poudriered
-@comment libexec/poudriere/cachec
+libexec/poudriere/cachec
 libexec/poudriere/cached
 libexec/poudriere/clock
 libexec/poudriere/cpdup
@@ -18,11 +18,10 @@ libexec/poudriere/ptsort
 libexec/poudriere/pwait
 libexec/poudriere/rename
 libexec/poudriere/rexec
-%%RM%%libexec/poudriere/rm
+libexec/poudriere/setsid
 libexec/poudriere/sh
 libexec/poudriere/timeout
 libexec/poudriere/timestamp
-man/man8/poudriere.8.gz
 man/man8/poudriere-bulk.8.gz
 man/man8/poudriere-distclean.8.gz
 man/man8/poudriere-image.8.gz
@@ -35,9 +34,12 @@ man/man8/poudriere-queue.8.gz
 man/man8/poudriere-status.8.gz
 man/man8/poudriere-testport.8.gz
 man/man8/poudriere-version.8.gz
+man/man8/poudriere.8.gz
+share/bash-completion/completions/poudriere
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpd.conf.sample
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/nginx.conf.sample
 %%DATADIR%%/MANIFESTS
+%%DATADIR%%/api.sh
 %%DATADIR%%/awk/dependency_loop.awk
 %%DATADIR%%/awk/humanize.awk
 %%DATADIR%%/awk/json.awk
@@ -47,7 +49,6 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/awk/processonelog2.awk
 %%DATADIR%%/awk/siginfo_buildtime.awk
 %%DATADIR%%/awk/unique_pkgnames_from_flavored_origins.awk
-%%DATADIR%%/api.sh
 %%DATADIR%%/bulk.sh
 %%DATADIR%%/common.sh
 %%DATADIR%%/daemon.sh
@@ -120,5 +121,4 @@ man/man8/poudriere-version.8.gz
 %%DATADIR%%/queue.sh
 %%DATADIR%%/status.sh
 %%DATADIR%%/testport.sh
-%%BASH%%share/bash-completion/completions/poudriere
-%%ZSH%%share/zsh/site-functions/_poudriere
+share/zsh/site-functions/_poudriere
