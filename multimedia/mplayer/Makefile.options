@@ -41,6 +41,8 @@ DEFAULT_KERN_HZ=1024
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-clang-version
+# Turn off incompatible function pointer check for clang16+
+CFLAGS+=	-Wno-incompatible-function-pointer-types
 # Require 16 byte stack realignment on i386 to interface
 # properly with hand crafted assembler code in ffmpeg
 CFLAGS_i386+=	-mstack-alignment=16 -mstackrealign
