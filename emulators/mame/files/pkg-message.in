@@ -1,15 +1,26 @@
 [
 { type: install
   message: <<EOM
-Sample configuration files have been installed in "%%ETCDIR%%/"
-The configuration data can be copied to your "~/.mame" directory; alternatively,
-to create clean copies of MAME's configuration, run "mame -createconfig",
-the output from this can be stored in ~/.mame or elsewhere.
+MAME follows an interesting User Experience (UX) design pattern that is aimed
+for developers of MAME, as result of this, the expectation on file
+configuration management might appear counter-intuitive to Users of MAME. If
+MAME does not find configuration files, it expects to be able to read and write
+configuration data to the current working directory, this is counter to
+what users expect on their systems.
 
-To run mame with a custom path, run "mame -inipath path-to-mame.ini"
+Sample configuration files have been installed in:
+"%%ETCDIR%%/"
+The samples can be copied to your "~/.mame" directory to avoid having MAME
+write configuration data elsewhere.
 
-By default, MAME will search and write to the current working directory, unless
-it finds configuration data.
+To create clean copies of MAME's configuration files, execute:
+"mame -createconfig"
+the output from this can be stored in ~/.mame or a custom path.
+
+To run MAME with custom configuration path(s), execute:
+"mame -inipath /var/db/mame /usr/local/etc/mame"
+
+See mame(6) for more information.
 EOM
 }
 ]

@@ -1,6 +1,5 @@
 PORTNAME=	mame
-DISTVERSION=	0.256
-PORTREVISION=	1
+DISTVERSION=	0.257
 CATEGORIES=	emulators games
 
 MAINTAINER=	agh@riseup.net
@@ -79,7 +78,8 @@ OPTIONS_SUB=	yes
 
 DEBUG_DESC=		Build with debug profiling and symbols
 DOCS_DESC=		Install extensive online MAME documentation
-QTDEBUGGER_DESC=	Install Qt interactive low-level machine debugger
+NLS_DESC=		Install language translations for use in the GUI
+QTDEBUGGER_DESC=	Build with Qt interactive low-level machine debugger
 TOOLS_DESC=		Install tools for machine archiving and development
 
 DEBUG_MAKE_ENV=			DEBUG=1 \
