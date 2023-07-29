@@ -45,6 +45,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/detection/editorconfig.kak
 %%DATADIR%%/rc/detection/file.kak
 %%DATADIR%%/rc/detection/modeline.kak
+%%DATADIR%%/rc/filetype/apl.kak
 %%DATADIR%%/rc/filetype/arch-linux.kak
 %%DATADIR%%/rc/filetype/asciidoc.kak
 %%DATADIR%%/rc/filetype/awk.kak
@@ -180,5 +181,7 @@ libexec/kak/kak
 %%DATADIR%%/rc/windowing/sway.kak
 %%DATADIR%%/rc/windowing/tmux.kak
 %%DATADIR%%/rc/windowing/wayland.kak
+%%DATADIR%%/rc/windowing/wezterm.kak
 %%DATADIR%%/rc/windowing/x11.kak
+%%DATADIR%%/rc/windowing/zellij.kak
 share/man/man1/kak.1.gz
