@@ -1,5 +1,6 @@
 PORTNAME=	syslog-ng
 DISTVERSION=	4.3.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 # official master site:
 MASTER_SITES=	https://github.com/balabit/syslog-ng/releases/download/syslog-ng-${DISTVERSION}/
@@ -16,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BROKEN_sparc64=		fails to link: Internal error: Segmentation fault (program ld)
 
-LIB_DEPENDS=	libpcre2-8.so:devel/pcre \
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2 \
 		libuuid.so:misc/e2fsprogs-libuuid \
 		libivykis.so:devel/ivykis
 
