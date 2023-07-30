@@ -109,6 +109,7 @@ share/man/man1/melt-7.1.gz
 %%DATADIR%%/core/consumer_multi.yml
 %%DATADIR%%/core/filter_audiomap.yml
 %%DATADIR%%/core/filter_audiowave.yml
+%%DATADIR%%/core/filter_autofade.yml
 %%DATADIR%%/core/filter_box_blur.yml
 %%DATADIR%%/core/filter_brightness.yml
 %%DATADIR%%/core/filter_channelcopy.yml

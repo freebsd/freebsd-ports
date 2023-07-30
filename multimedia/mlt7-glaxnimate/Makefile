@@ -17,6 +17,7 @@ FLAVORS=	qt5 qt6
 FLAVOR?=	qt5
 
 USES=		qt:${FLAVOR:S/qt//} libarchive xorg
+USE_LOCALE=	C.UTF-8
 USE_QT=		${_USE_QT_${FLAVOR}}
 USE_XORG=	x11
 
