@@ -1,7 +1,6 @@
 PORTNAME=	grex
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.4.1
-PORTREVISION=	8
+DISTVERSION=	1.4.2
 CATEGORIES=	devel
 
 MAINTAINER=	petteri.valkonen@iki.fi
@@ -14,165 +13,173 @@ USES=		cargo
 USE_GITHUB=	yes
 GH_ACCOUNT=	pemistahl
 
-CARGO_CRATES=	aho-corasick-0.7.18 \
+CARGO_CRATES=	aho-corasick-1.0.2 \
 		anes-0.1.6 \
-		assert_cmd-2.0.5 \
-		atty-0.2.14 \
-		autocfg-1.0.1 \
-		bit-set-0.5.2 \
+		anstream-0.3.2 \
+		anstyle-1.0.1 \
+		anstyle-parse-0.2.1 \
+		anstyle-query-1.0.0 \
+		anstyle-wincon-1.0.1 \
+		assert_cmd-2.0.12 \
+		autocfg-1.1.0 \
+		bit-set-0.5.3 \
 		bit-vec-0.6.3 \
-		bitflags-1.2.1 \
-		bstr-0.2.15 \
-		bumpalo-3.9.1 \
-		byteorder-1.3.4 \
+		bitflags-1.3.2 \
+		bitflags-2.3.3 \
+		bstr-1.6.0 \
+		bumpalo-3.13.0 \
+		byteorder-1.4.3 \
 		cast-0.3.0 \
-		cc-1.0.73 \
+		cc-1.0.79 \
 		cfg-if-1.0.0 \
-		ciborium-0.2.0 \
-		ciborium-io-0.2.0 \
-		ciborium-ll-0.2.0 \
-		clap-3.2.17 \
-		clap-4.0.18 \
-		clap_derive-4.0.18 \
-		clap_lex-0.2.2 \
-		clap_lex-0.3.0 \
+		ciborium-0.2.1 \
+		ciborium-io-0.2.1 \
+		ciborium-ll-0.2.1 \
+		clap-4.3.19 \
+		clap_builder-4.3.19 \
+		clap_derive-4.3.12 \
+		clap_lex-0.5.0 \
+		colorchoice-1.0.0 \
 		console_error_panic_hook-0.1.7 \
-		criterion-0.4.0 \
+		criterion-0.5.1 \
 		criterion-plot-0.5.0 \
-		crossbeam-channel-0.5.4 \
-		crossbeam-deque-0.8.1 \
-		crossbeam-epoch-0.9.8 \
-		crossbeam-utils-0.8.8 \
+		crossbeam-channel-0.5.8 \
+		crossbeam-deque-0.8.3 \
+		crossbeam-epoch-0.9.15 \
+		crossbeam-utils-0.8.16 \
 		difflib-0.4.0 \
 		doc-comment-0.3.3 \
-		either-1.6.1 \
-		errno-0.2.8 \
+		either-1.9.0 \
+		errno-0.3.1 \
 		errno-dragonfly-0.1.2 \
-		fastrand-1.6.0 \
-		fixedbitset-0.4.0 \
+		fastrand-2.0.0 \
+		fixedbitset-0.4.2 \
 		float-cmp-0.9.0 \
 		fnv-1.0.7 \
-		futures-0.3.21 \
-		futures-channel-0.3.21 \
-		futures-core-0.3.21 \
-		futures-executor-0.3.21 \
-		futures-io-0.3.21 \
-		futures-macro-0.3.21 \
-		futures-sink-0.3.21 \
-		futures-task-0.3.21 \
+		futures-0.3.28 \
+		futures-channel-0.3.28 \
+		futures-core-0.3.28 \
+		futures-executor-0.3.28 \
+		futures-io-0.3.28 \
+		futures-macro-0.3.28 \
+		futures-sink-0.3.28 \
+		futures-task-0.3.28 \
 		futures-timer-3.0.2 \
-		futures-util-0.3.21 \
-		getrandom-0.2.2 \
+		futures-util-0.3.28 \
+		getrandom-0.2.10 \
+		glob-0.3.1 \
 		half-1.8.2 \
-		hashbrown-0.11.2 \
-		heck-0.4.0 \
-		hermit-abi-0.1.17 \
-		indexmap-1.7.0 \
-		indoc-1.0.7 \
-		instant-0.1.12 \
-		io-lifetimes-0.7.3 \
+		hashbrown-0.12.3 \
+		heck-0.4.1 \
+		hermit-abi-0.3.2 \
+		indexmap-1.9.3 \
+		indoc-2.0.3 \
+		io-lifetimes-1.0.11 \
+		is-terminal-0.4.9 \
 		itertools-0.10.5 \
-		itoa-1.0.1 \
-		js-sys-0.3.58 \
+		itertools-0.11.0 \
+		itoa-1.0.9 \
+		js-sys-0.3.64 \
 		lazy_static-1.4.0 \
-		libc-0.2.135 \
-		linux-raw-sys-0.0.46 \
-		log-0.4.17 \
-		matches-0.1.8 \
-		matrixmultiply-0.3.2 \
-		memchr-2.4.0 \
-		memoffset-0.6.5 \
+		libc-0.2.147 \
+		libm-0.2.7 \
+		linux-raw-sys-0.3.8 \
+		linux-raw-sys-0.4.3 \
+		log-0.4.19 \
+		matches-0.1.10 \
+		matrixmultiply-0.3.7 \
+		memchr-2.5.0 \
+		memoffset-0.9.0 \
 		ndarray-0.15.6 \
 		normalize-line-endings-0.3.0 \
-		num-complex-0.4.0 \
-		num-integer-0.1.44 \
-		num-traits-0.2.14 \
-		num_cpus-1.13.1 \
-		once_cell-1.12.0 \
+		num-complex-0.4.3 \
+		num-integer-0.1.45 \
+		num-traits-0.2.16 \
+		num_cpus-1.16.0 \
+		once_cell-1.18.0 \
 		oorandom-11.1.3 \
-		os_str_bytes-6.0.0 \
-		petgraph-0.6.2 \
-		pin-project-lite-0.2.9 \
+		petgraph-0.6.3 \
+		pin-project-lite-0.2.10 \
 		pin-utils-0.1.0 \
-		plotters-0.3.1 \
-		plotters-backend-0.3.2 \
-		plotters-svg-0.3.1 \
-		ppv-lite86-0.2.10 \
-		predicates-2.1.1 \
-		predicates-core-1.0.1 \
-		predicates-tree-1.0.1 \
-		proc-macro-error-1.0.4 \
-		proc-macro-error-attr-1.0.4 \
-		proc-macro2-1.0.47 \
-		proptest-1.0.0 \
+		plotters-0.3.5 \
+		plotters-backend-0.3.5 \
+		plotters-svg-0.3.5 \
+		ppv-lite86-0.2.17 \
+		predicates-3.0.3 \
+		predicates-core-1.0.6 \
+		predicates-tree-1.0.9 \
+		proc-macro2-1.0.66 \
+		proptest-1.2.0 \
 		quick-error-1.2.3 \
-		quick-error-2.0.0 \
-		quote-1.0.9 \
-		rand-0.8.3 \
-		rand_chacha-0.3.0 \
-		rand_core-0.6.2 \
+		quote-1.0.32 \
+		rand-0.8.5 \
+		rand_chacha-0.3.1 \
+		rand_core-0.6.4 \
 		rand_xorshift-0.3.0 \
 		rawpointer-0.2.1 \
-		rayon-1.5.2 \
-		rayon-core-1.9.2 \
-		redox_syscall-0.2.10 \
-		regex-1.6.0 \
-		regex-automata-0.1.9 \
-		regex-syntax-0.6.27 \
-		remove_dir_all-0.5.3 \
-		rstest-0.15.0 \
-		rstest_macros-0.14.0 \
+		rayon-1.7.0 \
+		rayon-core-1.11.0 \
+		redox_syscall-0.3.5 \
+		regex-1.9.1 \
+		regex-automata-0.3.3 \
+		regex-syntax-0.6.29 \
+		regex-syntax-0.7.4 \
+		relative-path-1.8.0 \
+		rstest-0.18.1 \
+		rstest_macros-0.18.1 \
 		rustc_version-0.4.0 \
-		rustix-0.35.11 \
+		rustix-0.37.23 \
+		rustix-0.38.4 \
 		rusty-fork-0.3.0 \
-		ryu-1.0.9 \
+		ryu-1.0.15 \
 		same-file-1.0.6 \
-		scoped-tls-1.0.0 \
-		scopeguard-1.1.0 \
-		semver-1.0.4 \
-		serde-1.0.136 \
-		serde_derive-1.0.136 \
-		serde_json-1.0.80 \
-		slab-0.4.6 \
+		scoped-tls-1.0.1 \
+		scopeguard-1.2.0 \
+		semver-1.0.18 \
+		serde-1.0.174 \
+		serde_derive-1.0.174 \
+		serde_json-1.0.103 \
+		slab-0.4.8 \
 		strsim-0.10.0 \
-		syn-1.0.86 \
-		tempfile-3.3.0 \
-		termcolor-1.1.2 \
-		terminal_size-0.2.1 \
-		textwrap-0.15.0 \
+		syn-2.0.27 \
+		tempfile-3.7.0 \
+		terminal_size-0.2.6 \
+		termtree-0.4.1 \
 		tinytemplate-1.2.1 \
-		treeline-0.1.0 \
+		unarray-0.1.4 \
 		unic-char-property-0.9.0 \
 		unic-char-range-0.9.0 \
 		unic-common-0.9.0 \
 		unic-ucd-category-0.9.0 \
 		unic-ucd-version-0.9.0 \
-		unicode-ident-1.0.5 \
-		unicode-segmentation-1.10.0 \
-		unicode-xid-0.2.1 \
-		version_check-0.9.2 \
+		unicode-ident-1.0.11 \
+		unicode-segmentation-1.10.1 \
+		utf8parse-0.2.1 \
 		wait-timeout-0.2.0 \
-		walkdir-2.3.2 \
-		wasi-0.10.2+wasi-snapshot-preview1 \
-		wasm-bindgen-0.2.81 \
-		wasm-bindgen-backend-0.2.81 \
-		wasm-bindgen-futures-0.4.31 \
-		wasm-bindgen-macro-0.2.81 \
-		wasm-bindgen-macro-support-0.2.81 \
-		wasm-bindgen-shared-0.2.81 \
-		wasm-bindgen-test-0.3.31 \
-		wasm-bindgen-test-macro-0.3.31 \
-		web-sys-0.3.57 \
+		walkdir-2.3.3 \
+		wasi-0.11.0+wasi-snapshot-preview1 \
+		wasm-bindgen-0.2.87 \
+		wasm-bindgen-backend-0.2.87 \
+		wasm-bindgen-futures-0.4.37 \
+		wasm-bindgen-macro-0.2.87 \
+		wasm-bindgen-macro-support-0.2.87 \
+		wasm-bindgen-shared-0.2.87 \
+		wasm-bindgen-test-0.3.37 \
+		wasm-bindgen-test-macro-0.3.37 \
+		web-sys-0.3.64 \
 		winapi-0.3.9 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-util-0.1.5 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
-		windows-sys-0.36.1 \
-		windows_aarch64_msvc-0.36.1 \
-		windows_i686_gnu-0.36.1 \
-		windows_i686_msvc-0.36.1 \
-		windows_x86_64_gnu-0.36.1 \
-		windows_x86_64_msvc-0.36.1
+		windows-sys-0.48.0 \
+		windows-targets-0.48.1 \
+		windows_aarch64_gnullvm-0.48.0 \
+		windows_aarch64_msvc-0.48.0 \
+		windows_i686_gnu-0.48.0 \
+		windows_i686_msvc-0.48.0 \
+		windows_x86_64_gnu-0.48.0 \
+		windows_x86_64_gnullvm-0.48.0 \
+		windows_x86_64_msvc-0.48.0
 
 PLIST_FILES=	bin/grex
 PORTDOCS=	README.md RELEASE_NOTES.md
