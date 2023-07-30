@@ -51,9 +51,18 @@ USERS=		mongodb
 GROUPS=		mongodb
 
 OPTIONS_DEFINE=			LTO SASL SSL
+OPTIONS_DEFINE_aarch64=	ARMV80A
 OPTIONS_DEFAULT=		LTO SASL SSL
+OPTIONS_DEFAULT_aarch64=	ARMV80A
 OPTIONS_EXCLUDE_aarch64=	${OPTIONS_EXCLUDE_${ARCH}_${OSREL:R}}
 OPTIONS_EXCLUDE_aarch64_14=	LTO # Does not work with llvm12 on aarch64.
+
+# MongoDB on non-LSE ARM cpu like Raspberry Pi can work but is unsupported upstream.
+# Can give corruption on high concurrency.
+# Please read https://jira.mongodb.org/browse/SERVER-71772.
+ARMV80A_DESC=	Enable non-LSE ARM64 CPUs like RPI4.
+
+ARMV80A_EXTRA_PATCHES=	${FILESDIR}/extrapatch-SConstruct
 
 LTO_MAKE_ARGS=	--lto=on
 
