@@ -1,6 +1,6 @@
---- package.json.orig	2023-06-30 11:14:39 UTC
+--- package.json.orig	2023-07-30 07:19:35 UTC
 +++ package.json
-@@ -22,7 +22,7 @@
+@@ -24,7 +24,7 @@
    "devDependencies": {
      "@popperjs/core": "^2.11.5",
      "@vue/compiler-sfc": "^3.2.37",

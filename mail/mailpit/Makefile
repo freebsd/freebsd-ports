@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.7.1
+DISTVERSION=	1.8.0
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -28,6 +28,8 @@ GH_TUPLE=	\
 		DATA-DOG:go-sqlmock:v1.5.0:data_dog_go_sqlmock/vendor/github.com/DATA-DOG/go-sqlmock \
 		GehirnInc:crypt:8cc1b52080c5:gehirninc_crypt/vendor/github.com/GehirnInc/crypt \
 		GuiaBolso:darwin:fd6d2aa3d244:guiabolso_darwin/vendor/github.com/GuiaBolso/darwin \
+		PuerkitoBio:goquery:v1.8.1:puerkitobio_goquery/vendor/github.com/PuerkitoBio/goquery \
+		andybalholm:cascadia:v1.3.2:andybalholm_cascadia/vendor/github.com/andybalholm/cascadia \
 		axllent:semver:v0.0.1:axllent_semver/vendor/github.com/axllent/semver \
 		cention-sany:utf7:26cad61bd60a:cention_sany_utf7/vendor/github.com/cention-sany/utf7 \
 		cznic:ql:v1.2.0:cznic_ql/vendor/github.com/cznic/ql \
@@ -43,7 +45,9 @@ GH_TUPLE=	\
 		golang:sys:v0.10.0:golang_sys/vendor/golang.org/x/sys \
 		golang:text:v0.11.0:golang_text/vendor/golang.org/x/text \
 		golang:tools:v0.11.0:golang_tools/vendor/golang.org/x/tools \
+		gomarkdown:markdown:531d2d74bc12:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
+		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
 		gorilla:mux:v1.8.0:gorilla_mux/vendor/github.com/gorilla/mux \
 		gorilla:websocket:v1.5.0:gorilla_websocket/vendor/github.com/gorilla/websocket \
 		inconshreveable:mousetrap:v1.1.0:inconshreveable_mousetrap/vendor/github.com/inconshreveable/mousetrap \
@@ -56,7 +60,7 @@ GH_TUPLE=	\
 		leporo:sqlf:v1.4.0:leporo_sqlf/vendor/github.com/leporo/sqlf \
 		lukechampine:uint128:v1.3.0:lukechampine_uint128/vendor/lukechampine.com/uint128 \
 		mattn:go-isatty:v0.0.19:mattn_go_isatty/vendor/github.com/mattn/go-isatty \
-		mattn:go-runewidth:v0.0.14:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
+		mattn:go-runewidth:v0.0.15:mattn_go_runewidth/vendor/github.com/mattn/go-runewidth \
 		mattn:go-shellwords:v1.0.12:mattn_go_shellwords/vendor/github.com/mattn/go-shellwords \
 		mhale:smtpd:v0.8.0:mhale_smtpd/vendor/github.com/mhale/smtpd \
 		olekukonko:tablewriter:v0.0.5:olekukonko_tablewriter/vendor/github.com/olekukonko/tablewriter \
@@ -71,7 +75,9 @@ GH_TUPLE=	\
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		ssor:bom:6386211fdfcf:ssor_bom/vendor/github.com/ssor/bom \
 		tg123:go-htpasswd:v1.2.1:tg123_go_htpasswd/vendor/github.com/tg123/go-htpasswd \
-		valyala:bytebufferpool:v1.0.0:valyala_bytebufferpool/vendor/github.com/valyala/bytebufferpool
+		valyala:bytebufferpool:v1.0.0:valyala_bytebufferpool/vendor/github.com/valyala/bytebufferpool \
+		vanng822:css:v1.0.1:vanng822_css/vendor/github.com/vanng822/css \
+		vanng822:go-premailer:v1.20.2:vanng822_go_premailer/vendor/github.com/vanng822/go-premailer
 
 USE_GITLAB=	nodefault
 GL_TUPLE=	\
@@ -81,7 +87,7 @@ GL_TUPLE=	\
 		cznic:mathutil:aabd79189264b253ce2360e80193242239022080:cznic_mathutil/vendor/modernc.org/mathutil \
 		cznic:memory:2014ace98d6392882e3d171baf4b76b21a0e7813:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
-		cznic:sqlite:91c2fe30158adc48d9d4b7b176b85d99ad1f1924:cznic_sqlite/vendor/modernc.org/sqlite \
+		cznic:sqlite:15f9fdc72aec1ae1ddeea47bfc2748bbd57a772a:cznic_sqlite/vendor/modernc.org/sqlite \
 		cznic:strutil:bba0c72b66bb9ced2dfd2ee521b7f16b2cbb39fa:cznic_strutil/vendor/modernc.org/strutil \
 		cznic:token:24e30cd78ee0f2d5d4516917d9cc1101e3ccc1ab:cznic_token/vendor/modernc.org/token
 
