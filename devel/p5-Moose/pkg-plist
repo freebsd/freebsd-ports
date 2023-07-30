@@ -491,6 +491,7 @@ bin/moose-outdated
 %%PERL5_MAN3%%/Moose::Cookbook::Snack::Keywords.3.gz
 %%PERL5_MAN3%%/Moose::Cookbook::Snack::Types.3.gz
 %%PERL5_MAN3%%/Moose::Cookbook::Style.3.gz
+%%PERL5_MAN3%%/Moose::Conflicts.3.gz
 %%PERL5_MAN3%%/Moose::Deprecated.3.gz
 %%PERL5_MAN3%%/Moose::Exception.3.gz
 %%PERL5_MAN3%%/Moose::Exporter.3.gz
