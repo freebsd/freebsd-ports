@@ -1,5 +1,5 @@
 PORTNAME=	tzdiff
-PORTVERSION=	1.2
+DISTVERSION=	1.2
 CATEGORIES=	misc
 
 MAINTAINER=	naito.yuichiro@gmail.com
@@ -7,15 +7,16 @@ COMMENT=	Showing time pairs between target timezone and localtime
 WWW=		https://github.com/belgianbeer/tzdiff
 
 LICENSE=	BSD2CLAUSE
-
-GH_ACCOUNT=	belgianbeer
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
-
-PLIST_FILES=	bin/tzdiff man/man1/tzdiff.1.gz
+GH_ACCOUNT=	belgianbeer
 
 NO_ARCH=	yes
 NO_BUILD=	yes
+
+PLIST_FILES=	bin/tzdiff \
+		man/man1/tzdiff.1.gz
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/tzdiff \
