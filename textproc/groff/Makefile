@@ -1,6 +1,5 @@
 PORTNAME=	groff
-PORTVERSION=	1.22.4
-PORTREVISION=	4
+PORTVERSION=	1.23.0
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
@@ -10,49 +9,49 @@ WWW=		https://www.gnu.org/software/groff/
 
 LICENSE=	GPLv3
 
-BUILD_DEPENDS=	psselect:print/psutils \
-		gsfonts>=0:print/gsfonts
+BUILD_DEPENDS=	gsfonts>=0:print/gsfonts \
+		psselect:print/psutils
 RUN_DEPENDS:=	psselect:print/psutils
 
-MAKE_JOBS_UNSAFE=	yes
-
-USES=		cpe gmake iconv:wchar_t perl5 makeinfo
+USES=		cpe gmake iconv:wchar_t makeinfo perl5
+CPE_VENDOR=	gnu
 USE_CXXSTD=	gnu++98
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-urw-fonts-dir=${LOCALBASE}/share/ghostscript/fonts/ \
-			--with-awk=/usr/bin/awk \
-			--without-x \
+
+GNU_CONFIGURE=		yes
+CONFIGURE_ARGS+=	--with-awk=/usr/bin/awk \
+			--with-urw-fonts-dir=${LOCALBASE}/share/ghostscript/fonts/ \
 			--without-gs \
+			--without-x \
 			pnmcrop=missing \
 			pnmcut=missing \
 			pnmtopng=missing \
 			pnmtops=missing \
 			psselect=missing
 
-CPE_VENDOR=	gnu
-
 # Canonicalize to A4 if set.
 .if defined(A4) || (defined(PAPERSIZE) && ${PAPERSIZE:tu} == "A4")
-PAPERSIZE=A4
+PAPERSIZE=	A4
 .endif
 .if defined(PAPERSIZE)
 CONFIGURE_ENV+=	PAGE=${PAPERSIZE}
 .endif
 
-CONFLICTS=	heirloom-doctools ja-groff
+MAKE_JOBS_UNSAFE=	yes
 
-INFO=	groff
+CONFLICTS=	heirloom-doctools ja-groff
 
 DATADIR=	${PREFIX}/share/${PORTNAME}/${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
 EXAMPLESDIR=	${DOCSDIR}/examples
 
-OPTIONS_DEFINE=	UCHARDET
+INFO=		groff
+
+OPTIONS_DEFINE=		UCHARDET
 OPTIONS_DEFAULT=	UCHARDET
 
-UCHARDET_DESC=	Automatic encoding detection in preconv(1)
+UCHARDET_DESC=		Automatic encoding detection in preconv(1)
 UCHARDET_LIB_DEPENDS=	libuchardet.so:textproc/uchardet
-UCHARDET_USES=	pkgconfig
+UCHARDET_USES=		pkgconfig
 UCHARDET_CONFIGURE_OFF=	--with-uchardet=no
 
 post-install:
