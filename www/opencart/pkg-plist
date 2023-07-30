@@ -1125,6 +1125,7 @@
 %%WWWDIR%%/admin/view/stylesheet/scss/_type.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/_utilities.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/_variables.scss
+%%WWWDIR%%/admin/view/stylesheet/scss/_variables-dark.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/bootstrap-grid.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/bootstrap-reboot.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/bootstrap-utilities.scss
@@ -1141,6 +1142,8 @@
 %%WWWDIR%%/admin/view/stylesheet/scss/helpers/_clearfix.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/helpers/_color-bg.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/helpers/_colored-links.scss
+%%WWWDIR%%/admin/view/stylesheet/scss/helpers/_focus-ring.scss
+%%WWWDIR%%/admin/view/stylesheet/scss/helpers/_icon-link.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/helpers/_position.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/helpers/_ratio.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/helpers/_stacks.scss
@@ -1157,6 +1160,7 @@
 %%WWWDIR%%/admin/view/stylesheet/scss/mixins/_buttons.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/mixins/_caret.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/mixins/_clearfix.scss
+%%WWWDIR%%/admin/view/stylesheet/scss/mixins/_color-mode.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/mixins/_color-scheme.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/mixins/_container.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/mixins/_deprecate.scss
@@ -1174,6 +1178,13 @@
 %%WWWDIR%%/admin/view/stylesheet/scss/mixins/_transition.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/mixins/_utilities.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/mixins/_visually-hidden.scss
+%%WWWDIR%%/admin/view/stylesheet/scss/tests/jasmine.js
+%%WWWDIR%%/admin/view/stylesheet/scss/tests/mixins/_color-modes.test.scss
+%%WWWDIR%%/admin/view/stylesheet/scss/tests/mixins/_media-query-color-mode-full.test.scss
+%%WWWDIR%%/admin/view/stylesheet/scss/tests/mixins/_utilities.test.scss
+%%WWWDIR%%/admin/view/stylesheet/scss/tests/sass-true/register.js
+%%WWWDIR%%/admin/view/stylesheet/scss/tests/sass-true/runner.js
+%%WWWDIR%%/admin/view/stylesheet/scss/tests/utilities/_api.test.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/utilities/_api.scss
 %%WWWDIR%%/admin/view/stylesheet/scss/vendor/_rfs.scss
 %%WWWDIR%%/admin/view/stylesheet/stylesheet.css
@@ -1557,7 +1568,6 @@
 %%WWWDIR%%/catalog/language/en-gb/account/wishlist.php
 %%WWWDIR%%/catalog/language/en-gb/api/account/login.php
 %%WWWDIR%%/catalog/language/en-gb/api/localisation/currency.php
-%%WWWDIR%%/catalog/language/en-gb/api/localisation/language.php
 %%WWWDIR%%/catalog/language/en-gb/api/localisation/store.php
 %%WWWDIR%%/catalog/language/en-gb/api/sale/affiliate.php
 %%WWWDIR%%/catalog/language/en-gb/api/sale/cart.php
@@ -1610,6 +1620,7 @@
 %%WWWDIR%%/catalog/language/en-gb/mail/register.php
 %%WWWDIR%%/catalog/language/en-gb/mail/review.php
 %%WWWDIR%%/catalog/language/en-gb/mail/subscription.php
+%%WWWDIR%%/catalog/language/en-gb/mail/subscription_alert.php
 %%WWWDIR%%/catalog/language/en-gb/mail/transaction.php
 %%WWWDIR%%/catalog/language/en-gb/mail/voucher.php
 %%WWWDIR%%/catalog/language/en-gb/product/category.php
@@ -1648,6 +1659,7 @@
 %%WWWDIR%%/catalog/model/checkout/payment_method.php
 %%WWWDIR%%/catalog/model/checkout/shipping_method.php
 %%WWWDIR%%/catalog/model/checkout/subscription.php
+%%WWWDIR%%/catalog/model/catalog/subscription_plan.php
 %%WWWDIR%%/catalog/model/checkout/voucher.php
 %%WWWDIR%%/catalog/model/checkout/voucher_theme.php
 %%WWWDIR%%/catalog/model/design/banner.php
@@ -1661,6 +1673,7 @@
 %%WWWDIR%%/catalog/model/localisation/location.php
 %%WWWDIR%%/catalog/model/localisation/order_status.php
 %%WWWDIR%%/catalog/model/localisation/return_reason.php
+%%WWWDIR%%/catalog/model/localisation/stock_status.php
 %%WWWDIR%%/catalog/model/localisation/subscription_status.php
 %%WWWDIR%%/catalog/model/localisation/zone.php
 %%WWWDIR%%/catalog/model/marketing/coupon.php
@@ -1787,6 +1800,7 @@
 %%WWWDIR%%/catalog/view/stylesheet/scss/_type.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/_utilities.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/_variables.scss
+%%WWWDIR%%/catalog/view/stylesheet/scss/_variables-dark.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/bootstrap-grid.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/bootstrap-reboot.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/bootstrap-utilities.scss
@@ -1822,6 +1836,9 @@
 %%WWWDIR%%/catalog/view/stylesheet/scss/mixins/_color-scheme.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/mixins/_container.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/mixins/_deprecate.scss
+%%WWWDIR%%/catalog/view/stylesheet/scss/helpers/_focus-ring.scss
+%%WWWDIR%%/catalog/view/stylesheet/scss/helpers/_icon-link.scss
+%%WWWDIR%%/catalog/view/stylesheet/scss/mixins/_color-mode.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/mixins/_forms.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/mixins/_gradients.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/mixins/_grid.scss
@@ -1836,6 +1853,13 @@
 %%WWWDIR%%/catalog/view/stylesheet/scss/mixins/_transition.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/mixins/_utilities.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/mixins/_visually-hidden.scss
+%%WWWDIR%%/catalog/view/stylesheet/scss/tests/jasmine.js
+%%WWWDIR%%/catalog/view/stylesheet/scss/tests/mixins/_color-modes.test.scss
+%%WWWDIR%%/catalog/view/stylesheet/scss/tests/mixins/_media-query-color-mode-full.test.scss
+%%WWWDIR%%/catalog/view/stylesheet/scss/tests/mixins/_utilities.test.scss
+%%WWWDIR%%/catalog/view/stylesheet/scss/tests/sass-true/register.js
+%%WWWDIR%%/catalog/view/stylesheet/scss/tests/sass-true/runner.js
+%%WWWDIR%%/catalog/view/stylesheet/scss/tests/utilities/_api.test.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/utilities/_api.scss
 %%WWWDIR%%/catalog/view/stylesheet/scss/vendor/_rfs.scss
 %%WWWDIR%%/catalog/view/stylesheet/stylesheet.css
@@ -1851,6 +1875,7 @@
 %%WWWDIR%%/catalog/view/template/account/forgotten_reset.twig
 %%WWWDIR%%/catalog/view/template/account/login.twig
 %%WWWDIR%%/catalog/view/template/account/newsletter.twig
+%%WWWDIR%%/catalog/view/template/account/order_history.twig
 %%WWWDIR%%/catalog/view/template/account/order_info.twig
 %%WWWDIR%%/catalog/view/template/account/order_list.twig
 %%WWWDIR%%/catalog/view/template/account/password.twig
@@ -1862,7 +1887,9 @@
 %%WWWDIR%%/catalog/view/template/account/returns_list.twig
 %%WWWDIR%%/catalog/view/template/account/reward.twig
 %%WWWDIR%%/catalog/view/template/account/subscription_info.twig
+%%WWWDIR%%/catalog/view/template/account/subscription_history.twig
 %%WWWDIR%%/catalog/view/template/account/subscription_list.twig
+%%WWWDIR%%/catalog/view/template/account/subscription_order.twig
 %%WWWDIR%%/catalog/view/template/account/tracking.twig
 %%WWWDIR%%/catalog/view/template/account/transaction.twig
 %%WWWDIR%%/catalog/view/template/account/wishlist.twig
@@ -1913,6 +1940,7 @@
 %%WWWDIR%%/catalog/view/template/mail/register_alert.twig
 %%WWWDIR%%/catalog/view/template/mail/review.twig
 %%WWWDIR%%/catalog/view/template/mail/subscription.twig
+%%WWWDIR%%/catalog/view/template/mail/subscription_alert.twig
 %%WWWDIR%%/catalog/view/template/mail/transaction.twig
 %%WWWDIR%%/catalog/view/template/mail/voucher.twig
 %%WWWDIR%%/catalog/view/template/product/category.twig
@@ -1928,7 +1956,6 @@
 %%WWWDIR%%/cron.php
 %%WWWDIR%%/error.html
 %%WWWDIR%%/extension/index.html
-%%WWWDIR%%/extension/oc_payment_example/install.json
 %%WWWDIR%%/extension/opencart/admin/controller/analytics/index.html
 %%WWWDIR%%/extension/opencart/admin/controller/captcha/basic.php
 %%WWWDIR%%/extension/opencart/admin/controller/currency/ecb.php
@@ -2047,6 +2074,7 @@
 %%WWWDIR%%/extension/opencart/admin/language/en-gb/total/voucher.php
 %%WWWDIR%%/extension/opencart/admin/model/dashboard/map.php
 %%WWWDIR%%/extension/opencart/admin/model/fraud/ip.php
+%%WWWDIR%%/extension/opencart/admin/model/module/bestseller.php
 %%WWWDIR%%/extension/opencart/admin/model/report/activity.php
 %%WWWDIR%%/extension/opencart/admin/model/report/coupon.php
 %%WWWDIR%%/extension/opencart/admin/model/report/customer.php
@@ -2082,6 +2110,7 @@
 %%WWWDIR%%/extension/opencart/admin/view/template/module/account.twig
 %%WWWDIR%%/extension/opencart/admin/view/template/module/banner.twig
 %%WWWDIR%%/extension/opencart/admin/view/template/module/bestseller.twig
+%%WWWDIR%%/extension/opencart/admin/view/template/module/bestseller_report.twig
 %%WWWDIR%%/extension/opencart/admin/view/template/module/category.twig
 %%WWWDIR%%/extension/opencart/admin/view/template/module/featured.twig
 %%WWWDIR%%/extension/opencart/admin/view/template/module/filter.twig
@@ -2174,6 +2203,8 @@
 %%WWWDIR%%/extension/opencart/catalog/controller/total/reward.php
 %%WWWDIR%%/extension/opencart/catalog/controller/total/shipping.php
 %%WWWDIR%%/extension/opencart/catalog/controller/total/voucher.php
+%%WWWDIR%%/extension/opencart/catalog/language/de-de/module/featured.php
+%%WWWDIR%%/extension/opencart/catalog/language/de-de/payment/cod.php
 %%WWWDIR%%/extension/opencart/catalog/language/en-gb/captcha/basic.php
 %%WWWDIR%%/extension/opencart/catalog/language/en-gb/module/account.php
 %%WWWDIR%%/extension/opencart/catalog/language/en-gb/module/bestseller.php
@@ -2505,7 +2536,7 @@
 %%WWWDIR%%/system/helper/general.php
 %%WWWDIR%%/system/helper/utf8.php
 %%WWWDIR%%/system/library/cache.php
-%%WWWDIR%%/system/library/cache/apc.php
+%%WWWDIR%%/system/library/cache/apcu.php
 %%WWWDIR%%/system/library/cache/file.php
 %%WWWDIR%%/system/library/cache/mem.php
 %%WWWDIR%%/system/library/cache/memcached.php
