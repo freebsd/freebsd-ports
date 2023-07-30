@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+Some ZFS tuning guides recommend setting KVA_PAGES=512 in your kernel
+configuration.  This is incompatible with Wine.  The maximum possible
+is KVA_PAGES=500, which should still be enough for ZFS.
+
+The port also installs some of Wine's documentation which describes
+additional programs that are not in the manual pages under
+  %%PREFIX%%/share/doc/wine
+EOM
+}
+]

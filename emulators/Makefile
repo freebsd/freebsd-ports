@@ -166,6 +166,7 @@
     SUBDIR += vt100
     SUBDIR += vxtools
     SUBDIR += wine
+    SUBDIR += wine7
     SUBDIR += wine-devel
     SUBDIR += wine-gecko
     SUBDIR += wine-gecko-devel
