@@ -25,6 +25,7 @@ USES=		cmake compiler:c++17-lang desktop-file-utils gl llvm:build,run,min=15 \
 		pkgconfig python qt:6 shebangfix tar:xz
 USE_GL=		gl
 USE_LDCONFIG=	${LOCALBASE}/lib/${PORTNAME}
+USE_LOCALE=	C.UTF-8
 USE_QT=		5compat base declarative positioning quick3d quicktimeline \
 		serialport shadertools sqldriver-sqlite svg tools translations webchannel
 
