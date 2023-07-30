@@ -2,7 +2,6 @@ bin/dev.Cogitri.Health
 share/applications/dev.Cogitri.Health.Autostart.desktop
 share/applications/dev.Cogitri.Health.desktop
 share/dbus-1/services/dev.Cogitri.Health.service
-share/dev.Cogitri.Health/dev.Cogitri.Health.gresource
 share/dev.Cogitri.Health/ontology/health.description
 share/dev.Cogitri.Health/ontology/health.ontology
 share/icons/hicolor/scalable/apps/dev.Cogitri.Health.svg
@@ -16,10 +15,14 @@ share/locale/es/LC_MESSAGES/dev.Cogitri.Health.mo
 share/locale/eu/LC_MESSAGES/dev.Cogitri.Health.mo
 share/locale/fi/LC_MESSAGES/dev.Cogitri.Health.mo
 share/locale/fr/LC_MESSAGES/dev.Cogitri.Health.mo
+share/locale/fur/LC_MESSAGES/dev.Cogitri.Health.mo
 share/locale/gl/LC_MESSAGES/dev.Cogitri.Health.mo
 share/locale/he/LC_MESSAGES/dev.Cogitri.Health.mo
+share/locale/hr/LC_MESSAGES/dev.Cogitri.Health.mo
+share/locale/hu/LC_MESSAGES/dev.Cogitri.Health.mo
 share/locale/id/LC_MESSAGES/dev.Cogitri.Health.mo
 share/locale/it/LC_MESSAGES/dev.Cogitri.Health.mo
+share/locale/ka/LC_MESSAGES/dev.Cogitri.Health.mo
 share/locale/nl/LC_MESSAGES/dev.Cogitri.Health.mo
 share/locale/oc/LC_MESSAGES/dev.Cogitri.Health.mo
 share/locale/pt/LC_MESSAGES/dev.Cogitri.Health.mo
