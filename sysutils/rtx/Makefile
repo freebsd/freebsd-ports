@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.35.1
+DISTVERSION=	1.35.2
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -165,7 +165,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		pin-project-lite-0.2.10 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
-		portable-atomic-1.4.1 \
+		portable-atomic-1.4.2 \
 		pretty_assertions-1.4.0 \
 		proc-macro2-1.0.66 \
 		quick-xml-0.23.1 \
@@ -176,7 +176,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		redox_syscall-0.3.5 \
 		redox_users-0.4.3 \
 		regex-1.9.1 \
-		regex-automata-0.3.3 \
+		regex-automata-0.3.4 \
 		regex-syntax-0.7.4 \
 		reqwest-0.11.18 \
 		ring-0.16.20 \
@@ -199,8 +199,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		security-framework-sys-2.9.1 \
 		self_update-0.37.0 \
 		semver-1.0.18 \
-		serde-1.0.177 \
-		serde_derive-1.0.177 \
+		serde-1.0.178 \
+		serde_derive-1.0.178 \
 		serde_json-1.0.104 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
