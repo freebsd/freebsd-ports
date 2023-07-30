@@ -293,6 +293,7 @@
 %%WWWDIR%%/mod/ckeditor/views/default/ckeditor/editor.css
 %%WWWDIR%%/mod/ckeditor/views/default/ckeditor/editor.js
 %%WWWDIR%%/mod/ckeditor/views/default/ckeditor/elgg_editor.css
+%%WWWDIR%%/mod/ckeditor/views/default/ckeditor/email_fix.css
 %%WWWDIR%%/mod/ckeditor/views/default/ckeditor/init.php
 %%WWWDIR%%/mod/ckeditor/views/default/plugins/ckeditor/settings.php
 %%WWWDIR%%/mod/custom_index/composer.json
@@ -6684,6 +6685,7 @@
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/vendors/ckeditor5/webpack.config.js
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/views/default/ckeditor/config/base.js
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/views/default/ckeditor/config/default.js
+%%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/views/default/ckeditor/email_fix.css
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/views/default/ckeditor/config/file_upload.js
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/views/default/ckeditor/config/mentions.js
 %%WWWDIR%%/vendor/elgg/elgg/mod/ckeditor/views/default/ckeditor/config/simple.js
