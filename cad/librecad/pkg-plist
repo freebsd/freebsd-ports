@@ -1,8 +1,6 @@
 bin/librecad
 bin/ttf2lff
 share/applications/librecad.desktop
-%%DATADIR%%/fonts/OpenGostTypeA-Regular.lff
-%%DATADIR%%/fonts/OpenGostTypeB-Regular.lff
 %%DATADIR%%/fonts/amiri-regular.lff
 %%DATADIR%%/fonts/azomix.lff
 %%DATADIR%%/fonts/azomix_i.lff
@@ -27,6 +25,8 @@ share/applications/librecad.desktop
 %%DATADIR%%/fonts/kst32b.lff
 %%DATADIR%%/fonts/lc_opengost-ar.lff
 %%DATADIR%%/fonts/lc_opengost-br.lff
+%%DATADIR%%/fonts/opengosttypea-regular.lff
+%%DATADIR%%/fonts/opengosttypeb-regular.lff
 %%DATADIR%%/fonts/romanc.lff
 %%DATADIR%%/fonts/romancs.lff
 %%DATADIR%%/fonts/romand.lff
