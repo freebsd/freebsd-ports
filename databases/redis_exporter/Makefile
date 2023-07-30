@@ -1,6 +1,6 @@
 PORTNAME=	redis_exporter
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.50.0
+DISTVERSION=	1.52.0
 CATEGORIES=	databases
 
 MAINTAINER=	arcade@b1t.name
