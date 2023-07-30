@@ -1,6 +1,5 @@
 PORTNAME=	freetype2
-DISTVERSION=	2.12.1
-PORTREVISION=	2
+DISTVERSION=	2.13.1
 CATEGORIES=	print
 MASTER_SITES=	SAVANNAH/${PORTNAME:S/2//} \
 		SF/freetype/${PORTNAME}/${DISTVERSION:C/^([0-9]+\.[0-9]+\.[0-9]+).*/\1/}/
@@ -40,11 +39,8 @@ OPTIONS_SUB=		yes
 OPTIONS_SINGLE=		RENDERING
 OPTIONS_SINGLE_RENDERING=	LCD_FILTERING LCD_RENDERING
 
-OPTIONS_GROUP=		SUBPIXEL_HINTING
-OPTIONS_GROUP_SUBPIXEL_HINTING=	V38 V40
-
 OPTIONS_RADIO=		SIZE_METRICS_CHOICE
-OPTIONS_RADIO_SIZE_METRICS_CHOICE=	FIX_SIZE_METRICS TT_SIZE_METRICS
+OPTIONS_RADIO_SIZE_METRICS_CHOICE=	TT_SIZE_METRICS
 
 LONG_PCF_NAMES_DESC=	Enable long PCF family names
 TABLE_VALIDATION_DESC=	TrueType GX/AAT and OpenType table validation
@@ -52,10 +48,7 @@ RENDERING_DESC=		Rendering technology
 LCD_FILTERING_DESC=	Subpixel rendering (patented)
 LCD_RENDERING_DESC=	Harmony LCD rendering
 SUBPIXEL_HINTING_DESC=	Subpixel hinting support
-V38_DESC=		v38 mode (Infinality code)
-V40_DESC=		v40 mode (minimal code, a.k.a. ClearType hinting, faster)
 SIZE_METRICS_CHOICE_DESC=	Size metrics for TrueType fonts
-FIX_SIZE_METRICS_DESC=	Fix metrics on size request for scalable fonts (alternative method)
 TT_SIZE_METRICS_DESC=	TrueType-like size metrics for 'light' auto-hinting
 
 BROTLI_LIB_DEPENDS=	libbrotlidec.so:archivers/brotli
@@ -67,11 +60,6 @@ PNG_CMAKE_BOOL=		FT_REQUIRE_PNG
 PNG_CMAKE_BOOL_OFF=	FT_DISABLE_PNG
 
 LCD_FILTERING_CFLAGS=	-DFT_CONFIG_OPTION_SUBPIXEL_RENDERING
-
-V38_VARS=	SUBPIXEL_HINTING_MODE+=1
-V40_VARS=	SUBPIXEL_HINTING_MODE+=2
-
-FIX_SIZE_METRICS_EXTRA_PATCHES=	${FILESDIR}/extra-patch-fix_size_metrics.diff
 
 .include <bsd.port.pre.mk>
 
