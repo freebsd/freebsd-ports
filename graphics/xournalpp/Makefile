@@ -1,7 +1,6 @@
 PORTNAME=	xournalpp
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.1.3
-PORTREVISION=	6
+DISTVERSION=	1.2.0
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -12,16 +11,17 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	help2man:misc/help2man
-LIB_DEPENDS=	libharfbuzz.so:print/harfbuzz \
+LIB_DEPENDS=	libgtksourceview-4.so:x11-toolkits/gtksourceview4 \
+		libharfbuzz.so:print/harfbuzz \
 		libpoppler-glib.so:graphics/poppler-glib \
 		libportaudio.so:audio/portaudio \
 		libsndfile.so:audio/libsndfile \
 		libzip.so:archivers/libzip
 
-USES=		cmake compiler:c++11-lang gettext-tools gnome lua:53 pkgconfig tex xorg
+USES=		cmake compiler:c++11-lang gettext-tools gnome lua pkgconfig tex xorg
 USE_GITHUB=	yes
 USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 librsvg2 libxml2 pango
-USE_XORG=	x11 xi
+USE_XORG=	x11 xext xi
 USE_TEX=	latex:build
 
 LDFLAGS+=	-lexecinfo
