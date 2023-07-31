@@ -27,6 +27,7 @@ LLVM_MAN1SRCS= \
 	llvm-lipo.1 \
 	llvm-link.1 \
 	llvm-locstats.1 \
+	llvm-mc.1 \
 	llvm-mca.1 \
 	llvm-nm.1 \
 	llvm-objcopy.1 \
@@ -39,6 +40,7 @@ LLVM_MAN1SRCS= \
 	llvm-ranlib.1 \
 	llvm-readelf.1 \
 	llvm-readobj.1 \
+	llvm-reduce.1 \
 	llvm-remark-size-diff.1 \
 	llvm-remarkutil.1 \
 	llvm-size.1 \
