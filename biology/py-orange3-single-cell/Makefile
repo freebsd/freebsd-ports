@@ -27,6 +27,8 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	biolab
 USE_PYTHON=	distutils autoplist
 
+NO_ARCH=	yes
+
 OPTIONS_DEFINE=	DOCS
 
 DOCS_BUILD_DEPENDS=	gmake:devel/gmake \
