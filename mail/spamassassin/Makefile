@@ -23,7 +23,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		p5-URI>=0:net/p5-URI \
 		p5-Class-XSAccessor>=0:devel/p5-Class-XSAccessor \
 		p5-XString>=0:textproc/p5-XString \
-		p5-IO-Socket-INET6=>:net/p5-IO-Socket-INET6 \
+		p5-IO-Socket-INET6>=0:net/p5-IO-Socket-INET6 \
 		re2c>=.12.0:devel/re2c
 
 .for dep in DCC DKIM MYSQL PGSQL PYZOR RAZOR RELAY_COUNTRY RLIMIT SPF_QUERY SSL
