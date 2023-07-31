@@ -1,0 +1,5 @@
+TIMESTAMP = 1690822930
+SHA256 (ookla-speedtest-1.2.0-freebsd12-x86_64.pkg) = 88e136dfb3eda918cd93f52af208ab70ea52b7414201ae06976d65e68e2cb25c
+SIZE (ookla-speedtest-1.2.0-freebsd12-x86_64.pkg) = 638620
+SHA256 (ookla-speedtest-1.2.0-freebsd13-x86_64.pkg) = 23b20119066df5b08c4f3a8920334ccaab0783780f9b2494629394d1ef33e6f8
+SIZE (ookla-speedtest-1.2.0-freebsd13-x86_64.pkg) = 638832
