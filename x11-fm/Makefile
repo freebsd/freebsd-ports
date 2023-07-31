@@ -28,7 +28,6 @@
     SUBDIR += sushi
     SUBDIR += tdfsb
     SUBDIR += thunar
-    SUBDIR += wcmcommander
     SUBDIR += worker
     SUBDIR += xcruise
     SUBDIR += xdiskusage

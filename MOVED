@@ -7776,3 +7776,4 @@ x11-toolkits/fox14||2023-07-27|Has expired: Obsolete leaf port, use x11-toolkits
 x11-wm/cage-devel|x11-wm/cage|2023-07-27|Out of date: use x11-wm/cage for now
 games/cockatrice||2023-07-31|Has expired: Upstream releases haven't occured for multiple years and will require a new portbuild
 graphics/blender-lts29||2023-07-31|Has expired: Deprecated upstream
+x11-fm/wcmcommander||2023-07-31|Has expired: Abandoned upstream
