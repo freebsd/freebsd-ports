@@ -3,7 +3,8 @@ DISTVERSION=	2.40
 PORTREVISION=	4
 PORTEPOCH?=	1
 CATEGORIES?=	devel
-MASTER_SITES=	SOURCEWARE/binutils/releases
+MASTER_SITES=	GNU \
+		SOURCEWARE/binutils/releases
 
 MAINTAINER?=	cy@FreeBSD.org
 COMMENT?=	GNU binary tools
