@@ -440,6 +440,8 @@ bin/ExamineXmat.R
 bin/FATCAT_matplot
 bin/FIRdesign
 bin/FSread_annot
+bin/FiraCode-Bold.woff2
+bin/FiraCode-Regular.woff2
 bin/GLTsymtest
 bin/HalloSuma
 bin/InstaTract
@@ -524,6 +526,8 @@ bin/afnisumagui_logo_905sq.png
 bin/aiv
 bin/align_epi_anat.py
 bin/ap_run_simple_rest.tcsh
+bin/apqc_logo_help.svg
+bin/apqc_logo_main.svg
 bin/apqc_make_html.py
 bin/apqc_make_tcsh.py
 bin/apsearch
@@ -615,6 +619,7 @@ bin/nifti_tool
 bin/niml_feedme
 bin/niprobe
 bin/nsize
+bin/open_apqc.py
 bin/p2dsetstat
 bin/parse_fs_lt_log.py
 bin/plugout_drive
@@ -818,9 +823,10 @@ lib/afni/plug_zeropad.so
 %%PYTHON_SITELIBDIR%%/afnipy/lib_ap_examples.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_html.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_html_css.py
-%%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_instacorr.py
-%%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_instacorr_tcat.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_io.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_niivue.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_open.py
+%%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_run_icgv.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_stats_dset.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_apqc_tcsh.py
 %%PYTHON_SITELIBDIR%%/afnipy/lib_b0_corr.py
