@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.35.2
+DISTVERSION=	1.35.7
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -63,6 +63,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		crypto-common-0.1.6 \
 		ctor-0.2.4 \
 		ctrlc-3.4.0 \
+		deranged-0.3.6 \
 		dialoguer-0.10.4 \
 		diff-0.1.13 \
 		digest-0.10.7 \
@@ -75,7 +76,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		encoding_rs-0.8.32 \
 		equivalent-1.0.1 \
 		errno-0.2.8 \
-		errno-0.3.1 \
+		errno-0.3.2 \
 		errno-dragonfly-0.1.2 \
 		exec-0.3.1 \
 		eyre-0.6.8 \
@@ -83,6 +84,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		filetime-0.2.21 \
 		flate2-1.0.26 \
 		fnv-1.0.7 \
+		foreign-types-0.3.2 \
+		foreign-types-shared-0.1.1 \
 		form_urlencoded-1.2.0 \
 		fslock-0.2.1 \
 		futures-channel-0.3.28 \
@@ -110,6 +113,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		humantime-2.1.0 \
 		hyper-0.14.27 \
 		hyper-rustls-0.24.1 \
+		hyper-tls-0.5.0 \
 		iana-time-zone-0.1.57 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.4.0 \
@@ -143,6 +147,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		minimal-lexical-0.2.1 \
 		miniz_oxide-0.7.1 \
 		mio-0.8.8 \
+		native-tls-0.2.11 \
 		nix-0.26.2 \
 		nom-7.1.3 \
 		num-traits-0.2.16 \
@@ -151,7 +156,10 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		number_prefix-0.4.0 \
 		object-0.31.1 \
 		once_cell-1.18.0 \
+		openssl-0.10.55 \
+		openssl-macros-0.1.1 \
 		openssl-probe-0.1.5 \
+		openssl-sys-0.9.90 \
 		os_pipe-1.1.4 \
 		owo-colors-3.5.0 \
 		paste-1.0.14 \
@@ -226,12 +234,13 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		thiserror-1.0.44 \
 		thiserror-impl-1.0.44 \
 		thread_local-1.1.4 \
-		time-0.3.23 \
+		time-0.3.24 \
 		time-core-0.1.1 \
-		time-macros-0.2.10 \
+		time-macros-0.2.11 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
 		tokio-1.29.1 \
+		tokio-native-tls-0.3.1 \
 		tokio-rustls-0.24.1 \
 		tokio-util-0.7.8 \
 		toml-0.7.6 \
@@ -299,12 +308,15 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		windows_x86_64_gnullvm-0.48.0 \
 		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.0 \
-		winnow-0.5.1 \
+		winnow-0.5.2 \
 		winreg-0.10.1 \
 		xattr-0.2.3 \
 		yaml-rust-0.4.5 \
 		yansi-0.5.1 \
 		zeroize-1.6.0
+
+OPENSSLINC=	/usr/include
+OPENSSLLIB=	/usr/lib
 
 PLIST_FILES=	bin/${PORTNAME}
 
