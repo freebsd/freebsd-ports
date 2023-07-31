@@ -5,7 +5,8 @@ CATEGORIES=	www
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Port of http_parser to llparse
-WWW=		https://llhttp.org/
+WWW=		https://llhttp.org/ \
+		https://github.com/nodejs/llhttp
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE-MIT
