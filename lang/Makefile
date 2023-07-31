@@ -129,8 +129,8 @@
     SUBDIR += gravity
     SUBDIR += groovy
     SUBDIR += gscheme
+    SUBDIR += guile
     SUBDIR += guile-aclocal
-    SUBDIR += guile-meta
     SUBDIR += guile1
     SUBDIR += guile2
     SUBDIR += guile3
