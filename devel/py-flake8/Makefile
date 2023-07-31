@@ -1,7 +1,6 @@
 PORTNAME=	flake8
-PORTVERSION=	6.0.0
+PORTVERSION=	6.1.0
 CATEGORIES=	devel python
-MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -18,10 +17,13 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mccabe>=0:devel/py-mccabe@${PY_FLAVOR} \
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR}
 
 USES=		python
+USE_GITHUB=	yes
+GH_ACCOUNT=	PyCQA
 USE_PYTHON=	autoplist concurrent distutils pytest
 NO_ARCH=	yes
-# test_up_to_date is broken because pypi tarball lacks required files
-# upstream is uncooperative about fixing this
-PYTEST_BROKEN_TESTS=	test_up_to_date test_all_pyflakes_messages_have_flake8_codes_assigned
+PYTEST_BROKEN_TESTS=	test_all_pyflakes_messages_have_flake8_codes_assigned
+
+post-patch:
+	@${REINPLACE_CMD} -Ee '/(mccabe|pycodestyle|pyflakes)/s|>.*||' ${WRKSRC}/setup.cfg
 
 .include <bsd.port.mk>
