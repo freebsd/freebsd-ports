@@ -3,7 +3,7 @@ PORTVERSION=	1.10
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	lantw44@gmail.com
 COMMENT=	Program to manage GPS data (tracks, waypoints, etc.)
 WWW=		https://sourceforge.net/p/viking/wikiallura/Main_Page/
 
