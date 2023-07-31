@@ -1,5 +1,5 @@
 PORTNAME=	puzzles
-PORTVERSION=	20230728
+PORTVERSION=	20230731
 CATEGORIES=	games
 # upstream does not preserve older versions, mirroring is mandatory
 MASTER_SITES=	https://www.chiark.greenend.org.uk/~sgtatham/puzzles/ \
@@ -20,7 +20,7 @@ USES=		cmake gnome magick:build perl5 pkgconfig
 USE_PERL5=	build
 CMAKE_ARGS=	-DNAME_PREFIX:STRING=sgt-
 
-COMMITHASH=	9e4e15f
+COMMITHASH=	29eaa8f
 
 DATADIR=	${PREFIX}/share/sgt-puzzles
 PORTDATA=	*
@@ -34,5 +34,14 @@ GTK2_CMAKE_ON=	-DPUZZLES_GTK_VERSION=2
 GTK2_USE=	GNOME=gtk20
 GTK3_CMAKE_ON=	-DPUZZLES_GTK_VERSION=3
 GTK3_USE=	GNOME=gtk30
+
+maintainer-update:
+	@location=$$(curl -sI ${MASTER_SITES:[1]}/puzzles.tar.gz | grep -i ^location | awk '{print $$2}'); \
+		version=$$(echo $$location | tr '.-' '  ' | awk '{print $$(NF-3)}'); \
+		hash=$$(echo $$location | tr '.-' '  ' | awk '{print $$(NF-2)}'); \
+		sed -i '' \
+			-e "s|${COMMITHASH}|$$hash|" \
+			-e "s|${PORTVERSION}|$$version|" \
+			${.CURDIR}/Makefile
 
 .include <bsd.port.mk>
