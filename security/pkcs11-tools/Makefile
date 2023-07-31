@@ -1,13 +1,17 @@
 PORTNAME=	pkcs11-tools
 DISTVERSIONPREFIX=	v
-DISTVERSION=	2.5.1
+DISTVERSION=	2.6.0
 CATEGORIES=	security
 
 MAINTAINER=	eric.devolder@gmail.com
 COMMENT=	Tools for managing PKCS11 cryptographic tokens
 WWW=		https://github.com/Mastercard/pkcs11-tools
 
-LICENSE=	APACHE20
+LICENSE=	APACHE20 THIRDPARTY
+LICENSE_COMB=	multi
+LICENSE_NAME_THIRDPARTY=	Third-party licenses
+LICENSE_FILE_THIRDPARTY=	${WRKSRC}/docs/TPLICENSES.md
+LICENSE_PERMS_THIRDPARTY=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 BROKEN_SSL=	libressl openssl30 openssl31
 BROKEN_SSL_REASON_libressl=	error: use of undeclared identifier 'EVP_PKEY_X25519' (LibreSSL has no support for Edwards curves)
@@ -22,8 +26,11 @@ USES=		autoreconf:build bison compiler:c11 libtool:build pkgconfig ssl
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Mastercard
-GH_TUPLE=	coreutils:gnulib:3148eb10e:gnulib \
+GH_TUPLE=	coreutils:gnulib:d1b40e0:gnulib \
 		oasis-tcs:pkcs11:a136aac:oasis_pkcs11
+
+OPTIONS_DEFINE=	DOCS
+OPTIONS_DEFAULT=DOCS
 
 GNU_CONFIGURE=	yes
 
@@ -31,9 +38,7 @@ MAKE_ENV=	LIBCRYPTO_RPATH=${OPENSSLBASE}/lib
 
 INSTALL_TARGET=	install-strip
 
-# workaround for Bug#255277:
-# -lcrypto # fails to find symbol in the shared library: ld: error: undefined symbol: EVP_PKEY_meth_get_digestsign
-LDFLAGS+=	${OPENSSLBASE}/lib/libcrypto.a
+.include <bsd.port.options.mk>
 
 post-extract:
 	@${RMDIR} ${WRKSRC}/.gnulib ${WRKSRC}/include/oasis-pkcs11
@@ -42,5 +47,24 @@ post-extract:
 
 pre-configure:
 	@cd ${WRKSRC} && BUILD_PORT=1 ${WRKSRC}/bootstrap.sh
+
+# FreeBSD<13 does not have system-deployed openssl information through PKGCONFIG
+# We need to provide a hint at configure time
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} <= 1300000 )
+LIBCRYPTO_CFLAGS+=	-pthread
+LIBCRYPTO_LIBS+=	-lcrypto
+
+do-configure:
+	@cd ${WRKSRC} && ./configure LIBCRYPTO_CFLAGS=${LIBCRYPTO_CFLAGS} LIBCRYPTO_LIBS=${LIBCRYPTO_LIBS}
+.endif
+
+post-install:
+	${MKDIR} ${STAGEDIR}${DOCSDIR}
+	${INSTALL_DATA} \
+		${WRKSRC}/README.md \
+		${WRKSRC}/docs/INSTALL.md \
+		${WRKSRC}/docs/MANUAL.md \
+		${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
