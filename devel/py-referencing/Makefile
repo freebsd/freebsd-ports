@@ -1,12 +1,13 @@
 PORTNAME=	referencing
-PORTVERSION=	0.29.0
+PORTVERSION=	0.29.1
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	JSON Referencing + Python
-WWW=		https://github.com/python-jsonschema/referencing
+WWW=		https://referencing.readthedocs.io/en/stable/ \
+		https://github.com/python-jsonschema/referencing
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
