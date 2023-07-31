@@ -166,13 +166,13 @@
     SUBDIR += vt100
     SUBDIR += vxtools
     SUBDIR += wine
-    SUBDIR += wine7
     SUBDIR += wine-devel
     SUBDIR += wine-gecko
     SUBDIR += wine-gecko-devel
     SUBDIR += wine-mono
     SUBDIR += wine-mono-devel
     SUBDIR += wine-proton
+    SUBDIR += wine7
     SUBDIR += winetricks
     SUBDIR += x16-emulator
     SUBDIR += x16-rom
