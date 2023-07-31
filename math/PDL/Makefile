@@ -1,12 +1,12 @@
 PORTNAME=	PDL
-PORTVERSION=	2.019
-PORTREVISION=	10
+PORTVERSION=	2.084
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl Data Language
-WWW=		https://metacpan.org/release/PDL
+WWW=		https://metacpan.org/dist/PDL \
+		https://pdl.perl.org/
 
 LICENSE=	ART10 GPLv1+
 LICENSE_COMB=	dual
@@ -17,88 +17,94 @@ BROKEN_i386=	ld: error: can't create dynamic relocation R_386_32 against local s
 BROKEN_aarch64=	ld: error: relocation R_AARCH64_ADR_PREL_PG_HI21 cannot be used against symbol __stack_chk_guard; recompile with -fPIC
 
 BUILD_DEPENDS=	p5-Devel-CheckLib>=1.01:devel/p5-Devel-CheckLib \
-		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
+		p5-ExtUtils-Depends>=0.402:devel/p5-ExtUtils-Depends \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	p5-Astro-FITS-Header>=0:astro/p5-Astro-FITS-Header \
-		p5-Convert-UU>=0:converters/p5-Convert-UU \
 		p5-File-Map>=0.57:devel/p5-File-Map \
-		p5-Inline>=0.68:devel/p5-Inline \
+		p5-Inline>=0.83:devel/p5-Inline \
 		p5-Inline-C>=0.62:devel/p5-Inline-C \
-		p5-List-MoreUtils>=0:lang/p5-List-MoreUtils \
-		p5-Module-Compile>=0.23:devel/p5-Module-Compile
-TEST_DEPENDS=	p5-Test-Deep>=0:devel/p5-Test-Deep \
-		p5-Test-Exception>=0:devel/p5-Test-Exception \
+		p5-Pod-Parser>=0:textproc/p5-Pod-Parser \
+		p5-Sys-SigAction>=0:devel/p5-Sys-SigAction \
+		p5-Term-ReadKey>=2.34:devel/p5-Term-ReadKey
+TEST_DEPENDS=	p5-Test-Exception>=0:devel/p5-Test-Exception \
 		p5-Test-Warn>=0:devel/p5-Test-Warn
-
-PORTSCOUT=	limit:^[0-9]\.[0-9][0-9]+[0-9\.]*$$
 
 USES=		gmake perl5
 USE_PERL5=	configure
-MAKE_ENV=	PERL5LIB=${WRKSRC}/blib/lib
-PLIST_FILES=	bin/pdl bin/pdl2 bin/pdldoc bin/perldl bin/pptemplate \
-		${SITE_ARCH_REL}/Inline/Pdlpp.pm \
-		${SITE_ARCH_REL}/Inline/MakePdlppInstallable.pm
+
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS_DEFINE=	PGPLOT PLPLOT OPENGL GD FFTW GSL HDF PROJ F77 READLINE SINK
-OPTIONS_DEFAULT=PGPLOT FFTW F77
+PORTSCOUT=	limit:^[0-9]\.[0-9][0-9]+[0-9\.]*$$
 
+OPTIONS_DEFINE=	F77 FFTW GD GSL HDF OPENGL PGPLOT PLPLOT PROJ READLINE SINK
+OPTIONS_DEFAULT=F77 FFTW PGPLOT
 # graphics/p5-OpenGL require manual building
 .if empty(PACKAGE_BUILDING)
 OPTIONS_DEFAULT+=	OPENGL
 .endif
-
-PGPLOT_DESC=	Enable PDL::Graphics::PGPLOT
-PLPLOT_DESC=	Enable PDL::Graphics::PLplot
-OPENGL_DESC=	Enable PDL::Graphics::TriD and OpenGL
-GD_DESC=	Enable PDL::IO::GD
+F77_DESC=	Enable PDL::Minuit and PDL::Slatec
 FFTW_DESC=	Enable PDL::FFTW
+GD_DESC=	Enable PDL::IO::GD
 GSL_DESC=	Enable PDL::GSL interface
 HDF_DESC=	Enable PDL::IO::HDF interface
+OPENGL_DESC=	Enable PDL::Graphics::TriD and OpenGL
+PGPLOT_DESC=	Enable PDL::Graphics::PGPLOT
+PLPLOT_DESC=	Enable PDL::Graphics::PLplot
 PROJ_DESC=	Enable PDL::GIS::Proj interface
-F77_DESC=	Enable PDL::Minuit and PDL::Slatec
 READLINE_DESC=	Use GNU readline
 SINK_DESC=	Include PDL kitchen sink
 
-PGPLOT_BUILD_DEPENDS=	p5-PGPLOT>=0:graphics/p5-PGPLOT
-PLPLOT_LIB_DEPENDS=	libplplotd.so:math/plplot
-OPENGL_BUILD_DEPENDS=	p5-OpenGL>=0.65:graphics/p5-OpenGL
-OPENGL_RUN_DEPENDS:=	${OPENGL_BUILD_DEPENDS}
-OPENGL_USES=		gl
-OPENGL_USE=		gl=glu
-GD_LIB_DEPENDS=		libgd.so:graphics/gd
-F77_BUILD_DEPENDS=	p5-ExtUtils-F77>=0:lang/p5-ExtUtils-F77
+F77_BUILD_DEPENDS=	p5-ExtUtils-F77>=1.26:lang/p5-ExtUtils-F77
+F77_RUN_DEPENDS=	p5-ExtUtils-F77>=1.26:lang/p5-ExtUtils-F77
 FFTW_LIB_DEPENDS=	libfftw.so:math/fftw
+GD_LIB_DEPENDS=		libgd.so:graphics/gd
 GSL_LIB_DEPENDS=	libgsl.so:math/gsl
 HDF_LIB_DEPENDS=	libdf.so:science/hdf
+OPENGL_BUILD_DEPENDS=	p5-OpenGL>=0.70:graphics/p5-OpenGL
+OPENGL_RUN_DEPENDS=	p5-OpenGL>=0.70:graphics/p5-OpenGL
+OPENGL_USE=		gl=glu
+OPENGL_USES=		gl
+PGPLOT_BUILD_DEPENDS=	p5-PGPLOT>=0:graphics/p5-PGPLOT
+PLPLOT_LIB_DEPENDS=	libplplotd.so:math/plplot
 PROJ_LIB_DEPENDS=	libproj.so:graphics/proj
 READLINE_RUN_DEPENDS=	p5-Term-ReadLine-Gnu>=0:devel/p5-Term-ReadLine-Gnu
 READLINE_RUN_DEPENDS_OFF=	p5-Term-ReadLine-Perl>=0:devel/p5-Term-ReadLine-Perl
-SINK_RUN_DEPENDS=	ppmtogif:graphics/netpbm \
-			mpeg_encode:multimedia/mpeg_encode
+SINK_RUN_DEPENDS=	mpeg_encode:multimedia/mpeg_encode \
+			ppmtogif:graphics/netpbm
 
-post-patch:
-	@${GREP} -lR '#!/.*bin/perl' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|#!/.*bin/perl|#!${PERL}|' -i ''
-	@${GREP} -lR 'x86_64' ${WRKSRC}/ | ${XARGS} ${SED} -e 's|x86_64|amd64|g' -i ''
-	@${REINPLACE_CMD} -e "/POSIX_THREADS_LIBS/ s|undef|'-lpthread'|" \
-		${WRKSRC}/perldl.conf
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 503800
+BUILD_DEPENDS+=	p5-Text-Balanced>=2.05:textproc/p5-Text-Balanced
+RUN_DEPENDS+=	p5-Text-Balanced>=2.05:textproc/p5-Text-Balanced
+.endif
 
 post-install:
-	${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL -name '*.so' \
-		| ${XARGS} ${STRIP_CMD}
 	${STRIP_CMD} ${STAGEDIR}${PREFIX}/bin/pdl
-# autogen plist
-	@(cd ${WRKSRC}; ${PERL} -Iblib/lib -Iblib/arch Doc/scantree.pl)
-	@(cd ${WRKSRC}/blib/man3 ; \
-	  ${FIND} *.3 | ${SED} "s,^,${MAN3PREFIX}/man/man3/,;s/3$$/3.gz/" \
-		>> ${TMPPLIST} ; \
-	  cd ${WRKSRC}/blib/man1 ; \
-	  ${FIND} *.1 | ${SED} "s,^,${MAN1PREFIX}/man/man1/,;s/1$$/1.gz/" \
-		>> ${TMPPLIST})
-	@(${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/PDL* -type f | \
-		${SED} "s,^${STAGEDIR}${PREFIX}/,," >> ${TMPPLIST} ; \
-	  ${FIND} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL -type f \
-		-name "[A-Z]*" | ${SED} "s,^${STAGEDIR}${PREFIX}/,," \
-		>> ${TMPPLIST})
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Bad/Bad.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/CallExt/CallExt.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Complex/Complex.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Compression/Compression.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Core/Core.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/FFT/FFT.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Fit/Gaussian/Gaussian.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Graphics/IIS/IIS.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Graphics/PGPLOT/Window/Window.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/IO/Browser/Browser.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/IO/Misc/Misc.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/IO/Pnm/Pnm.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/IO/Storable/Storable.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Image2D/Image2D.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/ImageND/ImageND.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/ImageRGB/ImageRGB.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Math/Math.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/MatrixOps/MatrixOps.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Minuit/Minuit.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Ops/Ops.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Primitive/Primitive.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Slatec/Slatec.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Slices/Slices.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Transform/Transform.so
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/PDL/Ufunc/Ufunc.so
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
