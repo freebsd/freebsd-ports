@@ -1,5 +1,5 @@
 PORTNAME=	nushell
-DISTVERSION=	0.83.0
+DISTVERSION=	0.83.1
 CATEGORIES=	shells
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -494,7 +494,7 @@ CARGO_CRATES=	Inflector-0.11.4 \
 		tower-service-0.3.2 \
 		tracing-0.1.37 \
 		tracing-core-0.1.31 \
-		trash-3.0.5 \
+		trash-3.0.6 \
 		try-lock-0.2.4 \
 		typed-arena-1.7.0 \
 		typenum-1.16.0 \
