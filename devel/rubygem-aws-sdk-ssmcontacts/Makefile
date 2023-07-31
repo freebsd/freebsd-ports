@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-ssmcontacts
-PORTVERSION=	1.21.0
+PORTVERSION=	1.22.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
