@@ -8,7 +8,8 @@ DISTNAME=	jupyter_server_ydoc-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Jupyter Server Extension Providing Y Documents
-WWW=		https://github.com/jupyterlab/jupyter_collaboration
+WWW=		https://jupyterlab-realtime-collaboration.readthedocs.io/en/latest/ \
+		https://github.com/jupyterlab/jupyter-collaboration
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
