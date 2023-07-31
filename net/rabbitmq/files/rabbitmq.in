@@ -38,7 +38,7 @@ export HOME=/var/db/${name}
 : ${RABBITMQ_LOG_BASE:=/var/log/${name}}
 : ${RABBITMQ_PID_FILE:=${pidfile}}
 # require precise OTP version in case multiple erlangs are installed
-export PATH=%%PREFIX%%/lib/%%ERLANG_LIB%%/bin:$PATH
+export PATH=%%PREFIX%%/lib/%%_ERLANG_LIB%%/bin:$PATH
 
 if [ -f ${rabbitmq_env_conf} ]; then
     . ${rabbitmq_env_conf}
