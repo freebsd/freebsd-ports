@@ -1,0 +1,10 @@
+deptry is a command line tool to check for issues with dependencies in a Python
+project, such as unused or missing dependencies. It supports the following types
+of projects:
+- Projects that use Poetry and a corresponding pyproject.toml file
+- Projects that use PDM and a corresponding pyproject.toml file
+- Projects that use a requirements.txt file according to the pip standards
+
+Dependency issues are detected by scanning for imported modules within all
+Python files in a directory and its subdirectories, and comparing those to the
+dependencies listed in the project's requirements.
