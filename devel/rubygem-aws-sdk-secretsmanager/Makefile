@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-secretsmanager
-PORTVERSION=	1.79.0
+PORTVERSION=	1.81.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
