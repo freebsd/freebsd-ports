@@ -1,0 +1,10 @@
+ActiveRecord attributes stored serialized in a json column, super smooth.
+
+Typed and cast like Active Record. Supporting nested models, dirty tracking,
+some querying (with postgres jsonb contains), and working smoothy with form
+builders.
+
+Use your database as a typed object store via ActiveRecord, in the same models
+right next to ordinary ActiveRecord column-backed attributes and associations.
+Your json-serialized attr_json attributes use as much of the existing
+ActiveRecord architecture as we can.
