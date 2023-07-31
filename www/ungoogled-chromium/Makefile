@@ -131,7 +131,6 @@ GN_ARGS+=	build_with_tflite_lib=false \
 		enable_backup_ref_ptr_support=false \
 		enable_hangout_services_extension=false \
 		enable_mdns=false \
-		enable_mse_mpeg2ts_stream_parser=true \
 		enable_nacl=false \
 		enable_reading_list=false \
 		enable_remoting=false \
