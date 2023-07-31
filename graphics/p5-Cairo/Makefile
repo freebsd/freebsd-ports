@@ -1,8 +1,9 @@
 PORTNAME=	Cairo
 PORTVERSION=	1.109
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN \
-		SF/gtk2-perl/${PORTNAME}/${PORTVERSION}
+		SF/gtk2-perl/Cairo/${PORTVERSION}
 MASTER_SITE_SUBDIR=	CPAN:XAOC
 PKGNAMEPREFIX=	p5-
 
@@ -20,5 +21,8 @@ TEST_DEPENDS=	p5-Font-FreeType>=0:print/p5-Font-FreeType \
 
 USES=		perl5
 USE_PERL5=	configure
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Cairo/Cairo.so
 
 .include <bsd.port.mk>
