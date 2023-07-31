@@ -1,6 +1,5 @@
 PORTNAME=	state_machines-activerecord
 PORTVERSION=	0.8.0
-PORTREVISION=	0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
