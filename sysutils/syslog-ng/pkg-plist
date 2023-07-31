@@ -410,6 +410,7 @@ share/syslog-ng/include/scl/windowseventlog/windowseventlog.xml
 share/syslog-ng/include/scl/mariadb/audit.conf
 share/syslog-ng/include/scl/splunk/splunk.conf
 share/syslog-ng/include/scl/logscale/logscale.conf
+share/syslog-ng/include/scl/opensearch/opensearch.conf
 share/syslog-ng/include/scl.conf
 share/syslog-ng/tools/cfg-grammar.y
 share/syslog-ng/tools/lex-rules.am
