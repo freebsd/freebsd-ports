@@ -1,6 +1,5 @@
 PORTNAME=	remotes
-DISTVERSION=	2.4.2
-PORTREVISION=	1
+DISTVERSION=	2.4.2.1
 CATEGORIES=	devel
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
@@ -21,6 +20,7 @@ TEST_DEPENDS=	R-cran-callr>0:devel/R-cran-callr \
 		R-cran-testthat>0:devel/R-cran-testthat \
 		R-cran-withr>0:devel/R-cran-withr \
 		R-cran-curl>0:ftp/R-cran-curl \
+		R-cran-pingr>0:net/R-cran-pingr \
 		R-cran-knitr>0:print/R-cran-knitr \
 		R-cran-brew>0:textproc/R-cran-brew \
 		R-cran-rmarkdown>0:textproc/R-cran-rmarkdown
