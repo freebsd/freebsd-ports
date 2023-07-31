@@ -173,7 +173,9 @@ share/bash-completion/completions/ogrtindex
 %%DATADIR%%/gdalinfo_output.schema.json
 %%DATADIR%%/gdalmdiminfo_output.schema.json
 %%DATADIR%%/gdalvrt.xsd
+%%DATADIR%%/gfs.xsd
 %%DATADIR%%/gml_registry.xml
+%%DATADIR%%/gml_registry.xsd
 %%DATADIR%%/gmlasconf.xml
 %%DATADIR%%/gmlasconf.xsd
 %%DATADIR%%/grib2_center.csv
