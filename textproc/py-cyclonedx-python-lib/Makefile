@@ -1,5 +1,6 @@
 PORTNAME=	cyclonedx-python-lib
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	textproc python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}packageurl-python>=0.9:textproc/py-packageurl-python@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}py-serializable>=0.11.1<0.12:devel/py-py-serializable@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}py-serializable>=0.11.1:devel/py-py-serializable@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}sortedcontainers>=2.3.0<3:devel/py-sortedcontainers@${PY_FLAVOR}
 
 USES=		python

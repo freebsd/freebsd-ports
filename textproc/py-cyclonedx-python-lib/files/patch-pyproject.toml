@@ -5,9 +5,10 @@
  python = "^3.7"
  importlib-metadata = { version = "^3.4.0", python = "<3.8" }
 -packageurl-python = ">= 0.11"
-+packageurl-python = ">= 0.9"
- py-serializable = "^0.11.1"
+-py-serializable = "^0.11.1"
 -sortedcontainers = "^2.4.0"
++packageurl-python = ">= 0.9"
++py-serializable = ">= 0.11.1"
 +sortedcontainers = "^2.3.0"
  
  [tool.poetry.dev-dependencies]
