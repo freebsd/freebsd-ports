@@ -1,7 +1,7 @@
 PORTNAME=	qownnotes
-PORTVERSION=	23.6.6
+PORTVERSION=	23.7.3
 CATEGORIES=	deskutils
-MASTER_SITES=	https://download.tuxfamily.org/qownnotes/src/
+MASTER_SITES=	https://github.com/pbek/QOwnNotes/releases/download/v${PORTVERSION}/
 
 MAINTAINER=	stobbsm@gmail.com
 COMMENT=	Markdown note taking program with cloud integration
