@@ -23,5 +23,8 @@ post-patch:
 	@${PRINTF} '\n%s\n%s;\n' int \
 		'strverscmp(const char *, const char *)' \
 		>> ${WRKSRC}/src/fsearch_string_utils.h
+	@${REINPLACE_CMD} -e 's,time_t,int64_t,g' \
+		${WRKSRC}/src/fsearch_time_utils.h \
+		${WRKSRC}/src/tests/test_time_utils.c
 
 .include <bsd.port.mk>
