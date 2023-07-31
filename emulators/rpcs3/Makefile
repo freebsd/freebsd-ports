@@ -1,7 +1,7 @@
 PORTNAME=	rpcs3
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.0.28-15408 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-gdabb2cc9a0
+DISTVERSION=	0.0.28-15417 # git rev-list --count HEAD
+DISTVERSIONSUFFIX=	-g9b3a878c18
 CATEGORIES=	emulators wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -51,7 +51,7 @@ ELF_FEATURES=	+wxneeded:bin/${PORTNAME}
 
 .if ${FLAVOR:U} == qt6 || make(makesum) || make(fetch)
 PATCH_SITES+=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/:qt6
-PATCHFILES+=	636cc16fe3ca.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
+PATCHFILES+=	d119cf6e96cb.patch:-p1:qt6 # https://github.com/RPCS3/rpcs3/pull/12471
 PKGNAMESUFFIX=	-${FLAVOR}
 USES:=		${USES:S/qt:5/qt:6/}
 USE_QT=		base multimedia svg
