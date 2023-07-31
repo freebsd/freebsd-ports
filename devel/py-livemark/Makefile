@@ -7,7 +7,8 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Data presentation framework for Python
-WWW=		https://github.com/frictionlessdata/livemark
+WWW=		https://livemark.frictionlessdata.io/ \
+		https://github.com/frictionlessdata/livemark
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
