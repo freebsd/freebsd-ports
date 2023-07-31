@@ -6,6 +6,7 @@
 %%PYQT_SIPDIR%%/Qsci/qscicommandset.sip
 %%PYQT_SIPDIR%%/Qsci/qscidocument.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexer.sip
+%%PYQT_SIPDIR%%/Qsci/qscilexerasm.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexeravs.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerbash.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerbatch.sip
@@ -19,15 +20,19 @@
 %%PYQT_SIPDIR%%/Qsci/qscilexerdiff.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerfortran.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerfortran77.sip
+%%PYQT_SIPDIR%%/Qsci/qscilexerhex.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerhtml.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexeridl.sip
+%%PYQT_SIPDIR%%/Qsci/qscilexerintelhex.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerjava.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerjavascript.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerjson.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerlua.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexermakefile.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexermarkdown.sip
+%%PYQT_SIPDIR%%/Qsci/qscilexermasm.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexermatlab.sip
+%%PYQT_SIPDIR%%/Qsci/qscilexernasm.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexeroctave.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerpascal.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerperl.sip
@@ -39,7 +44,9 @@
 %%PYQT_SIPDIR%%/Qsci/qscilexerruby.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerspice.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexersql.sip
+%%PYQT_SIPDIR%%/Qsci/qscilexersrec.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexertcl.sip
+%%PYQT_SIPDIR%%/Qsci/qscilexertekhex.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexertex.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexerverilog.sip
 %%PYQT_SIPDIR%%/Qsci/qscilexervhdl.sip
