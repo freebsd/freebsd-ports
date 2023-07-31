@@ -1,14 +1,16 @@
 PORTNAME=	libudisks
-DISTVERSION=	2.9.4
+DISTVERSION=	2.10.0
 CATEGORIES=	sysutils
 MASTER_SITES=	https://github.com/storaged-project/udisks/releases/download/udisks-${DISTVERSION}/
 DISTNAME=	udisks-${DISTVERSION}
 
-MAINTAINER=	pauamma@FreeBSD.org
+MAINTAINER=	pauamma@gundo.com
 COMMENT=	Library to manipulate storage devices, from udisks
 WWW=		https://www.freedesktop.org/wiki/Software/udisks/
 
-LICENSE=	LGPL20+
+LICENSE=	GPLv2+ LGPL20+
+# LGPL for libudisks, GPL for the command-line utilities.
+LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 # pkaction takes care of libpolkit-agent-1 and libpolkit-gobject-1
@@ -18,7 +20,8 @@ BUILD_DEPENDS=	bash:shells/bash \
 
 # For some reason, configure wants autopoint from gettext-tools even when
 # NLS is disabled.
-USES=		gettext-tools:build gmake gnome libtool pkgconfig tar:bz2
+USES=		gettext-tools:build gmake gnome libtool pathfix pkgconfig \
+		tar:bz2
 USE_GNOME=	glib20 introspection
 USE_LDCONFIG=	yes
 
@@ -29,8 +32,9 @@ CONFIGURE_ARGS=	--disable-daemon \
 		--with-html-dir=${PREFIX}/share/doc \
 		--with-libintl-prefix=${LOCALBASE}
 
-PLIST_SUB=	DISTVERSION=${DISTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/udisks2
+
+PLIST_SUB=	DISTVERSION=${DISTVERSION}
 PORTDOCS=	*
 
 OPTIONS_DEFINE=		UDISKSCTL NLS DOCS
