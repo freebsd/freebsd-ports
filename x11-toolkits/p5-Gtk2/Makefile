@@ -1,6 +1,6 @@
 PORTNAME=	Gtk2
 PORTVERSION=	1.24993
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-toolkits lang perl5
 MASTER_SITES=	CPAN \
 		SF/${PORTNAME:tl}-perl/${PORTNAME}/${PORTVERSION}
@@ -26,5 +26,8 @@ USE_PERL5=	configure
 USE_GNOME=	gtk20 pango
 
 CONFIGURE_ENV=	FORCE_MAKE_CMD=yes
+
+post-install:
+	${STRIP_CMD} ${STAGEDIR}${PREFIX}/${SITE_ARCH_REL}/auto/Gtk2/Gtk2.so
 
 .include <bsd.port.mk>
