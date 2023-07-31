@@ -1,6 +1,5 @@
 PORTNAME=	wmenu
-DISTVERSION=	0.1.3
-PORTREVISION=	1
+DISTVERSION=	0.1.4
 CATEGORIES=	x11 wayland
 MASTER_SITES=	https://git.sr.ht/~adnano/${PORTNAME}/archive/${DISTVERSIONFULL}${EXTRACT_SUFX}?dummy=/
 
