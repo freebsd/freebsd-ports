@@ -20,6 +20,7 @@ RUN_DEPENDS=	mcstas:science/mcstas \
 
 USES=		cmake perl5 shebangfix
 
+NO_ARCH=	yes
 NO_WRKSUBDIR=	yes
 CMAKE_ARGS=	-Denable_mcstas=1
 SHEBANG_GLOB=	*.pl
