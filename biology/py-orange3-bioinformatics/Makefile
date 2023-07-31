@@ -1,6 +1,6 @@
 PORTNAME=	orange3-bioinformatics
 DISTVERSION=	4.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	biology python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +19,7 @@ RUN_DEPENDS=	orange3>0:misc/orange3 \
 		${PYTHON_PKGNAMEPREFIX}point-annotator>=2.0:math/py-point-annotator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyclipper>=1.2.0:math/py-pyclipper@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}requests-cache>0:www/py-requests-cache@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests-cache0>0:www/py-requests-cache0@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}resdk>0:biology/py-resdk@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}scipy>=1.5.0:science/py-scipy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}serverfiles>0:misc/py-serverfiles@${PY_FLAVOR}
