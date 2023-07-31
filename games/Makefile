@@ -156,7 +156,6 @@
     SUBDIR += chromono
     SUBDIR += circuslinux
     SUBDIR += cmatrix
-    SUBDIR += cockatrice
     SUBDIR += coffeebreak
     SUBDIR += colobot
     SUBDIR += colorcode
