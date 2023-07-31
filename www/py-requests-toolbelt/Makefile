@@ -1,12 +1,12 @@
 PORTNAME=	requests-toolbelt
-PORTVERSION=	0.10.1
+PORTVERSION=	1.0.0
 CATEGORIES=	www python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Utility belt for advanced users of python-requests
-WWW=		https://toolbelt.readthedocs.io/ \
+WWW=		https://toolbelt.readthedocs.io/en/latest/ \
 		https://github.com/requests/toolbelt
 
 LICENSE=	APACHE20
