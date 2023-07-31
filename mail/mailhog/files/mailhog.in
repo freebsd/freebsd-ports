@@ -16,6 +16,8 @@
 # mailhog_ui_port (int):	Port to listen on for UI. 8025 (same as API)
 #				by default.
 # mailhog_runtimeuser (string):	User mailhog should run as. 'nobody' by default.
+# mailhog_hostname (string):	Hostname to use for EHLO/HELO and message IDs.
+#                               mailhog.example.com by default.
 #
 # Please think twice before exposing this server to the Internet. This is an
 # insecure tool without any authentication specifically to aid development
@@ -34,10 +36,11 @@ pidfile="/var/run/${name}.pid"
 : ${mailhog_api_port:="8025"}
 : ${mailhog_ui_port:="8025"}
 : ${mailhog_runtimeuser:="nobody"}
+: ${mailhog_hostname:="mailhog.example"}
 
 load_rc_config "${name}"
 
 command="/usr/sbin/daemon"
-command_args="-c -r -f -P ${pidfile} -u ${mailhog_runtimeuser} %%PREFIX%%/bin/${name} -api-bind-addr ${mailhog_bind_addr}:${mailhog_api_port} -ui-bind-addr ${mailhog_bind_addr}:${mailhog_ui_port} -smtp-bind-addr ${mailhog_bind_addr}:${mailhog_smtp_port}"
+command_args="-c -r -f -P ${pidfile} -u ${mailhog_runtimeuser} %%PREFIX%%/bin/${name} -api-bind-addr ${mailhog_bind_addr}:${mailhog_api_port} -ui-bind-addr ${mailhog_bind_addr}:${mailhog_ui_port} -smtp-bind-addr ${mailhog_bind_addr}:${mailhog_smtp_port} -hostname ${mailhog_hostname}"
 
 run_rc_command "$1"
