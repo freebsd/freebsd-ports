@@ -1,3 +1,3 @@
-TIMESTAMP = 1669294600
-SHA256 (pycodestyle-2.10.0.tar.gz) = 347187bdb476329d98f695c213d7295a846d1152ff4fe9bacb8a9590b8ee7053
-SIZE (pycodestyle-2.10.0.tar.gz) = 101916
+TIMESTAMP = 1690826635
+SHA256 (PyCQA-pycodestyle-2.11.0_GH0.tar.gz) = 757a3dba55dce2ae8b01fe7b46c20cd1e4c0fe794fe6119bce66b942f35e2db0
+SIZE (PyCQA-pycodestyle-2.11.0_GH0.tar.gz) = 79772
