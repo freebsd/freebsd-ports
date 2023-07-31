@@ -1,5 +1,5 @@
 PORTNAME=	openapi-core
-PORTVERSION=	0.17.2
+PORTVERSION=	0.18.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -7,7 +7,8 @@ DISTNAME=	openapi_core-${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Client-side and server-side support for the OpenAPI Specification v3
-WWW=		https://github.com/python-openapi/openapi-core
+WWW=		https://openapi-core.readthedocs.io/en/latest/ \
+		https://github.com/python-openapi/openapi-core
 
 LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,12 +16,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=1.0.0:devel/py-poetry-core@${PY_FLAVOR}
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asgiref>=3.6.0<4:www/py-asgiref@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}isodate>=0:devel/py-isodate@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.17.3<5:devel/py-jsonschema@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema-spec>=0.1.6<0.2:devel/py-jsonschema-spec@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}lazy-object-proxy>=1.7.1<2:devel/py-lazy-object-proxy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema>=4.18.0<5:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema-spec>=0.2.3<0.3:devel/py-jsonschema-spec@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}more-itertools>=0:devel/py-more-itertools@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openapi-schema-validator>=0.4.2<0.5:devel/py-openapi-schema-validator@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}openapi-spec-validator>=0.5.0<0.6:devel/py-openapi-spec-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openapi-schema-validator>=0.6.0<0.7:devel/py-openapi-schema-validator@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}openapi-spec-validator>=0.6.0<0.7:devel/py-openapi-spec-validator@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}parse>=0:textproc/py-parse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>=0:www/py-werkzeug@${PY_FLAVOR}
 
