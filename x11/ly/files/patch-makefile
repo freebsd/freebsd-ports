@@ -1,32 +1,29 @@
---- makefile.orig	2020-07-28 15:35:08 UTC
+--- makefile.orig	2023-06-15 07:30:09 UTC
 +++ makefile
-@@ -1,9 +1,9 @@
- NAME = ly
- CC = gcc
+@@ -3,7 +3,7 @@ FLAGS+= -Wall -Wextra -Werror=vla -Wno-unused-paramete
  FLAGS = -std=c99 -pedantic -g
--FLAGS+= -Wall -Wextra -Werror=vla -Wno-unused-parameter
-+FLAGS+= -Wall -Wextra -Wno-unused-parameter
+ FLAGS+= -Wall -Wextra -Werror=vla -Wno-unused-parameter
  #FLAGS+= -DDEBUG
--FLAGS+= -DGIT_VERSION_STRING=\"$(shell git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g')\"
-+FLAGS+= -DGIT_VERSION_STRING=\"${DISTVERSIONFULL}\"
+-FLAGS+= -DLY_VERSION=\"$(shell git describe --long --tags | sed 's/\([^-]*-g\)/r\1/;s/-/./g')\"
++FLAGS+= -DLY_VERSION=\"${DISTVERSIONFULL}\"
  LINK = -lpam -lxcb
  VALGRIND = --show-leak-kinds=all --track-origins=yes --leak-check=full --suppressions=../res/valgrind.supp
  CMD = ./$(NAME)
-@@ -12,6 +12,10 @@ OS:= $(shell uname -s)
+@@ -12,6 +12,10 @@ endif
  ifeq ($(OS), Linux)
  	FLAGS+= -D_DEFAULT_SOURCE
  endif
 +ifeq ($(OS), FreeBSD)
 +	FLAGS+= -D_DEFAULT_SOURCE ${CPPFLAGS} ${CFLAGS}
-+	LINK+=	${LIBS}
++	LINK+=  ${LIBS}
 +endif
  
  BIND = bin
  OBJD = obj
-@@ -71,15 +75,14 @@ leakgrind: $(BIND)/$(NAME)
+@@ -71,14 +75,14 @@ install: $(BIND)/$(NAME)
  
  install: $(BIND)/$(NAME)
- 	@echo "installing"
+ 	@echo "installing ly"
 -	@install -dZ ${DESTDIR}/etc/ly
 -	@install -DZ $(BIND)/$(NAME) -t ${DESTDIR}/usr/bin
 -	@install -DZ $(RESD)/config.ini -t ${DESTDIR}/etc/ly
@@ -34,16 +31,15 @@
 -	@install -DZ $(RESD)/wsetup.sh -t $(DATADIR)
 -	@install -dZ $(DATADIR)/lang
 -	@install -DZ $(RESD)/lang/* -t $(DATADIR)/lang
--	@install -DZ $(RESD)/ly.service -m 644 -t ${DESTDIR}/usr/lib/systemd/system
 -	@install -DZ $(RESD)/pam.d/ly -m 644 -t ${DESTDIR}/etc/pam.d
-+	@install -dZ ${DESTDIR}${PREFIX}/etc/ly
-+	@install -DZ $(BIND)/$(NAME) -t ${DESTDIR}${PREFIX}/bin
-+	@install -DZ $(RESD)/config.ini -t ${DESTDIR}${PREFIX}/etc/ly
-+	@install -DZ $(RESD)/xsetup.sh -t ${DESTDIR}${PREFIX}/etc/ly
-+	@install -DZ $(RESD)/wsetup.sh -t ${DESTDIR}${PREFIX}/etc/ly
-+	@install -dZ ${DESTDIR}${PREFIX}/etc/ly/lang
-+	@install -DZ $(RESD)/lang/* -t ${DESTDIR}${PREFIX}/etc/ly/lang
-+	@install -DZ $(RESD)/pam.d/ly -m 644 -t ${DESTDIR}${PREFIX}/etc/pam.d
++	@install -d ${DESTDIR}/etc/ly
++	@install $(BIND)/$(NAME) -t ${DESTDIR}/usr/bin
++	@install $(RESD)/config.ini -t ${DESTDIR}/etc/ly
++	@install $(RESD)/xsetup.sh -t $(DATADIR)
++	@install $(RESD)/wsetup.sh -t $(DATADIR)
++	@install -d $(DATADIR)/lang
++	@install $(RESD)/lang/* -t $(DATADIR)/lang
++	@install $(RESD)/pam.d/ly -m 644 -t ${DESTDIR}/etc/pam.d
  
  installnoconf: $(BIND)/$(NAME)
- 	@echo "installing without the configuration file"
+ 	@echo "installing ly without the configuration file"

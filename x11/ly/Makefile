@@ -1,7 +1,12 @@
 PORTNAME=	ly
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.5.3
+DISTVERSION=	0.6.0
 CATEGORIES=	x11
+
+PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
+PATCHFILES+=	0edb0012abb52ce13d1e9157e7a25557cda01195.patch:-p1
+PATCHFILES+=	42bf929756675f1e6cb922f721665d581574fdc6.patch:-p1
+PATCHFILES+=	2ca870cfc5cd6611bb1fd52dcd67ef40895ad787.patch:-p1
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	TUI (ncurses-like) display manager for X and Wayland
@@ -9,8 +14,6 @@ WWW=		https://github.com/fairyglade/ly
 
 LICENSE=	WTFPL
 LICENSE_FILE=	${WRKSRC}/license.md
-
-BUILD_DEPENDS=	ginstall:sysutils/coreutils
 
 USES=		gmake localbase xorg
 USE_GITHUB=	yes
@@ -25,8 +28,6 @@ MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}" \
 		DISTVERSIONFULL="${DISTVERSIONFULL}"
 ALL_TARGET=	final
-
-BINARY_ALIAS=	install=ginstall
 
 SUB_FILES=	pkg-message
 

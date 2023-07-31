@@ -1,6 +1,6 @@
-TIMESTAMP = 1680865749
-SHA256 (fairyglade-ly-v0.5.3_GH0.tar.gz) = ddbd8bd6d7a00867d269154c564d0c059f2d5b0df111e1995b4abfbb89f683d5
-SIZE (fairyglade-ly-v0.5.3_GH0.tar.gz) = 22464
+TIMESTAMP = 1690811292
+SHA256 (fairyglade-ly-v0.6.0_GH0.tar.gz) = 10b3777f49e0a9370efe5132b3c6618294330700a14a659ee66b5bf313f4baae
+SIZE (fairyglade-ly-v0.6.0_GH0.tar.gz) = 32706
 SHA256 (nullgemm-argoat-36c41f09ecc2a10c9acf35e4194e08b6fa10cf45_GH0.tar.gz) = 5c284cae748b1cec4eef311845f53ad673f91996ec425c6e323f0c40e829e77f
 SIZE (nullgemm-argoat-36c41f09ecc2a10c9acf35e4194e08b6fa10cf45_GH0.tar.gz) = 5497
 SHA256 (nullgemm-configator-8227b3a835bf4c7e50a57e4ad6aff620ba0dc349_GH0.tar.gz) = bde1826acb80092bd551985082dc872c7f3e48e03132c377f0e5cdd2f9f331e3
@@ -9,3 +9,9 @@ SHA256 (nullgemm-dragonfail-6b40d1f8b7f6dda9746e688666af623dfbcceb94_GH0.tar.gz)
 SIZE (nullgemm-dragonfail-6b40d1f8b7f6dda9746e688666af623dfbcceb94_GH0.tar.gz) = 3348
 SHA256 (nullgemm-termbox_next-2312da153e44face7bb45aa2798ec284289c17ca_GH0.tar.gz) = b788c86e1454c32cd218d0478a87def0a4d1322fef407885359d1ed0c343b045
 SIZE (nullgemm-termbox_next-2312da153e44face7bb45aa2798ec284289c17ca_GH0.tar.gz) = 23558
+SHA256 (0edb0012abb52ce13d1e9157e7a25557cda01195.patch) = 0a9fcc8b04d3c2562dc6c3ed81f643a0431aab862680d05d34f9eaeb07db9471
+SIZE (0edb0012abb52ce13d1e9157e7a25557cda01195.patch) = 739
+SHA256 (42bf929756675f1e6cb922f721665d581574fdc6.patch) = 9328794678317d02ce6ac4b9220c14b55f59923c435a2fab76a05aa45bb8db99
+SIZE (42bf929756675f1e6cb922f721665d581574fdc6.patch) = 25931
+SHA256 (2ca870cfc5cd6611bb1fd52dcd67ef40895ad787.patch) = d0f0f9c4d7d3168916776b6b1df4917bf3d95ca2b61af312cada203f73deefe6
+SIZE (2ca870cfc5cd6611bb1fd52dcd67ef40895ad787.patch) = 1215

@@ -1,7 +1,7 @@
---- src/config.h.orig	2021-10-07 13:58:27 UTC
+--- src/config.h.orig	2023-07-31 13:27:47 UTC
 +++ src/config.h
-@@ -89,6 +89,7 @@ struct config
- 	char* shutdown_cmd;
+@@ -94,6 +94,7 @@ struct config
+ 	char* shutdown_key;
  	char* term_reset_cmd;
  	uint8_t tty;
 +	uint8_t vt;
