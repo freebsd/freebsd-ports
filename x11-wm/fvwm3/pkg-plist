@@ -125,6 +125,7 @@ libexec/fvwm3/%%DISTVERSION%%/FvwmTalk
 %%DATADIR%%/default-config/stalonetrayrc
 %%DATADIR%%/fvwm-menu-desktop-config.fpl
 %%DATADIR%%/fvwm-script-ComExample.pl
+share/xsessions/fvwm3.desktop
 %%PERL%%%%DATADIR%%/perllib/FVWM/Commands.pm
 %%PERL%%%%DATADIR%%/perllib/FVWM/Constants.pm
 %%PERL%%%%DATADIR%%/perllib/FVWM/Event.pm

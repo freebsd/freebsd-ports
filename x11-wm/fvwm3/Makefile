@@ -1,6 +1,6 @@
 PORTNAME=	fvwm3
 DISTVERSION=	1.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	https://github.com/fvwmorg/fvwm3/releases/download/${DISTVERSION}/ \
 		http://fvwm.sourceforge.net/generated/icon_download/:icons
@@ -25,6 +25,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_path_PYTHON=${PYTHON_CMD}
 
 CONFLICTS_INSTALL=	fvwm
+SUB_FILES=		fvwm3.desktop
 PLIST_SUB=		DISTVERSION=${DISTVERSION}
 
 OPTIONS_DEFINE=		FRIBIDI GO ICONS ICONV MANPAGES NLS PERL PNG SVG \
@@ -73,6 +74,11 @@ XPM_CONFIGURE_OFF=	--with-xpm-library=no
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/,${LOCALBASE}/etc/,g' \
 		${WRKSRC}/bin/fvwm-menu-desktop.in
+
+post-install:
+	${MKDIR} ${STAGEDIR}${PREFIX}/share/xsessions
+	${INSTALL_DATA} ${WRKDIR}/fvwm3.desktop \
+		${STAGEDIR}${PREFIX}/share/xsessions
 
 post-install-ICONS-on:
 	${MKDIR} ${STAGEDIR}${PREFIX}/share/fvwm3/pixmaps

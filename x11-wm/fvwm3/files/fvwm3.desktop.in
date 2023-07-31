@@ -1,0 +1,6 @@
+[Desktop Entry]
+Name=FVWM3
+Comment=The fvwm3 window manager
+Type=XSession
+Exec=%%PREFIX%%/bin/fvwm3
+TryExec=%%PREFIX%%/bin/fvwm3
