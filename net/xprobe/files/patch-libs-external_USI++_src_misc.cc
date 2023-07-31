@@ -8,3 +8,15 @@
  #include <unistd.h>
  #include <sys/ioctl.h>
  #include <errno.h>
+@@ -17,9 +18,9 @@ unsigned short
+ in_cksum (unsigned short *ptr, int nbytes, bool may_pad)
+ {
+ 
+-  register long sum;		/* assumes long == 32 bits */
++  long sum;		/* assumes long == 32 bits */
+   u_short oddbyte;
+-  register u_short answer;	/* assumes u_short == 16 bits */
++  u_short answer;	/* assumes u_short == 16 bits */
+ 
+ 
+   /* For psuedo-headers: odd len's require
