@@ -1,5 +1,5 @@
 PORTNAME=	aws-sdk-proton
-PORTVERSION=	1.28.0
+PORTVERSION=	1.30.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
