@@ -1,5 +1,5 @@
 PORTNAME=	aws-partitions
-PORTVERSION=	1.785.0
+PORTVERSION=	1.786.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
