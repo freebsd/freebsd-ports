@@ -5,7 +5,7 @@ CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	sunpoet@FreeBSD.org
-COMMENT=	Rack, a Ruby Web server Interface
+COMMENT=	Rack, a modular Ruby web server interface
 WWW=		https://github.com/rack/rack
 
 LICENSE=	MIT
