@@ -1,6 +1,5 @@
 PORTNAME=	ipxe
-DISTVERSION=	g20230211
-PORTREVISION=	1
+DISTVERSION=	g20230719
 PORTEPOCH=	1
 CATEGORIES=	net
 
@@ -20,7 +19,7 @@ USES=		gmake perl5 shebangfix
 USE_BINUTILS=	yes
 USE_GCC=	yes:build
 USE_GITHUB=	yes
-GH_TAGNAME=	3c83843e111ece30
+GH_TAGNAME=	c1834f323f4f6b9b
 USE_PERL5=	build
 MAKE_ARGS=	AR=${AR} \
 		ARCH=${ARCH:S/amd64/i386/} \
@@ -59,6 +58,7 @@ _IPXE_BUILDCFG=	branding:PRODUCT_NAME="${PKGNAME} (${OPSYS} ${OSREL}/${ARCH})" \
 		general:DOWNLOAD_PROTO_NFS \
 		general:IMAGE_TRUST_CMD \
 		general:NET_PROTO_IPV6 \
+		general:NTP_CMD \
 		general:PING_CMD \
 		general:POWEROFF_CMD
 
