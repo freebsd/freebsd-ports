@@ -1,5 +1,5 @@
 PORTNAME=	level-zero
-PORTVERSION=	1.12.0
+PORTVERSION=	1.13.1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	devel
 
@@ -11,9 +11,11 @@ WWW=		https://spec.oneapi.io/versions/latest/elements/l0/source/index.html \
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake compiler:c++14-lang
+USES=		cmake compiler:c++14-lang pathfix
 
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	oneapi-src
