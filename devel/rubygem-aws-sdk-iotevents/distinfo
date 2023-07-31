@@ -1,3 +1,3 @@
-TIMESTAMP = 1688902537
-SHA256 (rubygem/aws-sdk-iotevents-1.39.0.gem) = 70a7d7abd945aa1410c332c560da0311a9d261cc2581dc6d1c3cdc7cf9a5b3ef
-SIZE (rubygem/aws-sdk-iotevents-1.39.0.gem) = 51712
+TIMESTAMP = 1689399239
+SHA256 (rubygem/aws-sdk-iotevents-1.40.0.gem) = c33ae16e6c08409ae9bcb0f34ecdd126bec39a8ca42e71da38c7b1fd08ef8dcf
+SIZE (rubygem/aws-sdk-iotevents-1.40.0.gem) = 52224
