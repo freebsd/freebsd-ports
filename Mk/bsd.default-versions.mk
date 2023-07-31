@@ -122,18 +122,18 @@ PERL5_DEFAULT:=		${_PERL5_FROM_BIN:R}
 PGSQL_DEFAULT?=		13
 # Possible values: 8.0, 8.1, 8.2, 8.3
 PHP_DEFAULT?=		8.1
-# Possible values: 2.7, 3.8, 3.9, 3.10, 3.11
-PYTHON_DEFAULT?=	3.9
-# Possible values: 2.7
-PYTHON2_DEFAULT?=	2.7
-# Possible values: 3.8, 3.9, 3.10, 3.11
-PYTHON3_DEFAULT?=	3.9
 # Possible values: rust, legacy
 .  if empty(ARCH:Naarch64:Namd64:Narmv7:Ni386:Npowerpc64:Npowerpc64le:Npowerpc:Nriscv64)
 PYCRYPTOGRAPHY_DEFAULT?=	rust
 .  else
 PYCRYPTOGRAPHY_DEFAULT?=	legacy
 .  endif
+# Possible values: 2.7, 3.8, 3.9, 3.10, 3.11
+PYTHON_DEFAULT?=	3.9
+# Possible values: 2.7
+PYTHON2_DEFAULT?=	2.7
+# Possible values: 3.8, 3.9, 3.10, 3.11
+PYTHON3_DEFAULT?=	3.9
 # Possible values: 3.0, 3.1, 3.2, 3.3
 RUBY_DEFAULT?=		3.1
 # Possible values: rust, rust-nightly
