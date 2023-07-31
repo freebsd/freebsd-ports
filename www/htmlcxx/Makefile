@@ -11,12 +11,12 @@ WWW=		https://github.com/bonitao/htmlcxx
 LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/LGPL_V2
 
-USES=		bison:alias iconv libtool localbase:ldflags pathfix
-USE_CXXSTD=	c++14
-USE_LDCONFIG=	yes
+USES=		bison:alias compiler:c++14-lang iconv libtool localbase:ldflags pathfix
 
 GNU_CONFIGURE=	yes
 INSTALL_TARGET=	install-strip
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-liconv|${ICONV_LIB}|' ${WRKSRC}/configure
