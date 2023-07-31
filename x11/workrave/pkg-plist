@@ -93,7 +93,7 @@ share/sounds/workrave/subtle/soundtheme
 %%DATADIR%%/exercises/chair-pushup-2.png
 %%DATADIR%%/exercises/depth-focus-1.png
 %%DATADIR%%/exercises/depth-focus-2.png
-%%DATADIR%%/exercises/exercises.xml
+@sample %%DATADIR%%/exercises/exercises.xml.sample
 %%DATADIR%%/exercises/eye-darkness.png
 %%DATADIR%%/exercises/finger-stretch-1.png
 %%DATADIR%%/exercises/finger-stretch-2.png

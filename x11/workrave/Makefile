@@ -1,7 +1,7 @@
 PORTNAME=	workrave
 PORTVERSION=	1.10.50
 DISTVERSIONPREFIX=	v
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/rcaelers/workrave/releases/download/v${PORTVERSION:S/./_/g}/
 
@@ -70,5 +70,11 @@ GSTREAMER_CONFIGURE_ENABLE=	gstreamer
 
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
+
+# Upstream recommends editing that file to add or remove exercises,
+# hence treat it like a config file.
+post-stage:
+	${MV} ${STAGEDIR}${DATADIR}/exercises/exercises.xml \
+		${STAGEDIR}${DATADIR}/exercises/exercises.xml.sample
 
 .include <bsd.port.mk>
