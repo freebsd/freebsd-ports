@@ -1,5 +1,6 @@
 PORTNAME=	livemark
 PORTVERSION=	0.110.5
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}attrs>=22.0:devel/py-attrs@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}gitpython>=3.1:devel/py-gitpython@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}giturlparse>=0.10:devel/py-giturlparse@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=3.0:devel/py-Jinja2@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}jsonschema>=2.5:devel/py-jsonschema@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}jsonschema417>=2.5:devel/py-jsonschema417@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}livereload>=2.6:www/py-livereload@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}marko>=1.0:textproc/py-marko@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyquery>=1.0:devel/py-pyquery@${PY_FLAVOR} \
