@@ -53,6 +53,7 @@
     SUBDIR += belier
     SUBDIR += bfbtester
     SUBDIR += binwalk
+    SUBDIR += bitwarden-cli
     SUBDIR += boringssl
     SUBDIR += botan2
     SUBDIR += bruteblock
