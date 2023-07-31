@@ -1,10 +1,11 @@
 PORTNAME=	v
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4
 CATEGORIES=	lang
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	V Programming Language
-WWW=		https://vlang.io/
+WWW=		https://vlang.io/ \
+		https://github.com/vlang/v
 
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -15,11 +16,8 @@ ALL_TARGET=	v
 LDFLAGS+=	-lm
 TEST_TARGET=	check
 
-PORTDOCS=	*
-PORTEXAMPLES=	*
-
 GH_ACCOUNT=	vlang
-GH_TUPLE=	vlang:vc:ec9b505:vc/vc
+GH_TUPLE=	vlang:vc:02102e5:vc/vc
 USE_GITHUB=	yes
 
 PORTSCOUT=	skipv:weekly.*
@@ -44,5 +42,21 @@ post-install-DOCS-on:
 post-install-EXAMPLES-on:
 	${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
+
+# maintainer section:
+
+MS_PLIST=	${WRKDIR}/.ms-pkg-plist
+
+genplist: do-clean extract
+	@${ECHO_CMD} "bin/v" > ${MS_PLIST}
+	@cd ${WRKSRC}/ && ${LS} *.md | ${SED} 's|^|%%PORTDOCS%%%%DOCSDIR%%/|' >> ${MS_PLIST}
+	@cd ${WRKSRC}/doc/ && ${FIND} -s . -type f | ${SED} 's|^\.|%%PORTDOCS%%%%DOCSDIR%%|' >> ${MS_PLIST}
+	@cd ${WRKSRC}/examples/ && ${FIND} -s . -type f | ${SED} 's|^\.|%%PORTEXAMPLES%%%%EXAMPLESDIR%%|' >> ${MS_PLIST}
+	@cd ${WRKSRC}/cmd/ && ${FIND} -s . -type f | ${SED} 's|^\.|%%DATADIR%%/cmd|' >> ${MS_PLIST}
+	@cd ${WRKSRC}/thirdparty/ && ${FIND} -s . -type f | ${SED} 's|^\.|%%DATADIR%%/thirdparty|' >> ${MS_PLIST}
+	@${ECHO_CMD} "%%DATADIR%%/v" >> ${MS_PLIST}
+	@${ECHO_CMD} "%%DATADIR%%/v.mod" >> ${MS_PLIST}
+	@cd ${WRKSRC}/vlib/ && ${FIND} -s . -type f | ${SED} 's|^\.|%%DATADIR%%/vlib|' >> ${MS_PLIST}
+	@${INSTALL} -m 600 ${MS_PLIST} ${PLIST}
 
 .include <bsd.port.mk>
