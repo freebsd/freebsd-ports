@@ -12,24 +12,17 @@ WWW=		https://www.nongnu.org/guile-lib/
 LICENSE=	LGPL3 GPLv3
 LICENSE_COMB=	multi
 
-USES=		guile:2.2,3.0,flavors,build,run \
-		gmake pkgconfig
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--with-guile-site
+USES=		gmake guile:2.2,3.0,flavors,build,run pkgconfig
 
+CONFIGURE_ARGS+=--with-guile-site
+GNU_CONFIGURE=	yes
+INFO_PATH=	${GUILE_INFO_PATH}
 TEST_TARGET=	check
 
 INFO=		guile-library
-INFO_PATH=	${GUILE_INFO_PATH}
-
-# DO NOT try and add rules here to strip .go files, no matter how loudly
-# testport / stage-qa shouts at you about it, because .go files (which are
-# compiled bytecode) are not intended to be stripped and doing so causes
-# breakage at run time.
 
 post-install:
 	${MKDIR} ${STAGEDIR}${PREFIX}/${GUILE_PKGCONFIG_DIR}
-	${MV} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/*.pc \
-	      ${STAGEDIR}${PREFIX}/${GUILE_PKGCONFIG_DIR}/
+	${MV} ${STAGEDIR}${PREFIX}/libdata/pkgconfig/guile-lib-1.0.pc ${STAGEDIR}${PREFIX}/${GUILE_PKGCONFIG_DIR}/
 
 .include <bsd.port.mk>
