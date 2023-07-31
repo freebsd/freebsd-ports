@@ -27,7 +27,7 @@ TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}mock>=0:devel/py-mock@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pytest>=0:devel/py-pytest@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}responses>=0:devel/py-responses@${PY_FLAVOR}
 
-USES=		cpe python pycryptography:run
+USES=		cpe pycryptography:run python
 USE_PYTHON=	autoplist concurrent distutils
 
 NO_ARCH=	yes
