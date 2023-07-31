@@ -30,7 +30,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/app.jar
 %%DATADIR%%/lib/async-profiler-windows.jar
 %%DATADIR%%/lib/async-profiler.jar
-%%DATADIR%%/lib/build-marker-PS-231.9161.47
+%%DATADIR%%/lib/build-marker-PS-231.9225.18
 %%DATADIR%%/lib/byte-buddy-agent.jar
 %%DATADIR%%/lib/cds/classesLogAgent.jar
 %%DATADIR%%/lib/error-prone-annotations.jar
@@ -46,7 +46,7 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/lib/jsch-agent.jar
 %%DATADIR%%/lib/junit4.jar
 %%DATADIR%%/lib/protobuf.jar
-%%DATADIR%%/lib/pty4j
+%%DATADIR%%/lib/pty4j/freebsd/x86-64/libpty.so
 %%DATADIR%%/lib/rd.jar
 %%DATADIR%%/lib/stats.jar
 %%DATADIR%%/lib/testFramework.jar
@@ -97,8 +97,6 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/configurationScript/lib/configurationScript.jar
 %%DATADIR%%/plugins/copyright/lib/copyright.jar
 %%DATADIR%%/plugins/css-impl/lib/css-impl.jar
-%%DATADIR%%/plugins/cwm-plugin-projector/lib/cwm-plugin-projector.jar
-%%DATADIR%%/plugins/cwm-plugin-projector/lib/projector/projector.jar
 %%DATADIR%%/plugins/dev/lib/dev.jar
 %%DATADIR%%/plugins/dql/lib/dql.jar
 %%DATADIR%%/plugins/drupal/lib/drupal.jar
@@ -347,6 +345,8 @@ share/applications/phpstorm.desktop
 %%DATADIR%%/plugins/nodeJS/js/mocha-intellij/package.json
 %%DATADIR%%/plugins/nodeJS/js/nodeunit/nodeunit-intellij-starter.js
 %%DATADIR%%/plugins/nodeJS/lib/nodeJS.jar
+%%DATADIR%%/plugins/performanceTesting-async/lib/performanceTesting-async.jar
+%%DATADIR%%/plugins/performanceTesting/lib/performanceTesting.jar
 %%DATADIR%%/plugins/phing/lib/phing.jar
 %%DATADIR%%/plugins/php-architecture/lib/php-architecture.jar
 %%DATADIR%%/plugins/php-commandLineTool/lib/php-commandLineTool.jar
