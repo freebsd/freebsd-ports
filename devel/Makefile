@@ -1520,6 +1520,7 @@
     SUBDIR += love5
     SUBDIR += lpc21isp
     SUBDIR += lrmi
+    SUBDIR += lua-Penlight
     SUBDIR += lua-argparse
     SUBDIR += lua-bitlib
     SUBDIR += lua-bitop
