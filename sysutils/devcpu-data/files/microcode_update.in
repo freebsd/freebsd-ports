@@ -21,21 +21,10 @@
 name="microcode_update"
 rcvar=microcode_update_enable
 stop_cmd=":"
-start_precmd="microcode_update_prepare"
 start_cmd="microcode_update_start"
-requires_modules="cpuctl"
+required_modules="cpuctl"
 
 CMT="/usr/sbin/cpucontrol"
-
-microcode_update_prepare()
-{
-	if ! kldstat -q -m cpuctl; then
-		if ! kldload cpuctl > /dev/null 2>&1; then
-			warn "Can't load cpuctl module."
-			return 1
-		fi
-	fi
-}
 
 microcode_update_start()
 {
