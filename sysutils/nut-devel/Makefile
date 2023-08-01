@@ -22,7 +22,6 @@ GH_TAGNAME=	2ced48d1b
 NUT_COMMIT_DATE=	2023.07.30
 
 MAKE_JOBS_UNSAFE=	yes
-USE_GCC=	yes
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build compiler:c11 gmake libtool pkgconfig python
 USE_LDCONFIG=	yes
@@ -84,7 +83,7 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/nut \
 		--with-dev \
 		--with-ltdl --with-nut-scanner
 
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -lpthread
 LIB_DEPENDS+=	libltdl.so:devel/libltdl
 
 # XXX Remove this when copying this port to sysutils/nut. The GA version
