@@ -1,15 +1,14 @@
---- configure.ac.orig	2019-06-07 13:23:45 UTC
+--- configure.ac.orig	2023-07-20 23:09:18 UTC
 +++ configure.ac
-@@ -49,11 +49,7 @@ AC_COMPILER_NAME
+@@ -48,10 +48,7 @@ AC_COMPILER_NAME
  
  # We need a C++11 compiler now - AB 2014-12-12
  # clang-3.8 does not support __float128 without explicitly passing it -std=c++11
--if test "x${CCNAM}" = "xclang38" ; then
--   AX_CXX_COMPILE_STDCXX_11([noext],[mandatory])
--else
--   AX_CXX_COMPILE_STDCXX_11([ext],[mandatory])
--fi
+-AS_IF([test "x${CCNAM}" = "xclang38"],
+-      [AX_CXX_COMPILE_STDCXX_11([noext],[mandatory])],
+-      [AX_CXX_COMPILE_STDCXX_11([ext],[mandatory])]
+-      )
 +AX_CXX_COMPILE_STDCXX_11([noext],[mandatory])
- REQUIRED_FLAGS="$CXX11FLAGS"
+ REQUIRED_FLAGS="${CXX11FLAGS}"
  # Add the c++11 flags for the configure compilations as clang needs it to work properly with a glibc++ compiled with gcc
- BACKUP_CXXFLAGS="${CXXFLAGS}"
+ CXXFLAGS="${CXX11FLAGS} ${CXXFLAGS}"

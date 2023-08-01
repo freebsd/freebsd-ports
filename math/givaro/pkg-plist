@@ -1,6 +1,5 @@
 %%PORTDOCS%%%%DOCSDIR%%/givaro.html
 bin/givaro-config
-bin/givaro-makefile
 include/givaro-config.h
 include/givaro/StaticElement.h
 include/givaro/chineseremainder.h
@@ -113,9 +112,11 @@ include/givaro/givtablelimits.h
 include/givaro/givtimer.h
 include/givaro/givtruncdomain.h
 include/givaro/givtruncdomain.inl
+include/givaro/givtypestring.h
 include/givaro/givvectdenseops.inl
 include/givaro/givvectdensespe.inl
 include/givaro/givvector.h
+include/givaro/givvectordense.h
 include/givaro/givvectordense.inl
 include/givaro/givvectorsparse.h
 include/givaro/givvectorsparse.inl
@@ -153,6 +154,7 @@ include/givaro/montgomery-int32.inl
 include/givaro/montgomery-ruint.h
 include/givaro/montgomery-ruint.inl
 include/givaro/montgomery.h
+include/givaro/qfield.h
 include/givaro/random-integer.h
 include/givaro/ring-interface.h
 include/givaro/udl.h
@@ -224,5 +226,6 @@ include/recint/rutools.h
 lib/libgivaro.a
 lib/libgivaro.so
 lib/libgivaro.so.9
-lib/libgivaro.so.9.1.1
+lib/libgivaro.so.9.2.0
 libdata/pkgconfig/givaro.pc
+%%DATADIR%%/givaro-makefile

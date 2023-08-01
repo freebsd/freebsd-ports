@@ -1,7 +1,6 @@
 PORTNAME=	givaro
-PORTVERSION=	4.1.1
+PORTVERSION=	4.2.0
 DISTVERSIONPREFIX=v
-PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	pi@FreeBSD.org
@@ -15,7 +14,7 @@ LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 LIB_DEPENDS=	libgmp.so:math/gmp
 
-USES=		autoreconf compiler:c++11-lang gmake libtool pathfix pkgconfig
+USES=		autoreconf compiler:c++11-lang gmake libtool localbase pathfix pkgconfig
 USE_CXXSTD=	c++11
 USE_GITHUB=	yes
 GH_ACCOUNT=	linbox-team
