@@ -10,6 +10,7 @@
 %%HTML%%%%DOCBASE%%/es/articles/freebsd-questions/index.html
 %%HTML%%%%DOCBASE%%/es/articles/freebsd-releng/index.html
 %%HTML%%%%DOCBASE%%/es/articles/freebsd-src-lsp/index.html
+%%HTML%%%%DOCBASE%%/es/articles/freebsd-status-report-process/index.html
 %%HTML%%%%DOCBASE%%/es/articles/freebsd-update-server/index.html
 %%HTML%%%%DOCBASE%%/es/articles/geom-class/index.html
 %%HTML%%%%DOCBASE%%/es/articles/gjournal-desktop/index.html
@@ -17,6 +18,7 @@
 %%HTML%%%%DOCBASE%%/es/articles/ipsec-must/index.html
 %%HTML%%%%DOCBASE%%/es/articles/ldap-auth/index.html
 %%HTML%%%%DOCBASE%%/es/articles/leap-seconds/index.html
+%%HTML%%%%DOCBASE%%/es/articles/license-guide/index.html
 %%HTML%%%%DOCBASE%%/es/articles/linux-emulation/index.html
 %%HTML%%%%DOCBASE%%/es/articles/linux-users/index.html
 %%HTML%%%%DOCBASE%%/es/articles/mailing-list-faq/index.html
@@ -87,6 +89,7 @@
 %%PDF%%%%DOCBASE%%/es/articles/freebsd-questions/freebsd-questions_es.pdf
 %%PDF%%%%DOCBASE%%/es/articles/freebsd-releng/freebsd-releng_es.pdf
 %%PDF%%%%DOCBASE%%/es/articles/freebsd-src-lsp/freebsd-src-lsp_es.pdf
+%%PDF%%%%DOCBASE%%/es/articles/freebsd-status-report-process/freebsd-status-report-process_es.pdf
 %%PDF%%%%DOCBASE%%/es/articles/freebsd-update-server/freebsd-update-server_es.pdf
 %%PDF%%%%DOCBASE%%/es/articles/geom-class/geom-class_es.pdf
 %%PDF%%%%DOCBASE%%/es/articles/gjournal-desktop/gjournal-desktop_es.pdf
@@ -94,6 +97,7 @@
 %%PDF%%%%DOCBASE%%/es/articles/ipsec-must/ipsec-must_es.pdf
 %%PDF%%%%DOCBASE%%/es/articles/ldap-auth/ldap-auth_es.pdf
 %%PDF%%%%DOCBASE%%/es/articles/leap-seconds/leap-seconds_es.pdf
+%%PDF%%%%DOCBASE%%/es/articles/license-guide/license-guide_es.pdf
 %%PDF%%%%DOCBASE%%/es/articles/linux-emulation/linux-emulation_es.pdf
 %%PDF%%%%DOCBASE%%/es/articles/linux-users/linux-users_es.pdf
 %%PDF%%%%DOCBASE%%/es/articles/mailing-list-faq/mailing-list-faq_es.pdf

@@ -1,3 +1,3 @@
-TIMESTAMP = 1688631624
-SHA256 (freebsd-doc-20230706.tar.gz) = c872d000aff6a955bb7331f4bb061c1ccf4e7d93c7f406545c1bce5170aa9466
-SIZE (freebsd-doc-20230706.tar.gz) = 40153386
+TIMESTAMP = 1690660686
+SHA256 (freebsd-doc-20230729.tar.gz) = 0bbc6b0815a15fea73dc961de68bc645d61125de10dbadc1cde10cc777c34e1b
+SIZE (freebsd-doc-20230729.tar.gz) = 40192628
