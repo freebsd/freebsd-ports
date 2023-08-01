@@ -958,6 +958,7 @@
 %%DATADIR%%/templates/dcim/powerport_delete.html
 %%DATADIR%%/templates/dcim/rack.html
 %%DATADIR%%/templates/dcim/rack/base.html
+%%DATADIR%%/templates/dcim/rack/non_racked_devices.html
 %%DATADIR%%/templates/dcim/rack/reservations.html
 %%DATADIR%%/templates/dcim/rack_edit.html
 %%DATADIR%%/templates/dcim/rack_elevation_list.html
