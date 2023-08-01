@@ -1573,6 +1573,7 @@
     SUBDIR += mate-common
     SUBDIR += maven
     SUBDIR += maven-wrapper
+    SUBDIR += maven39
     SUBDIR += maven363
     SUBDIR += mcpp
     SUBDIR += mdb
