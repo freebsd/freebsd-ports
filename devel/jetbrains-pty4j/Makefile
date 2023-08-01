@@ -1,5 +1,5 @@
 PORTNAME=	pty4j
-PORTVERSION=	0.12.11
+PORTVERSION=	0.12.13
 CATEGORIES=	devel java
 PKGNAMEPREFIX=	jetbrains-
 DIST_SUBDIR=	jetbrains
@@ -11,43 +11,26 @@ WWW=		https://github.com/JetBrains/pty4j
 LICENSE=	EPL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+ONLY_FOR_ARCHS=	amd64
+
 USES=		gmake
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	JetBrains
 GH_PROJECT=	pty4j
-GH_TAGNAME=	7488f35f79bcd9801ce5ff68afc98a3f43bb97fa
+GH_TAGNAME=	32b777311438b7a9c5de4cf56cde269ffd27e65e
 
-.include <bsd.port.options.mk>
+DATADIR=	${PREFIX}/share/jetbrains/${PORTNAME}
 
-# The directory we need to install Pty4J's native library in depends
-# on the install target's architecture.  We rebuild libpty.so instead
-# of using one of the bundled ones which are FreeBSD 10.x only.
-.if ${ARCH} == "amd64"
-PTY4J_ARCH=	x86-64
-.elif ${ARCH} == "i386"
-PTY4J_ARCH=	x86
-.else
-PTY4J_ARCH=
-.endif
-
-.if ${PTY4J_ARCH} != ""
-# Despite what the name might suggest using the linux_x86_64 target
-# will always build libpty.so for the native platform.
+ALL_TARGET=	linux_x86_64
 BUILD_WRKSRC=	${WRKSRC}/native
 MAKEFILE=	Makefile_freebsd
-ALL_TARGET=	linux_x86_64
-PLIST_FILES+=	lib/pty4j/freebsd/${PTY4J_ARCH}/libpty.so
-.else
-# If native Pty4J support is missing.
-NO_BUILD=	yes
-.endif
+PLIST_FILES=	share/jetbrains/${PORTNAME}/${ARCH}/libpty.so
 
 do-install:
-.if ${PTY4J_ARCH} != ""
-	${MKDIR} ${STAGEDIR}${PREFIX}/lib/pty4j/freebsd/${PTY4J_ARCH}
-# See above why we always use freebsd/x86-64/ here
-	${INSTALL_LIB} ${WRKSRC}/os/freebsd/x86-64/libpty.so ${STAGEDIR}${PREFIX}/lib/pty4j/freebsd/${PTY4J_ARCH}/
-.endif
+	${MKDIR} ${STAGEDIR}${DATADIR}/${ARCH}
+	${INSTALL_LIB} \
+		${WRKSRC}/os/freebsd/x86-64/libpty.so \
+		${STAGEDIR}${DATADIR}/${ARCH}
 
 .include <bsd.port.mk>
