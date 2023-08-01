@@ -21,6 +21,7 @@ share/metainfo/scummvm.appdata.xml
 share/pixmaps/scummvm.xpm
 %%DATADIR%%/access.dat
 %%DATADIR%%/achievements.dat
+%%DATADIR%%/classicmacfonts.dat
 %%XENGINES%%%%DATADIR%%/cryo.dat
 %%DATADIR%%/cryomni3d.dat
 %%DATADIR%%/drascula.dat
@@ -56,6 +57,10 @@ share/pixmaps/scummvm.xpm
 %%DATADIR%%/shaders/emi_dimplane.vertex
 %%DATADIR%%/shaders/emi_sprite.fragment
 %%DATADIR%%/shaders/emi_sprite.vertex
+%%DATADIR%%/shaders/freescape_bitmap.fragment
+%%DATADIR%%/shaders/freescape_bitmap.vertex
+%%DATADIR%%/shaders/freescape_triangle.fragment
+%%DATADIR%%/shaders/freescape_triangle.vertex
 %%DATADIR%%/shaders/grim_actor.fragment
 %%DATADIR%%/shaders/grim_actor.vertex
 %%DATADIR%%/shaders/grim_actorlights.fragment
