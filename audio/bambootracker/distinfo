@@ -1,3 +1,9 @@
-TIMESTAMP = 1675961730
-SHA256 (BambooTracker-src-v0.6.1.tar.gz) = 6fff502620fc8e43725e6173f9c1be5d7d41951b5bfe79245045e5423ea8b9ec
-SIZE (BambooTracker-src-v0.6.1.tar.gz) = 1396221
+TIMESTAMP = 1690874252
+SHA256 (BambooTracker-BambooTracker-v0.6.1-19-g9bf6c7a0_GH0.tar.gz) = b24def593700eb649fbb36a5d7c247bf437441f7928158e5238f8567f11c83ea
+SIZE (BambooTracker-BambooTracker-v0.6.1-19-g9bf6c7a0_GH0.tar.gz) = 1067002
+SHA256 (thestk-rtaudio-0e11b50a_GH0.tar.gz) = a3494753bf133ceb6fc70365e3492877a98cc48c58b1c681806101bf0b7f2483
+SIZE (thestk-rtaudio-0e11b50a_GH0.tar.gz) = 254679
+SHA256 (thestk-rtmidi-d2dd50da_GH0.tar.gz) = fed7ad5852a8b0e58e989f0eb3d9485ad671a6f5adf58865a03a668851b4f285
+SIZE (thestk-rtmidi-d2dd50da_GH0.tar.gz) = 93519
+SHA256 (rerrahkr-emu2149-63c0fe07_GH0.tar.gz) = c13a24ca92821f9472e6bbeafa683ffddca358f5164b2505d505ed4d6628c4ba
+SIZE (rerrahkr-emu2149-63c0fe07_GH0.tar.gz) = 4351

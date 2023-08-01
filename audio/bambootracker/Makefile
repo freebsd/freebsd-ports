@@ -1,17 +1,12 @@
 PORTNAME=	bambootracker
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.6.1
-PORTREVISION=	1
+DISTVERSION=	0.6.1-19
+DISTVERSIONSUFFIX=	-g9bf6c7a0
 CATEGORIES=	audio
-MASTER_SITES=	https://github.com/BambooTracker/BambooTracker/releases/download/${DISTVERSIONPREFIX}${DISTVERSION}/
-DISTNAME=	BambooTracker-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Music tracker for the Yamaha YM2608 (OPNA) sound chip
 WWW=		https://github.com/rerrahkr/BambooTracker
-
-# https://github.com/BambooTracker/BambooTracker/issues/492
-BROKEN=		incompatible with rtaudio 6.x
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
@@ -22,6 +17,13 @@ LIB_DEPENDS=	librtaudio.so:audio/rtaudio \
 USES=		compiler:c++14-lang desktop-file-utils gl qmake qt:5 \
 		shared-mime-info xorg
 
+USE_GITHUB=	yes
+GH_ACCOUNT=	BambooTracker
+GH_PROJECT=	BambooTracker
+GH_TUPLE=	thestk:rtaudio:0e11b50a:rtaudio/submodules/RtAudio/src \
+		thestk:rtmidi:d2dd50da:rtmidi/submodules/RtMidi/src \
+		rerrahkr:emu2149:63c0fe07:emu2149/submodules/emu2149/src
+
 USE_GL=		gl
 USE_QT=		buildtools core gui multimedia network widgets \
 		linguisttools:build
@@ -29,8 +31,6 @@ USE_QT=		buildtools core gui multimedia network widgets \
 DATADIR=	${PREFIX}/share/BambooTracker
 DOCSDIR=	${PREFIX}/share/doc/BambooTracker
 EXAMPLESDIR=	${PREFIX}/share/examples/BambooTracker
-
-WRKSRC=		${WRKDIR}/BambooTracker-src-${DISTVERSIONPREFIX}${DISTVERSION}
 
 OPTIONS_DEFINE=		ALSA EXAMPLES JACK NLS PULSEAUDIO
 OPTIONS_DEFAULT=	PULSEAUDIO
