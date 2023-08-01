@@ -1,5 +1,5 @@
 PORTNAME=	cdogs-sdl
-PORTVERSION=	1.4.2
+PORTVERSION=	1.5.0
 CATEGORIES=	games
 
 MAINTAINER=	bofh@FreeBSD.org
