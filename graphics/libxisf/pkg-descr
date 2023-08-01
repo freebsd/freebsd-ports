@@ -1,0 +1,2 @@
+LibXISF is C++ library that can read and write XISF files produced by
+PixInsight. It implements the XISF 1.0 specification.

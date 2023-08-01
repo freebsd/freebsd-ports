@@ -521,6 +521,7 @@
     SUBDIR += libwmf
     SUBDIR += libwmf-nox11
     SUBDIR += libwpg03
+    SUBDIR += libxisf
     SUBDIR += libyuv
     SUBDIR += libzmf
     SUBDIR += lightzone

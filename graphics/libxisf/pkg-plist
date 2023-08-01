@@ -1,0 +1,6 @@
+include/libXISF_global.h
+include/libxisf.h
+lib/libXISF.so
+lib/libXISF.so.0
+lib/libXISF.so.%%VERSION%%
+libdata/pkgconfig/libxisf.pc
