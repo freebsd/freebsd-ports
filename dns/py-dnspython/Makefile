@@ -1,5 +1,5 @@
 PORTNAME=	dnspython
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 PORTEPOCH=	1
 CATEGORIES=	dns python
 MASTER_SITES=	PYPI
@@ -12,7 +12,7 @@ WWW=		https://www.dnspython.org/
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry>0:devel/py-poetry@${PY_FLAVOR}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}poetry-core>=0.12:devel/py-poetry-core@${PY_FLAVOR}
 
 USES=		python
 USE_PYTHON=	autoplist concurrent cython pep517
