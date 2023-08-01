@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2021-05-24 09:18:08 UTC
+--- CMakeLists.txt.orig	2023-07-20 14:13:59 UTC
 +++ CMakeLists.txt
 @@ -47,6 +47,7 @@ include(TranslateDesktop)
  include(DefineCMakeDefaults)
@@ -8,7 +8,7 @@
  include(CPackConfig.cmake)
  include(ConfigureChecks.cmake)
  
-@@ -151,7 +152,10 @@ find_package(Qt5WebEngineWidgets    REQUIRED)
+@@ -185,7 +186,10 @@ find_package(Qt5WebEngineWidgets    REQUIRED)
  find_package(Qt5Qml                 REQUIRED)
  find_package(Qt5Help                REQUIRED)
  find_package(GDAL                   REQUIRED)
