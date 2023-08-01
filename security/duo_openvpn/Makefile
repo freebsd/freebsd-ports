@@ -1,6 +1,5 @@
 PORTNAME=	duo_openvpn
-PORTVERSION=	2.4
-PORTREVISION=	2
+PORTVERSION=	2.5
 CATEGORIES=	security net-vpn
 
 MAINTAINER=	zi@FreeBSD.org
