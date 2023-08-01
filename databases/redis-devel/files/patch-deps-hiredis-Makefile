@@ -1,4 +1,4 @@
---- deps/hiredis/Makefile.orig	2023-06-29 16:32:01 UTC
+--- deps/hiredis/Makefile.orig	2023-07-30 05:48:29 UTC
 +++ deps/hiredis/Makefile
 @@ -15,7 +15,7 @@ HIREDIS_PATCH=$(shell grep HIREDIS_PATCH hiredis.h | a
  HIREDIS_SONAME=$(shell grep HIREDIS_SONAME hiredis.h | awk '{print $$3}')
@@ -14,7 +14,7 @@
  CC:=$(shell sh -c 'type $${CC%% *} >/dev/null 2>/dev/null && echo $(CC) || echo gcc')
  CXX:=$(shell sh -c 'type $${CXX%% *} >/dev/null 2>/dev/null && echo $(CXX) || echo g++')
 -OPTIMIZATION?=-O3
- WARNINGS=-Wall -W -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers
+ WARNINGS=-Wall -Wextra -Werror -Wstrict-prototypes -Wwrite-strings -Wno-missing-field-initializers
 -DEBUG_FLAGS?= -g -ggdb
 -REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CPPFLAGS) $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(PLATFORM_FLAGS)
 +REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG_FLAGS) $(PLATFORM_FLAGS)
