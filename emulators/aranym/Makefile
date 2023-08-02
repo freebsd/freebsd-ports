@@ -20,7 +20,6 @@ USES=		gmake jpeg perl5 pkgconfig gl localbase:ldflags sdl shebangfix xorg
 USE_GL=		gl
 USE_SDL=	sdl2 image2
 USE_XORG=	x11
-USE_CXXSTD=	c++14 # work around error: ISO C++17 does not allow 'register' storage class specifier, see https://github.com/aranym/aranym/issues/106
 
 SHEBANG_FILES=	tools/arabridge
 
@@ -28,5 +27,11 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	-disable-nat-debug --disable-nat-debug --enable-nfjpeg
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=  -Dregister=
+.endif
 
 .include <bsd.port.mk>
