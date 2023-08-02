@@ -11,10 +11,13 @@ WWW=		http://libassa.sourceforge.net/
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USES=		libtool pathfix pkgconfig
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	TIRPC_CFLAGS=" " TIRPC_LIBS=" "
-USES=		libtool pathfix pkgconfig
-USE_LDCONFIG=	yes
+
 PLIST_SUB=	ASSA_VERSION=${PORTVERSION:R:R}
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:C/-.*$//}
