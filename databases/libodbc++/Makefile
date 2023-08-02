@@ -10,22 +10,24 @@ WWW=		http://orcane.net/freeodbc++/
 
 LICENSE=	GPLv2
 
+LIB_DEPENDS=	libodbc.so:databases/unixODBC
+
+USES=		gmake libtool ncurses pathfix pkgconfig readline tar:bzip2
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-isqlxx --with-odbc=${LOCALBASE}
+
+INSTALL_TARGET=	install-strip
+
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
+PORTDOCS=	progref
+
 OPTIONS_DEFINE=	DOXYGEN DOCS
 
 DOXYGEN_IMPLIES=	DOCS
 DOXYGEN_BUILD_DEPENDS=	doxygen:devel/doxygen
-
-USES=		gmake libtool ncurses pathfix pkgconfig readline tar:bzip2
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-isqlxx
-INSTALL_TARGET=	install-strip
-
-LIB_DEPENDS=	libodbc.so:databases/unixODBC
-CONFIGURE_ARGS+=	--with-odbc=${LOCALBASE}
-
-DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	progref
 
 post-extract:
 	${RM} ${WRKSRC}/doc/progref/progref-stamp
