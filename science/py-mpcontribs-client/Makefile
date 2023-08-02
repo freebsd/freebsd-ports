@@ -1,5 +1,5 @@
 PORTNAME=	mpcontribs-client
-DISTVERSION=	5.4.1
+DISTVERSION=	5.4.2
 CATEGORIES=	science python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,9 +18,9 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}boltons>0:devel/py-boltons@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}filetype>0:devel/py-filetype@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}flatten-dict>0:devel/py-flatten-dict@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}ipython>0:devel/ipython@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}html2json>0:textproc/py-html2json@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}json2html>0:textproc/py-json2html@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pandas>0:math/py-pandas@${PY_FLAVOR} \
-		${PYTHON_PKGNAMEPREFIX}pint>=0.20:devel/py-pint@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pint>0:devel/py-pint@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}plotly>0:graphics/py-plotly@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pyisemail>0:mail/py-pyisemail@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}pymatgen>0:science/py-pymatgen@${PY_FLAVOR} \
