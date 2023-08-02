@@ -15,9 +15,10 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libboost_system.so:devel/boost-libs
 
 USES=		cmake gnome minizip pkgconfig
-USE_LDCONFIG=	yes
-USE_GNOME=	libxml2
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	rdiankov
+USE_GNOME=	libxml2
+USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
