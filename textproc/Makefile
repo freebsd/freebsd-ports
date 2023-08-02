@@ -1387,6 +1387,7 @@
     SUBDIR += py-jc
     SUBDIR += py-jinja2-cli
     SUBDIR += py-jq
+    SUBDIR += py-json2html
     SUBDIR += py-jsonslicer
     SUBDIR += py-jsx-lexer
     SUBDIR += py-jtextfsm
