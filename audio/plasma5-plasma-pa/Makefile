@@ -1,5 +1,6 @@
 PORTNAME=	plasma-pa
 DISTVERSION=	${KDE_PLASMA_VERSION}
+PORTREVISION=	1
 CATEGORIES=	audio kde kde-plasma
 
 MAINTAINER=	kde@FreeBSD.org
@@ -8,6 +9,7 @@ WWW=		https://www.kde.org/plasma-desktop
 
 LIB_DEPENDS=	libcanberra.so:audio/libcanberra \
 		libpulse.so:audio/pulseaudio
+RUN_DEPENDS=	${LOCALBASE}/share/sounds/freedesktop/index.theme:audio/freedesktop-sound-theme
 
 USES=		cmake compiler:c++11-lib gettext gnome kde:5 pkgconfig qt:5 \
 		shebangfix tar:xz
