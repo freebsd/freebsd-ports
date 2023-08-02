@@ -17,6 +17,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
 USES=		compiler:c++11-lang gmake
+USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-transform-name='s/povray/${PKGBASE}/' \
