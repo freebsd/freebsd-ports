@@ -1,3 +1,108 @@
+  <vuln vid="78f2e491-312d-11ee-85f2-bd89b893fcb4">
+    <topic>go -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>go119</name>
+	<range><lt>1.19.12</lt></range>
+      </package>
+      <package>
+	<name>go120</name>
+	<range><lt>1.20.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Go project reports:</p>
+	<blockquote cite="https://groups.google.com/u/1/g/golang-announce/c/X0b6CsSAaYI">
+	  <p>crypto/tls: restrict RSA keys in certificates to &lt;= 8192 bits</p>
+	  <p>Extremely large RSA keys in certificate chains can cause
+	  a client/server to expend significant CPU time verifying
+	  signatures. Limit this by restricting the size of RSA keys
+	  transmitted during handshakes to &lt;= 8192 bits. </p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/60374">
+	  <p>net/http: insufficient sanitization of Host header</p>
+	  <p>The HTTP/1 client did not fully validate the contents of
+	   the Host header. A maliciously crafted Host header could
+	   inject additional headers or entire requests. The HTTP/1
+	   client now refuses to send requests containing an
+	   invalid Request.Host or Request.URL.Host value.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/60167">
+	  <p>cmd/go: cgo code injection</p>
+	  <p>The go command may generate unexpected code at build
+	   time when using cgo. This may result in unexpected
+	   behavior when running a go program which uses cgo.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/60272">
+	  <p>runtime: unexpected behavior of setuid/setgid binaries</p>
+	  <p>The Go runtime didn't act any differently when a binary
+	  had the setuid/setgid bit set. On Unix platforms, if a
+	  setuid/setgid binary was executed with standard I/O file
+	  descriptors closed, opening any files could result in
+	  unexpected content being read/written with elevated
+	  prilieges. Similarly if a setuid/setgid program was
+	  terminated, either via panic or signal, it could leak the
+	  contents of its registers.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/60305">
+	  <p>cmd/go: improper sanitization of LDFLAGS</p>
+	  <p>The go command may execute arbitrary code at build time
+	  when using cgo. This may occur when running "go get" on a
+	  malicious module, or when running any other command which
+	  builds untrusted code. This is can by triggered by linker
+	  flags, specified via a "#cgo LDFLAGS" directive.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/59720">
+	  <p>html/template: improper sanitization of CSS values</p>
+	  <p>
+	    Angle brackets (&lt;&gt;) were not considered dangerous
+	    characters when inserted into CSS contexts. Templates
+	    containing multiple actions separated by a '/' character
+	    could result in unexpectedly closing the CSS context and
+	    allowing for injection of unexpected HMTL, if executed
+	    with untrusted input.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/59721">
+	  <p>html/template: improper handling of JavaScript whitespace</p>
+	  <p>
+	    Not all valid JavaScript whitespace characters were
+	    considered to be whitespace. Templates containing
+	    whitespace characters outside of the character set
+	    "\t\n\f\r\u0020\u2028\u2029" in JavaScript contexts that
+	    also contain actions may not be properly sanitized
+	    during execution.</p>
+	</blockquote>
+	<blockquote cite="https://go.dev/issue/59722">
+	  <p>html/template: improper handling of empty HTML attributes</p>
+	  <p>
+	    Templates containing actions in unquoted HTML attributes
+	    (e.g. "attr={{.}}") executed with empty input could
+	    result in output that would have unexpected results when
+	    parsed due to HTML normalization rules. This may allow
+	    injection of arbitrary attributes into tags.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-29406</cvename>
+      <cvename>CVE-2023-29402</cvename>
+      <cvename>CVE-2023-29403</cvename>
+      <cvename>CVE-2023-29404</cvename>
+      <cvename>CVE-2023-24539</cvename>
+      <cvename>CVE-2023-24540</cvename>
+      <cvename>CVE-2023-29400</cvename>
+      <url>https://groups.google.com/u/1/g/golang-announce/c/X0b6CsSAaYI</url>
+      <url>https://groups.google.com/u/1/g/golang-announce/c/2q13H6LEEx0</url>
+      <url>https://groups.google.com/u/1/g/golang-announce/c/q5135a9d924</url>
+      <url>https://groups.google.com/u/1/g/golang-announce/c/MEb0UyuSMsU</url>
+    </references>
+    <dates>
+      <discovery>2023-04-27</discovery>
+      <entry>2023-08-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="fa239535-30f6-11ee-aef9-001b217b3468">
     <topic>Gitlab -- Vulnerabilities</topic>
     <affects>
