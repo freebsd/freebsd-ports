@@ -1,6 +1,6 @@
 PORTNAME=	rtx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.35.7
+DISTVERSION=	1.35.8
 CATEGORIES=	sysutils
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -139,7 +139,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		libz-sys-1.1.12 \
 		linked-hash-map-0.5.6 \
 		linux-raw-sys-0.3.8 \
-		linux-raw-sys-0.4.3 \
+		linux-raw-sys-0.4.5 \
 		log-0.4.19 \
 		memchr-2.5.0 \
 		memoffset-0.9.0 \
@@ -166,10 +166,10 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		path-absolutize-3.1.0 \
 		path-dedot-3.1.0 \
 		percent-encoding-2.3.0 \
-		pest-2.7.1 \
-		pest_derive-2.7.1 \
-		pest_generator-2.7.1 \
-		pest_meta-2.7.1 \
+		pest-2.7.2 \
+		pest_derive-2.7.2 \
+		pest_generator-2.7.2 \
+		pest_meta-2.7.2 \
 		pin-project-lite-0.2.10 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
@@ -207,8 +207,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		security-framework-sys-2.9.1 \
 		self_update-0.37.0 \
 		semver-1.0.18 \
-		serde-1.0.178 \
-		serde_derive-1.0.178 \
+		serde-1.0.180 \
+		serde_derive-1.0.180 \
 		serde_json-1.0.104 \
 		serde_spanned-0.6.3 \
 		serde_urlencoded-0.7.1 \
@@ -225,7 +225,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		static_assertions-1.1.0 \
 		strsim-0.10.0 \
 		syn-1.0.109 \
-		syn-2.0.27 \
+		syn-2.0.28 \
 		tar-0.4.39 \
 		tempfile-3.7.0 \
 		tera-1.19.0 \
