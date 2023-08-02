@@ -90,7 +90,6 @@ lib/libappagent.so.%%SONUM%%.0.0
 %%MYSQL%%lib/libnxddr_mysql.so
 %%ODBC%%lib/libnxddr_odbc.so
 %%PGSQL%%lib/libnxddr_pgsql.so
-lib/libnxddr_sqlite.so
 %%NXCP%%lib/libnxlp.so
 %%AGENT%%lib/libnxlp.so.%%SONUM%%
 %%AGENT%%lib/libnxlp.so.%%SONUM%%.0.0

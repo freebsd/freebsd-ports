@@ -1,5 +1,5 @@
 PORTNAME=	netxms
-PORTVERSION=	3.7.145
+PORTVERSION=	3.8.405
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/releases/${PORTVERSION:R}/
 
@@ -9,9 +9,6 @@ WWW=		https://www.netxms.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
-
-BROKEN_FreeBSD_13=	error: conflicting types for 'qsort_s'
-BROKEN_FreeBSD_14=	error: conflicting types for 'qsort_s'
 
 LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libexpat.so:textproc/expat2 \
@@ -57,7 +54,7 @@ SERVER_CONFIGURE_ON=	--with-server
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CONFIGURE_OFF=	--disable-ssh
 
-SONUM=	37
+SONUM=	38
 
 .include <bsd.port.options.mk>
 
