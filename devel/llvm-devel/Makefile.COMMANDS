@@ -48,8 +48,8 @@ LLVM_COMMANDS=	\
 		llvm-rc \
 		llvm-readelf \
 		llvm-readobj \
+		llvm-readtapi \
 		llvm-reduce \
-		llvm-remark-size-diff \
 		llvm-remarkutil \
 		llvm-rtdyld \
 		llvm-sim \
@@ -59,7 +59,6 @@ LLVM_COMMANDS=	\
 		llvm-strings \
 		llvm-strip \
 		llvm-symbolizer \
-		llvm-tapi-diff \
 		llvm-tblgen \
 		llvm-tli-checker \
 		llvm-undname \
@@ -137,8 +136,11 @@ LLDB_COMMANDS=	\
 		lldb-vscode
 
 MLIR_COMMANDS=	\
+		mlir-cat \
 		mlir-cpu-runner \
 		mlir-lsp-server \
+		mlir-minimal-opt \
+		mlir-minimal-opt-canonicalize \
 		mlir-opt \
 		mlir-pdll \
 		mlir-pdll-lsp-server \
