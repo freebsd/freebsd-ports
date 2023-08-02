@@ -1,6 +1,6 @@
 PORTNAME=	bgfx
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.121.8534-453
+DISTVERSION=	1.121.8558-454
 CATEGORIES=	graphics
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -10,16 +10,16 @@ WWW=		https://bkaradzic.github.io/bgfx/overview.html
 LICENSE=	BSD2CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-USES=		cmake:testing compiler:c++14-lang gl localbase:ldflags xorg
+USES=		cmake:testing compiler:c++17-lang gl localbase:ldflags xorg
 USE_GL=		glu opengl
 USE_XORG=	ice x11 xext sm
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	bkaradzic
 GH_PROJECT=	bgfx.cmake
-GH_TUPLE=	bkaradzic:bgfx:e2c5b1d:bgfx/bgfx \
+GH_TUPLE=	bkaradzic:bgfx:8b6a6bd:bgfx/bgfx \
 		bkaradzic:bimg:ec02df8:bimg/bimg \
-		bkaradzic:bx:96748d9:bx/bx
+		bkaradzic:bx:198cd12:bx/bx
 
 CMAKE_OFF=	BGFX_BUILD_EXAMPLES BGFX_INSTALL_EXAMPLES \
 		BGFX_CUSTOM_TARGETS
