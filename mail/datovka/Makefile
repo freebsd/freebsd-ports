@@ -22,7 +22,7 @@ USE_QT=		buildtools core gui network printsupport sql svg websockets \
 .include <bsd.port.pre.mk>
 
 .if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L"
+CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
 .endif
 
 .include <bsd.port.post.mk>

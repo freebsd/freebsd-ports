@@ -228,7 +228,7 @@ CXX=            clang++${LLVM_VERSION}
 .include <bsd.port.pre.mk>
 
 .if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-CFLAGS+=      -DOPENSSL_API_COMPAT=0x30000000L"
+CFLAGS+=      -DOPENSSL_API_COMPAT=0x30000000L
 .endif
 
 .if empty(ICONV_LIB)
