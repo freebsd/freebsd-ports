@@ -1,5 +1,5 @@
 PORTNAME=	netxms
-PORTVERSION=	3.8.405
+PORTVERSION=	3.9.420
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.netxms.org/download/releases/${PORTVERSION:R}/
 
@@ -54,7 +54,7 @@ SERVER_CONFIGURE_ON=	--with-server
 SSH_LIB_DEPENDS=	libssh.so:security/libssh
 SSH_CONFIGURE_OFF=	--disable-ssh
 
-SONUM=	38
+SONUM=	39
 
 .include <bsd.port.options.mk>
 
