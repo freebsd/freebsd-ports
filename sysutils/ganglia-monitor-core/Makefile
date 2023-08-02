@@ -20,45 +20,44 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libpcre.so:devel/pcre \
 		libexpat.so:textproc/expat2
 
-USES=		libtool pkgconfig
+USES=		libtool localbase:ldflags pkgconfig
+USE_LDCONFIG=	yes
+USE_RC_SUBR=	gmond
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia \
 		--disable-python
 CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
+
+INSTALL_TARGET=	install-strip
+
+SUB_FILES+=	pkg-message
 
 USERS=		ganglia
 GROUPS=		ganglia
 
-OPTIONS_DEFINE=	GMETAD
-OPTIONS_DEFAULT=	GMETAD
-GMETAD_DESC=	include gmetad
-
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-SUB_FILES+=	pkg-message
+OPTIONS_DEFINE=	GMETAD
+OPTIONS_DEFAULT=	GMETAD
+OPTIONS_SUB=	yes
 
-INSTALL_TARGET=	install-strip
+GMETAD_DESC=	include gmetad
 
-USE_RC_SUBR=	gmond
+GMETAD_LIB_DEPENDS=	librrd.so:databases/rrdtool
+GMETAD_CONFIGURE_ON=	--with-gmetad
+GMETAD_SUB_LIST=	GMETAD=""
+GMETAD_SUB_LIST_OFF=	GMETAD="\#"
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MGMETAD}
-USE_RC_SUBR+=	gmetad
-
-LIB_DEPENDS+=	librrd.so:databases/rrdtool
-CONFIGURE_ARGS+=	--with-gmetad
-PLIST_SUB+=	GMETAD=""
-SUB_LIST+=	GMETAD=""
-.else
-PLIST_SUB+=	GMETAD="@comment "
-SUB_LIST+=	GMETAD="\#"
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
-USE_LDCONFIG=	yes
+.if ${PORT_OPTIONS:MGMETAD}
+USE_RC_SUBR+=	gmetad
+.endif
 
 CONF_DIR=	${PREFIX}/etc
 
@@ -91,14 +90,6 @@ post-build:
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/gmond.conf \
 		${STAGEDIR}${PREFIX}/etc/gmond.conf.sample
-.if ${PORT_OPTIONS:MGMETAD}
-	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh \
-		${STAGEDIR}${PREFIX}/sbin/gmetasnap
-	${INSTALL_DATA} ${WRKSRC}/gmetad/gmetad.conf \
-		${STAGEDIR}${PREFIX}/etc/gmetad.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 \
-		${STAGEDIR}${MANPREFIX}/man/man1
-.endif
 	${INSTALL_MAN} \
 		${WRKSRC}/mans/gmetric.1 \
 		${WRKSRC}/mans/gmond.1 \
@@ -108,5 +99,13 @@ post-install:
 		${STAGEDIR}${MANPREFIX}/man/man5
 	${MKDIR} ${STAGEDIR}/var/db/ganglia/rrds
 	@${CHMOD} -R a+rX ${STAGEDIR}/var/db/ganglia
+
+post-install-GMETAD-on:
+	${INSTALL_SCRIPT} ${FILESDIR}/gmetasnap.sh \
+		${STAGEDIR}${PREFIX}/sbin/gmetasnap
+	${INSTALL_DATA} ${WRKSRC}/gmetad/gmetad.conf \
+		${STAGEDIR}${PREFIX}/etc/gmetad.conf.sample
+	${INSTALL_MAN} ${WRKSRC}/mans/gmetad.1 \
+		${STAGEDIR}${MANPREFIX}/man/man1
 
 .include <bsd.port.mk>
