@@ -987,6 +987,11 @@ MASTER_SITE_TCLTK+= \
 	ftp://ftp.funet.fi/pub/languages/tcl/tcl/%SUBDIR%/
 .endif
 
+.if !defined(IGNORE_MASTER_SITE_TEX)
+MASTER_SITE_TEX+= \
+	https://mirror.ctan.org/%SUBDIR%/
+.endif
+
 .if !defined(IGNORE_MASTER_SITE_TEX_CTAN)
 MASTER_SITE_TEX_CTAN+= \
 	https://ftp.tu-chemnitz.de/pub/tug/historic/%SUBDIR%/ \

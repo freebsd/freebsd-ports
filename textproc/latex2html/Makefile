@@ -2,7 +2,7 @@ PORTNAME=	latex2html
 PORTVERSION=	2016
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	TEX_CTAN/support/${PORTNAME}
+MASTER_SITES=	TEX/obsolete/support/${PORTNAME}
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Convert LaTeX documents to HTML

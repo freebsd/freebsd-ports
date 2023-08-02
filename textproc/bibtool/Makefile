@@ -1,7 +1,7 @@
 PORTNAME=	bibtool
 PORTVERSION=	2.68
 CATEGORIES=	textproc print
-MASTER_SITES=	TEX_CTAN/biblio/bibtex/utils/${PORTNAME}
+MASTER_SITES=	TEX/biblio/bibtex/utils/${PORTNAME}
 DISTNAME=	BibTool-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

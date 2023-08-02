@@ -1,7 +1,7 @@
 PORTNAME=	bib2html
 DISTVERSION=	6.7
 CATEGORIES=	textproc print
-MASTER_SITES=	TEX_CTAN/biblio/bibtex/utils
+MASTER_SITES=	TEX/biblio/bibtex/utils
 DISTNAME=	bib2ml
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
 
