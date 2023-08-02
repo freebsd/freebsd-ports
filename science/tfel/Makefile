@@ -41,10 +41,21 @@ CMAKE_ON+=	enable-portable-build
 
 TEST_TARGET=	check
 
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
+		${WRKSRC}/include/NUMODIS/Math/Utilities.hxx \
+		${WRKSRC}/include/TFEL/Math/General/Abs.hxx
+	@${REINPLACE_CMD} -e 's|std::binary_function|std::__binary_function|' \
+		${WRKSRC}/include/TFEL/Math/General/AbsCompare.hxx
+.endif
+
 post-install:
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
 	(cd ${STAGEDIR}${PREFIX} && ${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
 		-d ${PREFIX} -f ${PYTHONPREFIX_SITELIBDIR:S,${PREFIX}/,,})
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
