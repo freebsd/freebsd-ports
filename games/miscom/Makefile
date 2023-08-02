@@ -30,14 +30,20 @@ OPTIONS_DEFINE=	DOCS
 CFLAGS+=	-DSOUNDSDIR='\"${DATADIR}\"' -DSOUND_SUPPORT -DMORE_SOUNDBUF
 .endif
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/miscom ${STAGEDIR}${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/miscom.6 ${STAGEDIR}${PREFIX}/man/man6
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/miscom
-	${INSTALL_DATA} ${WRKSRC}/sounds/* ${STAGEDIR}${PREFIX}/share/miscom
-	@${MKDIR} ${STAGEDIR}${PREFIX}/share/doc/miscom
+	@${MKDIR} ${STAGEDIR}${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sounds/* ${STAGEDIR}${DATADIR}
+
+do-install-DOCS-on:
+	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 .for file in COPYING ChangeLog README TODO
-	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${PREFIX}/share/doc/miscom
+	${INSTALL_DATA} ${WRKSRC}/${file} ${STAGEDIR}${DOCSDIR}
 .endfor
 
 .include <bsd.port.post.mk>
