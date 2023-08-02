@@ -1,5 +1,5 @@
 PORTNAME=	steam-utils
-DISTVERSION=	20230615
+DISTVERSION=	20230709
 CATEGORIES=	games linux
 PKGNAMEPREFIX=	linux-
 
@@ -10,6 +10,7 @@ WWW=		https://github.com/shkhln/linuxulator-steam-utils
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+IGNORE_FreeBSD_12=not supported
 ONLY_FOR_ARCHS=	amd64
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss \
@@ -24,7 +25,6 @@ GH_ACCOUNT=	shkhln
 GH_PROJECT=	linuxulator-steam-utils
 
 USE_LINUX=	devtools:build dbuslibs gtk2 dri nss alsa-plugins-oss
-
 
 MAKE_ARGS+=	PREFIX=${STAGEDIR}${PREFIX}
 ALL_TARGET=	build
