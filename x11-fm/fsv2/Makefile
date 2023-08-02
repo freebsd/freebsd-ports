@@ -18,12 +18,14 @@ LIB_DEPENDS=	libgtkgl-2.0.so:x11-toolkits/gtkglarea2 \
 
 USES=		compiler:c++11-lang tar:bzip2 libtool gettext-runtime gl gnome \
 		pkgconfig
+USE_GL=		gl glu
 USE_GNOME=	gtkmm24 atkmm glibmm pangomm cairomm libsigc++20 gtk20 atk \
 		cairo gdkpixbuf2
-USE_GL=		gl glu
-
 USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
+
+INSTALL_TARGET=	install-strip
 
 OPTIONS_DEFINE=	DOCS NLS
 OPTIONS_SUB=	yes
@@ -31,6 +33,12 @@ OPTIONS_SUB=	yes
 NLS_USES=		gettext
 NLS_CONFIGURE_ENABLE=	nls
 
-INSTALL_TARGET=	install-strip
+.include <bsd.port.pre.mk>
 
-.include <bsd.port.mk>
+post-patch:
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+	@${REINPLACE_CMD} -e 's|auto_ptr|unique_ptr|' \
+		${WRKSRC}/uilib/ColorCellRenderer.cpp
+.endif
+
+.include <bsd.port.post.mk>
