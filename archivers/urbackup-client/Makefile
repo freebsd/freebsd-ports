@@ -15,6 +15,7 @@ LIB_DEPENDS=	libcryptopp.so:security/cryptopp
 
 USES=		autoreconf compiler:c++11-lang dos2unix gettext libtool \
 		localbase pkgconfig sqlite:3
+USE_CXXSTD=	c++14
 USE_RC_SUBR=	urbackup_client
 
 USERS=		urbackup
