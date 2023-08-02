@@ -6533,8 +6533,7 @@ libdata/pkgconfig/petsc.pc
 %%DATADIR%%/examples/src/ts/tutorials/hamiltonian/makefile
 %%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex1_1.out
 %%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex1_2.out
-%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_bsi1q3.out
-%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_bsi2q3.out
+%%DATADIR%%/examples/src/ts/tutorials/hamiltonian/output/ex2_bsiq3.out
 %%DATADIR%%/examples/src/ts/tutorials/hybrid/ex1.c
 %%DATADIR%%/examples/src/ts/tutorials/hybrid/ex1adj.c
 %%DATADIR%%/examples/src/ts/tutorials/hybrid/ex1fd.c

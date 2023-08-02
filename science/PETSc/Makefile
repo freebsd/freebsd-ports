@@ -1,5 +1,5 @@
 PORTNAME=	PETSc
-DISTVERSION=	3.19.3
+DISTVERSION=	3.19.4
 CATEGORIES=	science devel
 MASTER_SITES=	https://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 DISTNAME=	${PORTNAME:tl}-${DISTVERSION}
