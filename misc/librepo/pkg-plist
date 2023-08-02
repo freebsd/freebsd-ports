@@ -1,6 +1,5 @@
 include/librepo/checksum.h
 include/librepo/downloader.h
-include/librepo/downloader_internal.h
 include/librepo/downloadtarget.h
 include/librepo/fastestmirror.h
 include/librepo/gpg.h
