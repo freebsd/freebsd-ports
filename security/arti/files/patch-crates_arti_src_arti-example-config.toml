@@ -1,6 +1,6 @@
---- crates/arti/src/arti-example-config.toml.orig	2022-09-25 15:06:18 UTC
+--- crates/arti/src/arti-example-config.toml.orig	2023-08-01 15:40:26 UTC
 +++ crates/arti/src/arti-example-config.toml
-@@ -86,8 +86,8 @@
+@@ -102,8 +102,8 @@
  #
  # The state directory is not yet used.
  [storage]
@@ -9,5 +9,5 @@
 +cache_dir = "/var/db/arti/"
 +state_dir = "/var/db/arti/"
  
- # Describe how to enforce permissions on the filesystem when accessing the cache
- # and state directories.  (This does not apply to configuration files) 
+ #[storage.keystore]
+ # Whether the keystore is enabled.
