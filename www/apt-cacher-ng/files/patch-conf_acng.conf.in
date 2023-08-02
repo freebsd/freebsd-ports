@@ -1,6 +1,6 @@
---- conf/acng.conf.in.orig	2018-09-07 13:02:18 UTC
+--- conf/acng.conf.in.orig	2020-02-03 18:54:57 UTC
 +++ conf/acng.conf.in
-@@ -69,6 +69,7 @@ Remap-epel:   file:epel_mirrors # Fedora
+@@ -69,6 +69,7 @@ Remap-epel:   file:epel_mirrors # Fedora EPEL
  Remap-slrep:  file:sl_mirrors # Scientific Linux
  Remap-gentoo: file:gentoo_mirrors.gz /gentoo ; file:backends_gentoo # Gentoo Archives
  Remap-secdeb: security.debian.org ; security.debian.org deb.debian.org/debian-security
@@ -8,7 +8,7 @@
  
  # Virtual page accessible in a web browser to see statistics and status
  # information, i.e. under http://localhost:3142/acng-report.html
-@@ -365,6 +366,7 @@ LocalDirs: acng-doc @DOCDIR@
+@@ -366,6 +367,7 @@ LocalDirs: acng-doc @DOCDIR@
  # in /etc/hosts.allow or /etc/hosts.deny files.
  #
  # UseWrap: 0

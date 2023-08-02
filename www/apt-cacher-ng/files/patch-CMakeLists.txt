@@ -1,4 +1,4 @@
---- CMakeLists.txt.orig	2018-09-07 13:02:18 UTC
+--- CMakeLists.txt.orig	2020-02-03 18:54:57 UTC
 +++ CMakeLists.txt
 @@ -26,20 +26,20 @@ INCLUDE(CheckSymbolExists)
  INCLUDE(FindPkgConfig)
@@ -44,8 +44,8 @@
 +if(NOT DEFINED RUNDIR)
  	set(RUNDIR "/run")
  endif()
- 
-@@ -71,7 +71,7 @@ endmacro()
+ set(SOCKET_PATH "${RUNDIR}/${PACKAGE}/socket")
+@@ -73,7 +73,7 @@ endmacro()
  
  INCLUDE_DIRECTORIES(${CMAKE_BINARY_DIR} ${CMAKE_SOURCE_DIR} "include")
  
@@ -54,7 +54,7 @@
  FILE(READ "${CMAKE_SOURCE_DIR}/VERSION" ACVERSION)
  string(REPLACE "\n" "" ACVERSION ${ACVERSION})
  #MESSAGE(STATUS "Version: ${ACVERSION}")
-@@ -308,7 +308,9 @@ SET(CMAKE_REQUIRED_LIBRARIES "")
+@@ -310,7 +310,9 @@ SET(CMAKE_REQUIRED_LIBRARIES "")
  set(HAVE_CHECKSUM on)
  
  if(USE_SSL)
@@ -65,7 +65,7 @@
  	if(openssl_FOUND)
  		set(HAVE_SSL on)
      _append(ACNG_COMPFLAGS ${openssl_CFLAGS})
-@@ -388,18 +390,22 @@ add_subdirectory(systemd)
+@@ -390,18 +392,22 @@ add_subdirectory(systemd)
  ###
  ### Extra install rules for static files
  ###
@@ -92,7 +92,7 @@
     set(AVAHIDIR "${SYSCONFDIR}/avahi/services")
  endif()
  install(FILES contrib/apt-cacher-ng.service DESTINATION ${AVAHIDIR})
-@@ -414,4 +420,5 @@ DOCDIR: ${DOCDIR}
+@@ -416,4 +422,5 @@ DOCDIR: ${DOCDIR}
  SYSCONFDIR: ${SYSCONFDIR}
  CFGDIR: ${CFGDIR}
  SBINDIR: ${SBINDIR}
