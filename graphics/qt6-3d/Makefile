@@ -34,19 +34,19 @@ OPTIONS_DEFINE_i386=	SIMD
 OPTIONS_DEFINE_amd64=	SIMD
 OPTIONS_DEFAULT_i386=	SIMD
 OPTIONS_DEFAULT_amd64=	SIMD
-OPTIONS_SUB=		yes
 
 .include <bsd.port.options.mk>
 
 .if ${PORT_OPTIONS:MSIMD}
 .  if !empty(MACHINE_CPU:Mavx2)
 CMAKE_ARGS+=	-DINPUT_qt3d_simd=avx2
-PLIST_SUB+=	AVX2=""
+PLIST_SUB+=	AVX2="" SIMD=""
 .  elif !empty(MACHINE_CPU:Msse2)
 CMAKE_ARGS+=	-DINPUT_qt3d_simd=sse2
-PLIST_SUB+=	AVX2="@comment "
+PLIST_SUB+=	AVX2="@comment " SIMD=""
 .  else
 CMAKE_ARGS+=	-DINPUT_qt3d_simd=no
+PLIST_SUB+=	SIMD="@comment "
 .  endif
 .else
 CMAKE_ARGS+=	-DINPUT_qt3d_simd=no
