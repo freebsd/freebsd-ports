@@ -4,6 +4,7 @@
 %%SERVER%%bin/nxaction
 %%SERVER%%bin/nxadm
 %%SERVER%%bin/netxmsd
+%%CLIENT%%bin/nxaevent
 %%NXCP%%bin/nxagentd
 %%CLIENT%%bin/nxalarm
 %%CLIENT%%bin/nxcsum
