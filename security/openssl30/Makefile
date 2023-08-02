@@ -1,5 +1,5 @@
 PORTNAME=	openssl
-DISTVERSION=	3.0.9
+PORTVERSION=	3.0.10
 CATEGORIES=	security devel
 MASTER_SITES=	https://www.openssl.org/source/ \
 		ftp://ftp.cert.dfn.de/pub/tools/net/openssl/source/
