@@ -44,6 +44,7 @@ include/pika/channel.hpp
 include/pika/chrono.hpp
 include/pika/command_line_handling/command_line_handling.hpp
 include/pika/command_line_handling/config/defines.hpp
+include/pika/command_line_handling/get_env_var_as.hpp
 include/pika/command_line_handling/late_command_line_handling.hpp
 include/pika/command_line_handling/parse_command_line.hpp
 include/pika/concepts/concepts.hpp
@@ -151,6 +152,7 @@ include/pika/execution/algorithms/sync_wait.hpp
 include/pika/execution/algorithms/then.hpp
 include/pika/execution/algorithms/transfer.hpp
 include/pika/execution/algorithms/transfer_just.hpp
+include/pika/execution/algorithms/unpack.hpp
 include/pika/execution/algorithms/when_all.hpp
 include/pika/execution/algorithms/when_all_vector.hpp
 include/pika/execution/config/defines.hpp
@@ -237,7 +239,6 @@ include/pika/functional/detail/vtable/vtable.hpp
 include/pika/functional/first_argument.hpp
 include/pika/functional/function.hpp
 include/pika/functional/invoke.hpp
-include/pika/functional/invoke_fused.hpp
 include/pika/functional/one_shot.hpp
 include/pika/functional/tag_invoke.hpp
 include/pika/functional/traits/get_function_address.hpp
@@ -673,4 +674,4 @@ lib/cmake/pika/tests/stable_inplace_merge.cpp
 lib/cmake/pika/tests/unistd_h.cpp
 lib/libpika.so
 lib/libpika.so.0
-lib/libpika.so.0.16.0
+lib/libpika.so.0.17.0
