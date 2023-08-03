@@ -1,6 +1,7 @@
 PORTNAME=	hypre
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.29.0
+PORTREVISION=	1
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -39,6 +40,12 @@ OPENMPI_CMAKE_ON=	-DHYPRE_WITH_MPI=ON
 OPENMPI_BROKEN=		doesn't switch to openmpi in cmake build, see https://github.com/hypre-space/hypre/issues/720
 
 PORTDOCS=	*
+
+post-install:
+	${MV} ${STAGEDIR}${PREFIX}/lib/libHYPRE.so	\
+		${STAGEDIR}${PREFIX}/lib/libHYPRE.so.0
+	${RLN} ${STAGEDIR}${PREFIX}/lib/libHYPRE.so.0	\
+		${STAGEDIR}${PREFIX}/lib/libHYPRE.so
 
 post-install-DOCS-on:
 	${MKDIR} ${STAGEDIR}${DOCSDIR}
