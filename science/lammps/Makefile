@@ -1,6 +1,5 @@
 PORTNAME=	lammps
-PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/S/_update/./}
-PORTREVISION=	1
+PORTVERSION=	${GH_TAGNAME:C/(stable|patch)_([0-9]{1,2})([A-Z][a-z][a-z])([0-9]{4})/\4.\3.\2/S/Jan/01/S/Feb/02/S/Mar/03/S/Apr/04/S/May/05/S/Jun/06/S/Jul/07/S/Aug/08/S/Sep/09/S/Oct/10/S/Nov/11/S/Dec/12/S/_update/./:C/\.([1-9])$/.0\1/}
 CATEGORIES=	science
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -20,13 +19,13 @@ LIB_DEPENDS=	libevent.so:devel/libevent \
 		libssh2.so:security/libssh2 \
 		libzstd.so:archivers/zstd
 
-USES=		blaslapack:openblas cmake:noninja compiler:c++14-lang eigen:3 fortran gnome localbase:ldflags python shebangfix
+USES=		blaslapack:openblas cmake:noninja,testing compiler:c++14-lang eigen:3 fortran gnome localbase:ldflags python shebangfix
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
 USE_PYTHON=	cython
 
 USE_GITHUB=	yes
-GH_TAGNAME=	patch_15Jun2023
+GH_TAGNAME=	stable_2Aug2023
 
 SHEBANG_GLOB=	*.sh *.bash
 SHEBANG_FILES=	lib/kokkos/bin/nvcc_wrapper
@@ -36,6 +35,7 @@ CMAKE_SOURCE_PATH=	${WRKSRC}/cmake
 CMAKE_ARGS=	-DBLA_VENDOR:STRING="OpenBLAS" ${CMAKE_ARGS_${CHOSEN_COMPILER_TYPE}} \
 		-DPython_EXECUTABLE=${PYTHON_CMD}
 CMAKE_ARGS_gcc=	-DBUILD_OMP:BOOL=false
+CMAKE_TESTING_ON=	ENABLE_TESTING # 3 tests fail, see https://github.com/lammps/lammps/issues/3875
 
 # enable packages (for a complete list see STANDARD_PACKAGES in cmake/CMakeLists.txt)
 CMAKE_ON+=	PKG_ASPHERE PKG_ATC PKG_AWPMD PKG_BOCS PKG_BODY PKG_BROWNIAN PKG_CG-DNA PKG_CG-SDK PKG_CLASS2
