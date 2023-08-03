@@ -9,6 +9,7 @@ PATCHFILES+=	9fc5f4c48b20.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/26
 PATCHFILES+=	f6b340cc19d2.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/2799
 PATCHFILES+=	f5913135c638.patch:-p1 # cursor-shape-v1
 PATCHFILES+=	7a2027d1fd5d.patch:-p1 # https://github.com/hyprwm/Hyprland/issues/2828
+PATCHFILES+=	7d98181ade0a.patch:-p1 # https://github.com/hyprwm/Hyprland/pull/2884
 
 MAINTAINER=	jbeich@FreeBSD.org
 COMMENT=	Dynamic tiling Wayland compositor that doesn't sacrifice on its looks #'
@@ -42,6 +43,14 @@ OPTIONS_DEFAULT=X11
 
 X11_USE=		XORG=xcb
 X11_MESON_ENABLED=	xwayland
+
+post-extract:
+.if defined(PATCHFILES) && ${PATCHFILES:M7d98181ade0a*}
+# Pretend to be a regular file for vendor patch to apply as is
+	@${RMDIR} ${WRKSRC}/subprojects/wlroots
+	@${ECHO_CMD} "Subproject commit e8d545a9770a2473db32e0a0bfa757b05d2af4f3" \
+		>${WRKSRC}/subprojects/wlroots
+.endif
 
 post-patch:
 # Extract (snapshot) version from the port instead of meson.build
