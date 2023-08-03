@@ -1,5 +1,5 @@
 PORTNAME=	toybox
-PORTVERSION=	0.8.9
+PORTVERSION=	0.8.10
 CATEGORIES=	sysutils
 MASTER_SITES=	http://landley.net/toybox/downloads/
 
@@ -16,13 +16,12 @@ BUILD_DEPENDS=	bash:shells/bash gsed:textproc/gsed
 
 USES=		gmake shebangfix
 
-SHEBANG_FILES=	scripts/bloatcheck scripts/mcm-buildall.sh \
-		scripts/change.sh scripts/findglobals.sh \
-		scripts/genconfig.sh scripts/install.sh \
-		scripts/make.sh scripts/mkroot.sh \
-		scripts/portability.sh scripts/record-commands \
-		scripts/runtest.sh scripts/single.sh \
-		scripts/test.sh configure \
+SHEBANG_FILES=	mkroot/record-commands scripts/bloatcheck \
+		scripts/mcm-buildall.sh scripts/change.sh \
+		scripts/findglobals.sh 	scripts/genconfig.sh \
+		scripts/install.sh scripts/make.sh scripts/mkroot.sh \
+		scripts/portability.sh 	scripts/runtest.sh \
+		scripts/single.sh scripts/test.sh configure \
 		tests/*
 
 BIN_LINKS=	[ cat chgrp chmod chown cksum cpio crc32 date dos2unix echo \
@@ -35,8 +34,8 @@ USRBIN_LINKS=	acpi ascii base64 basename bunzip2 bzcat cal chrt chvt \
 		file find flock fmt groups head hexedit iconv id killall link \
 		logger logname lspci lsusb makedevs mkfifo mkpasswd nl nohup \
 		od paste patch pmap printf pwdx readlink realpath renice \
-		reset rev seq setsid shred sort split strings tac tee test \
-		time timeout truncate tty uniq unlink uudecode uuencode \
+		reset rev seq setsid shred shuf sort split strings tac tee \
+		test time timeout truncate tty uniq unlink uudecode uuencode \
 		uuidgen w watch wc which who whoami xargs xxd yes
 USRSBIN_LINKS=	chroot
 

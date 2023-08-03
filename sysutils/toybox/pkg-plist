@@ -97,6 +97,7 @@ toybox/usr/bin/rev
 toybox/usr/bin/seq
 toybox/usr/bin/setsid
 toybox/usr/bin/shred
+toybox/usr/bin/shuf
 toybox/usr/bin/sort
 toybox/usr/bin/split
 toybox/usr/bin/strings

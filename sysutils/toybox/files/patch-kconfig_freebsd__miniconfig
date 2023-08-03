@@ -1,0 +1,10 @@
+--- kconfig/freebsd_miniconfig.orig	2023-07-30 09:41:04 UTC
++++ kconfig/freebsd_miniconfig
+@@ -49,6 +49,7 @@ CONFIG_RENICE=y
+ CONFIG_RM=y
+ CONFIG_RMDIR=y
+ CONFIG_SED=y
++CONFIG_SHUF=y
+ CONFIG_SLEEP=y
+ CONFIG_SORT=y
+ CONFIG_SPLIT=y
