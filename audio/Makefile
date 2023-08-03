@@ -621,6 +621,7 @@
     SUBDIR += prelude-lv2
     SUBDIR += psindustrializer
     SUBDIR += pt2-clone
+    SUBDIR += puddletag
     SUBDIR += pulseaudio
     SUBDIR += pulseaudio-module-sndio
     SUBDIR += pulseaudio-module-xrdp
