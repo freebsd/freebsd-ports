@@ -1,6 +1,5 @@
 PORTNAME=	libreswan
-DISTVERSION=	4.7
-PORTREVISION=	1
+DISTVERSION=	4.11
 CATEGORIES=	security
 MASTER_SITES=	https://download.libreswan.org/
 
@@ -48,9 +47,8 @@ post-configure:
 
 post-install:
 .for f in \
-	_import_crl addconn algparse asn1check cavp dncheck ecdsasigkey \
-	enumcheck hunkcheck ipcheck jambufcheck keyidcheck pluto readwriteconf \
-	routecheck rsasigkey showhostkey timecheck vendoridcheck whack
+	_import_crl addconn algparse asn1check cavp dncheck ecdsasigkey enumcheck hunkcheck ipcheck \
+	jambufcheck keyidcheck pluto readwriteconf rsasigkey showhostkey showroute timecheck vendoridcheck whack
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/libexec/ipsec/${f}
 .endfor
 
