@@ -1,6 +1,5 @@
 PORTNAME=	fotoxx
-PORTVERSION=	23.50
-PORTREVISION=	1
+PORTVERSION=	23.60
 CATEGORIES=	graphics
 MASTER_SITES=	https://kornelix.net/downloads/downloads/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source

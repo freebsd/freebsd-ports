@@ -23,8 +23,9 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/data/custom_kernel/sketch3
 %%DATADIR%%/data/custom_menu
 %%DATADIR%%/data/custom_scripts/brightness and white point
+%%DATADIR%%/data/custom_scripts/cartoon-emboss
 %%DATADIR%%/data/custom_scripts/denoise-sharpen
-%%DATADIR%%/data/custom_scripts/dotify
+%%DATADIR%%/data/custom_scripts/emboss-test
 %%DATADIR%%/data/custom_scripts/line-drawing-emboss
 %%DATADIR%%/data/custom_scripts/painting-texture
 %%DATADIR%%/data/custom_scripts/sketch-cartoon-emboss
@@ -142,7 +143,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/color-depth2.jpg
 %%DATADIR%%/images/color-mode.jpg
 %%DATADIR%%/images/color-mode2.jpg
-%%DATADIR%%/images/comb.png
+%%DATADIR%%/images/combine.png
 %%DATADIR%%/images/convert-adobe.jpg
 %%DATADIR%%/images/copy-complex.jpg
 %%DATADIR%%/images/copy-from-image.jpg
@@ -179,6 +180,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/effects.png
 %%DATADIR%%/images/emboss.jpg
 %%DATADIR%%/images/emboss2.jpg
+%%DATADIR%%/images/engrave.jpg
+%%DATADIR%%/images/engrave2.jpg
 %%DATADIR%%/images/escher_spiral.png
 %%DATADIR%%/images/escher_spiralA.jpg
 %%DATADIR%%/images/export-file-list.jpg
@@ -197,7 +200,6 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/fotoxx-views.jpg
 %%DATADIR%%/images/fotoxx.png
 %%DATADIR%%/images/gallery-screen.jpg
-%%DATADIR%%/images/gallery-select.jpg
 %%DATADIR%%/images/gallery-sort.jpg
 %%DATADIR%%/images/gallery-view.jpg
 %%DATADIR%%/images/gallery.png
@@ -246,7 +248,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/measure-image.jpg
 %%DATADIR%%/images/menu-summary.jpg
 %%DATADIR%%/images/meta-view.jpg
-%%DATADIR%%/images/meta.png
+%%DATADIR%%/images/metadata.png
 %%DATADIR%%/images/mirror1.jpg
 %%DATADIR%%/images/mirror2.jpg
 %%DATADIR%%/images/moncolor-small.png
@@ -302,6 +304,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/search-images.jpg
 %%DATADIR%%/images/select-area-finish.jpg
 %%DATADIR%%/images/select-area.jpg
+%%DATADIR%%/images/select-image-files.jpg
 %%DATADIR%%/images/select.png
 %%DATADIR%%/images/settings.jpg
 %%DATADIR%%/images/sharpen.jpg
@@ -325,6 +328,8 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/stretch.jpg
 %%DATADIR%%/images/texture.jpg
 %%DATADIR%%/images/texture2.jpg
+%%DATADIR%%/images/tiles2a.jpg
+%%DATADIR%%/images/tiles2b.jpg
 %%DATADIR%%/images/timeline-report.jpg
 %%DATADIR%%/images/tiny_planet.jpg
 %%DATADIR%%/images/tools.png
@@ -332,7 +337,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/twist1.jpg
 %%DATADIR%%/images/twist2.jpg
 %%DATADIR%%/images/ug-batch.png
-%%DATADIR%%/images/ug-comb.png
+%%DATADIR%%/images/ug-combine.png
 %%DATADIR%%/images/ug-custom.png
 %%DATADIR%%/images/ug-edit.png
 %%DATADIR%%/images/ug-effects.png
@@ -342,12 +347,12 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/ug-gallery.png
 %%DATADIR%%/images/ug-help.png
 %%DATADIR%%/images/ug-maps.png
-%%DATADIR%%/images/ug-meta.png
+%%DATADIR%%/images/ug-metadata.png
 %%DATADIR%%/images/ug-refine.png
 %%DATADIR%%/images/ug-repair.png
 %%DATADIR%%/images/ug-select.png
 %%DATADIR%%/images/ug-tools.png
-%%DATADIR%%/images/ug-undo.png
+%%DATADIR%%/images/ug-undo-redo.png
 %%DATADIR%%/images/ug-warp.png
 %%DATADIR%%/images/ug-zoom.png
 %%DATADIR%%/images/unbend horz curved.png
@@ -356,7 +361,7 @@ share/applications/fotoxx.desktop
 %%DATADIR%%/images/unbend vert linear.png
 %%DATADIR%%/images/unbend1.jpg
 %%DATADIR%%/images/unbend2.jpg
-%%DATADIR%%/images/undo.png
+%%DATADIR%%/images/undo-redo.png
 %%DATADIR%%/images/unwarp-closeup1.jpg
 %%DATADIR%%/images/unwarp-closeup2.jpg
 %%DATADIR%%/images/upright.jpg
