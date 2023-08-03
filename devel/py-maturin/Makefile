@@ -1,7 +1,7 @@
 PORTNAME=	maturin
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.13.2
-PORTREVISION=	8
+PORTREVISION=	10
 CATEGORIES=	devel python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -345,6 +345,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}tomli>=0.10.1:textproc/py-tomli@${PY_FLAVOR
 
 post-patch:
 	@${RM} ${WRKSRC}/pyproject.toml
+	${REINPLACE_CMD} 's|%%PYTHON_VER%%|${PYTHON_VER}|' ${WRKSRC}/maturin/__init__.py
 
 # The binary is usually built via setup.py which uses different compiler flags.
 # That line is patched out there to use the compiler flags from the Ports
