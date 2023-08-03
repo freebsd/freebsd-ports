@@ -314,6 +314,7 @@
     SUBDIR += py-cirq-rigetti
     SUBDIR += py-coards
     SUBDIR += py-dftbplus
+    SUBDIR += py-dftd4
     SUBDIR += py-dimod
     SUBDIR += py-dipy
     SUBDIR += py-dlib
