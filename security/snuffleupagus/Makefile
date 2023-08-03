@@ -1,6 +1,6 @@
 PORTNAME=	snuffleupagus
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.8.3
+DISTVERSION=	0.9.0
 CATEGORIES=	security
 PKGNAMEPREFIX=	${PHP_PKGNAMEPREFIX}
 
@@ -17,7 +17,7 @@ USES=		localbase:ldflags php:build,ext
 USE_GITHUB=	yes
 GH_ACCOUNT=	jvoisin
 USE_PHP=	session:build
-IGNORE_WITH_PHP=	82 83
+IGNORE_WITH_PHP=	83
 
 CONFIGURE_ARGS=	--enable-snuffleupagus
 
