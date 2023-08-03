@@ -30,7 +30,6 @@ GL_ACCOUNT=	World/Phosh
 GL_TUPLE=	https://gitlab.gnome.org:guidog:gmobile:ff854988bff80f2d4c1181ccf3c94b032603b6f9:gmobile/subprojects/gmobile
 SHEBANG_FILES=	build-aux/post_install.py
 MESON_ARGS=	-Dembed-wlroots=disabled
-CFLAGS+=	-Wno-error=format-nonliteral # clang
 PLIST_FILES=	bin/${PORTNAME} \
 		share/applications/sm.puri.Phoc.desktop \
 		share/icons/hicolor/symbolic/apps/sm.puri.Phoc.svg
