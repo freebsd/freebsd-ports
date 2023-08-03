@@ -39,7 +39,7 @@ do-install:
 
 .if defined(MAINTAINER_MODE)
 upload:
-	for version in 12.3 12.4 13.1; \
+	for version in 12.4 13.2; \
 	do \
 		cd /usr/src/lib && \
 		git archive --format=tar.gz \
