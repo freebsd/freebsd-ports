@@ -1,5 +1,5 @@
 PORTNAME=	ecflow
-DISTVERSION=	5.9.0
+DISTVERSION=	5.11.3
 CATEGORIES=	misc
 MASTER_SITES=	https://confluence.ecmwf.int/download/attachments/8650755/
 DISTNAME=	ecFlow-${DISTVERSION}-Source

@@ -1,11 +1,14 @@
 bin/ecflow_client
 bin/ecflow_fuse.py
+bin/ecflow_http
 bin/ecflow_logserver.sh
 bin/ecflow_logsvr.pl
 bin/ecflow_server
 bin/ecflow_standalone
 bin/ecflow_start.sh
 bin/ecflow_stop.sh
+bin/ecflow_udp
+bin/ecflow_udp_client
 bin/ecflow_ui
 bin/ecflow_ui.x
 lib/cmake/ecflow/ecflow-config-version.cmake
