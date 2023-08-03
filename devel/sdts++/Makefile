@@ -11,14 +11,23 @@ WWW=		https://mcmcweb.er.usgs.gov/sdts/sdtsxx/
 
 LIB_DEPENDS=	libboost_thread.so:devel/boost-libs
 
-DOS2UNIX_GLOB=	*.cpp
 USES=		autoreconf bison dos2unix gmake libtool makeinfo
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
-INSTALL_TARGET=	install-strip
+DOS2UNIX_GLOB=	*.cpp
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
+GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-boost=${LOCALBASE}/include
+
+INSTALL_TARGET=	install-strip
+
 INFO=		sdts++
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=  -Dregister=
+.endif
 
 post-patch:
 .for f in AUTHORS ChangeLog NEWS README
