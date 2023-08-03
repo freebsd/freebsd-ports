@@ -14,8 +14,6 @@ LICENSE_NAME=	University of Minnesota METIS License
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 LICENSE_PERMS=	auto-accept
 
-BROKEN=		does not fetch
-
 USES=		cmake:insource,noninja gmake
 USE_LDCONFIG=	${PREFIX}/lib/parmetis
 
@@ -23,14 +21,8 @@ OPTIONS_DEFINE=	OPENMPI DOCS STATIC
 OPENMPI_DESC=	Use openmpi instead of mpich
 OPTIONS_SUB=	yes
 
-OPENMPI_BUILD_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpicc:net/openmpi
-OPENMPI_RUN_DEPENDS=		${LOCALBASE}/mpi/openmpi/bin/mpirun:net/openmpi
-OPENMPI_VARS=			MPICC=${LOCALBASE}/mpi/openmpi/bin/mpicc \
-				MPICXX=${LOCALBASE}/mpi/openmpi/bin/mpicxx
-OPENMPI_BUILD_DEPENDS_OFF=	${LOCALBASE}/bin/mpicc:net/mpich
-OPENMPI_RUN_DEPENDS_OFF=	${LOCALBASE}/bin/mpirun:net/mpich
-OPENMPI_VARS_OFF=		MPICC=${LOCALBASE}/bin/mpicc \
-				MPICXX=${LOCALBASE}/bin/mpicxx
+OPENMPI_USES=			mpi:openmpi
+OPENMPI_USES_OFF=		mpi
 
 STATIC_DESC=			Do not build and install shared library
 STATIC_VARS_OFF=		SH_FLAG="shared=1"
