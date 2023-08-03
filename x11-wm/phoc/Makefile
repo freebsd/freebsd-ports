@@ -1,6 +1,6 @@
 PORTNAME=	phoc
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.29.0
+DISTVERSION=	0.30.0
 CATEGORIES=	x11-wm wayland
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -12,7 +12,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	evdev-proto>0:devel/evdev-proto \
 		wayland-protocols>=1.15:graphics/wayland-protocols \
-		wlroots>=0.15.1<0.16.0:x11-toolkits/wlroots
+		wlroots>=0.16.0<0.17.0:x11-toolkits/wlroots
 LIB_DEPENDS=	libjson-glib-1.0.so:devel/json-glib \
 		libwayland-server.so:graphics/wayland \
 		libwlroots.so:x11-toolkits/wlroots \
@@ -42,5 +42,4 @@ MANPAGES_BUILD_DEPENDS=	rst2man:textproc/py-docutils
 MANPAGES_MESON_TRUE=	man
 MANPAGES_PLIST_FILES=	man/man1/${PORTNAME}.1.gz
 
-.include "${.CURDIR:H:H}/x11-toolkits/wlroots015/override.mk"
 .include <bsd.port.mk>
