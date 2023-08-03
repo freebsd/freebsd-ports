@@ -1,6 +1,6 @@
 PORTNAME=	openfpgaloader
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.10.0
+DISTVERSION=	0.11.0
 CATEGORIES=	cad
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,6 +11,7 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libftdi1.so:devel/libftdi1 \
+		libhidapi.so:comms/hidapi \
 		libudev.so:devel/libudev-devd
 
 USES=		cmake compiler:c++11-lang localbase:ldflags pkgconfig
