@@ -49,12 +49,6 @@ OCTAVE_LIB_DEPENDS=		libfftw3.so:math/fftw3 \
 OCTAVE_RUN_DEPENDS=		octave:math/octave \
 				octave-forge-statistics>0:math/octave-forge-statistics
 
-.include <bsd.port.options.mk>
-.if (${ARCH} == powerpc64le || ${ARCH} == powerpc64 || ${ARCH} == powerpc) && ${OSVERSION} < 1301510 # support added in e09d209d1a74a3caca95dea303db9bc605fce1a7
-BROKEN_powerpc64=	cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
-BROKEN_powerpc64le=	cannot open module file 'ieee_arithmetic.mod' for reading at (1): No such file or directory
-.endif
-
 post-install:
 	# remove empty directories, see https://git.dynare.org/Dynare/dynare/-/issues/1835
 	@${FIND} ${STAGEDIR}${PREFIX} -type d -empty -delete
