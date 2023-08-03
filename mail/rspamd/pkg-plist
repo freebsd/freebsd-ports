@@ -12,6 +12,7 @@ etc/newsyslog.conf.d/rspamd.newsyslog.conf
 %%ETCDIR%%/common.conf
 %%ETCDIR%%/composites.conf
 %%ETCDIR%%/groups.conf
+%%ETCDIR%%/lang_detection.inc
 %%ETCDIR%%/logging.inc
 %%ETCDIR%%/maps.d/dmarc_whitelist.inc
 %%ETCDIR%%/maps.d/maillist.inc
@@ -218,6 +219,13 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/plugins/neural.lua
 %%DATADIR%%/lualib/plugins/rbl.lua
 %%DATADIR%%/lualib/plugins_stats.lua
+%%DATADIR%%/lualib/redis_scripts/neural_maybe_invalidate.lua
+%%DATADIR%%/lualib/redis_scripts/neural_maybe_lock.lua
+%%DATADIR%%/lualib/redis_scripts/neural_save_unlock.lua
+%%DATADIR%%/lualib/redis_scripts/neural_train_size.lua
+%%DATADIR%%/lualib/redis_scripts/ratelimit_check.lua
+%%DATADIR%%/lualib/redis_scripts/ratelimit_cleanup_pending.lua
+%%DATADIR%%/lualib/redis_scripts/ratelimit_update.lua
 %%DATADIR%%/lualib/rescore_utility.lua
 %%DATADIR%%/lualib/rspamadm/clickhouse.lua
 %%DATADIR%%/lualib/rspamadm/configgraph.lua
@@ -225,6 +233,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/lualib/rspamadm/configwizard.lua
 %%DATADIR%%/lualib/rspamadm/cookie.lua
 %%DATADIR%%/lualib/rspamadm/corpus_test.lua
+%%DATADIR%%/lualib/rspamadm/dkim_keygen.lua
 %%DATADIR%%/lualib/rspamadm/dmarc_report.lua
 %%DATADIR%%/lualib/rspamadm/dns_tool.lua
 %%DATADIR%%/lualib/rspamadm/fuzzy_convert.lua
@@ -292,6 +301,7 @@ man/man8/rspamd.8.gz
 %%DATADIR%%/rules/bitcoin.lua
 %%DATADIR%%/rules/bounce.lua
 %%DATADIR%%/rules/content.lua
+%%DATADIR%%/rules/controller/fuzzy.lua
 %%DATADIR%%/rules/controller/init.lua
 %%DATADIR%%/rules/controller/maps.lua
 %%DATADIR%%/rules/controller/neural.lua
