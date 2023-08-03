@@ -1,6 +1,5 @@
 PORTNAME=	privoxy
-PORTVERSION=	3.0.34
-PORTREVISION=	1
+PORTVERSION=	4.0.0
 CATEGORIES=	www
 MASTER_SITES=	https://www.privoxy.org/sf-download-mirror/Sources/${PORTVERSION}%20(stable)/ \
 		SF/ijbswa/Sources/${PORTVERSION}%20%28stable%29
@@ -10,7 +9,7 @@ MAINTAINER=	fk@fabiankeil.de
 COMMENT=	Web proxy with advanced filtering capabilities
 WWW=		https://www.privoxy.org/
 
-LIB_DEPENDS=	libpcre.so:devel/pcre
+LIB_DEPENDS=	libpcre2-8.so:devel/pcre2
 
 USES=		autoreconf cpe gmake shebangfix ssl
 USE_RC_SUBR=	privoxy
@@ -38,7 +37,8 @@ USERS=		privoxy
 GROUPS=		privoxy
 
 OPTIONS_DEFINE=	ACCEPT_FILTER BROKEN_STRPTIME BROTLI COMPRESSION DEBUG \
-		DOCS EDITOR FORCE HTTPS_INSPECTION PRIVOXY_TOOLS TOGGLE
+		DOCS EDITOR EXTERNAL_FILTERS FORCE HTTPS_INSPECTION \
+		PRIVOXY_TOOLS TOGGLE
 
 OPTIONS_DEFAULT=	ACCEPT_FILTER BROTLI DOCS EDITOR FORCE \
 			HTTPS_INSPECTION TOGGLE PRIVOXY_TOOLS
@@ -50,6 +50,7 @@ BROTLI_DESC=		Support decompression of Brotli-encoded content
 COMPRESSION_DESC=	Support compression of buffered content
 DOCS_DESC=		Let Privoxy serve the user manual
 EDITOR_DESC=		Support use of the web-based action editor
+EXTERNAL_FILTERS_DESC=	Support for external filters
 FORCE_DESC=		Support bypassing of blocks
 HTTPS_INSPECTION_DESC=	Support filtering of encrypted content
 PRIVOXY_TOOLS_DESC=	Install Privoxy-Log-Parser, uagen, etc.
@@ -67,6 +68,8 @@ COMPRESSION_CONFIGURE_ON=	--enable-compression
 DEBUG_CONFIGURE_ON=	--with-debug
 
 EDITOR_CONFIGURE_OFF=	--disable-editor
+
+EXTERNAL_FILTERS_CONFIGURE_ON=	--enable-external-filters
 
 FORCE_CONFIGURE_OFF=	--disable-force
 

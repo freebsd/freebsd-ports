@@ -54,6 +54,7 @@ etc/privoxy/templates/wpad.dat
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/files-in-use.jpg
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/filter-file.html
+%%PORTDOCS%%%%DOCSDIR%%/user-manual/howto.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/index.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/user-manual/introduction.html
