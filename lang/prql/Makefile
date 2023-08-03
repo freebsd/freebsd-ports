@@ -1,5 +1,5 @@
 PORTNAME=	prql
-DISTVERSION=	0.9.2
+DISTVERSION=	0.9.3
 CATEGORIES=	lang databases
 PKGNAMESUFFIX=	-compiler
 
@@ -294,7 +294,7 @@ CARGO_CRATES=	addr2line-0.19.0 \
 		proc-macro-error-1.0.4 \
 		proc-macro-error-attr-1.0.4 \
 		proc-macro-hack-0.5.20+deprecated \
-		proc-macro2-1.0.59 \
+		proc-macro2-1.0.66 \
 		psm-0.1.21 \
 		ptr_meta-0.1.4 \
 		ptr_meta_derive-0.1.4 \
