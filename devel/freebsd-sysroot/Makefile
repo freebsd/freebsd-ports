@@ -42,11 +42,11 @@ PLIST_SUB=	ROOT=${_SYSROOT:S,^${PREFIX}/,,}
 
 _SYSROOT=				${PREFIX}/${PORTNAME}/${FLAVOR:S/_/-/g}
 _SYSROOT_VER=				${_SYSROOT_VER_${FLAVOR}:U12.4-RELEASE}
-_SYSROOT_VER_powerpc=			13.1-RELEASE
-_SYSROOT_VER_powerpc64=			13.1-RELEASE
-_SYSROOT_VER_powerpc64le=		13.1-RELEASE
-_SYSROOT_VER_powerpcspe=		13.1-RELEASE
-_SYSROOT_VER_riscv64=			13.1-RELEASE
+_SYSROOT_VER_powerpc=			13.2-RELEASE
+_SYSROOT_VER_powerpc64=			13.2-RELEASE
+_SYSROOT_VER_powerpc64le=		13.2-RELEASE
+_SYSROOT_VER_powerpcspe=		13.2-RELEASE
+_SYSROOT_VER_riscv64=			13.2-RELEASE
 _SYSROOT_DIST=				${_SYSROOT_DIST_${FLAVOR}}
 _SYSROOT_DIST_aarch64=			releases/arm64/${_SYSROOT_VER}/base.txz
 _SYSROOT_DIST_armv7=			releases/arm/${FLAVOR}/ISO-IMAGES/${_SYSROOT_VER:S/-/ /:[1]}/FreeBSD-${_SYSROOT_VER}-arm-armv7-WANDBOARD.img.xz
@@ -73,8 +73,8 @@ _SYSROOT_ARCH_powerpc64=		powerpc64
 _SYSROOT_LLVM_TRIPLE=			${_SYSROOT_LLVM_TRIPLE_${FLAVOR}:U${_SYSROOT_ARCH_${FLAVOR}:U${FLAVOR}}-unknown-${OPSYS:tl}}
 _SYSROOT_LLVM_TRIPLE_aarch64=		aarch64-unknown-freebsd12.4
 _SYSROOT_LLVM_TRIPLE_armv7=		armv7-unknown-freebsd12.4-gnueabihf
-_SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.1 # secure-plt
-_SYSROOT_LLVM_TRIPLE_powerpc64=		powerpc64-unknown-freebsd13.1 # elfv2
+_SYSROOT_LLVM_TRIPLE_powerpc=		powerpc-unknown-freebsd13.2 # secure-plt
+_SYSROOT_LLVM_TRIPLE_powerpc64=		powerpc64-unknown-freebsd13.2 # elfv2
 
 .if make(distclean) || make(makesum)
 MASTER_SITES:=	${FLAVORS:O:@_flavor@${:!${SETENV} FLAVOR=${_flavor} ${MAKE} -VMASTER_SITES!}@}
@@ -92,8 +92,8 @@ BROKEN_powerpc64=	little-endian UFS fails to be read on big-endian architectures
 
 .if ${OPSYS} != FreeBSD
 IGNORE=		is only for FreeBSD
-.elif ${FLAVOR} == powerpc64le && ${OSVERSION} < 1301000
-IGNORE=		is only for FreeBSD 13.1-RELEASE or greater
+.elif ${FLAVOR} == powerpc64le && ${OSVERSION} < 1302000
+IGNORE=		is only for FreeBSD 13.2-RELEASE or greater
 .endif
 
 pre-extract:
