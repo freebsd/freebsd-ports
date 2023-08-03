@@ -1,9 +1,8 @@
 PORTNAME=	giacxcas
-DISTVERSION=	1.9.0-21
-PORTREVISION=	5
+DISTVERSION=	1.9.0-55
 CATEGORIES=	math
 MASTER_SITES=	http://www-fourier.ujf-grenoble.fr/~parisse/debian/dists/stable/main/source/:giac \
-		http://cocoa.dima.unige.it/cocoalib/tgz/:cocoa \
+		http://cocoa.dima.unige.it/cocoa/cocoalib/tgz/:cocoa \
 		http://www-fourier.ujf-grenoble.fr/~parisse/giac/freebsd/
 DISTFILES=	giac_${DISTVERSION}${EXTRACT_SUFX}:giac \
 		CoCoALib-${COCOA_LIB_VERSION}.tgz:cocoa \
@@ -22,8 +21,10 @@ LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING
 LICENSE_PERMS_DOC=	dist-mirror pkg-mirror auto-accept
 LICENSE_DISTFILES_DOC=	giac_${DISTVERSION}${EXTRACT_SUFX}
 
-BUILD_DEPENDS=	bash:shells/bash
+BUILD_DEPENDS=	bash:shells/bash \
+		hevea:textproc/hevea
 LIB_DEPENDS=	libao.so:audio/libao \
+		libboost_serialization.so:devel/boost-libs \
 		libcurl.so:ftp/curl \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libgsl.so:math/gsl \
@@ -43,8 +44,9 @@ USES=		blaslapack compiler:c++14-lang desktop-file-utils fortran \
 		gettext gl gmake gnome jpeg libtool localbase ncurses perl5 \
 		python readline shebangfix tex xorg
 GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++11
 USE_GL=		gl
-USE_XORG=	x11 xcursor xext xft xi xinerama
+USE_XORG=	x11 xcursor xext xfixes xft xi xinerama xrender
 USE_TEX=	latex:build dvipsk:build
 USE_PERL5=	run
 USE_LDCONFIG=	yes
@@ -60,7 +62,7 @@ SHEBANG_FILES=	src/pgiac micropython-1.12/docs/conf.py
 
 INSTALL_TARGET=	install-strip
 
-COCOA_LIB_VERSION=	0.99700
+COCOA_LIB_VERSION=	0.99818
 
 CPPFLAGS+=	-I${COCOALIB-GIAC}/include \
 		-I${FLTKDEV-GIAC} \
@@ -115,10 +117,6 @@ post-patch:
 		${FLTKDEV-GIAC}/src/fl_set_fonts_xft.cxx
 
 pre-configure:
-	${REINPLACE_CMD} -e 's|/usr/lib  /usr/lib64  /usr/lib32  /usr/local  /opt/local/lib  /sw/lib  /usr/sfw/lib|${LOCALBASE}/lib|' \
-		-e '/libgmp.a/s|find|#find|' \
-		-e 's|-name  libgmp.so|-type f -name "libgmp.so.*"|' \
-		${COCOALIB-GIAC}/configuration/gmp-find.sh
 	${REINPLACE_CMD} -e 's|^protected:|public:|' ${FLTKDEV-GIAC}/FL/Fl_Widget.H
 .for f in icas.cc path.h
 	${REINPLACE_CMD} -e 's|/usr/local/share/giac/doc|${DOCSDIR}|' \
