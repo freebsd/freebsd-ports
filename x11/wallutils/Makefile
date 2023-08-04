@@ -1,5 +1,6 @@
 PORTNAME=	wallutils
 DISTVERSION=	5.12.7
+PORTREVISION=	1
 CATEGORIES=	x11 wayland
 
 MAINTAINER=	eduardo@FreeBSD.org

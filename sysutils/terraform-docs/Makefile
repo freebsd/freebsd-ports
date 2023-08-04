@@ -1,7 +1,7 @@
 PORTNAME=	terraform-docs
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.16.0
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	sysutils textproc
 
 MAINTAINER=	nulldutra@proton.me
