@@ -1,5 +1,5 @@
---- t/Utils.pm.orig	2012-04-05 17:39:45.000000000 -0800
-+++ t/Utils.pm	2012-04-05 17:41:15.000000000 -0800
+--- t/Utils.pm.orig	2012-04-05 17:39:45 UTC
++++ t/Utils.pm
 @@ -73,7 +73,7 @@
  my @devs = Net::Pcap::findalldevs(\%devs, \$err);
  
