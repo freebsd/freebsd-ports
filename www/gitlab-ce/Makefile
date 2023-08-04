@@ -1,5 +1,6 @@
 PORTNAME=	gitlab-ce
 PORTVERSION=	16.1.2
+PORTREVISION=	1
 CATEGORIES=	www devel
 
 MAINTAINER=	mfechner@FreeBSD.org

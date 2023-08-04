@@ -1,5 +1,6 @@
 PORTNAME=	xapsd
 DISTVERSION=	g20230329
+PORTREVISION=	1
 CATEGORIES=	net
 
 MAINTAINER=	PopularMoment@protonmail.com
