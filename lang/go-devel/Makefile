@@ -1,5 +1,5 @@
 PORTNAME=	go
-DISTVERSION?=	g20230201
+DISTVERSION?=	g20230802
 PORTREVISION?=	0
 CATEGORIES=	lang
 MASTER_SITES?=	https://github.com/dmgk/go-bootstrap/releases/download/${BOOTSTRAP_TAG}/:bootstrap \
@@ -35,8 +35,8 @@ CPE_VENDOR=	golang
 .ifndef MASTERDIR
 USE_GITHUB=	yes
 GH_ACCOUNT=	golang
-# go1.20
-GH_TAGNAME=	de4748c47c67392a57f250714509f590f68ad395
+# go1.21rc4
+GH_TAGNAME=	041dd5ce051caf72d64b6d5f2f975515b3676a71
 .endif
 
 SHEBANG_FILES=	misc/wasm/go_js_wasm_exec \
