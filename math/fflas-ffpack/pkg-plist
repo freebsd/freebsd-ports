@@ -47,6 +47,7 @@ include/fflas-ffpack/fflas/fflas_fscal.inl
 include/fflas-ffpack/fflas/fflas_fscal_mp.inl
 include/fflas-ffpack/fflas/fflas_fsyr2k.inl
 include/fflas-ffpack/fflas/fflas_fsyrk.inl
+include/fflas-ffpack/fflas/fflas_fsyrk_strassen.inl
 include/fflas-ffpack/fflas/fflas_ftrmm.inl
 include/fflas-ffpack/fflas/fflas_ftrmm_src.inl
 include/fflas-ffpack/fflas/fflas_ftrsm.inl
@@ -125,8 +126,10 @@ include/fflas-ffpack/fflas/fflas_sparse/sell/sell_spmv.inl
 include/fflas-ffpack/fflas/fflas_sparse/sell/sell_utils.inl
 include/fflas-ffpack/fflas/fflas_sparse/sparse_matrix_traits.h
 include/fflas-ffpack/fflas/fflas_sparse/utils.h
+include/fflas-ffpack/fflas/fflas_transpose.h
 include/fflas-ffpack/ffpack/ffpack.h
 include/fflas-ffpack/ffpack/ffpack.inl
+include/fflas-ffpack/ffpack/ffpack_bruhatgen.inl
 include/fflas-ffpack/ffpack/ffpack_charpoly.inl
 include/fflas-ffpack/ffpack/ffpack_charpoly_danilevski.inl
 include/fflas-ffpack/ffpack/ffpack_charpoly_kgfast.inl
@@ -227,6 +230,7 @@ libdata/pkgconfig/fflas-ffpack.pc
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/dir_fa676cbc4d252d78f1650fb997b21154.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/doc.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/doxygen.css
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/doxygen.svg
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/dynsections.js
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/fflas-ffpack-config_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/fflas-ffpack_8h.html
@@ -238,6 +242,7 @@ libdata/pkgconfig/fflas-ffpack.pc
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/fflas__sparse_8_c.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/fflas__sparse_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/fflas__sparse_8inl.html
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/fflas__transpose_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/ffpack_8_c.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/ffpack_8h.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/fgemm__classical__mp_8inl.html
@@ -248,6 +253,7 @@ libdata/pkgconfig/fflas-ffpack.pc
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_0.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_1.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_10.png
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_100.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_11.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_12.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_13.png
@@ -338,6 +344,13 @@ libdata/pkgconfig/fflas-ffpack.pc
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_90.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_91.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_92.png
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_93.png
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_94.png
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_95.png
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_96.png
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_97.png
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_98.png
+%%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/form_99.png
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/formula.repository
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/globals.html
 %%DOXYGEN%%%%DOCSDIR%%/fflas-ffpack-html/globals_defs.html
