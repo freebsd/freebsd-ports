@@ -1,6 +1,7 @@
 PORTNAME=	linbox
 PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -22,7 +23,8 @@ RUN_DEPENDS=	bash:shells/bash
 USE_GITHUB=	yes
 GH_ACCOUNT=	linbox-team
 
-USES=		autoreconf blaslapack:openblas compiler:c++11-lang gmake libtool localbase pkgconfig shebangfix
+USES=		autoreconf blaslapack:openblas compiler:c++11-lang gmake	\
+		libtool localbase pkgconfig shebangfix
 
 SHEBANG_FILES=	benchmarks/perfpublisher.sh linbox-auto-install.sh	\
 		linbox-config.in tests/jenkins-maker.sh	\
@@ -35,7 +37,7 @@ OPTIONS_DEFAULT=	FULL
 OPTIONS_SUB=		yes
 
 MIN_DESC=		Lightweight package, with less dependencies
-MIN_CONFIGURE_ON=	--without-saclib
+MIN_CONFIGURE_ON=	--without-saclib --without-ocl
 
 FULL_DESC=		Complete package with all its dependencies
 FULL_BUILD_DEPENDS=	gnuplot:math/gnuplot
@@ -44,10 +46,11 @@ FULL_LIB_DEPENDS=	libflint.so:math/flint2		\
 			libiml.so:math/iml		\
 			libmpfr.so:math/mpfr		\
 			libntl.so:math/ntl		\
+			libOpenCL.so:devel/ocl-icd	\
 			libtinyxml2.so:textproc/tinyxml2
 FULL_RUN_DEPENDS=	gnuplot:math/gnuplot
 FULL_USES=		ghostscript
-FULL_CONFIGURE_WITH=	flint fplll ghostscript gnuplot iml mpfr ntl
+FULL_CONFIGURE_WITH=	flint fplll ghostscript gnuplot iml mpfr ntl ocl
 
 DOXYGEN_VARS=		BINARY_ALIAS=sed=${LOCALBASE}/bin/gsed
 DOXYGEN_CONFIGURE_ENABLE=doc
