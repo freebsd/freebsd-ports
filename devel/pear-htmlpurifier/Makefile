@@ -1,6 +1,5 @@
 PORTNAME=	htmlpurifier
-PORTVERSION=	4.9.2
-PORTREVISION=	1
+PORTVERSION=	4.15.0
 CATEGORIES=	devel pear www
 MASTER_SITES=	http://htmlpurifier.org/get/ \
 		LOCAL
