@@ -11,6 +11,8 @@ WWW=		https://ooni.org/about/
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		requires unsupported go1.18
+
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
 USES=		go:1.18,modules

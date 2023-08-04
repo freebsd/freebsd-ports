@@ -11,6 +11,8 @@ WWW=		https://github.com/XTLS/Xray-core
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+BROKEN=		requires unsupported go1.18
+
 USES=		go:1.18,modules
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
