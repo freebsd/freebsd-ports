@@ -1,0 +1,9 @@
+Mercury is a Remote Procedure Call (RPC) framework specifically designed for use
+in High-Performance Computing (HPC) systems with high-performance fabrics. Its
+network implementation is abstracted to make efficient use of native transports
+and allow easy porting to a variety of systems (including future systems).
+Mercury supports asynchronous transfer of parameters and execution requests, and
+has dedicated support for large data arguments that are transferred using Remote
+Memory Access (RMA). Its interface is generic and allows any function call to be
+serialized. Since code generation is done using the C preprocessor, no external
+tool is required.

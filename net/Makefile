@@ -464,6 +464,7 @@
     SUBDIR += mediastreamer
     SUBDIR += megacmd
     SUBDIR += megatools
+    SUBDIR += mercury
     SUBDIR += messagelib
     SUBDIR += mgen
     SUBDIR += micro_inetd
