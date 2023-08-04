@@ -1,11 +1,7 @@
 PORTNAME=	linbox
-PORTVERSION=	1.6.3
+PORTVERSION=	1.7.0
 DISTVERSIONPREFIX=	v
-PORTREVISION=	12
 CATEGORIES=	math
-
-PATCH_SITES=	https://github.com/linbox-team/linbox/commit/
-PATCHFILES=	b79fb13522fceef79e291922ca9c7af0a09b65ae.diff:-p1
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	C++ library for exact, high-performance linear algebra
@@ -13,6 +9,10 @@ WWW=		https://linalg.org/
 
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	dual
+
+# See https://github.com/linbox-team/givaro/issues/225
+# and https://github.com/linbox-team/linbox/issues/306
+BROKEN_FreeBSD_14=	fails to compile with clang 16
 
 BUILD_DEPENDS=	fflas-ffpack-config:math/fflas-ffpack
 LIB_DEPENDS=	libgmp.so:math/gmp		\
@@ -24,8 +24,8 @@ GH_ACCOUNT=	linbox-team
 
 USES=		autoreconf blaslapack:openblas compiler:c++11-lang gmake libtool localbase pkgconfig shebangfix
 
-SHEBANG_FILES=	benchmarks/perfpublisher.sh examples/test.sh	\
-		linbox-auto-install.sh linbox-config.in tests/jenkins-maker.sh	\
+SHEBANG_FILES=	benchmarks/perfpublisher.sh linbox-auto-install.sh	\
+		linbox-config.in tests/jenkins-maker.sh	\
 		tests/perfpublisher.sh tests/test_leak.sh
 
 OPTIONS_DEFINE=		DOXYGEN
@@ -42,14 +42,12 @@ FULL_BUILD_DEPENDS=	gnuplot:math/gnuplot
 FULL_LIB_DEPENDS=	libflint.so:math/flint2		\
 			libfplll.so:math/fplll		\
 			libiml.so:math/iml		\
-			libm4ri.so:math/m4ri		\
-			libm4rie.so:math/m4rie		\
 			libmpfr.so:math/mpfr		\
 			libntl.so:math/ntl		\
 			libtinyxml2.so:textproc/tinyxml2
 FULL_RUN_DEPENDS=	gnuplot:math/gnuplot
 FULL_USES=		ghostscript
-FULL_CONFIGURE_WITH=	flint fplll ghostscript gnuplot iml m4ri m4rie mpfr ntl
+FULL_CONFIGURE_WITH=	flint fplll ghostscript gnuplot iml mpfr ntl
 
 DOXYGEN_VARS=		BINARY_ALIAS=sed=${LOCALBASE}/bin/gsed
 DOXYGEN_CONFIGURE_ENABLE=doc
@@ -59,8 +57,6 @@ DOXYGEN_BUILD_DEPENDS=	gsed:textproc/gsed	\
 			doxygen:devel/doxygen
 
 GNU_CONFIGURE=	yes
-# ATM expat and drivers are broken
-CONFIGURE_ARGS=	--without-expat
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 TEST_TARGET=	check
@@ -70,8 +66,5 @@ CONFIGURE_ARGS+=--disable-sse --disable-sse2 --disable-sse3 --disable-ssse3	\
 		--disable-sse41 --disable-sse42 --disable-fma --disable-fma4	\
 		--disable-avx --disable-avx2
 .endif
-
-pre-configure:
-	${REINPLACE_CMD} -e 's|@LINBOXSAGE_LIBS@||' ${WRKSRC}/linbox.pc.in
 
 .include <bsd.port.mk>
