@@ -1,6 +1,5 @@
 PORTNAME=	star-history
-DISTVERSION=	1.0.12
-PORTREVISION=	1
+DISTVERSION=	1.0.13
 CATEGORIES=	misc
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -17,24 +16,29 @@ USES=		cargo ssl
 USE_GITHUB=	yes
 GH_ACCOUNT=	dtolnay
 
-CARGO_CRATES=	android-tzdata-0.1.1 \
+CARGO_CRATES=	addr2line-0.20.0 \
+		adler-1.0.2 \
+		android-tzdata-0.1.1 \
 		android_system_properties-0.1.5 \
-		anyhow-1.0.71 \
+		anyhow-1.0.72 \
 		autocfg-1.1.0 \
+		backtrace-0.3.68 \
 		base64-0.21.2 \
 		bitflags-1.3.2 \
-		bstr-1.5.0 \
+		bitflags-2.3.3 \
+		bstr-1.6.0 \
 		bumpalo-3.13.0 \
 		bytes-1.4.0 \
-		cc-1.0.79 \
+		cc-1.0.81 \
 		cfg-if-1.0.0 \
 		chrono-0.4.26 \
 		core-foundation-0.9.3 \
 		core-foundation-sys-0.8.4 \
 		encoding_rs-0.8.32 \
-		errno-0.3.1 \
+		equivalent-1.0.1 \
+		errno-0.3.2 \
 		errno-dragonfly-0.1.2 \
-		fastrand-1.9.0 \
+		fastrand-2.0.0 \
 		fnv-1.0.7 \
 		foreign-types-0.3.2 \
 		foreign-types-shared-0.1.1 \
@@ -45,37 +49,39 @@ CARGO_CRATES=	android-tzdata-0.1.1 \
 		futures-sink-0.3.28 \
 		futures-task-0.3.28 \
 		futures-util-0.3.28 \
-		h2-0.3.19 \
+		gimli-0.27.3 \
+		h2-0.3.20 \
 		hashbrown-0.12.3 \
-		hermit-abi-0.2.6 \
-		hermit-abi-0.3.1 \
+		hashbrown-0.14.0 \
+		hermit-abi-0.3.2 \
 		home-0.5.5 \
 		http-0.2.9 \
 		http-body-0.4.5 \
 		httparse-1.8.0 \
 		httpdate-1.0.2 \
-		hyper-0.14.26 \
+		hyper-0.14.27 \
 		hyper-tls-0.5.0 \
 		iana-time-zone-0.1.57 \
 		iana-time-zone-haiku-0.1.2 \
 		idna-0.4.0 \
 		indexmap-1.9.3 \
-		instant-0.1.12 \
-		io-lifetimes-1.0.11 \
-		ipnet-2.7.2 \
-		itoa-1.0.6 \
+		indexmap-2.0.0 \
+		ipnet-2.8.0 \
+		itoa-1.0.9 \
 		js-sys-0.3.64 \
 		lazy_static-1.4.0 \
-		libc-0.2.146 \
-		linux-raw-sys-0.3.8 \
+		libc-0.2.147 \
+		linux-raw-sys-0.4.5 \
 		log-0.4.19 \
 		memchr-2.5.0 \
 		mime-0.3.17 \
+		miniz_oxide-0.7.1 \
 		mio-0.8.8 \
 		native-tls-0.2.11 \
 		normpath-1.1.1 \
-		num-traits-0.2.15 \
-		num_cpus-1.15.0 \
+		num-traits-0.2.16 \
+		num_cpus-1.16.0 \
+		object-0.31.1 \
 		once_cell-1.18.0 \
 		opener-0.6.1 \
 		openssl-0.10.55 \
@@ -83,34 +89,35 @@ CARGO_CRATES=	android-tzdata-0.1.1 \
 		openssl-probe-0.1.5 \
 		openssl-sys-0.9.90 \
 		percent-encoding-2.3.0 \
-		pin-project-lite-0.2.9 \
+		pin-project-lite-0.2.10 \
 		pin-utils-0.1.0 \
 		pkg-config-0.3.27 \
-		proc-macro2-1.0.60 \
-		quote-1.0.28 \
+		proc-macro2-1.0.66 \
+		quote-1.0.32 \
 		redox_syscall-0.3.5 \
-		regex-automata-0.1.10 \
+		regex-automata-0.3.4 \
 		reqwest-0.11.18 \
-		rustix-0.37.20 \
-		ryu-1.0.13 \
-		schannel-0.1.21 \
-		security-framework-2.9.1 \
-		security-framework-sys-2.9.0 \
-		serde-1.0.164 \
-		serde_derive-1.0.164 \
-		serde_json-1.0.97 \
+		rustc-demangle-0.1.23 \
+		rustix-0.38.6 \
+		ryu-1.0.15 \
+		schannel-0.1.22 \
+		security-framework-2.9.2 \
+		security-framework-sys-2.9.1 \
+		serde-1.0.181 \
+		serde_derive-1.0.181 \
+		serde_json-1.0.104 \
 		serde_urlencoded-0.7.1 \
-		serde_yaml-0.9.21 \
+		serde_yaml-0.9.25 \
 		slab-0.4.8 \
 		socket2-0.4.9 \
-		syn-2.0.18 \
-		tempfile-3.6.0 \
-		thiserror-1.0.40 \
-		thiserror-impl-1.0.40 \
+		syn-2.0.28 \
+		tempfile-3.7.0 \
+		thiserror-1.0.44 \
+		thiserror-impl-1.0.44 \
 		time-0.1.45 \
 		tinyvec-1.6.0 \
 		tinyvec_macros-0.1.1 \
-		tokio-1.28.2 \
+		tokio-1.29.1 \
 		tokio-native-tls-0.3.1 \
 		tokio-util-0.7.8 \
 		tower-service-0.3.2 \
@@ -118,9 +125,9 @@ CARGO_CRATES=	android-tzdata-0.1.1 \
 		tracing-core-0.1.31 \
 		try-lock-0.2.4 \
 		unicode-bidi-0.3.13 \
-		unicode-ident-1.0.9 \
+		unicode-ident-1.0.11 \
 		unicode-normalization-0.1.22 \
-		unsafe-libyaml-0.2.8 \
+		unsafe-libyaml-0.2.9 \
 		url-2.4.0 \
 		vcpkg-0.2.15 \
 		want-0.3.1 \
@@ -137,22 +144,14 @@ CARGO_CRATES=	android-tzdata-0.1.1 \
 		winapi-i686-pc-windows-gnu-0.4.0 \
 		winapi-x86_64-pc-windows-gnu-0.4.0 \
 		windows-0.48.0 \
-		windows-sys-0.42.0 \
 		windows-sys-0.48.0 \
-		windows-targets-0.48.0 \
-		windows_aarch64_gnullvm-0.42.2 \
+		windows-targets-0.48.1 \
 		windows_aarch64_gnullvm-0.48.0 \
-		windows_aarch64_msvc-0.42.2 \
 		windows_aarch64_msvc-0.48.0 \
-		windows_i686_gnu-0.42.2 \
 		windows_i686_gnu-0.48.0 \
-		windows_i686_msvc-0.42.2 \
 		windows_i686_msvc-0.48.0 \
-		windows_x86_64_gnu-0.42.2 \
 		windows_x86_64_gnu-0.48.0 \
-		windows_x86_64_gnullvm-0.42.2 \
 		windows_x86_64_gnullvm-0.48.0 \
-		windows_x86_64_msvc-0.42.2 \
 		windows_x86_64_msvc-0.48.0 \
 		winreg-0.10.1
 
