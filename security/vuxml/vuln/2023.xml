@@ -1,3 +1,56 @@
+  <vuln vid="6e4e8e87-9fb8-4e32-9f8e-9b4303f4bfd5">
+    <topic>chromium -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+       <name>chromium</name>
+       <range><lt>115.0.5790.170</lt></range>
+      </package>
+      <package>
+       <name>ungoogled-chromium</name>
+       <range><lt>115.0.5790.170</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+       <p>Chrome Releases reports:</p>
+       <blockquote cite="https://chromereleases.googleblog.com/2023/08/stable-channel-update-for-desktop.html">
+	 <p>This update includes 17 security fixes:</p>
+	 <ul>
+	    <li>[1466183] High CVE-2023-4068: Type Confusion in V8. Reported by Jerry on 2023-07-20</li>
+	    <li>[1465326] High CVE-2023-4069: Type Confusion in V8. Reported by Man Yue Mo of GitHub Security Lab on 2023-07-17</li>
+	    <li>[1462951] High CVE-2023-4070: Type Confusion in V8. Reported by Jerry on 2023-07-07</li>
+	    <li>[1458819] High CVE-2023-4071: Heap buffer overflow in Visuals. Reported by Guang and Weipeng Jiang of VRI on 2023-06-28</li>
+	    <li>[1464038] High CVE-2023-4072: Out of bounds read and write in WebGL. Reported by Apple Security Engineering and Architecture (SEAR) on 2023-07-12</li>
+	    <li>[1456243] High CVE-2023-4073: Out of bounds memory access in ANGLE. Reported by Jaehun Jeong(@n3sk) of Theori on 2023-06-20</li>
+	    <li>[1464113] High CVE-2023-4074: Use after free in Blink Task Scheduling. Reported by Anonymous on 2023-07-12</li>
+	    <li>[1457757] High CVE-2023-4075: Use after free in Cast. Reported by Cassidy Kim(@cassidy6564) on 2023-06-25</li>
+	    <li>[1459124] High CVE-2023-4076: Use after free in WebRTC. Reported by Natalie Silvanovich of Google Project Zero on 2023-06-29</li>
+	    <li>[1451146] Medium CVE-2023-4077: Insufficient data validation in Extensions. Reported by Anonymous on 2023-06-04</li>
+	    <li>[1461895] Medium CVE-2023-4078: Inappropriate implementation in Extensions. Reported by Anonymous on 2023-07-04</li>
+	 </ul>
+       </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-4068</cvename>
+      <cvename>CVE-2023-4069</cvename>
+      <cvename>CVE-2023-4070</cvename>
+      <cvename>CVE-2023-4071</cvename>
+      <cvename>CVE-2023-4072</cvename>
+      <cvename>CVE-2023-4073</cvename>
+      <cvename>CVE-2023-4074</cvename>
+      <cvename>CVE-2023-4075</cvename>
+      <cvename>CVE-2023-4076</cvename>
+      <cvename>CVE-2023-4077</cvename>
+      <cvename>CVE-2023-4078</cvename>
+      <url>https://chromereleases.googleblog.com/2023/08/stable-channel-update-for-desktop.html</url>
+    </references>
+    <dates>
+      <discovery>2023-08-02</discovery>
+      <entry>2023-08-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="78f2e491-312d-11ee-85f2-bd89b893fcb4">
     <topic>go -- multiple vulnerabilities</topic>
     <affects>
