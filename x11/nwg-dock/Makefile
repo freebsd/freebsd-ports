@@ -1,7 +1,6 @@
 PORTNAME=	nwg-dock
 DISTVERSIONPREFIX=	v
-DISTVERSION=	0.3.5
-PORTREVISION=	1
+DISTVERSION=	0.3.6
 CATEGORIES=	x11
 
 MAINTAINER=	jbeich@FreeBSD.org
@@ -19,7 +18,7 @@ USE_GITHUB=	yes
 USE_GNOME=	cairo gdkpixbuf2 gtk30
 GH_ACCOUNT=	nwg-piotr
 GH_TUPLE=	allan-simon:go-singleinstance:d0997106ab37:allan_simon_go_singleinstance/vendor/github.com/allan-simon/go-singleinstance \
-		dlasky:gotk3-layershell:e6ecab2731f7:dlasky_gotk3_layershell/vendor/github.com/dlasky/gotk3-layershell \
+		dlasky:gotk3-layershell:1f6674a3f872:dlasky_gotk3_layershell/vendor/github.com/dlasky/gotk3-layershell \
 		golang:sync:56d357773e84:golang_sync/vendor/golang.org/x/sync \
 		golang:sys:c0bba94af5f8:golang_sys/vendor/golang.org/x/sys \
 		gotk3:gotk3:v0.6.1:gotk3_gotk3/vendor/github.com/gotk3/gotk3 \

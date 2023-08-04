@@ -1,10 +1,10 @@
-TIMESTAMP = 1688306873
-SHA256 (nwg-piotr-nwg-dock-v0.3.5_GH0.tar.gz) = e2a05917a318bcc67a349daba448aa53edd821db7d368fc837e164c0b99795de
-SIZE (nwg-piotr-nwg-dock-v0.3.5_GH0.tar.gz) = 29752
+TIMESTAMP = 1691193397
+SHA256 (nwg-piotr-nwg-dock-v0.3.6_GH0.tar.gz) = 80e6447f34678ca4e8974f5974ee0247184064b0413fd0eca868b5822d208b53
+SIZE (nwg-piotr-nwg-dock-v0.3.6_GH0.tar.gz) = 29683
 SHA256 (allan-simon-go-singleinstance-d0997106ab37_GH0.tar.gz) = f8cee874873fe9fc1a81e8a7ca83df85c57aa86279c09cb8cba10d5feb7ed295
 SIZE (allan-simon-go-singleinstance-d0997106ab37_GH0.tar.gz) = 2819
-SHA256 (dlasky-gotk3-layershell-e6ecab2731f7_GH0.tar.gz) = 87c3acd2b403aa85a4e6f29256ee167450065e46f7d8e4c05d8769ed80411fc5
-SIZE (dlasky-gotk3-layershell-e6ecab2731f7_GH0.tar.gz) = 2310107
+SHA256 (dlasky-gotk3-layershell-1f6674a3f872_GH0.tar.gz) = dbd56b8bd4905791142df35d18af9d200035441a454cdb398ff8b654fb8f8e2d
+SIZE (dlasky-gotk3-layershell-1f6674a3f872_GH0.tar.gz) = 2373140
 SHA256 (golang-sync-56d357773e84_GH0.tar.gz) = b30ecf4394f01a492423b41e3815d84711c29d679ee4dd5118fc2c9bcf433b3f
 SIZE (golang-sync-56d357773e84_GH0.tar.gz) = 16832
 SHA256 (golang-sys-c0bba94af5f8_GH0.tar.gz) = 948e3a5eb69c316307892d81d7c7c63a481e8909a28b886901c0f7caf02e6a30
