@@ -20,6 +20,15 @@
  
  BIND = bin
  OBJD = obj
+@@ -20,7 +24,7 @@ TESTD = tests
+ RESD = res
+ TESTD = tests
+ 
+-DATADIR ?= ${DESTDIR}/etc/ly
++DATADIR ?= ${DESTDIR}$(PREFIX)/etc/ly
+ FLAGS+= -DDATADIR=\"$(DATADIR)\"
+ 
+ INCL = -I$(SRCD)
 @@ -71,14 +75,14 @@ install: $(BIND)/$(NAME)
  
  install: $(BIND)/$(NAME)
@@ -32,14 +41,14 @@
 -	@install -dZ $(DATADIR)/lang
 -	@install -DZ $(RESD)/lang/* -t $(DATADIR)/lang
 -	@install -DZ $(RESD)/pam.d/ly -m 644 -t ${DESTDIR}/etc/pam.d
-+	@install -d ${DESTDIR}/etc/ly
-+	@install $(BIND)/$(NAME) -t ${DESTDIR}/usr/bin
-+	@install $(RESD)/config.ini -t ${DESTDIR}/etc/ly
-+	@install $(RESD)/xsetup.sh -t $(DATADIR)
-+	@install $(RESD)/wsetup.sh -t $(DATADIR)
++	@install -d ${DESTDIR}$(PREFIX)/etc/ly
++	@install $(BIND)/$(NAME) ${DESTDIR}$(PREFIX)/bin
++	@install $(RESD)/config.ini ${DESTDIR}$(PREFIX)/etc/ly
++	@install $(RESD)/xsetup.sh $(DATADIR)
++	@install $(RESD)/wsetup.sh $(DATADIR)
 +	@install -d $(DATADIR)/lang
-+	@install $(RESD)/lang/* -t $(DATADIR)/lang
-+	@install $(RESD)/pam.d/ly -m 644 -t ${DESTDIR}/etc/pam.d
++	@install $(RESD)/lang/* $(DATADIR)/lang
++	@install -m 644 $(RESD)/pam.d/ly ${DESTDIR}$(PREFIX)/etc/pam.d
  
  installnoconf: $(BIND)/$(NAME)
  	@echo "installing ly without the configuration file"
