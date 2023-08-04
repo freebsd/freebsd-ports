@@ -1,4 +1,4 @@
---- content/test/BUILD.gn.orig	2023-07-21 09:49:17 UTC
+--- content/test/BUILD.gn.orig	2023-08-04 12:10:50 UTC
 +++ content/test/BUILD.gn
 @@ -2181,7 +2181,7 @@ static_library("run_all_unittests") {
      ":test_support",
@@ -9,7 +9,7 @@
      deps += [ "//content/common:set_process_title_linux" ]
    }
  }
-@@ -3234,7 +3234,7 @@ test("content_unittests") {
+@@ -3235,7 +3235,7 @@ test("content_unittests") {
      deps += [ "//third_party/boringssl" ]
    }
  
