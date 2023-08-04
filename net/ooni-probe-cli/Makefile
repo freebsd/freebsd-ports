@@ -15,7 +15,7 @@ BROKEN=		requires unsupported go1.18
 
 RUN_DEPENDS=	ca_root_nss>=0:security/ca_root_nss
 
-USES=		go:1.18,modules
+# USES=		go:1.18,modules
 
 GO_MODULE=	github.com/ooni/probe-cli/v3
 GO_TARGET=	./cmd/ooniprobe

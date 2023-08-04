@@ -12,7 +12,7 @@ LICENSE=	MIT
 
 BROKEN=		requires unsupported go1.18
 
-USES=		go:1.18
+# USES=		go:1.18
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	hlandau

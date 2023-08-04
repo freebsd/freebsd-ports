@@ -13,7 +13,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BROKEN=		requires unsupported go1.18
 
-USES=		go:1.18,modules
+# USES=		go:1.18,modules
 
 GO_PKGNAME=	github.com/${GH_ACCOUNT}/${PORTNAME}
 GO_TARGET=	./main:xray
