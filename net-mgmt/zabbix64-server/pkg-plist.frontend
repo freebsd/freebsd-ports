@@ -1255,7 +1255,6 @@
 %%WWWDIR%%/include/views/js/itemtest.js.php
 %%WWWDIR%%/include/views/js/monitoring.history.js.php
 %%WWWDIR%%/include/views/js/monitoring.sysmap.edit.js.php
-%%WWWDIR%%/include/views/js/monitoring.sysmap.list.js.php
 %%WWWDIR%%/include/views/js/monitoring.sysmaps.js.php
 %%WWWDIR%%/include/views/js/reports.toptriggers.js.php
 %%WWWDIR%%/include/views/js/tr_events.js.php
