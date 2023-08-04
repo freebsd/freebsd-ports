@@ -1,5 +1,5 @@
 PORTNAME=	gmp
-PORTVERSION=	6.2.1
+PORTVERSION=	6.3.0
 CATEGORIES=	math devel
 MASTER_SITES=	GNU
 
@@ -9,7 +9,7 @@ WWW=		https://gmplib.org/
 
 LICENSE=	LGPL3
 
-USES=		cpe libtool makeinfo tar:xz
+USES=		cpe libtool makeinfo tar:xz pathfix
 
 CPE_VENDOR=	gmplib
 
