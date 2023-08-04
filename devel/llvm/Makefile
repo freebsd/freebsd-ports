@@ -39,10 +39,7 @@ PLIST_FILES=	${COMMANDS:S|^|bin/|} \
 
 LLVM_SUFFIX?=	${LLVM_DEFAULT}
 
-.if ${LLVM_SUFFIX:M[789]0}
-# Pre-LLVM 10 releases have a <Major><Minor> suffix
-LLVM_MAJOR=${LLVM_SUFFIX:C/0$//}
-.elif ${LLVM_SUFFIX:M[1-9][0-9]}
+.if ${LLVM_SUFFIX:M[1-9][0-9]}
 # LLVM 10 and later have a <Major> suffix
 LLVM_MAJOR=${LLVM_SUFFIX}
 .elif exists(${.CURDIR}/../llvm${LLVM_SUFFIX}/Makefile.snapshot)
