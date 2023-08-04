@@ -14,6 +14,9 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Object-oriented SGML/XML parser toolkit and DSSSL engine
 WWW=		http://www.jclark.com/jade/
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	xmlcatmgr:textproc/xmlcatmgr
 
 CONFLICTS=	sp-1.*
