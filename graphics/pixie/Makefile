@@ -24,6 +24,7 @@ LIB_DEPENDS=	libOpenEXR.so:graphics/openexr \
 		libfltk_gl.so:x11-toolkits/fltk
 
 USES=		autoreconf bison compiler:c++0x gl libtool pathfix tar:tgz
+USE_CXXSTD=	c++14
 USE_GL=		glu
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/pixie \
