@@ -1,0 +1,6 @@
+--- Directory.Build.rsp.orig	2018-05-02 18:19:31 UTC
++++ Directory.Build.rsp
+@@ -1 +1 @@
+-/verbosity:minimal /m /clp:Summary
+\ No newline at end of file
++/verbosity:minimal /m:%%MAKE_JOBS_NUMBER%% /clp:Summary
