@@ -57,4 +57,12 @@ TBB_LIB_DEPENDS=	libtbb.so:devel/onetbb
 
 # the test mpi-test_communication requires excessive resources, see https://github.com/glotzerlab/hoomd-blue/issues/1396
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+post-patch:
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
+		${WRKSRC}/hoomd/ParticleData.cc
+.endif
+
+.include <bsd.port.post.mk>
