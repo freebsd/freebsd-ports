@@ -1,5 +1,6 @@
 PORTNAME=	phonon
 DISTVERSION=	4.11.1
+PORTREVISION=	1
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/${DISTVERSION}
 DIST_SUBDIR=	KDE/phonon
@@ -32,10 +33,4 @@ PULSEAUDIO_USES=	gnome
 PULSEAUDIO_USE=		GNOME=glib20
 PULSEAUDIO_CMAKE_BOOL=	WITH_PulseAudio
 
-.include <bsd.port.pre.mk>
-
-.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
-CXXFLAGS+=	-Wno-error=enum-constexpr-conversion
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
