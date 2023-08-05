@@ -18,7 +18,7 @@ PLIST_FILES=	bin/primer3
 post-patch:
 	@${REINPLACE_CMD} \
 		-e 's#^CFLAGS.*#CFLAGS  += \$$\(CC_OPTS\)#;' \
-		-e 's#CC_OPTS = -g#CC_OPTS =#;' \
+		-e 's#^CC_OPTS.*#CC_OPTS= -Wall -D__USE_FIXED_PROTOTYPES_ -Dregister=#;' \
 		-e 's#LDFLAGS = -g#LDFLAGS +=#;' \
 		-e 's#^WHITEHEAD_SPECIFIC_HACK.*##;' \
 		${WRKSRC}/Makefile
