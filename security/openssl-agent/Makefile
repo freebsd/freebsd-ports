@@ -1,5 +1,5 @@
 PORTNAME=	openssl-agent
-PORTVERSION=	0.15.0
+PORTVERSION=	0.16.0
 CATEGORIES=	security
 MASTER_SITES=	https://pkg.cppget.org/1/alpha/build2/
 

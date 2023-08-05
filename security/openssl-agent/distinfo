@@ -1,3 +1,3 @@
-TIMESTAMP = 1675956504
-SHA256 (openssl-agent-0.15.0.tar.gz) = cad582c8e0bf3dd4fb55aedf502e6b83573a7097eee400fa785ed196c7ddcf42
-SIZE (openssl-agent-0.15.0.tar.gz) = 49819
+TIMESTAMP = 1691257468
+SHA256 (openssl-agent-0.16.0.tar.gz) = e5b6dedf32349a0b231c433d29d27710ac1dc3a4343ebfcec93399b41ef0da4f
+SIZE (openssl-agent-0.16.0.tar.gz) = 49329
