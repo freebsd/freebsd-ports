@@ -725,6 +725,7 @@
     SUBDIR += fungw
     SUBDIR += fuzzylite
     SUBDIR += fxdiv
+    SUBDIR += g-golf
     SUBDIR += g-wrap
     SUBDIR += ga
     SUBDIR += gaa
