@@ -1,19 +1,27 @@
 PORTNAME=	fcrackzip
-PORTVERSION=	1.0
-PORTREVISION=	1
+DISTVERSION=	1.0
+PORTREVISION=	2
 CATEGORIES=	security archivers
-MASTER_SITES=	http://oldhome.schmorp.de/data/marc/ \
-		http://distfiles.macports.org/${PORTNAME}/
 
 MAINTAINER=	bofh@FreeBSD.org
 COMMENT=	Portable, fast, and featureful ZIP password cracker
 WWW=		http://home.schmorp.de/marc/fcrackzip.html
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	libzip.so:archivers/libzip
+
+USES=		perl5 localbase:ldflags
+USE_PERL5=	build
+
+USE_GITHUB=	yes
+GH_ACCOUNT=	hyc
+GH_TAGNAME=	c713631
 
 GNU_CONFIGURE=	yes
-USES=		perl5
-USE_PERL5=	build
+
+LDFLAGS+=	-lzip
 
 PLIST_FILES=	bin/fcrackzip bin/fcrackzipinfo man/man1/fcrackzip.1.gz
 

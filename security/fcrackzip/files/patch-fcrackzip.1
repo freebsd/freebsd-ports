@@ -1,0 +1,22 @@
+--- fcrackzip.1.orig	2023-07-24 19:25:07 UTC
++++ fcrackzip.1
+@@ -6,7 +6,7 @@
+ .B fcrackzip
+ [-bDBchVvplum2] [--brute-force] [--dictionary] [--benchmark] [--charset characterset]
+ [--help] [--validate] [--verbose] [--init-password string/path] [--length min-max]
+-[--use-unzip] [--method name] [--modulo r/m] file...
++[--use-libzip] [--method name] [--modulo r/m] file...
+ .SH DESCRIPTION
+ .I fcrackzip
+ searches each zipfile given for encrypted files and tries to guess the
+@@ -57,8 +57,8 @@ Use an initial password of length min, and check all p
+ upto passwords of length max (including). You can omit the max
+ parameter.
+ .TP
+-.B \-u, \--use-unzip
+-Try to decompress the first file by calling unzip with the guessed
++.B \-u, \--use-libzip
++Try to decompress the first file by calling libzip with the guessed
+ password. This weeds out false positives when not enough files have
+ been given.
+ .TP

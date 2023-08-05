@@ -1,116 +1,20 @@
---- main.c.orig	2005-09-10 19:58:44 UTC
+--- main.c.orig	2023-07-24 19:20:45 UTC
 +++ main.c
-@@ -44,13 +44,112 @@ static int modul = 1;
- 
- static FILE *dict_file;
- 
-+char *
-+path_for_shell (char *dest, const char *str)
-+{
-+  /* backslash shell special charatcers */
-+
-+  char ch, *p = dest;
-+  size_t len = strlen(str);
-+  int i;
-+
-+  for (i = 0; i < len; i++)
-+  {
-+    ch = str[i];
-+
-+    switch (ch)
-+    {
-+    /* ASCII table order */
-+    case 0x20: /* space */
-+    case '!':
-+    case '"':
-+    case '#':
-+    case '$':
-+    case '&':
-+    case 0x27: /* single quote */
-+    case '(':
-+    case ')':
-+    case '*':
-+    case '+':
-+    case 0x2C: /* comma */
-+    case ':':
-+    case ';':
-+    case '<':
-+    case '>':
-+    case '?':
-+    case '[':
-+    case '\\':
-+    case ']':
-+    case '^':
-+    case '`':
-+    case '{':
-+    case '|':
-+    case '}':
-+    case '~':
-+      /* backslash special characters */
-+      *p++ = '\\';
-+      *p++ = ch;
-+      break;
-+    default:
-+      *p++ = ch;
-+    }
-+  }
-+
-+  /* terminate string */
-+  *p = '\0';
-+
-+  return dest;
-+}
-+
-+char *
-+escape_pw (char *dest, const char *str)
-+{
-+  /* backslash shell special charatcers */
-+
-+  char ch, *p = dest;
-+  size_t len = strlen(str);
-+  int i;
-+
-+  for (i = 0; i < len; i++)
-+  {
-+    ch = str[i];
-+
-+    switch (ch)
-+    {
-+    /* ASCII table order */
-+    case '"':
-+    case '$':
-+    case 0x27: /* single quote */
-+    case '\\':
-+    case '`':
-+      /* backslash special characters */
-+      *p++ = '\\';
-+      *p++ = ch;
-+      break;
-+    default:
-+      *p++ = ch;
-+    }
-+  }
-+
-+  /* terminate string */
-+  *p = '\0';
-+
-+  return dest;
-+}
-+
- int REGPARAM
- check_unzip (const char *pw)
- {
-   char buff[1024];
-+  char path[1024];
-+  char escpw[256];
-   int status;
- 
--  sprintf (buff, "unzip -qqtP \"%s\" %s " DEVNULL, pw, file_path[0]);
-+  escape_pw (escpw, pw);
-+  path_for_shell (path, file_path[0]);
-+
-+  sprintf (buff, "unzip -qqtP \"%s\" %s " DEVNULL, escpw, path); 
-+
-   status = system (buff);
- 
- #undef REDIR
+@@ -351,7 +351,7 @@ usage (int ec)
+           "          [-v|--verbose]                be more verbose\n"
+           "          [-p|--init-password string]   use string as initial password/file\n"
+           "          [-l|--length min-max]         check password with length min to max\n"
+-          "          [-u|--use-unzip]              use unzip to weed out wrong passwords\n"
++          "          [-u|--use-libzip]              use libzip to weed out wrong passwords\n"
+           "          [-m|--method num]             use method number \"num\" (see below)\n"
+           "          [-2|--modulo r/m]             only calculcate 1/m of the password\n"
+           "          file...                    the zipfiles to crack\n"
+@@ -381,7 +381,7 @@ static struct option options[] =
+   {"verbose", no_argument, 0, 'v'},
+   {"init-password", required_argument, 0, 'p'},
+   {"length", required_argument, 0, 'l'},
+-  {"use-unzip", no_argument, 0, 'u'},
++  {"use-libzip", no_argument, 0, 'u'},
+   {"method", required_argument, 0, 'm'},
+   {"modulo", required_argument, 0, 2},
+   {0, 0, 0, 0},
