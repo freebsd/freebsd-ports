@@ -13,10 +13,13 @@ LICENSE=	LGPL21
 LIB_DEPENDS=	libpcre.so:devel/pcre
 
 USES=		gmake pkgconfig libtool
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
+
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
-USE_LDCONFIG=	yes
 
 CPPFLAGS+=	$$(pkg-config --cflags libpcre)
 LDFLAGS+=	$$(pkg-config --libs libpcre)
