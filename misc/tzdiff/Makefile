@@ -7,7 +7,6 @@ COMMENT=	Showing time pairs between target timezone and localtime
 WWW=		https://github.com/belgianbeer/tzdiff
 
 LICENSE=	BSD2CLAUSE
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	belgianbeer
