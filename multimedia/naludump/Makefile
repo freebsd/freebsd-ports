@@ -10,13 +10,15 @@ WWW=		https://www.udo-richter.de/vdr/naludump.en.html
 
 LICENSE=	GPLv2
 
-USES=		alias gmake iconv:wchar_t tar:tgz
+USES=		alias gmake iconv:wchar_t localbase tar:tgz
+USE_CXXSTD=	c++14
+
+MAKE_ARGS+=	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+
+CFLAGS+=	-L${LOCALBASE}/lib ${ICONV_LIB}
+
 PATCH_STRIP=	-p1
-CFLAGS+=	"-I${LOCALBASE}/include"
-CFLAGS+=	"-L${LOCALBASE}/lib"
-CFLAGS+=	${ICONV_LIB}
-MAKE_ARGS+=	CC="${CC}" CXX="${CXX}"
-MAKE_ARGS+=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}"
+
 PLIST_FILES+=	bin/${PORTNAME}
 
 do-install:
