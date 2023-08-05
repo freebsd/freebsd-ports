@@ -24,6 +24,7 @@ BUILD_DEPENDS=	bash:shells/bash
 USES=		fortran gmake localbase:ldflags shebangfix
 SHEBANG_GLOB=	*.sh
 SHEBANG_FILES=	src/scripts/*
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 #ARCH_STR=	linux${ARCH:S/amd64/64/:S/i386/32/:C/powerpc.*/ppc/}
