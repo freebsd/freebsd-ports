@@ -18,8 +18,12 @@ RUN_DEPENDS=	scim:textproc/scim
 
 USES=		compiler:c++11-lang tar:bzip2 gmake libtool:keepla pkgconfig \
 		localbase:ldflags
+USE_CXXSTD=	c++14
+
 GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
+
 MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS_INSTALL=	zh-fcitx
