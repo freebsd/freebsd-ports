@@ -15,10 +15,13 @@ LIB_DEPENDS=	libpng.so:graphics/png \
 		libImlib2.so:graphics/imlib2
 
 USES=		pkgconfig xorg
+USE_CXXSTD=	c++14
 USE_XORG=	xext xft xpm xrender
+
 GNU_CONFIGURE=	yes
 
 PORTDOCS=	ChangeLog INSTALL README
+
 PLIST_FILES=	bin/fbdesk
 
 OPTIONS_DEFINE=	DOCS
