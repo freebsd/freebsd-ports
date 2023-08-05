@@ -16,10 +16,12 @@ LIB_DEPENDS=	liblzo2.so:archivers/lzo2 \
 		libqdbm.so:databases/qdbm
 
 USES=		iconv shebangfix
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
+
 SHEBANG_FILES=	xapidoc/installdox
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/plus
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
 CONFIGURE_ENV=	ac_cv_lib_iconv_main=yes
 CXXFLAGS+=	-fsigned-char -fPIC
 INSTALL_TARGET=	install-strip
