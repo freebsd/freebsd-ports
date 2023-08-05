@@ -16,15 +16,18 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-openssl=${OPENSSLBASE} \
 		--sbindir=${PREFIX}/bin
 
+PLIST_FILES=	bin/ssldump man/man1/ssldump.1.gz
+
 OPTIONS_DEFINE=	AES
+
 AES_DESC=	Enable AES support from CVS (EXPERIMENTAL)
 
-PLIST_FILES=	bin/ssldump man/man1/ssldump.1.gz
+AES_EXTRA_PATCHES=	${FILESDIR}/extra-patch-aes
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MAES}
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-aes
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 do-install:
