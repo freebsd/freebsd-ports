@@ -1,6 +1,6 @@
 PORTNAME=	jacktrip
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.10.0
+DISTVERSION=	2.0.0-beta1
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -14,8 +14,8 @@ BUILD_DEPENDS=	help2man:misc/help2man
 LIB_DEPENDS=	libjack.so:audio/jack \
 		librtaudio.so:audio/rtaudio
 
-USES=		meson compiler:c++17-lang gl pkgconfig qt:5
-USE_QT=		core declarative gui network networkauth quickcontrols2 svg websockets widgets buildtools:build
+USES=		meson compiler:c++17-lang gl pkgconfig qt:6
+USE_QT=		base declarative svg webengine websockets
 USE_GL=		gl
 
 USE_GITHUB=	yes
@@ -28,7 +28,6 @@ GH_TUPLE=	jacktrip:Simple-FFT:06f237780364879337750d1ac9f3b000b4b7a160:jacktrip_
 
 QMAKE_SOURCE_PATH=	${PORTNAME}.pro
 
-PLIST_FILES=	bin/${PORTNAME} \
-		man/man1/jacktrip.1.gz
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.mk>
