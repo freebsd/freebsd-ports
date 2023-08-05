@@ -1,0 +1,11 @@
+--- configure.orig	2023-07-30 19:24:45 UTC
++++ configure
+@@ -282,7 +282,7 @@ if test -n "$DEBUG"; then
+     CFLAGS="$CFLAGS -g3 -O0"
+     STRIP=""
+ else
+-    CFLAGS="-Os -ffast-math $CFLAGS"
++    CFLAGS="$CFLAGS"
+ fi
+ 
+ 
