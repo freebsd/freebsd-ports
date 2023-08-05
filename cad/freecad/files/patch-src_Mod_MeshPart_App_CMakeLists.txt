@@ -1,0 +1,12 @@
+diff --git src/Mod/MeshPart/App/CMakeLists.txt src/Mod/MeshPart/App/CMakeLists.txt
+index 6ee9deb4eb..6fb25015e3 100644
+--- src/Mod/MeshPart/App/CMakeLists.txt
++++ src/Mod/MeshPart/App/CMakeLists.txt
+@@ -21,6 +21,7 @@ include_directories(
+     ${PYTHON_INCLUDE_DIRS}
+     ${SMESH_INCLUDE_DIR}
+     ${VTK_INCLUDE_DIRS}
++    ${pybind11_INCLUDE_DIR}
+     ${EIGEN3_INCLUDE_DIR}
+ )
+ 

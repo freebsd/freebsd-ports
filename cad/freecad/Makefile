@@ -1,9 +1,5 @@
 PORTNAME=	FreeCAD
-DISTVERSION=	0.20.2
-PORTREVISION=	5
-# use these for bugfixes/snapshots
-# DISTVERSION=	0.18-16093 # git rev-list --count
-# DISTVERSIONSUFFIX=	-g690774c0e
+DISTVERSION=	0.21.0
 CATEGORIES=	cad
 
 MAINTAINER=	cmt@FreeBSD.org
@@ -13,14 +9,19 @@ WWW=		https://www.freecadweb.org/
 LICENSE=	LGPL20+
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	pyside_tool.py:devel/pyside2-tools@${PY_FLAVOR} \
+BUILD_DEPENDS=	doxygen:devel/doxygen \
+		pybind11-config:devel/py-pybind11@${PY_FLAVOR} \
+		pyside_tool.py:devel/pyside2-tools@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR} \
+		${PYTHON_INCLUDEDIR}/CXX/Config.hxx:devel/py-cxx \
 		swig:devel/swig
 LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libfreetype.so:print/freetype2 \
 		${PY_BOOST} \
 		libpyside2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/pyside2@${PY_FLAVOR} \
 		libCoin.so:graphics/Coin \
+		libfmt.so:devel/libfmt \
 		libpng.so:graphics/png \
 		libtiff.so:graphics/tiff \
 		libvtksys-${VTK_VER}.so:math/vtk${VTK_VER:R} \
@@ -30,7 +31,7 @@ LIB_DEPENDS=	libexpat.so:textproc/expat2 \
 		libarea.so:devel/libarea \
 		libmed.so:french/med \
 		libshiboken2.cpython-${PYTHON_SUFFIX}${PYTHON_ABIVER}.so:devel/shiboken2@${PY_FLAVOR} \
-		libhdf5-110.so:science/hdf5-110
+		libhdf5.so:science/hdf5
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pivy>0:graphics/py-pivy@${PY_FLAVOR} \
 		${PYTHON_SITELIBDIR}/matplotlib/__init__.py:math/py-matplotlib@${PY_FLAVOR}
@@ -41,9 +42,9 @@ USES=		dos2unix compiler:c++17-lang cmake cpe gl eigen:3 fortran jpeg \
 USE_GITHUB=	yes
 USE_XORG=	ice sm x11 xext xt
 USE_GL=		gl glu
-USE_QT=		buildtools concurrent core declarative gui location network \
-		opengl printsupport qmake:build svg webchannel widgets xml \
-		xmlpatterns
+USE_QT=		buildtools concurrent core declarative designer gui \
+		linguisttools location network opengl printsupport \
+		qmake:build svg webchannel widgets xml xmlpatterns
 USE_LDCONFIG=	yes
 
 CPE_VENDOR=	freecad_project
@@ -53,6 +54,7 @@ VTK_VER=	9.2
 DOS2UNIX_GLOB=	*.txt *.h *.cpp *.py *.qss *.csv *.pov *.stp *.ui *.wrl *.WRL
 SHEBANG_FILES=	src/Tools/freecad-thumbnailer
 
+# our HDF5/CMake integration is messy, so workarounds are required below
 CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DOPENMPI_INCLUDE_DIRS="${LOCALBASE}/mpi/openmpi/include" \
 		-DBUILD_QT5="ON" \
@@ -60,15 +62,29 @@ CMAKE_ARGS+=	-DOCC_INCLUDE_DIR="${LOCALBASE}/include/OpenCASCADE" \
 		-DPYTHON_INCLUDE_DIR="${PYTHON_INCLUDEDIR}" \
 		-DPYTHON_PACKAGES_PATH="${PYTHON_SITELIBDIR}" \
 		-DPYTHON_EXECUTABLE="${PYTHON_CMD}" \
-		-DBUILD_ASSEMBLY="OFF" -DBUILD_FLAT_MESH="ON" \
-		-DHDF5_CFLAGS="-I${LOCALBASE}/include/hdf5-110" \
+		-DPYCXX_INCLUDE_DIR="${PYTHON_INCLUDEDIR}" \
+		-DBUILD_ASSEMBLY="OFF" \
+		-DBUILD_DESIGNER_PLUGIN="ON" \
+		-DBUILD_FLAT_MESH="ON" \
+		-DBUILD_VR="OFF" \
+		-DFREECAD_USE_EXTERNAL_FMT="ON" \
+		-DFREECAD_CREATE_MAC_APP="OFF" \
+		-DFREECAD_FREECAD_LIBPACK_USE="OFF" \
+		-DFREECAD_USE_EXTERNAL_KDL="OFF" \
+		-DFREECAD_USE_EXTERNAL_SMESH="OFF" \
+		-DFREECAD_USE_FREETYPE="ON" \
+		-DFREECAD_USE_PYBIND11="ON" \
+		-Dpybind11_DIR="${PYTHON_SITELIBDIR}/pybind11/share/cmake/pybind11" \
+		-DHDF5_CFLAGS="-I${LOCALBASE}/include" \
 		-DHDF5_FOUND=TRUE \
-		-DHDF5_INCLUDE_DIRS="${LOCALBASE}/include/hdf5-110" \
-		-DHDF5_LIBRARIES="-L${LOCALBASE}/lib -lhdf5-110" \
+		-DHDF5_VERSION="1.12.2" \
+		-DHDF5_INCLUDE_DIRS="${LOCALBASE}/include/hdf5" \
+		-DHDF5_LIBRARIES="-L${LOCALBASE}/lib -lhdf5" \
 		-DHDF5_LIBRARY_DIRS="${LOCALBASE}/lib" \
 		-DPYSIDE2RCCBINARY="${RCC}" \
 		-DPYSIDE2UICBINARY="${UIC}" \
 		-DBUILD_ENABLE_CXX_STD=C++17
+
 
 CMAKE_INSTALL_PREFIX=	${PREFIX}/${PORTNAME}
 # Install XDG icons and files to the standard path
