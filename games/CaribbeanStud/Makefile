@@ -12,6 +12,7 @@ LICENSE=	MIT
 
 MAKEFILE=	Xmakefile
 USES=		motif
+USE_CXXSTD=	c++14
 CFLAGS+=	-Wno-deprecated
 
 OPTIONS_DEFINE=	DOCS
