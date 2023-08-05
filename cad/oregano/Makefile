@@ -22,6 +22,12 @@ USE_GNOME=	atk cairo gdkpixbuf2 glib20 gtk30 gtksourceview3 intltool libxml2 pan
 
 GLIB_SCHEMAS=	io.ahoi.oregano.gschema.xml
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's|$${MANDIR}|${MANPREFIX}/man|' ${WRKSRC}/data/wscript
 
