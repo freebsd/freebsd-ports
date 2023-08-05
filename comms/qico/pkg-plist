@@ -29,3 +29,6 @@ bin/qctl
 man/man8/qctl.8.gz
 man/man8/qico.8.gz
 sbin/qico
+@dir /var/log/fido
+@dir %%QBASEDIR%%
+@dir /var/spool/fido
