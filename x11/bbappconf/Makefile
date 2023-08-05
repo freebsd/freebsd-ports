@@ -9,7 +9,9 @@ COMMENT=	Application configuring tool for the blackbox window manager
 WWW=		http://bbtools.sourceforge.net/
 
 USES=		xorg
+USE_CXXSTD=	c++14
 USE_XORG=	x11
+
 GNU_CONFIGURE=	yes
 
 do-install:
