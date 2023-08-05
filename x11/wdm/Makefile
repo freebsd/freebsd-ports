@@ -50,6 +50,12 @@ WDMDIR=		${PREFIX}/lib/X11/wdm
 PAM_CONFIGURE_OFF=	--disable-pam
 PAM_CONFIGURE_ON=	--with-pamdir=${LOCALBASE}/etc/pam.d/
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e \
 		's|/usr/X11R6|${PREFIX}|g' ${WRKSRC}/configs/KillConsole
