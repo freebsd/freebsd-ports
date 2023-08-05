@@ -11,15 +11,22 @@ WWW=		http://mdcached.sourceforge.net/
 LICENSE=	BSD2CLAUSE
 
 USES=		tar:tgz
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 USE_LDCONFIG=	yes
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
 PORTDOCS=	UserGuide.txt mdcached.txt
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=dynamic-exception-spec
+.endif
+
 post-patch:
-	@${REINPLACE_CMD} 's|ADDCFLAGS = -Wall -g -O3 -march=native|ADDCFLAGS = ${CFLAGS}|' \
+	@${REINPLACE_CMD} 's|ADDCFLAGS = -Wall -g -O3|ADDCFLAGS = ${CFLAGS}|' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} 's|/usr/local|${PREFIX}|' \
 		${WRKSRC}/FreeBSD/${PORTNAME}
