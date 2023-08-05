@@ -1,3 +1,3 @@
-TIMESTAMP = 1675864912
-SHA256 (build2-toolchain-0.15.0.tar.xz) = 5152f679daeb9627f9710c60ef88de1591c02097146268be2f5aea929d2837c4
-SIZE (build2-toolchain-0.15.0.tar.xz) = 5122496
+TIMESTAMP = 1691238582
+SHA256 (build2-toolchain-0.16.0.tar.xz) = 23793f682a17b1d95c80bbd849244735ed59a3e27361529aa4865d2776ff8adc
+SIZE (build2-toolchain-0.16.0.tar.xz) = 5545392

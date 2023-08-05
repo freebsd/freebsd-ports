@@ -1,5 +1,5 @@
 PORTNAME=	build2
-DISTVERSION=	0.15.0
+DISTVERSION=	0.16.0
 CATEGORIES=	devel
 MASTER_SITES=	https://download.build2.org/${DISTVERSION}/
 DISTNAME=	build2-toolchain-${DISTVERSION}
@@ -19,6 +19,10 @@ USES=		gmake pkgconfig sqlite tar:xz
 #  info: ccache cannot be used as a C compiler
 #  info: use config.c to override
 NO_CCACHE=	yes
+
+PLIST_SUB=	SOVERSION=${DISTVERSION:R}
+
+OPTIONS_DEFINE=	DOCS
 
 pre-build:
 # phase 1
