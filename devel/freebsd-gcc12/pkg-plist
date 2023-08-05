@@ -296,6 +296,7 @@ lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/install-tools/mkheaders.conf
 %%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/optinfo.h
 %%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/options.h
 %%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/opts-diagnostic.h
+%%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/opts-jobserver.h
 %%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/opts.h
 %%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/ordered-hash-map.h
 %%PLUGINS%%lib/gcc/%%GCC_TARGET%%/%%GCC_VERSION%%/plugin/include/output.h
