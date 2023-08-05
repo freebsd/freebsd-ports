@@ -1,0 +1,41 @@
+user  %%WWWOWN%%;
+worker_processes  auto;
+worker_rlimit_nofile 65536;
+
+error_log  %%LOGDIR%%/error.log notice;
+pid        %%RUNDIR%%/angie.pid;
+
+events {
+    worker_connections  65536;
+}
+
+http {
+    include       %%ETCDIR%%/mime.types;
+    default_type  application/octet-stream;
+
+    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+                      '$status $body_bytes_sent "$http_referer" '
+                      '"$http_user_agent" "$http_x_forwarded_for"';
+
+    log_format extended '$remote_addr - $remote_user [$time_local] "$request" '
+                        '$status $body_bytes_sent "$http_referer" rt="$request_time" '
+                        '"$http_user_agent" "$http_x_forwarded_for" '
+                        'h="$host" sn="$server_name" ru="$request_uri" u="$uri" '
+                        'ucs="$upstream_cache_status" ua="$upstream_addr" us="$upstream_status" '
+                        'uct="$upstream_connect_time" urt="$upstream_response_time"';
+
+    access_log  %%LOGDIR%%/access.log  main;
+
+    sendfile        on;
+    #tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+    #gzip  on;
+
+    include %%ETCDIR%%/http.d/*.conf;
+}
+
+#stream {
+#    include %%ETCDIR%%/stream.d/*.conf;
+#}

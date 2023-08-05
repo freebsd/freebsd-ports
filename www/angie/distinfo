@@ -1,3 +1,5 @@
-TIMESTAMP = 1686140577
+TIMESTAMP = 1690816224
 SHA256 (angie-1.2.0.tar.gz) = 82f23115c2e8ebf00d5429622ad96e8c7e785e87bc298b292246660cc61e2cff
 SIZE (angie-1.2.0.tar.gz) = 1510159
+SHA256 (leev-ngx_http_geoip2_module-3.4_GH0.tar.gz) = ad72fc23348d715a330994984531fab9b3606e160483236737f9a4a6957d9452
+SIZE (leev-ngx_http_geoip2_module-3.4_GH0.tar.gz) = 8877

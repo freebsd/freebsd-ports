@@ -1,19 +1,28 @@
-angie/conf/angie.conf
-angie/conf/angie.conf.default
-angie/conf/fastcgi.conf
-angie/conf/fastcgi.conf.default
-angie/conf/fastcgi_params
-angie/conf/fastcgi_params.default
-angie/conf/koi-utf
-angie/conf/koi-win
-angie/conf/mime.types
-angie/conf/mime.types.default
-angie/conf/scgi_params
-angie/conf/scgi_params.default
-angie/conf/uwsgi_params
-angie/conf/uwsgi_params.default
-angie/conf/win-utf
-angie/html/50x.html
-angie/html/index.html
-angie/sbin/angie
-@dir angie/logs
+@dir %%ETCDIR%%/http.d
+@dir %%ETCDIR%%/stream.d
+@dir %%CACHEDIR%%
+@dir %%LOGDIR%%
+@dir %%MODDIR%%
+
+%%ETCDIR%%/modules
+
+sbin/angie-nodebug
+sbin/angie
+%%DEBUG%%sbin/angie-debug
+
+man/man8/angie.8.gz
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/CHANGES.ru
+%%DOCSDIR%%/README.rst
+
+@sample %%ETCDIR%%/angie.conf.sample
+@sample %%ETCDIR%%/fastcgi.conf.sample
+@sample %%ETCDIR%%/fastcgi_params.sample
+@sample %%ETCDIR%%/mime.types.sample
+@sample %%ETCDIR%%/scgi_params.sample
+@sample %%ETCDIR%%/uwsgi_params.sample
+@sample %%ETCDIR%%/http.d/default.conf.sample
+@sample %%ETCDIR%%/stream.d/example.conf.sample
+
+@sample %%WWWDIR%%/html/50x.html.sample
+@sample %%WWWDIR%%/html/index.html.sample

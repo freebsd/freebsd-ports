@@ -1,0 +1,73 @@
+#!/bin/sh
+
+# PROVIDE: angie
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+
+# Add these lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable the service:
+#
+# angie_enable (bool):  Set to "NO" by default.
+#                       Set it to "YES" to enable angie.
+#
+# angie_flags (str):    Set to "" by default.
+#                       Extra flags passed to start command.
+
+. /etc/rc.subr
+
+name=angie
+rcvar=angie_enable
+
+command=%%PREFIX%%/sbin/${name}
+pidfile=%%RUNDIR%%/${name}.pid
+required_files=%%ETCDIR%%/${name}.conf
+
+extra_commands="configtest reload upgrade"
+
+configtest_cmd=angie_config_check
+upgrade_cmd="angie_upgrade"
+
+reload_precmd=angie_config_check
+restart_precmd=angie_config_check
+start_precmd=angie_config_check
+
+load_rc_config $name
+
+: ${angie_enable:=NO}
+: ${angie_flags:=}
+: ${angie_config_valid:=""}
+
+angie_config_check() {
+	[ -n "${angie_config_valid}" ] && return 0
+
+	echo "Checking config validity:"
+	eval ${command} ${angie_flags} -t || return 1
+
+	angie_config_valid=yes
+}
+
+angie_upgrade() {
+	if [ ! -s ${pidfile} ]; then
+		echo "No running ${name} found."
+		return 1
+	fi
+
+	angie_config_check || return 1
+
+	echo "Starting new ${name}."
+	kill -USR2 $(cat ${pidfile})
+
+	for i in $(seq 5); do
+		sleep 1
+		if [ -f ${pidfile} -a -f ${pidfile}.oldbin ]; then
+			echo "Shutting down old ${name}."
+			kill -QUIT $(cat ${pidfile}.oldbin)
+			return 0
+		fi
+	done
+
+	echo "Upgrade failed!"
+	return 1
+}
+
+run_rc_command "$1"

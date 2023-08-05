@@ -1,0 +1,13 @@
+[
+{ type: install
+  message: <<EOM
+
+
+Thanks for using Angie!
+
+Please find the official documentation for Angie here:
+* https://angie.software/en/
+
+EOM
+}
+]
