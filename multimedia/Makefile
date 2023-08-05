@@ -260,6 +260,7 @@
     SUBDIR += obs-studio
     SUBDIR += obs-text-pthread
     SUBDIR += obs-waveform
+    SUBDIR += obuparse
     SUBDIR += oggvideotools
     SUBDIR += ogmrip
     SUBDIR += ogmtools

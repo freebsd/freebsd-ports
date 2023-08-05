@@ -1,0 +1,12 @@
+Simple and portable single file AV1 OBU parser written in mostly C89 with a
+tiny bit of C99.
+
+*  No allocations; only works on user-provided buffers and the stack.
+*  OBU header parsing.
+*  Sequence Header OBU parsing.
+*  Metadata OBU parsing.
+*  Tile List OBU parsing.
+*  Tile Group OBU parsing.
+*  Frame Header OBU parsing.
+*  Frame OBU parsing.
+
