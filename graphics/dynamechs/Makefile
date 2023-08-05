@@ -11,13 +11,17 @@ COMMENT=	Multibody Dynamic Simulation Library
 WWW=		http://dynamechs.sourceforge.net/
 
 USES=		gl gmake perl5 shebangfix tar:bzip2
+USE_CXXSTD=	c++14
 USE_GL=		glut
+USE_LDCONFIG=	yes
 USE_PERL5=	build
+
 SHEBANG_FILES=	make/*.pl
+
 MAKE_ENV=	OPENGLINCDIR="${LOCALBASE}/include" \
 		OPENGLLIBDIR="${LOCALBASE}/lib"
+
 ALL_TARGET=	freebsd
-USE_LDCONFIG=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e \
