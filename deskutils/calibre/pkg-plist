@@ -808,6 +808,7 @@ lib/calibre/calibre/gui2/dialogs/confirm_merge.py
 lib/calibre/calibre/gui2/dialogs/conversion_error.py
 lib/calibre/calibre/gui2/dialogs/conversion_error_ui.py
 lib/calibre/calibre/gui2/dialogs/custom_recipes.py
+lib/calibre/calibre/gui2/dialogs/data_files_manager.py
 lib/calibre/calibre/gui2/dialogs/delete_matching_from_device.py
 lib/calibre/calibre/gui2/dialogs/delete_matching_from_device_ui.py
 lib/calibre/calibre/gui2/dialogs/device_category_editor.py
