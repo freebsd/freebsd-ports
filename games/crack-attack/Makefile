@@ -8,12 +8,13 @@ MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	OpenGL game based on Super Nintendo classic Tetris Attack
 WWW=		https://www.nongnu.org/crack-attack/
 
-USES=		compiler:c++11-lang gl gnome pkgconfig xorg
-USE_XORG=	x11 xi xmu sm ice
+USES=		compiler:c++11-lang gl gnome localbase pkgconfig xorg
+USE_CXXSTD=	c++14
 USE_GL=		glut
 USE_GNOME=	gtk20
+USE_XORG=	x11 xi xmu sm ice
+
 GNU_CONFIGURE=	yes
-CPPFLAGS+=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man6/${PORTNAME}.6.gz \
