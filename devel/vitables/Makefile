@@ -1,7 +1,6 @@
 PORTNAME=	vitables
 DISTVERSIONPREFIX=	v
-DISTVERSION=	3.0.2
-PORTREVISION=	10
+DISTVERSION=	3.0.3
 CATEGORIES=	devel science python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -11,24 +10,21 @@ WWW=		https://github.com/uvemas/ViTables
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
+BUILD_DEPENDS=	${PY_SETUPTOOLS} \
+		${PYTHON_PKGNAMEPREFIX}hatchling>0:devel/py-hatchling@${PY_FLAVOR}
 RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_PKGNAMEPREFIX}QtPy>=1.2.1:devel/py-QtPy@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}QtPy>=2.2:devel/py-QtPy@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}numexpr>=2.0:math/py-numexpr@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}tables>=3.0:devel/py-tables@${PY_FLAVOR}
 
 USES=		dos2unix python pyqt:5
-USE_PYTHON=	distutils cython noflavors autoplist
+USE_PYTHON=	pep517 cython noflavors autoplist pytest # 3 tests fail, see https://github.com/uvemas/ViTables/issues/124
 USE_PYQT=	pyqt5:run sip:run
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	uvemas
 GH_PROJECT=	ViTables
 
-DOS2UNIX_FILES=	setup.py
-
 NO_ARCH=	yes
-
-post-patch:
-	@${REINPLACE_CMD} "s|version=read('VERSION')|version='${DISTVERSION}'|" ${WRKSRC}/setup.py
 
 .include <bsd.port.mk>
