@@ -1,6 +1,6 @@
 PORTNAME=	gcc
 PORTVERSION=	12.2.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel
 MASTER_SITES=	GCC
 PKGNAMEPREFIX=	${TARGETARCH}-
@@ -53,7 +53,7 @@ CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 		--with-pkgversion="FreeBSD Ports Collection for ${PKGNAMEPREFIX:C/-//g}" \
 		--with-system-zlib \
 		--without-zstd \
-		--with-gxx-include-dir=/usr/include/c++/v1/ \
+		--with-gxx-libcxx-include-dir=//usr/include/c++/v1 \
 		--with-sysroot="/" \
 		--with-as=${LOCALBASE}/bin/${BU_PREFIX}-as \
 		--with-ld=${LOCALBASE}/bin/${BU_PREFIX}-ld
@@ -61,6 +61,8 @@ CONFIGURE_ARGS+=--target=${GCC_TARGET} --disable-nls --enable-languages=c,c++ \
 .if ${TARGETARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=--with-abi=elfv2
 .endif
+
+CPPFLAGS+=	-DLIBCXXABI=NULL
 
 ALL_TARGET=	all-gcc
 INSTALL_TARGET=	install-gcc
@@ -79,8 +81,6 @@ BU_PREFIX=	${GCC_TARGET}
 GCC_TARGET=	${TARGETARCH:S/amd64/x86_64/}-${TARGET_ABI}-${OPSYS:tl}${OSREL}
 
 post-patch:
-	@${REINPLACE_CMD} -e '/LIBSTDCXX/ s/stdc\+\+/c\+\+/g ' \
-		${WRKSRC}//gcc/cp/g++spec.cc
 	@${REINPLACE_CMD} -e '/LOCAL_INCLUDE_DIR/ d ' \
 		${WRKSRC}//gcc/Makefile.in
 
