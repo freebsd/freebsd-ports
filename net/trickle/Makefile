@@ -14,10 +14,11 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 LIB_DEPENDS=	libevent.so:devel/libevent
 
 USES=		libtool localbase
+USE_LDCONFIG=	yes
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} \
 		--sysconfdir=${PREFIX}/etc
-USE_LDCONFIG=	yes
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -25,6 +26,11 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PREFIX}/lib/trickle/trickle-overload.so
 	${INSTALL_DATA} ${FILESDIR}/trickled.conf ${STAGEDIR}${PREFIX}/etc/trickled.conf.sample
