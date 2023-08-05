@@ -30,8 +30,6 @@ DEPRECATED=	Not used anymore to create rc-state releases
 EXPIRATION_DATE=	2023-09-01
 
 USES=		compiler:c++11-lib cpe perl5 shebangfix tar:xz
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	no matching function for call to 'CRYPTO_get_ex_new_index'
 CONFLICTS=	squid3-* squid-4.*
 CPE_VENDOR=	squid-cache
 SHEBANG_FILES=	scripts/*.pl contrib/*.pl tools/*.pl
@@ -290,6 +288,11 @@ WITH_DEBUG?=		yes
 
 # Finally, add additional user specified configuration options:
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN_SSL=	base openssl30 openssl31
+BROKEN_SSL_REASON=	no matching function for call to 'CRYPTO_get_ex_new_index'
+.endif
 
 post-patch:
 	@(cd ${WRKSRC} && ${REINPLACE_CMD} \
