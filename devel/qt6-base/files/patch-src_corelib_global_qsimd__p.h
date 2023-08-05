@@ -1,34 +1,18 @@
---- src/corelib/global/qsimd_p.h.orig	2023-08-04 22:13:36 UTC
+Fix build with CPUTYPE?=bdver[23].
+
+It is incorrectly assumed here that all CPUs with FMA instruction sets
+also have AVX2 instruction sets. This is true for Intel CPUs, but not
+for AMD bdver[23] which have FMA, but not AVX2. All Intel and AMD CPUs
+that have AVX2 also have BMI2, so use that as a check instead.
+
+--- src/corelib/global/qsimd_p.h.orig	2023-08-05 14:03:16 UTC
 +++ src/corelib/global/qsimd_p.h
-@@ -226,15 +226,6 @@ asm(
+@@ -226,7 +226,7 @@ asm(
  //
  // macOS's fat binaries support the "x86_64h" sub-architecture and the GNU libc
  // ELF loader also supports a "haswell/" subdir (e.g., /usr/lib/haswell).
 -#  define ARCH_HASWELL_MACROS       (__AVX2__ + __FMA__)
--#  if ARCH_HASWELL_MACROS != 0
--#    if ARCH_HASWELL_MACROS != 2
--#      error "Please enable all x86-64-v3 extensions; you probably want to use -march=haswell or -march=x86-64-v3 instead of -mavx2"
--#    endif
--static_assert(ARCH_HASWELL_MACROS, "Undeclared identifiers indicate which features are missing.");
--#    define __haswell__       1
--#  endif
--#  undef ARCH_HASWELL_MACROS
- 
- // x86-64 sub-architecture version 4
- //
-@@ -242,15 +233,6 @@ static_assert(ARCH_HASWELL_MACROS, "Undeclared identif
- // 6th generation (codename "Skylake"). AMD Zen4 is the their first processor
- // with AVX512 support and it includes all of these too.
- //
--#  define ARCH_SKX_MACROS           (__AVX512F__ + __AVX512BW__ + __AVX512CD__ + __AVX512DQ__ + __AVX512VL__)
--#  if ARCH_SKX_MACROS != 0
--#    if ARCH_SKX_MACROS != 5
--#      error "Please enable all x86-64-v4 extensions; you probably want to use -march=skylake-avx512 or -march=x86-64-v4 instead of -mavx512f"
--#    endif
--static_assert(ARCH_SKX_MACROS, "Undeclared identifiers indicate which features are missing.");
--#    define __skylake_avx512__  1
--#  endif
--#  undef ARCH_SKX_MACROS
- #endif  /* Q_PROCESSOR_X86 */
- 
- // NEON intrinsics
++#  define ARCH_HASWELL_MACROS       (__AVX2__ + __BMI2__)
+ #  if ARCH_HASWELL_MACROS != 0
+ #    if ARCH_HASWELL_MACROS != 2
+ #      error "Please enable all x86-64-v3 extensions; you probably want to use -march=haswell or -march=x86-64-v3 instead of -mavx2"
