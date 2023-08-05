@@ -22,6 +22,7 @@ LIB_DEPENDS=	libblas.so:math/blas \
 		libClp.so:math/clp
 
 USES=		gmake libtool pkgconfig
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
