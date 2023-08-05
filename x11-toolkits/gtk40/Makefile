@@ -1,6 +1,5 @@
 PORTNAME=	gtk
-PORTVERSION=	4.10.4
-PORTREVISION=	1
+PORTVERSION=	4.12.0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
 PKGNAMESUFFIX=	4
@@ -38,7 +37,7 @@ LDFLAGS+=	-lexecinfo
 
 BINARY_ALIAS=	python3=${PYTHON_CMD}
 
-LIBVERSION=	1.1000.4
+LIBVERSION=	1.1200.0
 PLIST_SUB+=	LIBVERSION=${LIBVERSION}
 
 GLIB_SCHEMAS=	org.gtk.Demo4.gschema.xml \
@@ -67,7 +66,8 @@ GSTREAMER_USES=		gstreamer
 GSTREAMER_USE=		GSTREAMER=bad,gl
 
 VULKAN_DESC=		GDK Vulkan renderer backend
-VULKAN_BUILD_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
+VULKAN_BUILD_DEPENDS=	glslc:graphics/shaderc \
+			vulkan-headers>0:graphics/vulkan-headers
 VULKAN_LIB_DEPENDS=	libvulkan.so:graphics/vulkan-loader
 VULKAN_RUN_DEPENDS=	vulkan-headers>0:graphics/vulkan-headers
 VULKAN_MESON_ENABLED=	vulkan
