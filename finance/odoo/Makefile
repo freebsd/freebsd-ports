@@ -1,5 +1,5 @@
 PORTNAME=	odoo
-PORTVERSION=	16.0
+PORTVERSION=	16.0.20230804
 CATEGORIES=	finance www
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
@@ -10,7 +10,7 @@ WWW=		https://www.odoo.com
 LICENSE=	LGPL3
 
 USE_GITHUB=	yes
-GH_TAGNAME=	0a766557bcf95e0b9fc3363103fce8277b0fa835
+GH_TAGNAME=	b46544d3cbd4116f69a03064c61798cef8435c5b
 
 LIB_DEPENDS=	libxml2.so:textproc/libxml2 \
 		libxslt.so:textproc/libxslt \
@@ -54,6 +54,7 @@ RUN_DEPENDS=	wkhtmltopdf>0:converters/wkhtmltopdf \
 		${PYTHON_PKGNAMEPREFIX}psutil>0:sysutils/py-psutil@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}libsass>0:www/py-libsass@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}requests>0:www/py-requests@${PY_FLAVOR} \
+		${PYTHON_PKGNAMEPREFIX}requests-file>0:www/py-requests-file@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}werkzeug>0:www/py-werkzeug@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}secure-cookie>0:www/py-secure-cookie@${PY_FLAVOR} \
 		${PYTHON_PKGNAMEPREFIX}XlsxWriter>=0:textproc/py-xlsxwriter@${PY_FLAVOR} \
@@ -87,18 +88,10 @@ CONFLICTS=	odoo14 odoo15
 ETCDIR=		${PREFIX}/etc/odoo
 
 post-patch:
-	@${REINPLACE_CMD} -i "" -e 's|werkzeug.url_quote_plus|werkzeug.urls.url_quote_plus|g' \
-		${WRKSRC}/odoo/addons/base/models/ir_ui_view.py
-	@${REINPLACE_CMD} -i "" -e 's|werkzeug.url_unquote_plus|werkzeug.urls.url_quote_plus|g' \
-		-e 's|.NumberConverter|.converters.NumberConverter|g' \
-		${WRKSRC}/odoo/addons/base/models/ir_http.py \
-		${WRKSRC}/odoo/addons/http_routing/models/ir_http.py
-	@${REINPLACE_CMD} -i "" -e 's|from werkzeug import url_encode|from werkzeug.urls import url_encode|g' \
-		${WRKSRC}/odoo/addons/mail/models/mail_thread.py \
-		${WRKSRC}/odoo/addons/hr/models/hr_employee.py
 	@${REINPLACE_CMD} -i "" -e 's|(index !== |(index == |g' \
 		${WRKSRC}/odoo/addons/web/static/src/legacy/js/libs/content-disposition.js \
 		${WRKSRC}/odoo/addons/web/static/src/core/network/download.js
+	@${REINPLACE_CMD} -i "" -e 's|charset =|_charset =|g' ${WRKSRC}/odoo/http.py
 
 post-extract:
 	@cd ${WRKSRC}/addons/ && ${MV} * ${WRKSRC}/odoo/addons/
