@@ -103,6 +103,7 @@
     SUBDIR += gamess-us
     SUBDIR += gbtolib
     SUBDIR += gchemutils
+    SUBDIR += gcp
     SUBDIR += gdma
     SUBDIR += geant4
     SUBDIR += gemmi
