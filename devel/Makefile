@@ -521,7 +521,6 @@
     SUBDIR += dash.el
     SUBDIR += dasm
     SUBDIR += datadraw
-    SUBDIR += date
     SUBDIR += dbus
     SUBDIR += dbus-c++
     SUBDIR += dbus-glib
