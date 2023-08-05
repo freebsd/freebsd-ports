@@ -1,0 +1,9 @@
+--- Makefile.am.orig	2023-07-30 11:59:40 UTC
++++ Makefile.am
+@@ -1,5 +1,5 @@
+ warningflags = -Wall -Wextra -Wno-unused-parameter -Wno-unused-function -Wno-ignored-attributes
+-commoncflags = -O3 -fvisibility=hidden $(warningflags) -I$(srcdir)/include $(DEBUGCFLAGS) $(MFLAGS) $(UNICODECFLAGS) $(STACKREALIGN)
++commoncflags = -fvisibility=hidden $(warningflags) -I$(srcdir)/include $(DEBUGCFLAGS) $(MFLAGS) $(UNICODECFLAGS) $(STACKREALIGN)
+ AM_CXXFLAGS = -std=c++17 $(commoncflags)
+ AM_CFLAGS = -std=c99 $(commoncflags)
+ ACLOCAL_AMFLAGS = -I m4

@@ -1,6 +1,5 @@
 PORTNAME=	vapoursynth
-DISTVERSION=	R54
-PORTREVISION=	4
+DISTVERSION=	R63
 CATEGORIES=	multimedia
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,101 +7,45 @@ COMMENT=	Video processing framework with simplicity in mind
 WWW=		https://www.vapoursynth.com/
 
 LICENSE=	LGPL21+
+LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
+BUILD_DEPENDS=	${BUILD_DEPENDS_${ARCH}}
+BUILD_DEPENDS_amd64=	nasm:devel/nasm
+LIB_DEPENDS=	libzimg.so:graphics/sekrit-twc-zimg
+
+USES=		autoreconf compiler:c++17-lang gmake libtool localbase pathfix python pkgconfig
+USE_PYTHON=	cython
 USE_GITHUB=	yes
-
-USES=		autoreconf gmake libtool localbase pathfix pkgconfig
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USE_LDCONFIG=	yes
+
+BINARY_ALIAS=	cython=cython-${PYTHON_VER}
+INSTALL_TARGET=	install-strip
+
+GNU_CONFIGURE=	yes
+
 DATADIR=	${PREFIX}/lib/vapoursynth
 
+CONFIGURE_ARGS=	--disable-static
+
 OPTIONS_DEFINE=	DEBUG DOCS FRAME_GUARD
-OPTIONS_DEFAULT=${OPTIONS_GROUP_COMPS} ${OPTIONS_GROUP_PLUGINS}
 OPTIONS_SUB=	yes
-
-OPTIONS_DEFINE_amd64=	SIMD
-OPTIONS_DEFINE_i386=	SIMD
-OPTIONS_DEFAULT_amd64=	SIMD
-
-OPTIONS_GROUP=		COMPS PLUGINS
-COMPS_DESC=		Components
-OPTIONS_GROUP_COMPS=	CORE PYTHON VSPIPE VSSCRIPT
-PLUGINS_DESC=		Plugins
-OPTIONS_GROUP_PLUGINS=	ASS EEDI3 IMAGEMAGICK MISCFILTERS MORPHO TESSERACT \
-			REMOVEGRAIN VINVERSE VIVTC
-
-# General options
 
 DEBUG_CONFIGURE_ENABLE=		debug
 
-DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx
-DOCS_USES=			makeinfo
-DOCS_INFO=			VapourSynth
+DOCS_BUILD_DEPENDS=		sphinx-build:textproc/py-sphinx \
+				${PYTHON_PKGNAMEPREFIX}sphinx_rtd_theme>0:textproc/py-sphinx_rtd_theme@${PY_FLAVOR}
 DOCS_PORTDOCS=			*
 
 FRAME_GUARD_DESC=		Check integrity after each filter
 FRAME_GUARD_CONFIGURE_ENABLE=	guard-pattern
 
-# VSSCRIPT or REMOVEGRAIN
-SIMD_BUILD_DEPENDS=		nasm:devel/nasm
-SIMD_CONFIGURE_ENABLE=		x86-asm
+.include <bsd.port.pre.mk>
 
-# COMPS group
-
-CORE_DESC=			Core library
-CORE_BUILD_DEPENDS=		sekrit-twc-zimg>=2.9.3:graphics/sekrit-twc-zimg
-CORE_LIB_DEPENDS=		libzimg.so:graphics/sekrit-twc-zimg
-CORE_USES=			compiler:c++11-lib
-CORE_CONFIGURE_ENABLE=		core
-
-PYTHON_USES=			python
-PYTHON_USE=			python=cython
-PYTHON_VARS=			BINARY_ALIAS=cython=cython-${PYTHON_VER}
-PYTHON_CONFIGURE_ENABLE=	python-module
-PYTHON_IMPLIES=			CORE
-
-VSPIPE_DESC=			Command line interface
-VSPIPE_USES=			compiler:c++11-lib
-VSPIPE_CONFIGURE_ENABLE=	vspipe
-VSPIPE_IMPLIES=			VSSCRIPT
-
-VSSCRIPT_DESC=			Scripting library
-VSSCRIPT_USES=			compiler:c++11-lib python
-VSSCRIPT_CONFIGURE_ENABLE=	vsscript
-
-# PLUGINS group
-
-ASS_DESC=			Subtitles rendering via libass
-ASS_LIB_DEPENDS=		libavcodec.so:multimedia/ffmpeg \
-				libass.so:multimedia/libass
-ASS_USES=			iconv
-ASS_CONFIGURE_ENABLE=		subtext
-
-EEDI3_DESC=			Very slow edge directed interpolation
-EEDI3_CONFIGURE_ENABLE=		eedi3
-
-IMAGEMAGICK_USES=		compiler:c++11-lib magick:7
-IMAGEMAGICK_CONFIGURE_ENABLE=	imwri
-
-TESSERACT_DESC=			Optical Character Recognition via Tesseract
-TESSERACT_LIB_DEPENDS=		libtesseract.so:graphics/tesseract
-TESSERACT_CONFIGURE_ENABLE=	ocr
-
-MISCFILTERS_DESC=		Miscellaneous filters
-MISCFILTERS_CONFIGURE_ENABLE=	miscfilters
-
-MORPHO_DESC=			Morphological filter
-MORPHO_CONFIGURE_ENABLE=	morpho
-
-REMOVEGRAIN_DESC=		3x3 median and convolution denoising
-REMOVEGRAIN_CONFIGURE_ENABLE=	removegrain
-
-VINVERSE_DESC=			Remove residual combing
-VINVERSE_CONFIGURE_ENABLE=	vinverse
-
-VIVTC_DESC=			Field matching, inverse telecine and decimation
-VIVTC_CONFIGURE_ENABLE=		vivtc
+.if ${ARCH} == amd64 && defined(MACHINE_CPU) && ${MACHINE_CPU:Mavx2}
+CONFIGURE_ARGS+= --enable-x86-asm
+.else
+CONFIGURE_ARGS+= --disable-x86-asm
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/x86_64/&|amd64/' \
@@ -111,20 +54,10 @@ post-patch:
 		${WRKSRC}/configure.ac
 
 post-build-DOCS-on:
-	@${DO_MAKE_BUILD} html texinfo -C${WRKSRC}/doc
-	@${DO_MAKE_BUILD} info -C${WRKSRC}/doc/_build/texinfo
-	@if [ -n "${PORT_OPTIONS:MVSPIPE}" ]; then \
-		${DO_MAKE_BUILD} man -C${WRKSRC}/doc; \
-	fi
+	@${LOCALBASE}/bin/sphinx-build-${PYTHON_VER} -d ${WRKDIR} ${WRKSRC}/doc ${WRKSRC}/doc/_build/html	
 
 post-install-DOCS-on:
-	${INSTALL_DATA} ${WRKSRC}/doc/_build/texinfo/VapourSynth.info \
-		${STAGEDIR}${PREFIX}/${INFO_PATH}
 	(cd ${WRKSRC}/doc/_build/html && ${COPYTREE_SHARE} \
 		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
-	@if [ -n "${PORT_OPTIONS:MVSPIPE}" ]; then \
-		${INSTALL_MAN} -v ${WRKSRC}/doc/_build/man/vspipe.1 \
-			${STAGEDIR}${PREFIX}/share/man/man1; \
-	fi
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
