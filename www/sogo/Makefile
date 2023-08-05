@@ -63,6 +63,10 @@ SUB_LIST+=		GNUSTEP_LOCAL_TOOLS=${GNUSTEP_LOCAL_TOOLS} \
 CPPFLAGS+=       -Wno-error=int-conversion
 .endif
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	@${GREP} -rlF '/etc/sogo' ${WRKSRC} \
 		| ${XARGS} ${REINPLACE_CMD} 's#/etc/sogo#${PREFIX}/etc/sogo#g'
