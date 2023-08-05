@@ -1,64 +1,39 @@
 PORTNAME=	l-smash-works
-DISTVERSION=	0.0-940 # git rev-list --count HEAD
-DISTVERSIONSUFFIX=	-g198cc78
-PORTREVISION=	2
+DISTVERSION=	20230716
 CATEGORIES=	multimedia
 PKGNAMEPREFIX=	vapoursynth-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	L-SMASH source plugin for VapourSynth
-WWW=		https://github.com/VFR-maniac/L-SMASH-Works/tree/master/VapourSynth
+WWW=		https://github.com/HomeOfAviSynthPlusEvolution/L-SMASH-Works
 
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BROKEN=		fails to build with FFmpeg 6 (PR 270303)
-
 BUILD_DEPENDS=	${LOCALBASE}/include/vapoursynth/VSHelper.h:multimedia/vapoursynth
-BUILD_DEPENDS+=	ffmpeg>=3.2,1:multimedia/ffmpeg
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		liblsmash.so:multimedia/l-smash
 
+USES=		meson pkgconfig
 USE_GITHUB=	yes
-GH_ACCOUNT=	VFR-maniac
+GH_ACCOUNT=	HomeOfAviSynthPlusEvolution
 GH_PROJECT=	L-SMASH-Works
+USE_LDFLAGS=	yes
 
-USES=		gmake pkgconfig shebangfix
 EXCLUDE=	VSHelper.h VSScript.h VapourSynth.h
 EXTRACT_AFTER_ARGS=${EXCLUDE:S,^,--exclude ,}
-WRKSRC_SUBDIR=	VapourSynth
-SHEBANG_FILES=	configure
-bash_CMD=	${SH}
-HAS_CONFIGURE=	yes
-CONFIGURE_ENV=	LD="${CC}" REV="${PORTVERSION:E}" \
-		HASH="${DISTVERSIONSUFFIX:S/^-g//}"
-CONFIGURE_ARGS=	--prefix="${PREFIX}" \
-		--extra-cflags="${CPPFLAGS} ${CFLAGS}" \
-		--extra-ldflags="${LDFLAGS}" \
-		--extra-libs="${LIBS}"
-MAKEFILE=	GNUmakefile
-MAKE_ARGS=	STRIP="${STRIP_CMD}"
-CPPFLAGS+=	`pkg-config vapoursynth --cflags`
-USE_LDCONFIG=	yes
-DATADIR=	${PREFIX}/lib/vapoursynth
-DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
-PLIST_FILES=	lib/libvslsmashsource.so.${PORTVERSION:E}
-PORTDATA=	libvslsmashsource.so
-PORTDOCS=	README
 
-OPTIONS_DEFINE=	DOCS
+WRKSRC_SUBDIR=	VapourSynth
+
+PLIST_FILES=	lib/vapoursynth/libvslsmashsource.so
 
 post-patch:
-	@${REINPLACE_CMD} -Ee '/CROSS/!s/^(CC|LD|REV|HASH)=.*/: $${&}/' \
-		-e 's/pushd/cd/; s/popd/cd -/' \
-		-e 's/-Os //; /=.*-fexcess-precision/d' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} 's/ -msse2 -g0//' ${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e 's|%%DISTVERSION%%|${DISTVERSION}|g' \
+		${PATCH_WRKSRC}/meson.build
+	@${REINPLACE_CMD} -e 's|LSMASHSource.dll|libvslsmashsource.so|g' \
+		${PATCH_WRKSRC}/README
 
 post-install:
-	${RLN} ${STAGEDIR}${PREFIX}/lib/libvslsmashsource.so.${PORTVERSION:E} \
-		${STAGEDIR}${DATADIR}/libvslsmashsource.so
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} \
-		"${PORTDOCS}" ${STAGEDIR}${DOCSDIR})
+	${INSTALL_MAN} ${WRKSRC}/README ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>

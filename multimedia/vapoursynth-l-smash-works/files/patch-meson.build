@@ -1,0 +1,23 @@
+--- meson.build.orig	2023-07-15 13:34:47 UTC
++++ meson.build
+@@ -5,7 +5,8 @@ project('L-SMASH-Works', 'c',
+ 
+ version_h = declare_dependency(
+     sources: vcs_tag(
+-        command: ['git', 'describe', '--tags', '--long'],
++        command: ['false'],
++	fallback: '%%DISTVERSION%%',
+         input: 'version.h.in',
+         output: 'version.h'
+     )
+@@ -55,10 +56,6 @@ deps = [
+   dependency('libswscale', version: '>=5.7.0'),
+   version_h
+ ]
+-
+-if host_machine.cpu_family().startswith('x86')
+-  add_project_arguments('-mfpmath=sse', '-msse2', language: 'c')
+-endif
+ 
+ if host_machine.system() == 'windows'
+   add_project_arguments('-D__USE_MINGW_ANSI_STDIO', language: 'c')
