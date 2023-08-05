@@ -22,7 +22,6 @@ rcvar="dkimpy_milter_enable"
 load_rc_config $name
 
 : ${dkimpy_milter_enable:="NO"}
-: ${dkimpy_milter_socket:="local:/var/run/dkimpy-milter/dkimpy-milter.sock"}
 : ${dkimpy_milter_pidfile:="/var/run/dkimpy-milter/dkimpy-milter.pid"}
 : ${dkimpy_milter_conffile:="%%PREFIX%%/etc/dkimpy-milter/dkimpy-milter.conf"}
 
