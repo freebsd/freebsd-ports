@@ -14,25 +14,27 @@ EXPIRATION_DATE=2023-09-30
 
 USES=		gmake tar:bzip2
 
+MAKE_ARGS+=	DIET="" CC="${CC}" CXX="${CXX}"
+MAKE_ENV+=	CFLAGS="${CFLAGS}"
+
+SUB_FILES=	pkg-message fnord.inetd
+
 PLIST_FILES=	bin/fnord \
 		bin/fnord-conf \
 		bin/fnord.inetd
 
-SUB_FILES=	pkg-message fnord.inetd
-
 OPTIONS_DEFINE=	DAEMONTOOLS TCPSERVER CGI DIR_LIST SYSTEM_SYMLINK_DEREF OLD_STYLE_REDIRECT
 OPTIONS_DEFAULT=	CGI DIR_LIST
-DAEMONTOOLS_DESC=	Use DJB's daemontools
-TCPSERVER_DESC=		Use DJB's tcpserver
+
 CGI_DESC=		Enable CGI support
+DAEMONTOOLS_DESC=	Use DJB's daemontools
 DIR_LIST_DESC=		Enable directory listing
-SYSTEM_SYMLINK_DEREF_DESC=	Enable system symlink (needs DIR_LIST)
 OLD_STYLE_REDIRECT_DESC=	Enable old style redirection
+SYSTEM_SYMLINK_DEREF_DESC=	Enable system symlink (needs DIR_LIST)
+TCPSERVER_DESC=		Use DJB's tcpserver
 
 DAEMONTOOLS_RUN_DEPENDS=	setuidgid:sysutils/daemontools
 TCPSERVER_RUN_DEPENDS=		tcpserver:sysutils/ucspi-tcp
-
-MAKE_ARGS+=	DIET="" CC="${CC}" CXX="${CXX}"
 
 .include <bsd.port.options.mk>
 
@@ -75,6 +77,11 @@ post-patch:
 	@[ -z '${SED_SCRIPT}' ] || \
 		 ${REINPLACE_CMD} ${SED_SCRIPT} ${WRKSRC}/httpd.c
 	@${REINPLACE_CMD} -e "/strip/d" ${WRKSRC}/Makefile
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+	@${REINPLACE_CMD} -e 's|^CFLAGS=|CFLAGS=-Wno-error=incompatible-function-pointer-types |g' \
+		${WRKSRC}/Makefile
+.endif
+
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fnord ${STAGEDIR}${PREFIX}/bin
