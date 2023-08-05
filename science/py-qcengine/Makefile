@@ -19,6 +19,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}py-cpuinfo>0:sysutils/py-py-cpuinfo@${PY_FLA
 TEST_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pytest>0:devel/py-pytest@${PY_FLAVOR} \
 		dftd3:science/dftd3 \
 		dftd4:science/dftd4 \
+		mctc-gcp:science/gcp \
 		mopac:science/mopac \
 		mp2d:science/mp2d \
 		mrchem:science/py-mrchem@${PY_FLAVOR} \
