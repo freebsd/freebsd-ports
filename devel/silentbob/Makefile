@@ -1,28 +1,27 @@
 PORTNAME=	silentbob
-PORTVERSION=	3.0
-PORTREVISION=	1
+PORTVERSION=	3.2
 CATEGORIES=	devel
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}2/${PORTNAME}-${PORTVERSION:C@\.[0-9]+$@@}/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}3/
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	Yet another sourcecode indexing tool
-WWW=		http://silentbob.sourceforge.net/
+WWW=		https://silentbob.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		cmake
-
-PORTDOCS=	README
 PLIST_FILES=	bin/silentbob
+PORTDOCS=	README
 
 OPTIONS_DEFINE=	DOCS
 
-post-patch:
-	@${RM} ${WRKSRC}/CMakeCache.txt
-	@${REINPLACE_CMD} -e '/lib\/silent_bob/s|/usr|${PREFIX}|' \
-		${WRKSRC}/src/init.cxx
+do-build:
+	@(cd ${BUILD_WRKSRC} && \
+		${CXX} ${CXXFLAGS} src/*.cpp -Iinclude -o silentbob)
 
-post-install:
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/silentbob ${STAGEDIR}${PREFIX}/bin
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${STAGEDIR}${DOCSDIR}
 

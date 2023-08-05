@@ -1,6 +1,6 @@
---- src/Sblib.cxx.orig	2013-11-27 15:00:47 UTC
-+++ src/Sblib.cxx
-@@ -125,7 +125,7 @@ int sblib_find (const char * path, const
+--- src/Sblib.cpp.orig	2023-08-03 02:03:35 UTC
++++ src/Sblib.cpp
+@@ -125,7 +125,7 @@ int sblib_find (const char * path, const char * name, 
  			lseek (fd, 0, SEEK_END);
  		dup2 (devnull, 2);
  		dup2 (fd, 1);

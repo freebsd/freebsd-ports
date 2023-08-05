@@ -1,6 +1,6 @@
---- src/fs.cxx.orig	2013-11-27 15:00:47 UTC
-+++ src/fs.cxx
-@@ -110,7 +110,7 @@ __export int logToFile (char * fileName,
+--- src/fs.cpp.orig	2023-08-03 02:03:35 UTC
++++ src/fs.cpp
+@@ -110,7 +110,7 @@ __export int logToFile (char * fileName, char * fmt, .
  	return 0;
  }
  
