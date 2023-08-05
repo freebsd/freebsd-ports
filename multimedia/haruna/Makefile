@@ -1,11 +1,14 @@
 PORTNAME=	haruna
-DISTVERSION=	0.11.2
+DISTVERSION=	0.11.3
 CATEGORIES=	multimedia kde
 MASTER_SITES=	KDE/stable/${PORTNAME}/
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	KDE video player
 WWW=		https://invent.kde.org/multimedia/haruna
+
+LICENSE=	GPLv3+
+LICENSE_FILE=	${WRKSRC}/LICENSES/GPL-3.0-or-later.txt
 
 LIB_DEPENDS=	libavcodec.so:multimedia/ffmpeg \
 		libmpv.so:multimedia/mpv
