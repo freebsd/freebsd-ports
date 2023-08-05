@@ -18,6 +18,7 @@ LIB_DEPENDS=	libcryptopp.so:security/cryptopp \
 USES=		autoreconf compiler:c++11-lang dos2unix fakeroot fuse \
 		libtool lua:53 pkgconfig sqlite:3
 DOS2UNIX_GLOB=	*.c *.cpp *.h *.am
+USE_CXXSTD=	c++14
 USE_RC_SUBR=	urbackup_server
 
 GNU_CONFIGURE=	yes
