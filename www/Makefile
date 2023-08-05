@@ -27,6 +27,7 @@
     SUBDIR += amphetadesk
     SUBDIR += analog
     SUBDIR += angie
+    SUBDIR += angie-module-geoip2
     SUBDIR += anyremote2html
     SUBDIR += apache-mode.el
     SUBDIR += apache24
