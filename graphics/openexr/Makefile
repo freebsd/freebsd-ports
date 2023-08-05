@@ -1,6 +1,6 @@
 PORTNAME=	openexr
 PORTVERSION=	3.1.10
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	graphics devel
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -22,8 +22,6 @@ CMAKE_ARGS+=	-DCMAKE_DEBUG_POSTFIX=
 CPPFLAGS+=	-I.
 # must be linked with -l{thr|pthread} explicitly
 LDFLAGS+=	-lpthread
-
-PATCH_STRIP=	-p1
 
 _MAJORVER=	3_1
 _VER=		30
