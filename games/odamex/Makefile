@@ -14,18 +14,18 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USE_SDL=	sdl mixer
 USES=		cmake:insource compiler dos2unix sdl tar:bzip2
 DOS2UNIX_FILES=	CMakeLists.txt odalaunch/CMakeLists.txt common/d_main.cpp
+USE_CXXSTD=	c++14
+USE_SDL=	sdl mixer
 
 CXXFLAGS+=	${CXXFLAGS_${CHOSEN_COMPILER_TYPE}}
 CXXFLAGS_clang=	-Wno-c++11-narrowing
 
 OPTIONS_DEFINE=	DOCS LAUNCHER
+OPTIONS_SUB=	yes
 
 LAUNCHER_DESC=	Enable GUI launcher program
-
-OPTIONS_SUB=	yes
 
 LAUNCHER_USE=		WX=3.0
 LAUNCHER_CMAKE_ON=	-DODALAUNCH_TARGET=on -DNO_AG-ODALAUNCH_TARGET=off -DwxWidgets_CONFIG_EXECUTABLE=${PREFIX}/bin/wxgtk2u-3.0-config
