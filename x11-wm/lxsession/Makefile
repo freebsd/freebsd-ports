@@ -1,6 +1,5 @@
 PORTNAME=	lxsession
-PORTVERSION=	0.5.4
-PORTREVISION=	3
+PORTVERSION=	0.5.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/lxde/LXSession%20%28session%20manager%29/LXSession%200.5.x/
 
@@ -24,7 +23,8 @@ USE_XORG=	x11
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-buildin-clipboard \
-		--enable-buildin-polkit
+		--enable-buildin-polkit \
+		MAKE=${GMAKE}
 INSTALL_TARGET=	install-strip
 SUB_FILES=	pkg-message
 
