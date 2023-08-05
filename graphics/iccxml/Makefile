@@ -12,9 +12,12 @@ WWW=		http://iccxml.sourceforge.net/
 LIB_DEPENDS=	libSampleICC.so:graphics/sampleicc
 
 USES=		gmake gnome libtool pathfix pkgconfig
-GNU_CONFIGURE=	yes
+USE_CXXSTD=	c++14
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
+
 INSTALL_TARGET=	install-strip
 
 post-patch:
