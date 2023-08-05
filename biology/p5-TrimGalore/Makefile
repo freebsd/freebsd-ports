@@ -7,7 +7,7 @@ MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Wrapper around Cutadapt and FastQC for adapter and quality trimming
 WWW=		https://github.com/FelixKrueger/TrimGalore
 
-LICENSE=	GPLv8
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}cutadapt>=2.5:biology/py-cutadapt@${PY_FLAVOR} \
