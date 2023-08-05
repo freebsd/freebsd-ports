@@ -9,12 +9,15 @@ COMMENT=	Configuration System for the STAGE Server
 
 LIB_DEPENDS=	libsigc-2.0.so:devel/libsigc++20
 
-OPTIONS_DEFINE=	DOCS
+USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:bzip2
+USE_CXXSTD=	c++14
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib libtool pathfix pkgconfig tar:bzip2
-USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
+
+OPTIONS_DEFINE=	DOCS
 
 post-install:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
