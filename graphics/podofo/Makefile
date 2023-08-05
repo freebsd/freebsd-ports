@@ -12,7 +12,7 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	fast_float>=0:math/fast_float \
-		hhdate>=0:devel/hhdate \
+		date>=0:devel/date \
 		libfmt>=0:devel/libfmt \
 		utf8cpp>=0:devel/utf8cpp
 LIB_DEPENDS=	libfontconfig.so:x11-fonts/fontconfig \

@@ -521,6 +521,7 @@
     SUBDIR += dash.el
     SUBDIR += dasm
     SUBDIR += datadraw
+    SUBDIR += date
     SUBDIR += dbus
     SUBDIR += dbus-c++
     SUBDIR += dbus-glib
@@ -951,7 +952,6 @@
     SUBDIR += hexd
     SUBDIR += hgreviewboard
     SUBDIR += hgsvn
-    SUBDIR += hhdate
     SUBDIR += highlighterkit
     SUBDIR += highway
     SUBDIR += hoel

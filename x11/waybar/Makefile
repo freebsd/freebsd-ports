@@ -11,7 +11,7 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	wayland-protocols>0:graphics/wayland-protocols
-LIB_DEPENDS=	libdate-tz.so:devel/hhdate \
+LIB_DEPENDS=	libdate-tz.so:devel/date \
 		libjsoncpp.so:devel/jsoncpp \
 		libfmt.so:devel/libfmt \
 		libspdlog.so:devel/spdlog \
