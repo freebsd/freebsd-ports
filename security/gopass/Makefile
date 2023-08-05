@@ -1,7 +1,6 @@
 PORTNAME=	gopass
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.15.6-3
-PORTREVISION=	1
+DISTVERSION=	1.15.7
 CATEGORIES=	security
 
 MAINTAINER=	eduardo@FreeBSD.org
@@ -23,9 +22,7 @@ USES=		go:modules
 USE_GITHUB=	nodefault
 GH_TUPLE=	gopasspw:password-store-example:8db75ba3b69c:password_store_example
 
-# v1.15.6-3-g8c666a93, fix go module
-# See also: https://github.com/gopasspw/gopass/commit/8c666a93d844015cca992be0ab0c39992bb096ed
-GO_MODULE=	github.com/gopasspw/gopass@v0.0.0-20230801080807-8c666a93d844
+GO_MODULE=	github.com/gopasspw/gopass
 
 PORTDOCS=	README.md docs/*
 PORTEXAMPLES=	*
