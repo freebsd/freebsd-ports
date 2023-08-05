@@ -20,21 +20,25 @@ RUN_DEPENDS=	bash:shells/bash \
 		ldraw>0:cad/ldraw
 
 USES=		desktop-file-utils gl gmake jpeg qmake qt:5 shared-mime-info shebangfix xorg
-USE_QT=		core gui linguist opengl printsupport widgets buildtools:build qmake:build
-USE_GL=		gl glu
-USE_XORG=	x11
-
 USE_GITHUB=	yes
 GH_ACCOUNT=	tcobbs
+USE_GL=		gl glu
+USE_QT=		core gui linguist opengl printsupport widgets buildtools:build qmake:build
+USE_XORG=	x11
 
 SHEBANG_FILES=	desktop/ldraw-thumbnailer
 
+QMAKE_ARGS=	MANDIR=${PREFIX}/man CONFIG+=EXPORT_3DS
+
 WRKSRC_SUBDIR=	QT
 
-QMAKE_ARGS=	MANDIR=${PREFIX}/man CONFIG+=EXPORT_3DS
+.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|"/usr/share/ldraw"|"${PREFIX}/share/ldraw"|' ${WRKSRC}/ModelViewerWidget.cpp
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+	@${REINPLACE_CMD} -e 's|register ||' ${WRKSRC}/../LDLoader/LDrawIni.c
+.endif
 
 pre-configure:
 	@cd ${WRKSRC} && ${LRELEASE} LDView.pro
