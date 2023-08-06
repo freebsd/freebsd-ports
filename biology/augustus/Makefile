@@ -21,6 +21,7 @@ LIB_DEPENDS=	libbamtools.so:biology/bamtools \
 RUN_DEPENDS=	samtools:biology/samtools
 
 USES=		gmake localbase:ldflags mysql perl5 python sqlite shebangfix
+USE_CXXSTD=	c++14
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	Gaius-Augustus
