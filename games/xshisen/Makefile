@@ -11,9 +11,12 @@ LICENSE=	BSD3CLAUSE
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USES=		cpe xorg
-USE_XORG=	xpm
+USE_CXXSTD=	c++14
+USE_XORG=	ice sm x11 xmu xpm xt
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir="${DATADIR}"
+
 INSTALL_TARGET=	install-prog
 
 OPTIONS_DEFINE=		MOTIF
