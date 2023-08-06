@@ -1,4 +1,4 @@
---- drivers/unix/os_unix.cpp.orig	2017-08-28 01:55:12 UTC
+--- drivers/unix/os_unix.cpp.orig	2019-07-08 12:01:42 UTC
 +++ drivers/unix/os_unix.cpp
 @@ -51,6 +51,7 @@
  
@@ -8,7 +8,7 @@
  #endif
  #include "globals.h"
  #include <assert.h>
-@@ -375,17 +376,7 @@ Error OS_Unix::execute(const String &p_p
+@@ -379,17 +380,7 @@ Error OS_Unix::execute(const String &p_path, const Lis
  			args.push_back((char *)cs[i].get_data()); // shitty C cast
  		args.push_back(0);
  
@@ -26,7 +26,7 @@
  		// still alive? something failed..
  		fprintf(stderr, "**ERROR** OS_Unix::execute - Could not create child process while executing: %s\n", p_path.utf8().get_data());
  		abort();
-@@ -499,12 +490,24 @@ String OS_Unix::get_executable_path() co
+@@ -503,12 +494,24 @@ String OS_Unix::get_executable_path() const {
  		return OS::get_executable_path();
  	}
  	return b;

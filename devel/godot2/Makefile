@@ -16,8 +16,6 @@ LICENSE_FILE_MIT=	${WRKSRC}/LICENSE.txt
 
 DEPRECATED=	Requires legacy OpenSSL 1.1.1 so use devel/godot
 EXPIRATION_DATE=	2023-07-08
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to build with undefined symbol: ERR_load_BIO_strings
 
 LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libpng.so:graphics/png \
@@ -90,6 +88,10 @@ EXAMPLESDIR=		${PREFIX}/share/examples/godot2
 # use system libvpx on archs that break with built-in
 LIB_DEPENDS+=	libvpx.so:multimedia/libvpx
 MAKE_ARGS+=	builtin_libvpx=False
+.endif
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CXXFLAGS+=  -Dregister=
 .endif
 
 post-patch:

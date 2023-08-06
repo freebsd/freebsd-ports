@@ -1,4 +1,4 @@
---- drivers/SCsub.orig	2016-11-30 21:41:21 UTC
+--- drivers/SCsub.orig	2019-07-08 12:01:42 UTC
 +++ drivers/SCsub
 @@ -14,7 +14,7 @@ SConscript('windows/SCsub')
  # Sounds drivers
@@ -7,5 +7,5 @@
 -if (env["platform"] == "windows"):
 +if (env["platform"] == "windows") or (env["platform"] == "x11"):
      SConscript("rtaudio/SCsub")
+     SConscript("wasapi/SCsub")
  
- # Graphics drivers

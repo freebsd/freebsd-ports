@@ -1,4 +1,4 @@
---- platform/x11/detect.py.orig	2018-07-29 00:47:52 UTC
+--- platform/x11/detect.py.orig	2019-07-08 12:01:42 UTC
 +++ platform/x11/detect.py
 @@ -56,7 +56,9 @@ def get_opts():
          ('use_sanitizer', 'Use llvm compiler sanitize address', 'no'),
@@ -11,7 +11,7 @@
          ('udev', 'Use udev for gamepad connection callbacks', 'no'),
          ('debug_release', 'Add debug symbols to release version', 'no'),
          ('touch', 'Enable touch events', 'yes'),
-@@ -85,10 +87,6 @@ def configure(env):
+@@ -80,10 +82,6 @@ def configure(env):
  
      env.Append(CPPPATH=['#platform/x11'])
      if (env["use_llvm"] == "yes"):
@@ -22,7 +22,7 @@
          env.Append(CPPFLAGS=['-DTYPED_METHOD_BIND'])
          env.extra_suffix = ".llvm"
      elif (os.system("gcc --version > /dev/null 2>&1") == 0): # GCC
-@@ -126,19 +124,14 @@ def configure(env):
+@@ -121,19 +119,14 @@ def configure(env):
      env.Append(LINKFLAGS=['-pipe'])
  
      if (env["target"] == "release"):
@@ -46,7 +46,7 @@
          env.Append(LINKFLAGS=['-rdynamic'])
  
      env.ParseConfig('pkg-config x11 --cflags --libs')
-@@ -155,7 +148,12 @@ def configure(env):
+@@ -150,7 +143,12 @@ def configure(env):
          env.Append(CPPFLAGS=['-DTOUCH_ENABLED'])
  
      if (env['builtin_openssl'] == 'no'):
@@ -60,7 +60,7 @@
  
      if (env['builtin_libwebp'] == 'no'):
          env.ParseConfig('pkg-config libwebp --cflags --libs')
-@@ -200,12 +198,13 @@ def configure(env):
+@@ -195,12 +193,13 @@ def configure(env):
      if (env['builtin_glew'] == 'no'):
          env.ParseConfig('pkg-config glew --cflags --libs')
  
@@ -80,15 +80,15 @@
  
      if (platform.system() == "Linux"):
          env.Append(CPPFLAGS=["-DJOYDEV_ENABLED"])
-@@ -220,6 +219,11 @@ def configure(env):
+@@ -214,6 +213,11 @@ def configure(env):
+             env.ParseConfig('pkg-config libudev --cflags --libs')
          else:
              print("libudev development libraries not found, disabling udev support")
- 
++
 +    if (env["oss"]=="yes"):
 +        print("Enabling OSS Audio")
 +        env.Append(CPPFLAGS=["-DOSS_ENABLED"])
 +        env.Append(CCFLAGS=['-Ithirdparty/rtaudio'])
-+
+ 
      if (env["pulseaudio"] == "yes"):
          if not os.system("pkg-config --exists libpulse-simple"):
-             print("Enabling PulseAudio")

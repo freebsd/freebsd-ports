@@ -1,6 +1,6 @@
---- drivers/rtaudio/audio_driver_rtaudio.cpp.orig	2016-08-09 07:52:15 UTC
+--- drivers/rtaudio/audio_driver_rtaudio.cpp.orig	2019-07-08 12:01:42 UTC
 +++ drivers/rtaudio/audio_driver_rtaudio.cpp
-@@ -35,8 +35,14 @@ const char* AudioDriverRtAudio::get_name
+@@ -38,8 +38,14 @@ const char *AudioDriverRtAudio::get_name() const {
  
  #ifdef OSX_ENABLED
  	return "RtAudio-OSX";

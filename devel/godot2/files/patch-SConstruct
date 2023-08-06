@@ -1,7 +1,7 @@
---- SConstruct.orig	2016-11-15 18:44:21 UTC
+--- SConstruct.orig	2019-07-08 12:01:42 UTC
 +++ SConstruct
 @@ -65,7 +65,7 @@ elif (os.name == "nt"):
-     if (os.getenv("VSINSTALLDIR") == None or platform_arg == "android"):
+     if (os.getenv("VCINSTALLDIR") == None or platform_arg == "android" or platform_arg == "javascript"):
          custom_tools = ['mingw']
  
 -env_base = Environment(tools=custom_tools)
