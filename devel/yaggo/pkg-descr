@@ -1,1 +1,5 @@
-Generate command line parser using getopt_long.
+Yaggo is a tool to generate command line parsers for C++. Yaggo stands
+for "Yet Another GenGetOpt" and is inspired by GNU Gengetopt.  It reads
+a configuration file describing the switches and argument for a C++
+program and it generates one header file that parses the command line
+using getopt_long(3). See the Example section below for more details.
