@@ -12,18 +12,23 @@ LICENSE_FILE=	${WRKSRC}/readme.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USES=		cpe iconv tar:xz
+USES=		cpe iconv localbase:ldflags tar:xz
 MAKE_ARGS+=	CPP="${CXX}" CC="${CC}" OBJ="${UNALZ_OBJS}" \
 		LDFLAGS="${LDFLAGS}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	posix-utf8
 
-CFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -lz -lbz2
+LDFLAGS+=	-lz -lbz2
 
 PLIST_FILES=	bin/${PORTNAME}
 
 UNALZ_OBJS=	main.o UnAlz.o UnAlzUtils.o UnAlzBz2decompress.o \
 		UnAlzBzip2.o UnAlzbzlib.o
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=  -Dregister=
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e \
