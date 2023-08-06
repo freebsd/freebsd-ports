@@ -22,6 +22,7 @@ GH_PROJECT=	Sea-Defender
 GH_TAGNAME=	d628051
 
 USES=		gl gmake sdl xorg
+USE_CXXSTD=	c++14
 USE_SDL=	sdl mixer image ttf
 USE_GL=		gl glu
 USE_XORG=	x11 xrandr
