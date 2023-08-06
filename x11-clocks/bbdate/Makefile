@@ -13,6 +13,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
 USES=		xorg
+USE_CXXSTD=	c++14
 USE_XORG=	x11 xau xdmcp xext xfixes xi xrandr ice sm
 
 PLIST_FILES=	bin/bbdate share/bbtools/README.bbdate \
