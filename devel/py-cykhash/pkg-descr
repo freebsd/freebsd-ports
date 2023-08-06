@@ -1,0 +1,14 @@
+Cykhash is a cython equivalent to khash-sets/maps, efficient
+implementation of isin and unique
+
+Benefits:
+
+    Brings functionality of khash to Python and Cython and can be used
+    seamlessly in numpy or pandas.
+
+    Numpy's world is lacking the concept of a (hash-)set. This
+    shortcoming is fixed and efficient (memory- and speedwise compared
+    to pandas') unique and isin are implemented.
+
+    Python-set/dict have big memory-footprint. For some datatypes the
+    overhead can be reduced by using khash by factor 4-8.
