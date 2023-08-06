@@ -22,6 +22,12 @@ PORTDOCS=	${TEXTDOCS} ${HTMLDOCS}
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
 	${ECHO_CMD} "${CC} -s ${LDFLAGS}" > ${WRKSRC}/src/conf-ld
