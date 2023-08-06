@@ -9,6 +9,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reference implementation kit of an RTSP proxy
 WWW=		https://sourceforge.net/projects/rtsp/
 
+USE_CXXSTD=	c++14
+
 HAS_CONFIGURE=	yes
 
 PLIST_FILES=	sbin/rtspproxy etc/rc.d/rtspproxy.sh.sample
