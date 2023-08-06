@@ -1,5 +1,5 @@
 PORTNAME=	autoflake
-PORTVERSION=	2.1.1
+DISTVERSION=	2.2.0
 CATEGORIES=	devel python
 MASTER_SITES=	PYPI
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -12,10 +12,10 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}hatchling>=0:devel/py-hatchling@${PY_FLAVOR}
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=1.1.0:devel/py-pyflakes@${PY_FLAVOR}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pyflakes>=3.0.0:devel/py-pyflakes@${PY_FLAVOR}
 
-USES=		pytest python shebangfix
-USE_PYTHON=	autoplist pep517
+USES=		python shebangfix
+USE_PYTHON=	autoplist pep517 pytest
 
 SHEBANG_FILES=	autoflake.py test_autoflake.py
 
