@@ -28,6 +28,7 @@ LIB_DEPENDS=	libpcre.so:devel/pcre \
 		libsnappy.so:archivers/snappy
 
 USES=		compiler:c++17-lang cpe python:build scons
+USE_CXXSTD=	c++14
 USE_RC_SUBR=	mongod
 
 MAKE_ARGS=	--use-system-zlib \
