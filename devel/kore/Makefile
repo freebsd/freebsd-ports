@@ -51,6 +51,16 @@ TLS_MAKE_ARGS_OFF=	NOTLS=1
 
 .include <bsd.port.options.mk>
 
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+CFLAGS+=	-DOPENSSL_API_COMPAT=0x10100000L
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CFLAGS+=	-Wno-error=incompatible-pointer-types-discards-qualifiers
+.endif
+
 post-patch:
 .if ${LOCALBASE} != /usr/local
 	@${REINPLACE_CMD} 's|/usr/local/|${LOCALBASE}/|g' \
@@ -67,4 +77,4 @@ post-install-EXAMPLES-on:
 	@cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 	@cd ${WRKSRC}/conf && ${COPYTREE_SHARE} . ${STAGEDIR}${EXAMPLESDIR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
