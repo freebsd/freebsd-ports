@@ -19,6 +19,7 @@ CFLAGS+=	-I${LOCALBASE}/include/Imath
 LDFLAGS+=	-lthr
 
 USES=		cmake cpe tar:tgz dos2unix jpeg perl5
+USE_CXXSTD=	c++14
 USE_PERL5=	run
 USE_LDCONFIG=	yes
 
