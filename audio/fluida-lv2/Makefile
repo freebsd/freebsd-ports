@@ -31,6 +31,12 @@ PLIST_FILES=	lib/lv2/Fluida.lv2/Fluida.so \
 		lib/lv2/Fluida.lv2/Fluida_ui.so \
 		lib/lv2/Fluida.lv2/manifest.ttl
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch: # /proc/cpuinfo is used to check SIMD support in CPU
 	@${REINPLACE_CMD} -e 's|/proc/cpuinfo|/dev/null|' ${WRKSRC}/Fluida/Makefile
 
