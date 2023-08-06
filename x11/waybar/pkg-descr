@@ -4,18 +4,20 @@ compositors providing the following features:
 - Sway (Workspaces, Binding mode, Focused window name)
 - River (Mapping mode, Tags, Focused window name)
 - Hyprland (Focused window name)
+- DWL (Tags) [requires dwl ipc patch](https://github.com/djpohly/dwl/wiki/ipc)
 - Tray [#21](https://github.com/Alexays/Waybar/issues/21)
 - Local time
 - Battery
 - UPower
 - Network (Linux-only)
 - Bluetooth (Linux-only)
-- PulseAudio / JACK / sndio
+- Audio (WirePlumber, PulseAudio, JACK, sndio)
 - Disk
 - Memory
 - CPU load average
 - Temperature
 - MPD
 - Custom scripts
+- Custom image
 - Multiple output configuration
 - And many more customizations
