@@ -1,9 +1,6 @@
 PORTNAME=	vcmi
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	games
-
-PATCH_SITES=	https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/commit/
-PATCHFILES=	c7bee037d2c06c56893d631651288c33e.patch:-p1
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Open-source engine for Heroes of Might and Magic III
@@ -39,14 +36,8 @@ QT_USE=		QT=buildtools:build,linguisttools:build,qmake:build \
 		QT=core,gui,network,widgets
 QT_CMAKE_OFF=	-DENABLE_LAUNCHER:BOOL=OFF -DENABLE_EDITOR:BOOL=OFF
 
-post-configure:
-	${SED} -e 's,@GIT_SHA1@,c125e04,' ${WRKSRC}/Version.cpp.in \
-		> ${BUILD_WRKSRC}/Version.cpp
-
 post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${STAGEDIR}${DOCSDIR}
 
 .include <bsd.port.mk>
-
-PATCH_ARGS+=	-l
