@@ -24,4 +24,10 @@ CMAKE_TESTING_ON=	FLATBUFFERS_BUILD_TESTS # one test fails, see https://github.c
 
 BINARY_ALIAS=	git=false python3=${PYTHON_CMD}
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CXXFLAGS+=	-Wno-error=unused-command-line-argument
+.endif
+
 .include <bsd.port.mk>
