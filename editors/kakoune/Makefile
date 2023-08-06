@@ -23,6 +23,14 @@ OPTIONS_DEFINE=	DEBUG DOCS
 DEBUG_MAKE_ARGS=	debug=yes
 DEBUG_MAKE_ARGS_OFF=	debug=no
 
+.include <bsd.port.pre.mk>
+
+.if (${OSVERSION} > 1302506 && ${OSVERSION} < 1400000)
+PATCHFILES=	344d31f42b8ced12626d4f87a22ffa5a671668fd.patch
+PATCH_SITES=	https://github.com/mawww/kakoune/commit/
+PATCH_DIST_STRIP=	-p1
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e '/-O3/d' \
 		${WRKSRC}/Makefile
@@ -33,4 +41,4 @@ post-install:
 do-test:
 	@cd ${WRKSRC:H}/test && ${SETENV} LC_ALL=en_US.UTF-8 ./run
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
