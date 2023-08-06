@@ -19,14 +19,21 @@ MAKE_CMD=	rake -v
 MAKEFILE=	Rakefile
 ALL_TARGET=	build
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e 1d ${WRKSRC}/data/subtler/runner.rb
 	@${REINPLACE_CMD} -e 's,File\.exists\?,File.exist?,' \
 		${WRKSRC}/data/sur/server.rb
 	@${REINPLACE_CMD} -e 's,/etc/xdg,${LOCALBASE}&,' \
 		${WRKSRC}/src/subtle/ruby.c
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+	@${REINPLACE_CMD} -e '/cflags/s/-Wall/-Wall -Wno-error=incompatible-function-pointer-types /g' \
+		${WRKSRC}/Rakefile
+.endif
+
 
 do-configure:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE_CMD} ${MAKE_ARGS} config
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
