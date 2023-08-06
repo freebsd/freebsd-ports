@@ -13,7 +13,9 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	libpng.so:graphics/png
 
-USES=		compiler:c++11-lang gettext gl gmake jpeg libtool lua:52 pkgconfig
+USES=		compiler:c++11-lang gettext gl gmake jpeg libtool localbase:ldflags \
+		lua:52 pkgconfig
+USE_CXXSTD=	c++14
 USE_GL=		gl
 GNU_CONFIGURE=	yes
 EXTRA_PATCHES=	${FILESDIR}/celestia-1.6.1-lua-5.2.patch:-p1 \
@@ -22,8 +24,7 @@ EXTRA_PATCHES=	${FILESDIR}/celestia-1.6.1-lua-5.2.patch:-p1 \
 		${FILESDIR}/celestia-1.6.1-gcc48.patch:-p1
 
 CXXFLAGS+=	-fsigned-char	# fix text rendering (see Gentoo bug 316573)
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -pthread
+LDFLAGS+=	-pthread
 
 UI_LIST=	glut gtk gnome
 CELESTIA_UI?=	glut
