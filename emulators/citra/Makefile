@@ -92,15 +92,21 @@ QT5_PLIST_FILES=bin/${PORTNAME}-qt \
 		share/man/man6/${PORTNAME}-qt.6.gz \
 		share/mime/packages/${PORTNAME}.xml
 
+.include <bsd.port.pre.mk>
+
 post-patch:
 	@${REINPLACE_CMD} -e '/check_submodules_present()/d' \
 		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e 's/@GIT_BRANCH@/master/' \
 		-e 's/@GIT_DESC@/${GH_TAGNAME}/' \
 		${WRKSRC}/src/common/scm_rev.cpp.in
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+	@${REINPLACE_CMD} -e 's|std::unary_function|std::__unary_function|' \
+		${WRKSRC}/externals/boost/boost/container_hash/hash.hpp
+.endif
 
 post-configure:
 	@${CP} ${DISTFILES:M*\:gamedb:C/\:.*//:S,^,${_DISTDIR},} \
 		${BUILD_WRKSRC}/dist/compatibility_list/
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
