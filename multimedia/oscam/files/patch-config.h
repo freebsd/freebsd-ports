@@ -1,6 +1,6 @@
---- config.h.orig	2020-03-14 17:14:49 UTC
+--- config.h.orig	2021-07-28 22:04:49 UTC
 +++ config.h
-@@ -34,7 +34,7 @@
+@@ -35,7 +35,7 @@
  //#define MODULE_SERIAL 1
  //#define MODULE_CONSTCW 1
  //#define MODULE_PANDORA 1
