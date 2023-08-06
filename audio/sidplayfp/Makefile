@@ -1,6 +1,6 @@
 PORTNAME=	sidplayfp
 DISTVERSION=	2.5.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/lib${PORTNAME}/${PORTNAME}/releases/download/v${DISTVERSION}/
 

@@ -1,6 +1,6 @@
 PORTNAME=	qsstv
 PORTVERSION=	9.5.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://users.telenet.be/on4qz/qsstv/downloads/
 DISTNAME=	${PORTNAME}_${PORTVERSION}

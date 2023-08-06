@@ -1,5 +1,6 @@
 PORTNAME=	xfce4-volumed-pulse
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE/apps
 DIST_SUBDIR=	xfce4

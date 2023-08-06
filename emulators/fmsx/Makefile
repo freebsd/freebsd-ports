@@ -1,5 +1,6 @@
 PORTNAME=	fmsx
 PORTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://fms.komkon.org/fMSX/:code \
 		http://fms.komkon.org/fMSX/src/:rom

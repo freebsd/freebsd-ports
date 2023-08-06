@@ -1,4 +1,4 @@
---- src/modules/oss/module-oss.c.orig	2021-01-16 17:26:36 UTC
+--- src/modules/oss/module-oss.c.orig	2022-06-21 10:54:48 UTC
 +++ src/modules/oss/module-oss.c
 @@ -121,9 +121,6 @@ struct userdata {
      int fd;
@@ -9,8 +9,8 @@
 -
      int nfrags, frag_size, orig_frag_size;
  
-     bool use_mmap;
-@@ -817,76 +814,146 @@ static int source_set_state_in_io_thread_cb(pa_source 
+     bool shutdown;
+@@ -819,75 +816,145 @@ static int source_set_state_in_io_thread_cb(pa_source 
      return 0;
  }
  
@@ -68,7 +68,7 @@
 -            return;
 +    if (mixer_devmask & SOUND_MASK_VOLUME)
 +        if (pa_oss_get_volume(mixer_fd, SOUND_MIXER_READ_VOLUME, &s->sample_spec, &s->real_volume) >= 0)
-+	    goto done;
++            goto done;
  
 -    if (u->mixer_devmask & SOUND_MASK_PCM)
 -        if (pa_oss_get_volume(u->mixer_fd, SOUND_MIXER_READ_PCM, &s->sample_spec, &s->real_volume) >= 0)
@@ -98,21 +98,15 @@
 +        return;
  
 -    if (u->mixer_devmask & SOUND_MASK_VOLUME)
--        if (pa_oss_set_volume(u->mixer_fd, SOUND_MIXER_WRITE_VOLUME, &s->sample_spec, &s->real_volume) >= 0)
--            return;
+-        (void) pa_oss_set_volume(u->mixer_fd, SOUND_MIXER_WRITE_VOLUME, &s->sample_spec, &s->real_volume);
 +    if (mixer_devmask & SOUND_MASK_VOLUME)
-+        if (pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_VOLUME, &s->sample_spec, &s->real_volume) >= 0)
-+            goto done;
++        (void) pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_VOLUME, &s->sample_spec, &s->real_volume);
  
 -    if (u->mixer_devmask & SOUND_MASK_PCM)
--        if (pa_oss_get_volume(u->mixer_fd, SOUND_MIXER_WRITE_PCM, &s->sample_spec, &s->real_volume) >= 0)
--            return;
+-        (void) pa_oss_set_volume(u->mixer_fd, SOUND_MIXER_WRITE_PCM, &s->sample_spec, &s->real_volume);
 +    if (mixer_devmask & SOUND_MASK_PCM)
-+        if (pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_PCM, &s->sample_spec, &s->real_volume) >= 0)
-+            goto done;
- 
-     pa_log_info("Device doesn't support writing mixer settings: %s", pa_cstrerror(errno));
-+done:
++        (void) pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_PCM, &s->sample_spec, &s->real_volume);
++
 +    pa_close(mixer_fd);
  }
  
@@ -124,11 +118,11 @@
 +
      pa_assert_se(u = s->userdata);
  
--    pa_assert(u->mixer_devmask & (SOUND_MASK_IGAIN|SOUND_MASK_RECLEV));
+-    pa_assert(u->mixer_devmask & (SOUND_MASK_MIC|SOUND_MASK_IGAIN|SOUND_MASK_RECLEV));
 +    mixer_fd = open_mixer(u, &mixer_devmask);
 +    if (mixer_fd < 0) {
-+      oss_get_dummy_volume(&s->sample_spec, &s->real_volume);
-+      return;
++        oss_get_dummy_volume(&s->sample_spec, &s->real_volume);
++        return;
 +    }
  
 -    if (u->mixer_devmask & SOUND_MASK_IGAIN)
@@ -143,6 +137,13 @@
 -            return;
 +    if (mixer_devmask & SOUND_MASK_RECLEV)
 +        if (pa_oss_get_volume(mixer_fd, SOUND_MIXER_READ_RECLEV, &s->sample_spec, &s->real_volume) >= 0)
++                goto done;
+ 
+-    if (u->mixer_devmask & SOUND_MASK_MIC)
+-        if (pa_oss_get_volume(u->mixer_fd, SOUND_MIXER_READ_MIC, &s->sample_spec, &s->real_volume) >= 0)
+-            return;
++    if (mixer_devmask & SOUND_MASK_MIC)
++        if (pa_oss_get_volume(mixer_fd, SOUND_MIXER_READ_MIC, &s->sample_spec, &s->real_volume) >= 0)
 +                goto done;
  
 +    oss_get_dummy_volume(&s->sample_spec, &s->real_volume);
@@ -160,47 +161,57 @@
 +
      pa_assert_se(u = s->userdata);
  
--    pa_assert(u->mixer_devmask & (SOUND_MASK_IGAIN|SOUND_MASK_RECLEV));
+-    pa_assert(u->mixer_devmask & (SOUND_MASK_MIC|SOUND_MASK_IGAIN|SOUND_MASK_RECLEV));
 +    mixer_fd = open_mixer(u, &mixer_devmask);
 +    if (mixer_fd < 0)
 +        return;
  
 -    if (u->mixer_devmask & SOUND_MASK_IGAIN)
--        if (pa_oss_set_volume(u->mixer_fd, SOUND_MIXER_WRITE_IGAIN, &s->sample_spec, &s->real_volume) >= 0)
--            return;
+-        (void) pa_oss_set_volume(u->mixer_fd, SOUND_MIXER_WRITE_IGAIN, &s->sample_spec, &s->real_volume);
 +    if (mixer_devmask & SOUND_MASK_IGAIN)
-+        if (pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_IGAIN, &s->sample_spec, &s->real_volume) >= 0)
-+            goto done;
++        (void) pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_IGAIN, &s->sample_spec, &s->real_volume);
  
 -    if (u->mixer_devmask & SOUND_MASK_RECLEV)
--        if (pa_oss_get_volume(u->mixer_fd, SOUND_MIXER_WRITE_RECLEV, &s->sample_spec, &s->real_volume) >= 0)
--            return;
+-        (void) pa_oss_set_volume(u->mixer_fd, SOUND_MIXER_WRITE_RECLEV, &s->sample_spec, &s->real_volume);
 +    if (mixer_devmask & SOUND_MASK_RECLEV)
-+        if (pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_RECLEV, &s->sample_spec, &s->real_volume) >= 0)
-+            goto done;
++        (void) pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_RECLEV, &s->sample_spec, &s->real_volume);
  
-     pa_log_info("Device doesn't support writing mixer settings: %s", pa_cstrerror(errno));
-+done:
+-    if (u->mixer_devmask & SOUND_MASK_MIC)
+-        (void) pa_oss_set_volume(u->mixer_fd, SOUND_MIXER_WRITE_MIC, &s->sample_spec, &s->real_volume);
++    if (mixer_devmask & SOUND_MASK_MIC)
++        (void) pa_oss_set_volume(mixer_fd, SOUND_MIXER_WRITE_MIC, &s->sample_spec, &s->real_volume);
++
 +    pa_close(mixer_fd);
  }
  
  static void thread_func(void *userdata) {
-@@ -1235,10 +1302,14 @@ int pa__init(pa_module*m) {
-         use_mmap = false;
+@@ -1158,16 +1225,6 @@ static void thread_func(void *userdata) {
+             revents = pollfd->revents;
+         } else
+             revents = 0;
+-
+-        /* check for mixer shutdown, if any */
+-        if ((revents & (POLLOUT | POLLIN)) == 0) {
+-            int mixer_fd = u->mixer_fd;
+-            int devmask;
+-            if (mixer_fd > -1 && ioctl(mixer_fd, SOUND_MIXER_READ_DEVMASK, &devmask) < 0) {
+-                pa_log("Mixer shutdown.");
+-                goto fail;
+-            }
+-        }
      }
  
-+#ifndef __FreeBSD__
-+/* Disable mmap. The OSS on FreeBSD doesn't support read & write on 
+ fail:
+@@ -1245,6 +1302,8 @@ int pa__init(pa_module*m) {
+     }
+ 
+ #ifndef __FreeBSD__
++/* Disable mmap. The OSS on FreeBSD doesn't support read & write on
 +   the same socket */
      if (use_mmap && mode == O_WRONLY) {
          pa_log_info("Device opened for playback only, cannot do memory mapping, falling back to UNIX write() mode.");
          use_mmap = false;
-     }
-+#endif
- 
-     if (pa_oss_get_hw_description(dev, hwdesc, sizeof(hwdesc)) >= 0)
-         pa_log_info("Hardware name is '%s'.", hwdesc);
-@@ -1266,8 +1337,6 @@ int pa__init(pa_module*m) {
+@@ -1277,8 +1336,6 @@ int pa__init(pa_module*m) {
      u->module = m;
      m->userdata = u;
      u->fd = fd;
@@ -209,7 +220,7 @@
      u->use_getospace = u->use_getispace = true;
      u->use_getodelay = true;
      u->mode = mode;
-@@ -1438,36 +1507,19 @@ int pa__init(pa_module*m) {
+@@ -1449,36 +1506,19 @@ int pa__init(pa_module*m) {
              u->out_mmap_memblocks = pa_xnew0(pa_memblock*, u->out_nfrags);
      }
  
@@ -227,7 +238,7 @@
 -                do_close = false;
 -            }
 -
--            if (u->source && (u->mixer_devmask & (SOUND_MASK_RECLEV|SOUND_MASK_IGAIN))) {
+-            if (u->source && (u->mixer_devmask & (SOUND_MASK_MIC|SOUND_MASK_RECLEV|SOUND_MASK_IGAIN))) {
 -                pa_log_debug("Found hardware mixer track for recording.");
 -                pa_source_set_get_volume_callback(u->source, source_get_volume);
 -                pa_source_set_set_volume_callback(u->source, source_set_volume);
@@ -257,7 +268,7 @@
  go_on:
  
      pa_assert(u->source || u->sink);
-@@ -1582,9 +1634,6 @@ void pa__done(pa_module*m) {
+@@ -1594,9 +1634,6 @@ void pa__done(pa_module*m) {
  
      if (u->fd >= 0)
          pa_close(u->fd);

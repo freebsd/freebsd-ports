@@ -1,0 +1,11 @@
+--- src/modules/echo-cancel/meson.build.orig	2022-06-21 10:54:48 UTC
++++ src/modules/echo-cancel/meson.build
+@@ -15,7 +15,7 @@ libwebrtc_util = shared_library('webrtc-util',
+   cpp_args : [pa_c_args, server_c_args],
+   include_directories : [configinc, topinc],
+   dependencies : [libpulse_dep, libpulsecommon_dep, libpulsecore_dep, libatomic_ops_dep, webrtc_dep, libintl_dep],
+-  link_args : [nodelete_link_args, '-Wl,--unresolved-symbols=ignore-in-object-files'],
++  link_args : [nodelete_link_args],
+   install : true,
+   install_rpath : privlibdir,
+   install_dir : modlibexecdir,

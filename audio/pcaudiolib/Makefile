@@ -1,5 +1,6 @@
 PORTNAME=	pcaudiolib
 DISTVERSION=	1.2
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	https://github.com/${GH_ACCOUNT}/${PORTNAME}/releases/download/${DISTVERSION}/
 

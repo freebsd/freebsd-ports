@@ -1,6 +1,6 @@
 PORTNAME=	virtualbox-ose
 PORTVERSION=	6.1.46
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	emulators
 MASTER_SITES=	https://download.virtualbox.org/virtualbox/${PORTVERSION}/
 DISTFILES=	VirtualBox-${PORTVERSION}${EXTRACT_SUFX} ${GUESTADDITIONS}

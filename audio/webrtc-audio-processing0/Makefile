@@ -1,6 +1,6 @@
 PORTNAME=	webrtc-audio-processing
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 MASTER_SITES=	https://freedesktop.org/software/pulseaudio/${PORTNAME}/
 PKGNAMESUFFIX=	0

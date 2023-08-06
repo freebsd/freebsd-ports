@@ -1,6 +1,6 @@
 PORTNAME=	lebiniou
 DISTVERSION=	3.66.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia graphics
 
 MAINTAINER=	olivier@biniou.info

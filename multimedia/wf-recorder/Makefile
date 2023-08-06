@@ -1,6 +1,6 @@
 PORTNAME=	wf-recorder
 DISTVERSION=	0.3.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia wayland
 MASTER_SITES=	https://github.com/ammen99/wf-recorder/releases/download/v${DISTVERSION}/
 

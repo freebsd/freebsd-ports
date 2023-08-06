@@ -1,6 +1,6 @@
 PORTNAME=	enlightenment
 PORTVERSION=	0.25.4
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	http://download.enlightenment.org/rel/apps/${PORTNAME}/

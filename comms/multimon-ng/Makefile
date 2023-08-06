@@ -1,5 +1,6 @@
 PORTNAME=	multimon-ng
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	kevans@FreeBSD.org

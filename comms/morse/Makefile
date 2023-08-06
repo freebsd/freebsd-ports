@@ -1,5 +1,6 @@
 PORTNAME=	morse
 PORTVERSION=	2.5
+PORTREVISION=	1
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.catb.org/~esr/morse/ \
 		LOCAL/db
