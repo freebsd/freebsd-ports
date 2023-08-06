@@ -1,10 +1,10 @@
 PORTNAME=	polybar
 DISTVERSION=	3.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	https://github.com/polybar/polybar/releases/download/${DISTVERSION}/
 
-MAINTAINER=	rigoletto@FreeBSD.org
+MAINTAINER=	jbo@insane.engineer
 COMMENT=	Fast and easy-to-use status bar
 WWW=		https://github.com/polybar/polybar
 

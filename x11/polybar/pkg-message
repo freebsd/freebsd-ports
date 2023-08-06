@@ -6,10 +6,12 @@ not function in FreeBSD.
 
 Working modules:
 - bspwm
+- cpu
 - date
 - github
 - i3
 - ipc (polybar-msg method does not seem to work)
+- memory
 - menu
 - mpd
 - script
@@ -19,9 +21,7 @@ Working modules:
 - xworkspaces (not extensively tested)
 
 Broken modules:
-- cpu
 - filesystem
-- memory
 - network (requires wireless_tools)
 - temperature (requires /sys/class/thermal/* in sysfs)
 - volume (requires full alsa, not a wrapper)
