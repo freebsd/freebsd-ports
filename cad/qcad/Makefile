@@ -21,6 +21,7 @@ BUILD_DEPENDS=	bash:shells/bash	\
 
 #USES=		compiler:c++11-lang gl gmake qmake qt:${FLAVOR:S/qt//}
 USES=		compiler:c++11-lang gl gmake qmake qt:5
+USE_CXXSTD=	c++14
 #FLAVORS=	qt5 qt6
 #FLAVOR?=	qt5
 #qt5_PKGNAMESUFFIX=	-qt5
