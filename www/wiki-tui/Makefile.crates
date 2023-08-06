@@ -38,6 +38,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		destructure_traitobject-0.2.0 \
 		dirs-3.0.2 \
 		dirs-sys-0.3.7 \
+		doc-comment-0.3.3 \
 		encoding_rs-0.8.32 \
 		enum-map-2.6.0 \
 		enum-map-derive-0.12.0 \
@@ -62,6 +63,7 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		h2-0.3.20 \
 		hashbrown-0.12.3 \
 		heck-0.3.3 \
+		heck-0.4.1 \
 		hermit-abi-0.1.19 \
 		hermit-abi-0.3.2 \
 		html5ever-0.26.0 \
@@ -166,6 +168,8 @@ CARGO_CRATES=	addr2line-0.20.0 \
 		siphasher-0.3.10 \
 		slab-0.4.8 \
 		smallvec-1.11.0 \
+		snafu-0.7.5 \
+		snafu-derive-0.7.5 \
 		socket2-0.4.9 \
 		stable_deref_trait-1.2.0 \
 		string_cache-0.8.7 \
