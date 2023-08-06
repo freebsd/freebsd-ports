@@ -35,12 +35,14 @@ OPTIONS_DEFAULT=SHELL X11
 
 SHELL_DESC=	Shell support
 
+X11_USES=	xorg
+X11_USE=	XORG=xaw,xpm
+X11_VARS=	GRAPHICS=X11_GRAPHICS
+
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MX11}
-USES+=		xorg
-USE_XORG=	xaw xpm
-GRAPHICS=	X11_GRAPHICS
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:
@@ -51,14 +53,14 @@ post-patch:
 		${WRKSRC}/sys/unix/Makefile.doc
 	@${REINPLACE_CMD} -e 's|<malloc.h>|<stdlib.h>|g' \
 		${WRKSRC}/win/Qt/qt_win.cpp
-.if ! ${PORT_OPTIONS:MSHELL}
+
+post-patch-SHELL-off:
 	@${REINPLACE_CMD} -e 's|#define SHELL|/* #define SHELL|' \
 		${WRKSRC}/include/unixconf.h
-.endif
-.if ! ${PORT_OPTIONS:MX11}
+
+post-patch-X11-off:
 	@${REINPLACE_CMD} -e 's|# define XI18N|/* # define XI18N|' \
 		${WRKSRC}/include/config.h
-.endif
 
 do-configure:
 	(cd ${WRKSRC}/sys/unix && ${SH} setup.sh)
@@ -68,10 +70,10 @@ post-install:
 		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} manpages)
 	${INSTALL_DATA} ${WRKSRC}/win/X11/JNetHack.ad \
 		${STAGEDIR}${PREFIX}/lib/X11/app-defaults/JNetHack
-.if ${PORT_OPTIONS:MDOCS}
+
+post-install-DOCS-on:
 	@${MKDIR} ${STAGEDIR}${DOCSDIR}
 	(cd ${WRKSRC} && ${INSTALL_DATA} README.j ChangeLog.j INSTALL.j \
 		doc/Guidebook.txt doc/jGuidebook.txt ${STAGEDIR}${DOCSDIR})
-.endif
 
 .include <bsd.port.mk>
