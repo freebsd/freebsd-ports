@@ -1,5 +1,5 @@
 PORTNAME=	bined
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2
 CATEGORIES=	editors java
 MASTER_SITES=	SF/${PORTNAME}/editor/${PORTVERSION}
 
@@ -16,13 +16,12 @@ NO_BUILD=	yes
 OPTIONS_DEFINE=	DOCS
 
 do-install:
-	@${MKDIR} ${STAGEDIR}${JAVAJARDIR}/lib
 	${INSTALL_DATA} ${INSTALL_WRKSRC}/${PORTNAME}.jar \
 		${STAGEDIR}${JAVAJARDIR}
-	${INSTALL_DATA} ${INSTALL_WRKSRC}/lib/*.jar \
-		${STAGEDIR}${JAVAJARDIR}/lib
-	${PRINTF} '#!/bin/sh\n\nexec ${JAVA} -jar\
-		${JAVAJARDIR}/${PORTNAME}.jar "$$@"\n' \
+	cd ${INSTALL_WRKSRC} && ${COPYTREE_SHARE} "help lib" \
+		${STAGEDIR}${JAVAJARDIR}
+	${PRINTF} '#!/bin/sh\n\ncd ${JAVAJARDIR} && exec ${JAVA}\
+		-jar ${JAVAJARDIR}/${PORTNAME}.jar "$$@"\n' \
 		> ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 	${CHMOD} +x ${STAGEDIR}${PREFIX}/bin/${PORTNAME}
 
