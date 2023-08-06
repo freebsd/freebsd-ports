@@ -11,6 +11,9 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	rake:devel/rubygem-rake
+LIB_DEPENDS+=	libuv.so:devel/libuv \
+		libcurl.so:ftp/curl \
+		libapr-1.so:devel/apr1
 
 CPE_VENDOR=	phusion
 CPE_PRODUCT=	passenger
@@ -35,11 +38,8 @@ USES+=		apache
 
 RAKE_BIN=	${LOCALBASE}/bin/rake
 USES+=		compiler:c++11-lang cpe gem libtool python:env shebangfix ssl
+USE_CXXSTD=	c++14
 SHEBANG_FILES=	src/cxx_supportlib/vendor-copy/libuv/gyp_uv.py
-
-LIB_DEPENDS+=	libuv.so:devel/libuv \
-		libcurl.so:ftp/curl \
-		libapr-1.so:devel/apr1
 
 BUILD_DEPENDS+=	rubygem-rack>=0:www/rubygem-rack
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
@@ -77,11 +77,11 @@ pre-patch-DEBUG-off:
 
 post-build:
 .if ${FLAVOR} == apache
-	(CC=${CC} CXX=${CXX} ${WRKSRC}/bin/passenger-install-apache2-module --auto)
+	(CC=${CC} CXX=${CXX} EXTRA_CXXFLAGS="${CXXFLAGS}" ${WRKSRC}/bin/passenger-install-apache2-module --auto)
 .endif
 
 .if ${FLAVOR} == nginx
-	(cd ${WRKSRC} && CC=${CC} CXX=${CXX} ${RAKE_BIN} nginx)
+	(cd ${WRKSRC} && CC=${CC} CXX=${CXX} EXTRA_CXXFLAGS="${CXXFLAGS}" ${RAKE_BIN} nginx)
 .endif
 	${FIND} ${WRKSRC} -name '*.o' -o -name '*.bak' -o -name '*.orig' | ${XARGS} ${RM}
 
