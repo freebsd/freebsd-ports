@@ -14,6 +14,9 @@ LICENSE_NAME=	djb
 LICENSE_TEXT=	No license -- see http://cr.yp.to/softwarelaw.html
 LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
+DEPRECATED=	Abandonware, slow and untouched by upstream for over 20 years
+EXPIRATION_DATE=2023-09-30
+
 DISABLE_SIZE=	yes
 ALL_TARGET=
 INSTALL_TARGET=setup check
