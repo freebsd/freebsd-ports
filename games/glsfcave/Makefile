@@ -19,9 +19,17 @@ PORTDOCS=	*
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
 do-build:
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+	cd ${WRKSRC} && ${CC} -o glsfcave main.c -I${LOCALBASE}/include \
+		-Wno-error=incompatible-function-pointer-types \
+		-L${LOCALBASE}/lib -lglut -lGL -lGLU
+.else
 	cd ${WRKSRC} && ${CC} -o glsfcave main.c -I${LOCALBASE}/include \
 		-L${LOCALBASE}/lib -lglut -lGL -lGLU
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/glsfcave ${STAGEDIR}${PREFIX}/bin
