@@ -23,6 +23,7 @@ include/pqxx/internal/array-composite.hxx
 include/pqxx/internal/callgate.hxx
 include/pqxx/internal/concat.hxx
 include/pqxx/internal/conversions.hxx
+include/pqxx/internal/cxx-features.hxx
 include/pqxx/internal/encoding_group.hxx
 include/pqxx/internal/encodings.hxx
 include/pqxx/internal/gates/connection-errorhandler.hxx
@@ -51,6 +52,8 @@ include/pqxx/internal/result_iter.hxx
 include/pqxx/internal/result_iterator.hxx
 include/pqxx/internal/sql_cursor.hxx
 include/pqxx/internal/statement_parameters.hxx
+include/pqxx/internal/stream_query.hxx
+include/pqxx/internal/stream_query_impl.hxx
 include/pqxx/internal/stream_iterator.hxx
 include/pqxx/internal/wait.hxx
 include/pqxx/isolation
