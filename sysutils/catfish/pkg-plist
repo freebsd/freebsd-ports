@@ -15,6 +15,7 @@ share/man/man1/catfish.1.gz
 %%PYTHON_SITELIBDIR%%/catfish_lib/__init__.py
 %%PYTHON_SITELIBDIR%%/catfish_lib/Builder.py
 %%PYTHON_SITELIBDIR%%/catfish_lib/CatfishSettings.py
+%%PYTHON_SITELIBDIR%%/catfish_lib/FiletypeLists.py
 %%PYTHON_SITELIBDIR%%/catfish_lib/PrefsDialog.py
 %%PYTHON_SITELIBDIR%%/catfish_lib/SudoDialog.py
 %%PYTHON_SITELIBDIR%%/catfish_lib/Thumbnailer.py
@@ -23,6 +24,8 @@ share/man/man1/catfish.1.gz
 %%PYTHON_SITELIBDIR%%/catfish_lib/__pycache__/Builder.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/catfish_lib/__pycache__/CatfishSettings.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/catfish_lib/__pycache__/CatfishSettings.cpython-%%PYTHON_SUFFIX%%.pyc
+%%PYTHON_SITELIBDIR%%/catfish_lib/__pycache__/FiletypeLists%%PYTHON_EXT_SUFFIX%%.opt-1.pyc
+%%PYTHON_SITELIBDIR%%/catfish_lib/__pycache__/FiletypeLists%%PYTHON_EXT_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/catfish_lib/__pycache__/PrefsDialog.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
 %%PYTHON_SITELIBDIR%%/catfish_lib/__pycache__/PrefsDialog.cpython-%%PYTHON_SUFFIX%%.pyc
 %%PYTHON_SITELIBDIR%%/catfish_lib/__pycache__/SudoDialog.cpython-%%PYTHON_SUFFIX%%.opt-1.pyc
@@ -63,6 +66,7 @@ share/locale/da/LC_MESSAGES/catfish.mo
 share/locale/de/LC_MESSAGES/catfish.mo
 share/locale/el/LC_MESSAGES/catfish.mo
 share/locale/en_AU/LC_MESSAGES/catfish.mo
+share/locale/en_GB/LC_MESSAGES/catfish.mo
 share/locale/eo/LC_MESSAGES/catfish.mo
 share/locale/es/LC_MESSAGES/catfish.mo
 share/locale/et/LC_MESSAGES/catfish.mo
@@ -81,6 +85,7 @@ share/locale/is/LC_MESSAGES/catfish.mo
 share/locale/it/LC_MESSAGES/catfish.mo
 share/locale/ja/LC_MESSAGES/catfish.mo
 share/locale/kab/LC_MESSAGES/catfish.mo
+share/locale/kk/LC_MESSAGES/catfish.mo
 share/locale/ko/LC_MESSAGES/catfish.mo
 share/locale/ku/LC_MESSAGES/catfish.mo
 share/locale/lt/LC_MESSAGES/catfish.mo
