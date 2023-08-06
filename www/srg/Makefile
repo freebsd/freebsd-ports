@@ -12,18 +12,18 @@ LICENSE=	GPLv2+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		tar:bzip2
+USE_CXXSTD=	c++14
+
 GNU_CONFIGURE=	yes
 
 OPTIONS_DEFINE=	EXAMPLES
-
-.include <bsd.port.options.mk>
 
 post-patch:
 	@${REINPLACE_CMD} -e \
 		'/CPPFLAGS/s|-I/usr/local/include|| ; \
 		 /LDFLAGS/s|-L/usr/local/lib||' ${WRKSRC}/configure
 
-post-install:
+post-install-EXAMPLES-on:
 	@${MKDIR} ${STAGEDIR}${EXAMPLESDIR}
 .for ex in srg.daily srg.monthly srg.weekly
 	${INSTALL_DATA} ${WRKSRC}/examples/${ex} ${STAGEDIR}${EXAMPLESDIR}
