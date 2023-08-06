@@ -50,7 +50,7 @@ CMAKE_ON+=	WITH_XEUS
 # BFD:
 USE_BINUTILS=	yes
 CMAKE_ON+=	WITH_BFD
-LIB_DEPENDS+=	libbfd-2.40.so:devel/binutils
+LIB_DEPENDS+=	libbfd.so:devel/binutils
 
 pre-configure:
 	${ECHO_CMD} ${PORTVERSION} > ${WRKSRC}/version
