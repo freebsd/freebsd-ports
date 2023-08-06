@@ -13,7 +13,8 @@ LICENSE=	AGPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	protoc:devel/protobuf
-LIB_DEPENDS=	libsodium.so:security/libsodium
+LIB_DEPENDS=	libsodium.so:security/libsodium \
+		libzstd.so:archivers/zstd
 
 USES=		cargo pkgconfig
 CARGO_ENV+=	SODIUM_USE_PKG_CONFIG=1
