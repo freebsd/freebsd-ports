@@ -1,0 +1,32 @@
+bin/swtpm
+bin/swtpm_bios
+bin/swtpm_cert
+bin/swtpm_ioctl
+bin/swtpm_localca
+bin/swtpm_setup
+%%ETCDIR%%-localca.conf
+%%ETCDIR%%-localca.options
+%%ETCDIR%%_setup.conf
+include/swtpm/tpm_ioctl.h
+lib/swtpm/libswtpm_libtpms.a
+lib/swtpm/libswtpm_libtpms.so
+lib/swtpm/libswtpm_libtpms.so.0
+lib/swtpm/libswtpm_libtpms.so.0.0.0
+man/man3/swtpm_ioctls.3.gz
+man/man5/swtpm-localca.conf.5.gz
+man/man5/swtpm-localca.options.5.gz
+man/man5/swtpm_setup.conf.5.gz
+man/man8/swtpm-create-tpmca.8.gz
+man/man8/swtpm-localca.8.gz
+man/man8/swtpm.8.gz
+man/man8/swtpm_bios.8.gz
+man/man8/swtpm_cert.8.gz
+man/man8/swtpm_cuse.8.gz
+man/man8/swtpm_ioctl.8.gz
+man/man8/swtpm_localca.8.gz
+man/man8/swtpm_setup.8.gz
+%%DATADIR%%/swtpm-create-tpmca
+%%DATADIR%%/swtpm-create-user-config-files
+%%DATADIR%%/swtpm-localca
+@dir /var/lib/swtpm-localca
+@dir /var/lib

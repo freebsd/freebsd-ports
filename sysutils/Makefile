@@ -1392,6 +1392,7 @@
     SUBDIR += swapmon
     SUBDIR += swapusage
     SUBDIR += sweeper
+    SUBDIR += swtpm
     SUBDIR += symlinks
     SUBDIR += symon
     SUBDIR += synergy
