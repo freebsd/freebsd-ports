@@ -27,6 +27,12 @@ OPTIONS_DEFINE=	DOCS EXAMPLES
 DOCS_SUB_LIST=	NOTEWORK="Please read the ${DOCSDIR}/notework.txt before using ${PORTNAME}"
 DOCS_SUB_LIST_OFF=	NOTEWORK=""
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=  -Dregister=
+.endif
+
 post-patch:
 	@${SED}\
 		-e 's,^\(#define __GVER_VENDOR_NAME__\).*,\1 "",'\
