@@ -1,6 +1,6 @@
 PORTNAME=	mailpit
 DISTVERSIONPREFIX=	v
-DISTVERSION=	1.8.0
+DISTVERSION=	1.8.1
 CATEGORIES=	mail devel
 MASTER_SITES=	https://www.madpilot.net/mailpit/:npmcache \
 		LOCAL/madpilot/mailpit:npmcache
@@ -38,13 +38,13 @@ GH_TUPLE=	\
 		go-check:check:41f04d3bba15:go_check_check/vendor/gopkg.in/check.v1 \
 		go-yaml:yaml:v3.0.1:go_yaml_yaml/vendor/gopkg.in/yaml.v3 \
 		gogs:chardet:b7413eaefb8f:gogs_chardet/vendor/github.com/gogs/chardet \
-		golang:crypto:v0.11.0:golang_crypto/vendor/golang.org/x/crypto \
-		golang:image:v0.9.0:golang_image/vendor/golang.org/x/image \
+		golang:crypto:v0.12.0:golang_crypto/vendor/golang.org/x/crypto \
+		golang:image:v0.11.0:golang_image/vendor/golang.org/x/image \
 		golang:mod:v0.12.0:golang_mod/vendor/golang.org/x/mod \
-		golang:net:v0.12.0:golang_net/vendor/golang.org/x/net \
-		golang:sys:v0.10.0:golang_sys/vendor/golang.org/x/sys \
-		golang:text:v0.11.0:golang_text/vendor/golang.org/x/text \
-		golang:tools:v0.11.0:golang_tools/vendor/golang.org/x/tools \
+		golang:net:v0.14.0:golang_net/vendor/golang.org/x/net \
+		golang:sys:v0.11.0:golang_sys/vendor/golang.org/x/sys \
+		golang:text:v0.12.0:golang_text/vendor/golang.org/x/text \
+		golang:tools:v0.11.1:golang_tools/vendor/golang.org/x/tools \
 		gomarkdown:markdown:531d2d74bc12:gomarkdown_markdown/vendor/github.com/gomarkdown/markdown \
 		google:uuid:v1.3.0:google_uuid/vendor/github.com/google/uuid \
 		gorilla:css:v1.0.0:gorilla_css/vendor/github.com/gorilla/css \
@@ -87,7 +87,7 @@ GL_TUPLE=	\
 		cznic:mathutil:aabd79189264b253ce2360e80193242239022080:cznic_mathutil/vendor/modernc.org/mathutil \
 		cznic:memory:2014ace98d6392882e3d171baf4b76b21a0e7813:cznic_memory/vendor/modernc.org/memory \
 		cznic:opt:6b647abadf922391a4527f3a4fa1817eff08b7cd:cznic_opt/vendor/modernc.org/opt \
-		cznic:sqlite:15f9fdc72aec1ae1ddeea47bfc2748bbd57a772a:cznic_sqlite/vendor/modernc.org/sqlite \
+		cznic:sqlite:a16e15fbb42ad21e3665c92e257b4ec4600f2f15:cznic_sqlite/vendor/modernc.org/sqlite \
 		cznic:strutil:bba0c72b66bb9ced2dfd2ee521b7f16b2cbb39fa:cznic_strutil/vendor/modernc.org/strutil \
 		cznic:token:24e30cd78ee0f2d5d4516917d9cc1101e3ccc1ab:cznic_token/vendor/modernc.org/token
 
