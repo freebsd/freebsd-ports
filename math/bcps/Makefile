@@ -17,6 +17,7 @@ LIB_DEPENDS=	libAlps.so:math/alps \
 		libopenblas.so:math/openblas
 
 USES=		gmake libtool pkgconfig
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
