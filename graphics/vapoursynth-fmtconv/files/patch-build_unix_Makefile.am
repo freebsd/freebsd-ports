@@ -1,0 +1,29 @@
+--- build/unix/Makefile.am.orig	2023-08-06 08:51:47 UTC
++++ build/unix/Makefile.am
+@@ -369,7 +369,7 @@ libsse2_la_SOURCES = \
+         ../../src/fstb/ToolsSse2.h \
+         ../../src/fstb/ToolsSse2.hpp
+ 
+-libsse2_la_CXXFLAGS = $(AM_CXXFLAGS) -msse2
++libsse2_la_CXXFLAGS = $(AM_CXXFLAGS)
+ libfmtconv_la_LIBADD += libsse2.la
+ fmtcltest_LDADD += libsse2.la
+ noinst_LTLIBRARIES += libsse2.la
+@@ -379,7 +379,7 @@ commonsrcavx = \
+ 
+ libavx_la_SOURCES = $(commonsrcavx)
+ 
+-libavx_la_CXXFLAGS = $(AM_CXXFLAGS) -mavx
++libavx_la_CXXFLAGS = $(AM_CXXFLAGS)
+ libfmtconv_la_LIBADD += libavx.la
+ fmtcltest_LDADD += libavx.la
+ noinst_LTLIBRARIES += libavx.la
+@@ -397,7 +397,7 @@ libavx2_la_SOURCES = $(commonsrcavx2) \
+         ../../src/fstb/ToolsAvx2.h \
+         ../../src/fstb/ToolsAvx2.hpp
+ 
+-libavx2_la_CXXFLAGS = $(AM_CXXFLAGS) -mavx2
++libavx2_la_CXXFLAGS = $(AM_CXXFLAGS)
+ libfmtconv_la_LIBADD += libavx2.la
+ fmtcltest_LDADD += libavx2.la
+ noinst_LTLIBRARIES += libavx2.la

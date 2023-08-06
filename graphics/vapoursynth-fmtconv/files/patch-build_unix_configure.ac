@@ -1,0 +1,33 @@
+--- build/unix/configure.ac.orig	2023-08-06 08:54:07 UTC
++++ build/unix/configure.ac
+@@ -48,7 +48,7 @@ AS_IF(
+         DEBUGCFLAGS="-O0 -g3 -ggdb"
+         AC_MSG_NOTICE([Debug mode enabled.])
+     ],
+-    [DEBUGCFLAGS="-O3 -g3 -DNDEBUG"]
++#    [DEBUGCFLAGS="-O3 -g3 -DNDEBUG"]
+ )
+ 
+ AS_IF(
+@@ -88,10 +88,10 @@ AS_IF(
+ AS_IF(
+     [test "x$X86" = "xtrue"],
+     [
+-        MFLAGS="$MFLAGS -mfpmath=sse -msse2"
++#        MFLAGS="$MFLAGS -mfpmath=sse -msse2"
+         COMPWARNFLAGS="$COMPWARNFLAGS -Wno-ignored-attributes"
+         # We need this to use CMPXCHG16B for 2x64-bit CAS (compare and swap)
+-        AS_IF([test "x$BITS" = "x64"], [MFLAGS="$MFLAGS -mcx16"])
++#        AS_IF([test "x$BITS" = "x64"], [MFLAGS="$MFLAGS -mcx16"])
+     ]
+ )
+ 
+@@ -100,7 +100,7 @@ AS_IF(
+     [
+         MFLAGS="-ftree-vectorize"
+ 
+-        AX_CHECK_COMPILE_FLAG([-mfpu=neon], [MFLAGS="$MFLAGS -mfpu=neon"])
++#       AX_CHECK_COMPILE_FLAG([-mfpu=neon], [MFLAGS="$MFLAGS -mfpu=neon"])
+ 
+         # GCC 7 emits some warnings about ABI changes when using std::vector
+         AX_CHECK_COMPILE_FLAG([-Wpsabi], [COMPWARNFLAGS="$COMPWARNFLAGS -Wno-psabi"], , [-Werror])

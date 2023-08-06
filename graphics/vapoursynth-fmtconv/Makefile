@@ -1,6 +1,7 @@
 PORTNAME=	fmtconv
-PORTVERSION=	r28
+DISTVERSION=	r30
 CATEGORIES=	graphics
+MASTER_SITES=	https://github.com/EleonoreMizo/${PORTNAME}/releases/download/${DISTVERSION}/
 PKGNAMEPREFIX=	vapoursynth-
 
 MAINTAINER=	ports@FreeBSD.org
@@ -8,22 +9,30 @@ COMMENT=	Format conversion tools for Vapoursynth and Avisynth+
 WWW=		https://github.com/EleonoreMizo/fmtconv
 
 LICENSE=	WTFPL
+LICENSE_FILES=	${WRKSRC}/COPYING
 
-ONLY_FOR_ARCHS=	aarch64 amd64 armv6 armv7 i386
+ONLY_FOR_ARCHS=	aarch64 amd64
 
-USE_GITHUB=	yes
-GH_ACCOUNT=	EleonoreMizo
+USES=		autoreconf compiler:c++14-lang gmake libtool zip
 
-USES=		autoreconf compiler:c++11-lib gmake libtool
+EXTRACT_AFTER_ARGS=	-d ${WRKDIR}/${PORTNAME}-${DISTVERSION}
+
 WRKSRC_SUBDIR=	build/unix
 PATCH_WRKSRC=	${WRKSRC:H:H}
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir="${DATADIR}"
 INSTALL_TARGET=	install-strip
-DATADIR=	${PREFIX}/lib/vapoursynth
+
 DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
-PORTDATA=	lib${PORTNAME}.so
 PORTDOCS=	*
+PLIST_FILES=	lib/vapoursynth/lib${PORTNAME}.so
+
+# We need at least AVX2 instructions on amd64
+.if !defined(CPUTYPE) && ${ARCH} == "amd64"
+CONFIGURE_ENV+=	EXTRA_CXXFLAGS=-march=haswell
+.endif
+
+CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/vapoursynth"
 
 OPTIONS_DEFINE=	DOCS
 
