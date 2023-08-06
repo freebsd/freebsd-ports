@@ -3,7 +3,7 @@ PORTVERSION=	201710311100
 PORTREVISION=	2
 CATEGORIES=	x11-themes
 
-MAINTAINER=	jt@ixsystems.com
+MAINTAINER=	jwb@FreeBSD.org
 COMMENT=	Lumina desktop wallpapers/colors
 WWW=		https://github.com/trueos/lumina-themes
 
