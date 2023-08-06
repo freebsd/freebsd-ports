@@ -117,8 +117,20 @@ CONFIGURE_ARGS+=	--disable-dc
 #PLIST_SUB+=	DC1394="@comment "
 #.endif
 
+.include <bsd.port.pre.mk>
+
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+CPPFLAGS+=	-Dregister= -Wno-error=dynamic-exception-spec
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/RTF_WASCLONED/0x20000/' ${WRKSRC}/src/ptlib/unix/socket.cxx
+.if ${COMPILER_TYPE} == clang && ${COMPILER_VERSION} >= 160
+	@${REINPLACE_CMD} -e 's|auto_ptr|unique_ptr|' \
+		${WRKSRC}/include/ptlib/psharedptr.h
+	@${REINPLACE_CMD} -e 's|public binary_function|public __binary_function|' \
+		${WRKSRC}/include/ptlib/pprocess.h
+.endif
 
 pre-configure:
 	(cd ${WRKSRC}/plugins/ && ${AUTORECONF} -fi)
@@ -135,4 +147,4 @@ post-install-DEBUG-on:
 	${LN} -sf libpt_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt_d.so.${PVERSION_MAJOR}
 	${LN} -sf libpt_d.so.${PORTVERSION} ${STAGEDIR}${PREFIX}/lib/libpt_d.so.${PVERSION_MINOR}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
