@@ -27,14 +27,16 @@ DOCSDIR=	${PREFIX}/share/doc/${PKGBASE}
 PORTDOCS=	*
 PLIST_FILES=	lib/vapoursynth/lib${PORTNAME}.so
 
-# We need at least AVX2 instructions on amd64
-.if !defined(CPUTYPE) && ${ARCH} == "amd64"
-CONFIGURE_ENV+=	EXTRA_CXXFLAGS=-march=haswell
-.endif
-
 CONFIGURE_ARGS=	--libdir="${PREFIX}/lib/vapoursynth"
 
 OPTIONS_DEFINE=	DOCS
+
+.include <bsd.port.options.mk>
+
+# We need at least AVX2 instructions on amd64
+.if !defined(CPUTYPE) && ${ARCH} == "amd64"
+CONFIGURE_ENV+= EXTRA_CXXFLAGS=-march=haswell
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's/x86_64/&|amd64/' \
