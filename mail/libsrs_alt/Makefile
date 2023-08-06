@@ -10,18 +10,23 @@ WWW=		https://opsec.eu/src/srs/
 
 USES=			libtool tar:bzip2
 USE_LDCONFIG=		yes
-SHLIB_MAJOR=		1
+
 GNU_CONFIGURE=		yes
 
 PLIST_SUB=		SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 OPTIONS_DEFINE=		COMPAT_BASE64
+
 COMPAT_BASE64_DESC=	MTA Friendly base64 compatibility mode
+
+COMPAT_BASE64_CONFIGURE_ON=	--with-base64compat
+
+SHLIB_MAJOR=		1
 
 .include <bsd.port.options.mk>
 
-.if ${PORT_OPTIONS:MCOMPAT_BASE64}
-CONFIGURE_ARGS+=	--with-base64compat
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
 .endif
 
 post-patch:
