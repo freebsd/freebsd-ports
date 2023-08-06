@@ -1,0 +1,4 @@
+Libtpms is a library that targets the integration of TPM functionality into
+hypervisors, primarily into Qemu. Libtpms provides a very narrow public API for
+this purpose so that integration is possible. Only the minimum of necessary
+APIs are made publicly available.

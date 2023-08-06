@@ -667,6 +667,7 @@
     SUBDIR += libretto-config
     SUBDIR += libsunacl
     SUBDIR += libsysstat
+    SUBDIR += libtpms
     SUBDIR += libtree
     SUBDIR += libudisks
     SUBDIR += liburcu
