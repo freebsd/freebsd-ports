@@ -12,6 +12,7 @@ LICENSE=	GPLv2+
 
 GNU_CONFIGURE=	yes
 USES=		gmake libtool:build
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 post-install:
