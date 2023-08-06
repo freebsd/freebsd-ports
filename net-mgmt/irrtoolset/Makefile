@@ -22,4 +22,10 @@ PLIST_FILES=	bin/rpslcheck bin/peval bin/rtconfig \
 		man/man1/rtconfig.1.gz man/man1/peval.1.gz \
 		man/man1/rpslcheck.1.gz man/man1/irrtoolset-errors.1.gz
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=  -Dregister=
+.endif
+
 .include <bsd.port.mk>
