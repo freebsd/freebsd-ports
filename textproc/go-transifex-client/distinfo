@@ -1,5 +1,5 @@
-TIMESTAMP = 1682365560
-SHA256 (go/textproc_go-transifex-client/transifex-client-v1.6.7/v1.6.7.mod) = 409d043e1ceeb8cd80fe8a6d452c5c7b5aef3ce23626d6ab6375c844b7c33f5c
-SIZE (go/textproc_go-transifex-client/transifex-client-v1.6.7/v1.6.7.mod) = 646
-SHA256 (go/textproc_go-transifex-client/transifex-client-v1.6.7/v1.6.7.zip) = 3d643bb3e84296bc12083cf69bd9b861fb0a5d51692cd528aba03bef0cc0a6fb
-SIZE (go/textproc_go-transifex-client/transifex-client-v1.6.7/v1.6.7.zip) = 135920
+TIMESTAMP = 1691343412
+SHA256 (go/textproc_go-transifex-client/transifex-client-v1.6.10/v1.6.10.mod) = 409d043e1ceeb8cd80fe8a6d452c5c7b5aef3ce23626d6ab6375c844b7c33f5c
+SIZE (go/textproc_go-transifex-client/transifex-client-v1.6.10/v1.6.10.mod) = 646
+SHA256 (go/textproc_go-transifex-client/transifex-client-v1.6.10/v1.6.10.zip) = 194229fb54cd0acadced14c9745a13249c0f85d1546a71d3f96894c75b2eaab0
+SIZE (go/textproc_go-transifex-client/transifex-client-v1.6.10/v1.6.10.zip) = 137155
