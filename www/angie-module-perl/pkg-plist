@@ -1,0 +1,4 @@
+%%MODDIR%%/ngx_http_perl_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_perl_module-debug.so
+%%SITE_ARCH%%/auto/nginx/nginx.so
+%%SITE_ARCH%%/nginx.pm
