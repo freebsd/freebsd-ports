@@ -39,9 +39,7 @@ USE_RC_SUBR=	${PORTNAME}
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*} || ${ARCH:Mriscv64*}
-CMAKE_ARGS+=	-DFLB_LUAJIT:BOOL=OFF
-.elif ${ARCH} == powerpc
+.if ${ARCH} == powerpc
 LDFLAGS+=	-latomic
 USES+=		compiler:gcc-c++11-lib
 .else
