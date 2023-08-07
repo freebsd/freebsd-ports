@@ -17,6 +17,7 @@ LIB_DEPENDS=	libfltk.so:x11-toolkits/fltk
 CFLAGS+=	-DFL_LIBRARY
 MAKE_ENV=	FLTK_HOME=${LOCALBASE}/bin
 USES=		python xorg
+USE_CXXSTD=	c++14
 USE_PYTHON=	autoplist distutils
 USE_XORG=	x11
 
@@ -27,6 +28,12 @@ PORTEXAMPLES=	*
 WRKSRC=		${WRKDIR}/pyFltk-${PORTVERSION}
 
 OPTIONS_DEFINE=	DOCS EXAMPLES
+
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-D_LIBCPP_ENABLE_CXX17_REMOVED_UNEXPECTED_FUNCTIONS
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|g' ${WRKSRC}/setup.py
