@@ -1258,7 +1258,6 @@ lib/libbbl.a
 lib/libbdl.a
 lib/libbsl.a
 lib/libinteldfp.a
-lib/libpcre2.a
 lib/libryu.a
 lib/libs_baltst.a
 libdata/pkgconfig/bal.pc
@@ -1266,6 +1265,5 @@ libdata/pkgconfig/bbl.pc
 libdata/pkgconfig/bdl.pc
 libdata/pkgconfig/bsl.pc
 libdata/pkgconfig/inteldfp.pc
-libdata/pkgconfig/pcre2.pc
 libdata/pkgconfig/ryu.pc
 libdata/pkgconfig/s-baltst.pc
