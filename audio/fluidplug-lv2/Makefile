@@ -26,6 +26,12 @@ OPTIONS_DEFINE_i386=	SSE
 
 SSE_MAKE_ARGS=	PORT_SIMD_FLAGS="-mtune=generic -msse -msse2 -mfpmath=sse"
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e ' \
 		s|PREFIX  = /usr|PREFIX ?= /usr| ; \
