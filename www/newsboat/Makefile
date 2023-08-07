@@ -33,6 +33,12 @@ CARGO_TARGET_DIR=	${WRKSRC}/target
 
 OPTIONS_DEFINE=	DOCS
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's,fail "ncursesw",true,; s,fail "libcrypto",true,' \
 		-e 's,fail "libssl",true,' \
