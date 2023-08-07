@@ -17,16 +17,14 @@ LICENSE_FILE_BSD2CLAUSE=${WRKSRC}/BSDL
 LICENSE_FILE_RUBY=	${WRKSRC}/COPYING
 
 DEPRECATED=	Please migrate to newer versions. Ruby 3.0 will reach its EoL on March 30, 2024
-EXPIRATION_DATE=2024-04-30
+EXPIRATION_DATE=2024-03-30
 
 # Using LIB_DEPENDS finds the libffi from gcc which causes problems
 BUILD_DEPENDS=	libffi>=0:devel/libffi
 LIB_DEPENDS=	libyaml.so:textproc/libyaml
 RUN_DEPENDS=	libffi>=0:devel/libffi
 
-USES=		autoreconf cpe ruby:none ssl tar:xz
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Do not build openssl module
+USES=		autoreconf cpe localbase ruby:none tar:xz
 
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--disable-rpath \
@@ -37,26 +35,28 @@ CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--with-sitedir="${PREFIX}/lib/ruby/site_ruby" \
 		--with-vendordir="${PREFIX}/lib/ruby/vendor_ruby"
 CONFIGURE_ENV=	debugflags=
-CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 # Keep this, else ruby will fail to load libraries dependent of libpthread.
-LIBS+=		-lpthread -L${LOCALBASE}/lib
+LIBS+=		-lpthread
 USE_LDCONFIG=	yes
 WRKSRC=		${RUBY_WRKSRC}
 
 RUBY_VER=		3.0
 
-OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC
-OPTIONS_DEFAULT=	RDOC LIBEDIT
+OPTIONS_DEFINE=		CAPIDOCS DEBUG DOCS EXAMPLES GMP RDOC OPENSSL
+OPTIONS_DEFAULT=	RDOC LIBEDIT OPENSSL
 OPTIONS_SINGLE=		EDIT
 OPTIONS_SINGLE_EDIT=	LIBEDIT READLINE
 OPTIONS_SUB=		yes
+OPTIONS_EXCLUDE_FreeBSD_14=	OPENSSL
+
 CAPIDOCS_DESC=		Build and install C API documents
 GMP_DESC=		Use GMP to accelerate Bignum operations
 RDOC_DESC=		Build and install Rdoc indexes
 EDIT_DESC=		Which line editing lib to use
 LIBEDIT_DESC=		Use libedit
 READLINE_DESC=		Use libreadline
+
 CAPIDOCS_BUILD_DEPENDS=	doxygen>=1.8.13,2:devel/doxygen \
 			dot:graphics/graphviz
 CAPIDOCS_CONFIGURE_ENABLE=	install-capi
@@ -64,6 +64,7 @@ GMP_CONFIGURE_WITH=	gmp
 GMP_LIB_DEPENDS=	libgmp.so:math/gmp
 LIBEDIT_CONFIGURE_ON=	--enable-libedit --with-libedit-dir=${LOCALBASE}
 LIBEDIT_USES=		libedit
+OPENSSL_USES=	ssl
 RDOC_CONFIGURE_ENABLE=	install-rdoc
 READLINE_CONFIGURE_ON=	--disable-libedit --with-readline-dir=${LOCALBASE}
 READLINE_USES=		readline
@@ -111,6 +112,10 @@ PLIST_SUB+=	IF_DEFAULT=""
 .else
 PKGNAMESUFFIX=	${RUBY_SUFFIX}
 PLIST_SUB+=	IF_DEFAULT="@comment "
+.endif
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+OPTIONS_EXCLUDE=	OPENSSL
 .endif
 
 INSTALLED_SCRIPTS=	ruby
