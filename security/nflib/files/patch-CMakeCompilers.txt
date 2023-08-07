@@ -1,0 +1,11 @@
+--- CMakeCompilers.txt.orig	2023-08-07 06:26:47 UTC
++++ CMakeCompilers.txt
+@@ -16,7 +16,7 @@ endif()
+ # optimization flags support
+ if(CMAKE_BUILD_TYPE MATCHES Release)
+ 	set(CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG -O3")
+-	foreach(FLAG -march=native -mtune=native -funroll-loops)
++	foreach(FLAG -funroll-loops)
+ 		string(REGEX REPLACE -= _ FLAG_ID ${FLAG})
+ 		string(TOUPPER ${FLAG_ID} FLAG_ID)
+ 		CHECK_CXX_COMPILER_FLAG(${FLAG} COMPILER_SUPPORTS${FLAG_ID})

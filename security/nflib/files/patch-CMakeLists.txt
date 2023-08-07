@@ -1,5 +1,14 @@
---- CMakeLists.txt.orig	2020-02-22 22:31:07 UTC
+--- CMakeLists.txt.orig	2019-11-18 12:19:53 UTC
 +++ CMakeLists.txt
+@@ -12,7 +12,7 @@ if(NFL_OPTIMIZED)
+ 
+     include(CheckCXXSourceCompiles)
+     set(CMAKE_CXX_FLAGS_OLD ${CMAKE_CXX_FLAGS})
+-    set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
++    #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -march=native")
+ 
+     check_cxx_source_compiles("#include <immintrin.h>\nint main() { return 0;}" NFLLIB_USE_AVX)
+     check_cxx_source_compiles("#include <pmmintrin.h>\nint main() { return 0;}" NFLLIB_USE_SSE)
 @@ -64,4 +64,6 @@ install(FILES ${NFLLIB_HDRS_3} DESTINATION include/nfl
  install(FILES ${NFLLIB_HDRS_4} DESTINATION include/nfl/opt/arch)
  install(FILES ${NFLLIB_PRNG_HDRS} DESTINATION include/nfl/prng)
