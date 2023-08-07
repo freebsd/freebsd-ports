@@ -17,7 +17,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	libgmp.so:math/gmp
 
 USES=		gmake localbase:ldflags shebangfix
-
+USE_CXXSTD=	c++14
 USE_GITHUB=	yes
 GH_ACCOUNT=	Macaulay2
 
