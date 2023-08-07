@@ -1,5 +1,5 @@
 PORTNAME=	foswiki
-PORTVERSION=	2.1.7
+PORTVERSION=	2.1.8
 CATEGORIES=	www
 MASTER_SITES=	SF
 DISTNAME=	Foswiki-${PORTVERSION}
@@ -17,6 +17,7 @@ RUN_DEPENDS=	p5-Error>=0.15:lang/p5-Error \
 		p5-Email-MIME>=1.903:mail/p5-Email-MIME \
 		p5-File-Copy-Recursive>=0:devel/p5-File-Copy-Recursive \
 		p5-JSON>=0:converters/p5-JSON \
+		p5-Locale-Codes>=0:misc/p5-Locale-Codes \
 		p5-Text-Diff>=0.35:textproc/p5-Text-Diff \
 		p5-Sort-Maker>=0.06:devel/p5-Sort-Maker
 

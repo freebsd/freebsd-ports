@@ -258,7 +258,6 @@
 %%WWWDIR%%/data/System/ModPerlEngineContrib.txt
 %%WWWDIR%%/data/System/NatEditHelpText.txt
 %%WWWDIR%%/data/System/NatEditPlugin.txt
-%%WWWDIR%%/data/System/NatEditWordHelpText.txt
 %%WWWDIR%%/data/System/NewUserTemplate.txt
 %%WWWDIR%%/data/System/ObjectMethod.txt
 %%WWWDIR%%/data/System/OriginalDocumentGraphics.txt
@@ -712,6 +711,7 @@
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/PATH.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/PERL.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/PLUGIN_MODULE.pm
+%%WWWDIR%%/lib/Foswiki/Configure/Checkers/PROXY/UseForwardedHeaders.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Password.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Plugins/CommentPlugin/GuestCanComment.pm
 %%WWWDIR%%/lib/Foswiki/Configure/Checkers/Plugins/CommentPlugin/RequiredForSave.pm
@@ -1109,6 +1109,7 @@
 %%WWWDIR%%/lib/Foswiki/Plugins/NatEditPlugin/NATEDIT.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/NatEditPlugin/RestAttachments.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/NatEditPlugin/RestSave.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/NatEditPlugin/RestUsers.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/PreferencesPlugin.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/PubLinkFixupPlugin.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/PubLinkFixupPlugin/Config.spec
@@ -1131,6 +1132,7 @@
 %%WWWDIR%%/lib/Foswiki/Plugins/TinyMCEPlugin/Config.spec
 %%WWWDIR%%/lib/Foswiki/Plugins/TinyMCEPlugin/TinyMCE.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/TwistyPlugin.pm
+%%WWWDIR%%/lib/Foswiki/Plugins/TwistyPlugin/DEPENDENCIES
 %%WWWDIR%%/lib/Foswiki/Plugins/TwistyPlugin/TWISTY.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/UpdatesPlugin.pm
 %%WWWDIR%%/lib/Foswiki/Plugins/UpdatesPlugin/Config.spec
@@ -1487,6 +1489,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/design-bump.png
 %%WWWDIR%%/pub/System/DocumentGraphics/designfloat.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/designfloat.png
+%%WWWDIR%%/pub/System/DocumentGraphics/dot_udlr.png
 %%WWWDIR%%/pub/System/DocumentGraphics/detail.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/detail.png
 %%WWWDIR%%/pub/System/DocumentGraphics/deviant-art.gif
@@ -1512,9 +1515,9 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/dot_udl.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/dot_udl.png
 %%WWWDIR%%/pub/System/DocumentGraphics/dot_udlr.gif
-%%WWWDIR%%/pub/System/DocumentGraphics/dot_udlr.png
 %%WWWDIR%%/pub/System/DocumentGraphics/dot_udr.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/dot_udr.png
+%%WWWDIR%%/pub/System/DocumentGraphics/move.png
 %%WWWDIR%%/pub/System/DocumentGraphics/dot_ul.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/dot_ul.png
 %%WWWDIR%%/pub/System/DocumentGraphics/dot_ulr.gif
@@ -1752,7 +1755,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/mov.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/mov.png
 %%WWWDIR%%/pub/System/DocumentGraphics/move.gif
-%%WWWDIR%%/pub/System/DocumentGraphics/move.png
+%%WWWDIR%%/pub/System/DocumentGraphics/package.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/mp3.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/mp3.png
 %%WWWDIR%%/pub/System/DocumentGraphics/msn.gif
@@ -1771,7 +1774,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/note.png
 %%WWWDIR%%/pub/System/DocumentGraphics/notify.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/notify.png
-%%WWWDIR%%/pub/System/DocumentGraphics/package.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/process.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/package.png
 %%WWWDIR%%/pub/System/DocumentGraphics/package_magnify.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/package_magnify.png
@@ -1817,7 +1820,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/presentation.png
 %%WWWDIR%%/pub/System/DocumentGraphics/printtopic.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/printtopic.png
-%%WWWDIR%%/pub/System/DocumentGraphics/process.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/qik.png
 %%WWWDIR%%/pub/System/DocumentGraphics/process.png
 %%WWWDIR%%/pub/System/DocumentGraphics/processing-32-bg.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/processing-32.gif
@@ -1834,7 +1837,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/py.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/py.png
 %%WWWDIR%%/pub/System/DocumentGraphics/qik.gif
-%%WWWDIR%%/pub/System/DocumentGraphics/qik.png
+%%WWWDIR%%/pub/System/DocumentGraphics/right.png
 %%WWWDIR%%/pub/System/DocumentGraphics/question.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/question.png
 %%WWWDIR%%/pub/System/DocumentGraphics/quiet.gif
@@ -1858,7 +1861,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/rfc.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/rfc.png
 %%WWWDIR%%/pub/System/DocumentGraphics/right.gif
-%%WWWDIR%%/pub/System/DocumentGraphics/right.png
+%%WWWDIR%%/pub/System/DocumentGraphics/skype.png
 %%WWWDIR%%/pub/System/DocumentGraphics/rss-feed.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/rss-feed.png
 %%WWWDIR%%/pub/System/DocumentGraphics/rss-small.gif
@@ -1886,7 +1889,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/skin.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/skin.png
 %%WWWDIR%%/pub/System/DocumentGraphics/skype.gif
-%%WWWDIR%%/pub/System/DocumentGraphics/skype.png
+%%WWWDIR%%/pub/System/DocumentGraphics/starred.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/slashdot.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/slashdot.png
 %%WWWDIR%%/pub/System/DocumentGraphics/slideshare.gif
@@ -1910,7 +1913,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/star.png
 %%WWWDIR%%/pub/System/DocumentGraphics/stargold.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/stargold.png
-%%WWWDIR%%/pub/System/DocumentGraphics/starred.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/tablesortdiamond.png
 %%WWWDIR%%/pub/System/DocumentGraphics/starred.png
 %%WWWDIR%%/pub/System/DocumentGraphics/statistics.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/statistics.png
@@ -1929,7 +1932,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/table.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/table.png
 %%WWWDIR%%/pub/System/DocumentGraphics/tablesortdiamond.gif
-%%WWWDIR%%/pub/System/DocumentGraphics/tablesortdiamond.png
+%%WWWDIR%%/pub/System/DocumentGraphics/target-blue.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/tablesortdown.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/tablesortdown.png
 %%WWWDIR%%/pub/System/DocumentGraphics/tablesortup.gif
@@ -1954,7 +1957,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/tag-yellow.png
 %%WWWDIR%%/pub/System/DocumentGraphics/tag.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/tag.png
-%%WWWDIR%%/pub/System/DocumentGraphics/target-blue.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/toggleopen.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/target-blue.png
 %%WWWDIR%%/pub/System/DocumentGraphics/target-gray.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/target-gray.png
@@ -1988,7 +1991,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/toggleopen-mini.png
 %%WWWDIR%%/pub/System/DocumentGraphics/toggleopen-small.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/toggleopen-small.png
-%%WWWDIR%%/pub/System/DocumentGraphics/toggleopen.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/userinactive.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/toggleopen.png
 %%WWWDIR%%/pub/System/DocumentGraphics/toggleopenleft-small.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/toggleopenleft-small.png
@@ -2032,7 +2035,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/userdelete.png
 %%WWWDIR%%/pub/System/DocumentGraphics/useredit.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/useredit.png
-%%WWWDIR%%/pub/System/DocumentGraphics/userinactive.gif
+%%WWWDIR%%/pub/System/DocumentGraphics/watch.png
 %%WWWDIR%%/pub/System/DocumentGraphics/userinactive.png
 %%WWWDIR%%/pub/System/DocumentGraphics/uweb-bo.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/uweb-bo.png
@@ -2071,7 +2074,7 @@
 %%WWWDIR%%/pub/System/DocumentGraphics/warning.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/warning.png
 %%WWWDIR%%/pub/System/DocumentGraphics/watch.gif
-%%WWWDIR%%/pub/System/DocumentGraphics/watch.png
+%%WWWDIR%%/pub/System/EditTablePlugin/EditTablePluginCalendarExample.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/wav.gif
 %%WWWDIR%%/pub/System/DocumentGraphics/wav.png
 %%WWWDIR%%/pub/System/DocumentGraphics/web-bg-small.gif
@@ -2133,7 +2136,7 @@
 %%WWWDIR%%/pub/System/EditRowPlugin/icons.png
 %%WWWDIR%%/pub/System/EditRowPlugin/screenshot1.png
 %%WWWDIR%%/pub/System/EditRowPlugin/screenshot2.png
-%%WWWDIR%%/pub/System/EditTablePlugin/EditTablePluginCalendarExample.gif
+%%WWWDIR%%/pub/System/FamFamFamFlagIcons/cg.png
 %%WWWDIR%%/pub/System/EditTablePlugin/ScreenshotEditCell1.gif
 %%WWWDIR%%/pub/System/EditTablePlugin/ScreenshotEditCell2.gif
 %%WWWDIR%%/pub/System/EditTablePlugin/btn_delete.gif
@@ -2200,14 +2203,13 @@
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/cc.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/cd.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/cf.png
-%%WWWDIR%%/pub/System/FamFamFamFlagIcons/cg.png
+%%WWWDIR%%/pub/System/FamFamFamFlagIcons/co.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/ch.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/ci.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/ck.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/cl.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/cm.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/cn.png
-%%WWWDIR%%/pub/System/FamFamFamFlagIcons/co.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/cr.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/cs.png
 %%WWWDIR%%/pub/System/FamFamFamFlagIcons/cu.png
@@ -4316,18 +4318,15 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/Makefile.include
 %%WWWDIR%%/pub/System/JQueryPlugin/images/nobody.gif
+%%WWWDIR%%/pub/System/JQueryPlugin/images/nobody.png
 %%WWWDIR%%/pub/System/JQueryPlugin/images/spinner.gif
 %%WWWDIR%%/pub/System/JQueryPlugin/images/spinner_arrows.gif
-%%WWWDIR%%/pub/System/JQueryPlugin/images/nobody.png
 %%WWWDIR%%/pub/System/JQueryPlugin/jquery-2.2.4.js
 %%WWWDIR%%/pub/System/JQueryPlugin/jquery-2.2.4.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/jquery-2.2.4.uncompressed.js
-%%WWWDIR%%/pub/System/JQueryPlugin/jquery-3.5.1.js
-%%WWWDIR%%/pub/System/JQueryPlugin/jquery-3.5.1.js.gz
-%%WWWDIR%%/pub/System/JQueryPlugin/jquery-3.5.1.uncompressed.js
-%%WWWDIR%%/pub/System/JQueryPlugin/jquery-3.6.0.js
-%%WWWDIR%%/pub/System/JQueryPlugin/jquery-3.6.0.js.gz
-%%WWWDIR%%/pub/System/JQueryPlugin/jquery-3.6.0.uncompressed.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-3.6.3.js
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-3.6.3.js.gz
+%%WWWDIR%%/pub/System/JQueryPlugin/jquery-3.6.3.uncompressed.js
 %%WWWDIR%%/pub/System/JQueryPlugin/noconflict.js
 %%WWWDIR%%/pub/System/JQueryPlugin/noconflict.js.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/noconflict.uncompressed.js
@@ -4912,6 +4911,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/base/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/base/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/base/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/base/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/black-tie/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/black-tie/images/ui-bg_diagonals-thick_8_333333_40x40.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/black-tie/images/ui-bg_glass_40_111111_1x400.png
@@ -4930,6 +4930,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/black-tie/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/black-tie/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/black-tie/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/black-tie/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/blitzer/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/blitzer/images/ui-bg_diagonals-thick_75_f3d8d8_40x40.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/blitzer/images/ui-bg_dots-small_65_a6a6a6_2x2.png
@@ -4943,6 +4944,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/blitzer/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/blitzer/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/blitzer/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/blitzer/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/cupertino/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png
@@ -4960,6 +4962,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/cupertino/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/cupertino/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/cupertino/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/cupertino/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dark-hive/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dark-hive/images/ui-bg_glass_40_ffc73d_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dark-hive/images/ui-bg_highlight-hard_20_0972a5_1x100.png
@@ -4976,6 +4979,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dark-hive/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dark-hive/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dark-hive/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dark-hive/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dot-luv/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dot-luv/images/ui-bg_diagonals-thick_15_0b3e6f_40x40.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dot-luv/images/ui-bg_dots-medium_30_0b58a2_4x4.png
@@ -4990,6 +4994,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dot-luv/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dot-luv/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dot-luv/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/dot-luv/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/eggplant/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/eggplant/images/ui-bg_gloss-wave_30_3d3644_500x100.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/eggplant/images/ui-bg_highlight-soft_100_dcd9de_1x100.png
@@ -5005,6 +5010,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/eggplant/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/eggplant/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/eggplant/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/eggplant/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/excite-bike/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/excite-bike/images/ui-bg_diagonals-small_25_c5ddfc_40x40.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/excite-bike/images/ui-bg_diagonals-thick_20_e69700_40x40.png
@@ -5020,6 +5026,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/excite-bike/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/excite-bike/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/excite-bike/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/excite-bike/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/flick/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/flick/images/ui-bg_glass_65_ffffff_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/flick/images/ui-bg_highlight-soft_100_f6f6f6_1x100.png
@@ -5033,6 +5040,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/flick/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/flick/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/flick/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/flick/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/foswiki-fontawesome/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/foswiki-fontawesome/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/foswiki-fontawesome/jquery-ui.css.gz
@@ -5065,6 +5073,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/hot-sneaks/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/hot-sneaks/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/hot-sneaks/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/hot-sneaks/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/humanity/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/humanity/images/ui-bg_glass_100_f5f0e5_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/humanity/images/ui-bg_glass_25_cb842e_1x400.png
@@ -5082,6 +5091,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/humanity/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/humanity/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/humanity/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/humanity/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/jquery-ui.structure.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/le-frog/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/le-frog/images/ui-bg_diagonals-small_0_aaaaaa_40x40.png
@@ -5100,6 +5110,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/le-frog/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/le-frog/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/le-frog/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/le-frog/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/mint-choc/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/mint-choc/images/ui-bg_glass_15_5f391b_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/mint-choc/images/ui-bg_gloss-wave_20_1c160d_500x100.png
@@ -5117,6 +5128,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/mint-choc/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/mint-choc/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/mint-choc/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/mint-choc/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/overcast/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/overcast/images/ui-bg_glass_100_f8f8f8_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/overcast/images/ui-bg_glass_35_dddddd_1x400.png
@@ -5131,6 +5143,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/overcast/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/overcast/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/overcast/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/overcast/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/pepper-grinder/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/pepper-grinder/images/ui-bg_diagonal-maze_20_6e4f1c_10x10.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/pepper-grinder/images/ui-bg_diagonal-maze_40_000000_10x10.png
@@ -5150,6 +5163,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/pepper-grinder/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/pepper-grinder/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/pepper-grinder/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/pepper-grinder/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/redmond/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/redmond/images/ui-bg_glass_75_d0e5f5_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/redmond/images/ui-bg_glass_85_dfeffc_1x400.png
@@ -5167,6 +5181,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/redmond/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/redmond/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/redmond/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/redmond/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/smoothness/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
@@ -5182,6 +5197,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/smoothness/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/smoothness/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/smoothness/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/smoothness/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/south-street/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/south-street/images/ui-bg_glass_55_fcf0ba_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/south-street/images/ui-bg_gloss-wave_100_ece8da_500x100.png
@@ -5201,6 +5217,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/south-street/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/south-street/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/south-street/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/south-street/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/start/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/start/images/ui-bg_glass_45_0078ae_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/start/images/ui-bg_glass_55_f8da4e_1x400.png
@@ -5219,6 +5236,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/start/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/start/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/start/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/start/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/sunny/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/sunny/images/ui-bg_diagonals-medium_20_d34d17_40x40.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/sunny/images/ui-bg_gloss-wave_45_817865_500x100.png
@@ -5237,6 +5255,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/sunny/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/sunny/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/sunny/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/sunny/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/swanky-purse/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/swanky-purse/images/ui-bg_diamond_10_4f4221_10x8.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/swanky-purse/images/ui-bg_diamond_20_372806_10x8.png
@@ -5255,6 +5274,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/swanky-purse/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/swanky-purse/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/swanky-purse/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/swanky-purse/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/trontastic/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/trontastic/images/ui-bg_diagonals-small_50_262626_40x40.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/trontastic/images/ui-bg_glass_40_0a0a0a_1x400.png
@@ -5272,6 +5292,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/trontastic/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/trontastic/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/trontastic/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/trontastic/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-darkness/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-darkness/images/ui-bg_glass_20_555555_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-darkness/images/ui-bg_glass_40_0078a3_1x400.png
@@ -5288,6 +5309,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-darkness/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-darkness/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-darkness/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-darkness/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-lightness/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
@@ -5305,6 +5327,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-lightness/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-lightness/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-lightness/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/ui-lightness/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/vader/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/vader/images/ui-bg_glass_95_fef1ec_1x400.png
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/vader/images/ui-bg_gloss-wave_16_121212_500x100.png
@@ -5323,6 +5346,7 @@
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/vader/jquery-ui.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/vader/jquery-ui.css.gz
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/vader/jquery-ui.uncompressed.css
+%%WWWDIR%%/pub/System/JQueryPlugin/plugins/ui/themes/vader/theme.css
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/Makefile
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/jquery.validate.additional-methods.uncompressed.js
 %%WWWDIR%%/pub/System/JQueryPlugin/plugins/validate/jquery.validate.foswiki-methods.uncompressed.js
@@ -5595,7 +5619,6 @@
 %%WWWDIR%%/pub/System/JsonRpcContrib/json2.js.gz
 %%WWWDIR%%/pub/System/JsonRpcContrib/json2.uncompressed.js
 %%WWWDIR%%/pub/System/MailerContrib/logo.gif
-%%WWWDIR%%/pub/System/MailerContrib/wikiringlogo20x20.png
 %%WWWDIR%%/pub/System/MainFeatures/grad_bg_table.png
 %%WWWDIR%%/pub/System/MainFeatures/grids-min.css
 %%WWWDIR%%/pub/System/MainFeatures/grids-min.css.gz
@@ -6271,7 +6294,6 @@
 %%WWWDIR%%/pub/System/SubscribePlugin/logo.gif
 %%WWWDIR%%/pub/System/SubscribePlugin/subscribe_plugin.js
 %%WWWDIR%%/pub/System/SubscribePlugin/subscribe_plugin.uncompressed.js
-%%WWWDIR%%/pub/System/SubscribePlugin/wikiringlogo20x20.png
 %%WWWDIR%%/pub/System/TinyMCEPlugin/Makefile
 %%WWWDIR%%/pub/System/TinyMCEPlugin/foswiki.js
 %%WWWDIR%%/pub/System/TinyMCEPlugin/foswiki.js.gz
@@ -6771,7 +6793,6 @@
 %%WWWDIR%%/pub/System/TinyMCEPlugin/watermark_protect_forever.gif
 %%WWWDIR%%/pub/System/TinyMCEPlugin/watermark_protect_on_save.gif
 %%WWWDIR%%/pub/System/TinyMCEPlugin/watermark_verbatim.gif
-%%WWWDIR%%/pub/System/TinyMCEPlugin/wikiringlogo20x20.png
 %%WWWDIR%%/pub/System/TinyMCEPlugin/wysiwyg.css
 %%WWWDIR%%/pub/System/TinyMCEPlugin/wysiwyg.css.gz
 %%WWWDIR%%/pub/System/TinyMCEPlugin/wysiwyg_src.css
@@ -6789,25 +6810,15 @@
 %%WWWDIR%%/pub/System/TopicsAndWebs/diagram.odp
 %%WWWDIR%%/pub/System/TopicsAndWebs/diagram.png
 %%WWWDIR%%/pub/System/TwistyPlugin/Makefile
-%%WWWDIR%%/pub/System/TwistyPlugin/jquery.twisty.css
-%%WWWDIR%%/pub/System/TwistyPlugin/jquery.twisty.css.gz
 %%WWWDIR%%/pub/System/TwistyPlugin/jquery.twisty.js
 %%WWWDIR%%/pub/System/TwistyPlugin/jquery.twisty.js.gz
-%%WWWDIR%%/pub/System/TwistyPlugin/jquery.twisty.uncompressed.css
 %%WWWDIR%%/pub/System/TwistyPlugin/jquery.twisty.uncompressed.js
-%%WWWDIR%%/pub/System/TwistyPlugin/twisty.css
-%%WWWDIR%%/pub/System/TwistyPlugin/twisty.css.gz
-%%WWWDIR%%/pub/System/TwistyPlugin/twisty.js
-%%WWWDIR%%/pub/System/TwistyPlugin/twisty.js.gz
-%%WWWDIR%%/pub/System/TwistyPlugin/twisty.uncompressed.css
-%%WWWDIR%%/pub/System/TwistyPlugin/twisty.uncompressed.js
 %%WWWDIR%%/pub/System/UpdatesPlugin/logo.png
 %%WWWDIR%%/pub/System/UserRegistrationParts/formstyle.css
 %%WWWDIR%%/pub/System/UserRegistrationParts/requiredstyle.css
 %%WWWDIR%%/pub/System/UserRegistrationParts/validate.js
 %%WWWDIR%%/pub/System/UserRegistrationParts/x.png
 %%WWWDIR%%/pub/System/WindowsInstallCookbook/cygwin-icon.gif
-%%WWWDIR%%/pub/System/WysiwygPlugin/wikiringlogo20x20.png
 %%WWWDIR%%/readme.txt
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/root-htaccess.txt
@@ -6932,7 +6943,6 @@
 %%WWWDIR%%/templates/subscribe.famfamfam.tmpl
 %%WWWDIR%%/templates/subscribe.tmpl
 %%WWWDIR%%/templates/twiki.tmpl
-%%WWWDIR%%/templates/twistyplugin.tmpl
 %%WWWDIR%%/templates/updatesplugin.tmpl
 %%WWWDIR%%/templates/validate.tmpl
 %%WWWDIR%%/templates/view.famfamfam.tmpl
@@ -6960,8 +6970,6 @@
 %%WWWDIR%%/templates/viewtopbar.pattern01x01.tmpl
 %%WWWDIR%%/templates/viewtopicactionbuttons.tmpl
 %%WWWDIR%%/templates/workflowedit.natedit.tmpl
-%%APACHE%%%%WWWDIR%%/tools/foswiki.freebsd.etc-defaults
-%%APACHE%%%%WWWDIR%%/tools/foswiki.freebsd.init-script
 %%WWWDIR%%/tools/babelify
 %%WWWDIR%%/tools/bulk_copy.pl
 %%WWWDIR%%/tools/configure
@@ -6971,6 +6979,8 @@
 %%WWWDIR%%/tools/extension_installer
 %%WWWDIR%%/tools/fix_file_permissions.sh
 %%WWWDIR%%/tools/foswiki.defaults
+%%WWWDIR%%/tools/foswiki.freebsd.etc-defaults
+%%WWWDIR%%/tools/foswiki.freebsd.init-script
 %%WWWDIR%%/tools/foswiki.init-script
 %%WWWDIR%%/tools/geturl.pl
 %%WWWDIR%%/tools/html2tml.pl
@@ -6979,7 +6989,7 @@
 %%WWWDIR%%/tools/mod_perl_startup.pl
 %%WWWDIR%%/tools/rewriteshebang.pl
 %%WWWDIR%%/tools/save-pending-checkins
-%%APACHE%%%%WWWDIR%%/tools/systemd/foswiki.service
+%%WWWDIR%%/tools/systemd/foswiki.service
 %%WWWDIR%%/tools/tick_foswiki.pl
 %%WWWDIR%%/tools/tml2html.pl
 %%WWWDIR%%/tools/upgrade_emails.pl
