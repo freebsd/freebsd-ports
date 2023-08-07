@@ -144,6 +144,9 @@ EXTRA_CFLAGS+=		-Wno-unused-but-set-parameter
 .if ${COMPILER_VERSION} >= 140
 EXTRA_CFLAGS+=		-Wno-bitwise-instead-of-logical
 .endif
+.if ${COMPILER_VERSION} >= 160
+EXTRA_CFLAGS+=		-Wno-error=deprecated-non-prototype
+.endif
 CONFIGURE_ARGS+=	--with-extra-cflags="${EXTRA_CFLAGS}"
 CONFIGURE_ARGS+=	--with-extra-cxxflags="${EXTRA_CFLAGS}"
 .endif
