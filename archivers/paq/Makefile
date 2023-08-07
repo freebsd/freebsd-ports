@@ -15,6 +15,7 @@ LICENSE=	GPLv3 MIT
 LICENSE_COMB=	multi
 
 USES=		dos2unix zip
+USE_CXXSTD=	c++14
 
 EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt -d ${WRKSRC}
 NO_WRKSUBDIR=	yes
