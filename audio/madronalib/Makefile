@@ -2,7 +2,7 @@ PORTNAME=	madronalib
 DISTVERSIONPREFIX=	v
 DISTVERSION=	1.6-1016
 DISTVERSIONSUFFIX=	-g103895f
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -25,10 +25,11 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	madronalabs
 
 CMAKE_ON=	LINUX_JACK
+CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == powerpc64
 CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
 USES+=		compiler:gcc-c++11-lib
 .else
