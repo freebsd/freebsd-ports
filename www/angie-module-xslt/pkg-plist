@@ -1,0 +1,2 @@
+%%MODDIR%%/ngx_http_xslt_filter_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_xslt_filter_module-debug.so
