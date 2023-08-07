@@ -11,9 +11,11 @@ WWW=		http://u-m-p.sourceforge.net/
 
 LICENSE=	GPLv2
 
-USES=		compiler:c++11-lang gl gmake gnome pkgconfig tar:bzip2
-USE_GNOME=	gtk20
-USE_GL=		glu
+USES=		compiler:c++11-lang gl gmake gnome pkgconfig tar:bzip2 xorg
+USE_CXXSTD=	c++14
+USE_GL=		gl glu
+USE_GNOME=	cairo gdkpixbuf2 gtk20
+USE_XORG=	x11
 
 ALL_TARGET=	${PORTNAME}
 
