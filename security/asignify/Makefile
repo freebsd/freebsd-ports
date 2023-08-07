@@ -10,9 +10,14 @@ WWW=		https://github.com/vstakhov/asignify/
 LICENSE=	BSD2CLAUSE
 
 USES=		tar:xz libtool
+USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
+
 INSTALL_TARGET=	install-strip
+
+post-patch:
+	@${REINPLACE_CMD} -E 's|BLAKE_ALIGN\( 64 \) typedef struct __blake2b_state|typedef struct BLAKE_ALIGN\( 64 \) __blake2b_state|g' \
+		${WRKSRC}/libasignify/blake2.h
 
 .include <bsd.port.mk>
