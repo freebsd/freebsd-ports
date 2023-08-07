@@ -1,6 +1,6 @@
 PORTNAME=	sharpconstruct
 PORTVERSION=	0.11
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	graphics
 MASTER_SITES=	SF/sharp3d/SharpConstruct/${PORTVERSION}
 
@@ -23,13 +23,14 @@ GNU_CONFIGURE=	yes
 USE_GL=		gl glu
 
 CXXFLAGS_i386=	-msse
+CXXFLAGS_powerpc64le=	-DNO_WARN_X86_INTRINSICS
 PLIST_FILES=	bin/${PORTNAME} \
 		man/man1/${PORTNAME}.1.gz
 PORTDATA=	*
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == powerpc64
 CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
 USES+=		compiler:gcc-c++11-lib
 .else
