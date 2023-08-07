@@ -32,8 +32,4 @@ PLIST_FILES=	bin/nn-insight \
 
 PORTSCOUT=	limit:^.*[1-9]\. # prevent hashes
 
-OPTIONS_DEFINE=		NATIVE
-NATIVE_DESC=		Build with native optimizations (-march=native)
-NATIVE_CMAKE_BOOL=	ENABLE_NATIVE_OPTIMIZATIONS
-
 .include <bsd.port.mk>
