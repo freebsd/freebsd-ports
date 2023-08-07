@@ -20,6 +20,7 @@ LIB_DEPENDS=	libbdd.so:science/buddy \
 
 USES=		alias autoreconf bison compiler:c++11-lang localbase:ldflags \
 		ncurses
+USE_CXXSTD=	c++14
 
 WRKSRC=		${WRKDIR}/maude-${PORTVERSION}
 
