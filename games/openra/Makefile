@@ -81,6 +81,6 @@ post-patch:
 do-test:
 	@(cd ${TEST_WRKSRC} && mono \
 		${NUGET_PACKAGEDIR}/NUnit.ConsoleRunner/tools/nunit3-console.exe \
-		--noresult OpenRA.Test.nunit)
+		--noresult OpenRA.Test.dll)
 
 .include <bsd.port.post.mk>
