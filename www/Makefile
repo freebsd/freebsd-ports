@@ -34,6 +34,7 @@
     SUBDIR += angie-module-image-filter
     SUBDIR += angie-module-jwt
     SUBDIR += angie-module-keyval
+    SUBDIR += angie-module-njs
     SUBDIR += anyremote2html
     SUBDIR += apache-mode.el
     SUBDIR += apache24

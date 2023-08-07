@@ -1,0 +1,6 @@
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/README
+%%MODDIR%%/ngx_http_js_module.so
+%%MODDIR%%/ngx_stream_js_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_js_module-debug.so
+%%DEBUG%%%%MODDIR%%/ngx_stream_js_module-debug.so

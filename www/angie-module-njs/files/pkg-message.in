@@ -1,0 +1,18 @@
+[
+{ type: install
+  message: <<EOM
+
+The njs dynamic modules for Angie have been installed.
+To enable these modules, add the following to %%PREFIX%%/etc/angie/angie.conf
+and reload angie:
+
+    load_module modules/ngx_http_js_module.so;
+    load_module modules/ngx_stream_js_module.so;
+
+Please refer to the njs documentation for further details:
+https://angie.software/js_reference/
+https://angie.software/http_js/
+https://angie.software/stream_js/
+EOM
+}
+]
