@@ -20,11 +20,14 @@ LIB_DEPENDS=	libmpfr.so:math/mpfr \
 		libgmp.so:math/gmp
 
 USES=		cmake:testing compiler:c++11-lang localbase
+USE_LDCONFIG=	yes
+
 USE_GITHUB=	yes
 GH_ACCOUNT=	quarkslab
 GH_PROJECT=	NFLlib
-USE_LDCONFIG=	yes
 
+.if !defined(WITH_DEBUG)
 CMAKE_ON=	NFL_OPTIMIZED
+.endif
 
 .include <bsd.port.mk>
