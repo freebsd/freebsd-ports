@@ -1,0 +1,3 @@
+Module creates variables with values taken from key-value pairs.
+Key-value database is stored in shared memory or Redis as specified by the
+configuration parameter.
