@@ -1,3 +1,46 @@
+  <vuln vid="f3a35fb8-2d70-47c9-a516-6aad7eb222b1">
+    <topic>electron{23,24,25} -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>electron23</name>
+	<range><lt>23.3.12</lt></range>
+      </package>
+      <package>
+	<name>electron24</name>
+	<range><lt>24.7.0</lt></range>
+      </package>
+      <package>
+	<name>electron25</name>
+	<range><lt>25.4.0</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Electron developers report:</p>
+	<blockquote cite="https://github.com/electron/electron/releases/tag/v23.3.12">
+	  <p>This update fixes the following vulnerabilities:</p>
+	  <ul>
+	    <li>Security: backported fix for CVE-2023-3732.</li>
+	    <li>Security: backported fix for CVE-2023-3728.</li>
+	    <li>Security: backported fix for CVE-2023-3730.</li>
+	  </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2023-3732</cvename>
+      <url>https://github.com/advisories/GHSA-6f46-9vvr-v3j5</url>
+      <cvename>CVE-2023-3728</cvename>
+      <url>https://github.com/advisories/GHSA-fxgf-5cm8-2f8q</url>
+      <cvename>CVE-2023-3730</cvename>
+      <url>https://github.com/advisories/GHSA-2gmm-4f9j-mw4p</url>
+    </references>
+    <dates>
+      <discovery>2023-08-02</discovery>
+      <entry>2023-08-07</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="441e1e1a-27a5-11ee-a156-080027f5fec9">
     <topic>samba -- multiple vulnerabilities</topic>
     <affects>
