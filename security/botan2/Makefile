@@ -1,6 +1,6 @@
 PORTNAME=	botan
 DISTVERSION=	2.19.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	security
 MASTER_SITES=	http://botan.randombit.net/releases/
 PKGNAMESUFFIX=	2
@@ -87,7 +87,7 @@ PLIST_SUB+=	HAS_RDRAND_RNG=""
 PLIST_SUB+=	HAS_RDRAND_RNG="@comment "
 .endif
 
-.if ${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH:Mpowerpc64*}
+.if ${ARCH} == i386 || ${ARCH} == amd64 || ${ARCH} == powerpc64
 PLIST_SUB+=	HAS_PROCESSOR_RNG=""
 .else
 PLIST_SUB+=	HAS_PROCESSOR_RNG="@comment "
