@@ -1,0 +1,6 @@
+%%DOCSDIR%%/CONTRIBUTING.md
+%%DOCSDIR%%/README.md
+%%MODDIR%%/ngx_http_brotli_filter_module.so
+%%MODDIR%%/ngx_http_brotli_static_module.so
+%%DEBUG%%%%MODDIR%%/ngx_http_brotli_filter_module-debug.so
+%%DEBUG%%%%MODDIR%%/ngx_http_brotli_static_module-debug.so
