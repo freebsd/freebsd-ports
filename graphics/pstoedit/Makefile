@@ -16,8 +16,8 @@ LIB_DEPENDS=	libgd.so:graphics/gd \
 USES=		ghostscript gmake libtool localbase pathfix pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--enable-docs=no
 MAKE_ENV=	INSTALL_STRIP_FLAG="${STRIP}"
-
 CPPFLAGS+=	-isystem ${LOCALBASE}/include/ming
 
 PORTDOCS=	*
