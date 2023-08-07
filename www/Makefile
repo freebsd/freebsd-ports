@@ -36,6 +36,7 @@
     SUBDIR += angie-module-keyval
     SUBDIR += angie-module-njs
     SUBDIR += angie-module-perl
+    SUBDIR += angie-module-redis2
     SUBDIR += anyremote2html
     SUBDIR += apache-mode.el
     SUBDIR += apache24

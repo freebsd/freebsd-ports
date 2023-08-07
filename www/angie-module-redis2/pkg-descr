@@ -1,0 +1,3 @@
+Module makes Angie talk to a Redis 2.x server in a non-blocking way. The full
+Redis 2.0 unified protocol has been implemented including the Redis pipelining
+support. This module returns the raw TCP response from the Redis server.
