@@ -1,7 +1,7 @@
 PORTNAME=	libpki
 DISTVERSIONPREFIX=	v
 DISTVERSION=	0.9.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 
 PATCH_SITES=	https://github.com/openca/libpki/commit/
@@ -15,12 +15,13 @@ LICENSE=	APACHE20
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		autoreconf gnome libtool ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0 or later
 USE_GITHUB=	yes
 GH_ACCOUNT=	openca
+
 USE_GNOME=	libxml2
 USE_LDCONFIG=	yes
+
+PATCH_STRIP= 	-p0
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-dependency-tracking \
