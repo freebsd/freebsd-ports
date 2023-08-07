@@ -1,6 +1,6 @@
---- client-src/calcsize.c.orig	2008-01-18 09:31:16.000000000 +0900
-+++ client-src/calcsize.c	2008-08-30 20:11:59.000000000 +0900
-@@ -160,7 +160,11 @@
+--- client-src/calcsize.c.orig	2017-12-01 13:26:32 UTC
++++ client-src/calcsize.c
+@@ -166,7 +166,11 @@ main(
  	dump_total += (ST_BLOCKS(finfo) + (off_t)1) / (off_t)2 + (off_t)1;
  	gtar_total += ROUND(4,(ST_BLOCKS(finfo) + (off_t)1));
      }

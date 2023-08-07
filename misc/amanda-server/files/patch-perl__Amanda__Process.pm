@@ -1,6 +1,6 @@
---- perl/Amanda/Process.pm.orig	2009-01-28 13:57:55.000000000 +0900
-+++ perl/Amanda/Process.pm	2009-01-28 13:58:19.000000000 +0900
-@@ -155,7 +155,7 @@
+--- perl/Amanda/Process.pm.orig	2017-12-01 13:26:29 UTC
++++ perl/Amanda/Process.pm
+@@ -184,7 +184,7 @@ sub load_ps_table() {
      $self->{ppid} = ();
      my $ps_argument = $Amanda::Constants::PS_ARGUMENT;
      if ($ps_argument eq "CYGWIN") {

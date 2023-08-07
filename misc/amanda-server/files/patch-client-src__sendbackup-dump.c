@@ -1,6 +1,6 @@
---- client-src/sendbackup-dump.c.orig	2011-04-24 16:41:40.874642189 +0900
-+++ client-src/sendbackup-dump.c	2011-04-24 16:42:28.215501968 +0900
-@@ -377,7 +377,7 @@
+--- client-src/sendbackup-dump.c.orig	2017-12-01 13:26:32 UTC
++++ client-src/sendbackup-dump.c
+@@ -428,7 +428,7 @@ char *progname;
  #endif
  
  #ifdef __FreeBSD__

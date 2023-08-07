@@ -1,11 +1,20 @@
---- common-src/Makefile.in.orig	2012-02-21 20:37:54.000000000 +0900
-+++ common-src/Makefile.in	2012-05-08 11:49:17.145335897 +0900
-@@ -1363,7 +1363,7 @@
- INCLUDES = -I$(top_srcdir)/gnulib   
- AM_CFLAGS = $(AMANDA_WARNING_CFLAGS)
+--- common-src/Makefile.in.orig	2017-12-01 13:26:54 UTC
++++ common-src/Makefile.in
+@@ -1506,7 +1506,7 @@ LIBINTL = @LIBINTL@
+ LIBMULTITHREAD = @LIBMULTITHREAD@
+ LIBOBJS = @LIBOBJS@
+ LIBPTH = @LIBPTH@
+-LIBS = @LIBS@
++LIBS = @LIBS@ -lssl
+ LIBSOCKET = @LIBSOCKET@
+ LIBTHREAD = @LIBTHREAD@
+ LIBTOOL = @LIBTOOL@
+@@ -1960,7 +1960,7 @@ do_installperms = dest=; chown=; chmod=; \
+ AM_CPPFLAGS = -I$(top_srcdir)/gnulib -I$(top_builddir)/common-src
+ AM_CFLAGS = $(AMANDA_WARNING_CFLAGS) $(AMANDA_FILE_CFLAGS)
  AM_LDFLAGS = $(AMANDA_STATIC_LDFLAGS) $(AS_NEEDED_FLAGS)
 -amlib_LTLIBRARIES = libamanda.la
 +@WANT_CLIENT_TRUE@amlib_LTLIBRARIES = libamanda.la
  LINT = $(AMLINT)
  LINTFLAGS = $(AMLINTFLAGS)
- libamanda_la_SOURCES = alloc.c amfeatures.c amflock.c ipc-binary.c \
+ libamanda_la_SOURCES = alloc.c am_sl.c amfeatures.c amflock.c amjson.c \

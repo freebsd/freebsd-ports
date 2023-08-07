@@ -1,6 +1,5 @@
 PORTNAME=	amanda
-PORTVERSION=	3.3.9
-PORTREVISION=	4
+PORTVERSION=	3.5.1
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -10,16 +9,19 @@ MAINTAINER=	fbsd@dylanleigh.net
 COMMENT?=	Advanced Maryland Automatic Network Disk Archiver (server)
 WWW=		https://sourceforge.net/projects/amanda/
 
-RUN_DEPENDS=	perl-amanda:misc/amanda-perl-wrapper
+LICENSE=	UMD
+LICENSE_NAME=	University of Maryland License
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 BUILD_DEPENDS=	perl-amanda:misc/amanda-perl-wrapper
+RUN_DEPENDS=	perl-amanda:misc/amanda-perl-wrapper
 
-WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
-
-GNU_CONFIGURE=	yes
-INSTALL_TARGET=	install-strip
 USES=		charsetfix cpe gmake gnome libtool perl5 pkgconfig ssl
 USE_GNOME=	glib20
 USE_LDCONFIG=	yes
+
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--without-amlibexecdir \
 		--with-amandahosts --with-fqdn \
@@ -31,26 +33,26 @@ CONFIGURE_ARGS=	--libexecdir=${PREFIX}/libexec/amanda \
 		--with-ssh-security \
 		--disable-installperms --with-security-file=${ETCDIR}/amanda-security.conf
 CONFIGURE_ENV=	PERL=${LOCALBASE}/bin/perl-amanda
-SUB_FILES=	pkg-message
-SUB_LIST=	PORTSDIR=${PORTSDIR}
+
+MAKE_JOBS_UNSAFE=	yes
+INSTALL_TARGET=	install-strip
 
 # Fix build with clang11
 CFLAGS+=	-fcommon
-MAKE_JOBS_UNSAFE=	yes
+
+SUB_FILES=	pkg-message
+SUB_LIST=	PORTSDIR=${PORTSDIR}
+
+WRKSRC=		${WRKDIR}/amanda-${PORTVERSION}
+
+AMANDA_USER?=	amanda
+USERS?=		${AMANDA_USER}
+AMANDA_GROUP?=	amanda
+GROUPS?=	operator ${AMANDA_GROUP}
 
 OPTIONS_DEFINE=	GNUTAR
 OPTIONS_DEFAULT=	GNUTAR
 GNUTAR_DESC=	use GNU tar
-
-.if defined(AMANDA_USER)
-USERS=		${AMANDA_USER}
-.else
-USERS?=		amanda
-.endif
-.if !defined(AMANDA_GROUP)
-AMANDA_GROUP=	amanda
-.endif
-GROUPS?=	operator amanda
 
 AMANDA_GNUTAR_LISTDIR?=	${PREFIX}/var/amanda/gnutar-lists
 AMANDA_DATES?=		${PREFIX}/var/amanda/amandates
@@ -64,7 +66,7 @@ CONFIGURE_ARGS+=	--with-tape-server=${AMANDA_SERVER}
 
 .if !defined(CLIENT_ONLY)
 OPTIONS_DEFINE+=	PLOT SAMBA S3
-PLOT_DESC=	Enable ploting, requires X11 libraries
+PLOT_DESC=	Enable plotting, requires X11 libraries
 SAMBA_DESC=	Enable the use of smbclient
 S3_DESC=	Enable Amazon S3 device support
 .endif
@@ -104,6 +106,7 @@ CONFLICTS=	amanda-server-2.* amanda-server-3.2.* amanda2[56]-server
 
 BUILD_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:misc/amanda-client
 RUN_DEPENDS+=	${LOCALBASE}/lib/amanda/libamandad-${PORTVERSION}.so:misc/amanda-client \
+		p5-JSON>=0:converters/p5-JSON \
 		p5-XML-Simple>=0:textproc/p5-XML-Simple
 
 CONFIGURE_ARGS+=--without-client
@@ -162,7 +165,7 @@ pre-fetch:
 CONFLICTS=	amanda-client-2.* amanda-client-3.2.* amanda2[56]-client-*
 CONFIGURE_ARGS+=--without-server --with-amandates=${AMANDA_DATES}
 .if defined(AMANDA_NO_SNAPSHOT_DUMP)
-CFLAGS=		-DFreeBSD_NO_SNAPSHOT_DUMP=t
+CFLAGS+=	-DFreeBSD_NO_SNAPSHOT_DUMP=t
 .endif
 
 .endif
