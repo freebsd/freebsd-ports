@@ -1,7 +1,6 @@
 PORTNAME=	xastir
 DISTVERSIONPREFIX=	Release-
-DISTVERSION=	2.1.8
-PORTREVISION=	7
+DISTVERSION=	2.2.0
 CATEGORIES=	comms hamradio
 
 MAINTAINER=	carl@stagecraft.cx
@@ -23,7 +22,9 @@ LIB_DEPENDS=	libfreetype.so:print/freetype2 \
 		libwebp.so:graphics/webp \
 		libwebpmux.so:graphics/webp \
 		libwmflite.so:graphics/libwmf \
-		libpcre.so:devel/pcre
+		libpcre2-8.so:devel/pcre2 \
+		libjxl.so:graphics/libjxl \
+		libjxl_threads.so:graphics/libjxl
 
 USES=		autoreconf gmake gnome jpeg motif shebangfix xorg
 
@@ -84,8 +85,5 @@ ERRORPOP_CONFIGURE_WITH=	errorpopups
 BDB_USES=		bdb
 BDB_CONFIGURE_ON=	--with-bdb-incdir=${BDB_INCLUDE_DIR} \
 			--with-bdb-libdir=${BDB_LIB_DIR}
-
-post-extract:
-	@${REINPLACE_CMD} -e 's|2>&1||g' ${WRKSRC}/acinclude.m4
 
 .include <bsd.port.mk>

@@ -12,12 +12,11 @@ man/man1/xastir_udp_client.1.gz
 %%DOCSDIR%%/COPYING.LIB.LESSTIF
 %%DOCSDIR%%/ChangeLog
 %%DOCSDIR%%/FAQ
-%%DOCSDIR%%/INSTALL
+%%DOCSDIR%%/INSTALL.md
 %%DOCSDIR%%/LICENSE
 %%DOCSDIR%%/README
 %%DOCSDIR%%/README.CYGWIN
 %%DOCSDIR%%/README.GIT
-%%DOCSDIR%%/README.Getting-Started
 %%DOCSDIR%%/README.MAPS
 %%DOCSDIR%%/README.OSM_maps
 %%DOCSDIR%%/README.sudo
@@ -86,6 +85,7 @@ man/man1/xastir_udp_client.1.gz
 %%DATADIR%%/config/nwsw_ddmmyy_14a.dbfawk
 %%DATADIR%%/config/nwsw_ddmmyy_17.dbfawk
 %%DATADIR%%/config/nwsw_ddmmyy_20.dbfawk
+%%DATADIR%%/config/nwsw_ddmmyy_22.dbfawk
 %%DATADIR%%/config/nwsz1ddmmyy.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy.dbfawk
 %%DATADIR%%/config/nwsz_ddmmyy_09.dbfawk
