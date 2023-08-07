@@ -1,6 +1,6 @@
 PORTNAME=	devd-mount
-DISTVERSION=	0.1.0-3
-DISTVERSIONSUFFIX=	-g634af4f
+DISTVERSION=	0.1.0-7
+DISTVERSIONSUFFIX=	-gc4810d4
 CATEGORIES=	sysutils
 
 MAINTAINER=	jwb@FreeBSD.org
@@ -15,6 +15,8 @@ GH_ACCOUNT=	outpaddling
 
 NO_BUILD=	yes
 NO_ARCH=	yes
+
+CONFLICTS_INSTALL=	automount
 
 PLIST_FILES=	sbin/devd-mount \
 		sbin/automount \
