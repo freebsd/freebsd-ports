@@ -5738,7 +5738,7 @@ llvm-devel/include/llvm/XRay/YAMLXRayRecord.h
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/omp.h
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/ompt-multiplex.h
 %%OPENMP%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/ompt.h
-%%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/ompx.h
+%%OPENMP%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/ompx.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/opencl-c-base.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/opencl-c.h
 %%CLANG%%llvm-devel/lib/clang/%%LLVM_MAJOR%%/include/openmp_wrappers/__clang_openmp_device_functions.h
