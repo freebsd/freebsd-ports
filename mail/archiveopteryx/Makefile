@@ -43,10 +43,6 @@ JAMARG+=	"-sCLANG=1"
 .endif
 .endif
 
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
-.endif
-
 post-patch:
 	@${EGREP} -Rl '%%[[:alpha:]]+%%' ${WRKSRC} |${XARGS} ${REINPLACE_CMD} \
 		-e 's,%%PREFIX%%,${PREFIX},g'
@@ -55,6 +51,10 @@ post-patch:
 		${WRKSRC}/Jamsettings
 	${REINPLACE_CMD} -e "s|\(-lcrypto\)|-L${OPENSSLLIB} \1|g" \
 		${WRKSRC}/server/Jamfile
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+	@${REINPLACE_CMD} -e 's|-Werror|-Werror -DOPENSSL_API_COMPAT=0x10100000L|g' \
+		${WRKSRC}/Jamsettings
+.endif
 
 do-build:
 	@cd ${WRKSRC} && ${JAM} ${JAMARG}
