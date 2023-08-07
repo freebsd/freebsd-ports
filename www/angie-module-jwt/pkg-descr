@@ -1,0 +1,3 @@
+Module provides JWT validity check functionality for Angie.
+Module intends to be as light as possible and to remain simple.
+Supports number of key encodings and allows to keep it in a designated file.
