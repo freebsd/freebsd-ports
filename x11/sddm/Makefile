@@ -1,5 +1,6 @@
 PORTNAME=	sddm
 PORTVERSION=	0.20.0
+PORTREVISION=	1
 DISTVERSIONPREFIX=	v
 CATEGORIES=	x11
 
@@ -36,6 +37,7 @@ CMAKE_ON=	BUILD_MAN_PAGES
 CMAKE_ARGS=	-DUID_MIN=1000 \
 		-DUID_MAX=65000 \
 		-DCMAKE_INSTALL_SYSCONFDIR:PATH=${LOCALBASE}/etc \
+		-DACCOUNTSSERVICE_DATA_DIR:PATH=/var/db/AccountsService \
 		-DRST2MAN_EXECUTABLE=${LOCALBASE}/bin/rst2man.py-${PYTHON_VER} \
 		-DSDDM_INITIAL_VT=7
 
@@ -51,8 +53,6 @@ post-patch:
 		-e 's#/usr/share/#${LOCALBASE}/share/#' \
 		${WRKSRC}/data/scripts/Xsession \
 		${WRKSRC}/src/common/Configuration.h
-	@${REINPLACE_CMD} -e 's|/var/lib/AccountsService|/var/db/AccountsService|' \
-		${WRKSRC}/src/greeter/UserModel.cpp
 
 post-install:
 # Install xsession.desktop to launch .xinitrc via sddm.
