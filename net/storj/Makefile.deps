@@ -70,6 +70,7 @@ GH_TUPLE=	\
 		jtolds:monkit-hw:141a0da276b3:jtolds_monkit_hw/vendor/github.com/jtolds/monkit-hw/v2 \
 		jtolds:tracetagger:v2.0.0-rc5:jtolds_tracetagger/vendor/github.com/jtolds/tracetagger/v2 \
 		jtolio:eventkit:4668f79ff72d:jtolio_eventkit/vendor/github.com/jtolio/eventkit \
+		jtolio:mito:d78ef06bb77b:jtolio_mito/vendor/github.com/jtolio/mito \
 		jtolio:noiseconn:88105e6c8ac6:jtolio_noiseconn/vendor/github.com/jtolio/noiseconn \
 		klauspost:compress:v1.15.10:klauspost_compress/vendor/github.com/klauspost/compress \
 		klauspost:cpuid:v2.0.12:klauspost_cpuid/vendor/github.com/klauspost/cpuid/v2 \
@@ -107,7 +108,7 @@ GH_TUPLE=	\
 		spf13:jwalterweatherman:v1.1.0:spf13_jwalterweatherman/vendor/github.com/spf13/jwalterweatherman \
 		spf13:pflag:v1.0.5:spf13_pflag/vendor/github.com/spf13/pflag \
 		spf13:viper:v1.7.1:spf13_viper/vendor/github.com/spf13/viper \
-		storj:common:81cb588c23b6:storj_common/vendor/storj.io/common \
+		storj:common:cb5eec2edc30:storj_common/vendor/storj.io/common \
 		storj:drpc:v0.0.33:storj_drpc/vendor/storj.io/drpc \
 		storj:monkit-jaeger:d100d7589f41:storj_monkit_jaeger/vendor/storj.io/monkit-jaeger \
 		storj:picobuf:v0.0.1:storj_picobuf/vendor/storj.io/picobuf \
