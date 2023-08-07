@@ -31,10 +31,4 @@ OPTIONS_DEFINE=	SSE41
 SSE41_DESC=	Enable SSE4.1 support
 SSE41_CMAKE_ON=	-DTFDN_ENABLE_SSE41:BOOL=ON
 
-.include <bsd.port.pre.mk>
-
-.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
-CXXFLAGS+=	-DOPENSSL_API_COMPAT=0x30000000L
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
