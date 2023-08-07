@@ -37,6 +37,7 @@ RUN_DEPENDS=	${PYNUMPY} \
 		${PYTHON_PKGNAMEPREFIX}six>0:devel/py-six@${PY_FLAVOR}
 
 USES=		cmake fortran pkgconfig python
+USE_CXXSTD=	c++14
 USE_LDCONFIG=	yes
 
 USE_GITHUB=	yes
