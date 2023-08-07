@@ -40,6 +40,10 @@ RADMINUSER=	radmind
 
 .include <bsd.port.options.mk>
 
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+CONFIGURE_ARGS+=	--enable-profiled=no
+.endif
+
 post-install:
 	# Ugly hack to remove generated man pages
 	${RM} -r ${WRKSRC}/tmp
