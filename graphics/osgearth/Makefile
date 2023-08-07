@@ -1,5 +1,6 @@
 PORTNAME=	osgearth
 PORTVERSION=	3.4
+PORTREVISION=	1
 DISTVERSIONPREFIX=	${PORTNAME}-
 CATEGORIES=	graphics geography
 
@@ -41,7 +42,7 @@ post-extract:
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH:Mpowerpc64*}
+.if ${ARCH} == powerpc64
 CXXFLAGS+=	-DNO_WARN_X86_INTRINSICS -maltivec -mvsx
 USES+=		compiler:gcc-c++11-lib
 .else
