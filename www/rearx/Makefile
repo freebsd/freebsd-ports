@@ -12,8 +12,6 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.md
 
 USES=		cargo ssl
-BROKEN_SSL=	openssl30 openssl31
-BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
 
 USE_GITHUB=	yes
 GH_ACCOUNT=	garak92
@@ -172,6 +170,13 @@ CARGO_CRATES=	\
 
 SUB_LIST=	ETCDIR=${ETCDIR}
 SUB_FILES=	pkg-message
+
+.include <bsd.port.options.mk>
+
+.if ( ${OPSYS} == FreeBSD && ${OSVERSION} >= 1400092 && ${SSL_DEFAULT} == base ) || ${SSL_DEFAULT:Mopenssl3*}
+BROKEN_SSL=	base openssl30 openssl31
+BROKEN_SSL_REASON=	Fails to detect OpenSSL 3.0.0 and later
+.endif
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/etc/rearx/rearx.yaml|${PREFIX}/etc/rearx/rearx.yaml|' ${WRKSRC}/src/request.rs
