@@ -1,0 +1,15 @@
+[
+{ type: install
+  message: <<EOM
+
+The auth-jwt dynamic module for Angie has been installed.
+To enable this module, add the following to %%PREFIX%%/etc/angie/angie.conf
+and reload angie:
+
+    load_module modules/ngx_http_auth_jwt_module.so;
+
+Please refer to the module documentation for further details:
+https://github.com/kjdev/nginx-auth-jwt
+EOM
+}
+]

@@ -1,0 +1,3 @@
+Module implements client authorization by validating the provided
+JSON Web Token (JWT) using the specified keys. The module supports
+JSON Web Signature (JWS) and can be used for OpenID Connect authentication.
