@@ -15,6 +15,7 @@ LIB_DEPENDS=	libcurl.so:ftp/curl \
 		libtorrent.so:net-p2p/libtorrent
 
 USES=		compiler:c++11-lang ncurses pkgconfig
+USE_CXXSTD=	c++14
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug
