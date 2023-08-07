@@ -18,6 +18,14 @@ USE_PYTHON=	distutils autoplist
 
 BINARY_ALIAS=	python=${PYTHON_CMD}
 
+.include <bsd.port.options.mk>
+
+post-patch:
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+	@${REINPLACE_CMD} -e 's|binary_function|__binary_function|g' \
+		${WRKSRC}/openbabel/openbabel-python.i
+.endif
+
 post-install:
 	@${STRIP_CMD} ${STAGEDIR}${PYTHON_SITELIBDIR}/openbabel/_openbabel${PYTHON_EXT_SUFFIX}.so
 
