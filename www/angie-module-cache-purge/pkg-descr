@@ -1,0 +1,3 @@
+Module adds ability to purge content from FastCGI, proxy, SCGI and uWSGI
+caches. A purge operation removes the content with the same cache key as the
+purge request has. This module is production-ready.

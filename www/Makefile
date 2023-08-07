@@ -29,6 +29,7 @@
     SUBDIR += angie
     SUBDIR += angie-module-auth-jwt
     SUBDIR += angie-module-brotli
+    SUBDIR += angie-module-cache-purge
     SUBDIR += angie-module-geoip2
     SUBDIR += anyremote2html
     SUBDIR += apache-mode.el
