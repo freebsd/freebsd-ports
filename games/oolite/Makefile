@@ -58,6 +58,12 @@ BROKEN_armv6=		fails to compile: your compiler does not follow the C++ specifica
 BROKEN_armv7=		fails to compile: your compiler does not follow the C++ specification for temporary object destruction order
 BROKEN_i386=		fails to compile: ../methodjit/MethodJIT.cpp:318:5: error: expected '(' after 'asm'
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+ADDITIONAL_CPPFLAGS+=	-Wno-error=incompatible-function-pointer-types
+.endif
+
 post-patch: .SILENT
 	${REINPLACE_CMD} -e 's/GNUSTEP_USER_ROOT/GNUSTEP_LOCAL_ROOT/ ; \
 		s/sdl-config/$${SDL_CONFIG}/ ; \
