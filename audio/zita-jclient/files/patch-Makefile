@@ -9,18 +9,17 @@
  PREFIX ?= /usr/local
  INCDIR ?= $(PREFIX)/include
  LIBDIR ?= $(PREFIX)/lib$(SUFFIX)
-@@ -31,8 +31,8 @@ VERSION = $(MAJVERS).$(MINVERS)
+@@ -31,8 +31,7 @@ VERSION = $(MAJVERS).$(MINVERS)
  
  
  CPPFLAGS += -D_REENTRANT -D_POSIX_PTHREAD_SEMANTICS
 -CXXFLAGS += -Wall -fPIC -O2 -ffast-math
 -CXXFLAGS += -march=native
-+CXXFLAGS += -Wall -fPIC -ffast-math
-+CXXFLAGS += ${FREEBSD_CXXFLAGS_EXTRA}
++CXXFLAGS += -Wall -fPIC
  LDFLAGS += 
  LDLIBS +=
  
-@@ -56,7 +56,7 @@ install:	$(ZITA-JCLIENT_MIN)
+@@ -56,7 +55,7 @@ install:	$(ZITA-JCLIENT_MIN)
  	install -d $(DESTDIR)$(LIBDIR)
  	install -m 644 $(ZITA-JCLIENT_H) $(DESTDIR)$(INCDIR)
  	install -m 755 $(ZITA-JCLIENT_MIN) $(DESTDIR)$(LIBDIR)
