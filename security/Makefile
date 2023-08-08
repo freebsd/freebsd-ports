@@ -56,6 +56,7 @@
     SUBDIR += bitwarden-cli
     SUBDIR += boringssl
     SUBDIR += botan2
+    SUBDIR += botan3
     SUBDIR += bruteblock
     SUBDIR += bsdsfv
     SUBDIR += bsmtrace
