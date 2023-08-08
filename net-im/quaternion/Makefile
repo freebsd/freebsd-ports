@@ -30,4 +30,13 @@ USE_GITHUB=	yes
 GH_ACCOUNT=	quotient-im
 GH_TAGNAME=	447d8ec4f990499fb589a37b7e8eae8c6781cadc
 
+.include <bsd.port.options.mk>
+
+.if ${OPSYS} == FreeBSD && ( ${OSVERSION} >= 1400091 || ( ${OSVERSION} >= 1302507 && ${OSVERSION} < 1400000 ))
+USES+=	llvm:max=15
+CPP=	clang-cpp${LLVM_VERSION}
+CC=	clang${LLVM_VERSION}
+CXX=	clang++${LLVM_VERSION}
+.endif
+
 .include <bsd.port.mk>
