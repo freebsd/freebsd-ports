@@ -15,6 +15,7 @@ LICENSE=	GPLv3+
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USES=		compiler gl gmake sdl
+USE_CXXSTD=	c++14
 USE_SDL=	sdl mixer ttf gfx image
 USE_GL=		gl glu
 
