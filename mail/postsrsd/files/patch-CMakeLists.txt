@@ -1,88 +1,80 @@
---- CMakeLists.txt.orig	2020-12-12 09:55:17 UTC
+--- CMakeLists.txt.orig	2023-07-15 18:53:41 UTC
 +++ CMakeLists.txt
-@@ -7,12 +7,15 @@ include(CTest)
- 
- option(GENERATE_SRS_SECRET "Generate a random SRS secret if none exists during install" ON)
- option(USE_APPARMOR "Enable AppArmor profile" OFF)
-+option(MK_CHROOT_DIR "Chroot jail for daemon" OFF)
- option(USE_SELINUX "Enable SELinux policy module" OFF)
- 
-+if(MK_CHROOT_DIR)
- set(CHROOT_DIR "${CMAKE_INSTALL_PREFIX}/lib/${PROJECT_NAME}" CACHE PATH "Chroot jail for daemon")
-+endif()
- set(SYSCONF_DIR "/etc" CACHE PATH "Global system configuration folder")
- set(SYSD_UNIT_DIR "${SYSCONF_DIR}/systemd/system" CACHE PATH "Systemd unit file folder")
--set(CONFIG_DIR "${SYSCONF_DIR}/default" CACHE PATH "Location of startup configuration file")
-+set(CONFIG_DIR "${CMAKE_INSTALL_PREFIX}/etc" CACHE PATH "Location of startup configuration file")
- set(DOC_DIR "share/doc/${PROJECT_NAME}" CACHE PATH "Path for documentation files")
- mark_as_advanced(CHROOT_DIR SYSCONF_DIR SYSD_UNIT_DIR CONFIG_DIR DOC_DIR)
- 
-@@ -20,8 +23,6 @@ find_program(HELP2MAN help2man DOC "path to help2man e
- find_program(DD dd DOC "path to dd executable")
- find_program(BASE64 base64 DOC "path to base64 executable")
- find_program(OPENSSL openssl DOC "path to OpenSSL executable")
--find_program(INSSERV insserv DOC "path to insserv executable")
--find_program(CHKCONFIG chkconfig DOC "path to chkconfig executable")
- find_program(SYSTEMCTL systemctl DOC "path to systemctl executable")
- 
- if(CMAKE_SYSTEM_NAME MATCHES "SunOS")
-@@ -69,23 +70,6 @@ endif()
- check_type_size("unsigned long" SIZEOF_UNSIGNED_LONG)
- add_definitions(-DSIZEOF_UNSIGNED_LONG=${SIZEOF_UNSIGNED_LONG})
- 
--if(NOT DEFINED INIT_FLAVOR)
--    if(SYSTEMCTL)
--        message(STATUS "Detected init flavor: systemd")
--        set(INIT_FLAVOR "systemd" CACHE STRING "Init daemon of this system")
--    elseif(IS_DIRECTORY "${SYSCONF_DIR}/init.d" AND EXISTS "${SYSCONF_DIR}/init.d/functions")
--        message(STATUS "Detected init flavor: sysv-redhat")
--        set(INIT_FLAVOR "sysv-redhat" CACHE STRING "Init daemon of this system")
--    elseif(IS_DIRECTORY "${SYSCONF_DIR}/init.d" AND EXISTS "/lib/lsb/init-functions")
--        message(STATUS "Detected init flavor: sysv-lsb")
--        set(INIT_FLAVOR "sysv-lsb" CACHE STRING "Init daemon of this system")
--    else()
--        message(STATUS "Detected init flavor: none")
--        message(STATUS "System startup files will not be installed")
--        set(INIT_FLAVOR "" CACHE STRING "Init daemon of this system")
--    endif()
--endif()
--
- add_definitions(-DPOSTSRSD_VERSION=\"${PROJECT_VERSION}\")
- add_executable(${PROJECT_NAME} postsrsd.c sha1.c srs2.c)
- 
-@@ -95,16 +79,8 @@ if(CMAKE_SYSTEM_NAME MATCHES "SunOS")
- endif()
- 
- set(POSTSRSD "${PROJECT_NAME}${CMAKE_EXECUTABLE_SUFFIX}")
--set(APPARMOR_PROFILE "${CMAKE_INSTALL_PREFIX}/sbin/${POSTSRSD}")
--string(REGEX REPLACE "^/+" "" APPARMOR_PROFILE "${APPARMOR_PROFILE}")
--string(REPLACE "/" "." APPARMOR_PROFILE "${APPARMOR_PROFILE}")
- 
--configure_file(init/${PROJECT_NAME}.sysv-lsb.in ${PROJECT_NAME}.sysv-lsb @ONLY)
--configure_file(init/${PROJECT_NAME}.sysv-redhat.in ${PROJECT_NAME}.sysv-redhat @ONLY)
--configure_file(init/${PROJECT_NAME}.apparmor.in ${PROJECT_NAME}.apparmor @ONLY)
--configure_file(init/${PROJECT_NAME}.systemd.in ${PROJECT_NAME}.systemd @ONLY)
- configure_file(init/${PROJECT_NAME}.default.in ${PROJECT_NAME}.default @ONLY)
--configure_file(init/${PROJECT_NAME}-systemd-launcher.in ${PROJECT_NAME}-systemd-launcher @ONLY)
- 
- configure_file(postinstall.cmake.in postinstall.cmake @ONLY)
- 
-@@ -118,7 +94,7 @@ add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
- 	COMMAND ${HELP2MAN} ARGS -s8 -o${PROJECT_NAME}.8 -n "Postfix Sender Rewriting Scheme daemon" -N -h-h -v-v ${CMAKE_CURRENT_BINARY_DIR}/${POSTSRSD}
- 	VERBATIM
+@@ -55,6 +55,7 @@ option(WITH_REDIS
  )
--install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.8 DESTINATION "share/man/man8")
-+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.8 DESTINATION "man/man8")
- endif()
+ add_feature_info(WITH_REDIS WITH_REDIS "use Redis as database backend")
  
- if(USE_APPARMOR)
-@@ -135,6 +111,8 @@ if(USE_SELINUX)
- endif()
- 
- install(TARGETS ${PROJECT_NAME} DESTINATION "sbin")
--install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}-systemd-launcher DESTINATION "share/${PROJECT_NAME}")
-+if(ENABLE_DOCS)
-+	install(FILES README.md README_UPGRADE.md main.cf.ex DESTINATION "${DOC_DIR}")
++option(MK_CHROOT_DIR "Chroot jail for daemon" OFF)
+ option(TESTS_WITH_ASAN "Run test suite with AddressSanitizer" ON)
+ option(GENERATE_SRS_SECRET "Generate and install a postsrsd.secret" ON)
+ add_feature_info(
+@@ -71,15 +72,13 @@ set(POSTSRSD_DATADIR
+     "${CMAKE_INSTALL_FULL_LOCALSTATEDIR}/lib/${PROJECT_NAME}"
+     CACHE PATH "The default directory where PostSRSd should put runtime data"
+ )
++set(DOC_DIR "share/doc/${PROJECT_NAME}" CACHE PATH "Path for documentation files")
++if(MK_CHROOT_DIR)
+ set(POSTSRSD_CHROOTDIR
+     "${POSTSRSD_DATADIR}"
+     CACHE PATH "The default chroot directory where PostSRSd should jail itself"
+ )
+-find_systemd_unit_destination(DETECTED_SYSTEMD_UNITDIR)
+-set(SYSTEMD_UNITDIR
+-    "${DETECTED_SYSTEMD_UNITDIR}"
+-    CACHE PATH "Install destination for systemd service unit"
+-)
 +endif()
- install(FILES README.md README_UPGRADE.md main.cf.ex DESTINATION "${DOC_DIR}")
- install(SCRIPT "${CMAKE_CURRENT_BINARY_DIR}/postinstall.cmake")
+ 
+ if(POSTSRSD_CHROOTDIR)
+     file(RELATIVE_PATH CHROOTABLE_DATADIR "${POSTSRSD_CHROOTDIR}"
+@@ -105,7 +104,6 @@ mark_as_advanced(
+     POSTSRSD_USER
+     POSTSRSD_DATADIR
+     POSTSRSD_CHROOTDIR
+-    SYSTEMD_UNITDIR
+ )
+ 
+ FetchContent_Declare(
+@@ -181,11 +179,7 @@ endif()
+ set(THREADS_PREFER_PTHREAD_FLAG TRUE)
+ find_package(Threads QUIET)
+ 
+-add_autotools_dependency(
+-    Confuse
+-    LIBRARY_NAME confuse
+-    EXPORTED_TARGET Confuse::Confuse
+-)
++find_package(Confuse REQUIRED)
+ 
+ if(WITH_REDIS)
+     set(DISABLE_TESTS
+@@ -202,6 +196,7 @@ if(WITH_REDIS)
+             DIRECTORY "${hiredis_SOURCE_DIR}" PROPERTY EXCLUDE_FROM_ALL TRUE
+         )
+     endif()
++    find_package(Hiredis REQUIRED)
+     if(TARGET hiredis::hiredis_static)
+         set(HIREDIS_TARGET hiredis::hiredis_static)
+     elseif(TARGET hiredis::hiredis)
+@@ -315,7 +310,7 @@ target_compile_features(postsrsd PRIVATE c_std_99)
+ target_link_libraries(
+     postsrsd
+     PRIVATE Confuse::Confuse
+-            $<$<BOOL:${WITH_SQLITE}>:sqlite3::sqlite3>
++            $<$<BOOL:${WITH_SQLITE}>:sqlite3>
+             $<$<BOOL:${WITH_REDIS}>:${HIREDIS_TARGET}>
+             $<$<BOOL:${WITH_MILTER}>:LibMilter::LibMilter>
+             ${LIBSOCKET}
+@@ -335,9 +330,9 @@ install(TARGETS postsrsd RUNTIME DESTINATION ${CMAKE_I
+ install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.conf"
+         DESTINATION "${CMAKE_INSTALL_DATADIR}/doc/${PROJECT_NAME}"
+ )
+-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}.service"
+-        DESTINATION "${SYSTEMD_UNITDIR}"
+-)
++if(ENABLE_DOCS)
++       install(FILES README.rst CHANGELOG.rst doc/postsrsd.conf DESTINATION "${DOC_DIR}" )
++endif()
+ 
+ if(GENERATE_SRS_SECRET)
+     find_program(DD dd DOC "path to dd executable")
