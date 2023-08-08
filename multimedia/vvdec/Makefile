@@ -1,6 +1,7 @@
 PORTNAME=	vvdec
 DISTVERSIONPREFIX=	v
 DISTVERSION=	2.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 
 MAINTAINER=	yuri@FreeBSD.org
@@ -26,7 +27,7 @@ CMAKE_TESTING_TARGET=	test enable-bitstream-download=1 # tests fail to download 
 
 .include <bsd.port.options.mk>
 
-.if ${ARCH} == powerpc64 || ${ARCH} == riscv64
+.if ${ARCH} == riscv64
 CMAKE_ARGS+=	-DVVDEC_ENABLE_LINK_TIME_OPT:BOOL=OFF
 .endif
 
