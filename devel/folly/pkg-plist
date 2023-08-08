@@ -614,6 +614,7 @@ include/folly/io/async/test/UndelayedDestruction.h
 include/folly/io/async/test/Util.h
 include/folly/io/coro/ServerSocket.h
 include/folly/io/coro/Transport.h
+include/folly/io/coro/TransportCallbackBase.h
 include/folly/json.h
 include/folly/json_patch.h
 include/folly/json_pointer.h
