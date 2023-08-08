@@ -1,6 +1,6 @@
 PORTNAME=	blis
 PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	jmd@FreeBSD.org
@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=	--enable-cblas
 .if ${ARCH} == amd64
 CONFIGURE_ARGS+=	x86_64
 PLIST_SUB+=	ARCH="x86_64"
-.elif ${ARCH} == powerpc64
+.elif ${ARCH:Mpowerpc64*}
 CONFIGURE_ARGS+=	power9
 PLIST_SUB+=	ARCH="power9"
 USE_GCC=	yes
