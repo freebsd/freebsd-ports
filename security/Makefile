@@ -1285,6 +1285,7 @@
     SUBDIR += sudo
     SUBDIR += sudoscript
     SUBDIR += super
+    SUBDIR += su-exec
     SUBDIR += suricata
     SUBDIR += swatchdog
     SUBDIR += tailscale
