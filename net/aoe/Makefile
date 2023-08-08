@@ -1,21 +1,22 @@
 PORTNAME=	aoe
 PORTVERSION=	1.2.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	http://www.son.org/download/
+MASTER_SITES=	https://people.freebsd.org/~sson/aoe/
 DISTNAME=	${PORTNAME}-freebsd-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	FreeBSD driver for ATA over Ethernet (AoE)
 WWW=		http://www.coraid.com/support/freebsd/
 
+LICENSE=	BSD2CLAUSE
+
 BROKEN_aarch64=		fails to compile: redefinition of frame
 BROKEN_armv6=		fails to compile: implicit declaration of function 'cp15_pmccntr_get' is invalid in C99
 BROKEN_armv7=		fails to compile: redefinition of frame
 BROKEN_sparc64=		fails to compile: redefinition of frame
-BROKEN_FreeBSD_12=	no member named 'tqh_first' in 'struct ifnethead'
-BROKEN_FreeBSD_13=	no member named 'tqh_first' in 'struct ifnethead'
-BROKEN_FreeBSD_14=	no member named 'tqh_first' in 'struct ifnethead'
+BROKEN_FreeBSD_13=	use of undeclared identifier 'ifnet'
+BROKEN_FreeBSD_14=	use of undeclared identifier 'ifnet'
 
 USES=	kmod
 
