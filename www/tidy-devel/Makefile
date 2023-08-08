@@ -12,6 +12,11 @@ MAINTAINER?=	thierry@FreeBSD.org
 COMMENT?=	Utility to clean up and pretty print HTML/XHTML/XML
 WWW=		http://tidy.sourceforge.net/
 
+LICENSE=	HTML_TIDY
+LICENSE_NAME=	HTML Tidy License
+LICENSE_FILE=	${WRKSRC}/htmldoc/license.html
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 BUILD_DEPENDS=	xsltproc:textproc/libxslt
 
 USES=		cpe tar:bzip2
@@ -65,7 +70,7 @@ getcvs:
 
 tarball:
 	${RM} -r ${WRKDIR}/cvs/tidy/CVSROOT
-	${FIND} ${WRKDIR}/cvs -name CVS | ${XARGS} ${RM} -r
+	${FIND} ${WRKDIR}/cvs -name CVS -delete
 	cd ${WRKDIR}/cvs &&	\
 	${TAR} cfj ${_DISTDIR}${DISTFILES} tidy
 
