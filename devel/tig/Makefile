@@ -37,7 +37,7 @@ GIT_DESC=	Install devel/git as runtime dependency
 
 GIT_RUN_DEPENDS=	git:devel/git
 GIT_VARS_OFF=		PKGMESSAGE="${.CURDIR}/pkg-message-git"
-PCRE_LIB_DEPENDS=	lpcre2-posix.so:devel/pcre2
+PCRE_LIB_DEPENDS=	libpcre2-posix.so:devel/pcre2
 PCRE_CONFIGURE_WITH=	pcre
 
 post-install:
