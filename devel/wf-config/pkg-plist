@@ -7,11 +7,10 @@ include/wayfire/config/option.hpp
 include/wayfire/config/section.hpp
 include/wayfire/config/types.hpp
 include/wayfire/config/xml.hpp
-include/wayfire/nonstd/optional.hpp
 include/wayfire/util/duration.hpp
 include/wayfire/util/log.hpp
 include/wayfire/util/stringify.hpp
 lib/libwf-config.so
-lib/libwf-config.so.0.7.1
+lib/libwf-config.so.0.8.0
 lib/libwf-config.so.1
 libdata/pkgconfig/wf-config.pc

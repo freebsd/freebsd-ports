@@ -1,0 +1,13 @@
+Dependency wf-config found: NO found 0.8.0 but need: '<0.8.0' ; matched: '>=0.7.0'
+
+--- meson.build.orig	2022-12-01 15:12:48 UTC
++++ meson.build
+@@ -31,7 +31,7 @@ wlroots        = dependency('wlroots', version: ['>=0.
+ threads        = dependency('threads')
+ xkbcommon      = dependency('xkbcommon')
+ wlroots        = dependency('wlroots', version: ['>=0.16.0', '<0.17.0'], required: get_option('use_system_wlroots'))
+-wfconfig       = dependency('wf-config', version: ['>=0.7.0', '<0.8.0'], required: get_option('use_system_wfconfig'))
++wfconfig       = dependency('wf-config', version: ['>=0.7.0', '<0.9.0'], required: get_option('use_system_wfconfig'))
+ 
+ use_system_wlroots = not get_option('use_system_wlroots').disabled() and wlroots.found()
+ if not use_system_wlroots
