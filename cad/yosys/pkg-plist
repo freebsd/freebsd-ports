@@ -105,6 +105,7 @@ bin/yosys-witness
 %%DATADIR%%/include/frontends/ast/ast_binding.h
 %%DATADIR%%/include/frontends/blif/blifparse.h
 %%DATADIR%%/include/kernel/binding.h
+%%DATADIR%%/include/kernel/cellaigs.h
 %%DATADIR%%/include/kernel/celledges.h
 %%DATADIR%%/include/kernel/celltypes.h
 %%DATADIR%%/include/kernel/consteval.h
@@ -113,6 +114,7 @@ bin/yosys-witness
 %%DATADIR%%/include/kernel/ffinit.h
 %%DATADIR%%/include/kernel/fstdata.h
 %%DATADIR%%/include/kernel/hashlib.h
+%%DATADIR%%/include/kernel/json.h
 %%DATADIR%%/include/kernel/log.h
 %%DATADIR%%/include/kernel/macc.h
 %%DATADIR%%/include/kernel/mem.h
@@ -124,6 +126,7 @@ bin/yosys-witness
 %%DATADIR%%/include/kernel/sigtools.h
 %%DATADIR%%/include/kernel/utils.h
 %%DATADIR%%/include/kernel/yosys.h
+%%DATADIR%%/include/kernel/yw.h
 %%DATADIR%%/include/libs/ezsat/ezminisat.h
 %%DATADIR%%/include/libs/ezsat/ezsat.h
 %%DATADIR%%/include/libs/fst/fstapi.h
